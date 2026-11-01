@@ -13,7 +13,7 @@ cards:
     notes:
       "n1": "{1} is a mobile phone, a loanword from English. Phone is also फोन (phon)."
     examples:
-      "माझा मोबाईल बंद आहे.": { native: "My mobile is switched off.", bases: { "आहे": "to be" } }
+      "माझा मोबाईल बंद आहे.": { native: "My mobile is switched off.", bases: { "आहे": "to be", "बंद": "closed" } }
       "मोबाईल वाजतोय.": { native: "The mobile is ringing.", bases: { "वाजतोय": "to ring" } }
   "mr-1191":
     native: "phone call"
@@ -56,14 +56,14 @@ cards:
       "n1": "{1} is a charger, a loanword from English."
     examples:
       "चार्जर कुठे आहे?": { native: "Where is the charger?", bases: { "आहे": "to be" } }
-      "चार्जरने फोन चार्ज करा.": { native: "Charge the phone with the charger.", bases: { "चार्जरने": "charger" } }
+      "चार्जरने फोन चार्ज करा.": { native: "Charge the phone with the charger.", bases: { "चार्जरने": "charger", "चार्ज": "charge" } }
   "mr-1197":
     native: "battery"
     notes:
       "n1": "{1} is a battery, a loanword from English."
     examples:
       "बॅटरी संपली.": { native: "The battery has run out.", bases: { "संपली": "to end" } }
-      "फोनची बॅटरी कमी आहे.": { native: "The phone's battery is low.", bases: { "आहे": "to be" } }
+      "फोनची बॅटरी कमी आहे.": { native: "The phone's battery is low.", bases: { "आहे": "to be", "कमी": "less" } }
   "mr-1198":
     native: "screen"
     notes:
@@ -83,7 +83,7 @@ cards:
     notes:
       "n1": "{1} is an app, a loanword from English."
     examples:
-      "हे ॲप डाउनलोड करा.": "Download this app."
+      "हे ॲप डाउनलोड करा.": { native: "Download this app.", bases: { "डाउनलोड": "download" } }
       "ॲप नवीन आहे.": { native: "The app is new.", bases: { "आहे": "to be" } }
   "mr-1201":
     native: "password"
@@ -91,7 +91,7 @@ cards:
       "n1": "{1} is a password, a loanword from English."
     examples:
       "पासवर्ड विसरलो.": "I forgot the password."
-      "पासवर्ड कोणाला सांगू नका.": "Do not tell the password to anyone."
+      "पासवर्ड कोणाला सांगू नका.": { native: "Do not tell the password to anyone.", bases: { "कोणाला": "anyone" } }
   "mr-1202":
     native: "video"
     notes:
@@ -110,9 +110,11 @@ cards:
     native: "internet connection"
     notes:
       "n1": "{1} is an internet connection."
+    bases:
+      "कनेक्शन": "connection"
     examples:
-      "इंटरनेट कनेक्शन बंद आहे.": { native: "The internet connection is off.", bases: { "बंद": "off", "आहे": "to be" } }
-      "कनेक्शन परत जोडा.": { native: "Reconnect the connection.", bases: { "जोडा": "to connect" } }
+      "इंटरनेट कनेक्शन बंद आहे.": { native: "The internet connection is off.", bases: { "बंद": "off", "आहे": "to be", "कनेक्शन": "connection" } }
+      "कनेक्शन परत जोडा.": { native: "Reconnect the connection.", bases: { "जोडा": "to connect", "कनेक्शन": "connection", "परत": "back" } }
   "mr-1205":
     native: "ringing, ring tone"
     notes:
@@ -124,16 +126,20 @@ cards:
     native: "to charge"
     notes:
       "n1": "{1} is charging a battery or a phone."
+    bases:
+      "चार्ज": "charge"
     examples:
-      "फोन चार्ज कर.": "Charge the phone."
-      "बॅटरी पूर्ण चार्ज झाली.": { native: "The battery is fully charged.", bases: { "चार्ज": "charge", "झाली": "to become" } }
+      "फोन चार्ज कर.": { native: "Charge the phone.", bases: { "चार्ज": "charge" } }
+      "बॅटरी पूर्ण चार्ज झाली.": { native: "The battery is fully charged.", bases: { "चार्ज": "charge", "झाली": "to become", "पूर्ण": "complete" } }
   "mr-1207":
     native: "to download"
     notes:
       "n1": "{1} is downloading a file or an app."
+    bases:
+      "डाउनलोड": "download"
     examples:
-      "गाणं डाउनलोड केलं.": "I downloaded the song."
-      "ॲप डाउनलोड करा.": "Download the app."
+      "गाणं डाउनलोड केलं.": { native: "I downloaded the song.", bases: { "डाउनलोड": "download" } }
+      "ॲप डाउनलोड करा.": { native: "Download the app.", bases: { "डाउनलोड": "download" } }
   "mr-1208":
     native: "to send a message"
     notes:
@@ -153,5 +159,5 @@ cards:
     notes:
       "n1": "{1} is connecting a phone to a network or device."
     examples:
-      "फोन वायफायला कनेक्ट केला.": { native: "I connected the phone to the wifi.", bases: { "कनेक्ट": "to connect" } }
+      "फोन वायफायला कनेक्ट केला.": { native: "I connected the phone to the wifi.", bases: { "कनेक्ट": "to connect", "वायफायला": "the wifi" } }
       "कनेक्ट होत नाही.": { native: "It does not connect.", bases: { "होत": "to become", "नाही": "not" } }

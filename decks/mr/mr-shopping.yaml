@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सवलत", reading: "savlat" }] }
     examples:
       - { target: "सवलत किती आहे?", reading: "savlat kiti āhe?", ipa: "səʋlət̪ kit̪i aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "पंधरा टक्के सवलत आहे.", reading: "pandharā ṭakke savlat āhe.", ipa: "pənd̪ʱəra ʈəkke səʋlət̪ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पंधरा टक्के सवलत आहे.", reading: "pandharā ṭakke savlat āhe.", ipa: "pənd̪ʱəra ʈəkke səʋlət̪ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "टक्के", base: "टक्का", reading: "ṭakkā" }] }
   - id: "mr-1069"
     target: "पावती"
     reading: "pāvti"
@@ -93,9 +93,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "परत करणे", reading: "parat karṇe" }] }
+    bases:
+      - { word: "परत", base: "परत", reading: "parat" }
     examples:
-      - { target: "हा शर्ट परत करायचा आहे.", reading: "hā śarṭ parat karāycā āhe.", ipa: "ɦa ʃərʈ pərət̪ kərajtsa aɦe", bases: [{ word: "करायचा", ref: "mr-0712" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "मी वस्तू परत केली.", reading: "mi vastu parat keli.", ipa: "mi ʋəst̪u pərət̪ keli", bases: [{ word: "केली", ref: "mr-0712" }] }
+      - { target: "हा शर्ट परत करायचा आहे.", reading: "hā śarṭ parat karāycā āhe.", ipa: "ɦa ʃərʈ pərət̪ kərajtsa aɦe", bases: [{ word: "करायचा", ref: "mr-0712" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "परत", base: "परत", reading: "parat" }] }
+      - { target: "मी वस्तू परत केली.", reading: "mi vastu parat keli.", ipa: "mi ʋəst̪u pərət̪ keli", bases: [{ word: "केली", ref: "mr-0712" }, { word: "परत", base: "परत", reading: "parat" }] }
   - id: "mr-1075"
     target: "खरेदी करणे"
     reading: "kharedi karṇe"
@@ -135,7 +137,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बदलणे", reading: "badlṇe" }] }
     examples:
       - { target: "हा शर्ट बदलता येईल का?", reading: "hā śarṭ badltā yeil kā?", ipa: "ɦa ʃərʈ bəd̪lt̪a jeil ka", bases: [{ word: "बदलता", base: "बदलणे", reading: "badlṇe" }, { word: "येईल", ref: "mr-0711" }] }
-      - { target: "रंग बदलायचा आहे.", reading: "raṅg badlāycā āhe.", ipa: "rəŋɡ bəd̪lajtsa aɦe", bases: [{ word: "बदलायचा", base: "बदलणे", reading: "badlṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "रंग बदलायचा आहे.", reading: "raṅg badlāycā āhe.", ipa: "rəŋɡ bəd̪lajtsa aɦe", bases: [{ word: "बदलायचा", base: "बदलणे", reading: "badlṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "रंग", base: "रंग", reading: "raṅg" }] }
   - id: "mr-1079"
     target: "वस्तू"
     reading: "vastu"
@@ -146,7 +148,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "वस्तू", reading: "vastu" }] }
     examples:
       - { target: "या वस्तू नवीन आहेत.", reading: "yā vastu navin āhet.", ipa: "ja ʋəst̪u nəʋin aɦet̪", bases: [{ word: "या", ref: "mr-0679" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "वस्तू परत घेता येते का?", reading: "vastu parat ghetā yete kā?", ipa: "ʋəst̪u pərət̪ ɡʱet̪a jet̪e ka", bases: [{ word: "घेता", ref: "mr-0722" }, { word: "येते", ref: "mr-0711" }] }
+      - { target: "वस्तू परत घेता येते का?", reading: "vastu parat ghetā yete kā?", ipa: "ʋəst̪u pərət̪ ɡʱet̪a jet̪e ka", bases: [{ word: "घेता", ref: "mr-0722" }, { word: "येते", ref: "mr-0711" }, { word: "परत", base: "परत", reading: "parat" }] }
   - id: "mr-1080"
     target: "मोफत"
     reading: "mophat"
@@ -210,7 +212,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "रोकड", reading: "rokaḍ" }] }
     examples:
-      - { target: "माझ्याकडे रोकड नाही.", reading: "mājhyākḍe rokaḍ nāhi.", ipa: "madʒʱjakɖe rokəɖ naɦi", bases: [{ word: "माझ्याकडे", ref: "mr-0080" }] }
+      - { target: "माझ्याकडे रोकड नाही.", reading: "mājhyākḍe rokaḍ nāhi.", ipa: "madʒʱjakɖe rokəɖ naɦi", bases: [{ word: "माझ्याकडे", ref: "mr-0080" }, { word: "नाही", ref: "mr-0169" }] }
       - { target: "रोकड द्या.", reading: "rokaḍ dyā.", ipa: "rokəɖ d̪ja", bases: [{ word: "द्या", ref: "mr-0721" }] }
   - id: "mr-1086"
     target: "नाणे"
@@ -221,8 +223,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "नाणे", reading: "nāṇe" }] }
     examples:
-      - { target: "हे नाणे जुने आहे.", reading: "he nāṇe june āhe.", ipa: "ɦe naɳe dzune aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "नाणे खाली पडलं.", reading: "nāṇe khāli paḍlam̐.", ipa: "naɳe kʰali pəɖlə̃", bases: [{ word: "पडलं", ref: "mr-1024" }] }
+      - { target: "हे नाणे जुने आहे.", reading: "he nāṇe june āhe.", ipa: "ɦe naɳe dzune aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "जुने", base: "जुना", reading: "junā" }] }
+      - { target: "नाणे खाली पडलं.", reading: "nāṇe khāli paḍlam̐.", ipa: "naɳe kʰali pəɖlə̃", bases: [{ word: "पडलं", ref: "mr-1024" }, { word: "खाली", base: "खाली", reading: "khāli" }] }
   - id: "mr-1087"
     target: "नोट"
     reading: "noṭ"
@@ -232,7 +234,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "नोट", reading: "noṭ" }] }
     examples:
-      - { target: "शंभराची नोट द्या.", reading: "śambharāci noṭ dyā.", ipa: "ʃəmbʱəratʃi noʈ d̪ja", bases: [{ word: "द्या", ref: "mr-0721" }] }
+      - { target: "शंभराची नोट द्या.", reading: "śambharāci noṭ dyā.", ipa: "ʃəmbʱəratʃi noʈ d̪ja", bases: [{ word: "द्या", ref: "mr-0721" }, { word: "शंभराची", ref: "mr-0279" }] }
       - { target: "ही नोट फाटली आहे.", reading: "hi noṭ phāṭli āhe.", ipa: "ɦi noʈ pʰaʈli aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "फाटली", base: "फाटणे", reading: "phāṭṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1088"
     target: "साईज"

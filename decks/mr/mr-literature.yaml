@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ग्रंथ", reading: "granth" }] }
     examples:
       - { target: "हा जुना ग्रंथ आहे.", reading: "hā junā granth āhe.", ipa: "ɦa dzuna ɡrənt̪ʰ aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "जुना", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "ग्रंथालयात अनेक ग्रंथ आहेत.", reading: "granthālyāt anek granth āhet.", ipa: "ɡrənt̪ʰaljat̪ ənek ɡrənt̪ʰ aɦet̪", bases: [{ word: "ग्रंथालयात", ref: "mr-0976" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "ग्रंथालयात अनेक ग्रंथ आहेत.", reading: "granthālyāt anek granth āhet.", ipa: "ɡrənt̪ʰaljat̪ ənek ɡrənt̪ʰ aɦet̪", bases: [{ word: "ग्रंथालयात", ref: "mr-0976" }, { word: "आहेत", base: "असणे", reading: "asṇe" }, { word: "अनेक", base: "अनेक", reading: "anek" }] }
   - id: "mr-1775"
     target: "पृष्ठ"
     reading: "pruṣṭh"
@@ -235,9 +235,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "प्रकाशित करणे", reading: "prakāśit karṇe" }] }
+    bases:
+      - { word: "प्रकाशित", base: "प्रकाशित", reading: "prakāśit" }
     examples:
-      - { target: "त्याने पहिली कादंबरी प्रकाशित केली.", reading: "tyāne pahili kādambari prakāśit keli.", ipa: "t̪jane pəɦili kad̪əmbəri prəkaʃit̪ keli", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पहिली", base: "पहिला", reading: "pahilā" }, { word: "कादंबरी", ref: "mr-1770" }, { word: "केली", ref: "mr-0712" }] }
-      - { target: "पुस्तक पुढच्या वर्षी प्रकाशित होईल.", reading: "pustak puḍhacyā varṣi prakāśit hoil.", ipa: "pust̪ək puɖʱətʃja ʋərʂi prəkaʃit̪ ɦoil", bases: [{ word: "पुढच्या", base: "पुढचा", reading: "puḍhcā" }, { word: "वर्षी", ref: "mr-0515" }, { word: "होईल", base: "होणे", reading: "hoṇe" }] }
+      - { target: "त्याने पहिली कादंबरी प्रकाशित केली.", reading: "tyāne pahili kādambari prakāśit keli.", ipa: "t̪jane pəɦili kad̪əmbəri prəkaʃit̪ keli", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पहिली", base: "पहिला", reading: "pahilā" }, { word: "कादंबरी", ref: "mr-1770" }, { word: "केली", ref: "mr-0712" }, { word: "प्रकाशित", base: "प्रकाशित", reading: "prakāśit" }] }
+      - { target: "पुस्तक पुढच्या वर्षी प्रकाशित होईल.", reading: "pustak puḍhacyā varṣi prakāśit hoil.", ipa: "pust̪ək puɖʱətʃja ʋərʂi prəkaʃit̪ ɦoil", bases: [{ word: "पुढच्या", base: "पुढचा", reading: "puḍhcā" }, { word: "वर्षी", ref: "mr-0515" }, { word: "होईल", base: "होणे", reading: "hoṇe" }, { word: "प्रकाशित", base: "प्रकाशित", reading: "prakāśit" }] }
   - id: "mr-1790"
     target: "अनुवादित करणे"
     reading: "anuvādit karṇe"
@@ -245,8 +247,10 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "अनुवादित करणे", reading: "anuvādit karṇe" }] }
+    bases:
+      - { word: "अनुवादित", base: "अनुवादित", reading: "anuvādit" }
     examples:
-      - { target: "तिने कथा मराठीत अनुवादित केली.", reading: "tine kathā marāṭhit anuvādit keli.", ipa: "t̪ine kət̪ʰa məraʈʰit̪ ənuʋad̪it̪ keli", bases: [{ word: "कथा", ref: "mr-1528" }, { word: "मराठीत", base: "मराठी", reading: "marāṭhi" }, { word: "अनुवादित", base: "अनुवादित", reading: "anuvādit" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "तिने कथा मराठीत अनुवादित केली.", reading: "tine kathā marāṭhit anuvādit keli.", ipa: "t̪ine kət̪ʰa məraʈʰit̪ ənuʋad̪it̪ keli", bases: [{ word: "कथा", ref: "mr-1528" }, { word: "मराठीत", base: "मराठी", reading: "marāṭhi" }, { word: "अनुवादित", base: "अनुवादित", reading: "anuvādit" }, { word: "केली", ref: "mr-0712" }, { word: "तिने", ref: "mr-0677" }] }
       - { target: "ही कविता इंग्रजीत अनुवादित करा.", reading: "hi kavitā iṅgrajit anuvādit karā.", ipa: "ɦi kəʋit̪a iŋɡrədʒit̪ ənuʋad̪it̪ kəra", bases: [{ word: "ही", ref: "mr-0679" }, { word: "कविता", ref: "mr-1554" }, { word: "इंग्रजीत", base: "इंग्रजी", reading: "iṅgraji" }, { word: "अनुवादित", base: "अनुवादित", reading: "anuvādit" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1791"
     target: "वर्णन करणे"
@@ -255,9 +259,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "वर्णन करणे", reading: "varṇan karṇe" }] }
+    bases:
+      - { word: "वर्णन", base: "वर्णन", reading: "varṇan" }
     examples:
-      - { target: "त्याने गाव छान वर्णन केलं.", reading: "tyāne gāv chān varṇan kelam̐.", ipa: "t̪jane ɡaʋ tʃʰan ʋərɳən kelə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "गाव", ref: "mr-0209" }, { word: "केलं", ref: "mr-0712" }] }
-      - { target: "कादंबरीत सुंदर निसर्गाचं वर्णन आहे.", reading: "kādambarit sundar nisargācam̐ varṇan āhe.", ipa: "kad̪əmbərit̪ sund̪ər nisərɡatsə̃ ʋərɳən aɦe", bases: [{ word: "कादंबरीत", ref: "mr-1770" }, { word: "सुंदर", ref: "mr-0770" }, { word: "निसर्गाचं", ref: "mr-1229" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "त्याने गाव छान वर्णन केलं.", reading: "tyāne gāv chān varṇan kelam̐.", ipa: "t̪jane ɡaʋ tʃʰan ʋərɳən kelə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "गाव", ref: "mr-0209" }, { word: "केलं", ref: "mr-0712" }, { word: "वर्णन", base: "वर्णन", reading: "varṇan" }] }
+      - { target: "कादंबरीत सुंदर निसर्गाचं वर्णन आहे.", reading: "kādambarit sundar nisargācam̐ varṇan āhe.", ipa: "kad̪əmbərit̪ sund̪ər nisərɡatsə̃ ʋərɳən aɦe", bases: [{ word: "कादंबरीत", ref: "mr-1770" }, { word: "सुंदर", ref: "mr-0770" }, { word: "निसर्गाचं", ref: "mr-1229" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "वर्णन", base: "वर्णन", reading: "varṇan" }] }
   - id: "mr-1792"
     target: "कल्पना करणे"
     reading: "kalpanā karṇe"
@@ -277,4 +283,4 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "उलगडणे", reading: "ulgḍṇe" }] }
     examples:
       - { target: "कथा हळूहळू उलगडत गेली.", reading: "kathā haḷuhḷu ulgḍat geli.", ipa: "kət̪ʰa ɦəɭuɦɭu ulɡɖət̪ ɡeli", bases: [{ word: "हळूहळू", base: "हळूहळू", reading: "haḷuhḷu" }, { word: "उलगडत", base: "उलगडणे", reading: "ulgḍṇe" }, { word: "गेली", ref: "mr-0710" }] }
-      - { target: "रहस्य शेवटी उलगडलं.", reading: "rahasy śevṭi ulgḍlam̐.", ipa: "rəɦəsj ʃeʋʈi ulɡɖlə̃", bases: [{ word: "शेवटी", base: "शेवट", reading: "śevaṭ" }, { word: "उलगडलं", base: "उलगडणे", reading: "ulgḍṇe" }] }
+      - { target: "रहस्य शेवटी उलगडलं.", reading: "rahasy śevṭi ulgḍlam̐.", ipa: "rəɦəsj ʃeʋʈi ulɡɖlə̃", bases: [{ word: "शेवटी", base: "शेवट", reading: "śevaṭ" }, { word: "उलगडलं", base: "उलगडणे", reading: "ulgḍṇe" }, { word: "रहस्य", base: "रहस्य", reading: "rahasy" }] }

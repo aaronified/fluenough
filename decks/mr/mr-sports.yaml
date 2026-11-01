@@ -50,9 +50,11 @@ cards:
     gender: "n"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "खो-खो", reading: "kho-kho" }] }
+    bases:
+      - { word: "खो", base: "खो", reading: "kho" }
     examples:
-      - { target: "खो-खो मध्ये संघ धावतो.", reading: "kho-kho madhye saṅgh dhāvto.", ipa: "kʰokʰo məd̪ʱje səŋɡʱ d̪ʱaʋt̪o", bases: [{ word: "मध्ये", base: "मध्ये", reading: "madhye" }, { word: "संघ", ref: "mr-1612" }, { word: "धावतो", ref: "mr-1136" }] }
-      - { target: "खो-खोचा खेळ वेगवान आहे.", reading: "kho-khocā kheḷ vegvān āhe.", ipa: "kʰokʰotsa kʰeɭ ʋeɡʋan aɦe", bases: [{ word: "खेळ", base: "खेळ", reading: "kheḷ" }, { word: "वेगवान", base: "वेगवान", reading: "vegvān" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "खो-खो मध्ये संघ धावतो.", reading: "kho-kho madhye saṅgh dhāvto.", ipa: "kʰokʰo məd̪ʱje səŋɡʱ d̪ʱaʋt̪o", bases: [{ word: "मध्ये", base: "मध्ये", reading: "madhye" }, { word: "संघ", ref: "mr-1612" }, { word: "धावतो", ref: "mr-1136" }, { word: "खो", base: "खो", reading: "kho" }] }
+      - { target: "खो-खोचा खेळ वेगवान आहे.", reading: "kho-khocā kheḷ vegvān āhe.", ipa: "kʰokʰotsa kʰeɭ ʋeɡʋan aɦe", bases: [{ word: "खेळ", base: "खेळ", reading: "kheḷ" }, { word: "वेगवान", base: "वेगवान", reading: "vegvān" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "खो", base: "खो", reading: "kho" }, { word: "खोचा", base: "खो-खो", reading: "kho-kho" }] }
   - id: "mr-1609"
     target: "हॉकी"
     reading: "hôki"
@@ -73,7 +75,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बॅडमिंटन", reading: "bêḍmiṇṭan" }] }
     examples:
-      - { target: "बॅडमिंटन कोर्ट मोकळं आहे.", reading: "bêḍmiṇṭan korṭ mokḷam̐ āhe.", ipa: "bæɖmiɳʈən korʈ mokɭə̃ aɦe", bases: [{ word: "मोकळं", base: "मोकळा", reading: "mokḷā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "बॅडमिंटन कोर्ट मोकळं आहे.", reading: "bêḍmiṇṭan korṭ mokḷam̐ āhe.", ipa: "bæɖmiɳʈən korʈ mokɭə̃ aɦe", bases: [{ word: "मोकळं", base: "मोकळा", reading: "mokḷā" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "कोर्ट", base: "कोर्ट", reading: "korṭ" }] }
       - { target: "बहिणीने बॅडमिंटनमध्ये पदक जिंकलं.", reading: "bahiṇine bêḍmiṇṭanmadhye padak jiṅkalam̐.", ipa: "bəɦiɳine bæɖmiɳʈənməd̪ʱje pəd̪ək dʒiŋkələ̃", bases: [{ word: "बहिणीने", ref: "mr-0221" }, { word: "बॅडमिंटनमध्ये", base: "बॅडमिंटन", reading: "bêḍmiṇṭan" }, { word: "पदक", ref: "mr-1623" }, { word: "जिंकलं", ref: "mr-1142" }] }
   - id: "mr-1611"
     target: "टेनिस"
@@ -150,8 +152,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "धाव", reading: "dhāv" }] }
     examples:
-      - { target: "त्याने शंभर धावा केल्या.", reading: "tyāne śambhar dhāvā kelyā.", ipa: "t̪jane ʃəmbʱər d̪ʱaʋa kelja", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "शंभर", ref: "mr-0279" }, { word: "केल्या", ref: "mr-0712" }] }
-      - { target: "चौकाराने चार धावा मिळाल्या.", reading: "caukārāne cār dhāvā miḷālyā.", ipa: "tsəukarane tsar d̪ʱaʋa miɭalja", bases: [{ word: "चौकाराने", base: "चौकार", reading: "caukār" }, { word: "मिळाल्या", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "त्याने शंभर धावा केल्या.", reading: "tyāne śambhar dhāvā kelyā.", ipa: "t̪jane ʃəmbʱər d̪ʱaʋa kelja", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "शंभर", ref: "mr-0279" }, { word: "केल्या", ref: "mr-0712" }, { word: "धावा", base: "धाव", reading: "dhāv" }] }
+      - { target: "चौकाराने चार धावा मिळाल्या.", reading: "caukārāne cār dhāvā miḷālyā.", ipa: "tsəukarane tsar d̪ʱaʋa miɭalja", bases: [{ word: "चौकाराने", base: "चौकार", reading: "caukār" }, { word: "मिळाल्या", base: "मिळणे", reading: "miḷṇe" }, { word: "धावा", base: "धाव", reading: "dhāv" }] }
   - id: "mr-1618"
     target: "बॉल"
     reading: "bôl"
@@ -184,7 +186,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "विजेता", reading: "vijetā" }] }
     examples:
       - { target: "विजेत्याला पदक मिळालं.", reading: "vijetyālā padak miḷālam̐.", ipa: "ʋidʒet̪jala pəd̪ək miɭalə̃", bases: [{ word: "विजेत्याला", base: "विजेता", reading: "vijetā" }, { word: "पदक", ref: "mr-1623" }, { word: "मिळालं", base: "मिळणे", reading: "miḷṇe" }] }
-      - { target: "ती राज्यस्तरावरची विजेती आहे.", reading: "ti rājyastarāvrci vijeti āhe.", ipa: "t̪i radʒjəst̪əraʋrtʃi ʋidʒet̪i aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ती राज्यस्तरावरची विजेती आहे.", reading: "ti rājyastarāvrci vijeti āhe.", ipa: "t̪i radʒjəst̪əraʋrtʃi ʋidʒet̪i aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "राज्यस्तरावरची", base: "राज्यस्तर", reading: "rājyastar" }, { word: "विजेती", base: "विजेता", reading: "vijetā" }] }
   - id: "mr-1621"
     target: "पराभव"
     reading: "parābhav"
@@ -247,7 +249,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "झेलणे", reading: "jhelṇe" }] }
     examples:
-      - { target: "त्याने चेंडू झेलला.", reading: "tyāne ceṇḍu jhellā.", ipa: "t̪jane tʃeɳɖu dʒʱella", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "झेलला", base: "झेलणे", reading: "jhelṇe" }] }
+      - { target: "त्याने चेंडू झेलला.", reading: "tyāne ceṇḍu jhellā.", ipa: "t̪jane tʃeɳɖu dʒʱella", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "झेलला", base: "झेलणे", reading: "jhelṇe" }, { word: "चेंडू", base: "चेंडू", reading: "ceṇḍu" }] }
       - { target: "कर्णधाराने झेल सोडला.", reading: "karṇadhārāne jhel soḍlā.", ipa: "kərɳəd̪ʱarane dʒʱel soɖla", bases: [{ word: "कर्णधाराने", ref: "mr-1613" }, { word: "झेल", base: "झेल", reading: "jhel" }, { word: "सोडला", ref: "mr-1180" }] }
   - id: "mr-1627"
     target: "फेकणे"

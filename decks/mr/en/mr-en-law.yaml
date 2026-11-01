@@ -48,7 +48,7 @@ cards:
     notes:
       "n1": "{1} is fraud, cheating someone to take money or goods."
     examples:
-      "ऑनलाईन फसवणूक झाली.": { native: "There was an online fraud.", bases: { "झाली": "to become" } }
+      "ऑनलाईन फसवणूक झाली.": { native: "There was an online fraud.", bases: { "झाली": "to become", "ऑनलाईन": "online" } }
       "फसवणुकीपासून सावध रहा.": { native: "Be careful of fraud.", bases: { "सावध": "careful", "फसवणुकीपासून": "fraud, cheating" } }
   "mr-1684":
     native: "murder"
@@ -84,7 +84,7 @@ cards:
       "n1": "{1} is a judge who decides a case in court."
     examples:
       "न्यायाधीशांनी निकाल दिला.": { native: "The judge gave the verdict.", bases: { "न्यायाधीशांनी": "judge" } }
-      "न्यायाधीश शिक्षा सुनावणार आहेत.": { native: "The judge is going to pass sentence.", bases: { "सुनावणार": "to pronounce", "आहेत": "to be" } }
+      "न्यायाधीश शिक्षा सुनावणार आहेत.": { native: "The judge is going to pass sentence.", bases: { "सुनावणार": "to pronounce", "आहेत": "to be", "शिक्षा": "punishment" } }
   "mr-1689":
     native: "charge, accusation"
     notes:
@@ -138,9 +138,11 @@ cards:
     native: "to punish, to sentence"
     notes:
       "n1": "{1} is punishing someone under the law."
+    bases:
+      "शिक्षा": "punishment"
     examples:
-      "न्यायालयाने त्याला शिक्षा केली.": "The court punished him."
-      "चुकीसाठी शिक्षा होते.": { native: "A mistake is punished.", bases: { "चुकीसाठी": "for a mistake", "होते": "to become" } }
+      "न्यायालयाने त्याला शिक्षा केली.": { native: "The court punished him.", bases: { "शिक्षा": "punishment" } }
+      "चुकीसाठी शिक्षा होते.": { native: "A mistake is punished.", bases: { "चुकीसाठी": "for a mistake", "होते": "to become", "शिक्षा": "punishment" } }
   "mr-1697":
     native: "to complain, to file a complaint"
     notes:

@@ -18,7 +18,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कार्यालय", reading: "kāryālay" }] }
     examples:
-      - { target: "कार्यालय सकाळी नऊला उघडतं.", reading: "kāryālay sakāḷi naulā ughḍtam̐.", ipa: "karjaləj səkaɭi nəula uɡʱɖt̪ə̃", bases: [{ word: "उघडतं", ref: "mr-0724" }] }
+      - { target: "कार्यालय सकाळी नऊला उघडतं.", reading: "kāryālay sakāḷi naulā ughḍtam̐.", ipa: "karjaləj səkaɭi nəula uɡʱɖt̪ə̃", bases: [{ word: "उघडतं", ref: "mr-0724" }, { word: "नऊला", ref: "mr-0260" }] }
       - { target: "कार्यालयात मीटिंग आहे.", reading: "kāryālyāt miṭiṅg āhe.", ipa: "karjaljat̪ miʈiŋɡ aɦe", bases: [{ word: "कार्यालयात", base: "कार्यालय", reading: "kāryālay" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1263"
     target: "सहकारी"
@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बॉस", reading: "bôs" }] }
     examples:
       - { target: "बॉस ऑफिसमध्ये आहेत.", reading: "bôs ôphismadhye āhet.", ipa: "bɔs ɔpʰisməd̪ʱje aɦet̪", bases: [{ word: "ऑफिसमध्ये", ref: "mr-0236" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "बॉसने मला बोलावलं.", reading: "bôsne malā bolāvlam̐.", ipa: "bɔsne məla bolaʋlə̃", bases: [{ word: "बॉसने", base: "बॉस", reading: "bôs" }, { word: "बोलावलं", base: "बोलावणे", reading: "bolāvṇe" }] }
+      - { target: "बॉसने मला बोलावलं.", reading: "bôsne malā bolāvlam̐.", ipa: "bɔsne məla bolaʋlə̃", bases: [{ word: "बॉसने", base: "बॉस", reading: "bôs" }, { word: "बोलावलं", base: "बोलावणे", reading: "bolāvṇe" }, { word: "मला", ref: "mr-0080" }] }
   - id: "mr-1265"
     target: "मुलाखत"
     reading: "mulākhat"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "मुलाखत", reading: "mulākhat" }] }
     examples:
       - { target: "उद्या माझी मुलाखत आहे.", reading: "udyā mājhi mulākhat āhe.", ipa: "ud̪ja madʒʱi mulakʰət̪ aɦe", bases: [{ word: "माझी", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "मुलाखत चांगली गेली.", reading: "mulākhat cāṅgali geli.", ipa: "mulakʰət̪ tsaŋɡəli ɡeli", bases: [{ word: "गेली", ref: "mr-0710" }] }
+      - { target: "मुलाखत चांगली गेली.", reading: "mulākhat cāṅgali geli.", ipa: "mulakʰət̪ tsaŋɡəli ɡeli", bases: [{ word: "गेली", ref: "mr-0710" }, { word: "चांगली", ref: "mr-0759" }] }
   - id: "mr-1266"
     target: "अर्ज"
     reading: "arj"
@@ -96,7 +96,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बैठक", reading: "baiṭhak" }] }
     examples:
       - { target: "आज बैठक आहे.", reading: "āj baiṭhak āhe.", ipa: "adz bəiʈʰək aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "बैठकीत चर्चा झाली.", reading: "baiṭhkit carcā jhāli.", ipa: "bəiʈʰkit̪ tsərtsa dzʱali", bases: [{ word: "बैठकीत", base: "बैठक", reading: "baiṭhak" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "बैठकीत चर्चा झाली.", reading: "baiṭhkit carcā jhāli.", ipa: "bəiʈʰkit̪ tsərtsa dzʱali", bases: [{ word: "बैठकीत", base: "बैठक", reading: "baiṭhak" }, { word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "चर्चा", base: "चर्चा", reading: "carcā" }] }
   - id: "mr-1270"
     target: "प्रकल्प"
     reading: "prakalp"
@@ -117,7 +117,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "अहवाल", reading: "ahvāl" }] }
     examples:
-      - { target: "अहवाल तयार आहे.", reading: "ahvāl tayār āhe.", ipa: "əɦʋal t̪əjar aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "अहवाल तयार आहे.", reading: "ahvāl tayār āhe.", ipa: "əɦʋal t̪əjar aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "तयार", base: "तयार", reading: "tayār" }] }
       - { target: "उद्या अहवाल सादर करायचा आहे.", reading: "udyā ahvāl sādar karāycā āhe.", ipa: "ud̪ja əɦʋal sad̪ər kərajtsa aɦe", bases: [{ word: "सादर", base: "सादर", reading: "sādar" }, { word: "करायचा", ref: "mr-0712" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1272"
     target: "प्रिंटर"
@@ -129,7 +129,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "प्रिंटर", reading: "priṇṭar" }] }
     examples:
       - { target: "प्रिंटर चालत नाही.", reading: "priṇṭar cālat nāhi.", ipa: "priɳʈər tsalət̪ naɦi", bases: [{ word: "चालत", ref: "mr-0512" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
-      - { target: "अहवाल प्रिंट करा.", reading: "ahvāl priṇṭ karā.", ipa: "əɦʋal priɳʈ kəra", bases: [{ word: "करा", ref: "mr-0712" }] }
+      - { target: "अहवाल प्रिंट करा.", reading: "ahvāl priṇṭ karā.", ipa: "əɦʋal priɳʈ kəra", bases: [{ word: "करा", ref: "mr-0712" }, { word: "प्रिंट", base: "प्रिंट", reading: "priṇṭ" }] }
   - id: "mr-1273"
     target: "राजीनामा"
     reading: "rājināmā"
@@ -151,7 +151,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बढती", reading: "baḍhti" }] }
     examples:
       - { target: "त्याला बढती मिळाली.", reading: "tyālā baḍhti miḷāli.", ipa: "t̪jala bəɖʱt̪i miɭali", bases: [{ word: "त्याला", ref: "mr-0676" }, { word: "मिळाली", base: "मिळणे", reading: "miḷṇe" }] }
-      - { target: "बढतीसाठी मेहनत करा.", reading: "baḍhtisāṭhi mehnat karā.", ipa: "bəɖʱt̪isaʈʰi meɦnət̪ kəra", bases: [{ word: "बढतीसाठी", base: "बढती", reading: "baḍhti" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "बढतीसाठी मेहनत करा.", reading: "baḍhtisāṭhi mehnat karā.", ipa: "bəɖʱt̪isaʈʰi meɦnət̪ kəra", bases: [{ word: "बढतीसाठी", base: "बढती", reading: "baḍhti" }, { word: "करा", ref: "mr-0712" }, { word: "मेहनत", base: "मेहनत", reading: "mehnat" }] }
   - id: "mr-1275"
     target: "कामगार"
     reading: "kāmgār"
@@ -180,9 +180,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "सादर करणे", reading: "sādar karṇe" }] }
+    bases:
+      - { word: "सादर", base: "सादर", reading: "sādar" }
     examples:
-      - { target: "उद्या अहवाल सादर करा.", reading: "udyā ahvāl sādar karā.", ipa: "ud̪ja əɦʋal sad̪ər kəra", bases: [{ word: "उद्या", ref: "mr-0475" }, { word: "अहवाल", ref: "mr-1271" }, { word: "करा", ref: "mr-0712" }] }
-      - { target: "त्याने कागदपत्रं सादर केली.", reading: "tyāne kāgdpatram̐ sādar keli.", ipa: "t̪jane kaɡd̪pət̪rə̃ sad̪ər keli", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "उद्या अहवाल सादर करा.", reading: "udyā ahvāl sādar karā.", ipa: "ud̪ja əɦʋal sad̪ər kəra", bases: [{ word: "उद्या", ref: "mr-0475" }, { word: "अहवाल", ref: "mr-1271" }, { word: "करा", ref: "mr-0712" }, { word: "सादर", base: "सादर", reading: "sādar" }] }
+      - { target: "त्याने कागदपत्रं सादर केली.", reading: "tyāne kāgdpatram̐ sādar keli.", ipa: "t̪jane kaɡd̪pət̪rə̃ sad̪ər keli", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "केली", ref: "mr-0712" }, { word: "कागदपत्रं", base: "कागदपत्र", reading: "kāgdpatr" }, { word: "सादर", base: "सादर", reading: "sādar" }] }
   - id: "mr-1278"
     target: "पूर्ण करणे"
     reading: "purṇ karṇe"
@@ -190,6 +192,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पूर्ण करणे", reading: "purṇ karṇe" }] }
+    bases:
+      - { word: "पूर्ण", base: "पूर्ण", reading: "purṇ" }
     examples:
-      - { target: "काम पूर्ण झालं.", reading: "kām purṇ jhālam̐.", ipa: "kam purɳ dzʱalə̃", bases: [{ word: "झालं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "काम पूर्ण झालं.", reading: "kām purṇ jhālam̐.", ipa: "kam purɳ dzʱalə̃", bases: [{ word: "झालं", base: "होणे", reading: "hoṇe" }, { word: "पूर्ण", base: "पूर्ण", reading: "purṇ" }] }
       - { target: "मी प्रकल्प पूर्ण केला.", reading: "mi prakalp purṇ kelā.", ipa: "mi prəkəlp purɳ kela", bases: [{ word: "पूर्ण", base: "पूर्ण", reading: "purṇ" }, { word: "केला", ref: "mr-0712" }] }

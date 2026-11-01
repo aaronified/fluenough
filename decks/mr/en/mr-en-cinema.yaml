@@ -62,8 +62,8 @@ cards:
     notes:
       "n1": "{1} is the plot of a film or a book, its sequence of events."
     examples:
-      "कथानक थोडं कंटाळवाणं होतं.": { native: "The plot was a bit boring.", bases: { "कंटाळवाणं": "boring", "होतं": "to be" } }
-      "कथानक अचानक बदललं.": "The plot changed suddenly."
+      "कथानक थोडं कंटाळवाणं होतं.": { native: "The plot was a bit boring.", bases: { "कंटाळवाणं": "boring", "होतं": "to be", "थोडं": "a little" } }
+      "कथानक अचानक बदललं.": { native: "The plot changed suddenly.", bases: { "अचानक": "suddenly" } }
   "mr-1530":
     native: "hero (male lead)"
     notes:
@@ -91,7 +91,7 @@ cards:
       "n1": "{1} describes a film or story about love, a loanword from English."
     examples:
       "हा रोमँटिक सिनेमा आहे.": { native: "This is a romantic film.", bases: { "आहे": "to be" } }
-      "गाणी फार रोमँटिक होती.": { native: "The songs were very romantic.", bases: { "होती": "to be" } }
+      "गाणी फार रोमँटिक होती.": { native: "The songs were very romantic.", bases: { "होती": "to be", "फार": "very" } }
   "mr-1534":
     native: "horror film"
     notes:
@@ -112,7 +112,7 @@ cards:
       "n1": "{1} is a composer or music director of a film."
     examples:
       "संगीतकाराने सुंदर चाल दिली.": { native: "The composer gave a beautiful tune.", bases: { "चाल": "tune", "संगीतकाराने": "composer, music director" } }
-      "हे गाणं कोणी संगीतबद्ध केलं?": "Who composed this song?"
+      "हे गाणं कोणी संगीतबद्ध केलं?": { native: "Who composed this song?", bases: { "संगीतबद्ध": "composed" } }
   "mr-1537":
     native: "playback singer"
     notes:
@@ -166,6 +166,8 @@ cards:
     native: "to release (a film)"
     notes:
       "n1": "{1} is releasing a film for people to see."
+    bases:
+      "प्रदर्शित": "released"
     examples:
-      "हा चित्रपट उद्या प्रदर्शित होणार आहे.": { native: "This film will be released tomorrow.", bases: { "होणार": "to be", "आहे": "to be" } }
-      "त्यांनी नवा चित्रपट प्रदर्शित केला.": { native: "They released a new film.", bases: { "नवा": "new" } }
+      "हा चित्रपट उद्या प्रदर्शित होणार आहे.": { native: "This film will be released tomorrow.", bases: { "होणार": "to be", "आहे": "to be", "प्रदर्शित": "released" } }
+      "त्यांनी नवा चित्रपट प्रदर्शित केला.": { native: "They released a new film.", bases: { "नवा": "new", "प्रदर्शित": "released" } }

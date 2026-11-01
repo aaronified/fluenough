@@ -63,7 +63,7 @@ cards:
       "n1": "{1} is a meeting, a sitting together to discuss."
     examples:
       "आज बैठक आहे.": { native: "There is a meeting today.", bases: { "आहे": "to be" } }
-      "बैठकीत चर्चा झाली.": { native: "There was a discussion in the meeting.", bases: { "झाली": "to become", "बैठकीत": "meeting" } }
+      "बैठकीत चर्चा झाली.": { native: "There was a discussion in the meeting.", bases: { "झाली": "to become", "बैठकीत": "meeting", "चर्चा": "discussion" } }
   "mr-1270":
     native: "project"
     notes:
@@ -76,7 +76,7 @@ cards:
     notes:
       "n1": "{1} is a written report."
     examples:
-      "अहवाल तयार आहे.": { native: "The report is ready.", bases: { "आहे": "to be" } }
+      "अहवाल तयार आहे.": { native: "The report is ready.", bases: { "आहे": "to be", "तयार": "ready" } }
       "उद्या अहवाल सादर करायचा आहे.": { native: "I have to submit the report tomorrow.", bases: { "सादर": "submit", "आहे": "to be" } }
   "mr-1272":
     native: "printer"
@@ -84,7 +84,7 @@ cards:
       "n1": "{1} is a printer, a loanword from English."
     examples:
       "प्रिंटर चालत नाही.": { native: "The printer is not working.", bases: { "नाही": "not" } }
-      "अहवाल प्रिंट करा.": "Print the report."
+      "अहवाल प्रिंट करा.": { native: "Print the report.", bases: { "प्रिंट": "print" } }
   "mr-1273":
     native: "resignation"
     notes:
@@ -98,7 +98,7 @@ cards:
       "n1": "{1} is a promotion to a better post."
     examples:
       "त्याला बढती मिळाली.": { native: "He got a promotion.", bases: { "मिळाली": "to get" } }
-      "बढतीसाठी मेहनत करा.": { native: "Work hard for a promotion.", bases: { "बढतीसाठी": "promotion" } }
+      "बढतीसाठी मेहनत करा.": { native: "Work hard for a promotion.", bases: { "बढतीसाठी": "promotion", "मेहनत": "hard work" } }
   "mr-1275":
     native: "worker, labourer"
     notes:
@@ -117,13 +117,17 @@ cards:
     native: "to submit"
     notes:
       "n1": "{1} is handing in a report or a document."
+    bases:
+      "सादर": "presented"
     examples:
-      "उद्या अहवाल सादर करा.": "Submit the report tomorrow."
-      "त्याने कागदपत्रं सादर केली.": "He submitted the papers."
+      "उद्या अहवाल सादर करा.": { native: "Submit the report tomorrow.", bases: { "सादर": "presented" } }
+      "त्याने कागदपत्रं सादर केली.": { native: "He submitted the papers.", bases: { "कागदपत्रं": "documents", "सादर": "presented" } }
   "mr-1278":
     native: "to complete, to finish"
     notes:
       "n1": "{1} is finishing a piece of work."
+    bases:
+      "पूर्ण": "complete"
     examples:
-      "काम पूर्ण झालं.": { native: "The work was completed.", bases: { "झालं": "to become" } }
+      "काम पूर्ण झालं.": { native: "The work was completed.", bases: { "झालं": "to become", "पूर्ण": "complete" } }
       "मी प्रकल्प पूर्ण केला.": { native: "I completed the project.", bases: { "पूर्ण": "complete" } }

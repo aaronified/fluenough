@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "हवामान", reading: "havāmān" }] }
     examples:
       - { target: "आज हवामान छान आहे.", reading: "āj havāmān chān āhe.", ipa: "adz ɦəʋaman tʃʰan aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "हवामान अचानक बदललं.", reading: "havāmān acānak badllam̐.", ipa: "ɦəʋaman ətsanək bəd̪llə̃", bases: [{ word: "बदललं", base: "बदलणे", reading: "badlṇe" }] }
+      - { target: "हवामान अचानक बदललं.", reading: "havāmān acānak badllam̐.", ipa: "ɦəʋaman ətsanək bəd̪llə̃", bases: [{ word: "बदललं", base: "बदलणे", reading: "badlṇe" }, { word: "अचानक", base: "अचानक", reading: "acānak" }] }
   - id: "mr-1005"
     target: "पाऊस"
     reading: "pāus"
@@ -62,7 +62,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "वारा", reading: "vārā" }] }
     examples:
-      - { target: "वारा जोरात वाहतो.", reading: "vārā jorāt vāhto.", ipa: "ʋara dzorat̪ ʋaɦt̪o", bases: [{ word: "वाहतो", ref: "mr-1023" }] }
+      - { target: "वारा जोरात वाहतो.", reading: "vārā jorāt vāhto.", ipa: "ʋara dzorat̪ ʋaɦt̪o", bases: [{ word: "वाहतो", ref: "mr-1023" }, { word: "जोरात", base: "जोरात", reading: "jorāt" }] }
       - { target: "वाऱ्याने झाडं हलली.", reading: "vāryāne jhāḍam̐ halli.", ipa: "ʋarjane dzʱaɖə̃ ɦəlli", bases: [{ word: "वाऱ्याने", base: "वारा", reading: "vārā" }, { word: "झाडं", base: "झाड", reading: "jhāḍ" }, { word: "हलली", base: "हलणे", reading: "halṇe" }] }
   - id: "mr-1009"
     target: "वादळ"
@@ -95,7 +95,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "मेघगर्जना", reading: "meghgarjanā" }] }
     examples:
-      - { target: "मेघगर्जना जोरात झाली.", reading: "meghgarjanā jorāt jhāli.", ipa: "meɡʱɡərdzəna dzorat̪ dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "मेघगर्जना जोरात झाली.", reading: "meghgarjanā jorāt jhāli.", ipa: "meɡʱɡərdzəna dzorat̪ dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "जोरात", base: "जोरात", reading: "jorāt" }] }
       - { target: "मेघगर्जनेने सगळे घाबरले.", reading: "meghgarjanene sagḷe ghābrle.", ipa: "meɡʱɡərdzənene səɡɭe ɡʱabrle", bases: [{ word: "मेघगर्जनेने", base: "मेघगर्जना", reading: "meghgarjanā" }, { word: "घाबरले", base: "घाबरणे", reading: "ghābrṇe" }] }
   - id: "mr-1012"
     target: "धुकं"
@@ -129,7 +129,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "उकाडा", reading: "ukāḍā" }] }
     examples:
       - { target: "आज खूप उकाडा आहे.", reading: "āj khup ukāḍā āhe.", ipa: "adz kʰup ukaɖa aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "उकाड्याने घाम येतो.", reading: "ukāḍyāne ghām yeto.", ipa: "ukaɖjane ɡʱam jet̪o", bases: [{ word: "उकाड्याने", base: "उकाडा", reading: "ukāḍā" }, { word: "येतो", ref: "mr-0711" }] }
+      - { target: "उकाड्याने घाम येतो.", reading: "ukāḍyāne ghām yeto.", ipa: "ukaɖjane ɡʱam jet̪o", bases: [{ word: "उकाड्याने", base: "उकाडा", reading: "ukāḍā" }, { word: "येतो", ref: "mr-0711" }, { word: "घाम", base: "घाम", reading: "ghām" }] }
   - id: "mr-1015"
     target: "तापमान"
     reading: "tāpmān"
@@ -173,7 +173,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "हवा", reading: "havā" }] }
     examples:
       - { target: "हवा थंड आहे.", reading: "havā thaṇḍ āhe.", ipa: "ɦəʋa t̪ʰəɳɖ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "हवेत ओलावा आहे.", reading: "havet olāvā āhe.", ipa: "ɦəʋet̪ olaʋa aɦe", bases: [{ word: "हवेत", base: "हवा", reading: "havā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "हवेत ओलावा आहे.", reading: "havet olāvā āhe.", ipa: "ɦəʋet̪ olaʋa aɦe", bases: [{ word: "हवेत", base: "हवा", reading: "havā" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "ओलावा", base: "ओलावा", reading: "olāvā" }] }
   - id: "mr-1019"
     target: "ढगाळ"
     reading: "ḍhagāḷ"
@@ -193,7 +193,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "दमट", reading: "damaṭ" }] }
     examples:
       - { target: "पावसात हवा दमट असते.", reading: "pāvsāt havā damaṭ aste.", ipa: "paʋsat̪ ɦəʋa d̪əməʈ əst̪e", bases: [{ word: "पावसात", ref: "mr-1005" }, { word: "असते", base: "असणे", reading: "asṇe" }] }
-      - { target: "दमट हवेत झोप येत नाही.", reading: "damaṭ havet jhop yet nāhi.", ipa: "d̪əməʈ ɦəʋet̪ dzʱop jet̪ naɦi", bases: [{ word: "हवेत", ref: "mr-1018" }, { word: "येत", ref: "mr-0711" }] }
+      - { target: "दमट हवेत झोप येत नाही.", reading: "damaṭ havet jhop yet nāhi.", ipa: "d̪əməʈ ɦəʋet̪ dzʱop jet̪ naɦi", bases: [{ word: "हवेत", ref: "mr-1018" }, { word: "येत", ref: "mr-0711" }, { word: "नाही", ref: "mr-0169" }] }
   - id: "mr-1021"
     target: "ओला"
     reading: "olā"
@@ -203,7 +203,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ओला", reading: "olā" }] }
     examples:
       - { target: "कपडे ओले आहेत.", reading: "kapḍe ole āhet.", ipa: "kəpɖe ole aɦet̪", bases: [{ word: "कपडे", base: "कपडा", reading: "kapḍā" }, { word: "ओले", base: "ओला", reading: "olā" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "पावसात भिजून सगळे ओले झाले.", reading: "pāvsāt bhijun sagḷe ole jhāle.", ipa: "paʋsat̪ bʱidzun səɡɭe ole dzʱale", bases: [{ word: "भिजून", base: "भिजणे", reading: "bhijṇe" }, { word: "ओले", base: "ओला", reading: "olā" }, { word: "झाले", base: "होणे", reading: "hoṇe" }] }
+      - { target: "पावसात भिजून सगळे ओले झाले.", reading: "pāvsāt bhijun sagḷe ole jhāle.", ipa: "paʋsat̪ bʱidzun səɡɭe ole dzʱale", bases: [{ word: "भिजून", base: "भिजणे", reading: "bhijṇe" }, { word: "ओले", base: "ओला", reading: "olā" }, { word: "झाले", base: "होणे", reading: "hoṇe" }, { word: "पावसात", ref: "mr-1005" }] }
   - id: "mr-1022"
     target: "कोरडा"
     reading: "korḍā"
@@ -212,7 +212,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कोरडा", reading: "korḍā" }] }
     examples:
-      - { target: "उन्हाळ्यात जमीन कोरडी होते.", reading: "unhāḷyāt jamin korḍi hote.", ipa: "unɦaɭjat̪ dzəmin korɖi ɦot̪e", bases: [{ word: "उन्हाळ्यात", ref: "mr-0529" }, { word: "कोरडी", base: "कोरडा", reading: "korḍā" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+      - { target: "उन्हाळ्यात जमीन कोरडी होते.", reading: "unhāḷyāt jamin korḍi hote.", ipa: "unɦaɭjat̪ dzəmin korɖi ɦot̪e", bases: [{ word: "उन्हाळ्यात", ref: "mr-0529" }, { word: "कोरडी", base: "कोरडा", reading: "korḍā" }, { word: "होते", base: "होणे", reading: "hoṇe" }, { word: "जमीन", base: "जमीन", reading: "jamin" }] }
       - { target: "कोरडं हवामान आवडतं.", reading: "korḍam̐ havāmān āvḍtam̐.", ipa: "korɖə̃ ɦəʋaman aʋɖt̪ə̃", bases: [{ word: "कोरडं", base: "कोरडा", reading: "korḍā" }, { word: "आवडतं", ref: "mr-0585" }] }
   - id: "mr-1023"
     target: "वाहणे"
@@ -223,7 +223,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "वाहणे", reading: "vāhṇe" }] }
     examples:
       - { target: "थंड वारा वाहतोय.", reading: "thaṇḍ vārā vāhtoy.", ipa: "t̪ʰəɳɖ ʋara ʋaɦt̪oj", bases: [{ word: "वाहतोय", base: "वाहणे", reading: "vāhṇe" }] }
-      - { target: "नदीचं पाणी वेगाने वाहतं.", reading: "nadicam̐ pāṇi vegāne vāhtam̐.", ipa: "nəd̪itsə̃ paɳi ʋeɡane ʋaɦt̪ə̃", bases: [{ word: "नदीचं", ref: "mr-0966" }, { word: "वाहतं", base: "वाहणे", reading: "vāhṇe" }] }
+      - { target: "नदीचं पाणी वेगाने वाहतं.", reading: "nadicam̐ pāṇi vegāne vāhtam̐.", ipa: "nəd̪itsə̃ paɳi ʋeɡane ʋaɦt̪ə̃", bases: [{ word: "नदीचं", ref: "mr-0966" }, { word: "वाहतं", base: "वाहणे", reading: "vāhṇe" }, { word: "वेगाने", base: "वेग", reading: "veg" }] }
   - id: "mr-1024"
     target: "पडणे"
     reading: "paḍṇe"
@@ -233,7 +233,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पडणे", reading: "paḍṇe" }] }
     examples:
       - { target: "पाने झाडावरून पडली.", reading: "pāne jhāḍāvrun paḍli.", ipa: "pane dzʱaɖaʋrun pəɖli", bases: [{ word: "पाने", base: "पान", reading: "pān" }, { word: "झाडावरून", base: "झाड", reading: "jhāḍ" }, { word: "पडली", base: "पडणे", reading: "paḍṇe" }] }
-      - { target: "पावसाचे थेंब पडले.", reading: "pāvsāce themb paḍle.", ipa: "paʋsatʃe t̪ʰemb pəɖle", bases: [{ word: "पावसाचे", ref: "mr-1005" }, { word: "पडले", base: "पडणे", reading: "paḍṇe" }] }
+      - { target: "पावसाचे थेंब पडले.", reading: "pāvsāce themb paḍle.", ipa: "paʋsatʃe t̪ʰemb pəɖle", bases: [{ word: "पावसाचे", ref: "mr-1005" }, { word: "पडले", base: "पडणे", reading: "paḍṇe" }, { word: "थेंब", base: "थेंब", reading: "themb" }] }
   - id: "mr-1025"
     target: "चमकणे"
     reading: "camkṇe"
@@ -253,7 +253,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "गडगडणे", reading: "gaḍgḍṇe" }] }
     examples:
       - { target: "ढग गडगडले.", reading: "ḍhag gaḍgḍle.", ipa: "ɖʱəɡ ɡəɖɡɖle", bases: [{ word: "गडगडले", base: "गडगडणे", reading: "gaḍgḍṇe" }] }
-      - { target: "दूर कुठेतरी गडगडतंय.", reading: "dur kuṭhetri gaḍgḍtaṁy.", ipa: "d̪ur kuʈʰet̪ri ɡəɖɡɖt̪ə̃j", bases: [{ word: "गडगडतंय", base: "गडगडणे", reading: "gaḍgḍṇe" }] }
+      - { target: "दूर कुठेतरी गडगडतंय.", reading: "dur kuṭhetri gaḍgḍtaṁy.", ipa: "d̪ur kuʈʰet̪ri ɡəɖɡɖt̪ə̃j", bases: [{ word: "गडगडतंय", base: "गडगडणे", reading: "gaḍgḍṇe" }, { word: "दूर", base: "दूर", reading: "dur" }, { word: "कुठेतरी", base: "कुठेतरी", reading: "kuṭhetari" }] }
   - id: "mr-1027"
     target: "वाढणे"
     reading: "vāḍhṇe"
@@ -274,7 +274,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "मान्सून", reading: "mānsun" }] }
     examples:
       - { target: "मान्सून जूनमध्ये येतो.", reading: "mānsun junmadhye yeto.", ipa: "mansun dzunməd̪ʱje jet̪o", bases: [{ word: "जूनमध्ये", ref: "mr-0521" }, { word: "येतो", ref: "mr-0711" }] }
-      - { target: "यंदा मान्सून लवकर आला.", reading: "yandā mānsun lavkar ālā.", ipa: "jənd̪a mansun ləʋkər ala", bases: [{ word: "आला", ref: "mr-0711" }] }
+      - { target: "यंदा मान्सून लवकर आला.", reading: "yandā mānsun lavkar ālā.", ipa: "jənd̪a mansun ləʋkər ala", bases: [{ word: "आला", ref: "mr-0711" }, { word: "यंदा", base: "यंदा", reading: "yandā" }] }
   - id: "mr-1029"
     target: "वृष्टी"
     reading: "vruṣṭi"
@@ -284,8 +284,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "वृष्टी", reading: "vruṣṭi" }] }
     examples:
-      - { target: "आज जोरदार वृष्टी झाली.", reading: "āj jordār vruṣṭi jhāli.", ipa: "adz dzord̪ar ʋruʂʈi dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }] }
-      - { target: "वृष्टीमुळे रस्ते बंद झाले.", reading: "vruṣṭimuḷe raste band jhāle.", ipa: "ʋruʂʈimuɭe rəst̪e bənd̪ dzʱale", bases: [{ word: "वृष्टीमुळे", base: "वृष्टी", reading: "vruṣṭi" }, { word: "रस्ते", ref: "mr-0971" }, { word: "झाले", base: "होणे", reading: "hoṇe" }] }
+      - { target: "आज जोरदार वृष्टी झाली.", reading: "āj jordār vruṣṭi jhāli.", ipa: "adz dzord̪ar ʋruʂʈi dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "जोरदार", base: "जोरदार", reading: "jordār" }] }
+      - { target: "वृष्टीमुळे रस्ते बंद झाले.", reading: "vruṣṭimuḷe raste band jhāle.", ipa: "ʋruʂʈimuɭe rəst̪e bənd̪ dzʱale", bases: [{ word: "वृष्टीमुळे", base: "वृष्टी", reading: "vruṣṭi" }, { word: "रस्ते", ref: "mr-0971" }, { word: "झाले", base: "होणे", reading: "hoṇe" }, { word: "बंद", base: "बंद", reading: "band" }] }
   - id: "mr-1030"
     target: "सरी"
     reading: "sari"
@@ -317,7 +317,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गारपीट", reading: "gārpiṭ" }] }
     examples:
-      - { target: "गारपिटीमुळे पिकांचे नुकसान झाले.", reading: "gārpiṭimuḷe pikāñce nuksān jhāle.", ipa: "ɡarpiʈimuɭe pikaɲtʃe nuksan dzʱale", bases: [{ word: "गारपिटीमुळे", base: "गारपीट", reading: "gārpiṭ" }, { word: "पिकांचे", base: "पीक", reading: "pik" }, { word: "झाले", base: "होणे", reading: "hoṇe" }] }
+      - { target: "गारपिटीमुळे पिकांचे नुकसान झाले.", reading: "gārpiṭimuḷe pikāñce nuksān jhāle.", ipa: "ɡarpiʈimuɭe pikaɲtʃe nuksan dzʱale", bases: [{ word: "गारपिटीमुळे", base: "गारपीट", reading: "gārpiṭ" }, { word: "पिकांचे", base: "पीक", reading: "pik" }, { word: "झाले", base: "होणे", reading: "hoṇe" }, { word: "नुकसान", base: "नुकसान", reading: "nuksān" }] }
       - { target: "गारपीट थांबली.", reading: "gārpiṭ thāmbali.", ipa: "ɡarpiʈ t̪ʰambəli", bases: [{ word: "थांबली", ref: "mr-0803" }] }
   - id: "mr-1033"
     target: "इंद्रधनुष्य"
@@ -329,7 +329,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "इंद्रधनुष्य", reading: "indradhnuṣy" }] }
     examples:
       - { target: "पावसानंतर इंद्रधनुष्य दिसलं.", reading: "pāvsānantar indradhnuṣy dislam̐.", ipa: "paʋsanənt̪ər ind̪rəd̪ʱnuʂj d̪islə̃", bases: [{ word: "पावसानंतर", ref: "mr-1005" }, { word: "दिसलं", base: "दिसणे", reading: "disṇe" }] }
-      - { target: "इंद्रधनुष्यात सात रंग असतात.", reading: "indradhnuṣyāt sāt raṅg astāt.", ipa: "ind̪rəd̪ʱnuʂjat̪ sat̪ rəŋɡ əst̪at̪", bases: [{ word: "असतात", base: "असणे", reading: "asṇe" }] }
+      - { target: "इंद्रधनुष्यात सात रंग असतात.", reading: "indradhnuṣyāt sāt raṅg astāt.", ipa: "ind̪rəd̪ʱnuʂjat̪ sat̪ rəŋɡ əst̪at̪", bases: [{ word: "असतात", base: "असणे", reading: "asṇe" }, { word: "इंद्रधनुष्यात", base: "इंद्रधनुष्य", reading: "indradhnuṣy" }, { word: "रंग", base: "रंग", reading: "raṅg" }] }
   - id: "mr-1034"
     target: "सावली"
     reading: "sāvli"
@@ -340,7 +340,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सावली", reading: "sāvli" }] }
     examples:
       - { target: "झाडाखाली सावली आहे.", reading: "jhāḍākhāli sāvli āhe.", ipa: "dzʱaɖakʰali saʋli aɦe", bases: [{ word: "झाडाखाली", base: "झाड", reading: "jhāḍ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "सावलीत थोडं बसा.", reading: "sāvlit thoḍam̐ basā.", ipa: "saʋlit̪ t̪ʰoɖə̃ bəsa", bases: [{ word: "सावलीत", base: "सावली", reading: "sāvli" }, { word: "बसा", base: "बसणे", reading: "basṇe" }] }
+      - { target: "सावलीत थोडं बसा.", reading: "sāvlit thoḍam̐ basā.", ipa: "saʋlit̪ t̪ʰoɖə̃ bəsa", bases: [{ word: "सावलीत", base: "सावली", reading: "sāvli" }, { word: "बसा", base: "बसणे", reading: "basṇe" }, { word: "थोडं", base: "थोडा", reading: "thoḍā" }] }
   - id: "mr-1035"
     target: "ऋतू"
     reading: "rutu"
@@ -350,8 +350,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ऋतू", reading: "rutu" }] }
     examples:
-      - { target: "भारतात सहा ऋतू आहेत.", reading: "bhārtāt sahā rutu āhet.", ipa: "bʱart̪at̪ səɦa rut̪u aɦet̪", bases: [{ word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "माझा आवडता ऋतू पावसाळा आहे.", reading: "mājhā āvḍtā rutu pāvsāḷā āhe.", ipa: "madzʱa aʋɖt̪a rut̪u paʋsaɭa aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "भारतात सहा ऋतू आहेत.", reading: "bhārtāt sahā rutu āhet.", ipa: "bʱart̪at̪ səɦa rut̪u aɦet̪", bases: [{ word: "आहेत", base: "असणे", reading: "asṇe" }, { word: "भारतात", base: "भारत", reading: "bhārat" }] }
+      - { target: "माझा आवडता ऋतू पावसाळा आहे.", reading: "mājhā āvḍtā rutu pāvsāḷā āhe.", ipa: "madzʱa aʋɖt̪a rut̪u paʋsaɭa aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "माझा", ref: "mr-0080" }] }
   - id: "mr-1036"
     target: "पूर"
     reading: "pur"
@@ -372,5 +372,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "दुष्काळ", reading: "duṣkāḷ" }] }
     examples:
-      - { target: "यंदा दुष्काळ आहे.", reading: "yandā duṣkāḷ āhe.", ipa: "jənd̪a d̪uʂkaɭ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "दुष्काळात शेतकरी कष्ट करतात.", reading: "duṣkāḷāt śetkri kaṣṭ kartāt.", ipa: "d̪uʂkaɭat̪ ʃet̪kri kəʂʈ kərt̪at̪", bases: [{ word: "दुष्काळात", base: "दुष्काळ", reading: "duṣkāḷ" }, { word: "करतात", ref: "mr-0712" }] }
+      - { target: "यंदा दुष्काळ आहे.", reading: "yandā duṣkāḷ āhe.", ipa: "jənd̪a d̪uʂkaɭ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "यंदा", base: "यंदा", reading: "yandā" }] }
+      - { target: "दुष्काळात शेतकरी कष्ट करतात.", reading: "duṣkāḷāt śetkri kaṣṭ kartāt.", ipa: "d̪uʂkaɭat̪ ʃet̪kri kəʂʈ kərt̪at̪", bases: [{ word: "दुष्काळात", base: "दुष्काळ", reading: "duṣkāḷ" }, { word: "करतात", ref: "mr-0712" }, { word: "कष्ट", base: "कष्ट", reading: "kaṣṭ" }] }

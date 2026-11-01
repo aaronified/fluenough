@@ -49,7 +49,7 @@ cards:
       "n1": "{1} is a book, a formal word, often a serious or sacred book."
     examples:
       "हा जुना ग्रंथ आहे.": { native: "This is an old book.", bases: { "आहे": "to be" } }
-      "ग्रंथालयात अनेक ग्रंथ आहेत.": { native: "There are many books in the library.", bases: { "आहेत": "to be" } }
+      "ग्रंथालयात अनेक ग्रंथ आहेत.": { native: "There are many books in the library.", bases: { "आहेत": "to be", "अनेक": "many" } }
   "mr-1775":
     native: "page"
     notes:
@@ -152,13 +152,17 @@ cards:
     native: "to publish"
     notes:
       "n1": "{1} is printing and making a book available."
+    bases:
+      "प्रकाशित": "published"
     examples:
-      "त्याने पहिली कादंबरी प्रकाशित केली.": { native: "He published his first novel.", bases: { "पहिली": "first" } }
-      "पुस्तक पुढच्या वर्षी प्रकाशित होईल.": { native: "The book will be published next year.", bases: { "पुढच्या": "next", "होईल": "to be" } }
+      "त्याने पहिली कादंबरी प्रकाशित केली.": { native: "He published his first novel.", bases: { "पहिली": "first", "प्रकाशित": "published" } }
+      "पुस्तक पुढच्या वर्षी प्रकाशित होईल.": { native: "The book will be published next year.", bases: { "पुढच्या": "next", "होईल": "to be", "प्रकाशित": "published" } }
   "mr-1790":
     native: "to translate"
     notes:
       "n1": "{1} is translating a text into another language."
+    bases:
+      "अनुवादित": "translated"
     examples:
       "तिने कथा मराठीत अनुवादित केली.": { native: "She translated the story into Marathi.", bases: { "मराठीत": "into Marathi", "अनुवादित": "translated" } }
       "ही कविता इंग्रजीत अनुवादित करा.": { native: "Translate this poem into English.", bases: { "इंग्रजीत": "into English", "अनुवादित": "translated" } }
@@ -166,9 +170,11 @@ cards:
     native: "to describe"
     notes:
       "n1": "{1} is describing something in words."
+    bases:
+      "वर्णन": "description"
     examples:
-      "त्याने गाव छान वर्णन केलं.": "He described the village nicely."
-      "कादंबरीत सुंदर निसर्गाचं वर्णन आहे.": { native: "The novel has a beautiful description of nature.", bases: { "आहे": "to be" } }
+      "त्याने गाव छान वर्णन केलं.": { native: "He described the village nicely.", bases: { "वर्णन": "description" } }
+      "कादंबरीत सुंदर निसर्गाचं वर्णन आहे.": { native: "The novel has a beautiful description of nature.", bases: { "आहे": "to be", "वर्णन": "description" } }
   "mr-1792":
     native: "to imagine"
     notes:
@@ -182,4 +188,4 @@ cards:
       "n1": "{1} is unfolding a story or a mystery bit by bit."
     examples:
       "कथा हळूहळू उलगडत गेली.": { native: "The story unfolded slowly.", bases: { "हळूहळू": "slowly", "उलगडत": "to unfold, to reveal" } }
-      "रहस्य शेवटी उलगडलं.": { native: "The mystery was finally revealed.", bases: { "शेवटी": "at the end", "उलगडलं": "to unfold, to reveal" } }
+      "रहस्य शेवटी उलगडलं.": { native: "The mystery was finally revealed.", bases: { "शेवटी": "at the end", "उलगडलं": "to unfold, to reveal", "रहस्य": "mystery" } }

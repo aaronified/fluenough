@@ -18,7 +18,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "सेवा", reading: "sevā" }] }
     examples:
-      - { target: "ही सेवा चांगली आहे.", reading: "hi sevā cāṅgali āhe.", ipa: "ɦi seʋa tsaŋɡəli aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ही सेवा चांगली आहे.", reading: "hi sevā cāṅgali āhe.", ipa: "ɦi seʋa tsaŋɡəli aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "चांगली", ref: "mr-0759" }] }
       - { target: "सेवेसाठी शुल्क द्यावं लागतं.", reading: "sevesāṭhi śulk dyāvam̐ lāgtam̐.", ipa: "seʋesaʈʰi ʃulk d̪jaʋə̃ laɡt̪ə̃", bases: [{ word: "सेवेसाठी", base: "सेवा", reading: "sevā" }, { word: "शुल्क", ref: "mr-1411" }, { word: "द्यावं", ref: "mr-0721" }, { word: "लागतं", base: "लागणे", reading: "lāgṇe" }] }
   - id: "mr-1403"
     target: "पोस्ट"
@@ -72,9 +72,11 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "पिन कोड", reading: "pin koḍ" }] }
+    bases:
+      - { word: "पिन", base: "पिन", reading: "pin" }
     examples:
-      - { target: "पिन कोड लिहा.", reading: "pin koḍ lihā.", ipa: "pin koɖ liɦa", bases: [{ word: "लिहा", ref: "mr-0716" }] }
-      - { target: "पिन कोड चुकीचा आहे.", reading: "pin koḍ cukicā āhe.", ipa: "pin koɖ tsukitsa aɦe", bases: [{ word: "चुकीचा", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पिन कोड लिहा.", reading: "pin koḍ lihā.", ipa: "pin koɖ liɦa", bases: [{ word: "लिहा", ref: "mr-0716" }, { word: "पिन", base: "पिन", reading: "pin" }] }
+      - { target: "पिन कोड चुकीचा आहे.", reading: "pin koḍ cukicā āhe.", ipa: "pin koɖ tsukitsa aɦe", bases: [{ word: "चुकीचा", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "पिन", base: "पिन", reading: "pin" }] }
   - id: "mr-1408"
     target: "कागदपत्र"
     reading: "kāgdpatr"
@@ -84,7 +86,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कागदपत्र", reading: "kāgdpatr" }] }
     examples:
-      - { target: "सगळी कागदपत्र आणली का?", reading: "sagḷi kāgdpatr āṇli kā?", ipa: "səɡɭi kaɡd̪pət̪r aɳli ka", bases: [{ word: "आणली", ref: "mr-0800" }] }
+      - { target: "सगळी कागदपत्र आणली का?", reading: "sagḷi kāgdpatr āṇli kā?", ipa: "səɡɭi kaɡd̪pət̪r aɳli ka", bases: [{ word: "आणली", ref: "mr-0800" }, { word: "सगळी", base: "सगळा", reading: "sagḷā" }] }
       - { target: "कागदपत्रांवर सही करा.", reading: "kāgdpatrāṁvar sahi karā.", ipa: "kaɡd̪pət̪rãʋər səɦi kəra", bases: [{ word: "कागदपत्रांवर", base: "कागदपत्र", reading: "kāgdpatr" }, { word: "सही", ref: "mr-1410" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1409"
     target: "फॉर्म"
@@ -128,8 +130,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "रांग", reading: "rāṅg" }] }
     examples:
-      - { target: "रांग खूप मोठी आहे.", reading: "rāṅg khup moṭhi āhe.", ipa: "raŋɡ kʰup moʈʰi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "रांगेत थांबा.", reading: "rāṅget thāmbā.", ipa: "raŋɡet̪ t̪ʰamba", bases: [{ word: "थांबा", ref: "mr-0803" }] }
+      - { target: "रांग खूप मोठी आहे.", reading: "rāṅg khup moṭhi āhe.", ipa: "raŋɡ kʰup moʈʰi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "मोठी", ref: "mr-0760" }] }
+      - { target: "रांगेत थांबा.", reading: "rāṅget thāmbā.", ipa: "raŋɡet̪ t̪ʰamba", bases: [{ word: "थांबा", ref: "mr-0803" }, { word: "रांगेत", base: "रांग", reading: "rāṅg" }] }
   - id: "mr-1413"
     target: "काउंटर"
     reading: "kāuṇṭar"
@@ -140,7 +142,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "काउंटर", reading: "kāuṇṭar" }] }
     examples:
       - { target: "तिकीट काउंटर कुठे आहे?", reading: "tikiṭ kāuṇṭar kuṭhe āhe?", ipa: "t̪ikiʈ kauɳʈər kuʈʰe aɦe", bases: [{ word: "तिकीट", ref: "mr-0423" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "दुसऱ्या काउंटरवर जा.", reading: "dusaryā kāuṇṭarvar jā.", ipa: "d̪usərja kauɳʈərʋər dza", bases: [{ word: "दुसऱ्या", ref: "mr-0685" }, { word: "जा", ref: "mr-0710" }] }
+      - { target: "दुसऱ्या काउंटरवर जा.", reading: "dusaryā kāuṇṭarvar jā.", ipa: "d̪usərja kauɳʈərʋər dza", bases: [{ word: "दुसऱ्या", ref: "mr-0685" }, { word: "जा", ref: "mr-0710" }, { word: "काउंटरवर", base: "काउंटर", reading: "kāuṇṭar" }] }
   - id: "mr-1414"
     target: "टोकन"
     reading: "ṭokan"
@@ -172,7 +174,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "प्रमाणपत्र", reading: "pramāṇpatr" }] }
     examples:
-      - { target: "जन्म प्रमाणपत्र आणा.", reading: "janm pramāṇpatr āṇā.", ipa: "dzənm prəmaɳpət̪r aɳa", bases: [{ word: "आणा", ref: "mr-0800" }] }
+      - { target: "जन्म प्रमाणपत्र आणा.", reading: "janm pramāṇpatr āṇā.", ipa: "dzənm prəmaɳpət̪r aɳa", bases: [{ word: "आणा", ref: "mr-0800" }, { word: "जन्म", base: "जन्म", reading: "janm" }] }
       - { target: "प्रमाणपत्र मिळालं.", reading: "pramāṇpatr miḷālam̐.", ipa: "prəmaɳpət̪r miɭalə̃", bases: [{ word: "मिळालं", base: "मिळणे", reading: "miḷṇe" }] }
   - id: "mr-1417"
     target: "ओळखपत्र"
@@ -194,7 +196,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "खाते", reading: "khāte" }] }
     examples:
-      - { target: "माझं बँकेत खातं आहे.", reading: "mājham̐ bam̐ket khātam̐ āhe.", ipa: "madzʱə̃ bə̃ket̪ kʰat̪ə̃ aɦe", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "बँकेत", ref: "mr-0959" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "माझं बँकेत खातं आहे.", reading: "mājham̐ bam̐ket khātam̐ āhe.", ipa: "madzʱə̃ bə̃ket̪ kʰat̪ə̃ aɦe", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "बँकेत", ref: "mr-0959" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "खातं", base: "खाते", reading: "khāte" }] }
       - { target: "खात्यात पैसे भरा.", reading: "khātyāt paise bharā.", ipa: "kʰat̪jat̪ pəise bʱəra", bases: [{ word: "खात्यात", base: "खाते", reading: "khāte" }, { word: "भरा", ref: "mr-0795" }] }
   - id: "mr-1419"
     target: "रक्कम"

@@ -48,7 +48,7 @@ cards:
     notes:
       "n1": "{1} is a war between countries or kings."
     examples:
-      "युद्ध अनेक वर्षं चाललं.": "The war went on for many years."
+      "युद्ध अनेक वर्षं चाललं.": { native: "The war went on for many years.", bases: { "अनेक": "many" } }
       "युद्धात खूप लोक मेले.": { native: "Many people died in the war.", bases: { "मेले": "to die", "युद्धात": "war" } }
   "mr-1572":
     native: "battle"
@@ -126,7 +126,7 @@ cards:
       "n1": "{1} is a century, a hundred years."
     examples:
       "हा किल्ला सातशे वर्षं जुना आहे.": { native: "This fort is seven hundred years old.", bases: { "आहे": "to be" } }
-      "गेल्या शतकात मोठे बदल झाले.": { native: "Big changes happened in the last century.", bases: { "गेल्या": "last", "झाले": "to become", "शतकात": "century" } }
+      "गेल्या शतकात मोठे बदल झाले.": { native: "Big changes happened in the last century.", bases: { "गेल्या": "last", "झाले": "to become", "शतकात": "century", "मोठे": "big" } }
   "mr-1583":
     native: "culture"
     notes:
@@ -145,6 +145,8 @@ cards:
     native: "to build a memorial"
     notes:
       "n1": "{1} is building a monument to remember someone."
+    bases:
+      "बांधणे": "to build"
     examples:
       "त्यांनी स्मारक बांधलं.": { native: "They built a memorial.", bases: { "बांधलं": "to build" } }
       "शहीदांसाठी स्मारक उभारलं.": { native: "A memorial was built for the martyrs.", bases: { "शहीदांसाठी": "for the martyrs", "उभारलं": "to build" } }

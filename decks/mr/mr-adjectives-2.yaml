@@ -18,7 +18,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "हुशार", reading: "huśār" }] }
     examples:
       - { target: "ती खूप हुशार आहे.", reading: "ti khup huśār āhe.", ipa: "t̪i kʰup ɦuʃar aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "हुशार मुलांना बक्षीस मिळालं.", reading: "huśār mulānnā bakṣis miḷālam̐.", ipa: "ɦuʃar mulanna bəkʂis miɭalə̃", bases: [{ word: "मुलांना", ref: "mr-0224" }, { word: "मिळालं", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "हुशार मुलांना बक्षीस मिळालं.", reading: "huśār mulānnā bakṣis miḷālam̐.", ipa: "ɦuʃar mulanna bəkʂis miɭalə̃", bases: [{ word: "मुलांना", ref: "mr-0224" }, { word: "मिळालं", base: "मिळणे", reading: "miḷṇe" }, { word: "बक्षीस", base: "बक्षीस", reading: "bakṣis" }] }
   - id: "mr-1245"
     target: "आळशी"
     reading: "āḷśi"
@@ -27,7 +27,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आळशी", reading: "āḷśi" }] }
     examples:
-      - { target: "तो फार आळशी आहे.", reading: "to phār āḷśi āhe.", ipa: "t̪o pʰar aɭʃi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "तो फार आळशी आहे.", reading: "to phār āḷśi āhe.", ipa: "t̪o pʰar aɭʃi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "फार", base: "फार", reading: "phār" }] }
       - { target: "आळशी माणूस लवकर उठत नाही.", reading: "āḷśi māṇus lavkar uṭhat nāhi.", ipa: "aɭʃi maɳus ləʋkər uʈʰət̪ naɦi", bases: [{ word: "माणूस", ref: "mr-0686" }, { word: "उठत", ref: "mr-0494" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
   - id: "mr-1246"
     target: "शांत"
@@ -48,7 +48,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "रिकामा", reading: "rikāmā" }] }
     examples:
       - { target: "बाटली रिकामी आहे.", reading: "bāṭli rikāmi āhe.", ipa: "baʈli rikami aɦe", bases: [{ word: "रिकामी", base: "रिकामा", reading: "rikāmā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "रिकामा खोका आणा.", reading: "rikāmā khokā āṇā.", ipa: "rikama kʰoka aɳa", bases: [{ word: "आणा", ref: "mr-0800" }] }
+      - { target: "रिकामा खोका आणा.", reading: "rikāmā khokā āṇā.", ipa: "rikama kʰoka aɳa", bases: [{ word: "आणा", ref: "mr-0800" }, { word: "खोका", base: "खोका", reading: "khokā" }] }
   - id: "mr-1248"
     target: "दाट"
     reading: "dāṭ"
@@ -87,8 +87,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "म्हातारा", reading: "mhātārā" }] }
     examples:
-      - { target: "म्हातारे आजोबा बसले होते.", reading: "mhātāre ājobā basle hote.", ipa: "mɦat̪are adzoba bəsle ɦot̪e", bases: [{ word: "आजोबा", ref: "mr-0198" }, { word: "बसले", base: "बसणे", reading: "basṇe" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
-      - { target: "म्हातारी आजी गोष्ट सांगते.", reading: "mhātāri āji goṣṭ sāṅgate.", ipa: "mɦat̪ari adʒi ɡoʂʈ saŋɡət̪e", bases: [{ word: "आजी", ref: "mr-0197" }, { word: "सांगते", ref: "mr-0720" }] }
+      - { target: "म्हातारे आजोबा बसले होते.", reading: "mhātāre ājobā basle hote.", ipa: "mɦat̪are adzoba bəsle ɦot̪e", bases: [{ word: "आजोबा", ref: "mr-0198" }, { word: "बसले", base: "बसणे", reading: "basṇe" }, { word: "होते", base: "होणे", reading: "hoṇe" }, { word: "म्हातारे", base: "म्हातारा", reading: "mhātārā" }] }
+      - { target: "म्हातारी आजी गोष्ट सांगते.", reading: "mhātāri āji goṣṭ sāṅgate.", ipa: "mɦat̪ari adʒi ɡoʂʈ saŋɡət̪e", bases: [{ word: "आजी", ref: "mr-0197" }, { word: "सांगते", ref: "mr-0720" }, { word: "म्हातारी", base: "म्हातारा", reading: "mhātārā" }] }
   - id: "mr-1252"
     target: "ताजा"
     reading: "tājā"
@@ -98,7 +98,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ताजा", reading: "tājā" }] }
     examples:
       - { target: "ताज्या भाज्या आणल्या.", reading: "tājyā bhājyā āṇalyā.", ipa: "t̪adʒja bʱadʒja aɳəlja", bases: [{ word: "ताज्या", base: "ताजा", reading: "tājā" }, { word: "भाज्या", ref: "mr-0390" }, { word: "आणल्या", ref: "mr-0800" }] }
-      - { target: "सकाळची हवा ताजी असते.", reading: "sakāḷci havā tāji aste.", ipa: "səkaɭtʃi ɦəʋa t̪adʒi əst̪e", bases: [{ word: "सकाळची", ref: "mr-0477" }, { word: "हवा", ref: "mr-1018" }, { word: "असते", base: "असणे", reading: "asṇe" }] }
+      - { target: "सकाळची हवा ताजी असते.", reading: "sakāḷci havā tāji aste.", ipa: "səkaɭtʃi ɦəʋa t̪adʒi əst̪e", bases: [{ word: "सकाळची", ref: "mr-0477" }, { word: "हवा", ref: "mr-1018" }, { word: "असते", base: "असणे", reading: "asṇe" }, { word: "ताजी", base: "ताजा", reading: "tājā" }] }
   - id: "mr-1253"
     target: "शिळा"
     reading: "śiḷā"
@@ -108,7 +108,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "शिळा", reading: "śiḷā" }] }
     examples:
       - { target: "ही पोळी शिळी आहे.", reading: "hi poḷi śiḷi āhe.", ipa: "ɦi poɭi ʃiɭi aɦe", bases: [{ word: "शिळी", base: "शिळा", reading: "śiḷā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "शिळं अन्न खाऊ नका.", reading: "śiḷam̐ ann khāu nakā.", ipa: "ʃiɭə̃ ənn kʰau nəka", bases: [{ word: "खाऊ", ref: "mr-0708" }, { word: "नका", ref: "mr-0413" }] }
+      - { target: "शिळं अन्न खाऊ नका.", reading: "śiḷam̐ ann khāu nakā.", ipa: "ʃiɭə̃ ənn kʰau nəka", bases: [{ word: "खाऊ", ref: "mr-0708" }, { word: "नका", ref: "mr-0413" }, { word: "शिळं", base: "शिळा", reading: "śiḷā" }, { word: "अन्न", base: "अन्न", reading: "ann" }] }
   - id: "mr-1254"
     target: "कच्चा"
     reading: "kaccā"
@@ -127,8 +127,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आंबट", reading: "āmbaṭ" }] }
     examples:
-      - { target: "लिंबू आंबट आहे.", reading: "limbu āmbaṭ āhe.", ipa: "limbu ambəʈ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "चिंच आंबट लागते.", reading: "ciñc āmbaṭ lāgte.", ipa: "tʃiɲts ambəʈ laɡt̪e", bases: [{ word: "लागते", base: "लागणे", reading: "lāgṇe" }] }
+      - { target: "लिंबू आंबट आहे.", reading: "limbu āmbaṭ āhe.", ipa: "limbu ambəʈ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "लिंबू", base: "लिंबू", reading: "limbu" }] }
+      - { target: "चिंच आंबट लागते.", reading: "ciñc āmbaṭ lāgte.", ipa: "tʃiɲts ambəʈ laɡt̪e", bases: [{ word: "लागते", base: "लागणे", reading: "lāgṇe" }, { word: "चिंच", base: "चिंच", reading: "ciñc" }] }
   - id: "mr-1256"
     target: "कडू"
     reading: "kaḍu"
@@ -148,7 +148,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "प्रामाणिक", reading: "prāmāṇik" }] }
     examples:
       - { target: "तो प्रामाणिक माणूस आहे.", reading: "to prāmāṇik māṇus āhe.", ipa: "t̪o pramaɳik maɳus aɦe", bases: [{ word: "माणूस", ref: "mr-0686" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "प्रामाणिक असणं चांगलं आहे.", reading: "prāmāṇik asṇam̐ cāṅgalam̐ āhe.", ipa: "pramaɳik əsɳə̃ tsaŋɡələ̃ aɦe", bases: [{ word: "असणं", base: "असणे", reading: "asṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "प्रामाणिक असणं चांगलं आहे.", reading: "prāmāṇik asṇam̐ cāṅgalam̐ āhe.", ipa: "pramaɳik əsɳə̃ tsaŋɡələ̃ aɦe", bases: [{ word: "असणं", base: "असणे", reading: "asṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "चांगलं", ref: "mr-0759" }] }
   - id: "mr-1258"
     target: "मेहनती"
     reading: "mehnti"

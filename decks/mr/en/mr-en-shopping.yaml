@@ -21,7 +21,7 @@ cards:
       "n1": "{1} is a discount: the price taken off."
     examples:
       "सवलत किती आहे?": { native: "How much is the discount?", bases: { "आहे": "to be" } }
-      "पंधरा टक्के सवलत आहे.": { native: "There is a fifteen percent discount.", bases: { "आहे": "to be" } }
+      "पंधरा टक्के सवलत आहे.": { native: "There is a fifteen percent discount.", bases: { "आहे": "to be", "टक्के": "percent" } }
   "mr-1069":
     native: "receipt"
     notes:
@@ -61,9 +61,11 @@ cards:
     native: "to return (an item)"
     notes:
       "n1": "{1} is used for giving back an item you bought."
+    bases:
+      "परत": "back"
     examples:
-      "हा शर्ट परत करायचा आहे.": { native: "I want to return this shirt.", bases: { "आहे": "to be" } }
-      "मी वस्तू परत केली.": "I returned the item."
+      "हा शर्ट परत करायचा आहे.": { native: "I want to return this shirt.", bases: { "आहे": "to be", "परत": "back" } }
+      "मी वस्तू परत केली.": { native: "I returned the item.", bases: { "परत": "back" } }
   "mr-1075":
     native: "to buy"
     notes:
@@ -91,14 +93,14 @@ cards:
       "n1": "{1} is used for exchanging an item or changing a colour."
     examples:
       "हा शर्ट बदलता येईल का?": { native: "Can I exchange this shirt?", bases: { "बदलता": "to change; to exchange" } }
-      "रंग बदलायचा आहे.": { native: "I want to change the colour.", bases: { "आहे": "to be", "बदलायचा": "to change; to exchange" } }
+      "रंग बदलायचा आहे.": { native: "I want to change the colour.", bases: { "आहे": "to be", "बदलायचा": "to change; to exchange", "रंग": "colours" } }
   "mr-1079":
     native: "item, goods"
     notes:
       "n1": "{1} is an item or goods for sale."
     examples:
       "या वस्तू नवीन आहेत.": { native: "These items are new.", bases: { "आहेत": "to be" } }
-      "वस्तू परत घेता येते का?": "Can I take back the item?"
+      "वस्तू परत घेता येते का?": { native: "Can I take back the item?", bases: { "परत": "back" } }
   "mr-1080":
     native: "free of charge"
     notes:
@@ -146,8 +148,8 @@ cards:
     notes:
       "n1": "{1} is a coin."
     examples:
-      "हे नाणे जुने आहे.": { native: "This coin is old.", bases: { "आहे": "to be" } }
-      "नाणे खाली पडलं.": "The coin fell down."
+      "हे नाणे जुने आहे.": { native: "This coin is old.", bases: { "आहे": "to be", "जुने": "old" } }
+      "नाणे खाली पडलं.": { native: "The coin fell down.", bases: { "खाली": "down" } }
   "mr-1087":
     native: "banknote"
     notes:

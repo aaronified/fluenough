@@ -35,14 +35,14 @@ cards:
       "n1": "{1} is a railway platform, a loanword from English."
     examples:
       "गाडी प्लॅटफॉर्म नंबर तीनवर येईल.": { native: "The train will come to platform number three.", bases: { "प्लॅटफॉर्म": "platform" } }
-      "प्लॅटफॉर्मवर गर्दी आहे.": { native: "There is a crowd on the platform.", bases: { "आहे": "to be", "प्लॅटफॉर्मवर": "platform" } }
+      "प्लॅटफॉर्मवर गर्दी आहे.": { native: "There is a crowd on the platform.", bases: { "आहे": "to be", "प्लॅटफॉर्मवर": "platform", "गर्दी": "crowd" } }
   "mr-1215":
     native: "aeroplane"
     notes:
       "n1": "{1} is an aeroplane."
     examples:
       "विमान उडालं.": { native: "The plane took off.", bases: { "उडालं": "to fly" } }
-      "विमानात खिडकीची जागा आवडते.": { native: "I like a window seat in the plane.", bases: { "विमानात": "aeroplane" } }
+      "विमानात खिडकीची जागा आवडते.": { native: "I like a window seat in the plane.", bases: { "विमानात": "aeroplane", "जागा": "place" } }
   "mr-1216":
     native: "passport"
     notes:
@@ -77,7 +77,7 @@ cards:
       "n1": "{1} is a route or way to a place."
     examples:
       "हा मार्ग कुठे जातो?": "Where does this route go?"
-      "सर्वात जलद मार्ग कोणता?": { native: "Which is the fastest route?", bases: { "कोणता": "which" } }
+      "सर्वात जलद मार्ग कोणता?": { native: "Which is the fastest route?", bases: { "कोणता": "which", "सर्वात": "most", "जलद": "fast" } }
   "mr-1221":
     native: "delay, lateness"
     notes:
@@ -110,9 +110,11 @@ cards:
     native: "to book"
     notes:
       "n1": "{1} is booking a ticket, seat or room in advance."
+    bases:
+      "बुक": "to book"
     examples:
-      "तिकीट बुक केलं.": "I booked the ticket."
-      "खोली बुक करा.": "Book a room."
+      "तिकीट बुक केलं.": { native: "I booked the ticket.", bases: { "बुक": "to book" } }
+      "खोली बुक करा.": { native: "Book a room.", bases: { "बुक": "to book" } }
   "mr-1226":
     native: "to get off, to alight"
     notes:

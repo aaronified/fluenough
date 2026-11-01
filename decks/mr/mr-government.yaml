@@ -116,7 +116,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कर", reading: "kar" }] }
     examples:
-      - { target: "कर भरणं गरजेचं आहे.", reading: "kar bharṇam̐ garjecam̐ āhe.", ipa: "kər bʱərɳə̃ ɡərdʒetsə̃ aɦe", bases: [{ word: "भरणं", ref: "mr-0795" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कर भरणं गरजेचं आहे.", reading: "kar bharṇam̐ garjecam̐ āhe.", ipa: "kər bʱərɳə̃ ɡərdʒetsə̃ aɦe", bases: [{ word: "भरणं", ref: "mr-0795" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "गरजेचं", ref: "mr-0417" }] }
       - { target: "कर किती लागेल?", reading: "kar kiti lāgel?", ipa: "kər kit̪i laɡel", bases: [{ word: "लागेल", base: "लागणे", reading: "lāgṇe" }] }
   - id: "mr-1433"
     target: "नागरिक"
@@ -149,8 +149,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "लोकशाही", reading: "lokśāhi" }] }
     examples:
-      - { target: "भारत लोकशाही देश आहे.", reading: "bhārat lokśāhi deś āhe.", ipa: "bʱarət̪ lokʃaɦi d̪eʃ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "लोकशाहीत मत देणं महत्त्वाचं असतं.", reading: "lokśāhit mat deṇam̐ mahattvācam̐ astam̐.", ipa: "lokʃaɦit̪ mət̪ d̪eɳə̃ məɦət̪t̪ʋatsə̃ əst̪ə̃", bases: [{ word: "लोकशाहीत", base: "लोकशाही", reading: "lokśāhi" }, { word: "देणं", ref: "mr-0721" }, { word: "असतं", base: "असणे", reading: "asṇe" }] }
+      - { target: "भारत लोकशाही देश आहे.", reading: "bhārat lokśāhi deś āhe.", ipa: "bʱarət̪ lokʃaɦi d̪eʃ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "भारत", base: "भारत", reading: "bhārat" }] }
+      - { target: "लोकशाहीत मत देणं महत्त्वाचं असतं.", reading: "lokśāhit mat deṇam̐ mahattvācam̐ astam̐.", ipa: "lokʃaɦit̪ mət̪ d̪eɳə̃ məɦət̪t̪ʋatsə̃ əst̪ə̃", bases: [{ word: "लोकशाहीत", base: "लोकशाही", reading: "lokśāhi" }, { word: "देणं", ref: "mr-0721" }, { word: "असतं", base: "असणे", reading: "asṇe" }, { word: "महत्त्वाचं", base: "महत्त्वाचा", reading: "mahattvācā" }] }
   - id: "mr-1436"
     target: "राष्ट्र"
     reading: "rāṣṭr"
@@ -190,9 +190,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "निवडून येणे", reading: "nivḍun yeṇe" }] }
+    bases:
+      - { word: "निवडून", base: "निवडणे", reading: "nivḍṇe" }
     examples:
-      - { target: "तो दोनदा निवडून आला.", reading: "to dondā nivḍun ālā.", ipa: "t̪o d̪ond̪a niʋɖun ala", bases: [{ word: "दोनदा", base: "दोनदा", reading: "dondā" }, { word: "आला", ref: "mr-0711" }] }
-      - { target: "कोण निवडून येईल?", reading: "koṇ nivḍun yeil?", ipa: "koɳ niʋɖun jeil", bases: [{ word: "येईल", ref: "mr-0711" }] }
+      - { target: "तो दोनदा निवडून आला.", reading: "to dondā nivḍun ālā.", ipa: "t̪o d̪ond̪a niʋɖun ala", bases: [{ word: "दोनदा", base: "दोनदा", reading: "dondā" }, { word: "आला", ref: "mr-0711" }, { word: "निवडून", base: "निवडणे", reading: "nivḍṇe" }] }
+      - { target: "कोण निवडून येईल?", reading: "koṇ nivḍun yeil?", ipa: "koɳ niʋɖun jeil", bases: [{ word: "येईल", ref: "mr-0711" }, { word: "निवडून", base: "निवडणे", reading: "nivḍṇe" }] }
   - id: "mr-1440"
     target: "कर भरणे"
     reading: "kar bharṇe"

@@ -28,7 +28,7 @@ cards:
       "n1": "{1} is music, singing and playing instruments."
     examples:
       "मला संगीत ऐकायला आवडतं.": "I like listening to music."
-      "संगीत शिकायला सुरुवात केली.": "I started learning music."
+      "संगीत शिकायला सुरुवात केली.": { native: "I started learning music.", bases: { "सुरुवात": "beginning" } }
   "mr-1132":
     native: "guitar"
     notes:
@@ -41,8 +41,8 @@ cards:
     notes:
       "n1": "{1} is a bamboo flute."
     examples:
-      "बासरीचा सूर गोड आहे.": { native: "The flute's tune is sweet.", bases: { "आहे": "to be", "बासरीचा": "flute" } }
-      "कृष्णाच्या हातात बासरी असते.": { native: "Krishna holds a flute.", bases: { "असते": "to be" } }
+      "बासरीचा सूर गोड आहे.": { native: "The flute's tune is sweet.", bases: { "आहे": "to be", "बासरीचा": "flute", "सूर": "tune" } }
+      "कृष्णाच्या हातात बासरी असते.": { native: "Krishna holds a flute.", bases: { "असते": "to be", "कृष्णाच्या": "Krishna's" } }
   "mr-1134":
     native: "gardening"
     notes:
@@ -56,7 +56,7 @@ cards:
       "n1": "{1} is wandering or trekking for fun, especially in the hills."
     examples:
       "शनिवारी डोंगरात भटकंती करतो.": "On Saturday I go trekking in the hills."
-      "भटकंती खूप मजेदार असते.": { native: "Trekking is very fun.", bases: { "असते": "to be" } }
+      "भटकंती खूप मजेदार असते.": { native: "Trekking is very fun.", bases: { "असते": "to be", "मजेदार": "funny" } }
   "mr-1136":
     native: "to run"
     notes:
@@ -77,14 +77,14 @@ cards:
       "n1": "{1} is photography, a loanword from English."
     examples:
       "मला फोटोग्राफी आवडते.": "I like photography."
-      "फोटोग्राफीचा कोर्स केला.": { native: "I took a photography course.", bases: { "फोटोग्राफीचा": "photography" } }
+      "फोटोग्राफीचा कोर्स केला.": { native: "I took a photography course.", bases: { "फोटोग्राफीचा": "photography", "कोर्स": "course" } }
   "mr-1139":
     native: "club"
     notes:
       "n1": "{1} is a club, a group that meets for a hobby."
     examples:
       "आम्ही संगीताचा क्लब सुरू केला.": { native: "We started a music club.", bases: { "सुरू": "started" } }
-      "क्लब रविवारी भरतो.": "The club meets on Sunday."
+      "क्लब रविवारी भरतो.": { native: "The club meets on Sunday.", bases: { "रविवारी": "on Sunday" } }
   "mr-1140":
     native: "practice"
     notes:
@@ -104,7 +104,7 @@ cards:
     notes:
       "n1": "{1} is the verb for winning."
     examples:
-      "आमची टीम जिंकली.": { native: "Our team won.", bases: { "जिंकली": "to win" } }
+      "आमची टीम जिंकली.": { native: "Our team won.", bases: { "जिंकली": "to win", "टीम": "team" } }
       "तू नेहमी जिंकतोस.": { native: "You always win.", bases: { "जिंकतोस": "to win" } }
   "mr-1143":
     native: "to lose"
@@ -112,14 +112,14 @@ cards:
       "n1": "{1} is the verb for losing a game."
     examples:
       "ते सामना हरले.": { native: "They lost the match.", bases: { "हरले": "to lose" } }
-      "मी खेळात हरलो.": { native: "I lost the game.", bases: { "हरलो": "to lose" } }
+      "मी खेळात हरलो.": { native: "I lost the game.", bases: { "हरलो": "to lose", "खेळात": "in the game" } }
   "mr-1144":
     native: "mountain climbing"
     notes:
       "n1": "{1} is mountain climbing."
     examples:
       "त्याला गिर्यारोहण आवडतं.": "He likes mountain climbing."
-      "गिर्यारोहणासाठी खास बूट लागतात.": { native: "Mountain climbing needs special boots.", bases: { "लागतात": "to need", "गिर्यारोहणासाठी": "mountain climbing" } }
+      "गिर्यारोहणासाठी खास बूट लागतात.": { native: "Mountain climbing needs special boots.", bases: { "लागतात": "to need", "गिर्यारोहणासाठी": "mountain climbing", "खास": "special" } }
   "mr-1145":
     native: "painting, drawing"
     notes:

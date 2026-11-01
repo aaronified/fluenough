@@ -21,21 +21,21 @@ cards:
       "n1": "{1} is a machine or a device that does work."
     examples:
       "हे यंत्र नवीन आहे.": { native: "This machine is new.", bases: { "नवीन": "new", "आहे": "to be" } }
-      "यंत्र बंद पडलं.": "The machine stopped."
+      "यंत्र बंद पडलं.": { native: "The machine stopped.", bases: { "बंद": "closed" } }
   "mr-1443":
     native: "system, mechanism"
     notes:
       "n1": "{1} is a system or a mechanism that works together."
     examples:
       "सिग्नलची यंत्रणा बिघडली.": { native: "The signal system broke down.", bases: { "बिघडली": "to break down" } }
-      "ही यंत्रणा खूप जटिल आहे.": { native: "This system is very complex.", bases: { "आहे": "to be" } }
+      "ही यंत्रणा खूप जटिल आहे.": { native: "This system is very complex.", bases: { "आहे": "to be", "जटिल": "complex" } }
   "mr-1444":
     native: "software"
     notes:
       "n1": "{1} is software, a loanword from English."
     examples:
       "नवीन सॉफ्टवेअर आलं.": { native: "New software has come.", bases: { "नवीन": "new" } }
-      "सॉफ्टवेअर अपडेट करा.": "Update the software."
+      "सॉफ्टवेअर अपडेट करा.": { native: "Update the software.", bases: { "अपडेट": "update" } }
   "mr-1445":
     native: "hardware"
     notes:
@@ -110,9 +110,12 @@ cards:
     native: "artificial intelligence"
     notes:
       "n1": "{1} is artificial intelligence."
+    bases:
+      "कृत्रिम": "artificial"
+      "बुद्धिमत्ता": "intelligence"
     examples:
-      "कृत्रिम बुद्धिमत्ता खूप वाढली आहे.": { native: "Artificial intelligence has grown a lot.", bases: { "आहे": "to be" } }
-      "कृत्रिम बुद्धिमत्तेचा वापर होतो.": { native: "Artificial intelligence is used.", bases: { "बुद्धिमत्तेचा": "of intelligence", "वापर": "use", "होतो": "to be" } }
+      "कृत्रिम बुद्धिमत्ता खूप वाढली आहे.": { native: "Artificial intelligence has grown a lot.", bases: { "आहे": "to be", "कृत्रिम": "artificial", "बुद्धिमत्ता": "intelligence" } }
+      "कृत्रिम बुद्धिमत्तेचा वापर होतो.": { native: "Artificial intelligence is used.", bases: { "बुद्धिमत्तेचा": "of intelligence", "वापर": "use", "होतो": "to be", "कृत्रिम": "artificial" } }
   "mr-1456":
     native: "virus (computer)"
     notes:
@@ -131,22 +134,28 @@ cards:
     native: "to upload"
     notes:
       "n1": "{1} is sending a file to the internet, the opposite of downloading."
+    bases:
+      "अपलोड": "upload"
     examples:
-      "फोटो अपलोड केला.": "I uploaded the photo."
-      "व्हिडिओ अपलोड करा.": "Upload the video."
+      "फोटो अपलोड केला.": { native: "I uploaded the photo.", bases: { "अपलोड": "upload" } }
+      "व्हिडिओ अपलोड करा.": { native: "Upload the video.", bases: { "अपलोड": "upload" } }
   "mr-1459":
     native: "to repair, to fix"
     notes:
       "n1": "{1} is repairing a machine or a thing that is broken."
+    bases:
+      "दुरुस्त": "repaired"
     examples:
-      "मी फोन दुरुस्त केला.": "I repaired the phone."
-      "संगणक दुरुस्त झाला का?": { native: "Was the computer repaired?", bases: { "झाला": "to become" } }
+      "मी फोन दुरुस्त केला.": { native: "I repaired the phone.", bases: { "दुरुस्त": "repaired" } }
+      "संगणक दुरुस्त झाला का?": { native: "Was the computer repaired?", bases: { "झाला": "to become", "दुरुस्त": "repaired" } }
   "mr-1460":
     native: "to make, to prepare"
     notes:
       "n1": "{1} is making or preparing a thing."
+    bases:
+      "तयार": "ready"
     examples:
-      "नवीन ॲप तयार केलं.": { native: "I made a new app.", bases: { "नवीन": "new" } }
+      "नवीन ॲप तयार केलं.": { native: "I made a new app.", bases: { "नवीन": "new", "तयार": "ready" } }
       "कार्यक्रमाची तयारी झाली.": { native: "The preparation for the programme is done.", bases: { "कार्यक्रमाची": "of the programme", "तयारी": "preparation", "झाली": "to become" } }
   "mr-1461":
     native: "to run, to operate"
@@ -154,4 +163,4 @@ cards:
       "n1": "{1} is running a machine or a business."
     examples:
       "तो संगणक चालवतो.": { native: "He operates the computer.", bases: { "चालवतो": "to run, to operate" } }
-      "यंत्र कसं चालवायचं?": { native: "How should the machine be run?", bases: { "चालवायचं": "to run, to operate" } }
+      "यंत्र कसं चालवायचं?": { native: "How should the machine be run?", bases: { "चालवायचं": "to run, to operate", "कसं": "how" } }

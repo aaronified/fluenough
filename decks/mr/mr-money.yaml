@@ -128,7 +128,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "दागिना", reading: "dāginā" }] }
     examples:
-      - { target: "तिने सुंदर दागिने घातले.", reading: "tine sundar dāgine ghātle.", ipa: "t̪ine sund̪ər d̪aɡine ɡʱat̪le", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "सुंदर", ref: "mr-0770" }, { word: "घातले", ref: "mr-0792" }] }
+      - { target: "तिने सुंदर दागिने घातले.", reading: "tine sundar dāgine ghātle.", ipa: "t̪ine sund̪ər d̪aɡine ɡʱat̪le", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "सुंदर", ref: "mr-0770" }, { word: "घातले", ref: "mr-0792" }, { word: "दागिने", base: "दागिना", reading: "dāginā" }] }
       - { target: "दागिन्यांची किंमत जास्त आहे.", reading: "dāginyāñci kimmat jāst āhe.", ipa: "d̪aɡinjaɲtʃi kimmət̪ dzast̪ aɦe", bases: [{ word: "दागिन्यांची", base: "दागिना", reading: "dāginā" }, { word: "किंमत", ref: "mr-0370" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1758"
     target: "गरीब"
@@ -181,7 +181,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "वेतन", reading: "vetan" }] }
     examples:
       - { target: "वेतन महिन्याच्या शेवटी मिळतं.", reading: "vetan mahinyācyā śevṭi miḷtam̐.", ipa: "ʋet̪ən məɦinjatʃja ʃeʋʈi miɭt̪ə̃", bases: [{ word: "महिन्याच्या", ref: "mr-0514" }, { word: "शेवटी", base: "शेवट", reading: "śevaṭ" }, { word: "मिळतं", base: "मिळणे", reading: "miḷṇe" }] }
-      - { target: "वेतनवाढ झाली.", reading: "vetnvāḍh jhāli.", ipa: "ʋet̪nʋaɖʱ dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "वेतनवाढ झाली.", reading: "vetnvāḍh jhāli.", ipa: "ʋet̪nʋaɖʱ dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "वेतनवाढ", base: "वेतनवाढ", reading: "vetnvāḍh" }] }
   - id: "mr-1763"
     target: "कमावणे"
     reading: "kamāvṇe"
@@ -220,7 +220,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गुंतवणे", reading: "guntavṇe" }] }
     examples:
-      - { target: "त्याने शेअर्समध्ये पैसे गुंतवले.", reading: "tyāne śearsamadhye paise guntavle.", ipa: "t̪jane ʃeərsəməd̪ʱje pəise ɡunt̪əʋle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पैसे", ref: "mr-1747" }, { word: "गुंतवले", base: "गुंतवणे", reading: "guntavṇe" }] }
+      - { target: "त्याने शेअर्समध्ये पैसे गुंतवले.", reading: "tyāne śearsamadhye paise guntavle.", ipa: "t̪jane ʃeərsəməd̪ʱje pəise ɡunt̪əʋle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पैसे", ref: "mr-1747" }, { word: "गुंतवले", base: "गुंतवणे", reading: "guntavṇe" }, { word: "शेअर्समध्ये", base: "शेअर", reading: "śear" }] }
       - { target: "पैसे कुठे गुंतवायचे?", reading: "paise kuṭhe guntavāyce?", ipa: "pəise kuʈʰe ɡunt̪əʋajtʃe", bases: [{ word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "गुंतवायचे", base: "गुंतवणे", reading: "guntavṇe" }] }
   - id: "mr-1767"
     target: "कर्ज घेणे"
@@ -239,6 +239,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कर्ज फेडणे", reading: "karj pheḍṇe" }] }
+    bases:
+      - { word: "फेडणे", base: "फेडणे", reading: "pheḍṇe" }
     examples:
       - { target: "कर्ज हळूहळू फेडलं.", reading: "karj haḷuhḷu pheḍlam̐.", ipa: "kərdz ɦəɭuɦɭu pʰeɖlə̃", bases: [{ word: "हळूहळू", base: "हळूहळू", reading: "haḷuhḷu" }, { word: "फेडलं", base: "फेडणे", reading: "pheḍṇe" }] }
       - { target: "कर्ज वेळेवर फेडा.", reading: "karj veḷevar pheḍā.", ipa: "kərdz ʋeɭeʋər pʰeɖa", bases: [{ word: "वेळेवर", ref: "mr-1222" }, { word: "फेडा", base: "फेडणे", reading: "pheḍṇe" }] }

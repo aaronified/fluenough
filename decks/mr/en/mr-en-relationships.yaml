@@ -13,8 +13,8 @@ cards:
     notes:
       "n1": "{1} is a relationship or bond between people, such as family."
     examples:
-      "आमचं नातं खूप जुनं आहे.": { native: "Our relationship is very old.", bases: { "आहे": "to be" } }
-      "नाती जपायला हवीत.": "Relationships should be kept."
+      "आमचं नातं खूप जुनं आहे.": { native: "Our relationship is very old.", bases: { "आहे": "to be", "नातं": "relationship, bond" } }
+      "नाती जपायला हवीत.": { native: "Relationships should be kept.", bases: { "नाती": "relationships" } }
   "mr-1629":
     native: "friendship"
     notes:
@@ -49,7 +49,7 @@ cards:
       "n1": "{1} is a husband's younger brother, a brother-in-law."
     examples:
       "माझा दीर शाळेत शिकवतो.": "My husband's younger brother teaches at school."
-      "दीर आणि मी एकत्र राहतो.": "My brother-in-law and I live together."
+      "दीर आणि मी एकत्र राहतो.": { native: "My brother-in-law and I live together.", bases: { "एकत्र": "together" } }
   "mr-1634":
     native: "brother's wife, sister-in-law"
     notes:
@@ -76,7 +76,7 @@ cards:
     notes:
       "n1": "{1} is a misunderstanding, a wrong idea about someone."
     examples:
-      "हा फक्त गैरसमज होता.": { native: "It was only a misunderstanding.", bases: { "होता": "to be" } }
+      "हा फक्त गैरसमज होता.": { native: "It was only a misunderstanding.", bases: { "होता": "to be", "फक्त": "only" } }
       "गैरसमज दूर करायला हवा.": { native: "The misunderstanding should be cleared up.", bases: { "दूर": "away" } }
   "mr-1638":
     native: "quarrel"
@@ -110,9 +110,11 @@ cards:
     native: "to forgive"
     notes:
       "n1": "{1} is pardoning someone for a fault."
+    bases:
+      "माफ": "sorry; pardon"
     examples:
-      "मला माफ कर.": "Forgive me."
-      "तिने त्याला माफ केलं.": "She forgave him."
+      "मला माफ कर.": { native: "Forgive me.", bases: { "माफ": "sorry; pardon" } }
+      "तिने त्याला माफ केलं.": { native: "She forgave him.", bases: { "माफ": "sorry; pardon" } }
   "mr-1643":
     native: "to trust"
     notes:
@@ -124,6 +126,8 @@ cards:
     native: "to treat with warmth"
     notes:
       "n1": "{1} is treating someone kindly and warmly."
+    bases:
+      "वागणे": "to behave"
     examples:
       "सगळ्यांशी आपुलकीने वागा.": { native: "Treat everyone warmly.", bases: { "वागा": "to behave" } }
       "ती पाहुण्यांशी आपुलकीने वागते.": { native: "She treats the guests warmly.", bases: { "वागते": "to behave" } }

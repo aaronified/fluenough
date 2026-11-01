@@ -21,7 +21,7 @@ cards:
       "n1": "{1} is knowing someone or something by sight, sound or description."
     examples:
       "मी तुला ओळखलं.": { native: "I recognised you.", bases: { "ओळखलं": "to recognise" } }
-      "त्याचा आवाज ओळखता येतो.": { native: "His voice can be recognised.", bases: { "ओळखता": "to recognise" } }
+      "त्याचा आवाज ओळखता येतो.": { native: "His voice can be recognised.", bases: { "ओळखता": "to recognise", "आवाज": "voice" } }
   "mr-1796":
     native: "to solve"
     notes:
@@ -103,6 +103,8 @@ cards:
     native: "to collect"
     notes:
       "n1": "{1} is gathering things together."
+    bases:
+      "गोळा": "gathered"
     examples:
       "मुलांनी फुलं गोळा केली.": { native: "The children collected flowers.", bases: { "फुलं": "flowers", "गोळा": "collected" } }
       "पैसे गोळा करा.": { native: "Collect the money.", bases: { "गोळा": "collect" } }
@@ -152,8 +154,10 @@ cards:
     native: "to immerse, to dissolve"
     notes:
       "n1": "{1} is putting an idol or a thing into water as a ritual."
+    bases:
+      "विसर्जन": "immersion"
     examples:
-      "गणपतीचं विसर्जन केलं.": "We immersed the Ganesh idol."
+      "गणपतीचं विसर्जन केलं.": { native: "We immersed the Ganesh idol.", bases: { "विसर्जन": "immersion" } }
       "विसर्जनाला सगळे आले.": { native: "Everyone came for the immersion.", bases: { "विसर्जनाला": "for the immersion" } }
   "mr-1815":
     native: "teaching, lesson"

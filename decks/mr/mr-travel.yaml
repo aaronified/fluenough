@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ठिकाण", reading: "ṭhikāṇ" }] }
     examples:
       - { target: "हे ठिकाण सुंदर आहे.", reading: "he ṭhikāṇ sundar āhe.", ipa: "ɦe ʈʰikaɳ sund̪ər aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कुठल्या ठिकाणी जायचं?", reading: "kuṭhalyā ṭhikāṇi jāycam̐?", ipa: "kuʈʰəlja ʈʰikaɳi dzajtsə̃", bases: [{ word: "जायचं", ref: "mr-0710" }] }
+      - { target: "कुठल्या ठिकाणी जायचं?", reading: "kuṭhalyā ṭhikāṇi jāycam̐?", ipa: "kuʈʰəlja ʈʰikaɳi dzajtsə̃", bases: [{ word: "जायचं", ref: "mr-0710" }, { word: "कुठल्या", base: "कुठला", reading: "kuṭhlā" }, { word: "ठिकाणी", base: "ठिकाण", reading: "ṭhikāṇ" }] }
   - id: "mr-1388"
     target: "आकर्षण"
     reading: "ākarṣaṇ"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "आकर्षण", reading: "ākarṣaṇ" }] }
     examples:
       - { target: "शहराचं मुख्य आकर्षण मंदिर आहे.", reading: "śahrācam̐ mukhy ākarṣaṇ mandir āhe.", ipa: "ʃəɦratsə̃ mukʰj akərʂəɳ mənd̪ir aɦe", bases: [{ word: "शहराचं", base: "शहर", reading: "śahar" }, { word: "मुख्य", base: "मुख्य", reading: "mukhy" }, { word: "मंदिर", ref: "mr-0961" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "येथे अनेक आकर्षणं आहेत.", reading: "yethe anek ākarṣaṇam̐ āhet.", ipa: "jet̪ʰe ənek akərʂəɳə̃ aɦet̪", bases: [{ word: "येथे", base: "येथे", reading: "yethe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "येथे अनेक आकर्षणं आहेत.", reading: "yethe anek ākarṣaṇam̐ āhet.", ipa: "jet̪ʰe ənek akərʂəɳə̃ aɦet̪", bases: [{ word: "येथे", base: "येथे", reading: "yethe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }, { word: "अनेक", base: "अनेक", reading: "anek" }, { word: "आकर्षणं", base: "आकर्षण", reading: "ākarṣaṇ" }] }
   - id: "mr-1389"
     target: "तंबू"
     reading: "tambu"
@@ -151,7 +151,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "भेट", reading: "bheṭ" }] }
     examples:
       - { target: "आम्ही गडाला भेट दिली.", reading: "āmhi gaḍālā bheṭ dili.", ipa: "amɦi ɡəɖala bʱeʈ d̪ili", bases: [{ word: "गडाला", base: "गड", reading: "gaḍ" }, { word: "दिली", ref: "mr-0721" }] }
-      - { target: "तुमची भेट चांगली झाली.", reading: "tumci bheṭ cāṅgali jhāli.", ipa: "t̪umtʃi bʱeʈ tsaŋɡəli dzʱali", bases: [{ word: "तुमची", ref: "mr-0145" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "तुमची भेट चांगली झाली.", reading: "tumci bheṭ cāṅgali jhāli.", ipa: "t̪umtʃi bʱeʈ tsaŋɡəli dzʱali", bases: [{ word: "तुमची", ref: "mr-0145" }, { word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "चांगली", ref: "mr-0759" }] }
   - id: "mr-1397"
     target: "सामान"
     reading: "sāmān"
@@ -170,9 +170,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "फिरायला जाणे", reading: "phirāylā jāṇe" }] }
+    bases:
+      - { word: "फिरायला", ref: "mr-1181" }
     examples:
-      - { target: "सुट्टीत आम्ही फिरायला गेलो.", reading: "suṭṭit āmhi phirāylā gelo.", ipa: "suʈʈit̪ amɦi pʰirajla ɡelo", bases: [{ word: "सुट्टीत", ref: "mr-0244" }, { word: "गेलो", ref: "mr-0710" }] }
-      - { target: "चला, फिरायला जाऊ.", reading: "calā, phirāylā jāu.", ipa: "tsəla pʰirajla dzau", bases: [{ word: "जाऊ", ref: "mr-0710" }] }
+      - { target: "सुट्टीत आम्ही फिरायला गेलो.", reading: "suṭṭit āmhi phirāylā gelo.", ipa: "suʈʈit̪ amɦi pʰirajla ɡelo", bases: [{ word: "सुट्टीत", ref: "mr-0244" }, { word: "गेलो", ref: "mr-0710" }, { word: "फिरायला", ref: "mr-1181" }] }
+      - { target: "चला, फिरायला जाऊ.", reading: "calā, phirāylā jāu.", ipa: "tsəla pʰirajla dzau", bases: [{ word: "जाऊ", ref: "mr-0710" }, { word: "चला", ref: "mr-0512" }, { word: "फिरायला", ref: "mr-1181" }] }
   - id: "mr-1399"
     target: "सुटणे"
     reading: "suṭṇe"
@@ -192,7 +194,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ओळख", reading: "oḷakh" }] }
     examples:
-      - { target: "या शहराची चांगली ओळख आहे.", reading: "yā śahrāci cāṅgali oḷakh āhe.", ipa: "ja ʃəɦratʃi tsaŋɡəli oɭəkʰ aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "शहराची", base: "शहर", reading: "śahar" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "या शहराची चांगली ओळख आहे.", reading: "yā śahrāci cāṅgali oḷakh āhe.", ipa: "ja ʃəɦratʃi tsaŋɡəli oɭəkʰ aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "शहराची", base: "शहर", reading: "śahar" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "चांगली", ref: "mr-0759" }] }
       - { target: "त्याच्याशी ओळख झाली.", reading: "tyācyāśi oḷakh jhāli.", ipa: "t̪jatʃjaʃi oɭəkʰ dzʱali", bases: [{ word: "त्याच्याशी", ref: "mr-0676" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1401"
     target: "देशी"

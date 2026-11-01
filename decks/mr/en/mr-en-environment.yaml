@@ -126,7 +126,7 @@ cards:
       "n1": "{1} is saving something from loss or harm."
     examples:
       "पाणी वाचवा.": { native: "Save water.", bases: { "वाचवा": "to save" } }
-      "त्याने मुलाचा जीव वाचवला.": { native: "He saved the child's life.", bases: { "वाचवला": "to save" } }
+      "त्याने मुलाचा जीव वाचवला.": { native: "He saved the child's life.", bases: { "वाचवला": "to save", "जीव": "life" } }
   "mr-1499":
     native: "to take care of, to protect"
     notes:
@@ -139,12 +139,14 @@ cards:
     notes:
       "n1": "{1} is avoiding something."
     examples:
-      "प्लास्टिक पिशव्या टाळा.": { native: "Avoid plastic bags.", bases: { "टाळा": "to avoid" } }
+      "प्लास्टिक पिशव्या टाळा.": { native: "Avoid plastic bags.", bases: { "टाळा": "to avoid", "प्लास्टिक": "plastic" } }
       "धूर टाळलेला बरा.": { native: "It is better to avoid smoke.", bases: { "टाळलेला": "to avoid" } }
   "mr-1501":
     native: "to reduce"
     notes:
       "n1": "{1} is making something less."
+    bases:
+      "कमी": "less"
     examples:
-      "प्रदूषण कमी करायला हवं.": "We should reduce pollution."
-      "गाड्यांचा वापर कमी केला.": "I reduced the use of vehicles."
+      "प्रदूषण कमी करायला हवं.": { native: "We should reduce pollution.", bases: { "कमी": "less" } }
+      "गाड्यांचा वापर कमी केला.": { native: "I reduced the use of vehicles.", bases: { "वापर": "use", "कमी": "less" } }

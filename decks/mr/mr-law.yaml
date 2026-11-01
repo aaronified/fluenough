@@ -73,7 +73,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "फसवणूक", reading: "phasvṇuk" }] }
     examples:
-      - { target: "ऑनलाईन फसवणूक झाली.", reading: "ônlāin phasvṇuk jhāli.", ipa: "ɔnlain pʰəsʋɳuk dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "ऑनलाईन फसवणूक झाली.", reading: "ônlāin phasvṇuk jhāli.", ipa: "ɔnlain pʰəsʋɳuk dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "ऑनलाईन", base: "ऑनलाईन", reading: "ônlāin" }] }
       - { target: "फसवणुकीपासून सावध रहा.", reading: "phasvṇukipāsun sāvadh rahā.", ipa: "pʰəsʋɳukipasun saʋəd̪ʱ rəɦa", bases: [{ word: "फसवणुकीपासून", base: "फसवणूक", reading: "phasvṇuk" }, { word: "सावध", base: "सावध", reading: "sāvadh" }, { word: "रहा", ref: "mr-1182" }] }
   - id: "mr-1684"
     target: "खून"
@@ -129,7 +129,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "न्यायाधीश", reading: "nyāyādhiś" }] }
     examples:
       - { target: "न्यायाधीशांनी निकाल दिला.", reading: "nyāyādhiśānni nikāl dilā.", ipa: "njajad̪ʱiʃanni nikal d̪ila", bases: [{ word: "न्यायाधीशांनी", base: "न्यायाधीश", reading: "nyāyādhiś" }, { word: "निकाल", ref: "mr-1118" }, { word: "दिला", ref: "mr-0721" }] }
-      - { target: "न्यायाधीश शिक्षा सुनावणार आहेत.", reading: "nyāyādhiś śikṣā sunāvṇār āhet.", ipa: "njajad̪ʱiʃ ʃikʂa sunaʋɳar aɦet̪", bases: [{ word: "सुनावणार", base: "सुनावणे", reading: "sunāvṇe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "न्यायाधीश शिक्षा सुनावणार आहेत.", reading: "nyāyādhiś śikṣā sunāvṇār āhet.", ipa: "njajad̪ʱiʃ ʃikʂa sunaʋɳar aɦet̪", bases: [{ word: "सुनावणार", base: "सुनावणे", reading: "sunāvṇe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }, { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }] }
   - id: "mr-1689"
     target: "आरोप"
     reading: "ārop"
@@ -214,9 +214,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "शिक्षा करणे", reading: "śikṣā karṇe" }] }
+    bases:
+      - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
     examples:
-      - { target: "न्यायालयाने त्याला शिक्षा केली.", reading: "nyāyālyāne tyālā śikṣā keli.", ipa: "njajaljane t̪jala ʃikʂa keli", bases: [{ word: "न्यायालयाने", ref: "mr-0978" }, { word: "त्याला", ref: "mr-0676" }, { word: "केली", ref: "mr-0712" }] }
-      - { target: "चुकीसाठी शिक्षा होते.", reading: "cukisāṭhi śikṣā hote.", ipa: "tsukisaʈʰi ʃikʂa ɦot̪e", bases: [{ word: "चुकीसाठी", base: "चूक", reading: "cuk" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+      - { target: "न्यायालयाने त्याला शिक्षा केली.", reading: "nyāyālyāne tyālā śikṣā keli.", ipa: "njajaljane t̪jala ʃikʂa keli", bases: [{ word: "न्यायालयाने", ref: "mr-0978" }, { word: "त्याला", ref: "mr-0676" }, { word: "केली", ref: "mr-0712" }, { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }] }
+      - { target: "चुकीसाठी शिक्षा होते.", reading: "cukisāṭhi śikṣā hote.", ipa: "tsukisaʈʰi ʃikʂa ɦot̪e", bases: [{ word: "चुकीसाठी", base: "चूक", reading: "cuk" }, { word: "होते", base: "होणे", reading: "hoṇe" }, { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }] }
   - id: "mr-1697"
     target: "तक्रार करणे"
     reading: "takrār karṇe"

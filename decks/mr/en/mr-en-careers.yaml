@@ -35,7 +35,7 @@ cards:
       "n1": "{1} is experience, what one has learnt by doing a thing."
     examples:
       "मला या कामाचा अनुभव आहे.": { native: "I have experience in this work.", bases: { "आहे": "to be" } }
-      "अनुभवाने शिकतो.": "One learns through experience."
+      "अनुभवाने शिकतो.": { native: "One learns through experience.", bases: { "अनुभवाने": "through experience" } }
   "mr-1466":
     native: "degree (academic)"
     notes:
@@ -105,7 +105,7 @@ cards:
       "n1": "{1} is a skilled craftsman who makes things by hand."
     examples:
       "कारागीर सुंदर भांडी बनवतो.": "The craftsman makes beautiful pots."
-      "कारागिराचं काम कौतुकास्पद आहे.": { native: "The craftsman's work is praiseworthy.", bases: { "आहे": "to be", "कारागिराचं": "craftsman, artisan" } }
+      "कारागिराचं काम कौतुकास्पद आहे.": { native: "The craftsman's work is praiseworthy.", bases: { "आहे": "to be", "कारागिराचं": "craftsman, artisan", "कौतुकास्पद": "praiseworthy" } }
   "mr-1476":
     native: "training"
     notes:
@@ -139,12 +139,14 @@ cards:
     notes:
       "n1": "{1} is choosing one thing from several."
     examples:
-      "मी शिक्षण क्षेत्र निवडलं.": { native: "I chose the field of teaching.", bases: { "क्षेत्र": "field", "निवडलं": "to choose, to select" } }
+      "मी शिक्षण क्षेत्र निवडलं.": { native: "I chose the field of teaching.", bases: { "क्षेत्र": "field", "निवडलं": "to choose, to select", "शिक्षण": "education" } }
       "कोणता पर्याय निवडशील?": { native: "Which option will you choose?", bases: { "पर्याय": "option", "निवडशील": "to choose, to select" } }
   "mr-1481":
     native: "to succeed"
     notes:
       "n1": "{1} is succeeding at a plan or a career."
+    bases:
+      "होणे": "to be; to become"
     examples:
       "तो व्यवसायात यशस्वी झाला.": { native: "He succeeded in business.", bases: { "झाला": "to become" } }
       "मेहनतीने माणूस यशस्वी होतो.": { native: "Through hard work a person succeeds.", bases: { "मेहनतीने": "through hard work", "होतो": "to become" } }

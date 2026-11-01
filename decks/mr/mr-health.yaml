@@ -40,8 +40,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आहार", reading: "āhār" }] }
     examples:
-      - { target: "संतुलित आहार घ्या.", reading: "santulit āhār ghyā.", ipa: "sənt̪ulit̪ aɦar ɡʱja", bases: [{ word: "घ्या", ref: "mr-0722" }] }
-      - { target: "आहारात भाज्या असायला हव्यात.", reading: "āhārāt bhājyā asāylā havyāt.", ipa: "aɦarat̪ bʱadʒja əsajla ɦəʋjat̪", bases: [{ word: "आहारात", base: "आहार", reading: "āhār" }, { word: "असायला", base: "असणे", reading: "asṇe" }, { word: "हव्यात", ref: "mr-1018" }] }
+      - { target: "संतुलित आहार घ्या.", reading: "santulit āhār ghyā.", ipa: "sənt̪ulit̪ aɦar ɡʱja", bases: [{ word: "घ्या", ref: "mr-0722" }, { word: "संतुलित", base: "संतुलित", reading: "santulit" }] }
+      - { target: "आहारात भाज्या असायला हव्यात.", reading: "āhārāt bhājyā asāylā havyāt.", ipa: "aɦarat̪ bʱadʒja əsajla ɦəʋjat̪", bases: [{ word: "आहारात", base: "आहार", reading: "āhār" }, { word: "असायला", base: "असणे", reading: "asṇe" }, { word: "हव्यात", ref: "mr-1018" }, { word: "भाज्या", ref: "mr-0390" }] }
   - id: "mr-1300"
     target: "पौष्टिक"
     reading: "pauṣṭik"
@@ -73,7 +73,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "झोप", reading: "jhop" }] }
     examples:
       - { target: "रात्री आठ तास झोप घ्या.", reading: "rātri āṭh tās jhop ghyā.", ipa: "rat̪ri aʈʰ t̪as dzʱop ɡʱja", bases: [{ word: "रात्री", ref: "mr-0480" }, { word: "घ्या", ref: "mr-0722" }] }
-      - { target: "चांगली झोप आरोग्यासाठी आवश्यक आहे.", reading: "cāṅgali jhop ārogyāsāṭhi āvaśyak āhe.", ipa: "tsaŋɡəli dzʱop aroɡjasaʈʰi aʋəʃjək aɦe", bases: [{ word: "आरोग्यासाठी", ref: "mr-1297" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "चांगली झोप आरोग्यासाठी आवश्यक आहे.", reading: "cāṅgali jhop ārogyāsāṭhi āvaśyak āhe.", ipa: "tsaŋɡəli dzʱop aroɡjasaʈʰi aʋəʃjək aɦe", bases: [{ word: "आरोग्यासाठी", ref: "mr-1297" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "चांगली", ref: "mr-0759" }, { word: "आवश्यक", base: "आवश्यक", reading: "āvaśyak" }] }
   - id: "mr-1303"
     target: "मधुमेह"
     reading: "madhumeh"
@@ -84,7 +84,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "मधुमेह", reading: "madhumeh" }] }
     examples:
       - { target: "आजोबांना मधुमेह आहे.", reading: "ājobānnā madhumeh āhe.", ipa: "adzobanna məd̪ʱumeɦ aɦe", bases: [{ word: "आजोबांना", ref: "mr-0198" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "मधुमेहात गोड कमी खा.", reading: "madhumehāt goḍ kami khā.", ipa: "məd̪ʱumeɦat̪ ɡoɖ kəmi kʰa", bases: [{ word: "मधुमेहात", base: "मधुमेह", reading: "madhumeh" }, { word: "खा", ref: "mr-0708" }] }
+      - { target: "मधुमेहात गोड कमी खा.", reading: "madhumehāt goḍ kami khā.", ipa: "məd̪ʱumeɦat̪ ɡoɖ kəmi kʰa", bases: [{ word: "मधुमेहात", base: "मधुमेह", reading: "madhumeh" }, { word: "खा", ref: "mr-0708" }, { word: "कमी", base: "कमी", reading: "kami" }] }
   - id: "mr-1304"
     target: "रक्तदाब"
     reading: "raktadāb"
@@ -95,7 +95,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "रक्तदाब", reading: "raktadāb" }] }
     examples:
       - { target: "त्यांचा रक्तदाब वाढला.", reading: "tyāñcā raktadāb vāḍhlā.", ipa: "t̪jaɲtsa rəkt̪əd̪ab ʋaɖʱla", bases: [{ word: "त्यांचा", ref: "mr-0678" }, { word: "वाढला", ref: "mr-1027" }] }
-      - { target: "रक्तदाब नियमित तपासा.", reading: "raktadāb niymit tapāsā.", ipa: "rəkt̪əd̪ab nijmit̪ t̪əpasa", bases: [{ word: "तपासा", ref: "mr-1106" }] }
+      - { target: "रक्तदाब नियमित तपासा.", reading: "raktadāb niymit tapāsā.", ipa: "rəkt̪əd̪ab nijmit̪ t̪əpasa", bases: [{ word: "तपासा", ref: "mr-1106" }, { word: "नियमित", base: "नियमित", reading: "niymit" }] }
   - id: "mr-1305"
     target: "व्यसन"
     reading: "vyasan"
@@ -116,8 +116,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "धूम्रपान", reading: "dhumrapān" }] }
     examples:
-      - { target: "धूम्रपान आरोग्यासाठी हानिकारक आहे.", reading: "dhumrapān ārogyāsāṭhi hānikārak āhe.", ipa: "d̪ʱumrəpan aroɡjasaʈʰi ɦanikarək aɦe", bases: [{ word: "आरोग्यासाठी", ref: "mr-1297" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "येथे धूम्रपान करू नका.", reading: "yethe dhumrapān karu nakā.", ipa: "jet̪ʰe d̪ʱumrəpan kəru nəka", bases: [{ word: "करू", ref: "mr-0712" }, { word: "नका", ref: "mr-0413" }] }
+      - { target: "धूम्रपान आरोग्यासाठी हानिकारक आहे.", reading: "dhumrapān ārogyāsāṭhi hānikārak āhe.", ipa: "d̪ʱumrəpan aroɡjasaʈʰi ɦanikarək aɦe", bases: [{ word: "आरोग्यासाठी", ref: "mr-1297" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "हानिकारक", base: "हानिकारक", reading: "hānikārak" }] }
+      - { target: "येथे धूम्रपान करू नका.", reading: "yethe dhumrapān karu nakā.", ipa: "jet̪ʰe d̪ʱumrəpan kəru nəka", bases: [{ word: "करू", ref: "mr-0712" }, { word: "नका", ref: "mr-0413" }, { word: "येथे", base: "येथे", reading: "yethe" }] }
   - id: "mr-1307"
     target: "ताण"
     reading: "tāṇ"
@@ -128,7 +128,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ताण", reading: "tāṇ" }] }
     examples:
       - { target: "कामाचा ताण वाढला.", reading: "kāmācā tāṇ vāḍhlā.", ipa: "kamatsa t̪aɳ ʋaɖʱla", bases: [{ word: "कामाचा", ref: "mr-0234" }, { word: "वाढला", ref: "mr-1027" }] }
-      - { target: "ताण कमी करण्यासाठी फिरायला जा.", reading: "tāṇ kami karaṇyāsāṭhi phirāylā jā.", ipa: "t̪aɳ kəmi kərəɳjasaʈʰi pʰirajla dza", bases: [{ word: "करण्यासाठी", ref: "mr-0712" }, { word: "फिरायला", ref: "mr-1181" }, { word: "जा", ref: "mr-0710" }] }
+      - { target: "ताण कमी करण्यासाठी फिरायला जा.", reading: "tāṇ kami karaṇyāsāṭhi phirāylā jā.", ipa: "t̪aɳ kəmi kərəɳjasaʈʰi pʰirajla dza", bases: [{ word: "करण्यासाठी", ref: "mr-0712" }, { word: "फिरायला", ref: "mr-1181" }, { word: "जा", ref: "mr-0710" }, { word: "कमी", base: "कमी", reading: "kami" }] }
   - id: "mr-1308"
     target: "लस"
     reading: "las"
@@ -171,7 +171,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आजार", reading: "ājār" }] }
     examples:
-      - { target: "हा आजार संसर्गजन्य आहे.", reading: "hā ājār saṁsargajany āhe.", ipa: "ɦa adzar sə̃sərɡədzənj aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "हा आजार संसर्गजन्य आहे.", reading: "hā ājār saṁsargajany āhe.", ipa: "ɦa adzar sə̃sərɡədzənj aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "संसर्गजन्य", base: "संसर्गजन्य", reading: "sansargajany" }] }
       - { target: "आजार कधी बरा होईल?", reading: "ājār kadhi barā hoil?", ipa: "adzar kəd̪ʱi bəra ɦoil", bases: [{ word: "बरा", ref: "mr-0779" }, { word: "होईल", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1312"
     target: "प्रथमोपचार"
@@ -202,6 +202,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बरं होणे", reading: "baram̐ hoṇe" }] }
+    bases:
+      - { word: "होणे", base: "होणे", reading: "hoṇe" }
     examples:
       - { target: "तो लवकर बरा झाला.", reading: "to lavkar barā jhālā.", ipa: "t̪o ləʋkər bəra dzʱala", bases: [{ word: "बरा", ref: "mr-0779" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
-      - { target: "आशा आहे की तू लवकर बरा होशील.", reading: "āśā āhe ki tu lavkar barā hośil.", ipa: "aʃa aɦe ki t̪u ləʋkər bəra ɦoʃil", bases: [{ word: "होशील", base: "होणे", reading: "hoṇe" }] }
+      - { target: "आशा आहे की तू लवकर बरा होशील.", reading: "āśā āhe ki tu lavkar barā hośil.", ipa: "aʃa aɦe ki t̪u ləʋkər bəra ɦoʃil", bases: [{ word: "होशील", base: "होणे", reading: "hoṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }

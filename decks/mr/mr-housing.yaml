@@ -62,7 +62,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "करार", reading: "karār" }] }
     examples:
-      - { target: "भाडेकरार अकरा महिन्यांचा आहे.", reading: "bhāḍekrār akrā mahinyāñcā āhe.", ipa: "bʱaɖekrar əkra məɦinjaɲtsa aɦe", bases: [{ word: "अकरा", ref: "mr-0262" }, { word: "महिन्यांचा", ref: "mr-0514" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "भाडेकरार अकरा महिन्यांचा आहे.", reading: "bhāḍekrār akrā mahinyāñcā āhe.", ipa: "bʱaɖekrar əkra məɦinjaɲtsa aɦe", bases: [{ word: "अकरा", ref: "mr-0262" }, { word: "महिन्यांचा", ref: "mr-0514" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "भाडेकरार", base: "भाडेकरार", reading: "bhāḍekrār" }] }
       - { target: "करारावर सही करा.", reading: "karārāvar sahi karā.", ipa: "kəraraʋər səɦi kəra", bases: [{ word: "करारावर", base: "करार", reading: "karār" }, { word: "सही", ref: "mr-1410" }, { word: "करा", ref: "mr-0712" }] }
   - id: "mr-1650"
     target: "भाडेपट्टा"
@@ -96,7 +96,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बाल्कनी", reading: "bālkani" }] }
     examples:
       - { target: "बाल्कनीत झाडं आहेत.", reading: "bālkanit jhāḍam̐ āhet.", ipa: "balkənit̪ dzʱaɖə̃ aɦet̪", bases: [{ word: "बाल्कनीत", base: "बाल्कनी", reading: "bālkani" }, { word: "झाडं", ref: "mr-1231" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
-      - { target: "संध्याकाळी बाल्कनीत बसतो.", reading: "sandhyākāḷi bālkanit basto.", ipa: "sənd̪ʱjakaɭi balkənit̪ bəst̪o", bases: [{ word: "संध्याकाळी", ref: "mr-0479" }, { word: "बसतो", base: "बसणे", reading: "basṇe" }] }
+      - { target: "संध्याकाळी बाल्कनीत बसतो.", reading: "sandhyākāḷi bālkanit basto.", ipa: "sənd̪ʱjakaɭi balkənit̪ bəst̪o", bases: [{ word: "संध्याकाळी", ref: "mr-0479" }, { word: "बसतो", base: "बसणे", reading: "basṇe" }, { word: "बाल्कनीत", base: "बाल्कनी", reading: "bālkani" }] }
   - id: "mr-1653"
     target: "दरवाजा"
     reading: "darvājā"
@@ -170,9 +170,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "भाड्याने घेणे", reading: "bhāḍyāne gheṇe" }] }
+    bases:
+      - { word: "भाड्याने", ref: "mr-1394" }
     examples:
       - { target: "आम्ही फ्लॅट भाड्याने घेतला.", reading: "āmhi phlêṭ bhāḍyāne ghetlā.", ipa: "amɦi pʰlæʈ bʱaɖjane ɡʱet̪la", bases: [{ word: "भाड्याने", ref: "mr-1394" }, { word: "घेतला", ref: "mr-0722" }] }
-      - { target: "खोली भाड्याने घ्यायची आहे.", reading: "kholi bhāḍyāne ghyāyci āhe.", ipa: "kʰoli bʱaɖjane ɡʱjajtʃi aɦe", bases: [{ word: "घ्यायची", ref: "mr-0722" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "खोली भाड्याने घ्यायची आहे.", reading: "kholi bhāḍyāne ghyāyci āhe.", ipa: "kʰoli bʱaɖjane ɡʱjajtʃi aɦe", bases: [{ word: "घ्यायची", ref: "mr-0722" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "भाड्याने", ref: "mr-1394" }] }
   - id: "mr-1660"
     target: "भाड्याने देणे"
     reading: "bhāḍyāne deṇe"
@@ -180,6 +182,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "भाड्याने देणे", reading: "bhāḍyāne deṇe" }] }
+    bases:
+      - { word: "भाड्याने", ref: "mr-1394" }
     examples:
-      - { target: "त्यांनी घर भाड्याने दिलं.", reading: "tyānni ghar bhāḍyāne dilam̐.", ipa: "t̪janni ɡʱər bʱaɖjane d̪ilə̃", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "घर", ref: "mr-0048" }, { word: "दिलं", ref: "mr-0721" }] }
-      - { target: "खोली भाड्याने देणं आहे.", reading: "kholi bhāḍyāne deṇam̐ āhe.", ipa: "kʰoli bʱaɖjane d̪eɳə̃ aɦe", bases: [{ word: "देणं", ref: "mr-0721" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "त्यांनी घर भाड्याने दिलं.", reading: "tyānni ghar bhāḍyāne dilam̐.", ipa: "t̪janni ɡʱər bʱaɖjane d̪ilə̃", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "घर", ref: "mr-0048" }, { word: "दिलं", ref: "mr-0721" }, { word: "भाड्याने", ref: "mr-1394" }] }
+      - { target: "खोली भाड्याने देणं आहे.", reading: "kholi bhāḍyāne deṇam̐ āhe.", ipa: "kʰoli bʱaɖjane d̪eɳə̃ aɦe", bases: [{ word: "देणं", ref: "mr-0721" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "भाड्याने", ref: "mr-1394" }] }

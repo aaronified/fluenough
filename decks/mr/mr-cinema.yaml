@@ -95,8 +95,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कथानक", reading: "kathānak" }] }
     examples:
-      - { target: "कथानक थोडं कंटाळवाणं होतं.", reading: "kathānak thoḍam̐ kaṇṭāḷvāṇam̐ hotam̐.", ipa: "kət̪ʰanək t̪ʰoɖə̃ kəɳʈaɭʋaɳə̃ ɦot̪ə̃", bases: [{ word: "कंटाळवाणं", base: "कंटाळवाणं", reading: "kaṇṭāḷvāṇam̐" }, { word: "होतं", base: "होणे", reading: "hoṇe" }] }
-      - { target: "कथानक अचानक बदललं.", reading: "kathānak acānak badllam̐.", ipa: "kət̪ʰanək ətsanək bəd̪llə̃", bases: [{ word: "बदललं", ref: "mr-1078" }] }
+      - { target: "कथानक थोडं कंटाळवाणं होतं.", reading: "kathānak thoḍam̐ kaṇṭāḷvāṇam̐ hotam̐.", ipa: "kət̪ʰanək t̪ʰoɖə̃ kəɳʈaɭʋaɳə̃ ɦot̪ə̃", bases: [{ word: "कंटाळवाणं", base: "कंटाळवाणं", reading: "kaṇṭāḷvāṇam̐" }, { word: "होतं", base: "होणे", reading: "hoṇe" }, { word: "थोडं", base: "थोडा", reading: "thoḍā" }] }
+      - { target: "कथानक अचानक बदललं.", reading: "kathānak acānak badllam̐.", ipa: "kət̪ʰanək ətsanək bəd̪llə̃", bases: [{ word: "बदललं", ref: "mr-1078" }, { word: "अचानक", base: "अचानक", reading: "acānak" }] }
   - id: "mr-1530"
     target: "नायक"
     reading: "nāyak"
@@ -138,7 +138,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "रोमँटिक", reading: "romam̐ṭik" }] }
     examples:
       - { target: "हा रोमँटिक सिनेमा आहे.", reading: "hā romam̐ṭik sinemā āhe.", ipa: "ɦa romə̃ʈik sinema aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "गाणी फार रोमँटिक होती.", reading: "gāṇi phār romam̐ṭik hoti.", ipa: "ɡaɳi pʰar romə̃ʈik ɦot̪i", bases: [{ word: "गाणी", ref: "mr-1535" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }
+      - { target: "गाणी फार रोमँटिक होती.", reading: "gāṇi phār romam̐ṭik hoti.", ipa: "ɡaɳi pʰar romə̃ʈik ɦot̪i", bases: [{ word: "गाणी", ref: "mr-1535" }, { word: "होती", base: "होणे", reading: "hoṇe" }, { word: "फार", base: "फार", reading: "phār" }] }
   - id: "mr-1534"
     target: "भयपट"
     reading: "bhaypaṭ"
@@ -171,7 +171,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "संगीतकार", reading: "saṅgitkār" }] }
     examples:
       - { target: "संगीतकाराने सुंदर चाल दिली.", reading: "saṅgitkārāne sundar cāl dili.", ipa: "səŋɡit̪karane sund̪ər tsal d̪ili", bases: [{ word: "संगीतकाराने", base: "संगीतकार", reading: "saṅgitkār" }, { word: "सुंदर", ref: "mr-0770" }, { word: "चाल", base: "चाल", reading: "cāl" }, { word: "दिली", ref: "mr-0721" }] }
-      - { target: "हे गाणं कोणी संगीतबद्ध केलं?", reading: "he gāṇam̐ koṇi saṅgitbaddh kelam̐?", ipa: "ɦe ɡaɳə̃ koɳi səŋɡit̪bəd̪d̪ʱ kelə̃", bases: [{ word: "हे", ref: "mr-0679" }, { word: "केलं", ref: "mr-0712" }] }
+      - { target: "हे गाणं कोणी संगीतबद्ध केलं?", reading: "he gāṇam̐ koṇi saṅgitbaddh kelam̐?", ipa: "ɦe ɡaɳə̃ koɳi səŋɡit̪bəd̪d̪ʱ kelə̃", bases: [{ word: "हे", ref: "mr-0679" }, { word: "केलं", ref: "mr-0712" }, { word: "संगीतबद्ध", base: "संगीतबद्ध", reading: "saṅgitbaddh" }] }
   - id: "mr-1537"
     target: "पार्श्वगायक"
     reading: "pārśvagāyak"
@@ -247,7 +247,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "अभिनय करणे", reading: "abhinay karṇe" }] }
     examples:
       - { target: "ती नाटकात अभिनय करते.", reading: "ti nāṭkāt abhinay karte.", ipa: "t̪i naʈkat̪ əbʱinəj kərt̪e", bases: [{ word: "नाटकात", ref: "mr-1524" }, { word: "करते", ref: "mr-0712" }] }
-      - { target: "त्याने चित्रपटात अभिनय केला.", reading: "tyāne citrapṭāt abhinay kelā.", ipa: "t̪jane tʃit̪rəpʈat̪ əbʱinəj kela", bases: [{ word: "चित्रपटात", ref: "mr-1522" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "त्याने चित्रपटात अभिनय केला.", reading: "tyāne citrapṭāt abhinay kelā.", ipa: "t̪jane tʃit̪rəpʈat̪ əbʱinəj kela", bases: [{ word: "चित्रपटात", ref: "mr-1522" }, { word: "केला", ref: "mr-0712" }, { word: "त्याने", ref: "mr-0676" }] }
   - id: "mr-1544"
     target: "प्रदर्शित करणे"
     reading: "pradarśit karṇe"
@@ -255,6 +255,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "प्रदर्शित करणे", reading: "pradarśit karṇe" }] }
+    bases:
+      - { word: "प्रदर्शित", base: "प्रदर्शित", reading: "pradarśit" }
     examples:
-      - { target: "हा चित्रपट उद्या प्रदर्शित होणार आहे.", reading: "hā citrapaṭ udyā pradarśit hoṇār āhe.", ipa: "ɦa tʃit̪rəpəʈ ud̪ja prəd̪ərʃit̪ ɦoɳar aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "होणार", base: "होणे", reading: "hoṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "त्यांनी नवा चित्रपट प्रदर्शित केला.", reading: "tyānni navā citrapaṭ pradarśit kelā.", ipa: "t̪janni nəʋa tʃit̪rəpəʈ prəd̪ərʃit̪ kela", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "नवा", base: "नवा", reading: "navā" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "हा चित्रपट उद्या प्रदर्शित होणार आहे.", reading: "hā citrapaṭ udyā pradarśit hoṇār āhe.", ipa: "ɦa tʃit̪rəpəʈ ud̪ja prəd̪ərʃit̪ ɦoɳar aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "होणार", base: "होणे", reading: "hoṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "प्रदर्शित", base: "प्रदर्शित", reading: "pradarśit" }] }
+      - { target: "त्यांनी नवा चित्रपट प्रदर्शित केला.", reading: "tyānni navā citrapaṭ pradarśit kelā.", ipa: "t̪janni nəʋa tʃit̪rəpəʈ prəd̪ərʃit̪ kela", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "नवा", base: "नवा", reading: "navā" }, { word: "केला", ref: "mr-0712" }, { word: "प्रदर्शित", base: "प्रदर्शित", reading: "pradarśit" }] }

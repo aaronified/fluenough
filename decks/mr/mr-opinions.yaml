@@ -145,7 +145,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "परिणाम", reading: "pariṇām" }] }
     examples:
       - { target: "याचा परिणाम वाईट झाला.", reading: "yācā pariṇām vāiṭ jhālā.", ipa: "jatsa pəriɳam ʋaiʈ dzʱala", bases: [{ word: "याचा", ref: "mr-0679" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
-      - { target: "चांगल्या परिणामासाठी मेहनत करा.", reading: "cāṅgalyā pariṇāmāsāṭhi mehnat karā.", ipa: "tsaŋɡəlja pəriɳamasaʈʰi meɦnət̪ kəra", bases: [{ word: "चांगल्या", ref: "mr-0759" }, { word: "परिणामासाठी", base: "परिणाम", reading: "pariṇām" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "चांगल्या परिणामासाठी मेहनत करा.", reading: "cāṅgalyā pariṇāmāsāṭhi mehnat karā.", ipa: "tsaŋɡəlja pəriɳamasaʈʰi meɦnət̪ kəra", bases: [{ word: "चांगल्या", ref: "mr-0759" }, { word: "परिणामासाठी", base: "परिणाम", reading: "pariṇām" }, { word: "करा", ref: "mr-0712" }, { word: "मेहनत", base: "मेहनत", reading: "mehnat" }] }
   - id: "mr-1375"
     target: "महत्त्व"
     reading: "mahattv"
@@ -177,7 +177,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "तोटा", reading: "toṭā" }] }
     examples:
-      - { target: "या व्यवसायात तोटा झाला.", reading: "yā vyavsāyāt toṭā jhālā.", ipa: "ja ʋjəʋsajat̪ t̪oʈa dzʱala", bases: [{ word: "व्यवसायात", ref: "mr-0250" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "या व्यवसायात तोटा झाला.", reading: "yā vyavsāyāt toṭā jhālā.", ipa: "ja ʋjəʋsajat̪ t̪oʈa dzʱala", bases: [{ word: "व्यवसायात", ref: "mr-0250" }, { word: "झाला", base: "होणे", reading: "hoṇe" }, { word: "या", ref: "mr-0679" }] }
       - { target: "तोटा सहन करावा लागला.", reading: "toṭā sahan karāvā lāglā.", ipa: "t̪oʈa səɦən kəraʋa laɡla", bases: [{ word: "सहन", base: "सहन", reading: "sahan" }, { word: "करावा", ref: "mr-0712" }, { word: "लागला", base: "लागणे", reading: "lāgṇe" }] }
   - id: "mr-1378"
     target: "सल्ला"
@@ -219,9 +219,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "मान्य करणे", reading: "māny karṇe" }] }
+    bases:
+      - { word: "मान्य", base: "मान्य", reading: "māny" }
     examples:
-      - { target: "मी तुझं म्हणणं मान्य करतो.", reading: "mi tujham̐ mhaṇṇam̐ māny karto.", ipa: "mi t̪udzʱə̃ mɦəɳɳə̃ manj kərt̪o", bases: [{ word: "तुझं", ref: "mr-0675" }, { word: "म्हणणं", base: "म्हणणे", reading: "mhaṇṇe" }, { word: "करतो", ref: "mr-0712" }] }
-      - { target: "सगळ्यांनी प्रस्ताव मान्य केला.", reading: "sagaḷyānni prastāv māny kelā.", ipa: "səɡəɭjanni prəst̪aʋ manj kela", bases: [{ word: "सगळ्यांनी", ref: "mr-0684" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "मी तुझं म्हणणं मान्य करतो.", reading: "mi tujham̐ mhaṇṇam̐ māny karto.", ipa: "mi t̪udzʱə̃ mɦəɳɳə̃ manj kərt̪o", bases: [{ word: "तुझं", ref: "mr-0675" }, { word: "म्हणणं", base: "म्हणणे", reading: "mhaṇṇe" }, { word: "करतो", ref: "mr-0712" }, { word: "मान्य", base: "मान्य", reading: "māny" }] }
+      - { target: "सगळ्यांनी प्रस्ताव मान्य केला.", reading: "sagaḷyānni prastāv māny kelā.", ipa: "səɡəɭjanni prəst̪aʋ manj kela", bases: [{ word: "सगळ्यांनी", ref: "mr-0684" }, { word: "केला", ref: "mr-0712" }, { word: "प्रस्ताव", base: "प्रस्ताव", reading: "prastāv" }, { word: "मान्य", base: "मान्य", reading: "māny" }] }
   - id: "mr-1382"
     target: "विरोध करणे"
     reading: "virodh karṇe"
@@ -229,9 +231,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "विरोध करणे", reading: "virodh karṇe" }] }
+    bases:
+      - { word: "विरोध", base: "विरोध", reading: "virodh" }
     examples:
-      - { target: "काही लोकांनी विरोध केला.", reading: "kāhi lokānni virodh kelā.", ipa: "kaɦi lokanni ʋirod̪ʱ kela", bases: [{ word: "लोकांनी", ref: "mr-0687" }, { word: "केला", ref: "mr-0712" }] }
-      - { target: "मी त्याच्या मताला विरोध करतो.", reading: "mi tyācyā matālā virodh karto.", ipa: "mi t̪jatʃja mət̪ala ʋirod̪ʱ kərt̪o", bases: [{ word: "त्याच्या", ref: "mr-0676" }, { word: "मताला", ref: "mr-1362" }, { word: "करतो", ref: "mr-0712" }] }
+      - { target: "काही लोकांनी विरोध केला.", reading: "kāhi lokānni virodh kelā.", ipa: "kaɦi lokanni ʋirod̪ʱ kela", bases: [{ word: "लोकांनी", ref: "mr-0687" }, { word: "केला", ref: "mr-0712" }, { word: "विरोध", base: "विरोध", reading: "virodh" }] }
+      - { target: "मी त्याच्या मताला विरोध करतो.", reading: "mi tyācyā matālā virodh karto.", ipa: "mi t̪jatʃja mət̪ala ʋirod̪ʱ kərt̪o", bases: [{ word: "त्याच्या", ref: "mr-0676" }, { word: "मताला", ref: "mr-1362" }, { word: "करतो", ref: "mr-0712" }, { word: "विरोध", base: "विरोध", reading: "virodh" }] }
   - id: "mr-1383"
     target: "सुचवणे"
     reading: "sucvṇe"

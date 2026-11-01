@@ -95,7 +95,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बचाव", reading: "bacāv" }] }
     examples:
       - { target: "बचाव कार्य सुरू आहे.", reading: "bacāv kāry suru āhe.", ipa: "bətsaʋ karj suru aɦe", bases: [{ word: "कार्य", base: "कार्य", reading: "kāry" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "जीव वाचवण्यासाठी बचाव केला.", reading: "jiv vācvaṇyāsāṭhi bacāv kelā.", ipa: "dʒiʋ ʋatsʋəɳjasaʈʰi bətsaʋ kela", bases: [{ word: "वाचवण्यासाठी", ref: "mr-1498" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "जीव वाचवण्यासाठी बचाव केला.", reading: "jiv vācvaṇyāsāṭhi bacāv kelā.", ipa: "dʒiʋ ʋatsʋəɳjasaʈʰi bətsaʋ kela", bases: [{ word: "वाचवण्यासाठी", ref: "mr-1498" }, { word: "केला", ref: "mr-0712" }, { word: "जीव", base: "जीव", reading: "jiv" }] }
   - id: "mr-1669"
     target: "इशारा"
     reading: "iśārā"
@@ -136,9 +136,12 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गॅस गळती", reading: "gês gaḷti" }] }
+    bases:
+      - { word: "गॅस", base: "गॅस", reading: "gês" }
+      - { word: "गळती", base: "गळती", reading: "gaḷti" }
     examples:
-      - { target: "घरात गॅस गळती झाली.", reading: "gharāt gês gaḷti jhāli.", ipa: "ɡʱərat̪ ɡæs ɡəɭt̪i dzʱali", bases: [{ word: "घरात", ref: "mr-0048" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
-      - { target: "गॅस गळती असेल तर खिडक्या उघडा.", reading: "gês gaḷti asel tar khiḍakyā ughḍā.", ipa: "ɡæs ɡəɭt̪i əsel t̪ər kʰiɖəkja uɡʱɖa", bases: [{ word: "असेल", base: "असणे", reading: "asṇe" }, { word: "खिडक्या", ref: "mr-0463" }, { word: "उघडा", ref: "mr-0724" }] }
+      - { target: "घरात गॅस गळती झाली.", reading: "gharāt gês gaḷti jhāli.", ipa: "ɡʱərat̪ ɡæs ɡəɭt̪i dzʱali", bases: [{ word: "घरात", ref: "mr-0048" }, { word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "गॅस", base: "गॅस", reading: "gês" }, { word: "गळती", base: "गळती", reading: "gaḷti" }] }
+      - { target: "गॅस गळती असेल तर खिडक्या उघडा.", reading: "gês gaḷti asel tar khiḍakyā ughḍā.", ipa: "ɡæs ɡəɭt̪i əsel t̪ər kʰiɖəkja uɡʱɖa", bases: [{ word: "असेल", base: "असणे", reading: "asṇe" }, { word: "खिडक्या", ref: "mr-0463" }, { word: "उघडा", ref: "mr-0724" }, { word: "गॅस", base: "गॅस", reading: "gês" }, { word: "गळती", base: "गळती", reading: "gaḷti" }] }
   - id: "mr-1673"
     target: "विजेचा धक्का"
     reading: "vijecā dhakkā"
@@ -147,9 +150,12 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "विजेचा धक्का", reading: "vijecā dhakkā" }] }
+    bases:
+      - { word: "विजेचा", base: "वीज", reading: "vij" }
+      - { word: "धक्का", base: "धक्का", reading: "dhakkā" }
     examples:
-      - { target: "त्याला विजेचा धक्का बसला.", reading: "tyālā vijecā dhakkā baslā.", ipa: "t̪jala ʋidʒetsa d̪ʱəkka bəsla", bases: [{ word: "त्याला", ref: "mr-0676" }, { word: "बसला", base: "बसणे", reading: "basṇe" }] }
-      - { target: "विजेचा धक्का लागू नये म्हणून सावध रहा.", reading: "vijecā dhakkā lāgu naye mhaṇun sāvadh rahā.", ipa: "ʋidʒetsa d̪ʱəkka laɡu nəje mɦəɳun saʋəd̪ʱ rəɦa", bases: [{ word: "लागू", base: "लागणे", reading: "lāgṇe" }, { word: "नये", ref: "mr-0413" }, { word: "सावध", base: "सावध", reading: "sāvadh" }, { word: "रहा", ref: "mr-1182" }] }
+      - { target: "त्याला विजेचा धक्का बसला.", reading: "tyālā vijecā dhakkā baslā.", ipa: "t̪jala ʋidʒetsa d̪ʱəkka bəsla", bases: [{ word: "त्याला", ref: "mr-0676" }, { word: "बसला", base: "बसणे", reading: "basṇe" }, { word: "विजेचा", base: "वीज", reading: "vij" }, { word: "धक्का", base: "धक्का", reading: "dhakkā" }] }
+      - { target: "विजेचा धक्का लागू नये म्हणून सावध रहा.", reading: "vijecā dhakkā lāgu naye mhaṇun sāvadh rahā.", ipa: "ʋidʒetsa d̪ʱəkka laɡu nəje mɦəɳun saʋəd̪ʱ rəɦa", bases: [{ word: "लागू", base: "लागणे", reading: "lāgṇe" }, { word: "नये", ref: "mr-0413" }, { word: "सावध", base: "सावध", reading: "sāvadh" }, { word: "रहा", ref: "mr-1182" }, { word: "विजेचा", base: "वीज", reading: "vij" }, { word: "धक्का", base: "धक्का", reading: "dhakkā" }] }
   - id: "mr-1674"
     target: "ओरडणे"
     reading: "orḍṇe"
@@ -167,9 +173,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बाहेर पडणे", reading: "bāher paḍṇe" }] }
+    bases:
+      - { word: "बाहेर", base: "बाहेर", reading: "bāher" }
     examples:
-      - { target: "सगळे इमारतीतून बाहेर पडले.", reading: "sagḷe imārtitun bāher paḍle.", ipa: "səɡɭe imart̪it̪un baɦer pəɖle", bases: [{ word: "इमारतीतून", ref: "mr-0471" }, { word: "पडले", ref: "mr-1024" }] }
-      - { target: "शांतपणे बाहेर पडा.", reading: "śāntapṇe bāher paḍā.", ipa: "ʃant̪əpɳe baɦer pəɖa", bases: [{ word: "शांतपणे", ref: "mr-1246" }, { word: "पडा", ref: "mr-1024" }] }
+      - { target: "सगळे इमारतीतून बाहेर पडले.", reading: "sagḷe imārtitun bāher paḍle.", ipa: "səɡɭe imart̪it̪un baɦer pəɖle", bases: [{ word: "इमारतीतून", ref: "mr-0471" }, { word: "पडले", ref: "mr-1024" }, { word: "बाहेर", base: "बाहेर", reading: "bāher" }] }
+      - { target: "शांतपणे बाहेर पडा.", reading: "śāntapṇe bāher paḍā.", ipa: "ʃant̪əpɳe baɦer pəɖa", bases: [{ word: "शांतपणे", ref: "mr-1246" }, { word: "पडा", ref: "mr-1024" }, { word: "बाहेर", base: "बाहेर", reading: "bāher" }] }
   - id: "mr-1676"
     target: "बोलवणे"
     reading: "bolvṇe"
@@ -179,7 +187,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बोलवणे", reading: "bolvṇe" }] }
     examples:
       - { target: "डॉक्टरांना बोलवा.", reading: "ḍôkṭarānnā bolvā.", ipa: "ɖɔkʈəranna bolʋa", bases: [{ word: "डॉक्टरांना", ref: "mr-0238" }, { word: "बोलवा", base: "बोलवणे", reading: "bolvṇe" }] }
-      - { target: "त्याने मदतीसाठी लोकांना बोलवलं.", reading: "tyāne madtisāṭhi lokānnā bolvlam̐.", ipa: "t̪jane məd̪t̪isaʈʰi lokanna bolʋlə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "लोकांना", ref: "mr-0687" }, { word: "बोलवलं", base: "बोलवणे", reading: "bolvṇe" }] }
+      - { target: "त्याने मदतीसाठी लोकांना बोलवलं.", reading: "tyāne madtisāṭhi lokānnā bolvlam̐.", ipa: "t̪jane məd̪t̪isaʈʰi lokanna bolʋlə̃", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "लोकांना", ref: "mr-0687" }, { word: "बोलवलं", base: "बोलवणे", reading: "bolvṇe" }, { word: "मदतीसाठी", ref: "mr-1159" }] }
   - id: "mr-1677"
     target: "सुरक्षित"
     reading: "surakṣit"

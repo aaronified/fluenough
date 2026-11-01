@@ -19,7 +19,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "उंची", reading: "uñci" }] }
     examples:
       - { target: "त्याची उंची किती आहे?", reading: "tyāci uñci kiti āhe?", ipa: "t̪jatʃi uɲtʃi kit̪i aɦe", bases: [{ word: "त्याची", ref: "mr-0676" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "माझी उंची पाच फूट आहे.", reading: "mājhi uñci pāc phuṭ āhe.", ipa: "madʒʱi uɲtʃi pats pʰuʈ aɦe", bases: [{ word: "माझी", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "माझी उंची पाच फूट आहे.", reading: "mājhi uñci pāc phuṭ āhe.", ipa: "madʒʱi uɲtʃi pats pʰuʈ aɦe", bases: [{ word: "माझी", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "फूट", base: "फूट", reading: "phuṭ" }] }
   - id: "mr-1161"
     target: "बुटका"
     reading: "buṭkā"
@@ -49,7 +49,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बारीक", reading: "bārik" }] }
     examples:
       - { target: "ती बारीक आहे.", reading: "ti bārik āhe.", ipa: "t̪i barik aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "बारीक दोरी आणा.", reading: "bārik dori āṇā.", ipa: "barik d̪ori aɳa", bases: [{ word: "आणा", ref: "mr-0800" }] }
+      - { target: "बारीक दोरी आणा.", reading: "bārik dori āṇā.", ipa: "barik d̪ori aɳa", bases: [{ word: "आणा", ref: "mr-0800" }, { word: "दोरी", base: "दोरी", reading: "dori" }] }
   - id: "mr-1164"
     target: "गोरा"
     reading: "gorā"
@@ -59,7 +59,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "गोरा", reading: "gorā" }] }
     examples:
       - { target: "ती गोरी आहे.", reading: "ti gori āhe.", ipa: "t̪i ɡori aɦe", bases: [{ word: "गोरी", base: "गोरा", reading: "gorā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "त्याचा रंग गोरा आहे.", reading: "tyācā raṅg gorā āhe.", ipa: "t̪jatsa rəŋɡ ɡora aɦe", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "गोरा", base: "गोरा", reading: "gorā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "त्याचा रंग गोरा आहे.", reading: "tyācā raṅg gorā āhe.", ipa: "t̪jatsa rəŋɡ ɡora aɦe", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "गोरा", base: "गोरा", reading: "gorā" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "रंग", base: "रंग", reading: "raṅg" }] }
   - id: "mr-1165"
     target: "सावळा"
     reading: "sāvḷā"
@@ -122,8 +122,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कपाळ", reading: "kapāḷ" }] }
     examples:
-      - { target: "त्याच्या कपाळावर घाम आहे.", reading: "tyācyā kapāḷāvar ghām āhe.", ipa: "t̪jatʃja kəpaɭaʋər ɡʱam aɦe", bases: [{ word: "त्याच्या", ref: "mr-0676" }, { word: "कपाळावर", base: "कपाळ", reading: "kapāḷ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कपाळावर टिकली लावली.", reading: "kapāḷāvar ṭikli lāvli.", ipa: "kəpaɭaʋər ʈikli laʋli", bases: [{ word: "लावली", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "त्याच्या कपाळावर घाम आहे.", reading: "tyācyā kapāḷāvar ghām āhe.", ipa: "t̪jatʃja kəpaɭaʋər ɡʱam aɦe", bases: [{ word: "त्याच्या", ref: "mr-0676" }, { word: "कपाळावर", base: "कपाळ", reading: "kapāḷ" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "घाम", base: "घाम", reading: "ghām" }] }
+      - { target: "कपाळावर टिकली लावली.", reading: "kapāḷāvar ṭikli lāvli.", ipa: "kəpaɭaʋər ʈikli laʋli", bases: [{ word: "लावली", base: "लावणे", reading: "lāvṇe" }, { word: "कपाळावर", base: "कपाळ", reading: "kapāḷ" }, { word: "टिकली", base: "टिकली", reading: "ṭikli" }] }
   - id: "mr-1171"
     target: "हनुवटी"
     reading: "hanuvṭi"
@@ -133,7 +133,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "हनुवटी", reading: "hanuvṭi" }] }
     examples:
-      - { target: "तिने हनुवटीवर हात ठेवला.", reading: "tine hanuvṭivar hāt ṭhevlā.", ipa: "t̪ine ɦənuʋʈiʋər ɦat̪ ʈʰeʋla", bases: [{ word: "हनुवटीवर", base: "हनुवटी", reading: "hanuvṭi" }, { word: "ठेवला", ref: "mr-0723" }] }
+      - { target: "तिने हनुवटीवर हात ठेवला.", reading: "tine hanuvṭivar hāt ṭhevlā.", ipa: "t̪ine ɦənuʋʈiʋər ɦat̪ ʈʰeʋla", bases: [{ word: "हनुवटीवर", base: "हनुवटी", reading: "hanuvṭi" }, { word: "ठेवला", ref: "mr-0723" }, { word: "तिने", ref: "mr-0677" }] }
       - { target: "हनुवटी गोल आहे.", reading: "hanuvṭi gol āhe.", ipa: "ɦənuʋʈi ɡol aɦe", bases: [{ word: "गोल", base: "गोल", reading: "gol" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1172"
     target: "कपडे घालणे"
@@ -142,6 +142,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कपडे घालणे", reading: "kapḍe ghālṇe" }] }
+    bases:
+      - { word: "कपडे", base: "कपडा", reading: "kapḍā" }
     examples:
-      - { target: "ती पांढरी साडी घालते.", reading: "ti pāṇḍhari sāḍi ghālte.", ipa: "t̪i paɳɖʱəri saɖi ɡʱalt̪e", bases: [{ word: "घालते", ref: "mr-0792" }] }
+      - { target: "ती पांढरी साडी घालते.", reading: "ti pāṇḍhari sāḍi ghālte.", ipa: "t̪i paɳɖʱəri saɖi ɡʱalt̪e", bases: [{ word: "घालते", ref: "mr-0792" }, { word: "पांढरी", ref: "mr-0884" }] }
       - { target: "तो नवीन शर्ट घालतो.", reading: "to navin śarṭ ghālto.", ipa: "t̪o nəʋin ʃərʈ ɡʱalt̪o", bases: [{ word: "घालतो", ref: "mr-0792" }] }

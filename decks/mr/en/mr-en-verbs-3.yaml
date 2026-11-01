@@ -13,8 +13,8 @@ cards:
     notes:
       "n1": "{1} is searching for a thing or an answer."
     examples:
-      "मी चावी शोधतो.": { native: "I am looking for the key.", bases: { "शोधतो": "to search, to look for" } }
-      "पोलीस चोराला शोधत आहेत.": { native: "The police are searching for the thief.", bases: { "आहेत": "to be", "शोधत": "to search, to look for" } }
+      "मी चावी शोधतो.": { native: "I am looking for the key.", bases: { "शोधतो": "to search, to look for", "चावी": "key" } }
+      "पोलीस चोराला शोधत आहेत.": { native: "The police are searching for the thief.", bases: { "आहेत": "to be", "शोधत": "to search, to look for", "चोराला": "the thief" } }
   "mr-1174":
     native: "to lose (a thing)"
     notes:
@@ -56,7 +56,7 @@ cards:
       "n1": "{1} is holding something with a hand."
     examples:
       "आजीचा हात धरा.": { native: "Hold grandmother's hand.", bases: { "धरा": "to hold, to grip" } }
-      "त्याने दोरी घट्ट धरली.": { native: "He held the rope tightly.", bases: { "धरली": "to hold, to grip" } }
+      "त्याने दोरी घट्ट धरली.": { native: "He held the rope tightly.", bases: { "धरली": "to hold, to grip", "दोरी": "rope", "घट्ट": "tightly" } }
   "mr-1180":
     native: "to leave; to let go"
     notes:
@@ -70,7 +70,7 @@ cards:
       "n1": "{1} is walking about for pleasure, or turning."
     examples:
       "संध्याकाळी बागेत फिरतो.": { native: "In the evening I walk about in the garden.", bases: { "फिरतो": "to walk about, to roam" } }
-      "चाक जोरात फिरतं.": { native: "The wheel turns fast.", bases: { "फिरतं": "to walk about, to roam" } }
+      "चाक जोरात फिरतं.": { native: "The wheel turns fast.", bases: { "फिरतं": "to walk about, to roam", "चाक": "wheel", "जोरात": "loudly" } }
   "mr-1182":
     native: "to live, to stay"
     notes:
@@ -84,14 +84,14 @@ cards:
       "n1": "{1} is returning to a place."
     examples:
       "तो संध्याकाळी घरी परतला.": { native: "He returned home in the evening.", bases: { "परतला": "to return, to come back" } }
-      "आई उद्या परत येईल.": "Mother will come back tomorrow."
+      "आई उद्या परत येईल.": { native: "Mother will come back tomorrow.", bases: { "परत": "back" } }
   "mr-1184":
     native: "to run away, to flee"
     notes:
       "n1": "{1} is running away fast from danger."
     examples:
       "कुत्रा पळून गेला.": { native: "The dog ran away.", bases: { "पळून": "to run away, to flee" } }
-      "चोर पळाला.": { native: "The thief ran away.", bases: { "पळाला": "to run away, to flee" } }
+      "चोर पळाला.": { native: "The thief ran away.", bases: { "पळाला": "to run away, to flee", "चोर": "thief" } }
   "mr-1185":
     native: "to cry"
     notes:
@@ -104,7 +104,7 @@ cards:
     notes:
       "n1": "{1} is finding out something after a search."
     examples:
-      "त्याने चोर शोधून काढला.": "He found out the thief."
+      "त्याने चोर शोधून काढला.": { native: "He found out the thief.", bases: { "चोर": "thief" } }
       "खरं काय ते शोधून काढू.": "Let's find out what is true."
   "mr-1187":
     native: "to finish, to end"

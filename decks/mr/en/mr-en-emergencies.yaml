@@ -63,7 +63,7 @@ cards:
       "n1": "{1} is a rescue, saving someone from danger."
     examples:
       "बचाव कार्य सुरू आहे.": { native: "The rescue work is going on.", bases: { "कार्य": "work", "सुरू": "going on", "आहे": "to be" } }
-      "जीव वाचवण्यासाठी बचाव केला.": "A rescue was done to save life."
+      "जीव वाचवण्यासाठी बचाव केला.": { native: "A rescue was done to save life.", bases: { "जीव": "life" } }
   "mr-1669":
     native: "warning"
     notes:
@@ -89,16 +89,22 @@ cards:
     native: "gas leak"
     notes:
       "n1": "{1} is a leak of gas, a serious danger in a home."
+    bases:
+      "गॅस": "gas"
+      "गळती": "leak"
     examples:
-      "घरात गॅस गळती झाली.": { native: "There was a gas leak in the house.", bases: { "झाली": "to become" } }
-      "गॅस गळती असेल तर खिडक्या उघडा.": { native: "If there is a gas leak, open the windows.", bases: { "असेल": "to be" } }
+      "घरात गॅस गळती झाली.": { native: "There was a gas leak in the house.", bases: { "झाली": "to become", "गॅस": "gas", "गळती": "leak" } }
+      "गॅस गळती असेल तर खिडक्या उघडा.": { native: "If there is a gas leak, open the windows.", bases: { "असेल": "to be", "गॅस": "gas", "गळती": "leak" } }
   "mr-1673":
     native: "electric shock"
     notes:
       "n1": "{1} is an electric shock."
+    bases:
+      "विजेचा": "of electricity"
+      "धक्का": "shock"
     examples:
-      "त्याला विजेचा धक्का बसला.": { native: "He got an electric shock.", bases: { "बसला": "to sit" } }
-      "विजेचा धक्का लागू नये म्हणून सावध रहा.": { native: "Be careful so that you do not get an electric shock.", bases: { "लागू": "to touch", "सावध": "careful" } }
+      "त्याला विजेचा धक्का बसला.": { native: "He got an electric shock.", bases: { "बसला": "to sit", "विजेचा": "of electricity", "धक्का": "shock" } }
+      "विजेचा धक्का लागू नये म्हणून सावध रहा.": { native: "Be careful so that you do not get an electric shock.", bases: { "लागू": "to touch", "सावध": "careful", "विजेचा": "of electricity", "धक्का": "shock" } }
   "mr-1674":
     native: "to shout, to cry out"
     notes:
@@ -110,9 +116,11 @@ cards:
     native: "to get out, to evacuate"
     notes:
       "n1": "{1} is leaving a building in an emergency."
+    bases:
+      "बाहेर": "outside"
     examples:
-      "सगळे इमारतीतून बाहेर पडले.": "Everyone got out of the building."
-      "शांतपणे बाहेर पडा.": "Get out calmly."
+      "सगळे इमारतीतून बाहेर पडले.": { native: "Everyone got out of the building.", bases: { "बाहेर": "outside" } }
+      "शांतपणे बाहेर पडा.": { native: "Get out calmly.", bases: { "बाहेर": "outside" } }
   "mr-1676":
     native: "to call (for help)"
     notes:

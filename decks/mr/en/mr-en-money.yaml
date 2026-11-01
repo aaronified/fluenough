@@ -83,7 +83,7 @@ cards:
     notes:
       "n1": "{1} is an item of jewellery. The plural is दागिने (dāgine)."
     examples:
-      "तिने सुंदर दागिने घातले.": "She wore beautiful jewellery."
+      "तिने सुंदर दागिने घातले.": { native: "She wore beautiful jewellery.", bases: { "दागिने": "jewellery" } }
       "दागिन्यांची किंमत जास्त आहे.": { native: "The jewellery's price is high.", bases: { "जास्त": "high", "आहे": "to be", "दागिन्यांची": "jewellery, ornament" } }
   "mr-1758":
     native: "poor"
@@ -119,7 +119,7 @@ cards:
       "n1": "{1} is a salary, a formal word for pay."
     examples:
       "वेतन महिन्याच्या शेवटी मिळतं.": { native: "The salary is received at the end of the month.", bases: { "शेवटी": "at the end", "मिळतं": "to get" } }
-      "वेतनवाढ झाली.": { native: "A salary increase happened.", bases: { "झाली": "to become" } }
+      "वेतनवाढ झाली.": { native: "A salary increase happened.", bases: { "झाली": "to become", "वेतनवाढ": "pay rise" } }
   "mr-1763":
     native: "to earn"
     notes:
@@ -146,7 +146,7 @@ cards:
     notes:
       "n1": "{1} is putting money into something to earn more."
     examples:
-      "त्याने शेअर्समध्ये पैसे गुंतवले.": { native: "He invested money in shares.", bases: { "गुंतवले": "to invest" } }
+      "त्याने शेअर्समध्ये पैसे गुंतवले.": { native: "He invested money in shares.", bases: { "गुंतवले": "to invest", "शेअर्समध्ये": "in shares" } }
       "पैसे कुठे गुंतवायचे?": { native: "Where should the money be invested?", bases: { "कुठे": "where", "गुंतवायचे": "to invest" } }
   "mr-1767":
     native: "to borrow, to take a loan"
@@ -159,6 +159,8 @@ cards:
     native: "to repay a loan"
     notes:
       "n1": "{1} is paying back a debt."
+    bases:
+      "फेडणे": "to repay"
     examples:
       "कर्ज हळूहळू फेडलं.": { native: "I repaid the loan slowly.", bases: { "हळूहळू": "slowly", "फेडलं": "to repay" } }
       "कर्ज वेळेवर फेडा.": { native: "Repay the loan on time.", bases: { "फेडा": "to repay" } }

@@ -98,7 +98,7 @@ cards:
       "n1": "{1} is the result or effect of something."
     examples:
       "याचा परिणाम वाईट झाला.": { native: "The result of this was bad.", bases: { "झाला": "to become" } }
-      "चांगल्या परिणामासाठी मेहनत करा.": { native: "Work hard for a good result.", bases: { "परिणामासाठी": "result, effect" } }
+      "चांगल्या परिणामासाठी मेहनत करा.": { native: "Work hard for a good result.", bases: { "परिणामासाठी": "result, effect", "मेहनत": "hard work" } }
   "mr-1375":
     native: "importance"
     notes:
@@ -145,16 +145,20 @@ cards:
     native: "to accept, to agree to"
     notes:
       "n1": "{1} is accepting something as true or allowed."
+    bases:
+      "मान्य": "accepted"
     examples:
-      "मी तुझं म्हणणं मान्य करतो.": { native: "I accept what you say.", bases: { "म्हणणं": "saying" } }
-      "सगळ्यांनी प्रस्ताव मान्य केला.": "Everyone accepted the proposal."
+      "मी तुझं म्हणणं मान्य करतो.": { native: "I accept what you say.", bases: { "म्हणणं": "saying", "मान्य": "accepted" } }
+      "सगळ्यांनी प्रस्ताव मान्य केला.": { native: "Everyone accepted the proposal.", bases: { "प्रस्ताव": "proposal", "मान्य": "accepted" } }
   "mr-1382":
     native: "to oppose"
     notes:
       "n1": "{1} is opposing a view, a plan or a person."
+    bases:
+      "विरोध": "opposition"
     examples:
-      "काही लोकांनी विरोध केला.": "Some people opposed it."
-      "मी त्याच्या मताला विरोध करतो.": "I oppose his view."
+      "काही लोकांनी विरोध केला.": { native: "Some people opposed it.", bases: { "विरोध": "opposition" } }
+      "मी त्याच्या मताला विरोध करतो.": { native: "I oppose his view.", bases: { "विरोध": "opposition" } }
   "mr-1383":
     native: "to suggest"
     notes:

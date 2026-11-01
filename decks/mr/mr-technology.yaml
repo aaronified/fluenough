@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "यंत्र", reading: "yantr" }] }
     examples:
       - { target: "हे यंत्र नवीन आहे.", reading: "he yantr navin āhe.", ipa: "ɦe jənt̪r nəʋin aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "नवीन", base: "नवा", reading: "navā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "यंत्र बंद पडलं.", reading: "yantr band paḍlam̐.", ipa: "jənt̪r bənd̪ pəɖlə̃", bases: [{ word: "पडलं", ref: "mr-1024" }] }
+      - { target: "यंत्र बंद पडलं.", reading: "yantr band paḍlam̐.", ipa: "jənt̪r bənd̪ pəɖlə̃", bases: [{ word: "पडलं", ref: "mr-1024" }, { word: "बंद", base: "बंद", reading: "band" }] }
   - id: "mr-1443"
     target: "यंत्रणा"
     reading: "yantraṇā"
@@ -41,7 +41,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "यंत्रणा", reading: "yantraṇā" }] }
     examples:
       - { target: "सिग्नलची यंत्रणा बिघडली.", reading: "signalci yantraṇā bighḍli.", ipa: "siɡnəltʃi jənt̪rəɳa biɡʱɖli", bases: [{ word: "सिग्नलची", ref: "mr-0458" }, { word: "बिघडली", base: "बिघडणे", reading: "bighḍṇe" }] }
-      - { target: "ही यंत्रणा खूप जटिल आहे.", reading: "hi yantraṇā khup jaṭil āhe.", ipa: "ɦi jənt̪rəɳa kʰup dzəʈil aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ही यंत्रणा खूप जटिल आहे.", reading: "hi yantraṇā khup jaṭil āhe.", ipa: "ɦi jənt̪rəɳa kʰup dzəʈil aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "जटिल", base: "जटिल", reading: "jaṭil" }] }
   - id: "mr-1444"
     target: "सॉफ्टवेअर"
     reading: "sôphṭavear"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "सॉफ्टवेअर", reading: "sôphṭavear" }] }
     examples:
       - { target: "नवीन सॉफ्टवेअर आलं.", reading: "navin sôphṭavear ālam̐.", ipa: "nəʋin sɔpʰʈəʋeər alə̃", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "आलं", ref: "mr-0711" }] }
-      - { target: "सॉफ्टवेअर अपडेट करा.", reading: "sôphṭavear apḍeṭ karā.", ipa: "sɔpʰʈəʋeər əpɖeʈ kəra", bases: [{ word: "करा", ref: "mr-0712" }] }
+      - { target: "सॉफ्टवेअर अपडेट करा.", reading: "sôphṭavear apḍeṭ karā.", ipa: "sɔpʰʈəʋeər əpɖeʈ kəra", bases: [{ word: "करा", ref: "mr-0712" }, { word: "अपडेट", base: "अपडेट", reading: "apḍeṭ" }] }
   - id: "mr-1445"
     target: "हार्डवेअर"
     reading: "hārḍavear"
@@ -170,9 +170,12 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कृत्रिम बुद्धिमत्ता", reading: "krutrim buddhimattā" }] }
+    bases:
+      - { word: "कृत्रिम", base: "कृत्रिम", reading: "krutrim" }
+      - { word: "बुद्धिमत्ता", base: "बुद्धिमत्ता", reading: "buddhimattā" }
     examples:
-      - { target: "कृत्रिम बुद्धिमत्ता खूप वाढली आहे.", reading: "krutrim buddhimattā khup vāḍhli āhe.", ipa: "krut̪rim bud̪d̪ʱimət̪t̪a kʰup ʋaɖʱli aɦe", bases: [{ word: "वाढली", ref: "mr-1027" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कृत्रिम बुद्धिमत्तेचा वापर होतो.", reading: "krutrim buddhimattecā vāpar hoto.", ipa: "krut̪rim bud̪d̪ʱimət̪t̪etsa ʋapər ɦot̪o", bases: [{ word: "बुद्धिमत्तेचा", base: "बुद्धिमत्ता", reading: "buddhimattā" }, { word: "वापर", base: "वापर", reading: "vāpar" }, { word: "होतो", base: "होणे", reading: "hoṇe" }] }
+      - { target: "कृत्रिम बुद्धिमत्ता खूप वाढली आहे.", reading: "krutrim buddhimattā khup vāḍhli āhe.", ipa: "krut̪rim bud̪d̪ʱimət̪t̪a kʰup ʋaɖʱli aɦe", bases: [{ word: "वाढली", ref: "mr-1027" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "कृत्रिम", base: "कृत्रिम", reading: "krutrim" }, { word: "बुद्धिमत्ता", base: "बुद्धिमत्ता", reading: "buddhimattā" }] }
+      - { target: "कृत्रिम बुद्धिमत्तेचा वापर होतो.", reading: "krutrim buddhimattecā vāpar hoto.", ipa: "krut̪rim bud̪d̪ʱimət̪t̪etsa ʋapər ɦot̪o", bases: [{ word: "बुद्धिमत्तेचा", base: "बुद्धिमत्ता", reading: "buddhimattā" }, { word: "वापर", base: "वापर", reading: "vāpar" }, { word: "होतो", base: "होणे", reading: "hoṇe" }, { word: "कृत्रिम", base: "कृत्रिम", reading: "krutrim" }] }
   - id: "mr-1456"
     target: "व्हायरस"
     reading: "vhāyras"
@@ -202,9 +205,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "अपलोड करणे", reading: "aploḍ karṇe" }] }
+    bases:
+      - { word: "अपलोड", base: "अपलोड", reading: "aploḍ" }
     examples:
-      - { target: "फोटो अपलोड केला.", reading: "phoṭo aploḍ kelā.", ipa: "pʰoʈo əploɖ kela", bases: [{ word: "केला", ref: "mr-0712" }] }
-      - { target: "व्हिडिओ अपलोड करा.", reading: "vhiḍio aploḍ karā.", ipa: "ʋɦiɖio əploɖ kəra", bases: [{ word: "करा", ref: "mr-0712" }] }
+      - { target: "फोटो अपलोड केला.", reading: "phoṭo aploḍ kelā.", ipa: "pʰoʈo əploɖ kela", bases: [{ word: "केला", ref: "mr-0712" }, { word: "अपलोड", base: "अपलोड", reading: "aploḍ" }] }
+      - { target: "व्हिडिओ अपलोड करा.", reading: "vhiḍio aploḍ karā.", ipa: "ʋɦiɖio əploɖ kəra", bases: [{ word: "करा", ref: "mr-0712" }, { word: "अपलोड", base: "अपलोड", reading: "aploḍ" }] }
   - id: "mr-1459"
     target: "दुरुस्त करणे"
     reading: "durust karṇe"
@@ -212,9 +217,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "दुरुस्त करणे", reading: "durust karṇe" }] }
+    bases:
+      - { word: "दुरुस्त", base: "दुरुस्त", reading: "durust" }
     examples:
-      - { target: "मी फोन दुरुस्त केला.", reading: "mi phon durust kelā.", ipa: "mi pʰon d̪urust̪ kela", bases: [{ word: "केला", ref: "mr-0712" }] }
-      - { target: "संगणक दुरुस्त झाला का?", reading: "saṅgaṇak durust jhālā kā?", ipa: "səŋɡəɳək d̪urust̪ dzʱala ka", bases: [{ word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "मी फोन दुरुस्त केला.", reading: "mi phon durust kelā.", ipa: "mi pʰon d̪urust̪ kela", bases: [{ word: "केला", ref: "mr-0712" }, { word: "दुरुस्त", base: "दुरुस्त", reading: "durust" }] }
+      - { target: "संगणक दुरुस्त झाला का?", reading: "saṅgaṇak durust jhālā kā?", ipa: "səŋɡəɳək d̪urust̪ dzʱala ka", bases: [{ word: "झाला", base: "होणे", reading: "hoṇe" }, { word: "दुरुस्त", base: "दुरुस्त", reading: "durust" }] }
   - id: "mr-1460"
     target: "तयार करणे"
     reading: "tayār karṇe"
@@ -222,8 +229,10 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "तयार करणे", reading: "tayār karṇe" }] }
+    bases:
+      - { word: "तयार", base: "तयार", reading: "tayār" }
     examples:
-      - { target: "नवीन ॲप तयार केलं.", reading: "navin êp tayār kelam̐.", ipa: "nəʋin æp t̪əjar kelə̃", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "केलं", ref: "mr-0712" }] }
+      - { target: "नवीन ॲप तयार केलं.", reading: "navin êp tayār kelam̐.", ipa: "nəʋin æp t̪əjar kelə̃", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "केलं", ref: "mr-0712" }, { word: "तयार", base: "तयार", reading: "tayār" }] }
       - { target: "कार्यक्रमाची तयारी झाली.", reading: "kāryakramāci tayāri jhāli.", ipa: "karjəkrəmatʃi t̪əjari dzʱali", bases: [{ word: "कार्यक्रमाची", base: "कार्यक्रम", reading: "kāryakram" }, { word: "तयारी", base: "तयारी", reading: "tayāri" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
   - id: "mr-1461"
     target: "चालवणे"
@@ -234,4 +243,4 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "चालवणे", reading: "cālvṇe" }] }
     examples:
       - { target: "तो संगणक चालवतो.", reading: "to saṅgaṇak cālvto.", ipa: "t̪o səŋɡəɳək tsalʋt̪o", bases: [{ word: "संगणक", ref: "mr-0622" }, { word: "चालवतो", base: "चालवणे", reading: "cālvṇe" }] }
-      - { target: "यंत्र कसं चालवायचं?", reading: "yantr kasam̐ cālvāycam̐?", ipa: "jənt̪r kəsə̃ tsalʋajtsə̃", bases: [{ word: "चालवायचं", base: "चालवणे", reading: "cālvṇe" }] }
+      - { target: "यंत्र कसं चालवायचं?", reading: "yantr kasam̐ cālvāycam̐?", ipa: "jənt̪r kəsə̃ tsalʋajtsə̃", bases: [{ word: "चालवायचं", base: "चालवणे", reading: "cālvṇe" }, { word: "कसं", base: "कसा", reading: "kasā" }] }

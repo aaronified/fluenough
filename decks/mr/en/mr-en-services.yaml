@@ -47,15 +47,17 @@ cards:
     native: "postal code, PIN"
     notes:
       "n1": "{1} is the postal code of an address, a loanword from English."
+    bases:
+      "पिन": "PIN"
     examples:
-      "पिन कोड लिहा.": "Write the PIN code."
-      "पिन कोड चुकीचा आहे.": { native: "The PIN code is wrong.", bases: { "चुकीचा": "wrong", "आहे": "to be" } }
+      "पिन कोड लिहा.": { native: "Write the PIN code.", bases: { "पिन": "PIN" } }
+      "पिन कोड चुकीचा आहे.": { native: "The PIN code is wrong.", bases: { "चुकीचा": "wrong", "आहे": "to be", "पिन": "PIN" } }
   "mr-1408":
     native: "document, papers"
     notes:
       "n1": "{1} is a document or a paper needed for an official matter."
     examples:
-      "सगळी कागदपत्र आणली का?": "Did you bring all the documents?"
+      "सगळी कागदपत्र आणली का?": { native: "Did you bring all the documents?", bases: { "सगळी": "all" } }
       "कागदपत्रांवर सही करा.": { native: "Sign the documents.", bases: { "कागदपत्रांवर": "document, papers" } }
   "mr-1409":
     native: "form"
@@ -84,14 +86,14 @@ cards:
       "n1": "{1} is a queue of people waiting. The phrase रांगेत उभे राहणे (rāṅgetā ubhe rāhṇe) means to stand in a queue."
     examples:
       "रांग खूप मोठी आहे.": { native: "The queue is very long.", bases: { "आहे": "to be" } }
-      "रांगेत थांबा.": "Wait in the queue."
+      "रांगेत थांबा.": { native: "Wait in the queue.", bases: { "रांगेत": "queue, line" } }
   "mr-1413":
     native: "counter"
     notes:
       "n1": "{1} is a counter at which you are served, a loanword from English."
     examples:
       "तिकीट काउंटर कुठे आहे?": { native: "Where is the ticket counter?", bases: { "आहे": "to be" } }
-      "दुसऱ्या काउंटरवर जा.": "Go to the second counter."
+      "दुसऱ्या काउंटरवर जा.": { native: "Go to the second counter.", bases: { "काउंटरवर": "at the counter" } }
   "mr-1414":
     native: "token, number slip"
     notes:
@@ -111,7 +113,7 @@ cards:
     notes:
       "n1": "{1} is an official certificate."
     examples:
-      "जन्म प्रमाणपत्र आणा.": "Bring the birth certificate."
+      "जन्म प्रमाणपत्र आणा.": { native: "Bring the birth certificate.", bases: { "जन्म": "birth" } }
       "प्रमाणपत्र मिळालं.": { native: "I got the certificate.", bases: { "मिळालं": "to get" } }
   "mr-1417":
     native: "identity card"
@@ -125,7 +127,7 @@ cards:
     notes:
       "n1": "{1} is a bank or other account."
     examples:
-      "माझं बँकेत खातं आहे.": { native: "I have an account at the bank.", bases: { "आहे": "to be" } }
+      "माझं बँकेत खातं आहे.": { native: "I have an account at the bank.", bases: { "आहे": "to be", "खातं": "account" } }
       "खात्यात पैसे भरा.": { native: "Put money into the account.", bases: { "खात्यात": "account" } }
   "mr-1419":
     native: "amount, sum of money"

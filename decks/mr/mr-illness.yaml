@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "नर्स", reading: "nars" }] }
     examples:
       - { target: "नर्स इंजेक्शन देते.", reading: "nars iñjekśan dete.", ipa: "nərs iɲdʒekʃən d̪et̪e", bases: [{ word: "देते", ref: "mr-0721" }] }
-      - { target: "नर्सला बोलवा.", reading: "narsalā bolvā.", ipa: "nərsəla bolʋa", bases: [{ word: "बोलवा", base: "बोलवणे", reading: "bolvṇe" }] }
+      - { target: "नर्सला बोलवा.", reading: "narsalā bolvā.", ipa: "nərsəla bolʋa", bases: [{ word: "बोलवा", base: "बोलवणे", reading: "bolvṇe" }, { word: "नर्सला", base: "नर्स", reading: "nars" }] }
   - id: "mr-1096"
     target: "रुग्ण"
     reading: "rugṇ"
@@ -183,7 +183,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "दुखणे", reading: "dukhṇe" }] }
     examples:
       - { target: "पाय दुखतो.", reading: "pāy dukhto.", ipa: "paj d̪ukʰt̪o", bases: [{ word: "दुखतो", base: "दुखणे", reading: "dukhṇe" }] }
-      - { target: "डोळे दुखतात.", reading: "ḍoḷe dukhtāt.", ipa: "ɖoɭe d̪ukʰt̪at̪", bases: [{ word: "दुखतात", base: "दुखणे", reading: "dukhṇe" }] }
+      - { target: "डोळे दुखतात.", reading: "ḍoḷe dukhtāt.", ipa: "ɖoɭe d̪ukʰt̪at̪", bases: [{ word: "दुखतात", base: "दुखणे", reading: "dukhṇe" }, { word: "डोळे", base: "डोळा", reading: "ḍoḷā" }] }
   - id: "mr-1106"
     target: "तपासणे"
     reading: "tapāsṇe"
@@ -192,5 +192,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "तपासणे", reading: "tapāsṇe" }] }
     examples:
-      - { target: "डॉक्टर मला तपासतात.", reading: "ḍôkṭar malā tapāstāt.", ipa: "ɖɔkʈər məla t̪əpast̪at̪", bases: [{ word: "तपासतात", base: "तपासणे", reading: "tapāsṇe" }] }
+      - { target: "डॉक्टर मला तपासतात.", reading: "ḍôkṭar malā tapāstāt.", ipa: "ɖɔkʈər məla t̪əpast̪at̪", bases: [{ word: "तपासतात", base: "तपासणे", reading: "tapāsṇe" }, { word: "मला", ref: "mr-0080" }] }
       - { target: "नर्सने तापमान तपासलं.", reading: "narsane tāpmān tapāslam̐.", ipa: "nərsəne t̪apman t̪əpaslə̃", bases: [{ word: "नर्सने", ref: "mr-1095" }, { word: "तपासलं", base: "तपासणे", reading: "tapāsṇe" }] }

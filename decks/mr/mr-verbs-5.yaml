@@ -18,7 +18,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "समजावणे", reading: "samjāvṇe" }] }
     examples:
       - { target: "शिक्षकांनी धडा समजावला.", reading: "śikṣakānni dhaḍā samjāvlā.", ipa: "ʃikʂəkanni d̪ʱəɖa səmdzaʋla", bases: [{ word: "शिक्षकांनी", ref: "mr-0237" }, { word: "धडा", base: "धडा", reading: "dhaḍā" }, { word: "समजावला", base: "समजावणे", reading: "samjāvṇe" }] }
-      - { target: "मला नीट समजावून सांगा.", reading: "malā niṭ samjāvun sāṅgā.", ipa: "məla niʈ səmdzaʋun saŋɡa", bases: [{ word: "नीट", ref: "mr-0733" }, { word: "समजावून", base: "समजावणे", reading: "samjāvṇe" }, { word: "सांगा", ref: "mr-0720" }] }
+      - { target: "मला नीट समजावून सांगा.", reading: "malā niṭ samjāvun sāṅgā.", ipa: "məla niʈ səmdzaʋun saŋɡa", bases: [{ word: "नीट", ref: "mr-0733" }, { word: "समजावून", base: "समजावणे", reading: "samjāvṇe" }, { word: "सांगा", ref: "mr-0720" }, { word: "मला", ref: "mr-0080" }] }
   - id: "mr-1795"
     target: "ओळखणे"
     reading: "oḷkhṇe"
@@ -28,7 +28,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "ओळखणे", reading: "oḷkhṇe" }] }
     examples:
       - { target: "मी तुला ओळखलं.", reading: "mi tulā oḷkhlam̐.", ipa: "mi t̪ula oɭkʰlə̃", bases: [{ word: "तुला", ref: "mr-0675" }, { word: "ओळखलं", base: "ओळखणे", reading: "oḷkhṇe" }] }
-      - { target: "त्याचा आवाज ओळखता येतो.", reading: "tyācā āvāj oḷkhtā yeto.", ipa: "t̪jatsa aʋadz oɭkʰt̪a jet̪o", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "ओळखता", base: "ओळखणे", reading: "oḷkhṇe" }, { word: "येतो", ref: "mr-0711" }] }
+      - { target: "त्याचा आवाज ओळखता येतो.", reading: "tyācā āvāj oḷkhtā yeto.", ipa: "t̪jatsa aʋadz oɭkʰt̪a jet̪o", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "ओळखता", base: "ओळखणे", reading: "oḷkhṇe" }, { word: "येतो", ref: "mr-0711" }, { word: "आवाज", base: "आवाज", reading: "āvāj" }] }
   - id: "mr-1796"
     target: "सोडवणे"
     reading: "soḍvṇe"
@@ -88,7 +88,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "विनवणे", reading: "vinvṇe" }] }
     examples:
       - { target: "तो मला विनवत होता.", reading: "to malā vinvat hotā.", ipa: "t̪o məla ʋinʋət̪ ɦot̪a", bases: [{ word: "मला", ref: "mr-0080" }, { word: "विनवत", base: "विनवणे", reading: "vinvṇe" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
-      - { target: "त्याने काहीतरी मिळावं म्हणून विनवलं.", reading: "tyāne kāhitri miḷāvam̐ mhaṇun vinvlam̐.", ipa: "t̪jane kaɦit̪ri miɭaʋə̃ mɦəɳun ʋinʋlə̃", bases: [{ word: "मिळावं", base: "मिळणे", reading: "miḷṇe" }, { word: "म्हणून", ref: "mr-0579" }, { word: "विनवलं", base: "विनवणे", reading: "vinvṇe" }] }
+      - { target: "त्याने काहीतरी मिळावं म्हणून विनवलं.", reading: "tyāne kāhitri miḷāvam̐ mhaṇun vinvlam̐.", ipa: "t̪jane kaɦit̪ri miɭaʋə̃ mɦəɳun ʋinʋlə̃", bases: [{ word: "मिळावं", base: "मिळणे", reading: "miḷṇe" }, { word: "म्हणून", ref: "mr-0579" }, { word: "विनवलं", base: "विनवणे", reading: "vinvṇe" }, { word: "त्याने", ref: "mr-0676" }] }
   - id: "mr-1802"
     target: "जुळवणे"
     reading: "juḷvṇe"
@@ -146,6 +146,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गोळा करणे", reading: "goḷā karṇe" }] }
+    bases:
+      - { word: "गोळा", base: "गोळा", reading: "goḷā" }
     examples:
       - { target: "मुलांनी फुलं गोळा केली.", reading: "mulānni phulam̐ goḷā keli.", ipa: "mulanni pʰulə̃ ɡoɭa keli", bases: [{ word: "मुलांनी", ref: "mr-0224" }, { word: "फुलं", base: "फूल", reading: "phul" }, { word: "गोळा", base: "गोळा", reading: "goḷā" }, { word: "केली", ref: "mr-0712" }] }
       - { target: "पैसे गोळा करा.", reading: "paise goḷā karā.", ipa: "pəise ɡoɭa kəra", bases: [{ word: "पैसे", ref: "mr-1747" }, { word: "गोळा", base: "गोळा", reading: "goḷā" }, { word: "करा", ref: "mr-0712" }] }
@@ -198,7 +200,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पटवणे", reading: "paṭvṇe" }] }
     examples:
       - { target: "त्याला मी पटवलं.", reading: "tyālā mi paṭvlam̐.", ipa: "t̪jala mi pəʈʋlə̃", bases: [{ word: "त्याला", ref: "mr-0676" }, { word: "मी", ref: "mr-0080" }, { word: "पटवलं", base: "पटवणे", reading: "paṭvṇe" }] }
-      - { target: "तुझं म्हणणं मला पटवून दे.", reading: "tujham̐ mhaṇṇam̐ malā paṭvun de.", ipa: "t̪udzʱə̃ mɦəɳɳə̃ məla pəʈʋun d̪e", bases: [{ word: "म्हणणं", base: "म्हणणे", reading: "mhaṇṇe" }, { word: "मला", ref: "mr-0080" }, { word: "पटवून", base: "पटवणे", reading: "paṭvṇe" }, { word: "दे", ref: "mr-0721" }] }
+      - { target: "तुझं म्हणणं मला पटवून दे.", reading: "tujham̐ mhaṇṇam̐ malā paṭvun de.", ipa: "t̪udzʱə̃ mɦəɳɳə̃ məla pəʈʋun d̪e", bases: [{ word: "म्हणणं", base: "म्हणणे", reading: "mhaṇṇe" }, { word: "मला", ref: "mr-0080" }, { word: "पटवून", base: "पटवणे", reading: "paṭvṇe" }, { word: "दे", ref: "mr-0721" }, { word: "तुझं", ref: "mr-0675" }] }
   - id: "mr-1813"
     target: "वेचणे"
     reading: "vecṇe"
@@ -216,8 +218,10 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "विसर्जन करणे", reading: "visarjan karṇe" }] }
+    bases:
+      - { word: "विसर्जन", base: "विसर्जन", reading: "visarjan" }
     examples:
-      - { target: "गणपतीचं विसर्जन केलं.", reading: "gaṇpticam̐ visarjan kelam̐.", ipa: "ɡəɳpt̪itsə̃ ʋisərdzən kelə̃", bases: [{ word: "गणपतीचं", ref: "mr-1041" }, { word: "केलं", ref: "mr-0712" }] }
+      - { target: "गणपतीचं विसर्जन केलं.", reading: "gaṇpticam̐ visarjan kelam̐.", ipa: "ɡəɳpt̪itsə̃ ʋisərdzən kelə̃", bases: [{ word: "गणपतीचं", ref: "mr-1041" }, { word: "केलं", ref: "mr-0712" }, { word: "विसर्जन", base: "विसर्जन", reading: "visarjan" }] }
       - { target: "विसर्जनाला सगळे आले.", reading: "visarjanālā sagḷe āle.", ipa: "ʋisərdzənala səɡɭe ale", bases: [{ word: "विसर्जनाला", base: "विसर्जन", reading: "visarjan" }, { word: "सगळे", ref: "mr-0684" }, { word: "आले", ref: "mr-0711" }] }
   - id: "mr-1815"
     target: "शिकवण"
@@ -229,4 +233,4 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "शिकवण", reading: "śikvaṇ" }] }
     examples:
       - { target: "आईची शिकवण मोलाची आहे.", reading: "āici śikvaṇ molāci āhe.", ipa: "aitʃi ʃikʋəɳ molatʃi aɦe", bases: [{ word: "आईची", ref: "mr-0217" }, { word: "मोलाची", base: "मोलाचा", reading: "molācā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "या अनुभवातून मोठी शिकवण मिळाली.", reading: "yā anubhvātun moṭhi śikvaṇ miḷāli.", ipa: "ja ənubʱʋat̪un moʈʰi ʃikʋəɳ miɭali", bases: [{ word: "या", ref: "mr-0679" }, { word: "अनुभवातून", ref: "mr-1465" }, { word: "मिळाली", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "या अनुभवातून मोठी शिकवण मिळाली.", reading: "yā anubhvātun moṭhi śikvaṇ miḷāli.", ipa: "ja ənubʱʋat̪un moʈʰi ʃikʋəɳ miɭali", bases: [{ word: "या", ref: "mr-0679" }, { word: "अनुभवातून", ref: "mr-1465" }, { word: "मिळाली", base: "मिळणे", reading: "miḷṇe" }, { word: "मोठी", ref: "mr-0760" }] }

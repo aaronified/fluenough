@@ -33,9 +33,11 @@ cards:
     native: "kho-kho"
     notes:
       "n1": "{1} is kho-kho, a fast team game in which players chase and touch."
+    bases:
+      "खो": "kho"
     examples:
-      "खो-खो मध्ये संघ धावतो.": { native: "In kho-kho the team runs.", bases: { "मध्ये": "in" } }
-      "खो-खोचा खेळ वेगवान आहे.": { native: "The kho-kho game is fast.", bases: { "खेळ": "game", "वेगवान": "fast", "आहे": "to be" } }
+      "खो-खो मध्ये संघ धावतो.": { native: "In kho-kho the team runs.", bases: { "मध्ये": "in", "खो": "kho" } }
+      "खो-खोचा खेळ वेगवान आहे.": { native: "The kho-kho game is fast.", bases: { "खेळ": "game", "वेगवान": "fast", "आहे": "to be", "खो": "kho", "खोचा": "of kho-kho" } }
   "mr-1609":
     native: "hockey"
     notes:
@@ -48,7 +50,7 @@ cards:
     notes:
       "n1": "{1} is badminton, a loanword from English."
     examples:
-      "बॅडमिंटन कोर्ट मोकळं आहे.": { native: "The badminton court is free.", bases: { "मोकळं": "free", "आहे": "to be" } }
+      "बॅडमिंटन कोर्ट मोकळं आहे.": { native: "The badminton court is free.", bases: { "मोकळं": "free", "आहे": "to be", "कोर्ट": "court" } }
       "बहिणीने बॅडमिंटनमध्ये पदक जिंकलं.": { native: "My sister won a medal in badminton.", bases: { "बॅडमिंटनमध्ये": "badminton" } }
   "mr-1611":
     native: "tennis"
@@ -97,8 +99,8 @@ cards:
     notes:
       "n1": "{1} is a run scored in cricket."
     examples:
-      "त्याने शंभर धावा केल्या.": "He scored a hundred runs."
-      "चौकाराने चार धावा मिळाल्या.": { native: "A boundary gave four runs.", bases: { "चौकाराने": "by a boundary", "मिळाल्या": "to get" } }
+      "त्याने शंभर धावा केल्या.": { native: "He scored a hundred runs.", bases: { "धावा": "runs" } }
+      "चौकाराने चार धावा मिळाल्या.": { native: "A boundary gave four runs.", bases: { "चौकाराने": "by a boundary", "मिळाल्या": "to get", "धावा": "runs" } }
   "mr-1618":
     native: "ball"
     notes:
@@ -119,7 +121,7 @@ cards:
       "n1": "{1} is a winner or a champion. The feminine is विजेती (vijetī)."
     examples:
       "विजेत्याला पदक मिळालं.": { native: "The winner got a medal.", bases: { "मिळालं": "to get", "विजेत्याला": "winner, champion" } }
-      "ती राज्यस्तरावरची विजेती आहे.": { native: "She is the state-level champion.", bases: { "आहे": "to be" } }
+      "ती राज्यस्तरावरची विजेती आहे.": { native: "She is the state-level champion.", bases: { "आहे": "to be", "राज्यस्तरावरची": "state-level", "विजेती": "champion" } }
   "mr-1621":
     native: "defeat"
     notes:
@@ -160,7 +162,7 @@ cards:
     notes:
       "n1": "{1} is catching a ball."
     examples:
-      "त्याने चेंडू झेलला.": { native: "He caught the ball.", bases: { "झेलला": "to catch (a ball)" } }
+      "त्याने चेंडू झेलला.": { native: "He caught the ball.", bases: { "झेलला": "to catch (a ball)", "चेंडू": "ball" } }
       "कर्णधाराने झेल सोडला.": { native: "The captain dropped the catch.", bases: { "झेल": "catch" } }
   "mr-1627":
     native: "to throw"

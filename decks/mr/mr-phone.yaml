@@ -18,7 +18,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "मोबाईल", reading: "mobāil" }] }
     examples:
-      - { target: "माझा मोबाईल बंद आहे.", reading: "mājhā mobāil band āhe.", ipa: "madzʱa mobail bənd̪ aɦe", bases: [{ word: "माझा", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "माझा मोबाईल बंद आहे.", reading: "mājhā mobāil band āhe.", ipa: "madzʱa mobail bənd̪ aɦe", bases: [{ word: "माझा", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "बंद", base: "बंद", reading: "band" }] }
       - { target: "मोबाईल वाजतोय.", reading: "mobāil vājtoy.", ipa: "mobail ʋadzt̪oj", bases: [{ word: "वाजतोय", base: "वाजणे", reading: "vājṇe" }] }
   - id: "mr-1191"
     target: "कॉल"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "चार्जर", reading: "cārjar" }] }
     examples:
       - { target: "चार्जर कुठे आहे?", reading: "cārjar kuṭhe āhe?", ipa: "tsardzər kuʈʰe aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "चार्जरने फोन चार्ज करा.", reading: "cārjarne phon cārj karā.", ipa: "tsardzərne pʰon tsardz kəra", bases: [{ word: "चार्जरने", base: "चार्जर", reading: "cārjar" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "चार्जरने फोन चार्ज करा.", reading: "cārjarne phon cārj karā.", ipa: "tsardzərne pʰon tsardz kəra", bases: [{ word: "चार्जरने", base: "चार्जर", reading: "cārjar" }, { word: "करा", ref: "mr-0712" }, { word: "चार्ज", base: "चार्ज", reading: "cārj" }] }
   - id: "mr-1197"
     target: "बॅटरी"
     reading: "bêṭri"
@@ -96,7 +96,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बॅटरी", reading: "bêṭri" }] }
     examples:
       - { target: "बॅटरी संपली.", reading: "bêṭri sampali.", ipa: "bæʈri səmpəli", bases: [{ word: "संपली", base: "संपणे", reading: "sampaṇe" }] }
-      - { target: "फोनची बॅटरी कमी आहे.", reading: "phonci bêṭri kami āhe.", ipa: "pʰontʃi bæʈri kəmi aɦe", bases: [{ word: "फोनची", ref: "mr-0858" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "फोनची बॅटरी कमी आहे.", reading: "phonci bêṭri kami āhe.", ipa: "pʰontʃi bæʈri kəmi aɦe", bases: [{ word: "फोनची", ref: "mr-0858" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "कमी", base: "कमी", reading: "kami" }] }
   - id: "mr-1198"
     target: "स्क्रीन"
     reading: "skrin"
@@ -128,7 +128,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ॲप", reading: "êp" }] }
     examples:
-      - { target: "हे ॲप डाउनलोड करा.", reading: "he êp ḍāunloḍ karā.", ipa: "ɦe æp ɖaunloɖ kəra", bases: [{ word: "हे", ref: "mr-0679" }, { word: "करा", ref: "mr-0712" }] }
+      - { target: "हे ॲप डाउनलोड करा.", reading: "he êp ḍāunloḍ karā.", ipa: "ɦe æp ɖaunloɖ kəra", bases: [{ word: "हे", ref: "mr-0679" }, { word: "करा", ref: "mr-0712" }, { word: "डाउनलोड", base: "डाउनलोड", reading: "ḍāunloḍ" }] }
       - { target: "ॲप नवीन आहे.", reading: "êp navin āhe.", ipa: "æp nəʋin aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1201"
     target: "पासवर्ड"
@@ -140,7 +140,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "पासवर्ड", reading: "pāsvarḍ" }] }
     examples:
       - { target: "पासवर्ड विसरलो.", reading: "pāsvarḍ visrlo.", ipa: "pasʋərɖ ʋisrlo", bases: [{ word: "विसरलो", ref: "mr-1175" }] }
-      - { target: "पासवर्ड कोणाला सांगू नका.", reading: "pāsvarḍ koṇālā sāṅgu nakā.", ipa: "pasʋərɖ koɳala saŋɡu nəka", bases: [{ word: "सांगू", ref: "mr-0720" }, { word: "नका", ref: "mr-0413" }] }
+      - { target: "पासवर्ड कोणाला सांगू नका.", reading: "pāsvarḍ koṇālā sāṅgu nakā.", ipa: "pasʋərɖ koɳala saŋɡu nəka", bases: [{ word: "सांगू", ref: "mr-0720" }, { word: "नका", ref: "mr-0413" }, { word: "कोणाला", base: "कोण", reading: "koṇ" }] }
   - id: "mr-1202"
     target: "व्हिडिओ"
     reading: "vhiḍio"
@@ -171,9 +171,11 @@ cards:
     gender: "n"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "इंटरनेट कनेक्शन", reading: "iṇṭarneṭ kanekśan" }] }
+    bases:
+      - { word: "कनेक्शन", base: "कनेक्शन", reading: "kanekśan" }
     examples:
-      - { target: "इंटरनेट कनेक्शन बंद आहे.", reading: "iṇṭarneṭ kanekśan band āhe.", ipa: "iɳʈərneʈ kənekʃən bənd̪ aɦe", bases: [{ word: "बंद", base: "बंद", reading: "band" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कनेक्शन परत जोडा.", reading: "kanekśan parat joḍā.", ipa: "kənekʃən pərət̪ dzoɖa", bases: [{ word: "जोडा", base: "जोडणे", reading: "joḍṇe" }] }
+      - { target: "इंटरनेट कनेक्शन बंद आहे.", reading: "iṇṭarneṭ kanekśan band āhe.", ipa: "iɳʈərneʈ kənekʃən bənd̪ aɦe", bases: [{ word: "बंद", base: "बंद", reading: "band" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "कनेक्शन", base: "कनेक्शन", reading: "kanekśan" }] }
+      - { target: "कनेक्शन परत जोडा.", reading: "kanekśan parat joḍā.", ipa: "kənekʃən pərət̪ dzoɖa", bases: [{ word: "जोडा", base: "जोडणे", reading: "joḍṇe" }, { word: "कनेक्शन", base: "कनेक्शन", reading: "kanekśan" }, { word: "परत", base: "परत", reading: "parat" }] }
   - id: "mr-1205"
     target: "रिंग"
     reading: "riṅg"
@@ -192,9 +194,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "चार्ज करणे", reading: "cārj karṇe" }] }
+    bases:
+      - { word: "चार्ज", base: "चार्ज", reading: "cārj" }
     examples:
-      - { target: "फोन चार्ज कर.", reading: "phon cārj kar.", ipa: "pʰon tsardz kər", bases: [{ word: "कर", ref: "mr-0712" }] }
-      - { target: "बॅटरी पूर्ण चार्ज झाली.", reading: "bêṭri purṇ cārj jhāli.", ipa: "bæʈri purɳ tsardz dzʱali", bases: [{ word: "चार्ज", base: "चार्ज", reading: "cārj" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "फोन चार्ज कर.", reading: "phon cārj kar.", ipa: "pʰon tsardz kər", bases: [{ word: "कर", ref: "mr-0712" }, { word: "चार्ज", base: "चार्ज", reading: "cārj" }] }
+      - { target: "बॅटरी पूर्ण चार्ज झाली.", reading: "bêṭri purṇ cārj jhāli.", ipa: "bæʈri purɳ tsardz dzʱali", bases: [{ word: "चार्ज", base: "चार्ज", reading: "cārj" }, { word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "पूर्ण", base: "पूर्ण", reading: "purṇ" }] }
   - id: "mr-1207"
     target: "डाउनलोड करणे"
     reading: "ḍāunloḍ karṇe"
@@ -202,9 +206,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "डाउनलोड करणे", reading: "ḍāunloḍ karṇe" }] }
+    bases:
+      - { word: "डाउनलोड", base: "डाउनलोड", reading: "ḍāunloḍ" }
     examples:
-      - { target: "गाणं डाउनलोड केलं.", reading: "gāṇam̐ ḍāunloḍ kelam̐.", ipa: "ɡaɳə̃ ɖaunloɖ kelə̃", bases: [{ word: "केलं", ref: "mr-0712" }] }
-      - { target: "ॲप डाउनलोड करा.", reading: "êp ḍāunloḍ karā.", ipa: "æp ɖaunloɖ kəra", bases: [{ word: "करा", ref: "mr-0712" }] }
+      - { target: "गाणं डाउनलोड केलं.", reading: "gāṇam̐ ḍāunloḍ kelam̐.", ipa: "ɡaɳə̃ ɖaunloɖ kelə̃", bases: [{ word: "केलं", ref: "mr-0712" }, { word: "डाउनलोड", base: "डाउनलोड", reading: "ḍāunloḍ" }] }
+      - { target: "ॲप डाउनलोड करा.", reading: "êp ḍāunloḍ karā.", ipa: "æp ɖaunloɖ kəra", bases: [{ word: "करा", ref: "mr-0712" }, { word: "डाउनलोड", base: "डाउनलोड", reading: "ḍāunloḍ" }] }
   - id: "mr-1208"
     target: "मेसेज पाठवणे"
     reading: "mesej pāṭhvṇe"
@@ -233,5 +239,5 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "कनेक्ट", reading: "kanekṭ" }] }
     examples:
-      - { target: "फोन वायफायला कनेक्ट केला.", reading: "phon vāyphāylā kanekṭ kelā.", ipa: "pʰon ʋajpʰajla kənekʈ kela", bases: [{ word: "कनेक्ट", base: "कनेक्ट", reading: "kanekṭ" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "फोन वायफायला कनेक्ट केला.", reading: "phon vāyphāylā kanekṭ kelā.", ipa: "pʰon ʋajpʰajla kənekʈ kela", bases: [{ word: "कनेक्ट", base: "कनेक्ट", reading: "kanekṭ" }, { word: "केला", ref: "mr-0712" }, { word: "वायफायला", base: "वायफाय", reading: "vāyphāy" }] }
       - { target: "कनेक्ट होत नाही.", reading: "kanekṭ hot nāhi.", ipa: "kənekʈ ɦot̪ naɦi", bases: [{ word: "होत", base: "होणे", reading: "hoṇe" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }

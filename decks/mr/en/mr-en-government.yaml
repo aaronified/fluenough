@@ -97,8 +97,8 @@ cards:
     notes:
       "n1": "{1} is democracy, government by the people."
     examples:
-      "भारत लोकशाही देश आहे.": { native: "India is a democracy.", bases: { "आहे": "to be" } }
-      "लोकशाहीत मत देणं महत्त्वाचं असतं.": { native: "In a democracy giving your vote is important.", bases: { "असतं": "to be", "लोकशाहीत": "democracy" } }
+      "भारत लोकशाही देश आहे.": { native: "India is a democracy.", bases: { "आहे": "to be", "भारत": "India" } }
+      "लोकशाहीत मत देणं महत्त्वाचं असतं.": { native: "In a democracy giving your vote is important.", bases: { "असतं": "to be", "लोकशाहीत": "democracy", "महत्त्वाचं": "important" } }
   "mr-1436":
     native: "nation"
     notes:
@@ -124,9 +124,11 @@ cards:
     native: "to be elected"
     notes:
       "n1": "{1} is winning an election."
+    bases:
+      "निवडून": "chosen"
     examples:
-      "तो दोनदा निवडून आला.": { native: "He was elected twice.", bases: { "दोनदा": "twice" } }
-      "कोण निवडून येईल?": "Who will be elected?"
+      "तो दोनदा निवडून आला.": { native: "He was elected twice.", bases: { "दोनदा": "twice", "निवडून": "chosen" } }
+      "कोण निवडून येईल?": { native: "Who will be elected?", bases: { "निवडून": "chosen" } }
   "mr-1440":
     native: "to pay tax"
     notes:

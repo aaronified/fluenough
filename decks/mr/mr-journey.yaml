@@ -51,8 +51,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "प्लॅटफॉर्म", reading: "plêṭphôrm" }] }
     examples:
-      - { target: "गाडी प्लॅटफॉर्म नंबर तीनवर येईल.", reading: "gāḍi plêṭphôrm nambar tinvar yeil.", ipa: "ɡaɖi plæʈpʰɔrm nəmbər t̪inʋər jeil", bases: [{ word: "प्लॅटफॉर्म", base: "प्लॅटफॉर्म", reading: "plêṭphôrm" }, { word: "येईल", ref: "mr-0711" }] }
-      - { target: "प्लॅटफॉर्मवर गर्दी आहे.", reading: "plêṭphôrmavar gardi āhe.", ipa: "plæʈpʰɔrməʋər ɡərd̪i aɦe", bases: [{ word: "प्लॅटफॉर्मवर", base: "प्लॅटफॉर्म", reading: "plêṭphôrm" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "गाडी प्लॅटफॉर्म नंबर तीनवर येईल.", reading: "gāḍi plêṭphôrm nambar tinvar yeil.", ipa: "ɡaɖi plæʈpʰɔrm nəmbər t̪inʋər jeil", bases: [{ word: "प्लॅटफॉर्म", base: "प्लॅटफॉर्म", reading: "plêṭphôrm" }, { word: "येईल", ref: "mr-0711" }, { word: "तीनवर", ref: "mr-0254" }] }
+      - { target: "प्लॅटफॉर्मवर गर्दी आहे.", reading: "plêṭphôrmavar gardi āhe.", ipa: "plæʈpʰɔrməʋər ɡərd̪i aɦe", bases: [{ word: "प्लॅटफॉर्मवर", base: "प्लॅटफॉर्म", reading: "plêṭphôrm" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "गर्दी", base: "गर्दी", reading: "gardi" }] }
   - id: "mr-1215"
     target: "विमान"
     reading: "vimān"
@@ -63,7 +63,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "विमान", reading: "vimān" }] }
     examples:
       - { target: "विमान उडालं.", reading: "vimān uḍālam̐.", ipa: "ʋiman uɖalə̃", bases: [{ word: "उडालं", base: "उडणे", reading: "uḍṇe" }] }
-      - { target: "विमानात खिडकीची जागा आवडते.", reading: "vimānāt khiḍkici jāgā āvḍte.", ipa: "ʋimanat̪ kʰiɖkitʃi dzaɡa aʋɖt̪e", bases: [{ word: "विमानात", base: "विमान", reading: "vimān" }, { word: "आवडते", ref: "mr-0585" }] }
+      - { target: "विमानात खिडकीची जागा आवडते.", reading: "vimānāt khiḍkici jāgā āvḍte.", ipa: "ʋimanat̪ kʰiɖkitʃi dzaɡa aʋɖt̪e", bases: [{ word: "विमानात", base: "विमान", reading: "vimān" }, { word: "आवडते", ref: "mr-0585" }, { word: "खिडकीची", ref: "mr-0463" }, { word: "जागा", base: "जागा", reading: "jāgā" }] }
   - id: "mr-1216"
     target: "पासपोर्ट"
     reading: "pāsporṭ"
@@ -118,7 +118,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "मार्ग", reading: "mārg" }] }
     examples:
       - { target: "हा मार्ग कुठे जातो?", reading: "hā mārg kuṭhe jāto?", ipa: "ɦa marɡ kuʈʰe dzat̪o", bases: [{ word: "हा", ref: "mr-0679" }, { word: "जातो", ref: "mr-0710" }] }
-      - { target: "सर्वात जलद मार्ग कोणता?", reading: "sarvāt jalad mārg koṇtā?", ipa: "sərʋat̪ dzələd̪ marɡ koɳt̪a", bases: [{ word: "कोणता", base: "कोणता", reading: "koṇtā" }] }
+      - { target: "सर्वात जलद मार्ग कोणता?", reading: "sarvāt jalad mārg koṇtā?", ipa: "sərʋat̪ dzələd̪ marɡ koɳt̪a", bases: [{ word: "कोणता", base: "कोणता", reading: "koṇtā" }, { word: "सर्वात", base: "सर्वात", reading: "sarvāt" }, { word: "जलद", base: "जलद", reading: "jalad" }] }
   - id: "mr-1221"
     target: "उशीर"
     reading: "uśir"
@@ -168,9 +168,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "बुक करणे", reading: "buk karṇe" }] }
+    bases:
+      - { word: "बुक", base: "बुक", reading: "buk" }
     examples:
-      - { target: "तिकीट बुक केलं.", reading: "tikiṭ buk kelam̐.", ipa: "t̪ikiʈ buk kelə̃", bases: [{ word: "केलं", ref: "mr-0712" }] }
-      - { target: "खोली बुक करा.", reading: "kholi buk karā.", ipa: "kʰoli buk kəra", bases: [{ word: "करा", ref: "mr-0712" }] }
+      - { target: "तिकीट बुक केलं.", reading: "tikiṭ buk kelam̐.", ipa: "t̪ikiʈ buk kelə̃", bases: [{ word: "केलं", ref: "mr-0712" }, { word: "बुक", base: "बुक", reading: "buk" }] }
+      - { target: "खोली बुक करा.", reading: "kholi buk karā.", ipa: "kʰoli buk kəra", bases: [{ word: "करा", ref: "mr-0712" }, { word: "बुक", base: "बुक", reading: "buk" }] }
   - id: "mr-1226"
     target: "उतरणे"
     reading: "utrṇe"

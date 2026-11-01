@@ -73,7 +73,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "युद्ध", reading: "yuddh" }] }
     examples:
-      - { target: "युद्ध अनेक वर्षं चाललं.", reading: "yuddh anek varṣam̐ cāllam̐.", ipa: "jud̪d̪ʱ ənek ʋərʂə̃ tsallə̃", bases: [{ word: "वर्षं", ref: "mr-0515" }, { word: "चाललं", ref: "mr-0512" }] }
+      - { target: "युद्ध अनेक वर्षं चाललं.", reading: "yuddh anek varṣam̐ cāllam̐.", ipa: "jud̪d̪ʱ ənek ʋərʂə̃ tsallə̃", bases: [{ word: "वर्षं", ref: "mr-0515" }, { word: "चाललं", ref: "mr-0512" }, { word: "अनेक", base: "अनेक", reading: "anek" }] }
       - { target: "युद्धात खूप लोक मेले.", reading: "yuddhāt khup lok mele.", ipa: "jud̪d̪ʱat̪ kʰup lok mele", bases: [{ word: "युद्धात", base: "युद्ध", reading: "yuddh" }, { word: "लोक", ref: "mr-0687" }, { word: "मेले", base: "मरणे", reading: "marṇe" }] }
   - id: "mr-1572"
     target: "लढाई"
@@ -85,7 +85,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "लढाई", reading: "laḍhāi" }] }
     examples:
       - { target: "ही लढाई मोठी होती.", reading: "hi laḍhāi moṭhi hoti.", ipa: "ɦi ləɖʱai moʈʰi ɦot̪i", bases: [{ word: "ही", ref: "mr-0679" }, { word: "मोठी", ref: "mr-0760" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }
-      - { target: "लढाईत त्याने पराक्रम केला.", reading: "laḍhāit tyāne parākram kelā.", ipa: "ləɖʱait̪ t̪jane pərakrəm kela", bases: [{ word: "लढाईत", base: "लढाई", reading: "laḍhāi" }, { word: "पराक्रम", ref: "mr-1575" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "लढाईत त्याने पराक्रम केला.", reading: "laḍhāit tyāne parākram kelā.", ipa: "ləɖʱait̪ t̪jane pərakrəm kela", bases: [{ word: "लढाईत", base: "लढाई", reading: "laḍhāi" }, { word: "पराक्रम", ref: "mr-1575" }, { word: "केला", ref: "mr-0712" }, { word: "त्याने", ref: "mr-0676" }] }
   - id: "mr-1573"
     target: "लढणे"
     reading: "laḍhṇe"
@@ -128,7 +128,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बलिदान", reading: "balidān" }] }
     examples:
       - { target: "देशासाठी बलिदान दिलं.", reading: "deśāsāṭhi balidān dilam̐.", ipa: "d̪eʃasaʈʰi bəlid̪an d̪ilə̃", bases: [{ word: "देशासाठी", ref: "mr-0208" }, { word: "दिलं", ref: "mr-0721" }] }
-      - { target: "त्यांचं बलिदान कधीच विसरता येणार नाही.", reading: "tyāñcam̐ balidān kadhic visrtā yeṇār nāhi.", ipa: "t̪jaɲtsə̃ bəlid̪an kəd̪ʱits ʋisrt̪a jeɳar naɦi", bases: [{ word: "त्यांचं", ref: "mr-0678" }, { word: "विसरता", ref: "mr-1175" }, { word: "येणार", ref: "mr-0711" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+      - { target: "त्यांचं बलिदान कधीच विसरता येणार नाही.", reading: "tyāñcam̐ balidān kadhic visrtā yeṇār nāhi.", ipa: "t̪jaɲtsə̃ bəlid̪an kəd̪ʱits ʋisrt̪a jeɳar naɦi", bases: [{ word: "त्यांचं", ref: "mr-0678" }, { word: "विसरता", ref: "mr-1175" }, { word: "येणार", ref: "mr-0711" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }, { word: "कधीच", ref: "mr-0173" }] }
   - id: "mr-1577"
     target: "स्वातंत्र्य"
     reading: "svātantry"
@@ -139,7 +139,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "स्वातंत्र्य", reading: "svātantry" }] }
     examples:
       - { target: "स्वातंत्र्य हा मोठा हक्क आहे.", reading: "svātantry hā moṭhā hakk āhe.", ipa: "sʋat̪ənt̪rj ɦa moʈʰa ɦəkk aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "मोठा", ref: "mr-0760" }, { word: "हक्क", base: "हक्क", reading: "hakk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "१५ ऑगस्टला स्वातंत्र्य दिवस साजरा होतो.", reading: "15 ôgasṭalā svātantry divas sājrā hoto.", ipa: "ɔɡəsʈəla sʋat̪ənt̪rj d̪iʋəs sadzra ɦot̪o", bases: [{ word: "साजरा", ref: "mr-1063" }, { word: "होतो", base: "होणे", reading: "hoṇe" }] }
+      - { target: "१५ ऑगस्टला स्वातंत्र्य दिवस साजरा होतो.", reading: "15 ôgasṭalā svātantry divas sājrā hoto.", ipa: "ɔɡəsʈəla sʋat̪ənt̪rj d̪iʋəs sadzra ɦot̪o", bases: [{ word: "साजरा", ref: "mr-1063" }, { word: "होतो", base: "होणे", reading: "hoṇe" }, { word: "ऑगस्टला", ref: "mr-0523" }] }
   - id: "mr-1578"
     target: "राजवाडा"
     reading: "rājvāḍā"
@@ -191,7 +191,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "शतक", reading: "śatak" }] }
     examples:
       - { target: "हा किल्ला सातशे वर्षं जुना आहे.", reading: "hā killā sātśe varṣam̐ junā āhe.", ipa: "ɦa killa sat̪ʃe ʋərʂə̃ dzuna aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "वर्षं", ref: "mr-0515" }, { word: "जुना", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "गेल्या शतकात मोठे बदल झाले.", reading: "gelyā śatkāt moṭhe badal jhāle.", ipa: "ɡelja ʃət̪kat̪ moʈʰe bəd̪əl dzʱale", bases: [{ word: "गेल्या", base: "गेलेला", reading: "gelelā" }, { word: "शतकात", base: "शतक", reading: "śatak" }, { word: "झाले", base: "होणे", reading: "hoṇe" }] }
+      - { target: "गेल्या शतकात मोठे बदल झाले.", reading: "gelyā śatkāt moṭhe badal jhāle.", ipa: "ɡelja ʃət̪kat̪ moʈʰe bəd̪əl dzʱale", bases: [{ word: "गेल्या", base: "गेलेला", reading: "gelelā" }, { word: "शतकात", base: "शतक", reading: "śatak" }, { word: "झाले", base: "होणे", reading: "hoṇe" }, { word: "मोठे", base: "मोठा", reading: "moṭhā" }] }
   - id: "mr-1583"
     target: "संस्कृती"
     reading: "saṁskruti"
@@ -221,6 +221,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "स्मारक बांधणे", reading: "smārak bāndhaṇe" }] }
+    bases:
+      - { word: "बांधणे", base: "बांधणे", reading: "bāndhaṇe" }
     examples:
       - { target: "त्यांनी स्मारक बांधलं.", reading: "tyānni smārak bāndhalam̐.", ipa: "t̪janni smarək band̪ʱələ̃", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "बांधलं", base: "बांधणे", reading: "bāndhaṇe" }] }
       - { target: "शहीदांसाठी स्मारक उभारलं.", reading: "śahidāṁsāṭhi smārak ubhārlam̐.", ipa: "ʃəɦid̪ãsaʈʰi smarək ubʱarlə̃", bases: [{ word: "शहीदांसाठी", base: "शहीद", reading: "śahid" }, { word: "उभारलं", base: "उभारणे", reading: "ubhārṇe" }] }

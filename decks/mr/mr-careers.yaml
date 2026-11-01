@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "अनुभव", reading: "anubhav" }] }
     examples:
       - { target: "मला या कामाचा अनुभव आहे.", reading: "malā yā kāmācā anubhav āhe.", ipa: "məla ja kamatsa ənubʱəʋ aɦe", bases: [{ word: "मला", ref: "mr-0080" }, { word: "या", ref: "mr-0679" }, { word: "कामाचा", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "अनुभवाने शिकतो.", reading: "anubhvāne śikto.", ipa: "ənubʱʋane ʃikt̪o", bases: [{ word: "शिकतो", ref: "mr-0717" }] }
+      - { target: "अनुभवाने शिकतो.", reading: "anubhvāne śikto.", ipa: "ənubʱʋane ʃikt̪o", bases: [{ word: "शिकतो", ref: "mr-0717" }, { word: "अनुभवाने", base: "अनुभव", reading: "anubhav" }] }
   - id: "mr-1466"
     target: "पदवी"
     reading: "padvi"
@@ -162,7 +162,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कारागीर", reading: "kārāgir" }] }
     examples:
       - { target: "कारागीर सुंदर भांडी बनवतो.", reading: "kārāgir sundar bhāṇḍi banvto.", ipa: "karaɡir sund̪ər bʱaɳɖi bənʋt̪o", bases: [{ word: "सुंदर", ref: "mr-0770" }, { word: "बनवतो", ref: "mr-0801" }] }
-      - { target: "कारागिराचं काम कौतुकास्पद आहे.", reading: "kārāgirācam̐ kām kautukāspad āhe.", ipa: "karaɡiratsə̃ kam kəut̪ukaspəd̪ aɦe", bases: [{ word: "कारागिराचं", base: "कारागीर", reading: "kārāgir" }, { word: "काम", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कारागिराचं काम कौतुकास्पद आहे.", reading: "kārāgirācam̐ kām kautukāspad āhe.", ipa: "karaɡiratsə̃ kam kəut̪ukaspəd̪ aɦe", bases: [{ word: "कारागिराचं", base: "कारागीर", reading: "kārāgir" }, { word: "काम", ref: "mr-0234" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "कौतुकास्पद", base: "कौतुकास्पद", reading: "kautukāspad" }] }
   - id: "mr-1476"
     target: "प्रशिक्षण"
     reading: "praśikṣaṇ"
@@ -213,7 +213,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "निवडणे", reading: "nivḍṇe" }] }
     examples:
-      - { target: "मी शिक्षण क्षेत्र निवडलं.", reading: "mi śikṣaṇ kṣetr nivḍlam̐.", ipa: "mi ʃikʂəɳ kʂet̪r niʋɖlə̃", bases: [{ word: "क्षेत्र", base: "क्षेत्र", reading: "kṣetr" }, { word: "निवडलं", base: "निवडणे", reading: "nivḍṇe" }] }
+      - { target: "मी शिक्षण क्षेत्र निवडलं.", reading: "mi śikṣaṇ kṣetr nivḍlam̐.", ipa: "mi ʃikʂəɳ kʂet̪r niʋɖlə̃", bases: [{ word: "क्षेत्र", base: "क्षेत्र", reading: "kṣetr" }, { word: "निवडलं", base: "निवडणे", reading: "nivḍṇe" }, { word: "शिक्षण", base: "शिक्षण", reading: "śikṣaṇ" }] }
       - { target: "कोणता पर्याय निवडशील?", reading: "koṇtā paryāy nivḍśil?", ipa: "koɳt̪a pərjaj niʋɖʃil", bases: [{ word: "पर्याय", base: "पर्याय", reading: "paryāy" }, { word: "निवडशील", base: "निवडणे", reading: "nivḍṇe" }] }
   - id: "mr-1481"
     target: "यशस्वी होणे"
@@ -222,6 +222,8 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "यशस्वी होणे", reading: "yaśasvi hoṇe" }] }
+    bases:
+      - { word: "होणे", base: "होणे", reading: "hoṇe" }
     examples:
       - { target: "तो व्यवसायात यशस्वी झाला.", reading: "to vyavsāyāt yaśasvi jhālā.", ipa: "t̪o ʋjəʋsajat̪ jəʃəsʋi dzʱala", bases: [{ word: "व्यवसायात", ref: "mr-0250" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
       - { target: "मेहनतीने माणूस यशस्वी होतो.", reading: "mehntine māṇus yaśasvi hoto.", ipa: "meɦnt̪ine maɳus jəʃəsʋi ɦot̪o", bases: [{ word: "मेहनतीने", base: "मेहनत", reading: "mehnat" }, { word: "माणूस", ref: "mr-0686" }, { word: "होतो", base: "होणे", reading: "hoṇe" }] }

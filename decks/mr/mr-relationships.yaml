@@ -18,8 +18,8 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "नाते", reading: "nāte" }] }
     examples:
-      - { target: "आमचं नातं खूप जुनं आहे.", reading: "āmcam̐ nātam̐ khup junam̐ āhe.", ipa: "amtsə̃ nat̪ə̃ kʰup dzunə̃ aɦe", bases: [{ word: "आमचं", ref: "mr-0138" }, { word: "जुनं", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "नाती जपायला हवीत.", reading: "nāti japāylā havit.", ipa: "nat̪i dzəpajla ɦəʋit̪", bases: [{ word: "जपायला", ref: "mr-1499" }, { word: "हवीत", ref: "mr-1018" }] }
+      - { target: "आमचं नातं खूप जुनं आहे.", reading: "āmcam̐ nātam̐ khup junam̐ āhe.", ipa: "amtsə̃ nat̪ə̃ kʰup dzunə̃ aɦe", bases: [{ word: "आमचं", ref: "mr-0138" }, { word: "जुनं", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "नातं", base: "नाते", reading: "nāte" }] }
+      - { target: "नाती जपायला हवीत.", reading: "nāti japāylā havit.", ipa: "nat̪i dzəpajla ɦəʋit̪", bases: [{ word: "जपायला", ref: "mr-1499" }, { word: "हवीत", ref: "mr-1018" }, { word: "नाती", base: "नाते", reading: "nāte" }] }
   - id: "mr-1629"
     target: "मैत्री"
     reading: "maitri"
@@ -74,7 +74,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "दीर", reading: "dir" }] }
     examples:
       - { target: "माझा दीर शाळेत शिकवतो.", reading: "mājhā dir śāḷet śikvto.", ipa: "madzʱa d̪ir ʃaɭet̪ ʃikʋt̪o", bases: [{ word: "माझा", ref: "mr-0080" }, { word: "शाळेत", ref: "mr-0957" }, { word: "शिकवतो", ref: "mr-0718" }] }
-      - { target: "दीर आणि मी एकत्र राहतो.", reading: "dir āṇi mi ekatr rāhto.", ipa: "d̪ir aɳi mi ekət̪r raɦt̪o", bases: [{ word: "राहतो", ref: "mr-1182" }] }
+      - { target: "दीर आणि मी एकत्र राहतो.", reading: "dir āṇi mi ekatr rāhto.", ipa: "d̪ir aɳi mi ekət̪r raɦt̪o", bases: [{ word: "राहतो", ref: "mr-1182" }, { word: "एकत्र", base: "एकत्र", reading: "ekatr" }] }
   - id: "mr-1634"
     target: "वहिनी"
     reading: "vahini"
@@ -117,7 +117,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "गैरसमज", reading: "gairsmaj" }] }
     examples:
-      - { target: "हा फक्त गैरसमज होता.", reading: "hā phakt gairsmaj hotā.", ipa: "ɦa pʰəkt̪ ɡəirsmədz ɦot̪a", bases: [{ word: "हा", ref: "mr-0679" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
+      - { target: "हा फक्त गैरसमज होता.", reading: "hā phakt gairsmaj hotā.", ipa: "ɦa pʰəkt̪ ɡəirsmədz ɦot̪a", bases: [{ word: "हा", ref: "mr-0679" }, { word: "होता", base: "होणे", reading: "hoṇe" }, { word: "फक्त", base: "फक्त", reading: "phakt" }] }
       - { target: "गैरसमज दूर करायला हवा.", reading: "gairsmaj dur karāylā havā.", ipa: "ɡəirsmədz d̪ur kərajla ɦəʋa", bases: [{ word: "दूर", base: "दूर", reading: "dur" }, { word: "करायला", ref: "mr-0712" }, { word: "हवा", ref: "mr-1018" }] }
   - id: "mr-1638"
     target: "भांडण"
@@ -169,9 +169,11 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "माफ करणे", reading: "māph karṇe" }] }
+    bases:
+      - { word: "माफ", base: "माफ", reading: "māf" }
     examples:
-      - { target: "मला माफ कर.", reading: "malā māph kar.", ipa: "məla mapʰ kər", bases: [{ word: "मला", ref: "mr-0080" }, { word: "कर", ref: "mr-0712" }] }
-      - { target: "तिने त्याला माफ केलं.", reading: "tine tyālā māph kelam̐.", ipa: "t̪ine t̪jala mapʰ kelə̃", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "त्याला", ref: "mr-0676" }, { word: "केलं", ref: "mr-0712" }] }
+      - { target: "मला माफ कर.", reading: "malā māph kar.", ipa: "məla mapʰ kər", bases: [{ word: "मला", ref: "mr-0080" }, { word: "कर", ref: "mr-0712" }, { word: "माफ", base: "माफ", reading: "māf" }] }
+      - { target: "तिने त्याला माफ केलं.", reading: "tine tyālā māph kelam̐.", ipa: "t̪ine t̪jala mapʰ kelə̃", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "त्याला", ref: "mr-0676" }, { word: "केलं", ref: "mr-0712" }, { word: "माफ", base: "माफ", reading: "māf" }] }
   - id: "mr-1643"
     target: "विश्वास ठेवणे"
     reading: "viśvās ṭhevṇe"
@@ -189,6 +191,9 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "आपुलकीने वागणे", reading: "āpulkine vāgṇe" }] }
+    bases:
+      - { word: "आपुलकीने", ref: "mr-1640" }
+      - { word: "वागणे", base: "वागणे", reading: "vāgṇe" }
     examples:
-      - { target: "सगळ्यांशी आपुलकीने वागा.", reading: "sagaḷyāṁśi āpulkine vāgā.", ipa: "səɡəɭjãʃi apulkine ʋaɡa", bases: [{ word: "सगळ्यांशी", ref: "mr-0684" }, { word: "वागा", base: "वागणे", reading: "vāgṇe" }] }
-      - { target: "ती पाहुण्यांशी आपुलकीने वागते.", reading: "ti pāhuṇyāṁśi āpulkine vāgte.", ipa: "t̪i paɦuɳjãʃi apulkine ʋaɡt̪e", bases: [{ word: "पाहुण्यांशी", ref: "mr-0690" }, { word: "वागते", base: "वागणे", reading: "vāgṇe" }] }
+      - { target: "सगळ्यांशी आपुलकीने वागा.", reading: "sagaḷyāṁśi āpulkine vāgā.", ipa: "səɡəɭjãʃi apulkine ʋaɡa", bases: [{ word: "सगळ्यांशी", ref: "mr-0684" }, { word: "वागा", base: "वागणे", reading: "vāgṇe" }, { word: "आपुलकीने", ref: "mr-1640" }] }
+      - { target: "ती पाहुण्यांशी आपुलकीने वागते.", reading: "ti pāhuṇyāṁśi āpulkine vāgte.", ipa: "t̪i paɦuɳjãʃi apulkine ʋaɡt̪e", bases: [{ word: "पाहुण्यांशी", ref: "mr-0690" }, { word: "वागते", base: "वागणे", reading: "vāgṇe" }, { word: "आपुलकीने", ref: "mr-1640" }] }

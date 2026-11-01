@@ -14,7 +14,7 @@ cards:
       "n1": "{1} is height, how tall someone is."
     examples:
       "त्याची उंची किती आहे?": { native: "How tall is he?", bases: { "आहे": "to be" } }
-      "माझी उंची पाच फूट आहे.": { native: "My height is five feet.", bases: { "आहे": "to be" } }
+      "माझी उंची पाच फूट आहे.": { native: "My height is five feet.", bases: { "आहे": "to be", "फूट": "foot, feet" } }
   "mr-1161":
     native: "short (of height)"
     notes:
@@ -35,14 +35,14 @@ cards:
       "n1": "{1} means thin or slim, of a person or of a thing."
     examples:
       "ती बारीक आहे.": { native: "She is slim.", bases: { "आहे": "to be" } }
-      "बारीक दोरी आणा.": "Bring a thin rope."
+      "बारीक दोरी आणा.": { native: "Bring a thin rope.", bases: { "दोरी": "rope" } }
   "mr-1164":
     native: "fair-skinned"
     notes:
       "n1": "{1} describes a fair complexion. Its opposite is सावळा (sāvḷā), dark-complexioned."
     examples:
       "ती गोरी आहे.": { native: "She is fair.", bases: { "आहे": "to be", "गोरी": "fair-skinned" } }
-      "त्याचा रंग गोरा आहे.": { native: "His complexion is fair.", bases: { "आहे": "to be", "गोरा": "fair-skinned" } }
+      "त्याचा रंग गोरा आहे.": { native: "His complexion is fair.", bases: { "आहे": "to be", "गोरा": "fair-skinned", "रंग": "colours" } }
   "mr-1165":
     native: "dark-complexioned"
     notes:
@@ -83,8 +83,8 @@ cards:
     notes:
       "n1": "{1} is the forehead, the part above the eyes."
     examples:
-      "त्याच्या कपाळावर घाम आहे.": { native: "There is sweat on his forehead.", bases: { "आहे": "to be", "कपाळावर": "forehead" } }
-      "कपाळावर टिकली लावली.": { native: "I put a bindi on my forehead.", bases: { "लावली": "to put" } }
+      "त्याच्या कपाळावर घाम आहे.": { native: "There is sweat on his forehead.", bases: { "आहे": "to be", "कपाळावर": "forehead", "घाम": "sweat" } }
+      "कपाळावर टिकली लावली.": { native: "I put a bindi on my forehead.", bases: { "लावली": "to put", "कपाळावर": "forehead", "टिकली": "bindi" } }
   "mr-1171":
     native: "chin"
     notes:
@@ -96,6 +96,8 @@ cards:
     native: "to wear clothes"
     notes:
       "n1": "{1} is the verb for putting on clothes."
+    bases:
+      "कपडे": "clothes"
     examples:
       "ती पांढरी साडी घालते.": "She wears a white sari."
       "तो नवीन शर्ट घालतो.": "He wears a new shirt."
