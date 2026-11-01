@@ -20,7 +20,7 @@ cards:
     bases: { "la": "the", "postal": "postcard" }
     examples:
       "Envío una postal a mi madre.": { native: "I send a postcard to my mother.", bases: { "una": "a", "postal": "postcard", "a": "to" } }
-      "La postal es de la playa.": { native: "The postcard is from the beach.", bases: { "La": "the", "postal": "postcard", "de": "of", "la": "the" } }
+      "La postal es de la playa.": { native: "The postcard is from the beach.", bases: { "La": "the", "postal": "postcard", "de": "of" } }
   "es-2216":
     native: "stamp"
     notes: { n1: "El sello is a postage stamp, put on a letter or a parcel." }
@@ -33,21 +33,21 @@ cards:
     notes: { n1: "La peluquería is a hairdresser's shop, where hair is cut and styled." }
     bases: { "la": "the", "peluquería": "hairdresser's" }
     examples:
-      "La peluquería está en la esquina.": { native: "The hairdresser's is on the corner.", bases: { "La": "the", "peluquería": "hairdresser's", "en": "in", "la": "the" } }
+      "La peluquería está en la esquina.": { native: "The hairdresser's is on the corner.", bases: { "La": "the", "peluquería": "hairdresser's", "en": "in" } }
       "Voy a la peluquería los sábados.": { native: "I go to the hairdresser's on Saturdays.", bases: { "a": "to", "la": "the", "peluquería": "hairdresser's", "los": "the" } }
   "es-2218":
     native: "hairdresser"
     notes: { n1: "El peluquero is a hairdresser, who cuts and styles hair. The feminine is la peluquera." }
     bases: { "el": "the", "peluquero": "hairdresser" }
     examples:
-      "El peluquero corta el pelo.": { native: "The hairdresser cuts the hair.", bases: { "El": "the", "peluquero": "hairdresser", "el": "the" } }
+      "El peluquero corta el pelo.": { native: "The hairdresser cuts the hair.", bases: { "El": "the", "peluquero": "hairdresser" } }
       "Mi peluquero es muy simpático.": { native: "My hairdresser is very nice.", bases: { "peluquero": "hairdresser" } }
   "es-2219":
     native: "tailor"
     notes: { n1: "El sastre is a tailor, who makes and changes clothes. The feminine is la sastra." }
     bases: { "el": "the", "sastre": "tailor" }
     examples:
-      "El sastre arregla el pantalón.": { native: "The tailor fixes the trousers.", bases: { "El": "the", "sastre": "tailor", "el": "the" } }
+      "El sastre arregla el pantalón.": { native: "The tailor fixes the trousers.", bases: { "El": "the", "sastre": "tailor" } }
       "Necesito un sastre para el traje.": { native: "I need a tailor for the suit.", bases: { "un": "a", "sastre": "tailor", "para": "for", "el": "the" } }
   "es-2220":
     native: "shoe repairer"
@@ -68,7 +68,7 @@ cards:
     notes: { n1: "La lavandería is a laundry, where clothes are washed for you." }
     bases: { "la": "the", "lavandería": "laundry" }
     examples:
-      "La lavandería lava la ropa.": { native: "The laundry washes the clothes.", bases: { "La": "the", "lavandería": "laundry", "la": "the" } }
+      "La lavandería lava la ropa.": { native: "The laundry washes the clothes.", bases: { "La": "the", "lavandería": "laundry" } }
       "Llevo las sábanas a la lavandería.": { native: "I take the sheets to the laundry.", bases: { "las": "the", "sábanas": "sheet", "a": "to", "la": "the", "lavandería": "laundry" } }
   "es-2223":
     native: "deposit; income"
@@ -173,21 +173,21 @@ cards:
     notes: { n1: "El mecánico is a mechanic, who repairs cars and machines. The feminine is la mecánica." }
     bases: { "el": "the", "mecánico": "mechanic" }
     examples:
-      "El mecánico revisa el coche.": { native: "The mechanic checks the car.", bases: { "El": "the", "mecánico": "mechanic", "revisa": "to check", "el": "the" } }
+      "El mecánico revisa el coche.": { native: "The mechanic checks the car.", bases: { "El": "the", "mecánico": "mechanic", "revisa": "to check" } }
       "Llevo el coche al mecánico.": { native: "I take the car to the mechanic.", bases: { "el": "the", "al": "to the", "mecánico": "mechanic" } }
   "es-2238":
     native: "plumber"
     notes: { n1: "El fontanero is a plumber, who fixes pipes and water." }
     bases: { "el": "the", "fontanero": "plumber" }
     examples:
-      "El fontanero arregla el grifo.": { native: "The plumber fixes the tap.", bases: { "El": "the", "fontanero": "plumber", "el": "the" } }
+      "El fontanero arregla el grifo.": { native: "The plumber fixes the tap.", bases: { "El": "the", "fontanero": "plumber" } }
       "Llamo al fontanero por la fuga.": { native: "I call the plumber about the leak.", bases: { "al": "to the", "fontanero": "plumber", "por": "for", "la": "the", "fuga": "leak" } }
   "es-2239":
     native: "electrician"
     notes: { n1: "El electricista is an electrician, who fixes electrical things. The feminine is la electricista." }
     bases: { "el": "the", "electricista": "electrician" }
     examples:
-      "El electricista revisa el enchufe.": { native: "The electrician checks the socket.", bases: { "El": "the", "electricista": "electrician", "revisa": "to check", "el": "the" } }
+      "El electricista revisa el enchufe.": { native: "The electrician checks the socket.", bases: { "El": "the", "electricista": "electrician", "revisa": "to check" } }
       "Necesito un electricista.": { native: "I need an electrician.", bases: { "un": "a", "electricista": "electrician" } }
   "es-2240":
     native: "carpenter"
@@ -230,13 +230,13 @@ cards:
     bases: { "el": "the", "remitente": "sender" }
     examples:
       "El remitente escribe su nombre.": { native: "The sender writes their name.", bases: { "El": "the", "remitente": "sender" } }
-      "El remitente está en el sobre.": { native: "The sender is on the envelope.", bases: { "El": "the", "remitente": "sender", "en": "in", "el": "the" } }
+      "El remitente está en el sobre.": { native: "The sender is on the envelope.", bases: { "El": "the", "remitente": "sender", "en": "in" } }
   "es-2246":
     native: "recipient"
     notes: { n1: "El destinatario is the person who receives a letter or a parcel." }
     bases: { "el": "the", "destinatario": "recipient" }
     examples:
-      "El destinatario firma el paquete.": { native: "The recipient signs for the parcel.", bases: { "El": "the", "destinatario": "recipient", "el": "the" } }
+      "El destinatario firma el paquete.": { native: "The recipient signs for the parcel.", bases: { "El": "the", "destinatario": "recipient" } }
       "El destinatario vive en Lima.": { native: "The recipient lives in Lima.", bases: { "El": "the", "destinatario": "recipient", "en": "in", "Lima": "Lima" } }
   "es-2247":
     native: "to repair"
