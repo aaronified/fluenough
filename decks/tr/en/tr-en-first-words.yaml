@@ -1,0 +1,131 @@
+schema: 1
+id: "tr-en-first-words"
+kind: "layer"
+core: "tr-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes, no, hello, thanks, please, I, you, water, good and very. Their first sentences are in the examples. Not yet checked by a Turkish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "tr-0001":
+    native: "yes"
+    notes:
+      "n1": "The yes. The opposite is hayır, no."
+    examples:
+      "Evet, teşekkürler.": "Yes, thanks."
+      "Evet, anlıyorum.":
+        native: "Yes, I understand."
+        bases:
+          "anlıyorum": "to understand"
+  "tr-0002":
+    native: "no"
+    notes:
+      "n1": "Before a verb, use the negative verb form: anlamıyorum, I do not understand."
+    examples:
+      "Hayır, teşekkürler.": "No, thanks."
+      "Anlamıyorum.":
+        native: "I don't understand."
+        bases:
+          "Anlamıyorum": "to understand"
+  "tr-0003":
+    native: "hello"
+    notes:
+      "n1": "A general hello. Friends may say selam, hi."
+    examples:
+      "Merhaba, nasılsın?":
+        native: "Hello, how are you?"
+        bases:
+          "nasılsın": "how"
+      "Merhaba, arkadaşım.":
+        native: "Hello, my friend."
+        bases:
+          "arkadaşım": "friend"
+  "tr-0004":
+    native: "thanks; thank you"
+    notes:
+      "n1": "The fuller form is teşekkür ederim, thank you, with the verb etmek, to do."
+    examples:
+      "Çok teşekkürler.": "Thanks very much."
+      "Teşekkür ederim.":
+        native: "Thank you."
+        bases:
+          "Teşekkür": "thanks"
+          "ederim": "to do (I form)"
+  "tr-0005":
+    native: "please"
+    notes:
+      "n1": "Also used to say go ahead, with buyurun, here you are."
+    examples:
+      "Bir su, lütfen.":
+        native: "A water, please."
+        bases:
+          "Bir": "a; one"
+      "Lütfen oturun.":
+        native: "Please, sit down."
+        bases:
+          "oturun": "to sit (polite you)"
+  "tr-0006":
+    native: "I"
+    notes:
+      "n1": "Often left out, since the verb ending shows who is speaking: anlamıyorum alone means I do not understand."
+    examples:
+      "Ben öğrenciyim.":
+        native: "I am a student."
+        bases:
+          "öğrenciyim": "student"
+      "Ben de anlıyorum.":
+        native: "I understand too."
+        bases:
+          "de": "also; too"
+          "anlıyorum": "to understand"
+  "tr-0007":
+    native: "you (informal)"
+    notes:
+      "n1": "Informal, to one person. A polite or plural you is siz."
+    examples:
+      "Sen Türkçe konuşuyor musun?":
+        native: "Do you speak Turkish?"
+        bases:
+          "Türkçe": "Turkish (the language)"
+          "konuşuyor": "to speak"
+          "musun": "question particle"
+      "Sen iyisin.": "You are good."
+  "tr-0008":
+    native: "water"
+    notes:
+      "n1": "A glass of water is bir su, a water."
+    examples:
+      "Su soğuk.":
+        native: "The water is cold."
+        bases:
+          "soğuk": "cold"
+      "Su istiyor musun?":
+        native: "Do you want water?"
+        bases:
+          "istiyor": "to want"
+          "musun": "question particle"
+  "tr-0009":
+    native: "good"
+    notes:
+      "n1": "İyi günler, good days, is the greeting for the day."
+    examples:
+      "İyi günler.":
+        native: "Good day."
+        bases:
+          "İyi": "good"
+          "günler": "day"
+      "Bu çok iyi.":
+        native: "This is very good."
+        bases:
+          "Bu": "this"
+  "tr-0010":
+    native: "very; much"
+    notes:
+      "n1": "Goes before an adjective or a verb: çok iyi, very good."
+    examples:
+      "Çok iyi.": "Very good."
+      "Çok yorgunum.":
+        native: "I am very tired."
+        bases:
+          "yorgunum": "tired"

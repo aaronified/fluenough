@@ -1,0 +1,326 @@
+schema: 1
+id: ta-phrasebook
+part: core
+kind: vocab
+language:
+  code: ta
+  iso639_3: tam
+  name: Tamil
+  script: tamil
+  tts: ta-IN
+  icon: த
+license: CC-BY-SA-4.0
+tags:
+- beginner
+- unreviewed
+cards:
+- id: ta-0011
+  target: வணக்கம்
+  reading: vaṇakkam
+  ipa: vaɳakkam
+  pos: other
+  tags:
+  - greeting
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: வணக்கம்
+    base: வணக்கம்
+    reading: vaṇakkam
+- id: ta-0012
+  target: போய் வருகிறேன்
+  reading: pōy varukiṟēṉ
+  ipa: poːj varukiɾeːn
+  pos: phrase
+  tags:
+  - greeting
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: போய்
+    base: போ
+    reading: pō
+  - word: வருகிறேன்
+    ref: ta-0010
+- id: ta-0013
+  target: நன்றி
+  reading: naṉṟi
+  ipa: naɲɾi
+  pos: other
+  tags:
+  - polite
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: நன்றி
+    base: நன்றி
+    reading: naṉṟi
+- id: ta-0014
+  target: மன்னிக்கவும்
+  reading: maṉṉikkavum
+  ipa: maɲɲikkaʋum
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: மன்னிக்கவும்
+    base: மன்னிக்கவும்
+    reading: maṉṉikkavum
+- id: ta-0015
+  target: எனக்குப் புரியவில்லை.
+  reading: eṉakkup puriyavillai.
+  ipa: eɲakkup puɾijaʋillai.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: எனக்குப்
+    ref: ta-0003
+  - word: புரியவில்லை
+    base: புரி
+    reading: puri
+- id: ta-0016
+  target: மெதுவாகப் பேசுங்கள்.
+  reading: meduvākap pēcuṅkaḷ.
+  ipa: meðuʋaːkap peːsuŋɡaɭ.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: மெதுவாகப்
+    base: மெதுவாக
+    reading: meduvāka
+  - word: பேசுங்கள்
+    base: பேசு
+    reading: pēcu
+- id: ta-0017
+  target: தயவுசெய்து
+  reading: tayavuceytu
+  ipa: t̪əjaʋusejt̪u
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: தயவுசெய்து
+    base: தயவுசெய்து
+    reading: tayavuceytu
+- id: ta-0018
+  target: உதவி செய்யுங்கள்!
+  reading: utavi ceyyuṅkaḷ!
+  ipa: uðaʋi seɟjuŋɡaɭ
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: உதவி
+    base: உதவி
+    reading: utavi
+  - word: செய்யுங்கள்
+    base: செய்
+    reading: cey
+- id: ta-0019
+  target: கழிவறை எங்கே?
+  reading: kaḻivaṟai eṅkē?
+  ipa: kaɻiʋaɾai eŋɡeː
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: கழிவறை
+    base: கழிவறை
+    reading: kaḻivaṟai
+  - word: எங்கே
+    base: எங்கே
+    reading: eṅkē
+- id: ta-0020
+  target: இது எவ்வளவு?
+  reading: itu evvaḷavu?
+  ipa: idu eʋʋaɭaʋu
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: இது
+    base: இது
+    reading: itu
+  - word: எவ்வளவு
+    base: எவ்வளவு
+    reading: evvaḷavu
+- id: ta-0021
+  target: எனக்குத் தமிழ் தெரியாது.
+  reading: eṉakkut tamiḻ teriyātu.
+  ipa: eɲakkut̪ t̪amiɻ t̪eɾijaːt̪u.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: எனக்குத்
+    ref: ta-0003
+  - word: தமிழ்
+    base: தமிழ்
+    reading: tamiḻ
+  - word: தெரியாது
+    base: தெரி
+    reading: teri
+- id: ta-0022
+  target: நான் கொஞ்சம் தமிழ் பேசுவேன்.
+  reading: nāṉ koñcam tamiḻ pēcuvēṉ.
+  ipa: naːn koɲɟʃam t̪amiɻ peːsuʋeːn.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: நான்
+    ref: ta-0003
+  - word: கொஞ்சம்
+    base: கொஞ்சம்
+    reading: koñcam
+  - word: தமிழ்
+    base: தமிழ்
+    reading: tamiḻ
+  - word: பேசுவேன்
+    base: பேசு
+    reading: pēcu
+- id: ta-0023
+  target: சரி
+  reading: cari
+  ipa: t͡ʃəɾi
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: சரி
+    base: சரி
+    reading: cari
+- id: ta-0024
+  target: ஒரு நிமிடம்
+  reading: oru nimiṭam
+  ipa: oɾu nimiɾam
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: ஒரு
+    base: ஒரு
+    reading: oru
+  - word: நிமிடம்
+    base: நிமிடம்
+    reading: nimiṭam
+- id: ta-0025
+  target: பரவாயில்லை
+  reading: paravāyillai
+  ipa: p̪aɾaʋaːjillai
+  pos: other
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: பரவாயில்லை
+    base: பரவாயில்லை
+    reading: paravāyillai
+- id: ta-0026
+  target: தேநீர் வேண்டும்.
+  reading: tēnīr vēṇṭum.
+  ipa: t̪eːniːr veːɳɖum.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: தேநீர்
+    base: தேநீர்
+    reading: tēnīr
+  - word: வேண்டும்
+    base: வேண்டு
+    reading: vēṇṭu
+- id: ta-0027
+  target: மீண்டும் சொல்லுங்கள்.
+  reading: mīṇṭum colluṅkaḷ.
+  ipa: miːɳɖum soluŋɡaɭ.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: மீண்டும்
+    base: மீண்டும்
+    reading: mīṇṭum
+  - word: சொல்லுங்கள்
+    base: சொல்
+    reading: col
+- id: ta-0028
+  target: உதவிக்கு நன்றி.
+  reading: utavikku naṉṟi.
+  ipa: uðaʋikkɯ naɲɾi.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: உதவிக்கு
+    base: உதவி
+    reading: utavi
+  - word: நன்றி
+    base: நன்றி
+    reading: naṉṟi
+- id: ta-0029
+  target: நல்லது, நன்றி.
+  reading: nallatu, naṉṟi.
+  ipa: nallat̪u naɲɾi.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: நன்றி
+    base: நன்றி
+    reading: naṉṟi
+- id: ta-0030
+  target: சரி, போகலாம்.
+  reading: cari, pōkalām.
+  ipa: t͡ʃəɾi poːkəlaːm.
+  pos: phrase
+  phrasebook: true
+  notes:
+  - id: n1
+    kind: note
+  bases:
+  - word: சரி
+    base: சரி
+    reading: cari
+  - word: போகலாம்
+    base: போ
+    reading: pō

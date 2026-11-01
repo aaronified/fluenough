@@ -1,0 +1,134 @@
+schema: 1
+id: "pl-en-first-words"
+kind: "layer"
+core: "pl-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+description: "Ten words to start with: yes, no, hello, thanks, please, I, you, water, good and very. Their first sentences are in the examples. Not yet checked by a Polish speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "pl-0001":
+    native: "yes"
+    notes:
+      "n1": "Also used to agree with what someone has just said."
+    examples:
+      "Tak, dziękuję.": "Yes, thank you."
+      "Tak, rozumiem.":
+        native: "Yes, I understand."
+        bases:
+          "rozumiem": "to understand"
+  "pl-0002":
+    native: "no; not"
+    notes:
+      "n1": "Nie also makes a verb negative and goes before it: nie rozumiem, I do not understand."
+    examples:
+      "Nie, dziękuję.": "No, thank you."
+      "Nie rozumiem.":
+        native: "I don't understand."
+        bases:
+          "rozumiem": "to understand"
+  "pl-0003":
+    native: "hi; hello; bye"
+    notes:
+      "n1": "Informal, for friends, on arriving and leaving. The polite hello is Dzień dobry (see the phrasebook)."
+    examples:
+      "Cześć! Jak się masz?":
+        native: "Hi! How are you?"
+        bases:
+          "Jak": "how"
+          "się": "oneself (a reflexive particle)"
+          "masz": "to have"
+      "Cześć, do zobaczenia.":
+        native: "Bye, see you."
+        bases:
+          "do": "until; to (part of do zobaczenia)"
+          "zobaczenia": "seeing; meeting"
+  "pl-0004":
+    native: "thank you; thanks"
+    notes:
+      "n1": "The I form of dziękować, to thank. Dziękuję bardzo is thank you very much."
+    examples:
+      "Dziękuję bardzo.": "Thank you very much."
+      "Dziękuję ci.": "Thank you."
+    bases:
+      "dziękuję": "to thank"
+  "pl-0005":
+    native: "please; here you are"
+    notes:
+      "n1": "Also the answer to thanks, as you're welcome: Proszę bardzo."
+    examples:
+      "Poproszę wodę.":
+        native: "Water, please."
+        bases:
+          "Poproszę": "to ask for; to request"
+      "Proszę bardzo.": "You're welcome."
+  "pl-0006":
+    native: "I"
+    notes:
+      "n1": "Often left out: rozumiem on its own is I understand, because the ending shows who is speaking."
+    examples:
+      "Ja jestem z Polski.":
+        native: "I am from Poland."
+        bases:
+          "jestem": "to be"
+          "z": "from"
+          "Polski": "Poland"
+      "Ja rozumiem.":
+        native: "I understand."
+        bases:
+          "rozumiem": "to understand"
+  "pl-0007":
+    native: "you (informal)"
+    notes:
+      "n1": "Informal. For a polite you, Polish says Pan (sir) or Pani (madam) and uses the third person."
+    examples:
+      "Ty mówisz po polsku.":
+        native: "You speak Polish."
+        bases:
+          "mówisz": "to speak"
+          "po": "in (a language)"
+          "polsku": "Polish"
+      "Ty jesteś dobry.":
+        native: "You are good."
+        bases:
+          "jesteś": "to be"
+  "pl-0008":
+    native: "water"
+    notes:
+      "n1": "Declines: wodę (accusative), wody (genitive). The w is said as a v."
+    examples:
+      "Woda jest zimna.":
+        native: "The water is cold."
+        bases:
+          "jest": "to be"
+          "zimna": "cold"
+      "Pijesz wodę?":
+        native: "Do you drink water?"
+        bases:
+          "Pijesz": "to drink"
+          "wodę": "water"
+  "pl-0009":
+    native: "good"
+    notes:
+      "n1": "The masculine form. The feminine is dobra, the neuter dobre."
+    examples:
+      "Dobry dzień.":
+        native: "Good day."
+        bases:
+          "dzień": "day"
+      "Dobra woda.":
+        native: "Good water."
+        bases:
+          "Dobra": "good"
+  "pl-0010":
+    native: "very; very much"
+    notes:
+      "n1": "Goes before an adjective or an adverb: bardzo dobry, very good."
+    examples:
+      "Bardzo dobrze.": "Very well."
+      "Jestem bardzo zmęczony.":
+        native: "I am very tired."
+        bases:
+          "Jestem": "to be"
+          "zmęczony": "tired"

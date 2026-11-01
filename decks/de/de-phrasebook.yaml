@@ -1,0 +1,205 @@
+schema: 1
+id: "de-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "de", iso639_3: "deu", name: "German", script: "latin", tts: "de-DE", icon: "De" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "de-0011"
+    target: "Hallo"
+    ipa: "halo"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Hallo", base: "hallo" }
+  - id: "de-0012"
+    target: "Guten Morgen."
+    ipa: "ɡuːtən mɔʁɡən"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Guten", base: "gut" }
+      - { word: "Morgen", base: "Morgen" }
+  - id: "de-0013"
+    target: "Guten Abend."
+    ipa: "ɡuːtən aːbənt"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Guten", base: "gut" }
+      - { word: "Abend", base: "Abend" }
+  - id: "de-0014"
+    target: "Gute Nacht."
+    ipa: "ɡuːtə naxt"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Gute", base: "gut" }
+      - { word: "Nacht", base: "Nacht" }
+  - id: "de-0015"
+    target: "Auf Wiedersehen."
+    ipa: "aʊ̯f viːdɐzeːən"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Auf", base: "auf" }
+      - { word: "Wiedersehen", base: "Wiedersehen" }
+  - id: "de-0016"
+    target: "Tschüss."
+    ipa: "tʃʏs"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Tschüss", base: "tschüss" }
+  - id: "de-0017"
+    target: "Bitte."
+    ipa: "bɪtə"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Bitte", base: "bitte" }
+  - id: "de-0018"
+    target: "Danke."
+    ipa: "daŋkə"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Danke", base: "danke" }
+  - id: "de-0019"
+    target: "Danke schön."
+    ipa: "daŋkə ʃøːn"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Danke", base: "danke" }
+      - { word: "schön", base: "schön" }
+  - id: "de-0020"
+    target: "Entschuldigung."
+    ipa: "ɛntʃʊldɪɡʊŋ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Entschuldigung", base: "Entschuldigung" }
+  - id: "de-0021"
+    target: "Ich verstehe nicht."
+    ipa: "ɪç fɛɐ̯ʃteːə nɪçt"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Ich", base: "ich" }
+      - { word: "verstehe", base: "verstehen" }
+      - { word: "nicht", base: "nicht" }
+  - id: "de-0022"
+    target: "Ich spreche kein Deutsch."
+    ipa: "ɪç ʃpreːçə kaɪn dɔʏtʃ"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Ich", base: "ich" }
+      - { word: "spreche", base: "sprechen" }
+      - { word: "kein", base: "kein" }
+      - { word: "Deutsch", base: "Deutsch" }
+  - id: "de-0023"
+    target: "Sprechen Sie Englisch?"
+    ipa: "ʃprɛçən ziː ɛŋlɪʃ"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Sprechen", base: "sprechen" }
+      - { word: "Sie", base: "Sie" }
+      - { word: "Englisch", base: "Englisch" }
+  - id: "de-0024"
+    target: "Können Sie langsamer sprechen?"
+    ipa: "kœnən ziː laŋzaːmɐ ʃprɛçən"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Können", base: "können" }
+      - { word: "Sie", base: "Sie" }
+      - { word: "langsamer", base: "langsam" }
+      - { word: "sprechen", base: "sprechen" }
+  - id: "de-0025"
+    target: "Wie heißen Sie?"
+    ipa: "viː haɪsən ziː"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Wie", base: "wie" }
+      - { word: "heißen", base: "heißen" }
+      - { word: "Sie", base: "Sie" }
+  - id: "de-0026"
+    target: "Ich heiße Anna."
+    ipa: "ɪç haɪsə anaː"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Ich", base: "ich" }
+      - { word: "heiße", base: "heißen" }
+      - { word: "Anna", base: "Anna" }
+  - id: "de-0027"
+    target: "Wie viel kostet das?"
+    ipa: "viː fiːl kɔstət das"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Wie", base: "wie" }
+      - { word: "viel", base: "viel" }
+      - { word: "kostet", base: "kosten" }
+      - { word: "das", base: "das" }
+  - id: "de-0028"
+    target: "Wo ist die Toilette?"
+    ipa: "voː ɪst diː toaletə"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Wo", base: "wo" }
+      - { word: "ist", base: "sein" }
+      - { word: "die", base: "die" }
+      - { word: "Toilette", base: "Toilette" }
+  - id: "de-0029"
+    target: "Hilfe!"
+    ipa: "hɪlfə"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Hilfe", base: "Hilfe" }
+  - id: "de-0030"
+    target: "Bitte sehr."
+    ipa: "bɪtə zeːɐ̯"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Bitte", base: "bitte" }
+      - { word: "sehr", base: "sehr" }

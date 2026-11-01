@@ -1,0 +1,446 @@
+# The order Swahili is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught sw-en-<name> for sw-<name> (ADR-0013, ADR-0036).
+#
+# This is also Swahili's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: Noun classes (m-wa, ki-vi first); verb slots (subject-tense-object-root); tenses; negation; relatives; applicative/causative.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+schema: 1
+kind: "path"
+id: "sw-path"
+language: "sw"
+description: "Swahili: the planned path to B1. Only the phrasebook and the first words are written."
+genders: []
+alphabet: []
+units:
+  - decks: ["sw-phrasebook", "sw-first-words", "*"]
+    words: 10
+  - planned: { id: "sw-sound-differences", grammar: ["sound-differences"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short spoken passage in Swahili showing sound differences" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Swahili showing sound differences" } }
+  - planned: { id: "sw-questions", theme: "questions", words: 12 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short spoken passage in Swahili on the theme yes, no and questions" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Swahili on the theme yes, no and questions" } }
+  - planned: { id: "sw-pronouns", theme: "pronouns", words: 36 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short spoken passage in Swahili on the theme pronouns and people words" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Swahili on the theme pronouns and people words" } }
+  - planned: { id: "sw-family", theme: "family", words: 27 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short spoken passage in Swahili on the theme family" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Swahili on the theme family" } }
+  - planned: { id: "sw-numbers-1-20", theme: "numbers-1-20", words: 22 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short spoken passage in Swahili on the theme numbers 1 to 20" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Swahili on the theme numbers 1 to 20" } }
+  - planned: { id: "sw-about-me", theme: "about-me", words: 8 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short spoken passage in Swahili on the theme talking about yourself" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Swahili on the theme talking about yourself" } }
+  - planned: { id: "sw-everyday-verbs", theme: "everyday-verbs", words: 36 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short spoken passage in Swahili on the theme everyday verbs" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Swahili on the theme everyday verbs" } }
+  - planned: { id: "sw-adverbs", theme: "adverbs", words: 54 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short spoken passage in Swahili on the theme adverbs" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Swahili on the theme adverbs" } }
+  - planned: { id: "sw-quantities", theme: "quantities", words: 33 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short spoken passage in Swahili on the theme quantities" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Swahili on the theme quantities" } }
+  - planned: { id: "sw-describing", theme: "describing", words: 43 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short spoken passage in Swahili on the theme describing things and feelings" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Swahili on the theme describing things and feelings" } }
+  - planned: { id: "sw-grammar-noun-classes-1", grammar: ["noun-classes"] }
+    listening_passages:
+      - { id: "grammar-noun-classes-1-heard", text: { "en": "A short spoken passage in Swahili showing noun classes" } }
+    reading_passages:
+      - { id: "grammar-noun-classes-1-text", text: { "en": "A short written text in Swahili showing noun classes" } }
+  - planned: { id: "sw-time", theme: "time", words: 19 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short spoken passage in Swahili on the theme time" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Swahili on the theme time" } }
+  - planned: { id: "sw-location", theme: "location", words: 15 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short spoken passage in Swahili on the theme location" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Swahili on the theme location" } }
+  - planned: { id: "sw-more-verbs", theme: "more-verbs", words: 35 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short spoken passage in Swahili on the theme more verbs" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Swahili on the theme more verbs" } }
+  - planned: { id: "sw-work", theme: "work", words: 21 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short spoken passage in Swahili on the theme work" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Swahili on the theme work" } }
+  - planned: { id: "sw-grammar-agreement", grammar: ["class-agreement"] }
+    listening_passages:
+      - { id: "grammar-agreement-heard", text: { "en": "A short spoken passage in Swahili showing class agreement" } }
+    reading_passages:
+      - { id: "grammar-agreement-text", text: { "en": "A short written text in Swahili showing class agreement" } }
+  - planned: { id: "sw-numbers-big", theme: "numbers-big", words: 14 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short spoken passage in Swahili on the theme tens and big numbers" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Swahili on the theme tens and big numbers" } }
+  - planned: { id: "sw-food", theme: "food", words: 69 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short spoken passage in Swahili on the theme food" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Swahili on the theme food" } }
+  - planned: { id: "sw-groceries", theme: "groceries", words: 17 }
+    listening_passages:
+      - { id: "groceries-heard", text: { "en": "A short spoken passage in Swahili on the theme groceries" } }
+    reading_passages:
+      - { id: "groceries-text", text: { "en": "A short written text in Swahili on the theme groceries" } }
+  - planned: { id: "sw-market", theme: "market", words: 8 }
+    listening_passages:
+      - { id: "market-heard", text: { "en": "A short spoken passage in Swahili on the theme market" } }
+    reading_passages:
+      - { id: "market-text", text: { "en": "A short written text in Swahili on the theme market" } }
+  - planned: { id: "sw-grammar-verb-slots", grammar: ["verb-slots"] }
+    listening_passages:
+      - { id: "grammar-verb-slots-heard", text: { "en": "A short spoken passage in Swahili showing verb slots" } }
+    reading_passages:
+      - { id: "grammar-verb-slots-text", text: { "en": "A short written text in Swahili showing verb slots" } }
+  - planned: { id: "sw-directions", theme: "directions", words: 13 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short spoken passage in Swahili on the theme directions" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Swahili on the theme directions" } }
+  - planned: { id: "sw-transport", theme: "transport", words: 9 }
+    listening_passages:
+      - { id: "transport-heard", text: { "en": "A short spoken passage in Swahili on the theme transport" } }
+    reading_passages:
+      - { id: "transport-text", text: { "en": "A short written text in Swahili on the theme transport" } }
+  - planned: { id: "sw-body", theme: "body", words: 30 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short spoken passage in Swahili on the theme body" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Swahili on the theme body" } }
+  - planned: { id: "sw-places", theme: "places", words: 46 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short spoken passage in Swahili on the theme places" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Swahili on the theme places" } }
+  - planned: { id: "sw-grammar-present", grammar: ["present-tense"] }
+    listening_passages:
+      - { id: "grammar-present-heard", text: { "en": "A short spoken passage in Swahili showing present tense" } }
+    reading_passages:
+      - { id: "grammar-present-text", text: { "en": "A short written text in Swahili showing present tense" } }
+  - planned: { id: "sw-things", theme: "things", words: 42 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short spoken passage in Swahili on the theme things" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Swahili on the theme things" } }
+  - planned: { id: "sw-home", theme: "home", words: 21 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short spoken passage in Swahili on the theme home" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Swahili on the theme home" } }
+  - planned: { id: "sw-clothes", theme: "clothes", words: 28 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short spoken passage in Swahili on the theme clothes" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Swahili on the theme clothes" } }
+  - planned: { id: "sw-animals", theme: "animals", words: 32 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short spoken passage in Swahili on the theme animals" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Swahili on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "sw-daily-life", theme: "daily-life", words: 8 }
+    listening_passages:
+      - { id: "daily-life-heard", text: { "en": "A short spoken passage in Swahili on the theme a day" } }
+    reading_passages:
+      - { id: "daily-life-text", text: { "en": "A short written text in Swahili on the theme a day" } }
+  - planned: { id: "sw-weather", theme: "weather", words: 46 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short spoken passage in Swahili on the theme weather" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Swahili on the theme weather" } }
+  - planned: { id: "sw-calendar", theme: "calendar", words: 15 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short spoken passage in Swahili on the theme calendar" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Swahili on the theme calendar" } }
+  - planned: { id: "sw-festivals", theme: "festivals", words: 41 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short spoken passage in Swahili on the theme festivals" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Swahili on the theme festivals" } }
+  - planned: { id: "sw-grammar-tenses", grammar: ["tenses"] }
+    listening_passages:
+      - { id: "grammar-tenses-heard", text: { "en": "A short spoken passage in Swahili showing tenses" } }
+    reading_passages:
+      - { id: "grammar-tenses-text", text: { "en": "A short written text in Swahili showing tenses" } }
+  - planned: { id: "sw-shopping", theme: "shopping", words: 57 }
+    listening_passages:
+      - { id: "shopping-heard", text: { "en": "A short spoken passage in Swahili on the theme shopping" } }
+    reading_passages:
+      - { id: "shopping-text", text: { "en": "A short written text in Swahili on the theme shopping" } }
+  - planned: { id: "sw-illness", theme: "illness", words: 51 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short spoken passage in Swahili on the theme illness" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Swahili on the theme illness" } }
+  - planned: { id: "sw-eating-out", theme: "eating-out", words: 9 }
+    listening_passages:
+      - { id: "eating-out-heard", text: { "en": "A short spoken passage in Swahili on the theme eating out" } }
+    reading_passages:
+      - { id: "eating-out-text", text: { "en": "A short written text in Swahili on the theme eating out" } }
+  - planned: { id: "sw-grammar-negation", grammar: ["negation"] }
+    listening_passages:
+      - { id: "grammar-negation-heard", text: { "en": "A short spoken passage in Swahili showing negation" } }
+    reading_passages:
+      - { id: "grammar-negation-text", text: { "en": "A short written text in Swahili showing negation" } }
+  - planned: { id: "sw-cooking", theme: "cooking", words: 51 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short spoken passage in Swahili on the theme cooking" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Swahili on the theme cooking" } }
+  - planned: { id: "sw-help", theme: "help", words: 6 }
+    listening_passages:
+      - { id: "help-heard", text: { "en": "A short spoken passage in Swahili on the theme help" } }
+    reading_passages:
+      - { id: "help-text", text: { "en": "A short written text in Swahili on the theme help" } }
+  - planned: { id: "sw-school", theme: "school", words: 57 }
+    listening_passages:
+      - { id: "school-heard", text: { "en": "A short spoken passage in Swahili on the theme school" } }
+    reading_passages:
+      - { id: "school-text", text: { "en": "A short written text in Swahili on the theme school" } }
+  - planned: { id: "sw-grammar-object-markers", grammar: ["object-markers"] }
+    listening_passages:
+      - { id: "grammar-object-markers-heard", text: { "en": "A short spoken passage in Swahili showing object markers" } }
+    reading_passages:
+      - { id: "grammar-object-markers-text", text: { "en": "A short written text in Swahili showing object markers" } }
+  - planned: { id: "sw-hobbies", theme: "hobbies", words: 57 }
+    listening_passages:
+      - { id: "hobbies-heard", text: { "en": "A short spoken passage in Swahili on the theme hobbies" } }
+    reading_passages:
+      - { id: "hobbies-text", text: { "en": "A short written text in Swahili on the theme hobbies" } }
+  - planned: { id: "sw-chores", theme: "chores", words: 46 }
+    listening_passages:
+      - { id: "chores-heard", text: { "en": "A short spoken passage in Swahili on the theme chores" } }
+    reading_passages:
+      - { id: "chores-text", text: { "en": "A short written text in Swahili on the theme chores" } }
+  - planned: { id: "sw-appearance", theme: "appearance", words: 56 }
+    listening_passages:
+      - { id: "appearance-heard", text: { "en": "A short spoken passage in Swahili on the theme appearance" } }
+    reading_passages:
+      - { id: "appearance-text", text: { "en": "A short written text in Swahili on the theme appearance" } }
+  - planned: { id: "sw-verbs-3", theme: "verbs-3", words: 72 }
+    listening_passages:
+      - { id: "verbs-3-heard", text: { "en": "A short spoken passage in Swahili on the theme more daily actions" } }
+    reading_passages:
+      - { id: "verbs-3-text", text: { "en": "A short written text in Swahili on the theme more daily actions" } }
+  - planned: { id: "sw-grammar-imperatives", grammar: ["imperative"] }
+    listening_passages:
+      - { id: "grammar-imperatives-heard", text: { "en": "A short spoken passage in Swahili showing imperative" } }
+    reading_passages:
+      - { id: "grammar-imperatives-text", text: { "en": "A short written text in Swahili showing imperative" } }
+  - planned: { id: "sw-phone", theme: "phone", words: 46 }
+    listening_passages:
+      - { id: "phone-heard", text: { "en": "A short spoken passage in Swahili on the theme phone" } }
+    reading_passages:
+      - { id: "phone-text", text: { "en": "A short written text in Swahili on the theme phone" } }
+  - planned: { id: "sw-journey", theme: "journey", words: 62 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short spoken passage in Swahili on the theme journey" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Swahili on the theme journey" } }
+  - planned: { id: "sw-nature", theme: "nature", words: 56 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short spoken passage in Swahili on the theme nature" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Swahili on the theme nature" } }
+  - planned: { id: "sw-grammar-comparison", grammar: ["comparison"] }
+    listening_passages:
+      - { id: "grammar-comparison-heard", text: { "en": "A short spoken passage in Swahili showing comparison" } }
+    reading_passages:
+      - { id: "grammar-comparison-text", text: { "en": "A short written text in Swahili showing comparison" } }
+  - planned: { id: "sw-adjectives-2", theme: "adjectives-2", words: 62 }
+    listening_passages:
+      - { id: "adjectives-2-heard", text: { "en": "A short spoken passage in Swahili on the theme describing a room" } }
+    reading_passages:
+      - { id: "adjectives-2-text", text: { "en": "A short written text in Swahili on the theme describing a room" } }
+  - planned: { id: "sw-workplace", theme: "workplace", words: 51 }
+    listening_passages:
+      - { id: "workplace-heard", text: { "en": "A short spoken passage in Swahili on the theme workplace" } }
+    reading_passages:
+      - { id: "workplace-text", text: { "en": "A short written text in Swahili on the theme workplace" } }
+  - planned: { id: "sw-geography", theme: "geography", words: 51 }
+    listening_passages:
+      - { id: "geography-heard", text: { "en": "A short spoken passage in Swahili on the theme geography" } }
+    reading_passages:
+      - { id: "geography-text", text: { "en": "A short written text in Swahili on the theme geography" } }
+    milestone: "A2"
+  - planned: { id: "sw-health", theme: "health", words: 62 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short spoken passage in Swahili on the theme health" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Swahili on the theme health" } }
+  - planned: { id: "sw-feelings", theme: "feelings", words: 62 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short spoken passage in Swahili on the theme feelings" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Swahili on the theme feelings" } }
+  - planned: { id: "sw-news", theme: "news", words: 62 }
+    listening_passages:
+      - { id: "news-heard", text: { "en": "A short spoken passage in Swahili on the theme news" } }
+    reading_passages:
+      - { id: "news-text", text: { "en": "A short written text in Swahili on the theme news" } }
+  - planned: { id: "sw-opinions", theme: "opinions", words: 57 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short spoken passage in Swahili on the theme opinions" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Swahili on the theme opinions" } }
+  - planned: { id: "sw-grammar-relatives", grammar: ["relative-forms"] }
+    listening_passages:
+      - { id: "grammar-relatives-heard", text: { "en": "A short spoken passage in Swahili showing relative forms" } }
+    reading_passages:
+      - { id: "grammar-relatives-text", text: { "en": "A short written text in Swahili showing relative forms" } }
+  - planned: { id: "sw-travel", theme: "travel", words: 62 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short spoken passage in Swahili on the theme travel" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Swahili on the theme travel" } }
+  - planned: { id: "sw-services", theme: "services", words: 51 }
+    listening_passages:
+      - { id: "services-heard", text: { "en": "A short spoken passage in Swahili on the theme services" } }
+    reading_passages:
+      - { id: "services-text", text: { "en": "A short written text in Swahili on the theme services" } }
+  - planned: { id: "sw-government", theme: "government", words: 46 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short spoken passage in Swahili on the theme government" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Swahili on the theme government" } }
+  - planned: { id: "sw-technology", theme: "technology", words: 56 }
+    listening_passages:
+      - { id: "technology-heard", text: { "en": "A short spoken passage in Swahili on the theme technology" } }
+    reading_passages:
+      - { id: "technology-text", text: { "en": "A short written text in Swahili on the theme technology" } }
+  - planned: { id: "sw-grammar-applicative-causative", grammar: ["applicative", "causative"] }
+    listening_passages:
+      - { id: "grammar-applicative-causative-heard", text: { "en": "A short spoken passage in Swahili showing applicative, causative" } }
+    reading_passages:
+      - { id: "grammar-applicative-causative-text", text: { "en": "A short written text in Swahili showing applicative, causative" } }
+  - planned: { id: "sw-careers", theme: "careers", words: 56 }
+    listening_passages:
+      - { id: "careers-heard", text: { "en": "A short spoken passage in Swahili on the theme careers" } }
+    reading_passages:
+      - { id: "careers-text", text: { "en": "A short written text in Swahili on the theme careers" } }
+  - planned: { id: "sw-environment", theme: "environment", words: 56 }
+    listening_passages:
+      - { id: "environment-heard", text: { "en": "A short spoken passage in Swahili on the theme environment" } }
+    reading_passages:
+      - { id: "environment-text", text: { "en": "A short written text in Swahili on the theme environment" } }
+  - planned: { id: "sw-agriculture", theme: "agriculture", words: 56 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short spoken passage in Swahili on the theme agriculture" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Swahili on the theme agriculture" } }
+  - planned: { id: "sw-grammar-passive", grammar: ["passive"] }
+    listening_passages:
+      - { id: "grammar-passive-heard", text: { "en": "A short spoken passage in Swahili showing passive" } }
+    reading_passages:
+      - { id: "grammar-passive-text", text: { "en": "A short written text in Swahili showing passive" } }
+  - planned: { id: "sw-cinema", theme: "cinema", words: 62 }
+    listening_passages:
+      - { id: "cinema-heard", text: { "en": "A short spoken passage in Swahili on the theme cinema" } }
+    reading_passages:
+      - { id: "cinema-text", text: { "en": "A short written text in Swahili on the theme cinema" } }
+  - planned: { id: "sw-arts", theme: "arts", words: 51 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short spoken passage in Swahili on the theme arts" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Swahili on the theme arts" } }
+  - planned: { id: "sw-history", theme: "history", words: 51 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short spoken passage in Swahili on the theme history" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Swahili on the theme history" } }
+  - planned: { id: "sw-weddings", theme: "weddings", words: 51 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short spoken passage in Swahili on the theme weddings" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Swahili on the theme weddings" } }
+  - planned: { id: "sw-grammar-subordinate-clauses", grammar: ["subordinate-clauses"] }
+    listening_passages:
+      - { id: "grammar-subordinate-clauses-heard", text: { "en": "A short spoken passage in Swahili showing subordinate clauses" } }
+    reading_passages:
+      - { id: "grammar-subordinate-clauses-text", text: { "en": "A short written text in Swahili showing subordinate clauses" } }
+  - planned: { id: "sw-sports", theme: "sports", words: 46 }
+    listening_passages:
+      - { id: "sports-heard", text: { "en": "A short spoken passage in Swahili on the theme sports" } }
+    reading_passages:
+      - { id: "sports-text", text: { "en": "A short written text in Swahili on the theme sports" } }
+  - planned: { id: "sw-relationships", theme: "relationships", words: 51 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short spoken passage in Swahili on the theme relationships" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Swahili on the theme relationships" } }
+  - planned: { id: "sw-housing", theme: "housing", words: 46 }
+    listening_passages:
+      - { id: "housing-heard", text: { "en": "A short spoken passage in Swahili on the theme housing" } }
+    reading_passages:
+      - { id: "housing-text", text: { "en": "A short written text in Swahili on the theme housing" } }
+  - planned: { id: "sw-emergencies", theme: "emergencies", words: 41 }
+    listening_passages:
+      - { id: "emergencies-heard", text: { "en": "A short spoken passage in Swahili on the theme emergencies" } }
+    reading_passages:
+      - { id: "emergencies-text", text: { "en": "A short written text in Swahili on the theme emergencies" } }
+  - planned: { id: "sw-grammar-reported-speech", grammar: ["reported-speech"] }
+    listening_passages:
+      - { id: "grammar-reported-speech-heard", text: { "en": "A short spoken passage in Swahili showing reported speech" } }
+    reading_passages:
+      - { id: "grammar-reported-speech-text", text: { "en": "A short written text in Swahili showing reported speech" } }
+  - planned: { id: "sw-law", theme: "law", words: 41 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short spoken passage in Swahili on the theme law" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Swahili on the theme law" } }
+  - planned: { id: "sw-verbs-4", theme: "verbs-4", words: 72 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short spoken passage in Swahili on the theme story actions" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Swahili on the theme story actions" } }
+  - planned: { id: "sw-abstract-words", theme: "abstract-words", words: 62 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short spoken passage in Swahili on the theme ideas and values" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Swahili on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]

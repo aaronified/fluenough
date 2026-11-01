@@ -138,11 +138,10 @@ units:
   # 1. The phrasebook, taught whole from the first lesson: coi, co'o,
   # ki'e, je'e, .e'o, .u'u, mi'e, do mo, mi na jimpe.
   # jbo-first-words joins it when written.
-  - planned: { id: "jbo-phrasebook", theme: "first-words", words: 10 }
-    listening_passages:
-      - { id: "first-coi", text: { "en": "coi, ki'e and co'o: greeting someone on a voice chat of Lojban speakers, thanking them and leaving" } }
-    reading_passages:
-      - { id: "chat-greetings", text: { "en": "The first lines of a chat room: coi rodo, mi'e la .alis., and the replies" } }
+  # The first words are written: jbo-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["jbo-phrasebook", "jbo-first-words", "*"]
+    words: 10
   # 2. The first word units. The sounds first: c said as in "ship", j as
   # in "measure", x as in Scottish "loch", the apostrophe said h and only
   # between vowels, y the neutral vowel of "sofa", the tapped or trilled

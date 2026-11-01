@@ -1,0 +1,120 @@
+schema: 1
+id: "pt-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "pt", iso639_3: "por", name: "Portuguese", script: "latin", tts: "pt-BR", icon: "Pt" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "pt-0001"
+    target: "sim"
+    ipa: "sĩ"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sim, obrigado.", ipa: "sĩ obɾiˈɡadu", bases: [{ word: "Sim", base: "sim" }, { word: "obrigado", base: "obrigado" }] }
+      - { target: "Sim, eu falo português.", ipa: "sĩ ew ˈfalu poɾtuˈɡez", bases: [{ word: "Sim", base: "sim" }, { word: "eu", base: "eu" }, { word: "falo", base: "falar" }, { word: "português", base: "português" }] }
+  - id: "pt-0002"
+    target: "não"
+    ipa: "nɐ̃w"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Não, obrigado.", ipa: "nɐ̃w obɾiˈɡadu", bases: [{ word: "Não", base: "não" }, { word: "obrigado", base: "obrigado" }] }
+      - { target: "Não falo inglês.", ipa: "nɐ̃w ˈfalu ĩˈɡlez", bases: [{ word: "Não", base: "não" }, { word: "falo", base: "falar" }, { word: "inglês", base: "inglês" }] }
+  - id: "pt-0003"
+    target: "eu"
+    ipa: "ew"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Eu sou estudante.", ipa: "ew so ʃtuˈdɐ̃tʃi", bases: [{ word: "Eu", base: "eu" }, { word: "sou", base: "ser" }, { word: "estudante", base: "estudante" }] }
+      - { target: "Eu falo português.", ipa: "ew ˈfalu poɾtuˈɡez", bases: [{ word: "Eu", base: "eu" }, { word: "falo", base: "falar" }, { word: "português", base: "português" }] }
+  - id: "pt-0004"
+    target: "você"
+    ipa: "voˈse"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Você fala inglês?", ipa: "voˈse ˈfalɐ ĩˈɡlez", bases: [{ word: "Você", base: "você" }, { word: "fala", base: "falar" }, { word: "inglês", base: "inglês" }] }
+      - { target: "Você está bem?", ipa: "voˈse isˈta ˈbẽj", bases: [{ word: "Você", base: "você" }, { word: "está", base: "estar" }, { word: "bem", base: "bem" }] }
+  - id: "pt-0005"
+    target: "e"
+    ipa: "i"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pão e manteiga.", ipa: "ˈpɐ̃w i mɐ̃ˈtɐjɡɐ", bases: [{ word: "Pão", base: "pão" }, { word: "e", base: "e" }, { word: "manteiga", base: "manteiga" }] }
+      - { target: "Eu e você.", ipa: "ew i voˈse", bases: [{ word: "Eu", base: "eu" }, { word: "e", base: "e" }, { word: "você", base: "você" }] }
+  - id: "pt-0006"
+    target: "ou"
+    ipa: "o"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chá ou café?", ipa: "ʃa o kaˈfɛ", bases: [{ word: "Chá", base: "chá" }, { word: "ou", base: "ou" }, { word: "café", base: "café" }] }
+      - { target: "Hoje ou amanhã?", ipa: "ˈoʒi o amɐˈɲɐ̃", bases: [{ word: "Hoje", base: "hoje" }, { word: "ou", base: "ou" }, { word: "amanhã", base: "amanhã" }] }
+  - id: "pt-0007"
+    target: "mas"
+    ipa: "mas"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sim, mas estou cansado.", ipa: "sĩ mas isˈto kɐ̃ˈsadu", bases: [{ word: "Sim", base: "sim" }, { word: "mas", base: "mas" }, { word: "estou", base: "estar" }, { word: "cansado", base: "cansado" }] }
+      - { target: "Bom, mas caro.", ipa: "bõ mas ˈkaɾu", bases: [{ word: "Bom", base: "bom" }, { word: "mas", base: "mas" }, { word: "caro", base: "caro" }] }
+  - id: "pt-0008"
+    target: "bom"
+    ipa: "bõ"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Está bom.", ipa: "isˈta bõ", bases: [{ word: "Está", base: "estar" }, { word: "bom", base: "bom" }] }
+      - { target: "O café é bom.", ipa: "u kaˈfɛ ɛ bõ", bases: [{ word: "O", base: "o" }, { word: "café", base: "café" }, { word: "é", base: "ser" }, { word: "bom", base: "bom" }] }
+  - id: "pt-0009"
+    target: "um"
+    ipa: "ũ"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Um café, por favor.", ipa: "ũ kaˈfɛ poɾ fɐˈvoɾ", bases: [{ word: "Um", base: "um" }, { word: "café", base: "café" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }] }
+      - { target: "Eu tenho um irmão.", ipa: "ew ˈtɐɲu ũ iɾˈmɐ̃w", bases: [{ word: "Eu", base: "eu" }, { word: "tenho", base: "ter" }, { word: "um", base: "um" }, { word: "irmão", base: "irmão" }] }
+  - id: "pt-0010"
+    target: "água"
+    ipa: "ˈagwɐ"
+    pos: "noun"
+    gender: "f"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Água, por favor.", ipa: "ˈagwɐ poɾ fɐˈvoɾ", bases: [{ word: "Água", base: "água" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }] }
+      - { target: "Eu bebo água.", ipa: "ew ˈbɛbu ˈagwɐ", bases: [{ word: "Eu", base: "eu" }, { word: "bebo", base: "beber" }, { word: "água", base: "água" }] }

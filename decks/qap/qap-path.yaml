@@ -1,0 +1,340 @@
+# The order Ashokan Prakrit is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught qap-en-<name> for qap-<name> (ADR-0013, ADR-0036).
+#
+# This is also Ashokan Prakrit's B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: A reading course in the language of Ashoka's edicts, in the eastern (Magadhi-like) form; the edicts also exist in north-western and western dialects. The edicts are cut in Brahmi (and Kharoshthi); Devanagari stands in until a Brahmi font is added.
+#
+# A reading course (owner, 2026-10-31): Ashokan Prakrit has no living speakers, so
+# the milestones A1, A2 and B1 mean three reading levels, and the sizes
+# are `levels` (400, 600 and 900 words, a judgement,
+# low confidence) in place of the plan's 700, 900 and 1,200. Themes of
+# modern life are left out.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+# The script is taught in the units named `script`, after the first six
+# themes, as the scheme has it.
+schema: 1
+kind: "path"
+id: "qap-path"
+language: "qap"
+description: "Ashokan Prakrit: the planned path to B1. Only the phrasebook and the first words are written."
+genders: ["m", "f", "n"]
+levels: { A1: 400, A2: 600, B1: 900 }
+alphabet: []
+units:
+  - decks: ["qap-phrasebook", "qap-first-words", "*"]
+    words: 10
+  - planned: { id: "qap-sound-differences", grammar: ["sound-differences", "vowel-length"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short passage in Ashokan Prakrit showing sound differences, vowel length, read aloud" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Ashokan Prakrit showing sound differences, vowel length" } }
+  - planned: { id: "qap-questions", theme: "questions", words: 7 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme yes, no and questions, read aloud" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Ashokan Prakrit on the theme yes, no and questions" } }
+  - planned: { id: "qap-pronouns", theme: "pronouns", words: 21 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme pronouns and people words, read aloud" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Ashokan Prakrit on the theme pronouns and people words" } }
+  - planned: { id: "qap-family", theme: "family", words: 16 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme family, read aloud" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Ashokan Prakrit on the theme family" } }
+  - planned: { id: "qap-numbers-1-20", theme: "numbers-1-20", words: 13 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme numbers 1 to 20, read aloud" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Ashokan Prakrit on the theme numbers 1 to 20" } }
+  - planned: { id: "qap-script-letters", grammar: ["devanagari-letters"] }
+    listening_passages:
+      - { id: "script-letters-heard", text: { "en": "A short passage in Ashokan Prakrit showing devanagari letters, read aloud" } }
+    reading_passages:
+      - { id: "script-letters-text", text: { "en": "A short written text in Ashokan Prakrit showing devanagari letters" } }
+  - planned: { id: "qap-script-conjuncts", grammar: ["conjunct-letters"] }
+    listening_passages:
+      - { id: "script-conjuncts-heard", text: { "en": "A short passage in Ashokan Prakrit showing conjunct letters, read aloud" } }
+    reading_passages:
+      - { id: "script-conjuncts-text", text: { "en": "A short written text in Ashokan Prakrit showing conjunct letters" } }
+  - planned: { id: "qap-about-me", theme: "about-me", words: 5 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme talking about yourself, read aloud" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Ashokan Prakrit on the theme talking about yourself" } }
+  - planned: { id: "qap-everyday-verbs", theme: "everyday-verbs", words: 21 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme everyday verbs, read aloud" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Ashokan Prakrit on the theme everyday verbs" } }
+  - planned: { id: "qap-adverbs", theme: "adverbs", words: 32 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme adverbs, read aloud" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Ashokan Prakrit on the theme adverbs" } }
+  - planned: { id: "qap-quantities", theme: "quantities", words: 19 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme quantities, read aloud" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Ashokan Prakrit on the theme quantities" } }
+  - planned: { id: "qap-grammar-case-system", grammar: ["case-system"] }
+    listening_passages:
+      - { id: "grammar-case-system-heard", text: { "en": "A short passage in Ashokan Prakrit showing case system, read aloud" } }
+    reading_passages:
+      - { id: "grammar-case-system-text", text: { "en": "A short written text in Ashokan Prakrit showing case system" } }
+  - planned: { id: "qap-describing", theme: "describing", words: 26 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme describing things and feelings, read aloud" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Ashokan Prakrit on the theme describing things and feelings" } }
+  - planned: { id: "qap-time", theme: "time", words: 12 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme time, read aloud" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Ashokan Prakrit on the theme time" } }
+  - planned: { id: "qap-location", theme: "location", words: 9 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme location, read aloud" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Ashokan Prakrit on the theme location" } }
+  - planned: { id: "qap-more-verbs", theme: "more-verbs", words: 21 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme more verbs, read aloud" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Ashokan Prakrit on the theme more verbs" } }
+  - planned: { id: "qap-grammar-a-stems", grammar: ["a-stem-nouns"] }
+    listening_passages:
+      - { id: "grammar-a-stems-heard", text: { "en": "A short passage in Ashokan Prakrit showing a stem nouns, read aloud" } }
+    reading_passages:
+      - { id: "grammar-a-stems-text", text: { "en": "A short written text in Ashokan Prakrit showing a stem nouns" } }
+  - planned: { id: "qap-work", theme: "work", words: 12 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme work, read aloud" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Ashokan Prakrit on the theme work" } }
+  - planned: { id: "qap-numbers-big", theme: "numbers-big", words: 9 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme tens and big numbers, read aloud" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Ashokan Prakrit on the theme tens and big numbers" } }
+  - planned: { id: "qap-food", theme: "food", words: 41 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme food, read aloud" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Ashokan Prakrit on the theme food" } }
+  - planned: { id: "qap-grammar-present", grammar: ["present-tense"] }
+    listening_passages:
+      - { id: "grammar-present-heard", text: { "en": "A short passage in Ashokan Prakrit showing present tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-present-text", text: { "en": "A short written text in Ashokan Prakrit showing present tense" } }
+  - planned: { id: "qap-directions", theme: "directions", words: 8 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme directions, read aloud" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Ashokan Prakrit on the theme directions" } }
+  - planned: { id: "qap-body", theme: "body", words: 18 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme body, read aloud" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Ashokan Prakrit on the theme body" } }
+  - planned: { id: "qap-places", theme: "places", words: 27 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme places, read aloud" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Ashokan Prakrit on the theme places" } }
+  - planned: { id: "qap-things", theme: "things", words: 25 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme things, read aloud" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Ashokan Prakrit on the theme things" } }
+  - planned: { id: "qap-grammar-eastern-features", grammar: ["eastern-features"] }
+    listening_passages:
+      - { id: "grammar-eastern-features-heard", text: { "en": "A short passage in Ashokan Prakrit showing eastern features, read aloud" } }
+    reading_passages:
+      - { id: "grammar-eastern-features-text", text: { "en": "A short written text in Ashokan Prakrit showing eastern features" } }
+  - planned: { id: "qap-home", theme: "home", words: 12 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme home, read aloud" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Ashokan Prakrit on the theme home" } }
+  - planned: { id: "qap-clothes", theme: "clothes", words: 17 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme clothes, read aloud" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Ashokan Prakrit on the theme clothes" } }
+  - planned: { id: "qap-animals", theme: "animals", words: 19 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme animals, read aloud" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Ashokan Prakrit on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "qap-weather", theme: "weather", words: 86 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme weather, read aloud" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Ashokan Prakrit on the theme weather" } }
+  - planned: { id: "qap-calendar", theme: "calendar", words: 29 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme calendar, read aloud" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Ashokan Prakrit on the theme calendar" } }
+  - planned: { id: "qap-grammar-other-stems", grammar: ["other-noun-stems"] }
+    listening_passages:
+      - { id: "grammar-other-stems-heard", text: { "en": "A short passage in Ashokan Prakrit showing other noun stems, read aloud" } }
+    reading_passages:
+      - { id: "grammar-other-stems-text", text: { "en": "A short written text in Ashokan Prakrit showing other noun stems" } }
+  - planned: { id: "qap-festivals", theme: "festivals", words: 76 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme festivals, read aloud" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Ashokan Prakrit on the theme festivals" } }
+  - planned: { id: "qap-grammar-past-participles", grammar: ["past-participles"] }
+    listening_passages:
+      - { id: "grammar-past-participles-heard", text: { "en": "A short passage in Ashokan Prakrit showing past participles, read aloud" } }
+    reading_passages:
+      - { id: "grammar-past-participles-text", text: { "en": "A short written text in Ashokan Prakrit showing past participles" } }
+  - planned: { id: "qap-illness", theme: "illness", words: 95 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme illness, read aloud" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Ashokan Prakrit on the theme illness" } }
+  - planned: { id: "qap-grammar-imperatives", grammar: ["imperative"] }
+    listening_passages:
+      - { id: "grammar-imperatives-heard", text: { "en": "A short passage in Ashokan Prakrit showing imperative, read aloud" } }
+    reading_passages:
+      - { id: "grammar-imperatives-text", text: { "en": "A short written text in Ashokan Prakrit showing imperative" } }
+  - planned: { id: "qap-cooking", theme: "cooking", words: 95 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme cooking, read aloud" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Ashokan Prakrit on the theme cooking" } }
+  - planned: { id: "qap-grammar-absolutives", grammar: ["absolutives"] }
+    listening_passages:
+      - { id: "grammar-absolutives-heard", text: { "en": "A short passage in Ashokan Prakrit showing absolutives, read aloud" } }
+    reading_passages:
+      - { id: "grammar-absolutives-text", text: { "en": "A short written text in Ashokan Prakrit showing absolutives" } }
+  - planned: { id: "qap-journey", theme: "journey", words: 114 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme journey, read aloud" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Ashokan Prakrit on the theme journey" } }
+  - planned: { id: "qap-grammar-participles", grammar: ["participles"] }
+    listening_passages:
+      - { id: "grammar-participles-heard", text: { "en": "A short passage in Ashokan Prakrit showing participles, read aloud" } }
+    reading_passages:
+      - { id: "grammar-participles-text", text: { "en": "A short written text in Ashokan Prakrit showing participles" } }
+  - planned: { id: "qap-nature", theme: "nature", words: 105 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme nature, read aloud" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Ashokan Prakrit on the theme nature" } }
+    milestone: "A2"
+  - planned: { id: "qap-health", theme: "health", words: 77 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme health, read aloud" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Ashokan Prakrit on the theme health" } }
+  - planned: { id: "qap-feelings", theme: "feelings", words: 77 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme feelings, read aloud" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Ashokan Prakrit on the theme feelings" } }
+  - planned: { id: "qap-opinions", theme: "opinions", words: 70 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme opinions, read aloud" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Ashokan Prakrit on the theme opinions" } }
+  - planned: { id: "qap-grammar-optative", grammar: ["optative"] }
+    listening_passages:
+      - { id: "grammar-optative-heard", text: { "en": "A short passage in Ashokan Prakrit showing optative, read aloud" } }
+    reading_passages:
+      - { id: "grammar-optative-text", text: { "en": "A short written text in Ashokan Prakrit showing optative" } }
+  - planned: { id: "qap-travel", theme: "travel", words: 77 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme travel, read aloud" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Ashokan Prakrit on the theme travel" } }
+  - planned: { id: "qap-government", theme: "government", words: 57 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme government, read aloud" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Ashokan Prakrit on the theme government" } }
+  - planned: { id: "qap-grammar-compounds", grammar: ["compounds"] }
+    listening_passages:
+      - { id: "grammar-compounds-heard", text: { "en": "A short passage in Ashokan Prakrit showing compounds, read aloud" } }
+    reading_passages:
+      - { id: "grammar-compounds-text", text: { "en": "A short written text in Ashokan Prakrit showing compounds" } }
+  - planned: { id: "qap-agriculture", theme: "agriculture", words: 70 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme agriculture, read aloud" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Ashokan Prakrit on the theme agriculture" } }
+  - planned: { id: "qap-arts", theme: "arts", words: 64 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme arts, read aloud" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Ashokan Prakrit on the theme arts" } }
+  - planned: { id: "qap-grammar-relative-clauses", grammar: ["relative-clauses"] }
+    listening_passages:
+      - { id: "grammar-relative-clauses-heard", text: { "en": "A short passage in Ashokan Prakrit showing relative clauses, read aloud" } }
+    reading_passages:
+      - { id: "grammar-relative-clauses-text", text: { "en": "A short written text in Ashokan Prakrit showing relative clauses" } }
+  - planned: { id: "qap-history", theme: "history", words: 64 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme history, read aloud" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Ashokan Prakrit on the theme history" } }
+  - planned: { id: "qap-weddings", theme: "weddings", words: 64 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme weddings, read aloud" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Ashokan Prakrit on the theme weddings" } }
+  - planned: { id: "qap-grammar-passive", grammar: ["passive-voice"] }
+    listening_passages:
+      - { id: "grammar-passive-heard", text: { "en": "A short passage in Ashokan Prakrit showing passive voice, read aloud" } }
+    reading_passages:
+      - { id: "grammar-passive-text", text: { "en": "A short written text in Ashokan Prakrit showing passive voice" } }
+  - planned: { id: "qap-relationships", theme: "relationships", words: 64 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme relationships, read aloud" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Ashokan Prakrit on the theme relationships" } }
+  - planned: { id: "qap-law", theme: "law", words: 51 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme law, read aloud" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Ashokan Prakrit on the theme law" } }
+  - planned: { id: "qap-grammar-dialect-variation", grammar: ["dialect-variation"] }
+    listening_passages:
+      - { id: "grammar-dialect-variation-heard", text: { "en": "A short passage in Ashokan Prakrit showing dialect variation, read aloud" } }
+    reading_passages:
+      - { id: "grammar-dialect-variation-text", text: { "en": "A short written text in Ashokan Prakrit showing dialect variation" } }
+  - planned: { id: "qap-verbs-4", theme: "verbs-4", words: 89 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme story actions, read aloud" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Ashokan Prakrit on the theme story actions" } }
+  - planned: { id: "qap-abstract-words", theme: "abstract-words", words: 76 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short passage in Ashokan Prakrit on the theme ideas and values, read aloud" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Ashokan Prakrit on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]

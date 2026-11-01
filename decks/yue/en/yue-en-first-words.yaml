@@ -1,0 +1,157 @@
+schema: 1
+id: "yue-en-first-words"
+kind: "layer"
+core: "yue-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes, no, I, you, and, or, but, good, one and water: the small words that answer, link and begin a sentence, in Cantonese in traditional characters with Jyutping readings. Greetings and thanks are in the phrasebook. Not yet checked by a Cantonese speaker: please report any mistake."
+cards:
+  "yue-0001":
+    native: "yes; is"
+    notes:
+      "n1": "係 (hai6) is yes, and is also the verb to be. 唔係 (m4 hai6) is no."
+    examples:
+      "係，多謝。":
+        native: "Yes, thank you."
+        bases:
+          "多謝": "thank you"
+      "我係學生。":
+        native: "I am a student."
+        bases:
+          "學生": "student"
+  "yue-0002":
+    native: "no; is not"
+    notes:
+      "n1": "唔係 (m4 hai6) is no, the negative of 係 (hai6). Cantonese often answers by repeating the verb in its negative form, as 唔知 (m4 zi1), I don't know, does."
+    examples:
+      "唔係，我唔知。":
+        native: "No, I don't know."
+        bases:
+          "唔知": "don't know"
+      "唔係呢度。":
+        native: "It is not here."
+        bases:
+          "呢度": "here"
+  "yue-0003":
+    native: "I; me"
+    notes:
+      "n1": "我 (ngo5) is I. The plural 我哋 (ngo5 dei6) is we."
+    examples:
+      "我鍾意飲茶。":
+        native: "I like drinking tea."
+        bases:
+          "鍾意": "like"
+          "飲茶": "to drink tea"
+      "我識講廣東話。":
+        native: "I can speak Cantonese."
+        bases:
+          "識": "know how to"
+          "講": "speak"
+          "廣東話": "Cantonese"
+  "yue-0004":
+    native: "you"
+    notes:
+      "n1": "你 (nei5) is you, to one person. 你哋 (nei5 dei6) is you to more than one."
+    examples:
+      "你好嗎？":
+        native: "How are you?"
+        bases:
+          "好": "well"
+          "嗎": "question particle"
+      "你係邊度人？":
+        native: "Where are you from?"
+        bases:
+          "邊度": "where"
+          "人": "person"
+  "yue-0005":
+    native: "and"
+    notes:
+      "n1": "同埋 (tung4 maai4) is and, as in speech. In writing 同 (tung4) also means and, or with."
+    examples:
+      "咖啡同埋茶。":
+        native: "Coffee and tea."
+        bases:
+          "咖啡": "coffee"
+          "茶": "tea"
+      "你同我。":
+        native: "You and me."
+        bases:
+          "同": "and"
+  "yue-0006":
+    native: "or (in a question)"
+    notes:
+      "n1": "定係 (ding6 hai6) is or in a question, as in 飲茶定係飲咖啡 (jam2 caa4 ding6 hai6 jam2 gaa3 fe1?), tea or coffee? In a statement use 或者 (waak6 ze2)."
+    examples:
+      "飲茶定係飲咖啡？":
+        native: "Tea or coffee?"
+        bases:
+          "飲茶": "to drink tea"
+          "飲": "drink"
+          "咖啡": "coffee"
+      "今日定係聽日？":
+        native: "Today or tomorrow?"
+        bases:
+          "今日": "today"
+          "聽日": "tomorrow"
+  "yue-0007":
+    native: "but"
+    notes:
+      "n1": "但係 (daan6 hai6) is but. 不過 (bat1 gwo3) is also but, a little more formal."
+    examples:
+      "好，但係好貴。":
+        native: "Good, but expensive."
+        bases:
+          "好貴": "expensive"
+      "我好鍾意，但係太貴。":
+        native: "I like it very much, but it is too expensive."
+        bases:
+          "鍾意": "like"
+          "太": "too"
+          "貴": "expensive"
+  "yue-0008":
+    native: "good"
+    notes:
+      "n1": "好 (hou2) is good. Before an adjective or a verb it means very, or easy to: 好熱 (hou2 jit6), very hot."
+    examples:
+      "今日好熱。":
+        native: "Today is very hot."
+        bases:
+          "今日": "today"
+          "熱": "hot"
+      "呢個好好食。":
+        native: "This is very tasty."
+        bases:
+          "呢個": "this"
+          "好食": "tasty"
+  "yue-0009":
+    native: "one"
+    notes:
+      "n1": "一 (jat1) is one. Before a classifier it is the same word: 一杯 (jat1 bui1), one cup."
+    examples:
+      "一杯咖啡，唔該。":
+        native: "One coffee, please."
+        bases:
+          "杯": "cup"
+          "咖啡": "coffee"
+          "唔該": "please"
+      "一、二、三。":
+        native: "One, two, three."
+        bases:
+          "二": "two"
+          "三": "three"
+  "yue-0010":
+    native: "water"
+    notes:
+      "n1": "水 (seoi2) is water. Hot water is 熱水 (jit6 seoi2)."
+    examples:
+      "一杯水，唔該。":
+        native: "One glass of water, please."
+        bases:
+          "杯": "cup"
+          "唔該": "please"
+      "我想飲水。":
+        native: "I want to drink water."
+        bases:
+          "想": "want"
+          "飲": "drink"

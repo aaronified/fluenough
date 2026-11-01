@@ -107,11 +107,10 @@ genders: []
 units:
   # 1. The phrasebook, taught whole from the first lesson.
   # eo-first-words joins it when written.
-  - planned: { id: "eo-phrasebook", theme: "first-words", words: 10 }
-    listening_passages:
-      - { id: "first-saluton", text: { "en": "Saluton, dankon and ĝis: greeting someone at a club meeting and leaving" } }
-    reading_passages:
-      - { id: "door-signs", text: { "en": "Signs on doors: open, closed, push, pull, welcome" } }
+  # The first words are written: eo-first-words is taught with the
+  # phrasebook (10 words).
+  - decks: ["eo-phrasebook", "eo-first-words", "*"]
+    words: 10
   # 2. The first word units. The sounds first: ĉ ĝ ĥ ĵ ŝ ŭ, c said ts and
   # j said y, the tapped or rolled r, the five pure vowels, every letter
   # read as written (rule 9) and the stress always on the next-to-last

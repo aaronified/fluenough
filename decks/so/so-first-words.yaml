@@ -1,0 +1,121 @@
+schema: 1
+id: "so-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "so", iso639_3: "som", name: "Somali", script: "latin", tts: "so-SO", icon: "So" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "so-0001"
+    target: "Haa"
+    ipa: "haː"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Haa, mahadsanid.", ipa: "haː mahadsanid", bases: [{ word: "Haa", base: "haa" }, { word: "mahadsanid", base: "mahadsanid" }] }
+      - { target: "Haa, waa sax.", ipa: "haː waː sax", bases: [{ word: "Haa", base: "haa" }, { word: "waa", base: "waa" }, { word: "sax", base: "sax" }] }
+  - id: "so-0002"
+    target: "Maya"
+    ipa: "maja"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Maya, mahadsanid.", ipa: "maja mahadsanid", bases: [{ word: "Maya", base: "maya" }, { word: "mahadsanid", base: "mahadsanid" }] }
+      - { target: "Maya, waa biyo.", ipa: "maja waː bijo", bases: [{ word: "Maya", base: "maya" }, { word: "waa", base: "waa" }, { word: "biyo", base: "biyo" }] }
+  - id: "so-0003"
+    target: "Aniga"
+    ipa: "aniga"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Aniga waa macallin.", ipa: "aniga waː matʃallin", bases: [{ word: "Aniga", base: "aniga" }, { word: "waa", base: "waa" }, { word: "macallin", base: "macallin" }] }
+      - { target: "Aniga iyo adiga.", ipa: "aniga ijo adiga", bases: [{ word: "Aniga", base: "aniga" }, { word: "iyo", base: "iyo" }, { word: "adiga", base: "adiga" }] }
+  - id: "so-0004"
+    target: "Adiga"
+    ipa: "adiga"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Adiga waa macallin?", ipa: "adiga waː matʃallin", bases: [{ word: "Adiga", base: "adiga" }, { word: "waa", base: "waa" }, { word: "macallin", base: "macallin" }] }
+      - { target: "Adiga iyo aniga.", ipa: "adiga ijo aniga", bases: [{ word: "Adiga", base: "adiga" }, { word: "iyo", base: "iyo" }, { word: "aniga", base: "aniga" }] }
+  - id: "so-0005"
+    target: "Biyo"
+    ipa: "bijo"
+    pos: "noun"
+    gender: "f"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Biyo qabow.", ipa: "bijo qabow", bases: [{ word: "Biyo", base: "biyo" }, { word: "qabow", base: "qabow" }] }
+      - { target: "Biyo kulul.", ipa: "bijo kulul", bases: [{ word: "Biyo", base: "biyo" }, { word: "kulul", base: "kulul" }] }
+  - id: "so-0006"
+    target: "Wanaagsan"
+    ipa: "wanaːgsan"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Waa wanaagsan.", ipa: "waː wanaːgsan", bases: [{ word: "Waa", base: "waa" }, { word: "wanaagsan", base: "wanaagsan" }] }
+      - { target: "Guriga waa wanaagsan.", ipa: "guriga waː wanaːgsan", bases: [{ word: "Guriga", base: "guri" }, { word: "waa", base: "waa" }, { word: "wanaagsan", base: "wanaagsan" }] }
+  - id: "so-0007"
+    target: "Kow"
+    ipa: "kow"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kow, labo, saddex.", ipa: "kow labo saddex", bases: [{ word: "Kow", base: "kow" }, { word: "labo", base: "labo" }, { word: "saddex", base: "saddex" }] }
+      - { target: "Shaah kow.", ipa: "ʃaːh kow", bases: [{ word: "Shaah", base: "shaah" }, { word: "kow", base: "kow" }] }
+  - id: "so-0008"
+    target: "Labo"
+    ipa: "labo"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Labo qof.", ipa: "labo qof", bases: [{ word: "Labo", base: "labo" }, { word: "qof", base: "qof" }] }
+      - { target: "Labo shaah, fadlan.", ipa: "labo ʃaːh fadlan", bases: [{ word: "Labo", base: "labo" }, { word: "shaah", base: "shaah" }, { word: "fadlan", base: "fadlan" }] }
+  - id: "so-0009"
+    target: "Halkan"
+    ipa: "halkan"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Halkan waa biyo.", ipa: "halkan waː bijo", bases: [{ word: "Halkan", base: "halkan" }, { word: "waa", base: "waa" }, { word: "biyo", base: "biyo" }] }
+      - { target: "Halkan waa guriga.", ipa: "halkan waː guriga", bases: [{ word: "Halkan", base: "halkan" }, { word: "waa", base: "waa" }, { word: "guriga", base: "guri" }] }
+  - id: "so-0010"
+    target: "Iyo"
+    ipa: "ijo"
+    pos: "particle"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Shaah iyo caano.", ipa: "ʃaːh ijo ʕaːno", bases: [{ word: "Shaah", base: "shaah" }, { word: "iyo", base: "iyo" }, { word: "caano", base: "caano" }] }
+      - { target: "Labo iyo kow.", ipa: "labo ijo kow", bases: [{ word: "Labo", base: "labo" }, { word: "iyo", base: "iyo" }, { word: "kow", base: "kow" }] }

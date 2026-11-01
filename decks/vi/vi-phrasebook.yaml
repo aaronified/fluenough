@@ -1,0 +1,155 @@
+schema: 1
+id: "vi-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "vi", iso639_3: "vie", name: "Vietnamese", script: "latin", tts: "vi-VN", icon: "Vi" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "vi-0011"
+    target: "xin chào"
+    ipa: "sin t͡ɕaːw˨˩"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "xin", base: "xin" }, { word: "chào", base: "chào" }]
+  - id: "vi-0012"
+    target: "chào buổi sáng"
+    ipa: "t͡ɕaːw˨˩ ɓuəj˨˩ saːŋ˧˥"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "chào", base: "chào" }, { word: "buổi", base: "buổi" }, { word: "sáng", base: "sáng" }]
+  - id: "vi-0013"
+    target: "chúc ngủ ngon"
+    ipa: "t͡ɕuk˧˥ ŋu˧˩ ŋɔn˧˧"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "chúc", base: "chúc" }, { word: "ngủ", base: "ngủ" }, { word: "ngon", base: "ngon" }]
+  - id: "vi-0014"
+    target: "tạm biệt"
+    ipa: "taːm˧˩ ɓiət˨˩"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "tạm", base: "tạm" }, { word: "biệt", base: "biệt" }]
+  - id: "vi-0015"
+    target: "cảm ơn"
+    ipa: "kaːm˧˩ ʔəːn˧"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "cảm", base: "cảm" }, { word: "ơn", base: "ơn" }]
+  - id: "vi-0016"
+    target: "cảm ơn nhiều"
+    ipa: "kaːm˧˩ ʔəːn˧ ɲiəw˨˩"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "cảm", base: "cảm" }, { word: "ơn", base: "ơn" }, { word: "nhiều", base: "nhiều" }]
+  - id: "vi-0017"
+    target: "xin lỗi"
+    ipa: "sin lo̞j˧˩"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "xin", base: "xin" }, { word: "lỗi", base: "lỗi" }]
+  - id: "vi-0018"
+    target: "xin lỗi, cho tôi hỏi"
+    ipa: "sin lo̞j˧˩ t͡ɕo˧˧ toi˧˧ hɔj˧˩"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "xin", base: "xin" }, { word: "lỗi", base: "lỗi" }, { word: "cho", base: "cho" }, { word: "tôi", base: "tôi" }, { word: "hỏi", base: "hỏi" }]
+  - id: "vi-0019"
+    target: "làm ơn"
+    ipa: "laːm˨˩ ʔəːn˧"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "làm", base: "làm" }, { word: "ơn", base: "ơn" }]
+  - id: "vi-0020"
+    target: "nói chậm lại, làm ơn"
+    ipa: "noi˧˥ t͡ɕəm˧˩ laj˨˩ laːm˨˩ ʔəːn˧"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "nói", base: "nói" }, { word: "chậm", base: "chậm" }, { word: "lại", base: "lại" }, { word: "làm", base: "làm" }, { word: "ơn", base: "ơn" }]
+  - id: "vi-0021"
+    target: "Tôi không hiểu."
+    ipa: "toi˧˧ xəwŋ˧˧ hiəw˧˧"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "Tôi", base: "tôi" }, { word: "hiểu", base: "hiểu" }]
+  - id: "vi-0022"
+    target: "Tôi không biết."
+    ipa: "toi˧˧ xəwŋ˧˧ ɓiət˧˥"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "Tôi", base: "tôi" }, { word: "biết", base: "biết" }]
+  - id: "vi-0023"
+    target: "Bao nhiêu tiền?"
+    ipa: "ɓaːw˧˧ ɲiəw˧˧ tiən˨˩"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    bases: [{ word: "Bao", base: "bao" }, { word: "nhiêu", base: "nhiêu" }, { word: "tiền", base: "tiền" }]
+  - id: "vi-0024"
+    target: "Cái này bao nhiêu?"
+    ipa: "kaj˧˥ naj˨˩ ɓaːw˧˧ ɲiəw˧˧"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    bases: [{ word: "Cái", base: "cái" }, { word: "này", base: "này" }, { word: "bao", base: "bao" }, { word: "nhiêu", base: "nhiêu" }]
+  - id: "vi-0025"
+    target: "Nhà vệ sinh ở đâu?"
+    ipa: "ɲaː˨˩ vɛ˨˩ siŋ˧˧ ʔə˧˩ ɗəw˧˥"
+    pos: "phrase"
+    tags: ["directions"]
+    phrasebook: true
+    bases: [{ word: "Nhà", base: "nhà" }, { word: "vệ", base: "vệ" }, { word: "sinh", base: "sinh" }, { word: "ở", base: "ở" }, { word: "đâu", base: "đâu" }]
+  - id: "vi-0026"
+    target: "Giúp tôi!"
+    ipa: "zup˧˥ toi˧˧"
+    pos: "phrase"
+    tags: ["emergency"]
+    phrasebook: true
+    bases: [{ word: "Giúp", base: "giúp" }, { word: "tôi", base: "tôi" }]
+  - id: "vi-0027"
+    target: "Tên tôi là An."
+    ipa: "ten˧˧ toi˧˧ la˨˩ ʔan˧˧"
+    pos: "phrase"
+    tags: ["about-me"]
+    phrasebook: true
+    bases: [{ word: "Tên", base: "tên" }, { word: "tôi", base: "tôi" }, { word: "là", base: "là" }, { word: "An", base: "An" }]
+  - id: "vi-0028"
+    target: "Bạn tên là gì?"
+    ipa: "ɓan˨˩ ten˧˧ la˨˩ zi˨˩"
+    pos: "phrase"
+    tags: ["about-me"]
+    phrasebook: true
+    bases: [{ word: "Bạn", base: "bạn" }, { word: "tên", base: "tên" }, { word: "là", base: "là" }, { word: "gì", base: "gì" }]
+  - id: "vi-0029"
+    target: "Bạn nói tiếng Anh không?"
+    ipa: "ɓan˨˩ noi˧˥ tiəŋ˧˥ ʔajŋ˧ xəwŋ˧˧"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "Bạn", base: "bạn" }, { word: "nói", base: "nói" }, { word: "tiếng", base: "tiếng" }, { word: "Anh", base: "Anh" }, { word: "không", base: "không" }]
+  - id: "vi-0030"
+    target: "Không sao."
+    ipa: "xəwŋ˧˧ saːw˧˧"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "Không", base: "không" }, { word: "sao", base: "sao" }]
+  - id: "vi-0031"
+    target: "Hẹn gặp lại."
+    ipa: "hɛn˨˩ ɣap˨˩ laj˨˩"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "Hẹn", base: "hẹn" }, { word: "gặp", base: "gặp" }, { word: "lại", base: "lại" }]

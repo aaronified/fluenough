@@ -2865,7 +2865,7 @@ after that ([ADR-0037](ADR-0037-Decks-Download-From-Main)). What it
 downloads is listed in `decks/index.json`:
 
 - **Every language** in `decks/`, except those in `HIDDEN` in
-  `tools/deck_index.py` (Japanese, for now): its name, own name, icon and
+  `tools/deck_index.py` (none now): its name, own name, icon and
   script, whether it has script decks, the native languages it is taught
   from, its path's order, and each unit's planned words and the words its
   decks have, per native language.

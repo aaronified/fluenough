@@ -1,0 +1,120 @@
+schema: 1
+id: "ca-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "ca", iso639_3: "cat", name: "Catalan", script: "latin", tts: "ca-ES", icon: "Ca" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ca-0001"
+    target: "sí"
+    ipa: "si"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sí, gràcies.", ipa: "si ˈɡɾasiəs", bases: [{ word: "Sí", base: "sí" }, { word: "gràcies", base: "gràcies" }] }
+      - { target: "Sí, parlo català.", ipa: "si ˈpaɾlu kəˈtalə", bases: [{ word: "Sí", base: "sí" }, { word: "parlo", base: "parlar" }, { word: "català", base: "català" }] }
+  - id: "ca-0002"
+    target: "no"
+    ipa: "nu"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "No, gràcies.", ipa: "nu ˈɡɾasiəs", bases: [{ word: "No", base: "no" }, { word: "gràcies", base: "gràcies" }] }
+      - { target: "No parlo anglès.", ipa: "nu ˈpaɾlu aŋˈɡlɛs", bases: [{ word: "No", base: "no" }, { word: "parlo", base: "parlar" }, { word: "anglès", base: "anglès" }] }
+  - id: "ca-0003"
+    target: "jo"
+    ipa: "ʒo"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jo sóc estudiant.", ipa: "ʒo sɔk əstuˈdjan", bases: [{ word: "Jo", base: "jo" }, { word: "sóc", base: "ser" }, { word: "estudiant", base: "estudiant" }] }
+      - { target: "Jo no ho entenc.", ipa: "ʒo nu u əŋˈtɛŋk", bases: [{ word: "Jo", base: "jo" }, { word: "no", base: "no" }, { word: "ho", base: "ho" }, { word: "entenc", base: "entendre" }] }
+  - id: "ca-0004"
+    target: "tu"
+    ipa: "tu"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu parles anglès?", ipa: "tu ˈpaɾləs aŋˈɡlɛs", bases: [{ word: "Tu", base: "tu" }, { word: "parles", base: "parlar" }, { word: "anglès", base: "anglès" }] }
+      - { target: "Tu ets amable.", ipa: "tu ɛts əˈmabləs", bases: [{ word: "Tu", base: "tu" }, { word: "ets", base: "ser" }, { word: "amable", base: "amable" }] }
+  - id: "ca-0005"
+    target: "i"
+    ipa: "i"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pa i formatge.", ipa: "pa i fɔɾˈmadʒə", bases: [{ word: "Pa", base: "pa" }, { word: "i", base: "i" }, { word: "formatge", base: "formatge" }] }
+      - { target: "Jo i tu.", ipa: "ʒo i tu", bases: [{ word: "Jo", base: "jo" }, { word: "i", base: "i" }, { word: "tu", base: "tu" }] }
+  - id: "ca-0006"
+    target: "o"
+    ipa: "o"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cafè o te?", ipa: "kaˈfɛ o ˈte", bases: [{ word: "Cafè", base: "cafè" }, { word: "o", base: "o" }, { word: "te", base: "te" }] }
+      - { target: "Avui o demà?", ipa: "əˈβwi o dəˈma", bases: [{ word: "Avui", base: "avui" }, { word: "o", base: "o" }, { word: "demà", base: "demà" }] }
+  - id: "ca-0007"
+    target: "però"
+    ipa: "pəˈɾo"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sí, però tinc gana.", ipa: "si pəˈɾo tiŋk ˈɡanə", bases: [{ word: "Sí", base: "sí" }, { word: "però", base: "però" }, { word: "tinc", base: "tenir" }, { word: "gana", base: "gana" }] }
+      - { target: "Bo, però car.", ipa: "bu pəˈɾo kaɾ", bases: [{ word: "Bo", base: "bo" }, { word: "però", base: "però" }, { word: "car", base: "car" }] }
+  - id: "ca-0008"
+    target: "bo"
+    ipa: "bu"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "El cafè és bo.", ipa: "əl kaˈfɛ ɛz bu", bases: [{ word: "El", base: "el" }, { word: "cafè", base: "cafè" }, { word: "és", base: "ser" }, { word: "bo", base: "bo" }] }
+      - { target: "És una bona idea.", ipa: "ɛz ˈunə ˈbonə iˈdɛə", bases: [{ word: "És", base: "ser" }, { word: "una", base: "un" }, { word: "bona", base: "bo" }, { word: "idea", base: "idea" }] }
+  - id: "ca-0009"
+    target: "un"
+    ipa: "un"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un cafè, per favor.", ipa: "un kaˈfɛ pər fəˈβo", bases: [{ word: "Un", base: "un" }, { word: "cafè", base: "cafè" }, { word: "per", base: "per" }, { word: "favor", base: "favor" }] }
+      - { target: "Tinc un germà.", ipa: "tiŋk un ʒərˈma", bases: [{ word: "Tinc", base: "tenir" }, { word: "un", base: "un" }, { word: "germà", base: "germà" }] }
+  - id: "ca-0010"
+    target: "aigua"
+    ipa: "ˈajɣwə"
+    pos: "noun"
+    gender: "f"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Aigua, per favor.", ipa: "ˈajɣwə pər fəˈβo", bases: [{ word: "Aigua", base: "aigua" }, { word: "per", base: "per" }, { word: "favor", base: "favor" }] }
+      - { target: "Bec aigua.", ipa: "bɛk ˈajɣwə", bases: [{ word: "Bec", base: "beure" }, { word: "aigua", base: "aigua" }] }
