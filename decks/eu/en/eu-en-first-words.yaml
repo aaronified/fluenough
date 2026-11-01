@@ -1,0 +1,163 @@
+schema: 1
+id: "eu-en-first-words"
+kind: "layer"
+core: "eu-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes, no, I, you, and, or, but, good, one and water: the small words that answer, link and begin a sentence. Greetings and thanks are in the phrasebook. Not yet checked by a Basque speaker: please report any mistake."
+cards:
+  "eu-0001":
+    native: "yes"
+    notes:
+      "n1": "Bai is yes. Basque often answers with the verb as well, so a question about knowing gets dakit (I know) back rather than a bare yes."
+    examples:
+      "Bai, eskerrik asko.":
+        native: "Yes, thank you."
+        bases:
+          "eskerrik": "thanks"
+          "asko": "much"
+      "Bai, egia da.":
+        native: "Yes, it is true."
+        bases:
+          "egia": "truth"
+          "da": "is"
+  "eu-0002":
+    native: "no"
+    notes:
+      "n1": "Ez is no. It is also the word that makes a verb negative, placed before it: ez dakit (I don't know)."
+    examples:
+      "Ez, eskerrik asko.":
+        native: "No, thank you."
+        bases:
+          "eskerrik": "thanks"
+          "asko": "much"
+      "Ez dakit.":
+        native: "I don't know."
+        bases:
+          "dakit": "I know"
+  "eu-0003":
+    native: "I"
+    notes:
+      "n1": "Ni is I. Basque verbs show who acts in their ending, so ni is often left out: naiz alone means I am."
+    examples:
+      "Ni ikaslea naiz.":
+        native: "I am a student."
+        bases:
+          "ikaslea": "student"
+          "naiz": "I am"
+      "Ni ere ikaslea naiz.":
+        native: "I am a student too."
+        bases:
+          "ere": "too"
+          "ikaslea": "student"
+          "naiz": "I am"
+  "eu-0004":
+    native: "you"
+    notes:
+      "n1": "Zu is the usual word for you, to one person. Hi is the familiar form, for friends and children; a learner should use zu."
+    examples:
+      "Zu ikaslea zara?":
+        native: "Are you a student?"
+        bases:
+          "ikaslea": "student"
+          "zara": "you are"
+      "Ez zara ikaslea.":
+        native: "You are not a student."
+        bases:
+          "zara": "you are"
+          "ikaslea": "student"
+  "eu-0005":
+    native: "and"
+    notes:
+      "n1": "Eta is and. It joins two nouns, as in bread and milk, and is said before the last of a list."
+    examples:
+      "Ogia eta esnea.":
+        native: "Bread and milk."
+        bases:
+          "Ogia": "bread"
+          "esnea": "milk"
+      "Ni eta zu.":
+        native: "Me and you."
+        bases:
+          "Ni": "I"
+          "zu": "you"
+  "eu-0006":
+    native: "or"
+    notes:
+      "n1": "Edo is or. In a question it asks the listener to choose between the two things."
+    examples:
+      "Kafea edo te?":
+        native: "Coffee or tea?"
+        bases:
+          "Kafea": "coffee"
+          "te": "tea"
+      "Gaur edo bihar?":
+        native: "Today or tomorrow?"
+        bases:
+          "Gaur": "today"
+          "bihar": "tomorrow"
+  "eu-0007":
+    native: "but"
+    notes:
+      "n1": "Baina is but. It comes between the two parts of a sentence that go against each other."
+    examples:
+      "On da, baina garestia.":
+        native: "It is good, but expensive."
+        bases:
+          "da": "is"
+          "garestia": "expensive"
+      "Ikaslea naiz, baina nekatuta nago.":
+        native: "I am a student, but I am tired."
+        bases:
+          "Ikaslea": "student"
+          "naiz": "I am"
+          "nekatuta": "tired"
+          "nago": "I am"
+  "eu-0008":
+    native: "good"
+    notes:
+      "n1": "On is good, as an adjective: on da is it is good. Ondo is well or fine, as in ondo nago, I am well."
+    examples:
+      "Kafea on da.":
+        native: "The coffee is good."
+        bases:
+          "kafea": "coffee"
+          "da": "is"
+      "Ondo nago, eskerrik asko.":
+        native: "I am well, thank you."
+        bases:
+          "Ondo": "well"
+          "nago": "I am"
+          "eskerrik": "thanks"
+          "asko": "much"
+  "eu-0009":
+    native: "one"
+    notes:
+      "n1": "Bat is one. Before a noun it means a or an: kafe bat is a coffee."
+    examples:
+      "Kafe bat, mesedez.":
+        native: "One coffee, please."
+        bases:
+          "Kafe": "coffee"
+      "Bat, bi, hiru.":
+        native: "One, two, three."
+        bases:
+          "bi": "two"
+          "hiru": "three"
+  "eu-0010":
+    native: "water"
+    notes:
+      "n1": "Ur is water. With the article it becomes ura, the water. Ur hotza is cold water, with the adjective after it."
+    examples:
+      "Ur, mesedez.":
+        native: "Water, please."
+        bases:
+          "Ur": "water"
+          "mesedez": "please"
+      "Ur hotza nahi dut.":
+        native: "I want cold water."
+        bases:
+          "hotza": "cold"
+          "nahi": "want"
+          "dut": "I have it"

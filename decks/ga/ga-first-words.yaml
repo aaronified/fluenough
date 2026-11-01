@@ -1,0 +1,120 @@
+schema: 1
+id: "ga-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "ga", iso639_3: "gle", name: "Irish", script: "latin", tts: "ga-IE", icon: "Ga" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ga-0001"
+    target: "sea"
+    ipa: "ʃa"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sea, is maith liom é.", ipa: "ʃa is mah lʲim eː", bases: [{ word: "is", base: "is" }, { word: "maith", base: "maith" }, { word: "liom", base: "le" }, { word: "é", base: "é" }] }
+      - { target: "Sea, tá mé go maith.", ipa: "ʃa taː meː ɡə mah", bases: [{ word: "tá", base: "bí" }, { word: "go", base: "go" }, { word: "maith", base: "maith" }] }
+  - id: "ga-0002"
+    target: "níl"
+    ipa: "ˈniːl"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Níl, ní thuigim.", ipa: "ˈniːl nʲiː ˈhɪɡʲɪm", bases: [{ word: "Níl", base: "bí" }, { word: "ní", base: "ní" }, { word: "thuigim", base: "tuig" }] }
+      - { target: "Níl sé anseo.", ipa: "ˈniːl ʃeː ˈanʃo", bases: [{ word: "Níl", base: "bí" }, { word: "sé", base: "sé" }, { word: "anseo", base: "anseo" }] }
+  - id: "ga-0003"
+    target: "mé"
+    ipa: "meː"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Is mise Aoife.", ipa: "ɪs ˈmʲɪʃə ˈiːfʲə", bases: [{ word: "Is", base: "is" }, { word: "mise", base: "mé" }, { word: "Aoife", base: "Aoife" }] }
+      - { target: "Is múinteoir mé.", ipa: "ɪs ˈmuːnʲtʲoːrʲ meː", bases: [{ word: "Is", base: "is" }, { word: "múinteoir", base: "múinteoir" }, { word: "mé", base: "mé" }] }
+  - id: "ga-0004"
+    target: "tú"
+    ipa: "tuː"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "An bhfuil tú anseo?", ipa: "ən ˈwɪl tuː ˈanʃo", bases: [{ word: "An", base: "an" }, { word: "bhfuil", base: "bí" }, { word: "tú", base: "tú" }, { word: "anseo", base: "anseo" }] }
+      - { target: "Tá tú go maith?", ipa: "taː tuː ɡə mah", bases: [{ word: "Tá", base: "bí" }, { word: "tú", base: "tú" }, { word: "go", base: "go" }, { word: "maith", base: "maith" }] }
+  - id: "ga-0005"
+    target: "agus"
+    ipa: "ˈaɡəs"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tae agus caife.", ipa: "teː ˈaɡəs ˈkafʲə", bases: [{ word: "Tae", base: "tae" }, { word: "caife", base: "caife" }] }
+      - { target: "Mé agus tú.", ipa: "meː ˈaɡəs tuː", bases: [{ word: "Mé", base: "mé" }, { word: "tú", base: "tú" }] }
+  - id: "ga-0006"
+    target: "nó"
+    ipa: "noː"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tae nó caife?", ipa: "teː noː ˈkafʲə", bases: [{ word: "Tae", base: "tae" }, { word: "caife", base: "caife" }] }
+      - { target: "Inniu nó amárach?", ipa: "ˈɪnʲʊ noː əˈmaːrəx", bases: [{ word: "Inniu", base: "inniu" }, { word: "amárach", base: "amárach" }] }
+  - id: "ga-0007"
+    target: "ach"
+    ipa: "əx"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Maith go leor, ach daor.", ipa: "mah ɡə lʲoːr əx ˈdeːr", bases: [{ word: "Maith", base: "maith" }, { word: "go", base: "go" }, { word: "leor", base: "leor" }, { word: "daor", base: "daor" }] }
+      - { target: "Tá mé tuirseach, ach tá mé sásta.", ipa: "taː meː ˈtɪrʃəx əx taː meː ˈsaːsdə", bases: [{ word: "Tá", base: "bí" }, { word: "tuirseach", base: "tuirseach" }, { word: "sásta", base: "sásta" }] }
+  - id: "ga-0008"
+    target: "maith"
+    ipa: "mah"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tá an bia go maith.", ipa: "taː ən bʲiə ɡə mah", bases: [{ word: "Tá", base: "bí" }, { word: "an", base: "an" }, { word: "bia", base: "bia" }, { word: "go", base: "go" }] }
+      - { target: "Is maith liom tae.", ipa: "ɪs mah lʲɪm teː", bases: [{ word: "Is", base: "is" }, { word: "liom", base: "le" }, { word: "tae", base: "tae" }] }
+  - id: "ga-0009"
+    target: "a haon"
+    ipa: "ə ˈheːn"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "A haon, a dó, a trí.", ipa: "ə ˈheːn ə doː ə ˈtriː", bases: [{ word: "A", base: "a" }, { word: "haon", base: "haon" }, { word: "dó", base: "dó" }, { word: "trí", base: "trí" }] }
+      - { target: "Aon uair amháin.", ipa: "eːn ˈuːɾʲə əˈwɪn", bases: [{ word: "Aon", base: "aon" }, { word: "uair", base: "uair" }, { word: "amháin", base: "amháin" }] }
+  - id: "ga-0010"
+    target: "uisce"
+    ipa: "ˈɪʃkʲə"
+    pos: "noun"
+    gender: "m"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Uisce, le do thoil.", ipa: "ˈɪʃkʲə lʲə də hɪl", bases: [{ word: "le", base: "le" }, { word: "do", base: "do" }, { word: "thoil", base: "toil" }] }
+      - { target: "Tá an t-uisce fuar.", ipa: "taː ən ˈtɪʃkʲə ˈfuːər", bases: [{ word: "Tá", base: "bí" }, { word: "an", base: "an" }, { word: "t-uisce", base: "uisce" }, { word: "fuar", base: "fuar" }] }
