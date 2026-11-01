@@ -5,6 +5,7 @@ import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../core/models/card.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/snack.dart';
 import '../downloads/download_page.dart';
 
@@ -25,9 +26,11 @@ class SoundsOfWordButton extends StatelessWidget {
     final language = AppScope.read(context).deckOf(card)?.language;
     // The IPA's own cards are the sounds already.
     if (language == null || language.isIpa) return const SizedBox.shrink();
-    return IconButton(
+    final l10n = AppLocalizations.of(context)!;
+    return LabelledIconButton(
+      label: l10n.soundsOfWordLabel,
+      hint: l10n.soundsOfWordButton,
       onPressed: () => openSoundsOfWord(context, card),
-      tooltip: AppLocalizations.of(context)!.soundsOfWordButton,
       icon: const Icon(Icons.graphic_eq),
     );
   }

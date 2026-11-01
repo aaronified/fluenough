@@ -107,7 +107,7 @@ situations:
         expect(find.text(l10n.situationOpenInDeck), findsOneWidget);
         // The sounds are not drawn until the dot is tapped.
         expect(find.text(l10n.ipaSymbolPractise), findsNothing);
-        await tester.tap(find.byTooltip(l10n.ipaInfoDot));
+        await tester.tap(find.byTooltip(l10n.hintInfo));
         await tester.pumpAndSettle();
         expect(find.text('the sound ɳ'), findsOneWidget);
         expect(find.text(l10n.ipaSymbolPractise), findsWidgets);

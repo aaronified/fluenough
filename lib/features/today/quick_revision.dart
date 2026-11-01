@@ -128,7 +128,7 @@ class _QuickRevisionState extends State<QuickRevision> {
         Row(
           children: <Widget>[
             IconButton.outlined(
-              tooltip: l10n.todayRevisionLess(DailyBudget.stepMinutes),
+              tooltip: l10n.minutesLess,
               onPressed: _minutes > DailyBudget.stepMinutes
                   ? () => setState(() => _minutes -= DailyBudget.stepMinutes)
                   : null,
@@ -159,7 +159,7 @@ class _QuickRevisionState extends State<QuickRevision> {
             ),
             const SizedBox(width: 8),
             IconButton.outlined(
-              tooltip: l10n.todayRevisionMore(DailyBudget.stepMinutes),
+              tooltip: l10n.minutesMore,
               onPressed: _minutes < DailyBudget.maxMinutes
                   ? () => setState(() => _minutes += DailyBudget.stepMinutes)
                   : null,

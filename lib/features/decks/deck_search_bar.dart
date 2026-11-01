@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import '../../core/search/query.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/hint.dart';
 import 'unit_search.dart' show SearchSuggestion, searchKindLabel;
 
 /// A token's value as its chip and its menu show it.
@@ -70,6 +71,7 @@ class DeckSearchBar extends StatelessWidget {
     required this.onBackspaceEmpty,
     required this.showEnd,
     required this.endTooltip,
+    required this.endLabel,
     required this.onEnd,
   });
 
@@ -94,7 +96,10 @@ class DeckSearchBar extends StatelessWidget {
   final VoidCallback onBackspaceEmpty;
 
   final bool showEnd;
+
+  /// The end button's tooltip (one word) and its screen-reader label.
   final String endTooltip;
+  final String endLabel;
   final VoidCallback onEnd;
 
   static const double _barHeight = 56;
@@ -237,8 +242,9 @@ class DeckSearchBar extends StatelessWidget {
                 ),
               ),
               if (showEnd)
-                IconButton(
-                  tooltip: endTooltip,
+                LabelledIconButton(
+                  label: endLabel,
+                  hint: endTooltip,
                   icon: const Icon(Icons.close),
                   onPressed: onEnd,
                 ),
@@ -380,8 +386,9 @@ class SuggestionRows extends StatelessWidget {
                         ),
                       ),
                     ),
-                    IconButton(
-                      tooltip: l10n.searchSuggestionEdit(s.text),
+                    LabelledIconButton(
+                      label: l10n.searchSuggestionEdit(s.text),
+                      hint: l10n.hintEdit,
                       icon: const Icon(Icons.north_west),
                       onPressed: () => onEdit(s),
                     ),

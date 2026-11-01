@@ -55,7 +55,7 @@ class MatchHearToggle extends StatelessWidget {
           excludeSemantics: true,
           onTap: tap,
           child: Tooltip(
-            message: labelOf(on),
+            message: l10n.hintHear,
             child: InkResponse(
               onTap: tap,
               radius: size / 2,

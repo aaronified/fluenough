@@ -258,13 +258,13 @@ class _ActionBar extends StatelessWidget {
             action(
               icon: Icons.copy_outlined,
               word: l10n.appLogCopy,
-              tooltip: l10n.settingsLogCopy,
+              tooltip: l10n.appLogCopy,
               onPressed: text.isEmpty ? null : () => _copyLog(context, text),
             ),
             action(
               icon: Icons.file_download_outlined,
               word: l10n.appLogExport,
-              tooltip: l10n.settingsLogExport,
+              tooltip: l10n.appLogExport,
               onPressed: text.isEmpty
                   ? null
                   : () => _exportLog(context, state, text),
@@ -272,7 +272,7 @@ class _ActionBar extends StatelessWidget {
             action(
               icon: Icons.delete_outline,
               word: l10n.appLogClear,
-              tooltip: l10n.settingsLogClear,
+              tooltip: l10n.appLogClear,
               color: scheme.error,
               onPressed: empty ? null : () => _clearLog(context, state),
             ),

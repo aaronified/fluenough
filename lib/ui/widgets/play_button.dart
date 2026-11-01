@@ -71,39 +71,48 @@ class _PlayButtonState extends State<PlayButton> {
       onTap: enabled ? _press : null,
       onLongPress: longPress,
       onLongPressHint: longPress == null ? null : l10n.speakerLongPressHint,
-      child: SizedBox.square(
-        dimension: widget.size,
-        child: Stack(
-          alignment: Alignment.center,
-          children: <Widget>[
-            AnimatedRotation(
-              turns: _turns,
-              duration: const Duration(milliseconds: 1400),
-              curve: Segmented.morph,
-              child: Material(
-                color: muted ? scheme.surfaceContainerHighest : scheme.primary,
-                shape: const ExpressiveShapeBorder(ExpressiveShape.cookie),
-                clipBehavior: Clip.antiAlias,
-                child: InkWell(
-                  onTap: enabled ? _press : null,
-                  onLongPress: longPress,
-                  child: SizedBox.square(dimension: widget.size),
+      // Long press is the speaker's own (it switches autoplay): the tooltip
+      // waits for hover, and the Semantics above already names the button.
+      child: Tooltip(
+        message: widget.playing ? l10n.hintStop : l10n.hintPlay,
+        triggerMode: TooltipTriggerMode.manual,
+        excludeFromSemantics: true,
+        child: SizedBox.square(
+          dimension: widget.size,
+          child: Stack(
+            alignment: Alignment.center,
+            children: <Widget>[
+              AnimatedRotation(
+                turns: _turns,
+                duration: const Duration(milliseconds: 1400),
+                curve: Segmented.morph,
+                child: Material(
+                  color: muted
+                      ? scheme.surfaceContainerHighest
+                      : scheme.primary,
+                  shape: const ExpressiveShapeBorder(ExpressiveShape.cookie),
+                  clipBehavior: Clip.antiAlias,
+                  child: InkWell(
+                    onTap: enabled ? _press : null,
+                    onLongPress: longPress,
+                    child: SizedBox.square(dimension: widget.size),
+                  ),
                 ),
               ),
-            ),
-            IgnorePointer(
-              child: Icon(
-                widget.playing
-                    ? Icons.pause
-                    : muted
-                    ? Icons.volume_off_outlined
-                    : Icons.volume_up_outlined,
-                // Never under 24, so that a small speaker reads as one.
-                size: widget.size * 0.32 < 24 ? 24 : widget.size * 0.32,
-                color: muted ? scheme.onSurfaceVariant : scheme.onPrimary,
+              IgnorePointer(
+                child: Icon(
+                  widget.playing
+                      ? Icons.pause
+                      : muted
+                      ? Icons.volume_off_outlined
+                      : Icons.volume_up_outlined,
+                  // Never under 24, so that a small speaker reads as one.
+                  size: widget.size * 0.32 < 24 ? 24 : widget.size * 0.32,
+                  color: muted ? scheme.onSurfaceVariant : scheme.onPrimary,
+                ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );

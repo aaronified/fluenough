@@ -15,6 +15,7 @@ import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
+import 'support/labelled.dart';
 import 'support/review_fixture.dart';
 
 /// The plain word with two synonyms, one from Wiktionary, a pair note that
@@ -214,8 +215,7 @@ void main() {
       final l10n = l10nOf(tester);
       await _tap(
         tester,
-        find
-            .byTooltip(l10n.reviewSuggestEditPart(l10n.reviewPartSynonyms))
+        byButtonLabel(l10n.reviewSuggestEditPart(l10n.reviewPartSynonyms))
             .first,
       );
       await _type(

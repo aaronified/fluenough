@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_downloads.dart';
 import '../../l10n/app_localizations.dart';
+import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/snack.dart';
 import 'app_update_needed.dart';
 import 'download_text.dart';
@@ -312,9 +313,10 @@ class LanguageRowActions extends StatelessWidget {
               ),
             ),
             if (onPhone)
-              IconButton(
+              LabelledIconButton(
                 key: ValueKey<String>('remove-$code'),
-                tooltip: l10n.pickerRemoveLabel(name),
+                label: l10n.pickerRemoveLabel(name),
+                hint: l10n.hintRemove,
                 icon: Icon(Icons.close, color: theme.colorScheme.error),
                 onPressed: busy
                     ? null

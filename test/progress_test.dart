@@ -2206,7 +2206,7 @@ cards:
         // tapped.
         expect(find.text('the sound pʰ'), findsNothing);
         expect(find.text(l10n.ipaSymbolPractise), findsNothing);
-        await tester.tap(find.byTooltip(l10n.ipaInfoDot));
+        await tester.tap(find.byTooltip(l10n.hintInfo));
         await tester.pumpAndSettle();
         final aspirated = find.text('the sound pʰ');
         final retroflex = find.text('the sound ɳ');

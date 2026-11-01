@@ -320,10 +320,11 @@ class _BackupRow extends StatelessWidget {
       String label,
       VoidCallback? onTap, {
       Feature? feature,
+      String? tip,
     }) {
       final Widget built = large
           ? Tooltip(
-              message: label,
+              message: tip ?? label,
               child: Semantics(
                 button: true,
                 label: label,
@@ -387,6 +388,7 @@ class _BackupRow extends StatelessWidget {
         l10n.settingsBackupSendToCloud,
         null,
         feature: Feature.cloudBackup,
+        tip: l10n.hintUpload,
       ),
       action(
         Icons.settings_backup_restore,
