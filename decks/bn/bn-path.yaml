@@ -516,11 +516,14 @@ units:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
   - decks: ["bn-reading-services"]
     words: 0
-  - planned: { id: "bn-government", theme: "government", words: 40 }
+  - decks: ["bn-government", "bn-government-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
     reading_passages:
       - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
+  - decks: ["bn-reading-government"]
+    words: 0
   - planned: { id: "bn-grammar-purpose", grammar: "purpose" }
     listening_passages:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }

@@ -1,0 +1,100 @@
+schema: 1
+id: "bn-government-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3217"
+    target: "মন্ত্রী আজ শহরে আসবেন।"
+    reading: "montri āj śôhore āsoben."
+    ipa: "mont̪ri adʒ ʃɔɦore asoben"
+    phonetic: "[mont̪ri adʒ ʃɔɦore asoben]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "মন্ত্রী", ref: "bn-3177" }, { word: "আজ", base: "আজ", reading: "āj" }, { word: "শহরে", ref: "bn-0199" }, { word: "আসবেন", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "নেতা", reading: "netā", kind: "word" }, { id: "c2", word: "বিচারক", reading: "bicārak", kind: "word" }]
+  - id: "bn-3218"
+    target: "সংসদে নতুন আইন পাস হয়েছে।"
+    reading: "sôṅsode notun āin pās hôyeche."
+    ipa: "sɔŋsod̪e not̪un ain pas ɦɔjetʃʰe"
+    phonetic: "[sɔŋsod̪e not̪un ain pas ɦɔjetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সংসদে", ref: "bn-3178" }, { word: "নতুন", ref: "bn-0620" }, { word: "আইন", ref: "bn-3180" }, { word: "পাস", ref: "bn-2194" }, { word: "হয়েছে", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "আদালত", reading: "ādālat", kind: "word" }, { id: "c2", word: "মন্ত্রিসভা", reading: "mantrisabhā", kind: "word" }]
+  - id: "bn-3219"
+    target: "আমি ভোট দিয়েছি।"
+    reading: "āmi bhoṭ diyechi."
+    ipa: "ami bʱoʈ d̪ijetʃʰi"
+    phonetic: "[ami bʱoʈ d̪ijetʃʰi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "ভোট", ref: "bn-3179" }, { word: "দিয়েছি", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "প্রার্থী", reading: "prārthī", kind: "word" }, { id: "c2", word: "ভোটার", reading: "bhoṭār", kind: "word" }]
+  - id: "bn-3220"
+    target: "বিচারক রায় দিয়েছেন।"
+    reading: "bicārok rāy diyechen."
+    ipa: "bitʃarok raj d̪ijetʃʰen"
+    phonetic: "[bitʃarok raj d̪ijetʃʰen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বিচারক", ref: "bn-3181" }, { word: "রায়", base: "রায়", reading: "rāy" }, { word: "দিয়েছেন", ref: "bn-0888" }]
+    confusables: [{ id: "c1", word: "মামলা", reading: "māmlā", kind: "word" }, { id: "c2", word: "সাক্ষী", reading: "sākṣī", kind: "word" }]
+  - id: "bn-3221"
+    target: "প্রতিটি নাগরিকের অধিকার আছে।"
+    reading: "protiṭi nāgoriker ôdhikār āche."
+    ipa: "prot̪iʈi naɡoriker ɔd̪ʱikar atʃʰe"
+    phonetic: "[prot̪iʈi naɡoriker ɔd̪ʱikar atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "প্রতিটি", base: "প্রতিটি", reading: "protiṭi" }, { word: "নাগরিকের", ref: "bn-2909" }, { word: "অধিকার", ref: "bn-3193" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "কর্তব্য", reading: "kartavya", kind: "word" }, { id: "c2", word: "স্বাধীনতা", reading: "svādhīnatā", kind: "word" }]
+  - id: "bn-3222"
+    target: "সরকার কর বাড়িয়েছে।"
+    reading: "sôrokār kôr bāṛiyeche."
+    ipa: "sɔrokar kɔr baɽijetʃʰe"
+    phonetic: "[sɔrokar kɔr baɽijetʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সরকার", base: "সরকার", reading: "sôrokār" }, { word: "কর", ref: "bn-3185" }, { word: "বাড়িয়েছে", base: "বাড়ানো", reading: "bāṛiyeche" }]
+    confusables: [{ id: "c1", word: "ঘুষ", reading: "ghuṣ", kind: "word" }, { id: "c2", word: "জরিমানা", reading: "jarimānā", kind: "word" }]
+  - id: "bn-3223"
+    target: "নির্বাচিত মেয়র আজ এসেছেন।"
+    reading: "nirrācit meyor āj esechen."
+    ipa: "nirratʃit̪ mejor adʒ esetʃʰen"
+    phonetic: "[nirratʃit̪ mejor adʒ esetʃʰen]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "নির্বাচিত", ref: "bn-3205" }, { word: "মেয়র", ref: "bn-3188" }, { word: "আজ", base: "আজ", reading: "āj" }, { word: "এসেছেন", ref: "bn-0872" }]
+    confusables: [{ id: "c1", word: "মনোনীত", reading: "manonīt", kind: "word" }, { id: "c2", word: "রাজ্যপাল", reading: "rājyapāl", kind: "word" }]
+  - id: "bn-3224"
+    target: "কর্তব্য ভুলো না।"
+    reading: "kôrtobb bhulo nā."
+    ipa: "kɔrt̪obb bʱulo na"
+    phonetic: "[kɔrt̪obb bʱulo na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কর্তব্য", ref: "bn-3194" }, { word: "ভুলো", base: "ভোলা", reading: "bhulo" }, { word: "না", base: "না", reading: "nā" }]
+    confusables: [{ id: "c1", word: "অধিকার", reading: "adhikār", kind: "word" }, { id: "c2", word: "দায়িত্ব", reading: "dāyitva", kind: "word" }]
+  - id: "bn-3225"
+    target: "সংবিধানে অনেক অধিকার আছে।"
+    reading: "soṅbidhāne ônek ôdhikār āche."
+    ipa: "soŋbid̪ʱane ɔnek ɔd̪ʱikar atʃʰe"
+    phonetic: "[soŋbid̪ʱane ɔnek ɔd̪ʱikar atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "সংবিধানে", ref: "bn-3192" }, { word: "অনেক", ref: "bn-0550" }, { word: "অধিকার", ref: "bn-3193" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "আইন", reading: "āin", kind: "word" }, { id: "c2", word: "নীতি", reading: "nīti", kind: "word" }]
+  - id: "bn-3226"
+    target: "আইনসভা নতুন নীতি ঘোষণা করেছে।"
+    reading: "āinosobhā notun niti ghośonā kôreche."
+    ipa: "ainosobʱa not̪un nit̪i ɡʱoʃona kɔretʃʰe"
+    phonetic: "[ainosobʱa not̪un nit̪i ɡʱoʃona kɔretʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আইনসভা", ref: "bn-3198" }, { word: "নতুন", ref: "bn-0620" }, { word: "নীতি", ref: "bn-3184" }, { word: "ঘোষণা", base: "ঘোষণা", reading: "ghośonā" }, { word: "করেছে", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "সমাজ", reading: "samāj", kind: "word" }, { id: "c2", word: "পার্টি", reading: "pārṭi", kind: "word" }]
