@@ -1,0 +1,157 @@
+schema: 1
+id: "it-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-0011"
+    target: "ciao"
+    ipa: "ˈtʃao"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "ciao", base: "ciao" }]
+  - id: "it-0012"
+    target: "buongiorno"
+    ipa: "bwɔnˈdʒorno"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "buongiorno", base: "buongiorno" }]
+  - id: "it-0013"
+    target: "buonasera"
+    ipa: "bwɔnaˈsera"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "buonasera", base: "buonasera" }]
+  - id: "it-0014"
+    target: "buonanotte"
+    ipa: "bwɔnaˈnɔtte"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "buonanotte", base: "buonanotte" }]
+  - id: "it-0015"
+    target: "arrivederci"
+    ipa: "arrivedˈdertʃi"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "arrivederci", base: "arrivederci" }]
+  - id: "it-0016"
+    target: "per favore"
+    ipa: "per faˈvore"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "per", base: "per" }, { word: "favore", base: "favore" }]
+  - id: "it-0017"
+    target: "grazie"
+    ipa: "ˈɡrattsje"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "grazie", base: "grazie" }]
+  - id: "it-0018"
+    target: "grazie mille"
+    ipa: "ˈɡrattsje ˈmille"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "grazie", base: "grazie" }, { word: "mille", base: "mille" }]
+  - id: "it-0019"
+    target: "scusi"
+    ipa: "ˈskuzi"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "scusi", base: "scusare" }]
+  - id: "it-0020"
+    target: "mi dispiace"
+    ipa: "mi disˈpjatʃe"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "mi", base: "mi" }, { word: "dispiace", base: "dispiacere" }]
+  - id: "it-0021"
+    target: "non capisco"
+    ipa: "non kaˈpisko"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "non", base: "non" }, { word: "capisco", base: "capire" }]
+  - id: "it-0022"
+    target: "non parlo italiano"
+    ipa: "non ˈparlo itaˈljano"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "non", base: "non" }, { word: "parlo", base: "parlare" }, { word: "italiano", base: "italiano" }]
+  - id: "it-0023"
+    target: "parli più lentamente, per favore"
+    ipa: "ˈparli pju lentamenˈte per faˈvore"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "parli", base: "parlare" }, { word: "più", base: "più" }, { word: "lentamente", base: "lentamente" }, { word: "per", base: "per" }, { word: "favore", base: "favore" }]
+  - id: "it-0024"
+    target: "quanto costa?"
+    ipa: "ˈkwanto ˈkɔsta"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    bases: [{ word: "quanto", base: "quanto" }, { word: "costa", base: "costare" }]
+  - id: "it-0025"
+    target: "dov'è il bagno?"
+    ipa: "doˈve il ˈbaɲːo"
+    pos: "phrase"
+    tags: ["directions"]
+    phrasebook: true
+    bases: [{ word: "dov'è", base: "dove" }, { word: "il", base: "il" }, { word: "bagno", base: "bagno" }]
+  - id: "it-0026"
+    target: "aiuto!"
+    ipa: "aˈjuto"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "aiuto", base: "aiuto" }]
+  - id: "it-0027"
+    target: "come si chiama?"
+    ipa: "ˈkome si ˈkjama"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "come", base: "come" }, { word: "si", base: "si" }, { word: "chiama", base: "chiamare" }]
+  - id: "it-0028"
+    target: "mi chiamo Marco"
+    ipa: "mi ˈkjamo ˈmarko"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "mi", base: "mi" }, { word: "chiamo", base: "chiamare" }, { word: "Marco", base: "Marco" }]
+  - id: "it-0029"
+    target: "piacere"
+    ipa: "pjaˈtʃere"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "piacere", base: "piacere" }]
+  - id: "it-0030"
+    target: "non lo so"
+    ipa: "non lo so"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "non", base: "non" }, { word: "lo", base: "lo" }, { word: "so", base: "sapere" }]
+  - id: "it-0031"
+    target: "può ripetere?"
+    ipa: "pwo ripeˈtere"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "può", base: "potere" }, { word: "ripetere", base: "ripetere" }]

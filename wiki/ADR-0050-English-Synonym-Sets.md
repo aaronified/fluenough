@@ -223,6 +223,18 @@ refused word that is one of the card's own answers, is in no set with
 another of its answers, or whose set another card already escapes.
 `tools/synonym_candidates.py` is the candidate-set report.
 
+Built in the app (2026-10-31): Suggest a change has two add-only boxes under
+Meaning, Another accepted answer (`alt_native`) and Not a synonym
+(`not_synonyms`, English meanings only). Each shows what the card has, read
+only, and adds one item a suggestion (`action: "add"`, `word` `new-N`, the item
+in `text`). The phone refuses what the bot would leave for the owner: an empty
+item, one already on the card or typed twice, a card's own answer, several
+answers split by `;`, an accepted answer the card refuses. Another reviewer's
+proposal of either field shows with Accept, Edit and Reject until the card has
+the item; a sent item reads accepted once the card has it. Deck files name the
+fields `alt_native_add` and `not_synonyms_add`, which the app reads by that
+name (`ProposalField.fromWire`).
+
 ### Seeding and the review gate
 
 1. `tools/english_meanings.py` lists the English meanings of every course

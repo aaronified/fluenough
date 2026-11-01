@@ -1,0 +1,121 @@
+schema: 1
+id: "ha-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "ha", iso639_3: "hau", name: "Hausa", script: "latin", tts: "ha-NG", icon: "Ha" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "ha-0001"
+    target: "Eh"
+    ipa: "e"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Eh, ina so.", ipa: "e ina so", bases: [{ word: "Eh", base: "eh" }, { word: "ina", base: "ina" }, { word: "so", base: "so" }] }
+      - { target: "Eh, malam.", ipa: "e malam", bases: [{ word: "Eh", base: "eh" }, { word: "malam", base: "malam" }] }
+  - id: "ha-0002"
+    target: "A'a"
+    ipa: "aʔa"
+    pos: "particle"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "A'a, na gode.", ipa: "aʔa na godɛ", bases: [{ word: "A'a", base: "a'a" }, { word: "na", base: "ina" }, { word: "gode", base: "gode" }] }
+      - { target: "A'a, ba ruwa.", ipa: "aʔa ba ruwa", bases: [{ word: "A'a", base: "a'a" }, { word: "ba", base: "ba" }, { word: "ruwa", base: "ruwa" }] }
+  - id: "ha-0003"
+    target: "Ni"
+    ipa: "ni"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ni malami ne.", ipa: "ni malami ne", bases: [{ word: "Ni", base: "ni" }, { word: "malami", base: "malami" }, { word: "ne", base: "ne" }] }
+      - { target: "Ina son ruwa.", ipa: "ina son ruwa", bases: [{ word: "Ina", base: "ina" }, { word: "son", base: "so" }, { word: "ruwa", base: "ruwa" }] }
+  - id: "ha-0004"
+    target: "Kai"
+    ipa: "kaj"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kai malami ne.", ipa: "kaj malami ne", bases: [{ word: "Kai", base: "kai" }, { word: "malami", base: "malami" }, { word: "ne", base: "ne" }] }
+      - { target: "Kana so ruwa?", ipa: "kana so ruwa", bases: [{ word: "Kana", base: "kana" }, { word: "so", base: "so" }, { word: "ruwa", base: "ruwa" }] }
+  - id: "ha-0005"
+    target: "Ruwa"
+    ipa: "ruwa"
+    pos: "noun"
+    gender: "f"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ruwa sanyi ce.", ipa: "ruwa sanji tʃɛ", bases: [{ word: "Ruwa", base: "ruwa" }, { word: "sanyi", base: "sanyi" }, { word: "ce", base: "ce" }] }
+      - { target: "Don Allah, ruwa.", ipa: "don alla ruwa", bases: [{ word: "Don", base: "don" }, { word: "Allah", base: "Allah" }, { word: "ruwa", base: "ruwa" }] }
+  - id: "ha-0006"
+    target: "Kyau"
+    ipa: "kʲau"
+    pos: "adj"
+    tags: ["quality"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Lafiya lau, na gode.", ipa: "lafija lau na godɛ", bases: [{ word: "Lafiya", base: "lafiya" }, { word: "lau", base: "lau" }, { word: "na", base: "ina" }, { word: "gode", base: "gode" }] }
+      - { target: "Abinci kyau ne.", ipa: "abintʃi kʲau ne", bases: [{ word: "Abinci", base: "abinci" }, { word: "kyau", base: "kyau" }, { word: "ne", base: "ne" }] }
+  - id: "ha-0007"
+    target: "Daya"
+    ipa: "daja"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Daya, biyu, uku.", ipa: "daja biju uku", bases: [{ word: "Daya", base: "daya" }, { word: "biyu", base: "biyu" }, { word: "uku", base: "uku" }] }
+      - { target: "Ina son shayi daya.", ipa: "ina son ʃaji daja", bases: [{ word: "Ina", base: "ina" }, { word: "son", base: "so" }, { word: "shayi", base: "shayi" }, { word: "daya", base: "daya" }] }
+  - id: "ha-0008"
+    target: "Biyu"
+    ipa: "biju"
+    pos: "other"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Yara biyu.", ipa: "jara biju", bases: [{ word: "Yara", base: "yaro" }, { word: "biyu", base: "biyu" }] }
+      - { target: "Ina da yara biyu.", ipa: "ina da jara biju", bases: [{ word: "Ina", base: "ina" }, { word: "da", base: "da" }, { word: "yara", base: "yaro" }, { word: "biyu", base: "biyu" }] }
+  - id: "ha-0009"
+    target: "Nan"
+    ipa: "nan"
+    pos: "adv"
+    tags: ["place"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ina nan.", ipa: "ina nan", bases: [{ word: "Ina", base: "ina" }, { word: "nan", base: "nan" }] }
+      - { target: "Zo nan.", ipa: "zo nan", bases: [{ word: "Zo", base: "zo" }, { word: "nan", base: "nan" }] }
+  - id: "ha-0010"
+    target: "Da"
+    ipa: "da"
+    pos: "particle"
+    tags: ["link"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Shinkafa da wake.", ipa: "ʃinkafa da wakɛ", bases: [{ word: "Shinkafa", base: "shinkafa" }, { word: "da", base: "da" }, { word: "wake", base: "wake" }] }
+      - { target: "Ni da kai.", ipa: "ni da kaj", bases: [{ word: "Ni", base: "ni" }, { word: "da", base: "da" }, { word: "kai", base: "kai" }] }

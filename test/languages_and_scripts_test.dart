@@ -3087,6 +3087,11 @@ void main() {
               themeMode: mode,
             );
             final l10n = l10nOf(tester);
+            // Found by search: whether a language is in Popular, or in a
+            // family that is folded, changes with the courses written, and
+            // the list grows with every language a starter deck is added for.
+            await tester.enterText(find.byType(TextField), 'Assamese');
+            await tester.pumpAndSettle();
             await toScripts(tester, 'as', 'bengali');
             await tester.ensureVisible(offerOf('as'));
             await tester.pumpAndSettle();
@@ -3106,6 +3111,8 @@ void main() {
               findsOneWidget,
             );
             await closeSheet(tester);
+            await tester.enterText(find.byType(TextField), 'Telugu');
+            await tester.pumpAndSettle();
             await toScripts(tester, 'te', 'telugu');
             expect(offerOf('te'), findsNothing);
             expect(tester.takeException(), isNull);

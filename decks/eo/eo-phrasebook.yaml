@@ -1,0 +1,203 @@
+schema: 1
+id: "eo-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "eo", iso639_3: "epo", name: "Esperanto", script: "latin", tts: "eo", icon: "Eo" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "eo-0011"
+    target: "Saluton."
+    ipa: "saluton"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Saluton", base: "saluton" }
+  - id: "eo-0012"
+    target: "Bonan matenon."
+    ipa: "bonan matɛnon"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Bonan", base: "bona" }
+      - { word: "matenon", base: "mateno" }
+  - id: "eo-0013"
+    target: "Bonan vesperon."
+    ipa: "bonan vɛsperon"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Bonan", base: "bona" }
+      - { word: "vesperon", base: "vespero" }
+  - id: "eo-0014"
+    target: "Bonan nokton."
+    ipa: "bonan nokton"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Bonan", base: "bona" }
+      - { word: "nokton", base: "nokto" }
+  - id: "eo-0015"
+    target: "Ĝis revido."
+    ipa: "dʒis revido"
+    pos: "phrase"
+    tags: ["greeting"]
+    phrasebook: true
+    bases:
+      - { word: "Ĝis", base: "ĝis" }
+      - { word: "revido", base: "revido" }
+  - id: "eo-0016"
+    target: "Bonvolu."
+    ipa: "bonvolu"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Bonvolu", base: "bonvoli" }
+  - id: "eo-0017"
+    target: "Dankon."
+    ipa: "dankon"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Dankon", base: "danko" }
+  - id: "eo-0018"
+    target: "Dankon multan."
+    ipa: "dankon multan"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Dankon", base: "danko" }
+      - { word: "multan", base: "multa" }
+  - id: "eo-0019"
+    target: "Pardonu."
+    ipa: "pardonu"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Pardonu", base: "pardoni" }
+  - id: "eo-0020"
+    target: "Mi ne komprenas."
+    ipa: "mi ne komprɛnas"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Mi", base: "mi" }
+      - { word: "ne", base: "ne" }
+      - { word: "komprenas", base: "kompreni" }
+  - id: "eo-0021"
+    target: "Ĉu vi parolas la anglan?"
+    ipa: "tʃu vi parolas la anglan"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Ĉu", base: "ĉu" }
+      - { word: "vi", base: "vi" }
+      - { word: "parolas", base: "paroli" }
+      - { word: "la", base: "la" }
+      - { word: "anglan", base: "angla" }
+  - id: "eo-0022"
+    target: "Bonvolu paroli malrapide."
+    ipa: "bonvolu paroli malrapide"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Bonvolu", base: "bonvoli" }
+      - { word: "paroli", base: "paroli" }
+      - { word: "malrapide", base: "malrapida" }
+  - id: "eo-0023"
+    target: "Kiel vi nomiĝas?"
+    ipa: "kiɛl vi nomidʒas"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "Kiel", base: "kiel" }
+      - { word: "vi", base: "vi" }
+      - { word: "nomiĝas", base: "nomiĝi" }
+  - id: "eo-0024"
+    target: "Mia nomo estas Anna."
+    ipa: "mija nomo ɛstas anna"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Mia", base: "mia" }
+      - { word: "nomo", base: "nomo" }
+      - { word: "estas", base: "esti" }
+      - { word: "Anna", base: "Anna" }
+  - id: "eo-0025"
+    target: "Kiom kostas ĉi tio?"
+    ipa: "kiom kostas tʃi tio"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Kiom", base: "kiom" }
+      - { word: "kostas", base: "kosti" }
+      - { word: "ĉi", base: "ĉi" }
+      - { word: "tio", base: "tio" }
+  - id: "eo-0026"
+    target: "Kie estas la necesejo?"
+    ipa: "kie ɛstas la nɛtsɛsɛjo"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Kie", base: "kie" }
+      - { word: "estas", base: "esti" }
+      - { word: "la", base: "la" }
+      - { word: "necesejo", base: "necesejo" }
+  - id: "eo-0027"
+    target: "Helpu!"
+    ipa: "hɛlpu"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Helpu", base: "helpi" }
+  - id: "eo-0028"
+    target: "Ne dankinde."
+    ipa: "ne dankinde"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases:
+      - { word: "Ne", base: "ne" }
+      - { word: "dankinde", base: "dankinde" }
+  - id: "eo-0029"
+    target: "Mi ne scias."
+    ipa: "mi ne sʦijas"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Mi", base: "mi" }
+      - { word: "ne", base: "ne" }
+      - { word: "scias", base: "scii" }
+  - id: "eo-0030"
+    target: "Ĉu vi povas ripeti?"
+    ipa: "tʃu vi povas ripɛti"
+    pos: "phrase"
+    tags: ["phrase"]
+    phrasebook: true
+    bases:
+      - { word: "Ĉu", base: "ĉu" }
+      - { word: "vi", base: "vi" }
+      - { word: "povas", base: "povi" }
+      - { word: "ripeti", base: "ripeti" }

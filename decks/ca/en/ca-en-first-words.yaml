@@ -1,0 +1,182 @@
+schema: 1
+id: "ca-en-first-words"
+kind: "layer"
+core: "ca-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I and you, the small words that link a sentence, and a few everyday words (good, one, water). Greetings and thank you are in the phrasebook. Central Catalan. Not yet checked by a Catalan speaker: please report any mistake."
+cards:
+  "ca-0001":
+    native: "yes"
+    notes:
+      "n1": "Sí is the plain yes. A negative question is answered the same way: No vens? Sí, vinc (Aren't you coming? Yes, I am)."
+    examples:
+      "Sí, gràcies.":
+        native: "Yes, thank you."
+        bases:
+          "Sí": "yes"
+          "gràcies": "thank you"
+      "Sí, parlo català.":
+        native: "Yes, I speak Catalan."
+        bases:
+          "Sí": "yes"
+          "parlo": "I speak"
+          "català": "Catalan"
+  "ca-0002":
+    native: "no"
+    notes:
+      "n1": "No is both 'no' and 'not'. Before a verb it means 'not': No parlo anglès (I don't speak English)."
+    examples:
+      "No, gràcies.":
+        native: "No, thank you."
+        bases:
+          "No": "no"
+          "gràcies": "thank you"
+      "No parlo anglès.":
+        native: "I don't speak English."
+        bases:
+          "No": "not"
+          "parlo": "I speak"
+          "anglès": "English"
+  "ca-0003":
+    native: "I"
+    notes:
+      "n1": "Jo is I. It is often left out, because the verb ending already shows the person: parlo is 'I speak'. Sóc is 'I am', from ser."
+    examples:
+      "Jo sóc estudiant.":
+        native: "I am a student."
+        bases:
+          "Jo": "I"
+          "sóc": "I am"
+          "estudiant": "student"
+      "Jo no ho entenc.":
+        native: "I don't understand it."
+        bases:
+          "Jo": "I"
+          "no": "not"
+          "ho": "it"
+          "entenc": "I understand"
+  "ca-0004":
+    native: "you"
+    notes:
+      "n1": "Tu is the informal 'you'. In polite speech to a stranger, use vostè, which takes the third-person form."
+    examples:
+      "Tu parles anglès?":
+        native: "Do you speak English?"
+        bases:
+          "Tu": "you"
+          "parles": "speak"
+          "anglès": "English"
+      "Tu ets amable.":
+        native: "You are kind."
+        bases:
+          "Tu": "you"
+          "ets": "are"
+          "amable": "kind"
+  "ca-0005":
+    native: "and"
+    notes:
+      "n1": "I is 'and' between two words, as in pa i formatge (bread and cheese)."
+    examples:
+      "Pa i formatge.":
+        native: "Bread and cheese."
+        bases:
+          "Pa": "bread"
+          "i": "and"
+          "formatge": "cheese"
+      "Jo i tu.":
+        native: "You and I."
+        bases:
+          "Jo": "I"
+          "i": "and"
+          "tu": "you"
+  "ca-0006":
+    native: "or"
+    notes:
+      "n1": "O is 'or', as in a question that offers a choice: cafè o te (coffee or tea)."
+    examples:
+      "Cafè o te?":
+        native: "Coffee or tea?"
+        bases:
+          "Cafè": "coffee"
+          "o": "or"
+          "te": "tea"
+      "Avui o demà?":
+        native: "Today or tomorrow?"
+        bases:
+          "Avui": "today"
+          "o": "or"
+          "demà": "tomorrow"
+  "ca-0007":
+    native: "but"
+    notes:
+      "n1": "Però is 'but'. It is stressed on its last syllable."
+    examples:
+      "Sí, però tinc gana.":
+        native: "Yes, but I am hungry."
+        bases:
+          "Sí": "yes"
+          "però": "but"
+          "tinc": "I have"
+          "gana": "hunger"
+      "Bo, però car.":
+        native: "Good, but expensive."
+        bases:
+          "Bo": "good"
+          "però": "but"
+          "car": "expensive"
+  "ca-0008":
+    native: "good"
+    notes:
+      "n1": "Bo becomes bona before a feminine noun: una bona idea (a good idea). Its plural is bons (masculine) and bones (feminine)."
+    examples:
+      "El cafè és bo.":
+        native: "The coffee is good."
+        bases:
+          "El": "the"
+          "cafè": "coffee"
+          "és": "is"
+          "bo": "good"
+      "És una bona idea.":
+        native: "It is a good idea."
+        bases:
+          "És": "is"
+          "una": "a"
+          "bona": "good"
+          "idea": "idea"
+  "ca-0009":
+    native: "one"
+    alt_native: ["a"]
+    notes:
+      "n1": "Un is 'one', and 'a' before a masculine noun. Feminine is una."
+    examples:
+      "Un cafè, per favor.":
+        native: "A coffee, please."
+        bases:
+          "Un": "a"
+          "cafè": "coffee"
+          "per": "for"
+          "favor": "favour"
+      "Tinc un germà.":
+        native: "I have a brother."
+        bases:
+          "Tinc": "I have"
+          "un": "a"
+          "germà": "brother"
+  "ca-0010":
+    native: "water"
+    notes:
+      "n1": "Aigua is feminine: l'aigua. Ask for aigua sense gas for still water."
+    examples:
+      "Aigua, per favor.":
+        native: "Water, please."
+        bases:
+          "Aigua": "water"
+          "per": "for"
+          "favor": "favour"
+      "Bec aigua.":
+        native: "I drink water."
+        bases:
+          "Bec": "I drink"
+          "aigua": "water"

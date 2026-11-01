@@ -1,0 +1,120 @@
+schema: 1
+id: "sv-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "sv", iso639_3: "swe", name: "Swedish", script: "latin", tts: "sv-SE", icon: "Sv" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "sv-0001"
+    target: "ja"
+    ipa: "ja"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ja, tack.", ipa: "ja tak", bases: [{ word: "Ja", base: "ja" }, { word: "tack", base: "tack" }] }
+      - { target: "Ja, jag talar svenska.", ipa: "ja jɑɡ ˈtalar ˈsvɛnska", bases: [{ word: "Ja", base: "ja" }, { word: "jag", base: "jag" }, { word: "talar", base: "tala" }, { word: "svenska", base: "svenska" }] }
+  - id: "sv-0002"
+    target: "nej"
+    ipa: "nɛj"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nej, tack.", ipa: "nɛj tak", bases: [{ word: "Nej", base: "nej" }, { word: "tack", base: "tack" }] }
+      - { target: "Nej, jag förstår inte.", ipa: "nɛj jɑɡ fœʂˈtoːr ˈɪntɛ", bases: [{ word: "Nej", base: "nej" }, { word: "jag", base: "jag" }, { word: "förstår", base: "förstå" }, { word: "inte", base: "inte" }] }
+  - id: "sv-0003"
+    target: "jag"
+    ipa: "jɑɡ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Jag är student.", ipa: "jɑɡ ɛːr stʉˈdɛnt", bases: [{ word: "Jag", base: "jag" }, { word: "är", base: "vara" }, { word: "student", base: "student" }] }
+      - { target: "Jag bor i Stockholm.", ipa: "jɑɡ buːr i ˈstɔkːɔlm", bases: [{ word: "Jag", base: "jag" }, { word: "bor", base: "bo" }, { word: "i", base: "i" }, { word: "Stockholm", base: "Stockholm" }] }
+  - id: "sv-0004"
+    target: "du"
+    ipa: "dʉ"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Talar du engelska?", ipa: "ˈtalar dʉ ˈɛŋɛlska", bases: [{ word: "Talar", base: "tala" }, { word: "du", base: "du" }, { word: "engelska", base: "engelska" }] }
+      - { target: "Du är snäll.", ipa: "dʉ ɛːr snɛl", bases: [{ word: "Du", base: "du" }, { word: "är", base: "vara" }, { word: "snäll", base: "snäll" }] }
+  - id: "sv-0005"
+    target: "och"
+    ipa: "ɔk"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bröd och smör.", ipa: "brøːd ɔk smœr", bases: [{ word: "Bröd", base: "bröd" }, { word: "och", base: "och" }, { word: "smör", base: "smör" }] }
+      - { target: "Jag och du.", ipa: "jɑɡ ɔk dʉ", bases: [{ word: "Jag", base: "jag" }, { word: "och", base: "och" }, { word: "du", base: "du" }] }
+  - id: "sv-0006"
+    target: "eller"
+    ipa: "ˈɛlɛr"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kaffe eller te?", ipa: "ˈkafɛ ˈɛlɛr ˈteː", bases: [{ word: "Kaffe", base: "kaffe" }, { word: "eller", base: "eller" }, { word: "te", base: "te" }] }
+      - { target: "Idag eller imorgon?", ipa: "iˈdɑː ˈɛlɛr ˈɪmɔrɔn", bases: [{ word: "Idag", base: "idag" }, { word: "eller", base: "eller" }, { word: "imorgon", base: "imorgon" }] }
+  - id: "sv-0007"
+    target: "men"
+    ipa: "mɛn"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ja, men jag är trött.", ipa: "ja mɛn jɑɡ ɛːr trœt", bases: [{ word: "Ja", base: "ja" }, { word: "men", base: "men" }, { word: "jag", base: "jag" }, { word: "är", base: "vara" }, { word: "trött", base: "trött" }] }
+      - { target: "Bra, men dyrt.", ipa: "bra mɛn dyːrt", bases: [{ word: "Bra", base: "bra" }, { word: "men", base: "men" }, { word: "dyrt", base: "dyr" }] }
+  - id: "sv-0008"
+    target: "bra"
+    ipa: "bra"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Kaffet är bra.", ipa: "ˈkafɛt ɛːr bra", bases: [{ word: "Kaffet", base: "kaffe" }, { word: "är", base: "vara" }, { word: "bra", base: "bra" }] }
+      - { target: "Det var bra.", ipa: "de vaːr bra", bases: [{ word: "Det", base: "det" }, { word: "var", base: "vara" }, { word: "bra", base: "bra" }] }
+  - id: "sv-0009"
+    target: "en"
+    ipa: "ɛn"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "En kaffe, tack.", ipa: "ɛn ˈkafɛ tak", bases: [{ word: "En", base: "en" }, { word: "kaffe", base: "kaffe" }, { word: "tack", base: "tack" }] }
+      - { target: "Jag har en bror.", ipa: "jɑɡ hɑr ɛn bruːr", bases: [{ word: "Jag", base: "jag" }, { word: "har", base: "ha" }, { word: "en", base: "en" }, { word: "bror", base: "bror" }] }
+  - id: "sv-0010"
+    target: "vatten"
+    ipa: "ˈvatːɛn"
+    pos: "noun"
+    gender: "neuter"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vatten, tack.", ipa: "ˈvatːɛn tak", bases: [{ word: "Vatten", base: "vatten" }, { word: "tack", base: "tack" }] }
+      - { target: "Jag dricker vatten.", ipa: "jɑɡ ˈdrɪkɛr ˈvatːɛn", bases: [{ word: "Jag", base: "jag" }, { word: "dricker", base: "dricka" }, { word: "vatten", base: "vatten" }] }

@@ -14,6 +14,7 @@ cannot see that. The check now is that decks/index.json is current (#210).
 
 from __future__ import annotations
 
+import re
 import shutil
 import subprocess
 import sys
@@ -24,6 +25,14 @@ import validate_decks
 import yaml
 
 REPO = Path(__file__).resolve().parent.parent
+
+
+def hide_japanese(text: str) -> str:
+    """The tool's source with Japanese added to HIDDEN, whatever else is in it."""
+    new, n = re.subn(r"^(HIDDEN: set\[str\] = \{[^}]*\}|HIDDEN: set\[str\] = set\(\))",
+                     lambda m: m.group(1) + ' | {"ja"}', text, count=1, flags=re.M)
+    assert n == 1, "the HIDDEN assignment is not where the test expects"
+    return new
 VALIDATOR = REPO / "tools" / "validate_decks.py"
 INDEXER = REPO / "tools" / "deck_index.py"
 SAMPLE_DECK = REPO / "tools" / "fixtures" / "index" / "es-en-core-100.yaml"
@@ -119,11 +128,10 @@ class IndexCheck(unittest.TestCase):
 
     def _a_hidden_language_is_still_validated(self) -> None:
         """A hidden language is left out of the index, but still checked.
-        No language is hidden now, so the copied tool hides Japanese."""
+        The copied tool hides Japanese too."""
         tool = self.tmp / "tools" / "deck_index.py"
-        tool.write_text(tool.read_text(encoding="utf-8").replace(
-            "HIDDEN: set[str] = set()", 'HIDDEN: set[str] = {"ja"}'),
-            encoding="utf-8")
+        tool.write_text(hide_japanese(tool.read_text(encoding="utf-8")),
+                        encoding="utf-8")
         shutil.copytree(REPO / "decks" / "ja", self.tmp / "decks" / "ja")
         shutil.copy(REPO / "decks" / "themes.yaml", self.tmp / "decks" / "themes.yaml")
         self.write_index()

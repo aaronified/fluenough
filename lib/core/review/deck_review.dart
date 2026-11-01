@@ -38,6 +38,13 @@ import 'dart:convert';
 /// change ([flagOnly]) is flagged, never edited. [warning] is the one
 /// warning the teach card shows (#691): its text is a warning's id, a note's
 /// `id`, `senses` or `none`.
+///
+/// [altNative] and [notSynonyms] (ADR-0050) are the two lists of a card's
+/// native side a reviewer only adds to: another accepted answer, and a word
+/// that is not a synonym of the card's answer. Each suggestion adds one item,
+/// as `action: "add"` with the item in [Suggestion.text] and `new-N` as its
+/// [Suggestion.word]; never a change or a removal. In a review file their
+/// names are `alt_native` and `not_synonyms` ([CardPartWire.wire]).
 enum CardPart {
   word,
   reading,
@@ -68,10 +75,36 @@ enum CardPart {
   image,
   recording,
   setCard,
+  altNative,
+  notSynonyms,
+}
+
+/// How a [CardPart] is named in a review file.
+extension CardPartWire on CardPart {
+  /// The part's name in a review file: the review bot reads `alt_native` and
+  /// `not_synonyms`, so these two are not their Dart names.
+  String get wire => switch (this) {
+    CardPart.altNative => 'alt_native',
+    CardPart.notSynonyms => 'not_synonyms',
+    _ => name,
+  };
+
+  /// The part a review file names [wire], or null when it is not one.
+  static CardPart? fromWire(Object? wire) {
+    for (final part in CardPart.values) {
+      if (part.wire == wire) return part;
+    }
+    return null;
+  }
 }
 
 /// What a [CardPart] is for, which says how the sheet offers it.
 extension CardPartKind on CardPart {
+  /// A list a reviewer only adds items to (ADR-0050): a suggestion on it is
+  /// an item added, with `new-N` as its word, and never an edit or a removal.
+  bool get isAddOnly =>
+      this == CardPart.altNative || this == CardPart.notSynonyms;
+
   /// A list field: a suggestion on it names an item ([Suggestion.word]) and
   /// adds or changes it, and each item can be checked "Looks right".
   bool get isList => switch (this) {
@@ -234,7 +267,7 @@ class Suggestion {
   bool samePart(Suggestion other) => part == other.part && word == other.word;
 
   Map<String, Object?> toJson() => <String, Object?>{
-    'part': part.name,
+    'part': part.wire,
     'word': ?word,
     'action': ?action?.name,
     'was': ?was?.toJson(),
@@ -248,7 +281,7 @@ class Suggestion {
 
   static Suggestion? fromJson(Object? json) {
     if (json is! Map) return null;
-    final part = CardPart.values.asNameMap()[json['part']];
+    final part = CardPartWire.fromWire(json['part']);
     final now = json['now'];
     final text = json['text'];
     final why = json['why'];
@@ -257,7 +290,7 @@ class Suggestion {
     final flag = json['flag'] == true;
     final isBase = part == CardPart.base;
     // An item of a list part names the item; a flag on a list part does not.
-    final isItem = part.isList && !flag;
+    final isItem = (part.isList || part.isAddOnly) && !flag;
     if ((isBase || isItem) && (word is! String || word.isEmpty)) {
       return null;
     }
@@ -269,6 +302,8 @@ class Suggestion {
       return null;
     }
     if (isItem && action == BaseAction.remove) return null;
+    // An item added to a list a reviewer only adds to is never a change.
+    if (part.isAddOnly && !flag && action != BaseAction.add) return null;
     final was = isBase && action != null
         ? BaseForm.fromJson(json['was'])
         : null;

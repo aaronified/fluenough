@@ -1,0 +1,215 @@
+schema: 1
+id: jbo-first-words
+part: core
+kind: vocab
+language:
+  code: jbo
+  iso639_3: jbo
+  name: Lojban
+  script: latin
+  icon: Lo
+license: CC-BY-SA-4.0
+theme: first-words
+tags:
+- beginner
+- unreviewed
+cards:
+- id: jbo-0001
+  target: go'i
+  ipa: gohi
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: go'i, mi klama.
+    ipa: gohi mi klama.
+    bases:
+    - word: mi
+      ref: jbo-0003
+    - word: klama
+      ref: jbo-0010
+  - target: go'i, do xamgu.
+    ipa: gohi do xamɡu.
+    bases:
+    - word: do
+      ref: jbo-0004
+    - word: xamgu
+      ref: jbo-0006
+- id: jbo-0002
+  target: nai
+  ipa: nai
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: mi klama nai.
+    ipa: mi klama nai.
+    bases:
+    - word: klama
+      ref: jbo-0010
+  - target: do xamgu nai.
+    ipa: do xamɡu nai.
+    bases:
+    - word: do
+      ref: jbo-0004
+    - word: xamgu
+      ref: jbo-0006
+- id: jbo-0003
+  target: mi
+  ipa: mi
+  pos: pronoun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: mi klama.
+    ipa: mi klama.
+    bases:
+    - word: klama
+      ref: jbo-0010
+  - target: mi djuno.
+    ipa: mi dʒuno.
+    bases:
+    - word: djuno
+      base: djuno
+- id: jbo-0004
+  target: do
+  ipa: do
+  pos: pronoun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: do xamgu.
+    ipa: do xamɡu.
+    bases:
+    - word: xamgu
+      ref: jbo-0006
+  - target: do klama.
+    ipa: do klama.
+    bases:
+    - word: klama
+      ref: jbo-0010
+- id: jbo-0005
+  target: djacu
+  ipa: dʒaʃu
+  pos: noun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: djacu barda.
+    ipa: dʒaʃu barda.
+    bases:
+    - word: barda
+      ref: jbo-0008
+  - target: mi pinxe djacu.
+    ipa: mi pinɕe dʒaʃu.
+    bases:
+    - word: mi
+      ref: jbo-0003
+    - word: pinxe
+      base: pinxe
+- id: jbo-0006
+  target: xamgu
+  ipa: xamɡu
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: zdani xamgu.
+    ipa: zdani xamɡu.
+    bases:
+    - word: zdani
+      ref: jbo-0009
+  - target: do xamgu.
+    ipa: do xamɡu.
+    bases:
+    - word: do
+      ref: jbo-0004
+- id: jbo-0007
+  target: pa
+  ipa: pa
+  pos: other
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: pa lo zdani.
+    ipa: pa lo zdani.
+    bases:
+    - word: lo
+      base: lo
+    - word: zdani
+      ref: jbo-0009
+  - target: re lo zdani.
+    ipa: re lo zdani.
+    bases:
+    - word: re
+      base: re
+    - word: lo
+      base: lo
+    - word: zdani
+      ref: jbo-0009
+- id: jbo-0008
+  target: barda
+  ipa: barda
+  pos: adj
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: zdani barda.
+    ipa: zdani barda.
+    bases:
+    - word: zdani
+      ref: jbo-0009
+  - target: djacu barda.
+    ipa: dʒaʃu barda.
+    bases:
+    - word: djacu
+      ref: jbo-0005
+- id: jbo-0009
+  target: zdani
+  ipa: zdani
+  pos: noun
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: ti zdani.
+    ipa: ti zdani.
+    bases:
+    - word: ti
+      base: ti
+  - target: mi klama le zdani.
+    ipa: mi klama le zdani.
+    bases:
+    - word: mi
+      ref: jbo-0003
+    - word: klama
+      ref: jbo-0010
+    - word: le
+      base: le
+- id: jbo-0010
+  target: klama
+  ipa: klama
+  pos: verb
+  notes:
+  - id: n1
+    kind: note
+  examples:
+  - target: mi klama.
+    ipa: mi klama.
+  - target: do klama le zdani.
+    ipa: do klama le zdani.
+    bases:
+    - word: do
+      ref: jbo-0004
+    - word: zdani
+      ref: jbo-0009
+    - word: le
+      base: le
