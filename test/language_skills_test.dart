@@ -161,4 +161,22 @@ void main() {
     expect(minutesAtEnd(60, 1), isTrue);
     expect(minutesAtEnd(15, 1), isFalse);
   });
+
+  test('a language with no scripts has no Read or Write, and a sign '
+      'language has the one Gestures skill only', () {
+    expect(skillsOfLanguage(const <String>[]).map((k) => k.kind), <SkillKind>[
+      SkillKind.speak,
+      SkillKind.hear,
+    ]);
+    final sign = skillsOfLanguage(const <String>[], sign: true);
+    expect(sign.map((k) => k.id), <String>['gesture']);
+    final s = LanguageSkills().cycled(sign.single, canLearn: true);
+    final back = LanguageSkills.fromStored(s.toStored());
+    expect(back, s);
+    expect(back.stateOf(sign.single), SkillState.know);
+    // No Latin script is known for a language with none.
+    expect(withLatinKnown(s, const <String>[]), s);
+    // Learning Gestures owes no check.
+    expect(checksOwed(sign), isEmpty);
+  });
 }

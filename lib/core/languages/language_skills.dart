@@ -6,7 +6,10 @@ import '../scheduling/daily_budget.dart';
 ///
 /// Speak and Hear belong to the language's one taught dialect; Read and
 /// Write belong to a script, so a language written in two scripts has two
-/// Read and two Write skills.
+/// Read and two Write skills. A sign language has neither: it has exactly
+/// one skill, Gestures, tested both ways, recognising a sign and making one
+/// (owner, 2026-11-01: "It is one skill, tested both ways. One cannot write
+/// a script without being able to read it.").
 
 /// What the learner says about one skill.
 enum SkillState {
@@ -21,20 +24,26 @@ enum SkillState {
   learn,
 }
 
-/// The four skills.
+/// The skills: four for a spoken language, one for a sign language.
 enum SkillKind {
   speak,
   hear,
   read,
-  write;
+  write,
+
+  /// A sign language's one skill: recognising gestures and producing them,
+  /// one state for both. It stands in place of Speak, Hear, Read and Write.
+  gesture;
 
   /// Whether the skill belongs to a script, not to the dialect.
   bool get isScript => this == read || this == write;
+
+  /// Whether it is a sign language's skill.
+  bool get isGesture => this == gesture;
 }
 
 /// One skill of one language: [kind], and for Read and Write the [script]
-/// as decks name it (`devanagari`, `perso_arabic`; `latin` for a language
-/// that lists none).
+/// as decks name it (`devanagari`, `perso_arabic`).
 class SkillKey {
   const SkillKey(this.kind, [this.script])
     : assert(
@@ -75,12 +84,18 @@ class SkillKey {
 
 /// The skills a language has: Speak and Hear unless it is script only (a
 /// course such as English Braille), then Read and Write for each of
-/// [scripts], in the order shown (all Read, then all Write).
+/// [scripts], in the order shown (all Read, then all Write). A [sign]
+/// language has only the Gestures skill; a language with no [scripts]
+/// otherwise has nothing to read or write, so no Read or Write.
 List<SkillKey> skillsOfLanguage(
   Iterable<String> scripts, {
   bool scriptOnly = false,
+  bool sign = false,
 }) {
-  final list = scripts.isEmpty ? const <String>['latin'] : scripts.toList();
+  if (sign) {
+    return const <SkillKey>[SkillKey(SkillKind.gesture)];
+  }
+  final list = scripts.toList();
   return <SkillKey>[
     if (!scriptOnly) ...<SkillKey>[
       const SkillKey(SkillKind.speak),
@@ -193,10 +208,16 @@ LanguageSkills skillsFromLegacy({
   required Set<String> learnedScripts,
   required bool Function(String script) readsScript,
   bool scriptOnly = false,
+  bool sign = false,
 }) {
   if (!learned && !known) return LanguageSkills();
   final states = <SkillKey, SkillState>{};
-  final all = scripts.isEmpty ? const <String>['latin'] : scripts.toList();
+  if (sign) {
+    final s = learned ? SkillState.learn : SkillState.know;
+    states[const SkillKey(SkillKind.gesture)] = s;
+    return LanguageSkills(states);
+  }
+  final all = scripts.toList();
   if (!scriptOnly) {
     final s = learned ? SkillState.learn : SkillState.know;
     states[const SkillKey(SkillKind.speak)] = s;
@@ -241,8 +262,7 @@ const String latinScript = 'latin';
 LanguageSkills withLatinKnown(LanguageSkills skills, Iterable<String> scripts) {
   if (skills.isAllLeave) return skills;
   var next = skills;
-  final all = scripts.isEmpty ? const <String>[latinScript] : scripts;
-  if (!all.contains(latinScript)) return skills;
+  if (!scripts.contains(latinScript)) return skills;
   for (final kind in const <SkillKind>[SkillKind.read, SkillKind.write]) {
     final key = SkillKey(kind, latinScript);
     if (next.stateOf(key) != SkillState.know) {
@@ -313,7 +333,8 @@ sealed class SkillCheck {
   const SkillCheck();
 }
 
-/// Speak and Hear share one sound test per language.
+/// Speak and Hear share one sound test per language. The Gestures skill of a
+/// sign language needs no check.
 class SoundCheck extends SkillCheck {
   const SoundCheck();
 }
@@ -334,7 +355,7 @@ List<SkillCheck> checksOwed(Iterable<SkillKey> changedToLearn) {
   for (final key in changedToLearn) {
     if (key.kind.isScript) {
       if (!scripts.contains(key.script)) scripts.add(key.script!);
-    } else {
+    } else if (!key.kind.isGesture) {
       sound = true;
     }
   }
