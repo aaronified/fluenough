@@ -427,11 +427,14 @@ units:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
   - decks: ["bn-reading-adjectives-2"]
     words: 0
-  - planned: { id: "bn-workplace", theme: "workplace", words: 45 }
+  - decks: ["bn-workplace", "bn-workplace-sentences", "*"]
+    words: 45
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
+  - decks: ["bn-reading-workplace"]
+    words: 0
   - planned: { id: "bn-geography", theme: "geography", words: 45 }
     listening_passages:
       - { id: "where-in-bengal", text: { "en": "Naming districts, rivers and cities of Bengal" } }
