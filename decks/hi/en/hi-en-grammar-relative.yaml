@@ -1,0 +1,22 @@
+schema: 1
+id: "hi-en-grammar-relative"
+kind: "layer"
+core: "hi-grammar-relative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relative clauses"
+license: "CC-BY-SA-4.0"
+description: "Clauses that begin with जो (jo), who or which, and the word that answers them in the main clause. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Relative clauses"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: {"relative (in the clause)": "the word that opens the clause", "correlative (in the main clause)": "the word that answers it in the main clause"}
+  entries:
+    "jo": "who; which"
+    "jahaan": "where"
+    "jab": "when"
+    "jaisa": "as; like"
+    "jitna": "as much as"
+    "jidhar": "in which direction"
+  notes: "A relative clause opens with जो (jō) (who, which) and is answered in the main clause by वह (vah). For example, in जो लड़का आया (jō laṛkā āyā) वह (vah) मेरा भाई (mērā bhāī) है (hai), the boy who came is my brother. The same pattern holds for जहाँ (jahām̐) with वहाँ (vahām̐), where; जब (jab) with तब (tab), when; जैसा (jaisā) with वैसा (vaisā), as; and जितना (jitnā) with उतना (utnā), as much as. When a postposition follows, जो (jō) becomes जिस (jis), as in जिस (jis) घर (ghar) में (mēm̐), in the house where, and the correlative takes its oblique form too, as उस (us)."
