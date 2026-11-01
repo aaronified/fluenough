@@ -27,6 +27,7 @@ final Map<String, RegExp> _scriptLetters = <String, RegExp>{
   'hebrew': RegExp(r'\p{Script=Hebrew}', unicode: true),
   'thai': RegExp(r'\p{Script=Thai}', unicode: true),
   'linear_b': RegExp(r'\p{Script=Linear_B}', unicode: true),
+  'brahmi': RegExp(r'\p{Script=Brahmi}', unicode: true),
   'cuneiform': RegExp(r'\p{Script=Cuneiform}', unicode: true),
   'egyptian_hieroglyphs': RegExp(
     r'\p{Script=Egyptian_Hieroglyphs}',
