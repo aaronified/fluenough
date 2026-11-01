@@ -71,6 +71,22 @@ in the app. One file is one line, so a changed deck is a one-line diff.
 `validate_decks.py decks/` fails while the index is out of date, so CI keeps
 it current.
 
+**`min_app`** (ADR-0052). `decks/min_app.json` names the oldest app version
+that can read a language or one file:
+`{"languages": {"pt": "0.7.1"}, "files": {"decks/es/es-en-x.yaml": "0.7.2"}}`.
+The tool writes it as `min_app` on that language or file entry; an app that
+knows the key does not download what needs a newer app and shows "Needs app X,
+Update", and an older app ignores it. The tool, and so the validator, fails
+when the file is not JSON of that shape, a value is not `major.minor.patch`,
+a language is not in the index (no decks, or hidden), or a file is not listed.
+Set it only for a version that is released. The tool refuses a language
+that `assets/languages.yaml` lists at the latest `v*` git tag, and a file that
+`decks/` holds at that tag: the released app already ships them and could not
+know the key. Gate new files only. Without git or the tag it warns and skips
+the check; `--strict-released` (or `FLUENOUGH_STRICT_RELEASED=1`, set by CI's
+"Released app reads the decks") makes that an error. Empty maps change
+nothing.
+
 ## `pictures.py`
 
 Copies the pictures the decks name (a card's `picture`, one emoji) from a

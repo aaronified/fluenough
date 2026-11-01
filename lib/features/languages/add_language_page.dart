@@ -7,6 +7,7 @@ import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
+import '../downloads/app_update_needed.dart';
 import 'language_skills_sheet.dart';
 import 'language_views.dart';
 
@@ -183,10 +184,13 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
     final scheme = theme.colorScheme;
     final added = !state.skillsOf(view.language).isAllLeave;
     final own = view.language.ownName;
+    // A course this app is too old to read is shown greyed, with the app
+    // version it needs; a tap opens where the app is downloaded (ADR-0052).
+    final needs = view.needsApp;
     // hint-ok: shows text
     return InkWell(
       key: ValueKey<String>('add-${view.code}'),
-      onTap: () => _pick(view),
+      onTap: needs == null ? () => _pick(view) : () => openAppUpdate(context),
       child: ConstrainedBox(
         constraints: const BoxConstraints(minHeight: 56),
         child: Row(
@@ -197,7 +201,11 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
                 height: 36,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: added ? scheme.primary : scheme.secondaryContainer,
+                  color: needs != null
+                      ? scheme.surfaceContainerHighest
+                      : added
+                      ? scheme.primary
+                      : scheme.secondaryContainer,
                   shape: BoxShape.circle,
                 ),
                 child: Text(
@@ -206,7 +214,9 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
                   style: TextStyle(
                     fontSize: 16,
                     height: 1,
-                    color: added
+                    color: needs != null
+                        ? scheme.onSurfaceVariant
+                        : added
                         ? scheme.onPrimary
                         : scheme.onSecondaryContainer,
                   ),
@@ -222,8 +232,16 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
                     view.name,
                     style: theme.textTheme.titleMedium!.copyWith(
                       fontWeight: FontWeight.w600,
+                      color: needs != null ? scheme.onSurfaceVariant : null,
                     ),
                   ),
+                  if (needs != null)
+                    Text(
+                      l10n.appUpdateNeeded(needs),
+                      style: theme.textTheme.bodyMedium!.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
+                    ),
                   if (own.isNotEmpty && own != view.name)
                     Text(
                       own,
@@ -234,7 +252,15 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
                 ],
               ),
             ),
-            if (added)
+            if (needs != null)
+              Text(
+                l10n.appUpdateAction,
+                style: theme.textTheme.labelLarge!.copyWith(
+                  color: scheme.primary,
+                  fontWeight: FontWeight.w700,
+                ),
+              )
+            else if (added)
               Container(
                 padding: const EdgeInsetsDirectional.symmetric(
                   horizontal: 10,

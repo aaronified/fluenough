@@ -5,6 +5,10 @@ Source of truth: this wiki page.
 
 - **Status:** Accepted
 - **Date:** 2026-10-09
+- **Amended:** 2026-11-01 ([ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index)):
+  the index may carry an optional `min_app` on a language and on a file, the
+  oldest app version that can read it; an app older than it does not download
+  it and says it needs updating. An app that does not know the key ignores it.
 
 ## Context
 
@@ -71,9 +75,9 @@ agreement (rule 6): there is no HTTP or hashing package.
   romanisation, sounds, numbers, script guide), its cores, and its decks
   and layers for the native languages the learner speaks; where it has
   none in them, English, and the language list says "Taught from English".
-  A file of a newer schema than the app reads is skipped, and Settings
-  says the app needs updating; an index of a newer format asks for the
-  update outright.
+  A file of a newer schema than the app reads, or one whose `min_app`
+  (ADR-0052) is newer than the app, is skipped, and the app says it needs
+  updating; an index of a newer format asks for the update outright.
 - **Ready after five.** A language can be learned once its own files and
   the first five decks of its path are in (a core alone does not count).
   The rest download behind it, ten decks to a write, each deck's core with
