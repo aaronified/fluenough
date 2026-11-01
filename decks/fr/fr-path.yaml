@@ -237,11 +237,9 @@ units:
       - { id: "walk-to-the-market", text: { "en": "A neighbour names the places you pass on the way to the market" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: pharmacy, school, bank, church" } }
-  - planned: { id: "fr-grammar-demonstratives", grammar: "demonstratives" }
-    listening_passages:
-      - { id: "this-one-or-that-one", text: { "en": "Choosing between this shop and that one, this street and these houses" } }
-    reading_passages:
-      - { id: "guided-walk", text: { "en": "A leaflet for a short guided walk: this square, this church" } }
+  - decks: ["fr-demonstratives", "fr-grammar-demonstratives", "fr-reading-demonstratives"]
+    words: 2
+    grammar: ["demonstratives"]
   - planned: { id: "fr-home", theme: "home", words: 35 }
     listening_passages:
       - { id: "a-flat-tour", text: { "en": "A tour of a flat, room by room" } }
