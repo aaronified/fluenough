@@ -1,0 +1,388 @@
+schema: 1
+id: "fr-en-about-me"
+kind: "layer"
+core: "fr-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+license: "CC-BY-SA-4.0"
+description: "Talking about yourself: where you live and come from, your nationality, whether you are married, your job and studies, your address and phone, your age and date of birth, and what you like. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0243":
+    native: "country"
+    notes:
+      "n1": "Pays is 'country', a masculine noun: le pays, mon pays (my country)."
+    examples:
+      "Mon pays est la France.":
+        native: "My country is France."
+        bases:
+          "pays": "country"
+          "la": "the"
+          "France": "France"
+      "Le pays de Paul est beau.":
+        native: "Paul's country is beautiful."
+        bases:
+          "Le": "the"
+          "pays": "country"
+          "de": "of"
+          "Paul": "Paul (a first name)"
+          "beau": "beautiful"
+  "fr-0244":
+    native: "city; town"
+    notes:
+      "n1": "Ville is 'city' or 'town', feminine: la ville, ma ville (my town)."
+    examples:
+      "Ma ville est petite.":
+        native: "My town is small."
+        bases:
+          "ville": "town"
+          "petite": "small; little"
+      "La ville est grande.":
+        native: "The city is big."
+        bases:
+          "La": "the"
+          "ville": "city"
+          "grande": "big; large"
+  "fr-0245":
+    native: "nationality"
+    notes:
+      "n1": "Nationalité is 'nationality', feminine: votre nationalité (your nationality)."
+    examples:
+      "Quelle est votre nationalité ?":
+        native: "What is your nationality?"
+        bases:
+          "nationalité": "nationality"
+      "Ma nationalité est française.":
+        native: "My nationality is French."
+        bases:
+          "nationalité": "nationality"
+          "française": "French (a woman)"
+  "fr-0246":
+    native: "French (a man or a thing)"
+    notes:
+      "n1": "Français is 'French' for a man or a thing; française is the feminine: une femme française."
+    examples:
+      "Je suis français.":
+        native: "I am French."
+        bases:
+          "français": "French"
+      "Mon ami est français.":
+        native: "My friend is French."
+        bases:
+          "français": "French"
+  "fr-0247":
+    native: "English (a man or a thing)"
+    notes:
+      "n1": "Anglais is 'English' for a man or a thing; anglaise is the feminine. The language is also l'anglais."
+    examples:
+      "Je suis anglais.":
+        native: "I am English."
+        bases:
+          "anglais": "English"
+      "Elle est anglaise.":
+        native: "She is English."
+        bases:
+          "anglaise": "English (a woman)"
+  "fr-0248":
+    native: "Indian (from India)"
+    notes:
+      "n1": "Indien is 'Indian', for someone from India; indienne is the feminine."
+    examples:
+      "Mon père est indien.":
+        native: "My father is Indian."
+        bases:
+          "indien": "Indian"
+      "Ma sœur est indienne.":
+        native: "My sister is Indian."
+        bases:
+          "indienne": "Indian (a woman)"
+  "fr-0249":
+    native: "married"
+    notes:
+      "n1": "Marié is 'married' for a man, mariée for a woman. Célibataire means single."
+    examples:
+      "Je suis marié.":
+        native: "I am married."
+        bases:
+          "marié": "married"
+      "Ma sœur est mariée.":
+        native: "My sister is married."
+        bases:
+          "mariée": "married (a woman)"
+  "fr-0250":
+    native: "single; not married"
+    notes:
+      "n1": "Célibataire is 'single', not married. It is the same for a man and for a woman."
+    examples:
+      "Elle est célibataire.":
+        native: "She is single."
+        bases:
+          "célibataire": "single"
+      "Vous êtes célibataire ?":
+        native: "Are you single?"
+        bases:
+          "célibataire": "single"
+  "fr-0251":
+    native: "to live (in a place)"
+    notes:
+      "n1": "Habiter is 'to live' in a place: j'habite à Paris (I live in Paris). Use à before a city."
+    examples:
+      "J'habite à Paris.":
+        native: "I live in Paris."
+        bases:
+          "J'habite": "I live"
+          "à": "in"
+          "Paris": "Paris"
+      "Nous habitons ici.":
+        native: "We live here."
+        bases:
+          "habitons": "we live"
+  "fr-0252":
+    native: "to work"
+    notes:
+      "n1": "Travailler is 'to work'. Je travaille is 'I work'. The noun for a job is travail."
+    examples:
+      "Je travaille ici.":
+        native: "I work here."
+        bases:
+          "travaille": "work"
+      "Elle travaille à la gare.":
+        native: "She works at the station."
+        bases:
+          "travaille": "works"
+          "à": "at"
+          "la": "the"
+  "fr-0253":
+    native: "to study"
+    notes:
+      "n1": "Étudier is 'to study'. Un étudiant is a student."
+    examples:
+      "J'étudie le français.":
+        native: "I study French."
+        bases:
+          "J'étudie": "I study"
+          "le": "the"
+      "Mon fils étudie à Paris.":
+        native: "My son studies in Paris."
+        bases:
+          "étudie": "studies"
+          "à": "in"
+          "Paris": "Paris"
+  "fr-0254":
+    native: "student (a man)"
+    notes:
+      "n1": "Étudiant is a male student, masculine: un étudiant. The female student is étudiante."
+    examples:
+      "Je suis étudiant.":
+        native: "I am a student."
+        bases:
+          "étudiant": "student"
+      "Mon frère est étudiant à Lyon.":
+        native: "My brother is a student in Lyon."
+        bases:
+          "étudiant": "student"
+          "à": "in"
+          "Lyon": "Lyon"
+  "fr-0255":
+    native: "job; work"
+    notes:
+      "n1": "Travail is 'work' or 'job', a masculine noun: mon travail, votre travail (your job)."
+    examples:
+      "Quel est votre travail ?":
+        native: "What is your job?"
+        bases:
+          "travail": "job"
+      "Mon travail est ici.":
+        native: "My work is here."
+        bases:
+          "travail": "work"
+  "fr-0256":
+    native: "address"
+    notes:
+      "n1": "Adresse is 'address', feminine: votre adresse (your address)."
+    examples:
+      "Quelle est votre adresse ?":
+        native: "What is your address?"
+        bases:
+          "adresse": "address"
+      "Mon adresse est à Paris.":
+        native: "My address is in Paris."
+        bases:
+          "adresse": "address"
+          "à": "in"
+          "Paris": "Paris"
+  "fr-0257":
+    native: "phone; phone number"
+    notes:
+      "n1": "Téléphone is 'phone', and 'phone number' in quel est votre téléphone ? It is masculine: le téléphone."
+    examples:
+      "Quel est votre téléphone ?":
+        native: "What is your phone number?"
+        bases:
+          "téléphone": "phone number"
+      "Mon téléphone est là.":
+        native: "My phone is there."
+        bases:
+          "téléphone": "phone"
+  "fr-0258":
+    native: "e-mail"
+    notes:
+      "n1": "E-mail is masculine: un e-mail, mon e-mail. It is used for the address and for a message."
+    bases:
+      "e": "electronic"
+      "mail": "mail"
+    examples:
+      "Mon e-mail est court.":
+        native: "My e-mail is short."
+        bases:
+          "e": "electronic"
+          "mail": "mail"
+          "court": "short"
+      "Quel est votre e-mail ?":
+        native: "What is your e-mail?"
+        bases:
+          "e": "electronic"
+          "mail": "mail"
+  "fr-0259":
+    native: "year"
+    notes:
+      "n1": "An is 'year', masculine: un an, one year. Its plural ans is used for age: j'ai vingt ans."
+    examples:
+      "Un an a douze mois.":
+        native: "A year has twelve months."
+        bases:
+          "Un": "a"
+          "an": "year"
+          "a": "has"
+          "mois": "months"
+      "Mon fils a deux ans.":
+        native: "My son is two years old."
+        bases:
+          "a": "has"
+          "ans": "years (of age)"
+  "fr-0260":
+    native: "date"
+    notes:
+      "n1": "Date is feminine: la date. Date de naissance is 'date of birth'."
+    examples:
+      "Quelle est la date ?":
+        native: "What is the date?"
+        bases:
+          "la": "the"
+          "date": "date"
+      "Quelle est votre date de naissance ?":
+        native: "What is your date of birth?"
+        bases:
+          "date": "date"
+          "de": "of"
+  "fr-0261":
+    native: "birth"
+    notes:
+      "n1": "Naissance is 'birth', feminine. Né is 'born' for a man; the woman is née. Date de naissance is 'date of birth'."
+    examples:
+      "Je suis né à Paris.":
+        native: "I was born in Paris."
+        bases:
+          "né": "born"
+          "à": "in"
+          "Paris": "Paris"
+      "C'est la naissance de mon fils.":
+        native: "It is my son's birth."
+        bases:
+          "C'est": "it is"
+          "la": "the"
+          "naissance": "birth"
+          "de": "of"
+  "fr-0262":
+    native: "language; tongue"
+    notes:
+      "n1": "Langue is 'language' and also 'tongue', feminine: la langue, ma langue (my language)."
+    examples:
+      "Quelle langue parlez-vous ?":
+        native: "What language do you speak?"
+        bases:
+          "langue": "language"
+      "Ma langue est le français.":
+        native: "My language is French."
+        bases:
+          "langue": "language"
+          "le": "the"
+  "fr-0263":
+    native: "to like; to love"
+    notes:
+      "n1": "Aimer is 'to like' or 'to love'. J'aime is 'I like'. Aimer with another verb means 'to like to do': j'aime lire (I like to read)."
+    examples:
+      "J'aime la musique.":
+        native: "I like music."
+        bases:
+          "J'aime": "I like"
+          "la": "the"
+      "Vous aimez le sport ?":
+        native: "Do you like sport?"
+        bases:
+          "aimez": "do you like"
+          "le": "the"
+  "fr-0264":
+    native: "happy; pleased"
+    notes:
+      "n1": "Content is 'happy' or 'pleased'. For a woman it is contente."
+    examples:
+      "Je suis content.":
+        native: "I am happy."
+        bases:
+          "content": "happy"
+      "Elle est contente.":
+        native: "She is happy."
+        bases:
+          "contente": "happy (a woman)"
+  "fr-0265":
+    native: "sport"
+    notes:
+      "n1": "Sport is masculine: le sport, du sport (some sport)."
+    examples:
+      "Le sport est bon.":
+        native: "Sport is good."
+        bases:
+          "Le": "the"
+          "sport": "sport"
+      "Mon fils aime le sport.":
+        native: "My son likes sport."
+        bases:
+          "aime": "likes"
+          "le": "the"
+          "sport": "sport"
+  "fr-0266":
+    native: "music"
+    notes:
+      "n1": "Musique is 'music', feminine: la musique. Jouer de la musique is 'to play music'."
+    examples:
+      "La musique est belle.":
+        native: "Music is beautiful."
+        bases:
+          "La": "the"
+          "musique": "music"
+          "belle": "beautiful"
+      "Ma sœur joue de la musique.":
+        native: "My sister plays music."
+        bases:
+          "joue": "plays"
+          "de": "of"
+          "la": "the"
+          "musique": "music"
+  "fr-0267":
+    native: "life"
+    notes:
+      "n1": "Vie is 'life', feminine: la vie, ma vie (my life)."
+    examples:
+      "La vie est belle.":
+        native: "Life is beautiful."
+        bases:
+          "La": "the"
+          "vie": "life"
+          "belle": "beautiful"
+      "Ma vie est à Paris.":
+        native: "My life is in Paris."
+        bases:
+          "vie": "life"
+          "à": "in"
+          "Paris": "Paris"

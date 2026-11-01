@@ -1,0 +1,436 @@
+schema: 1
+id: "bn-phone"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "phone"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2389"
+    target: "মেসেজ"
+    reading: "mesej"
+    ipa: "mesedʒ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    synonyms: [{ id: "s1", ref: "bn-2390" }]
+    examples:
+      - { target: "আমি তোমাকে মেসেজ পাঠাই।", reading: "āmi tomāke mesej pāṭhāi.", ipa: "ami t̪omake mesedʒ paʈʰai", bases: [{ word: "তোমাকে", ref: "bn-0835" }, { word: "পাঠাই", ref: "bn-1108" }] }
+      - { target: "মেসেজটা পড়ো।", reading: "mesejoṭā pôṛo.", ipa: "mesedʒoʈa pɔɽo", bases: [{ word: "মেসেজটা", base: "মেসেজ", reading: "mesej" }, { word: "পড়ো", ref: "bn-0119" }] }
+  - id: "bn-2390"
+    target: "বার্তা"
+    reading: "bārtā"
+    ipa: "bart̪a"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তার একটা বার্তা এসেছে।", reading: "tār ekoṭā bārtā eseche.", ipa: "t̪ar ekoʈa bart̪a esetʃʰe", bases: [{ word: "তার", base: "তার", reading: "tār" }, { word: "একটা", ref: "bn-0202" }, { word: "এসেছে", ref: "bn-0872" }] }
+      - { target: "বার্তাটা খুব জরুরি।", reading: "bārtāṭā khub joruri.", ipa: "bart̪aʈa kʰub dʒoruri", bases: [{ word: "বার্তাটা", base: "বার্তা", reading: "bārtā" }] }
+  - id: "bn-2391"
+    target: "কল"
+    reading: "kôl"
+    ipa: "kɔl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমার একটা কল এসেছে।", reading: "āmār ekoṭā kôl eseche.", ipa: "amar ekoʈa kɔl esetʃʰe", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "একটা", ref: "bn-0202" }, { word: "এসেছে", ref: "bn-0872" }] }
+      - { target: "কলটা ধরো না।", reading: "kôloṭā dhôro nā.", ipa: "kɔloʈa d̪ʱɔro na", bases: [{ word: "কলটা", base: "কল", reading: "kôl" }, { word: "ধরো", ref: "bn-1107" }] }
+  - id: "bn-2392"
+    target: "ভিডিও"
+    reading: "bhiḍio"
+    ipa: "bʱiɖio"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমি একটা ভিডিও দেখছি।", reading: "āmi ekoṭā bhiḍio dekhochi.", ipa: "ami ekoʈa bʱiɖio d̪ekʰotʃʰi", bases: [{ word: "একটা", ref: "bn-0202" }, { word: "দেখছি", ref: "bn-0877" }] }
+      - { target: "ভিডিওটা খুব মজার।", reading: "bhiḍioṭā khub môjār.", ipa: "bʱiɖioʈa kʰub mɔdʒar", bases: [{ word: "ভিডিওটা", base: "ভিডিও", reading: "bhiḍio" }] }
+  - id: "bn-2393"
+    target: "ভিডিও কল"
+    reading: "bhiḍio kôl"
+    ipa: "bʱiɖio kɔl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমরা ভিডিও কলে কথা বলি।", reading: "āmorā bhiḍio kôle kôthā boli.", ipa: "amora bʱiɖio kɔle kɔt̪ʰa boli", bases: [{ word: "কলে", ref: "bn-2391" }, { word: "বলি", ref: "bn-0879" }] }
+      - { target: "ভিডিও কলটা ভালো।", reading: "bhiḍio kôloṭā bhālo.", ipa: "bʱiɖio kɔloʈa bʱalo", bases: [{ word: "কলটা", ref: "bn-2391" }] }
+  - id: "bn-2394"
+    target: "সিম"
+    reading: "sim"
+    ipa: "sim"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনে একটা নতুন সিম আছে।", reading: "phone ekoṭā notun sim āche.", ipa: "pʰone ekoʈa not̪un sim atʃʰe", bases: [{ word: "ফোনে", ref: "bn-1152" }, { word: "একটা", ref: "bn-0202" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "সিমটা কোথায়?", reading: "simoṭā kothāy?", ipa: "simoʈa kot̪ʰaj", bases: [{ word: "সিমটা", base: "সিম", reading: "sim" }] }
+  - id: "bn-2395"
+    target: "ব্যাটারি"
+    reading: "bêṭāri"
+    ipa: "bæʈari"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমার ফোনের ব্যাটারি কম।", reading: "āmār phoner bêṭāri kôm.", ipa: "amar pʰoner bæʈari kɔm", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "ফোনের", ref: "bn-1152" }] }
+      - { target: "ব্যাটারিটা দ্রুত শেষ হয়।", reading: "bêṭāriṭā drut śeś hôy.", ipa: "bæʈariʈa d̪rut̪ ʃeʃ ɦɔj", bases: [{ word: "ব্যাটারিটা", base: "ব্যাটারি", reading: "bêṭāri" }, { word: "দ্রুত", base: "দ্রুত", reading: "drut" }, { word: "শেষ", base: "শেষ", reading: "śeś" }, { word: "হয়", ref: "bn-0874" }] }
+  - id: "bn-2396"
+    target: "চার্জ"
+    reading: "cārj"
+    ipa: "tʃardʒ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনে চার্জ নেই।", reading: "phone cārj nei.", ipa: "pʰone tʃardʒ nei", bases: [{ word: "ফোনে", ref: "bn-1152" }, { word: "নেই", base: "নেই", reading: "nei" }] }
+      - { target: "চার্জটা বেশি আছে।", reading: "cārjoṭā beśi āche.", ipa: "tʃardʒoʈa beʃi atʃʰe", bases: [{ word: "চার্জটা", base: "চার্জ", reading: "cārj" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-2397"
+    target: "চার্জার"
+    reading: "cārjār"
+    ipa: "tʃardʒar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমার চার্জারটা কোথায়?", reading: "āmār cārjāroṭā kothāy?", ipa: "amar tʃardʒaroʈa kot̪ʰaj", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "চার্জারটা", base: "চার্জার", reading: "cārjār" }] }
+      - { target: "চার্জারটা ভালো।", reading: "cārjāroṭā bhālo.", ipa: "tʃardʒaroʈa bʱalo", bases: [{ word: "চার্জারটা", base: "চার্জার", reading: "cārjār" }] }
+  - id: "bn-2398"
+    target: "ইন্টারনেট"
+    reading: "inṭāroneṭ"
+    ipa: "inʈaroneʈ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ইন্টারনেট কাজ করছে না।", reading: "inṭāroneṭ kāj kôroche nā.", ipa: "inʈaroneʈ kadʒ kɔrotʃʰe na", bases: [{ word: "করছে", ref: "bn-0102" }] }
+      - { target: "ইন্টারনেট আছে?", reading: "inṭāroneṭ āche?", ipa: "inʈaroneʈ atʃʰe", bases: [{ word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-2399"
+    target: "ওয়াইফাই"
+    reading: "oyāiphāi"
+    ipa: "ojaipʰai"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ওয়াইফাই আছে?", reading: "oyāiphāi āche?", ipa: "ojaipʰai atʃʰe", bases: [{ word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "ওয়াইফাইয়ের পাসওয়ার্ড কী?", reading: "oyāiphāiyer pāsooyārḍ ki?", ipa: "ojaipʰaijer pasoojarɖ ki", bases: [{ word: "ওয়াইফাইয়ের", base: "ওয়াইফাই", reading: "oyāiphāi" }] }
+  - id: "bn-2400"
+    target: "নেটওয়ার্ক"
+    reading: "neṭooyārk"
+    ipa: "neʈoojark"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নেটওয়ার্ক খুব দুর্বল।", reading: "neṭooyārk khub durrol.", ipa: "neʈoojark kʰub d̪urrol" }
+      - { target: "এখানে নেটওয়ার্ক ভালো।", reading: "ekhāne neṭooyārk bhālo.", ipa: "ekʰane neʈoojark bʱalo" }
+  - id: "bn-2401"
+    target: "স্ক্রিন"
+    reading: "skrin"
+    ipa: "skrin"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "স্ক্রিনটা পরিষ্কার রাখো।", reading: "skrinoṭā poriśkār rākho.", ipa: "skrinoʈa poriʃkar rakʰo", bases: [{ word: "স্ক্রিনটা", base: "স্ক্রিন", reading: "skrin" }, { word: "রাখো", ref: "bn-0894" }] }
+      - { target: "স্ক্রিনে কী লেখা?", reading: "skrine ki lekhā?", ipa: "skrine ki lekʰa", bases: [{ word: "স্ক্রিনে", base: "স্ক্রিন", reading: "skrin" }] }
+  - id: "bn-2402"
+    target: "বোতাম"
+    reading: "botām"
+    ipa: "bot̪am"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এই বোতামটা খারাপ।", reading: "ei botāmoṭā khārāp.", ipa: "ei bot̪amoʈa kʰarap", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "বোতামটা", base: "বোতাম", reading: "botām" }] }
+      - { target: "বোতামটা খারাপ হয়ে গেছে।", reading: "botāmoṭā khārāp hôye geche.", ipa: "bot̪amoʈa kʰarap ɦɔje ɡetʃʰe", bases: [{ word: "বোতামটা", base: "বোতাম", reading: "botām" }, { word: "হয়ে", ref: "bn-0874" }, { word: "গেছে", ref: "bn-0873" }] }
+  - id: "bn-2403"
+    target: "অ্যাপ"
+    reading: "êp"
+    ipa: "æp"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এই অ্যাপটা ভালো।", reading: "ei êpoṭā bhālo.", ipa: "ei æpoʈa bʱalo", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "অ্যাপটা", base: "অ্যাপ", reading: "êp" }] }
+      - { target: "আমি নতুন একটা অ্যাপ নিচ্ছি।", reading: "āmi notun ekoṭā êp nicchi.", ipa: "ami not̪un ekoʈa æp nitʃtʃʰi", bases: [{ word: "একটা", ref: "bn-0202" }, { word: "নিচ্ছি", ref: "bn-0889" }] }
+  - id: "bn-2404"
+    target: "পাসওয়ার্ড"
+    reading: "pāsooyārḍ"
+    ipa: "pasoojarɖ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পাসওয়ার্ডটা ভুলে গেছি।", reading: "pāsooyārḍoṭā bhule gechi.", ipa: "pasoojarɖoʈa bʱule ɡetʃʰi", bases: [{ word: "পাসওয়ার্ডটা", base: "পাসওয়ার্ড", reading: "pāsooyārḍ" }, { word: "ভুলে", base: "ভোলা", reading: "bholā" }, { word: "গেছি", ref: "bn-0873" }] }
+      - { target: "পাসওয়ার্ড কী?", reading: "pāsooyārḍ ki?", ipa: "pasoojarɖ ki" }
+  - id: "bn-2405"
+    target: "আওয়াজ"
+    reading: "āoyāj"
+    ipa: "aojadʒ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনের আওয়াজ কম।", reading: "phoner āoyāj kôm.", ipa: "pʰoner aojadʒ kɔm", bases: [{ word: "ফোনের", ref: "bn-1152" }] }
+      - { target: "তোমার আওয়াজ শুনতে পাচ্ছি না।", reading: "tomār āoyāj śunote pācchi nā.", ipa: "t̪omar aojadʒ ʃunot̪e patʃtʃʰi na", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "শুনতে", ref: "bn-0878" }, { word: "পাচ্ছি", ref: "bn-0891" }] }
+  - id: "bn-2406"
+    target: "যোগাযোগ"
+    reading: "jogājog"
+    ipa: "dʒoɡadʒoɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমরা নিয়মিত যোগাযোগ রাখি।", reading: "āmorā niyomit jogājog rākhi.", ipa: "amora nijomit̪ dʒoɡadʒoɡ rakʰi", bases: [{ word: "নিয়মিত", base: "নিয়মিত", reading: "niyomit" }] }
+      - { target: "তার সঙ্গে আমার যোগাযোগ নেই।", reading: "tār sôṅge āmār jogājog nei.", ipa: "t̪ar sɔŋɡe amar dʒoɡadʒoɡ nei", bases: [{ word: "তার", base: "তার", reading: "tār" }, { word: "আমার", ref: "bn-0833" }, { word: "নেই", base: "নেই", reading: "nei" }] }
+  - id: "bn-2407"
+    target: "সংযোগ"
+    reading: "sôṅjog"
+    ipa: "sɔŋdʒoɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনের সংযোগ ভালো।", reading: "phoner sôṅjog bhālo.", ipa: "pʰoner sɔŋdʒoɡ bʱalo", bases: [{ word: "ফোনের", ref: "bn-1152" }] }
+      - { target: "সংযোগটা বিচ্ছিন্ন হয়ে গেল।", reading: "sôṅjogoṭā bicchinn hôye gel.", ipa: "sɔŋdʒoɡoʈa bitʃtʃʰinn ɦɔje ɡel", bases: [{ word: "সংযোগটা", base: "সংযোগ", reading: "sôṅjog" }, { word: "বিচ্ছিন্ন", base: "বিচ্ছিন্ন", reading: "bicchinn" }, { word: "হয়ে", ref: "bn-0874" }, { word: "গেল", ref: "bn-0873" }] }
+  - id: "bn-2408"
+    target: "রিং"
+    reading: "riṅ"
+    ipa: "riŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনের রিং শোনা যাচ্ছে।", reading: "phoner riṅ śonā jācche.", ipa: "pʰoner riŋ ʃona dʒatʃtʃʰe", bases: [{ word: "ফোনের", ref: "bn-1152" }, { word: "যাচ্ছে", ref: "bn-0873" }] }
+      - { target: "রিংটা বন্ধ করো।", reading: "riṅṭā bôndh kôro.", ipa: "riŋʈa bɔnd̪ʱ kɔro", bases: [{ word: "রিংটা", base: "রিং", reading: "riṅ" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-2409"
+    target: "কথা"
+    reading: "kôthā"
+    ipa: "kɔt̪ʰa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমাদের কথা হয়েছে।", reading: "āmāder kôthā hôyeche.", ipa: "amad̪er kɔt̪ʰa ɦɔjetʃʰe", bases: [{ word: "আমাদের", base: "আমরা", reading: "āmorā" }, { word: "হয়েছে", ref: "bn-0874" }] }
+      - { target: "কথাটা শুনতে পাচ্ছি।", reading: "kôthāṭā śunote pācchi.", ipa: "kɔt̪ʰaʈa ʃunot̪e patʃtʃʰi", bases: [{ word: "কথাটা", base: "কথা", reading: "kôthā" }, { word: "শুনতে", ref: "bn-0878" }, { word: "পাচ্ছি", ref: "bn-0891" }] }
+  - id: "bn-2410"
+    target: "জবাব"
+    reading: "jôbāb"
+    ipa: "dʒɔbab"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তার কোনো জবাব নেই।", reading: "tār kono jôbāb nei.", ipa: "t̪ar kono dʒɔbab nei", bases: [{ word: "তার", base: "তার", reading: "tār" }, { word: "নেই", base: "নেই", reading: "nei" }] }
+      - { target: "জবাবটা তাড়াতাড়ি দাও।", reading: "jôbāboṭā tāṛātāṛi dāo.", ipa: "dʒɔbaboʈa t̪aɽat̪aɽi d̪ao", bases: [{ word: "জবাবটা", ref: "bn-2157" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-2411"
+    target: "অপেক্ষা"
+    reading: "ôpekkhā"
+    ipa: "ɔpekkʰa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অপেক্ষা করা কঠিন।", reading: "ôpekkhā kôrā koṭhin.", ipa: "ɔpekkʰa kɔra koʈʰin" }
+      - { target: "অনেকক্ষণ অপেক্ষা হলো।", reading: "ônekokkhon ôpekkhā hôlo.", ipa: "ɔnekokkʰon ɔpekkʰa ɦɔlo", bases: [{ word: "অনেকক্ষণ", base: "অনেকক্ষণ", reading: "ônekokkhon" }] }
+  - id: "bn-2412"
+    target: "ইনবক্স"
+    reading: "inoboks"
+    ipa: "inoboks"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ইনবক্সে অনেক বার্তা।", reading: "inobokse ônek bārtā.", ipa: "inobokse ɔnek bart̪a", bases: [{ word: "ইনবক্সে", base: "ইনবক্স", reading: "inoboks" }] }
+      - { target: "ইনবক্সটা খালি করো।", reading: "inoboksoṭā khāli kôro.", ipa: "inoboksoʈa kʰali kɔro", bases: [{ word: "ইনবক্সটা", base: "ইনবক্স", reading: "inoboks" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-2413"
+    target: "ভলিউম"
+    reading: "bholium"
+    ipa: "bʱolium"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভলিউমটা একটু বাড়াও।", reading: "bholiumoṭā ekoṭu bāṛāo.", ipa: "bʱoliumoʈa ekoʈu baɽao", bases: [{ word: "ভলিউমটা", base: "ভলিউম", reading: "bholium" }, { word: "বাড়াও", base: "বাড়ানো", reading: "bāṛāno" }] }
+      - { target: "ভলিউম কম।", reading: "bholium kôm.", ipa: "bʱolium kɔm" }
+  - id: "bn-2414"
+    target: "ব্লুটুথ"
+    reading: "bluṭuth"
+    ipa: "bluʈut̪ʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ব্লুটুথ চালু করো।", reading: "bluṭuth cālu kôro.", ipa: "bluʈut̪ʰ tʃalu kɔro", bases: [{ word: "করো", ref: "bn-0102" }] }
+      - { target: "ব্লুটুথ বন্ধ।", reading: "bluṭuth bôndh.", ipa: "bluʈut̪ʰ bɔnd̪ʱ" }
+  - id: "bn-2415"
+    target: "চালু"
+    reading: "cālu"
+    ipa: "tʃalu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    antonyms: [{ id: "a1", ref: "bn-1230" }]
+    examples:
+      - { target: "ফোনটা চালু আছে।", reading: "phonoṭā cālu āche.", ipa: "pʰonoʈa tʃalu atʃʰe", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "মেশিনটা চালু নেই।", reading: "meśinoṭā cālu nei.", ipa: "meʃinoʈa tʃalu nei", bases: [{ word: "মেশিনটা", base: "মেশিন", reading: "meśin" }, { word: "নেই", base: "নেই", reading: "nei" }] }
+  - id: "bn-2416"
+    target: "হ্যালো"
+    reading: "hêlo"
+    ipa: "ɦælo"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "হ্যালো, কে বলছেন?", reading: "hêlo, ke bôlochen?", ipa: "ɦælo ke bɔlotʃʰen", bases: [{ word: "বলছেন", ref: "bn-0879" }] }
+      - { target: "হ্যালো, আমি শুনছি।", reading: "hêlo, āmi śunochi.", ipa: "ɦælo ami ʃunotʃʰi", bases: [{ word: "শুনছি", ref: "bn-0878" }] }
+  - id: "bn-2417"
+    target: "ভুল নম্বর"
+    reading: "bhul nômbor"
+    ipa: "bʱul nɔmbor"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এটা ভুল নম্বর।", reading: "eṭā bhul nômbor.", ipa: "eʈa bʱul nɔmbor" }
+      - { target: "ভুল নম্বরে ফোন করেছ।", reading: "bhul nômbore phon kôrech.", ipa: "bʱul nɔmbore pʰon kɔretʃʰ", bases: [{ word: "নম্বরে", ref: "bn-2158" }, { word: "করেছ", ref: "bn-0102" }] }
+  - id: "bn-2418"
+    target: "ফোন ধরা"
+    reading: "phon dhôrā"
+    ipa: "pʰon d̪ʱɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমি ফোনটা ধরি।", reading: "āmi phonoṭā dhori.", ipa: "ami pʰonoʈa d̪ʱori", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "ধরি", ref: "bn-1107" }] }
+      - { target: "ফোনটা ধরো।", reading: "phonoṭā dhôro.", ipa: "pʰonoʈa d̪ʱɔro", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "ধরো", ref: "bn-1107" }] }
+  - id: "bn-2419"
+    target: "ফোন রাখা"
+    reading: "phon rākhā"
+    ipa: "pʰon rakʰa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমি ফোন রাখছি।", reading: "āmi phon rākhochi.", ipa: "ami pʰon rakʰotʃʰi", bases: [{ word: "রাখছি", ref: "bn-0894" }] }
+      - { target: "ফোনটা রাখুন।", reading: "phonoṭā rākhun.", ipa: "pʰonoʈa rakʰun", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "রাখুন", ref: "bn-0894" }] }
+  - id: "bn-2420"
+    target: "চার্জ দেওয়া"
+    reading: "cārj deoyā"
+    ipa: "tʃardʒ d̪eoja"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনে চার্জ দাও।", reading: "phone cārj dāo.", ipa: "pʰone tʃardʒ d̪ao", bases: [{ word: "ফোনে", ref: "bn-1152" }, { word: "দাও", ref: "bn-0888" }] }
+      - { target: "ফোনটা চার্জে দাও।", reading: "phonoṭā cārje dāo.", ipa: "pʰonoʈa tʃardʒe d̪ao", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "চার্জে", ref: "bn-2396" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-2421"
+    target: "ডাউনলোড করা"
+    reading: "ḍāunoloḍ kôrā"
+    ipa: "ɖaunoloɖ kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "ডাউনলোড", base: "ডাউনলোড", reading: "ḍāunoloḍ" }]
+    examples:
+      - { target: "আমি অ্যাপটা ডাউনলোড করছি।", reading: "āmi êpoṭā ḍāunoloḍ kôrochi.", ipa: "ami æpoʈa ɖaunoloɖ kɔrotʃʰi", bases: [{ word: "অ্যাপটা", ref: "bn-2403" }, { word: "ডাউনলোড", base: "ডাউনলোড", reading: "ḍāunoloḍ" }, { word: "করছি", ref: "bn-0102" }] }
+      - { target: "ছবিটা ডাউনলোড করো।", reading: "chobiṭā ḍāunoloḍ kôro.", ipa: "tʃʰobiʈa ɖaunoloɖ kɔro", bases: [{ word: "ছবিটা", ref: "bn-1145" }, { word: "ডাউনলোড", base: "ডাউনলোড", reading: "ḍāunoloḍ" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-2422"
+    target: "আপডেট করা"
+    reading: "āpoḍeṭ kôrā"
+    ipa: "apoɖeʈ kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "আপডেট", base: "আপডেট", reading: "āpoḍeṭ" }]
+    examples:
+      - { target: "ফোনটা আপডেট করো।", reading: "phonoṭā āpoḍeṭ kôro.", ipa: "pʰonoʈa apoɖeʈ kɔro", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "আপডেট", base: "আপডেট", reading: "āpoḍeṭ" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "অ্যাপটা আপডেট করা হয়েছে।", reading: "êpoṭā āpoḍeṭ kôrā hôyeche.", ipa: "æpoʈa apoɖeʈ kɔra ɦɔjetʃʰe", bases: [{ word: "অ্যাপটা", ref: "bn-2403" }, { word: "আপডেট", base: "আপডেট", reading: "āpoḍeṭ" }, { word: "হয়েছে", ref: "bn-0874" }] }
+  - id: "bn-2423"
+    target: "বাজা"
+    reading: "bājā"
+    ipa: "badʒa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনটা বাজছে।", reading: "phonoṭā bājoche.", ipa: "pʰonoʈa badʒotʃʰe", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "বাজছে", base: "বাজা", reading: "bājā" }] }
+      - { target: "ফোনটা বাজল।", reading: "phonoṭā bājol.", ipa: "pʰonoʈa badʒol", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "বাজল", base: "বাজা", reading: "bājā" }] }
+  - id: "bn-2424"
+    target: "চালু করা"
+    reading: "cālu kôrā"
+    ipa: "tʃalu kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনটা চালু করো।", reading: "phonoṭā cālu kôro.", ipa: "pʰonoʈa tʃalu kɔro", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "ব্লুটুথ চালু করুন।", reading: "bluṭuth cālu korun.", ipa: "bluʈut̪ʰ tʃalu korun", bases: [{ word: "করুন", ref: "bn-0102" }] }
+  - id: "bn-2425"
+    target: "বন্ধ করা"
+    reading: "bôndh kôrā"
+    ipa: "bɔnd̪ʱ kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    antonyms: [{ id: "a1", ref: "bn-2424" }]
+    examples:
+      - { target: "ফোনটা বন্ধ করো।", reading: "phonoṭā bôndh kôro.", ipa: "pʰonoʈa bɔnd̪ʱ kɔro", bases: [{ word: "ফোনটা", ref: "bn-1152" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "ওয়াইফাই বন্ধ করুন।", reading: "oyāiphāi bôndh korun.", ipa: "ojaipʰai bɔnd̪ʱ korun", bases: [{ word: "করুন", ref: "bn-0102" }] }
+  - id: "bn-2426"
+    target: "জবাব দেওয়া"
+    reading: "jôbāb deoyā"
+    ipa: "dʒɔbab d̪eoja"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমি এখনই জবাব দিচ্ছি।", reading: "āmi ekhonoi jôbāb dicchi.", ipa: "ami ekʰonoi dʒɔbab d̪itʃtʃʰi", bases: [{ word: "এখনই", base: "এখনই", reading: "ekhonoi" }, { word: "দিচ্ছি", ref: "bn-0888" }] }
+      - { target: "জবাব দাও।", reading: "jôbāb dāo.", ipa: "dʒɔbab d̪ao", bases: [{ word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-2427"
+    target: "অপেক্ষা করা"
+    reading: "ôpekkhā kôrā"
+    ipa: "ɔpekkʰa kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "একটু অপেক্ষা করুন।", reading: "ekoṭu ôpekkhā korun.", ipa: "ekoʈu ɔpekkʰa korun", bases: [{ word: "করুন", ref: "bn-0102" }] }
+      - { target: "আমি অপেক্ষা করছি।", reading: "āmi ôpekkhā kôrochi.", ipa: "ami ɔpekkʰa kɔrotʃʰi", bases: [{ word: "করছি", ref: "bn-0102" }] }
+  - id: "bn-2428"
+    target: "মেসেজ পাঠানো"
+    reading: "mesej pāṭhāno"
+    ipa: "mesedʒ paʈʰano"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তুমি আমাকে মেসেজ পাঠাও।", reading: "tumi āmāke mesej pāṭhāo.", ipa: "t̪umi amake mesedʒ paʈʰao", bases: [{ word: "আমাকে", ref: "bn-0833" }, { word: "পাঠাও", ref: "bn-1108" }] }
+      - { target: "আমি মেসেজ পাঠাব।", reading: "āmi mesej pāṭhāb.", ipa: "ami mesedʒ paʈʰab", bases: [{ word: "পাঠাব", ref: "bn-1108" }] }
+  - id: "bn-2429"
+    target: "কল করা"
+    reading: "kôl kôrā"
+    ipa: "kɔl kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমি তোমাকে কল করব।", reading: "āmi tomāke kôl kôrob.", ipa: "ami t̪omake kɔl kɔrob", bases: [{ word: "তোমাকে", ref: "bn-0835" }, { word: "করব", ref: "bn-0102" }] }
+      - { target: "কাল কল করবেন।", reading: "kāl kôl kôroben.", ipa: "kal kɔl kɔroben", bases: [{ word: "করবেন", ref: "bn-0102" }] }
+  - id: "bn-2430"
+    target: "ছবি পাঠানো"
+    reading: "chobi pāṭhāno"
+    ipa: "tʃʰobi paʈʰano"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ছবিটা আমাকে পাঠাও।", reading: "chobiṭā āmāke pāṭhāo.", ipa: "tʃʰobiʈa amake paʈʰao", bases: [{ word: "ছবিটা", ref: "bn-1145" }, { word: "আমাকে", ref: "bn-0833" }, { word: "পাঠাও", ref: "bn-1108" }] }
+      - { target: "আমি একটা ছবি পাঠাচ্ছি।", reading: "āmi ekoṭā chobi pāṭhācchi.", ipa: "ami ekoʈa tʃʰobi paʈʰatʃtʃʰi", bases: [{ word: "একটা", ref: "bn-0202" }, { word: "পাঠাচ্ছি", ref: "bn-1108" }] }

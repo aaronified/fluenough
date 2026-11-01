@@ -1,0 +1,306 @@
+schema: 1
+id: "bn-en-phone"
+kind: "layer"
+core: "bn-phone"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone and messages"
+description: "Phones, calls, texts, the battery and the network. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2389":
+    native: "text message"
+    notes:
+      "n1": "The word for a text sent from one phone to another, and for a message on a screen."
+    examples:
+      "আমি তোমাকে মেসেজ পাঠাই।": "I send you a text message."
+      "মেসেজটা পড়ো।": { native: "Read the message. (familiar)", bases: { "মেসেজটা": "text message" } }
+  "bn-2390":
+    native: "message (formal)"
+    notes:
+      "n1": "A more formal word than a text message: used for news, notices and written messages."
+    examples:
+      "তার একটা বার্তা এসেছে।": { native: "A message has come from him.", bases: { "তার": "his; her" } }
+      "বার্তাটা খুব জরুরি।": { native: "The message is very urgent.", bases: { "বার্তাটা": "message (formal)" } }
+  "bn-2391":
+    native: "phone call"
+    notes:
+      "n1": "A call on the phone, from the English word. The verb is made with করা (kôrā), to do."
+    examples:
+      "আমার একটা কল এসেছে।": "I have had a phone call."
+      "কলটা ধরো না।": { native: "Don't pick up the call. (familiar)", bases: { "কলটা": "phone call" } }
+  "bn-2392":
+    native: "video"
+    notes:
+      "n1": "The word for a video, as on a phone or in a video call."
+    examples:
+      "আমি একটা ভিডিও দেখছি।": "I am watching a video."
+      "ভিডিওটা খুব মজার।": { native: "The video is very funny.", bases: { "ভিডিওটা": "video" } }
+  "bn-2393":
+    native: "video call"
+    notes:
+      "n1": "A call on which both people can see each other on the screen."
+    examples:
+      "আমরা ভিডিও কলে কথা বলি।": "We talk on video calls."
+      "ভিডিও কলটা ভালো।": "The video call is good."
+  "bn-2394":
+    native: "SIM card"
+    notes:
+      "n1": "The small card that connects a phone to a mobile network."
+    examples:
+      "ফোনে একটা নতুন সিম আছে।": { native: "There is a new SIM card in the phone.", bases: { "আছে": "to be; there is" } }
+      "সিমটা কোথায়?": { native: "Where is the SIM card?", bases: { "সিমটা": "SIM card" } }
+  "bn-2395":
+    native: "battery"
+    notes:
+      "n1": "The battery is charged, and runs down when it is low."
+    examples:
+      "আমার ফোনের ব্যাটারি কম।": "My phone's battery is low."
+      "ব্যাটারিটা দ্রুত শেষ হয়।": { native: "The battery runs out quickly.", bases: { "ব্যাটারিটা": "battery", "দ্রুত": "quick; quickly", "শেষ": "end; finished" } }
+  "bn-2396":
+    native: "charge (of a battery)"
+    notes:
+      "n1": "How full a battery is; a phone with no charge will not switch on."
+    examples:
+      "ফোনে চার্জ নেই।": { native: "There is no charge in the phone.", bases: { "নেই": "there is not; does not have" } }
+      "চার্জটা বেশি আছে।": { native: "There is a lot of charge left.", bases: { "চার্জটা": "charge (of a battery)", "আছে": "to be; there is" } }
+  "bn-2397":
+    native: "charger"
+    notes:
+      "n1": "The plug and cable used to charge a phone."
+    examples:
+      "আমার চার্জারটা কোথায়?": { native: "Where is my charger?", bases: { "চার্জারটা": "charger" } }
+      "চার্জারটা ভালো।": { native: "The charger is good.", bases: { "চার্জারটা": "charger" } }
+  "bn-2398":
+    native: "internet"
+    notes:
+      "n1": "The network that lets a phone reach websites and apps."
+    examples:
+      "ইন্টারনেট কাজ করছে না।": "The internet is not working."
+      "ইন্টারনেট আছে?": { native: "Is there internet?", bases: { "আছে": "to be; there is" } }
+  "bn-2399":
+    native: "Wi-Fi"
+    notes:
+      "n1": "A wireless internet connection in a house or office."
+    examples:
+      "ওয়াইফাই আছে?": { native: "Is there Wi-Fi?", bases: { "আছে": "to be; there is" } }
+      "ওয়াইফাইয়ের পাসওয়ার্ড কী?": { native: "What is the Wi-Fi password?", bases: { "ওয়াইফাইয়ের": "Wi-Fi" } }
+  "bn-2400":
+    native: "network; signal"
+    notes:
+      "n1": "The mobile network a phone uses; a weak network means a poor signal."
+    examples:
+      "নেটওয়ার্ক খুব দুর্বল।": "The network is very weak."
+      "এখানে নেটওয়ার্ক ভালো।": "The network is good here."
+  "bn-2401":
+    native: "screen"
+    notes:
+      "n1": "The glass or display a phone shows its pictures and text on."
+    examples:
+      "স্ক্রিনটা পরিষ্কার রাখো।": { native: "Keep the screen clean. (familiar)", bases: { "স্ক্রিনটা": "screen" } }
+      "স্ক্রিনে কী লেখা?": { native: "What is written on the screen?", bases: { "স্ক্রিনে": "screen" } }
+  "bn-2402":
+    native: "button"
+    notes:
+      "n1": "A small button on a phone or a device, pressed to switch it on or to answer."
+    examples:
+      "এই বোতামটা খারাপ।": { native: "This button is faulty.", bases: { "এই": "this", "বোতামটা": "button" } }
+      "বোতামটা খারাপ হয়ে গেছে।": { native: "The button has broken.", bases: { "বোতামটা": "button" } }
+  "bn-2403":
+    native: "app"
+    notes:
+      "n1": "A program on a phone, short for application."
+    examples:
+      "এই অ্যাপটা ভালো।": { native: "This app is good.", bases: { "এই": "this", "অ্যাপটা": "app" } }
+      "আমি নতুন একটা অ্যাপ নিচ্ছি।": "I am getting a new app."
+  "bn-2404":
+    native: "password"
+    notes:
+      "n1": "The secret word that opens a phone, an app or an account."
+    examples:
+      "পাসওয়ার্ডটা ভুলে গেছি।": { native: "I have forgotten the password.", bases: { "পাসওয়ার্ডটা": "password", "ভুলে": "to forget" } }
+      "পাসওয়ার্ড কী?": "What is the password?"
+  "bn-2405":
+    native: "sound; voice"
+    notes:
+      "n1": "Any sound, including a voice on a call; a low voice is a quiet one."
+    examples:
+      "ফোনের আওয়াজ কম।": "The phone's sound is low."
+      "তোমার আওয়াজ শুনতে পাচ্ছি না।": "I cannot hear your voice. (familiar)"
+  "bn-2406":
+    native: "contact; keeping in touch"
+    notes:
+      "n1": "Keeping in touch with someone, by phone, message or in person."
+    examples:
+      "আমরা নিয়মিত যোগাযোগ রাখি।": { native: "We keep in touch regularly.", bases: { "নিয়মিত": "regular; regularly" } }
+      "তার সঙ্গে আমার যোগাযোগ নেই।": { native: "I have no contact with him.", bases: { "তার": "his; her", "নেই": "there is not; does not have" } }
+  "bn-2407":
+    native: "connection"
+    notes:
+      "n1": "The link between a phone and a network, or between two devices."
+    examples:
+      "ফোনের সংযোগ ভালো।": "The phone's connection is good."
+      "সংযোগটা বিচ্ছিন্ন হয়ে গেল।": { native: "The connection was cut off.", bases: { "সংযোগটা": "connection", "বিচ্ছিন্ন": "cut off; disconnected" } }
+  "bn-2408":
+    native: "ring (of a phone)"
+    notes:
+      "n1": "The sound a phone makes when someone calls."
+    examples:
+      "ফোনের রিং শোনা যাচ্ছে।": "The phone's ring can be heard."
+      "রিংটা বন্ধ করো।": { native: "Turn off the ring. (familiar)", bases: { "রিংটা": "ring (of a phone)" } }
+  "bn-2409":
+    native: "talk; conversation; word"
+    notes:
+      "n1": "A conversation on the phone or in person; also a word that someone says."
+    examples:
+      "আমাদের কথা হয়েছে।": { native: "We have had a talk.", bases: { "আমাদের": "we; us" } }
+      "কথাটা শুনতে পাচ্ছি।": { native: "I can hear what you say.", bases: { "কথাটা": "talk; conversation; word" } }
+  "bn-2410":
+    native: "answer; reply"
+    notes:
+      "n1": "The reply to a message, a call or a question."
+    examples:
+      "তার কোনো জবাব নেই।": { native: "There is no reply from him.", bases: { "তার": "his; her", "নেই": "there is not; does not have" } }
+      "জবাবটা তাড়াতাড়ি দাও।": "Give me the reply quickly. (familiar)"
+  "bn-2411":
+    native: "waiting"
+    notes:
+      "n1": "The time spent waiting for someone or something."
+    examples:
+      "অপেক্ষা করা কঠিন।": "Waiting is hard."
+      "অনেকক্ষণ অপেক্ষা হলো।": { native: "There was a long wait.", bases: { "অনেকক্ষণ": "for a long time" } }
+  "bn-2412":
+    native: "inbox"
+    notes:
+      "n1": "The place on a phone where received messages are kept."
+    examples:
+      "ইনবক্সে অনেক বার্তা।": { native: "There are many messages in the inbox.", bases: { "ইনবক্সে": "inbox" } }
+      "ইনবক্সটা খালি করো।": { native: "Empty the inbox. (familiar)", bases: { "ইনবক্সটা": "inbox" } }
+  "bn-2413":
+    native: "volume"
+    notes:
+      "n1": "How loud a phone or any sound is."
+    examples:
+      "ভলিউমটা একটু বাড়াও।": { native: "Turn the volume up a little. (familiar)", bases: { "ভলিউমটা": "volume", "বাড়াও": "to increase; to raise" } }
+      "ভলিউম কম।": "The volume is low."
+  "bn-2414":
+    native: "Bluetooth"
+    notes:
+      "n1": "A short-range wireless link between a phone and another device."
+    examples:
+      "ব্লুটুথ চালু করো।": "Turn on Bluetooth. (familiar)"
+      "ব্লুটুথ বন্ধ।": "Bluetooth is off."
+  "bn-2415":
+    native: "switched on; working"
+    notes:
+      "n1": "Working, or switched on; the opposite of closed or switched off."
+    examples:
+      "ফোনটা চালু আছে।": { native: "The phone is switched on.", bases: { "আছে": "to be; there is" } }
+      "মেশিনটা চালু নেই।": { native: "The machine is not working.", bases: { "মেশিনটা": "machine", "নেই": "there is not; does not have" } }
+  "bn-2416":
+    native: "hello (on the phone)"
+    notes:
+      "n1": "The word said first when you answer a phone call."
+    examples:
+      "হ্যালো, কে বলছেন?": "Hello, who is speaking? (respectful)"
+      "হ্যালো, আমি শুনছি।": "Hello, I can hear you."
+  "bn-2417":
+    native: "wrong number"
+    notes:
+      "n1": "A call to a number that is not the one the caller wanted."
+    examples:
+      "এটা ভুল নম্বর।": "This is the wrong number."
+      "ভুল নম্বরে ফোন করেছ।": "You have called the wrong number. (familiar)"
+  "bn-2418":
+    native: "to answer the phone"
+    notes:
+      "n1": "Taking a call by pressing the answer button."
+    examples:
+      "আমি ফোনটা ধরি।": "I answer the phone."
+      "ফোনটা ধরো।": "Answer the phone. (familiar)"
+  "bn-2419":
+    native: "to hang up the phone"
+    notes:
+      "n1": "Ending a call by putting the phone down."
+    examples:
+      "আমি ফোন রাখছি।": "I am hanging up."
+      "ফোনটা রাখুন।": "Hang up the phone. (respectful)"
+  "bn-2420":
+    native: "to charge (a phone)"
+    notes:
+      "n1": "Plugging a phone in so that its battery fills."
+    examples:
+      "ফোনে চার্জ দাও।": "Charge the phone. (familiar)"
+      "ফোনটা চার্জে দাও।": "Put the phone on charge. (familiar)"
+  "bn-2421":
+    native: "to download"
+    notes:
+      "n1": "Copying a file or an app from the internet to a phone."
+    bases: { "ডাউনলোড": "download" }
+    examples:
+      "আমি অ্যাপটা ডাউনলোড করছি।": { native: "I am downloading the app.", bases: { "ডাউনলোড": "download" } }
+      "ছবিটা ডাউনলোড করো।": { native: "Download the picture. (familiar)", bases: { "ডাউনলোড": "download" } }
+  "bn-2422":
+    native: "to update"
+    notes:
+      "n1": "Installing the newest version of an app or a phone's software."
+    bases: { "আপডেট": "update" }
+    examples:
+      "ফোনটা আপডেট করো।": { native: "Update the phone. (familiar)", bases: { "আপডেট": "update" } }
+      "অ্যাপটা আপডেট করা হয়েছে।": { native: "The app has been updated.", bases: { "আপডেট": "update" } }
+  "bn-2423":
+    native: "to ring (of a phone)"
+    notes:
+      "n1": "What a phone does when a call comes in."
+    examples:
+      "ফোনটা বাজছে।": { native: "The phone is ringing.", bases: { "বাজছে": "to ring (of a phone)" } }
+      "ফোনটা বাজল।": { native: "The phone rang.", bases: { "বাজল": "to ring (of a phone)" } }
+  "bn-2424":
+    native: "to switch on"
+    notes:
+      "n1": "Starting a phone, machine or app."
+    examples:
+      "ফোনটা চালু করো।": "Switch on the phone. (familiar)"
+      "ব্লুটুথ চালু করুন।": "Switch on Bluetooth. (respectful)"
+  "bn-2425":
+    native: "to switch off"
+    notes:
+      "n1": "Stopping a phone or machine; the opposite of switching on."
+    examples:
+      "ফোনটা বন্ধ করো।": "Switch off the phone. (familiar)"
+      "ওয়াইফাই বন্ধ করুন।": "Switch off the Wi-Fi. (respectful)"
+  "bn-2426":
+    native: "to answer; to reply"
+    notes:
+      "n1": "Giving an answer to a message or a call."
+    examples:
+      "আমি এখনই জবাব দিচ্ছি।": { native: "I am replying right now.", bases: { "এখনই": "right now" } }
+      "জবাব দাও।": "Reply. (familiar)"
+  "bn-2427":
+    native: "to wait"
+    notes:
+      "n1": "Waiting for someone to answer or to come."
+    examples:
+      "একটু অপেক্ষা করুন।": "Please wait a little. (respectful)"
+      "আমি অপেক্ষা করছি।": "I am waiting."
+  "bn-2428":
+    native: "to send a message"
+    notes:
+      "n1": "Sending a text or a message to someone's phone."
+    examples:
+      "তুমি আমাকে মেসেজ পাঠাও।": "Send me a message. (familiar)"
+      "আমি মেসেজ পাঠাব।": "I will send a message."
+  "bn-2429":
+    native: "to call (on the phone)"
+    notes:
+      "n1": "Ringing someone up on the phone; the noun is কল (kôl)."
+    examples:
+      "আমি তোমাকে কল করব।": "I will call you. (familiar)"
+      "কাল কল করবেন।": "Please call tomorrow. (respectful)"
+  "bn-2430":
+    native: "to send a picture"
+    notes:
+      "n1": "Sending a photo or picture from a phone."
+    examples:
+      "ছবিটা আমাকে পাঠাও।": "Send me the picture. (familiar)"
+      "আমি একটা ছবি পাঠাচ্ছি।": "I am sending a picture."

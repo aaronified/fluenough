@@ -1,0 +1,310 @@
+schema: 1
+id: "fr-everyday-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0282"
+    target: "manger"
+    ipa: "mɑ̃ʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange une pomme.", ipa: "ʒə mɑ̃ʒ yn pɔm", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "une", base: "une" }, { word: "pomme", base: "pomme" }] }
+      - { target: "Nous mangeons à la maison.", ipa: "nu mɑ̃ʒɔ̃ a la mɛzɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", base: "manger" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "maison", base: "maison" }] }
+  - id: "fr-0283"
+    target: "boire"
+    ipa: "bwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je bois de l'eau.", ipa: "ʒə bwa də lo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", base: "boire" }, { word: "de", base: "de" }, { word: "l'eau", base: "eau" }] }
+      - { target: "Vous buvez un café ?", ipa: "vu byve œ̃ kafe", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "buvez", base: "boire" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
+  - id: "fr-0284"
+    target: "dormir"
+    ipa: "dɔʁmiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je dors bien.", ipa: "ʒə dɔʁ bjɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dors", base: "dormir" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Les enfants dorment ici.", ipa: "le zɑ̃fɑ̃ dɔʁm isi", bases: [{ word: "Les", ref: "fr-0043" }, { word: "enfants", base: "enfant" }, { word: "dorment", base: "dormir" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0285"
+    target: "venir"
+    ipa: "vəniʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je viens de Paris.", ipa: "ʒə vjɛ̃ də paʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "viens", base: "venir" }, { word: "de", base: "de" }, { word: "Paris", base: "Paris" }] }
+      - { target: "Mon ami vient ici.", ipa: "mɔ̃n ami vjɛ̃ isi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "vient", base: "venir" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0286"
+    target: "aller"
+    ipa: "ale"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vais à la gare.", ipa: "ʒə ve a la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Nous allons au marché.", ipa: "nu zalɔ̃ o maʁʃe", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", base: "aller" }, { word: "au", base: "à" }, { word: "marché", base: "marché" }] }
+  - id: "fr-0287"
+    target: "faire"
+    ipa: "fɛʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais du sport.", ipa: "ʒə fɛ dy spɔʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "du", base: "du" }, { word: "sport", ref: "fr-0265" }] }
+      - { target: "Vous faites la cuisine.", ipa: "vu fɛt la kɥizin", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "faites", base: "faire" }, { word: "la", base: "la" }, { word: "cuisine", base: "cuisine" }] }
+  - id: "fr-0288"
+    target: "prendre"
+    ipa: "pʁɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends le train.", ipa: "ʒə pʁɑ̃ lə tʁɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", base: "prendre" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Ils prennent le bus.", ipa: "il pʁɛn lə bys", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "prennent", base: "prendre" }, { word: "le", base: "le" }, { word: "bus", base: "bus" }] }
+  - id: "fr-0289"
+    target: "voir"
+    ipa: "vwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vois Paul.", ipa: "ʒə vwa pɔl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vois", base: "voir" }, { word: "Paul", base: "Paul" }] }
+      - { target: "Vous voyez bien ?", ipa: "vu vwaje bjɛ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "voyez", base: "voir" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-0290"
+    target: "lire"
+    ipa: "liʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je lis un livre.", ipa: "ʒə li œ̃ livʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", base: "lire" }, { word: "un", base: "un" }, { word: "livre", base: "livre" }] }
+      - { target: "Elle lit le journal.", ipa: "ɛl li lə ʒuʁnal", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "lit", base: "lire" }, { word: "le", base: "le" }, { word: "journal", base: "journal" }] }
+  - id: "fr-0291"
+    target: "écrire"
+    ipa: "ekʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'écris une lettre.", ipa: "ʒekʁi yn lɛtʁ", bases: [{ word: "J'écris", base: "écrire" }, { word: "une", base: "une" }, { word: "lettre", base: "lettre" }] }
+      - { target: "Vous écrivez un e-mail ?", ipa: "vu zekʁive œ̃n imɛl", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "écrivez", base: "écrire" }, { word: "un", base: "un" }, { word: "e", base: "e" }, { word: "mail", base: "mail" }] }
+  - id: "fr-0292"
+    target: "écouter"
+    ipa: "ekute"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'écoute la radio.", ipa: "ʒekut la ʁadjo", bases: [{ word: "J'écoute", base: "écouter" }, { word: "la", base: "la" }, { word: "radio", base: "radio" }] }
+      - { target: "Écoutez bien.", ipa: "ekute bjɛ̃", bases: [{ word: "Écoutez", base: "écouter" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-0293"
+    target: "regarder"
+    ipa: "ʁəɡaʁde"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je regarde la télé.", ipa: "ʒə ʁəɡaʁd la tele", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", base: "regarder" }, { word: "la", base: "la" }, { word: "télé", base: "télé" }] }
+      - { target: "Regardez ici.", ipa: "ʁəɡaʁde isi", bases: [{ word: "Regardez", base: "regarder" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0294"
+    target: "acheter"
+    ipa: "aʃte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'achète du pain.", ipa: "ʒaʃɛt dy pɛ̃", bases: [{ word: "J'achète", base: "acheter" }, { word: "du", base: "du" }, { word: "pain", base: "pain" }] }
+      - { target: "Elle achète un journal.", ipa: "ɛl aʃɛt œ̃ ʒuʁnal", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "achète", base: "acheter" }, { word: "un", base: "un" }, { word: "journal", base: "journal" }] }
+  - id: "fr-0295"
+    target: "préparer"
+    ipa: "pʁepaʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prépare le dîner.", ipa: "ʒə pʁepaʁ lə dine", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prépare", base: "préparer" }, { word: "le", base: "le" }, { word: "dîner", base: "dîner" }] }
+      - { target: "Nous préparons un café.", ipa: "nu pʁepaʁɔ̃ œ̃ kafe", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "préparons", base: "préparer" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
+  - id: "fr-0296"
+    target: "laver"
+    ipa: "lave"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je lave la voiture.", ipa: "ʒə lav la vwatyʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lave", base: "laver" }, { word: "la", base: "la" }, { word: "voiture", base: "voiture" }] }
+      - { target: "Il lave les mains.", ipa: "il lav le mɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "lave", base: "laver" }, { word: "les", ref: "fr-0043" }, { word: "mains", ref: "fr-0038" }] }
+  - id: "fr-0297"
+    target: "nettoyer"
+    ipa: "netwaje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je nettoie la maison.", ipa: "ʒə netwa la mɛzɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "nettoie", base: "nettoyer" }, { word: "la", base: "la" }, { word: "maison", base: "maison" }] }
+      - { target: "Vous nettoyez la table ?", ipa: "vu netwaje la tabl", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "nettoyez", base: "nettoyer" }, { word: "la", base: "la" }, { word: "table", base: "table" }] }
+  - id: "fr-0298"
+    target: "ouvrir"
+    ipa: "uvʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ouvre la porte.", ipa: "ʒuvʁ la pɔʁt", bases: [{ word: "J'ouvre", base: "ouvrir" }, { word: "la", base: "la" }, { word: "porte", base: "porte" }] }
+      - { target: "Ouvrez la fenêtre.", ipa: "uvʁe la fənɛtʁ", bases: [{ word: "Ouvrez", base: "ouvrir" }, { word: "la", base: "la" }, { word: "fenêtre", base: "fenêtre" }] }
+  - id: "fr-0299"
+    target: "fermer"
+    ipa: "fɛʁme"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je ferme la porte.", ipa: "ʒə fɛʁm la pɔʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ferme", base: "fermer" }, { word: "la", base: "la" }, { word: "porte", base: "porte" }] }
+      - { target: "Fermez la fenêtre !", ipa: "fɛʁme la fənɛtʁ", bases: [{ word: "Fermez", base: "fermer" }, { word: "la", base: "la" }, { word: "fenêtre", base: "fenêtre" }] }
+  - id: "fr-0300"
+    target: "chercher"
+    ipa: "ʃɛʁʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je cherche la gare.", ipa: "ʒə ʃɛʁʃ la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", base: "chercher" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Vous cherchez quoi ?", ipa: "vu ʃɛʁʃe kwa", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "cherchez", base: "chercher" }, { word: "quoi", ref: "fr-0066" }] }
+  - id: "fr-0301"
+    target: "trouver"
+    ipa: "tʁuve"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je trouve mon téléphone.", ipa: "ʒə tʁuv mɔ̃ telefɔn", bases: [{ word: "Je", ref: "fr-0126" }, { word: "trouve", base: "trouver" }, { word: "mon", ref: "fr-0037" }, { word: "téléphone", ref: "fr-0257" }] }
+      - { target: "Tu trouves la gare ?", ipa: "ty tʁuv la ɡaʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "trouves", base: "trouver" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+  - id: "fr-0302"
+    target: "donner"
+    ipa: "dɔne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je donne un livre à Paul.", ipa: "ʒə dɔn œ̃ livʁ a pɔl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "donne", base: "donner" }, { word: "un", base: "un" }, { word: "livre", base: "livre" }, { word: "à", base: "à" }, { word: "Paul", base: "Paul" }] }
+      - { target: "Donnez-moi un café.", ipa: "dɔne mwa œ̃ kafe", bases: [{ word: "Donnez", base: "donner" }, { word: "moi", ref: "fr-0133" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
+  - id: "fr-0303"
+    target: "attendre"
+    ipa: "atɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'attends le train.", ipa: "ʒatɑ̃ lə tʁɛ̃", bases: [{ word: "J'attends", base: "attendre" }, { word: "le", base: "le" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Attendez un moment.", ipa: "atɑ̃de œ̃ mɔmɑ̃", bases: [{ word: "Attendez", base: "attendre" }, { word: "un", base: "un" }, { word: "moment", base: "moment" }] }
+  - id: "fr-0304"
+    target: "partir"
+    ipa: "paʁtiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train part demain.", ipa: "lə tʁɛ̃ paʁ dəmɛ̃", bases: [{ word: "Le", base: "le" }, { word: "train", ref: "fr-0076" }, { word: "part", base: "partir" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Nous partons à huit heures.", ipa: "nu paʁtɔ̃ a ɥit œʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "partons", base: "partir" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-0305"
+    target: "arriver"
+    ipa: "aʁive"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bus arrive ici.", ipa: "lə bys aʁiv isi", bases: [{ word: "Le", base: "le" }, { word: "bus", base: "bus" }, { word: "arrive", base: "arriver" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "J'arrive à la gare.", ipa: "ʒaʁiv a la ɡaʁ", bases: [{ word: "J'arrive", base: "arriver" }, { word: "à", base: "à" }, { word: "la", base: "la" }, { word: "gare", ref: "fr-0075" }] }
+  - id: "fr-0306"
+    target: "marcher"
+    ipa: "maʁʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je marche à pied.", ipa: "ʒə maʁʃ a pje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "marche", base: "marcher" }, { word: "à", base: "à" }, { word: "pied", base: "pied" }] }
+      - { target: "Il marche vite.", ipa: "il maʁʃ vit", bases: [{ word: "Il", ref: "fr-0127" }, { word: "marche", base: "marcher" }, { word: "vite", base: "vite" }] }
+  - id: "fr-0307"
+    target: "courir"
+    ipa: "kuʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je cours au parc.", ipa: "ʒə kuʁ o paʁk", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cours", base: "courir" }, { word: "au", base: "à" }, { word: "parc", base: "parc" }] }
+      - { target: "Les enfants courent.", ipa: "le zɑ̃fɑ̃ kuʁ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "enfants", base: "enfant" }, { word: "courent", base: "courir" }] }
+  - id: "fr-0308"
+    target: "jouer"
+    ipa: "ʒwe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il joue au football.", ipa: "il ʒu o futbol", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", base: "jouer" }, { word: "au", base: "à" }, { word: "football", base: "football" }] }
+      - { target: "Nous jouons de la musique.", ipa: "nu ʒwɔ̃ də la myzik", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "jouons", base: "jouer" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "musique", ref: "fr-0266" }] }
+  - id: "fr-0309"
+    target: "cuisiner"
+    ipa: "kɥizine"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je cuisine le soir.", ipa: "ʒə kɥizin lə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cuisine", base: "cuisiner" }, { word: "le", base: "le" }, { word: "soir", base: "soir" }] }
+      - { target: "Ma mère cuisine bien.", ipa: "ma mɛʁ kɥizin bjɛ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "mère", ref: "fr-0166" }, { word: "cuisine", base: "cuisiner" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-0310"
+    target: "payer"
+    ipa: "peje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je paie le café.", ipa: "ʒə pe lə kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", base: "payer" }, { word: "le", base: "le" }, { word: "café", base: "café" }] }
+      - { target: "Vous payez combien ?", ipa: "vu peje kɔ̃bjɛ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "payez", base: "payer" }, { word: "combien", ref: "fr-0071" }] }
+  - id: "fr-0311"
+    target: "vouloir"
+    ipa: "vulwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je veux un café.", ipa: "ʒə vø œ̃ kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "un", base: "un" }, { word: "café", base: "café" }] }
+      - { target: "Voulez-vous un thé ?", ipa: "vule vu œ̃ te", bases: [{ word: "Voulez", base: "vouloir" }, { word: "vous", ref: "fr-0096" }, { word: "un", base: "un" }, { word: "thé", base: "thé" }] }

@@ -1,0 +1,43 @@
+schema: 1
+id: "bn-en-grammar-conjunctive-sentences"
+kind: "layer"
+core: "bn-grammar-conjunctive-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Conjunctive verbs: sentences"
+description: "Sentences that chain two actions with the -e form. They unlock once their words and the rule are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2539":
+    native: "I have a bath and then eat."
+    bases: { "স্নান": "bath" }
+    confusables: { "c1": { why: "I sit: a different action" }, "c2": { why: "story: not a bath" } }
+  "bn-2540":
+    native: "She reads a book and then sleeps."
+    bases: { "ঘুমায়": "to sleep" }
+    confusables: { "c1": { why: "I eat: a different action" }, "c2": { why: "home: not a way of sleeping" } }
+  "bn-2541":
+    native: "I went to the shop and bought milk."
+    confusables: { "c1": { why: "at home: a different place" }, "c2": { why: "sold: the opposite action" } }
+  "bn-2542":
+    native: "Eat and then go out. (familiar)"
+    confusables: { "c1": { why: "eat! (familiar): the command on its own, not the sequence" }, "c2": { why: "home: a place, not an action" } }
+  "bn-2543":
+    native: "I lie in bed and listen to a story."
+    confusables: { "c1": { why: "I sit: a different position" }, "c2": { why: "I eat: not listening" } }
+  "bn-2544":
+    native: "She answered the phone and spoke."
+    confusables: { "c1": { why: "caught; took: the past form on its own" }, "c2": { why: "put down: a different action" } }
+  "bn-2545":
+    native: "Mother cooks and then calls us. (respectful)"
+    bases: { "আমাদের": "we; us" }
+    confusables: { "c1": { why: "eats, respectful: not calling" }, "c2": { why: "goes, respectful: not calling" } }
+  "bn-2546":
+    native: "I got up and stood."
+    confusables: { "c1": { why: "sat down: the opposite action" }, "c2": { why: "lay down: a different action" } }
+  "bn-2547":
+    native: "Father comes home from the office and then drinks tea. (respectful)"
+    confusables: { "c1": { why: "goes, respectful: not comes" }, "c2": { why: "at home: the place, not the action" } }
+  "bn-2548":
+    native: "I got the money and then went to the shop."
+    confusables: { "c1": { why: "with or by: a different link" }, "c2": { why: "spending: not getting" } }

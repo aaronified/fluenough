@@ -1,0 +1,119 @@
+schema: 1
+id: "hi-cooking-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-1546"
+    target: "आटा गूँधो, रोटी बेलो और तवे पर सेंको।"
+    reading: "āṭā gūm̐dhō, rōṭī bēlō aur tavē par sēṅkō."
+    ipa: "aːʈaː ɡũːd̪ʱoː roːʈiː beːloː ɔːr t̪əʋeː pər seːŋkoː"
+    phonetic: "[aːʈaː ɡũːd̪ʱoː roːʈiː beːloː ɔːr t̪əʋeː pər seːŋkoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "आटा", "ref": "hi-1509" }, { "word": "गूँधो", "base": "गूँधना", "reading": "gūm̐dhanā" }, { "word": "रोटी", "ref": "hi-0335" }, { "word": "बेलो", "base": "बेलना", "reading": "bēlnā" }, { "word": "और", "ref": "hi-0337" }, { "word": "तवे", "base": "तवा", "reading": "tavā" }, { "word": "पर", "ref": "hi-0275" }, { "word": "सेंको", "base": "सेंकना", "reading": "sēṅkanā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1496", kind: "word" }
+      - { id: "f2", word: "बेलना", reading: "bēlnā", ipa: "beːlnaː", kind: "form" }
+  - id: "hi-1547"
+    target: "दाल में हल्दी और नमक डालो।"
+    reading: "dāl mēm̐ haldī aur namak ḍālō."
+    ipa: "d̪aːl mẽː ɦəld̪iː ɔːr nəmək ɖaːloː"
+    phonetic: "[d̪aːl mẽː ɦəld̪iː ɔːr nəmək ɖaːloː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "दाल", "ref": "hi-0261" }, { "word": "में", "ref": "hi-0274" }, { "word": "हल्दी", "ref": "hi-1505" }, { "word": "और", "ref": "hi-0337" }, { "word": "नमक", "ref": "hi-0051" }, { "word": "डालो", "base": "डालना", "reading": "ḍālnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-0253", kind: "word" }
+      - { id: "f2", word: "डालना", reading: "ḍālnā", ipa: "ɖaːlnaː", kind: "form" }
+  - id: "hi-1548"
+    target: "जीरा तेल में भूनो।"
+    reading: "jīrā tēl mēm̐ bhūnō."
+    ipa: "dʒiːraː t̪eːl mẽː bʱuːnoː"
+    phonetic: "[dʒiːraː t̪eːl mẽː bʱuːnoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "जीरा", "ref": "hi-1506" }, { "word": "तेल", "ref": "hi-1021" }, { "word": "में", "ref": "hi-0274" }, { "word": "भूनो", "base": "भूनना", "reading": "bhūnnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1505", kind: "word" }
+      - { id: "f2", word: "भूनना", reading: "bhūnnā", ipa: "bʱuːnnaː", kind: "form" }
+  - id: "hi-1549"
+    target: "गोभी और पालक की सब्ज़ी बनाओ।"
+    reading: "gōbhī aur pālak kī sabzī banāō."
+    ipa: "ɡoːbʱiː ɔːr paːlək kiː səbziː bənaːoː"
+    phonetic: "[ɡoːbʱiː ɔːr paːlək kiː səbziː bənaːoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "गोभी", "ref": "hi-1512" }, { "word": "और", "ref": "hi-0337" }, { "word": "पालक", "ref": "hi-1513" }, { "word": "की", "ref": "hi-0061" }, { "word": "सब्ज़ी", "ref": "hi-0249" }, { "word": "बनाओ", "base": "बनाना", "reading": "banānā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1514", kind: "word" }
+      - { id: "f2", word: "बनाना", reading: "banānā", ipa: "bənaːnaː", kind: "form" }
+  - id: "hi-1550"
+    target: "कटोरे में दही और चीनी मिलाओ।"
+    reading: "kaṭōrē mēm̐ dahī aur cīnī milāō."
+    ipa: "kəʈoːreː mẽː d̪əɦiː ɔːr tʃiːniː mɪlaːoː"
+    phonetic: "[kəʈoːreː mẽː d̪əɦiː ɔːr tʃiːniː mɪlaːoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "कटोरे", "base": "कटोरा", "reading": "kaṭōrā" }, { "word": "में", "ref": "hi-0274" }, { "word": "दही", "ref": "hi-1012" }, { "word": "और", "ref": "hi-0337" }, { "word": "चीनी", "ref": "hi-1015" }, { "word": "मिलाओ", "base": "मिलाना", "reading": "milānā" }]
+    confusables:
+      - { id: "w1", ref: "hi-0051", kind: "word" }
+      - { id: "f2", word: "मिलाए", reading: "milāē", ipa: "mɪlaːeː", kind: "form" }
+  - id: "hi-1551"
+    target: "चाकू से प्याज़ काटो और प्लेट में परोसो।"
+    reading: "cākū sē pyāz kāṭō aur plēṭ mēm̐ parōsō."
+    ipa: "tʃaːkuː seː pjaːz kaːʈoː ɔːr pleːʈ mẽː pəroːsoː"
+    phonetic: "[tʃaːkuː seː pjaːz kaːʈoː ɔːr pleːʈ mẽː pəroːsoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "चाकू", "ref": "hi-1520" }, { "word": "से", "ref": "hi-0276" }, { "word": "प्याज़", "ref": "hi-0251" }, { "word": "काटो", "base": "काटना", "reading": "kāṭnā" }, { "word": "और", "ref": "hi-0337" }, { "word": "प्लेट", "ref": "hi-1519" }, { "word": "में", "ref": "hi-0274" }, { "word": "परोसो", "base": "परोसना", "reading": "parōsnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1525", kind: "word" }
+      - { id: "f2", word: "परोसना", reading: "parōsnā", ipa: "pəroːsnaː", kind: "form" }
+  - id: "hi-1552"
+    target: "पकौड़े तेल में तलो, फिर गरम परोसो।"
+    reading: "pakauṛē tēl mēm̐ talō, phir garam parōsō."
+    ipa: "pəkɔːɽeː t̪eːl mẽː t̪əloː pʰɪr ɡərəm pəroːsoː"
+    phonetic: "[pəkɔːɽeː t̪eːl mẽː t̪əloː pʰɪr ɡərəm pəroːsoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "पकौड़े", "base": "पकौड़ा", "reading": "pakauṛā" }, { "word": "तेल", "ref": "hi-1021" }, { "word": "में", "ref": "hi-0274" }, { "word": "तलो", "base": "तलना", "reading": "talnā" }, { "word": "फिर", "base": "फिर", "reading": "phir" }, { "word": "गरम", "ref": "hi-0910" }, { "word": "परोसो", "base": "परोसना", "reading": "parōsnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1497", kind: "word" }
+      - { id: "f2", word: "तले", reading: "talē", ipa: "t̪əleː", kind: "form" }
+  - id: "hi-1553"
+    target: "मसाला पीसो और तवे पर भूनो।"
+    reading: "masālā pīsō aur tavē par bhūnō."
+    ipa: "məsaːlaː piːsoː ɔːr t̪əʋeː pər bʱuːnoː"
+    phonetic: "[məsaːlaː piːsoː ɔːr t̪əʋeː pər bʱuːnoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "मसाला", "ref": "hi-1508" }, { "word": "पीसो", "base": "पीसना", "reading": "pīsnā" }, { "word": "और", "ref": "hi-0337" }, { "word": "तवे", "base": "तवा", "reading": "tavā" }, { "word": "पर", "ref": "hi-0275" }, { "word": "भूनो", "base": "भूनना", "reading": "bhūnnā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1500", kind: "word" }
+      - { id: "f2", word: "पीसे", reading: "pīsē", ipa: "piːseː", kind: "form" }
+  - id: "hi-1554"
+    target: "खिचड़ी धीमी गैस पर पकाओ।"
+    reading: "khicṛī dhīmī gais par pakāō."
+    ipa: "kʰɪtʃɽiː d̪ʱiːmiː ɡɛːs pər pəkaːoː"
+    phonetic: "[kʰɪtʃɽiː d̪ʱiːmiː ɡɛːs pər pəkaːoː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "खिचड़ी", "ref": "hi-1511" }, { "word": "धीमी", "base": "धीमा", "reading": "dhīmā" }, { "word": "गैस", "ref": "hi-1523" }, { "word": "पर", "ref": "hi-0275" }, { "word": "पकाओ", "base": "पकाना", "reading": "pakānā" }]
+    confusables:
+      - { id: "w1", ref: "hi-1524", kind: "word" }
+      - { id: "f2", word: "धीमा", reading: "dhīmā", ipa: "d̪ʱiːmaː", kind: "form" }
+  - id: "hi-1555"
+    target: "ढक्कन खोलो तो भाप निकलती है।"
+    reading: "ḍhakkan khōlō tō bhāp nikltī hai."
+    ipa: "ɖʱəkkən kʰoːloː t̪oː bʱaːp nɪklt̪iː ɦɛː"
+    phonetic: "[ɖʱəkkən kʰoːloː t̪oː bʱaːp nɪklt̪iː ɦɛː]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ "word": "ढक्कन", "base": "ढक्कन", "reading": "ḍhakkan" }, { "word": "खोलो", "base": "खोलना", "reading": "khōlnā" }, { "word": "तो", "base": "तो", "reading": "tō" }, { "word": "भाप", "ref": "hi-1529" }, { "word": "निकलती", "base": "निकलना", "reading": "niklnā" }, { "word": "है", "ref": "hi-0112" }]
+    confusables:
+      - { id: "w1", ref: "hi-0333", kind: "word" }
+      - { id: "f2", word: "निकलता", reading: "nikltā", ipa: "nɪklt̪aː", kind: "form" }
