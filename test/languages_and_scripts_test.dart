@@ -1744,8 +1744,11 @@ void main() {
         DrillMode.listening,
         DrillMode.speaking,
       };
+      // Answering right throughout, five clean answers jump the walk to the
+      // last deck, and the written questions come from the last three decks
+      // from the one past the last cleared: here w6, sounds and w7.
       final decks = <DeckEntry>[
-        for (var i = 0; i < 6; i++) deckOf('w$i', cards('w$i', 'word')),
+        for (var i = 0; i < 7; i++) deckOf('w$i', cards('w$i', 'word')),
         deckOf(
           'sounds',
           cards(
@@ -1754,6 +1757,7 @@ void main() {
             modes: noProduction,
           ),
         ),
+        deckOf('w7', cards('w7', 'word')),
       ];
       for (var seed = 0; seed < 20; seed++) {
         final walk = DeckWalk(decks, random: Random(seed));
