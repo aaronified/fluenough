@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-phone-sentences"
+kind: "layer"
+core: "es-phone-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: phone"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about phones and messages, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1678":
+    native: "I get a call and answer it."
+    bases: { "una": "a" }
+    confusables: { "llamar": { why: "Llamar is to call, the action of the caller." }, "colgar": { why: "Colgar is to hang up, the end of the call." } }
+  "es-1679":
+    native: "I send a message with the photo."
+    bases: { "un": "a", "con": "with", "la": "the" }
+    confusables: { "correo": { why: "Correo is an email, a longer written message." }, "llamada": { why: "Llamada is a phone call, spoken rather than written." } }
+  "es-1680":
+    native: "The battery is almost empty."
+    bases: { "La": "the" }
+    confusables: { "cargador": { why: "Cargador is the charger, the thing you plug in." }, "apagar": { why: "Apagar is to switch off, not to charge." } }
+  "es-1681":
+    native: "There is no signal and the connection is slow."
+    bases: { "hay": "there is; there are", "la": "the" }
+    confusables: { "internet": { why: "Internet is the network itself, the service." }, "wifi": { why: "Wifi is a local connection in the house." } }
+  "es-1682":
+    native: "I delete the video and switch off the screen."
+    bases: { "el": "the", "la": "the" }
+    confusables: { "encender": { why: "Encender is to switch on, the opposite of apagar." }, "descargar": { why: "Descargar is to download, the opposite of deleting." } }
+  "es-1683":
+    native: "I forget the email password."
+    bases: { "la": "the", "del": "of" }
+    confusables: { "perfil": { why: "Perfil is the profile, not the password." }, "usuario": { why: "Usuario is the user name, the account holder." } }

@@ -1,0 +1,50 @@
+schema: 1
+id: "es-verbs-4-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2927"
+    target: "Descubro un secreto y me escondo."
+    ipa: "desˈkubɾo un seˈkɾeto i me esˈkondo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Descubro", ref: "es-2908" }, { word: "un", base: "un" }, { word: "secreto", ref: "es-2894" }, { word: "y", ref: "es-0048" }, { word: "me", base: "me" }, { word: "escondo", ref: "es-2911" }]
+    confusables: [{ id: "ocultar", ref: "es-2920", kind: "word" }, { id: "encontrar", ref: "es-0723", kind: "word" }]
+  - id: "es-2928"
+    target: "El zorro escapa del dragón."
+    ipa: "el ˈθoro esˈkapa del dɾaˈɡon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "zorro", ref: "es-2901" }, { word: "escapa", ref: "es-2909" }, { word: "del", base: "del" }, { word: "dragón", ref: "es-2898" }]
+    confusables: [{ id: "huir", ref: "es-2921", kind: "word" }, { id: "perseguir", ref: "es-2910", kind: "word" }]
+  - id: "es-2929"
+    target: "Gritan desde la ventana, pero susurran al entrar."
+    ipa: "ˈɡɾitan ˈdesde la benˈtana ˈpeɾo suˈsuran al enˈtɾaɾ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Gritan", ref: "es-2913" }, { word: "desde", base: "desde" }, { word: "la", base: "la" }, { word: "ventana", ref: "es-0008" }, { word: "pero", ref: "es-0050" }, { word: "susurran", ref: "es-2914" }, { word: "al", base: "al" }, { word: "entrar", ref: "es-0788" }]
+    confusables: [{ id: "gritar", ref: "es-2913", kind: "word" }, { id: "hablar", ref: "es-0027", kind: "word" }]
+  - id: "es-2930"
+    target: "Empujo la puerta y caigo al suelo."
+    ipa: "emˈpuxo la ˈpweɾta i ˈkajɡo al ˈswelo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Empujo", ref: "es-2917" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }, { word: "y", ref: "es-0048" }, { word: "caigo", ref: "es-2915" }, { word: "al", base: "al" }, { word: "suelo", ref: "es-0819" }]
+    confusables: [{ id: "pegar", ref: "es-2916", kind: "word" }, { id: "correr", ref: "es-1068", kind: "word" }]
+  - id: "es-2931"
+    target: "Amanece y el dragón huye."
+    ipa: "amaˈneθe i el dɾaˈɡon ˈuʝe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Amanece", ref: "es-2924" }, { word: "y", ref: "es-0048" }, { word: "el", base: "el" }, { word: "dragón", ref: "es-2898" }, { word: "huye", ref: "es-2921" }]
+    confusables: [{ id: "oscurecer", ref: "es-2923", kind: "word" }, { id: "anochecer", ref: "es-2925", kind: "word" }]
+  - id: "es-2932"
+    target: "Observo el tesoro desde la cueva."
+    ipa: "obˈseɾbo el teˈsoɾo ˈdesde la ˈkweba"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Observo", ref: "es-2918" }, { word: "el", base: "el" }, { word: "tesoro", ref: "es-2902" }, { word: "desde", base: "desde" }, { word: "la", base: "la" }, { word: "cueva", ref: "es-1775" }]
+    confusables: [{ id: "mirar", ref: "es-0292", kind: "word" }, { id: "abrazar", ref: "es-2912", kind: "word" }]

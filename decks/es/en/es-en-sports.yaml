@@ -1,0 +1,198 @@
+schema: 1
+id: "es-en-sports"
+kind: "layer"
+core: "es-sports"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sports: games, teams, matches and medals"
+license: "CC-BY-SA-4.0"
+description: "Words for sport: the goal and the goalkeeper, the referee and the players, the score and the win, the defeat and the draw, the stadium and the track, the medal and the record, and the verbs to jump, throw and compete. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2691":
+    native: "goal"
+    notes: { n1: "El gol is a goal in football, hockey or another game with a net. The plural is goles." }
+    bases: { "el": "the", "gol": "goal" }
+    examples:
+      "Marca un gol en el último minuto.": { native: "He scores a goal in the last minute.", bases: { "un": "a", "gol": "goal", "en": "in", "el": "the", "último": "last", "Marca": "to score; to mark" } }
+      "El gol es muy bonito.": { native: "The goal is very beautiful.", bases: { "El": "the", "gol": "goal" } }
+  "es-2692":
+    native: "goalkeeper"
+    notes: { n1: "El portero is a goalkeeper, the player who stops the ball in the goal. The feminine is la portera." }
+    bases: { "el": "the", "portero": "goalkeeper" }
+    examples:
+      "El portero para el balón.": { native: "The goalkeeper stops the ball.", bases: { "El": "the", "portero": "goalkeeper", "para": "for", "balón": "ball" } }
+      "El portero es muy alto.": { native: "The goalkeeper is very tall.", bases: { "El": "the", "portero": "goalkeeper" } }
+  "es-2693":
+    native: "referee"
+    notes: { n1: "El árbitro is a referee, who makes sure the rules of a game are kept. The feminine is la árbitra." }
+    bases: { "el": "the", "árbitro": "referee" }
+    examples:
+      "El árbitro pita el final.": { native: "The referee blows the final whistle.", bases: { "El": "the", "árbitro": "referee", "pita": "to blow a whistle", "final": "end" } }
+      "El árbitro es justo.": { native: "The referee is fair.", bases: { "El": "the", "árbitro": "referee" } }
+  "es-2694":
+    native: "player"
+    notes: { n1: "El jugador is a player in a game or sport. The feminine is la jugadora." }
+    bases: { "el": "the", "jugador": "player" }
+    examples:
+      "El jugador corre con la pelota.": { native: "The player runs with the ball.", bases: { "El": "the", "jugador": "player", "con": "with", "la": "the" } }
+      "Mi hermana es jugadora de tenis.": { native: "My sister is a tennis player.", bases: { "jugadora": "player", "de": "of" } }
+  "es-2695":
+    native: "champion"
+    notes: { n1: "El campeón is a champion, the winner of a competition. The feminine is la campeona." }
+    bases: { "el": "the", "campeón": "champion" }
+    examples:
+      "El campeón gana la copa.": { native: "The champion wins the cup.", bases: { "El": "the", "campeón": "champion", "la": "the", "copa": "cup (trophy)" } }
+      "Es el campeón del mundo.": { native: "He is the world champion.", bases: { "el": "the", "campeón": "champion", "del": "of" } }
+  "es-2696":
+    native: "championship"
+    notes: { n1: "El campeonato is a championship, a series of games to find the best team." }
+    bases: { "el": "the", "campeonato": "championship" }
+    examples:
+      "El campeonato empieza en mayo.": { native: "The championship starts in May.", bases: { "El": "the", "campeonato": "championship", "en": "in" } }
+      "Ganamos el campeonato.": { native: "We win the championship.", bases: { "el": "the", "campeonato": "championship" } }
+  "es-2697":
+    native: "league"
+    notes: { n1: "La liga is a league, a group of teams that play against each other over a season." }
+    bases: { "la": "the", "liga": "league" }
+    examples:
+      "La liga tiene veinte equipos.": { native: "The league has twenty teams.", bases: { "La": "the", "liga": "league" } }
+      "Juega en la liga nacional.": { native: "He plays in the national league.", bases: { "en": "in", "la": "the", "liga": "league", "nacional": "national" } }
+  "es-2698":
+    native: "medal"
+    notes: { n1: "La medalla is a medal, given to the winner of a race or competition." }
+    bases: { "la": "the", "medalla": "medal" }
+    examples:
+      "Gana una medalla de plata.": { native: "She wins a silver medal.", bases: { "una": "a", "medalla": "medal", "de": "of", "plata": "silver" } }
+      "La medalla es de oro.": { native: "The medal is gold.", bases: { "La": "the", "medalla": "medal", "de": "of", "oro": "gold" } }
+  "es-2699":
+    native: "victory; win"
+    notes: { n1: "La victoria is a victory, a win over an opponent. Its opposite is la derrota." }
+    bases: { "la": "the", "victoria": "victory; win" }
+    examples:
+      "La victoria es nuestra.": { native: "The victory is ours.", bases: { "La": "the", "victoria": "victory; win", "nuestra": "our" } }
+      "Celebramos la victoria.": { native: "We celebrate the victory.", bases: { "la": "the", "victoria": "victory; win" } }
+  "es-2700":
+    native: "defeat; loss"
+    notes: { n1: "La derrota is a defeat, a loss in a match or a battle. Its opposite is la victoria." }
+    bases: { "la": "the", "derrota": "defeat; loss" }
+    examples:
+      "Sufrimos una derrota.": { native: "We suffer a defeat.", bases: { "Sufrimos": "to suffer", "una": "a", "derrota": "defeat; loss" } }
+      "La derrota es dura.": { native: "The defeat is hard.", bases: { "La": "the", "derrota": "defeat; loss" } }
+  "es-2701":
+    native: "draw; tie"
+    notes: { n1: "El empate is a draw, when the two teams have the same score at the end." }
+    bases: { "el": "the", "empate": "draw; tie" }
+    examples:
+      "Hay un empate a dos.": { native: "It is a two-two draw.", bases: { "Hay": "there is; there are", "un": "a", "empate": "draw; tie", "a": "to" } }
+      "El empate no es malo.": { native: "The draw is not bad.", bases: { "El": "the", "empate": "draw; tie" } }
+  "es-2702":
+    native: "scoreboard; score"
+    notes: { n1: "El marcador is the scoreboard, which shows the score of a game." }
+    bases: { "el": "the", "marcador": "scoreboard; score" }
+    examples:
+      "El marcador dice uno a cero.": { native: "The scoreboard says one nil.", bases: { "El": "the", "marcador": "scoreboard; score", "a": "to" } }
+      "Miro el marcador al final.": { native: "I look at the scoreboard at the end.", bases: { "el": "the", "marcador": "scoreboard; score", "al": "to the", "final": "end" } }
+  "es-2703":
+    native: "stadium"
+    notes: { n1: "El estadio is a stadium, a large place for sports with seats for many people." }
+    bases: { "el": "the", "estadio": "stadium" }
+    examples:
+      "El estadio está lleno.": { native: "The stadium is full.", bases: { "El": "the", "estadio": "stadium" } }
+      "Vamos al estadio el domingo.": { native: "We go to the stadium on Sunday.", bases: { "al": "to the", "estadio": "stadium", "el": "the" } }
+  "es-2704":
+    native: "court; pitch"
+    notes: { n1: "La cancha is a court or pitch, the marked field for a game such as basketball or football." }
+    bases: { "la": "the", "cancha": "court; pitch" }
+    examples:
+      "La cancha es de madera.": { native: "The court is made of wood.", bases: { "La": "the", "cancha": "court; pitch", "de": "of" } }
+      "Jugamos en la cancha de la escuela.": { native: "We play on the school pitch.", bases: { "en": "in", "la": "the", "cancha": "court; pitch", "de": "of" } }
+  "es-2705":
+    native: "track; court"
+    notes: { n1: "La pista is a track, for running or cycling, or a court for tennis." }
+    bases: { "la": "the", "pista": "track; court" }
+    examples:
+      "La pista de atletismo es roja.": { native: "The athletics track is red.", bases: { "La": "the", "pista": "track; court", "de": "of", "atletismo": "athletics" } }
+      "Corro en la pista.": { native: "I run on the track.", bases: { "en": "in", "la": "the", "pista": "track; court" } }
+  "es-2706":
+    native: "fan; supporter"
+    notes: { n1: "El aficionado is a fan of a team or sport. The feminine is la aficionada." }
+    bases: { "el": "the", "aficionado": "fan; supporter" }
+    examples:
+      "El aficionado grita en el estadio.": { native: "The fan shouts in the stadium.", bases: { "El": "the", "aficionado": "fan; supporter", "grita": "to shout", "en": "in" } }
+      "Soy aficionada al fútbol.": { native: "I am a football fan.", bases: { "aficionada": "fan; supporter", "al": "to the" } }
+  "es-2707":
+    native: "athlete"
+    notes: { n1: "El atleta is an athlete, a person who competes in running, jumping or throwing. The feminine is la atleta." }
+    bases: { "el": "the", "atleta": "athlete" }
+    examples:
+      "El atleta corre muy rápido.": { native: "The athlete runs very fast.", bases: { "El": "the", "atleta": "athlete" } }
+      "La atleta gana el premio.": { native: "The athlete wins the prize.", bases: { "La": "the", "atleta": "athlete", "el": "the" } }
+  "es-2708":
+    native: "competition"
+    notes: { n1: "La competición is a competition, a contest between people or teams." }
+    bases: { "la": "the", "competición": "competition" }
+    examples:
+      "La competición empieza mañana.": { native: "The competition starts tomorrow.", bases: { "La": "the", "competición": "competition" } }
+      "Participo en una competición.": { native: "I take part in a competition.", bases: { "Participo": "to take part", "en": "in", "una": "a", "competición": "competition" } }
+  "es-2709":
+    native: "record"
+    notes: { n1: "El récord is a record, the best result ever. The plural is récords." }
+    bases: { "el": "the", "récord": "record" }
+    examples:
+      "Bate el récord del año.": { native: "She beats the record for the year.", bases: { "el": "the", "récord": "record", "del": "of" } }
+      "El récord es de hace diez años.": { native: "The record is from ten years ago.", bases: { "El": "the", "récord": "record", "de": "of" } }
+  "es-2710":
+    native: "ball"
+    notes: { n1: "La pelota is a ball, used in many games, such as tennis or football." }
+    bases: { "la": "the", "pelota": "ball" }
+    examples:
+      "Lanza la pelota.": { native: "Throw the ball.", bases: { "la": "the", "pelota": "ball" } }
+      "La pelota es blanca.": { native: "The ball is white.", bases: { "La": "the", "pelota": "ball" } }
+  "es-2711":
+    native: "racket"
+    notes: { n1: "La raqueta is a racket, used in tennis or badminton." }
+    bases: { "la": "the", "raqueta": "racket" }
+    examples:
+      "Compro una raqueta nueva.": { native: "I buy a new racket.", bases: { "una": "a", "raqueta": "racket" } }
+      "La raqueta es ligera.": { native: "The racket is light.", bases: { "La": "the", "raqueta": "racket" } }
+  "es-2712":
+    native: "rival; opponent"
+    notes: { n1: "El rival is a rival or opponent in a game or contest. The feminine is la rival." }
+    bases: { "el": "the", "rival": "rival; opponent" }
+    examples:
+      "El rival marca un gol.": { native: "The rival/rival scores a goal.", bases: { "El": "the", "rival": "rival; opponent", "un": "a" } }
+      "Mi rival es muy fuerte.": { native: "My rival/rival is very strong.", bases: { "rival": "rival; opponent" } }
+  "es-2713":
+    native: "winner"
+    notes: { n1: "El ganador is the winner of a game or race. The feminine is la ganadora." }
+    bases: { "el": "the", "ganador": "winner" }
+    examples:
+      "El ganador recibe la medalla.": { native: "The winner receives the medal.", bases: { "El": "the", "ganador": "winner", "la": "the" } }
+      "La ganadora sonríe.": { native: "The winner smiles.", bases: { "La": "the", "ganadora": "winner" } }
+  "es-2714":
+    native: "loser"
+    notes: { n1: "El perdedor is the loser in a game or contest. The feminine is la perdedora." }
+    bases: { "el": "the", "perdedor": "loser" }
+    examples:
+      "El perdedor felicita al ganador.": { native: "The loser congratulates the winner.", bases: { "El": "the", "perdedor": "loser", "felicita": "to congratulate", "al": "to the" } }
+      "No soy perdedor.": { native: "I am not a loser.", bases: { "perdedor": "loser" } }
+  "es-2715":
+    native: "to draw; to tie"
+    notes: { n1: "Empatar is to draw a game, to have the same score as the other team." }
+    bases: { "empatar": "to draw; to tie" }
+    examples:
+      "Empatamos dos a dos.": { native: "We draw two-two.", bases: { "Empatamos": "to draw; to tie", "a": "to" } }
+      "Empatan al final.": { native: "They draw at the end.", bases: { "Empatan": "to draw; to tie", "al": "to the", "final": "end" } }
+  "es-2716":
+    native: "to throw; to launch"
+    notes: { n1: "Lanzar is to throw a ball or an object hard, or to launch something." }
+    bases: { "lanzar": "to throw; to launch" }
+    examples:
+      "Lanzo la pelota.": { native: "I throw the ball.", bases: { "Lanzo": "to throw; to launch", "la": "the" } }
+      "El jugador lanza el disco.": { native: "The player throws the discus.", bases: { "El": "the", "lanza": "to throw; to launch", "disco": "discus" } }
+  "es-2717":
+    native: "to compete"
+    notes: { n1: "Competir is to compete in a race or a game against others. Its stem changes: compito." }
+    bases: { "competir": "to compete" }
+    examples:
+      "Compito en la carrera.": { native: "I compete in the race.", bases: { "Compito": "to compete", "en": "in", "la": "the", "carrera": "race" } }
+      "Compiten por la medalla.": { native: "They compete for the medal.", bases: { "Compiten": "to compete", "por": "for", "la": "the" } }

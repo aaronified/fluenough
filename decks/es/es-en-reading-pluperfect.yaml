@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-pluperfect"
+name: "Reading: a police report and a party"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that tell what had already happened before a later event. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-police-report"
+    title: "A short report of what had happened before"
+    theme: "news"
+    sentences:
+      - text: "Cuando llegamos, el ladrón ya se había ido."
+      - text: "La puerta estaba abierta; alguien había entrado."
+      - text: "Los vecinos habían visto un coche rojo."
+      - text: "Nadie había llamado a la policía."
+    questions:
+      - id: "es-2605"
+        prompt: { en: "What had the thief done before the arrival?" }
+        options:
+          - { en: "Left" }
+          - { en: "Entered the bank" }
+          - { en: "Came back" }
+        answer: 1
+      - id: "es-2606"
+        prompt: { en: "What had someone done?" }
+        options:
+          - { en: "Entered the house" }
+          - { en: "Closed the door" }
+          - { en: "Called the police" }
+        answer: 1
+      - id: "es-2607"
+        prompt: { en: "Who had seen a red car?" }
+        options:
+          - { en: "The neighbours" }
+          - { en: "The police" }
+          - { en: "The shop owner" }
+        answer: 1
+  - id: "es-before-the-party"
+    title: "Before the party"
+    theme: "daily-life"
+    sentences:
+      - text: "Cuando llegó Ana, ya habíamos cenado."
+      - text: "Mis amigos habían preparado la sala."
+      - text: "Yo había comprado el pastel."
+      - text: "Nadie había dicho nada."
+    questions:
+      - id: "es-2608"
+        prompt: { en: "What had the writer's group done when Ana arrived?" }
+        options:
+          - { en: "Eaten dinner" }
+          - { en: "Left" }
+          - { en: "Gone out" }
+        answer: 1
+      - id: "es-2609"
+        prompt: { en: "Who prepared the room?" }
+        options:
+          - { en: "The friends" }
+          - { en: "The writer" }
+          - { en: "Ana" }
+        answer: 1
+      - id: "es-2610"
+        prompt: { en: "What had the writer bought?" }
+        options:
+          - { en: "A cake" }
+          - { en: "A gift" }
+          - { en: "Flowers" }
+        answer: 1

@@ -1,0 +1,368 @@
+schema: 1
+id: "es-cinema"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "cinema"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2459"
+    target: "la película"
+    ipa: "la peˈlikula"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "película", base: "película" }]
+    examples:
+      - target: "La película empieza a las ocho."
+        ipa: "la peˈlikula emˈpjeθa a las ˈotʃo"
+        bases: [{ word: "La", base: "la" }, { word: "película", base: "película" }, { word: "empieza", ref: "es-0852" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+      - target: "Vemos una película juntos."
+        ipa: "ˈbemos ˈuna peˈlikula ˈxuntos"
+        bases: [{ word: "Vemos", ref: "es-1625" }, { word: "una", base: "una" }, { word: "película", base: "película" }, { word: "juntos", base: "juntos" }]
+  - id: "es-2460"
+    target: "el guion"
+    ipa: "el ɡjon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "guion", base: "guion" }]
+    examples:
+      - target: "El guion es muy bueno."
+        ipa: "el ɡjon es mwi ˈbweno"
+        bases: [{ word: "El", base: "el" }, { word: "guion", base: "guion" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bueno", ref: "es-0033" }]
+      - target: "La directora escribe el guion."
+        ipa: "la diɾekˈtoɾa esˈkɾibe el ɡjon"
+        bases: [{ word: "La", base: "la" }, { word: "directora", ref: "es-1856" }, { word: "escribe", ref: "es-0297" }, { word: "el", base: "el" }, { word: "guion", base: "guion" }]
+  - id: "es-2461"
+    target: "la escena"
+    ipa: "la esˈθena"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "escena", base: "escena" }]
+    examples:
+      - target: "La escena es muy triste."
+        ipa: "la esˈθena es mwi ˈtɾiste"
+        bases: [{ word: "La", base: "la" }, { word: "escena", base: "escena" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "triste", ref: "es-0419" }]
+      - target: "Esta escena es la mejor."
+        ipa: "ˈesta esˈθena es la meˈxoɾ"
+        bases: [{ word: "Esta", base: "esta" }, { word: "escena", base: "escena" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "mejor", base: "mejor" }]
+  - id: "es-2462"
+    target: "el estreno"
+    ipa: "el esˈtɾeno"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "estreno", base: "estreno" }]
+    examples:
+      - target: "El estreno es el viernes."
+        ipa: "el esˈtɾeno es el ˈbjeɾnes"
+        bases: [{ word: "El", base: "el" }, { word: "estreno", base: "estreno" }, { word: "es", ref: "es-0022" }, { word: "viernes", ref: "es-0962" }]
+      - target: "Voy al estreno de la película."
+        ipa: "boj al esˈtɾeno de la peˈlikula"
+        bases: [{ word: "Voy", ref: "es-0026" }, { word: "al", base: "al" }, { word: "estreno", base: "estreno" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "película", ref: "es-2459" }]
+  - id: "es-2463"
+    target: "la sala"
+    ipa: "la ˈsala"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sala", base: "sala" }]
+    examples:
+      - target: "La sala tres está llena."
+        ipa: "la ˈsala tɾes esˈta ˈʝena"
+        bases: [{ word: "La", base: "la" }, { word: "sala", base: "sala" }, { word: "tres", ref: "es-0207" }, { word: "está", ref: "es-0023" }, { word: "llena", ref: "es-0427" }]
+      - target: "Esta sala es muy grande."
+        ipa: "ˈesta ˈsala es mwi ˈɡɾande"
+        bases: [{ word: "Esta", base: "esta" }, { word: "sala", base: "sala" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2464"
+    target: "el espectador"
+    ipa: "el espektaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "espectador", base: "espectador" }]
+    examples:
+      - target: "El espectador ríe con la comedia."
+        ipa: "el espektaˈdoɾ ˈrie kon la koˈmedja"
+        bases: [{ word: "El", base: "el" }, { word: "espectador", base: "espectador" }, { word: "ríe", ref: "es-1582" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "comedia", ref: "es-2469" }]
+      - target: "Hay muchos espectadores hoy."
+        ipa: "aj ˈmutʃos espektaˈdoɾes oj"
+        bases: [{ word: "Hay", base: "haber" }, { word: "muchos", ref: "es-0053" }, { word: "espectadores", base: "espectador" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-2465"
+    target: "el público"
+    ipa: "el ˈpubliko"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "público", base: "público" }]
+    examples:
+      - target: "El público aplaude al final."
+        ipa: "el ˈpubliko aˈplawde al fiˈnal"
+        bases: [{ word: "El", base: "el" }, { word: "público", base: "público" }, { word: "aplaude", base: "aplaudir" }, { word: "al", base: "al" }, { word: "final", base: "final" }]
+      - target: "El público quiere ver la película."
+        ipa: "el ˈpubliko ˈkjeɾe beɾ la peˈlikula"
+        bases: [{ word: "El", base: "el" }, { word: "público", base: "público" }, { word: "quiere", ref: "es-0661" }, { word: "ver", ref: "es-1625" }, { word: "la", base: "la" }, { word: "película", ref: "es-2459" }]
+  - id: "es-2466"
+    target: "el premio"
+    ipa: "el ˈpɾemjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "premio", base: "premio" }]
+    examples:
+      - target: "Gana un premio en el festival."
+        ipa: "ˈɡana un ˈpɾemjo en el festiˈbal"
+        bases: [{ word: "Gana", ref: "es-0520" }, { word: "un", base: "un" }, { word: "premio", base: "premio" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "festival", ref: "es-2467" }]
+      - target: "El premio es para la mejor actriz."
+        ipa: "el ˈpɾemjo es ˈpaɾa la meˈxoɾ akˈtɾiθ"
+        bases: [{ word: "El", base: "el" }, { word: "premio", base: "premio" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "mejor", base: "mejor" }, { word: "actriz", ref: "es-2382" }]
+  - id: "es-2467"
+    target: "el festival"
+    ipa: "el festiˈbal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "festival", base: "festival" }]
+    examples:
+      - target: "El festival de cine es en mayo."
+        ipa: "el festiˈbal de ˈθine es en ˈmaʝo"
+        bases: [{ word: "El", base: "el" }, { word: "festival", base: "festival" }, { word: "de", base: "de" }, { word: "cine", ref: "es-0779" }, { word: "es", ref: "es-0022" }, { word: "en", base: "en" }, { word: "mayo", ref: "es-0970" }]
+      - target: "Vamos al festival con amigos."
+        ipa: "ˈbamos al festiˈbal kon aˈmiɡos"
+        bases: [{ word: "Vamos", ref: "es-0026" }, { word: "al", base: "al" }, { word: "festival", base: "festival" }, { word: "con", base: "con" }, { word: "amigos", ref: "es-0005" }]
+  - id: "es-2468"
+    target: "el documental"
+    ipa: "el dokumenˈtal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "documental", base: "documental" }]
+    examples:
+      - target: "Veo un documental sobre el mar."
+        ipa: "ˈbeo un dokumenˈtal ˈsobɾe el maɾ"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "documental", base: "documental" }, { word: "sobre", base: "sobre" }, { word: "el", base: "el" }, { word: "mar", ref: "es-1753" }]
+      - target: "El documental es muy interesante."
+        ipa: "el dokumenˈtal es mwi inteɾeˈsante"
+        bases: [{ word: "El", base: "el" }, { word: "documental", base: "documental" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "interesante", ref: "es-0424" }]
+  - id: "es-2469"
+    target: "la comedia"
+    ipa: "la koˈmedja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "comedia", base: "comedia" }]
+    examples:
+      - target: "Me gusta la comedia."
+        ipa: "me ˈɡusta la koˈmedja"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "la", base: "la" }, { word: "comedia", base: "comedia" }]
+      - target: "La comedia es muy divertida."
+        ipa: "la koˈmedja es mwi dibeɾˈtida"
+        bases: [{ word: "La", base: "la" }, { word: "comedia", base: "comedia" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "divertida", ref: "es-0434" }]
+  - id: "es-2470"
+    target: "el drama"
+    ipa: "el ˈdɾama"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "drama", base: "drama" }]
+    examples:
+      - target: "El drama es triste."
+        ipa: "el ˈdɾama es ˈtɾiste"
+        bases: [{ word: "El", base: "el" }, { word: "drama", base: "drama" }, { word: "es", ref: "es-0022" }, { word: "triste", ref: "es-0419" }]
+      - target: "Veo un drama en la tele."
+        ipa: "ˈbeo un ˈdɾama en la ˈtele"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "drama", base: "drama" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "tele", base: "tele" }]
+  - id: "es-2471"
+    target: "el terror"
+    ipa: "el teˈroɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "terror", base: "terror" }]
+    examples:
+      - target: "No me gusta el terror."
+        ipa: "no me ˈɡusta el teˈroɾ"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "el", base: "el" }, { word: "terror", base: "terror" }]
+      - target: "La película de terror da miedo."
+        ipa: "la peˈlikula de teˈroɾ da ˈmjedo"
+        bases: [{ word: "La", base: "la" }, { word: "película", ref: "es-2459" }, { word: "de", base: "de" }, { word: "terror", base: "terror" }, { word: "da", ref: "es-1629" }, { word: "miedo", ref: "es-1994" }]
+  - id: "es-2472"
+    target: "el thriller"
+    ipa: "el tɾiˈʝeɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "thriller", base: "thriller" }]
+    examples:
+      - target: "Veo un thriller por la noche."
+        ipa: "ˈbeo un tɾiˈʝeɾ poɾ la ˈnotʃe"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "thriller", base: "thriller" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+      - target: "El thriller tiene un final sorprendente."
+        ipa: "el tɾiˈʝeɾ ˈtjene un fiˈnal soɾpɾenˈdente"
+        bases: [{ word: "El", base: "el" }, { word: "thriller", base: "thriller" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "final", base: "final" }, { word: "sorprendente", base: "sorprendente" }]
+  - id: "es-2473"
+    target: "la animación"
+    ipa: "la animaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "animación", base: "animación" }]
+    examples:
+      - target: "La animación es para niños."
+        ipa: "la animaˈθjon es ˈpaɾa ˈniɲos"
+        bases: [{ word: "La", base: "la" }, { word: "animación", base: "animación" }, { word: "es", ref: "es-0022" }, { word: "para", base: "para" }, { word: "niños", ref: "es-0003" }]
+      - target: "Me gusta la animación japonesa."
+        ipa: "me ˈɡusta la animaˈθjon xapoˈnesa"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "la", base: "la" }, { word: "animación", base: "animación" }, { word: "japonesa", base: "japonés" }]
+  - id: "es-2474"
+    target: "el personaje"
+    ipa: "el peɾsoˈnaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "personaje", base: "personaje" }]
+    examples:
+      - target: "El personaje principal es un médico."
+        ipa: "el peɾsoˈnaxe pɾinθiˈpal es un ˈmediko"
+        bases: [{ word: "El", base: "el" }, { word: "personaje", base: "personaje" }, { word: "principal", base: "principal" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "médico", ref: "es-0506" }]
+      - target: "Me gusta mucho este personaje."
+        ipa: "me ˈɡusta ˈmutʃo ˈeste peɾsoˈnaxe"
+        bases: [{ word: "Me", base: "me" }, { word: "gusta", ref: "es-1432" }, { word: "mucho", ref: "es-0053" }, { word: "este", base: "este" }, { word: "personaje", base: "personaje" }]
+  - id: "es-2475"
+    target: "el protagonista"
+    ipa: "el pɾotaɡoˈnista"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "protagonista", base: "protagonista" }]
+    examples:
+      - target: "El protagonista habla con su madre."
+        ipa: "el pɾotaɡoˈnista ˈabla kon su ˈmadɾe"
+        bases: [{ word: "El", base: "el" }, { word: "protagonista", base: "protagonista" }, { word: "habla", ref: "es-0027" }, { word: "con", base: "con" }, { word: "su", ref: "es-0131" }, { word: "madre", ref: "es-0160" }]
+      - target: "La protagonista es muy valiente."
+        ipa: "la pɾotaɡoˈnista es mwi baˈljente"
+        bases: [{ word: "La", base: "la" }, { word: "protagonista", base: "protagonista" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "valiente", base: "valiente" }]
+  - id: "es-2476"
+    target: "el subtítulo"
+    ipa: "el subˈtitulo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "subtítulo", base: "subtítulo" }]
+    examples:
+      - target: "La película tiene subtítulos."
+        ipa: "la peˈlikula ˈtjene subˈtitulos"
+        bases: [{ word: "La", base: "la" }, { word: "película", ref: "es-2459" }, { word: "tiene", ref: "es-0024" }, { word: "subtítulos", base: "subtítulo" }]
+      - target: "Leo los subtítulos."
+        ipa: "ˈleo los subˈtitulos"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "los", base: "los" }, { word: "subtítulos", base: "subtítulo" }]
+  - id: "es-2477"
+    target: "el episodio"
+    ipa: "el epiˈsodjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "episodio", base: "episodio" }]
+    examples:
+      - target: "El episodio dura una hora."
+        ipa: "el epiˈsodjo ˈduɾa ˈuna ˈoɾa"
+        bases: [{ word: "El", base: "el" }, { word: "episodio", base: "episodio" }, { word: "dura", ref: "es-0851" }, { word: "una", base: "una" }, { word: "hora", ref: "es-0838" }]
+      - target: "Veo un episodio cada noche."
+        ipa: "ˈbeo un epiˈsodjo ˈkada ˈnotʃe"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "un", base: "un" }, { word: "episodio", base: "episodio" }, { word: "cada", ref: "es-0366" }, { word: "noche", ref: "es-0020" }]
+  - id: "es-2478"
+    target: "la cartelera"
+    ipa: "la kaɾteˈleɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cartelera", base: "cartelera" }]
+    examples:
+      - target: "Miro la cartelera del cine."
+        ipa: "ˈmiɾo la kaɾteˈleɾa del ˈθine"
+        bases: [{ word: "Miro", ref: "es-0292" }, { word: "la", base: "la" }, { word: "cartelera", base: "cartelera" }, { word: "del", base: "del" }, { word: "cine", ref: "es-0779" }]
+      - target: "La cartelera es nueva."
+        ipa: "la kaɾteˈleɾa es ˈnweba"
+        bases: [{ word: "La", base: "la" }, { word: "cartelera", base: "cartelera" }, { word: "es", ref: "es-0022" }, { word: "nueva", ref: "es-0035" }]
+  - id: "es-2479"
+    target: "la reseña"
+    ipa: "la reˈseɲa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "reseña", base: "reseña" }]
+    examples:
+      - target: "Leo una reseña de la película."
+        ipa: "ˈleo ˈuna reˈseɲa de la peˈlikula"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "una", base: "una" }, { word: "reseña", base: "reseña" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "película", ref: "es-2459" }]
+      - target: "La reseña es positiva."
+        ipa: "la reˈseɲa es posiˈtiba"
+        bases: [{ word: "La", base: "la" }, { word: "reseña", base: "reseña" }, { word: "es", ref: "es-0022" }, { word: "positiva", base: "positivo" }]
+  - id: "es-2480"
+    target: "actuar"
+    ipa: "akˈtwaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "actuar", base: "actuar" }]
+    examples:
+      - target: "Actúo en una obra de teatro."
+        ipa: "akˈtuo en ˈuna ˈobɾa de teˈatɾo"
+        bases: [{ word: "Actúo", base: "actuar" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "obra", base: "obra" }, { word: "de", base: "de" }, { word: "teatro", ref: "es-0780" }]
+      - target: "Actúan muy bien."
+        ipa: "akˈtuan mwi bjen"
+        bases: [{ word: "Actúan", base: "actuar" }, { word: "muy", ref: "es-0330" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-2481"
+    target: "rodar"
+    ipa: "roˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "rodar", base: "rodar" }]
+    examples:
+      - target: "Ruedan la película en Sevilla."
+        ipa: "ˈrwedan la peˈlikula en seˈbiʝa"
+        bases: [{ word: "Ruedan", base: "rodar" }, { word: "la", base: "la" }, { word: "película", ref: "es-2459" }, { word: "en", base: "en" }, { word: "Sevilla", ref: "es-1921" }]
+      - target: "Ruedo una escena."
+        ipa: "ˈrwedo ˈuna esˈθena"
+        bases: [{ word: "Ruedo", base: "rodar" }, { word: "una", base: "una" }, { word: "escena", ref: "es-2461" }]
+  - id: "es-2482"
+    target: "grabar"
+    ipa: "ɡɾaˈbaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "grabar", base: "grabar" }]
+    examples:
+      - target: "Grabo la música."
+        ipa: "ˈɡɾabo la ˈmusika"
+        bases: [{ word: "Grabo", base: "grabar" }, { word: "la", base: "la" }, { word: "música", base: "música" }]
+      - target: "Graban el programa."
+        ipa: "ˈɡɾaban el pɾoˈɡɾama"
+        bases: [{ word: "Graban", base: "grabar" }, { word: "el", base: "el" }, { word: "programa", ref: "es-2071" }]
+  - id: "es-2483"
+    target: "doblar"
+    ipa: "doˈblaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "doblar", base: "doblar" }]
+    examples:
+      - target: "Doblan la película al español."
+        ipa: "ˈdoblan la peˈlikula al espaˈɲol"
+        bases: [{ word: "Doblan", base: "doblar" }, { word: "la", base: "la" }, { word: "película", ref: "es-2459" }, { word: "al", base: "al" }, { word: "español", ref: "es-1370" }]
+      - target: "Doblo la esquina."
+        ipa: "ˈdoblo la esˈkina"
+        bases: [{ word: "Doblo", base: "doblar" }, { word: "la", base: "la" }, { word: "esquina", ref: "es-0706" }]
+  - id: "es-2484"
+    target: "filmar"
+    ipa: "filˈmaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "filmar", base: "filmar" }]
+    examples:
+      - target: "Filmo la boda."
+        ipa: "ˈfilmo la ˈboda"
+        bases: [{ word: "Filmo", base: "filmar" }, { word: "la", base: "la" }, { word: "boda", base: "boda" }]
+      - target: "Filman la escena en la calle."
+        ipa: "ˈfilman la esˈθena en la ˈkaʝe"
+        bases: [{ word: "Filman", base: "filmar" }, { word: "la", base: "la" }, { word: "escena", ref: "es-2461" }, { word: "en", base: "en" }, { word: "calle", ref: "es-0017" }]

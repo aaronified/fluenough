@@ -1,0 +1,23 @@
+schema: 1
+id: "es-en-grammar-object-pronouns"
+kind: "layer"
+core: "es-grammar-object-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Object pronouns: lo, la, le"
+license: "CC-BY-SA-4.0"
+description: "A pronoun that stands in for a thing or a person goes before the conjugated verb: lo compro, I buy it. The same verb takes lo, la, los, las for things and people, and le, les for to him, to her or to them. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Object pronouns before the verb"
+  slot_name: "pronoun"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "lo": "it, or him (a thing or a man)", "la": "it, or her (a thing or a woman)", "los": "them, for masculine things or people", "las": "them, for feminine things or people", "le": "to him, to her or to you (formal)", "les": "to them, or to you (plural formal)", "nos": "to us, or us" }
+  entries:
+    "comprar": "to buy"
+    "llevar": "to take; to carry"
+    "escuchar": "to listen to"
+    "ayudar": "to help"
+    "llamar": "to call"
+    "pedir": "to order; to ask for"
+    "leer": "to read"
+    "escribir": "to write"
+  notes: "The object pronoun goes before the conjugated verb: lo compro, I buy it. Me, te, nos and os work in the same place. Lo and la are for things and people; los and las are their plurals. Le and les mean to him, to her, to you or to them, so le escribo can mean I write to him, to her or to you (formal). Use the context to know who is meant."

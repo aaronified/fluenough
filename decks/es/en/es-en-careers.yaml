@@ -1,0 +1,240 @@
+schema: 1
+id: "es-en-careers"
+kind: "layer"
+core: "es-careers"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Careers: jobs, work and interviews"
+license: "CC-BY-SA-4.0"
+description: "Words for working life: the job and the trade, the CV and the experience, the degree and the training, the promotion and the deadline, the people who do the work, and the verbs to graduate and apply. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2359":
+    native: "job; employment"
+    notes: { n1: "El empleo is a job, the work a person does for pay. Trabajo is the more general word." }
+    bases: { "el": "the", "empleo": "job; employment" }
+    examples:
+      "Busco un empleo nuevo.": { native: "I am looking for a new job.", bases: { "un": "a", "empleo": "job; employment" } }
+      "El empleo es estable.": { native: "The job is stable.", bases: { "El": "the", "empleo": "job; employment", "estable": "stable" } }
+  "es-2360":
+    native: "career; degree course"
+    notes: { n1: "La carrera is a career, a working life, or a university degree course." }
+    bases: { "la": "the", "carrera": "career; degree course" }
+    examples:
+      "Mi carrera es la medicina.": { native: "My degree is medicine.", bases: { "carrera": "career; degree course", "la": "the" } }
+      "Tengo una buena carrera.": { native: "I have a good career.", bases: { "una": "a", "carrera": "career; degree course" } }
+  "es-2361":
+    native: "trade; craft"
+    notes: { n1: "El oficio is a trade or craft, a skilled job with the hands." }
+    bases: { "el": "the", "oficio": "trade; craft" }
+    examples:
+      "Mi padre tiene un oficio.": { native: "My father has a trade.", bases: { "un": "a", "oficio": "trade; craft" } }
+      "El oficio de carpintero es antiguo.": { native: "The trade of carpenter is old.", bases: { "El": "the", "oficio": "trade; craft", "de": "of" } }
+  "es-2362":
+    native: "CV; résumé"
+    notes: { n1: "El currículum is a CV, the document with your work and studies. The plural is currículos." }
+    bases: { "el": "the", "currículum": "CV; résumé" }
+    examples:
+      "Envío mi currículum hoy.": { native: "I send my CV today.", bases: { "currículum": "CV; résumé" } }
+      "El currículum tiene dos páginas.": { native: "The CV has two pages.", bases: { "El": "the", "currículum": "CV; résumé", "páginas": "page" } }
+  "es-2363":
+    native: "experience"
+    notes: { n1: "La experiencia is experience, the time and skill gained by doing a job." }
+    bases: { "la": "the", "experiencia": "experience" }
+    examples:
+      "Tengo mucha experiencia.": { native: "I have a lot of experience.", bases: { "experiencia": "experience" } }
+      "La experiencia es importante.": { native: "Experience is important.", bases: { "La": "the", "experiencia": "experience" } }
+  "es-2364":
+    native: "training; education"
+    notes: { n1: "La formación is the training or education a person receives." }
+    bases: { "la": "the", "formación": "training; education" }
+    examples:
+      "Tengo una buena formación.": { native: "I have good training.", bases: { "una": "a", "formación": "training; education" } }
+      "La formación es gratis.": { native: "The training is free.", bases: { "La": "the", "formación": "training; education" } }
+  "es-2365":
+    native: "degree; title"
+    notes: { n1: "El título is a degree or a diploma from a university, or a title of a book." }
+    bases: { "el": "the", "título": "degree; title" }
+    examples:
+      "Tengo un título en historia.": { native: "I have a degree in history.", bases: { "un": "a", "título": "degree; title", "en": "in", "historia": "history" } }
+      "El título del libro es largo.": { native: "The title of the book is long.", bases: { "El": "the", "título": "degree; title", "del": "of" } }
+  "es-2366":
+    native: "promotion"
+    notes: { n1: "El ascenso is a promotion to a higher job or post." }
+    bases: { "el": "the", "ascenso": "promotion" }
+    examples:
+      "Quiero un ascenso.": { native: "I want a promotion.", bases: { "un": "a", "ascenso": "promotion" } }
+      "El ascenso llega en un año.": { native: "The promotion comes/comer in a year.", bases: { "El": "the", "ascenso": "promotion", "en": "in", "un": "a" } }
+  "es-2367":
+    native: "deadline; time limit"
+    notes: { n1: "El plazo is the time allowed to do something, a deadline." }
+    bases: { "el": "the", "plazo": "deadline; time limit" }
+    examples:
+      "El plazo termina el viernes.": { native: "The deadline ends on Friday.", bases: { "El": "the", "plazo": "deadline; time limit" } }
+      "Tengo un plazo de dos semanas.": { native: "I have a two-week deadline.", bases: { "un": "a", "plazo": "deadline; time limit", "de": "of" } }
+  "es-2368":
+    native: "reference"
+    notes: { n1: "La referencia is a reference, a person who speaks for you, or a number to find a thing." }
+    bases: { "la": "the", "referencia": "reference" }
+    examples:
+      "Necesito dos referencias.": { native: "I need two references.", bases: { "referencias": "reference" } }
+      "Mi jefe es mi referencia.": { native: "My boss is my reference.", bases: { "referencia": "reference" } }
+  "es-2369":
+    native: "vacancy"
+    notes: { n1: "La vacante is a job that is free and can be filled." }
+    bases: { "la": "the", "vacante": "vacancy" }
+    examples:
+      "Hay una vacante en la oficina.": { native: "There is a vacancy in the office.", bases: { "Hay": "there is; there are", "una": "a", "vacante": "vacancy", "en": "in", "la": "the" } }
+      "La vacante es para un contable.": { native: "The vacancy is for an accountant.", bases: { "La": "the", "vacante": "vacancy", "para": "for", "un": "a", "contable": "accountant" } }
+  "es-2370":
+    native: "skill; ability"
+    notes: { n1: "La habilidad is a skill, something a person is good at doing." }
+    bases: { "la": "the", "habilidad": "skill; ability" }
+    examples:
+      "Tengo habilidad con los números.": { native: "I have a skill with numbers.", bases: { "habilidad": "skill; ability", "con": "with", "los": "the" } }
+      "La habilidad se aprende.": { native: "Skill is learned.", bases: { "La": "the", "habilidad": "skill; ability", "se": "yourself" } }
+  "es-2371":
+    native: "ability; capacity"
+    notes: { n1: "La capacidad is the ability to do something, or the space a thing can hold." }
+    bases: { "la": "the", "capacidad": "ability; capacity" }
+    examples:
+      "Tengo capacidad para el trabajo.": { native: "I have the ability for the work.", bases: { "capacidad": "ability; capacity", "para": "for", "el": "the" } }
+      "La capacidad del teatro es grande.": { native: "The capacity of the theatre is big.", bases: { "La": "the", "capacidad": "ability; capacity", "del": "of" } }
+  "es-2372":
+    native: "opportunity"
+    notes: { n1: "La oportunidad is a chance to do something good." }
+    bases: { "la": "the", "oportunidad": "opportunity" }
+    examples:
+      "Es una buena oportunidad.": { native: "It is a good opportunity.", bases: { "una": "a", "oportunidad": "opportunity" } }
+      "Doy una oportunidad a la idea.": { native: "I give the idea a chance.", bases: { "una": "a", "oportunidad": "opportunity", "a": "to", "la": "the" } }
+  "es-2373":
+    native: "retirement"
+    notes: { n1: "La jubilación is retirement from work, at the end of a working life." }
+    bases: { "la": "the", "jubilación": "retirement" }
+    examples:
+      "La jubilación es a los sesenta.": { native: "Retirement is at sixty.", bases: { "La": "the", "jubilación": "retirement", "a": "to", "los": "the" } }
+      "Pienso en mi jubilación.": { native: "I think about my retirement.", bases: { "en": "in", "jubilación": "retirement" } }
+  "es-2374":
+    native: "lawyer"
+    notes: { n1: "El abogado is a lawyer, who gives legal advice. The feminine is la abogada." }
+    bases: { "el": "the", "abogado": "lawyer" }
+    examples:
+      "El abogado revisa el contrato.": { native: "The lawyer checks the contract.", bases: { "El": "the", "abogado": "lawyer", "revisa": "to check" } }
+      "Mi hermana es abogada.": { native: "My sister is a lawyer.", bases: { "abogada": "lawyer" } }
+  "es-2375":
+    native: "architect"
+    notes: { n1: "El arquitecto is an architect, who designs buildings. The feminine is la arquitecta." }
+    bases: { "el": "the", "arquitecto": "architect" }
+    examples:
+      "El arquitecto dibuja la casa.": { native: "The architect draws the house.", bases: { "El": "the", "arquitecto": "architect", "dibuja": "to draw", "la": "the" } }
+      "Quiero ser arquitecto.": { native: "I want to be an architect.", bases: { "arquitecto": "architect" } }
+  "es-2376":
+    native: "farmer"
+    notes: { n1: "El agricultor is a farmer who grows crops. The feminine is la agricultora." }
+    bases: { "el": "the", "agricultor": "farmer" }
+    examples:
+      "El agricultor cosecha el trigo.": { native: "The farmer harvests the wheat.", bases: { "El": "the", "agricultor": "farmer", "trigo": "wheat" } }
+      "Mi abuelo es agricultor.": { native: "My grandfather is a farmer.", bases: { "agricultor": "farmer" } }
+  "es-2377":
+    native: "farmer (animals)"
+    notes: { n1: "El granjero is a farmer who keeps animals on a farm." }
+    bases: { "el": "the", "granjero": "farmer (animals)" }
+    examples:
+      "El granjero cuida las vacas.": { native: "The farmer looks after the cows.", bases: { "El": "the", "granjero": "farmer (animals)", "las": "the" } }
+      "La granjera vende huevos.": { native: "The farmer sells eggs.", bases: { "La": "the", "granjera": "farmer (animals)" } }
+  "es-2378":
+    native: "bricklayer; builder"
+    notes: { n1: "El albañil is a bricklayer, a builder who lays bricks and builds walls." }
+    bases: { "el": "the", "albañil": "bricklayer; builder" }
+    examples:
+      "El albañil construye la pared.": { native: "The bricklayer builds the wall.", bases: { "El": "the", "albañil": "bricklayer; builder", "construye": "to build", "la": "the" } }
+      "Hay tres albañiles en la obra.": { native: "There are three builders on the site.", bases: { "Hay": "there is; there are", "albañiles": "bricklayer; builder", "en": "in", "la": "the", "obra": "building site; work" } }
+  "es-2379":
+    native: "artist"
+    notes: { n1: "El artista is an artist, a person who makes art. It is used for men and women." }
+    bases: { "el": "the", "artista": "artist" }
+    examples:
+      "El artista pinta un cuadro.": { native: "The artist paints a picture.", bases: { "El": "the", "artista": "artist", "un": "a", "cuadro": "picture" } }
+      "Mi amiga es artista.": { native: "My friend is an artist.", bases: { "amiga": "friend", "artista": "artist" } }
+  "es-2380":
+    native: "musician"
+    notes: { n1: "El músico is a musician who plays or writes music. The feminine is la música." }
+    bases: { "el": "the", "músico": "musician" }
+    examples:
+      "El músico toca la guitarra.": { native: "The musician plays the guitar.", bases: { "El": "the", "músico": "musician", "la": "the" } }
+      "Mi hermano es músico.": { native: "My brother is a musician.", bases: { "músico": "musician" } }
+  "es-2381":
+    native: "actor"
+    notes: { n1: "El actor is an actor in film or theatre. The feminine is la actriz." }
+    bases: { "el": "the", "actor": "actor" }
+    examples:
+      "El actor es muy famoso.": { native: "The actor is very famous.", bases: { "El": "the", "actor": "actor", "famoso": "famous" } }
+      "El actor habla en la película.": { native: "The actor speaks in the film.", bases: { "El": "the", "actor": "actor", "en": "in", "la": "the", "película": "film" } }
+  "es-2382":
+    native: "actress"
+    notes: { n1: "La actriz is an actress in film or theatre." }
+    bases: { "la": "the", "actriz": "actress" }
+    examples:
+      "La actriz canta bien.": { native: "The actress sings well.", bases: { "La": "the", "actriz": "actress" } }
+      "Es una actriz conocida.": { native: "She is a well-known actress.", bases: { "una": "a", "actriz": "actress", "conocida": "well-known" } }
+  "es-2383":
+    native: "writer"
+    notes: { n1: "El escritor is a writer of books or stories. The feminine is la escritora." }
+    bases: { "el": "the", "escritor": "writer" }
+    examples:
+      "El escritor escribe novelas.": { native: "The writer writes novels.", bases: { "El": "the", "escritor": "writer", "novelas": "novel" } }
+      "Mi tía es escritora.": { native: "My aunt is a writer.", bases: { "escritora": "writer" } }
+  "es-2384":
+    native: "singer"
+    notes: { n1: "El cantante is a singer. It is used for men and women." }
+    bases: { "el": "the", "cantante": "singer" }
+    examples:
+      "El cantante canta en el concierto.": { native: "The singer sings at the concert.", bases: { "El": "the", "cantante": "singer", "en": "in" } }
+      "La cantante es muy joven.": { native: "The singer is very young.", bases: { "La": "the", "cantante": "singer" } }
+  "es-2385":
+    native: "dancer"
+    notes: { n1: "El bailarín is a dancer. The feminine is la bailarina." }
+    bases: { "el": "the", "bailarín": "dancer" }
+    examples:
+      "El bailarín baila muy bien.": { native: "The dancer dances very well.", bases: { "El": "the", "bailarín": "dancer" } }
+      "La bailarina viaja por el mundo.": { native: "The dancer travels around the world.", bases: { "La": "the", "bailarina": "dancer", "por": "for", "el": "the" } }
+  "es-2386":
+    native: "footballer"
+    notes: { n1: "El futbolista is a footballer, a player of football. It is used for men and women." }
+    bases: { "el": "the", "futbolista": "footballer" }
+    examples:
+      "El futbolista juega en el equipo.": { native: "The footballer plays in the team.", bases: { "El": "the", "futbolista": "footballer", "en": "in" } }
+      "Mi hermana es futbolista.": { native: "My sister is a footballer.", bases: { "futbolista": "footballer" } }
+  "es-2387":
+    native: "responsible"
+    notes: { n1: "Responsable is responsible, reliable. It does not change for gender." }
+    bases: { "responsable": "responsible" }
+    examples:
+      "Soy una persona responsable.": { native: "I am a responsible person.", bases: { "una": "a", "responsable": "responsible" } }
+      "El jefe es responsable del equipo.": { native: "The boss is responsible for the team.", bases: { "El": "the", "responsable": "responsible", "del": "of" } }
+  "es-2388":
+    native: "ambitious"
+    notes: { n1: "Ambicioso is ambitious, wanting to succeed. It agrees with the noun: ambiciosa." }
+    bases: { "ambicioso": "ambitious" }
+    examples:
+      "Es un trabajador ambicioso.": { native: "He is an ambitious worker.", bases: { "un": "a", "ambicioso": "ambitious" } }
+      "Tiene un plan ambicioso.": { native: "She has an ambitious plan./plan", bases: { "un": "a", "plan": "plan", "ambicioso": "ambitious" } }
+  "es-2389":
+    native: "motivated"
+    notes: { n1: "Motivado is motivated, eager to work. It agrees with the noun: motivada." }
+    bases: { "motivado": "motivated" }
+    examples:
+      "Estoy motivado para el trabajo.": { native: "I am motivated for the work.", bases: { "motivado": "motivated", "para": "for", "el": "the" } }
+      "La equipo está motivada.": { native: "The team is motivated.", bases: { "La": "the", "motivada": "motivated" } }
+  "es-2390":
+    native: "to graduate"
+    notes: { n1: "Graduarse is to finish a degree at university or school. Its yo form is me gradúo." }
+    bases: { "graduarse": "to graduate" }
+    examples:
+      "Me gradúo en junio.": { native: "I graduate in June.", bases: { "Me": "to me", "gradúo": "to graduate", "en": "in" } }
+      "Se gradúa en medicina.": { native: "She graduates in medicine.", bases: { "Se": "yourself", "gradúa": "to graduate", "en": "in" } }
+  "es-2391":
+    native: "to apply; to present oneself"
+    notes: { n1: "Presentarse is to present yourself to a job, an exam or a group." }
+    bases: { "presentarse": "to apply; to present oneself" }
+    examples:
+      "Me presento a la entrevista.": { native: "I attend the interview.", bases: { "Me": "to me", "presento": "to apply; to present oneself", "a": "to", "la": "the" } }
+      "Se presentan al examen.": { native: "They sit the exam.", bases: { "Se": "yourself", "presentan": "to apply; to present oneself", "al": "to the" } }

@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-si-clauses"
+name: "Reading: a late train and the rain"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short messages with si clauses: plans for a late train and for the weather. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-late-train"
+    title: "A message: if the train is late"
+    theme: "weddings"
+    sentences:
+      - text: "Si el tren llega tarde, te llamo."
+      - text: "Si hay retraso, esperamos en la estación."
+      - text: "Si pierdes el tren, toma un taxi."
+      - text: "Si llueve, vamos en autobús."
+    questions:
+      - id: "es-2685"
+        prompt: { en: "What will the sender do if the train is late?" }
+        options:
+          - { en: "Call you" }
+          - { en: "Walk home" }
+          - { en: "Cancel the trip" }
+        answer: 1
+      - id: "es-2686"
+        prompt: { en: "What should you do if you miss the train?" }
+        options:
+          - { en: "Take a taxi" }
+          - { en: "Wait a day" }
+          - { en: "Go home" }
+        answer: 1
+      - id: "es-2687"
+        prompt: { en: "How will they go if it rains?" }
+        options:
+          - { en: "By bus" }
+          - { en: "On foot" }
+          - { en: "By bike" }
+        answer: 1
+  - id: "es-rain-plans"
+    title: "A friend's plans"
+    theme: "weddings"
+    sentences:
+      - text: "Si llueve mañana, me quedo en casa."
+      - text: "Si hace sol, vamos a la playa."
+      - text: "Si tienes frío, pon la calefacción."
+      - text: "Si no vienes, cenamos sin ti."
+    questions:
+      - id: "es-2688"
+        prompt: { en: "What happens if it rains tomorrow?" }
+        options:
+          - { en: "The writer stays home" }
+          - { en: "They go to the beach" }
+          - { en: "They go shopping" }
+        answer: 1
+      - id: "es-2689"
+        prompt: { en: "What happens if it is sunny?" }
+        options:
+          - { en: "They go to the beach" }
+          - { en: "They stay home" }
+          - { en: "They go to school" }
+        answer: 1
+      - id: "es-2690"
+        prompt: { en: "What if you are cold?" }
+        options:
+          - { en: "Turn on the heating" }
+          - { en: "Open the window" }
+          - { en: "Go outside" }
+        answer: 1

@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-literature"
+name: "Reading: a novel's blurb and a poem"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: the back-cover blurb of a novel, and some notes on a poem. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-book-blurb"
+    title: "The back-cover blurb of a novel"
+    theme: "literature"
+    sentences:
+      - text: "Una novela sobre una familia que vive en el campo."
+      - text: "El narrador es una niña de diez años."
+      - text: "La historia tiene diez capítulos y un final sorprendente."
+      - text: "El libro es ideal para lectores jóvenes."
+    questions:
+      - id: "es-3067"
+        prompt: { en: "What is the novel about?" }
+        options:
+          - { en: "A family in the countryside" }
+          - { en: "A city of cars" }
+          - { en: "A ship" }
+        answer: 1
+      - id: "es-3068"
+        prompt: { en: "Who is the narrator?" }
+        options:
+          - { en: "A girl of ten" }
+          - { en: "An old man" }
+          - { en: "A dog" }
+        answer: 1
+      - id: "es-3069"
+        prompt: { en: "How many chapters does it have?" }
+        options:
+          - { en: "Ten" }
+          - { en: "Five" }
+          - { en: "Twenty" }
+        answer: 1
+  - id: "es-poem-note"
+    title: "Notes on a poem"
+    theme: "literature"
+    sentences:
+      - text: "Este poema tiene tres estrofas y cada verso rima."
+      - text: "El poeta describe el mar al atardecer."
+      - text: "Al final, analiza el sentido de la vida."
+      - text: "La traducción es muy fiel al original."
+    questions:
+      - id: "es-3070"
+        prompt: { en: "How many stanzas does the poem have?" }
+        options:
+          - { en: "Three" }
+          - { en: "Two" }
+          - { en: "Four" }
+        answer: 1
+      - id: "es-3071"
+        prompt: { en: "What does the poet describe?" }
+        options:
+          - { en: "The sea at dusk" }
+          - { en: "A city at night" }
+          - { en: "A forest in winter" }
+        answer: 1
+      - id: "es-3072"
+        prompt: { en: "What is the translation like?" }
+        options:
+          - { en: "Faithful to the original" }
+          - { en: "Very free" }
+          - { en: "Short" }
+        answer: 1

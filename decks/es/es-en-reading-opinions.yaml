@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-opinions"
+name: "Reading: readers' letters and an opinion note"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: two letters to a newspaper, and a short note giving a view. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-readers-letters"
+    title: "Two letters to a newspaper"
+    theme: "opinions"
+    sentences:
+      - text: "Estoy de acuerdo con el editorial."
+      - text: "Pero creo que la ley es injusta."
+      - text: "Mi amigo defiende la idea contraria."
+      - text: "Es un debate necesario."
+    questions:
+      - id: "es-2159"
+        prompt: { en: "What does the first reader agree with?" }
+        options:
+          - { en: "The law" }
+          - { en: "The editorial" }
+          - { en: "The letter" }
+        answer: 2
+      - id: "es-2160"
+        prompt: { en: "What does the reader think about the law?" }
+        options:
+          - { en: "It is fair" }
+          - { en: "It is unfair" }
+          - { en: "It is useless" }
+        answer: 2
+      - id: "es-2161"
+        prompt: { en: "What is said about the debate?" }
+        options:
+          - { en: "It is useless" }
+          - { en: "It is necessary" }
+          - { en: "It is absurd" }
+        answer: 2
+  - id: "es-opinion-note"
+    title: "A short note of opinion"
+    theme: "opinions"
+    sentences:
+      - text: "Creo que el plan es posible."
+      - text: "Sugiero un cambio pequeño."
+      - text: "Es evidente que el precio es alto."
+      - text: "Prefiero esperar un mes."
+    questions:
+      - id: "es-2162"
+        prompt: { en: "What does the writer think of the plan?" }
+        options:
+          - { en: "It is possible" }
+          - { en: "It is absurd" }
+          - { en: "It is impossible" }
+        answer: 1
+      - id: "es-2163"
+        prompt: { en: "What does the writer suggest?" }
+        options:
+          - { en: "A big change" }
+          - { en: "A small change" }
+          - { en: "No change" }
+        answer: 2
+      - id: "es-2164"
+        prompt: { en: "What does the writer prefer?" }
+        options:
+          - { en: "To wait a month" }
+          - { en: "To leave now" }
+          - { en: "To buy a house" }
+        answer: 1

@@ -1,0 +1,46 @@
+schema: 1
+id: "es-grammar-imperfect-subjunctive"
+part: "core"
+kind: "grammar"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["querer que (wanted)", "ojalá (I wish)", "si (if, unreal)", "para que (so that)"]
+  entries:
+    - lemma: "hablar"
+      ipa: "aˈblaɾ"
+      forms: { "querer que (wanted)": "Quería que hablara inglés.", "ojalá (I wish)": "Ojalá hablara inglés.", "si (if, unreal)": "Si hablara inglés, trabajaría allí.", "para que (so that)": "Lo dije para que hablara." }
+      ipas: { "querer que (wanted)": "keˈɾia ke aˈblaɾa inˈɡles", "ojalá (I wish)": "oxaˈla aˈblaɾa inˈɡles", "si (if, unreal)": "si aˈblaɾa inˈɡles tɾabaxaˈɾia aˈʝi", "para que (so that)": "lo ˈdixe ˈpaɾa ke aˈblaɾa" }
+    - lemma: "tener"
+      ipa: "teˈneɾ"
+      forms: { "querer que (wanted)": "Quería que tuviera tiempo.", "ojalá (I wish)": "Ojalá tuviera dinero.", "si (if, unreal)": "Si tuviera dinero, viajaría.", "para que (so that)": "Te llamé para que tuvieras tiempo." }
+      ipas: { "querer que (wanted)": "keˈɾia ke tuˈbjeɾa ˈtjempo", "ojalá (I wish)": "oxaˈla tuˈbjeɾa diˈneɾo", "si (if, unreal)": "si tuˈbjeɾa diˈneɾo bjaxaˈɾia", "para que (so that)": "te ʝaˈme ˈpaɾa ke tuˈbjeɾas ˈtjempo" }
+    - lemma: "ser"
+      ipa: "seɾ"
+      forms: { "querer que (wanted)": "Quería que fuera puntual.", "ojalá (I wish)": "Ojalá fuera verdad.", "si (if, unreal)": "Si fuera rico, compraría una casa.", "para que (so that)": "Trabajé para que fuera feliz." }
+      ipas: { "querer que (wanted)": "keˈɾia ke ˈfweɾa punˈtwal", "ojalá (I wish)": "oxaˈla ˈfweɾa beɾˈdad", "si (if, unreal)": "si ˈfweɾa ˈriko kompɾaˈɾia ˈuna ˈkasa", "para que (so that)": "tɾabaˈxe ˈpaɾa ke ˈfweɾa feˈliθ" }
+    - lemma: "ir"
+      ipa: "iɾ"
+      forms: { "querer que (wanted)": "Quería que fuéramos juntos.", "ojalá (I wish)": "Ojalá fuera al mar.", "si (if, unreal)": "Si fuera posible, iría.", "para que (so that)": "Te llamé para que fueras con él." }
+      ipas: { "querer que (wanted)": "keˈɾia ke ˈfweɾamos ˈxuntos", "ojalá (I wish)": "oxaˈla ˈfweɾa al maɾ", "si (if, unreal)": "si ˈfweɾa poˈsible iˈɾia", "para que (so that)": "te ʝaˈme ˈpaɾa ke ˈfweɾas kon el" }
+    - lemma: "hacer"
+      ipa: "aˈθeɾ"
+      forms: { "querer que (wanted)": "Quería que hiciera la cena.", "ojalá (I wish)": "Ojalá hiciera sol.", "si (if, unreal)": "Si hiciera calor, iríamos a la playa.", "para que (so that)": "Lo dijo para que hiciera la tarea." }
+      ipas: { "querer que (wanted)": "keˈɾia ke iˈθjeɾa la ˈθena", "ojalá (I wish)": "oxaˈla iˈθjeɾa sol", "si (if, unreal)": "si iˈθjeɾa kaˈloɾ iˈɾiamos a la ˈplaʝa", "para que (so that)": "lo ˈdixo ˈpaɾa ke iˈθjeɾa la taˈɾea" }
+    - lemma: "estar"
+      ipa: "esˈtaɾ"
+      forms: { "querer que (wanted)": "Quería que estuviera aquí.", "ojalá (I wish)": "Ojalá estuviera bien.", "si (if, unreal)": "Si estuviera en casa, cenaría.", "para que (so that)": "Te llamé para que estuvieras tranquilo." }
+      ipas: { "querer que (wanted)": "keˈɾia ke estuˈbjeɾa aˈki", "ojalá (I wish)": "oxaˈla estuˈbjeɾa bjen", "si (if, unreal)": "si estuˈbjeɾa en ˈkasa θenaˈɾia", "para que (so that)": "te ʝaˈme ˈpaɾa ke estuˈbjeɾas tɾanˈkilo" }
+    - lemma: "decir"
+      ipa: "deˈθiɾ"
+      forms: { "querer que (wanted)": "Quería que dijera la verdad.", "ojalá (I wish)": "Ojalá dijera la verdad.", "si (if, unreal)": "Si dijera la verdad, me creerían.", "para que (so that)": "Te llamé para que me dijeras la verdad." }
+      ipas: { "querer que (wanted)": "keˈɾia ke diˈxeɾa la beɾˈdad", "ojalá (I wish)": "oxaˈla diˈxeɾa la beɾˈdad", "si (if, unreal)": "si diˈxeɾa la beɾˈdad me kɾeeˈɾian", "para que (so that)": "te ʝaˈme ˈpaɾa ke me diˈxeɾas la beɾˈdad" }
+    - lemma: "comer"
+      ipa: "koˈmeɾ"
+      forms: { "querer que (wanted)": "Quería que comiera algo.", "ojalá (I wish)": "Ojalá comiera más.", "si (if, unreal)": "Si comiera más, engordaría.", "para que (so that)": "Te di pan para que comieras." }
+      ipas: { "querer que (wanted)": "keˈɾia ke koˈmjeɾa ˈalɡo", "ojalá (I wish)": "oxaˈla koˈmjeɾa mas", "si (if, unreal)": "si koˈmjeɾa mas enɡoɾdaˈɾia", "para que (so that)": "te di pan ˈpaɾa ke koˈmjeɾas" }
+    - lemma: "vivir"
+      ipa: "biˈbiɾ"
+      forms: { "querer que (wanted)": "Quería que viviera cerca.", "ojalá (I wish)": "Ojalá viviera en el campo.", "si (if, unreal)": "Si viviera en el campo, tendría un huerto.", "para que (so that)": "Te lo dije para que vivieras mejor." }
+      ipas: { "querer que (wanted)": "keˈɾia ke biˈbjeɾa ˈθeɾka", "ojalá (I wish)": "oxaˈla biˈbjeɾa en el ˈkampo", "si (if, unreal)": "si biˈbjeɾa en el ˈkampo tenˈdɾia un ˈweɾto", "para que (so that)": "te lo ˈdixe ˈpaɾa ke biˈbjeɾas meˈxoɾ" }

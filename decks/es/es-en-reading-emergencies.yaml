@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-emergencies"
+name: "Reading: a safety notice and a call for help"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a safety notice in a building, and a call for help after an accident. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-safety-notice"
+    title: "A safety notice in a building"
+    theme: "emergencies"
+    sentences:
+      - text: "En caso de incendio, use la salida de emergencia."
+      - text: "No use el ascensor."
+      - text: "Hay un extintor en cada piso."
+      - text: "Avise a los bomberos desde el portal."
+    questions:
+      - id: "es-2839"
+        prompt: { en: "What should you use in a fire?" }
+        options:
+          - { en: "The emergency exit" }
+          - { en: "The lift" }
+          - { en: "The garden gate" }
+        answer: 1
+      - id: "es-2840"
+        prompt: { en: "What is on each floor?" }
+        options:
+          - { en: "A fire extinguisher" }
+          - { en: "A first-aid kit" }
+          - { en: "An alarm bell" }
+        answer: 1
+      - id: "es-2841"
+        prompt: { en: "Who should you call?" }
+        options:
+          - { en: "The fire service" }
+          - { en: "The bank" }
+          - { en: "The post office" }
+        answer: 1
+  - id: "es-calling-for-help"
+    title: "A call for help"
+    theme: "emergencies"
+    sentences:
+      - text: "Hay un accidente en la calle, un hombre está herido."
+      - text: "Llamo a la ambulancia y aviso a la policía."
+      - text: "Tiene una quemadura en el brazo."
+      - text: "Le hago un vendaje hasta que llegue la ayuda."
+    questions:
+      - id: "es-2842"
+        prompt: { en: "Who is hurt?" }
+        options:
+          - { en: "A man" }
+          - { en: "A child" }
+          - { en: "A woman" }
+        answer: 1
+      - id: "es-2843"
+        prompt: { en: "Who does the caller phone?" }
+        options:
+          - { en: "An ambulance and the police" }
+          - { en: "A taxi" }
+          - { en: "The bank" }
+        answer: 1
+      - id: "es-2844"
+        prompt: { en: "Where is the burn?" }
+        options:
+          - { en: "On the arm" }
+          - { en: "On the leg" }
+          - { en: "On the face" }
+        answer: 1

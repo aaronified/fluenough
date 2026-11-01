@@ -1,0 +1,25 @@
+schema: 1
+id: "es-en-grammar-formal-address"
+kind: "layer"
+core: "es-grammar-formal-address"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Formal address: usted and ustedes"
+license: "CC-BY-SA-4.0"
+description: "To a stranger, an elder or an official, Spanish uses usted, and the verb takes the he, she form: ¿usted habla inglés?, do you speak English? Ustedes is the plural formal form. Tú is for friends and family; vosotros is the plural informal form used in Spain. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Formal and informal address in the present"
+  slot_name: "address"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "usted": "you (formal, one person)", "ustedes": "you (formal, more than one person)", "tú": "you (informal, a friend or family)", "vosotros": "you (informal, more than one, Spain)" }
+  entries:
+    "hablar": "to speak"
+    "comer": "to eat"
+    "vivir": "to live"
+    "ser": "to be"
+    "tener": "to have"
+    "ir": "to go"
+    "venir": "to come"
+    "poder": "to be able to"
+    "decir": "to say"
+    "saber": "to know"
+  notes: "Usted and ustedes take the third-person verb form: usted habla, ustedes hablan. Use them with strangers, elders, officials and in writing to someone you do not know well. Tú takes the second-person form (hablas) and is for friends and family. Vosotros is the informal plural of Spain; in much of Latin America ustedes is used for both formal and informal plural. Which Spanish to teach is still open, so vosotros is taught as the Spanish form."

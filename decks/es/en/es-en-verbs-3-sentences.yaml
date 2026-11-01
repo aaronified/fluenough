@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-verbs-3-sentences"
+kind: "layer"
+core: "es-verbs-3-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: more daily actions"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about a day's actions, with the verbs each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1638":
+    native: "I wake up and get up at seven."
+    bases: { "Me": "to me", "a": "to", "las": "the" }
+    confusables: { "dormirse": { why: "Dormirse is to fall asleep, the opposite of waking." }, "sentarse": { why: "Sentarse is to sit down, not to get up." } }
+  "es-1639":
+    native: "I think that the coffee is very good."
+    bases: { "que": "that", "el": "the" }
+    confusables: { "creer": { why: "Creer is to believe, a close word with a different feel." }, "sentir": { why: "Sentir is to feel, a different meaning." } }
+  "es-1640":
+    native: "I set the table and take out the plates."
+    bases: { "la": "the", "los": "the" }
+    confusables: { "meter": { why: "Meter is to put something inside, the opposite of sacar." }, "dar": { why: "Dar is to give, not to set a table." } }
+  "es-1641":
+    native: "I do not know the answer, but I am looking for it."
+    bases: { "la": "the", "respuesta": "answer" }
+    confusables: { "conocer": { why: "Conocer is to know a person or a place, not a fact." }, "pensar": { why: "Pensar is to think, a different idea." } }
+  "es-1642":
+    native: "I comb my hair and brush my teeth."
+    bases: { "Me": "to me", "los": "the" }
+    confusables: { "afeitarse": { why: "Afeitarse is to shave, another morning routine." }, "maquillarse": { why: "Maquillarse is to put on make-up." } }
+  "es-1643":
+    native: "I come to class by bus."
+    bases: { "a": "to", "en": "in" }
+    confusables: { "ir": { why: "Ir is to go, away from the speaker." }, "volver": { why: "Volver is to return, back to a place." } }

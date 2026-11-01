@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-preterite-regular"
+name: "Reading: what happened yesterday"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short notes about past actions, written in the preterite. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-yesterday-diary"
+    title: "Yesterday"
+    theme: "daily-life"
+    sentences:
+      - text: "Ayer trabajé mucho en la oficina."
+      - text: "Llegué a casa a las siete."
+      - text: "Cociné la cena y hablé con mi madre."
+      - text: "Escribí una carta a mi amigo."
+    questions:
+      - id: "es-1349"
+        prompt: { en: "What did the writer do at seven?" }
+        options:
+          - { en: "Left the office" }
+          - { en: "Arrived home" }
+          - { en: "Went to bed" }
+        answer: 2
+      - id: "es-1350"
+        prompt: { en: "What did the writer cook?" }
+        options:
+          - { en: "Lunch" }
+          - { en: "Dinner" }
+          - { en: "A cake" }
+        answer: 2
+      - id: "es-1351"
+        prompt: { en: "Who did the writer talk to?" }
+        options:
+          - { en: "A friend" }
+          - { en: "A teacher" }
+          - { en: "Their mother" }
+        answer: 3
+  - id: "es-work-note"
+    title: "A short note about work"
+    theme: "daily-life"
+    sentences:
+      - text: "Mi hermana trabajó en un banco."
+      - text: "Compró pan y leche en la tienda."
+      - text: "Ella vivió en Madrid de joven."
+      - text: "Mi hermano comió en casa."
+    questions:
+      - id: "es-1352"
+        prompt: { en: "Where did the sister work?" }
+        options:
+          - { en: "In a school" }
+          - { en: "At home" }
+          - { en: "In a bank" }
+        answer: 3
+      - id: "es-1353"
+        prompt: { en: "What did she buy?" }
+        options:
+          - { en: "Coffee and cake" }
+          - { en: "Water and rice" }
+          - { en: "Bread and milk" }
+        answer: 3
+      - id: "es-1354"
+        prompt: { en: "Where did the brother eat?" }
+        options:
+          - { en: "At a restaurant" }
+          - { en: "At home" }
+          - { en: "At school" }
+        answer: 2

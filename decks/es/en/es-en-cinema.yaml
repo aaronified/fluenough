@@ -1,0 +1,191 @@
+schema: 1
+id: "es-en-cinema"
+kind: "layer"
+core: "es-cinema"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cinema: films, actors and the screen"
+license: "CC-BY-SA-4.0"
+description: "Words for the cinema: the film and its genre, the script and the scene, the premiere and the screen, the audience and the prize, the cast and the characters, and the verbs to act, film, dub and record. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2459":
+    native: "film; movie"
+    notes: { n1: "La película is a film or movie, shown at the cinema or on television." }
+    bases: { "la": "the", "película": "film; movie" }
+    examples:
+      "La película empieza a las ocho.": { native: "The film starts at eight.", bases: { "La": "the", "película": "film; movie", "a": "to", "las": "the" } }
+      "Vemos una película juntos.": { native: "We watch a film together.", bases: { "una": "a", "película": "film; movie", "juntos": "together" } }
+  "es-2460":
+    native: "script"
+    notes: { n1: "El guion is the script of a film or a play, the words the actors say." }
+    bases: { "el": "the", "guion": "script" }
+    examples:
+      "El guion es muy bueno.": { native: "The script is very good.", bases: { "El": "the", "guion": "script" } }
+      "La directora escribe el guion.": { native: "The director writes the script.", bases: { "La": "the", "el": "the", "guion": "script" } }
+  "es-2461":
+    native: "scene"
+    notes: { n1: "La escena is a scene in a film, a play or a book." }
+    bases: { "la": "the", "escena": "scene" }
+    examples:
+      "La escena es muy triste.": { native: "The scene is very sad.", bases: { "La": "the", "escena": "scene" } }
+      "Esta escena es la mejor.": { native: "This scene is the best.", bases: { "Esta": "This", "escena": "scene", "la": "the", "mejor": "better" } }
+  "es-2462":
+    native: "premiere; opening"
+    notes: { n1: "El estreno is the first showing of a film or a play to the public." }
+    bases: { "el": "the", "estreno": "premiere; opening" }
+    examples:
+      "El estreno es el viernes.": { native: "The premiere is on Friday.", bases: { "El": "the", "estreno": "premiere; opening" } }
+      "Voy al estreno de la película.": { native: "I go to the premiere of the film.", bases: { "al": "to the", "estreno": "premiere; opening", "de": "of", "la": "the" } }
+  "es-2463":
+    native: "screen; room (cinema)"
+    notes: { n1: "La sala is a room in a cinema, the place where a film is shown." }
+    bases: { "la": "the", "sala": "screen; room (cinema)" }
+    examples:
+      "La sala tres está llena.": { native: "Screen three is full.", bases: { "La": "the", "sala": "screen; room (cinema)" } }
+      "Esta sala es muy grande.": { native: "This screen is very big.", bases: { "Esta": "This", "sala": "screen; room (cinema)" } }
+  "es-2464":
+    native: "viewer; spectator"
+    notes: { n1: "El espectador is a person who watches a film, a show or a match. The feminine is la espectadora." }
+    bases: { "el": "the", "espectador": "viewer; spectator" }
+    examples:
+      "El espectador ríe con la comedia.": { native: "The viewer laughs at the comedy.", bases: { "El": "the", "espectador": "viewer; spectator", "con": "with", "la": "the" } }
+      "Hay muchos espectadores hoy.": { native: "There are many viewers today.", bases: { "Hay": "there is; there are", "espectadores": "viewer; spectator" } }
+  "es-2465":
+    native: "audience; public"
+    notes: { n1: "El público is the audience, the people who watch a show, or the general public." }
+    bases: { "el": "the", "público": "audience; public" }
+    examples:
+      "El público aplaude al final.": { native: "The audience applauds at the end.", bases: { "El": "the", "público": "audience; public", "aplaude": "to applaud", "al": "to the", "final": "end" } }
+      "El público quiere ver la película.": { native: "The public wants to see the film.", bases: { "El": "the", "público": "audience; public", "la": "the" } }
+  "es-2466":
+    native: "prize; award"
+    notes: { n1: "El premio is a prize, an award given for something good." }
+    bases: { "el": "the", "premio": "prize; award" }
+    examples:
+      "Gana un premio en el festival.": { native: "It wins a prize at the festival.", bases: { "un": "a", "premio": "prize; award", "en": "in", "el": "the" } }
+      "El premio es para la mejor actriz.": { native: "The prize is for the best actress.", bases: { "El": "the", "premio": "prize; award", "para": "for", "la": "the", "mejor": "better" } }
+  "es-2467":
+    native: "festival"
+    notes: { n1: "El festival is a festival, a set of events, often of films or music." }
+    bases: { "el": "the", "festival": "festival" }
+    examples:
+      "El festival de cine es en mayo.": { native: "The film festival is in May.", bases: { "El": "the", "festival": "festival", "de": "of", "en": "in" } }
+      "Vamos al festival con amigos.": { native: "We go to the festival with friends.", bases: { "al": "to the", "festival": "festival", "con": "with" } }
+  "es-2468":
+    native: "documentary"
+    notes: { n1: "El documental is a documentary, a film of real events or facts." }
+    bases: { "el": "the", "documental": "documentary" }
+    examples:
+      "Veo un documental sobre el mar.": { native: "I watch a documentary about the sea.", bases: { "un": "a", "documental": "documentary", "el": "the", "sobre": "about" } }
+      "El documental es muy interesante.": { native: "The documentary is very interesting.", bases: { "El": "the", "documental": "documentary" } }
+  "es-2469":
+    native: "comedy"
+    notes: { n1: "La comedia is a comedy, a film or play that makes people laugh." }
+    bases: { "la": "the", "comedia": "comedy" }
+    examples:
+      "Me gusta la comedia.": { native: "I like comedy.", bases: { "Me": "to me", "la": "the", "comedia": "comedy" } }
+      "La comedia es muy divertida.": { native: "The comedy is very funny.", bases: { "La": "the", "comedia": "comedy" } }
+  "es-2470":
+    native: "drama"
+    notes: { n1: "El drama is a drama, a serious film or play with a sad or difficult story." }
+    bases: { "el": "the", "drama": "drama" }
+    examples:
+      "El drama es triste.": { native: "The drama is sad.", bases: { "El": "the", "drama": "drama" } }
+      "Veo un drama en la tele.": { native: "I watch a drama on television.", bases: { "un": "a", "drama": "drama", "en": "in", "la": "the", "tele": "TV" } }
+  "es-2471":
+    native: "horror"
+    notes: { n1: "El terror is horror, a film or story meant to frighten people." }
+    bases: { "el": "the", "terror": "horror" }
+    examples:
+      "No me gusta el terror.": { native: "I do not like horror.", bases: { "me": "to me", "el": "the", "terror": "horror" } }
+      "La película de terror da miedo.": { native: "The horror film is frightening.", bases: { "La": "the", "de": "of", "terror": "horror" } }
+  "es-2472":
+    native: "thriller"
+    notes: { n1: "El thriller is a thriller, a film with suspense and a mystery." }
+    bases: { "el": "the", "thriller": "thriller" }
+    examples:
+      "Veo un thriller por la noche.": { native: "I watch a thriller at night.", bases: { "un": "a", "thriller": "thriller", "por": "for", "la": "the" } }
+      "El thriller tiene un final sorprendente.": { native: "The thriller has a surprising ending.", bases: { "El": "the", "thriller": "thriller", "un": "a", "final": "end", "sorprendente": "surprising" } }
+  "es-2473":
+    native: "animation"
+    notes: { n1: "La animación is animation, films made with drawings or computers." }
+    bases: { "la": "the", "animación": "animation" }
+    examples:
+      "La animación es para niños.": { native: "Animation is for children.", bases: { "La": "the", "animación": "animation", "para": "for" } }
+      "Me gusta la animación japonesa.": { native: "I like Japanese animation.", bases: { "Me": "to me", "la": "the", "animación": "animation", "japonesa": "Japanese" } }
+  "es-2474":
+    native: "character"
+    notes: { n1: "El personaje is a character in a film, a book or a play." }
+    bases: { "el": "the", "personaje": "character" }
+    examples:
+      "El personaje principal es un médico.": { native: "The main character is a doctor.", bases: { "El": "the", "personaje": "character", "principal": "main", "un": "a" } }
+      "Me gusta mucho este personaje.": { native: "I like this character a lot.", bases: { "Me": "to me", "personaje": "character", "este": "this" } }
+  "es-2475":
+    native: "lead; main character"
+    notes: { n1: "El protagonista is the main character or the lead actor of a film. The feminine is la protagonista." }
+    bases: { "el": "the", "protagonista": "lead; main character" }
+    examples:
+      "El protagonista habla con su madre.": { native: "The lead speaks with his mother.", bases: { "El": "the", "protagonista": "lead; main character", "con": "with" } }
+      "La protagonista es muy valiente.": { native: "The lead is very brave.", bases: { "La": "the", "protagonista": "lead; main character", "valiente": "brave" } }
+  "es-2476":
+    native: "subtitle"
+    notes: { n1: "El subtítulo is a subtitle, the text shown at the bottom of the screen." }
+    bases: { "el": "the", "subtítulo": "subtitle" }
+    examples:
+      "La película tiene subtítulos.": { native: "The film has subtitles.", bases: { "La": "the", "subtítulos": "subtitle" } }
+      "Leo los subtítulos.": { native: "I read the subtitles.", bases: { "los": "the", "subtítulos": "subtitle" } }
+  "es-2477":
+    native: "episode"
+    notes: { n1: "El episodio is an episode, one part of a series on television." }
+    bases: { "el": "the", "episodio": "episode" }
+    examples:
+      "El episodio dura una hora.": { native: "The episode lasts an hour.", bases: { "El": "the", "episodio": "episode", "una": "a" } }
+      "Veo un episodio cada noche.": { native: "I watch one episode every night.", bases: { "un": "a", "episodio": "episode" } }
+  "es-2478":
+    native: "cinema listings"
+    notes: { n1: "La cartelera is the listing of films showing at the cinemas, or a poster board." }
+    bases: { "la": "the", "cartelera": "cinema listings" }
+    examples:
+      "Miro la cartelera del cine.": { native: "I look at the cinema listings.", bases: { "la": "the", "cartelera": "cinema listings", "del": "of" } }
+      "La cartelera es nueva.": { native: "The listings are new.", bases: { "La": "the", "cartelera": "cinema listings" } }
+  "es-2479":
+    native: "review"
+    notes: { n1: "La reseña is a short review of a film, a book or a show." }
+    bases: { "la": "the", "reseña": "review" }
+    examples:
+      "Leo una reseña de la película.": { native: "I read a review of the film.", bases: { "una": "a", "reseña": "review", "de": "of", "la": "the" } }
+      "La reseña es positiva.": { native: "The review is positive.", bases: { "La": "the", "reseña": "review", "positiva": "positive" } }
+  "es-2480":
+    native: "to act"
+    notes: { n1: "Actuar is to act in a film or a play, or to behave in a certain way." }
+    bases: { "actuar": "to act" }
+    examples:
+      "Actúo en una obra de teatro.": { native: "I act in a play.", bases: { "Actúo": "to act", "en": "in", "una": "a", "obra": "building site; work", "de": "of" } }
+      "Actúan muy bien.": { native: "They act very well.", bases: { "Actúan": "to act" } }
+  "es-2481":
+    native: "to shoot (a film)"
+    notes: { n1: "Rodar is to shoot a film, to film it in a place. Its stem changes: ruedo." }
+    bases: { "rodar": "to shoot (a film)" }
+    examples:
+      "Ruedan la película en Sevilla.": { native: "They shoot the film in Seville.", bases: { "Ruedan": "to shoot (a film)", "la": "the", "en": "in" } }
+      "Ruedo una escena.": { native: "I shoot a scene.", bases: { "Ruedo": "to shoot (a film)", "una": "a" } }
+  "es-2482":
+    native: "to record"
+    notes: { n1: "Grabar is to record a sound or a video, or to save it." }
+    bases: { "grabar": "to record" }
+    examples:
+      "Grabo la música.": { native: "I record the music.", bases: { "Grabo": "to record", "la": "the", "música": "music" } }
+      "Graban el programa.": { native: "They record the programme.", bases: { "Graban": "to record", "el": "the" } }
+  "es-2483":
+    native: "to dub"
+    notes: { n1: "Doblar is to dub a film into another language. Also to fold, or to turn." }
+    bases: { "doblar": "to dub" }
+    examples:
+      "Doblan la película al español.": { native: "They dub the film into Spanish.", bases: { "Doblan": "to dub", "la": "the", "al": "to the" } }
+      "Doblo la esquina.": { native: "I turn the corner.", bases: { "Doblo": "to dub", "la": "the" } }
+  "es-2484":
+    native: "to film"
+    notes: { n1: "Filmar is to film, to record moving pictures with a camera." }
+    bases: { "filmar": "to film" }
+    examples:
+      "Filmo la boda.": { native: "I film the wedding.", bases: { "Filmo": "to film", "la": "the", "boda": "wedding" } }
+      "Filman la escena en la calle.": { native: "They film the scene in the street.", bases: { "Filman": "to film", "la": "the", "en": "in" } }

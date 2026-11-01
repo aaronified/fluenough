@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-imperfect-subjunctive"
+name: "Reading: advice and a wish"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that give advice and wishes in the imperfect subjunctive. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-advice-column"
+    title: "A short advice column"
+    theme: "opinions"
+    sentences:
+      - text: "Si yo fuera tú, hablaría con el jefe."
+      - text: "Te aconsejaría que descansaras más."
+      - text: "Ojalá tuvieras más tiempo para ti."
+      - text: "Si tuviera tu trabajo, estaría contento."
+    questions:
+      - id: "es-3025"
+        prompt: { en: "What would the writer do if they were you?" }
+        options:
+          - { en: "Talk to the boss" }
+          - { en: "Quit the job" }
+          - { en: "Travel" }
+        answer: 1
+      - id: "es-3026"
+        prompt: { en: "What does the writer advise?" }
+        options:
+          - { en: "To rest more" }
+          - { en: "To work more" }
+          - { en: "To sleep less" }
+        answer: 1
+      - id: "es-3027"
+        prompt: { en: "What does the writer wish?" }
+        options:
+          - { en: "More time for yourself" }
+          - { en: "More money" }
+          - { en: "A new car" }
+        answer: 1
+  - id: "es-letter-of-wishes"
+    title: "A letter of wishes"
+    theme: "opinions"
+    sentences:
+      - text: "Quería que vinieras a la fiesta."
+      - text: "Si pudiera, iría contigo."
+      - text: "Ojalá lo pasaras bien en el viaje."
+      - text: "Me pidió que escribiera pronto."
+    questions:
+      - id: "es-3028"
+        prompt: { en: "What did the writer want?" }
+        options:
+          - { en: "That you come to the party" }
+          - { en: "That you stay home" }
+          - { en: "That you travel" }
+        answer: 1
+      - id: "es-3029"
+        prompt: { en: "What would the writer do if possible?" }
+        options:
+          - { en: "Go with you" }
+          - { en: "Stay home" }
+          - { en: "Call the police" }
+        answer: 1
+      - id: "es-3030"
+        prompt: { en: "What is wished for the trip?" }
+        options:
+          - { en: "That you have a good time" }
+          - { en: "That it rains" }
+          - { en: "That it is short" }
+        answer: 1

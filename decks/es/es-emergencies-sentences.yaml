@@ -1,0 +1,50 @@
+schema: 1
+id: "es-emergencies-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2833"
+    target: "Suena la alarma y evacuamos el edificio."
+    ipa: "ˈswena la aˈlaɾma i ebaˈkwamos el ediˈfiθjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Suena", base: "sonar" }, { word: "la", base: "la" }, { word: "alarma", ref: "es-2812" }, { word: "y", ref: "es-0048" }, { word: "evacuamos", ref: "es-2828" }, { word: "el", base: "el" }, { word: "edificio", ref: "es-0786" }]
+    confusables: [{ id: "socorro", ref: "es-2811", kind: "word" }, { id: "alerta", ref: "es-2824", kind: "word" }]
+  - id: "es-2834"
+    target: "Hay un extintor y un botiquín en la cocina."
+    ipa: "aj un ekstinˈtoɾ i un botiˈkin en la koˈθina"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "extintor", ref: "es-2813" }, { word: "y", ref: "es-0048" }, { word: "botiquín", ref: "es-2819" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0918" }]
+    confusables: [{ id: "seguridad", ref: "es-2818", kind: "word" }, { id: "rescate", ref: "es-2816", kind: "word" }]
+  - id: "es-2835"
+    target: "El niño se cae y tiene un corte."
+    ipa: "el ˈniɲo se ˈkae i ˈtjene un ˈkoɾte"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "niño", ref: "es-0003" }, { word: "se", base: "se" }, { word: "cae", base: "caer" }, { word: "y", ref: "es-0048" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "corte", ref: "es-2823" }]
+    confusables: [{ id: "golpe", ref: "es-2822", kind: "word" }, { id: "quemadura", ref: "es-2820", kind: "word" }]
+  - id: "es-2836"
+    target: "Hay una explosión y un terremoto."
+    ipa: "aj ˈuna eksploˈsjon i un tereˈmoto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hay", base: "haber" }, { word: "una", base: "una" }, { word: "explosión", ref: "es-2814" }, { word: "y", ref: "es-0048" }, { word: "un", base: "un" }, { word: "terremoto", ref: "es-2815" }]
+    confusables: [{ id: "peligro", ref: "es-2817", kind: "word" }, { id: "fractura", ref: "es-2821", kind: "word" }]
+  - id: "es-2837"
+    target: "Rescatan al herido y lo llevan al hospital."
+    ipa: "resˈkatan al eˈɾido i lo ˈʝeban al ospiˈtal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Rescatan", ref: "es-2827" }, { word: "al", base: "al" }, { word: "herido", ref: "es-2825" }, { word: "y", ref: "es-0048" }, { word: "lo", base: "lo" }, { word: "llevan", ref: "es-0623" }, { word: "hospital", ref: "es-0772" }]
+    confusables: [{ id: "ambulancia", ref: "es-0870", kind: "word" }, { id: "grave", ref: "es-2826", kind: "word" }]
+  - id: "es-2838"
+    target: "Aviso a los bomberos del incendio."
+    ipa: "aˈbiso a los bomˈbeɾos del inˈθendjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Aviso", base: "aviso" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "bomberos", ref: "es-0872" }, { word: "del", base: "del" }, { word: "incendio", ref: "es-2063" }]
+    confusables: [{ id: "avisar", ref: "es-2829", kind: "word" }, { id: "ahogarse", ref: "es-2830", kind: "word" }]

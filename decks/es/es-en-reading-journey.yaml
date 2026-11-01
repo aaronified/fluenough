@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-journey"
+name: "Reading: a timetable and a platform notice"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a train timetable and a notice on a station platform. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-train-timetable"
+    title: "A train timetable"
+    theme: "journey"
+    sentences:
+      - text: "Madrid - Sevilla: salida 08:15, andén 3."
+      - text: "Retraso: diez minutos."
+      - text: "Llegada: 11:00."
+      - text: "Billete de ida y vuelta: 60 euros."
+    questions:
+      - id: "es-1730"
+        prompt: { en: "What time does the train leave?" }
+        options:
+          - { en: "11:00" }
+          - { en: "08:15" }
+          - { en: "10:15" }
+        answer: 2
+      - id: "es-1731"
+        prompt: { en: "Which platform is it?" }
+        options:
+          - { en: "Platform 1" }
+          - { en: "Platform 5" }
+          - { en: "Platform 3" }
+        answer: 3
+      - id: "es-1732"
+        prompt: { en: "How long is the delay?" }
+        options:
+          - { en: "Ten minutes" }
+          - { en: "Twenty minutes" }
+          - { en: "One hour" }
+        answer: 1
+  - id: "es-platform-notice"
+    title: "A platform notice"
+    theme: "journey"
+    sentences:
+      - text: "El tren a Valencia sale de la vía dos."
+      - text: "Por favor, espere detrás de la línea amarilla."
+      - text: "El vagón número cinco está al final."
+      - text: "Gracias por viajar con nosotros."
+    questions:
+      - id: "es-1733"
+        prompt: { en: "Where does the Valencia train leave from?" }
+        options:
+          - { en: "Track one" }
+          - { en: "Track two" }
+          - { en: "Track three" }
+        answer: 2
+      - id: "es-1734"
+        prompt: { en: "Where should you wait?" }
+        options:
+          - { en: "Behind the yellow line" }
+          - { en: "In the carriage" }
+          - { en: "At the ticket office" }
+        answer: 1
+      - id: "es-1735"
+        prompt: { en: "Where is carriage five?" }
+        options:
+          - { en: "At the start" }
+          - { en: "In the middle" }
+          - { en: "At the end" }
+        answer: 3

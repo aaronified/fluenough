@@ -1,0 +1,205 @@
+schema: 1
+id: "es-en-law"
+kind: "layer"
+core: "es-law"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law: police, courts, rights and the rules"
+license: "CC-BY-SA-4.0"
+description: "Words for the law: the judge and the court, the crime and the thief, the police station and the complaint, the trial and the sentence, the accused and the victim, and the rules that say what is allowed and what is forbidden. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2851":
+    native: "judge"
+    notes: { n1: "El juez is a judge, who decides a case in a court. The feminine is la jueza." }
+    bases: { "el": "the", "juez": "judge" }
+    examples:
+      "El juez escucha a los testigos.": { native: "The judge listens to the witnesses.", bases: { "El": "the", "juez": "judge", "a": "to", "los": "the" } }
+      "La jueza dicta la sentencia.": { native: "The judge gives the sentence.", bases: { "La": "the", "jueza": "judge", "dicta": "to dictate; to deliver (a judgement)" } }
+  "es-2852":
+    native: "court; tribunal"
+    notes: { n1: "El tribunal is a court of law, where cases are heard and decided." }
+    bases: { "el": "the", "tribunal": "court; tribunal" }
+    examples:
+      "El tribunal está en el centro.": { native: "The court is in the centre.", bases: { "El": "the", "tribunal": "court; tribunal", "en": "in", "centro": "centre" } }
+      "El caso va al tribunal.": { native: "The case goes to court.", bases: { "El": "the", "caso": "case", "al": "to the", "tribunal": "court; tribunal" } }
+  "es-2853":
+    native: "offence; crime"
+    notes: { n1: "El delito is a legal offence, an act against the law. The plural is delitos." }
+    bases: { "el": "the", "delito": "offence; crime" }
+    examples:
+      "Robar es un delito.": { native: "Stealing is an offence.", bases: { "un": "a", "delito": "offence; crime" } }
+      "El delito es grave.": { native: "The offence is serious.", bases: { "El": "the", "delito": "offence; crime" } }
+  "es-2854":
+    native: "crime; murder"
+    notes: { n1: "El crimen is a crime, a serious offence, often a killing. The plural is crímenes." }
+    bases: { "el": "the", "crimen": "crime; murder" }
+    examples:
+      "El crimen ocurre de noche.": { native: "The crime happens at night.", bases: { "El": "the", "crimen": "crime; murder", "de": "of" } }
+      "La policía investiga el crimen.": { native: "The police investigate the crime.", bases: { "La": "the", "investiga": "to investigate", "el": "the", "crimen": "crime; murder" } }
+  "es-2855":
+    native: "criminal"
+    notes: { n1: "El delincuente is a criminal, a person who commits a crime. It is used for men and women." }
+    bases: { "el": "the", "delincuente": "criminal" }
+    examples:
+      "El delincuente huye en un coche.": { native: "The criminal flees in a car.", bases: { "El": "the", "delincuente": "criminal", "huye": "to flee", "en": "in", "un": "a" } }
+      "La delincuente va a la cárcel.": { native: "The criminal goes to prison.", bases: { "La": "the", "delincuente": "criminal", "a": "to" } }
+  "es-2856":
+    native: "prison"
+    notes: { n1: "La prisión is a prison, a place where people are kept after a crime. The plural is prisiones." }
+    bases: { "la": "the", "prisión": "prison" }
+    examples:
+      "Está en prisión por el robo.": { native: "He is in prison for the theft.", bases: { "en": "in", "prisión": "prison", "por": "for", "el": "the" } }
+      "La prisión es grande.": { native: "The prison is big.", bases: { "La": "the", "prisión": "prison" } }
+  "es-2857":
+    native: "jail"
+    notes: { n1: "La cárcel is a jail, a place of punishment for those who break the law." }
+    bases: { "la": "the", "cárcel": "jail" }
+    examples:
+      "Pasa un año en la cárcel.": { native: "He spends a year in jail.", bases: { "un": "a", "en": "in", "la": "the", "cárcel": "jail" } }
+      "La cárcel está lejos.": { native: "The jail is far away.", bases: { "La": "the", "cárcel": "jail" } }
+  "es-2858":
+    native: "trial"
+    notes: { n1: "El juicio is a trial, where a case is heard in court. The verb is juzgar." }
+    bases: { "el": "the", "juicio": "trial" }
+    examples:
+      "El juicio empieza el lunes.": { native: "The trial starts on Monday.", bases: { "El": "the", "juicio": "trial" } }
+      "Asisto al juicio como testigo.": { native: "I attend the trial as a witness.", bases: { "al": "to the", "juicio": "trial", "como": "as" } }
+  "es-2859":
+    native: "complaint; report"
+    notes: { n1: "La denuncia is a complaint to the police, a report of a crime. The verb is denunciar." }
+    bases: { "la": "the", "denuncia": "complaint; report" }
+    examples:
+      "Pongo una denuncia por el robo.": { native: "I make a complaint about the theft.", bases: { "una": "a", "denuncia": "complaint; report", "por": "for", "el": "the" } }
+      "La denuncia está en la comisaría.": { native: "The report is at the police station.", bases: { "La": "the", "denuncia": "complaint; report", "en": "in" } }
+  "es-2860":
+    native: "to report (a crime)"
+    notes: { n1: "Denunciar is to report a crime or a wrong to the police or the authorities." }
+    bases: { "denunciar": "to report (a crime)" }
+    examples:
+      "Denuncio el robo.": { native: "I report the theft.", bases: { "Denuncio": "to report (a crime)", "el": "the" } }
+      "Denuncian el abuso a la policía.": { native: "They report the abuse to the police.", bases: { "Denuncian": "to report (a crime)", "el": "the", "a": "to", "la": "the" } }
+  "es-2861":
+    native: "sentence; judgement"
+    notes: { n1: "La sentencia is a judgement of a court, the decision in a case." }
+    bases: { "la": "the", "sentencia": "sentence; judgement" }
+    examples:
+      "La sentencia es justa.": { native: "The judgement is fair.", bases: { "La": "the", "sentencia": "sentence; judgement" } }
+      "La sentencia será el martes.": { native: "The judgement will be on Tuesday.", bases: { "La": "the", "sentencia": "sentence; judgement", "el": "the" } }
+  "es-2862":
+    native: "conviction; punishment"
+    notes: { n1: "La condena is a conviction, a punishment given by a court." }
+    bases: { "la": "the", "condena": "conviction; punishment" }
+    examples:
+      "La condena es de cinco años.": { native: "The sentence is five years.", bases: { "La": "the", "condena": "conviction; punishment", "de": "of" } }
+      "Recibe una condena leve.": { native: "He receives a light punishment.", bases: { "una": "a", "condena": "conviction; punishment", "leve": "light; mild" } }
+  "es-2863":
+    native: "accused; defendant"
+    notes: { n1: "El acusado is a person charged with a crime. The feminine is la acusada." }
+    bases: { "el": "the", "acusado": "accused; defendant" }
+    examples:
+      "El acusado declara en el juicio.": { native: "The accused testifies at the trial.", bases: { "El": "the", "acusado": "accused; defendant", "en": "in" } }
+      "La acusada niega el delito.": { native: "The accused denies the offence.", bases: { "La": "the", "acusada": "accused; defendant", "niega": "to deny", "el": "the" } }
+  "es-2864":
+    native: "victim"
+    notes: { n1: "La víctima is a victim, a person harmed by a crime or an accident. It is used for men and women." }
+    bases: { "la": "the", "víctima": "victim" }
+    examples:
+      "La víctima pide ayuda.": { native: "The victim asks for help.", bases: { "La": "the", "víctima": "victim" } }
+      "El niño es una víctima.": { native: "The child is a victim.", bases: { "El": "the", "una": "a", "víctima": "victim" } }
+  "es-2865":
+    native: "police station"
+    notes: { n1: "La comisaría is a police station, where crimes are reported." }
+    bases: { "la": "the", "comisaría": "police station" }
+    examples:
+      "La comisaría está en la plaza.": { native: "The police station is in the square.", bases: { "La": "the", "comisaría": "police station", "en": "in" } }
+      "Voy a la comisaría a denunciar.": { native: "I go to the police station to report.", bases: { "a": "to", "la": "the", "comisaría": "police station" } }
+  "es-2866":
+    native: "to arrest"
+    notes: { n1: "Arrestar is to take a person into custody by the police." }
+    bases: { "arrestar": "to arrest" }
+    examples:
+      "Arrestan al ladrón.": { native: "They arrest the thief.", bases: { "Arrestan": "to arrest", "al": "to the" } }
+      "La policía arresta al acusado.": { native: "The police arrest the accused.", bases: { "La": "the", "arresta": "to arrest", "al": "to the" } }
+  "es-2867":
+    native: "arrest"
+    notes: { n1: "El arresto is an arrest, the act of taking a person into custody." }
+    bases: { "el": "the", "arresto": "arrest" }
+    examples:
+      "El arresto es de noche.": { native: "The arrest is at night.", bases: { "El": "the", "arresto": "arrest", "de": "of" } }
+      "Hay un arresto en la calle.": { native: "There is an arrest in the street.", bases: { "Hay": "there is; there are", "un": "a", "arresto": "arrest", "en": "in", "la": "the" } }
+  "es-2868":
+    native: "to testify; to declare"
+    notes: { n1: "Declarar is to give evidence in a court, or to state something officially." }
+    bases: { "declarar": "to testify; to declare" }
+    examples:
+      "El testigo declara en el juicio.": { native: "The witness testifies at the trial.", bases: { "El": "the", "declara": "to testify; to declare", "en": "in" } }
+      "Declaro mis ingresos.": { native: "I declare my income.", bases: { "Declaro": "to testify; to declare" } }
+  "es-2869":
+    native: "innocent"
+    notes: { n1: "Inocente is innocent, not guilty of a crime. It does not change for gender." }
+    bases: { "inocente": "innocent" }
+    examples:
+      "El acusado es inocente.": { native: "The accused is innocent.", bases: { "El": "the", "inocente": "innocent" } }
+      "La niña es inocente.": { native: "The girl is innocent.", bases: { "La": "the", "inocente": "innocent" } }
+  "es-2870":
+    native: "guilty"
+    notes: { n1: "Culpable is guilty, responsible for a crime or a wrong. It does not change for gender." }
+    bases: { "culpable": "guilty" }
+    examples:
+      "El ladrón es culpable.": { native: "The thief is guilty.", bases: { "El": "the", "culpable": "guilty" } }
+      "No soy culpable del error.": { native: "I am not guilty of the mistake.", bases: { "culpable": "guilty", "del": "of" } }
+  "es-2871":
+    native: "abuse"
+    notes: { n1: "El abuso is abuse, an unfair or harmful use of power or of a person." }
+    bases: { "el": "the", "abuso": "abuse" }
+    examples:
+      "Denuncian un abuso.": { native: "They report an abuse.", bases: { "un": "a", "abuso": "abuse" } }
+      "El abuso es un delito.": { native: "Abuse is an offence.", bases: { "El": "the", "abuso": "abuse", "un": "a" } }
+  "es-2872":
+    native: "fraud"
+    notes: { n1: "El fraude is fraud, the crime of cheating someone to get money." }
+    bases: { "el": "the", "fraude": "fraud" }
+    examples:
+      "El fraude es un delito.": { native: "Fraud is a crime.", bases: { "El": "the", "fraude": "fraud", "un": "a" } }
+      "Hay un fraude en el banco.": { native: "There is a fraud at the bank.", bases: { "Hay": "there is; there are", "un": "a", "fraude": "fraud", "en": "in", "el": "the" } }
+  "es-2873":
+    native: "lawsuit; demand"
+    notes: { n1: "La demanda is a lawsuit, a case brought to a court, or a demand for goods." }
+    bases: { "la": "the", "demanda": "lawsuit; demand" }
+    examples:
+      "Presenta una demanda contra la empresa.": { native: "She brings a lawsuit against the company.", bases: { "una": "a", "demanda": "lawsuit; demand", "contra": "against", "la": "the" } }
+      "La demanda de casas es alta.": { native: "The demand for houses is high.", bases: { "La": "the", "demanda": "lawsuit; demand", "de": "of", "alta": "high" } }
+  "es-2874":
+    native: "rule; standard"
+    notes: { n1: "La norma is a rule, a standard that people must follow." }
+    bases: { "la": "the", "norma": "rule; standard" }
+    examples:
+      "Hay una norma para el parque.": { native: "There is a rule for the park.", bases: { "Hay": "there is; there are", "una": "a", "norma": "rule; standard", "para": "for", "el": "the" } }
+      "Respetamos las normas.": { native: "We respect the rules.", bases: { "Respetamos": "to respect", "las": "the", "normas": "rule; standard" } }
+  "es-2875":
+    native: "forbidden"
+    notes: { n1: "Prohibido is forbidden, not allowed. It agrees with the noun: prohibida." }
+    bases: { "prohibido": "forbidden" }
+    examples:
+      "Fumar está prohibido.": { native: "Smoking is forbidden.", bases: { "Fumar": "to smoke", "prohibido": "forbidden" } }
+      "El paso está prohibido.": { native: "The way is forbidden.", bases: { "El": "the", "prohibido": "forbidden" } }
+  "es-2876":
+    native: "allowed; permitted"
+    notes: { n1: "Permitido is allowed, permitted by a rule. It agrees with the noun: permitida." }
+    bases: { "permitido": "allowed; permitted" }
+    examples:
+      "Entrar es permitido.": { native: "Entering is allowed.", bases: { "permitido": "allowed; permitted" } }
+      "Está permitido aparcar aquí.": { native: "It is allowed to park here.", bases: { "permitido": "allowed; permitted", "aparcar": "to park" } }
+  "es-2877":
+    native: "compulsory"
+    notes: { n1: "Obligatorio is compulsory, required by law. It agrees with the noun: obligatoria." }
+    bases: { "obligatorio": "compulsory" }
+    examples:
+      "El seguro es obligatorio.": { native: "The insurance is compulsory.", bases: { "El": "the", "obligatorio": "compulsory" } }
+      "La escuela es obligatoria.": { native: "School is compulsory.", bases: { "La": "the", "obligatoria": "compulsory" } }
+  "es-2878":
+    native: "freedom; liberty"
+    notes: { n1: "La libertad is freedom, the state of being free to act and choose." }
+    bases: { "la": "the", "libertad": "freedom; liberty" }
+    examples:
+      "La libertad es un derecho.": { native: "Freedom is a right.", bases: { "La": "the", "libertad": "freedom; liberty", "un": "a" } }
+      "Quiero libertad para decidir.": { native: "I want freedom to decide.", bases: { "libertad": "freedom; liberty", "para": "for" } }

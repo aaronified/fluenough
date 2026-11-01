@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-environment"
+name: "Reading: a clean-up notice and the air"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a notice for a neighbourhood clean-up, and a note on air pollution. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-clean-up-notice"
+    title: "A clean-up notice"
+    theme: "environment"
+    sentences:
+      - text: "Limpieza del barrio el sábado a las diez."
+      - text: "Traiga guantes y bolsas para los residuos."
+      - text: "Separe el cartón, el vidrio y el plástico."
+      - text: "¡Ayúdenos a proteger el parque!"
+    questions:
+      - id: "es-2453"
+        prompt: { en: "When is the clean-up?" }
+        options:
+          - { en: "Saturday at ten" }
+          - { en: "Sunday at nine" }
+          - { en: "Friday at six" }
+        answer: 1
+      - id: "es-2454"
+        prompt: { en: "What should people bring?" }
+        options:
+          - { en: "Gloves and bags" }
+          - { en: "A bicycle" }
+          - { en: "Food" }
+        answer: 1
+      - id: "es-2455"
+        prompt: { en: "What should be separated?" }
+        options:
+          - { en: "Cardboard, glass and plastic" }
+          - { en: "Water and paper" }
+          - { en: "Food and wood" }
+        answer: 1
+  - id: "es-air-note"
+    title: "A note about the air"
+    theme: "environment"
+    sentences:
+      - text: "La contaminación del aire es un problema grave."
+      - text: "Muchas personas usan el coche, pero el transporte público es mejor."
+      - text: "Hay que reducir el ruido y el humo."
+      - text: "Las plantas ayudan a limpiar el aire."
+    questions:
+      - id: "es-2456"
+        prompt: { en: "What is a serious problem?" }
+        options:
+          - { en: "Air pollution" }
+          - { en: "Noise only" }
+          - { en: "Rubbish on the beach" }
+        answer: 1
+      - id: "es-2457"
+        prompt: { en: "What is better than the car?" }
+        options:
+          - { en: "Walking on the road" }
+          - { en: "Public transport" }
+          - { en: "A bicycle always" }
+        answer: 2
+      - id: "es-2458"
+        prompt: { en: "What do plants help with?" }
+        options:
+          - { en: "Cleaning the air" }
+          - { en: "Making noise" }
+          - { en: "Heating the house" }
+        answer: 1
