@@ -430,7 +430,9 @@ units:
       - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
-  - planned: { id: "es-grammar-pluperfect", grammar: "pluperfect" }
+  - decks: ["es-grammar-pluperfect", "es-reading-pluperfect"]
+    words: 0
+    grammar: ["pluperfect"]
     listening_passages:
       - { id: "it-had-already-happened", text: { "en": "Saying what had already happened when something else began" } }
     reading_passages:
