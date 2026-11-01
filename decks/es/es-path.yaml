@@ -348,7 +348,8 @@ units:
       - { id: "what-would-you-do", text: { "en": "Saying what you would do in another situation" } }
     reading_passages:
       - { id: "polite-requests", text: { "en": "Polite requests written with the conditional" } }
-  - planned: { id: "es-travel", theme: "travel", words: 55 }
+  - decks: ["es-travel", "es-travel-sentences", "es-reading-travel", "*"]
+    words: 25
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:

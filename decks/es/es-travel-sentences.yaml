@@ -1,0 +1,50 @@
+schema: 1
+id: "es-travel-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2196"
+    target: "Confirmo la reserva en la recepción."
+    ipa: "konˈfiɾmo la reˈseɾba en la reθepˈθjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Confirmo", ref: "es-2191" }, { word: "la", base: "la" }, { word: "reserva", ref: "es-1258" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "recepción", ref: "es-2171" }]
+    confusables: [{ id: "agencia", ref: "es-2180", kind: "word" }, { id: "visita", ref: "es-2174", kind: "word" }]
+  - id: "es-2197"
+    target: "Necesito un visado y un seguro de viaje."
+    ipa: "neθeˈsito un biˈsado i un seˈɡuɾo de ˈbjaxe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Necesito", ref: "es-0288" }, { word: "un", base: "un" }, { word: "visado", ref: "es-2177" }, { word: "y", ref: "es-0048" }, { word: "un", base: "un" }, { word: "seguro", ref: "es-2138" }, { word: "de", base: "de" }, { word: "viaje", ref: "es-1690" }]
+    confusables: [{ id: "pasaporte", ref: "es-0878", kind: "word" }, { id: "embajada", ref: "es-2184", kind: "word" }]
+  - id: "es-2198"
+    target: "Hacemos una excursión al monumento."
+    ipa: "aˈθemos ˈuna ekskuɾˈsjon al monuˈmento"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Hacemos", ref: "es-0025" }, { word: "una", base: "una" }, { word: "excursión", ref: "es-2178" }, { word: "al", base: "al" }, { word: "monumento", ref: "es-2175" }]
+    confusables: [{ id: "museo", ref: "es-0776", kind: "word" }, { id: "paseo", ref: "es-0915", kind: "word" }]
+  - id: "es-2199"
+    target: "El ladrón roba la cartera en el metro."
+    ipa: "el laˈdɾon ˈroba la kaɾˈteɾa en el ˈmetɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "ladrón", ref: "es-2183" }, { word: "roba", ref: "es-2193" }, { word: "la", base: "la" }, { word: "cartera", ref: "es-1168" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "metro", ref: "es-0675" }]
+    confusables: [{ id: "robo", ref: "es-2182", kind: "word" }, { id: "policia", ref: "es-0868", kind: "word" }]
+  - id: "es-2200"
+    target: "Me hospedo en un hostal cerca de la estación."
+    ipa: "me osˈpedo en un osˈtal ˈθeɾka de la estaˈθjon"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Me", base: "me" }, { word: "hospedo", ref: "es-2192" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "hostal", ref: "es-1723" }, { word: "cerca", ref: "es-0717" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "estación", ref: "es-0684" }]
+    confusables: [{ id: "alojamiento", ref: "es-2179", kind: "word" }, { id: "hotel", ref: "es-0769", kind: "word" }]
+  - id: "es-2201"
+    target: "Compro un recuerdo en el mercado."
+    ipa: "ˈkompɾo un reˈkweɾdo en el meɾˈkado"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Compro", ref: "es-0280" }, { word: "un", base: "un" }, { word: "recuerdo", ref: "es-1379" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", ref: "es-0567" }]
+    confusables: [{ id: "oferta", ref: "es-0585", kind: "word" }, { id: "cargo", ref: "es-2187", kind: "word" }]

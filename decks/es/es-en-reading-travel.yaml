@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-travel"
+name: "Reading: a two-day trip and a hotel note"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a two-day itinerary, and a note about a hotel booking. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-itinerary"
+    title: "A two-day trip itinerary"
+    theme: "travel"
+    sentences:
+      - text: "Día uno: llegada a Sevilla y paseo por el centro."
+      - text: "Día dos: excursión a la catedral y al museo."
+      - text: "Por la tarde, visita al mercado."
+      - text: "Alojamiento: hostal cerca de la estación."
+    questions:
+      - id: "es-2202"
+        prompt: { en: "What happens on day one?" }
+        options:
+          - { en: "A boat ride" }
+          - { en: "Arrival and a walk in the centre" }
+          - { en: "A trip to the museum" }
+        answer: 2
+      - id: "es-2203"
+        prompt: { en: "What is planned on day two?" }
+        options:
+          - { en: "A rest at home" }
+          - { en: "A trip to the cathedral and museum" }
+          - { en: "A trip to the mountains" }
+        answer: 2
+      - id: "es-2204"
+        prompt: { en: "Where is the accommodation?" }
+        options:
+          - { en: "A hostel near the station" }
+          - { en: "A hotel by the sea" }
+          - { en: "A flat in the centre" }
+        answer: 1
+  - id: "es-hotel-booking-note"
+    title: "A note about a hotel"
+    theme: "travel"
+    sentences:
+      - text: "Confirmo la reserva de la habitación."
+      - text: "Necesito la llave y el visado."
+      - text: "El desayuno está incluido en el precio."
+      - text: "La recepción abre a las siete."
+    questions:
+      - id: "es-2205"
+        prompt: { en: "What is confirmed?" }
+        options:
+          - { en: "The room booking" }
+          - { en: "The train ticket" }
+          - { en: "The visa" }
+        answer: 1
+      - id: "es-2206"
+        prompt: { en: "What is needed?" }
+        options:
+          - { en: "The map and the bus" }
+          - { en: "The key and the visa" }
+          - { en: "The camera" }
+        answer: 2
+      - id: "es-2207"
+        prompt: { en: "When does reception open?" }
+        options:
+          - { en: "At six" }
+          - { en: "At eight" }
+          - { en: "At seven" }
+        answer: 3
