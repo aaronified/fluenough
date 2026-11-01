@@ -1,0 +1,335 @@
+# The order Aramaic (Imperial) is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught arc-en-<name> for arc-<name> (ADR-0013, ADR-0036).
+#
+# This is also Aramaic (Imperial)'s B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: A reading course in Imperial (Official) Aramaic: the Elephantine papyri, Ezra and Daniel.
+#
+# A reading course (owner, 2026-10-31): Aramaic (Imperial) has no living speakers, so
+# the milestones A1, A2 and B1 mean three reading levels, and the sizes
+# are `levels` (400, 600 and 900 words, a judgement,
+# low confidence) in place of the plan's 700, 900 and 1,200. Themes of
+# modern life are left out.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+# The script is taught in the units named `script`, after the first six
+# themes, as the scheme has it.
+schema: 1
+kind: "path"
+id: "arc-path"
+language: "arc"
+description: "Aramaic (Imperial): the planned path to B1. Only the phrasebook and the first words are written."
+genders: ["m", "f"]
+levels: { A1: 400, A2: 600, B1: 900 }
+alphabet: []
+units:
+  - decks: ["arc-phrasebook", "arc-first-words", "*"]
+    words: 10
+  - planned: { id: "arc-sound-differences", grammar: ["sound-differences", "emphatics"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short passage in Aramaic (Imperial) showing sound differences, emphatics, read aloud" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Aramaic (Imperial) showing sound differences, emphatics" } }
+  - planned: { id: "arc-questions", theme: "questions", words: 7 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme yes, no and questions, read aloud" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme yes, no and questions" } }
+  - planned: { id: "arc-pronouns", theme: "pronouns", words: 21 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme pronouns and people words, read aloud" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme pronouns and people words" } }
+  - planned: { id: "arc-family", theme: "family", words: 16 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme family, read aloud" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme family" } }
+  - planned: { id: "arc-numbers-1-20", theme: "numbers-1-20", words: 13 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme numbers 1 to 20, read aloud" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme numbers 1 to 20" } }
+  - planned: { id: "arc-script-letters", grammar: ["hebrew-letters"] }
+    listening_passages:
+      - { id: "script-letters-heard", text: { "en": "A short passage in Aramaic (Imperial) showing hebrew letters, read aloud" } }
+    reading_passages:
+      - { id: "script-letters-text", text: { "en": "A short written text in Aramaic (Imperial) showing hebrew letters" } }
+  - planned: { id: "arc-script-unpointed", grammar: ["unvoweled-text"] }
+    listening_passages:
+      - { id: "script-unpointed-heard", text: { "en": "A short passage in Aramaic (Imperial) showing unvoweled text, read aloud" } }
+    reading_passages:
+      - { id: "script-unpointed-text", text: { "en": "A short written text in Aramaic (Imperial) showing unvoweled text" } }
+  - planned: { id: "arc-about-me", theme: "about-me", words: 5 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme talking about yourself, read aloud" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme talking about yourself" } }
+  - planned: { id: "arc-everyday-verbs", theme: "everyday-verbs", words: 21 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme everyday verbs, read aloud" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme everyday verbs" } }
+  - planned: { id: "arc-adverbs", theme: "adverbs", words: 32 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme adverbs, read aloud" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme adverbs" } }
+  - planned: { id: "arc-quantities", theme: "quantities", words: 19 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme quantities, read aloud" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme quantities" } }
+  - planned: { id: "arc-grammar-roots", grammar: ["root-and-pattern"] }
+    listening_passages:
+      - { id: "grammar-roots-heard", text: { "en": "A short passage in Aramaic (Imperial) showing root and pattern, read aloud" } }
+    reading_passages:
+      - { id: "grammar-roots-text", text: { "en": "A short written text in Aramaic (Imperial) showing root and pattern" } }
+  - planned: { id: "arc-describing", theme: "describing", words: 26 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme describing things and feelings, read aloud" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme describing things and feelings" } }
+  - planned: { id: "arc-time", theme: "time", words: 12 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme time, read aloud" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme time" } }
+  - planned: { id: "arc-location", theme: "location", words: 9 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme location, read aloud" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme location" } }
+  - planned: { id: "arc-more-verbs", theme: "more-verbs", words: 21 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme more verbs, read aloud" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme more verbs" } }
+  - planned: { id: "arc-grammar-gender-number", grammar: ["gender-number"] }
+    listening_passages:
+      - { id: "grammar-gender-number-heard", text: { "en": "A short passage in Aramaic (Imperial) showing gender number, read aloud" } }
+    reading_passages:
+      - { id: "grammar-gender-number-text", text: { "en": "A short written text in Aramaic (Imperial) showing gender number" } }
+  - planned: { id: "arc-work", theme: "work", words: 12 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme work, read aloud" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme work" } }
+  - planned: { id: "arc-numbers-big", theme: "numbers-big", words: 9 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme tens and big numbers, read aloud" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme tens and big numbers" } }
+  - planned: { id: "arc-food", theme: "food", words: 41 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme food, read aloud" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme food" } }
+  - planned: { id: "arc-grammar-states", grammar: ["absolute-and-emphatic-state"] }
+    listening_passages:
+      - { id: "grammar-states-heard", text: { "en": "A short passage in Aramaic (Imperial) showing absolute and emphatic state, read aloud" } }
+    reading_passages:
+      - { id: "grammar-states-text", text: { "en": "A short written text in Aramaic (Imperial) showing absolute and emphatic state" } }
+  - planned: { id: "arc-directions", theme: "directions", words: 8 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme directions, read aloud" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme directions" } }
+  - planned: { id: "arc-body", theme: "body", words: 18 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme body, read aloud" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme body" } }
+  - planned: { id: "arc-places", theme: "places", words: 27 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme places, read aloud" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme places" } }
+  - planned: { id: "arc-things", theme: "things", words: 25 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme things, read aloud" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme things" } }
+  - planned: { id: "arc-grammar-participle-present", grammar: ["participle-as-present"] }
+    listening_passages:
+      - { id: "grammar-participle-present-heard", text: { "en": "A short passage in Aramaic (Imperial) showing participle as present, read aloud" } }
+    reading_passages:
+      - { id: "grammar-participle-present-text", text: { "en": "A short written text in Aramaic (Imperial) showing participle as present" } }
+  - planned: { id: "arc-home", theme: "home", words: 12 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme home, read aloud" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme home" } }
+  - planned: { id: "arc-clothes", theme: "clothes", words: 17 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme clothes, read aloud" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme clothes" } }
+  - planned: { id: "arc-animals", theme: "animals", words: 19 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme animals, read aloud" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "arc-weather", theme: "weather", words: 86 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme weather, read aloud" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme weather" } }
+  - planned: { id: "arc-calendar", theme: "calendar", words: 29 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme calendar, read aloud" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme calendar" } }
+  - planned: { id: "arc-grammar-perfect-imperfect", grammar: ["perfect-tense", "imperfect-tense"] }
+    listening_passages:
+      - { id: "grammar-perfect-imperfect-heard", text: { "en": "A short passage in Aramaic (Imperial) showing perfect tense, imperfect tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-perfect-imperfect-text", text: { "en": "A short written text in Aramaic (Imperial) showing perfect tense, imperfect tense" } }
+  - planned: { id: "arc-festivals", theme: "festivals", words: 76 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme festivals, read aloud" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme festivals" } }
+  - planned: { id: "arc-grammar-construct-state", grammar: ["construct-state"] }
+    listening_passages:
+      - { id: "grammar-construct-state-heard", text: { "en": "A short passage in Aramaic (Imperial) showing construct state, read aloud" } }
+    reading_passages:
+      - { id: "grammar-construct-state-text", text: { "en": "A short written text in Aramaic (Imperial) showing construct state" } }
+  - planned: { id: "arc-illness", theme: "illness", words: 95 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme illness, read aloud" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme illness" } }
+  - planned: { id: "arc-cooking", theme: "cooking", words: 95 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme cooking, read aloud" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme cooking" } }
+  - planned: { id: "arc-grammar-pronoun-suffixes", grammar: ["pronoun-suffixes"] }
+    listening_passages:
+      - { id: "grammar-pronoun-suffixes-heard", text: { "en": "A short passage in Aramaic (Imperial) showing pronoun suffixes, read aloud" } }
+    reading_passages:
+      - { id: "grammar-pronoun-suffixes-text", text: { "en": "A short written text in Aramaic (Imperial) showing pronoun suffixes" } }
+  - planned: { id: "arc-journey", theme: "journey", words: 114 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme journey, read aloud" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme journey" } }
+  - planned: { id: "arc-grammar-imperatives", grammar: ["imperative"] }
+    listening_passages:
+      - { id: "grammar-imperatives-heard", text: { "en": "A short passage in Aramaic (Imperial) showing imperative, read aloud" } }
+    reading_passages:
+      - { id: "grammar-imperatives-text", text: { "en": "A short written text in Aramaic (Imperial) showing imperative" } }
+  - planned: { id: "arc-nature", theme: "nature", words: 105 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme nature, read aloud" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme nature" } }
+    milestone: "A2"
+  - planned: { id: "arc-health", theme: "health", words: 77 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme health, read aloud" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme health" } }
+  - planned: { id: "arc-feelings", theme: "feelings", words: 77 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme feelings, read aloud" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme feelings" } }
+  - planned: { id: "arc-opinions", theme: "opinions", words: 70 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme opinions, read aloud" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme opinions" } }
+  - planned: { id: "arc-grammar-verb-stems", grammar: ["verb-stems"] }
+    listening_passages:
+      - { id: "grammar-verb-stems-heard", text: { "en": "A short passage in Aramaic (Imperial) showing verb stems, read aloud" } }
+    reading_passages:
+      - { id: "grammar-verb-stems-text", text: { "en": "A short written text in Aramaic (Imperial) showing verb stems" } }
+  - planned: { id: "arc-travel", theme: "travel", words: 77 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme travel, read aloud" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme travel" } }
+  - planned: { id: "arc-government", theme: "government", words: 57 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme government, read aloud" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme government" } }
+  - planned: { id: "arc-grammar-relative-clauses", grammar: ["relative-clauses"] }
+    listening_passages:
+      - { id: "grammar-relative-clauses-heard", text: { "en": "A short passage in Aramaic (Imperial) showing relative clauses, read aloud" } }
+    reading_passages:
+      - { id: "grammar-relative-clauses-text", text: { "en": "A short written text in Aramaic (Imperial) showing relative clauses" } }
+  - planned: { id: "arc-agriculture", theme: "agriculture", words: 70 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme agriculture, read aloud" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme agriculture" } }
+  - planned: { id: "arc-arts", theme: "arts", words: 64 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme arts, read aloud" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme arts" } }
+  - planned: { id: "arc-grammar-conditional-clauses", grammar: ["conditional-clauses"] }
+    listening_passages:
+      - { id: "grammar-conditional-clauses-heard", text: { "en": "A short passage in Aramaic (Imperial) showing conditional clauses, read aloud" } }
+    reading_passages:
+      - { id: "grammar-conditional-clauses-text", text: { "en": "A short written text in Aramaic (Imperial) showing conditional clauses" } }
+  - planned: { id: "arc-history", theme: "history", words: 64 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme history, read aloud" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme history" } }
+  - planned: { id: "arc-weddings", theme: "weddings", words: 64 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme weddings, read aloud" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme weddings" } }
+  - planned: { id: "arc-grammar-passive", grammar: ["passive"] }
+    listening_passages:
+      - { id: "grammar-passive-heard", text: { "en": "A short passage in Aramaic (Imperial) showing passive, read aloud" } }
+    reading_passages:
+      - { id: "grammar-passive-text", text: { "en": "A short written text in Aramaic (Imperial) showing passive" } }
+  - planned: { id: "arc-relationships", theme: "relationships", words: 64 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme relationships, read aloud" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme relationships" } }
+  - planned: { id: "arc-law", theme: "law", words: 51 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme law, read aloud" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme law" } }
+  - planned: { id: "arc-grammar-reported-speech", grammar: ["reported-speech"] }
+    listening_passages:
+      - { id: "grammar-reported-speech-heard", text: { "en": "A short passage in Aramaic (Imperial) showing reported speech, read aloud" } }
+    reading_passages:
+      - { id: "grammar-reported-speech-text", text: { "en": "A short written text in Aramaic (Imperial) showing reported speech" } }
+  - planned: { id: "arc-verbs-4", theme: "verbs-4", words: 89 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme story actions, read aloud" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme story actions" } }
+  - planned: { id: "arc-abstract-words", theme: "abstract-words", words: 76 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short passage in Aramaic (Imperial) on the theme ideas and values, read aloud" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Aramaic (Imperial) on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]

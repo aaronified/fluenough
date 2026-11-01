@@ -6,7 +6,9 @@
 # (owner, 2026-10-31, #959: "the 40+ list", with Latin, Old English and
 # Middle English added; 2026-11-01: all 65 entries): the living ones, the
 # ancient and reconstructed ones (Mycenaean Greek, Sumerian, Egyptian,
-# Proto-Indo-European, Vedic Sanskrit, Latin, Old and Middle English), two
+# Proto-Indo-European, Vedic Sanskrit, Latin, Old and Middle English, the
+# Archaic, Classical Attic and Koine stages of Ancient Greek, Pali, Imperial
+# Aramaic and Ashokan Prakrit; owner, 2026-11-01), two
 # sign languages and the constructed ones of fiction. This replaces the
 # "spoken ones only" rule of 2026-10-23. A language with no course is shown
 # on Add a language as having none yet.
@@ -34,7 +36,13 @@
 #   code            two or three letters. A language with no ISO 639-1 code
 #                   uses its 639-3 code; one with no ISO code at all (Dothraki,
 #                   High Valyrian) takes a private-use code, qaa to qtz, as
-#                   English Braille's `qbe` does.
+#                   English Braille's `qbe` does. ISO 639-3 has the one code
+#                   `grc` for all Ancient Greek, so the Classical Attic
+#                   course takes it, and Archaic (Homeric) Greek, Koine
+#                   Greek and Ashokan Prakrit take `qgh`, `qgk` and `qap`
+#                   (owner, 2026-11-01). `brahmi`, the script of Ashoka's
+#                   inscriptions, is named in the app; it has no font yet,
+#                   so Ashokan Prakrit is written in Devanagari for now.
 #   scripts omitted a sign language has no written script of its own here:
 #                   leave `scripts` out.
 #   dialect         optional: the one dialect the app teaches, by its proper
@@ -218,6 +226,17 @@ languages:
   - { code: "ang", iso639_3: "ang", name: "Old English", own_name: "Ænglisc", scripts: ["latin"], family: "germanic",
       aliases: ["Archaic English", "Anglo-Saxon"] }
   - { code: "enm", iso639_3: "enm", name: "Middle English", own_name: "Englissh", scripts: ["latin"], family: "germanic" }
+  - { code: "grc", iso639_3: "grc", name: "Ancient Greek (Classical Attic)", own_name: "Ἑλληνική", scripts: ["greek"], family: "hellenic",
+      aliases: ["Attic Greek", "Classical Greek", "Ancient Greek"] }
+  - { code: "qgh", iso639_3: "qgh", name: "Ancient Greek (Archaic)", own_name: "Ἑλληνική", scripts: ["greek"], family: "hellenic",
+      aliases: ["Homeric Greek", "Epic Greek", "Archaic Greek"] }
+  - { code: "qgk", iso639_3: "qgk", name: "Ancient Greek (Koine)", own_name: "Ἑλληνική", scripts: ["greek"], family: "hellenic",
+      aliases: ["Koine Greek", "New Testament Greek", "Biblical Greek"] }
+  - { code: "pli", iso639_3: "pli", name: "Pali", own_name: "पालि", scripts: ["devanagari"], family: "indo_aryan" }
+  - { code: "arc", iso639_3: "arc", name: "Aramaic (Imperial)", own_name: "ארמית", scripts: ["hebrew"], family: "afroasiatic",
+      aliases: ["Official Aramaic", "Biblical Aramaic"] }
+  - { code: "qap", iso639_3: "qap", name: "Ashokan Prakrit", own_name: "धंमलिपि", scripts: ["devanagari", "brahmi"], family: "indo_aryan",
+      aliases: ["Edicts of Ashoka", "Ashokan", "Prakrit"] }
   # Sign languages (#579): no written script, so no `scripts`.
   - { code: "ins", iso639_3: "ins", name: "Indian Sign Language", own_name: "Indian Sign Language", family: "sign",
       aliases: ["ISL"] }

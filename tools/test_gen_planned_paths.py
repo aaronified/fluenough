@@ -77,7 +77,7 @@ class Plans(unittest.TestCase):
                 self.assertIn(theme, known)
 
     def test_ancient_courses_leave_out_modern_themes(self) -> None:
-        for code in ("la", "vsn", "ang", "enm"):
+        for code in ("la", "vsn", "ang", "enm", "qgh", "grc", "qgk", "pli", "arc", "qap"):
             themes = {u["theme"] for u in gp.build_units(code) if u["kind"] == "theme"}
             self.assertFalse(themes & gp.ANCIENT_EXCLUDE, code)
 

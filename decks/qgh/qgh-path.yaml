@@ -1,0 +1,335 @@
+# The order Ancient Greek (Archaic) is taught in, one unit per line, from every language
+# it is taught from: each deck is named by its core id, and a learner from
+# English is taught qgh-en-<name> for qgh-<name> (ADR-0013, ADR-0036).
+#
+# This is also Ancient Greek (Archaic)'s B1 plan (docs/DECK-FORMAT.md, "The B1 plan"): every
+# unit from the first words to B1, with its size in words, its grammar
+# topics, the three milestones, and for each planned unit its listening
+# and reading passages. The file is written by tools/gen_planned_paths.py
+# from the unit template of the language-paths scheme
+# (wiki/Plan-Language-Paths-Scheme.md) and the grammar of the language's
+# family; edit the generator's data, or take a unit over by hand once its
+# deck is written (#959).
+#
+# Unit 1 is written: the phrasebook and the first words (10 words). Every
+# other unit is planned, so the course teaches each as "Coming" until its
+# deck is written. The passages are placeholders: each describes its unit's
+# theme or grammar and is reworded when the passage is written.
+#
+# From the scheme, for this language: A reading course in the language of the Iliad and the Odyssey.
+#
+# A reading course (owner, 2026-10-31): Ancient Greek (Archaic) has no living speakers, so
+# the milestones A1, A2 and B1 mean three reading levels, and the sizes
+# are `levels` (400, 600 and 900 words, a judgement,
+# low confidence) in place of the plan's 700, 900 and 1,200. Themes of
+# modern life are left out.
+#
+# `alphabet` is empty: the validator takes only written decks there. When
+# the script decks are written, they are listed in it.
+# The script is taught in the units named `script`, after the first six
+# themes, as the scheme has it.
+schema: 1
+kind: "path"
+id: "qgh-path"
+language: "qgh"
+description: "Ancient Greek (Archaic): the planned path to B1. Only the phrasebook and the first words are written."
+genders: ["m", "f", "n"]
+levels: { A1: 400, A2: 600, B1: 900 }
+alphabet: []
+units:
+  - decks: ["qgh-phrasebook", "qgh-first-words", "*"]
+    words: 10
+  - planned: { id: "qgh-sound-differences", grammar: ["sound-differences", "vowel-length", "pitch-accent"] }
+    listening_passages:
+      - { id: "sound-differences-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing sound differences, vowel length, pitch accent, read aloud" } }
+    reading_passages:
+      - { id: "sound-differences-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing sound differences, vowel length, pitch accent" } }
+  - planned: { id: "qgh-questions", theme: "questions", words: 7 }
+    listening_passages:
+      - { id: "questions-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme yes, no and questions, read aloud" } }
+    reading_passages:
+      - { id: "questions-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme yes, no and questions" } }
+  - planned: { id: "qgh-pronouns", theme: "pronouns", words: 21 }
+    listening_passages:
+      - { id: "pronouns-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme pronouns and people words, read aloud" } }
+    reading_passages:
+      - { id: "pronouns-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme pronouns and people words" } }
+  - planned: { id: "qgh-family", theme: "family", words: 16 }
+    listening_passages:
+      - { id: "family-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme family, read aloud" } }
+    reading_passages:
+      - { id: "family-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme family" } }
+  - planned: { id: "qgh-numbers-1-20", theme: "numbers-1-20", words: 13 }
+    listening_passages:
+      - { id: "numbers-1-20-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme numbers 1 to 20, read aloud" } }
+    reading_passages:
+      - { id: "numbers-1-20-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme numbers 1 to 20" } }
+  - planned: { id: "qgh-script-letters", grammar: ["greek-letters"] }
+    listening_passages:
+      - { id: "script-letters-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing greek letters, read aloud" } }
+    reading_passages:
+      - { id: "script-letters-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing greek letters" } }
+  - planned: { id: "qgh-script-breathings-accents", grammar: ["breathings-and-accents"] }
+    listening_passages:
+      - { id: "script-breathings-accents-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing breathings and accents, read aloud" } }
+    reading_passages:
+      - { id: "script-breathings-accents-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing breathings and accents" } }
+  - planned: { id: "qgh-about-me", theme: "about-me", words: 5 }
+    listening_passages:
+      - { id: "about-me-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme talking about yourself, read aloud" } }
+    reading_passages:
+      - { id: "about-me-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme talking about yourself" } }
+  - planned: { id: "qgh-everyday-verbs", theme: "everyday-verbs", words: 21 }
+    listening_passages:
+      - { id: "everyday-verbs-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme everyday verbs, read aloud" } }
+    reading_passages:
+      - { id: "everyday-verbs-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme everyday verbs" } }
+  - planned: { id: "qgh-adverbs", theme: "adverbs", words: 32 }
+    listening_passages:
+      - { id: "adverbs-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme adverbs, read aloud" } }
+    reading_passages:
+      - { id: "adverbs-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme adverbs" } }
+  - planned: { id: "qgh-quantities", theme: "quantities", words: 19 }
+    listening_passages:
+      - { id: "quantities-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme quantities, read aloud" } }
+    reading_passages:
+      - { id: "quantities-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme quantities" } }
+  - planned: { id: "qgh-grammar-case-system", grammar: ["case-system"] }
+    listening_passages:
+      - { id: "grammar-case-system-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing case system, read aloud" } }
+    reading_passages:
+      - { id: "grammar-case-system-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing case system" } }
+  - planned: { id: "qgh-describing", theme: "describing", words: 26 }
+    listening_passages:
+      - { id: "describing-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme describing things and feelings, read aloud" } }
+    reading_passages:
+      - { id: "describing-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme describing things and feelings" } }
+  - planned: { id: "qgh-time", theme: "time", words: 12 }
+    listening_passages:
+      - { id: "time-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme time, read aloud" } }
+    reading_passages:
+      - { id: "time-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme time" } }
+  - planned: { id: "qgh-location", theme: "location", words: 9 }
+    listening_passages:
+      - { id: "location-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme location, read aloud" } }
+    reading_passages:
+      - { id: "location-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme location" } }
+  - planned: { id: "qgh-more-verbs", theme: "more-verbs", words: 21 }
+    listening_passages:
+      - { id: "more-verbs-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme more verbs, read aloud" } }
+    reading_passages:
+      - { id: "more-verbs-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme more verbs" } }
+  - planned: { id: "qgh-grammar-first-second-declension", grammar: ["first-declension", "second-declension"] }
+    listening_passages:
+      - { id: "grammar-first-second-declension-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing first declension, second declension, read aloud" } }
+    reading_passages:
+      - { id: "grammar-first-second-declension-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing first declension, second declension" } }
+  - planned: { id: "qgh-work", theme: "work", words: 12 }
+    listening_passages:
+      - { id: "work-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme work, read aloud" } }
+    reading_passages:
+      - { id: "work-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme work" } }
+  - planned: { id: "qgh-numbers-big", theme: "numbers-big", words: 9 }
+    listening_passages:
+      - { id: "numbers-big-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme tens and big numbers, read aloud" } }
+    reading_passages:
+      - { id: "numbers-big-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme tens and big numbers" } }
+  - planned: { id: "qgh-food", theme: "food", words: 41 }
+    listening_passages:
+      - { id: "food-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme food, read aloud" } }
+    reading_passages:
+      - { id: "food-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme food" } }
+  - planned: { id: "qgh-grammar-present", grammar: ["present-tense"] }
+    listening_passages:
+      - { id: "grammar-present-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing present tense, read aloud" } }
+    reading_passages:
+      - { id: "grammar-present-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing present tense" } }
+  - planned: { id: "qgh-directions", theme: "directions", words: 8 }
+    listening_passages:
+      - { id: "directions-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme directions, read aloud" } }
+    reading_passages:
+      - { id: "directions-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme directions" } }
+  - planned: { id: "qgh-body", theme: "body", words: 18 }
+    listening_passages:
+      - { id: "body-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme body, read aloud" } }
+    reading_passages:
+      - { id: "body-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme body" } }
+  - planned: { id: "qgh-places", theme: "places", words: 27 }
+    listening_passages:
+      - { id: "places-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme places, read aloud" } }
+    reading_passages:
+      - { id: "places-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme places" } }
+  - planned: { id: "qgh-things", theme: "things", words: 25 }
+    listening_passages:
+      - { id: "things-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme things, read aloud" } }
+    reading_passages:
+      - { id: "things-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme things" } }
+  - planned: { id: "qgh-grammar-be-verb", grammar: ["be-verb"] }
+    listening_passages:
+      - { id: "grammar-be-verb-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing be verb, read aloud" } }
+    reading_passages:
+      - { id: "grammar-be-verb-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing be verb" } }
+  - planned: { id: "qgh-home", theme: "home", words: 12 }
+    listening_passages:
+      - { id: "home-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme home, read aloud" } }
+    reading_passages:
+      - { id: "home-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme home" } }
+  - planned: { id: "qgh-clothes", theme: "clothes", words: 17 }
+    listening_passages:
+      - { id: "clothes-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme clothes, read aloud" } }
+    reading_passages:
+      - { id: "clothes-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme clothes" } }
+  - planned: { id: "qgh-animals", theme: "animals", words: 19 }
+    listening_passages:
+      - { id: "animals-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme animals, read aloud" } }
+    reading_passages:
+      - { id: "animals-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme animals" } }
+    milestone: "A1"
+  - planned: { id: "qgh-weather", theme: "weather", words: 86 }
+    listening_passages:
+      - { id: "weather-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme weather, read aloud" } }
+    reading_passages:
+      - { id: "weather-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme weather" } }
+  - planned: { id: "qgh-calendar", theme: "calendar", words: 29 }
+    listening_passages:
+      - { id: "calendar-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme calendar, read aloud" } }
+    reading_passages:
+      - { id: "calendar-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme calendar" } }
+  - planned: { id: "qgh-grammar-third-declension", grammar: ["third-declension"] }
+    listening_passages:
+      - { id: "grammar-third-declension-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing third declension, read aloud" } }
+    reading_passages:
+      - { id: "grammar-third-declension-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing third declension" } }
+  - planned: { id: "qgh-festivals", theme: "festivals", words: 76 }
+    listening_passages:
+      - { id: "festivals-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme festivals, read aloud" } }
+    reading_passages:
+      - { id: "festivals-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme festivals" } }
+  - planned: { id: "qgh-grammar-adjectives", grammar: ["adjective-agreement"] }
+    listening_passages:
+      - { id: "grammar-adjectives-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing adjective agreement, read aloud" } }
+    reading_passages:
+      - { id: "grammar-adjectives-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing adjective agreement" } }
+  - planned: { id: "qgh-illness", theme: "illness", words: 95 }
+    listening_passages:
+      - { id: "illness-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme illness, read aloud" } }
+    reading_passages:
+      - { id: "illness-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme illness" } }
+  - planned: { id: "qgh-cooking", theme: "cooking", words: 95 }
+    listening_passages:
+      - { id: "cooking-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme cooking, read aloud" } }
+    reading_passages:
+      - { id: "cooking-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme cooking" } }
+  - planned: { id: "qgh-grammar-aorist-imperfect", grammar: ["aorist", "imperfect"] }
+    listening_passages:
+      - { id: "grammar-aorist-imperfect-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing aorist, imperfect, read aloud" } }
+    reading_passages:
+      - { id: "grammar-aorist-imperfect-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing aorist, imperfect" } }
+  - planned: { id: "qgh-journey", theme: "journey", words: 114 }
+    listening_passages:
+      - { id: "journey-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme journey, read aloud" } }
+    reading_passages:
+      - { id: "journey-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme journey" } }
+  - planned: { id: "qgh-grammar-imperatives-infinitives", grammar: ["imperative", "infinitive"] }
+    listening_passages:
+      - { id: "grammar-imperatives-infinitives-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing imperative, infinitive, read aloud" } }
+    reading_passages:
+      - { id: "grammar-imperatives-infinitives-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing imperative, infinitive" } }
+  - planned: { id: "qgh-nature", theme: "nature", words: 105 }
+    listening_passages:
+      - { id: "nature-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme nature, read aloud" } }
+    reading_passages:
+      - { id: "nature-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme nature" } }
+    milestone: "A2"
+  - planned: { id: "qgh-health", theme: "health", words: 77 }
+    listening_passages:
+      - { id: "health-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme health, read aloud" } }
+    reading_passages:
+      - { id: "health-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme health" } }
+  - planned: { id: "qgh-feelings", theme: "feelings", words: 77 }
+    listening_passages:
+      - { id: "feelings-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme feelings, read aloud" } }
+    reading_passages:
+      - { id: "feelings-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme feelings" } }
+  - planned: { id: "qgh-opinions", theme: "opinions", words: 70 }
+    listening_passages:
+      - { id: "opinions-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme opinions, read aloud" } }
+    reading_passages:
+      - { id: "opinions-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme opinions" } }
+  - planned: { id: "qgh-grammar-subjunctive-optative", grammar: ["subjunctive", "optative"] }
+    listening_passages:
+      - { id: "grammar-subjunctive-optative-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing subjunctive, optative, read aloud" } }
+    reading_passages:
+      - { id: "grammar-subjunctive-optative-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing subjunctive, optative" } }
+  - planned: { id: "qgh-travel", theme: "travel", words: 77 }
+    listening_passages:
+      - { id: "travel-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme travel, read aloud" } }
+    reading_passages:
+      - { id: "travel-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme travel" } }
+  - planned: { id: "qgh-government", theme: "government", words: 57 }
+    listening_passages:
+      - { id: "government-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme government, read aloud" } }
+    reading_passages:
+      - { id: "government-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme government" } }
+  - planned: { id: "qgh-grammar-participles", grammar: ["participles"] }
+    listening_passages:
+      - { id: "grammar-participles-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing participles, read aloud" } }
+    reading_passages:
+      - { id: "grammar-participles-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing participles" } }
+  - planned: { id: "qgh-agriculture", theme: "agriculture", words: 70 }
+    listening_passages:
+      - { id: "agriculture-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme agriculture, read aloud" } }
+    reading_passages:
+      - { id: "agriculture-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme agriculture" } }
+  - planned: { id: "qgh-arts", theme: "arts", words: 64 }
+    listening_passages:
+      - { id: "arts-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme arts, read aloud" } }
+    reading_passages:
+      - { id: "arts-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme arts" } }
+  - planned: { id: "qgh-grammar-particles", grammar: ["particles"] }
+    listening_passages:
+      - { id: "grammar-particles-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing particles, read aloud" } }
+    reading_passages:
+      - { id: "grammar-particles-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing particles" } }
+  - planned: { id: "qgh-history", theme: "history", words: 64 }
+    listening_passages:
+      - { id: "history-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme history, read aloud" } }
+    reading_passages:
+      - { id: "history-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme history" } }
+  - planned: { id: "qgh-weddings", theme: "weddings", words: 64 }
+    listening_passages:
+      - { id: "weddings-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme weddings, read aloud" } }
+    reading_passages:
+      - { id: "weddings-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme weddings" } }
+  - planned: { id: "qgh-grammar-relative-clauses", grammar: ["relative-clauses"] }
+    listening_passages:
+      - { id: "grammar-relative-clauses-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing relative clauses, read aloud" } }
+    reading_passages:
+      - { id: "grammar-relative-clauses-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing relative clauses" } }
+  - planned: { id: "qgh-relationships", theme: "relationships", words: 64 }
+    listening_passages:
+      - { id: "relationships-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme relationships, read aloud" } }
+    reading_passages:
+      - { id: "relationships-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme relationships" } }
+  - planned: { id: "qgh-law", theme: "law", words: 51 }
+    listening_passages:
+      - { id: "law-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme law, read aloud" } }
+    reading_passages:
+      - { id: "law-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme law" } }
+  - planned: { id: "qgh-grammar-epic-verse", grammar: ["dactylic-hexameter", "formulaic-diction"] }
+    listening_passages:
+      - { id: "grammar-epic-verse-heard", text: { "en": "A short passage in Ancient Greek (Archaic) showing dactylic hexameter, formulaic diction, read aloud" } }
+    reading_passages:
+      - { id: "grammar-epic-verse-text", text: { "en": "A short written text in Ancient Greek (Archaic) showing dactylic hexameter, formulaic diction" } }
+  - planned: { id: "qgh-verbs-4", theme: "verbs-4", words: 89 }
+    listening_passages:
+      - { id: "verbs-4-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme story actions, read aloud" } }
+    reading_passages:
+      - { id: "verbs-4-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme story actions" } }
+  - planned: { id: "qgh-abstract-words", theme: "abstract-words", words: 76 }
+    listening_passages:
+      - { id: "abstract-words-heard", text: { "en": "A short passage in Ancient Greek (Archaic) on the theme ideas and values, read aloud" } }
+    reading_passages:
+      - { id: "abstract-words-text", text: { "en": "A short written text in Ancient Greek (Archaic) on the theme ideas and values" } }
+    milestone: "B1"
+  - ["*"]
