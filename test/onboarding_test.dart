@@ -767,6 +767,15 @@ void main() {
       await tapKey(tester, 'add-$code');
     }
 
+    /// A section heading of the list ("Know · 1"), scrolled to first: the list
+    /// builds its children as they come into view, so one below the fold is
+    /// not in the tree yet.
+    Future<void> expectHeading(WidgetTester tester, String text) async {
+      final heading = find.text(text);
+      await scrollToFind(tester, heading);
+      expect(heading, findsOneWidget);
+    }
+
     /// The language [text] is marked as, for a screen reader, or null.
     Locale? markedAs(WidgetTester tester, Finder text) {
       Locale? found;
@@ -853,7 +862,7 @@ void main() {
       final settings = SettingsNotifier();
       await atList(tester, settings: settings);
       final l10n = l10nOf(tester);
-      expect(find.text(l10n.languagesSectionKnow(1)), findsOneWidget);
+      await expectHeading(tester, l10n.languagesSectionKnow(1));
       expect(find.byKey(const ValueKey<String>('language-en')), findsOneWidget);
       expect(find.text(l10n.onboardingSpokenNeedOne), findsOneWidget);
       expect(
@@ -864,7 +873,7 @@ void main() {
       await knowLanguage(tester, 'bn', 'Bengali');
       expect(find.text(l10n.onboardingSpokenNeedOne), findsNothing);
       expect(find.byKey(const ValueKey<String>('language-bn')), findsOneWidget);
-      expect(find.text(l10n.languagesSectionKnow(2)), findsOneWidget);
+      await expectHeading(tester, l10n.languagesSectionKnow(2));
       expect(
         tester.widget<FilledButton>(continueButton(tester)).onPressed,
         isNotNull,
@@ -895,8 +904,8 @@ void main() {
       await tester.tap(find.text(l10n.languagesAddLanguage('Spanish')));
       await tester.pumpAndSettle();
 
-      expect(find.text(l10n.languagesSectionLearning(1)), findsOneWidget);
-      expect(find.text(l10n.languagesSectionKnow(2)), findsOneWidget);
+      await expectHeading(tester, l10n.languagesSectionLearning(1));
+      await expectHeading(tester, l10n.languagesSectionKnow(2));
       expect(settings.spokenLanguages, isEmpty, reason: 'nothing saved yet');
       expect(settings.languageSkillsOf('es'), isNull);
 
