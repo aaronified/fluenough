@@ -354,7 +354,9 @@ units:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
-  - planned: { id: "es-grammar-subjunctive-present", grammar: "subjunctive-present" }
+  - decks: ["es-grammar-subjunctive-present", "es-reading-subjunctive-present"]
+    words: 0
+    grammar: ["subjunctive-present"]
     listening_passages:
       - { id: "wishes-and-advice", text: { "en": "Friends make wishes and give advice: I hope you come, I want you to rest" } }
     reading_passages:

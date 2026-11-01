@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-subjunctive-present"
+name: "Reading: a friendly note and a hope"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that use the present subjunctive for advice, wishes and doubts. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-friendly-advice"
+    title: "A friendly note"
+    theme: "relationships"
+    sentences:
+      - text: "Espero que vengas a la fiesta."
+      - text: "Quiero que descanses este fin de semana."
+      - text: "Te recomiendo que comas más verdura."
+      - text: "Es importante que vayas al médico."
+    questions:
+      - id: "es-2208"
+        prompt: { en: "What does the writer hope?" }
+        options:
+          - { en: "That you come to the party" }
+          - { en: "That you stay at home" }
+          - { en: "That you go to work" }
+        answer: 1
+      - id: "es-2209"
+        prompt: { en: "What does the writer want you to do?" }
+        options:
+          - { en: "Rest this weekend" }
+          - { en: "Work more" }
+          - { en: "Travel abroad" }
+        answer: 1
+      - id: "es-2210"
+        prompt: { en: "What does the writer say is important?" }
+        options:
+          - { en: "To go to the doctor" }
+          - { en: "To buy a car" }
+          - { en: "To call the bank" }
+        answer: 1
+  - id: "es-hope-note"
+    title: "A hope for the weekend"
+    theme: "relationships"
+    sentences:
+      - text: "Ojalá que haga buen tiempo mañana."
+      - text: "Dudo que llueva."
+      - text: "Mi madre quiere que volvamos pronto."
+      - text: "Prefiero que hagas la cena."
+    questions:
+      - id: "es-2211"
+        prompt: { en: "What does the writer hope for?" }
+        options:
+          - { en: "Good weather tomorrow" }
+          - { en: "Rain" }
+          - { en: "Snow" }
+        answer: 1
+      - id: "es-2212"
+        prompt: { en: "What does the writer doubt?" }
+        options:
+          - { en: "That it will rain" }
+          - { en: "That it is cold" }
+          - { en: "That it is late" }
+        answer: 1
+      - id: "es-2213"
+        prompt: { en: "What does the mother want?" }
+        options:
+          - { en: "To come back soon" }
+          - { en: "To stay away" }
+          - { en: "To cook" }
+        answer: 1
