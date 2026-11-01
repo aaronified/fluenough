@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-adjectives"
+name: "Reading: adjectives"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that describe people and a town, with adjectives in the masculine and feminine. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-people-and-friends"
+    title: "People and friends"
+    theme: "describing"
+    sentences:
+      - text: "Mon frère est grand et gentil."
+      - text: "Ma sœur est jolie et heureuse."
+      - text: "Les amis français sont là."
+      - text: "Les parents sont heureux."
+    questions:
+      - id: "fr-0560"
+        prompt: { en: "What is the brother like?" }
+        options:
+          - { en: "Tall and kind" }
+          - { en: "Short and sad" }
+          - { en: "Old and rich" }
+        answer: 1
+      - id: "fr-0561"
+        prompt: { en: "How is the sister?" }
+        options:
+          - { en: "Pretty and happy" }
+          - { en: "Tired and ill" }
+          - { en: "Clever and sad" }
+        answer: 1
+      - id: "fr-0562"
+        prompt: { en: "How are the parents?" }
+        options:
+          - { en: "Happy" }
+          - { en: "Sad" }
+          - { en: "Ill" }
+        answer: 1
+  - id: "fr-a-town-note"
+    title: "A note about a town"
+    theme: "describing"
+    sentences:
+      - text: "Une jolie ville est près de la gare."
+      - text: "Un bon vin est dans la tasse."
+      - text: "Le nouveau voisin est gentil."
+      - text: "Les rues sont longues."
+    questions:
+      - id: "fr-0563"
+        prompt: { en: "What is near the station?" }
+        options:
+          - { en: "A pretty town" }
+          - { en: "A noisy street" }
+          - { en: "A small room" }
+        answer: 1
+      - id: "fr-0564"
+        prompt: { en: "What is in the cup?" }
+        options:
+          - { en: "Good wine" }
+          - { en: "Bad tea" }
+          - { en: "A key" }
+        answer: 1
+      - id: "fr-0565"
+        prompt: { en: "What is the new neighbour like?" }
+        options:
+          - { en: "Kind" }
+          - { en: "Rich" }
+          - { en: "Poor" }
+        answer: 1

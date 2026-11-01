@@ -1,0 +1,39 @@
+schema: 1
+id: "fr-en-demonstratives"
+kind: "layer"
+core: "fr-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This, that, these and those"
+license: "CC-BY-SA-4.0"
+description: "The demonstrative words ce, cet, cette and ces, with the noun they go with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0644":
+    native: "this; that (masculine before a vowel)"
+    notes:
+      "n1": "Cet is 'this' or 'that' before a masculine noun that starts with a vowel or a silent h: cet ami (this friend)."
+    examples:
+      "Cet ami est gentil.":
+        native: "This friend is kind."
+        bases:
+          "Cet": "this; that (masculine before a vowel)"
+      "Je travaille avec cet ami.":
+        native: "I work with this friend."
+        bases:
+          "cet": "this; that (masculine before a vowel)"
+  "fr-0645":
+    native: "these; those"
+    notes:
+      "n1": "Ces is 'these' or 'those' before any plural noun: ces amis (these friends), ces tables (these tables)."
+    examples:
+      "Ces amis sont là.":
+        native: "These friends are here."
+        bases:
+          "Ces": "these; those"
+      "Ces tables sont grandes.":
+        native: "These tables are big."
+        bases:
+          "Ces": "these; those"
+  "fr-0646":
+    native: "this, that, these and those"
+    explanation: "Ce, cet, cette and ces all mean 'this' or 'that', and 'these' or 'those' for ces. The form depends on the noun that follows: ce before a masculine consonant, cet before a masculine vowel, cette before a feminine noun, ces before a plural."

@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-body"
+name: "Reading: the body"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the body: a stretching chart and a short visit to a doctor, with words such as bras, épaule and gorge. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-stretching-chart"
+    title: "A chart of simple stretches"
+    theme: "body"
+    sentences:
+      - text: "Tournez la tête."
+      - text: "Bougez le bras."
+      - text: "Ouvrez la bouche."
+      - text: "Ne bougez pas le dos."
+    questions:
+      - id: "fr-0957"
+        prompt: { en: "Which part moves first?" }
+        options:
+          - { en: "The head" }
+          - { en: "The knee" }
+          - { en: "The nose" }
+        answer: 1
+      - id: "fr-0958"
+        prompt: { en: "What is opened?" }
+        options:
+          - { en: "The mouth" }
+          - { en: "The hand" }
+          - { en: "The back" }
+        answer: 1
+      - id: "fr-0959"
+        prompt: { en: "What should not move?" }
+        options:
+          - { en: "The back" }
+          - { en: "The arm" }
+          - { en: "The head" }
+        answer: 1
+  - id: "fr-at-the-doctors"
+    title: "A short visit to the doctor"
+    theme: "body"
+    sentences:
+      - text: "J'ai mal à la gorge."
+      - text: "J'ai mal au dos."
+      - text: "Ma tête est lourde."
+      - text: "J'ai une douleur à l'épaule."
+    questions:
+      - id: "fr-0960"
+        prompt: { en: "What hurts in the first line?" }
+        options:
+          - { en: "The throat" }
+          - { en: "The knee" }
+          - { en: "The nose" }
+        answer: 1
+      - id: "fr-0961"
+        prompt: { en: "Where does the speaker have a pain?" }
+        options:
+          - { en: "The shoulder" }
+          - { en: "The eye" }
+          - { en: "The ear" }
+        answer: 1
+      - id: "fr-0962"
+        prompt: { en: "What is heavy?" }
+        options:
+          - { en: "The head" }
+          - { en: "The back" }
+          - { en: "The arm" }
+        answer: 1

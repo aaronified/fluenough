@@ -1,0 +1,70 @@
+schema: 1
+id: "fr-grammar-prepositions"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["first", "second"]
+  entries:
+    - lemma: "avec"
+      key: "avec"
+      ipa: "avɛk"
+      forms:
+        "first": "Je parle avec mon frère."
+        "second": "Il vient avec moi."
+    - lemma: "pour"
+      key: "pour"
+      ipa: "puʁ"
+      forms:
+        "first": "C'est pour toi."
+        "second": "Je travaille pour mon père."
+    - lemma: "sans"
+      key: "sans"
+      ipa: "sɑ̃"
+      forms:
+        "first": "Il part sans moi."
+        "second": "Elle marche sans parler."
+    - lemma: "par"
+      key: "par"
+      ipa: "paʁ"
+      forms:
+        "first": "Nous passons par la rue."
+        "second": "Ils passent par ici."
+    - lemma: "vers"
+      key: "vers"
+      ipa: "vɛʁ"
+      forms:
+        "first": "Nous allons vers la gare."
+        "second": "Il marche vers moi."
+    - lemma: "après"
+      key: "apres"
+      ipa: "apʁɛ"
+      forms:
+        "first": "Ils mangent après nous."
+        "second": "Après, nous partons."
+    - lemma: "avant"
+      key: "avant"
+      ipa: "avɑ̃"
+      forms:
+        "first": "Nous partons avant toi."
+        "second": "Il arrive avant nous."
+    - lemma: "pendant"
+      key: "pendant"
+      ipa: "pɑ̃dɑ̃"
+      forms:
+        "first": "Il dort pendant longtemps."
+        "second": "Vous attendez pendant une heure."
+    - lemma: "dans"
+      key: "dans"
+      ipa: "dɑ̃"
+      forms:
+        "first": "Je suis dans la gare."
+        "second": "Le sac est dans la rue."
+    - lemma: "chez"
+      key: "chez"
+      ipa: "ʃe"
+      forms:
+        "first": "Je mange chez moi."
+        "second": "Nous sommes chez mon ami."

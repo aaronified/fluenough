@@ -1,0 +1,46 @@
+schema: 1
+id: "fr-grammar-possessives"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["masc-sing", "fem-sing", "plural"]
+  entries:
+    - lemma: "mon"
+      ipa: "mɔ̃"
+      forms:
+        "masc-sing": "mon frère"
+        "fem-sing": "ma sœur"
+        "plural": "mes frères"
+    - lemma: "ton"
+      ipa: "tɔ̃"
+      forms:
+        "masc-sing": "ton frère"
+        "fem-sing": "ta sœur"
+        "plural": "tes frères"
+    - lemma: "son"
+      ipa: "sɔ̃"
+      forms:
+        "masc-sing": "son frère"
+        "fem-sing": "sa sœur"
+        "plural": "ses frères"
+    - lemma: "notre"
+      ipa: "nɔtʁ"
+      forms:
+        "masc-sing": "notre frère"
+        "fem-sing": "notre sœur"
+        "plural": "nos frères"
+    - lemma: "votre"
+      ipa: "vɔtʁ"
+      forms:
+        "masc-sing": "votre frère"
+        "fem-sing": "votre sœur"
+        "plural": "vos frères"
+    - lemma: "leur"
+      ipa: "lœʁ"
+      forms:
+        "masc-sing": "leur frère"
+        "fem-sing": "leur sœur"
+        "plural": "leurs frères"

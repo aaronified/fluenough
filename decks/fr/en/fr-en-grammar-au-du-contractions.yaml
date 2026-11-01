@@ -1,0 +1,17 @@
+schema: 1
+id: "fr-en-grammar-au-du-contractions"
+kind: "layer"
+core: "fr-grammar-au-du-contractions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The contractions au, du, aux and des"
+license: "CC-BY-SA-4.0"
+description: "À and de join with le and les, and the two words become one. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Contraction"
+  slot_name: "gender"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "masc": "before a masculine noun", "fem": "before a feminine noun", "plural": "before a plural noun" }
+  entries:
+    "a": "to; at; in"
+    "de": "of; from"
+  notes: "À + le becomes au, à + les becomes aux; de + le becomes du, de + les becomes des. Before la, and before any vowel, they do not join: à la gare, de l'ami, à l'hôtel (to the hotel). Use au or du before a masculine noun that starts with a consonant: au musée, du musée."

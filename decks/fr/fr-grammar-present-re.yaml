@@ -1,0 +1,56 @@
+schema: 1
+id: "fr-grammar-present-re"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["je", "tu", "il-elle", "nous", "vous", "ils-elles"]
+  entries:
+    - lemma: "vendre"
+      ipa: "vɑ̃dʁ"
+      forms:
+        "je": "je vends"
+        "tu": "tu vends"
+        "il-elle": "il vend"
+        "nous": "nous vendons"
+        "vous": "vous vendez"
+        "ils-elles": "ils vendent"
+    - lemma: "répondre"
+      key: "repondre"
+      ipa: "ʁepɔ̃dʁ"
+      forms:
+        "je": "je réponds"
+        "tu": "tu réponds"
+        "il-elle": "il répond"
+        "nous": "nous répondons"
+        "vous": "vous répondez"
+        "ils-elles": "ils répondent"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "je": "j'attends"
+        "tu": "tu attends"
+        "il-elle": "il attend"
+        "nous": "nous attendons"
+        "vous": "vous attendez"
+        "ils-elles": "ils attendent"
+    - lemma: "entendre"
+      ipa: "ɑ̃tɑ̃dʁ"
+      forms:
+        "je": "j'entends"
+        "tu": "tu entends"
+        "il-elle": "il entend"
+        "nous": "nous entendons"
+        "vous": "vous entendez"
+        "ils-elles": "ils entendent"
+    - lemma: "descendre"
+      ipa: "desɑ̃dʁ"
+      forms:
+        "je": "je descends"
+        "tu": "tu descends"
+        "il-elle": "il descend"
+        "nous": "nous descendons"
+        "vous": "vous descendez"
+        "ils-elles": "ils descendent"

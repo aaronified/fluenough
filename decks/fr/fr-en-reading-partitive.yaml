@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-partitive"
+name: "Reading: some and any"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about breakfast and the day, with du, de la and de l'. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-breakfast-order"
+    title: "A breakfast order"
+    theme: "food"
+    sentences:
+      - text: "Je prends du lait."
+      - text: "Elle boit de l'eau."
+      - text: "Nous n'avons pas de vin."
+      - text: "Il fait beaucoup de sport."
+    questions:
+      - id: "fr-0638"
+        prompt: { en: "What does the speaker take?" }
+        options:
+          - { en: "Milk" }
+          - { en: "Wine" }
+          - { en: "Water" }
+        answer: 1
+      - id: "fr-0639"
+        prompt: { en: "What does she drink?" }
+        options:
+          - { en: "Water" }
+          - { en: "Milk" }
+          - { en: "Wine" }
+        answer: 1
+      - id: "fr-0640"
+        prompt: { en: "What do 'we' not have?" }
+        options:
+          - { en: "Wine" }
+          - { en: "Music" }
+          - { en: "Wind" }
+        answer: 1
+  - id: "fr-a-day-outside"
+    title: "A day outside"
+    theme: "food"
+    sentences:
+      - text: "Je fais du sport."
+      - text: "Il écoute de la musique."
+      - text: "Il y a du vent ici."
+      - text: "Vous buvez beaucoup d'eau."
+    questions:
+      - id: "fr-0641"
+        prompt: { en: "What does 'he' listen to?" }
+        options:
+          - { en: "Music" }
+          - { en: "Sport" }
+          - { en: "Wine" }
+        answer: 1
+      - id: "fr-0642"
+        prompt: { en: "What is there here?" }
+        options:
+          - { en: "Wind" }
+          - { en: "Water" }
+          - { en: "Milk" }
+        answer: 1
+      - id: "fr-0643"
+        prompt: { en: "What do 'you' drink a lot of?" }
+        options:
+          - { en: "Water" }
+          - { en: "Milk" }
+          - { en: "Wine" }
+        answer: 1

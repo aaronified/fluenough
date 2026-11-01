@@ -1,0 +1,31 @@
+schema: 1
+id: "fr-en-grammar-adjective-agreement"
+kind: "layer"
+core: "fr-grammar-adjective-agreement"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adjective agreement"
+license: "CC-BY-SA-4.0"
+description: "An adjective agrees with the noun it describes: masculine or feminine, singular or plural. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Agreement"
+  slot_name: "noun"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "masc-sing": "masculine singular", "fem-sing": "feminine singular", "masc-plur": "masculine plural", "fem-plur": "feminine plural" }
+  entries:
+    "grand": "big; tall"
+    "petit": "small; short"
+    "beau": "beautiful"
+    "nouveau": "new"
+    "vieux": "old"
+    "bon": "good"
+    "gentil": "kind"
+    "heureux": "happy"
+    "triste": "sad"
+    "joli": "pretty"
+    "fort": "strong"
+    "long": "long"
+    "francais": "French"
+    "anglais": "English"
+    "content": "happy; glad"
+    "chaud": "hot; warm"
+  notes: "Most adjectives add -e for the feminine and -s for the plural. The -s is not said, and the consonant before -e is said in the feminine: grand is said without the d, grande with it. Some change more: beau, belle; vieux, vieille; bon, bonne; heureux, heureuse; and nouveau, nouvelle. Adjectives that end in -e already, such as triste, do not change in the feminine. Nationality adjectives are written with a capital in English, not in French."

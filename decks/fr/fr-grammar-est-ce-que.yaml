@@ -1,0 +1,46 @@
+schema: 1
+id: "fr-grammar-est-ce-que"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "question"]
+  entries:
+    - lemma: "parler"
+      ipa: "paʁle"
+      forms:
+        "statement": "tu parles français."
+        "question": "Est-ce que tu parles français ?"
+    - lemma: "habiter"
+      ipa: "abite"
+      forms:
+        "statement": "tu habites ici."
+        "question": "Est-ce que tu habites ici ?"
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "statement": "vous mangez souvent."
+        "question": "Est-ce que vous mangez souvent ?"
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "statement": "tu vas à la gare."
+        "question": "Est-ce que tu vas à la gare ?"
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "statement": "vous êtes là."
+        "question": "Est-ce que vous êtes là ?"
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "statement": "tu as un frère."
+        "question": "Est-ce que tu as un frère ?"
+    - lemma: "comprendre"
+      ipa: "kɔ̃pʁɑ̃dʁ"
+      forms:
+        "statement": "tu comprends."
+        "question": "Est-ce que tu comprends ?"

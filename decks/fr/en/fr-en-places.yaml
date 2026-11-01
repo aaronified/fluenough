@@ -1,0 +1,290 @@
+schema: 1
+id: "fr-en-places"
+kind: "layer"
+core: "fr-places"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places in town"
+license: "CC-BY-SA-4.0"
+description: "Places in a town: pharmacie, école, banque, église, bibliothèque, parc, hôtel, restaurant, cinéma, théâtre, boulangerie, mairie, piscine, hôpital, université, centre and stade. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0963":
+    native: "pharmacy; chemist's"
+    notes:
+      "n1": "Pharmacie is 'pharmacy' or 'chemist's', a feminine noun. It sells medicine."
+    examples:
+      "La pharmacie est près de la gare.":
+        native: "The pharmacy is near the station."
+        bases:
+          "pharmacie": "pharmacy; chemist's"
+          "de": "of; from; some"
+      "Je vais à la pharmacie.":
+        native: "I go to the pharmacy."
+        bases:
+          "à": "to; at; in"
+          "pharmacie": "pharmacy; chemist's"
+  "fr-0964":
+    native: "school"
+    notes:
+      "n1": "École is 'school', a feminine noun. It is for children, before the university."
+    examples:
+      "L'école est grande.":
+        native: "The school is big."
+        bases:
+          "L'école": "school"
+      "Ma sœur va à l'école.":
+        native: "My sister goes to school."
+        bases:
+          "à": "to; at; in"
+          "l'école": "school"
+  "fr-0965":
+    native: "bank"
+    notes:
+      "n1": "Banque is 'bank', a feminine noun. It is where you keep money."
+    examples:
+      "La banque est fermée.":
+        native: "The bank is closed."
+        bases:
+          "banque": "bank"
+      "Je travaille près de la banque.":
+        native: "I work near the bank."
+        bases:
+          "de": "of; from; some"
+          "banque": "bank"
+  "fr-0966":
+    native: "church"
+    notes:
+      "n1": "Église is 'church', a feminine noun. The accent is on the first e."
+    examples:
+      "L'église est vieille.":
+        native: "The church is old."
+        bases:
+          "L'église": "church"
+      "Nous marchons vers l'église.":
+        native: "We walk towards the church."
+        bases:
+          "l'église": "church"
+  "fr-0967":
+    native: "library"
+    notes:
+      "n1": "Bibliothèque is 'library', a feminine noun. It is a place where you read and borrow books."
+    examples:
+      "La bibliothèque est ouverte.":
+        native: "The library is open."
+        bases:
+          "bibliothèque": "library"
+      "Je lis à la bibliothèque.":
+        native: "I read at the library."
+        bases:
+          "à": "to; at; in"
+          "bibliothèque": "library"
+  "fr-0968":
+    native: "park"
+    notes:
+      "n1": "Parc is 'park', a masculine noun. It is a green place in a town."
+    examples:
+      "Le parc est grand.":
+        native: "The park is big."
+        bases:
+          "parc": "park"
+      "Nous marchons dans le parc.":
+        native: "We walk in the park."
+        bases:
+          "parc": "park"
+  "fr-0969":
+    native: "hotel"
+    notes:
+      "n1": "Hôtel is 'hotel', a masculine noun. It is where you sleep when you travel."
+    examples:
+      "L'hôtel est près de la gare.":
+        native: "The hotel is near the station."
+        bases:
+          "L'hôtel": "hotel"
+          "de": "of; from; some"
+      "Vous restez à l'hôtel.":
+        native: "You stay at the hotel."
+        bases:
+          "à": "to; at; in"
+          "l'hôtel": "hotel"
+  "fr-0970":
+    native: "restaurant"
+    notes:
+      "n1": "Restaurant is 'restaurant', a masculine noun. It is the same word in French and English."
+    examples:
+      "Le restaurant est plein.":
+        native: "The restaurant is full."
+        bases:
+          "restaurant": "restaurant"
+      "Je mange au restaurant.":
+        native: "I eat at the restaurant."
+        bases:
+          "au": "to the (masculine)"
+          "restaurant": "restaurant"
+  "fr-0971":
+    native: "cinema"
+    notes:
+      "n1": "Cinéma is 'cinema', a masculine noun. It is the place where you see a film."
+    examples:
+      "Le cinéma est loin.":
+        native: "The cinema is far."
+        bases:
+          "cinéma": "cinema"
+      "Je vais au cinéma.":
+        native: "I go to the cinema."
+        bases:
+          "au": "to the (masculine)"
+          "cinéma": "cinema"
+  "fr-0972":
+    native: "theatre"
+    notes:
+      "n1": "Théâtre is 'theatre', a masculine noun. It is also the art of plays on a stage."
+    examples:
+      "Le théâtre est près du musée.":
+        native: "The theatre is near the museum."
+        bases:
+          "théâtre": "theatre"
+          "du": "of the (masculine); some"
+      "Nous allons au théâtre.":
+        native: "We go to the theatre."
+        bases:
+          "au": "to the (masculine)"
+          "théâtre": "theatre"
+  "fr-0973":
+    native: "bakery"
+    notes:
+      "n1": "Boulangerie is 'bakery', a feminine noun. It is the shop where bread is made and sold."
+    examples:
+      "La boulangerie est ouverte.":
+        native: "The bakery is open."
+        bases:
+          "boulangerie": "bakery"
+      "Je vais à la boulangerie.":
+        native: "I go to the bakery."
+        bases:
+          "à": "to; at; in"
+          "boulangerie": "bakery"
+  "fr-0974":
+    native: "town hall"
+    notes:
+      "n1": "Mairie is 'town hall', a feminine noun. It is the office of the local government."
+    examples:
+      "La mairie est là.":
+        native: "The town hall is there."
+        bases:
+          "mairie": "town hall"
+      "Où est la mairie ?":
+        native: "Where is the town hall?"
+        bases:
+          "mairie": "town hall"
+  "fr-0975":
+    native: "swimming pool"
+    notes:
+      "n1": "Piscine is 'swimming pool', a feminine noun. You go there to swim."
+    examples:
+      "La piscine est grande.":
+        native: "The swimming pool is big."
+        bases:
+          "piscine": "swimming pool"
+      "Nous nageons à la piscine.":
+        native: "We swim at the pool."
+        bases:
+          "à": "to; at; in"
+          "piscine": "swimming pool"
+  "fr-0976":
+    native: "hospital"
+    notes:
+      "n1": "Hôpital is 'hospital', a masculine noun. It is the place for serious care and surgery."
+    examples:
+      "L'hôpital est loin.":
+        native: "The hospital is far."
+        bases:
+          "L'hôpital": "hospital"
+      "Il travaille à l'hôpital.":
+        native: "He works at the hospital."
+        bases:
+          "à": "to; at; in"
+          "l'hôpital": "hospital"
+  "fr-0977":
+    native: "university"
+    notes:
+      "n1": "Université is 'university', a feminine noun. The people who study there are étudiants."
+    examples:
+      "L'université est grande.":
+        native: "The university is big."
+        bases:
+          "L'université": "university"
+      "J'étudie à l'université.":
+        native: "I study at the university."
+        bases:
+          "à": "to; at; in"
+          "l'université": "university"
+  "fr-0978":
+    native: "centre; city centre"
+    notes:
+      "n1": "Centre is 'centre', a masculine noun. Le centre-ville is 'the town centre', with a hyphen."
+    examples:
+      "Le centre est près de la place.":
+        native: "The centre is near the square."
+        bases:
+          "centre": "centre; city centre"
+          "de": "of; from; some"
+      "Nous allons au centre.":
+        native: "We go to the centre."
+        bases:
+          "au": "to the (masculine)"
+          "centre": "centre; city centre"
+  "fr-0979":
+    native: "stadium; sports ground"
+    notes:
+      "n1": "Stade is 'stadium' or 'sports ground', a masculine noun."
+    examples:
+      "Le stade est grand.":
+        native: "The stadium is big."
+        bases:
+          "stade": "stadium; sports ground"
+      "Ils jouent au stade.":
+        native: "They play at the stadium."
+        bases:
+          "au": "to the (masculine)"
+          "stade": "stadium; sports ground"
+  "fr-0980":
+    native: "butcher's"
+    notes:
+      "n1": "Boucherie is 'butcher's', a feminine noun. The butcher sells meat there."
+    examples:
+      "La boucherie est près du marché.":
+        native: "The butcher's is near the market."
+        bases:
+          "boucherie": "butcher's"
+          "du": "of the (masculine); some"
+      "Je vais à la boucherie.":
+        native: "I go to the butcher's."
+        bases:
+          "à": "to; at; in"
+          "boucherie": "butcher's"
+  "fr-0981":
+    native: "neighbourhood; district"
+    notes:
+      "n1": "Quartier is 'neighbourhood' or 'district' of a town, a masculine noun."
+    examples:
+      "Le quartier est calme.":
+        native: "The neighbourhood is quiet."
+        bases:
+          "quartier": "neighbourhood; district"
+      "J'habite dans un quartier calme.":
+        native: "I live in a quiet area."
+        bases:
+          "quartier": "neighbourhood; district"
+  "fr-0982":
+    native: "public"
+    notes:
+      "n1": "Public is 'public', as in a park open to all. The feminine is publique (pyblik), said the same."
+    examples:
+      "Le parc est public.":
+        native: "The park is public."
+        bases:
+          "public": "public"
+      "La piscine est publique.":
+        native: "The pool is public."
+        bases:
+          "publique": "public"

@@ -1,0 +1,96 @@
+schema: 1
+id: "fr-prepositions"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0590"
+    target: "avec"
+    ipa: "avɛk"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ id: "a1", ref: "fr-0592" }]
+    examples:
+      - { target: "Je parle avec mon frère.", ipa: "ʒə paʁl avɛk mɔ̃ fʁɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "parle", ref: "fr-0023" }, { word: "avec", base: "avec" }, { word: "mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }] }
+      - { target: "Il vient avec moi.", ipa: "il vjɛ̃ avɛk mwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "vient", ref: "fr-0285" }, { word: "avec", base: "avec" }, { word: "moi", ref: "fr-0133" }] }
+  - id: "fr-0591"
+    target: "pour"
+    ipa: "puʁ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est pour toi.", ipa: "sɛ puʁ twa", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "pour", base: "pour" }, { word: "toi", ref: "fr-0134" }] }
+      - { target: "Je travaille pour mon père.", ipa: "ʒə tʁavaj puʁ mɔ̃ pɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }, { word: "pour", base: "pour" }, { word: "mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }] }
+  - id: "fr-0592"
+    target: "sans"
+    ipa: "sɑ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ id: "a1", ref: "fr-0590" }]
+    examples:
+      - { target: "Il part sans moi.", ipa: "il paʁ sɑ̃ mwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "part", ref: "fr-0304" }, { word: "sans", base: "sans" }, { word: "moi", ref: "fr-0133" }] }
+      - { target: "Elle marche sans parler.", ipa: "ɛl maʁʃ sɑ̃ paʁle", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "marche", ref: "fr-0306" }, { word: "sans", base: "sans" }, { word: "parler", ref: "fr-0023" }] }
+  - id: "fr-0593"
+    target: "par"
+    ipa: "paʁ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous passons par la rue.", ipa: "nu pasɔ̃ paʁ la ʁy", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "passons", ref: "fr-0519" }, { word: "par", base: "par" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Ils passent par ici.", ipa: "il pas paʁ isi", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "passent", ref: "fr-0519" }, { word: "par", base: "par" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0594"
+    target: "vers"
+    ipa: "vɛʁ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous allons vers la gare.", ipa: "nu zalɔ̃ vɛʁ la ɡaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "vers", base: "vers" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Il marche vers moi.", ipa: "il maʁʃ vɛʁ mwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "marche", ref: "fr-0306" }, { word: "vers", base: "vers" }, { word: "moi", ref: "fr-0133" }] }
+  - id: "fr-0595"
+    target: "après"
+    ipa: "apʁɛ"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ id: "a1", ref: "fr-0596" }]
+    examples:
+      - { target: "Ils mangent après nous.", ipa: "il mɑ̃ʒ apʁɛ nu", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "mangent", ref: "fr-0282" }, { word: "après", base: "après" }, { word: "nous", ref: "fr-0129" }] }
+      - { target: "Après, nous partons.", ipa: "apʁɛ nu paʁtɔ̃", bases: [{ word: "Après", base: "Après" }, { word: "nous", ref: "fr-0129" }, { word: "partons", ref: "fr-0304" }] }
+  - id: "fr-0596"
+    target: "avant"
+    ipa: "avɑ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ id: "a1", ref: "fr-0595" }]
+    examples:
+      - { target: "Nous partons avant toi.", ipa: "nu paʁtɔ̃ avɑ̃ twa", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "partons", ref: "fr-0304" }, { word: "avant", base: "avant" }, { word: "toi", ref: "fr-0134" }] }
+      - { target: "Il arrive avant nous.", ipa: "il aʁiv avɑ̃ nu", bases: [{ word: "Il", ref: "fr-0127" }, { word: "arrive", ref: "fr-0305" }, { word: "avant", base: "avant" }, { word: "nous", ref: "fr-0129" }] }
+  - id: "fr-0597"
+    target: "pendant"
+    ipa: "pɑ̃dɑ̃"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il dort pendant longtemps.", ipa: "il dɔʁ pɑ̃dɑ̃ lɔ̃tɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "dort", ref: "fr-0284" }, { word: "pendant", base: "pendant" }, { word: "longtemps", ref: "fr-0357" }] }
+      - { target: "Vous attendez pendant une heure.", ipa: "vu zatɑ̃de pɑ̃dɑ̃ yn œʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "attendez", ref: "fr-0303" }, { word: "pendant", base: "pendant" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+  - kind: "set"
+    id: "fr-0598"
+    members: [{ ref: "fr-0049" }, { ref: "fr-0469" }, { ref: "fr-0468" }, { ref: "fr-0470" }, { ref: "fr-0471" }, { ref: "fr-0466" }, { ref: "fr-0467" }, { ref: "fr-0472" }, { ref: "fr-0590" }, { ref: "fr-0591" }, { ref: "fr-0592" }, { ref: "fr-0593" }, { ref: "fr-0594" }, { ref: "fr-0595" }, { ref: "fr-0596" }, { ref: "fr-0597" }]

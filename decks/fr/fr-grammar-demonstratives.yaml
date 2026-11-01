@@ -1,0 +1,68 @@
+schema: 1
+id: "fr-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["masc-cons", "masc-vowel", "fem", "plural"]
+  entries:
+    - lemma: "sac"
+      ipa: "sak"
+      forms:
+        "masc-cons": "ce sac"
+        "masc-vowel": null
+        "fem": null
+        "plural": "ces sacs"
+    - lemma: "train"
+      ipa: "tʁɛ̃"
+      forms:
+        "masc-cons": "ce train"
+        "masc-vowel": null
+        "fem": null
+        "plural": "ces trains"
+    - lemma: "musée"
+      key: "musee"
+      ipa: "myze"
+      forms:
+        "masc-cons": "ce musée"
+        "masc-vowel": null
+        "fem": null
+        "plural": "ces musées"
+    - lemma: "ami"
+      ipa: "ami"
+      forms:
+        "masc-cons": null
+        "masc-vowel": "cet ami"
+        "fem": null
+        "plural": "ces amis"
+    - lemma: "table"
+      ipa: "tabl"
+      forms:
+        "masc-cons": null
+        "masc-vowel": null
+        "fem": "cette table"
+        "plural": "ces tables"
+    - lemma: "gare"
+      ipa: "ɡaʁ"
+      forms:
+        "masc-cons": null
+        "masc-vowel": null
+        "fem": "cette gare"
+        "plural": "ces gares"
+    - lemma: "ville"
+      ipa: "vil"
+      forms:
+        "masc-cons": null
+        "masc-vowel": null
+        "fem": "cette ville"
+        "plural": "ces villes"
+    - lemma: "heure"
+      key: "heure"
+      ipa: "œʁ"
+      forms:
+        "masc-cons": null
+        "masc-vowel": null
+        "fem": "cette heure"
+        "plural": "ces heures"

@@ -1,0 +1,62 @@
+schema: 1
+id: "fr-grammar-ne-pas"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["affirmative", "negative"]
+  entries:
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "affirmative": "je suis"
+        "negative": "je ne suis pas"
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "affirmative": "j'ai"
+        "negative": "je n'ai pas"
+    - lemma: "parler"
+      ipa: "paʁle"
+      forms:
+        "affirmative": "je parle"
+        "negative": "je ne parle pas"
+    - lemma: "aimer"
+      ipa: "eme"
+      forms:
+        "affirmative": "j'aime"
+        "negative": "je n'aime pas"
+    - lemma: "habiter"
+      ipa: "abite"
+      forms:
+        "affirmative": "j'habite"
+        "negative": "je n'habite pas"
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "affirmative": "je mange"
+        "negative": "je ne mange pas"
+    - lemma: "comprendre"
+      ipa: "kɔ̃pʁɑ̃dʁ"
+      forms:
+        "affirmative": "je comprends"
+        "negative": "je ne comprends pas"
+    - lemma: "jamais"
+      key: "jamais"
+      ipa: "ʒamɛ"
+      forms:
+        "affirmative": "je mange souvent"
+        "negative": "je ne mange jamais"
+    - lemma: "plus"
+      ipa: "ply"
+      forms:
+        "affirmative": "je parle encore"
+        "negative": "je ne parle plus"
+    - lemma: "rien"
+      ipa: "ʁjɛ̃"
+      forms:
+        "affirmative": "je fais tout"
+        "negative": "je ne fais rien"

@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-work"
+name: "Reading: work"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about work: a short introduction and a job advert, with words such as entreprise, réunion and salaire. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-business-card"
+    title: "A business card and a short job description"
+    theme: "work"
+    sentences:
+      - text: "Je suis employé dans une entreprise."
+      - text: "Mon patron est gentil."
+      - text: "Nous avons une réunion à dix heures."
+      - text: "Le travail est difficile."
+    questions:
+      - id: "fr-0696"
+        prompt: { en: "Where does the speaker work?" }
+        options:
+          - { en: "In a company" }
+          - { en: "At home" }
+          - { en: "In a school" }
+        answer: 1
+      - id: "fr-0697"
+        prompt: { en: "What is the boss like?" }
+        options:
+          - { en: "Kind" }
+          - { en: "Rich" }
+          - { en: "Poor" }
+        answer: 1
+      - id: "fr-0698"
+        prompt: { en: "When is the meeting?" }
+        options:
+          - { en: "At ten o'clock" }
+          - { en: "At six o'clock" }
+          - { en: "At two o'clock" }
+        answer: 1
+  - id: "fr-a-job-advert"
+    title: "A short job advert"
+    theme: "work"
+    sentences:
+      - text: "Nous cherchons un employé."
+      - text: "Le salaire est bon."
+      - text: "Envoyez votre dossier."
+      - text: "Le poste est à l'usine."
+    questions:
+      - id: "fr-0699"
+        prompt: { en: "What are they looking for?" }
+        options:
+          - { en: "An employee" }
+          - { en: "A boss" }
+          - { en: "A client" }
+        answer: 1
+      - id: "fr-0700"
+        prompt: { en: "What is good?" }
+        options:
+          - { en: "The salary" }
+          - { en: "The office" }
+          - { en: "The meeting" }
+        answer: 1
+      - id: "fr-0701"
+        prompt: { en: "What should the reader send?" }
+        options:
+          - { en: "A file" }
+          - { en: "A computer" }
+          - { en: "A problem" }
+        answer: 1

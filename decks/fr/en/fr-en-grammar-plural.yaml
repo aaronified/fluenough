@@ -1,0 +1,32 @@
+schema: 1
+id: "fr-en-grammar-plural"
+kind: "layer"
+core: "fr-grammar-plural"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The plural of nouns"
+license: "CC-BY-SA-4.0"
+description: "Most French nouns add -s in the plural, which is silent in speech. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "The plural"
+  slot_name: "number"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "singular": "singular", "plural": "plural" }
+  entries:
+    "ami": "friend"
+    "sac": "bag"
+    "table": "table"
+    "cle": "key"
+    "train": "train"
+    "rue": "street"
+    "adresse": "address"
+    "heure": "hour; time"
+    "nom": "name"
+    "frere": "brother"
+    "soeur": "sister"
+    "tasse": "cup"
+    "vin": "wine"
+    "musee": "museum"
+    "gare": "station"
+    "pays": "country"
+    "an": "year"
+  notes: "The plural adds -s, which is not said: des sacs sounds like des sac. Words that already end in -s, -x or -z do not change: un pays, des pays. The plural of an is ans, said only with a liaison: des ans. Nouns that end in -eau take -x in some cases, which is not taught yet."

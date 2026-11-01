@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-help"
+name: "Reading: help"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about asking for help: emergency numbers and a message to a friend, with words such as police, médecin and besoin. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-emergency-numbers"
+    title: "A card of emergency numbers and what to say"
+    theme: "help"
+    sentences:
+      - text: "Pour une urgence, appelez la police."
+      - text: "Pour un accident, appelez le médecin."
+      - text: "Le numéro est important."
+      - text: "Au secours !"
+    questions:
+      - id: "fr-1092"
+        prompt: { en: "Whom do you call for an emergency?" }
+        options:
+          - { en: "The police" }
+          - { en: "The bakery" }
+          - { en: "The station" }
+        answer: 1
+      - id: "fr-1093"
+        prompt: { en: "Whom do you call for an accident?" }
+        options:
+          - { en: "The doctor" }
+          - { en: "The police" }
+          - { en: "The bank" }
+        answer: 1
+      - id: "fr-1094"
+        prompt: { en: "What is important?" }
+        options:
+          - { en: "The number" }
+          - { en: "The bag" }
+          - { en: "The price" }
+        answer: 1
+  - id: "fr-a-message-for-a-friend"
+    title: "A message for a friend"
+    theme: "help"
+    sentences:
+      - text: "J'ai besoin d'aide."
+      - text: "Tu peux répéter ?"
+      - text: "Je perds mon sac."
+      - text: "Envoie-moi un message."
+    questions:
+      - id: "fr-1095"
+        prompt: { en: "What does the speaker need?" }
+        options:
+          - { en: "Help" }
+          - { en: "Money" }
+          - { en: "Food" }
+        answer: 1
+      - id: "fr-1096"
+        prompt: { en: "What is lost?" }
+        options:
+          - { en: "The bag" }
+          - { en: "The key" }
+          - { en: "The phone" }
+        answer: 1
+      - id: "fr-1097"
+        prompt: { en: "What is sent?" }
+        options:
+          - { en: "A message" }
+          - { en: "A letter" }
+          - { en: "A bag" }
+        answer: 1

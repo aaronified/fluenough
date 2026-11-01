@@ -1,0 +1,117 @@
+schema: 1
+id: "fr-en-possessives"
+kind: "layer"
+core: "fr-possessives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Possessives: my, your, his, her, our and their"
+license: "CC-BY-SA-4.0"
+description: "The possessive words, which agree with the thing owned and not with its owner: mon, ma, mes, ton, ta, tes and the rest. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0623":
+    native: "my (plural)"
+    notes:
+      "n1": "Mes is 'my' before a plural noun, of either gender: mes amis (my friends), mes sœurs (my sisters)."
+    examples:
+      "Mes amis sont là.":
+        native: "My friends are here."
+        bases:
+          "Mes": "my (plural)"
+      "Je parle avec mes parents.":
+        native: "I speak with my parents."
+        bases:
+          "mes": "my (plural)"
+  "fr-0624":
+    native: "your (plural; informal)"
+    notes:
+      "n1": "Tes is 'your' with the informal tu, before a plural noun: tes sœurs (your sisters)."
+    examples:
+      "Tes sœurs sont là ?":
+        native: "Are your sisters here?"
+        bases:
+          "Tes": "your (plural; informal)"
+      "Où sont tes clés ?":
+        native: "Where are your keys?"
+        bases:
+          "tes": "your (plural; informal)"
+  "fr-0625":
+    native: "his; her (plural)"
+    notes:
+      "n1": "Ses is 'his' or 'her' before a plural noun. It agrees with the thing owned, not the owner: ses frères (his or her brothers)."
+    examples:
+      "Ses frères sont grands.":
+        native: "His brothers are tall."
+        bases:
+          "Ses": "his; her (plural)"
+      "Elle parle avec ses amis.":
+        native: "She talks with her friends."
+        bases:
+          "ses": "his; her (plural)"
+  "fr-0626":
+    native: "your (feminine; informal)"
+    notes:
+      "n1": "Ta is 'your' before a feminine singular noun, with the informal tu: ta sœur (your sister). Before a vowel it is ton."
+    examples:
+      "Ta mère est là ?":
+        native: "Is your mother here?"
+        bases:
+          "Ta": "your (feminine; informal)"
+      "Ta sœur parle français.":
+        native: "Your sister speaks French."
+        bases:
+          "Ta": "your (feminine; informal)"
+  "fr-0627":
+    native: "his; her (feminine)"
+    notes:
+      "n1": "Sa is 'his' or 'her' before a feminine singular noun: sa sœur (his or her sister). Before a vowel it is son."
+    examples:
+      "Sa sœur est jolie.":
+        native: "His sister is pretty."
+        bases:
+          "Sa": "his; her (feminine)"
+      "Il mange avec sa tante.":
+        native: "He eats with his aunt."
+        bases:
+          "sa": "his; her (feminine)"
+  "fr-0628":
+    native: "our (plural)"
+    notes:
+      "n1": "Nos is 'our' before a plural noun, of either gender: nos amis (our friends)."
+    examples:
+      "Nos amis sont là.":
+        native: "Our friends are here."
+        bases:
+          "Nos": "our (plural)"
+      "Nos parents habitent loin.":
+        native: "Our parents live far away."
+        bases:
+          "Nos": "our (plural)"
+  "fr-0629":
+    native: "your (plural or formal)"
+    notes:
+      "n1": "Vos is 'your' with vous, before a plural noun: vos amis (your friends)."
+    examples:
+      "Vos amis sont gentils.":
+        native: "Your friends are kind."
+        bases:
+          "Vos": "your (plural or formal)"
+      "Vos parents sont là ?":
+        native: "Are your parents here?"
+        bases:
+          "Vos": "your (plural or formal)"
+  "fr-0630":
+    native: "their (plural)"
+    notes:
+      "n1": "Leurs is 'their' before a plural noun: leurs amis (their friends). It does not change for gender."
+    examples:
+      "Leurs amis parlent français.":
+        native: "Their friends speak French."
+        bases:
+          "Leurs": "their (plural)"
+      "Ils mangent avec leurs frères.":
+        native: "They eat with their brothers."
+        bases:
+          "leurs": "their (plural)"
+  "fr-0631":
+    native: "my, your, his, her, our and their"
+    explanation: "A possessive goes before the thing owned and agrees with it, not with the owner: mon frère (my brother), ma sœur (my sister), mes frères (my brothers). Mon, ton and son are used before a feminine noun that starts with a vowel. Notre, votre and leur are the same for both genders."

@@ -1,0 +1,278 @@
+schema: 1
+id: "fr-en-time"
+kind: "layer"
+core: "fr-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time and days"
+license: "CC-BY-SA-4.0"
+description: "Words for time: minute, jour, matin, soir, nuit, midi, minuit, hier, moment, temps, quart and fois, and the seven days of the week as one set. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1031":
+    native: "minute"
+    notes:
+      "n1": "Minute is 'minute', a feminine noun. It is a short unit of time: une minute (a minute)."
+    examples:
+      "Attendez une minute.":
+        native: "Wait a minute."
+        bases:
+          "minute": "minute"
+      "Il arrive dans une minute.":
+        native: "He arrives in a minute."
+        bases:
+          "minute": "minute"
+  "fr-1032":
+    native: "day"
+    notes:
+      "n1": "Jour is 'day', a masculine noun. Tous les jours is 'every day', and un jour is 'one day'."
+    examples:
+      "Le jour est long.":
+        native: "The day is long."
+        bases:
+          "jour": "day"
+      "Je travaille tous les jours.":
+        native: "I work every day."
+        bases:
+          "jours": "day"
+  "fr-1033":
+    native: "morning"
+    notes:
+      "n1": "Matin is 'morning', a masculine noun. Le matin is 'in the morning'."
+    examples:
+      "Le matin, je mange.":
+        native: "In the morning, I eat."
+        bases:
+          "matin": "morning"
+      "Je marche le matin.":
+        native: "I walk in the morning."
+        bases:
+          "matin": "morning"
+  "fr-1034":
+    native: "evening"
+    notes:
+      "n1": "Soir is 'evening', a masculine noun. Le soir is 'in the evening', and ce soir is 'this evening'."
+    examples:
+      "Le soir, je lis.":
+        native: "In the evening, I read."
+        bases:
+          "soir": "evening"
+      "Nous partons le soir.":
+        native: "We leave in the evening."
+        bases:
+          "soir": "evening"
+  "fr-1035":
+    native: "night"
+    notes:
+      "n1": "Nuit is 'night', a feminine noun. The opposite of jour (day)."
+    examples:
+      "La nuit est longue.":
+        native: "The night is long."
+        bases:
+          "nuit": "night"
+      "Je dors la nuit.":
+        native: "I sleep at night."
+        bases:
+          "nuit": "night"
+  "fr-1036":
+    native: "noon; midday"
+    notes:
+      "n1": "Midi is 'noon' or 'midday', a masculine noun. It is also the south of France."
+    examples:
+      "Il est midi.":
+        native: "It is noon."
+        bases:
+          "midi": "noon; midday"
+      "Je mange à midi.":
+        native: "I eat at noon."
+        bases:
+          "à": "to; at; in"
+          "midi": "noon; midday"
+  "fr-1037":
+    native: "midnight"
+    notes:
+      "n1": "Minuit is 'midnight', a masculine noun. It is the opposite of midi."
+    examples:
+      "Il est minuit.":
+        native: "It is midnight."
+        bases:
+          "minuit": "midnight"
+      "Nous partons à minuit.":
+        native: "We leave at midnight."
+        bases:
+          "à": "to; at; in"
+          "minuit": "midnight"
+  "fr-1038":
+    native: "yesterday"
+    notes:
+      "n1": "Hier is 'yesterday'. Its opposite is demain (tomorrow), and aujourd'hui is 'today'."
+    examples:
+      "Demain ou hier ?":
+        native: "Tomorrow or yesterday?"
+        bases:
+          "ou": "or"
+          "hier": "yesterday"
+      "Aujourd'hui, pas hier.":
+        native: "Today, not yesterday."
+        bases:
+          "pas": "not"
+          "hier": "yesterday"
+  "fr-1039":
+    native: "moment"
+    notes:
+      "n1": "Moment is 'moment', a masculine noun. Un moment is 'a little while'."
+    examples:
+      "C'est un bon moment.":
+        native: "It is a good moment."
+        bases:
+          "moment": "moment"
+      "Attendez un moment.":
+        native: "Wait a moment."
+        bases:
+          "moment": "moment"
+  "fr-1040":
+    native: "time; weather"
+    notes:
+      "n1": "Temps is 'time', and also 'weather', a masculine noun. Quel temps fait-il ? asks 'what is the weather?'."
+    examples:
+      "Le temps est long.":
+        native: "The time is long."
+        bases:
+          "temps": "time; weather"
+      "Je n'ai pas le temps.":
+        native: "I have no time."
+        bases:
+          "pas": "not"
+          "temps": "time; weather"
+  "fr-1041":
+    native: "quarter"
+    notes:
+      "n1": "Quart is 'quarter', a masculine noun: et quart (a quarter past) and moins le quart (a quarter to)."
+    examples:
+      "Il est dix heures et quart.":
+        native: "It is a quarter past ten."
+        bases:
+          "quart": "quarter"
+      "Il est sept heures moins le quart.":
+        native: "It is a quarter to seven."
+        bases:
+          "quart": "quarter"
+  "fr-1042":
+    native: "alarm clock; waking up"
+    notes:
+      "n1": "Réveil is 'alarm clock', a masculine noun. It is what wakes you up in the morning."
+    examples:
+      "Mon réveil est vieux.":
+        native: "My alarm clock is old."
+        bases:
+          "réveil": "alarm clock; waking up"
+      "Le réveil est sur la table.":
+        native: "The alarm clock is on the table."
+        bases:
+          "réveil": "alarm clock; waking up"
+  "fr-1043":
+    native: "time (occasion)"
+    notes:
+      "n1": "Fois is 'time', as in once, twice: une fois (once), deux fois (twice). It is a feminine noun."
+    examples:
+      "Deux fois, il dort.":
+        native: "He sleeps twice."
+        bases:
+          "fois": "time (occasion)"
+      "Une fois, c'est assez.":
+        native: "Once is enough."
+        bases:
+          "fois": "time (occasion)"
+  "fr-1044":
+    native: "Monday"
+    notes:
+      "n1": "Lundi is 'Monday'. The days of the week are not written with a capital letter in French."
+    examples:
+      "Le lundi, je travaille.":
+        native: "On Monday, I work."
+        bases:
+          "lundi": "Monday"
+      "Il part lundi.":
+        native: "He leaves on Monday."
+        bases:
+          "lundi": "Monday"
+  "fr-1045":
+    native: "Tuesday"
+    notes:
+      "n1": "Mardi is 'Tuesday'. It is said mardi, with the d sounded."
+    examples:
+      "Le mardi, je dors tard.":
+        native: "On Tuesday, I sleep late."
+        bases:
+          "mardi": "Tuesday"
+      "Vous arrivez mardi.":
+        native: "You arrive on Tuesday."
+        bases:
+          "mardi": "Tuesday"
+  "fr-1046":
+    native: "Wednesday"
+    notes:
+      "n1": "Mercredi is 'Wednesday'. It is said mɛʁkʁədi, with the e sounded."
+    examples:
+      "Le mercredi, je joue.":
+        native: "On Wednesday, I play."
+        bases:
+          "mercredi": "Wednesday"
+      "Nous partons mercredi.":
+        native: "We leave on Wednesday."
+        bases:
+          "mercredi": "Wednesday"
+  "fr-1047":
+    native: "Thursday"
+    notes:
+      "n1": "Jeudi is 'Thursday'. It is the day after mercredi."
+    examples:
+      "Le jeudi, je mange avec mon ami.":
+        native: "On Thursday, I eat with my friend."
+        bases:
+          "jeudi": "Thursday"
+      "Tu finis jeudi.":
+        native: "You finish on Thursday."
+        bases:
+          "jeudi": "Thursday"
+  "fr-1048":
+    native: "Friday"
+    notes:
+      "n1": "Vendredi is 'Friday'. It is said vɑ̃dʁədi, with the e sounded."
+    examples:
+      "Le vendredi, nous dansons.":
+        native: "On Friday we dance."
+        bases:
+          "vendredi": "Friday"
+      "Elle arrive vendredi.":
+        native: "She arrives on Friday."
+        bases:
+          "vendredi": "Friday"
+  "fr-1049":
+    native: "Saturday"
+    notes:
+      "n1": "Samedi is 'Saturday'. It is the day before dimanche."
+    examples:
+      "Le samedi, je cuisine.":
+        native: "On Saturday, I cook."
+        bases:
+          "samedi": "Saturday"
+      "Ils jouent samedi.":
+        native: "They play on Saturday."
+        bases:
+          "samedi": "Saturday"
+  "fr-1050":
+    native: "Sunday"
+    notes:
+      "n1": "Dimanche is 'Sunday'. It is the last day of the week in the French calendar."
+    examples:
+      "Le dimanche, je dors.":
+        native: "On Sunday, I sleep."
+        bases:
+          "dimanche": "Sunday"
+      "Nous mangeons ensemble le dimanche.":
+        native: "We eat together on Sunday."
+        bases:
+          "dimanche": "Sunday"
+  "fr-1051":
+    native: "the days of the week"
+    explanation: "The seven days of the week, from lundi (Monday) to dimanche (Sunday). The week starts on Monday in France."

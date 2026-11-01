@@ -1,0 +1,20 @@
+schema: 1
+id: "fr-en-grammar-present-re"
+kind: "layer"
+core: "fr-grammar-present-re"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present of -re verbs"
+license: "CC-BY-SA-4.0"
+description: "Verbs in -re such as vendre lose the d of the stem in the singular for many, and keep the regular plural endings. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Pattern"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "vendre": "to sell"
+    "repondre": "to answer"
+    "attendre": "to wait for"
+    "entendre": "to hear"
+    "descendre": "to go down; to get off"
+  notes: "In the singular, -re verbs drop the -re of the infinitive: je vends, tu vends, il vend. Répondre keeps its d: je réponds, il répond. In the plural they add the regular endings: nous vendons, vous vendez, ils vendent. Attendre and entendre keep the t of the stem with the j' of the singular: j'attends, j'entends."

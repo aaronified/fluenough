@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-grammar-questions"
+name: "Reading: questions"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that are questions, in est-ce que and by inversion. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-interview-questions"
+    title: "The questions of a short interview"
+    theme: "questions"
+    sentences:
+      - text: "Est-ce que vous habitez ici ?"
+      - text: "Avez-vous un frère ?"
+      - text: "Parlez-vous français ?"
+      - text: "Aimez-vous la musique ?"
+    questions:
+      - id: "fr-0584"
+        prompt: { en: "What is the first question about?" }
+        options:
+          - { en: "Where you live" }
+          - { en: "Your job" }
+          - { en: "Your age" }
+        answer: 1
+      - id: "fr-0585"
+        prompt: { en: "Does the question ask about a brother?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+          - { en: "It is not clear" }
+        answer: 1
+      - id: "fr-0586"
+        prompt: { en: "What is asked about music?" }
+        options:
+          - { en: "Whether you like it" }
+          - { en: "Where it is" }
+          - { en: "How much it costs" }
+        answer: 1
+  - id: "fr-a-short-quiz"
+    title: "A short quiz"
+    theme: "questions"
+    sentences:
+      - text: "Tu es français ?"
+      - text: "Est-ce que tu aimes le sport ?"
+      - text: "Où habites-tu ?"
+      - text: "Ils mangent ici ?"
+    questions:
+      - id: "fr-0587"
+        prompt: { en: "What is the first question asking?" }
+        options:
+          - { en: "If you are French" }
+          - { en: "Your name" }
+          - { en: "Your address" }
+        answer: 1
+      - id: "fr-0588"
+        prompt: { en: "Which question asks about sport?" }
+        options:
+          - { en: "Whether you like sport" }
+          - { en: "Where you live" }
+          - { en: "Whether you eat" }
+        answer: 1
+      - id: "fr-0589"
+        prompt: { en: "What does 'Où habites-tu ?' ask?" }
+        options:
+          - { en: "Where you live" }
+          - { en: "What you eat" }
+          - { en: "Whether you work" }
+        answer: 1

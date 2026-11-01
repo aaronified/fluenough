@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-quantities"
+name: "Reading: how much and how many"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about amounts, with words such as la moitié, plusieurs and autant. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-amounts-at-home"
+    title: "Short notes about amounts"
+    theme: "quantities"
+    sentences:
+      - text: "Je mange la moitié."
+      - text: "Il boit une tasse."
+      - text: "Nous avons plusieurs amis."
+      - text: "Chacun parle un peu français."
+    questions:
+      - id: "fr-0404"
+        prompt: { en: "How much does the speaker eat?" }
+        options:
+          - { en: "Half" }
+          - { en: "All" }
+          - { en: "Nothing" }
+        answer: 1
+      - id: "fr-0405"
+        prompt: { en: "What does he drink?" }
+        options:
+          - { en: "A cup" }
+          - { en: "A glass" }
+          - { en: "A litre" }
+        answer: 1
+      - id: "fr-0406"
+        prompt: { en: "How many friends do we have?" }
+        options:
+          - { en: "Several" }
+          - { en: "None" }
+          - { en: "One" }
+        answer: 1
+  - id: "fr-a-few-things"
+    title: "A few things in a note"
+    theme: "quantities"
+    sentences:
+      - text: "Elle a quelques amis."
+      - text: "Ma sœur mange autant que moi."
+      - text: "Il ne fait rien."
+      - text: "Une douzaine est douze."
+    questions:
+      - id: "fr-0407"
+        prompt: { en: "How many friends does she have?" }
+        options:
+          - { en: "A few" }
+          - { en: "None" }
+          - { en: "Twelve" }
+        answer: 1
+      - id: "fr-0408"
+        prompt: { en: "Who eats as much as the speaker?" }
+        options:
+          - { en: "My sister" }
+          - { en: "My father" }
+          - { en: "My friend" }
+        answer: 1
+      - id: "fr-0409"
+        prompt: { en: "What does he do?" }
+        options:
+          - { en: "Nothing" }
+          - { en: "Everything" }
+          - { en: "Something" }
+        answer: 1

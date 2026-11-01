@@ -1,0 +1,222 @@
+schema: 1
+id: "fr-en-numbers-big"
+kind: "layer"
+core: "fr-numbers-big"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Tens and big numbers"
+license: "CC-BY-SA-4.0"
+description: "Numbers from thirty to ninety-nine, with cent, mille and million: trente, soixante-dix, quatre-vingts and quatre-vingt-dix-neuf. Hyphenated numbers are split into their parts. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0702":
+    native: "thirty"
+    notes:
+      "n1": "Trente is 'thirty'. It does not change. Trente et un is 'thirty-one', with et for 21, 31, 41, 51, 61 and 71, but not from 81 on."
+    examples:
+      "J'ai trente ans.":
+        native: "I am thirty."
+        bases:
+          "trente": "thirty"
+      "Ils sont trente.":
+        native: "There are thirty of them."
+        bases:
+          "trente": "thirty"
+  "fr-0703":
+    native: "forty"
+    notes:
+      "n1": "Quarante is 'forty'. It is said like the French for four plus -ante, with the t said before a vowel."
+    examples:
+      "Mon père a quarante ans.":
+        native: "My father is forty."
+        bases:
+          "quarante": "forty"
+      "Nous sommes quarante.":
+        native: "There are forty of us."
+        bases:
+          "quarante": "forty"
+  "fr-0704":
+    native: "fifty"
+    notes:
+      "n1": "Cinquante is 'fifty'. It starts with the same sound as cinq (five)."
+    examples:
+      "Ma tante a cinquante ans.":
+        native: "My aunt is fifty."
+        bases:
+          "cinquante": "fifty"
+      "Ils sont cinquante.":
+        native: "There are fifty of them."
+        bases:
+          "cinquante": "fifty"
+  "fr-0705":
+    native: "sixty"
+    notes:
+      "n1": "Soixante is 'sixty'. It is the base of the numbers from 60 to 79 in the old way of counting."
+    examples:
+      "Mon oncle a soixante ans.":
+        native: "My uncle is sixty."
+        bases:
+          "soixante": "sixty"
+      "Ils ont soixante ans.":
+        native: "They are sixty years old."
+        bases:
+          "soixante": "sixty"
+  "fr-0706":
+    native: "seventy"
+    notes:
+      "n1": "Soixante-dix is 'seventy', which is soixante plus dix (sixty-ten). Its parts are learnt as words already known."
+    examples:
+      "Ma mère a soixante-dix ans.":
+        native: "My mother is seventy."
+      "Ils sont soixante-dix.":
+        native: "There are seventy of them."
+  "fr-0707":
+    native: "eighty"
+    notes:
+      "n1": "Quatre-vingts is 'eighty', literally four twenties. It takes an s, which is dropped before another number."
+    examples:
+      "Ma tante a quatre-vingts ans.":
+        native: "My aunt is eighty."
+      "Ils ont quatre-vingts ans.":
+        native: "They are eighty years old."
+  "fr-0708":
+    native: "ninety"
+    notes:
+      "n1": "Quatre-vingt-dix is 'ninety', which is four twenties and ten. It has no s on vingt."
+    examples:
+      "Ils sont quatre-vingt-dix.":
+        native: "There are ninety of them."
+      "Nous sommes quatre-vingt-dix.":
+        native: "There are ninety of us."
+  "fr-0709":
+    native: "a hundred"
+    notes:
+      "n1": "Cent is 'a hundred' or 'one hundred'. It takes an s only in deux cents (two hundred), and not before another number."
+    examples:
+      "C'est cent.":
+        native: "It is a hundred."
+        bases:
+          "cent": "a hundred"
+      "J'ai cent amis.":
+        native: "I have a hundred friends."
+        bases:
+          "cent": "a hundred"
+  "fr-0710":
+    native: "a thousand"
+    notes:
+      "n1": "Mille is 'a thousand'. It never takes an s, even in the plural."
+    examples:
+      "C'est mille.":
+        native: "It is a thousand."
+        bases:
+          "mille": "a thousand"
+      "Il a mille amis.":
+        native: "He has a thousand friends."
+        bases:
+          "mille": "a thousand"
+  "fr-0711":
+    native: "million"
+    notes:
+      "n1": "Million is 'million', a masculine noun. It takes de before the noun it counts: un million de (a million)."
+    examples:
+      "C'est un million.":
+        native: "It is a million."
+        bases:
+          "million": "million"
+      "Un million d'amis.":
+        native: "A million friends."
+        bases:
+          "million": "million"
+  "fr-0712":
+    native: "zero"
+    notes:
+      "n1": "Zéro is 'zero'. It is a masculine word in speech, and it is used with the same meaning as in English."
+    examples:
+      "C'est zéro.":
+        native: "It is zero."
+        bases:
+          "zéro": "zero"
+      "Nous avons zéro problème.":
+        native: "We have zero problems."
+        bases:
+          "zéro": "zero"
+  "fr-0713":
+    native: "twenty-one"
+    notes:
+      "n1": "Vingt-et-un is 'twenty-one'. The et is written and said in vingt-et-un, and in the same way in 31, 41, 51, 61 and 71. From 81 on there is no et."
+    examples:
+      "J'ai vingt-et-un ans.":
+        native: "I am twenty-one."
+      "Vingt-et-un amis sont là.":
+        native: "Twenty-one friends are here."
+  "fr-0714":
+    native: "thirty-two"
+    notes:
+      "n1": "Trente-deux is 'thirty-two': trente plus deux. Each part is a number the learner already knows."
+    examples:
+      "Ils sont trente-deux.":
+        native: "There are thirty-two of them."
+      "Il a trente-deux amis.":
+        native: "He has thirty-two friends."
+  "fr-0715":
+    native: "forty-five"
+    notes:
+      "n1": "Quarante-cinq is 'forty-five': quarante plus cinq. The final q of cinq is said, as it is on its own."
+    examples:
+      "Mon père a quarante-cinq ans.":
+        native: "My father is forty-five."
+      "C'est quarante-cinq.":
+        native: "It is forty-five."
+  "fr-0716":
+    native: "seventy-five"
+    notes:
+      "n1": "Soixante-quinze is 'seventy-five': soixante plus quinze."
+    examples:
+      "Ils sont soixante-quinze.":
+        native: "There are seventy-five of them."
+      "Il a soixante-quinze ans.":
+        native: "He is seventy-five."
+  "fr-0717":
+    native: "ninety-nine"
+    notes:
+      "n1": "Quatre-vingt-dix-neuf is 'ninety-nine', the last of the numbers before cent. It is the longest number of this unit."
+    examples:
+      "Ils sont quatre-vingt-dix-neuf.":
+        native: "There are ninety-nine of them."
+      "C'est quatre-vingt-dix-neuf.":
+        native: "It is ninety-nine."
+  "fr-0718":
+    native: "sixty-five"
+    notes:
+      "n1": "Soixante-cinq is 'sixty-five': soixante plus cinq."
+    examples:
+      "Mon oncle a soixante-cinq ans.":
+        native: "My uncle is sixty-five."
+      "C'est soixante-cinq.":
+        native: "It is sixty-five."
+  "fr-0719":
+    native: "fifty-two"
+    notes:
+      "n1": "Cinquante-deux is 'fifty-two': cinquante plus deux."
+    examples:
+      "Ma tante a cinquante-deux ans.":
+        native: "My aunt is fifty-two."
+      "Ils sont cinquante-deux.":
+        native: "There are fifty-two of them."
+  "fr-0720":
+    native: "seventy-one"
+    notes:
+      "n1": "Soixante-et-onze is 'seventy-one', with et as in vingt-et-un: soixante plus onze."
+    examples:
+      "Il a soixante-et-onze ans.":
+        native: "He is seventy-one."
+      "Ils sont soixante-et-onze.":
+        native: "There are seventy-one of them."
+  "fr-0721":
+    native: "eighty-one"
+    notes:
+      "n1": "Quatre-vingt-un is 'eighty-one'. Un is used here, not une, because the number has no noun of its own."
+    examples:
+      "Ma tante a quatre-vingt-un ans.":
+        native: "My aunt is eighty-one."
+      "Ils sont quatre-vingt-un.":
+        native: "There are eighty-one of them."

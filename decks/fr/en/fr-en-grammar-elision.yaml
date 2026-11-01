@@ -1,0 +1,20 @@
+schema: 1
+id: "fr-en-grammar-elision"
+kind: "layer"
+core: "fr-grammar-elision"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Elision before a vowel"
+license: "CC-BY-SA-4.0"
+description: "Some short words lose their vowel before a word that starts with a vowel or a silent h, and the two words are joined with an apostrophe. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Elision"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "before-consonant": "before a consonant", "before-vowel": "before a vowel" }
+  entries:
+    "le": "the (masculine)"
+    "la": "the (feminine)"
+    "je": "I"
+    "ne": "not (around the verb)"
+    "ce": "this; that"
+  notes: "Le, la, je, ne and ce lose their vowel before a vowel or a silent h: l'ami, l'adresse, j'habite, n'habite pas. Ce becomes cet before a masculine noun that starts with a vowel: cet ami (this friend). The feminine cette is not elided."

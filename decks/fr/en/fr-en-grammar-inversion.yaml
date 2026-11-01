@@ -1,0 +1,21 @@
+schema: 1
+id: "fr-en-grammar-inversion"
+kind: "layer"
+core: "fr-grammar-inversion"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions by inversion"
+license: "CC-BY-SA-4.0"
+description: "The verb and the pronoun swap places and are joined with a hyphen. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Question"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "statement": "statement", "inversion": "question by inversion" }
+  entries:
+    "parler": "to speak"
+    "etre": "to be"
+    "avoir": "to have"
+    "aller": "to go"
+    "habiter": "to live"
+    "manger": "to eat"
+  notes: "In a question by inversion the verb comes first and the pronoun follows it, with a hyphen: parles-tu ?, êtes-vous ?. When the verb ends in a vowel and the pronoun is il, elle or on, add -t-: habite-t-il ? In speech, the rising voice is enough, as in tu parles ? Inversion is the more formal way to ask."

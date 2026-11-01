@@ -1,0 +1,32 @@
+schema: 1
+id: "fr-en-grammar-articles-gender"
+kind: "layer"
+core: "fr-grammar-articles-gender"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Articles and noun gender"
+license: "CC-BY-SA-4.0"
+description: "Every French noun is masculine or feminine, and its article goes with it: le or la, les for both, un or une. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "The article and noun gender"
+  slot_name: "article"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "definite": "the (singular)", "plural": "the (plural)", "indefinite": "a or an" }
+  entries:
+    "ami": "friend"
+    "ville": "town; city"
+    "sac": "bag"
+    "table": "table"
+    "cle": "key"
+    "train": "train"
+    "gare": "station"
+    "musee": "museum"
+    "rue": "street"
+    "vin": "wine"
+    "adresse": "address"
+    "heure": "hour; time; o'clock"
+    "nom": "name"
+    "frere": "brother"
+    "soeur": "sister"
+    "pays": "country"
+    "tasse": "cup"
+  notes: "Each noun is masculine or feminine: learn it with its article. Le and la become l' before a vowel or a silent h (l'ami, l'heure). In the plural the s of les is silent, but it is said before a vowel: les amis, les adresses, with the liaison z. Un and une are 'a' or 'an', and une is the feminine form. Pays and nom are masculine although they end in a sound that is often feminine."

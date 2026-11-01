@@ -1,0 +1,17 @@
+schema: 1
+id: "fr-en-grammar-present-ir"
+kind: "layer"
+core: "fr-grammar-present-ir"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The present of -ir verbs"
+license: "CC-BY-SA-4.0"
+description: "Verbs in -ir such as finir add -iss- in the plural. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Pattern"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "je": "I", "tu": "you (informal)", "il-elle": "he or she", "nous": "we", "vous": "you (formal or plural)", "ils-elles": "they" }
+  entries:
+    "finir": "to finish"
+    "choisir": "to choose"
+  notes: "The -ir verbs of this group take -iss- in the plural: nous finissons, vous finissez, ils finissent. The singular is je finis, tu finis, il finit, with the -s and -t endings that are not said. Choisir follows the same pattern."

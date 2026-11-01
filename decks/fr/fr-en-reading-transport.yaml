@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-transport"
+name: "Reading: transport"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about buses, the metro and a trip to the airport, with words such as billet, quai and aéroport. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-timetable"
+    title: "A bus and metro timetable"
+    theme: "transport"
+    sentences:
+      - text: "Le bus part à huit heures."
+      - text: "Le métro est rapide."
+      - text: "Le train a du retard."
+      - text: "Le prochain bus est direct."
+    questions:
+      - id: "fr-0886"
+        prompt: { en: "When does the bus leave?" }
+        options:
+          - { en: "At eight o'clock" }
+          - { en: "At nine o'clock" }
+          - { en: "At seven o'clock" }
+        answer: 1
+      - id: "fr-0887"
+        prompt: { en: "Which is fast?" }
+        options:
+          - { en: "The metro" }
+          - { en: "The stop" }
+          - { en: "The ticket" }
+        answer: 1
+      - id: "fr-0888"
+        prompt: { en: "What is the next bus?" }
+        options:
+          - { en: "Direct" }
+          - { en: "Late" }
+          - { en: "Full" }
+        answer: 1
+  - id: "fr-airport-trip"
+    title: "A trip to the airport"
+    theme: "transport"
+    sentences:
+      - text: "Nous prenons l'avion."
+      - text: "L'aéroport est loin."
+      - text: "Mon bagage est lourd."
+      - text: "J'ai un billet."
+    questions:
+      - id: "fr-0889"
+        prompt: { en: "How do 'we' travel?" }
+        options:
+          - { en: "By plane" }
+          - { en: "By bike" }
+          - { en: "By car" }
+        answer: 1
+      - id: "fr-0890"
+        prompt: { en: "How far is the airport?" }
+        options:
+          - { en: "Far" }
+          - { en: "Near" }
+          - { en: "Here" }
+        answer: 1
+      - id: "fr-0891"
+        prompt: { en: "What does the speaker have?" }
+        options:
+          - { en: "A ticket" }
+          - { en: "A taxi" }
+          - { en: "A passport" }
+        answer: 1

@@ -1,0 +1,45 @@
+schema: 1
+id: "fr-en-numbers-big-sentences"
+kind: "layer"
+core: "fr-numbers-big-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: big numbers"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences with big numbers, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0722":
+    native: "I am thirty."
+    confusables:
+      "quarante": { why: "Quarante is 'forty', ten more." }
+      "vingt-et-un": { why: "Vingt-et-un is 'twenty-one'." }
+  "fr-0723":
+    native: "My father is forty."
+    confusables:
+      "cinquante": { why: "Cinquante is 'fifty'." }
+      "trente": { why: "Trente is 'thirty'." }
+  "fr-0724":
+    native: "My aunt is seventy."
+    confusables:
+      "soixante": { why: "Soixante is 'sixty', not seventy." }
+      "quatre-vingts": { why: "Quatre-vingts is 'eighty'." }
+  "fr-0725":
+    native: "There are ninety of them."
+    confusables:
+      "quatre-vingts": { why: "Quatre-vingts is 'eighty', ten less." }
+      "cent": { why: "Cent is 'a hundred'." }
+  "fr-0726":
+    native: "It is a hundred."
+    confusables:
+      "mille": { why: "Mille is 'a thousand'." }
+      "quatre-vingt-dix-neuf": { why: "Quatre-vingt-dix-neuf is 'ninety-nine', just short of a hundred." }
+  "fr-0727":
+    native: "He has a thousand friends."
+    confusables:
+      "million": { why: "Million is a much bigger number." }
+      "cent": { why: "Cent is 'a hundred'." }
+  "fr-0728":
+    native: "They are eighty years old."
+    confusables:
+      "quatre-vingt-dix": { why: "Quatre-vingt-dix is 'ninety'." }
+      "soixante-dix": { why: "Soixante-dix is 'seventy'." }

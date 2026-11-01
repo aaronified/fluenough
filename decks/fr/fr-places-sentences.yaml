@@ -1,0 +1,102 @@
+schema: 1
+id: "fr-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0983"
+    target: "La pharmacie est près de la gare."
+    ipa: "la faʁmasi ɛ pʁɛ də la ɡaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "pharmacie", ref: "fr-0963" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "près", ref: "fr-0464" }
+      - { word: "de", base: "de" }
+      - { word: "gare", ref: "fr-0075" }
+    confusables:
+      - { id: "hopital", ref: "fr-0976", kind: "word" }
+      - { id: "banque", ref: "fr-0965", kind: "word" }
+  - id: "fr-0984"
+    target: "Je vais à l'école."
+    ipa: "ʒə ve a lekɔl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "vais", ref: "fr-0286" }
+      - { word: "à", base: "à" }
+      - { word: "l'école", ref: "fr-0964" }
+    confusables:
+      - { id: "universite", ref: "fr-0977", kind: "word" }
+      - { id: "bibliotheque", ref: "fr-0967", kind: "word" }
+  - id: "fr-0985"
+    target: "La banque est fermée."
+    ipa: "la bɑ̃k ɛ fɛʁme"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "banque", ref: "fr-0965" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "fermée", ref: "fr-0438" }
+    confusables:
+      - { id: "boulangerie", ref: "fr-0973", kind: "word" }
+      - { id: "mairie", ref: "fr-0974", kind: "word" }
+  - id: "fr-0986"
+    target: "Nous marchons vers l'église."
+    ipa: "nu maʁʃɔ̃ vɛʁ leɡliz"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "marchons", ref: "fr-0306" }
+      - { word: "vers", ref: "fr-0594" }
+      - { word: "l'église", ref: "fr-0966" }
+    confusables:
+      - { id: "mairie", ref: "fr-0974", kind: "word" }
+      - { id: "centre", ref: "fr-0978", kind: "word" }
+  - id: "fr-0987"
+    target: "Je mange au restaurant."
+    ipa: "ʒə mɑ̃ʒ o ʁɛstɔʁɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "mange", ref: "fr-0282" }
+      - { word: "au", base: "au" }
+      - { word: "restaurant", ref: "fr-0970" }
+    confusables:
+      - { id: "hotel", ref: "fr-0969", kind: "word" }
+      - { id: "cinema", ref: "fr-0971", kind: "word" }
+  - id: "fr-0988"
+    target: "Le stade est grand."
+    ipa: "lə stad ɛ ɡʁɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "stade", ref: "fr-0979" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "grand", ref: "fr-0410" }
+    confusables:
+      - { id: "parc", ref: "fr-0968", kind: "word" }
+      - { id: "piscine", ref: "fr-0975", kind: "word" }
+  - id: "fr-0989"
+    target: "Il travaille à l'hôpital."
+    ipa: "il tʁavaj a lopital"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "travaille", ref: "fr-0252" }
+      - { word: "à", base: "à" }
+      - { word: "l'hôpital", ref: "fr-0976" }
+    confusables:
+      - { id: "pharmacie", ref: "fr-0963", kind: "word" }
+      - { id: "ecole", ref: "fr-0964", kind: "word" }

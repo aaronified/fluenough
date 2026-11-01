@@ -1,0 +1,27 @@
+schema: 1
+id: "fr-en-grammar-adjective-position"
+kind: "layer"
+core: "fr-grammar-adjective-position"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adjective position"
+license: "CC-BY-SA-4.0"
+description: "Most adjectives come after the noun; a few common short ones come before it. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Position"
+  slot_name: "place"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "before-the-noun": "before the noun", "after-the-noun": "after the noun" }
+  entries:
+    "grand": "big; tall"
+    "petit": "small; short"
+    "beau": "beautiful"
+    "bon": "good"
+    "jeune": "young"
+    "vieux": "old"
+    "nouveau": "new"
+    "joli": "pretty"
+    "gentil": "kind"
+    "heureux": "happy"
+    "fatigue": "tired"
+    "francais": "French"
+  notes: "Beau, bon, grand, jeune, joli, petit, vieux and nouveau often come before the noun, and their meaning can change with the place: un grand homme (a great man), un homme grand (a tall man). Most others come after the noun: un ami français, une sœur triste. Some adjectives can come either way, as joli and gentil do."

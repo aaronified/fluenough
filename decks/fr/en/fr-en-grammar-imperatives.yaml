@@ -1,0 +1,27 @@
+schema: 1
+id: "fr-en-grammar-imperatives"
+kind: "layer"
+core: "fr-grammar-imperatives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The imperative"
+license: "CC-BY-SA-4.0"
+description: "A command uses the present forms without the subject. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Command"
+  slot_name: "to whom"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "tu": "to one person you know", "nous": "to us: let us", "vous": "to a stranger or more than one" }
+  entries:
+    "parler": "to speak"
+    "manger": "to eat"
+    "finir": "to finish"
+    "aller": "to go"
+    "etre": "to be"
+    "avoir": "to have"
+    "venir": "to come"
+    "prendre": "to take"
+    "ecouter": "to listen to"
+    "attendre": "to wait for"
+    "regarder": "to look at"
+    "fermer": "to close"
+  notes: "The imperative uses the present without the subject: tu parles becomes Parle !, nous parlons becomes Parlons !, vous parlez becomes Parlez !. For -er verbs the -s of tu is dropped: tu manges, Mange !, and tu vas, Va !. Être, avoir and aller are irregular: Sois !, Aie !, Va !. For a negative command, put ne before the verb and pas after it: Ne parlez pas !, Ne mangez pas ici !"

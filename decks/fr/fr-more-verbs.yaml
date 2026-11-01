@@ -1,0 +1,312 @@
+schema: 1
+id: "fr-more-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "more-verbs"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0500"
+    target: "pouvoir"
+    ipa: "puvwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je peux parler français.", ipa: "ʒə pø paʁle fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "peux", base: "pouvoir" }, { word: "parler", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Vous pouvez venir ici.", ipa: "vu puve vəniʁ isi", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "pouvez", base: "pouvoir" }, { word: "venir", ref: "fr-0285" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0501"
+    target: "devoir"
+    ipa: "dəvwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je dois partir.", ipa: "ʒə dwa paʁtiʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dois", base: "devoir" }, { word: "partir", ref: "fr-0304" }] }
+      - { target: "Tu dois manger.", ipa: "ty dwa mɑ̃ʒe", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "dois", base: "devoir" }, { word: "manger", ref: "fr-0282" }] }
+  - id: "fr-0502"
+    target: "savoir"
+    ipa: "savwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je sais le français.", ipa: "ʒə sɛ lə fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "sais", base: "savoir" }, { word: "le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Elle sait où est la gare.", ipa: "ɛl sɛ u ɛ la ɡaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "sait", base: "savoir" }, { word: "où", ref: "fr-0067" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+  - id: "fr-0503"
+    target: "connaître"
+    ipa: "kɔnɛtʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je connais Paul.", ipa: "ʒə kɔnɛ pɔl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "connais", base: "connaître" }, { word: "Paul", base: "Paul" }] }
+      - { target: "Vous connaissez la ville ?", ipa: "vu kɔnɛse la vil", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "connaissez", base: "connaître" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-0504"
+    target: "répondre"
+    ipa: "ʁepɔ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu réponds bien.", ipa: "ty ʁepɔ̃ bjɛ̃", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "réponds", base: "répondre" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Il répond vite.", ipa: "il ʁepɔ̃ vit", bases: [{ word: "Il", ref: "fr-0127" }, { word: "répond", base: "répondre" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-0505"
+    target: "vendre"
+    ipa: "vɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle vend des pâtes.", ipa: "ɛl vɑ̃ de pɑt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "vend", base: "vendre" }, { word: "des", ref: "fr-0546" }, { word: "pâtes", base: "pâte" }] }
+      - { target: "Nous vendons ici.", ipa: "nu vɑ̃dɔ̃ isi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "vendons", base: "vendre" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0506"
+    target: "finir"
+    ipa: "finiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je finis mon travail.", ipa: "ʒə fini mɔ̃ tʁavaj", bases: [{ word: "Je", ref: "fr-0126" }, { word: "finis", base: "finir" }, { word: "mon", ref: "fr-0037" }, { word: "travail", ref: "fr-0255" }] }
+      - { target: "Nous finissons tard.", ipa: "nu finisɔ̃ taʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "finissons", base: "finir" }, { word: "tard", ref: "fr-0336" }] }
+  - id: "fr-0507"
+    target: "choisir"
+    ipa: "ʃwaziʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu choisis ici.", ipa: "ty ʃwazi isi", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "choisis", base: "choisir" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Elle choisit le vin.", ipa: "ɛl ʃwazi lə vɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "choisit", base: "choisir" }, { word: "le", ref: "fr-0543" }, { word: "vin", ref: "fr-0035" }] }
+  - id: "fr-0508"
+    target: "commencer"
+    ipa: "kɔmɑ̃se"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je commence maintenant.", ipa: "ʒə kɔmɑ̃s mɛ̃tnɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "commence", base: "commencer" }, { word: "maintenant", ref: "fr-0350" }] }
+      - { target: "Nous commençons tôt.", ipa: "nu kɔmɑ̃sɔ̃ to", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "commençons", base: "commencer" }, { word: "tôt", ref: "fr-0337" }] }
+  - id: "fr-0509"
+    target: "oublier"
+    ipa: "ublije"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'oublie le nom.", ipa: "ʒublij lə nɔ̃", bases: [{ word: "J'oublie", base: "oublier" }, { word: "le", ref: "fr-0543" }, { word: "nom", ref: "fr-0073" }] }
+      - { target: "Tu n'oublies jamais.", ipa: "ty nubli ʒamɛ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "n'oublies", base: "oublier" }, { word: "jamais", ref: "fr-0328" }] }
+  - id: "fr-0510"
+    target: "penser"
+    ipa: "pɑ̃se"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je pense à toi.", ipa: "ʒə pɑ̃s a twa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "pense", base: "penser" }, { word: "à", base: "à" }, { word: "toi", ref: "fr-0134" }] }
+      - { target: "Ils pensent que c'est bon.", ipa: "il pɑ̃s kə sɛ bɔ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "pensent", base: "penser" }, { word: "que", base: "que" }, { word: "c'est", ref: "fr-0143" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-0511"
+    target: "croire"
+    ipa: "kʁwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je crois que tu es gentil.", ipa: "ʒə kʁwa kə ty ɛ ʒɑ̃ti", bases: [{ word: "Je", ref: "fr-0126" }, { word: "crois", base: "croire" }, { word: "que", base: "que" }, { word: "tu", ref: "fr-0095" }, { word: "es", ref: "fr-0021" }, { word: "gentil", ref: "fr-0434" }] }
+      - { target: "Il croit Paul.", ipa: "il kʁwa pɔl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "croit", base: "croire" }, { word: "Paul", base: "Paul" }] }
+  - id: "fr-0512"
+    target: "comprendre"
+    ipa: "kɔ̃pʁɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je comprends le français.", ipa: "ʒə kɔ̃pʁɑ̃ lə fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "comprends", base: "comprendre" }, { word: "le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Vous comprenez ?", ipa: "vu kɔ̃pʁəne", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "comprenez", base: "comprendre" }] }
+  - id: "fr-0513"
+    target: "apprendre"
+    ipa: "apʁɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'apprends le français.", ipa: "ʒapʁɑ̃ lə fʁɑ̃sɛ", bases: [{ word: "J'apprends", base: "apprendre" }, { word: "le", ref: "fr-0543" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Elle apprend vite.", ipa: "ɛl apʁɑ̃ vit", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "apprend", base: "apprendre" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-0514"
+    target: "rester"
+    ipa: "ʁɛste"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je reste ici.", ipa: "ʒə ʁɛst isi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "reste", base: "rester" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Nous restons ensemble.", ipa: "nu ʁɛstɔ̃ ɑ̃sɑ̃bl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "restons", base: "rester" }, { word: "ensemble", ref: "fr-0333" }] }
+  - id: "fr-0515"
+    target: "entrer"
+    ipa: "ɑ̃tʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Entre !", ipa: "ɑ̃tʁ", bases: [{ word: "Entre", base: "entrer" }] }
+      - { target: "Vous entrez dans la gare.", ipa: "vu zɑ̃tʁe dɑ̃ la ɡaʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "entrez", base: "entrer" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+  - id: "fr-0516"
+    target: "monter"
+    ipa: "mɔ̃te"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ id: "a1", ref: "fr-0517" }]
+    examples:
+      - { target: "Je monte dans le train.", ipa: "ʒə mɔ̃t dɑ̃ lə tʁɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "monte", base: "monter" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Ils montent.", ipa: "il mɔ̃t", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "montent", base: "monter" }] }
+  - id: "fr-0517"
+    target: "descendre"
+    ipa: "desɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ id: "a1", ref: "fr-0516" }]
+    examples:
+      - { target: "Je descends à la gare.", ipa: "ʒə desɑ̃ a la ɡaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "descends", base: "descendre" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Elles descendent.", ipa: "ɛl desɑ̃d", bases: [{ word: "Elles", ref: "fr-0131" }, { word: "descendent", base: "descendre" }] }
+  - id: "fr-0518"
+    target: "tomber"
+    ipa: "tɔ̃be"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il tombe.", ipa: "il tɔ̃b", bases: [{ word: "Il", ref: "fr-0127" }, { word: "tombe", base: "tomber" }] }
+      - { target: "Le verre tombe.", ipa: "lə vɛʁ tɔ̃b", bases: [{ word: "Le", ref: "fr-0543" }, { word: "verre", ref: "fr-0385" }, { word: "tombe", base: "tomber" }] }
+  - id: "fr-0519"
+    target: "passer"
+    ipa: "pase"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je passe chez toi.", ipa: "ʒə pas ʃe twa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "passe", base: "passer" }, { word: "chez", ref: "fr-0472" }, { word: "toi", ref: "fr-0134" }] }
+      - { target: "Nous passons ici.", ipa: "nu pasɔ̃ isi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "passons", base: "passer" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0520"
+    target: "entendre"
+    ipa: "ɑ̃tɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'entends la musique.", ipa: "ʒɑ̃tɑ̃ la myzik", bases: [{ word: "J'entends", base: "entendre" }, { word: "la", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }] }
+      - { target: "Tu entends ?", ipa: "ty ɑ̃tɑ̃d", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "entends", base: "entendre" }] }
+  - id: "fr-0521"
+    target: "demander"
+    ipa: "dəmɑ̃de"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il demande le nom.", ipa: "il dəmɑ̃d lə nɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "demande", base: "demander" }, { word: "le", ref: "fr-0543" }, { word: "nom", ref: "fr-0073" }] }
+      - { target: "Nous demandons souvent.", ipa: "nu dəmɑ̃dɔ̃ suvɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "demandons", base: "demander" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-0522"
+    target: "chanter"
+    ipa: "ʃɑ̃te"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle chante bien.", ipa: "ɛl ʃɑ̃t bjɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "chante", base: "chanter" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Je chante souvent.", ipa: "ʒə ʃɑ̃t suvɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "chante", base: "chanter" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-0523"
+    target: "danser"
+    ipa: "dɑ̃se"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous dansons ensemble.", ipa: "nu dɑ̃sɔ̃ ɑ̃sɑ̃bl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "dansons", base: "danser" }, { word: "ensemble", ref: "fr-0333" }] }
+      - { target: "Ma sœur danse mieux que moi.", ipa: "ma sœʁ dɑ̃s mjø kə mwa", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "danse", base: "danser" }, { word: "mieux", ref: "fr-0341" }, { word: "que", base: "que" }, { word: "moi", ref: "fr-0133" }] }
+  - id: "fr-0524"
+    target: "nager"
+    ipa: "naʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je nage.", ipa: "ʒə naʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "nage", base: "nager" }] }
+      - { target: "Ils nagent ici.", ipa: "il naʒ isi", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "nagent", base: "nager" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0525"
+    target: "raconter"
+    ipa: "ʁakɔ̃te"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père raconte souvent.", ipa: "mɔ̃ pɛʁ ʁakɔ̃t suvɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "raconte", base: "raconter" }, { word: "souvent", ref: "fr-0326" }] }
+      - { target: "Elle raconte tout.", ipa: "ɛl ʁakɔ̃t tu", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "raconte", base: "raconter" }, { word: "tout", ref: "fr-0372" }] }
+  - id: "fr-0526"
+    target: "changer"
+    ipa: "ʃɑ̃ʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il change tout.", ipa: "il ʃɑ̃ʒ tu", bases: [{ word: "Il", ref: "fr-0127" }, { word: "change", base: "changer" }, { word: "tout", ref: "fr-0372" }] }
+      - { target: "Vous changez souvent.", ipa: "vu ʃɑ̃ʒe suvɑ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "changez", base: "changer" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-0527"
+    target: "porter"
+    ipa: "pɔʁte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle porte la tasse.", ipa: "ɛl pɔʁt la tas", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "porte", base: "porter" }, { word: "la", ref: "fr-0544" }, { word: "tasse", ref: "fr-0386" }] }
+      - { target: "Il porte le sac.", ipa: "il pɔʁt lə sak", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", base: "porter" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-0528"
+    target: "tenir"
+    ipa: "təniʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je tiens le sac.", ipa: "ʒə tjɛ̃ lə sak", bases: [{ word: "Je", ref: "fr-0126" }, { word: "tiens", base: "tenir" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Tu tiens la clé ?", ipa: "ty tjɛ̃ la kle", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "tiens", base: "tenir" }, { word: "la", ref: "fr-0544" }, { word: "clé", ref: "fr-0484" }] }
+  - id: "fr-0529"
+    target: "mettre"
+    ipa: "mɛtʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets le sac sur la table.", ipa: "ʒə mɛ lə sak syʁ la tabl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Il met la clé dans le sac.", ipa: "il mɛ la kle dɑ̃ lə sak", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", base: "mettre" }, { word: "la", ref: "fr-0544" }, { word: "clé", ref: "fr-0484" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }

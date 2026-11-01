@@ -1,0 +1,103 @@
+schema: 1
+id: "fr-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0530"
+    target: "Je dois partir."
+    ipa: "ʒə dwa paʁtiʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "dois", ref: "fr-0501" }
+      - { word: "partir", ref: "fr-0304" }
+    confusables:
+      - { id: "pouvoir", ref: "fr-0500", kind: "word" }
+      - { id: "savoir", ref: "fr-0502", kind: "word" }
+  - id: "fr-0531"
+    target: "Elle sait où est la gare."
+    ipa: "ɛl sɛ u ɛ la ɡaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "sait", ref: "fr-0502" }
+      - { word: "où", ref: "fr-0067" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "gare", ref: "fr-0075" }
+    confusables:
+      - { id: "connaitre", ref: "fr-0503", kind: "word" }
+      - { id: "penser", ref: "fr-0510", kind: "word" }
+  - id: "fr-0532"
+    target: "Je comprends le français."
+    ipa: "ʒə kɔ̃pʁɑ̃ lə fʁɑ̃sɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "comprends", ref: "fr-0512" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "français", ref: "fr-0246" }
+    confusables:
+      - { id: "apprendre", ref: "fr-0513", kind: "word" }
+      - { id: "entendre", ref: "fr-0520", kind: "word" }
+  - id: "fr-0533"
+    target: "Nous restons ensemble."
+    ipa: "nu ʁɛstɔ̃ ɑ̃sɑ̃bl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "restons", ref: "fr-0514" }
+      - { word: "ensemble", ref: "fr-0333" }
+    confusables:
+      - { id: "entrer", ref: "fr-0515", kind: "word" }
+      - { id: "finir", ref: "fr-0506", kind: "word" }
+  - id: "fr-0534"
+    target: "Je descends à la gare."
+    ipa: "ʒə desɑ̃ a la ɡaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "descends", ref: "fr-0517" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "gare", ref: "fr-0075" }
+    confusables:
+      - { id: "monter", ref: "fr-0516", kind: "word" }
+      - { id: "entrer", ref: "fr-0515", kind: "word" }
+  - id: "fr-0535"
+    target: "Ils nagent ici."
+    ipa: "il naʒ isi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ils", ref: "fr-0130" }
+      - { word: "nagent", ref: "fr-0524" }
+      - { word: "ici", ref: "fr-0029" }
+    confusables:
+      - { id: "danser", ref: "fr-0523", kind: "word" }
+      - { id: "chanter", ref: "fr-0522", kind: "word" }
+  - id: "fr-0536"
+    target: "Il met le sac sur la table."
+    ipa: "il mɛ lə sak syʁ la tabl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "met", ref: "fr-0529" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "sac", ref: "fr-0485" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "table", ref: "fr-0486" }
+    confusables:
+      - { id: "tenir", ref: "fr-0528", kind: "word" }
+      - { id: "porter", ref: "fr-0527", kind: "word" }

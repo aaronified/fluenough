@@ -1,0 +1,101 @@
+schema: 1
+id: "fr-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0950"
+    target: "J'ai mal à la tête."
+    ipa: "ʒe mal a la tɛt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "J'ai", ref: "fr-0022" }
+      - { word: "mal", ref: "fr-0340" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "tête", ref: "fr-0927" }
+    confusables:
+      - { id: "dos", ref: "fr-0932", kind: "word" }
+      - { id: "cou", ref: "fr-0943", kind: "word" }
+  - id: "fr-0951"
+    target: "Le genou est fatigué."
+    ipa: "lə ʒənu ɛ fatiɡe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "genou", ref: "fr-0931" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "fatigué", ref: "fr-0431" }
+    confusables:
+      - { id: "pied", ref: "fr-0930", kind: "word" }
+      - { id: "jambe", ref: "fr-0929", kind: "word" }
+  - id: "fr-0952"
+    target: "Ma bouche est petite."
+    ipa: "ma buʃ ɛ pətit"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "bouche", ref: "fr-0934" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "petite", ref: "fr-0411" }
+    confusables:
+      - { id: "nez", ref: "fr-0936", kind: "word" }
+      - { id: "dent", ref: "fr-0935", kind: "word" }
+  - id: "fr-0953"
+    target: "Mes cheveux sont longs."
+    ipa: "me ʃəvø sɔ̃ lɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mes", ref: "fr-0623" }
+      - { word: "cheveux", ref: "fr-0939" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "longs", ref: "fr-0421" }
+    confusables:
+      - { id: "tete", ref: "fr-0927", kind: "word" }
+      - { id: "visage", ref: "fr-0944", kind: "word" }
+  - id: "fr-0954"
+    target: "J'ai mal au ventre."
+    ipa: "ʒe mal o vɑ̃tʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "J'ai", ref: "fr-0022" }
+      - { word: "mal", ref: "fr-0340" }
+      - { word: "au", base: "au" }
+      - { word: "ventre", ref: "fr-0933" }
+    confusables:
+      - { id: "dos", ref: "fr-0932", kind: "word" }
+      - { id: "gorge", ref: "fr-0948", kind: "word" }
+  - id: "fr-0955"
+    target: "La peau est froide."
+    ipa: "la po ɛ fʁwad"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "peau", ref: "fr-0945" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "froide", ref: "fr-0420" }
+    confusables:
+      - { id: "sang", ref: "fr-0947", kind: "word" }
+      - { id: "visage", ref: "fr-0944", kind: "word" }
+  - id: "fr-0956"
+    target: "Je ne bouge pas."
+    ipa: "ʒə nə buʒ pa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "ne", base: "ne" }
+      - { word: "bouge", ref: "fr-0949" }
+      - { word: "pas", base: "pas" }
+    confusables:
+      - { id: "marcher", ref: "fr-0306", kind: "word" }
+      - { id: "courir", ref: "fr-0307", kind: "word" }

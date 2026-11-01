@@ -1,0 +1,49 @@
+schema: 1
+id: "fr-en-directions-sentences"
+kind: "layer"
+core: "fr-directions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: directions"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about the way, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0913":
+    native: "Turn left."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "droite": { why: "Droite is 'right', the opposite." }
+      "traverser": { why: "Traverser is 'to cross', not to turn." }
+  "fr-0914":
+    native: "The crossroads is far."
+    confusables:
+      "pont": { why: "Pont is 'bridge'." }
+      "virage": { why: "Virage is 'bend'." }
+  "fr-0915":
+    native: "We cross the street."
+    confusables:
+      "continuer": { why: "Continuer is 'to carry on'." }
+      "suivre": { why: "Suivre is 'to follow'." }
+  "fr-0916":
+    native: "I am lost."
+    confusables:
+      "plan": { why: "Plan is 'map', which would help." }
+      "chemin": { why: "Chemin is 'way', which a lost person has not got." }
+  "fr-0917":
+    native: "The square is big."
+    confusables:
+      "route": { why: "Route is 'road'." }
+      "carrefour": { why: "Carrefour is 'crossroads'." }
+  "fr-0918":
+    native: "The south is hot."
+    confusables:
+      "nord": { why: "Nord is 'north', the opposite." }
+      "ouest": { why: "Ouest is 'west'." }
+  "fr-0919":
+    native: "The first bus leaves at seven o'clock."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "dernier": { why: "Dernier is 'last', not 'first'." }
+      "prochain": { why: "Prochain is 'next'." }

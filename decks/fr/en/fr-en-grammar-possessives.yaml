@@ -1,0 +1,21 @@
+schema: 1
+id: "fr-en-grammar-possessives"
+kind: "layer"
+core: "fr-grammar-possessives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Possessives by person"
+license: "CC-BY-SA-4.0"
+description: "Each row is one owner, and the columns show the thing owned: masculine, feminine or plural. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Possessive"
+  slot_name: "owner"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "masc-sing": "masculine singular thing", "fem-sing": "feminine singular thing", "plural": "plural thing" }
+  entries:
+    "mon": "my"
+    "ton": "your (informal)"
+    "son": "his; her"
+    "notre": "our"
+    "votre": "your (formal or plural)"
+    "leur": "their"
+  notes: "The possessive agrees with the thing owned: son frère and sa sœur both mean his or her brother and sister. Ma, ta and sa become mon, ton and son before a feminine noun that starts with a vowel: mon amie (my friend, a woman). The plural is mes, tes, ses, nos, vos or leurs, whatever the owner."

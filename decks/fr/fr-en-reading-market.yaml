@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-market"
+name: "Reading: market"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about a market: a price board and a visit to the stalls, with fruit and prices. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-market-price-board"
+    title: "A price board at a market"
+    theme: "market"
+    sentences:
+      - text: "Les pommes sont fraîches."
+      - text: "Les poires sont mûres."
+      - text: "Les fraises coûtent cher."
+      - text: "Le prix du panier est bon."
+    questions:
+      - id: "fr-0767"
+        prompt: { en: "What is fresh?" }
+        options:
+          - { en: "The apples" }
+          - { en: "The pears" }
+          - { en: "The bananas" }
+        answer: 1
+      - id: "fr-0768"
+        prompt: { en: "What costs a lot?" }
+        options:
+          - { en: "The strawberries" }
+          - { en: "The pears" }
+          - { en: "The apples" }
+        answer: 1
+      - id: "fr-0769"
+        prompt: { en: "What is good?" }
+        options:
+          - { en: "The price of the basket" }
+          - { en: "The stall" }
+          - { en: "The change" }
+        answer: 1
+  - id: "fr-at-the-market"
+    title: "A visit to the market"
+    theme: "market"
+    sentences:
+      - text: "Je vais au marché."
+      - text: "Le marchand est gentil."
+      - text: "Je paie à la caisse."
+      - text: "Combien ça coûte ?"
+    questions:
+      - id: "fr-0770"
+        prompt: { en: "Where does the speaker go?" }
+        options:
+          - { en: "To the market" }
+          - { en: "To the station" }
+          - { en: "To school" }
+        answer: 1
+      - id: "fr-0771"
+        prompt: { en: "How is the seller?" }
+        options:
+          - { en: "Kind" }
+          - { en: "Rich" }
+          - { en: "Tired" }
+        answer: 1
+      - id: "fr-0772"
+        prompt: { en: "Where does the speaker pay?" }
+        options:
+          - { en: "At the checkout" }
+          - { en: "At the stall" }
+          - { en: "In the basket" }
+        answer: 1

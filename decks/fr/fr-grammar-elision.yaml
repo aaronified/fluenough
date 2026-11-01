@@ -1,0 +1,35 @@
+schema: 1
+id: "fr-grammar-elision"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["before-consonant", "before-vowel"]
+  entries:
+    - lemma: "le"
+      ipa: "lə"
+      forms:
+        "before-consonant": "le sac"
+        "before-vowel": "l'ami"
+    - lemma: "la"
+      ipa: "la"
+      forms:
+        "before-consonant": "la table"
+        "before-vowel": "l'adresse"
+    - lemma: "je"
+      ipa: "ʒə"
+      forms:
+        "before-consonant": "je parle"
+        "before-vowel": "j'habite"
+    - lemma: "ne"
+      ipa: "nə"
+      forms:
+        "before-consonant": "ne parle pas"
+        "before-vowel": "n'habite pas"
+    - lemma: "ce"
+      ipa: "sə"
+      forms:
+        "before-consonant": "ce sac"
+        "before-vowel": "cet ami"

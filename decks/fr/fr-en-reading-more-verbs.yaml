@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-more-verbs"
+name: "Reading: more verbs"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about what people can, must and do, with verbs such as pouvoir, devoir and monter. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-what-i-can-do"
+    title: "What I can and cannot do"
+    theme: "more-verbs"
+    sentences:
+      - text: "Je peux parler français."
+      - text: "Je dois partir demain."
+      - text: "Je sais où est la gare."
+      - text: "Je ne connais pas Paul."
+    questions:
+      - id: "fr-0537"
+        prompt: { en: "What can the speaker do?" }
+        options:
+          - { en: "Speak French" }
+          - { en: "Swim" }
+          - { en: "Sing" }
+        answer: 1
+      - id: "fr-0538"
+        prompt: { en: "When must the speaker leave?" }
+        options:
+          - { en: "Tomorrow" }
+          - { en: "Never" }
+          - { en: "Today" }
+        answer: 1
+      - id: "fr-0539"
+        prompt: { en: "Whom does the speaker not know?" }
+        options:
+          - { en: "Paul" }
+          - { en: "The station" }
+          - { en: "French" }
+        answer: 1
+  - id: "fr-a-busy-day"
+    title: "A busy day"
+    theme: "more-verbs"
+    sentences:
+      - text: "Je commence à travailler tôt."
+      - text: "Nous descendons à la gare."
+      - text: "Elle chante et elle danse."
+      - text: "Mon père raconte souvent."
+    questions:
+      - id: "fr-0540"
+        prompt: { en: "When does the speaker start work?" }
+        options:
+          - { en: "Early" }
+          - { en: "Late" }
+          - { en: "Never" }
+        answer: 1
+      - id: "fr-0541"
+        prompt: { en: "Where do 'we' get off?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At home" }
+          - { en: "In the street" }
+        answer: 1
+      - id: "fr-0542"
+        prompt: { en: "What does she do?" }
+        options:
+          - { en: "Sings and dances" }
+          - { en: "Swims and runs" }
+          - { en: "Cooks and sleeps" }
+        answer: 1

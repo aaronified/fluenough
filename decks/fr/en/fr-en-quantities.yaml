@@ -1,0 +1,340 @@
+schema: 1
+id: "fr-en-quantities"
+kind: "layer"
+core: "fr-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many"
+license: "CC-BY-SA-4.0"
+description: "Words for amounts and numbers of things: tout, rien, aucun, chaque, plusieurs, quelques, autant, tellement, la moitié, a kilo, a litre, a dozen and about twenty. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0372":
+    native: "all; everything"
+    notes:
+      "n1": "Tout is 'all' or 'everything'. It agrees with what it means: tous, toute, toutes. Tous (plural, masculine) is said tu."
+    examples:
+      "Je mange tout.":
+        native: "I eat everything."
+        bases:
+          "tout": "all; everything"
+      "Vous êtes tous là.":
+        native: "You are all here."
+        bases:
+          "tous": "all; everything"
+  "fr-0373":
+    native: "nothing"
+    notes:
+      "n1": "Rien is 'nothing'. With ne it goes around the verb: il ne fait rien (he does nothing)."
+    examples:
+      "Il ne fait rien.":
+        native: "He does nothing."
+        bases:
+          "ne": "not (with pas, jamais and plus)"
+          "rien": "nothing"
+      "Ce n'est rien.":
+        native: "It is nothing."
+        bases:
+          "rien": "nothing"
+  "fr-0374":
+    native: "no; not any"
+    notes:
+      "n1": "Aucun is 'no' or 'not any', before a noun: aucun ami (no friend). It is used with ne."
+    examples:
+      "Je n'ai aucun ami ici.":
+        native: "I have no friend here."
+        bases:
+          "aucun": "no; not any"
+      "Aucun ami ne parle français.":
+        native: "No friend speaks French."
+        bases:
+          "Aucun": "no; not any"
+          "ne": "not (with pas, jamais and plus)"
+  "fr-0375":
+    native: "each; every"
+    notes:
+      "n1": "Chaque is 'each' or 'every', before a singular noun: chaque ami (each friend). It never changes."
+    examples:
+      "Chaque ami parle français.":
+        native: "Each friend speaks French."
+        bases:
+          "Chaque": "each; every"
+      "Chaque ami dort ici.":
+        native: "Each friend sleeps here."
+        bases:
+          "Chaque": "each; every"
+  "fr-0376":
+    native: "several"
+    notes:
+      "n1": "Plusieurs is 'several'. It is used with a plural noun and is more than a few."
+    examples:
+      "Il a plusieurs frères.":
+        native: "He has several brothers."
+        bases:
+          "plusieurs": "several"
+      "Plusieurs amis parlent français.":
+        native: "Several friends speak French."
+        bases:
+          "Plusieurs": "several"
+  "fr-0377":
+    native: "some; a few"
+    notes:
+      "n1": "Quelques is 'some' or 'a few', before a plural noun: quelques amis (a few friends)."
+    examples:
+      "J'ai quelques amis.":
+        native: "I have a few friends."
+        bases:
+          "quelques": "some; a few"
+      "Elle parle quelques mots.":
+        native: "She speaks a few words."
+        bases:
+          "quelques": "some; a few"
+          "mots": "word"
+  "fr-0378":
+    native: "as much; as many"
+    notes:
+      "n1": "Autant is 'as much' or 'as many'. It is used with que: autant que toi (as much as you)."
+    examples:
+      "Ma sœur mange autant que moi.":
+        native: "My sister eats as much as me."
+        bases:
+          "autant": "as much; as many"
+          "que": "than"
+      "Je travaille autant que toi.":
+        native: "I work as much as you."
+        bases:
+          "autant": "as much; as many"
+          "que": "than"
+  "fr-0379":
+    native: "so much; so"
+    notes:
+      "n1": "Tellement is 'so much' or 'so'. It is used to stress a feeling or a quantity."
+    examples:
+      "C'est tellement bon.":
+        native: "It is so good."
+        bases:
+          "tellement": "so much; so"
+      "Il travaille tellement.":
+        native: "He works so much."
+        bases:
+          "tellement": "so much; so"
+  "fr-0380":
+    native: "half"
+    notes:
+      "n1": "Moitié is 'half', a feminine noun: la moitié (the half). Use it with de for 'half of'."
+    examples:
+      "Je mange la moitié.":
+        native: "I eat half."
+        bases:
+          "moitié": "half"
+      "Ma sœur boit la moitié.":
+        native: "My sister drinks half."
+        bases:
+          "moitié": "half"
+  "fr-0381":
+    native: "kilo; kilogram"
+    notes:
+      "n1": "Kilo is 'kilo', a masculine noun. It is short for kilogramme and is used as it is."
+    examples:
+      "C'est un kilo.":
+        native: "It is a kilo."
+        bases:
+          "kilo": "kilo; kilogram"
+      "Il mange un kilo.":
+        native: "He eats a kilo."
+        bases:
+          "kilo": "kilo; kilogram"
+  "fr-0382":
+    native: "gram"
+    notes:
+      "n1": "Gramme is 'gram', a masculine noun. It is written with a double m."
+    examples:
+      "C'est un gramme.":
+        native: "It is a gram."
+        bases:
+          "gramme": "gram"
+      "Nous avons un gramme.":
+        native: "We have a gram."
+        bases:
+          "gramme": "gram"
+  "fr-0383":
+    native: "litre"
+    notes:
+      "n1": "Litre is 'litre', a masculine noun: un litre d'eau (a litre of water)."
+    examples:
+      "Je bois un litre d'eau.":
+        native: "I drink a litre of water."
+        bases:
+          "litre": "litre"
+      "C'est un litre.":
+        native: "It is a litre."
+        bases:
+          "litre": "litre"
+  "fr-0384":
+    native: "piece; bit"
+    notes:
+      "n1": "Morceau is 'piece' or 'bit', a masculine noun. It is used for a piece of food or of anything."
+    examples:
+      "Il mange un morceau.":
+        native: "He eats a piece."
+        bases:
+          "morceau": "piece; bit"
+      "C'est un bon morceau.":
+        native: "It is a good piece."
+        bases:
+          "morceau": "piece; bit"
+  "fr-0385":
+    native: "glass"
+    notes:
+      "n1": "Verre is 'glass', a masculine noun: un verre d'eau (a glass of water). Verre is also the thing you drink from."
+    examples:
+      "Je bois un verre d'eau.":
+        native: "I drink a glass of water."
+        bases:
+          "verre": "glass"
+      "C'est un verre.":
+        native: "It is a glass."
+        bases:
+          "verre": "glass"
+  "fr-0386":
+    native: "cup"
+    notes:
+      "n1": "Tasse is 'cup', a feminine noun. A cup holds a hot drink such as coffee or tea."
+    examples:
+      "Elle prend une tasse.":
+        native: "She takes a cup."
+        bases:
+          "tasse": "cup"
+      "Ma mère boit une tasse.":
+        native: "My mother drinks a cup."
+        bases:
+          "tasse": "cup"
+  "fr-0387":
+    native: "dozen; about twelve"
+    notes:
+      "n1": "Douzaine is 'dozen', a feminine noun: une douzaine (a dozen). It comes from douze (twelve)."
+    examples:
+      "Une douzaine est douze.":
+        native: "A dozen is twelve."
+        bases:
+          "douzaine": "dozen; about twelve"
+      "Je prends une douzaine.":
+        native: "I take a dozen."
+        bases:
+          "douzaine": "dozen; about twelve"
+  "fr-0388":
+    native: "pair"
+    notes:
+      "n1": "Paire is 'pair', a feminine noun: une paire (a pair). It is two of the same thing."
+    examples:
+      "Une paire est deux.":
+        native: "A pair is two."
+        bases:
+          "paire": "pair"
+      "Il a une paire.":
+        native: "He has a pair."
+        bases:
+          "paire": "pair"
+  "fr-0389":
+    native: "slice"
+    notes:
+      "n1": "Tranche is 'slice', a feminine noun: une tranche (a slice)."
+    examples:
+      "Je mange une tranche.":
+        native: "I eat a slice."
+        bases:
+          "tranche": "slice"
+      "Ma sœur prend une tranche.":
+        native: "My sister takes a slice."
+        bases:
+          "tranche": "slice"
+  "fr-0390":
+    native: "quantity; amount"
+    notes:
+      "n1": "Quantité is 'quantity' or 'amount', a feminine noun. It is used for how much of something there is."
+    examples:
+      "Nous mangeons une quantité.":
+        native: "We eat an amount."
+        bases:
+          "quantité": "quantity; amount"
+      "Quelle quantité ?":
+        native: "What quantity?"
+        bases:
+          "quantité": "quantity; amount"
+  "fr-0391":
+    native: "number"
+    notes:
+      "n1": "Nombre is 'number', a masculine noun. Quel nombre ? asks 'what number?'."
+    examples:
+      "Le nombre est dix.":
+        native: "The number is ten."
+        bases:
+          "nombre": "number"
+      "Quel est votre nombre ?":
+        native: "What is your number?"
+        bases:
+          "nombre": "number"
+  "fr-0392":
+    native: "alone; only"
+    notes:
+      "n1": "Seul is 'alone' or 'only'. Seule is the feminine form, for a woman or a girl."
+    examples:
+      "Il est seul.":
+        native: "He is alone."
+        bases:
+          "seul": "alone; only"
+      "Je suis seule.":
+        native: "I am alone."
+        bases:
+          "seule": "alone; only"
+  "fr-0393":
+    native: "whole; full"
+    notes:
+      "n1": "Entier is 'whole' or 'full', as in lait entier (whole milk). Entière is the feminine form."
+    examples:
+      "Ma sœur boit le lait entier.":
+        native: "My sister drinks whole milk."
+        bases:
+          "entier": "whole; full"
+      "Le lait entier est bon.":
+        native: "Whole milk is good."
+        bases:
+          "entier": "whole; full"
+  "fr-0394":
+    native: "about; around"
+    notes:
+      "n1": "Environ is 'about' or 'around', before a number: environ dix (about ten)."
+    examples:
+      "Il a environ vingt ans.":
+        native: "He is about twenty."
+        bases:
+          "environ": "about; around"
+      "Nous sommes environ dix.":
+        native: "There are about ten of us."
+        bases:
+          "environ": "about; around"
+  "fr-0395":
+    native: "each one; everyone"
+    notes:
+      "n1": "Chacun is 'each one' or 'everyone', said alone or with a verb: chacun joue (each one plays)."
+    examples:
+      "Chacun joue ici.":
+        native: "Each person plays here."
+        bases:
+          "Chacun": "each one; everyone"
+      "Chacun parle français.":
+        native: "Everyone speaks French."
+        bases:
+          "Chacun": "each one; everyone"
+  "fr-0396":
+    native: "about twenty; a score"
+    notes:
+      "n1": "Vingtaine is 'about twenty', a feminine noun, as douzaine is 'about twelve'."
+    examples:
+      "Une vingtaine est vingt.":
+        native: "A score is about twenty."
+        bases:
+          "vingtaine": "about twenty; a score"
+      "Il a une vingtaine.":
+        native: "He has about twenty."
+        bases:
+          "vingtaine": "about twenty; a score"

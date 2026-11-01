@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-en-time-sentences"
+kind: "layer"
+core: "fr-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: time"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about the time and the days, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1052":
+    native: "On Monday, I work."
+    confusables:
+      "mardi": { why: "Mardi is 'Tuesday'." }
+      "dimanche": { why: "Dimanche is 'Sunday'." }
+  "fr-1053":
+    native: "It is noon."
+    confusables:
+      "minuit": { why: "Minuit is 'midnight'." }
+      "matin": { why: "Matin is 'morning'." }
+  "fr-1054":
+    native: "I sleep at night."
+    confusables:
+      "soir": { why: "Soir is 'evening'." }
+      "jour": { why: "Jour is 'day', the opposite of nuit." }
+  "fr-1055":
+    native: "Wait a moment."
+    confusables:
+      "minute": { why: "Minute is a short unit of time." }
+      "temps": { why: "Temps is 'time' in general." }
+  "fr-1056":
+    native: "It is a quarter past ten."
+    confusables:
+      "midi": { why: "Midi is 'noon'." }
+      "minuit": { why: "Minuit is 'midnight'." }
+  "fr-1057":
+    native: "Today, not yesterday."
+    bases:
+      "pas": "not"
+    confusables:
+      "demain": { why: "Demain is 'tomorrow'." }
+      "tard": { why: "Tard is 'late'." }
+  "fr-1058":
+    native: "We leave in the evening."
+    confusables:
+      "matin": { why: "Matin is 'morning'." }
+      "nuit": { why: "Nuit is 'night'." }

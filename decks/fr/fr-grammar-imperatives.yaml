@@ -1,0 +1,84 @@
+schema: 1
+id: "fr-grammar-imperatives"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["tu", "nous", "vous"]
+  entries:
+    - lemma: "parler"
+      ipa: "paʁle"
+      forms:
+        "tu": "Parle !"
+        "nous": "Parlons !"
+        "vous": "Parlez !"
+    - lemma: "manger"
+      ipa: "mɑ̃ʒe"
+      forms:
+        "tu": "Mange !"
+        "nous": "Mangeons !"
+        "vous": "Mangez !"
+    - lemma: "finir"
+      ipa: "finiʁ"
+      forms:
+        "tu": "Finis !"
+        "nous": "Finissons !"
+        "vous": "Finissez !"
+    - lemma: "aller"
+      ipa: "ale"
+      forms:
+        "tu": "Va !"
+        "nous": "Allons !"
+        "vous": "Allez !"
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "tu": "Sois !"
+        "nous": "Soyons !"
+        "vous": "Soyez !"
+    - lemma: "avoir"
+      ipa: "avwaʁ"
+      forms:
+        "tu": "Aie !"
+        "nous": "Ayons !"
+        "vous": "Ayez !"
+    - lemma: "venir"
+      ipa: "vəniʁ"
+      forms:
+        "tu": "Viens !"
+        "nous": "Venons !"
+        "vous": "Venez !"
+    - lemma: "prendre"
+      ipa: "pʁɑ̃dʁ"
+      forms:
+        "tu": "Prends !"
+        "nous": "Prenons !"
+        "vous": "Prenez !"
+    - lemma: "écouter"
+      key: "ecouter"
+      ipa: "ekute"
+      forms:
+        "tu": "Écoute !"
+        "nous": "Écoutons !"
+        "vous": "Écoutez !"
+    - lemma: "attendre"
+      ipa: "atɑ̃dʁ"
+      forms:
+        "tu": "Attends !"
+        "nous": "Attendons !"
+        "vous": "Attendez !"
+    - lemma: "regarder"
+      ipa: "ʁəɡaʁde"
+      forms:
+        "tu": "Regarde !"
+        "nous": "Regardons !"
+        "vous": "Regardez !"
+    - lemma: "fermer"
+      ipa: "fɛʁme"
+      forms:
+        "tu": "Ferme !"
+        "nous": "Fermons !"
+        "vous": "Fermez !"

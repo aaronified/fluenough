@@ -1,0 +1,332 @@
+schema: 1
+id: "fr-work"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0659"
+    target: "métier"
+    ipa: "metje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel est ton métier ?", ipa: "kɛl ɛ tɔ̃ metje", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "ton", ref: "fr-0141" }, { word: "métier", base: "métier" }] }
+      - { target: "Mon métier est difficile.", ipa: "mɔ̃ metje ɛ difisil", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "métier", base: "métier" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }] }
+  - id: "fr-0660"
+    target: "bureau"
+    ipa: "byʁo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je travaille dans le bureau.", ipa: "ʒə tʁavaj dɑ̃ lə byʁo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "bureau", base: "bureau" }] }
+      - { target: "Le bureau est loin.", ipa: "lə byʁo ɛ lwɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bureau", base: "bureau" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+  - id: "fr-0661"
+    target: "entreprise"
+    ipa: "ɑ̃tʁəpʁiz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon entreprise est grande.", ipa: "mɔ̃n ɑ̃tʁəpʁiz ɛ ɡʁɑ̃d", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "entreprise", base: "entreprise" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Nous travaillons pour une entreprise.", ipa: "nu tʁavajɔ̃ puʁ yn ɑ̃tʁəpʁiz", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "travaillons", ref: "fr-0252" }, { word: "pour", ref: "fr-0591" }, { word: "une", ref: "fr-0545" }, { word: "entreprise", base: "entreprise" }] }
+  - id: "fr-0662"
+    target: "patron"
+    ipa: "patʁɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon patron est gentil.", ipa: "mɔ̃ patʁɔ̃ ɛ ʒɑ̃ti", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "patron", base: "patron" }, { word: "est", ref: "fr-0021" }, { word: "gentil", ref: "fr-0434" }] }
+      - { target: "Le patron parle vite.", ipa: "lə patʁɔ̃ paʁl vit", bases: [{ word: "Le", ref: "fr-0543" }, { word: "patron", base: "patron" }, { word: "parle", ref: "fr-0023" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-0663"
+    target: "employé"
+    ipa: "ɑ̃plwaje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un employé travaille ici.", ipa: "œ̃n ɑ̃plwaje tʁavaj isi", bases: [{ word: "Un", ref: "fr-0208" }, { word: "employé", base: "employé" }, { word: "travaille", ref: "fr-0252" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Les employés sont là.", ipa: "le zɑ̃plwaje sɔ̃ la", bases: [{ word: "Les", ref: "fr-0043" }, { word: "employés", base: "employé" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0664"
+    target: "réunion"
+    ipa: "ʁeynjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La réunion est à dix heures.", ipa: "la ʁeynjɔ̃ ɛ a diz œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "réunion", base: "réunion" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Nous avons une réunion.", ipa: "nu zavɔ̃ yn ʁeynjɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "réunion", base: "réunion" }] }
+  - id: "fr-0665"
+    target: "dossier"
+    ipa: "dosje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je finis le dossier.", ipa: "ʒə fini lə dosje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "finis", ref: "fr-0506" }, { word: "le", ref: "fr-0543" }, { word: "dossier", base: "dossier" }] }
+      - { target: "Le dossier est sur la table.", ipa: "lə dosje ɛ syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dossier", base: "dossier" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+  - id: "fr-0666"
+    target: "ordinateur"
+    ipa: "ɔʁdinatœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon ordinateur est vieux.", ipa: "mɔ̃n ɔʁdinatœʁ ɛ vjø", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ordinateur", base: "ordinateur" }, { word: "est", ref: "fr-0021" }, { word: "vieux", ref: "fr-0109" }] }
+      - { target: "J'utilise l'ordinateur.", ipa: "ʒytilize lɔʁdinatœʁ", bases: [{ word: "J'utilise", ref: "fr-0673" }, { word: "l'ordinateur", base: "ordinateur" }] }
+  - id: "fr-0667"
+    target: "salaire"
+    ipa: "salɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le salaire est bon.", ipa: "lə salɛʁ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "salaire", base: "salaire" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Je gagne un bon salaire.", ipa: "ʒə ɡaɲ œ̃ bɔ̃ salɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "gagne", ref: "fr-0670" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "salaire", base: "salaire" }] }
+  - id: "fr-0668"
+    target: "semaine"
+    ipa: "səmɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette semaine est longue.", ipa: "sɛt səmɛn ɛ lɔ̃ɡ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "semaine", base: "semaine" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+      - { target: "Nous travaillons toute la semaine.", ipa: "nu tʁavajɔ̃ tut la səmɛn", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "travaillons", ref: "fr-0252" }, { word: "toute", ref: "fr-0372" }, { word: "la", ref: "fr-0544" }, { word: "semaine", base: "semaine" }] }
+  - id: "fr-0669"
+    target: "usine"
+    ipa: "yzin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père travaille dans une usine.", ipa: "mɔ̃ pɛʁ tʁavaj dɑ̃ zyn yzin", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "travaille", ref: "fr-0252" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "usine", base: "usine" }] }
+      - { target: "L'usine est grande.", ipa: "lyzin ɛ ɡʁɑ̃d", bases: [{ word: "L'usine", base: "usine" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+  - id: "fr-0670"
+    target: "gagner"
+    ipa: "ɡaɲe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je gagne bien.", ipa: "ʒə ɡaɲ bjɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "gagne", base: "gagner" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Elle gagne souvent.", ipa: "ɛl ɡaɲ suvɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "gagne", base: "gagner" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-0671"
+    target: "organiser"
+    ipa: "ɔʁɡanize"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous organisons la réunion.", ipa: "nu ɔʁɡanizɔ̃ la ʁeynjɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "organisons", base: "organiser" }, { word: "la", ref: "fr-0544" }, { word: "réunion", ref: "fr-0664" }] }
+      - { target: "Il organise le travail.", ipa: "il ɔʁɡaniz lə tʁavaj", bases: [{ word: "Il", ref: "fr-0127" }, { word: "organise", base: "organiser" }, { word: "le", ref: "fr-0543" }, { word: "travail", ref: "fr-0255" }] }
+  - id: "fr-0672"
+    target: "envoyer"
+    ipa: "ɑ̃vwaje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'envoie un e-mail.", ipa: "ʒɑ̃vwa œ̃ imɛl", bases: [{ word: "J'envoie", base: "envoyer" }, { word: "un", ref: "fr-0208" }, { word: "e", ref: "fr-0258" }, { word: "mail", ref: "fr-0258" }] }
+      - { target: "Vous envoyez le dossier.", ipa: "vu zɑ̃vwaje lə dosje", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "envoyez", base: "envoyer" }, { word: "le", ref: "fr-0543" }, { word: "dossier", ref: "fr-0665" }] }
+  - id: "fr-0673"
+    target: "utiliser"
+    ipa: "ytilize"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu utilises l'ordinateur.", ipa: "ty ytiliz lɔʁdinatœʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "utilises", base: "utiliser" }, { word: "l'ordinateur", ref: "fr-0666" }] }
+      - { target: "Nous utilisons le téléphone.", ipa: "nu ytilizɔ̃ lə telefɔn", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "utilisons", base: "utiliser" }, { word: "le", ref: "fr-0543" }, { word: "téléphone", ref: "fr-0257" }] }
+  - id: "fr-0674"
+    target: "réussir"
+    ipa: "ʁeysiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il réussit souvent.", ipa: "il ʁeysi suvɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "réussit", base: "réussir" }, { word: "souvent", ref: "fr-0326" }] }
+      - { target: "Vous réussissez bien.", ipa: "vu ʁeysise bjɛ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "réussissez", base: "réussir" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-0675"
+    target: "occupé"
+    ipa: "ɔkype"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis occupé.", ipa: "ʒə sɥi ɔkype", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "occupé", base: "occupé" }] }
+      - { target: "Elle est occupée.", ipa: "ɛl ɛ ɔkype", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "occupée", base: "occupé" }] }
+  - id: "fr-0676"
+    target: "chef"
+    ipa: "ʃɛf"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chef est là.", ipa: "lə ʃɛf ɛ la", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chef", base: "chef" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Mon chef est content.", ipa: "mɔ̃ ʃɛf ɛ kɔ̃tɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "chef", base: "chef" }, { word: "est", ref: "fr-0021" }, { word: "content", ref: "fr-0264" }] }
+  - id: "fr-0677"
+    target: "emploi"
+    ipa: "ɑ̃plwa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je cherche un emploi.", ipa: "ʒə ʃɛʁʃ œ̃ ɑ̃plwa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "un", ref: "fr-0208" }, { word: "emploi", base: "emploi" }] }
+      - { target: "Il a un bon emploi.", ipa: "il a œ̃ bɔ̃ ɑ̃plwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "emploi", base: "emploi" }] }
+  - id: "fr-0678"
+    target: "ouvrier"
+    ipa: "uvʁije"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père est ouvrier.", ipa: "mɔ̃ pɛʁ ɛ uvʁije", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "est", ref: "fr-0021" }, { word: "ouvrier", base: "ouvrier" }] }
+      - { target: "Les ouvriers sont là.", ipa: "le zuvʁije sɔ̃ la", bases: [{ word: "Les", ref: "fr-0043" }, { word: "ouvriers", base: "ouvrier" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0679"
+    target: "poste"
+    ipa: "pɔst"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un bon poste.", ipa: "sɛt œ̃ bɔ̃ pɔst", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "poste", base: "poste" }] }
+      - { target: "Elle a un nouveau poste.", ipa: "ɛl a œ̃ nuvo pɔst", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "nouveau", ref: "fr-0413" }, { word: "poste", base: "poste" }] }
+  - id: "fr-0680"
+    target: "congé"
+    ipa: "kɔ̃ʒe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends un congé.", ipa: "ʒə pʁɑ̃ œ̃ kɔ̃ʒe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "congé", base: "congé" }] }
+      - { target: "Nous avons un congé.", ipa: "nu zavɔ̃ œ̃ kɔ̃ʒe", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "congé", base: "congé" }] }
+  - id: "fr-0681"
+    target: "pause"
+    ipa: "poz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais une pause.", ipa: "ʒə fɛ yn poz", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "pause", base: "pause" }] }
+      - { target: "La pause est courte.", ipa: "la poz ɛ kuʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "pause", base: "pause" }, { word: "est", ref: "fr-0021" }, { word: "courte", ref: "fr-0422" }] }
+  - id: "fr-0682"
+    target: "projet"
+    ipa: "pʁɔʒɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le projet est important.", ipa: "lə pʁɔʒɛ ɛ ɛ̃poʁtɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "projet", base: "projet" }, { word: "est", ref: "fr-0021" }, { word: "important", ref: "fr-0443" }] }
+      - { target: "J'ai un projet.", ipa: "ʒe œ̃ pʁɔʒɛ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "projet", base: "projet" }] }
+  - id: "fr-0683"
+    target: "idée"
+    ipa: "ide"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une bonne idée.", ipa: "ʒe yn bɔn ide", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "bonne", ref: "fr-0040" }, { word: "idée", base: "idée" }] }
+      - { target: "C'est une idée.", ipa: "sɛt yn ide", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "une", ref: "fr-0545" }, { word: "idée", base: "idée" }] }
+  - id: "fr-0684"
+    target: "problème"
+    ipa: "pʁɔblɛm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un problème.", ipa: "sɛt œ̃ pʁɔblɛm", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "un", ref: "fr-0208" }, { word: "problème", base: "problème" }] }
+      - { target: "Nous avons un problème.", ipa: "nu zavɔ̃ œ̃ pʁɔblɛm", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "problème", base: "problème" }] }
+  - id: "fr-0685"
+    target: "client"
+    ipa: "klijɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le client attend.", ipa: "lə klijɑ̃ atɑ̃d", bases: [{ word: "Le", ref: "fr-0543" }, { word: "client", base: "client" }, { word: "attend", ref: "fr-0303" }] }
+      - { target: "Mon client est content.", ipa: "mɔ̃ klijɑ̃ ɛ kɔ̃tɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "client", base: "client" }, { word: "est", ref: "fr-0021" }, { word: "content", ref: "fr-0264" }] }
+  - id: "fr-0686"
+    target: "directeur"
+    ipa: "diʁɛktœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le directeur est là.", ipa: "lə diʁɛktœʁ ɛ la", bases: [{ word: "Le", ref: "fr-0543" }, { word: "directeur", base: "directeur" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Mon directeur parle français.", ipa: "mɔ̃ diʁɛktœʁ paʁl fʁɑ̃sɛ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "directeur", base: "directeur" }, { word: "parle", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-0687"
+    target: "prêt"
+    ipa: "pʁɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis prêt.", ipa: "ʒə sɥi pʁɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "prêt", base: "prêt" }] }
+      - { target: "Elle est prête.", ipa: "ɛl ɛ pʁɛt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "prête", base: "prêt" }] }
+  - id: "fr-0688"
+    target: "dernier"
+    ipa: "dɛʁnje"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est le dernier.", ipa: "sɛ lə dɛʁnje", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "le", ref: "fr-0543" }, { word: "dernier", base: "dernier" }] }
+      - { target: "La dernière heure est calme.", ipa: "la dɛʁnjɛʁ œʁ ɛ kalm", bases: [{ word: "La", ref: "fr-0544" }, { word: "dernière", base: "dernier" }, { word: "heure", ref: "fr-0074" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }

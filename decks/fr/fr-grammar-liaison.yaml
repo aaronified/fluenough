@@ -1,0 +1,45 @@
+schema: 1
+id: "fr-grammar-liaison"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["before-consonant", "before-vowel"]
+  entries:
+    - lemma: "les"
+      ipa: "le"
+      forms:
+        "before-consonant": "les sacs"
+        "before-vowel": "les amis"
+    - lemma: "des"
+      ipa: "de"
+      forms:
+        "before-consonant": "des tables"
+        "before-vowel": "des amis"
+    - lemma: "un"
+      ipa: "œ̃"
+      forms:
+        "before-consonant": "un sac"
+        "before-vowel": "un ami"
+    - lemma: "mon"
+      ipa: "mɔ̃"
+      forms:
+        "before-consonant": "mon sac"
+        "before-vowel": "mon ami"
+    - lemma: "nous"
+      ipa: "nu"
+      forms:
+        "before-consonant": "nous parlons"
+        "before-vowel": "nous habitons"
+    - lemma: "vous"
+      ipa: "vu"
+      forms:
+        "before-consonant": "vous parlez"
+        "before-vowel": "vous êtes"
+    - lemma: "ils"
+      ipa: "il"
+      forms:
+        "before-consonant": "ils parlent"
+        "before-vowel": "ils habitent"

@@ -1,0 +1,22 @@
+schema: 1
+id: "fr-en-grammar-liaison"
+kind: "layer"
+core: "fr-grammar-liaison"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Liaison before a vowel"
+license: "CC-BY-SA-4.0"
+description: "A word that ends in a silent consonant often says it before a word that starts with a vowel or a silent h. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Liaison"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "before-consonant": "before a consonant", "before-vowel": "before a vowel" }
+  entries:
+    "les": "the (plural)"
+    "des": "some"
+    "un": "a (masculine)"
+    "mon": "my (before a masculine noun)"
+    "nous": "we"
+    "vous": "you (formal or plural)"
+    "ils": "they (masculine)"
+  notes: "Liaison: the s of les, des, nous, vous and ils is said before a vowel: les amis is said lezami, nous habitons is nuzabitɔ̃. The n of un and mon is said too: un ami, mon ami. Liaison is not made before a consonant (les sacs) or after a pause, and it is a habit of speech that the spelling does not show."

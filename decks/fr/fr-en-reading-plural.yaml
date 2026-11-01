@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-plural"
+name: "Reading: the plural"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with plural nouns and liaison, such as les amis and des sacs. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-plural-labels"
+    title: "Shop labels for one item and for several"
+    theme: "first-words"
+    sentences:
+      - text: "Les sacs sont sur la table."
+      - text: "Des tasses sont dans le sac."
+      - text: "Les frères et les sœurs sont à la gare."
+      - text: "Les amis parlent français."
+    questions:
+      - id: "fr-0554"
+        prompt: { en: "What is on the table?" }
+        options:
+          - { en: "The bags" }
+          - { en: "The keys" }
+          - { en: "The trains" }
+        answer: 1
+      - id: "fr-0555"
+        prompt: { en: "Where are the brothers and sisters?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At home" }
+          - { en: "At school" }
+        answer: 1
+      - id: "fr-0556"
+        prompt: { en: "What do the friends speak?" }
+        options:
+          - { en: "French" }
+          - { en: "Wine" }
+          - { en: "Music" }
+        answer: 1
+  - id: "fr-the-city-in-plurals"
+    title: "The city in plurals"
+    theme: "first-words"
+    sentences:
+      - text: "Les rues sont calmes."
+      - text: "Les tables sont ici."
+      - text: "Les noms sont sur la tasse."
+      - text: "Les heures sont bonnes."
+    questions:
+      - id: "fr-0557"
+        prompt: { en: "How are the streets?" }
+        options:
+          - { en: "Calm" }
+          - { en: "Noisy" }
+          - { en: "Far" }
+        answer: 1
+      - id: "fr-0558"
+        prompt: { en: "Where are the tables?" }
+        options:
+          - { en: "Here" }
+          - { en: "Far away" }
+          - { en: "In the street" }
+        answer: 1
+      - id: "fr-0559"
+        prompt: { en: "What are the hours like?" }
+        options:
+          - { en: "Good" }
+          - { en: "Bad" }
+          - { en: "Late" }
+        answer: 1

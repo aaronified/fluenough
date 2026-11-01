@@ -1,0 +1,17 @@
+schema: 1
+id: "fr-grammar-il-y-a"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "question", "negative"]
+  entries:
+    - lemma: "il y a"
+      key: "il-y-a"
+      ipa: "il ja"
+      forms:
+        "statement": "il y a un ami"
+        "question": "y a-t-il un ami ?"
+        "negative": "il n'y a pas d'ami"

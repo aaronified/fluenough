@@ -1,0 +1,102 @@
+schema: 1
+id: "fr-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0397"
+    target: "Il ne fait rien."
+    ipa: "il nə fɛ ʁjɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "ne", base: "ne" }
+      - { word: "fait", ref: "fr-0287" }
+      - { word: "rien", ref: "fr-0373" }
+    confusables:
+      - { id: "aucun", ref: "fr-0374", kind: "word" }
+      - { id: "tout", ref: "fr-0372", kind: "word" }
+  - id: "fr-0398"
+    target: "J'ai quelques amis."
+    ipa: "ʒe kɛlkə zami"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "J'ai", ref: "fr-0022" }
+      - { word: "quelques", ref: "fr-0377" }
+      - { word: "amis", ref: "fr-0100" }
+    confusables:
+      - { id: "plusieurs", ref: "fr-0376", kind: "word" }
+      - { id: "aucun", ref: "fr-0374", kind: "word" }
+  - id: "fr-0399"
+    target: "Ma sœur mange autant que moi."
+    ipa: "ma sœʁ mɑ̃ʒ otɑ̃ kə mwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "sœur", ref: "fr-0170" }
+      - { word: "mange", ref: "fr-0282" }
+      - { word: "autant", ref: "fr-0378" }
+      - { word: "que", base: "que" }
+      - { word: "moi", ref: "fr-0133" }
+    confusables:
+      - { id: "tellement", ref: "fr-0379", kind: "word" }
+      - { id: "trop", ref: "fr-0344", kind: "word" }
+  - id: "fr-0400"
+    target: "Une douzaine est douze."
+    ipa: "yn duzɛn ɛ duz"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Une", ref: "fr-0545" }
+      - { word: "douzaine", ref: "fr-0387" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "douze", ref: "fr-0219" }
+    confusables:
+      - { id: "paire", ref: "fr-0388", kind: "word" }
+      - { id: "vingtaine", ref: "fr-0396", kind: "word" }
+  - id: "fr-0401"
+    target: "Je bois un verre d'eau."
+    ipa: "ʒə bwa œ̃ vɛʁ do"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "bois", ref: "fr-0283" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "verre", ref: "fr-0385" }
+      - { word: "d'eau", ref: "fr-0024" }
+    confusables:
+      - { id: "tasse", ref: "fr-0386", kind: "word" }
+      - { id: "litre", ref: "fr-0383", kind: "word" }
+  - id: "fr-0402"
+    target: "Chaque ami parle français."
+    ipa: "ʃak ami paʁl fʁɑ̃sɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Chaque", ref: "fr-0375" }
+      - { word: "ami", ref: "fr-0100" }
+      - { word: "parle", ref: "fr-0023" }
+      - { word: "français", ref: "fr-0246" }
+    confusables:
+      - { id: "chacun", ref: "fr-0395", kind: "word" }
+      - { id: "plusieurs", ref: "fr-0376", kind: "word" }
+  - id: "fr-0403"
+    target: "Le nombre est dix."
+    ipa: "lə nɔ̃bʁ ɛ dis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "nombre", ref: "fr-0391" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dix", ref: "fr-0217" }
+    confusables:
+      - { id: "quantite", ref: "fr-0390", kind: "word" }
+      - { id: "environ", ref: "fr-0394", kind: "word" }

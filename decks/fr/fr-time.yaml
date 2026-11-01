@@ -1,0 +1,233 @@
+schema: 1
+id: "fr-time"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1031"
+    target: "minute"
+    ipa: "minyt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Attendez une minute.", ipa: "atɑ̃de yn minyt", bases: [{ word: "Attendez", ref: "fr-0303" }, { word: "une", ref: "fr-0545" }, { word: "minute", base: "minute" }] }
+      - { target: "Il arrive dans une minute.", ipa: "il aʁiv dɑ̃ zyn minyt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "arrive", ref: "fr-0305" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "minute", base: "minute" }] }
+  - id: "fr-1032"
+    target: "jour"
+    ipa: "ʒuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le jour est long.", ipa: "lə ʒuʁ ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jour", base: "jour" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Je travaille tous les jours.", ipa: "ʒə tʁavaj tu le ʒuʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }, { word: "tous", ref: "fr-0372" }, { word: "les", ref: "fr-0043" }, { word: "jours", base: "jour" }] }
+  - id: "fr-1033"
+    target: "matin"
+    ipa: "matɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le matin, je mange.", ipa: "lə matɛ̃ ʒə mɑ̃ʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "matin", base: "matin" }, { word: "je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }] }
+      - { target: "Je marche le matin.", ipa: "ʒə maʁʃ lə matɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "marche", ref: "fr-0306" }, { word: "le", ref: "fr-0543" }, { word: "matin", base: "matin" }] }
+  - id: "fr-1034"
+    target: "soir"
+    ipa: "swaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le soir, je lis.", ipa: "lə swaʁ ʒə li", bases: [{ word: "Le", ref: "fr-0543" }, { word: "soir", base: "soir" }, { word: "je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }] }
+      - { target: "Nous partons le soir.", ipa: "nu paʁtɔ̃ lə swaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "partons", ref: "fr-0304" }, { word: "le", ref: "fr-0543" }, { word: "soir", base: "soir" }] }
+  - id: "fr-1035"
+    target: "nuit"
+    ipa: "nɥi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La nuit est longue.", ipa: "la nɥi ɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "nuit", base: "nuit" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+      - { target: "Je dors la nuit.", ipa: "ʒə dɔʁ la nɥi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }, { word: "la", ref: "fr-0544" }, { word: "nuit", base: "nuit" }] }
+  - id: "fr-1036"
+    target: "midi"
+    ipa: "midi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est midi.", ipa: "il ɛ midi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "midi", base: "midi" }] }
+      - { target: "Je mange à midi.", ipa: "ʒə mɑ̃ʒ a midi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "à", base: "à" }, { word: "midi", base: "midi" }] }
+  - id: "fr-1037"
+    target: "minuit"
+    ipa: "minɥi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est minuit.", ipa: "il ɛ minɥi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "minuit", base: "minuit" }] }
+      - { target: "Nous partons à minuit.", ipa: "nu paʁtɔ̃ a minɥi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "partons", ref: "fr-0304" }, { word: "à", base: "à" }, { word: "minuit", base: "minuit" }] }
+  - id: "fr-1038"
+    target: "hier"
+    ipa: "jɛʁ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ id: "a1", ref: "fr-0078" }]
+    examples:
+      - { target: "Demain ou hier ?", ipa: "dəmɛ̃ u jɛʁ", bases: [{ word: "Demain", ref: "fr-0078" }, { word: "ou", base: "ou" }, { word: "hier", base: "hier" }] }
+      - { target: "Aujourd'hui, pas hier.", ipa: "oʒuʁdɥi pa jɛʁ", bases: [{ word: "Aujourd'hui", ref: "fr-0079" }, { word: "pas", base: "pas" }, { word: "hier", base: "hier" }] }
+  - id: "fr-1039"
+    target: "moment"
+    ipa: "mɔmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un bon moment.", ipa: "sɛt œ̃ bɔ̃ mɔmɑ̃", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "moment", base: "moment" }] }
+      - { target: "Attendez un moment.", ipa: "atɑ̃de œ̃ mɔmɑ̃", bases: [{ word: "Attendez", ref: "fr-0303" }, { word: "un", ref: "fr-0208" }, { word: "moment", base: "moment" }] }
+  - id: "fr-1040"
+    target: "temps"
+    ipa: "tɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le temps est long.", ipa: "lə tɑ̃ ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "temps", base: "temps" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Je n'ai pas le temps.", ipa: "ʒə nɛ pa lə tɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'ai", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "le", ref: "fr-0543" }, { word: "temps", base: "temps" }] }
+  - id: "fr-1041"
+    target: "quart"
+    ipa: "kaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est dix heures et quart.", ipa: "il ɛ diz œʁ e kaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "dix", ref: "fr-0217" }, { word: "heures", ref: "fr-0074" }, { word: "et", ref: "fr-0027" }, { word: "quart", base: "quart" }] }
+      - { target: "Il est sept heures moins le quart.", ipa: "il ɛ sɛt œʁ mwɛ̃ lə kaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "sept", ref: "fr-0214" }, { word: "heures", ref: "fr-0074" }, { word: "moins", ref: "fr-0346" }, { word: "le", ref: "fr-0543" }, { word: "quart", base: "quart" }] }
+  - id: "fr-1042"
+    target: "réveil"
+    ipa: "ʁevɛj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon réveil est vieux.", ipa: "mɔ̃ ʁevɛj ɛ vjø", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "réveil", base: "réveil" }, { word: "est", ref: "fr-0021" }, { word: "vieux", ref: "fr-0109" }] }
+      - { target: "Le réveil est sur la table.", ipa: "lə ʁevɛj ɛ syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "réveil", base: "réveil" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+  - id: "fr-1043"
+    target: "fois"
+    ipa: "fwa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Deux fois, il dort.", ipa: "dø fwa il dɔʁ", bases: [{ word: "Deux", ref: "fr-0209" }, { word: "fois", base: "fois" }, { word: "il", ref: "fr-0127" }, { word: "dort", ref: "fr-0284" }] }
+      - { target: "Une fois, c'est assez.", ipa: "yn fwa sɛt asɛ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "fois", base: "fois" }, { word: "c'est", ref: "fr-0143" }, { word: "assez", ref: "fr-0343" }] }
+  - id: "fr-1044"
+    target: "lundi"
+    ipa: "lœ̃di"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le lundi, je travaille.", ipa: "lə lœ̃di ʒə tʁavaj", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lundi", base: "lundi" }, { word: "je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }] }
+      - { target: "Il part lundi.", ipa: "il paʁ lœ̃di", bases: [{ word: "Il", ref: "fr-0127" }, { word: "part", ref: "fr-0304" }, { word: "lundi", base: "lundi" }] }
+  - id: "fr-1045"
+    target: "mardi"
+    ipa: "maʁdi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le mardi, je dors tard.", ipa: "lə maʁdi ʒə dɔʁ taʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mardi", base: "mardi" }, { word: "je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }, { word: "tard", ref: "fr-0336" }] }
+      - { target: "Vous arrivez mardi.", ipa: "vu zaʁive maʁdi", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "arrivez", ref: "fr-0305" }, { word: "mardi", base: "mardi" }] }
+  - id: "fr-1046"
+    target: "mercredi"
+    ipa: "mɛʁkʁədi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le mercredi, je joue.", ipa: "lə mɛʁkʁədi ʒə ʒu", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mercredi", base: "mercredi" }, { word: "je", ref: "fr-0126" }, { word: "joue", ref: "fr-0308" }] }
+      - { target: "Nous partons mercredi.", ipa: "nu paʁtɔ̃ mɛʁkʁədi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "partons", ref: "fr-0304" }, { word: "mercredi", base: "mercredi" }] }
+  - id: "fr-1047"
+    target: "jeudi"
+    ipa: "ʒødi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le jeudi, je mange avec mon ami.", ipa: "lə ʒødi ʒə mɑ̃ʒ avɛk mɔ̃n ami", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jeudi", base: "jeudi" }, { word: "je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "avec", ref: "fr-0590" }, { word: "mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }] }
+      - { target: "Tu finis jeudi.", ipa: "ty fini ʒødi", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "finis", ref: "fr-0506" }, { word: "jeudi", base: "jeudi" }] }
+  - id: "fr-1048"
+    target: "vendredi"
+    ipa: "vɑ̃dʁədi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vendredi, nous dansons.", ipa: "lə vɑ̃dʁədi nu dɑ̃sɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vendredi", base: "vendredi" }, { word: "nous", ref: "fr-0129" }, { word: "dansons", ref: "fr-0523" }] }
+      - { target: "Elle arrive vendredi.", ipa: "ɛl aʁiv vɑ̃dʁədi", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "arrive", ref: "fr-0305" }, { word: "vendredi", base: "vendredi" }] }
+  - id: "fr-1049"
+    target: "samedi"
+    ipa: "samdi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le samedi, je cuisine.", ipa: "lə samdi ʒə kɥizin", bases: [{ word: "Le", ref: "fr-0543" }, { word: "samedi", base: "samedi" }, { word: "je", ref: "fr-0126" }, { word: "cuisine", ref: "fr-0309" }] }
+      - { target: "Ils jouent samedi.", ipa: "il ʒu samdi", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "jouent", ref: "fr-0308" }, { word: "samedi", base: "samedi" }] }
+  - id: "fr-1050"
+    target: "dimanche"
+    ipa: "dimɑ̃ʃ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le dimanche, je dors.", ipa: "lə dimɑ̃ʃ ʒə dɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dimanche", base: "dimanche" }, { word: "je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }] }
+      - { target: "Nous mangeons ensemble le dimanche.", ipa: "nu mɑ̃ʒɔ̃ ɑ̃sɑ̃bl lə dimɑ̃ʃ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "ensemble", ref: "fr-0333" }, { word: "le", ref: "fr-0543" }, { word: "dimanche", base: "dimanche" }] }
+  - kind: "set"
+    id: "fr-1051"
+    members: [{ ref: "fr-1044" }, { ref: "fr-1045" }, { ref: "fr-1046" }, { ref: "fr-1047" }, { ref: "fr-1048" }, { ref: "fr-1049" }, { ref: "fr-1050" }]

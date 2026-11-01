@@ -1,0 +1,301 @@
+schema: 1
+id: "fr-en-directions"
+kind: "layer"
+core: "fr-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+license: "CC-BY-SA-4.0"
+description: "Words for asking the way: route, chemin, droit, tourner, traverser, continuer, carrefour, feu, pont, place, the compass points nord, sud and ouest, and perdu. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0892":
+    native: "road; route"
+    notes:
+      "n1": "Route is 'road' or 'route', a feminine noun: la route de Paris (the road to Paris)."
+    examples:
+      "La route est longue.":
+        native: "The road is long."
+        bases:
+          "route": "road; route"
+      "Nous prenons la route.":
+        native: "We take the road."
+        bases:
+          "route": "road; route"
+  "fr-0893":
+    native: "way; path"
+    notes:
+      "n1": "Chemin is 'way' or 'path', a masculine noun. Demander son chemin is 'to ask the way'."
+    examples:
+      "Le chemin est court.":
+        native: "The way is short."
+        bases:
+          "chemin": "way; path"
+      "Je cherche le chemin.":
+        native: "I am looking for the way."
+        bases:
+          "chemin": "way; path"
+  "fr-0894":
+    native: "straight; right (direct)"
+    notes:
+      "n1": "Droit is 'straight', as in tout droit (straight ahead). The feminine is droite, which also means 'right'."
+    examples:
+      "Continuez tout droit.":
+        native: "Carry on straight ahead."
+        bases:
+          "droit": "straight; right (direct)"
+      "Le chemin est droit.":
+        native: "The way is straight."
+        bases:
+          "droit": "straight; right (direct)"
+  "fr-0895":
+    native: "to turn"
+    notes:
+      "n1": "Tourner is 'to turn'. It is used with à: tournez à gauche (turn left)."
+    examples:
+      "Tournez à gauche.":
+        native: "Turn left."
+        bases:
+          "Tournez": "to turn"
+          "à": "to; at; in"
+      "Tu tournes à droite.":
+        native: "You turn right."
+        bases:
+          "tournes": "to turn"
+          "à": "to; at; in"
+  "fr-0896":
+    native: "to cross"
+    notes:
+      "n1": "Traverser is 'to cross', a road or a bridge. It takes a direct object, with no preposition."
+    examples:
+      "Nous traversons la rue.":
+        native: "We cross the street."
+        bases:
+          "traversons": "to cross"
+      "Traversez le pont.":
+        native: "Cross the bridge."
+        bases:
+          "Traversez": "to cross"
+  "fr-0897":
+    native: "to continue; to carry on"
+    notes:
+      "n1": "Continuer is 'to continue' or 'to carry on'. It is used for going on along the way."
+    examples:
+      "Je continue tout droit.":
+        native: "I continue straight on."
+        bases:
+          "continue": "to continue; to carry on"
+      "Vous continuez à droite.":
+        native: "You continue to the right."
+        bases:
+          "continuez": "to continue; to carry on"
+          "à": "to; at; in"
+  "fr-0898":
+    native: "crossroads"
+    notes:
+      "n1": "Carrefour is 'crossroads', a masculine noun, where two roads meet."
+    examples:
+      "Le carrefour est loin.":
+        native: "The crossroads is far."
+        bases:
+          "carrefour": "crossroads"
+      "Au carrefour, tournez à gauche.":
+        native: "At the crossroads, turn left."
+        bases:
+          "Au": "to the (masculine)"
+          "carrefour": "crossroads"
+          "à": "to; at; in"
+  "fr-0899":
+    native: "traffic light; fire"
+    notes:
+      "n1": "Feu is 'traffic light' or 'fire', a masculine noun. The plural feux is said the same."
+    examples:
+      "Le feu est là.":
+        native: "The traffic light is there."
+        bases:
+          "feu": "traffic light; fire"
+      "Tournez au feu.":
+        native: "Turn at the lights."
+        bases:
+          "au": "to the (masculine)"
+          "feu": "traffic light; fire"
+  "fr-0900":
+    native: "bridge"
+    notes:
+      "n1": "Pont is 'bridge', a masculine noun. It is the thing you cross over a river."
+    examples:
+      "Le pont est long.":
+        native: "The bridge is long."
+        bases:
+          "pont": "bridge"
+      "Le pont est près de la gare.":
+        native: "The bridge is near the station."
+        bases:
+          "pont": "bridge"
+          "de": "of; from; some"
+  "fr-0901":
+    native: "square; place"
+    notes:
+      "n1": "Place is 'square' in a town, or 'place' or 'seat' in general. It is a feminine noun."
+    examples:
+      "La place est grande.":
+        native: "The square is big."
+        bases:
+          "place": "square; place"
+      "Nous attendons sur la place.":
+        native: "We wait in the square."
+        bases:
+          "place": "square; place"
+  "fr-0902":
+    native: "north"
+    notes:
+      "n1": "Nord is 'north', a masculine noun. Its opposite is sud (south)."
+    examples:
+      "Le nord est froid.":
+        native: "The north is cold."
+        bases:
+          "nord": "north"
+      "Nous allons vers le nord.":
+        native: "We go north."
+        bases:
+          "nord": "north"
+  "fr-0903":
+    native: "south"
+    notes:
+      "n1": "Sud is 'south', a masculine noun. Its opposite is nord (north)."
+    examples:
+      "Le sud est chaud.":
+        native: "The south is hot."
+        bases:
+          "sud": "south"
+      "Vous allez vers le sud.":
+        native: "You go south."
+        bases:
+          "sud": "south"
+  "fr-0904":
+    native: "west"
+    notes:
+      "n1": "Ouest is 'west', a masculine noun. It is written with an o at the start and said with w."
+    examples:
+      "Le musée est à l'ouest.":
+        native: "The museum is to the west."
+        bases:
+          "à": "to; at; in"
+          "l'ouest": "west"
+      "Nous allons vers l'ouest.":
+        native: "We go west."
+        bases:
+          "l'ouest": "west"
+  "fr-0905":
+    native: "first"
+    notes:
+      "n1": "Premier is 'first'. The feminine is première (pʁəmjɛʁ), as in la première rue (the first street)."
+    examples:
+      "C'est la première rue.":
+        native: "It is the first street."
+        bases:
+          "première": "first"
+      "Le premier bus part à sept heures.":
+        native: "The first bus leaves at seven o'clock."
+        bases:
+          "premier": "first"
+          "à": "to; at; in"
+  "fr-0906":
+    native: "lost"
+    notes:
+      "n1": "Perdu is 'lost', as in être perdu (to be lost). The feminine is perdue."
+    examples:
+      "Je suis perdu.":
+        native: "I am lost."
+        bases:
+          "perdu": "lost"
+      "Elle est perdue.":
+        native: "She is lost."
+        bases:
+          "perdue": "lost"
+  "fr-0907":
+    native: "map; plan"
+    notes:
+      "n1": "Plan is 'map' of a town, or 'plan' in general. It is a masculine noun."
+    examples:
+      "Le plan est bon.":
+        native: "The map is good."
+        bases:
+          "plan": "map; plan"
+      "J'ai le plan.":
+        native: "I have the map."
+        bases:
+          "plan": "map; plan"
+  "fr-0908":
+    native: "end; tip"
+    notes:
+      "n1": "Bout is 'end' or 'tip', a masculine noun: au bout de la rue (at the end of the street)."
+    examples:
+      "Le bout de la route est loin.":
+        native: "The end of the road is far."
+        bases:
+          "bout": "end; tip"
+          "de": "of; from; some"
+      "Au bout de la rue, tournez à droite.":
+        native: "At the end of the street, turn right."
+        bases:
+          "Au": "to the (masculine)"
+          "bout": "end; tip"
+          "de": "of; from; some"
+          "à": "to; at; in"
+  "fr-0909":
+    native: "direction"
+    notes:
+      "n1": "Direction is 'direction', a feminine noun. Dans la direction de means 'towards'."
+    examples:
+      "Quelle est la direction ?":
+        native: "Which direction is it?"
+        bases:
+          "direction": "direction"
+      "Nous allons dans la direction de la gare.":
+        native: "We are going towards the station."
+        bases:
+          "direction": "direction"
+          "de": "of; from; some"
+  "fr-0910":
+    native: "to follow"
+    notes:
+      "n1": "Suivre is 'to follow', a person, a road or a map. It is irregular: je suis, nous suivons."
+    examples:
+      "Vous suivez la route.":
+        native: "You follow the road."
+        bases:
+          "suivez": "to follow"
+      "Je suis le plan.":
+        native: "I follow the map."
+        bases:
+          "suis": "to follow"
+  "fr-0911":
+    native: "bend; turn"
+    notes:
+      "n1": "Virage is 'bend' or 'turn' in a road. It is a masculine noun: prendre un virage (to take a bend)."
+    examples:
+      "Le virage est près du pont.":
+        native: "The bend is near the bridge."
+        bases:
+          "virage": "bend; turn"
+          "du": "of the (masculine); some"
+      "Au virage, tournez à droite.":
+        native: "At the bend, turn right."
+        bases:
+          "Au": "to the (masculine)"
+          "virage": "bend; turn"
+          "à": "to; at; in"
+  "fr-0912":
+    native: "metre"
+    notes:
+      "n1": "Mètre is 'metre', a masculine noun. Its plural is mètres, said the same."
+    examples:
+      "C'est cent mètres.":
+        native: "It is a hundred metres."
+        bases:
+          "mètres": "metre"
+      "Le pont est long de cent mètres.":
+        native: "The bridge is a hundred metres long."
+        bases:
+          "de": "of; from; some"
+          "mètres": "metre"

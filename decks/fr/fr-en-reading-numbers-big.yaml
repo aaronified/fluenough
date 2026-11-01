@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-numbers-big"
+name: "Reading: big numbers"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about ages and counts, with numbers from thirty to ninety-nine. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-ages-of-the-family"
+    title: "The ages in a family"
+    theme: "numbers-big"
+    sentences:
+      - text: "Mon père a quarante-cinq ans."
+      - text: "Ma mère a cinquante-deux ans."
+      - text: "Mon oncle a soixante-cinq ans."
+      - text: "Ma tante a quatre-vingts ans."
+    questions:
+      - id: "fr-0729"
+        prompt: { en: "How old is the speaker's father?" }
+        options:
+          - { en: "Forty-five" }
+          - { en: "Fifty-two" }
+          - { en: "Thirty" }
+        answer: 1
+      - id: "fr-0730"
+        prompt: { en: "How old is the aunt?" }
+        options:
+          - { en: "Eighty" }
+          - { en: "Seventy" }
+          - { en: "Ninety" }
+        answer: 1
+      - id: "fr-0731"
+        prompt: { en: "Who is sixty-five?" }
+        options:
+          - { en: "The uncle" }
+          - { en: "The mother" }
+          - { en: "The father" }
+        answer: 1
+  - id: "fr-price-tags"
+    title: "Price tags and a count"
+    theme: "numbers-big"
+    sentences:
+      - text: "Ils sont trente-deux."
+      - text: "Il a mille amis."
+      - text: "Nous avons zéro problème."
+      - text: "Vingt-et-un amis sont là."
+    questions:
+      - id: "fr-0732"
+        prompt: { en: "How many of them are there?" }
+        options:
+          - { en: "Thirty-two" }
+          - { en: "Thirty" }
+          - { en: "Ninety-nine" }
+        answer: 1
+      - id: "fr-0733"
+        prompt: { en: "How many friends does he have?" }
+        options:
+          - { en: "A thousand" }
+          - { en: "A hundred" }
+          - { en: "Zero" }
+        answer: 1
+      - id: "fr-0734"
+        prompt: { en: "How many friends are here?" }
+        options:
+          - { en: "Twenty-one" }
+          - { en: "Twelve" }
+          - { en: "Eleven" }
+        answer: 1

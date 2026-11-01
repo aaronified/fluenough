@@ -1,0 +1,72 @@
+schema: 1
+id: "fr-grammar-adjective-position"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["before-the-noun", "after-the-noun"]
+  entries:
+    - lemma: "grand"
+      ipa: "ɡʁɑ̃"
+      forms:
+        "before-the-noun": "un grand homme"
+        "after-the-noun": "un homme grand"
+    - lemma: "petit"
+      ipa: "pəti"
+      forms:
+        "before-the-noun": "un petit ami"
+        "after-the-noun": null
+    - lemma: "beau"
+      ipa: "bo"
+      forms:
+        "before-the-noun": "un beau frère"
+        "after-the-noun": null
+    - lemma: "bon"
+      ipa: "bɔ̃"
+      forms:
+        "before-the-noun": "un bon vin"
+        "after-the-noun": null
+    - lemma: "jeune"
+      ipa: "ʒœn"
+      forms:
+        "before-the-noun": "un jeune ami"
+        "after-the-noun": null
+    - lemma: "vieux"
+      ipa: "vjø"
+      forms:
+        "before-the-noun": "un vieux voisin"
+        "after-the-noun": null
+    - lemma: "nouveau"
+      ipa: "nuvo"
+      forms:
+        "before-the-noun": "un nouveau voisin"
+        "after-the-noun": null
+    - lemma: "joli"
+      ipa: "ʒoli"
+      forms:
+        "before-the-noun": "une jolie ville"
+        "after-the-noun": null
+    - lemma: "gentil"
+      ipa: "ʒɑ̃ti"
+      forms:
+        "before-the-noun": "un gentil voisin"
+        "after-the-noun": "un voisin gentil"
+    - lemma: "heureux"
+      ipa: "øʁø"
+      forms:
+        "before-the-noun": null
+        "after-the-noun": "un père heureux"
+    - lemma: "fatigué"
+      key: "fatigue"
+      ipa: "fatiɡe"
+      forms:
+        "before-the-noun": null
+        "after-the-noun": "un ami fatigué"
+    - lemma: "français"
+      key: "francais"
+      ipa: "fʁɑ̃sɛ"
+      forms:
+        "before-the-noun": null
+        "after-the-noun": "un ami français"

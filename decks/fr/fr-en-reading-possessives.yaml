@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-possessives"
+name: "Reading: possessives"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about family and lost property, with mon, ta, leurs and the other possessives. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-family-email"
+    title: "A short email about my family"
+    theme: "family"
+    sentences:
+      - text: "Ma sœur habite à Lyon."
+      - text: "Mes frères travaillent à la gare."
+      - text: "Nos parents sont gentils."
+      - text: "Leurs amis parlent français."
+    questions:
+      - id: "fr-0632"
+        prompt: { en: "Where does the speaker's sister live?" }
+        options:
+          - { en: "Lyon" }
+          - { en: "Paris" }
+          - { en: "Marseille" }
+        answer: 1
+      - id: "fr-0633"
+        prompt: { en: "Where do the brothers work?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At home" }
+          - { en: "At school" }
+        answer: 1
+      - id: "fr-0634"
+        prompt: { en: "What are the parents like?" }
+        options:
+          - { en: "Kind" }
+          - { en: "Rich" }
+          - { en: "Poor" }
+        answer: 1
+  - id: "fr-lost-property"
+    title: "A lost-property list"
+    theme: "family"
+    sentences:
+      - text: "Ton sac est sur la table."
+      - text: "Vos clés sont dans la rue."
+      - text: "Sa tasse est vide."
+      - text: "Nos tasses sont pleines."
+    questions:
+      - id: "fr-0635"
+        prompt: { en: "What is on the table?" }
+        options:
+          - { en: "Your bag" }
+          - { en: "Her cup" }
+          - { en: "Their keys" }
+        answer: 1
+      - id: "fr-0636"
+        prompt: { en: "Where are the keys?" }
+        options:
+          - { en: "In the street" }
+          - { en: "In the bag" }
+          - { en: "In the cup" }
+        answer: 1
+      - id: "fr-0637"
+        prompt: { en: "What is empty?" }
+        options:
+          - { en: "Her cup" }
+          - { en: "Our cups" }
+          - { en: "Your bag" }
+        answer: 1

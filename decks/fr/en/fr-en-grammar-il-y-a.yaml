@@ -1,0 +1,16 @@
+schema: 1
+id: "fr-en-grammar-il-y-a"
+kind: "layer"
+core: "fr-grammar-il-y-a"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "There is and there are: il y a"
+license: "CC-BY-SA-4.0"
+description: "Il y a means 'there is' or 'there are', for one thing or for many. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Form"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "statement": "statement", "question": "question", "negative": "negative" }
+  entries:
+    "il-y-a": "there is; there are"
+  notes: "Il y a stays the same for one thing and for many: il y a un ami, il y a des amis. Its question is y a-t-il ?, with -t- added between a and il, and its negative is il n'y a pas. The form is one fixed phrase; the word after it is un, une or des, or de before a negative."
