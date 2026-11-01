@@ -98,8 +98,15 @@ class WordSheet extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final state = AppScope.of(context);
-    final reading = card.reading;
-    final ipa = ipaToShow(context, card.ipa, target: card.target);
+    // With "IPA replaces transliteration" on, the IPA is the reading and its
+    // small line goes (#697).
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
+    final reading = lines.reading;
     final notes = proseNotes(card);
     final bases = basesOf(state, card, language);
     final rudeAlikes = rudeAlikesOf(state, card);
@@ -141,10 +148,14 @@ class WordSheet extends StatelessWidget {
                   ),
                 ),
                 if (reading != null)
-                  Text(
-                    reading,
-                    style: theme.textTheme.titleMedium!.copyWith(
-                      color: scheme.onSurfaceVariant,
+                  ReadingWithInfo(
+                    swapped: lines.swapped,
+                    card: card,
+                    reading: Text(
+                      reading,
+                      style: theme.textTheme.titleMedium!
+                          .copyWith(color: scheme.onSurfaceVariant)
+                          .forIpa(lines.swapped),
                     ),
                   ),
                 Row(
@@ -154,8 +165,10 @@ class WordSheet extends StatelessWidget {
                         onPlay: () => state.speakCard(card, language),
                         label: l10n.drillPlay,
                       ),
-                    if (ipa != null) ...<Widget>[
-                      Flexible(child: IpaLine(ipa, textAlign: TextAlign.start)),
+                    if (lines.ipa case final line?) ...<Widget>[
+                      Flexible(
+                        child: IpaLine(line, textAlign: TextAlign.start),
+                      ),
                       IpaInfoDot(card: card),
                     ],
                   ],
