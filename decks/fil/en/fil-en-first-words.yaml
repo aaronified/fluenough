@@ -1,0 +1,161 @@
+schema: 1
+id: "fil-en-first-words"
+kind: "layer"
+core: "fil-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes, no, I, you, and, or, but, good, one and water: the small words that answer, link and begin a sentence. Filipino has short words that attach to others, such as ko and ka, which a learner meets early. Greetings and thanks are in the phrasebook. Not yet checked by a Filipino speaker: please report any mistake."
+cards:
+  "fil-0001":
+    native: "yes (casual)"
+    notes:
+      "n1": "Oo is yes, the casual one. Opo is the polite yes, said to an elder or a stranger."
+    examples:
+      "Oo, salamat.":
+        native: "Yes, thank you."
+        bases:
+          "salamat": "thanks"
+      "Oo, naiintindihan ko.":
+        native: "Yes, I understand."
+        bases:
+          "naiintindihan": "understand"
+          "ko": "I"
+  "fil-0002":
+    native: "no; not"
+    notes:
+      "n1": "Hindi is no, and it is also the word for not before a verb or an adjective: hindi ko alam, I don't know."
+    examples:
+      "Hindi, salamat.":
+        native: "No, thank you."
+        bases:
+          "salamat": "thanks"
+      "Hindi ko alam.":
+        native: "I don't know."
+        bases:
+          "ko": "I"
+          "alam": "know"
+  "fil-0003":
+    native: "I"
+    notes:
+      "n1": "Ako is I. Ko is its short form after a word, as in naiintindihan ko, I understand."
+    examples:
+      "Ako ay estudyante.":
+        native: "I am a student."
+        bases:
+          "ay": "is (linking word)"
+          "estudyante": "student"
+      "Ako si Maria.":
+        native: "I am Maria."
+        bases:
+          "si": "name marker"
+          "Maria": "Maria"
+  "fil-0004":
+    native: "you"
+    notes:
+      "n1": "Ikaw is you, to one person. Ka is its short form, as in marunong ka, you know how. Kayo is you for more than one person."
+    examples:
+      "Ikaw ba si Juan?":
+        native: "Are you Juan?"
+        bases:
+          "ba": "question particle"
+          "si": "name marker"
+          "Juan": "Juan"
+      "Ikaw ay mabait.":
+        native: "You are kind."
+        bases:
+          "ay": "is (linking word)"
+          "mabait": "kind"
+  "fil-0005":
+    native: "and"
+    notes:
+      "n1": "At is and. It joins two nouns or two parts of a sentence."
+    examples:
+      "Kape at tsaa.":
+        native: "Coffee and tea."
+        bases:
+          "kape": "coffee"
+          "tsaa": "tea"
+      "Ako at ikaw.":
+        native: "Me and you."
+        bases:
+          "ako": "I"
+          "ikaw": "you"
+  "fil-0006":
+    native: "or"
+    notes:
+      "n1": "O is or. In a question it asks the listener to choose between two things."
+    examples:
+      "Kape o tsaa?":
+        native: "Coffee or tea?"
+        bases:
+          "kape": "coffee"
+          "tsaa": "tea"
+      "Ngayon o bukas?":
+        native: "Today or tomorrow?"
+        bases:
+          "ngayon": "today"
+          "bukas": "tomorrow"
+  "fil-0007":
+    native: "but"
+    notes:
+      "n1": "Pero is but. Ngunit is also but, in a more formal style."
+    examples:
+      "Masarap, pero mahal.":
+        native: "Tasty, but expensive."
+        bases:
+          "masarap": "tasty"
+          "mahal": "expensive"
+      "Gusto ko, pero pagod ako.":
+        native: "I like it, but I am tired."
+        bases:
+          "Gusto": "like"
+          "ko": "I"
+          "pagod": "tired"
+          "ako": "I"
+  "fil-0008":
+    native: "good; well"
+    notes:
+      "n1": "Mabuti is good, and well. As an answer to how someone is: Mabuti ako, I am well."
+    examples:
+      "Mabuti ang kape.":
+        native: "The coffee is good."
+        bases:
+          "ang": "the"
+          "kape": "coffee"
+      "Mabuti ako, salamat.":
+        native: "I am well, thanks."
+        bases:
+          "ako": "I"
+          "salamat": "thanks"
+  "fil-0009":
+    native: "one"
+    notes:
+      "n1": "Isa is one. With a noun it becomes isang: isang kape, one coffee."
+    examples:
+      "Isang kape, pakiusap.":
+        native: "One coffee, please."
+        bases:
+          "Isang": "one"
+          "kape": "coffee"
+          "pakiusap": "please"
+      "Isa, dalawa, tatlo.":
+        native: "One, two, three."
+        bases:
+          "dalawa": "two"
+          "tatlo": "three"
+  "fil-0010":
+    native: "water"
+    notes:
+      "n1": "Tubig is water. Ng is a linking word before a thing, as in gusto ko ng tubig, I want water."
+    examples:
+      "Tubig, pakiusap.":
+        native: "Water, please."
+        bases:
+          "pakiusap": "please"
+      "Gusto ko ng tubig.":
+        native: "I want water."
+        bases:
+          "Gusto": "want"
+          "ko": "I"
+          "ng": "(linking word)"
