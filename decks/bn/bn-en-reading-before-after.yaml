@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-before-after"
+name: "Reading: before and after"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "The order of events in a day, and a schedule of an event. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-order-of-events"
+    title: "Saying what happens before and after what"
+    theme: "sports"
+    sentences:
+      - { text: "সকালে ঘুম থেকে উঠে চা খাই।", reading: "sôkāle ghum theke uṭhe cā khāi.", ipa: "sɔkale ɡʱum t̪ʰeke uʈʰe tʃa kʰai" }
+      - { text: "চা খাওয়ার পরে ব্যায়াম করি।", reading: "cā khāoyār pôre bêyām kori.", ipa: "tʃa kʰaojar pɔre bæjam kori" }
+      - { text: "ব্যায়ামের আগে জল খাই।", reading: "bêyāmer āge jôl khāi.", ipa: "bæjamer aɡe dʒɔl kʰai" }
+      - { text: "স্নান করার পরে অফিসে যাই।", reading: "snān kôrār pôre ôphise jāi.", ipa: "snan kɔrar pɔre ɔpʰise dʒai" }
+      - { text: "অফিসে যাওয়ার আগে নাস্তা করি।", reading: "ôphise jāoyār āge nāstā kori.", ipa: "ɔpʰise dʒaojar aɡe nast̪a kori" }
+    questions:
+      - id: "bn-3385"
+        prompt: { "en": "The speaker exercises after having tea." }
+        answer: true
+      - id: "bn-3386"
+        prompt: { "en": "What comes before the exercise?" }
+        options: [{ "en": "Drinking water" }, { "en": "Going to the office" }]
+        answer: 1
+      - id: "bn-3387"
+        prompt: { "en": "What comes before going to the office?" }
+        options: [{ "en": "Having breakfast" }, { "en": "Sleeping" }]
+        answer: 1
+  - id: "bn-event-schedule"
+    title: "A schedule of an event day"
+    theme: "sports"
+    sentences:
+      - { text: "আসার আগে টিকিট দেখাও।", reading: "āsār āge ṭikiṭ dekhāo.", ipa: "asar aɡe ʈikiʈ d̪ekʰao" }
+      - { text: "অনুষ্ঠান শুরু হওয়ার পরে খাবার দেওয়া হবে।", reading: "ônuśṭhān śuru hôoyār pôre khābār deoyā hôbe.", ipa: "ɔnuʃʈʰan ʃuru ɦɔojar pɔre kʰabar d̪eoja ɦɔbe" }
+      - { text: "নাম লেখানোর পরে ব্যাজ নাও।", reading: "nām lekhānor pôre bêj nāo.", ipa: "nam lekʰanor pɔre bædʒ nao" }
+      - { text: "শেষ হওয়ার আগে সবাই বেরোবে না।", reading: "śeś hôoyār āge sôbāi berobe nā.", ipa: "ʃeʃ ɦɔojar aɡe sɔbai berobe na" }
+      - { text: "বিকেলের পরে বাড়ি যাবে।", reading: "bikeler pôre bāṛi jābe.", ipa: "bikeler pɔre baɽi dʒabe" }
+    questions:
+      - id: "bn-3388"
+        prompt: { "en": "Food is served after the event starts." }
+        answer: true
+      - id: "bn-3389"
+        prompt: { "en": "What should be shown before entering?" }
+        options: [{ "en": "The ticket" }, { "en": "The bag" }]
+        answer: 1
+      - id: "bn-3390"
+        prompt: { "en": "When can people leave?" }
+        options: [{ "en": "Not before the end" }, { "en": "At any time" }]
+        answer: 1

@@ -1,0 +1,612 @@
+schema: 1
+id: "bn-opinions"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "opinions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-2956"
+    target: "মতামত"
+    reading: "môtāmot"
+    ipa: "mɔt̪amot̪"
+    phonetic: "[mɔt̪amot̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মতামত", reading: "môtāmot" }] }
+    examples:
+      - { target: "তোমার মতামত কী?", reading: "tomār môtāmot ki?", ipa: "t̪omar mɔt̪amot̪ ki", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "কী", base: "কী", reading: "ki" }] }
+      - { target: "সবার মতামত শুনলাম।", reading: "sôbār môtāmot śunolām.", ipa: "sɔbar mɔt̪amot̪ ʃunolam", bases: [{ word: "সবার", base: "সবাই", reading: "sôbār" }, { word: "শুনলাম", base: "শোনা", reading: "śunolām" }] }
+  - id: "bn-2957"
+    target: "মত"
+    reading: "môt"
+    ipa: "mɔt̪"
+    phonetic: "[mɔt̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মত", reading: "môt" }] }
+    examples:
+      - { target: "এটা আমার মত।", reading: "eṭā āmār môt.", ipa: "eʈa amar mɔt̪", bases: [{ word: "এটা", ref: "bn-0849" }, { word: "আমার", ref: "bn-0833" }] }
+      - { target: "মতগুলো আলাদা।", reading: "môtogulo ālādā.", ipa: "mɔt̪oɡulo alad̪a", bases: [{ word: "মতগুলো", base: "মত", reading: "môtogulo" }, { word: "আলাদা", base: "আলাদা", reading: "ālādā" }] }
+  - id: "bn-2958"
+    target: "তর্ক"
+    reading: "tôrko"
+    ipa: "t̪ɔrk"
+    phonetic: "[t̪ɔrk]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "তর্ক", reading: "tôrko" }] }
+    examples:
+      - { target: "ওদের মধ্যে তর্ক হচ্ছে।", reading: "oder moddhe tôrko hôcche.", ipa: "od̪er mod̪d̪ʱe t̪ɔrk ɦɔtʃtʃʰe", bases: [{ word: "ওদের", base: "ওরা", reading: "oder" }, { word: "মধ্যে", base: "মধ্যে", reading: "moddhe" }, { word: "হচ্ছে", ref: "bn-0874" }] }
+      - { target: "তর্কে কাজ হয় না।", reading: "tôrke kāj hôy nā.", ipa: "t̪ɔrke kadʒ ɦɔj na", bases: [{ word: "তর্কে", base: "তর্ক", reading: "tôrke" }, { word: "কাজ", ref: "bn-0198" }, { word: "হয়", ref: "bn-0874" }, { word: "না", base: "না", reading: "nā" }] }
+  - id: "bn-2959"
+    target: "যুক্তি"
+    reading: "jukti"
+    ipa: "dʒukt̪i"
+    phonetic: "[dʒukt̪i]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "যুক্তি", reading: "jukti" }] }
+    examples:
+      - { target: "তোমার যুক্তি ঠিক।", reading: "tomār jukti ṭhik.", ipa: "t̪omar dʒukt̪i ʈʰik", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "ঠিক", base: "ঠিক", reading: "ṭhik" }] }
+      - { target: "যুক্তিটা বুঝেছি।", reading: "juktiṭā bujhechi.", ipa: "dʒukt̪iʈa budʒʱetʃʰi", bases: [{ word: "যুক্তিটা", base: "যুক্তি", reading: "juktiṭā" }, { word: "বুঝেছি", base: "বোঝা", reading: "bujhechi" }] }
+  - id: "bn-2960"
+    target: "বিশ্বাস"
+    reading: "biśśās"
+    ipa: "biʃʃas"
+    phonetic: "[biʃʃas]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিশ্বাস", reading: "biśśās" }] }
+    examples:
+      - { target: "আমার বিশ্বাস সে ভালো।", reading: "āmār biśśās se bhālo.", ipa: "amar biʃʃas se bʱalo", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "সে", ref: "bn-0839" }, { word: "ভালো", ref: "bn-0617" }] }
+      - { target: "বিশ্বাসের কারণ কী?", reading: "biśśāser kāron ki?", ipa: "biʃʃaser karon ki", bases: [{ word: "বিশ্বাসের", base: "বিশ্বাস", reading: "biśśāser" }, { word: "কারণ", ref: "bn-0365" }, { word: "কী", base: "কী", reading: "ki" }] }
+  - id: "bn-2961"
+    target: "ধারণা"
+    reading: "dhāronā"
+    ipa: "d̪ʱarona"
+    phonetic: "[d̪ʱarona]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ধারণা", reading: "dhāronā" }] }
+    examples:
+      - { target: "এই ধারণাটা ভুল।", reading: "ei dhāronāṭā bhul.", ipa: "ei d̪ʱaronaʈa bʱul", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "ধারণাটা", base: "ধারণা", reading: "dhāronāṭā" }, { word: "ভুল", ref: "bn-1244" }] }
+      - { target: "নতুন ধারণা আনো।", reading: "notun dhāronā āno.", ipa: "not̪un d̪ʱarona ano", bases: [{ word: "নতুন", ref: "bn-0620" }, { word: "আনো", base: "আনা", reading: "āno" }] }
+  - id: "bn-2962"
+    target: "উপদেশ"
+    reading: "upodeś"
+    ipa: "upod̪eʃ"
+    phonetic: "[upod̪eʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উপদেশ", reading: "upodeś" }] }
+    examples:
+      - { target: "বাবার উপদেশ মনে রেখো।", reading: "bābār upodeś mône rekho.", ipa: "babar upod̪eʃ mɔne rekʰo", bases: [{ word: "বাবার", ref: "bn-0423" }, { word: "মনে", ref: "bn-2846" }, { word: "রেখো", ref: "bn-0894" }] }
+      - { target: "উপদেশ দিও না।", reading: "upodeś dio nā.", ipa: "upod̪eʃ d̪io na", bases: [{ word: "দিও", ref: "bn-0888" }, { word: "না", base: "না", reading: "nā" }] }
+  - id: "bn-2963"
+    target: "অপছন্দ"
+    reading: "ôpochondo"
+    ipa: "ɔpotʃʰond̪"
+    phonetic: "[ɔpotʃʰond̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অপছন্দ", reading: "ôpochondo" }] }
+    examples:
+      - { target: "আমার অপছন্দ ঠান্ডা খাবার।", reading: "āmār ôpochondo ṭhānḍā khābār.", ipa: "amar ɔpotʃʰond̪ ʈʰanɖa kʰabar", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "ঠান্ডা", ref: "bn-0622" }, { word: "খাবার", base: "খাবার", reading: "khābār" }] }
+      - { target: "কেন এই অপছন্দ?", reading: "ken ei ôpochondo?", ipa: "ken ei ɔpotʃʰond̪", bases: [{ word: "কেন", ref: "bn-0165" }, { word: "এই", base: "এই", reading: "ei" }] }
+  - id: "bn-2964"
+    target: "সমালোচনা"
+    reading: "sômāloconā"
+    ipa: "sɔmalotʃona"
+    phonetic: "[sɔmalotʃona]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সমালোচনা", reading: "sômāloconā" }] }
+    examples:
+      - { target: "সমালোচনা শুনতে ভালো লাগে না।", reading: "sômāloconā śunote bhālo lāge nā.", ipa: "sɔmalotʃona ʃunot̪e bʱalo laɡe na", bases: [{ word: "শুনতে", base: "শোনা", reading: "śunote" }, { word: "ভালো", ref: "bn-0617" }, { word: "লাগে", ref: "bn-2363" }, { word: "না", base: "না", reading: "nā" }] }
+      - { target: "তার সমালোচনা ন্যায্য।", reading: "tār sômāloconā nêjjo.", ipa: "t̪ar sɔmalotʃona nædʒdʒ", bases: [{ word: "তার", ref: "bn-0839" }, { word: "ন্যায্য", ref: "bn-2983" }] }
+  - id: "bn-2965"
+    target: "প্রশংসা"
+    reading: "prôśoṅsā"
+    ipa: "prɔʃoŋsa"
+    phonetic: "[prɔʃoŋsa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "প্রশংসা", reading: "prôśoṅsā" }] }
+    examples:
+      - { target: "সবাই তার প্রশংসা করল।", reading: "sôbāi tār prôśoṅsā kôrol.", ipa: "sɔbai t̪ar prɔʃoŋsa kɔrol", bases: [{ word: "সবাই", base: "সবাই", reading: "sôbāi" }, { word: "তার", ref: "bn-0839" }, { word: "করল", ref: "bn-0102" }] }
+      - { target: "প্রশংসার কথা শুনে খুশি।", reading: "prôśoṅsār kôthā śune khuśi.", ipa: "prɔʃoŋsar kɔt̪ʰa ʃune kʰuʃi", bases: [{ word: "প্রশংসার", base: "প্রশংসা", reading: "prôśoṅsār" }, { word: "কথা", ref: "bn-2409" }, { word: "শুনে", base: "শোনা", reading: "śune" }, { word: "খুশি", base: "খুশি", reading: "khuśi" }] }
+  - id: "bn-2966"
+    target: "সমর্থন"
+    reading: "sômorthon"
+    ipa: "sɔmort̪ʰon"
+    phonetic: "[sɔmort̪ʰon]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সমর্থন", reading: "sômorthon" }] }
+    examples:
+      - { target: "তার সমর্থন দরকার।", reading: "tār sômorthon dôrokār.", ipa: "t̪ar sɔmort̪ʰon d̪ɔrokar", bases: [{ word: "তার", ref: "bn-0839" }, { word: "দরকার", ref: "bn-0577" }] }
+      - { target: "সমর্থনের জন্য ধন্যবাদ।", reading: "sômorthoner jonn dhonnobād.", ipa: "sɔmort̪ʰoner dʒonn d̪ʱonnobad̪", bases: [{ word: "সমর্থনের", base: "সমর্থন", reading: "sômorthoner" }, { word: "জন্য", base: "জন্য", reading: "jonn" }, { word: "ধন্যবাদ", base: "ধন্যবাদ", reading: "dhonnobād" }] }
+  - id: "bn-2967"
+    target: "বিরোধিতা"
+    reading: "birodhitā"
+    ipa: "birod̪ʱit̪a"
+    phonetic: "[birod̪ʱit̪a]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিরোধিতা", reading: "birodhitā" }] }
+    examples:
+      - { target: "এই প্রস্তাবের বিরোধিতা হচ্ছে।", reading: "ei prôstāber birodhitā hôcche.", ipa: "ei prɔst̪aber birod̪ʱit̪a ɦɔtʃtʃʰe", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "প্রস্তাবের", ref: "bn-2972" }, { word: "হচ্ছে", ref: "bn-0874" }] }
+      - { target: "বিরোধিতা সত্ত্বেও কাজ শুরু হলো।", reading: "birodhitā sôttteo kāj śuru hôlo.", ipa: "birod̪ʱit̪a sɔt̪t̪t̪eo kadʒ ʃuru ɦɔlo", bases: [{ word: "সত্ত্বেও", base: "সত্ত্বেও", reading: "sôttteo" }, { word: "কাজ", ref: "bn-0198" }, { word: "শুরু", base: "শুরু", reading: "śuru" }, { word: "হলো", ref: "bn-0874" }] }
+  - id: "bn-2968"
+    target: "আলোচনা"
+    reading: "āloconā"
+    ipa: "alotʃona"
+    phonetic: "[alotʃona]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আলোচনা", reading: "āloconā" }] }
+    examples:
+      - { target: "আলোচনা শুরু হলো।", reading: "āloconā śuru hôlo.", ipa: "alotʃona ʃuru ɦɔlo", bases: [{ word: "শুরু", base: "শুরু", reading: "śuru" }, { word: "হলো", ref: "bn-0874" }] }
+      - { target: "আলোচনার বিষয় কী?", reading: "āloconār biśoy ki?", ipa: "alotʃonar biʃoj ki", bases: [{ word: "আলোচনার", base: "আলোচনা", reading: "āloconār" }, { word: "বিষয়", ref: "bn-2164" }, { word: "কী", base: "কী", reading: "ki" }] }
+  - id: "bn-2969"
+    target: "উদ্দেশ্য"
+    reading: "uddeśśo"
+    ipa: "ud̪d̪eʃʃ"
+    phonetic: "[ud̪d̪eʃʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উদ্দেশ্য", reading: "uddeśśo" }] }
+    examples:
+      - { target: "তোমার উদ্দেশ্য কী?", reading: "tomār uddeśśo ki?", ipa: "t̪omar ud̪d̪eʃʃ ki", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "কী", base: "কী", reading: "ki" }] }
+      - { target: "আমাদের উদ্দেশ্য ভালো।", reading: "āmāder uddeśśo bhālo.", ipa: "amad̪er ud̪d̪eʃʃ bʱalo", bases: [{ word: "আমাদের", ref: "bn-0834" }, { word: "ভালো", ref: "bn-0617" }] }
+  - id: "bn-2970"
+    target: "পরিণতি"
+    reading: "porinoti"
+    ipa: "porinot̪i"
+    phonetic: "[porinot̪i]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পরিণতি", reading: "porinoti" }] }
+    examples:
+      - { target: "এর পরিণতি ভালো হয়নি।", reading: "er porinoti bhālo hôyoni.", ipa: "er porinot̪i bʱalo ɦɔjoni", bases: [{ word: "এর", base: "এর", reading: "er" }, { word: "ভালো", ref: "bn-0617" }, { word: "হয়নি", ref: "bn-0874" }] }
+      - { target: "পরিণতির কথা ভাবো।", reading: "porinotir kôthā bhābo.", ipa: "porinot̪ir kɔt̪ʰa bʱabo", bases: [{ word: "পরিণতির", base: "পরিণতি", reading: "porinotir" }, { word: "কথা", ref: "bn-2409" }, { word: "ভাবো", base: "ভাবা", reading: "bhābo" }] }
+  - id: "bn-2971"
+    target: "সিদ্ধান্ত"
+    reading: "siddhānto"
+    ipa: "sid̪d̪ʱant̪"
+    phonetic: "[sid̪d̪ʱant̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সিদ্ধান্ত", reading: "siddhānto" }] }
+    examples:
+      - { target: "সে একটা সিদ্ধান্ত নিয়েছে।", reading: "se ekoṭā siddhānto niyeche.", ipa: "se ekoʈa sid̪d̪ʱant̪ nijetʃʰe", bases: [{ word: "সে", ref: "bn-0839" }, { word: "একটা", ref: "bn-0202" }, { word: "নিয়েছে", ref: "bn-0889" }] }
+      - { target: "সিদ্ধান্তটা ঠিক।", reading: "siddhāntoṭā ṭhik.", ipa: "sid̪d̪ʱant̪oʈa ʈʰik", bases: [{ word: "সিদ্ধান্তটা", base: "সিদ্ধান্ত", reading: "siddhāntoṭā" }, { word: "ঠিক", base: "ঠিক", reading: "ṭhik" }] }
+  - id: "bn-2972"
+    target: "প্রস্তাব"
+    reading: "prôstāb"
+    ipa: "prɔst̪ab"
+    phonetic: "[prɔst̪ab]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "প্রস্তাব", reading: "prôstāb" }] }
+    examples:
+      - { target: "একটা নতুন প্রস্তাব আছে।", reading: "ekoṭā notun prôstāb āche.", ipa: "ekoʈa not̪un prɔst̪ab atʃʰe", bases: [{ word: "একটা", ref: "bn-0202" }, { word: "নতুন", ref: "bn-0620" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "প্রস্তাবটা সবাই মেনেছে।", reading: "prôstāboṭā sôbāi meneche.", ipa: "prɔst̪aboʈa sɔbai menetʃʰe", bases: [{ word: "প্রস্তাবটা", base: "প্রস্তাব", reading: "prôstāboṭā" }, { word: "সবাই", base: "সবাই", reading: "sôbāi" }, { word: "মেনেছে", base: "মানা", reading: "meneche" }] }
+  - id: "bn-2973"
+    target: "সমাধান"
+    reading: "sômādhān"
+    ipa: "sɔmad̪ʱan"
+    phonetic: "[sɔmad̪ʱan]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সমাধান", reading: "sômādhān" }] }
+    examples:
+      - { target: "সমস্যার সমাধান কী?", reading: "sômossār sômādhān ki?", ipa: "sɔmossar sɔmad̪ʱan ki", bases: [{ word: "সমস্যার", ref: "bn-2974" }, { word: "কী", base: "কী", reading: "ki" }] }
+      - { target: "এটাই সমাধান।", reading: "eṭāi sômādhān.", ipa: "eʈai sɔmad̪ʱan", bases: [{ word: "এটাই", base: "এটা", reading: "eṭāi" }] }
+  - id: "bn-2974"
+    target: "সমস্যা"
+    reading: "sômossā"
+    ipa: "sɔmossa"
+    phonetic: "[sɔmossa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সমস্যা", reading: "sômossā" }] }
+    examples:
+      - { target: "আমার একটা সমস্যা আছে।", reading: "āmār ekoṭā sômossā āche.", ipa: "amar ekoʈa sɔmossa atʃʰe", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "একটা", ref: "bn-0202" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "সমস্যাগুলো বড়।", reading: "sômossāgulo bôṛ.", ipa: "sɔmossaɡulo bɔɽ", bases: [{ word: "সমস্যাগুলো", base: "সমস্যা", reading: "sômossāgulo" }, { word: "বড়", ref: "bn-0062" }] }
+  - id: "bn-2975"
+    target: "দৃষ্টিভঙ্গি"
+    reading: "driśṭibhoṅgi"
+    ipa: "d̪riʃʈibʱoŋɡi"
+    phonetic: "[d̪riʃʈibʱoŋɡi]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "দৃষ্টিভঙ্গি", reading: "driśṭibhoṅgi" }] }
+    examples:
+      - { target: "তোমার দৃষ্টিভঙ্গি আলাদা।", reading: "tomār driśṭibhoṅgi ālādā.", ipa: "t̪omar d̪riʃʈibʱoŋɡi alad̪a", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "আলাদা", base: "আলাদা", reading: "ālādā" }] }
+      - { target: "দুজনের দৃষ্টিভঙ্গি এক।", reading: "dujoner driśṭibhoṅgi ek.", ipa: "d̪udʒoner d̪riʃʈibʱoŋɡi ek", bases: [{ word: "দুজনের", base: "দুজন", reading: "dujoner" }, { word: "এক", base: "এক", reading: "ek" }] }
+  - id: "bn-2976"
+    target: "অভিমত"
+    reading: "ôbhimot"
+    ipa: "ɔbʱimot̪"
+    phonetic: "[ɔbʱimot̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অভিমত", reading: "ôbhimot" }] }
+    examples:
+      - { target: "আপনার অভিমত জানান।", reading: "āponār ôbhimot jānān.", ipa: "aponar ɔbʱimot̪ dʒanan", bases: [{ word: "আপনার", base: "আপনি", reading: "āponār" }, { word: "জানান", base: "জানানো", reading: "jānān" }] }
+      - { target: "অভিমতটা লিখে দিন।", reading: "ôbhimotoṭā likhe din.", ipa: "ɔbʱimot̪oʈa likʰe d̪in", bases: [{ word: "অভিমতটা", base: "অভিমত", reading: "ôbhimotoṭā" }, { word: "লিখে", base: "লেখা", reading: "likhe" }, { word: "দিন", ref: "bn-0888" }] }
+  - id: "bn-2977"
+    target: "ব্যাখ্যা"
+    reading: "bêkkhā"
+    ipa: "bækkʰa"
+    phonetic: "[bækkʰa]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ব্যাখ্যা", reading: "bêkkhā" }] }
+    examples:
+      - { target: "এর ব্যাখ্যা দাও।", reading: "er bêkkhā dāo.", ipa: "er bækkʰa d̪ao", bases: [{ word: "এর", base: "এর", reading: "er" }, { word: "দাও", ref: "bn-0888" }] }
+      - { target: "ব্যাখ্যাটা সহজ।", reading: "bêkkhāṭā sôhoj.", ipa: "bækkʰaʈa sɔɦodʒ", bases: [{ word: "ব্যাখ্যাটা", base: "ব্যাখ্যা", reading: "bêkkhāṭā" }, { word: "সহজ", base: "সহজ", reading: "sôhoj" }] }
+  - id: "bn-2978"
+    target: "মতভেদ"
+    reading: "môtobhed"
+    ipa: "mɔt̪obʱed̪"
+    phonetic: "[mɔt̪obʱed̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মতভেদ", reading: "môtobhed" }] }
+    examples:
+      - { target: "আমাদের মধ্যে মতভেদ আছে।", reading: "āmāder moddhe môtobhed āche.", ipa: "amad̪er mod̪d̪ʱe mɔt̪obʱed̪ atʃʰe", bases: [{ word: "আমাদের", ref: "bn-0834" }, { word: "মধ্যে", base: "মধ্যে", reading: "moddhe" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "মতভেদ থাকলেও বন্ধু থাকি।", reading: "môtobhed thākoleo bondhu thāki.", ipa: "mɔt̪obʱed̪ t̪ʰakoleo bond̪ʱu t̪ʰaki", bases: [{ word: "থাকলেও", base: "থাকা", reading: "thākoleo" }, { word: "বন্ধু", ref: "bn-0189" }, { word: "থাকি", base: "থাকা", reading: "thāki" }] }
+  - id: "bn-2979"
+    target: "একমত"
+    reading: "ekomot"
+    ipa: "ekomot̪"
+    phonetic: "[ekomot̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "একমত", reading: "ekomot" }] }
+    examples:
+      - { target: "আমি তোমার সঙ্গে একমত।", reading: "āmi tomār sôṅge ekomot.", ipa: "ami t̪omar sɔŋɡe ekomot̪", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "তোমার", ref: "bn-0835" }, { word: "সঙ্গে", base: "সঙ্গে", reading: "sôṅge" }] }
+      - { target: "সবাই একমত হলো।", reading: "sôbāi ekomot hôlo.", ipa: "sɔbai ekomot̪ ɦɔlo", bases: [{ word: "সবাই", base: "সবাই", reading: "sôbāi" }, { word: "হলো", ref: "bn-0874" }] }
+  - id: "bn-2980"
+    target: "উপকারী"
+    reading: "upokāri"
+    ipa: "upokari"
+    phonetic: "[upokari]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উপকারী", reading: "upokāri" }] }
+    examples:
+      - { target: "এই বইটা খুব উপকারী।", reading: "ei boiṭā khub upokāri.", ipa: "ei boiʈa kʰub upokari", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "বইটা", ref: "bn-1139" }, { word: "খুব", ref: "bn-0641" }] }
+      - { target: "উপকারী পরামর্শ দিলে।", reading: "upokāri pôrāmorś dile.", ipa: "upokari pɔramorʃ d̪ile", bases: [{ word: "পরামর্শ", ref: "bn-1785" }, { word: "দিলে", ref: "bn-0888" }] }
+  - id: "bn-2981"
+    target: "যুক্তিসঙ্গত"
+    reading: "juktisoṅgot"
+    ipa: "dʒukt̪isoŋɡot̪"
+    phonetic: "[dʒukt̪isoŋɡot̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "যুক্তিসঙ্গত", reading: "juktisoṅgot" }] }
+    examples:
+      - { target: "তোমার কথা যুক্তিসঙ্গত।", reading: "tomār kôthā juktisoṅgot.", ipa: "t̪omar kɔt̪ʰa dʒukt̪isoŋɡot̪", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "কথা", ref: "bn-2409" }] }
+      - { target: "এই দাম যুক্তিসঙ্গত।", reading: "ei dām juktisoṅgot.", ipa: "ei d̪am dʒukt̪isoŋɡot̪", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "দাম", ref: "bn-0244" }] }
+  - id: "bn-2982"
+    target: "অন্যায্য"
+    reading: "ônnājjo"
+    ipa: "ɔnnadʒdʒ"
+    phonetic: "[ɔnnadʒdʒ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অন্যায্য", reading: "ônnājjo" }] }
+    examples:
+      - { target: "এটা অন্যায্য।", reading: "eṭā ônnājjo.", ipa: "eʈa ɔnnadʒdʒ", bases: [{ word: "এটা", ref: "bn-0849" }] }
+      - { target: "অন্যায্য আচরণ ভালো না।", reading: "ônnājjo ācoron bhālo nā.", ipa: "ɔnnadʒdʒ atʃoron bʱalo na", bases: [{ word: "আচরণ", base: "আচরণ", reading: "ācoron" }, { word: "ভালো", ref: "bn-0617" }, { word: "না", base: "না", reading: "nā" }] }
+  - id: "bn-2983"
+    target: "ন্যায্য"
+    reading: "nêjjo"
+    ipa: "nædʒdʒ"
+    phonetic: "[nædʒdʒ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ন্যায্য", reading: "nêjjo" }] }
+    examples:
+      - { target: "তোমার সিদ্ধান্ত ন্যায্য।", reading: "tomār siddhānto nêjjo.", ipa: "t̪omar sid̪d̪ʱant̪ nædʒdʒ", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "সিদ্ধান্ত", ref: "bn-2971" }] }
+      - { target: "ন্যায্য বিচার চাই।", reading: "nêjjo bicār cāi.", ipa: "nædʒdʒ bitʃar tʃai", bases: [{ word: "বিচার", base: "বিচার", reading: "bicār" }, { word: "চাই", base: "চাওয়া", reading: "cāi" }] }
+  - id: "bn-2984"
+    target: "সৎ"
+    reading: "sôt"
+    ipa: "sɔt̪"
+    phonetic: "[sɔt̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সৎ", reading: "sôt" }] }
+    examples:
+      - { target: "সে খুব সৎ মানুষ।", reading: "se khub sôt mānuś.", ipa: "se kʰub sɔt̪ manuʃ", bases: [{ word: "সে", ref: "bn-0839" }, { word: "খুব", ref: "bn-0641" }, { word: "মানুষ", base: "মানুষ", reading: "mānuś" }] }
+      - { target: "সৎ থাকো।", reading: "sôt thāko.", ipa: "sɔt̪ t̪ʰako", bases: [{ word: "থাকো", ref: "bn-0875" }] }
+  - id: "bn-2985"
+    target: "বুদ্ধিমান"
+    reading: "buddhimān"
+    ipa: "bud̪d̪ʱiman"
+    phonetic: "[bud̪d̪ʱiman]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বুদ্ধিমান", reading: "buddhimān" }] }
+    examples:
+      - { target: "তোমার বোন খুব বুদ্ধিমান।", reading: "tomār bon khub buddhimān.", ipa: "t̪omar bon kʰub bud̪d̪ʱiman", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "বোন", ref: "bn-0425" }, { word: "খুব", ref: "bn-0641" }] }
+      - { target: "বুদ্ধিমান মানুষ ভেবে কথা বলে।", reading: "buddhimān mānuś bhebe kôthā bôle.", ipa: "bud̪d̪ʱiman manuʃ bʱebe kɔt̪ʰa bɔle", bases: [{ word: "মানুষ", base: "মানুষ", reading: "mānuś" }, { word: "ভেবে", base: "ভাবা", reading: "bhebe" }, { word: "কথা", ref: "bn-2409" }, { word: "বলে", base: "বলা", reading: "bôle" }] }
+  - id: "bn-2986"
+    target: "বোকা"
+    reading: "bokā"
+    ipa: "boka"
+    phonetic: "[boka]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বোকা", reading: "bokā" }] }
+    examples:
+      - { target: "ওটা বোকা কাজ।", reading: "oṭā bokā kāj.", ipa: "oʈa boka kadʒ", bases: [{ word: "ওটা", base: "ওটা", reading: "oṭā" }, { word: "কাজ", ref: "bn-0198" }] }
+      - { target: "বোকার মতো কথা বোলো না।", reading: "bokār môto kôthā bolo nā.", ipa: "bokar mɔt̪o kɔt̪ʰa bolo na", bases: [{ word: "বোকার", base: "বোকা", reading: "bokār" }, { word: "মতো", base: "মতো", reading: "môto" }, { word: "কথা", ref: "bn-2409" }, { word: "বোলো", base: "বলা", reading: "bolo" }, { word: "না", base: "না", reading: "nā" }] }
+  - id: "bn-2987"
+    target: "কুৎসিত"
+    reading: "kutsit"
+    ipa: "kut̪sit̪"
+    phonetic: "[kut̪sit̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কুৎসিত", reading: "kutsit" }] }
+    examples:
+      - { target: "ঘরের রংটা কুৎসিত।", reading: "ghôrer rôṅṭā kutsit.", ipa: "ɡʱɔrer rɔŋʈa kut̪sit̪", bases: [{ word: "ঘরের", ref: "bn-0051" }, { word: "রংটা", ref: "bn-1203" }] }
+      - { target: "কুৎসিত জিনিস ফেলে দাও।", reading: "kutsit jinis phele dāo.", ipa: "kut̪sit̪ dʒinis pʰele d̪ao", bases: [{ word: "জিনিস", ref: "bn-1713" }, { word: "ফেলে", ref: "bn-1103" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-2988"
+    target: "উচিত"
+    reading: "ucit"
+    ipa: "utʃit̪"
+    phonetic: "[utʃit̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "উচিত", reading: "ucit" }] }
+    examples:
+      - { target: "তোমার ক্ষমা চাওয়া উচিত।", reading: "tomār kkhômā cāoyā ucit.", ipa: "t̪omar kkʰɔma tʃaoja utʃit̪", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "ক্ষমা", base: "ক্ষমা", reading: "kkhômā" }, { word: "চাওয়া", base: "চাওয়া", reading: "cāoyā" }] }
+      - { target: "এটা করা উচিত নয়।", reading: "eṭā kôrā ucit nôy.", ipa: "eʈa kɔra utʃit̪ nɔj", bases: [{ word: "এটা", ref: "bn-0849" }, { word: "করা", ref: "bn-0102" }, { word: "নয়", ref: "bn-0210" }] }
+  - id: "bn-2989"
+    target: "নিশ্চিত"
+    reading: "niścit"
+    ipa: "niʃtʃit̪"
+    phonetic: "[niʃtʃit̪]"
+    phonetic_source: "rules"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নিশ্চিত", reading: "niścit" }] }
+    examples:
+      - { target: "আমি নিশ্চিত।", reading: "āmi niścit.", ipa: "ami niʃtʃit̪", bases: [{ word: "আমি", ref: "bn-0833" }] }
+      - { target: "তুমি কি নিশ্চিত?", reading: "tumi ki niścit?", ipa: "t̪umi ki niʃtʃit̪", bases: [{ word: "তুমি", ref: "bn-0835" }, { word: "কি", base: "কি", reading: "ki" }] }
+  - id: "bn-2990"
+    target: "অবশ্যই"
+    reading: "ôbośśoi"
+    ipa: "ɔboʃʃoi"
+    phonetic: "[ɔboʃʃoi]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অবশ্যই", reading: "ôbośśoi" }] }
+    examples:
+      - { target: "অবশ্যই যাব।", reading: "ôbośśoi jāb.", ipa: "ɔboʃʃoi dʒab", bases: [{ word: "যাব", ref: "bn-0873" }] }
+      - { target: "আমি অবশ্যই একমত।", reading: "āmi ôbośśoi ekomot.", ipa: "ami ɔboʃʃoi ekomot̪", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "একমত", base: "একমত", reading: "ekomot" }] }
+  - id: "bn-2991"
+    target: "নিশ্চয়"
+    reading: "niścoy"
+    ipa: "niʃtʃoj"
+    phonetic: "[niʃtʃoj]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নিশ্চয়", reading: "niścoy" }] }
+    examples:
+      - { target: "নিশ্চয় সে জানে।", reading: "niścoy se jāne.", ipa: "niʃtʃoj se dʒane", bases: [{ word: "সে", ref: "bn-0839" }, { word: "জানে", base: "জানা", reading: "jāne" }] }
+      - { target: "নিশ্চয় ভালো হবে।", reading: "niścoy bhālo hôbe.", ipa: "niʃtʃoj bʱalo ɦɔbe", bases: [{ word: "ভালো", ref: "bn-0617" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-2992"
+    target: "সুতরাং"
+    reading: "sutorāṅ"
+    ipa: "sut̪oraŋ"
+    phonetic: "[sut̪oraŋ]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সুতরাং", reading: "sutorāṅ" }] }
+    examples:
+      - { target: "সুতরাং আমি যাব না।", reading: "sutorāṅ āmi jāb nā.", ipa: "sut̪oraŋ ami dʒab na", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "যাব", ref: "bn-0873" }, { word: "না", base: "না", reading: "nā" }] }
+      - { target: "কাজটা শেষ, সুতরাং বাড়ি যাও।", reading: "kājoṭā śeś, sutorāṅ bāṛi jāo.", ipa: "kadʒoʈa ʃeʃ sut̪oraŋ baɽi dʒao", bases: [{ word: "কাজটা", ref: "bn-0198" }, { word: "শেষ", base: "শেষ", reading: "śeś" }, { word: "বাড়ি", ref: "bn-0196" }, { word: "যাও", ref: "bn-0873" }] }
+  - id: "bn-2993"
+    target: "আসলে"
+    reading: "āsole"
+    ipa: "asole"
+    phonetic: "[asole]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আসলে", reading: "āsole" }] }
+    examples:
+      - { target: "আসলে ও ভুল বলেছে।", reading: "āsole o bhul bôleche.", ipa: "asole o bʱul bɔletʃʰe", bases: [{ word: "ও", ref: "bn-0844" }, { word: "ভুল", ref: "bn-1244" }, { word: "বলেছে", base: "বলা", reading: "bôleche" }] }
+      - { target: "আসলে কী হয়েছিল?", reading: "āsole ki hôyechil?", ipa: "asole ki ɦɔjetʃʰil", bases: [{ word: "কী", base: "কী", reading: "ki" }, { word: "হয়েছিল", ref: "bn-0874" }] }
+  - id: "bn-2994"
+    target: "অর্থাৎ"
+    reading: "ôrthāt"
+    ipa: "ɔrt̪ʰat̪"
+    phonetic: "[ɔrt̪ʰat̪]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অর্থাৎ", reading: "ôrthāt" }] }
+    examples:
+      - { target: "সে দশটায় আসবে, অর্থাৎ সকালে।", reading: "se dôśoṭāy āsobe, ôrthāt sôkāle.", ipa: "se d̪ɔʃoʈaj asobe ɔrt̪ʰat̪ sɔkale", bases: [{ word: "সে", ref: "bn-0839" }, { word: "দশটায়", base: "দশটা", reading: "dôśoṭāy" }, { word: "আসবে", ref: "bn-0872" }, { word: "সকালে", ref: "bn-0318" }] }
+      - { target: "অর্থাৎ আমরা যাব না।", reading: "ôrthāt āmorā jāb nā.", ipa: "ɔrt̪ʰat̪ amora dʒab na", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "যাব", ref: "bn-0873" }, { word: "না", base: "না", reading: "nā" }] }
+  - id: "bn-2995"
+    target: "অবশ্য"
+    reading: "ôbośśo"
+    ipa: "ɔboʃʃ"
+    phonetic: "[ɔboʃʃ]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অবশ্য", reading: "ôbośśo" }] }
+    examples:
+      - { target: "অবশ্য তোমার কথা ঠিক।", reading: "ôbośśo tomār kôthā ṭhik.", ipa: "ɔboʃʃ t̪omar kɔt̪ʰa ʈʰik", bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "কথা", ref: "bn-2409" }, { word: "ঠিক", base: "ঠিক", reading: "ṭhik" }] }
+      - { target: "আমি যাব, অবশ্য দেরিতে।", reading: "āmi jāb, ôbośśo derite.", ipa: "ami dʒab ɔboʃʃ d̪erit̪e", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "যাব", ref: "bn-0873" }, { word: "দেরিতে", base: "দেরিতে", reading: "derite" }] }
+  - id: "bn-2996"
+    target: "মোটেও"
+    reading: "moṭeo"
+    ipa: "moʈeo"
+    phonetic: "[moʈeo]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মোটেও", reading: "moṭeo" }] }
+    examples:
+      - { target: "আমি মোটেও রাগ করিনি।", reading: "āmi moṭeo rāg korini.", ipa: "ami moʈeo raɡ korini", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "রাগ", ref: "bn-1249" }, { word: "করিনি", ref: "bn-0102" }] }
+      - { target: "এটা মোটেও ঠিক নয়।", reading: "eṭā moṭeo ṭhik nôy.", ipa: "eʈa moʈeo ʈʰik nɔj", bases: [{ word: "এটা", ref: "bn-0849" }, { word: "ঠিক", base: "ঠিক", reading: "ṭhik" }, { word: "নয়", ref: "bn-0210" }] }
+  - id: "bn-2997"
+    target: "বাস্তবে"
+    reading: "bāstobe"
+    ipa: "bast̪obe"
+    phonetic: "[bast̪obe]"
+    phonetic_source: "rules"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাস্তবে", reading: "bāstobe" }] }
+    examples:
+      - { target: "বাস্তবে কাজটা কঠিন।", reading: "bāstobe kājoṭā koṭhin.", ipa: "bast̪obe kadʒoʈa koʈʰin", bases: [{ word: "কাজটা", ref: "bn-0198" }, { word: "কঠিন", base: "কঠিন", reading: "koṭhin" }] }
+      - { target: "বাস্তবে সে এখানে নেই।", reading: "bāstobe se ekhāne nei.", ipa: "bast̪obe se ekʰane nei", bases: [{ word: "সে", ref: "bn-0839" }, { word: "এখানে", ref: "bn-0311" }, { word: "নেই", base: "নেই", reading: "nei" }] }
+  - id: "bn-2998"
+    target: "মত দেওয়া"
+    reading: "môt deoyā"
+    ipa: "mɔt̪ d̪eoja"
+    phonetic: "[mɔt̪ d̪eoja]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মত দেওয়া", reading: "môt deoyā" }] }
+    examples:
+      - { target: "আমি একটা মত দিই।", reading: "āmi ekoṭā môt dii.", ipa: "ami ekoʈa mɔt̪ d̪ii", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "একটা", ref: "bn-0202" }, { word: "মত", ref: "bn-2957" }, { word: "দিই", ref: "bn-0888" }] }
+      - { target: "এ বিষয়ে তুমি মত দাও।", reading: "e biśoye tumi môt dāo.", ipa: "e biʃoje t̪umi mɔt̪ d̪ao", bases: [{ word: "এ", base: "এ", reading: "e" }, { word: "বিষয়ে", ref: "bn-2164" }, { word: "তুমি", ref: "bn-0835" }, { word: "মত", ref: "bn-2957" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-2999"
+    target: "একমত হওয়া"
+    reading: "ekomot hôoyā"
+    ipa: "ekomot̪ ɦɔoja"
+    phonetic: "[ekomot̪ ɦɔoja]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "একমত হওয়া", reading: "ekomot hôoyā" }] }
+    examples:
+      - { target: "আমরা সবাই একমত হলাম।", reading: "āmorā sôbāi ekomot hôlām.", ipa: "amora sɔbai ekomot̪ ɦɔlam", bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "সবাই", base: "সবাই", reading: "sôbāi" }, { word: "হলাম", ref: "bn-0874" }] }
+      - { target: "তুমি কেন একমত হও না?", reading: "tumi ken ekomot hôo nā?", ipa: "t̪umi ken ekomot̪ ɦɔo na", bases: [{ word: "তুমি", ref: "bn-0835" }, { word: "কেন", ref: "bn-0165" }, { word: "হও", ref: "bn-0874" }, { word: "না", base: "না", reading: "nā" }] }
+  - id: "bn-3000"
+    target: "মনে করা"
+    reading: "mône kôrā"
+    ipa: "mɔne kɔra"
+    phonetic: "[mɔne kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: [{ word: "মনে", ref: "bn-2846" }]
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মনে করা", reading: "mône kôrā" }] }
+    examples:
+      - { target: "আমি মনে করি এটা ভালো।", reading: "āmi mône kori eṭā bhālo.", ipa: "ami mɔne kori eʈa bʱalo", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "মনে", ref: "bn-2846" }, { word: "করি", ref: "bn-0102" }, { word: "এটা", ref: "bn-0849" }, { word: "ভালো", ref: "bn-0617" }] }
+      - { target: "তুমি কী মনে করো?", reading: "tumi ki mône kôro?", ipa: "t̪umi ki mɔne kɔro", bases: [{ word: "তুমি", ref: "bn-0835" }, { word: "কী", base: "কী", reading: "ki" }, { word: "মনে", ref: "bn-2846" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-3001"
+    target: "তর্ক করা"
+    reading: "tôrko kôrā"
+    ipa: "t̪ɔrk kɔra"
+    phonetic: "[t̪ɔrk kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "তর্ক করা", reading: "tôrko kôrā" }] }
+    examples:
+      - { target: "ওরা রোজ তর্ক করে।", reading: "orā roj tôrko kôre.", ipa: "ora rodʒ t̪ɔrk kɔre", bases: [{ word: "ওরা", ref: "bn-0848" }, { word: "রোজ", ref: "bn-1528" }, { word: "করে", ref: "bn-0102" }] }
+      - { target: "তর্ক না করে কথা বলো।", reading: "tôrko nā kôre kôthā bôlo.", ipa: "t̪ɔrk na kɔre kɔt̪ʰa bɔlo", bases: [{ word: "না", base: "না", reading: "nā" }, { word: "করে", ref: "bn-0102" }, { word: "কথা", ref: "bn-2409" }, { word: "বলো", ref: "bn-0879" }] }
+  - id: "bn-3002"
+    target: "প্রস্তাব করা"
+    reading: "prôstāb kôrā"
+    ipa: "prɔst̪ab kɔra"
+    phonetic: "[prɔst̪ab kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "প্রস্তাব করা", reading: "prôstāb kôrā" }] }
+    examples:
+      - { target: "আমি একটা প্রস্তাব করি।", reading: "āmi ekoṭā prôstāb kori.", ipa: "ami ekoʈa prɔst̪ab kori", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "একটা", ref: "bn-0202" }, { word: "প্রস্তাব", ref: "bn-2972" }, { word: "করি", ref: "bn-0102" }] }
+      - { target: "সে ছুটির প্রস্তাব করেছে।", reading: "se chuṭir prôstāb kôreche.", ipa: "se tʃʰuʈir prɔst̪ab kɔretʃʰe", bases: [{ word: "সে", ref: "bn-0839" }, { word: "ছুটির", ref: "bn-0463" }, { word: "প্রস্তাব", ref: "bn-2972" }, { word: "করেছে", ref: "bn-0102" }] }
+  - id: "bn-3003"
+    target: "পরামর্শ দেওয়া"
+    reading: "pôrāmorś deoyā"
+    ipa: "pɔramorʃ d̪eoja"
+    phonetic: "[pɔramorʃ d̪eoja]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পরামর্শ দেওয়া", reading: "pôrāmorś deoyā" }] }
+    examples:
+      - { target: "ডাক্তার আমাকে পরামর্শ দিলেন।", reading: "ḍāktār āmāke pôrāmorś dilen.", ipa: "ɖakt̪ar amake pɔramorʃ d̪ilen", bases: [{ word: "ডাক্তার", ref: "bn-0376" }, { word: "আমাকে", base: "আমাকে", reading: "āmāke" }, { word: "দিলেন", ref: "bn-0888" }] }
+      - { target: "আমার পরামর্শ নাও।", reading: "āmār pôrāmorś nāo.", ipa: "amar pɔramorʃ nao", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "পরামর্শ", ref: "bn-1785" }, { word: "নাও", ref: "bn-0889" }] }
+  - id: "bn-3004"
+    target: "সমর্থন করা"
+    reading: "sômorthon kôrā"
+    ipa: "sɔmort̪ʰon kɔra"
+    phonetic: "[sɔmort̪ʰon kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সমর্থন করা", reading: "sômorthon kôrā" }] }
+    examples:
+      - { target: "আমি তোমাকে সমর্থন করি।", reading: "āmi tomāke sômorthon kori.", ipa: "ami t̪omake sɔmort̪ʰon kori", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "তোমাকে", ref: "bn-0835" }, { word: "করি", ref: "bn-0102" }] }
+      - { target: "সবাই প্রস্তাবটা সমর্থন করল।", reading: "sôbāi prôstāboṭā sômorthon kôrol.", ipa: "sɔbai prɔst̪aboʈa sɔmort̪ʰon kɔrol", bases: [{ word: "সবাই", base: "সবাই", reading: "sôbāi" }, { word: "প্রস্তাবটা", ref: "bn-2972" }, { word: "করল", ref: "bn-0102" }] }
+  - id: "bn-3005"
+    target: "সমালোচনা করা"
+    reading: "sômāloconā kôrā"
+    ipa: "sɔmalotʃona kɔra"
+    phonetic: "[sɔmalotʃona kɔra]"
+    phonetic_source: "rules"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সমালোচনা করা", reading: "sômāloconā kôrā" }] }
+    examples:
+      - { target: "কেউ আমার কাজের সমালোচনা করেনি।", reading: "keu āmār kājer sômāloconā kôreni.", ipa: "keu amar kadʒer sɔmalotʃona kɔreni", bases: [{ word: "কেউ", base: "কেউ", reading: "keu" }, { word: "আমার", ref: "bn-0833" }, { word: "কাজের", ref: "bn-0198" }, { word: "করেনি", ref: "bn-0102" }] }
+      - { target: "এত সমালোচনা করো না।", reading: "et sômāloconā kôro nā.", ipa: "et̪ sɔmalotʃona kɔro na", bases: [{ word: "এত", base: "এত", reading: "et" }, { word: "করো", ref: "bn-0102" }, { word: "না", base: "না", reading: "nā" }] }

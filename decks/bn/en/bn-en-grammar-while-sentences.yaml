@@ -1,0 +1,31 @@
+schema: 1
+id: "bn-en-grammar-while-sentences"
+kind: "layer"
+core: "bn-grammar-while-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While and during: sentences"
+description: "Short sentences saying what happens at the same time. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3525":
+    native: "Talk while you eat. (familiar)"
+    bases: { "গল্প": "story" }
+    confusables: { "c1": { why: "to sleep: a different thing at the same time" }, "c2": { why: "to read: a different thing at the same time" } }
+  "bn-3526":
+    native: "I listen to songs during the cooking."
+    bases: { "রান্নার": "of cooking", "গান": "song", "শুনি": "listen" }
+    confusables: { "c1": { why: "of eating: a different time" }, "c2": { why: "of sleep: a different time" } }
+  "bn-3527":
+    native: "I am talking while walking."
+    confusables: { "c1": { why: "to run: a different movement" }, "c2": { why: "sitting: a different position" } }
+  "bn-3528":
+    native: "See it as you go. (familiar)"
+    confusables: { "c1": { why: "of coming: the opposite direction" }, "c2": { why: "of staying: a different time" } }
+  "bn-3529":
+    native: "I fell asleep while watching pictures."
+    bases: { "ঘুমিয়ে": "asleep", "পড়লাম": "fell" }
+    confusables: { "c1": { why: "awake: the opposite" }, "c2": { why: "getting up: a different action" } }
+  "bn-3530":
+    native: "It feels hot while working."
+    confusables: { "c1": { why: "cold: the opposite" }, "c2": { why: "rest: a different time" } }

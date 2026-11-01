@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-government"
+name: "Reading: government"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A question to an officer about documents, and the instructions on an application form, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-at-the-office"
+    title: "Asking an officer which document is needed"
+    theme: "government"
+    sentences:
+      - { text: "কোন নথি লাগবে, সেটা বলুন।", reading: "kon nothi lāgobe, seṭā bolun.", ipa: "kon not̪ʰi laɡobe seʈa bolun" }
+      - { text: "আপনার পরিচয়পত্র আর ছবি দিন।", reading: "āponār poricoyopotr ār chobi din.", ipa: "aponar poritʃojopot̪r ar tʃʰobi d̪in" }
+      - { text: "আবেদনের সঙ্গে একটা প্রমাণপত্র লাগবে।", reading: "ābedoner sôṅge ekoṭā prômānopotro lāgobe.", ipa: "abed̪oner sɔŋɡe ekoʈa prɔmanopot̪r laɡobe" }
+      - { text: "কাল আসলে কাজ হয়ে যাবে।", reading: "kāl āsole kāj hôye jābe.", ipa: "kal asole kadʒ ɦɔje dʒabe" }
+      - { text: "ঠিক আছে, ধন্যবাদ।", reading: "ṭhik āche, dhonnobād.", ipa: "ʈʰik atʃʰe d̪ʱonnobad̪" }
+    questions:
+      - id: "bn-3227"
+        prompt: { "en": "The visitor asks which document is needed." }
+        answer: true
+      - id: "bn-3228"
+        prompt: { "en": "What must be brought with the application?" }
+        options: [{ "en": "A certificate" }, { "en": "A car" }]
+        answer: 1
+      - id: "bn-3229"
+        prompt: { "en": "When will the work be done?" }
+        options: [{ "en": "If you come tomorrow" }, { "en": "Today" }]
+        answer: 1
+  - id: "bn-form-instructions"
+    title: "Instructions on an application form"
+    theme: "government"
+    sentences:
+      - { text: "এই ফর্মটি সাবধানে পূরণ করুন।", reading: "ei phôrmoṭi sābodhāne puron korun.", ipa: "ei pʰɔrmoʈi sabod̪ʱane puron korun" }
+      - { text: "নাম আর ঠিকানা স্পষ্টভাবে লিখুন।", reading: "nām ār ṭhikānā spôśṭobhābe likhun.", ipa: "nam ar ʈʰikana spɔʃʈobʱabe likʰun" }
+      - { text: "ভোটার নম্বর দিন।", reading: "bhoṭār nômbor din.", ipa: "bʱoʈar nɔmbor d̪in" }
+      - { text: "জমা দেওয়ার আগে সব তথ্য দেখুন।", reading: "jômā deoyār āge sôb tottho dekhun.", ipa: "dʒɔma d̪eojar aɡe sɔb t̪ot̪t̪ʰ d̪ekʰun" }
+      - { text: "ভুল থাকলে আবেদন বাতিল হবে।", reading: "bhul thākole ābedon bātil hôbe.", ipa: "bʱul t̪ʰakole abed̪on bat̪il ɦɔbe" }
+    questions:
+      - id: "bn-3230"
+        prompt: { "en": "The form must be filled in carefully." }
+        answer: true
+      - id: "bn-3231"
+        prompt: { "en": "What should be written clearly?" }
+        options: [{ "en": "The name and address" }, { "en": "The favourite food" }]
+        answer: 1
+      - id: "bn-3232"
+        prompt: { "en": "What happens if there is a mistake?" }
+        options: [{ "en": "The application is cancelled" }, { "en": "Nothing" }]
+        answer: 1

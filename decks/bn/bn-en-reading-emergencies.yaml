@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-emergencies"
+name: "Reading: emergencies"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "Calling for help after an accident, and a safety notice in a building, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-calling-for-help"
+    title: "Calling for help after an accident"
+    theme: "emergencies"
+    sentences:
+      - { text: "একটা গাড়ি রাস্তায় উল্টে গেছে।", reading: "ekoṭā gāṛi rāstāy ulṭe geche.", ipa: "ekoʈa ɡaɽi rast̪aj ulʈe ɡetʃʰe" }
+      - { text: "একজন লোক আহত হয়েছে আর অজ্ঞান হয়ে পড়ে আছে।", reading: "ekojon lok āhot hôyeche ār ôggān hôye pôṛe āche.", ipa: "ekodʒon lok aɦot̪ ɦɔjetʃʰe ar ɔɡɡan ɦɔje pɔɽe atʃʰe" }
+      - { text: "আমি তাড়াতাড়ি পুলিশকে ফোন করলাম।", reading: "āmi tāṛātāṛi puliśoke phon kôrolām.", ipa: "ami t̪aɽat̪aɽi puliʃoke pʰon kɔrolam" }
+      - { text: "কিছুক্ষণের মধ্যে অ্যাম্বুলেন্স এল।", reading: "kichukkhoner moddhe êāmbulens el.", ipa: "kitʃʰukkʰoner mod̪d̪ʱe ɔdʒambulens el" }
+      - { text: "এখন তাকে হাসপাতালে নেওয়া হয়েছে।", reading: "ekhon tāke hāsopātāle neoyā hôyeche.", ipa: "ekʰon t̪ake ɦasopat̪ale neoja ɦɔjetʃʰe" }
+    questions:
+      - id: "bn-4069"
+        prompt: { "en": "A car turned over on the road." }
+        answer: true
+      - id: "bn-4070"
+        prompt: { "en": "Who did the speaker phone first?" }
+        options: [{ "en": "The police" }, { "en": "The fire brigade" }]
+        answer: 1
+      - id: "bn-4071"
+        prompt: { "en": "Where has the injured man been taken?" }
+        options: [{ "en": "To hospital" }, { "en": "To a relief camp" }]
+        answer: 1
+  - id: "bn-safety-notice"
+    title: "A safety notice in a building"
+    theme: "emergencies"
+    sentences:
+      - { text: "জরুরি অবস্থায় লিফট ব্যবহার করবেন না।", reading: "joruri ôbosthāy liphoṭ bêbohār kôroben nā.", ipa: "dʒoruri ɔbost̪ʰaj lipʰoʈ bæboɦar kɔroben na" }
+      - { text: "সিঁড়ি দিয়ে নিরাপদে নেমে যান।", reading: "sim̐ṛi diye nirāpode neme jān.", ipa: "sĩɽi d̪ije nirapod̪e neme dʒan" }
+      - { text: "আগুনের খবর পেলে সাইরেন বাজবে।", reading: "āguner khôbor pele sāiren bājobe.", ipa: "aɡuner kʰɔbor pele sairen badʒobe" }
+      - { text: "আতঙ্ক না করে দমকলের কর্মীদের কথা শুনুন।", reading: "ātoṅko nā kôre dômokoler kormider kôthā śunun.", ipa: "at̪oŋk na kɔre d̪ɔmokoler kormid̪er kɔt̪ʰa ʃunun" }
+      - { text: "বিপদসংকেত দেখলে সবাই আশ্রয়কেন্দ্রে যাবেন।", reading: "bipodosoṅket dekhole sôbāi āśroyokendre jāben.", ipa: "bipod̪osoŋket̪ d̪ekʰole sɔbai aʃrojokend̪re dʒaben" }
+    questions:
+      - id: "bn-4072"
+        prompt: { "en": "The notice tells people not to use the lift in an emergency." }
+        answer: true
+      - id: "bn-4073"
+        prompt: { "en": "What should people use to leave the building?" }
+        options: [{ "en": "The stairs" }, { "en": "The lift" }]
+        answer: 1
+      - id: "bn-4074"
+        prompt: { "en": "Where should people go when the danger signal is seen?" }
+        options: [{ "en": "To the shelter centre" }, { "en": "To the roof" }]
+        answer: 1

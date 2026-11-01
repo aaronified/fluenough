@@ -1,0 +1,19 @@
+schema: 1
+id: "bn-en-grammar-indefinites"
+kind: "layer"
+core: "bn-grammar-indefinites"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Someone, something, somewhere"
+license: "CC-BY-SA-4.0"
+description: "The indefinites: a question word such as কে (ke, who) or কী (ki, what) becomes কেউ (keu, someone) or কিছু (kichu, something) when it is not asked. Not yet checked by a Bengali speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Indefinites"
+  slot_name: "form"
+  slots: { "question": "a question: who, what, where, when", "indefinite": "someone, something, somewhere, sometime", "negative": "no one, nothing, nowhere, never (with a negative verb)" }
+  entries:
+    "ke": "who"
+    "ki": "what"
+    "kothay": "where"
+    "kokhon": "when"
+  notes: "A question word becomes an indefinite word: কে (ke) gives কেউ (keu), someone; কী (ki) gives কিছু (kichu), something; কোথায় (kothāy) gives কোথাও (kothāo), somewhere; কখন (kokhon) gives কখনো (kokhono), sometime. With a negative verb they mean no one, nothing, nowhere and never: কেউ আসেনি (keu āsēni), no one came. The form in the negative column is said alone, as a short answer: কেউ না (keu nā)."

@@ -1,0 +1,40 @@
+schema: 1
+id: "bn-grammar-indefinites"
+part: "core"
+kind: "grammar"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["question", "indefinite", "negative"]
+  entries:
+    - lemma: "কে"
+      key: "ke"
+      reading: "ke"
+      ipa: "ke"
+      forms: { "question": "কে", "indefinite": "কেউ", "negative": "কেউ না" }
+      readings: { "question": "ke", "indefinite": "keu", "negative": "keu nā" }
+      ipas: { "question": "ke", "indefinite": "keu", "negative": "keu na" }
+    - lemma: "কী"
+      key: "ki"
+      reading: "ki"
+      ipa: "ki"
+      forms: { "question": "কী", "indefinite": "কিছু", "negative": "কিছু না" }
+      readings: { "question": "ki", "indefinite": "kichu", "negative": "kichu nā" }
+      ipas: { "question": "ki", "indefinite": "kitʃʰu", "negative": "kitʃʰu na" }
+    - lemma: "কোথায়"
+      key: "kothay"
+      reading: "kothāy"
+      ipa: "kot̪ʰaj"
+      forms: { "question": "কোথায়", "indefinite": "কোথাও", "negative": "কোথাও না" }
+      readings: { "question": "kothāy", "indefinite": "kothāo", "negative": "kothāo nā" }
+      ipas: { "question": "kot̪ʰaj", "indefinite": "kot̪ʰao", "negative": "kot̪ʰao na" }
+    - lemma: "কখন"
+      key: "kokhon"
+      reading: "kôkhon"
+      ipa: "kɔkʰon"
+      forms: { "question": "কখন", "indefinite": "কখনো", "negative": "কখনো না" }
+      readings: { "question": "kôkhon", "indefinite": "kôkhono", "negative": "kôkhono nā" }
+      ipas: { "question": "kɔkʰon", "indefinite": "kɔkʰono", "negative": "kɔkʰono na" }

@@ -1,0 +1,101 @@
+schema: 1
+id: "bn-opinions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-3006"
+    target: "আমার মতে এটা ঠিক।"
+    reading: "āmār môte eṭā ṭhik."
+    ipa: "amar mɔt̪e eʈa ʈʰik"
+    phonetic: "[amar mɔt̪e eʈa ʈʰik]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমার", ref: "bn-0833" }, { word: "মতে", base: "মতে", reading: "môte" }, { word: "এটা", ref: "bn-0849" }, { word: "ঠিক", base: "ঠিক", reading: "ṭhik" }]
+    confusables: [{ id: "c1", word: "ভুল", reading: "bhul", kind: "word" }, { id: "c2", word: "কুৎসিত", reading: "kutsit", kind: "word" }]
+  - id: "bn-3007"
+    target: "সে তর্ক করে, কিন্তু বোকা নয়।"
+    reading: "se tôrko kôre, kintu bokā nôy."
+    ipa: "se t̪ɔrk kɔre kint̪u boka nɔj"
+    phonetic: "[se t̪ɔrk kɔre kint̪u boka nɔj]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    rules: ["bn-rule-present-third"]
+    bases: [{ word: "সে", ref: "bn-0839" }, { word: "তর্ক", ref: "bn-2958" }, { word: "করে", ref: "bn-0102" }, { word: "কিন্তু", ref: "bn-0363" }, { word: "বোকা", ref: "bn-2986" }, { word: "নয়", ref: "bn-0210" }]
+    confusables: [{ id: "c1", word: "সৎ", reading: "sôt", kind: "word" }, { id: "c2", word: "উপকারী", reading: "upakārī", kind: "word" }]
+  - id: "bn-3008"
+    target: "আমি তোমার যুক্তি বুঝেছি।"
+    reading: "āmi tomār jukti bujhechi."
+    ipa: "ami t̪omar dʒukt̪i budʒʱetʃʰi"
+    phonetic: "[ami t̪omar dʒukt̪i budʒʱetʃʰi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "তোমার", ref: "bn-0835" }, { word: "যুক্তি", ref: "bn-2959" }, { word: "বুঝেছি", base: "বোঝা", reading: "bujhechi" }]
+    confusables: [{ id: "c1", word: "যুক্তিসঙ্গত", reading: "yuktisaṅgat", kind: "word" }, { id: "c2", word: "যুক্তিহীন", reading: "yuktihīn", kind: "word" }]
+  - id: "bn-3009"
+    target: "এই প্রস্তাবের বিরোধিতা আছে।"
+    reading: "ei prôstāber birodhitā āche."
+    ipa: "ei prɔst̪aber birod̪ʱit̪a atʃʰe"
+    phonetic: "[ei prɔst̪aber birod̪ʱit̪a atʃʰe]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "প্রস্তাবের", ref: "bn-2972" }, { word: "বিরোধিতা", ref: "bn-2967" }, { word: "আছে", base: "আছে", reading: "āche" }]
+    confusables: [{ id: "c1", word: "সমর্থন", reading: "samarthan", kind: "word" }, { id: "c2", word: "সমালোচনা", reading: "samālocanā", kind: "word" }]
+  - id: "bn-3010"
+    target: "আমরা সবাই একমত।"
+    reading: "āmorā sôbāi ekomot."
+    ipa: "amora sɔbai ekomot̪"
+    phonetic: "[amora sɔbai ekomot̪]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমরা", ref: "bn-0834" }, { word: "সবাই", base: "সবাই", reading: "sôbāi" }, { word: "একমত", ref: "bn-2979" }]
+    confusables: [{ id: "c1", word: "মতভেদ", reading: "matabhed", kind: "word" }, { id: "c2", word: "দ্বিমত", reading: "dvimat", kind: "word" }]
+  - id: "bn-3011"
+    target: "তোমার পরামর্শ উপকারী।"
+    reading: "tomār pôrāmorś upokāri."
+    ipa: "t̪omar pɔramorʃ upokari"
+    phonetic: "[t̪omar pɔramorʃ upokari]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "তোমার", ref: "bn-0835" }, { word: "পরামর্শ", ref: "bn-1785" }, { word: "উপকারী", ref: "bn-2980" }]
+    confusables: [{ id: "c1", word: "উপদেশ", reading: "upadeś", kind: "word" }, { id: "c2", word: "প্রশংসা", reading: "praśaṅsā", kind: "word" }]
+  - id: "bn-3012"
+    target: "এটা অন্যায্য, সুতরাং আমি না বলছি।"
+    reading: "eṭā ônnājjo, sutorāṅ āmi nā bôlochi."
+    ipa: "eʈa ɔnnadʒdʒ sut̪oraŋ ami na bɔlotʃʰi"
+    phonetic: "[eʈa ɔnnadʒdʒ sut̪oraŋ ami na bɔlotʃʰi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "এটা", ref: "bn-0849" }, { word: "অন্যায্য", ref: "bn-2982" }, { word: "সুতরাং", ref: "bn-2992" }, { word: "আমি", ref: "bn-0833" }, { word: "না", base: "না", reading: "nā" }, { word: "বলছি", base: "বলা", reading: "bôlochi" }]
+    confusables: [{ id: "c1", word: "ন্যায্য", reading: "nyāyya", kind: "word" }, { id: "c2", word: "অবশ্যই", reading: "abaśyai", kind: "word" }]
+  - id: "bn-3013"
+    target: "আমি মোটেও নিশ্চিত নই।"
+    reading: "āmi moṭeo niścit noi."
+    ipa: "ami moʈeo niʃtʃit̪ noi"
+    phonetic: "[ami moʈeo niʃtʃit̪ noi]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "আমি", ref: "bn-0833" }, { word: "মোটেও", ref: "bn-2996" }, { word: "নিশ্চিত", ref: "bn-2989" }, { word: "নই", base: "নই", reading: "noi" }]
+    confusables: [{ id: "c1", word: "নিশ্চয়", reading: "niścay", kind: "word" }, { id: "c2", word: "নিশ্চিন্ত", reading: "niścinta", kind: "word" }]
+  - id: "bn-3014"
+    target: "বাস্তবে সমস্যা বড়।"
+    reading: "bāstobe sômossā bôṛ."
+    ipa: "bast̪obe sɔmossa bɔɽ"
+    phonetic: "[bast̪obe sɔmossa bɔɽ]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "বাস্তবে", ref: "bn-2997" }, { word: "সমস্যা", ref: "bn-2974" }, { word: "বড়", ref: "bn-0062" }]
+    confusables: [{ id: "c1", word: "সমাধান", reading: "samādhān", kind: "word" }, { id: "c2", word: "উদ্দেশ্য", reading: "uddeśya", kind: "word" }]
+  - id: "bn-3015"
+    target: "কুৎসিত কথা বোলো না।"
+    reading: "kutsit kôthā bolo nā."
+    ipa: "kut̪sit̪ kɔt̪ʰa bolo na"
+    phonetic: "[kut̪sit̪ kɔt̪ʰa bolo na]"
+    phonetic_source: "rules"
+    pos: "phrase"
+    bases: [{ word: "কথা", ref: "bn-2409" }, { word: "বোলো", base: "বলা", reading: "bolo" }, { word: "না", base: "না", reading: "nā" }]
+    confusables: [{ id: "c1", word: "সুন্দর", reading: "sundar", kind: "word" }, { id: "c2", word: "মিষ্টি", reading: "miṣṭi", kind: "word" }]

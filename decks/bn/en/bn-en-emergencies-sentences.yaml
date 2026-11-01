@@ -1,0 +1,47 @@
+schema: 1
+id: "bn-en-emergencies-sentences"
+kind: "layer"
+core: "bn-emergencies-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emergencies: sentences"
+description: "Short sentences about fires, floods, accidents and the help that comes. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4058":
+    native: "After the accident the ambulance came."
+    confusables: { "c1": { why: "police: a different service" }, "c2": { why: "fire brigade: for fires, not accidents" } }
+  "bn-4059":
+    native: "The fire brigade came to put out the fire."
+    confusables: { "c1": { why: "an explosion: the cause, not the help" }, "c2": { why: "a flood: a different disaster" } }
+  "bn-4060":
+    native: "The flood caused much damage."
+    confusables: { "c1": { why: "an earthquake: a different disaster" }, "c2": { why: "drought: a different disaster" } }
+  "bn-4061":
+    native: "Everyone moved to the shelter centre."
+    bases: { "সরে": "moved" }
+    confusables: { "c1": { why: "a house: not a shelter centre" }, "c2": { why: "a school: a different building" } }
+  "bn-4062":
+    native: "Hearing the siren, everyone became alert."
+    confusables: { "c1": { why: "sleep: the opposite of alert" }, "c2": { why: "a song: a different sound" } }
+  "bn-4063":
+    native: "The doctor saw the injured man."
+    bases: { "লোকটিকে": "the man" }
+    confusables: { "c1": { why: "a nurse: helps the doctor, a different role" }, "c2": { why: "a patient: the person treated, not the doctor" } }
+  "bn-4064":
+    native: "Do not go outside during lightning. (familiar)"
+    confusables: { "c1": { why: "a storm: close, but not lightning itself" }, "c2": { why: "rain: a different weather" } }
+  "bn-4065":
+    native: "Take a torch and a candle with you. (familiar)"
+    confusables: { "c1": { why: "a lamp: a different light" }, "c2": { why: "a blanket: a different item" } }
+  "bn-4066":
+    native: "The embankment broke and flood water came in."
+    confusables: { "c1": { why: "a bridge: not an embankment" }, "c2": { why: "a road: a different structure" } }
+  "bn-4067":
+    native: "The rescuers saved the people."
+    bases: { "লোকদের": "the people" }
+    confusables: { "c1": { why: "panic: the feeling, not the rescue" }, "c2": { why: "damage: the result, not the rescue" } }
+  "bn-4068":
+    native: "This place is very dangerous."
+    bases: { "এই": "this", "জায়গা": "place" }
+    confusables: { "c1": { why: "safe: the opposite of dangerous" }, "c2": { why: "risky: close, but a different word" } }

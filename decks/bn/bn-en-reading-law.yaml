@@ -1,0 +1,53 @@
+schema: 1
+id: "bn-en-reading-law"
+name: "Reading: law"
+kind: reading
+language: { code: bn, iso639_3: ben, name: Bengali, script: bengali, tts: bn-IN, icon: "বা" }
+native:   { code: en, iso639_3: eng, name: English }
+license: "CC-BY-SA-4.0"
+source: "Written for the Fluenough Bengali course"
+description: "A person makes a complaint at a police station, and a leaflet on a tenant's rights, each with questions. Not yet checked by a Bengali speaker: please report any mistake."
+tags: [reading, unreviewed]
+passages:
+  - id: "bn-police-complaint"
+    title: "Making a complaint at a police station"
+    theme: "law"
+    sentences:
+      - { text: "আমার একটা সাইকেল চুরি হয়ে গেছে।", reading: "āmār ekoṭā sāikel curi hôye geche.", ipa: "amar ekoʈa saikel tʃuri ɦɔje ɡetʃʰe" }
+      - { text: "আমি থানায় গিয়ে অভিযোগ লিখিয়েছি।", reading: "āmi thānāy giye ôbhijog likhiyechi.", ipa: "ami t̪ʰanaj ɡije ɔbʱidʒoɡ likʰijetʃʰi" }
+      - { text: "অফিসার আমার নাম আর ঠিকানা লিখলেন।", reading: "ôphisār āmār nām ār ṭhikānā likholen.", ipa: "ɔpʰisar amar nam ar ʈʰikana likʰolen" }
+      - { text: "তিনি বললেন, তদন্ত শুরু হবে।", reading: "tini bôlolen, tôdont śuru hôbe.", ipa: "t̪ini bɔlolen t̪ɔd̪ont̪ ʃuru ɦɔbe" }
+      - { text: "একটা রসিদ দিয়ে দিলেন।", reading: "ekoṭā rosid diye dilen.", ipa: "ekoʈa rosid̪ d̪ije d̪ilen" }
+    questions:
+      - id: "bn-4138"
+        prompt: { "en": "The speaker reports a stolen bicycle." }
+        answer: true
+      - id: "bn-4139"
+        prompt: { "en": "Where did the speaker make the complaint?" }
+        options: [{ "en": "At the police station" }, { "en": "At home" }]
+        answer: 1
+      - id: "bn-4140"
+        prompt: { "en": "What did the officer give the speaker?" }
+        options: [{ "en": "A receipt" }, { "en": "A fine" }]
+        answer: 1
+  - id: "bn-rights-leaflet"
+    title: "A leaflet on a tenant's rights"
+    theme: "law"
+    sentences:
+      - { text: "ভাড়াটিয়ার অধিকার আইনে সুরক্ষিত।", reading: "bhāṛāṭiyār ôdhikār āine surokkhit.", ipa: "bʱaɽaʈijar ɔd̪ʱikar aine surokkʰit̪" }
+      - { text: "বাড়িওয়ালা অগ্রিম ছাড়া ভাড়া নিতে পারবেন না।", reading: "bāṛioyālā ôgrim chāṛā bhāṛā nite pāroben nā.", ipa: "baɽiojala ɔɡrim tʃʰaɽa bʱaɽa nit̪e paroben na" }
+      - { text: "নোটিশ ছাড়া কাউকে বাড়ি থেকে তাড়ানো বেআইনি।", reading: "noṭiś chāṛā kāuke bāṛi theke tāṛāno beāini.", ipa: "noʈiʃ tʃʰaɽa kauke baɽi t̪ʰeke t̪aɽano beaini" }
+      - { text: "সমস্যা হলে আদালতে বিচার চাওয়া যায়।", reading: "sômossā hôle ādālote bicār cāoyā jāy.", ipa: "sɔmossa ɦɔle ad̪alot̪e bitʃar tʃaoja dʒaj" }
+      - { text: "আইনজীবীর পরামর্শ নেওয়া ভালো।", reading: "āinojibir pôrāmorś neoyā bhālo.", ipa: "ainodʒibir pɔramorʃ neoja bʱalo" }
+    questions:
+      - id: "bn-4141"
+        prompt: { "en": "A tenant's rights are protected by law." }
+        answer: true
+      - id: "bn-4142"
+        prompt: { "en": "Can the owner evict a tenant without notice?" }
+        options: [{ "en": "No, it is illegal" }, { "en": "Yes, always" }]
+        answer: 1
+      - id: "bn-4143"
+        prompt: { "en": "Who can a tenant ask for advice?" }
+        options: [{ "en": "A lawyer" }, { "en": "A shopkeeper" }]
+        answer: 1
