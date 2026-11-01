@@ -102,8 +102,10 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
+      # Tags are fetched here (fetch-depth 0), so decks/min_app.json is also
+      # checked against the latest release's languages and files (ADR-0052).
       - name: Regenerate the index for this change's decks
-        run: python3 tools/deck_index.py
+        run: python3 tools/deck_index.py --strict-released
       - run: cp decks/index.json release/decks/index.json
       - uses: subosito/flutter-action@v2
         with:
