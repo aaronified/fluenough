@@ -1,0 +1,101 @@
+schema: 1
+id: "fr-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0913"
+    target: "Tournez à gauche."
+    ipa: "tuʁne a goʃ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tournez", ref: "fr-0895" }
+      - { word: "à", base: "à" }
+      - { word: "gauche", ref: "fr-0478" }
+    confusables:
+      - { id: "droite", ref: "fr-0479", kind: "word" }
+      - { id: "traverser", ref: "fr-0896", kind: "word" }
+  - id: "fr-0914"
+    target: "Le carrefour est loin."
+    ipa: "lə kaʁfuʁ ɛ lwɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "carrefour", ref: "fr-0898" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "loin", ref: "fr-0465" }
+    confusables:
+      - { id: "pont", ref: "fr-0900", kind: "word" }
+      - { id: "virage", ref: "fr-0911", kind: "word" }
+  - id: "fr-0915"
+    target: "Nous traversons la rue."
+    ipa: "nu tʁavɛʁsɔ̃ la ʁy"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "traversons", ref: "fr-0896" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "rue", ref: "fr-0041" }
+    confusables:
+      - { id: "continuer", ref: "fr-0897", kind: "word" }
+      - { id: "suivre", ref: "fr-0910", kind: "word" }
+  - id: "fr-0916"
+    target: "Je suis perdu."
+    ipa: "ʒə sɥi pɛʁdy"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "perdu", ref: "fr-0906" }
+    confusables:
+      - { id: "plan", ref: "fr-0907", kind: "word" }
+      - { id: "chemin", ref: "fr-0893", kind: "word" }
+  - id: "fr-0917"
+    target: "La place est grande."
+    ipa: "la plas ɛ ɡʁɑ̃d"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "place", ref: "fr-0901" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "grande", ref: "fr-0410" }
+    confusables:
+      - { id: "route", ref: "fr-0892", kind: "word" }
+      - { id: "carrefour", ref: "fr-0898", kind: "word" }
+  - id: "fr-0918"
+    target: "Le sud est chaud."
+    ipa: "lə syd ɛ ʃo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "sud", ref: "fr-0903" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "chaud", ref: "fr-0419" }
+    confusables:
+      - { id: "nord", ref: "fr-0902", kind: "word" }
+      - { id: "ouest", ref: "fr-0904", kind: "word" }
+  - id: "fr-0919"
+    target: "Le premier bus part à sept heures."
+    ipa: "lə pʁəmje bys paʁ a sɛt œʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "premier", ref: "fr-0905" }
+      - { word: "bus", ref: "fr-0854" }
+      - { word: "part", ref: "fr-0304" }
+      - { word: "à", base: "à" }
+      - { word: "sept", ref: "fr-0214" }
+      - { word: "heures", ref: "fr-0074" }
+    confusables:
+      - { id: "dernier", ref: "fr-0688", kind: "word" }
+      - { id: "prochain", ref: "fr-0877", kind: "word" }

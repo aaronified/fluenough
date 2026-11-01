@@ -204,11 +204,8 @@ units:
     words: 28
   - decks: ["fr-transport", "fr-transport-sentences", "fr-reading-transport", "*"]
     words: 25
-  - planned: { id: "fr-directions", theme: "directions", words: 30 }
-    listening_passages:
-      - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
-    reading_passages:
-      - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
+  - decks: ["fr-directions", "fr-directions-sentences", "fr-reading-directions", "*"]
+    words: 21
   - planned: { id: "fr-body", theme: "body", words: 30 }
     listening_passages:
       - { id: "at-the-doctors", text: { "en": "Telling a doctor where it hurts" } }

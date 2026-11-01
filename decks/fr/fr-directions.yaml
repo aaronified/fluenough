@@ -1,0 +1,236 @@
+schema: 1
+id: "fr-directions"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "directions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0892"
+    target: "route"
+    ipa: "ʁut"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La route est longue.", ipa: "la ʁut ɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "route", base: "route" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+      - { target: "Nous prenons la route.", ipa: "nu pʁənɔ̃ la ʁut", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "prenons", ref: "fr-0288" }, { word: "la", ref: "fr-0544" }, { word: "route", base: "route" }] }
+  - id: "fr-0893"
+    target: "chemin"
+    ipa: "ʃəmɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chemin est court.", ipa: "lə ʃəmɛ̃ ɛ kuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chemin", base: "chemin" }, { word: "est", ref: "fr-0021" }, { word: "court", ref: "fr-0422" }] }
+      - { target: "Je cherche le chemin.", ipa: "ʒə ʃɛʁʃ lə ʃəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "le", ref: "fr-0543" }, { word: "chemin", base: "chemin" }] }
+  - id: "fr-0894"
+    target: "droit"
+    ipa: "dʁwa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Continuez tout droit.", ipa: "kɔ̃tinɥe tu dʁwa", bases: [{ word: "Continuez", ref: "fr-0897" }, { word: "tout", ref: "fr-0372" }, { word: "droit", base: "droit" }] }
+      - { target: "Le chemin est droit.", ipa: "lə ʃəmɛ̃ ɛ dʁwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chemin", ref: "fr-0893" }, { word: "est", ref: "fr-0021" }, { word: "droit", base: "droit" }] }
+  - id: "fr-0895"
+    target: "tourner"
+    ipa: "tuʁne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tournez à gauche.", ipa: "tuʁne a goʃ", bases: [{ word: "Tournez", base: "tourner" }, { word: "à", base: "à" }, { word: "gauche", ref: "fr-0478" }] }
+      - { target: "Tu tournes à droite.", ipa: "ty tuʁn a dʁwat", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "tournes", base: "tourner" }, { word: "à", base: "à" }, { word: "droite", ref: "fr-0479" }] }
+  - id: "fr-0896"
+    target: "traverser"
+    ipa: "tʁavɛʁse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous traversons la rue.", ipa: "nu tʁavɛʁsɔ̃ la ʁy", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "traversons", base: "traverser" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Traversez le pont.", ipa: "tʁavɛʁse lə pɔ̃", bases: [{ word: "Traversez", base: "traverser" }, { word: "le", ref: "fr-0543" }, { word: "pont", ref: "fr-0900" }] }
+  - id: "fr-0897"
+    target: "continuer"
+    ipa: "kɔ̃tinɥe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je continue tout droit.", ipa: "ʒə kɔ̃tinɥ tu dʁwa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "continue", base: "continuer" }, { word: "tout", ref: "fr-0372" }, { word: "droit", ref: "fr-0894" }] }
+      - { target: "Vous continuez à droite.", ipa: "vu kɔ̃tinɥe a dʁwat", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "continuez", base: "continuer" }, { word: "à", base: "à" }, { word: "droite", ref: "fr-0479" }] }
+  - id: "fr-0898"
+    target: "carrefour"
+    ipa: "kaʁfuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le carrefour est loin.", ipa: "lə kaʁfuʁ ɛ lwɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "carrefour", base: "carrefour" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+      - { target: "Au carrefour, tournez à gauche.", ipa: "o kaʁfuʁ tuʁne a goʃ", bases: [{ word: "Au", base: "au" }, { word: "carrefour", base: "carrefour" }, { word: "tournez", ref: "fr-0895" }, { word: "à", base: "à" }, { word: "gauche", ref: "fr-0478" }] }
+  - id: "fr-0899"
+    target: "feu"
+    ipa: "fø"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le feu est là.", ipa: "lə fø ɛ la", bases: [{ word: "Le", ref: "fr-0543" }, { word: "feu", base: "feu" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Tournez au feu.", ipa: "tuʁne o fø", bases: [{ word: "Tournez", ref: "fr-0895" }, { word: "au", base: "au" }, { word: "feu", base: "feu" }] }
+  - id: "fr-0900"
+    target: "pont"
+    ipa: "pɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le pont est long.", ipa: "lə pɔ̃ ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pont", base: "pont" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Le pont est près de la gare.", ipa: "lə pɔ̃ ɛ pʁɛ də la gaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pont", base: "pont" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+  - id: "fr-0901"
+    target: "place"
+    ipa: "plas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La place est grande.", ipa: "la plas ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "place", base: "place" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Nous attendons sur la place.", ipa: "nu zatɑ̃dɔ̃ syʁ la plas", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "attendons", ref: "fr-0303" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "place", base: "place" }] }
+  - id: "fr-0902"
+    target: "nord"
+    ipa: "nɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0903" }]
+    examples:
+      - { target: "Le nord est froid.", ipa: "lə nɔʁ ɛ fʁwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "nord", base: "nord" }, { word: "est", ref: "fr-0021" }, { word: "froid", ref: "fr-0420" }] }
+      - { target: "Nous allons vers le nord.", ipa: "nu zalɔ̃ vɛʁ lə nɔʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "vers", ref: "fr-0594" }, { word: "le", ref: "fr-0543" }, { word: "nord", base: "nord" }] }
+  - id: "fr-0903"
+    target: "sud"
+    ipa: "syd"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0902" }]
+    examples:
+      - { target: "Le sud est chaud.", ipa: "lə syd ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sud", base: "sud" }, { word: "est", ref: "fr-0021" }, { word: "chaud", ref: "fr-0419" }] }
+      - { target: "Vous allez vers le sud.", ipa: "vu zale vɛʁ lə syd", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "allez", ref: "fr-0286" }, { word: "vers", ref: "fr-0594" }, { word: "le", ref: "fr-0543" }, { word: "sud", base: "sud" }] }
+  - id: "fr-0904"
+    target: "ouest"
+    ipa: "wɛst"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le musée est à l'ouest.", ipa: "lə myze ɛ a lwɛst", bases: [{ word: "Le", ref: "fr-0543" }, { word: "musée", ref: "fr-0077" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "l'ouest", base: "ouest" }] }
+      - { target: "Nous allons vers l'ouest.", ipa: "nu zalɔ̃ vɛʁ lwɛst", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "vers", ref: "fr-0594" }, { word: "l'ouest", base: "ouest" }] }
+  - id: "fr-0905"
+    target: "premier"
+    ipa: "pʁəmje"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est est la première rue.", ipa: "sɛt la pʁəmjɛʁ ʁy", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "première", base: "premier" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Le premier bus part à sept heures.", ipa: "lə pʁəmje bys paʁ a sɛt œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "premier", base: "premier" }, { word: "bus", ref: "fr-0854" }, { word: "part", ref: "fr-0304" }, { word: "à", base: "à" }, { word: "sept", ref: "fr-0214" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-0906"
+    target: "perdu"
+    ipa: "pɛʁdy"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis perdu.", ipa: "ʒə sɥi pɛʁdy", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "perdu", base: "perdu" }] }
+      - { target: "Elle est perdue.", ipa: "ɛl ɛ pɛʁdy", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "perdue", base: "perdu" }] }
+  - id: "fr-0907"
+    target: "plan"
+    ipa: "plɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le plan est bon.", ipa: "lə plɑ̃ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "plan", base: "plan" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "J'ai le plan.", ipa: "ʒe lə plɑ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "le", ref: "fr-0543" }, { word: "plan", base: "plan" }] }
+  - id: "fr-0908"
+    target: "bout"
+    ipa: "bu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bout de la route est loin.", ipa: "lə bu də la ʁut ɛ lwɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bout", base: "bout" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "route", ref: "fr-0892" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+      - { target: "Au bout de la rue, tournez à droite.", ipa: "o bu də la ʁy tuʁne a dʁwat", bases: [{ word: "Au", base: "au" }, { word: "bout", base: "bout" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }, { word: "tournez", ref: "fr-0895" }, { word: "à", base: "à" }, { word: "droite", ref: "fr-0479" }] }
+  - id: "fr-0909"
+    target: "direction"
+    ipa: "diʁɛksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle est la direction ?", ipa: "kɛl ɛ la diʁɛksjɔ̃", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "direction", base: "direction" }] }
+      - { target: "Nous allons dans la direction de la gare.", ipa: "nu zalɔ̃ dɑ̃ la diʁɛksjɔ̃ də la gaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "direction", base: "direction" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+  - id: "fr-0910"
+    target: "suivre"
+    ipa: "sɥivʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vous suivez la route.", ipa: "vu sɥive la ʁut", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "suivez", base: "suivre" }, { word: "la", ref: "fr-0544" }, { word: "route", ref: "fr-0892" }] }
+      - { target: "Je suis le plan.", ipa: "ʒə sɥi lə plɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", base: "suivre" }, { word: "le", ref: "fr-0543" }, { word: "plan", ref: "fr-0907" }] }
+  - id: "fr-0911"
+    target: "virage"
+    ipa: "viʁaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le virage est près du pont.", ipa: "lə viʁaʒ ɛ pʁɛ dy pɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "virage", base: "virage" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "du", base: "du" }, { word: "pont", ref: "fr-0900" }] }
+      - { target: "Au virage, tournez à droite.", ipa: "o viʁaʒ tuʁne a dʁwat", bases: [{ word: "Au", base: "au" }, { word: "virage", base: "virage" }, { word: "tournez", ref: "fr-0895" }, { word: "à", base: "à" }, { word: "droite", ref: "fr-0479" }] }
+  - id: "fr-0912"
+    target: "mètre"
+    ipa: "mɛtʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est est cent mètres.", ipa: "sə ɛ sɑ̃ mɛtʁ", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "cent", ref: "fr-0709" }, { word: "mètres", base: "mètre" }] }
+      - { target: "Le pont est long de cent mètres.", ipa: "lə pɔ̃ ɛ lɔ̃ də sɑ̃ mɛtʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pont", ref: "fr-0900" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }, { word: "de", base: "de" }, { word: "cent", ref: "fr-0709" }, { word: "mètres", base: "mètre" }] }
