@@ -1,0 +1,79 @@
+schema: 1
+id: "as-grammar-perfect-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2582"
+    target: "মই আজি ভাত খাইছোঁ।"
+    reading: "moi āzi bhāt khāisum̐."
+    ipa: "moi azi bʱat kʰaisʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "খাইছোঁ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "খাওঁ", reading: "khāum̐", kind: "form" }
+      - { id: "c2", word: "খালোঁ", reading: "khālōm̐", kind: "form" }
+  - id: "as-2583"
+    target: "তুমি কিতাপ পঢ়িছা নেকি?"
+    reading: "tumi kitāp pôrhisā neki?"
+    ipa: "tumi kitap poɹisa neki"
+    pos: "phrase"
+    bases:
+      - { word: "পঢ়িছা", ref: "as-2203" }
+    confusables:
+      - { id: "c1", word: "পঢ়িছে", reading: "pôrhise", kind: "form" }
+      - { id: "c2", word: "পঢ়িবা", reading: "pôrhibā", kind: "form" }
+  - id: "as-2584"
+    target: "সি ইতিমধ্যে আহিছে।"
+    reading: "xi itimôdhye āhise."
+    ipa: "si itimɔdʱje ahise"
+    pos: "phrase"
+    bases:
+      - { word: "আহিছে", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "আহিছোঁ", reading: "āhisum̐", kind: "form" }
+      - { id: "c2", word: "আহিব", reading: "āhib", kind: "form" }
+  - id: "as-2585"
+    target: "আমি বজাৰলৈ গৈছো।"
+    reading: "āmi bôzārôlôi goisu."
+    ipa: "ami bɔzaɹɔlɔi ɡɔisʊ"
+    pos: "phrase"
+    bases:
+      - { word: "গৈছো", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "যাওঁ", reading: "zāum̐", kind: "form" }
+      - { id: "c2", word: "গৈছে", reading: "goise", kind: "form" }
+  - id: "as-2586"
+    target: "মই কামটো কৰিছোঁ।"
+    reading: "moi kāmtu kôrisum̐."
+    ipa: "moi kamɔtʊ koɹisʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "কামটো", ref: "as-0120" }
+      - { word: "কৰিছোঁ", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "কৰিছে", reading: "kôrise", kind: "form" }
+      - { id: "c2", word: "কৰিম", reading: "kôrim", kind: "form" }
+  - id: "as-2587"
+    target: "তেওঁ শুনিছে।"
+    reading: "teum̐ xunise."
+    ipa: "teʊ̃ xunise"
+    pos: "phrase"
+    bases:
+      - { word: "শুনিছে", ref: "as-2205" }
+    confusables:
+      - { id: "c1", word: "শুনিছোঁ", reading: "xunisum̐", kind: "form" }
+      - { id: "c2", word: "শুনিব", reading: "xunib", kind: "form" }
+  - id: "as-2588"
+    target: "তুমি আজি ভাত খাইছা নেকি?"
+    reading: "tumi āzi bhāt khāisā neki?"
+    ipa: "tumi azi bʱat kʰaisa neki"
+    pos: "phrase"
+    bases:
+      - { word: "খাইছা", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "খাওঁ", reading: "khāum̐", kind: "form" }
+      - { id: "c2", word: "খাইছে", reading: "khāise", kind: "form" }

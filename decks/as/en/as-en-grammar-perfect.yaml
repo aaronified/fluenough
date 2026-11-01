@@ -1,0 +1,28 @@
+schema: 1
+id: "as-en-grammar-perfect"
+kind: "layer"
+core: "as-grammar-perfect"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The perfect: I have done"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says something has already happened and still counts now: the verb takes the perfect ending -ছোঁ (-sum̐), -ছা (-sā), -ছে (-se) or -ছো (-su). Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "The perfect: I have done"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "I: মই (moi)": "I"
+    "you: তুমি (tumi)": "you (informal)"
+    "he or she: সি (xi)": "he or she"
+    "we: আমি (āmi)": "we"
+  entries:
+    "khua": "to eat"
+    "kora": "to do"
+    "zua": "to go"
+    "aha": "to come"
+    "porha": "to read; to study"
+    "likha": "to write"
+    "xuna": "to hear; to listen"
+    "dekha": "to see; to look at"
+  notes: "The perfect says that something has happened and still counts now. Its ending is -ছোঁ (-sum̐) for I, -ছা (-sā) for you, -ছে (-se) for he or she, and -ছো (-su) for we. The verb keeps its stem, except যোৱা (zuwā), go, which becomes গৈ (goi) in the perfect: মই গৈছোঁ (moi goisum̐), I have gone."

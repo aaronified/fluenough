@@ -1,0 +1,67 @@
+schema: 1
+id: "as-en-reading-perfect"
+name: "Assamese reading: the perfect: i have done"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-what-has-happened"
+    title: "What has already been done"
+    sentences:
+      - text: "মই ইতিমধ্যে খাইছোঁ।"
+        reading: "moi itimôdhye khāisum̐."
+      - text: "তুমি কিতাপ পঢ়িছা নেকি?"
+        reading: "tumi kitāp pôrhisā neki?"
+      - text: "আমি বজাৰলৈ গৈছো।"
+        reading: "āmi bôzārôlôi goisu."
+      - text: "সি ইতিমধ্যে আহিছে।"
+        reading: "xi itimôdhye āhise."
+    questions:
+      - id: "as-2589"
+        prompt: { en: "The speaker has already eaten." }
+        answer: true
+      - id: "as-2590"
+        prompt: { en: "Where have \"we\" gone?" }
+        options:
+          - { en: "To the market" }
+          - { en: "To school" }
+          - { en: "To the hills" }
+        answer: 1
+      - id: "as-2591"
+        prompt: { en: "Who has already come?" }
+        options:
+          - { en: "Only the speaker" }
+          - { en: "He" }
+          - { en: "Nobody" }
+        answer: 2
+  - id: "as-checklist-done"
+    title: "A ticked checklist"
+    sentences:
+      - text: "মই কামটো কৰিছোঁ।"
+        reading: "moi kāmtu kôrisum̐."
+      - text: "মই ভাত খাইছোঁ।"
+        reading: "moi bhāt khāisum̐."
+      - text: "তেওঁ শুনিছে।"
+        reading: "teum̐ xunise."
+      - text: "মই কিতাপ পঢ়িছোঁ।"
+        reading: "moi kitāp pôrhisum̐."
+    questions:
+      - id: "as-2592"
+        prompt: { en: "The work is done." }
+        answer: true
+      - id: "as-2593"
+        prompt: { en: "What has the speaker read?" }
+        options:
+          - { en: "The book" }
+          - { en: "The letter" }
+          - { en: "Nothing" }
+        answer: 1
+      - id: "as-2594"
+        prompt: { en: "Has he heard it?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 1
