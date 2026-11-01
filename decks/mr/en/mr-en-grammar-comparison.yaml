@@ -1,0 +1,30 @@
+schema: 1
+id: "mr-en-grammar-comparison"
+kind: "layer"
+core: "mr-grammar-comparison"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Comparing: taller than, the tallest"
+license: "CC-BY-SA-4.0"
+description: "He is taller than me, the tallest boy: how to compare two things, with पेक्षा and सर्वात. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Comparative with पेक्षा and superlative with सर्वात"
+  slot_name: "degree"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "पेक्षा": "more ... than (comparative)", "सर्वात": "the most ... (superlative)" }
+  entries:
+    "मोठa": "big"
+    "लहaन": "small"
+    "उंच": "tall"
+    "चaंगलa": "good"
+    "जुनa": "old"
+    "गरम": "hot"
+    "थंड": "cold"
+    "सोपa": "easy"
+    "कठीण": "difficult"
+    "गोड": "sweet"
+    "स्वस्त": "cheap"
+    "महaग": "expensive"
+    "जड": "heavy"
+    "हलकa": "light"
+  notes: "The comparative uses पेक्षा (peksā), than, after the thing compared to: तो माझ्यापेक्षा उंच आहे (to mājhyāpeksā uṅc āhe), he is taller than me. The adjective stays in its masculine form with the pattern. The superlative puts सर्वात (sarvāt), the most, before it: सर्वात उंच मुलगा (sarvāt uṅc mulgā), the tallest boy. Some adjectives are compared the same way: गरम (garam) and थंड (thaṇḍ), hot and cold, and महाग (mahāg) and स्वस्त (svasta), expensive and cheap, as in the shopping unit."
