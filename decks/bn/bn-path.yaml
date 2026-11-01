@@ -658,11 +658,14 @@ units:
       - { id: "lost-property-notice", text: { "en": "A notice about something someone lost" } }
   - decks: ["bn-reading-indefinites"]
     words: 0
-  - planned: { id: "bn-housing", theme: "housing", words: 40 }
+  - decks: ["bn-housing", "bn-housing-sentences", "*"]
+    words: 40
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
     reading_passages:
       - { id: "rental-terms", text: { "en": "The terms of a rental" } }
+  - decks: ["bn-reading-housing"]
+    words: 0
   - planned: { id: "bn-emergencies", theme: "emergencies", words: 35 }
     listening_passages:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }

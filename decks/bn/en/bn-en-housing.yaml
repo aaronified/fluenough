@@ -1,0 +1,290 @@
+schema: 1
+id: "bn-en-housing"
+kind: "layer"
+core: "bn-housing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing"
+description: "Renting and living in a flat: the landlord, the tenant, the rent, the kitchen, the bathroom and the furniture. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3965":
+    native: "landlady"
+    notes:
+      "n1": "{1}: A landlady: a woman who owns the house you rent."
+    examples:
+      "বাড়িওয়ালি ভালো মানুষ।": { native: "The landlady is a good person.", bases: { "মানুষ": "person" } }
+      "বাড়িওয়ালির সঙ্গে কথা বললাম।": { native: "I talked with the landlady.", bases: { "বাড়িওয়ালির": "landlady" } }
+  "bn-3966":
+    native: "housewarming"
+    notes:
+      "n1": "{1}: A housewarming: the ceremony of moving into a new house."
+    examples:
+      "গৃহপ্রবেশের দিন সবাই এল।": { native: "Everyone came on the housewarming day.", bases: { "গৃহপ্রবেশের": "housewarming" } }
+      "নতুন বাড়িতে গৃহপ্রবেশ হলো।": { native: "The housewarming was held in the new house.", bases: { "গৃহপ্রবেশ": "housewarming" } }
+  "bn-3967":
+    native: "furniture"
+    notes:
+      "n1": "{1}: Furniture: the chairs, tables and beds in a home."
+    examples:
+      "আসবাবপত্রগুলো পুরোনো।": { native: "The furniture is old.", bases: { "আসবাবপত্রগুলো": "furniture" } }
+      "নতুন আসবাবপত্র কিনতে হবে।": "New furniture must be bought."
+  "bn-3968":
+    native: "bathroom"
+    notes:
+      "n1": "{1}: A bathroom: the room where one washes."
+    examples:
+      "স্নানঘরে জল নেই।": { native: "There is no water in the bathroom.", bases: { "স্নানঘরে": "bathroom", "নেই": "there is no" } }
+      "স্নানঘরটা পরিষ্কার।": { native: "The bathroom is clean.", bases: { "স্নানঘরটা": "bathroom" } }
+  "bn-3969":
+    native: "bedroom"
+    notes:
+      "n1": "{1}: A bedroom, a formal word: the room where one sleeps."
+    examples:
+      "শয়নকক্ষে একটা খাট আছে।": { native: "There is a bed in the bedroom.", bases: { "একটা": "a", "আছে": "there is" } }
+      "শয়নকক্ষের জানালা বড়।": { native: "The bedroom's window is big.", bases: { "শয়নকক্ষের": "bedroom" } }
+  "bn-3970":
+    native: "room (formal)"
+    notes:
+      "n1": "{1}: A room, a formal word for any room."
+    examples:
+      "কক্ষটি খুব বড়।": "The room is very big."
+      "সভার কক্ষে অনেক লোক।": { native: "There are many people in the meeting room.", bases: { "কক্ষে": "room (formal)", "লোক": "people" } }
+  "bn-3971":
+    native: "oven"
+    notes:
+      "n1": "{1}: An oven: a box for baking and heating food."
+    examples:
+      "ওভেনে কেক বানাও।": { native: "Bake a cake in the oven. (familiar)", bases: { "কেক": "cake", "বানাও": "bake" } }
+      "ওভেনটা গরম হচ্ছে।": { native: "The oven is getting hot.", bases: { "ওভেনটা": "oven" } }
+  "bn-3972":
+    native: "cooker"
+    notes:
+      "n1": "{1}: A cooker: a pot with a lid for cooking rice or lentils."
+    examples:
+      "কুকারে ভাত রাখা হলো।": { native: "The rice was put in the cooker.", bases: { "কুকারে": "cooker" } }
+      "কুকারের শব্দ শুনলাম।": { native: "I heard the sound of the cooker.", bases: { "কুকারের": "cooker" } }
+  "bn-3973":
+    native: "microwave"
+    notes:
+      "n1": "{1}: A microwave oven: an oven that heats food quickly."
+    examples:
+      "মাইক্রোওয়েভে খাবার গরম করো।": { native: "Heat the food in the microwave. (familiar)", bases: { "মাইক্রোওয়েভে": "microwave" } }
+      "মাইক্রোওয়েভটা নতুন।": { native: "The microwave is new.", bases: { "মাইক্রোওয়েভটা": "microwave" } }
+  "bn-3974":
+    native: "mosquito net"
+    notes:
+      "n1": "{1}: A mosquito net: a net hung over a bed to keep mosquitoes out."
+    examples:
+      "মশারি টাঙিয়ে ঘুমাও।": { native: "Hang the mosquito net and sleep. (familiar)", bases: { "টাঙিয়ে": "hanging", "ঘুমাও": "sleep" } }
+      "মশারিটা ছেঁড়া।": { native: "The mosquito net is torn.", bases: { "মশারিটা": "mosquito net", "ছেঁড়া": "torn" } }
+  "bn-3975":
+    native: "rope"
+    notes:
+      "n1": "{1}: A rope or a string: a thick cord for tying."
+    examples:
+      "দড়ি দিয়ে বাঁধো।": "Tie it with a rope. (familiar)"
+      "দড়িটা খুব শক্ত।": { native: "The rope is very strong.", bases: { "দড়িটা": "rope" } }
+  "bn-3976":
+    native: "tank"
+    notes:
+      "n1": "{1}: A tank: a large container for holding water."
+    examples:
+      "ছাদে জলের ট্যাংক আছে।": { native: "There is a water tank on the roof.", bases: { "আছে": "there is" } }
+      "ট্যাংকটা খালি।": { native: "The tank is empty.", bases: { "ট্যাংকটা": "tank" } }
+  "bn-3977":
+    native: "gas cylinder"
+    notes:
+      "n1": "{1}: A gas cylinder: a metal tank of gas for cooking."
+    examples:
+      "গ্যাসের সিলিন্ডার শেষ হয়ে গেছে।": { native: "The gas cylinder has run out.", bases: { "শেষ": "run out" } }
+      "সিলিন্ডারটা ভারী।": { native: "The cylinder is heavy.", bases: { "সিলিন্ডারটা": "gas cylinder" } }
+  "bn-3978":
+    native: "mug"
+    notes:
+      "n1": "{1}: A mug: a cup with a handle, for tea or water."
+    examples:
+      "মগে চা দাও।": "Give tea in a mug. (familiar)"
+      "মগটা ধুয়ে রাখো।": { native: "Wash the mug and keep it. (familiar)", bases: { "মগটা": "mug" } }
+  "bn-3979":
+    native: "tenant"
+    notes:
+      "n1": "{1}: A tenant: a person who rents a flat or house."
+    examples:
+      "ভাড়াটিয়া নতুন এসেছে।": "The tenant has just come."
+      "ভাড়াটিয়ার ঘর খালি।": { native: "The tenant's room is empty.", bases: { "ভাড়াটিয়ার": "tenant" } }
+  "bn-3980":
+    native: "boundary"
+    notes:
+      "n1": "{1}: A boundary: the edge of a plot of land."
+    examples:
+      "জমির সীমানা ঠিক করা হলো।": "The boundary of the land was fixed."
+      "সীমানাটা দেয়াল দিয়ে ঘেরা।": { native: "The boundary is surrounded by a wall.", bases: { "সীমানাটা": "boundary", "ঘেরা": "surrounded" } }
+  "bn-3981":
+    native: "building"
+    notes:
+      "n1": "{1}: A building: a large structure with walls and a roof."
+    examples:
+      "ভবনটা খুব উঁচু।": { native: "The building is very tall.", bases: { "ভবনটা": "building" } }
+      "এই ভবনে অনেক ফ্ল্যাট আছে।": { native: "There are many flats in this building.", bases: { "এই": "this", "ভবনে": "building", "আছে": "there are" } }
+  "bn-3982":
+    native: "room"
+    notes:
+      "n1": "{1}: A room: a space in a building."
+    examples:
+      "রুমটা ছোট।": { native: "The room is small.", bases: { "রুমটা": "room" } }
+      "আমার রুমে আলো নেই।": { native: "There is no light in my room.", bases: { "রুমে": "room", "নেই": "there is no" } }
+  "bn-3983":
+    native: "courtyard"
+    notes:
+      "n1": "{1}: A courtyard: the open yard in front of a house."
+    examples:
+      "উঠানে ফুল আছে।": { native: "There are flowers in the courtyard.", bases: { "উঠানে": "courtyard", "আছে": "there are" } }
+      "উঠানটা খুব বড়।": { native: "The courtyard is very big.", bases: { "উঠানটা": "courtyard" } }
+  "bn-3984":
+    native: "garage"
+    notes:
+      "n1": "{1}: A garage: a shelter for a car."
+    examples:
+      "গাড়িটা গ্যারেজে রাখো।": { native: "Keep the car in the garage. (familiar)", bases: { "গ্যারেজে": "garage" } }
+      "গ্যারেজটা খালি।": { native: "The garage is empty.", bases: { "গ্যারেজটা": "garage" } }
+  "bn-3985":
+    native: "shower"
+    notes:
+      "n1": "{1}: A shower: a spray of water for bathing."
+    examples:
+      "শাওয়ারের জল গরম।": { native: "The shower water is hot.", bases: { "শাওয়ারের": "shower" } }
+      "শাওয়ার নিয়ে নাও।": "Take a shower. (familiar)"
+  "bn-3986":
+    native: "toilet"
+    notes:
+      "n1": "{1}: A toilet: a room with a basin and a lavatory."
+    examples:
+      "টয়লেটটা কোথায়?": { native: "Where is the toilet? (familiar)", bases: { "টয়লেটটা": "toilet" } }
+      "টয়লেট পরিষ্কার রাখা জরুরি।": "Keeping the toilet clean is important."
+  "bn-3987":
+    native: "lift"
+    notes:
+      "n1": "{1}: A lift: a machine that carries people up and down a building."
+    examples:
+      "লিফট বন্ধ আছে।": { native: "The lift is closed.", bases: { "আছে": "is" } }
+      "লিফটে উঠে যাও।": { native: "Go up in the lift. (familiar)", bases: { "লিফটে": "lift" } }
+  "bn-3988":
+    native: "gate"
+    notes:
+      "n1": "{1}: A gate: the entrance to a garden or a compound."
+    examples:
+      "গেটটা খোলা।": { native: "The gate is open.", bases: { "গেটটা": "gate" } }
+      "গেটের কাছে কে দাঁড়িয়ে?": { native: "Who is standing near the gate?", bases: { "গেটের": "gate" } }
+  "bn-3989":
+    native: "main entrance"
+    notes:
+      "n1": "{1}: The main entrance or the front: the front door of a building."
+    examples:
+      "সদর দরজা বন্ধ।": "The main door is closed."
+      "সদরে গাড়ি দাঁড়িয়ে আছে।": { native: "A car is standing at the main entrance.", bases: { "সদরে": "main entrance", "আছে": "is" } }
+  "bn-3990":
+    native: "drawing room"
+    notes:
+      "n1": "{1}: A drawing room: the room where guests are received."
+    examples:
+      "বৈঠকখানায় অতিথি এসেছেন।": { native: "A guest has come to the drawing room.", bases: { "বৈঠকখানায়": "drawing room" } }
+      "বৈঠকখানাটা সুন্দর।": { native: "The drawing room is beautiful.", bases: { "বৈঠকখানাটা": "drawing room" } }
+  "bn-3991":
+    native: "housekeeping"
+    notes:
+      "n1": "{1}: Housekeeping: the work of running a home."
+    examples:
+      "গৃহস্থালির কাজ অনেক।": "There is a lot of housework."
+      "গৃহস্থালি সামলানো কঠিন।": { native: "Managing the household is hard.", bases: { "গৃহস্থালি": "housekeeping", "সামলানো": "managing" } }
+  "bn-3992":
+    native: "fridge"
+    notes:
+      "n1": "{1}: A fridge: a cabinet that keeps food cold."
+    examples:
+      "ফ্রিজে দুধ রাখো।": "Keep the milk in the fridge. (familiar)"
+      "ফ্রিজটা বন্ধ করো।": { native: "Close the fridge. (familiar)", bases: { "ফ্রিজটা": "fridge" } }
+  "bn-3993":
+    native: "brick"
+    notes:
+      "n1": "{1}: A brick: a block of baked clay used to build walls."
+    examples:
+      "দেয়ালে ইঁট লাগানো হলো।": { native: "Bricks were laid for the wall.", bases: { "লাগানো": "laid" } }
+      "ইঁটগুলো লাল।": { native: "The bricks are red.", bases: { "ইঁটগুলো": "brick" } }
+  "bn-3994":
+    native: "security"
+    notes:
+      "n1": "{1}: Security: being safe from harm or danger."
+    examples:
+      "এখানে নিরাপত্তা ভালো।": "The security here is good."
+      "নিরাপত্তার জন্য দরজা বন্ধ করো।": { native: "Close the door for security. (familiar)", bases: { "নিরাপত্তার": "security" } }
+  "bn-3995":
+    native: "watchman"
+    notes:
+      "n1": "{1}: A doorman or a watchman: a guard at a building's gate."
+    examples:
+      "দারোয়ান গেটে আছেন।": { native: "The watchman is at the gate.", bases: { "গেটে": "at the gate", "আছেন": "is" } }
+      "দারোয়ানকে ডাকো।": { native: "Call the watchman. (familiar)", bases: { "দারোয়ানকে": "watchman" } }
+  "bn-3996":
+    native: "renovation"
+    notes:
+      "n1": "{1}: Renovation: the repair and improvement of a building."
+    examples:
+      "বাড়ির সংস্কার শুরু হলো।": "The renovation of the house began."
+      "সংস্কারের খরচ বেশি।": { native: "The cost of renovation is high.", bases: { "সংস্কারের": "renovation" } }
+  "bn-3997":
+    native: "advance payment"
+    notes:
+      "n1": "{1}: An advance payment: money paid before it is due."
+    examples:
+      "অগ্রিম টাকা দিতে হবে।": "An advance must be paid."
+      "অগ্রিমের রসিদ আছে।": { native: "There is a receipt for the advance.", bases: { "অগ্রিমের": "advance payment", "আছে": "there is" } }
+  "bn-3998":
+    native: "deposit"
+    notes:
+      "n1": "{1}: A deposit: money or a thing left with someone for safekeeping."
+    examples:
+      "জমার টাকা ফেরত পাব।": { native: "I will get the deposit back.", bases: { "জমার": "deposit" } }
+      "জমাটা বেশি নয়।": { native: "The deposit is not large.", bases: { "জমাটা": "deposit" } }
+  "bn-3999":
+    native: "apartment"
+    notes:
+      "n1": "{1}: An apartment: a flat in a large building with several floors."
+    examples:
+      "অ্যাপার্টমেন্টটা তিনতলায়।": { native: "The apartment is on the third floor.", bases: { "অ্যাপার্টমেন্টটা": "apartment" } }
+      "অ্যাপার্টমেন্টে বড় বারান্দা আছে।": { native: "The apartment has a big balcony.", bases: { "অ্যাপার্টমেন্টে": "apartment", "আছে": "has" } }
+  "bn-4000":
+    native: "neat"
+    notes:
+      "n1": "{1}: Neat and tidy: clean and in good order."
+    examples:
+      "ঘরটা খুব ছিমছাম।": "The room is very neat."
+      "বিছানাটা ছিমছাম।": "The bed is neat."
+  "bn-4001":
+    native: "airy"
+    notes:
+      "n1": "{1}: Airy: open, with plenty of space and light."
+    examples:
+      "বারান্দাটা খুব খোলামেলা।": "The balcony is very airy."
+      "ফ্ল্যাটটা খোলামেলা।": "The flat is airy."
+  "bn-4002":
+    native: "to renovate"
+    notes:
+      "n1": "{1}: To renovate: to repair and improve a building."
+    examples:
+      "ঘরটা সংস্কার করা হবে।": "The room will be renovated."
+      "আমরা রান্নাঘর সংস্কার করেছি।": "We have renovated the kitchen."
+  "bn-4003":
+    native: "bathtub"
+    notes:
+      "n1": "{1}: A bathtub: a large tub for bathing in."
+    examples:
+      "বাথটাবে গরম জল।": { native: "Hot water in the bathtub.", bases: { "বাথটাবে": "bathtub" } }
+      "বাথটাবটা পরিষ্কার করো।": { native: "Clean the bathtub. (familiar)", bases: { "বাথটাবটা": "bathtub" } }
+  "bn-4004":
+    native: "to live"
+    notes:
+      "n1": "{1}: To live: to stay and make one's home somewhere."
+    examples:
+      "আমরা এই শহরে বসবাস করি।": { native: "We live in this city.", bases: { "এই": "this" } }
+      "সে বিদেশে বসবাস করে।": "He lives abroad."
