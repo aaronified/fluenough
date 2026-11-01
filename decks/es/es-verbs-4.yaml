@@ -1,0 +1,492 @@
+schema: 1
+id: "es-verbs-4"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-4"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2891"
+    target: "cuento"
+    ipa: "ˈkwento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cuento", base: "cuento" }]
+    examples:
+      - target: "Leo un cuento a mis hijos."
+        ipa: "ˈleo un ˈkwento a mis ˈixos"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "un", base: "un" }, { word: "cuento", ref: "es-1612" }, { word: "a", base: "a" }, { word: "mis", ref: "es-0129" }, { word: "hijos", ref: "es-0163" }]
+      - target: "El cuento es muy triste."
+        ipa: "el ˈkwento es mwi ˈtɾiste"
+        bases: [{ word: "El", base: "el" }, { word: "cuento", ref: "es-1612" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "triste", ref: "es-0419" }]
+  - id: "es-2892"
+    target: "aventura"
+    ipa: "abenˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "aventura", base: "aventura" }]
+    examples:
+      - target: "Viven una gran aventura."
+        ipa: "ˈbiben ˈuna ɡɾan abenˈtuɾa"
+        bases: [{ word: "Viven", ref: "es-0030" }, { word: "una", base: "una" }, { word: "gran", ref: "es-0031" }, { word: "aventura", base: "aventura" }]
+      - target: "La aventura empieza en el bosque."
+        ipa: "la abenˈtuɾa emˈpjeθa en el ˈboske"
+        bases: [{ word: "La", base: "la" }, { word: "aventura", base: "aventura" }, { word: "empieza", ref: "es-0852" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bosque", ref: "es-1749" }]
+  - id: "es-2893"
+    target: "misterio"
+    ipa: "misˈteɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "misterio", base: "misterio" }]
+    examples:
+      - target: "El misterio es grande."
+        ipa: "el misˈteɾjo es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "misterio", base: "misterio" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Hay un misterio en el castillo."
+        ipa: "aj un misˈteɾjo en el kasˈtiʝo"
+        bases: [{ word: "Hay", base: "haber" }, { word: "un", base: "un" }, { word: "misterio", base: "misterio" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "castillo", ref: "es-2561" }]
+  - id: "es-2894"
+    target: "secreto"
+    ipa: "seˈkɾeto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "secreto", base: "secreto" }]
+    examples:
+      - target: "Es un secreto."
+        ipa: "es un seˈkɾeto"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "secreto", base: "secreto" }]
+      - target: "Descubro el secreto del bosque."
+        ipa: "desˈkubɾo el seˈkɾeto del ˈboske"
+        bases: [{ word: "Descubro", ref: "es-2908" }, { word: "el", base: "el" }, { word: "secreto", base: "secreto" }, { word: "del", base: "del" }, { word: "bosque", ref: "es-1749" }]
+  - id: "es-2895"
+    target: "final"
+    ipa: "fiˈnal"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "final", base: "final" }]
+    examples:
+      - target: "El final es triste."
+        ipa: "el fiˈnal es ˈtɾiste"
+        bases: [{ word: "El", base: "el" }, { word: "final", base: "final" }, { word: "es", ref: "es-0022" }, { word: "triste", ref: "es-0419" }]
+      - target: "Al final, todos están felices."
+        ipa: "al fiˈnal ˈtodos esˈtan feˈliθes"
+        bases: [{ word: "Al", base: "al" }, { word: "final", base: "final" }, { word: "todos", ref: "es-0134" }, { word: "están", ref: "es-0023" }, { word: "felices", ref: "es-0442" }]
+  - id: "es-2896"
+    target: "princesa"
+    ipa: "pɾinˈθesa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "princesa", base: "princesa" }]
+    examples:
+      - target: "La princesa vive en el castillo."
+        ipa: "la pɾinˈθesa ˈbibe en el kasˈtiʝo"
+        bases: [{ word: "La", base: "la" }, { word: "princesa", base: "princesa" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "castillo", ref: "es-2561" }]
+      - target: "La princesa escapa de noche."
+        ipa: "la pɾinˈθesa esˈkapa de ˈnotʃe"
+        bases: [{ word: "La", base: "la" }, { word: "princesa", base: "princesa" }, { word: "escapa", ref: "es-2909" }, { word: "de", base: "de" }, { word: "noche", ref: "es-0020" }]
+  - id: "es-2897"
+    target: "bruja"
+    ipa: "ˈbɾuxa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "bruja", base: "bruja" }]
+    examples:
+      - target: "La bruja vive en el bosque."
+        ipa: "la ˈbɾuxa ˈbibe en el ˈboske"
+        bases: [{ word: "La", base: "la" }, { word: "bruja", base: "bruja" }, { word: "vive", ref: "es-0030" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bosque", ref: "es-1749" }]
+      - target: "La bruja tiene un gato negro."
+        ipa: "la ˈbɾuxa ˈtjene un ˈɡato ˈneɡɾo"
+        bases: [{ word: "La", base: "la" }, { word: "bruja", base: "bruja" }, { word: "tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "gato", ref: "es-1062" }, { word: "negro", ref: "es-1011" }]
+  - id: "es-2898"
+    target: "dragón"
+    ipa: "dɾaˈɡon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "dragón", base: "dragón" }]
+    examples:
+      - target: "El dragón vuela sobre el río."
+        ipa: "el dɾaˈɡon ˈbwela ˈsobɾe el ˈrio"
+        bases: [{ word: "El", base: "el" }, { word: "dragón", base: "dragón" }, { word: "vuela", ref: "es-1064" }, { word: "sobre", ref: "es-2243" }, { word: "el", base: "el" }, { word: "río", ref: "es-1751" }]
+      - target: "Un dragón guarda el tesoro."
+        ipa: "un dɾaˈɡon ˈɡwaɾda el teˈsoɾo"
+        bases: [{ word: "Un", base: "un" }, { word: "dragón", base: "dragón" }, { word: "guarda", ref: "es-1188" }, { word: "el", base: "el" }, { word: "tesoro", ref: "es-2902" }]
+  - id: "es-2899"
+    target: "susto"
+    ipa: "ˈsusto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "susto", base: "susto" }]
+    examples:
+      - target: "Me diste un susto."
+        ipa: "me ˈdiste un ˈsusto"
+        bases: [{ word: "Me", base: "me" }, { word: "diste", ref: "es-1629" }, { word: "un", base: "un" }, { word: "susto", base: "susto" }]
+      - target: "El susto pasa rápido."
+        ipa: "el ˈsusto ˈpasa ˈrapido"
+        bases: [{ word: "El", base: "el" }, { word: "susto", base: "susto" }, { word: "pasa", ref: "es-1533" }, { word: "rápido", ref: "es-0329" }]
+  - id: "es-2900"
+    target: "huella"
+    ipa: "ˈweʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "huella", base: "huella" }]
+    examples:
+      - target: "Veo una huella en la arena."
+        ipa: "ˈbeo ˈuna ˈweʝa en la aˈɾena"
+        bases: [{ word: "Veo", ref: "es-1625" }, { word: "una", base: "una" }, { word: "huella", base: "huella" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "arena", ref: "es-1763" }]
+      - target: "Dejan huellas en el barro."
+        ipa: "ˈdexan ˈweʝas en el ˈbaro"
+        bases: [{ word: "Dejan", ref: "es-1190" }, { word: "huellas", base: "huella" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "barro", ref: "es-1508" }]
+  - id: "es-2901"
+    target: "zorro"
+    ipa: "ˈθoro"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "zorro", base: "zorro" }]
+    examples:
+      - target: "El zorro corre por el campo."
+        ipa: "el ˈθoro ˈkore poɾ el ˈkampo"
+        bases: [{ word: "El", base: "el" }, { word: "zorro", base: "zorro" }, { word: "corre", ref: "es-1068" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "campo", ref: "es-1772" }]
+      - target: "El zorro es muy listo."
+        ipa: "el ˈθoro es mwi ˈlisto"
+        bases: [{ word: "El", base: "el" }, { word: "zorro", base: "zorro" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "listo", ref: "es-0932" }]
+  - id: "es-2902"
+    target: "tesoro"
+    ipa: "teˈsoɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tesoro", base: "tesoro" }]
+    examples:
+      - target: "El tesoro está en la cueva."
+        ipa: "el teˈsoɾo esˈta en la ˈkweba"
+        bases: [{ word: "El", base: "el" }, { word: "tesoro", base: "tesoro" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cueva", ref: "es-1775" }]
+      - target: "Encuentran el tesoro."
+        ipa: "enˈkwentɾan el teˈsoɾo"
+        bases: [{ word: "Encuentran", ref: "es-0723" }, { word: "el", base: "el" }, { word: "tesoro", base: "tesoro" }]
+  - id: "es-2903"
+    target: "camino"
+    ipa: "kaˈmino"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "camino", base: "camino" }]
+    examples:
+      - target: "El camino es largo."
+        ipa: "el kaˈmino es ˈlaɾɡo"
+        bases: [{ word: "El", base: "el" }, { word: "camino", ref: "es-0281" }, { word: "es", ref: "es-0022" }, { word: "largo", ref: "es-0429" }]
+      - target: "Seguimos el camino del río."
+        ipa: "seˈɡimos el kaˈmino del ˈrio"
+        bases: [{ word: "Seguimos", ref: "es-0722" }, { word: "el", base: "el" }, { word: "camino", ref: "es-0281" }, { word: "del", base: "del" }, { word: "río", ref: "es-1751" }]
+  - id: "es-2904"
+    target: "silencio"
+    ipa: "siˈlenθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "silencio", base: "silencio" }]
+    examples:
+      - target: "Hay silencio en el bosque."
+        ipa: "aj siˈlenθjo en el ˈboske"
+        bases: [{ word: "Hay", base: "haber" }, { word: "silencio", base: "silencio" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "bosque", ref: "es-1749" }]
+      - target: "Pido silencio, por favor."
+        ipa: "ˈpido siˈlenθjo poɾ faˈboɾ"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "silencio", base: "silencio" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "es-2905"
+    target: "paso"
+    ipa: "ˈpaso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "paso", base: "paso" }]
+    examples:
+      - target: "Doy un paso hacia la puerta."
+        ipa: "doj un ˈpaso ˈaθja la ˈpweɾta"
+        bases: [{ word: "Doy", ref: "es-1629" }, { word: "un", base: "un" }, { word: "paso", ref: "es-1533" }, { word: "hacia", base: "hacia" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }]
+      - target: "El paso del río es peligroso."
+        ipa: "el ˈpaso del ˈrio es peliˈɡɾoso"
+        bases: [{ word: "El", base: "el" }, { word: "paso", ref: "es-1533" }, { word: "del", base: "del" }, { word: "río", ref: "es-1751" }, { word: "es", ref: "es-0022" }, { word: "peligroso", ref: "es-1096" }]
+  - id: "es-2906"
+    target: "misterioso"
+    ipa: "misteˈɾjoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "misterioso", base: "misterioso" }]
+    examples:
+      - target: "Es un hombre misterioso."
+        ipa: "es un ˈombɾe misteˈɾjoso"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "hombre", ref: "es-0001" }, { word: "misterioso", base: "misterioso" }]
+      - target: "La casa está en silencio y es misteriosa."
+        ipa: "la ˈkasa esˈta en siˈlenθjo i es misteˈɾjosa"
+        bases: [{ word: "La", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "silencio", ref: "es-2904" }, { word: "y", ref: "es-0048" }, { word: "es", ref: "es-0022" }, { word: "misteriosa", base: "misterioso" }]
+  - id: "es-2907"
+    target: "escondido"
+    ipa: "eskonˈdido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "escondido", base: "escondido" }]
+    examples:
+      - target: "El tesoro está escondido."
+        ipa: "el teˈsoɾo esˈta eskonˈdido"
+        bases: [{ word: "El", base: "el" }, { word: "tesoro", ref: "es-2902" }, { word: "está", ref: "es-0023" }, { word: "escondido", base: "escondido" }]
+      - target: "La niña está escondida detrás de la puerta."
+        ipa: "la ˈniɲa esˈta eskonˈdida deˈtɾas de la ˈpweɾta"
+        bases: [{ word: "La", base: "la" }, { word: "niña", ref: "es-0004" }, { word: "está", ref: "es-0023" }, { word: "escondida", base: "escondido" }, { word: "detrás", base: "detrás" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }]
+  - id: "es-2908"
+    target: "descubrir"
+    ipa: "deskuˈbɾiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "descubrir", base: "descubrir" }]
+    examples:
+      - target: "Descubro un secreto."
+        ipa: "desˈkubɾo un seˈkɾeto"
+        bases: [{ word: "Descubro", base: "descubrir" }, { word: "un", base: "un" }, { word: "secreto", ref: "es-2894" }]
+      - target: "Descubren el tesoro en la cueva."
+        ipa: "desˈkubɾen el teˈsoɾo en la ˈkweba"
+        bases: [{ word: "Descubren", base: "descubrir" }, { word: "el", base: "el" }, { word: "tesoro", ref: "es-2902" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cueva", ref: "es-1775" }]
+  - id: "es-2909"
+    target: "escapar"
+    ipa: "eskaˈpaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "escapar", base: "escapar" }]
+    examples:
+      - target: "Escapo del castillo."
+        ipa: "esˈkapo del kasˈtiʝo"
+        bases: [{ word: "Escapo", base: "escapar" }, { word: "del", base: "del" }, { word: "castillo", ref: "es-2561" }]
+      - target: "Escaparon por la ventana."
+        ipa: "eskaˈpaɾon poɾ la benˈtana"
+        bases: [{ word: "Escaparon", base: "escapar" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "ventana", ref: "es-0008" }]
+  - id: "es-2910"
+    target: "perseguir"
+    ipa: "peɾseˈɡiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "perseguir", base: "perseguir" }]
+    examples:
+      - target: "El dragón persigue al príncipe."
+        ipa: "el dɾaˈɡon peɾˈsiɡe al ˈpɾinθipe"
+        bases: [{ word: "El", base: "el" }, { word: "dragón", ref: "es-2898" }, { word: "persigue", base: "perseguir" }, { word: "al", base: "al" }, { word: "príncipe", ref: "es-2558" }]
+      - target: "Perseguimos al zorro."
+        ipa: "peɾseˈɡimos al ˈθoro"
+        bases: [{ word: "Perseguimos", base: "perseguir" }, { word: "al", base: "al" }, { word: "zorro", ref: "es-2901" }]
+  - id: "es-2911"
+    target: "esconder"
+    ipa: "eskonˈdeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "esconder", base: "esconder" }]
+    examples:
+      - target: "Escondo la llave."
+        ipa: "esˈkondo la ˈʝabe"
+        bases: [{ word: "Escondo", base: "esconder" }, { word: "la", base: "la" }, { word: "llave", ref: "es-0877" }]
+      - target: "Ella se esconde detrás del árbol."
+        ipa: "ˈeʝa se esˈkonde deˈtɾas del ˈaɾbol"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "se", base: "se" }, { word: "esconde", base: "esconderse" }, { word: "detrás", base: "detrás" }, { word: "del", base: "del" }, { word: "árbol", ref: "es-1748" }]
+  - id: "es-2912"
+    target: "abrazar"
+    ipa: "abɾaˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "abrazar", base: "abrazar" }]
+    examples:
+      - target: "Abrazo a mi madre."
+        ipa: "aˈbɾaθo a mi ˈmadɾe"
+        bases: [{ word: "Abrazo", base: "abrazar" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }]
+      - target: "Se abrazan al final."
+        ipa: "se aˈbɾaθan al fiˈnal"
+        bases: [{ word: "Se", base: "se" }, { word: "abrazan", base: "abrazar" }, { word: "al", base: "al" }, { word: "final", ref: "es-2895" }]
+  - id: "es-2913"
+    target: "gritar"
+    ipa: "ɡɾiˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "gritar", base: "gritar" }]
+    examples:
+      - target: "Grito de miedo."
+        ipa: "ˈɡɾito de ˈmjedo"
+        bases: [{ word: "Grito", base: "gritar" }, { word: "de", base: "de" }, { word: "miedo", ref: "es-1994" }]
+      - target: "Gritan desde la ventana."
+        ipa: "ˈɡɾitan ˈdesde la benˈtana"
+        bases: [{ word: "Gritan", base: "gritar" }, { word: "desde", base: "desde" }, { word: "la", base: "la" }, { word: "ventana", ref: "es-0008" }]
+  - id: "es-2914"
+    target: "susurrar"
+    ipa: "susuˈraɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "susurrar", base: "susurrar" }]
+    examples:
+      - target: "Susurro un secreto."
+        ipa: "suˈsuro un seˈkɾeto"
+        bases: [{ word: "Susurro", base: "susurrar" }, { word: "un", base: "un" }, { word: "secreto", ref: "es-2894" }]
+      - target: "Susurran en la noche."
+        ipa: "suˈsuran en la ˈnotʃe"
+        bases: [{ word: "Susurran", base: "susurrar" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "noche", ref: "es-0020" }]
+  - id: "es-2915"
+    target: "caer"
+    ipa: "kaˈeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "caer", base: "caer" }]
+    examples:
+      - target: "La hoja cae del árbol."
+        ipa: "la ˈoxa ˈkae del ˈaɾbol"
+        bases: [{ word: "La", base: "la" }, { word: "hoja", ref: "es-1386" }, { word: "cae", base: "caer" }, { word: "del", base: "del" }, { word: "árbol", ref: "es-1748" }]
+      - target: "Caigo al suelo."
+        ipa: "ˈkajɡo al ˈswelo"
+        bases: [{ word: "Caigo", base: "caer" }, { word: "al", base: "al" }, { word: "suelo", ref: "es-0819" }]
+  - id: "es-2916"
+    target: "pegar"
+    ipa: "peˈɡaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pegar", base: "pegar" }]
+    examples:
+      - target: "No pegues al perro."
+        ipa: "no ˈpeɡes al ˈpero"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "pegues", base: "pegar" }, { word: "al", base: "al" }, { word: "perro", ref: "es-1061" }]
+      - target: "Pego el sello en la carta."
+        ipa: "ˈpeɡo el ˈseʝo en la ˈkaɾta"
+        bases: [{ word: "Pego", base: "pegar" }, { word: "el", base: "el" }, { word: "sello", ref: "es-2216" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "carta", ref: "es-1259" }]
+  - id: "es-2917"
+    target: "empujar"
+    ipa: "empuˈxaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "empujar", base: "empujar" }]
+    examples:
+      - target: "Empujo la puerta."
+        ipa: "emˈpuxo la ˈpweɾta"
+        bases: [{ word: "Empujo", base: "empujar" }, { word: "la", base: "la" }, { word: "puerta", ref: "es-0007" }]
+      - target: "Empujan el coche."
+        ipa: "emˈpuxan el ˈkotʃe"
+        bases: [{ word: "Empujan", base: "empujar" }, { word: "el", base: "el" }, { word: "coche", ref: "es-0678" }]
+  - id: "es-2918"
+    target: "observar"
+    ipa: "obseɾˈbaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "observar", base: "observar" }]
+    examples:
+      - target: "Observo las estrellas."
+        ipa: "obˈseɾbo las esˈtɾeʝas"
+        bases: [{ word: "Observo", base: "observar" }, { word: "las", base: "las" }, { word: "estrellas", ref: "es-1765" }]
+      - target: "Observan el bosque desde la colina."
+        ipa: "obˈseɾban el ˈboske ˈdesde la koˈlina"
+        bases: [{ word: "Observan", base: "observar" }, { word: "el", base: "el" }, { word: "bosque", ref: "es-1749" }, { word: "desde", base: "desde" }, { word: "la", base: "la" }, { word: "colina", ref: "es-1774" }]
+  - id: "es-2919"
+    target: "prometer"
+    ipa: "pɾomeˈteɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "prometer", base: "prometer" }]
+    examples:
+      - target: "Prometo volver mañana."
+        ipa: "pɾoˈmeto bolˈbeɾ maˈɲana"
+        bases: [{ word: "Prometo", base: "prometer" }, { word: "volver", ref: "es-0929" }, { word: "mañana", ref: "es-0841" }]
+      - target: "Te prometo la verdad."
+        ipa: "te pɾoˈmeto la beɾˈdad"
+        bases: [{ word: "Te", base: "te" }, { word: "prometo", base: "prometer" }, { word: "la", base: "la" }, { word: "verdad", ref: "es-2111" }]
+  - id: "es-2920"
+    target: "ocultar"
+    ipa: "okulˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "ocultar", base: "ocultar" }]
+    examples:
+      - target: "Oculto la verdad."
+        ipa: "oˈkulto la beɾˈdad"
+        bases: [{ word: "Oculto", base: "ocultar" }, { word: "la", base: "la" }, { word: "verdad", ref: "es-2111" }]
+      - target: "Ocultan el tesoro."
+        ipa: "oˈkultan el teˈsoɾo"
+        bases: [{ word: "Ocultan", base: "ocultar" }, { word: "el", base: "el" }, { word: "tesoro", ref: "es-2902" }]
+  - id: "es-2921"
+    target: "huir"
+    ipa: "wiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "huir", base: "huir" }]
+    examples:
+      - target: "Huyo del peligro."
+        ipa: "ˈuʝo del peˈliɡɾo"
+        bases: [{ word: "Huyo", base: "huir" }, { word: "del", base: "del" }, { word: "peligro", ref: "es-2817" }]
+      - target: "Huyen por el bosque."
+        ipa: "ˈuʝen poɾ el ˈboske"
+        bases: [{ word: "Huyen", base: "huir" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "bosque", ref: "es-1749" }]
+  - id: "es-2922"
+    target: "atravesar"
+    ipa: "atɾabeˈsaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "atravesar", base: "atravesar" }]
+    examples:
+      - target: "Atravieso el río."
+        ipa: "atɾaˈbjeso el ˈrio"
+        bases: [{ word: "Atravieso", base: "atravesar" }, { word: "el", base: "el" }, { word: "río", ref: "es-1751" }]
+      - target: "Atraviesan el campo."
+        ipa: "atɾaˈbjesan el ˈkampo"
+        bases: [{ word: "Atraviesan", base: "atravesar" }, { word: "el", base: "el" }, { word: "campo", ref: "es-1772" }]
+  - id: "es-2923"
+    target: "oscurecer"
+    ipa: "oskuɾeˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "oscurecer", base: "oscurecer" }]
+    examples:
+      - target: "Oscurece a las ocho."
+        ipa: "oskuˈɾeθe a las ˈotʃo"
+        bases: [{ word: "Oscurece", base: "oscurecer" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "ocho", ref: "es-0212" }]
+      - target: "Oscurece pronto en invierno."
+        ipa: "oskuˈɾeθe ˈpɾonto en inˈbjeɾno"
+        bases: [{ word: "Oscurece", base: "oscurecer" }, { word: "pronto", ref: "es-0337" }, { word: "en", base: "en" }, { word: "invierno", ref: "es-0990" }]
+  - id: "es-2924"
+    target: "amanecer"
+    ipa: "amaneˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "amanecer", base: "amanecer" }]
+    examples:
+      - target: "Amanece a las siete."
+        ipa: "amaˈneθe a las ˈsjete"
+        bases: [{ word: "Amanece", base: "amanecer" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "siete", ref: "es-0211" }]
+      - target: "Amanece sobre el mar."
+        ipa: "amaˈneθe ˈsobɾe el maɾ"
+        bases: [{ word: "Amanece", base: "amanecer" }, { word: "sobre", ref: "es-2243" }, { word: "el", base: "el" }, { word: "mar", ref: "es-1753" }]
+  - id: "es-2925"
+    target: "anochecer"
+    ipa: "anotʃeˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "anochecer", base: "anochecer" }]
+    examples:
+      - target: "Anochece a las nueve."
+        ipa: "anoˈtʃeθe a las ˈnwebe"
+        bases: [{ word: "Anochece", base: "anochecer" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "Anochece y todo queda en silencio."
+        ipa: "anoˈtʃeθe i ˈtodo ˈkeda en siˈlenθjo"
+        bases: [{ word: "Anochece", base: "anochecer" }, { word: "y", ref: "es-0048" }, { word: "todo", base: "todo" }, { word: "queda", ref: "es-1616" }, { word: "en", base: "en" }, { word: "silencio", ref: "es-2904" }]
+  - id: "es-2926"
+    target: "sonar"
+    ipa: "soˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sonar", base: "sonar" }]
+    examples:
+      - target: "Suena el timbre."
+        ipa: "ˈswena el ˈtimbɾe"
+        bases: [{ word: "Suena", base: "sonar" }, { word: "el", base: "el" }, { word: "timbre", base: "timbre" }]
+      - target: "Suena una canción en la radio."
+        ipa: "ˈswena ˈuna kanˈθjon en la ˈradjo"
+        bases: [{ word: "Suena", base: "sonar" }, { word: "una", base: "una" }, { word: "canción", ref: "es-1425" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "radio", ref: "es-2069" }]
