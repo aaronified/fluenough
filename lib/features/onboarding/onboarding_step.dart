@@ -161,8 +161,9 @@ class OnboardingAnswers extends ChangeNotifier {
       ];
     if (state.deckDownloads != null) {
       for (final c in _chosen.values) {
-        if (c.skills.anyLearn)
+        if (c.skills.anyLearn) {
           unawaited(state.downloadLanguage(c.language.code));
+        }
       }
     }
   }

@@ -141,7 +141,10 @@ class SpokenLanguage {
   String localeCodeFor(String text) =>
       isRtlText(text) && !_ownScriptIsRtl ? 'ur' : code;
 
-  bool get _ownScriptIsRtl => script == 'perso_arabic' || script == 'shahmukhi';
+  /// Whether the language's own script is written right to left. Arabic is
+  /// listed too, so a future Arabic-script own answer is drawn right to left.
+  bool get _ownScriptIsRtl =>
+      script == 'perso_arabic' || script == 'shahmukhi' || script == 'arabic';
 
   /// The one dialect the app teaches, by its proper name, such as
   /// "Majhi (ਮਾਝੀ), the Eastern Punjabi standard" (#907), or null where the
