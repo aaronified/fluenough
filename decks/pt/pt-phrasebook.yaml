@@ -1,0 +1,157 @@
+schema: 1
+id: "pt-phrasebook"
+part: "core"
+kind: "vocab"
+language: { code: "pt", iso639_3: "por", name: "Portuguese", script: "latin", tts: "pt-BR", icon: "Pt" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "pt-0011"
+    target: "olá"
+    ipa: "oˈla"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "olá", base: "olá" }]
+  - id: "pt-0012"
+    target: "bom dia"
+    ipa: "bõ ˈdʒiɐ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "bom", base: "bom" }, { word: "dia", base: "dia" }]
+  - id: "pt-0013"
+    target: "boa noite"
+    ipa: "ˈboɐ ˈnojtʃi"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "boa", base: "bom" }, { word: "noite", base: "noite" }]
+  - id: "pt-0014"
+    target: "tchau"
+    ipa: "ˈtʃaw"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "tchau", base: "tchau" }]
+  - id: "pt-0015"
+    target: "por favor"
+    ipa: "poɾ fɐˈvoɾ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "pt-0016"
+    target: "obrigado"
+    ipa: "obɾiˈɡadu"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "obrigado", base: "obrigado" }]
+  - id: "pt-0017"
+    target: "muito obrigado"
+    ipa: "ˈmuĩtu obɾiˈɡadu"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "muito", base: "muito" }, { word: "obrigado", base: "obrigado" }]
+  - id: "pt-0018"
+    target: "desculpe"
+    ipa: "dʒisˈkuwpi"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "desculpe", base: "desculpar" }]
+  - id: "pt-0019"
+    target: "com licença"
+    ipa: "kõ liˈsẽsɐ"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "com", base: "com" }, { word: "licença", base: "licença" }]
+  - id: "pt-0020"
+    target: "não entendo"
+    ipa: "nɐ̃w ẽˈtẽdu"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "não", base: "não" }, { word: "entendo", base: "entender" }]
+  - id: "pt-0021"
+    target: "não falo português"
+    ipa: "nɐ̃w ˈfalu poɾtuˈɡez"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "não", base: "não" }, { word: "falo", base: "falar" }, { word: "português", base: "português" }]
+  - id: "pt-0022"
+    target: "fale mais devagar, por favor"
+    ipa: "ˈfali majs devaˈɡaɾ poɾ fɐˈvoɾ"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "fale", base: "falar" }, { word: "mais", base: "mais" }, { word: "devagar", base: "devagar" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "pt-0023"
+    target: "quanto custa?"
+    ipa: "ˈkwɐ̃tu ˈkuʃtɐ"
+    pos: "phrase"
+    tags: ["shopping"]
+    phrasebook: true
+    bases: [{ word: "quanto", base: "quanto" }, { word: "custa", base: "custar" }]
+  - id: "pt-0024"
+    target: "onde fica o banheiro?"
+    ipa: "ˈõdʒi ˈfikɐ u bɐˈɲejɾu"
+    pos: "phrase"
+    tags: ["directions"]
+    phrasebook: true
+    bases: [{ word: "onde", base: "onde" }, { word: "fica", base: "ficar" }, { word: "o", base: "o" }, { word: "banheiro", base: "banheiro" }]
+  - id: "pt-0025"
+    target: "socorro!"
+    ipa: "soˈkoxu"
+    pos: "phrase"
+    tags: ["help"]
+    phrasebook: true
+    bases: [{ word: "socorro", base: "socorro" }]
+  - id: "pt-0026"
+    target: "qual é o seu nome?"
+    ipa: "ˈkwaw ɛ u ˈsew ˈnomi"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "qual", base: "qual" }, { word: "é", base: "ser" }, { word: "o", base: "o" }, { word: "seu", base: "seu" }, { word: "nome", base: "nome" }]
+  - id: "pt-0027"
+    target: "meu nome é Ana"
+    ipa: "ˈmew ˈnomi ɛ ˈɐnɐ"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "meu", base: "meu" }, { word: "nome", base: "nome" }, { word: "é", base: "ser" }, { word: "Ana", base: "Ana" }]
+  - id: "pt-0028"
+    target: "prazer"
+    ipa: "pɾaˈzeɾ"
+    pos: "phrase"
+    tags: ["introductions"]
+    phrasebook: true
+    bases: [{ word: "prazer", base: "prazer" }]
+  - id: "pt-0029"
+    target: "não sei"
+    ipa: "nɐ̃w ˈsɐj"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "não", base: "não" }, { word: "sei", base: "saber" }]
+  - id: "pt-0030"
+    target: "pode repetir?"
+    ipa: "ˈpɔdʒi ʁepeˈtʃiɾ"
+    pos: "phrase"
+    tags: ["understanding"]
+    phrasebook: true
+    bases: [{ word: "pode", base: "poder" }, { word: "repetir", base: "repetir" }]
+  - id: "pt-0031"
+    target: "tudo bem?"
+    ipa: "ˈtudu ˈbẽj"
+    pos: "phrase"
+    tags: ["courtesy"]
+    phrasebook: true
+    bases: [{ word: "tudo", base: "tudo" }, { word: "bem", base: "bem" }]
