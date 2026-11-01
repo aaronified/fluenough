@@ -1,0 +1,207 @@
+schema: 1
+id: "kn-travel"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "travel"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1383"
+    target: "ಪ್ರವಾಸ"
+    reading: "pravāsa"
+    ipa: "praʋaːsa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರವಾಸ ಚೆನ್ನಾಗಿತ್ತು.", reading: "pravāsa cennāgittu.", ipa: "praʋaːsa tʃennaːɡit̪t̪u", bases: [{ word: "ಚೆನ್ನಾಗಿತ್ತು", ref: "kn-0664" }] }
+      - { target: "ಈ ವರ್ಷ ಪ್ರವಾಸ ಹೋಗುತ್ತೇವೆ.", reading: "ī varṣa pravāsa hōguttēve.", ipa: "iː ʋarʂa praʋaːsa hoːɡut̪t̪eːʋe", bases: [{ word: "ಹೋಗುತ್ತೇವೆ", ref: "kn-0631" }] }
+  - id: "kn-1384"
+    target: "ಪ್ರವಾಸಿ"
+    reading: "pravāsi"
+    ipa: "praʋaːsi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರವಾಸಿ ಬಂದರು.", reading: "pravāsi bandaru.", ipa: "praʋaːsi band̪aru" }
+      - { target: "ಪ್ರವಾಸಿಗಳು ನದಿಗೆ ಹೋದರು.", reading: "pravāsigaḷu nadige hōdaru.", ipa: "praʋaːsiɡaɭu nad̪iɡe hoːd̪aru", bases: [{ word: "ಪ್ರವಾಸಿಗಳು", base: "ಪ್ರವಾಸಿ", reading: "pravāsi" }, { word: "ನದಿಗೆ", ref: "kn-0835" }, { word: "ಹೋದರು", ref: "kn-0631" }] }
+  - id: "kn-1385"
+    target: "ವಸತಿಗೃಹ"
+    reading: "vasatigruha"
+    ipa: "ʋasat̪iɡruha"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಸತಿಗೃಹ ಎಲ್ಲಿ?", reading: "vasatigruha elli?", ipa: "ʋasat̪iɡruha elli" }
+      - { target: "ವಸತಿಗೃಹ ಹತ್ತಿರ ಇದೆ.", reading: "vasatigruha hattira ide.", ipa: "ʋasat̪iɡruha hat̪t̪ira id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1386"
+    target: "ಕೊಠಡಿ"
+    reading: "koṭhaḍi"
+    ipa: "koʈʰaɖi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೊಠಡಿ ಬೇಕು.", reading: "koṭhaḍi bēku.", ipa: "koʈʰaɖi beːku" }
+      - { target: "ಕೊಠಡಿ ಸ್ವಚ್ಛ ಇದೆ.", reading: "koṭhaḍi svaccha ide.", ipa: "koʈʰaɖi sʋatʃtʃʰa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1387"
+    target: "ರಿಸೆಪ್ಷನ್"
+    reading: "risepṣan"
+    ipa: "risepʂan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಿಸೆಪ್ಷನ್ ಎಲ್ಲಿ?", reading: "risepṣan elli?", ipa: "risepʂan elli" }
+      - { target: "ರಿಸೆಪ್ಷನ್ ಹತ್ತಿರ ಇದೆ.", reading: "risepṣan hattira ide.", ipa: "risepʂan hat̪t̪ira id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1388"
+    target: "ಬುಕಿಂಗ್"
+    reading: "bukiṅg"
+    ipa: "bukiŋɡ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬುಕಿಂಗ್ ಆಯಿತು.", reading: "bukiṅg āyitu.", ipa: "bukiŋɡ aːjit̪u" }
+      - { target: "ಬುಕಿಂಗ್ ಬೇಕು.", reading: "bukiṅg bēku.", ipa: "bukiŋɡ beːku" }
+  - id: "kn-1389"
+    target: "ಕಾಯ್ದಿರಿಸು"
+    reading: "kāydirisu"
+    ipa: "kaːjd̪irisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೊಠಡಿ ಕಾಯ್ದಿರಿಸು.", reading: "koṭhaḍi kāydirisu.", ipa: "koʈʰaɖi kaːjd̪irisu" }
+      - { target: "ನಾನು ಕೊಠಡಿ ಕಾಯ್ದಿರಿಸಿದೆ.", reading: "nānu koṭhaḍi kāydiriside.", ipa: "naːnu koʈʰaɖi kaːjd̪irisid̪e", bases: [{ word: "ಕಾಯ್ದಿರಿಸಿದೆ", base: "ಕಾಯ್ದಿರಿಸು", reading: "kāydirisu" }] }
+  - id: "kn-1390"
+    target: "ಪಾಸ್ಪೋರ್ಟ್"
+    reading: "pāspōrṭ"
+    ipa: "paːspoːrʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪಾಸ್ಪೋರ್ಟ್ ತೆಗೆದುಕೊ.", reading: "pāspōrṭ tegeduko.", ipa: "paːspoːrʈ t̪eɡed̪uko" }
+      - { target: "ಪಾಸ್ಪೋರ್ಟ್ ಬೇಕು.", reading: "pāspōrṭ bēku.", ipa: "paːspoːrʈ beːku" }
+  - id: "kn-1391"
+    target: "ವೀಸಾ"
+    reading: "vīsā"
+    ipa: "ʋiːsaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೀಸಾ ಇದೆಯೇ?", reading: "vīsā ideyē?", ipa: "ʋiːsaː id̪ejeː", bases: [{ word: "ಇದೆಯೇ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ವೀಸಾ ಬೇಕು.", reading: "vīsā bēku.", ipa: "ʋiːsaː beːku" }
+  - id: "kn-1392"
+    target: "ಲಗೇಜ್"
+    reading: "lagēj"
+    ipa: "laɡeːdʒ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಲಗೇಜ್ ತೆಗೆದುಕೊ.", reading: "lagēj tegeduko.", ipa: "laɡeːdʒ t̪eɡed̪uko" }
+      - { target: "ಲಗೇಜ್ ಭಾರ ಇದೆ.", reading: "lagēj bhāra ide.", ipa: "laɡeːdʒ bʱaːra id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1393"
+    target: "ಸೂಟ್ಕೇಸ್"
+    reading: "sūṭkēs"
+    ipa: "suːʈkeːs"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸೂಟ್ಕೇಸ್ ಎಲ್ಲಿ?", reading: "sūṭkēs elli?", ipa: "suːʈkeːs elli" }
+      - { target: "ಸೂಟ್ಕೇಸ್ ಚಿಕ್ಕದು.", reading: "sūṭkēs cikkadu.", ipa: "suːʈkeːs tʃikkad̪u", bases: [{ word: "ಚಿಕ್ಕದು", ref: "kn-0403" }] }
+  - id: "kn-1394"
+    target: "ಸ್ಥಳ"
+    reading: "sthaḷa"
+    ipa: "st̪ʰaɭa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈ ಸ್ಥಳ ಸುಂದರ.", reading: "ī sthaḷa sundara.", ipa: "iː st̪ʰaɭa sund̪ara" }
+      - { target: "ಸ್ಥಳಕ್ಕೆ ಹೋಗು.", reading: "sthaḷakke hōgu.", ipa: "st̪ʰaɭakke hoːɡu", bases: [{ word: "ಸ್ಥಳಕ್ಕೆ", base: "ಸ್ಥಳ", reading: "sthaḷa" }] }
+  - id: "kn-1395"
+    target: "ಸ್ಮಾರಕ"
+    reading: "smāraka"
+    ipa: "smaːraka"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸ್ಮಾರಕ ನೋಡು.", reading: "smāraka nōḍu.", ipa: "smaːraka noːɖu" }
+      - { target: "ಸ್ಮಾರಕ ಹಳೆ.", reading: "smāraka haḷe.", ipa: "smaːraka haɭe" }
+  - ref: "kn-0833"
+  - id: "kn-1396"
+    target: "ಬೀಚ್"
+    reading: "bīc"
+    ipa: "biːtʃ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೀಚ್ ಸುಂದರ.", reading: "bīc sundara.", ipa: "biːtʃ sund̪ara" }
+      - { target: "ಬೀಚಿಗೆ ಹೋಗೋಣ.", reading: "bīcige hōgōṇa.", ipa: "biːtʃiɡe hoːɡoːɳa", bases: [{ word: "ಬೀಚಿಗೆ", base: "ಬೀಚ್", reading: "bīc" }] }
+  - id: "kn-1397"
+    target: "ಭೇಟಿ"
+    reading: "bhēṭi"
+    ipa: "bʱeːʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಾಳೆ ಭೇಟಿ ಇದೆ.", reading: "nāḷe bhēṭi ide.", ipa: "naːɭe bʱeːʈi id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಸ್ಮಾರಕದ ಭೇಟಿ ಒಳ್ಳೆಯದು.", reading: "smārakada bhēṭi oḷḷeyadu.", ipa: "smaːrakad̪a bʱeːʈi oɭɭejad̪u", bases: [{ word: "ಸ್ಮಾರಕದ", base: "ಸ್ಮಾರಕ", reading: "smāraka" }] }
+  - id: "kn-1398"
+    target: "ಪ್ರೇಕ್ಷಣೀಯ"
+    reading: "prēkṣaṇīya"
+    ipa: "preːkʂaɳiːja"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರೇಕ್ಷಣೀಯ ಸ್ಥಳ.", reading: "prēkṣaṇīya sthaḷa.", ipa: "preːkʂaɳiːja st̪ʰaɭa" }
+      - { target: "ಈ ಊರು ಪ್ರೇಕ್ಷಣೀಯ.", reading: "ī ūru prēkṣaṇīya.", ipa: "iː uːru preːkʂaɳiːja" }
+  - ref: "kn-0204"
+  - id: "kn-1399"
+    target: "ಚೆಕ್"
+    reading: "cek"
+    ipa: "tʃek"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚೆಕ್ ಕೊಡಿ.", reading: "cek koḍi.", ipa: "tʃek koɖi" }
+      - { target: "ಚೆಕ್ ನೋಡು.", reading: "cek nōḍu.", ipa: "tʃek noːɖu" }
+  - ref: "kn-0880"
+  - id: "kn-1400"
+    target: "ಸುರಕ್ಷಿತ"
+    reading: "surakṣita"
+    ipa: "surakʂit̪a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಸತಿಗೃಹ ಸುರಕ್ಷಿತ.", reading: "vasatigruha surakṣita.", ipa: "ʋasat̪iɡruha surakʂit̪a" }
+      - { target: "ಈ ಸ್ಥಳ ಸುರಕ್ಷಿತ ಅಲ್ಲ.", reading: "ī sthaḷa surakṣita alla.", ipa: "iː st̪ʰaɭa surakʂit̪a alla" }
