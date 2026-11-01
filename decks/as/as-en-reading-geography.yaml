@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-geography"
+name: "Assamese reading: geography: the world, maps and places"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-where-in-india"
+    title: "Where in India"
+    theme: "geography"
+    sentences:
+      - text: "অসম ভাৰতৰ পূবত।"
+        reading: "ôxôm bhārôtôr pubôt."
+      - text: "গৌহাটী অসমত।"
+        reading: "gôuhāti ôxômôt."
+      - text: "বহুত নদী আছে।"
+        reading: "bohut nodi āse."
+      - text: "পাহাৰ পশ্চিমত।"
+        reading: "pāhār poscimôt."
+    questions:
+      - id: "as-3155"
+        prompt: { en: "Assam is in the east of India." }
+        answer: true
+      - id: "as-3156"
+        prompt: { en: "Where is Guwahati?" }
+        options:
+          - { en: "In Assam" }
+          - { en: "In Bengal" }
+          - { en: "In Bhutan" }
+        answer: 1
+      - id: "as-3157"
+        prompt: { en: "What is there in many places?" }
+        options:
+          - { en: "Rivers" }
+          - { en: "Deserts" }
+          - { en: "Seas" }
+        answer: 1
+  - id: "as-assamese-region-map"
+    title: "A map caption: where Assamese is spoken"
+    theme: "geography"
+    sentences:
+      - text: "অসমীয়া ভাষা অসমত কথা হয়।"
+        reading: "ôxômiyā bhāxā ôxômôt kôthā hôy."
+      - text: "এইটো অঞ্চল ব্ৰহ্মপুত্ৰৰ পাৰত।"
+        reading: "eitu ônjôl brôhmôputrôr pārôt."
+      - text: "বহুত গাঁও আছে।"
+        reading: "bohut gām̐o āse."
+      - text: "মানচিত্ৰত সীমা দেখা।"
+        reading: "mānôcitrôt xīmā dekhā."
+    questions:
+      - id: "as-3158"
+        prompt: { en: "Assamese is spoken in Assam." }
+        answer: true
+      - id: "as-3159"
+        prompt: { en: "What is near the region?" }
+        options:
+          - { en: "The Brahmaputra" }
+          - { en: "The desert" }
+          - { en: "The ocean" }
+        answer: 1
+      - id: "as-3160"
+        prompt: { en: "What should you look at on the map?" }
+        options:
+          - { en: "The colour" }
+          - { en: "The border" }
+          - { en: "The sun" }
+        answer: 2

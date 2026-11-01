@@ -416,12 +416,15 @@ units:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
   - decks: ["as-reading-workplace"]
     words: 0
-  - planned: { id: "as-geography", theme: "geography", words: 45 }
+  - decks: ["as-geography", "as-geography-sentences", "*"]
+    words: 21
     listening_passages:
       - { id: "where-in-india", text: { "en": "Naming states and cities of India" } }
     reading_passages:
       - { id: "assamese-region-map", text: { "en": "A map caption: the region where Assamese is spoken" } }
     milestone: "A2"
+  - decks: ["as-reading-geography"]
+    words: 0
   # B1: the themes and grammar of the CEFR's B1.
   - decks: ["as-registers"]
     words: 13

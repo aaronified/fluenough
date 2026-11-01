@@ -1,0 +1,84 @@
+schema: 1
+id: "as-geography-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3147"
+    target: "মানচিত্ৰত অসম পূবত।"
+    reading: "mānôcitrôt ôxôm pubôt."
+    ipa: "manositɹɔt ɔsɔm pubɔt"
+    pos: "phrase"
+    bases:
+      - { word: "মানচিত্ৰত", ref: "as-3130" }
+      - { word: "পূবত", ref: "as-3136" }
+    confusables:
+      - { id: "c1", word: "দক্ষিণ", reading: "dôkkhin", kind: "word" }
+      - { id: "c2", word: "পশ্চিম", reading: "poscim", kind: "word" }
+  - id: "as-3148"
+    target: "পূবত ৰ'দ উঠে।"
+    reading: "pubôt rod uthe."
+    ipa: "pubɔt ɹod utʰe"
+    pos: "phrase"
+    bases:
+      - { word: "পূবত", ref: "as-3136" }
+      - { word: "উঠে", ref: "as-0370" }
+    confusables:
+      - { id: "c1", word: "পশ্চিম", reading: "poscim", kind: "word" }
+      - { id: "c2", word: "পাহাৰ", reading: "pāhār", kind: "word" }
+  - id: "as-3149"
+    target: "সাগৰ দক্ষিণত।"
+    reading: "sāgôr dôkkhinôt."
+    ipa: "saɡɔɹ dokkʰinɔt"
+    pos: "phrase"
+    bases:
+      - { word: "দক্ষিণত", ref: "as-3135" }
+    confusables:
+      - { id: "c1", word: "উপকূল", reading: "upôkul", kind: "word" }
+      - { id: "c2", word: "মহাসাগৰ", reading: "mahāsāgôr", kind: "word" }
+  - id: "as-3150"
+    target: "মৰুভূমি গৰম।"
+    reading: "môrubhumi gôrôm."
+    ipa: "moɹubʱumi ɡɔɹɔm"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "শীতল", reading: "xītôl", kind: "word" }
+      - { id: "c2", word: "বৰষুণীয়া", reading: "bôrôxuniyā", kind: "word" }
+  - id: "as-3151"
+    target: "এইটো অঞ্চল ডাঙৰ।"
+    reading: "eitu ônjôl dāṅôr."
+    ipa: "eitʊ ɔnsɔl daŋɔɹ"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সৰু", reading: "xôru", kind: "word" }
+      - { id: "c2", word: "প্ৰদেশ", reading: "prôdeś", kind: "word" }
+  - id: "as-3152"
+    target: "ভাৰতৰ সীমা দীঘল।"
+    reading: "bhārôtôr xīmā dighôl."
+    ipa: "bʱaɹɔtɔɹ sima diɡʱɔl"
+    pos: "phrase"
+    bases:
+      - { word: "ভাৰতৰ", ref: "as-3142" }
+    confusables:
+      - { id: "c1", word: "দূৰত্ব", reading: "durôtvô", kind: "word" }
+      - { id: "c2", word: "গভীৰতা", reading: "gôbhīrôtā", kind: "word" }
+  - id: "as-3153"
+    target: "জলবায়ু ভাল।"
+    reading: "zôlbāyu bhāl."
+    ipa: "zɔlɔbaju bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বতৰ", reading: "botôr", kind: "word" }
+      - { id: "c2", word: "ভূমিকম্প", reading: "bhumikôm̐p", kind: "word" }
+  - id: "as-3154"
+    target: "গোলকত পৃথিৱী।"
+    reading: "gôlôkôt pôrithiwī."
+    ipa: "ɡʊlɔkɔt pritʰiwi"
+    pos: "phrase"
+    bases:
+      - { word: "গোলকত", ref: "as-3141" }
+    confusables:
+      - { id: "c1", word: "বিশ্ব", reading: "bixwô", kind: "word" }
+      - { id: "c2", word: "মানচিত্ৰ", reading: "mānôcitrô", kind: "word" }
