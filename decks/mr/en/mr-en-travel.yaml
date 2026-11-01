@@ -1,0 +1,136 @@
+schema: 1
+id: "mr-en-travel"
+kind: "layer"
+core: "mr-travel"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel"
+description: "Going on holiday: tourists and guides, forts and monuments, the camp and the hostel, and the booking and fares for a trip. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1384":
+    native: "tourism"
+    notes:
+      "n1": "{1} is tourism, travel for pleasure and to see places."
+    examples:
+      "पर्यटनामुळे गावाला पैसे मिळतात.": { native: "Tourism brings money to the village.", bases: { "मिळतात": "to get" } }
+      "पर्यटन वाढलं आहे.": { native: "Tourism has grown.", bases: { "आहे": "to be" } }
+  "mr-1385":
+    native: "tourist"
+    notes:
+      "n1": "{1} is a tourist, a person who travels for pleasure. The feminine form is पर्यटिका (paryaṭikā)."
+    examples:
+      "पर्यटक किल्ला पाहायला आले.": "The tourists came to see the fort."
+      "पर्यटकांची गर्दी वाढली.": { native: "The crowd of tourists grew.", bases: { "गर्दी": "crowd" } }
+  "mr-1386":
+    native: "monument"
+    notes:
+      "n1": "{1} is a monument built to remember a person or event."
+    examples:
+      "हे स्मारक खूप जुनं आहे.": { native: "This monument is very old.", bases: { "आहे": "to be" } }
+      "स्मारकाला भेट द्या.": "Visit the monument."
+  "mr-1387":
+    native: "place, spot"
+    notes:
+      "n1": "{1} is a place or a spot."
+    examples:
+      "हे ठिकाण सुंदर आहे.": { native: "This place is beautiful.", bases: { "आहे": "to be" } }
+      "कुठल्या ठिकाणी जायचं?": "Which place should we go to?"
+  "mr-1388":
+    native: "attraction"
+    notes:
+      "n1": "{1} is an attraction, a thing that draws visitors."
+    examples:
+      "शहराचं मुख्य आकर्षण मंदिर आहे.": { native: "The main attraction of the city is the temple.", bases: { "शहराचं": "of the city", "मुख्य": "main", "आहे": "to be" } }
+      "येथे अनेक आकर्षणं आहेत.": { native: "There are many attractions here.", bases: { "येथे": "here", "आहेत": "to be" } }
+  "mr-1389":
+    native: "tent"
+    notes:
+      "n1": "{1} is a tent for camping."
+    examples:
+      "आम्ही तंबू लावला.": { native: "We put up a tent.", bases: { "लावला": "to put up" } }
+      "तंबूत रात्र काढली.": "We spent the night in the tent."
+  "mr-1390":
+    native: "guide"
+    notes:
+      "n1": "{1} is a guide who shows the way and explains places, a loanword from English."
+    examples:
+      "गाईड सगळं सांगत होता.": { native: "The guide was telling everything.", bases: { "सगळं": "everything", "होता": "to be" } }
+      "चांगला गाईड मिळाला.": { native: "I got a good guide.", bases: { "मिळाला": "to get" } }
+  "mr-1391":
+    native: "suitcase"
+    notes:
+      "n1": "{1} is a suitcase for clothes."
+    examples:
+      "सूटकेस जड आहे.": { native: "The suitcase is heavy.", bases: { "आहे": "to be" } }
+      "सूटकेस उघडा.": "Open the suitcase."
+  "mr-1392":
+    native: "hostel"
+    notes:
+      "n1": "{1} is a hostel, cheap lodging for travellers, a loanword from English."
+    examples:
+      "हॉस्टेल स्वस्त आहे.": { native: "The hostel is cheap.", bases: { "आहे": "to be" } }
+      "आम्ही हॉस्टेलमध्ये राहिलो.": "We stayed in a hostel."
+  "mr-1393":
+    native: "booking"
+    notes:
+      "n1": "{1} is a booking, a reservation made in advance, a loanword from English."
+    examples:
+      "बुकिंग झालं का?": { native: "Is the booking done?", bases: { "झालं": "to become" } }
+      "बुकिंग रद्द करा.": { native: "Cancel the booking.", bases: { "रद्द": "cancel" } }
+  "mr-1394":
+    native: "fare, rent"
+    notes:
+      "n1": "{1} is a fare for travel or the rent for a place."
+    examples:
+      "रिक्षाचं भाडं किती?": { native: "What is the rickshaw fare?", bases: { "किती": "how much" } }
+      "खोलीचं भाडं दर महिन्याला द्यायचं.": "The room rent is paid every month."
+  "mr-1395":
+    native: "abroad, foreign country"
+    notes:
+      "n1": "{1} is a foreign country. The word परदेश (paradeś) means the same."
+    examples:
+      "तो विदेशात गेला.": "He went abroad."
+      "विदेशी पर्यटक आले.": { native: "Foreign tourists came.", bases: { "विदेशी": "foreign" } }
+  "mr-1396":
+    native: "visit"
+    notes:
+      "n1": "{1} is a visit to a place or a person, or a gift. The phrase भेट देणे (bhet deṇe) means to visit."
+    examples:
+      "आम्ही गडाला भेट दिली.": { native: "We visited the fort.", bases: { "गडाला": "to the fort" } }
+      "तुमची भेट चांगली झाली.": { native: "Your visit was good.", bases: { "झाली": "to become" } }
+  "mr-1397":
+    native: "luggage, things"
+    notes:
+      "n1": "{1} is luggage or things carried on a journey."
+    examples:
+      "सामान गाडीत ठेवा.": "Keep the luggage in the vehicle."
+      "माझं सामान हरवलं.": "My luggage was lost."
+  "mr-1398":
+    native: "to go for a walk, to go sightseeing"
+    notes:
+      "n1": "{1} is going out for a walk or for sightseeing."
+    examples:
+      "सुट्टीत आम्ही फिरायला गेलो.": "In the holidays we went sightseeing."
+      "चला, फिरायला जाऊ.": "Come on, let's go out."
+  "mr-1399":
+    native: "to leave (a train, a bus)"
+    notes:
+      "n1": "{1} is leaving, used for a train or bus departing."
+    examples:
+      "गाडी वेळेवर सुटली.": "The train left on time."
+      "शेवटची बस सुटली.": { native: "The last bus left.", bases: { "शेवटची": "last" } }
+  "mr-1400":
+    native: "acquaintance, introduction"
+    notes:
+      "n1": "{1} is an acquaintance, or a way of knowing a place."
+    examples:
+      "या शहराची चांगली ओळख आहे.": { native: "I know this city well.", bases: { "शहराची": "of the city", "आहे": "to be" } }
+      "त्याच्याशी ओळख झाली.": { native: "I got to know him.", bases: { "झाली": "to become" } }
+  "mr-1401":
+    native: "local, native (of a country)"
+    notes:
+      "n1": "{1} describes something local or native to the country."
+    examples:
+      "देशी पदार्थ खायला आवडतात.": { native: "They like to eat local dishes.", bases: { "पदार्थ": "dishes" } }
+      "देशी भाषा शिका.": "Learn the local language."

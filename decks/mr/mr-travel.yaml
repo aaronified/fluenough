@@ -1,0 +1,206 @@
+schema: 1
+id: "mr-travel"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "travel"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1384"
+    target: "पर्यटन"
+    reading: "paryaṭan"
+    ipa: "pərjəʈən"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पर्यटन", reading: "paryaṭan" }] }
+    examples:
+      - { target: "पर्यटनामुळे गावाला पैसे मिळतात.", reading: "paryaṭnāmuḷe gāvālā paise miḷtāt.", ipa: "pərjəʈnamuɭe ɡaʋala pəise miɭt̪at̪", bases: [{ word: "पर्यटनामुळे", ref: "mr-1384" }, { word: "गावाला", ref: "mr-0209" }, { word: "मिळतात", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "पर्यटन वाढलं आहे.", reading: "paryaṭan vāḍhlam̐ āhe.", ipa: "pərjəʈən ʋaɖʱlə̃ aɦe", bases: [{ word: "वाढलं", ref: "mr-1027" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1385"
+    target: "पर्यटक"
+    reading: "paryaṭak"
+    ipa: "pərjəʈək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पर्यटक", reading: "paryaṭak" }] }
+    examples:
+      - { target: "पर्यटक किल्ला पाहायला आले.", reading: "paryaṭak killā pāhāylā āle.", ipa: "pərjəʈək killa paɦajla ale", bases: [{ word: "किल्ला", ref: "mr-0988" }, { word: "पाहायला", ref: "mr-0714" }, { word: "आले", ref: "mr-0711" }] }
+      - { target: "पर्यटकांची गर्दी वाढली.", reading: "paryaṭkāñci gardi vāḍhli.", ipa: "pərjəʈkaɲtʃi ɡərd̪i ʋaɖʱli", bases: [{ word: "पर्यटकांची", ref: "mr-1385" }, { word: "गर्दी", base: "गर्दी", reading: "gardi" }, { word: "वाढली", ref: "mr-1027" }] }
+  - id: "mr-1386"
+    target: "स्मारक"
+    reading: "smārak"
+    ipa: "smarək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "स्मारक", reading: "smārak" }] }
+    examples:
+      - { target: "हे स्मारक खूप जुनं आहे.", reading: "he smārak khup junam̐ āhe.", ipa: "ɦe smarək kʰup dzunə̃ aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "जुनं", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "स्मारकाला भेट द्या.", reading: "smārkālā bheṭ dyā.", ipa: "smarkala bʱeʈ d̪ja", bases: [{ word: "स्मारकाला", ref: "mr-1386" }, { word: "भेट", ref: "mr-1396" }, { word: "द्या", ref: "mr-0721" }] }
+  - id: "mr-1387"
+    target: "ठिकाण"
+    reading: "ṭhikāṇ"
+    ipa: "ʈʰikaɳ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ठिकाण", reading: "ṭhikāṇ" }] }
+    examples:
+      - { target: "हे ठिकाण सुंदर आहे.", reading: "he ṭhikāṇ sundar āhe.", ipa: "ɦe ʈʰikaɳ sund̪ər aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कुठल्या ठिकाणी जायचं?", reading: "kuṭhalyā ṭhikāṇi jāycam̐?", ipa: "kuʈʰəlja ʈʰikaɳi dzajtsə̃", bases: [{ word: "जायचं", ref: "mr-0710" }] }
+  - id: "mr-1388"
+    target: "आकर्षण"
+    reading: "ākarṣaṇ"
+    ipa: "akərʂəɳ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "आकर्षण", reading: "ākarṣaṇ" }] }
+    examples:
+      - { target: "शहराचं मुख्य आकर्षण मंदिर आहे.", reading: "śahrācam̐ mukhy ākarṣaṇ mandir āhe.", ipa: "ʃəɦratsə̃ mukʰj akərʂəɳ mənd̪ir aɦe", bases: [{ word: "शहराचं", base: "शहर", reading: "śahar" }, { word: "मुख्य", base: "मुख्य", reading: "mukhy" }, { word: "मंदिर", ref: "mr-0961" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "येथे अनेक आकर्षणं आहेत.", reading: "yethe anek ākarṣaṇam̐ āhet.", ipa: "jet̪ʰe ənek akərʂəɳə̃ aɦet̪", bases: [{ word: "येथे", base: "येथे", reading: "yethe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1389"
+    target: "तंबू"
+    reading: "tambu"
+    ipa: "t̪əmbu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "तंबू", reading: "tambu" }] }
+    examples:
+      - { target: "आम्ही तंबू लावला.", reading: "āmhi tambu lāvlā.", ipa: "amɦi t̪əmbu laʋla", bases: [{ word: "लावला", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "तंबूत रात्र काढली.", reading: "tambut rātr kāḍhli.", ipa: "t̪əmbut̪ rat̪r kaɖʱli", bases: [{ word: "तंबूत", ref: "mr-1389" }, { word: "रात्र", ref: "mr-0480" }, { word: "काढली", ref: "mr-0796" }] }
+  - id: "mr-1390"
+    target: "गाईड"
+    reading: "gāiḍ"
+    ipa: "ɡaiɖ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गाईड", reading: "gāiḍ" }] }
+    examples:
+      - { target: "गाईड सगळं सांगत होता.", reading: "gāiḍ sagḷam̐ sāṅgat hotā.", ipa: "ɡaiɖ səɡɭə̃ saŋɡət̪ ɦot̪a", bases: [{ word: "सगळं", base: "सगळं", reading: "sagḷam̐" }, { word: "सांगत", ref: "mr-0720" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
+      - { target: "चांगला गाईड मिळाला.", reading: "cāṅgalā gāiḍ miḷālā.", ipa: "tsaŋɡəla ɡaiɖ miɭala", bases: [{ word: "चांगला", ref: "mr-0759" }, { word: "मिळाला", base: "मिळणे", reading: "miḷṇe" }] }
+  - id: "mr-1391"
+    target: "सूटकेस"
+    reading: "suṭkes"
+    ipa: "suʈkes"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सूटकेस", reading: "suṭkes" }] }
+    examples:
+      - { target: "सूटकेस जड आहे.", reading: "suṭkes jaḍ āhe.", ipa: "suʈkes dzəɖ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सूटकेस उघडा.", reading: "suṭkes ughḍā.", ipa: "suʈkes uɡʱɖa", bases: [{ word: "उघडा", ref: "mr-0724" }] }
+  - id: "mr-1392"
+    target: "हॉस्टेल"
+    reading: "hôsṭel"
+    ipa: "ɦɔsʈel"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "हॉस्टेल", reading: "hôsṭel" }] }
+    examples:
+      - { target: "हॉस्टेल स्वस्त आहे.", reading: "hôsṭel svast āhe.", ipa: "ɦɔsʈel sʋəst̪ aɦe", bases: [{ word: "स्वस्त", ref: "mr-0380" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "आम्ही हॉस्टेलमध्ये राहिलो.", reading: "āmhi hôsṭelmadhye rāhilo.", ipa: "amɦi ɦɔsʈelməd̪ʱje raɦilo", bases: [{ word: "हॉस्टेलमध्ये", ref: "mr-1392" }, { word: "राहिलो", ref: "mr-1182" }] }
+  - id: "mr-1393"
+    target: "बुकिंग"
+    reading: "bukiṅg"
+    ipa: "bukiŋɡ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बुकिंग", reading: "bukiṅg" }] }
+    examples:
+      - { target: "बुकिंग झालं का?", reading: "bukiṅg jhālam̐ kā?", ipa: "bukiŋɡ dzʱalə̃ ka", bases: [{ word: "झालं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "बुकिंग रद्द करा.", reading: "bukiṅg radd karā.", ipa: "bukiŋɡ rəd̪d̪ kəra", bases: [{ word: "रद्द", base: "रद्द", reading: "radd" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1394"
+    target: "भाडं"
+    reading: "bhāḍam̐"
+    ipa: "bʱaɖə̃"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "भाडं", reading: "bhāḍam̐" }] }
+    examples:
+      - { target: "रिक्षाचं भाडं किती?", reading: "rikṣācam̐ bhāḍam̐ kiti?", ipa: "rikʂatsə̃ bʱaɖə̃ kit̪i", bases: [{ word: "रिक्षाचं", ref: "mr-0420" }, { word: "किती", base: "किती", reading: "kiti" }] }
+      - { target: "खोलीचं भाडं दर महिन्याला द्यायचं.", reading: "kholicam̐ bhāḍam̐ dar mahinyālā dyāycam̐.", ipa: "kʰolitsə̃ bʱaɖə̃ d̪ər məɦinjala d̪jajtsə̃", bases: [{ word: "खोलीचं", ref: "mr-0459" }, { word: "महिन्याला", ref: "mr-0514" }, { word: "द्यायचं", ref: "mr-0721" }] }
+  - id: "mr-1395"
+    target: "विदेश"
+    reading: "videś"
+    ipa: "ʋid̪eʃ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विदेश", reading: "videś" }] }
+    examples:
+      - { target: "तो विदेशात गेला.", reading: "to videśāt gelā.", ipa: "t̪o ʋid̪eʃat̪ ɡela", bases: [{ word: "विदेशात", ref: "mr-1395" }, { word: "गेला", ref: "mr-0710" }] }
+      - { target: "विदेशी पर्यटक आले.", reading: "videśi paryaṭak āle.", ipa: "ʋid̪eʃi pərjəʈək ale", bases: [{ word: "विदेशी", base: "विदेशी", reading: "videśi" }, { word: "पर्यटक", ref: "mr-1385" }, { word: "आले", ref: "mr-0711" }] }
+  - id: "mr-1396"
+    target: "भेट"
+    reading: "bheṭ"
+    ipa: "bʱeʈ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "भेट", reading: "bheṭ" }] }
+    examples:
+      - { target: "आम्ही गडाला भेट दिली.", reading: "āmhi gaḍālā bheṭ dili.", ipa: "amɦi ɡəɖala bʱeʈ d̪ili", bases: [{ word: "गडाला", base: "गड", reading: "gaḍ" }, { word: "दिली", ref: "mr-0721" }] }
+      - { target: "तुमची भेट चांगली झाली.", reading: "tumci bheṭ cāṅgali jhāli.", ipa: "t̪umtʃi bʱeʈ tsaŋɡəli dzʱali", bases: [{ word: "तुमची", ref: "mr-0145" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1397"
+    target: "सामान"
+    reading: "sāmān"
+    ipa: "saman"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सामान", reading: "sāmān" }] }
+    examples:
+      - { target: "सामान गाडीत ठेवा.", reading: "sāmān gāḍit ṭhevā.", ipa: "saman ɡaɖit̪ ʈʰeʋa", bases: [{ word: "गाडीत", ref: "mr-0430" }, { word: "ठेवा", ref: "mr-0723" }] }
+      - { target: "माझं सामान हरवलं.", reading: "mājham̐ sāmān harvlam̐.", ipa: "madzʱə̃ saman ɦərʋlə̃", bases: [{ word: "माझं", ref: "mr-0080" }, { word: "हरवलं", ref: "mr-1174" }] }
+  - id: "mr-1398"
+    target: "फिरायला जाणे"
+    reading: "phirāylā jāṇe"
+    ipa: "pʰirajla dzaɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फिरायला जाणे", reading: "phirāylā jāṇe" }] }
+    examples:
+      - { target: "सुट्टीत आम्ही फिरायला गेलो.", reading: "suṭṭit āmhi phirāylā gelo.", ipa: "suʈʈit̪ amɦi pʰirajla ɡelo", bases: [{ word: "सुट्टीत", ref: "mr-0244" }, { word: "गेलो", ref: "mr-0710" }] }
+      - { target: "चला, फिरायला जाऊ.", reading: "calā, phirāylā jāu.", ipa: "tsəla pʰirajla dzau", bases: [{ word: "जाऊ", ref: "mr-0710" }] }
+  - id: "mr-1399"
+    target: "सुटणे"
+    reading: "suṭṇe"
+    ipa: "suʈɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सुटणे", reading: "suṭṇe" }] }
+    examples:
+      - { target: "गाडी वेळेवर सुटली.", reading: "gāḍi veḷevar suṭli.", ipa: "ɡaɖi ʋeɭeʋər suʈli", bases: [{ word: "वेळेवर", ref: "mr-1222" }, { word: "सुटली", ref: "mr-1399" }] }
+      - { target: "शेवटची बस सुटली.", reading: "śevṭci bas suṭli.", ipa: "ʃeʋʈtʃi bəs suʈli", bases: [{ word: "शेवटची", base: "शेवटचा", reading: "śevṭcā" }, { word: "बस", ref: "mr-0052" }, { word: "सुटली", ref: "mr-1399" }] }
+  - id: "mr-1400"
+    target: "ओळख"
+    reading: "oḷakh"
+    ipa: "oɭəkʰ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ओळख", reading: "oḷakh" }] }
+    examples:
+      - { target: "या शहराची चांगली ओळख आहे.", reading: "yā śahrāci cāṅgali oḷakh āhe.", ipa: "ja ʃəɦratʃi tsaŋɡəli oɭəkʰ aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "शहराची", base: "शहर", reading: "śahar" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "त्याच्याशी ओळख झाली.", reading: "tyācyāśi oḷakh jhāli.", ipa: "t̪jatʃjaʃi oɭəkʰ dzʱali", bases: [{ word: "त्याच्याशी", ref: "mr-0676" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1401"
+    target: "देशी"
+    reading: "deśi"
+    ipa: "d̪eʃi"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "देशी", reading: "deśi" }] }
+    examples:
+      - { target: "देशी पदार्थ खायला आवडतात.", reading: "deśi padārth khāylā āvḍtāt.", ipa: "d̪eʃi pəd̪art̪ʰ kʰajla aʋɖt̪at̪", bases: [{ word: "पदार्थ", base: "पदार्थ", reading: "padārth" }, { word: "खायला", ref: "mr-0708" }, { word: "आवडतात", ref: "mr-0585" }] }
+      - { target: "देशी भाषा शिका.", reading: "deśi bhāṣā śikā.", ipa: "d̪eʃi bʱaʂa ʃika", bases: [{ word: "भाषा", ref: "mr-0215" }, { word: "शिका", ref: "mr-0717" }] }
