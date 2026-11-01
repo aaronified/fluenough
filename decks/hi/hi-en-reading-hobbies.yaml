@@ -1,0 +1,53 @@
+schema: 1
+id: "hi-en-reading-hobbies"
+name: "Reading: weekend hobbies and a club poster"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short passages: friends talk about their weekend hobbies, and a poster for a sports and music club. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-weekend-hobbies"
+    title: "Hobbies at the weekend"
+    theme: "hobbies"
+    sentences:
+      - { text: "शनिवार को मैं गाना गाता हूँ।", reading: "śanivār kō maim̐ gānā gātā hūm̐.", ipa: "ʃənɪʋaːr koː mɛ̃ː ɡaːnaː ɡaːt̪aː ɦũː" }
+      - { text: "रविवार को मेरा दोस्त तैरने जाता है।", reading: "ravivār kō mērā dōst tairnē jātā hai.", ipa: "rəʋɪʋaːr koː meːraː d̪oːst̪ t̪ɛːrneː dʒaːt̪aː ɦɛː" }
+      - { text: "हम शाम को पतंग उड़ाते हैं।", reading: "ham śām kō pataṅg uṛātē haim̐.", ipa: "ɦəm ʃaːm koː pət̪əŋɡ ʊɽaːt̪eː ɦɛ̃ː" }
+      - { text: "मेरी बहन तस्वीरें बनाती है।", reading: "mērī bahan tasvīrēm̐ banātī hai.", ipa: "meːriː bəɦən t̪əsʋiːrẽː bənaːt̪iː ɦɛː" }
+    questions:
+      - id: "hi-1697"
+        prompt: { en: "The speaker sings on Saturday." }
+        answer: true
+      - id: "hi-1698"
+        prompt: { en: "What does the friend do on Sunday?" }
+        options:
+          - { en: "Plays chess" }
+          - { en: "Goes swimming" }
+        answer: 2
+      - id: "hi-1699"
+        prompt: { en: "The sister flies kites." }
+        answer: false
+  - id: "hi-club-poster"
+    title: "A poster for a sports and music club"
+    theme: "hobbies"
+    sentences:
+      - { text: "खेल और संगीत क्लब में आओ!", reading: "khēl aur saṅgīt klab mēm̐ āō!", ipa: "kʰeːl ɔːr səŋɡiːt̪ kləb mẽː aːoː" }
+      - { text: "क्रिकेट, फ़ुटबॉल और बैडमिंटन खेलो।", reading: "krikēṭ, fuṭbôl aur baiḍmiṇṭan khēlō.", ipa: "krɪkeːʈ fʊʈbɔl ɔːr bɛːɖmɪɳʈən kʰeːloː" }
+      - { text: "गिटार और तबला सीखो।", reading: "giṭār aur tablā sīkhō.", ipa: "ɡɪʈaːr ɔːr t̪əblaː siːkʰoː" }
+      - { text: "हर शनिवार शाम पाँच बजे मिलते हैं।", reading: "har śanivār śām pām̐c bajē miltē haim̐.", ipa: "ɦər ʃənɪʋaːr ʃaːm pãːtʃ bədʒeː mɪlt̪eː ɦɛ̃ː" }
+    questions:
+      - id: "hi-1700"
+        prompt: { en: "The club teaches guitar and tabla." }
+        answer: true
+      - id: "hi-1701"
+        prompt: { en: "Which game is not listed on the poster?" }
+        options:
+          - { en: "Cricket" }
+          - { en: "Chess" }
+        answer: 2
+      - id: "hi-1702"
+        prompt: { en: "The club meets on Sunday afternoon." }
+        answer: false

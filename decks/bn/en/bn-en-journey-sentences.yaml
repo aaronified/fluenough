@@ -1,0 +1,48 @@
+schema: 1
+id: "bn-en-journey-sentences"
+kind: "layer"
+core: "bn-journey-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Journey: sentences"
+description: "Short sentences about travel. They unlock once their words are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-2481":
+    native: "I go to the office by bus every day."
+    confusables: { "c1": { why: "by train: a different way to go" }, "c2": { why: "on foot: not by bus" } }
+  "bn-2482":
+    native: "When will the train leave?"
+    bases: { "ছাড়বে": "to leave; to depart" }
+    confusables: { "c1": { why: "where: not when" }, "c2": { why: "why: not when" } }
+  "bn-2483":
+    native: "The bus stops here."
+    confusables: { "c1": { why: "there: not here" }, "c2": { why: "far: not here" } }
+  "bn-2484":
+    native: "How much is the fare to go to the station?"
+    confusables: { "c1": { why: "time: not the fare" }, "c2": { why: "delay: not the fare" } }
+  "bn-2485":
+    native: "Where is my passport?"
+    confusables: { "c1": { why: "visa: not the passport itself" }, "c2": { why: "ticket: not the passport" } }
+  "bn-2486":
+    native: "The train has come late."
+    confusables: { "c1": { why: "before: not late" }, "c2": { why: "quickly: not late" } }
+  "bn-2487":
+    native: "Which car will you go in? (respectful)"
+    confusables: { "c1": { why: "when: not which" }, "c2": { why: "where: not which" } }
+  "bn-2488":
+    native: "We crossed the river by boat."
+    confusables: { "c1": { why: "by car: not a river crossing" }, "c2": { why: "by plane: not a river crossing" } }
+  "bn-2489":
+    native: "Look at the timetable. (familiar)"
+    confusables: { "c1": { why: "the map: not the timetable" }, "c2": { why: "the money: not the timetable" } }
+  "bn-2490":
+    native: "The car is in a traffic jam."
+    bases: { "আছে": "to be; there is" }
+    confusables: { "c1": { why: "empty: the opposite of a jam" }, "c2": { why: "far: not in a jam" } }
+  "bn-2491":
+    native: "I walk to the station."
+    confusables: { "c1": { why: "by car: not on foot" }, "c2": { why: "by bus: not on foot" } }
+  "bn-2492":
+    native: "I have bought a ferry ticket."
+    confusables: { "c1": { why: "of the train: not a ferry" }, "c2": { why: "of the bus: not a ferry" } }

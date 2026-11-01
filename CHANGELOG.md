@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - **IPA in place of the transliteration.** A new switch under IPA pronunciations, IPA replaces transliteration (off by default, saved in backups), shows a word's IPA where its transliteration was, on the word sheet, the deck's word list, the recognition, choice, picture and pair drills, reading passages, and example sentences (the teach card keeps its underlined IPA button and shows the IPA once); it only applies while IPA is on and is greyed out otherwise (#697).
+- **Typing answers in more scripts.** Answers are now read as written for Lojban (`ui` for `.ui`, `lonu` for `lo nu`, `h` for the apostrophe), Urdu and other Arabic-script text (Arabic keyboard letters and digits, vowel marks left out or put in) and Sumerian determinatives (`nanna` and `dnanna` are both right for ᵈnanna); Egyptian ḥ can be kept apart from h in its romanisation file (#616).
 - **A splash screen with a loading bar.** Every cold start now opens on the app's mark and name over a thin bar that fills as the review history, the courses and Today's first numbers are ready, for at least two seconds and until all three are, then fades out (not at all with animations off); a line under the bar says which is under way (owner, 2026-11-01: "The performance is still not instantaneous. Leave it. Better add a splash screen with a loading bar (min 2 s, max till all calc ends)"). It does not return when the app is reopened from the background.
 
 ## [0.7.1] - 2026-11-01
