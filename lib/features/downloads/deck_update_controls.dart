@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/deck_downloads.dart';
 import '../../l10n/app_localizations.dart';
+import 'app_update_needed.dart';
 import 'download_text.dart';
 import 'language_download_row.dart';
 
@@ -10,8 +11,9 @@ import 'language_download_row.dart';
 /// Deck downloads page: one contextual button, "Check for deck updates"
 /// until updates are found, "Checking…" while GitHub is asked, then "Update
 /// all (N)" (owner, 2026-10-18); a line under it saying when GitHub was last
-/// asked or what was found; and the switch for checking by itself. Each
-/// language's own row is on its row.
+/// asked or what was found, and how many new decks need an app update
+/// (ADR-0052); and the switch for checking by itself. Each language's own
+/// row is on its row.
 class DeckUpdateControls extends StatefulWidget {
   const DeckUpdateControls({
     super.key,
@@ -105,6 +107,8 @@ class _DeckUpdateControlsState extends State<DeckUpdateControls> {
             ),
           ),
         ),
+        // New decks this app is too old to read (ADR-0052).
+        const AppUpdateNotice(),
         SwitchListTile(
           contentPadding: EdgeInsetsDirectional.zero,
           dense: true,

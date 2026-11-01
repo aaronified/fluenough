@@ -5,6 +5,7 @@ import '../../app/app_state.dart';
 import '../../app/deck_downloads.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
+import 'app_update_needed.dart';
 import 'download_text.dart';
 
 /// A downloaded language's state, as Languages I'm learning and Languages
@@ -299,6 +300,13 @@ class LanguageRowActions extends StatelessWidget {
                             ? l10n.commonRetry
                             : l10n.deckDownloadsGetRest,
                       ),
+                    ),
+                  // Some of its decks need a newer app than this one.
+                  if (downloads.needsNewerApp(code, spoken))
+                    TextButton.icon(
+                      icon: const Icon(Icons.system_update_outlined, size: 20),
+                      onPressed: () => openAppUpdate(context),
+                      label: Text(l10n.appUpdateAction),
                     ),
                 ],
               ),

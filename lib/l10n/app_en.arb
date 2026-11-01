@@ -13566,5 +13566,32 @@
   "hintReplay": "Replay",
   "@hintReplay": {
     "description": "Hint shown on a long press on the button that plays the same word again in the minimal-pair popup (#423). One word, no full stop."
+  },
+  "appUpdateNeeded": "Needs app {version}",
+  "@appUpdateNeeded": {
+    "description": "Second line of a language's row in Add a language and in the language list when its decks need a newer app than the one installed (min_app, ADR-0052). The row is greyed. {version} is the app version it needs, such as 0.7.1.",
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.7.1"
+      }
+    }
+  },
+  "appUpdateAction": "Update",
+  "@appUpdateAction": {
+    "description": "Button, or the end of a greyed row, that opens the newest release's page on GitHub, where the app is downloaded: beside a language or deck that needs a newer app than the one installed (ADR-0052)."
+  },
+  "appUpdateDecksNotice": "{count, plural, =1{1 new deck needs an app update} other{{count} new decks need an app update}}",
+  "@appUpdateDecksNotice": {
+    "description": "Quiet line under the deck update button in Languages when new decks are on GitHub that the installed app is too old to read (ADR-0052). {count} is how many decks.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "appUpdateLinkCopied": "Couldn’t open GitHub, so the link to the newest app is copied.",
+  "@appUpdateLinkCopied": {
+    "description": "Toast when Update could not open the newest release's page and copied its link instead."
   }
 }

@@ -28,6 +28,14 @@ SHA-256 of the file with its proposals and its cards' `checked_by` taken
 out, so that a learner's phone is not offered an update when only a
 proposal or a reviewer's sign-off changed (#444, #449).
 
+A language, or one file, may carry `min_app`, the oldest app version that can
+read it (ADR-0052), written from decks/min_app.json. The app that knows the
+key does not download what needs a newer app and says so; the released app
+before it ignores the key, so a language the latest release already ships, or
+a file it already reads, is refused (read from the latest v* git tag; without
+git or the tag a warning, or an error with --strict-released or
+FLUENOUGH_STRICT_RELEASED=1, which CI's release-reader job sets).
+
 Writing the index also keeps the languages badge in the root README.md
 current: its number (`languages-N` and `N languages`) is the count of the
 index's real languages, leaving out the notation courses (script `ipa` or
@@ -44,9 +52,13 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
+import subprocess
 import sys
 from pathlib import Path
+
+import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
@@ -56,6 +68,7 @@ ROOT = Path(__file__).resolve().parent.parent
 DECKS = ROOT / "decks"
 INDEX = DECKS / "index.json"
 README = ROOT / "README.md"
+MIN_APP = DECKS / "min_app.json"
 
 # Notation courses, not languages: the badge does not count them.
 NOTATION_SCRIPTS = {"ipa", "braille"}
@@ -65,6 +78,133 @@ _BADGE = re.compile(r'(badge/languages-)\d+(-[^"\s]*"\s+alt=")\d+( languages")')
 # The index format. The app refuses an index of a newer version and asks
 # for an app update; raise it only for a change an older app would misread.
 INDEX_VERSION = 1
+
+# The oldest app version that can read a language, or one file, written to
+# the index as `min_app` (ADR-0052) from decks/min_app.json:
+#   {"languages": {"pt": "0.7.1"}, "files": {"decks/es/es-en-x.yaml": "0.7.2"}}
+# An app that knows the key (0.7.1 and later) does not download what needs a
+# newer app and says "needs app X"; an older one ignores it, as it ignores
+# every key it does not know. Nothing listed, nothing written.
+_APP_VERSION = re.compile(r"^\d+\.\d+\.\d+$")
+
+
+class MinAppError(ValueError):
+    """decks/min_app.json is not what it should be."""
+
+
+def load_min_app() -> tuple[dict[str, str], dict[str, str]]:
+    """The language and file requirements of decks/min_app.json, checked for
+    shape: two maps of strings to versions like 0.7.1. A missing file is no
+    requirements. Whether each key names something is checked against the
+    index being built ([check_min_app])."""
+    if not MIN_APP.is_file():
+        return {}, {}
+    try:
+        raw = json.loads(MIN_APP.read_text(encoding="utf-8"))
+    except ValueError as e:
+        raise MinAppError(f"{_rel(MIN_APP)} is not JSON: {e}") from e
+    if not isinstance(raw, dict):
+        raise MinAppError(f"{_rel(MIN_APP)} must be an object")
+    unknown = sorted(set(raw) - {"languages", "files", "note"})
+    if unknown:
+        raise MinAppError(f"{_rel(MIN_APP)} has unknown keys {unknown}; "
+                          f"it has languages and files")
+    maps: list[dict[str, str]] = []
+    for key in ("languages", "files"):
+        block = raw.get(key, {})
+        if not isinstance(block, dict):
+            raise MinAppError(f"{_rel(MIN_APP)}: {key} must be an object")
+        for name, version in block.items():
+            if not isinstance(version, str) or not _APP_VERSION.match(version):
+                raise MinAppError(
+                    f"{_rel(MIN_APP)}: {key}[{name!r}] is {version!r}, "
+                    f"not a version like \"0.7.1\"")
+        maps.append(dict(block))
+    return maps[0], maps[1]
+
+
+def check_min_app(languages: dict[str, str], files: dict[str, str],
+                  listed_languages: set[str], listed_files: set[str]) -> list[str]:
+    """What names nothing in the index being built: a language that is not
+    in it, or a file it does not list. A requirement that points nowhere
+    would silently do nothing."""
+    problems = []
+    for code in sorted(languages):
+        if code not in listed_languages:
+            problems.append(f"{_rel(MIN_APP)}: language {code!r} is not in the "
+                            f"index (no decks, or hidden)")
+    for path in sorted(files):
+        if path not in listed_files:
+            problems.append(f"{_rel(MIN_APP)}: file {path!r} is not listed in "
+                            f"the index")
+    return problems
+
+
+class ReleasedUnknown(Exception):
+    """The latest release cannot be read here (no git, no tag)."""
+
+
+def _git(root: Path, *args: str) -> str:
+    try:
+        done = subprocess.run(["git", "-C", str(root), *args],
+                              capture_output=True, text=True, check=False)
+    except OSError as e:
+        raise ReleasedUnknown(f"git is not available ({e})") from e
+    if done.returncode != 0:
+        raise ReleasedUnknown(done.stderr.strip() or f"git {args[0]} failed")
+    return done.stdout
+
+
+def released_app(root: Path) -> tuple[str, set[str], set[str]]:
+    """The latest release tag of the repository at [root], the language codes
+    in its assets/languages.yaml, and the paths under decks/ it holds: what
+    the released app ships (ADR-0052). Raises [ReleasedUnknown] without git,
+    a repository of its own at [root], a v* tag, or a readable languages file."""
+    if _git(root, "rev-parse", "--show-prefix").strip():
+        raise ReleasedUnknown("not the top of a git repository")
+    tags = _git(root, "tag", "--list", "v*", "--sort=-v:refname").split()
+    if not tags:
+        raise ReleasedUnknown("the repository has no v* tag (fetch tags)")
+    tag = tags[0]
+    try:
+        raw = yaml.safe_load(_git(root, "show", f"{tag}:assets/languages.yaml"))
+        codes = {str(lang["code"]) for lang in raw["languages"]}
+    except (yaml.YAMLError, KeyError, TypeError) as e:
+        raise ReleasedUnknown(f"assets/languages.yaml at {tag} is unreadable ({e})") from e
+    paths = set(_git(root, "ls-tree", "-r", "--name-only", tag, "--", "decks/").split("\n"))
+    return tag, codes, paths - {""}
+
+
+def check_released(languages: dict[str, str], files: dict[str, str],
+                   root: Path | None = None, strict: bool = False
+                   ) -> tuple[list[str], list[str]]:
+    """What decks/min_app.json gates that the latest released app already
+    ships: a language in its assets/languages.yaml, or a file in its decks/.
+    That app cannot know the key, so the entry is refused (errors). When the
+    release cannot be read, nothing is checked and a warning says so, or, if
+    [strict], it is an error. Returns (errors, warnings)."""
+    if not languages and not files:
+        return [], []
+    try:
+        tag, codes, paths = released_app(root or ROOT)
+    except ReleasedUnknown as e:
+        message = (f"{_rel(MIN_APP)}: cannot check against the latest release: "
+                   f"{e}")
+        return ([message], []) if strict else ([], [message + "; skipped"])
+    problems = []
+    for code in sorted(languages):
+        if code in codes:
+            problems.append(
+                f"{_rel(MIN_APP)}: language {code!r} is already shipped by the "
+                f"latest release {tag} (it is in assets/languages.yaml there); "
+                f"remove it (gate new files, not a shipped language)")
+    for path in sorted(files):
+        if path in paths:
+            problems.append(
+                f"{_rel(MIN_APP)}: file {path!r} already exists in the latest "
+                f"release {tag}, which reads it; gate only new files")
+    return problems, []
+
 
 # Languages kept in the repository, and validated like any other, but not
 # offered in the app for now. Remove a line to offer the language.
@@ -338,7 +478,8 @@ def _language_block(files: list[Path]) -> dict:
     return {}
 
 
-def build(reports: list[vd.Report] | None = None) -> dict:
+def build(reports: list[vd.Report] | None = None,
+          strict_released: bool | None = None) -> dict:
     """The index of the repository's decks/, from [reports] when the
     validator has them, else from validating every file here."""
     langs = sorted(p for p in DECKS.iterdir()
@@ -354,6 +495,8 @@ def build(reports: list[vd.Report] | None = None) -> dict:
     ctx = vd._context(reports)
     own = _own_names()
     own_scripts = _own_scripts()
+    min_languages, min_files = load_min_app()
+    listed_files: set[str] = set()
     out = []
     for d in langs:
         code = d.name
@@ -398,6 +541,8 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         if vd._is_str(block.get("script")):
             language["script"] = block["script"]
         language["script_decks"] = bool(plan and plan.alphabet)
+        if code in min_languages:
+            language["min_app"] = min_languages[code]
         language["natives"] = [{"code": n, "name": lang.native_name(n)} for n in natives]
         media = _media_entries(d)
         language["size"] = sum(e["size"] for e in entries + guides + situations + media)
@@ -423,6 +568,10 @@ def build(reports: list[vd.Report] | None = None) -> dict:
                     unit["has"] = has
                 units.append(unit)
             language["units"] = units
+        for e in entries + guides + situations:
+            listed_files.add(e["path"])
+            if e["path"] in min_files:
+                e["min_app"] = min_files[e["path"]]
         language["files"] = entries
         if guides:
             language["script_guides"] = guides
@@ -441,6 +590,17 @@ def build(reports: list[vd.Report] | None = None) -> dict:
         if resources:
             language["resources"] = resources
         out.append(language)
+    problems = check_min_app(min_languages, min_files,
+                             {lang["code"] for lang in out}, listed_files)
+    if strict_released is None:
+        strict_released = bool(os.environ.get("FLUENOUGH_STRICT_RELEASED"))
+    if not problems:
+        problems, warnings = check_released(min_languages, min_files,
+                                            strict=strict_released)
+        for warning in warnings:
+            print(f"warning: {warning}", file=sys.stderr)
+    if problems:
+        raise MinAppError("; ".join(problems))
     return {
         "version": INDEX_VERSION,
         "schema": vd.SCHEMA,
@@ -490,7 +650,10 @@ def render(index: dict) -> str:
 def stale(reports: list[vd.Report] | None = None) -> list[str]:
     """What is wrong with decks/index.json, if anything: missing, or not
     what this tool would write now."""
-    wanted = render(build(reports))
+    try:
+        wanted = render(build(reports))
+    except MinAppError as e:
+        return [str(e)]
     if not INDEX.exists():
         return [f"{_rel(INDEX)} is missing; run python3 tools/deck_index.py"]
     if INDEX.read_text(encoding="utf-8") != wanted:
@@ -532,8 +695,11 @@ def update_badge(index: dict) -> bool:
 
 def main(argv: list[str]) -> int:
     args = argv[1:]
+    if "--strict-released" in args:
+        args.remove("--strict-released")
+        os.environ["FLUENOUGH_STRICT_RELEASED"] = "1"
     if args not in ([], ["--check"]):
-        print("usage: deck_index.py [--check]", file=sys.stderr)
+        print("usage: deck_index.py [--check] [--strict-released]", file=sys.stderr)
         return 2
     if not DECKS.is_dir():
         print(f"error: {DECKS} does not exist", file=sys.stderr)
@@ -543,7 +709,11 @@ def main(argv: list[str]) -> int:
         for problem in problems:
             print(f"error: {problem}")
         return 1 if problems else 0
-    index = build()
+    try:
+        index = build()
+    except MinAppError as e:
+        print(f"error: {e}", file=sys.stderr)
+        return 1
     INDEX.write_text(render(index), encoding="utf-8")
     print(f"wrote {_rel(INDEX)}")
     if update_badge(index):

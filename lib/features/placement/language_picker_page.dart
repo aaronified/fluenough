@@ -22,6 +22,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
+import '../downloads/app_update_needed.dart';
 import '../downloads/deck_update_controls.dart';
 import '../downloads/download_text.dart';
 import '../downloads/language_download_row.dart';
@@ -1400,7 +1401,10 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
       ),
       language: language,
       chosen: ticked,
-      onTap: () => _open(state, language),
+      needsApp: language.needsApp,
+      onTap: language.needsApp == null
+          ? () => _open(state, language)
+          : () => openAppUpdate(context),
       progress: progress,
       you: share,
       youWords: learns && share == null && !(progress?.hasPlan ?? false)

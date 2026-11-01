@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import shutil
 import subprocess
 import sys
@@ -522,6 +523,165 @@ class DeckIndex(unittest.TestCase):
                     getattr(fresh, case.__name__)()
                 finally:
                     fresh.doCleanups()
+
+
+    # min_app (ADR-0052): the oldest app that can read a language or a file.
+
+    def min_app(self, data: object) -> None:
+        text = data if isinstance(data, str) else json.dumps(data)
+        (self.tmp / "decks" / "min_app.json").write_text(text, encoding="utf-8")
+
+    def test_min_app_is_written_to_the_language_and_to_a_file(self) -> None:
+        self.min_app({"languages": {"es": "0.7.1"},
+                      "files": {"decks/es/es-en-core-100.yaml": "0.7.2"}})
+        es = self.language(self.index(), "es")
+        self.assertEqual(es["min_app"], "0.7.1")
+        by_path = {f["path"]: f for f in es["files"]}
+        self.assertEqual(by_path["decks/es/es-en-core-100.yaml"]["min_app"], "0.7.2")
+        self.assertNotIn("min_app", by_path["decks/es/es-path.yaml"])
+        # One file to a line still: the key is on the file's own line.
+        text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
+        line = next(l for l in text.splitlines() if "es-en-core-100.yaml" in l)
+        self.assertIn('"min_app": "0.7.2"', line)
+
+    def test_without_min_app_the_index_has_no_such_key(self) -> None:
+        for data in (None, {"languages": {}, "files": {}}):
+            with self.subTest(data=data):
+                path = self.tmp / "decks" / "min_app.json"
+                path.unlink(missing_ok=True)
+                if data is not None:
+                    self.min_app(data)
+                text = json.dumps(self.index())
+                self.assertNotIn("min_app", text)
+
+    def test_a_bad_min_app_file_fails_and_names_the_problem(self) -> None:
+        cases = {
+            "not json": "{nope",
+            "not an object": "[]",
+            "unknown key": {"langs": {}},
+            "a version with a letter": {"languages": {"es": "0.7.x"}},
+            "a two-part version": {"languages": {"es": "0.7"}},
+            "a number": {"languages": {"es": 0.7}},
+            "a language that is not listed": {"languages": {"pt": "0.7.1"}},
+            "a file that is not listed": {"files": {"decks/es/nope.yaml": "0.7.1"}},
+            "a media file, which the language covers": {
+                "files": {"decks/es/audio/es-0001.opus": "0.7.1"}},
+        }
+        for name, data in cases.items():
+            with self.subTest(name):
+                self.min_app(data)
+                result = self.run_tool()
+                self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+                self.assertIn("min_app.json", result.stdout + result.stderr)
+                # --check says the same, so CI's validator fails too.
+                checked = self.run_tool("--check")
+                self.assertEqual(checked.returncode, 1)
+                self.assertIn("min_app.json", checked.stdout)
+
+    def test_a_hidden_language_cannot_be_given_a_min_app(self) -> None:
+        text = (self.tmp / "tools" / "deck_index.py").read_text(encoding="utf-8")
+        (self.tmp / "tools" / "deck_index.py").write_text(
+            text.replace("HIDDEN: set[str] = set()", 'HIDDEN: set[str] = {"es"}'),
+            encoding="utf-8")
+        self.min_app({"languages": {"es": "0.7.1"}})
+        result = self.run_tool()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("not in the index", result.stderr)
+
+
+class MinAppAgainstTheRelease(unittest.TestCase):
+    """A min_app is refused for what the latest release already ships
+    (ADR-0052): the app that cannot know the key would show it all the same."""
+
+    # The sample repository and its helpers are DeckIndex's.
+    setUp = DeckIndex.setUp
+    run_tool = DeckIndex.run_tool
+    index = DeckIndex.index
+    language = DeckIndex.language
+
+    def min_app(self, data: object) -> None:
+        (self.tmp / "decks" / "min_app.json").write_text(
+            json.dumps(data), encoding="utf-8")
+
+    def git(self, *args: str) -> None:
+        subprocess.run(
+            ["git", "-c", "user.name=t", "-c", "user.email=t@t", "-c",
+             "commit.gpgsign=false", "-C", str(self.tmp), *args],
+            check=True, capture_output=True)
+
+    def release(self, shipped: list[str], files: list[str],
+                tag: str | None = "v0.7.0") -> None:
+        """Commit what release [tag] shipped: a languages.yaml listing the
+        [shipped] codes, and the decks [files]. The working tree keeps its
+        own languages.yaml (es)."""
+        working = self.tmp / "assets" / "languages.yaml"
+        keep = working.read_text(encoding="utf-8")
+        working.write_text(
+            "schema: 1\nkind: languages\nlanguages:\n" + "".join(
+                f'  - {{ code: {c}, iso639_3: xxx, name: "X", own_name: "X" }}\n'
+                for c in shipped), encoding="utf-8")
+        self.git("init", "-q")
+        self.git("add", "assets/languages.yaml", *files)
+        self.git("commit", "-q", "-m", "release")
+        if tag:
+            self.git("tag", tag)
+        working.write_text(keep, encoding="utf-8")
+
+    def refused(self, *args: str) -> str:
+        result = self.run_tool(*args)
+        self.assertEqual(result.returncode, 1, result.stdout + result.stderr)
+        return result.stderr
+
+    def test_a_shipped_language_cannot_be_gated(self) -> None:
+        self.release(["es"], [])
+        self.min_app({"languages": {"es": "0.7.1"}})
+        error = self.refused()
+        self.assertIn("'es'", error)
+        self.assertIn("v0.7.0", error)
+
+    def test_a_new_language_can_be_gated(self) -> None:
+        self.release(["en"], [])
+        self.min_app({"languages": {"es": "0.7.1"}})
+        self.assertEqual(self.language(self.index(), "es")["min_app"], "0.7.1")
+
+    def test_a_new_file_of_a_shipped_language_can_be_gated(self) -> None:
+        self.release(["es"], ["decks/es/es-path.yaml"])
+        self.min_app({"files": {"decks/es/es-en-core-100.yaml": "0.7.1"}})
+        es = self.language(self.index(), "es")
+        by_path = {f["path"]: f for f in es["files"]}
+        self.assertEqual(by_path["decks/es/es-en-core-100.yaml"]["min_app"], "0.7.1")
+
+    def test_a_file_the_release_already_reads_cannot_be_gated(self) -> None:
+        self.release(["es"], ["decks/es/es-path.yaml", "decks/es/es-en-core-100.yaml"])
+        self.min_app({"files": {"decks/es/es-en-core-100.yaml": "0.7.1"}})
+        error = self.refused()
+        self.assertIn("es-en-core-100.yaml", error)
+        self.assertIn("v0.7.0", error)
+
+    def test_without_a_tag_it_warns_and_strict_fails(self) -> None:
+        self.release(["es"], [], tag=None)
+        self.min_app({"languages": {"es": "0.7.1"}})
+        result = self.run_tool()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("warning", result.stderr)
+        self.assertIn("v* tag", result.stderr)
+        self.assertIn("v* tag", self.refused("--strict-released"))
+
+    def test_without_git_it_warns_and_the_env_var_is_strict(self) -> None:
+        self.min_app({"languages": {"es": "0.7.1"}})
+        result = self.run_tool()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertIn("warning", result.stderr)
+        strict = subprocess.run(
+            [sys.executable, str(self.tmp / "tools" / "deck_index.py")],
+            cwd=self.tmp, capture_output=True, text=True, check=False,
+            env=dict(os.environ, FLUENOUGH_STRICT_RELEASED="1"))
+        self.assertEqual(strict.returncode, 1)
+
+    def test_nothing_gated_needs_no_release(self) -> None:
+        result = self.run_tool("--strict-released")
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        self.assertNotIn("warning", result.stderr)
 
 
 class ScriptFonts(unittest.TestCase):

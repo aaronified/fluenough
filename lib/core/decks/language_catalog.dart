@@ -251,6 +251,7 @@ class CatalogLanguage {
     this.scriptDecks = false,
     this.natives = const <CatalogNative>[],
     this.size = 0,
+    this.needsApp,
   });
 
   final String code;
@@ -279,6 +280,10 @@ class CatalogLanguage {
   /// What its files take, in bytes, for the native languages it would be
   /// learned from.
   final int size;
+
+  /// The app version this app must be updated to before it can download the
+  /// language (`min_app`, ADR-0052); null when it can.
+  final String? needsApp;
 
   /// The native language [spoken], best known first, would learn it from:
   /// the first of them it is taught from, else English, else its first
@@ -356,6 +361,7 @@ class CatalogLanguage {
     size: index
         .filesFor(index.nativesFor(spoken))
         .fold(0, (sum, file) => sum + file.size),
+    needsApp: index.appTooOld ? index.minApp : null,
   );
 }
 
