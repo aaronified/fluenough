@@ -512,7 +512,9 @@ units:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
     reading_passages:
       - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
-  - planned: { id: "mr-grammar-causative", grammar: "causative" }
+  - decks: ["mr-grammar-causative"]
+    words: 0
+    grammar: ["causative"]
     listening_passages:
       - { id: "having-things-done", text: { "en": "Asking someone to get things done: have it made, have it repaired" } }
     reading_passages:
