@@ -43,7 +43,7 @@ thing anyone can give these decks.
 ## Your code and languages
 
 1. Open **Settings**, find the **Reviewing** group and turn on **Review decks**.
-2. The app asks first, then makes your **rater code** on your phone, like
+2. The app asks first, then makes your **reviewer code** on your phone, like
    `FL-XXXX-XXXX-C`. Nothing is sent when you turn reviewing on. You can copy
    the code from Settings.
 3. **How reviewing works** then walks you through this guide once, one step
@@ -71,13 +71,13 @@ You can turn reviewing off whenever you like. Your code is kept.
 - **Waiting for review** in Settings has three parts. **Reviewed, not sent**
   opens your cards and suggestions, by deck. **Reviewed and sent** opens each
   suggestion's state: Accepted, Rejected or Waiting for a second review, with
-  a count such as "1 more acceptance needed" and never a rater code. Then each
+  a count such as "1 more acceptance needed" and never a reviewer code. Then each
   language you review, folded until you tap it, with the decks and cards left
   to check in its header; unfolded, it lists the units and decks still
   waiting, the offensive words not yet rated and the sound-alike pairs not yet
   confirmed. What you unfold is remembered.
 
-## Check cards, then sign off
+## Check cards, then mark done
 
 Open a unit and tap **Review**. Mark each card that is right (**Looks right**).
 
@@ -85,7 +85,7 @@ Where a base word changes its stem in the card's form, such as Telugu రావ�
 (rāvaḍam), "to come", in వచ్చింది (vaccindi), "she came", the notes should
 say so. If they don't, suggest a change to the notes.
 
-When every card is checked, **Sign off** becomes available. It says you
+When every card is checked, **Mark done** becomes available. It says you
 checked the whole unit.
 
 ## Suggest, and answer proposals
@@ -210,7 +210,7 @@ without a source comes before data taken from Wiktionary or Tatoeba.
   (`REVIEW_AGREEMENTS_NEEDED`, 1 by default, so two). The point is then
   recorded on the card as `verified` and the app stops asking about it (the
   bot writes that only once a released app reads the field; until then it
-  only tallies the answers in `review-answers/` in the repository, as rater
+  only tallies the answers in `review-answers/` in the repository, as reviewer
   codes and answers only).
 - **A No opens a pull request; the next answer decides it** (owner,
   2026-10-30: "1st review opens PR. Second review either merges or closes
@@ -245,7 +245,7 @@ ready. Read the mail and send it yourself.
 
 Public:
 
-- your rater code;
+- your reviewer code;
 - the languages you reviewed (the public issue list shows code and languages);
 - your suggestions in the decks, which are public, with your code.
 

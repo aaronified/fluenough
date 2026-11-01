@@ -96,7 +96,7 @@ final List<ReviewGuideStep> reviewGuideSteps = <ReviewGuideStep>[
   ),
   ReviewGuideStep(
     id: 'check',
-    guideHeading: 'Check cards, then sign off',
+    guideHeading: 'Check cards, then mark done',
     icon: Icons.task_alt,
     title: (l10n) => l10n.reviewGuideCheckTitle,
     paragraphs: (l10n) => <String>[
