@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-11-01
+
 ### Added
 
 - **Skill pills by colour and icon.** The skill pills on Languages and its sheet are now icons only, coloured by level (red block icon for Leave, pale yellow with a cap in a ring for Learn, yellow with one small tick in a circle for Know, dark green with a bold double tick for Learnt) and show only the icons of the levels reached (eye, eye and keyboard, ear, ear and microphone); a touch and hold names the level in a word or two, and a screen reader reads the plain phrase (owner, 2026-11-01: "Skill pills: perfect. Just differentiate between double tick and single tick.") (#977).
