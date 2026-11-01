@@ -1,0 +1,94 @@
+schema: 1
+id: "bn-abstract-words-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4299"
+    target: "তার সততা আর বিনয় সবাইকে মুগ্ধ করে।"
+    reading: "tār sôtotā ār binoy sôbāike mugdh kôre."
+    ipa: "t̪ar sɔt̪ot̪a ar binoj sɔbaike muɡd̪ʱ kɔre"
+    pos: "phrase"
+    bases: [{ word: "তার", ref: "bn-3275" }, { word: "সততা", ref: "bn-4247" }, { word: "আর", ref: "bn-0361" }, { word: "বিনয়", ref: "bn-4265" }, { word: "সবাইকে", ref: "bn-0854" }, { word: "মুগ্ধ", base: "মুগ্ধ", reading: "mugdh" }, { word: "করে", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "অহংকার", reading: "ahaṅkār", kind: "word" }, { id: "c2", word: "লোভ", reading: "lobh", kind: "word" }]
+  - id: "bn-4300"
+    target: "ভারসাম্য রাখা জীবনের জন্য জরুরি।"
+    reading: "bhārosāmm rākhā jiboner jonn joruri."
+    ipa: "bʱarosamm rakʰa dʒiboner dʒonn dʒoruri"
+    pos: "phrase"
+    bases: [{ word: "ভারসাম্য", ref: "bn-4288" }, { word: "রাখা", ref: "bn-0894" }, { word: "জীবনের", ref: "bn-3783" }, { word: "জন্য", ref: "bn-0297" }, { word: "জরুরি", ref: "bn-1778" }]
+    confusables: [{ id: "c1", word: "অসাম্য", reading: "asāmya", kind: "word" }, { id: "c2", word: "উদাসীনতা", reading: "udāsīnatā", kind: "word" }]
+  - id: "bn-4301"
+    target: "এই সুযোগে নতুন দক্ষতা শিখলাম।"
+    reading: "ei sujoge notun dôkkhotā śikholām."
+    ipa: "ei sudʒoɡe not̪un d̪ɔkkʰot̪a ʃikʰolam"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "সুযোগে", base: "@সুযোগ", reading: "sujoge" }, { word: "নতুন", ref: "bn-0620" }, { word: "দক্ষতা", ref: "bn-3314" }, { word: "শিখলাম", ref: "bn-0883" }]
+    confusables: [{ id: "c1", word: "বিপদ", reading: "bipad", kind: "word" }, { id: "c2", word: "অভাব", reading: "abhāb", kind: "word" }]
+  - id: "bn-4302"
+    target: "ব্যর্থতার পর সে আবার চেষ্টা করল।"
+    reading: "bêrthotār pôr se ābār ceśṭā kôrol."
+    ipa: "bært̪ʰot̪ar pɔr se abar tʃeʃʈa kɔrol"
+    pos: "phrase"
+    bases: [{ word: "ব্যর্থতার", ref: "bn-4273" }, { word: "পর", ref: "bn-0114" }, { word: "সে", ref: "bn-0839" }, { word: "আবার", ref: "bn-1531" }, { word: "চেষ্টা", base: "@চেষ্টা", reading: "ceśṭā" }, { word: "করল", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "সফলতা", reading: "saphaltā", kind: "word" }, { id: "c2", word: "ভয়", reading: "bhay", kind: "word" }]
+  - id: "bn-4303"
+    target: "শিক্ষকের প্রতি শ্রদ্ধা সবার থাকা উচিত।"
+    reading: "śikkhoker proti śrôddhā sôbār thākā ucit."
+    ipa: "ʃikkʰoker prot̪i ʃrɔd̪d̪ʱa sɔbar t̪ʰaka utʃit̪"
+    pos: "phrase"
+    bases: [{ word: "শিক্ষকের", ref: "bn-0451" }, { word: "প্রতি", ref: "bn-1329" }, { word: "শ্রদ্ধা", ref: "bn-3912" }, { word: "সবার", ref: "bn-0854" }, { word: "থাকা", ref: "bn-0875" }, { word: "উচিত", ref: "bn-2988" }]
+    confusables: [{ id: "c1", word: "অবজ্ঞা", reading: "abajñā", kind: "word" }, { id: "c2", word: "ভক্তি", reading: "bhakti", kind: "word" }]
+  - id: "bn-4304"
+    target: "সমাজে সাম্য আনা কঠিন নয়।"
+    reading: "sômāje sāmm ānā koṭhin nôy."
+    ipa: "sɔmadʒe samm ana koʈʰin nɔj"
+    pos: "phrase"
+    bases: [{ word: "সমাজে", ref: "bn-3199" }, { word: "সাম্য", ref: "bn-4246" }, { word: "আনা", ref: "bn-0893" }, { word: "কঠিন", ref: "bn-0624" }, { word: "নয়", ref: "bn-0210" }]
+    confusables: [{ id: "c1", word: "বৈষম্য", reading: "baiṣamya", kind: "word" }, { id: "c2", word: "শান্তি", reading: "śānti", kind: "word" }]
+  - id: "bn-4305"
+    target: "তার দৃঢ়তা সবাইকে অনুপ্রাণিত করল।"
+    reading: "tār driṛotā sôbāike ônuprānit kôrol."
+    ipa: "t̪ar d̪riɽot̪a sɔbaike ɔnupranit̪ kɔrol"
+    pos: "phrase"
+    bases: [{ word: "তার", ref: "bn-3275" }, { word: "দৃঢ়তা", ref: "bn-4289" }, { word: "সবাইকে", ref: "bn-0854" }, { word: "অনুপ্রাণিত", base: "অনুপ্রাণিত", reading: "ônuprānit" }, { word: "করল", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "দুর্বলতা", reading: "durbalatā", kind: "word" }, { id: "c2", word: "নমনীয়তা", reading: "namanīẏatā", kind: "word" }]
+  - id: "bn-4306"
+    target: "পরিবেশের প্রতি যত্নই প্রগতির পথ।"
+    reading: "poribeśer proti jôtnoi prôgotir pôth."
+    ipa: "poribeʃer prot̪i dʒɔt̪noi prɔɡot̪ir pɔt̪ʰ"
+    pos: "phrase"
+    bases: [{ word: "পরিবেশের", ref: "bn-3391" }, { word: "প্রতি", ref: "bn-1329" }, { word: "যত্নই", ref: "bn-2779" }, { word: "প্রগতির", ref: "bn-4255" }, { word: "পথ", ref: "bn-0057" }]
+    confusables: [{ id: "c1", word: "অবনতি", reading: "abanati", kind: "word" }, { id: "c2", word: "উন্নতি", reading: "unnati", kind: "word" }]
+  - id: "bn-4307"
+    target: "কাজে নিষ্ঠা আর সততা থাকা জরুরি।"
+    reading: "kāje niśṭhā ār sôtotā thākā joruri."
+    ipa: "kadʒe niʃʈʰa ar sɔt̪ot̪a t̪ʰaka dʒoruri"
+    pos: "phrase"
+    bases: [{ word: "কাজে", ref: "bn-0198" }, { word: "নিষ্ঠা", base: "@নিষ্ঠা", reading: "niśṭhā" }, { word: "আর", ref: "bn-0361" }, { word: "সততা", base: "@সততা", reading: "sôtotā" }, { word: "থাকা", ref: "bn-0875" }, { word: "জরুরি", ref: "bn-1778" }]
+    confusables: [{ id: "c1", word: "অবহেলা", reading: "abahelā", kind: "word" }, { id: "c2", word: "প্রতারণা", reading: "pratāraṇā", kind: "word" }]
+  - id: "bn-4308"
+    target: "সবার কল্যাণে সে কাজ করে।"
+    reading: "sôbār kollāne se kāj kôre."
+    ipa: "sɔbar kollane se kadʒ kɔre"
+    pos: "phrase"
+    bases: [{ word: "সবার", ref: "bn-0854" }, { word: "কল্যাণে", base: "@কল্যাণ", reading: "kollāne" }, { word: "সে", ref: "bn-0839" }, { word: "কাজ", ref: "bn-0198" }, { word: "করে", ref: "bn-0102" }]
+    confusables: [{ id: "c1", word: "স্বার্থ", reading: "svārtha", kind: "word" }, { id: "c2", word: "ক্ষতি", reading: "kṣati", kind: "word" }]
+  - id: "bn-4309"
+    target: "এই সাফল্যের পেছনে অনেক শ্রম।"
+    reading: "ei sāpholler pechone ônek śrôm."
+    ipa: "ei sapʰoller petʃʰone ɔnek ʃrɔm"
+    pos: "phrase"
+    bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "সাফল্যের", base: "@সাফল্য", reading: "sāpholler" }, { word: "পেছনে", base: "পেছন", reading: "pechone" }, { word: "অনেক", ref: "bn-0550" }, { word: "শ্রম", base: "@শ্রম", reading: "śrôm" }]
+    confusables: [{ id: "c1", word: "ব্যর্থতা", reading: "byarthatā", kind: "word" }, { id: "c2", word: "অলসতা", reading: "alasatā", kind: "word" }]
+  - id: "bn-4310"
+    target: "আত্মবিশ্বাস আর ধৈর্য থাকলে সব হয়।"
+    reading: "ātmobiśśās ār dhoirj thākole sôb hôy."
+    ipa: "at̪mobiʃʃas ar d̪ʱoirdʒ t̪ʰakole sɔb ɦɔj"
+    pos: "phrase"
+    bases: [{ word: "আত্মবিশ্বাস", base: "@আত্মবিশ্বাস", reading: "ātmobiśśās" }, { word: "আর", ref: "bn-0361" }, { word: "ধৈর্য", ref: "bn-2842" }, { word: "থাকলে", ref: "bn-0875" }, { word: "সব", ref: "bn-0552" }, { word: "হয়", ref: "bn-0874" }]
+    confusables: [{ id: "c1", word: "ভয়", reading: "bhay", kind: "word" }, { id: "c2", word: "অধৈর্য", reading: "adhairya", kind: "word" }]
