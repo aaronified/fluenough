@@ -7,7 +7,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/hint.dart';
 import '../profiles/spoken_languages_picker.dart';
 import 'onboarding_step.dart';
-import 'spoken_step.dart';
+import 'question_heading.dart';
 
 /// The first launch's microphone and sound check (#89): record two
 /// seconds, play them back, and ask whether the learner heard them. It is

@@ -205,7 +205,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
     }
     _listAsked = true;
     DefaultAssetBundle.of(context)
-        .loadString(SpokenLanguagesPicker.asset)
+        .loadString(spokenLanguagesAsset)
         .then(parseSpokenLanguages)
         .then((languages) {
           if (!mounted) return;

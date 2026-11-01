@@ -1,40 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../l10n/app_localizations.dart';
-import '../profiles/spoken_languages_picker.dart';
-import 'onboarding_step.dart';
-
-/// The first launch's question: the languages the learner already speaks
-/// (#53). Not the ones they want to learn, which #117 asks next.
-final OnboardingStep spokenStep = OnboardingStep(
-  id: 'spoken',
-  asks: true,
-  blocked: (answers, l10n) =>
-      answers.spoken.isEmpty ? l10n.onboardingSpokenNeedOne : null,
-  content: (context, at) {
-    final l10n = AppLocalizations.of(context)!;
-    return SpokenLanguagesPicker(
-      initial: at.answers.spoken,
-      choices: at.choices,
-      onChanged: (ranked) => at.answers.spoken = ranked,
-      dividerBelow: true,
-      readsScript: at.answers.scripts,
-      onScriptsChanged: at.answers.setScriptsRead,
-      header: QuestionHeading(
-        title: l10n.onboardingSpokenTitle,
-        body: l10n.onboardingSpokenBody,
-      ),
-      footer: PickerNote(
-        icon: Icons.lock_outline,
-        text: l10n.onboardingSpokenPrivacy(
-          l10n.navSettings,
-          l10n.settingsSpoken,
-        ),
-      ),
-    );
-  },
-);
-
 /// A question's title and what the answer is for, on the 24 px line. It
 /// scrolls with the answers. The title grows at most one and a half times,
 /// as Android's own scaling does for large type, so the first answers stay

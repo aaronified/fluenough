@@ -1,7 +1,9 @@
-import 'package:flutter/foundation.dart';
+import 'dart:async';
+
 import 'package:flutter/widgets.dart';
 
 import '../../app/app_state.dart';
+import '../../app/language_skills.dart';
 import '../../app/skill.dart';
 import '../../core/data/spoken_languages.dart';
 import '../../core/languages/language_skills.dart';
@@ -39,7 +41,8 @@ class OnboardingStep {
   /// A question: counted in "Question x of y".
   final bool asks;
 
-  /// Shows Skip, which goes on to the next step, on every page but the last.
+  /// Shows Skip, which goes on to the next step, on every page but the last,
+  /// and on a step with one page.
   final bool skippable;
 
   /// The main button's label. Null: "Next", or "Continue" on the last step.
@@ -80,29 +83,42 @@ class OnboardingPosition {
   final bool firstVisit;
 }
 
+/// One language the learner set on the first launch: its entry in
+/// `assets/languages.yaml`, and the skills they chose for it.
+@immutable
+class ChosenLanguage {
+  const ChosenLanguage(this.language, this.skills);
+
+  final SpokenLanguage language;
+  final LanguageSkills skills;
+}
+
 /// The answers so far. Nothing reaches the settings before the last step's
 /// button.
 class OnboardingAnswers extends ChangeNotifier {
-  OnboardingAnswers({List<String> spoken = const <String>[]})
-    : _spoken = List<String>.unmodifiable(spoken);
+  OnboardingAnswers({Map<String, ChosenLanguage> chosen = const {}})
+    : _chosen = Map<String, ChosenLanguage>.of(chosen);
 
-  List<String> _spoken;
+  final Map<String, ChosenLanguage> _chosen;
 
-  /// The languages the learner speaks, best known first.
-  List<String> get spoken => _spoken;
-  set spoken(List<String> codes) {
-    if (listEquals(codes, _spoken)) return;
-    _spoken = List<String>.unmodifiable(codes);
-    notifyListeners();
-  }
+  /// The languages the learner set, in the order they set them, each with its
+  /// skills (Learn and Know, owner, 2026-11-01). English is not among them:
+  /// it is fixed as known and saved with them.
+  List<ChosenLanguage> get chosen =>
+      List<ChosenLanguage>.unmodifiable(_chosen.values);
 
-  /// Whether the learner reads each language's scripts (#462, #551), by
-  /// [SpokenLanguage.readKey].
-  Map<String, bool> get scripts => _scripts;
-  Map<String, bool> _scripts = const <String, bool>{};
-  void setScriptsRead(Map<String, bool> answers) {
-    if (mapEquals(answers, _scripts)) return;
-    _scripts = Map<String, bool>.unmodifiable(answers);
+  /// The skills set for [code], or null: not chosen.
+  LanguageSkills? skillsFor(String code) => _chosen[code]?.skills;
+
+  /// Sets [language]'s skills. A language with every skill Leave is not in
+  /// the list: it is dropped. English is fixed and ignored.
+  void setSkills(SpokenLanguage language, LanguageSkills skills) {
+    if (language.code == englishCode) return;
+    if (skills.isAllLeave) {
+      if (_chosen.remove(language.code) == null) return;
+    } else {
+      _chosen[language.code] = ChosenLanguage(language, skills);
+    }
     notifyListeners();
   }
 
@@ -116,8 +132,15 @@ class OnboardingAnswers extends ChangeNotifier {
     notifyListeners();
   }
 
-  /// Writes every answer. The spoken languages go last: saving them is what
-  /// ends the first launch (`lib/app.dart`), so nothing may follow them.
+  /// Writes every answer. English, fixed as known, goes last: it puts the
+  /// spoken languages in the learner's order, and saving them is what ends
+  /// the first launch (`lib/app.dart`), so nothing may follow it.
+  ///
+  /// Each language is saved as its skills, and the older lists follow
+  /// ([LanguageSkillsOnState.applySkills]): what is learned, what is spoken,
+  /// the scripts read. A language to learn starts its download, as adding it
+  /// on the Languages page does. With nothing to learn, the learning
+  /// languages are still asked next (`lib/app.dart`).
   void saveTo(AppState state) {
     if (_soundCheck case final check?) {
       state.settings.setSkillEnabled(Skill.speaking, check.speaks);
@@ -125,18 +148,23 @@ class OnboardingAnswers extends ChangeNotifier {
         state.settings.setSkillEnabled(Skill.listening, on);
       }
     }
-    // English is known too, in every skill (#926), last: the learner's
-    // languages are in their order.
+    for (final c in _chosen.values) {
+      state.applySkills(c.language, c.skills);
+    }
     state.settings
-      ..setLanguageSkills('en', englishKnownByDefault().toStored())
-      ..scriptsRead = <String, bool>{
-        ...readAnswersOf(_spoken, _scripts),
-        'en': true,
-      }
+      ..setLanguageSkills(englishCode, englishKnownByDefault().toStored())
+      ..scriptsRead = <String, bool>{...state.settings.scriptsRead, 'en': true}
       ..spokenLanguages = <String>[
-        ..._spoken,
-        if (!_spoken.contains('en')) 'en',
+        for (final code in state.settings.spokenLanguages)
+          if (code != englishCode) code,
+        englishCode,
       ];
+    if (state.deckDownloads != null) {
+      for (final c in _chosen.values) {
+        if (c.skills.anyLearn)
+          unawaited(state.downloadLanguage(c.language.code));
+      }
+    }
   }
 }
 

@@ -28,395 +28,6 @@ class KnownReply {
   final List<String> scripts;
 }
 
-/// Languages you know (#53, #462, #490): one screen, used on the first
-/// launch and in Settings, which add only the chrome around it.
-///
-/// From the top: a search, the chosen languages (best known first, the
-/// order they were chosen in), a few top picks from the phone's language and
-/// region, then every language grouped by family, folded by default.
-/// Tapping a language opens a bottom sheet that answers the language and
-/// whether its script is read in one tap (approved design:
-/// `docs/mockups/languages-you-know.html`).
-class SpokenLanguagesPicker extends StatefulWidget {
-  const SpokenLanguagesPicker({
-    super.key,
-    required this.initial,
-    required this.onChanged,
-    this.choices,
-    this.header,
-    this.footer,
-    this.dividerBelow = false,
-    this.readsScript = const <String, bool>{},
-    this.onScriptsChanged,
-    this.locales,
-    this.gutter = PickerGutter.onboarding,
-  });
-
-  static const String asset = 'assets/languages.yaml';
-
-  /// The side padding of the search field, chips, rows and headings: 24 in
-  /// onboarding, [AppSizes.gutter] on a Settings page, in line with the
-  /// other Settings pages.
-  final double gutter;
-
-  /// The chosen codes, best known first.
-  final List<String> initial;
-
-  /// Called with the chosen codes, best known first, after every change.
-  final ValueChanged<List<String>> onChanged;
-
-  /// Null reads [asset].
-  final List<SpokenLanguage>? choices;
-
-  /// Whether the learner reads each language's scripts (#462, #551): by
-  /// [SpokenLanguage.readKey], its own script under its code.
-  final Map<String, bool> readsScript;
-
-  /// Called with every answer, as [readsScript] keeps them, when a sheet
-  /// answers.
-  final ValueChanged<Map<String, bool>>? onScriptsChanged;
-
-  /// The phone's languages, as (language, country), for the top picks. Null
-  /// reads the platform's.
-  final List<(String, String?)>? locales;
-
-  /// Scrolls with the list, above it.
-  final Widget? header;
-
-  /// Scrolls with the list, below it.
-  final Widget? footer;
-
-  /// Whether a 1 px divider ends the list, where it meets whatever is below
-  /// it (onboarding's button), so a row is not cut off hard against that
-  /// (#845, owner, 2026-10-25). Needs a bounded height.
-  final bool dividerBelow;
-
-  @override
-  State<SpokenLanguagesPicker> createState() => _SpokenLanguagesPickerState();
-}
-
-class _SpokenLanguagesPickerState extends State<SpokenLanguagesPicker> {
-  final ScrollController _scroll = ScrollController();
-  final TextEditingController _search = TextEditingController();
-
-  List<SpokenLanguage>? _choices;
-  List<String> _chosen = const <String>[];
-  late Map<String, bool> _reads = <String, bool>{...widget.readsScript};
-
-  /// The families open, by id. Every family starts folded.
-  final Set<String> _open = <String>{};
-
-  @override
-  void initState() {
-    super.initState();
-    _search.addListener(() => setState(() {}));
-    if (widget.choices case final given?) _init(given);
-  }
-
-  @override
-  void didUpdateWidget(SpokenLanguagesPicker old) {
-    super.didUpdateWidget(old);
-    if (_choices == null && widget.choices != null) _init(widget.choices!);
-  }
-
-  @override
-  void dispose() {
-    _scroll.dispose();
-    _search.dispose();
-    super.dispose();
-  }
-
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (_choices != null || widget.choices != null) return;
-    DefaultAssetBundle.of(context)
-        .loadString(SpokenLanguagesPicker.asset)
-        .then(parseSpokenLanguages)
-        .then((choices) {
-          if (mounted && _choices == null) setState(() => _init(choices));
-        });
-  }
-
-  void _init(List<SpokenLanguage> choices) {
-    final codes = {for (final c in choices) c.code};
-    _choices = choices;
-    _chosen = <String>[
-      for (final code in widget.initial)
-        if (codes.contains(code)) code,
-    ];
-  }
-
-  SpokenLanguage _language(String code) =>
-      _choices!.firstWhere((c) => c.code == code);
-
-  /// Opens [language]'s sheet and applies the answer.
-  Future<void> _ask(SpokenLanguage language) async {
-    final reply = await showModalBottomSheet<KnownReply>(
-      context: context,
-      isScrollControlled: true,
-      useSafeArea: true,
-      showDragHandle: true,
-      builder: (_) => KnownLanguageSheet(
-        language: language,
-        current: _chosen.contains(language.code)
-            ? language.scriptsReadIn(_reads)
-            : null,
-        chosen: _chosen.contains(language.code),
-      ),
-    );
-    if (reply == null || !mounted) return;
-    setState(() {
-      final others = <String, bool>{
-        for (final e in _reads.entries)
-          if (readKeyLanguage(e.key) != language.code) e.key: e.value,
-      };
-      if (reply.answer == KnownAnswer.remove) {
-        _chosen = <String>[
-          for (final c in _chosen)
-            if (c != language.code) c,
-        ];
-        _reads = others;
-      } else {
-        if (!_chosen.contains(language.code)) {
-          _chosen = <String>[..._chosen, language.code];
-        }
-        _reads = <String, bool>{
-          ...others,
-          ...language.readAnswers(reply.scripts),
-        };
-        widget.onScriptsChanged?.call(_reads);
-      }
-    });
-    widget.onChanged(_chosen);
-  }
-
-  List<(String, String?)> _phoneLocales() =>
-      widget.locales ??
-      <(String, String?)>[
-        for (final l in WidgetsBinding.instance.platformDispatcher.locales)
-          (l.languageCode, l.countryCode),
-      ];
-
-  @override
-  Widget build(BuildContext context) {
-    final choices = _choices;
-    if (choices == null) {
-      return const Center(child: CircularProgressIndicator());
-    }
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    final query = _search.text.trim();
-    final families = <String>[];
-    for (final c in choices) {
-      final f = c.family ?? 'other';
-      if (!families.contains(f)) families.add(f);
-    }
-    List<SpokenLanguage> inFamily(String f) => <SpokenLanguage>[
-      for (final c in choices)
-        if ((c.family ?? 'other') == f) c,
-    ]..sort((a, b) => a.name.compareTo(b.name));
-
-    final body = <Widget>[];
-    if (query.isNotEmpty) {
-      var any = false;
-      for (final f in families) {
-        final all = inFamily(f);
-        final hits = <SpokenLanguage>[
-          for (final c in all)
-            if (c.matches(query)) c,
-        ];
-        if (hits.isEmpty) continue;
-        any = true;
-        body.add(
-          PickerHeading(
-            l10n.knownFamily(f),
-            note: l10n.knownSearchMatches(hits.length, all.length),
-          ),
-        );
-        body.addAll(<Widget>[for (final c in hits) _row(l10n, c)]);
-      }
-      if (!any) {
-        body.add(
-          Padding(
-            padding: EdgeInsetsDirectional.fromSTEB(
-              widget.gutter,
-              16,
-              widget.gutter,
-              16,
-            ),
-            child: Text(
-              l10n.knownSearchNone(query),
-              style: theme.textTheme.bodyLarge,
-            ),
-          ),
-        );
-      }
-    } else {
-      if (_chosen.isNotEmpty) {
-        body
-          ..add(
-            PickerHeading(
-              l10n.knownYourLanguages,
-              note: l10n.knownYourLanguagesNote,
-            ),
-          )
-          ..addAll(<Widget>[for (final c in _chosen) _row(l10n, _language(c))]);
-      }
-      final picks = topPicksFor(_phoneLocales(), choices);
-      if (picks.isNotEmpty) {
-        body
-          ..add(PickerHeading(l10n.knownTopPicks))
-          ..add(
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(
-                widget.gutter,
-                0,
-                widget.gutter,
-                8,
-              ),
-              child: Wrap(
-                spacing: 8,
-                runSpacing: 4,
-                children: <Widget>[
-                  for (final code in picks) _chip(_language(code)),
-                ],
-              ),
-            ),
-          );
-      }
-      body.add(PickerHeading(l10n.knownAllLanguages, note: l10n.knownByFamily));
-      for (final f in families) {
-        final languages = inFamily(f);
-        final open = _open.contains(f);
-        body.add(_familyRow(l10n, f, languages.length, open));
-        if (open) {
-          body.addAll(<Widget>[for (final c in languages) _row(l10n, c)]);
-        }
-      }
-    }
-
-    final list = PickerGutter(
-      gutter: widget.gutter,
-      child: Scrollbar(
-        controller: _scroll,
-        thumbVisibility: true,
-        child: ListView(
-          controller: _scroll,
-          children: <Widget>[
-            ?widget.header,
-            Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(
-                widget.gutter,
-                0,
-                widget.gutter,
-                8,
-              ),
-              child: TextField(
-                key: const ValueKey<String>('known-search'),
-                controller: _search,
-                textInputAction: TextInputAction.search,
-                decoration: InputDecoration(
-                  labelText: l10n.knownSearchHint,
-                  prefixIcon: const Icon(Icons.search),
-                  suffixIcon: query.isEmpty
-                      ? null
-                      : IconButton(
-                          tooltip: MaterialLocalizations.of(context)
-                              .clearButtonTooltip,
-                          icon: const Icon(Icons.close),
-                          onPressed: _search.clear,
-                        ),
-                  border: AppRadii.fieldBorder,
-                ),
-              ),
-            ),
-            ...body,
-            ?widget.footer,
-            const SizedBox(height: 16),
-          ],
-        ),
-      ),
-    );
-    if (!widget.dividerBelow) return list;
-    return Column(
-      children: <Widget>[
-        Expanded(child: list),
-        Divider(
-          height: 1,
-          thickness: 1,
-          color: Theme.of(context).colorScheme.outlineVariant,
-        ),
-      ],
-    );
-  }
-
-  Widget _chip(SpokenLanguage language) {
-    final on = _chosen.contains(language.code);
-    return ActionChip(
-      key: ValueKey<String>('pick-${language.code}'),
-      avatar: on ? const Icon(Icons.check) : null,
-      label: Text(language.name),
-      onPressed: () => _ask(language),
-    );
-  }
-
-  Widget _familyRow(AppLocalizations l10n, String id, int count, bool open) =>
-      FamilyRow(
-        id: id,
-        count: count,
-        open: open,
-        onToggle: () => setState(() => open ? _open.remove(id) : _open.add(id)),
-      );
-
-  /// A language: English name and own name; once chosen, its answer.
-  Widget _row(AppLocalizations l10n, SpokenLanguage language) {
-    final theme = Theme.of(context);
-    final on = _chosen.contains(language.code);
-    final reads = language.scriptsReadIn(_reads);
-    final same = language.ownName == language.name;
-    return ListTile(
-      key: ValueKey<String>('lang-${language.code}'),
-      contentPadding: EdgeInsetsDirectional.only(
-        start: widget.gutter,
-        end: widget.gutter - 8,
-      ),
-      title: on && !same
-          ? Text.rich(_ownNameMarked(l10n, language))
-          : Text(language.name),
-      subtitle: on
-          ? (reads == null ? null : Text(_answer(l10n, language, reads)))
-          : same
-          ? null
-          : Text.rich(
-              TextSpan(text: language.ownName, locale: Locale(language.code)),
-            ),
-      trailing: Icon(
-        on ? Icons.edit_outlined : Icons.add_circle_outline,
-        color: on ? theme.colorScheme.primary : null,
-      ),
-      onTap: () => _ask(language),
-    );
-  }
-}
-
-/// A chosen language's answer, under it: the scripts read, by their own
-/// names, or "Can only speak".
-String _answer(
-  AppLocalizations l10n,
-  SpokenLanguage language,
-  List<String> reads,
-) {
-  String name(String script) => l10n.scriptNameOr(script, language.name);
-  return switch (reads) {
-    [] => l10n.knownAnswerSpeak(language.name),
-    [final one] => l10n.knownAnswerRead(name(one)),
-    _ => l10n.knownAnswerReadSeveral(
-      reads.map(name).join(l10n.commonListSeparator),
-    ),
-  };
-}
-
 /// A language family's row, folded or open, with how many languages it
 /// holds: Languages you know and Languages I'm learning (#626) group their
 /// languages the same way.
@@ -521,13 +132,18 @@ class PickerHeading extends StatelessWidget {
 
 /// The bottom sheet that answers a language and its script in one tap.
 ///
-/// The question and the "I can read it" answer are written in the
+/// The question and the "I can read it" answers are written in the
 /// language's own script, whether or not a speaker has checked them
 /// (owner, 2026-10-18), marked with its language so a screen reader reads
-/// them in its voice, with the English under each, so a learner who only
-/// speaks the language still understands. The other answer is English.
-/// Neither is called Yes or No. A language with no sentences of its own yet
-/// asks in English, naming the script by its own name (#551).
+/// them in its voice. The English is under the question only, so a learner
+/// who only speaks the language still understands what is asked; every
+/// answer line is its own script alone (owner, 2026-11-01). The other answer
+/// is English. Neither is called Yes or No. A language with no sentences of
+/// its own yet asks in English, naming the script by its own name (#551).
+///
+/// An answer written in another script than the language's first, such as
+/// Hindustani's in the Perso-Arabic script, is drawn right to left and marked
+/// as Urdu ([SpokenLanguage.localeCodeFor]).
 ///
 /// A language written in several scripts, such as Punjabi in Gurmukhi and
 /// Shahmukhi, asks which of them are read (#551): one answer to tick per
@@ -565,7 +181,6 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
     final current = widget.current;
     final several = language.hasSeveralScripts;
     final own = !several && language.asksInOwnScript;
-    final locale = Locale(language.code);
     String name(String? script) => l10n.scriptNameOr(script, language.name);
     final ownScripts = several && language.asksScriptsInOwnScript;
     // English is kept below an own-script text, so a learner who only
@@ -661,7 +276,7 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                     own: ownQuestion,
                     english: englishQuestion,
                     showEnglish: below,
-                    locale: locale,
+                    language: language,
                     ownStyle: theme.textTheme.titleMedium!,
                     englishStyle: theme.textTheme.bodyMedium!.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
@@ -682,8 +297,8 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                     title: _OwnAndEnglish(
                       own: language.canReadIn(script),
                       english: l10n.knownCanReadFallback(name(script)),
-                      showEnglish: below,
-                      locale: locale,
+                      showEnglish: false,
+                      language: language,
                       // Body size, set apart from the English by its colour:
                       // a larger own-script text pushed Done off screen at 1.4x.
                       ownStyle: theme.textTheme.bodyMedium!,
@@ -704,8 +319,8 @@ class _KnownLanguageSheetState extends State<KnownLanguageSheet> {
                   text: _OwnAndEnglish(
                     own: ownRead,
                     english: englishRead,
-                    showEnglish: below,
-                    locale: locale,
+                    showEnglish: false,
+                    language: language,
                     ownStyle: theme.textTheme.bodyLarge!,
                     englishStyle: theme.textTheme.bodyMedium!.copyWith(
                       color: theme.colorScheme.onSurfaceVariant,
@@ -792,14 +407,15 @@ String knownReportDetail(SpokenLanguage language) {
 }
 
 /// A text in a language's own script, marked as that language, with its
-/// English under it in smaller text. With no own text it is the English
-/// alone, in the main style.
+/// English under it in smaller text where [showEnglish]. With no own text it
+/// is the English alone, in the main style. A text in the Perso-Arabic script
+/// is drawn right to left, marked as Urdu.
 class _OwnAndEnglish extends StatelessWidget {
   const _OwnAndEnglish({
     required this.own,
     required this.english,
     required this.showEnglish,
-    required this.locale,
+    required this.language,
     required this.ownStyle,
     required this.englishStyle,
   });
@@ -807,7 +423,7 @@ class _OwnAndEnglish extends StatelessWidget {
   final String? own;
   final String english;
   final bool showEnglish;
-  final Locale locale;
+  final SpokenLanguage language;
   final TextStyle ownStyle;
   final TextStyle englishStyle;
 
@@ -815,13 +431,18 @@ class _OwnAndEnglish extends StatelessWidget {
   Widget build(BuildContext context) {
     final own = this.own;
     if (own == null) return Text(english, style: ownStyle);
+    final rtl = SpokenLanguage.isRtlText(own);
+    Widget text = Text.rich(
+      TextSpan(text: own, locale: Locale(language.localeCodeFor(own))),
+      style: ownStyle,
+      textDirection: rtl ? TextDirection.rtl : null,
+    );
+    // Filling the line is what puts a right-to-left text at its right edge.
+    if (rtl) text = SizedBox(width: double.infinity, child: text);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text.rich(
-          TextSpan(text: own, locale: locale),
-          style: ownStyle,
-        ),
+        text,
         if (showEnglish) ...<Widget>[
           // Tight, so the sheet stays on screen at 1.4x text: a snugger line
           // height, not a smaller size.

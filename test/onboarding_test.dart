@@ -24,7 +24,6 @@ import 'package:fluenough/features/onboarding/onboarding_flow.dart';
 import 'package:fluenough/features/onboarding/sound_check_step.dart';
 import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
-import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
 import 'package:fluenough/features/today/today_page.dart';
@@ -565,7 +564,7 @@ void main() {
     setUp(rootBundle.clear);
 
     final choices = parseSpokenLanguages(
-      File(SpokenLanguagesPage.asset).readAsStringSync(),
+      File(spokenLanguagesAsset).readAsStringSync(),
     );
 
     /// A first launch at the sound check, on [sound] and a recogniser that

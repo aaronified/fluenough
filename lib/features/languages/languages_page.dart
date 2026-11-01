@@ -14,7 +14,6 @@ import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../downloads/deck_update_controls.dart';
 import '../downloads/download_text.dart';
-import '../profiles/spoken_languages_picker.dart' show SpokenLanguagesPicker;
 import 'add_language_page.dart';
 import 'language_skills_sheet.dart';
 import 'language_views.dart';
@@ -72,7 +71,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
     if (_asked || _all != null) return;
     _asked = true;
     DefaultAssetBundle.of(context)
-        .loadString(SpokenLanguagesPicker.asset)
+        .loadString(spokenLanguagesAsset)
         .then(parseSpokenLanguages)
         .then((list) {
           if (!mounted) return;
@@ -256,9 +255,9 @@ class _LanguagesPageState extends State<LanguagesPage> {
             ),
           ),
         if (learning.isNotEmpty) ...<Widget>[
-          _Section(text: l10n.languagesSectionLearning(learning.length)),
+          LanguageSection(text: l10n.languagesSectionLearning(learning.length)),
           for (final h in learning)
-            _LanguageRow(
+            LanguageRow(
               key: ValueKey<String>('language-${h.$1.code}'),
               view: h.$1,
               skills: h.$2,
@@ -266,9 +265,9 @@ class _LanguagesPageState extends State<LanguagesPage> {
             ),
         ],
         if (know.isNotEmpty) ...<Widget>[
-          _Section(text: l10n.languagesSectionKnow(know.length)),
+          LanguageSection(text: l10n.languagesSectionKnow(know.length)),
           for (final h in know)
-            _LanguageRow(
+            LanguageRow(
               key: ValueKey<String>('language-${h.$1.code}'),
               view: h.$1,
               skills: h.$2,
@@ -505,8 +504,10 @@ class _FilterRow extends StatelessWidget {
   }
 }
 
-class _Section extends StatelessWidget {
-  const _Section({required this.text});
+/// A heading of the list, "Learning · 2" or "Know · 3". Public for the first
+/// launch, which lists the languages the same way.
+class LanguageSection extends StatelessWidget {
+  const LanguageSection({super.key, required this.text});
 
   final String text;
 
@@ -529,8 +530,8 @@ class _Section extends StatelessWidget {
 /// One language of the list: its tile and names, the dialect where it is
 /// spoken, its four skills as read-only chips (one for each script of Read
 /// and Write), and for a language learned its minutes a day and size.
-class _LanguageRow extends StatelessWidget {
-  const _LanguageRow({
+class LanguageRow extends StatelessWidget {
+  const LanguageRow({
     super.key,
     required this.view,
     required this.skills,

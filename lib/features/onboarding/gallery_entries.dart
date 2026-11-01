@@ -29,20 +29,17 @@ final List<GalleryEntry> onboardingGalleryEntries = <GalleryEntry>[
     builder: (_) => const OnboardingFlow(startAt: 'sound'),
   ),
   GalleryEntry(
-    id: 'onboarding-spoken',
+    id: 'onboarding-languages-intro',
     section: GallerySection.profiles,
-    label:
-        'First launch: languages you know', // ui-literal-ok: debug-only gallery
-    note: 'Nothing ticked: Continue waits', // ui-literal-ok: debug-only gallery
-    builder: (_) => const OnboardingFlow(startAt: 'spoken'),
+    label: 'First launch: what Know and Learn mean', // ui-literal-ok: debug-only gallery
+    note: 'The pills explained; Skip or Choose my languages', // ui-literal-ok: debug-only gallery
+    builder: (_) => const OnboardingFlow(startAt: 'languages-intro'),
   ),
   GalleryEntry(
-    id: 'onboarding-spoken-ranked',
+    id: 'onboarding-languages',
     section: GallerySection.profiles,
-    label:
-        'First launch: languages, ranked', // ui-literal-ok: debug-only gallery
-    note: 'Bengali 1, English 2, with the drag hint', // ui-literal-ok: debug-only gallery
-    builder: (_) =>
-        const OnboardingFlow(startAt: 'spoken', spoken: <String>['bn', 'en']),
+    label: 'First launch: languages you know and learn', // ui-literal-ok: debug-only gallery
+    note: 'Only English, known: Next waits for another language', // ui-literal-ok: debug-only gallery
+    builder: (_) => const OnboardingFlow(startAt: 'languages'),
   ),
 ];

@@ -42,7 +42,6 @@ import 'package:fluenough/features/onboarding/onboarding_flow.dart';
 import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/placement/script_test_page.dart';
-import 'package:fluenough/features/profiles/spoken_languages_page.dart';
 import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/features/review/offensive_review_page.dart';
 import 'package:fluenough/features/review/review_page.dart';
@@ -232,7 +231,7 @@ DrawScreen review(
 };
 
 final List<SpokenLanguage> choices = parseSpokenLanguages(
-  File(SpokenLanguagesPage.asset).readAsStringSync(),
+  File(spokenLanguagesAsset).readAsStringSync(),
 );
 
 /// A learner who speaks English and Bengali, reading both, learning

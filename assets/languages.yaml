@@ -72,8 +72,12 @@
 #                   for a language written in several scripts, the sheet's
 #                   heading ("Which scripts do you read X in?") and one
 #                   "I can read it" answer per script key, in the language's
-#                   own first script (#552). A script with no answer is
-#                   asked in English.
+#                   own first script (#552), except where the script is
+#                   another one's own: Hindustani's Perso-Arabic answer is
+#                   written in Perso-Arabic script (owner, 2026-11-01), and
+#                   the sheet draws it right to left, marked as Urdu
+#                   (`SpokenLanguage.localeCodeFor`, `isRtlText`). A script
+#                   with no answer is asked in English.
 #
 #   script_text     optional: `"unchecked"` marks an entry's texts above as
 #                   written by Claude (#552), not by a speaker: not yet
@@ -98,7 +102,7 @@ languages:
   - { code: "hi", dialect: "Khari Boli (खड़ी बोली), standard Hindustani", iso639_3: "hin", name: "Hindustani", own_name: "हिन्दुस्तानी · ہندوستانی", scripts: ["devanagari", "perso_arabic"], family: "indo_aryan",
       aliases: ["Hindi", "Urdu", "हिन्दी", "उर्दू", "اردو", "ہندی"],
       scripts_question: "आप हिन्दुस्तानी किन लिपियों में पढ़ सकते हैं?",
-      script_can_read: { devanagari: "मुझे देवनागरी लिपि पढ़नी आती है", "perso_arabic": "मुझे फ़ारसी-अरबी (उर्दू) लिपि पढ़नी आती है" }, script_text: "unchecked" }  # Hindi and Urdu as one course (#623); Claude-written, for a speaker to check
+      script_can_read: { devanagari: "मुझे देवनागरी लिपि पढ़नी आती है", "perso_arabic": "مجھے فارسی-عربی (اردو) رسم الخط پڑھنا آتا ہے" }, script_text: "unchecked" }  # Hindi and Urdu as one course (#623); Claude-written, for a speaker to check
   - { code: "as", iso639_3: "asm", name: "Assamese", own_name: "অসমীয়া", scripts: ["bengali"], family: "indo_aryan",
       script_question: "আপুনি পূব নাগৰী লিপি পঢ়িব পাৰেনে?", script_can_read: "মই পূব নাগৰী লিপি পঢ়িব পাৰোঁ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "brx", iso639_3: "brx", name: "Bodo", own_name: "बड़ो", scripts: ["devanagari"], family: "tibeto_burman",

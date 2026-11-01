@@ -15,7 +15,6 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../downloads/download_text.dart';
 import '../downloads/language_download_row.dart';
-import '../profiles/spoken_languages_picker.dart';
 import '../settings/settings_controls.dart';
 import 'review_waiting.dart';
 
@@ -60,7 +59,7 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     super.didChangeDependencies();
     if (_knownScripts.isNotEmpty) return;
     DefaultAssetBundle.of(context)
-        .loadString(SpokenLanguagesPicker.asset)
+        .loadString(spokenLanguagesAsset)
         .then(parseSpokenLanguages)
         .then((languages) {
           if (!mounted) return;
