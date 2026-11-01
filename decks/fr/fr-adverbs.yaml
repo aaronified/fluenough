@@ -1,0 +1,352 @@
+schema: 1
+id: "fr-adverbs"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "adverbs"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0326"
+    target: "souvent"
+    ipa: "suvɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0330" }]
+    examples:
+      - { target: "Je mange souvent des pâtes.", ipa: "ʒə mɑ̃ʒ suvɑ̃ de pɑt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "souvent", base: "souvent" }, { word: "des", base: "des" }, { word: "pâtes", base: "pâte" }] }
+      - { target: "Nous sortons souvent ensemble.", ipa: "nu sɔʁtɔ̃ suvɑ̃ ɑ̃sɑ̃bl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sortons", base: "sortir" }, { word: "souvent", base: "souvent" }, { word: "ensemble", ref: "fr-0333" }] }
+  - id: "fr-0327"
+    target: "toujours"
+    ipa: "tuʒuʁ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0328" }]
+    examples:
+      - { target: "Il est toujours content.", ipa: "il ɛ tuʒuʁ kɔ̃tɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "toujours", base: "toujours" }, { word: "content", ref: "fr-0264" }] }
+      - { target: "Nous travaillons toujours ici.", ipa: "nu tʁavajɔ̃ tuʒuʁ isi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "travaillons", ref: "fr-0252" }, { word: "toujours", base: "toujours" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0328"
+    target: "jamais"
+    ipa: "ʒamɛ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0327" }]
+    examples:
+      - { target: "Elle ne joue jamais.", ipa: "ɛl nə ʒu ʒamɛ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "ne", base: "ne" }, { word: "joue", ref: "fr-0308" }, { word: "jamais", base: "jamais" }] }
+      - { target: "Nous ne dormons jamais tard.", ipa: "nu nə dɔʁmɔ̃ ʒamɛ taʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "ne", base: "ne" }, { word: "dormons", ref: "fr-0284" }, { word: "jamais", base: "jamais" }, { word: "tard", ref: "fr-0336" }] }
+  - id: "fr-0329"
+    target: "parfois"
+    ipa: "paʁfwa"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Parfois, je marche.", ipa: "paʁfwa ʒə maʁʃ", bases: [{ word: "Parfois", base: "Parfois" }, { word: "je", ref: "fr-0126" }, { word: "marche", ref: "fr-0306" }] }
+      - { target: "Ils écoutent parfois de la musique.", ipa: "il ekut paʁfwa də la myzik", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "écoutent", ref: "fr-0292" }, { word: "parfois", base: "parfois" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "musique", ref: "fr-0266" }] }
+  - id: "fr-0330"
+    target: "rarement"
+    ipa: "ʁaʁmɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père parle rarement.", ipa: "mɔ̃ pɛʁ paʁl ʁaʁmɑ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "parle", ref: "fr-0023" }, { word: "rarement", base: "rarement" }] }
+      - { target: "Nous lisons rarement.", ipa: "nu lizɔ̃ ʁaʁmɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "lisons", ref: "fr-0290" }, { word: "rarement", base: "rarement" }] }
+  - id: "fr-0331"
+    target: "déjà"
+    ipa: "deʒa"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est déjà là.", ipa: "il ɛ deʒa la", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "déjà", base: "déjà" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Vous avez déjà mangé ?", ipa: "vu zave deʒa mɑ̃ʒe", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "avez", ref: "fr-0022" }, { word: "déjà", base: "déjà" }, { word: "mangé", ref: "fr-0282" }] }
+  - id: "fr-0332"
+    target: "encore"
+    ipa: "ɑ̃kɔʁ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est encore là.", ipa: "il ɛ ɑ̃kɔʁ la", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "encore", base: "encore" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Elle n'est pas encore là.", ipa: "ɛl nɛ pa ɑ̃kɔʁ la", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "n'est", ref: "fr-0021" }, { word: "pas", base: "pas" }, { word: "encore", base: "encore" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0333"
+    target: "ensemble"
+    ipa: "ɑ̃sɑ̃bl"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous mangeons ensemble.", ipa: "nu mɑ̃ʒɔ̃ ɑ̃sɑ̃bl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "ensemble", base: "ensemble" }] }
+      - { target: "Ma sœur et moi jouons ensemble.", ipa: "ma sœʁ e mwa ʒwɔ̃ ɑ̃sɑ̃bl", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "et", ref: "fr-0027" }, { word: "moi", ref: "fr-0133" }, { word: "jouons", ref: "fr-0308" }, { word: "ensemble", base: "ensemble" }] }
+  - id: "fr-0334"
+    target: "seulement"
+    ipa: "sœlmɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai seulement deux frères.", ipa: "ʒe sœlmɑ̃ dø fʁɛʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "seulement", base: "seulement" }, { word: "deux", ref: "fr-0209" }, { word: "frères", ref: "fr-0169" }] }
+      - { target: "Il parle seulement français.", ipa: "il paʁl sœlmɑ̃ fʁɑ̃sɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "parle", ref: "fr-0023" }, { word: "seulement", base: "seulement" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-0335"
+    target: "bientôt"
+    ipa: "bjɛ̃to"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "À bientôt !", ipa: "a bjɛ̃to", bases: [{ word: "À", base: "à" }, { word: "bientôt", base: "bientôt" }] }
+      - { target: "Mon frère arrive bientôt.", ipa: "mɔ̃ fʁɛʁ aʁiv bjɛ̃to", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "arrive", ref: "fr-0305" }, { word: "bientôt", base: "bientôt" }] }
+  - id: "fr-0336"
+    target: "tard"
+    ipa: "taʁ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0337" }]
+    examples:
+      - { target: "Nous partons tard.", ipa: "nu paʁtɔ̃ taʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "partons", ref: "fr-0304" }, { word: "tard", base: "tard" }] }
+      - { target: "Vous dormez tard ?", ipa: "vu dɔʁme taʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "dormez", ref: "fr-0284" }, { word: "tard", base: "tard" }] }
+  - id: "fr-0337"
+    target: "tôt"
+    ipa: "to"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0336" }]
+    examples:
+      - { target: "Elle arrive tôt.", ipa: "ɛl aʁiv to", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "arrive", ref: "fr-0305" }, { word: "tôt", base: "tôt" }] }
+      - { target: "Ils partent tôt.", ipa: "il paʁt to", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "partent", ref: "fr-0304" }, { word: "tôt", base: "tôt" }] }
+  - id: "fr-0338"
+    target: "vite"
+    ipa: "vit"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0339" }]
+    examples:
+      - { target: "Tu parles vite.", ipa: "ty paʁl vit", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "parles", ref: "fr-0023" }, { word: "vite", base: "vite" }] }
+      - { target: "Nous marchons vite.", ipa: "nu maʁʃɔ̃ vit", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", ref: "fr-0306" }, { word: "vite", base: "vite" }] }
+  - id: "fr-0339"
+    target: "lentement"
+    ipa: "lɑ̃tmɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0338" }]
+    examples:
+      - { target: "Il mange lentement.", ipa: "il mɑ̃ʒ lɑ̃tmɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mange", ref: "fr-0282" }, { word: "lentement", base: "lentement" }] }
+      - { target: "Elle lit lentement.", ipa: "ɛl li lɑ̃tmɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "lit", ref: "fr-0290" }, { word: "lentement", base: "lentement" }] }
+  - id: "fr-0340"
+    target: "mal"
+    ipa: "mal"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0032" }]
+    examples:
+      - { target: "Il parle mal le français.", ipa: "il paʁl mal lə fʁɑ̃sɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "parle", ref: "fr-0023" }, { word: "mal", base: "mal" }, { word: "le", base: "le" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Je dors mal.", ipa: "ʒə dɔʁ mal", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }, { word: "mal", base: "mal" }] }
+  - id: "fr-0341"
+    target: "mieux"
+    ipa: "mjø"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je parle mieux maintenant.", ipa: "ʒə paʁl mjø mɛ̃tnɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "parle", ref: "fr-0023" }, { word: "mieux", base: "mieux" }, { word: "maintenant", ref: "fr-0350" }] }
+      - { target: "Elle joue mieux que moi.", ipa: "ɛl ʒu mjø kə mwa", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "joue", ref: "fr-0308" }, { word: "mieux", base: "mieux" }, { word: "que", base: "que" }, { word: "moi", ref: "fr-0133" }] }
+  - id: "fr-0342"
+    target: "peu"
+    ipa: "pø"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il mange peu.", ipa: "il mɑ̃ʒ pø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mange", ref: "fr-0282" }, { word: "peu", base: "peu" }] }
+      - { target: "Je parle un peu français.", ipa: "ʒə paʁl œ̃ pø fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "parle", ref: "fr-0023" }, { word: "un", ref: "fr-0208" }, { word: "peu", base: "peu" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-0343"
+    target: "assez"
+    ipa: "ase"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est assez content.", ipa: "il ɛ asɛ kɔ̃tɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "assez", base: "assez" }, { word: "content", ref: "fr-0264" }] }
+      - { target: "Vous mangez assez.", ipa: "vu mɑ̃ʒe ase", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "mangez", ref: "fr-0282" }, { word: "assez", base: "assez" }] }
+  - id: "fr-0344"
+    target: "trop"
+    ipa: "tʁo"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu travailles trop.", ipa: "ty tʁavaj tʁo", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "travailles", ref: "fr-0252" }, { word: "trop", base: "trop" }] }
+      - { target: "Ce est trop cher.", ipa: "sə ɛ tʁo ʃɛʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "trop", base: "trop" }, { word: "cher", ref: "fr-0104" }] }
+  - id: "fr-0345"
+    target: "plus"
+    ipa: "ply"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0346" }]
+    examples:
+      - { target: "Je ne parle plus ici.", ipa: "ʒə nə paʁl ply isi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "parle", ref: "fr-0023" }, { word: "plus", base: "plus" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Il est plus jeune que moi.", ipa: "il ɛ ply ʒœn kə mwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "plus", base: "plus" }, { word: "jeune", ref: "fr-0108" }, { word: "que", base: "que" }, { word: "moi", ref: "fr-0133" }] }
+  - id: "fr-0346"
+    target: "moins"
+    ipa: "mwɛ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0345" }]
+    examples:
+      - { target: "Il parle moins vite.", ipa: "il paʁl mwɛ̃ vit", bases: [{ word: "Il", ref: "fr-0127" }, { word: "parle", ref: "fr-0023" }, { word: "moins", base: "moins" }, { word: "vite", ref: "fr-0338" }] }
+      - { target: "Vous mangez moins que moi.", ipa: "vu mɑ̃ʒe mwɛ̃ kə mwa", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "mangez", ref: "fr-0282" }, { word: "moins", base: "moins" }, { word: "que", base: "que" }, { word: "moi", ref: "fr-0133" }] }
+  - id: "fr-0347"
+    target: "presque"
+    ipa: "pʁɛsk"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a presque vingt ans.", ipa: "ɛl a pʁɛsk vɛ̃t ɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "presque", base: "presque" }, { word: "vingt", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Nous sommes presque là.", ipa: "nu sɔm pʁɛsk la", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sommes", ref: "fr-0021" }, { word: "presque", base: "presque" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0348"
+    target: "vraiment"
+    ipa: "vʁɛmɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce est vraiment bien.", ipa: "sə ɛ vʁɛmɑ̃ bjɛ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "est", ref: "fr-0021" }, { word: "vraiment", base: "vraiment" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Nous jouons vraiment bien.", ipa: "nu ʒwɔ̃ vʁɛmɑ̃ bjɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "jouons", ref: "fr-0308" }, { word: "vraiment", base: "vraiment" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-0349"
+    target: "surtout"
+    ipa: "syʁtu"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime surtout la musique.", ipa: "ʒɛm syʁtu la myzik", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "surtout", base: "surtout" }, { word: "la", base: "la" }, { word: "musique", ref: "fr-0266" }] }
+      - { target: "Ma sœur aime surtout la musique.", ipa: "ma sœʁ ɛm syʁtu la myzik", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "aime", ref: "fr-0263" }, { word: "surtout", base: "surtout" }, { word: "la", base: "la" }, { word: "musique", ref: "fr-0266" }] }
+  - id: "fr-0350"
+    target: "maintenant"
+    ipa: "mɛ̃tnɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous mangeons maintenant.", ipa: "nu mɑ̃ʒɔ̃ mɛ̃tnɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "maintenant", base: "maintenant" }] }
+      - { target: "Je suis maintenant ici.", ipa: "ʒə sɥi mɛ̃tnɑ̃ isi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "maintenant", base: "maintenant" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-0351"
+    target: "alors"
+    ipa: "alɔʁ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Alors, tu parles français ?", ipa: "alɔʁ ty paʁl fʁɑ̃sɛ", bases: [{ word: "Alors", base: "Alors" }, { word: "tu", ref: "fr-0095" }, { word: "parles", ref: "fr-0023" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Il est tard, alors je pars.", ipa: "il ɛ taʁ alɔʁ ʒə paʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "tard", ref: "fr-0336" }, { word: "alors", base: "alors" }, { word: "je", ref: "fr-0126" }, { word: "pars", ref: "fr-0304" }] }
+  - id: "fr-0352"
+    target: "ensuite"
+    ipa: "ɑ̃sɥit"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange, et ensuite je dors.", ipa: "ʒə mɑ̃ʒ e ɑ̃sɥit ʒə dɔʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "et", ref: "fr-0027" }, { word: "ensuite", base: "ensuite" }, { word: "je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }] }
+      - { target: "Vous partez ensuite.", ipa: "vu paʁte ɑ̃sɥit", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "partez", ref: "fr-0304" }, { word: "ensuite", base: "ensuite" }] }
+  - id: "fr-0353"
+    target: "enfin"
+    ipa: "ɑ̃fɛ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Enfin, nous partons !", ipa: "ɑ̃fɛ̃ nu paʁtɔ̃", bases: [{ word: "Enfin", base: "Enfin" }, { word: "nous", ref: "fr-0129" }, { word: "partons", ref: "fr-0304" }] }
+      - { target: "Tu es enfin là !", ipa: "ty ɛ ɑ̃fɛ̃ la", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "es", ref: "fr-0021" }, { word: "enfin", base: "enfin" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0354"
+    target: "dehors"
+    ipa: "dəɔʁ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0355" }]
+    examples:
+      - { target: "Ils jouent dehors.", ipa: "il ʒu dəɔʁ", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "jouent", ref: "fr-0308" }, { word: "dehors", base: "dehors" }] }
+      - { target: "Mon père travaille dehors.", ipa: "mɔ̃ pɛʁ tʁavaj dəɔʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "travaille", ref: "fr-0252" }, { word: "dehors", base: "dehors" }] }
+  - id: "fr-0355"
+    target: "dedans"
+    ipa: "dədɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    antonyms: [{ ref: "fr-0354" }]
+    examples:
+      - { target: "Elle est dedans.", ipa: "ɛl ɛ dədɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "dedans", base: "dedans" }] }
+      - { target: "Nous mangeons dedans.", ipa: "nu mɑ̃ʒɔ̃ dədɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "dedans", base: "dedans" }] }
+  - id: "fr-0356"
+    target: "partout"
+    ipa: "paʁtu"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon ami cherche partout.", ipa: "mɔ̃n ami ʃɛʁʃ paʁtu", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "cherche", ref: "fr-0300" }, { word: "partout", base: "partout" }] }
+      - { target: "Ils cherchent partout.", ipa: "il ʃɛʁʃ paʁtu", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "cherchent", ref: "fr-0300" }, { word: "partout", base: "partout" }] }
+  - id: "fr-0357"
+    target: "longtemps"
+    ipa: "lɔ̃tɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il attend longtemps.", ipa: "il atɑ̃ lɔ̃tɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "attend", ref: "fr-0303" }, { word: "longtemps", base: "longtemps" }] }
+      - { target: "Vous parlez longtemps.", ipa: "vu paʁle lɔ̃tɑ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "parlez", ref: "fr-0023" }, { word: "longtemps", base: "longtemps" }] }
+  - id: "fr-0358"
+    target: "debout"
+    ipa: "dəbu"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous sommes debout.", ipa: "nu sɔm dəbu", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sommes", ref: "fr-0021" }, { word: "debout", base: "debout" }] }
+      - { target: "Ils sont debout depuis longtemps.", ipa: "il sɔ̃ dəbu dəpɥi lɔ̃tɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "debout", base: "debout" }, { word: "depuis", base: "depuis" }, { word: "longtemps", ref: "fr-0357" }] }

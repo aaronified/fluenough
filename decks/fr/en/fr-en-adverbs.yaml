@@ -1,0 +1,456 @@
+schema: 1
+id: "fr-en-adverbs"
+kind: "layer"
+core: "fr-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs: how often, how well, when"
+license: "CC-BY-SA-4.0"
+description: "Adverbs that say how often, how well and when: souvent, toujours, jamais, soon, late, early, quickly and better. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0326":
+    native: "often"
+    notes:
+      "n1": "Souvent is 'often'. It goes after the verb in a simple tense: je mange souvent (I often eat)."
+    examples:
+      "Je mange souvent des pâtes.":
+        native: "I often eat pasta."
+        bases:
+          "souvent": "often"
+          "des": "some; of the (plural)"
+          "pâtes": "dough; pasta (in the plural)"
+      "Nous sortons souvent ensemble.":
+        native: "We often go out together."
+        bases:
+          "sortons": "to go out"
+          "souvent": "often"
+  "fr-0327":
+    native: "always; still"
+    notes:
+      "n1": "Toujours is 'always'. With être it can mean 'still': il est toujours là (he is still there)."
+    examples:
+      "Il est toujours content.":
+        native: "He is always happy."
+        bases:
+          "toujours": "always; still"
+      "Nous travaillons toujours ici.":
+        native: "We always work here."
+        bases:
+          "toujours": "always; still"
+  "fr-0328":
+    native: "never; ever"
+    notes:
+      "n1": "Jamais is 'never' with ne, which goes before the verb and jamais after it: elle ne joue jamais (she never plays)."
+    examples:
+      "Elle ne joue jamais.":
+        native: "She never plays."
+        bases:
+          "ne": "not (with pas, jamais and plus)"
+          "jamais": "never; ever"
+      "Nous ne dormons jamais tard.":
+        native: "We never sleep late."
+        bases:
+          "ne": "not (with pas, jamais and plus)"
+          "jamais": "never; ever"
+  "fr-0329":
+    native: "sometimes"
+    notes:
+      "n1": "Parfois is 'sometimes'. It can go at the start of a sentence, with a comma."
+    examples:
+      "Parfois, je marche.":
+        native: "Sometimes I walk."
+        bases:
+          "Parfois": "sometimes"
+      "Ils écoutent parfois de la musique.":
+        native: "They sometimes listen to music."
+        bases:
+          "parfois": "sometimes"
+          "de": "of; from; some"
+          "la": "the"
+  "fr-0330":
+    native: "rarely"
+    notes:
+      "n1": "Rarement is 'rarely', the opposite of souvent. It goes after the verb, as souvent does."
+    examples:
+      "Mon père parle rarement.":
+        native: "My father rarely speaks."
+        bases:
+          "rarement": "rarely"
+      "Nous lisons rarement.":
+        native: "We rarely read."
+        bases:
+          "rarement": "rarely"
+  "fr-0331":
+    native: "already"
+    notes:
+      "n1": "Déjà is 'already'. It goes after the verb in a simple tense: il est déjà là (he is already here)."
+    examples:
+      "Il est déjà là.":
+        native: "He is already here."
+        bases:
+          "déjà": "already"
+      "Vous avez déjà mangé ?":
+        native: "Have you already eaten?"
+        bases:
+          "déjà": "already"
+  "fr-0332":
+    native: "still; yet; again"
+    notes:
+      "n1": "Encore is 'still' or 'again'. Pas encore is 'not yet': elle n'est pas encore là (she is not here yet)."
+    examples:
+      "Il est encore là.":
+        native: "He is still here."
+        bases:
+          "encore": "still; yet; again"
+      "Elle n'est pas encore là.":
+        native: "She is not here yet."
+        bases:
+          "pas": "not"
+          "encore": "still; yet; again"
+  "fr-0333":
+    native: "together"
+    notes:
+      "n1": "Ensemble is 'together'. It comes after the verb: nous mangeons ensemble (we eat together)."
+    examples:
+      "Nous mangeons ensemble.":
+        native: "We eat together."
+        bases:
+          "ensemble": "together"
+      "Ma sœur et moi jouons ensemble.":
+        native: "My sister and I play together."
+        bases:
+          "ensemble": "together"
+  "fr-0334":
+    native: "only; just"
+    notes:
+      "n1": "Seulement is 'only' or 'just'. It goes just before the word it limits: seulement deux (only two)."
+    examples:
+      "J'ai seulement deux frères.":
+        native: "I have only two brothers."
+        bases:
+          "seulement": "only; just"
+      "Il parle seulement français.":
+        native: "He speaks only French."
+        bases:
+          "seulement": "only; just"
+  "fr-0335":
+    native: "soon"
+    notes:
+      "n1": "Bientôt is 'soon'. À bientôt is 'see you soon', said when people part."
+    examples:
+      "À bientôt !":
+        native: "See you soon!"
+        bases:
+          "À": "to; at; in"
+          "bientôt": "soon"
+      "Mon frère arrive bientôt.":
+        native: "My brother is arriving soon."
+        bases:
+          "bientôt": "soon"
+  "fr-0336":
+    native: "late"
+    notes:
+      "n1": "Tard is 'late'. It is the opposite of tôt (early)."
+    examples:
+      "Nous partons tard.":
+        native: "We leave late."
+        bases:
+          "tard": "late"
+      "Vous dormez tard ?":
+        native: "Do you sleep late?"
+        bases:
+          "tard": "late"
+  "fr-0337":
+    native: "early"
+    notes:
+      "n1": "Tôt is 'early', the opposite of tard. Remember the circumflex: tôt, not tot."
+    examples:
+      "Elle arrive tôt.":
+        native: "She arrives early."
+        bases:
+          "tôt": "early"
+      "Ils partent tôt.":
+        native: "They leave early."
+        bases:
+          "tôt": "early"
+  "fr-0338":
+    native: "quickly; fast"
+    notes:
+      "n1": "Vite is 'quickly' or 'fast'. It is an adverb, so it does not change for gender or number."
+    examples:
+      "Tu parles vite.":
+        native: "You speak fast."
+        bases:
+          "vite": "quickly; fast"
+      "Nous marchons vite.":
+        native: "We walk fast."
+        bases:
+          "vite": "quickly; fast"
+  "fr-0339":
+    native: "slowly"
+    notes:
+      "n1": "Lentement is 'slowly'. It is made from the adjective lent (slow) and -ment, as many French adverbs are."
+    examples:
+      "Il mange lentement.":
+        native: "He eats slowly."
+        bases:
+          "lentement": "slowly"
+      "Elle lit lentement.":
+        native: "She reads slowly."
+        bases:
+          "lentement": "slowly"
+  "fr-0340":
+    native: "badly; poorly"
+    notes:
+      "n1": "Mal is 'badly' or 'poorly'. Do not confuse it with mauvais, the adjective 'bad'."
+    examples:
+      "Il parle mal le français.":
+        native: "He speaks French badly."
+        bases:
+          "mal": "badly; poorly"
+          "le": "the"
+      "Je dors mal.":
+        native: "I sleep badly."
+        bases:
+          "mal": "badly; poorly"
+  "fr-0341":
+    native: "better; best"
+    notes:
+      "n1": "Mieux is 'better' or 'best'. It is the comparative of bien (well): elle joue mieux (she plays better)."
+    examples:
+      "Je parle mieux maintenant.":
+        native: "I speak better now."
+        bases:
+          "mieux": "better; best"
+      "Elle joue mieux que moi.":
+        native: "She plays better than I do."
+        bases:
+          "mieux": "better; best"
+          "que": "than"
+  "fr-0342":
+    native: "little; not much"
+    notes:
+      "n1": "Peu is 'little' or 'not much'. Un peu is 'a little': un peu de temps (a little time)."
+    examples:
+      "Il mange peu.":
+        native: "He eats little."
+        bases:
+          "peu": "little; not much"
+      "Je parle un peu français.":
+        native: "I speak a little French."
+        bases:
+          "peu": "little; not much"
+  "fr-0343":
+    native: "enough; quite"
+    notes:
+      "n1": "Assez is 'enough' or 'quite'. Assez de means 'enough of' before a noun."
+    examples:
+      "Il est assez content.":
+        native: "He is quite happy."
+        bases:
+          "assez": "enough; quite"
+      "Vous mangez assez.":
+        native: "You eat enough."
+        bases:
+          "assez": "enough; quite"
+  "fr-0344":
+    native: "too much; too"
+    notes:
+      "n1": "Trop is 'too much' or 'too'. Trop de is 'too much' or 'too many' before a noun."
+    examples:
+      "Tu travailles trop.":
+        native: "You work too much."
+        bases:
+          "trop": "too much; too"
+      "Ce est trop cher.":
+        native: "It is too expensive."
+        bases:
+          "trop": "too much; too"
+  "fr-0345":
+    native: "more; no longer"
+    notes:
+      "n1": "Plus is 'more'. With ne it means 'no longer': je ne parle plus ici (I no longer speak here)."
+    examples:
+      "Je ne parle plus ici.":
+        native: "I no longer speak here."
+        bases:
+          "ne": "not (with pas, jamais and plus)"
+          "plus": "more; no longer"
+      "Il est plus jeune que moi.":
+        native: "He is younger than me."
+        bases:
+          "plus": "more; no longer"
+          "que": "than"
+  "fr-0346":
+    native: "less; fewer"
+    notes:
+      "n1": "Moins is 'less'. It is the opposite of plus: moins vite (less quickly)."
+    examples:
+      "Il parle moins vite.":
+        native: "He speaks less quickly."
+        bases:
+          "moins": "less; fewer"
+      "Vous mangez moins que moi.":
+        native: "You eat less than me."
+        bases:
+          "moins": "less; fewer"
+          "que": "than"
+  "fr-0347":
+    native: "almost"
+    notes:
+      "n1": "Presque is 'almost' and never changes."
+    examples:
+      "Elle a presque vingt ans.":
+        native: "She is almost twenty."
+        bases:
+          "presque": "almost"
+      "Nous sommes presque là.":
+        native: "We are almost there."
+        bases:
+          "presque": "almost"
+  "fr-0348":
+    native: "really; truly"
+    notes:
+      "n1": "Vraiment is 'really' or 'truly', and it goes before the adjective or verb: vraiment bien (really good)."
+    examples:
+      "Ce est vraiment bien.":
+        native: "It is really good."
+        bases:
+          "vraiment": "really; truly"
+      "Nous jouons vraiment bien.":
+        native: "We play really well."
+        bases:
+          "vraiment": "really; truly"
+  "fr-0349":
+    native: "especially; above all"
+    notes:
+      "n1": "Surtout is 'especially' or 'above all'. It is put before the word it stresses."
+    examples:
+      "J'aime surtout la musique.":
+        native: "I especially like music."
+        bases:
+          "surtout": "especially; above all"
+          "la": "the"
+      "Ma sœur aime surtout la musique.":
+        native: "My sister especially likes music."
+        bases:
+          "surtout": "especially; above all"
+          "la": "the"
+  "fr-0350":
+    native: "now"
+    notes:
+      "n1": "Maintenant is 'now'. It can go at the start or at the end of a sentence."
+    examples:
+      "Nous mangeons maintenant.":
+        native: "We are eating now."
+        bases:
+          "maintenant": "now"
+      "Je suis maintenant ici.":
+        native: "I am here now."
+        bases:
+          "maintenant": "now"
+  "fr-0351":
+    native: "so; then"
+    notes:
+      "n1": "Alors is 'so' or 'then'. It often starts a sentence in speech, as a link to what comes next."
+    examples:
+      "Alors, tu parles français ?":
+        native: "So, do you speak French?"
+        bases:
+          "Alors": "so; then"
+      "Il est tard, alors je pars.":
+        native: "It is late, so I am leaving."
+        bases:
+          "alors": "so; then"
+  "fr-0352":
+    native: "then; next"
+    notes:
+      "n1": "Ensuite is 'then' or 'next', for the next step in a list of things that happen."
+    examples:
+      "Je mange, et ensuite je dors.":
+        native: "I eat, and then I sleep."
+        bases:
+          "ensuite": "then; next"
+      "Vous partez ensuite.":
+        native: "You leave next."
+        bases:
+          "ensuite": "then; next"
+  "fr-0353":
+    native: "at last; finally"
+    notes:
+      "n1": "Enfin is 'at last' or 'finally'. In speech it also means 'well' when you change the subject."
+    examples:
+      "Enfin, nous partons !":
+        native: "At last, we are leaving!"
+        bases:
+          "Enfin": "at last; finally"
+      "Tu es enfin là !":
+        native: "You are finally here!"
+        bases:
+          "enfin": "at last; finally"
+  "fr-0354":
+    native: "outside"
+    notes:
+      "n1": "Dehors is 'outside'. It is the opposite of dedans (inside)."
+    examples:
+      "Ils jouent dehors.":
+        native: "They play outside."
+        bases:
+          "dehors": "outside"
+      "Mon père travaille dehors.":
+        native: "My father works outside."
+        bases:
+          "dehors": "outside"
+  "fr-0355":
+    native: "inside"
+    notes:
+      "n1": "Dedans is 'inside'. It is the opposite of dehors (outside)."
+    examples:
+      "Elle est dedans.":
+        native: "She is inside."
+        bases:
+          "dedans": "inside"
+      "Nous mangeons dedans.":
+        native: "We eat inside."
+        bases:
+          "dedans": "inside"
+  "fr-0356":
+    native: "everywhere"
+    notes:
+      "n1": "Partout is 'everywhere'. It goes after the verb: il cherche partout (he looks everywhere)."
+    examples:
+      "Mon ami cherche partout.":
+        native: "My friend looks everywhere."
+        bases:
+          "partout": "everywhere"
+      "Ils cherchent partout.":
+        native: "They look everywhere."
+        bases:
+          "partout": "everywhere"
+  "fr-0357":
+    native: "for a long time"
+    notes:
+      "n1": "Longtemps is 'for a long time'. It is written as one word."
+    examples:
+      "Il attend longtemps.":
+        native: "He waits a long time."
+        bases:
+          "longtemps": "for a long time"
+      "Vous parlez longtemps.":
+        native: "You talk for a long time."
+        bases:
+          "longtemps": "for a long time"
+  "fr-0358":
+    native: "standing; up"
+    notes:
+      "n1": "Debout is 'standing' or 'up', as in être debout (to be standing up). It does not change."
+    examples:
+      "Nous sommes debout.":
+        native: "We are standing."
+        bases:
+          "debout": "standing; up"
+      "Ils sont debout depuis longtemps.":
+        native: "They have been standing for a long time."
+        bases:
+          "debout": "standing; up"
+          "depuis": "since; for"

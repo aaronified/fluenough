@@ -1,0 +1,50 @@
+schema: 1
+id: "fr-en-adverbs-sentences"
+kind: "layer"
+core: "fr-adverbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: adverbs"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences that use adverbs, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0359":
+    native: "I often eat pasta."
+    bases:
+      "des": "some; of the (plural)"
+      "pâtes": "dough; pasta (in the plural)"
+    confusables:
+      "toujours": { why: "Toujours is 'always', which is more than often." }
+      "jamais": { why: "Jamais is 'never', the opposite of souvent." }
+  "fr-0360":
+    native: "He is already here."
+    confusables:
+      "encore": { why: "Encore is 'still' or 'again', not 'already'." }
+      "bientot": { why: "Bientôt is 'soon', which is in the future." }
+  "fr-0361":
+    native: "She arrives early."
+    confusables:
+      "tard": { why: "Tard is 'late', the opposite of tôt." }
+      "vite": { why: "Vite is 'quickly', not 'early'." }
+  "fr-0362":
+    native: "We are eating now."
+    confusables:
+      "alors": { why: "Alors is 'so' or 'then', not 'now'." }
+      "bientot": { why: "Bientôt is 'soon', not 'now'." }
+  "fr-0363":
+    native: "My sister especially likes music."
+    bases:
+      "la": "the"
+    confusables:
+      "vraiment": { why: "Vraiment is 'really', not 'especially'." }
+      "toujours": { why: "Toujours is 'always'." }
+  "fr-0364":
+    native: "I speak a little French."
+    confusables:
+      "mal": { why: "Mal is 'badly', which is the wrong sense here." }
+      "assez": { why: "Assez is 'quite' or 'enough'." }
+  "fr-0365":
+    native: "They look everywhere."
+    confusables:
+      "dehors": { why: "Dehors is 'outside', not 'everywhere'." }
+      "dedans": { why: "Dedans is 'inside'." }

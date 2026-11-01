@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-adverbs"
+name: "Reading: adverbs"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about habits and plans, with adverbs such as souvent, toujours and bientôt. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-habit-survey"
+    title: "A short survey about everyday habits"
+    theme: "adverbs"
+    sentences:
+      - text: "Je mange souvent des pâtes."
+      - text: "Je joue souvent avec mon ami."
+      - text: "Ma sœur lit toujours."
+      - text: "Nous dormons tard."
+    questions:
+      - id: "fr-0366"
+        prompt: { en: "How often does the speaker eat pasta?" }
+        options:
+          - { en: "Often" }
+          - { en: "Never" }
+          - { en: "Late" }
+        answer: 1
+      - id: "fr-0367"
+        prompt: { en: "Who does the speaker play with?" }
+        options:
+          - { en: "A friend" }
+          - { en: "A sister" }
+          - { en: "A father" }
+        answer: 1
+      - id: "fr-0368"
+        prompt: { en: "What does the sister always do?" }
+        options:
+          - { en: "Reads" }
+          - { en: "Sleeps" }
+          - { en: "Plays" }
+        answer: 1
+  - id: "fr-a-quick-note"
+    title: "A quick note to a friend"
+    theme: "adverbs"
+    sentences:
+      - text: "Je pars tôt demain."
+      - text: "Mon frère arrive bientôt."
+      - text: "Il parle vite, mais il parle bien."
+      - text: "Nous mangeons ensemble maintenant."
+    questions:
+      - id: "fr-0369"
+        prompt: { en: "When does the speaker leave?" }
+        options:
+          - { en: "Early tomorrow" }
+          - { en: "Late today" }
+          - { en: "Never" }
+        answer: 1
+      - id: "fr-0370"
+        prompt: { en: "When will the brother arrive?" }
+        options:
+          - { en: "Soon" }
+          - { en: "Early" }
+          - { en: "Yesterday" }
+        answer: 1
+      - id: "fr-0371"
+        prompt: { en: "How does the brother speak?" }
+        options:
+          - { en: "Quickly" }
+          - { en: "Slowly" }
+          - { en: "Not at all" }
+        answer: 1

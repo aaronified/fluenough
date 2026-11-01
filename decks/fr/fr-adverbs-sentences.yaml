@@ -1,0 +1,101 @@
+schema: 1
+id: "fr-adverbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0359"
+    target: "Je mange souvent des pâtes."
+    ipa: "ʒə mɑ̃ʒ suvɑ̃ de pɑt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "mange", ref: "fr-0282" }
+      - { word: "souvent", ref: "fr-0326" }
+      - { word: "des", base: "des" }
+      - { word: "pâtes", base: "pâte" }
+    confusables:
+      - { id: "toujours", ref: "fr-0327", kind: "word" }
+      - { id: "jamais", ref: "fr-0328", kind: "word" }
+  - id: "fr-0360"
+    target: "Il est déjà là."
+    ipa: "il ɛ deʒa la"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "déjà", ref: "fr-0331" }
+      - { word: "là", ref: "fr-0030" }
+    confusables:
+      - { id: "encore", ref: "fr-0332", kind: "word" }
+      - { id: "bientot", ref: "fr-0335", kind: "word" }
+  - id: "fr-0361"
+    target: "Elle arrive tôt."
+    ipa: "ɛl aʁiv to"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "arrive", ref: "fr-0305" }
+      - { word: "tôt", ref: "fr-0337" }
+    confusables:
+      - { id: "tard", ref: "fr-0336", kind: "word" }
+      - { id: "vite", ref: "fr-0338", kind: "word" }
+  - id: "fr-0362"
+    target: "Nous mangeons maintenant."
+    ipa: "nu mɑ̃ʒɔ̃ mɛ̃tnɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "mangeons", ref: "fr-0282" }
+      - { word: "maintenant", ref: "fr-0350" }
+    confusables:
+      - { id: "alors", ref: "fr-0351", kind: "word" }
+      - { id: "bientot", ref: "fr-0335", kind: "word" }
+  - id: "fr-0363"
+    target: "Ma sœur aime surtout la musique."
+    ipa: "ma sœʁ ɛm syʁtu la myzik"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "sœur", ref: "fr-0170" }
+      - { word: "aime", ref: "fr-0263" }
+      - { word: "surtout", ref: "fr-0349" }
+      - { word: "la", base: "la" }
+      - { word: "musique", ref: "fr-0266" }
+    confusables:
+      - { id: "vraiment", ref: "fr-0348", kind: "word" }
+      - { id: "toujours", ref: "fr-0327", kind: "word" }
+  - id: "fr-0364"
+    target: "Je parle un peu français."
+    ipa: "ʒə paʁl œ̃ pø fʁɑ̃sɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "parle", ref: "fr-0023" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "peu", ref: "fr-0342" }
+      - { word: "français", ref: "fr-0246" }
+    confusables:
+      - { id: "mal", ref: "fr-0340", kind: "word" }
+      - { id: "assez", ref: "fr-0343", kind: "word" }
+  - id: "fr-0365"
+    target: "Ils cherchent partout."
+    ipa: "il ʃɛʁʃ paʁtu"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ils", ref: "fr-0130" }
+      - { word: "cherchent", ref: "fr-0300" }
+      - { word: "partout", ref: "fr-0356" }
+    confusables:
+      - { id: "dehors", ref: "fr-0354", kind: "word" }
+      - { id: "dedans", ref: "fr-0355", kind: "word" }
