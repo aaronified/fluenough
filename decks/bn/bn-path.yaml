@@ -608,11 +608,14 @@ units:
       - { id: "service-request", text: { "en": "A written service request" } }
   - decks: ["bn-reading-causative"]
     words: 0
-  - planned: { id: "bn-history", theme: "history", words: 45 }
+  - decks: ["bn-history", "bn-history-sentences", "*"]
+    words: 45
     listening_passages:
       - { id: "a-fort-visit", text: { "en": "A guide tells the story of an old fort" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a ruler" } }
+  - decks: ["bn-reading-history"]
+    words: 0
   - planned: { id: "bn-weddings", theme: "weddings", words: 45 }
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
