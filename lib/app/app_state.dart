@@ -81,6 +81,7 @@ import 'settings.dart';
 import 'shell_tab.dart';
 import 'synonym_loader.dart';
 import 'skill.dart';
+import 'today_summary.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
 
@@ -277,7 +278,9 @@ class AppState extends ChangeNotifier {
     _lastAdult = adult;
     _lastShown = shown;
     _lastProgressAll = all;
-    notifyListeners();
+    // The setting that moved already bumped the settings version, which
+    // drops what is kept for a queue.
+    _notifyKeepingStructure();
   }
 
   /// A reviewer is offered a deck update when only proposals changed, as
@@ -953,6 +956,7 @@ class AppState extends ChangeNotifier {
   /// has turned that off. In the background.
   Future<void> _afterLaunch() async {
     ensureEnglishKnown();
+    ensureLatinKnown();
     final downloads = deckDownloads;
     if (downloads == null || _disposed) return;
     // What the Languages page left out is removed now, at this open (#907).
@@ -1172,8 +1176,9 @@ class AppState extends ChangeNotifier {
   /// microphone permission if it has not been granted, so call it only when
   /// the learner switches speaking on.
   Future<SpeechSetup> startSpeech() async {
+    var queues = _queueInputs();
     _speechChecking = true;
-    notifyListeners();
+    queues = _notifyVoiceChange(queues);
     var setup = SpeechSetup.noRecogniser;
     try {
       final ready = await _speech.start();
@@ -1193,7 +1198,7 @@ class AppState extends ChangeNotifier {
       _speechLanguages = const <String>{};
     } finally {
       _speechChecking = false;
-      if (!_disposed) notifyListeners();
+      if (!_disposed) _notifyVoiceChange(queues);
     }
     return setup;
   }
@@ -1466,10 +1471,13 @@ class AppState extends ChangeNotifier {
     final answers = await Future.wait(<Future<bool>>[
       for (final tag in tags) _voiceAvailable(tag),
     ]);
+    final before = _queueInputs();
     for (final (index, tag) in tags.indexed) {
       _voices[tag] = answers[index];
     }
-    notifyListeners();
+    // The answers move the queues only if the counts see a difference: a
+    // phone that has the voice, as nearly all do, changes nothing (#857).
+    _notifyVoiceChange(before);
   }
 
   Future<bool> _voiceAvailable(String tag) async {
@@ -1845,7 +1853,59 @@ class AppState extends ChangeNotifier {
   }
 
   void _structureChanged() {
-    if (!_lazyNotifying) _structureVersion++;
+    if (!_lazyNotifying && !_keepStructure) _structureVersion++;
+  }
+
+  /// Set while a notification is sent about a change that leaves every
+  /// queue as it was (#857): it is not a structural change, so nothing
+  /// kept for a queue is dropped.
+  bool _keepStructure = false;
+
+  /// Notifies without calling the change structural.
+  void _notifyKeepingStructure() {
+    _keepStructure = true;
+    try {
+      notifyListeners();
+    } finally {
+      _keepStructure = false;
+    }
+  }
+
+  /// What the queues read from the voices and the recogniser, as the counts
+  /// see it (#857): for each language the decks teach, whether it counts as
+  /// spoken and as heard.
+  List<bool> _queueInputs() {
+    final seen = <String>{};
+    final inputs = <bool>[];
+    for (final entry in decks) {
+      final language = entry.language;
+      if (!seen.add('${language.code}/${language.ttsTag}/${language.script}')) {
+        continue;
+      }
+      inputs
+        ..add(_countsAsSpoken(language))
+        ..add(_countsAsHeard(language));
+    }
+    return inputs;
+  }
+
+  /// Notifies about a change to the voices or the recogniser. It is a
+  /// structural change only if what the queues read from them changed since
+  /// [before]; returns what they read now.
+  List<bool> _notifyVoiceChange(List<bool> before) {
+    // What was worked out from the old answers must not be read again.
+    _derived.clear();
+    final now = _queueInputs();
+    var same = now.length == before.length;
+    for (var i = 0; same && i < now.length; i++) {
+      same = now[i] == before[i];
+    }
+    if (same) {
+      _notifyKeepingStructure();
+    } else {
+      notifyListeners();
+    }
+    return now;
   }
 
   /// What a value kept for language [scope] ('*' for all) was worked out
@@ -1933,6 +1993,89 @@ class AppState extends ChangeNotifier {
       _lazyNotifying = false;
     }
     if (_lazyPending.isNotEmpty) _scheduleLazy();
+  }
+
+  // ---------------------------------------------------------------------------
+  // Today's saved summary (#875)
+
+  /// What a saved summary was worked out for: see [TodaySummaries.stamp].
+  String get _todayStamp => TodaySummaries.stamp(
+    languages: <String>[
+      ...<String>{...settings.learningLanguages, ...?currentProfile.languages},
+    ],
+    enabled: <Skill>[
+      for (final skill in Skill.values)
+        if (settings.isEnabled(skill)) skill,
+    ],
+    day: now(),
+  );
+
+  /// The language a summary is kept under: the one shown, or `*`. Worked
+  /// out from the languages learned alone, never the catalog: a summary is
+  /// read while the catalog loads, when [shownLanguage] has no language
+  /// yet, so it must be filed under the same name before and after.
+  String get _todayScope =>
+      LanguageChoice.shown(settings.languageChoice, <String>[
+        ...<String>{
+          ...settings.learningLanguages,
+          ...?currentProfile.languages,
+        },
+      ]) ??
+      '*';
+
+  /// The skill-tile numbers Today last showed for the language shown, read
+  /// from the small summary saved with the settings, so that Today can draw
+  /// its tiles while the catalog loads. Null when none was saved, or when it
+  /// is stale: written by another app version, for other languages or with
+  /// other skills switched on, or on another day.
+  TodaySummary? get savedToday => TodaySummaries.read(
+    saved: settings.todaySummary,
+    stamp: _todayStamp,
+    language: _todayScope,
+  );
+
+  TodaySummary? _todayPending;
+  bool _todayScheduled = false;
+
+  /// Keeps [summary], Today's live numbers for the language shown, for the
+  /// next launch. Debounced: the latest of those given by the end of the
+  /// frame is written, and nothing is written if it is what is saved
+  /// already. It waits for the frame's end, not for an idle slot, because
+  /// an idle task leaves a timer pending when the screen is closed.
+  void rememberToday(TodaySummary summary) {
+    if (_disposed) return;
+    _todayPending = summary;
+    // The stamp and the scope are read when it is written, so that a
+    // change of language in between is not filed under the old one.
+    _todayLanguage = _todayScope;
+    if (_todayScheduled) return;
+    _todayScheduled = true;
+    try {
+      SchedulerBinding.instance.addPostFrameCallback((_) => flushToday());
+    } catch (_) {
+      // Without a scheduler there is nothing to wait for.
+      flushToday();
+    }
+  }
+
+  String? _todayLanguage;
+
+  /// Writes the pending summary now. The tests call it, having no frame to
+  /// wait for.
+  @visibleForTesting
+  void flushToday() {
+    _todayScheduled = false;
+    final summary = _todayPending;
+    final language = _todayLanguage;
+    _todayPending = null;
+    if (_disposed || summary == null || language == null) return;
+    final text = TodaySummaries.write(
+      saved: settings.todaySummary,
+      stamp: _todayStamp,
+      language: language,
+      summary: summary,
+    );
+    if (text != settings.todaySummary) settings.todaySummary = text;
   }
 
   /// Words first drilled today, counted from the log once and then from
@@ -3544,6 +3687,7 @@ class AppState extends ChangeNotifier {
   @override
   void dispose() {
     _disposed = true;
+    _todayPending = null;
     reminders.dispose();
     settings
       ..removeListener(_forgetPending)
