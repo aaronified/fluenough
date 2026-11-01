@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-technology"
+name: "Reading: technology"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A conversation at a shop that sells machines, and a note about the internet. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-technology-shop"
+    title: "At an electronics shop"
+    theme: "technology"
+    sentences:
+      - {"text": "यह नया कंप्यूटर बहुत तेज़ है।", "reading": "yah nayā kampyūṭar bahut tēz hai.", "ipa": "jəɦ nəjaː kəmpjuːʈər bəɦʊt̪ t̪eːz ɦɛː"}
+      - {"text": "सॉफ़्टवेयर मुफ़्त में मिलेगा।", "reading": "sôfṭavēyar muft mēm̐ milēgā.", "ipa": "sɔfʈəʋeːjər mʊft̪ mẽː mɪleːɡaː"}
+      - {"text": "बैटरी की ऊर्जा कम है, इसलिए चार्जर लो।", "reading": "baiṭrī kī ūrjā kam hai, isliē cārjar lō.", "ipa": "bɛːʈriː kiː uːrdʒaː kəm ɦɛː ɪslɪeː tʃaːrdʒər loː"}
+      - {"text": "रोबोट का स्विच कहाँ है?", "reading": "rōbōṭ kā svic kahām̐ hai?", "ipa": "roːboːʈ kaː sʋɪtʃ kəɦãː ɦɛː"}
+    questions:
+      - {"id": "hi-2330", "prompt": {"en": "The computer is slow."}, "answer": false}
+      - {"id": "hi-2331", "prompt": {"en": "What will be given free?"}, "options": [{"en": "The software"}, {"en": "The charger"}], "answer": 1}
+      - {"id": "hi-2332", "prompt": {"en": "The battery has little energy."}, "answer": true}
+  - id: "hi-technology-note"
+    title: "A note about the internet"
+    theme: "technology"
+    sentences:
+      - {"text": "मेरा ब्लॉग रोज़ नई पोस्ट चाहता है।", "reading": "mērā blôg rōz naī pōsṭ cāhtā hai.", "ipa": "meːraː blɔɡ roːz nəiː poːsʈ tʃaːɦt̪aː ɦɛː"}
+      - {"text": "हमारे सर्वर पर सारा डेटा सुरक्षित है।", "reading": "hamārē sarvar par sārā ḍēṭā surakśit hai.", "ipa": "ɦəmaːreː sərʋər pər saːraː ɖeːʈaː sʊrəkʃɪt̪ ɦɛː"}
+      - {"text": "वैज्ञानिकों ने नया सेंसर बनाया है।", "reading": "vaigyānikōm̐ nē nayā sēṁsar banāyā hai.", "ipa": "ʋɛːɡjaːnɪkõː neː nəjaː sẽːsər bənaːjaː ɦɛː"}
+      - {"text": "सोशल मीडिया पर चैट करते समय सावधान रहो।", "reading": "sōśal mīḍiyā par caiṭ kartē samay sāvdhān rahō.", "ipa": "soːʃəl miːɖɪjaː pər tʃɛːʈ kərt̪eː səməj saːʋd̪ʱaːn rəɦoː"}
+    questions:
+      - {"id": "hi-2333", "prompt": {"en": "The blog wants a new post every day."}, "answer": true}
+      - {"id": "hi-2334", "prompt": {"en": "Where is the data kept?"}, "options": [{"en": "On the server"}, {"en": "In the drawer"}], "answer": 1}
+      - {"id": "hi-2335", "prompt": {"en": "The scientists made a new switch."}, "answer": false}
