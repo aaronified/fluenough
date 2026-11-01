@@ -1,0 +1,83 @@
+schema: 1
+id: "fr-en-everyday-verbs-sentences"
+kind: "layer"
+core: "fr-everyday-verbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: everyday verbs"
+license: "CC-BY-SA-4.0"
+description: "Eight sentences with everyday verbs, each with the verbs it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0312":
+    native: "I eat and I drink."
+    bases:
+      "mange": "eat"
+      "bois": "drink"
+    confusables:
+      "acheter": { why: "Acheter is 'to buy': the food is eaten here, not bought." }
+      "préparer": { why: "Préparer is 'to prepare' a meal, not 'to eat' it." }
+  "fr-0313":
+    native: "We are going to the station tomorrow."
+    bases:
+      "allons": "go (we)"
+      "à": "to"
+      "la": "the"
+    confusables:
+      "venir": { why: "Venir is 'to come', not 'to go'." }
+      "partir": { why: "Partir is 'to leave'; here the sentence says where we go." }
+  "fr-0314":
+    native: "Are you watching TV?"
+    bases:
+      "regardez": "watch (you)"
+      "la": "the"
+      "télé": "TV"
+    confusables:
+      "écouter": { why: "Écouter is 'to listen', not 'to watch'." }
+      "lire": { why: "Lire is 'to read', not 'to watch'." }
+  "fr-0315":
+    native: "I am looking for my phone."
+    bases:
+      "cherche": "look for"
+    confusables:
+      "trouver": { why: "Trouver is 'to find', the result of looking, not the looking." }
+      "attendre": { why: "Attendre is 'to wait'." }
+  "fr-0316":
+    native: "Close the door."
+    bases:
+      "Ferme": "close"
+      "la": "the"
+      "porte": "door"
+    confusables:
+      "ouvrir": { why: "Ouvrir is 'to open', the opposite of fermer." }
+      "laver": { why: "Laver is 'to wash'." }
+  "fr-0317":
+    native: "He reads the newspaper and writes a letter."
+    bases:
+      "lit": "reads"
+      "le": "the"
+      "journal": "newspaper"
+      "écrit": "writes"
+      "une": "a"
+      "lettre": "letter"
+    confusables:
+      "écouter": { why: "Écouter is 'to listen'; the sentence is about reading and writing." }
+      "regarder": { why: "Regarder is 'to look at'; the sentence is about reading." }
+  "fr-0318":
+    native: "They take the bus at eleven o'clock."
+    bases:
+      "prennent": "take (they)"
+      "le": "the"
+      "bus": "bus"
+      "à": "at"
+    confusables:
+      "attendre": { why: "Attendre is 'to wait': the sentence says they take the bus." }
+      "marcher": { why: "Marcher is 'to walk', not to take a bus." }
+  "fr-0319":
+    native: "I want to pay for the coffee."
+    bases:
+      "veux": "want"
+      "le": "the"
+      "café": "coffee"
+    confusables:
+      "acheter": { why: "Acheter is 'to buy'; this sentence is about paying." }
+      "cuisiner": { why: "Cuisiner is 'to cook', not 'to pay'." }

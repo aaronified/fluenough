@@ -1,0 +1,124 @@
+schema: 1
+id: "fr-everyday-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0312"
+    target: "Je mange et je bois."
+    ipa: "ʒə mɑ̃ʒ e ʒə bwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "mange", base: "manger" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "bois", base: "boire" }
+    confusables:
+      - { id: "acheter", ref: "fr-0294", kind: "word" }
+      - { id: "préparer", ref: "fr-0295", kind: "word" }
+  - id: "fr-0313"
+    target: "Nous allons à la gare demain."
+    ipa: "nu zalɔ̃ a la ɡaʁ dəmɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "allons", base: "aller" }
+      - { word: "à", base: "à" }
+      - { word: "la", base: "la" }
+      - { word: "gare", ref: "fr-0075" }
+      - { word: "demain", ref: "fr-0078" }
+    confusables:
+      - { id: "venir", ref: "fr-0285", kind: "word" }
+      - { id: "partir", ref: "fr-0304", kind: "word" }
+  - id: "fr-0314"
+    target: "Vous regardez la télé ?"
+    ipa: "vu ʁəɡaʁde la tele"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Vous", ref: "fr-0096" }
+      - { word: "regardez", base: "regarder" }
+      - { word: "la", base: "la" }
+      - { word: "télé", base: "télé" }
+    confusables:
+      - { id: "écouter", ref: "fr-0292", kind: "word" }
+      - { id: "lire", ref: "fr-0290", kind: "word" }
+  - id: "fr-0315"
+    target: "Je cherche mon téléphone."
+    ipa: "ʒə ʃɛʁʃ mɔ̃ telefɔn"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "cherche", base: "chercher" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "téléphone", ref: "fr-0257" }
+    confusables:
+      - { id: "trouver", ref: "fr-0301", kind: "word" }
+      - { id: "attendre", ref: "fr-0303", kind: "word" }
+  - id: "fr-0316"
+    target: "Ferme la porte."
+    ipa: "fɛʁm la pɔʁt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ferme", base: "fermer" }
+      - { word: "la", base: "la" }
+      - { word: "porte", base: "porte" }
+    confusables:
+      - { id: "ouvrir", ref: "fr-0298", kind: "word" }
+      - { id: "laver", ref: "fr-0296", kind: "word" }
+  - id: "fr-0317"
+    target: "Il lit le journal et il écrit une lettre."
+    ipa: "il li lə ʒuʁnal e il ekʁi yn lɛtʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "lit", base: "lire" }
+      - { word: "le", base: "le" }
+      - { word: "journal", base: "journal" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "écrit", base: "écrire" }
+      - { word: "une", base: "une" }
+      - { word: "lettre", base: "lettre" }
+    confusables:
+      - { id: "écouter", ref: "fr-0292", kind: "word" }
+      - { id: "regarder", ref: "fr-0293", kind: "word" }
+  - id: "fr-0318"
+    target: "Ils prennent le bus à onze heures."
+    ipa: "il pʁɛn lə bys a ɔ̃z øʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ils", ref: "fr-0130" }
+      - { word: "prennent", base: "prendre" }
+      - { word: "le", base: "le" }
+      - { word: "bus", base: "bus" }
+      - { word: "à", base: "à" }
+      - { word: "onze", ref: "fr-0218" }
+      - { word: "heures", ref: "fr-0074" }
+    confusables:
+      - { id: "attendre", ref: "fr-0303", kind: "word" }
+      - { id: "marcher", ref: "fr-0306", kind: "word" }
+  - id: "fr-0319"
+    target: "Je veux payer le café."
+    ipa: "ʒə vø peje lə kafe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "veux", base: "vouloir" }
+      - { word: "payer", ref: "fr-0310" }
+      - { word: "le", base: "le" }
+      - { word: "café", base: "café" }
+    confusables:
+      - { id: "acheter", ref: "fr-0294", kind: "word" }
+      - { id: "cuisiner", ref: "fr-0309", kind: "word" }

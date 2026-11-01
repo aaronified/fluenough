@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-everyday-verbs"
+name: "Reading: everyday verbs"
+kind: reading
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the day: a note on the fridge, and a trip to the market. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fridge-note"
+    title: "A note on the fridge"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "Je fais la cuisine ce soir."
+      - text: "Tu prends le pain et le lait."
+      - text: "Nous mangeons à huit heures."
+      - text: "Ouvre la fenêtre, s'il fait chaud."
+    questions:
+      - id: "fr-0320"
+        prompt: { en: "Who is cooking this evening?" }
+        options:
+          - { en: "The writer" }
+          - { en: "The friend" }
+          - { en: "The mother" }
+        answer: 1
+      - id: "fr-0321"
+        prompt: { en: "What should the reader take?" }
+        options:
+          - { en: "Bread and milk" }
+          - { en: "Coffee and tea" }
+          - { en: "Water and wine" }
+        answer: 1
+      - id: "fr-0322"
+        prompt: { en: "What time is the meal?" }
+        options:
+          - { en: "Eight o'clock" }
+          - { en: "Ten o'clock" }
+          - { en: "Two o'clock" }
+        answer: 1
+  - id: "fr-a-trip-to-the-market"
+    title: "A trip to the market"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "Je vais au marché avec Paul."
+      - text: "Il achète du pain."
+      - text: "Nous attendons le bus."
+      - text: "Elle écrit une lettre."
+    questions:
+      - id: "fr-0323"
+        prompt: { en: "Where is the writer going?" }
+        options:
+          - { en: "To the market" }
+          - { en: "To the station" }
+          - { en: "To school" }
+        answer: 1
+      - id: "fr-0324"
+        prompt: { en: "What is bought in the text?" }
+        options:
+          - { en: "Bread" }
+          - { en: "Coffee" }
+          - { en: "Wine" }
+        answer: 1
+      - id: "fr-0325"
+        prompt: { en: "What are they waiting for?" }
+        options:
+          - { en: "The bus" }
+          - { en: "The train" }
+          - { en: "The friend" }
+        answer: 1
