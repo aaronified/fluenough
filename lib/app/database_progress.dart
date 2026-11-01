@@ -1,12 +1,16 @@
+import 'dart:async';
+
 import 'package:flutter/foundation.dart';
 
 import '../core/data/database.dart';
+import '../core/data/replay_isolate.dart';
 import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/ask.dart';
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/fsrs.dart';
 import '../core/scheduling/skill_map.dart';
+import 'app_info.dart';
 import 'memory_progress.dart';
 
 /// A profile's progress, kept in its own database file (#3, #5) and read
@@ -20,14 +24,37 @@ import 'memory_progress.dart';
 /// order it was recorded. An answer given in the instant before the app is
 /// killed can be lost; nothing already written can be.
 class DatabaseProgress extends ChangeNotifier implements ProgressStore {
-  DatabaseProgress._(this._db, this._log, this._memory) {
+  DatabaseProgress._(
+    this._db,
+    this._log,
+    this._memory,
+    this._replayer,
+    this._snapshotter,
+    this._app,
+    this._snapshotAfter,
+    this._stage,
+  ) {
     _memory.addListener(notifyListeners);
   }
 
   /// Progress over [db], read from the review log: completes once it has
   /// been. [close] closes the database.
-  static Future<DatabaseProgress> open(AppDatabase db) async {
-    final progress = DatabaseProgress.opening(db);
+  static Future<DatabaseProgress> open(
+    AppDatabase db, {
+    ReplayRunner replayer = replayInIsolate,
+    SnapshotRunner snapshotter = snapshotInIsolate,
+    String app = AppInfo.version,
+    Duration? snapshotAfter,
+    void Function(String stage)? onStage,
+  }) async {
+    final progress = DatabaseProgress.opening(
+      db,
+      replayer: replayer,
+      snapshotter: snapshotter,
+      app: app,
+      snapshotAfter: snapshotAfter,
+      onStage: onStage,
+    );
     await progress.ready;
     return progress;
   }
@@ -41,8 +68,39 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   /// database cannot be opened has: progress kept in memory only, [persists]
   /// false so that Today says it is not saved, and nothing written to the
   /// database, whose log is left as it is.
-  factory DatabaseProgress.opening(AppDatabase db) {
-    final progress = DatabaseProgress._(db, ReviewLog(db), MemoryProgress());
+  ///
+  /// The log is sorted and replayed by [replayer], on an isolate by default
+  /// (#857), so that a long log does not freeze the app: only reading rows
+  /// and writing the state cache stay here, in the order they always had.
+  /// When the database holds a snapshot of the replay made from this very
+  /// log, fitted parameters and app version (`ReviewLog.openCached`,
+  /// ADR-0051), it is read, on an isolate by [snapshotter], in place of the
+  /// replay, and the result is the same; anything else replays and then
+  /// keeps a new snapshot, queued behind the read. After a change a new one
+  /// is made once the learner has paused for [snapshotAfter] (never, when it
+  /// is null) and by [saveSnapshot].
+  ///
+  /// [onStage] hears when the replay is back ('review log replayed') or the
+  /// snapshot is ('snapshot loaded'), and when the state cache is written
+  /// ('state cache written'), for the startup timing.
+  factory DatabaseProgress.opening(
+    AppDatabase db, {
+    ReplayRunner replayer = replayInIsolate,
+    SnapshotRunner snapshotter = snapshotInIsolate,
+    String app = AppInfo.version,
+    Duration? snapshotAfter,
+    void Function(String stage)? onStage,
+  }) {
+    final progress = DatabaseProgress._(
+      db,
+      ReviewLog(db),
+      MemoryProgress(),
+      replayer,
+      snapshotter,
+      app,
+      snapshotAfter,
+      onStage,
+    );
     final ready = progress._read();
     progress._ready = ready;
     // Every write is queued behind the read, whether it succeeds or not.
@@ -80,24 +138,29 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
   Future<void> _readLog() async {
     final log = _log;
     final fitted = await log.fitted();
-    final reviews = await log.reviews();
-    final parameters = SkillParameters(
+    // Reading the kept snapshot, or else sorting, replaying (twice) and
+    // indexing the whole log, is one job on an isolate; its result is what
+    // the state cache and memory both come from.
+    final opening = await log.openCached(
       fitted: fitted,
-      lastStudied: SkillParameters.lastStudiedIn(
-        <({String cardId, DateTime at})>[
-          for (final r in reviews) (cardId: r.key.cardId, at: r.at),
-        ],
-      ),
+      app: _app,
+      run: _replayer,
+      fromSnapshot: _snapshotter,
     );
-    // One replay of the log serves both: the state cache is its states, and
-    // memory is replayed from its events.
-    final replayed = await log.replay(reviews, parameters: parameters);
-    await log.putStates(replayed.states);
-    final memory = MemoryProgress.replaying(
-      replayed.events,
-      leechActions: await log.leechActions(),
-      fitted: fitted,
+    final opened = opening.opened;
+    _stage?.call(
+      opening.fromSnapshot ? 'snapshot loaded' : 'review log replayed',
     );
+    await log.putStates(opened.cacheStates);
+    _stage?.call('state cache written');
+    final stamp = opening.stamp;
+    final bytes = opening.bytes;
+    if (stamp != null && bytes != null) {
+      // Kept for the next launch, behind this read and before every write
+      // after it; a failure costs only that launch's replay.
+      _snapshotTask(() => log.putSnapshot(stamp, bytes, app: _app));
+    }
+    final memory = MemoryProgress.opened(opened, fitted: fitted);
     final discarded = _memory;
     discarded.removeListener(notifyListeners);
     _memory = memory..addListener(notifyListeners);
@@ -107,6 +170,16 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
 
   final AppDatabase _db;
   final ReviewLog _log;
+  final ReplayRunner _replayer;
+  final SnapshotRunner _snapshotter;
+  final String _app;
+  final Duration? _snapshotAfter;
+  final void Function(String stage)? _stage;
+  Timer? _snapshotTimer;
+  Future<void>? _snapshotRun;
+  bool _snapshotAgain = false;
+  bool _snapshotKept = false;
+  bool _disposed = false;
   MemoryProgress _memory;
   late Future<void> _writes;
   Object? _writeError;
@@ -170,6 +243,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       () => _log.putFitted(key, value, parameters: parameters),
       'while saving fitted parameters',
     );
+    _scheduleSnapshot();
     await _writes;
   }
 
@@ -186,6 +260,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       () => _log.act(action, parameters: parameters),
       'while saving a leech action',
     );
+    _scheduleSnapshot();
     return action;
   }
 
@@ -238,6 +313,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
         'while rescheduling',
       );
     }
+    _scheduleSnapshot();
     return event;
   }
 
@@ -286,6 +362,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       await _log.leechActions(),
       fitted: imported.fitted,
     );
+    _scheduleSnapshot();
     return imported.added;
   }
 
@@ -322,6 +399,63 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       await _log.leechActions(),
       fitted: await _log.fitted(),
     );
+    _scheduleSnapshot();
+  }
+
+  /// Runs [task] after every write queued so far. Keeping the snapshot is a
+  /// cache: if it fails, nothing is reported to the learner and the next
+  /// launch replays the log, so the failure is only printed.
+  void _snapshotTask(Future<Object?> Function() task) {
+    _writes = _writes.then<void>((_) async {
+      try {
+        await task();
+      } on Object catch (error) {
+        debugPrint('Could not keep the review-log snapshot: $error');
+      }
+    });
+  }
+
+  /// Arms the snapshot to be made once the learner pauses: each change
+  /// restarts the wait, so a session is one snapshot, not one per answer.
+  void _scheduleSnapshot() {
+    final after = _snapshotAfter;
+    if (after == null || _readFailed || _disposed) return;
+    _snapshotTimer?.cancel();
+    _snapshotTimer = Timer(after, () {
+      unawaited(saveSnapshot());
+    });
+  }
+
+  /// Makes and keeps a snapshot of the log as it is now, after every write
+  /// queued so far, by replaying the log from the database
+  /// (`ReviewLog.saveSnapshot`), not from memory: the snapshot is the
+  /// replay's result and can be nothing else. One runs at a time; a change
+  /// during one starts another after it. Returns whether the last one kept
+  /// its snapshot. Never throws.
+  Future<bool> saveSnapshot() async {
+    if (_readFailed || _disposed) return false;
+    final running = _snapshotRun;
+    if (running != null) {
+      _snapshotAgain = true;
+      await running;
+      return _snapshotKept;
+    }
+    final run = () async {
+      do {
+        _snapshotAgain = false;
+        try {
+          await _writes;
+          _snapshotKept = await _log.saveSnapshot(app: _app, run: _replayer);
+        } on Object catch (error) {
+          _snapshotKept = false;
+          debugPrint('Could not make the review-log snapshot: $error');
+        }
+      } while (_snapshotAgain && !_disposed);
+    }();
+    _snapshotRun = run;
+    await run;
+    _snapshotRun = null;
+    return _snapshotKept;
   }
 
   /// Completes once every review recorded so far is in the database.
@@ -334,12 +468,17 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
 
   /// Finishes the writes in flight and closes the database.
   Future<void> close() async {
+    _snapshotTimer?.cancel();
+    _disposed = true;
     await _writes;
+    await _snapshotRun;
     await _db.close();
   }
 
   @override
   void dispose() {
+    _snapshotTimer?.cancel();
+    _disposed = true;
     _memory.removeListener(notifyListeners);
     _memory.dispose();
     super.dispose();

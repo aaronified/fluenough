@@ -1,0 +1,69 @@
+schema: 1
+id: "es-en-reading-estar-gerund"
+name: "Reading: what is happening now"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with estar and the gerund: what people are doing at home and at a café, right now. Written for this deck; not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-que-estan-haciendo"
+    title: "What are they doing?"
+    sentences:
+      - text: "Ana está leyendo en el sofá."
+      - text: "Mi hermano está durmiendo."
+      - text: "Nosotros estamos comiendo pan."
+      - text: "Ellos están bebiendo agua."
+    questions:
+      - id: "es-1159"
+        prompt: { en: "What is Ana doing?" }
+        options:
+          - { en: "Sleeping" }
+          - { en: "Cooking" }
+          - { en: "Reading on the sofa" }
+        answer: 3
+      - id: "es-1160"
+        prompt: { en: "What is the brother doing?" }
+        options:
+          - { en: "Eating" }
+          - { en: "Sleeping" }
+          - { en: "Writing" }
+        answer: 2
+      - id: "es-1161"
+        prompt: { en: "What are the people in the last sentence drinking?" }
+        options:
+          - { en: "Water" }
+          - { en: "Wine" }
+          - { en: "Coffee" }
+        answer: 1
+  - id: "es-ahora-mismo"
+    title: "Right now"
+    sentences:
+      - text: "¿Qué estás haciendo?"
+      - text: "Estoy escribiendo un correo."
+      - text: "Mi madre está yendo al trabajo."
+      - text: "Mi amigo está pidiendo la cuenta."
+    questions:
+      - id: "es-1162"
+        prompt: { en: "What is the speaker writing?" }
+        options:
+          - { en: "A letter" }
+          - { en: "An email" }
+          - { en: "A list" }
+        answer: 2
+      - id: "es-1163"
+        prompt: { en: "Where is the mother going?" }
+        options:
+          - { en: "To work" }
+          - { en: "To school" }
+          - { en: "To the shop" }
+        answer: 1
+      - id: "es-1164"
+        prompt: { en: "What is the friend asking for?" }
+        options:
+          - { en: "The menu" }
+          - { en: "The bread" }
+          - { en: "The bill" }
+        answer: 3

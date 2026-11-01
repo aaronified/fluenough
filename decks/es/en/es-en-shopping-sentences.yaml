@@ -1,0 +1,105 @@
+schema: 1
+id: es-en-shopping-sentences
+kind: layer
+core: es-shopping-sentences
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: 'Sentences: shopping'
+license: CC-BY-SA-4.0
+description: 'Eight sentences about shopping, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake.'
+cards:
+  es-1237:
+    native: I pay in cash, not by card.
+    bases:
+      en: in
+      con: by
+    confusables:
+      card:
+        why: Tarjeta is a card, the way to pay that this sentence says is not used.
+      bill:
+        why: Billete is a banknote, a paper note of money, not the way of paying.
+  es-1238:
+    native: Could you give me the receipt and the invoice, please?
+    bases:
+      Me: me
+      da: give
+      el: the
+      la: the
+      por: please
+      favor: please
+    confusables:
+      price:
+        why: Precio is the price, which is not on a receipt in this sentence.
+      discount:
+        why: Descuento is a discount, a reduction in the price, not a paper.
+  es-1239:
+    native: This shirt costs forty euros.
+    bases:
+      Esta: This
+      euros: euros
+    confusables:
+      shoe:
+        why: Zapato is a shoe, not a shirt.
+      dress:
+        why: Vestido is a dress, not a shirt.
+  es-1240:
+    native: There are sales in the shop on the corner.
+    bases:
+      Hay: There are
+      rebajas: sales
+      en: in
+      la: the
+      de: 'on'
+    confusables:
+      market:
+        why: Mercado is a market, an open place to buy food, not a shop on a corner.
+      sale:
+        why: Venta is a sale, the act of selling; this sentence says a shop with sales.
+  es-1241:
+    native: How much does the dress cost?
+    bases:
+      el: the
+    confusables:
+      cheap:
+        why: Barato is cheap, a low price; the question asks for the price.
+      dear:
+        why: Caro is expensive, a high price; the question asks for the price.
+  es-1242:
+    native: I want to try on this jacket in a small size.
+    bases:
+      probarme: try on
+      esta: this
+      en: in
+      la: a
+    confusables:
+      shirt:
+        why: Camisa is a shirt, not a jacket.
+      large:
+        why: Grande is large, the opposite size to pequeña.
+  es-1243:
+    native: The changing room is at the back, on the left.
+    bases:
+      El: The
+      al: at the
+      fondo: back
+      a: 'on'
+      la: the
+    confusables:
+      counter:
+        why: Mostrador is the counter where you pay, not the changing room.
+      window:
+        why: Escaparate is a shop window, where things are shown from outside.
+  es-1244:
+    native: Sorry, this model is sold out.
+    bases:
+      este: this
+      modelo: model
+      Lo: I am
+      siento: sorry
+    confusables:
+      sold:
+        why: Usado is used, which is not sold out.
+      free:
+        why: Gratis is free, with no charge; this sentence is about stock.

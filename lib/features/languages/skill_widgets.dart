@@ -13,22 +13,35 @@ import '../../ui/widgets/hint.dart';
 /// How each of the four skills looks on the Languages page: Speak is the
 /// speaking skill's microphone and green, Hear listening's ear and purple,
 /// Read recognition's eye and blue, Write production's keyboard and orange
-/// (`lib/ui/skill_visuals.dart`, `ModeColors`), fixed whatever the seed.
+/// (`lib/ui/skill_visuals.dart`, `ModeColors`), fixed whatever the seed. A
+/// sign language's one skill, Gestures, has its own: a raised hand, in red.
 extension SkillKindVisuals on SkillKind {
-  Skill get skill => switch (this) {
+  /// The drill skill whose look it borrows, or null for a gesture skill,
+  /// which has its own.
+  Skill? get skill => switch (this) {
     SkillKind.speak => Skill.speaking,
     SkillKind.hear => Skill.listening,
     SkillKind.read => Skill.recognition,
     SkillKind.write => Skill.production,
+    SkillKind.gesture => null,
   };
 
-  IconData get icon => skill.icon;
+  IconData get icon => switch (this) {
+    SkillKind.gesture => Icons.front_hand_outlined,
+    _ => skill!.icon,
+  };
+
+  ModeColor colors(ModeColors modes) => switch (this) {
+    SkillKind.gesture => modes.gesture,
+    _ => modes.forSkill(skill!),
+  };
 
   String label(AppLocalizations l10n) => switch (this) {
     SkillKind.speak => l10n.languagesSkillSpeak,
     SkillKind.hear => l10n.languagesSkillHear,
     SkillKind.read => l10n.languagesSkillRead,
     SkillKind.write => l10n.languagesSkillWrite,
+    SkillKind.gesture => l10n.languagesSkillGestures,
   };
 }
 
@@ -40,44 +53,72 @@ extension SkillStateText on SkillState {
   };
 }
 
+extension ScriptLevelText on ScriptLevel {
+  String label(AppLocalizations l10n) => switch (this) {
+    ScriptLevel.leave => l10n.languagesStateLeave,
+    ScriptLevel.learn => l10n.languagesStateLearn,
+    ScriptLevel.read => l10n.languagesSkillRead,
+    ScriptLevel.readWrite => l10n.languagesSkillReadWrite,
+  };
+}
+
+extension SpokenLevelText on SpokenLevel {
+  String label(AppLocalizations l10n) => switch (this) {
+    SpokenLevel.leave => l10n.languagesStateLeave,
+    SpokenLevel.learn => l10n.languagesStateLearn,
+    SpokenLevel.hear => l10n.languagesSkillHear,
+    SpokenLevel.hearSpeak => l10n.languagesSkillHearSpeak,
+  };
+}
+
 /// The mark in a chip's corner: a tick for Know, a double tick once the
 /// level covers it, a cap for Learn, a minus for Leave. Never colour alone.
+/// The higher Know level of a pill ([SkillMark.knowBoth]) is the tick and
+/// the icon of the extra skill: the keyboard of Write on a script's pill, the
+/// microphone of Speak on the Spoken pill.
 IconData markIcon(SkillMark mark) => switch (mark) {
   SkillMark.leave => Icons.remove,
-  SkillMark.know => Icons.check,
-  SkillMark.knowCovered => Icons.done_all,
+  SkillMark.know || SkillMark.knowBoth => Icons.check,
+  SkillMark.knowCovered || SkillMark.knowBothCovered => Icons.done_all,
   SkillMark.learn => Icons.school_outlined,
 };
 
-/// A skill's name: "Read", or "Read Devanagari" where the language has
-/// [severalScripts].
-String skillName(
-  AppLocalizations l10n,
-  SkillKey key, {
-  required bool severalScripts,
-  required String fallbackScript,
-}) {
-  final base = key.kind.label(l10n);
-  final script = key.script;
-  if (script == null || !severalScripts) return base;
-  return l10n.languagesSkillScript(
-    base,
-    l10n.scriptNameOr(script, fallbackScript),
-  );
-}
+/// The icon after the tick on the higher Know level of the pill of [kind]
+/// (Read for a script's pill, Hear for the Spoken pill), else null.
+IconData? markExtraIcon(SkillMark mark, SkillKind kind) =>
+    mark == SkillMark.knowBoth || mark == SkillMark.knowBothCovered
+    ? (kind == SkillKind.hear ? SkillKind.speak.icon : SkillKind.write.icon)
+    : null;
 
-/// A skill's state and level as a screen reader reads it.
-String skillSemantics(
+/// Know's fill: the skill's container, darkened a little so that Know stands
+/// apart from Learn, which keeps the container and adds the border. The text
+/// stays 4.5:1 or better on it in every theme.
+Color knowFill(Color container, Brightness brightness) => Color.lerp(
+  container,
+  Colors.black,
+  brightness == Brightness.dark ? 0.35 : 0.18,
+)!;
+
+/// The name of a script's pill: "Script Devanagari".
+String scriptPillName(AppLocalizations l10n, String script, String fallback) =>
+    l10n.languagesSkillScript(
+      l10n.languagesSkillScriptName,
+      l10n.scriptNameOr(script, fallback),
+    );
+
+/// A pill's level as a screen reader reads it: "Spoken: Hear and Speak",
+/// with ", level found" where the found level covers a Know level.
+String pillSemantics(
   AppLocalizations l10n,
   String name,
-  SkillState state, {
+  String levelLabel, {
   required bool covered,
-}) => state == SkillState.know && covered
-    ? l10n.languagesSkillStateCovered(name, state.label(l10n))
-    : l10n.languagesSkillState(name, state.label(l10n));
+}) => covered
+    ? l10n.languagesSkillStateCovered(name, levelLabel)
+    : l10n.languagesSkillState(name, levelLabel);
 
 /// One skill as a chip or a pill: its icon in its colour and the mark of its
-/// state; Know is the skill's container, Learn the container with a 2 px
+/// state; Know is the skill's container darkened ([knowFill]), Learn the container with a 2 px
 /// primary border drawn inside (so its size does not change), Leave dashed.
 /// With [onTap] it is the sheet's pill; without, the list's read-only chip.
 class SkillBadge extends StatelessWidget {
@@ -86,7 +127,7 @@ class SkillBadge extends StatelessWidget {
     required this.kind,
     required this.mark,
     required this.label,
-    this.glyph,
+    this.scriptGlyph,
     this.onTap,
     this.hint,
     this.tip,
@@ -99,8 +140,9 @@ class SkillBadge extends StatelessWidget {
   /// What a screen reader and the tooltip say.
   final String label;
 
-  /// A script's glyph, on a chip of a language with several scripts.
-  final String? glyph;
+  /// A script's glyph, drawn in place of the skill's icon on a script's pill
+  /// ([kind] is Read, for its colour).
+  final String? scriptGlyph;
   final VoidCallback? onTap;
 
   /// What the next tap does, for a screen reader.
@@ -117,7 +159,7 @@ class SkillBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final colors = ModeColors.of(context).forSkill(kind.skill);
+    final colors = kind.colors(ModeColors.of(context));
     final leave = mark == SkillMark.leave;
     final fg = leave ? scheme.onSurfaceVariant : colors.onContainer;
     final radius = big ? AppRadii.card : AppRadii.control;
@@ -126,19 +168,25 @@ class SkillBadge extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Icon(kind.icon, size: iconSize, color: fg),
-        if (glyph != null) ...<Widget>[
-          const SizedBox(width: 3),
+        if (scriptGlyph != null)
           Text(
-            glyph!,
-            style: theme.textTheme.labelSmall!.copyWith(
-              color: fg,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-        ],
+            scriptGlyph!,
+            style:
+                (big
+                        ? theme.textTheme.titleMedium
+                        : theme.textTheme.labelLarge)!
+                    .copyWith(
+                      color: fg,
+                      fontWeight: FontWeight.w700,
+                      height: 1,
+                    ),
+          )
+        else
+          Icon(kind.icon, size: iconSize, color: fg),
         SizedBox(width: big ? 4 : 2),
         Icon(markIcon(mark), size: big ? 16 : 14, color: fg),
+        if (markExtraIcon(mark, kind) case final extra?)
+          Icon(extra, size: big ? 16 : 14, color: fg),
       ],
     );
     final box = CustomPaint(
@@ -153,7 +201,11 @@ class SkillBadge extends StatelessWidget {
           vertical: 2,
         ),
         decoration: BoxDecoration(
-          color: leave ? null : colors.container,
+          color: leave
+              ? null
+              : mark != SkillMark.learn
+              ? knowFill(colors.container, theme.brightness)
+              : colors.container,
           borderRadius: BorderRadius.circular(radius),
         ),
         foregroundDecoration: mark == SkillMark.learn
@@ -162,7 +214,9 @@ class SkillBadge extends StatelessWidget {
                 border: Border.all(color: scheme.primary, width: 2),
               )
             : null,
-        alignment: Alignment.center,
+        // No `alignment` here: it wraps the child in an Align, which fills
+        // all the width a Wrap offers and drew every chip full width. The
+        // Row centres its own icons within a minimum width.
         child: content,
       ),
     );

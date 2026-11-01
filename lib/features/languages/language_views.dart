@@ -21,8 +21,14 @@ class LanguageView {
   String get code => language.code;
   String get name => language.name;
 
-  /// Whether Learn is offered: a course has decks to download.
-  bool get canLearn => course != null;
+  /// Whether Learn is offered: a course has decks to download, and this
+  /// app is new enough to read them. The gate is language-level only: a
+  /// language's own `min_app` greys the row, while a deck's or a file's
+  /// `min_app` does not (the language stays learnable; ADR-0052).
+  bool get canLearn => course != null && needsApp == null;
+
+  /// The app version the course needs, when this app is older (ADR-0052).
+  String? get needsApp => course?.needsApp;
 
   /// "Hindustani · हिन्दुस्तानी", or the name alone where both are the same.
   String get title => language.ownName.isEmpty || language.ownName == name
@@ -50,6 +56,20 @@ const List<String> languageFamilies = <String>[
   'koreanic',
   'japonic',
   'constructed',
+  'slavic',
+  'hellenic',
+  'italic',
+  'celtic',
+  'uralic',
+  'turkic',
+  'afroasiatic',
+  'austronesian',
+  'kra_dai',
+  'niger_congo',
+  'quechuan',
+  'indo_european',
+  'isolate',
+  'sign',
 ];
 
 /// Every language of [all] with its course, in [all]'s order.

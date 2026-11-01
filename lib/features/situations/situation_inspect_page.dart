@@ -12,7 +12,9 @@ import 'situation_page.dart';
 /// `docs/mockups/situations.html`, screen 3): the card's whole word sheet
 /// (script, reading, audio, notes, examples, IPA, id and where the learner
 /// stands), numbered chips to jump to a card with a dot on those not learnt
-/// yet, Previous and Next, and "Open in deck".
+/// yet, and "Open in deck". The cards are swiped between (owner, 2026-10-31:
+/// swipe is universal across deck viewing); there are no Previous and Next
+/// buttons.
 class SituationInspectPage extends StatefulWidget {
   const SituationInspectPage({super.key, required this.request});
 
@@ -24,6 +26,29 @@ class SituationInspectPage extends StatefulWidget {
 
 class _SituationInspectPageState extends State<SituationInspectPage> {
   late int _index = widget.request.index;
+  late final PageController _pages = PageController(
+    initialPage: widget.request.index,
+  );
+
+  @override
+  void dispose() {
+    _pages.dispose();
+    super.dispose();
+  }
+
+  /// The chip's jump: the pages slide there, or switch at once with the
+  /// phone's reduce-motion setting on.
+  void _jump(int i) {
+    if (MediaQuery.disableAnimationsOf(context)) {
+      _pages.jumpToPage(i);
+    } else {
+      _pages.animateToPage(
+        i,
+        duration: const Duration(milliseconds: 300),
+        curve: Curves.easeOutCubic,
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -75,10 +100,10 @@ class _SituationInspectPageState extends State<SituationInspectPage> {
                               '${l10n.situationNotLearnt}'
                         : l10n.situationCardJump(i + 1),
                     excludeSemantics: true,
-                    onTap: () => setState(() => _index = i),
+                    onTap: () => _jump(i),
                     child: ChoiceChip(
                       selected: i == index,
-                      onSelected: (_) => setState(() => _index = i),
+                      onSelected: (_) => _jump(i),
                       label: Row(
                         mainAxisSize: MainAxisSize.min,
                         spacing: 6,
@@ -110,39 +135,23 @@ class _SituationInspectPageState extends State<SituationInspectPage> {
               ),
             ),
           Expanded(
-            child: WordSheet(
-              key: ValueKey<String>(item.card.id),
-              card: item.card,
-              language: item.deck.language,
+            child: PageView.builder(
+              controller: _pages,
+              itemCount: cards.length,
+              onPageChanged: (i) => setState(() => _index = i),
+              itemBuilder: (context, i) => WordSheet(
+                key: ValueKey<String>(cards[i].card.id),
+                card: cards[i].card,
+                language: cards[i].deck.language,
+              ),
             ),
           ),
         ],
       ),
       bottomNavigationBar: BottomActions(
-        child: Row(
-          spacing: 8,
-          children: <Widget>[
-            IconButton.outlined(
-              tooltip: l10n.situationPrevious,
-              onPressed: index > 0
-                  ? () => setState(() => _index = index - 1)
-                  : null,
-              icon: const Icon(Icons.chevron_left),
-            ),
-            Expanded(
-              child: FilledButton.tonal(
-                onPressed: () => AppNavigator.openDeck(context, item.deck.id),
-                child: Text(l10n.situationOpenInDeck),
-              ),
-            ),
-            IconButton.outlined(
-              tooltip: l10n.situationNext,
-              onPressed: index < cards.length - 1
-                  ? () => setState(() => _index = index + 1)
-                  : null,
-              icon: const Icon(Icons.chevron_right),
-            ),
-          ],
+        child: FilledButton.tonal(
+          onPressed: () => AppNavigator.openDeck(context, item.deck.id),
+          child: Text(l10n.situationOpenInDeck),
         ),
       ),
     );

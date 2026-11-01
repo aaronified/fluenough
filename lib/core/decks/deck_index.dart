@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'app_version.dart';
+
 /// The newest index format this app reads. An index of a later version
 /// asks for an app update instead (ADR-0037).
 const int supportedIndexVersion = 1;
@@ -61,6 +63,8 @@ class IndexFile {
     this.deck,
     this.core = false,
     this.proposed = 0,
+    this.minApp,
+    this.appTooOld = false,
   }) : contentSha256 = contentSha256 ?? sha256;
 
   /// Where it is in the repository, which is also its path on the phone
@@ -102,6 +106,15 @@ class IndexFile {
   /// (ADR-0038). Learners never see them.
   final int proposed;
 
+  /// The oldest app version that can read it (`min_app`, ADR-0052): its own,
+  /// or its language's if that is newer. Null where the index names none.
+  final String? minApp;
+
+  /// Whether this app is older than [minApp]. Set when the index is read
+  /// against the app's version ([DeckIndex.parse]); such a file is not
+  /// downloaded, and its language says the app needs updating.
+  final bool appTooOld;
+
   /// The language it belongs to: its folder under `decks/`.
   String get language => path.split('/')[1];
 
@@ -115,10 +128,16 @@ class IndexFile {
   /// deck: it downloads after the decks, and is never read as one.
   bool get isMedia => mediaPathPattern.hasMatch(path);
 
-  /// Whether this app can read it.
-  bool get readable => schema <= supportedDeckSchema;
+  /// Whether this app can read it: its schema is not newer than the app's
+  /// ([supportedDeckSchema]) and the app is not older than its [minApp].
+  bool get readable => schema <= supportedDeckSchema && !appTooOld;
 
-  static IndexFile _parse(Object? json, {bool media = false}) {
+  static IndexFile _parse(
+    Object? json, {
+    bool media = false,
+    String? appVersion,
+    String? languageMinApp,
+  }) {
     if (json is! Map) throw const FormatException('a file is not an object');
     final path = json['path'];
     final size = json['size'];
@@ -142,6 +161,10 @@ class IndexFile {
     }
     final native = json['native'];
     final deck = json['deck'];
+    final minApp = newestAppVersion(
+      cleanMinApp(json['min_app']),
+      languageMinApp,
+    );
     return IndexFile(
       path: path,
       size: size,
@@ -153,6 +176,8 @@ class IndexFile {
       deck: deck is String ? deck : null,
       core: json['part'] == 'core',
       proposed: json['proposed'] is int ? json['proposed'] as int : 0,
+      minApp: minApp,
+      appTooOld: appVersion != null && appIsOlderThan(appVersion, minApp),
     );
   }
 
@@ -317,6 +342,8 @@ class IndexLanguage {
     this.media = const <IndexFile>[],
     this.fonts = const <IndexFont>[],
     this.resources = const <IndexFile>[],
+    this.minApp,
+    this.appTooOld = false,
   });
 
   final String code;
@@ -364,6 +391,15 @@ class IndexLanguage {
   /// not with the decks; at most one.
   final List<IndexFile> resources;
 
+  /// The oldest app version that can read the language at all (`min_app`,
+  /// ADR-0052), or null. An app older than this does not download any of
+  /// its files and says it needs updating.
+  final String? minApp;
+
+  /// Whether this app is older than [minApp]: set when the index is read
+  /// against the app's version ([DeckIndex.parse]).
+  final bool appTooOld;
+
   /// The native languages a learner who speaks [spoken], best known first,
   /// is taught this language from: those of [spoken] it has decks for, or
   /// where it has none, English, or failing that every one it has
@@ -395,8 +431,31 @@ class IndexLanguage {
         if (file.readable &&
             (file.native == null || wanted.contains(file.native)))
           file,
-      ...media,
+      for (final file in media)
+        if (file.readable) file,
     ];
+  }
+
+  /// The files of [natives] that the app is too old for ([IndexFile.minApp],
+  /// ADR-0052), not those of a newer schema: the decks "need app X".
+  List<IndexFile> needingNewerApp(Iterable<String> natives) {
+    final wanted = natives.toSet();
+    return <IndexFile>[
+      for (final file in files)
+        if (file.appTooOld &&
+            (file.native == null || wanted.contains(file.native)))
+          file,
+    ];
+  }
+
+  /// The newest app version any of [natives]' files needs that this app is
+  /// too old for, or null when it reads them all: the version to say.
+  String? appNeededFor(Iterable<String> natives) {
+    String? newest = appTooOld ? minApp : null;
+    for (final file in needingNewerApp(natives)) {
+      newest = newestAppVersion(newest, file.minApp);
+    }
+    return newest;
   }
 
   /// The files [filesFor] leaves out because this app cannot read them.
@@ -457,7 +516,7 @@ class IndexLanguage {
     }
   }
 
-  static IndexLanguage _parse(Object? json) {
+  static IndexLanguage _parse(Object? json, {String? appVersion}) {
     if (json is! Map) {
       throw const FormatException('a language is not an object');
     }
@@ -469,16 +528,23 @@ class IndexLanguage {
     // A guide for one of the language's other scripts is listed under
     // `script_guides`, apart from `files`, so that an app too old to read
     // it passes it by (ADR-0016); here it is a file like any other.
+    // The language's `min_app` (ADR-0052) holds for every file of it.
+    final minApp = cleanMinApp(json['min_app']);
+    IndexFile parse(Object? file, {bool media = false}) => IndexFile._parse(
+      file,
+      media: media,
+      appVersion: appVersion,
+      languageMinApp: minApp,
+    );
     final files = <IndexFile>[
-      for (final file in _list(json['files'])) IndexFile._parse(file),
-      for (final file in _list(json['script_guides'])) IndexFile._parse(file),
+      for (final file in _list(json['files'])) parse(file),
+      for (final file in _list(json['script_guides'])) parse(file),
       // The situations file (#724) is listed under its own key for the same
       // reason: the released app has no case for its kind.
-      for (final file in _list(json['situations'])) IndexFile._parse(file),
+      for (final file in _list(json['situations'])) parse(file),
     ];
     final media = <IndexFile>[
-      for (final file in _list(json['media']))
-        IndexFile._parse(file, media: true),
+      for (final file in _list(json['media'])) parse(file, media: true),
     ];
     for (final file in <IndexFile>[...files, ...media]) {
       if (file.language != code) {
@@ -519,6 +585,8 @@ class IndexLanguage {
         for (final file in _list(json['resources']))
           ?_tryParseResources(file, code),
       ],
+      minApp: minApp,
+      appTooOld: appVersion != null && appIsOlderThan(appVersion, minApp),
     );
   }
 }
@@ -552,9 +620,14 @@ class DeckIndex {
 
   /// Reads [text], the index as GitHub serves it.
   ///
+  /// With [appVersion], the app's own, a language or file whose `min_app`
+  /// (ADR-0052) is newer is marked [IndexFile.appTooOld]: it is not
+  /// downloaded, and the app says it needs updating. Without it, nothing is
+  /// held back.
+  ///
   /// Throws [IndexTooNewException] for an index this app is too old to
   /// read, and [FormatException] for one that is not an index at all.
-  static DeckIndex parse(String text) {
+  static DeckIndex parse(String text, {String? appVersion}) {
     final Object? json;
     try {
       json = jsonDecode(text);
@@ -569,7 +642,7 @@ class DeckIndex {
     if (version > supportedIndexVersion) throw IndexTooNewException(version);
     final languages = <IndexLanguage>[
       for (final language in _list(json['languages']))
-        IndexLanguage._parse(language),
+        IndexLanguage._parse(language, appVersion: appVersion),
     ];
     final codes = <String>{};
     for (final language in languages) {

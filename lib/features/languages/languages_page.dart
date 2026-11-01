@@ -22,7 +22,9 @@ import 'skill_widgets.dart';
 
 /// The list's filter pills, in their order: Learning, Know, then the four
 /// skills. A skill's pill matches a language where that skill is not Leave.
-enum LanguageFilter { learning, know, speak, hear, read, write }
+/// Gestures is shown only while a sign language is listed, and matches only
+/// sign languages (owner, 2026-11-01).
+enum LanguageFilter { learning, know, speak, hear, read, write, gesture }
 
 /// "Languages" (#907, the mockup `languages-merged`, approved 2026-10-30):
 /// the languages known and learned in one list. Each language shows its four
@@ -171,18 +173,32 @@ class _LanguagesPageState extends State<LanguagesPage> {
     return switch (filter) {
       LanguageFilter.learning => skills.anyLearn,
       LanguageFilter.know => skills.count(SkillState.know, shape) > 0,
+      // The pills' levels: Hear and Speak speak, any Spoken level hears; Read
+      // and Write likewise for a script.
       LanguageFilter.speak =>
-        skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.leave,
+        !view.language.isSign &&
+            (skills.spokenLevel == SpokenLevel.hearSpeak ||
+                skills.spokenLevel == SpokenLevel.learn),
       LanguageFilter.hear =>
-        skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.leave,
-      LanguageFilter.read => shape.any(
-        (k) =>
-            k.kind == SkillKind.read && skills.stateOf(k) != SkillState.leave,
-      ),
-      LanguageFilter.write => shape.any(
-        (k) =>
-            k.kind == SkillKind.write && skills.stateOf(k) != SkillState.leave,
-      ),
+        !view.language.isSign && skills.spokenLevel != SpokenLevel.leave,
+      LanguageFilter.gesture =>
+        view.language.isSign &&
+            skills.stateOf(const SkillKey(SkillKind.gesture)) !=
+                SkillState.leave,
+      LanguageFilter.read =>
+        !view.language.isSign &&
+            state
+                .skillScripts(view.language)
+                .any((s) => skills.scriptLevelOf(s) != ScriptLevel.leave),
+      LanguageFilter.write =>
+        !view.language.isSign &&
+            state
+                .skillScripts(view.language)
+                .any(
+                  (s) =>
+                      skills.scriptLevelOf(s) == ScriptLevel.readWrite ||
+                      skills.scriptLevelOf(s) == ScriptLevel.learn,
+                ),
     };
   }
 
@@ -190,6 +206,10 @@ class _LanguagesPageState extends State<LanguagesPage> {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final held = _held(state, all);
+    final hasSign = held.any((h) => h.$1.language.isSign);
+    final filter = _filter == LanguageFilter.gesture && !hasSign
+        ? null
+        : _filter;
     if (held.isEmpty) {
       return EmptyState(
         icon: Icons.translate,
@@ -204,7 +224,7 @@ class _LanguagesPageState extends State<LanguagesPage> {
     }
     final shown = <(LanguageView, LanguageSkills)>[
       for (final h in held)
-        if (_matches(state, h.$1, h.$2, _filter)) h,
+        if (_matches(state, h.$1, h.$2, filter)) h,
     ];
     final learning = <(LanguageView, LanguageSkills)>[
       for (final h in shown)
@@ -222,7 +242,8 @@ class _LanguagesPageState extends State<LanguagesPage> {
           DeckUpdateControls(downloads: downloads, names: _names(all)),
         const _Key(),
         _FilterRow(
-          selected: _filter,
+          selected: filter,
+          showGesture: hasSign,
           onChanged: (f) => setState(() => _filter = f),
         ),
         if (shown.isEmpty)
@@ -337,12 +358,18 @@ class _Key extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    Widget entry(SkillMark mark, String text) => Row(
+    Widget entry(
+      SkillMark mark,
+      String text, {
+      List<IconData> extra = const <IconData>[],
+    }) => Row(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
         Icon(markIcon(mark), size: 16, color: theme.colorScheme.onSurface),
+        for (final icon in extra)
+          Icon(icon, size: 16, color: theme.colorScheme.onSurface),
         const SizedBox(width: 4),
-        Text(text, style: theme.textTheme.bodySmall),
+        Flexible(child: Text(text, style: theme.textTheme.bodySmall)),
       ],
     );
     return Semantics(
@@ -355,6 +382,11 @@ class _Key extends StatelessWidget {
           runSpacing: 4,
           children: <Widget>[
             entry(SkillMark.know, l10n.languagesStateKnow),
+            entry(
+              SkillMark.knowBoth,
+              l10n.languagesKeyBoth,
+              extra: <IconData>[SkillKind.write.icon, SkillKind.speak.icon],
+            ),
             entry(SkillMark.knowCovered, l10n.languagesKeyLevel),
             entry(SkillMark.learn, l10n.languagesStateLearn),
             entry(SkillMark.leave, l10n.languagesStateLeave),
@@ -368,9 +400,14 @@ class _Key extends StatelessWidget {
 /// The filter pills: one row that scrolls sideways, faded at both edges.
 /// One at a time; tapping the chosen one clears it.
 class _FilterRow extends StatelessWidget {
-  const _FilterRow({required this.selected, required this.onChanged});
+  const _FilterRow({
+    required this.selected,
+    required this.showGesture,
+    required this.onChanged,
+  });
 
   final LanguageFilter? selected;
+  final bool showGesture;
   final ValueChanged<LanguageFilter?> onChanged;
 
   @override
@@ -383,6 +420,7 @@ class _FilterRow extends StatelessWidget {
       LanguageFilter.hear => l10n.languagesSkillHear,
       LanguageFilter.read => l10n.languagesSkillRead,
       LanguageFilter.write => l10n.languagesSkillWrite,
+      LanguageFilter.gesture => l10n.languagesGestures,
     };
     IconData icon(LanguageFilter f) => switch (f) {
       LanguageFilter.learning => Icons.school_outlined,
@@ -391,6 +429,7 @@ class _FilterRow extends StatelessWidget {
       LanguageFilter.hear => SkillKind.hear.icon,
       LanguageFilter.read => SkillKind.read.icon,
       LanguageFilter.write => SkillKind.write.icon,
+      LanguageFilter.gesture => SkillKind.gesture.icon,
     };
     return Semantics(
       container: true,
@@ -412,17 +451,18 @@ class _FilterRow extends StatelessWidget {
           child: Row(
             children: <Widget>[
               for (final f in LanguageFilter.values)
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(end: 8),
-                  child: FilterChip(
-                    key: ValueKey<String>('filter-${f.name}'),
-                    showCheckmark: false,
-                    avatar: Icon(icon(f), size: 18),
-                    label: Text(text(f)),
-                    selected: selected == f,
-                    onSelected: (_) => onChanged(selected == f ? null : f),
+                if (f != LanguageFilter.gesture || showGesture)
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(end: 8),
+                    child: FilterChip(
+                      key: ValueKey<String>('filter-${f.name}'),
+                      showCheckmark: false,
+                      avatar: Icon(icon(f), size: 18),
+                      label: Text(text(f)),
+                      selected: selected == f,
+                      onSelected: (_) => onChanged(selected == f ? null : f),
+                    ),
                   ),
-                ),
             ],
           ),
         ),
@@ -474,14 +514,11 @@ class _LanguageRow extends StatelessWidget {
     final scheme = theme.colorScheme;
     final state = AppScope.of(context);
     final downloads = state.deckDownloads;
-    final shape = state.skillShape(view.language);
     final scripts = state.skillScripts(view.language);
-    final several = scripts.length > 1;
     final found = state.levelFound(view.code);
     final learns = skills.anyLearn;
     final speaks =
-        skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.leave ||
-        skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.leave;
+        !view.language.isSign && skills.spokenLevel != SpokenLevel.leave;
     final hasDecks = downloads?.hasDecks(view.code) ?? false;
     final progress = downloads?.progressOf(view.code);
     final pending =
@@ -559,8 +596,11 @@ class _LanguageRow extends StatelessWidget {
                 spacing: 5,
                 runSpacing: 4,
                 children: <Widget>[
-                  for (final key in shape)
-                    _chip(context, state, key, several, found),
+                  if (view.language.isSign) _gestureChip(context, found),
+                  if (!view.language.isSign && !view.language.scriptOnly)
+                    _spokenChip(context, found),
+                  for (final script in scripts)
+                    _scriptChip(context, script, found),
                 ],
               ),
             ),
@@ -633,33 +673,63 @@ class _LanguageRow extends StatelessWidget {
     );
   }
 
-  Widget _chip(
-    BuildContext context,
-    AppState state,
-    SkillKey key,
-    bool several,
-    bool found,
-  ) {
+  bool _covered(SkillState know, bool found) =>
+      know == SkillState.know &&
+      levelCovers(
+        levelFound: found,
+        taught: view.canLearn,
+        english: view.code == englishCode,
+      );
+
+  /// The one chip of a sign language's Gestures skill: its own icon, with the
+  /// tick once known.
+  Widget _gestureChip(BuildContext context, bool found) {
     final l10n = AppLocalizations.of(context)!;
-    final st = skills.stateOf(key);
-    final covered =
-        st == SkillState.know &&
-        levelCovers(levelFound: found, taught: view.canLearn);
-    final name = skillName(
-      l10n,
-      key,
-      severalScripts: several,
-      fallbackScript: view.name,
-    );
-    final script = key.script;
+    final st = skills.stateOf(const SkillKey(SkillKind.gesture));
+    final covered = _covered(st, found);
+    final name = l10n.languagesSkillGestures;
     return SkillBadge(
-      kind: key.kind,
+      kind: SkillKind.gesture,
       mark: markOf(st, covered: covered),
-      label: skillSemantics(l10n, name, st, covered: covered),
+      label: pillSemantics(l10n, name, st.label(l10n), covered: covered),
       tip: l10n.languagesSkillState(name, st.label(l10n)),
-      glyph: script != null && several
-          ? scriptGlyph(script, l10n.scriptNameOr(script, view.name))
-          : null,
+    );
+  }
+
+  /// The one chip of Speak and Hear: the Hear icon, with the tick and the
+  /// Speak icon at Hear and Speak.
+  Widget _spokenChip(BuildContext context, bool found) {
+    final l10n = AppLocalizations.of(context)!;
+    final level = skills.spokenLevel;
+    final covered = _covered(
+      level.isKnow ? SkillState.know : SkillState.leave,
+      found,
+    );
+    final name = l10n.languagesSkillSpoken;
+    return SkillBadge(
+      kind: SkillKind.hear,
+      mark: spokenMarkOf(level, covered: covered),
+      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
+      tip: l10n.languagesSkillState(name, level.label(l10n)),
+    );
+  }
+
+  /// The one chip of a script's Read and Write: its glyph, with the tick and
+  /// the Write icon at Read and Write.
+  Widget _scriptChip(BuildContext context, String script, bool found) {
+    final l10n = AppLocalizations.of(context)!;
+    final level = skills.scriptLevelOf(script);
+    final covered = _covered(
+      level.isKnow ? SkillState.know : SkillState.leave,
+      found,
+    );
+    final name = scriptPillName(l10n, script, view.name);
+    return SkillBadge(
+      kind: SkillKind.read,
+      mark: scriptMarkOf(level, covered: covered),
+      label: pillSemantics(l10n, name, level.label(l10n), covered: covered),
+      tip: l10n.languagesSkillState(name, level.label(l10n)),
+      scriptGlyph: scriptGlyph(script, l10n.scriptNameOr(script, view.name)),
     );
   }
 }
