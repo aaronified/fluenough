@@ -219,7 +219,8 @@ units:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - planned: { id: "es-chores", theme: "chores", words: 35 }
+  - decks: ["es-chores", "es-chores-sentences", "es-reading-chores", "*"]
+    words: 31
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:

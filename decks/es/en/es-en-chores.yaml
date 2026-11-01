@@ -1,0 +1,226 @@
+schema: 1
+id: "es-en-chores"
+kind: "layer"
+core: "es-chores"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Chores"
+license: "CC-BY-SA-4.0"
+description: "Words for the housework: cleaning and tidying, the iron and the vacuum cleaner, the bin and the recycling, the washing and the drying, and the verbs to sweep, mop, hang and tidy up. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1505":
+    native: "cleaning"
+    notes: { n1: "Limpieza is cleaning, the act of making things clean. The verb is limpiar." }
+    bases: { "la": "the", "limpieza": "cleaning" }
+    examples:
+      "La limpieza de la casa es mi tarea.": { native: "Cleaning the house is my job.", bases: { "La": "the", "limpieza": "cleaning", "de": "of", "la": "the" } }
+      "Hago la limpieza los sábados.": { native: "I do the cleaning on Saturdays.", bases: { "la": "the", "limpieza": "cleaning", "los": "the" } }
+  "es-1506":
+    native: "to iron"
+    notes: { n1: "Planchar is to iron clothes, with a hot iron." }
+    bases: { "planchar": "to iron" }
+    examples:
+      "Plancho la camisa.": { native: "I iron the shirt.", bases: { "Plancho": "to iron", "la": "the" } }
+      "Plancho la ropa cada semana.": { native: "I iron the clothes every week.", bases: { "Plancho": "to iron", "la": "the" } }
+  "es-1507":
+    native: "iron"
+    notes: { n1: "La plancha is the iron, the hot appliance for clothes. It is not the action of ironing." }
+    bases: { "la": "the", "plancha": "iron" }
+    examples:
+      "La plancha está caliente.": { native: "The iron is hot.", bases: { "La": "the", "plancha": "iron" } }
+      "Uso la plancha con cuidado.": { native: "I use the iron carefully.", bases: { "la": "the", "plancha": "iron", "con": "with", "cuidado": "care" } }
+  "es-1508":
+    native: "to sweep"
+    notes: { n1: "Barrer is to sweep the floor with a broom." }
+    bases: { "barrer": "to sweep" }
+    examples:
+      "Barro el suelo.": { native: "I sweep the floor.", bases: { "Barro": "to sweep", "el": "the" } }
+      "La escoba barre bien.": { native: "The broom sweeps well.", bases: { "La": "the", "barre": "to sweep" } }
+  "es-1509":
+    native: "to wash (dishes); to mop"
+    notes: { n1: "Fregar is to wash dishes or to mop a floor. It changes its stem: friego, friegas." }
+    bases: { "fregar": "to wash (dishes); to mop" }
+    examples:
+      "Friego los platos.": { native: "I wash the dishes.", bases: { "Friego": "to wash (dishes); to mop", "los": "the" } }
+      "Friega el suelo, por favor.": { native: "Mop the floor, please.", bases: { "Friega": "to wash (dishes); to mop", "el": "the", "por": "for", "favor": "please" } }
+  "es-1510":
+    native: "to dust"
+    notes: { n1: "Sacudir is to shake off dust from furniture." }
+    bases: { "sacudir": "to dust" }
+    examples:
+      "Sacudo el polvo.": { native: "I dust.", bases: { "Sacudo": "to dust", "el": "the" } }
+      "Sacude la mesa con un paño.": { native: "Dust the table with a cloth.", bases: { "Sacude": "to dust", "la": "the", "con": "with", "un": "a", "paño": "cloth" } }
+  "es-1511":
+    native: "vacuum cleaner"
+    notes: { n1: "La aspiradora is the vacuum cleaner. Pasar la aspiradora is to vacuum." }
+    bases: { "la": "the", "aspiradora": "vacuum cleaner" }
+    examples:
+      "Paso la aspiradora por la alfombra.": { native: "I vacuum the carpet.", bases: { "la": "the", "aspiradora": "vacuum cleaner", "por": "for" } }
+      "La aspiradora hace mucho ruido.": { native: "The vacuum cleaner makes a lot of noise.", bases: { "La": "the", "aspiradora": "vacuum cleaner", "ruido": "noise" } }
+  "es-1512":
+    native: "mop"
+    notes: { n1: "La fregona is a mop, for washing the floor." }
+    bases: { "la": "the", "fregona": "mop" }
+    examples:
+      "La fregona está en el cubo.": { native: "The mop is in the bucket.", bases: { "La": "the", "fregona": "mop", "en": "in", "el": "the" } }
+      "Paso la fregona por la cocina.": { native: "I mop the kitchen.", bases: { "la": "the", "fregona": "mop", "por": "for" } }
+  "es-1513":
+    native: "bucket; bin"
+    notes: { n1: "El cubo is a bucket for water, or a bin with a lid." }
+    bases: { "el": "the", "cubo": "bucket; bin" }
+    examples:
+      "El cubo está lleno de agua.": { native: "The bucket is full of water.", bases: { "El": "the", "cubo": "bucket; bin", "de": "of" } }
+      "El cubo de la basura está en la cocina.": { native: "The bin is in the kitchen.", bases: { "El": "the", "cubo": "bucket; bin", "de": "of", "la": "the", "en": "in" } }
+  "es-1514":
+    native: "detergent"
+    notes: { n1: "El detergente is detergent, a liquid or powder for washing." }
+    bases: { "el": "the", "detergente": "detergent" }
+    examples:
+      "Uso un detergente para los platos.": { native: "I use a detergent for the dishes.", bases: { "un": "a", "detergente": "detergent", "para": "for", "los": "the" } }
+      "El detergente está en el armario.": { native: "The detergent is in the cupboard.", bases: { "El": "the", "detergente": "detergent", "en": "in", "el": "the" } }
+  "es-1515":
+    native: "sponge"
+    notes: { n1: "La esponja is a sponge, for washing dishes or wiping." }
+    bases: { "la": "the", "esponja": "sponge" }
+    examples:
+      "La esponja está sucia.": { native: "The sponge is dirty.", bases: { "La": "the", "esponja": "sponge" } }
+      "Lavo los platos con una esponja.": { native: "I wash the dishes with a sponge.", bases: { "los": "the", "con": "with", "una": "a", "esponja": "sponge" } }
+  "es-1516":
+    native: "rubbish; garbage"
+    notes: { n1: "La basura is rubbish, the things thrown away." }
+    bases: { "la": "the", "basura": "rubbish; garbage" }
+    examples:
+      "Saco la basura cada noche.": { native: "I take out the rubbish every night.", bases: { "Saco": "to get; to take out", "la": "the", "basura": "rubbish; garbage" } }
+      "El cubo de la basura está lleno.": { native: "The rubbish bin is full.", bases: { "El": "the", "de": "of", "la": "the", "basura": "rubbish; garbage" } }
+  "es-1517":
+    native: "to recycle"
+    notes: { n1: "Reciclar is to put things into a new use, such as paper and glass." }
+    bases: { "reciclar": "to recycle" }
+    examples:
+      "Reciclo el papel y el vidrio.": { native: "I recycle paper and glass.", bases: { "Reciclo": "to recycle", "el": "the", "vidrio": "glass" } }
+      "Reciclamos las botellas.": { native: "We recycle the bottles.", bases: { "Reciclamos": "to recycle", "las": "the" } }
+  "es-1518":
+    native: "recycling"
+    notes: { n1: "El reciclaje is recycling, the process of reusing things." }
+    bases: { "el": "the", "reciclaje": "recycling" }
+    examples:
+      "El reciclaje es importante.": { native: "Recycling is important.", bases: { "El": "the", "reciclaje": "recycling" } }
+      "Hay un contenedor de reciclaje en la calle.": { native: "There is a recycling bin in the street.", bases: { "Hay": "there is; there are", "un": "a", "contenedor": "bin; container", "de": "of", "reciclaje": "recycling", "en": "in", "la": "the" } }
+  "es-1519":
+    native: "to hang out (laundry)"
+    notes: { n1: "Tender is to hang clothes up to dry. It changes its stem: tiendo, tiendes." }
+    bases: { "tender": "to hang out (laundry)" }
+    examples:
+      "Tiendo la ropa en el balcón.": { native: "I hang the laundry on the balcony.", bases: { "Tiendo": "to hang out (laundry)", "la": "the", "en": "in", "el": "the", "balcón": "balcony" } }
+      "Tendemos las sábanas.": { native: "We hang out the sheets.", bases: { "Tendemos": "to hang out (laundry)", "las": "the", "sábanas": "sheet" } }
+  "es-1520":
+    native: "washing machine"
+    notes: { n1: "La lavadora is the washing machine, for clothes." }
+    bases: { "la": "the", "lavadora": "washing machine" }
+    examples:
+      "La lavadora está en la cocina.": { native: "The washing machine is in the kitchen.", bases: { "La": "the", "lavadora": "washing machine", "en": "in", "la": "the" } }
+      "Pongo la ropa en la lavadora.": { native: "I put the clothes in the washing machine.", bases: { "Pongo": "to put", "la": "the", "en": "in", "lavadora": "washing machine" } }
+  "es-1521":
+    native: "dryer"
+    notes: { n1: "La secadora is the tumble dryer, for drying clothes." }
+    bases: { "la": "the", "secadora": "dryer" }
+    examples:
+      "La secadora es muy vieja.": { native: "The dryer is very old.", bases: { "La": "the", "secadora": "dryer" } }
+      "Secamos la ropa en la secadora.": { native: "We dry the clothes in the dryer.", bases: { "Secamos": "to dry", "la": "the", "en": "in", "secadora": "dryer" } }
+  "es-1522":
+    native: "to hang up"
+    notes: { n1: "Colgar is to hang something up. It changes its stem: cuelgo, cuelgas." }
+    bases: { "colgar": "to hang up" }
+    examples:
+      "Cuelgo la ropa en el armario.": { native: "I hang the clothes in the wardrobe.", bases: { "Cuelgo": "to hang up", "la": "the", "en": "in", "el": "the" } }
+      "Cuelgo el abrigo en la puerta.": { native: "I hang the coat on the door.", bases: { "Cuelgo": "to hang up", "el": "the", "en": "in", "la": "the" } }
+  "es-1523":
+    native: "to tidy up"
+    notes: { n1: "Ordenar is to put things in order, to tidy a room. Its yo form is ordeno." }
+    bases: { "ordenar": "to tidy up" }
+    examples:
+      "Ordeno mi cuarto los domingos.": { native: "I tidy my room on Sundays.", bases: { "Ordeno": "to tidy up", "los": "the" } }
+      "Ordena los libros, por favor.": { native: "Tidy the books, please.", bases: { "Ordena": "to tidy up", "los": "the", "por": "for", "favor": "please" } }
+  "es-1524":
+    native: "order; tidiness"
+    notes: { n1: "El orden is order, the way things are put in their place." }
+    bases: { "el": "the", "orden": "order; tidiness" }
+    examples:
+      "Tengo orden en mi casa.": { native: "I keep my house in order.", bases: { "orden": "order; tidiness", "en": "in" } }
+      "Me gusta el orden.": { native: "I like order.", bases: { "Me": "to me", "el": "the", "orden": "order; tidiness" } }
+  "es-1525":
+    native: "untidy; messy"
+    notes: { n1: "Desordenado is untidy, not in order. It agrees with the noun: desordenada." }
+    bases: { "desordenado": "untidy; messy" }
+    examples:
+      "La casa está desordenada.": { native: "The house is untidy.", bases: { "La": "the", "desordenada": "untidy; messy" } }
+      "Mi cuarto está muy desordenado.": { native: "My room is very messy.", bases: { "desordenado": "untidy; messy" } }
+  "es-1526":
+    native: "to throw away"
+    notes: { n1: "Tirar is to throw something away, or to drop it." }
+    bases: { "tirar": "to throw away" }
+    examples:
+      "Tiro la basura.": { native: "I throw away the rubbish.", bases: { "Tiro": "to throw away", "la": "the" } }
+      "No tires papeles al suelo.": { native: "Do not throw papers on the floor.", bases: { "tires": "to throw away", "al": "to the" } }
+  "es-1527":
+    native: "to water (plants)"
+    notes: { n1: "Regar is to water plants or a garden. It changes its stem: riego, riegas." }
+    bases: { "regar": "to water (plants)" }
+    examples:
+      "Riego las plantas los lunes.": { native: "I water the plants on Mondays.", bases: { "Riego": "to water (plants)", "las": "the", "los": "the" } }
+      "Riegan el jardín.": { native: "They water the garden.", bases: { "Riegan": "to water (plants)", "el": "the" } }
+  "es-1528":
+    native: "plant"
+    notes: { n1: "La planta is a plant, grown in a pot or in the ground." }
+    bases: { "la": "the", "planta": "plant" }
+    examples:
+      "Tengo una planta en la ventana.": { native: "I have a plant in the window.", bases: { "una": "a", "planta": "plant", "en": "in", "la": "the" } }
+      "Las plantas necesitan agua.": { native: "Plants need water.", bases: { "Las": "the", "plantas": "plant" } }
+  "es-1529":
+    native: "to fix; to tidy"
+    notes: { n1: "Arreglar is to repair something, or to put it in order." }
+    bases: { "arreglar": "to fix; to tidy" }
+    examples:
+      "Arreglo la lámpara.": { native: "I fix the lamp.", bases: { "Arreglo": "to fix; to tidy", "la": "the" } }
+      "Arreglo la casa antes de la visita.": { native: "I tidy the house before the visit.", bases: { "Arreglo": "to fix; to tidy", "la": "the", "de": "of" } }
+  "es-1530":
+    native: "responsibility"
+    notes: { n1: "La responsabilidad is the duty for something you must do." }
+    bases: { "la": "the", "responsabilidad": "responsibility" }
+    examples:
+      "La responsabilidad es mía.": { native: "The responsibility is mine.", bases: { "La": "the", "responsabilidad": "responsibility", "mía": "mine" } }
+      "Tiene mucha responsabilidad en casa.": { native: "She has a lot of responsibility at home.", bases: { "responsabilidad": "responsibility", "en": "in" } }
+  "es-1531":
+    native: "obligation; duty"
+    notes: { n1: "La obligación is something you must do, by a rule or a promise." }
+    bases: { "la": "the", "obligación": "obligation; duty" }
+    examples:
+      "Es una obligación.": { native: "It is an obligation.", bases: { "una": "a", "obligación": "obligation; duty" } }
+      "Tengo muchas obligaciones en casa.": { native: "I have many duties at home.", bases: { "obligaciones": "obligation; duty", "en": "in" } }
+  "es-1532":
+    native: "duty"
+    notes: { n1: "El deber is a duty, something one ought to do." }
+    bases: { "el": "the", "deber": "duty" }
+    examples:
+      "Es mi deber ayudar en casa.": { native: "It is my duty to help at home.", bases: { "deber": "duty", "en": "in" } }
+      "El deber es limpiar la cocina.": { native: "The duty is to clean the kitchen.", bases: { "El": "the", "deber": "duty", "la": "the" } }
+  "es-1533":
+    native: "to pass; to go over"
+    notes: { n1: "Pasar is to pass by, to spend time, or pasar la aspiradora, to vacuum." }
+    bases: { "pasar": "to pass; to go over" }
+    examples:
+      "Pasa la aspiradora cada semana.": { native: "Vacuum every week.", bases: { "Pasa": "to pass; to go over", "la": "the" } }
+      "Paso el día en casa.": { native: "I spend the day at home.", bases: { "Paso": "to pass; to go over", "el": "the", "en": "in" } }
+  "es-1534":
+    native: "dust"
+    notes: { n1: "El polvo is dust, the fine dirt on furniture." }
+    bases: { "el": "the", "polvo": "dust" }
+    examples:
+      "Hay mucho polvo en la mesa.": { native: "There is a lot of dust on the table.", bases: { "Hay": "there is; there are", "polvo": "dust", "en": "in", "la": "the" } }
+      "Quito el polvo los sábados.": { native: "I remove the dust on Saturdays.", bases: { "Quito": "to remove; to take off", "el": "the", "polvo": "dust", "los": "the" } }
+  "es-1535":
+    native: "curtain"
+    notes: { n1: "La cortina is a curtain, at a window or a door." }
+    bases: { "la": "the", "cortina": "curtain" }
+    examples:
+      "Lavo las cortinas en la lavadora.": { native: "I wash the curtains in the washing machine.", bases: { "las": "the", "cortinas": "curtain", "en": "in", "la": "the" } }
+      "Las cortinas son azules.": { native: "The curtains are blue.", bases: { "Las": "the", "cortinas": "curtain" } }
