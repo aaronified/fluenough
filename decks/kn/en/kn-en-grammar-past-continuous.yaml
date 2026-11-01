@@ -1,0 +1,19 @@
+schema: 1
+id: "kn-en-grammar-past-continuous"
+kind: "layer"
+core: "kn-grammar-past-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The past continuous: I was doing"
+license: "CC-BY-SA-4.0"
+description: "I was doing, she was going: what was happening at a time in the past, by person and number. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Past continuous"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+  notes: "The past continuous is built on the verb stem, as in ಮಾಡುತ್ತಿದ್ದೆ (māḍuttidde), I was doing. For things (ಅದು (adu)) it is ಮಾಡುತ್ತಿತ್ತು (māḍuttittu), it was doing. The verb ಬಾ (bā), to come, uses the stem of ಬರು (baru): ಬರುತ್ತಿದ್ದೆ (baruttidde), I was coming."

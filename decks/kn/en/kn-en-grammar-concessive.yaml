@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-concessive"
+kind: "layer"
+core: "kn-grammar-concessive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Concessive: even though, still"
+license: "CC-BY-SA-4.0"
+description: "Something happens even though something else is so: even if it rains, still we go. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Concessive"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+  notes: "For even though, the verb takes its past form with the ending ರೂ (rū): ಮಳೆ ಬಂದರೂ (maḷe bandarū), even though it rained. The main clause then follows: ಮಳೆ ಬಂದರೂ ನಾವು ಹೋದೆವು (maḷe bandarū nāvu hōdevu), even though it rained, we went. The word ಆದರೂ (ādarū) means but or still."

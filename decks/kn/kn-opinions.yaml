@@ -1,0 +1,242 @@
+schema: 1
+id: "kn-opinions"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "opinions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1361"
+    target: "ಅಭಿಪ್ರಾಯ"
+    reading: "abhiprāya"
+    ipa: "abʱipraːja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನನ್ನ ಅಭಿಪ್ರಾಯ ಹೇಳು.", reading: "nanna abhiprāya hēḷu.", ipa: "nanna abʱipraːja heːɭu" }
+      - { target: "ಅವನ ಅಭಿಪ್ರಾಯ ಸರಿ.", reading: "avana abhiprāya sari.", ipa: "aʋana abʱipraːja sari", bases: [{ word: "ಸರಿ", base: "ಸರಿ", reading: "sari" }] }
+  - id: "kn-1362"
+    target: "ಒಪ್ಪು"
+    reading: "oppu"
+    ipa: "oppu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಾನು ಒಪ್ಪುತ್ತೇನೆ.", reading: "nānu opputtēne.", ipa: "naːnu opput̪t̪eːne", bases: [{ word: "ಒಪ್ಪುತ್ತೇನೆ", base: "ಒಪ್ಪು", reading: "oppu" }] }
+      - { target: "ಅವರು ಒಪ್ಪಿದರು.", reading: "avaru oppidaru.", ipa: "aʋaru oppid̪aru", bases: [{ word: "ಒಪ್ಪಿದರು", base: "ಒಪ್ಪು", reading: "oppu" }] }
+  - id: "kn-1363"
+    target: "ಒಪ್ಪಿಗೆ"
+    reading: "oppige"
+    ipa: "oppiɡe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಒಪ್ಪಿಗೆ ಇದೆ.", reading: "oppige ide.", ipa: "oppiɡe id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ನನ್ನ ಒಪ್ಪಿಗೆ ಬೇಕು.", reading: "nanna oppige bēku.", ipa: "nanna oppiɡe beːku" }
+  - id: "kn-1364"
+    target: "ಭಿನ್ನಾಭಿಪ್ರಾಯ"
+    reading: "bhinnābhiprāya"
+    ipa: "bʱinnaːbʱipraːja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಭಿನ್ನಾಭಿಪ್ರಾಯ ಇದೆ.", reading: "bhinnābhiprāya ide.", ipa: "bʱinnaːbʱipraːja id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಭಿನ್ನಾಭಿಪ್ರಾಯ ಬೇಡ.", reading: "bhinnābhiprāya bēḍa.", ipa: "bʱinnaːbʱipraːja beːɖa" }
+  - id: "kn-1365"
+    target: "ವಿರೋಧ"
+    reading: "virōdha"
+    ipa: "ʋiroːd̪ʱa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಿರೋಧ ಇದೆ.", reading: "virōdha ide.", ipa: "ʋiroːd̪ʱa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಈ ಯೋಜನೆಗೆ ವಿರೋಧ ಬಂತು.", reading: "ī yōjanege virōdha bantu.", ipa: "iː joːdʒaneɡe ʋiroːd̪ʱa bant̪u", bases: [{ word: "ಯೋಜನೆಗೆ", ref: "kn-1270" }, { word: "ಬಂತು", ref: "kn-0632" }] }
+  - id: "kn-1366"
+    target: "ಹೊಗಳು"
+    reading: "hogaḷu"
+    ipa: "hoɡaɭu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶಿಕ್ಷಕರು ಹೊಗಳಿದರು.", reading: "śikṣakaru hogaḷidaru.", ipa: "ʃikʂakaru hoɡaɭid̪aru", bases: [{ word: "ಶಿಕ್ಷಕರು", ref: "kn-0225" }, { word: "ಹೊಗಳಿದರು", base: "ಹೊಗಳು", reading: "hogaḷu" }] }
+      - { target: "ಅವನನ್ನು ಹೊಗಳು.", reading: "avanannu hogaḷu.", ipa: "aʋanannu hoɡaɭu", bases: [{ word: "ಅವನನ್ನು", ref: "kn-0612" }] }
+  - id: "kn-1367"
+    target: "ಟೀಕೆ"
+    reading: "ṭīke"
+    ipa: "ʈiːke"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಟೀಕೆ ಮಾಡಬೇಡ.", reading: "ṭīke māḍabēḍa.", ipa: "ʈiːke maːɖabeːɖa", bases: [{ word: "ಮಾಡಬೇಡ", ref: "kn-0630" }] }
+      - { target: "ಅವರ ಟೀಕೆ ಕಠಿಣ.", reading: "avara ṭīke kaṭhiṇa.", ipa: "aʋara ʈiːke kaʈʰiɳa" }
+  - id: "kn-1368"
+    target: "ಟೀಕಿಸು"
+    reading: "ṭīkisu"
+    ipa: "ʈiːkisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನು ಟೀಕಿಸುತ್ತಾನೆ.", reading: "avanu ṭīkisuttāne.", ipa: "aʋanu ʈiːkisut̪t̪aːne", bases: [{ word: "ಟೀಕಿಸುತ್ತಾನೆ", base: "ಟೀಕಿಸು", reading: "ṭīkisu" }] }
+      - { target: "ಅವರು ಟೀಕಿಸಿದರು.", reading: "avaru ṭīkisidaru.", ipa: "aʋaru ʈiːkisid̪aru", bases: [{ word: "ಟೀಕಿಸಿದರು", base: "ಟೀಕಿಸು", reading: "ṭīkisu" }] }
+  - id: "kn-1369"
+    target: "ಮೆಚ್ಚು"
+    reading: "meccu"
+    ipa: "metʃtʃu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಾನು ಈ ಚಿತ್ರ ಮೆಚ್ಚುತ್ತೇನೆ.", reading: "nānu ī citra meccuttēne.", ipa: "naːnu iː tʃit̪ra metʃtʃut̪t̪eːne", bases: [{ word: "ಮೆಚ್ಚುತ್ತೇನೆ", base: "ಮೆಚ್ಚು", reading: "meccu" }] }
+      - { target: "ಅವಳು ಮೆಚ್ಚಿದಳು.", reading: "avaḷu meccidaḷu.", ipa: "aʋaɭu metʃtʃid̪aɭu", bases: [{ word: "ಮೆಚ್ಚಿದಳು", base: "ಮೆಚ್ಚು", reading: "meccu" }] }
+  - id: "kn-1370"
+    target: "ಅನಿಸು"
+    reading: "anisu"
+    ipa: "anisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನನಗೆ ಹಾಗೆ ಅನಿಸುತ್ತದೆ.", reading: "nanage hāge anisuttade.", ipa: "nanaɡe haːɡe anisut̪t̪ad̪e", bases: [{ word: "ನನಗೆ", ref: "kn-0610" }, { word: "ಅನಿಸುತ್ತದೆ", base: "ಅನಿಸು", reading: "anisu" }] }
+      - { target: "ಅವನಿಗೆ ಸರಿ ಅನಿಸಿತು.", reading: "avanige sari anisitu.", ipa: "aʋaniɡe sari anisit̪u", bases: [{ word: "ಅವನಿಗೆ", ref: "kn-0612" }, { word: "ಅನಿಸಿತು", base: "ಅನಿಸು", reading: "anisu" }, { word: "ಸರಿ", base: "ಸರಿ", reading: "sari" }] }
+  - id: "kn-1371"
+    target: "ನಂಬಿಕೆ"
+    reading: "nambike"
+    ipa: "nambike"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನನಗೆ ನಂಬಿಕೆ ಇದೆ.", reading: "nanage nambike ide.", ipa: "nanaɡe nambike id̪e", bases: [{ word: "ನನಗೆ", ref: "kn-0610" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಅವನ ನಂಬಿಕೆ ಸರಿ.", reading: "avana nambike sari.", ipa: "aʋana nambike sari", bases: [{ word: "ಸರಿ", base: "ಸರಿ", reading: "sari" }] }
+  - id: "kn-1372"
+    target: "ವಾದ"
+    reading: "vāda"
+    ipa: "ʋaːd̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಾದ ಬೇಡ.", reading: "vāda bēḍa.", ipa: "ʋaːd̪a beːɖa" }
+      - { target: "ಅವನ ವಾದ ಸರಿ.", reading: "avana vāda sari.", ipa: "aʋana ʋaːd̪a sari", bases: [{ word: "ಸರಿ", base: "ಸರಿ", reading: "sari" }] }
+  - id: "kn-1373"
+    target: "ಸತ್ಯ"
+    reading: "satya"
+    ipa: "sat̪ja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸತ್ಯ ಹೇಳು.", reading: "satya hēḷu.", ipa: "sat̪ja heːɭu" }
+      - { target: "ಇದು ಸತ್ಯ.", reading: "idu satya.", ipa: "id̪u sat̪ja" }
+  - id: "kn-1374"
+    target: "ಸುಳ್ಳು"
+    reading: "suḷḷu"
+    ipa: "suɭɭu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸುಳ್ಳು ಹೇಳಬೇಡ.", reading: "suḷḷu hēḷabēḍa.", ipa: "suɭɭu heːɭabeːɖa", bases: [{ word: "ಹೇಳಬೇಡ", ref: "kn-0642" }] }
+      - { target: "ಅದು ಸುಳ್ಳು.", reading: "adu suḷḷu.", ipa: "ad̪u suɭɭu" }
+  - id: "kn-1375"
+    target: "ಕಾರಣ"
+    reading: "kāraṇa"
+    ipa: "kaːraɳa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಾರಣ ಏನು?", reading: "kāraṇa ēnu?", ipa: "kaːraɳa eːnu" }
+      - { target: "ಮಳೆ ಕಾರಣ.", reading: "maḷe kāraṇa.", ipa: "maɭe kaːraɳa" }
+  - id: "kn-1376"
+    target: "ಉತ್ತಮ"
+    reading: "uttama"
+    ipa: "ut̪t̪ama"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಉತ್ತಮ ಕೆಲಸ.", reading: "uttama kelasa.", ipa: "ut̪t̪ama kelasa" }
+      - { target: "ಅವನು ಉತ್ತಮ ಶಿಕ್ಷಕ.", reading: "avanu uttama śikṣaka.", ipa: "aʋanu ut̪t̪ama ʃikʂaka" }
+  - ref: "kn-0401"
+  - id: "kn-1377"
+    target: "ಚರ್ಚೆ"
+    reading: "carce"
+    ipa: "tʃartʃe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚರ್ಚೆ ಮುಗಿಯಿತು.", reading: "carce mugiyitu.", ipa: "tʃartʃe muɡijit̪u", bases: [{ word: "ಮುಗಿಯಿತು", ref: "kn-1277" }] }
+      - { target: "ಚರ್ಚೆ ಬೇಕು.", reading: "carce bēku.", ipa: "tʃartʃe beːku" }
+  - id: "kn-1378"
+    target: "ಸಮಂಜಸ"
+    reading: "samañjasa"
+    ipa: "samaɲdʒasa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇದು ಸಮಂಜಸ.", reading: "idu samañjasa.", ipa: "id̪u samaɲdʒasa" }
+      - { target: "ಸಮಂಜಸ ಉತ್ತರ.", reading: "samañjasa uttara.", ipa: "samaɲdʒasa ut̪t̪ara" }
+  - id: "kn-1379"
+    target: "ನಿಜ"
+    reading: "nija"
+    ipa: "nidʒa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅದು ನಿಜ.", reading: "adu nija.", ipa: "ad̪u nidʒa" }
+      - { target: "ನಿಜ ಸಂತೋಷ.", reading: "nija santōṣa.", ipa: "nidʒa sant̪oːʂa" }
+  - id: "kn-1380"
+    target: "ಸರಿಯಲ್ಲ"
+    reading: "sariyalla"
+    ipa: "sarijalla"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅದು ಸರಿಯಲ್ಲ.", reading: "adu sariyalla.", ipa: "ad̪u sarijalla" }
+      - { target: "ಅವನ ವಾದ ಸರಿಯಲ್ಲ.", reading: "avana vāda sariyalla.", ipa: "aʋana ʋaːd̪a sarijalla" }
+  - id: "kn-1381"
+    target: "ಕಠಿಣ"
+    reading: "kaṭhiṇa"
+    ipa: "kaʈʰiɳa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶಿಕ್ಷಕರು ಕಠಿಣ.", reading: "śikṣakaru kaṭhiṇa.", ipa: "ʃikʂakaru kaʈʰiɳa", bases: [{ word: "ಶಿಕ್ಷಕರು", ref: "kn-0225" }] }
+      - { target: "ಕಠಿಣ ನಿರ್ಧಾರ.", reading: "kaṭhiṇa nirdhāra.", ipa: "kaʈʰiɳa nird̪ʱaːra" }
+  - id: "kn-1382"
+    target: "ಅಭಿನಂದನೆ"
+    reading: "abhinandane"
+    ipa: "abʱinand̪ane"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಭಿನಂದನೆ!", reading: "abhinandane!", ipa: "abʱinand̪ane" }
+      - { target: "ನಿನಗೆ ಅಭಿನಂದನೆ.", reading: "ninage abhinandane.", ipa: "ninaɡe abʱinand̪ane", bases: [{ word: "ನಿನಗೆ", ref: "kn-0611" }] }

@@ -1,0 +1,20 @@
+schema: 1
+id: "kn-en-grammar-ordinals"
+kind: "layer"
+core: "kn-grammar-ordinals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Ordinals: the first, the second"
+license: "CC-BY-SA-4.0"
+description: "The first, second and third: the ordinal form before a noun, and the shorter spoken form. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Ordinals"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "ondu": "one: the first"
+    "eradu": "two: the second"
+    "mooru": "three: the third"
+    "naalku": "four: the fourth"
+    "aidu": "five: the fifth"
+  notes: "Before a noun the ordinal ends in ಅ (a), as in ಎರಡನೆಯ ದಿನ (eraḍaneya dina), the second day. In speech it is shortened to ನೇ (nē), as in ಎರಡನೇ ದಿನ (eraḍanē dina). The first is not from ಒಂದು (ondu): it is ಮೊದಲನೆಯ (modalaneya), from ಮೊದಲು (modalu), before."

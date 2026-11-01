@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-subjunctive"
+kind: "layer"
+core: "kn-grammar-subjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The subjunctive: let us, may it be"
+license: "CC-BY-SA-4.0"
+description: "Suggestions and wishes: let us go, may he come. The form for us and the form for him, her or them. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Subjunctive"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+  notes: "For a suggestion to the group, use the us-form of the verb: ಹೋಗೋಣ (hōgōṇa), let us go. For a wish, or an order to another person, use the other form: ಬರಲಿ (barali), may he or she come. The first form is for us only; the second is for he, she and they."

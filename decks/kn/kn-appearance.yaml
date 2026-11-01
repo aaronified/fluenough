@@ -1,0 +1,194 @@
+schema: 1
+id: "kn-appearance"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "appearance"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0719"
+  - id: "kn-1159"
+    target: "ಗಿಡ್ಡ"
+    reading: "giḍḍa"
+    ipa: "ɡiɖɖa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನು ಗಿಡ್ಡ.", reading: "avanu giḍḍa.", ipa: "aʋanu ɡiɖɖa" }
+      - { target: "ಗಿಡ್ಡ ಮಕ್ಕಳು.", reading: "giḍḍa makkaḷu.", ipa: "ɡiɖɖa makkaɭu" }
+  - id: "kn-1160"
+    target: "ಉದ್ದ"
+    reading: "udda"
+    ipa: "ud̪d̪a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವಳು ಉದ್ದ.", reading: "avaḷu udda.", ipa: "aʋaɭu ud̪d̪a" }
+      - { target: "ಉದ್ದ ಕೂದಲು.", reading: "udda kūdalu.", ipa: "ud̪d̪a kuːd̪alu" }
+  - id: "kn-1161"
+    target: "ವಯಸ್ಸು"
+    reading: "vayassu"
+    ipa: "ʋajassu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಿನ್ನ ವಯಸ್ಸು ಎಷ್ಟು?", reading: "ninna vayassu eṣṭu?", ipa: "ninna ʋajassu eʂʈu" }
+      - { target: "ನನ್ನ ವಯಸ್ಸು ಇಪ್ಪತ್ತು.", reading: "nanna vayassu ippattu.", ipa: "nanna ʋajassu ippat̪t̪u" }
+  - id: "kn-1162"
+    target: "ಮುದುಕ"
+    reading: "muduka"
+    ipa: "mud̪uka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮುದುಕ ಕುಳಿತಿದ್ದಾನೆ.", reading: "muduka kuḷitiddāne.", ipa: "mud̪uka kuɭit̪id̪d̪aːne", bases: [{ word: "ಕುಳಿತಿದ್ದಾನೆ", base: "ಕುಳಿತಿರು", reading: "kuḷitiru" }] }
+      - { target: "ಮುದುಕರು ಬಂದರು.", reading: "mudukaru bandaru.", ipa: "mud̪ukaru band̪aru", bases: [{ word: "ಮುದುಕರು", base: "ಮುದುಕ", reading: "muduka" }] }
+  - id: "kn-1163"
+    target: "ಯುವಕ"
+    reading: "yuvaka"
+    ipa: "juʋaka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಯುವಕ ಓಡುತ್ತಿದ್ದಾನೆ.", reading: "yuvaka ōḍuttiddāne.", ipa: "juʋaka oːɖut̪t̪id̪d̪aːne", bases: [{ word: "ಓಡುತ್ತಿದ್ದಾನೆ", ref: "kn-0644" }] }
+      - { target: "ಯುವಕರು ಬಂದರು.", reading: "yuvakaru bandaru.", ipa: "juʋakaru band̪aru", bases: [{ word: "ಯುವಕರು", base: "ಯುವಕ", reading: "yuvaka" }] }
+  - ref: "kn-0801"
+  - ref: "kn-0812"
+  - ref: "kn-0798"
+  - ref: "kn-0797"
+  - ref: "kn-0799"
+  - ref: "kn-0800"
+  - ref: "kn-0810"
+  - id: "kn-1164"
+    target: "ಗಡ್ಡ"
+    reading: "gaḍḍa"
+    ipa: "ɡaɖɖa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನಿಗೆ ಗಡ್ಡ ಇದೆ.", reading: "avanige gaḍḍa ide.", ipa: "aʋaniɡe ɡaɖɖa id̪e", bases: [{ word: "ಅವನಿಗೆ", ref: "kn-0612" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಗಡ್ಡ ಬಿಳಿ.", reading: "gaḍḍa biḷi.", ipa: "ɡaɖɖa biɭi" }
+  - id: "kn-1165"
+    target: "ಮೀಸೆ"
+    reading: "mīse"
+    ipa: "miːse"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಪ್ಪನಿಗೆ ಮೀಸೆ ಇದೆ.", reading: "appanige mīse ide.", ipa: "appaniɡe miːse id̪e", bases: [{ word: "ಅಪ್ಪನಿಗೆ", ref: "kn-0059" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಮೀಸೆ ಕತ್ತರಿಸು.", reading: "mīse kattarisu.", ipa: "miːse kat̪t̪arisu" }
+  - ref: "kn-0408"
+  - id: "kn-1166"
+    target: "ದಪ್ಪ"
+    reading: "dappa"
+    ipa: "d̪appa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನು ದಪ್ಪ.", reading: "avanu dappa.", ipa: "aʋanu d̪appa" }
+      - { target: "ದಪ್ಪ ಪುಸ್ತಕ.", reading: "dappa pustaka.", ipa: "d̪appa pust̪aka" }
+  - id: "kn-1167"
+    target: "ತೆಳ್ಳಗೆ"
+    reading: "teḷḷage"
+    ipa: "t̪eɭɭaɡe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವಳು ತೆಳ್ಳಗೆ.", reading: "avaḷu teḷḷage.", ipa: "aʋaɭu t̪eɭɭaɡe" }
+      - { target: "ತೆಳ್ಳಗೆ ಬಟ್ಟೆ.", reading: "teḷḷage baṭṭe.", ipa: "t̪eɭɭaɡe baʈʈe" }
+  - id: "kn-1168"
+    target: "ಕಪ್ಪು"
+    reading: "kappu"
+    ipa: "kappu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಪ್ಪು ಕೂದಲು.", reading: "kappu kūdalu.", ipa: "kappu kuːd̪alu" }
+      - { target: "ಅವನ ಬಣ್ಣ ಕಪ್ಪು.", reading: "avana baṇṇa kappu.", ipa: "aʋana baɳɳa kappu" }
+  - id: "kn-1169"
+    target: "ಬಿಳಿ"
+    reading: "biḷi"
+    ipa: "biɭi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಿಳಿ ಬಟ್ಟೆ ಬೇಕು.", reading: "biḷi baṭṭe bēku.", ipa: "biɭi baʈʈe beːku" }
+      - { target: "ಅವಳ ಬಣ್ಣ ಬಿಳಿ.", reading: "avaḷa baṇṇa biḷi.", ipa: "aʋaɭa baɳɳa biɭi" }
+  - id: "kn-1170"
+    target: "ಕೆಂಪು"
+    reading: "kempu"
+    ipa: "kempu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೆಂಪು ಹೂವು.", reading: "kempu hūvu.", ipa: "kempu huːʋu" }
+      - { target: "ಕೆಂಪು ಬಣ್ಣ ಇಷ್ಟ.", reading: "kempu baṇṇa iṣṭa.", ipa: "kempu baɳɳa iʂʈa" }
+  - id: "kn-1171"
+    target: "ನೀಲಿ"
+    reading: "nīli"
+    ipa: "niːli"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನೀಲಿ ಆಕಾಶ.", reading: "nīli ākāśa.", ipa: "niːli aːkaːʃa" }
+      - { target: "ನೀಲಿ ಬಟ್ಟೆ ಇದೆ.", reading: "nīli baṭṭe ide.", ipa: "niːli baʈʈe id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1172"
+    target: "ಹಸಿರು"
+    reading: "hasiru"
+    ipa: "hasiru"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹಸಿರು ಗಿಡ.", reading: "hasiru giḍa.", ipa: "hasiru ɡiɖa" }
+      - { target: "ಹಸಿರು ಬಣ್ಣ ಚೆನ್ನಾಗಿದೆ.", reading: "hasiru baṇṇa cennāgide.", ipa: "hasiru baɳɳa tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-1173"
+    target: "ಕಂದು"
+    reading: "kandu"
+    ipa: "kand̪u"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಂದು ಕಣ್ಣು.", reading: "kandu kaṇṇu.", ipa: "kand̪u kaɳɳu" }
+      - { target: "ಕಂದು ಬಣ್ಣ ಇದೆ.", reading: "kandu baṇṇa ide.", ipa: "kand̪u baɳɳa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1174"
+    target: "ಬೋಳು"
+    reading: "bōḷu"
+    ipa: "boːɭu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಪ್ಪ ಬೋಳು.", reading: "appa bōḷu.", ipa: "appa boːɭu" }
+      - { target: "ಅವನ ತಲೆ ಬೋಳು.", reading: "avana tale bōḷu.", ipa: "aʋana t̪ale boːɭu" }
+  - id: "kn-1175"
+    target: "ಸುರುಳಿ"
+    reading: "suruḷi"
+    ipa: "suruɭi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸುರುಳಿ ಕೂದಲು.", reading: "suruḷi kūdalu.", ipa: "suruɭi kuːd̪alu" }
+      - { target: "ಅವಳ ಕೂದಲು ಸುರುಳಿ.", reading: "avaḷa kūdalu suruḷi.", ipa: "aʋaɭa kuːd̪alu suruɭi" }
+  - ref: "kn-0913"

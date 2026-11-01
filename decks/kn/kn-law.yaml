@@ -1,0 +1,155 @@
+schema: 1
+id: "kn-law"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "law"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1622"
+    target: "ಕಾನೂನು"
+    reading: "kānūnu"
+    ipa: "kaːnuːnu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಾನೂನು ಬೇಕು.", reading: "kānūnu bēku.", ipa: "kaːnuːnu beːku" }
+      - { target: "ಕಾನೂನು ಇದೆ.", reading: "kānūnu ide.", ipa: "kaːnuːnu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - ref: "kn-0860"
+  - id: "kn-1623"
+    target: "ನ್ಯಾಯಾಧೀಶ"
+    reading: "nyāyādhīśa"
+    ipa: "njaːjaːd̪ʱiːʃa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನ್ಯಾಯಾಧೀಶರು ಬಂದರು.", reading: "nyāyādhīśaru bandaru.", ipa: "njaːjaːd̪ʱiːʃaru band̪aru", bases: [{ word: "ನ್ಯಾಯಾಧೀಶರು", base: "ನ್ಯಾಯಾಧೀಶ", reading: "nyāyādhīśa" }] }
+      - { target: "ನ್ಯಾಯಾಧೀಶರು ತೀರ್ಪು ಕೊಟ್ಟರು.", reading: "nyāyādhīśaru tīrpu koṭṭaru.", ipa: "njaːjaːd̪ʱiːʃaru t̪iːrpu koʈʈaru", bases: [{ word: "ನ್ಯಾಯಾಧೀಶರು", base: "ನ್ಯಾಯಾಧೀಶ", reading: "nyāyādhīśa" }, { word: "ಕೊಟ್ಟರು", ref: "kn-0114" }] }
+  - ref: "kn-0229"
+  - id: "kn-1624"
+    target: "ಅಪರಾಧ"
+    reading: "aparādha"
+    ipa: "aparaːd̪ʱa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಪರಾಧ ಆಯಿತು.", reading: "aparādha āyitu.", ipa: "aparaːd̪ʱa aːjit̪u" }
+      - { target: "ಅಪರಾಧ ಬೇಡ.", reading: "aparādha bēḍa.", ipa: "aparaːd̪ʱa beːɖa" }
+  - id: "kn-1625"
+    target: "ಅಪರಾಧಿ"
+    reading: "aparādhi"
+    ipa: "aparaːd̪ʱi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಪರಾಧಿ ಓಡಿದ.", reading: "aparādhi ōḍida.", ipa: "aparaːd̪ʱi oːɖid̪a", bases: [{ word: "ಓಡಿದ", ref: "kn-0644" }] }
+      - { target: "ಅಪರಾಧಿ ಜೈಲಿನಲ್ಲಿ ಇದ್ದಾನೆ.", reading: "aparādhi jailinalli iddāne.", ipa: "aparaːd̪ʱi dʒailinalli id̪d̪aːne", bases: [{ word: "ಜೈಲಿನಲ್ಲಿ", base: "ಜೈಲು", reading: "jailu" }, { word: "ಇದ್ದಾನೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1626"
+    target: "ಕಳ್ಳ"
+    reading: "kaḷḷa"
+    ipa: "kaɭɭa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಳ್ಳ ಬಂದ.", reading: "kaḷḷa banda.", ipa: "kaɭɭa band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಕಳ್ಳ ಓಡಿದ.", reading: "kaḷḷa ōḍida.", ipa: "kaɭɭa oːɖid̪a", bases: [{ word: "ಓಡಿದ", ref: "kn-0644" }] }
+  - id: "kn-1627"
+    target: "ಕಳ್ಳತನ"
+    reading: "kaḷḷatana"
+    ipa: "kaɭɭat̪ana"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಳ್ಳತನ ಆಯಿತು.", reading: "kaḷḷatana āyitu.", ipa: "kaɭɭat̪ana aːjit̪u" }
+      - { target: "ಕಳ್ಳತನ ಬೇಡ.", reading: "kaḷḷatana bēḍa.", ipa: "kaɭɭat̪ana beːɖa" }
+  - id: "kn-1628"
+    target: "ದೂರು"
+    reading: "dūru"
+    ipa: "d̪uːru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ದೂರು ಕೊಡು.", reading: "dūru koḍu.", ipa: "d̪uːru koɖu" }
+      - { target: "ದೂರು ಬರೆ.", reading: "dūru bare.", ipa: "d̪uːru bare" }
+  - id: "kn-1629"
+    target: "ಆರೋಪ"
+    reading: "ārōpa"
+    ipa: "aːroːpa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆರೋಪ ಇದೆ.", reading: "ārōpa ide.", ipa: "aːroːpa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಆರೋಪ ಸುಳ್ಳು.", reading: "ārōpa suḷḷu.", ipa: "aːroːpa suɭɭu" }
+  - id: "kn-1630"
+    target: "ಜೈಲು"
+    reading: "jailu"
+    ipa: "dʒailu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಜೈಲು ದೂರ ಇದೆ.", reading: "jailu dūra ide.", ipa: "dʒailu d̪uːra id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಜೈಲಿನಲ್ಲಿ ಇದ್ದಾನೆ.", reading: "jailinalli iddāne.", ipa: "dʒailinalli id̪d̪aːne", bases: [{ word: "ಜೈಲಿನಲ್ಲಿ", base: "ಜೈಲು", reading: "jailu" }, { word: "ಇದ್ದಾನೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1631"
+    target: "ಬಂಧನ"
+    reading: "bandhana"
+    ipa: "band̪ʱana"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಂಧನ ಆಯಿತು.", reading: "bandhana āyitu.", ipa: "band̪ʱana aːjit̪u" }
+      - { target: "ಬಂಧನ ಬೇಡ.", reading: "bandhana bēḍa.", ipa: "band̪ʱana beːɖa" }
+  - id: "kn-1632"
+    target: "ತೀರ್ಪು"
+    reading: "tīrpu"
+    ipa: "t̪iːrpu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತೀರ್ಪು ಬಂತು.", reading: "tīrpu bantu.", ipa: "t̪iːrpu bant̪u", bases: [{ word: "ಬಂತು", ref: "kn-0632" }] }
+      - { target: "ತೀರ್ಪು ಸರಿ.", reading: "tīrpu sari.", ipa: "t̪iːrpu sari", bases: [{ word: "ಸರಿ", base: "ಸರಿ", reading: "sari" }] }
+  - id: "kn-1633"
+    target: "ಶಿಕ್ಷೆ"
+    reading: "śikṣe"
+    ipa: "ʃikʂe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶಿಕ್ಷೆ ಕೊಟ್ಟರು.", reading: "śikṣe koṭṭaru.", ipa: "ʃikʂe koʈʈaru", bases: [{ word: "ಕೊಟ್ಟರು", ref: "kn-0114" }] }
+      - { target: "ಶಿಕ್ಷೆ ಬೇಡ.", reading: "śikṣe bēḍa.", ipa: "ʃikʂe beːɖa" }
+  - id: "kn-1634"
+    target: "ಕೇಸ್"
+    reading: "kēs"
+    ipa: "keːs"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೇಸ್ ಇದೆ.", reading: "kēs ide.", ipa: "keːs id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಕೇಸ್ ಯಾವಾಗ?", reading: "kēs yāvāga?", ipa: "keːs jaːʋaːɡa" }
+  - ref: "kn-1433"

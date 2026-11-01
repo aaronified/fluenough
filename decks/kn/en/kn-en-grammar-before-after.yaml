@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-before-after"
+kind: "layer"
+core: "kn-grammar-before-after"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Before and after: before doing, after doing"
+license: "CC-BY-SA-4.0"
+description: "The order of two actions: before doing a thing, and after doing it. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Before and after"
+  slot_name: "order"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+  notes: "For before, the verb takes its basic form before ಮೊದಲು (modalu), as in ಊಟ ಮಾಡುವ ಮೊದಲು (ūṭa māḍuva modalu), before eating. For after, the verb takes its past form before ನಂತರ (nantara), as in ಊಟ ಮಾಡಿದ ನಂತರ (ūṭa māḍida nantara), after eating."

@@ -1,0 +1,211 @@
+schema: 1
+id: "kn-geography"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "geography"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1280"
+    target: "ಭೂಗೋಳ"
+    reading: "bhūgōḷa"
+    ipa: "bʱuːɡoːɭa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಭೂಗೋಳ ಇಷ್ಟ.", reading: "bhūgōḷa iṣṭa.", ipa: "bʱuːɡoːɭa iʂʈa" }
+      - { target: "ಭೂಗೋಳ ಪುಸ್ತಕ ಓದು.", reading: "bhūgōḷa pustaka ōdu.", ipa: "bʱuːɡoːɭa pust̪aka oːd̪u" }
+  - id: "kn-1281"
+    target: "ನಕ್ಷೆ"
+    reading: "nakṣe"
+    ipa: "nakʂe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಕ್ಷೆ ಎಲ್ಲಿ?", reading: "nakṣe elli?", ipa: "nakʂe elli" }
+      - { target: "ನಕ್ಷೆಯಲ್ಲಿ ನದಿ ಇದೆ.", reading: "nakṣeyalli nadi ide.", ipa: "nakʂejalli nad̪i id̪e", bases: [{ word: "ನಕ್ಷೆಯಲ್ಲಿ", base: "ನಕ್ಷೆ", reading: "nakṣe" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1282"
+    target: "ಪ್ರಪಂಚ"
+    reading: "prapañca"
+    ipa: "prapaɲtʃa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರಪಂಚ ದೊಡ್ಡದು.", reading: "prapañca doḍḍadu.", ipa: "prapaɲtʃa d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಪ್ರಪಂಚದಲ್ಲಿ ಎಷ್ಟು ದೇಶ?", reading: "prapañcadalli eṣṭu dēśa?", ipa: "prapaɲtʃad̪alli eʂʈu d̪eːʃa", bases: [{ word: "ಪ್ರಪಂಚದಲ್ಲಿ", base: "ಪ್ರಪಂಚ", reading: "prapañca" }] }
+  - ref: "kn-0205"
+  - id: "kn-1283"
+    target: "ಭಾರತ"
+    reading: "bhārata"
+    ipa: "bʱaːrat̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಭಾರತದಲ್ಲಿ ಹಲವು ಭಾಷೆ ಇದೆ.", reading: "bhāratadalli halavu bhāṣe ide.", ipa: "bʱaːrat̪ad̪alli halaʋu bʱaːʂe id̪e", bases: [{ word: "ಭಾರತದಲ್ಲಿ", base: "ಭಾರತ", reading: "bhārata" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಭಾರತ ಸುಂದರ.", reading: "bhārata sundara.", ipa: "bʱaːrat̪a sund̪ara" }
+  - id: "kn-1284"
+    target: "ರಾಜ್ಯ"
+    reading: "rājya"
+    ipa: "raːdʒja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಭಾರತದಲ್ಲಿ ಹಲವು ರಾಜ್ಯ ಇದೆ.", reading: "bhāratadalli halavu rājya ide.", ipa: "bʱaːrat̪ad̪alli halaʋu raːdʒja id̪e", bases: [{ word: "ಭಾರತದಲ್ಲಿ", base: "ಭಾರತ", reading: "bhārata" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ರಾಜ್ಯದಲ್ಲಿ ನದಿ ಇದೆ.", reading: "rājyadalli nadi ide.", ipa: "raːdʒjad̪alli nad̪i id̪e", bases: [{ word: "ರಾಜ್ಯದಲ್ಲಿ", base: "ರಾಜ್ಯ", reading: "rājya" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1285"
+    target: "ಜಿಲ್ಲೆ"
+    reading: "jille"
+    ipa: "dʒille"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈ ಜಿಲ್ಲೆ ದೊಡ್ಡದು.", reading: "ī jille doḍḍadu.", ipa: "iː dʒille d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಜಿಲ್ಲೆಯ ನಕ್ಷೆ ಎಲ್ಲಿ?", reading: "jilleya nakṣe elli?", ipa: "dʒilleja nakʂe elli", bases: [{ word: "ಜಿಲ್ಲೆಯ", base: "ಜಿಲ್ಲೆ", reading: "jille" }] }
+  - ref: "kn-0055"
+  - id: "kn-1286"
+    target: "ಗ್ರಾಮ"
+    reading: "grāma"
+    ipa: "ɡraːma"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗ್ರಾಮ ಶಾಂತ.", reading: "grāma śānta.", ipa: "ɡraːma ʃaːnt̪a" }
+      - { target: "ಗ್ರಾಮದಲ್ಲಿ ಮನೆ ಇದೆ.", reading: "grāmadalli mane ide.", ipa: "ɡraːmad̪alli mane id̪e", bases: [{ word: "ಗ್ರಾಮದಲ್ಲಿ", base: "ಗ್ರಾಮ", reading: "grāma" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1287"
+    target: "ರಾಜಧಾನಿ"
+    reading: "rājadhāni"
+    ipa: "raːdʒad̪ʱaːni"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಾಜಧಾನಿ ಎಲ್ಲಿ?", reading: "rājadhāni elli?", ipa: "raːdʒad̪ʱaːni elli" }
+      - { target: "ರಾಜಧಾನಿ ದೊಡ್ಡದು.", reading: "rājadhāni doḍḍadu.", ipa: "raːdʒad̪ʱaːni d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - ref: "kn-0206"
+  - id: "kn-1288"
+    target: "ಜನಸಂಖ್ಯೆ"
+    reading: "janasaṅkhye"
+    ipa: "dʒanasaŋkʰje"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಜನಸಂಖ್ಯೆ ಎಷ್ಟು?", reading: "janasaṅkhye eṣṭu?", ipa: "dʒanasaŋkʰje eʂʈu" }
+      - { target: "ನಗರದ ಜನಸಂಖ್ಯೆ ದೊಡ್ಡದು.", reading: "nagarada janasaṅkhye doḍḍadu.", ipa: "naɡarad̪a dʒanasaŋkʰje d̪oɖɖad̪u", bases: [{ word: "ನಗರದ", ref: "kn-0055" }, { word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1289"
+    target: "ಗಡಿ"
+    reading: "gaḍi"
+    ipa: "ɡaɖi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗಡಿ ಹತ್ತಿರ ಇದೆ.", reading: "gaḍi hattira ide.", ipa: "ɡaɖi hat̪t̪ira id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಗಡಿಯಲ್ಲಿ ಮರ ಇದೆ.", reading: "gaḍiyalli mara ide.", ipa: "ɡaɖijalli mara id̪e", bases: [{ word: "ಗಡಿಯಲ್ಲಿ", base: "ಗಡಿ", reading: "gaḍi" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1290"
+    target: "ಪ್ರದೇಶ"
+    reading: "pradēśa"
+    ipa: "prad̪eːʃa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈ ಪ್ರದೇಶ ಸುಂದರ.", reading: "ī pradēśa sundara.", ipa: "iː prad̪eːʃa sund̪ara" }
+      - { target: "ಪ್ರದೇಶದಲ್ಲಿ ಮಳೆ ಬರುತ್ತದೆ.", reading: "pradēśadalli maḷe baruttade.", ipa: "prad̪eːʃad̪alli maɭe barut̪t̪ad̪e", bases: [{ word: "ಪ್ರದೇಶದಲ್ಲಿ", base: "ಪ್ರದೇಶ", reading: "pradēśa" }] }
+  - id: "kn-1291"
+    target: "ಭೂಮಿ"
+    reading: "bhūmi"
+    ipa: "bʱuːmi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಭೂಮಿ ಒಣ ಆಗಿದೆ.", reading: "bhūmi oṇa āgide.", ipa: "bʱuːmi oɳa aːɡid̪e", bases: [{ word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }] }
+      - { target: "ಭೂಮಿ ಮೇಲೆ ಜನ ಇದ್ದಾರೆ.", reading: "bhūmi mēle jana iddāre.", ipa: "bʱuːmi meːle dʒana id̪d̪aːre", bases: [{ word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1292"
+    target: "ಸಾಗರ"
+    reading: "sāgara"
+    ipa: "saːɡara"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಾಗರ ದೊಡ್ಡದು.", reading: "sāgara doḍḍadu.", ipa: "saːɡara d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಸಾಗರದಲ್ಲಿ ಮೀನು ಇದೆ.", reading: "sāgaradalli mīnu ide.", ipa: "saːɡarad̪alli miːnu id̪e", bases: [{ word: "ಸಾಗರದಲ್ಲಿ", base: "ಸಾಗರ", reading: "sāgara" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1293"
+    target: "ಪೂರ್ವ"
+    reading: "pūrva"
+    ipa: "puːrʋa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸೂರ್ಯ ಪೂರ್ವದಲ್ಲಿ ಉದಯಿಸುತ್ತಾನೆ.", reading: "sūrya pūrvadalli udayisuttāne.", ipa: "suːrja puːrʋad̪alli ud̪ajisut̪t̪aːne", bases: [{ word: "ಪೂರ್ವದಲ್ಲಿ", base: "ಪೂರ್ವ", reading: "pūrva" }, { word: "ಉದಯಿಸುತ್ತಾನೆ", base: "ಉದಯಿಸು", reading: "udayisu" }] }
+      - { target: "ಪೂರ್ವ ದಿಕ್ಕು.", reading: "pūrva dikku.", ipa: "puːrʋa d̪ikku" }
+  - id: "kn-1294"
+    target: "ಪಶ್ಚಿಮ"
+    reading: "paścima"
+    ipa: "paʃtʃima"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪಶ್ಚಿಮದಲ್ಲಿ ಸೂರ್ಯ ಮುಳುಗುತ್ತಾನೆ.", reading: "paścimadalli sūrya muḷuguttāne.", ipa: "paʃtʃimad̪alli suːrja muɭuɡut̪t̪aːne", bases: [{ word: "ಪಶ್ಚಿಮದಲ್ಲಿ", base: "ಪಶ್ಚಿಮ", reading: "paścima" }, { word: "ಮುಳುಗುತ್ತಾನೆ", base: "ಮುಳುಗು", reading: "muḷugu" }] }
+      - { target: "ಪಶ್ಚಿಮ ದಿಕ್ಕು.", reading: "paścima dikku.", ipa: "paʃtʃima d̪ikku" }
+  - id: "kn-1295"
+    target: "ದಕ್ಷಿಣ"
+    reading: "dakṣiṇa"
+    ipa: "d̪akʂiɳa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ದಕ್ಷಿಣಕ್ಕೆ ಹೋಗು.", reading: "dakṣiṇakke hōgu.", ipa: "d̪akʂiɳakke hoːɡu", bases: [{ word: "ದಕ್ಷಿಣಕ್ಕೆ", base: "ದಕ್ಷಿಣ", reading: "dakṣiṇa" }] }
+      - { target: "ದಕ್ಷಿಣ ಭಾರತ ಬಿಸಿ.", reading: "dakṣiṇa bhārata bisi.", ipa: "d̪akʂiɳa bʱaːrat̪a bisi" }
+  - id: "kn-1296"
+    target: "ದಿಕ್ಕು"
+    reading: "dikku"
+    ipa: "d̪ikku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಯಾವ ದಿಕ್ಕು?", reading: "yāva dikku?", ipa: "jaːʋa d̪ikku" }
+      - { target: "ಈ ದಿಕ್ಕಿನಲ್ಲಿ ನದಿ ಇದೆ.", reading: "ī dikkinalli nadi ide.", ipa: "iː d̪ikkinalli nad̪i id̪e", bases: [{ word: "ದಿಕ್ಕಿನಲ್ಲಿ", base: "ದಿಕ್ಕು", reading: "dikku" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - ref: "kn-0374"
+  - id: "kn-1297"
+    target: "ಮಧ್ಯ"
+    reading: "madhya"
+    ipa: "mad̪ʱja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಊರಿನ ಮಧ್ಯ ಇದೆ.", reading: "ūrina madhya ide.", ipa: "uːrina mad̪ʱja id̪e", bases: [{ word: "ಊರಿನ", ref: "kn-0204" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಮಧ್ಯದಲ್ಲಿ ಮರ ಇದೆ.", reading: "madhyadalli mara ide.", ipa: "mad̪ʱjad̪alli mara id̪e", bases: [{ word: "ಮಧ್ಯದಲ್ಲಿ", base: "ಮಧ್ಯ", reading: "madhya" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }

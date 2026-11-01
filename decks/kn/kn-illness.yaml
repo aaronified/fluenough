@@ -1,0 +1,306 @@
+schema: 1
+id: "kn-illness"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "illness"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0818"
+  - id: "kn-1058"
+    target: "ನೆಗಡಿ"
+    reading: "negaḍi"
+    ipa: "neɡaɖi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನನಗೆ ನೆಗಡಿ ಆಗಿದೆ.", reading: "nanage negaḍi āgide.", ipa: "nanaɡe neɡaɖi aːɡid̪e", bases: [{ word: "ನನಗೆ", ref: "kn-0610" }, { word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }] }
+      - { target: "ನೆಗಡಿ ಇದ್ದರೆ ನೀರು ಕುಡಿ.", reading: "negaḍi iddare nīru kuḍi.", ipa: "neɡaɖi id̪d̪are niːru kuɖi", bases: [{ word: "ಇದ್ದರೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1059"
+    target: "ಕೆಮ್ಮು"
+    reading: "kemmu"
+    ipa: "kemmu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಾತ್ರಿ ಕೆಮ್ಮು ಜಾಸ್ತಿ.", reading: "rātri kemmu jāsti.", ipa: "raːt̪ri kemmu dʒaːst̪i" }
+      - { target: "ಕೆಮ್ಮು ಔಷಧ ತೆಗೆದುಕೊ.", reading: "kemmu auṣadha tegeduko.", ipa: "kemmu auʂad̪ʱa t̪eɡed̪uko" }
+  - id: "kn-1060"
+    target: "ತಲೆನೋವು"
+    reading: "talenōvu"
+    ipa: "t̪alenoːʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತಲೆನೋವು ಇದೆ.", reading: "talenōvu ide.", ipa: "t̪alenoːʋu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ತಲೆನೋವು ಇದ್ದರೆ ವಿಶ್ರಾಂತಿ ತೆಗೆದುಕೊ.", reading: "talenōvu iddare viśrānti tegeduko.", ipa: "t̪alenoːʋu id̪d̪are ʋiʃraːnt̪i t̪eɡed̪uko", bases: [{ word: "ಇದ್ದರೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1061"
+    target: "ಹೊಟ್ಟೆನೋವು"
+    reading: "hoṭṭenōvu"
+    ipa: "hoʈʈenoːʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹೊಟ್ಟೆನೋವು ಇದೆ.", reading: "hoṭṭenōvu ide.", ipa: "hoʈʈenoːʋu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಹೊಟ್ಟೆನೋವಿಗೆ ಮಾತ್ರೆ ಕೊಡು.", reading: "hoṭṭenōvige mātre koḍu.", ipa: "hoʈʈenoːʋiɡe maːt̪re koɖu", bases: [{ word: "ಹೊಟ್ಟೆನೋವಿಗೆ", base: "ಹೊಟ್ಟೆನೋವು", reading: "hoṭṭenōvu" }] }
+  - id: "kn-1062"
+    target: "ನೋಯು"
+    reading: "nōyu"
+    ipa: "noːju"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಾಲು ನೋಯುತ್ತಿದೆ.", reading: "kālu nōyuttide.", ipa: "kaːlu noːjut̪t̪id̪e", bases: [{ word: "ನೋಯುತ್ತಿದೆ", base: "ನೋಯು", reading: "nōyu" }] }
+      - { target: "ಹೊಟ್ಟೆ ನೋಯುತ್ತಿದೆ.", reading: "hoṭṭe nōyuttide.", ipa: "hoʈʈe noːjut̪t̪id̪e", bases: [{ word: "ನೋಯುತ್ತಿದೆ", base: "ನೋಯು", reading: "nōyu" }] }
+  - id: "kn-1063"
+    target: "ವೈದ್ಯ"
+    reading: "vaidya"
+    ipa: "ʋaid̪ja"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೈದ್ಯರು ಬಂದರು.", reading: "vaidyaru bandaru.", ipa: "ʋaid̪jaru band̪aru", bases: [{ word: "ವೈದ್ಯರು", base: "ವೈದ್ಯ", reading: "vaidya" }] }
+      - { target: "ವೈದ್ಯರಿಗೆ ತೋರಿಸು.", reading: "vaidyarige tōrisu.", ipa: "ʋaid̪jariɡe t̪oːrisu", bases: [{ word: "ವೈದ್ಯರಿಗೆ", base: "ವೈದ್ಯ", reading: "vaidya" }] }
+  - id: "kn-1065"
+    target: "ಮಾತ್ರೆ"
+    reading: "mātre"
+    ipa: "maːt̪re"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ದಿನಕ್ಕೆ ಎರಡು ಮಾತ್ರೆ.", reading: "dinakke eraḍu mātre.", ipa: "d̪inakke eraɖu maːt̪re", bases: [{ word: "ದಿನಕ್ಕೆ", ref: "kn-0423" }] }
+      - { target: "ಮಾತ್ರೆ ತೆಗೆದುಕೊ.", reading: "mātre tegeduko.", ipa: "maːt̪re t̪eɡed̪uko" }
+  - id: "kn-1066"
+    target: "ಸಿರಪ್"
+    reading: "sirap"
+    ipa: "sirap"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಿರಪ್ ಕುಡಿ.", reading: "sirap kuḍi.", ipa: "sirap kuɖi" }
+      - { target: "ಸಿರಪ್ ಬೇಕು.", reading: "sirap bēku.", ipa: "sirap beːku" }
+  - id: "kn-1067"
+    target: "ಚುಚ್ಚುಮದ್ದು"
+    reading: "cuccumaddu"
+    ipa: "tʃutʃtʃumad̪d̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚುಚ್ಚುಮದ್ದು ಕೊಟ್ಟರು.", reading: "cuccumaddu koṭṭaru.", ipa: "tʃutʃtʃumad̪d̪u koʈʈaru", bases: [{ word: "ಕೊಟ್ಟರು", ref: "kn-0114" }] }
+      - { target: "ಚುಚ್ಚುಮದ್ದು ನೋವು ಇದೆ.", reading: "cuccumaddu nōvu ide.", ipa: "tʃutʃtʃumad̪d̪u noːʋu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1068"
+    target: "ಗುಣವಾಗು"
+    reading: "guṇavāgu"
+    ipa: "ɡuɳaʋaːɡu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೇಗ ಗುಣವಾಗು.", reading: "bēga guṇavāgu.", ipa: "beːɡa ɡuɳaʋaːɡu" }
+      - { target: "ಅವಳಿಗೆ ಗುಣವಾಯಿತು.", reading: "avaḷige guṇavāyitu.", ipa: "aʋaɭiɡe ɡuɳaʋaːjit̪u", bases: [{ word: "ಅವಳಿಗೆ", ref: "kn-0613" }, { word: "ಗುಣವಾಯಿತು", base: "ಗುಣವಾಗು", reading: "guṇavāgu" }] }
+  - id: "kn-1069"
+    target: "ಆರೋಗ್ಯ"
+    reading: "ārōgya"
+    ipa: "aːroːɡja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆರೋಗ್ಯ ಚೆನ್ನಾಗಿದೆ.", reading: "ārōgya cennāgide.", ipa: "aːroːɡja tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ನಿನ್ನ ಆರೋಗ್ಯ ಹೇಗಿದೆ?", reading: "ninna ārōgya hēgide?", ipa: "ninna aːroːɡja heːɡid̪e", bases: [{ word: "ಹೇಗಿದೆ", ref: "kn-0172" }] }
+  - id: "kn-1070"
+    target: "ಅನಾರೋಗ್ಯ"
+    reading: "anārōgya"
+    ipa: "anaːroːɡja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನಿಗೆ ಅನಾರೋಗ್ಯ ಇದೆ.", reading: "avanige anārōgya ide.", ipa: "aʋaniɡe anaːroːɡja id̪e", bases: [{ word: "ಅವನಿಗೆ", ref: "kn-0612" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಅನಾರೋಗ್ಯ ಇದ್ದರೆ ವಿಶ್ರಾಂತಿ ತೆಗೆದುಕೊ.", reading: "anārōgya iddare viśrānti tegeduko.", ipa: "anaːroːɡja id̪d̪are ʋiʃraːnt̪i t̪eɡed̪uko", bases: [{ word: "ಇದ್ದರೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1071"
+    target: "ಹುಷಾರಿಲ್ಲ"
+    reading: "huṣārilla"
+    ipa: "huʂaːrilla"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನನಗೆ ಹುಷಾರಿಲ್ಲ.", reading: "nanage huṣārilla.", ipa: "nanaɡe huʂaːrilla", bases: [{ word: "ನನಗೆ", ref: "kn-0610" }] }
+      - { target: "ಇಂದು ಹುಷಾರಿಲ್ಲ.", reading: "indu huṣārilla.", ipa: "ind̪u huʂaːrilla" }
+  - id: "kn-1072"
+    target: "ವಿಶ್ರಾಂತಿ"
+    reading: "viśrānti"
+    ipa: "ʋiʃraːnt̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಿಶ್ರಾಂತಿ ತೆಗೆದುಕೊ.", reading: "viśrānti tegeduko.", ipa: "ʋiʃraːnt̪i t̪eɡed̪uko" }
+      - { target: "ಸ್ವಲ್ಪ ವಿಶ್ರಾಂತಿ ಬೇಕು.", reading: "svalpa viśrānti bēku.", ipa: "sʋalpa ʋiʃraːnt̪i beːku" }
+  - id: "kn-1073"
+    target: "ಗಾಯ"
+    reading: "gāya"
+    ipa: "ɡaːja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೈಯಲ್ಲಿ ಗಾಯ ಆಗಿದೆ.", reading: "kaiyalli gāya āgide.", ipa: "kaijalli ɡaːja aːɡid̪e", bases: [{ word: "ಕೈಯಲ್ಲಿ", base: "ಕೈ", reading: "kai" }, { word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }] }
+      - { target: "ಗಾಯಕ್ಕೆ ಔಷಧ ಹಚ್ಚು.", reading: "gāyakke auṣadha haccu.", ipa: "ɡaːjakke auʂad̪ʱa hatʃtʃu", bases: [{ word: "ಗಾಯಕ್ಕೆ", base: "ಗಾಯ", reading: "gāya" }, { word: "ಹಚ್ಚು", base: "ಹಚ್ಚು", reading: "haccu" }] }
+  - id: "kn-1074"
+    target: "ಬ್ಯಾಂಡೇಜ್"
+    reading: "byāṇḍēj"
+    ipa: "bjaːɳɖeːdʒ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬ್ಯಾಂಡೇಜ್ ಹಾಕು.", reading: "byāṇḍēj hāku.", ipa: "bjaːɳɖeːdʒ haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+      - { target: "ಬ್ಯಾಂಡೇಜ್ ಬೇಕು.", reading: "byāṇḍēj bēku.", ipa: "bjaːɳɖeːdʒ beːku" }
+  - id: "kn-1075"
+    target: "ವಾಂತಿ"
+    reading: "vānti"
+    ipa: "ʋaːnt̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಾಂತಿ ಆಯಿತು.", reading: "vānti āyitu.", ipa: "ʋaːnt̪i aːjit̪u" }
+      - { target: "ವಾಂತಿ ಇದ್ದರೆ ವೈದ್ಯರಿಗೆ ಹೇಳು.", reading: "vānti iddare vaidyarige hēḷu.", ipa: "ʋaːnt̪i id̪d̪are ʋaid̪jariɡe heːɭu", bases: [{ word: "ಇದ್ದರೆ", base: "ಇರು", reading: "iru" }, { word: "ವೈದ್ಯರಿಗೆ", base: "ವೈದ್ಯ", reading: "vaidya" }] }
+  - id: "kn-1076"
+    target: "ಭೇದಿ"
+    reading: "bhēdi"
+    ipa: "bʱeːd̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಭೇದಿ ಇದೆ.", reading: "bhēdi ide.", ipa: "bʱeːd̪i id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಭೇದಿಯಲ್ಲಿ ನೀರು ಕುಡಿ.", reading: "bhēdiyalli nīru kuḍi.", ipa: "bʱeːd̪ijalli niːru kuɖi", bases: [{ word: "ಭೇದಿಯಲ್ಲಿ", base: "ಭೇದಿ", reading: "bhēdi" }] }
+  - id: "kn-1077"
+    target: "ಸುಸ್ತು"
+    reading: "sustu"
+    ipa: "sust̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತುಂಬಾ ಸುಸ್ತು.", reading: "tumbā sustu.", ipa: "t̪umbaː sust̪u" }
+      - { target: "ಸುಸ್ತು ಆಗಿದೆ.", reading: "sustu āgide.", ipa: "sust̪u aːɡid̪e", bases: [{ word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }] }
+  - id: "kn-1078"
+    target: "ಪರೀಕ್ಷೆ"
+    reading: "parīkṣe"
+    ipa: "pariːkʂe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೈದ್ಯರು ಪರೀಕ್ಷೆ ಮಾಡುತ್ತಾರೆ.", reading: "vaidyaru parīkṣe māḍuttāre.", ipa: "ʋaid̪jaru pariːkʂe maːɖut̪t̪aːre", bases: [{ word: "ವೈದ್ಯರು", base: "ವೈದ್ಯ", reading: "vaidya" }, { word: "ಮಾಡುತ್ತಾರೆ", ref: "kn-0630" }] }
+      - { target: "ರಕ್ತ ಪರೀಕ್ಷೆ ಬೇಕು.", reading: "rakta parīkṣe bēku.", ipa: "rakt̪a pariːkʂe beːku" }
+  - id: "kn-1079"
+    target: "ರಕ್ತ"
+    reading: "rakta"
+    ipa: "rakt̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಕ್ತ ಬಂತು.", reading: "rakta bantu.", ipa: "rakt̪a bant̪u", bases: [{ word: "ಬಂತು", ref: "kn-0632" }] }
+      - { target: "ರಕ್ತ ಬೇಕು.", reading: "rakta bēku.", ipa: "rakt̪a beːku" }
+  - id: "kn-1080"
+    target: "ಚಿಕಿತ್ಸೆ"
+    reading: "cikitse"
+    ipa: "tʃikit̪se"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚಿಕಿತ್ಸೆ ಮುಗಿಯಿತು.", reading: "cikitse mugiyitu.", ipa: "tʃikit̪se muɡijit̪u", bases: [{ word: "ಮುಗಿಯಿತು", base: "ಮುಗಿ", reading: "mugi" }] }
+      - { target: "ಚಿಕಿತ್ಸೆ ಬೇಕು.", reading: "cikitse bēku.", ipa: "tʃikit̪se beːku" }
+  - id: "kn-1081"
+    target: "ರೋಗ"
+    reading: "rōga"
+    ipa: "roːɡa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇದು ಯಾವ ರೋಗ?", reading: "idu yāva rōga?", ipa: "id̪u jaːʋa roːɡa" }
+      - { target: "ರೋಗ ಬೇಗ ಗುಣವಾಯಿತು.", reading: "rōga bēga guṇavāyitu.", ipa: "roːɡa beːɡa ɡuɳaʋaːjit̪u", bases: [{ word: "ಗುಣವಾಯಿತು", base: "ಗುಣವಾಗು", reading: "guṇavāgu" }] }
+  - ref: "kn-0230"
+  - ref: "kn-0861"
+  - id: "kn-1082"
+    target: "ಊತ"
+    reading: "ūta"
+    ipa: "uːt̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಾಲಿನಲ್ಲಿ ಊತ ಇದೆ.", reading: "kālinalli ūta ide.", ipa: "kaːlinalli uːt̪a id̪e", bases: [{ word: "ಕಾಲಿನಲ್ಲಿ", ref: "kn-0806" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಊತ ಕಡಿಮೆ ಆಯಿತು.", reading: "ūta kaḍime āyitu.", ipa: "uːt̪a kaɖime aːjit̪u" }
+  - ref: "kn-0235"
+  - id: "kn-1083"
+    target: "ಪರೀಕ್ಷಿಸು"
+    reading: "parīkṣisu"
+    ipa: "pariːkʂisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೈದ್ಯರು ಪರೀಕ್ಷಿಸುತ್ತಾರೆ.", reading: "vaidyaru parīkṣisuttāre.", ipa: "ʋaid̪jaru pariːkʂisut̪t̪aːre", bases: [{ word: "ವೈದ್ಯರು", base: "ವೈದ್ಯ", reading: "vaidya" }, { word: "ಪರೀಕ್ಷಿಸುತ್ತಾರೆ", base: "ಪರೀಕ್ಷಿಸು", reading: "parīkṣisu" }] }
+      - { target: "ನನ್ನನ್ನು ಪರೀಕ್ಷಿಸು.", reading: "nannannu parīkṣisu.", ipa: "nannannu pariːkʂisu", bases: [{ word: "ನನ್ನನ್ನು", ref: "kn-0610" }] }
+  - id: "kn-1084"
+    target: "ಸೋಂಕು"
+    reading: "sōṅku"
+    ipa: "soːŋku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗಾಯದಲ್ಲಿ ಸೋಂಕು ಆಯಿತು.", reading: "gāyadalli sōṅku āyitu.", ipa: "ɡaːjad̪alli soːŋku aːjit̪u", bases: [{ word: "ಗಾಯದಲ್ಲಿ", base: "ಗಾಯ", reading: "gāya" }] }
+      - { target: "ಸೋಂಕು ಇದ್ದರೆ ವೈದ್ಯರು ನೋಡುತ್ತಾರೆ.", reading: "sōṅku iddare vaidyaru nōḍuttāre.", ipa: "soːŋku id̪d̪are ʋaid̪jaru noːɖut̪t̪aːre", bases: [{ word: "ಇದ್ದರೆ", base: "ಇರು", reading: "iru" }, { word: "ವೈದ್ಯರು", base: "ವೈದ್ಯ", reading: "vaidya" }, { word: "ನೋಡುತ್ತಾರೆ", ref: "kn-0636" }] }
+  - id: "kn-1085"
+    target: "ಅಲರ್ಜಿ"
+    reading: "alarji"
+    ipa: "alardʒi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನನಗೆ ಅಲರ್ಜಿ ಇದೆ.", reading: "nanage alarji ide.", ipa: "nanaɡe alardʒi id̪e", bases: [{ word: "ನನಗೆ", ref: "kn-0610" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಔಷಧಕ್ಕೆ ಅಲರ್ಜಿ ಇಲ್ಲ.", reading: "auṣadhakke alarji illa.", ipa: "auʂad̪ʱakke alardʒi illa", bases: [{ word: "ಔಷಧಕ್ಕೆ", base: "ಔಷಧ", reading: "auṣadha" }, { word: "ಇಲ್ಲ", ref: "kn-0165" }] }

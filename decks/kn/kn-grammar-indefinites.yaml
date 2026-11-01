@@ -1,0 +1,75 @@
+schema: 1
+id: "kn-grammar-indefinites"
+part: "core"
+kind: "grammar"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["some (someone, something)", "none (no one, nothing)"]
+  entries:
+    - lemma: "ಯಾರು"
+      key: "yaaru"
+      reading: "yāru"
+      ipa: "jaːru"
+      forms:
+        "some (someone, something)": "ಯಾರೋ"
+        "none (no one, nothing)": "ಯಾರೂ ಇಲ್ಲ"
+      readings:
+        "some (someone, something)": "yārō"
+        "none (no one, nothing)": "yārū illa"
+      ipas:
+        "some (someone, something)": "jaːroː"
+        "none (no one, nothing)": "jaːruː illa"
+    - lemma: "ಏನು"
+      key: "enu"
+      reading: "ēnu"
+      ipa: "eːnu"
+      forms:
+        "some (someone, something)": "ಏನೋ"
+        "none (no one, nothing)": "ಏನೂ ಇಲ್ಲ"
+      readings:
+        "some (someone, something)": "ēnō"
+        "none (no one, nothing)": "ēnū illa"
+      ipas:
+        "some (someone, something)": "eːnoː"
+        "none (no one, nothing)": "eːnuː illa"
+    - lemma: "ಎಲ್ಲಿ"
+      key: "elli"
+      reading: "elli"
+      ipa: "elli"
+      forms:
+        "some (someone, something)": "ಎಲ್ಲಿಯೋ"
+        "none (no one, nothing)": "ಎಲ್ಲಿಯೂ ಇಲ್ಲ"
+      readings:
+        "some (someone, something)": "elliyō"
+        "none (no one, nothing)": "elliyū illa"
+      ipas:
+        "some (someone, something)": "ellijoː"
+        "none (no one, nothing)": "ellijuː illa"
+    - lemma: "ಯಾವಾಗ"
+      key: "yavaaga"
+      reading: "yāvāga"
+      ipa: "jaːʋaːɡa"
+      forms:
+        "some (someone, something)": "ಯಾವಾಗಲೋ"
+        "none (no one, nothing)": "ಯಾವಾಗಲೂ ಇಲ್ಲ"
+      readings:
+        "some (someone, something)": "yāvāgalō"
+        "none (no one, nothing)": "yāvāgalū illa"
+      ipas:
+        "some (someone, something)": "jaːʋaːɡaloː"
+        "none (no one, nothing)": "jaːʋaːɡaluː illa"
+    - lemma: "ಯಾವುದು"
+      key: "yavudu"
+      reading: "yāvudu"
+      ipa: "jaːʋud̪u"
+      forms:
+        "some (someone, something)": "ಯಾವುದೋ"
+        "none (no one, nothing)": "ಯಾವುದೂ ಇಲ್ಲ"
+      readings:
+        "some (someone, something)": "yāvudō"
+        "none (no one, nothing)": "yāvudū illa"
+      ipas:
+        "some (someone, something)": "jaːʋud̪oː"
+        "none (no one, nothing)": "jaːʋud̪uː illa"

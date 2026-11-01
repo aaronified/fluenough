@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-reported-speech"
+kind: "layer"
+core: "kn-grammar-reported-speech"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Reported speech: he said that"
+license: "CC-BY-SA-4.0"
+description: "Passing on what someone said or asked: he said that he goes, he asked whether he goes. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Reported speech"
+  slot_name: "report"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+  notes: "To pass on what someone said, put the sentence before ಎಂದು (endu, that) and then ಹೇಳಿದ (hēḷida), said: ಅವನು ಬರುತ್ತಾನೆ ಎಂದು ಹೇಳಿದ (avanu baruttāne endu hēḷida), he said that he comes. For a yes/no question, end the verb in ಆ (ā) and use ಕೇಳಿದ (kēḷida), asked: ಅವನು ಬರುತ್ತಾನಾ ಎಂದು ಕೇಳಿದ (avanu baruttānā endu kēḷida)."
