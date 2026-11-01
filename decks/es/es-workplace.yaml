@@ -1,0 +1,429 @@
+schema: 1
+id: "es-workplace"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "workplace"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1852"
+    target: "el contrato"
+    ipa: "el konˈtɾato"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "contrato", base: "contrato" }]
+    examples:
+      - target: "Firmo el contrato hoy."
+        ipa: "ˈfiɾmo el konˈtɾato oj"
+        bases: [{ word: "Firmo", ref: "es-1874" }, { word: "el", base: "el" }, { word: "contrato", base: "contrato" }, { word: "hoy", ref: "es-0331" }]
+      - target: "El contrato es de un año."
+        ipa: "el konˈtɾato es de un ˈaɲo"
+        bases: [{ word: "El", base: "el" }, { word: "contrato", base: "contrato" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "un", base: "un" }, { word: "año", ref: "es-0021" }]
+  - id: "es-1853"
+    target: "el proyecto"
+    ipa: "el pɾoˈʝekto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "proyecto", base: "proyecto" }]
+    examples:
+      - target: "El proyecto es urgente."
+        ipa: "el pɾoˈʝekto es uɾˈxente"
+        bases: [{ word: "El", base: "el" }, { word: "proyecto", base: "proyecto" }, { word: "es", ref: "es-0022" }, { word: "urgente", ref: "es-0867" }]
+      - target: "Trabajo en un proyecto nuevo."
+        ipa: "tɾaˈbaxo en un pɾoˈʝekto ˈnwebo"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "proyecto", base: "proyecto" }, { word: "nuevo", ref: "es-0035" }]
+  - id: "es-1854"
+    target: "el informe"
+    ipa: "el inˈfoɾme"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "informe", base: "informe" }]
+    examples:
+      - target: "Escribo el informe para el jefe."
+        ipa: "esˈkɾibo el inˈfoɾme ˈpaɾa el ˈxefe"
+        bases: [{ word: "Escribo", ref: "es-0297" }, { word: "el", base: "el" }, { word: "informe", base: "informe" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "jefe", ref: "es-0504" }]
+      - target: "El informe está listo."
+        ipa: "el inˈfoɾme esˈta ˈlisto"
+        bases: [{ word: "El", base: "el" }, { word: "informe", base: "informe" }, { word: "está", ref: "es-0023" }, { word: "listo", ref: "es-0932" }]
+  - id: "es-1855"
+    target: "el despacho"
+    ipa: "el desˈpatʃo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "despacho", base: "despacho" }]
+    examples:
+      - target: "Mi despacho está en el segundo piso."
+        ipa: "mi desˈpatʃo esˈta en el seˈɡundo ˈpiso"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "despacho", base: "despacho" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "segundo", ref: "es-0552" }, { word: "piso", ref: "es-0803" }]
+      - target: "El despacho es pequeño."
+        ipa: "el desˈpatʃo es peˈkeɲo"
+        bases: [{ word: "El", base: "el" }, { word: "despacho", base: "despacho" }, { word: "es", ref: "es-0022" }, { word: "pequeño", ref: "es-0032" }]
+  - id: "es-1856"
+    target: "el director"
+    ipa: "el diɾekˈtoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "director", base: "director" }]
+    examples:
+      - target: "El director llega a las nueve."
+        ipa: "el diɾekˈtoɾ ˈʝeɡa a las ˈnwebe"
+        bases: [{ word: "El", base: "el" }, { word: "director", base: "director" }, { word: "llega", ref: "es-0290" }, { word: "a", base: "a" }, { word: "las", base: "las" }, { word: "nueve", ref: "es-0213" }]
+      - target: "Hablo con el director."
+        ipa: "ˈablo kon el diɾekˈtoɾ"
+        bases: [{ word: "Hablo", ref: "es-0027" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "director", base: "director" }]
+  - id: "es-1857"
+    target: "el gerente"
+    ipa: "el xeˈɾente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "gerente", base: "gerente" }]
+    examples:
+      - target: "La gerente es muy amable."
+        ipa: "la xeˈɾente es mwi aˈmable"
+        bases: [{ word: "La", base: "la" }, { word: "gerente", base: "gerente" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "amable", base: "amable" }]
+      - target: "El gerente trabaja hoy."
+        ipa: "el xeˈɾente tɾaˈbaxa oj"
+        bases: [{ word: "El", base: "el" }, { word: "gerente", base: "gerente" }, { word: "trabaja", ref: "es-0259" }, { word: "hoy", ref: "es-0331" }]
+  - id: "es-1858"
+    target: "el permiso"
+    ipa: "el peɾˈmiso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "permiso", base: "permiso" }]
+    examples:
+      - target: "Pido un permiso para salir."
+        ipa: "ˈpido un peɾˈmiso ˈpaɾa saˈliɾ"
+        bases: [{ word: "Pido", ref: "es-0659" }, { word: "un", base: "un" }, { word: "permiso", base: "permiso" }, { word: "para", base: "para" }, { word: "salir", ref: "es-0690" }]
+      - target: "Tengo permiso para faltar."
+        ipa: "ˈtenɡo peɾˈmiso ˈpaɾa falˈtaɾ"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "permiso", base: "permiso" }, { word: "para", base: "para" }, { word: "faltar", base: "faltar" }]
+  - id: "es-1859"
+    target: "el taller"
+    ipa: "el taˈʝeɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "taller", base: "taller" }]
+    examples:
+      - target: "El taller está en la calle."
+        ipa: "el taˈʝeɾ esˈta en la ˈkaʝe"
+        bases: [{ word: "El", base: "el" }, { word: "taller", base: "taller" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "calle", ref: "es-0017" }]
+      - target: "Trabajo en un taller de coches."
+        ipa: "tɾaˈbaxo en un taˈʝeɾ de ˈkotʃes"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "taller", base: "taller" }, { word: "de", base: "de" }, { word: "coches", ref: "es-0678" }]
+  - id: "es-1860"
+    target: "la fábrica"
+    ipa: "la ˈfabɾika"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "fábrica", base: "fábrica" }]
+    examples:
+      - target: "Mi padre trabaja en una fábrica."
+        ipa: "mi ˈpadɾe tɾaˈbaxa en ˈuna ˈfabɾika"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "fábrica", base: "fábrica" }]
+      - target: "La fábrica es grande."
+        ipa: "la ˈfabɾika es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "fábrica", base: "fábrica" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-1861"
+    target: "el empresario"
+    ipa: "el empɾeˈsaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "empresario", base: "empresario" }]
+    examples:
+      - target: "Es un empresario conocido."
+        ipa: "es un empɾeˈsaɾjo konoˈθido"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "empresario", base: "empresario" }, { word: "conocido", base: "conocido" }]
+      - target: "El empresario viaja mucho."
+        ipa: "el empɾeˈsaɾjo ˈbjaxa ˈmutʃo"
+        bases: [{ word: "El", base: "el" }, { word: "empresario", base: "empresario" }, { word: "viaja", ref: "es-1691" }, { word: "mucho", ref: "es-0053" }]
+  - id: "es-1862"
+    target: "completo"
+    ipa: "komˈpleto"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "completo", base: "completo" }]
+    examples:
+      - target: "Trabajo a tiempo completo."
+        ipa: "tɾaˈbaxo a ˈtjempo komˈpleto"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "a", base: "a" }, { word: "tiempo", ref: "es-1112" }, { word: "completo", base: "completo" }]
+      - target: "El teatro está completo."
+        ipa: "el teˈatɾo esˈta komˈpleto"
+        bases: [{ word: "El", base: "el" }, { word: "teatro", ref: "es-0780" }, { word: "está", ref: "es-0023" }, { word: "completo", base: "completo" }]
+  - id: "es-1863"
+    target: "parcial"
+    ipa: "paɾˈθjal"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "parcial", base: "parcial" }]
+    examples:
+      - target: "Tengo un trabajo parcial."
+        ipa: "ˈtenɡo un tɾaˈbaxo paɾˈθjal"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "trabajo", ref: "es-0259" }, { word: "parcial", base: "parcial" }]
+      - target: "Trabajo a tiempo parcial."
+        ipa: "tɾaˈbaxo a ˈtjempo paɾˈθjal"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "a", base: "a" }, { word: "tiempo", ref: "es-1112" }, { word: "parcial", base: "parcial" }]
+  - id: "es-1864"
+    target: "extra"
+    ipa: "ˈekstɾa"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "extra", base: "extra" }]
+    examples:
+      - target: "Hago horas extra los viernes."
+        ipa: "ˈaɡo ˈoɾas ˈekstɾa los ˈbjeɾnes"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "horas", ref: "es-0838" }, { word: "extra", base: "extra" }, { word: "los", base: "los" }, { word: "viernes", ref: "es-0962" }]
+      - target: "Pago un extra por el seguro."
+        ipa: "ˈpaɡo un ˈekstɾa poɾ el seˈɡuɾo"
+        bases: [{ word: "Pago", ref: "es-0295" }, { word: "un", base: "un" }, { word: "extra", base: "extra" }, { word: "por", base: "por" }, { word: "el", base: "el" }, { word: "seguro", base: "seguro" }]
+  - id: "es-1865"
+    target: "el negocio"
+    ipa: "el neˈɡoθjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "negocio", base: "negocio" }]
+    examples:
+      - target: "Tengo un negocio pequeño."
+        ipa: "ˈtenɡo un neˈɡoθjo peˈkeɲo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "un", base: "un" }, { word: "negocio", base: "negocio" }, { word: "pequeño", ref: "es-0032" }]
+      - target: "El negocio va bien."
+        ipa: "el neˈɡoθjo ba bjen"
+        bases: [{ word: "El", base: "el" }, { word: "negocio", base: "negocio" }, { word: "va", ref: "es-0026" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-1866"
+    target: "la compañía"
+    ipa: "la kompaˈɲia"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "compañía", base: "compañía" }]
+    examples:
+      - target: "Trabajo para una compañía grande."
+        ipa: "tɾaˈbaxo ˈpaɾa ˈuna kompaˈɲia ˈɡɾande"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "para", base: "para" }, { word: "una", base: "una" }, { word: "compañía", base: "compañía" }, { word: "grande", ref: "es-0031" }]
+      - target: "La compañía está en Madrid."
+        ipa: "la kompaˈɲia esˈta en maˈdɾid"
+        bases: [{ word: "La", base: "la" }, { word: "compañía", base: "compañía" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "Madrid", base: "madrid" }]
+  - id: "es-1867"
+    target: "el almacén"
+    ipa: "el almaˈθen"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "almacén", base: "almacén" }]
+    examples:
+      - target: "Trabajo en un almacén."
+        ipa: "tɾaˈbaxo en un almaˈθen"
+        bases: [{ word: "Trabajo", ref: "es-0259" }, { word: "en", base: "en" }, { word: "un", base: "un" }, { word: "almacén", base: "almacén" }]
+      - target: "El almacén está lleno."
+        ipa: "el almaˈθen esˈta ˈʝeno"
+        bases: [{ word: "El", base: "el" }, { word: "almacén", base: "almacén" }, { word: "está", ref: "es-0023" }, { word: "lleno", ref: "es-0427" }]
+  - id: "es-1868"
+    target: "el trabajador"
+    ipa: "el tɾabaxaˈdoɾ"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "trabajador", base: "trabajador" }]
+    examples:
+      - target: "Es un trabajador muy bueno."
+        ipa: "es un tɾabaxaˈdoɾ mwi ˈbweno"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "trabajador", base: "trabajador" }, { word: "muy", ref: "es-0330" }, { word: "bueno", ref: "es-0033" }]
+      - target: "Los trabajadores llegan temprano."
+        ipa: "los tɾabaxaˈdoɾes ˈʝeɡan temˈpɾano"
+        bases: [{ word: "Los", base: "los" }, { word: "trabajadores", base: "trabajador" }, { word: "llegan", ref: "es-0290" }, { word: "temprano", ref: "es-0338" }]
+  - id: "es-1869"
+    target: "contratar"
+    ipa: "kontɾaˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "contratar", base: "contratar" }]
+    examples:
+      - target: "Contratan a dos personas."
+        ipa: "konˈtɾatan a dos peɾˈsonas"
+        bases: [{ word: "Contratan", base: "contratar" }, { word: "a", base: "a" }, { word: "dos", ref: "es-0206" }, { word: "personas", ref: "es-0135" }]
+      - target: "Contrato a una secretaria."
+        ipa: "konˈtɾato a ˈuna sekɾeˈtaɾja"
+        bases: [{ word: "Contrato", base: "contratar" }, { word: "a", base: "a" }, { word: "una", base: "una" }, { word: "secretaria", ref: "es-1881" }]
+  - id: "es-1870"
+    target: "despedir"
+    ipa: "despeˈdiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "despedir", base: "despedir" }]
+    examples:
+      - target: "Despiden a los trabajadores."
+        ipa: "desˈpiden a los tɾabaxaˈdoɾes"
+        bases: [{ word: "Despiden", base: "despedir" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "trabajadores", ref: "es-1868" }]
+      - target: "Me despido del trabajo."
+        ipa: "me desˈpido del tɾaˈbaxo"
+        bases: [{ word: "Me", base: "me" }, { word: "despido", base: "despedirse" }, { word: "del", base: "del" }, { word: "trabajo", ref: "es-0259" }]
+  - id: "es-1871"
+    target: "dimitir"
+    ipa: "dimiˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "dimitir", base: "dimitir" }]
+    examples:
+      - target: "Dimito del puesto."
+        ipa: "diˈmito del ˈpwesto"
+        bases: [{ word: "Dimito", base: "dimitir" }, { word: "del", base: "del" }, { word: "puesto", ref: "es-0581" }]
+      - target: "Dimite el director."
+        ipa: "diˈmite el diɾekˈtoɾ"
+        bases: [{ word: "Dimite", base: "dimitir" }, { word: "el", base: "el" }, { word: "director", ref: "es-1856" }]
+  - id: "es-1872"
+    target: "jubilarse"
+    ipa: "xubiˈlaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "jubilarse", base: "jubilarse" }]
+    examples:
+      - target: "Me jubilo a los sesenta años."
+        ipa: "me xuˈbilo a los seˈsenta ˈaɲos"
+        bases: [{ word: "Me", base: "me" }, { word: "jubilo", base: "jubilarse" }, { word: "a", base: "a" }, { word: "los", base: "los" }, { word: "sesenta", ref: "es-0539" }, { word: "años", ref: "es-0021" }]
+      - target: "Mi padre se jubila el año que viene."
+        ipa: "mi ˈpadɾe se xuˈbila el ˈaɲo ke ˈbjene"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "se", base: "se" }, { word: "jubila", base: "jubilarse" }, { word: "el", base: "el" }, { word: "año", ref: "es-0021" }, { word: "que", base: "que" }, { word: "viene", ref: "es-1632" }]
+  - id: "es-1873"
+    target: "presentar"
+    ipa: "pɾesenˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "presentar", base: "presentar" }]
+    examples:
+      - target: "Presento el proyecto el lunes."
+        ipa: "pɾeˈsento el pɾoˈʝekto el ˈlunes"
+        bases: [{ word: "Presento", base: "presentar" }, { word: "el", base: "el" }, { word: "proyecto", ref: "es-1853" }, { word: "el", base: "el" }, { word: "lunes", ref: "es-0958" }]
+      - target: "Presenta el informe, por favor."
+        ipa: "pɾeˈsenta el inˈfoɾme poɾ faˈboɾ"
+        bases: [{ word: "Presenta", base: "presentar" }, { word: "el", base: "el" }, { word: "informe", ref: "es-1854" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+  - id: "es-1874"
+    target: "firmar"
+    ipa: "fiɾˈmaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "firmar", base: "firmar" }]
+    examples:
+      - target: "Firmo el contrato."
+        ipa: "ˈfiɾmo el konˈtɾato"
+        bases: [{ word: "Firmo", base: "firmar" }, { word: "el", base: "el" }, { word: "contrato", ref: "es-1852" }]
+      - target: "Firman el documento."
+        ipa: "ˈfiɾman el dokuˈmento"
+        bases: [{ word: "Firman", base: "firmar" }, { word: "el", base: "el" }, { word: "documento", ref: "es-0519" }]
+  - id: "es-1875"
+    target: "reunirse"
+    ipa: "rewˈniɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reunirse", base: "reunirse" }]
+    examples:
+      - target: "Nos reunimos en la oficina."
+        ipa: "nos rewˈnimos en la ofiˈθina"
+        bases: [{ word: "Nos", base: "nos" }, { word: "reunimos", base: "reunirse" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "oficina", ref: "es-0503" }]
+      - target: "Se reúnen cada martes."
+        ipa: "se reˈunen ˈkada ˈmaɾtes"
+        bases: [{ word: "Se", base: "se" }, { word: "reúnen", base: "reunirse" }, { word: "cada", ref: "es-0366" }, { word: "martes", ref: "es-0959" }]
+  - id: "es-1876"
+    target: "planificar"
+    ipa: "planifiˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "planificar", base: "planificar" }]
+    examples:
+      - target: "Planifico el trabajo."
+        ipa: "planiˈfiko el tɾaˈbaxo"
+        bases: [{ word: "Planifico", base: "planificar" }, { word: "el", base: "el" }, { word: "trabajo", ref: "es-0259" }]
+      - target: "Planificamos el viaje."
+        ipa: "planifiˈkamos el ˈbjaxe"
+        bases: [{ word: "Planificamos", base: "planificar" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }]
+  - id: "es-1877"
+    target: "organizar"
+    ipa: "oɾɡaniˈθaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "organizar", base: "organizar" }]
+    examples:
+      - target: "Organizo la reunión."
+        ipa: "oɾɡaˈniθo la rewˈnjon"
+        bases: [{ word: "Organizo", base: "organizar" }, { word: "la", base: "la" }, { word: "reunión", ref: "es-0511" }]
+      - target: "Organizan la fiesta."
+        ipa: "oɾɡaˈniθan la ˈfjesta"
+        bases: [{ word: "Organizan", base: "organizar" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }]
+  - id: "es-1878"
+    target: "discutir"
+    ipa: "diskuˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "discutir", base: "discutir" }]
+    examples:
+      - target: "Discutimos el proyecto."
+        ipa: "diskuˈtimos el pɾoˈʝekto"
+        bases: [{ word: "Discutimos", base: "discutir" }, { word: "el", base: "el" }, { word: "proyecto", ref: "es-1853" }]
+      - target: "No discuto con el jefe."
+        ipa: "no disˈkuto kon el ˈxefe"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "discuto", base: "discutir" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "jefe", ref: "es-0504" }]
+  - id: "es-1879"
+    target: "crear"
+    ipa: "kɾeˈaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "crear", base: "crear" }]
+    examples:
+      - target: "Creo un equipo nuevo."
+        ipa: "ˈkɾeo un eˈkipo ˈnwebo"
+        bases: [{ word: "Creo", base: "crear" }, { word: "un", base: "un" }, { word: "equipo", ref: "es-1412" }, { word: "nuevo", ref: "es-0035" }]
+      - target: "Creamos un producto."
+        ipa: "kɾeˈamos un pɾoˈdukto"
+        bases: [{ word: "Creamos", base: "crear" }, { word: "un", base: "un" }, { word: "producto", base: "producto" }]
+  - id: "es-1880"
+    target: "la nómina"
+    ipa: "la ˈnomina"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "nómina", base: "nómina" }]
+    examples:
+      - target: "La nómina llega el día treinta."
+        ipa: "la ˈnomina ˈʝeɡa el ˈdia ˈtɾejnta"
+        bases: [{ word: "La", base: "la" }, { word: "nómina", base: "nómina" }, { word: "llega", ref: "es-0290" }, { word: "el", base: "el" }, { word: "día", ref: "es-0019" }, { word: "treinta", ref: "es-0536" }]
+      - target: "Miro la nómina cada mes."
+        ipa: "ˈmiɾo la ˈnomina ˈkada mes"
+        bases: [{ word: "Miro", ref: "es-0292" }, { word: "la", base: "la" }, { word: "nómina", base: "nómina" }, { word: "cada", ref: "es-0366" }, { word: "mes", ref: "es-0980" }]
+  - id: "es-1881"
+    target: "la secretaria"
+    ipa: "la sekɾeˈtaɾja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "secretaria", base: "secretaria" }]
+    examples:
+      - target: "La secretaria contesta el teléfono."
+        ipa: "la sekɾeˈtaɾja konˈtesta el teˈlefono"
+        bases: [{ word: "La", base: "la" }, { word: "secretaria", base: "secretaria" }, { word: "contesta", ref: "es-0523" }, { word: "el", base: "el" }, { word: "teléfono", ref: "es-0247" }]
+      - target: "Mi secretaria es muy eficiente."
+        ipa: "mi sekɾeˈtaɾja es mwi efiˈθjente"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "secretaria", base: "secretaria" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "eficiente", base: "eficiente" }]
+  - id: "es-1882"
+    target: "la baja"
+    ipa: "la ˈbaxa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "baja", base: "baja" }]
+    examples:
+      - target: "Estoy de baja."
+        ipa: "esˈtoj de ˈbaxa"
+        bases: [{ word: "Estoy", ref: "es-0023" }, { word: "de", base: "de" }, { word: "baja", base: "baja" }]
+      - target: "La baja es de una semana."
+        ipa: "la ˈbaxa es de ˈuna seˈmana"
+        bases: [{ word: "La", base: "la" }, { word: "baja", base: "baja" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "una", base: "una" }, { word: "semana", ref: "es-0840" }]
