@@ -30,7 +30,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "कमाई", reading: "kamāi" }] }
     examples:
       - { target: "त्याची महिन्याची कमाई चांगली आहे.", reading: "tyāci mahinyāci kamāi cāṅgali āhe.", ipa: "t̪jatʃi məɦinjatʃi kəmai tsaŋɡəli aɦe", bases: [{ word: "त्याची", ref: "mr-0676" }, { word: "महिन्याची", ref: "mr-0514" }, { word: "चांगली", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
-      - { target: "कमाईतून घर चालतं.", reading: "kamāitun ghar cāltam̐.", ipa: "kəmait̪un ɡʱər tsalt̪ə̃", bases: [{ word: "कमाईतून", base: "कमाई", reading: "kamāi" }, { word: "घर", ref: "mr-0048" }, { word: "चालतं", ref: "mr-0512" }] }
+      - { target: "कमाईतून घर चालतं.", reading: "kamāitun ghar cāltam̐.", ipa: "kəmait̪un ɡʱər tsalt̪ə̃", bases: [{ word: "कमाईतून", base: "कमाई", reading: "kamāi" }, { word: "घर", ref: "mr-0048" }, { word: "चालतं", base: "चालणे", reading: "cālṇe" }] }
   - id: "mr-1749"
     target: "उत्पन्न"
     reading: "utpann"
@@ -52,7 +52,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "खर्च", reading: "kharc" }] }
     examples:
       - { target: "महिन्याचा खर्च जास्त झाला.", reading: "mahinyācā kharc jāst jhālā.", ipa: "məɦinjatsa kʰərts dzast̪ dzʱala", bases: [{ word: "महिन्याचा", ref: "mr-0514" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
-      - { target: "खर्च कमी करायला हवा.", reading: "kharc kami karāylā havā.", ipa: "kʰərts kəmi kərajla ɦəʋa", bases: [{ word: "कमी", base: "कमी", reading: "kami" }, { word: "करायला", ref: "mr-0712" }, { word: "हवा", ref: "mr-1018" }] }
+      - { target: "खर्च कमी करायला हवा.", reading: "kharc kami karāylā havā.", ipa: "kʰərts kəmi kərajla ɦəʋa", bases: [{ word: "कमी", base: "कमी", reading: "kami" }, { word: "करायला", ref: "mr-0712" }, { word: "हवा", ref: "mr-0412" }] }
   - id: "mr-1751"
     target: "बचत"
     reading: "bacat"
@@ -128,7 +128,7 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "दागिना", reading: "dāginā" }] }
     examples:
-      - { target: "तिने सुंदर दागिने घातले.", reading: "tine sundar dāgine ghātle.", ipa: "t̪ine sund̪ər d̪aɡine ɡʱat̪le", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "सुंदर", ref: "mr-0770" }, { word: "घातले", ref: "mr-0792" }, { word: "दागिने", base: "दागिना", reading: "dāginā" }] }
+      - { target: "तिने सुंदर दागिने घातले.", reading: "tine sundar dāgine ghātle.", ipa: "t̪ine sund̪ər d̪aɡine ɡʱat̪le", bases: [{ word: "तिने", ref: "mr-0677" }, { word: "सुंदर", ref: "mr-0770" }, { word: "घातले", base: "घालणे", reading: "ghālṇe" }, { word: "दागिने", base: "दागिना", reading: "dāginā" }] }
       - { target: "दागिन्यांची किंमत जास्त आहे.", reading: "dāginyāñci kimmat jāst āhe.", ipa: "d̪aɡinjaɲtʃi kimmət̪ dzast̪ aɦe", bases: [{ word: "दागिन्यांची", base: "दागिना", reading: "dāginā" }, { word: "किंमत", ref: "mr-0370" }, { word: "जास्त", base: "जास्त", reading: "jāst" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
   - id: "mr-1758"
     target: "गरीब"
@@ -149,7 +149,7 @@ cards:
       - { id: "n1", kind: "usage", words: [{ word: "बेरोजगार", reading: "berojgār" }] }
     examples:
       - { target: "तो सहा महिने बेरोजगार होता.", reading: "to sahā mahine berojgār hotā.", ipa: "t̪o səɦa məɦine berodzɡar ɦot̪a", bases: [{ word: "महिने", ref: "mr-0514" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
-      - { target: "बेरोजगारी कमी करायला हवी.", reading: "berojgāri kami karāylā havi.", ipa: "berodzɡari kəmi kərajla ɦəʋi", bases: [{ word: "बेरोजगारी", base: "बेरोजगारी", reading: "berojgāri" }, { word: "कमी", base: "कमी", reading: "kami" }, { word: "करायला", ref: "mr-0712" }, { word: "हवी", ref: "mr-1018" }] }
+      - { target: "बेरोजगारी कमी करायला हवी.", reading: "berojgāri kami karāylā havi.", ipa: "berodzɡari kəmi kərajla ɦəʋi", bases: [{ word: "बेरोजगारी", base: "बेरोजगारी", reading: "berojgāri" }, { word: "कमी", base: "कमी", reading: "kami" }, { word: "करायला", ref: "mr-0712" }, { word: "हवी", ref: "mr-0412" }] }
   - id: "mr-1760"
     target: "आर्थिक"
     reading: "ārthik"
