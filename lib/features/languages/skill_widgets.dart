@@ -13,22 +13,35 @@ import '../../ui/widgets/hint.dart';
 /// How each of the four skills looks on the Languages page: Speak is the
 /// speaking skill's microphone and green, Hear listening's ear and purple,
 /// Read recognition's eye and blue, Write production's keyboard and orange
-/// (`lib/ui/skill_visuals.dart`, `ModeColors`), fixed whatever the seed.
+/// (`lib/ui/skill_visuals.dart`, `ModeColors`), fixed whatever the seed. A
+/// sign language's one skill, Gestures, has its own: a raised hand, in red.
 extension SkillKindVisuals on SkillKind {
-  Skill get skill => switch (this) {
+  /// The drill skill whose look it borrows, or null for a gesture skill,
+  /// which has its own.
+  Skill? get skill => switch (this) {
     SkillKind.speak => Skill.speaking,
     SkillKind.hear => Skill.listening,
     SkillKind.read => Skill.recognition,
     SkillKind.write => Skill.production,
+    SkillKind.gesture => null,
   };
 
-  IconData get icon => skill.icon;
+  IconData get icon => switch (this) {
+    SkillKind.gesture => Icons.front_hand_outlined,
+    _ => skill!.icon,
+  };
+
+  ModeColor colors(ModeColors modes) => switch (this) {
+    SkillKind.gesture => modes.gesture,
+    _ => modes.forSkill(skill!),
+  };
 
   String label(AppLocalizations l10n) => switch (this) {
     SkillKind.speak => l10n.languagesSkillSpeak,
     SkillKind.hear => l10n.languagesSkillHear,
     SkillKind.read => l10n.languagesSkillRead,
     SkillKind.write => l10n.languagesSkillWrite,
+    SkillKind.gesture => l10n.languagesSkillGestures,
   };
 }
 
@@ -146,7 +159,7 @@ class SkillBadge extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final colors = ModeColors.of(context).forSkill(kind.skill);
+    final colors = kind.colors(ModeColors.of(context));
     final leave = mark == SkillMark.leave;
     final fg = leave ? scheme.onSurfaceVariant : colors.onContainer;
     final radius = big ? AppRadii.card : AppRadii.control;

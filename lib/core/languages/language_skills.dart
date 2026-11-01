@@ -6,14 +6,17 @@ import '../scheduling/daily_budget.dart';
 ///
 /// Speak and Hear belong to the language's one taught dialect; Read and
 /// Write belong to a script, so a language written in two scripts has two
-/// Read and two Write skills.
+/// Read and two Write skills. A sign language has neither: it has exactly
+/// one skill, Gestures, tested both ways, recognising a sign and making one
+/// (owner, 2026-11-01: "It is one skill, tested both ways. One cannot write
+/// a script without being able to read it.").
 ///
 /// A script is shown as one pill with four levels ([ScriptLevel], owner,
 /// 2026-11-01: "Scripts can actually have one pill, and cycle through read
 /// and write as levels of know."), and so are Speak and Hear ([SpokenLevel],
 /// owner, 2026-11-01: "Same for other skills, if you can speak, you can hear
 /// as well."). The level is derived from the two skills, which stay what is
-/// stored.
+/// stored. A sign language's Gestures skill is a pill of its own.
 
 /// What the learner says about one skill.
 enum SkillState {
@@ -28,20 +31,26 @@ enum SkillState {
   learn,
 }
 
-/// The four skills.
+/// The skills: four for a spoken language, one for a sign language.
 enum SkillKind {
   speak,
   hear,
   read,
-  write;
+  write,
+
+  /// A sign language's one skill: recognising gestures and producing them,
+  /// one state for both. It stands in place of Speak, Hear, Read and Write.
+  gesture;
 
   /// Whether the skill belongs to a script, not to the dialect.
   bool get isScript => this == read || this == write;
+
+  /// Whether it is a sign language's skill.
+  bool get isGesture => this == gesture;
 }
 
 /// One skill of one language: [kind], and for Read and Write the [script]
-/// as decks name it (`devanagari`, `perso_arabic`; `latin` for a language
-/// that lists none).
+/// as decks name it (`devanagari`, `perso_arabic`).
 class SkillKey {
   const SkillKey(this.kind, [this.script])
     : assert(
@@ -82,12 +91,18 @@ class SkillKey {
 
 /// The skills a language has: Speak and Hear unless it is script only (a
 /// course such as English Braille), then Read and Write for each of
-/// [scripts], in the order shown (all Read, then all Write).
+/// [scripts], in the order shown (all Read, then all Write). A [sign]
+/// language has only the Gestures skill; a language with no [scripts]
+/// otherwise has nothing to read or write, so no Read or Write.
 List<SkillKey> skillsOfLanguage(
   Iterable<String> scripts, {
   bool scriptOnly = false,
+  bool sign = false,
 }) {
-  final list = scripts.isEmpty ? const <String>['latin'] : scripts.toList();
+  if (sign) {
+    return const <SkillKey>[SkillKey(SkillKind.gesture)];
+  }
+  final list = scripts.toList();
   return <SkillKey>[
     if (!scriptOnly) ...<SkillKey>[
       const SkillKey(SkillKind.speak),
@@ -97,6 +112,16 @@ List<SkillKey> skillsOfLanguage(
     for (final s in list) SkillKey(SkillKind.write, s),
   ];
 }
+
+/// The next state a tap on a skill's pill gives: Leave, Know, Learn, Leave.
+/// Where the language has no decks to learn ([canLearn] false) Learn is
+/// skipped. The Gestures pill cycles this way.
+SkillState nextSkillState(SkillState state, {required bool canLearn}) =>
+    switch (state) {
+      SkillState.leave => SkillState.know,
+      SkillState.know => canLearn ? SkillState.learn : SkillState.leave,
+      SkillState.learn => SkillState.leave,
+    };
 
 /// The levels of one script's pill (owner, 2026-11-01), in the order a tap
 /// goes through them: Leave, Learn, Read, Read and Write, Leave. Read and
@@ -194,6 +219,10 @@ class LanguageSkills {
 
   LanguageSkills withState(SkillKey key, SkillState state) =>
       LanguageSkills(<SkillKey, SkillState>{..._states, key: state});
+
+  /// [key] after a tap on its pill, for the one-state Gestures skill.
+  LanguageSkills cycled(SkillKey key, {required bool canLearn}) =>
+      withState(key, nextSkillState(stateOf(key), canLearn: canLearn));
 
   /// The Read and Write skills of [script].
   List<SkillKey> keysOfScript(String script) => <SkillKey>[
@@ -324,10 +353,16 @@ LanguageSkills skillsFromLegacy({
   required Set<String> learnedScripts,
   required bool Function(String script) readsScript,
   bool scriptOnly = false,
+  bool sign = false,
 }) {
   if (!learned && !known) return LanguageSkills();
   final states = <SkillKey, SkillState>{};
-  final all = scripts.isEmpty ? const <String>['latin'] : scripts.toList();
+  if (sign) {
+    final s = learned ? SkillState.learn : SkillState.know;
+    states[const SkillKey(SkillKind.gesture)] = s;
+    return LanguageSkills(states);
+  }
+  final all = scripts.toList();
   if (!scriptOnly) {
     final s = learned ? SkillState.learn : SkillState.know;
     states[const SkillKey(SkillKind.speak)] = s;
@@ -372,8 +407,7 @@ const String latinScript = 'latin';
 LanguageSkills withLatinKnown(LanguageSkills skills, Iterable<String> scripts) {
   if (skills.isAllLeave) return skills;
   var next = skills;
-  final all = scripts.isEmpty ? const <String>[latinScript] : scripts;
-  if (!all.contains(latinScript)) return skills;
+  if (!scripts.contains(latinScript)) return skills;
   for (final kind in const <SkillKind>[SkillKind.read, SkillKind.write]) {
     final key = SkillKey(kind, latinScript);
     if (next.stateOf(key) != SkillState.know) {
@@ -475,7 +509,8 @@ sealed class SkillCheck {
   const SkillCheck();
 }
 
-/// Speak and Hear share one sound test per language.
+/// Speak and Hear share one sound test per language. The Gestures skill of a
+/// sign language needs no check.
 class SoundCheck extends SkillCheck {
   const SoundCheck();
 }
@@ -496,7 +531,7 @@ List<SkillCheck> checksOwed(Iterable<SkillKey> changedToLearn) {
   for (final key in changedToLearn) {
     if (key.kind.isScript) {
       if (!scripts.contains(key.script)) scripts.add(key.script!);
-    } else {
+    } else if (!key.kind.isGesture) {
       sound = true;
     }
   }

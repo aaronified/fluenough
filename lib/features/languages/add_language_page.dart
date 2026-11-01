@@ -47,6 +47,20 @@ class _AddLanguagePageState extends State<AddLanguagePage> {
     'koreanic',
     'japonic',
     'constructed',
+    'slavic',
+    'hellenic',
+    'italic',
+    'celtic',
+    'uralic',
+    'turkic',
+    'afroasiatic',
+    'austronesian',
+    'kra_dai',
+    'niger_congo',
+    'quechuan',
+    'indo_european',
+    'isolate',
+    'sign',
   ];
 
   @override

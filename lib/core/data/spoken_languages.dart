@@ -43,6 +43,11 @@ class SpokenLanguage {
   /// know asks which of them are read (#551).
   bool get hasSeveralScripts => scripts.length > 1;
 
+  /// Whether it is a sign language (family `sign`): it has one skill,
+  /// Gestures (recognising and producing signs), and no script, dialect or
+  /// voice.
+  bool get isSign => family == 'sign';
+
   /// Where the answer for [script] is kept in what a learner says they
   /// read (`scripts_read`, #462, #551): its own script under the
   /// language's code, as every answer before #551 was kept, so that an old

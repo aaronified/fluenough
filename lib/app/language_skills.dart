@@ -8,17 +8,25 @@ import 'app_state.dart';
 /// known" goes on working.
 extension LanguageSkillsOnState on AppState {
   /// The scripts [language] has skills for, as decks name them: its own
-  /// first; `latin` where the list names none.
-  List<String> skillScripts(SpokenLanguage language) =>
-      language.scripts.isEmpty ? const <String>['latin'] : language.scripts;
+  /// first. A sign language names none, so it has no Read or Write.
+  List<String> skillScripts(SpokenLanguage language) => language.scripts;
 
   /// The rows of [language]'s skills.
-  List<SkillKey> skillShape(SpokenLanguage language) =>
-      skillsOfLanguage(skillScripts(language), scriptOnly: language.scriptOnly);
+  List<SkillKey> skillShape(SpokenLanguage language) => skillsOfLanguage(
+    skillScripts(language),
+    scriptOnly: language.scriptOnly,
+    sign: language.isSign,
+  );
 
   /// Where [script] of [language] is kept in `scripts_read`.
   String _readKey(SpokenLanguage language, String script) =>
       language.scripts.isEmpty ? language.code : language.readKey(script);
+
+  /// The scripts [language] has an answer for in `scripts_read`: those it has
+  /// skills for, or for a sign language one unnamed, `''`, kept under its
+  /// code, so that "speaks it" is still an answer.
+  List<String> _answered(SpokenLanguage language) =>
+      language.scripts.isEmpty ? const <String>[''] : language.scripts;
 
   /// What the learner said about [language]'s skills: what they set on the
   /// Languages page, else the older lists read as skills, so that nobody
@@ -47,6 +55,7 @@ extension LanguageSkillsOnState on AppState {
       readsScript: (s) =>
           read?.contains(language.scripts.isEmpty ? '' : s) ?? false,
       scriptOnly: language.scriptOnly,
+      sign: language.isSign,
     );
     // The Latin script is known for everyone.
     return withLatinKnown(legacy, skillScripts(language));
@@ -136,7 +145,8 @@ extension LanguageSkillsOnState on AppState {
     final spoken = <String>[...settings.spokenLanguages];
     final speaks =
         next.stateOf(const SkillKey(SkillKind.speak)) == SkillState.know ||
-        next.stateOf(const SkillKey(SkillKind.hear)) == SkillState.know;
+        next.stateOf(const SkillKey(SkillKind.hear)) == SkillState.know ||
+        next.stateOf(const SkillKey(SkillKind.gesture)) == SkillState.know;
     final reads = next.scriptsIn(
       SkillState.know,
       kinds: const <SkillKind>{SkillKind.read},
@@ -144,7 +154,7 @@ extension LanguageSkillsOnState on AppState {
     final answers = Map<String, bool>.of(settings.scriptsRead);
     if (speaks || reads.isNotEmpty) {
       if (!spoken.contains(code)) spoken.add(code);
-      for (final script in skillScripts(language)) {
+      for (final script in _answered(language)) {
         answers[_readKey(language, script)] = reads.contains(script);
       }
     } else if (spoken.contains(code) && spoken.length > 1) {
@@ -153,7 +163,7 @@ extension LanguageSkillsOnState on AppState {
     } else if (spoken.contains(code)) {
       // The sole spoken language stays listed, but reads nothing, as the
       // page (back in the pool) says.
-      for (final script in skillScripts(language)) {
+      for (final script in _answered(language)) {
         answers[_readKey(language, script)] = false;
       }
     }

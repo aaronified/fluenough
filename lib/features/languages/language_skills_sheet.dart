@@ -149,6 +149,23 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
   }
 
+  /// A tap on the Gestures pill: Leave, Know, Learn, Leave (Learn skipped
+  /// where there are no decks to learn).
+  Future<void> _cycleGesture() {
+    final l10n = AppLocalizations.of(context)!;
+    const key = SkillKey(SkillKind.gesture);
+    final next = _skills.cycled(key, canLearn: _view.canLearn);
+    final level = next.stateOf(key);
+    return _change(
+      next,
+      const <SkillKey>[key],
+      name: _view.name,
+      skill: l10n.languagesSkillGestures,
+      level: level.label(l10n),
+      toLearn: level == SkillState.learn,
+    );
+  }
+
   Future<void> _change(
     LanguageSkills next,
     List<SkillKey> keys, {
@@ -169,7 +186,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     setState(() {
       _skills = next;
       for (final key in keys) {
-        toLearn ? _pending.add(key) : _pending.remove(key);
+        // A gesture skill has nothing to check.
+        toLearn && !key.kind.isGesture
+            ? _pending.add(key)
+            : _pending.remove(key);
       }
       _auto = <SkillKey, String>{
         for (final e in _auto.entries)
@@ -610,7 +630,19 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   _levelRow(context),
                   _placedRow(context),
                 ],
-                if (!_view.language.scriptOnly) ...<Widget>[
+                if (_view.language.isSign) ...<Widget>[
+                  _Heading(
+                    icon: SkillKind.gesture.icon,
+                    text: l10n.languagesGestures,
+                  ),
+                  _skillRow(
+                    context,
+                    tile: _Tile(icon: SkillKind.gesture.icon),
+                    title: l10n.languagesGestures,
+                    keys: const <SkillKey>[SkillKey(SkillKind.gesture)],
+                    pill: _gesturePill(context),
+                  ),
+                ] else if (!_view.language.scriptOnly) ...<Widget>[
                   _Heading(icon: Icons.mic_none, text: l10n.languagesSpeakHear),
                   Padding(
                     padding: const EdgeInsetsDirectional.only(bottom: 4),
@@ -639,12 +671,13 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                     pill: _spokenPill(context),
                   ),
                 ],
-                _Heading(
-                  icon: Icons.translate,
-                  text: _several
-                      ? l10n.languagesScriptsRW
-                      : l10n.languagesScriptRW,
-                ),
+                if (_scripts.isNotEmpty)
+                  _Heading(
+                    icon: Icons.translate,
+                    text: _several
+                        ? l10n.languagesScriptsRW
+                        : l10n.languagesScriptRW,
+                  ),
                 for (final script in _scripts)
                   _skillRow(
                     context,
@@ -805,6 +838,27 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
             ),
         ],
       ),
+    );
+  }
+
+  /// The Gestures pill of a sign language: its own icon, with the tick once
+  /// it is known.
+  Widget _gesturePill(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    const key = SkillKey(SkillKind.gesture);
+    final state = _skills.stateOf(key);
+    final covered = state == SkillState.know && _covers();
+    final next = nextSkillState(state, canLearn: _view.canLearn);
+    final name = l10n.languagesSkillGestures;
+    return SkillBadge(
+      key: const ValueKey<String>('skill-gesture'),
+      kind: SkillKind.gesture,
+      big: true,
+      mark: markOf(state, covered: covered),
+      label: pillSemantics(l10n, name, state.label(l10n), covered: covered),
+      tip: l10n.languagesSkillState(name, state.label(l10n)),
+      hint: _locked ? null : l10n.languagesTapToChange(next.label(l10n)),
+      onTap: _locked ? null : _cycleGesture,
     );
   }
 
@@ -1369,7 +1423,7 @@ class _InfoDialog extends StatelessWidget {
               CourseLine(levels: progress.levels),
             ],
             const SizedBox(height: 8),
-            if (!view.language.scriptOnly)
+            if (!view.language.scriptOnly && !view.language.isSign)
               kv(l10n.languagesInfoDialect, dialectOf(l10n, view.language)),
             for (final script in scripts)
               kv(
