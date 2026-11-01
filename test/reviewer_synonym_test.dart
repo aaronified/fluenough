@@ -49,8 +49,8 @@ AddedItemProblem? _check(
   alsoAdded: alsoAdded,
 );
 
-Future<AppState> _open(WidgetTester tester) async {
-  usePhone(tester);
+Future<AppState> _open(WidgetTester tester, {double textScale = 1.0}) async {
+  usePhone(tester, textScale: textScale);
   tester.view.physicalSize = const Size(390 * 3, 4800 * 3);
   final state = await reviewState(reviewing: true);
   final words = state.deckById(wordsDeck)!;
@@ -369,6 +369,24 @@ void main() {
       expect(_canSave(tester), isTrue);
     });
 
+    testWidgets('at 1.4x text a typed refusal shows its error without an '
+        'overflow', (tester) async {
+      await _open(tester, textScale: 1.4);
+      final l10n = l10nOf(tester);
+      await _tap(
+        tester,
+        find.byKey(SuggestSheet.addItemKey(CardPart.altNative)),
+      );
+      await _type(
+        tester,
+        SuggestSheet.newItemKey(CardPart.altNative, 0, 'text'),
+        'woman',
+      );
+      expect(find.text(l10n.reviewAddedRefused), findsOneWidget);
+      expect(_canSave(tester), isFalse);
+      expect(tester.takeException(), isNull);
+    });
+
     testWidgets('an item dropped before saving is not kept', (tester) async {
       final state = await _open(tester);
       final l10n = l10nOf(tester);
@@ -488,7 +506,7 @@ void main() {
         '[{ id: "aaaaaaaaaa", field: "alt_native_add", now: "", '
         'text: "mama", by: "$otherCode", date: "2026-10-31" }, '
         '{ id: "bbbbbbbbbb", field: "not_synonyms_add", now: "", '
-        'text: "mother", by: "$otherCode", date: "2026-10-31" }]';
+        'text: "lady", by: "$otherCode", date: "2026-10-31" }]';
 
     testWidgets('shows with Accept, Edit and Reject, and Edit opens it as an '
         'item to add', (tester) async {
@@ -510,7 +528,9 @@ void main() {
       await tester.tap(find.text('mother'));
       await tester.pumpAndSettle();
       final l10n = l10nOf(tester);
-      // "mother" is the card's own answer, so refusing it is outdated.
+      // Both show: "mama" is not on the card yet, and "lady" is not one of its
+      // answers or refused words. (A refusal of "mother", the card's own
+      // answer, would be dropped as already settled.)
       expect(find.byType(ProposalCard), findsNWidgets(2));
       expect(
         find.text(l10n.reviewProposalTitle(l10n.reviewPartAltNative)),
