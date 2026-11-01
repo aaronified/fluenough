@@ -208,8 +208,6 @@ def check_released(languages: dict[str, str], files: dict[str, str],
 
 # Languages kept in the repository, and validated like any other, but not
 # offered in the app for now. Remove a line to offer the language.
-# Japanese, hidden until 2026-10-20, is offered (owner: write its first
-# decks).
 # Languages kept in the repository, and validated like any other, but left
 # out of the index so no phone is offered them. Empty: v0.7.1 is released
 # with the language list (the planned languages' starter decks, #959, are
