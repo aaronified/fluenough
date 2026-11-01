@@ -166,11 +166,9 @@ units:
   - decks: ["fr-grammar-present-er", "fr-reading-present-er"]
     words: 0
     grammar: ["present-er"]
-  - planned: { id: "fr-grammar-negation", grammar: "ne-pas" }
-    listening_passages:
-      - { id: "no-thank-you", text: { "en": "Saying what you do not eat, do not like and do not have" } }
-    reading_passages:
-      - { id: "house-rules", text: { "en": "A short list of house rules: no smoking, no shoes" } }
+  - decks: ["fr-grammar-ne-pas", "fr-reading-negation"]
+    words: 0
+    grammar: ["ne-pas"]
   - planned: { id: "fr-grammar-questions", grammar: ["est-ce-que", "inversion"] }
     listening_passages:
       - { id: "three-ways-to-ask", text: { "en": "The same question asked three ways: by the voice, with est-ce que, and turned round" } }

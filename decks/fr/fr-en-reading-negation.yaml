@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-negation"
+name: "Reading: negation"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts with negative sentences: house rules and things people do not do. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-house-rules"
+    title: "A short list of house rules"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "Je ne mange pas ici."
+      - text: "Nous ne dormons pas tard."
+      - text: "Vous ne parlez jamais fort."
+      - text: "Tu ne joues plus ici."
+    questions:
+      - id: "fr-0578"
+        prompt: { en: "Can the speaker eat here?" }
+        options:
+          - { en: "No" }
+          - { en: "Yes" }
+          - { en: "Only at night" }
+        answer: 1
+      - id: "fr-0579"
+        prompt: { en: "When do 'we' sleep?" }
+        options:
+          - { en: "Not late" }
+          - { en: "Very late" }
+          - { en: "Always late" }
+        answer: 1
+      - id: "fr-0580"
+        prompt: { en: "Does 'you' ever speak loudly?" }
+        options:
+          - { en: "Never" }
+          - { en: "Always" }
+          - { en: "Often" }
+        answer: 1
+  - id: "fr-saying-no"
+    title: "Saying no"
+    theme: "everyday-verbs"
+    sentences:
+      - text: "Je n'ai pas de frère."
+      - text: "Elle n'aime pas la musique."
+      - text: "Ce n'est pas difficile."
+      - text: "Ils ne font rien."
+    questions:
+      - id: "fr-0581"
+        prompt: { en: "Does the speaker have a brother?" }
+        options:
+          - { en: "No" }
+          - { en: "Yes" }
+          - { en: "Two" }
+        answer: 1
+      - id: "fr-0582"
+        prompt: { en: "Does she like music?" }
+        options:
+          - { en: "No" }
+          - { en: "Yes" }
+          - { en: "Sometimes" }
+        answer: 1
+      - id: "fr-0583"
+        prompt: { en: "What do they do?" }
+        options:
+          - { en: "Nothing" }
+          - { en: "Everything" }
+          - { en: "Sport" }
+        answer: 1
