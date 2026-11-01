@@ -1,0 +1,351 @@
+schema: 1
+id: "hi-law"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "law"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2672"
+    target: "कानून"
+    target_scripts: {"perso_arabic": "قانون"}
+    reading: "kānūn"
+    ipa: "kaːnuːn"
+    phonetic: "[kaːnuːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह कानून सबके लिए है।", "reading": "yah kānūn sabkē liē hai.", "ipa": "jəɦ kaːnuːn səbkeː lɪeː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सबके", "ref": "hi-0054"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "कानून तोड़ना अपराध है।", "reading": "kānūn tōṛnā aprādh hai.", "ipa": "kaːnuːn t̪oːɽnaː əpraːd̪ʱ ɦɛː", "bases": [{"word": "तोड़ना", "base": "तोड़ना", "reading": "tōṛnā"}, {"word": "अपराध", "ref": "hi-2156"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2673"
+    target: "न्याय"
+    target_scripts: {"perso_arabic": "انصاف"}
+    reading: "nyāy"
+    ipa: "njaːj"
+    phonetic: "[njaːj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सबको न्याय मिलना चाहिए।", "reading": "sabkō nyāy milnā cāhiē.", "ipa": "səbkoː njaːj mɪlnaː tʃaːɦɪeː", "bases": [{"word": "सबको", "ref": "hi-0054"}, {"word": "मिलना", "ref": "hi-0793"}, {"word": "चाहिए", "ref": "hi-0460"}]}
+      - {"target": "न्याय में देर अन्याय है।", "reading": "nyāy mēm̐ dēr anyāy hai.", "ipa": "njaːj mẽː d̪eːr ənjaːj ɦɛː", "bases": [{"word": "में", "ref": "hi-0274"}, {"word": "देर", "ref": "hi-1905"}, {"word": "अन्याय", "base": "अन्याय", "reading": "anyāy"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2674"
+    target: "जज"
+    target_scripts: {"perso_arabic": "جج"}
+    reading: "jaj"
+    ipa: "dʒədʒ"
+    phonetic: "[dʒədʒ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "जज ने फ़ैसला सुनाया।", "reading": "jaj nē faislā sunāyā.", "ipa": "dʒədʒ neː fɛːslaː sʊnaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "फ़ैसला", "ref": "hi-2168"}, {"word": "सुनाया", "ref": "hi-2173"}]}
+      - {"target": "जज साहब अभी आएँगे।", "reading": "jaj sāhab abhī āēm̐gē.", "ipa": "dʒədʒ saːɦəb əbʱiː aːẽːɡeː", "bases": [{"word": "साहब", "ref": "hi-0182"}, {"word": "अभी", "ref": "hi-0301"}, {"word": "आएँगे", "ref": "hi-0778"}]}
+  - id: "hi-2675"
+    target: "मुकदमा"
+    target_scripts: {"perso_arabic": "مقدمہ"}
+    reading: "mukdmā"
+    ipa: "mʊkd̪maː"
+    phonetic: "[mʊkd̪maː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसका मुकदमा चल रहा है।", "reading": "uskā mukdmā cal rahā hai.", "ipa": "ʊskaː mʊkd̪maː tʃəl rəɦaː ɦɛː", "bases": [{"word": "उसका", "ref": "hi-0749"}, {"word": "चल", "ref": "hi-0801"}, {"word": "रहा", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मुकदमा जीत गए।", "reading": "mukdmā jīt gaē.", "ipa": "mʊkd̪maː dʒiːt̪ ɡəeː", "bases": [{"word": "जीत", "ref": "hi-0956"}, {"word": "गए", "ref": "hi-0777"}]}
+  - id: "hi-2676"
+    target: "अपराधी"
+    target_scripts: {"perso_arabic": "مجرم"}
+    reading: "aprādhī"
+    ipa: "əpraːd̪ʱiː"
+    phonetic: "[əpraːd̪ʱiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पुलिस ने अपराधी पकड़ा।", "reading": "pulis nē aprādhī pakṛā.", "ipa": "pʊlɪs neː əpraːd̪ʱiː pəkɽaː", "bases": [{"word": "पुलिस", "ref": "hi-0356"}, {"word": "ने", "base": "ने", "reading": "nē"}, {"word": "अपराधी", "base": "अपराधी", "reading": "aprādhī"}, {"word": "पकड़ा", "ref": "hi-1798"}]}
+      - {"target": "अपराधी जेल में है।", "reading": "aprādhī jēl mēm̐ hai.", "ipa": "əpraːd̪ʱiː dʒeːl mẽː ɦɛː", "bases": [{"word": "जेल", "ref": "hi-2680"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2677"
+    target: "गवाह"
+    target_scripts: {"perso_arabic": "گواہ"}
+    reading: "gavāh"
+    ipa: "ɡəʋaːɦ"
+    phonetic: "[ɡəʋaːɦ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "गवाह ने सच बताया।", "reading": "gavāh nē sac batāyā.", "ipa": "ɡəʋaːɦ neː sətʃ bət̪aːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "सच", "base": "सच", "reading": "sac"}, {"word": "बताया", "ref": "hi-0796"}]}
+      - {"target": "गवाह अदालत में आया।", "reading": "gavāh adālat mēm̐ āyā.", "ipa": "ɡəʋaːɦ əd̪aːlət̪ mẽː aːjaː", "bases": [{"word": "अदालत", "ref": "hi-2157"}, {"word": "में", "ref": "hi-0274"}, {"word": "आया", "ref": "hi-0778"}]}
+  - id: "hi-2678"
+    target: "सज़ा"
+    target_scripts: {"perso_arabic": "سزا"}
+    reading: "sazā"
+    ipa: "səzaː"
+    phonetic: "[səzaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसे पाँच साल की सज़ा हुई।", "reading": "usē pām̐c sāl kī sazā huī.", "ipa": "ʊseː pãːtʃ saːl kiː səzaː ɦʊiː", "bases": [{"word": "उसे", "ref": "hi-0749"}, {"word": "पाँच", "ref": "hi-0202"}, {"word": "साल", "ref": "hi-0318"}, {"word": "की", "ref": "hi-0279"}, {"word": "हुई", "ref": "hi-0780"}]}
+      - {"target": "गलती की सज़ा मिलती है।", "reading": "galtī kī sazā miltī hai.", "ipa": "ɡəlt̪iː kiː səzaː mɪlt̪iː ɦɛː", "bases": [{"word": "गलती", "ref": "hi-1597"}, {"word": "की", "ref": "hi-0279"}, {"word": "मिलती", "ref": "hi-0793"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2679"
+    target: "जुर्माना"
+    target_scripts: {"perso_arabic": "جرمانہ"}
+    reading: "jurmānā"
+    ipa: "dʒʊrmaːnaː"
+    phonetic: "[dʒʊrmaːnaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यातायात नियम तोड़ने पर जुर्माना है।", "reading": "yātāyāt niyam tōṛnē par jurmānā hai.", "ipa": "jaːt̪aːjaːt̪ nɪjəm t̪oːɽneː pər dʒʊrmaːnaː ɦɛː", "bases": [{"word": "यातायात", "base": "यातायात", "reading": "yātāyāt"}, {"word": "नियम", "ref": "hi-2281"}, {"word": "तोड़ने", "base": "तोड़ना", "reading": "tōṛnā"}, {"word": "पर", "ref": "hi-0275"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "जुर्माना भरो।", "reading": "jurmānā bharō.", "ipa": "dʒʊrmaːnaː bʱəroː", "bases": [{"word": "भरो", "ref": "hi-1732"}]}
+  - id: "hi-2680"
+    target: "जेल"
+    target_scripts: {"perso_arabic": "جیل"}
+    reading: "jēl"
+    ipa: "dʒeːl"
+    phonetic: "[dʒeːl]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह जेल में है।", "reading": "vah jēl mēm̐ hai.", "ipa": "ʋəɦ dʒeːl mẽː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "जेल से बाहर आओ।", "reading": "jēl sē bāhar āō.", "ipa": "dʒeːl seː baːɦər aːoː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "बाहर", "ref": "hi-0837"}, {"word": "आओ", "ref": "hi-0778"}]}
+  - id: "hi-2681"
+    target: "क़ैदी"
+    target_scripts: {"perso_arabic": "قیدی"}
+    reading: "qaidī"
+    ipa: "qɛːd̪iː"
+    phonetic: "[qɛːd̪iː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "क़ैदी को खाना दिया गया।", "reading": "qaidī kō khānā diyā gayā.", "ipa": "qɛːd̪iː koː kʰaːnaː d̪ɪjaː ɡəjaː", "bases": [{"word": "को", "ref": "hi-0277"}, {"word": "खाना", "ref": "hi-0332"}, {"word": "दिया", "ref": "hi-0785"}, {"word": "गया", "ref": "hi-0777"}]}
+      - {"target": "क़ैदी आज़ाद हो गया।", "reading": "qaidī āzād hō gayā.", "ipa": "qɛːd̪iː aːzaːd̪ ɦoː ɡəjaː", "bases": [{"word": "आज़ाद", "base": "आज़ाद", "reading": "āzād"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गया", "ref": "hi-0777"}]}
+  - id: "hi-2682"
+    target: "वारंट"
+    target_scripts: {"perso_arabic": "وارنٹ"}
+    reading: "vāraṇṭ"
+    ipa: "ʋaːrəɳʈ"
+    phonetic: "[ʋaːrəɳʈ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "पुलिस के पास वारंट है।", "reading": "pulis kē pās vāraṇṭ hai.", "ipa": "pʊlɪs keː paːs ʋaːrəɳʈ ɦɛː", "bases": [{"word": "पुलिस", "ref": "hi-0356"}, {"word": "के", "ref": "hi-0065"}, {"word": "पास", "ref": "hi-0293"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "वारंट पर दस्तखत करो।", "reading": "vāraṇṭ par dastakhat karō.", "ipa": "ʋaːrəɳʈ pər d̪əst̪əkʰət̪ kəroː", "bases": [{"word": "पर", "ref": "hi-0275"}, {"word": "दस्तखत", "base": "दस्तखत", "reading": "dastakhat"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2683"
+    target: "ज़मानत"
+    target_scripts: {"perso_arabic": "ضمانت"}
+    reading: "zamānat"
+    ipa: "zəmaːnət̪"
+    phonetic: "[zəmaːnət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसकी ज़मानत हो गई।", "reading": "uskī zamānat hō gaī.", "ipa": "ʊskiː zəmaːnət̪ ɦoː ɡəiː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गई", "ref": "hi-0777"}]}
+      - {"target": "ज़मानत के लिए पैसे दो।", "reading": "zamānat kē liē paisē dō.", "ipa": "zəmaːnət̪ keː lɪeː pɛːseː d̪oː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "पैसे", "ref": "hi-2227"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2684"
+    target: "कर्तव्य"
+    target_scripts: {"perso_arabic": "فرض"}
+    reading: "kartavy"
+    ipa: "kərt̪əʋj"
+    phonetic: "[kərt̪əʋj]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मतदान हर नागरिक का कर्तव्य है।", "reading": "matdān har nāgrik kā kartavy hai.", "ipa": "mət̪d̪aːn ɦər naːɡrɪk kaː kərt̪əʋj ɦɛː", "bases": [{"word": "मतदान", "ref": "hi-2285"}, {"word": "हर", "base": "हर", "reading": "har"}, {"word": "नागरिक", "ref": "hi-2295"}, {"word": "का", "ref": "hi-0279"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "अपने कर्तव्य का पालन करो।", "reading": "apnē kartavy kā pālan karō.", "ipa": "əpneː kərt̪əʋj kaː paːlən kəroː", "bases": [{"word": "अपने", "ref": "hi-0760"}, {"word": "का", "ref": "hi-0279"}, {"word": "पालन", "base": "पालन", "reading": "pālan"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2685"
+    target: "संविधान"
+    target_scripts: {"perso_arabic": "آئین"}
+    reading: "saṁvidhān"
+    ipa: "sə̃ʋɪd̪ʱaːn"
+    phonetic: "[sə̃ʋɪd̪ʱaːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "भारत का संविधान बहुत बड़ा है।", "reading": "bhārat kā saṁvidhān bahut baṛā hai.", "ipa": "bʱaːrət̪ kaː sə̃ʋɪd̪ʱaːn bəɦʊt̪ bəɽaː ɦɛː", "bases": [{"word": "भारत", "base": "भारत", "reading": "bhārat"}, {"word": "का", "ref": "hi-0279"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "बड़ा", "ref": "hi-0894"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "संविधान सबको बराबर मानता है।", "reading": "saṁvidhān sabkō barābar māntā hai.", "ipa": "sə̃ʋɪd̪ʱaːn səbkoː bəraːbər maːnt̪aː ɦɛː", "bases": [{"word": "सबको", "ref": "hi-0054"}, {"word": "बराबर", "ref": "hi-1987"}, {"word": "मानता", "ref": "hi-2184"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2686"
+    target: "विधान"
+    target_scripts: {"perso_arabic": "قانون سازی"}
+    reading: "vidhān"
+    ipa: "ʋɪd̪ʱaːn"
+    phonetic: "[ʋɪd̪ʱaːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "विधान सभा में नया विधान पास हुआ।", "reading": "vidhān sabhā mēm̐ nayā vidhān pās huā.", "ipa": "ʋɪd̪ʱaːn səbʱaː mẽː nəjaː ʋɪd̪ʱaːn paːs ɦʊaː", "bases": [{"word": "सभा", "base": "सभा", "reading": "sabhā"}, {"word": "में", "ref": "hi-0274"}, {"word": "नया", "ref": "hi-0896"}, {"word": "पास", "ref": "hi-0293"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "विधान बनाना सरकार का काम है।", "reading": "vidhān banānā sarkār kā kām hai.", "ipa": "ʋɪd̪ʱaːn bənaːnaː sərkaːr kaː kaːm ɦɛː", "bases": [{"word": "बनाना", "ref": "hi-1502"}, {"word": "सरकार", "ref": "hi-2276"}, {"word": "का", "ref": "hi-0279"}, {"word": "काम", "ref": "hi-0194"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2687"
+    target: "गैरकानूनी"
+    target_scripts: {"perso_arabic": "غیر قانونی"}
+    reading: "gairkānūnī"
+    ipa: "ɡɛːrkaːnuːniː"
+    phonetic: "[ɡɛːrkaːnuːniː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह काम गैरकानूनी है।", "reading": "yah kām gairkānūnī hai.", "ipa": "jəɦ kaːm ɡɛːrkaːnuːniː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "काम", "ref": "hi-0194"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "गैरकानूनी शराब मत बेचो।", "reading": "gairkānūnī śarāb mat bēcō.", "ipa": "ɡɛːrkaːnuːniː ʃəraːb mət̪ beːtʃoː", "bases": [{"word": "शराब", "ref": "hi-2096"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "बेचो", "ref": "hi-0795"}]}
+  - id: "hi-2688"
+    target: "कानूनी"
+    target_scripts: {"perso_arabic": "قانونی"}
+    reading: "kānūnī"
+    ipa: "kaːnuːniː"
+    phonetic: "[kaːnuːniː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "यह कानूनी सलाह है।", "reading": "yah kānūnī salāh hai.", "ipa": "jəɦ kaːnuːniː səlaːɦ ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सलाह", "ref": "hi-2195"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "सब कुछ कानूनी है।", "reading": "sab kuch kānūnī hai.", "ipa": "səb kʊtʃʰ kaːnuːniː ɦɛː", "bases": [{"word": "सब", "ref": "hi-0054"}, {"word": "कुछ", "ref": "hi-0759"}, {"word": "कानूनी", "base": "कानूनी", "reading": "kānūnī"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2689"
+    target: "आरोप"
+    target_scripts: {"perso_arabic": "الزام"}
+    reading: "ārōp"
+    ipa: "aːroːp"
+    phonetic: "[aːroːp]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उस पर चोरी का आरोप है।", "reading": "us par cōrī kā ārōp hai.", "ipa": "ʊs pər tʃoːriː kaː aːroːp ɦɛː", "bases": [{"word": "उस", "ref": "hi-0749"}, {"word": "पर", "ref": "hi-0275"}, {"word": "चोरी", "base": "चोरी", "reading": "cōrī"}, {"word": "का", "ref": "hi-0279"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "आरोप झूठा है।", "reading": "ārōp jhūṭhā hai.", "ipa": "aːroːp dʒʱuːʈʰaː ɦɛː", "bases": [{"word": "झूठा", "ref": "hi-1996"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2690"
+    target: "आरोपी"
+    target_scripts: {"perso_arabic": "ملزم"}
+    reading: "ārōpī"
+    ipa: "aːroːpiː"
+    phonetic: "[aːroːpiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "आरोपी अदालत में खड़ा है।", "reading": "ārōpī adālat mēm̐ khaṛā hai.", "ipa": "aːroːpiː əd̪aːlət̪ mẽː kʰəɽaː ɦɛː", "bases": [{"word": "अदालत", "ref": "hi-2157"}, {"word": "में", "ref": "hi-0274"}, {"word": "खड़ा", "base": "खड़ा", "reading": "khaṛā"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "आरोपी का नाम क्या है?", "reading": "ārōpī kā nām kyā hai?", "ipa": "aːroːpiː kaː naːm kjaː ɦɛː", "bases": [{"word": "का", "ref": "hi-0279"}, {"word": "नाम", "ref": "hi-0187"}, {"word": "क्या", "ref": "hi-0157"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2691"
+    target: "दोष"
+    target_scripts: {"perso_arabic": "الزام"}
+    reading: "dōś"
+    ipa: "d̪oːʃ"
+    phonetic: "[d̪oːʃ]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इसमें किसका दोष है?", "reading": "ismēm̐ kiskā dōś hai?", "ipa": "ɪsmẽː kɪskaː d̪oːʃ ɦɛː", "bases": [{"word": "इसमें", "base": "इस", "reading": "is"}, {"word": "किसका", "ref": "hi-0158"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसे दोष मत दो।", "reading": "usē dōś mat dō.", "ipa": "ʊseː d̪oːʃ mət̪ d̪oː", "bases": [{"word": "उसे", "ref": "hi-0749"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2692"
+    target: "निर्दोष"
+    target_scripts: {"perso_arabic": "بے قصور"}
+    reading: "nirdōś"
+    ipa: "nɪrd̪oːʃ"
+    phonetic: "[nɪrd̪oːʃ]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह निर्दोष है।", "reading": "vah nirdōś hai.", "ipa": "ʋəɦ nɪrd̪oːʃ ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "निर्दोष लोगों को सज़ा मत दो।", "reading": "nirdōś lōgōm̐ kō sazā mat dō.", "ipa": "nɪrd̪oːʃ loːɡõː koː səzaː mət̪ d̪oː", "bases": [{"word": "लोगों", "ref": "hi-0761"}, {"word": "को", "ref": "hi-0277"}, {"word": "सज़ा", "ref": "hi-2678"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2693"
+    target: "इंसाफ़"
+    target_scripts: {"perso_arabic": "انصاف"}
+    reading: "iṁsāf"
+    ipa: "ɪ̃saːf"
+    phonetic: "[ɪ̃saːf]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हमें इंसाफ़ चाहिए।", "reading": "hamēm̐ iṁsāf cāhiē.", "ipa": "ɦəmẽː ɪ̃saːf tʃaːɦɪeː", "bases": [{"word": "हमें", "ref": "hi-0053"}, {"word": "चाहिए", "ref": "hi-0460"}]}
+      - {"target": "इंसाफ़ के लिए लड़ो।", "reading": "iṁsāf kē liē laṛō.", "ipa": "ɪ̃saːf keː lɪeː ləɽoː", "bases": [{"word": "के", "ref": "hi-0065"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "लड़ो", "base": "लड़ना", "reading": "laṛnā"}]}
+  - id: "hi-2694"
+    target: "बरी"
+    target_scripts: {"perso_arabic": "بری"}
+    reading: "barī"
+    ipa: "bəriː"
+    phonetic: "[bəriː]"
+    phonetic_source: "rules"
+    pos: "adj"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह अदालत से बरी हो गया।", "reading": "vah adālat sē barī hō gayā.", "ipa": "ʋəɦ əd̪aːlət̪ seː bəriː ɦoː ɡəjaː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "अदालत", "ref": "hi-2157"}, {"word": "से", "ref": "hi-0276"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गया", "ref": "hi-0777"}]}
+      - {"target": "सब आरोपी बरी हुए।", "reading": "sab ārōpī barī huē.", "ipa": "səb aːroːpiː bəriː ɦʊeː", "bases": [{"word": "सब", "ref": "hi-0054"}, {"word": "आरोपी", "ref": "hi-2690"}, {"word": "बरी", "base": "बरी", "reading": "barī"}, {"word": "हुए", "ref": "hi-0780"}]}
