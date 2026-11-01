@@ -1,0 +1,49 @@
+schema: 1
+id: "mr-grammar-emphasis"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["+च", "+ही"]
+  entries:
+    - lemma: "मी"
+      key: "mi"
+      reading: "mi"
+      ipa: "mi"
+      forms:
+        "+च": "मीच"
+        "+ही": "मीही"
+      readings:
+        "+च": "mic"
+        "+ही": "mihi"
+      ipas:
+        "+च": "mits"
+        "+ही": "miɦi"
+    - lemma: "तो"
+      key: "to"
+      reading: "to"
+      ipa: "t̪o"
+      forms:
+        "+च": "तोच"
+        "+ही": "तोही"
+      readings:
+        "+च": "toc"
+        "+ही": "tohi"
+      ipas:
+        "+च": "t̪ots"
+        "+ही": "t̪oɦi"
+    - lemma: "घर"
+      key: "ghar"
+      reading: "ghar"
+      ipa: "ɡʱər"
+      forms:
+        "+च": "घरच"
+        "+ही": "घरही"
+      readings:
+        "+च": "gharac"
+        "+ही": "gharhi"
+      ipas:
+        "+च": "ɡʱərəts"
+        "+ही": "ɡʱərɦi"

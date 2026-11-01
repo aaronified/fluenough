@@ -1,0 +1,180 @@
+schema: 1
+id: "mr-school"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "school"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1114"
+    target: "शिक्षिका"
+    reading: "śikṣikā"
+    ipa: "ʃikʂika"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शिक्षिका", reading: "śikṣikā" }] }
+    examples:
+      - { target: "शिक्षिका हुशार आहे.", reading: "śikṣikā huśār āhe.", ipa: "ʃikʂika ɦuʃar aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "शिक्षिकेने परीक्षा घेतली.", reading: "śikṣikene parikṣā ghetli.", ipa: "ʃikʂikene pərikʂa ɡʱet̪li", bases: [{ word: "शिक्षिकेने", base: "शिक्षिका", reading: "śikṣikā" }, { word: "घेतली", ref: "mr-0722" }] }
+  - id: "mr-1115"
+    target: "अभ्यास"
+    reading: "abhyās"
+    ipa: "əbʱjas"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अभ्यास", reading: "abhyās" }] }
+    examples:
+      - { target: "रोज अभ्यास करा.", reading: "roj abhyās karā.", ipa: "rodz əbʱjas kəra", bases: [{ word: "करा", ref: "mr-0712" }] }
+      - { target: "परीक्षेसाठी खूप अभ्यास केला.", reading: "parikṣesāṭhi khup abhyās kelā.", ipa: "pərikʂesaʈʰi kʰup əbʱjas kela", bases: [{ word: "परीक्षेसाठी", ref: "mr-1117" }, { word: "केला", ref: "mr-0712" }] }
+  - id: "mr-1116"
+    target: "गृहपाठ"
+    reading: "gruhpāṭh"
+    ipa: "ɡruɦpaʈʰ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गृहपाठ", reading: "gruhpāṭh" }] }
+    examples:
+      - { target: "आज गृहपाठ आहे.", reading: "āj gruhpāṭh āhe.", ipa: "adz ɡruɦpaʈʰ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "गृहपाठ पूर्ण केला का?", reading: "gruhpāṭh purṇ kelā kā?", ipa: "ɡruɦpaʈʰ purɳ kela ka", bases: [{ word: "केला", ref: "mr-0712" }, { word: "पूर्ण", base: "पूर्ण", reading: "purṇ" }] }
+  - id: "mr-1117"
+    target: "परीक्षा"
+    reading: "parikṣā"
+    ipa: "pərikʂa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "परीक्षा", reading: "parikṣā" }] }
+    examples:
+      - { target: "उद्या परीक्षा आहे.", reading: "udyā parikṣā āhe.", ipa: "ud̪ja pərikʂa aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "परीक्षेचा निकाल उद्या येईल.", reading: "parikṣecā nikāl udyā yeil.", ipa: "pərikʂetsa nikal ud̪ja jeil", bases: [{ word: "परीक्षेचा", base: "परीक्षा", reading: "parikṣā" }, { word: "येईल", ref: "mr-0711" }] }
+  - id: "mr-1118"
+    target: "निकाल"
+    reading: "nikāl"
+    ipa: "nikal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "निकाल", reading: "nikāl" }] }
+    examples:
+      - { target: "निकाल चांगला लागला.", reading: "nikāl cāṅgalā lāglā.", ipa: "nikal tsaŋɡəla laɡla", bases: [{ word: "लागला", base: "लागणे", reading: "lāgṇe" }] }
+      - { target: "निकाल कधी जाहीर होईल?", reading: "nikāl kadhi jāhir hoil?", ipa: "nikal kəd̪ʱi dzaɦir ɦoil", bases: [{ word: "होईल", base: "होणे", reading: "hoṇe" }, { word: "जाहीर", base: "जाहीर", reading: "jāhir" }] }
+  - id: "mr-1119"
+    target: "खोडरबर"
+    reading: "khoḍrbar"
+    ipa: "kʰoɖrbər"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खोडरबर", reading: "khoḍrbar" }] }
+    examples:
+      - { target: "खोडरबर दे.", reading: "khoḍrbar de.", ipa: "kʰoɖrbər d̪e", bases: [{ word: "दे", ref: "mr-0721" }] }
+      - { target: "चुकीचं उत्तर खोडरबरने पुसलं.", reading: "cukicam̐ uttar khoḍrbrne puslam̐.", ipa: "tsukitsə̃ ut̪t̪ər kʰoɖrbrne puslə̃", bases: [{ word: "खोडरबरने", base: "खोडरबर", reading: "khoḍrbar" }, { word: "पुसलं", ref: "mr-0793" }, { word: "चुकीचं", base: "चूक", reading: "cuk" }] }
+  - id: "mr-1120"
+    target: "दप्तर"
+    reading: "daptar"
+    ipa: "d̪əpt̪ər"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "दप्तर", reading: "daptar" }] }
+    examples:
+      - { target: "दप्तर जड आहे.", reading: "daptar jaḍ āhe.", ipa: "d̪əpt̪ər dzəɖ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "दप्तर भरलं का?", reading: "daptar bharlam̐ kā?", ipa: "d̪əpt̪ər bʱərlə̃ ka", bases: [{ word: "भरलं", ref: "mr-0795" }] }
+  - id: "mr-1121"
+    target: "फळा"
+    reading: "phaḷā"
+    ipa: "pʰəɭa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फळा", reading: "phaḷā" }] }
+    examples:
+      - { target: "फळ्यावर लिही.", reading: "phaḷyāvar lihi.", ipa: "pʰəɭjaʋər liɦi", bases: [{ word: "फळ्यावर", base: "फळा", reading: "phaḷā" }, { word: "लिही", ref: "mr-0716" }] }
+      - { target: "फळा स्वच्छ कर.", reading: "phaḷā svacch kar.", ipa: "pʰəɭa sʋətstʃʰ kər", bases: [{ word: "स्वच्छ", ref: "mr-0766" }, { word: "कर", ref: "mr-0712" }] }
+  - id: "mr-1122"
+    target: "खडू"
+    reading: "khaḍu"
+    ipa: "kʰəɖu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खडू", reading: "khaḍu" }] }
+    examples:
+      - { target: "खडू संपला.", reading: "khaḍu sampalā.", ipa: "kʰəɖu səmpəla", bases: [{ word: "संपला", base: "संपणे", reading: "sampaṇe" }] }
+      - { target: "खडूने फळ्यावर लिहिलं.", reading: "khaḍune phaḷyāvar lihilam̐.", ipa: "kʰəɖune pʰəɭjaʋər liɦilə̃", bases: [{ word: "खडूने", base: "खडू", reading: "khaḍu" }, { word: "फळ्यावर", ref: "mr-1121" }, { word: "लिहिलं", ref: "mr-0716" }] }
+  - id: "mr-1123"
+    target: "गणित"
+    reading: "gaṇit"
+    ipa: "ɡəɳit̪"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गणित", reading: "gaṇit" }] }
+    examples:
+      - { target: "गणित अवघड आहे.", reading: "gaṇit avghaḍ āhe.", ipa: "ɡəɳit̪ əʋɡʱəɖ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "अवघड", base: "अवघड", reading: "avghaḍ" }] }
+      - { target: "मला गणित आवडतं.", reading: "malā gaṇit āvḍtam̐.", ipa: "məla ɡəɳit̪ aʋɖt̪ə̃", bases: [{ word: "मला", ref: "mr-0080" }, { word: "आवडतं", ref: "mr-0585" }] }
+  - id: "mr-1124"
+    target: "विज्ञान"
+    reading: "vidnyān"
+    ipa: "ʋid̪ɲan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विज्ञान", reading: "vidnyān" }] }
+    examples:
+      - { target: "विज्ञान शिकायला मजा येते.", reading: "vidnyān śikāylā majā yete.", ipa: "ʋid̪ɲan ʃikajla mədza jet̪e", bases: [{ word: "शिकायला", ref: "mr-0717" }, { word: "येते", ref: "mr-0711" }, { word: "मजा", base: "मजा", reading: "majā" }] }
+      - { target: "विज्ञानाचं पुस्तक जड आहे.", reading: "vidnyānācam̐ pustak jaḍ āhe.", ipa: "ʋid̪ɲanatsə̃ pust̪ək dzəɖ aɦe", bases: [{ word: "विज्ञानाचं", base: "विज्ञान", reading: "vidnyān" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1125"
+    target: "प्रयोगशाळा"
+    reading: "prayogśāḷā"
+    ipa: "prəjoɡʃaɭa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रयोगशाळा", reading: "prayogśāḷā" }] }
+    examples:
+      - { target: "प्रयोगशाळेत प्रयोग केला.", reading: "prayogśāḷet prayog kelā.", ipa: "prəjoɡʃaɭet̪ prəjoɡ kela", bases: [{ word: "प्रयोगशाळेत", base: "प्रयोगशाळा", reading: "prayogśāḷā" }, { word: "केला", ref: "mr-0712" }, { word: "प्रयोग", base: "प्रयोग", reading: "prayog" }] }
+      - { target: "प्रयोगशाळा बंद आहे.", reading: "prayogśāḷā band āhe.", ipa: "prəjoɡʃaɭa bənd̪ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "बंद", base: "बंद", reading: "band" }] }
+  - id: "mr-1126"
+    target: "उत्तीर्ण होणे"
+    reading: "uttirṇ hoṇe"
+    ipa: "ut̪t̪irɳ ɦoɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "उत्तीर्ण होणे", reading: "uttirṇ hoṇe" }] }
+    bases:
+      - { word: "उत्तीर्ण", base: "उत्तीर्ण", reading: "uttirṇ" }
+      - { word: "होणे", base: "होणे", reading: "hoṇe" }
+    examples:
+      - { target: "तो परीक्षेत उत्तीर्ण झाला.", reading: "to parikṣet uttirṇ jhālā.", ipa: "t̪o pərikʂet̪ ut̪t̪irɳ dzʱala", bases: [{ word: "परीक्षेत", ref: "mr-1117" }, { word: "झाला", base: "होणे", reading: "hoṇe" }, { word: "उत्तीर्ण", base: "उत्तीर्ण", reading: "uttirṇ" }] }
+      - { target: "सगळे विद्यार्थी उत्तीर्ण झाले.", reading: "sagḷe vidyārthi uttirṇ jhāle.", ipa: "səɡɭe ʋid̪jart̪ʰi ut̪t̪irɳ dzʱale", bases: [{ word: "विद्यार्थी", ref: "mr-0248" }, { word: "झाले", base: "होणे", reading: "hoṇe" }, { word: "उत्तीर्ण", base: "उत्तीर्ण", reading: "uttirṇ" }] }
+  - id: "mr-1127"
+    target: "वेळापत्रक"
+    reading: "veḷāpatrak"
+    ipa: "ʋeɭapət̪rək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वेळापत्रक", reading: "veḷāpatrak" }] }
+    examples:
+      - { target: "वेळापत्रक भिंतीवर लावलं.", reading: "veḷāpatrak bhintivar lāvlam̐.", ipa: "ʋeɭapət̪rək bʱint̪iʋər laʋlə̃", bases: [{ word: "भिंतीवर", base: "भिंत", reading: "bhint" }, { word: "लावलं", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "उद्याचं वेळापत्रक बदललं.", reading: "udyācam̐ veḷāpatrak badllam̐.", ipa: "ud̪jatsə̃ ʋeɭapət̪rək bəd̪llə̃", bases: [{ word: "बदललं", ref: "mr-1078" }, { word: "उद्याचं", base: "उद्याचा", reading: "udyācā" }] }
+  - id: "mr-1128"
+    target: "मधली सुट्टी"
+    reading: "madhli suṭṭi"
+    ipa: "məd̪ʱli suʈʈi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मधली सुट्टी", reading: "madhli suṭṭi" }] }
+    bases:
+      - { word: "मधली", base: "मधला", reading: "madhlā" }
+    examples:
+      - { target: "मधल्या सुट्टीत खेळलो.", reading: "madhalyā suṭṭit kheḷlo.", ipa: "məd̪ʱəlja suʈʈit̪ kʰeɭlo", bases: [{ word: "मधल्या", base: "मधला", reading: "madhlā" }, { word: "सुट्टीत", ref: "mr-0244" }, { word: "खेळलो", ref: "mr-0725" }] }
+      - { target: "मधली सुट्टी दहा मिनिटांची आहे.", reading: "madhli suṭṭi dahā miniṭāñci āhe.", ipa: "məd̪ʱli suʈʈi d̪əɦa miniʈaɲtʃi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "मधली", base: "मधला", reading: "madhlā" }, { word: "मिनिटांची", ref: "mr-0483" }] }

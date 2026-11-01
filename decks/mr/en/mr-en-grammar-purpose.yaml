@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-purpose"
+kind: "layer"
+core: "mr-grammar-purpose"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Purpose: to go, in order to go"
+license: "CC-BY-SA-4.0"
+description: "To earn money, in order to learn, so I stayed home: why someone does something, with the verb in its purpose form. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Purpose: the -ayalā form and the -ṇyāsāṭhī form"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "-ायला": "to (short purpose)", "-ण्यासाठी": "in order to, for (formal purpose)" }
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do"
+    "khaane": "to eat"
+    "pine": "to drink"
+    "vachne": "to read"
+    "bolne": "to speak"
+    "paahne": "to see"
+    "dene": "to give"
+    "ghene": "to take"
+  notes: "A purpose is said with the verb in its dative form: -ायला (-āyalā) for a short purpose, as in मी पैसे कमवायला काम करतो (mī paise kamvāyalā kām karto), I work to earn money. For a more formal purpose use -ण्यासाठी (-ṇyāsāṭhī), as in शिकण्यासाठी (śikṇyāsāṭhī), in order to learn. The reason comes before म्हणून (mhaṇūn), so: पाऊस पडत होता म्हणून मी घरी राहिलो (pāūs paḍat hotā mhaṇūn mī gharī rāhilo), it was raining, so I stayed at home."

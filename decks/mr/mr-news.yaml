@@ -1,0 +1,248 @@
+schema: 1
+id: "mr-news"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "news"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1340"
+    target: "बातमी"
+    reading: "bātmi"
+    ipa: "bat̪mi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बातमी", reading: "bātmi" }] }
+    examples:
+      - { target: "आज एक चांगली बातमी आली.", reading: "āj ek cāṅgali bātmi āli.", ipa: "adz ek tsaŋɡəli bat̪mi ali", bases: [{ word: "चांगली", ref: "mr-0759" }, { word: "आली", ref: "mr-0711" }] }
+      - { target: "ही बातमी खरी आहे का?", reading: "hi bātmi khari āhe kā?", ipa: "ɦi bat̪mi kʰəri aɦe ka", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "खरी", base: "खरा", reading: "kharā" }] }
+  - id: "mr-1341"
+    target: "वृत्तपत्र"
+    reading: "vruttapatr"
+    ipa: "ʋrut̪t̪əpət̪r"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वृत्तपत्र", reading: "vruttapatr" }] }
+    examples:
+      - { target: "सकाळी वृत्तपत्र वाचतो.", reading: "sakāḷi vruttapatr vācto.", ipa: "səkaɭi ʋrut̪t̪əpət̪r ʋatst̪o", bases: [{ word: "सकाळी", ref: "mr-0477" }, { word: "वाचतो", ref: "mr-0513" }] }
+      - { target: "वृत्तपत्र घरी आलं का?", reading: "vruttapatr ghari ālam̐ kā?", ipa: "ʋrut̪t̪əpət̪r ɡʱəri alə̃ ka", bases: [{ word: "घरी", ref: "mr-0048" }, { word: "आलं", ref: "mr-0711" }] }
+  - id: "mr-1342"
+    target: "पत्रकार"
+    reading: "patrakār"
+    ipa: "pət̪rəkar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पत्रकार", reading: "patrakār" }] }
+    examples:
+      - { target: "पत्रकार प्रश्न विचारत होते.", reading: "patrakār praśn vicārat hote.", ipa: "pət̪rəkar prəʃn ʋitsarət̪ ɦot̪e", bases: [{ word: "प्रश्न", base: "प्रश्न", reading: "praśn" }, { word: "विचारत", ref: "mr-1177" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+      - { target: "पत्रकाराने मुलाखत घेतली.", reading: "patrakārāne mulākhat ghetli.", ipa: "pət̪rəkarane mulakʰət̪ ɡʱet̪li", bases: [{ word: "पत्रकाराने", base: "पत्रकार", reading: "patrakār" }, { word: "मुलाखत", ref: "mr-1265" }, { word: "घेतली", ref: "mr-0722" }] }
+  - id: "mr-1343"
+    target: "टीव्ही"
+    reading: "ṭivhi"
+    ipa: "ʈiʋɦi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "टीव्ही", reading: "ṭivhi" }] }
+    examples:
+      - { target: "टीव्हीवर बातम्या लागल्या.", reading: "ṭivhivar bātamyā lāgalyā.", ipa: "ʈiʋɦiʋər bat̪əmja laɡəlja", bases: [{ word: "टीव्हीवर", base: "टीव्ही", reading: "ṭivhi" }, { word: "लागल्या", base: "लागणे", reading: "lāgṇe" }, { word: "बातम्या", ref: "mr-1340" }] }
+      - { target: "टीव्ही बंद करा.", reading: "ṭivhi band karā.", ipa: "ʈiʋɦi bənd̪ kəra", bases: [{ word: "बंद", base: "बंद", reading: "band" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1344"
+    target: "रेडिओ"
+    reading: "reḍio"
+    ipa: "reɖio"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "रेडिओ", reading: "reḍio" }] }
+    examples:
+      - { target: "रेडिओवर गाणी लागली.", reading: "reḍiovar gāṇi lāgli.", ipa: "reɖioʋər ɡaɳi laɡli", bases: [{ word: "रेडिओवर", base: "रेडिओ", reading: "reḍio" }, { word: "गाणी", base: "गाणं", reading: "gāṇam̐" }, { word: "लागली", base: "लागणे", reading: "lāgṇe" }] }
+      - { target: "रेडिओ ऐकणं आवडतं.", reading: "reḍio aikṇam̐ āvḍtam̐.", ipa: "reɖio əikɳə̃ aʋɖt̪ə̃", bases: [{ word: "ऐकणं", ref: "mr-0715" }, { word: "आवडतं", ref: "mr-0585" }] }
+  - id: "mr-1345"
+    target: "वृत्तवाहिनी"
+    reading: "vruttavāhini"
+    ipa: "ʋrut̪t̪əʋaɦini"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वृत्तवाहिनी", reading: "vruttavāhini" }] }
+    examples:
+      - { target: "वृत्तवाहिनी लावा.", reading: "vruttavāhini lāvā.", ipa: "ʋrut̪t̪əʋaɦini laʋa", bases: [{ word: "लावा", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "ही वृत्तवाहिनी जुनी आहे.", reading: "hi vruttavāhini juni āhe.", ipa: "ɦi ʋrut̪t̪əʋaɦini dzuni aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "जुनी", ref: "mr-0762" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1346"
+    target: "मथळा"
+    reading: "mathḷā"
+    ipa: "mət̪ʰɭa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मथळा", reading: "mathḷā" }] }
+    examples:
+      - { target: "पहिल्या पानावर मथळा मोठा आहे.", reading: "pahilyā pānāvar mathḷā moṭhā āhe.", ipa: "pəɦilja panaʋər mət̪ʰɭa moʈʰa aɦe", bases: [{ word: "पहिल्या", base: "पहिला", reading: "pahilā" }, { word: "पानावर", base: "पान", reading: "pān" }, { word: "मथळा", base: "मथळा", reading: "mathḷā" }, { word: "मोठा", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "मथळा वाचून सगळे थांबले.", reading: "mathḷā vācun sagḷe thāmbale.", ipa: "mət̪ʰɭa ʋatsun səɡɭe t̪ʰambəle", bases: [{ word: "वाचून", ref: "mr-0513" }, { word: "थांबले", ref: "mr-0803" }] }
+  - id: "mr-1347"
+    target: "लेख"
+    reading: "lekh"
+    ipa: "lekʰ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "लेख", reading: "lekh" }] }
+    examples:
+      - { target: "त्याचा लेख आज छापला.", reading: "tyācā lekh āj chāplā.", ipa: "t̪jatsa lekʰ adz tʃʰapla", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "छापला", base: "छापणे", reading: "chāpṇe" }] }
+      - { target: "लेख वाचायला वेळ लागेल.", reading: "lekh vācāylā veḷ lāgel.", ipa: "lekʰ ʋatsajla ʋeɭ laɡel", bases: [{ word: "वाचायला", ref: "mr-0513" }, { word: "लागेल", base: "लागणे", reading: "lāgṇe" }] }
+  - id: "mr-1348"
+    target: "संपादक"
+    reading: "sampādak"
+    ipa: "səmpad̪ək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "संपादक", reading: "sampādak" }] }
+    examples:
+      - { target: "संपादकांनी लेख मंजूर केला.", reading: "sampādkānni lekh mañjur kelā.", ipa: "səmpad̪kanni lekʰ məɲdzur kela", bases: [{ word: "संपादकांनी", base: "संपादक", reading: "sampādak" }, { word: "लेख", ref: "mr-1347" }, { word: "मंजूर", base: "मंजूर", reading: "mañjur" }, { word: "केला", ref: "mr-0712" }] }
+      - { target: "संपादक नवीन आहेत.", reading: "sampādak navin āhet.", ipa: "səmpad̪ək nəʋin aɦet̪", bases: [{ word: "आहेत", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1349"
+    target: "घटना"
+    reading: "ghaṭnā"
+    ipa: "ɡʱəʈna"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "घटना", reading: "ghaṭnā" }] }
+    examples:
+      - { target: "ही घटना काल घडली.", reading: "hi ghaṭnā kāl ghaḍli.", ipa: "ɦi ɡʱəʈna kal ɡʱəɖli", bases: [{ word: "ही", ref: "mr-0679" }, { word: "घडली", ref: "mr-1360" }] }
+      - { target: "घटनेची बातमी सगळीकडे पसरली.", reading: "ghaṭneci bātmi sagḷikḍe pasrli.", ipa: "ɡʱəʈnetʃi bat̪mi səɡɭikɖe pəsrli", bases: [{ word: "घटनेची", base: "घटना", reading: "ghaṭnā" }, { word: "बातमी", ref: "mr-1340" }, { word: "पसरली", ref: "mr-1361" }, { word: "सगळीकडे", base: "सगळीकडे", reading: "sagḷikḍe" }] }
+  - id: "mr-1350"
+    target: "स्थानिक"
+    reading: "sthānik"
+    ipa: "st̪ʰanik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "स्थानिक", reading: "sthānik" }] }
+    examples:
+      - { target: "स्थानिक बातम्या ऐकल्या.", reading: "sthānik bātamyā aikalyā.", ipa: "st̪ʰanik bat̪əmja əikəlja", bases: [{ word: "बातम्या", ref: "mr-1340" }, { word: "ऐकल्या", ref: "mr-0715" }] }
+      - { target: "स्थानिक लोक मदत करत होते.", reading: "sthānik lok madat karat hote.", ipa: "st̪ʰanik lok məd̪ət̪ kərət̪ ɦot̪e", bases: [{ word: "लोक", ref: "mr-0687" }, { word: "मदत", ref: "mr-1159" }, { word: "करत", ref: "mr-0712" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1351"
+    target: "राष्ट्रीय"
+    reading: "rāṣṭriy"
+    ipa: "raʂʈrij"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "राष्ट्रीय", reading: "rāṣṭriy" }] }
+    examples:
+      - { target: "ही राष्ट्रीय बातमी आहे.", reading: "hi rāṣṭriy bātmi āhe.", ipa: "ɦi raʂʈrij bat̪mi aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "राष्ट्रीय सण सगळीकडे साजरा होतो.", reading: "rāṣṭriy saṇ sagḷikḍe sājrā hoto.", ipa: "raʂʈrij səɳ səɡɭikɖe sadzra ɦot̪o", bases: [{ word: "सण", ref: "mr-1038" }, { word: "साजरा", ref: "mr-1063" }, { word: "होतो", base: "होणे", reading: "hoṇe" }, { word: "सगळीकडे", base: "सगळीकडे", reading: "sagḷikḍe" }] }
+  - id: "mr-1352"
+    target: "आंतरराष्ट्रीय"
+    reading: "āntarrāṣṭriy"
+    ipa: "ant̪ərraʂʈrij"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "आंतरराष्ट्रीय", reading: "āntarrāṣṭriy" }] }
+    examples:
+      - { target: "आंतरराष्ट्रीय बातम्या पाहिल्या.", reading: "āntarrāṣṭriy bātamyā pāhilyā.", ipa: "ant̪ərraʂʈrij bat̪əmja paɦilja", bases: [{ word: "बातम्या", ref: "mr-1340" }, { word: "पाहिल्या", ref: "mr-0714" }] }
+      - { target: "हा आंतरराष्ट्रीय सामना आहे.", reading: "hā āntarrāṣṭriy sāmnā āhe.", ipa: "ɦa ant̪ərraʂʈrij samna aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "सामना", base: "सामना", reading: "sāmnā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1353"
+    target: "प्रसारण"
+    reading: "prasāraṇ"
+    ipa: "prəsarəɳ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रसारण", reading: "prasāraṇ" }] }
+    examples:
+      - { target: "थेट प्रसारण सुरू झालं.", reading: "theṭ prasāraṇ suru jhālam̐.", ipa: "t̪ʰeʈ prəsarəɳ suru dzʱalə̃", bases: [{ word: "सुरू", base: "सुरू", reading: "suru" }, { word: "झालं", base: "होणे", reading: "hoṇe" }, { word: "थेट", base: "थेट", reading: "theṭ" }] }
+      - { target: "प्रसारण उद्या होईल.", reading: "prasāraṇ udyā hoil.", ipa: "prəsarəɳ ud̪ja ɦoil", bases: [{ word: "होईल", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1354"
+    target: "बातमीपत्र"
+    reading: "bātmipatr"
+    ipa: "bat̪mipət̪r"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बातमीपत्र", reading: "bātmipatr" }] }
+    examples:
+      - { target: "रात्री नऊ वाजता बातमीपत्र असतं.", reading: "rātri nau vājtā bātmipatr astam̐.", ipa: "rat̪ri nəu ʋadzt̪a bat̪mipət̪r əst̪ə̃", bases: [{ word: "वाजता", base: "वाजणे", reading: "vājṇe" }, { word: "असतं", base: "असणे", reading: "asṇe" }, { word: "रात्री", ref: "mr-0480" }] }
+      - { target: "बातमीपत्र संपलं.", reading: "bātmipatr sampalam̐.", ipa: "bat̪mipət̪r səmpələ̃", bases: [{ word: "संपलं", base: "संपणे", reading: "sampaṇe" }] }
+  - id: "mr-1355"
+    target: "माहिती"
+    reading: "māhiti"
+    ipa: "maɦit̪i"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "माहिती", reading: "māhiti" }] }
+    examples:
+      - { target: "मला या विषयाची माहिती हवी.", reading: "malā yā viṣyāci māhiti havi.", ipa: "məla ja ʋiʂjatʃi maɦit̪i ɦəʋi", bases: [{ word: "मला", ref: "mr-0080" }, { word: "या", ref: "mr-0679" }, { word: "विषयाची", base: "विषय", reading: "viṣay" }, { word: "हवी", ref: "mr-0412" }] }
+      - { target: "माहिती खरी आहे का?", reading: "māhiti khari āhe kā?", ipa: "maɦit̪i kʰəri aɦe ka", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "खरी", base: "खरा", reading: "kharā" }] }
+  - id: "mr-1356"
+    target: "सूचना"
+    reading: "sucnā"
+    ipa: "sutsna"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सूचना", reading: "sucnā" }] }
+    examples:
+      - { target: "सूचना फलकावर लावली.", reading: "sucnā phalkāvar lāvli.", ipa: "sutsna pʰəlkaʋər laʋli", bases: [{ word: "फलकावर", base: "फलक", reading: "phalak" }, { word: "लावली", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "सूचना नीट वाचा.", reading: "sucnā niṭ vācā.", ipa: "sutsna niʈ ʋatsa", bases: [{ word: "वाचा", ref: "mr-0513" }] }
+  - id: "mr-1357"
+    target: "वार्ता"
+    reading: "vārtā"
+    ipa: "ʋart̪a"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वार्ता", reading: "vārtā" }] }
+    examples:
+      - { target: "शुभ वार्ता आहे.", reading: "śubh vārtā āhe.", ipa: "ʃubʱ ʋart̪a aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "शुभ", base: "शुभ", reading: "śubh" }] }
+      - { target: "वार्ता कानावर आली.", reading: "vārtā kānāvar āli.", ipa: "ʋart̪a kanaʋər ali", bases: [{ word: "कानावर", ref: "mr-0807" }, { word: "आली", ref: "mr-0711" }] }
+  - id: "mr-1358"
+    target: "कळवणे"
+    reading: "kaḷvṇe"
+    ipa: "kəɭʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कळवणे", reading: "kaḷvṇe" }] }
+    examples:
+      - { target: "मला लवकर कळवा.", reading: "malā lavkar kaḷvā.", ipa: "məla ləʋkər kəɭʋa", bases: [{ word: "मला", ref: "mr-0080" }, { word: "कळवा", base: "कळवणे", reading: "kaḷvṇe" }] }
+      - { target: "त्यांनी आम्हाला बातमी कळवली.", reading: "tyānni āmhālā bātmi kaḷvli.", ipa: "t̪janni amɦala bat̪mi kəɭʋli", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "आम्हाला", ref: "mr-0138" }, { word: "कळवली", base: "कळवणे", reading: "kaḷvṇe" }] }
+  - id: "mr-1359"
+    target: "प्रसिद्ध करणे"
+    reading: "prasiddh karṇe"
+    ipa: "prəsid̪d̪ʱ kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रसिद्ध करणे", reading: "prasiddh karṇe" }] }
+    bases:
+      - { word: "प्रसिद्ध", base: "प्रसिद्ध", reading: "prasiddh" }
+    examples:
+      - { target: "बातमी प्रसिद्ध झाली.", reading: "bātmi prasiddh jhāli.", ipa: "bat̪mi prəsid̪d̪ʱ dzʱali", bases: [{ word: "प्रसिद्ध", base: "प्रसिद्ध", reading: "prasiddh" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "पेपरने फोटो प्रसिद्ध केला.", reading: "peprne phoṭo prasiddh kelā.", ipa: "peprne pʰoʈo prəsid̪d̪ʱ kela", bases: [{ word: "पेपरने", base: "पेपर", reading: "pepar" }, { word: "प्रसिद्ध", base: "प्रसिद्ध", reading: "prasiddh" }, { word: "केला", ref: "mr-0712" }] }
+  - id: "mr-1360"
+    target: "घडणे"
+    reading: "ghaḍṇe"
+    ipa: "ɡʱəɖɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "घडणे", reading: "ghaḍṇe" }] }
+    examples:
+      - { target: "काल काय घडलं?", reading: "kāl kāy ghaḍlam̐?", ipa: "kal kaj ɡʱəɖlə̃", bases: [{ word: "घडलं", base: "घडणे", reading: "ghaḍṇe" }] }
+      - { target: "ही घटना कुठे घडली?", reading: "hi ghaṭnā kuṭhe ghaḍli?", ipa: "ɦi ɡʱəʈna kuʈʰe ɡʱəɖli", bases: [{ word: "घडली", base: "घडणे", reading: "ghaḍṇe" }] }
+  - id: "mr-1361"
+    target: "पसरणे"
+    reading: "pasrṇe"
+    ipa: "pəsrɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पसरणे", reading: "pasrṇe" }] }
+    examples:
+      - { target: "बातमी गावभर पसरली.", reading: "bātmi gāvbhar pasrli.", ipa: "bat̪mi ɡaʋbʱər pəsrli", bases: [{ word: "गावभर", ref: "mr-0209" }, { word: "पसरली", base: "पसरणे", reading: "pasrṇe" }] }
+      - { target: "आग वेगाने पसरत होती.", reading: "āg vegāne pasrat hoti.", ipa: "aɡ ʋeɡane pəsrət̪ ɦot̪i", bases: [{ word: "वेगाने", base: "वेग", reading: "veg" }, { word: "पसरत", base: "पसरणे", reading: "pasrṇe" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }

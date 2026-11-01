@@ -1,0 +1,263 @@
+schema: 1
+id: "mr-sports"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "sports"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1605"
+    target: "क्रिकेट"
+    reading: "krikeṭ"
+    ipa: "krikeʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "क्रिकेट", reading: "krikeṭ" }] }
+    examples:
+      - { target: "आम्ही रोज क्रिकेट खेळतो.", reading: "āmhi roj krikeṭ kheḷto.", ipa: "amɦi rodz krikeʈ kʰeɭt̪o", bases: [{ word: "खेळतो", ref: "mr-0725" }] }
+      - { target: "क्रिकेटचा सामना टीव्हीवर होता.", reading: "krikeṭcā sāmnā ṭivhivar hotā.", ipa: "krikeʈtsa samna ʈiʋɦiʋər ɦot̪a", bases: [{ word: "क्रिकेटचा", base: "क्रिकेट", reading: "krikeṭ" }, { word: "सामना", ref: "mr-1615" }, { word: "टीव्हीवर", ref: "mr-1343" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1606"
+    target: "फुटबॉल"
+    reading: "phuṭbôl"
+    ipa: "pʰuʈbɔl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फुटबॉल", reading: "phuṭbôl" }] }
+    examples:
+      - { target: "मुलं मैदानात फुटबॉल खेळत होती.", reading: "mulam̐ maidānāt phuṭbôl kheḷat hoti.", ipa: "mulə̃ məid̪anat̪ pʰuʈbɔl kʰeɭət̪ ɦot̪i", bases: [{ word: "मुलं", ref: "mr-0224" }, { word: "मैदानात", ref: "mr-0980" }, { word: "खेळत", ref: "mr-0725" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }
+      - { target: "फुटबॉलचा बॉल हरवला.", reading: "phuṭbôlcā bôl harvlā.", ipa: "pʰuʈbɔltsa bɔl ɦərʋla", bases: [{ word: "फुटबॉलचा", base: "फुटबॉल", reading: "phuṭbôl" }, { word: "बॉल", ref: "mr-1618" }, { word: "हरवला", ref: "mr-1174" }] }
+  - id: "mr-1607"
+    target: "कबड्डी"
+    reading: "kabaḍḍi"
+    ipa: "kəbəɖɖi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कबड्डी", reading: "kabaḍḍi" }] }
+    examples:
+      - { target: "कबड्डी हा आपला पारंपरिक खेळ आहे.", reading: "kabaḍḍi hā āplā pāramparik kheḷ āhe.", ipa: "kəbəɖɖi ɦa apla parəmpərik kʰeɭ aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "आपला", base: "आपला", reading: "āplā" }, { word: "पारंपरिक", ref: "mr-1066" }, { word: "खेळ", base: "खेळ", reading: "kheḷ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कबड्डीचा सामना जिंकला.", reading: "kabaḍḍicā sāmnā jiṅkalā.", ipa: "kəbəɖɖitsa samna dʒiŋkəla", bases: [{ word: "कबड्डीचा", base: "कबड्डी", reading: "kabaḍḍi" }, { word: "सामना", ref: "mr-1615" }, { word: "जिंकला", ref: "mr-1142" }] }
+  - id: "mr-1608"
+    target: "खो-खो"
+    reading: "kho-kho"
+    ipa: "kʰokʰo"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खो-खो", reading: "kho-kho" }] }
+    bases:
+      - { word: "खो", base: "खो", reading: "kho" }
+    examples:
+      - { target: "खो-खो मध्ये संघ धावतो.", reading: "kho-kho madhye saṅgh dhāvto.", ipa: "kʰokʰo məd̪ʱje səŋɡʱ d̪ʱaʋt̪o", bases: [{ word: "मध्ये", base: "मध्ये", reading: "madhye" }, { word: "संघ", ref: "mr-1612" }, { word: "धावतो", ref: "mr-1136" }, { word: "खो", base: "खो", reading: "kho" }] }
+      - { target: "खो-खोचा खेळ वेगवान आहे.", reading: "kho-khocā kheḷ vegvān āhe.", ipa: "kʰokʰotsa kʰeɭ ʋeɡʋan aɦe", bases: [{ word: "खेळ", base: "खेळ", reading: "kheḷ" }, { word: "वेगवान", base: "वेगवान", reading: "vegvān" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "खो", base: "खो", reading: "kho" }, { word: "खोचा", base: "खो-खो", reading: "kho-kho" }] }
+  - id: "mr-1609"
+    target: "हॉकी"
+    reading: "hôki"
+    ipa: "ɦɔki"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "हॉकी", reading: "hôki" }] }
+    examples:
+      - { target: "हॉकी स्टिक कुठे आहे?", reading: "hôki sṭik kuṭhe āhe?", ipa: "ɦɔki sʈik kuʈʰe aɦe", bases: [{ word: "स्टिक", base: "स्टिक", reading: "sṭik" }, { word: "कुठे", base: "कुठे", reading: "kuṭhe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "तो हॉकी खेळतो.", reading: "to hôki kheḷto.", ipa: "t̪o ɦɔki kʰeɭt̪o", bases: [{ word: "खेळतो", ref: "mr-0725" }] }
+  - id: "mr-1610"
+    target: "बॅडमिंटन"
+    reading: "bêḍmiṇṭan"
+    ipa: "bæɖmiɳʈən"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बॅडमिंटन", reading: "bêḍmiṇṭan" }] }
+    examples:
+      - { target: "बॅडमिंटन कोर्ट मोकळं आहे.", reading: "bêḍmiṇṭan korṭ mokḷam̐ āhe.", ipa: "bæɖmiɳʈən korʈ mokɭə̃ aɦe", bases: [{ word: "मोकळं", base: "मोकळा", reading: "mokḷā" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "कोर्ट", base: "कोर्ट", reading: "korṭ" }] }
+      - { target: "बहिणीने बॅडमिंटनमध्ये पदक जिंकलं.", reading: "bahiṇine bêḍmiṇṭanmadhye padak jiṅkalam̐.", ipa: "bəɦiɳine bæɖmiɳʈənməd̪ʱje pəd̪ək dʒiŋkələ̃", bases: [{ word: "बहिणीने", ref: "mr-0221" }, { word: "बॅडमिंटनमध्ये", base: "बॅडमिंटन", reading: "bêḍmiṇṭan" }, { word: "पदक", ref: "mr-1623" }, { word: "जिंकलं", ref: "mr-1142" }] }
+  - id: "mr-1611"
+    target: "टेनिस"
+    reading: "ṭenis"
+    ipa: "ʈenis"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "टेनिस", reading: "ṭenis" }] }
+    examples:
+      - { target: "टेनिस खेळायला आवडतं.", reading: "ṭenis kheḷāylā āvḍtam̐.", ipa: "ʈenis kʰeɭajla aʋɖt̪ə̃", bases: [{ word: "खेळायला", ref: "mr-0725" }, { word: "आवडतं", ref: "mr-0585" }] }
+      - { target: "टेनिसचा बॉल कुठे आहे?", reading: "ṭeniscā bôl kuṭhe āhe?", ipa: "ʈenistsa bɔl kuʈʰe aɦe", bases: [{ word: "टेनिसचा", base: "टेनिस", reading: "ṭenis" }, { word: "बॉल", ref: "mr-1618" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1612"
+    target: "संघ"
+    reading: "saṅgh"
+    ipa: "səŋɡʱ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "संघ", reading: "saṅgh" }] }
+    examples:
+      - { target: "आमचा संघ जिंकला.", reading: "āmcā saṅgh jiṅkalā.", ipa: "amtsa səŋɡʱ dʒiŋkəla", bases: [{ word: "आमचा", ref: "mr-0138" }, { word: "जिंकला", ref: "mr-1142" }] }
+      - { target: "संघात अकरा खेळाडू असतात.", reading: "saṅghāt akrā kheḷāḍu astāt.", ipa: "səŋɡʱat̪ əkra kʰeɭaɖu əst̪at̪", bases: [{ word: "संघात", base: "संघ", reading: "saṅgh" }, { word: "अकरा", ref: "mr-0262" }, { word: "खेळाडू", ref: "mr-1473" }, { word: "असतात", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1613"
+    target: "कर्णधार"
+    reading: "karṇadhār"
+    ipa: "kərɳəd̪ʱar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कर्णधार", reading: "karṇadhār" }] }
+    examples:
+      - { target: "कर्णधार नाणेफेक जिंकला.", reading: "karṇadhār nāṇephek jiṅkalā.", ipa: "kərɳəd̪ʱar naɳepʰek dʒiŋkəla", bases: [{ word: "नाणेफेक", base: "नाणेफेक", reading: "nāṇephek" }, { word: "जिंकला", ref: "mr-1142" }] }
+      - { target: "कर्णधारानं चांगला खेळ केला.", reading: "karṇadhārānam̐ cāṅgalā kheḷ kelā.", ipa: "kərɳəd̪ʱaranə̃ tsaŋɡəla kʰeɭ kela", bases: [{ word: "कर्णधारानं", base: "कर्णधार", reading: "karṇadhār" }, { word: "चांगला", ref: "mr-0759" }, { word: "खेळ", base: "खेळ", reading: "kheḷ" }, { word: "केला", ref: "mr-0712" }] }
+  - id: "mr-1614"
+    target: "प्रशिक्षक"
+    reading: "praśikṣak"
+    ipa: "prəʃikʂək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रशिक्षक", reading: "praśikṣak" }] }
+    examples:
+      - { target: "प्रशिक्षक खेळाडूंना शिकवतात.", reading: "praśikṣak kheḷāḍunnā śikvtāt.", ipa: "prəʃikʂək kʰeɭaɖunna ʃikʋt̪at̪", bases: [{ word: "खेळाडूंना", ref: "mr-1473" }, { word: "शिकवतात", ref: "mr-0718" }] }
+      - { target: "प्रशिक्षकाचा सल्ला ऐका.", reading: "praśikṣakācā sallā aikā.", ipa: "prəʃikʂəkatsa səlla əika", bases: [{ word: "प्रशिक्षकाचा", base: "प्रशिक्षक", reading: "praśikṣak" }, { word: "सल्ला", ref: "mr-1378" }, { word: "ऐका", ref: "mr-0715" }] }
+  - id: "mr-1615"
+    target: "सामना"
+    reading: "sāmnā"
+    ipa: "samna"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सामना", reading: "sāmnā" }] }
+    examples:
+      - { target: "सामना उद्या आहे.", reading: "sāmnā udyā āhe.", ipa: "samna ud̪ja aɦe", bases: [{ word: "उद्या", ref: "mr-0475" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सामना पाहायला गेलो.", reading: "sāmnā pāhāylā gelo.", ipa: "samna paɦajla ɡelo", bases: [{ word: "पाहायला", ref: "mr-0714" }, { word: "गेलो", ref: "mr-0710" }] }
+  - id: "mr-1616"
+    target: "गोल"
+    reading: "gol"
+    ipa: "ɡol"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गोल", reading: "gol" }] }
+    examples:
+      - { target: "त्याने दोन गोल केले.", reading: "tyāne don gol kele.", ipa: "t̪jane d̪on ɡol kele", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "केले", ref: "mr-0712" }] }
+      - { target: "शेवटच्या मिनिटाला गोल झाला.", reading: "śevṭacyā miniṭālā gol jhālā.", ipa: "ʃeʋʈətʃja miniʈala ɡol dzʱala", bases: [{ word: "शेवटच्या", base: "शेवटचा", reading: "śevṭcā" }, { word: "मिनिटाला", ref: "mr-0483" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1617"
+    target: "धाव"
+    reading: "dhāv"
+    ipa: "d̪ʱaʋ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "धाव", reading: "dhāv" }] }
+    examples:
+      - { target: "त्याने शंभर धावा केल्या.", reading: "tyāne śambhar dhāvā kelyā.", ipa: "t̪jane ʃəmbʱər d̪ʱaʋa kelja", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "शंभर", ref: "mr-0279" }, { word: "केल्या", ref: "mr-0712" }, { word: "धावा", base: "धाव", reading: "dhāv" }] }
+      - { target: "चौकाराने चार धावा मिळाल्या.", reading: "caukārāne cār dhāvā miḷālyā.", ipa: "tsəukarane tsar d̪ʱaʋa miɭalja", bases: [{ word: "चौकाराने", base: "चौकार", reading: "caukār" }, { word: "मिळाल्या", base: "मिळणे", reading: "miḷṇe" }, { word: "धावा", base: "धाव", reading: "dhāv" }] }
+  - id: "mr-1618"
+    target: "बॉल"
+    reading: "bôl"
+    ipa: "bɔl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बॉल", reading: "bôl" }] }
+    examples:
+      - { target: "बॉल जोरात मारला.", reading: "bôl jorāt mārlā.", ipa: "bɔl dzorat̪ marla", bases: [{ word: "जोरात", base: "जोरात", reading: "jorāt" }, { word: "मारला", base: "मारणे", reading: "mārṇe" }] }
+      - { target: "बॉल मैदानाबाहेर गेला.", reading: "bôl maidānābāher gelā.", ipa: "bɔl məid̪anabaɦer ɡela", bases: [{ word: "मैदानाबाहेर", ref: "mr-0980" }, { word: "गेला", ref: "mr-0710" }] }
+  - id: "mr-1619"
+    target: "बॅट"
+    reading: "bêṭ"
+    ipa: "bæʈ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बॅट", reading: "bêṭ" }] }
+    examples:
+      - { target: "नवीन बॅट आणली.", reading: "navin bêṭ āṇli.", ipa: "nəʋin bæʈ aɳli", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "आणली", ref: "mr-0800" }] }
+      - { target: "बॅट घेऊन ये.", reading: "bêṭ gheun ye.", ipa: "bæʈ ɡʱeun je", bases: [{ word: "घेऊन", ref: "mr-0722" }, { word: "ये", ref: "mr-0711" }] }
+  - id: "mr-1620"
+    target: "विजेता"
+    reading: "vijetā"
+    ipa: "ʋidʒet̪a"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विजेता", reading: "vijetā" }] }
+    examples:
+      - { target: "विजेत्याला पदक मिळालं.", reading: "vijetyālā padak miḷālam̐.", ipa: "ʋidʒet̪jala pəd̪ək miɭalə̃", bases: [{ word: "विजेत्याला", base: "विजेता", reading: "vijetā" }, { word: "पदक", ref: "mr-1623" }, { word: "मिळालं", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "ती राज्यस्तरावरची विजेती आहे.", reading: "ti rājyastarāvrci vijeti āhe.", ipa: "t̪i radʒjəst̪əraʋrtʃi ʋidʒet̪i aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "राज्यस्तरावरची", base: "राज्यस्तर", reading: "rājyastar" }, { word: "विजेती", base: "विजेता", reading: "vijetā" }] }
+  - id: "mr-1621"
+    target: "पराभव"
+    reading: "parābhav"
+    ipa: "pərabʱəʋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पराभव", reading: "parābhav" }] }
+    examples:
+      - { target: "आमचा पराभव झाला.", reading: "āmcā parābhav jhālā.", ipa: "amtsa pərabʱəʋ dzʱala", bases: [{ word: "आमचा", ref: "mr-0138" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "पराभवातून शिका.", reading: "parābhvātun śikā.", ipa: "pərabʱʋat̪un ʃika", bases: [{ word: "पराभवातून", base: "पराभव", reading: "parābhav" }, { word: "शिका", ref: "mr-0717" }] }
+  - id: "mr-1622"
+    target: "विजय"
+    reading: "vijay"
+    ipa: "ʋidzəj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विजय", reading: "vijay" }] }
+    examples:
+      - { target: "हा मोठा विजय आहे.", reading: "hā moṭhā vijay āhe.", ipa: "ɦa moʈʰa ʋidzəj aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "मोठा", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "विजयाचा आनंद साजरा केला.", reading: "vijyācā ānand sājrā kelā.", ipa: "ʋidzjatsa anənd̪ sadzra kela", bases: [{ word: "विजयाचा", base: "विजय", reading: "vijay" }, { word: "आनंद", ref: "mr-1054" }, { word: "साजरा", ref: "mr-1063" }, { word: "केला", ref: "mr-0712" }] }
+  - id: "mr-1623"
+    target: "पदक"
+    reading: "padak"
+    ipa: "pəd̪ək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पदक", reading: "padak" }] }
+    examples:
+      - { target: "सुवर्णपदक मिळालं.", reading: "suvarṇapdak miḷālam̐.", ipa: "suʋərɳəpd̪ək miɭalə̃", bases: [{ word: "मिळालं", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "पदक घेण्यासाठी मंचावर गेला.", reading: "padak gheṇyāsāṭhi mañcāvar gelā.", ipa: "pəd̪ək ɡʱeɳjasaʈʰi məɲtsaʋər ɡela", bases: [{ word: "घेण्यासाठी", ref: "mr-0722" }, { word: "मंचावर", base: "मंच", reading: "mañc" }, { word: "गेला", ref: "mr-0710" }] }
+  - id: "mr-1624"
+    target: "सुवर्णपदक"
+    reading: "suvarṇapdak"
+    ipa: "suʋərɳəpd̪ək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सुवर्णपदक", reading: "suvarṇapdak" }] }
+    examples:
+      - { target: "तिला सुवर्णपदक मिळालं.", reading: "tilā suvarṇapdak miḷālam̐.", ipa: "t̪ila suʋərɳəpd̪ək miɭalə̃", bases: [{ word: "तिला", ref: "mr-0677" }, { word: "मिळालं", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "सुवर्णपदक जिंकणं सोपं नाही.", reading: "suvarṇapdak jiṅkaṇam̐ sopam̐ nāhi.", ipa: "suʋərɳəpd̪ək dʒiŋkəɳə̃ sopə̃ naɦi", bases: [{ word: "जिंकणं", ref: "mr-1142" }, { word: "सोपं", ref: "mr-0768" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+  - id: "mr-1625"
+    target: "सराव करणे"
+    reading: "sarāv karṇe"
+    ipa: "səraʋ kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सराव करणे", reading: "sarāv karṇe" }] }
+    examples:
+      - { target: "रोज सकाळी सराव करतो.", reading: "roj sakāḷi sarāv karto.", ipa: "rodz səkaɭi səraʋ kərt̪o", bases: [{ word: "सकाळी", ref: "mr-0477" }, { word: "करतो", ref: "mr-0712" }] }
+      - { target: "पुढच्या सामन्यासाठी सराव करा.", reading: "puḍhacyā sāmanyāsāṭhi sarāv karā.", ipa: "puɖʱətʃja samənjasaʈʰi səraʋ kəra", bases: [{ word: "पुढच्या", base: "पुढचा", reading: "puḍhcā" }, { word: "सामन्यासाठी", ref: "mr-1615" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1626"
+    target: "झेलणे"
+    reading: "jhelṇe"
+    ipa: "dʒʱelɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "झेलणे", reading: "jhelṇe" }] }
+    examples:
+      - { target: "त्याने चेंडू झेलला.", reading: "tyāne ceṇḍu jhellā.", ipa: "t̪jane tʃeɳɖu dʒʱella", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "झेलला", base: "झेलणे", reading: "jhelṇe" }, { word: "चेंडू", base: "चेंडू", reading: "ceṇḍu" }] }
+      - { target: "कर्णधाराने झेल सोडला.", reading: "karṇadhārāne jhel soḍlā.", ipa: "kərɳəd̪ʱarane dʒʱel soɖla", bases: [{ word: "कर्णधाराने", ref: "mr-1613" }, { word: "झेल", base: "झेल", reading: "jhel" }, { word: "सोडला", ref: "mr-1180" }] }
+  - id: "mr-1627"
+    target: "फेकणे"
+    reading: "phekṇe"
+    ipa: "pʰekɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फेकणे", reading: "phekṇe" }] }
+    examples:
+      - { target: "बॉल जोरात फेका.", reading: "bôl jorāt phekā.", ipa: "bɔl dzorat̪ pʰeka", bases: [{ word: "जोरात", base: "जोरात", reading: "jorāt" }, { word: "फेका", base: "फेकणे", reading: "phekṇe" }] }
+      - { target: "त्याने दगड फेकला.", reading: "tyāne dagaḍ pheklā.", ipa: "t̪jane d̪əɡəɖ pʰekla", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "दगड", base: "दगड", reading: "dagaḍ" }, { word: "फेकला", base: "फेकणे", reading: "phekṇe" }] }

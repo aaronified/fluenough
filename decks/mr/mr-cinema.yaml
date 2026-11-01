@@ -1,0 +1,262 @@
+schema: 1
+id: "mr-cinema"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "cinema"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1522"
+    target: "चित्रपट"
+    reading: "citrapaṭ"
+    ipa: "tʃit̪rəpəʈ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "चित्रपट", reading: "citrapaṭ" }] }
+    examples:
+      - { target: "हा चित्रपट खूप आवडला.", reading: "hā citrapaṭ khup āvḍlā.", ipa: "ɦa tʃit̪rəpəʈ kʰup aʋɖla", bases: [{ word: "हा", ref: "mr-0679" }, { word: "आवडला", ref: "mr-0585" }] }
+      - { target: "नवीन चित्रपट कधी येतो?", reading: "navin citrapaṭ kadhi yeto?", ipa: "nəʋin tʃit̪rəpəʈ kəd̪ʱi jet̪o", bases: [{ word: "नवीन", base: "नवा", reading: "navā" }, { word: "येतो", ref: "mr-0711" }] }
+  - id: "mr-1523"
+    target: "सिनेमागृह"
+    reading: "sinemāgruh"
+    ipa: "sinemaɡruɦ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सिनेमागृह", reading: "sinemāgruh" }] }
+    examples:
+      - { target: "सिनेमागृह मोठं आहे.", reading: "sinemāgruh moṭham̐ āhe.", ipa: "sinemaɡruɦ moʈʰə̃ aɦe", bases: [{ word: "मोठं", ref: "mr-0760" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सिनेमागृहात खूप गर्दी होती.", reading: "sinemāgruhāt khup gardi hoti.", ipa: "sinemaɡruɦat̪ kʰup ɡərd̪i ɦot̪i", bases: [{ word: "सिनेमागृहात", base: "सिनेमागृह", reading: "sinemāgruh" }, { word: "गर्दी", base: "गर्दी", reading: "gardi" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1524"
+    target: "नाटक"
+    reading: "nāṭak"
+    ipa: "naʈək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नाटक", reading: "nāṭak" }] }
+    examples:
+      - { target: "आम्ही नाटक पाहिलं.", reading: "āmhi nāṭak pāhilam̐.", ipa: "amɦi naʈək paɦilə̃", bases: [{ word: "पाहिलं", ref: "mr-0714" }] }
+      - { target: "नाटक रंगभूमीवर सादर झालं.", reading: "nāṭak raṅgabhumivar sādar jhālam̐.", ipa: "naʈək rəŋɡəbʱumiʋər sad̪ər dzʱalə̃", bases: [{ word: "रंगभूमीवर", base: "रंगभूमी", reading: "raṅgabhumi" }, { word: "सादर", base: "सादर", reading: "sādar" }, { word: "झालं", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1525"
+    target: "अभिनेता"
+    reading: "abhinetā"
+    ipa: "əbʱinet̪a"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अभिनेता", reading: "abhinetā" }] }
+    examples:
+      - { target: "तो चांगला अभिनेता आहे.", reading: "to cāṅgalā abhinetā āhe.", ipa: "t̪o tsaŋɡəla əbʱinet̪a aɦe", bases: [{ word: "चांगला", ref: "mr-0759" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "अभिनेत्याने चांगलं काम केलं.", reading: "abhinetyāne cāṅgalam̐ kām kelam̐.", ipa: "əbʱinet̪jane tsaŋɡələ̃ kam kelə̃", bases: [{ word: "अभिनेत्याने", base: "अभिनेता", reading: "abhinetā" }, { word: "चांगलं", ref: "mr-0759" }, { word: "काम", ref: "mr-0234" }, { word: "केलं", ref: "mr-0712" }] }
+  - id: "mr-1526"
+    target: "अभिनेत्री"
+    reading: "abhinetri"
+    ipa: "əbʱinet̪ri"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अभिनेत्री", reading: "abhinetri" }] }
+    examples:
+      - { target: "ती प्रसिद्ध अभिनेत्री आहे.", reading: "ti prasiddh abhinetri āhe.", ipa: "t̪i prəsid̪d̪ʱ əbʱinet̪ri aɦe", bases: [{ word: "प्रसिद्ध", base: "प्रसिद्ध", reading: "prasiddh" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "अभिनेत्रीचा अभिनय सुंदर होता.", reading: "abhinetricā abhinay sundar hotā.", ipa: "əbʱinet̪ritsa əbʱinəj sund̪ər ɦot̪a", bases: [{ word: "अभिनेत्रीचा", base: "अभिनेत्री", reading: "abhinetri" }, { word: "अभिनय", ref: "mr-1542" }, { word: "सुंदर", ref: "mr-0770" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1527"
+    target: "दिग्दर्शक"
+    reading: "digdarśak"
+    ipa: "d̪iɡd̪ərʃək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "दिग्दर्शक", reading: "digdarśak" }] }
+    examples:
+      - { target: "दिग्दर्शकाने नवीन चित्रपट बनवला.", reading: "digdarśakāne navin citrapaṭ banvlā.", ipa: "d̪iɡd̪ərʃəkane nəʋin tʃit̪rəpəʈ bənʋla", bases: [{ word: "दिग्दर्शकाने", base: "दिग्दर्शक", reading: "digdarśak" }, { word: "नवीन", base: "नवा", reading: "navā" }, { word: "बनवला", ref: "mr-0801" }] }
+      - { target: "दिग्दर्शक मुलाखत देत होते.", reading: "digdarśak mulākhat det hote.", ipa: "d̪iɡd̪ərʃək mulakʰət̪ d̪et̪ ɦot̪e", bases: [{ word: "मुलाखत", ref: "mr-1265" }, { word: "देत", ref: "mr-0721" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1528"
+    target: "कथा"
+    reading: "kathā"
+    ipa: "kət̪ʰa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कथा", reading: "kathā" }] }
+    examples:
+      - { target: "या चित्रपटाची कथा सुंदर आहे.", reading: "yā citrapṭāci kathā sundar āhe.", ipa: "ja tʃit̪rəpʈatʃi kət̪ʰa sund̪ər aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "चित्रपटाची", ref: "mr-1522" }, { word: "सुंदर", ref: "mr-0770" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "आजी रोज कथा सांगते.", reading: "āji roj kathā sāṅgate.", ipa: "adʒi rodz kət̪ʰa saŋɡət̪e", bases: [{ word: "सांगते", ref: "mr-0720" }] }
+  - id: "mr-1529"
+    target: "कथानक"
+    reading: "kathānak"
+    ipa: "kət̪ʰanək"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कथानक", reading: "kathānak" }] }
+    examples:
+      - { target: "कथानक थोडं कंटाळवाणं होतं.", reading: "kathānak thoḍam̐ kaṇṭāḷvāṇam̐ hotam̐.", ipa: "kət̪ʰanək t̪ʰoɖə̃ kəɳʈaɭʋaɳə̃ ɦot̪ə̃", bases: [{ word: "कंटाळवाणं", base: "कंटाळवाणं", reading: "kaṇṭāḷvāṇam̐" }, { word: "होतं", base: "होणे", reading: "hoṇe" }, { word: "थोडं", base: "थोडा", reading: "thoḍā" }] }
+      - { target: "कथानक अचानक बदललं.", reading: "kathānak acānak badllam̐.", ipa: "kət̪ʰanək ətsanək bəd̪llə̃", bases: [{ word: "बदललं", ref: "mr-1078" }, { word: "अचानक", base: "अचानक", reading: "acānak" }] }
+  - id: "mr-1530"
+    target: "नायक"
+    reading: "nāyak"
+    ipa: "najək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नायक", reading: "nāyak" }] }
+    examples:
+      - { target: "चित्रपटाचा नायक खूप देखणा आहे.", reading: "citrapṭācā nāyak khup dekhṇā āhe.", ipa: "tʃit̪rəpʈatsa najək kʰup d̪ekʰɳa aɦe", bases: [{ word: "चित्रपटाचा", ref: "mr-1522" }, { word: "देखणा", base: "देखणा", reading: "dekhṇā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "नायकाचा डायलॉग गाजला.", reading: "nāykācā ḍāylôg gājlā.", ipa: "najkatsa ɖajlɔɡ ɡadzla", bases: [{ word: "नायकाचा", base: "नायक", reading: "nāyak" }, { word: "डायलॉग", base: "डायलॉग", reading: "ḍāylôg" }, { word: "गाजला", base: "गाजणे", reading: "gājṇe" }] }
+  - id: "mr-1531"
+    target: "खलनायक"
+    reading: "khalnāyak"
+    ipa: "kʰəlnajək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खलनायक", reading: "khalnāyak" }] }
+    examples:
+      - { target: "खलनायकाला सगळे घाबरतात.", reading: "khalnāykālā sagḷe ghābrtāt.", ipa: "kʰəlnajkala səɡɭe ɡʱabrt̪at̪", bases: [{ word: "खलनायकाला", base: "खलनायक", reading: "khalnāyak" }, { word: "सगळे", ref: "mr-0684" }, { word: "घाबरतात", ref: "mr-1334" }] }
+      - { target: "तो या चित्रपटात खलनायक आहे.", reading: "to yā citrapṭāt khalnāyak āhe.", ipa: "t̪o ja tʃit̪rəpʈat̪ kʰəlnajək aɦe", bases: [{ word: "या", ref: "mr-0679" }, { word: "चित्रपटात", ref: "mr-1522" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1532"
+    target: "विनोदी"
+    reading: "vinodi"
+    ipa: "ʋinod̪i"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विनोदी", reading: "vinodi" }] }
+    examples:
+      - { target: "हा विनोदी चित्रपट आहे.", reading: "hā vinodi citrapaṭ āhe.", ipa: "ɦa ʋinod̪i tʃit̪rəpəʈ aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "त्याचा विनोदी स्वभाव आवडतो.", reading: "tyācā vinodi svabhāv āvḍto.", ipa: "t̪jatsa ʋinod̪i sʋəbʱaʋ aʋɖt̪o", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "स्वभाव", base: "स्वभाव", reading: "svabhāv" }, { word: "आवडतो", ref: "mr-0585" }] }
+  - id: "mr-1533"
+    target: "रोमँटिक"
+    reading: "romam̐ṭik"
+    ipa: "romə̃ʈik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "रोमँटिक", reading: "romam̐ṭik" }] }
+    examples:
+      - { target: "हा रोमँटिक सिनेमा आहे.", reading: "hā romam̐ṭik sinemā āhe.", ipa: "ɦa romə̃ʈik sinema aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "गाणी फार रोमँटिक होती.", reading: "gāṇi phār romam̐ṭik hoti.", ipa: "ɡaɳi pʰar romə̃ʈik ɦot̪i", bases: [{ word: "गाणी", ref: "mr-1535" }, { word: "होती", base: "होणे", reading: "hoṇe" }, { word: "फार", base: "फार", reading: "phār" }] }
+  - id: "mr-1534"
+    target: "भयपट"
+    reading: "bhaypaṭ"
+    ipa: "bʱəjpəʈ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "भयपट", reading: "bhaypaṭ" }] }
+    examples:
+      - { target: "भयपट बघायला मला भीती वाटते.", reading: "bhaypaṭ baghāylā malā bhiti vāṭte.", ipa: "bʱəjpəʈ bəɡʱajla məla bʱit̪i ʋaʈt̪e", bases: [{ word: "बघायला", base: "बघणे", reading: "baghṇe" }, { word: "मला", ref: "mr-0080" }, { word: "भीती", ref: "mr-1318" }, { word: "वाटते", base: "वाटणे", reading: "vāṭṇe" }] }
+      - { target: "भयपट रात्री पाहिला.", reading: "bhaypaṭ rātri pāhilā.", ipa: "bʱəjpəʈ rat̪ri paɦila", bases: [{ word: "रात्री", ref: "mr-0480" }, { word: "पाहिला", ref: "mr-0714" }] }
+  - id: "mr-1535"
+    target: "गाणं"
+    reading: "gāṇam̐"
+    ipa: "ɡaɳə̃"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गाणं", reading: "gāṇam̐" }] }
+    examples:
+      - { target: "हे गाणं खूप गोड आहे.", reading: "he gāṇam̐ khup goḍ āhe.", ipa: "ɦe ɡaɳə̃ kʰup ɡoɖ aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "गोड", ref: "mr-0566" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "गाणं ऐकत होतो.", reading: "gāṇam̐ aikat hoto.", ipa: "ɡaɳə̃ əikət̪ ɦot̪o", bases: [{ word: "ऐकत", ref: "mr-0715" }, { word: "होतो", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1536"
+    target: "संगीतकार"
+    reading: "saṅgitkār"
+    ipa: "səŋɡit̪kar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "संगीतकार", reading: "saṅgitkār" }] }
+    examples:
+      - { target: "संगीतकाराने सुंदर चाल दिली.", reading: "saṅgitkārāne sundar cāl dili.", ipa: "səŋɡit̪karane sund̪ər tsal d̪ili", bases: [{ word: "संगीतकाराने", base: "संगीतकार", reading: "saṅgitkār" }, { word: "सुंदर", ref: "mr-0770" }, { word: "चाल", base: "चाल", reading: "cāl" }, { word: "दिली", ref: "mr-0721" }] }
+      - { target: "हे गाणं कोणी संगीतबद्ध केलं?", reading: "he gāṇam̐ koṇi saṅgitbaddh kelam̐?", ipa: "ɦe ɡaɳə̃ koɳi səŋɡit̪bəd̪d̪ʱ kelə̃", bases: [{ word: "हे", ref: "mr-0679" }, { word: "केलं", ref: "mr-0712" }, { word: "संगीतबद्ध", base: "संगीतबद्ध", reading: "saṅgitbaddh" }] }
+  - id: "mr-1537"
+    target: "पार्श्वगायक"
+    reading: "pārśvagāyak"
+    ipa: "parʃʋəɡajək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पार्श्वगायक", reading: "pārśvagāyak" }] }
+    examples:
+      - { target: "पार्श्वगायकाने गाणं गायलं.", reading: "pārśvagāykāne gāṇam̐ gāylam̐.", ipa: "parʃʋəɡajkane ɡaɳə̃ ɡajlə̃", bases: [{ word: "पार्श्वगायकाने", base: "पार्श्वगायक", reading: "pārśvagāyak" }, { word: "गाणं", ref: "mr-1535" }, { word: "गायलं", base: "गाणे", reading: "gāṇe" }] }
+      - { target: "हा पार्श्वगायक खूप लोकप्रिय आहे.", reading: "hā pārśvagāyak khup lokapriy āhe.", ipa: "ɦa parʃʋəɡajək kʰup lokəprij aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "लोकप्रिय", base: "लोकप्रिय", reading: "lokapriy" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1538"
+    target: "पडदा"
+    reading: "paḍdā"
+    ipa: "pəɖd̪a"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पडदा", reading: "paḍdā" }] }
+    examples:
+      - { target: "पडद्यावर चित्रपट दिसतो.", reading: "paḍadyāvar citrapaṭ disto.", ipa: "pəɖəd̪jaʋər tʃit̪rəpəʈ d̪ist̪o", bases: [{ word: "पडद्यावर", base: "पडदा", reading: "paḍdā" }, { word: "दिसतो", base: "दिसणे", reading: "disṇe" }] }
+      - { target: "पडदा उघडला.", reading: "paḍdā ughḍlā.", ipa: "pəɖd̪a uɡʱɖla", bases: [{ word: "उघडला", ref: "mr-0724" }] }
+  - id: "mr-1539"
+    target: "प्रेक्षक"
+    reading: "prekṣak"
+    ipa: "prekʂək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रेक्षक", reading: "prekṣak" }] }
+    examples:
+      - { target: "प्रेक्षकांनी टाळ्या वाजवल्या.", reading: "prekṣakānni ṭāḷyā vājvalyā.", ipa: "prekʂəkanni ʈaɭja ʋadzʋəlja", bases: [{ word: "प्रेक्षकांनी", base: "प्रेक्षक", reading: "prekṣak" }, { word: "टाळ्या", base: "टाळी", reading: "ṭāḷi" }, { word: "वाजवल्या", base: "वाजवणे", reading: "vājvṇe" }] }
+      - { target: "प्रेक्षक हसत होते.", reading: "prekṣak hasat hote.", ipa: "prekʂək ɦəsət̪ ɦot̪e", bases: [{ word: "हसत", ref: "mr-1338" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1540"
+    target: "संवाद"
+    reading: "saṁvād"
+    ipa: "sə̃ʋad̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "संवाद", reading: "saṁvād" }] }
+    examples:
+      - { target: "संवाद खूप मजेदार होते.", reading: "saṁvād khup majedār hote.", ipa: "sə̃ʋad̪ kʰup mədʒed̪ar ɦot̪e", bases: [{ word: "मजेदार", base: "मजेदार", reading: "majedār" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+      - { target: "त्या संवादाची चर्चा झाली.", reading: "tyā saṁvādāci carcā jhāli.", ipa: "t̪ja sə̃ʋad̪atʃi tsərtsa dzʱali", bases: [{ word: "त्या", ref: "mr-0676" }, { word: "संवादाची", base: "संवाद", reading: "saṁvād" }, { word: "चर्चा", base: "चर्चा", reading: "carcā" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1541"
+    target: "मालिका"
+    reading: "mālikā"
+    ipa: "malika"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मालिका", reading: "mālikā" }] }
+    examples:
+      - { target: "ही मालिका रोज रात्री असते.", reading: "hi mālikā roj rātri aste.", ipa: "ɦi malika rodz rat̪ri əst̪e", bases: [{ word: "ही", ref: "mr-0679" }, { word: "रात्री", ref: "mr-0480" }, { word: "असते", base: "असणे", reading: "asṇe" }] }
+      - { target: "मालिका पाहत बसलो.", reading: "mālikā pāhat baslo.", ipa: "malika paɦət̪ bəslo", bases: [{ word: "पाहत", ref: "mr-0714" }, { word: "बसलो", base: "बसणे", reading: "basṇe" }] }
+  - id: "mr-1542"
+    target: "अभिनय"
+    reading: "abhinay"
+    ipa: "əbʱinəj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अभिनय", reading: "abhinay" }] }
+    examples:
+      - { target: "त्याचा अभिनय चांगला होता.", reading: "tyācā abhinay cāṅgalā hotā.", ipa: "t̪jatsa əbʱinəj tsaŋɡəla ɦot̪a", bases: [{ word: "त्याचा", ref: "mr-0676" }, { word: "चांगला", ref: "mr-0759" }, { word: "होता", base: "होणे", reading: "hoṇe" }] }
+      - { target: "अभिनयाचा सराव करतो.", reading: "abhinyācā sarāv karto.", ipa: "əbʱinjatsa səraʋ kərt̪o", bases: [{ word: "अभिनयाचा", base: "अभिनय", reading: "abhinay" }, { word: "सराव", ref: "mr-1140" }, { word: "करतो", ref: "mr-0712" }] }
+  - id: "mr-1543"
+    target: "अभिनय करणे"
+    reading: "abhinay karṇe"
+    ipa: "əbʱinəj kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अभिनय करणे", reading: "abhinay karṇe" }] }
+    examples:
+      - { target: "ती नाटकात अभिनय करते.", reading: "ti nāṭkāt abhinay karte.", ipa: "t̪i naʈkat̪ əbʱinəj kərt̪e", bases: [{ word: "नाटकात", ref: "mr-1524" }, { word: "करते", ref: "mr-0712" }] }
+      - { target: "त्याने चित्रपटात अभिनय केला.", reading: "tyāne citrapṭāt abhinay kelā.", ipa: "t̪jane tʃit̪rəpʈat̪ əbʱinəj kela", bases: [{ word: "चित्रपटात", ref: "mr-1522" }, { word: "केला", ref: "mr-0712" }, { word: "त्याने", ref: "mr-0676" }] }
+  - id: "mr-1544"
+    target: "प्रदर्शित करणे"
+    reading: "pradarśit karṇe"
+    ipa: "prəd̪ərʃit̪ kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रदर्शित करणे", reading: "pradarśit karṇe" }] }
+    bases:
+      - { word: "प्रदर्शित", base: "प्रदर्शित", reading: "pradarśit" }
+    examples:
+      - { target: "हा चित्रपट उद्या प्रदर्शित होणार आहे.", reading: "hā citrapaṭ udyā pradarśit hoṇār āhe.", ipa: "ɦa tʃit̪rəpəʈ ud̪ja prəd̪ərʃit̪ ɦoɳar aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "होणार", base: "होणे", reading: "hoṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "प्रदर्शित", base: "प्रदर्शित", reading: "pradarśit" }] }
+      - { target: "त्यांनी नवा चित्रपट प्रदर्शित केला.", reading: "tyānni navā citrapaṭ pradarśit kelā.", ipa: "t̪janni nəʋa tʃit̪rəpəʈ prəd̪ərʃit̪ kela", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "नवा", base: "नवा", reading: "navā" }, { word: "केला", ref: "mr-0712" }, { word: "प्रदर्शित", base: "प्रदर्शित", reading: "pradarśit" }] }

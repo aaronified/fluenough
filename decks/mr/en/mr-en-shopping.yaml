@@ -1,0 +1,173 @@
+schema: 1
+id: "mr-en-shopping"
+kind: "layer"
+core: "mr-shopping"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Shopping"
+description: "Buying things, asking the price, bargaining, paying and returning an item: the words a shopper and a seller use. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1067":
+    native: "shopping, a purchase"
+    notes:
+      "n1": "{1} is shopping or a purchase. Shopping is खरेदी करणे (kharedī karṇe), to buy."
+    examples:
+      "आज खरेदीला जाऊ.": { native: "Let's go shopping today.", bases: { "खरेदीला": "shopping, a purchase" } }
+      "खरेदी छान झाली.": { native: "The shopping went well.", bases: { "झाली": "to become" } }
+  "mr-1068":
+    native: "discount"
+    notes:
+      "n1": "{1} is a discount: the price taken off."
+    examples:
+      "सवलत किती आहे?": { native: "How much is the discount?", bases: { "आहे": "to be" } }
+      "पंधरा टक्के सवलत आहे.": { native: "There is a fifteen percent discount.", bases: { "आहे": "to be", "टक्के": "percent" } }
+  "mr-1069":
+    native: "receipt"
+    notes:
+      "n1": "{1} is a receipt: the paper that shows you paid."
+    examples:
+      "पावती घ्या.": "Take the receipt."
+      "पावतीवर तारीख आहे.": { native: "The receipt has the date on it.", bases: { "आहे": "to be", "पावतीवर": "receipt" } }
+  "mr-1070":
+    native: "customer"
+    notes:
+      "n1": "{1} is a customer, the person who buys."
+    examples:
+      "ग्राहक दुकानात आले.": "Customers came into the shop."
+      "ग्राहकाला मदत करा.": { native: "Help the customer.", bases: { "ग्राहकाला": "customer" } }
+  "mr-1071":
+    native: "seller"
+    notes:
+      "n1": "{1} is a seller. The feminine is विक्रेती (vikretī)."
+    examples:
+      "विक्रेता हसला.": { native: "The seller smiled.", bases: { "हसला": "to smile" } }
+      "विक्रेत्याकडे फळं आहेत.": { native: "The seller has fruit.", bases: { "आहेत": "to be", "विक्रेत्याकडे": "seller" } }
+  "mr-1072":
+    native: "bargaining"
+    notes:
+      "n1": "{1} is bargaining over a price, a common shopping habit."
+    examples:
+      "इथे घासाघीस करता येते.": "Here you can bargain."
+      "घासाघीस केली तर स्वस्त होईल.": { native: "If we bargain it will become cheap.", bases: { "होईल": "to become" } }
+  "mr-1073":
+    native: "offer"
+    notes:
+      "n1": "{1} is an offer, a loanword from English."
+    examples:
+      "आज एक ऑफर आहे.": { native: "There is an offer today.", bases: { "आहे": "to be" } }
+      "ऑफर संपली.": { native: "The offer has ended.", bases: { "संपली": "to end" } }
+  "mr-1074":
+    native: "to return (an item)"
+    notes:
+      "n1": "{1} is used for giving back an item you bought."
+    bases:
+      "परत": "back"
+    examples:
+      "हा शर्ट परत करायचा आहे.": { native: "I want to return this shirt.", bases: { "आहे": "to be", "परत": "back" } }
+      "मी वस्तू परत केली.": { native: "I returned the item.", bases: { "परत": "back" } }
+  "mr-1075":
+    native: "to buy"
+    notes:
+      "n1": "{1} is the verb for buying."
+    examples:
+      "आज नवीन कपडे खरेदी केले.": { native: "Today I bought new clothes.", bases: { "कपडे": "clothes" } }
+      "ते फळं खरेदी करतात.": "They buy fruit."
+  "mr-1076":
+    native: "to sell"
+    notes:
+      "n1": "{1} is the verb for selling."
+    examples:
+      "तो भाजी विकतो.": { native: "He sells vegetables.", bases: { "विकतो": "to sell" } }
+      "हे दुकान फळं विकतं.": { native: "This shop sells fruit.", bases: { "विकतं": "to sell" } }
+  "mr-1077":
+    native: "to count"
+    notes:
+      "n1": "{1} is the verb for counting money or things."
+    examples:
+      "पैसे मोजा.": { native: "Count the money.", bases: { "मोजा": "to count" } }
+      "त्याने पैसे मोजले.": { native: "He counted the money.", bases: { "मोजले": "to count" } }
+  "mr-1078":
+    native: "to change; to exchange"
+    notes:
+      "n1": "{1} is used for exchanging an item or changing a colour."
+    examples:
+      "हा शर्ट बदलता येईल का?": { native: "Can I exchange this shirt?", bases: { "बदलता": "to change; to exchange" } }
+      "रंग बदलायचा आहे.": { native: "I want to change the colour.", bases: { "आहे": "to be", "बदलायचा": "to change; to exchange", "रंग": "colours" } }
+  "mr-1079":
+    native: "item, goods"
+    notes:
+      "n1": "{1} is an item or goods for sale."
+    examples:
+      "या वस्तू नवीन आहेत.": { native: "These items are new.", bases: { "आहेत": "to be" } }
+      "वस्तू परत घेता येते का?": { native: "Can I take back the item?", bases: { "परत": "back" } }
+  "mr-1080":
+    native: "free of charge"
+    notes:
+      "n1": "{1} means free of charge."
+    examples:
+      "ही पिशवी मोफत आहे.": { native: "This bag is free.", bases: { "आहे": "to be" } }
+      "पाणी मोफत दिलं.": "They gave the water free."
+  "mr-1081":
+    native: "deal, bargain"
+    notes:
+      "n1": "{1} is a deal, the agreed price after bargaining."
+    examples:
+      "सौदा झाला.": { native: "The deal was done.", bases: { "झाला": "to become" } }
+      "हा सौदा चांगला आहे.": { native: "This deal is good.", bases: { "आहे": "to be" } }
+  "mr-1082":
+    native: "brand"
+    notes:
+      "n1": "{1} is a brand, a loanword from English."
+    examples:
+      "हा ब्रँड चांगला आहे.": { native: "This brand is good.", bases: { "आहे": "to be" } }
+      "कोणता ब्रँड घेतलास?": "Which brand did you buy?"
+  "mr-1083":
+    native: "stall"
+    notes:
+      "n1": "{1} is a stall, a small shop on a street or in a market."
+    examples:
+      "स्टॉलवर भाज्या आहेत.": { native: "There are vegetables at the stall.", bases: { "आहेत": "to be", "स्टॉलवर": "stall" } }
+      "हा स्टॉल सकाळी उघडतो.": "This stall opens in the morning."
+  "mr-1084":
+    native: "payment"
+    notes:
+      "n1": "{1} is a payment, a loanword from English."
+    examples:
+      "पेमेंट झालं.": { native: "The payment is done.", bases: { "झालं": "to become" } }
+      "पेमेंट ऑनलाइन करू शकता.": { native: "You can pay online.", bases: { "शकता": "can" } }
+  "mr-1085":
+    native: "cash"
+    notes:
+      "n1": "{1} is cash, money in notes and coins."
+    examples:
+      "माझ्याकडे रोकड नाही.": "I do not have cash."
+      "रोकड द्या.": "Give cash."
+  "mr-1086":
+    native: "coin"
+    notes:
+      "n1": "{1} is a coin."
+    examples:
+      "हे नाणे जुने आहे.": { native: "This coin is old.", bases: { "आहे": "to be", "जुने": "old" } }
+      "नाणे खाली पडलं.": { native: "The coin fell down.", bases: { "खाली": "down" } }
+  "mr-1087":
+    native: "banknote"
+    notes:
+      "n1": "{1} is a banknote, a loanword from English."
+    examples:
+      "शंभराची नोट द्या.": "Give a hundred-rupee note."
+      "ही नोट फाटली आहे.": { native: "This note is torn.", bases: { "फाटली": "to tear", "आहे": "to be" } }
+  "mr-1088":
+    native: "size"
+    notes:
+      "n1": "{1} is size, a loanword from English."
+    examples:
+      "याचा साईज काय आहे?": { native: "What size is this?", bases: { "आहे": "to be" } }
+      "मोठा साईज द्या.": "Give me a large size."
+  "mr-1089":
+    native: "price tag"
+    notes:
+      "n1": "{1} is a tag, the label with the price on a thing."
+    examples:
+      "टॅग वर किंमत आहे.": { native: "The price is on the tag.", bases: { "आहे": "to be" } }
+      "टॅग काढा.": "Take off the tag."

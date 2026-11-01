@@ -1,0 +1,23 @@
+schema: 1
+id: "mr-en-grammar-ergative-past"
+kind: "layer"
+core: "mr-grammar-ergative-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past with an agent in -ne"
+license: "CC-BY-SA-4.0"
+description: "He read the book, she ate the bread: the past of a verb with an object, where the doer takes -ने (-ne) and the verb agrees with the object. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Simple past of a transitive verb: the verb agrees with its object"
+  slot_name: "object"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "पुल्लिंगी एकवचन": "masculine object, singular", "स्त्रीलिंगी एकवचन": "feminine object, singular", "नपुंसकलिंगी एकवचन": "neuter object, singular", "पुल्लिंगी अनेकवचन": "masculine objects, plural", "स्त्रीलिंगी अनेकवचन": "feminine objects, plural", "नपुंसकलिंगी अनेकवचन": "neuter objects, plural" }
+  entries:
+    "vachne": "to read"
+    "lihine": "to write"
+    "khaane": "to eat"
+    "pine": "to drink"
+    "banavne": "to make, to cook"
+    "paahne": "to see"
+    "ghene": "to take"
+  notes: "With a verb that takes an object, the doer of the past takes -ने (-ne): तो (to) becomes त्याने (tyāne), ती (tī) becomes तिने (tine), ते (te) becomes त्यांनी (tyānī). मी (mī), तू (tū), आम्ही (āmhī) and तुम्ही (tumhī) keep their form. The verb then agrees with the object, not with the doer: a masculine object takes -ला (-lā), a feminine one -ली (-lī), a neuter one -लं (-laṁ), and plural objects have forms of their own. So त्याने पुस्तक वाचलं (tyāne pustak vāclaṁ) is he read the book, and मी गोष्ट लिहिली (mī goṣṭ lihilī) is I wrote the story. In the plural, masculine objects take -ले (-le), feminine ones -ल्या (-lyā) and neuter ones -ली (-lī)."

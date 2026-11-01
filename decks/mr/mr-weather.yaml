@@ -1,0 +1,376 @@
+schema: 1
+id: "mr-weather"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1004"
+    target: "हवामान"
+    reading: "havāmān"
+    ipa: "ɦəʋaman"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "हवामान", reading: "havāmān" }] }
+    examples:
+      - { target: "आज हवामान छान आहे.", reading: "āj havāmān chān āhe.", ipa: "adz ɦəʋaman tʃʰan aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "हवामान अचानक बदललं.", reading: "havāmān acānak badllam̐.", ipa: "ɦəʋaman ətsanək bəd̪llə̃", bases: [{ word: "बदललं", base: "बदलणे", reading: "badlṇe" }, { word: "अचानक", base: "अचानक", reading: "acānak" }] }
+  - id: "mr-1005"
+    target: "पाऊस"
+    reading: "pāus"
+    ipa: "paus"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पाऊस", reading: "pāus" }] }
+    examples:
+      - { target: "आज पाऊस पडतोय.", reading: "āj pāus paḍtoy.", ipa: "adz paus pəɖt̪oj", bases: [{ word: "पडतोय", ref: "mr-1024" }] }
+      - { target: "पावसाळ्यात खूप पाऊस असतो.", reading: "pāvsāḷyāt khup pāus asto.", ipa: "paʋsaɭjat̪ kʰup paus əst̪o", bases: [{ word: "पावसाळ्यात", base: "पावसाळा", reading: "pāvsāḷā" }, { word: "असतो", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1006"
+    target: "सूर्य"
+    reading: "sury"
+    ipa: "surj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सूर्य", reading: "sury" }] }
+    examples:
+      - { target: "सूर्य वर आला.", reading: "sury var ālā.", ipa: "surj ʋər ala", bases: [{ word: "आला", ref: "mr-0711" }] }
+      - { target: "सूर्य मावळला.", reading: "sury māvḷlā.", ipa: "surj maʋɭla", bases: [{ word: "मावळला", base: "मावळणे", reading: "māvḷṇe" }] }
+  - id: "mr-1007"
+    target: "ऊन"
+    reading: "un"
+    ipa: "un"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ऊन", reading: "un" }] }
+    examples:
+      - { target: "आज खूप ऊन आहे.", reading: "āj khup un āhe.", ipa: "adz kʰup un aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "उन्हात जाऊ नको.", reading: "unhāt jāu nako.", ipa: "unɦat̪ dzau nəko", bases: [{ word: "उन्हात", base: "ऊन", reading: "un" }, { word: "जाऊ", ref: "mr-0710" }] }
+  - id: "mr-1008"
+    target: "वारा"
+    reading: "vārā"
+    ipa: "ʋara"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वारा", reading: "vārā" }] }
+    examples:
+      - { target: "वारा जोरात वाहतो.", reading: "vārā jorāt vāhto.", ipa: "ʋara dzorat̪ ʋaɦt̪o", bases: [{ word: "वाहतो", ref: "mr-1023" }, { word: "जोरात", base: "जोरात", reading: "jorāt" }] }
+      - { target: "वाऱ्याने झाडं हलली.", reading: "vāryāne jhāḍam̐ halli.", ipa: "ʋarjane dzʱaɖə̃ ɦəlli", bases: [{ word: "वाऱ्याने", base: "वारा", reading: "vārā" }, { word: "झाडं", base: "झाड", reading: "jhāḍ" }, { word: "हलली", base: "हलणे", reading: "halṇe" }] }
+  - id: "mr-1009"
+    target: "वादळ"
+    reading: "vādaḷ"
+    ipa: "ʋad̪əɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वादळ", reading: "vādaḷ" }] }
+    examples:
+      - { target: "वादळ आलं.", reading: "vādaḷ ālam̐.", ipa: "ʋad̪əɭ alə̃", bases: [{ word: "आलं", ref: "mr-0711" }] }
+      - { target: "वादळात घरात थांबा.", reading: "vādḷāt gharāt thāmbā.", ipa: "ʋad̪ɭat̪ ɡʱərat̪ t̪ʰamba", bases: [{ word: "वादळात", base: "वादळ", reading: "vādaḷ" }, { word: "घरात", ref: "mr-0048" }, { word: "थांबा", ref: "mr-0803" }] }
+  - id: "mr-1010"
+    target: "वीज"
+    reading: "vij"
+    ipa: "ʋidz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वीज", reading: "vij" }] }
+    examples:
+      - { target: "वीज चमकली.", reading: "vij camkli.", ipa: "ʋidz tsəmkli", bases: [{ word: "चमकली", ref: "mr-1025" }] }
+      - { target: "विजेमुळे दिवे गेले.", reading: "vijemuḷe dive gele.", ipa: "ʋidʒemuɭe d̪iʋe ɡele", bases: [{ word: "विजेमुळे", base: "वीज", reading: "vij" }, { word: "दिवे", ref: "mr-0468" }, { word: "गेले", ref: "mr-0710" }] }
+  - id: "mr-1011"
+    target: "मेघगर्जना"
+    reading: "meghgarjanā"
+    ipa: "meɡʱɡərdzəna"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मेघगर्जना", reading: "meghgarjanā" }] }
+    examples:
+      - { target: "मेघगर्जना जोरात झाली.", reading: "meghgarjanā jorāt jhāli.", ipa: "meɡʱɡərdzəna dzorat̪ dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "जोरात", base: "जोरात", reading: "jorāt" }] }
+      - { target: "मेघगर्जनेने सगळे घाबरले.", reading: "meghgarjanene sagḷe ghābrle.", ipa: "meɡʱɡərdzənene səɡɭe ɡʱabrle", bases: [{ word: "मेघगर्जनेने", base: "मेघगर्जना", reading: "meghgarjanā" }, { word: "घाबरले", base: "घाबरणे", reading: "ghābrṇe" }] }
+  - id: "mr-1012"
+    target: "धुकं"
+    reading: "dhukam̐"
+    ipa: "d̪ʱukə̃"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "धुकं", reading: "dhukam̐" }] }
+    examples:
+      - { target: "सकाळी धुकं होतं.", reading: "sakāḷi dhukam̐ hotam̐.", ipa: "səkaɭi d̪ʱukə̃ ɦot̪ə̃", bases: [{ word: "सकाळी", ref: "mr-0477" }, { word: "होतं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "धुक्यामुळे गाड्या हळू चालतात.", reading: "dhukyāmuḷe gāḍyā haḷu cāltāt.", ipa: "d̪ʱukjamuɭe ɡaɖja ɦəɭu tsalt̪at̪", bases: [{ word: "धुक्यामुळे", base: "धुकं", reading: "dhukam̐" }, { word: "गाड्या", ref: "mr-0430" }, { word: "चालतात", base: "चालणे", reading: "cālṇe" }] }
+  - id: "mr-1013"
+    target: "थंडी"
+    reading: "thaṇḍi"
+    ipa: "t̪ʰəɳɖi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "थंडी", reading: "thaṇḍi" }] }
+    examples:
+      - { target: "आज थंडी आहे.", reading: "āj thaṇḍi āhe.", ipa: "adz t̪ʰəɳɖi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "थंडीत स्वेटर घाला.", reading: "thaṇḍit sveṭar ghālā.", ipa: "t̪ʰəɳɖit̪ sʋeʈər ɡʱala", bases: [{ word: "थंडीत", base: "थंडी", reading: "thaṇḍi" }, { word: "घाला", base: "घालणे", reading: "ghālṇe" }] }
+  - id: "mr-1014"
+    target: "उकाडा"
+    reading: "ukāḍā"
+    ipa: "ukaɖa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "उकाडा", reading: "ukāḍā" }] }
+    examples:
+      - { target: "आज खूप उकाडा आहे.", reading: "āj khup ukāḍā āhe.", ipa: "adz kʰup ukaɖa aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "उकाड्याने घाम येतो.", reading: "ukāḍyāne ghām yeto.", ipa: "ukaɖjane ɡʱam jet̪o", bases: [{ word: "उकाड्याने", base: "उकाडा", reading: "ukāḍā" }, { word: "येतो", ref: "mr-0711" }, { word: "घाम", base: "घाम", reading: "ghām" }] }
+  - id: "mr-1015"
+    target: "तापमान"
+    reading: "tāpmān"
+    ipa: "t̪apman"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "तापमान", reading: "tāpmān" }] }
+    examples:
+      - { target: "आज तापमान चाळीस अंश आहे.", reading: "āj tāpmān cāḷis aṁś āhe.", ipa: "adz t̪apman tsaɭis ə̃ʃ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "तापमान वाढत आहे.", reading: "tāpmān vāḍhat āhe.", ipa: "t̪apman ʋaɖʱət̪ aɦe", bases: [{ word: "वाढत", ref: "mr-1027" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1016"
+    target: "अंश"
+    reading: "aṁś"
+    ipa: "ə̃ʃ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अंश", reading: "aṁś" }] }
+    examples:
+      - { target: "पाण्याचं तापमान वीस अंश आहे.", reading: "pāṇyācam̐ tāpmān vis aṁś āhe.", ipa: "paɳjatsə̃ t̪apman ʋis ə̃ʃ aɦe", bases: [{ word: "पाण्याचं", base: "पाणी", reading: "pāṇi" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "दहा अंशांनी तापमान घटलं.", reading: "dahā aṁśānni tāpmān ghaṭlam̐.", ipa: "d̪əɦa ə̃ʃanni t̪apman ɡʱəʈlə̃", bases: [{ word: "अंशांनी", base: "अंश", reading: "aṁś" }, { word: "घटलं", base: "घटणे", reading: "ghaṭṇe" }] }
+  - id: "mr-1017"
+    target: "आकाश"
+    reading: "ākāś"
+    ipa: "akaʃ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "आकाश", reading: "ākāś" }] }
+    examples:
+      - { target: "आकाश निळं आहे.", reading: "ākāś niḷam̐ āhe.", ipa: "akaʃ niɭə̃ aɦe", bases: [{ word: "निळं", ref: "mr-0881" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "आकाशात ढग आहेत.", reading: "ākāśāt ḍhag āhet.", ipa: "akaʃat̪ ɖʱəɡ aɦet̪", bases: [{ word: "आकाशात", base: "आकाश", reading: "ākāś" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1018"
+    target: "हवा"
+    reading: "havā"
+    ipa: "ɦəʋa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "हवा", reading: "havā" }] }
+    examples:
+      - { target: "हवा थंड आहे.", reading: "havā thaṇḍ āhe.", ipa: "ɦəʋa t̪ʰəɳɖ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "हवेत ओलावा आहे.", reading: "havet olāvā āhe.", ipa: "ɦəʋet̪ olaʋa aɦe", bases: [{ word: "हवेत", base: "हवा", reading: "havā" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "ओलावा", base: "ओलावा", reading: "olāvā" }] }
+  - id: "mr-1019"
+    target: "ढगाळ"
+    reading: "ḍhagāḷ"
+    ipa: "ɖʱəɡaɭ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ढगाळ", reading: "ḍhagāḷ" }] }
+    examples:
+      - { target: "आज आकाश ढगाळ आहे.", reading: "āj ākāś ḍhagāḷ āhe.", ipa: "adz akaʃ ɖʱəɡaɭ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ढगाळ दिवशी फिरायला जाऊ.", reading: "ḍhagāḷ divśi phirāylā jāu.", ipa: "ɖʱəɡaɭ d̪iʋʃi pʰirajla dzau", bases: [{ word: "दिवशी", ref: "mr-0485" }, { word: "फिरायला", base: "फिरणे", reading: "phirṇe" }, { word: "जाऊ", ref: "mr-0710" }] }
+  - id: "mr-1020"
+    target: "दमट"
+    reading: "damaṭ"
+    ipa: "d̪əməʈ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "दमट", reading: "damaṭ" }] }
+    examples:
+      - { target: "पावसात हवा दमट असते.", reading: "pāvsāt havā damaṭ aste.", ipa: "paʋsat̪ ɦəʋa d̪əməʈ əst̪e", bases: [{ word: "पावसात", ref: "mr-1005" }, { word: "असते", base: "असणे", reading: "asṇe" }] }
+      - { target: "दमट हवेत झोप येत नाही.", reading: "damaṭ havet jhop yet nāhi.", ipa: "d̪əməʈ ɦəʋet̪ dzʱop jet̪ naɦi", bases: [{ word: "हवेत", ref: "mr-1018" }, { word: "येत", ref: "mr-0711" }, { word: "नाही", ref: "mr-0169" }] }
+  - id: "mr-1021"
+    target: "ओला"
+    reading: "olā"
+    ipa: "ola"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ओला", reading: "olā" }] }
+    examples:
+      - { target: "कपडे ओले आहेत.", reading: "kapḍe ole āhet.", ipa: "kəpɖe ole aɦet̪", bases: [{ word: "कपडे", base: "कपडा", reading: "kapḍā" }, { word: "ओले", base: "ओला", reading: "olā" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "पावसात भिजून सगळे ओले झाले.", reading: "pāvsāt bhijun sagḷe ole jhāle.", ipa: "paʋsat̪ bʱidzun səɡɭe ole dzʱale", bases: [{ word: "भिजून", base: "भिजणे", reading: "bhijṇe" }, { word: "ओले", base: "ओला", reading: "olā" }, { word: "झाले", base: "होणे", reading: "hoṇe" }, { word: "पावसात", ref: "mr-1005" }] }
+  - id: "mr-1022"
+    target: "कोरडा"
+    reading: "korḍā"
+    ipa: "korɖa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कोरडा", reading: "korḍā" }] }
+    examples:
+      - { target: "उन्हाळ्यात जमीन कोरडी होते.", reading: "unhāḷyāt jamin korḍi hote.", ipa: "unɦaɭjat̪ dzəmin korɖi ɦot̪e", bases: [{ word: "उन्हाळ्यात", base: "उन्हाळा", reading: "unhāḷā" }, { word: "कोरडी", base: "कोरडा", reading: "korḍā" }, { word: "होते", base: "होणे", reading: "hoṇe" }, { word: "जमीन", base: "जमीन", reading: "jamin" }] }
+      - { target: "कोरडं हवामान आवडतं.", reading: "korḍam̐ havāmān āvḍtam̐.", ipa: "korɖə̃ ɦəʋaman aʋɖt̪ə̃", bases: [{ word: "कोरडं", base: "कोरडा", reading: "korḍā" }, { word: "आवडतं", ref: "mr-0585" }] }
+  - id: "mr-1023"
+    target: "वाहणे"
+    reading: "vāhṇe"
+    ipa: "ʋaɦɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वाहणे", reading: "vāhṇe" }] }
+    examples:
+      - { target: "थंड वारा वाहतोय.", reading: "thaṇḍ vārā vāhtoy.", ipa: "t̪ʰəɳɖ ʋara ʋaɦt̪oj", bases: [{ word: "वाहतोय", base: "वाहणे", reading: "vāhṇe" }] }
+      - { target: "नदीचं पाणी वेगाने वाहतं.", reading: "nadicam̐ pāṇi vegāne vāhtam̐.", ipa: "nəd̪itsə̃ paɳi ʋeɡane ʋaɦt̪ə̃", bases: [{ word: "नदीचं", ref: "mr-0966" }, { word: "वाहतं", base: "वाहणे", reading: "vāhṇe" }, { word: "वेगाने", base: "वेग", reading: "veg" }] }
+  - id: "mr-1024"
+    target: "पडणे"
+    reading: "paḍṇe"
+    ipa: "pəɖɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पडणे", reading: "paḍṇe" }] }
+    examples:
+      - { target: "पाने झाडावरून पडली.", reading: "pāne jhāḍāvrun paḍli.", ipa: "pane dzʱaɖaʋrun pəɖli", bases: [{ word: "पाने", base: "पान", reading: "pān" }, { word: "झाडावरून", base: "झाड", reading: "jhāḍ" }, { word: "पडली", base: "पडणे", reading: "paḍṇe" }] }
+      - { target: "पावसाचे थेंब पडले.", reading: "pāvsāce themb paḍle.", ipa: "paʋsatʃe t̪ʰemb pəɖle", bases: [{ word: "पावसाचे", ref: "mr-1005" }, { word: "पडले", base: "पडणे", reading: "paḍṇe" }, { word: "थेंब", base: "थेंब", reading: "themb" }] }
+  - id: "mr-1025"
+    target: "चमकणे"
+    reading: "camkṇe"
+    ipa: "tsəmkɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "चमकणे", reading: "camkṇe" }] }
+    examples:
+      - { target: "तारे चमकत आहेत.", reading: "tāre camkat āhet.", ipa: "t̪are tsəmkət̪ aɦet̪", bases: [{ word: "तारे", base: "तारा", reading: "tārā" }, { word: "चमकत", base: "चमकणे", reading: "camkṇe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "सोन्याचे दागिने चमकतात.", reading: "sonyāce dāgine camktāt.", ipa: "sonjatʃe d̪aɡine tsəmkt̪at̪", bases: [{ word: "सोन्याचे", base: "सोनं", reading: "sonam̐" }, { word: "दागिने", base: "दागिना", reading: "dāginā" }, { word: "चमकतात", base: "चमकणे", reading: "camkṇe" }] }
+  - id: "mr-1026"
+    target: "गडगडणे"
+    reading: "gaḍgḍṇe"
+    ipa: "ɡəɖɡɖɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गडगडणे", reading: "gaḍgḍṇe" }] }
+    examples:
+      - { target: "ढग गडगडले.", reading: "ḍhag gaḍgḍle.", ipa: "ɖʱəɡ ɡəɖɡɖle", bases: [{ word: "गडगडले", base: "गडगडणे", reading: "gaḍgḍṇe" }] }
+      - { target: "दूर कुठेतरी गडगडतंय.", reading: "dur kuṭhetri gaḍgḍtaṁy.", ipa: "d̪ur kuʈʰet̪ri ɡəɖɡɖt̪ə̃j", bases: [{ word: "गडगडतंय", base: "गडगडणे", reading: "gaḍgḍṇe" }, { word: "दूर", base: "दूर", reading: "dur" }, { word: "कुठेतरी", base: "कुठेतरी", reading: "kuṭhetari" }] }
+  - id: "mr-1027"
+    target: "वाढणे"
+    reading: "vāḍhṇe"
+    ipa: "ʋaɖʱɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वाढणे", reading: "vāḍhṇe" }] }
+    examples:
+      - { target: "पाऊस वाढला.", reading: "pāus vāḍhlā.", ipa: "paus ʋaɖʱla", bases: [{ word: "वाढला", base: "वाढणे", reading: "vāḍhṇe" }] }
+      - { target: "पूर वाढत आहे.", reading: "pur vāḍhat āhe.", ipa: "pur ʋaɖʱət̪ aɦe", bases: [{ word: "वाढत", base: "वाढणे", reading: "vāḍhṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1028"
+    target: "मान्सून"
+    reading: "mānsun"
+    ipa: "mansun"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मान्सून", reading: "mānsun" }] }
+    examples:
+      - { target: "मान्सून जूनमध्ये येतो.", reading: "mānsun junmadhye yeto.", ipa: "mansun dzunməd̪ʱje jet̪o", bases: [{ word: "जूनमध्ये", base: "जून", reading: "jun" }, { word: "येतो", ref: "mr-0711" }] }
+      - { target: "यंदा मान्सून लवकर आला.", reading: "yandā mānsun lavkar ālā.", ipa: "jənd̪a mansun ləʋkər ala", bases: [{ word: "आला", ref: "mr-0711" }, { word: "यंदा", base: "यंदा", reading: "yandā" }] }
+  - id: "mr-1029"
+    target: "वृष्टी"
+    reading: "vruṣṭi"
+    ipa: "ʋruʂʈi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वृष्टी", reading: "vruṣṭi" }] }
+    examples:
+      - { target: "आज जोरदार वृष्टी झाली.", reading: "āj jordār vruṣṭi jhāli.", ipa: "adz dzord̪ar ʋruʂʈi dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "जोरदार", base: "जोरदार", reading: "jordār" }] }
+      - { target: "वृष्टीमुळे रस्ते बंद झाले.", reading: "vruṣṭimuḷe raste band jhāle.", ipa: "ʋruʂʈimuɭe rəst̪e bənd̪ dzʱale", bases: [{ word: "वृष्टीमुळे", base: "वृष्टी", reading: "vruṣṭi" }, { word: "रस्ते", ref: "mr-0971" }, { word: "झाले", base: "होणे", reading: "hoṇe" }, { word: "बंद", base: "बंद", reading: "band" }] }
+  - id: "mr-1030"
+    target: "सरी"
+    reading: "sari"
+    ipa: "səri"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सरी", reading: "sari" }] }
+    examples:
+      - { target: "दुपारी सरी पडल्या.", reading: "dupāri sari paḍalyā.", ipa: "d̪upari səri pəɖəlja", bases: [{ word: "दुपारी", ref: "mr-0478" }, { word: "पडल्या", ref: "mr-1024" }] }
+      - { target: "सरींमध्ये भिजलो.", reading: "sarimmadhye bhijlo.", ipa: "sərimməd̪ʱje bʱidzlo", bases: [{ word: "सरींमध्ये", base: "सरी", reading: "sari" }, { word: "भिजलो", base: "भिजणे", reading: "bhijṇe" }] }
+  - id: "mr-1031"
+    target: "झुळूक"
+    reading: "jhuḷuk"
+    ipa: "dzʱuɭuk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "झुळूक", reading: "jhuḷuk" }] }
+    examples:
+      - { target: "थंड झुळूक आली.", reading: "thaṇḍ jhuḷuk āli.", ipa: "t̪ʰəɳɖ dzʱuɭuk ali", bases: [{ word: "आली", ref: "mr-0711" }] }
+      - { target: "संध्याकाळी छान झुळूक वाहते.", reading: "sandhyākāḷi chān jhuḷuk vāhte.", ipa: "sənd̪ʱjakaɭi tʃʰan dzʱuɭuk ʋaɦt̪e", bases: [{ word: "संध्याकाळी", ref: "mr-0479" }, { word: "वाहते", ref: "mr-1023" }] }
+  - id: "mr-1032"
+    target: "गारपीट"
+    reading: "gārpiṭ"
+    ipa: "ɡarpiʈ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गारपीट", reading: "gārpiṭ" }] }
+    examples:
+      - { target: "गारपिटीमुळे पिकांचे नुकसान झाले.", reading: "gārpiṭimuḷe pikāñce nuksān jhāle.", ipa: "ɡarpiʈimuɭe pikaɲtʃe nuksan dzʱale", bases: [{ word: "गारपिटीमुळे", base: "गारपीट", reading: "gārpiṭ" }, { word: "पिकांचे", base: "पीक", reading: "pik" }, { word: "झाले", base: "होणे", reading: "hoṇe" }, { word: "नुकसान", base: "नुकसान", reading: "nuksān" }] }
+      - { target: "गारपीट थांबली.", reading: "gārpiṭ thāmbali.", ipa: "ɡarpiʈ t̪ʰambəli", bases: [{ word: "थांबली", ref: "mr-0803" }] }
+  - id: "mr-1033"
+    target: "इंद्रधनुष्य"
+    reading: "indradhnuṣy"
+    ipa: "ind̪rəd̪ʱnuʂj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "इंद्रधनुष्य", reading: "indradhnuṣy" }] }
+    examples:
+      - { target: "पावसानंतर इंद्रधनुष्य दिसलं.", reading: "pāvsānantar indradhnuṣy dislam̐.", ipa: "paʋsanənt̪ər ind̪rəd̪ʱnuʂj d̪islə̃", bases: [{ word: "पावसानंतर", ref: "mr-1005" }, { word: "दिसलं", base: "दिसणे", reading: "disṇe" }] }
+      - { target: "इंद्रधनुष्यात सात रंग असतात.", reading: "indradhnuṣyāt sāt raṅg astāt.", ipa: "ind̪rəd̪ʱnuʂjat̪ sat̪ rəŋɡ əst̪at̪", bases: [{ word: "असतात", base: "असणे", reading: "asṇe" }, { word: "इंद्रधनुष्यात", base: "इंद्रधनुष्य", reading: "indradhnuṣy" }, { word: "रंग", base: "रंग", reading: "raṅg" }] }
+  - id: "mr-1034"
+    target: "सावली"
+    reading: "sāvli"
+    ipa: "saʋli"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सावली", reading: "sāvli" }] }
+    examples:
+      - { target: "झाडाखाली सावली आहे.", reading: "jhāḍākhāli sāvli āhe.", ipa: "dzʱaɖakʰali saʋli aɦe", bases: [{ word: "झाडाखाली", base: "झाड", reading: "jhāḍ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सावलीत थोडं बसा.", reading: "sāvlit thoḍam̐ basā.", ipa: "saʋlit̪ t̪ʰoɖə̃ bəsa", bases: [{ word: "सावलीत", base: "सावली", reading: "sāvli" }, { word: "बसा", base: "बसणे", reading: "basṇe" }, { word: "थोडं", base: "थोडा", reading: "thoḍā" }] }
+  - id: "mr-1035"
+    target: "ऋतू"
+    reading: "rutu"
+    ipa: "rut̪u"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ऋतू", reading: "rutu" }] }
+    examples:
+      - { target: "भारतात सहा ऋतू आहेत.", reading: "bhārtāt sahā rutu āhet.", ipa: "bʱart̪at̪ səɦa rut̪u aɦet̪", bases: [{ word: "आहेत", base: "असणे", reading: "asṇe" }, { word: "भारतात", base: "भारत", reading: "bhārat" }] }
+      - { target: "माझा आवडता ऋतू पावसाळा आहे.", reading: "mājhā āvḍtā rutu pāvsāḷā āhe.", ipa: "madzʱa aʋɖt̪a rut̪u paʋsaɭa aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "माझा", ref: "mr-0080" }] }
+  - id: "mr-1036"
+    target: "पूर"
+    reading: "pur"
+    ipa: "pur"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पूर", reading: "pur" }] }
+    examples:
+      - { target: "नदीला पूर आला.", reading: "nadilā pur ālā.", ipa: "nəd̪ila pur ala", bases: [{ word: "नदीला", ref: "mr-0966" }, { word: "आला", ref: "mr-0711" }] }
+      - { target: "पुरामुळे गावात पाणी शिरलं.", reading: "purāmuḷe gāvāt pāṇi śirlam̐.", ipa: "puramuɭe ɡaʋat̪ paɳi ʃirlə̃", bases: [{ word: "पुरामुळे", base: "पूर", reading: "pur" }, { word: "गावात", ref: "mr-0209" }, { word: "शिरलं", base: "शिरणे", reading: "śirṇe" }] }
+  - id: "mr-1037"
+    target: "दुष्काळ"
+    reading: "duṣkāḷ"
+    ipa: "d̪uʂkaɭ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "दुष्काळ", reading: "duṣkāḷ" }] }
+    examples:
+      - { target: "यंदा दुष्काळ आहे.", reading: "yandā duṣkāḷ āhe.", ipa: "jənd̪a d̪uʂkaɭ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "यंदा", base: "यंदा", reading: "yandā" }] }
+      - { target: "दुष्काळात शेतकरी कष्ट करतात.", reading: "duṣkāḷāt śetkri kaṣṭ kartāt.", ipa: "d̪uʂkaɭat̪ ʃet̪kri kəʂʈ kərt̪at̪", bases: [{ word: "दुष्काळात", base: "दुष्काळ", reading: "duṣkāḷ" }, { word: "करतात", ref: "mr-0712" }, { word: "कष्ट", base: "कष्ट", reading: "kaṣṭ" }] }

@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-subjunctive"
+kind: "layer"
+core: "mr-grammar-subjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Subjunctive: may he go, let us go"
+license: "CC-BY-SA-4.0"
+description: "May he go, let us go, you should go: wishes, suggestions and advice in the subjunctive. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Subjunctive: wishes, suggestions and advice"
+  slot_name: "subject"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "तो": "may he (a wish)", "आपण": "let us", "तू": "you should (advice)", "तुम्ही": "you should (polite advice)" }
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do"
+    "khaane": "to eat"
+    "pine": "to drink"
+    "vachne": "to read"
+    "bolne": "to speak"
+    "paahne": "to see"
+    "dene": "to give"
+    "ghene": "to take"
+  notes: "The subjunctive gives a wish, a suggestion or advice. For तो (to, he): तो जावो (to jāvo), may he go. For आपण (āpaṇ), let us: आपण जाऊ या (āpaṇ jāū yā), let us go. For तू (tū), you should: तू जावेस (tū jāves), you ought to go. For तुम्ही (tumhī), you should, more politely: तुम्ही जावे (tumhī jāve). The very common असो (aso), let it be, is a subjunctive of असणे (asṇe), to be."

@@ -1,0 +1,231 @@
+schema: 1
+id: "mr-law"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "law"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1678"
+    target: "कायदा"
+    reading: "kāydā"
+    ipa: "kajd̪a"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कायदा", reading: "kāydā" }] }
+    examples:
+      - { target: "हा कायदा सगळ्यांना लागू आहे.", reading: "hā kāydā sagaḷyānnā lāgu āhe.", ipa: "ɦa kajd̪a səɡəɭjanna laɡu aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "सगळ्यांना", ref: "mr-0684" }, { word: "लागू", base: "लागू", reading: "lāgu" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कायद्याने हे चुकीचं आहे.", reading: "kāyadyāne he cukicam̐ āhe.", ipa: "kajəd̪jane ɦe tsukitsə̃ aɦe", bases: [{ word: "कायद्याने", base: "कायदा", reading: "kāydā" }, { word: "चुकीचं", base: "चूक", reading: "cuk" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1679"
+    target: "न्याय"
+    reading: "nyāy"
+    ipa: "njaj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "न्याय", reading: "nyāy" }] }
+    examples:
+      - { target: "सगळ्यांना न्याय मिळाला पाहिजे.", reading: "sagaḷyānnā nyāy miḷālā pāhije.", ipa: "səɡəɭjanna njaj miɭala paɦidʒe", bases: [{ word: "सगळ्यांना", ref: "mr-0684" }, { word: "मिळाला", base: "मिळणे", reading: "miḷṇe" }, { word: "पाहिजे", ref: "mr-0412" }] }
+      - { target: "त्याला न्याय हवा आहे.", reading: "tyālā nyāy havā āhe.", ipa: "t̪jala njaj ɦəʋa aɦe", bases: [{ word: "त्याला", ref: "mr-0676" }, { word: "हवा", ref: "mr-0412" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1680"
+    target: "गुन्हा"
+    reading: "gunhā"
+    ipa: "ɡunɦa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गुन्हा", reading: "gunhā" }] }
+    examples:
+      - { target: "हा गंभीर गुन्हा आहे.", reading: "hā gambhir gunhā āhe.", ipa: "ɦa ɡəmbʱir ɡunɦa aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "गंभीर", base: "गंभीर", reading: "gambhir" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "गुन्हा कधी घडला?", reading: "gunhā kadhi ghaḍlā?", ipa: "ɡunɦa kəd̪ʱi ɡʱəɖla", bases: [{ word: "घडला", ref: "mr-1360" }] }
+  - id: "mr-1681"
+    target: "गुन्हेगार"
+    reading: "gunhegār"
+    ipa: "ɡunɦeɡar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गुन्हेगार", reading: "gunhegār" }] }
+    examples:
+      - { target: "गुन्हेगाराला अटक झाली.", reading: "gunhegārālā aṭak jhāli.", ipa: "ɡunɦeɡarala əʈək dzʱali", bases: [{ word: "गुन्हेगाराला", base: "गुन्हेगार", reading: "gunhegār" }, { word: "अटक", ref: "mr-1690" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "गुन्हेगार पळून गेला.", reading: "gunhegār paḷun gelā.", ipa: "ɡunɦeɡar pəɭun ɡela", bases: [{ word: "पळून", ref: "mr-1184" }, { word: "गेला", ref: "mr-0710" }] }
+  - id: "mr-1682"
+    target: "चोरी"
+    reading: "cori"
+    ipa: "tsori"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "चोरी", reading: "cori" }] }
+    examples:
+      - { target: "घरात चोरी झाली.", reading: "gharāt cori jhāli.", ipa: "ɡʱərat̪ tsori dzʱali", bases: [{ word: "घरात", ref: "mr-0048" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+      - { target: "चोरी केल्याबद्दल त्याला शिक्षा झाली.", reading: "cori kelyābaddal tyālā śikṣā jhāli.", ipa: "tsori keljabəd̪d̪əl t̪jala ʃikʂa dzʱali", bases: [{ word: "केल्याबद्दल", ref: "mr-0712" }, { word: "त्याला", ref: "mr-0676" }, { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1683"
+    target: "फसवणूक"
+    reading: "phasvṇuk"
+    ipa: "pʰəsʋɳuk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फसवणूक", reading: "phasvṇuk" }] }
+    examples:
+      - { target: "ऑनलाईन फसवणूक झाली.", reading: "ônlāin phasvṇuk jhāli.", ipa: "ɔnlain pʰəsʋɳuk dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }, { word: "ऑनलाईन", base: "ऑनलाईन", reading: "ônlāin" }] }
+      - { target: "फसवणुकीपासून सावध रहा.", reading: "phasvṇukipāsun sāvadh rahā.", ipa: "pʰəsʋɳukipasun saʋəd̪ʱ rəɦa", bases: [{ word: "फसवणुकीपासून", base: "फसवणूक", reading: "phasvṇuk" }, { word: "सावध", base: "सावध", reading: "sāvadh" }, { word: "रहा", ref: "mr-1182" }] }
+  - id: "mr-1684"
+    target: "खून"
+    reading: "khun"
+    ipa: "kʰun"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खून", reading: "khun" }] }
+    examples:
+      - { target: "शहरात खून झाला.", reading: "śahrāt khun jhālā.", ipa: "ʃəɦrat̪ kʰun dzʱala", bases: [{ word: "शहरात", base: "शहर", reading: "śahar" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "खुनाचा तपास सुरू आहे.", reading: "khunācā tapās suru āhe.", ipa: "kʰunatsa t̪əpas suru aɦe", bases: [{ word: "खुनाचा", base: "खून", reading: "khun" }, { word: "तपास", base: "तपास", reading: "tapās" }, { word: "सुरू", base: "सुरू", reading: "suru" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1685"
+    target: "तक्रार"
+    reading: "takrār"
+    ipa: "t̪əkrar"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "तक्रार", reading: "takrār" }] }
+    examples:
+      - { target: "पोलिसांकडे तक्रार नोंदवली.", reading: "polisāṅkaḍe takrār nondavli.", ipa: "polisaŋkəɖe t̪əkrar nond̪əʋli", bases: [{ word: "पोलिसांकडे", ref: "mr-0598" }, { word: "नोंदवली", base: "नोंदवणे", reading: "nondavṇe" }] }
+      - { target: "तक्रार लेखी करा.", reading: "takrār lekhi karā.", ipa: "t̪əkrar lekʰi kəra", bases: [{ word: "लेखी", base: "लेखी", reading: "lekhi" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1686"
+    target: "पुरावा"
+    reading: "purāvā"
+    ipa: "puraʋa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पुरावा", reading: "purāvā" }] }
+    examples:
+      - { target: "पुरावा दाखवा.", reading: "purāvā dākhvā.", ipa: "puraʋa d̪akʰʋa", bases: [{ word: "दाखवा", ref: "mr-1178" }] }
+      - { target: "पुरावे नसल्यामुळे तो सुटला.", reading: "purāve nasalyāmuḷe to suṭlā.", ipa: "puraʋe nəsəljamuɭe t̪o suʈla", bases: [{ word: "नसल्यामुळे", base: "नसणे", reading: "nasṇe" }, { word: "सुटला", base: "सुटणे", reading: "suṭṇe" }] }
+  - id: "mr-1687"
+    target: "साक्षीदार"
+    reading: "sākṣidār"
+    ipa: "sakʂid̪ar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "साक्षीदार", reading: "sākṣidār" }] }
+    examples:
+      - { target: "साक्षीदार न्यायालयात आला.", reading: "sākṣidār nyāyālyāt ālā.", ipa: "sakʂid̪ar njajaljat̪ ala", bases: [{ word: "न्यायालयात", ref: "mr-0978" }, { word: "आला", ref: "mr-0711" }] }
+      - { target: "साक्षीदाराने सत्य सांगितलं.", reading: "sākṣidārāne saty sāṅgitlam̐.", ipa: "sakʂid̪arane sət̪j saŋɡit̪lə̃", bases: [{ word: "साक्षीदाराने", base: "साक्षीदार", reading: "sākṣidār" }, { word: "सत्य", base: "सत्य", reading: "saty" }, { word: "सांगितलं", ref: "mr-0720" }] }
+  - id: "mr-1688"
+    target: "न्यायाधीश"
+    reading: "nyāyādhiś"
+    ipa: "njajad̪ʱiʃ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "न्यायाधीश", reading: "nyāyādhiś" }] }
+    examples:
+      - { target: "न्यायाधीशांनी निकाल दिला.", reading: "nyāyādhiśānni nikāl dilā.", ipa: "njajad̪ʱiʃanni nikal d̪ila", bases: [{ word: "न्यायाधीशांनी", base: "न्यायाधीश", reading: "nyāyādhiś" }, { word: "निकाल", ref: "mr-1118" }, { word: "दिला", ref: "mr-0721" }] }
+      - { target: "न्यायाधीश शिक्षा सुनावणार आहेत.", reading: "nyāyādhiś śikṣā sunāvṇār āhet.", ipa: "njajad̪ʱiʃ ʃikʂa sunaʋɳar aɦet̪", bases: [{ word: "सुनावणार", base: "सुनावणे", reading: "sunāvṇe" }, { word: "आहेत", base: "असणे", reading: "asṇe" }, { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }] }
+  - id: "mr-1689"
+    target: "आरोप"
+    reading: "ārop"
+    ipa: "arop"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "आरोप", reading: "ārop" }] }
+    examples:
+      - { target: "त्याच्यावर आरोप आहे.", reading: "tyācyāvar ārop āhe.", ipa: "t̪jatʃjaʋər arop aɦe", bases: [{ word: "त्याच्यावर", ref: "mr-0676" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "आरोप खोटे आहेत.", reading: "ārop khoṭe āhet.", ipa: "arop kʰoʈe aɦet̪", bases: [{ word: "खोटे", ref: "mr-1373" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1690"
+    target: "अटक"
+    reading: "aṭak"
+    ipa: "əʈək"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "अटक", reading: "aṭak" }] }
+    examples:
+      - { target: "पोलिसांनी त्याला अटक केली.", reading: "polisānni tyālā aṭak keli.", ipa: "polisanni t̪jala əʈək keli", bases: [{ word: "पोलिसांनी", ref: "mr-0598" }, { word: "त्याला", ref: "mr-0676" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "अटक टाळता येत नाही.", reading: "aṭak ṭāḷtā yet nāhi.", ipa: "əʈək ʈaɭt̪a jet̪ naɦi", bases: [{ word: "टाळता", ref: "mr-1500" }, { word: "येत", ref: "mr-0711" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+  - id: "mr-1691"
+    target: "जामीन"
+    reading: "jāmin"
+    ipa: "dzamin"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "जामीन", reading: "jāmin" }] }
+    examples:
+      - { target: "त्याला जामीन मिळाला.", reading: "tyālā jāmin miḷālā.", ipa: "t̪jala dzamin miɭala", bases: [{ word: "त्याला", ref: "mr-0676" }, { word: "मिळाला", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "जामीनदार कोण आहे?", reading: "jāmindār koṇ āhe?", ipa: "dzamind̪ar koɳ aɦe", bases: [{ word: "जामीनदार", base: "जामीनदार", reading: "jāmindār" }, { word: "कोण", base: "कोण", reading: "koṇ" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1692"
+    target: "खटला"
+    reading: "khaṭlā"
+    ipa: "kʰəʈla"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खटला", reading: "khaṭlā" }] }
+    examples:
+      - { target: "खटला पाच वर्षं चालला.", reading: "khaṭlā pāc varṣam̐ cāllā.", ipa: "kʰəʈla pats ʋərʂə̃ tsalla", bases: [{ word: "वर्षं", ref: "mr-0515" }, { word: "चालला", base: "चालणे", reading: "cālṇe" }] }
+      - { target: "खटल्याचा निकाल लागला.", reading: "khaṭalyācā nikāl lāglā.", ipa: "kʰəʈəljatsa nikal laɡla", bases: [{ word: "खटल्याचा", base: "खटला", reading: "khaṭlā" }, { word: "निकाल", ref: "mr-1118" }, { word: "लागला", base: "लागणे", reading: "lāgṇe" }] }
+  - id: "mr-1693"
+    target: "हक्क"
+    reading: "hakk"
+    ipa: "ɦəkk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "हक्क", reading: "hakk" }] }
+    examples:
+      - { target: "प्रत्येकाला मत देण्याचा हक्क आहे.", reading: "pratyekālā mat deṇyācā hakk āhe.", ipa: "prət̪jekala mət̪ d̪eɳjatsa ɦəkk aɦe", bases: [{ word: "प्रत्येकाला", ref: "mr-0747" }, { word: "देण्याचा", ref: "mr-0721" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "माझे हक्क कोणी काढून घेऊ शकत नाही.", reading: "mājhe hakk koṇi kāḍhun gheu śakat nāhi.", ipa: "madʒʱe ɦəkk koɳi kaɖʱun ɡʱeu ʃəkət̪ naɦi", bases: [{ word: "माझे", ref: "mr-0080" }, { word: "काढून", ref: "mr-0796" }, { word: "घेऊ", ref: "mr-0722" }, { word: "शकत", base: "शकणे", reading: "śakṇe" }, { word: "नाही", base: "नसणे", reading: "nasṇe" }] }
+  - id: "mr-1694"
+    target: "कर्तव्य"
+    reading: "kartavy"
+    ipa: "kərt̪əʋj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "कर्तव्य", reading: "kartavy" }] }
+    examples:
+      - { target: "नागरिक म्हणून हे आपलं कर्तव्य आहे.", reading: "nāgrik mhaṇun he āplam̐ kartavy āhe.", ipa: "naɡrik mɦəɳun ɦe aplə̃ kərt̪əʋj aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "आपलं", base: "आपला", reading: "āplā" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कर्तव्य पार पाडा.", reading: "kartavy pār pāḍā.", ipa: "kərt̪əʋj par paɖa", bases: [{ word: "पार", base: "पार", reading: "pār" }, { word: "पाडा", base: "पाडणे", reading: "pāḍṇe" }] }
+  - id: "mr-1695"
+    target: "पुरावे"
+    reading: "purāve"
+    ipa: "puraʋe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पुरावे", reading: "purāve" }] }
+    examples:
+      - { target: "पुरावे गोळा केले.", reading: "purāve goḷā kele.", ipa: "puraʋe ɡoɭa kele", bases: [{ word: "गोळा", base: "गोळा", reading: "goḷā" }, { word: "केले", ref: "mr-0712" }] }
+      - { target: "पुराव्यांची तपासणी झाली.", reading: "purāvyāñci tapāsṇi jhāli.", ipa: "puraʋjaɲtʃi t̪əpasɳi dzʱali", bases: [{ word: "पुराव्यांची", ref: "mr-1686" }, { word: "तपासणी", ref: "mr-1104" }, { word: "झाली", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1696"
+    target: "शिक्षा करणे"
+    reading: "śikṣā karṇe"
+    ipa: "ʃikʂa kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शिक्षा करणे", reading: "śikṣā karṇe" }] }
+    bases:
+      - { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }
+    examples:
+      - { target: "न्यायालयाने त्याला शिक्षा केली.", reading: "nyāyālyāne tyālā śikṣā keli.", ipa: "njajaljane t̪jala ʃikʂa keli", bases: [{ word: "न्यायालयाने", ref: "mr-0978" }, { word: "त्याला", ref: "mr-0676" }, { word: "केली", ref: "mr-0712" }, { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }] }
+      - { target: "चुकीसाठी शिक्षा होते.", reading: "cukisāṭhi śikṣā hote.", ipa: "tsukisaʈʰi ʃikʂa ɦot̪e", bases: [{ word: "चुकीसाठी", base: "चूक", reading: "cuk" }, { word: "होते", base: "होणे", reading: "hoṇe" }, { word: "शिक्षा", base: "शिक्षा", reading: "śikṣā" }] }
+  - id: "mr-1697"
+    target: "तक्रार करणे"
+    reading: "takrār karṇe"
+    ipa: "t̪əkrar kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "तक्रार करणे", reading: "takrār karṇe" }] }
+    examples:
+      - { target: "त्याने पोलिसांत तक्रार केली.", reading: "tyāne polisānt takrār keli.", ipa: "t̪jane polisant̪ t̪əkrar keli", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "पोलिसांत", ref: "mr-0598" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "तक्रार करू नका.", reading: "takrār karu nakā.", ipa: "t̪əkrar kəru nəka", bases: [{ word: "करू", ref: "mr-0712" }, { word: "नका", ref: "mr-0413" }] }

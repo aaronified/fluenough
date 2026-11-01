@@ -1,0 +1,21 @@
+schema: 1
+id: "mr-en-grammar-past-continuous"
+kind: "layer"
+core: "mr-grammar-past-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Past continuous: I was going"
+license: "CC-BY-SA-4.0"
+description: "I was going, she was coming, they were reading: what was happening at a time in the past. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Past continuous: the -त (-t) stem with होतो (hoto)"
+  slot_name: "person and gender"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "मी (m)": "I, a man", "मी (f)": "I, a woman", "आम्ही": "we", "तू (m)": "you (one person), to a man", "तो": "he", "ती": "she", "ते": "they" }
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do"
+    "khaane": "to eat"
+    "vachne": "to read"
+  notes: "The past continuous says what was going on: the stem with -त (-t), then a past of होणे (hoṇe, to be): मी जात होतो (mī jāt hoto), I was going; मी जात होते (mī jāt hote), if I am a woman. तू जात होतास (tū jāt hotās), to a man; तो जात होता (to jāt hotā), she ती जात होती (tī jāt hotī), they ते जात होते (te jāt hote). आम्ही (āmhī) takes होतो (hoto). The -त (-t) stem is a participle, so it does not change with the subject: only होतो (hoto), होते (hote) and the rest change."

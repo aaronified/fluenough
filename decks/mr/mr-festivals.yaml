@@ -1,0 +1,328 @@
+schema: 1
+id: "mr-festivals"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "festivals"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1038"
+    target: "सण"
+    reading: "saṇ"
+    ipa: "səɳ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सण", reading: "saṇ" }] }
+    examples:
+      - { target: "आज आमचा सण आहे.", reading: "āj āmcā saṇ āhe.", ipa: "adz amtsa səɳ aɦe", bases: [{ word: "आमचा", ref: "mr-0138" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "सणाला सगळे घरी येतात.", reading: "saṇālā sagḷe ghari yetāt.", ipa: "səɳala səɡɭe ɡʱəri jet̪at̪", bases: [{ word: "सणाला", base: "सण", reading: "saṇ" }, { word: "येतात", ref: "mr-0711" }, { word: "घरी", ref: "mr-0048" }] }
+  - id: "mr-1039"
+    target: "उत्सव"
+    reading: "utsav"
+    ipa: "ut̪səʋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "उत्सव", reading: "utsav" }] }
+    examples:
+      - { target: "गावात मोठा उत्सव आहे.", reading: "gāvāt moṭhā utsav āhe.", ipa: "ɡaʋat̪ moʈʰa ut̪səʋ aɦe", bases: [{ word: "गावात", ref: "mr-0209" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "उत्सवात नाच आणि गाणी असतात.", reading: "utsavāt nāc āṇi gāṇi astāt.", ipa: "ut̪səʋat̪ nats aɳi ɡaɳi əst̪at̪", bases: [{ word: "उत्सवात", base: "उत्सव", reading: "utsav" }, { word: "गाणी", base: "गाणं", reading: "gāṇam̐" }, { word: "असतात", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1040"
+    target: "होळी"
+    reading: "hoḷi"
+    ipa: "ɦoɭi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "होळी", reading: "hoḷi" }] }
+    examples:
+      - { target: "होळीला रंग खेळतात.", reading: "hoḷilā raṅg kheḷtāt.", ipa: "ɦoɭila rəŋɡ kʰeɭt̪at̪", bases: [{ word: "होळीला", base: "होळी", reading: "hoḷi" }, { word: "खेळतात", ref: "mr-0725" }, { word: "रंग", base: "रंग", reading: "raṅg" }] }
+      - { target: "होळीत सगळे रंगतात.", reading: "hoḷit sagḷe raṅgatāt.", ipa: "ɦoɭit̪ səɡɭe rəŋɡət̪at̪", bases: [{ word: "होळीत", base: "होळी", reading: "hoḷi" }, { word: "रंगतात", base: "रंगणे", reading: "raṅgaṇe" }] }
+  - id: "mr-1041"
+    target: "गणपती"
+    reading: "gaṇpti"
+    ipa: "ɡəɳpt̪i"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "गणपती", reading: "gaṇpti" }] }
+    examples:
+      - { target: "गणपतीची मूर्ती सुंदर आहे.", reading: "gaṇptici murti sundar āhe.", ipa: "ɡəɳpt̪itʃi murt̪i sund̪ər aɦe", bases: [{ word: "गणपतीची", base: "गणपती", reading: "gaṇpti" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "मूर्ती", base: "मूर्ती", reading: "murti" }] }
+      - { target: "गणपतीला मोदक आवडतात.", reading: "gaṇptilā modak āvḍtāt.", ipa: "ɡəɳpt̪ila mod̪ək aʋɖt̪at̪", bases: [{ word: "गणपतीला", base: "गणपती", reading: "gaṇpti" }, { word: "आवडतात", ref: "mr-0585" }] }
+  - id: "mr-1042"
+    target: "दसरा"
+    reading: "dasrā"
+    ipa: "d̪əsra"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "दसरा", reading: "dasrā" }] }
+    examples:
+      - { target: "दसऱ्याला सगळे नवे कपडे घालतात.", reading: "dasaryālā sagḷe nave kapḍe ghāltāt.", ipa: "d̪əsərjala səɡɭe nəʋe kəpɖe ɡʱalt̪at̪", bases: [{ word: "दसऱ्याला", base: "दसरा", reading: "dasrā" }, { word: "नवे", base: "नवा", reading: "navā" }, { word: "कपडे", base: "कपडा", reading: "kapḍā" }, { word: "घालतात", base: "घालणे", reading: "ghālṇe" }] }
+      - { target: "दसरा कधी आहे?", reading: "dasrā kadhi āhe?", ipa: "d̪əsra kəd̪ʱi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1043"
+    target: "ईद"
+    reading: "id"
+    ipa: "id̪"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ईद", reading: "id" }] }
+    examples:
+      - { target: "ईदच्या दिवशी सगळे भेटतात.", reading: "idacyā divśi sagḷe bheṭtāt.", ipa: "id̪ətʃja d̪iʋʃi səɡɭe bʱeʈt̪at̪", bases: [{ word: "ईदच्या", base: "ईद", reading: "id" }, { word: "दिवशी", ref: "mr-0485" }, { word: "भेटतात", base: "भेटणे", reading: "bheṭṇe" }] }
+      - { target: "ईदला शेवया खातात.", reading: "idlā śevyā khātāt.", ipa: "id̪la ʃeʋja kʰat̪at̪", bases: [{ word: "ईदला", base: "ईद", reading: "id" }, { word: "खातात", ref: "mr-0708" }, { word: "शेवया", base: "शेवई", reading: "śevai" }] }
+  - id: "mr-1044"
+    target: "नाताळ"
+    reading: "nātāḷ"
+    ipa: "nat̪aɭ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नाताळ", reading: "nātāḷ" }] }
+    examples:
+      - { target: "नाताळला चर्चमध्ये जातात.", reading: "nātāḷlā carcamadhye jātāt.", ipa: "nat̪aɭla tsərtsəməd̪ʱje dzat̪at̪", bases: [{ word: "नाताळला", base: "नाताळ", reading: "nātāḷ" }, { word: "जातात", ref: "mr-0710" }, { word: "चर्चमध्ये", ref: "mr-0963" }] }
+      - { target: "नाताळच्या सुट्टीत गावी जाऊ.", reading: "nātāḷacyā suṭṭit gāvi jāu.", ipa: "nat̪aɭətʃja suʈʈit̪ ɡaʋi dzau", bases: [{ word: "नाताळच्या", base: "नाताळ", reading: "nātāḷ" }, { word: "सुट्टीत", ref: "mr-0244" }, { word: "गावी", ref: "mr-0209" }, { word: "जाऊ", ref: "mr-0710" }] }
+  - id: "mr-1045"
+    target: "मिठाई"
+    reading: "miṭhāi"
+    ipa: "miʈʰai"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मिठाई", reading: "miṭhāi" }] }
+    examples:
+      - { target: "सणाला मिठाई वाटतात.", reading: "saṇālā miṭhāi vāṭtāt.", ipa: "səɳala miʈʰai ʋaʈt̪at̪", bases: [{ word: "सणाला", ref: "mr-1038" }, { word: "वाटतात", base: "वाटणे", reading: "vāṭṇe" }] }
+      - { target: "ही मिठाई खूप गोड आहे.", reading: "hi miṭhāi khup goḍ āhe.", ipa: "ɦi miʈʰai kʰup ɡoɖ aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1046"
+    target: "रांगोळी"
+    reading: "rāṅgoḷi"
+    ipa: "raŋɡoɭi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "रांगोळी", reading: "rāṅgoḷi" }] }
+    examples:
+      - { target: "अंगणात सुंदर रांगोळी काढली.", reading: "aṅgaṇāt sundar rāṅgoḷi kāḍhli.", ipa: "əŋɡəɳat̪ sund̪ər raŋɡoɭi kaɖʱli", bases: [{ word: "अंगणात", base: "अंगण", reading: "aṅgaṇ" }, { word: "काढली", base: "काढणे", reading: "kāḍhṇe" }] }
+      - { target: "रांगोळीचे रंग तेजस्वी आहेत.", reading: "rāṅgoḷice raṅg tejasvi āhet.", ipa: "raŋɡoɭitʃe rəŋɡ t̪edzəsʋi aɦet̪", bases: [{ word: "रांगोळीचे", base: "रांगोळी", reading: "rāṅgoḷi" }, { word: "आहेत", base: "असणे", reading: "asṇe" }, { word: "रंग", base: "रंग", reading: "raṅg" }, { word: "तेजस्वी", base: "तेजस्वी", reading: "tejasvi" }] }
+  - id: "mr-1047"
+    target: "फटाका"
+    reading: "phaṭākā"
+    ipa: "pʰəʈaka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फटाका", reading: "phaṭākā" }] }
+    examples:
+      - { target: "रात्री फटाके वाजतात.", reading: "rātri phaṭāke vājtāt.", ipa: "rat̪ri pʰəʈake ʋadzt̪at̪", bases: [{ word: "रात्री", ref: "mr-0480" }, { word: "फटाके", base: "फटाका", reading: "phaṭākā" }, { word: "वाजतात", base: "वाजणे", reading: "vājṇe" }] }
+      - { target: "फटाक्यांनी कान दुखतो.", reading: "phaṭākyānni kān dukhto.", ipa: "pʰəʈakjanni kan d̪ukʰt̪o", bases: [{ word: "फटाक्यांनी", base: "फटाका", reading: "phaṭākā" }, { word: "दुखतो", base: "दुखणे", reading: "dukhṇe" }] }
+  - id: "mr-1048"
+    target: "पूजा"
+    reading: "pujā"
+    ipa: "pudza"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पूजा", reading: "pujā" }] }
+    examples:
+      - { target: "सकाळी देवाची पूजा केली.", reading: "sakāḷi devāci pujā keli.", ipa: "səkaɭi d̪eʋatʃi pudza keli", bases: [{ word: "सकाळी", ref: "mr-0477" }, { word: "देवाची", ref: "mr-1061" }, { word: "केली", ref: "mr-0712" }] }
+      - { target: "आई रोज पूजा करते.", reading: "āi roj pujā karte.", ipa: "ai rodz pudza kərt̪e", bases: [{ word: "करते", ref: "mr-0712" }] }
+  - id: "mr-1049"
+    target: "प्रसाद"
+    reading: "prasād"
+    ipa: "prəsad̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रसाद", reading: "prasād" }] }
+    examples:
+      - { target: "देवळात प्रसाद मिळाला.", reading: "devḷāt prasād miḷālā.", ipa: "d̪eʋɭat̪ prəsad̪ miɭala", bases: [{ word: "देवळात", base: "देऊळ", reading: "deuḷ" }, { word: "मिळाला", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "प्रसाद सगळ्यांना वाटला.", reading: "prasād sagaḷyānnā vāṭlā.", ipa: "prəsad̪ səɡəɭjanna ʋaʈla", bases: [{ word: "सगळ्यांना", ref: "mr-0684" }, { word: "वाटला", base: "वाटणे", reading: "vāṭṇe" }] }
+  - id: "mr-1050"
+    target: "नैवेद्य"
+    reading: "naivedy"
+    ipa: "nəiʋed̪j"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नैवेद्य", reading: "naivedy" }] }
+    examples:
+      - { target: "देवाला नैवेद्य दाखवला.", reading: "devālā naivedy dākhvlā.", ipa: "d̪eʋala nəiʋed̪j d̪akʰʋla", bases: [{ word: "देवाला", ref: "mr-1061" }, { word: "दाखवला", base: "दाखवणे", reading: "dākhvṇe" }] }
+      - { target: "नैवेद्यानंतर सगळे जेवतात.", reading: "naivedyānantar sagḷe jevtāt.", ipa: "nəiʋed̪janənt̪ər səɡɭe dʒeʋt̪at̪", bases: [{ word: "नैवेद्यानंतर", base: "नैवेद्य", reading: "naivedy" }, { word: "जेवतात", ref: "mr-0499" }] }
+  - id: "mr-1051"
+    target: "भेटवस्तू"
+    reading: "bheṭvastu"
+    ipa: "bʱeʈʋəst̪u"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "भेटवस्तू", reading: "bheṭvastu" }] }
+    examples:
+      - { target: "मी मित्राला भेटवस्तू दिली.", reading: "mi mitrālā bheṭvastu dili.", ipa: "mi mit̪rala bʱeʈʋəst̪u d̪ili", bases: [{ word: "मित्राला", ref: "mr-0213" }, { word: "दिली", ref: "mr-0721" }] }
+      - { target: "भेटवस्तू छान होती.", reading: "bheṭvastu chān hoti.", ipa: "bʱeʈʋəst̪u tʃʰan ɦot̪i", bases: [{ word: "होती", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1052"
+    target: "मिरवणूक"
+    reading: "mirvṇuk"
+    ipa: "mirʋɳuk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मिरवणूक", reading: "mirvṇuk" }] }
+    examples:
+      - { target: "गणपतीची मिरवणूक निघाली.", reading: "gaṇptici mirvṇuk nighāli.", ipa: "ɡəɳpt̪itʃi mirʋɳuk niɡʱali", bases: [{ word: "गणपतीची", ref: "mr-1041" }, { word: "निघाली", base: "निघणे", reading: "nighṇe" }] }
+      - { target: "मिरवणुकीत लोक नाचत होते.", reading: "mirvṇukit lok nācat hote.", ipa: "mirʋɳukit̪ lok natsət̪ ɦot̪e", bases: [{ word: "मिरवणुकीत", base: "मिरवणूक", reading: "mirvṇuk" }, { word: "नाचत", ref: "mr-1065" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1053"
+    target: "नाच"
+    reading: "nāc"
+    ipa: "nats"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नाच", reading: "nāc" }] }
+    examples:
+      - { target: "लोक नाच करत होते.", reading: "lok nāc karat hote.", ipa: "lok nats kərət̪ ɦot̪e", bases: [{ word: "करत", ref: "mr-0712" }, { word: "होते", base: "होणे", reading: "hoṇe" }] }
+      - { target: "सणाला मोठा नाच होतो.", reading: "saṇālā moṭhā nāc hoto.", ipa: "səɳala moʈʰa nats ɦot̪o", bases: [{ word: "सणाला", ref: "mr-1038" }, { word: "होतो", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1054"
+    target: "आनंद"
+    reading: "ānand"
+    ipa: "anənd̪"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "आनंद", reading: "ānand" }] }
+    examples:
+      - { target: "सणाचा आनंद वेगळा असतो.", reading: "saṇācā ānand vegḷā asto.", ipa: "səɳatsa anənd̪ ʋeɡɭa əst̪o", bases: [{ word: "सणाचा", ref: "mr-1038" }, { word: "असतो", base: "असणे", reading: "asṇe" }, { word: "वेगळा", base: "वेगळा", reading: "vegḷā" }] }
+      - { target: "सगळ्यांना खूप आनंद झाला.", reading: "sagaḷyānnā khup ānand jhālā.", ipa: "səɡəɭjanna kʰup anənd̪ dzʱala", bases: [{ word: "सगळ्यांना", ref: "mr-0684" }, { word: "झाला", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1055"
+    target: "शुभेच्छा"
+    reading: "śubhecchā"
+    ipa: "ʃubʱetstʃʰa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "शुभेच्छा", reading: "śubhecchā" }] }
+    examples:
+      - { target: "सगळ्यांना दिवाळीच्या शुभेच्छा!", reading: "sagaḷyānnā divāḷicyā śubhecchā!", ipa: "səɡəɭjanna d̪iʋaɭitʃja ʃubʱetstʃʰa", bases: [{ word: "सगळ्यांना", ref: "mr-0684" }, { word: "दिवाळीच्या", ref: "mr-0533" }] }
+      - { target: "त्यांनी शुभेच्छा दिल्या.", reading: "tyānni śubhecchā dilyā.", ipa: "t̪janni ʃubʱetstʃʰa d̪ilja", bases: [{ word: "त्यांनी", ref: "mr-0678" }, { word: "दिल्या", ref: "mr-0721" }] }
+  - id: "mr-1056"
+    target: "फराळ"
+    reading: "pharāḷ"
+    ipa: "pʰəraɭ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "फराळ", reading: "pharāḷ" }] }
+    examples:
+      - { target: "दिवाळीचा फराळ तयार आहे.", reading: "divāḷicā pharāḷ tayār āhe.", ipa: "d̪iʋaɭitsa pʰəraɭ t̪əjar aɦe", bases: [{ word: "दिवाळीचा", ref: "mr-0533" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "तयार", base: "तयार", reading: "tayār" }] }
+      - { target: "फराळ सगळ्यांना आवडतो.", reading: "pharāḷ sagaḷyānnā āvḍto.", ipa: "pʰəraɭ səɡəɭjanna aʋɖt̪o", bases: [{ word: "आवडतो", ref: "mr-0585" }, { word: "सगळ्यांना", ref: "mr-0684" }] }
+  - id: "mr-1057"
+    target: "करंजी"
+    reading: "karañji"
+    ipa: "kərəɲdʒi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "करंजी", reading: "karañji" }] }
+    examples:
+      - { target: "करंजी कुरकुरीत असते.", reading: "karañji kurkurit aste.", ipa: "kərəɲdʒi kurkurit̪ əst̪e", bases: [{ word: "असते", base: "असणे", reading: "asṇe" }, { word: "कुरकुरीत", base: "कुरकुरीत", reading: "kurkurit" }] }
+      - { target: "दिवाळीत करंजी खाते.", reading: "divāḷit karañji khāte.", ipa: "d̪iʋaɭit̪ kərəɲdʒi kʰat̪e", bases: [{ word: "दिवाळीत", ref: "mr-0533" }, { word: "खाते", ref: "mr-0708" }] }
+  - id: "mr-1058"
+    target: "पणती"
+    reading: "paṇti"
+    ipa: "pəɳt̪i"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पणती", reading: "paṇti" }] }
+    examples:
+      - { target: "दारात पणत्या लावल्या.", reading: "dārāt paṇatyā lāvalyā.", ipa: "d̪arat̪ pəɳət̪ja laʋəlja", bases: [{ word: "दारात", ref: "mr-0111" }, { word: "पणत्या", base: "पणती", reading: "paṇti" }, { word: "लावल्या", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "पणत्यांचा प्रकाश सुंदर होता.", reading: "paṇatyāñcā prakāś sundar hotā.", ipa: "pəɳət̪jaɲtsa prəkaʃ sund̪ər ɦot̪a", bases: [{ word: "पणत्यांचा", base: "पणती", reading: "paṇti" }, { word: "होता", base: "होणे", reading: "hoṇe" }, { word: "प्रकाश", base: "प्रकाश", reading: "prakāś" }] }
+  - id: "mr-1059"
+    target: "आकाशकंदील"
+    reading: "ākāśkandil"
+    ipa: "akaʃkənd̪il"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "आकाशकंदील", reading: "ākāśkandil" }] }
+    examples:
+      - { target: "घरावर आकाशकंदील लावला.", reading: "gharāvar ākāśkandil lāvlā.", ipa: "ɡʱəraʋər akaʃkənd̪il laʋla", bases: [{ word: "घरावर", ref: "mr-0048" }, { word: "लावला", base: "लावणे", reading: "lāvṇe" }] }
+      - { target: "आकाशकंदील रंगीबेरंगी आहे.", reading: "ākāśkandil raṅgiberaṅgi āhe.", ipa: "akaʃkənd̪il rəŋɡiberəŋɡi aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "रंगीबेरंगी", base: "रंगीबेरंगी", reading: "raṅgiberaṅgi" }] }
+  - id: "mr-1060"
+    target: "प्रार्थना"
+    reading: "prārthanā"
+    ipa: "prart̪ʰəna"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "प्रार्थना", reading: "prārthanā" }] }
+    examples:
+      - { target: "सकाळी प्रार्थना म्हणतो.", reading: "sakāḷi prārthanā mhaṇto.", ipa: "səkaɭi prart̪ʰəna mɦəɳt̪o", bases: [{ word: "सकाळी", ref: "mr-0477" }, { word: "म्हणतो", base: "म्हणणे", reading: "mhaṇṇe" }] }
+      - { target: "प्रार्थनेत देवाला नमस्कार करतात.", reading: "prārthanet devālā namaskār kartāt.", ipa: "prart̪ʰənet̪ d̪eʋala nəməskar kərt̪at̪", bases: [{ word: "प्रार्थनेत", base: "प्रार्थना", reading: "prārthanā" }, { word: "देवाला", ref: "mr-1061" }, { word: "करतात", ref: "mr-0712" }, { word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }] }
+  - id: "mr-1061"
+    target: "देव"
+    reading: "dev"
+    ipa: "d̪eʋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "देव", reading: "dev" }] }
+    examples:
+      - { target: "देवाला नमस्कार करा.", reading: "devālā namaskār karā.", ipa: "d̪eʋala nəməskar kəra", bases: [{ word: "देवाला", base: "देव", reading: "dev" }, { word: "करा", ref: "mr-0712" }, { word: "नमस्कार", base: "नमस्कार", reading: "namaskār" }] }
+      - { target: "देव सगळीकडे आहे.", reading: "dev sagḷikḍe āhe.", ipa: "d̪eʋ səɡɭikɖe aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "सगळीकडे", base: "सगळीकडे", reading: "sagḷikḍe" }] }
+  - id: "mr-1062"
+    target: "वाढदिवस"
+    reading: "vāḍhdivas"
+    ipa: "ʋaɖʱd̪iʋəs"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वाढदिवस", reading: "vāḍhdivas" }] }
+    examples:
+      - { target: "माझा वाढदिवस आहे.", reading: "mājhā vāḍhdivas āhe.", ipa: "madzʱa ʋaɖʱd̪iʋəs aɦe", bases: [{ word: "माझा", ref: "mr-0080" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "वाढदिवसाला केक कापतो.", reading: "vāḍhdivsālā kek kāpto.", ipa: "ʋaɖʱd̪iʋsala kek kapt̪o", bases: [{ word: "वाढदिवसाला", base: "वाढदिवस", reading: "vāḍhdivas" }, { word: "कापतो", ref: "mr-0784" }, { word: "केक", base: "केक", reading: "kek" }] }
+  - id: "mr-1063"
+    target: "साजरा करणे"
+    reading: "sājrā karṇe"
+    ipa: "sadzra kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "साजरा करणे", reading: "sājrā karṇe" }] }
+    bases:
+      - { word: "साजरा", base: "साजरा", reading: "sājrā" }
+    examples:
+      - { target: "सगळे मिळून दिवाळी साजरी करतात.", reading: "sagḷe miḷun divāḷi sājri kartāt.", ipa: "səɡɭe miɭun d̪iʋaɭi sadzri kərt̪at̪", bases: [{ word: "साजरी", base: "साजरा करणे", reading: "sājrā karṇe" }, { word: "करतात", ref: "mr-0712" }, { word: "मिळून", base: "मिळणे", reading: "miḷṇe" }] }
+      - { target: "आम्ही सण साजरा केला.", reading: "āmhi saṇ sājrā kelā.", ipa: "amɦi səɳ sadzra kela", bases: [{ word: "साजरा", base: "साजरा करणे", reading: "sājrā karṇe" }, { word: "केला", ref: "mr-0712" }] }
+  - id: "mr-1064"
+    target: "सजवणे"
+    reading: "sajvṇe"
+    ipa: "sədzʋɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सजवणे", reading: "sajvṇe" }] }
+    examples:
+      - { target: "घर सजवलं.", reading: "ghar sajvlam̐.", ipa: "ɡʱər sədzʋlə̃", bases: [{ word: "सजवलं", base: "सजवणे", reading: "sajvṇe" }] }
+      - { target: "आई घर सजवते.", reading: "āi ghar sajvte.", ipa: "ai ɡʱər sədzʋt̪e", bases: [{ word: "घर", ref: "mr-0048" }, { word: "सजवते", base: "सजवणे", reading: "sajvṇe" }] }
+  - id: "mr-1065"
+    target: "नाचणे"
+    reading: "nācṇe"
+    ipa: "natsɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नाचणे", reading: "nācṇe" }] }
+    examples:
+      - { target: "मुलं नाचत होती.", reading: "mulam̐ nācat hoti.", ipa: "mulə̃ natsət̪ ɦot̪i", bases: [{ word: "मुलं", ref: "mr-0224" }, { word: "नाचत", base: "नाचणे", reading: "nācṇe" }, { word: "होती", base: "होणे", reading: "hoṇe" }] }
+      - { target: "ती छान नाचते.", reading: "ti chān nācte.", ipa: "t̪i tʃʰan natst̪e", bases: [{ word: "नाचते", base: "नाचणे", reading: "nācṇe" }] }
+  - id: "mr-1066"
+    target: "पारंपरिक"
+    reading: "pāramparik"
+    ipa: "parəmpərik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पारंपरिक", reading: "pāramparik" }] }
+    examples:
+      - { target: "पारंपरिक पोशाख घालतात.", reading: "pāramparik pośākh ghāltāt.", ipa: "parəmpərik poʃakʰ ɡʱalt̪at̪", bases: [{ word: "घालतात", base: "घालणे", reading: "ghālṇe" }, { word: "पोशाख", base: "पोशाख", reading: "pośākh" }] }
+      - { target: "हा पारंपरिक सण आहे.", reading: "hā pāramparik saṇ āhe.", ipa: "ɦa parəmpərik səɳ aɦe", bases: [{ word: "हा", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }

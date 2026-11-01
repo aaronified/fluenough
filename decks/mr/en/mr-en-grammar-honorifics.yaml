@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-honorifics"
+kind: "layer"
+core: "mr-grammar-honorifics"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Who you are speaking to: तू (tū) and तुम्ही (tumhī)"
+license: "CC-BY-SA-4.0"
+description: "You come, you all come: choosing the right word for you and the matching verb, from a friend to an elder. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Forms of address: the present with तू (tū) and तुम्ही (tumhī)"
+  slot_name: "person addressed"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "तू": "a friend or a child (familiar)", "तुम्ही": "an elder, a stranger or a very senior person (respectful)" }
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "bolne": "to speak"
+    "khaane": "to eat"
+    "karne": "to do"
+    "paahne": "to see"
+    "sangne": "to tell"
+    "ghene": "to take"
+    "dene": "to give"
+    "pine": "to drink"
+  notes: "Marathi has two everyday words for you. तू (tū) is for a close friend or a child, and its verb ends in -तोस (-tos): तू येतोस (tū yetos), you come. तुम्ही (tumhī) is for an elder, a stranger or more than one person, and its verb is plural: तुम्ही येता (tumhī yetā), you come. आपण (āpaṇ) is a more formal word still, for a very senior person; it takes exactly the same verb as तुम्ही (tumhī), so the table has no slot of its own for it: आपण बोलता का? (āpaṇ bolatā kā?), do you speak? The honorific possessive is आपला (āpalā), your, for the same respect."

@@ -1,0 +1,248 @@
+schema: 1
+id: "mr-en-weather"
+kind: "layer"
+core: "mr-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather"
+description: "Rain, wind, sun, cloud and fog, the seasons of the sky and the words to describe them. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1004":
+    native: "weather"
+    notes:
+      "n1": "{1} is the weather. Ask How is the weather? with a question about it."
+    examples:
+      "आज हवामान छान आहे.": { native: "The weather is nice today.", bases: { "आहे": "to be" } }
+      "हवामान अचानक बदललं.": { native: "The weather changed suddenly.", bases: { "बदललं": "to change", "अचानक": "suddenly" } }
+  "mr-1005":
+    native: "rain"
+    notes:
+      "n1": "{1} is rain. In the monsoon it falls for weeks."
+    examples:
+      "आज पाऊस पडतोय.": "It is raining today."
+      "पावसाळ्यात खूप पाऊस असतो.": { native: "There is a lot of rain in the monsoon.", bases: { "असतो": "to be", "पावसाळ्यात": "in the monsoon" } }
+  "mr-1006":
+    native: "sun"
+    notes:
+      "n1": "{1} is the sun. The sun rises and sets, and the word is masculine."
+    examples:
+      "सूर्य वर आला.": "The sun came up."
+      "सूर्य मावळला.": { native: "The sun set.", bases: { "मावळला": "to set" } }
+  "mr-1007":
+    native: "sunshine, sun's heat"
+    notes:
+      "n1": "{1} is the sunshine and heat of the day. Stay in its shade on hot days."
+    examples:
+      "आज खूप ऊन आहे.": { native: "It is very sunny today.", bases: { "आहे": "to be" } }
+      "उन्हात जाऊ नको.": { native: "Do not go out in the sun.", bases: { "उन्हात": "sunshine, sun's heat" } }
+  "mr-1008":
+    native: "wind"
+    notes:
+      "n1": "{1} is wind. Its plural form वारे (vāre) is used for winds in general."
+    examples:
+      "वारा जोरात वाहतो.": { native: "The wind blows hard.", bases: { "जोरात": "loudly" } }
+      "वाऱ्याने झाडं हलली.": { native: "The trees shook in the wind.", bases: { "झाडं": "trees", "हलली": "to shake", "वाऱ्याने": "wind" } }
+  "mr-1009":
+    native: "storm"
+    notes:
+      "n1": "{1} is a storm. Stay indoors when there is one."
+    examples:
+      "वादळ आलं.": "A storm came."
+      "वादळात घरात थांबा.": { native: "Stay indoors in the storm.", bases: { "वादळात": "storm" } }
+  "mr-1010":
+    native: "lightning; electricity"
+    notes:
+      "n1": "{1} means lightning in the sky and also electricity: the same word."
+    examples:
+      "वीज चमकली.": "Lightning flashed."
+      "विजेमुळे दिवे गेले.": { native: "The lights went out because of lightning.", bases: { "विजेमुळे": "lightning; electricity" } }
+  "mr-1011":
+    native: "thunder"
+    notes:
+      "n1": "{1} is thunder, the sound after lightning."
+    examples:
+      "मेघगर्जना जोरात झाली.": { native: "The thunder was loud.", bases: { "झाली": "to become", "जोरात": "loudly" } }
+      "मेघगर्जनेने सगळे घाबरले.": { native: "Everyone got scared at the thunder.", bases: { "घाबरले": "to be scared", "मेघगर्जनेने": "thunder" } }
+  "mr-1012":
+    native: "fog, mist"
+    notes:
+      "n1": "{1} is fog. It is common in winter mornings."
+    examples:
+      "सकाळी धुकं होतं.": { native: "There was fog in the morning.", bases: { "होतं": "to be" } }
+      "धुक्यामुळे गाड्या हळू चालतात.": { native: "Because of the fog, vehicles move slowly.", bases: { "धुक्यामुळे": "fog, mist", "चालतात": "to move" } }
+  "mr-1013":
+    native: "cold (the weather)"
+    notes:
+      "n1": "{1} is the cold of winter weather. Use थंड (thaṇḍ) for a cold thing."
+    examples:
+      "आज थंडी आहे.": { native: "It is cold today.", bases: { "आहे": "to be" } }
+      "थंडीत स्वेटर घाला.": { native: "Wear a sweater in the cold.", bases: { "थंडीत": "cold (the weather)", "घाला": "to wear" } }
+  "mr-1014":
+    native: "muggy heat"
+    notes:
+      "n1": "{1} is the heavy, sticky heat before rain."
+    examples:
+      "आज खूप उकाडा आहे.": { native: "It is very muggy today.", bases: { "आहे": "to be" } }
+      "उकाड्याने घाम येतो.": { native: "The heat makes you sweat.", bases: { "उकाड्याने": "muggy heat", "घाम": "sweat" } }
+  "mr-1015":
+    native: "temperature"
+    notes:
+      "n1": "{1} is the temperature. It is given in degrees: अंश (aṁś)."
+    examples:
+      "आज तापमान चाळीस अंश आहे.": { native: "The temperature is forty degrees today.", bases: { "आहे": "to be" } }
+      "तापमान वाढत आहे.": { native: "The temperature is rising.", bases: { "आहे": "to be" } }
+  "mr-1016":
+    native: "degree (of temperature)"
+    notes:
+      "n1": "{1} is a degree of temperature. It is said as a number: वीस अंश (vīs aṁś), twenty degrees."
+    examples:
+      "पाण्याचं तापमान वीस अंश आहे.": { native: "The water's temperature is twenty degrees.", bases: { "आहे": "to be", "पाण्याचं": "of water" } }
+      "दहा अंशांनी तापमान घटलं.": { native: "The temperature fell by ten degrees.", bases: { "घटलं": "to fall", "अंशांनी": "degree (of temperature)" } }
+  "mr-1017":
+    native: "sky"
+    notes:
+      "n1": "{1} is the sky. Above it there is आभाळ (ābhāḷ), a more everyday word."
+    examples:
+      "आकाश निळं आहे.": { native: "The sky is blue.", bases: { "आहे": "to be" } }
+      "आकाशात ढग आहेत.": { native: "There are clouds in the sky.", bases: { "आहेत": "to be", "आकाशात": "sky" } }
+  "mr-1018":
+    native: "air; weather of the day"
+    notes:
+      "n1": "{1} is air. Its weather sense is in हवा चांगली (havā cāṅgalī), the weather is good."
+    examples:
+      "हवा थंड आहे.": { native: "The air is cold.", bases: { "आहे": "to be" } }
+      "हवेत ओलावा आहे.": { native: "The air is damp.", bases: { "आहे": "to be", "हवेत": "air; weather of the day", "ओलावा": "dampness" } }
+  "mr-1019":
+    native: "cloudy"
+    notes:
+      "n1": "{1} says the sky is covered with clouds."
+    examples:
+      "आज आकाश ढगाळ आहे.": { native: "The sky is cloudy today.", bases: { "आहे": "to be" } }
+      "ढगाळ दिवशी फिरायला जाऊ.": { native: "Let's go for a walk on a cloudy day.", bases: { "फिरायला": "for a walk" } }
+  "mr-1020":
+    native: "humid"
+    notes:
+      "n1": "{1} describes hot air full of moisture, as in the monsoon."
+    examples:
+      "पावसात हवा दमट असते.": { native: "In the rain the air is humid.", bases: { "असते": "to be" } }
+      "दमट हवेत झोप येत नाही.": "In humid air sleep does not come."
+  "mr-1021":
+    native: "wet"
+    notes:
+      "n1": "{1} is wet. Its opposite is कोरडा (koraḍā), dry."
+    examples:
+      "कपडे ओले आहेत.": { native: "The clothes are wet.", bases: { "कपडे": "clothes", "आहेत": "to be", "ओले": "wet" } }
+      "पावसात भिजून सगळे ओले झाले.": { native: "Everyone got wet, soaked in the rain.", bases: { "भिजून": "to soak", "झाले": "to become", "ओले": "wet" } }
+  "mr-1022":
+    native: "dry"
+    notes:
+      "n1": "{1} is dry: the opposite of ओला (olā), wet."
+    examples:
+      "उन्हाळ्यात जमीन कोरडी होते.": { native: "In summer the ground becomes dry.", bases: { "होते": "to become", "कोरडी": "dry", "जमीन": "ground", "उन्हाळ्यात": "in summer" } }
+      "कोरडं हवामान आवडतं.": { native: "I like dry weather.", bases: { "कोरडं": "dry" } }
+  "mr-1023":
+    native: "to blow; to flow"
+    notes:
+      "n1": "{1} is used for wind blowing and for water flowing."
+    examples:
+      "थंड वारा वाहतोय.": { native: "A cold wind is blowing.", bases: { "वाहतोय": "to blow; to flow" } }
+      "नदीचं पाणी वेगाने वाहतं.": { native: "The river's water flows fast.", bases: { "वाहतं": "to blow; to flow", "वेगाने": "fast" } }
+  "mr-1024":
+    native: "to fall"
+    notes:
+      "n1": "{1} is used for rain and leaves falling."
+    examples:
+      "पाने झाडावरून पडली.": { native: "Leaves fell from the tree.", bases: { "पाने": "leaves", "झाडावरून": "from the tree", "पडली": "to fall" } }
+      "पावसाचे थेंब पडले.": { native: "Drops of rain fell.", bases: { "पडले": "to fall", "थेंब": "drop" } }
+  "mr-1025":
+    native: "to flash; to shine"
+    notes:
+      "n1": "{1} is used for lightning flashing and for stars or metal shining."
+    examples:
+      "तारे चमकत आहेत.": { native: "The stars are shining.", bases: { "तारे": "stars", "आहेत": "to be", "चमकत": "to flash; to shine" } }
+      "सोन्याचे दागिने चमकतात.": { native: "Gold jewellery shines.", bases: { "सोन्याचे": "of gold", "दागिने": "jewellery", "चमकतात": "to flash; to shine" } }
+  "mr-1026":
+    native: "to rumble"
+    notes:
+      "n1": "{1} is the sound of thunder rolling."
+    examples:
+      "ढग गडगडले.": { native: "The clouds rumbled.", bases: { "गडगडले": "to rumble" } }
+      "दूर कुठेतरी गडगडतंय.": { native: "It is rumbling somewhere far away.", bases: { "गडगडतंय": "to rumble", "दूर": "far", "कुठेतरी": "somewhere" } }
+  "mr-1027":
+    native: "to rise; to grow"
+    notes:
+      "n1": "{1} is used for the rain or the temperature increasing."
+    examples:
+      "पाऊस वाढला.": { native: "The rain increased.", bases: { "वाढला": "to rise; to grow" } }
+      "पूर वाढत आहे.": { native: "The flood is rising.", bases: { "आहे": "to be", "वाढत": "to rise; to grow" } }
+  "mr-1028":
+    native: "monsoon"
+    notes:
+      "n1": "{1} is the monsoon, the summer rains. The Marathi word for the season is पावसाळा (pāvsāḷā)."
+    examples:
+      "मान्सून जूनमध्ये येतो.": { native: "The monsoon comes in June.", bases: { "जूनमध्ये": "in June" } }
+      "यंदा मान्सून लवकर आला.": { native: "The monsoon came early this year.", bases: { "यंदा": "this year" } }
+  "mr-1029":
+    native: "rainfall"
+    notes:
+      "n1": "{1} is the amount of rain that falls."
+    examples:
+      "आज जोरदार वृष्टी झाली.": { native: "There was heavy rainfall today.", bases: { "झाली": "to become", "जोरदार": "heavy, strong" } }
+      "वृष्टीमुळे रस्ते बंद झाले.": { native: "Because of the rainfall the roads closed.", bases: { "झाले": "to become", "वृष्टीमुळे": "rainfall", "बंद": "closed" } }
+  "mr-1030":
+    native: "shower"
+    notes:
+      "n1": "{1} is a short shower of rain."
+    examples:
+      "दुपारी सरी पडल्या.": "Showers fell in the afternoon."
+      "सरींमध्ये भिजलो.": { native: "I got soaked in the showers.", bases: { "भिजलो": "to soak", "सरींमध्ये": "shower" } }
+  "mr-1031":
+    native: "breeze"
+    notes:
+      "n1": "{1} is a light, cool breeze."
+    examples:
+      "थंड झुळूक आली.": "A cool breeze came."
+      "संध्याकाळी छान झुळूक वाहते.": "In the evening a nice breeze blows."
+  "mr-1032":
+    native: "hailstorm"
+    notes:
+      "n1": "{1} is a storm of hail, ice falling from the sky."
+    examples:
+      "गारपिटीमुळे पिकांचे नुकसान झाले.": { native: "The hailstorm damaged the crops.", bases: { "पिकांचे": "of crops", "झाले": "to become", "गारपिटीमुळे": "hailstorm", "नुकसान": "damage" } }
+      "गारपीट थांबली.": "The hailstorm stopped."
+  "mr-1033":
+    native: "rainbow"
+    notes:
+      "n1": "{1} is a rainbow, which comes after the rain."
+    examples:
+      "पावसानंतर इंद्रधनुष्य दिसलं.": { native: "A rainbow appeared after the rain.", bases: { "दिसलं": "to appear" } }
+      "इंद्रधनुष्यात सात रंग असतात.": { native: "A rainbow has seven colours.", bases: { "असतात": "to be", "इंद्रधनुष्यात": "in a rainbow", "रंग": "colours" } }
+  "mr-1034":
+    native: "shade"
+    notes:
+      "n1": "{1} is a shade, the dark place out of the sun."
+    examples:
+      "झाडाखाली सावली आहे.": { native: "There is shade under the tree.", bases: { "झाडाखाली": "under the tree", "आहे": "to be" } }
+      "सावलीत थोडं बसा.": { native: "Sit in the shade for a bit.", bases: { "बसा": "to sit", "सावलीत": "shade", "थोडं": "a little" } }
+  "mr-1035":
+    native: "season"
+    notes:
+      "n1": "{1} is a season. India is said to have six."
+    examples:
+      "भारतात सहा ऋतू आहेत.": { native: "India has six seasons.", bases: { "आहेत": "to be", "भारतात": "in India" } }
+      "माझा आवडता ऋतू पावसाळा आहे.": { native: "My favourite season is the monsoon.", bases: { "आहे": "to be" } }
+  "mr-1036":
+    native: "flood"
+    notes:
+      "n1": "{1} is a flood when a river overflows."
+    examples:
+      "नदीला पूर आला.": "The river flooded."
+      "पुरामुळे गावात पाणी शिरलं.": { native: "The flood let water into the village.", bases: { "शिरलं": "to enter", "पुरामुळे": "flood" } }
+  "mr-1037":
+    native: "drought"
+    notes:
+      "n1": "{1} is a drought, a long time without rain."
+    examples:
+      "यंदा दुष्काळ आहे.": { native: "There is a drought this year.", bases: { "आहे": "to be", "यंदा": "this year" } }
+      "दुष्काळात शेतकरी कष्ट करतात.": { native: "Farmers work hard in a drought.", bases: { "दुष्काळात": "drought", "कष्ट": "hard work" } }

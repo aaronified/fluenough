@@ -1,0 +1,165 @@
+schema: 1
+id: "mr-en-phone"
+kind: "layer"
+core: "mr-phone"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone"
+description: "Using a phone: calls, numbers, messages, batteries, the internet and apps, in everyday Marathi. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1190":
+    native: "mobile phone"
+    notes:
+      "n1": "{1} is a mobile phone, a loanword from English. Phone is also फोन (phon)."
+    examples:
+      "माझा मोबाईल बंद आहे.": { native: "My mobile is switched off.", bases: { "आहे": "to be", "बंद": "closed" } }
+      "मोबाईल वाजतोय.": { native: "The mobile is ringing.", bases: { "वाजतोय": "to ring" } }
+  "mr-1191":
+    native: "phone call"
+    notes:
+      "n1": "{1} is a call, a loanword from English. The verb is कॉल करणे (kôl karṇe), to call."
+    examples:
+      "तुझा कॉल आला होता.": { native: "Your call came earlier.", bases: { "होता": "to be" } }
+      "मी तुला कॉल करतो.": "I will call you."
+  "mr-1192":
+    native: "number"
+    notes:
+      "n1": "{1} is a number, a loanword from English. The phone number is फोन नंबर (phon nambar)."
+    examples:
+      "तुझा नंबर काय आहे?": { native: "What is your number?", bases: { "आहे": "to be" } }
+      "नंबर लिहून घ्या.": "Write the number down."
+  "mr-1193":
+    native: "message"
+    notes:
+      "n1": "{1} is a message, the words you send to someone."
+    examples:
+      "त्याचा संदेश आला.": "His message came."
+      "मी संदेश वाचला.": "I read the message."
+  "mr-1194":
+    native: "text message"
+    notes:
+      "n1": "{1} is a text message, a loanword from English."
+    examples:
+      "मेसेज पाठवला का?": "Did you send the message?"
+      "मेसेज आला की सांग.": "When a message comes, tell me."
+  "mr-1195":
+    native: "SIM card"
+    notes:
+      "n1": "{1} is a SIM card, a loanword from English."
+    examples:
+      "सिम कार्ड बदललं.": "I changed the SIM card."
+      "माझं सिम नवीन आहे.": { native: "My SIM is new.", bases: { "आहे": "to be" } }
+  "mr-1196":
+    native: "charger"
+    notes:
+      "n1": "{1} is a charger, a loanword from English."
+    examples:
+      "चार्जर कुठे आहे?": { native: "Where is the charger?", bases: { "आहे": "to be" } }
+      "चार्जरने फोन चार्ज करा.": { native: "Charge the phone with the charger.", bases: { "चार्जरने": "charger", "चार्ज": "charge" } }
+  "mr-1197":
+    native: "battery"
+    notes:
+      "n1": "{1} is a battery, a loanword from English."
+    examples:
+      "बॅटरी संपली.": { native: "The battery has run out.", bases: { "संपली": "to end" } }
+      "फोनची बॅटरी कमी आहे.": { native: "The phone's battery is low.", bases: { "आहे": "to be", "कमी": "less" } }
+  "mr-1198":
+    native: "screen"
+    notes:
+      "n1": "{1} is a screen, a loanword from English."
+    examples:
+      "स्क्रीन फुटली.": { native: "The screen broke.", bases: { "फुटली": "to break" } }
+      "स्क्रीनवर संदेश दिसतो.": { native: "The message appears on the screen.", bases: { "दिसतो": "to appear", "स्क्रीनवर": "screen" } }
+  "mr-1199":
+    native: "internet"
+    notes:
+      "n1": "{1} is the internet, a loanword from English."
+    examples:
+      "इंटरनेट चालत नाही.": { native: "The internet is not working.", bases: { "नाही": "not", "चालत": "to run, to work" } }
+      "इंटरनेट स्वस्त आहे.": { native: "The internet is cheap.", bases: { "आहे": "to be" } }
+  "mr-1200":
+    native: "app"
+    notes:
+      "n1": "{1} is an app, a loanword from English."
+    examples:
+      "हे ॲप डाउनलोड करा.": { native: "Download this app.", bases: { "डाउनलोड": "download" } }
+      "ॲप नवीन आहे.": { native: "The app is new.", bases: { "आहे": "to be" } }
+  "mr-1201":
+    native: "password"
+    notes:
+      "n1": "{1} is a password, a loanword from English."
+    examples:
+      "पासवर्ड विसरलो.": "I forgot the password."
+      "पासवर्ड कोणाला सांगू नका.": { native: "Do not tell the password to anyone.", bases: { "कोणाला": "anyone" } }
+  "mr-1202":
+    native: "video"
+    notes:
+      "n1": "{1} is a video, a loanword from English."
+    examples:
+      "तो व्हिडिओ पाहिला.": "I watched that video."
+      "व्हिडिओ पाठवा.": "Send the video."
+  "mr-1203":
+    native: "photo"
+    notes:
+      "n1": "{1} is a photo, a loanword from English."
+    examples:
+      "सुंदर फोटो आहे.": { native: "It is a beautiful photo.", bases: { "आहे": "to be" } }
+      "त्याचा फोटो काढा.": "Take his photo."
+  "mr-1204":
+    native: "internet connection"
+    notes:
+      "n1": "{1} is an internet connection."
+    bases:
+      "कनेक्शन": "connection"
+    examples:
+      "इंटरनेट कनेक्शन बंद आहे.": { native: "The internet connection is off.", bases: { "बंद": "off", "आहे": "to be", "कनेक्शन": "connection" } }
+      "कनेक्शन परत जोडा.": { native: "Reconnect the connection.", bases: { "जोडा": "to connect", "कनेक्शन": "connection", "परत": "back" } }
+  "mr-1205":
+    native: "ringing, ring tone"
+    notes:
+      "n1": "{1} is the ring of a phone."
+    examples:
+      "फोनची रिंग वाजत होती.": { native: "The phone was ringing.", bases: { "वाजत": "to ring", "होती": "to be" } }
+      "रिंग ऐकू येत नाही.": { native: "I cannot hear the ring.", bases: { "नाही": "not" } }
+  "mr-1206":
+    native: "to charge"
+    notes:
+      "n1": "{1} is charging a battery or a phone."
+    bases:
+      "चार्ज": "charge"
+    examples:
+      "फोन चार्ज कर.": { native: "Charge the phone.", bases: { "चार्ज": "charge" } }
+      "बॅटरी पूर्ण चार्ज झाली.": { native: "The battery is fully charged.", bases: { "चार्ज": "charge", "झाली": "to become", "पूर्ण": "complete" } }
+  "mr-1207":
+    native: "to download"
+    notes:
+      "n1": "{1} is downloading a file or an app."
+    bases:
+      "डाउनलोड": "download"
+    examples:
+      "गाणं डाउनलोड केलं.": { native: "I downloaded the song.", bases: { "डाउनलोड": "download" } }
+      "ॲप डाउनलोड करा.": { native: "Download the app.", bases: { "डाउनलोड": "download" } }
+  "mr-1208":
+    native: "to send a message"
+    notes:
+      "n1": "{1} is sending a text message."
+    examples:
+      "तिने मेसेज पाठवला.": "She sent a message."
+      "मेसेज पाठवून सांग.": "Send a message and tell me."
+  "mr-1209":
+    native: "to call (by phone)"
+    notes:
+      "n1": "{1} is calling someone on the phone."
+    examples:
+      "त्याला कॉल केला.": "I called him."
+      "कॉल करू का?": "Shall I call?"
+  "mr-1210":
+    native: "to connect"
+    notes:
+      "n1": "{1} is connecting a phone to a network or device."
+    bases:
+      "कनेक्ट": "to connect"
+    examples:
+      "फोन वायफायला कनेक्ट केला.": { native: "I connected the phone to the wifi.", bases: { "कनेक्ट": "to connect", "वायफायला": "the wifi" } }
+      "कनेक्ट होत नाही.": { native: "It does not connect.", bases: { "कनेक्ट": "to connect", "होत": "to become", "नाही": "not" } }

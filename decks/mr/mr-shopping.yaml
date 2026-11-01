@@ -1,0 +1,260 @@
+schema: 1
+id: "mr-shopping"
+part: "core"
+kind: "vocab"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "shopping"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "mr-1067"
+    target: "खरेदी"
+    reading: "kharedi"
+    ipa: "kʰəred̪i"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खरेदी", reading: "kharedi" }] }
+    examples:
+      - { target: "आज खरेदीला जाऊ.", reading: "āj kharedilā jāu.", ipa: "adz kʰəred̪ila dzau", bases: [{ word: "खरेदीला", base: "खरेदी", reading: "kharedi" }, { word: "जाऊ", ref: "mr-0710" }] }
+      - { target: "खरेदी छान झाली.", reading: "kharedi chān jhāli.", ipa: "kʰəred̪i tʃʰan dzʱali", bases: [{ word: "झाली", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1068"
+    target: "सवलत"
+    reading: "savlat"
+    ipa: "səʋlət̪"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सवलत", reading: "savlat" }] }
+    examples:
+      - { target: "सवलत किती आहे?", reading: "savlat kiti āhe?", ipa: "səʋlət̪ kit̪i aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पंधरा टक्के सवलत आहे.", reading: "pandharā ṭakke savlat āhe.", ipa: "pənd̪ʱəra ʈəkke səʋlət̪ aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }, { word: "टक्के", base: "टक्का", reading: "ṭakkā" }] }
+  - id: "mr-1069"
+    target: "पावती"
+    reading: "pāvti"
+    ipa: "paʋt̪i"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पावती", reading: "pāvti" }] }
+    examples:
+      - { target: "पावती घ्या.", reading: "pāvti ghyā.", ipa: "paʋt̪i ɡʱja", bases: [{ word: "घ्या", ref: "mr-0722" }] }
+      - { target: "पावतीवर तारीख आहे.", reading: "pāvtivar tārikh āhe.", ipa: "paʋt̪iʋər t̪arikʰ aɦe", bases: [{ word: "पावतीवर", base: "पावती", reading: "pāvti" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1070"
+    target: "ग्राहक"
+    reading: "grāhak"
+    ipa: "ɡraɦək"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ग्राहक", reading: "grāhak" }] }
+    examples:
+      - { target: "ग्राहक दुकानात आले.", reading: "grāhak dukānāt āle.", ipa: "ɡraɦək d̪ukanat̪ ale", bases: [{ word: "दुकानात", ref: "mr-0376" }, { word: "आले", ref: "mr-0711" }] }
+      - { target: "ग्राहकाला मदत करा.", reading: "grāhkālā madat karā.", ipa: "ɡraɦkala məd̪ət̪ kəra", bases: [{ word: "ग्राहकाला", base: "ग्राहक", reading: "grāhak" }, { word: "करा", ref: "mr-0712" }] }
+  - id: "mr-1071"
+    target: "विक्रेता"
+    reading: "vikretā"
+    ipa: "ʋikret̪a"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विक्रेता", reading: "vikretā" }] }
+    examples:
+      - { target: "विक्रेता हसला.", reading: "vikretā haslā.", ipa: "ʋikret̪a ɦəsla", bases: [{ word: "हसला", base: "हसणे", reading: "hasṇe" }] }
+      - { target: "विक्रेत्याकडे फळं आहेत.", reading: "vikretyākḍe phaḷam̐ āhet.", ipa: "ʋikret̪jakɖe pʰəɭə̃ aɦet̪", bases: [{ word: "विक्रेत्याकडे", base: "विक्रेता", reading: "vikretā" }, { word: "फळं", ref: "mr-0056" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1072"
+    target: "घासाघीस"
+    reading: "ghāsāghis"
+    ipa: "ɡʱasaɡʱis"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "घासाघीस", reading: "ghāsāghis" }] }
+    examples:
+      - { target: "इथे घासाघीस करता येते.", reading: "ithe ghāsāghis kartā yete.", ipa: "it̪ʰe ɡʱasaɡʱis kərt̪a jet̪e", bases: [{ word: "करता", ref: "mr-0712" }, { word: "येते", ref: "mr-0711" }] }
+      - { target: "घासाघीस केली तर स्वस्त होईल.", reading: "ghāsāghis keli tar svast hoil.", ipa: "ɡʱasaɡʱis keli t̪ər sʋəst̪ ɦoil", bases: [{ word: "केली", ref: "mr-0712" }, { word: "होईल", base: "होणे", reading: "hoṇe" }] }
+  - id: "mr-1073"
+    target: "ऑफर"
+    reading: "ôphar"
+    ipa: "ɔpʰər"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ऑफर", reading: "ôphar" }] }
+    examples:
+      - { target: "आज एक ऑफर आहे.", reading: "āj ek ôphar āhe.", ipa: "adz ek ɔpʰər aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "ऑफर संपली.", reading: "ôphar sampali.", ipa: "ɔpʰər səmpəli", bases: [{ word: "संपली", base: "संपणे", reading: "sampaṇe" }] }
+  - id: "mr-1074"
+    target: "परत करणे"
+    reading: "parat karṇe"
+    ipa: "pərət̪ kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "परत करणे", reading: "parat karṇe" }] }
+    bases:
+      - { word: "परत", base: "परत", reading: "parat" }
+    examples:
+      - { target: "हा शर्ट परत करायचा आहे.", reading: "hā śarṭ parat karāycā āhe.", ipa: "ɦa ʃərʈ pərət̪ kərajtsa aɦe", bases: [{ word: "करायचा", ref: "mr-0712" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "परत", base: "परत", reading: "parat" }] }
+      - { target: "मी वस्तू परत केली.", reading: "mi vastu parat keli.", ipa: "mi ʋəst̪u pərət̪ keli", bases: [{ word: "केली", ref: "mr-0712" }, { word: "परत", base: "परत", reading: "parat" }] }
+  - id: "mr-1075"
+    target: "खरेदी करणे"
+    reading: "kharedi karṇe"
+    ipa: "kʰəred̪i kərɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "खरेदी करणे", reading: "kharedi karṇe" }] }
+    examples:
+      - { target: "आज नवीन कपडे खरेदी केले.", reading: "āj navin kapḍe kharedi kele.", ipa: "adz nəʋin kəpɖe kʰəred̪i kele", bases: [{ word: "केले", ref: "mr-0712" }, { word: "कपडे", base: "कपडा", reading: "kapḍā" }] }
+      - { target: "ते फळं खरेदी करतात.", reading: "te phaḷam̐ kharedi kartāt.", ipa: "t̪e pʰəɭə̃ kʰəred̪i kərt̪at̪", bases: [{ word: "करतात", ref: "mr-0712" }, { word: "फळं", ref: "mr-0056" }] }
+  - id: "mr-1076"
+    target: "विकणे"
+    reading: "vikṇe"
+    ipa: "ʋikɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "विकणे", reading: "vikṇe" }] }
+    examples:
+      - { target: "तो भाजी विकतो.", reading: "to bhāji vikto.", ipa: "t̪o bʱadʒi ʋikt̪o", bases: [{ word: "विकतो", base: "विकणे", reading: "vikṇe" }] }
+      - { target: "हे दुकान फळं विकतं.", reading: "he dukān phaḷam̐ viktam̐.", ipa: "ɦe d̪ukan pʰəɭə̃ ʋikt̪ə̃", bases: [{ word: "विकतं", base: "विकणे", reading: "vikṇe" }, { word: "फळं", ref: "mr-0056" }] }
+  - id: "mr-1077"
+    target: "मोजणे"
+    reading: "mojṇe"
+    ipa: "modzɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मोजणे", reading: "mojṇe" }] }
+    examples:
+      - { target: "पैसे मोजा.", reading: "paise mojā.", ipa: "pəise modza", bases: [{ word: "मोजा", base: "मोजणे", reading: "mojṇe" }] }
+      - { target: "त्याने पैसे मोजले.", reading: "tyāne paise mojle.", ipa: "t̪jane pəise modzle", bases: [{ word: "त्याने", ref: "mr-0676" }, { word: "मोजले", base: "मोजणे", reading: "mojṇe" }] }
+  - id: "mr-1078"
+    target: "बदलणे"
+    reading: "badlṇe"
+    ipa: "bəd̪lɳe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "बदलणे", reading: "badlṇe" }] }
+    examples:
+      - { target: "हा शर्ट बदलता येईल का?", reading: "hā śarṭ badltā yeil kā?", ipa: "ɦa ʃərʈ bəd̪lt̪a jeil ka", bases: [{ word: "बदलता", base: "बदलणे", reading: "badlṇe" }, { word: "येईल", ref: "mr-0711" }] }
+      - { target: "रंग बदलायचा आहे.", reading: "raṅg badlāycā āhe.", ipa: "rəŋɡ bəd̪lajtsa aɦe", bases: [{ word: "बदलायचा", base: "बदलणे", reading: "badlṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "रंग", base: "रंग", reading: "raṅg" }] }
+  - id: "mr-1079"
+    target: "वस्तू"
+    reading: "vastu"
+    ipa: "ʋəst̪u"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "वस्तू", reading: "vastu" }] }
+    examples:
+      - { target: "या वस्तू नवीन आहेत.", reading: "yā vastu navin āhet.", ipa: "ja ʋəst̪u nəʋin aɦet̪", bases: [{ word: "या", ref: "mr-0679" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "वस्तू परत घेता येते का?", reading: "vastu parat ghetā yete kā?", ipa: "ʋəst̪u pərət̪ ɡʱet̪a jet̪e ka", bases: [{ word: "घेता", ref: "mr-0722" }, { word: "येते", ref: "mr-0711" }, { word: "परत", base: "परत", reading: "parat" }] }
+  - id: "mr-1080"
+    target: "मोफत"
+    reading: "mophat"
+    ipa: "mopʰət̪"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "मोफत", reading: "mophat" }] }
+    examples:
+      - { target: "ही पिशवी मोफत आहे.", reading: "hi piśvi mophat āhe.", ipa: "ɦi piʃʋi mopʰət̪ aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "पाणी मोफत दिलं.", reading: "pāṇi mophat dilam̐.", ipa: "paɳi mopʰət̪ d̪ilə̃", bases: [{ word: "दिलं", ref: "mr-0721" }] }
+  - id: "mr-1081"
+    target: "सौदा"
+    reading: "saudā"
+    ipa: "səud̪a"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "सौदा", reading: "saudā" }] }
+    examples:
+      - { target: "सौदा झाला.", reading: "saudā jhālā.", ipa: "səud̪a dzʱala", bases: [{ word: "झाला", base: "होणे", reading: "hoṇe" }] }
+      - { target: "हा सौदा चांगला आहे.", reading: "hā saudā cāṅgalā āhe.", ipa: "ɦa səud̪a tsaŋɡəla aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1082"
+    target: "ब्रँड"
+    reading: "bram̐ḍ"
+    ipa: "brə̃ɖ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ब्रँड", reading: "bram̐ḍ" }] }
+    examples:
+      - { target: "हा ब्रँड चांगला आहे.", reading: "hā bram̐ḍ cāṅgalā āhe.", ipa: "ɦa brə̃ɖ tsaŋɡəla aɦe", bases: [{ word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "कोणता ब्रँड घेतलास?", reading: "koṇtā bram̐ḍ ghetlās?", ipa: "koɳt̪a brə̃ɖ ɡʱet̪las", bases: [{ word: "घेतलास", ref: "mr-0722" }] }
+  - id: "mr-1083"
+    target: "स्टॉल"
+    reading: "sṭôl"
+    ipa: "sʈɔl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "स्टॉल", reading: "sṭôl" }] }
+    examples:
+      - { target: "स्टॉलवर भाज्या आहेत.", reading: "sṭôlvar bhājyā āhet.", ipa: "sʈɔlʋər bʱadʒja aɦet̪", bases: [{ word: "स्टॉलवर", base: "स्टॉल", reading: "sṭôl" }, { word: "भाज्या", ref: "mr-0390" }, { word: "आहेत", base: "असणे", reading: "asṇe" }] }
+      - { target: "हा स्टॉल सकाळी उघडतो.", reading: "hā sṭôl sakāḷi ughḍto.", ipa: "ɦa sʈɔl səkaɭi uɡʱɖt̪o", bases: [{ word: "उघडतो", ref: "mr-0724" }] }
+  - id: "mr-1084"
+    target: "पेमेंट"
+    reading: "pemeṇṭ"
+    ipa: "pemeɳʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "पेमेंट", reading: "pemeṇṭ" }] }
+    examples:
+      - { target: "पेमेंट झालं.", reading: "pemeṇṭ jhālam̐.", ipa: "pemeɳʈ dzʱalə̃", bases: [{ word: "झालं", base: "होणे", reading: "hoṇe" }] }
+      - { target: "पेमेंट ऑनलाइन करू शकता.", reading: "pemeṇṭ ônlāin karu śaktā.", ipa: "pemeɳʈ ɔnlain kəru ʃəkt̪a", bases: [{ word: "करू", ref: "mr-0712" }, { word: "शकता", base: "शकणे", reading: "śakṇe" }] }
+  - id: "mr-1085"
+    target: "रोकड"
+    reading: "rokaḍ"
+    ipa: "rokəɖ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "रोकड", reading: "rokaḍ" }] }
+    examples:
+      - { target: "माझ्याकडे रोकड नाही.", reading: "mājhyākḍe rokaḍ nāhi.", ipa: "madʒʱjakɖe rokəɖ naɦi", bases: [{ word: "माझ्याकडे", ref: "mr-0080" }, { word: "नाही", ref: "mr-0169" }] }
+      - { target: "रोकड द्या.", reading: "rokaḍ dyā.", ipa: "rokəɖ d̪ja", bases: [{ word: "द्या", ref: "mr-0721" }] }
+  - id: "mr-1086"
+    target: "नाणे"
+    reading: "nāṇe"
+    ipa: "naɳe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नाणे", reading: "nāṇe" }] }
+    examples:
+      - { target: "हे नाणे जुने आहे.", reading: "he nāṇe june āhe.", ipa: "ɦe naɳe dzune aɦe", bases: [{ word: "हे", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }, { word: "जुने", base: "जुना", reading: "junā" }] }
+      - { target: "नाणे खाली पडलं.", reading: "nāṇe khāli paḍlam̐.", ipa: "naɳe kʰali pəɖlə̃", bases: [{ word: "पडलं", ref: "mr-1024" }, { word: "खाली", base: "खाली", reading: "khāli" }] }
+  - id: "mr-1087"
+    target: "नोट"
+    reading: "noṭ"
+    ipa: "noʈ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "नोट", reading: "noṭ" }] }
+    examples:
+      - { target: "शंभराची नोट द्या.", reading: "śambharāci noṭ dyā.", ipa: "ʃəmbʱəratʃi noʈ d̪ja", bases: [{ word: "द्या", ref: "mr-0721" }, { word: "शंभराची", ref: "mr-0279" }] }
+      - { target: "ही नोट फाटली आहे.", reading: "hi noṭ phāṭli āhe.", ipa: "ɦi noʈ pʰaʈli aɦe", bases: [{ word: "ही", ref: "mr-0679" }, { word: "फाटली", base: "फाटणे", reading: "phāṭṇe" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+  - id: "mr-1088"
+    target: "साईज"
+    reading: "sāij"
+    ipa: "saidz"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "साईज", reading: "sāij" }] }
+    examples:
+      - { target: "याचा साईज काय आहे?", reading: "yācā sāij kāy āhe?", ipa: "jatsa saidz kaj aɦe", bases: [{ word: "याचा", ref: "mr-0679" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "मोठा साईज द्या.", reading: "moṭhā sāij dyā.", ipa: "moʈʰa saidz d̪ja", bases: [{ word: "मोठा", ref: "mr-0760" }, { word: "द्या", ref: "mr-0721" }] }
+  - id: "mr-1089"
+    target: "टॅग"
+    reading: "ṭêg"
+    ipa: "ʈæɡ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "टॅग", reading: "ṭêg" }] }
+    examples:
+      - { target: "टॅग वर किंमत आहे.", reading: "ṭêg var kimmat āhe.", ipa: "ʈæɡ ʋər kimmət̪ aɦe", bases: [{ word: "वर", ref: "mr-0740" }, { word: "आहे", base: "असणे", reading: "asṇe" }] }
+      - { target: "टॅग काढा.", reading: "ṭêg kāḍhā.", ipa: "ʈæɡ kaɖʱa", bases: [{ word: "काढा", ref: "mr-0796" }] }

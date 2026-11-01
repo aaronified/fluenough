@@ -1,0 +1,137 @@
+schema: 1
+id: "mr-en-emergencies"
+kind: "layer"
+core: "mr-emergencies"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emergencies"
+description: "Emergencies and calling for help: an accident, a fire, an earthquake, the ambulance and the fire brigade, and what to say and do. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1661":
+    native: "disaster, calamity"
+    notes:
+      "n1": "{1} is a disaster or a calamity that harms many people."
+    examples:
+      "ही मोठी आपत्ती आहे.": { native: "This is a big disaster.", bases: { "आहे": "to be" } }
+      "आपत्तीच्या वेळी शांत राहा.": { native: "Stay calm in a disaster.", bases: { "आपत्तीच्या": "disaster, calamity" } }
+  "mr-1662":
+    native: "earthquake"
+    notes:
+      "n1": "{1} is an earthquake."
+    examples:
+      "काल रात्री भूकंप झाला.": { native: "There was an earthquake last night.", bases: { "झाला": "to become" } }
+      "भूकंपाचे धक्के जाणवले.": { native: "The tremors were felt.", bases: { "धक्के": "shocks", "जाणवले": "to feel", "भूकंपाचे": "earthquake" } }
+  "mr-1663":
+    native: "accident, mishap"
+    notes:
+      "n1": "{1} is an accident or a mishap, a serious event."
+    examples:
+      "रस्त्यावर दुर्घटना झाली.": { native: "An accident happened on the road.", bases: { "झाली": "to become" } }
+      "दुर्घटनेत एक माणूस जखमी झाला.": { native: "One person was injured in the accident.", bases: { "झाला": "to become", "दुर्घटनेत": "accident, mishap" } }
+  "mr-1664":
+    native: "injured"
+    notes:
+      "n1": "{1} describes someone hurt in an accident or a fight."
+    examples:
+      "तो जखमी झाला.": { native: "He was injured.", bases: { "झाला": "to become" } }
+      "जखमींना रुग्णालयात नेलं.": { native: "The injured were taken to hospital.", bases: { "जखमींना": "injured" } }
+  "mr-1665":
+    native: "death"
+    notes:
+      "n1": "{1} is death."
+    examples:
+      "त्याचा मृत्यू झाला.": { native: "He died.", bases: { "झाला": "to become" } }
+      "मृत्यूची बातमी ऐकून सगळे रडले.": { native: "Everyone cried on hearing the news of the death.", bases: { "मृत्यूची": "death" } }
+  "mr-1666":
+    native: "ambulance"
+    notes:
+      "n1": "{1} is an ambulance that carries the sick or injured."
+    examples:
+      "रुग्णवाहिका लवकर आली.": "The ambulance came quickly."
+      "रुग्णवाहिकेला फोन करा.": { native: "Call the ambulance.", bases: { "रुग्णवाहिकेला": "ambulance" } }
+  "mr-1667":
+    native: "fire brigade, firefighting"
+    notes:
+      "n1": "{1} is firefighting. The fire brigade is अग्निशमन दल (agniśaman dal)."
+    examples:
+      "अग्निशमन दल आलं.": { native: "The fire brigade came.", bases: { "दल": "brigade" } }
+      "अग्निशमन दलाला बोलवा.": { native: "Call the fire brigade.", bases: { "दलाला": "the brigade" } }
+  "mr-1668":
+    native: "rescue"
+    notes:
+      "n1": "{1} is a rescue, saving someone from danger."
+    examples:
+      "बचाव कार्य सुरू आहे.": { native: "The rescue work is going on.", bases: { "कार्य": "work", "सुरू": "going on", "आहे": "to be" } }
+      "जीव वाचवण्यासाठी बचाव केला.": { native: "A rescue was done to save life.", bases: { "जीव": "life" } }
+  "mr-1669":
+    native: "warning"
+    notes:
+      "n1": "{1} is a warning, a signal of danger."
+    examples:
+      "पावसाचा इशारा दिला आहे.": { native: "A rain warning has been given.", bases: { "आहे": "to be" } }
+      "इशाऱ्याकडे लक्ष द्या.": { native: "Pay attention to the warning.", bases: { "लक्ष": "attention", "इशाऱ्याकडे": "warning" } }
+  "mr-1670":
+    native: "emergency"
+    notes:
+      "n1": "{1} describes something needed in an emergency."
+    examples:
+      "आपत्कालीन दरवाजा कुठे आहे?": { native: "Where is the emergency door?", bases: { "कुठे": "where", "आहे": "to be" } }
+      "आपत्कालीन क्रमांक लक्षात ठेवा.": { native: "Remember the emergency number.", bases: { "क्रमांक": "number", "लक्षात": "in mind" } }
+  "mr-1671":
+    native: "siren"
+    notes:
+      "n1": "{1} is a siren, a loud warning sound, a loanword from English."
+    examples:
+      "सायरन वाजला.": { native: "The siren sounded.", bases: { "वाजला": "to sound" } }
+      "सायरनचा आवाज ऐकू आला.": { native: "I heard the sound of the siren.", bases: { "आवाज": "sound", "ऐकू": "heard", "सायरनचा": "siren" } }
+  "mr-1672":
+    native: "gas leak"
+    notes:
+      "n1": "{1} is a leak of gas, a serious danger in a home."
+    bases:
+      "गॅस": "gas"
+      "गळती": "leak"
+    examples:
+      "घरात गॅस गळती झाली.": { native: "There was a gas leak in the house.", bases: { "झाली": "to become", "गॅस": "gas", "गळती": "leak" } }
+      "गॅस गळती असेल तर खिडक्या उघडा.": { native: "If there is a gas leak, open the windows.", bases: { "असेल": "to be", "गॅस": "gas", "गळती": "leak" } }
+  "mr-1673":
+    native: "electric shock"
+    notes:
+      "n1": "{1} is an electric shock."
+    bases:
+      "विजेचा": "of electricity"
+      "धक्का": "shock"
+    examples:
+      "त्याला विजेचा धक्का बसला.": { native: "He got an electric shock.", bases: { "बसला": "to sit", "विजेचा": "of electricity", "धक्का": "shock" } }
+      "विजेचा धक्का लागू नये म्हणून सावध रहा.": { native: "Be careful so that you do not get an electric shock.", bases: { "लागू": "to touch", "सावध": "careful", "विजेचा": "of electricity", "धक्का": "shock" } }
+  "mr-1674":
+    native: "to shout, to cry out"
+    notes:
+      "n1": "{1} is shouting loudly, often for help."
+    examples:
+      "तो मदतीसाठी ओरडला.": { native: "He shouted for help.", bases: { "ओरडला": "to shout, to cry out" } }
+      "कोणीतरी ओरडलं.": { native: "Someone shouted.", bases: { "ओरडलं": "to shout, to cry out" } }
+  "mr-1675":
+    native: "to get out, to evacuate"
+    notes:
+      "n1": "{1} is leaving a building in an emergency."
+    bases:
+      "बाहेर": "outside"
+    examples:
+      "सगळे इमारतीतून बाहेर पडले.": { native: "Everyone got out of the building.", bases: { "बाहेर": "outside", "पडले": "to go out" } }
+      "शांतपणे बाहेर पडा.": { native: "Get out calmly.", bases: { "बाहेर": "outside", "पडा": "to go out" } }
+  "mr-1676":
+    native: "to call (for help)"
+    notes:
+      "n1": "{1} is calling someone to come, for help or work."
+    examples:
+      "डॉक्टरांना बोलवा.": { native: "Call the doctor.", bases: { "बोलवा": "to call (for help)" } }
+      "त्याने मदतीसाठी लोकांना बोलवलं.": { native: "He called people for help.", bases: { "बोलवलं": "to call (for help)" } }
+  "mr-1677":
+    native: "safe"
+    notes:
+      "n1": "{1} describes a place or a person that is safe from harm."
+    examples:
+      "मुलं आता सुरक्षित आहेत.": { native: "The children are safe now.", bases: { "आहेत": "to be" } }
+      "ही जागा सुरक्षित नाही.": { native: "This place is not safe.", bases: { "जागा": "place", "नाही": "not" } }
