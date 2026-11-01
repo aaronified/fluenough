@@ -741,11 +741,15 @@ units:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
   - decks: ["bn-reading-literature"]
     words: 0
-  - planned: { id: "bn-grammar-habitual-past", grammar: "habitual-past" }
+  - decks: ["bn-grammar-habitual-past", "bn-grammar-habitual-past-sentences"]
+    words: 0
+    grammar: ["habitual-past"]
     listening_passages:
       - { id: "when-i-was-small", text: { "en": "Telling what you used to do when you were small" } }
     reading_passages:
       - { id: "memoir-extract", text: { "en": "An extract from a memoir about childhood" } }
+  - decks: ["bn-reading-habitual-past"]
+    words: 0
   - planned: { id: "bn-verbs-5", theme: "verbs-5", words: 45 }
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
