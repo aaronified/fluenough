@@ -139,10 +139,21 @@ void main() {
     final before = state.settings.languageSkillsOf('es');
     await tester.ensureVisible(speak);
     await tester.pumpAndSettle();
+    // The pill's own tooltip carries the level in a word: Spanish is Learn.
+    final pillTip = tester.widget<Tooltip>(
+      find.descendant(of: speak, matching: find.byType(Tooltip)),
+    );
+    expect(pillTip.message, text.languagesPillLearning);
+    // The page also shows the word elsewhere (the filter pill, the legend),
+    // so the bubble that the long press opens is counted as one more.
+    final onPage = find.text(text.languagesPillLearning).evaluate().length;
     await tester.longPress(speak);
     await tester.pumpAndSettle();
-    // The long press says the level in a word: Spanish is Learn.
-    expect(find.text(text.languagesPillLearning), findsOneWidget);
+    expect(
+      find.text(text.languagesPillLearning),
+      findsNWidgets(onPage + 1),
+      reason: 'the long press opens one bubble with the level',
+    );
     expect(state.settings.languageSkillsOf('es'), before, reason: 'no cycle');
     await tapKey(tester, 'skill-spoken');
     expect(state.settings.languageSkillsOf('es'), isNot(before));
