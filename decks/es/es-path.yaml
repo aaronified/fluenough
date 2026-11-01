@@ -168,7 +168,9 @@ units:
     words: 40
   - decks: ["es-shopping", "es-shopping-sentences", "es-reading-shopping", "*"]
     words: 40
-  - planned: { id: "es-grammar-object-pronouns", grammar: "object-pronouns" }
+  - decks: ["es-grammar-object-pronouns", "es-reading-object-pronouns"]
+    words: 0
+    grammar: ["object-pronouns"]
     listening_passages:
       - { id: "give-it-to-me", text: { "en": "Asking someone to pass, give and show things" } }
     reading_passages:

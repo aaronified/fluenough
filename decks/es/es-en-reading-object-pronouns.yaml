@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-object-pronouns"
+name: "Reading: short requests and notes"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short notes that use object pronouns: lo, la, le and nos before the verb. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-short-requests"
+    title: "Short requests"
+    theme: "daily-life"
+    sentences:
+      - text: "¿Me llamas esta noche?"
+      - text: "Te ayudo con la cena."
+      - text: "Lo compro en el mercado."
+      - text: "Les escribo mañana."
+    questions:
+      - id: "es-1251"
+        prompt: { en: "What does the writer do tomorrow?" }
+        options:
+          - { en: "Write to them" }
+          - { en: "Call them" }
+          - { en: "Buy it" }
+        answer: 2
+      - id: "es-1252"
+        prompt: { en: "Where does the writer buy it?" }
+        options:
+          - { en: "At school" }
+          - { en: "At the market" }
+          - { en: "At home" }
+        answer: 2
+      - id: "es-1253"
+        prompt: { en: "What does the writer offer?" }
+        options:
+          - { en: "To wash the car" }
+          - { en: "To help you with dinner" }
+          - { en: "To read to you" }
+        answer: 3
+  - id: "es-shopping-notes"
+    title: "Notes for a shopping trip"
+    theme: "daily-life"
+    sentences:
+      - text: "Compramos el pan y la leche."
+      - text: "La llevo en la mochila."
+      - text: "Lo pido en la tienda."
+      - text: "Nos ayudan con las bolsas."
+    questions:
+      - id: "es-1254"
+        prompt: { en: "Who carries the milk?" }
+        options:
+          - { en: "The writer" }
+          - { en: "The shop" }
+          - { en: "The baker" }
+        answer: 1
+      - id: "es-1255"
+        prompt: { en: "Where are the things ordered?" }
+        options:
+          - { en: "At the shop" }
+          - { en: "At school" }
+          - { en: "At the bank" }
+        answer: 1
+      - id: "es-1256"
+        prompt: { en: "Who helps with the bags?" }
+        options:
+          - { en: "Nobody" }
+          - { en: "The writer's friends" }
+          - { en: "The bus driver" }
+        answer: 2
