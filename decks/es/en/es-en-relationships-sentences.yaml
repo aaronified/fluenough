@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-relationships-sentences"
+kind: "layer"
+core: "es-relationships-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: relationships"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about friends and neighbours, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2758":
+    native: "I trust my neighbour and greet him every day."
+    bases: { "en": "in", "lo": "it" }
+    confusables: { "confianza": { why: "Confianza is trust, the feeling itself." }, "apoyo": { why: "Apoyo is support, the help given." } }
+  "es-2759":
+    native: "I apologise to you for the fight."
+    bases: { "Te": "you", "por": "for", "la": "the" }
+    confusables: { "perdonar": { why: "Perdonar is to forgive, the reply." }, "reconciliarse": { why: "Reconciliarse is to make up, the goal." } }
+  "es-2760":
+    native: "My friend is sincere and loyal."
+    bases: { "amiga": "friend" }
+    confusables: { "amable": { why: "Amable is kind, a pleasant manner." }, "generoso": { why: "Generoso is generous, with things and time." } }
+  "es-2761":
+    native: "The enemy and the acquaintance are in the neighbourhood."
+    bases: { "El": "the", "el": "the", "en": "in" }
+    confusables: { "colega": { why: "Colega is a colleague, a person at work." }, "amigo": { why: "Amigo is a friend, someone close." } }
+  "es-2762":
+    native: "I give my mother a hug and a kiss."
+    bases: { "Le": "him; her; to him", "un": "a", "a": "to" }
+    confusables: { "saludo": { why: "Saludo is a greeting, a word or a gesture." }, "agradecimiento": { why: "Agradecimiento is thanks, a feeling of gratitude." } }
+  "es-2763":
+    native: "I get on well with my neighbours' relationship."
+    bases: { "Me": "to me", "con": "with", "la": "the", "de": "of" }
+    confusables: { "amistad": { why: "Amistad is friendship, a bond with someone close." }, "respeto": { why: "Respeto is respect, a good opinion of others." } }

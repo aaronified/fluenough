@@ -1,0 +1,388 @@
+schema: 1
+id: "es-relationships"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "relationships"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2730"
+    target: "la amistad"
+    ipa: "la amisˈtad"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "amistad", base: "amistad" }]
+    examples:
+      - target: "La amistad es un tesoro."
+        ipa: "la amisˈtad es un teˈsoɾo"
+        bases: [{ word: "La", base: "la" }, { word: "amistad", base: "amistad" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "tesoro", base: "tesoro" }]
+      - target: "Nuestra amistad dura años."
+        ipa: "ˈnwestɾa amisˈtad ˈduɾa ˈaɲos"
+        bases: [{ word: "Nuestra", base: "nuestro" }, { word: "amistad", base: "amistad" }, { word: "dura", ref: "es-1332" }, { word: "años", ref: "es-0021" }]
+  - id: "es-2731"
+    target: "el vecino"
+    ipa: "el beˈθino"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vecino", base: "vecino" }]
+    examples:
+      - target: "El vecino me ayuda con el jardín."
+        ipa: "el beˈθino me aˈʝuda kon el xaɾˈdin"
+        bases: [{ word: "El", base: "el" }, { word: "vecino", base: "vecino" }, { word: "me", base: "me" }, { word: "ayuda", ref: "es-0303" }, { word: "con", base: "con" }, { word: "el", base: "el" }, { word: "jardín", ref: "es-0810" }]
+      - target: "Mi vecina es muy amable."
+        ipa: "mi beˈθina es mwi aˈmable"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "vecina", base: "vecino" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "amable", ref: "es-2756" }]
+  - id: "es-2732"
+    target: "el colega"
+    ipa: "el koˈleɡa"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "colega", base: "colega" }]
+    examples:
+      - target: "Mi colega trabaja en la oficina."
+        ipa: "mi koˈleɡa tɾaˈbaxa en la ofiˈθina"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "colega", base: "colega" }, { word: "trabaja", ref: "es-0259" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "oficina", ref: "es-0503" }]
+      - target: "La colega me ayuda cada día."
+        ipa: "la koˈleɡa me aˈʝuda ˈkada ˈdia"
+        bases: [{ word: "La", base: "la" }, { word: "colega", base: "colega" }, { word: "me", base: "me" }, { word: "ayuda", ref: "es-0303" }, { word: "cada", ref: "es-0366" }, { word: "día", ref: "es-0019" }]
+  - id: "es-2733"
+    target: "el conocido"
+    ipa: "el konoˈθido"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "conocido", base: "conocido" }]
+    examples:
+      - target: "Es un conocido de mi madre."
+        ipa: "es un konoˈθido de mi ˈmadɾe"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "conocido", base: "conocido" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }]
+      - target: "La conocida me saluda."
+        ipa: "la konoˈθida me saˈluda"
+        bases: [{ word: "La", base: "la" }, { word: "conocida", base: "conocido" }, { word: "me", base: "me" }, { word: "saluda", ref: "es-2748" }]
+  - id: "es-2734"
+    target: "el enemigo"
+    ipa: "el eneˈmiɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "enemigo", base: "enemigo" }]
+    examples:
+      - target: "El enemigo ataca el pueblo."
+        ipa: "el eneˈmiɡo aˈtaka el ˈpweblo"
+        bases: [{ word: "El", base: "el" }, { word: "enemigo", base: "enemigo" }, { word: "ataca", base: "atacar" }, { word: "el", base: "el" }, { word: "pueblo", ref: "es-0783" }]
+      - target: "No tengo enemigos."
+        ipa: "no ˈtenɡo eneˈmiɡos"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "tengo", ref: "es-0024" }, { word: "enemigos", base: "enemigo" }]
+  - id: "es-2735"
+    target: "el vecindario"
+    ipa: "el beθinˈdaɾjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "vecindario", base: "vecindario" }]
+    examples:
+      - target: "El vecindario es tranquilo."
+        ipa: "el beθinˈdaɾjo es tɾanˈkilo"
+        bases: [{ word: "El", base: "el" }, { word: "vecindario", base: "vecindario" }, { word: "es", ref: "es-0022" }, { word: "tranquilo", ref: "es-0257" }]
+      - target: "Todo el vecindario viene a la fiesta."
+        ipa: "ˈtodo el beθinˈdaɾjo ˈbjene a la ˈfjesta"
+        bases: [{ word: "Todo", base: "todo" }, { word: "el", base: "el" }, { word: "vecindario", base: "vecindario" }, { word: "viene", ref: "es-1632" }, { word: "a", base: "a" }, { word: "la", base: "la" }, { word: "fiesta", ref: "es-0979" }]
+  - id: "es-2736"
+    target: "la confianza"
+    ipa: "la konˈfjanθa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "confianza", base: "confianza" }]
+    examples:
+      - target: "Tengo confianza en ti."
+        ipa: "ˈtenɡo konˈfjanθa en ti"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "confianza", base: "confianza" }, { word: "en", base: "en" }, { word: "ti", base: "ti" }]
+      - target: "La confianza es importante."
+        ipa: "la konˈfjanθa es impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "confianza", base: "confianza" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+  - id: "es-2737"
+    target: "el respeto"
+    ipa: "el resˈpeto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "respeto", base: "respeto" }]
+    examples:
+      - target: "Tengo mucho respeto por mi abuelo."
+        ipa: "ˈtenɡo ˈmutʃo resˈpeto poɾ mi aˈbwelo"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "mucho", ref: "es-0053" }, { word: "respeto", base: "respetar" }, { word: "por", base: "por" }, { word: "mi", ref: "es-0129" }, { word: "abuelo", ref: "es-0165" }]
+      - target: "El respeto es la base."
+        ipa: "el resˈpeto es la ˈbase"
+        bases: [{ word: "El", base: "el" }, { word: "respeto", base: "respetar" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "base", base: "base" }]
+  - id: "es-2738"
+    target: "el agradecimiento"
+    ipa: "el aɡɾadeθiˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "agradecimiento", base: "agradecimiento" }]
+    examples:
+      - target: "Le doy mi agradecimiento."
+        ipa: "le doj mi aɡɾadeθiˈmjento"
+        bases: [{ word: "Le", base: "le" }, { word: "doy", ref: "es-1629" }, { word: "mi", ref: "es-0129" }, { word: "agradecimiento", base: "agradecimiento" }]
+      - target: "Siento agradecimiento por la ayuda."
+        ipa: "ˈsjento aɡɾadeθiˈmjento poɾ la aˈʝuda"
+        bases: [{ word: "Siento", ref: "es-1619" }, { word: "agradecimiento", base: "agradecimiento" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "ayuda", ref: "es-0303" }]
+  - id: "es-2739"
+    target: "el saludo"
+    ipa: "el saˈludo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "saludo", base: "saludo" }]
+    examples:
+      - target: "Le doy un saludo a tu madre."
+        ipa: "le doj un saˈludo a tu ˈmadɾe"
+        bases: [{ word: "Le", base: "le" }, { word: "doy", ref: "es-1629" }, { word: "un", base: "un" }, { word: "saludo", base: "saludo" }, { word: "a", base: "a" }, { word: "tu", ref: "es-0130" }, { word: "madre", ref: "es-0160" }]
+      - target: "El saludo es amable."
+        ipa: "el saˈludo es aˈmable"
+        bases: [{ word: "El", base: "el" }, { word: "saludo", base: "saludo" }, { word: "es", ref: "es-0022" }, { word: "amable", ref: "es-2756" }]
+  - id: "es-2740"
+    target: "el abrazo"
+    ipa: "el aˈbɾaθo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "abrazo", base: "abrazo" }]
+    examples:
+      - target: "Le doy un abrazo a mi amiga."
+        ipa: "le doj un aˈbɾaθo a mi aˈmiɡa"
+        bases: [{ word: "Le", base: "le" }, { word: "doy", ref: "es-1629" }, { word: "un", base: "un" }, { word: "abrazo", base: "abrazo" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "amiga", base: "amiga" }]
+      - target: "El abrazo es cálido."
+        ipa: "el aˈbɾaθo es ˈkalido"
+        bases: [{ word: "El", base: "el" }, { word: "abrazo", base: "abrazo" }, { word: "es", ref: "es-0022" }, { word: "cálido", ref: "es-1807" }]
+  - id: "es-2741"
+    target: "el beso"
+    ipa: "el ˈbeso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "beso", base: "beso" }]
+    examples:
+      - target: "Le doy un beso a mi madre."
+        ipa: "le doj un ˈbeso a mi ˈmadɾe"
+        bases: [{ word: "Le", base: "le" }, { word: "doy", ref: "es-1629" }, { word: "un", base: "un" }, { word: "beso", base: "beso" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }]
+      - target: "El beso es de bienvenida."
+        ipa: "el ˈbeso es de bjenbeˈnida"
+        bases: [{ word: "El", base: "el" }, { word: "beso", base: "beso" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "bienvenida", base: "bienvenida" }]
+  - id: "es-2742"
+    target: "el apoyo"
+    ipa: "el aˈpoʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "apoyo", base: "apoyo" }]
+    examples:
+      - target: "Tengo el apoyo de mi familia."
+        ipa: "ˈtenɡo el aˈpoʝo de mi faˈmilja"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "el", base: "el" }, { word: "apoyo", ref: "es-2119" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "familia", ref: "es-0158" }]
+      - target: "El apoyo de los vecinos es grande."
+        ipa: "el aˈpoʝo de los beˈθinos es ˈɡɾande"
+        bases: [{ word: "El", base: "el" }, { word: "apoyo", ref: "es-2119" }, { word: "de", base: "de" }, { word: "los", base: "los" }, { word: "vecinos", ref: "es-2731" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-2743"
+    target: "la disculpa"
+    ipa: "la disˈkulpa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "disculpa", base: "disculpa" }]
+    examples:
+      - target: "Te pido disculpas."
+        ipa: "te ˈpido disˈkulpas"
+        bases: [{ word: "Te", base: "te" }, { word: "pido", ref: "es-0659" }, { word: "disculpas", base: "disculpa" }]
+      - target: "La disculpa es sincera."
+        ipa: "la disˈkulpa es sinˈθeɾa"
+        bases: [{ word: "La", base: "la" }, { word: "disculpa", base: "disculpa" }, { word: "es", ref: "es-0022" }, { word: "sincera", ref: "es-2754" }]
+  - id: "es-2744"
+    target: "la relación"
+    ipa: "la relaˈθjon"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "relación", base: "relación" }]
+    examples:
+      - target: "Tengo una buena relación con mi vecino."
+        ipa: "ˈtenɡo ˈuna ˈbwena relaˈθjon kon mi beˈθino"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "una", base: "una" }, { word: "buena", ref: "es-0033" }, { word: "relación", base: "relación" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "vecino", ref: "es-2731" }]
+      - target: "La relación es muy cercana."
+        ipa: "la relaˈθjon es mwi θeɾˈkana"
+        bases: [{ word: "La", base: "la" }, { word: "relación", base: "relación" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "cercana", base: "cercano" }]
+  - id: "es-2745"
+    target: "confiar"
+    ipa: "konˈfjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "confiar", base: "confiar" }]
+    examples:
+      - target: "Confío en mi amigo."
+        ipa: "konˈfio en mi aˈmiɡo"
+        bases: [{ word: "Confío", base: "confiar" }, { word: "en", base: "en" }, { word: "mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }]
+      - target: "Confían en el vecino."
+        ipa: "konˈfian en el beˈθino"
+        bases: [{ word: "Confían", base: "confiar" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "vecino", ref: "es-2731" }]
+  - id: "es-2746"
+    target: "agradecer"
+    ipa: "aɡɾadeˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "agradecer", base: "agradecer" }]
+    examples:
+      - target: "Te agradezco la ayuda."
+        ipa: "te aɡɾaˈdeθko la aˈʝuda"
+        bases: [{ word: "Te", base: "te" }, { word: "agradezco", base: "agradecer" }, { word: "la", base: "la" }, { word: "ayuda", ref: "es-0303" }]
+      - target: "Agradecemos la visita."
+        ipa: "aɡɾadeˈθemos la biˈsita"
+        bases: [{ word: "Agradecemos", base: "agradecer" }, { word: "la", base: "la" }, { word: "visita", ref: "es-0787" }]
+  - id: "es-2747"
+    target: "perdonar"
+    ipa: "peɾdoˈnaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "perdonar", base: "perdonar" }]
+    examples:
+      - target: "Te perdono el error."
+        ipa: "te peɾˈdono el eˈroɾ"
+        bases: [{ word: "Te", base: "te" }, { word: "perdono", base: "perdonar" }, { word: "el", base: "el" }, { word: "error", ref: "es-2332" }]
+      - target: "Perdona la tardanza."
+        ipa: "peɾˈdona la taɾˈdanθa"
+        bases: [{ word: "Perdona", base: "perdonar" }, { word: "la", base: "la" }, { word: "tardanza", base: "tardanza" }]
+  - id: "es-2748"
+    target: "saludar"
+    ipa: "saluˈdaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "saludar", base: "saludar" }]
+    examples:
+      - target: "Saludo a mi vecino."
+        ipa: "saˈludo a mi beˈθino"
+        bases: [{ word: "Saludo", base: "saludar" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "vecino", ref: "es-2731" }]
+      - target: "Nos saludamos con un beso."
+        ipa: "nos saluˈdamos kon un ˈbeso"
+        bases: [{ word: "Nos", base: "nos" }, { word: "saludamos", base: "saludar" }, { word: "con", base: "con" }, { word: "un", base: "un" }, { word: "beso", ref: "es-2741" }]
+  - id: "es-2749"
+    target: "pelear"
+    ipa: "peleˈaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pelear", base: "pelear" }]
+    examples:
+      - target: "Pelean por la pelota."
+        ipa: "peˈlean poɾ la peˈlota"
+        bases: [{ word: "Pelean", base: "pelear" }, { word: "por", base: "por" }, { word: "la", base: "la" }, { word: "pelota", ref: "es-2710" }]
+      - target: "No quiero pelear con mi hermana."
+        ipa: "no ˈkjeɾo peleˈaɾ kon mi eɾˈmana"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "quiero", ref: "es-0661" }, { word: "pelear", base: "pelear" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }]
+  - id: "es-2750"
+    target: "reconciliarse"
+    ipa: "rekonθiˈljaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reconciliarse", base: "reconciliarse" }]
+    examples:
+      - target: "Me reconcilio con mi amigo."
+        ipa: "me rekonˈθiljo kon mi aˈmiɡo"
+        bases: [{ word: "Me", base: "me" }, { word: "reconcilio", base: "reconciliarse" }, { word: "con", base: "con" }, { word: "mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }]
+      - target: "Se reconcilian después de la discusión."
+        ipa: "se rekonˈθiljan desˈpwes de la diskuˈsjon"
+        bases: [{ word: "Se", base: "se" }, { word: "reconcilian", base: "reconciliarse" }, { word: "después", ref: "es-0336" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "discusión", base: "discusión" }]
+  - id: "es-2751"
+    target: "llevarse"
+    ipa: "ʝeˈbaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "llevarse", base: "llevarse" }]
+    examples:
+      - target: "Me llevo bien con mis vecinos."
+        ipa: "me ˈʝebo bjen kon mis beˈθinos"
+        bases: [{ word: "Me", base: "me" }, { word: "llevo", base: "llevarse" }, { word: "bien", ref: "es-0326" }, { word: "con", base: "con" }, { word: "mis", ref: "es-0129" }, { word: "vecinos", ref: "es-2731" }]
+      - target: "Se llevan muy bien."
+        ipa: "se ˈʝeban mwi bjen"
+        bases: [{ word: "Se", base: "se" }, { word: "llevan", ref: "es-0623" }, { word: "muy", ref: "es-0330" }, { word: "bien", ref: "es-0326" }]
+  - id: "es-2752"
+    target: "amistoso"
+    ipa: "amisˈtoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "amistoso", base: "amistoso" }]
+    examples:
+      - target: "Es un vecino amistoso."
+        ipa: "es un beˈθino amisˈtoso"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "vecino", ref: "es-2731" }, { word: "amistoso", base: "amistoso" }]
+      - target: "El ambiente es amistoso."
+        ipa: "el amˈbjente es amisˈtoso"
+        bases: [{ word: "El", base: "el" }, { word: "ambiente", ref: "es-2429" }, { word: "es", ref: "es-0022" }, { word: "amistoso", base: "amistoso" }]
+  - id: "es-2753"
+    target: "generoso"
+    ipa: "xeneˈɾoso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "generoso", base: "generoso" }]
+    examples:
+      - target: "Es una persona generosa."
+        ipa: "es ˈuna peɾˈsona xeneˈɾosa"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "persona", ref: "es-0135" }, { word: "generosa", base: "generoso" }]
+      - target: "El vecino es generoso con su tiempo."
+        ipa: "el beˈθino es xeneˈɾoso kon su ˈtjempo"
+        bases: [{ word: "El", base: "el" }, { word: "vecino", ref: "es-2731" }, { word: "es", ref: "es-0022" }, { word: "generoso", base: "generoso" }, { word: "con", base: "con" }, { word: "su", ref: "es-0131" }, { word: "tiempo", ref: "es-1112" }]
+  - id: "es-2754"
+    target: "sincero"
+    ipa: "sinˈθeɾo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sincero", base: "sincero" }]
+    examples:
+      - target: "Es un amigo sincero."
+        ipa: "es un aˈmiɡo sinˈθeɾo"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "amigo", ref: "es-0005" }, { word: "sincero", base: "sincero" }]
+      - target: "Mi disculpa es sincera."
+        ipa: "mi disˈkulpa es sinˈθeɾa"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "disculpa", ref: "es-2743" }, { word: "es", ref: "es-0022" }, { word: "sincera", base: "sincero" }]
+  - id: "es-2755"
+    target: "leal"
+    ipa: "leˈal"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "leal", base: "leal" }]
+    examples:
+      - target: "Es una amiga leal."
+        ipa: "es ˈuna aˈmiɡa leˈal"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "una", base: "una" }, { word: "amiga", base: "amiga" }, { word: "leal", base: "leal" }]
+      - target: "Mi perro es muy leal."
+        ipa: "mi ˈpero es mwi leˈal"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "perro", ref: "es-1061" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "leal", base: "leal" }]
+  - id: "es-2756"
+    target: "amable"
+    ipa: "aˈmable"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "amable", base: "amable" }]
+    examples:
+      - target: "Mi vecina es muy amable."
+        ipa: "mi beˈθina es mwi aˈmable"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "vecina", ref: "es-2731" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "amable", base: "amable" }]
+      - target: "El camarero es amable."
+        ipa: "el kamaˈɾeɾo es aˈmable"
+        bases: [{ word: "El", base: "el" }, { word: "camarero", ref: "es-0651" }, { word: "es", ref: "es-0022" }, { word: "amable", base: "amable" }]
+  - id: "es-2757"
+    target: "encantador"
+    ipa: "enkantaˈdoɾ"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "encantador", base: "encantador" }]
+    examples:
+      - target: "Es un vecino encantador."
+        ipa: "es un beˈθino enkantaˈdoɾ"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "vecino", ref: "es-2731" }, { word: "encantador", base: "encantador" }]
+      - target: "La niña es encantadora."
+        ipa: "la ˈniɲa es enkantaˈdoɾa"
+        bases: [{ word: "La", base: "la" }, { word: "niña", ref: "es-0004" }, { word: "es", ref: "es-0022" }, { word: "encantadora", base: "encantador" }]
