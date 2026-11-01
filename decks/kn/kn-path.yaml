@@ -480,7 +480,8 @@ units:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
-  - planned: { id: "kn-environment", theme: "environment", words: 50 }
+  - decks: ["kn-environment", "*"]
+    words: 20
     listening_passages:
       - { id: "monsoon-and-the-river", text: { "en": "Neighbours talk about the monsoon and the Kaveri in flood" } }
     reading_passages:
