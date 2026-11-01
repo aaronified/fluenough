@@ -1,0 +1,77 @@
+schema: 1
+id: "as-workplace-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3113"
+    target: "মেনেজাৰ সভা ডাকিছে।"
+    reading: "menejār xôbhā ḍākise."
+    ipa: "menezaɹ sɔbʱa dakise"
+    pos: "phrase"
+    bases:
+      - { word: "ডাকিছে", base: "ডাকা", reading: "ḍākā" }
+    confusables:
+      - { id: "c1", word: "বৈঠক", reading: "boitôk", kind: "word" }
+      - { id: "c2", word: "সহকৰ্মী", reading: "xôhôkôrmī", kind: "word" }
+  - id: "as-3114"
+    target: "প্ৰতিবেদন কাইলৈ লাগে।"
+    reading: "prôtibedôn kāilôi lāge."
+    ipa: "pɹotibedɔn kailɔi laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সময়সীমা", reading: "xômôysīmā", kind: "word" }
+      - { id: "c2", word: "ফাইল", reading: "phāil", kind: "word" }
+  - id: "as-3115"
+    target: "কম্পিউটাৰত ফাইল আছে।"
+    reading: "kômpiuṭārôt phāil āse."
+    ipa: "kompiutaɹɔt pʰail ase"
+    pos: "phrase"
+    bases:
+      - { word: "কম্পিউটাৰত", ref: "as-3099" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "বিভাগ", reading: "bibhāg", kind: "word" }
+      - { id: "c2", word: "ৰেক", reading: "rek", kind: "word" }
+  - id: "as-3116"
+    target: "আলোচনা শেষ।"
+    reading: "ālôcôna xes."
+    ipa: "alʊsɔna xex"
+    pos: "phrase"
+    bases:
+      - { word: "শেষ", base: "শেষ", reading: "xes" }
+    confusables:
+      - { id: "c1", word: "সাক্ষাৎ", reading: "xākkhāt", kind: "word" }
+      - { id: "c2", word: "সিদ্ধান্ত", reading: "siddhānt", kind: "word" }
+  - id: "as-3117"
+    target: "বস সিদ্ধান্ত লয়।"
+    reading: "bôs siddhānt loy."
+    ipa: "bɔs siddʱant lɔj"
+    pos: "phrase"
+    bases:
+      - { word: "লয়", ref: "as-2219" }
+    confusables:
+      - { id: "c1", word: "কৰ্মচাৰী", reading: "kôrmôcārī", kind: "word" }
+      - { id: "c2", word: "সহকৰ্মী", reading: "xôhôkôrmī", kind: "word" }
+  - id: "as-3118"
+    target: "নিযুক্তি পালোঁ।"
+    reading: "niyuktī pālum̐."
+    ipa: "nizukti palʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "পালোঁ", base: "পোৱা", reading: "puwā" }
+    confusables:
+      - { id: "c1", word: "প্ৰতিবেদন", reading: "prôtibedôn", kind: "word" }
+      - { id: "c2", word: "সাক্ষাৎ", reading: "xākkhāt", kind: "word" }
+  - id: "as-3119"
+    target: "কামৰ সময় দীঘল।"
+    reading: "kāmôr xômôy dighôl."
+    ipa: "kamɔɹ sɔmɔj diɡʱɔl"
+    pos: "phrase"
+    bases:
+      - { word: "কামৰ", ref: "as-0120" }
+    confusables:
+      - { id: "c1", word: "চুটি", reading: "suti", kind: "word" }
+      - { id: "c2", word: "সময়সীমা", reading: "xômôysīmā", kind: "word" }

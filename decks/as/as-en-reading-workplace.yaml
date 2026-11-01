@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-workplace"
+name: "Assamese reading: the workplace"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-first-day-at-work"
+    title: "A new colleague's first day"
+    theme: "workplace"
+    sentences:
+      - text: "মই আজি নতুন কাম আৰম্ভ কৰিলোঁ।"
+        reading: "moi āzi nôtun kām ārôbhô kôrilōm̐."
+      - text: "মেনেজাৰে মোক পৰিচয় দিলে।"
+        reading: "menejārē mok pôrixôy dile."
+      - text: "সহকৰ্মী সকল ভাল।"
+        reading: "xôhôkôrmī xôkôl bhāl."
+      - text: "পাছত সভা আছে।"
+        reading: "pāsôt xôbhā āse."
+    questions:
+      - id: "as-3120"
+        prompt: { en: "The speaker starts a new job today." }
+        answer: true
+      - id: "as-3121"
+        prompt: { en: "Who introduces the speaker?" }
+        options:
+          - { en: "The manager" }
+          - { en: "The cook" }
+          - { en: "The driver" }
+        answer: 1
+      - id: "as-3122"
+        prompt: { en: "What comes after?" }
+        options:
+          - { en: "Lunch" }
+          - { en: "A meeting" }
+          - { en: "A holiday" }
+        answer: 2
+  - id: "as-office-notice"
+    title: "An office notice about a meeting"
+    theme: "workplace"
+    sentences:
+      - text: "সকলো কৰ্মচাৰী উপস্থিত হওক।"
+        reading: "sôkôlu kôrmôcārī upôsthit hôôk."
+      - text: "সভা কাইলৈ দহ বজাত।"
+        reading: "xôbhā kāilôi dôh bôzāt."
+      - text: "বিভাগৰ প্ৰতিবেদন আনিব।"
+        reading: "bibhāgôr prôtibedôn ānib."
+      - text: "সময়সীমা শুক্ৰবাৰ।"
+        reading: "xômôysīmā xukrôbār."
+    questions:
+      - id: "as-3123"
+        prompt: { en: "All staff must attend the meeting." }
+        answer: true
+      - id: "as-3124"
+        prompt: { en: "When is the meeting?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Friday" }
+        answer: 2
+      - id: "as-3125"
+        prompt: { en: "What is the deadline?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Friday" }
+          - { en: "Sunday" }
+        answer: 2

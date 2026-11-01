@@ -408,11 +408,14 @@ units:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
   - decks: ["as-reading-adjectives-2"]
     words: 0
-  - planned: { id: "as-workplace", theme: "workplace", words: 45 }
+  - decks: ["as-workplace", "as-workplace-sentences", "*"]
+    words: 20
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
+  - decks: ["as-reading-workplace"]
+    words: 0
   - planned: { id: "as-geography", theme: "geography", words: 45 }
     listening_passages:
       - { id: "where-in-india", text: { "en": "Naming states and cities of India" } }

@@ -1,0 +1,53 @@
+schema: 1
+id: "as-en-workplace-sentences"
+kind: "layer"
+core: "as-workplace-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The workplace: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3113":
+    native: "The manager has called a meeting."
+    bases:
+      "ডাকিছে": "to call"
+    confusables:
+      "c1": { why: "A small sitting, not the manager." }
+      "c2": { why: "A colleague, not the one who calls." }
+  "as-3114":
+    native: "The report is needed by tomorrow."
+    confusables:
+      "c1": { why: "The deadline: close, but it is a time." }
+      "c2": { why: "A file, not the report." }
+  "as-3115":
+    native: "The file is on the computer."
+    bases:
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "A department, not a file." }
+      "c2": { why: "A shelf, not a computer." }
+  "as-3116":
+    native: "The discussion is over."
+    bases:
+      "শেষ": "end; last; finish"
+    confusables:
+      "c1": { why: "A meeting, close but not a talk." }
+      "c2": { why: "A decision, the result not the talk." }
+  "as-3117":
+    native: "The boss takes the decision."
+    confusables:
+      "c1": { why: "A staff member, not the one who decides." }
+      "c2": { why: "A colleague, not the boss." }
+  "as-3118":
+    native: "I got the job."
+    bases:
+      "পালোঁ": "to get; to receive"
+    confusables:
+      "c1": { why: "A report, not a job." }
+      "c2": { why: "A meeting, not a job offer." }
+  "as-3119":
+    native: "The working hours are long."
+    confusables:
+      "c1": { why: "Short, the opposite of long." }
+      "c2": { why: "A deadline, not the hours." }
