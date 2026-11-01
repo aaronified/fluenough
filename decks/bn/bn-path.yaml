@@ -558,11 +558,14 @@ units:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
   - decks: ["bn-reading-before-after"]
     words: 0
-  - planned: { id: "bn-environment", theme: "environment", words: 50 }
+  - decks: ["bn-environment", "bn-environment-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "floods-and-embankments", text: { "en": "Neighbours talk about the river, the flood and the embankment" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
+  - decks: ["bn-reading-environment"]
+    words: 0
   - planned: { id: "bn-agriculture", theme: "agriculture", words: 50 }
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's rice and jute" } }

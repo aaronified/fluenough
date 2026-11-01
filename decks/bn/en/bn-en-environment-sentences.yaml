@@ -1,0 +1,50 @@
+schema: 1
+id: "bn-en-environment-sentences"
+kind: "layer"
+core: "bn-environment-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Environment: sentences"
+description: "Short sentences about pollution, trees and the earth. They unlock once their words and rules are known. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-3441":
+    native: "There is a lot of pollution in the river."
+    confusables: { "c1": { why: "a waterfall: clean water, not pollution" }, "c2": { why: "a canal: a water channel" } }
+  "bn-3442":
+    native: "Plant trees, the air will be clean. (familiar)"
+    bases: { "লাগাও": "plant" }
+    confusables: { "c1": { why: "dust: dirt in the air, not a clean air" }, "c2": { why: "fog: weather, not clean air" } }
+  "bn-3443":
+    native: "The earth is gradually getting warm."
+    confusables: { "c1": { why: "cold: the opposite of warm" }, "c2": { why: "cold: a different word for a cold place" } }
+  "bn-3444":
+    native: "Do not throw away waste, save the environment. (familiar)"
+    bases: { "না": "not", "বাঁচাও": "save" }
+    confusables: { "c1": { why: "recycling: the good alternative" }, "c2": { why: "picking up: a different act" } }
+  "bn-3445":
+    native: "Use less plastic. (familiar)"
+    bases: { "কম": "less", "ব্যবহার": "use" }
+    confusables: { "c1": { why: "paper: a different material" }, "c2": { why: "glass: a different material" } }
+  "bn-3446":
+    native: "Wildlife lives in the forest."
+    confusables: { "c1": { why: "domesticated: animals kept at home" }, "c2": { why: "urban: a place, not a kind of animal" } }
+  "bn-3447":
+    native: "Carbon needs to be reduced."
+    bases: { "কমানো": "to reduce" }
+    confusables: { "c1": { why: "oxygen: a gas we breathe in" }, "c2": { why: "smoke: a source of carbon" } }
+  "bn-3448":
+    native: "Be careful during an earthquake. (familiar)"
+    bases: { "সাবধান": "careful" }
+    confusables: { "c1": { why: "flood: a different disaster" }, "c2": { why: "a storm: a different disaster" } }
+  "bn-3449":
+    native: "This soil is fertile."
+    bases: { "এই": "this" }
+    confusables: { "c1": { why: "polluted: the opposite" }, "c2": { why: "dry: a state, not fertility" } }
+  "bn-3450":
+    native: "Everyone is becoming aware."
+    bases: { "সবাই": "everyone", "সচেতন": "aware" }
+    confusables: { "c1": { why: "indifferent: the opposite" }, "c2": { why: "awareness: a noun, not the state" } }
+  "bn-3451":
+    native: "The air is getting worse day by day."
+    confusables: { "c1": { why: "good: the opposite of worse" }, "c2": { why: "clean: a quality, not a change" } }
