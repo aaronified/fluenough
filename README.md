@@ -21,7 +21,7 @@ offline on your phone once a language's decks are downloaded.
   <a href="https://github.com/aaronified/fluenough/releases/latest"><img src="https://img.shields.io/badge/platform-Android-3DDC84?logo=android&amp;logoColor=white" alt="Platform: Android"></a>
   <a href="docs/DEVELOPMENT.md"><img src="https://img.shields.io/badge/Flutter-3.47%2B-02569B?logo=flutter&amp;logoColor=white" alt="Flutter 3.47 or later"></a>
   <a href="#why-fluenough-is-different"><img src="https://img.shields.io/badge/works_offline-once_decks_are_in-2E7D32" alt="Works offline once decks are in"></a>
-  <a href="#courses"><img src="https://img.shields.io/badge/languages-13-C2621D" alt="13 languages"></a>
+  <a href="#courses"><img src="https://img.shields.io/badge/languages-57-C2621D" alt="57 languages"></a>
   <a href="https://github.com/aaronified/fluenough/issues"><img src="https://img.shields.io/github/issues/aaronified/fluenough" alt="Open issues"></a>
 </p>
 
@@ -123,19 +123,63 @@ below is written from `decks/index.json` each time the decks change.
 <!-- languages:start -->
 | Language | Scripts | Level reached |
 |---|---|---|
+| Arabic | Arabic | in progress |
+| Archaic Greek | Greek | in progress |
+| Ashokan Prakrit | Devanagari, Brahmi | in progress |
 | Assamese | Eastern Nagari | A1 |
+| Basque | Latin | in progress |
 | Bengali | Eastern Nagari | A1 |
+| Cantonese | Traditional Hanzi | in progress |
+| Catalan | Latin | in progress |
+| Classical Greek | Greek | in progress |
+| Esperanto | Latin | in progress |
+| Filipino | Latin | in progress |
+| Finnish | Latin | in progress |
 | French | Latin | in progress |
+| German | Latin | in progress |
+| Greek (Modern) | Greek | in progress |
 | Gujarati | Gujarati | in progress |
+| Hausa | Latin | in progress |
+| Hebrew | Hebrew | in progress |
 | Hindustani | Devanagari, Perso-Arabic | A1 |
+| Hungarian | Latin | in progress |
+| Interslavic | Latin, Cyrillic | in progress |
+| Irish | Latin | in progress |
+| Italian | Latin | in progress |
 | Japanese | Kana, Kanji | in progress |
 | Kannada | Kannada | A1 |
+| Koine Greek | Greek | in progress |
 | Korean | Hangul | in progress |
+| Latin | Latin | in progress |
+| Lojban | Latin | in progress |
+| Maithili | Devanagari | in progress |
+| Malay | Latin | in progress |
+| Malayalam | Malayalam | in progress |
 | Mandarin Chinese | Simplified Hanzi, Traditional Hanzi | in progress |
 | Marathi | Devanagari | A1 |
+| Middle English | Latin | in progress |
+| Norwegian (Bokmål) | Latin | in progress |
+| Odia | Odia | in progress |
+| Old English | Latin | in progress |
+| Pali | Devanagari | in progress |
+| Polish | Latin | in progress |
+| Portuguese | Latin | in progress |
+| Punjabi | Gurmukhi, Shahmukhi | in progress |
+| Quechua | Latin | in progress |
+| Russian | Cyrillic | in progress |
+| Serbo-Croatian | Latin, Cyrillic | in progress |
+| Somali | Latin | in progress |
 | Spanish | Latin | A1 |
+| Swahili | Latin | in progress |
+| Swedish | Latin | in progress |
+| Tamil | Tamil | in progress |
 | Telugu | Telugu | B1 |
+| Thai | Thai | in progress |
 | Toki Pona | Latin | B1 |
+| Turkish | Latin | in progress |
+| Vedic Sanskrit | Devanagari | in progress |
+| Vietnamese | Latin | in progress |
+| Yiddish | Hebrew | in progress |
 <!-- languages:end -->
 
 **Levels are approximate.** They come from the vocabulary sizes and the units
