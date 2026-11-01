@@ -1,0 +1,361 @@
+schema: 1
+id: "bn-law"
+part: "core"
+kind: "vocab"
+language: { code: "bn", iso639_3: "ben", name: "Bengali", script: "bengali", tts: "bn-IN", icon: "বা" }
+license: "CC-BY-SA-4.0"
+authors:
+  - { name: "Fluenough contributors" }
+theme: "law"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "bn-4091"
+    target: "অপরাধী"
+    reading: "ôporādhi"
+    ipa: "ɔporad̪ʱi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অপরাধী", reading: "ôporādhi" }] }
+    examples:
+      - { target: "অপরাধী ধরা পড়ল।", reading: "ôporādhi dhôrā pôṛol.", ipa: "ɔporad̪ʱi d̪ʱɔra pɔɽol", bases: [{ word: "ধরা", ref: "bn-1107" }, { word: "পড়ল", ref: "bn-0119" }] }
+      - { target: "অপরাধীর শাস্তি হওয়া উচিত।", reading: "ôporādhir śāsti hôoyā ucit.", ipa: "ɔporad̪ʱir ʃast̪i ɦɔoja utʃit̪", bases: [{ word: "অপরাধীর", base: "অপরাধী", reading: "ôporādhir" }, { word: "শাস্তি", ref: "bn-4093" }, { word: "হওয়া", ref: "bn-0874" }, { word: "উচিত", ref: "bn-2988" }] }
+  - id: "bn-4092"
+    target: "সাক্ষ্য"
+    reading: "sākkkh"
+    ipa: "sakkkʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সাক্ষ্য", reading: "sākkkh" }] }
+    examples:
+      - { target: "সাক্ষ্য দিতে হবে।", reading: "sākkkh dite hôbe.", ipa: "sakkkʰ d̪it̪e ɦɔbe", bases: [{ word: "দিতে", ref: "bn-0888" }, { word: "হবে", ref: "bn-0874" }] }
+      - { target: "সাক্ষ্যের জন্য কে এসেছে?", reading: "sākkkher jonn ke eseche?", ipa: "sakkkʰer dʒonn ke esetʃʰe", bases: [{ word: "সাক্ষ্যের", base: "সাক্ষ্য", reading: "sākkkher" }, { word: "জন্য", ref: "bn-0297" }, { word: "কে", ref: "bn-0162" }, { word: "এসেছে", ref: "bn-0872" }] }
+  - id: "bn-4093"
+    target: "শাস্তি"
+    reading: "śāsti"
+    ipa: "ʃast̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শাস্তি", reading: "śāsti" }] }
+    examples:
+      - { target: "শাস্তি কঠিন হওয়া উচিত।", reading: "śāsti koṭhin hôoyā ucit.", ipa: "ʃast̪i koʈʰin ɦɔoja utʃit̪", bases: [{ word: "কঠিন", ref: "bn-0624" }, { word: "হওয়া", ref: "bn-0874" }, { word: "উচিত", ref: "bn-2988" }] }
+      - { target: "তাকে শাস্তি দেওয়া হলো।", reading: "tāke śāsti deoyā hôlo.", ipa: "t̪ake ʃast̪i d̪eoja ɦɔlo", bases: [{ word: "তাকে", ref: "bn-0839" }, { word: "দেওয়া", ref: "bn-0888" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4094"
+    target: "জেল"
+    reading: "jel"
+    ipa: "dʒel"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জেল", reading: "jel" }] }
+    examples:
+      - { target: "সে জেলে আছে।", reading: "se jele āche.", ipa: "se dʒele atʃʰe", bases: [{ word: "সে", ref: "bn-0839" }, { word: "জেলে", base: "জেল", reading: "jele" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "জেল থেকে ছাড়া পেল।", reading: "jel theke chāṛā pel.", ipa: "dʒel t̪ʰeke tʃʰaɽa pel", bases: [{ word: "থেকে", ref: "bn-0294" }, { word: "ছাড়া", ref: "bn-0589" }, { word: "পেল", ref: "bn-0891" }] }
+  - id: "bn-4095"
+    target: "কারাগার"
+    reading: "kārāgār"
+    ipa: "karaɡar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "কারাগার", reading: "kārāgār" }] }
+    examples:
+      - { target: "কারাগারে অনেক লোক।", reading: "kārāgāre ônek lok.", ipa: "karaɡare ɔnek lok", bases: [{ word: "কারাগারে", base: "কারাগার", reading: "kārāgāre" }, { word: "অনেক", ref: "bn-0550" }, { word: "লোক", base: "লোক", reading: "lok" }] }
+      - { target: "কারাগারের দরজা বন্ধ।", reading: "kārāgārer dôrojā bôndh.", ipa: "karaɡarer d̪ɔrodʒa bɔnd̪ʱ", bases: [{ word: "কারাগারের", base: "কারাগার", reading: "kārāgārer" }, { word: "দরজা", ref: "bn-0599" }, { word: "বন্ধ", ref: "bn-1230" }] }
+  - id: "bn-4096"
+    target: "জামিন"
+    reading: "jāmin"
+    ipa: "dʒamin"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জামিন", reading: "jāmin" }] }
+    examples:
+      - { target: "জামিন পেয়ে সে বাড়ি গেল।", reading: "jāmin peye se bāṛi gel.", ipa: "dʒamin peje se baɽi ɡel", bases: [{ word: "পেয়ে", ref: "bn-0891" }, { word: "সে", ref: "bn-0839" }, { word: "বাড়ি", ref: "bn-0196" }, { word: "গেল", ref: "bn-0873" }] }
+      - { target: "জামিনের টাকা কত?", reading: "jāminer ṭākā kôt?", ipa: "dʒaminer ʈaka kɔt̪", bases: [{ word: "জামিনের", base: "জামিন", reading: "jāminer" }, { word: "টাকা", ref: "bn-0245" }, { word: "কত", ref: "bn-0167" }] }
+  - id: "bn-4097"
+    target: "অভিযোগ"
+    reading: "ôbhijog"
+    ipa: "ɔbʱidʒoɡ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অভিযোগ", reading: "ôbhijog" }] }
+    examples:
+      - { target: "আমার একটা অভিযোগ আছে।", reading: "āmār ekoṭā ôbhijog āche.", ipa: "amar ekoʈa ɔbʱidʒoɡ atʃʰe", bases: [{ word: "আমার", ref: "bn-0833" }, { word: "একটা", base: "একটা", reading: "ekoṭā" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "অভিযোগটা লিখে দিন।", reading: "ôbhijogoṭā likhe din.", ipa: "ɔbʱidʒoɡoʈa likʰe d̪in", bases: [{ word: "অভিযোগটা", base: "অভিযোগ", reading: "ôbhijogoṭā" }, { word: "লিখে", ref: "bn-0880" }, { word: "দিন", ref: "bn-0251" }] }
+  - id: "bn-4098"
+    target: "অভিযুক্ত"
+    reading: "ôbhijukt"
+    ipa: "ɔbʱidʒukt̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অভিযুক্ত", reading: "ôbhijukt" }] }
+    examples:
+      - { target: "অভিযুক্ত ব্যক্তি আদালতে এলেন।", reading: "ôbhijukt bêkti ādālote elen.", ipa: "ɔbʱidʒukt̪ bækt̪i ad̪alot̪e elen", bases: [{ word: "ব্যক্তি", base: "ব্যক্তি", reading: "bêkti" }, { word: "আদালতে", ref: "bn-1065" }, { word: "এলেন", ref: "bn-0872" }] }
+      - { target: "অভিযুক্তের নাম কী?", reading: "ôbhijukter nām ki?", ipa: "ɔbʱidʒukt̪er nam ki", bases: [{ word: "অভিযুক্তের", base: "অভিযুক্ত", reading: "ôbhijukter" }, { word: "নাম", ref: "bn-0191" }, { word: "কী", ref: "bn-0161" }] }
+  - id: "bn-4099"
+    target: "বিচার"
+    reading: "bicār"
+    ipa: "bitʃar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিচার", reading: "bicār" }] }
+    examples:
+      - { target: "বিচার কাল শুরু হবে।", reading: "bicār kāl śuru hôbe.", ipa: "bitʃar kal ʃuru ɦɔbe", bases: [{ word: "কাল", ref: "bn-0316" }, { word: "শুরু", ref: "bn-2480" }, { word: "হবে", ref: "bn-0874" }] }
+      - { target: "বিচারের রায় কী হলো?", reading: "bicārer rāy ki hôlo?", ipa: "bitʃarer raj ki ɦɔlo", bases: [{ word: "বিচারের", base: "বিচার", reading: "bicārer" }, { word: "রায়", ref: "bn-4100" }, { word: "কী", ref: "bn-0161" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4100"
+    target: "রায়"
+    reading: "rāy"
+    ipa: "raj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "রায়", reading: "rāy" }] }
+    examples:
+      - { target: "আদালতের রায় বেরোল।", reading: "ādāloter rāy berol.", ipa: "ad̪alot̪er raj berol", bases: [{ word: "আদালতের", ref: "bn-1065" }, { word: "বেরোল", ref: "bn-2353" }] }
+      - { target: "রায়ের কপি পাওয়া গেছে।", reading: "rāyer kopi pāoyā geche.", ipa: "rajer kopi paoja ɡetʃʰe", bases: [{ word: "রায়ের", base: "রায়", reading: "rāyer" }, { word: "কপি", base: "কপি", reading: "kopi" }, { word: "পাওয়া", ref: "bn-0891" }, { word: "গেছে", ref: "bn-0873" }] }
+  - id: "bn-4101"
+    target: "আপিল"
+    reading: "āpil"
+    ipa: "apil"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আপিল", reading: "āpil" }] }
+    examples:
+      - { target: "সে আপিল করবে।", reading: "se āpil kôrobe.", ipa: "se apil kɔrobe", bases: [{ word: "সে", ref: "bn-0839" }, { word: "করবে", ref: "bn-0102" }] }
+      - { target: "আপিলের দিন ঠিক হলো।", reading: "āpiler din ṭhik hôlo.", ipa: "apiler d̪in ʈʰik ɦɔlo", bases: [{ word: "আপিলের", base: "আপিল", reading: "āpiler" }, { word: "দিন", ref: "bn-0251" }, { word: "ঠিক", ref: "bn-1243" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4102"
+    target: "সনদ"
+    reading: "sônod"
+    ipa: "sɔnod̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "সনদ", reading: "sônod" }] }
+    examples:
+      - { target: "জন্মের সনদ নিয়ে এসো।", reading: "jônmer sônod niye eso.", ipa: "dʒɔnmer sɔnod̪ nije eso", bases: [{ word: "জন্মের", base: "জন্ম", reading: "jônmer" }, { word: "নিয়ে", ref: "bn-0590" }, { word: "এসো", ref: "bn-0872" }] }
+      - { target: "সনদটা সরকারি।", reading: "sônodoṭā sôrokāri.", ipa: "sɔnod̪oʈa sɔrokari", bases: [{ word: "সনদটা", base: "সনদ", reading: "sônodoṭā" }, { word: "সরকারি", ref: "bn-3206" }] }
+  - id: "bn-4103"
+    target: "হলফনামা"
+    reading: "hôlophonāmā"
+    ipa: "ɦɔlopʰonama"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "হলফনামা", reading: "hôlophonāmā" }] }
+    examples:
+      - { target: "হলফনামায় সই করো।", reading: "hôlophonāmāy soi kôro.", ipa: "ɦɔlopʰonamaj soi kɔro", bases: [{ word: "সই", ref: "bn-2633" }, { word: "করো", ref: "bn-0102" }] }
+      - { target: "হলফনামাটা আদালতে জমা দেওয়া হলো।", reading: "hôlophonāmāṭā ādālote jômā deoyā hôlo.", ipa: "ɦɔlopʰonamaʈa ad̪alot̪e dʒɔma d̪eoja ɦɔlo", bases: [{ word: "হলফনামাটা", base: "হলফনামা", reading: "hôlophonāmāṭā" }, { word: "আদালতে", ref: "bn-1065" }, { word: "জমা", ref: "bn-3998" }, { word: "দেওয়া", ref: "bn-0888" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4104"
+    target: "স্বাক্ষর"
+    reading: "sākkhor"
+    ipa: "sakkʰor"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "স্বাক্ষর", reading: "sākkhor" }] }
+    examples:
+      - { target: "এখানে স্বাক্ষর করুন।", reading: "ekhāne sākkhor korun.", ipa: "ekʰane sakkʰor korun", bases: [{ word: "এখানে", ref: "bn-0311" }, { word: "করুন", ref: "bn-0102" }] }
+      - { target: "স্বাক্ষরটা মিলছে না।", reading: "sākkhoroṭā miloche nā.", ipa: "sakkʰoroʈa milotʃʰe na", bases: [{ word: "স্বাক্ষরটা", base: "স্বাক্ষর", reading: "sākkhoroṭā" }, { word: "মিলছে", ref: "bn-1669" }, { word: "না", ref: "bn-0160" }] }
+  - id: "bn-4105"
+    target: "পরোয়ানা"
+    reading: "pôroyānā"
+    ipa: "pɔrojana"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "পরোয়ানা", reading: "pôroyānā" }] }
+    examples:
+      - { target: "পুলিশের কাছে পরোয়ানা আছে।", reading: "puliśer kāche pôroyānā āche.", ipa: "puliʃer katʃʰe pɔrojana atʃʰe", bases: [{ word: "পুলিশের", ref: "bn-0375" }, { word: "কাছে", ref: "bn-0309" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+      - { target: "পরোয়ানাটা দেখাও।", reading: "pôroyānāṭā dekhāo.", ipa: "pɔrojanaʈa d̪ekʰao", bases: [{ word: "পরোয়ানাটা", base: "পরোয়ানা", reading: "pôroyānāṭā" }, { word: "দেখাও", ref: "bn-2355" }] }
+  - id: "bn-4106"
+    target: "নাগরিকত্ব"
+    reading: "nāgorikott"
+    ipa: "naɡorikot̪t̪"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নাগরিকত্ব", reading: "nāgorikott" }] }
+    examples:
+      - { target: "নাগরিকত্বের প্রমাণ দিতে হবে।", reading: "nāgorikotter prômān dite hôbe.", ipa: "naɡorikot̪t̪er prɔman d̪it̪e ɦɔbe", bases: [{ word: "নাগরিকত্বের", base: "নাগরিকত্ব", reading: "nāgorikotter" }, { word: "প্রমাণ", ref: "bn-3728" }, { word: "দিতে", ref: "bn-0888" }, { word: "হবে", ref: "bn-0874" }] }
+      - { target: "তার নাগরিকত্ব আছে।", reading: "tār nāgorikott āche.", ipa: "t̪ar naɡorikot̪t̪ atʃʰe", bases: [{ word: "তার", ref: "bn-3275" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-4107"
+    target: "মানবাধিকার"
+    reading: "mānobādhikār"
+    ipa: "manobad̪ʱikar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "মানবাধিকার", reading: "mānobādhikār" }] }
+    examples:
+      - { target: "মানবাধিকার সবার জন্য।", reading: "mānobādhikār sôbār jonn.", ipa: "manobad̪ʱikar sɔbar dʒonn", bases: [{ word: "সবার", ref: "bn-0854" }, { word: "জন্য", ref: "bn-0297" }] }
+      - { target: "মানবাধিকার রক্ষা করা জরুরি।", reading: "mānobādhikār rôkkhā kôrā joruri.", ipa: "manobad̪ʱikar rɔkkʰa kɔra dʒoruri", bases: [{ word: "রক্ষা", base: "রক্ষা", reading: "rôkkhā" }, { word: "করা", ref: "bn-0102" }, { word: "জরুরি", ref: "bn-1778" }] }
+  - id: "bn-4108"
+    target: "বাদী"
+    reading: "bādi"
+    ipa: "bad̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বাদী", reading: "bādi" }] }
+    examples:
+      - { target: "বাদী আদালতে এল।", reading: "bādi ādālote el.", ipa: "bad̪i ad̪alot̪e el", bases: [{ word: "আদালতে", ref: "bn-1065" }, { word: "এল", ref: "bn-0872" }] }
+      - { target: "বাদীর কথা শোনা হলো।", reading: "bādir kôthā śonā hôlo.", ipa: "bad̪ir kɔt̪ʰa ʃona ɦɔlo", bases: [{ word: "বাদীর", base: "বাদী", reading: "bādir" }, { word: "কথা", ref: "bn-2409" }, { word: "শোনা", ref: "bn-0878" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4109"
+    target: "বিবাদী"
+    reading: "bibādi"
+    ipa: "bibad̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিবাদী", reading: "bibādi" }] }
+    examples:
+      - { target: "বিবাদী উকিল নিলেন।", reading: "bibādi ukil nilen.", ipa: "bibad̪i ukil nilen", bases: [{ word: "উকিল", ref: "bn-0455" }, { word: "নিলেন", ref: "bn-0889" }] }
+      - { target: "বিবাদীর পক্ষে সাক্ষী আছে।", reading: "bibādir pôkkhe sākkhi āche.", ipa: "bibad̪ir pɔkkʰe sakkʰi atʃʰe", bases: [{ word: "বিবাদীর", base: "বিবাদী", reading: "bibādir" }, { word: "পক্ষে", base: "পক্ষ", reading: "pôkkhe" }, { word: "সাক্ষী", ref: "bn-3771" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-4110"
+    target: "ন্যায়"
+    reading: "nêy"
+    ipa: "næj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ন্যায়", reading: "nêy" }] }
+    examples:
+      - { target: "ন্যায় সবার অধিকার।", reading: "nêy sôbār ôdhikār.", ipa: "næj sɔbar ɔd̪ʱikar", bases: [{ word: "সবার", ref: "bn-0854" }, { word: "অধিকার", ref: "bn-3193" }] }
+      - { target: "ন্যায়ের পথে চলো।", reading: "nêyer pôthe côlo.", ipa: "næjer pɔt̪ʰe tʃɔlo", bases: [{ word: "ন্যায়ের", base: "ন্যায়", reading: "nêyer" }, { word: "পথে", ref: "bn-0057" }, { word: "চলো", ref: "bn-0892" }] }
+  - id: "bn-4111"
+    target: "ন্যায়বিচার"
+    reading: "nêyobicār"
+    ipa: "næjobitʃar"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ন্যায়বিচার", reading: "nêyobicār" }] }
+    examples:
+      - { target: "সবাই ন্যায়বিচার চায়।", reading: "sôbāi nêyobicār cāy.", ipa: "sɔbai næjobitʃar tʃaj", bases: [{ word: "সবাই", ref: "bn-0854" }, { word: "চায়", ref: "bn-0741" }] }
+      - { target: "ন্যায়বিচারের জন্য লড়াই।", reading: "nêyobicārer jonn lôṛāi.", ipa: "næjobitʃarer dʒonn lɔɽai", bases: [{ word: "ন্যায়বিচারের", base: "ন্যায়বিচার", reading: "nêyobicārer" }, { word: "জন্য", ref: "bn-0297" }, { word: "লড়াই", base: "লড়াই", reading: "lôṛāi" }] }
+  - id: "bn-4112"
+    target: "জরিমানা"
+    reading: "jorimānā"
+    ipa: "dʒorimana"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "জরিমানা", reading: "jorimānā" }] }
+    examples:
+      - { target: "পাঁচশো টাকা জরিমানা হলো।", reading: "pām̐cośo ṭākā jorimānā hôlo.", ipa: "pãtʃoʃo ʈaka dʒorimana ɦɔlo", bases: [{ word: "টাকা", ref: "bn-0245" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "জরিমানাটা খুব বেশি।", reading: "jorimānāṭā khub beśi.", ipa: "dʒorimanaʈa kʰub beʃi", bases: [{ word: "জরিমানাটা", base: "জরিমানা", reading: "jorimānāṭā" }, { word: "খুব", ref: "bn-0641" }, { word: "বেশি", ref: "bn-0555" }] }
+  - id: "bn-4113"
+    target: "চুরি"
+    reading: "curi"
+    ipa: "tʃuri"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "চুরি", reading: "curi" }] }
+    examples:
+      - { target: "চুরি হয়েছে।", reading: "curi hôyeche.", ipa: "tʃuri ɦɔjetʃʰe", bases: [{ word: "হয়েছে", ref: "bn-0874" }] }
+      - { target: "চুরির খবর পুলিশকে দাও।", reading: "curir khôbor puliśoke dāo.", ipa: "tʃurir kʰɔbor puliʃoke d̪ao", bases: [{ word: "চুরির", base: "চুরি", reading: "curir" }, { word: "খবর", ref: "bn-2884" }, { word: "পুলিশকে", ref: "bn-0375" }, { word: "দাও", ref: "bn-0888" }] }
+  - id: "bn-4114"
+    target: "ডাকাতি"
+    reading: "ḍākāti"
+    ipa: "ɖakat̪i"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "ডাকাতি", reading: "ḍākāti" }] }
+    examples:
+      - { target: "ডাকাতি হয়েছে।", reading: "ḍākāti hôyeche.", ipa: "ɖakat̪i ɦɔjetʃʰe", bases: [{ word: "হয়েছে", ref: "bn-0874" }] }
+      - { target: "ডাকাতির কথা শুনে ভয় পেলাম।", reading: "ḍākātir kôthā śune bhôy pelām.", ipa: "ɖakat̪ir kɔt̪ʰa ʃune bʱɔj pelam", bases: [{ word: "ডাকাতির", base: "ডাকাতি", reading: "ḍākātir" }, { word: "কথা", ref: "bn-2409" }, { word: "শুনে", ref: "bn-0878" }, { word: "ভয়", ref: "bn-1248" }, { word: "পেলাম", ref: "bn-0891" }] }
+  - id: "bn-4115"
+    target: "আইনজীবী"
+    reading: "āinojibi"
+    ipa: "ainodʒibi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আইনজীবী", reading: "āinojibi" }] }
+    examples:
+      - { target: "আইনজীবী আদালতে গেলেন।", reading: "āinojibi ādālote gelen.", ipa: "ainodʒibi ad̪alot̪e ɡelen", bases: [{ word: "আদালতে", ref: "bn-1065" }, { word: "গেলেন", ref: "bn-0873" }] }
+      - { target: "আইনজীবীর সঙ্গে কথা বলো।", reading: "āinojibir sôṅge kôthā bôlo.", ipa: "ainodʒibir sɔŋɡe kɔt̪ʰa bɔlo", bases: [{ word: "আইনজীবীর", base: "আইনজীবী", reading: "āinojibir" }, { word: "সঙ্গে", ref: "bn-0296" }, { word: "কথা", ref: "bn-2409" }, { word: "বলো", ref: "bn-0879" }] }
+  - id: "bn-4116"
+    target: "নোটিশ"
+    reading: "noṭiś"
+    ipa: "noʈiʃ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নোটিশ", reading: "noṭiś" }] }
+    examples:
+      - { target: "নোটিশ এসেছে।", reading: "noṭiś eseche.", ipa: "noʈiʃ esetʃʰe", bases: [{ word: "এসেছে", ref: "bn-0872" }] }
+      - { target: "নোটিশটা টাঙানো আছে।", reading: "noṭiśoṭā ṭāṅāno āche.", ipa: "noʈiʃoʈa ʈaŋano atʃʰe", bases: [{ word: "নোটিশটা", base: "নোটিশ", reading: "noṭiśoṭā" }, { word: "টাঙানো", base: "টাঙানো", reading: "ṭāṅāno" }, { word: "আছে", base: "আছে", reading: "āche" }] }
+  - id: "bn-4117"
+    target: "নিষেধ"
+    reading: "niśedh"
+    ipa: "niʃed̪ʱ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নিষেধ", reading: "niśedh" }] }
+    examples:
+      - { target: "এখানে ধূমপান নিষেধ।", reading: "ekhāne dhumopān niśedh.", ipa: "ekʰane d̪ʱumopan niʃed̪ʱ", bases: [{ word: "এখানে", ref: "bn-0311" }, { word: "ধূমপান", base: "ধূমপান", reading: "dhumopān" }] }
+      - { target: "নিষেধ মানো।", reading: "niśedh māno.", ipa: "niʃed̪ʱ mano", bases: [{ word: "মানো", base: "মানা", reading: "māno" }] }
+  - id: "bn-4118"
+    target: "দোষী"
+    reading: "dośi"
+    ipa: "d̪oʃi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "দোষী", reading: "dośi" }] }
+    examples:
+      - { target: "আদালত তাকে দোষী বলল।", reading: "ādālot tāke dośi bôlol.", ipa: "ad̪alot̪ t̪ake d̪oʃi bɔlol", bases: [{ word: "আদালত", ref: "bn-1065" }, { word: "তাকে", ref: "bn-0839" }, { word: "বলল", ref: "bn-0879" }] }
+      - { target: "দোষী ব্যক্তির শাস্তি হলো।", reading: "dośi bêktir śāsti hôlo.", ipa: "d̪oʃi bækt̪ir ʃast̪i ɦɔlo", bases: [{ word: "ব্যক্তির", base: "ব্যক্তি", reading: "bêktir" }, { word: "শাস্তি", ref: "bn-4093" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4119"
+    target: "নির্দোষ"
+    reading: "nirdoś"
+    ipa: "nird̪oʃ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "নির্দোষ", reading: "nirdoś" }] }
+    examples:
+      - { target: "সে নির্দোষ প্রমাণিত হলো।", reading: "se nirdoś prômānit hôlo.", ipa: "se nird̪oʃ prɔmanit̪ ɦɔlo", bases: [{ word: "সে", ref: "bn-0839" }, { word: "প্রমাণিত", ref: "bn-3728" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "নির্দোষ মানুষকে শাস্তি দেওয়া উচিত নয়।", reading: "nirdoś mānuśoke śāsti deoyā ucit nôy.", ipa: "nird̪oʃ manuʃoke ʃast̪i d̪eoja utʃit̪ nɔj", bases: [{ word: "মানুষকে", base: "মানুষ", reading: "mānuśoke" }, { word: "শাস্তি", ref: "bn-4093" }, { word: "দেওয়া", ref: "bn-0888" }, { word: "উচিত", ref: "bn-2988" }, { word: "নয়", ref: "bn-0210" }] }
+  - id: "bn-4120"
+    target: "বেআইনি"
+    reading: "beāini"
+    ipa: "beaini"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বেআইনি", reading: "beāini" }] }
+    examples:
+      - { target: "এই কাজ বেআইনি।", reading: "ei kāj beāini.", ipa: "ei kadʒ beaini", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "কাজ", ref: "bn-0198" }] }
+      - { target: "বেআইনি দোকান বন্ধ হলো।", reading: "beāini dokān bôndh hôlo.", ipa: "beaini d̪okan bɔnd̪ʱ ɦɔlo", bases: [{ word: "দোকান", ref: "bn-0250" }, { word: "বন্ধ", ref: "bn-1230" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4121"
+    target: "আইনসম্মত"
+    reading: "āinosommot"
+    ipa: "ainosommot̪"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "আইনসম্মত", reading: "āinosommot" }] }
+    examples:
+      - { target: "এই লেনদেন আইনসম্মত।", reading: "ei lenoden āinosommot.", ipa: "ei lenod̪en ainosommot̪", bases: [{ word: "এই", base: "এই", reading: "ei" }, { word: "লেনদেন", ref: "bn-1734" }] }
+      - { target: "আইনসম্মত উপায়ে কাজ করো।", reading: "āinosommot upāye kāj kôro.", ipa: "ainosommot̪ upaje kadʒ kɔro", bases: [{ word: "উপায়ে", base: "উপায়", reading: "upāye" }, { word: "কাজ", ref: "bn-0198" }, { word: "করো", ref: "bn-0102" }] }
+  - id: "bn-4122"
+    target: "অভিযোগ করা"
+    reading: "ôbhijog kôrā"
+    ipa: "ɔbʱidʒoɡ kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "অভিযোগ করা", reading: "ôbhijog kôrā" }] }
+    examples:
+      - { target: "আমি পুলিশে অভিযোগ করলাম।", reading: "āmi puliśe ôbhijog kôrolām.", ipa: "ami puliʃe ɔbʱidʒoɡ kɔrolam", bases: [{ word: "আমি", ref: "bn-0833" }, { word: "পুলিশে", ref: "bn-0375" }, { word: "অভিযোগ", ref: "bn-4097" }, { word: "করলাম", ref: "bn-0102" }] }
+      - { target: "তারা অভিযোগ করেছে।", reading: "tārā ôbhijog kôreche.", ipa: "t̪ara ɔbʱidʒoɡ kɔretʃʰe", bases: [{ word: "তারা", ref: "bn-0840" }, { word: "অভিযোগ", ref: "bn-4097" }, { word: "করেছে", ref: "bn-0102" }] }
+  - id: "bn-4123"
+    target: "বিচার করা"
+    reading: "bicār kôrā"
+    ipa: "bitʃar kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "বিচার করা", reading: "bicār kôrā" }] }
+    examples:
+      - { target: "আদালত মামলার বিচার করবে।", reading: "ādālot māmolār bicār kôrobe.", ipa: "ad̪alot̪ mamolar bitʃar kɔrobe", bases: [{ word: "আদালত", ref: "bn-1065" }, { word: "মামলার", ref: "bn-3204" }, { word: "বিচার", ref: "bn-4099" }, { word: "করবে", ref: "bn-0102" }] }
+      - { target: "বিচার করা হলো।", reading: "bicār kôrā hôlo.", ipa: "bitʃar kɔra ɦɔlo", bases: [{ word: "বিচার", ref: "bn-4099" }, { word: "করা", ref: "bn-0102" }, { word: "হলো", ref: "bn-0812" }] }
+  - id: "bn-4124"
+    target: "শাস্তি দেওয়া"
+    reading: "śāsti deoyā"
+    ipa: "ʃast̪i d̪eoja"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "শাস্তি দেওয়া", reading: "śāsti deoyā" }] }
+    examples:
+      - { target: "তাকে শাস্তি দেওয়া হলো।", reading: "tāke śāsti deoyā hôlo.", ipa: "t̪ake ʃast̪i d̪eoja ɦɔlo", bases: [{ word: "তাকে", ref: "bn-0839" }, { word: "শাস্তি", ref: "bn-4093" }, { word: "দেওয়া", ref: "bn-0888" }, { word: "হলো", ref: "bn-0812" }] }
+      - { target: "শাস্তি দিতে হবে।", reading: "śāsti dite hôbe.", ipa: "ʃast̪i d̪it̪e ɦɔbe", bases: [{ word: "শাস্তি", ref: "bn-4093" }, { word: "দিতে", ref: "bn-0888" }, { word: "হবে", ref: "bn-0874" }] }
+  - id: "bn-4125"
+    target: "গ্রেফতার করা"
+    reading: "grephotār kôrā"
+    ipa: "ɡrepʰot̪ar kɔra"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage", words: [{ word: "গ্রেফতার করা", reading: "grephotār kôrā" }] }
+    examples:
+      - { target: "পুলিশ তাকে গ্রেফতার করল।", reading: "puliś tāke grephotār kôrol.", ipa: "puliʃ t̪ake ɡrepʰot̪ar kɔrol", bases: [{ word: "পুলিশ", ref: "bn-0375" }, { word: "তাকে", ref: "bn-0839" }, { word: "গ্রেফতার", base: "গ্রেফতার", reading: "grephotār" }, { word: "করল", ref: "bn-0102" }] }
+      - { target: "গ্রেফতার করা হয়েছে।", reading: "grephotār kôrā hôyeche.", ipa: "ɡrepʰot̪ar kɔra ɦɔjetʃʰe", bases: [{ word: "গ্রেফতার", base: "গ্রেফতার", reading: "grephotār" }, { word: "করা", ref: "bn-0102" }, { word: "হয়েছে", ref: "bn-0874" }] }

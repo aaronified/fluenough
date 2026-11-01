@@ -1,0 +1,255 @@
+schema: 1
+id: "bn-en-law"
+kind: "layer"
+core: "bn-law"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law"
+description: "Courts, complaints, crime and rights: the words for the police, the court, a case and a citizen's rights. Not yet checked by a Bengali speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "bn-4091":
+    native: "criminal"
+    notes:
+      "n1": "{1}: A criminal: a person who has committed a crime."
+    examples:
+      "অপরাধী ধরা পড়ল।": "The criminal was caught."
+      "অপরাধীর শাস্তি হওয়া উচিত।": { native: "A criminal should be punished.", bases: { "অপরাধীর": "criminal" } }
+  "bn-4092":
+    native: "evidence"
+    notes:
+      "n1": "{1}: Evidence or testimony: what a witness says in court."
+    examples:
+      "সাক্ষ্য দিতে হবে।": "You must give evidence."
+      "সাক্ষ্যের জন্য কে এসেছে?": { native: "Who has come to give evidence?", bases: { "সাক্ষ্যের": "evidence" } }
+  "bn-4093":
+    native: "punishment"
+    notes:
+      "n1": "{1}: Punishment: a penalty for a wrong act."
+    examples:
+      "শাস্তি কঠিন হওয়া উচিত।": "The punishment should be harsh."
+      "তাকে শাস্তি দেওয়া হলো।": "He was given a punishment."
+  "bn-4094":
+    native: "jail"
+    notes:
+      "n1": "{1}: Jail: a place where people are kept as punishment."
+    examples:
+      "সে জেলে আছে।": { native: "He is in jail.", bases: { "জেলে": "jail", "আছে": "is" } }
+      "জেল থেকে ছাড়া পেল।": "He was released from jail."
+  "bn-4095":
+    native: "prison"
+    notes:
+      "n1": "{1}: A prison, a formal word for a jail."
+    examples:
+      "কারাগারে অনেক লোক।": { native: "There are many people in the prison.", bases: { "কারাগারে": "prison", "লোক": "people" } }
+      "কারাগারের দরজা বন্ধ।": { native: "The prison door is closed.", bases: { "কারাগারের": "prison" } }
+  "bn-4096":
+    native: "bail"
+    notes:
+      "n1": "{1}: Bail: money or a promise that lets a prisoner go free until the trial."
+    examples:
+      "জামিন পেয়ে সে বাড়ি গেল।": "He got bail and went home."
+      "জামিনের টাকা কত?": { native: "How much is the bail money?", bases: { "জামিনের": "bail" } }
+  "bn-4097":
+    native: "complaint"
+    notes:
+      "n1": "{1}: A complaint or an accusation: a statement that someone did wrong."
+    examples:
+      "আমার একটা অভিযোগ আছে।": { native: "I have a complaint.", bases: { "একটা": "a", "আছে": "have" } }
+      "অভিযোগটা লিখে দিন।": { native: "Please write the complaint down.", bases: { "অভিযোগটা": "complaint" } }
+  "bn-4098":
+    native: "accused"
+    notes:
+      "n1": "{1}: The accused: the person charged with a crime."
+    examples:
+      "অভিযুক্ত ব্যক্তি আদালতে এলেন।": { native: "The accused person came to court.", bases: { "ব্যক্তি": "person" } }
+      "অভিযুক্তের নাম কী?": { native: "What is the accused's name?", bases: { "অভিযুক্তের": "accused" } }
+  "bn-4099":
+    native: "trial; judgment"
+    notes:
+      "n1": "{1}: A trial or judgment: the process of judging a case in court."
+    examples:
+      "বিচার কাল শুরু হবে।": "The trial will start tomorrow."
+      "বিচারের রায় কী হলো?": { native: "What was the result of the trial?", bases: { "বিচারের": "trial; judgment" } }
+  "bn-4100":
+    native: "verdict"
+    notes:
+      "n1": "{1}: A verdict: the decision of a judge in a case."
+    examples:
+      "আদালতের রায় বেরোল।": "The court's verdict came out."
+      "রায়ের কপি পাওয়া গেছে।": { native: "The copy of the verdict has been found.", bases: { "রায়ের": "verdict", "কপি": "copy" } }
+  "bn-4101":
+    native: "appeal"
+    notes:
+      "n1": "{1}: An appeal: asking a higher court to change a verdict."
+    examples:
+      "সে আপিল করবে।": "He will appeal."
+      "আপিলের দিন ঠিক হলো।": { native: "The day of the appeal was fixed.", bases: { "আপিলের": "appeal" } }
+  "bn-4102":
+    native: "certificate"
+    notes:
+      "n1": "{1}: A certificate: an official paper that proves something."
+    examples:
+      "জন্মের সনদ নিয়ে এসো।": { native: "Bring the birth certificate. (familiar)", bases: { "জন্মের": "of birth" } }
+      "সনদটা সরকারি।": { native: "The certificate is official.", bases: { "সনদটা": "certificate" } }
+  "bn-4103":
+    native: "affidavit"
+    notes:
+      "n1": "{1}: An affidavit: a sworn written statement."
+    examples:
+      "হলফনামায় সই করো।": "Sign the affidavit. (familiar)"
+      "হলফনামাটা আদালতে জমা দেওয়া হলো।": { native: "The affidavit was submitted to court.", bases: { "হলফনামাটা": "affidavit" } }
+  "bn-4104":
+    native: "signature"
+    notes:
+      "n1": "{1}: A signature: a person's written name on a paper."
+    examples:
+      "এখানে স্বাক্ষর করুন।": "Please sign here."
+      "স্বাক্ষরটা মিলছে না।": { native: "The signature does not match.", bases: { "স্বাক্ষরটা": "signature" } }
+  "bn-4105":
+    native: "warrant"
+    notes:
+      "n1": "{1}: A warrant: an official order from a court, for example to arrest someone."
+    examples:
+      "পুলিশের কাছে পরোয়ানা আছে।": { native: "The police have a warrant.", bases: { "আছে": "have" } }
+      "পরোয়ানাটা দেখাও।": { native: "Show the warrant. (familiar)", bases: { "পরোয়ানাটা": "warrant" } }
+  "bn-4106":
+    native: "citizenship"
+    notes:
+      "n1": "{1}: Citizenship: the status of being a legal member of a country."
+    examples:
+      "নাগরিকত্বের প্রমাণ দিতে হবে।": { native: "Proof of citizenship must be given.", bases: { "নাগরিকত্বের": "citizenship" } }
+      "তার নাগরিকত্ব আছে।": { native: "He has citizenship.", bases: { "আছে": "has" } }
+  "bn-4107":
+    native: "human rights"
+    notes:
+      "n1": "{1}: Human rights: the basic rights that every person has."
+    examples:
+      "মানবাধিকার সবার জন্য।": "Human rights are for everyone."
+      "মানবাধিকার রক্ষা করা জরুরি।": { native: "Protecting human rights is important.", bases: { "রক্ষা": "protecting" } }
+  "bn-4108":
+    native: "plaintiff"
+    notes:
+      "n1": "{1}: The plaintiff: the person who brings a case to court."
+    examples:
+      "বাদী আদালতে এল।": "The plaintiff came to court."
+      "বাদীর কথা শোনা হলো।": { native: "The plaintiff's words were heard.", bases: { "বাদীর": "plaintiff" } }
+  "bn-4109":
+    native: "defendant"
+    notes:
+      "n1": "{1}: The defendant: the person a case is brought against."
+    examples:
+      "বিবাদী উকিল নিলেন।": "The defendant hired a lawyer."
+      "বিবাদীর পক্ষে সাক্ষী আছে।": { native: "There are witnesses on the defendant's side.", bases: { "বিবাদীর": "defendant", "পক্ষে": "side", "আছে": "are" } }
+  "bn-4110":
+    native: "justice; fairness"
+    notes:
+      "n1": "{1}: Justice or fairness: what is right and fair."
+    examples:
+      "ন্যায় সবার অধিকার।": "Justice is everyone's right."
+      "ন্যায়ের পথে চলো।": { native: "Walk the path of justice. (familiar)", bases: { "ন্যায়ের": "justice; fairness" } }
+  "bn-4111":
+    native: "justice in court"
+    notes:
+      "n1": "{1}: Justice in courts: a fair judgment for everyone."
+    examples:
+      "সবাই ন্যায়বিচার চায়।": "Everyone wants justice."
+      "ন্যায়বিচারের জন্য লড়াই।": { native: "A fight for justice.", bases: { "ন্যায়বিচারের": "justice in court", "লড়াই": "fight" } }
+  "bn-4112":
+    native: "fine"
+    notes:
+      "n1": "{1}: A fine: money paid as a punishment."
+    examples:
+      "পাঁচশো টাকা জরিমানা হলো।": "A fine of five hundred rupees was imposed."
+      "জরিমানাটা খুব বেশি।": { native: "The fine is very high.", bases: { "জরিমানাটা": "fine" } }
+  "bn-4113":
+    native: "theft"
+    notes:
+      "n1": "{1}: Theft: taking what belongs to someone else without permission."
+    examples:
+      "চুরি হয়েছে।": "A theft has happened."
+      "চুরির খবর পুলিশকে দাও।": { native: "Tell the police about the theft. (familiar)", bases: { "চুরির": "theft" } }
+  "bn-4114":
+    native: "robbery"
+    notes:
+      "n1": "{1}: Robbery by force: a crime of taking things with violence."
+    examples:
+      "ডাকাতি হয়েছে।": "There has been a robbery."
+      "ডাকাতির কথা শুনে ভয় পেলাম।": { native: "I was scared to hear of the robbery.", bases: { "ডাকাতির": "robbery" } }
+  "bn-4115":
+    native: "lawyer"
+    notes:
+      "n1": "{1}: A lawyer: a person qualified to advise and speak in court."
+    examples:
+      "আইনজীবী আদালতে গেলেন।": "The lawyer went to court."
+      "আইনজীবীর সঙ্গে কথা বলো।": { native: "Talk to the lawyer. (familiar)", bases: { "আইনজীবীর": "lawyer" } }
+  "bn-4116":
+    native: "notice"
+    notes:
+      "n1": "{1}: A notice: a written official message."
+    examples:
+      "নোটিশ এসেছে।": "A notice has come."
+      "নোটিশটা টাঙানো আছে।": { native: "The notice is hung up.", bases: { "নোটিশটা": "notice", "টাঙানো": "hung", "আছে": "is" } }
+  "bn-4117":
+    native: "prohibition"
+    notes:
+      "n1": "{1}: A prohibition: an order not to do something."
+    examples:
+      "এখানে ধূমপান নিষেধ।": { native: "Smoking is prohibited here.", bases: { "ধূমপান": "smoking" } }
+      "নিষেধ মানো।": { native: "Obey the prohibition. (familiar)", bases: { "মানো": "obey" } }
+  "bn-4118":
+    native: "guilty"
+    notes:
+      "n1": "{1}: Guilty: having done wrong, found to be responsible for a crime."
+    examples:
+      "আদালত তাকে দোষী বলল।": "The court called him guilty."
+      "দোষী ব্যক্তির শাস্তি হলো।": { native: "The guilty person was punished.", bases: { "ব্যক্তির": "of the person" } }
+  "bn-4119":
+    native: "innocent"
+    notes:
+      "n1": "{1}: Innocent: not guilty of any crime."
+    examples:
+      "সে নির্দোষ প্রমাণিত হলো।": "He was proved innocent."
+      "নির্দোষ মানুষকে শাস্তি দেওয়া উচিত নয়।": { native: "An innocent person should not be punished.", bases: { "মানুষকে": "person" } }
+  "bn-4120":
+    native: "illegal"
+    notes:
+      "n1": "{1}: Illegal: against the law."
+    examples:
+      "এই কাজ বেআইনি।": { native: "This work is illegal.", bases: { "এই": "this" } }
+      "বেআইনি দোকান বন্ধ হলো।": "The illegal shop was closed."
+  "bn-4121":
+    native: "legal"
+    notes:
+      "n1": "{1}: Legal: according to the law."
+    examples:
+      "এই লেনদেন আইনসম্মত।": { native: "This transaction is legal.", bases: { "এই": "this" } }
+      "আইনসম্মত উপায়ে কাজ করো।": { native: "Work in a legal way. (familiar)", bases: { "উপায়ে": "in a way" } }
+  "bn-4122":
+    native: "to complain"
+    notes:
+      "n1": "{1}: To complain: to make a formal accusation or complaint."
+    examples:
+      "আমি পুলিশে অভিযোগ করলাম।": "I made a complaint to the police."
+      "তারা অভিযোগ করেছে।": "They have complained."
+  "bn-4123":
+    native: "to judge a case"
+    notes:
+      "n1": "{1}: To judge a case: to hear and decide a trial in court."
+    examples:
+      "আদালত মামলার বিচার করবে।": "The court will judge the case."
+      "বিচার করা হলো।": "The trial was held."
+  "bn-4124":
+    native: "to punish"
+    notes:
+      "n1": "{1}: To punish: to give a penalty."
+    examples:
+      "তাকে শাস্তি দেওয়া হলো।": "He was punished."
+      "শাস্তি দিতে হবে।": "A punishment must be given."
+  "bn-4125":
+    native: "to arrest"
+    notes:
+      "n1": "{1}: To arrest: to take a person into custody."
+    examples:
+      "পুলিশ তাকে গ্রেফতার করল।": { native: "The police arrested him.", bases: { "গ্রেফতার": "arrested" } }
+      "গ্রেফতার করা হয়েছে।": { native: "He has been arrested.", bases: { "গ্রেফতার": "arrested" } }
