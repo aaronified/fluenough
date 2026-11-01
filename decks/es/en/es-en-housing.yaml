@@ -1,0 +1,170 @@
+schema: 1
+id: "es-en-housing"
+kind: "layer"
+core: "es-housing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing and renting"
+license: "CC-BY-SA-4.0"
+description: "Words for a home and renting one: the mortgage and the deposit, the tenant and the owner, the lift and the heating, the lease and the costs, the moving day, and the verbs to move house and live in a place. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2776":
+    native: "mortgage"
+    notes: { n1: "La hipoteca is a mortgage, a loan to buy a home, paid back over many years." }
+    bases: { "la": "the", "hipoteca": "mortgage" }
+    examples:
+      "Pago la hipoteca cada mes.": { native: "I pay the mortgage every month.", bases: { "la": "the", "hipoteca": "mortgage" } }
+      "La hipoteca es de veinte años.": { native: "The mortgage is for twenty years.", bases: { "La": "the", "hipoteca": "mortgage", "de": "of" } }
+  "es-2777":
+    native: "estate agency"
+    notes: { n1: "La inmobiliaria is an estate agency, a business that sells or rents homes." }
+    bases: { "la": "the", "inmobiliaria": "estate agency" }
+    examples:
+      "La inmobiliaria tiene pisos en alquiler.": { native: "The estate agency has flats to rent.", bases: { "La": "the", "inmobiliaria": "estate agency", "en": "in" } }
+      "Llamo a la inmobiliaria.": { native: "I call the estate agency.", bases: { "a": "to", "la": "the", "inmobiliaria": "estate agency" } }
+  "es-2778":
+    native: "deposit"
+    notes: { n1: "La fianza is a deposit paid when renting, returned at the end of the lease." }
+    bases: { "la": "the", "fianza": "deposit" }
+    examples:
+      "Pago la fianza al firmar.": { native: "I pay the deposit when I sign.", bases: { "la": "the", "fianza": "deposit", "al": "to the" } }
+      "La fianza es de un mes.": { native: "The deposit is one month.", bases: { "La": "the", "fianza": "deposit", "de": "of", "un": "a" } }
+  "es-2779":
+    native: "tenant"
+    notes: { n1: "El inquilino is a tenant, a person who rents a home. The feminine is la inquilina." }
+    bases: { "el": "the", "inquilino": "tenant" }
+    examples:
+      "El inquilino paga el alquiler.": { native: "The tenant pays the rent.", bases: { "El": "the", "inquilino": "tenant" } }
+      "Soy la inquilina del piso.": { native: "I am the tenant of the flat.", bases: { "la": "the", "inquilina": "tenant", "del": "of" } }
+  "es-2780":
+    native: "owner; landlord"
+    notes: { n1: "El propietario is the owner of a home or a business. The feminine is la propietaria." }
+    bases: { "el": "the", "propietario": "owner; landlord" }
+    examples:
+      "El propietario vive en el piso.": { native: "The owner lives in the flat.", bases: { "El": "the", "propietario": "owner; landlord", "en": "in" } }
+      "La propietaria es muy amable.": { native: "The owner is very kind.", bases: { "La": "the", "propietaria": "owner; landlord" } }
+  "es-2781":
+    native: "entrance hall"
+    notes: { n1: "El portal is the entrance of a building, the hall where you come in from the street." }
+    bases: { "el": "the", "portal": "entrance hall" }
+    examples:
+      "El portal está cerrado.": { native: "The entrance hall is closed.", bases: { "El": "the", "portal": "entrance hall" } }
+      "Dejo la bici en el portal.": { native: "I leave the bike in the entrance hall.", bases: { "la": "the", "bici": "bike", "en": "in", "el": "the", "portal": "entrance hall" } }
+  "es-2782":
+    native: "studio flat; study"
+    notes: { n1: "El estudio is a studio flat, one room for living and sleeping. Also a study or a studio." }
+    bases: { "el": "the", "estudio": "studio flat; study" }
+    examples:
+      "Vivo en un estudio pequeño.": { native: "I live in a small studio flat.", bases: { "en": "in", "un": "a" } }
+      "El estudio es muy luminoso.": { native: "The studio flat is very bright.", bases: { "El": "the" } }
+  "es-2783":
+    native: "lift; elevator"
+    notes: { n1: "El ascensor is a lift, the machine that carries people between floors." }
+    bases: { "el": "the", "ascensor": "lift; elevator" }
+    examples:
+      "El ascensor está roto.": { native: "The lift is broken.", bases: { "El": "the", "ascensor": "lift; elevator" } }
+      "Subimos en el ascensor.": { native: "We go up in the lift.", bases: { "en": "in", "el": "the", "ascensor": "lift; elevator" } }
+  "es-2784":
+    native: "heating"
+    notes: { n1: "La calefacción is central heating, the system that keeps a home warm." }
+    bases: { "la": "the", "calefacción": "heating" }
+    examples:
+      "La calefacción funciona bien.": { native: "The heating works well.", bases: { "La": "the", "calefacción": "heating", "funciona": "to work" } }
+      "Enciendo la calefacción en invierno.": { native: "I turn on the heating in winter.", bases: { "la": "the", "calefacción": "heating", "en": "in" } }
+  "es-2785":
+    native: "lock"
+    notes: { n1: "La cerradura is a lock, the part of a door that is opened by a key." }
+    bases: { "la": "the", "cerradura": "lock" }
+    examples:
+      "La cerradura está rota.": { native: "The lock is broken.", bases: { "La": "the", "cerradura": "lock" } }
+      "Cambian la cerradura.": { native: "They change the lock.", bases: { "la": "the", "cerradura": "lock" } }
+  "es-2786":
+    native: "move (house)"
+    notes: { n1: "La mudanza is a move, the change of home with all the furniture." }
+    bases: { "la": "the", "mudanza": "move (house)" }
+    examples:
+      "La mudanza es el sábado.": { native: "The move is on Saturday.", bases: { "La": "the", "mudanza": "move (house)", "el": "the" } }
+      "Hacemos la mudanza en un día.": { native: "We do the move in one day.", bases: { "la": "the", "mudanza": "move (house)", "en": "in", "un": "a" } }
+  "es-2787":
+    native: "expense; cost"
+    notes: { n1: "El gasto is an expense, money spent on something. The plural is gastos." }
+    bases: { "el": "the", "gasto": "expense; cost" }
+    examples:
+      "Los gastos son altos.": { native: "The expenses are high.", bases: { "Los": "the", "gastos": "expense; cost", "altos": "high" } }
+      "Controlo mis gastos cada mes.": { native: "I control my expenses every month.", bases: { "Controlo": "to control", "gastos": "expense; cost" } }
+  "es-2788":
+    native: "renovation"
+    notes: { n1: "La reforma is a renovation, the work done to repair or improve a home." }
+    bases: { "la": "the", "reforma": "renovation" }
+    examples:
+      "La reforma tarda tres meses.": { native: "The renovation takes three months.", bases: { "La": "the", "reforma": "renovation" } }
+      "Hago una reforma en la cocina.": { native: "I do a renovation of the kitchen.", bases: { "una": "a", "reforma": "renovation", "en": "in", "la": "the" } }
+  "es-2789":
+    native: "community; residents' association"
+    notes: { n1: "La comunidad is a community, or the residents' association of a building." }
+    bases: { "la": "the", "comunidad": "community; residents' association" }
+    examples:
+      "La comunidad aprueba el arreglo.": { native: "The residents' association approves the repair.", bases: { "La": "the", "comunidad": "community; residents' association", "el": "the", "arreglo": "repair" } }
+      "Pago la cuota de la comunidad.": { native: "I pay the building fee.", bases: { "la": "the", "cuota": "fee; instalment", "de": "of", "comunidad": "community; residents' association" } }
+  "es-2790":
+    native: "home; household"
+    notes: { n1: "El hogar is a home, the place where a family lives together." }
+    bases: { "el": "the", "hogar": "home; household" }
+    examples:
+      "Mi hogar es mi familia.": { native: "My home is my family.", bases: { "hogar": "home; household" } }
+      "Creamos un hogar cálido.": { native: "We create a warm home.", bases: { "un": "a", "hogar": "home; household" } }
+  "es-2791":
+    native: "lease; tenancy"
+    notes: { n1: "El arrendamiento is a lease, the legal contract for renting a property." }
+    bases: { "el": "the", "arrendamiento": "lease; tenancy" }
+    examples:
+      "El arrendamiento dura un año.": { native: "The lease lasts one year.", bases: { "El": "the", "arrendamiento": "lease; tenancy", "un": "a" } }
+      "Firmo el arrendamiento.": { native: "I sign the lease.", bases: { "el": "the", "arrendamiento": "lease; tenancy" } }
+  "es-2792":
+    native: "deposit"
+    notes: { n1: "El depósito is a deposit of money, paid to hold a thing or a room." }
+    bases: { "el": "the", "depósito": "deposit" }
+    examples:
+      "Pago un depósito para la casa.": { native: "I pay a deposit for the house.", bases: { "un": "a", "depósito": "deposit", "para": "for", "la": "the" } }
+      "El depósito se devuelve al final.": { native: "The deposit is returned at the end.", bases: { "El": "the", "depósito": "deposit", "se": "(reflexive) oneself", "al": "to the", "final": "end" } }
+  "es-2793":
+    native: "to move house"
+    notes: { n1: "Mudarse is to move house, to change one's home. Its yo form is me mudo." }
+    bases: { "mudarse": "to move house" }
+    examples:
+      "Me mudo a Madrid en julio.": { native: "I move to Madrid in July.", bases: { "Me": "to me", "mudo": "to move house", "a": "to", "en": "in" } }
+      "Se mudan al piso nuevo.": { native: "They move to the new flat.", bases: { "Se": "(reflexive) oneself", "mudan": "to move house", "al": "to the" } }
+  "es-2794":
+    native: "to inhabit; to live in"
+    notes: { n1: "Habitar is to live in a place, a formal word for living." }
+    bases: { "habitar": "to inhabit; to live in" }
+    examples:
+      "Habitamos una casa grande.": { native: "We live in a big house.", bases: { "Habitamos": "to inhabit; to live in", "una": "a" } }
+      "Muchas familias habitan el edificio.": { native: "Many families live in the building.", bases: { "habitan": "to inhabit; to live in", "el": "the" } }
+  "es-2795":
+    native: "central; in the centre"
+    notes: { n1: "Céntrico is central, in the middle of a city. It agrees with the noun: céntrica." }
+    bases: { "céntrico": "central; in the centre" }
+    examples:
+      "El piso es céntrico.": { native: "The flat is central.", bases: { "El": "the", "céntrico": "central; in the centre" } }
+      "Vivo en una zona céntrica.": { native: "I live in a central area.", bases: { "en": "in", "una": "a", "céntrica": "central; in the centre" } }
+  "es-2796":
+    native: "agent"
+    notes: { n1: "El agente is an agent, a person who acts for others, such as an estate agent. The feminine is la agente." }
+    bases: { "el": "the", "agente": "agent" }
+    examples:
+      "El agente enseña el piso.": { native: "The agent shows the flat.", bases: { "El": "the", "agente": "agent" } }
+      "Hablo con el agente de la inmobiliaria.": { native: "I talk to the estate agent.", bases: { "con": "with", "el": "the", "agente": "agent", "de": "of", "la": "the" } }
+  "es-2797":
+    native: "property; building"
+    notes: { n1: "El inmueble is a property, a building or land." }
+    bases: { "el": "the", "inmueble": "property; building" }
+    examples:
+      "Compro un inmueble en la costa.": { native: "I buy a property on the coast.", bases: { "un": "a", "inmueble": "property; building", "en": "in", "la": "the" } }
+      "El inmueble tiene tres plantas.": { native: "The building has three floors.", bases: { "El": "the", "inmueble": "property; building", "plantas": "floor (of a building)" } }
+  "es-2798":
+    native: "housing; dwelling"
+    notes: { n1: "La vivienda is a dwelling or housing, the places where people live." }
+    bases: { "la": "the", "vivienda": "housing; dwelling" }
+    examples:
+      "La vivienda es cara en la ciudad.": { native: "Housing is expensive in the city.", bases: { "La": "the", "vivienda": "housing; dwelling", "en": "in" } }
+      "Busco una vivienda para la familia.": { native: "I look for a home for the family.", bases: { "una": "a", "vivienda": "housing; dwelling", "para": "for", "la": "the" } }

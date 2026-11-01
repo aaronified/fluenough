@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-en-more-verbs-sentences"
+kind: "layer"
+core: "fr-more-verbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: more verbs"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences with more verbs, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0530":
+    native: "I must leave."
+    confusables:
+      "pouvoir": { why: "Pouvoir is 'can', not 'must'." }
+      "savoir": { why: "Savoir is 'to know'." }
+  "fr-0531":
+    native: "She knows where the station is."
+    confusables:
+      "connaitre": { why: "Connaître is 'to know' a person or place, not a fact." }
+      "penser": { why: "Penser is 'to think'." }
+  "fr-0532":
+    native: "I understand French."
+    confusables:
+      "apprendre": { why: "Apprendre is 'to learn', not 'to understand'." }
+      "entendre": { why: "Entendre is 'to hear'." }
+  "fr-0533":
+    native: "We stay together."
+    confusables:
+      "entrer": { why: "Entrer is 'to enter', which is a movement." }
+      "finir": { why: "Finir is 'to finish'." }
+  "fr-0534":
+    native: "I get off at the station."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "monter": { why: "Monter is 'to go up' or 'to get on', the opposite." }
+      "entrer": { why: "Entrer is 'to go in', not 'to get off'." }
+  "fr-0535":
+    native: "They swim here."
+    confusables:
+      "danser": { why: "Danser is 'to dance'." }
+      "chanter": { why: "Chanter is 'to sing'." }
+  "fr-0536":
+    native: "He puts the bag on the table."
+    confusables:
+      "tenir": { why: "Tenir is 'to hold', not 'to put'." }
+      "porter": { why: "Porter is 'to carry' or 'to wear'." }

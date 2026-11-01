@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-describing"
+name: "Reading: describing"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that describe people, a city and a day, with adjectives such as grand, heureux and bruyant. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-describing-people"
+    title: "Describing my family"
+    theme: "describing"
+    sentences:
+      - text: "Mon frère est grand et il est gentil."
+      - text: "Ma sœur est jolie, mais elle est fatiguée."
+      - text: "Ma mère est intelligente et elle est drôle."
+      - text: "Mon père est fort, mais il est triste aujourd'hui."
+    questions:
+      - id: "fr-0458"
+        prompt: { en: "How tall is the brother?" }
+        options:
+          - { en: "Tall" }
+          - { en: "Short" }
+          - { en: "Ill" }
+        answer: 1
+      - id: "fr-0459"
+        prompt: { en: "What is the sister like?" }
+        options:
+          - { en: "Pretty but tired" }
+          - { en: "Ugly and sad" }
+          - { en: "Old and rich" }
+        answer: 1
+      - id: "fr-0460"
+        prompt: { en: "How is the father today?" }
+        options:
+          - { en: "Sad" }
+          - { en: "Happy" }
+          - { en: "Ill" }
+        answer: 1
+  - id: "fr-the-city-today"
+    title: "The city today"
+    theme: "describing"
+    sentences:
+      - text: "La gare est fermée aujourd'hui."
+      - text: "Le train est plein et bruyant."
+      - text: "Ma rue est calme."
+      - text: "Mon voisin est gentil."
+    questions:
+      - id: "fr-0461"
+        prompt: { en: "Is the station open today?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No, it is closed" }
+          - { en: "It is not said" }
+        answer: 2
+      - id: "fr-0462"
+        prompt: { en: "How is the train?" }
+        options:
+          - { en: "Empty and quiet" }
+          - { en: "Full and noisy" }
+          - { en: "Fast and cold" }
+        answer: 2
+      - id: "fr-0463"
+        prompt: { en: "What is the neighbour like?" }
+        options:
+          - { en: "Kind" }
+          - { en: "Rich" }
+          - { en: "Poor" }
+        answer: 1

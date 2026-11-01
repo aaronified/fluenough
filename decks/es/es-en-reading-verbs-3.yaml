@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-verbs-3"
+name: "Reading: a diary and a note about the day"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a diary entry about a day, and a note about things done and lent. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-diary-entry"
+    title: "A diary entry"
+    theme: "verbs-3"
+    sentences:
+      - text: "Me despierto a las seis y me ducho."
+      - text: "Desayuno y veo las noticias."
+      - text: "Por la tarde vuelvo a casa y leo un libro."
+      - text: "Me acuesto a las diez."
+    questions:
+      - id: "es-1644"
+        prompt: { en: "When does the writer wake up?" }
+        options:
+          - { en: "At seven" }
+          - { en: "At six" }
+          - { en: "At eight" }
+        answer: 2
+      - id: "es-1645"
+        prompt: { en: "What does the writer do in the afternoon?" }
+        options:
+          - { en: "Goes shopping" }
+          - { en: "Goes home and reads" }
+          - { en: "Goes to school" }
+        answer: 2
+      - id: "es-1646"
+        prompt: { en: "When does the writer go to bed?" }
+        options:
+          - { en: "At nine" }
+          - { en: "At ten" }
+          - { en: "At eleven" }
+        answer: 2
+  - id: "es-my-day-note"
+    title: "A note about the day"
+    theme: "verbs-3"
+    sentences:
+      - text: "Hoy pongo la mesa para cinco personas."
+      - text: "Sé cocinar la sopa, pero no sé hacer el pastel."
+      - text: "Devuelvo los libros a la biblioteca."
+      - text: "Mi hermana se queda en casa."
+    questions:
+      - id: "es-1647"
+        prompt: { en: "How many people is the table for?" }
+        options:
+          - { en: "Four" }
+          - { en: "Five" }
+          - { en: "Six" }
+        answer: 2
+      - id: "es-1648"
+        prompt: { en: "What can the writer not make?" }
+        options:
+          - { en: "Soup" }
+          - { en: "Cake" }
+          - { en: "Salad" }
+        answer: 2
+      - id: "es-1649"
+        prompt: { en: "Where are the books returned?" }
+        options:
+          - { en: "To the shop" }
+          - { en: "To school" }
+          - { en: "To the library" }
+        answer: 3

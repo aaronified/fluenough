@@ -1,0 +1,221 @@
+schema: 1
+id: "hi-en-journey"
+kind: "layer"
+core: "hi-journey"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Journey"
+license: "CC-BY-SA-4.0"
+description: "Travelling: trains, platforms, tickets and reservations, boats and aeroplanes, and the places a traveller passes. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["unreviewed"]
+
+cards:
+  "hi-1890":
+    native: "journey; trip"
+    notes:
+      "n1": "A journey from one place to another, of any length. The word सफ़र (safar) is used for a trip, and is often more everyday."
+    examples:
+      "हमारी यात्रा बहुत अच्छी थी।": { "native": "Our journey was very good.", "bases": {} }
+      "लंबी यात्रा के लिए तैयार हो?": { "native": "Are you ready for a long journey?", "bases": {"लिए": "for", "तैयार": "ready"} }
+  "hi-1891":
+    native: "trip; journey"
+    notes:
+      "n1": "A trip from one place to another. यात्रा (yātrā) is the more formal word."
+    examples:
+      "सफ़र कितना लंबा है?": { "native": "How long is the trip?", "bases": {} }
+      "सफ़र में दो घंटे लगे।": { "native": "The trip took two hours.", "bases": {"घंटे": "hour"} }
+  "hi-1892":
+    native: "passport"
+    notes:
+      "n1": "The book that proves who you are when you travel abroad."
+    examples:
+      "पासपोर्ट साथ रखो।": { "native": "Keep your passport with you.", "bases": {} }
+      "मेरा पासपोर्ट खो गया।": { "native": "My passport is lost.", "bases": {} }
+  "hi-1893":
+    native: "visa"
+    notes:
+      "n1": "The official permission to enter another country."
+    examples:
+      "वीज़ा कब मिलेगा?": { "native": "When will the visa come?", "bases": {} }
+      "वीज़ा के लिए फ़ॉर्म भरो।": { "native": "Fill in the form for the visa.", "bases": {"लिए": "for", "फ़ॉर्म": "form"} }
+  "hi-1894":
+    native: "booking"
+    notes:
+      "n1": "A reservation made in advance for a room, a seat or a ticket."
+    examples:
+      "होटल की बुकिंग हो गई।": { "native": "The hotel booking is done.", "bases": {} }
+      "बुकिंग रद्द करो।": { "native": "Cancel the booking.", "bases": {"रद्द": "cancelled"} }
+  "hi-1895":
+    native: "reservation"
+    notes:
+      "n1": "The act of keeping a seat or a room for a particular person."
+    examples:
+      "सीट का आरक्षण कराओ।": { "native": "Get a reservation for a seat.", "bases": {"कराओ": "to get done"} }
+      "आरक्षण की रसीद दिखाओ।": { "native": "Show the reservation slip.", "bases": {} }
+  "hi-1896":
+    native: "train"
+    notes:
+      "n1": "A train on the railway. The everyday word is ट्रेन (ṭrēn)."
+    examples:
+      "रेलगाड़ी समय पर आई।": { "native": "The train came on time.", "bases": {"समय": "time"} }
+      "अगली रेलगाड़ी कब है?": { "native": "When is the next train?", "bases": {"अगली": "next"} }
+  "hi-1897":
+    native: "train (everyday word)"
+    notes:
+      "n1": "The everyday word for a train, used beside रेलगाड़ी (rēlgāṛī)."
+    examples:
+      "ट्रेन दस बजे है।": { "native": "The train is at ten o'clock.", "bases": {} }
+      "ट्रेन छूट गई।": { "native": "The train has been missed.", "bases": {} }
+  "hi-1898":
+    native: "platform"
+    notes:
+      "n1": "The raised part of a railway station where the trains stop."
+    examples:
+      "तीन नंबर प्लेटफ़ॉर्म पर जाओ।": { "native": "Go to platform number three.", "bases": {} }
+      "प्लेटफ़ॉर्म पर भीड़ है।": { "native": "There is a crowd on the platform.", "bases": {"भीड़": "crowd"} }
+  "hi-1899":
+    native: "airport"
+    notes:
+      "n1": "The place where aeroplanes take off and land."
+    examples:
+      "एयरपोर्ट दूर है।": { "native": "The airport is far.", "bases": {} }
+      "एयरपोर्ट पर टैक्सी लो।": { "native": "Take a taxi to the airport.", "bases": {} }
+  "hi-1900":
+    native: "ship; aeroplane"
+    notes:
+      "n1": "A large boat that sails on the sea, or an aeroplane."
+    examples:
+      "जहाज़ समुद्र में चलता है।": { "native": "The ship sails in the sea.", "bases": {} }
+      "हम जहाज़ से गए।": { "native": "We went by ship.", "bases": {} }
+  "hi-1901":
+    native: "boat"
+    notes:
+      "n1": "A small boat that is rowed or sailed on a river or a lake."
+    examples:
+      "नाव नदी में तैर रही है।": { "native": "The boat is floating on the river.", "bases": {} }
+      "हमने नाव किराए पर ली।": { "native": "We hired a boat.", "bases": {} }
+  "hi-1902":
+    native: "valley"
+    notes:
+      "n1": "The low land between two hills or mountains, often with a river."
+    examples:
+      "घाटी बहुत हरी है।": { "native": "The valley is very green.", "bases": {} }
+      "इस घाटी में बर्फ़ है।": { "native": "There is snow in this valley.", "bases": {} }
+  "hi-1903":
+    native: "tourist"
+    notes:
+      "n1": "A person who travels for pleasure and sees new places."
+    examples:
+      "पर्यटक किले देखने आते हैं।": { "native": "Tourists come to see the forts.", "bases": {"किले": "fort"} }
+      "पर्यटक बहुत हैं।": { "native": "There are many tourists.", "bases": {} }
+  "hi-1904":
+    native: "guide"
+    notes:
+      "n1": "A person who shows travellers the places to see and tells them about them."
+    examples:
+      "गाइड हमें शहर दिखाता है।": { "native": "The guide shows us the city.", "bases": {} }
+      "अच्छा गाइड ज़रूरी है।": { "native": "A good guide is necessary.", "bases": {"ज़रूरी": "necessary"} }
+  "hi-1905":
+    native: "delay; lateness"
+    notes:
+      "n1": "Time that is late, or a delay. The opposite is जल्दी (jaldī), early or quickly."
+    examples:
+      "बस में देर हो गई।": { "native": "The bus was delayed.", "bases": {} }
+      "माफ़ कीजिए, मुझे देर हुई।": { "native": "Sorry, I was late.", "bases": {"माफ़": "sorry; forgiveness"} }
+  "hi-1906":
+    native: "bank; shore; edge"
+    notes:
+      "n1": "The edge of a river, a lake or the sea, or the side of a road."
+    examples:
+      "नदी के किनारे बैठो।": { "native": "Sit on the bank of the river.", "bases": {"किनारे": "bank"} }
+      "समुद्र का किनारा सुंदर है।": { "native": "The seashore is beautiful.", "bases": {"किनारा": "shore"} }
+  "hi-1907":
+    native: "vehicle; car; train"
+    notes:
+      "n1": "A vehicle with wheels, a car, a bus or a cart, and also a train."
+    examples:
+      "गाड़ी धीमी चलाओ।": { "native": "Drive the car slowly.", "bases": {} }
+      "हमारी गाड़ी खराब हो गई।": { "native": "Our car has broken down.", "bases": {} }
+  "hi-1908":
+    native: "passenger; traveller"
+    notes:
+      "n1": "A person who is travelling on a bus, a train, a ship or a plane."
+    examples:
+      "यात्री ट्रेन में चढ़ रहे हैं।": { "native": "Passengers are boarding the train.", "bases": {} }
+      "सारे यात्री तैयार हैं।": { "native": "All the passengers are ready.", "bases": {"तैयार": "ready"} }
+  "hi-1909":
+    native: "berth (sleeper seat)"
+    notes:
+      "n1": "A bed-like seat to sleep on in a train or a ship."
+    examples:
+      "मेरी बर्थ ऊपर है।": { "native": "My berth is upstairs.", "bases": {} }
+      "बर्थ पर चादर बिछाओ।": { "native": "Spread a sheet on the berth.", "bases": {} }
+  "hi-1910":
+    native: "porter"
+    notes:
+      "n1": "A person who carries luggage at a station."
+    examples:
+      "कुली सामान उठाएगा।": { "native": "The porter will carry the luggage.", "bases": {} }
+      "कुली को बुलाओ।": { "native": "Call the porter.", "bases": {} }
+  "hi-1911":
+    native: "safe; secure"
+    notes:
+      "n1": "Free from danger or harm. The noun is सुरक्षा (surakśā), safety."
+    examples:
+      "यह जगह सुरक्षित है।": { "native": "This place is safe.", "bases": {"जगह": "place"} }
+      "सामान सुरक्षित रखो।": { "native": "Keep the luggage safe.", "bases": {} }
+  "hi-1912":
+    native: "comfortable"
+    notes:
+      "n1": "Giving rest and ease, said of a seat, a bed or a journey."
+    examples:
+      "बस आरामदेह है।": { "native": "The bus is comfortable.", "bases": {} }
+      "सफ़र आरामदेह था।": { "native": "The trip was comfortable.", "bases": {} }
+  "hi-1913":
+    native: "to reach; to arrive"
+    notes:
+      "n1": "To arrive at a place. The noun is पहुँच (pahum̐c), reach."
+    examples:
+      "हम शाम तक पहुँच जाएँगे।": { "native": "We will arrive by the evening.", "bases": {"पहुँच": "to reach"} }
+      "वह घर कब पहुँचा?": { "native": "When did he reach home?", "bases": {"पहुँचा": "to reach"} }
+  "hi-1914":
+    native: "to stop; to stay"
+    notes:
+      "n1": "To stop moving, or to stay in a place for a while."
+    examples:
+      "बस यहाँ रुकती है।": { "native": "The bus stops here.", "bases": {"रुकती": "to stop"} }
+      "हम एक रात रुके।": { "native": "We stayed one night.", "bases": {"रुके": "to stop"} }
+  "hi-1915":
+    native: "to stay; to put up"
+    notes:
+      "n1": "To stay in a place for a time, as at a hotel or a friend's house."
+    examples:
+      "हम होटल में ठहरे।": { "native": "We stayed in a hotel.", "bases": {"ठहरे": "to stay"} }
+      "वे दोस्त के घर ठहरेंगे।": { "native": "They will stay at a friend's house.", "bases": {"ठहरेंगे": "to stay"} }
+  "hi-1916":
+    native: "to board; to climb"
+    notes:
+      "n1": "To get on a train, a bus or a ship, or to climb up."
+    examples:
+      "सब लोग गाड़ी में चढ़ो।": { "native": "Everyone, board the train.", "bases": {"चढ़ो": "to board"} }
+      "वह पहाड़ पर चढ़ रहा है।": { "native": "He is climbing the hill.", "bases": {"चढ़": "to climb"} }
+  "hi-1917":
+    native: "to get off; to come down"
+    notes:
+      "n1": "To get down from a train, bus or ship, or to come down."
+    examples:
+      "अगले स्टेशन पर उतरना है।": { "native": "We have to get off at the next station.", "bases": {"अगले": "next", "उतरना": "to get off"} }
+      "बच्चे बस से उतर गए।": { "native": "The children got off the bus.", "bases": {"उतर": "to get off"} }
+  "hi-1918":
+    native: "to be missed; to be left behind"
+    notes:
+      "n1": "To be left behind, as a train or a bag is, or to be let go."
+    examples:
+      "ट्रेन छूट गई।": { "native": "The train was missed.", "bases": {"छूट": "to be missed"} }
+      "मेरा बैग बस में छूट गया।": { "native": "My bag was left in the bus.", "bases": {"छूट": "to be left behind"} }
+  "hi-1919":
+    native: "to lose"
+    notes:
+      "n1": "To lose something, or to be lost. The noun is खो (khō), a loss."
+    examples:
+      "चाबी मत खोओ।": { "native": "Do not lose the key.", "bases": {"मत": "do not", "खोओ": "to lose"} }
+      "वह रास्ते में खो गया।": { "native": "He got lost on the way.", "bases": {"खो": "to lose"} }

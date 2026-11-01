@@ -1,0 +1,35 @@
+schema: 1
+id: "hi-en-reading-nature"
+name: "Reading: nature"
+kind: "reading"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "A walk to a waterfall, and a notice in a park about the trees. Not yet checked by a Hindi speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "hi-nature-hills"
+    title: "A walk in the hills"
+    theme: "nature"
+    sentences:
+      - {"text": "हम पहाड़ पर चढ़े और झरने तक पहुँचे।", "reading": "ham pahāṛ par caṛhē aur jharnē tak pahum̐cē.", "ipa": "ɦəm pəɦaːɽ pər tʃəɽʱeː ɔːr dʒʱərneː t̪ək pəɦʊ̃tʃeː"}
+      - {"text": "पानी ठंडा था और रेत पर धूप थी।", "reading": "pānī ṭhaṇḍā thā aur rēt par dhūp thī.", "ipa": "paːniː ʈʰəɳɖaː t̪ʰaː ɔːr reːt̪ pər d̪ʱuːp t̪ʰiː"}
+      - {"text": "पेड़ों की छाया में हमने खाना खाया।", "reading": "pēṛōm̐ kī chāyā mēm̐ hamnē khānā khāyā.", "ipa": "peːɽõː kiː tʃʰaːjaː mẽː ɦəmneː kʰaːnaː kʰaːjaː"}
+      - {"text": "नीचे नदी धीरे बहती है।", "reading": "nīcē nadī dhīrē bahtī hai.", "ipa": "niːtʃeː nəd̪iː d̪ʱiːreː bəɦt̪iː ɦɛː"}
+    questions:
+      - {"id": "hi-1958", "prompt": {"en": "The walkers climbed the hill."}, "answer": true}
+      - {"id": "hi-1959", "prompt": {"en": "What was on the sand?"}, "options": [{"en": "Sunlight"}, {"en": "Snow"}], "answer": 1}
+      - {"id": "hi-1960", "prompt": {"en": "The river flows fast."}, "answer": false}
+  - id: "hi-nature-park"
+    title: "A notice in the park"
+    theme: "nature"
+    sentences:
+      - {"text": "पेड़ों की जड़ों पर पैर मत रखो।", "reading": "pēṛōm̐ kī jaṛōm̐ par pair mat rakhō.", "ipa": "peːɽõː kiː dʒəɽõː pər pɛːr mət̪ rəkʰoː"}
+      - {"text": "फूल मत तोड़ो, वे जल्दी झड़ते हैं।", "reading": "phūl mat tōṛō, vē jaldī jhaṛtē haim̐.", "ipa": "pʰuːl mət̪ t̪oːɽoː ʋeː dʒəld̪iː dʒʱəɽt̪eː ɦɛ̃ː"}
+      - {"text": "कचरा कूड़ेदान में डालो।", "reading": "kacrā kūṛēdān mēm̐ ḍālō.", "ipa": "kətʃraː kuːɽeːd̪aːn mẽː ɖaːloː"}
+      - {"text": "पार्क की हरियाली हम सबकी है।", "reading": "pārk kī hariyālī ham sabkī hai.", "ipa": "paːrk kiː ɦərɪjaːliː ɦəm səbkiː ɦɛː"}
+    questions:
+      - {"id": "hi-1961", "prompt": {"en": "Do not step on the roots of trees."}, "answer": true}
+      - {"id": "hi-1962", "prompt": {"en": "What should you not pick?"}, "options": [{"en": "Flowers"}, {"en": "Stones"}], "answer": 1}
+      - {"id": "hi-1963", "prompt": {"en": "Rubbish goes on the grass."}, "answer": false}

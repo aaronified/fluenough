@@ -1,0 +1,45 @@
+schema: 1
+id: "fr-en-food-sentences"
+kind: "layer"
+core: "fr-food-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: food and drink"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about meals, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0841":
+    native: "I order a dish."
+    confusables:
+      "menu": { why: "Menu is the list of dishes, not one dish." }
+      "entree": { why: "Entrée is a starter, which comes first." }
+  "fr-0842":
+    native: "The dessert is sweet."
+    confusables:
+      "sale": { why: "Salé is 'salty', the opposite." }
+      "glace": { why: "Glace is 'ice cream'." }
+  "fr-0843":
+    native: "The soup is hot."
+    confusables:
+      "froid": { why: "Froid is 'cold', the opposite." }
+      "epice": { why: "Épicé is 'spicy'." }
+  "fr-0844":
+    native: "The bill is dear."
+    confusables:
+      "carte": { why: "Carte is 'menu card' or 'map'." }
+      "menu": { why: "Menu is the list of dishes." }
+  "fr-0845":
+    native: "I take a fork."
+    confusables:
+      "couteau": { why: "Couteau is 'knife'." }
+      "cuillere": { why: "Cuillère is 'spoon'." }
+  "fr-0846":
+    native: "He serves the meal."
+    confusables:
+      "gouter": { why: "Goûter is 'to taste'." }
+      "commander": { why: "Commander is 'to order'." }
+  "fr-0847":
+    native: "My friend is a vegetarian."
+    confusables:
+      "porc": { why: "Porc is 'pork', meat." }
+      "buf": { why: "Bœuf is 'beef', meat." }

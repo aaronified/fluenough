@@ -1,0 +1,67 @@
+schema: 1
+id: "hi-grammar-indefinites"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["someone (person)", "something (thing)", "somewhere (place)", "sometime (time)"]
+  entries:
+    - lemma: "कोई"
+      key: "koi"
+      reading: "kōī"
+      ipa: "koːiː"
+      forms:
+        "someone (person)": "कोई"
+        "something (thing)": "कुछ"
+        "somewhere (place)": "कहीं"
+        "sometime (time)": "कभी"
+      readings:
+        "someone (person)": "kōī"
+        "something (thing)": "kuch"
+        "somewhere (place)": "kahīm̐"
+        "sometime (time)": "kabhī"
+      ipas:
+        "someone (person)": "koːiː"
+        "something (thing)": "kʊtʃʰ"
+        "somewhere (place)": "kəɦĩː"
+        "sometime (time)": "kəbʱiː"
+    - lemma: "कोई भी"
+      key: "koibhi"
+      reading: "kōī bhī"
+      ipa: "koːiː bʱiː"
+      forms:
+        "someone (person)": "कोई भी"
+        "something (thing)": "कुछ भी"
+        "somewhere (place)": "कहीं भी"
+        "sometime (time)": "कभी भी"
+      readings:
+        "someone (person)": "kōī bhī"
+        "something (thing)": "kuch bhī"
+        "somewhere (place)": "kahīm̐ bhī"
+        "sometime (time)": "kabhī bhī"
+      ipas:
+        "someone (person)": "koːiː bʱiː"
+        "something (thing)": "kʊtʃʰ bʱiː"
+        "somewhere (place)": "kəɦĩː bʱiː"
+        "sometime (time)": "kəbʱiː bʱiː"
+    - lemma: "कोई नहीं"
+      key: "koinahin"
+      reading: "kōī nahīm̐"
+      ipa: "koːiː nəɦĩː"
+      forms:
+        "someone (person)": "कोई नहीं"
+        "something (thing)": "कुछ नहीं"
+        "somewhere (place)": "कहीं नहीं"
+        "sometime (time)": "कभी नहीं"
+      readings:
+        "someone (person)": "kōī nahīm̐"
+        "something (thing)": "kuch nahīm̐"
+        "somewhere (place)": "kahīm̐ nahīm̐"
+        "sometime (time)": "kabhī nahīm̐"
+      ipas:
+        "someone (person)": "koːiː nəɦĩː"
+        "something (thing)": "kʊtʃʰ nəɦĩː"
+        "somewhere (place)": "kəɦĩː nəɦĩː"
+        "sometime (time)": "kəbʱiː nəɦĩː"

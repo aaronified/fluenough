@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-relationships"
+name: "Reading: a thank-you note and a friendship"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a thank-you note to a neighbour, and a note about a long friendship. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-thank-you-note"
+    title: "A thank-you note to a neighbour"
+    theme: "relationships"
+    sentences:
+      - text: "Querido vecino: gracias por tu ayuda con el jardín."
+      - text: "Eres muy amable y generoso."
+      - text: "Confío en ti y te agradezco mucho el apoyo."
+      - text: "Saludos a tu familia."
+    questions:
+      - id: "es-2764"
+        prompt: { en: "What is the note for?" }
+        options:
+          - { en: "Help with the garden" }
+          - { en: "A party" }
+          - { en: "A loan of money" }
+        answer: 1
+      - id: "es-2765"
+        prompt: { en: "How does the writer describe the neighbour?" }
+        options:
+          - { en: "Kind and generous" }
+          - { en: "Rude and lazy" }
+          - { en: "Shy and quiet" }
+        answer: 1
+      - id: "es-2766"
+        prompt: { en: "What does the writer send?" }
+        options:
+          - { en: "Greetings to the family" }
+          - { en: "A gift" }
+          - { en: "A letter from a friend" }
+        answer: 1
+  - id: "es-friends-and-neighbours"
+    title: "A long friendship"
+    theme: "relationships"
+    sentences:
+      - text: "Hace años que somos amigos y vecinos."
+      - text: "Nos llevamos muy bien."
+      - text: "A veces discutimos, pero siempre nos perdonamos."
+      - text: "Es una relación sincera y leal."
+    questions:
+      - id: "es-2767"
+        prompt: { en: "How long have they known each other?" }
+        options:
+          - { en: "For years" }
+          - { en: "For a week" }
+          - { en: "Since birth" }
+        answer: 1
+      - id: "es-2768"
+        prompt: { en: "How do they get on?" }
+        options:
+          - { en: "Very well" }
+          - { en: "Badly" }
+          - { en: "Not at all" }
+        answer: 1
+      - id: "es-2769"
+        prompt: { en: "What is the relationship like?" }
+        options:
+          - { en: "Sincere and loyal" }
+          - { en: "Cold and distant" }
+          - { en: "Short" }
+        answer: 1

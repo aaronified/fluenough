@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-etre-avoir"
+name: "Reading: to be and to have"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts that say who people are and what they have, with être and avoir. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-introduction-card"
+    title: "A short card introducing a person"
+    theme: "about-me"
+    sentences:
+      - text: "Je suis étudiant à Paris."
+      - text: "Tu es très gentil."
+      - text: "Nous sommes à la gare."
+      - text: "Vous êtes contents."
+    questions:
+      - id: "fr-0566"
+        prompt: { en: "What is the speaker?" }
+        options:
+          - { en: "A student" }
+          - { en: "A teacher" }
+          - { en: "A doctor" }
+        answer: 1
+      - id: "fr-0567"
+        prompt: { en: "Where are 'we'?" }
+        options:
+          - { en: "At the station" }
+          - { en: "At home" }
+          - { en: "At school" }
+        answer: 1
+      - id: "fr-0568"
+        prompt: { en: "How is 'you'?" }
+        options:
+          - { en: "Very kind" }
+          - { en: "Very tired" }
+          - { en: "Very ill" }
+        answer: 1
+  - id: "fr-who-has-what"
+    title: "Who has what"
+    theme: "about-me"
+    sentences:
+      - text: "J'ai un frère."
+      - text: "Elle a deux sœurs."
+      - text: "Nous avons un vin."
+      - text: "Ils ont froid."
+    questions:
+      - id: "fr-0569"
+        prompt: { en: "How many brothers does the speaker have?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "None" }
+        answer: 1
+      - id: "fr-0570"
+        prompt: { en: "How many sisters does she have?" }
+        options:
+          - { en: "Two" }
+          - { en: "One" }
+          - { en: "None" }
+        answer: 1
+      - id: "fr-0571"
+        prompt: { en: "What do they have?" }
+        options:
+          - { en: "They are cold" }
+          - { en: "They are hot" }
+          - { en: "They are tired" }
+        answer: 1

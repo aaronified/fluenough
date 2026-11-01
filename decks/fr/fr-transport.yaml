@@ -1,0 +1,281 @@
+schema: 1
+id: "fr-transport"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0854"
+    target: "bus"
+    ipa: "bys"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bus est rapide.", ipa: "lə bys ɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bus", base: "bus" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Je prends le bus.", ipa: "ʒə pʁɑ̃ lə bys", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "bus", base: "bus" }] }
+  - id: "fr-0855"
+    target: "métro"
+    ipa: "metʁo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends le métro.", ipa: "ʒə pʁɑ̃ lə metʁo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "métro", base: "métro" }] }
+      - { target: "Le métro est bruyant.", ipa: "lə metʁo ɛ bʁɥijɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "métro", base: "métro" }, { word: "est", ref: "fr-0021" }, { word: "bruyant", ref: "fr-0450" }] }
+  - id: "fr-0856"
+    target: "billet"
+    ipa: "bijɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le billet est cher.", ipa: "lə bijɛ ɛ ʃɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "billet", base: "billet" }, { word: "est", ref: "fr-0021" }, { word: "cher", ref: "fr-0104" }] }
+      - { target: "J'ai un billet.", ipa: "ʒe œ̃ bijɛ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "billet", base: "billet" }] }
+  - id: "fr-0857"
+    target: "arrêt"
+    ipa: "aʁɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'arrêt est près de la gare.", ipa: "laʁɛ ɛ pʁɛ də la ɡaʁ", bases: [{ word: "L'arrêt", base: "arrêt" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Nous attendons à l'arrêt.", ipa: "nu zatɑ̃dɔ̃ a laʁɛ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "attendons", ref: "fr-0303" }, { word: "à", base: "à" }, { word: "l'arrêt", base: "arrêt" }] }
+  - id: "fr-0858"
+    target: "taxi"
+    ipa: "taksi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends un taxi.", ipa: "ʒə pʁɑ̃ œ̃ taksi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "taxi", base: "taxi" }] }
+      - { target: "Le taxi est là.", ipa: "lə taksi ɛ la", bases: [{ word: "Le", ref: "fr-0543" }, { word: "taxi", base: "taxi" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-0859"
+    target: "voiture"
+    ipa: "vwatyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La voiture est vieille.", ipa: "la vwatyʁ ɛ vjɛj", bases: [{ word: "La", ref: "fr-0544" }, { word: "voiture", base: "voiture" }, { word: "est", ref: "fr-0021" }, { word: "vieille", ref: "fr-0109" }] }
+      - { target: "Mon père conduit la voiture.", ipa: "mɔ̃ pɛʁ kɔ̃dɥi la vwatyʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "conduit", ref: "fr-0869" }, { word: "la", ref: "fr-0544" }, { word: "voiture", base: "voiture" }] }
+  - id: "fr-0860"
+    target: "vélo"
+    ipa: "velo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends mon vélo.", ipa: "ʒə pʁɑ̃ mɔ̃ velo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "mon", ref: "fr-0037" }, { word: "vélo", base: "vélo" }] }
+      - { target: "Le vélo est rapide.", ipa: "lə velo ɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vélo", base: "vélo" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+  - id: "fr-0861"
+    target: "avion"
+    ipa: "avjɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'avion est rapide.", ipa: "lavjɔ̃ ɛ ʁapid", bases: [{ word: "L'avion", base: "avion" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Nous prenons l'avion.", ipa: "nu pʁənɔ̃ lavjɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "prenons", ref: "fr-0288" }, { word: "l'avion", base: "avion" }] }
+  - id: "fr-0862"
+    target: "aéroport"
+    ipa: "aeʁɔpɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'aéroport est loin.", ipa: "laeʁɔpɔʁ ɛ lwɛ̃", bases: [{ word: "L'aéroport", base: "aéroport" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+      - { target: "Vous attendez à l'aéroport.", ipa: "vu zatɑ̃de a laeʁɔpɔʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "attendez", ref: "fr-0303" }, { word: "à", base: "à" }, { word: "l'aéroport", base: "aéroport" }] }
+  - id: "fr-0863"
+    target: "vol"
+    ipa: "vɔl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vol est long.", ipa: "lə vɔl ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vol", base: "vol" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "J'ai un vol.", ipa: "ʒe œ̃ vɔl", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "vol", base: "vol" }] }
+  - id: "fr-0864"
+    target: "ligne"
+    ipa: "liɲ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La ligne est directe.", ipa: "la liɲ ɛ diʁɛkt", bases: [{ word: "La", ref: "fr-0544" }, { word: "ligne", base: "ligne" }, { word: "est", ref: "fr-0021" }, { word: "directe", ref: "fr-0878" }] }
+      - { target: "Tu prends la ligne ?", ipa: "ty pʁɑ̃ la liɲ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "prends", ref: "fr-0288" }, { word: "la", ref: "fr-0544" }, { word: "ligne", base: "ligne" }] }
+  - id: "fr-0865"
+    target: "horaire"
+    ipa: "ɔʁɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'horaire est bon.", ipa: "lɔʁɛʁ ɛ bɔ̃", bases: [{ word: "L'horaire", base: "horaire" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Quel est l'horaire ?", ipa: "kɛl ɛ lɔʁɛʁ", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "l'horaire", base: "horaire" }] }
+  - id: "fr-0866"
+    target: "quai"
+    ipa: "kɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train part du quai.", ipa: "lə tʁɛ̃ paʁ dy kɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "part", ref: "fr-0304" }, { word: "du", base: "du" }, { word: "quai", base: "quai" }] }
+      - { target: "Le quai est loin.", ipa: "lə kɛ ɛ lwɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "quai", base: "quai" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+  - id: "fr-0867"
+    target: "voyage"
+    ipa: "vwajaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le voyage est long.", ipa: "lə vwajaʒ ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "voyage", base: "voyage" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Je fais un voyage.", ipa: "ʒə fɛ œ̃ vwajaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "voyage", base: "voyage" }] }
+  - id: "fr-0868"
+    target: "voyager"
+    ipa: "vwajaʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous voyageons souvent.", ipa: "nu vwajaʒɔ̃ suvɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "voyageons", base: "voyager" }, { word: "souvent", ref: "fr-0326" }] }
+      - { target: "Tu voyages avec ton frère.", ipa: "ty vwajaʒ avɛk tɔ̃ fʁɛʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "voyages", base: "voyager" }, { word: "avec", ref: "fr-0590" }, { word: "ton", ref: "fr-0141" }, { word: "frère", ref: "fr-0169" }] }
+  - id: "fr-0869"
+    target: "conduire"
+    ipa: "kɔ̃dɥiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je conduis vite.", ipa: "ʒə kɔ̃dɥi vit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "conduis", base: "conduire" }, { word: "vite", ref: "fr-0338" }] }
+      - { target: "Ils conduisent lentement.", ipa: "il kɔ̃dɥiz lɑ̃tmɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "conduisent", base: "conduire" }, { word: "lentement", ref: "fr-0339" }] }
+  - id: "fr-0870"
+    target: "retard"
+    ipa: "ʁətaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le train a du retard.", ipa: "lə tʁɛ̃ a dy ʁətaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "du" }, { word: "retard", base: "retard" }] }
+      - { target: "Le bus a du retard.", ipa: "lə bys a dy ʁətaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bus", ref: "fr-0854" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "du" }, { word: "retard", base: "retard" }] }
+  - id: "fr-0871"
+    target: "station"
+    ipa: "stasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La station est loin.", ipa: "la stasjɔ̃ ɛ lwɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "station", base: "station" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+      - { target: "Nous attendons à la station.", ipa: "nu zatɑ̃dɔ̃ a la stasjɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "attendons", ref: "fr-0303" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "station", base: "station" }] }
+  - id: "fr-0872"
+    target: "passager"
+    ipa: "pasaʒe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le passager attend.", ipa: "lə pasaʒe atɑ̃d", bases: [{ word: "Le", ref: "fr-0543" }, { word: "passager", base: "passager" }, { word: "attend", ref: "fr-0303" }] }
+      - { target: "Mon frère est passager.", ipa: "mɔ̃ fʁɛʁ ɛ pasaʒe", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "est", ref: "fr-0021" }, { word: "passager", base: "passager" }] }
+  - id: "fr-0873"
+    target: "chauffeur"
+    ipa: "ʃofœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chauffeur est gentil.", ipa: "lə ʃofœʁ ɛ ʒɑ̃ti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chauffeur", base: "chauffeur" }, { word: "est", ref: "fr-0021" }, { word: "gentil", ref: "fr-0434" }] }
+      - { target: "Mon ami est chauffeur.", ipa: "mɔ̃n ami ɛ ʃofœʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "chauffeur", base: "chauffeur" }] }
+  - id: "fr-0874"
+    target: "trajet"
+    ipa: "tʁaʒɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le trajet est court.", ipa: "lə tʁaʒɛ ɛ kuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "trajet", base: "trajet" }, { word: "est", ref: "fr-0021" }, { word: "court", ref: "fr-0422" }] }
+      - { target: "Je fais le trajet.", ipa: "ʒə fɛ lə tʁaʒɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "le", ref: "fr-0543" }, { word: "trajet", base: "trajet" }] }
+  - id: "fr-0875"
+    target: "bagage"
+    ipa: "baɡaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon bagage est lourd.", ipa: "mɔ̃ baɡaʒ ɛ luʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "bagage", base: "bagage" }, { word: "est", ref: "fr-0021" }, { word: "lourd", ref: "fr-0442" }] }
+      - { target: "Je prends mon bagage.", ipa: "ʒə pʁɑ̃ mɔ̃ baɡaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "mon", ref: "fr-0037" }, { word: "bagage", base: "bagage" }] }
+  - id: "fr-0876"
+    target: "valise"
+    ipa: "valiz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La valise est lourde.", ipa: "la valiz ɛ luʁd", bases: [{ word: "La", ref: "fr-0544" }, { word: "valise", base: "valise" }, { word: "est", ref: "fr-0021" }, { word: "lourde", ref: "fr-0442" }] }
+      - { target: "J'ai une valise.", ipa: "ʒe yn valiz", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "valise", base: "valise" }] }
+  - id: "fr-0877"
+    target: "prochain"
+    ipa: "pʁɔʃɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le prochain train part à huit heures.", ipa: "lə pʁɔʃɛ̃ tʁɛ̃ paʁ a ɥit œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "prochain", base: "prochain" }, { word: "train", ref: "fr-0076" }, { word: "part", ref: "fr-0304" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "La prochaine station est loin.", ipa: "la pʁɔʃɛn stasjɔ̃ ɛ lwɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "prochaine", base: "prochain" }, { word: "station", ref: "fr-0871" }, { word: "est", ref: "fr-0021" }, { word: "loin", ref: "fr-0465" }] }
+  - id: "fr-0878"
+    target: "direct"
+    ipa: "diʁɛkt"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vol est direct.", ipa: "lə vɔl ɛ diʁɛkt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vol", ref: "fr-0863" }, { word: "est", ref: "fr-0021" }, { word: "direct", base: "direct" }] }
+      - { target: "Le train est direct.", ipa: "lə tʁɛ̃ ɛ diʁɛkt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "direct", base: "direct" }] }

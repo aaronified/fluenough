@@ -1,0 +1,50 @@
+schema: 1
+id: "es-verbs-5-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-3107"
+    target: "Comienzo el viaje y acabo el libro."
+    ipa: "koˈmjenθo el ˈbjaxe i aˈkabo el ˈlibɾo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Comienzo", ref: "es-3085" }, { word: "el", base: "el" }, { word: "viaje", ref: "es-1690" }, { word: "y", ref: "es-0048" }, { word: "acabo", ref: "es-3084" }, { word: "libro", ref: "es-0011" }]
+    confusables: [{ id: "continuar", ref: "es-3083", kind: "word" }, { id: "terminar", ref: "es-0521", kind: "word" }]
+  - id: "es-3108"
+    target: "Intento llegar, pero fracaso."
+    ipa: "inˈtento ʝeˈɡaɾ ˈpeɾo fɾaˈkaso"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Intento", ref: "es-3090" }, { word: "llegar", ref: "es-0290" }, { word: "pero", ref: "es-0050" }, { word: "fracaso", ref: "es-3093" }]
+    confusables: [{ id: "lograr", ref: "es-3091", kind: "word" }, { id: "conseguir", ref: "es-3092", kind: "word" }]
+  - id: "es-3109"
+    target: "El tren parte y el pasajero regresa."
+    ipa: "el tɾen ˈpaɾte i el pasaˈxeɾo reˈɡɾesa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "tren", ref: "es-0676" }, { word: "parte", ref: "es-3087" }, { word: "y", ref: "es-0048" }, { word: "pasajero", ref: "es-1702" }, { word: "regresa", ref: "es-3086" }]
+    confusables: [{ id: "llegar", ref: "es-0290", kind: "word" }, { id: "volver", ref: "es-0929", kind: "word" }]
+  - id: "es-3110"
+    target: "Divido la tarea y separo los papeles."
+    ipa: "diˈbido la taˈɾea i seˈpaɾo los paˈpeles"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Divido", ref: "es-3102" }, { word: "la", base: "la" }, { word: "tarea", ref: "es-0907" }, { word: "y", ref: "es-0048" }, { word: "separo", ref: "es-3100" }, { word: "los", base: "los" }, { word: "papeles", ref: "es-1387" }]
+    confusables: [{ id: "unir", ref: "es-3101", kind: "word" }, { id: "reunir", ref: "es-3099", kind: "word" }]
+  - id: "es-3111"
+    target: "Suceden cosas raras y desaparecen los libros."
+    ipa: "suˈθeden ˈkosas ˈraɾas i desapaˈɾeθen los ˈlibɾos"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Suceden", ref: "es-3088" }, { word: "cosas", ref: "es-1166" }, { word: "raras", base: "raro" }, { word: "y", ref: "es-0048" }, { word: "desaparecen", ref: "es-3105" }, { word: "los", base: "los" }, { word: "libros", ref: "es-0011" }]
+    confusables: [{ id: "aparecer", ref: "es-3104", kind: "word" }, { id: "ocurrir", ref: "es-1620", kind: "word" }]
+  - id: "es-3112"
+    target: "El plan resulta bien y evoluciona con el tiempo."
+    ipa: "el plan reˈsulta bjen i eboluˈθjona kon el ˈtjempo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "plan", base: "plan" }, { word: "resulta", ref: "es-3089" }, { word: "bien", ref: "es-0326" }, { word: "y", ref: "es-0048" }, { word: "evoluciona", ref: "es-3096" }, { word: "con", base: "con" }, { word: "tiempo", base: "tiempo" }]
+    confusables: [{ id: "transformar", ref: "es-3095", kind: "word" }, { id: "madurar", ref: "es-3097", kind: "word" }]

@@ -1,0 +1,50 @@
+schema: 1
+id: "es-law-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-2879"
+    target: "El juez dicta la sentencia en el tribunal."
+    ipa: "el xweθ ˈdikta la senˈtenθja en el tɾibuˈnal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "juez", ref: "es-2851" }, { word: "dicta", base: "dictar" }, { word: "la", base: "la" }, { word: "sentencia", ref: "es-2861" }, { word: "en", base: "en" }, { word: "tribunal", ref: "es-2852" }]
+    confusables: [{ id: "juicio", ref: "es-2858", kind: "word" }, { id: "condena", ref: "es-2862", kind: "word" }]
+  - id: "es-2880"
+    target: "Robar es un delito y un crimen grave."
+    ipa: "roˈbaɾ es un deˈlito i un ˈkɾimen ˈɡɾabe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Robar", ref: "es-2193" }, { word: "es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "delito", ref: "es-2853" }, { word: "y", ref: "es-0048" }, { word: "crimen", ref: "es-2854" }, { word: "grave", ref: "es-2826" }]
+    confusables: [{ id: "delincuente", ref: "es-2855", kind: "word" }, { id: "abuso", ref: "es-2871", kind: "word" }]
+  - id: "es-2881"
+    target: "Pongo una denuncia en la comisaría."
+    ipa: "ˈponɡo ˈuna deˈnunθja en la komisaˈɾia"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Pongo", ref: "es-1628" }, { word: "una", base: "una" }, { word: "denuncia", ref: "es-2859" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "comisaría", ref: "es-2865" }]
+    confusables: [{ id: "demanda", ref: "es-2873", kind: "word" }, { id: "arresto", ref: "es-2867", kind: "word" }]
+  - id: "es-2882"
+    target: "La víctima declara ante el juez."
+    ipa: "la ˈbiktima deˈklaɾa ˈante el xweθ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "La", base: "la" }, { word: "víctima", ref: "es-2864" }, { word: "declara", ref: "es-2868" }, { word: "ante", base: "ante" }, { word: "el", base: "el" }, { word: "juez", ref: "es-2851" }]
+    confusables: [{ id: "acusado", ref: "es-2863", kind: "word" }, { id: "testigo", ref: "es-2660", kind: "word" }]
+  - id: "es-2883"
+    target: "Es un fraude y está prohibido."
+    ipa: "es un ˈfɾawde i esˈta pɾojˈbido"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "fraude", ref: "es-2872" }, { word: "y", ref: "es-0048" }, { word: "está", ref: "es-0023" }, { word: "prohibido", ref: "es-2875" }]
+    confusables: [{ id: "norma", ref: "es-2874", kind: "word" }, { id: "culpable", ref: "es-2870", kind: "word" }]
+  - id: "es-2884"
+    target: "El acusado es inocente y tiene libertad."
+    ipa: "el akuˈsado es inoˈθente i ˈtjene libeɾˈtad"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases: [{ word: "El", base: "el" }, { word: "acusado", ref: "es-2863" }, { word: "es", ref: "es-0022" }, { word: "inocente", ref: "es-2869" }, { word: "y", ref: "es-0048" }, { word: "tiene", ref: "es-0024" }, { word: "libertad", ref: "es-2878" }]
+    confusables: [{ id: "prision", ref: "es-2856", kind: "word" }, { id: "carcel", ref: "es-2857", kind: "word" }]

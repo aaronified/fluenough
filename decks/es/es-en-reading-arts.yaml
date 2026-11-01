@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-arts"
+name: "Reading: an exhibition and a concert"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a notice for an art exhibition, and some notes about a concert. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-exhibition-notice"
+    title: "A notice for an art exhibition"
+    theme: "arts"
+    sentences:
+      - text: "Exposición de pintura en la galería del centro."
+      - text: "Hay óleos, acuarelas y un mural grande."
+      - text: "La entrada es gratis los domingos."
+      - text: "El artista habla sobre su obra a las seis."
+    questions:
+      - id: "es-2548"
+        prompt: { en: "Where is the exhibition?" }
+        options:
+          - { en: "In the gallery in the centre" }
+          - { en: "In a school" }
+          - { en: "At the theatre" }
+        answer: 1
+      - id: "es-2549"
+        prompt: { en: "What kinds of art are there?" }
+        options:
+          - { en: "Oils, watercolours and a mural" }
+          - { en: "Only photos" }
+          - { en: "Only sculptures" }
+        answer: 1
+      - id: "es-2550"
+        prompt: { en: "When is it free?" }
+        options:
+          - { en: "Sundays" }
+          - { en: "Saturdays" }
+          - { en: "Mondays" }
+        answer: 1
+  - id: "es-concert-notes"
+    title: "Notes about a concert"
+    theme: "arts"
+    sentences:
+      - text: "La orquesta toca una melodía bonita."
+      - text: "El compositor dirige el coro."
+      - text: "Hay un espectáculo de danza el viernes."
+      - text: "Los instrumentos suenan muy bien."
+    questions:
+      - id: "es-2551"
+        prompt: { en: "What does the orchestra play?" }
+        options:
+          - { en: "A pretty melody" }
+          - { en: "A loud noise" }
+          - { en: "A film" }
+        answer: 1
+      - id: "es-2552"
+        prompt: { en: "What does the composer do?" }
+        options:
+          - { en: "Directs the choir" }
+          - { en: "Paints" }
+          - { en: "Sculpts" }
+        answer: 1
+      - id: "es-2553"
+        prompt: { en: "What is on Friday?" }
+        options:
+          - { en: "A dance show" }
+          - { en: "A film" }
+          - { en: "A concert" }
+        answer: 1

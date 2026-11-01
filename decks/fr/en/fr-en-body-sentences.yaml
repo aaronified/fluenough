@@ -1,0 +1,52 @@
+schema: 1
+id: "fr-en-body-sentences"
+kind: "layer"
+core: "fr-body-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: the body"
+license: "CC-BY-SA-4.0"
+description: "Seven sentences about the body and aches, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0950":
+    native: "I have a headache."
+    bases:
+      "à": "to; at; in"
+    confusables:
+      "dos": { why: "Dos is 'back'." }
+      "cou": { why: "Cou is 'neck'." }
+  "fr-0951":
+    native: "The knee is tired."
+    confusables:
+      "pied": { why: "Pied is 'foot', another part of the leg." }
+      "jambe": { why: "Jambe is 'leg', the whole limb." }
+  "fr-0952":
+    native: "My mouth is small."
+    confusables:
+      "nez": { why: "Nez is 'nose'." }
+      "dent": { why: "Dent is 'tooth'." }
+  "fr-0953":
+    native: "My hair is long."
+    confusables:
+      "tete": { why: "Tête is 'head'." }
+      "visage": { why: "Visage is 'face'." }
+  "fr-0954":
+    native: "My stomach hurts."
+    bases:
+      "au": "to the (masculine)"
+    confusables:
+      "dos": { why: "Dos is 'back'." }
+      "gorge": { why: "Gorge is 'throat'." }
+  "fr-0955":
+    native: "The skin is cold."
+    confusables:
+      "sang": { why: "Sang is 'blood'." }
+      "visage": { why: "Visage is 'face'." }
+  "fr-0956":
+    native: "I do not move."
+    bases:
+      "ne": "not (with pas, jamais and plus)"
+      "pas": "not"
+    confusables:
+      "marcher": { why: "Marcher is 'to walk'." }
+      "courir": { why: "Courir is 'to run'." }

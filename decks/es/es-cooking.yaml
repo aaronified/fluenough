@@ -1,0 +1,480 @@
+schema: 1
+id: "es-cooking"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "cooking"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1302"
+    target: "la receta"
+    ipa: "la reˈθeta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "receta", base: "receta" }]
+    examples:
+      - target: "Esta receta es de mi abuela."
+        ipa: "ˈesta reˈθeta es de mi aˈbwela"
+        bases: [{ word: "Esta", base: "esta" }, { word: "receta", base: "receta" }, { word: "es", ref: "es-0022" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "abuela", ref: "es-0166" }]
+      - target: "Leo la receta antes de cocinar."
+        ipa: "ˈleo la reˈθeta ˈantes de koθiˈnaɾ"
+        bases: [{ word: "Leo", ref: "es-0296" }, { word: "la", base: "la" }, { word: "receta", base: "receta" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "cocinar", ref: "es-0284" }]
+  - id: "es-1303"
+    target: "el ingrediente"
+    ipa: "el inɡɾeˈdjente"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ingrediente", base: "ingrediente" }]
+    examples:
+      - target: "El ingrediente principal es el ajo."
+        ipa: "el inɡɾeˈdjente pɾinθiˈpal es el ˈaxo"
+        bases: [{ word: "El", base: "el" }, { word: "ingrediente", base: "ingrediente" }, { word: "principal", base: "principal" }, { word: "es", ref: "es-0022" }, { word: "ajo", ref: "es-1306" }]
+      - target: "Falta un ingrediente."
+        ipa: "ˈfalta un inɡɾeˈdjente"
+        bases: [{ word: "Falta", base: "faltar" }, { word: "un", base: "un" }, { word: "ingrediente", base: "ingrediente" }]
+  - id: "es-1304"
+    target: "la cucharada"
+    ipa: "la kutʃaˈɾada"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cucharada", base: "cucharada" }]
+    examples:
+      - target: "Una cucharada de aceite, por favor."
+        ipa: "ˈuna kutʃaˈɾada de aˈθejte poɾ faˈboɾ"
+        bases: [{ word: "Una", base: "una" }, { word: "cucharada", base: "cucharada" }, { word: "de", base: "de" }, { word: "aceite", ref: "es-0608" }, { word: "por", base: "por" }, { word: "favor", base: "favor" }]
+      - target: "Añado dos cucharadas de sal."
+        ipa: "aˈɲado dos kutʃaˈɾadas de sal"
+        bases: [{ word: "Añado", ref: "es-1323" }, { word: "dos", ref: "es-0206" }, { word: "cucharadas", base: "cucharada" }, { word: "de", base: "de" }, { word: "sal", ref: "es-0607" }]
+  - id: "es-1305"
+    target: "la cucharadita"
+    ipa: "la kutʃaɾaˈdita"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cucharadita", base: "cucharadita" }]
+    examples:
+      - target: "Una cucharadita de azúcar es suficiente."
+        ipa: "ˈuna kutʃaɾaˈdita de aˈθukaɾ es sufiˈθjente"
+        bases: [{ word: "Una", base: "una" }, { word: "cucharadita", base: "cucharadita" }, { word: "de", base: "de" }, { word: "azúcar", ref: "es-0606" }, { word: "es", ref: "es-0022" }, { word: "suficiente", ref: "es-0365" }]
+      - target: "Pongo media cucharadita de sal."
+        ipa: "ˈponɡo ˈmedja kutʃaɾaˈdita de sal"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "media", ref: "es-0368" }, { word: "cucharadita", base: "cucharadita" }, { word: "de", base: "de" }, { word: "sal", ref: "es-0607" }]
+  - id: "es-1306"
+    target: "el ajo"
+    ipa: "el ˈaxo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "ajo", base: "ajo" }]
+    examples:
+      - target: "Pelo el ajo y lo pico"
+        ipa: "ˈpelo el ˈaxo i lo ˈpiko"
+        bases: [{ word: "Pelo", ref: "es-1319" }, { word: "el", base: "el" }, { word: "ajo", base: "ajo" }, { word: "y", ref: "es-0048" }, { word: "lo", base: "lo" }, { word: "pico", ref: "es-1318" }]
+      - target: "El ajo es muy fuerte."
+        ipa: "el ˈaxo es mwi ˈfweɾte"
+        bases: [{ word: "El", base: "el" }, { word: "ajo", base: "ajo" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-1307"
+    target: "el limón"
+    ipa: "el liˈmon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "limón", base: "limón" }]
+    examples:
+      - target: "Pongo limón en la ensalada."
+        ipa: "ˈponɡo liˈmon en la ensaˈlada"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "limón", base: "limón" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "ensalada", ref: "es-0643" }]
+      - target: "El limón es ácido."
+        ipa: "el liˈmon es ˈaθido"
+        bases: [{ word: "El", base: "el" }, { word: "limón", base: "limón" }, { word: "es", ref: "es-0022" }, { word: "ácido", ref: "es-1274" }]
+  - id: "es-1308"
+    target: "el pimiento"
+    ipa: "el piˈmjento"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "pimiento", base: "pimiento" }]
+    examples:
+      - target: "El pimiento es verde."
+        ipa: "el piˈmjento es ˈbeɾde"
+        bases: [{ word: "El", base: "el" }, { word: "pimiento", base: "pimiento" }, { word: "es", ref: "es-0022" }, { word: "verde", ref: "es-1009" }]
+      - target: "Cortamos el pimiento en tiras."
+        ipa: "koɾˈtamos el piˈmjento en ˈtiɾas"
+        bases: [{ word: "Cortamos", ref: "es-1320" }, { word: "el", base: "el" }, { word: "pimiento", base: "pimiento" }, { word: "en", base: "en" }, { word: "tiras", base: "tira" }]
+  - id: "es-1309"
+    target: "el champiñón"
+    ipa: "el tʃampiˈɲon"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "champiñón", base: "champiñón" }]
+    examples:
+      - target: "Los champiñones son buenos con ajo."
+        ipa: "los tʃampiˈɲones son ˈbwenos kon ˈaxo"
+        bases: [{ word: "Los", base: "los" }, { word: "champiñones", base: "champiñón" }, { word: "son", ref: "es-0022" }, { word: "buenos", ref: "es-0033" }, { word: "con", base: "con" }, { word: "ajo", ref: "es-1306" }]
+      - target: "Compro champiñones en el mercado."
+        ipa: "ˈkompɾo tʃampiˈɲones en el meɾˈkado"
+        bases: [{ word: "Compro", ref: "es-0280" }, { word: "champiñones", base: "champiñón" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "mercado", ref: "es-0567" }]
+  - id: "es-1310"
+    target: "la sartén"
+    ipa: "la saɾˈten"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sartén", base: "sartén" }]
+    examples:
+      - target: "Pongo el aceite en la sartén."
+        ipa: "ˈponɡo el aˈθejte en la saɾˈten"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "el", base: "el" }, { word: "aceite", ref: "es-0608" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "sartén", base: "sartén" }]
+      - target: "La sartén está caliente."
+        ipa: "la saɾˈten esˈta kaˈljente"
+        bases: [{ word: "La", base: "la" }, { word: "sartén", base: "sartén" }, { word: "está", ref: "es-0023" }, { word: "caliente", ref: "es-0407" }]
+  - id: "es-1311"
+    target: "la olla"
+    ipa: "la ˈoʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "olla", base: "olla" }]
+    examples:
+      - target: "La sopa está en la olla."
+        ipa: "la ˈsopa esˈta en la ˈoʝa"
+        bases: [{ word: "La", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "olla", base: "olla" }]
+      - target: "Pongo el agua en la olla."
+        ipa: "ˈponɡo el ˈaɡwa en la ˈoʝa"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "el", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "olla", base: "olla" }]
+  - id: "es-1312"
+    target: "la cazuela"
+    ipa: "la kaˈθwela"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cazuela", base: "cazuela" }]
+    examples:
+      - target: "Cocino el pollo en una cazuela."
+        ipa: "koˈθino el ˈpoʝo en ˈuna kaˈθwela"
+        bases: [{ word: "Cocino", ref: "es-0284" }, { word: "el", base: "el" }, { word: "pollo", ref: "es-0615" }, { word: "en", base: "en" }, { word: "una", base: "una" }, { word: "cazuela", base: "cazuela" }]
+      - target: "La cazuela es grande."
+        ipa: "la kaˈθwela es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "cazuela", base: "cazuela" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-1313"
+    target: "el microondas"
+    ipa: "el mikɾoˈondas"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "microondas", base: "microondas" }]
+    examples:
+      - target: "Caliento la sopa en el microondas."
+        ipa: "kaˈljento la ˈsopa en el mikɾoˈondas"
+        bases: [{ word: "Caliento", ref: "es-1324" }, { word: "la", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "microondas", base: "microondas" }]
+      - target: "El microondas está en la cocina."
+        ipa: "el mikɾoˈondas esˈta en la koˈθina"
+        bases: [{ word: "El", base: "el" }, { word: "microondas", base: "microondas" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cocina", ref: "es-0918" }]
+  - id: "es-1314"
+    target: "la nevera"
+    ipa: "la neˈbeɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "nevera", base: "nevera" }]
+    examples:
+      - target: "La leche está en la nevera."
+        ipa: "la ˈletʃe esˈta en la neˈbeɾa"
+        bases: [{ word: "La", base: "la" }, { word: "leche", ref: "es-0014" }, { word: "está", ref: "es-0023" }, { word: "en", base: "en" }, { word: "nevera", base: "nevera" }]
+      - target: "Pongo el pastel en la nevera."
+        ipa: "ˈponɡo el pasˈtel en la neˈbeɾa"
+        bases: [{ word: "Pongo", base: "poner" }, { word: "el", base: "el" }, { word: "pastel", ref: "es-1272" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "nevera", base: "nevera" }]
+  - id: "es-1315"
+    target: "el fregadero"
+    ipa: "el fɾeɡaˈdeɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "fregadero", base: "fregadero" }]
+    examples:
+      - target: "Los platos están en el fregadero."
+        ipa: "los ˈplatos esˈtan en el fɾeɡaˈdeɾo"
+        bases: [{ word: "Los", base: "los" }, { word: "platos", ref: "es-0641" }, { word: "están", ref: "es-0023" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "fregadero", base: "fregadero" }]
+      - target: "Lavo los platos en el fregadero."
+        ipa: "ˈlabo los ˈplatos en el fɾeɡaˈdeɾo"
+        bases: [{ word: "Lavo", ref: "es-0286" }, { word: "los", base: "los" }, { word: "platos", ref: "es-0641" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "fregadero", base: "fregadero" }]
+  - id: "es-1316"
+    target: "hervir"
+    ipa: "eɾˈbiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "hervir", base: "hervir" }]
+    examples:
+      - target: "El agua hierve a cien grados."
+        ipa: "el ˈaɡwa ˈjeɾbe a θjen ˈɡɾados"
+        bases: [{ word: "El", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "hierve", base: "hervir" }, { word: "a", base: "a" }, { word: "cien", ref: "es-0543" }, { word: "grados", ref: "es-1124" }]
+      - target: "Hiervo el agua para la pasta."
+        ipa: "ˈjeɾbo el ˈaɡwa ˈpaɾa la ˈpasta"
+        bases: [{ word: "Hiervo", base: "hervir" }, { word: "el", base: "el" }, { word: "agua", ref: "es-0012" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "pasta", ref: "es-1335" }]
+  - id: "es-1317"
+    target: "asar"
+    ipa: "aˈsaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "asar", base: "asar" }]
+    examples:
+      - target: "Asamos la carne en el horno."
+        ipa: "aˈsamos la ˈkaɾne en el ˈoɾno"
+        bases: [{ word: "Asamos", base: "asar" }, { word: "la", base: "la" }, { word: "carne", ref: "es-0614" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "horno", ref: "es-0816" }]
+      - target: "Asan el pollo con limón."
+        ipa: "ˈasan el ˈpoʝo kon liˈmon"
+        bases: [{ word: "Asan", base: "asar" }, { word: "el", base: "el" }, { word: "pollo", ref: "es-0615" }, { word: "con", base: "con" }, { word: "limón", ref: "es-1307" }]
+  - id: "es-1318"
+    target: "picar"
+    ipa: "piˈkaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "picar", base: "picar" }]
+    examples:
+      - target: "Pico la cebolla muy fina."
+        ipa: "ˈpiko la θeˈboʝa mwi ˈfina"
+        bases: [{ word: "Pico", base: "picar" }, { word: "la", base: "la" }, { word: "cebolla", ref: "es-0575" }, { word: "muy", ref: "es-0330" }, { word: "fina", base: "fino" }]
+      - target: "Pica el ajo y la cebolla."
+        ipa: "ˈpika el ˈaxo i la θeˈboʝa"
+        bases: [{ word: "Pica", base: "picar" }, { word: "el", base: "el" }, { word: "ajo", ref: "es-1306" }, { word: "y", ref: "es-0048" }, { word: "la", base: "la" }, { word: "cebolla", ref: "es-0575" }]
+  - id: "es-1319"
+    target: "pelar"
+    ipa: "peˈlaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pelar", base: "pelar" }]
+    examples:
+      - target: "Pelo las patatas."
+        ipa: "ˈpelo las paˈtatas"
+        bases: [{ word: "Pelo", base: "pelar" }, { word: "las", base: "las" }, { word: "patatas", ref: "es-0576" }]
+      - target: "Pelamos la naranja."
+        ipa: "peˈlamos la naˈɾanxa"
+        bases: [{ word: "Pelamos", base: "pelar" }, { word: "la", base: "la" }, { word: "naranja", ref: "es-1015" }]
+  - id: "es-1320"
+    target: "cortar"
+    ipa: "koɾˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cortar", base: "cortar" }]
+    examples:
+      - target: "Corto el pan en rebanadas."
+        ipa: "ˈkoɾto el pan en rebaˈnadas"
+        bases: [{ word: "Corto", base: "cortar" }, { word: "el", base: "el" }, { word: "pan", ref: "es-0013" }, { word: "en", base: "en" }, { word: "rebanadas", base: "rebanada" }]
+      - target: "Cortamos el queso."
+        ipa: "koɾˈtamos el ˈkeso"
+        bases: [{ word: "Cortamos", base: "cortar" }, { word: "el", base: "el" }, { word: "queso", ref: "es-0603" }]
+  - id: "es-1321"
+    target: "mezclar"
+    ipa: "meθˈklaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "mezclar", base: "mezclar" }]
+    examples:
+      - target: "Mezclo la harina con la leche."
+        ipa: "ˈmeθklo la aˈɾina kon la ˈletʃe"
+        bases: [{ word: "Mezclo", base: "mezclar" }, { word: "la", base: "la" }, { word: "harina", ref: "es-0619" }, { word: "con", base: "con" }, { word: "leche", ref: "es-0014" }]
+      - target: "Mezclan los ingredientes."
+        ipa: "ˈmeθklan los inɡɾeˈdjentes"
+        bases: [{ word: "Mezclan", base: "mezclar" }, { word: "los", base: "los" }, { word: "ingredientes", ref: "es-1303" }]
+  - id: "es-1322"
+    target: "batir"
+    ipa: "baˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "batir", base: "batir" }]
+    examples:
+      - target: "Bato los huevos con azúcar."
+        ipa: "ˈbato los ˈwebos kon aˈθukaɾ"
+        bases: [{ word: "Bato", base: "batir" }, { word: "los", base: "los" }, { word: "huevos", ref: "es-0604" }, { word: "con", base: "con" }, { word: "azúcar", ref: "es-0606" }]
+      - target: "Bate la nata con un tenedor."
+        ipa: "ˈbate la ˈnata kon un teneˈdoɾ"
+        bases: [{ word: "Bate", base: "batir" }, { word: "la", base: "la" }, { word: "nata", base: "nata" }, { word: "con", base: "con" }, { word: "un", base: "un" }, { word: "tenedor", ref: "es-1180" }]
+  - id: "es-1323"
+    target: "añadir"
+    ipa: "aɲaˈdiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "añadir", base: "añadir" }]
+    examples:
+      - target: "Añado sal al agua."
+        ipa: "aˈɲado sal al ˈaɡwa"
+        bases: [{ word: "Añado", base: "añadir" }, { word: "sal", ref: "es-0607" }, { word: "al", base: "al" }, { word: "agua", ref: "es-0012" }]
+      - target: "Añaden limón al pescado."
+        ipa: "aˈɲaden liˈmon al pesˈkado"
+        bases: [{ word: "Añaden", base: "añadir" }, { word: "limón", ref: "es-1307" }, { word: "al", base: "al" }, { word: "pescado", ref: "es-0616" }]
+  - id: "es-1324"
+    target: "calentar"
+    ipa: "kalenˈtaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "calentar", base: "calentar" }]
+    examples:
+      - target: "Caliento el aceite."
+        ipa: "kaˈljento el aˈθejte"
+        bases: [{ word: "Caliento", base: "calentar" }, { word: "el", base: "el" }, { word: "aceite", ref: "es-0608" }]
+      - target: "Calientan la sopa en la olla."
+        ipa: "kaˈljentan la ˈsopa en la ˈoʝa"
+        bases: [{ word: "Calientan", base: "calentar" }, { word: "la", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "en", base: "en" }, { word: "olla", ref: "es-1311" }]
+  - id: "es-1325"
+    target: "enfriar"
+    ipa: "enˈfɾjaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "enfriar", base: "enfriar" }]
+    examples:
+      - target: "Dejo enfriar el pastel."
+        ipa: "ˈdexo enˈfɾjaɾ el pasˈtel"
+        bases: [{ word: "Dejo", ref: "es-1190" }, { word: "enfriar", base: "enfriar" }, { word: "el", base: "el" }, { word: "pastel", ref: "es-1272" }]
+      - target: "Enfrío la sopa antes de comer."
+        ipa: "enˈfɾio la ˈsopa ˈantes de koˈmeɾ"
+        bases: [{ word: "Enfrío", base: "enfriar" }, { word: "la", base: "la" }, { word: "sopa", ref: "es-0644" }, { word: "antes", ref: "es-0335" }, { word: "de", base: "de" }, { word: "comer", ref: "es-0028" }]
+  - id: "es-1326"
+    target: "cocer"
+    ipa: "koˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cocer", base: "cocer" }]
+    examples:
+      - target: "Cuezo las verduras diez minutos."
+        ipa: "ˈkweθo las beɾˈduɾas djeθ miˈnutos"
+        bases: [{ word: "Cuezo", base: "cocer" }, { word: "las", base: "las" }, { word: "verduras", ref: "es-0579" }, { word: "diez", ref: "es-0214" }, { word: "minutos", ref: "es-0839" }]
+      - target: "Cuecen los huevos en agua."
+        ipa: "ˈkweθen los ˈwebos en ˈaɡwa"
+        bases: [{ word: "Cuecen", base: "cocer" }, { word: "los", base: "los" }, { word: "huevos", ref: "es-0604" }, { word: "en", base: "en" }, { word: "agua", ref: "es-0012" }]
+  - id: "es-1327"
+    target: "quemar"
+    ipa: "keˈmaɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "quemar", base: "quemar" }]
+    examples:
+      - target: "El arroz está quemado."
+        ipa: "el aˈroθ esˈta keˈmado"
+        bases: [{ word: "El", base: "el" }, { word: "arroz", ref: "es-0605" }, { word: "está", ref: "es-0023" }, { word: "quemado", base: "quemar" }]
+      - target: "No quemo la cebolla."
+        ipa: "no ˈkemo la θeˈboʝa"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "quemo", base: "quemar" }, { word: "la", base: "la" }, { word: "cebolla", ref: "es-0575" }]
+  - id: "es-1328"
+    target: "tibio"
+    ipa: "ˈtibjo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "tibio", base: "tibio" }]
+    examples:
+      - target: "El té está tibio."
+        ipa: "el te esˈta ˈtibjo"
+        bases: [{ word: "El", base: "el" }, { word: "té", ref: "es-0612" }, { word: "está", ref: "es-0023" }, { word: "tibio", base: "tibio" }]
+      - target: "La leche está tibia."
+        ipa: "la ˈletʃe esˈta ˈtibja"
+        bases: [{ word: "La", base: "la" }, { word: "leche", ref: "es-0014" }, { word: "está", ref: "es-0023" }, { word: "tibia", base: "tibio" }]
+  - id: "es-1329"
+    target: "cocido"
+    ipa: "koˈθido"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "cocido", base: "cocido" }]
+    examples:
+      - target: "El arroz ya está cocido."
+        ipa: "el aˈroθ ʝa esˈta koˈθido"
+        bases: [{ word: "El", base: "el" }, { word: "arroz", ref: "es-0605" }, { word: "ya", ref: "es-0340" }, { word: "está", ref: "es-0023" }, { word: "cocido", base: "cocido" }]
+      - target: "Los huevos cocidos están listos."
+        ipa: "los ˈwebos koˈθidos esˈtan ˈlistos"
+        bases: [{ word: "Los", base: "los" }, { word: "huevos", ref: "es-0604" }, { word: "cocidos", base: "cocido" }, { word: "están", ref: "es-0023" }, { word: "listos", ref: "es-0932" }]
+  - id: "es-1330"
+    target: "crudo"
+    ipa: "ˈkɾudo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "crudo", base: "crudo" }]
+    examples:
+      - target: "El pollo está crudo."
+        ipa: "el ˈpoʝo esˈta ˈkɾudo"
+        bases: [{ word: "El", base: "el" }, { word: "pollo", ref: "es-0615" }, { word: "está", ref: "es-0023" }, { word: "crudo", base: "crudo" }]
+      - target: "Como el pescado crudo."
+        ipa: "ˈkomo el pesˈkado ˈkɾudo"
+        bases: [{ word: "Como", ref: "es-0028" }, { word: "el", base: "el" }, { word: "pescado", ref: "es-0616" }, { word: "crudo", base: "crudo" }]
+  - id: "es-1331"
+    target: "blando"
+    ipa: "ˈblando"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "blando", base: "blando" }]
+    examples:
+      - target: "La pasta está blanda."
+        ipa: "la ˈpasta esˈta ˈblanda"
+        bases: [{ word: "La", base: "la" }, { word: "pasta", ref: "es-1335" }, { word: "está", ref: "es-0023" }, { word: "blanda", base: "blando" }]
+      - target: "El pan es blando."
+        ipa: "el pan es ˈblando"
+        bases: [{ word: "El", base: "el" }, { word: "pan", ref: "es-0013" }, { word: "es", ref: "es-0022" }, { word: "blando", base: "blando" }]
+  - id: "es-1332"
+    target: "duro"
+    ipa: "ˈduɾo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "duro", base: "duro" }]
+    examples:
+      - target: "El huevo está duro."
+        ipa: "el ˈwebo esˈta ˈduɾo"
+        bases: [{ word: "El", base: "el" }, { word: "huevo", ref: "es-0604" }, { word: "está", ref: "es-0023" }, { word: "duro", base: "duro" }]
+      - target: "La carne es dura."
+        ipa: "la ˈkaɾne es ˈduɾa"
+        bases: [{ word: "La", base: "la" }, { word: "carne", ref: "es-0614" }, { word: "es", ref: "es-0022" }, { word: "dura", base: "duro" }]
+  - id: "es-1333"
+    target: "hecho"
+    ipa: "ˈetʃo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "hecho", base: "hecho" }]
+    examples:
+      - target: "La carne está muy hecha."
+        ipa: "la ˈkaɾne esˈta mwi ˈetʃa"
+        bases: [{ word: "La", base: "la" }, { word: "carne", ref: "es-0614" }, { word: "está", ref: "es-0023" }, { word: "muy", ref: "es-0330" }, { word: "hecha", base: "hecho" }]
+      - target: "Quiero el pescado bien hecho."
+        ipa: "ˈkjeɾo el pesˈkado bjen ˈetʃo"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "el", base: "el" }, { word: "pescado", ref: "es-0616" }, { word: "bien", ref: "es-0326" }, { word: "hecho", base: "hecho" }]
+  - id: "es-1334"
+    target: "vegetariano"
+    ipa: "bexetaˈɾjano"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "vegetariano", base: "vegetariano" }]
+    examples:
+      - target: "Quiero un plato vegetariano."
+        ipa: "ˈkjeɾo un ˈplato bexetaˈɾjano"
+        bases: [{ word: "Quiero", ref: "es-0661" }, { word: "un", base: "un" }, { word: "plato", ref: "es-0641" }, { word: "vegetariano", base: "vegetariano" }]
+      - target: "Es un menú vegetariano."
+        ipa: "es un meˈnu bexetaˈɾjano"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "menú", ref: "es-0640" }, { word: "vegetariano", base: "vegetariano" }]
+  - id: "es-1335"
+    target: "la pasta"
+    ipa: "la ˈpasta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pasta", base: "pasta" }]
+    examples:
+      - target: "La pasta con tomate es rica."
+        ipa: "la ˈpasta kon toˈmate es ˈrika"
+        bases: [{ word: "La", base: "la" }, { word: "pasta", base: "pasta" }, { word: "con", base: "con" }, { word: "tomate", ref: "es-0574" }, { word: "es", ref: "es-0022" }, { word: "rica", ref: "es-0409" }]
+      - target: "No como pasta."
+        ipa: "no ˈkomo ˈpasta"
+        bases: [{ word: "No", ref: "es-0043" }, { word: "como", ref: "es-0028" }, { word: "pasta", base: "pasta" }]
+  - id: "es-1336"
+    target: "la dieta"
+    ipa: "la ˈdjeta"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "dieta", base: "dieta" }]
+    examples:
+      - target: "Sigo una dieta sin azúcar."
+        ipa: "ˈsiɡo ˈuna ˈdjeta sin aˈθukaɾ"
+        bases: [{ word: "Sigo", ref: "es-0722" }, { word: "una", base: "una" }, { word: "dieta", base: "dieta" }, { word: "sin", base: "sin" }, { word: "azúcar", ref: "es-0606" }]
+      - target: "La dieta es buena para la salud."
+        ipa: "la ˈdjeta es ˈbwena ˈpaɾa la saˈlud"
+        bases: [{ word: "La", base: "la" }, { word: "dieta", base: "dieta" }, { word: "es", ref: "es-0022" }, { word: "buena", ref: "es-0033" }, { word: "para", base: "para" }, { word: "salud", base: "salud" }]

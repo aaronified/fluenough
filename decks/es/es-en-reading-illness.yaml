@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-illness"
+name: "Reading: a medicine label and a note"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: the label on a medicine packet and a short note about being ill. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-medicine-label"
+    title: "The label on a medicine packet"
+    theme: "illness"
+    sentences:
+      - text: "Tomar una pastilla cada ocho horas."
+      - text: "No tomar con alcohol."
+      - text: "Para la tos y la fiebre."
+      - text: "Consulte a su médico si empeora."
+    questions:
+      - id: "es-1499"
+        prompt: { en: "How often is one tablet taken?" }
+        options:
+          - { en: "Every two hours" }
+          - { en: "Once a week" }
+          - { en: "Every eight hours" }
+        answer: 3
+      - id: "es-1500"
+        prompt: { en: "What is the medicine for?" }
+        options:
+          - { en: "Headache and back pain" }
+          - { en: "Cough and fever" }
+          - { en: "Allergy" }
+        answer: 2
+      - id: "es-1501"
+        prompt: { en: "When should you see the doctor?" }
+        options:
+          - { en: "Every day" }
+          - { en: "Never" }
+          - { en: "If it gets worse" }
+        answer: 3
+  - id: "es-a-note-to-work"
+    title: "A note to work"
+    theme: "illness"
+    sentences:
+      - text: "Hoy no voy al trabajo, tengo gripe."
+      - text: "Tengo fiebre y me duele el oído."
+      - text: "Tomo jarabe y descanso en casa."
+      - text: "Mañana voy a la consulta."
+    questions:
+      - id: "es-1502"
+        prompt: { en: "Why does the writer not go to work?" }
+        options:
+          - { en: "They have the flu" }
+          - { en: "They are on holiday" }
+          - { en: "They have a cold" }
+        answer: 1
+      - id: "es-1503"
+        prompt: { en: "What hurts?" }
+        options:
+          - { en: "The back" }
+          - { en: "The leg" }
+          - { en: "The ear" }
+        answer: 3
+      - id: "es-1504"
+        prompt: { en: "What is the writer doing tomorrow?" }
+        options:
+          - { en: "Going to work" }
+          - { en: "Going to school" }
+          - { en: "Going to the doctor" }
+        answer: 3

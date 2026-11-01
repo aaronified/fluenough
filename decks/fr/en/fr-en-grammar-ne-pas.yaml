@@ -1,0 +1,25 @@
+schema: 1
+id: "fr-en-grammar-ne-pas"
+kind: "layer"
+core: "fr-grammar-ne-pas"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Negation: ne ... pas"
+license: "CC-BY-SA-4.0"
+description: "To make a sentence negative, ne goes before the verb and pas after it. Not yet checked by a French speaker: please report any mistake."
+pattern:
+  name: "Negation"
+  slot_name: "sentence"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "affirmative": "affirmative", "negative": "negative" }
+  entries:
+    "etre": "to be"
+    "avoir": "to have"
+    "parler": "to speak"
+    "aimer": "to like"
+    "habiter": "to live"
+    "manger": "to eat"
+    "comprendre": "to understand"
+    "jamais": "never (with ne)"
+    "plus": "no longer (with ne)"
+    "rien": "nothing (with ne)"
+  notes: "To make a sentence negative, put ne before the verb and pas after it: je ne parle pas. Before a vowel ne becomes n': je n'aime pas, j'ai becomes je n'ai pas. Jamais (never), plus (no longer) and rien (nothing) use the same ne: je ne mange jamais, je ne parle plus, je ne fais rien. Pas is not used with rien or jamais. The ne stays when the subject is a noun: Paul ne parle pas. Not every negative keeps pas in speech, but the written form always has ne."

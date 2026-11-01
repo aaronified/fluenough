@@ -1,0 +1,345 @@
+schema: 1
+id: "fr-en-market"
+kind: "layer"
+core: "fr-market"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Market"
+license: "CC-BY-SA-4.0"
+description: "Words for a market and its stalls: marché, vendeur, prix, fruit and légume, the names of common fruit and vegetables, and monnaie, argent and coûter. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0735":
+    native: "market"
+    notes:
+      "n1": "Marché is 'market', a masculine noun: le marché (the market). Aller au marché is 'to go to the market'."
+    examples:
+      "Je vais au marché.":
+        native: "I go to the market."
+        bases:
+          "au": "to the (masculine)"
+          "marché": "market"
+      "Le marché est grand.":
+        native: "The market is big."
+        bases:
+          "marché": "market"
+  "fr-0736":
+    native: "seller; shop assistant"
+    notes:
+      "n1": "Vendeur is 'seller' or 'shop assistant', a masculine noun. The feminine is vendeuse."
+    examples:
+      "Le vendeur parle français.":
+        native: "The seller speaks French."
+        bases:
+          "vendeur": "seller; shop assistant"
+      "Mon ami est vendeur.":
+        native: "My friend is a seller."
+        bases:
+          "vendeur": "seller; shop assistant"
+  "fr-0737":
+    native: "price"
+    notes:
+      "n1": "Prix is 'price', a masculine noun. It is not said with the x: prix is said pri."
+    examples:
+      "Quel est le prix ?":
+        native: "What is the price?"
+        bases:
+          "prix": "price"
+      "Le prix est bon.":
+        native: "The price is good."
+        bases:
+          "prix": "price"
+  "fr-0738":
+    native: "fruit"
+    notes:
+      "n1": "Fruit is 'fruit', a masculine noun. The plural fruits is said the same."
+    examples:
+      "Les fruits sont frais.":
+        native: "The fruit is fresh."
+        bases:
+          "fruits": "fruit"
+      "J'aime le fruit.":
+        native: "I like fruit."
+        bases:
+          "fruit": "fruit"
+  "fr-0739":
+    native: "vegetable"
+    notes:
+      "n1": "Légume is 'vegetable', a masculine noun. Les légumes is the word for vegetables in general."
+    examples:
+      "Les légumes sont bons.":
+        native: "The vegetables are good."
+        bases:
+          "légumes": "vegetable"
+      "Je mange des légumes.":
+        native: "I eat vegetables."
+        bases:
+          "légumes": "vegetable"
+  "fr-0740":
+    native: "apple"
+    notes:
+      "n1": "Pomme is 'apple', a feminine noun. Pomme de terre is 'potato', which is a different word."
+    examples:
+      "Je mange une pomme.":
+        native: "I eat an apple."
+        bases:
+          "pomme": "apple"
+      "La pomme est mûre.":
+        native: "The apple is ripe."
+        bases:
+          "pomme": "apple"
+  "fr-0741":
+    native: "pear"
+    notes:
+      "n1": "Poire is 'pear', a feminine noun. It is shaped differently from the apple."
+    examples:
+      "La poire est bonne.":
+        native: "The pear is good."
+        bases:
+          "poire": "pear"
+      "Elle achète une poire.":
+        native: "She buys a pear."
+        bases:
+          "poire": "pear"
+  "fr-0742":
+    native: "banana"
+    notes:
+      "n1": "Banane is 'banana', a feminine noun. It is the same word in English, with the same stress."
+    examples:
+      "Je prends une banane.":
+        native: "I take a banana."
+        bases:
+          "banane": "banana"
+      "Les bananes sont chères.":
+        native: "The bananas are dear."
+        bases:
+          "bananes": "banana"
+  "fr-0743":
+    native: "strawberry"
+    notes:
+      "n1": "Fraise is 'strawberry', a feminine noun. The s between two vowels is said z."
+    examples:
+      "Les fraises sont bonnes.":
+        native: "The strawberries are good."
+        bases:
+          "fraises": "strawberry"
+      "Nous mangeons des fraises.":
+        native: "We eat strawberries."
+        bases:
+          "fraises": "strawberry"
+  "fr-0744":
+    native: "tomato"
+    notes:
+      "n1": "Tomate is 'tomato', a feminine noun. It is a fruit, but it is eaten as a vegetable."
+    examples:
+      "La tomate est fraîche.":
+        native: "The tomato is fresh."
+        bases:
+          "tomate": "tomato"
+      "Je mange une tomate.":
+        native: "I eat a tomato."
+        bases:
+          "tomate": "tomato"
+  "fr-0745":
+    native: "carrot"
+    notes:
+      "n1": "Carotte is 'carrot', a feminine noun. The plural is carottes."
+    examples:
+      "Ma mère achète des carottes.":
+        native: "My mother buys carrots."
+        bases:
+          "carottes": "carrot"
+      "La carotte est longue.":
+        native: "The carrot is long."
+        bases:
+          "carotte": "carrot"
+  "fr-0746":
+    native: "salad; lettuce"
+    notes:
+      "n1": "Salade is 'salad' or 'lettuce', a feminine noun. A green salad is une salade verte, with the colour learnt later."
+    examples:
+      "Vous mangez la salade.":
+        native: "You eat the salad."
+        bases:
+          "salade": "salad; lettuce"
+      "Une salade coûte peu.":
+        native: "A salad costs little."
+        bases:
+          "salade": "salad; lettuce"
+  "fr-0747":
+    native: "onion"
+    notes:
+      "n1": "Oignon is 'onion', a masculine noun. It is one of the vegetables that make a sauce begin."
+    examples:
+      "Il met un oignon dans la salade.":
+        native: "He puts an onion in the salad."
+        bases:
+          "oignon": "onion"
+      "L'oignon est petit.":
+        native: "The onion is small."
+        bases:
+          "L'oignon": "onion"
+  "fr-0748":
+    native: "basket"
+    notes:
+      "n1": "Panier is 'basket', a masculine noun: un panier (a basket). It is carried by the shopper."
+    examples:
+      "Mon panier est plein.":
+        native: "My basket is full."
+        bases:
+          "panier": "basket"
+      "Je mets les fruits dans le panier.":
+        native: "I put the fruit in the basket."
+        bases:
+          "panier": "basket"
+  "fr-0749":
+    native: "checkout; till"
+    notes:
+      "n1": "Caisse is 'checkout' or 'till', a feminine noun: à la caisse (at the checkout)."
+    examples:
+      "La caisse est là.":
+        native: "The checkout is there."
+        bases:
+          "caisse": "checkout; till"
+      "Je paie à la caisse.":
+        native: "I pay at the checkout."
+        bases:
+          "à": "to; at; in"
+          "caisse": "checkout; till"
+  "fr-0750":
+    native: "change; coins"
+    notes:
+      "n1": "Monnaie is 'change' or 'coins', the money you get back after paying. It is a feminine noun."
+    examples:
+      "Vous avez la monnaie ?":
+        native: "Do you have the change?"
+        bases:
+          "monnaie": "change; coins"
+      "Je n'ai pas de monnaie.":
+        native: "I have no change."
+        bases:
+          "pas": "not"
+          "de": "of; from; some"
+          "monnaie": "change; coins"
+  "fr-0751":
+    native: "money"
+    notes:
+      "n1": "Argent is 'money', a masculine noun. It is what you use to pay, and also 'silver'."
+    examples:
+      "Je n'ai pas d'argent.":
+        native: "I have no money."
+        bases:
+          "pas": "not"
+          "d'argent": "money"
+      "L'argent est important.":
+        native: "Money is important."
+        bases:
+          "L'argent": "money"
+  "fr-0752":
+    native: "to cost"
+    notes:
+      "n1": "Coûter is 'to cost', and it is used with the price: ça coûte cher (it costs a lot). The circumflex is kept in the spelling."
+    examples:
+      "Ça coûte cher.":
+        native: "It costs a lot."
+        bases:
+          "Ça": "that; it (informal)"
+          "coûte": "to cost"
+      "Combien ça coûte ?":
+        native: "How much does it cost?"
+        bases:
+          "ça": "that; it (informal)"
+          "coûte": "to cost"
+  "fr-0753":
+    native: "fresh; cool"
+    notes:
+      "n1": "Frais is 'fresh' or 'cool'. The feminine is fraîche (fʁɛʃ), with a circumflex."
+    examples:
+      "Les fruits sont frais.":
+        native: "The fruit is fresh."
+        bases:
+          "frais": "fresh; cool"
+      "L'eau est fraîche.":
+        native: "The water is cool."
+        bases:
+          "fraîche": "fresh; cool"
+  "fr-0754":
+    native: "ripe"
+    notes:
+      "n1": "Mûr is 'ripe'. The feminine is mûre (myʁ), said the same."
+    examples:
+      "La pomme est mûre.":
+        native: "The apple is ripe."
+        bases:
+          "mûre": "ripe"
+      "Les poires sont mûres.":
+        native: "The pears are ripe."
+        bases:
+          "mûres": "ripe"
+  "fr-0755":
+    native: "orange (fruit)"
+    notes:
+      "n1": "Orange is 'orange', the fruit, a feminine noun. The same word is an adjective for the colour, which is taught later."
+    examples:
+      "Je mange une orange.":
+        native: "I eat an orange."
+        bases:
+          "orange": "orange (fruit)"
+      "L'orange est bonne.":
+        native: "The orange is good."
+        bases:
+          "L'orange": "orange (fruit)"
+  "fr-0756":
+    native: "cherry"
+    notes:
+      "n1": "Cerise is 'cherry', a feminine noun. It is a small round fruit with a stone."
+    examples:
+      "Les cerises sont bonnes.":
+        native: "The cherries are good."
+        bases:
+          "cerises": "cherry"
+      "Je mange des cerises.":
+        native: "I eat cherries."
+        bases:
+          "cerises": "cherry"
+  "fr-0757":
+    native: "grape; grapes"
+    notes:
+      "n1": "Raisin is 'grape', a masculine noun. Du raisin is 'some grapes', said as a mass."
+    examples:
+      "Le raisin est bon.":
+        native: "The grape is good."
+        bases:
+          "raisin": "grape; grapes"
+      "Nous achetons du raisin.":
+        native: "We buy grapes."
+        bases:
+          "du": "of the (masculine); some"
+          "raisin": "grape; grapes"
+  "fr-0758":
+    native: "merchant; trader"
+    notes:
+      "n1": "Marchand is 'merchant' or 'trader', a masculine noun. The feminine is marchande."
+    examples:
+      "Le marchand est gentil.":
+        native: "The merchant is kind."
+        bases:
+          "marchand": "merchant; trader"
+      "Mon ami parle au marchand.":
+        native: "My friend speaks to the merchant."
+        bases:
+          "au": "to the (masculine)"
+          "marchand": "merchant; trader"
+  "fr-0759":
+    native: "stall"
+    notes:
+      "n1": "Étal is 'stall', the table or counter where things are sold at a market. It is a masculine noun."
+    examples:
+      "L'étal est plein.":
+        native: "The stall is full."
+        bases:
+          "L'étal": "stall"
+      "Le marchand est à son étal.":
+        native: "The merchant is at his stall."
+        bases:
+          "à": "to; at; in"
+          "étal": "stall"

@@ -1,0 +1,67 @@
+schema: 1
+id: "fr-en-articles"
+kind: "layer"
+core: "fr-articles"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The articles: le, la, les, un, une and des"
+license: "CC-BY-SA-4.0"
+description: "The words for the, a and some: le, la, les, un, une and des, with the gender of each noun and elision before a vowel. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-0543":
+    native: "the (masculine)"
+    notes:
+      "n1": "Le is 'the' before a masculine noun: le sac (the bag). Before a vowel or a silent h it becomes l': l'ami (the friend)."
+    examples:
+      "Le sac est sur la table.":
+        native: "The bag is on the table."
+        bases:
+          "Le": "the (masculine)"
+      "Le train est rapide.":
+        native: "The train is fast."
+        bases:
+          "Le": "the (masculine)"
+  "fr-0544":
+    native: "the (feminine)"
+    notes:
+      "n1": "La is 'the' before a feminine noun: la gare (the station). Before a vowel it becomes l': l'adresse (the address)."
+      "n2": "Only the accent differs from là (there): la, without it, is the feminine article 'the'."
+    examples:
+      "La gare est loin.":
+        native: "The station is far."
+        bases:
+          "La": "the (feminine)"
+      "La rue est à droite.":
+        native: "The street is on the right."
+        bases:
+          "La": "the (feminine)"
+          "à": "to; at; in"
+  "fr-0545":
+    native: "a; an (feminine)"
+    notes:
+      "n1": "Une is 'a' or 'an' before a feminine noun: une tasse (a cup). Un is the masculine form."
+    examples:
+      "Il a une tasse.":
+        native: "He has a cup."
+        bases:
+          "une": "a; an (feminine)"
+      "Une clé est sous le sac.":
+        native: "A key is under the bag."
+        bases:
+          "Une": "a; an (feminine)"
+  "fr-0546":
+    native: "some; of the (plural)"
+    notes:
+      "n1": "Des is the plural of un and une: des amis (some friends). Use it for a few things or people, not for one."
+    examples:
+      "J'ai des amis.":
+        native: "I have some friends."
+        bases:
+          "des": "some; of the (plural)"
+      "Des tasses sont sur la table.":
+        native: "Some cups are on the table."
+        bases:
+          "Des": "some; of the (plural)"
+  "fr-0547":
+    native: "the articles: le, la, les, un, une, des"
+    explanation: "French has six small words that go before a noun: le and la for 'the' (le for a masculine noun, la for a feminine one), les for 'the' in the plural, un and une for 'a' or 'an', and des for some or the plural of a. Each goes with a noun whose gender you learn, and the plural forms do not change for gender."

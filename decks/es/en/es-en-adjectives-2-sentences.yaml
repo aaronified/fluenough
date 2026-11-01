@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-adjectives-2-sentences"
+kind: "layer"
+core: "es-adjectives-2-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: describing a room"
+license: "CC-BY-SA-4.0"
+description: "Six sentences that describe a room and a house, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1834":
+    native: "The living room is spacious and bright."
+    bases: { "El": "the" }
+    confusables: { "oscuro": { why: "Oscuro is dark, the opposite of bright." }, "estrecho": { why: "Estrecho is narrow, the opposite of spacious." } }
+  "es-1835":
+    native: "The kitchen is modern, but the bathroom is old."
+    bases: { "La": "the", "el": "the" }
+    confusables: { "incomodo": { why: "Incómodo is uncomfortable, not old." }, "nuevo": { why: "Nuevo is new, the opposite of antiguo." } }
+  "es-1836":
+    native: "The sofa is comfortable and the floor is wood."
+    bases: { "El": "the", "de": "of" }
+    confusables: { "cuero": { why: "Cuero is leather, a material for furniture." }, "alfombra": { why: "Alfombra is a rug, a covering on the floor." } }
+  "es-1837":
+    native: "There is a lot of noise in the street."
+    bases: { "Hay": "there is; there are", "ruido": "noise", "en": "in", "la": "the" }
+    confusables: { "silencioso": { why: "Silencioso is quiet, the opposite of noisy." }, "ruidoso": { why: "Ruidoso is noisy, the adjective of the same idea." } }
+  "es-1838":
+    native: "The flat is furnished and tidy."
+    bases: { "El": "the" }
+    confusables: { "mueble": { why: "Mueble is a piece of furniture, a single item." }, "vacio": { why: "Vacío is empty, the opposite of furnished." } }
+  "es-1839":
+    native: "We go up the stairs to the attic."
+    bases: { "la": "the", "hasta": "until", "el": "the" }
+    confusables: { "balcon": { why: "Balcón is a balcony, outside the room." }, "sotano": { why: "Sótano is the basement, below the ground." } }

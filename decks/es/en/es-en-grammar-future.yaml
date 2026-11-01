@@ -1,0 +1,25 @@
+schema: 1
+id: "es-en-grammar-future"
+kind: "layer"
+core: "es-grammar-future"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Future: I will"
+license: "CC-BY-SA-4.0"
+description: "The future is easy in Spanish: the whole infinitive plus an ending, hablaré, comeré, viviré, I will speak, eat, live. A few verbs shorten their stem: tendré, haré, podré, diré, sabré, I will have, do, be able to, say, know. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Future of regular and irregular verbs"
+  slot_name: "person"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "yo": "I", "tú": "you (informal)", "él/ella": "he, she, or you (formal)", "nosotros": "we", "vosotros": "you all (Spain)", "ellos": "they" }
+  entries:
+    "hablar": "to speak"
+    "comer": "to eat"
+    "vivir": "to live"
+    "tener": "to have"
+    "hacer": "to do; to make"
+    "poder": "to be able to"
+    "venir": "to come"
+    "decir": "to say"
+    "poner": "to put"
+    "saber": "to know"
+  notes: "Add the endings -é, -ás, -á, -emos, -éis, -án to the whole infinitive: hablaré, comerás, vivirá. Ten verbs use a short stem with the same endings: tendr- (tendré), har- (haré), podr- (podré), vendr- (vendré), dir- (diré), pondr- (pondré), sabr- (sabré), querr- (querré) and saldr- (saldré). The same forms also mean probability in talk: ¿Qué hora será? What time can it be?"

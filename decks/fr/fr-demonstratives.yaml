@@ -1,0 +1,32 @@
+schema: 1
+id: "fr-demonstratives"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0644"
+    target: "cet"
+    ipa: "sɛt"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cet ami est gentil.", ipa: "sɛt ami ɛ ʒɑ̃ti", bases: [{ word: "Cet", base: "cet" }, { word: "ami", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "gentil", ref: "fr-0434" }] }
+      - { target: "Je travaille avec cet ami.", ipa: "ʒə tʁavaj avɛk sɛt ami", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }, { word: "avec", ref: "fr-0590" }, { word: "cet", base: "cet" }, { word: "ami", ref: "fr-0100" }] }
+  - id: "fr-0645"
+    target: "ces"
+    ipa: "se"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ces amis sont là.", ipa: "se zami sɔ̃ la", bases: [{ word: "Ces", base: "ces" }, { word: "amis", ref: "fr-0100" }, { word: "sont", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Ces tables sont grandes.", ipa: "se tabl sɔ̃ ɡʁɑ̃d", bases: [{ word: "Ces", base: "ces" }, { word: "tables", ref: "fr-0486" }, { word: "sont", ref: "fr-0021" }, { word: "grandes", ref: "fr-0410" }] }
+  - kind: "set"
+    id: "fr-0646"
+    members: [{ ref: "fr-0143" }, { ref: "fr-0644" }, { ref: "fr-0144" }, { ref: "fr-0645" }]

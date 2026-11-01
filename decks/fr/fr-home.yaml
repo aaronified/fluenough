@@ -1,0 +1,253 @@
+schema: 1
+id: "fr-home"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0996"
+    target: "maison"
+    ipa: "mɛzɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La maison est grande.", ipa: "la mɛzɔ̃ ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "maison", base: "maison" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Ma maison est près du parc.", ipa: "ma mɛzɔ̃ ɛ pʁɛ dy paʁk", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "maison", base: "maison" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "du", base: "du" }, { word: "parc", ref: "fr-0968" }] }
+  - id: "fr-0997"
+    target: "appartement"
+    ipa: "apaʁtəmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon appartement est petit.", ipa: "mɔ̃n apaʁtəmɑ̃ ɛ pəti", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "appartement", base: "appartement" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+      - { target: "J'habite dans un appartement.", ipa: "ʒabit dɑ̃ zœ̃n apaʁtəmɑ̃", bases: [{ word: "J'habite", ref: "fr-0251" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "appartement", base: "appartement" }] }
+  - id: "fr-0998"
+    target: "chambre"
+    ipa: "ʃɑ̃bʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La chambre est calme.", ipa: "la ʃɑ̃bʁ ɛ kalm", bases: [{ word: "La", ref: "fr-0544" }, { word: "chambre", base: "chambre" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+      - { target: "Je dors dans la chambre.", ipa: "ʒə dɔʁ dɑ̃ la ʃɑ̃bʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "chambre", base: "chambre" }] }
+  - id: "fr-0999"
+    target: "salon"
+    ipa: "salɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le salon est grand.", ipa: "lə salɔ̃ ɛ ɡʁɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "salon", base: "salon" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "Nous mangeons dans le salon.", ipa: "nu mɑ̃ʒɔ̃ dɑ̃ lə salɔ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "salon", base: "salon" }] }
+  - id: "fr-1000"
+    target: "jardin"
+    ipa: "ʒaʁdɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le jardin est joli.", ipa: "lə ʒaʁdɛ̃ ɛ ʒoli", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jardin", base: "jardin" }, { word: "est", ref: "fr-0021" }, { word: "joli", ref: "fr-0414" }] }
+      - { target: "Nous jouons dans le jardin.", ipa: "nu ʒwɔ̃ dɑ̃ lə ʒaʁdɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "jouons", ref: "fr-0308" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "jardin", base: "jardin" }] }
+  - id: "fr-1001"
+    target: "balcon"
+    ipa: "balkɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le balcon est petit.", ipa: "lə balkɔ̃ ɛ pəti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "balcon", base: "balcon" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+      - { target: "Je travaille sur le balcon.", ipa: "ʒə tʁavaj syʁ lə balkɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "balcon", base: "balcon" }] }
+  - id: "fr-1002"
+    target: "escalier"
+    ipa: "ɛskalje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'escalier est long.", ipa: "lɛskalje ɛ lɔ̃", bases: [{ word: "L'escalier", base: "escalier" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Je monte l'escalier.", ipa: "ʒə mɔ̃t lɛskalje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "monte", ref: "fr-0516" }, { word: "l'escalier", base: "escalier" }] }
+  - id: "fr-1003"
+    target: "porte"
+    ipa: "pɔʁt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La porte est ouverte.", ipa: "la pɔʁt ɛ uvɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "porte", base: "porte" }, { word: "est", ref: "fr-0021" }, { word: "ouverte", ref: "fr-0437" }] }
+      - { target: "Fermez la porte.", ipa: "fɛʁme la pɔʁt", bases: [{ word: "Fermez", ref: "fr-0299" }, { word: "la", ref: "fr-0544" }, { word: "porte", base: "porte" }] }
+  - id: "fr-1004"
+    target: "fenêtre"
+    ipa: "fənɛtʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fenêtre est fermée.", ipa: "la fənɛtʁ ɛ fɛʁme", bases: [{ word: "La", ref: "fr-0544" }, { word: "fenêtre", base: "fenêtre" }, { word: "est", ref: "fr-0021" }, { word: "fermée", ref: "fr-0438" }] }
+      - { target: "Ouvrez la fenêtre.", ipa: "uvʁe la fənɛtʁ", bases: [{ word: "Ouvrez", ref: "fr-0298" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", base: "fenêtre" }] }
+  - id: "fr-1005"
+    target: "lit"
+    ipa: "li"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le lit est petit.", ipa: "lə li ɛ pəti", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lit", base: "lit" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+      - { target: "Je dors dans un lit.", ipa: "ʒə dɔʁ dɑ̃ zœ̃ li", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "lit", base: "lit" }] }
+  - id: "fr-1006"
+    target: "chaise"
+    ipa: "ʃɛz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La chaise est là.", ipa: "la ʃɛz ɛ la", bases: [{ word: "La", ref: "fr-0544" }, { word: "chaise", base: "chaise" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "Je prends une chaise.", ipa: "ʒə pʁɑ̃ yn ʃɛz", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "chaise", base: "chaise" }] }
+  - id: "fr-1007"
+    target: "canapé"
+    ipa: "kanape"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le canapé est grand.", ipa: "lə kanape ɛ ɡʁɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "canapé", base: "canapé" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "Je dors sur le canapé.", ipa: "ʒə dɔʁ syʁ lə kanape", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "canapé", base: "canapé" }] }
+  - id: "fr-1008"
+    target: "frigo"
+    ipa: "fʁiɡo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le frigo est plein.", ipa: "lə fʁiɡo ɛ plɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "frigo", base: "frigo" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Le frigo est vide.", ipa: "lə fʁiɡo ɛ vid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "frigo", base: "frigo" }, { word: "est", ref: "fr-0021" }, { word: "vide", ref: "fr-0440" }] }
+  - id: "fr-1009"
+    target: "douche"
+    ipa: "duʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La douche est froide.", ipa: "la duʃ ɛ fʁwad", bases: [{ word: "La", ref: "fr-0544" }, { word: "douche", base: "douche" }, { word: "est", ref: "fr-0021" }, { word: "froide", ref: "fr-0420" }] }
+      - { target: "Je prends une douche.", ipa: "ʒə pʁɑ̃ yn duʃ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "douche", base: "douche" }] }
+  - id: "fr-1010"
+    target: "étage"
+    ipa: "etaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'étage est haut.", ipa: "letaʒ ɛ o", bases: [{ word: "L'étage", base: "étage" }, { word: "est", ref: "fr-0021" }, { word: "haut", ref: "fr-0423" }] }
+      - { target: "Ma chambre est à l'étage.", ipa: "ma ʃɑ̃bʁ ɛ a letaʒ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "chambre", ref: "fr-0998" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "l'étage", base: "étage" }] }
+  - id: "fr-1011"
+    target: "immeuble"
+    ipa: "imœbl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'immeuble est grand.", ipa: "limœbl ɛ ɡʁɑ̃", bases: [{ word: "L'immeuble", base: "immeuble" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "J'habite dans un immeuble.", ipa: "ʒabit dɑ̃ zœ̃n imœbl", bases: [{ word: "J'habite", ref: "fr-0251" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "immeuble", base: "immeuble" }] }
+  - id: "fr-1012"
+    target: "garage"
+    ipa: "ɡaʁaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le garage est fermé.", ipa: "lə ɡaʁaʒ ɛ fɛʁme", bases: [{ word: "Le", ref: "fr-0543" }, { word: "garage", base: "garage" }, { word: "est", ref: "fr-0021" }, { word: "fermé", ref: "fr-0438" }] }
+      - { target: "Je mets la voiture dans le garage.", ipa: "ʒə mɛ la vwatyʁ dɑ̃ lə ɡaʁaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "la", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "garage", base: "garage" }] }
+  - id: "fr-1013"
+    target: "toilette"
+    ipa: "twalɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La toilette est propre.", ipa: "la twalɛt ɛ pʁɔpʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "toilette", base: "toilette" }, { word: "est", ref: "fr-0021" }, { word: "propre", ref: "fr-0427" }] }
+      - { target: "Où est la toilette ?", ipa: "u ɛ la twalɛt", bases: [{ word: "Où", ref: "fr-0067" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "toilette", base: "toilette" }] }
+  - id: "fr-1014"
+    target: "salle"
+    ipa: "sal"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La salle est grande.", ipa: "la sal ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "salle", base: "salle" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Nous travaillons dans la salle.", ipa: "nu tʁavajɔ̃ dɑ̃ la sal", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "travaillons", ref: "fr-0252" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "salle", base: "salle" }] }
+  - id: "fr-1015"
+    target: "mur"
+    ipa: "myʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "lookalike", ref: "fr-0754" }
+    bases: "self"
+    examples:
+      - { target: "Le mur est haut.", ipa: "lə myʁ ɛ o", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mur", base: "mur" }, { word: "est", ref: "fr-0021" }, { word: "haut", ref: "fr-0423" }] }
+      - { target: "Le mur est froid.", ipa: "lə myʁ ɛ fʁwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mur", base: "mur" }, { word: "est", ref: "fr-0021" }, { word: "froid", ref: "fr-0420" }] }
+  - id: "fr-1016"
+    target: "sol"
+    ipa: "sɔl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sol est sale.", ipa: "lə sɔl ɛ sal", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sol", base: "sol" }, { word: "est", ref: "fr-0021" }, { word: "sale", ref: "fr-0428" }] }
+      - { target: "Le sol est propre.", ipa: "lə sɔl ɛ pʁɔpʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sol", base: "sol" }, { word: "est", ref: "fr-0021" }, { word: "propre", ref: "fr-0427" }] }
+  - id: "fr-1017"
+    target: "lampe"
+    ipa: "lɑ̃p"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La lampe est sur la table.", ipa: "la lɑ̃p ɛ syʁ la tabl", bases: [{ word: "La", ref: "fr-0544" }, { word: "lampe", base: "lampe" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "La lampe est petite.", ipa: "la lɑ̃p ɛ pətit", bases: [{ word: "La", ref: "fr-0544" }, { word: "lampe", base: "lampe" }, { word: "est", ref: "fr-0021" }, { word: "petite", ref: "fr-0411" }] }

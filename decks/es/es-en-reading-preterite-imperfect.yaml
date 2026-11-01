@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-preterite-imperfect"
+name: "Reading: a trip with a turn"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short stories with the background in the imperfect and the events in the preterite. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-story-of-the-trip"
+    title: "A short story of a trip"
+    theme: "journey"
+    sentences:
+      - text: "Cuando éramos niños, íbamos al campo cada verano."
+      - text: "Un año, llovía mucho y el tren llegó tarde."
+      - text: "Estábamos cansados, pero estábamos felices."
+      - text: "El tío Pedro nos esperó en la estación."
+    questions:
+      - id: "es-1742"
+        prompt: { en: "What was usual in summer?" }
+        options:
+          - { en: "Going to the countryside" }
+          - { en: "Staying at school" }
+          - { en: "Going to the sea" }
+        answer: 1
+      - id: "es-1743"
+        prompt: { en: "What happened one year?" }
+        options:
+          - { en: "The train arrived late" }
+          - { en: "The train was cancelled" }
+          - { en: "The uncle was ill" }
+        answer: 1
+      - id: "es-1744"
+        prompt: { en: "Who waited at the station?" }
+        options:
+          - { en: "The teacher" }
+          - { en: "Uncle Pedro" }
+          - { en: "The driver" }
+        answer: 2
+  - id: "es-phone-call-story"
+    title: "The phone rang"
+    theme: "phone"
+    sentences:
+      - text: "Ayer estudiábamos cuando sonó el teléfono."
+      - text: "Mi hermana tenía fiebre y dormía."
+      - text: "Mi madre llegó a casa con la cena."
+      - text: "Hablé con el médico por teléfono."
+    questions:
+      - id: "es-1745"
+        prompt: { en: "What were they doing when the phone rang?" }
+        options:
+          - { en: "Eating" }
+          - { en: "Studying" }
+          - { en: "Sleeping" }
+        answer: 2
+      - id: "es-1746"
+        prompt: { en: "What did the sister have?" }
+        options:
+          - { en: "A cold" }
+          - { en: "A fever" }
+          - { en: "A headache" }
+        answer: 2
+      - id: "es-1747"
+        prompt: { en: "Who arrived home?" }
+        options:
+          - { en: "The father" }
+          - { en: "The mother" }
+          - { en: "The brother" }
+        answer: 2

@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-services"
+name: "Reading: a bank form and a post office"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a simple bank form, and a note about sending a parcel and a postcard. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-bank-form"
+    title: "A simple bank form"
+    theme: "services"
+    sentences:
+      - text: "Nombre y apellido: Ana López."
+      - text: "Tipo de cuenta: cuenta corriente."
+      - text: "Ingreso mensual: 1500 euros."
+      - text: "Firme aquí, por favor."
+    questions:
+      - id: "es-2254"
+        prompt: { en: "What is the monthly income?" }
+        options:
+          - { en: "1500 euros" }
+          - { en: "150 euros" }
+          - { en: "15000 euros" }
+        answer: 1
+      - id: "es-2255"
+        prompt: { en: "What type of account is it?" }
+        options:
+          - { en: "A savings account" }
+          - { en: "A current account" }
+          - { en: "A loan" }
+        answer: 2
+      - id: "es-2256"
+        prompt: { en: "What should the applicant do?" }
+        options:
+          - { en: "Call the bank" }
+          - { en: "Sign here" }
+          - { en: "Pay the fee" }
+        answer: 2
+  - id: "es-post-office-note"
+    title: "A note about the post"
+    theme: "services"
+    sentences:
+      - text: "Quiero enviar un paquete a Lima."
+      - text: "Necesito un sello para la postal."
+      - text: "El sobre tiene la dirección del remitente."
+      - text: "Espero en la ventanilla número tres."
+    questions:
+      - id: "es-2257"
+        prompt: { en: "Where is the parcel going?" }
+        options:
+          - { en: "To Lima" }
+          - { en: "To Bogotá" }
+          - { en: "To Madrid" }
+        answer: 1
+      - id: "es-2258"
+        prompt: { en: "What is needed for the postcard?" }
+        options:
+          - { en: "A stamp" }
+          - { en: "A code" }
+          - { en: "A form" }
+        answer: 1
+      - id: "es-2259"
+        prompt: { en: "Where does the writer wait?" }
+        options:
+          - { en: "At the bank" }
+          - { en: "At window three" }
+          - { en: "At the door" }
+        answer: 2

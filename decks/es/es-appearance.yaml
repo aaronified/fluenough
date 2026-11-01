@@ -1,0 +1,566 @@
+schema: 1
+id: "es-appearance"
+part: "core"
+kind: "vocab"
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+license: "CC-BY-SA-4.0"
+theme: "appearance"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "es-1548"
+    target: "el aspecto"
+    ipa: "el asˈpekto"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "aspecto", base: "aspecto" }]
+    examples:
+      - target: "Su aspecto es muy elegante."
+        ipa: "su asˈpekto es mwi eleˈɡante"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "aspecto", base: "aspecto" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "elegante", ref: "es-1042" }]
+      - target: "El aspecto de la casa es bonito."
+        ipa: "el asˈpekto de la ˈkasa es boˈnito"
+        bases: [{ word: "El", base: "el" }, { word: "aspecto", base: "aspecto" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "casa", ref: "es-0006" }, { word: "es", ref: "es-0022" }, { word: "bonito", ref: "es-0405" }]
+  - id: "es-1549"
+    target: "la apariencia"
+    ipa: "la apaˈɾjenθja"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "apariencia", base: "apariencia" }]
+    examples:
+      - target: "La apariencia no es lo importante."
+        ipa: "la apaˈɾjenθja no es lo impoɾˈtante"
+        bases: [{ word: "La", base: "la" }, { word: "apariencia", base: "apariencia" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "lo", base: "lo" }, { word: "importante", ref: "es-0435" }]
+      - target: "Tiene una apariencia joven."
+        ipa: "ˈtjene ˈuna apaˈɾjenθja ˈxoben"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "apariencia", base: "apariencia" }, { word: "joven", ref: "es-0256" }]
+  - id: "es-1550"
+    target: "el cabello"
+    ipa: "el kaˈbeʝo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cabello", base: "cabello" }]
+    examples:
+      - target: "Tiene el cabello largo."
+        ipa: "ˈtjene el kaˈbeʝo ˈlaɾɡo"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "cabello", base: "cabello" }, { word: "largo", ref: "es-0429" }]
+      - target: "Su cabello es negro."
+        ipa: "su kaˈbeʝo es ˈneɡɾo"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "cabello", base: "cabello" }, { word: "es", ref: "es-0022" }, { word: "negro", ref: "es-1011" }]
+  - id: "es-1551"
+    target: "la barba"
+    ipa: "la ˈbaɾba"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "barba", base: "barba" }]
+    examples:
+      - target: "Mi padre tiene barba."
+        ipa: "mi ˈpadɾe ˈtjene ˈbaɾba"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "tiene", ref: "es-0024" }, { word: "barba", base: "barba" }]
+      - target: "La barba es gris."
+        ipa: "la ˈbaɾba es ɡɾis"
+        bases: [{ word: "La", base: "la" }, { word: "barba", base: "barba" }, { word: "es", ref: "es-0022" }, { word: "gris", ref: "es-1013" }]
+  - id: "es-1552"
+    target: "el bigote"
+    ipa: "el biˈɡote"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "bigote", base: "bigote" }]
+    examples:
+      - target: "Él tiene bigote."
+        ipa: "el ˈtjene biˈɡote"
+        bases: [{ word: "Él", ref: "es-0120" }, { word: "tiene", ref: "es-0024" }, { word: "bigote", base: "bigote" }]
+      - target: "El bigote es negro."
+        ipa: "el biˈɡote es ˈneɡɾo"
+        bases: [{ word: "El", base: "el" }, { word: "bigote", base: "bigote" }, { word: "es", ref: "es-0022" }, { word: "negro", ref: "es-1011" }]
+  - id: "es-1553"
+    target: "el labio"
+    ipa: "el ˈlabjo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "labio", base: "labio" }]
+    examples:
+      - target: "Tiene los labios rojos."
+        ipa: "ˈtjene los ˈlabjos ˈroxos"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "los", base: "los" }, { word: "labios", base: "labio" }, { word: "rojos", ref: "es-1007" }]
+      - target: "Se muerde el labio."
+        ipa: "se ˈmweɾde el ˈlabjo"
+        bases: [{ word: "Se", base: "se" }, { word: "muerde", base: "morder" }, { word: "el", base: "el" }, { word: "labio", base: "labio" }]
+  - id: "es-1554"
+    target: "la cara"
+    ipa: "la ˈkaɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cara", base: "cara" }]
+    examples:
+      - target: "Tiene una cara bonita."
+        ipa: "ˈtjene ˈuna ˈkaɾa boˈnita"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "cara", base: "cara" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Su cara es redonda."
+        ipa: "su ˈkaɾa es reˈdonda"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "cara", base: "cara" }, { word: "es", ref: "es-0022" }, { word: "redonda", base: "redondo" }]
+  - id: "es-1555"
+    target: "la frente"
+    ipa: "la ˈfɾente"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "frente", base: "frente" }]
+    examples:
+      - target: "Tiene una frente alta."
+        ipa: "ˈtjene ˈuna ˈfɾente ˈalta"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "frente", base: "frente" }, { word: "alta", base: "alto" }]
+      - target: "Me pongo la mano en la frente."
+        ipa: "me ˈponɡo la ˈmano en la ˈfɾente"
+        bases: [{ word: "Me", base: "me" }, { word: "pongo", base: "poner" }, { word: "la", base: "la" }, { word: "mano", ref: "es-0738" }, { word: "en", base: "en" }, { word: "frente", base: "frente" }]
+  - id: "es-1556"
+    target: "el hombro"
+    ipa: "el ˈombɾo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "hombro", base: "hombro" }]
+    examples:
+      - target: "Lleva la mochila en el hombro."
+        ipa: "ˈʝeba la moˈtʃila en el ˈombɾo"
+        bases: [{ word: "Lleva", ref: "es-0623" }, { word: "la", base: "la" }, { word: "mochila", ref: "es-0916" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "hombro", base: "hombro" }]
+      - target: "Me duele el hombro."
+        ipa: "me ˈdwele el ˈombɾo"
+        bases: [{ word: "Me", base: "me" }, { word: "duele", ref: "es-0754" }, { word: "el", base: "el" }, { word: "hombro", base: "hombro" }]
+  - id: "es-1557"
+    target: "la cintura"
+    ipa: "la θinˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "cintura", base: "cintura" }]
+    examples:
+      - target: "Tiene la cintura delgada."
+        ipa: "ˈtjene la θinˈtuɾa delˈɡada"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "la", base: "la" }, { word: "cintura", base: "cintura" }, { word: "delgada", ref: "es-0437" }]
+      - target: "La cintura es pequeña."
+        ipa: "la θinˈtuɾa es peˈkeɲa"
+        bases: [{ word: "La", base: "la" }, { word: "cintura", base: "cintura" }, { word: "es", ref: "es-0022" }, { word: "pequeña", ref: "es-0032" }]
+  - id: "es-1558"
+    target: "gordo"
+    ipa: "ˈɡoɾdo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "gordo", base: "gordo" }]
+    examples:
+      - target: "El gato es gordo."
+        ipa: "el ˈɡato es ˈɡoɾdo"
+        bases: [{ word: "El", base: "el" }, { word: "gato", ref: "es-1062" }, { word: "es", ref: "es-0022" }, { word: "gordo", base: "gordo" }]
+      - target: "Mi tío no es gordo."
+        ipa: "mi ˈtio no es ˈɡoɾdo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "tío", ref: "es-0167" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "gordo", base: "gordo" }]
+  - id: "es-1559"
+    target: "mayor"
+    ipa: "maˈʝoɾ"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "mayor", base: "mayor" }]
+    examples:
+      - target: "Mi hermana es mayor que yo."
+        ipa: "mi eɾˈmana es maˈʝoɾ ke ʝo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "hermana", ref: "es-0162" }, { word: "es", ref: "es-0022" }, { word: "mayor", base: "mayor" }, { word: "que", base: "que" }, { word: "yo", ref: "es-0119" }]
+      - target: "Es la persona mayor de la familia."
+        ipa: "es la peɾˈsona maˈʝoɾ de la faˈmilja"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "persona", ref: "es-0135" }, { word: "mayor", base: "mayor" }, { word: "de", base: "de" }, { word: "familia", ref: "es-0158" }]
+  - id: "es-1560"
+    target: "atractivo"
+    ipa: "atɾakˈtibo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "atractivo", base: "atractivo" }]
+    examples:
+      - target: "Es un hombre atractivo."
+        ipa: "es un ˈombɾe atɾakˈtibo"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "hombre", ref: "es-0001" }, { word: "atractivo", base: "atractivo" }]
+      - target: "Su sonrisa es muy atractiva"
+        ipa: "su sonˈrisa es mwi atɾakˈtiba"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "sonrisa", ref: "es-1581" }, { word: "es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "atractiva", base: "atractivo" }]
+  - id: "es-1561"
+    target: "pelirrojo"
+    ipa: "peliˈroxo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "pelirrojo", base: "pelirrojo" }]
+    examples:
+      - target: "Mi amigo es pelirrojo."
+        ipa: "mi aˈmiɡo es peliˈroxo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "amigo", ref: "es-0005" }, { word: "es", ref: "es-0022" }, { word: "pelirrojo", base: "pelirrojo" }]
+      - target: "Ella es pelirroja."
+        ipa: "ˈeʝa es peliˈroxa"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "es", ref: "es-0022" }, { word: "pelirroja", base: "pelirrojo" }]
+  - id: "es-1562"
+    target: "rubio"
+    ipa: "ˈrubjo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "rubio", base: "rubio" }]
+    examples:
+      - target: "El niño es rubio."
+        ipa: "el ˈniɲo es ˈrubjo"
+        bases: [{ word: "El", base: "el" }, { word: "niño", ref: "es-0003" }, { word: "es", ref: "es-0022" }, { word: "rubio", base: "rubio" }]
+      - target: "Tiene el pelo rubio."
+        ipa: "ˈtjene el ˈpelo ˈrubjo"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-0748" }, { word: "rubio", base: "rubio" }]
+  - id: "es-1563"
+    target: "moreno"
+    ipa: "moˈɾeno"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "moreno", base: "moreno" }]
+    examples:
+      - target: "Es moreno y alto."
+        ipa: "es moˈɾeno i ˈalto"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "moreno", base: "moreno" }, { word: "y", ref: "es-0048" }, { word: "alto", ref: "es-0254" }]
+      - target: "Mi madre es morena."
+        ipa: "mi ˈmadɾe es moˈɾena"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }, { word: "es", ref: "es-0022" }, { word: "morena", base: "moreno" }]
+  - id: "es-1564"
+    target: "castaño"
+    ipa: "kasˈtaɲo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "castaño", base: "castaño" }]
+    examples:
+      - target: "Tiene los ojos castaños."
+        ipa: "ˈtjene los ˈoxos kasˈtaɲos"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "los", base: "los" }, { word: "ojos", ref: "es-0741" }, { word: "castaños", base: "castaño" }]
+      - target: "Su pelo es castaño."
+        ipa: "su ˈpelo es kasˈtaɲo"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "pelo", ref: "es-0748" }, { word: "es", ref: "es-0022" }, { word: "castaño", base: "castaño" }]
+  - id: "es-1565"
+    target: "calvo"
+    ipa: "ˈkalbo"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "calvo", base: "calvo" }]
+    examples:
+      - target: "Mi abuelo es calvo."
+        ipa: "mi aˈbwelo es ˈkalbo"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "abuelo", ref: "es-0165" }, { word: "es", ref: "es-0022" }, { word: "calvo", base: "calvo" }]
+      - target: "Ella no es calva."
+        ipa: "ˈeʝa no es ˈkalba"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "no", ref: "es-0043" }, { word: "es", ref: "es-0022" }, { word: "calva", base: "calvo" }]
+  - id: "es-1566"
+    target: "rizado"
+    ipa: "riˈθado"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "rizado", base: "rizado" }]
+    examples:
+      - target: "Tiene el pelo rizado."
+        ipa: "ˈtjene el ˈpelo riˈθado"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "el", base: "el" }, { word: "pelo", ref: "es-0748" }, { word: "rizado", base: "rizado" }]
+      - target: "Sus rizos son bonitos."
+        ipa: "sus ˈriθos son boˈnitos"
+        bases: [{ word: "Sus", ref: "es-0131" }, { word: "rizos", base: "rizo" }, { word: "son", ref: "es-0022" }, { word: "bonitos", ref: "es-0405" }]
+  - id: "es-1567"
+    target: "liso"
+    ipa: "ˈliso"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "liso", base: "liso" }]
+    examples:
+      - target: "Mi pelo es liso."
+        ipa: "mi ˈpelo es ˈliso"
+        bases: [{ word: "Mi", ref: "es-0129" }, { word: "pelo", ref: "es-0748" }, { word: "es", ref: "es-0022" }, { word: "liso", base: "liso" }]
+      - target: "La piel es lisa."
+        ipa: "la pjel es ˈlisa"
+        bases: [{ word: "La", base: "la" }, { word: "piel", ref: "es-1576" }, { word: "es", ref: "es-0022" }, { word: "lisa", base: "liso" }]
+  - id: "es-1568"
+    target: "la altura"
+    ipa: "la alˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "altura", base: "altura" }]
+    examples:
+      - target: "La altura del edificio es grande."
+        ipa: "la alˈtuɾa del ediˈfiθjo es ˈɡɾande"
+        bases: [{ word: "La", base: "la" }, { word: "altura", base: "altura" }, { word: "del", base: "del" }, { word: "edificio", ref: "es-0786" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+      - target: "Mide un metro ochenta de altura."
+        ipa: "ˈmide un ˈmetɾo oˈtʃenta de alˈtuɾa"
+        bases: [{ word: "Mide", base: "medir" }, { word: "un", base: "un" }, { word: "metro", ref: "es-0675" }, { word: "ochenta", ref: "es-0541" }, { word: "de", base: "de" }, { word: "altura", base: "altura" }]
+  - id: "es-1569"
+    target: "el peso"
+    ipa: "el ˈpeso"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "peso", base: "peso" }]
+    examples:
+      - target: "El peso es importante para la salud."
+        ipa: "el ˈpeso es impoɾˈtante ˈpaɾa la saˈlud"
+        bases: [{ word: "El", base: "el" }, { word: "peso", base: "peso" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }, { word: "para", base: "para" }, { word: "la", base: "la" }, { word: "salud", ref: "es-1488" }]
+      - target: "Tengo que controlar el peso."
+        ipa: "ˈtenɡo ke kontɾoˈlaɾ el ˈpeso"
+        bases: [{ word: "Tengo", ref: "es-0024" }, { word: "que", base: "que" }, { word: "controlar", base: "controlar" }, { word: "el", base: "el" }, { word: "peso", base: "peso" }]
+  - id: "es-1570"
+    target: "la estatura"
+    ipa: "la estaˈtuɾa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "estatura", base: "estatura" }]
+    examples:
+      - target: "Tiene una estatura media."
+        ipa: "ˈtjene ˈuna estaˈtuɾa ˈmedja"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "estatura", base: "estatura" }, { word: "media", ref: "es-0368" }]
+      - target: "La estatura de mi padre es alta."
+        ipa: "la estaˈtuɾa de mi ˈpadɾe es ˈalta"
+        bases: [{ word: "La", base: "la" }, { word: "estatura", base: "estatura" }, { word: "de", base: "de" }, { word: "mi", ref: "es-0129" }, { word: "padre", ref: "es-0159" }, { word: "es", ref: "es-0022" }, { word: "alta", ref: "es-0254" }]
+  - id: "es-1571"
+    target: "el rasgo"
+    ipa: "el ˈrasɡo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "rasgo", base: "rasgo" }]
+    examples:
+      - target: "Su rasgo más claro es la sonrisa."
+        ipa: "su ˈrasɡo mas ˈklaɾo es la sonˈrisa"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "rasgo", base: "rasgo" }, { word: "más", ref: "es-0363" }, { word: "claro", ref: "es-0438" }, { word: "es", ref: "es-0022" }, { word: "la", base: "la" }, { word: "sonrisa", ref: "es-1581" }]
+      - target: "Es un rasgo de la familia."
+        ipa: "es un ˈrasɡo de la faˈmilja"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "un", base: "un" }, { word: "rasgo", base: "rasgo" }, { word: "de", base: "de" }, { word: "la", base: "la" }, { word: "familia", ref: "es-0158" }]
+  - id: "es-1572"
+    target: "la ceja"
+    ipa: "la ˈθexa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "ceja", base: "ceja" }]
+    examples:
+      - target: "Tiene las cejas gruesas."
+        ipa: "ˈtjene las ˈθexas ˈɡɾwesas"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "las", base: "las" }, { word: "cejas", base: "ceja" }, { word: "gruesas", base: "grueso" }]
+      - target: "Se pinta la ceja."
+        ipa: "se ˈpinta la ˈθexa"
+        bases: [{ word: "Se", base: "se" }, { word: "pinta", ref: "es-1404" }, { word: "la", base: "la" }, { word: "ceja", base: "ceja" }]
+  - id: "es-1573"
+    target: "la pestaña"
+    ipa: "la pesˈtaɲa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "pestaña", base: "pestaña" }]
+    examples:
+      - target: "Tiene pestañas largas."
+        ipa: "ˈtjene pesˈtaɲas ˈlaɾɡas"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "pestañas", base: "pestaña" }, { word: "largas", ref: "es-0429" }]
+      - target: "Una pestaña cae en el ojo."
+        ipa: "ˈuna pesˈtaɲa ˈkae en el ˈoxo"
+        bases: [{ word: "Una", base: "una" }, { word: "pestaña", base: "pestaña" }, { word: "cae", base: "caer" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "ojo", ref: "es-0741" }]
+  - id: "es-1574"
+    target: "la mejilla"
+    ipa: "la meˈxiʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "mejilla", base: "mejilla" }]
+    examples:
+      - target: "Ella tiene mejillas rojas."
+        ipa: "ˈeʝa ˈtjene meˈxiʝas ˈroxas"
+        bases: [{ word: "Ella", ref: "es-0121" }, { word: "tiene", ref: "es-0024" }, { word: "mejillas", base: "mejilla" }, { word: "rojas", ref: "es-1007" }]
+      - target: "Me da un beso en la mejilla."
+        ipa: "me da un ˈbeso en la meˈxiʝa"
+        bases: [{ word: "Me", base: "me" }, { word: "da", base: "dar" }, { word: "un", base: "un" }, { word: "beso", base: "beso" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "mejilla", base: "mejilla" }]
+  - id: "es-1575"
+    target: "la barbilla"
+    ipa: "la baɾˈbiʝa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "barbilla", base: "barbilla" }]
+    examples:
+      - target: "Se pone la mano en la barbilla."
+        ipa: "se ˈpone la ˈmano en la baɾˈbiʝa"
+        bases: [{ word: "Se", base: "se" }, { word: "pone", base: "poner" }, { word: "la", base: "la" }, { word: "mano", ref: "es-0738" }, { word: "en", base: "en" }, { word: "barbilla", base: "barbilla" }]
+      - target: "La barbilla es fuerte."
+        ipa: "la baɾˈbiʝa es ˈfweɾte"
+        bases: [{ word: "La", base: "la" }, { word: "barbilla", base: "barbilla" }, { word: "es", ref: "es-0022" }, { word: "fuerte", ref: "es-0432" }]
+  - id: "es-1576"
+    target: "la piel"
+    ipa: "la pjel"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "piel", base: "piel" }]
+    examples:
+      - target: "Tiene la piel muy clara."
+        ipa: "ˈtjene la pjel mwi ˈklaɾa"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "la", base: "la" }, { word: "piel", base: "piel" }, { word: "muy", ref: "es-0330" }, { word: "clara", ref: "es-0438" }]
+      - target: "La piel es sensible."
+        ipa: "la pjel es senˈsible"
+        bases: [{ word: "La", base: "la" }, { word: "piel", base: "piel" }, { word: "es", ref: "es-0022" }, { word: "sensible", base: "sensible" }]
+  - id: "es-1577"
+    target: "la arruga"
+    ipa: "la aˈruɡa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "arruga", base: "arruga" }]
+    examples:
+      - target: "Tiene arrugas en la cara."
+        ipa: "ˈtjene aˈruɡas en la ˈkaɾa"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "arrugas", base: "arruga" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "cara", base: "cara" }]
+      - target: "Las arrugas aparecen con la edad."
+        ipa: "las aˈruɡas apaˈɾeθen kon la eˈdad"
+        bases: [{ word: "Las", base: "las" }, { word: "arrugas", base: "arruga" }, { word: "aparecen", base: "aparecer" }, { word: "con", base: "con" }, { word: "la", base: "la" }, { word: "edad", ref: "es-0242" }]
+  - id: "es-1578"
+    target: "la peca"
+    ipa: "la ˈpeka"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "peca", base: "peca" }]
+    examples:
+      - target: "Tiene pecas en la nariz."
+        ipa: "ˈtjene ˈpekas en la naˈɾiθ"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "pecas", base: "peca" }, { word: "en", base: "en" }, { word: "la", base: "la" }, { word: "nariz", ref: "es-0743" }]
+      - target: "Las pecas son muy bonitas."
+        ipa: "las ˈpekas son mwi boˈnitas"
+        bases: [{ word: "Las", base: "las" }, { word: "pecas", base: "peca" }, { word: "son", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "bonitas", ref: "es-0405" }]
+  - id: "es-1579"
+    target: "el tatuaje"
+    ipa: "el taˈtwaxe"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "tatuaje", base: "tatuaje" }]
+    examples:
+      - target: "Tiene un tatuaje en el brazo."
+        ipa: "ˈtjene un taˈtwaxe en el ˈbɾaθo"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "un", base: "un" }, { word: "tatuaje", base: "tatuaje" }, { word: "en", base: "en" }, { word: "el", base: "el" }, { word: "brazo", ref: "es-0737" }]
+      - target: "El tatuaje es azul."
+        ipa: "el taˈtwaxe es aˈθul"
+        bases: [{ word: "El", base: "el" }, { word: "tatuaje", base: "tatuaje" }, { word: "es", ref: "es-0022" }, { word: "azul", ref: "es-1008" }]
+  - id: "es-1580"
+    target: "sonreír"
+    ipa: "sonreˈiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "sonreír", base: "sonreír" }]
+    examples:
+      - target: "Sonríe siempre."
+        ipa: "sonˈrie ˈsjempɾe"
+        bases: [{ word: "Sonríe", base: "sonreír" }, { word: "siempre", ref: "es-0320" }]
+      - target: "Me sonríe"
+        ipa: "me sonˈrie"
+        bases: [{ word: "Me", base: "me" }, { word: "sonríe", base: "sonreír" }]
+  - id: "es-1581"
+    target: "la sonrisa"
+    ipa: "la sonˈrisa"
+    pos: "noun"
+    gender: "f"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "la", base: "la" }, { word: "sonrisa", base: "sonrisa" }]
+    examples:
+      - target: "Tiene una sonrisa bonita."
+        ipa: "ˈtjene ˈuna sonˈrisa boˈnita"
+        bases: [{ word: "Tiene", ref: "es-0024" }, { word: "una", base: "una" }, { word: "sonrisa", base: "sonrisa" }, { word: "bonita", ref: "es-0405" }]
+      - target: "Su sonrisa es grande."
+        ipa: "su sonˈrisa es ˈɡɾande"
+        bases: [{ word: "Su", ref: "es-0131" }, { word: "sonrisa", base: "sonrisa" }, { word: "es", ref: "es-0022" }, { word: "grande", ref: "es-0031" }]
+  - id: "es-1582"
+    target: "reír"
+    ipa: "reˈiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "reír", base: "reír" }]
+    examples:
+      - target: "Ríe mucho con sus amigos."
+        ipa: "ˈrie ˈmutʃo kon sus aˈmiɡos"
+        bases: [{ word: "Ríe", base: "reír" }, { word: "mucho", ref: "es-0053" }, { word: "con", base: "con" }, { word: "sus", ref: "es-0131" }, { word: "amigos", ref: "es-0005" }]
+      - target: "Nos reímos juntos."
+        ipa: "nos reˈimos ˈxuntos"
+        bases: [{ word: "Nos", base: "nos" }, { word: "reímos", base: "reír" }, { word: "juntos", base: "juntos" }]
+  - id: "es-1583"
+    target: "parecerse"
+    ipa: "paɾeˈθeɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "parecerse", base: "parecerse" }]
+    examples:
+      - target: "Me parezco a mi madre."
+        ipa: "me paˈɾeθko a mi ˈmadɾe"
+        bases: [{ word: "Me", base: "me" }, { word: "parezco", base: "parecerse" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "madre", ref: "es-0160" }]
+      - target: "Os parecéis mucho."
+        ipa: "os paɾeˈθejs ˈmutʃo"
+        bases: [{ word: "Os", base: "os" }, { word: "parecéis", base: "parecerse" }, { word: "mucho", ref: "es-0053" }]
+  - id: "es-1584"
+    target: "parecer"
+    ipa: "paɾeˈθeɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "parecer", base: "parecer" }]
+    examples:
+      - target: "Parece muy joven."
+        ipa: "paˈɾeθe mwi ˈxoben"
+        bases: [{ word: "Parece", base: "parecer" }, { word: "muy", ref: "es-0330" }, { word: "joven", ref: "es-0256" }]
+      - target: "Parece cansado."
+        ipa: "paˈɾeθe kanˈsado"
+        bases: [{ word: "Parece", base: "parecer" }, { word: "cansado", ref: "es-0420" }]
+  - id: "es-1585"
+    target: "llamarse"
+    ipa: "ʝaˈmaɾse"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "llamarse", base: "llamarse" }]
+    examples:
+      - target: "Me llamo Ana."
+        ipa: "me ˈʝamo ˈana"
+        bases: [{ word: "Me", base: "me" }, { word: "llamo", base: "llamarse" }, { word: "Ana", base: "ana" }]
+      - target: "¿Cómo te llamas?"
+        ipa: "ˈkomo te ˈʝamas"
+        bases: [{ word: "Cómo", ref: "es-0058" }, { word: "te", base: "te" }, { word: "llamas", ref: "es-0302" }]
+  - id: "es-1586"
+    target: "vestir"
+    ipa: "besˈtiɾ"
+    pos: "verb"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "vestir", base: "vestir" }]
+    examples:
+      - target: "Viste de azul."
+        ipa: "ˈbiste de aˈθul"
+        bases: [{ word: "Viste", base: "vestir" }, { word: "de", base: "de" }, { word: "azul", ref: "es-1008" }]
+      - target: "Visto a mi hijo."
+        ipa: "ˈbisto a mi ˈixo"
+        bases: [{ word: "Visto", base: "vestir" }, { word: "a", base: "a" }, { word: "mi", ref: "es-0129" }, { word: "hijo", ref: "es-0163" }]
+  - id: "es-1587"
+    target: "el cuerpo"
+    ipa: "el ˈkweɾpo"
+    pos: "noun"
+    gender: "m"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "el", base: "el" }, { word: "cuerpo", base: "cuerpo" }]
+    examples:
+      - target: "El cuerpo es importante."
+        ipa: "el ˈkweɾpo es impoɾˈtante"
+        bases: [{ word: "El", base: "el" }, { word: "cuerpo", base: "cuerpo" }, { word: "es", ref: "es-0022" }, { word: "importante", ref: "es-0435" }]
+      - target: "Hago ejercicio para el cuerpo."
+        ipa: "ˈaɡo exeɾˈθiθjo ˈpaɾa el ˈkweɾpo"
+        bases: [{ word: "Hago", ref: "es-0025" }, { word: "ejercicio", ref: "es-0913" }, { word: "para", base: "para" }, { word: "el", base: "el" }, { word: "cuerpo", base: "cuerpo" }]
+  - id: "es-1588"
+    target: "flaco"
+    ipa: "ˈflako"
+    pos: "adj"
+    notes: [{ id: "n1", kind: "note" }]
+    bases: [{ word: "flaco", base: "flaco" }]
+    examples:
+      - target: "Es muy flaco."
+        ipa: "es mwi ˈflako"
+        bases: [{ word: "Es", ref: "es-0022" }, { word: "muy", ref: "es-0330" }, { word: "flaco", base: "flaco" }]
+      - target: "La niña es flaca."
+        ipa: "la ˈniɲa es ˈflaka"
+        bases: [{ word: "La", base: "la" }, { word: "niña", ref: "es-0004" }, { word: "es", ref: "es-0022" }, { word: "flaca", base: "flaco" }]

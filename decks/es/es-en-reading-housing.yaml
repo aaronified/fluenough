@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-housing"
+name: "Reading: rental terms and a move"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: the terms of a rental, and a note about moving into a flat. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-rental-terms"
+    title: "The terms of a rental"
+    theme: "housing"
+    sentences:
+      - text: "El alquiler es de 800 euros al mes."
+      - text: "La fianza es igual a un mes de alquiler."
+      - text: "Los gastos de agua y luz los paga el inquilino."
+      - text: "El contrato dura un año."
+    questions:
+      - id: "es-2805"
+        prompt: { en: "How much is the rent?" }
+        options:
+          - { en: "800 euros a month" }
+          - { en: "80 euros a month" }
+          - { en: "8000 euros a year" }
+        answer: 1
+      - id: "es-2806"
+        prompt: { en: "What is the deposit?" }
+        options:
+          - { en: "One month's rent" }
+          - { en: "Two months' rent" }
+          - { en: "Nothing" }
+        answer: 1
+      - id: "es-2807"
+        prompt: { en: "Who pays for water and electricity?" }
+        options:
+          - { en: "The tenant" }
+          - { en: "The owner" }
+          - { en: "The agency" }
+        answer: 1
+  - id: "es-moving-note"
+    title: "A note about moving in"
+    theme: "housing"
+    sentences:
+      - text: "La mudanza es el sábado por la mañana."
+      - text: "El ascensor del edificio está roto."
+      - text: "La calefacción funciona bien en invierno."
+      - text: "Hay un dormitorio y un estudio pequeño."
+    questions:
+      - id: "es-2808"
+        prompt: { en: "When is the move?" }
+        options:
+          - { en: "Saturday morning" }
+          - { en: "Sunday afternoon" }
+          - { en: "Friday evening" }
+        answer: 1
+      - id: "es-2809"
+        prompt: { en: "What is broken?" }
+        options:
+          - { en: "The lift" }
+          - { en: "The heating" }
+          - { en: "The door" }
+        answer: 1
+      - id: "es-2810"
+        prompt: { en: "How many bedrooms?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 1

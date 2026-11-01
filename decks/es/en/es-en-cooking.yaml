@@ -1,0 +1,254 @@
+schema: 1
+id: "es-en-cooking"
+kind: "layer"
+core: "es-cooking"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cooking"
+license: "CC-BY-SA-4.0"
+description: "Words for a kitchen and a recipe: the pot, the pan and the oven, the ingredients and the spoonful, and the verbs to peel, chop, boil, mix and heat. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1302":
+    native: "recipe"
+    notes: { n1: "Receta is a recipe, the list of ingredients and steps for a dish." }
+    bases: { "la": "the", "receta": "recipe" }
+    examples:
+      "Esta receta es de mi abuela.": { native: "This recipe is my grandmother's.", bases: { "Esta": "This", "receta": "recipe", "de": "of" } }
+      "Leo la receta antes de cocinar.": { native: "I read the recipe before cooking.", bases: { "la": "the", "receta": "recipe", "de": "of" } }
+  "es-1303":
+    native: "ingredient"
+    notes: { n1: "Ingrediente is one thing you put in a dish. The plural is ingredientes." }
+    bases: { "el": "the", "ingrediente": "ingredient" }
+    examples:
+      "El ingrediente principal es el ajo.": { native: "The main ingredient is garlic.", bases: { "El": "the", "ingrediente": "ingredient", "principal": "main" } }
+      "Falta un ingrediente.": { native: "One ingredient is missing.", bases: { "Falta": "to be missing", "un": "a", "ingrediente": "ingredient" } }
+  "es-1304":
+    native: "spoonful; tablespoon"
+    notes: { n1: "Cucharada is a full spoon, a measure in a recipe. Its small version is cucharadita." }
+    bases: { "la": "the", "cucharada": "spoonful; tablespoon" }
+    examples:
+      "Una cucharada de aceite, por favor.": { native: "One spoonful of oil, please.", bases: { "Una": "a", "cucharada": "spoonful; tablespoon", "de": "of", "por": "for", "favor": "please" } }
+      "Añado dos cucharadas de sal.": { native: "I add two spoonfuls of salt.", bases: { "cucharadas": "spoonful; tablespoon", "de": "of" } }
+  "es-1305":
+    native: "teaspoon"
+    notes: { n1: "Cucharadita is a small spoon, a teaspoon, a smaller measure than cucharada." }
+    bases: { "la": "the", "cucharadita": "teaspoon" }
+    examples:
+      "Una cucharadita de azúcar es suficiente.": { native: "One teaspoon of sugar is enough.", bases: { "Una": "a", "cucharadita": "teaspoon", "de": "of" } }
+      "Pongo media cucharadita de sal.": { native: "I put in half a teaspoon of salt.", bases: { "Pongo": "to put", "cucharadita": "teaspoon", "de": "of" } }
+  "es-1306":
+    native: "garlic"
+    notes: { n1: "El ajo is garlic, a bulb with cloves. Un diente de ajo is one clove." }
+    bases: { "el": "the", "ajo": "garlic" }
+    examples:
+      "Pelo el ajo y lo pico": { native: "I peel the garlic and chop it.", bases: { "el": "the", "ajo": "garlic", "lo": "it" } }
+      "El ajo es muy fuerte.": { native: "Garlic is very strong.", bases: { "El": "the", "ajo": "garlic" } }
+  "es-1307":
+    native: "lemon"
+    notes: { n1: "El limón is a lemon, sour and used in drinks and salads." }
+    bases: { "el": "the", "limón": "lemon" }
+    examples:
+      "Pongo limón en la ensalada.": { native: "I put lemon on the salad.", bases: { "Pongo": "to put", "limón": "lemon", "en": "in", "la": "the" } }
+      "El limón es ácido.": { native: "The lemon is sour.", bases: { "El": "the", "limón": "lemon" } }
+  "es-1308":
+    native: "pepper (vegetable)"
+    notes: { n1: "El pimiento is the vegetable pepper. Pimienta is the black spice, a different word." }
+    bases: { "el": "the", "pimiento": "pepper (vegetable)" }
+    examples:
+      "El pimiento es verde.": { native: "The pepper is green.", bases: { "El": "the", "pimiento": "pepper (vegetable)" } }
+      "Cortamos el pimiento en tiras.": { native: "We cut the pepper into strips.", bases: { "el": "the", "pimiento": "pepper (vegetable)", "en": "in", "tiras": "strip" } }
+  "es-1309":
+    native: "mushroom"
+    notes: { n1: "El champiñón is a mushroom. The plural is champiñones." }
+    bases: { "el": "the", "champiñón": "mushroom" }
+    examples:
+      "Los champiñones son buenos con ajo.": { native: "Mushrooms go well with garlic.", bases: { "Los": "the", "champiñones": "mushroom", "con": "with" } }
+      "Compro champiñones en el mercado.": { native: "I buy mushrooms at the market.", bases: { "champiñones": "mushroom", "en": "in", "el": "the" } }
+  "es-1310":
+    native: "frying pan"
+    notes: { n1: "La sartén is the frying pan for eggs and meat, flat with a handle." }
+    bases: { "la": "the", "sartén": "frying pan" }
+    examples:
+      "Pongo el aceite en la sartén.": { native: "I put the oil in the frying pan.", bases: { "Pongo": "to put", "el": "the", "en": "in", "la": "the", "sartén": "frying pan" } }
+      "La sartén está caliente.": { native: "The frying pan is hot.", bases: { "La": "the", "sartén": "frying pan" } }
+  "es-1311":
+    native: "pot"
+    notes: { n1: "La olla is a deep pot for water, soup or rice." }
+    bases: { "la": "the", "olla": "pot" }
+    examples:
+      "La sopa está en la olla.": { native: "The soup is in the pot.", bases: { "La": "the", "en": "in", "olla": "pot" } }
+      "Pongo el agua en la olla.": { native: "I put the water in the pot.", bases: { "Pongo": "to put", "el": "the", "en": "in", "la": "the", "olla": "pot" } }
+  "es-1312":
+    native: "casserole dish"
+    notes: { n1: "La cazuela is a dish for the oven or the stove, for a stew." }
+    bases: { "la": "the", "cazuela": "casserole dish" }
+    examples:
+      "Cocino el pollo en una cazuela.": { native: "I cook the chicken in a casserole dish.", bases: { "el": "the", "en": "in", "una": "a", "cazuela": "casserole dish" } }
+      "La cazuela es grande.": { native: "The casserole dish is big.", bases: { "La": "the", "cazuela": "casserole dish" } }
+  "es-1313":
+    native: "microwave"
+    notes: { n1: "El microondas is the microwave oven, for quick heating." }
+    bases: { "el": "the", "microondas": "microwave" }
+    examples:
+      "Caliento la sopa en el microondas.": { native: "I heat the soup in the microwave.", bases: { "la": "the", "en": "in", "el": "the", "microondas": "microwave" } }
+      "El microondas está en la cocina.": { native: "The microwave is in the kitchen.", bases: { "El": "the", "microondas": "microwave", "en": "in", "la": "the" } }
+  "es-1314":
+    native: "fridge"
+    notes: { n1: "La nevera is the fridge, which keeps food cold." }
+    bases: { "la": "the", "nevera": "fridge" }
+    examples:
+      "La leche está en la nevera.": { native: "The milk is in the fridge.", bases: { "La": "the", "en": "in", "nevera": "fridge" } }
+      "Pongo el pastel en la nevera.": { native: "I put the cake in the fridge.", bases: { "Pongo": "to put", "el": "the", "en": "in", "la": "the", "nevera": "fridge" } }
+  "es-1315":
+    native: "sink"
+    notes: { n1: "El fregadero is the kitchen sink, where you wash dishes." }
+    bases: { "el": "the", "fregadero": "sink" }
+    examples:
+      "Los platos están en el fregadero.": { native: "The dishes are in the sink.", bases: { "Los": "the", "en": "in", "el": "the", "fregadero": "sink" } }
+      "Lavo los platos en el fregadero.": { native: "I wash the dishes in the sink.", bases: { "los": "the", "en": "in", "el": "the", "fregadero": "sink" } }
+  "es-1316":
+    native: "to boil"
+    notes: { n1: "Hervir changes its stem: hierve, hiervo. Agua hirviendo is boiling water." }
+    bases: { "hervir": "to boil" }
+    examples:
+      "El agua hierve a cien grados.": { native: "Water boils at a hundred degrees.", bases: { "El": "the", "hierve": "to boil", "a": "to" } }
+      "Hiervo el agua para la pasta.": { native: "I boil the water for the pasta.", bases: { "Hiervo": "to boil", "el": "the", "para": "for", "la": "the" } }
+  "es-1317":
+    native: "to roast"
+    notes: { n1: "Asar is to cook in an oven or over fire, without water." }
+    bases: { "asar": "to roast" }
+    examples:
+      "Asamos la carne en el horno.": { native: "We roast the meat in the oven.", bases: { "Asamos": "to roast", "la": "the", "en": "in", "el": "the" } }
+      "Asan el pollo con limón.": { native: "They roast the chicken with lemon.", bases: { "Asan": "to roast", "el": "the", "con": "with" } }
+  "es-1318":
+    native: "to chop"
+    notes: { n1: "Picar is to chop food into small pieces. It also means to sting or to bite." }
+    bases: { "picar": "to chop" }
+    examples:
+      "Pico la cebolla muy fina.": { native: "I chop the onion very finely.", bases: { "Pico": "to chop", "la": "the", "fina": "fine; thin" } }
+      "Pica el ajo y la cebolla.": { native: "Chop the garlic and the onion.", bases: { "Pica": "to chop", "el": "the", "la": "the" } }
+  "es-1319":
+    native: "to peel"
+    notes: { n1: "Pelar is to take the skin off fruit or vegetables." }
+    bases: { "pelar": "to peel" }
+    examples:
+      "Pelo las patatas.": { native: "I peel the potatoes.", bases: { "Pelo": "to peel", "las": "the" } }
+      "Pelamos la naranja.": { native: "We peel the orange.", bases: { "Pelamos": "to peel", "la": "the" } }
+  "es-1320":
+    native: "to cut"
+    notes: { n1: "Cortar is to cut in general. For chopping small, use picar." }
+    bases: { "cortar": "to cut" }
+    examples:
+      "Corto el pan en rebanadas.": { native: "I cut the bread into slices.", bases: { "Corto": "to cut", "el": "the", "en": "in", "rebanadas": "slice" } }
+      "Cortamos el queso.": { native: "We cut the cheese.", bases: { "Cortamos": "to cut", "el": "the" } }
+  "es-1321":
+    native: "to mix"
+    notes: { n1: "Mezclar is to mix two or more things together." }
+    bases: { "mezclar": "to mix" }
+    examples:
+      "Mezclo la harina con la leche.": { native: "I mix the flour with the milk.", bases: { "Mezclo": "to mix", "la": "the", "con": "with" } }
+      "Mezclan los ingredientes.": { native: "They mix the ingredients.", bases: { "Mezclan": "to mix", "los": "the" } }
+  "es-1322":
+    native: "to beat; to whisk"
+    notes: { n1: "Batir is to beat eggs or cream until they are light and soft." }
+    bases: { "batir": "to beat; to whisk" }
+    examples:
+      "Bato los huevos con azúcar.": { native: "I beat the eggs with sugar.", bases: { "Bato": "to beat; to whisk", "los": "the", "con": "with" } }
+      "Bate la nata con un tenedor.": { native: "Beat the cream with a fork.", bases: { "Bate": "to beat; to whisk", "la": "the", "nata": "cream", "con": "with", "un": "a" } }
+  "es-1323":
+    native: "to add"
+    notes: { n1: "Añadir is to put one more thing into a dish. Its yo form is añado." }
+    bases: { "añadir": "to add" }
+    examples:
+      "Añado sal al agua.": { native: "I add salt to the water.", bases: { "Añado": "to add", "al": "to the" } }
+      "Añaden limón al pescado.": { native: "They add lemon to the fish.", bases: { "Añaden": "to add", "al": "to the" } }
+  "es-1324":
+    native: "to heat"
+    notes: { n1: "Calentar changes its stem: caliento, calientas. It means to make something hot." }
+    bases: { "calentar": "to heat" }
+    examples:
+      "Caliento el aceite.": { native: "I heat the oil.", bases: { "Caliento": "to heat", "el": "the" } }
+      "Calientan la sopa en la olla.": { native: "They heat the soup in the pot.", bases: { "Calientan": "to heat", "la": "the", "en": "in" } }
+  "es-1325":
+    native: "to cool"
+    notes: { n1: "Enfriar is to make something cold or cool. Its stem takes an accent: enfrío, enfrías." }
+    bases: { "enfriar": "to cool" }
+    examples:
+      "Dejo enfriar el pastel.": { native: "I let the cake cool.", bases: { "enfriar": "to cool", "el": "the" } }
+      "Enfrío la sopa antes de comer.": { native: "I cool the soup before eating.", bases: { "Enfrío": "to cool", "la": "the", "de": "of" } }
+  "es-1326":
+    native: "to cook in water"
+    notes: { n1: "Cocer changes its stem: cuezo, cueces. It means to boil or cook food in water." }
+    bases: { "cocer": "to cook in water" }
+    examples:
+      "Cuezo las verduras diez minutos.": { native: "I cook the vegetables for ten minutes.", bases: { "Cuezo": "to cook in water", "las": "the" } }
+      "Cuecen los huevos en agua.": { native: "They cook the eggs in water.", bases: { "Cuecen": "to cook in water", "los": "the", "en": "in" } }
+  "es-1327":
+    native: "to burn"
+    notes: { n1: "Quemar is to burn something, with heat or fire. Quemarse is to burn yourself." }
+    bases: { "quemar": "to burn" }
+    examples:
+      "El arroz está quemado.": { native: "The rice is burnt.", bases: { "El": "the", "quemado": "to burn" } }
+      "No quemo la cebolla.": { native: "I do not burn the onion.", bases: { "quemo": "to burn", "la": "the" } }
+  "es-1328":
+    native: "lukewarm"
+    notes: { n1: "Tibio is neither hot nor cold. It agrees with the noun: tibio, tibia." }
+    bases: { "tibio": "lukewarm" }
+    examples:
+      "El té está tibio.": { native: "The tea is lukewarm.", bases: { "El": "the", "tibio": "lukewarm" } }
+      "La leche está tibia.": { native: "The milk is lukewarm.", bases: { "La": "the", "tibia": "lukewarm" } }
+  "es-1329":
+    native: "cooked"
+    notes: { n1: "Cocido is cooked in water or in a pot. It is the form of cocer." }
+    bases: { "cocido": "cooked" }
+    examples:
+      "El arroz ya está cocido.": { native: "The rice is already cooked.", bases: { "El": "the", "cocido": "cooked" } }
+      "Los huevos cocidos están listos.": { native: "The boiled eggs are ready.", bases: { "Los": "the", "cocidos": "cooked" } }
+  "es-1330":
+    native: "raw"
+    notes: { n1: "Crudo is raw, not cooked. It is the opposite of cocido." }
+    bases: { "crudo": "raw" }
+    examples:
+      "El pollo está crudo.": { native: "The chicken is raw.", bases: { "El": "the", "crudo": "raw" } }
+      "Como el pescado crudo.": { native: "I eat raw fish.", bases: { "el": "the", "crudo": "raw" } }
+  "es-1331":
+    native: "soft"
+    notes: { n1: "Blando is soft to touch or to eat. It agrees with the noun: blando, blanda." }
+    bases: { "blando": "soft" }
+    examples:
+      "La pasta está blanda.": { native: "The pasta is soft.", bases: { "La": "the", "blanda": "soft" } }
+      "El pan es blando.": { native: "The bread is soft.", bases: { "El": "the", "blando": "soft" } }
+  "es-1332":
+    native: "hard"
+    notes: { n1: "Duro is hard. Huevo duro is a hard-boiled egg." }
+    bases: { "duro": "hard" }
+    examples:
+      "El huevo está duro.": { native: "The egg is hard-boiled.", bases: { "El": "the", "duro": "hard" } }
+      "La carne es dura.": { native: "The meat is tough.", bases: { "La": "the", "dura": "hard" } }
+  "es-1333":
+    native: "done; cooked through"
+    notes: { n1: "Hecho is cooked all the way through. It agrees with the noun: hecha." }
+    bases: { "hecho": "done; cooked through" }
+    examples:
+      "La carne está muy hecha.": { native: "The meat is very well done.", bases: { "La": "the", "hecha": "done; cooked through" } }
+      "Quiero el pescado bien hecho.": { native: "I want the fish well cooked.", bases: { "el": "the", "hecho": "done; cooked through" } }
+  "es-1334":
+    native: "vegetarian"
+    notes: { n1: "Vegetariano is a person or a dish with no meat or fish. It agrees with the noun." }
+    bases: { "vegetariano": "vegetarian" }
+    examples:
+      "Quiero un plato vegetariano.": { native: "I want a vegetarian dish.", bases: { "un": "a", "vegetariano": "vegetarian" } }
+      "Es un menú vegetariano.": { native: "It is a vegetarian menu.", bases: { "un": "a", "vegetariano": "vegetarian" } }
+  "es-1335":
+    native: "pasta"
+    notes: { n1: "La pasta is pasta, boiled in water and served with sauce." }
+    bases: { "la": "the", "pasta": "pasta" }
+    examples:
+      "La pasta con tomate es rica.": { native: "Pasta with tomato is tasty.", bases: { "La": "the", "pasta": "pasta", "con": "with" } }
+      "No como pasta.": { native: "I do not eat pasta.", bases: { "pasta": "pasta" } }
+  "es-1336":
+    native: "diet"
+    notes: { n1: "La dieta is what you eat each day, or a diet to lose weight." }
+    bases: { "la": "the", "dieta": "diet" }
+    examples:
+      "Sigo una dieta sin azúcar.": { native: "I follow a diet without sugar.", bases: { "una": "a", "dieta": "diet", "sin": "without" } }
+      "La dieta es buena para la salud.": { native: "The diet is good for health.", bases: { "La": "the", "dieta": "diet", "para": "for", "salud": "health" } }

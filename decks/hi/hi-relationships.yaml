@@ -1,0 +1,322 @@
+schema: 1
+id: "hi-relationships"
+part: "core"
+kind: "vocab"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+theme: "relationships"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "hi-2563"
+    target: "प्रेम"
+    target_scripts: {"perso_arabic": "پیار"}
+    reading: "prēm"
+    ipa: "preːm"
+    phonetic: "[preːm]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "माँ का प्रेम अनमोल है।", "reading": "mām̐ kā prēm anmōl hai.", "ipa": "mãː kaː preːm ənmoːl ɦɛː", "bases": [{"word": "माँ", "ref": "hi-0377"}, {"word": "का", "ref": "hi-0279"}, {"word": "अनमोल", "base": "अनमोल", "reading": "anmōl"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्रेम से बोलो।", "reading": "prēm sē bōlō.", "ipa": "preːm seː boːloː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "बोलो", "ref": "hi-0782"}]}
+  - id: "hi-2564"
+    target: "सहेली"
+    target_scripts: {"perso_arabic": "سہیلی"}
+    reading: "sahēlī"
+    ipa: "səɦeːliː"
+    phonetic: "[səɦeːliː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेरी सहेली कल आएगी।", "reading": "mērī sahēlī kal āēgī.", "ipa": "meːriː səɦeːliː kəl aːeːɡiː", "bases": [{"word": "मेरी", "ref": "hi-0752"}, {"word": "कल", "ref": "hi-0300"}, {"word": "आएगी", "ref": "hi-0778"}]}
+      - {"target": "सहेली के साथ घूमो।", "reading": "sahēlī kē sāth ghūmō.", "ipa": "səɦeːliː keː saːt̪ʰ ɡʱuːmoː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "घूमो", "ref": "hi-1661"}]}
+  - id: "hi-2565"
+    target: "साथी"
+    target_scripts: {"perso_arabic": "ساتھی"}
+    reading: "sāthī"
+    ipa: "saːt̪ʰiː"
+    phonetic: "[saːt̪ʰiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह मेरा अच्छा साथी है।", "reading": "vah mērā acchā sāthī hai.", "ipa": "ʋəɦ meːraː ətʃtʃʰaː saːt̪ʰiː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "मेरा", "ref": "hi-0752"}, {"word": "अच्छा", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "जीवन का साथी चुनो।", "reading": "jīvan kā sāthī cunō.", "ipa": "dʒiːʋən kaː saːt̪ʰiː tʃʊnoː", "bases": [{"word": "जीवन", "base": "जीवन", "reading": "jīvan"}, {"word": "का", "ref": "hi-0279"}, {"word": "चुनो", "ref": "hi-1816"}]}
+  - id: "hi-2566"
+    target: "झगड़ा"
+    target_scripts: {"perso_arabic": "جھگڑا"}
+    reading: "jhagṛā"
+    ipa: "dʒʱəɡɽaː"
+    phonetic: "[dʒʱəɡɽaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दोनों भाइयों में झगड़ा हुआ।", "reading": "dōnōm̐ bhāiyōm̐ mēm̐ jhagṛā huā.", "ipa": "d̪oːnõː bʱaːɪjõː mẽː dʒʱəɡɽaː ɦʊaː", "bases": [{"word": "दोनों", "base": "दोनों", "reading": "dōnōm̐"}, {"word": "भाइयों", "ref": "hi-0378"}, {"word": "में", "ref": "hi-0274"}, {"word": "हुआ", "ref": "hi-0780"}]}
+      - {"target": "झगड़ा मत करो।", "reading": "jhagṛā mat karō.", "ipa": "dʒʱəɡɽaː mət̪ kəroː", "bases": [{"word": "मत", "base": "मत", "reading": "mat"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2567"
+    target: "माफ़ी"
+    target_scripts: {"perso_arabic": "معافی"}
+    reading: "māfī"
+    ipa: "maːfiː"
+    phonetic: "[maːfiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मैंने उससे माफ़ी माँगी।", "reading": "mainnē ussē māfī mām̐gī.", "ipa": "mɛːnneː ʊsseː maːfiː mãːɡiː", "bases": [{"word": "मैंने", "ref": "hi-0745"}, {"word": "उससे", "ref": "hi-0749"}, {"word": "माँगी", "base": "माँगना", "reading": "mām̐ganā"}]}
+      - {"target": "माफ़ी दे दो।", "reading": "māfī dē dō.", "ipa": "maːfiː d̪eː d̪oː", "bases": [{"word": "दे", "ref": "hi-0785"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2568"
+    target: "इज़्ज़त"
+    target_scripts: {"perso_arabic": "عزت"}
+    reading: "izzat"
+    ipa: "ɪzzət̪"
+    phonetic: "[ɪzzət̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बड़ों की इज़्ज़त करो।", "reading": "baṛōm̐ kī izzat karō.", "ipa": "bəɽõː kiː ɪzzət̪ kəroː", "bases": [{"word": "बड़ों", "ref": "hi-0894"}, {"word": "की", "ref": "hi-0279"}, {"word": "करो", "ref": "hi-0779"}]}
+      - {"target": "उसकी इज़्ज़त बढ़ी।", "reading": "uskī izzat baṛhī.", "ipa": "ʊskiː ɪzzət̪ bəɽʱiː", "bases": [{"word": "उसकी", "ref": "hi-0749"}, {"word": "बढ़ी", "base": "बढ़ना", "reading": "baṛhnā"}]}
+  - id: "hi-2569"
+    target: "सम्मान"
+    target_scripts: {"perso_arabic": "احترام"}
+    reading: "sammān"
+    ipa: "səmmaːn"
+    phonetic: "[səmmaːn]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "सबको सम्मान दो।", "reading": "sabkō sammān dō.", "ipa": "səbkoː səmmaːn d̪oː", "bases": [{"word": "सबको", "ref": "hi-0054"}, {"word": "दो", "ref": "hi-0785"}]}
+      - {"target": "उसे सम्मान के साथ बुलाया गया।", "reading": "usē sammān kē sāth bulāyā gayā.", "ipa": "ʊseː səmmaːn keː saːt̪ʰ bʊlaːjaː ɡəjaː", "bases": [{"word": "उसे", "ref": "hi-0749"}, {"word": "सम्मान", "base": "सम्मान", "reading": "sammān"}, {"word": "के", "ref": "hi-0279"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "बुलाया", "ref": "hi-0961"}, {"word": "गया", "ref": "hi-0777"}]}
+  - id: "hi-2570"
+    target: "बुराई"
+    target_scripts: {"perso_arabic": "برائی"}
+    reading: "burāī"
+    ipa: "bʊraːiː"
+    phonetic: "[bʊraːiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "उसमें कोई बुराई नहीं है।", "reading": "usmēm̐ kōī burāī nahīm̐ hai.", "ipa": "ʊsmẽː koːiː bʊraːiː nəɦĩː ɦɛː", "bases": [{"word": "उसमें", "ref": "hi-0749"}, {"word": "कोई", "ref": "hi-0758"}, {"word": "नहीं", "ref": "hi-0156"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "बुराई से दूर रहो।", "reading": "burāī sē dūr rahō.", "ipa": "bʊraːiː seː d̪uːr rəɦoː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "दूर", "ref": "hi-0294"}, {"word": "रहो", "ref": "hi-0791"}]}
+  - id: "hi-2571"
+    target: "अपनापन"
+    target_scripts: {"perso_arabic": "اپنا پن"}
+    reading: "apnāpan"
+    ipa: "əpnaːpən"
+    phonetic: "[əpnaːpən]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "इस घर में अपनापन है।", "reading": "is ghar mēm̐ apnāpan hai.", "ipa": "ɪs ɡʱər mẽː əpnaːpən ɦɛː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "घर", "ref": "hi-0192"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "उसके व्यवहार में अपनापन है।", "reading": "uskē vyavhār mēm̐ apnāpan hai.", "ipa": "ʊskeː ʋjəʋɦaːr mẽː əpnaːpən ɦɛː", "bases": [{"word": "उसके", "ref": "hi-0749"}, {"word": "व्यवहार", "base": "व्यवहार", "reading": "vyavhār"}, {"word": "में", "ref": "hi-0274"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2572"
+    target: "मित्र"
+    target_scripts: {"perso_arabic": "دوست"}
+    reading: "mitr"
+    ipa: "mɪt̪r"
+    phonetic: "[mɪt̪r]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह मेरा पुराना मित्र है।", "reading": "vah mērā purānā mitr hai.", "ipa": "ʋəɦ meːraː pʊraːnaː mɪt̪r ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "मेरा", "ref": "hi-0752"}, {"word": "पुराना", "ref": "hi-0897"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "मित्रों के साथ घूमने जाओ।", "reading": "mitrōm̐ kē sāth ghūmnē jāō.", "ipa": "mɪt̪rõː keː saːt̪ʰ ɡʱuːmneː dʒaːoː", "bases": [{"word": "मित्रों", "base": "मित्र", "reading": "mitr"}, {"word": "के", "ref": "hi-0279"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "घूमने", "ref": "hi-1661"}, {"word": "जाओ", "ref": "hi-0777"}]}
+  - id: "hi-2573"
+    target: "जीजा"
+    target_scripts: {"perso_arabic": "جیجا"}
+    reading: "jījā"
+    ipa: "dʒiːdʒaː"
+    phonetic: "[dʒiːdʒaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेरे जीजा जी डॉक्टर हैं।", "reading": "mērē jījā jī ḍôkṭar haim̐.", "ipa": "meːreː dʒiːdʒaː dʒiː ɖɔkʈər ɦɛ̃ː", "bases": [{"word": "मेरे", "ref": "hi-0752"}, {"word": "जी", "ref": "hi-0135"}, {"word": "डॉक्टर", "ref": "hi-0357"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "जीजा जी से मिलो।", "reading": "jījā jī sē milō.", "ipa": "dʒiːdʒaː dʒiː seː mɪloː", "bases": [{"word": "जी", "ref": "hi-0135"}, {"word": "से", "ref": "hi-0276"}, {"word": "मिलो", "ref": "hi-0793"}]}
+  - id: "hi-2574"
+    target: "भाभी"
+    target_scripts: {"perso_arabic": "بھابھی"}
+    reading: "bhābhī"
+    ipa: "bʱaːbʱiː"
+    phonetic: "[bʱaːbʱiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "भाभी ने खाना बनाया।", "reading": "bhābhī nē khānā banāyā.", "ipa": "bʱaːbʱiː neː kʰaːnaː bənaːjaː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "खाना", "ref": "hi-0332"}, {"word": "बनाया", "ref": "hi-1502"}]}
+      - {"target": "भाभी घर पर हैं।", "reading": "bhābhī ghar par haim̐.", "ipa": "bʱaːbʱiː ɡʱər pər ɦɛ̃ː", "bases": [{"word": "घर", "ref": "hi-0192"}, {"word": "पर", "ref": "hi-0275"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2575"
+    target: "देवर"
+    target_scripts: {"perso_arabic": "دیور"}
+    reading: "dēvar"
+    ipa: "d̪eːʋər"
+    phonetic: "[d̪eːʋər]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "मेरा देवर बहुत शरारती है।", "reading": "mērā dēvar bahut śarārtī hai.", "ipa": "meːraː d̪eːʋər bəɦʊt̪ ʃəraːrt̪iː ɦɛː", "bases": [{"word": "मेरा", "ref": "hi-0752"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "शरारती", "base": "शरारती", "reading": "śarārtī"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "देवर से मज़ाक मत करो।", "reading": "dēvar sē mazāk mat karō.", "ipa": "d̪eːʋər seː məzaːk mət̪ kəroː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "मज़ाक", "base": "मज़ाक", "reading": "mazāk"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2576"
+    target: "ननद"
+    target_scripts: {"perso_arabic": "نند"}
+    reading: "nanad"
+    ipa: "nənəd̪"
+    phonetic: "[nənəd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "ननद कल आ रही है।", "reading": "nanad kal ā rahī hai.", "ipa": "nənəd̪ kəl aː rəɦiː ɦɛː", "bases": [{"word": "कल", "ref": "hi-0300"}, {"word": "आ", "ref": "hi-0778"}, {"word": "रही", "ref": "hi-0791"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "ननद के लिए तोहफ़ा लो।", "reading": "nanad kē liē tōhfā lō.", "ipa": "nənəd̪ keː lɪeː t̪oːɦfaː loː", "bases": [{"word": "के", "ref": "hi-0279"}, {"word": "लिए", "base": "लिए", "reading": "liē"}, {"word": "तोहफ़ा", "ref": "hi-2520"}, {"word": "लो", "ref": "hi-0786"}]}
+  - id: "hi-2577"
+    target: "बहू"
+    target_scripts: {"perso_arabic": "بہو"}
+    reading: "bahū"
+    ipa: "bəɦuː"
+    phonetic: "[bəɦuː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बहू ने चाय बनाई।", "reading": "bahū nē cāy banāī.", "ipa": "bəɦuː neː tʃaːj bənaːiː", "bases": [{"word": "ने", "base": "ने", "reading": "nē"}, {"word": "चाय", "ref": "hi-0334"}, {"word": "बनाई", "ref": "hi-1502"}]}
+      - {"target": "हमारी बहू बहुत अच्छी है।", "reading": "hamārī bahū bahut acchī hai.", "ipa": "ɦəmaːriː bəɦuː bəɦʊt̪ ətʃtʃʰiː ɦɛː", "bases": [{"word": "हमारी", "ref": "hi-0756"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "अच्छी", "ref": "hi-0898"}, {"word": "है", "ref": "hi-0780"}]}
+  - id: "hi-2578"
+    target: "दामाद"
+    target_scripts: {"perso_arabic": "داماد"}
+    reading: "dāmād"
+    ipa: "d̪aːmaːd̪"
+    phonetic: "[d̪aːmaːd̪]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दामाद जी आ गए हैं।", "reading": "dāmād jī ā gaē haim̐.", "ipa": "d̪aːmaːd̪ dʒiː aː ɡəeː ɦɛ̃ː", "bases": [{"word": "जी", "ref": "hi-0135"}, {"word": "आ", "ref": "hi-0778"}, {"word": "गए", "ref": "hi-0777"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "दामाद को मिठाई दो।", "reading": "dāmād kō miṭhāī dō.", "ipa": "d̪aːmaːd̪ koː mɪʈʰaːiː d̪oː", "bases": [{"word": "को", "ref": "hi-0277"}, {"word": "मिठाई", "ref": "hi-0998"}, {"word": "दो", "ref": "hi-0785"}]}
+  - id: "hi-2579"
+    target: "प्रेमी"
+    target_scripts: {"perso_arabic": "عاشق"}
+    reading: "prēmī"
+    ipa: "preːmiː"
+    phonetic: "[preːmiː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "m"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह उसका प्रेमी है।", "reading": "vah uskā prēmī hai.", "ipa": "ʋəɦ ʊskaː preːmiː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "उसका", "ref": "hi-0749"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्रेमी और प्रेमिका साथ घूम रहे हैं।", "reading": "prēmī aur prēmikā sāth ghūm rahē haim̐.", "ipa": "preːmiː ɔːr preːmɪkaː saːt̪ʰ ɡʱuːm rəɦeː ɦɛ̃ː", "bases": [{"word": "और", "ref": "hi-0337"}, {"word": "प्रेमिका", "ref": "hi-2580"}, {"word": "साथ", "ref": "hi-0838"}, {"word": "घूम", "ref": "hi-1661"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+  - id: "hi-2580"
+    target: "प्रेमिका"
+    target_scripts: {"perso_arabic": "محبوبہ"}
+    reading: "prēmikā"
+    ipa: "preːmɪkaː"
+    phonetic: "[preːmɪkaː]"
+    phonetic_source: "rules"
+    pos: "noun"
+    gender: "f"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "वह उसकी प्रेमिका है।", "reading": "vah uskī prēmikā hai.", "ipa": "ʋəɦ ʊskiː preːmɪkaː ɦɛː", "bases": [{"word": "वह", "ref": "hi-0749"}, {"word": "उसकी", "ref": "hi-0749"}, {"word": "है", "ref": "hi-0780"}]}
+      - {"target": "प्रेमिका को फोन करो।", "reading": "prēmikā kō phōn karō.", "ipa": "preːmɪkaː koː pʰoːn kəroː", "bases": [{"word": "को", "ref": "hi-0277"}, {"word": "फोन", "base": "फोन", "reading": "phōn"}, {"word": "करो", "ref": "hi-0779"}]}
+  - id: "hi-2581"
+    target: "झगड़ना"
+    target_scripts: {"perso_arabic": "جھگڑنا"}
+    reading: "jhagṛnā"
+    ipa: "dʒʱəɡɽnaː"
+    phonetic: "[dʒʱəɡɽnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "दोनों बच्चे झगड़ रहे हैं।", "reading": "dōnōm̐ baccē jhagaṛ rahē haim̐.", "ipa": "d̪oːnõː bətʃtʃeː dʒʱəɡəɽ rəɦeː ɦɛ̃ː", "bases": [{"word": "दोनों", "base": "दोनों", "reading": "dōnōm̐"}, {"word": "बच्चे", "ref": "hi-0111"}, {"word": "झगड़", "base": "झगड़ना", "reading": "jhagṛnā"}, {"word": "रहे", "ref": "hi-0791"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "उससे मत झगड़ो।", "reading": "ussē mat jhagṛō.", "ipa": "ʊsseː mət̪ dʒʱəɡɽoː", "bases": [{"word": "उससे", "ref": "hi-0749"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "झगड़ो", "base": "झगड़ना", "reading": "jhagṛnā"}]}
+  - id: "hi-2582"
+    target: "रूठना"
+    target_scripts: {"perso_arabic": "روٹھنا"}
+    reading: "rūṭhnā"
+    ipa: "ruːʈʰnaː"
+    phonetic: "[ruːʈʰnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "बच्चा माँ से रूठ गया।", "reading": "baccā mām̐ sē rūṭh gayā.", "ipa": "bətʃtʃaː mãː seː ruːʈʰ ɡəjaː", "bases": [{"word": "बच्चा", "ref": "hi-0111"}, {"word": "माँ", "ref": "hi-0377"}, {"word": "से", "ref": "hi-0276"}, {"word": "रूठ", "base": "रूठना", "reading": "rūṭhnā"}, {"word": "गया", "ref": "hi-0777"}]}
+      - {"target": "मुझसे मत रूठो।", "reading": "mujhsē mat rūṭhō.", "ipa": "mʊdʒʱseː mət̪ ruːʈʰoː", "bases": [{"word": "मुझसे", "ref": "hi-0745"}, {"word": "मत", "base": "मत", "reading": "mat"}, {"word": "रूठो", "base": "रूठना", "reading": "rūṭhnā"}]}
+  - id: "hi-2583"
+    target: "जुड़ना"
+    target_scripts: {"perso_arabic": "جڑنا"}
+    reading: "juṛnā"
+    ipa: "dʒʊɽnaː"
+    phonetic: "[dʒʊɽnaː]"
+    phonetic_source: "rules"
+    pos: "verb"
+    bases: "self"
+    notes:
+      - {"id": "n1", "kind": "note"}
+    examples:
+      - {"target": "हम एक परिवार से जुड़े हैं।", "reading": "ham ēk parivār sē juṛē haim̐.", "ipa": "ɦəm eːk pərɪʋaːr seː dʒʊɽeː ɦɛ̃ː", "bases": [{"word": "हम", "ref": "hi-0053"}, {"word": "एक", "ref": "hi-0198"}, {"word": "परिवार", "ref": "hi-0193"}, {"word": "से", "ref": "hi-0276"}, {"word": "जुड़े", "base": "जुड़ना", "reading": "juṛnā"}, {"word": "हैं", "ref": "hi-0780"}]}
+      - {"target": "इस कहानी से बहुत यादें जुड़ी हैं।", "reading": "is kahānī sē bahut yādēm̐ juṛī haim̐.", "ipa": "ɪs kəɦaːniː seː bəɦʊt̪ jaːd̪ẽː dʒʊɽiː ɦɛ̃ː", "bases": [{"word": "इस", "ref": "hi-0748"}, {"word": "कहानी", "base": "कहानी", "reading": "kahānī"}, {"word": "से", "ref": "hi-0276"}, {"word": "बहुत", "ref": "hi-0866"}, {"word": "यादें", "ref": "hi-1594"}, {"word": "जुड़ी", "base": "जुड़ना", "reading": "juṛnā"}, {"word": "हैं", "ref": "hi-0780"}]}

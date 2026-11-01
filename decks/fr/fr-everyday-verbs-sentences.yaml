@@ -29,7 +29,7 @@ cards:
       - { word: "Nous", ref: "fr-0129" }
       - { word: "allons", base: "aller" }
       - { word: "à", base: "à" }
-      - { word: "la", base: "la" }
+      - { word: "la", ref: "fr-0544" }
       - { word: "gare", ref: "fr-0075" }
       - { word: "demain", ref: "fr-0078" }
     confusables:
@@ -43,7 +43,7 @@ cards:
     bases:
       - { word: "Vous", ref: "fr-0096" }
       - { word: "regardez", base: "regarder" }
-      - { word: "la", base: "la" }
+      - { word: "la", ref: "fr-0544" }
       - { word: "télé", base: "télé" }
     confusables:
       - { id: "listen", ref: "fr-0292", kind: "word" }
@@ -68,8 +68,8 @@ cards:
     tags: ["sentence"]
     bases:
       - { word: "Ferme", base: "fermer" }
-      - { word: "la", base: "la" }
-      - { word: "porte", base: "porte" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "porte", ref: "fr-1003" }
     confusables:
       - { id: "ouvrir", ref: "fr-0298", kind: "word" }
       - { id: "laver", ref: "fr-0296", kind: "word" }
@@ -81,11 +81,11 @@ cards:
     bases:
       - { word: "Il", ref: "fr-0127" }
       - { word: "lit", base: "lire" }
-      - { word: "le", base: "le" }
+      - { word: "le", ref: "fr-0543" }
       - { word: "journal", base: "journal" }
       - { word: "et", ref: "fr-0027" }
       - { word: "écrit", base: "écrire" }
-      - { word: "une", base: "une" }
+      - { word: "une", ref: "fr-0545" }
       - { word: "lettre", base: "lettre" }
     confusables:
       - { id: "listen", ref: "fr-0292", kind: "word" }
@@ -98,8 +98,8 @@ cards:
     bases:
       - { word: "Ils", ref: "fr-0130" }
       - { word: "prennent", base: "prendre" }
-      - { word: "le", base: "le" }
-      - { word: "bus", base: "bus" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "bus", ref: "fr-0854" }
       - { word: "à", base: "à" }
       - { word: "onze", ref: "fr-0218" }
       - { word: "heures", ref: "fr-0074" }
@@ -115,8 +115,8 @@ cards:
       - { word: "Je", ref: "fr-0126" }
       - { word: "veux", base: "vouloir" }
       - { word: "payer", ref: "fr-0310" }
-      - { word: "le", base: "le" }
-      - { word: "café", base: "café" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "café", ref: "fr-0793" }
     confusables:
       - { id: "acheter", ref: "fr-0294", kind: "word" }
       - { id: "cuisiner", ref: "fr-0309", kind: "word" }

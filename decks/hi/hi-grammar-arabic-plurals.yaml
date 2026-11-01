@@ -1,0 +1,52 @@
+schema: 1
+id: "hi-grammar-arabic-plurals"
+part: "core"
+kind: "grammar"
+language: { code: "hi", iso639_3: "hin", name: "Hindustani", script: "devanagari", scripts: ["devanagari", "perso_arabic"], tts: "hi-IN", icon: "हि" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["singular", "plural in -āt", "broken plural"]
+  entries:
+    - lemma: "कागज़"
+      key: "kagaz"
+      reading: "kāgaz"
+      ipa: "kaːɡəz"
+      forms:
+        "singular": "कागज़"
+        "plural in -āt": "कागज़ात"
+        "broken plural": null
+      readings:
+        "singular": "kāgaz"
+        "plural in -āt": "kāgzāt"
+      ipas:
+        "singular": "kaːɡəz"
+        "plural in -āt": "kaːɡzaːt̪"
+    - lemma: "मसला"
+      key: "masala"
+      reading: "maslā"
+      ipa: "məslaː"
+      forms:
+        "singular": "मसला"
+        "plural in -āt": null
+        "broken plural": "मसाइल"
+      readings:
+        "singular": "maslā"
+        "broken plural": "masāil"
+      ipas:
+        "singular": "məslaː"
+        "broken plural": "məsaːɪl"
+    - lemma: "शख़्स"
+      key: "shakhs"
+      reading: "śak͟hs"
+      ipa: "ʃəxs"
+      forms:
+        "singular": "शख़्स"
+        "plural in -āt": null
+        "broken plural": "अश्ख़ास"
+      readings:
+        "singular": "śak͟hs"
+        "broken plural": "aśk͟hās"
+      ipas:
+        "singular": "ʃəxs"
+        "broken plural": "əʃxaːs"

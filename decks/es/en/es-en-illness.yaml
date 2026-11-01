@@ -1,0 +1,268 @@
+schema: 1
+id: "es-en-illness"
+kind: "layer"
+core: "es-illness"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Illness and the doctor"
+license: "CC-BY-SA-4.0"
+description: "Words for feeling ill: the cold, the flu and the fever, the pharmacy and the medicine, the parts that hurt, and the verbs to cough, sneeze, get better and take care. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1456":
+    native: "illness; disease"
+    notes: { n1: "Enfermedad is an illness, from a germ or a long condition. Enfermo is the adjective: ill." }
+    bases: { "la": "the", "enfermedad": "illness; disease" }
+    examples:
+      "Es una enfermedad grave.": { native: "It is a serious illness.", bases: { "una": "a", "enfermedad": "illness; disease", "grave": "serious" } }
+      "La enfermedad dura una semana.": { native: "The illness lasts a week.", bases: { "La": "the", "enfermedad": "illness; disease", "una": "a" } }
+  "es-1457":
+    native: "to fall ill"
+    notes: { n1: "Enfermar is to become ill. Its yo form is enfermo." }
+    bases: { "enfermar": "to fall ill" }
+    examples:
+      "Me enfermo en invierno.": { native: "I get ill in winter.", bases: { "Me": "to me", "enfermo": "to fall ill", "en": "in" } }
+      "Mi hijo enfermó ayer.": { native: "My son/ser fell ill yesterday.", bases: { "enfermó": "to fall ill" } }
+  "es-1458":
+    native: "cold (illness)"
+    notes: { n1: "El resfriado is a common cold, with a runny nose and a sore throat." }
+    bases: { "el": "the", "resfriado": "cold (illness)" }
+    examples:
+      "Tengo un resfriado.": { native: "I have a cold.", bases: { "un": "a", "resfriado": "cold (illness)" } }
+      "El resfriado dura tres días.": { native: "The cold lasts three days.", bases: { "El": "the", "resfriado": "cold (illness)" } }
+  "es-1459":
+    native: "flu"
+    notes: { n1: "La gripe is the flu, stronger than a cold, with fever and aches." }
+    bases: { "la": "the", "gripe": "flu" }
+    examples:
+      "Tiene gripe.": { native: "She has the flu.", bases: { "gripe": "flu" } }
+      "La gripe es muy común en invierno.": { native: "Flu is very common in winter.", bases: { "La": "the", "gripe": "flu", "común": "common", "en": "in" } }
+  "es-1460":
+    native: "fever"
+    notes: { n1: "La fiebre is a high temperature. Tener fiebre is to have a fever." }
+    bases: { "la": "the", "fiebre": "fever" }
+    examples:
+      "Tengo fiebre y frío.": { native: "I have a fever and I am cold.", bases: { "fiebre": "fever" } }
+      "La fiebre sube por la noche.": { native: "The fever goes up at night.", bases: { "La": "the", "fiebre": "fever", "por": "for" } }
+  "es-1461":
+    native: "cough"
+    notes: { n1: "La tos is a cough. Tener tos is to have a cough." }
+    bases: { "la": "the", "tos": "cough" }
+    examples:
+      "Tengo mucha tos.": { native: "I have a lot of cough.", bases: { "tos": "cough" } }
+      "La tos no para": { native: "The cough does not stop.", bases: { "La": "the", "tos": "cough", "para": "to stop" } }
+  "es-1462":
+    native: "molar; tooth"
+    notes: { n1: "La muela is a back tooth. Dolor de muela is a toothache." }
+    bases: { "la": "the", "muela": "molar; tooth" }
+    examples:
+      "Me duele la muela.": { native: "My tooth hurts.", bases: { "Me": "to me", "la": "the", "muela": "molar; tooth" } }
+      "Voy al dentista por la muela.": { native: "I go to the dentist about my tooth.", bases: { "al": "to the", "dentista": "dentist", "por": "for", "la": "the", "muela": "molar; tooth" } }
+  "es-1463":
+    native: "medicine (the science or a drug)"
+    notes: { n1: "La medicina is medicine as a science, and also a remedy. For a drug, medicamento is the common word." }
+    bases: { "la": "the", "medicina": "medicine (the science or a drug)" }
+    examples:
+      "La medicina es para la tos.": { native: "The medicine is for the cough.", bases: { "La": "the", "medicina": "medicine (the science or a drug)", "para": "for" } }
+      "¿Tomas alguna medicina?": { native: "Do you take any medicine?", bases: { "alguna": "some; any", "medicina": "medicine (the science or a drug)" } }
+  "es-1464":
+    native: "medicine (a drug)"
+    notes: { n1: "El medicamento is a drug or medicine from the chemist." }
+    bases: { "el": "the", "medicamento": "medicine (a drug)" }
+    examples:
+      "El medicamento está en la farmacia.": { native: "The medicine is in the pharmacy.", bases: { "El": "the", "medicamento": "medicine (a drug)", "en": "in", "la": "the" } }
+      "Tomo el medicamento dos veces.": { native: "I take the medicine twice.", bases: { "el": "the", "medicamento": "medicine (a drug)" } }
+  "es-1465":
+    native: "tablet; pill"
+    notes: { n1: "La pastilla is a tablet or pill, swallowed with water." }
+    bases: { "la": "the", "pastilla": "tablet; pill" }
+    examples:
+      "Tomo una pastilla con agua.": { native: "I take a tablet with water.", bases: { "una": "a", "pastilla": "tablet; pill", "con": "with" } }
+      "La pastilla es amarilla.": { native: "The tablet is yellow.", bases: { "La": "the", "pastilla": "tablet; pill" } }
+  "es-1466":
+    native: "syrup"
+    notes: { n1: "El jarabe is a liquid medicine, often sweet, for a cough." }
+    bases: { "el": "the", "jarabe": "syrup" }
+    examples:
+      "Tomo jarabe para la tos.": { native: "I take cough syrup.", bases: { "jarabe": "syrup", "para": "for", "la": "the" } }
+      "El jarabe es dulce.": { native: "The syrup is sweet.", bases: { "El": "the", "jarabe": "syrup" } }
+  "es-1467":
+    native: "pharmacist"
+    notes: { n1: "El farmacéutico works in a pharmacy, the chemist's shop." }
+    bases: { "el": "the", "farmacéutico": "pharmacist" }
+    examples:
+      "El farmacéutico me da el jarabe.": { native: "The pharmacist gives me the syrup.", bases: { "El": "the", "farmacéutico": "pharmacist", "me": "to me", "da": "to give" } }
+      "El farmacéutico habla inglés.": { native: "The pharmacist speaks English.", bases: { "El": "the", "farmacéutico": "pharmacist" } }
+  "es-1468":
+    native: "doctor"
+    notes: { n1: "El doctor is a doctor who treats the sick. For a woman, la doctora." }
+    bases: { "el": "the", "doctor": "doctor" }
+    examples:
+      "El doctor me examina": { native: "The doctor examines me.", bases: { "El": "the", "doctor": "doctor", "me": "to me", "examina": "to examine" } }
+      "Llamo al doctor.": { native: "I call the doctor.", bases: { "al": "to the", "doctor": "doctor" } }
+  "es-1469":
+    native: "emergency"
+    notes: { n1: "La urgencia is an emergency. Urgencias is the emergency room of a hospital." }
+    bases: { "la": "the", "urgencia": "emergency" }
+    examples:
+      "Voy a urgencias.": { native: "I go to the emergency room.", bases: { "a": "to", "urgencias": "emergency" } }
+      "Es una urgencia.": { native: "It is an emergency.", bases: { "una": "a", "urgencia": "emergency" } }
+  "es-1470":
+    native: "symptom"
+    notes: { n1: "El síntoma is a sign of an illness, such as fever or a cough." }
+    bases: { "el": "the", "síntoma": "symptom" }
+    examples:
+      "El síntoma principal es la fiebre.": { native: "The main symptom is the fever.", bases: { "El": "the", "síntoma": "symptom", "principal": "main", "la": "the" } }
+      "Los síntomas son tos y dolor.": { native: "The symptoms are cough and pain.", bases: { "Los": "the", "síntomas": "symptom" } }
+  "es-1471":
+    native: "wound; cut"
+    notes: { n1: "La herida is a wound, a cut in the skin." }
+    bases: { "la": "the", "herida": "wound; cut" }
+    examples:
+      "Tengo una herida en la mano.": { native: "I have a wound on my hand.", bases: { "una": "a", "herida": "wound; cut", "en": "in", "la": "the" } }
+      "La herida es pequeña.": { native: "The wound is small.", bases: { "La": "the", "herida": "wound; cut" } }
+  "es-1472":
+    native: "bandage"
+    notes: { n1: "La venda is a bandage, wrapped around a wound." }
+    bases: { "la": "the", "venda": "bandage" }
+    examples:
+      "Pongo una venda en la herida.": { native: "I put a bandage on the wound.", bases: { "Pongo": "to put", "una": "a", "venda": "bandage", "en": "in", "la": "the" } }
+      "La venda está floja.": { native: "The bandage is loose.", bases: { "La": "the", "venda": "bandage", "floja": "loose" } }
+  "es-1473":
+    native: "vaccine; jab"
+    notes: { n1: "La vacuna is a vaccine, an injection that prevents an illness." }
+    bases: { "la": "the", "vacuna": "vaccine; jab" }
+    examples:
+      "Me pongo la vacuna.": { native: "I have the vaccine.", bases: { "Me": "to me", "pongo": "to put", "la": "the", "vacuna": "vaccine; jab" } }
+      "La vacuna es gratis.": { native: "The vaccine is free.", bases: { "La": "the", "vacuna": "vaccine; jab" } }
+  "es-1474":
+    native: "dizziness; sickness"
+    notes: { n1: "El mareo is dizziness or feeling sick in a car or boat." }
+    bases: { "el": "the", "mareo": "dizziness; sickness" }
+    examples:
+      "Tengo un mareo.": { native: "I feel dizzy.", bases: { "un": "a", "mareo": "dizziness; sickness" } }
+      "El mareo pasa pronto.": { native: "The dizziness passes soon.", bases: { "El": "the", "mareo": "dizziness; sickness", "pasa": "to pass" } }
+  "es-1475":
+    native: "nausea"
+    notes: { n1: "La náusea is the feeling that you want to be sick. The plural is náuseas." }
+    bases: { "la": "the", "náusea": "nausea" }
+    examples:
+      "Siento náuseas.": { native: "I feel sick.", bases: { "Siento": "to feel", "náuseas": "nausea" } }
+      "Tengo náuseas después de comer.": { native: "I feel sick after eating.", bases: { "náuseas": "nausea", "de": "of" } }
+  "es-1476":
+    native: "vomit"
+    notes: { n1: "El vómito is vomit, when you are sick." }
+    bases: { "el": "the", "vómito": "vomit" }
+    examples:
+      "Tuve un vómito.": { native: "I was sick.", bases: { "un": "a", "vómito": "vomit" } }
+      "El vómito es un síntoma.": { native: "Vomiting is a symptom.", bases: { "El": "the", "vómito": "vomit", "un": "a" } }
+  "es-1477":
+    native: "allergy"
+    notes: { n1: "La alergia is an allergy, a reaction to something in the air or in food." }
+    bases: { "la": "the", "alergia": "allergy" }
+    examples:
+      "Tengo alergia al polen.": { native: "I have a pollen allergy.", bases: { "alergia": "allergy", "al": "to the", "polen": "pollen" } }
+      "La alergia es fuerte.": { native: "The allergy is strong.", bases: { "La": "the", "alergia": "allergy" } }
+  "es-1478":
+    native: "allergic"
+    notes: { n1: "Alérgico is allergic. It agrees with the noun: alérgica." }
+    bases: { "alérgico": "allergic" }
+    examples:
+      "Soy alérgica al huevo.": { native: "I am allergic to eggs.", bases: { "alérgica": "allergic", "al": "to the" } }
+      "Es alérgico a la leche.": { native: "He is allergic to milk.", bases: { "alérgico": "allergic", "a": "to", "la": "the" } }
+  "es-1479":
+    native: "to cough"
+    notes: { n1: "Toser is to cough. Its noun is tos." }
+    bases: { "toser": "to cough" }
+    examples:
+      "Toso mucho por la noche.": { native: "I cough a lot at night.", bases: { "Toso": "to cough", "por": "for", "la": "the" } }
+      "Toses mucho.": { native: "You cough a lot.", bases: { "Toses": "to cough" } }
+  "es-1480":
+    native: "to sneeze"
+    notes: { n1: "Estornudar is to sneeze." }
+    bases: { "estornudar": "to sneeze" }
+    examples:
+      "Estornudo siempre con el polen.": { native: "I always sneeze with the pollen.", bases: { "Estornudo": "to sneeze", "con": "with", "el": "the", "polen": "pollen" } }
+      "Estornudo mucho.": { native: "I sneeze a lot.", bases: { "Estornudo": "to sneeze" } }
+  "es-1481":
+    native: "to sweat"
+    notes: { n1: "Sudar is to sweat, from heat or fever." }
+    bases: { "sudar": "to sweat" }
+    examples:
+      "Sudo mucho en verano.": { native: "I sweat a lot in summer.", bases: { "Sudo": "to sweat", "en": "in" } }
+      "Sudo con la fiebre.": { native: "I sweat with the fever.", bases: { "Sudo": "to sweat", "con": "with", "la": "the" } }
+  "es-1482":
+    native: "to shake; to shiver"
+    notes: { n1: "Temblar changes its stem: tiemblo, tiembla. It means to shiver with cold or fear." }
+    bases: { "temblar": "to shake; to shiver" }
+    examples:
+      "Tiemblo de frío.": { native: "I shiver with cold.", bases: { "Tiemblo": "to shake; to shiver", "de": "of" } }
+      "La mano tiembla": { native: "The hand shakes.", bases: { "La": "the", "tiembla": "to shake; to shiver" } }
+  "es-1483":
+    native: "rest"
+    notes: { n1: "El reposo is rest, in bed or at home, to get better." }
+    bases: { "el": "the", "reposo": "rest" }
+    examples:
+      "Necesito reposo.": { native: "I need rest.", bases: { "reposo": "rest" } }
+      "El médico dice reposo.": { native: "The doctor says rest.", bases: { "El": "the", "dice": "to say; to tell", "reposo": "rest" } }
+  "es-1484":
+    native: "to cure; to heal"
+    notes: { n1: "Curar is to heal an illness or a wound." }
+    bases: { "curar": "to cure; to heal" }
+    examples:
+      "El jarabe cura la tos.": { native: "The syrup cures the cough.", bases: { "El": "the", "cura": "to cure; to heal", "la": "the" } }
+      "El médico cura a mi hijo.": { native: "The doctor treats my son./ser", bases: { "El": "the", "cura": "to cure; to heal", "a": "to" } }
+  "es-1485":
+    native: "to get better; to improve"
+    notes: { n1: "Mejorar is to get better or to improve something." }
+    bases: { "mejorar": "to get better; to improve" }
+    examples:
+      "Mejoro con el reposo.": { native: "I get better with rest.", bases: { "Mejoro": "to get better; to improve", "con": "with", "el": "the" } }
+      "La salud mejora cada día.": { native: "Health improves every day.", bases: { "La": "the", "mejora": "to get better; to improve" } }
+  "es-1486":
+    native: "to get worse"
+    notes: { n1: "Empeorar is to get worse. It is the opposite of mejorar." }
+    bases: { "empeorar": "to get worse" }
+    examples:
+      "Empeora por la noche.": { native: "It gets worse at night.", bases: { "Empeora": "to get worse", "por": "for", "la": "the" } }
+      "Mi tos empeora": { native: "My cough gets worse.", bases: { "empeora": "to get worse" } }
+  "es-1487":
+    native: "to take care of"
+    notes: { n1: "Cuidar is to look after someone who is ill, or a thing." }
+    bases: { "cuidar": "to take care of" }
+    examples:
+      "Cuido a mi madre.": { native: "I look after my mother.", bases: { "Cuido": "to take care of", "a": "to" } }
+      "Cuidar la salud es importante.": { native: "Looking after health is important.", bases: { "Cuidar": "to take care of", "la": "the" } }
+  "es-1488":
+    native: "health"
+    notes: { n1: "La salud is health, the state of the body and mind." }
+    bases: { "la": "the", "salud": "health" }
+    examples:
+      "La salud es lo primero.": { native: "Health comes/comer first.", bases: { "La": "the", "salud": "health", "lo": "it" } }
+      "Cuido mi salud.": { native: "I look after my health.", bases: { "salud": "health" } }
+  "es-1489":
+    native: "consultation; surgery"
+    notes: { n1: "La consulta is a visit to the doctor, planned in advance." }
+    bases: { "la": "the", "consulta": "consultation; surgery" }
+    examples:
+      "Tengo una consulta a las diez.": { native: "I have an appointment at ten.", bases: { "una": "a", "consulta": "consultation; surgery", "a": "to", "las": "the" } }
+      "La consulta es con el doctor.": { native: "The consultation is with the doctor.", bases: { "La": "the", "consulta": "consultation; surgery", "con": "with", "el": "the" } }
+  "es-1490":
+    native: "blood"
+    notes: { n1: "La sangre is blood, the red liquid in the body." }
+    bases: { "la": "the", "sangre": "blood" }
+    examples:
+      "Hay sangre en la herida.": { native: "There is blood on the wound.", bases: { "Hay": "there is; there are", "sangre": "blood", "en": "in", "la": "the" } }
+      "La sangre es roja.": { native: "Blood is red.", bases: { "La": "the", "sangre": "blood" } }
+  "es-1491":
+    native: "blood pressure"
+    notes: { n1: "La tensión is blood pressure, measured by the doctor." }
+    bases: { "la": "the", "tensión": "blood pressure" }
+    examples:
+      "Tengo la tensión alta.": { native: "My blood pressure is high.", bases: { "la": "the", "tensión": "blood pressure", "alta": "high" } }
+      "El doctor mide la tensión.": { native: "The doctor measures my blood pressure.", bases: { "El": "the", "mide": "to measure", "la": "the", "tensión": "blood pressure" } }
+  "es-1492":
+    native: "ear; hearing"
+    notes: { n1: "El oído is the ear, and also hearing." }
+    bases: { "el": "the", "oído": "ear; hearing" }
+    examples:
+      "Me duele el oído.": { native: "My ear hurts.", bases: { "Me": "to me", "el": "the", "oído": "ear; hearing" } }
+      "Tengo buen oído.": { native: "I have good hearing.", bases: { "oído": "ear; hearing" } }

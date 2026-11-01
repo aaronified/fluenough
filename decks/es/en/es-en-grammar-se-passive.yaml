@@ -1,0 +1,21 @@
+schema: 1
+id: "es-en-grammar-se-passive"
+kind: "layer"
+core: "es-grammar-se-passive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Se for things done: se vende"
+license: "CC-BY-SA-4.0"
+description: "Se with a verb says what is done, without saying by whom: se vende pan, bread is sold; se venden casas, houses are sold. The verb agrees with the thing done, not with se. The past form is se vendió, and after a modal it is se puede vender, it can be sold. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Se passive of common verbs"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "se + singular": "a singular thing is done: se vende", "se + plural": "plural things are done: se venden", "se + past": "a finished action: se vendió", "se + modal + infinitive": "something can or must be done: se puede vender" }
+  entries:
+    "vender": "to sell"
+    "abrir": "to open"
+    "hablar": "to speak"
+    "escribir": "to write"
+    "cerrar": "to close"
+    "construir": "to build"
+  notes: "Se with a verb in the third person says what is done, without a person doing it. The verb agrees with the thing done: se vende una casa, se venden casas. A person after the verb takes a: se llama a la policía. Se is not a reflexive here, and the verb takes no subject. Se puede is the same se with a modal verb."

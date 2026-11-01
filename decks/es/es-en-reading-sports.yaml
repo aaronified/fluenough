@@ -1,0 +1,71 @@
+schema: 1
+id: "es-en-reading-sports"
+name: "Reading: a match report and a race"
+kind: reading
+language: { code: "es", iso639_3: "spa", name: "Spanish", script: "latin", tts: "es-ES", icon: "Es" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts: a short match report, and a report on an athlete's race. Not yet checked by a Spanish speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "es-match-report"
+    title: "A short match report"
+    theme: "sports"
+    sentences:
+      - text: "El equipo local ganó el partido por dos goles a uno."
+      - text: "El portero paró un penalti en el último minuto."
+      - text: "El árbitro expulsó a un jugador."
+      - text: "El público aplaudió al campeón."
+    questions:
+      - id: "es-2724"
+        prompt: { en: "What was the score?" }
+        options:
+          - { en: "Two goals to one" }
+          - { en: "One to one" }
+          - { en: "Three to zero" }
+        answer: 1
+      - id: "es-2725"
+        prompt: { en: "What did the goalkeeper do?" }
+        options:
+          - { en: "Stopped a penalty" }
+          - { en: "Scored a goal" }
+          - { en: "Got a red card" }
+        answer: 1
+      - id: "es-2726"
+        prompt: { en: "Who was sent off?" }
+        options:
+          - { en: "A player" }
+          - { en: "The coach" }
+          - { en: "The goalkeeper" }
+        answer: 1
+  - id: "es-race-day"
+    title: "A race report"
+    theme: "sports"
+    sentences:
+      - text: "La atleta corrió la carrera más rápida del año."
+      - text: "Ganó la medalla de oro."
+      - text: "Su rival llegó en segundo lugar."
+      - text: "El récord de la pista es nuevo."
+    questions:
+      - id: "es-2727"
+        prompt: { en: "What did the athlete win?" }
+        options:
+          - { en: "A gold medal" }
+          - { en: "A trophy" }
+          - { en: "A prize" }
+        answer: 1
+      - id: "es-2728"
+        prompt: { en: "Who came second?" }
+        options:
+          - { en: "The rival" }
+          - { en: "The coach" }
+          - { en: "The referee" }
+        answer: 1
+      - id: "es-2729"
+        prompt: { en: "What is new?" }
+        options:
+          - { en: "The track record" }
+          - { en: "The stadium" }
+          - { en: "The team" }
+        answer: 1

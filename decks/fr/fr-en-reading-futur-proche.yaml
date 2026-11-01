@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-futur-proche"
+name: "Reading: the near future"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about plans for the day and a note inviting a friend, with aller and an infinitive. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-plans-for-the-day"
+    title: "Plans for the day"
+    theme: "time"
+    sentences:
+      - text: "Je vais travailler demain."
+      - text: "Nous allons manger ensemble."
+      - text: "Tu vas partir tôt ?"
+      - text: "Ils vont dormir tard."
+    questions:
+      - id: "fr-0653"
+        prompt: { en: "When will the speaker work?" }
+        options:
+          - { en: "Tomorrow" }
+          - { en: "Yesterday" }
+          - { en: "Never" }
+        answer: 1
+      - id: "fr-0654"
+        prompt: { en: "What will 'we' do?" }
+        options:
+          - { en: "Eat together" }
+          - { en: "Leave early" }
+          - { en: "Sleep late" }
+        answer: 1
+      - id: "fr-0655"
+        prompt: { en: "What is 'you' going to do?" }
+        options:
+          - { en: "Leave early" }
+          - { en: "Eat together" }
+          - { en: "Sleep" }
+        answer: 1
+  - id: "fr-invitation-note"
+    title: "A note inviting a friend"
+    theme: "time"
+    sentences:
+      - text: "Tu vas venir chez moi ?"
+      - text: "Nous allons parler de la famille."
+      - text: "Vous allez finir le travail."
+      - text: "Il va arriver bientôt."
+    questions:
+      - id: "fr-0656"
+        prompt: { en: "Where is 'you' invited?" }
+        options:
+          - { en: "To my home" }
+          - { en: "To the station" }
+          - { en: "To the museum" }
+        answer: 1
+      - id: "fr-0657"
+        prompt: { en: "Who is going to finish the work?" }
+        options:
+          - { en: "You" }
+          - { en: "He" }
+          - { en: "We" }
+        answer: 1
+      - id: "fr-0658"
+        prompt: { en: "When will he arrive?" }
+        options:
+          - { en: "Soon" }
+          - { en: "Late" }
+          - { en: "Never" }
+        answer: 1

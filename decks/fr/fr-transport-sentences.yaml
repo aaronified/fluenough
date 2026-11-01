@@ -1,0 +1,103 @@
+schema: 1
+id: "fr-transport-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-0879"
+    target: "Je prends le bus."
+    ipa: "ʒə pʁɑ̃ lə bys"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "prends", ref: "fr-0288" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "bus", ref: "fr-0854" }
+    confusables:
+      - { id: "metro", ref: "fr-0855", kind: "word" }
+      - { id: "taxi", ref: "fr-0858", kind: "word" }
+  - id: "fr-0880"
+    target: "Le train part du quai."
+    ipa: "lə tʁɛ̃ paʁ dy kɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "train", ref: "fr-0076" }
+      - { word: "part", ref: "fr-0304" }
+      - { word: "du", base: "du" }
+      - { word: "quai", ref: "fr-0866" }
+    confusables:
+      - { id: "arret", ref: "fr-0857", kind: "word" }
+      - { id: "station", ref: "fr-0871", kind: "word" }
+  - id: "fr-0881"
+    target: "Mon frère conduit la voiture."
+    ipa: "mɔ̃ fʁɛʁ kɔ̃dɥi la vwatyʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "frère", ref: "fr-0169" }
+      - { word: "conduit", ref: "fr-0869" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "voiture", ref: "fr-0859" }
+    confusables:
+      - { id: "velo", ref: "fr-0860", kind: "word" }
+      - { id: "avion", ref: "fr-0861", kind: "word" }
+  - id: "fr-0882"
+    target: "Le vol est direct."
+    ipa: "lə vɔl ɛ diʁɛkt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "vol", ref: "fr-0863" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "direct", ref: "fr-0878" }
+    confusables:
+      - { id: "trajet", ref: "fr-0874", kind: "word" }
+      - { id: "horaire", ref: "fr-0865", kind: "word" }
+  - id: "fr-0883"
+    target: "J'ai un billet."
+    ipa: "ʒe œ̃ bijɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "J'ai", ref: "fr-0022" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "billet", ref: "fr-0856" }
+    confusables:
+      - { id: "valise", ref: "fr-0876", kind: "word" }
+      - { id: "bagage", ref: "fr-0875", kind: "word" }
+  - id: "fr-0884"
+    target: "Le prochain train part à huit heures."
+    ipa: "lə pʁɔʃɛ̃ tʁɛ̃ paʁ a ɥit œʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "prochain", ref: "fr-0877" }
+      - { word: "train", ref: "fr-0076" }
+      - { word: "part", ref: "fr-0304" }
+      - { word: "à", base: "à" }
+      - { word: "huit", ref: "fr-0215" }
+      - { word: "heures", ref: "fr-0074" }
+    confusables:
+      - { id: "dernier", ref: "fr-0688", kind: "word" }
+      - { id: "direct", ref: "fr-0878", kind: "word" }
+  - id: "fr-0885"
+    target: "Nous voyageons souvent."
+    ipa: "nu vwajaʒɔ̃ suvɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "voyageons", ref: "fr-0868" }
+      - { word: "souvent", ref: "fr-0326" }
+    confusables:
+      - { id: "voyage", ref: "fr-0867", kind: "word" }
+      - { id: "trajet", ref: "fr-0874", kind: "word" }

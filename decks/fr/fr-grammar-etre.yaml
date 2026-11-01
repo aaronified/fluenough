@@ -1,0 +1,20 @@
+schema: 1
+id: "fr-grammar-etre"
+part: "core"
+kind: "grammar"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "grammar", "unreviewed"]
+pattern:
+  slots: ["je", "tu", "il-elle", "nous", "vous", "ils-elles"]
+  entries:
+    - lemma: "être"
+      key: "etre"
+      ipa: "ɛtʁ"
+      forms:
+        "je": "je suis"
+        "tu": "tu es"
+        "il-elle": "il est"
+        "nous": "nous sommes"
+        "vous": "vous êtes"
+        "ils-elles": "ils sont"

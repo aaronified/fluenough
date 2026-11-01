@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-environment-sentences"
+kind: "layer"
+core: "es-environment-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: environment"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about pollution, waste and care for the planet, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2447":
+    native: "I separate the waste and recycle the cardboard."
+    bases: { "Separo": "to separate", "los": "the", "el": "the" }
+    confusables: { "envase": { why: "Envase is packaging, one kind of waste." }, "reutilizar": { why: "Reutilizar is to use again, not to sort." } }
+  "es-2448":
+    native: "There is a lot of smoke and a lot of traffic in the city."
+    bases: { "Hay": "there is; there are", "en": "in", "la": "the" }
+    confusables: { "contaminacion": { why: "Contaminación is pollution, the result." }, "ruido": { why: "Ruido is noise, a different kind of problem." } }
+  "es-2449":
+    native: "The drought affects the fields and the water."
+    bases: { "La": "the", "afecta": "to affect", "a": "to", "los": "the", "al": "to the" }
+    confusables: { "inundacion": { why: "Inundación is a flood, the opposite of a drought." }, "potable": { why: "Potable is drinkable, a quality of the water." } }
+  "es-2450":
+    native: "I reduce the use of coal and oil."
+    bases: { "el": "the", "del": "of" }
+    confusables: { "gas": { why: "Gas is a gas, another fuel." }, "renovable": { why: "Renovable is renewable, a kind of energy." } }
+  "es-2451":
+    native: "I protect the forests and reforest the mountain."
+    bases: { "los": "the", "la": "the" }
+    confusables: { "deforestacion": { why: "Deforestación is cutting down forests, the opposite." }, "conservar": { why: "Conservar is to keep, close in meaning." } }
+  "es-2452":
+    native: "The landfill pollutes the soil and the air."
+    bases: { "El": "the", "suelo": "soil" }
+    confusables: { "planeta": { why: "Planeta is the whole Earth, the larger picture." }, "efecto": { why: "Efecto is an effect, the result of the pollution." } }

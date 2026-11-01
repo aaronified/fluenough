@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-journey-sentences"
+kind: "layer"
+core: "es-journey-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: journey"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about travel, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1724":
+    native: "I buy a single ticket for the train."
+    bases: { "un": "a", "de": "of", "para": "for", "el": "the" }
+    confusables: { "taquilla": { why: "Taquilla is the ticket office, where you buy it." }, "ticket": { why: "Ticket is a ticket, often a small slip of paper." } }
+  "es-1725":
+    native: "The flight leaves the airport at nine."
+    bases: { "El": "the", "del": "of", "a": "to", "las": "the", "vuelo": "flight" }
+    confusables: { "avion": { why: "Avión is the plane, the aircraft itself." }, "cancelar": { why: "Cancelar is to cancel, not to leave." } }
+  "es-1726":
+    native: "The train arrives late at the platform."
+    bases: { "El": "the", "con": "with", "al": "to the" }
+    confusables: { "vagon": { why: "Vagón is a carriage, a part of the train." }, "via": { why: "Vía is the railway track." } }
+  "es-1727":
+    native: "I check in the suitcase and go through the check."
+    bases: { "la": "the", "el": "the" }
+    confusables: { "equipaje": { why: "Equipaje is all the luggage, the general word." }, "aduana": { why: "Aduana is customs, the check at a border." } }
+  "es-1728":
+    native: "I travel with my passport and my ticket."
+    bases: { "con": "with" }
+    confusables: { "viajero": { why: "Viajero is a traveller, the person who travels." }, "pasajero": { why: "Pasajero is a passenger on a bus, plane or train." } }
+  "es-1729":
+    native: "I pay the toll and buy petrol."
+    bases: { "el": "the" }
+    confusables: { "gasolinera": { why: "Gasolinera is the petrol station, the place." }, "tarifa": { why: "Tarifa is a fare, a price for a trip." } }

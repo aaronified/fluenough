@@ -1,0 +1,33 @@
+schema: 1
+id: "es-en-housing-sentences"
+kind: "layer"
+core: "es-housing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: housing"
+license: "CC-BY-SA-4.0"
+description: "Six sentences about renting and buying a home, with the words each is often mixed up with. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-2799":
+    native: "I pay the rent and the deposit when I sign."
+    bases: { "el": "the", "la": "the", "al": "to the" }
+    confusables: { "deposito": { why: "Depósito is a deposit in general, not the rent's bond." }, "arrendamiento": { why: "Arrendamiento is the lease, the contract itself." } }
+  "es-2800":
+    native: "The owner lives in the flat on the third floor."
+    bases: { "El": "the", "en": "in", "del": "of", "tercero": "third" }
+    confusables: { "inquilino": { why: "Inquilino is the tenant, who rents the home." }, "comunidad": { why: "Comunidad is the residents' association of the building." } }
+  "es-2801":
+    native: "We go up in the lift to the attic."
+    bases: { "en": "in", "el": "the", "hasta": "until" }
+    confusables: { "escalera": { why: "Escalera is the staircase, the stairs instead." }, "portal": { why: "Portal is the entrance hall, at the bottom." } }
+  "es-2802":
+    native: "The heating and the lock are broken."
+    bases: { "La": "the" }
+    confusables: { "reforma": { why: "Reforma is a renovation, work to improve." }, "gasto": { why: "Gasto is an expense, a cost to pay." } }
+  "es-2803":
+    native: "I move to the central flat in July."
+    bases: { "Me": "to me", "al": "to the", "en": "in" }
+    confusables: { "hipoteca": { why: "Hipoteca is a mortgage, a loan to buy." }, "mudanza": { why: "Mudanza is the move, the event itself." } }
+  "es-2804":
+    native: "The estate agency looks for a home for me."
+    bases: { "La": "the", "una": "a", "para": "for", "mí": "me" }
+    confusables: { "hogar": { why: "Hogar is a home, the family's home." }, "agente": { why: "Agente is an agent, the person who works there." } }

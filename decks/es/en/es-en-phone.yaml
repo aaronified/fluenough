@@ -1,0 +1,205 @@
+schema: 1
+id: "es-en-phone"
+kind: "layer"
+core: "es-phone"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Phone"
+license: "CC-BY-SA-4.0"
+description: "Words for the phone and the internet: the call and the message, the battery and the signal, the password and the app, and the verbs to send, switch on and off, and delete. Not yet checked by a Spanish speaker: please report any mistake."
+cards:
+  "es-1650":
+    native: "call"
+    notes: { n1: "Llamada is a phone call. Hacer una llamada is to make a call." }
+    bases: { "la": "the", "llamada": "call" }
+    examples:
+      "Recibo una llamada de mi madre.": { native: "I get a call from my mother.", bases: { "una": "a", "llamada": "call", "de": "of" } }
+      "La llamada es larga": { native: "The call is long.", bases: { "La": "the", "llamada": "call" } }
+  "es-1651":
+    native: "message"
+    notes: { n1: "Mensaje is a message, written or spoken. Mensaje de texto is a text message." }
+    bases: { "el": "the", "mensaje": "message" }
+    examples:
+      "Envío un mensaje a mi amiga.": { native: "I send a message to my friend.", bases: { "un": "a", "mensaje": "message", "a": "to", "amiga": "friend" } }
+      "Recibo un mensaje de texto.": { native: "I get a text message.", bases: { "un": "a", "mensaje": "message", "de": "of", "texto": "text" } }
+  "es-1652":
+    native: "to send"
+    notes: { n1: "Enviar is to send a message, an email or a photo. Its yo form is envío." }
+    bases: { "enviar": "to send" }
+    examples:
+      "Envío el correo hoy.": { native: "I send the email today.", bases: { "Envío": "to send", "el": "the" } }
+      "¿Me envías la foto?": { native: "Can you send me the photo?", bases: { "Me": "to me", "envías": "to send", "la": "the" } }
+  "es-1653":
+    native: "battery"
+    notes: { n1: "La batería is the battery of a phone. Cargar la batería is to charge it." }
+    bases: { "la": "the", "batería": "battery" }
+    examples:
+      "La batería está casi vacía.": { native: "The battery is almost empty.", bases: { "La": "the", "batería": "battery" } }
+      "Cargo la batería por la noche.": { native: "I charge the battery at night.", bases: { "la": "the", "batería": "battery", "por": "for" } }
+  "es-1654":
+    native: "app; application"
+    notes: { n1: "La aplicación is an app on a phone. Its short form is app." }
+    bases: { "la": "the", "aplicación": "app; application" }
+    examples:
+      "Esta aplicación es gratis.": { native: "This app is free.", bases: { "Esta": "This", "aplicación": "app; application" } }
+      "Descargo una aplicación.": { native: "I download an app.", bases: { "una": "a", "aplicación": "app; application" } }
+  "es-1655":
+    native: "to download"
+    notes: { n1: "Descargar is to download a file or an app to a device." }
+    bases: { "descargar": "to download" }
+    examples:
+      "Descargo la música.": { native: "I download the music.", bases: { "Descargo": "to download", "la": "the", "música": "music" } }
+      "Descargamos los vídeos.": { native: "We download the videos.", bases: { "Descargamos": "to download", "los": "the" } }
+  "es-1656":
+    native: "internet"
+    notes: { n1: "Internet is the internet. In Spanish it is masculine: el internet." }
+    bases: { "internet": "internet" }
+    examples:
+      "No tengo internet en casa.": { native: "I do not have internet at home.", bases: { "internet": "internet", "en": "in" } }
+      "El internet es rápido.": { native: "The internet is fast.", bases: { "El": "the", "internet": "internet" } }
+  "es-1657":
+    native: "wifi"
+    notes: { n1: "El wifi is the wireless connection in a house or a café." }
+    bases: { "el": "the", "wifi": "wifi" }
+    examples:
+      "¿Hay wifi aquí?": { native: "Is there wifi here?", bases: { "Hay": "there is; there are", "wifi": "wifi" } }
+      "La contraseña del wifi es fácil.": { native: "The wifi password is easy.", bases: { "La": "the", "del": "of", "wifi": "wifi" } }
+  "es-1658":
+    native: "signal"
+    notes: { n1: "La señal is the signal of a phone or a radio." }
+    bases: { "la": "the", "señal": "signal" }
+    examples:
+      "No hay señal en el campo.": { native: "There is no signal in the countryside.", bases: { "hay": "there is; there are", "señal": "signal", "en": "in", "el": "the", "campo": "field" } }
+      "La señal es muy débil.": { native: "The signal is very weak.", bases: { "La": "the", "señal": "signal", "débil": "weak" } }
+  "es-1659":
+    native: "connection"
+    notes: { n1: "La conexión is the connection to the internet or a network." }
+    bases: { "la": "the", "conexión": "connection" }
+    examples:
+      "La conexión es lenta.": { native: "The connection is slow.", bases: { "La": "the", "conexión": "connection" } }
+      "Hay una buena conexión en la oficina.": { native: "There is a good connection in the office.", bases: { "Hay": "there is; there are", "una": "a", "conexión": "connection", "en": "in", "la": "the" } }
+  "es-1660":
+    native: "password"
+    notes: { n1: "La contraseña is the password for an account or a device." }
+    bases: { "la": "the", "contraseña": "password" }
+    examples:
+      "Mi contraseña es segura.": { native: "My password is secure.", bases: { "contraseña": "password", "segura": "secure; safe" } }
+      "Olvido la contraseña del correo.": { native: "I forget the email password.", bases: { "la": "the", "contraseña": "password", "del": "of" } }
+  "es-1661":
+    native: "mailbox; voicemail"
+    notes: { n1: "El buzón is a letterbox, or the voicemail of a phone." }
+    bases: { "el": "the", "buzón": "mailbox; voicemail" }
+    examples:
+      "Dejo un mensaje en el buzón de voz.": { native: "I leave a message on the voicemail.", bases: { "un": "a", "en": "in", "el": "the", "buzón": "mailbox; voicemail", "de": "of", "voz": "voice" } }
+      "El buzón está lleno.": { native: "The mailbox is full.", bases: { "El": "the", "buzón": "mailbox; voicemail" } }
+  "es-1662":
+    native: "to switch off"
+    notes: { n1: "Apagar is to switch off a light, a phone or a device. The opposite is encender." }
+    bases: { "apagar": "to switch off" }
+    examples:
+      "Apago el móvil por la noche.": { native: "I switch off my phone at night.", bases: { "Apago": "to switch off", "el": "the", "por": "for", "la": "the" } }
+      "Apaga la luz, por favor.": { native: "Switch off the light, please.", bases: { "Apaga": "to switch off", "la": "the", "luz": "light", "por": "for", "favor": "please" } }
+  "es-1663":
+    native: "to switch on"
+    notes: { n1: "Encender is to switch on a light, a device or a fire. Its stem changes: enciendo, enciendes." }
+    bases: { "encender": "to switch on" }
+    examples:
+      "Enciendo la pantalla.": { native: "I switch on the screen.", bases: { "Enciendo": "to switch on", "la": "the" } }
+      "Enciende la luz.": { native: "Switch on the light.", bases: { "Enciende": "to switch on", "la": "the", "luz": "light" } }
+  "es-1664":
+    native: "video"
+    notes: { n1: "El vídeo is a video, a moving picture. The plural is vídeos." }
+    bases: { "el": "the", "vídeo": "video" }
+    examples:
+      "Veo un vídeo en el móvil.": { native: "I watch a video on my phone.", bases: { "un": "a", "vídeo": "video", "en": "in", "el": "the" } }
+      "Este vídeo es muy divertido.": { native: "This video is very funny.", bases: { "Este": "this", "vídeo": "video" } }
+  "es-1665":
+    native: "key (on a keyboard)"
+    notes: { n1: "La tecla is a key on a keyboard or a phone." }
+    bases: { "la": "the", "tecla": "key (on a keyboard)" }
+    examples:
+      "Pulsa la tecla verde.": { native: "Press the green key.", bases: { "Pulsa": "to press", "la": "the", "tecla": "key (on a keyboard)" } }
+      "La tecla está rota.": { native: "The key is broken.", bases: { "La": "the", "tecla": "key (on a keyboard)" } }
+  "es-1666":
+    native: "network"
+    notes: { n1: "La red is a network, the connection of many devices, or a social network." }
+    bases: { "la": "the", "red": "network" }
+    examples:
+      "No tengo red aquí.": { native: "I have no network here.", bases: { "red": "network" } }
+      "La red es segura.": { native: "The network is secure.", bases: { "La": "the", "red": "network", "segura": "secure; safe" } }
+  "es-1667":
+    native: "tablet"
+    notes: { n1: "La tableta is a tablet, a flat computer you touch." }
+    bases: { "la": "the", "tableta": "tablet" }
+    examples:
+      "Leo en la tableta.": { native: "I read on the tablet.", bases: { "en": "in", "la": "the", "tableta": "tablet" } }
+      "La tableta es nueva.": { native: "The tablet is new.", bases: { "La": "the", "tableta": "tablet" } }
+  "es-1668":
+    native: "cable"
+    notes: { n1: "El cable is a cable or wire, for charging or connecting." }
+    bases: { "el": "the", "cable": "cable" }
+    examples:
+      "Necesito un cable de carga.": { native: "I need a charging cable.", bases: { "un": "a", "cable": "cable", "de": "of" } }
+      "El cable está en el cajón.": { native: "The cable is in the drawer.", bases: { "El": "the", "cable": "cable", "en": "in", "cajón": "drawer" } }
+  "es-1669":
+    native: "earphone"
+    notes: { n1: "El auricular is an earphone, put in or on the ear. The plural is auriculares." }
+    bases: { "el": "the", "auricular": "earphone" }
+    examples:
+      "Llevo los auriculares en el bolsillo.": { native: "I carry the earphones in my pocket.", bases: { "los": "the", "auriculares": "earphone", "en": "in", "el": "the", "bolsillo": "pocket" } }
+      "El auricular izquierdo no funciona.": { native: "The left earphone does not work.", bases: { "El": "the", "auricular": "earphone", "izquierdo": "left", "funciona": "to work" } }
+  "es-1670":
+    native: "loudspeaker"
+    notes: { n1: "El altavoz is a speaker, for music or sound." }
+    bases: { "el": "the", "altavoz": "loudspeaker" }
+    examples:
+      "El altavoz está roto.": { native: "The speaker is broken.", bases: { "El": "the", "altavoz": "loudspeaker" } }
+      "Pongo la música en el altavoz.": { native: "I play the music on the speaker.", bases: { "la": "the", "música": "music", "en": "in", "el": "the", "altavoz": "loudspeaker" } }
+  "es-1671":
+    native: "microphone"
+    notes: { n1: "El micrófono is a microphone, for recording or speaking to many." }
+    bases: { "el": "the", "micrófono": "microphone" }
+    examples:
+      "El micrófono no funciona.": { native: "The microphone does not work.", bases: { "El": "the", "micrófono": "microphone", "funciona": "to work" } }
+      "Hablo por el micrófono.": { native: "I speak into the microphone.", bases: { "por": "for", "el": "the", "micrófono": "microphone" } }
+  "es-1672":
+    native: "user"
+    notes: { n1: "El usuario is the person who uses a device or an app. The feminine is la usuaria." }
+    bases: { "el": "the", "usuario": "user" }
+    examples:
+      "Soy un usuario nuevo.": { native: "I am a new user.", bases: { "un": "a", "usuario": "user" } }
+      "El usuario escribe su nombre.": { native: "The user types their name.", bases: { "El": "the", "usuario": "user" } }
+  "es-1673":
+    native: "profile"
+    notes: { n1: "El perfil is a profile, the page with your name and picture." }
+    bases: { "el": "the", "perfil": "profile" }
+    examples:
+      "Mi perfil es público.": { native: "My profile is public.", bases: { "perfil": "profile", "público": "public" } }
+      "Cambio mi perfil.": { native: "I change my profile.", bases: { "perfil": "profile" } }
+  "es-1674":
+    native: "to delete"
+    notes: { n1: "Borrar is to delete a message, a photo or a file." }
+    bases: { "borrar": "to delete" }
+    examples:
+      "Borro el mensaje.": { native: "I delete the message.", bases: { "Borro": "to delete", "el": "the" } }
+      "Borro la foto vieja.": { native: "I delete the old photo.", bases: { "Borro": "to delete", "la": "the" } }
+  "es-1675":
+    native: "to dial"
+    notes: { n1: "Marcar is to dial a phone number, or to mark something." }
+    bases: { "marcar": "to dial" }
+    examples:
+      "Marco el número.": { native: "I dial the number.", bases: { "Marco": "to dial", "el": "the" } }
+      "Marca el código.": { native: "Dial the code.", bases: { "Marca": "to dial", "el": "the", "código": "code" } }
+  "es-1676":
+    native: "keyboard"
+    notes: { n1: "El teclado is a keyboard, of a computer or a piano." }
+    bases: { "el": "the", "teclado": "keyboard" }
+    examples:
+      "El teclado está sucio.": { native: "The keyboard is dirty.", bases: { "El": "the", "teclado": "keyboard" } }
+      "El teclado tiene muchas teclas.": { native: "The keyboard has many keys.", bases: { "El": "the", "teclado": "keyboard" } }
+  "es-1677":
+    native: "printer"
+    notes: { n1: "La impresora is a printer, for paper." }
+    bases: { "la": "the", "impresora": "printer" }
+    examples:
+      "La impresora está en la oficina.": { native: "The printer is in the office.", bases: { "La": "the", "impresora": "printer", "en": "in" } }
+      "Imprimo las fotos en la impresora.": { native: "I print the photos on the printer.", bases: { "Imprimo": "to print", "las": "the", "en": "in", "la": "the", "impresora": "printer" } }

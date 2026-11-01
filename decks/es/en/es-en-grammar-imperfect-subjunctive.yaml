@@ -1,0 +1,24 @@
+schema: 1
+id: "es-en-grammar-imperfect-subjunctive"
+kind: "layer"
+core: "es-grammar-imperfect-subjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Imperfect subjunctive: if I were you"
+license: "CC-BY-SA-4.0"
+description: "The imperfect subjunctive is for wishes, requests and unreal conditions in the past or the present: quería que hablara, I wanted you to speak; ojalá tuviera tiempo, I wish I had time; si fuera tú, hablaría con él, if I were you, I would speak to him. It comes from the preterite third person plural: hablaron, hablara. Not yet checked by a Spanish speaker: please report any mistake."
+pattern:
+  name: "Imperfect subjunctive after a past or unreal trigger"
+  slot_name: "use"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  slots: { "querer que (wanted)": "wanted: quería que ...", "ojalá (I wish)": "wish: ojalá ...", "si (if, unreal)": "if, unreal: si ..., ...", "para que (so that)": "purpose: para que ..." }
+  entries:
+    "hablar": "to speak"
+    "tener": "to have"
+    "ser": "to be"
+    "ir": "to go"
+    "hacer": "to do; to make"
+    "estar": "to be (place, state)"
+    "decir": "to say"
+    "comer": "to eat"
+    "vivir": "to live"
+  notes: "Take the third person plural of the preterite, drop -ron, and add -ra (or -se): hablaron, hablara or hablase; tuvieron, tuviera. Irregular stems: fueron, fuera; dijeron, dijera. The imperfect subjunctive follows a past trigger (quería que) or an unreal si (si fuera, if I were). In an unreal si clause the main verb is in the conditional: si tuviera, viajaría."
