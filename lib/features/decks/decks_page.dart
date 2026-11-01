@@ -26,6 +26,7 @@ import 'number_practice_tile.dart';
 import 'path_model.dart';
 import 'path_view.dart';
 import 'script_offers.dart';
+import 'skipped_script_section.dart';
 import 'unit_search.dart';
 
 /// The Decks tab: under the language bar (#528), the course of the
@@ -426,6 +427,19 @@ class _DecksPageState extends State<DecksPage> {
     return null;
   }
 
+  /// The rows of [entries] under the path: each deck with its badge, and
+  /// its number practice where it has one. Each opens its own screen.
+  List<Widget> _deckRows(AppState state, List<DeckEntry> entries) => <Widget>[
+    for (final entry in entries) ...<Widget>[
+      DeckTile(
+        entry: entry,
+        badge: DeckBadge.forEntry(state, entry),
+        onTap: () => AppNavigator.openDeck(context, entry.id),
+      ),
+      if (hasNumberPractice(state, entry)) NumberPracticeTile(deck: entry),
+    ],
+  ];
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -668,27 +682,23 @@ class _DecksPageState extends State<DecksPage> {
                           children: <Widget>[
                             const SizedBox(height: 32),
                             const BeyondTheCourse(),
+                            for (final skipped
+                                in view.skippedScripts) ...<Widget>[
+                              const SizedBox(height: 24),
+                              SkippedScriptSection(
+                                view: view,
+                                skipped: skipped,
+                                spokenList: widget.spokenList,
+                                deckRows: _deckRows(state, skipped.decks),
+                              ),
+                            ],
                             if (view.otherDecks.isNotEmpty) ...<Widget>[
                               const SizedBox(height: 24),
                               GroupedList(
                                 header: l10n.pathOtherDecks,
                                 outerRadius: AppRadii.card,
                                 gap: 4,
-                                children: <Widget>[
-                                  for (final entry
-                                      in view.otherDecks) ...<Widget>[
-                                    DeckTile(
-                                      entry: entry,
-                                      badge: DeckBadge.forEntry(state, entry),
-                                      onTap: () => AppNavigator.openDeck(
-                                        context,
-                                        entry.id,
-                                      ),
-                                    ),
-                                    if (hasNumberPractice(state, entry))
-                                      NumberPracticeTile(deck: entry),
-                                  ],
-                                ],
+                                children: _deckRows(state, view.otherDecks),
                               ),
                             ],
                             if (state.brokenDecks.isNotEmpty) ...<Widget>[
