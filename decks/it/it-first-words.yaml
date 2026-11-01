@@ -1,0 +1,120 @@
+schema: 1
+id: "it-first-words"
+part: "core"
+kind: "vocab"
+language: { code: "it", iso639_3: "ita", name: "Italian", script: "latin", tts: "it-IT", icon: "It" }
+license: "CC-BY-SA-4.0"
+theme: "first-words"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "it-0001"
+    target: "sì"
+    ipa: "si"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sì, grazie.", ipa: "si ˈɡrattsje", bases: [{ word: "Sì", base: "sì" }, { word: "grazie", base: "grazie" }] }
+      - { target: "Sì, parlo italiano.", ipa: "si ˈparlo itaˈljano", bases: [{ word: "Sì", base: "sì" }, { word: "parlo", base: "parlare" }, { word: "italiano", base: "italiano" }] }
+  - id: "it-0002"
+    target: "no"
+    ipa: "no"
+    pos: "adv"
+    tags: ["answer"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "No, grazie.", ipa: "no ˈɡrattsje", bases: [{ word: "No", base: "no" }, { word: "grazie", base: "grazie" }] }
+      - { target: "Non parlo inglese.", ipa: "non ˈparlo inˈɡleze", bases: [{ word: "Non", base: "non" }, { word: "parlo", base: "parlare" }, { word: "inglese", base: "inglese" }] }
+  - id: "it-0003"
+    target: "io"
+    ipa: "ˈio"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Io sono studente.", ipa: "ˈio ˈsono studˈɛnte", bases: [{ word: "Io", base: "io" }, { word: "sono", base: "essere" }, { word: "studente", base: "studente" }] }
+      - { target: "Io non capisco.", ipa: "ˈio non kaˈpisko", bases: [{ word: "Io", base: "io" }, { word: "non", base: "non" }, { word: "capisco", base: "capire" }] }
+  - id: "it-0004"
+    target: "tu"
+    ipa: "tu"
+    pos: "pronoun"
+    tags: ["pronoun"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu sei italiano?", ipa: "tu ˈsɛi itaˈljano", bases: [{ word: "Tu", base: "tu" }, { word: "sei", base: "essere" }, { word: "italiano", base: "italiano" }] }
+      - { target: "Tu parli inglese?", ipa: "tu ˈparli inˈɡleze", bases: [{ word: "Tu", base: "tu" }, { word: "parli", base: "parlare" }, { word: "inglese", base: "inglese" }] }
+  - id: "it-0005"
+    target: "e"
+    ipa: "e"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pane e vino.", ipa: "ˈpane e ˈvino", bases: [{ word: "Pane", base: "pane" }, { word: "e", base: "e" }, { word: "vino", base: "vino" }] }
+      - { target: "Io e tu.", ipa: "ˈio e tu", bases: [{ word: "Io", base: "io" }, { word: "e", base: "e" }, { word: "tu", base: "tu" }] }
+  - id: "it-0006"
+    target: "o"
+    ipa: "o"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Caffè o tè?", ipa: "kafˈfɛ o ˈtɛ", bases: [{ word: "Caffè", base: "caffè" }, { word: "o", base: "o" }, { word: "tè", base: "tè" }] }
+      - { target: "Oggi o domani?", ipa: "ˈodʒi o doˈmani", bases: [{ word: "Oggi", base: "oggi" }, { word: "o", base: "o" }, { word: "domani", base: "domani" }] }
+  - id: "it-0007"
+    target: "ma"
+    ipa: "ma"
+    pos: "other"
+    tags: ["linking"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sì, ma ho fame.", ipa: "si ma o ˈfame", bases: [{ word: "Sì", base: "sì" }, { word: "ma", base: "ma" }, { word: "ho", base: "avere" }, { word: "fame", base: "fame" }] }
+      - { target: "Buono, ma caro.", ipa: "bwˈɔno ma ˈkaro", bases: [{ word: "Buono", base: "buono" }, { word: "ma", base: "ma" }, { word: "caro", base: "caro" }] }
+  - id: "it-0008"
+    target: "buono"
+    ipa: "ˈbwɔno"
+    pos: "adj"
+    tags: ["adjective"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il caffè è buono.", ipa: "il kafˈfɛ ɛ ˈbwɔno", bases: [{ word: "Il", base: "il" }, { word: "caffè", base: "caffè" }, { word: "è", base: "essere" }, { word: "buono", base: "buono" }] }
+      - { target: "Una buona idea.", ipa: "ˈuna ˈbwɔna iˈdɛa", bases: [{ word: "Una", base: "un" }, { word: "buona", base: "buono" }, { word: "idea", base: "idea" }] }
+  - id: "it-0009"
+    target: "uno"
+    ipa: "ˈuno"
+    pos: "adj"
+    tags: ["number"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un caffè, per favore.", ipa: "un kafˈfɛ per faˈvore", bases: [{ word: "Un", base: "uno" }, { word: "caffè", base: "caffè" }, { word: "per", base: "per" }, { word: "favore", base: "favore" }] }
+      - { target: "Ho un fratello.", ipa: "o un fraˈtɛllo", bases: [{ word: "Ho", base: "avere" }, { word: "un", base: "uno" }, { word: "fratello", base: "fratello" }] }
+  - id: "it-0010"
+    target: "acqua"
+    ipa: "ˈakkwa"
+    pos: "noun"
+    gender: "f"
+    tags: ["drink"]
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Acqua, per favore.", ipa: "ˈakkwa per faˈvore", bases: [{ word: "Acqua", base: "acqua" }, { word: "per", base: "per" }, { word: "favore", base: "favore" }] }
+      - { target: "Bevo acqua.", ipa: "ˈbɛvo ˈakkwa", bases: [{ word: "Bevo", base: "bere" }, { word: "acqua", base: "acqua" }] }

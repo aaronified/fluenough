@@ -1,0 +1,179 @@
+schema: 1
+id: "it-en-first-words"
+kind: "layer"
+core: "it-first-words"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First words"
+license: "CC-BY-SA-4.0"
+description: "Yes and no, the pronouns I and you, the small words that link a sentence, and a few everyday words (good, one, water). Greetings and thank you are in the phrasebook. Not yet checked by an Italian speaker: please report any mistake."
+cards:
+  "it-0001":
+    native: "yes"
+    notes:
+      "n1": "Sì is the plain yes, written with an accent on the i. A negative question is answered the same way: Non vieni? Sì, vengo (Aren't you coming? Yes, I am)."
+    examples:
+      "Sì, grazie.":
+        native: "Yes, thank you."
+        bases:
+          "Sì": "yes"
+          "grazie": "thank you"
+      "Sì, parlo italiano.":
+        native: "Yes, I speak Italian."
+        bases:
+          "Sì": "yes"
+          "parlo": "I speak"
+          "italiano": "Italian"
+  "it-0002":
+    native: "no"
+    notes:
+      "n1": "No is 'no'. Non is 'not', and goes before a verb: non parlo (I don't speak)."
+    examples:
+      "No, grazie.":
+        native: "No, thank you."
+        bases:
+          "No": "no"
+          "grazie": "thank you"
+      "Non parlo inglese.":
+        native: "I don't speak English."
+        bases:
+          "Non": "not"
+          "parlo": "I speak"
+          "inglese": "English"
+  "it-0003":
+    native: "I"
+    notes:
+      "n1": "Io is I. Italian often leaves it out, because the verb ending already shows the person: parlo is 'I speak'."
+    examples:
+      "Io sono studente.":
+        native: "I am a student."
+        bases:
+          "Io": "I"
+          "sono": "I am"
+          "studente": "student"
+      "Io non capisco.":
+        native: "I don't understand."
+        bases:
+          "Io": "I"
+          "non": "not"
+          "capisco": "I understand"
+  "it-0004":
+    native: "you"
+    notes:
+      "n1": "Tu is the informal 'you'. In polite speech to a stranger, use Lei, which takes the third-person form: Lei parla (you speak)."
+    examples:
+      "Tu sei italiano?":
+        native: "Are you Italian?"
+        bases:
+          "Tu": "you"
+          "sei": "are"
+          "italiano": "Italian"
+      "Tu parli inglese?":
+        native: "Do you speak English?"
+        bases:
+          "Tu": "you"
+          "parli": "speak"
+          "inglese": "English"
+  "it-0005":
+    native: "and"
+    notes:
+      "n1": "E is 'and' between two words, as in pane e vino (bread and wine)."
+    examples:
+      "Pane e vino.":
+        native: "Bread and wine."
+        bases:
+          "Pane": "bread"
+          "e": "and"
+          "vino": "wine"
+      "Io e tu.":
+        native: "You and I."
+        bases:
+          "Io": "I"
+          "e": "and"
+          "tu": "you"
+  "it-0006":
+    native: "or"
+    notes:
+      "n1": "O is 'or', as in a question that offers a choice: caffè o tè (coffee or tea)."
+    examples:
+      "Caffè o tè?":
+        native: "Coffee or tea?"
+        bases:
+          "Caffè": "coffee"
+          "o": "or"
+          "tè": "tea"
+      "Oggi o domani?":
+        native: "Today or tomorrow?"
+        bases:
+          "Oggi": "today"
+          "o": "or"
+          "domani": "tomorrow"
+  "it-0007":
+    native: "but"
+    notes:
+      "n1": "Ma is 'but'. It is said short, with the a clearly sounded."
+    examples:
+      "Sì, ma ho fame.":
+        native: "Yes, but I am hungry."
+        bases:
+          "Sì": "yes"
+          "ma": "but"
+          "ho": "I have"
+          "fame": "hunger"
+      "Buono, ma caro.":
+        native: "Good, but expensive."
+        bases:
+          "Buono": "good"
+          "ma": "but"
+          "caro": "expensive"
+  "it-0008":
+    native: "good"
+    notes:
+      "n1": "Buono changes its ending to match the noun: buono (masculine), buona (feminine), buoni and buone (plural). Before most masculine nouns that begin with a consonant it can shorten to buon."
+    examples:
+      "Il caffè è buono.":
+        native: "The coffee is good."
+        bases:
+          "Il": "the"
+          "caffè": "coffee"
+          "è": "is"
+          "buono": "good"
+      "Una buona idea.":
+        native: "A good idea."
+        bases:
+          "Una": "a"
+          "buona": "good"
+          "idea": "idea"
+  "it-0009":
+    native: "one"
+    notes:
+      "n1": "Uno is 'one'. Before most masculine nouns it becomes un: un caffè (one coffee, a coffee). Feminine is una."
+    examples:
+      "Un caffè, per favore.":
+        native: "A coffee, please."
+        bases:
+          "Un": "a"
+          "caffè": "coffee"
+          "per": "for"
+          "favore": "favour"
+      "Ho un fratello.":
+        native: "I have a brother."
+        bases:
+          "Ho": "I have"
+          "un": "a"
+          "fratello": "brother"
+  "it-0010":
+    native: "water"
+    notes:
+      "n1": "Acqua is feminine: l'acqua. It is the word for drinking water too, so ask for acqua naturale for still water."
+    examples:
+      "Acqua, per favore.":
+        native: "Water, please."
+        bases:
+          "Acqua": "water"
+          "per": "for"
+          "favore": "favour"
+      "Bevo acqua.":
+        native: "I drink water."
+        bases:
+          "Bevo": "I drink"
+          "acqua": "water"
