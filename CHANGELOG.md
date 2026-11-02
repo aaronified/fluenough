@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Say no longer marks a short or long vowel as wrong.** A speech recogniser cannot reliably hear a vowel's length and returns the dictionary spelling, so a word heard that differs from the answer only in vowel length (అక్క for అక్కా) is now "Close, mind the vowel length" instead of "Not quite", with the contrast shown as a hint and no red. Typed answers are unchanged (#1001).
+
 ### Changed
 
 - **One look for every question.** Teach cards, sets and all the questions now share one screen: the same header, a pill in the skill's colour ("New word · Recognition"), one card, and one place for the buttons. There is no Continue button any more: swipe, or tap the arrow on the edge, to go on, and swipe back to look at an earlier card, which you can see but not change. A wrong choice shows the right answer and the option you chose; a wrong word order shows the right order and yours. The Say result shows what the phone heard (in script, with its reading or IPA) and a Your recording row that replays your own voice, or records the word again where the phone cannot keep the audio of your answer (#509).
