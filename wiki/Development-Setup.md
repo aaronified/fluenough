@@ -87,6 +87,13 @@ flutter test
 
 CI runs all four, so do not run them for a docs-only change. Write a test only as AGENTS.md says, "Tests check behaviour".
 
+A push to main that changes documentation only (README.md, CLAUDE.md,
+AGENTS.md, CONTRIBUTING.md, `docs/`, `wiki/`) starts no CI run, so it neither
+cancels a code push's pending run nor leaves the CI badge on "cancelled". The
+exceptions are `docs/REVIEWING.md` and `wiki/Reviewing-Guide.md`, which a test
+reads, and CHANGELOG.md, an app asset: they still run CI. Pull requests always
+run it, whatever they change (`.github/workflows/ci.yml`).
+
 The `wiki/` folder is published to the GitHub wiki by `.github/workflows/wiki-sync.yml`; edits made in the wiki's web editor are overwritten by the next sync.
 
 See also: [Contributing](Contributing) · [Home](Home)

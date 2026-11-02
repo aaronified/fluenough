@@ -3,6 +3,25 @@ name: CI
 on:
   push:
     branches: [main]
+    # A push to main that changes documentation only starts no run (owner,
+    # 2026-11-02, after 2026-10-22: "Doc pushes do not need CI"); such a run
+    # used to queue behind, and so cancel, the pending run of a code push and
+    # leave the README's CI badge on "cancelled". The run is skipped only when
+    # EVERY changed file is excluded here. Later patterns win, so the two
+    # Markdown files that tests read from disk are included again: the review
+    # guide (test/reviewing_test.dart). CHANGELOG.md is not excluded either: it
+    # is an app asset (pubspec.yaml). pull_request has no filter, so a
+    # documentation pull request still runs every check the ruleset requires.
+    paths:
+      - "**"
+      - "!README.md"
+      - "!CLAUDE.md"
+      - "!AGENTS.md"
+      - "!CONTRIBUTING.md"
+      - "!docs/**"
+      - "docs/REVIEWING.md"
+      - "!wiki/**"
+      - "wiki/Reviewing-Guide.md"
   pull_request:
 
 # A new push to a PR cancels its older run; main's runs are never cancelled.
