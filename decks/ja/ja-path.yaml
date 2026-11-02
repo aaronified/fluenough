@@ -93,6 +93,7 @@ regions:
 # skips them. The planned script units join it as each is written.
 alphabet:
   - "ja-hiragana"
+  - "ja-kanji-1"
   - "ja-katakana"
   - "ja-hiragana-marks"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
@@ -332,11 +333,8 @@ units:
     reading_passages:
       - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
   # The first kanji: numbers, days, people and the simplest pictures.
-  - planned: { id: "ja-kanji-1", grammar: "script-kanji-1", words: 0 }
-    listening_passages:
-      - { id: "days-of-the-week", text: { "en": "The days of the week, each named after its kanji: sun, moon, fire, water" } }
-    reading_passages:
-      - { id: "calendar-page", text: { "en": "A calendar page with the days and dates in kanji" } }
+  - decks: ["ja-kanji-1"]
+    words: 0
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences; the te-form and the plain forms, more kanji.
