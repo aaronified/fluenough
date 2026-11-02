@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-more-verbs"
+name: "Japanese reading: more verbs"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-more-verbs-1"
+    title: "A busy house"
+    sentences:
+      - text: "ははがそうじします。"
+        reading: "haha ga soujishimasu."
+      - text: "ちちがりょうりします。"
+        reading: "chichi ga ryourishimasu."
+      - text: "こどもがさけびます。"
+        reading: "kodomo ga sakebimasu."
+      - text: "いぬははしります。"
+        reading: "inu haha shirimasu."
+    questions:
+      - id: "ja-0607"
+        prompt:
+          en: "Which line says that someone cooks?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-0608"
+        prompt:
+          en: "The third line says that the child shouts."
+        answer: true
+      - id: "ja-0609"
+        prompt:
+          en: "Which line says that the dog runs?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-more-verbs-2"
+    title: "A lost key"
+    sentences:
+      - text: "わたしはかぎをなくしました。"
+        reading: "watashi wa kagi o nakushimashita."
+      - text: "ともだちがかぎをひろいます。"
+        reading: "tomodachi ga kagi o hiroimasu."
+      - text: "わたしはかぎをさがします。"
+        reading: "watashi wa kagi o sagashimasu."
+      - text: "わたしはともだちにかぎをかえします。"
+        reading: "watashi wa tomodachi ni kagi o kaeshimasu."
+    questions:
+      - id: "ja-0610"
+        prompt:
+          en: "Which line says that the speaker lost the key?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0611"
+        prompt:
+          en: "The second line says that the friend picks up the key."
+        answer: true
+      - id: "ja-0612"
+        prompt:
+          en: "Which line says that the speaker returns the key to a friend?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
