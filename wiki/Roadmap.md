@@ -94,18 +94,17 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 1 · Skill model + FSRS
 
-4 approved open issues.
+3 approved open issues.
 
 **Other**
 
 - [#31](https://github.com/aaronified/fluenough/issues/31) Phonemic contrasts: the sounds of the language learnt that the learner's languages lack
 - [#32](https://github.com/aaronified/fluenough/issues/32) Grapheme-level TTS fallback for script decks
 - [#93](https://github.com/aaronified/fluenough/issues/93) Grammar exercises: match rows and sort into groups
-- [#243](https://github.com/aaronified/fluenough/issues/243) Skill model: one Settings switch per activity
 
 ### 2 · B1 plans
 
-7 approved open issues.
+6 approved open issues.
 
 **Other**
 
@@ -113,7 +112,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#209](https://github.com/aaronified/fluenough/issues/209) Plan: a B1 plan in every path
 - [#257](https://github.com/aaronified/fluenough/issues/257) B1 plans: the CEFR skeleton of themes and grammar per level
 - [#413](https://github.com/aaronified/fluenough/issues/413) Plan: a phrasebook, then words, then rules, then sentences
-- [#414](https://github.com/aaronified/fluenough/issues/414) Words, rules, sentences: owner decisions before building
 - [#419](https://github.com/aaronified/fluenough/issues/419) Words, rules, sentences: Telugu content
 - [#420](https://github.com/aaronified/fluenough/issues/420) Words, rules, sentences: content for the other courses
 
@@ -151,7 +149,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
-- [#29](https://github.com/aaronified/fluenough/issues/29) Show each word's IPA after answering
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
 - [#33](https://github.com/aaronified/fluenough/issues/33) Right-to-left: check on a device with a real Urdu deck
 - [#34](https://github.com/aaronified/fluenough/issues/34) Complex script rendering: Nastaliq, conjuncts, matras
@@ -210,10 +207,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#300](https://github.com/aaronified/fluenough/issues/300) Language paths: Indo-Aryan reorder
 - [#301](https://github.com/aaronified/fluenough/issues/301) Language paths: a full Spanish course
 - [#302](https://github.com/aaronified/fluenough/issues/302) Language paths: what new scripts need
-- [#303](https://github.com/aaronified/fluenough/issues/303) Wiktionary IPA: owner decision on licences
-- [#304](https://github.com/aaronified/fluenough/issues/304) Wiktionary IPA: extracts and tools/wiktionary_ipa.py
 - [#305](https://github.com/aaronified/fluenough/issues/305) Wiktionary IPA: compare and list disagreements
-- [#306](https://github.com/aaronified/fluenough/issues/306) Web: Pages workflow and web branding
 - [#307](https://github.com/aaronified/fluenough/issues/307) Web: installable
 - [#308](https://github.com/aaronified/fluenough/issues/308) Web: the database on the web
 - [#309](https://github.com/aaronified/fluenough/issues/309) Web: fallbacks and persistent storage
