@@ -743,20 +743,24 @@ def _has_kanji(text: str) -> bool:
 def _check_kanji_reading(r: Report, where: str, card: dict, target: object,
                          script: str, scripts: list[str] | None,
                          what: str = "card") -> None:
-    """A Japanese card or example sentence written in kanji (script `han`, with `kana` among the
-    language's scripts) shows its kana reading beside the kanji, as a Chinese
-    card shows pinyin: the reading is its `target_scripts.kana`, and every
-    target with a kanji in it needs one, as does an example sentence's
-    (ADR-0053). The kana's letters are checked by
-    `_check_target_scripts` (no kanji in a kana reading). A target in kana
-    alone has nothing to read out and gives none."""
+    """A Japanese card or example in kanji needs its kana reading.
+
+    A card or example sentence written in kanji (script `han`, with `kana`
+    among the language's scripts) shows its kana reading beside the kanji, as
+    a Chinese card shows pinyin: the reading is its `target_scripts.kana`, and
+    every target with a kanji in it needs one, as does an example sentence's
+    (ADR-0053). The kana's letters are checked by `_check_target_scripts`
+    (no kanji in a kana reading). A target in kana alone has nothing to read
+    out and gives none.
+    """
     if script != "han" or "kana" not in (scripts or [])[1:] or not _is_str(target):
         return
     spelled = card.get("target_scripts")
     kana = spelled.get("kana") if isinstance(spelled, dict) else None
     if _has_kanji(target) and not _is_str(kana):
-        r.error(where, f"{'an' if what == 'example' else 'a'} {what} written in kanji needs its kana reading, "
-                       "`target_scripts: { kana: ... }`")
+        article = "an" if what == "example" else "a"
+        r.error(where, f"{article} {what} written in kanji needs its kana "
+                       "reading, `target_scripts: { kana: ... }`")
 
 
 def _check_optional_text(r: Report, where: str, block: dict, key: str) -> None:

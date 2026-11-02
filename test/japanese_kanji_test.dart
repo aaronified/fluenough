@@ -183,5 +183,57 @@ void main() {
       expect(scripts[kana], containsAll(['たべる', 'ありがとう']));
       expect(scripts[kana], isNot(contains('食べる')));
     });
+
+    test('a Chinese deck, which writes han and lists no kana, keeps every '
+        'word in its han check', () async {
+      final state = AppState.test(
+        decks: MemoryDeckSource(const <String, String>{
+          'decks/zh/zh-words.yaml': '''
+schema: 1
+id: zh-words
+name: "Words"
+language: { code: zh, iso639_3: cmn, name: Mandarin Chinese, script: han, scripts: [han], tts: zh-CN }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: zh-words-0001, target: "你好", native: "hello", reading: "nǐ hǎo" }
+  - { id: zh-words-0002, target: "OK", native: "okay", reading: "ōu kèi" }
+  - { id: zh-words-0003, target: "110", native: "the police number", reading: "yāo yāo líng" }
+''',
+          'decks/zh/zh-characters.yaml': '''
+schema: 1
+id: zh-characters
+name: "Characters"
+language: { code: zh, iso639_3: cmn, name: Mandarin Chinese, script: han, scripts: [han], tts: zh-CN }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+tags: [script]
+cards:
+  - { id: zh-characters-0001, target: "人", native: "person", reading: "rén" }
+''',
+          'decks/zh/zh-path.yaml': '''
+schema: 1
+kind: path
+id: zh-path
+language: zh
+alphabet:
+  - zh-characters
+units:
+  - [zh-words]
+''',
+        }),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningLanguages: const <String>['zh'],
+          learningChosen: true,
+        ),
+      );
+      addTearDown(state.dispose);
+      await state.load();
+      final check = state
+          .placementScripts('zh')
+          .firstWhere((s) => s.script == han);
+      expect(check.words.map((w) => w.spelling), ['你好', 'OK', '110']);
+    });
   });
 }
