@@ -55,9 +55,31 @@ jobs:
       # boolean and a reviewer will not spot it. See docs/DECK-FORMAT.md.
       # The index is regenerated on main after each merge (deck-index.yml),
       # so it is not checked here (owner, 2026-10-23).
-      - run: python3 tools/validate_decks.py decks/
+      # Its stdout and exit code are kept and shared (artifact
+      # `validate-output`): "Decks: tools' tests (today's decks)" asserts on
+      # this very run instead of repeating the 20-minute pass
+      # (tools/test_validate_b1.py, Compatibility).
+      - name: Validate the decks
+        shell: bash
         env:
           FLUENOUGH_SKIP_INDEX_CHECK: "1"
+        run: |
+          set +e
+          # The absolute path, as the test passes it: the test finds a
+          # language's lines by "/decks/<lang>/" in them.
+          python3 -u tools/validate_decks.py "$GITHUB_WORKSPACE/decks" | tee "$RUNNER_TEMP/validate-output.txt"
+          code=${PIPESTATUS[0]}
+          echo "$code" > "$RUNNER_TEMP/validate-exit.txt"
+          exit "$code"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: validate-output
+          path: |
+            ${{ runner.temp }}/validate-output.txt
+            ${{ runner.temp }}/validate-exit.txt
+          if-no-files-found: error
+          retention-days: 1
       # Rule 10: no user-visible string is a literal in a widget. Checked here
       # rather than by the analyzer because flutter_lints has no such rule, and
       # a rule aimed at parallel agents cannot rest on a checklist box.
@@ -70,8 +92,35 @@ jobs:
   # decks/index.json, which the app downloads decks by, is current
   # (tools/deck_index.py) — so it and the index tool have tests of their
   # own. They are unittest TestCases, run here by pytest in parallel.
-  decks-tools-tests:
-    name: "Decks: tools' tests"
+  #
+  # They took 29 to 34 minutes in one job, so they run in three parts (every
+  # third test by id, tools/conftest.py) and one more job; every test still
+  # runs, in exactly one of them. The one test that validates all of decks/
+  # takes as long as the validator, so it reads the output of "Decks:
+  # validate" instead of running the validator again. Each part prints its 25
+  # slowest tests (--durations=25) to show where the time goes. The job named
+  # "Decks: tools' tests" is what the required checks and "Validate decks"
+  # see: it passes only if the four above it did.
+  decks-tools-parts:
+    name: "Decks: tools' tests (part ${{ matrix.part }}/3)"
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [1, 2, 3]
+    runs-on: ubuntu-latest
+    env:
+      TOOLS_TESTS_PART: ${{ matrix.part }}/3
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml pytest pytest-xdist fonttools
+      - run: python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools -k "not test_todays_decks_get_no_info_and_no_b1_message" --durations=25
+
+  decks-tools-today:
+    name: "Decks: tools' tests (today's decks)"
+    needs: [decks-validate]
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -79,7 +128,30 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml pytest pytest-xdist fonttools
-      - run: python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools
+      - uses: actions/download-artifact@v8
+        with:
+          name: validate-output
+          path: ${{ runner.temp }}/validate
+      # Exactly one test is selected; pytest fails if none is.
+      - run: python3 -m pytest -q -p no:cacheprovider --rootdir tools tools/test_validate_b1.py -k "test_todays_decks_get_no_info_and_no_b1_message" --durations=5
+        env:
+          FLUENOUGH_VALIDATE_OUTPUT: ${{ runner.temp }}/validate/validate-output.txt
+          FLUENOUGH_VALIDATE_EXIT: ${{ runner.temp }}/validate/validate-exit.txt
+
+  decks-tools-tests:
+    name: "Decks: tools' tests"
+    needs: [decks-tools-parts, decks-tools-today]
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      PARTS: ${{ needs.decks-tools-parts.result }}
+      TODAY: ${{ needs.decks-tools-today.result }}
+    steps:
+      - run: |
+          if [ "$PARTS" != "success" ] || [ "$TODAY" != "success" ]; then
+            echo "::error::A tools' tests job did not succeed (parts: $PARTS, today's decks: $TODAY)"
+            exit 1
+          fi
 
   # The required check "Validate decks": passes only if both jobs above did.
   decks:

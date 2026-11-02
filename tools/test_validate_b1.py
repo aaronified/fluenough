@@ -2685,7 +2685,22 @@ class ScriptInProse(B1Case):
 class Compatibility(unittest.TestCase):
     """Section 12: today's decks print what they printed before."""
 
-    def _todays_decks_get_no_info_and_no_b1_message(self) -> None:
+    def _validator_run_over_the_decks(self) -> tuple[int, list[str]]:
+        """The validator's exit code and stdout lines over the real decks/.
+
+        It takes as long as the validator itself (about 20 minutes in CI), and
+        CI's "Decks: validate" job already runs exactly this command
+        (`FLUENOUGH_SKIP_INDEX_CHECK=1 python3 tools/validate_decks.py decks/`).
+        So there, that job saves its stdout and exit code and the
+        "Decks: tools' tests (today's decks)" job points this test at them with
+        FLUENOUGH_VALIDATE_OUTPUT and FLUENOUGH_VALIDATE_EXIT, so the pass is
+        run once, not twice. Without them (a contributor's machine, any other
+        job) the test runs the validator itself, as it always did."""
+        saved = os.environ.get("FLUENOUGH_VALIDATE_OUTPUT")
+        if saved:
+            exit_file = os.environ["FLUENOUGH_VALIDATE_EXIT"]
+            return (int(Path(exit_file).read_text(encoding="utf-8").strip()),
+                    Path(saved).read_text(encoding="utf-8").splitlines())
         out = io.StringIO()
         # The committed index is regenerated on main after each merge, so a
         # deck change is not checked against it here; this test is about the
@@ -2695,7 +2710,10 @@ class Compatibility(unittest.TestCase):
                 contextlib.redirect_stdout(out):
             code = validate_decks.main(["validate_decks.py",
                                         str(validate_decks.ROOT / "decks")])
-        lines = out.getvalue().splitlines()
+        return code, out.getvalue().splitlines()
+
+    def test_todays_decks_get_no_info_and_no_b1_message(self) -> None:
+        code, lines = self._validator_run_over_the_decks()
         self.assertEqual(code, 0, lines)
         # A language that has written its B1 plan prints its info lines by
         # design (a course's coverage, the plan's sizes): leave those files
@@ -2728,7 +2746,6 @@ class Compatibility(unittest.TestCase):
 
     def test_old_files_still_read_and_words_are_counted(self) -> None:
         cases = (
-            self._todays_decks_get_no_info_and_no_b1_message,
             self._counts_as_word,
         )
         for case in cases:
