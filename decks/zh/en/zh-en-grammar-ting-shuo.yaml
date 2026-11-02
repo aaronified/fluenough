@@ -1,0 +1,26 @@
+"schema": 1
+"id": "zh-en-grammar-ting-shuo"
+"kind": "layer"
+"core": "zh-grammar-ting-shuo"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "听说 (tīngshuō): reporting what you heard"
+"license": "CC-BY-SA-4.0"
+"description": "听说 (tīngshuō) says that you heard something from someone else: 听说他要来 (tīngshuō tā yào lái), I heard he is coming. It does not say the speaker is sure. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "听说 (tīngshuō): reporting what you heard"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of fact"
+    "reported": "听说 (tīngshuō) before the statement, for what one heard"
+    "reported-not": "听说 (tīngshuō) with a negated statement"
+  "entries":
+    "lai": "to come"
+    "xiayu": "to rain"
+    "kaoshi": "exam"
+  "notes": "听说 (tīngshuō) is put before the statement that you heard: 听说他要来 (tīngshuō tā yào lái), I heard that he is coming. Do not use it for something you saw yourself. To say it was not true, put 不 (bù) inside the statement, as in 听说他不来 (tīngshuō tā bù lái), I heard he is not coming."
