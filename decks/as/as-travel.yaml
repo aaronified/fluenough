@@ -1,0 +1,166 @@
+schema: 1
+id: "as-travel"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "travel"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3330"
+    target: "বুকিং"
+    reading: "bukiṅ"
+    ipa: "bukiŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বুকিং আছে।", reading: "bukiṅ āse.", ipa: "bukiŋ ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "বুকিং ঠিক।", reading: "bukiṅ ṭhik.", ipa: "bukiŋ tʰik" }
+  - id: "as-3331"
+    target: "চেক-ইন"
+    reading: "cek-in"
+    ipa: "sekin"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চেক-ইন কৰা।", reading: "cek-in kôrā.", ipa: "sekin kɔɹa" }
+      - { target: "চেক-ইন কাইলৈ।", reading: "cek-in kāilôi.", ipa: "sekin kailɔi" }
+  - id: "as-3332"
+    target: "চেক-আউট"
+    reading: "cek-āuṭ"
+    ipa: "sekaut"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চেক-আউট কিমান বজাত?", reading: "cek-āuṭ kimān bôzāt?", ipa: "sekaut kiman bɔzat", bases: [{ word: "বজাত", ref: "as-0358" }] }
+      - { target: "চেক-আউট বাৰ বজাত।", reading: "cek-āuṭ bār bôzāt.", ipa: "sekaut baɹ bɔzat", bases: [{ word: "বজাত", ref: "as-0358" }] }
+  - id: "as-3333"
+    target: "পাছপৰ্ট"
+    reading: "pāspôrṭ"
+    ipa: "pasɔpɔɹt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পাছপৰ্ট আছে নেকি?", reading: "pāspôrṭ āse neki?", ipa: "pasɔpɔɹt ase neki", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "পাছপৰ্ট নাই।", reading: "pāspôrṭ nāi.", ipa: "pasɔpɔɹt nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-3334"
+    target: "ভিছা"
+    reading: "bhisā"
+    ipa: "bʱisa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভিছা লাগে।", reading: "bhisā lāge.", ipa: "bʱisa laɡe" }
+      - { target: "ভিছা আহিছে।", reading: "bhisā āhise.", ipa: "bʱisa ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3335"
+    target: "পৰ্যটক"
+    reading: "pôrjôṭôk"
+    ipa: "pɔɹzɔtɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পৰ্যটক বহুত।", reading: "pôrjôṭôk bohut.", ipa: "pɔɹzɔtɔk bohut" }
+      - { target: "পৰ্যটক আহিছে।", reading: "pôrjôṭôk āhise.", ipa: "pɔɹzɔtɔk ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3336"
+    target: "পৰ্যটন"
+    reading: "pôrjôṭôn"
+    ipa: "pɔɹzɔtɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পৰ্যটন ভাল।", reading: "pôrjôṭôn bhāl.", ipa: "pɔɹzɔtɔn bʱal" }
+      - { target: "পৰ্যটন বহুত।", reading: "pôrjôṭôn bohut.", ipa: "pɔɹzɔtɔn bohut" }
+  - id: "as-3337"
+    target: "গাইড"
+    reading: "gāid"
+    ipa: "ɡaid"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গাইড আহিছে।", reading: "gāid āhise.", ipa: "ɡaid ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "গাইড ভাল।", reading: "gāid bhāl.", ipa: "ɡaid bʱal" }
+  - id: "as-3338"
+    target: "দৰ্শনীয় স্থান"
+    reading: "dôrśônīyô sthān"
+    ipa: "dɔɹxonij stʰan"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "দৰ্শনীয়", base: "দৰ্শনীয়", reading: "dôrśônīyô" }
+      - { word: "স্থান", base: "স্থান", reading: "sthān" }
+    examples:
+  - id: "as-3339"
+    target: "মিউজিয়াম"
+    reading: "miuziyām"
+    ipa: "miuzijam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মিউজিয়াম ডাঙৰ।", reading: "miuziyām dāṅôr.", ipa: "miuzijam daŋɔɹ" }
+      - { target: "মিউজিয়ামত ছবি।", reading: "miuziyāmôt sôbi.", ipa: "miuzijamɔt sobi", bases: [{ word: "মিউজিয়ামত", base: "মিউজিয়াম", reading: "miuziyām" }] }
+  - id: "as-3340"
+    target: "সৈকত"
+    reading: "xoikôt"
+    ipa: "sɔikɔt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সৈকত ধুনীয়া।", reading: "xoikôt dhuniyā.", ipa: "sɔikɔt dʱunija" }
+      - { target: "সৈকতত বালি।", reading: "xoikôtôt bāli.", ipa: "sɔikɔtɔt bali", bases: [{ word: "সৈকতত", base: "সৈকত", reading: "xoikôt" }] }
+  - id: "as-3341"
+    target: "ঠিকনা"
+    reading: "ṭhikanā"
+    ipa: "tʰikɔna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ঠিকনা দিয়ক।", reading: "ṭhikanā diyôk.", ipa: "tʰikɔna dijɔk" }
+      - { target: "ঠিকনা ঠিক।", reading: "ṭhikanā ṭhik.", ipa: "tʰikɔna tʰik" }
+  - id: "as-3342"
+    target: "সুটকেচ"
+    reading: "suṭkes"
+    ipa: "sutɔkes"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সুটকেচ ভাৰী।", reading: "suṭkes bhāri.", ipa: "sutɔkes bʱaɹi" }
+      - { target: "সুটকেচ খোলা।", reading: "suṭkes khulā.", ipa: "sutɔkes kʰʊla" }
+  - id: "as-3343"
+    target: "ৰাতি থকা"
+    reading: "rāti thôkā"
+    ipa: "ɹati tʰɔka"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+  - id: "as-3344"
+    target: "পৰ্যটনস্থল"
+    reading: "pôrjôṭônsthôl"
+    ipa: "pɔɹzɔtɔnɔstʰɔl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পৰ্যটনস্থল ধুনীয়া।", reading: "pôrjôṭônsthôl dhuniyā.", ipa: "pɔɹzɔtɔnɔstʰɔl dʱunija" }
+      - { target: "পৰ্যটনস্থলত মানুহ।", reading: "pôrjôṭônsthôlôt mānuh.", ipa: "pɔɹzɔtɔnɔstʰɔlɔt manuh", bases: [{ word: "পৰ্যটনস্থলত", base: "পৰ্যটনস্থল", reading: "pôrjôṭônsthôl" }] }
+  - id: "as-3345"
+    target: "ভ্ৰমণ কৰা"
+    reading: "bhrômôn kôrā"
+    ipa: "bʱɹɔmɔn kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:

@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-travel"
+name: "Assamese reading: travel: hotels, bookings and trips"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-hotel-booking"
+    title: "Booking a hotel room by phone"
+    theme: "travel"
+    sentences:
+      - text: "মই এটা কোঠা বুক কৰিব খুজিছোঁ।"
+        reading: "moi etā kuthā buk kôrib khujisum̐."
+      - text: "কাইলৈ চেক-ইন।"
+        reading: "kāilôi cek-in."
+      - text: "দুটা ৰাতি থাকিম।"
+        reading: "dutā rāti thākim."
+      - text: "চেক-আউট কিমান বজাত?"
+        reading: "cek-āuṭ kimān bôzāt?"
+    questions:
+      - id: "as-3354"
+        prompt: { en: "The caller wants to book a room." }
+        answer: true
+      - id: "as-3355"
+        prompt: { en: "When is the check-in?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Yesterday" }
+        answer: 2
+      - id: "as-3356"
+        prompt: { en: "How many nights will the caller stay?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 2
+  - id: "as-itinerary"
+    title: "A two-day trip itinerary"
+    theme: "travel"
+    sentences:
+      - text: "প্ৰথম দিনা মিউজিয়ামলৈ যাওঁ।"
+        reading: "prôthôm dinā miuziyāmlôi zāum̐."
+      - text: "দ্বিতীয় দিনা সৈকতত থাকিম।"
+        reading: "dwitīyô dinā xoikôtôt thākim."
+      - text: "গাইড আহিব।"
+        reading: "gāid āhib."
+      - text: "ৰাতি হোটেলত।"
+        reading: "rāti hutelôt."
+    questions:
+      - id: "as-3357"
+        prompt: { en: "The first day is for the museum." }
+        answer: true
+      - id: "as-3358"
+        prompt: { en: "Where will the speaker be on the second day?" }
+        options:
+          - { en: "At the beach" }
+          - { en: "At the museum" }
+          - { en: "At home" }
+        answer: 1
+      - id: "as-3359"
+        prompt: { en: "Where will the speaker sleep?" }
+        options:
+          - { en: "A hotel" }
+          - { en: "A school" }
+          - { en: "A temple" }
+        answer: 1

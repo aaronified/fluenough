@@ -1,0 +1,85 @@
+schema: 1
+id: "as-travel-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3346"
+    target: "হোটেলত কোঠা বুক কৰিছোঁ।"
+    reading: "hutelôt kuthā buk kôrisum̐."
+    ipa: "hʊtelɔt kʊtʰa buk koɹisʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "হোটেলত", ref: "as-2404" }
+      - { word: "বুক", base: "বুক", reading: "buk" }
+      - { word: "কৰিছোঁ", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "চেক-আউট", reading: "cek-āuṭ", kind: "word" }
+      - { id: "c2", word: "পাছপৰ্ট", reading: "pāspôrṭ", kind: "word" }
+  - id: "as-3347"
+    target: "চেক-ইন কাইলৈ।"
+    reading: "cek-in kāilôi."
+    ipa: "sekin kailɔi"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "চেক-আউট", reading: "cek-āuṭ", kind: "word" }
+      - { id: "c2", word: "বুকিং", reading: "bukiṅ", kind: "word" }
+  - id: "as-3348"
+    target: "মিউজিয়ামলৈ যাওঁ।"
+    reading: "miuziyāmlôi zāum̐."
+    ipa: "miuzijamɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "মিউজিয়ামলৈ", ref: "as-3339" }
+      - { word: "যাওঁ", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "সৈকত", reading: "xoikôt", kind: "word" }
+      - { id: "c2", word: "গাইড", reading: "gāid", kind: "word" }
+  - id: "as-3349"
+    target: "পৰ্যটক সৈকতলৈ যায়।"
+    reading: "pôrjôṭôk xoikôtlôi zāy."
+    ipa: "pɔɹzɔtɔk sɔikɔtɔlɔi zaj"
+    pos: "phrase"
+    bases:
+      - { word: "সৈকতলৈ", ref: "as-3340" }
+      - { word: "যায়", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "গাইড", reading: "gāid", kind: "word" }
+      - { id: "c2", word: "ভিছা", reading: "bhisā", kind: "word" }
+  - id: "as-3350"
+    target: "পাছপৰ্ট লাগে।"
+    reading: "pāspôrṭ lāge."
+    ipa: "pasɔpɔɹt laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ভিছা", reading: "bhisā", kind: "word" }
+      - { id: "c2", word: "ঠিকনা", reading: "ṭhikanā", kind: "word" }
+  - id: "as-3351"
+    target: "সুটকেচ ভাৰী।"
+    reading: "suṭkes bhāri."
+    ipa: "sutɔkes bʱaɹi"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "হালকা", reading: "hālkā", kind: "word" }
+      - { id: "c2", word: "বেগ", reading: "beg", kind: "word" }
+  - id: "as-3352"
+    target: "বাট দীঘল।"
+    reading: "bāṭ dighôl."
+    ipa: "bat diɡʱɔl"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "চুটি", reading: "suti", kind: "word" }
+      - { id: "c2", word: "দূৰত্ব", reading: "durôtvô", kind: "word" }
+  - id: "as-3353"
+    target: "মিউজিয়ামত ছবি আছে।"
+    reading: "miuziyāmôt sôbi āse."
+    ipa: "miuzijamɔt sobi ase"
+    pos: "phrase"
+    bases:
+      - { word: "মিউজিয়ামত", ref: "as-3339" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "প্লেইন", reading: "pleyin", kind: "word" }
+      - { id: "c2", word: "হোটেল", reading: "hutel", kind: "word" }

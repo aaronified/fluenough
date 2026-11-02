@@ -492,11 +492,14 @@ units:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
   - decks: ["as-reading-conditional"]
     words: 0
-  - planned: { id: "as-travel", theme: "travel", words: 55 }
+  - decks: ["as-travel", "as-travel-sentences", "*"]
+    words: 16
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
+  - decks: ["as-reading-travel"]
+    words: 0
   - planned: { id: "as-services", theme: "services", words: 45 }
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }

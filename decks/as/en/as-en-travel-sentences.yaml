@@ -1,0 +1,54 @@
+schema: 1
+id: "as-en-travel-sentences"
+kind: "layer"
+core: "as-travel-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel: hotels, bookings and trips: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3346":
+    native: "I have booked a room at the hotel."
+    bases:
+      "বুক": "book (a seat or ticket)"
+    confusables:
+      "c1": { why: "Check-out, the leaving, not the booking." }
+      "c2": { why: "A passport, not a room." }
+  "as-3347":
+    native: "Check-in is tomorrow."
+    confusables:
+      "c1": { why: "Check-out, the other end of the stay." }
+      "c2": { why: "A booking, not the check-in itself." }
+  "as-3348":
+    native: "I go to the museum."
+    confusables:
+      "c1": { why: "A beach, a different place." }
+      "c2": { why: "A guide, a person not a place." }
+  "as-3349":
+    native: "The tourist goes to the beach."
+    confusables:
+      "c1": { why: "A guide, a person who goes with them." }
+      "c2": { why: "A visa, a paper not a person." }
+  "as-3350":
+    native: "A passport is needed."
+    confusables:
+      "c1": { why: "A visa, the other paper needed to go abroad." }
+      "c2": { why: "An address, not a passport." }
+  "as-3351":
+    native: "The suitcase is heavy."
+    confusables:
+      "c1": { why: "Light, the opposite of heavy." }
+      "c2": { why: "A bag, close but a different thing." }
+  "as-3352":
+    native: "The route is long."
+    confusables:
+      "c1": { why: "Short, the opposite of long." }
+      "c2": { why: "Distance, close in meaning." }
+  "as-3353":
+    native: "There are pictures in the museum."
+    bases:
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "A plane, not a museum." }
+      "c2": { why: "A hotel, not a museum." }
