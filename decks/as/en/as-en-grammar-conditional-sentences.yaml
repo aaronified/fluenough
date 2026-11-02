@@ -1,0 +1,49 @@
+schema: 1
+id: "as-en-grammar-conditional-sentences"
+kind: "layer"
+core: "as-grammar-conditional-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If, then: the conditional: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3318":
+    native: "If it rains, then I will stay at home."
+    confusables:
+      "c1": { why: "Outside, the opposite of staying home." }
+      "c2": { why: "Sunshine, not rain." }
+  "as-3319":
+    native: "If you come, then I will drink tea."
+    bases:
+      "খাম": "to eat; to drink"
+    confusables:
+      "c1": { why: "The future: I will go." }
+      "c2": { why: "The if-form of come, the same condition." }
+  "as-3320":
+    native: "If there is time, then I will read."
+    bases:
+      "পঢ়িম": "to read; to study"
+    confusables:
+      "c1": { why: "The future of eat, not read." }
+      "c2": { why: "The future of hear, not read." }
+  "as-3321":
+    native: "If it is needed in quantity, then I will buy."
+    confusables:
+      "c1": { why: "The future of sell, the opposite." }
+      "c2": { why: "The future of give, not buy." }
+  "as-3322":
+    native: "If he goes, then I will go too."
+    bases:
+      "যাম": "to go"
+    confusables:
+      "c1": { why: "The future: he will come." }
+      "c2": { why: "The future: he will stay." }
+  "as-3323":
+    native: "If it does not rain, then I will go outside."
+    bases:
+      "বাহিৰলৈ": "outside"
+      "যাম": "to go"
+    confusables:
+      "c1": { why: "Home, the opposite destination." }
+      "c2": { why: "Wind, a different weather." }

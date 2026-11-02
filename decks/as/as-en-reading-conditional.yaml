@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-conditional"
+name: "Assamese reading: if, then: the conditional"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-rain-plans"
+    title: "A friend's plans if it rains"
+    sentences:
+      - text: "যদি বৰষুণ হয়, তেন্তে মই ঘৰত থাকিম।"
+        reading: "zodi bôrôxun hôy, tente moi ghôrôt thākim."
+      - text: "যদি বৰষুণ নহয়, তেন্তে বজাৰলৈ যাম।"
+        reading: "zodi bôrôxun nôhôy, tente bôzārôlôi zām."
+      - text: "যদি বেছি লাগে, তেন্তে কিনিম।"
+        reading: "zodi besi lāge, tente kinim."
+      - text: "যদি ঘৰত সময় নাই, তেন্তে নাযাওঁ।"
+        reading: "zodi ghôrôt xômôy nāi, tente nāzāum̐."
+    questions:
+      - id: "as-3324"
+        prompt: { en: "If it rains, the friend will stay home." }
+        answer: true
+      - id: "as-3325"
+        prompt: { en: "Where will the friend go if it does not rain?" }
+        options:
+          - { en: "The market" }
+          - { en: "The school" }
+          - { en: "The hills" }
+        answer: 1
+      - id: "as-3326"
+        prompt: { en: "What will the friend do if more is needed?" }
+        options:
+          - { en: "Sell" }
+          - { en: "Buy" }
+          - { en: "Sleep" }
+        answer: 2
+  - id: "as-late-train"
+    title: "A message: if the train is late"
+    sentences:
+      - text: "যদি ৰেলগাড়ী দেৰি হয়, তেন্তে মই বাটত থাকিম।"
+        reading: "zodi relgāṛi deri hôy, tente moi bāṭôt thākim."
+      - text: "যদি মই নাহি, তেন্তে ফোন কৰিবা।"
+        reading: "zodi moi nāhi, tente phon kôribā."
+      - text: "যদি সময়ত পৌঁছিলোঁ, তেন্তে আমি যাম।"
+        reading: "zodi xômôyôt pōm̐chilōm̐, tente āmi zām."
+      - text: "যদি নাপাওঁ, তেন্তে বাটত আছোঁ।"
+        reading: "zodi nāpāum̐, tente bāṭôt āsum̐."
+    questions:
+      - id: "as-3327"
+        prompt: { en: "If the train is late, the sender will wait on the road." }
+        answer: true
+      - id: "as-3328"
+        prompt: { en: "What should the friend do if the sender is not there?" }
+        options:
+          - { en: "Phone" }
+          - { en: "Sleep" }
+          - { en: "Sing" }
+        answer: 1
+      - id: "as-3329"
+        prompt: { en: "When will they go?" }
+        options:
+          - { en: "If they arrive on time" }
+          - { en: "Never" }
+          - { en: "If it is dark" }
+        answer: 1

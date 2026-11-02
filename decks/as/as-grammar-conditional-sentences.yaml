@@ -1,0 +1,71 @@
+schema: 1
+id: "as-grammar-conditional-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3318"
+    target: "যদি বৰষুণ হয়, তেন্তে ঘৰত থাকিম।"
+    reading: "zodi bôrôxun hôy, tente ghôrôt thākim."
+    ipa: "zodi bɔɹoxun hɔj tente ɡʱɔɹɔt tʰakim"
+    pos: "phrase"
+    bases:
+      - { word: "থাকিম", ref: "as-2207" }
+    confusables:
+      - { id: "c1", word: "বাহিৰলৈ", reading: "bāhirôlôi", kind: "word" }
+      - { id: "c2", word: "ৰ'দ", reading: "rod", kind: "word" }
+  - id: "as-3319"
+    target: "যদি তুমি আহা, তেন্তে চাহ খাম।"
+    reading: "zodi tumi āhā, tente sāh khām."
+    ipa: "zodi tumi aha tente sah kʰam"
+    pos: "phrase"
+    bases:
+      - { word: "খাম", base: "খাম", reading: "khuwā" }
+    confusables:
+      - { id: "c1", word: "যাম", reading: "zām", kind: "form" }
+      - { id: "c2", word: "আহিলে", reading: "āhile", kind: "form" }
+  - id: "as-3320"
+    target: "যদি সময় থাকে, তেন্তে পঢ়িম।"
+    reading: "zodi xômôy thāke, tente pôrhim."
+    ipa: "zodi sɔmɔj tʰake tente poɹim"
+    pos: "phrase"
+    bases:
+      - { word: "থাকে", ref: "as-2207" }
+      - { word: "পঢ়িম", base: "পঢ়িম", reading: "pôrhā" }
+    confusables:
+      - { id: "c1", word: "খাম", reading: "khām", kind: "form" }
+      - { id: "c2", word: "শুনিম", reading: "xunim", kind: "form" }
+  - id: "as-3321"
+    target: "যদি বেছি লাগে, তেন্তে কিনিম।"
+    reading: "zodi besi lāge, tente kinim."
+    ipa: "zodi besi laɡe tente kinim"
+    pos: "phrase"
+    bases:
+      - { word: "কিনিম", ref: "as-2210" }
+    confusables:
+      - { id: "c1", word: "বেচিম", reading: "bēcim", kind: "form" }
+      - { id: "c2", word: "দিম", reading: "dim", kind: "form" }
+  - id: "as-3322"
+    target: "যদি তেওঁ যায়, তেন্তে মইও যাম।"
+    reading: "zodi teum̐ zāy, tente moiu zām."
+    ipa: "zodi teʊ̃ zaj tente moiʊ zam"
+    pos: "phrase"
+    bases:
+      - { word: "যায়", ref: "as-2200" }
+      - { word: "যাম", base: "যাম", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "আহিব", reading: "āhib", kind: "form" }
+      - { id: "c2", word: "থাকিব", reading: "thākib", kind: "form" }
+  - id: "as-3323"
+    target: "যদি বৰষুণ নহয়, তেন্তে বাহিৰলৈ যাম।"
+    reading: "zodi bôrôxun nôhôy, tente bāhirôlôi zām."
+    ipa: "zodi bɔɹoxun nɔhɔj tente bahiɹɔlɔi zam"
+    pos: "phrase"
+    bases:
+      - { word: "বাহিৰলৈ", base: "বাহিৰ", reading: "bāhir" }
+      - { word: "যাম", base: "যাম", reading: "zuwā" }
+    confusables:
+      - { id: "c1", word: "ঘৰলৈ", reading: "ghôrôlôi", kind: "word" }
+      - { id: "c2", word: "বতাহ", reading: "bôtāh", kind: "word" }

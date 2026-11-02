@@ -1,0 +1,26 @@
+schema: 1
+id: "as-en-grammar-conditional"
+kind: "layer"
+core: "as-grammar-conditional"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "If, then: the conditional"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says if: the verb takes -লে (-le) and যদি (zodi) comes before it, with তেন্তে (tente), then, before the result. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "If, then: the conditional"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "if: the verb with -লে (-le)": "if (the condition)"
+    "then: তেন্তে (tente) and the future": "then (the result)"
+  entries:
+    "khua": "to eat; to drink"
+    "kora": "to do"
+    "zua": "to go"
+    "aha": "to come"
+    "porha": "to read; to study"
+    "xuna": "to hear; to listen"
+    "loa": "to take"
+    "diya": "to give"
+  notes: "To say if, put যদি (zodi) before the condition, and end the verb with -লে (-le): যদি বৰষুণ হয় (zodi bôrôxun hôy), if it rains. The result follows, often with তেন্তে (tente), then: তেন্তে ঘৰত থাকিম (tente ghôrôt thākim), then I will stay at home. The verb গ'লে (gole) is the if-form of যোৱা (zuwā), go."
