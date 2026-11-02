@@ -572,7 +572,8 @@ units:
       - { id: "how-long-have-you-studied", text: { "en": "Saying how long and how many times: I have studied Chinese for two years, been there three times" } }
     reading_passages:
       - { id: "exercise-log", text: { "en": "A week's exercise log" } }
-  - planned: { id: "zh-chores", theme: "chores", words: 35 }
+  - decks: ["zh-chores", "zh-chores-sentences", "zh-reading-chores", "*"]
+    words: 35
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
