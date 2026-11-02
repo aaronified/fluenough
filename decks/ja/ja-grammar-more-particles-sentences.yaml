@@ -1,0 +1,129 @@
+schema: 1
+id: "ja-grammar-more-particles-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0637"
+    target: "わたしのちちもせんせいです。"
+    words: ["わたし", "の", "ちち", "も", "せんせい", "です"]
+    reading: "watashi no chichi mo sensei desu."
+    ipa: "wataɕi no tɕitɕi mo seɴseː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "はは"
+        reading: "haha"
+        kind: "word"
+      - id: "w2"
+        word: "おとこ"
+        reading: "otoko"
+        kind: "word"
+    rules: ["ja-rule-particle-mo", "ja-rule-particle-no"]
+  - id: "ja-0638"
+    target: "ははととちちはにほんにいます。"
+    words: ["はは", "と", "と", "ちち", "は", "にほん", "に", "います"]
+    reading: "haha to to chichi wa nihon ni imasu."
+    ipa: "haha to to tɕitɕi wa nihoɴ ni imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - id: "w1"
+        word: "ともだち"
+        reading: "tomodachi"
+        kind: "word"
+      - id: "w2"
+        word: "おじ"
+        reading: "oji"
+        kind: "word"
+    rules: ["ja-rule-particle-to"]
+  - id: "ja-0639"
+    target: "がっこうからとうきょうまでいきます。"
+    words: ["がっこう", "から", "とうきょう", "まで", "いきます"]
+    reading: "gakkou kara toukyou made ikimasu."
+    ipa: "ɡakkoː kaɾa toːkjoː made ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "から", base: "から", reading: "kara" }
+      - { word: "まで", base: "まで", reading: "made" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "うえ"
+        reading: "ue"
+        kind: "word"
+      - id: "w2"
+        word: "となり"
+        reading: "tonari"
+        kind: "word"
+    rules: ["ja-rule-kara-made"]
+  - id: "ja-0640"
+    target: "わたしのくにへいきます。"
+    words: ["わたし", "の", "くに", "へ", "いきます"]
+    reading: "watashi no kuni e ikimasu."
+    ipa: "wataɕi no kɯni e ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "へ", base: "へ", reading: "e" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "がっこう"
+        reading: "gakkou"
+        kind: "word"
+      - id: "w2"
+        word: "とうきょう"
+        reading: "toukyou"
+        kind: "word"
+    rules: ["ja-rule-particle-e", "ja-rule-particle-no"]
+  - id: "ja-0641"
+    target: "にほんごとえいごをならいます。"
+    words: ["にほんご", "と", "えいご", "を", "ならいます"]
+    reading: "nihongo to eigo o naraimasu."
+    ipa: "nihoɴɡo to eːɡo o naɾaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ならいます", ref: "ja-0367" }
+    confusables:
+      - id: "w1"
+        word: "ともだち"
+        reading: "tomodachi"
+        kind: "word"
+      - id: "w2"
+        word: "ちゅうごくご"
+        reading: "chuugokugo"
+        kind: "word"
+    rules: ["ja-rule-particle-to"]
+  - id: "ja-0642"
+    target: "あしたもがっこうにいきます。"
+    words: ["あした", "も", "がっこう", "に", "いきます"]
+    reading: "ashita mo gakkou ni ikimasu."
+    ipa: "aɕita mo ɡakkoː ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "も", base: "も", reading: "mo" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "きのう"
+        reading: "kinou"
+        kind: "word"
+      - id: "w2"
+        word: "まいにち"
+        reading: "mainichi"
+        kind: "word"
+    rules: ["ja-rule-particle-mo", "ja-rule-particle-e"]
