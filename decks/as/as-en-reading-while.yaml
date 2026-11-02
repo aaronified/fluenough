@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-while"
+name: "Assamese reading: while doing: the -ওঁতে (-m̐tē) form"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-doing-two-things"
+    title: "Saying what people do while doing something else"
+    sentences:
+      - text: "মই খাওঁতে তুমি ৰান্ধা।"
+        reading: "moi khāum̐tē tumi rāndhā."
+      - text: "আমি যাওঁতে বৰষুণ আহিল।"
+        reading: "āmi zāum̐tē bôrôxun āhil."
+      - text: "তাই শুনোঁতে হাঁহে।"
+        reading: "tāi xunum̐tē hām̐he."
+      - text: "সি থাকোঁতে গীত গায়।"
+        reading: "xi thākum̐tē git gāy."
+    questions:
+      - id: "as-3565"
+        prompt: { en: "The rain came while the speaker was going somewhere." }
+        answer: true
+      - id: "as-3566"
+        prompt: { en: "What does she do while listening?" }
+        options:
+          - { en: "Cooks" }
+          - { en: "Laughs" }
+          - { en: "Sleeps" }
+        answer: 2
+      - id: "as-3567"
+        prompt: { en: "What does he do while staying?" }
+        options:
+          - { en: "Sings a song" }
+          - { en: "Runs" }
+          - { en: "Writes" }
+        answer: 1
+  - id: "as-a-day-on-the-bus"
+    title: "A short story of a bus ride"
+    sentences:
+      - text: "বাছত মই বহি আছিলোঁ।"
+        reading: "bāsôt moi bôhi āsilōm̐."
+      - text: "যাওঁতে বাটত বৰষুণ।"
+        reading: "zāum̐tē bāṭôt bôrôxun."
+      - text: "এজন মানুহে গীত গাইছিল।"
+        reading: "ezôn mānuhe git gāisil."
+      - text: "শুনোঁতে মন ভাল লাগিল।"
+        reading: "xunum̐tē môn bhāl lāgil."
+    questions:
+      - id: "as-3568"
+        prompt: { en: "The speaker was sitting on the bus." }
+        answer: true
+      - id: "as-3569"
+        prompt: { en: "What was the man doing?" }
+        options:
+          - { en: "Singing" }
+          - { en: "Driving" }
+          - { en: "Sleeping" }
+        answer: 1
+      - id: "as-3570"
+        prompt: { en: "How did the speaker feel while listening?" }
+        options:
+          - { en: "Sad" }
+          - { en: "Good" }
+          - { en: "Afraid" }
+        answer: 2

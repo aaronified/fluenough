@@ -566,11 +566,15 @@ units:
       - { id: "market-prices", text: { "en": "A crop price board at a market" } }
   - decks: ["as-reading-agriculture"]
     words: 0
-  - planned: { id: "as-grammar-while", grammar: "while" }
+  - decks: ["as-grammar-while", "as-grammar-while-sentences"]
+    words: 0
+    grammar: ["while"]
     listening_passages:
       - { id: "doing-two-things", text: { "en": "Saying what people do while doing something else" } }
     reading_passages:
       - { id: "a-day-on-the-bus", text: { "en": "A short story of a bus ride" } }
+  - decks: ["as-reading-while"]
+    words: 0
   - planned: { id: "as-cinema", theme: "cinema", words: 55 }
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
