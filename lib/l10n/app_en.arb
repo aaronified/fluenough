@@ -13797,5 +13797,129 @@
   "splashReady": "Ready",
   "@splashReady": {
     "description": "The splash screen's one-line status once everything is loaded, while it waits out its minimum time and fades."
+  },
+  "shellPillLabel": "{prefix} · {skill}",
+  "@shellPillLabel": {
+    "description": "The skill pill at the top of a screen that teaches a card, so that the colour is the skill's: the kind of card first, then the skill it leads into.",
+    "placeholders": {
+      "prefix": {
+        "type": "String",
+        "example": "New word"
+      },
+      "skill": {
+        "type": "String",
+        "example": "Recognition"
+      }
+    }
+  },
+  "shellNewWords": "New words",
+  "@shellNewWords": {
+    "description": "The prefix of the skill pill on a set of words shown before they are asked."
+  },
+  "drillAlreadyAnswered": "Already answered",
+  "@drillAlreadyAnswered": {
+    "description": "Title of the grey banner on a question the learner went back to: it was answered and cannot be changed."
+  },
+  "drillAlreadyAnsweredBody": "You can look, but not change it. Swipe or tap the arrow to go on.",
+  "@drillAlreadyAnsweredBody": {
+    "description": "Under the title of the banner on a question the learner went back to."
+  },
+  "drillRearrangeRight": "Right order",
+  "@drillRearrangeRight": {
+    "description": "Caption over the words in the right order, on a word-order question that has been checked."
+  },
+  "drillRearrangeYours": "Your order, marked wrong",
+  "@drillRearrangeYours": {
+    "description": "Caption over the order the learner chose, on a word-order question answered wrong. Also its screen-reader label."
+  },
+  "sayHeardLabel": "The phone heard, approximately",
+  "@sayHeardLabel": {
+    "description": "Label of the box on a checked Say question that shows what the phone's recogniser heard: a line of script, then its reading."
+  },
+  "sayHeardNoCard": "No card matches this, so no IPA.",
+  "@sayHeardNoCard": {
+    "description": "Under the reading of what the phone heard when the IPA is switched on but the heard text is no word of any deck, so there is no IPA to show."
+  },
+  "sayYourRecording": "Your recording",
+  "@sayYourRecording": {
+    "description": "Label of the row on a checked Say question where the learner replays their own voice."
+  },
+  "sayRecordingKept": "{length}, only on this phone",
+  "@sayRecordingKept": {
+    "description": "Caption under Your recording when a take is kept: its length, and that it stays on the phone.",
+    "placeholders": {
+      "length": {
+        "type": "String",
+        "example": "0:02"
+      }
+    }
+  },
+  "sayRecordingNone": "No recording yet. Replay records one.",
+  "@sayRecordingNone": {
+    "description": "Caption under Your recording when nothing is kept: the replay button records the word again instead."
+  },
+  "sayRecordingProgress": "{played} of {length}",
+  "@sayRecordingProgress": {
+    "description": "Caption under Your recording while it plays: how far it has played, and how long it is.",
+    "placeholders": {
+      "played": {
+        "type": "String",
+        "example": "0:01"
+      },
+      "length": {
+        "type": "String",
+        "example": "0:02"
+      }
+    }
+  },
+  "sayReplayHint": "Replay",
+  "@sayReplayHint": {
+    "description": "One-word tooltip of the button that plays the learner's own recording."
+  },
+  "sayPauseHint": "Pause",
+  "@sayPauseHint": {
+    "description": "One-word tooltip of the same button while the recording plays."
+  },
+  "sayWordHint": "Word",
+  "@sayWordHint": {
+    "description": "One-word tooltip of the button that plays the word in the Your recording row."
+  },
+  "sayAgainHint": "Again",
+  "@sayAgainHint": {
+    "description": "One-word tooltip of the button that records the word again, in the Your recording row."
+  },
+  "sayReplayLabel": "Play your recording",
+  "@sayReplayLabel": {
+    "description": "Screen-reader label of the replay button."
+  },
+  "sayPauseLabel": "Pause your recording",
+  "@sayPauseLabel": {
+    "description": "Screen-reader label of the replay button while the recording plays."
+  },
+  "sayAgainLabel": "Record again",
+  "@sayAgainLabel": {
+    "description": "Screen-reader label of the button that records the word again."
+  },
+  "sayCompareHint": "Replay your own voice and compare it with the word.",
+  "@sayCompareHint": {
+    "description": "Under the Your recording row of a checked Say question."
+  },
+  "sayRetakeHint": "Second take. Your recording is now this one.",
+  "@sayRetakeHint": {
+    "description": "Under the Your recording row after Try again heard a second take."
+  },
+  "feedbackSpokenRight": "The phone heard it as you said it.",
+  "@feedbackSpokenRight": {
+    "description": "Detail of the Correct banner on a Say question."
+  },
+  "feedbackSaidDifference": "The difference is {contrast}.",
+  "@feedbackSaidDifference": {
+    "description": "Detail line of the Not quite banner on a Say question when what was heard differs from the answer by one named sound.",
+    "placeholders": {
+      "contrast": {
+        "type": "String",
+        "example": "the vowel length"
+      }
+    }
   }
 }

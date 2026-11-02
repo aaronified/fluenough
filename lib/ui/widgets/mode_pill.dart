@@ -36,11 +36,20 @@ class ModePill extends StatelessWidget {
     required this.skill,
     this.size = ModePillSize.label,
     this.muted = false,
+    this.prefix,
   });
+
+  /// What the label says before the skill's name, "New word · Recognition":
+  /// a card taught is drawn in the colour of the skill it leads into.
+  final String? prefix;
 
   final Skill skill;
   final ModePillSize size;
   final bool muted;
+
+  String _label(AppLocalizations l10n) => prefix == null
+      ? skill.label(l10n)
+      : l10n.shellPillLabel(prefix!, skill.label(l10n));
 
   @override
   Widget build(BuildContext context) {
@@ -66,7 +75,7 @@ class ModePill extends StatelessWidget {
             const SizedBox(width: 6),
             Flexible(
               child: Text(
-                skill.label(AppLocalizations.of(context)!),
+                _label(AppLocalizations.of(context)!),
                 textAlign: TextAlign.start,
                 style: theme.textTheme.labelLarge!.copyWith(
                   color: fg,

@@ -15,6 +15,7 @@ import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 
 /// Reading comprehension (#98, ADR-0019): a passage on its own, then its
 /// questions one at a time, each answered by a choice that is right or
@@ -138,6 +139,7 @@ class ReadingDrill extends StatelessWidget {
       reportDetail: '${session.item.card.id} in ${session.deck.id}',
       progress: session.progress,
       onClose: onClose,
+      going: goingOn(session, answered: answered),
       card: <Widget>[
         _Label(card.passage.title),
         if (question.isTrueFalse) _Label(l10n.readingTrueOrFalse),
@@ -188,22 +190,12 @@ class ReadingDrill extends StatelessWidget {
             ],
           ),
       ],
-      feedback: answered ? _feedback(l10n, question, choice, shown) : null,
+      feedback: answered
+          ? alreadyAnswered(context, session) ??
+                _feedback(l10n, question, choice, shown)
+          : null,
       actions: answered
-          ? <Widget>[
-              FilledButton(
-                onPressed: session.next,
-                style: AppButtonStyles.tall(context),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Flexible(child: Text(l10n.commonContinue)),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.arrow_forward, size: 22),
-                  ],
-                ),
-              ),
-            ]
+          ? const <Widget>[]
           : <Widget>[if (heard) CantNowButton(session: session)],
     );
   }

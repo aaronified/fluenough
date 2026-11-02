@@ -3,7 +3,6 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/settings.dart';
 import '../../core/scheduling/ask.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/ipa_line.dart';
@@ -11,6 +10,7 @@ import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'picture_tile.dart';
 import 'set_drill.dart';
 import 'taught_details.dart';
@@ -68,6 +68,7 @@ class PictureChoiceDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       needsSound: _hears && !answered,
+      going: goingOn(session, answered: answered),
       card: <Widget>[
         ...(_hears
             ? _heardCard(context, answered)
@@ -99,32 +100,17 @@ class PictureChoiceDrill extends StatelessWidget {
       ],
       feedback: !answered
           ? null
-          : right
-          ? FeedbackBanner(
-              kind: FeedbackKind.correct,
-              title: l10n.feedbackCorrect,
-            )
-          : FeedbackBanner(
-              kind: FeedbackKind.wrong,
-              title: l10n.feedbackWrong,
-              detail: l10n.feedbackAnswer(card.native),
-            ),
-      actions: answered
-          ? <Widget>[
-              FilledButton(
-                onPressed: session.next,
-                style: AppButtonStyles.tall(context),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Flexible(child: Text(l10n.commonContinue)),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.arrow_forward, size: 22),
-                  ],
-                ),
-              ),
-            ]
-          : const <Widget>[],
+          : alreadyAnswered(context, session) ??
+                (right
+                    ? FeedbackBanner(
+                        kind: FeedbackKind.correct,
+                        title: l10n.feedbackCorrect,
+                      )
+                    : FeedbackBanner(
+                        kind: FeedbackKind.wrong,
+                        title: l10n.feedbackWrong,
+                        detail: l10n.feedbackAnswer(card.native),
+                      )),
     );
   }
 

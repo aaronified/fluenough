@@ -118,6 +118,7 @@ class _PairDrillState extends State<PairDrill> {
       progress: (_index + (picked == null ? 0 : 0.5)) / widget.rounds.length,
       onClose: () => Navigator.maybePop(context),
       needsSound: picked == null,
+      going: DrillGoing(onNext: _next, nextOn: picked != null, pinned: true),
       card: <Widget>[
         Text(
           l10n.drillPairQuestion,
@@ -171,22 +172,6 @@ class _PairDrillState extends State<PairDrill> {
                   : l10n.feedbackPairWrong(heard.reading),
               detail: l10n.feedbackPairHeard(heard.target),
             ),
-      actions: picked == null
-          ? const <Widget>[]
-          : <Widget>[
-              FilledButton(
-                onPressed: _next,
-                style: AppButtonStyles.tall(context),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Flexible(child: Text(l10n.commonContinue)),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.arrow_forward, size: 22),
-                  ],
-                ),
-              ),
-            ],
     );
   }
 }
