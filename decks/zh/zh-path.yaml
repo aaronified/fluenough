@@ -728,7 +728,8 @@ units:
       - { id: "characters-in-the-news", text: { "en": "Hearing the news words whose characters are taught: country, city, company, government" } }
     reading_passages:
       - { id: "simple-headlines", text: { "en": "Simple headlines in characters" } }
-  - planned: { id: "zh-travel", theme: "travel", words: 55 }
+  - decks: ["zh-travel", "zh-travel-sentences", "zh-reading-travel", "*"]
+    words: 55
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
