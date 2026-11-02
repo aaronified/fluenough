@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../core/data/spoken_languages.dart';
+import '../../core/decks/script_fonts.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
@@ -437,7 +438,8 @@ class _OwnAndEnglish extends StatelessWidget {
     // phone's own where none is loaded). Nastaliq climbs and descends far
     // more than Latin, so it gets the room the cards give it.
     final family = rtl
-        ? AppScope.of(context).deckDownloads?.fonts.familyFor('perso_arabic')
+        ? AppScope.of(context).deckDownloads?.fonts
+              .familyFor(fontScriptFor(language.code, 'perso_arabic'))
         : null;
     Widget text = Text.rich(
       TextSpan(text: own, locale: Locale(language.localeCodeFor(own))),

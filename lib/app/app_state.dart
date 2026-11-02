@@ -54,6 +54,7 @@ import 'card_sets.dart';
 import 'unlocks.dart';
 import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
+import '../core/decks/script_fonts.dart';
 import 'deck_catalog.dart';
 import 'deck_downloads.dart';
 import 'font_check.dart';
@@ -1084,8 +1085,13 @@ class AppState extends ChangeNotifier {
     if (fonts == null || fonts.isEmpty) return;
     // The language block's script comes first in the index's list.
     final scripts = <String>[for (final font in fonts) font.script];
-    final learned = settings.scriptsLearned(language, primary: scripts.first);
-    fontCheck.request(scripts.where(learned.contains));
+    final learned = settings.scriptsLearned(
+      language,
+      primary: readingScriptOf(scripts.first),
+    );
+    fontCheck.request(
+      scripts.where((script) => learned.contains(readingScriptOf(script))),
+    );
   }
 
   /// Deletes [language]'s decks from the phone, and stops learning it. Its
