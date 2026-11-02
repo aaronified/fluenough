@@ -612,7 +612,8 @@ units:
       - { id: "can-you-hear-me", text: { "en": "Saying whether something can be done: can you hear me, I cannot finish it, it will not fit" } }
     reading_passages:
       - { id: "help-forum-post", text: { "en": "A forum post asking for help with a phone" } }
-  - planned: { id: "zh-phone", theme: "phone", words: 35 }
+  - decks: ["zh-phone", "zh-phone-sentences", "zh-reading-phone", "*"]
+    words: 35
     listening_passages:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
