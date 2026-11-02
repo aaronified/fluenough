@@ -418,6 +418,11 @@ LanguageSkills englishKnownByDefault() => LanguageSkills(<SkillKey, SkillState>{
 /// The script every learner knows (#926), as decks name it.
 const String latinScript = 'latin';
 
+/// Japanese's two scripts, as decks name them (ADR-0053): kana, the one its
+/// course starts with, and kanji (`han`), learned on top of it.
+const String kanaScript = 'kana';
+const String kanjiScript = 'han';
+
 /// [skills] of a language written in [scripts], with the Latin script's Read
 /// and Write Know (#926; owner, 2026-10-31): everyone who knows English
 /// knows the Latin script, so a Leave or a legacy Learn of it becomes Know.

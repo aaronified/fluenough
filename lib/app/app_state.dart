@@ -2531,7 +2531,16 @@ class AppState extends ChangeNotifier {
     final counts = <String, int>{};
     for (final entry in decks) {
       if (entry.language.code != code) continue;
-      final script = entry.language.script;
+      final language = entry.language;
+      // A deck written in kanji lists kana beside it and is read on top of
+      // kana (ADR-0053): it counts for the kana the course starts with, so
+      // that a Japanese course with more kanji decks than kana ones is
+      // still learned in kana by default.
+      final script =
+          language.script == kanjiScript &&
+              language.allScripts.contains(kanaScript)
+          ? kanaScript
+          : language.script;
       counts[script] = (counts[script] ?? 0) + 1;
     }
     if (counts.isEmpty) return 'latin';
