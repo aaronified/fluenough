@@ -1,0 +1,28 @@
+"schema": 1
+"id": "zh-en-grammar-shi-de"
+"kind": "layer"
+"core": "zh-grammar-shi-de"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "是 (shì) ... 的 (de): stressing when, where or how a past action happened"
+"license": "CC-BY-SA-4.0"
+"description": "The 是 (shì) ... 的 (de) pattern stresses when, where or how a past action happened: 我是昨天来的 (wǒ shì zuótiān lái de), I came yesterday. The action itself is not changed. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "是 (shì) ... 的 (de): stressing when, where or how a past action happened"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain past statement, with 了 (le)"
+    "emphasis": "是 (shì) before the detail and 的 (de) at the end"
+    "negative": "不是 (bú shì) before the detail, with 的 (de) at the end"
+  "entries":
+    "lai": "to come"
+    "qu": "to go"
+    "xue": "to learn; to study"
+    "mai": "to buy"
+    "renshi": "to know; to meet"
+  "notes": "是 (shì) goes before the detail that is stressed, and 的 (de) goes at the end of the sentence, after the verb and its object: 我是昨天来的 (wǒ shì zuótiān lái de), I came yesterday; 他是坐火车去的 (tā shì zuò huǒchē qù de), he went by train. The 了 (le) of the plain form is dropped. To say it was not that, use 不是 (bú shì) with 的 (de): 我不是昨天来的 (wǒ bú shì zuótiān lái de), I did not come yesterday. Only use this pattern for an action that has happened. Do not use 的 (de) at the end of a sentence about the future."

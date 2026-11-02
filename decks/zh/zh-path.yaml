@@ -624,7 +624,9 @@ units:
       - { id: "high-speed-rail-ticket", text: { "en": "Buying a high-speed rail ticket at the counter" } }
     reading_passages:
       - { id: "platform-notice", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "zh-grammar-shi-de", grammar: "shi-de" }
+  - decks: ["zh-grammar-shi-de", "zh-grammar-shi-de-sentences"]
+    words: 0
+    grammar: ["shi-de"]
     listening_passages:
       - { id: "how-did-you-come", text: { "en": "Asking when, how and with whom someone came, with shi and de" } }
     reading_passages:
