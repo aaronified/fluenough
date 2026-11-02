@@ -489,7 +489,8 @@ units:
       - { id: "characters-at-the-station", text: { "en": "Hearing the station words whose characters are taught: in, out, east, west, north, south" } }
     reading_passages:
       - { id: "station-signs", text: { "en": "Station and metro signs in characters: entrance, exit, line, transfer" } }
-  - planned: { id: "zh-shopping", theme: "shopping", words: 50 }
+  - decks: ["zh-shopping", "zh-shopping-sentences", "zh-reading-shopping", "*"]
+    words: 50
     listening_passages:
       - { id: "asking-the-price", text: { "en": "Asking about price and size, and bargaining a little" } }
     reading_passages:
