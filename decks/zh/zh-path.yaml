@@ -521,7 +521,8 @@ units:
       - { id: "did-you-finish", text: { "en": "Saying whether an action reached its result: finished eating, understood, saw, found" } }
     reading_passages:
       - { id: "homework-check", text: { "en": "A note checking which homework is done" } }
-  - planned: { id: "zh-school", theme: "school", words: 50 }
+  - decks: ["zh-school", "zh-school-sentences", "zh-reading-school", "*"]
+    words: 50
     listening_passages:
       - { id: "school-day", text: { "en": "A pupil describes the school day" } }
     reading_passages:
