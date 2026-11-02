@@ -760,7 +760,8 @@ units:
       - { id: "the-person-who-came", text: { "en": "Describing people and things by what they did, with de: the person who came, the book I bought" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - planned: { id: "zh-technology", theme: "technology", words: 50 }
+  - decks: ["zh-technology", "zh-technology-sentences", "zh-reading-technology", "*"]
+    words: 50
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
