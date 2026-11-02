@@ -204,7 +204,9 @@ units:
       - { id: "i-am-a-student", text: { "en": "Saying who and what you are, and are not: a student, not a teacher" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A profile card: what each person is and is not" } }
-  - planned: { id: "ja-grammar-case-particles", grammar: ["particle-wa", "particle-ga", "particle-o", "particle-ni", "particle-de"] }
+  - decks: ["ja-grammar-case-particles", "ja-grammar-case-particles-sentences", "ja-reading-grammar-case-particles"]
+    words: 0
+    grammar: ["particle-wa", "particle-ga", "particle-o", "particle-ni", "particle-de"]
     listening_passages:
       - { id: "who-does-what-where", text: { "en": "Saying who does what, where and to whom" } }
     reading_passages:
