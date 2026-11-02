@@ -15,7 +15,11 @@ import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/sound/sound_check.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
+import 'package:fluenough/features/drill/say_result.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'support/harness.dart';
 
 const String _spanish = 'es-en-core-100';
 
@@ -32,6 +36,11 @@ void main() {
       expect(heardReading('আমি জল চাই', 'bn'), 'āmi jôl cāi');
       // Hindustani: the inherent a left out where it is not said.
       expect(heardReading('कितना', 'hi'), 'kitnā');
+      // A one-letter word keeps its a.
+      expect(heardReading('न', 'hi'), 'na');
+      // Bengali য-ফলা: the consonant held, or ê at the start of a word.
+      expect(heardReading('বিদ্যা', 'bn'), 'biddā');
+      expect(heardReading('ব্যাগ', 'bn'), 'bêg');
       expect(heardReading('नहीं', 'hi'), 'nahīm̐');
     });
 
@@ -151,6 +160,48 @@ void main() {
         expect(session.replaying, isFalse);
       },
     );
+
+    testWidgets('on a card gone back to, Replay and Again are off and no take '
+        'is described', (tester) async {
+      usePhone(tester);
+      speech.audio = OwnAudio(Uint8List(32000), sampleRate: 16000);
+      speech.next = <SpeechAlternative>[
+        SpeechAlternative(session.item.card.target),
+      ];
+      await session.listen();
+      session.next();
+      speech.next = <SpeechAlternative>[
+        SpeechAlternative(session.item.card.target),
+      ];
+      await session.listen();
+
+      Future<void> row() => pumpScreen(
+        tester,
+        Scaffold(body: RecordingRow(session: session)),
+        state: state,
+      );
+      IconButton button(IconData icon) =>
+          tester.widget<IconButton>(find.widgetWithIcon(IconButton, icon));
+
+      // The current card: its take is described, and the buttons work.
+      await row();
+      final l10n = l10nOf(tester);
+      expect(
+        find.textContaining(l10n.sayRecordingKept('0:01')),
+        findsOneWidget,
+      );
+      expect(button(Icons.play_arrow_rounded).onPressed, isNotNull);
+      expect(button(Icons.mic).onPressed, isNotNull);
+
+      // Gone back to: a read-only card, nothing to replay or record.
+      session.back();
+      expect(session.readOnly, isTrue);
+      await row();
+      expect(find.textContaining(l10n.sayRecordingKept('0:01')), findsNothing);
+      expect(find.text(l10n.sayRecordingNone), findsNothing);
+      expect(button(Icons.play_arrow_rounded).onPressed, isNull);
+      expect(button(Icons.mic).onPressed, isNull);
+    });
 
     test('with no audio kept, it records the word again, as Hear yourself '
         'does, and keeps that take', () async {

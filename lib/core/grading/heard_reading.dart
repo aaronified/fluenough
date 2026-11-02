@@ -169,6 +169,37 @@ String _word(String text, _Script script) {
         i++;
       }
     }
+    // Bengali's য-ফলা and ব-ফলা: a consonant, a virama and য or ব is one
+    // sound with the consonant, not a y or a b of its own. Said, the consonant
+    // is held (বিদ্যা biddā), and at the start of a word a য-ফলা is ê
+    // (ব্যাগ bêg) and a ব-ফলা nothing (স্বামী sāmi).
+    if (consonant != null &&
+        script.inherent == _Inherent.bengali &&
+        conjunct == null &&
+        i + 1 < runes.length &&
+        runes[i] == script.virama &&
+        (runes[i + 1] == 0x09AF || runes[i + 1] == 0x09AC)) {
+      final yaPhala = runes[i + 1] == 0x09AF;
+      i += 2;
+      final initial = units.isEmpty;
+      final base = consonant;
+      String? sign;
+      if (i < runes.length && script.signs.containsKey(runes[i])) {
+        sign = script.signs[runes[i]];
+        i++;
+      }
+      if (initial) {
+        units.add(
+          _Unit(
+            base,
+            yaPhala ? (sign == null || sign == 'ā' ? 'ê' : 'ê$sign') : sign,
+          ),
+        );
+      } else {
+        units.add(_Unit('$base$base', sign));
+      }
+      continue;
+    }
     if (consonant != null) {
       if (i < runes.length && runes[i] == script.virama) {
         units.add(_Unit(consonant, ''));
@@ -218,7 +249,8 @@ String _render(List<_Unit> units, _Script script) {
       final unit = units[at];
       if (unit.vowel != null) continue;
       final isLast = n == consonants.length - 1 && _endsWord(units, at);
-      if (isLast) {
+      // A word of one letter, न, keeps its a: nothing else is said in it.
+      if (isLast && units.take(at).any(_voiced)) {
         unit.silent = true;
         continue;
       }

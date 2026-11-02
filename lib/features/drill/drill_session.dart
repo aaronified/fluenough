@@ -1103,8 +1103,9 @@ class DrillSession extends ChangeNotifier {
   /// the first answer was, but records nothing. Nothing heard says why, as
   /// the first listen does ([unheard]).
   Future<void> retry() async {
-    if (readOnly || !canRetry || _hearing || _hearingSelf != SelfTake.idle)
+    if (readOnly || !canRetry || _hearing || _hearingSelf != SelfTake.idle) {
       return;
+    }
     final listeningIndex = _index;
     _hearing = true;
     _unheard = null;
@@ -1154,10 +1155,10 @@ class DrillSession extends ChangeNotifier {
 
   /// Whether a take is kept, so that "Your recording" replays it. Without
   /// one, the control records one, as "Hear yourself" does.
-  bool get hasOwnTake => _take != null;
+  bool get hasOwnTake => !readOnly && _take != null;
 
   /// How long the kept take is, or null when it is not known.
-  Duration? get ownTakeLength => _takeLength;
+  Duration? get ownTakeLength => readOnly ? null : _takeLength;
 
   /// Whether the learner's own take is playing.
   bool get replaying => _replaying;

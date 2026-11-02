@@ -336,8 +336,13 @@ class RecordingRow extends StatelessWidget {
       ),
     );
 
+    final locked = session.readOnly;
     final Widget caption;
-    if (playing) {
+    if (locked) {
+      // A card gone back to: the take belongs to the current card, so there
+      // is nothing to say about it here.
+      caption = const SizedBox.shrink();
+    } else if (playing) {
       caption = _Progress(
         key: const ValueKey<String>('replay'),
         length: length,
@@ -370,7 +375,7 @@ class RecordingRow extends StatelessWidget {
                 label: playing ? l10n.sayPauseLabel : l10n.sayReplayLabel,
                 icon: playing ? Icons.pause_rounded : Icons.play_arrow_rounded,
                 primary: true,
-                onPressed: session.hearing || recording
+                onPressed: locked || session.hearing || recording
                     ? null
                     : () {
                         if (!session.soundOn) {
@@ -410,7 +415,7 @@ class RecordingRow extends StatelessWidget {
                 label: l10n.sayAgainLabel,
                 icon: Icons.mic,
                 primary: false,
-                onPressed: busy
+                onPressed: locked || busy
                     ? null
                     : () {
                         if (!session.soundOn) {
