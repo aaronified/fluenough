@@ -250,7 +250,7 @@ class DrillFrame extends StatelessWidget {
     required this.deckName,
     required this.position,
     required this.total,
-    required this.onClose,
+    this.onClose,
     required this.card,
     this.progress,
     this.belowCard,
