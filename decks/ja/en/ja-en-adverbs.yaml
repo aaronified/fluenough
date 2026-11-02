@@ -1,0 +1,434 @@
+schema: 1
+id: "ja-en-adverbs"
+kind: "layer"
+core: "ja-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs"
+description: "Thirty adverbs: how often, how much, how soon and how well things are done, with words for sure, probably and of course. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0388":
+    native: "always"
+    notes:
+      "n1": "いつも (itsumo) means always. For when, ask with いつ (itsu)."
+    examples:
+      "わたしはいつもがっこうにいきます。":
+        native: "I always go to school."
+        bases:
+          "はい":
+            meaning: "yes"
+          "に":
+            meaning: "in; at; to"
+      "せんせいはいつもおきますか。":
+        native: "Does the teacher always get up?"
+        bases:
+          "はい":
+            meaning: "yes"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0389":
+    native: "often; well"
+    notes:
+      "n1": "よく (yoku) means often or well, said of how something is done."
+    examples:
+      "わたしはよくにほんごをはなします。":
+        native: "I often speak Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+      "よくきますか。":
+        native: "Do you come often?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0390":
+    native: "sometimes; from time to time"
+    notes:
+      "n1": "ときどき (tokidoki) means sometimes, more often than たまに (tama ni)."
+    examples:
+      "ともだちはときどきあそびます。":
+        native: "My friend sometimes plays."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+      "ははがときどきごはんをつくります。":
+        native: "Mother sometimes makes the meal."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0391":
+    native: "now and then; once in a while"
+    notes:
+      "n1": "たまに (tama ni) means now and then, rarely."
+    examples:
+      "たまにでんしゃにのります。":
+        native: "I ride the train now and then."
+        bases:
+          "に":
+            meaning: "in; at; to"
+      "たまにいぬとあそびますか。":
+        native: "Do you sometimes play with the dog?"
+        bases:
+          "と":
+            meaning: "and (joins two words)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0392":
+    native: "not at all"
+    notes:
+      "n1": "ぜんぜん (zenzen) is used with a negative: not at all."
+    examples:
+      "ぜんぜんわかりません。": "I do not understand at all."
+      "わたしはぜんぜんよみません。":
+        native: "I do not read at all."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+  "ja-0393":
+    native: "not much; not very"
+    notes:
+      "n1": "あまり (amari) is used with a negative: not much."
+    examples:
+      "あまりねません。": "I do not sleep much."
+      "せんせいはあまりはなしません。":
+        native: "The teacher does not talk much."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+  "ja-0394":
+    native: "very; very much"
+    notes:
+      "n1": "とても (totemo) makes an adjective or a verb stronger."
+    examples:
+      "わたしはにほんごがとてもじょうずです。":
+        native: "I am very good at Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "がっこうはとてもおおきいです。":
+        native: "The school is very big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0395":
+    native: "a little; a few"
+    notes:
+      "n1": "すこし (sukoshi) means a small amount."
+    examples:
+      "みずをすこしのみます。":
+        native: "I drink a little water."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "すこしわかります。": "I understand a little."
+  "ja-0396":
+    native: "a lot; many"
+    notes:
+      "n1": "たくさん (takusan) means a large amount."
+    examples:
+      "ともだちがたくさんいます。":
+        native: "I have many friends."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+      "にほんごをたくさんよみます。":
+        native: "I read a lot of Japanese."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0397":
+    native: "already; any more"
+    notes:
+      "n1": "もう (mou) with a past form means already."
+    examples:
+      "わたしはもうおきました。":
+        native: "I have already got up."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+      "もうねますか。":
+        native: "Are you going to sleep already?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0398":
+    native: "not yet; still"
+    notes:
+      "n1": "まだ (mada) with a negative means not yet."
+    examples:
+      "わたしはまだたべません。":
+        native: "I have not eaten yet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+      "はははまだかえりません。":
+        native: "Mother has not gone home yet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+  "ja-0399":
+    native: "more"
+    notes:
+      "n1": "もっと (motto) means more, a larger amount or degree."
+    examples:
+      "もっとみずをのみます。":
+        native: "I drink more water."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "もっとにほんごをききます。":
+        native: "I listen to more Japanese."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0400":
+    native: "most; the best"
+    notes:
+      "n1": "いちばん (ichiban) means the most, or the best."
+    examples:
+      "わたしはにほんごがいちばんすきです。":
+        native: "I like Japanese the most."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "いぬがいちばんおおきいです。":
+        native: "The dog is the biggest."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0401":
+    native: "early; quickly"
+    notes:
+      "n1": "はやく (hayaku) means early, or quickly."
+    examples:
+      "はやくおきます。": "I get up early."
+      "がっこうにはやくいきます。":
+        native: "I go to school early."
+        bases:
+          "に":
+            meaning: "in; at; to"
+  "ja-0402":
+    native: "slowly; at ease"
+    notes:
+      "n1": "ゆっくり (yukkuri) means slowly, at a relaxed pace."
+    examples:
+      "ゆっくりあるきます。": "I walk slowly."
+      "ゆっくりはなしますか。":
+        native: "Do you speak slowly?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0403":
+    native: "at once; soon; right away"
+    notes:
+      "n1": "すぐ (sugu) means at once, or very soon."
+    examples:
+      "すぐかえります。": "I will go home right away."
+      "すぐきますか。":
+        native: "Are you coming right away?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0404":
+    native: "surely; certainly"
+    notes:
+      "n1": "きっと (kitto) means surely: the speaker is sure."
+    examples:
+      "きっとわかります。": "You will surely understand."
+      "せんせいはきっとおきます。":
+        native: "The teacher will surely get up."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+  "ja-0405":
+    native: "probably"
+    notes:
+      "n1": "たぶん (tabun) means probably: the speaker is not quite sure."
+    examples:
+      "たぶんいきます。": "I will probably go."
+      "たぶんねません。": "I probably will not sleep."
+  "ja-0406":
+    native: "a little; a moment"
+    notes:
+      "n1": "ちょっと (chotto) means a little, or for a moment."
+    examples:
+      "ちょっとまちます。": "I will wait a moment."
+      "ちょっとみますか。":
+        native: "Do you want to take a look?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0407":
+    native: "of course; certainly"
+    notes:
+      "n1": "もちろん (mochiron) means of course."
+    examples:
+      "もちろんわかります。": "Of course I understand."
+      "もちろんいきます。": "Of course I will go."
+  "ja-0408":
+    native: "quite; fairly; no, thank you"
+    notes:
+      "n1": "けっこう (kekkou) means quite, or, with です (desu) after it, a polite no."
+    examples:
+      "にほんごはけっこうじょうずです。":
+        native: "Japanese is quite good."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "けっこうです。":
+        native: "No, thank you."
+        bases:
+          "です":
+            meaning: "is (polite)"
+  "ja-0409":
+    native: "together"
+    notes:
+      "n1": "いっしょに (issho ni) means together with someone."
+    examples:
+      "ともだちといっしょにいきます。":
+        native: "I go together with my friend."
+        bases:
+          "と":
+            meaning: "and (joins two words)"
+      "いっしょにあそびますか。":
+        native: "Shall we play together?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0410":
+    native: "by all means; certainly"
+    notes:
+      "n1": "ぜひ (zehi) means by all means: a strong wish."
+    examples:
+      "ぜひいきます。": "I will certainly go."
+      "ぜひにほんごをならいます。":
+        native: "I will certainly learn Japanese."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0411":
+    native: "again"
+    notes:
+      "n1": "また (mata) means again, or see you again."
+    examples:
+      "また、あいます。": "I will meet again."
+      "またきますか。":
+        native: "Are you coming again?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0412":
+    native: "all the time; for a long time"
+    notes:
+      "n1": "ずっと (zutto) means all the time, or for a long time."
+    examples:
+      "ずっとまちます。": "I wait all the time."
+      "ずっとにほんにいます。":
+        native: "I have been in Japan for a long time."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+  "ja-0413":
+    native: "especially; in particular"
+    notes:
+      "n1": "とくに (tokuni) means especially."
+    examples:
+      "とくににほんごがすきです。":
+        native: "I like Japanese especially."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "とくにえいごはじょうずです。":
+        native: "I am especially good at English."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0414":
+    native: "really; truly"
+    notes:
+      "n1": "ほんとうに (hontou ni) means really, said to stress a feeling."
+    examples:
+      "ほんとうにすきです。":
+        native: "I really like it."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ほんとうにわかりますか。":
+        native: "Do you really understand?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0415":
+    native: "later; afterwards"
+    notes:
+      "n1": "あとで (ato de) means later. It is said of a time after now."
+    examples:
+      "あとでかえります。": "I will go home later."
+      "あとできますか。":
+        native: "Are you coming later?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0416":
+    native: "for the first time"
+    notes:
+      "n1": "はじめて (hajimete) means for the first time."
+    examples:
+      "はじめてにほんにいきます。":
+        native: "I go to Japan for the first time."
+        bases:
+          "に":
+            meaning: "in; at; to"
+      "はじめてえいごをならいます。":
+        native: "I learn English for the first time."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0417":
+    native: "full; a lot"
+    notes:
+      "n1": "いっぱい (ippai) means full, or a lot of something."
+    examples:
+      "みずがいっぱいです。":
+        native: "There is a lot of water."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "がっこうにがくせいがいっぱいいます。":
+        native: "There are many students at the school."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
