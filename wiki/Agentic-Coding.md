@@ -481,6 +481,8 @@ explain most of what is otherwise surprising about this codebase.
 
 The project instructions that agents read, copied from CLAUDE.md:
 
+This copy can lag the file in the repo. Owner rules that no longer govern, and what replaced them, are on [Owner-Decisions-History](Owner-Decisions-History).
+
 See [Agentic-Coding](Agentic-Coding) for how to work in this repository.
 
 Read it before making changes. It is short, and three of its rules — card ids

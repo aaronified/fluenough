@@ -50,6 +50,7 @@
 - [Backup Format](Backup-Format)
 - [Log Format](Log-Format)
 - [Agentic Coding](Agentic-Coding)
+- [Owner decisions history](Owner-Decisions-History)
 - [Releasing](Releasing)
 - [ADR Index](ADR-Index)
 - [Mockups and Skills](Mockups-and-Skills)
