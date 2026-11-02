@@ -1689,7 +1689,7 @@ void main() {
       name: 'Bengali',
       script: 'bengali',
     );
-    final sentence = model.Card(
+    const sentence = model.Card(
       id: 't-0',
       deckId: 't',
       target: 'আমি ভাত খাই',
@@ -2234,7 +2234,7 @@ void main() {
 
     test('tiles of a spelling with another count of words than the target, as '
         'a reading may have, are shuffled too', () {
-      final card = model.Card(
+      const card = model.Card(
         id: 't-0',
         deckId: 't',
         target: 'আমি ভাত খাই',

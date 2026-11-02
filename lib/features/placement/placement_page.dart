@@ -288,11 +288,9 @@ class _PlacementPageState extends State<PlacementPage> {
 
   PlacementFound _foundFor(String code) => (
     placed: <String, Set<String>>{code: _placed[code] ?? const <String>{}},
-    alphabet: <String, bool>{if (_alphabet[code] case final a?) code: a},
-    natives: <String, String>{if (_natives[code] case final n?) code: n},
-    scripts: <String, Map<String, ScriptStanding>>{
-      if (_found[code] case final f?) code: f,
-    },
+    alphabet: <String, bool>{code: ?_alphabet[code]},
+    natives: <String, String>{code: ?_natives[code]},
+    scripts: <String, Map<String, ScriptStanding>>{code: ?_found[code]},
     review: <String, PlacedReview>{
       if ((_placed[code] ?? const <String>{}).isNotEmpty)
         code: _review[code] ?? PlacedReview.fallback,

@@ -185,6 +185,21 @@ class _PlacementChoiceState extends State<PlacementChoice> {
       number: widget.number,
       title: widget.title,
       shown: widget.shown,
+      feedback: !answered
+          ? null
+          : right
+          ? FeedbackBanner(
+              kind: FeedbackKind.correct,
+              title: l10n.feedbackCorrect,
+            )
+          : FeedbackBanner(
+              kind: FeedbackKind.wrong,
+              title: l10n.feedbackWrong,
+              detail: l10n.feedbackAnswer(q.answer),
+            ),
+      actions: answered
+          ? <Widget>[_Continue(onTap: () => widget.onAnswer(right))]
+          : <Widget>[_DontKnow(onTap: () => _answer(''))],
       children: <Widget>[
         Semantics(
           container: true,
@@ -206,21 +221,6 @@ class _PlacementChoiceState extends State<PlacementChoice> {
           ),
         ),
       ],
-      feedback: !answered
-          ? null
-          : right
-          ? FeedbackBanner(
-              kind: FeedbackKind.correct,
-              title: l10n.feedbackCorrect,
-            )
-          : FeedbackBanner(
-              kind: FeedbackKind.wrong,
-              title: l10n.feedbackWrong,
-              detail: l10n.feedbackAnswer(q.answer),
-            ),
-      actions: answered
-          ? <Widget>[_Continue(onTap: () => widget.onAnswer(right))]
-          : <Widget>[_DontKnow(onTap: () => _answer(''))],
     );
   }
 }
@@ -321,18 +321,7 @@ class _PlacementTilesState extends State<PlacementTiles> {
           fontWeight: FontWeight.w600,
         ),
       ),
-      children: rearrangeBoard(
-        context,
-        tiles: _tiles,
-        placed: _placed,
-        language: _inLatin ? null : widget.language,
-        direction: direction,
-        answered: answered,
-        onPlace: (i) => setState(() {
-          if (!_placed.contains(i)) _placed.add(i);
-        }),
-        onUnplace: (i) => setState(() => _placed.remove(i)),
-      ),
+
       feedback: switch (_right) {
         null => null,
         true => FeedbackBanner(
@@ -360,6 +349,18 @@ class _PlacementTilesState extends State<PlacementTiles> {
               ),
               _DontKnow(onTap: _giveUp),
             ],
+      children: rearrangeBoard(
+        context,
+        tiles: _tiles,
+        placed: _placed,
+        language: _inLatin ? null : widget.language,
+        direction: direction,
+        answered: answered,
+        onPlace: (i) => setState(() {
+          if (!_placed.contains(i)) _placed.add(i);
+        }),
+        onUnplace: (i) => setState(() => _placed.remove(i)),
+      ),
     );
   }
 }
