@@ -67,18 +67,18 @@ cards:
     bases: "self"
     examples:
       - target: "にほんごはいいです。"
-        words: ["にほんご", "は", "いい", "です"]
-        reading: "nihongo wa ii desu."
-        ipa: "nihoɴɡo wa iː desɯ"
+        words: ["にほんご", "はい", "い", "です"]
+        reading: "nihongo hai i desu."
+        ipa: "nihoɴɡo hai i desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はい", base: "はい", reading: "hai" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "せんせいはいいです。"
-        words: ["せんせい", "は", "いい", "です"]
-        reading: "sensei wa ii desu."
-        ipa: "seɴseː wa iː desɯ"
+        words: ["せんせい", "はい", "い", "です"]
+        reading: "sensei hai i desu."
+        ipa: "seɴseː hai i desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はい", base: "はい", reading: "hai" }
           - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0465"
     target: "わるい"
@@ -362,18 +362,20 @@ cards:
     bases: "self"
     examples:
       - target: "ちちはいそがしいです。"
-        words: ["ちち", "は", "いそがしい", "です"]
-        reading: "chichi wa isogashii desu."
-        ipa: "tɕitɕi wa isoɡaɕiː desɯ"
+        words: ["ちち", "はい", "そ", "が", "し", "い", "です"]
+        reading: "chichi hai so ga shi i desu."
+        ipa: "tɕitɕi hai so ɡa ɕi i desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "が", base: "が", reading: "ga" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "せんせいはいそがしいですか。"
-        words: ["せんせい", "は", "いそがしい", "です", "か"]
-        reading: "sensei wa isogashii desu ka."
-        ipa: "seɴseː wa isoɡaɕiː desɯ ka"
+        words: ["せんせい", "はい", "そ", "が", "し", "い", "です", "か"]
+        reading: "sensei hai so ga shi i desu ka."
+        ipa: "seɴseː hai so ɡa ɕi i desɯ ka"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "が", base: "が", reading: "ga" }
           - { word: "です", base: "です", reading: "desu" }
           - { word: "か", base: "か", reading: "ka" }
   - id: "ja-0477"
@@ -466,10 +468,10 @@ cards:
         bases:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "です", base: "です", reading: "desu" }
-      - target: "いぬはきたないですか。"
-        words: ["いぬ", "は", "きたない", "です", "か"]
-        reading: "inu wa kitanai desu ka."
-        ipa: "inɯ wa kitanai desɯ ka"
+      - target: "へやはきたないですか。"
+        words: ["へ", "や", "は", "きたない", "です", "か"]
+        reading: "he ya wa kitanai desu ka."
+        ipa: "he ja wa kitanai desɯ ka"
         bases:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "です", base: "です", reading: "desu" }
@@ -559,20 +561,19 @@ cards:
     bases: "self"
     examples:
       - target: "がっこうはちかいです。"
-        words: ["がっこう", "は", "ちかい", "です"]
-        reading: "gakkou wa chikai desu."
-        ipa: "ɡakkoː wa tɕikai desɯ"
+        words: ["がっこう", "はち", "か", "い", "です"]
+        reading: "gakkou hachi ka i desu."
+        ipa: "ɡakkoː hatɕi ka i desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
+          - { word: "か", base: "か", reading: "ka" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "がっこうはちかいですか。"
-        words: ["がっこう", "は", "ちかい", "です", "か"]
-        reading: "gakkou wa chikai desu ka."
-        ipa: "ɡakkoː wa tɕikai desɯ ka"
+        words: ["がっこう", "はち", "か", "い", "です", "か"]
+        reading: "gakkou hachi ka i desu ka."
+        ipa: "ɡakkoː hatɕi ka i desɯ ka"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
-          - { word: "です", base: "です", reading: "desu" }
           - { word: "か", base: "か", reading: "ka" }
+          - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0485"
     target: "とおい"
     words: ["とおい"]
