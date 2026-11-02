@@ -301,11 +301,9 @@ units:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
     reading_passages:
       - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
-  - planned: { id: "ja-grammar-tai", grammar: "tai" }
-    listening_passages:
-      - { id: "i-want-to-go", text: { "en": "Saying where you want to go and what you want to eat" } }
-    reading_passages:
-      - { id: "wish-list", text: { "en": "A wish list for a trip" } }
+  - decks: ["ja-grammar-tai"]
+    words: 0
+    grammar: ["tai"]
   - planned: { id: "ja-body", theme: "body", words: 30 }
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Telling a doctor where it hurts" } }
