@@ -266,11 +266,8 @@ units:
       - { id: "order-slip", text: { "en": "An order slip with counted items" } }
   # Katakana, after the core: the sounds of loanwords.
   - ["ja-katakana"]
-  - planned: { id: "ja-loanwords", theme: "loanwords", words: 30 }
-    listening_passages:
-      - { id: "at-the-konbini", text: { "en": "Buying a few things at a convenience store" } }
-    reading_passages:
-      - { id: "konbini-flyer", text: { "en": "A convenience store's flyer of new products" } }
+  - decks: ["ja-loanwords", "*"]
+    words: 30
   - planned: { id: "ja-market", theme: "market", words: 40 }
     listening_passages:
       - { id: "at-the-greengrocer", text: { "en": "Buying fruit and vegetables at a greengrocer" } }
