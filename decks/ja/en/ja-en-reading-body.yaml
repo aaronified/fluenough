@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-body"
+name: "Japanese reading: the body"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-body-1"
+    title: "Where it hurts"
+    sentences:
+      - text: "あたまがいたいです。"
+        reading: "atama ga itai desu."
+      - text: "みみがかゆいです。"
+        reading: "mimi ga kayui desu."
+      - text: "はながいたいです。"
+        reading: "hana ga itai desu."
+      - text: "くすりをのみます。"
+        reading: "kusuri o nomimasu."
+    questions:
+      - id: "ja-1112"
+        prompt:
+          en: "Which line says that the nose hurts?"
+        options:
+          - en: "The first line"
+          - en: "The third line"
+        answer: 2
+      - id: "ja-1113"
+        prompt:
+          en: "The second line says that the ear itches."
+        answer: true
+      - id: "ja-1114"
+        prompt:
+          en: "Which line says that the speaker takes medicine?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-body-2"
+    title: "A cold"
+    sentences:
+      - text: "かぜがいたいです。"
+        reading: "kaze ga itai desu."
+      - text: "ねつがあります。"
+        reading: "netsu ga arimasu."
+      - text: "どこがいたいですか。"
+        reading: "doko ga itai desu ka."
+      - text: "ほねはかたいです。"
+        reading: "hone wa katai desu."
+    questions:
+      - id: "ja-1115"
+        prompt:
+          en: "Which line asks where it hurts?"
+        options:
+          - en: "The second line"
+          - en: "The third line"
+        answer: 2
+      - id: "ja-1116"
+        prompt:
+          en: "The second line says that the speaker has a fever."
+        answer: true
+      - id: "ja-1117"
+        prompt:
+          en: "Which line says that the bone is hard?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
