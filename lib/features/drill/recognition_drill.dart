@@ -10,6 +10,7 @@ import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'set_drill.dart';
 import 'rating_buttons.dart';
 import 'taught_details.dart';
@@ -70,9 +71,15 @@ class RecognitionDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       // A swipe on the answer page, or the end-edge chevron, is Good, as
-      // tapping Good is (owner, 2026-10-29).
-      onSwipe: () => session.rate(SelfGrade.good),
-      swipeOn: revealed,
+      // tapping Good is (owner, 2026-10-29). Gone back to, it only shows the
+      // card again.
+      going: goingOn(
+        session,
+        answered: revealed,
+        onNext: () => session.rate(SelfGrade.good),
+        // The ratings are the way on while the card is live.
+        pinned: session.readOnly,
+      ),
       card: <Widget>[
         if (reading != null && session.readsFirst)
           ReadingFirst(
@@ -133,7 +140,10 @@ class RecognitionDrill extends StatelessWidget {
         ],
         ...answeredSetList(context, session, answered: revealed),
       ],
-      actions: revealed
+      feedback: alreadyAnswered(context, session),
+      actions: session.readOnly
+          ? const <Widget>[]
+          : revealed
           ? <Widget>[
               Text(
                 l10n.drillRatePrompt,

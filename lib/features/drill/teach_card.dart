@@ -56,7 +56,15 @@ class TeachCard extends StatelessWidget {
     required this.reading,
     this.audio,
     this.deckName,
+    this.inShell = false,
   });
+
+  /// Whether the card is drawn inside the shared shell (#509, phase 0): only
+  /// what goes on the card, as one column. The shell's own context row has
+  /// the pill and the deck's name, its card is the [DrillCard], and its body
+  /// scrolls. Otherwise the card is the whole screen, as the walkthrough
+  /// draws it.
+  final bool inShell;
 
   final Card card;
   final LanguageInfo language;
@@ -238,6 +246,80 @@ class TeachCard extends StatelessWidget {
       ),
     );
 
+    final content = <Widget>[
+      word,
+      if (audio != null || ipa != null)
+        Row(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 12,
+          children: <Widget>[
+            ?audio,
+            if (ipa != null)
+              Flexible(
+                child: _IpaButton(
+                  ipa: ipa,
+                  onPressed: () => showPronunciation(context, card),
+                ),
+              ),
+            if (ipa != null) IpaInfoDot(card: card),
+          ],
+        ),
+      meaning,
+      // Padding, not a max-width box, as the review's notes are.
+      if (proseNoteList(card).isNotEmpty)
+        OneNote(card: card, notes: proseNoteList(card)),
+      for (final alike in rude)
+        AlikeWarning(
+          kind: alike.kind,
+          named: named ? alike.partner : null,
+          language: language,
+          care: alike.care,
+        ),
+      if (rude.isEmpty && similar != null)
+        SimilarBlock(
+          similar: similar,
+          language: language,
+          titled: false,
+          maxLines: 2,
+          action: soundBlock
+              ? PairCompareButton(
+                  card: card,
+                  partner: compare.partner,
+                  language: language,
+                )
+              : null,
+        ),
+      if (compare != null && !soundBlock)
+        PairCompareButton(
+          card: card,
+          partner: compare.partner,
+          language: language,
+        ),
+      if (card.examples.isNotEmpty && language.isIpa)
+        IpaExamples(card: card, language: language)
+      else
+        for (final example in card.examples.take(maxExamples))
+          TaughtExample(
+            example: example,
+            language: language,
+            showReading: true,
+          ),
+      if (forms.isNotEmpty)
+        SizedBox(
+          width: double.infinity,
+          child: _FormsTable(forms: forms, language: language),
+        ),
+    ];
+    if (inShell) {
+      return SizedBox(
+        width: double.infinity,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          spacing: 12,
+          children: content,
+        ),
+      );
+    }
     return _TeachScroll(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -264,72 +346,7 @@ class TeachCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 16),
-          DrillCard(
-            children: <Widget>[
-              word,
-              if (audio != null || ipa != null)
-                Row(
-                  mainAxisSize: MainAxisSize.min,
-                  spacing: 12,
-                  children: <Widget>[
-                    ?audio,
-                    if (ipa != null)
-                      Flexible(
-                        child: _IpaButton(
-                          ipa: ipa,
-                          onPressed: () => showPronunciation(context, card),
-                        ),
-                      ),
-                    if (ipa != null) IpaInfoDot(card: card),
-                  ],
-                ),
-              meaning,
-              // Padding, not a max-width box, as the review's notes are.
-              if (proseNoteList(card).isNotEmpty)
-                OneNote(card: card, notes: proseNoteList(card)),
-              for (final alike in rude)
-                AlikeWarning(
-                  kind: alike.kind,
-                  named: named ? alike.partner : null,
-                  language: language,
-                  care: alike.care,
-                ),
-              if (rude.isEmpty && similar != null)
-                SimilarBlock(
-                  similar: similar,
-                  language: language,
-                  titled: false,
-                  maxLines: 2,
-                  action: soundBlock
-                      ? PairCompareButton(
-                          card: card,
-                          partner: compare.partner,
-                          language: language,
-                        )
-                      : null,
-                ),
-              if (compare != null && !soundBlock)
-                PairCompareButton(
-                  card: card,
-                  partner: compare.partner,
-                  language: language,
-                ),
-              if (card.examples.isNotEmpty && language.isIpa)
-                IpaExamples(card: card, language: language)
-              else
-                for (final example in card.examples.take(maxExamples))
-                  TaughtExample(
-                    example: example,
-                    language: language,
-                    showReading: true,
-                  ),
-              if (forms.isNotEmpty)
-                SizedBox(
-                  width: double.infinity,
-                  child: _FormsTable(forms: forms, language: language),
-                ),
-            ],
-          ),
+          DrillCard(children: content),
         ],
       ),
     );

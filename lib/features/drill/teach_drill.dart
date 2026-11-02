@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
+import '../../app/skill.dart';
 import '../../core/scheduling/ask.dart';
+import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/speaker.dart';
-import '../../ui/widgets/teach_swipe.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'rule_card.dart';
 import 'taught_details.dart' show TaughtReading;
 import 'teach_card.dart';
@@ -15,9 +17,12 @@ import 'teach_card.dart';
 ///
 /// A lesson teaching a word (ADR-0024): the one-screen teach card (#691),
 /// with the word played aloud as it shows where the phone has a voice and
-/// sound is on. The learner goes on to the word's first question by swiping
-/// the card or tapping the chevron; there is no Continue button, and nothing
-/// is recorded. A lesson teaches each word once, so there is no way back.
+/// sound is on.
+///
+/// Both are drawn in the shared shell (#509, phase 0): the header, a context
+/// row whose pill is "New word · Recognition" or "Rule · Grammar" in the
+/// skill's colour, one card, and no foot. The learner goes on by swiping or
+/// tapping the chevron, and back to what was before; nothing is recorded.
 ///
 /// Build one per card (key it by the card's position).
 class TeachDrill extends StatelessWidget {
@@ -28,50 +33,57 @@ class TeachDrill extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
     final card = session.item.card;
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            DrillHeader(
-              progress: session.progress,
-              position: session.position,
-              total: session.total,
-              onClose: onClose,
-              reportDetail: '${card.id} in ${session.deck.id}',
-            ),
-            Expanded(
-              child: TeachSwipe(
-                onNext: session.learnt,
-                child: session.ask == Ask.teachRule
-                    ? RuleCard(card: card, language: session.deck.language)
-                    : TeachCard(
-                        card: card,
-                        language: session.deck.language,
-                        deckName: session.deck.deck.name,
-                        // Reading first until the script is expected of the
-                        // learner; else under the word, whatever Latin-letter
-                        // readings says.
-                        reading: session.expectsScript
-                            ? TaughtReading.always
-                            : TaughtReading.first,
-                        // Played as it shows, whatever Play words automatically
-                        // says.
-                        audio: session.canPlay
-                            ? Speaker(
-                                onPlay: session.play,
-                                playing: session.playing,
-                                size: 56,
-                                playOnAppear: true,
-                              )
-                            : null,
-                      ),
-              ),
-            ),
-          ],
-        ),
+    final rule = session.ask == Ask.teachRule;
+    return DrillFrame(
+      // The skill the card leads into gives the pill its colour (owner,
+      // 2026-10-31, doubt 4): a word is Recognition, a rule Grammar.
+      skill: rule ? Skill.grammar : Skill.recognition,
+      pillLabel: rule
+          ? l10n.ruleCardKind
+          : card.pos == 'phrase'
+          ? l10n.teachNewPhrase
+          : l10n.teachNewWord,
+      deckName: session.deck.deck.name,
+      position: session.position,
+      total: session.total,
+      progress: session.progress,
+      onClose: onClose,
+      reportDetail: '${card.id} in ${session.deck.id}',
+      fade: true,
+      // No foot and no button: the chevrons show as the card is swiped,
+      // as they always have on a teach card.
+      going: goingOn(
+        session,
+        answered: true,
+        onNext: session.learnt,
+        pinned: false,
       ),
+      card: <Widget>[
+        if (rule)
+          RuleCard(card: card, language: session.deck.language, inShell: true)
+        else
+          TeachCard(
+            card: card,
+            language: session.deck.language,
+            inShell: true,
+            // Reading first until the script is expected of the learner;
+            // else under the word, whatever Latin-letter readings says.
+            reading: session.expectsScript
+                ? TaughtReading.always
+                : TaughtReading.first,
+            // Played as it shows, whatever Play words automatically says.
+            audio: session.canPlay
+                ? Speaker(
+                    onPlay: session.play,
+                    playing: session.playing,
+                    size: 56,
+                    playOnAppear: true,
+                  )
+                : null,
+          ),
+      ],
     );
   }
 }

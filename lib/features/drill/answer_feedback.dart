@@ -5,7 +5,6 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/feedback_banner.dart';
-import '../../ui/widgets/ipa_line.dart';
 import 'drill_session.dart';
 
 /// The feedback banner for a typed answer: which of the design's five
@@ -99,7 +98,9 @@ class AnswerFeedback extends StatelessWidget {
       AnswerOutcome.exact => banner(
         FeedbackKind.correct,
         l10n.feedbackCorrect,
-        shown(null),
+        // Said: what the phone heard is in the box under the card, so the
+        // banner only says it was as said (#509).
+        spoken ? l10n.feedbackSpokenRight : shown(null),
       ),
       AnswerOutcome.closeDiacritics when spoken && answer.contrast != null =>
         banner(
@@ -132,9 +133,9 @@ class AnswerFeedback extends StatelessWidget {
       AnswerOutcome.wrong => banner(
         FeedbackKind.wrong,
         l10n.feedbackWrong,
-        !spoken
-            ? l10n.feedbackAnswer(shown(null))
-            : _heard(context, l10n, answer),
+        spoken
+            ? _spokenWrong(l10n, answer, shown(null))
+            : l10n.feedbackAnswer(shown(null)),
       ),
     };
   }
@@ -151,32 +152,14 @@ class AnswerFeedback extends StatelessWidget {
           );
   }
 
-  /// What was heard, in the script as recognised, then its IPA when the word
-  /// is a card in a deck. The answer is on the card above, so it is not
-  /// repeated; a sound contrast, when there is one, is named (#89).
-  String _heard(
-    BuildContext context,
-    AppLocalizations l10n,
-    TypedAnswer answer,
-  ) {
-    final heard = answer.heardCard;
-    final said = switch ((answer.contrast, heard)) {
-      (final contrast?, final heard?) => l10n.feedbackSaidContrastMeaning(
-        answer.typed,
-        heard.native,
-        contrast.name,
-      ),
-      (final contrast?, null) => l10n.feedbackSaidContrast(
-        answer.typed,
-        contrast.name,
-      ),
-      _ => l10n.feedbackSaidAnswer(answer.typed),
-    };
-    final ipa = ipaToShow(
-      context,
-      heard?.phonetic ?? heard?.ipa,
-      target: heard?.target,
-    );
-    return ipa == null ? said : '$said\n${l10n.wordSheetIpa(ipa)}';
+  /// The answer, and, when what was heard differs from it by one named
+  /// sound, the difference (#89). What was heard is in the box under the
+  /// card, with its reading or IPA (#509), not here.
+  String _spokenWrong(AppLocalizations l10n, TypedAnswer answer, String shown) {
+    final answerLine = l10n.feedbackAnswer(shown);
+    final contrast = answer.contrast;
+    return contrast == null
+        ? answerLine
+        : '$answerLine\n${l10n.feedbackSaidDifference(contrast.name)}';
   }
 }

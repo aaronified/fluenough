@@ -8,6 +8,7 @@ import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'set_drill.dart';
 import 'input_mode_choice.dart';
 import 'taught_details.dart';
@@ -60,6 +61,7 @@ class RearrangeDrill extends StatelessWidget {
       reportDetail: '${card.id} in ${session.deck.id}',
       progress: session.progress,
       onClose: onClose,
+      going: goingOn(session, answered: answer != null),
       card: <Widget>[
         Text(
           l10n.drillRearrangePrompt,
@@ -103,24 +105,34 @@ class RearrangeDrill extends StatelessWidget {
           answered: answer != null,
           onPlace: session.place,
           onUnplace: session.unplace,
+          // Answered, the right order and, when the learner arranged the
+          // words wrong, their own arrangement too, marked wrong (owner,
+          // 2026-10-31, doubt 13).
+          rightOrder: answer == null ? null : session.answerWords,
+          correct: answer?.graded?.outcome.isCorrect,
         ),
       ],
       feedback: answer == null
           ? null
-          : answer.graded!.outcome.isCorrect
-          ? FeedbackBanner(
-              kind: FeedbackKind.correct,
-              title: l10n.feedbackCorrect,
-            )
-          : FeedbackBanner(
-              kind: FeedbackKind.wrong,
-              title: l10n.feedbackWrong,
-              detail: l10n.feedbackAnswer(
-                latin && reading != null ? reading : session.writtenTarget,
-              ),
-              quotes: <String>[if (!latin) session.writtenTarget],
-              language: latin ? null : writing,
-            ),
+          : alreadyAnswered(context, session) ??
+                (answer.graded!.outcome.isCorrect
+                    ? FeedbackBanner(
+                        kind: FeedbackKind.correct,
+                        title: l10n.feedbackCorrect,
+                      )
+                    : FeedbackBanner(
+                        kind: FeedbackKind.wrong,
+                        title: l10n.feedbackWrong,
+                        detail: l10n.feedbackAnswer(
+                          latin && reading != null
+                              ? reading
+                              : session.writtenTarget,
+                        ),
+                        quotes: <String>[if (!latin) session.writtenTarget],
+                        language: latin ? null : writing,
+                      )),
+      // Check, while there is an order to check; once answered, going on is
+      // the swipe and the chevron.
       actions: <Widget>[
         if (answer == null)
           FilledButton(
@@ -129,19 +141,6 @@ class RearrangeDrill extends StatelessWidget {
                 : null,
             style: AppButtonStyles.tall(context),
             child: Text(l10n.drillCheck),
-          )
-        else
-          FilledButton(
-            onPressed: session.next,
-            style: AppButtonStyles.tall(context),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Flexible(child: Text(l10n.commonContinue)),
-                const SizedBox(width: 10),
-                const Icon(Icons.arrow_forward, size: 22),
-              ],
-            ),
           ),
       ],
     );
@@ -163,6 +162,8 @@ List<Widget> rearrangeBoard(
   required bool answered,
   required ValueChanged<int> onPlace,
   required ValueChanged<int> onUnplace,
+  List<String>? rightOrder,
+  bool? correct,
 }) {
   final l10n = AppLocalizations.of(context)!;
   final scheme = Theme.of(context).colorScheme;
@@ -176,6 +177,74 @@ List<Widget> rearrangeBoard(
         ? () => onUnplace(index)
         : () => onPlace(index),
   );
+  // Answered with the right order known: it is drawn as the answer, in the
+  // colour of Correct, and a wrong arrangement is drawn under it, in the
+  // error colour, under a line saying it is wrong.
+  if (answered && rightOrder != null && correct != null) {
+    Widget line(List<String> words, WordMark mark, String label) => Semantics(
+      container: true,
+      label: label,
+      child: Container(
+        constraints: const BoxConstraints(minHeight: 64),
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 4,
+          vertical: 8,
+        ),
+        child: Wrap(
+          textDirection: direction,
+          spacing: 8,
+          runSpacing: 8,
+          children: <Widget>[
+            for (final text in words)
+              WordTile(text: text, language: language, onTap: null, mark: mark),
+          ],
+        ),
+      ),
+    );
+    final theme = Theme.of(context);
+    final caption = theme.textTheme.labelLarge!.copyWith(
+      color: scheme.onSurfaceVariant,
+    );
+    return <Widget>[
+      Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          Padding(
+            padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
+            child: Text(l10n.drillRearrangeRight, style: caption),
+          ),
+          DecoratedBox(
+            decoration: BoxDecoration(
+              border: Border(
+                bottom: BorderSide(color: scheme.outline, width: 2),
+              ),
+            ),
+            child: line(rightOrder, WordMark.right, l10n.drillRearrangeRight),
+          ),
+          if (!correct) ...<Widget>[
+            const SizedBox(height: 8),
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
+              child: Row(
+                children: <Widget>[
+                  Icon(Icons.highlight_off, size: 18, color: scheme.error),
+                  const SizedBox(width: 4),
+                  Expanded(
+                    child: Text(l10n.drillRearrangeYours, style: caption),
+                  ),
+                ],
+              ),
+            ),
+            line(
+              <String>[for (final index in placed) tiles[index]],
+              WordMark.wrong,
+              l10n.drillRearrangeYours,
+            ),
+          ],
+        ],
+      ),
+    ];
+  }
   return <Widget>[
     Semantics(
       container: true,
@@ -225,6 +294,9 @@ List<Widget> rearrangeBoard(
   ];
 }
 
+/// How a word tile is drawn once the order is checked.
+enum WordMark { right, wrong }
+
 /// One word to place: in the deck's [language], or in Latin letters when
 /// that is null.
 class WordTile extends StatelessWidget {
@@ -234,6 +306,7 @@ class WordTile extends StatelessWidget {
     required this.language,
     required this.onTap,
     this.hint,
+    this.mark,
   });
 
   final String text;
@@ -241,19 +314,32 @@ class WordTile extends StatelessWidget {
   final VoidCallback? onTap;
   final String? hint;
 
+  /// Set once the order is checked: the tile is in the right order or in the
+  /// learner's wrong one, in the colours of Correct and Not quite.
+  final WordMark? mark;
+
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final language = this.language;
+    final (Color bg, Color fg, Color? edge) = switch (mark) {
+      WordMark.right => (
+        scheme.primaryContainer,
+        scheme.onPrimaryContainer,
+        null,
+      ),
+      WordMark.wrong => (scheme.errorContainer, scheme.onErrorContainer, null),
+      null => (scheme.surfaceContainerLow, scheme.onSurface, scheme.outline),
+    };
     return Semantics(
-      button: true,
+      button: mark == null,
       hint: hint,
       child: Material(
-        color: scheme.surfaceContainerLow,
+        color: bg,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(AppRadii.field),
-          side: BorderSide(color: scheme.outline),
+          side: edge == null ? BorderSide.none : BorderSide(color: edge),
         ),
         clipBehavior: Clip.antiAlias,
         child: InkWell(
@@ -271,13 +357,14 @@ class WordTile extends StatelessWidget {
                       textAlign: TextAlign.center,
                       style: theme.textTheme.titleMedium!.copyWith(
                         fontWeight: FontWeight.w600,
+                        color: mark == null ? null : fg,
                       ),
                     )
                   : TargetText.card(
                       text,
                       language: language,
                       fontSize: 18,
-                      color: scheme.onSurface,
+                      color: fg,
                     ),
             ),
           ),

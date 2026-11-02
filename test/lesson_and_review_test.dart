@@ -58,6 +58,7 @@ import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/decks/deck_detail_page.dart';
 import 'package:fluenough/features/drill/choice_drill.dart';
+import 'package:fluenough/features/drill/choice_tile.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
@@ -876,6 +877,13 @@ AppState readingApp({
   progress: progress,
   now: noon,
 );
+
+/// Goes on from an answered question, a set or a teach card with the
+/// end-edge chevron, as a swipe does: there is no Continue button (#509).
+Future<void> nextCard(WidgetTester tester) async {
+  await tester.tap(find.byTooltip(l10nOf(tester).drillNextCard));
+  await tester.pumpAndSettle();
+}
 
 Future<void> tapTextReadingDrill(WidgetTester tester, String text) async {
   await tester.ensureVisible(find.text(text).first);
@@ -2751,13 +2759,12 @@ cards:
 
             expect(find.text(c.title(l10n)), findsOneWidget);
             final log = state.progress.log;
-            expect(log, hasLength(1), reason: 'recorded before Continue');
+            expect(log, hasLength(1), reason: 'recorded before going on');
             expect(log.single.grade, c.grade);
             expect(log.single.mode, DrillMode.production);
             expect(log.single.answerGiven, c.typed);
 
-            await tester.tap(find.text(l10n.commonContinue));
-            await tester.pumpAndSettle();
+            await nextCard(tester);
             expect(find.text(l10n.drillCheck), findsOneWidget);
             expect(state.progress.log, hasLength(1));
           }
@@ -2873,8 +2880,7 @@ cards:
         await tester.pumpAndSettle();
         final l10n = l10nOf(tester);
         await typeAndCheck(tester, 'el nino');
-        await tester.tap(find.text(l10n.commonContinue));
-        await tester.pumpAndSettle();
+        await nextCard(tester);
 
         await tester.tap(find.byTooltip(l10n.drillEndSession));
         await tester.pumpAndSettle();
@@ -2962,8 +2968,7 @@ cards:
           expect(find.text(card.native), findsOneWidget);
           await typeAndCheck(tester, card.altTarget.firstOrNull ?? card.target);
           expect(find.text(l10n.feedbackCorrect), findsOneWidget);
-          await tester.tap(find.text(l10n.commonContinue));
-          await tester.pumpAndSettle();
+          await nextCard(tester);
 
           // Heard as words; typed as digits, a comma allowed.
           card = current(tester);
@@ -3015,7 +3020,11 @@ cards:
           expect(event.mode, DrillMode.recognition);
           expect(event.grade, 4);
           expect(find.text(l10n.feedbackCorrect), findsOneWidget);
-          await tapText(tester, l10n.commonContinue);
+          // Answered right: only the right option is left, and there is no
+          // Continue button, only the swipe and the chevron (#509).
+          expect(options, findsOneWidget);
+          expect(find.text(l10n.commonContinue), findsNothing);
+          await nextCard(tester);
           expect(find.byType(ChoiceDrill), findsNothing);
 
           {
@@ -3039,6 +3048,8 @@ cards:
             expect(state.progress.log.single.grade, 1);
             expect(find.text(l10n.feedbackWrong), findsOneWidget);
             expect(find.text(l10n.feedbackAnswer(card.native)), findsOneWidget);
+            // Answered wrong: the right option and the one chosen, no others.
+            expect(find.byType(ChoiceTile), findsNWidgets(2));
           }
         },
       );
@@ -3083,7 +3094,7 @@ cards:
           expect(grades[entry.card.id], 4);
         }
         expect(find.text(l10n.drillMatchAgain(1)), findsOneWidget);
-        await tapText(tester, l10n.commonContinue);
+        await nextCard(tester);
         expect(find.byType(MatchDrill), findsNothing);
 
         {
@@ -3408,7 +3419,8 @@ cards:
           speech.next = const <SpeechAlternative>[SpeechAlternative('zxq wvk')];
           await speak(tester);
           expect(find.text(l10n.feedbackWrong), findsOneWidget);
-          expect(find.text(l10n.feedbackSaidAnswer('zxq wvk')), findsOneWidget);
+          // What the phone heard is in its own box, as heard.
+          expect(find.text('zxq wvk'), findsOneWidget);
           expect(state.progress.log.single.grade, 1);
           handle.dispose();
         }
@@ -3799,8 +3811,7 @@ cards:
         expect(options, hasLength(2));
         expect(options.every((b) => b.onPressed == null), isTrue);
 
-        await tester.tap(find.text(l10n.commonContinue));
-        await tester.pumpAndSettle();
+        await nextCard(tester);
         expect(find.text(l10n.drillPositionShort(2, 2)), findsOneWidget);
         expect(find.text(pairFixtureRounds[1].pair.a.target), findsOneWidget);
         expect(find.byType(FeedbackBanner), findsNothing);
@@ -3891,7 +3902,7 @@ cards:
             expect(state.progress.log, hasLength(1));
 
             // The next question about the same passage follows at once.
-            await tapTextReadingDrill(tester, l10n.commonContinue);
+            await nextCard(tester);
             expect(find.text(l10n.readingToQuestions), findsNothing);
             expect(find.text(l10n.readingTrueOrFalse), findsOneWidget);
             expect(
@@ -3909,9 +3920,9 @@ cards:
               findsOneWidget,
             );
 
-            await tapTextReadingDrill(tester, l10n.commonContinue);
+            await nextCard(tester);
             await tapTextReadingDrill(tester, 'Fifty taka');
-            await tapTextReadingDrill(tester, l10n.commonContinue);
+            await nextCard(tester);
             // The next passage shows on its own first.
             expect(find.text('Going home'), findsOneWidget);
             expect(find.text(l10n.readingToQuestions), findsOneWidget);
@@ -4015,7 +4026,7 @@ cards:
         expect(find.text(l10n.readingTextHidden), findsNothing);
 
         // Hidden again for the next question.
-        await tapTextReadingDrill(tester, l10n.commonContinue);
+        await nextCard(tester);
         for (final sentence in shop) {
           expect(find.text(sentence), findsNothing);
         }
@@ -4228,8 +4239,7 @@ cards:
         findsOneWidget,
       );
 
-      await tester.tap(find.text(l10n.commonContinue));
-      await tester.pumpAndSettle();
+      await nextCard(tester);
       expect(find.byType(TeachDrill), findsOneWidget);
       expect(state.progress.log, isEmpty);
 
@@ -4253,8 +4263,7 @@ cards:
         await tester.pumpAndSettle();
         expect(find.byType(SetMemberRow), findsNWidgets(3));
 
-        await tester.tap(find.text(l10n.commonContinue));
-        await tester.pumpAndSettle();
+        await nextCard(tester);
         expect(find.text(l10n.setPartTitle(2, 2)), findsOneWidget);
         expect(find.textContaining('Next:'), findsOneWidget);
       }
@@ -4402,8 +4411,7 @@ cards:
       expect(tester.testTextInput.isVisible, isFalse);
 
       // The next card's field does not ask for the phone's keyboard either.
-      await tester.tap(find.text(l10n.commonContinue));
-      await tester.pumpAndSettle();
+      await nextCard(tester);
       if (find.byType(BrailleKeyboard).evaluate().isNotEmpty) {
         await tester.tap(find.byType(TextField));
         await tester.pump();
