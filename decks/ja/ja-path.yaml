@@ -93,6 +93,7 @@ regions:
 # skips them. The planned script units join it as each is written.
 alphabet:
   - "ja-hiragana"
+  - "ja-katakana"
   - "ja-hiragana-marks"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
@@ -264,11 +265,7 @@ units:
     reading_passages:
       - { id: "order-slip", text: { "en": "An order slip with counted items" } }
   # Katakana, after the core: the sounds of loanwords.
-  - planned: { id: "ja-katakana", grammar: "script-katakana", words: 0 }
-    listening_passages:
-      - { id: "loanword-sounds", text: { "en": "Hearing English words as Japanese says them: koohii, terebi, pasokon" } }
-    reading_passages:
-      - { id: "cafe-menu-board", text: { "en": "A cafe menu board in katakana" } }
+  - ["ja-katakana"]
   - planned: { id: "ja-loanwords", theme: "loanwords", words: 30 }
     listening_passages:
       - { id: "at-the-konbini", text: { "en": "Buying a few things at a convenience store" } }
