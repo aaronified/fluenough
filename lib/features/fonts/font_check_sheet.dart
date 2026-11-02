@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/deck_downloads.dart';
 import '../../core/decks/deck_index.dart';
 import '../../core/decks/font_check.dart';
+import '../../core/decks/script_fonts.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
@@ -235,7 +236,9 @@ class _Sample extends StatelessWidget {
         children: <Widget>[
           Text(
             sample.text,
-            textDirection: script == 'perso_arabic' ? TextDirection.rtl : null,
+            textDirection: readingScriptOf(script) == 'perso_arabic'
+                ? TextDirection.rtl
+                : null,
             style: theme.textTheme.headlineMedium?.copyWith(fontFamily: family),
           ),
           const SizedBox(height: 4),

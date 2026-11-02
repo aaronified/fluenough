@@ -57,6 +57,7 @@ const Map<String, String> notationGlyphs = <String, String>{
 /// no family tag in its details (#698).
 const List<String> languageFamilies = <String>[
   'indo_aryan',
+  'iranian',
   'dravidian',
   'tibeto_burman',
   'austroasiatic',

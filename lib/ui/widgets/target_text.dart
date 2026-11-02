@@ -163,8 +163,10 @@ class TargetText extends StatelessWidget {
     if (fonts == null) return _sized(context, null);
     return ListenableBuilder(
       listenable: fonts,
-      builder: (context, _) =>
-          _sized(context, fonts.familyFor(language.script)),
+      builder: (context, _) => _sized(
+        context,
+        fonts.familyFor(fontScriptFor(language.code, language.script)),
+      ),
     );
   }
 
@@ -280,8 +282,12 @@ enum _Sizing { fixed, hero, card }
 /// that text in the Perso-Arabic script of Urdu (Hindustani's second script,
 /// and Punjabi's Shahmukhi) is marked Urdu, so that the phone draws it in its
 /// Nastaliq font rather than the plain Naskh it uses for Arabic.
+///
+/// Persian and Pashto are set in Naskh, and keep their own locale.
 Locale targetLocale(LanguageInfo language) => switch (language.script) {
-  'perso_arabic' || 'shahmukhi' => const Locale('ur'),
+  'perso_arabic' || 'shahmukhi'
+      when fontScriptFor(language.code, language.script) == language.script =>
+    const Locale('ur'),
   _ => Locale(language.code),
 };
 

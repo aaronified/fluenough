@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Six more languages on Add a language.** Afrikaans, Dutch, Ukrainian, Indonesian, Persian and Pashto are listed with no course yet, as Portuguese and Catalan are, and Persian and Pashto sit in a new Iranian family and are drawn in Noto Naskh Arabic, which they offer to download. Indonesian is now a language of its own, no longer found as an alias of Malay, and Malay teaches Malaysian only. Classical Sanskrit is the name of the Sanskrit course. Hebrew and Yiddish offer the Hebrew font to download; Santali's Ol Chiki font waits for its course (owner, 2026-11-02).
 - **The first launch places each language you chose to Learn.** Before the app opens, each such language goes straight to its level check once its first decks are on the phone. Under the first question, "Start at the beginning" places nothing for that language and goes on; the close button instead stops the check and keeps what it found so far. Each result is saved as it is done (owner, 2026-11-02: "It should be offered, and skippable to start at the beginning.").
 
 ### Changed
