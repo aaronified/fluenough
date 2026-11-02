@@ -848,7 +848,8 @@ units:
       - { id: "spring-festival", text: { "en": "A family gets ready for the Spring Festival" } }
     reading_passages:
       - { id: "festival-poster", text: { "en": "A poster for the Mid-Autumn Festival" } }
-  - planned: { id: "zh-weddings", theme: "weddings", words: 45 }
+  - decks: ["zh-weddings", "zh-weddings-sentences", "zh-reading-weddings", "*"]
+    words: 45
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
