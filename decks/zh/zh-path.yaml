@@ -798,7 +798,8 @@ units:
       - { id: "visiting-a-home", text: { "en": "Visiting a Chinese home: what to bring, what to say at the door and at the table" } }
     reading_passages:
       - { id: "etiquette-guide", text: { "en": "A short etiquette guide for visitors" } }
-  - planned: { id: "zh-environment", theme: "environment", words: 50 }
+  - decks: ["zh-environment", "zh-environment-sentences", "zh-reading-environment", "*"]
+    words: 50
     listening_passages:
       - { id: "recycling-talk", text: { "en": "Neighbours talk about sorting rubbish and clean air" } }
     reading_passages:
