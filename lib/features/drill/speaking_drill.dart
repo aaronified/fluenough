@@ -17,6 +17,7 @@ import 'going_on.dart';
 import 'say_result.dart';
 import 'set_drill.dart';
 import 'speaking_practice.dart' show unheardMessage;
+import 'taught_details.dart';
 
 /// Speaking (#89, ADR-0014): the meaning ("Say it in Hindi"), a microphone
 /// button, and what the phone's speech recogniser heard, graded like a
@@ -155,6 +156,16 @@ class SpeakingDrill extends StatelessWidget {
             color: scheme.onSurfaceVariant,
           ),
         ),
+      // What the word's lesson showed under it: its note, its bases, its
+      // example and its warnings (the shell's mockup draws the word and its
+      // reading and is silent on these, which the answered card always had).
+      TaughtDetails(
+        card: card,
+        language: language,
+        reading: TaughtReading.inReview(session),
+        word: false,
+        meaning: false,
+      ),
     ];
   }
 

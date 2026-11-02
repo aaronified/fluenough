@@ -4495,16 +4495,7 @@ cards:
           );
         }
 
-        // Now: the word and the meaning, and, but for a Say card, the note
-        // and the example. The answered Say card is the word and its reading
-        // over what the phone heard and Your recording (#509, the approved
-        // shared-shell mockup), with no note or example.
-        if (question.skill == Skill.speaking) {
-          expect(inCard(findTarget(card.target)), findsOneWidget);
-          expect(inCard(find.text(card.native)), findsOneWidget);
-          expectDetails(tester, card, shown: false);
-          continue;
-        }
+        // Now: the word, the meaning, the note and the example.
         expectDetails(tester, card, shown: true);
         expect(inCard(findTarget(card.target)), findsOneWidget);
         expect(inCard(find.text(card.native)), findsOneWidget);
