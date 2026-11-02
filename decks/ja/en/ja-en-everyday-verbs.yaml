@@ -1,0 +1,793 @@
+schema: 1
+id: "ja-en-everyday-verbs"
+kind: "layer"
+core: "ja-everyday-verbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Everyday verbs"
+description: "Thirty-five everyday verbs in their polite forms, the -masu and -masen forms of eating, drinking, going, coming, sleeping, working and doing. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0341":
+    native: "to eat"
+    notes:
+      "n1": "Polite form: たべます (tabemasu); not doing it: たべません (tabemasen)."
+    examples:
+      "わたしはごはんをたべます。":
+        native: "I eat rice."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "たべます":
+            meaning: "to eat"
+      "ともだちはごはんをたべません。":
+        native: "My friend does not eat rice."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "たべません":
+            meaning: "to eat"
+  "ja-0342":
+    native: "to drink"
+    notes:
+      "n1": "Polite form: のみます (nomimasu); not doing it: のみません (nomimasen)."
+    examples:
+      "みずをのみます。":
+        native: "I drink water."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "のみます":
+            meaning: "to drink"
+      "あなたはみずをのみますか。":
+        native: "Do you drink water?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "のみます":
+            meaning: "to drink"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0343":
+    native: "to see; to look at; to watch"
+    notes:
+      "n1": "Polite form: みます (mimasu); not doing it: みません (mimasen)."
+    examples:
+      "いぬをみます。":
+        native: "I look at the dog."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "みます":
+            meaning: "to see; to look at; to watch"
+      "あなたはいぬをみますか。":
+        native: "Do you see the dog?"
+        bases:
+          "はい":
+            meaning: "yes"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "みます":
+            meaning: "to see; to look at; to watch"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0344":
+    native: "to listen; to hear; to ask"
+    notes:
+      "n1": "Polite form: ききます (kikimasu); not doing it: ききません (kikimasen)."
+    examples:
+      "にほんごをききます。":
+        native: "I listen to Japanese."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "ききます":
+            meaning: "to listen; to hear; to ask"
+      "せんせいにききます。":
+        native: "I ask the teacher."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "ききます":
+            meaning: "to listen; to hear; to ask"
+  "ja-0345":
+    native: "to read"
+    notes:
+      "n1": "Polite form: よみます (yomimasu); not doing it: よみません (yomimasen)."
+    examples:
+      "えいごをよみます。":
+        native: "I read English."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "よみます":
+            meaning: "to read"
+      "がくせいはにほんごをよみますか。":
+        native: "Does the student read Japanese?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "よみます":
+            meaning: "to read"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0346":
+    native: "to write"
+    notes:
+      "n1": "Polite form: かきます (kakimasu); not doing it: かきません (kakimasen)."
+    examples:
+      "えいごをかきます。":
+        native: "I write English."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "かきます":
+            meaning: "to write"
+      "わたしはにほんごをかきません。":
+        native: "I do not write Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "かきません":
+            meaning: "to write"
+  "ja-0347":
+    native: "to speak; to talk"
+    notes:
+      "n1": "Polite form: はなします (hanashimasu); not doing it: はなしません (hanashimasen)."
+    examples:
+      "わたしはにほんごをはなします。":
+        native: "I speak Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "はなします":
+            meaning: "to speak; to talk"
+      "あなたはえいごをはなしますか。":
+        native: "Do you speak English?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "はなします":
+            meaning: "to speak; to talk"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0348":
+    native: "to go"
+    notes:
+      "n1": "Polite form: いきます (ikimasu); not doing it: いきません (ikimasen)."
+    examples:
+      "がっこうにいきます。":
+        native: "I go to school."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "いきます":
+            meaning: "to go"
+      "あなたはにほんにいきますか。":
+        native: "Are you going to Japan?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "に":
+            meaning: "in; at; to"
+          "いきます":
+            meaning: "to go"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0349":
+    native: "to come"
+    notes:
+      "n1": "Polite form: きます (kimasu); its stem changes from く- (ku-) to き- (ki-), as くる (kuru) is an irregular verb."
+    examples:
+      "ともだちがきます。":
+        native: "My friend is coming."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "きます":
+            meaning: "to come"
+      "いつきますか。":
+        native: "When are you coming?"
+        bases:
+          "きます":
+            meaning: "to come"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0350":
+    native: "to return home; to go home"
+    notes:
+      "n1": "Polite form: かえります (kaerimasu); not doing it: かえりません (kaerimasen)."
+    examples:
+      "がくせいがかえります。":
+        native: "The student goes home."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "かえります":
+            meaning: "to return home; to go home"
+      "いつかえりますか。":
+        native: "When do you go home?"
+        bases:
+          "かえります":
+            meaning: "to return home; to go home"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0351":
+    native: "to get up; to wake up"
+    notes:
+      "n1": "Polite form: おきます (okimasu); not doing it: おきません (okimasen)."
+    examples:
+      "わたしはおきます。":
+        native: "I get up."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "おきます":
+            meaning: "to get up; to wake up"
+      "せんせいはおきますか。":
+        native: "Does the teacher get up?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "おきます":
+            meaning: "to get up; to wake up"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0352":
+    native: "to sleep; to go to bed"
+    notes:
+      "n1": "Polite form: ねます (nemasu); not doing it: ねません (nemasen)."
+    examples:
+      "いぬはねます。":
+        native: "The dog sleeps."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "ねます":
+            meaning: "to sleep; to go to bed"
+      "ともだちはねますか。":
+        native: "Does your friend sleep?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "ねます":
+            meaning: "to sleep; to go to bed"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0353":
+    native: "to work"
+    notes:
+      "n1": "Polite form: はたらきます (hatarakimasu); not doing it: はたらきません (hatarakimasen)."
+    examples:
+      "わたしのちちははたらきます。":
+        native: "My father works."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "きます":
+            meaning: "to come"
+      "かぞくははたらきますか。":
+        native: "Does your family work?"
+        bases:
+          "きます":
+            meaning: "to come"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0354":
+    native: "to rest; to take a day off"
+    notes:
+      "n1": "Polite form: やすみます (yasumimasu); not doing it: やすみません (yasumimasen)."
+    examples:
+      "ちちはやすみます。":
+        native: "My father takes a day off."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "やすみます":
+            meaning: "to rest; to take a day off"
+      "あなたはやすみますか。":
+        native: "Are you taking a day off?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "やすみます":
+            meaning: "to rest; to take a day off"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0355":
+    native: "to enter; to go in"
+    notes:
+      "n1": "Polite form: はいります (hairimasu); not doing it: はいりません (hairimasen)."
+    examples:
+      "がくせいががっこうにはいります。":
+        native: "The student enters the school."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "に":
+            meaning: "in; at; to"
+          "はいります":
+            meaning: "to enter; to go in"
+      "あなたはだいがくにはいりますか。":
+        native: "Are you entering university?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "に":
+            meaning: "in; at; to"
+          "はいります":
+            meaning: "to enter; to go in"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0356":
+    native: "to buy; to keep (an animal)"
+    notes:
+      "n1": "Polite form: かいます (kaimasu); not doing it: かいません (kaimasen)."
+    examples:
+      "ともだちはいぬをかいます。":
+        native: "My friend keeps a dog."
+        bases:
+          "はい":
+            meaning: "yes"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "かいます":
+            meaning: "to buy; to keep (an animal)"
+      "あなたはいぬをかいますか。":
+        native: "Do you keep a dog?"
+        bases:
+          "はい":
+            meaning: "yes"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "かいます":
+            meaning: "to buy; to keep (an animal)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0357":
+    native: "to meet"
+    notes:
+      "n1": "Polite form: あいます (aimasu); not doing it: あいません (aimasen)."
+    examples:
+      "せんせいにあいます。":
+        native: "I meet the teacher."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "あいます":
+            meaning: "to meet"
+      "ともだちにあいますか。":
+        native: "Do you meet your friend?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "あいます":
+            meaning: "to meet"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0358":
+    native: "to wait"
+    notes:
+      "n1": "Polite form: まちます (machimasu); not doing it: まちません (machimasen)."
+    examples:
+      "ともだちをまちます。":
+        native: "I wait for my friend."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "まちます":
+            meaning: "to wait"
+      "でんしゃをまちますか。":
+        native: "Do you wait for the train?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "まちます":
+            meaning: "to wait"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0359":
+    native: "to hold; to carry"
+    notes:
+      "n1": "Polite form: もちます (mochimasu); not doing it: もちません (mochimasen)."
+    examples:
+      "わたしはかぎをもちます。":
+        native: "I carry a key."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "もちます":
+            meaning: "to hold; to carry"
+      "あなたはかぎをもちますか。":
+        native: "Do you carry a key?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "もちます":
+            meaning: "to hold; to carry"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0360":
+    native: "to walk"
+    notes:
+      "n1": "Polite form: あるきます (arukimasu); not doing it: あるきません (arukimasen)."
+    examples:
+      "わたしはがっこうにあるきます。":
+        native: "I walk to school."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "に":
+            meaning: "in; at; to"
+          "あるきます":
+            meaning: "to walk"
+      "ともだちはあるきますか。":
+        native: "Does your friend walk?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "あるきます":
+            meaning: "to walk"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0361":
+    native: "to ride; to board"
+    notes:
+      "n1": "Polite form: のります (norimasu); not doing it: のりません (norimasen)."
+    examples:
+      "でんしゃにのります。":
+        native: "I ride the train."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "のります":
+            meaning: "to ride; to board"
+      "ともだちはでんしゃにのりますか。":
+        native: "Does your friend take the train?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "に":
+            meaning: "in; at; to"
+          "のります":
+            meaning: "to ride; to board"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0362":
+    native: "to get off; to go down"
+    notes:
+      "n1": "Polite form: おります (orimasu); not doing it: おりません (orimasen)."
+    examples:
+      "いつおりますか。":
+        native: "When do you get off?"
+        bases:
+          "おります":
+            meaning: "to get off; to go down"
+          "か":
+            meaning: "(marks a question)"
+      "かぞくはでんしゃをおります。":
+        native: "My family gets off the train."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "おります":
+            meaning: "to get off; to go down"
+  "ja-0363":
+    native: "to wash"
+    notes:
+      "n1": "Polite form: あらいます (araimasu); not doing it: あらいません (araimasen)."
+    examples:
+      "ははがごはんをあらいます。":
+        native: "Mother washes the rice."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "あらいます":
+            meaning: "to wash"
+      "あなたはごはんをあらいますか。":
+        native: "Do you wash the rice?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "あらいます":
+            meaning: "to wash"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0364":
+    native: "to make; to create"
+    notes:
+      "n1": "Polite form: つくります (tsukurimasu); not doing it: つくりません (tsukurimasen)."
+    examples:
+      "ははがごはんをつくります。":
+        native: "Mother makes the meal."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "つくります":
+            meaning: "to make; to create"
+      "あなたはなにをつくりますか。":
+        native: "What do you make?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "つくります":
+            meaning: "to make; to create"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0365":
+    native: "to understand"
+    notes:
+      "n1": "Polite form: わかります (wakarimasu); not doing it: わかりません (wakarimasen)."
+    examples:
+      "はい、わかります。":
+        native: "Yes, I understand."
+        bases:
+          "はい":
+            meaning: "yes"
+          "わかります":
+            meaning: "to understand"
+      "にほんごがわかりますか。":
+        native: "Do you understand Japanese?"
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "わかります":
+            meaning: "to understand"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0366":
+    native: "to know (a fact)"
+    notes:
+      "n1": "Polite form: しります (shirimasu); not doing it: しりません (shirimasen)."
+    examples:
+      "わたしはしりません。":
+        native: "I do not know."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "しりません":
+            meaning: "to know (a fact)"
+      "あなたはせんせいのなまえをしりますか。":
+        native: "Do you know the teacher's name?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "しります":
+            meaning: "to know (a fact)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0367":
+    native: "to learn; to take lessons"
+    notes:
+      "n1": "Polite form: ならいます (naraimasu); not doing it: ならいません (naraimasen)."
+    examples:
+      "わたしはにほんごをならいます。":
+        native: "I learn Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "ならいます":
+            meaning: "to learn; to take lessons"
+      "がくせいはえいごをならいますか。":
+        native: "Do the students learn English?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "ならいます":
+            meaning: "to learn; to take lessons"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0368":
+    native: "to teach"
+    notes:
+      "n1": "Polite form: おしえます (oshiemasu); not doing it: おしえません (oshiemasen)."
+    examples:
+      "せんせいはにほんごをおしえます。":
+        native: "The teacher teaches Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "おしえます":
+            meaning: "to teach"
+      "わたしはともだちにえいごをおしえます。":
+        native: "I teach my friend English."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "に":
+            meaning: "in; at; to"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "おしえます":
+            meaning: "to teach"
+  "ja-0369":
+    native: "to use"
+    notes:
+      "n1": "Polite form: つかいます (tsukaimasu); not doing it: つかいません (tsukaimasen)."
+    examples:
+      "なにをつかいますか。":
+        native: "What do you use?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "つかいます":
+            meaning: "to use"
+          "か":
+            meaning: "(marks a question)"
+      "わたしはかぎをつかいます。":
+        native: "I use the key."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "つかいます":
+            meaning: "to use"
+  "ja-0370":
+    native: "to sit"
+    notes:
+      "n1": "Polite form: すわります (suwarimasu); not doing it: すわりません (suwarimasen)."
+    examples:
+      "いぬがすわります。":
+        native: "The dog sits."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "すわります":
+            meaning: "to sit"
+      "がくせいはすわりません。":
+        native: "The student does not sit."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "すわりません":
+            meaning: "to sit"
+  "ja-0371":
+    native: "to stand; to stand up"
+    notes:
+      "n1": "Polite form: たちます (tachimasu); not doing it: たちません (tachimasen)."
+    examples:
+      "ともだちがたちます。":
+        native: "My friend stands up."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "たちます":
+            meaning: "to stand; to stand up"
+      "あなたはたちますか。":
+        native: "Do you stand up?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "たちます":
+            meaning: "to stand; to stand up"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0372":
+    native: "to open"
+    notes:
+      "n1": "Polite form: あけます (akemasu); not doing it: あけません (akemasen)."
+    examples:
+      "わたしはかぎをあけます。":
+        native: "I open the lock with the key."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "あけます":
+            meaning: "to open"
+      "あなたはかぎをあけますか。":
+        native: "Do you open the lock?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "あけます":
+            meaning: "to open"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0373":
+    native: "to shut; to lock"
+    notes:
+      "n1": "Polite form: しめます (shimemasu); not doing it: しめません (shimemasen)."
+    examples:
+      "わたしはかぎをしめます。":
+        native: "I lock it with the key."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "を":
+            meaning: "(marks the thing acted on)"
+          "しめます":
+            meaning: "to shut; to lock"
+      "なにをしめますか。":
+        native: "What do you lock?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "しめます":
+            meaning: "to shut; to lock"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0374":
+    native: "to play"
+    notes:
+      "n1": "Polite form: あそびます (asobimasu); not doing it: あそびません (asobimasen)."
+    examples:
+      "こどもはあそびます。":
+        native: "The child plays."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "あそびます":
+            meaning: "to play"
+      "いぬとあそびますか。":
+        native: "Do you play with the dog?"
+        bases:
+          "と":
+            meaning: "and (joins two words)"
+          "あそびます":
+            meaning: "to play"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0375":
+    native: "to do"
+    notes:
+      "n1": "Polite form: します (shimasu); its stem changes from す- (su-) to し- (shi-), as する (suru) is an irregular verb."
+    examples:
+      "なにをしますか。":
+        native: "What do you do?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "します":
+            meaning: "to do"
+          "か":
+            meaning: "(marks a question)"
+      "はい、します。":
+        native: "Yes, I do."
+        bases:
+          "はい":
+            meaning: "yes"
+          "します":
+            meaning: "to do"
