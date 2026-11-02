@@ -1,0 +1,47 @@
+schema: 1
+id: "as-en-government-sentences"
+kind: "layer"
+core: "as-government-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Government: offices, forms, laws and elections: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3406":
+    native: "The government office is big."
+    confusables:
+      "c1": { why: "A bank, a different kind of office." }
+      "c2": { why: "A hotel, not a government office." }
+  "as-3407":
+    native: "The officer takes the form."
+    confusables:
+      "c1": { why: "A minister, not an officer." }
+      "c2": { why: "A citizen, the person who gives the form." }
+  "as-3408":
+    native: "There is a certificate."
+    bases:
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "A licence, a different paper." }
+      "c2": { why: "A permission, not a certificate." }
+  "as-3409":
+    native: "This is a rule."
+    confusables:
+      "c1": { why: "Permission, not a rule." }
+      "c2": { why: "Parliament, which makes the rules." }
+  "as-3410":
+    native: "The voter gives a vote."
+    confusables:
+      "c1": { why: "An elected person, not the voter." }
+      "c2": { why: "A minister, not a voter." }
+  "as-3411":
+    native: "A licence is needed."
+    confusables:
+      "c1": { why: "An application form, a step before the licence." }
+      "c2": { why: "A certificate, a different paper." }
+  "as-3412":
+    native: "The central government."
+    confusables:
+      "c1": { why: "A state, the level below the centre." }
+      "c2": { why: "A district, a local level." }

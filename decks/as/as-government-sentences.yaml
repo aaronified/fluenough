@@ -1,0 +1,72 @@
+schema: 1
+id: "as-government-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3406"
+    target: "সৰকাৰী অফিচ ডাঙৰ।"
+    reading: "xôrkāri ophis dāṅôr."
+    ipa: "sɔɹɔkaɹi ɔpʰis daŋɔɹ"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বেংক", reading: "beṅk", kind: "word" }
+      - { id: "c2", word: "হোটেল", reading: "hutel", kind: "word" }
+  - id: "as-3407"
+    target: "অফিচাৰ ফৰ্ম লয়।"
+    reading: "ophisār phôrm loy."
+    ipa: "ɔpʰisaɹ pʰɔɹm lɔj"
+    pos: "phrase"
+    bases:
+      - { word: "লয়", ref: "as-2219" }
+    confusables:
+      - { id: "c1", word: "মন্ত্ৰী", reading: "môntrī", kind: "word" }
+      - { id: "c2", word: "নাগৰিক", reading: "nāgôrik", kind: "word" }
+  - id: "as-3408"
+    target: "প্ৰমাণপত্ৰ আছে।"
+    reading: "prômāṇpôtrô āse."
+    ipa: "pɹɔmanɔpɔtɹ ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "লাইচেন্স", reading: "laisens", kind: "word" }
+      - { id: "c2", word: "অনুমতি", reading: "ônumôti", kind: "word" }
+  - id: "as-3409"
+    target: "এইটো নিয়ম।"
+    reading: "eitu niyôm."
+    ipa: "eitʊ nijɔm"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "অনুমতি", reading: "ônumôti", kind: "word" }
+      - { id: "c2", word: "সংসদ", reading: "xôṅxôd", kind: "word" }
+  - id: "as-3410"
+    target: "ভোটাৰ ভোট দিয়ে।"
+    reading: "bhoṭār bhot diye."
+    ipa: "bʱʊtaɹ bʱʊt dije"
+    pos: "phrase"
+    bases:
+      - { word: "দিয়ে", ref: "as-2218" }
+    confusables:
+      - { id: "c1", word: "বিধায়ক", reading: "bidhāyôk", kind: "word" }
+      - { id: "c2", word: "মন্ত্ৰী", reading: "môntrī", kind: "word" }
+  - id: "as-3411"
+    target: "লাইচেন্স লাগে।"
+    reading: "laisens lāge."
+    ipa: "laisens laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "আবেদনপত্ৰ", reading: "ābedônpôtrô", kind: "word" }
+      - { id: "c2", word: "প্ৰমাণপত্ৰ", reading: "prômāṇpôtrô", kind: "word" }
+  - id: "as-3412"
+    target: "কেন্দ্ৰত সৰকাৰ।"
+    reading: "kendrôt xôrkār."
+    ipa: "kendɹɔt sɔɹɔkaɹ"
+    pos: "phrase"
+    bases:
+      - { word: "কেন্দ্ৰত", ref: "as-3398" }
+    confusables:
+      - { id: "c1", word: "ৰাজ্য", reading: "rāzy", kind: "word" }
+      - { id: "c2", word: "জিলা", reading: "zilā", kind: "word" }

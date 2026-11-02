@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-government"
+name: "Assamese reading: government: offices, forms, laws and elections"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-at-the-office"
+    title: "Asking an officer which document is needed"
+    theme: "government"
+    sentences:
+      - text: "কোনটো কাগজ লাগে?"
+        reading: "kuntu kāgôz lāge?"
+      - text: "আবেদনপত্ৰ আৰু প্ৰমাণপত্ৰ।"
+        reading: "ābedônpôtrô āru prômāṇpôtrô."
+      - text: "মই আনিম।"
+        reading: "moi ānim."
+      - text: "কেতিয়া আহিম?"
+        reading: "ketiyā āhim?"
+    questions:
+      - id: "as-3413"
+        prompt: { en: "The speaker asks which paper is needed." }
+        answer: true
+      - id: "as-3414"
+        prompt: { en: "What two papers are needed?" }
+        options:
+          - { en: "A form and a certificate" }
+          - { en: "A ticket and a bag" }
+          - { en: "A map and a book" }
+        answer: 1
+      - id: "as-3415"
+        prompt: { en: "What does the speaker ask at the end?" }
+        options:
+          - { en: "The price" }
+          - { en: "When to come back" }
+          - { en: "The colour" }
+        answer: 2
+  - id: "as-form-instructions"
+    title: "Instructions on an application form"
+    theme: "government"
+    sentences:
+      - text: "নাম সম্পূৰ্ণ লিখক।"
+        reading: "nām xômpurnô likhôk."
+      - text: "ঠিকনা লিখক।"
+        reading: "ṭhikanā likhôk."
+      - text: "সহী কৰক।"
+        reading: "xohī kôrôk."
+      - text: "ফৰ্ম জমা দিয়ক।"
+        reading: "phôrm zômā diyôk."
+    questions:
+      - id: "as-3416"
+        prompt: { en: "The form asks for a name." }
+        answer: true
+      - id: "as-3417"
+        prompt: { en: "What must be signed?" }
+        options:
+          - { en: "The form" }
+          - { en: "The address" }
+          - { en: "The photo" }
+        answer: 1
+      - id: "as-3418"
+        prompt: { en: "What must be done with the form at the end?" }
+        options:
+          - { en: "Throw it away" }
+          - { en: "Hand it in" }
+          - { en: "Keep it secret" }
+        answer: 2

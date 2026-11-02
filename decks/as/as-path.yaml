@@ -508,11 +508,14 @@ units:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
   - decks: ["as-reading-services"]
     words: 0
-  - planned: { id: "as-government", theme: "government", words: 40 }
+  - decks: ["as-government", "as-government-sentences", "*"]
+    words: 16
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
     reading_passages:
       - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
+  - decks: ["as-reading-government"]
+    words: 0
   - planned: { id: "as-grammar-purpose", grammar: "purpose" }
     listening_passages:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
