@@ -733,7 +733,9 @@ units:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A three-day trip itinerary" } }
-  - planned: { id: "zh-grammar-lian-budan", grammar: ["lian-dou", "budan-erqie"] }
+  - decks: ["zh-grammar-lian-dou", "zh-grammar-budan-erqie", "zh-grammar-lian-dou-sentences"]
+    words: 0
+    grammar: ["lian-dou", "budan-erqie"]
     listening_passages:
       - { id: "even-the-teacher", text: { "en": "Saying even the teacher did not know, and not only cheap but good" } }
     reading_passages:
