@@ -1843,8 +1843,8 @@ void main() {
   });
 
   group('placement offered after Learn on the first launch', () {
-    AppState learnsHindi() {
-      final state = devanagariReader(const <String>{});
+    AppState learnsHindi({bool reads = true}) {
+      final state = devanagariReader(const <String>{}, reads: reads);
       state.settings.placementOffers = const <String>['hi'];
       return state;
     }
@@ -1853,7 +1853,7 @@ void main() {
         'screen; the header\'s close button skips, starting at the '
         'beginning with nothing placed, and ends the offer', (tester) async {
       usePhone(tester);
-      final state = learnsHindi();
+      final state = learnsHindi(reads: false);
       await pumpScreen(
         tester,
         const OnboardingPlacementOffer(languages: <String>['hi']),
@@ -1920,7 +1920,7 @@ void main() {
         'with no question where none does; the course is begun with no ask, '
         'no script question and no native choice', (tester) async {
       // Devanagari read through Marathi, Perso-Arabic not said.
-      await pumpPlacement(tester, devanagariReader(const <String>{}));
+      await pumpPlacement(tester, devanagariReader(<String>{devanagari}));
       final l10n = l10nOf(tester);
       expect(find.byType(PlacementMatch), findsOneWidget);
       expect(find.text(l10n.placementAskBody), findsNothing);
@@ -1929,7 +1929,7 @@ void main() {
       // No pill says it is read: straight to the words.
       await pumpPlacement(
         tester,
-        devanagariReader(const <String>{}, reads: false),
+        devanagariReader(<String>{devanagari}, reads: false),
       );
       expect(find.byType(PlacementMatch), findsNothing);
       expect(find.text(l10n.placementQuestion), findsOneWidget);
