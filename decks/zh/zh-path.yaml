@@ -415,7 +415,8 @@ units:
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences: le, guo and zhe, comparison, the complements of
   # degree, result, direction and potential, ba, and more characters.
-  - planned: { id: "zh-daily-life", theme: "daily-life", words: 45 }
+  - decks: ["zh-daily-life", "zh-daily-life-sentences", "zh-reading-daily-life", "*"]
+    words: 45
     listening_passages:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary working day" } }
     reading_passages:
