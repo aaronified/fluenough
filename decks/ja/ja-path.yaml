@@ -211,7 +211,9 @@ units:
       - { id: "who-does-what-where", text: { "en": "Saying who does what, where and to whom" } }
     reading_passages:
       - { id: "diary-lines", text: { "en": "A few diary lines: where I ate, what I bought, whom I met" } }
-  - planned: { id: "ja-grammar-more-particles", grammar: ["particle-e", "particle-no", "particle-mo", "particle-to", "kara-made"] }
+  - decks: ["ja-grammar-more-particles", "ja-grammar-place-particles", "ja-grammar-more-particles-sentences", "ja-reading-grammar-more-particles"]
+    words: 0
+    grammar: ["particle-no", "particle-mo", "particle-to", "particle-e", "kara-made"]
     listening_passages:
       - { id: "from-nine-to-five", text: { "en": "Saying from when to when, with whom, and whose" } }
     reading_passages:

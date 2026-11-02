@@ -1,0 +1,25 @@
+schema: 1
+id: "ja-en-grammar-more-particles"
+kind: "layer"
+core: "ja-grammar-more-particles"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Linking and adding: の (no), も (mo) and と (to)"
+description: "の (no) joins two nouns, も (mo) means also, and と (to) joins two nouns or means with. Every noun a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "particle"
+  slots:
+    "gen": "of: {meaning} (no)"
+    "mo": "also: {meaning} (mo)"
+    "to": "and, with: {meaning} (to)"
+rules:
+  "ja-rule-particle-no":
+    name: "の (no): of, 's"
+    explanation: "{1} joins two nouns: {2} means my country, the country of me."
+  "ja-rule-particle-mo":
+    name: "も (mo): also"
+    explanation: "{1} means also or too, and takes the place of は (wa) or が (ga): {2} means my father is a teacher too."
+  "ja-rule-particle-to":
+    name: "と (to): and, with"
+    explanation: "{1} joins two nouns, as {2}, which means my mother and father."

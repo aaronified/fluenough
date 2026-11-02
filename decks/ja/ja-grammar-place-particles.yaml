@@ -1,0 +1,214 @@
+schema: 1
+id: "ja-grammar-place-particles"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+    except: ["ja-0309", "ja-0310", "ja-0311", "ja-0312", "ja-0315", "ja-0316", "ja-0317", "ja-0321", "ja-0326", "ja-0327", "ja-0138", "ja-0139", "ja-0140", "ja-0141", "ja-0142", "ja-0143", "ja-0144", "ja-0145", "ja-0146", "ja-0147", "ja-0148", "ja-0151", "ja-0152", "ja-0153", "ja-0154", "ja-0200", "ja-0201", "ja-0202", "ja-0203", "ja-0204", "ja-0205", "ja-0206", "ja-0207", "ja-0208", "ja-0209", "ja-0210", "ja-0211", "ja-0212", "ja-0213", "ja-0214", "ja-0215", "ja-0216", "ja-0217", "ja-0218", "ja-0219", "ja-0220", "ja-0221", "ja-0222", "ja-0223", "ja-0224", "ja-0225", "ja-0226", "ja-0227", "ja-0228", "ja-0070", "ja-0071", "ja-0073", "ja-0074", "ja-0075", "ja-0076", "ja-0557", "ja-0558", "ja-0432", "ja-0433", "ja-0436", "ja-0437", "ja-0440", "ja-0441", "ja-0442", "ja-0444", "ja-0445", "ja-0446", "ja-0447", "ja-0448", "ja-0449", "ja-0079", "ja-0080", "ja-0081", "ja-0082", "ja-0083", "ja-0084", "ja-0086", "ja-0087", "ja-0088", "ja-0089", "ja-0090", "ja-0091", "ja-0092", "ja-0093", "ja-0094", "ja-0507", "ja-0508", "ja-0509", "ja-0510", "ja-0511", "ja-0512", "ja-0513", "ja-0514", "ja-0518", "ja-0519", "ja-0520", "ja-0521", "ja-0524", "ja-0525", "ja-0526", "ja-0527", "ja-0529", "ja-0530"]
+  slots: ["e", "kara", "made"]
+  rows:
+    - word: "ja-0313"
+      forms:
+        "e": "がっこうへ"
+        "kara": "がっこうから"
+        "made": "がっこうまで"
+      readings:
+        "e": "gakkou e"
+        "kara": "gakkou kara"
+        "made": "gakkou made"
+    - word: "ja-0314"
+      forms:
+        "e": "だいがくへ"
+        "kara": "だいがくから"
+        "made": "だいがくまで"
+      readings:
+        "e": "daigaku e"
+        "kara": "daigaku kara"
+        "made": "daigaku made"
+    - word: "ja-0322"
+      forms:
+        "e": "ちゅうごくへ"
+        "kara": "ちゅうごくから"
+        "made": "ちゅうごくまで"
+      readings:
+        "e": "chuugoku e"
+        "kara": "chuugoku kara"
+        "made": "chuugoku made"
+    - word: "ja-0323"
+      forms:
+        "e": "かんこくへ"
+        "kara": "かんこくから"
+        "made": "かんこくまで"
+      readings:
+        "e": "kankoku e"
+        "kara": "kankoku kara"
+        "made": "kankoku made"
+    - word: "ja-0324"
+      forms:
+        "e": "いんどへ"
+        "kara": "いんどから"
+        "made": "いんどまで"
+      readings:
+        "e": "indo e"
+        "kara": "indo kara"
+        "made": "indo made"
+    - word: "ja-0325"
+      forms:
+        "e": "あめりかへ"
+        "kara": "あめりかから"
+        "made": "あめりかまで"
+      readings:
+        "e": "amerika e"
+        "kara": "amerika kara"
+        "made": "amerika made"
+    - word: "ja-0328"
+      forms:
+        "e": "とうきょうへ"
+        "kara": "とうきょうから"
+        "made": "とうきょうまで"
+      readings:
+        "e": "toukyou e"
+        "kara": "toukyou kara"
+        "made": "toukyou made"
+    - word: "ja-0072"
+      forms:
+        "e": "にほんへ"
+        "kara": "にほんから"
+        "made": "にほんまで"
+      readings:
+        "e": "nihon e"
+        "kara": "nihon kara"
+        "made": "nihon made"
+    - word: "ja-0544"
+      forms:
+        "e": "うえへ"
+        "kara": "うえから"
+        "made": "うえまで"
+      readings:
+        "e": "ue e"
+        "kara": "ue kara"
+        "made": "ue made"
+    - word: "ja-0545"
+      forms:
+        "e": "したへ"
+        "kara": "したから"
+        "made": "したまで"
+      readings:
+        "e": "shita e"
+        "kara": "shita kara"
+        "made": "shita made"
+    - word: "ja-0546"
+      forms:
+        "e": "なかへ"
+        "kara": "なかから"
+        "made": "なかまで"
+      readings:
+        "e": "naka e"
+        "kara": "naka kara"
+        "made": "naka made"
+    - word: "ja-0547"
+      forms:
+        "e": "そとへ"
+        "kara": "そとから"
+        "made": "そとまで"
+      readings:
+        "e": "soto e"
+        "kara": "soto kara"
+        "made": "soto made"
+    - word: "ja-0548"
+      forms:
+        "e": "みぎへ"
+        "kara": "みぎから"
+        "made": "みぎまで"
+      readings:
+        "e": "migi e"
+        "kara": "migi kara"
+        "made": "migi made"
+    - word: "ja-0549"
+      forms:
+        "e": "ひだりへ"
+        "kara": "ひだりから"
+        "made": "ひだりまで"
+      readings:
+        "e": "hidari e"
+        "kara": "hidari kara"
+        "made": "hidari made"
+    - word: "ja-0550"
+      forms:
+        "e": "よこへ"
+        "kara": "よこから"
+        "made": "よこまで"
+      readings:
+        "e": "yoko e"
+        "kara": "yoko kara"
+        "made": "yoko made"
+    - word: "ja-0551"
+      forms:
+        "e": "ちかくへ"
+        "kara": "ちかくから"
+        "made": "ちかくまで"
+      readings:
+        "e": "chikaku e"
+        "kara": "chikaku kara"
+        "made": "chikaku made"
+    - word: "ja-0552"
+      forms:
+        "e": "となりへ"
+        "kara": "となりから"
+        "made": "となりまで"
+      readings:
+        "e": "tonari e"
+        "kara": "tonari kara"
+        "made": "tonari made"
+    - word: "ja-0553"
+      forms:
+        "e": "むこうへ"
+        "kara": "むこうから"
+        "made": "むこうまで"
+      readings:
+        "e": "mukou e"
+        "kara": "mukou kara"
+        "made": "mukou made"
+    - word: "ja-0554"
+      forms:
+        "e": "ここへ"
+        "kara": "ここから"
+        "made": "ここまで"
+      readings:
+        "e": "koko e"
+        "kara": "koko kara"
+        "made": "koko made"
+    - word: "ja-0555"
+      forms:
+        "e": "そこへ"
+        "kara": "そこから"
+        "made": "そこまで"
+      readings:
+        "e": "soko e"
+        "kara": "soko kara"
+        "made": "soko made"
+    - word: "ja-0556"
+      forms:
+        "e": "あそこへ"
+        "kara": "あそこから"
+        "made": "あそこまで"
+      readings:
+        "e": "asoko e"
+        "kara": "asoko kara"
+        "made": "asoko made"
+rules:
+  - id: "ja-rule-particle-e"
+    slots: ["e"]
+    words:
+      - { word: "へ", reading: "e" }
+      - { word: "がっこうへいきます。", reading: "gakkou e ikimasu." }
+  - id: "ja-rule-kara-made"
+    slots: ["kara", "made"]
+    words:
+      - { word: "から", reading: "kara" }
+      - { word: "まで", reading: "made" }
+      - { word: "がっこうからとうきょうまで", reading: "gakkou kara toukyou made" }
