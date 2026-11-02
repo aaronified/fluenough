@@ -295,7 +295,8 @@ units:
       - { id: "which-train", text: { "en": "Asking which train goes to the city centre" } }
     reading_passages:
       - { id: "station-timetable", text: { "en": "A train and bus timetable at a station" } }
-  - planned: { id: "ja-directions", theme: "directions", words: 30 }
+  - decks: ["ja-directions", "*"]
+    words: 30
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told" } }
     reading_passages:
