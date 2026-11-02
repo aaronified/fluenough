@@ -1,0 +1,124 @@
+schema: 1
+id: "ja-grammar-questions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0709"
+    target: "あなたはがくせいですか。"
+    words: ["あなた", "は", "がくせい", "です", "か"]
+    reading: "anata wa gakusei desu ka."
+    ipa: "anata wa ɡakɯseː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "せんせい"
+        reading: "sensei"
+        kind: "word"
+      - id: "w2"
+        word: "ひと"
+        reading: "hito"
+        kind: "word"
+    rules: ["ja-rule-question-ka"]
+  - id: "ja-0710"
+    target: "おとこですか。"
+    words: ["おとこ", "です", "か"]
+    reading: "otoko desu ka."
+    ipa: "otoko desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "おんな"
+        reading: "onna"
+        kind: "word"
+      - id: "w2"
+        word: "こども"
+        reading: "kodomo"
+        kind: "word"
+    rules: ["ja-rule-question-ka"]
+  - id: "ja-0711"
+    target: "ともだちですか。"
+    words: ["ともだち", "です", "か"]
+    reading: "tomodachi desu ka."
+    ipa: "tomodatɕi desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "かぞく"
+        reading: "kazoku"
+        kind: "word"
+      - id: "w2"
+        word: "はは"
+        reading: "haha"
+        kind: "word"
+    rules: ["ja-rule-question-ka"]
+  - id: "ja-0712"
+    target: "がっこうですか。"
+    words: ["がっこう", "です", "か"]
+    reading: "gakkou desu ka."
+    ipa: "ɡakkoː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "だいがく"
+        reading: "daigaku"
+        kind: "word"
+      - id: "w2"
+        word: "えいご"
+        reading: "eigo"
+        kind: "word"
+    rules: ["ja-rule-question-ka"]
+  - id: "ja-0713"
+    target: "にほんごのせんせいですか。"
+    words: ["にほんご", "の", "せんせい", "です", "か"]
+    reading: "nihongo no sensei desu ka."
+    ipa: "nihoɴɡo no seɴseː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "えいご"
+        reading: "eigo"
+        kind: "word"
+      - id: "w2"
+        word: "がくせい"
+        reading: "gakusei"
+        kind: "word"
+    rules: ["ja-rule-question-ka"]
+  - id: "ja-0714"
+    target: "ははですか。"
+    words: ["はは", "です", "か"]
+    reading: "haha desu ka."
+    ipa: "haha desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "ちち"
+        reading: "chichi"
+        kind: "word"
+      - id: "w2"
+        word: "あね"
+        reading: "ane"
+        kind: "word"
+    rules: ["ja-rule-question-ka"]
