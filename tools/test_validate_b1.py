@@ -2690,7 +2690,8 @@ class Compatibility(unittest.TestCase):
 
         It takes as long as the validator itself (about 20 minutes in CI), and
         CI's "Decks: validate" job already runs exactly this command
-        (`FLUENOUGH_SKIP_INDEX_CHECK=1 python3 tools/validate_decks.py decks/`).
+        (`FLUENOUGH_SKIP_INDEX_CHECK=1 python3 tools/validate_decks.py
+        "$GITHUB_WORKSPACE/decks"`, the absolute path this test passes).
         So there, that job saves its stdout and exit code and the
         "Decks: tools' tests (today's decks)" job points this test at them with
         FLUENOUGH_VALIDATE_OUTPUT and FLUENOUGH_VALIDATE_EXIT, so the pass is

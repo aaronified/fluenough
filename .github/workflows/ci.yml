@@ -79,7 +79,7 @@ jobs:
             ${{ runner.temp }}/validate-output.txt
             ${{ runner.temp }}/validate-exit.txt
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 3
       # Rule 10: no user-visible string is a literal in a widget. Checked here
       # rather than by the analyzer because flutter_lints has no such rule, and
       # a rule aimed at parallel agents cannot rest on a checklist box.
@@ -104,9 +104,9 @@ jobs:
   #   - two "parts" of everything else (every second test by id,
   #     tools/conftest.py).
   # Every test runs in exactly one of them. Each prints its 25 slowest
-  # (--durations=25). The job named "Decks: tools' tests" is what the
-  # required checks and "Validate decks" see: it passes only if the four
-  # above it did.
+  # (--durations=25). The job named "Decks: tools' tests" gathers
+  # the four above (it passes only if they all did) and is what "Validate
+  # decks" counts; it is not a required check itself.
   decks-tools-parts:
     name: "Decks: tools' tests (part ${{ matrix.part }}/2)"
     strategy:
