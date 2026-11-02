@@ -245,11 +245,9 @@ units:
   - decks: ["ja-grammar-aru-iru"]
     words: 0
     grammar: ["aru-iru"]
-  - planned: { id: "ja-grammar-adjectives", grammar: ["i-adjectives", "na-adjectives"] }
-    listening_passages:
-      - { id: "a-quiet-town", text: { "en": "Describing a town: quiet, lively, not expensive" } }
-    reading_passages:
-      - { id: "hotel-review", text: { "en": "A short hotel review: the room, the staff, the food" } }
+  - decks: ["ja-grammar-adjectives"]
+    words: 0
+    grammar: ["i-adjectives", "na-adjectives"]
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
   - planned: { id: "ja-work", theme: "work", words: 35 }

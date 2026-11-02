@@ -1,0 +1,22 @@
+schema: 1
+id: "ja-en-grammar-adjectives"
+kind: "layer"
+core: "ja-grammar-adjectives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing words: the past and the negative"
+description: "An i-adjective changes its ending for the negative, as おおきくない (ookikunai), not big, and for the past, as おおきかった (ookikatta), was big. A na-adjective takes な (na) before a noun, as しずかな (shizukana), quiet. いい (ii) and its forms are irregular. Every adjective a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "past": "was {meaning}"
+    "negative": "is not {meaning}"
+    "na": "{meaning}, before a noun"
+rules:
+  "ja-rule-i-adjectives":
+    name: "i-adjectives: the past and the negative"
+    explanation: "{1} is the negative of an i-adjective: the final い (i) is replaced by くない (kunai). {2} is its past: the final い (i) is replaced by かった (katta). The one exception is いい (ii), whose forms are よくない (yokunai) and よかった (yokatta)."
+  "ja-rule-na-adjectives":
+    name: "na-adjectives: before a noun"
+    explanation: "{1} is a na-adjective before a noun: な (na) comes between the adjective and the noun."
