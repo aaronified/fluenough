@@ -1,0 +1,82 @@
+schema: 1
+id: "as-relationships-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3766"
+    target: "বন্ধুত্ব ভাল।"
+    reading: "bondhutvô bhāl."
+    ipa: "bondʱutt bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "শত্ৰুতা", reading: "xôtrutā", kind: "word" }
+      - { id: "c2", word: "সম্পৰ্ক", reading: "xômporkô", kind: "word" }
+  - id: "as-3767"
+    target: "চুবুৰীয়াক সন্মান কৰা।"
+    reading: "suburiyāk xônmān kôrā."
+    ipa: "subuɹijak sɔnman kɔɹa"
+    pos: "phrase"
+    bases:
+      - { word: "চুবুৰীয়াক", ref: "as-0343" }
+    confusables:
+      - { id: "c1", word: "বিবাদ", reading: "bibād", kind: "word" }
+      - { id: "c2", word: "আত্মীয়", reading: "ātmiyô", kind: "word" }
+  - id: "as-3768"
+    target: "মই তোমাক বিশ্বাস কৰোঁ।"
+    reading: "moi tomāk bixwās kôrum̐."
+    ipa: "moi tʊmak bixxas kɔɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাক", ref: "as-2179" }
+      - { word: "কৰোঁ", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "সন্দেহ", reading: "xôndeh", kind: "word" }
+      - { id: "c2", word: "ভয়", reading: "bhôy", kind: "word" }
+  - id: "as-3769"
+    target: "বিবাদ নকৰিবা।"
+    reading: "bibād nôkôribā."
+    ipa: "bibad nɔkoɹiba"
+    pos: "phrase"
+    bases:
+      - { word: "নকৰিবা", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "মিল", reading: "mil", kind: "word" }
+      - { id: "c2", word: "ক্ষমা", reading: "kkhômā", kind: "word" }
+  - id: "as-3770"
+    target: "ধৈৰ্য ধৰা।"
+    reading: "dhoirjyô dhôrā."
+    ipa: "dʱɔiɹz dʱɔɹa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ৰাগ", reading: "rāg", kind: "word" }
+      - { id: "c2", word: "তাড়াতাড়ি", reading: "tāṛātāṛi", kind: "word" }
+  - id: "as-3771"
+    target: "মই তোমাক ক্ষমা কৰিলোঁ।"
+    reading: "moi tomāk kkhômā kôrilōm̐."
+    ipa: "moi tʊmak kkʰɔma koɹilʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "তোমাক", ref: "as-2179" }
+      - { word: "কৰিলোঁ", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "ৰাগ", reading: "rāg", kind: "word" }
+      - { id: "c2", word: "বিবাদ", reading: "bibād", kind: "word" }
+  - id: "as-3772"
+    target: "সমবয়সী বন্ধু।"
+    reading: "xômôbôyôxī bondhu."
+    ipa: "sɔmɔbɔjosi bondʱu"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "চুবুৰীয়া", reading: "suburiyā", kind: "word" }
+      - { id: "c2", word: "আত্মীয়", reading: "ātmiyô", kind: "word" }
+  - id: "as-3773"
+    target: "প্ৰেম ধুনীয়া।"
+    reading: "prem dhuniyā."
+    ipa: "pɹem dʱunija"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ঘৃণা", reading: "ghrinā", kind: "word" }
+      - { id: "c2", word: "হিংসা", reading: "hiṅxā", kind: "word" }

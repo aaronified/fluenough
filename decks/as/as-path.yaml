@@ -633,11 +633,14 @@ units:
       - { id: "match-report", text: { "en": "A short match report" } }
   - decks: ["as-reading-sports"]
     words: 0
-  - planned: { id: "as-relationships", theme: "relationships", words: 45 }
+  - decks: ["as-relationships", "as-relationships-sentences", "*"]
+    words: 16
     listening_passages:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
     reading_passages:
       - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
+  - decks: ["as-reading-relationships"]
+    words: 0
   - planned: { id: "as-grammar-indefinites", grammar: "indefinites" }
     listening_passages:
       - { id: "someone-somewhere", text: { "en": "Talking about someone, something and somewhere" } }
