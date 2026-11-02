@@ -138,7 +138,7 @@ class TypeQuestion extends PlacementAsk {
 /// tiles are the target's own words, as the drills build them, with none
 /// added; [order] is the shuffled order they are shown in.
 class TileQuestion extends PlacementAsk {
-  TileQuestion(this.card, {required this.order});
+  TileQuestion(this.card, {required this.order, this.seed = 0});
 
   /// A question for [card] with its tiles shuffled by [random], never left in
   /// the order of the sentence where they can be put out of it.
@@ -149,7 +149,7 @@ class TileQuestion extends PlacementAsk {
       order.shuffle(random);
       if (!_inOrder(order)) break;
     }
-    return TileQuestion(card, order: order);
+    return TileQuestion(card, order: order, seed: random.nextInt(1 << 30));
   }
 
   @override
@@ -157,6 +157,10 @@ class TileQuestion extends PlacementAsk {
 
   /// The words' indexes in the order the tiles are shown.
   final List<int> order;
+
+  /// Shuffles words of another count than the target's, which [order] does
+  /// not fit: another spelling's tiles, or a reading's.
+  final int seed;
 
   static bool _inOrder(List<int> order) {
     for (var i = 0; i < order.length; i++) {
@@ -416,6 +420,7 @@ class ScriptCheck {
   /// end the second time.
   void answer(bool right) {
     if (_question == null) return;
+    _used.add(_question!.card.id);
     _asked++;
     if (right) {
       _level++;
@@ -725,6 +730,9 @@ class DeckWalk {
   bool _stopped = false;
   PlacementAsk? _question;
 
+  /// The ids of the cards already asked: none is asked twice.
+  final Set<String> _used = <String>{};
+
   WalkPhase get phase => _phase;
 
   bool get isFinished => _phase == WalkPhase.done;
@@ -933,23 +941,42 @@ class DeckWalk {
     // `wiki/Deck-Format.md`, "Phrases are not typed").
     final sentences = _sentences(index);
     if (sentences.isNotEmpty) {
+      final fresh = _unasked(sentences);
       _question = TileQuestion.shuffled(
-        sentences[_random.nextInt(sentences.length)],
+        fresh[_random.nextInt(fresh.length)],
         _random,
       );
       return;
     }
     final cards = _typable(index);
     if (cards.isEmpty) {
-      // Nothing to write that has one right spelling: the meaning, chosen.
-      _question = _choice(_typedAt[_typedIndex], 0);
+      // Nothing to write that has one right spelling: the meaning, chosen,
+      // of a card not asked yet; a deck with none left is passed over.
+      final pool = _pool(entry);
+      final nth = pool.indexWhere((c) => !_used.contains(c.id));
+      if (nth < 0) {
+        _typedIndex++;
+        _askTyped();
+        return;
+      }
+      _question = _choice(_typedAt[_typedIndex], nth);
       return;
     }
-    final card = cards[_random.nextInt(cards.length)];
+    final fresh = _unasked(cards);
+    final card = fresh[_random.nextInt(fresh.length)];
     _question = TypeQuestion.produce(
       card,
       articles: articles.isEmpty ? entry.language.articles : articles,
     );
+  }
+
+  /// [cards] not asked yet; all of them where each was.
+  List<Card> _unasked(List<Card> cards) {
+    final fresh = <Card>[
+      for (final card in cards)
+        if (!_used.contains(card.id)) card,
+    ];
+    return fresh.isEmpty ? cards : fresh;
   }
 
   /// Whether deck [index] has a card its learner can be asked to produce: a

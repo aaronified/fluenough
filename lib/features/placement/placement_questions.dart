@@ -25,7 +25,7 @@ import '../../ui/widgets/target_text.dart';
 /// They sit in the review's own screen, [DrillFrame] (owner, 2026-11-02:
 /// placement runs in "the current daily review/revision shell"): the same top
 /// bar and progress wave, question card, answer area, feedback and buttons.
-
+///
 /// What the page tells every question's frame: how to stop, how far along the
 /// walk is, and what to say in a report, which the questions themselves do
 /// not know.

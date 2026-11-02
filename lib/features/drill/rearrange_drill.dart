@@ -229,6 +229,7 @@ List<Widget> rearrangeBoard(
 /// that is null.
 class WordTile extends StatelessWidget {
   const WordTile({
+    super.key,
     required this.text,
     required this.language,
     required this.onTap,

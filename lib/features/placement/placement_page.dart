@@ -7,16 +7,18 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/placement.dart';
 import '../../app/placement_plan.dart';
+import '../../app/skill.dart';
 import '../../core/grading/romanised.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/drill_mode.dart';
 import '../../core/scheduling/placed_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
 import '../../ui/widgets/reading_first.dart';
-import 'native_choice.dart';
 import 'placed_review_choice.dart';
 import 'placement_questions.dart';
 
@@ -33,31 +35,43 @@ typedef PlacementFound = ({
   Map<String, PlacedReview> review,
 });
 
+/// Called when a language's placement is done: with what was found for that
+/// language alone. [leaving] is false when its result is first shown, and
+/// true when the learner goes on from it (with the review choice made there).
+typedef PlacementLanguageDone = void Function(
+  String code,
+  PlacementFound found, {
+  required bool leaving,
+});
+
 /// Placement for each of [languages] in turn (#117, #481, ADR-0013,
-/// `docs/plans/placement-v2.md`): which of the languages the learner speaks
-/// to learn it from, when more than one teaches it (ADR-0036); whether to
-/// learn its alphabet, for a course with decks that need it; whether the
-/// learner knows any of it; then a check of each of its scripts, a walk
-/// along its word decks, and where they will start and why, with the
-/// chance to try again from there. [onFinished] gets what was found;
-/// nothing is saved or recorded here.
+/// `docs/plans/placement-v2.md`), all in the review's own screen. It asks the
+/// learner nothing the language flow has asked (owner, 2026-11-02: "Language
+/// choice itself is now unified. Use the new paradigm."): whether to learn
+/// the alphabet is the Learn pill on the script, which scripts the learner
+/// reads is the script pills of the languages they know, and which language
+/// the course is taught from is the course's own (`AppState.courseNative`).
+/// So it goes straight to a check of each script the learner reads, a walk
+/// along the word decks, and where they will start and why, with the chance
+/// to try again from there. The header's close button stops, keeping what was
+/// found. [onFinished] gets what was found for every language, after the
+/// last; [onLanguageDone] gets each language's as it is done. Nothing is
+/// saved or recorded here.
 ///
 /// Placement stays short (owner, 2026-10-20: "The goal is to ask minimal
-/// questions to place people"): a script the learner says they do not read
-/// is placed as new with no questions, and the walk jumps.
+/// questions to place people"): a script the learner does not read is placed
+/// as new with no questions, and the walk jumps.
 class PlacementPage extends StatefulWidget {
   const PlacementPage({
     super.key,
     required this.languages,
     required this.onFinished,
+    this.onLanguageDone,
     this.random,
-    this.checking = false,
     this.alphabet = const <String, bool>{},
     this.scripts = const <String, Set<String>>{},
     this.natives = const <String, String>{},
-    this.asked = const <String>{},
     this.languageNames = const <String, String>{},
-    this.skippable = false,
   });
 
   /// Language codes, in the order they are placed.
@@ -65,16 +79,15 @@ class PlacementPage extends StatefulWidget {
 
   final ValueChanged<PlacementFound> onFinished;
 
+  /// Each language's findings as it is done, rather than only at the end.
+  final PlacementLanguageDone? onLanguageDone;
+
   /// For tests and the gallery, so that the questions are fixed.
   final Random? random;
 
-  /// For the gallery: open on the first language's check, as if Find my
-  /// level had been chosen.
-  final bool checking;
-
   /// Whether to learn each language's alphabet, by code, where the
-  /// language picker has asked already ("Learn the script", #211): its
-  /// alphabet stage is skipped.
+  /// language picker has asked already ("Learn the script", #211); where
+  /// not, the Learn pill on its script says.
   final Map<String, bool> alphabet;
 
   /// The scripts each language is learned in, by code, where the language
@@ -82,35 +95,25 @@ class PlacementPage extends StatefulWidget {
   /// course and its cards follow them, as drills will.
   final Map<String, Set<String>> scripts;
 
-  /// The language each is learned from, by code, where the picker has
-  /// asked already: its native stage is skipped.
+  /// The language each is learned from, by code, where it was chosen
+  /// already; else the course's own.
   final Map<String, String> natives;
 
-  /// The languages whose "Find my level" was chosen already, in Languages
-  /// I'm learning (#626): each goes straight to its check, with no "Do you
-  /// know any?" first.
-  final Set<String> asked;
-
-  /// The names of the languages the learner knows, by code, for "You read
-  /// Devanagari through Hindi"; a language not here is named as the decks
-  /// name it, or by its code.
+  /// The names of the languages the learner knows, by code; a language not
+  /// here is named as the decks name it, or by its code.
   final Map<String, String> languageNames;
-
-  /// Whether "Do you know any?" offers Skip, which starts the language at
-  /// the beginning with no result screen: onboarding's offer, made once the
-  /// learner has chosen to learn the language (owner, 2026-11-02: "It should
-  /// be offered, and skippable to start at the beginning").
-  final bool skippable;
 
   @override
   State<PlacementPage> createState() => _PlacementPageState();
 }
 
-enum _Stage { native, alphabet, ask, scriptAsk, script, walk, result }
+/// The parts of placement that follow the learner's skills: the script
+/// check, the word walk and the result.
+enum _Stage { script, walk, result }
 
 class _PlacementPageState extends State<PlacementPage> {
   int _index = 0;
-  _Stage? _stageSet;
+  _Stage? _stage;
   final Map<String, Set<String>> _placed = <String, Set<String>>{};
   final Map<String, Map<String, ScriptStanding>> _found =
       <String, Map<String, ScriptStanding>>{};
@@ -120,9 +123,6 @@ class _PlacementPageState extends State<PlacementPage> {
   /// How each language's placed words are reviewed, as chosen on its result;
   /// Spot-check until then (#761).
   final Map<String, PlacedReview> _review = <String, PlacedReview>{};
-
-  /// Whether placement of the language has begun: its check, or I'm new.
-  bool _begun = false;
 
   List<PlacementScript> _toCheck = const <PlacementScript>[];
   int _scriptAt = 0;
@@ -142,34 +142,6 @@ class _PlacementPageState extends State<PlacementPage> {
 
   String get _code => widget.languages[_index];
 
-  /// A language's first stage: which language to learn it from, when more
-  /// than one the learner speaks teaches it and they have not chosen; else
-  /// [_afterNative].
-  _Stage get _stage =>
-      _stageSet ??
-      (!_natives.containsKey(_code) &&
-              AppScope.read(context).needsNativeChoice(_code)
-          ? _Stage.native
-          : _afterNative);
-  set _stage(_Stage stage) => _stageSet = stage;
-
-  /// The alphabet, for a course that has decks needing it, else whether the
-  /// learner knows any.
-  _Stage get _afterNative =>
-      !_alphabet.containsKey(_code) && AppScope.read(context).hasAlphabet(_code)
-      ? _Stage.alphabet
-      : _Stage.ask;
-
-  void _chooseNative(String native) => setState(() {
-    _natives[_code] = native;
-    _stage = _afterNative;
-  });
-
-  void _chooseAlphabet(bool learns) => setState(() {
-    _alphabet[_code] = learns;
-    _stage = _Stage.ask;
-  });
-
   /// The course's units as the learner will learn it.
   List<List<DeckEntry>> _units(AppState state) => state.courseUnits(
     _code,
@@ -179,8 +151,8 @@ class _PlacementPageState extends State<PlacementPage> {
   );
 
   /// The scripts the language is learned in, where placement knows them
-  /// before they are saved: as the picker chose them, or as the alphabet
-  /// was answered here. Null for those saved.
+  /// before they are saved: as the picker chose them, or as the Learn pill
+  /// says. Null for those saved.
   Set<String>? _scripts(AppState state) {
     if (widget.scripts[_code] case final scripts?) return scripts;
     final alphabet = _alphabet[_code];
@@ -188,56 +160,58 @@ class _PlacementPageState extends State<PlacementPage> {
     return state.scriptsLearnedOf(_code, alphabet: alphabet);
   }
 
-  @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    // Called again once the catalog loads, since build depends on AppScope.
-    if (widget.checking && !_begun && _stageSet == null) {
-      final state = AppScope.read(context);
-      if (state.status == CatalogStatus.ready) _startCheck(state);
+  /// Begins the language: its alphabet as its pill says, then its scripts.
+  void _begin(AppState state) {
+    if (!_alphabet.containsKey(_code) && state.hasAlphabet(_code)) {
+      _alphabet[_code] = state.settings.learnsAlphabet(_code);
     }
-  }
-
-  void _find(AppState state) => setState(() => _startCheck(state));
-
-  void _startCheck(AppState state) {
-    _begun = true;
     _toCheck = state.placementScripts(_code, native: _natives[_code]);
     _scriptAt = 0;
-    if (_toCheck.isEmpty) {
-      _startWalk(state);
-    } else {
-      _stage = _Stage.scriptAsk;
-    }
+    _nextScript(state);
   }
 
   PlacementScript get _script => _toCheck[_scriptAt];
 
-  /// "Yes, check me": the script's check.
-  void _readsScript(AppState state) => setState(() {
-    final script = _script;
-    final language = script.language;
-    final check = ScriptCheck(
-      script: script.script,
-      decks: script.decks,
-      words: script.words,
-      canHear:
-          state.settings.soundOn &&
-          state.voiceStatus(language) == VoiceStatus.available,
-      canSay: state.canHear(language),
-      random: widget.random,
-    );
-    _check = check;
-    if (check.isFinished) {
-      _scriptDone(state, check.standing);
-    } else {
-      _stage = _Stage.script;
-    }
-  });
+  /// Whether the learner reads [script]: the script pills of the languages
+  /// they know say so (Read known), as Languages I know has always kept it
+  /// (#554). A script they learn, or have not said they read, is new to
+  /// them, with no questions (owner, 2026-10-20).
+  bool _reads(AppState state, String script) =>
+      state.scriptReadersKnown.containsKey(script);
 
-  /// "No, I'm new to it": new to the script, with no questions.
-  void _newToScript(AppState state) =>
-      setState(() => _scriptDone(state, ScriptStanding.newTo));
+  /// Goes on to the next script that is checked, placing the others as new;
+  /// after the last, the walk.
+  void _nextScript(AppState state) {
+    while (_scriptAt < _toCheck.length) {
+      final script = _script;
+      if (!_reads(state, script.script)) {
+        _standings[script.script] = ScriptStanding.newTo;
+        _scriptAt++;
+        continue;
+      }
+      final language = script.language;
+      final check = ScriptCheck(
+        script: script.script,
+        decks: script.decks,
+        words: script.words,
+        canHear:
+            state.settings.soundOn &&
+            state.voiceStatus(language) == VoiceStatus.available,
+        canSay: state.canHear(language),
+        random: widget.random,
+      );
+      if (check.isFinished) {
+        _standings[script.script] = check.standing;
+        _scriptAt++;
+        continue;
+      }
+      _check = check;
+      _stage = _Stage.script;
+      return;
+    }
+    _check = null;
+    _startWalk(state);
+  }
 
   void _scriptAnswer(AppState state, bool right) => setState(() {
     _number++;
@@ -255,11 +229,7 @@ class _PlacementPageState extends State<PlacementPage> {
     _standings[_script.script] = standing;
     _check = null;
     _scriptAt++;
-    if (_scriptAt < _toCheck.length) {
-      _stage = _Stage.scriptAsk;
-    } else {
-      _startWalk(state);
-    }
+    _nextScript(state);
   }
 
   void _startWalk(AppState state, {int start = 0}) {
@@ -288,24 +258,6 @@ class _PlacementPageState extends State<PlacementPage> {
     _startWalk(state, start: _before!);
   });
 
-  /// Skip: nothing placed, the language starts at its beginning, and on to
-  /// the next, with no result between.
-  void _skip() {
-    _begun = true;
-    _toCheck = const <PlacementScript>[];
-    _walk = null;
-    _placed[_code] = const <String>{};
-    _next();
-  }
-
-  void _new() => setState(() {
-    _begun = true;
-    _toCheck = const <PlacementScript>[];
-    _walk = null;
-    _placed[_code] = const <String>{};
-    _stage = _Stage.result;
-  });
-
   /// Stop here: placement ends, keeping what it found so far.
   void _stop() => setState(() {
     _stopped = true;
@@ -331,14 +283,28 @@ class _PlacementPageState extends State<PlacementPage> {
     };
     _found[_code] = Map<String, ScriptStanding>.unmodifiable(_standings);
     _stage = _Stage.result;
+    widget.onLanguageDone?.call(_code, _foundFor(_code), leaving: false);
   }
 
+  PlacementFound _foundFor(String code) => (
+    placed: <String, Set<String>>{code: _placed[code] ?? const <String>{}},
+    alphabet: <String, bool>{if (_alphabet[code] case final a?) code: a},
+    natives: <String, String>{if (_natives[code] case final n?) code: n},
+    scripts: <String, Map<String, ScriptStanding>>{
+      if (_found[code] case final f?) code: f,
+    },
+    review: <String, PlacedReview>{
+      if ((_placed[code] ?? const <String>{}).isNotEmpty)
+        code: _review[code] ?? PlacedReview.fallback,
+    },
+  );
+
   void _next() {
+    widget.onLanguageDone?.call(_code, _foundFor(_code), leaving: true);
     if (_index + 1 < widget.languages.length) {
       setState(() {
         _index++;
-        _stageSet = null;
-        _begun = false;
+        _stage = null;
         _toCheck = const <PlacementScript>[];
         _scriptAt = 0;
         _check = null;
@@ -384,7 +350,16 @@ class _PlacementPageState extends State<PlacementPage> {
     final l10n = AppLocalizations.of(context)!;
     final state = AppScope.of(context);
     final language = state.languages.where((l) => l.code == _code).firstOrNull;
-    if (language == null) {
+    final stage = _stage;
+    if (language == null || stage == null) {
+      // Begins once the catalog has the language: nothing is asked first.
+      if (language != null) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          if (mounted && _stage == null) {
+            setState(() => _begin(AppScope.read(context)));
+          }
+        });
+      }
       return Scaffold(
         appBar: AppBar(actions: const <Widget>[ReportButton()]),
         body: Center(
@@ -392,96 +367,40 @@ class _PlacementPageState extends State<PlacementPage> {
         ),
       );
     }
-    if (_stage == _Stage.ask && !_begun && widget.asked.contains(_code)) {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        if (mounted && _stage == _Stage.ask && !_begun) {
-          _find(AppScope.read(context));
-        }
-      });
-    }
-    // A question is drawn by the review's own screen, whose header closes it
-    // (owner, 2026-11-02: placement runs in the review shell); the screens
-    // that are not questions keep their own bar.
-    if (_stage == _Stage.script || _stage == _Stage.walk) {
-      final inWalk = _stage == _Stage.walk;
-      final ask = inWalk ? _walk!.question! : _check!.question!;
-      final deck = state.deckOf(ask.card);
-      return PlacementShell(
-        onClose: _stop,
-        deckName: inWalk
-            ? (deck?.deck.name ?? language.name)
-            : l10n.scriptNameOr(_script.script, _script.script),
-        progress: _number / (_number + 8),
-        reportDetail: '${ask.card.id} in placement',
-        child: inWalk
-            ? _question(state, language, ask, _walkAnswer)
-            : _question(
-                state,
-                language,
-                ask,
-                (right) => _scriptAnswer(state, right),
-                inScript: _script.language,
-                onCantSpeak: () => _scriptSkipSay(state),
-              ),
+    // Every screen is the review's own (owner, 2026-11-02): a question is
+    // drawn by its frame, whose header closes it, and so is the result.
+    if (stage == _Stage.result) {
+      return _Result(
+        language: language.name,
+        lines: _resultLines(l10n, state, language),
+        tryAgainNote: _tryAgainNote(l10n),
+        noFurther: !_canTryAgain,
+        onTryAgain: _offersTryAgain ? () => _tryAgain(state) : null,
+        last: _index + 1 == widget.languages.length,
+        onNext: _next,
+        choice: _reviewChoice(l10n, state),
       );
     }
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(language.name),
-        actions: <Widget>[
-          if (_stage == _Stage.scriptAsk)
-            TextButton(onPressed: _stop, child: Text(l10n.placementStop)),
-          const ReportButton(),
-        ],
-      ),
-      body: SafeArea(
-        top: false,
-        child: switch (_stage) {
-          _Stage.native => NativeChoice(
-            language: language,
-            onChosen: _chooseNative,
-          ),
-          _Stage.alphabet => _Alphabet(
-            language: language,
-            onChoose: _chooseAlphabet,
-          ),
-          _Stage.ask =>
-            widget.asked.contains(_code)
-                ? const SizedBox.shrink()
-                : _Ask(
-                    language: language,
-                    onFind: () => _find(state),
-                    onNew: widget.skippable ? _skip : _new,
-                    skip: widget.skippable,
-                  ),
-          _Stage.scriptAsk => _ScriptAsk(
-            script: l10n.scriptNameOr(_script.script, _script.script),
-            through: <String>[
-              for (final code
-                  in state.scriptReadersKnown[_script.script] ??
-                      const <String>[])
-                widget.languageNames[code] ??
-                    state.languages
-                        .where((l) => l.code == code)
-                        .firstOrNull
-                        ?.name ??
-                    code,
-            ],
-            onYes: () => _readsScript(state),
-            onNo: () => _newToScript(state),
-          ),
-          _Stage.script || _Stage.walk => const SizedBox.shrink(),
-          _Stage.result => _Result(
-            lines: _resultLines(l10n, state, language),
-            tryAgainNote: _tryAgainNote(l10n),
-            noFurther: !_canTryAgain,
-            onTryAgain: _offersTryAgain ? () => _tryAgain(state) : null,
-            last: _index + 1 == widget.languages.length,
-            onNext: _next,
-            choice: _reviewChoice(l10n, state),
-          ),
-        },
-      ),
+    final inWalk = stage == _Stage.walk;
+    final ask = inWalk ? _walk!.question! : _check!.question!;
+    final deck = state.deckOf(ask.card);
+    return PlacementShell(
+      onClose: _stop,
+      deckName: inWalk
+          ? (deck?.deck.name ?? language.name)
+          : l10n.scriptNameOr(_script.script, _script.script),
+      progress: _number / (_number + 8),
+      reportDetail: '${ask.card.id} in placement',
+      child: inWalk
+          ? _question(state, language, ask, _walkAnswer)
+          : _question(
+              state,
+              language,
+              ask,
+              (right) => _scriptAnswer(state, right),
+              inScript: _script.language,
+              onCantSpeak: () => _scriptSkipSay(state),
+            ),
     );
   }
 
@@ -777,159 +696,12 @@ class _PlacementPageState extends State<PlacementPage> {
   }
 }
 
-/// "Do you know any Hindi?", with Find my level and I'm new.
-class _Ask extends StatelessWidget {
-  const _Ask({
-    required this.language,
-    required this.onFind,
-    required this.onNew,
-    this.skip = false,
-  });
-
-  final LanguageInfo language;
-  final VoidCallback onFind;
-  final VoidCallback onNew;
-
-  /// Whether the second button is Skip, which starts at the beginning, rather
-  /// than "I'm new".
-  final bool skip;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    return ListView(
-      padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
-      children: <Widget>[
-        Text(
-          l10n.placementAskTitle(language.name),
-          style: theme.textTheme.headlineSmall,
-        ),
-        const SizedBox(height: 12),
-        Text(
-          l10n.placementAskBody,
-          style: theme.textTheme.bodyLarge!.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
-        ),
-        const SizedBox(height: 32),
-        FilledButton(
-          style: AppButtonStyles.tall(context),
-          onPressed: onFind,
-          child: Text(l10n.placementFind),
-        ),
-        const SizedBox(height: 12),
-        OutlinedButton(
-          onPressed: onNew,
-          child: Text(
-            skip ? l10n.placementSkip : l10n.placementNew(language.name),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-/// "Do you read Devanagari?" (owner, 2026-10-20: "Just ask (even when the
-/// user has them known languages/scripts, just acknowledge that and mention
-/// in the form) whether user knows devnagari"): always asked, saying so
-/// where Languages I know says the learner reads it through [through].
-class _ScriptAsk extends StatelessWidget {
-  const _ScriptAsk({
-    required this.script,
-    required this.through,
-    required this.onYes,
-    required this.onNo,
-  });
-
-  final String script;
-  final List<String> through;
-  final VoidCallback onYes;
-  final VoidCallback onNo;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    return ListView(
-      padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
-      children: <Widget>[
-        Text(
-          l10n.placementScriptAskTitle(script),
-          style: theme.textTheme.headlineSmall,
-        ),
-        const SizedBox(height: 12),
-        Text(
-          through.isEmpty
-              ? l10n.placementScriptAskBody
-              : l10n.placementScriptAskThrough(
-                  script,
-                  through.join(l10n.commonListSeparator),
-                ),
-          style: theme.textTheme.bodyLarge!.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
-        ),
-        const SizedBox(height: 32),
-        FilledButton(
-          style: AppButtonStyles.tall(context),
-          onPressed: onYes,
-          child: Text(l10n.placementScriptYes),
-        ),
-        const SizedBox(height: 12),
-        OutlinedButton(onPressed: onNo, child: Text(l10n.placementScriptNo)),
-      ],
-    );
-  }
-}
-
-/// "Learn the Hindi alphabet?": the alphabet, or Latin letters only.
-class _Alphabet extends StatelessWidget {
-  const _Alphabet({required this.language, required this.onChoose});
-
-  final LanguageInfo language;
-  final ValueChanged<bool> onChoose;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final theme = Theme.of(context);
-    return ListView(
-      padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
-      children: <Widget>[
-        Text(
-          l10n.alphabetAskTitle(
-            language.name,
-            l10n.scriptNameOr(language.script, language.name),
-          ),
-          style: theme.textTheme.headlineSmall,
-        ),
-        const SizedBox(height: 12),
-        Text(
-          l10n.alphabetAskBody(language.name),
-          style: theme.textTheme.bodyLarge!.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
-        ),
-        const SizedBox(height: 32),
-        FilledButton(
-          style: AppButtonStyles.tall(context),
-          onPressed: () => onChoose(true),
-          child: Text(l10n.alphabetLearn),
-        ),
-        const SizedBox(height: 12),
-        OutlinedButton(
-          onPressed: () => onChoose(false),
-          child: Text(l10n.alphabetSkip),
-        ),
-      ],
-    );
-  }
-}
-
-/// Where the learner starts and why, Try again from here, and the way on.
+/// Where the learner starts and why, Try again from here, and the way on,
+/// in the review's own frame: the lines on its card, and the choice of how
+/// placed words are reviewed below it, Continue at its foot.
 class _Result extends StatelessWidget {
   const _Result({
+    required this.language,
     required this.lines,
     required this.tryAgainNote,
     required this.noFurther,
@@ -939,6 +711,7 @@ class _Result extends StatelessWidget {
     this.choice,
   });
 
+  final String language;
   final List<String> lines;
   final String? tryAgainNote;
   final bool noFurther;
@@ -953,46 +726,47 @@ class _Result extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    // Not a lazy list: the result is short, and every part of it, the way on
-    // included, is built, as it was before the choice was added (#761).
-    return SingleChildScrollView(
-      padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          for (final (i, line) in lines.indexed) ...<Widget>[
-            Text(
-              line,
-              style: i == lines.length - 1 - (noFurther ? 1 : 0)
-                  ? theme.textTheme.titleLarge
-                  : theme.textTheme.bodyLarge,
-            ),
-            const SizedBox(height: 12),
-          ],
-          ?choice,
-          const SizedBox(height: 20),
-          FilledButton(
-            style: AppButtonStyles.tall(context),
-            onPressed: onNext,
-            child: Text(last ? l10n.placementDone : l10n.placementNext),
+    return DrillFrame(
+      skill: Skill.of(DrillMode.recognition),
+      deckName: language,
+      position: 1,
+      total: 0,
+      positionLabel: language,
+      progress: 1,
+      reportDetail: 'placement result',
+      onClose: onNext,
+      card: <Widget>[
+        for (final (i, line) in lines.indexed)
+          Text(
+            line,
+            textAlign: TextAlign.center,
+            style: i == lines.length - 1 - (noFurther ? 1 : 0)
+                ? theme.textTheme.titleLarge
+                : theme.textTheme.bodyLarge,
           ),
-          if (onTryAgain != null) ...<Widget>[
-            const SizedBox(height: 24),
-            if (tryAgainNote case final note?)
-              Text(
-                note,
-                style: theme.textTheme.bodyMedium!.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant,
-                ),
-              ),
-            const SizedBox(height: 8),
-            OutlinedButton(
-              onPressed: onTryAgain,
-              child: Text(l10n.placementTryAgain),
+      ],
+      belowCard: <Widget>[
+        ?choice,
+        if (onTryAgain != null && tryAgainNote != null)
+          Text(
+            tryAgainNote!,
+            style: theme.textTheme.bodyMedium!.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
             ),
-          ],
-        ],
-      ),
+          ),
+      ],
+      actions: <Widget>[
+        FilledButton(
+          onPressed: onNext,
+          style: AppButtonStyles.tall(context),
+          child: Text(last ? l10n.placementDone : l10n.placementNext),
+        ),
+        if (onTryAgain != null)
+          OutlinedButton(
+            onPressed: onTryAgain,
+            child: Text(l10n.placementTryAgain),
+          ),
+      ],
     );
   }
 }

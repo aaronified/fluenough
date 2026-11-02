@@ -959,7 +959,7 @@ void main() {
     });
 
     testWidgets('the app offers Find my level for a language learned on the '
-        'first launch before it opens, and Skip goes on to the app', (
+        'first launch before it opens, and closing it goes on to the app', (
       tester,
     ) async {
       usePhone(tester);
@@ -975,14 +975,29 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.byType(PlacementPage), findsOneWidget);
       expect(find.byType(NavigationBar), findsNothing);
-      expect(find.text(l10n.placementFind), findsOneWidget);
 
-      await tester.tap(find.text(l10n.placementSkip));
+      // Closing the first question skips; Done on the result goes on.
+      await tester.tap(find.byTooltip(l10n.drillEndSession));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.placementDone));
       await tester.pumpAndSettle();
       expect(find.byType(PlacementPage), findsNothing);
       expect(showing(tester, TodayPage), isTrue);
       expect(state.settings.placementOffers, isEmpty);
       expect(state.settings.placedDecks, isEmpty);
+    });
+
+    testWidgets('a language the catalogue has no entry for is not offered, so '
+        'the app opens instead of waiting on a spinner', (tester) async {
+      usePhone(tester);
+      final settings = SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['hi', 'zz'],
+        learningChosen: true,
+      )..placementOffers = const <String>['zz'];
+      await pumpApp(tester, state: AppState.test(settings: settings));
+      expect(find.byType(PlacementPage), findsNothing);
+      expect(showing(tester, TodayPage), isTrue);
     });
 
     for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {

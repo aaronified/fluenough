@@ -213,7 +213,10 @@ class _Home extends StatelessWidget {
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
     return ListenableBuilder(
-      listenable: state.settings,
+      listenable: Listenable.merge(<Listenable?>[
+        state.settings,
+        state.deckDownloads,
+      ]),
       builder: (context, _) {
         final missing = state.missingLanguages;
         if (missing.isNotEmpty) {
@@ -223,11 +226,29 @@ class _Home extends StatelessWidget {
           );
         }
         // The languages chosen to Learn on the first launch are each offered
-        // "Find my level" before the app (owner, 2026-11-02), skippable.
+        // "Find my level" before the app (owner, 2026-11-02). Only one the
+        // catalogue has, whose first decks are on the phone as the picker
+        // waits for them: placing against a partial course would place wrong.
+        final loading = state.status == CatalogStatus.loading;
         final offers = <String>[
           for (final code in state.settings.placementOffers)
-            if (state.learningCodes.contains(code)) code,
+            if (state.learningCodes.contains(code) &&
+                (loading || state.languages.any((l) => l.code == code)))
+              code,
         ];
+        final downloads = state.deckDownloads;
+        final waiting = <String>[
+          if (downloads != null && !loading)
+            for (final code in offers)
+              if (!downloads.isReady(code, state.settings.spokenLanguages))
+                code,
+        ];
+        if (waiting.isNotEmpty) {
+          return DownloadPage(
+            key: ValueKey<String>('offer-${waiting.join()}'),
+            languages: waiting,
+          );
+        }
         return offers.isEmpty
             ? const AppShell()
             : OnboardingPlacementOffer(
