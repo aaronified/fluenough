@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-work"
+name: "Japanese reading: work"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-work-1"
+    title: "A family at work"
+    sentences:
+      - text: "ちちはかいしゃいんです。"
+        reading: "chichi wa kaishain desu."
+      - text: "はははいしゃです。"
+        reading: "haha haisha desu."
+      - text: "ちちはざんぎょうをします。"
+        reading: "chichi wa zangyou o shimasu."
+      - text: "おじさんはうんてんしゅです。"
+        reading: "ojisan wa untenshu desu."
+    questions:
+      - id: "ja-0732"
+        prompt:
+          en: "Which line says that the father is an office worker?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0733"
+        prompt:
+          en: "The second line says that the mother is a doctor."
+        answer: true
+      - id: "ja-0734"
+        prompt:
+          en: "Which line says that the uncle drives?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-work-2"
+    title: "A new job"
+    sentences:
+      - text: "わたしのしごとはせんせいです。"
+        reading: "watashi no shigoto wa sensei desu."
+      - text: "ぎんこうはとおいです。"
+        reading: "ginkou wa tooi desu."
+      - text: "わたしはえいごがとくいです。"
+        reading: "watashi wa eigo ga tokui desu."
+      - text: "しけんはむずかしいです。"
+        reading: "shiken wa muzukashii desu."
+    questions:
+      - id: "ja-0735"
+        prompt:
+          en: "Which line says what the speaker's job is?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0736"
+        prompt:
+          en: "The third line says that the speaker is good at English."
+        answer: true
+      - id: "ja-0737"
+        prompt:
+          en: "Which line says that the exam is difficult?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
