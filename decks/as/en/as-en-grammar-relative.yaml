@@ -1,0 +1,23 @@
+schema: 1
+id: "as-en-grammar-relative"
+kind: "layer"
+core: "as-grammar-relative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Who, which: the relative clause"
+license: "CC-BY-SA-4.0"
+description: "How Assamese joins a clause to a noun: যি (zi), who or which, goes before the noun, and the one who answers it is সেইজন (seizôn) or সেইটো (seitu), that one. Nouns already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Who, which: the relative clause"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "relative: যি (zi), who or which": "the relative: who or which"
+    "correlative: সেইজন or সেইটো (sei-), that one": "the one it points to: that one"
+  entries:
+    "manuh": "person; people"
+    "kitap": "book"
+    "ghor": "house; home"
+    "bazar": "market"
+    "bas": "bus"
+  notes: "The relative word যি (zi) comes before the noun it describes, and the one it refers to is named by সেইজন (seizôn) for a person or সেইটো (seitu) for a thing. In a sentence the relative clause comes first, then the sentence that answers it: যি কিতাপ ভাল (zi kitāp bhāl), the book which is good; সেইটো কিনোঁ (seitu kinum̐), that one I buy."

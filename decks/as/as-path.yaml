@@ -446,11 +446,15 @@ units:
     words: 0
   - decks: ["as-slang"]
     words: 9
-  - planned: { id: "as-grammar-relative", grammar: "relative" }
+  - decks: ["as-grammar-relative", "as-grammar-relative-sentences"]
+    words: 0
+    grammar: ["relative"]
     listening_passages:
       - { id: "the-man-who-came", text: { "en": "Describing people by what they did: the one who came, the one who left" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
+  - decks: ["as-reading-relative"]
+    words: 0
   - planned: { id: "as-news", theme: "news", words: 55 }
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }

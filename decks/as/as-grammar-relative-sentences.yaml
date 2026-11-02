@@ -1,0 +1,74 @@
+schema: 1
+id: "as-grammar-relative-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3230"
+    target: "যি মানুহ আহিছে, সি মোৰ ককাই।"
+    reading: "zi mānuh āhise, xi mur kôkāi."
+    ipa: "zi manuh ahise si mʊɹ kɔkai"
+    pos: "phrase"
+    bases:
+      - { word: "যি", base: "যি", reading: "zi" }
+      - { word: "আহিছে", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "আহিছোঁ", reading: "āhisum̐", kind: "form" }
+      - { id: "c2", word: "যাওঁ", reading: "zāum̐", kind: "form" }
+  - id: "as-3231"
+    target: "যি কিতাপ ভাল, সেইটো কিনোঁ।"
+    reading: "zi kitāp bhāl, seitu kinum̐."
+    ipa: "zi kitap bʱal seitʊ kinʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "যি", base: "যি", reading: "zi" }
+      - { word: "কিনোঁ", ref: "as-2210" }
+    confusables:
+      - { id: "c1", word: "কিনিছোঁ", reading: "kinisum̐", kind: "form" }
+      - { id: "c2", word: "কিনিম", reading: "kinim", kind: "form" }
+  - id: "as-3232"
+    target: "যি ঘৰত মই থাকোঁ, সেইটো ডাঙৰ।"
+    reading: "zi ghôrôt moi thākum̐, seitu dāṅôr."
+    ipa: "zi ɡʱɔɹɔt moi tʰakʊ̃ seitʊ daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "যি", base: "যি", reading: "zi" }
+      - { word: "থাকোঁ", ref: "as-2207" }
+    confusables:
+      - { id: "c1", word: "ঘৰ", reading: "ghôr", kind: "word" }
+      - { id: "c2", word: "বজাৰ", reading: "bôzār", kind: "word" }
+  - id: "as-3233"
+    target: "যি বাছ আছে, সেইটো নতুন।"
+    reading: "zi bās āse, seitu nôtun."
+    ipa: "zi bas ase seitʊ notun"
+    pos: "phrase"
+    bases:
+      - { word: "যি", base: "যি", reading: "zi" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ঘৰ", reading: "ghôr", kind: "word" }
+      - { id: "c2", word: "বজাৰ", reading: "bôzār", kind: "word" }
+  - id: "as-3234"
+    target: "যি বজাৰলৈ যায়, সেইজন মোৰ বন্ধু।"
+    reading: "zi bôzārôlôi zāy, seizôn mur bondhu."
+    ipa: "zi bɔzaɹɔlɔi zaj seizɔn mʊɹ bondʱu"
+    pos: "phrase"
+    bases:
+      - { word: "যি", base: "যি", reading: "zi" }
+      - { word: "যায়", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "যাওঁ", reading: "zāum̐", kind: "form" }
+      - { id: "c2", word: "যাব", reading: "zāb", kind: "form" }
+  - id: "as-3235"
+    target: "যি কিতাপ পঢ়ে, সি ছাত্ৰ।"
+    reading: "zi kitāp pôrhe, xi sātrô."
+    ipa: "zi kitap pɔɹe si satɹ"
+    pos: "phrase"
+    bases:
+      - { word: "যি", base: "যি", reading: "zi" }
+      - { word: "পঢ়ে", ref: "as-2203" }
+    confusables:
+      - { id: "c1", word: "পঢ়িছে", reading: "pôrhise", kind: "form" }
+      - { id: "c2", word: "পঢ়িব", reading: "pôrhib", kind: "form" }

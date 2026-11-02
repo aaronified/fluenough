@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-relative"
+name: "Assamese reading: who, which: the relative clause"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-the-man-who-came"
+    title: "The man who came"
+    sentences:
+      - text: "যি মানুহ আহিল, তেওঁ মোৰ ককাই।"
+        reading: "zi mānuh āhil, teum̐ mur kôkāi."
+      - text: "যি গাড়ী আছে, সেইটো নতুন।"
+        reading: "zi bās āse, seitu nôtun."
+      - text: "যিজন ছাত্ৰ পঢ়ে, তেওঁ ভাল।"
+        reading: "zizôn sātrô pôrhe, teum̐ bhāl."
+      - text: "যি কিতাপ ভাল, সেইটো লওঁ।"
+        reading: "zi kitāp bhāl, seitu lôu."
+    questions:
+      - id: "as-3236"
+        prompt: { en: "The man who came is the speaker's elder brother." }
+        answer: true
+      - id: "as-3237"
+        prompt: { en: "What is the new thing?" }
+        options:
+          - { en: "The car" }
+          - { en: "The house" }
+          - { en: "The book" }
+        answer: 1
+      - id: "as-3238"
+        prompt: { en: "What does the speaker take?" }
+        options:
+          - { en: "The car" }
+          - { en: "The book" }
+          - { en: "The bag" }
+        answer: 2
+  - id: "as-shop-reviews"
+    title: "Short reviews of a shop"
+    sentences:
+      - text: "যি দোকান ডাঙৰ, সেইটো ভাল।"
+        reading: "zi dukān dāṅôr, seitu bhāl."
+      - text: "যি দোকানী হাঁহে, তেওঁ ভাল।"
+        reading: "zi dukāni hām̐he, teum̐ bhāl."
+      - text: "যি বজাৰ সৰু, সেইটো বেয়া।"
+        reading: "zi bôzār xôru, seitu beyā."
+      - text: "সকলো যি মানুহ আহে, তেওঁলোক খুচীয়া।"
+        reading: "xôkôlu zi mānuh āhe, teum̐lôk khusiyā."
+    questions:
+      - id: "as-3239"
+        prompt: { en: "The big shop is good." }
+        answer: true
+      - id: "as-3240"
+        prompt: { en: "What does the reviewer say about the small market?" }
+        options:
+          - { en: "It is good" }
+          - { en: "It is bad" }
+          - { en: "It is new" }
+        answer: 2
+      - id: "as-3241"
+        prompt: { en: "How are the people who come?" }
+        options:
+          - { en: "Happy" }
+          - { en: "Angry" }
+          - { en: "Afraid" }
+        answer: 1
