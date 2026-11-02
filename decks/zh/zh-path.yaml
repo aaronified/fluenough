@@ -371,7 +371,8 @@ units:
       - { id: "i-want-to-go", text: { "en": "Saying what you want to do, can do and may do: want to go, can swim, may sit" } }
     reading_passages:
       - { id: "wish-list", text: { "en": "A wish list for a trip" } }
-  - planned: { id: "zh-body", theme: "body", words: 35 }
+  - decks: ["zh-body", "zh-body-sentences", "zh-reading-body", "*"]
+    words: 35
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
