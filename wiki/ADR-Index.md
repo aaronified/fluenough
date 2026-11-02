@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Every architecture decision record in the repo's docs/adr folder. Each one has its own page.
+Every architecture decision record in the wiki. Each one has its own page.
 
 - [ADR-0001](ADR-0001-Flutter): Build with Flutter
 - [ADR-0002](ADR-0002-System-Tts): Use the operating system's TTS, behind an interface

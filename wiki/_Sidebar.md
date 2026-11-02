@@ -53,3 +53,4 @@
 - [Releasing](Releasing)
 - [ADR Index](ADR-Index)
 - [Mockups and Skills](Mockups-and-Skills)
+- [Design Guidelines](Design-Guidelines)

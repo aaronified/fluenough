@@ -13,6 +13,7 @@ Code and decks live in the [repository](https://github.com/aaronified/fluenough)
 - [Today and Daily Lessons](Today-and-Daily-Lessons): the Today screen and daily lessons
 - [Drills and Skills](Drills-and-Skills): drill types, skills, grading, scheduling
 - [Courses and Paths](Courses-and-Paths): courses, paths, decks, downloads
+- [Proficiency Levels](Proficiency-Levels): the A1, A2 and B1 stages, and the standards behind them
 - [Scripts and Readings](Scripts-and-Readings): scripts and how to learn them
 - [Readings ISO 15919](Readings-ISO-15919): Latin readings, based on ISO 15919
 - [Speaking and Listening](Speaking-and-Listening): voices and speaking drills

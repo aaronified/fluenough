@@ -23,7 +23,7 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 - `today-chain.html`: the Today chain's screens still to build (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
-  screen."): situation cheatsheets and their inspect view (#724), the decks
+  screen."): situation cheatsheets and their inspect view (#724, built in 0.7.0, so no longer awaiting), the decks
   page's Learn only... chooser for every course (#723) and the conversation
   screen (#722). Today with one button (#521, #680) and the minutes-a-day
   setting (#485) are built, so their screens are removed. Hindustani and
