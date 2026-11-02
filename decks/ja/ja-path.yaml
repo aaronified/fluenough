@@ -325,7 +325,8 @@ units:
   - decks: ["ja-grammar-mashou"]
     words: 0
     grammar: ["masen-ka", "mashou"]
-  - planned: { id: "ja-help", theme: "help", words: 25 }
+  - decks: ["ja-help", "ja-help-sentences", "ja-reading-help", "*"]
+    words: 25
     listening_passages:
       - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
     reading_passages:
