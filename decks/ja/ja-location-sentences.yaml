@@ -1,0 +1,121 @@
+schema: 1
+id: "ja-location-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0559"
+    target: "はこはつくえのうえです。"
+    words: ["はこ", "は", "つくえ", "の", "うえ", "です"]
+    reading: "hako wa tsukue no ue desu."
+    ipa: "hako wa tsɯkɯe no ɯe desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "した"
+        reading: "shita"
+        kind: "word"
+      - id: "w2"
+        word: "なか"
+        reading: "naka"
+        kind: "word"
+  - id: "ja-0560"
+    target: "いぬはいすのしたにいます。"
+    words: ["いぬ", "はい", "す", "の", "した", "に", "います"]
+    reading: "inu hai su no shita ni imasu."
+    ipa: "inɯ hai sɯ no ɕita ni imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はい", base: "はい", reading: "hai" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - id: "w1"
+        word: "うえ"
+        reading: "ue"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0093"
+        kind: "word"
+  - id: "ja-0561"
+    target: "がっこうのよこにいぬがいます。"
+    words: ["がっこう", "の", "よこ", "に", "いぬ", "が", "います"]
+    reading: "gakkou no yoko ni inu ga imasu."
+    ipa: "ɡakkoː no joko ni inɯ ɡa imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - id: "w1"
+        word: "となり"
+        reading: "tonari"
+        kind: "word"
+      - id: "w2"
+        word: "そと"
+        reading: "soto"
+        kind: "word"
+  - id: "ja-0562"
+    target: "ともだちはみぎにいます。"
+    words: ["ともだち", "は", "みぎ", "に", "います"]
+    reading: "tomodachi wa migi ni imasu."
+    ipa: "tomodatɕi wa miɡi ni imasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "います", base: "いる", reading: "iru" }
+    confusables:
+      - id: "w1"
+        word: "ひだり"
+        reading: "hidari"
+        kind: "word"
+      - id: "w2"
+        word: "むこう"
+        reading: "mukou"
+        kind: "word"
+  - id: "ja-0563"
+    target: "ここはあそこです。"
+    words: ["ここ", "は", "あそこ", "です"]
+    reading: "koko wa asoko desu."
+    ipa: "koko wa asoko desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "そこ"
+        reading: "soko"
+        kind: "word"
+      - id: "w2"
+        word: "むこう"
+        reading: "mukou"
+        kind: "word"
+  - id: "ja-0564"
+    target: "ちゅうごくはとおいです。"
+    words: ["ちゅうごく", "は", "とおい", "です"]
+    reading: "chuugoku wa tooi desu."
+    ipa: "tɕɯːɡokɯ wa toːi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "となり"
+        reading: "tonari"
+        kind: "word"
+      - id: "w2"
+        word: "ちかい"
+        reading: "chikai"
+        kind: "word"
