@@ -1705,9 +1705,10 @@ class DrillSession extends ChangeNotifier {
     }
     // A passage shows once for its questions that come together, and again
     // when it comes back in the other mode.
-    // The card as it is left, for a swipe back to show again; the learner's
-    // recording of it is dropped with it (ADR-0054).
-    _past.add(_capture());
+    // The card as it is left, for a swipe back to show again, unless it was
+    // set aside unanswered; the learner's recording of it is dropped with it
+    // (ADR-0054).
+    if (_phase != DrillPhase.prompt || ask.onlyShows) _past.add(_capture());
     _take = null;
     _takeLength = null;
     _showingPassage =
