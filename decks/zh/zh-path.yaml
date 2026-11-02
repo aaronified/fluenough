@@ -123,6 +123,8 @@ alphabet:
   - "zh-reading-strokes-radicals"
   - "zh-characters-1"
   - "zh-reading-characters-1"
+  - "zh-characters-6"
+  - "zh-reading-characters-6"
   - "zh-characters-5"
   - "zh-reading-characters-5"
   - "zh-characters-4"
@@ -796,7 +798,8 @@ units:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - planned: { id: "zh-characters-6", grammar: "script-characters-6", words: 0 }
+  - decks: ["zh-characters-6", "zh-reading-characters-6"]
+    words: 10
     listening_passages:
       - { id: "characters-at-work", text: { "en": "Hearing the work and study words whose characters are taught: meeting, report, exam, question" } }
     reading_passages:
