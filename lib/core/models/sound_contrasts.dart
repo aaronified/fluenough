@@ -10,8 +10,16 @@ class SoundContrast {
     this.withinWord = false,
   });
 
+  /// The id of the short-or-long vowel contrast in every language's sounds
+  /// file.
+  static const String vowelLengthId = 'vowel-length';
+
   /// Stable, and the tag a sound-differences deck's cards carry.
   final String id;
+
+  /// Whether this is the short-or-long vowel contrast, the one a speech
+  /// recogniser cannot reliably hear (it returns the dictionary spelling).
+  bool get isVowelLength => id == vowelLengthId;
 
   /// What the difference is, for "The difference is …": "a breath after
   /// the consonant".

@@ -847,17 +847,31 @@ class DrillSession extends ChangeNotifier {
     // names the sound (ADR-0014's rule: only a slip that changes the word).
     SoundContrast? contrast;
     Card? heardCard;
+    String? contrastAnswer;
     if (!graded.outcome.isCorrect) {
       final sounds = _state.soundsFor(deck.language);
       if (sounds != null) {
         for (final answer in accepted) {
           contrast = sounds.between(said.text, answer);
-          if (contrast != null) break;
+          if (contrast != null) {
+            contrastAnswer = answer;
+            break;
+          }
         }
       }
       // The word heard, for its meaning and its IPA, whether or not it
       // differs from the answer by a named sound.
       heardCard = _state.cardSaying(deck.language, said.text);
+      // A recogniser cannot reliably tell a short vowel from a long one and
+      // returns the dictionary spelling, so a word that differs from the
+      // answer only in vowel length is "almost", not wrong: no red, and the
+      // feedback shows the contrast as a hint. Speech only.
+      if (contrast != null && contrast.isVowelLength) {
+        graded = GradedAnswer(
+          AnswerOutcome.closeDiacritics,
+          matched: contrastAnswer,
+        );
+      }
     }
     return TypedAnswer(
       typed: said.text,

@@ -71,6 +71,23 @@ const Romanisation hindi = Romanisation(
 
 const String spanish = 'es-en-core-100';
 
+const String telugu = '''
+schema: 1
+kind: sounds
+id: te-sounds
+language: te
+contrasts:
+  - id: vowel-length
+    name: "a short or a long vowel"
+    pairs: [["", "ా"], ["ి", "ీ"], ["అ", "ఆ"]]
+  - id: gemination
+    name: "a single or a double consonant"
+    pairs: [["క", "క్క"]]
+  - id: aspiration
+    name: "a breath after the consonant"
+    pairs: [["క", "ఖ"]]
+''';
+
 AppState speaking(
   FixedSpeechEngine speech, {
   bool on = false,
@@ -870,7 +887,70 @@ void main() {
     });
   });
 
+  group('vowel length heard by the recogniser', () {
+    final sounds = parseSounds(telugu, source: 'te-sounds.yaml');
+
+    test('a word that differs only in vowel length is the length contrast, '
+        'and a different consonant or a double consonant is not', () {
+      expect(sounds.between('అక్క', 'అక్కా')?.isVowelLength, isTrue);
+      expect(sounds.between('అక్కా', 'అక్క')?.isVowelLength, isTrue);
+      expect(sounds.between('కిల', 'కీల')?.isVowelLength, isTrue);
+
+      expect(sounds.between('అఖ్ఖా', 'అక్కా'), isNull, reason: 'two swaps');
+      expect(sounds.between('అఖా', 'అకా')?.id, 'aspiration');
+      expect(sounds.between('అకా', 'అక్కా')?.id, 'gemination');
+      expect(sounds.between('అమ్మా', 'అక్కా'), isNull);
+    });
+  });
+
   group('contrast feedback', () {
+    group('vowel length, spoken', () {
+      const akka = Card(
+        id: 'a',
+        deckId: 'd',
+        target: 'అక్కా',
+        native: 'elder sister',
+      );
+      const length = SoundContrast(
+        id: SoundContrast.vowelLengthId,
+        name: 'a short or a long vowel',
+        pairs: <(String, String)>[('', 'ా')],
+      );
+
+      testWidgets('is shown as close with the contrast, not as wrong', (
+        tester,
+      ) async {
+        usePhone(tester);
+        await pumpScreen(
+          tester,
+          const Scaffold(
+            body: AnswerFeedback(
+              answer: TypedAnswer(
+                typed: 'అక్క',
+                graded: GradedAnswer(
+                  AnswerOutcome.closeDiacritics,
+                  matched: 'అక్కా',
+                ),
+                grade: 4,
+                contrast: length,
+              ),
+              card: akka,
+              expected: 'అక్కా',
+              transliterating: false,
+              spoken: true,
+            ),
+          ),
+        );
+        final l10n = l10nOf(tester);
+        expect(find.text(l10n.feedbackLengthClose), findsOneWidget);
+        expect(find.text(l10n.feedbackWrong), findsNothing);
+        expect(
+          find.textContaining('a short or a long vowel', findRichText: true),
+          findsWidgets,
+        );
+      });
+    });
+
     group('the feedback', () {
       const kal = Card(id: 'k', deckId: 'd', target: 'কাল', native: 'time');
       const khal = Card(id: 'h', deckId: 'd', target: 'খাল', native: 'canal');
