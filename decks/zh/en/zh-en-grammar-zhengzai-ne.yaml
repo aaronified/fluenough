@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-zhengzai-ne"
+"kind": "layer"
+"core": "zh-grammar-zhengzai-ne"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "正在 (zhèngzài) ... 呢 (ne): happening now"
+"license": "CC-BY-SA-4.0"
+"description": "正在 (zhèngzài) before the verb and 呢 (ne) at the end say an action is going on now: 他正在看书呢 (tā zhèngzài kàn shū ne), he is reading a book. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "正在 (zhèngzài) ... 呢 (ne): happening now"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "now": "正在 (zhèngzài) before the verb, 呢 (ne) at the end: happening now"
+    "now-not": "没有 (méiyǒu) with 呢 (ne): not happening now"
+  "entries":
+    "kan2": "to read"
+    "xie2": "to write"
+    "zuo2": "to do"
+    "ting": "to listen"
+  "notes": "正在 (zhèngzài) before the verb and 呢 (ne) at the end show an action happening right now: 他正在看书呢 (tā zhèngzài kàn shū ne), he is reading a book. For the negative use 没在 (méi zài): 他没在看书呢 (tā méi zài kàn shū ne), he is not reading now. Do not use 了 (le) with 正在 (zhèngzài)."
