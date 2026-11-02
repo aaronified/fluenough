@@ -1,0 +1,199 @@
+schema: 1
+id: "kn-nature"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "nature"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1230"
+    target: "ಎಲೆ"
+    reading: "ele"
+    ipa: "ele"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮರದ ಎಲೆ ಹಸಿರು.", reading: "marada ele hasiru.", ipa: "marad̪a ele hasiru", bases: [{ word: "ಮರದ", ref: "kn-0048" }] }
+      - { target: "ಎಲೆ ಬಿತ್ತು.", reading: "ele bittu.", ipa: "ele bit̪t̪u", bases: [{ word: "ಬಿತ್ತು", ref: "kn-0982" }] }
+  - id: "kn-1231"
+    target: "ಬೇರು"
+    reading: "bēru"
+    ipa: "beːru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೇರು ಮಣ್ಣಿನ ಒಳಗೆ ಇದೆ.", reading: "bēru maṇṇina oḷage ide.", ipa: "beːru maɳɳina oɭaɡe id̪e", bases: [{ word: "ಮಣ್ಣಿನ", base: "ಮಣ್ಣು", reading: "maṇṇu" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಗಿಡದ ಬೇರು ದೊಡ್ಡದು.", reading: "giḍada bēru doḍḍadu.", ipa: "ɡiɖad̪a beːru d̪oɖɖad̪u", bases: [{ word: "ಗಿಡದ", ref: "kn-1139" }, { word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - ref: "kn-0761"
+  - id: "kn-1232"
+    target: "ಬೀಜ"
+    reading: "bīja"
+    ipa: "biːdʒa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೀಜ ಬೇಕು.", reading: "bīja bēku.", ipa: "biːdʒa beːku" }
+      - { target: "ಬೀಜದಿಂದ ಗಿಡ ಬೆಳೆಯುತ್ತದೆ.", reading: "bījadinda giḍa beḷeyuttade.", ipa: "biːdʒad̪ind̪a ɡiɖa beɭejut̪t̪ad̪e", bases: [{ word: "ಬೀಜದಿಂದ", base: "ಬೀಜ", reading: "bīja" }, { word: "ಬೆಳೆಯುತ್ತದೆ", ref: "kn-1180" }] }
+  - id: "kn-1233"
+    target: "ಹುಲ್ಲು"
+    reading: "hullu"
+    ipa: "hullu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹುಲ್ಲು ಹಸಿರು.", reading: "hullu hasiru.", ipa: "hullu hasiru" }
+      - { target: "ಹುಲ್ಲಿನ ಮೇಲೆ ಕೂರು.", reading: "hullina mēle kūru.", ipa: "hullina meːle kuːru", bases: [{ word: "ಹುಲ್ಲಿನ", base: "ಹುಲ್ಲು", reading: "hullu" }] }
+  - ref: "kn-0837"
+  - id: "kn-1234"
+    target: "ಹುಲ್ಲುಗಾವಲು"
+    reading: "hullugāvalu"
+    ipa: "hulluɡaːʋalu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹುಲ್ಲುಗಾವಲಿನಲ್ಲಿ ಮಕ್ಕಳು ಇದ್ದಾರೆ.", reading: "hullugāvalinalli makkaḷu iddāre.", ipa: "hulluɡaːʋalinalli makkaɭu id̪d̪aːre", bases: [{ word: "ಹುಲ್ಲುಗಾವಲಿನಲ್ಲಿ", base: "ಹುಲ್ಲುಗಾವಲು", reading: "hullugāvalu" }, { word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಹುಲ್ಲುಗಾವಲು ಸುಂದರ.", reading: "hullugāvalu sundara.", ipa: "hulluɡaːʋalu sund̪ara" }
+  - ref: "kn-0846"
+  - id: "kn-1235"
+    target: "ಕಡಲು"
+    reading: "kaḍalu"
+    ipa: "kaɖalu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಡಲು ನೀಲಿ.", reading: "kaḍalu nīli.", ipa: "kaɖalu niːli" }
+      - { target: "ಕಡಲು ತೀರದಲ್ಲಿ ಇದೆ.", reading: "kaḍalu tīradalli ide.", ipa: "kaɖalu t̪iːrad̪alli id̪e", bases: [{ word: "ತೀರದಲ್ಲಿ", base: "ತೀರ", reading: "tīra" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1236"
+    target: "ತೀರ"
+    reading: "tīra"
+    ipa: "t̪iːra"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತೀರ ಸುಂದರ.", reading: "tīra sundara.", ipa: "t̪iːra sund̪ara" }
+      - { target: "ನದಿ ತೀರದಲ್ಲಿ ನಡೆ.", reading: "nadi tīradalli naḍe.", ipa: "nad̪i t̪iːrad̪alli naɖe", bases: [{ word: "ತೀರದಲ್ಲಿ", base: "ತೀರ", reading: "tīra" }] }
+  - id: "kn-1237"
+    target: "ಅಲೆ"
+    reading: "ale"
+    ipa: "ale"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಲೆ ದೊಡ್ಡದು.", reading: "ale doḍḍadu.", ipa: "ale d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಅಲೆ ತೀರಕ್ಕೆ ಬರುತ್ತಿದೆ.", reading: "ale tīrakke baruttide.", ipa: "ale t̪iːrakke barut̪t̪id̪e", bases: [{ word: "ತೀರಕ್ಕೆ", base: "ತೀರ", reading: "tīra" }, { word: "ಬರುತ್ತಿದೆ", base: "ಬರು", reading: "baru" }] }
+  - id: "kn-1238"
+    target: "ಮರಳು"
+    reading: "maraḷu"
+    ipa: "maraɭu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮರಳು ಬಿಸಿ ಇದೆ.", reading: "maraḷu bisi ide.", ipa: "maraɭu bisi id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಮರಳಿನಲ್ಲಿ ನಡೆಯಬೇಡ.", reading: "maraḷinalli naḍeyabēḍa.", ipa: "maraɭinalli naɖejabeːɖa", bases: [{ word: "ಮರಳಿನಲ್ಲಿ", base: "ಮರಳು", reading: "maraḷu" }, { word: "ನಡೆಯಬೇಡ", ref: "kn-0643" }] }
+  - id: "kn-1239"
+    target: "ಕಲ್ಲು"
+    reading: "kallu"
+    ipa: "kallu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಲ್ಲು ದೊಡ್ಡದು.", reading: "kallu doḍḍadu.", ipa: "kallu d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ನದಿಯಲ್ಲಿ ಕಲ್ಲು ಇದೆ.", reading: "nadiyalli kallu ide.", ipa: "nad̪ijalli kallu id̪e", bases: [{ word: "ನದಿಯಲ್ಲಿ", ref: "kn-0835" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1240"
+    target: "ಮಣ್ಣು"
+    reading: "maṇṇu"
+    ipa: "maɳɳu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಣ್ಣು ಒಣ ಆಗಿದೆ.", reading: "maṇṇu oṇa āgide.", ipa: "maɳɳu oɳa aːɡid̪e", bases: [{ word: "ಆಗಿದೆ", base: "ಆಗು", reading: "āgu" }] }
+      - { target: "ಮಣ್ಣಿನಲ್ಲಿ ಗಿಡ ಬೆಳೆಯುತ್ತದೆ.", reading: "maṇṇinalli giḍa beḷeyuttade.", ipa: "maɳɳinalli ɡiɖa beɭejut̪t̪ad̪e", bases: [{ word: "ಮಣ್ಣಿನಲ್ಲಿ", base: "ಮಣ್ಣು", reading: "maṇṇu" }, { word: "ಬೆಳೆಯುತ್ತದೆ", ref: "kn-1180" }] }
+  - ref: "kn-0847"
+  - ref: "kn-0848"
+  - id: "kn-1241"
+    target: "ಬಂಡೆ"
+    reading: "baṇḍe"
+    ipa: "baɳɖe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಂಡೆ ದೊಡ್ಡದು.", reading: "baṇḍe doḍḍadu.", ipa: "baɳɖe d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಬಂಡೆ ಮೇಲೆ ಕೂರು.", reading: "baṇḍe mēle kūru.", ipa: "baɳɖe meːle kuːru" }
+  - ref: "kn-0873"
+  - id: "kn-1242"
+    target: "ಪಕ್ಷಿ"
+    reading: "pakṣi"
+    ipa: "pakʂi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪಕ್ಷಿ ಹಾರುತ್ತಿದೆ.", reading: "pakṣi hāruttide.", ipa: "pakʂi haːrut̪t̪id̪e", bases: [{ word: "ಹಾರುತ್ತಿದೆ", ref: "kn-0755" }] }
+      - { target: "ಮರದ ಮೇಲೆ ಪಕ್ಷಿ ಇದೆ.", reading: "marada mēle pakṣi ide.", ipa: "marad̪a meːle pakʂi id̪e", bases: [{ word: "ಮರದ", ref: "kn-0048" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1243"
+    target: "ಕೀಟ"
+    reading: "kīṭa"
+    ipa: "kiːʈa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೀಟ ಕಚ್ಚಿತು.", reading: "kīṭa kaccitu.", ipa: "kiːʈa katʃtʃit̪u", bases: [{ word: "ಕಚ್ಚಿತು", base: "ಕಚ್ಚು", reading: "kaccu" }] }
+      - { target: "ಕೀಟ ತುಂಬಾ ಇದೆ.", reading: "kīṭa tumbā ide.", ipa: "kiːʈa t̪umbaː id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1244"
+    target: "ಸಾಯು"
+    reading: "sāyu"
+    ipa: "saːju"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗಿಡ ಸಾಯುತ್ತಿದೆ.", reading: "giḍa sāyuttide.", ipa: "ɡiɖa saːjut̪t̪id̪e", bases: [{ word: "ಸಾಯುತ್ತಿದೆ", base: "ಸಾಯು", reading: "sāyu" }] }
+      - { target: "ಹಕ್ಕಿ ಸತ್ತಿತು.", reading: "hakki sattitu.", ipa: "hakki sat̪t̪it̪u", bases: [{ word: "ಸತ್ತಿತು", base: "ಸಾಯು", reading: "sāyu" }] }
+  - id: "kn-1245"
+    target: "ಹರಿ"
+    reading: "hari"
+    ipa: "hari"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನದಿ ಹರಿಯುತ್ತಿದೆ.", reading: "nadi hariyuttide.", ipa: "nad̪i harijut̪t̪id̪e", bases: [{ word: "ಹರಿಯುತ್ತಿದೆ", base: "ಹರಿ", reading: "hari" }] }
+      - { target: "ನೀರು ಹರಿಯುತ್ತದೆ.", reading: "nīru hariyuttade.", ipa: "niːru harijut̪t̪ad̪e", bases: [{ word: "ಹರಿಯುತ್ತದೆ", base: "ಹರಿ", reading: "hari" }] }
+  - id: "kn-1246"
+    target: "ಒಣಗು"
+    reading: "oṇagu"
+    ipa: "oɳaɡu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗಿಡ ಒಣಗಿದೆ.", reading: "giḍa oṇagide.", ipa: "ɡiɖa oɳaɡid̪e", bases: [{ word: "ಒಣಗಿದೆ", base: "ಒಣಗು", reading: "oṇagu" }] }
+      - { target: "ಹುಲ್ಲು ಒಣಗುತ್ತಿದೆ.", reading: "hullu oṇaguttide.", ipa: "hullu oɳaɡut̪t̪id̪e", bases: [{ word: "ಒಣಗುತ್ತಿದೆ", base: "ಒಣಗು", reading: "oṇagu" }] }

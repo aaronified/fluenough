@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-honorifics"
+kind: "layer"
+core: "kn-grammar-honorifics"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Honorifics: speaking politely to elders"
+license: "CC-BY-SA-4.0"
+description: "Speaking to an elder, a stranger or a friend: the polite command, the respectful you, and the words that show respect. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Honorifics"
+  slot_name: "to whom"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "oodu": "to read"
+    "kodu": "to give"
+    "kooru": "to sit"
+  notes: "To a friend or a child, give a command in the plain form: ಬಾ (bā), come. To an elder, a stranger or a group, use the polite form: ಬನ್ನಿ (banni), please come, and ನೀವು (nīvu) for you. The words ದಯವಿಟ್ಟು (dayaviṭṭu), please, and ಸ್ವಾಮಿ (svāmi), sir, show respect too."

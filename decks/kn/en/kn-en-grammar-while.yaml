@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-while"
+kind: "layer"
+core: "kn-grammar-while"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While: doing one thing while another"
+license: "CC-BY-SA-4.0"
+description: "Two actions at once: while doing one thing, another happens, and keep doing it all along. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "While"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+  notes: "For two actions at the same time, the verb takes its while-form: ಓದುತ್ತ (ōdutta), while reading, as in ಓದುತ್ತ ಊಟ ಮಾಡು (ōdutta ūṭa māḍu), eat while reading. For an action that goes on all the time, use the form with ಲೇ (lē): ಓದುತ್ತಲೇ (ōduttalē), still reading."

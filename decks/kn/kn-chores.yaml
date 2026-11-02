@@ -1,0 +1,158 @@
+schema: 1
+id: "kn-chores"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "chores"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0203"
+  - id: "kn-1146"
+    target: "ಕಸ"
+    reading: "kasa"
+    ipa: "kasa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಸ ಇದೆ.", reading: "kasa ide.", ipa: "kasa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಕಸ ತೆಗೆದುಕೊ.", reading: "kasa tegeduko.", ipa: "kasa t̪eɡed̪uko" }
+  - ref: "kn-0741"
+  - id: "kn-1147"
+    target: "ನೆಲ"
+    reading: "nela"
+    ipa: "nela"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನೆಲ ಸ್ವಚ್ಛ ಇದೆ.", reading: "nela svaccha ide.", ipa: "nela sʋatʃtʃʰa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ನೆಲದ ಮೇಲೆ ಕೂರು.", reading: "nelada mēle kūru.", ipa: "nelad̪a meːle kuːru", bases: [{ word: "ನೆಲದ", base: "ನೆಲ", reading: "nela" }] }
+  - id: "kn-1148"
+    target: "ಪೊರಕೆ"
+    reading: "porake"
+    ipa: "porake"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪೊರಕೆ ತೆಗೆದುಕೊ.", reading: "porake tegeduko.", ipa: "porake t̪eɡed̪uko" }
+      - { target: "ಪೊರಕೆ ಹಳೆ.", reading: "porake haḷe.", ipa: "porake haɭe" }
+  - ref: "kn-0740"
+  - id: "kn-1149"
+    target: "ಒಗೆ"
+    reading: "oge"
+    ipa: "oɡe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಟ್ಟೆ ಒಗೆ.", reading: "baṭṭe oge.", ipa: "baʈʈe oɡe" }
+      - { target: "ಅಮ್ಮ ಬಟ್ಟೆ ಒಗೆಯುತ್ತಾರೆ.", reading: "amma baṭṭe ogeyuttāre.", ipa: "amma baʈʈe oɡejut̪t̪aːre", bases: [{ word: "ಒಗೆಯುತ್ತಾರೆ", base: "ಒಗೆ", reading: "oge" }] }
+  - id: "kn-1150"
+    target: "ಒಣಗಿಸು"
+    reading: "oṇagisu"
+    ipa: "oɳaɡisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಟ್ಟೆ ಒಣಗಿಸು.", reading: "baṭṭe oṇagisu.", ipa: "baʈʈe oɳaɡisu" }
+      - { target: "ಬಿಸಿಲಿನಲ್ಲಿ ಬಟ್ಟೆ ಒಣಗಿಸಿದೆ.", reading: "bisilinalli baṭṭe oṇagiside.", ipa: "bisilinalli baʈʈe oɳaɡisid̪e", bases: [{ word: "ಬಿಸಿಲಿನಲ್ಲಿ", ref: "kn-0953" }, { word: "ಒಣಗಿಸಿದೆ", base: "ಒಣಗಿಸು", reading: "oṇagisu" }] }
+  - id: "kn-1151"
+    target: "ಮಡಿಸು"
+    reading: "maḍisu"
+    ipa: "maɖisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಟ್ಟೆ ಮಡಿಸು.", reading: "baṭṭe maḍisu.", ipa: "baʈʈe maɖisu" }
+      - { target: "ಬಟ್ಟೆ ಮಡಿಸಿದೆ.", reading: "baṭṭe maḍiside.", ipa: "baʈʈe maɖisid̪e", bases: [{ word: "ಮಡಿಸಿದೆ", base: "ಮಡಿಸು", reading: "maḍisu" }] }
+  - id: "kn-1152"
+    target: "ಇಸ್ತ್ರಿ"
+    reading: "istri"
+    ipa: "ist̪ri"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಸ್ತ್ರಿ ಮಾಡು.", reading: "istri māḍu.", ipa: "ist̪ri maːɖu" }
+      - { target: "ಬಟ್ಟೆ ಇಸ್ತ್ರಿ ಬೇಕು.", reading: "baṭṭe istri bēku.", ipa: "baʈʈe ist̪ri beːku" }
+  - id: "kn-1153"
+    target: "ಬುಟ್ಟಿ"
+    reading: "buṭṭi"
+    ipa: "buʈʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬುಟ್ಟಿ ಎಲ್ಲಿ?", reading: "buṭṭi elli?", ipa: "buʈʈi elli" }
+      - { target: "ಕಸ ಬುಟ್ಟಿಗೆ ಹಾಕು.", reading: "kasa buṭṭige hāku.", ipa: "kasa buʈʈiɡe haːku", bases: [{ word: "ಬುಟ್ಟಿಗೆ", base: "ಬುಟ್ಟಿ", reading: "buṭṭi" }, { word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+  - id: "kn-1154"
+    target: "ಬಕೆಟ್"
+    reading: "bakeṭ"
+    ipa: "bakeʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಕೆಟ್ ತುಂಬಾ ನೀರು ಇದೆ.", reading: "bakeṭ tumbā nīru ide.", ipa: "bakeʈ t̪umbaː niːru id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಬಕೆಟ್ ತೆಗೆದುಕೊ.", reading: "bakeṭ tegeduko.", ipa: "bakeʈ t̪eɡed̪uko" }
+  - id: "kn-1155"
+    target: "ಮಾಪ್"
+    reading: "māp"
+    ipa: "maːp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಾಪ್ ತೆಗೆದುಕೊ.", reading: "māp tegeduko.", ipa: "maːp t̪eɡed̪uko" }
+      - { target: "ನೆಲ ತೊಳೆ.", reading: "nela toḷe.", ipa: "nela t̪oɭe" }
+  - ref: "kn-0386"
+  - ref: "kn-0385"
+  - id: "kn-1156"
+    target: "ಜೋಡಿಸು"
+    reading: "jōḍisu"
+    ipa: "dʒoːɖisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪುಸ್ತಕ ಜೋಡಿಸು.", reading: "pustaka jōḍisu.", ipa: "pust̪aka dʒoːɖisu" }
+      - { target: "ಪಾತ್ರೆ ಜೋಡಿಸಿದೆ.", reading: "pātre jōḍiside.", ipa: "paːt̪re dʒoːɖisid̪e", bases: [{ word: "ಜೋಡಿಸಿದೆ", base: "ಜೋಡಿಸು", reading: "jōḍisu" }] }
+  - ref: "kn-0887"
+  - id: "kn-1157"
+    target: "ಸ್ವಚ್ಛಗೊಳಿಸು"
+    reading: "svacchagoḷisu"
+    ipa: "sʋatʃtʃʰaɡoɭisu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೋಣೆ ಸ್ವಚ್ಛಗೊಳಿಸು.", reading: "kōṇe svacchagoḷisu.", ipa: "koːɳe sʋatʃtʃʰaɡoɭisu" }
+      - { target: "ಶನಿವಾರ ಮನೆ ಸ್ವಚ್ಛಗೊಳಿಸುತ್ತೇವೆ.", reading: "śanivāra mane svacchagoḷisuttēve.", ipa: "ʃaniʋaːra mane sʋatʃtʃʰaɡoɭisut̪t̪eːʋe", bases: [{ word: "ಸ್ವಚ್ಛಗೊಳಿಸುತ್ತೇವೆ", base: "ಸ್ವಚ್ಛಗೊಳಿಸು", reading: "svacchagoḷisu" }] }
+  - ref: "kn-0380"
+  - id: "kn-1158"
+    target: "ಕೊಳೆ"
+    reading: "koḷe"
+    ipa: "koɭe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಟ್ಟೆ ಮೇಲೆ ಕೊಳೆ ಇದೆ.", reading: "baṭṭe mēle koḷe ide.", ipa: "baʈʈe meːle koɭe id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಕೊಳೆ ತೆಗೆ.", reading: "koḷe tege.", ipa: "koɭe t̪eɡe" }
+  - ref: "kn-0523"
+  - ref: "kn-0630"
+  - ref: "kn-0746"
+  - ref: "kn-0307"

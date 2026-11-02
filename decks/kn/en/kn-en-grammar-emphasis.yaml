@@ -1,0 +1,21 @@
+schema: 1
+id: "kn-en-grammar-emphasis"
+kind: "layer"
+core: "kn-grammar-emphasis"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emphasis: only, also"
+license: "CC-BY-SA-4.0"
+description: "Saying only one thing, or also another: only water, water too. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Emphasis"
+  slot_name: "meaning"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "neeru": "water"
+    "haalu": "milk"
+    "pustaka": "book"
+    "mane": "house"
+    "avanu": "he"
+    "avalu": "she"
+  notes: "For only, put ಮಾತ್ರ (mātra) after the word: ನೀರು ಮಾತ್ರ (nīru mātra), only water. For also or too, put ಕೂಡ (kūḍa) after it: ನೀರು ಕೂಡ (nīru kūḍa), water too. The word before the emphasis does not change."

@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-conditional"
+kind: "layer"
+core: "kn-grammar-conditional"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The conditional: if it rains"
+license: "CC-BY-SA-4.0"
+description: "If someone does something, then: the if-clause, with the verb and the word if, for what might happen. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Conditional"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+  notes: "In an if-clause the verb takes its past form with the word for if: ಬಂದರೆ (bandare), if one comes; ಮಾಡಿದರೆ (māḍidare), if one does. For not, the verb takes the negative past and ಇದ್ದರೆ (iddare): ಬರದಿದ್ದರೆ (baradiddare), if one does not come. The main clause follows, as in ಮಳೆ ಬಂದರೆ ಛತ್ರಿ ಬೇಕು (maḷe bandare chatri bēku): if it rains, an umbrella is needed."
