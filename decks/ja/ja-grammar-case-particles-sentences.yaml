@@ -6,7 +6,7 @@ language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: 
 license: "CC-BY-SA-4.0"
 tags: ["beginner", "unreviewed"]
 cards:
-  - id: "ja-0625"
+  - id: "ja-0649"
     target: "わたしはがっこうにいきます。"
     words: ["わたし", "は", "がっこう", "に", "いきます"]
     reading: "watashi wa gakkou ni ikimasu."
@@ -26,7 +26,7 @@ cards:
         reading: "ue"
         kind: "word"
     rules: ["ja-rule-particle-wa", "ja-rule-particle-ni"]
-  - id: "ja-0626"
+  - id: "ja-0650"
     target: "わたしはみずをのみます。"
     words: ["わたし", "は", "みず", "を", "のみます"]
     reading: "watashi wa mizu o nomimasu."
@@ -46,7 +46,7 @@ cards:
         reading: "gyuunyuu"
         kind: "word"
     rules: ["ja-rule-particle-wa", "ja-rule-particle-o"]
-  - id: "ja-0627"
+  - id: "ja-0651"
     target: "ともだちがきます。"
     words: ["ともだち", "が", "きます"]
     reading: "tomodachi ga kimasu."
@@ -65,7 +65,7 @@ cards:
         reading: "sensei"
         kind: "word"
     rules: ["ja-rule-particle-ga"]
-  - id: "ja-0628"
+  - id: "ja-0652"
     target: "でんしゃでいきます。"
     words: ["でんしゃ", "で", "いきます"]
     reading: "densha de ikimasu."
@@ -84,7 +84,7 @@ cards:
         reading: "inu"
         kind: "word"
     rules: ["ja-rule-particle-de"]
-  - id: "ja-0629"
+  - id: "ja-0653"
     target: "わたしはえいごをならいます。"
     words: ["わたし", "は", "えいご", "を", "ならいます"]
     reading: "watashi wa eigo o naraimasu."
@@ -104,14 +104,15 @@ cards:
         reading: "namae"
         kind: "word"
     rules: ["ja-rule-particle-wa", "ja-rule-particle-o"]
-  - id: "ja-0630"
-    target: "ははががっこうにいきます。"
-    words: ["はは", "が", "がっこう", "に", "いきます"]
-    reading: "haha ga gakkou ni ikimasu."
-    ipa: "haha ɡa ɡakkoː ni ikimasɯ"
+  - id: "ja-0654"
+    target: "ははがかいしゃにいきます。"
+    words: ["はは", "が", "か", "い", "し", "ゃ", "に", "いきます"]
+    reading: "haha ga ka i shi ya ni ikimasu."
+    ipa: "haha ɡa ka i ɕi  ni ikimasɯ"
     pos: "phrase"
     bases:
       - { word: "が", base: "が", reading: "ga" }
+      - { word: "か", base: "か", reading: "ka" }
       - { word: "に", base: "に", reading: "ni" }
       - { word: "いきます", ref: "ja-0348" }
     confusables:
@@ -120,7 +121,7 @@ cards:
         reading: "chichi"
         kind: "word"
       - id: "w2"
-        word: "いぬ"
-        reading: "inu"
+        word: "がっこう"
+        reading: "gakkou"
         kind: "word"
     rules: ["ja-rule-particle-ga", "ja-rule-particle-ni"]
