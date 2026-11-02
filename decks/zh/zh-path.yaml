@@ -540,7 +540,8 @@ units:
       - { id: "because-and-so", text: { "en": "Joining two sentences: because and so, although and but, or" } }
     reading_passages:
       - { id: "short-blog-post", text: { "en": "A short blog post about a weekend" } }
-  - planned: { id: "zh-music", theme: "music", words: 40 }
+  - decks: ["zh-music", "zh-music-sentences", "zh-reading-music", "*"]
+    words: 40
     listening_passages:
       - { id: "at-karaoke", text: { "en": "Friends choose songs at karaoke" } }
     reading_passages:
