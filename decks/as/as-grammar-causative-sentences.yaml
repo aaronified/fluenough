@@ -1,0 +1,71 @@
+schema: 1
+id: "as-grammar-causative-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3631"
+    target: "মই শিশুক খুৱালোঁ।"
+    reading: "moi xixuk khuwālum̐."
+    ipa: "moi xixuk kʰuwalʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "শিশুক", ref: "as-2890" }
+      - { word: "খুৱালোঁ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "খালোঁ", reading: "khālum̐", kind: "form" }
+      - { id: "c2", word: "খাওঁ", reading: "khāum̐", kind: "form" }
+  - id: "as-3632"
+    target: "তাই ল'ৰাক পঢ়ালে।"
+    reading: "tāi lorāk pôrhāle."
+    ipa: "tai loɹak pɔɹale"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "ল'ৰাক", ref: "as-0184" }
+      - { word: "পঢ়ালে", ref: "as-2203" }
+    confusables:
+      - { id: "c1", word: "পঢ়িলে", reading: "pôrhile", kind: "form" }
+      - { id: "c2", word: "পঢ়িছে", reading: "pôrhise", kind: "form" }
+  - id: "as-3633"
+    target: "আমি ঘৰ কৰালোঁ।"
+    reading: "āmi ghôr kôrālum̐."
+    ipa: "ami ɡʱɔɹ kɔɹalʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "কৰালোঁ", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "কৰিলোঁ", reading: "kôrilum̐", kind: "form" }
+      - { id: "c2", word: "কৰোঁ", reading: "kôrum̐", kind: "form" }
+  - id: "as-3634"
+    target: "সি চিঠি লিখালে।"
+    reading: "xi sithi likhāle."
+    ipa: "si sitʰi likʰale"
+    pos: "phrase"
+    bases:
+      - { word: "লিখালে", ref: "as-2204" }
+    confusables:
+      - { id: "c1", word: "লিখিলে", reading: "likhile", kind: "form" }
+      - { id: "c2", word: "লিখিছে", reading: "likhise", kind: "form" }
+  - id: "as-3635"
+    target: "মই গীত শুনালোঁ।"
+    reading: "moi git xunālum̐."
+    ipa: "moi ɡit xunalʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "শুনালোঁ", ref: "as-2205" }
+    confusables:
+      - { id: "c1", word: "শুনিলোঁ", reading: "xunilum̐", kind: "form" }
+      - { id: "c2", word: "শুনোঁ", reading: "xunum̐", kind: "form" }
+  - id: "as-3636"
+    target: "তেওঁ বাছ আনালে।"
+    reading: "teum̐ bās ānāle."
+    ipa: "teʊ̃ bas anale"
+    pos: "phrase"
+    bases:
+      - { word: "আনালে", ref: "as-2295" }
+    confusables:
+      - { id: "c1", word: "আনিলে", reading: "ānile", kind: "form" }
+      - { id: "c2", word: "আনিছে", reading: "ānise", kind: "form" }
