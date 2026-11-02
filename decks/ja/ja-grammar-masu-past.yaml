@@ -1,0 +1,500 @@
+schema: 1
+id: "ja-grammar-masu-past"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["mashita", "masen-deshita"]
+  rows:
+    - word: "ja-0341"
+      forms:
+        "mashita": "たべました"
+        "masen-deshita": "たべませんでした"
+      readings:
+        "mashita": "tabemashita"
+        "masen-deshita": "tabemasendeshita"
+    - word: "ja-0342"
+      forms:
+        "mashita": "のみました"
+        "masen-deshita": "のみませんでした"
+      readings:
+        "mashita": "nomimashita"
+        "masen-deshita": "nomimasendeshita"
+    - word: "ja-0343"
+      forms:
+        "mashita": "みました"
+        "masen-deshita": "みませんでした"
+      readings:
+        "mashita": "mimashita"
+        "masen-deshita": "mimasendeshita"
+    - word: "ja-0344"
+      forms:
+        "mashita": "ききました"
+        "masen-deshita": "ききませんでした"
+      readings:
+        "mashita": "kikimashita"
+        "masen-deshita": "kikimasendeshita"
+    - word: "ja-0345"
+      forms:
+        "mashita": "よみました"
+        "masen-deshita": "よみませんでした"
+      readings:
+        "mashita": "yomimashita"
+        "masen-deshita": "yomimasendeshita"
+    - word: "ja-0346"
+      forms:
+        "mashita": "かきました"
+        "masen-deshita": "かきませんでした"
+      readings:
+        "mashita": "kakimashita"
+        "masen-deshita": "kakimasendeshita"
+    - word: "ja-0347"
+      forms:
+        "mashita": "はなしました"
+        "masen-deshita": "はなしませんでした"
+      readings:
+        "mashita": "hanashimashita"
+        "masen-deshita": "hanashimasendeshita"
+    - word: "ja-0348"
+      forms:
+        "mashita": "いきました"
+        "masen-deshita": "いきませんでした"
+      readings:
+        "mashita": "ikimashita"
+        "masen-deshita": "ikimasendeshita"
+    - word: "ja-0349"
+      forms:
+        "mashita": "きました"
+        "masen-deshita": "きませんでした"
+      readings:
+        "mashita": "kimashita"
+        "masen-deshita": "kimasendeshita"
+    - word: "ja-0350"
+      forms:
+        "mashita": "かえりました"
+        "masen-deshita": "かえりませんでした"
+      readings:
+        "mashita": "kaerimashita"
+        "masen-deshita": "kaerimasendeshita"
+    - word: "ja-0351"
+      forms:
+        "mashita": "おきました"
+        "masen-deshita": "おきませんでした"
+      readings:
+        "mashita": "okimashita"
+        "masen-deshita": "okimasendeshita"
+    - word: "ja-0352"
+      forms:
+        "mashita": "ねました"
+        "masen-deshita": "ねませんでした"
+      readings:
+        "mashita": "nemashita"
+        "masen-deshita": "nemasendeshita"
+    - word: "ja-0353"
+      forms:
+        "mashita": "はたらきました"
+        "masen-deshita": "はたらきませんでした"
+      readings:
+        "mashita": "hatarakimashita"
+        "masen-deshita": "hatarakimasendeshita"
+    - word: "ja-0354"
+      forms:
+        "mashita": "やすみました"
+        "masen-deshita": "やすみませんでした"
+      readings:
+        "mashita": "yasumimashita"
+        "masen-deshita": "yasumimasendeshita"
+    - word: "ja-0355"
+      forms:
+        "mashita": "はいりました"
+        "masen-deshita": "はいりませんでした"
+      readings:
+        "mashita": "hairimashita"
+        "masen-deshita": "hairimasendeshita"
+    - word: "ja-0356"
+      forms:
+        "mashita": "かいました"
+        "masen-deshita": "かいませんでした"
+      readings:
+        "mashita": "kaimashita"
+        "masen-deshita": "kaimasendeshita"
+    - word: "ja-0357"
+      forms:
+        "mashita": "あいました"
+        "masen-deshita": "あいませんでした"
+      readings:
+        "mashita": "aimashita"
+        "masen-deshita": "aimasendeshita"
+    - word: "ja-0358"
+      forms:
+        "mashita": "まちました"
+        "masen-deshita": "まちませんでした"
+      readings:
+        "mashita": "machimashita"
+        "masen-deshita": "machimasendeshita"
+    - word: "ja-0359"
+      forms:
+        "mashita": "もちました"
+        "masen-deshita": "もちませんでした"
+      readings:
+        "mashita": "mochimashita"
+        "masen-deshita": "mochimasendeshita"
+    - word: "ja-0360"
+      forms:
+        "mashita": "あるきました"
+        "masen-deshita": "あるきませんでした"
+      readings:
+        "mashita": "arukimashita"
+        "masen-deshita": "arukimasendeshita"
+    - word: "ja-0361"
+      forms:
+        "mashita": "のりました"
+        "masen-deshita": "のりませんでした"
+      readings:
+        "mashita": "norimashita"
+        "masen-deshita": "norimasendeshita"
+    - word: "ja-0362"
+      forms:
+        "mashita": "おりました"
+        "masen-deshita": "おりませんでした"
+      readings:
+        "mashita": "orimashita"
+        "masen-deshita": "orimasendeshita"
+    - word: "ja-0363"
+      forms:
+        "mashita": "あらいました"
+        "masen-deshita": "あらいませんでした"
+      readings:
+        "mashita": "araimashita"
+        "masen-deshita": "araimasendeshita"
+    - word: "ja-0364"
+      forms:
+        "mashita": "つくりました"
+        "masen-deshita": "つくりませんでした"
+      readings:
+        "mashita": "tsukurimashita"
+        "masen-deshita": "tsukurimasendeshita"
+    - word: "ja-0365"
+      forms:
+        "mashita": "わかりました"
+        "masen-deshita": "わかりませんでした"
+      readings:
+        "mashita": "wakarimashita"
+        "masen-deshita": "wakarimasendeshita"
+    - word: "ja-0366"
+      forms:
+        "mashita": "しりました"
+        "masen-deshita": "しりませんでした"
+      readings:
+        "mashita": "shirimashita"
+        "masen-deshita": "shirimasendeshita"
+    - word: "ja-0367"
+      forms:
+        "mashita": "ならいました"
+        "masen-deshita": "ならいませんでした"
+      readings:
+        "mashita": "naraimashita"
+        "masen-deshita": "naraimasendeshita"
+    - word: "ja-0368"
+      forms:
+        "mashita": "おしえました"
+        "masen-deshita": "おしえませんでした"
+      readings:
+        "mashita": "oshiemashita"
+        "masen-deshita": "oshiemasendeshita"
+    - word: "ja-0369"
+      forms:
+        "mashita": "つかいました"
+        "masen-deshita": "つかいませんでした"
+      readings:
+        "mashita": "tsukaimashita"
+        "masen-deshita": "tsukaimasendeshita"
+    - word: "ja-0370"
+      forms:
+        "mashita": "すわりました"
+        "masen-deshita": "すわりませんでした"
+      readings:
+        "mashita": "suwarimashita"
+        "masen-deshita": "suwarimasendeshita"
+    - word: "ja-0371"
+      forms:
+        "mashita": "たちました"
+        "masen-deshita": "たちませんでした"
+      readings:
+        "mashita": "tachimashita"
+        "masen-deshita": "tachimasendeshita"
+    - word: "ja-0372"
+      forms:
+        "mashita": "あけました"
+        "masen-deshita": "あけませんでした"
+      readings:
+        "mashita": "akemashita"
+        "masen-deshita": "akemasendeshita"
+    - word: "ja-0373"
+      forms:
+        "mashita": "しめました"
+        "masen-deshita": "しめませんでした"
+      readings:
+        "mashita": "shimemashita"
+        "masen-deshita": "shimemasendeshita"
+    - word: "ja-0374"
+      forms:
+        "mashita": "あそびました"
+        "masen-deshita": "あそびませんでした"
+      readings:
+        "mashita": "asobimashita"
+        "masen-deshita": "asobimasendeshita"
+    - word: "ja-0375"
+      forms:
+        "mashita": "しました"
+        "masen-deshita": "しませんでした"
+      readings:
+        "mashita": "shimashita"
+        "masen-deshita": "shimasendeshita"
+    - word: "ja-0949"
+      forms:
+        "mashita": "かぞえました"
+        "masen-deshita": "かぞえませんでした"
+      readings:
+        "mashita": "kazoemashita"
+        "masen-deshita": "kazoemasendeshita"
+    - word: "ja-0571"
+      forms:
+        "mashita": "あびました"
+        "masen-deshita": "あびませんでした"
+      readings:
+        "mashita": "abimashita"
+        "masen-deshita": "abimasendeshita"
+    - word: "ja-0572"
+      forms:
+        "mashita": "はしりました"
+        "masen-deshita": "はしりませんでした"
+      readings:
+        "mashita": "hashirimashita"
+        "masen-deshita": "hashirimasendeshita"
+    - word: "ja-0573"
+      forms:
+        "mashita": "とびました"
+        "masen-deshita": "とびませんでした"
+      readings:
+        "mashita": "tobimashita"
+        "masen-deshita": "tobimasendeshita"
+    - word: "ja-0574"
+      forms:
+        "mashita": "おどりました"
+        "masen-deshita": "おどりませんでした"
+      readings:
+        "mashita": "odorimashita"
+        "masen-deshita": "odorimasendeshita"
+    - word: "ja-0575"
+      forms:
+        "mashita": "うたいました"
+        "masen-deshita": "うたいませんでした"
+      readings:
+        "mashita": "utaimashita"
+        "masen-deshita": "utaimasendeshita"
+    - word: "ja-0576"
+      forms:
+        "mashita": "かりました"
+        "masen-deshita": "かりませんでした"
+      readings:
+        "mashita": "karimashita"
+        "masen-deshita": "karimasendeshita"
+    - word: "ja-0577"
+      forms:
+        "mashita": "かえしました"
+        "masen-deshita": "かえしませんでした"
+      readings:
+        "mashita": "kaeshimashita"
+        "masen-deshita": "kaeshimasendeshita"
+    - word: "ja-0578"
+      forms:
+        "mashita": "わすれました"
+        "masen-deshita": "わすれませんでした"
+      readings:
+        "mashita": "wasuremashita"
+        "masen-deshita": "wasuremasendeshita"
+    - word: "ja-0579"
+      forms:
+        "mashita": "おぼえました"
+        "masen-deshita": "おぼえませんでした"
+      readings:
+        "mashita": "oboemashita"
+        "masen-deshita": "oboemasendeshita"
+    - word: "ja-0580"
+      forms:
+        "mashita": "てつだいました"
+        "masen-deshita": "てつだいませんでした"
+      readings:
+        "mashita": "tetsudaimashita"
+        "masen-deshita": "tetsudaimasendeshita"
+    - word: "ja-0581"
+      forms:
+        "mashita": "ひろいました"
+        "masen-deshita": "ひろいませんでした"
+      readings:
+        "mashita": "hiroimashita"
+        "masen-deshita": "hiroimasendeshita"
+    - word: "ja-0582"
+      forms:
+        "mashita": "すてました"
+        "masen-deshita": "すてませんでした"
+      readings:
+        "mashita": "sutemashita"
+        "masen-deshita": "sutemasendeshita"
+    - word: "ja-0583"
+      forms:
+        "mashita": "なくしました"
+        "masen-deshita": "なくしませんでした"
+      readings:
+        "mashita": "nakushimashita"
+        "masen-deshita": "nakushimasendeshita"
+    - word: "ja-0584"
+      forms:
+        "mashita": "のぼりました"
+        "masen-deshita": "のぼりませんでした"
+      readings:
+        "mashita": "noborimashita"
+        "masen-deshita": "noborimasendeshita"
+    - word: "ja-0585"
+      forms:
+        "mashita": "そうじしました"
+        "masen-deshita": "そうじしませんでした"
+      readings:
+        "mashita": "soujishimashita"
+        "masen-deshita": "soujishimasendeshita"
+    - word: "ja-0586"
+      forms:
+        "mashita": "りょうりしました"
+        "masen-deshita": "りょうりしませんでした"
+      readings:
+        "mashita": "ryourishimashita"
+        "masen-deshita": "ryourishimasendeshita"
+    - word: "ja-0587"
+      forms:
+        "mashita": "でかけました"
+        "masen-deshita": "でかけませんでした"
+      readings:
+        "mashita": "dekakemashita"
+        "masen-deshita": "dekakemasendeshita"
+    - word: "ja-0588"
+      forms:
+        "mashita": "もどりました"
+        "masen-deshita": "もどりませんでした"
+      readings:
+        "mashita": "modorimashita"
+        "masen-deshita": "modorimasendeshita"
+    - word: "ja-0589"
+      forms:
+        "mashita": "とまりました"
+        "masen-deshita": "とまりませんでした"
+      readings:
+        "mashita": "tomarimashita"
+        "masen-deshita": "tomarimasendeshita"
+    - word: "ja-0590"
+      forms:
+        "mashita": "さがしました"
+        "masen-deshita": "さがしませんでした"
+      readings:
+        "mashita": "sagashimashita"
+        "masen-deshita": "sagashimasendeshita"
+    - word: "ja-0591"
+      forms:
+        "mashita": "みせりました"
+        "masen-deshita": "みせりませんでした"
+      readings:
+        "mashita": "miserimashita"
+        "masen-deshita": "miserimasendeshita"
+    - word: "ja-0592"
+      forms:
+        "mashita": "いれました"
+        "masen-deshita": "いれませんでした"
+      readings:
+        "mashita": "iremashita"
+        "masen-deshita": "iremasendeshita"
+    - word: "ja-0593"
+      forms:
+        "mashita": "わらいました"
+        "masen-deshita": "わらいませんでした"
+      readings:
+        "mashita": "waraimashita"
+        "masen-deshita": "waraimasendeshita"
+    - word: "ja-0594"
+      forms:
+        "mashita": "おこりました"
+        "masen-deshita": "おこりませんでした"
+      readings:
+        "mashita": "okorimashita"
+        "masen-deshita": "okorimasendeshita"
+    - word: "ja-0595"
+      forms:
+        "mashita": "やめました"
+        "masen-deshita": "やめませんでした"
+      readings:
+        "mashita": "yamemashita"
+        "masen-deshita": "yamemasendeshita"
+    - word: "ja-0596"
+      forms:
+        "mashita": "はじめました"
+        "masen-deshita": "はじめませんでした"
+      readings:
+        "mashita": "hajimemashita"
+        "masen-deshita": "hajimemasendeshita"
+    - word: "ja-0597"
+      forms:
+        "mashita": "ひっこしました"
+        "masen-deshita": "ひっこしませんでした"
+      readings:
+        "mashita": "hikkoshimashita"
+        "masen-deshita": "hikkoshimasendeshita"
+    - word: "ja-0598"
+      forms:
+        "mashita": "あげました"
+        "masen-deshita": "あげませんでした"
+      readings:
+        "mashita": "agemashita"
+        "masen-deshita": "agemasendeshita"
+    - word: "ja-0599"
+      forms:
+        "mashita": "もらいました"
+        "masen-deshita": "もらいませんでした"
+      readings:
+        "mashita": "moraimashita"
+        "masen-deshita": "moraimasendeshita"
+    - word: "ja-0600"
+      forms:
+        "mashita": "さけびました"
+        "masen-deshita": "さけびませんでした"
+      readings:
+        "mashita": "sakebimashita"
+        "masen-deshita": "sakebimasendeshita"
+    - word: "ja-0516"
+      forms:
+        "mashita": "おわりました"
+        "masen-deshita": "おわりませんでした"
+      readings:
+        "mashita": "owarimashita"
+        "masen-deshita": "owarimasendeshita"
+    - word: "ja-0711"
+      forms:
+        "mashita": "つとめました"
+        "masen-deshita": "つとめませんでした"
+      readings:
+        "mashita": "tsutomemashita"
+        "masen-deshita": "tsutomemasendeshita"
+rules:
+  - id: "ja-rule-mashita"
+    slots: ["mashita"]
+    words:
+      - { word: "ました", reading: "mashita" }
+      - { word: "たべました", reading: "tabemashita" }
+  - id: "ja-rule-masen-deshita"
+    slots: ["masen-deshita"]
+    words:
+      - { word: "ませんでした", reading: "masen deshita" }
+      - { word: "たべませんでした", reading: "tabemasen deshita" }

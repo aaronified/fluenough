@@ -286,11 +286,9 @@ units:
       - { id: "ordering-a-set-meal", text: { "en": "Choosing a set meal at a small restaurant" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - planned: { id: "ja-grammar-masu-past", grammar: ["mashita", "masen-deshita"] }
-    listening_passages:
-      - { id: "what-did-you-eat", text: { "en": "Saying politely what you ate and did yesterday" } }
-    reading_passages:
-      - { id: "yesterday-note", text: { "en": "A short note about yesterday, in polite past forms" } }
+  - decks: ["ja-grammar-masu-past"]
+    words: 0
+    grammar: ["mashita", "masen-deshita"]
   - planned: { id: "ja-transport", theme: "transport", words: 35 }
     listening_passages:
       - { id: "which-train", text: { "en": "Asking which train goes to the city centre" } }
