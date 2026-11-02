@@ -1,0 +1,94 @@
+schema: 1
+id: "ja-en-location-sentences"
+kind: "layer"
+core: "ja-location-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Where things are in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0559":
+    native: "The box is on the desk."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "した (shita) means under, the opposite."
+      w2:
+        why: "なか (naka) means inside."
+  "ja-0560":
+    native: "The dog is under the chair."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "に":
+        meaning: "in; at; to"
+      "います":
+        meaning: "to be (of people and animals); to exist"
+    confusables:
+      w1:
+        why: "うえ (ue) means above, the opposite."
+      w2:
+        why: "かぎ (kagi) is a key, not a place."
+  "ja-0561":
+    native: "There is a dog beside the school."
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "に":
+        meaning: "in; at; to"
+      "が":
+        meaning: "(marks the subject)"
+      "います":
+        meaning: "to be (of people and animals); to exist"
+    confusables:
+      w1:
+        why: "となり (tonari) means next to a person or place."
+      w2:
+        why: "そと (soto) means outside."
+  "ja-0562":
+    native: "My friend is on the right."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "に":
+        meaning: "in; at; to"
+      "います":
+        meaning: "to be (of people and animals); to exist"
+    confusables:
+      w1:
+        why: "ひだり (hidari) means left, the opposite."
+      w2:
+        why: "むこう (mukou) means the other side."
+  "ja-0563":
+    native: "Here is over there."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "そこ (soko) means there, near the listener."
+      w2:
+        why: "むこう (mukou) means the other side."
+  "ja-0564":
+    native: "China is far."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "となり (tonari) means next to, not far."
+      w2:
+        why: "ちかい (chikai) means near, the opposite."
