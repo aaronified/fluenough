@@ -1,0 +1,86 @@
+schema: 1
+id: "ja-en-work-sentences"
+kind: "layer"
+core: "ja-work-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Work in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0726":
+    native: "I am an office worker."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "がくせい (gakusei) is a student, not an office worker."
+      w2:
+        why: "しゃいん (shain) is a staff member."
+  "ja-0727":
+    native: "Mother works at a hospital."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "に":
+        meaning: "in; at; to"
+      "つとめます":
+        meaning: "to work for (a company); to serve"
+    confusables:
+      w1:
+        why: "いしゃ (isha) is a doctor, not a hospital."
+      w2:
+        why: "ぎんこう (ginkou) is a bank."
+  "ja-0728":
+    native: "The work is hard."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "とくい (tokui) means good at, not hard."
+      w2:
+        why: "すごい (sugoi) means amazing."
+  "ja-0729":
+    native: "When is the meeting?"
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "しけん (shiken) is an exam."
+      w2:
+        why: "じむしょ (jimusho) is an office."
+  "ja-0730":
+    native: "My father works overtime."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "けんきゅう (kenkyuu) is research."
+      w2:
+        why: "しゅっきん (shukkin) is attendance at work."
+  "ja-0731":
+    native: "She is a nurse."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "はいしゃ (haisha) is a dentist."
+      w2:
+        why: "けんきゅうしゃ (kenkyuusha) is a researcher."

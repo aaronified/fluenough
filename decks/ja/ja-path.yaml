@@ -250,7 +250,8 @@ units:
     grammar: ["i-adjectives", "na-adjectives"]
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "ja-work", theme: "work", words: 35 }
+  - decks: ["ja-work", "ja-work-sentences", "ja-reading-work", "*"]
+    words: 35
     listening_passages:
       - { id: "what-is-your-job", text: { "en": "Two people ask each other what they do for a living" } }
     reading_passages:
