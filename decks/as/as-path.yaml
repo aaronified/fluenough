@@ -525,11 +525,14 @@ units:
       - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
   - decks: ["as-reading-purpose"]
     words: 0
-  - planned: { id: "as-technology", theme: "technology", words: 50 }
+  - decks: ["as-technology", "as-technology-sentences", "*"]
+    words: 18
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
+  - decks: ["as-reading-technology"]
+    words: 0
   - planned: { id: "as-careers", theme: "careers", words: 50 }
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }

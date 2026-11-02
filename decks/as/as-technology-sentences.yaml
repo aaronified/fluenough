@@ -1,0 +1,73 @@
+schema: 1
+id: "as-technology-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3449"
+    target: "মোৰ ফোনৰ চাৰ্জাৰ নাই।"
+    reading: "mur phonôr sārjār nāi."
+    ipa: "mʊɹ pʰʊnɔɹ saɹzaɹ nai"
+    pos: "phrase"
+    bases:
+      - { word: "ফোনৰ", ref: "as-2943" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "বেটাৰী", reading: "beṭāri", kind: "word" }
+      - { id: "c2", word: "স্ক্ৰীন", reading: "skrīn", kind: "word" }
+  - id: "as-3450"
+    target: "ৱেবছাইট খোলা।"
+    reading: "websāit khulā."
+    ipa: "webɔsait kʰʊla"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বন্ধ", reading: "bôndhô", kind: "word" }
+      - { id: "c2", word: "ডাউনলোড", reading: "ḍāunlod", kind: "word" }
+  - id: "as-3451"
+    target: "ডাউনলোড হ'ল।"
+    reading: "ḍāunlod hôl."
+    ipa: "daunɔlʊd hol"
+    pos: "phrase"
+    bases:
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "আপলোড", reading: "āplod", kind: "word" }
+      - { id: "c2", word: "সংযোগ", reading: "xôṅyôg", kind: "word" }
+  - id: "as-3452"
+    target: "ভাইৰাছ আছে।"
+    reading: "bhairās āse."
+    ipa: "bʱaiɹas ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "সুৰক্ষা", reading: "xurôkkhā", kind: "word" }
+      - { id: "c2", word: "তথ্য", reading: "tôthyô", kind: "word" }
+  - id: "as-3453"
+    target: "সংযোগ নাই।"
+    reading: "xôṅyôg nāi."
+    ipa: "sɔŋzʊɡ nai"
+    pos: "phrase"
+    bases:
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "অফলাইন", reading: "ôphlāin", kind: "word" }
+      - { id: "c2", word: "অনলাইন", reading: "ônlāin", kind: "word" }
+  - id: "as-3454"
+    target: "কীবৰ্ড নতুন।"
+    reading: "kībôrḍ nôtun."
+    ipa: "kibɔɹd notun"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "মাউচ", reading: "mausa", kind: "word" }
+      - { id: "c2", word: "ছফ্টৱেৰ", reading: "sofṭwer", kind: "word" }
+  - id: "as-3455"
+    target: "প্ৰযুক্তি ভাল।"
+    reading: "prôzuktī bhāl."
+    ipa: "pɹozukti bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "তথ্য", reading: "tôthyô", kind: "word" }
+      - { id: "c2", word: "ৰেডিঅ", reading: "rediō", kind: "word" }

@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-technology"
+name: "Assamese reading: technology: computers, apps and the internet"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-fixing-a-phone"
+    title: "Asking a shop to fix a phone"
+    theme: "technology"
+    sentences:
+      - text: "মোৰ ফোনৰ স্ক্ৰীন ভাঙিল।"
+        reading: "mur phonôr skrīn bhāṅil."
+      - text: "মেৰামতি কৰিব পাৰিবনে?"
+        reading: "merāmôti kôribôr pāribône?"
+      - text: "চাৰ্জাৰ নাই আৰু সংযোগ নাই।"
+        reading: "sārjār nāi āru xôṅyôg nāi."
+      - text: "কালিলৈ লাগিব।"
+        reading: "kālilôi lāgib."
+    questions:
+      - id: "as-3456"
+        prompt: { en: "The phone screen is broken." }
+        answer: true
+      - id: "as-3457"
+        prompt: { en: "What is missing from the phone?" }
+        options:
+          - { en: "A charger" }
+          - { en: "A case" }
+          - { en: "A photo" }
+        answer: 1
+      - id: "as-3458"
+        prompt: { en: "When will the repair take?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "A week" }
+        answer: 2
+  - id: "as-app-instructions"
+    title: "Instructions inside a phone app"
+    theme: "technology"
+    sentences:
+      - text: "প্ৰথমে ৱেবছাইট খোলক।"
+        reading: "prôthômē websāit khulôk."
+      - text: "তাৰ পাছত ডাউনলোড কৰক।"
+        reading: "tār pāsôt ḍāunlod kôrôk."
+      - text: "ফাইল আপলোড কৰক।"
+        reading: "phāil āplod kôrôk."
+      - text: "পাছৱৰ্ড নিদিব।"
+        reading: "pāsvôrḍ nidib."
+    questions:
+      - id: "as-3459"
+        prompt: { en: "The first step is to open the website." }
+        answer: true
+      - id: "as-3460"
+        prompt: { en: "What step comes after the download?" }
+        options:
+          - { en: "Upload the file" }
+          - { en: "Turn off the phone" }
+          - { en: "Break the screen" }
+        answer: 1
+      - id: "as-3461"
+        prompt: { en: "What should you not do?" }
+        options:
+          - { en: "Share the password" }
+          - { en: "Open the website" }
+          - { en: "Download" }
+        answer: 1
