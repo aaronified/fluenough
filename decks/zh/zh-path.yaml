@@ -508,7 +508,8 @@ units:
       - { id: "a-hotpot-dinner", text: { "en": "Ordering hotpot with friends and asking for the bill" } }
     reading_passages:
       - { id: "scan-to-order-menu", text: { "en": "A phone menu for ordering at the table" } }
-  - planned: { id: "zh-cooking", theme: "cooking", words: 45 }
+  - decks: ["zh-cooking", "zh-cooking-sentences", "zh-reading-cooking", "*"]
+    words: 45
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes tomato and egg stir-fry" } }
     reading_passages:
