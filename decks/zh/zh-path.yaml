@@ -599,7 +599,8 @@ units:
       - { id: "characters-in-town", text: { "en": "Hearing the town words whose characters are taught: shop, hospital, bank, school" } }
     reading_passages:
       - { id: "town-signs", text: { "en": "Shop and building signs in characters" } }
-  - planned: { id: "zh-verbs-3", theme: "verbs-3", words: 60 }
+  - decks: ["zh-verbs-3", "zh-verbs-3-sentences", "zh-reading-verbs-3", "*"]
+    words: 60
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
