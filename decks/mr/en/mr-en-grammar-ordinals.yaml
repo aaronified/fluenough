@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-ordinals"
+kind: "layer"
+core: "mr-grammar-ordinals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Ordinals: first, second, third"
+license: "CC-BY-SA-4.0"
+description: "The first floor, the second week, the tenth day: ordinal numbers, which agree with the noun. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Ordinal numbers, by the noun's gender"
+  slot_name: "gender"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "पुल्लिंगी": "masculine noun", "स्त्रीलिंगी": "feminine noun", "नपुंसकलिंगी": "neuter noun" }
+  entries:
+    "ek": "one; first"
+    "don": "two; second"
+    "teen": "three; third"
+    "chaar": "four; fourth"
+    "paach": "five; fifth"
+    "saha": "six; sixth"
+    "saat": "seven; seventh"
+    "aath": "eight; eighth"
+    "nau": "nine; ninth"
+    "daha": "ten; tenth"
+  notes: "The first to fourth ordinals are their own words: पहिला (pahilā), दुसरा (dusrā), तिसरा (tisrā), चौथा (cauthā). From fifth on, the cardinal takes -वा (-vā) for a masculine noun, -वी (-vī) for a feminine one and -वं (-vaṁ) for a neuter one. The ordinal agrees with the noun it counts: पहिला मजला (pahilā majlā), the first floor, and पहिली खोली (pahilī kholī), the first room. Dates use these too: दुसरा आठवडा (dusrā āṭhvaḍā), the second week."

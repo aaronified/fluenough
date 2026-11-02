@@ -147,7 +147,7 @@ below is written from `decks/index.json` each time the decks change.
 | Irish | Latin | in progress |
 | Italian | Latin | in progress |
 | Japanese | Kana, Kanji | in progress |
-| Kannada | Kannada | A1 |
+| Kannada | Kannada | B1 |
 | Koine Greek | Greek | in progress |
 | Korean | Hangul | in progress |
 | Latin | Latin | in progress |
@@ -156,7 +156,7 @@ below is written from `decks/index.json` each time the decks change.
 | Malay | Latin | in progress |
 | Malayalam | Malayalam | in progress |
 | Mandarin Chinese | Simplified Hanzi, Traditional Hanzi | in progress |
-| Marathi | Devanagari | A1 |
+| Marathi | Devanagari | B1 |
 | Middle English | Latin | in progress |
 | Norwegian (Bokmål) | Latin | in progress |
 | Odia | Odia | in progress |

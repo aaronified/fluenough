@@ -1,0 +1,18 @@
+schema: 1
+id: "mr-en-grammar-indefinites"
+kind: "layer"
+core: "mr-grammar-indefinites"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Someone, anyone, nobody"
+license: "CC-BY-SA-4.0"
+description: "Someone phoned, anything will do, nobody came: the words for some, any and no one, with ही (hī) and तरी (tarī). Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Indefinite words with ही (hī) and तरी (tarī)"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "+ही": "any at all (with ही (hī))", "+तरी": "some or other (with तरी (tarī))" }
+  entries:
+    "koni": "someone; anyone"
+    "kahi": "some; a few"
+  notes: "Add ही (hī) to make any at all: कोणीही येईल (koṇīhī yeīl), anyone at all will come; काहीही चालेल (kāhīhī cālel), anything will do. Add तरी (tarī) to make someone or other: कोणीतरी फोन केला (koṇītarī phon kelā), someone or other phoned, and काहीतरी खा (kāhītarī khā), eat something. With नाही (nāhī), not, the word becomes none: कोणीच नाही (koṇīc nāhī), nobody; काहीच नाही (kāhīc nāhī), nothing."

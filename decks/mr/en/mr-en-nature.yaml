@@ -1,0 +1,115 @@
+schema: 1
+id: "mr-en-nature"
+kind: "layer"
+core: "mr-nature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nature"
+description: "Mountains, valleys, lakes, the sea and forests, with the trees, the sun rising and setting, and the words for a walk outside. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1229":
+    native: "nature"
+    notes:
+      "n1": "{1} is nature, the natural world of land, water and plants."
+    examples:
+      "निसर्ग सुंदर आहे.": { native: "Nature is beautiful.", bases: { "आहे": "to be" } }
+      "निसर्गात फिरायला आवडतं.": { native: "I like to walk in nature.", bases: { "निसर्गात": "nature" } }
+  "mr-1230":
+    native: "valley"
+    notes:
+      "n1": "{1} is a valley between hills."
+    examples:
+      "दरीत धुकं आहे.": { native: "There is fog in the valley.", bases: { "आहे": "to be", "दरीत": "valley" } }
+      "दरीतून नदी वाहते.": { native: "A river flows through the valley.", bases: { "दरीतून": "valley" } }
+  "mr-1231":
+    native: "tree"
+    notes:
+      "n1": "{1} is a tree. Plural: झाडं (jhāḍaṁ) or झाडे (jhāḍe)."
+    examples:
+      "झाड उंच आहे.": { native: "The tree is tall.", bases: { "आहे": "to be" } }
+      "या झाडाला फळं येतात.": { native: "This tree bears fruit.", bases: { "झाडाला": "tree" } }
+  "mr-1232":
+    native: "cliff, edge"
+    notes:
+      "n1": "{1} is a steep cliff or the edge of a hill."
+    examples:
+      "कड्यावरून दृश्य सुंदर दिसतं.": { native: "The view from the cliff looks beautiful.", bases: { "दिसतं": "to appear", "कड्यावरून": "cliff, edge", "दृश्य": "view" } }
+      "कड्याच्या जवळ जाऊ नका.": { native: "Do not go near the cliff.", bases: { "कड्याच्या": "cliff, edge" } }
+  "mr-1233":
+    native: "sand"
+    notes:
+      "n1": "{1} is sand, on a beach or in a desert."
+    examples:
+      "समुद्रकिनारी वाळू गरम आहे.": { native: "The sand by the sea is hot.", bases: { "समुद्रकिनारी": "by the sea", "आहे": "to be" } }
+      "वाळूत खेळलो.": { native: "I played in the sand.", bases: { "वाळूत": "sand" } }
+  "mr-1234":
+    native: "soil, earth"
+    notes:
+      "n1": "{1} is soil or earth."
+    examples:
+      "शेतातली माती काळी आहे.": { native: "The soil in the field is black.", bases: { "आहे": "to be", "काळी": "black" } }
+      "मातीत बी पेरलं.": { native: "I sowed the seed in the soil.", bases: { "पेरलं": "to sow", "मातीत": "soil, earth" } }
+  "mr-1235":
+    native: "island"
+    notes:
+      "n1": "{1} is an island, land surrounded by water."
+    examples:
+      "बेटावर एक मंदिर आहे.": { native: "There is a temple on the island.", bases: { "आहे": "to be", "बेटावर": "island" } }
+      "बोटीने बेटावर गेलो.": { native: "I went to the island by boat.", bases: { "बेटावर": "island", "बोटीने": "boat" } }
+  "mr-1236":
+    native: "meadow, pasture"
+    notes:
+      "n1": "{1} is a meadow or a grassy pasture."
+    examples:
+      "कुरणात गायी चरतात.": { native: "Cows graze in the meadow.", bases: { "चरतात": "to graze", "कुरणात": "meadow, pasture" } }
+      "हिरवं कुरण छान दिसतं.": { native: "The green meadow looks nice.", bases: { "दिसतं": "to appear" } }
+  "mr-1237":
+    native: "sunrise"
+    notes:
+      "n1": "{1} is sunrise, the time when the sun comes up."
+    examples:
+      "सूर्योदय पाहायला गेलो.": "I went to see the sunrise."
+      "सूर्योदयाच्या वेळी थंडी असते.": { native: "It is cold at sunrise.", bases: { "असते": "to be", "सूर्योदयाच्या": "sunrise" } }
+  "mr-1238":
+    native: "sunset"
+    notes:
+      "n1": "{1} is sunset, the time when the sun goes down."
+    examples:
+      "सूर्यास्त खूप सुंदर होता.": { native: "The sunset was very beautiful.", bases: { "होता": "to be" } }
+      "सूर्यास्तानंतर अंधार पडतो.": { native: "After sunset it becomes dark.", bases: { "सूर्यास्तानंतर": "sunset", "अंधार": "dark" } }
+  "mr-1239":
+    native: "moon"
+    notes:
+      "n1": "{1} is the moon."
+    examples:
+      "आज चंद्र पूर्ण आहे.": { native: "The moon is full today.", bases: { "आहे": "to be", "पूर्ण": "complete" } }
+      "चंद्र आकाशात दिसतो.": { native: "The moon is seen in the sky.", bases: { "दिसतो": "to appear" } }
+  "mr-1240":
+    native: "star"
+    notes:
+      "n1": "{1} is a star."
+    examples:
+      "आकाशात तारे चमकतात.": { native: "Stars shine in the sky.", bases: { "तारे": "star" } }
+      "एक तारा दिसत आहे.": { native: "One star is visible.", bases: { "दिसत": "to appear", "आहे": "to be" } }
+  "mr-1241":
+    native: "to rise (sun, moon)"
+    notes:
+      "n1": "{1} is rising, used for the sun and the moon coming up."
+    examples:
+      "सूर्य पूर्वेला उगवतो.": { native: "The sun rises in the east.", bases: { "पूर्वेला": "in the east", "उगवतो": "to rise (sun, moon)" } }
+      "चंद्र उगवला.": { native: "The moon rose.", bases: { "उगवला": "to rise (sun, moon)" } }
+  "mr-1242":
+    native: "to set (sun, moon)"
+    notes:
+      "n1": "{1} is setting, used for the sun and the moon going down."
+    examples:
+      "सूर्य पश्चिमेला मावळतो.": { native: "The sun sets in the west.", bases: { "पश्चिमेला": "in the west", "मावळतो": "to set (sun, moon)" } }
+      "चंद्र मावळत आहे.": { native: "The moon is setting.", bases: { "आहे": "to be", "मावळत": "to set (sun, moon)" } }
+  "mr-1243":
+    native: "to bloom"
+    notes:
+      "n1": "{1} is a flower opening, or blossoming."
+    examples:
+      "गुलाब फुलला आहे.": { native: "The rose has bloomed.", bases: { "आहे": "to be", "फुलला": "to bloom", "गुलाब": "rose" } }
+      "बाग छान फुलली.": { native: "The garden bloomed nicely.", bases: { "फुलली": "to bloom" } }

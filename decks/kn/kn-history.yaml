@@ -1,0 +1,175 @@
+schema: 1
+id: "kn-history"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "history"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1541"
+    target: "ಇತಿಹಾಸ"
+    reading: "itihāsa"
+    ipa: "it̪ihaːsa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇತಿಹಾಸ ಇಷ್ಟ.", reading: "itihāsa iṣṭa.", ipa: "it̪ihaːsa iʂʈa" }
+      - { target: "ಇತಿಹಾಸ ಪುಸ್ತಕ ಓದು.", reading: "itihāsa pustaka ōdu.", ipa: "it̪ihaːsa pust̪aka oːd̪u" }
+  - id: "kn-1542"
+    target: "ರಾಜ"
+    reading: "rāja"
+    ipa: "raːdʒa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಾಜ ಬಂದ.", reading: "rāja banda.", ipa: "raːdʒa band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ರಾಜನ ಕೋಟೆ ದೊಡ್ಡದು.", reading: "rājana kōṭe doḍḍadu.", ipa: "raːdʒana koːʈe d̪oɖɖad̪u", bases: [{ word: "ರಾಜನ", base: "ರಾಜ", reading: "rāja" }, { word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1543"
+    target: "ರಾಣಿ"
+    reading: "rāṇi"
+    ipa: "raːɳi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಾಣಿ ಬಂದರು.", reading: "rāṇi bandaru.", ipa: "raːɳi band̪aru" }
+      - { target: "ರಾಣಿ ಅರಮನೆಯಲ್ಲಿ ಇದ್ದಾರೆ.", reading: "rāṇi aramaneyalli iddāre.", ipa: "raːɳi aramanejalli id̪d̪aːre", bases: [{ word: "ಅರಮನೆಯಲ್ಲಿ", base: "ಅರಮನೆ", reading: "aramane" }, { word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1544"
+    target: "ಅರಮನೆ"
+    reading: "aramane"
+    ipa: "aramane"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅರಮನೆ ಸುಂದರ.", reading: "aramane sundara.", ipa: "aramane sund̪ara" }
+      - { target: "ಅರಮನೆಗೆ ಹೋಗು.", reading: "aramanege hōgu.", ipa: "aramaneɡe hoːɡu", bases: [{ word: "ಅರಮನೆಗೆ", base: "ಅರಮನೆ", reading: "aramane" }] }
+  - ref: "kn-0845"
+  - id: "kn-1545"
+    target: "ಯುದ್ಧ"
+    reading: "yuddha"
+    ipa: "jud̪d̪ʱa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಯುದ್ಧ ನಡೆಯಿತು.", reading: "yuddha naḍeyitu.", ipa: "jud̪d̪ʱa naɖejit̪u", bases: [{ word: "ನಡೆಯಿತು", ref: "kn-0643" }] }
+      - { target: "ಯುದ್ಧ ಬೇಡ.", reading: "yuddha bēḍa.", ipa: "jud̪d̪ʱa beːɖa" }
+  - id: "kn-1546"
+    target: "ಸೈನಿಕ"
+    reading: "sainika"
+    ipa: "sainika"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸೈನಿಕ ಬಂದ.", reading: "sainika banda.", ipa: "sainika band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಸೈನಿಕರು ಕೋಟೆಯಲ್ಲಿ ಇದ್ದಾರೆ.", reading: "sainikaru kōṭeyalli iddāre.", ipa: "sainikaru koːʈejalli id̪d̪aːre", bases: [{ word: "ಸೈನಿಕರು", base: "ಸೈನಿಕ", reading: "sainika" }, { word: "ಕೋಟೆಯಲ್ಲಿ", ref: "kn-0845" }, { word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1547"
+    target: "ವೀರ"
+    reading: "vīra"
+    ipa: "ʋiːra"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೀರ ಬಂದ.", reading: "vīra banda.", ipa: "ʋiːra band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ವೀರರು ಯುದ್ಧ ಮಾಡಿದರು.", reading: "vīraru yuddha māḍidaru.", ipa: "ʋiːraru jud̪d̪ʱa maːɖid̪aru", bases: [{ word: "ವೀರರು", base: "ವೀರ", reading: "vīra" }, { word: "ಮಾಡಿದರು", ref: "kn-0630" }] }
+  - id: "kn-1548"
+    target: "ಸಾಮ್ರಾಜ್ಯ"
+    reading: "sāmrājya"
+    ipa: "saːmraːdʒja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಾಮ್ರಾಜ್ಯ ದೊಡ್ಡದು.", reading: "sāmrājya doḍḍadu.", ipa: "saːmraːdʒja d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಸಾಮ್ರಾಜ್ಯದಲ್ಲಿ ಹಲವು ಊರು ಇದ್ದವು.", reading: "sāmrājyadalli halavu ūru iddavu.", ipa: "saːmraːdʒjad̪alli halaʋu uːru id̪d̪aʋu", bases: [{ word: "ಸಾಮ್ರಾಜ್ಯದಲ್ಲಿ", base: "ಸಾಮ್ರಾಜ್ಯ", reading: "sāmrājya" }, { word: "ಇದ್ದವು", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1549"
+    target: "ಶಾಸನ"
+    reading: "śāsana"
+    ipa: "ʃaːsana"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶಾಸನ ಓದು.", reading: "śāsana ōdu.", ipa: "ʃaːsana oːd̪u" }
+      - { target: "ಶಾಸನ ಹಳೆ.", reading: "śāsana haḷe.", ipa: "ʃaːsana haɭe" }
+  - id: "kn-1550"
+    target: "ಕಾಲ"
+    reading: "kāla"
+    ipa: "kaːla"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆ ಕಾಲ ಚೆನ್ನಾಗಿತ್ತು.", reading: "ā kāla cennāgittu.", ipa: "aː kaːla tʃennaːɡit̪t̪u", bases: [{ word: "ಚೆನ್ನಾಗಿತ್ತು", ref: "kn-0664" }] }
+      - { target: "ಈ ಕಾಲದಲ್ಲಿ ಯುದ್ಧ ಇತ್ತು.", reading: "ī kāladalli yuddha ittu.", ipa: "iː kaːlad̪alli jud̪d̪ʱa it̪t̪u", bases: [{ word: "ಕಾಲದಲ್ಲಿ", base: "ಕಾಲ", reading: "kāla" }, { word: "ಇತ್ತು", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1551"
+    target: "ಶತಮಾನ"
+    reading: "śatamāna"
+    ipa: "ʃat̪amaːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶತಮಾನ ಹಿಂದೆ.", reading: "śatamāna hinde.", ipa: "ʃat̪amaːna hind̪e" }
+      - { target: "ಈ ಶತಮಾನ ದೊಡ್ಡದು.", reading: "ī śatamāna doḍḍadu.", ipa: "iː ʃat̪amaːna d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1552"
+    target: "ಪ್ರಾಚೀನ"
+    reading: "prācīna"
+    ipa: "praːtʃiːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರಾಚೀನ ಕೋಟೆ.", reading: "prācīna kōṭe.", ipa: "praːtʃiːna koːʈe" }
+      - { target: "ಈ ದೇವಸ್ಥಾನ ಪ್ರಾಚೀನ.", reading: "ī dēvasthāna prācīna.", ipa: "iː d̪eːʋast̪ʰaːna praːtʃiːna" }
+  - id: "kn-1553"
+    target: "ಗೋಪುರ"
+    reading: "gōpura"
+    ipa: "ɡoːpura"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗೋಪುರ ಎತ್ತರ.", reading: "gōpura ettara.", ipa: "ɡoːpura et̪t̪ara" }
+      - { target: "ಗೋಪುರ ಇದೆ.", reading: "gōpura ide.", ipa: "ɡoːpura id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1554"
+    target: "ಸ್ವಾತಂತ್ರ್ಯ"
+    reading: "svātantrya"
+    ipa: "sʋaːt̪ant̪rja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸ್ವಾತಂತ್ರ್ಯ ಬೇಕು.", reading: "svātantrya bēku.", ipa: "sʋaːt̪ant̪rja beːku" }
+      - { target: "ದೇಶಕ್ಕೆ ಸ್ವಾತಂತ್ರ್ಯ ಸಿಕ್ಕಿತು.", reading: "dēśakke svātantrya sikkitu.", ipa: "d̪eːʃakke sʋaːt̪ant̪rja sikkit̪u", bases: [{ word: "ದೇಶಕ್ಕೆ", ref: "kn-0205" }, { word: "ಸಿಕ್ಕಿತು", base: "ಸಿಕ್ಕು", reading: "sikku" }] }
+  - id: "kn-1555"
+    target: "ರಾಜವಂಶ"
+    reading: "rājavamśa"
+    ipa: "raːdʒaʋamʃa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಾಜವಂಶ ದೊಡ್ಡದು.", reading: "rājavamśa doḍḍadu.", ipa: "raːdʒaʋamʃa d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ರಾಜವಂಶದ ರಾಜ ಬಂದ.", reading: "rājavamśada rāja banda.", ipa: "raːdʒaʋamʃad̪a raːdʒa band̪a", bases: [{ word: "ರಾಜವಂಶದ", base: "ರಾಜವಂಶ", reading: "rājavamśa" }, { word: "ಬಂದ", ref: "kn-0632" }] }
+  - ref: "kn-1239"

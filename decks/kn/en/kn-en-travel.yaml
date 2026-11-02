@@ -1,0 +1,136 @@
+schema: 1
+id: "kn-en-travel"
+kind: "layer"
+core: "kn-travel"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel: hotels, bookings and trips"
+license: "CC-BY-SA-4.0"
+description: "Travelling for a few days: a hotel room and the reception, booking a room, the passport and the luggage, and the places a tourist visits. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "kn-1383":
+    native: "tour, trip"
+    notes:
+      "n1": "A tour or a trip for pleasure, away from home."
+    examples:
+      "ಪ್ರವಾಸ ಚೆನ್ನಾಗಿತ್ತು.": "The trip was good."
+      "ಈ ವರ್ಷ ಪ್ರವಾಸ ಹೋಗುತ್ತೇವೆ.": "We go on a trip this year."
+  "kn-1384":
+    native: "tourist"
+    notes:
+      "n1": "A tourist, a person who travels for pleasure."
+    examples:
+      "ಪ್ರವಾಸಿ ಬಂದರು.": "The tourists came."
+      "ಪ್ರವಾಸಿಗಳು ನದಿಗೆ ಹೋದರು.": { native: "The tourists went to the river.", bases: { "ಪ್ರವಾಸಿಗಳು": "the tourists" } }
+  "kn-1385":
+    native: "hotel, guest house"
+    notes:
+      "n1": "A hotel or a guest house, where travellers sleep for a night."
+    examples:
+      "ವಸತಿಗೃಹ ಎಲ್ಲಿ?": "Where is the hotel?"
+      "ವಸತಿಗೃಹ ಹತ್ತಿರ ಇದೆ.": { native: "The hotel is near.", bases: { "ಇದೆ": "is" } }
+  "kn-1386":
+    native: "room"
+    notes:
+      "n1": "A room in a hotel or a house."
+    examples:
+      "ಕೊಠಡಿ ಬೇಕು.": "I need a room."
+      "ಕೊಠಡಿ ಸ್ವಚ್ಛ ಇದೆ.": { native: "The room is clean.", bases: { "ಇದೆ": "is" } }
+  "kn-1387":
+    native: "reception desk"
+    notes:
+      "n1": "The reception desk of a hotel, where guests check in."
+    examples:
+      "ರಿಸೆಪ್ಷನ್ ಎಲ್ಲಿ?": "Where is the reception?"
+      "ರಿಸೆಪ್ಷನ್ ಹತ್ತಿರ ಇದೆ.": { native: "The reception is near.", bases: { "ಇದೆ": "is" } }
+  "kn-1388":
+    native: "booking"
+    notes:
+      "n1": "A booking, a reservation for a room or a seat."
+    examples:
+      "ಬುಕಿಂಗ್ ಆಯಿತು.": "The booking was made."
+      "ಬುಕಿಂಗ್ ಬೇಕು.": "I need a booking."
+  "kn-1389":
+    native: "to reserve"
+    notes:
+      "n1": "To reserve a room or a seat in advance."
+    examples:
+      "ಕೊಠಡಿ ಕಾಯ್ದಿರಿಸು.": "Reserve a room."
+      "ನಾನು ಕೊಠಡಿ ಕಾಯ್ದಿರಿಸಿದೆ.": { native: "I reserved a room.", bases: { "ಕಾಯ್ದಿರಿಸಿದೆ": "reserved" } }
+  "kn-1390":
+    native: "passport"
+    notes:
+      "n1": "A passport, needed to travel to another country."
+    examples:
+      "ಪಾಸ್ಪೋರ್ಟ್ ತೆಗೆದುಕೊ.": "Take the passport."
+      "ಪಾಸ್ಪೋರ್ಟ್ ಬೇಕು.": "I need a passport."
+  "kn-1391":
+    native: "visa"
+    notes:
+      "n1": "A visa, permission to enter another country."
+    examples:
+      "ವೀಸಾ ಇದೆಯೇ?": { native: "Is there a visa?", bases: { "ಇದೆಯೇ": "is there" } }
+      "ವೀಸಾ ಬೇಕು.": "A visa is needed."
+  "kn-1392":
+    native: "luggage"
+    notes:
+      "n1": "Luggage, the bags you take on a trip."
+    examples:
+      "ಲಗೇಜ್ ತೆಗೆದುಕೊ.": "Take the luggage."
+      "ಲಗೇಜ್ ಭಾರ ಇದೆ.": { native: "The luggage is heavy.", bases: { "ಇದೆ": "is" } }
+  "kn-1393":
+    native: "suitcase"
+    notes:
+      "n1": "A suitcase, for clothes on a trip."
+    examples:
+      "ಸೂಟ್ಕೇಸ್ ಎಲ್ಲಿ?": "Where is the suitcase?"
+      "ಸೂಟ್ಕೇಸ್ ಚಿಕ್ಕದು.": "The suitcase is small."
+  "kn-1394":
+    native: "place, spot"
+    notes:
+      "n1": "A place or a spot, a location."
+    examples:
+      "ಈ ಸ್ಥಳ ಸುಂದರ.": "This place is beautiful."
+      "ಸ್ಥಳಕ್ಕೆ ಹೋಗು.": { native: "Go to the place.", bases: { "ಸ್ಥಳಕ್ಕೆ": "to the place" } }
+  "kn-1395":
+    native: "monument"
+    notes:
+      "n1": "A monument, a famous old building or memorial."
+    examples:
+      "ಸ್ಮಾರಕ ನೋಡು.": "See the monument."
+      "ಸ್ಮಾರಕ ಹಳೆ.": "The monument is old."
+  "kn-1396":
+    native: "beach"
+    notes:
+      "n1": "A beach, where the sea meets the land."
+    examples:
+      "ಬೀಚ್ ಸುಂದರ.": "The beach is beautiful."
+      "ಬೀಚಿಗೆ ಹೋಗೋಣ.": { native: "Let us go to the beach.", bases: { "ಬೀಚಿಗೆ": "to the beach" } }
+  "kn-1397":
+    native: "visit"
+    notes:
+      "n1": "A visit to a place or a person."
+    examples:
+      "ನಾಳೆ ಭೇಟಿ ಇದೆ.": { native: "There is a visit tomorrow.", bases: { "ಇದೆ": "there is" } }
+      "ಸ್ಮಾರಕದ ಭೇಟಿ ಒಳ್ಳೆಯದು.": { native: "A visit to the monument is good.", bases: { "ಸ್ಮಾರಕದ": "of the monument" } }
+  "kn-1398":
+    native: "scenic, worth seeing"
+    notes:
+      "n1": "Scenic, worth seeing, said of a place."
+    examples:
+      "ಪ್ರೇಕ್ಷಣೀಯ ಸ್ಥಳ.": "A place worth seeing."
+      "ಈ ಊರು ಪ್ರೇಕ್ಷಣೀಯ.": "This town is scenic."
+  "kn-1399":
+    native: "check, cheque"
+    notes:
+      "n1": "A check, a cheque for payment, or a check of something."
+    examples:
+      "ಚೆಕ್ ಕೊಡಿ.": "Please give a cheque."
+      "ಚೆಕ್ ನೋಡು.": "Check it."
+  "kn-1400":
+    native: "safe"
+    notes:
+      "n1": "Safe, free from danger."
+    examples:
+      "ವಸತಿಗೃಹ ಸುರಕ್ಷಿತ.": "The hotel is safe."
+      "ಈ ಸ್ಥಳ ಸುರಕ್ಷಿತ ಅಲ್ಲ.": "This place is not safe."

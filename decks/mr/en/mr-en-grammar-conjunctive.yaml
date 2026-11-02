@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-conjunctive"
+kind: "layer"
+core: "mr-grammar-conjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Chaining actions: having gone, and then"
+license: "CC-BY-SA-4.0"
+description: "Having gone home, I ate; without asking, she left: chaining one action after another with the same doer. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Conjunctive participle: a second action by the same doer"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "-ऊन": "having done (-ūn)", "न-ता": "without doing (na ... -tā)" }
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do"
+    "khaane": "to eat"
+    "pine": "to drink"
+    "vachne": "to read"
+    "lihine": "to write"
+    "dene": "to give"
+    "ghene": "to take"
+    "paahne": "to see"
+  notes: "The -ऊन (-ūn) form joins two actions by the same doer, the first finished before the second: तो घरी जाऊन जेवला (to gharī jāūn jevlā), he went home and ate. It does not change for the person. Its stem is the verb with -ऊन (-ūn), and some verbs change their stem: लिहिणे (lihiṇe) gives लिहून (lihūn), and करणे (karṇe) gives करून (karūn). The न (na) ... -ता (-tā) form means without: न सांगता (na sāṅgatā) is without telling, and न बोलता जेवले (na bolatā jevle) is they ate without talking."

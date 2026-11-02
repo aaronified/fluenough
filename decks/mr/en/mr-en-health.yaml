@@ -1,0 +1,138 @@
+schema: 1
+id: "mr-en-health"
+kind: "layer"
+core: "mr-health"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health"
+description: "Staying healthy: exercise, diet, sleep and the body's organs, with the words for common long illnesses, check-ups and first aid. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1297":
+    native: "health (general)"
+    notes:
+      "n1": "{1} is health, the state of the body and mind."
+    examples:
+      "आरोग्य चांगलं ठेवा.": "Keep your health good."
+      "आरोग्यासाठी व्यायाम महत्त्वाचा आहे.": { native: "Exercise is important for health.", bases: { "महत्त्वाचा": "important", "आहे": "to be", "आरोग्यासाठी": "health (general)" } }
+  "mr-1298":
+    native: "exercise"
+    notes:
+      "n1": "{1} is exercise. The phrase व्यायाम करणे (vyāyām karṇe) means to exercise."
+    examples:
+      "रोज व्यायाम करतो.": "I exercise every day."
+      "सकाळचा व्यायाम चांगला असतो.": { native: "Morning exercise is good.", bases: { "असतो": "to be" } }
+  "mr-1299":
+    native: "diet, food intake"
+    notes:
+      "n1": "{1} is diet, the food a person eats regularly."
+    examples:
+      "संतुलित आहार घ्या.": { native: "Eat a balanced diet.", bases: { "संतुलित": "balanced" } }
+      "आहारात भाज्या असायला हव्यात.": { native: "Vegetables should be in the diet.", bases: { "असायला": "to be", "आहारात": "diet, food intake" } }
+  "mr-1300":
+    native: "nutritious"
+    notes:
+      "n1": "{1} describes food that is good for health."
+    examples:
+      "डाळ पौष्टिक असते.": { native: "Lentils are nutritious.", bases: { "असते": "to be" } }
+      "पौष्टिक जेवण घ्या.": "Eat nutritious food."
+  "mr-1301":
+    native: "vitamin"
+    notes:
+      "n1": "{1} is a vitamin, needed in small amounts for health."
+    examples:
+      "फळांत जीवनसत्त्व असतात.": { native: "Fruit has vitamins.", bases: { "असतात": "to be" } }
+      "जीवनसत्त्वाची गोळी घ्या.": { native: "Take a vitamin tablet.", bases: { "जीवनसत्त्वाची": "vitamin" } }
+  "mr-1302":
+    native: "sleep"
+    notes:
+      "n1": "{1} is sleep. The verb is झोपणे (jhopṇe), to sleep."
+    examples:
+      "रात्री आठ तास झोप घ्या.": "Sleep eight hours at night."
+      "चांगली झोप आरोग्यासाठी आवश्यक आहे.": { native: "Good sleep is needed for health.", bases: { "आहे": "to be", "आवश्यक": "necessary" } }
+  "mr-1303":
+    native: "diabetes"
+    notes:
+      "n1": "{1} is diabetes, a long illness with sugar in the blood."
+    examples:
+      "आजोबांना मधुमेह आहे.": { native: "Grandfather has diabetes.", bases: { "आहे": "to be" } }
+      "मधुमेहात गोड कमी खा.": { native: "With diabetes eat less sugar.", bases: { "मधुमेहात": "diabetes", "कमी": "less" } }
+  "mr-1304":
+    native: "blood pressure"
+    notes:
+      "n1": "{1} is blood pressure."
+    examples:
+      "त्यांचा रक्तदाब वाढला.": "Their blood pressure went up."
+      "रक्तदाब नियमित तपासा.": { native: "Check the blood pressure regularly.", bases: { "नियमित": "regularly" } }
+  "mr-1305":
+    native: "addiction, habit"
+    notes:
+      "n1": "{1} is an addiction or a harmful habit."
+    examples:
+      "व्यसन सोडा.": "Give up the habit."
+      "धूम्रपान हे वाईट व्यसन आहे.": { native: "Smoking is a bad habit.", bases: { "आहे": "to be", "वाईट": "bad" } }
+  "mr-1306":
+    native: "smoking"
+    notes:
+      "n1": "{1} is smoking tobacco."
+    examples:
+      "धूम्रपान आरोग्यासाठी हानिकारक आहे.": { native: "Smoking is harmful to health.", bases: { "आहे": "to be", "हानिकारक": "harmful" } }
+      "येथे धूम्रपान करू नका.": { native: "Do not smoke here.", bases: { "येथे": "here" } }
+  "mr-1307":
+    native: "stress, strain"
+    notes:
+      "n1": "{1} is stress, pressure on the mind."
+    examples:
+      "कामाचा ताण वाढला.": "The stress of work increased."
+      "ताण कमी करण्यासाठी फिरायला जा.": { native: "Go for a walk to reduce stress.", bases: { "कमी": "less" } }
+  "mr-1308":
+    native: "vaccine"
+    notes:
+      "n1": "{1} is a vaccine, given by injection to prevent illness."
+    examples:
+      "मुलाला लस दिली.": "I gave the child a vaccine."
+      "लस घेणे सुरक्षित आहे.": { native: "Taking the vaccine is safe.", bases: { "सुरक्षित": "safe", "आहे": "to be" } }
+  "mr-1309":
+    native: "vaccination"
+    notes:
+      "n1": "{1} is vaccination, the act of giving vaccines."
+    examples:
+      "लसीकरण मोहीम सुरू आहे.": { native: "The vaccination drive is going on.", bases: { "मोहीम": "drive", "सुरू": "going on", "आहे": "to be" } }
+      "लसीकरणाची वेळ कधी आहे?": { native: "When is the time of vaccination?", bases: { "आहे": "to be", "लसीकरणाची": "vaccination" } }
+  "mr-1310":
+    native: "treatment"
+    notes:
+      "n1": "{1} is medical treatment."
+    examples:
+      "डॉक्टर उपचार करत आहेत.": { native: "The doctor is treating him.", bases: { "आहेत": "to be" } }
+      "उपचारानंतर तो बरा झाला.": { native: "After the treatment he got well.", bases: { "झाला": "to become", "उपचारानंतर": "treatment" } }
+  "mr-1311":
+    native: "disease, illness"
+    notes:
+      "n1": "{1} is a disease or a long illness."
+    examples:
+      "हा आजार संसर्गजन्य आहे.": { native: "This disease is contagious.", bases: { "आहे": "to be", "संसर्गजन्य": "contagious" } }
+      "आजार कधी बरा होईल?": { native: "When will the illness get better?", bases: { "होईल": "to become" } }
+  "mr-1312":
+    native: "first aid"
+    notes:
+      "n1": "{1} is first aid: help given at once before a doctor comes."
+    examples:
+      "प्रथमोपचार पेटी कुठे आहे?": { native: "Where is the first aid box?", bases: { "कुठे": "where", "आहे": "to be" } }
+      "जखमेवर प्रथमोपचार केला.": "I gave first aid to the wound."
+  "mr-1313":
+    native: "care, worry"
+    notes:
+      "n1": "{1} is care, or worry. The phrase काळजी घेणे (kāḷjī gheṇe) means to take care."
+    examples:
+      "आजीची काळजी घ्या.": "Take care of grandmother."
+      "तुझी काळजी वाटते.": { native: "I am worried about you.", bases: { "वाटते": "to feel" } }
+  "mr-1314":
+    native: "to recover, to get well"
+    notes:
+      "n1": "{1} is getting well after an illness."
+    bases:
+      "होणे": "to be; to become"
+    examples:
+      "तो लवकर बरा झाला.": { native: "He got well quickly.", bases: { "झाला": "to become" } }
+      "आशा आहे की तू लवकर बरा होशील.": { native: "I hope you get well soon.", bases: { "होशील": "to become", "आहे": "to be" } }

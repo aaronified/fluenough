@@ -1,0 +1,26 @@
+schema: 1
+id: "mr-en-grammar-before-after"
+kind: "layer"
+core: "mr-grammar-before-after"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Before and after: before going, after going"
+license: "CC-BY-SA-4.0"
+description: "Before going and after eating: putting one action before or after another, with the verb in its before and after forms. Not yet checked by a Marathi speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Before and after an action: -ण्यापूर्वी (-ṇyāpūrvī) and -ल्यानंतर (-lyānantar)"
+  slot_name: "time"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots: { "-ण्यापूर्वी": "before doing it", "-ल्यानंतर": "after doing it" }
+  entries:
+    "jaane": "to go"
+    "yene": "to come"
+    "karne": "to do"
+    "khaane": "to eat"
+    "pine": "to drink"
+    "vachne": "to read"
+    "bolne": "to speak"
+    "paahne": "to see"
+    "dene": "to give"
+    "ghene": "to take"
+  notes: "Before an action use the verb with -ण्यापूर्वी (-ṇyāpūrvī), as in जेवण्यापूर्वी हात धुवा (jevṇyāpūrvī hāt dhuvā), wash your hands before eating. After an action use the past stem with -ल्यानंतर (-lyānantar), as in जेवल्यानंतर झोप (jevlyānantar jhop), sleep after eating. The simple words आधी (ādhī), before, and नंतर (nantar), after, go with a noun or a time: जेवणाआधी (jevṇāādhī), before the meal; जेवणानंतर (jevṇānantar), after the meal."

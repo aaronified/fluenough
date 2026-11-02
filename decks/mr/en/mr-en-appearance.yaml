@@ -1,0 +1,103 @@
+schema: 1
+id: "mr-en-appearance"
+kind: "layer"
+core: "mr-appearance"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Appearance"
+description: "Describing a person: face, hair, height, build and what they wear to be seen, such as glasses or a beard. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1160":
+    native: "height"
+    notes:
+      "n1": "{1} is height, how tall someone is."
+    examples:
+      "त्याची उंची किती आहे?": { native: "How tall is he?", bases: { "आहे": "to be" } }
+      "माझी उंची पाच फूट आहे.": { native: "My height is five feet.", bases: { "आहे": "to be", "फूट": "foot, feet" } }
+  "mr-1161":
+    native: "short (of height)"
+    notes:
+      "n1": "{1} means short, of a person's height."
+    examples:
+      "लहान भाऊ बुटका आहे.": { native: "My younger brother is short.", bases: { "आहे": "to be" } }
+      "बुटक्या माणसाला मदत करा.": { native: "Help the short man.", bases: { "बुटक्या": "short (of height)" } }
+  "mr-1162":
+    native: "fat, thick"
+    notes:
+      "n1": "{1} means fat or thick. It is not polite to say it of a person."
+    examples:
+      "ही पिशवी जाड आहे.": { native: "This bag is thick.", bases: { "आहे": "to be" } }
+      "त्याचा कोट जाड आहे.": { native: "His coat is thick.", bases: { "आहे": "to be" } }
+  "mr-1163":
+    native: "thin, slim"
+    notes:
+      "n1": "{1} means thin or slim, of a person or of a thing."
+    examples:
+      "ती बारीक आहे.": { native: "She is slim.", bases: { "आहे": "to be" } }
+      "बारीक दोरी आणा.": { native: "Bring a thin rope.", bases: { "दोरी": "rope" } }
+  "mr-1164":
+    native: "fair-skinned"
+    notes:
+      "n1": "{1} describes a fair complexion. Its opposite is सावळा (sāvḷā), dark-complexioned."
+    examples:
+      "ती गोरी आहे.": { native: "She is fair.", bases: { "आहे": "to be", "गोरी": "fair-skinned" } }
+      "त्याचा रंग गोरा आहे.": { native: "His complexion is fair.", bases: { "आहे": "to be", "गोरा": "fair-skinned", "रंग": "colours" } }
+  "mr-1165":
+    native: "dark-complexioned"
+    notes:
+      "n1": "{1} describes a darker complexion, a common word in Marathi."
+    examples:
+      "तो सावळा आहे.": { native: "He is dark-complexioned.", bases: { "आहे": "to be" } }
+      "सावळ्या मुलीला पाहिलं.": { native: "I saw the dark-complexioned girl.", bases: { "सावळ्या": "dark-complexioned" } }
+  "mr-1166":
+    native: "curly"
+    notes:
+      "n1": "{1} describes curly hair."
+    examples:
+      "त्याचे केस कुरळे आहेत.": { native: "His hair is curly.", bases: { "आहेत": "to be" } }
+      "कुरळ्या केसांची मुलगी हसते.": { native: "The girl with curly hair smiles.", bases: { "हसते": "to smile", "कुरळ्या": "curly" } }
+  "mr-1167":
+    native: "beard"
+    notes:
+      "n1": "{1} is a beard."
+    examples:
+      "त्याची दाढी पांढरी आहे.": { native: "His beard is white.", bases: { "आहे": "to be" } }
+      "रोज दाढी करतो.": "I shave every day."
+  "mr-1168":
+    native: "moustache"
+    notes:
+      "n1": "{1} is a moustache."
+    examples:
+      "त्याला मिशी आहे.": { native: "He has a moustache.", bases: { "आहे": "to be" } }
+      "मिशी लांब आहे.": { native: "The moustache is long.", bases: { "आहे": "to be" } }
+  "mr-1169":
+    native: "bald head"
+    notes:
+      "n1": "{1} is a bald head, a man with no hair on top of his head."
+    examples:
+      "त्याला टक्कल पडलं आहे.": { native: "He has gone bald.", bases: { "आहे": "to be", "पडलं": "to fall (hair)" } }
+      "वय वाढलं की टक्कल पडतं.": { native: "When one grows older, one goes bald.", bases: { "पडतं": "to fall (hair)" } }
+  "mr-1170":
+    native: "forehead"
+    notes:
+      "n1": "{1} is the forehead, the part above the eyes."
+    examples:
+      "त्याच्या कपाळावर घाम आहे.": { native: "There is sweat on his forehead.", bases: { "आहे": "to be", "कपाळावर": "forehead", "घाम": "sweat" } }
+      "कपाळावर टिकली लावली.": { native: "I put a bindi on my forehead.", bases: { "लावली": "to put", "कपाळावर": "forehead", "टिकली": "bindi" } }
+  "mr-1171":
+    native: "chin"
+    notes:
+      "n1": "{1} is the chin."
+    examples:
+      "तिने हनुवटीवर हात ठेवला.": { native: "She put her hand on her chin.", bases: { "हनुवटीवर": "chin" } }
+      "हनुवटी गोल आहे.": { native: "The chin is round.", bases: { "गोल": "round", "आहे": "to be" } }
+  "mr-1172":
+    native: "to wear clothes"
+    notes:
+      "n1": "{1} is the verb for putting on clothes."
+    bases:
+      "कपडे": "clothes"
+    examples:
+      "ती पांढरी साडी घालते.": { native: "She wears a white sari.", bases: { "घालते": "to wear" } }
+      "तो नवीन शर्ट घालतो.": { native: "He wears a new shirt.", bases: { "घालतो": "to wear" } }

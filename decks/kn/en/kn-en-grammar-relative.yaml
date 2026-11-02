@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-relative"
+kind: "layer"
+core: "kn-grammar-relative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relative participles: the one who came"
+license: "CC-BY-SA-4.0"
+description: "Describing a person or thing by what they did: the one who came, the one who will come, the one who did not come. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Relative participle"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+  notes: "A relative participle comes before a noun and describes it: ಬಂದ (banda) is 'who came', ಬರುವ (baruva) is 'who comes or will come', and ಬರದ (barada) is 'who did not come'. The one who came is ಬಂದವನು (bandavanu), and ಬಂದವಳು (bandavaḷu) for a woman."

@@ -1,0 +1,122 @@
+schema: 1
+id: "mr-en-housing"
+kind: "layer"
+core: "mr-housing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing"
+description: "Finding and renting a home: the flat, the rooms and fittings, the owner and tenant, the deposit and the rent agreement. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1645":
+    native: "flat, apartment"
+    notes:
+      "n1": "{1} is a flat, a loanword from English."
+    examples:
+      "आम्ही नवीन फ्लॅट घेतला.": { native: "We bought a new flat.", bases: { "नवीन": "new" } }
+      "फ्लॅट तिसऱ्या मजल्यावर आहे.": { native: "The flat is on the third floor.", bases: { "तिसऱ्या": "third", "आहे": "to be" } }
+  "mr-1646":
+    native: "tenant"
+    notes:
+      "n1": "{1} is a tenant who pays rent to live in a place."
+    examples:
+      "भाडेकरू वेळेवर भाडं देतो.": "The tenant pays the rent on time."
+      "भाडेकरूने खोली सोडली.": { native: "The tenant left the room.", bases: { "भाडेकरूने": "tenant" } }
+  "mr-1647":
+    native: "landlord, house owner"
+    notes:
+      "n1": "{1} is the owner of a house who lets it to tenants."
+    examples:
+      "घरमालक खूप चांगले आहेत.": { native: "The landlord is very good.", bases: { "आहेत": "to be" } }
+      "घरमालकाला फोन केला.": { native: "I called the landlord.", bases: { "घरमालकाला": "landlord, house owner" } }
+  "mr-1648":
+    native: "security deposit"
+    notes:
+      "n1": "{1} is a deposit paid when renting, returned when you leave."
+    examples:
+      "दोन महिन्यांची अनामत द्यावी लागेल.": { native: "Two months' deposit will have to be paid.", bases: { "लागेल": "to have to" } }
+      "अनामत परत मिळेल का?": { native: "Will the deposit be returned?", bases: { "परत": "back", "मिळेल": "to get" } }
+  "mr-1649":
+    native: "agreement, contract"
+    notes:
+      "n1": "{1} is a written agreement, such as a rent contract."
+    examples:
+      "भाडेकरार अकरा महिन्यांचा आहे.": { native: "The rent agreement is for eleven months.", bases: { "आहे": "to be", "भाडेकरार": "rent agreement" } }
+      "करारावर सही करा.": { native: "Sign the agreement.", bases: { "करारावर": "agreement, contract" } }
+  "mr-1650":
+    native: "lease"
+    notes:
+      "n1": "{1} is a lease, the formal rent agreement for a property."
+    examples:
+      "भाडेपट्टा नोंदवला.": { native: "The lease was registered.", bases: { "नोंदवला": "to register" } }
+      "भाडेपट्ट्याच्या अटी वाचा.": { native: "Read the terms of the lease.", bases: { "अटी": "terms", "भाडेपट्ट्याच्या": "lease" } }
+  "mr-1651":
+    native: "bathroom"
+    notes:
+      "n1": "{1} is a bathroom, a formal word. Daily speech uses बाथरूम (bātharūm)."
+    examples:
+      "स्नानगृह स्वच्छ आहे.": { native: "The bathroom is clean.", bases: { "आहे": "to be" } }
+      "स्नानगृहाचा नळ गळतो.": { native: "The bathroom tap is leaking.", bases: { "गळतो": "to leak", "स्नानगृहाचा": "bathroom" } }
+  "mr-1652":
+    native: "balcony"
+    notes:
+      "n1": "{1} is a balcony, a loanword from English."
+    examples:
+      "बाल्कनीत झाडं आहेत.": { native: "There are plants on the balcony.", bases: { "आहेत": "to be", "बाल्कनीत": "balcony" } }
+      "संध्याकाळी बाल्कनीत बसतो.": { native: "In the evening I sit on the balcony.", bases: { "बसतो": "to sit", "बाल्कनीत": "balcony" } }
+  "mr-1653":
+    native: "door, doorway"
+    notes:
+      "n1": "{1} is a door or doorway, the word for the whole entrance. The plain word for the door itself is दार (dār)."
+    examples:
+      "दरवाजा उघडा.": "Open the door."
+      "दरवाजा बंद होतो.": { native: "The door closes.", bases: { "बंद": "closed", "होतो": "to become" } }
+  "mr-1654":
+    native: "roof, ceiling"
+    notes:
+      "n1": "{1} is a roof or a ceiling."
+    examples:
+      "छतावर पाणी गळतं.": { native: "Water leaks through the roof.", bases: { "गळतं": "to leak", "छतावर": "roof, ceiling" } }
+      "छत उंच आहे.": { native: "The ceiling is high.", bases: { "आहे": "to be" } }
+  "mr-1655":
+    native: "wall"
+    notes:
+      "n1": "{1} is a wall."
+    examples:
+      "भिंतीला रंग दिला.": { native: "I painted the wall.", bases: { "रंग": "paint", "भिंतीला": "wall" } }
+      "भिंतीवर फोटो लावला.": { native: "I hung a photo on the wall.", bases: { "लावला": "to hang", "भिंतीवर": "wall" } }
+  "mr-1656":
+    native: "lift, elevator"
+    notes:
+      "n1": "{1} is a lift, a loanword from English."
+    examples:
+      "लिफ्ट बंद आहे.": { native: "The lift is out of order.", bases: { "बंद": "out of order", "आहे": "to be" } }
+      "लिफ्टने वर जा.": { native: "Go up by the lift.", bases: { "लिफ्टने": "lift, elevator" } }
+  "mr-1657":
+    native: "parking"
+    notes:
+      "n1": "{1} is a parking place, a loanword from English."
+    examples:
+      "गाडी पार्किंगमध्ये लावा.": { native: "Park the car in the parking.", bases: { "लावा": "to park", "पार्किंगमध्ये": "parking" } }
+      "पार्किंग मोफत आहे.": { native: "The parking is free.", bases: { "आहे": "to be" } }
+  "mr-1658":
+    native: "furniture"
+    notes:
+      "n1": "{1} is furniture, a loanword from English."
+    examples:
+      "फर्निचर नवीन आहे.": { native: "The furniture is new.", bases: { "नवीन": "new", "आहे": "to be" } }
+      "खोलीत जास्त फर्निचर नाही.": { native: "There is not much furniture in the room.", bases: { "जास्त": "much", "नाही": "not" } }
+  "mr-1659":
+    native: "to rent (take on rent)"
+    notes:
+      "n1": "{1} is taking a place on rent."
+    examples:
+      "आम्ही फ्लॅट भाड्याने घेतला.": "We rented a flat."
+      "खोली भाड्याने घ्यायची आहे.": { native: "I want to rent a room.", bases: { "आहे": "to be" } }
+  "mr-1660":
+    native: "to rent out, to let"
+    notes:
+      "n1": "{1} is letting a place out on rent."
+    examples:
+      "त्यांनी घर भाड्याने दिलं.": "They let out the house on rent."
+      "खोली भाड्याने देणं आहे.": { native: "The room is to be let.", bases: { "आहे": "to be" } }

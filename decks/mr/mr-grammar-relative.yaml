@@ -1,0 +1,36 @@
+schema: 1
+id: "mr-grammar-relative"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["relative", "correlative"]
+  entries:
+    - lemma: "तो"
+      key: "to"
+      reading: "to"
+      ipa: "t̪o"
+      forms:
+        "relative": "जो"
+        "correlative": "तो"
+      readings:
+        "relative": "jo"
+        "correlative": "to"
+      ipas:
+        "relative": "dzo"
+        "correlative": "t̪o"
+    - lemma: "तिथे"
+      key: "tithe"
+      reading: "tithe"
+      ipa: "t̪it̪ʰe"
+      forms:
+        "relative": "जिथे"
+        "correlative": "तिथे"
+      readings:
+        "relative": "jithe"
+        "correlative": "tithe"
+      ipas:
+        "relative": "dʒit̪ʰe"
+        "correlative": "t̪it̪ʰe"

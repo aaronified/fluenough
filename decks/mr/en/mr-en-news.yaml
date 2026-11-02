@@ -1,0 +1,166 @@
+schema: 1
+id: "mr-en-news"
+kind: "layer"
+core: "mr-news"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News"
+description: "The news: a news item, the headline and the article, the newspaper and the radio, and the words for reporting what happened. Not yet checked by a Marathi speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "mr-1340":
+    native: "news item"
+    notes:
+      "n1": "{1} is a piece of news. The plural बातम्या (bātmyā) means the news in general."
+    examples:
+      "आज एक चांगली बातमी आली.": "A good piece of news came today."
+      "ही बातमी खरी आहे का?": { native: "Is this news true?", bases: { "आहे": "to be", "खरी": "true" } }
+  "mr-1341":
+    native: "newspaper"
+    notes:
+      "n1": "{1} is a newspaper, a formal word. People also say पेपर (pepar)."
+    examples:
+      "सकाळी वृत्तपत्र वाचतो.": "In the morning I read the newspaper."
+      "वृत्तपत्र घरी आलं का?": "Did the newspaper come home?"
+  "mr-1342":
+    native: "journalist"
+    notes:
+      "n1": "{1} is a journalist who writes or reports the news."
+    examples:
+      "पत्रकार प्रश्न विचारत होते.": { native: "The journalists were asking questions.", bases: { "प्रश्न": "questions", "होते": "to be" } }
+      "पत्रकाराने मुलाखत घेतली.": { native: "The journalist took an interview.", bases: { "पत्रकाराने": "journalist" } }
+  "mr-1343":
+    native: "television"
+    notes:
+      "n1": "{1} is a television, a loanword from English."
+    examples:
+      "टीव्हीवर बातम्या लागल्या.": { native: "The news came on the television.", bases: { "लागल्या": "to start", "टीव्हीवर": "television" } }
+      "टीव्ही बंद करा.": { native: "Switch off the television.", bases: { "बंद": "off" } }
+  "mr-1344":
+    native: "radio"
+    notes:
+      "n1": "{1} is a radio, a loanword from English."
+    examples:
+      "रेडिओवर गाणी लागली.": { native: "Songs came on the radio.", bases: { "गाणी": "songs", "लागली": "to start", "रेडिओवर": "radio" } }
+      "रेडिओ ऐकणं आवडतं.": "I like listening to the radio."
+  "mr-1345":
+    native: "news channel"
+    notes:
+      "n1": "{1} is a news channel on television."
+    examples:
+      "वृत्तवाहिनी लावा.": { native: "Put on the news channel.", bases: { "लावा": "to put on" } }
+      "ही वृत्तवाहिनी जुनी आहे.": { native: "This news channel is old.", bases: { "आहे": "to be" } }
+  "mr-1346":
+    native: "headline"
+    notes:
+      "n1": "{1} is the headline of a news story."
+    examples:
+      "पहिल्या पानावर मथळा मोठा आहे.": { native: "The headline on the front page is big.", bases: { "पहिल्या": "first", "पानावर": "on the page", "आहे": "to be", "मथळा": "headline" } }
+      "मथळा वाचून सगळे थांबले.": "Everyone stopped after reading the headline."
+  "mr-1347":
+    native: "article"
+    notes:
+      "n1": "{1} is a written article in a paper or magazine."
+    examples:
+      "त्याचा लेख आज छापला.": { native: "His article was printed today.", bases: { "छापला": "to print" } }
+      "लेख वाचायला वेळ लागेल.": { native: "It will take time to read the article.", bases: { "लागेल": "to take" } }
+  "mr-1348":
+    native: "editor"
+    notes:
+      "n1": "{1} is the editor of a newspaper, who decides what is printed."
+    examples:
+      "संपादकांनी लेख मंजूर केला.": { native: "The editor approved the article.", bases: { "मंजूर": "approved", "संपादकांनी": "editor" } }
+      "संपादक नवीन आहेत.": { native: "The editor is new.", bases: { "आहेत": "to be" } }
+  "mr-1349":
+    native: "event, incident"
+    notes:
+      "n1": "{1} is an event or an incident that happened."
+    examples:
+      "ही घटना काल घडली.": "This event happened yesterday."
+      "घटनेची बातमी सगळीकडे पसरली.": { native: "The news of the incident spread everywhere.", bases: { "घटनेची": "event, incident", "सगळीकडे": "everywhere" } }
+  "mr-1350":
+    native: "local"
+    notes:
+      "n1": "{1} describes something from the local area."
+    examples:
+      "स्थानिक बातम्या ऐकल्या.": "I heard the local news."
+      "स्थानिक लोक मदत करत होते.": { native: "The local people were helping.", bases: { "होते": "to be" } }
+  "mr-1351":
+    native: "national"
+    notes:
+      "n1": "{1} describes something of the whole country."
+    examples:
+      "ही राष्ट्रीय बातमी आहे.": { native: "This is national news.", bases: { "आहे": "to be" } }
+      "राष्ट्रीय सण सगळीकडे साजरा होतो.": { native: "The national festival is celebrated everywhere.", bases: { "होतो": "to be", "सगळीकडे": "everywhere" } }
+  "mr-1352":
+    native: "international"
+    notes:
+      "n1": "{1} describes something between or across countries."
+    examples:
+      "आंतरराष्ट्रीय बातम्या पाहिल्या.": "I watched the international news."
+      "हा आंतरराष्ट्रीय सामना आहे.": { native: "This is an international match.", bases: { "सामना": "match", "आहे": "to be" } }
+  "mr-1353":
+    native: "broadcast"
+    notes:
+      "n1": "{1} is a radio or television broadcast."
+    examples:
+      "थेट प्रसारण सुरू झालं.": { native: "The live broadcast began.", bases: { "सुरू": "began", "झालं": "to become", "थेट": "live" } }
+      "प्रसारण उद्या होईल.": { native: "The broadcast will be tomorrow.", bases: { "होईल": "to be" } }
+  "mr-1354":
+    native: "news bulletin"
+    notes:
+      "n1": "{1} is a news bulletin on radio or television."
+    examples:
+      "रात्री नऊ वाजता बातमीपत्र असतं.": { native: "The news bulletin is at nine at night.", bases: { "वाजता": "at", "असतं": "to be" } }
+      "बातमीपत्र संपलं.": { native: "The bulletin has ended.", bases: { "संपलं": "to end" } }
+  "mr-1355":
+    native: "information"
+    notes:
+      "n1": "{1} is information, facts about something."
+    examples:
+      "मला या विषयाची माहिती हवी.": { native: "I need information about this subject.", bases: { "विषयाची": "of the subject" } }
+      "माहिती खरी आहे का?": { native: "Is the information true?", bases: { "आहे": "to be", "खरी": "true" } }
+  "mr-1356":
+    native: "notice, instruction"
+    notes:
+      "n1": "{1} is a notice or an instruction."
+    examples:
+      "सूचना फलकावर लावली.": { native: "The notice was put on the board.", bases: { "फलकावर": "on the board", "लावली": "to put" } }
+      "सूचना नीट वाचा.": "Read the instructions carefully."
+  "mr-1357":
+    native: "news, tidings"
+    notes:
+      "n1": "{1} is news, a more formal word than बातमी (bātmī)."
+    examples:
+      "शुभ वार्ता आहे.": { native: "There is good news.", bases: { "आहे": "to be", "शुभ": "good, auspicious" } }
+      "वार्ता कानावर आली.": "The news reached my ears."
+  "mr-1358":
+    native: "to inform"
+    notes:
+      "n1": "{1} is letting someone know."
+    examples:
+      "मला लवकर कळवा.": { native: "Let me know soon.", bases: { "कळवा": "to inform" } }
+      "त्यांनी आम्हाला बातमी कळवली.": { native: "They informed us of the news.", bases: { "कळवली": "to inform" } }
+  "mr-1359":
+    native: "to make public, to publish (news)"
+    notes:
+      "n1": "{1} is printing or making known in public, as news in a paper. For a book, प्रकाशित करणे (prakāśit karṇe) is used."
+    bases:
+      "प्रसिद्ध": "famous"
+    examples:
+      "बातमी प्रसिद्ध झाली.": { native: "The news was published.", bases: { "प्रसिद्ध": "published", "झाली": "to become" } }
+      "पेपरने फोटो प्रसिद्ध केला.": { native: "The paper published the photo.", bases: { "पेपरने": "the paper", "प्रसिद्ध": "published" } }
+  "mr-1360":
+    native: "to happen"
+    notes:
+      "n1": "{1} is happening, used for events."
+    examples:
+      "काल काय घडलं?": { native: "What happened yesterday?", bases: { "घडलं": "to happen" } }
+      "ही घटना कुठे घडली?": { native: "Where did this incident happen?", bases: { "घडली": "to happen" } }
+  "mr-1361":
+    native: "to spread"
+    notes:
+      "n1": "{1} is spreading, used for news, fire or a disease."
+    examples:
+      "बातमी गावभर पसरली.": { native: "The news spread all over the village.", bases: { "पसरली": "to spread" } }
+      "आग वेगाने पसरत होती.": { native: "The fire was spreading fast.", bases: { "वेगाने": "fast", "होती": "to be", "पसरत": "to spread" } }

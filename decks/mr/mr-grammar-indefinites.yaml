@@ -1,0 +1,36 @@
+schema: 1
+id: "mr-grammar-indefinites"
+part: "core"
+kind: "grammar"
+language: { code: "mr", iso639_3: "mar", name: "Marathi", script: "devanagari", tts: "mr-IN", icon: "म" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["+ही", "+तरी"]
+  entries:
+    - lemma: "कोणी"
+      key: "koni"
+      reading: "koṇi"
+      ipa: "koɳi"
+      forms:
+        "+ही": "कोणीही"
+        "+तरी": "कोणीतरी"
+      readings:
+        "+ही": "koṇihi"
+        "+तरी": "koṇitri"
+      ipas:
+        "+ही": "koɳiɦi"
+        "+तरी": "koɳit̪ri"
+    - lemma: "काही"
+      key: "kahi"
+      reading: "kāhi"
+      ipa: "kaɦi"
+      forms:
+        "+ही": "काहीही"
+        "+तरी": "काहीतरी"
+      readings:
+        "+ही": "kāhihi"
+        "+तरी": "kāhitri"
+      ipas:
+        "+ही": "kaɦiɦi"
+        "+तरी": "kaɦit̪ri"

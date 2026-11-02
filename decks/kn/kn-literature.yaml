@@ -1,0 +1,239 @@
+schema: 1
+id: "kn-literature"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "literature"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1697"
+    target: "ಸಾಹಿತ್ಯ"
+    reading: "sāhitya"
+    ipa: "saːhit̪ja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಾಹಿತ್ಯ ಇಷ್ಟ.", reading: "sāhitya iṣṭa.", ipa: "saːhit̪ja iʂʈa" }
+      - { target: "ಕನ್ನಡ ಸಾಹಿತ್ಯ ದೊಡ್ಡದು.", reading: "kannaḍa sāhitya doḍḍadu.", ipa: "kannaɖa saːhit̪ja d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+  - id: "kn-1698"
+    target: "ಕವನ"
+    reading: "kavana"
+    ipa: "kaʋana"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕವನ ಓದು.", reading: "kavana ōdu.", ipa: "kaʋana oːd̪u" }
+      - { target: "ಈ ಕವನ ಸುಂದರ.", reading: "ī kavana sundara.", ipa: "iː kaʋana sund̪ara" }
+  - id: "kn-1699"
+    target: "ಕವಿ"
+    reading: "kavi"
+    ipa: "kaʋi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕವಿ ಬಂದರು.", reading: "kavi bandaru.", ipa: "kaʋi band̪aru" }
+      - { target: "ಕವಿ ಕವನ ಬರೆದರು.", reading: "kavi kavana baredaru.", ipa: "kaʋi kaʋana bared̪aru", bases: [{ word: "ಬರೆದರು", ref: "kn-0639" }] }
+  - id: "kn-1700"
+    target: "ಲೇಖಕ"
+    reading: "lēkhaka"
+    ipa: "leːkʰaka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಲೇಖಕ ಬಂದ.", reading: "lēkhaka banda.", ipa: "leːkʰaka band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಲೇಖಕ ಹೊಸ ಪುಸ್ತಕ ಬರೆದ.", reading: "lēkhaka hosa pustaka bareda.", ipa: "leːkʰaka hosa pust̪aka bared̪a", bases: [{ word: "ಬರೆದ", ref: "kn-0639" }] }
+  - id: "kn-1701"
+    target: "ಲೇಖಕಿ"
+    reading: "lēkhaki"
+    ipa: "leːkʰaki"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಲೇಖಕಿ ಬಂದರು.", reading: "lēkhaki bandaru.", ipa: "leːkʰaki band̪aru" }
+      - { target: "ಲೇಖಕಿ ಕಾದಂಬರಿ ಬರೆದರು.", reading: "lēkhaki kādambari baredaru.", ipa: "leːkʰaki kaːd̪ambari bared̪aru", bases: [{ word: "ಬರೆದರು", ref: "kn-0639" }] }
+  - id: "kn-1702"
+    target: "ಕಾದಂಬರಿ"
+    reading: "kādambari"
+    ipa: "kaːd̪ambari"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಾದಂಬರಿ ಓದು.", reading: "kādambari ōdu.", ipa: "kaːd̪ambari oːd̪u" }
+      - { target: "ಈ ಕಾದಂಬರಿ ಉದ್ದ.", reading: "ī kādambari udda.", ipa: "iː kaːd̪ambari ud̪d̪a", bases: [{ word: "ಉದ್ದ", base: "ಉದ್ದ", reading: "udda" }] }
+  - id: "kn-1703"
+    target: "ಅಧ್ಯಾಯ"
+    reading: "adhyāya"
+    ipa: "ad̪ʱjaːja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಧ್ಯಾಯ ಓದು.", reading: "adhyāya ōdu.", ipa: "ad̪ʱjaːja oːd̪u" }
+      - { target: "ಅಧ್ಯಾಯ ಚಿಕ್ಕದು.", reading: "adhyāya cikkadu.", ipa: "ad̪ʱjaːja tʃikkad̪u", bases: [{ word: "ಚಿಕ್ಕದು", ref: "kn-0403" }] }
+  - id: "kn-1704"
+    target: "ಪದ್ಯ"
+    reading: "padya"
+    ipa: "pad̪ja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪದ್ಯ ಸುಂದರ.", reading: "padya sundara.", ipa: "pad̪ja sund̪ara" }
+      - { target: "ಪದ್ಯ ಹಾಡು.", reading: "padya hāḍu.", ipa: "pad̪ja haːɖu" }
+  - id: "kn-1705"
+    target: "ಗದ್ಯ"
+    reading: "gadya"
+    ipa: "ɡad̪ja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗದ್ಯ ಓದು.", reading: "gadya ōdu.", ipa: "ɡad̪ja oːd̪u" }
+      - { target: "ಗದ್ಯ ಚೆನ್ನಾಗಿದೆ.", reading: "gadya cennāgide.", ipa: "ɡad̪ja tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-1706"
+    target: "ಕಾವ್ಯ"
+    reading: "kāvya"
+    ipa: "kaːʋja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಾವ್ಯ ಇಷ್ಟ.", reading: "kāvya iṣṭa.", ipa: "kaːʋja iʂʈa" }
+      - { target: "ಕಾವ್ಯ ಬರೆ.", reading: "kāvya bare.", ipa: "kaːʋja bare" }
+  - id: "kn-1707"
+    target: "ಸಾಲು"
+    reading: "sālu"
+    ipa: "saːlu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈ ಸಾಲು ಚೆನ್ನಾಗಿದೆ.", reading: "ī sālu cennāgide.", ipa: "iː saːlu tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಕವನದ ಸಾಲು ಓದು.", reading: "kavanada sālu ōdu.", ipa: "kaʋanad̪a saːlu oːd̪u", bases: [{ word: "ಕವನದ", base: "ಕವನ", reading: "kavana" }] }
+  - id: "kn-1708"
+    target: "ಪ್ರಾಸ"
+    reading: "prāsa"
+    ipa: "praːsa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರಾಸ ಇದೆ.", reading: "prāsa ide.", ipa: "praːsa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಪ್ರಾಸ ಸುಂದರ.", reading: "prāsa sundara.", ipa: "praːsa sund̪ara" }
+  - id: "kn-1709"
+    target: "ಶಬ್ದ"
+    reading: "śabda"
+    ipa: "ʃabd̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶಬ್ದ ಅರ್ಥ ಏನು?", reading: "śabda artha ēnu?", ipa: "ʃabd̪a art̪ʰa eːnu" }
+      - { target: "ಶಬ್ದ ಕೇಳಿಸಿತು.", reading: "śabda kēḷisitu.", ipa: "ʃabd̪a keːɭisit̪u", bases: [{ word: "ಕೇಳಿಸಿತು", base: "ಕೇಳಿಸು", reading: "kēḷisu" }] }
+  - id: "kn-1710"
+    target: "ಹಾಸ್ಯ"
+    reading: "hāsya"
+    ipa: "haːsja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹಾಸ್ಯ ಇದೆ.", reading: "hāsya ide.", ipa: "haːsja id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಈ ಕಥೆ ಹಾಸ್ಯ.", reading: "ī kathe hāsya.", ipa: "iː kat̪ʰe haːsja" }
+  - id: "kn-1711"
+    target: "ಶೈಲಿ"
+    reading: "śaili"
+    ipa: "ʃaili"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನ ಶೈಲಿ ಚೆನ್ನಾಗಿದೆ.", reading: "avana śaili cennāgide.", ipa: "aʋana ʃaili tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಶೈಲಿ ಬೇಕು.", reading: "śaili bēku.", ipa: "ʃaili beːku" }
+  - id: "kn-1712"
+    target: "ಅನುವಾದ"
+    reading: "anuvāda"
+    ipa: "anuʋaːd̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅನುವಾದ ಚೆನ್ನಾಗಿದೆ.", reading: "anuvāda cennāgide.", ipa: "anuʋaːd̪a tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಈ ಪುಸ್ತಕದ ಅನುವಾದ ಬೇಕು.", reading: "ī pustakada anuvāda bēku.", ipa: "iː pust̪akad̪a anuʋaːd̪a beːku", bases: [{ word: "ಪುಸ್ತಕದ", ref: "kn-0875" }] }
+  - id: "kn-1713"
+    target: "ಪ್ರಸಿದ್ಧ"
+    reading: "prasiddha"
+    ipa: "prasid̪d̪ʱa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರಸಿದ್ಧ ಕವಿ.", reading: "prasiddha kavi.", ipa: "prasid̪d̪ʱa kaʋi" }
+      - { target: "ಈ ಪುಸ್ತಕ ಪ್ರಸಿದ್ಧ.", reading: "ī pustaka prasiddha.", ipa: "iː pust̪aka prasid̪d̪ʱa" }
+  - id: "kn-1714"
+    target: "ಓದುಗ"
+    reading: "ōduga"
+    ipa: "oːd̪uɡa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಓದುಗ ಬಂದ.", reading: "ōduga banda.", ipa: "oːd̪uɡa band̪a", bases: [{ word: "ಬಂದ", ref: "kn-0632" }] }
+      - { target: "ಓದುಗರು ಹೆಚ್ಚು.", reading: "ōdugaru heccu.", ipa: "oːd̪uɡaru hetʃtʃu", bases: [{ word: "ಓದುಗರು", base: "ಓದುಗ", reading: "ōduga" }] }
+  - id: "kn-1715"
+    target: "ಗ್ರಂಥ"
+    reading: "grantha"
+    ipa: "ɡrant̪ʰa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗ್ರಂಥ ದೊಡ್ಡದು.", reading: "grantha doḍḍadu.", ipa: "ɡrant̪ʰa d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಗ್ರಂಥ ಇದೆ.", reading: "grantha ide.", ipa: "ɡrant̪ʰa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1716"
+    target: "ವ್ಯಂಗ್ಯ"
+    reading: "vyaṅgya"
+    ipa: "ʋjaŋɡja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವ್ಯಂಗ್ಯ ಇದೆ.", reading: "vyaṅgya ide.", ipa: "ʋjaŋɡja id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ವ್ಯಂಗ್ಯ ಕವನ ಓದು.", reading: "vyaṅgya kavana ōdu.", ipa: "ʋjaŋɡja kaʋana oːd̪u" }
+  - id: "kn-1717"
+    target: "ಅಕ್ಷರ"
+    reading: "akṣara"
+    ipa: "akʂara"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಕ್ಷರ ಸುಂದರ.", reading: "akṣara sundara.", ipa: "akʂara sund̪ara" }
+      - { target: "ಅಕ್ಷರ ಕಲಿ.", reading: "akṣara kali.", ipa: "akʂara kali" }
