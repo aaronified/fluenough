@@ -1,0 +1,168 @@
+schema: 1
+id: "as-verbs-5"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-5"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-4046"
+    target: "তোলা"
+    reading: "tolā"
+    ipa: "tʊla"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাটি তোলা।", reading: "bāti tolā.", ipa: "bati tʊla" }
+      - { target: "তাই বল তুলিলে।", reading: "tāi bôl tulile.", ipa: "tai bɔl tulile", bases: [{ word: "তাই", ref: "as-2180" }, { word: "তুলিলে", base: "তোলা", reading: "tolā" }] }
+  - id: "as-4047"
+    target: "জোৰা"
+    reading: "zorā"
+    ipa: "zʊɹa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দুটা কাপোৰ জোৰা।", reading: "dutā kāpur zorā.", ipa: "duta kapʊɹ zʊɹa" }
+      - { target: "তেওঁ দড়ি জোৰে।", reading: "teum̐ dôri zore.", ipa: "teʊ̃ doɹi zʊɹe", bases: [{ word: "দড়ি", base: "দড়ি", reading: "dôri" }, { word: "জোৰে", base: "জোৰা", reading: "zorā" }] }
+  - id: "as-4048"
+    target: "পাতা"
+    reading: "pātā"
+    ipa: "pata"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চাদৰ পাতা।", reading: "sādôr pātā.", ipa: "sadɔɹ pata" }
+      - { target: "তাই চাদৰ পাতিলে।", reading: "tāi sādôr pātile.", ipa: "tai sadɔɹ patile", bases: [{ word: "তাই", ref: "as-2180" }, { word: "পাতিলে", base: "পাতা", reading: "pātā" }] }
+  - id: "as-4049"
+    target: "থিয় হোৱা"
+    reading: "thiy huwā"
+    ipa: "tʰij hʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "থিয়", base: "থিয়", reading: "thiy" }
+      - { word: "হোৱা", base: "হোৱা", reading: "huwā" }
+    examples:
+  - id: "as-4050"
+    target: "খালী কৰা"
+    reading: "khālī kôrā"
+    ipa: "kʰali kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+  - id: "as-4051"
+    target: "শেষত"
+    reading: "xesôt"
+    ipa: "xexɔt"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "শেষত ভাল হ'ল।", reading: "xesôt bhāl hôl.", ipa: "xexɔt bʱal hol", bases: [{ word: "হ'ল", base: "হোৱা", reading: "huwā" }] }
+      - { target: "শেষত আহিলোঁ।", reading: "xesôt āhilōm̐.", ipa: "xexɔt ahilʊ̃", bases: [{ word: "আহিলোঁ", ref: "as-2201" }] }
+  - id: "as-4052"
+    target: "তাৰ পাছত"
+    reading: "tār pāsôt"
+    ipa: "taɹ pasɔt"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তাৰ", ref: "as-2180" }
+    examples:
+  - id: "as-4053"
+    target: "প্ৰথমে"
+    reading: "prôthômē"
+    ipa: "pɹɔtʰɔme"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰথমে বহা।", reading: "prôthômē bôhā.", ipa: "pɹɔtʰɔme bɔha" }
+      - { target: "প্ৰথমে কাম কৰা।", reading: "prôthômē kām kôrā.", ipa: "pɹɔtʰɔme kam kɔɹa" }
+  - id: "as-4054"
+    target: "তাৰ আগতে"
+    reading: "tār āgôte"
+    ipa: "taɹ aɡɔte"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তাৰ", ref: "as-2180" }
+    examples:
+  - id: "as-4055"
+    target: "একেলগে"
+    reading: "ekelôge"
+    ipa: "ekelɔɡe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমি একেলগে যাওঁ।", reading: "āmi ekelôge zāum̐.", ipa: "ami ekelɔɡe zaʊ̃", bases: [{ word: "যাওঁ", ref: "as-2200" }] }
+      - { target: "তেওঁলোক একেলগে খায়।", reading: "teum̐lôk ekelôge khāy.", ipa: "teʊ̃lʊk ekelɔɡe kʰaj", bases: [{ word: "খায়", ref: "as-0109" }] }
+  - id: "as-4056"
+    target: "আৰম্ভ"
+    reading: "ārôbhô"
+    ipa: "aɹɔmbʱ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আৰম্ভ ভাল।", reading: "ārôbhô bhāl.", ipa: "aɹɔmbʱ bʱal" }
+      - { target: "আৰম্ভত বৰষুণ।", reading: "ārôbhôt bôrôxun.", ipa: "aɹɔmbʱɔt bɔɹoxun", bases: [{ word: "আৰম্ভত", base: "আৰম্ভ", reading: "ārôbhô" }] }
+  - id: "as-4057"
+    target: "পুনৰ"
+    reading: "punôr"
+    ipa: "punɔɹ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পুনৰ যাওঁ।", reading: "punôr zāum̐.", ipa: "punɔɹ zaʊ̃", bases: [{ word: "যাওঁ", ref: "as-2200" }] }
+      - { target: "পুনৰ আহিবা।", reading: "punôr āhibā.", ipa: "punɔɹ ahiba", bases: [{ word: "আহিবা", ref: "as-2201" }] }
+  - id: "as-4058"
+    target: "সমাপ্ত"
+    reading: "xômāpto"
+    ipa: "sɔmapt"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কাম সমাপ্ত।", reading: "kām xômāpto.", ipa: "kam sɔmapt" }
+      - { target: "গল্প সমাপ্ত।", reading: "galpô xômāpto.", ipa: "ɡɔlp sɔmapt" }
+  - id: "as-4059"
+    target: "ধীৰে"
+    reading: "dhīrē"
+    ipa: "dʱiɹe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ধীৰে যাওঁ।", reading: "dhīrē zāum̐.", ipa: "dʱiɹe zaʊ̃", bases: [{ word: "যাওঁ", ref: "as-2200" }] }
+      - { target: "ধীৰে কওক।", reading: "dhīrē kôôk.", ipa: "dʱiɹe kɔʊk", bases: [{ word: "কওক", ref: "as-0108" }] }
+  - id: "as-4060"
+    target: "দ্ৰুত"
+    reading: "drut"
+    ipa: "dɹut"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দ্ৰুত দৌৰোঁ।", reading: "drut dourum̐.", ipa: "dɹut dɔuɹʊ̃", bases: [{ word: "দৌৰোঁ", ref: "as-2917" }] }
+      - { target: "দ্ৰুত আহা।", reading: "drut āhā.", ipa: "dɹut aha" }
+  - id: "as-4061"
+    target: "তাৰ পাছত"
+    reading: "tār pāsôt"
+    ipa: "taɹ pasɔt"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "তাৰ", ref: "as-2180" }
+    examples:
