@@ -225,28 +225,53 @@ class _Home extends StatelessWidget {
             languages: missing,
           );
         }
-        // The languages chosen to Learn on the first launch are each offered
-        // "Find my level" before the app (owner, 2026-11-02). Only one the
-        // catalogue has, whose first decks are on the phone as the picker
-        // waits for them: placing against a partial course would place wrong.
+        // The languages chosen to Learn on the first launch are each placed
+        // in turn before the app (owner, 2026-11-02). Only one the catalogue
+        // has and that is still learned, whose first decks are on the phone
+        // as the picker waits for them: placing against a partial course
+        // would place wrong. Any other is dropped from the saved list, so
+        // that a language that cannot be offered never holds the app back.
         final loading = state.status == CatalogStatus.loading;
-        final offers = <String>[
-          for (final code in state.settings.placementOffers)
-            if (state.learningCodes.contains(code) &&
-                (loading || state.languages.any((l) => l.code == code)))
-              code,
-        ];
         final downloads = state.deckDownloads;
-        final waiting = <String>[
-          if (downloads != null && !loading)
-            for (final code in offers)
-              if (!downloads.isReady(code, state.settings.spokenLanguages))
-                code,
-        ];
+        final spoken = state.settings.spokenLanguages;
+        final saved = state.settings.placementOffers;
+        final offers = <String>[];
+        final waiting = <String>[];
+        for (final code in saved) {
+          if (loading) {
+            offers.add(code);
+            continue;
+          }
+          if (!state.learningCodes.contains(code) ||
+              !state.languages.any((l) => l.code == code) ||
+              (downloads?.index?.language(code)?.appTooOld ?? false)) {
+            continue;
+          }
+          offers.add(code);
+          if (downloads != null && !downloads.isReady(code, spoken)) {
+            waiting.add(code);
+          }
+        }
+        if (offers.length != saved.length) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            state.settings.placementOffers = <String>[
+              for (final code in state.settings.placementOffers)
+                if (offers.contains(code)) code,
+            ];
+          });
+        }
+        void drop(String code) {
+          state.settings.placementOffers = <String>[
+            for (final offered in state.settings.placementOffers)
+              if (offered != code) offered,
+          ];
+        }
+
         if (waiting.isNotEmpty) {
           return DownloadPage(
             key: ValueKey<String>('offer-${waiting.join()}'),
             languages: waiting,
+            onFailed: drop,
           );
         }
         return offers.isEmpty

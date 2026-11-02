@@ -2608,8 +2608,8 @@ class AppState extends ChangeNotifier {
   Set<String> get scriptsReadKnown => scriptReadersKnown.keys.toSet();
 
   /// The languages the learner knows that they read each script through,
-  /// by code, in the order answered: what placement's "Do you read
-  /// Devanagari?" says they read it through (#481).
+  /// by code, in the order answered: the script pills say it (Read known), and
+  /// placement checks a script only where one does (#481).
   Map<String, List<String>> get scriptReadersKnown {
     final readers = <String, List<String>>{};
     for (final MapEntry(:key, :value) in settings.scriptsRead.entries) {

@@ -165,8 +165,10 @@ class SettingsNotifier extends ChangeNotifier {
   /// The languages chosen to Learn on the first launch that have not yet been
   /// offered "Find my level", in the order they were set (owner, 2026-11-02:
   /// "It should be offered, and skippable to start at the beginning"). The
-  /// app offers each in the placement check, which takes Skip or finishes
-  /// the list; it is empty after that, and for an install from before.
+  /// app places each in turn; a language leaves the list as the learner goes
+  /// on from its result or starts it at the beginning (Start at the
+  /// beginning), which saves nothing for it. It is empty after that, and for
+  /// an install from before.
   List<String> get placementOffers => _placementOffers;
   set placementOffers(List<String> codes) {
     final next = List<String>.unmodifiable(codes);

@@ -7,10 +7,8 @@ import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
 import '../../app/placement.dart';
 import '../../app/placement_plan.dart';
-import '../../app/skill.dart';
 import '../../core/grading/romanised.dart';
 import '../../core/models/deck.dart';
-import '../../core/models/drill_mode.dart';
 import '../../core/scheduling/placed_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
@@ -72,6 +70,7 @@ class PlacementPage extends StatefulWidget {
     this.scripts = const <String, Set<String>>{},
     this.natives = const <String, String>{},
     this.languageNames = const <String, String>{},
+    this.skippable = false,
   });
 
   /// Language codes, in the order they are placed.
@@ -102,6 +101,12 @@ class PlacementPage extends StatefulWidget {
   /// The names of the languages the learner knows, by code; a language not
   /// here is named as the decks name it, or by its code.
   final Map<String, String> languageNames;
+
+  /// Whether the first question of each language offers "Start at the
+  /// beginning", which places nothing for it and goes on (onboarding's
+  /// offer, owner, 2026-11-02: "It should be offered, and skippable to start
+  /// at the beginning").
+  final bool skippable;
 
   @override
   State<PlacementPage> createState() => _PlacementPageState();
@@ -258,7 +263,17 @@ class _PlacementPageState extends State<PlacementPage> {
     _startWalk(state, start: _before!);
   });
 
-  /// Stop here: placement ends, keeping what it found so far.
+  /// "Start at the beginning": nothing is placed for the language, and on to
+  /// the next, with no result between.
+  void _skip() {
+    _check = null;
+    _walk = null;
+    _placed[_code] = const <String>{};
+    _next();
+  }
+
+  /// The header's close button: placement of the language ends, keeping what
+  /// it found so far, which is nothing before the first answer.
   void _stop() => setState(() {
     _stopped = true;
     if (_check case final check?) {
@@ -380,10 +395,19 @@ class _PlacementPageState extends State<PlacementPage> {
       );
     }
     final inWalk = stage == _Stage.walk;
-    final ask = inWalk ? _walk!.question! : _check!.question!;
+    final ask = inWalk ? _walk?.question : _check?.question;
+    if (ask == null) {
+      // Between one language and the next, or as the last is left.
+      return Scaffold(
+        body: Center(
+          child: CircularProgressIndicator(semanticsLabel: l10n.learnLoading),
+        ),
+      );
+    }
     final deck = state.deckOf(ask.card);
     return PlacementShell(
       onClose: _stop,
+      onSkip: widget.skippable && _number == 0 ? _skip : null,
       deckName: inWalk
           ? (deck?.deck.name ?? language.name)
           : l10n.scriptNameOr(_script.script, _script.script),
@@ -725,14 +749,12 @@ class _Result extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     return DrillFrame(
-      skill: Skill.of(DrillMode.recognition),
-      deckName: language,
+      deckName: '',
       position: 1,
       total: 0,
       positionLabel: language,
       progress: 1,
       reportDetail: 'placement result',
-      onClose: onNext,
       card: <Widget>[
         for (final (i, line) in lines.indexed)
           Text(

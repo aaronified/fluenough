@@ -36,10 +36,11 @@ class PlacementShell extends InheritedWidget {
     required this.deckName,
     required this.progress,
     required this.reportDetail,
+    this.onSkip,
     required super.child,
   });
 
-  /// The close button: stops placement, keeping what it has found.
+  /// The close button: stops placement, keeping what it has found so far.
   final VoidCallback onClose;
 
   /// What the line above the card names: the deck asked from, or the script
@@ -51,6 +52,10 @@ class PlacementShell extends InheritedWidget {
   final double progress;
   final String reportDetail;
 
+  /// "Start at the beginning" under the first question of onboarding's
+  /// offer: places nothing and goes on. Null where it is not offered.
+  final VoidCallback? onSkip;
+
   static PlacementShell? maybeOf(BuildContext context) =>
       context.dependOnInheritedWidgetOfExactType<PlacementShell>();
 
@@ -59,7 +64,8 @@ class PlacementShell extends InheritedWidget {
       onClose != old.onClose ||
       deckName != old.deckName ||
       progress != old.progress ||
-      reportDetail != old.reportDetail;
+      reportDetail != old.reportDetail ||
+      onSkip != old.onSkip;
 }
 
 /// "Question 3" in the review's header, the [shown] word on the card under
@@ -119,7 +125,16 @@ class PlacementFrame extends StatelessWidget {
       ],
       belowCard: children,
       feedback: feedback,
-      actions: actions,
+      actions: <Widget>[
+        ...actions,
+        // Before an answer only: after one, Continue is the way on.
+        if (shell?.onSkip case final skip? when feedback == null)
+          TextButton(
+            key: const ValueKey<String>('placement-skip'),
+            onPressed: skip,
+            child: Text(l10n.placementStartAtBeginning),
+          ),
+      ],
     );
   }
 }

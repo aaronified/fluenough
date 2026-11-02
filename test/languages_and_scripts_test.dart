@@ -64,6 +64,7 @@ import 'package:fluenough/ui/script_name.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
+import 'package:fluenough/ui/widgets/mode_pill.dart';
 import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/report_button.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
@@ -1850,8 +1851,8 @@ void main() {
     }
 
     testWidgets('it begins at once in the review\'s screen with no ask '
-        'screen; the header\'s close button skips, starting at the '
-        'beginning with nothing placed, and ends the offer', (tester) async {
+        'screen; closing at the first question places nothing, and Done ends '
+        'the offer', (tester) async {
       usePhone(tester);
       final state = learnsHindi(reads: false);
       await pumpScreen(
@@ -1862,7 +1863,6 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.byType(DrillFrame), findsOneWidget);
       expect(find.text(l10n.placementQuestionNumber(1)), findsOneWidget);
-      expect(find.text(l10n.placementAskTitle('Hindustani')), findsNothing);
 
       await stopPlacement(tester);
       // The result is in the same screen.
@@ -1915,6 +1915,69 @@ void main() {
     });
   });
 
+  group('Start at the beginning, in the offer after Learn', () {
+    testWidgets('it is a button under the first question that places nothing, '
+        'saves nothing for the language, and goes on to the next, then the '
+        'app', (tester) async {
+      usePhone(tester);
+      final state = devanagariReader(const <String>{}, reads: false);
+      state.settings.placementOffers = const <String>['hi', 'mr'];
+      await pumpScreen(
+        tester,
+        const OnboardingPlacementOffer(languages: <String>['hi', 'mr']),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.placementStartAtBeginning), findsOneWidget);
+
+      await tapText(tester, l10n.placementStartAtBeginning);
+      expect(state.settings.placedDecks, isEmpty);
+      expect(state.settings.placedAtOf('hi'), isEmpty);
+      expect(state.settings.courseNative('hi'), isNull);
+      expect(state.settings.placementOffers, <String>['mr']);
+      expect(find.byType(PlacementTiles), findsNothing);
+      expect(find.text(l10n.placementQuestionNumber(1)), findsOneWidget);
+
+      await tapText(tester, l10n.placementStartAtBeginning);
+      expect(state.settings.placedDecks, isEmpty);
+      expect(state.settings.placementOffers, isEmpty);
+    });
+
+    testWidgets('it is offered under the first question only', (tester) async {
+      usePhone(tester);
+      final state = devanagariReader(const <String>{}, reads: false);
+      state.settings.placementOffers = const <String>['hi'];
+      await pumpScreen(
+        tester,
+        const OnboardingPlacementOffer(languages: <String>['hi']),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      await answerShown(tester);
+      expect(find.text(l10n.placementStartAtBeginning), findsNothing);
+    });
+
+    testWidgets('the close button, unlike it, keeps what was found so far: '
+        'after a right answer the decks cleared are placed', (tester) async {
+      usePhone(tester);
+      final state = devanagariReader(const <String>{}, reads: false);
+      state.settings.placementOffers = const <String>['hi'];
+      await pumpScreen(
+        tester,
+        const OnboardingPlacementOffer(languages: <String>['hi']),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      await answerShown(tester);
+      if (find.byType(PlacementFrame).evaluate().isNotEmpty) {
+        await stopPlacement(tester);
+      }
+      await tapText(tester, l10n.placementDone);
+      expect(state.settings.placedDecks, isNotEmpty);
+      expect(state.settings.placementOffers, isEmpty);
+    });
+  });
+
   group('placement asks nothing the pills have said', () {
     testWidgets('a script is checked where a pill says it is read, and is new '
         'with no question where none does; the course is begun with no ask, '
@@ -1953,7 +2016,6 @@ void main() {
       final l10n = l10nOf(tester);
       expect(find.byType(PlacementMatch), findsOneWidget);
       expect(find.text(l10n.placementQuestion), findsNothing);
-      expect(find.text(l10n.placementScriptAskBody), findsNothing);
 
       // No pill says it is read: straight to the words.
       await pumpHindustani(<String, bool>{'en': true});
@@ -1973,6 +2035,8 @@ void main() {
         findsOneWidget,
       );
       expect(find.byType(AppBar), findsNothing);
+      expect(find.byType(ModePill), findsNothing);
+      expect(find.byTooltip(l10n.drillEndSession), findsNothing);
     });
   });
 

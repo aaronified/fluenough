@@ -159,7 +159,9 @@ class DrillHeader extends StatelessWidget {
   final int position;
   final int total;
 
-  final VoidCallback onClose;
+  /// Closes the session; null for a screen with nothing to end, which has no
+  /// close button.
+  final VoidCallback? onClose;
 
   /// What a report from this screen says it showed.
   final String reportDetail;
@@ -175,11 +177,14 @@ class DrillHeader extends StatelessWidget {
         padding: const EdgeInsetsDirectional.fromSTEB(4, 0, 4, 0),
         child: Row(
           children: <Widget>[
-            IconButton(
-              onPressed: onClose,
-              tooltip: l10n.drillEndSession,
-              icon: const Icon(Icons.close),
-            ),
+            if (onClose != null)
+              IconButton(
+                onPressed: onClose,
+                tooltip: l10n.drillEndSession,
+                icon: const Icon(Icons.close),
+              )
+            else
+              const SizedBox(width: 12),
             const SizedBox(width: 8),
             if (clock != null)
               Expanded(child: _Countdown(scope: clock))
@@ -241,7 +246,7 @@ class DrillHeader extends StatelessWidget {
 class DrillFrame extends StatelessWidget {
   const DrillFrame({
     super.key,
-    required this.skill,
+    this.skill,
     required this.deckName,
     required this.position,
     required this.total,
@@ -279,7 +284,8 @@ class DrillFrame extends StatelessWidget {
   /// raised, on the card itself (ADR-0026).
   final bool needsSound;
 
-  final Skill skill;
+  /// The skill's pill above the card; none for a screen that is no question.
+  final Skill? skill;
 
   /// The deck's name, from the deck file.
   final String deckName;
@@ -293,7 +299,7 @@ class DrillFrame extends StatelessWidget {
   /// current one is answered.
   final double? progress;
 
-  final VoidCallback onClose;
+  final VoidCallback? onClose;
 
   /// What goes on the card, top to bottom.
   final List<Widget> card;
@@ -325,25 +331,29 @@ class DrillFrame extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              Row(
-                children: <Widget>[
-                  // Flexible, so that a long skill name in a
-                  // large text scale wraps inside the pill
-                  // rather than pushing the row off the screen.
-                  Flexible(child: ModePill(skill: skill)),
-                  const SizedBox(width: 8),
-                  Expanded(
-                    child: Text(
-                      deckName,
-                      style: theme.textTheme.bodyMedium!.copyWith(
-                        color: scheme.onSurfaceVariant,
-                        fontSize: 13,
+              if (skill != null || deckName.isNotEmpty) ...<Widget>[
+                Row(
+                  children: <Widget>[
+                    // Flexible, so that a long skill name in a
+                    // large text scale wraps inside the pill
+                    // rather than pushing the row off the screen.
+                    if (skill != null) ...<Widget>[
+                      Flexible(child: ModePill(skill: skill!)),
+                      const SizedBox(width: 8),
+                    ],
+                    Expanded(
+                      child: Text(
+                        deckName,
+                        style: theme.textTheme.bodyMedium!.copyWith(
+                          color: scheme.onSurfaceVariant,
+                          fontSize: 13,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-              SizedBox(height: gap),
+                  ],
+                ),
+                SizedBox(height: gap),
+              ],
               // Always this one widget, so that the card's own
               // widgets, such as a speaker that played as it
               // appeared, keep their state as needsSound changes.

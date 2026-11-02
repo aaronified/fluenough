@@ -12,12 +12,16 @@ import 'placement_page.dart';
 /// offered, and skippable to start at the beginning"). It is the same
 /// placement as the languages page's, in the same review screen, and asks
 /// nothing the skills sheet did not ("Language choice itself is now unified.
-/// Use the new paradigm."): the header's close button is the way to skip,
-/// which starts the language at the beginning with nothing placed. Each
-/// language's result is saved as soon as it is done, and the language leaves
-/// [SettingsNotifier.placementOffers] as the learner goes on from it, so
-/// leaving the app between two does not offer the first again. When the last
-/// has gone, `lib/app.dart` swaps this for the app.
+/// Use the new paradigm.").
+///
+/// Under the first question of each language is **Start at the beginning**:
+/// it places nothing, saves nothing for that language, and goes on to the
+/// next, or the app. The header's close button is different: it stops the
+/// check where it is and keeps what was found so far: the levels and decks
+/// already passed, and nothing where none was. Each language's result is saved as soon as it
+/// is done, and the language leaves [SettingsNotifier.placementOffers] as the
+/// learner goes on from it, so leaving the app between two does not offer the
+/// first again. When the last has gone, `lib/app.dart` swaps this for the app.
 class OnboardingPlacementOffer extends StatefulWidget {
   const OnboardingPlacementOffer({super.key, required this.languages});
 
@@ -39,14 +43,12 @@ class _OnboardingPlacementOfferState extends State<OnboardingPlacementOffer> {
     final state = AppScope.read(context);
     return PlacementPage(
       languages: _languages,
+      skippable: true,
       // Answered already, on the skills sheet: Learn on Read or Write.
       alphabet: <String, bool>{
         for (final code in _languages)
           if (state.hasAlphabet(code))
             code: state.settings.learnsAlphabet(code),
-      },
-      natives: <String, String>{
-        for (final code in _languages) code: ?state.courseNative(code),
       },
       onLanguageDone: (code, found, {required leaving}) {
         saveLanguagePlacement(state, found);
@@ -64,14 +66,14 @@ class _OnboardingPlacementOfferState extends State<OnboardingPlacementOffer> {
 
 /// Saves what placement [found], as the languages page saves a level found:
 /// the decks placed as known replace any before, credited in the log, with
-/// the choice of how they are reviewed. A language that placed nothing
-/// starts at its beginning.
+/// the choice of how they are reviewed. A language that placed nothing, as
+/// one skipped, saves nothing: it starts at its beginning. The language the
+/// course is taught from is not touched: only the learner's own choice sets
+/// it.
 void saveLanguagePlacement(AppState state, PlacementFound found) {
   final settings = state.settings;
-  for (final MapEntry(:key, :value) in found.natives.entries) {
-    state.chooseNative(key, value);
-  }
   for (final MapEntry(key: code, value: placed) in found.placed.entries) {
+    if (placed.isEmpty) continue;
     final replaced = <String>{
       for (final entry in state.decks)
         if (entry.language.code == code) entry.id,
@@ -81,7 +83,6 @@ void saveLanguagePlacement(AppState state, PlacementFound found) {
         if (!replaced.contains(id)) id,
       ...placed,
     };
-    if (placed.isEmpty) continue;
     state.creditPlacement(
       code,
       placed: placed,

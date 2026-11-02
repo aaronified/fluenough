@@ -26,7 +26,12 @@ import 'update_escape.dart';
 /// app's home, nothing else can be reached either, Settings and its update
 /// check included, so a failure offers that check too ([UpdateEscape]).
 class DownloadPage extends StatefulWidget {
-  const DownloadPage({super.key, required this.languages, this.onReady});
+  const DownloadPage({
+    super.key,
+    required this.languages,
+    this.onReady,
+    this.onFailed,
+  });
 
   /// Language codes, downloaded in this order.
   final List<String> languages;
@@ -34,6 +39,10 @@ class DownloadPage extends StatefulWidget {
   /// Called once every language is ready. Null as the app's home, which
   /// moves on by itself once they are.
   final VoidCallback? onReady;
+
+  /// Called with the language whose first decks could not be downloaded, for
+  /// a caller that would rather go on without it than stay on this page.
+  final ValueChanged<String>? onFailed;
 
   @override
   State<DownloadPage> createState() => _DownloadPageState();
@@ -75,6 +84,7 @@ class _DownloadPageState extends State<DownloadPage> {
           _failedOn = code;
           _failures++;
         });
+        widget.onFailed?.call(code);
         unawaited(
           SemanticsService.sendAnnouncement(
             view,
