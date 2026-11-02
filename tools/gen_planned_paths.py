@@ -3,6 +3,7 @@
 
     python3 tools/gen_planned_paths.py            # write the path files
     python3 tools/gen_planned_paths.py --check    # exit 1 if a file differs
+    python3 tools/gen_planned_paths.py --only af,fa   # only these languages
 
 Each planned language gets decks/<code>/<code>-path.yaml with its full unit
 list to B1, from the scheme's unit template (wiki/Plan-Language-Paths-Scheme.md):
@@ -20,7 +21,11 @@ category name of the language's family or typology (cases, aspect, tones,
 noun classes), taken from the scheme's own steps; no word, form or rule of a
 language is stated. Sizes follow the plan (A1 700, A2 900, B1 1,200 words)
 for living languages and `levels` for the ancient and reconstructed ones.
-Pure Python 3 standard library.
+`--only CODES` (comma-separated) writes or checks just the named languages,
+and never overwrites a path file that already exists unless `--force` is
+given: a new course's plan is made in one safe step, without touching the
+hand-edited paths of the others. A code that is a `WIRED` course is wired
+only when named. Pure Python 3 standard library.
 """
 
 from __future__ import annotations
@@ -525,6 +530,88 @@ G = {
                ("passive", ["passive-voice"]),
                ("dialect-variation", ["dialect-variation"])],
     },
+    # The first-words languages (owner, 2026-11-02). Topic names are generic
+    # categories of each language's typology, as above.
+    "afrikaans": {
+        "a1": [("word-order", ["v2-word-order"]),
+               ("present", ["present-tense"]),
+               ("be-and-have", ["be-and-have"]),
+               ("negation", ["negation"])],
+        "a2": [("modals", ["modal-verbs"]),
+               ("past", ["perfect-tense"]),
+               ("particle-verbs", ["separable-particle-verbs"]),
+               ("imperatives", ["imperative"]),
+               ("comparison", ["comparison"])],
+        "b1": [("subordinate-clauses", ["subordinate-clause-order"]),
+               ("passive", ["passive"]),
+               ("relative-clauses", ["relative-clauses"]),
+               ("conditional-clauses", ["conditional-clauses"]),
+               ("reported-speech", ["reported-speech"])],
+    },
+    "persian": {
+        "a1": [("ezafe", ["ezafe"]),
+               ("plurals-definiteness", ["plurals", "definiteness"]),
+               ("be-verb", ["be-verb"]),
+               ("present", ["present-tense"])],
+        "a2": [("past", ["simple-past"]),
+               ("future", ["future"]),
+               ("object-marker", ["object-marker"]),
+               ("compound-verbs", ["compound-verbs"]),
+               ("imperatives", ["imperative"]),
+               ("comparison", ["comparison"])],
+        "b1": [("subjunctive", ["subjunctive"]),
+               ("relative-clauses", ["relative-clauses"]),
+               ("passive", ["passive"]),
+               ("conditional-clauses", ["conditional-clauses"]),
+               ("reported-speech", ["reported-speech"])],
+    },
+    "pashto": {
+        "a1": [("gender-number", ["grammatical-gender", "number"]),
+               ("oblique-case", ["oblique-case"]),
+               ("be-verb", ["be-verb"]),
+               ("present", ["present-tense"])],
+        "a2": [("past", ["past-tense", "ergative-agreement"]),
+               ("future", ["future"]),
+               ("postpositions", ["postpositions"]),
+               ("imperatives", ["imperative"]),
+               ("comparison", ["comparison"])],
+        "b1": [("subjunctive", ["subjunctive"]),
+               ("participles", ["participles"]),
+               ("relative-clauses", ["relative-clauses"]),
+               ("passive", ["passive"]),
+               ("reported-speech", ["reported-speech"])],
+    },
+    "munda": {
+        "a1": [("pronouns-number", ["dual-number", "inclusive-exclusive-pronouns"]),
+               ("word-order", ["word-order"]),
+               ("verb-endings", ["verb-endings", "transitive-intransitive"]),
+               ("postpositions", ["postpositions"])],
+        "a2": [("tense-aspect", ["tense", "aspect"]),
+               ("animacy", ["animate-inanimate"]),
+               ("middle-voice", ["middle-voice"]),
+               ("imperatives", ["imperative"]),
+               ("comparison", ["comparison"])],
+        "b1": [("causatives", ["causatives"]),
+               ("compounds", ["compounds"]),
+               ("relative-clauses", ["relative-clauses"]),
+               ("clause-linking", ["clause-linking"]),
+               ("reported-speech", ["reported-speech"])],
+    },
+    "sanskrit": {
+        "a1": [("case-system", ["case-system"]),
+               ("a-stems", ["a-stem-nouns"]),
+               ("present-system", ["present-system"])],
+        "a2": [("other-stems", ["other-noun-stems"]),
+               ("past-tenses", ["aorist", "perfect", "imperfect"]),
+               ("imperatives", ["imperative"]),
+               ("participles", ["participles"]),
+               ("compounds", ["compounds"])],
+        "b1": [("passive", ["passive"]),
+               ("causatives", ["causatives"]),
+               ("absolutives-infinitives", ["absolutives", "infinitives"]),
+               ("relative-clauses", ["relative-clauses"]),
+               ("optative", ["optative"])],
+    },
 }
 
 # --------------------------------------------------------------------------
@@ -549,6 +636,12 @@ S = {
     "old_english_letters": [("letters", ["old-english-letters"])],
     "greek_polytonic": [("letters", ["greek-letters"]), ("breathings-accents", ["breathings-and-accents"])],
     "devanagari_plain": [("letters", ["devanagari-letters"]), ("conjuncts", ["conjunct-letters"])],
+    "perso_arabic": [("letters", ["perso-arabic-letters"]), ("letter-forms", ["letter-forms"]),
+                     ("vowel-marks", ["vowel-marks"])],
+    "pashto": [("letters", ["perso-arabic-letters", "pashto-letters"]), ("letter-forms", ["letter-forms"]),
+               ("vowel-marks", ["vowel-marks"])],
+    "ol_chiki": [("letters", ["ol-chiki-letters"]), ("signs", ["ol-chiki-signs"]),
+                 ("other-scripts", ["latin-devanagari-bengali-spellings"])],
 }
 
 # --------------------------------------------------------------------------
@@ -624,11 +717,33 @@ LANGS = {
             note="Gender; focus markers (baa/ayaa) + declarative waa; verb conjugation; tone (marks gender/case)."),
     "qu": L("Quechua", "quechuan", genders=[], sound=["ejectives-and-aspirates"],
             note="Choose variety (Southern: Cusco or Ayacucho); SOV; suffix logic; cases; evidentials; tenses; subordination suffixes."),
+    # The first-words languages (owner, 2026-11-02): the first list to B1, the
+    # second to A1, the third first words only; the generator writes every
+    # plan to B1, and a deck builder trims it to the owner's level.
+    "af": L("Afrikaans", "afrikaans", genders=[],
+            note="No grammatical gender or case; one verb form per tense; double negation."),
+    "nl": L("Dutch", "germanic", genders=["common", "n"], sound=["vowels-and-diphthongs"],
+            note="Common and neuter genders (de/het); V2 and verb-final clauses; separable verbs."),
+    "uk": L("Ukrainian", "slavic", genders=["m", "f", "n"], script="cyrillic", sound=["stress"],
+            extra={"a2": [("vocative", ["vocative"])]},
+            note="Ukrainian Cyrillic (with ґ, є, і, ї); seven cases with the vocative; stress."),
+    "id": L("Indonesian", "malay", genders=[],
+            note="Standard Indonesian (Bahasa Indonesia), a course apart from Malay (ms); affixes (ber-, me-, -kan, -i); reduplication; register."),
+    "fa": L("Persian", "persian", genders=[], script="perso_arabic", sound=["vowel-length"],
+            note="Perso-Arabic script (RTL), with short vowels unwritten; ezafe; no grammatical gender; compound verbs; choose Iranian or Afghan (Dari) standard."),
+    "ps": L("Pashto", "pashto", genders=["m", "f"], script="pashto", sound=["retroflex-consonants"],
+            note="Perso-Arabic script (RTL) with extra letters; two genders; oblique case; ergative past; choose a dialect (Kandahar, Peshawar)."),
+    "sat": L("Santali", "munda", genders=[], script="ol_chiki",
+             note="Ol Chiki first (the other scripts Latin, Devanagari, Bengali); dual number and inclusive/exclusive pronouns; verb endings; animate and inanimate."),
     # Ancient and reconstructed (owner, 2026-10-31): reading courses with
     # their own `levels`.
     "la": L("Latin", "latin", genders=["m", "f", "n"], ancient=True,
             levels={"A1": 600, "A2": 800, "B1": 1100}, sound=["classical-pronunciation", "vowel-length"],
             note="A reading course in the classical language."),
+    "sa": L("Classical Sanskrit", "sanskrit", genders=["m", "f", "n"], ancient=True,
+            script="devanagari_plain", levels={"A1": 400, "A2": 600, "B1": 900},
+            sound=["vowel-length", "sandhi"], ancient_reason="is read here, not spoken",
+            note="A reading course in the classical language of Panini and the epics; Vedic Sanskrit is the course vsn."),
     "vsn": L("Vedic Sanskrit", "vedic", genders=["m", "f", "n"], ancient=True, script="devanagari",
              levels={"A1": 300, "A2": 400, "B1": 600}, sound=["pitch-accent"],
              note="A reading course in the language of the Vedic hymns."),
@@ -823,7 +938,7 @@ def header(code: str, lang: dict, units: list[dict]) -> list[str]:
     if lang.get("note"):
         out += ["#", "# From the scheme, for this language: " + lang["note"]]
     if ancient:
-        out += ["#", f"# A reading course (owner, 2026-10-31): {name} has no living speakers, so",
+        out += ["#", f"# A reading course (owner, 2026-10-31): {name} {lang.get('ancient_reason', 'has no living speakers')}, so",
                 "# the milestones A1, A2 and B1 mean three reading levels, and the sizes",
                 f"# are `levels` ({sizes['A1']}, {sizes['A2']} and {sizes['B1']} words, a judgement,",
                 "# low confidence) in place of the plan's 700, 900 and 1,200. Themes of",
@@ -878,17 +993,34 @@ def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[0])
     ap.add_argument("--check", action="store_true", help="exit 1 if a file differs")
     ap.add_argument("--root", type=Path, default=ROOT, help="the repository root")
+    ap.add_argument("--only", help="comma-separated codes: handle only these languages")
+    ap.add_argument("--force", action="store_true",
+                    help="with --only, rewrite a path file that already exists")
     args = ap.parse_args(argv)
+    only = None
+    if args.only:
+        only = [c for c in args.only.split(",") if c]
+        unknown = [c for c in only if c not in LANGS and c not in WIRED]
+        if unknown:
+            print("unknown language code(s): " + ", ".join(unknown), file=sys.stderr)
+            return 2
     stale = 0
     for code in sorted(LANGS):
+        if only is not None and code not in only:
+            continue
         path = args.root / "decks" / code / f"{code}-path.yaml"
         text = render(code)
+        if only is not None and path.exists() and not args.force:
+            print(f"{code}: {path.name} exists, left alone (--force rewrites it)")
+            continue
         if not path.exists() or path.read_text(encoding="utf-8") != text:
             stale += 1
             if not args.check:
                 path.parent.mkdir(parents=True, exist_ok=True)
                 path.write_text(text, encoding="utf-8")
     for code in WIRED:
+        if only is not None and code not in only:
+            continue
         path = args.root / "decks" / code / f"{code}-path.yaml"
         old = path.read_text(encoding="utf-8")
         text = wire_unit_one(code, old)

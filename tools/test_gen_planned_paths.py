@@ -165,5 +165,36 @@ class Wiring(unittest.TestCase):
             self.assertTrue((root / "decks" / "pt" / "pt-path.yaml").exists())
 
 
+class OnlyTheNamedLanguages(unittest.TestCase):
+    def test_only_writes_the_named_new_paths(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            self.assertEqual(gp.main(["--root", tmp, "--only", "af,fa"]), 0)
+            written = sorted(p.parent.name for p in (root / "decks").glob("*/*-path.yaml"))
+            self.assertEqual(written, ["af", "fa"])
+
+    def test_only_leaves_an_existing_path_alone_unless_forced(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            path = Path(tmp) / "decks" / "af" / "af-path.yaml"
+            path.parent.mkdir(parents=True)
+            path.write_text("hand edited\n", encoding="utf-8")
+            self.assertEqual(gp.main(["--root", tmp, "--only", "af"]), 0)
+            self.assertEqual(path.read_text("utf-8"), "hand edited\n")
+            self.assertEqual(gp.main(["--root", tmp, "--only", "af", "--force"]), 0)
+            self.assertEqual(path.read_text("utf-8"), gp.render("af"))
+
+    def test_an_unknown_code_is_refused(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(gp.main(["--root", tmp, "--only", "zz"]), 2)
+
+    def test_every_script_plan_exists_and_the_new_languages_are_planned(self) -> None:
+        for code, lang in gp.LANGS.items():
+            if lang.get("script"):
+                self.assertIn(lang["script"], gp.S, code)
+        for code in ("af", "nl", "uk", "id", "fa", "ps", "sat", "sa"):
+            self.assertIn(code, gp.LANGS)
+        self.assertEqual(gp.LANGS["sat"]["script"], "ol_chiki")
+
+
 if __name__ == "__main__":
     unittest.main()

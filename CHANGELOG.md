@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **Six more languages on Add a language.** Afrikaans, Dutch, Ukrainian, Indonesian, Persian and Pashto are listed with no course yet, as Portuguese and Catalan are, and Persian and Pashto sit in a new Iranian family. Indonesian is now a language of its own, no longer found as an alias of Malay. Santali (Ol Chiki) and Yiddish (Hebrew script) can offer their script's font to download once their courses arrive (owner, 2026-11-02).
+
 ### Changed
 
 - **Language rows show the skill icons and script letters.** On the Languages page a Learn chip shows its skills' icons beside the cap, and each script chip starts with the first letter of the script's sample word, so a language in two scripts shows two chips told apart; the skills sheet is unchanged (owner, 2026-11-02).

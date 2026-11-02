@@ -33,7 +33,7 @@
 #   aliases         optional: other names a search finds it by, such as
 #                   "Urdu" for Hindustani, which has no entry of its own
 #                   (#623)
-#   family          indo_aryan, dravidian, tibeto_burman, austroasiatic,
+#   family          indo_aryan, iranian, dravidian, tibeto_burman, austroasiatic,
 #                   germanic, romance, sinitic, koreanic, japonic,
 #                   constructed, slavic, hellenic, italic, celtic, uralic,
 #                   turkic, afroasiatic, austronesian, kra_dai, niger_congo,
@@ -228,7 +228,19 @@ languages:
   - { code: "fil", iso639_3: "fil", name: "Filipino", own_name: "Filipino", scripts: ["latin"], family: "austronesian",
       aliases: ["Tagalog"] }
   - { code: "ms", iso639_3: "zsm", name: "Malay", own_name: "Bahasa Melayu", scripts: ["latin"], family: "austronesian",
-      aliases: ["Standard Malay", "Indonesian", "Bahasa Indonesia"] }
+      aliases: ["Standard Malay"] }
+  # The first-words languages (owner, 2026-11-02: "all should get their first
+  # words this week only"). Their own script comes first; none has decks yet.
+  # Indonesian is a language of its own here, no longer an alias of Malay.
+  - { code: "af", iso639_3: "afr", name: "Afrikaans", own_name: "Afrikaans", scripts: ["latin"], family: "germanic" }
+  - { code: "nl", iso639_3: "nld", name: "Dutch", own_name: "Nederlands", scripts: ["latin"], family: "germanic",
+      aliases: ["Flemish"] }
+  - { code: "uk", iso639_3: "ukr", name: "Ukrainian", own_name: "Українська", scripts: ["cyrillic"], family: "slavic" }
+  - { code: "id", iso639_3: "ind", name: "Indonesian", own_name: "Bahasa Indonesia", scripts: ["latin"], family: "austronesian" }
+  - { code: "fa", iso639_3: "fas", name: "Persian", own_name: "فارسی", scripts: ["perso_arabic"], family: "iranian",
+      aliases: ["Farsi", "Dari"] }
+  - { code: "ps", iso639_3: "pus", name: "Pashto", own_name: "پښتو", scripts: ["perso_arabic"], family: "iranian",
+      aliases: ["Pushto", "Pakhto"] }
   - { code: "sw", iso639_3: "swh", name: "Swahili", own_name: "Kiswahili", scripts: ["latin"], family: "niger_congo" }
   - { code: "ha", iso639_3: "hau", name: "Hausa", own_name: "Hausa", scripts: ["latin"], family: "afroasiatic" }
   - { code: "so", iso639_3: "som", name: "Somali", own_name: "Soomaali", scripts: ["latin"], family: "afroasiatic" }

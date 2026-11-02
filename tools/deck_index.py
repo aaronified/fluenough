@@ -246,6 +246,8 @@ FONTS = {
         "Noto Sans Egyptian Hieroglyphs", "NotoSansEgyptianHieroglyphs.ttf"),
     "cuneiform": ("Noto Sans Cuneiform", "NotoSansCuneiform.ttf"),
     "linear_b": ("Noto Sans Linear B", "NotoSansLinearB.ttf"),
+    "ol_chiki": ("Noto Sans Ol Chiki", "NotoSansOlChiki.ttf"),
+    "hebrew": ("Noto Sans Hebrew", "NotoSansHebrew.ttf"),
     "han_simplified": ("Noto Sans SC", "NotoSansSC.ttf"),
     "han_traditional": ("Noto Sans TC", "NotoSansTC.ttf"),
     "han": ("Noto Sans JP", "NotoSansJP.ttf"),
