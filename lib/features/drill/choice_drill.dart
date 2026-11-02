@@ -99,7 +99,7 @@ class ChoiceDrill extends StatelessWidget {
                 for (final option in session.options)
                   if (!answered ||
                       session.isRight(option) ||
-                      (picked != null && picked.id == option.id))
+                      picked.id == option.id)
                     option,
               ].indexed) ...[
                 if (place > 0) const SizedBox(height: 10),
