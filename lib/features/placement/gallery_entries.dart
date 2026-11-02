@@ -161,31 +161,14 @@ final List<GalleryEntry> placementGalleryEntries = <GalleryEntry>[
     state: PickerFixtures.cancelled,
   ),
   GalleryEntry(
-    id: 'placement-alphabet',
-    section: GallerySection.profiles,
-    label: 'Placement, the alphabet', // ui-literal-ok: debug-only gallery
-    note: 'Learn the alphabet, or Latin letters only (#47)', // ui-literal-ok: debug-only gallery
-    builder: (_) =>
-        PlacementPage(languages: const <String>['hi'], onFinished: (_) {}),
-  ),
-  GalleryEntry(
-    id: 'placement-ask',
-    section: GallerySection.profiles,
-    label: 'Placement, asked', // ui-literal-ok: debug-only gallery
-    note: 'Find my level, or start from the beginning', // ui-literal-ok: debug-only gallery
-    builder: (_) =>
-        PlacementPage(languages: const <String>['es'], onFinished: (_) {}),
-  ),
-  GalleryEntry(
     id: 'placement-check',
     section: GallerySection.profiles,
     label: 'Placement, checking', // ui-literal-ok: debug-only gallery
-    note: 'The first script\'s question: do you read it?', // ui-literal-ok: debug-only gallery
+    note: 'The first question, in the review\'s screen', // ui-literal-ok: debug-only gallery
     builder: (_) => PlacementPage(
       languages: const <String>['hi'],
       onFinished: (_) {},
       random: Random(1),
-      checking: true,
     ),
   ),
 ];

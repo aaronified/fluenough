@@ -89,6 +89,49 @@ void main() {
     expect(find.byType(IpaInfoDot), findsOneWidget);
   });
 
+  testWidgets('the IPA in the reading\'s place is read out as the IPA, left to '
+      'right, without the slashes', (tester) async {
+    final semantics = tester.ensureSemantics();
+    await pumpWordSheet(tester, replaces: true);
+    final text = AppLocalizations.of(tester.element(find.byType(WordSheet)))!;
+    expect(find.bySemanticsLabel(text.ipaSemantics('pʰəɳ')), findsOneWidget);
+    expect(
+      tester.widget<Text>(find.text('/pʰəɳ/')).textDirection,
+      TextDirection.ltr,
+    );
+    semantics.dispose();
+  });
+
+  testWidgets('a reading drill line with the IPA in the reading\'s place is '
+      'read out as the IPA, left to right', (tester) async {
+    final semantics = tester.ensureSemantics();
+    await pumpScreen(
+      tester,
+      const Scaffold(
+        body: ReadingIpaLines(
+          style: TextStyle(),
+          reading: 'pālu',
+          ipa: 'paːlu',
+          target: 'పాలు',
+        ),
+      ),
+      state: AppState.test(
+        settings: SettingsNotifier()
+          ..showIpa = true
+          ..ipaReplacesReading = true,
+      ),
+    );
+    final text = AppLocalizations.of(
+      tester.element(find.byType(ReadingIpaLines)),
+    )!;
+    expect(find.bySemanticsLabel(text.ipaSemantics('paːlu')), findsOneWidget);
+    expect(
+      tester.widget<Text>(find.text('/paːlu/')).textDirection,
+      TextDirection.ltr,
+    );
+    semantics.dispose();
+  });
+
   testWidgets('IPA on and the switch on: the IPA is the reading, and the '
       'transliteration is gone', (tester) async {
     await pumpLines(tester, ipa: true, replaces: true);

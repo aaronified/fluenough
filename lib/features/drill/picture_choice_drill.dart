@@ -167,12 +167,14 @@ class PictureChoiceDrill extends StatelessWidget {
           ReadingWithInfo(
             swapped: lines.swapped,
             card: card,
-            reading: Text(
+            reading: ReadingText(
               reading,
+              swapped: lines.swapped,
               textAlign: TextAlign.center,
-              style: theme.textTheme.bodyLarge!
-                  .copyWith(fontSize: 18, color: scheme.onSurfaceVariant)
-                  .forIpa(lines.swapped),
+              style: theme.textTheme.bodyLarge!.copyWith(
+                fontSize: 18,
+                color: scheme.onSurfaceVariant,
+              ),
             ),
           ),
       ],

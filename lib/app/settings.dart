@@ -160,6 +160,22 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, Map<String, String>> _languageSkills =
       const <String, Map<String, String>>{};
   bool _latinKnownDone = false;
+  List<String> _placementOffers = const <String>[];
+
+  /// The languages chosen to Learn on the first launch that have not yet been
+  /// offered "Find my level", in the order they were set (owner, 2026-11-02:
+  /// "It should be offered, and skippable to start at the beginning"). The
+  /// app places each in turn; a language leaves the list as the learner goes
+  /// on from its result or starts it at the beginning (Start at the
+  /// beginning), which saves nothing for it. It is empty after that, and for
+  /// an install from before.
+  List<String> get placementOffers => _placementOffers;
+  set placementOffers(List<String> codes) {
+    final next = List<String>.unmodifiable(codes);
+    if (listEquals(next, _placementOffers)) return;
+    _placementOffers = next;
+    notifyListeners();
+  }
 
   /// Whether the one-time change of a saved Learn of the Latin script to
   /// Know has run (owner, 2026-10-31).
@@ -1178,6 +1194,7 @@ class SettingsNotifier extends ChangeNotifier {
     'scripts_read': jsonEncode(_scriptsRead),
     'language_skills': jsonEncode(_languageSkills),
     'latin_known_done': '$_latinKnownDone',
+    'placement_offers': _placementOffers.join(','),
     'course_natives': jsonEncode(<String, Object>{
       for (final MapEntry(:key, :value) in _courseNatives.entries)
         key: <String, Object>{
@@ -1545,6 +1562,12 @@ class SettingsNotifier extends ChangeNotifier {
       }
     }
     if (pick('latin_known_done', flag) case final v?) latinKnownDone = v;
+    if (pick('placement_offers', (t) => t) case final v?) {
+      placementOffers = <String>[
+        for (final code in v.split(','))
+          if (RegExp(r'^[a-z]{2,3}$').hasMatch(code)) code,
+      ];
+    }
     _foldUrduIntoHindustani();
     _renameArabicOfKashmiriAndSindhi();
     if (pick('course_natives', _parseJsonMap) case final v?) {

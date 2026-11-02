@@ -2531,7 +2531,16 @@ class AppState extends ChangeNotifier {
     final counts = <String, int>{};
     for (final entry in decks) {
       if (entry.language.code != code) continue;
-      final script = entry.language.script;
+      final language = entry.language;
+      // A deck written in kanji lists kana beside it and is read on top of
+      // kana (ADR-0053): it counts for the kana the course starts with, so
+      // that a Japanese course with more kanji decks than kana ones is
+      // still learned in kana by default.
+      final script =
+          language.script == kanjiScript &&
+              language.allScripts.contains(kanaScript)
+          ? kanaScript
+          : language.script;
       counts[script] = (counts[script] ?? 0) + 1;
     }
     if (counts.isEmpty) return 'latin';
@@ -2608,8 +2617,8 @@ class AppState extends ChangeNotifier {
   Set<String> get scriptsReadKnown => scriptReadersKnown.keys.toSet();
 
   /// The languages the learner knows that they read each script through,
-  /// by code, in the order answered: what placement's "Do you read
-  /// Devanagari?" says they read it through (#481).
+  /// by code, in the order answered: the script pills say it (Read known), and
+  /// placement checks a script only where one does (#481).
   Map<String, List<String>> get scriptReadersKnown {
     final readers = <String, List<String>>{};
     for (final MapEntry(:key, :value) in settings.scriptsRead.entries) {
@@ -2666,6 +2675,20 @@ class AppState extends ChangeNotifier {
     Card card,
     LanguageInfo language, {
     Set<String>? scripts,
+  }) => _otherSpellings(card.targetIn, language, scripts: scripts);
+
+  /// [otherSpellings] of an example sentence (`target_scripts`, ADR-0053):
+  /// the kana line under a Japanese example written in kanji.
+  List<({String text, LanguageInfo language})> exampleOtherSpellings(
+    CardExample example,
+    LanguageInfo language, {
+    Set<String>? scripts,
+  }) => _otherSpellings(example.targetIn, language, scripts: scripts);
+
+  List<({String text, LanguageInfo language})> _otherSpellings(
+    String? Function(String script, {required String firstScript}) spelling,
+    LanguageInfo language, {
+    Set<String>? scripts,
   }) {
     final first = language.script;
     final shown = _shownScripts(language, scripts: scripts);
@@ -2675,7 +2698,7 @@ class AppState extends ChangeNotifier {
     return <({String text, LanguageInfo language})>[
       for (final script in shown)
         if (script != first)
-          if (card.targetIn(script, firstScript: first) case final text?)
+          if (spelling(script, firstScript: first) case final text?)
             (text: text, language: language.inScript(script)),
     ];
   }
@@ -2689,18 +2712,37 @@ class AppState extends ChangeNotifier {
     Card card,
     LanguageInfo language, {
     Set<String>? scripts,
+  }) => _spellingShown(card.target, card.targetIn, language, scripts: scripts);
+
+  /// [targetShown] of an example sentence (ADR-0053).
+  ({String text, LanguageInfo language}) exampleShown(
+    CardExample example,
+    LanguageInfo language, {
+    Set<String>? scripts,
+  }) => _spellingShown(
+    example.target,
+    example.targetIn,
+    language,
+    scripts: scripts,
+  );
+
+  ({String text, LanguageInfo language}) _spellingShown(
+    String target,
+    String? Function(String script, {required String firstScript}) spelling,
+    LanguageInfo language, {
+    Set<String>? scripts,
   }) {
     final first = language.script;
     final shown = _shownScripts(language, scripts: scripts);
     if (shown.isEmpty || shown.contains(first)) {
-      return (text: card.target, language: language);
+      return (text: target, language: language);
     }
     for (final script in shown) {
-      if (card.targetIn(script, firstScript: first) case final text?) {
+      if (spelling(script, firstScript: first) case final text?) {
         return (text: text, language: language.inScript(script));
       }
     }
-    return (text: card.target, language: language);
+    return (text: target, language: language);
   }
 
   /// Whether [entry] is one of its course's decks that need the alphabet:

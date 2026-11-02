@@ -136,7 +136,6 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   String get _code => _view.code;
   List<SkillKey> get _shape => _state.skillShape(_view.language);
   List<String> get _scripts => _state.skillScripts(_view.language);
-  bool get _several => _scripts.length > 1;
 
   @override
   void initState() {
@@ -450,7 +449,6 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
         settings: const RouteSettings(name: '/placement'),
         builder: (_) => PlacementPage(
           languages: <String>[code],
-          asked: <String>{code},
           alphabet: <String, bool>{
             if (course?.scriptDecks ?? false)
               code: state.settings.learnsAlphabet(code),
@@ -763,9 +761,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                 if (_scripts.isNotEmpty)
                   _Heading(
                     icon: Icons.translate,
-                    text: _several
-                        ? l10n.languagesScriptsRW
-                        : l10n.languagesScriptRW,
+                    text: _scriptsHeading(
+                      l10n,
+                      _view.language,
+                      _scripts.length,
+                    ),
                   ),
                 for (final script in _scripts)
                   _skillRow(
@@ -1417,6 +1417,22 @@ class _SoundCheckDialogState extends State<_SoundCheckDialog> {
   }
 }
 
+/// The heading over a language's script rows: what the learner can do with
+/// them. A script nothing is typed in, the IPA's, is read only.
+String _scriptsHeading(
+  AppLocalizations l10n,
+  SpokenLanguage language,
+  int count,
+) {
+  final several = count > 1;
+  if (!language.typed) {
+    return several
+        ? l10n.languagesScriptsReadOnly
+        : l10n.languagesScriptReadOnly;
+  }
+  return several ? l10n.languagesScriptsRW : l10n.languagesScriptRW;
+}
+
 /// The i: the language's badge and family tag (#698), how much of B1 is written
 /// and the learner's share, its A1 line, dialect, scripts, taught-from, sizes,
 /// last update check, units built and words.
@@ -1536,9 +1552,7 @@ class _InfoDialog extends StatelessWidget {
               kv(l10n.languagesInfoDialect, dialectOf(l10n, view.language)),
             for (final script in scripts)
               kv(
-                scripts.length > 1
-                    ? l10n.languagesScriptsRW
-                    : l10n.languagesScriptRW,
+                _scriptsHeading(l10n, view.language, scripts.length),
                 l10n.scriptNameOr(script, view.name),
               ),
             if (taught != null) kv(l10n.languagesInfoTaughtFrom, taught),

@@ -235,15 +235,14 @@ class TaughtDetails extends StatelessWidget {
         ReadingWithInfo(
           swapped: swapped,
           card: card,
-          reading: Text(
+          reading: ReadingText(
             reading,
+            swapped: swapped,
             textAlign: TextAlign.center,
-            style: theme.textTheme.bodyLarge!
-                .copyWith(
-                  fontSize: 18,
-                  color: theme.colorScheme.onSurfaceVariant,
-                )
-                .forIpa(swapped),
+            style: theme.textTheme.bodyLarge!.copyWith(
+              fontSize: 18,
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
           ),
         ),
     ];
@@ -293,19 +292,23 @@ class TaughtExample extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            TargetText.card(
-              example.target,
-              language: language,
-              fontSize: 16,
-              color: scheme.onSurface,
-            ),
+            if (example.targetScripts.isEmpty)
+              TargetText.card(
+                example.target,
+                language: language,
+                fontSize: 16,
+                color: scheme.onSurface,
+              )
+            else
+              _SpelledExample(example: example, language: language),
             if (reading != null)
-              Text(
+              ReadingText(
                 reading,
+                swapped: lines.swapped,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodySmall!
-                    .copyWith(color: scheme.onSurfaceVariant)
-                    .forIpa(lines.swapped),
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             if (lines.ipa case final ipa?) IpaLine(ipa),
             const SizedBox(height: 2),
@@ -319,6 +322,48 @@ class TaughtExample extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// An example with more than one spelling (`target_scripts`, ADR-0053), in
+/// the script the learner learns, with the other beneath it, smaller: a
+/// Japanese example in kanji with its kana line, as a card shows its other
+/// spellings (`TargetText`).
+class _SpelledExample extends StatelessWidget {
+  const _SpelledExample({required this.example, required this.language});
+
+  final CardExample example;
+  final LanguageInfo language;
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.of(context);
+    final color = Theme.of(context).colorScheme.onSurface;
+    return ListenableBuilder(
+      listenable: state.settings,
+      builder: (context, _) {
+        final shown = state.exampleShown(example, language);
+        final others = state.exampleOtherSpellings(example, language);
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            TargetText.card(
+              shown.text,
+              language: shown.language,
+              fontSize: 16,
+              color: color,
+            ),
+            for (final other in others)
+              TargetText.card(
+                other.text,
+                language: other.language,
+                fontSize: 12,
+                color: color,
+              ),
+          ],
+        );
+      },
     );
   }
 }
