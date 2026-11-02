@@ -1,0 +1,28 @@
+"schema": 1
+"id": "zh-en-grammar-ba-with-complements"
+"kind": "layer"
+"core": "zh-grammar-ba-with-complements"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "把 (bǎ) with a result: the object before the verb"
+"license": "CC-BY-SA-4.0"
+"description": "把 (bǎ) brings the object before the verb when the verb has a result word or a place: 我把门关上了 (wǒ bǎ mén guān shang le), I closed the door. The result word is needed. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "把 (bǎ) with a result: the object before the verb"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement: the verb then the object"
+    "ba": "把 (bǎ) before the object, then the verb and its result"
+    "ba-not": "不 (bù) or 没 (méi) before 把 (bǎ)"
+  "entries":
+    "guanshang": "to close up"
+    "zuowan": "to finish"
+    "fangzai": "to put at"
+    "xiehao": "to write well"
+    "chiwan": "to finish eating"
+  "notes": "把 (bǎ) puts the object before the verb when the verb has a result word: 我把门关上了 (wǒ bǎ mén guān shang le), I closed the door. A plain verb with no result cannot use 把 (bǎ) alone. To say the action did not happen, put 没 (méi) before 把 (bǎ): 我没把门关上 (wǒ méi bǎ mén guān shang), I did not close the door. Do not use 不 (bù) before 把 (bǎ) in the past."

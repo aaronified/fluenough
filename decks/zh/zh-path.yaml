@@ -785,7 +785,9 @@ units:
       - { id: "a-business-call", text: { "en": "A polite phone call between two companies" } }
     reading_passages:
       - { id: "business-email", text: { "en": "A short business email" } }
-  - planned: { id: "zh-grammar-ba-complements", grammar: ["ba-with-complements", "ba-bei-contrast"] }
+  - decks: ["zh-grammar-ba-with-complements", "zh-grammar-ba-bei-contrast", "zh-grammar-ba-with-complements-sentences"]
+    words: 0
+    grammar: ["ba-with-complements", "ba-bei-contrast"]
     listening_passages:
       - { id: "put-it-back", text: { "en": "Using ba with a complement: put the chairs back, translate it into English, and the same event told with bei" } }
     reading_passages:
