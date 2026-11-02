@@ -161,6 +161,31 @@ void main() {
       },
     );
 
+    test('a card gone back to describes no take: the take is the current '
+        "card's", () async {
+      speech.next = <SpeechAlternative>[
+        SpeechAlternative(session.item.card.target),
+      ];
+      await session.listen();
+      session.next();
+      speech.audio = OwnAudio(Uint8List(32000), sampleRate: 16000);
+      speech.next = <SpeechAlternative>[
+        SpeechAlternative(session.item.card.target),
+      ];
+      await session.listen();
+      expect(session.hasOwnTake, isTrue);
+
+      session.back();
+      expect(session.hasOwnTake, isFalse);
+      expect(session.ownTakeLength, isNull);
+      await session.replayOwn();
+      expect(sound.playbacks, 0);
+      expect(sound.recordings, 0);
+
+      session.next();
+      expect(session.hasOwnTake, isTrue);
+    });
+
     test('with no audio kept, it records the word again, as Hear yourself '
         'does, and keeps that take', () async {
       speech.next = <SpeechAlternative>[
@@ -184,9 +209,8 @@ void main() {
     testWidgets('on a card gone back to, Replay and Again are off and no take '
         'is described', (tester) async {
       usePhone(tester);
-      final speech = FixedSpeechEngine(onDevice: <String>{'es'});
       final state = AppState.test(
-        speech: speech,
+        speech: FixedSpeechEngine(onDevice: <String>{'es'}),
         soundCheck: FixedSoundCheck(),
         settings: SettingsNotifier(
           spokenLanguages: const <String>['en'],
@@ -198,31 +222,24 @@ void main() {
         ),
       );
       addTearDown(state.dispose);
-      late DrillSession session;
-      // Real time for the recogniser's futures: not the test's clock.
-      await tester.runAsync(() async {
-        await state.load();
-        await state.startSpeech();
-        session = DrillSession(
-          state: state,
-          items: state
-              .buildSession(
-                DrillRequest.untaught(_spanish, skill: Skill.speaking),
-              )
-              .items,
-        );
-        speech.audio = OwnAudio(Uint8List(32000), sampleRate: 16000);
-        speech.next = <SpeechAlternative>[
-          SpeechAlternative(session.item.card.target),
-        ];
-        await session.listen();
-        session.next();
-        speech.next = <SpeechAlternative>[
-          SpeechAlternative(session.item.card.target),
-        ];
-        await session.listen();
-      });
+      await state.load();
+      await state.startSpeech();
+      final session = DrillSession(
+        state: state,
+        items: state
+            .buildSession(
+              DrillRequest.untaught(_spanish, skill: Skill.speaking),
+            )
+            .items,
+      );
       addTearDown(session.dispose);
+      // Two answered cards, said right (graded at once, nothing to await).
+      for (var i = 0; i < 2; i++) {
+        session.checkSpoken(<SpeechAlternative>[
+          SpeechAlternative(session.item.card.target),
+        ]);
+        if (i == 0) session.next();
+      }
 
       Future<void> row() => pumpScreen(
         tester,
@@ -232,13 +249,11 @@ void main() {
       IconButton button(IconData icon) =>
           tester.widget<IconButton>(find.widgetWithIcon(IconButton, icon));
 
-      // The current card: its take is described, and the buttons work.
+      // The current card: Replay and Again work (nothing is kept yet, so
+      // Replay records one).
       await row();
       final l10n = l10nOf(tester);
-      expect(
-        find.textContaining(l10n.sayRecordingKept('0:01')),
-        findsOneWidget,
-      );
+      expect(find.text(l10n.sayRecordingNone), findsOneWidget);
       expect(button(Icons.play_arrow_rounded).onPressed, isNotNull);
       expect(button(Icons.mic).onPressed, isNotNull);
 
@@ -246,7 +261,6 @@ void main() {
       session.back();
       expect(session.readOnly, isTrue);
       await row();
-      expect(find.textContaining(l10n.sayRecordingKept('0:01')), findsNothing);
       expect(find.text(l10n.sayRecordingNone), findsNothing);
       expect(button(Icons.play_arrow_rounded).onPressed, isNull);
       expect(button(Icons.mic).onPressed, isNull);
