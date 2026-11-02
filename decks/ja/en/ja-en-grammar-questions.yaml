@@ -1,0 +1,18 @@
+schema: 1
+id: "ja-en-grammar-questions"
+kind: "layer"
+core: "ja-grammar-questions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Yes-no questions with か (ka)"
+description: "A question is made by adding か (ka) at the end of a sentence: がくせいですか (gakusei desu ka), is it a student? Every noun a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "question": "is it {meaning}?"
+    "negative-question": "is it not {meaning}?"
+rules:
+  "ja-rule-question-ka":
+    name: "か (ka): a question"
+    explanation: "{1} at the end of a sentence turns it into a yes-no question: {2} means are you a student? After a negative it asks, isn't it?"

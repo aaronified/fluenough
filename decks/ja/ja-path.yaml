@@ -218,7 +218,9 @@ units:
       - { id: "from-nine-to-five", text: { "en": "Saying from when to when, with whom, and whose" } }
     reading_passages:
       - { id: "office-hours-note", text: { "en": "A note on office hours and who is in, from when to when" } }
-  - planned: { id: "ja-grammar-questions", grammar: "question-ka" }
+  - decks: ["ja-grammar-questions", "ja-grammar-questions-sentences", "ja-reading-grammar-questions"]
+    words: 0
+    grammar: ["question-ka"]
     listening_passages:
       - { id: "is-it-yours", text: { "en": "Asking yes-no questions with ka, and answering hai and iie" } }
     reading_passages:
