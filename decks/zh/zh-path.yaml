@@ -679,7 +679,9 @@ units:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - planned: { id: "zh-grammar-bei", grammar: "bei-passive" }
+  - decks: ["zh-grammar-bei-passive", "zh-grammar-bei-passive-sentences"]
+    words: 0
+    grammar: ["bei-passive"]
     listening_passages:
       - { id: "my-bike-was-stolen", text: { "en": "Telling the police your bike was stolen, with bei" } }
     reading_passages:
