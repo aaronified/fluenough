@@ -502,7 +502,8 @@ units:
       - { id: "you-sing-well", text: { "en": "Saying how well something is done, with de: she sings well, he runs fast" } }
     reading_passages:
       - { id: "teacher-comments", text: { "en": "A teacher's comments on a report card" } }
-  - planned: { id: "zh-eating-out", theme: "eating-out", words: 50 }
+  - decks: ["zh-eating-out", "zh-eating-out-sentences", "zh-reading-eating-out", "*"]
+    words: 50
     listening_passages:
       - { id: "a-hotpot-dinner", text: { "en": "Ordering hotpot with friends and asking for the bill" } }
     reading_passages:
