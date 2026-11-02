@@ -1,0 +1,83 @@
+schema: 1
+id: "as-sports-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3736"
+    target: "দলনায়ক গ'ল দিলে।"
+    reading: "dolnāyôk gol dile."
+    ipa: "dɔlɔnajɔk ɡol dile"
+    pos: "phrase"
+    bases:
+      - { word: "দিলে", ref: "as-2218" }
+    confusables:
+      - { id: "c1", word: "প্ৰশিক্ষক", reading: "prôxikkhôk", kind: "word" }
+      - { id: "c2", word: "ৰেফাৰী", reading: "refārī", kind: "word" }
+  - id: "as-3737"
+    target: "আমি জিকিলোঁ।"
+    reading: "āmi zikilōm̐."
+    ipa: "ami zikilʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "জিকিলোঁ", ref: "as-3731" }
+    confusables:
+      - { id: "c1", word: "হাৰিলোঁ", reading: "hārilōm̐", kind: "form" }
+      - { id: "c2", word: "হাৰা", reading: "hārā", kind: "word" }
+  - id: "as-3738"
+    target: "তেওঁ স্বৰ্ণ পদক পালে।"
+    reading: "teum̐ xwôrṇô pôdôk pāle."
+    ipa: "teʊ̃ sɔɹn pɔdɔk pale"
+    pos: "phrase"
+    bases:
+      - { word: "পালে", base: "পোৱা", reading: "puwā" }
+    confusables:
+      - { id: "c1", word: "ৰূপ", reading: "rup", kind: "word" }
+      - { id: "c2", word: "প্ৰশিক্ষক", reading: "prôxikkhôk", kind: "word" }
+  - id: "as-3739"
+    target: "ক্ৰিকেট ভাল লাগে।"
+    reading: "krikeṭ bhāl lāge."
+    ipa: "kɹiket bʱal laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ফুটবল", reading: "phutbol", kind: "word" }
+      - { id: "c2", word: "ভলিবল", reading: "bhôlibôl", kind: "word" }
+  - id: "as-3740"
+    target: "নতুন ৰেকৰ্ড।"
+    reading: "nôtun rekôrḍ."
+    ipa: "notun ɹekɔɹd"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "পুৰণি", reading: "puroni", kind: "word" }
+      - { id: "c2", word: "পদক", reading: "pôdôk", kind: "word" }
+  - id: "as-3741"
+    target: "ৰেফাৰী আহিছে।"
+    reading: "refārī āhise."
+    ipa: "ɹepʰaɹi ahise"
+    pos: "phrase"
+    bases:
+      - { word: "আহিছে", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "খেলাডু", reading: "khelāḍu", kind: "word" }
+      - { id: "c2", word: "দলনায়ক", reading: "dolnāyôk", kind: "word" }
+  - id: "as-3742"
+    target: "দৌৰ ভাল।"
+    reading: "dour bhāl."
+    ipa: "dɔuɹ bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খেল", reading: "khel", kind: "word" }
+      - { id: "c2", word: "ক্ৰীড়া", reading: "krīṛā", kind: "word" }
+  - id: "as-3743"
+    target: "তাই জিকিছে।"
+    reading: "tāi zikise."
+    ipa: "tai zikise"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "জিকিছে", ref: "as-3731" }
+    confusables:
+      - { id: "c1", word: "হাৰিছে", reading: "hārise", kind: "form" }
+      - { id: "c2", word: "বাদক", reading: "bādôk", kind: "word" }

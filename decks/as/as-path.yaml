@@ -625,11 +625,14 @@ units:
       - { id: "a-hard-choice", text: { "en": "A short text about a hard choice" } }
   - decks: ["as-reading-concessive"]
     words: 0
-  - planned: { id: "as-sports", theme: "sports", words: 40 }
+  - decks: ["as-sports", "as-sports-sentences", "*"]
+    words: 17
     listening_passages:
       - { id: "cricket-talk", text: { "en": "Friends talk about a cricket match" } }
     reading_passages:
       - { id: "match-report", text: { "en": "A short match report" } }
+  - decks: ["as-reading-sports"]
+    words: 0
   - planned: { id: "as-relationships", theme: "relationships", words: 45 }
     listening_passages:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
