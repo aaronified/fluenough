@@ -842,7 +842,8 @@ units:
       - { id: "the-great-wall", text: { "en": "A guide tells the story of the Great Wall" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about an emperor" } }
-  - planned: { id: "zh-festivals", theme: "festivals", words: 45 }
+  - decks: ["zh-festivals", "zh-festivals-sentences", "zh-reading-festivals", "*"]
+    words: 45
     listening_passages:
       - { id: "spring-festival", text: { "en": "A family gets ready for the Spring Festival" } }
     reading_passages:
