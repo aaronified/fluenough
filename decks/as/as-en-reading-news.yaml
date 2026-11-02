@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-news"
+name: "Assamese reading: news: papers, reporters, elections and warnings"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-radio-news"
+    title: "A short radio news bulletin"
+    theme: "news"
+    sentences:
+      - text: "আজিৰ খবৰ শুনক।"
+        reading: "āzir khôbôr xunôk."
+      - text: "ৰাজধানীত নিৰ্বাচন।"
+        reading: "rājôdhānītôt nirbāxôn."
+      - text: "বহুত মানুহে ভোট দিলে।"
+        reading: "bohut mānuhe bhot dile."
+      - text: "কাইলৈ বৰষুণৰ সতৰ্কবাণী।"
+        reading: "kāilôi bôrôxunôr sôtôrkôbāṇī."
+    questions:
+      - id: "as-3267"
+        prompt: { en: "The news is about an election." }
+        answer: true
+      - id: "as-3268"
+        prompt: { en: "Where is the election?" }
+        options:
+          - { en: "In the capital" }
+          - { en: "In the village" }
+          - { en: "In the forest" }
+        answer: 1
+      - id: "as-3269"
+        prompt: { en: "What is the warning about?" }
+        options:
+          - { en: "Heat" }
+          - { en: "Rain" }
+          - { en: "Snow" }
+        answer: 2
+  - id: "as-headline-list"
+    title: "A list of newspaper headlines"
+    theme: "news"
+    sentences:
+      - text: "শিৰোনাম এক: নতুন সেতু।"
+        reading: "xirōnām ek: nôtun setu."
+      - text: "শিৰোনাম দুই: বৰষুণ বহুত।"
+        reading: "xirōnām dui: bôrôxun bohut."
+      - text: "শিৰোনাম তিনি: খেল জয়।"
+        reading: "xirōnām tini: khel zoy."
+      - text: "শিৰোনাম চাৰি: নতুন বিদ্যালয়।"
+        reading: "xirōnām sāri: nôtun bidyālôy."
+    questions:
+      - id: "as-3270"
+        prompt: { en: "The first headline is about a new bridge." }
+        answer: true
+      - id: "as-3271"
+        prompt: { en: "Which headline is about a win?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 3
+      - id: "as-3272"
+        prompt: { en: "What is the fourth headline about?" }
+        options:
+          - { en: "A new school" }
+          - { en: "A new road" }
+          - { en: "A new car" }
+        answer: 1
