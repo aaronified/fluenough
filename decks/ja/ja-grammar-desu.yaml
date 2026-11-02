@@ -1,0 +1,926 @@
+schema: 1
+id: "ja-grammar-desu"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+  slots: ["statement", "negative"]
+  rows:
+    - word: "ja-0309"
+      forms:
+        "statement": "くにです"
+        "negative": "くにではありません"
+      readings:
+        "statement": "kuni desu"
+        "negative": "kuni de wa arimasen"
+    - word: "ja-0310"
+      forms:
+        "statement": "としです"
+        "negative": "としではありません"
+      readings:
+        "statement": "toshi desu"
+        "negative": "toshi de wa arimasen"
+    - word: "ja-0311"
+      forms:
+        "statement": "おとこです"
+        "negative": "おとこではありません"
+      readings:
+        "statement": "otoko desu"
+        "negative": "otoko de wa arimasen"
+    - word: "ja-0312"
+      forms:
+        "statement": "おんなです"
+        "negative": "おんなではありません"
+      readings:
+        "statement": "onna desu"
+        "negative": "onna de wa arimasen"
+    - word: "ja-0313"
+      forms:
+        "statement": "がっこうです"
+        "negative": "がっこうではありません"
+      readings:
+        "statement": "gakkou desu"
+        "negative": "gakkou de wa arimasen"
+    - word: "ja-0314"
+      forms:
+        "statement": "だいがくです"
+        "negative": "だいがくではありません"
+      readings:
+        "statement": "daigaku desu"
+        "negative": "daigaku de wa arimasen"
+    - word: "ja-0315"
+      forms:
+        "statement": "にほんごです"
+        "negative": "にほんごではありません"
+      readings:
+        "statement": "nihongo desu"
+        "negative": "nihongo de wa arimasen"
+    - word: "ja-0316"
+      forms:
+        "statement": "えいごです"
+        "negative": "えいごではありません"
+      readings:
+        "statement": "eigo desu"
+        "negative": "eigo de wa arimasen"
+    - word: "ja-0317"
+      forms:
+        "statement": "しゅみです"
+        "negative": "しゅみではありません"
+      readings:
+        "statement": "shumi desu"
+        "negative": "shumi de wa arimasen"
+    - word: "ja-0321"
+      forms:
+        "statement": "やすみです"
+        "negative": "やすみではありません"
+      readings:
+        "statement": "yasumi desu"
+        "negative": "yasumi de wa arimasen"
+    - word: "ja-0322"
+      forms:
+        "statement": "ちゅうごくです"
+        "negative": "ちゅうごくではありません"
+      readings:
+        "statement": "chuugoku desu"
+        "negative": "chuugoku de wa arimasen"
+    - word: "ja-0323"
+      forms:
+        "statement": "かんこくです"
+        "negative": "かんこくではありません"
+      readings:
+        "statement": "kankoku desu"
+        "negative": "kankoku de wa arimasen"
+    - word: "ja-0324"
+      forms:
+        "statement": "いんどです"
+        "negative": "いんどではありません"
+      readings:
+        "statement": "indo desu"
+        "negative": "indo de wa arimasen"
+    - word: "ja-0325"
+      forms:
+        "statement": "あめりかです"
+        "negative": "あめりかではありません"
+      readings:
+        "statement": "amerika desu"
+        "negative": "amerika de wa arimasen"
+    - word: "ja-0326"
+      forms:
+        "statement": "おとなです"
+        "negative": "おとなではありません"
+      readings:
+        "statement": "otona desu"
+        "negative": "otona de wa arimasen"
+    - word: "ja-0327"
+      forms:
+        "statement": "ひとりです"
+        "negative": "ひとりではありません"
+      readings:
+        "statement": "hitori desu"
+        "negative": "hitori de wa arimasen"
+    - word: "ja-0328"
+      forms:
+        "statement": "とうきょうです"
+        "negative": "とうきょうではありません"
+      readings:
+        "statement": "toukyou desu"
+        "negative": "toukyou de wa arimasen"
+    - word: "ja-0138"
+      forms:
+        "statement": "おきゃくさまです"
+        "negative": "おきゃくさまではありません"
+      readings:
+        "statement": "okyakusama desu"
+        "negative": "okyakusama de wa arimasen"
+    - word: "ja-0139"
+      forms:
+        "statement": "せんぱいです"
+        "negative": "せんぱいではありません"
+      readings:
+        "statement": "senpai desu"
+        "negative": "senpai de wa arimasen"
+    - word: "ja-0140"
+      forms:
+        "statement": "こうはいです"
+        "negative": "こうはいではありません"
+      readings:
+        "statement": "kouhai desu"
+        "negative": "kouhai de wa arimasen"
+    - word: "ja-0141"
+      forms:
+        "statement": "しゃちょうです"
+        "negative": "しゃちょうではありません"
+      readings:
+        "statement": "shachou desu"
+        "negative": "shachou de wa arimasen"
+    - word: "ja-0142"
+      forms:
+        "statement": "かちょうです"
+        "negative": "かちょうではありません"
+      readings:
+        "statement": "kachou desu"
+        "negative": "kachou de wa arimasen"
+    - word: "ja-0143"
+      forms:
+        "statement": "ともだちです"
+        "negative": "ともだちではありません"
+      readings:
+        "statement": "tomodachi desu"
+        "negative": "tomodachi de wa arimasen"
+    - word: "ja-0144"
+      forms:
+        "statement": "なまえです"
+        "negative": "なまえではありません"
+      readings:
+        "statement": "namae desu"
+        "negative": "namae de wa arimasen"
+    - word: "ja-0145"
+      forms:
+        "statement": "おなまえです"
+        "negative": "おなまえではありません"
+      readings:
+        "statement": "onamae desu"
+        "negative": "onamae de wa arimasen"
+    - word: "ja-0146"
+      forms:
+        "statement": "みょうじです"
+        "negative": "みょうじではありません"
+      readings:
+        "statement": "myouji desu"
+        "negative": "myouji de wa arimasen"
+    - word: "ja-0147"
+      forms:
+        "statement": "ひとです"
+        "negative": "ひとではありません"
+      readings:
+        "statement": "hito desu"
+        "negative": "hito de wa arimasen"
+    - word: "ja-0148"
+      forms:
+        "statement": "かたです"
+        "negative": "かたではありません"
+      readings:
+        "statement": "kata desu"
+        "negative": "kata de wa arimasen"
+    - word: "ja-0151"
+      forms:
+        "statement": "おじょうさんです"
+        "negative": "おじょうさんではありません"
+      readings:
+        "statement": "ojousan desu"
+        "negative": "ojousan de wa arimasen"
+    - word: "ja-0152"
+      forms:
+        "statement": "ぼうやです"
+        "negative": "ぼうやではありません"
+      readings:
+        "statement": "bouya desu"
+        "negative": "bouya de wa arimasen"
+    - word: "ja-0153"
+      forms:
+        "statement": "おじょうちゃんです"
+        "negative": "おじょうちゃんではありません"
+      readings:
+        "statement": "ojouchan desu"
+        "negative": "ojouchan de wa arimasen"
+    - word: "ja-0154"
+      forms:
+        "statement": "おくさまです"
+        "negative": "おくさまではありません"
+      readings:
+        "statement": "okusama desu"
+        "negative": "okusama de wa arimasen"
+    - word: "ja-0200"
+      forms:
+        "statement": "ちちです"
+        "negative": "ちちではありません"
+      readings:
+        "statement": "chichi desu"
+        "negative": "chichi de wa arimasen"
+    - word: "ja-0201"
+      forms:
+        "statement": "ははです"
+        "negative": "ははではありません"
+      readings:
+        "statement": "haha desu"
+        "negative": "haha de wa arimasen"
+    - word: "ja-0202"
+      forms:
+        "statement": "あにです"
+        "negative": "あにではありません"
+      readings:
+        "statement": "ani desu"
+        "negative": "ani de wa arimasen"
+    - word: "ja-0203"
+      forms:
+        "statement": "あねです"
+        "negative": "あねではありません"
+      readings:
+        "statement": "ane desu"
+        "negative": "ane de wa arimasen"
+    - word: "ja-0204"
+      forms:
+        "statement": "おとうとです"
+        "negative": "おとうとではありません"
+      readings:
+        "statement": "otouto desu"
+        "negative": "otouto de wa arimasen"
+    - word: "ja-0205"
+      forms:
+        "statement": "いもうとです"
+        "negative": "いもうとではありません"
+      readings:
+        "statement": "imouto desu"
+        "negative": "imouto de wa arimasen"
+    - word: "ja-0206"
+      forms:
+        "statement": "そふです"
+        "negative": "そふではありません"
+      readings:
+        "statement": "sofu desu"
+        "negative": "sofu de wa arimasen"
+    - word: "ja-0207"
+      forms:
+        "statement": "そぼです"
+        "negative": "そぼではありません"
+      readings:
+        "statement": "sobo desu"
+        "negative": "sobo de wa arimasen"
+    - word: "ja-0208"
+      forms:
+        "statement": "おじです"
+        "negative": "おじではありません"
+      readings:
+        "statement": "oji desu"
+        "negative": "oji de wa arimasen"
+    - word: "ja-0209"
+      forms:
+        "statement": "おばです"
+        "negative": "おばではありません"
+      readings:
+        "statement": "oba desu"
+        "negative": "oba de wa arimasen"
+    - word: "ja-0210"
+      forms:
+        "statement": "むすこです"
+        "negative": "むすこではありません"
+      readings:
+        "statement": "musuko desu"
+        "negative": "musuko de wa arimasen"
+    - word: "ja-0211"
+      forms:
+        "statement": "むすめです"
+        "negative": "むすめではありません"
+      readings:
+        "statement": "musume desu"
+        "negative": "musume de wa arimasen"
+    - word: "ja-0212"
+      forms:
+        "statement": "つまです"
+        "negative": "つまではありません"
+      readings:
+        "statement": "tsuma desu"
+        "negative": "tsuma de wa arimasen"
+    - word: "ja-0213"
+      forms:
+        "statement": "りょうしんです"
+        "negative": "りょうしんではありません"
+      readings:
+        "statement": "ryoushin desu"
+        "negative": "ryoushin de wa arimasen"
+    - word: "ja-0214"
+      forms:
+        "statement": "おとうさんです"
+        "negative": "おとうさんではありません"
+      readings:
+        "statement": "otousan desu"
+        "negative": "otousan de wa arimasen"
+    - word: "ja-0215"
+      forms:
+        "statement": "おかあさんです"
+        "negative": "おかあさんではありません"
+      readings:
+        "statement": "okaasan desu"
+        "negative": "okaasan de wa arimasen"
+    - word: "ja-0216"
+      forms:
+        "statement": "おにいさんです"
+        "negative": "おにいさんではありません"
+      readings:
+        "statement": "oniisan desu"
+        "negative": "oniisan de wa arimasen"
+    - word: "ja-0217"
+      forms:
+        "statement": "おねえさんです"
+        "negative": "おねえさんではありません"
+      readings:
+        "statement": "oneesan desu"
+        "negative": "oneesan de wa arimasen"
+    - word: "ja-0218"
+      forms:
+        "statement": "おとうとさんです"
+        "negative": "おとうとさんではありません"
+      readings:
+        "statement": "otoutosan desu"
+        "negative": "otoutosan de wa arimasen"
+    - word: "ja-0219"
+      forms:
+        "statement": "いもうとさんです"
+        "negative": "いもうとさんではありません"
+      readings:
+        "statement": "imoutosan desu"
+        "negative": "imoutosan de wa arimasen"
+    - word: "ja-0220"
+      forms:
+        "statement": "むすこさんです"
+        "negative": "むすこさんではありません"
+      readings:
+        "statement": "musukosan desu"
+        "negative": "musukosan de wa arimasen"
+    - word: "ja-0221"
+      forms:
+        "statement": "むすめさんです"
+        "negative": "むすめさんではありません"
+      readings:
+        "statement": "musumesan desu"
+        "negative": "musumesan de wa arimasen"
+    - word: "ja-0222"
+      forms:
+        "statement": "ごしゅじんです"
+        "negative": "ごしゅじんではありません"
+      readings:
+        "statement": "goshujin desu"
+        "negative": "goshujin de wa arimasen"
+    - word: "ja-0223"
+      forms:
+        "statement": "ごりょうしんです"
+        "negative": "ごりょうしんではありません"
+      readings:
+        "statement": "goryoushin desu"
+        "negative": "goryoushin de wa arimasen"
+    - word: "ja-0224"
+      forms:
+        "statement": "かぞくです"
+        "negative": "かぞくではありません"
+      readings:
+        "statement": "kazoku desu"
+        "negative": "kazoku de wa arimasen"
+    - word: "ja-0225"
+      forms:
+        "statement": "こどもです"
+        "negative": "こどもではありません"
+      readings:
+        "statement": "kodomo desu"
+        "negative": "kodomo de wa arimasen"
+    - word: "ja-0226"
+      forms:
+        "statement": "おやです"
+        "negative": "おやではありません"
+      readings:
+        "statement": "oya desu"
+        "negative": "oya de wa arimasen"
+    - word: "ja-0227"
+      forms:
+        "statement": "きょうだいです"
+        "negative": "きょうだいではありません"
+      readings:
+        "statement": "kyoudai desu"
+        "negative": "kyoudai de wa arimasen"
+    - word: "ja-0228"
+      forms:
+        "statement": "まごです"
+        "negative": "まごではありません"
+      readings:
+        "statement": "mago desu"
+        "negative": "mago de wa arimasen"
+    - word: "ja-0070"
+      forms:
+        "statement": "せんせいです"
+        "negative": "せんせいではありません"
+      readings:
+        "statement": "sensei desu"
+        "negative": "sensei de wa arimasen"
+    - word: "ja-0071"
+      forms:
+        "statement": "がくせいです"
+        "negative": "がくせいではありません"
+      readings:
+        "statement": "gakusei desu"
+        "negative": "gakusei de wa arimasen"
+    - word: "ja-0072"
+      forms:
+        "statement": "にほんです"
+        "negative": "にほんではありません"
+      readings:
+        "statement": "nihon desu"
+        "negative": "nihon de wa arimasen"
+    - word: "ja-0073"
+      forms:
+        "statement": "みずです"
+        "negative": "みずではありません"
+      readings:
+        "statement": "mizu desu"
+        "negative": "mizu de wa arimasen"
+    - word: "ja-0074"
+      forms:
+        "statement": "ごはんです"
+        "negative": "ごはんではありません"
+      readings:
+        "statement": "gohan desu"
+        "negative": "gohan de wa arimasen"
+    - word: "ja-0075"
+      forms:
+        "statement": "でんしゃです"
+        "negative": "でんしゃではありません"
+      readings:
+        "statement": "densha desu"
+        "negative": "densha de wa arimasen"
+    - word: "ja-0076"
+      forms:
+        "statement": "いぬです"
+        "negative": "いぬではありません"
+      readings:
+        "statement": "inu desu"
+        "negative": "inu de wa arimasen"
+    - word: "ja-0544"
+      forms:
+        "statement": "うえです"
+        "negative": "うえではありません"
+      readings:
+        "statement": "ue desu"
+        "negative": "ue de wa arimasen"
+    - word: "ja-0545"
+      forms:
+        "statement": "したです"
+        "negative": "したではありません"
+      readings:
+        "statement": "shita desu"
+        "negative": "shita de wa arimasen"
+    - word: "ja-0546"
+      forms:
+        "statement": "なかです"
+        "negative": "なかではありません"
+      readings:
+        "statement": "naka desu"
+        "negative": "naka de wa arimasen"
+    - word: "ja-0547"
+      forms:
+        "statement": "そとです"
+        "negative": "そとではありません"
+      readings:
+        "statement": "soto desu"
+        "negative": "soto de wa arimasen"
+    - word: "ja-0548"
+      forms:
+        "statement": "みぎです"
+        "negative": "みぎではありません"
+      readings:
+        "statement": "migi desu"
+        "negative": "migi de wa arimasen"
+    - word: "ja-0549"
+      forms:
+        "statement": "ひだりです"
+        "negative": "ひだりではありません"
+      readings:
+        "statement": "hidari desu"
+        "negative": "hidari de wa arimasen"
+    - word: "ja-0550"
+      forms:
+        "statement": "よこです"
+        "negative": "よこではありません"
+      readings:
+        "statement": "yoko desu"
+        "negative": "yoko de wa arimasen"
+    - word: "ja-0551"
+      forms:
+        "statement": "ちかくです"
+        "negative": "ちかくではありません"
+      readings:
+        "statement": "chikaku desu"
+        "negative": "chikaku de wa arimasen"
+    - word: "ja-0552"
+      forms:
+        "statement": "となりです"
+        "negative": "となりではありません"
+      readings:
+        "statement": "tonari desu"
+        "negative": "tonari de wa arimasen"
+    - word: "ja-0553"
+      forms:
+        "statement": "むこうです"
+        "negative": "むこうではありません"
+      readings:
+        "statement": "mukou desu"
+        "negative": "mukou de wa arimasen"
+    - word: "ja-0554"
+      forms:
+        "statement": "ここです"
+        "negative": "ここではありません"
+      readings:
+        "statement": "koko desu"
+        "negative": "koko de wa arimasen"
+    - word: "ja-0555"
+      forms:
+        "statement": "そこです"
+        "negative": "そこではありません"
+      readings:
+        "statement": "soko desu"
+        "negative": "soko de wa arimasen"
+    - word: "ja-0556"
+      forms:
+        "statement": "あそこです"
+        "negative": "あそこではありません"
+      readings:
+        "statement": "asoko desu"
+        "negative": "asoko de wa arimasen"
+    - word: "ja-0557"
+      forms:
+        "statement": "つくえです"
+        "negative": "つくえではありません"
+      readings:
+        "statement": "tsukue desu"
+        "negative": "tsukue de wa arimasen"
+    - word: "ja-0558"
+      forms:
+        "statement": "いすです"
+        "negative": "いすではありません"
+      readings:
+        "statement": "isu desu"
+        "negative": "isu de wa arimasen"
+    - word: "ja-0432"
+      forms:
+        "statement": "ぜんぶです"
+        "negative": "ぜんぶではありません"
+      readings:
+        "statement": "zenbu desu"
+        "negative": "zenbu de wa arimasen"
+    - word: "ja-0433"
+      forms:
+        "statement": "はんぶんです"
+        "negative": "はんぶんではありません"
+      readings:
+        "statement": "hanbun desu"
+        "negative": "hanbun de wa arimasen"
+    - word: "ja-0436"
+      forms:
+        "statement": "おおぜいです"
+        "negative": "おおぜいではありません"
+      readings:
+        "statement": "oozei desu"
+        "negative": "oozei de wa arimasen"
+    - word: "ja-0437"
+      forms:
+        "statement": "ふたりです"
+        "negative": "ふたりではありません"
+      readings:
+        "statement": "futari desu"
+        "negative": "futari de wa arimasen"
+    - word: "ja-0440"
+      forms:
+        "statement": "おかねです"
+        "negative": "おかねではありません"
+      readings:
+        "statement": "okane desu"
+        "negative": "okane de wa arimasen"
+    - word: "ja-0441"
+      forms:
+        "statement": "ねだんです"
+        "negative": "ねだんではありません"
+      readings:
+        "statement": "nedan desu"
+        "negative": "nedan de wa arimasen"
+    - word: "ja-0442"
+      forms:
+        "statement": "おおきさです"
+        "negative": "おおきさではありません"
+      readings:
+        "statement": "ookisa desu"
+        "negative": "ookisa de wa arimasen"
+    - word: "ja-0444"
+      forms:
+        "statement": "りんごです"
+        "negative": "りんごではありません"
+      readings:
+        "statement": "ringo desu"
+        "negative": "ringo de wa arimasen"
+    - word: "ja-0445"
+      forms:
+        "statement": "ぎゅうにゅうです"
+        "negative": "ぎゅうにゅうではありません"
+      readings:
+        "statement": "gyuunyuu desu"
+        "negative": "gyuunyuu de wa arimasen"
+    - word: "ja-0446"
+      forms:
+        "statement": "ぱんです"
+        "negative": "ぱんではありません"
+      readings:
+        "statement": "pan desu"
+        "negative": "pan de wa arimasen"
+    - word: "ja-0447"
+      forms:
+        "statement": "たまごです"
+        "negative": "たまごではありません"
+      readings:
+        "statement": "tamago desu"
+        "negative": "tamago de wa arimasen"
+    - word: "ja-0448"
+      forms:
+        "statement": "はこです"
+        "negative": "はこではありません"
+      readings:
+        "statement": "hako desu"
+        "negative": "hako de wa arimasen"
+    - word: "ja-0449"
+      forms:
+        "statement": "びんです"
+        "negative": "びんではありません"
+      readings:
+        "statement": "bin desu"
+        "negative": "bin de wa arimasen"
+    - word: "ja-0079"
+      forms:
+        "statement": "おばさんです"
+        "negative": "おばさんではありません"
+      readings:
+        "statement": "obasan desu"
+        "negative": "obasan de wa arimasen"
+    - word: "ja-0080"
+      forms:
+        "statement": "おばあさんです"
+        "negative": "おばあさんではありません"
+      readings:
+        "statement": "obaasan desu"
+        "negative": "obaasan de wa arimasen"
+    - word: "ja-0081"
+      forms:
+        "statement": "おじさんです"
+        "negative": "おじさんではありません"
+      readings:
+        "statement": "ojisan desu"
+        "negative": "ojisan de wa arimasen"
+    - word: "ja-0082"
+      forms:
+        "statement": "おじいさんです"
+        "negative": "おじいさんではありません"
+      readings:
+        "statement": "ojiisan desu"
+        "negative": "ojiisan de wa arimasen"
+    - word: "ja-0083"
+      forms:
+        "statement": "ゆきです"
+        "negative": "ゆきではありません"
+      readings:
+        "statement": "yuki desu"
+        "negative": "yuki de wa arimasen"
+    - word: "ja-0084"
+      forms:
+        "statement": "ゆうきです"
+        "negative": "ゆうきではありません"
+      readings:
+        "statement": "yuuki desu"
+        "negative": "yuuki de wa arimasen"
+    - word: "ja-0086"
+      forms:
+        "statement": "きってです"
+        "negative": "きってではありません"
+      readings:
+        "statement": "kitte desu"
+        "negative": "kitte de wa arimasen"
+    - word: "ja-0087"
+      forms:
+        "statement": "おとです"
+        "negative": "おとではありません"
+      readings:
+        "statement": "oto desu"
+        "negative": "oto de wa arimasen"
+    - word: "ja-0088"
+      forms:
+        "statement": "おっとです"
+        "negative": "おっとではありません"
+      readings:
+        "statement": "otto desu"
+        "negative": "otto de wa arimasen"
+    - word: "ja-0089"
+      forms:
+        "statement": "さかです"
+        "negative": "さかではありません"
+      readings:
+        "statement": "saka desu"
+        "negative": "saka de wa arimasen"
+    - word: "ja-0090"
+      forms:
+        "statement": "さっかです"
+        "negative": "さっかではありません"
+      readings:
+        "statement": "sakka desu"
+        "negative": "sakka de wa arimasen"
+    - word: "ja-0091"
+      forms:
+        "statement": "てんきです"
+        "negative": "てんきではありません"
+      readings:
+        "statement": "tenki desu"
+        "negative": "tenki de wa arimasen"
+    - word: "ja-0092"
+      forms:
+        "statement": "でんきです"
+        "negative": "でんきではありません"
+      readings:
+        "statement": "denki desu"
+        "negative": "denki de wa arimasen"
+    - word: "ja-0093"
+      forms:
+        "statement": "かぎです"
+        "negative": "かぎではありません"
+      readings:
+        "statement": "kagi desu"
+        "negative": "kagi de wa arimasen"
+    - word: "ja-0094"
+      forms:
+        "statement": "かきです"
+        "negative": "かきではありません"
+      readings:
+        "statement": "kaki desu"
+        "negative": "kaki de wa arimasen"
+    - word: "ja-0507"
+      forms:
+        "statement": "じかんです"
+        "negative": "じかんではありません"
+      readings:
+        "statement": "jikan desu"
+        "negative": "jikan de wa arimasen"
+    - word: "ja-0508"
+      forms:
+        "statement": "いまです"
+        "negative": "いまではありません"
+      readings:
+        "statement": "ima desu"
+        "negative": "ima de wa arimasen"
+    - word: "ja-0509"
+      forms:
+        "statement": "あさです"
+        "negative": "あさではありません"
+      readings:
+        "statement": "asa desu"
+        "negative": "asa de wa arimasen"
+    - word: "ja-0510"
+      forms:
+        "statement": "ひるです"
+        "negative": "ひるではありません"
+      readings:
+        "statement": "hiru desu"
+        "negative": "hiru de wa arimasen"
+    - word: "ja-0511"
+      forms:
+        "statement": "よるです"
+        "negative": "よるではありません"
+      readings:
+        "statement": "yoru desu"
+        "negative": "yoru de wa arimasen"
+    - word: "ja-0512"
+      forms:
+        "statement": "きょうです"
+        "negative": "きょうではありません"
+      readings:
+        "statement": "kyou desu"
+        "negative": "kyou de wa arimasen"
+    - word: "ja-0513"
+      forms:
+        "statement": "あしたです"
+        "negative": "あしたではありません"
+      readings:
+        "statement": "ashita desu"
+        "negative": "ashita de wa arimasen"
+    - word: "ja-0514"
+      forms:
+        "statement": "きのうです"
+        "negative": "きのうではありません"
+      readings:
+        "statement": "kinou desu"
+        "negative": "kinou de wa arimasen"
+    - word: "ja-0518"
+      forms:
+        "statement": "まえです"
+        "negative": "まえではありません"
+      readings:
+        "statement": "mae desu"
+        "negative": "mae de wa arimasen"
+    - word: "ja-0519"
+      forms:
+        "statement": "あとです"
+        "negative": "あとではありません"
+      readings:
+        "statement": "ato desu"
+        "negative": "ato de wa arimasen"
+    - word: "ja-0520"
+      forms:
+        "statement": "ごぜんです"
+        "negative": "ごぜんではありません"
+      readings:
+        "statement": "gozen desu"
+        "negative": "gozen de wa arimasen"
+    - word: "ja-0521"
+      forms:
+        "statement": "ごごです"
+        "negative": "ごごではありません"
+      readings:
+        "statement": "gogo desu"
+        "negative": "gogo de wa arimasen"
+    - word: "ja-0524"
+      forms:
+        "statement": "ときです"
+        "negative": "ときではありません"
+      readings:
+        "statement": "toki desu"
+        "negative": "toki de wa arimasen"
+    - word: "ja-0525"
+      forms:
+        "statement": "しゅうです"
+        "negative": "しゅうではありません"
+      readings:
+        "statement": "shuu desu"
+        "negative": "shuu de wa arimasen"
+    - word: "ja-0526"
+      forms:
+        "statement": "つきです"
+        "negative": "つきではありません"
+      readings:
+        "statement": "tsuki desu"
+        "negative": "tsuki de wa arimasen"
+    - word: "ja-0527"
+      forms:
+        "statement": "あいだです"
+        "negative": "あいだではありません"
+      readings:
+        "statement": "aida desu"
+        "negative": "aida de wa arimasen"
+    - word: "ja-0529"
+      forms:
+        "statement": "おわりです"
+        "negative": "おわりではありません"
+      readings:
+        "statement": "owari desu"
+        "negative": "owari de wa arimasen"
+    - word: "ja-0530"
+      forms:
+        "statement": "ゆうがたです"
+        "negative": "ゆうがたではありません"
+      readings:
+        "statement": "yuugata desu"
+        "negative": "yuugata de wa arimasen"
+rules:
+  - id: "ja-rule-desu"
+    slots: ["statement"]
+    words:
+      - { word: "です", reading: "desu" }
+      - { word: "わたしはがくせいです。", reading: "watashi wa gakusei desu." }
+  - id: "ja-rule-desu-negative"
+    slots: ["negative"]
+    words:
+      - { word: "ではありません", reading: "de wa arimasen" }
+      - { word: "わたしはがくせいではありません。", reading: "watashi wa gakusei de wa arimasen." }
