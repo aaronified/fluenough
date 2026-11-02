@@ -45,18 +45,17 @@ class ReadingFirst extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final readingText = Text(
+    final readingText = ReadingText(
       reading,
+      swapped: ipaFont,
       textAlign: alignment == CrossAxisAlignment.start
           ? TextAlign.start
           : TextAlign.center,
-      style: theme.textTheme.headlineMedium!
-          .copyWith(
-            fontSize: fontSize,
-            fontWeight: FontWeight.w600,
-            color: color,
-          )
-          .forIpa(ipaFont),
+      style: theme.textTheme.headlineMedium!.copyWith(
+        fontSize: fontSize,
+        fontWeight: FontWeight.w600,
+        color: color,
+      ),
     );
     return Column(
       mainAxisSize: MainAxisSize.min,

@@ -274,17 +274,24 @@ class PinKeypad extends StatelessWidget {
     Widget key(String? k) {
       if (k == null) return const SizedBox.shrink();
       if (k.isEmpty) {
+        // The tooltip is one word; the screen reader hears the full phrase.
         return Center(
-          child: IconButton(
-            onPressed: onDelete,
-            tooltip: l10n.brailleBackspace,
-            iconSize: 28,
-            color: scheme.onSurface,
-            style: IconButton.styleFrom(
-              minimumSize: const Size(_keyHeight, _keyHeight),
-              shape: const StadiumBorder(),
+          child: Semantics(
+            label: l10n.pinDeleteLabel,
+            button: true,
+            excludeSemantics: true,
+            onTap: onDelete,
+            child: IconButton(
+              onPressed: onDelete,
+              tooltip: l10n.brailleBackspace,
+              iconSize: 28,
+              color: scheme.onSurface,
+              style: IconButton.styleFrom(
+                minimumSize: const Size(_keyHeight, _keyHeight),
+                shape: const StadiumBorder(),
+              ),
+              icon: const Icon(Icons.backspace_outlined),
             ),
-            icon: const Icon(Icons.backspace_outlined),
           ),
         );
       }
