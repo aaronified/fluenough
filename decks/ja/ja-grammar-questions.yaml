@@ -1,0 +1,921 @@
+schema: 1
+id: "ja-grammar-questions"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["noun"]
+  slots: ["question", "negative-question"]
+  rows:
+    - word: "ja-0309"
+      forms:
+        "question": "くにですか"
+        "negative-question": "くにではありませんか"
+      readings:
+        "question": "kuni desu ka"
+        "negative-question": "kuni de wa arimasen ka"
+    - word: "ja-0310"
+      forms:
+        "question": "としですか"
+        "negative-question": "としではありませんか"
+      readings:
+        "question": "toshi desu ka"
+        "negative-question": "toshi de wa arimasen ka"
+    - word: "ja-0311"
+      forms:
+        "question": "おとこですか"
+        "negative-question": "おとこではありませんか"
+      readings:
+        "question": "otoko desu ka"
+        "negative-question": "otoko de wa arimasen ka"
+    - word: "ja-0312"
+      forms:
+        "question": "おんなですか"
+        "negative-question": "おんなではありませんか"
+      readings:
+        "question": "onna desu ka"
+        "negative-question": "onna de wa arimasen ka"
+    - word: "ja-0313"
+      forms:
+        "question": "がっこうですか"
+        "negative-question": "がっこうではありませんか"
+      readings:
+        "question": "gakkou desu ka"
+        "negative-question": "gakkou de wa arimasen ka"
+    - word: "ja-0314"
+      forms:
+        "question": "だいがくですか"
+        "negative-question": "だいがくではありませんか"
+      readings:
+        "question": "daigaku desu ka"
+        "negative-question": "daigaku de wa arimasen ka"
+    - word: "ja-0315"
+      forms:
+        "question": "にほんごですか"
+        "negative-question": "にほんごではありませんか"
+      readings:
+        "question": "nihongo desu ka"
+        "negative-question": "nihongo de wa arimasen ka"
+    - word: "ja-0316"
+      forms:
+        "question": "えいごですか"
+        "negative-question": "えいごではありませんか"
+      readings:
+        "question": "eigo desu ka"
+        "negative-question": "eigo de wa arimasen ka"
+    - word: "ja-0317"
+      forms:
+        "question": "しゅみですか"
+        "negative-question": "しゅみではありませんか"
+      readings:
+        "question": "shumi desu ka"
+        "negative-question": "shumi de wa arimasen ka"
+    - word: "ja-0321"
+      forms:
+        "question": "やすみですか"
+        "negative-question": "やすみではありませんか"
+      readings:
+        "question": "yasumi desu ka"
+        "negative-question": "yasumi de wa arimasen ka"
+    - word: "ja-0322"
+      forms:
+        "question": "ちゅうごくですか"
+        "negative-question": "ちゅうごくではありませんか"
+      readings:
+        "question": "chuugoku desu ka"
+        "negative-question": "chuugoku de wa arimasen ka"
+    - word: "ja-0323"
+      forms:
+        "question": "かんこくですか"
+        "negative-question": "かんこくではありませんか"
+      readings:
+        "question": "kankoku desu ka"
+        "negative-question": "kankoku de wa arimasen ka"
+    - word: "ja-0324"
+      forms:
+        "question": "いんどですか"
+        "negative-question": "いんどではありませんか"
+      readings:
+        "question": "indo desu ka"
+        "negative-question": "indo de wa arimasen ka"
+    - word: "ja-0325"
+      forms:
+        "question": "あめりかですか"
+        "negative-question": "あめりかではありませんか"
+      readings:
+        "question": "amerika desu ka"
+        "negative-question": "amerika de wa arimasen ka"
+    - word: "ja-0326"
+      forms:
+        "question": "おとなですか"
+        "negative-question": "おとなではありませんか"
+      readings:
+        "question": "otona desu ka"
+        "negative-question": "otona de wa arimasen ka"
+    - word: "ja-0327"
+      forms:
+        "question": "ひとりですか"
+        "negative-question": "ひとりではありませんか"
+      readings:
+        "question": "hitori desu ka"
+        "negative-question": "hitori de wa arimasen ka"
+    - word: "ja-0328"
+      forms:
+        "question": "とうきょうですか"
+        "negative-question": "とうきょうではありませんか"
+      readings:
+        "question": "toukyou desu ka"
+        "negative-question": "toukyou de wa arimasen ka"
+    - word: "ja-0138"
+      forms:
+        "question": "おきゃくさまですか"
+        "negative-question": "おきゃくさまではありませんか"
+      readings:
+        "question": "okyakusama desu ka"
+        "negative-question": "okyakusama de wa arimasen ka"
+    - word: "ja-0139"
+      forms:
+        "question": "せんぱいですか"
+        "negative-question": "せんぱいではありませんか"
+      readings:
+        "question": "senpai desu ka"
+        "negative-question": "senpai de wa arimasen ka"
+    - word: "ja-0140"
+      forms:
+        "question": "こうはいですか"
+        "negative-question": "こうはいではありませんか"
+      readings:
+        "question": "kouhai desu ka"
+        "negative-question": "kouhai de wa arimasen ka"
+    - word: "ja-0141"
+      forms:
+        "question": "しゃちょうですか"
+        "negative-question": "しゃちょうではありませんか"
+      readings:
+        "question": "shachou desu ka"
+        "negative-question": "shachou de wa arimasen ka"
+    - word: "ja-0142"
+      forms:
+        "question": "かちょうですか"
+        "negative-question": "かちょうではありませんか"
+      readings:
+        "question": "kachou desu ka"
+        "negative-question": "kachou de wa arimasen ka"
+    - word: "ja-0143"
+      forms:
+        "question": "ともだちですか"
+        "negative-question": "ともだちではありませんか"
+      readings:
+        "question": "tomodachi desu ka"
+        "negative-question": "tomodachi de wa arimasen ka"
+    - word: "ja-0144"
+      forms:
+        "question": "なまえですか"
+        "negative-question": "なまえではありませんか"
+      readings:
+        "question": "namae desu ka"
+        "negative-question": "namae de wa arimasen ka"
+    - word: "ja-0145"
+      forms:
+        "question": "おなまえですか"
+        "negative-question": "おなまえではありませんか"
+      readings:
+        "question": "onamae desu ka"
+        "negative-question": "onamae de wa arimasen ka"
+    - word: "ja-0146"
+      forms:
+        "question": "みょうじですか"
+        "negative-question": "みょうじではありませんか"
+      readings:
+        "question": "myouji desu ka"
+        "negative-question": "myouji de wa arimasen ka"
+    - word: "ja-0147"
+      forms:
+        "question": "ひとですか"
+        "negative-question": "ひとではありませんか"
+      readings:
+        "question": "hito desu ka"
+        "negative-question": "hito de wa arimasen ka"
+    - word: "ja-0148"
+      forms:
+        "question": "かたですか"
+        "negative-question": "かたではありませんか"
+      readings:
+        "question": "kata desu ka"
+        "negative-question": "kata de wa arimasen ka"
+    - word: "ja-0151"
+      forms:
+        "question": "おじょうさんですか"
+        "negative-question": "おじょうさんではありませんか"
+      readings:
+        "question": "ojousan desu ka"
+        "negative-question": "ojousan de wa arimasen ka"
+    - word: "ja-0152"
+      forms:
+        "question": "ぼうやですか"
+        "negative-question": "ぼうやではありませんか"
+      readings:
+        "question": "bouya desu ka"
+        "negative-question": "bouya de wa arimasen ka"
+    - word: "ja-0153"
+      forms:
+        "question": "おじょうちゃんですか"
+        "negative-question": "おじょうちゃんではありませんか"
+      readings:
+        "question": "ojouchan desu ka"
+        "negative-question": "ojouchan de wa arimasen ka"
+    - word: "ja-0154"
+      forms:
+        "question": "おくさまですか"
+        "negative-question": "おくさまではありませんか"
+      readings:
+        "question": "okusama desu ka"
+        "negative-question": "okusama de wa arimasen ka"
+    - word: "ja-0200"
+      forms:
+        "question": "ちちですか"
+        "negative-question": "ちちではありませんか"
+      readings:
+        "question": "chichi desu ka"
+        "negative-question": "chichi de wa arimasen ka"
+    - word: "ja-0201"
+      forms:
+        "question": "ははですか"
+        "negative-question": "ははではありませんか"
+      readings:
+        "question": "haha desu ka"
+        "negative-question": "haha de wa arimasen ka"
+    - word: "ja-0202"
+      forms:
+        "question": "あにですか"
+        "negative-question": "あにではありませんか"
+      readings:
+        "question": "ani desu ka"
+        "negative-question": "ani de wa arimasen ka"
+    - word: "ja-0203"
+      forms:
+        "question": "あねですか"
+        "negative-question": "あねではありませんか"
+      readings:
+        "question": "ane desu ka"
+        "negative-question": "ane de wa arimasen ka"
+    - word: "ja-0204"
+      forms:
+        "question": "おとうとですか"
+        "negative-question": "おとうとではありませんか"
+      readings:
+        "question": "otouto desu ka"
+        "negative-question": "otouto de wa arimasen ka"
+    - word: "ja-0205"
+      forms:
+        "question": "いもうとですか"
+        "negative-question": "いもうとではありませんか"
+      readings:
+        "question": "imouto desu ka"
+        "negative-question": "imouto de wa arimasen ka"
+    - word: "ja-0206"
+      forms:
+        "question": "そふですか"
+        "negative-question": "そふではありませんか"
+      readings:
+        "question": "sofu desu ka"
+        "negative-question": "sofu de wa arimasen ka"
+    - word: "ja-0207"
+      forms:
+        "question": "そぼですか"
+        "negative-question": "そぼではありませんか"
+      readings:
+        "question": "sobo desu ka"
+        "negative-question": "sobo de wa arimasen ka"
+    - word: "ja-0208"
+      forms:
+        "question": "おじですか"
+        "negative-question": "おじではありませんか"
+      readings:
+        "question": "oji desu ka"
+        "negative-question": "oji de wa arimasen ka"
+    - word: "ja-0209"
+      forms:
+        "question": "おばですか"
+        "negative-question": "おばではありませんか"
+      readings:
+        "question": "oba desu ka"
+        "negative-question": "oba de wa arimasen ka"
+    - word: "ja-0210"
+      forms:
+        "question": "むすこですか"
+        "negative-question": "むすこではありませんか"
+      readings:
+        "question": "musuko desu ka"
+        "negative-question": "musuko de wa arimasen ka"
+    - word: "ja-0211"
+      forms:
+        "question": "むすめですか"
+        "negative-question": "むすめではありませんか"
+      readings:
+        "question": "musume desu ka"
+        "negative-question": "musume de wa arimasen ka"
+    - word: "ja-0212"
+      forms:
+        "question": "つまですか"
+        "negative-question": "つまではありませんか"
+      readings:
+        "question": "tsuma desu ka"
+        "negative-question": "tsuma de wa arimasen ka"
+    - word: "ja-0213"
+      forms:
+        "question": "りょうしんですか"
+        "negative-question": "りょうしんではありませんか"
+      readings:
+        "question": "ryoushin desu ka"
+        "negative-question": "ryoushin de wa arimasen ka"
+    - word: "ja-0214"
+      forms:
+        "question": "おとうさんですか"
+        "negative-question": "おとうさんではありませんか"
+      readings:
+        "question": "otousan desu ka"
+        "negative-question": "otousan de wa arimasen ka"
+    - word: "ja-0215"
+      forms:
+        "question": "おかあさんですか"
+        "negative-question": "おかあさんではありませんか"
+      readings:
+        "question": "okaasan desu ka"
+        "negative-question": "okaasan de wa arimasen ka"
+    - word: "ja-0216"
+      forms:
+        "question": "おにいさんですか"
+        "negative-question": "おにいさんではありませんか"
+      readings:
+        "question": "oniisan desu ka"
+        "negative-question": "oniisan de wa arimasen ka"
+    - word: "ja-0217"
+      forms:
+        "question": "おねえさんですか"
+        "negative-question": "おねえさんではありませんか"
+      readings:
+        "question": "oneesan desu ka"
+        "negative-question": "oneesan de wa arimasen ka"
+    - word: "ja-0218"
+      forms:
+        "question": "おとうとさんですか"
+        "negative-question": "おとうとさんではありませんか"
+      readings:
+        "question": "otoutosan desu ka"
+        "negative-question": "otoutosan de wa arimasen ka"
+    - word: "ja-0219"
+      forms:
+        "question": "いもうとさんですか"
+        "negative-question": "いもうとさんではありませんか"
+      readings:
+        "question": "imoutosan desu ka"
+        "negative-question": "imoutosan de wa arimasen ka"
+    - word: "ja-0220"
+      forms:
+        "question": "むすこさんですか"
+        "negative-question": "むすこさんではありませんか"
+      readings:
+        "question": "musukosan desu ka"
+        "negative-question": "musukosan de wa arimasen ka"
+    - word: "ja-0221"
+      forms:
+        "question": "むすめさんですか"
+        "negative-question": "むすめさんではありませんか"
+      readings:
+        "question": "musumesan desu ka"
+        "negative-question": "musumesan de wa arimasen ka"
+    - word: "ja-0222"
+      forms:
+        "question": "ごしゅじんですか"
+        "negative-question": "ごしゅじんではありませんか"
+      readings:
+        "question": "goshujin desu ka"
+        "negative-question": "goshujin de wa arimasen ka"
+    - word: "ja-0223"
+      forms:
+        "question": "ごりょうしんですか"
+        "negative-question": "ごりょうしんではありませんか"
+      readings:
+        "question": "goryoushin desu ka"
+        "negative-question": "goryoushin de wa arimasen ka"
+    - word: "ja-0224"
+      forms:
+        "question": "かぞくですか"
+        "negative-question": "かぞくではありませんか"
+      readings:
+        "question": "kazoku desu ka"
+        "negative-question": "kazoku de wa arimasen ka"
+    - word: "ja-0225"
+      forms:
+        "question": "こどもですか"
+        "negative-question": "こどもではありませんか"
+      readings:
+        "question": "kodomo desu ka"
+        "negative-question": "kodomo de wa arimasen ka"
+    - word: "ja-0226"
+      forms:
+        "question": "おやですか"
+        "negative-question": "おやではありませんか"
+      readings:
+        "question": "oya desu ka"
+        "negative-question": "oya de wa arimasen ka"
+    - word: "ja-0227"
+      forms:
+        "question": "きょうだいですか"
+        "negative-question": "きょうだいではありませんか"
+      readings:
+        "question": "kyoudai desu ka"
+        "negative-question": "kyoudai de wa arimasen ka"
+    - word: "ja-0228"
+      forms:
+        "question": "まごですか"
+        "negative-question": "まごではありませんか"
+      readings:
+        "question": "mago desu ka"
+        "negative-question": "mago de wa arimasen ka"
+    - word: "ja-0070"
+      forms:
+        "question": "せんせいですか"
+        "negative-question": "せんせいではありませんか"
+      readings:
+        "question": "sensei desu ka"
+        "negative-question": "sensei de wa arimasen ka"
+    - word: "ja-0071"
+      forms:
+        "question": "がくせいですか"
+        "negative-question": "がくせいではありませんか"
+      readings:
+        "question": "gakusei desu ka"
+        "negative-question": "gakusei de wa arimasen ka"
+    - word: "ja-0072"
+      forms:
+        "question": "にほんですか"
+        "negative-question": "にほんではありませんか"
+      readings:
+        "question": "nihon desu ka"
+        "negative-question": "nihon de wa arimasen ka"
+    - word: "ja-0073"
+      forms:
+        "question": "みずですか"
+        "negative-question": "みずではありませんか"
+      readings:
+        "question": "mizu desu ka"
+        "negative-question": "mizu de wa arimasen ka"
+    - word: "ja-0074"
+      forms:
+        "question": "ごはんですか"
+        "negative-question": "ごはんではありませんか"
+      readings:
+        "question": "gohan desu ka"
+        "negative-question": "gohan de wa arimasen ka"
+    - word: "ja-0075"
+      forms:
+        "question": "でんしゃですか"
+        "negative-question": "でんしゃではありませんか"
+      readings:
+        "question": "densha desu ka"
+        "negative-question": "densha de wa arimasen ka"
+    - word: "ja-0076"
+      forms:
+        "question": "いぬですか"
+        "negative-question": "いぬではありませんか"
+      readings:
+        "question": "inu desu ka"
+        "negative-question": "inu de wa arimasen ka"
+    - word: "ja-0544"
+      forms:
+        "question": "うえですか"
+        "negative-question": "うえではありませんか"
+      readings:
+        "question": "ue desu ka"
+        "negative-question": "ue de wa arimasen ka"
+    - word: "ja-0545"
+      forms:
+        "question": "したですか"
+        "negative-question": "したではありませんか"
+      readings:
+        "question": "shita desu ka"
+        "negative-question": "shita de wa arimasen ka"
+    - word: "ja-0546"
+      forms:
+        "question": "なかですか"
+        "negative-question": "なかではありませんか"
+      readings:
+        "question": "naka desu ka"
+        "negative-question": "naka de wa arimasen ka"
+    - word: "ja-0547"
+      forms:
+        "question": "そとですか"
+        "negative-question": "そとではありませんか"
+      readings:
+        "question": "soto desu ka"
+        "negative-question": "soto de wa arimasen ka"
+    - word: "ja-0548"
+      forms:
+        "question": "みぎですか"
+        "negative-question": "みぎではありませんか"
+      readings:
+        "question": "migi desu ka"
+        "negative-question": "migi de wa arimasen ka"
+    - word: "ja-0549"
+      forms:
+        "question": "ひだりですか"
+        "negative-question": "ひだりではありませんか"
+      readings:
+        "question": "hidari desu ka"
+        "negative-question": "hidari de wa arimasen ka"
+    - word: "ja-0550"
+      forms:
+        "question": "よこですか"
+        "negative-question": "よこではありませんか"
+      readings:
+        "question": "yoko desu ka"
+        "negative-question": "yoko de wa arimasen ka"
+    - word: "ja-0551"
+      forms:
+        "question": "ちかくですか"
+        "negative-question": "ちかくではありませんか"
+      readings:
+        "question": "chikaku desu ka"
+        "negative-question": "chikaku de wa arimasen ka"
+    - word: "ja-0552"
+      forms:
+        "question": "となりですか"
+        "negative-question": "となりではありませんか"
+      readings:
+        "question": "tonari desu ka"
+        "negative-question": "tonari de wa arimasen ka"
+    - word: "ja-0553"
+      forms:
+        "question": "むこうですか"
+        "negative-question": "むこうではありませんか"
+      readings:
+        "question": "mukou desu ka"
+        "negative-question": "mukou de wa arimasen ka"
+    - word: "ja-0554"
+      forms:
+        "question": "ここですか"
+        "negative-question": "ここではありませんか"
+      readings:
+        "question": "koko desu ka"
+        "negative-question": "koko de wa arimasen ka"
+    - word: "ja-0555"
+      forms:
+        "question": "そこですか"
+        "negative-question": "そこではありませんか"
+      readings:
+        "question": "soko desu ka"
+        "negative-question": "soko de wa arimasen ka"
+    - word: "ja-0556"
+      forms:
+        "question": "あそこですか"
+        "negative-question": "あそこではありませんか"
+      readings:
+        "question": "asoko desu ka"
+        "negative-question": "asoko de wa arimasen ka"
+    - word: "ja-0557"
+      forms:
+        "question": "つくえですか"
+        "negative-question": "つくえではありませんか"
+      readings:
+        "question": "tsukue desu ka"
+        "negative-question": "tsukue de wa arimasen ka"
+    - word: "ja-0558"
+      forms:
+        "question": "いすですか"
+        "negative-question": "いすではありませんか"
+      readings:
+        "question": "isu desu ka"
+        "negative-question": "isu de wa arimasen ka"
+    - word: "ja-0432"
+      forms:
+        "question": "ぜんぶですか"
+        "negative-question": "ぜんぶではありませんか"
+      readings:
+        "question": "zenbu desu ka"
+        "negative-question": "zenbu de wa arimasen ka"
+    - word: "ja-0433"
+      forms:
+        "question": "はんぶんですか"
+        "negative-question": "はんぶんではありませんか"
+      readings:
+        "question": "hanbun desu ka"
+        "negative-question": "hanbun de wa arimasen ka"
+    - word: "ja-0436"
+      forms:
+        "question": "おおぜいですか"
+        "negative-question": "おおぜいではありませんか"
+      readings:
+        "question": "oozei desu ka"
+        "negative-question": "oozei de wa arimasen ka"
+    - word: "ja-0437"
+      forms:
+        "question": "ふたりですか"
+        "negative-question": "ふたりではありませんか"
+      readings:
+        "question": "futari desu ka"
+        "negative-question": "futari de wa arimasen ka"
+    - word: "ja-0440"
+      forms:
+        "question": "おかねですか"
+        "negative-question": "おかねではありませんか"
+      readings:
+        "question": "okane desu ka"
+        "negative-question": "okane de wa arimasen ka"
+    - word: "ja-0441"
+      forms:
+        "question": "ねだんですか"
+        "negative-question": "ねだんではありませんか"
+      readings:
+        "question": "nedan desu ka"
+        "negative-question": "nedan de wa arimasen ka"
+    - word: "ja-0442"
+      forms:
+        "question": "おおきさですか"
+        "negative-question": "おおきさではありませんか"
+      readings:
+        "question": "ookisa desu ka"
+        "negative-question": "ookisa de wa arimasen ka"
+    - word: "ja-0444"
+      forms:
+        "question": "りんごですか"
+        "negative-question": "りんごではありませんか"
+      readings:
+        "question": "ringo desu ka"
+        "negative-question": "ringo de wa arimasen ka"
+    - word: "ja-0445"
+      forms:
+        "question": "ぎゅうにゅうですか"
+        "negative-question": "ぎゅうにゅうではありませんか"
+      readings:
+        "question": "gyuunyuu desu ka"
+        "negative-question": "gyuunyuu de wa arimasen ka"
+    - word: "ja-0446"
+      forms:
+        "question": "ぱんですか"
+        "negative-question": "ぱんではありませんか"
+      readings:
+        "question": "pan desu ka"
+        "negative-question": "pan de wa arimasen ka"
+    - word: "ja-0447"
+      forms:
+        "question": "たまごですか"
+        "negative-question": "たまごではありませんか"
+      readings:
+        "question": "tamago desu ka"
+        "negative-question": "tamago de wa arimasen ka"
+    - word: "ja-0448"
+      forms:
+        "question": "はこですか"
+        "negative-question": "はこではありませんか"
+      readings:
+        "question": "hako desu ka"
+        "negative-question": "hako de wa arimasen ka"
+    - word: "ja-0449"
+      forms:
+        "question": "びんですか"
+        "negative-question": "びんではありませんか"
+      readings:
+        "question": "bin desu ka"
+        "negative-question": "bin de wa arimasen ka"
+    - word: "ja-0079"
+      forms:
+        "question": "おばさんですか"
+        "negative-question": "おばさんではありませんか"
+      readings:
+        "question": "obasan desu ka"
+        "negative-question": "obasan de wa arimasen ka"
+    - word: "ja-0080"
+      forms:
+        "question": "おばあさんですか"
+        "negative-question": "おばあさんではありませんか"
+      readings:
+        "question": "obaasan desu ka"
+        "negative-question": "obaasan de wa arimasen ka"
+    - word: "ja-0081"
+      forms:
+        "question": "おじさんですか"
+        "negative-question": "おじさんではありませんか"
+      readings:
+        "question": "ojisan desu ka"
+        "negative-question": "ojisan de wa arimasen ka"
+    - word: "ja-0082"
+      forms:
+        "question": "おじいさんですか"
+        "negative-question": "おじいさんではありませんか"
+      readings:
+        "question": "ojiisan desu ka"
+        "negative-question": "ojiisan de wa arimasen ka"
+    - word: "ja-0083"
+      forms:
+        "question": "ゆきですか"
+        "negative-question": "ゆきではありませんか"
+      readings:
+        "question": "yuki desu ka"
+        "negative-question": "yuki de wa arimasen ka"
+    - word: "ja-0084"
+      forms:
+        "question": "ゆうきですか"
+        "negative-question": "ゆうきではありませんか"
+      readings:
+        "question": "yuuki desu ka"
+        "negative-question": "yuuki de wa arimasen ka"
+    - word: "ja-0086"
+      forms:
+        "question": "きってですか"
+        "negative-question": "きってではありませんか"
+      readings:
+        "question": "kitte desu ka"
+        "negative-question": "kitte de wa arimasen ka"
+    - word: "ja-0087"
+      forms:
+        "question": "おとですか"
+        "negative-question": "おとではありませんか"
+      readings:
+        "question": "oto desu ka"
+        "negative-question": "oto de wa arimasen ka"
+    - word: "ja-0088"
+      forms:
+        "question": "おっとですか"
+        "negative-question": "おっとではありませんか"
+      readings:
+        "question": "otto desu ka"
+        "negative-question": "otto de wa arimasen ka"
+    - word: "ja-0089"
+      forms:
+        "question": "さかですか"
+        "negative-question": "さかではありませんか"
+      readings:
+        "question": "saka desu ka"
+        "negative-question": "saka de wa arimasen ka"
+    - word: "ja-0090"
+      forms:
+        "question": "さっかですか"
+        "negative-question": "さっかではありませんか"
+      readings:
+        "question": "sakka desu ka"
+        "negative-question": "sakka de wa arimasen ka"
+    - word: "ja-0091"
+      forms:
+        "question": "てんきですか"
+        "negative-question": "てんきではありませんか"
+      readings:
+        "question": "tenki desu ka"
+        "negative-question": "tenki de wa arimasen ka"
+    - word: "ja-0092"
+      forms:
+        "question": "でんきですか"
+        "negative-question": "でんきではありませんか"
+      readings:
+        "question": "denki desu ka"
+        "negative-question": "denki de wa arimasen ka"
+    - word: "ja-0093"
+      forms:
+        "question": "かぎですか"
+        "negative-question": "かぎではありませんか"
+      readings:
+        "question": "kagi desu ka"
+        "negative-question": "kagi de wa arimasen ka"
+    - word: "ja-0094"
+      forms:
+        "question": "かきですか"
+        "negative-question": "かきではありませんか"
+      readings:
+        "question": "kaki desu ka"
+        "negative-question": "kaki de wa arimasen ka"
+    - word: "ja-0507"
+      forms:
+        "question": "じかんですか"
+        "negative-question": "じかんではありませんか"
+      readings:
+        "question": "jikan desu ka"
+        "negative-question": "jikan de wa arimasen ka"
+    - word: "ja-0508"
+      forms:
+        "question": "いまですか"
+        "negative-question": "いまではありませんか"
+      readings:
+        "question": "ima desu ka"
+        "negative-question": "ima de wa arimasen ka"
+    - word: "ja-0509"
+      forms:
+        "question": "あさですか"
+        "negative-question": "あさではありませんか"
+      readings:
+        "question": "asa desu ka"
+        "negative-question": "asa de wa arimasen ka"
+    - word: "ja-0510"
+      forms:
+        "question": "ひるですか"
+        "negative-question": "ひるではありませんか"
+      readings:
+        "question": "hiru desu ka"
+        "negative-question": "hiru de wa arimasen ka"
+    - word: "ja-0511"
+      forms:
+        "question": "よるですか"
+        "negative-question": "よるではありませんか"
+      readings:
+        "question": "yoru desu ka"
+        "negative-question": "yoru de wa arimasen ka"
+    - word: "ja-0512"
+      forms:
+        "question": "きょうですか"
+        "negative-question": "きょうではありませんか"
+      readings:
+        "question": "kyou desu ka"
+        "negative-question": "kyou de wa arimasen ka"
+    - word: "ja-0513"
+      forms:
+        "question": "あしたですか"
+        "negative-question": "あしたではありませんか"
+      readings:
+        "question": "ashita desu ka"
+        "negative-question": "ashita de wa arimasen ka"
+    - word: "ja-0514"
+      forms:
+        "question": "きのうですか"
+        "negative-question": "きのうではありませんか"
+      readings:
+        "question": "kinou desu ka"
+        "negative-question": "kinou de wa arimasen ka"
+    - word: "ja-0518"
+      forms:
+        "question": "まえですか"
+        "negative-question": "まえではありませんか"
+      readings:
+        "question": "mae desu ka"
+        "negative-question": "mae de wa arimasen ka"
+    - word: "ja-0519"
+      forms:
+        "question": "あとですか"
+        "negative-question": "あとではありませんか"
+      readings:
+        "question": "ato desu ka"
+        "negative-question": "ato de wa arimasen ka"
+    - word: "ja-0520"
+      forms:
+        "question": "ごぜんですか"
+        "negative-question": "ごぜんではありませんか"
+      readings:
+        "question": "gozen desu ka"
+        "negative-question": "gozen de wa arimasen ka"
+    - word: "ja-0521"
+      forms:
+        "question": "ごごですか"
+        "negative-question": "ごごではありませんか"
+      readings:
+        "question": "gogo desu ka"
+        "negative-question": "gogo de wa arimasen ka"
+    - word: "ja-0524"
+      forms:
+        "question": "ときですか"
+        "negative-question": "ときではありませんか"
+      readings:
+        "question": "toki desu ka"
+        "negative-question": "toki de wa arimasen ka"
+    - word: "ja-0525"
+      forms:
+        "question": "しゅうですか"
+        "negative-question": "しゅうではありませんか"
+      readings:
+        "question": "shuu desu ka"
+        "negative-question": "shuu de wa arimasen ka"
+    - word: "ja-0526"
+      forms:
+        "question": "つきですか"
+        "negative-question": "つきではありませんか"
+      readings:
+        "question": "tsuki desu ka"
+        "negative-question": "tsuki de wa arimasen ka"
+    - word: "ja-0527"
+      forms:
+        "question": "あいだですか"
+        "negative-question": "あいだではありませんか"
+      readings:
+        "question": "aida desu ka"
+        "negative-question": "aida de wa arimasen ka"
+    - word: "ja-0529"
+      forms:
+        "question": "おわりですか"
+        "negative-question": "おわりではありませんか"
+      readings:
+        "question": "owari desu ka"
+        "negative-question": "owari de wa arimasen ka"
+    - word: "ja-0530"
+      forms:
+        "question": "ゆうがたですか"
+        "negative-question": "ゆうがたではありませんか"
+      readings:
+        "question": "yuugata desu ka"
+        "negative-question": "yuugata de wa arimasen ka"
+rules:
+  - id: "ja-rule-question-ka"
+    slots: ["question", "negative-question"]
+    words:
+      - { word: "か", reading: "ka" }
+      - { word: "あなたはがくせいですか。", reading: "anata wa gakusei desu ka?" }

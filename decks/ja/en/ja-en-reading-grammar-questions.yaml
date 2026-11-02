@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-grammar-questions"
+name: "Japanese reading: yes-no questions"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-grammar-questions-1"
+    title: "Are you?"
+    sentences:
+      - text: "あなたはがくせいですか。"
+        reading: "anata wa gakusei desu ka."
+      - text: "あなたはせんせいですか。"
+        reading: "anata wa sensei desu ka."
+      - text: "かのじょはおんなですか。"
+        reading: "kanojo wa onna desu ka."
+      - text: "いぬですか。"
+        reading: "inu desu ka."
+    questions:
+      - id: "ja-0655"
+        prompt:
+          en: "Which line asks whether the person is a student?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0656"
+        prompt:
+          en: "The third line asks whether she is a woman."
+        answer: true
+      - id: "ja-0657"
+        prompt:
+          en: "Which line asks whether it is a dog?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-grammar-questions-2"
+    title: "Quiz"
+    sentences:
+      - text: "はははせんせいですか。"
+        reading: "wa haha sensei desu ka."
+      - text: "ちちはおとこですか。"
+        reading: "chichi wa otoko desu ka."
+      - text: "ともだちはがくせいですか。"
+        reading: "tomodachi wa gakusei desu ka."
+      - text: "ぎゅうにゅうですか。"
+        reading: "gyuunyuu desu ka."
+    questions:
+      - id: "ja-0658"
+        prompt:
+          en: "Which line asks whether the mother is a teacher?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0659"
+        prompt:
+          en: "The second line asks whether the father is a man."
+        answer: true
+      - id: "ja-0660"
+        prompt:
+          en: "Which line asks whether it is milk?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
