@@ -1,0 +1,106 @@
+# The language family and subfamily the README's languages list shows for
+# each language, keyed by language code (tools/readme_languages.py).
+#
+# Tool data only: the app and assets/languages.yaml do not read it. Names are
+# Glottolog-style. The family is the top level; the subfamily is the branch
+# the language sits in, or an em dash when it has none worth naming (an
+# isolate, or a family with one member here). A proto- or ancient language
+# sits under its real family and branch. A constructed language has the
+# family "Constructed" and, as its subfamily, the family it is modelled on
+# (Esperanto: Romance; Sindarin: Celtic, after Welsh; Quenya: Uralic, after
+# Finnish), or "None" when it has no model (owner, 2026-11-02). The notation
+# courses (ipa, qbe) are not languages and are not listed.
+#
+# A language with no entry here fails tools/test_readme_languages.py.
+
+bn: ["Indo-European", "Indo-Aryan"]  # Bengali
+hi: ["Indo-European", "Indo-Aryan"]  # Hindustani
+as: ["Indo-European", "Indo-Aryan"]  # Assamese
+doi: ["Indo-European", "Indo-Aryan"]  # Dogri
+gu: ["Indo-European", "Indo-Aryan"]  # Gujarati
+ks: ["Indo-European", "Indo-Aryan"]  # Kashmiri
+kok: ["Indo-European", "Indo-Aryan"]  # Konkani
+mai: ["Indo-European", "Indo-Aryan"]  # Maithili
+mr: ["Indo-European", "Indo-Aryan"]  # Marathi
+ne: ["Indo-European", "Indo-Aryan"]  # Nepali
+or: ["Indo-European", "Indo-Aryan"]  # Odia
+pa: ["Indo-European", "Indo-Aryan"]  # Punjabi
+sa: ["Indo-European", "Indo-Aryan"]  # Sanskrit
+sd: ["Indo-European", "Indo-Aryan"]  # Sindhi
+bho: ["Indo-European", "Indo-Aryan"]  # Bhojpuri
+raj: ["Indo-European", "Indo-Aryan"]  # Rajasthani
+mag: ["Indo-European", "Indo-Aryan"]  # Magahi
+hne: ["Indo-European", "Indo-Aryan"]  # Chhattisgarhi
+awa: ["Indo-European", "Indo-Aryan"]  # Awadhi
+bgc: ["Indo-European", "Indo-Aryan"]  # Haryanvi
+kfy: ["Indo-European", "Indo-Aryan"]  # Kumaoni
+gbm: ["Indo-European", "Indo-Aryan"]  # Garhwali
+gom: ["Indo-European", "Indo-Aryan"]  # Goan Konkani
+pli: ["Indo-European", "Indo-Aryan"]  # Pali
+qap: ["Indo-European", "Indo-Aryan"]  # Ashokan Prakrit
+vsn: ["Indo-European", "Indo-Aryan"]  # Vedic Sanskrit
+en: ["Indo-European", "Germanic"]  # English
+de: ["Indo-European", "Germanic"]  # German
+sv: ["Indo-European", "Germanic"]  # Swedish
+nb: ["Indo-European", "Germanic"]  # Norwegian (Bokmål)
+yi: ["Indo-European", "Germanic"]  # Yiddish
+ang: ["Indo-European", "Germanic"]  # Old English
+enm: ["Indo-European", "Germanic"]  # Middle English
+fr: ["Indo-European", "Romance"]  # French
+es: ["Indo-European", "Romance"]  # Spanish
+pt: ["Indo-European", "Romance"]  # Portuguese
+it: ["Indo-European", "Romance"]  # Italian
+ca: ["Indo-European", "Romance"]  # Catalan
+la: ["Indo-European", "Italic"]  # Latin
+ru: ["Indo-European", "Slavic"]  # Russian
+pl: ["Indo-European", "Slavic"]  # Polish
+hbs: ["Indo-European", "Slavic"]  # Serbo-Croatian
+el: ["Indo-European", "Hellenic"]  # Greek (Modern)
+grc: ["Indo-European", "Hellenic"]  # Classical Greek
+qgh: ["Indo-European", "Hellenic"]  # Archaic Greek
+qgk: ["Indo-European", "Hellenic"]  # Koine Greek
+gmy: ["Indo-European", "Hellenic"]  # Mycenaean Greek
+ga: ["Indo-European", "Celtic"]  # Irish
+ine: ["Indo-European", "—"]  # Proto-Indo-European
+kn: ["Dravidian", "South"]  # Kannada
+ml: ["Dravidian", "South"]  # Malayalam
+ta: ["Dravidian", "South"]  # Tamil
+tcy: ["Dravidian", "South"]  # Tulu
+te: ["Dravidian", "South-Central"]  # Telugu
+zh: ["Sino-Tibetan", "Sinitic"]  # Mandarin Chinese
+yue: ["Sino-Tibetan", "Sinitic"]  # Cantonese
+brx: ["Sino-Tibetan", "Tibeto-Burman"]  # Bodo
+mni: ["Sino-Tibetan", "Tibeto-Burman"]  # Manipuri
+lus: ["Sino-Tibetan", "Tibeto-Burman"]  # Mizo
+sat: ["Austroasiatic", "Munda"]  # Santali
+kha: ["Austroasiatic", "Khasian"]  # Khasi
+vi: ["Austroasiatic", "Vietic"]  # Vietnamese
+he: ["Afro-Asiatic", "Semitic"]  # Hebrew
+ar: ["Afro-Asiatic", "Semitic"]  # Arabic
+arc: ["Afro-Asiatic", "Semitic"]  # Aramaic (Imperial)
+egy: ["Afro-Asiatic", "Egyptian"]  # Egyptian
+ha: ["Afro-Asiatic", "Chadic"]  # Hausa
+so: ["Afro-Asiatic", "Cushitic"]  # Somali
+fi: ["Uralic", "Finnic"]  # Finnish
+hu: ["Uralic", "Ugric"]  # Hungarian
+tr: ["Turkic", "Oghuz"]  # Turkish
+fil: ["Austronesian", "Malayo-Polynesian"]  # Filipino
+ms: ["Austronesian", "Malayo-Polynesian"]  # Malay
+th: ["Kra-Dai", "Tai"]  # Thai
+sw: ["Niger-Congo", "Bantu"]  # Swahili
+qu: ["Quechuan", "—"]  # Quechua
+ja: ["Japonic", "—"]  # Japanese
+ko: ["Koreanic", "—"]  # Korean
+eu: ["Isolate", "—"]  # Basque
+sux: ["Isolate", "—"]  # Sumerian
+ase: ["Sign language", "French Sign Language"]  # American Sign Language
+ins: ["Sign language", "—"]  # Indian Sign Language
+eo: ["Constructed", "Romance"]  # Esperanto
+isv: ["Constructed", "Slavic"]  # Interslavic
+sjn: ["Constructed", "Celtic"]  # Sindarin
+qya: ["Constructed", "Uralic"]  # Quenya
+tok: ["Constructed", "None"]  # Toki Pona
+jbo: ["Constructed", "None"]  # Lojban
+tlh: ["Constructed", "None"]  # Klingon
+qdo: ["Constructed", "None"]  # Dothraki
+qhv: ["Constructed", "None"]  # High Valyrian
