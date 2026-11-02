@@ -7,8 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **The first launch places each language you chose to Learn.** Before the app opens, each such language goes straight to its level check once its first decks are on the phone. Under the first question, "Start at the beginning" places nothing for that language and goes on; the close button instead stops the check and keeps what it found so far. Each result is saved as it is done (owner, 2026-11-02: "It should be offered, and skippable to start at the beginning.").
+
 ### Changed
 
+- **Placement uses sentences, not writing.** The level check's closing questions are now the review's tile question for a deck of sentences or phrases, a word is written only when it is a single word with one valid spelling, and any other deck is a choice; the whole check, its result and its feedback with Continue now run in the same screen as the daily review, and it no longer asks whether you know the language, whether you read a script, which language to learn from or whether to learn the alphabet, which your skills already say (owner, 2026-11-02: "There should be no write questions unless the answer is very specific. Use sentence formation questions." and "Language choice itself is now unified. Use the new paradigm.").
 - **Japanese cards can be written in kanji.** From the first kanji unit on, a card's target is in kanji with its kana reading shown under it, as Chinese shows pinyin; example sentences get a kana line too; kana-only learners see kana, and earlier cards are unchanged. The deck checker now requires a kana reading on every kanji target and example and refuses a reading with a kanji in it; no Japanese decks use it yet (owner, 2026-11-02, ADR-0053).
 - **Language rows show the skill icons and script letters.** On the Languages page a Learn chip shows its skills' icons beside the cap, and each script chip starts with the first letter of the script's sample word, so a language in two scripts shows two chips told apart; the skills sheet is unchanged (owner, 2026-11-02).
 

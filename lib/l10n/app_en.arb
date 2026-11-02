@@ -5413,38 +5413,6 @@
   "@nativeChoiceChoose": {
     "description": "Button on the Today card that opens the choice of which language a course is taught from."
   },
-  "alphabetAskTitle": "Learn {language} in the {script} script?",
-  "@alphabetAskTitle": {
-    "description": "Asked for each language chosen to learn whose course has script decks, before placement. {script} is the script's own name, scriptName (#551).",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      },
-      "script": {
-        "type": "String",
-        "example": "Devanagari"
-      }
-    }
-  },
-  "alphabetAskBody": "Or learn {language} in Latin letters only: words show their romanisation first, you answer in Latin letters, and the script, spelling and reading decks are left out. You can change this in Settings.",
-  "@alphabetAskBody": {
-    "description": "Under the alphabet question.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "alphabetLearn": "Learn the alphabet",
-  "@alphabetLearn": {
-    "description": "Button: learn the language with its alphabet."
-  },
-  "alphabetSkip": "Latin letters only",
-  "@alphabetSkip": {
-    "description": "Button: learn the language without its alphabet, in Latin letters only."
-  },
   "placementNoAlphabet": "{language} has no decks without its alphabet yet. You can learn the alphabet from Settings.",
   "@placementNoAlphabet": {
     "description": "Placement result for a language learned without its alphabet whose course has nothing else yet.",
@@ -5455,33 +5423,9 @@
       }
     }
   },
-  "placementAskTitle": "Do you know any {language}?",
-  "@placementAskTitle": {
-    "description": "Title of the placement question for one language.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "placementAskBody": "A short check finds where to start: a few words from each part of the course, until one is new to you. Your answers don’t count as reviews, and you can still study anything it skips.",
-  "@placementAskBody": {
-    "description": "Explanation under the placement question."
-  },
   "placementFind": "Find my level",
   "@placementFind": {
     "description": "Button: start the placement check."
-  },
-  "placementNew": "I’m new to {language}",
-  "@placementNew": {
-    "description": "Button: skip the placement check and start the course from the beginning.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
   },
   "placementQuestion": "What does this mean?",
   "@placementQuestion": {
@@ -5501,13 +5445,13 @@
       }
     }
   },
+  "placementStartAtBeginning": "Start at the beginning",
+  "@placementStartAtBeginning": {
+    "description": "Button under the first placement question after choosing to learn a language on the first launch: skip the level check, place nothing, and start the course from its beginning."
+  },
   "placementDontKnow": "I don’t know",
   "@placementDontKnow": {
     "description": "Button in the placement check: the learner does not know the word."
-  },
-  "placementStop": "Stop here",
-  "@placementStop": {
-    "description": "Button in the placement check: end it, keeping what it has found so far."
   },
   "placementResultStart": "You’ll start {language} from the beginning, with {deck}.",
   "@placementResultStart": {
@@ -5632,42 +5576,6 @@
         "example": "3"
       }
     }
-  },
-  "placementScriptAskTitle": "Do you read {script}?",
-  "@placementScriptAskTitle": {
-    "description": "Placement, before a script's check: whether the learner reads the script. {script} is its name.",
-    "placeholders": {
-      "script": {
-        "type": "String",
-        "example": "Devanagari"
-      }
-    }
-  },
-  "placementScriptAskThrough": "You read {script} through {languages}. A few questions check how well, so that the script decks you know are skipped.",
-  "@placementScriptAskThrough": {
-    "description": "Under the script question, when Languages I know says the learner reads the script.",
-    "placeholders": {
-      "script": {
-        "type": "String",
-        "example": "Devanagari"
-      },
-      "languages": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "placementScriptAskBody": "A few questions check how well, from letters to words, so that the script decks you know are skipped. If you don’t read it, its decks start from the first letters.",
-  "@placementScriptAskBody": {
-    "description": "Under the script question, when the learner is not known to read the script."
-  },
-  "placementScriptYes": "Yes, check me",
-  "@placementScriptYes": {
-    "description": "Button: the learner reads the script; the check starts."
-  },
-  "placementScriptNo": "No, I’m new to it",
-  "@placementScriptNo": {
-    "description": "Button: the learner does not read the script; it is learned from its first deck, with no questions."
   },
   "placementMatchQuestion": "Match each letter with what it is",
   "@placementMatchQuestion": {
