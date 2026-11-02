@@ -352,7 +352,8 @@ units:
       - { id: "what-did-you-eat", text: { "en": "Saying what you ate and bought yesterday, with le after the verb, and not, with mei" } }
     reading_passages:
       - { id: "yesterday-note", text: { "en": "A short note about yesterday" } }
-  - planned: { id: "zh-transport", theme: "transport", words: 35 }
+  - decks: ["zh-transport", "zh-transport-sentences", "zh-reading-transport", "*"]
+    words: 35
     listening_passages:
       - { id: "which-bus", text: { "en": "Asking which bus or metro line goes to the city centre" } }
     reading_passages:
