@@ -1,0 +1,165 @@
+schema: 1
+id: "as-arts"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "arts"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3601"
+    target: "কলা"
+    reading: "kôlā"
+    ipa: "kɔla"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কলা ভাল।", reading: "kôlā bhāl.", ipa: "kɔla bʱal" }
+      - { target: "কলা বহুত।", reading: "kôlā bohut.", ipa: "kɔla bohut" }
+  - id: "as-3602"
+    target: "চিত্ৰকলা"
+    reading: "citrôkôlā"
+    ipa: "sitɹɔkɔla"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চিত্ৰকলা ধুনীয়া।", reading: "citrôkôlā dhuniyā.", ipa: "sitɹɔkɔla dʱunija" }
+      - { target: "চিত্ৰকলা শিকোঁ।", reading: "citrôkôlā xikum̐.", ipa: "sitɹɔkɔla xikʊ̃", bases: [{ word: "শিকোঁ", ref: "as-2761" }] }
+  - id: "as-3603"
+    target: "শিল্পী"
+    reading: "xilpī"
+    ipa: "xilpi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "শিল্পী ধুনীয়া।", reading: "xilpī dhuniyā.", ipa: "xilpi dʱunija" }
+      - { target: "শিল্পী আহিছে।", reading: "xilpī āhise.", ipa: "xilpi ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3604"
+    target: "গায়ক"
+    reading: "gāyôk"
+    ipa: "ɡajɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গায়ক ভাল।", reading: "gāyôk bhāl.", ipa: "ɡajɔk bʱal" }
+      - { target: "গায়ক আহিছে।", reading: "gāyôk āhise.", ipa: "ɡajɔk ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3605"
+    target: "বাদক"
+    reading: "bādôk"
+    ipa: "badɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাদক ভাল।", reading: "bādôk bhāl.", ipa: "badɔk bʱal" }
+      - { target: "বাদক বহুত।", reading: "bādôk bohut.", ipa: "badɔk bohut" }
+  - id: "as-3606"
+    target: "সুৰ"
+    reading: "sur"
+    ipa: "suɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সুৰ ভাল।", reading: "sur bhāl.", ipa: "suɹ bʱal" }
+      - { target: "সুৰ মধুৰ।", reading: "sur modhur.", ipa: "suɹ modʱuɹ", bases: [{ word: "মধুৰ", ref: "as-2319" }] }
+  - id: "as-3607"
+    target: "তাল"
+    reading: "tāl"
+    ipa: "tal"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তাল ঠিক।", reading: "tāl ṭhik.", ipa: "tal tʰik" }
+      - { target: "তাল বহুত।", reading: "tāl bohut.", ipa: "tal bohut" }
+  - id: "as-3608"
+    target: "মঞ্চ"
+    reading: "mônchô"
+    ipa: "mɔns"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মঞ্চ ডাঙৰ।", reading: "mônchô dāṅôr.", ipa: "mɔns daŋɔɹ" }
+      - { target: "মঞ্চত গায়ক।", reading: "mônchôt gāyôk.", ipa: "mɔnsɔt ɡajɔk", bases: [{ word: "মঞ্চত", base: "মঞ্চ", reading: "mônchô" }] }
+  - id: "as-3609"
+    target: "তুলি"
+    reading: "tulī"
+    ipa: "tuli"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তুলি নতুন।", reading: "tulī nôtun.", ipa: "tuli notun" }
+      - { target: "তুলিত ৰং।", reading: "tulit rông.", ipa: "tulit ɹɔŋ", bases: [{ word: "তুলিত", base: "তুলি", reading: "tulī" }] }
+  - id: "as-3610"
+    target: "প্ৰদৰ্শনী"
+    reading: "prôdôrxônī"
+    ipa: "pɹɔdɔɹxoni"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰদৰ্শনী আছে।", reading: "prôdôrxônī āse.", ipa: "pɹɔdɔɹxoni ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "প্ৰদৰ্শনী ভাল।", reading: "prôdôrxônī bhāl.", ipa: "pɹɔdɔɹxoni bʱal" }
+  - id: "as-3611"
+    target: "ভাস্কৰ্য"
+    reading: "bhāskôrjô"
+    ipa: "bʱaskɔɹz"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভাস্কৰ্য ধুনীয়া।", reading: "bhāskôrjô dhuniyā.", ipa: "bʱaskɔɹz dʱunija" }
+      - { target: "ভাস্কৰ্য বৰ।", reading: "bhāskôrjô bôr.", ipa: "bʱaskɔɹz bɔɹ" }
+  - id: "as-3612"
+    target: "নৃত্য"
+    reading: "nritô"
+    ipa: "nritj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নৃত্য ভাল।", reading: "nritô bhāl.", ipa: "nritj bʱal" }
+      - { target: "নৃত্য শিকা।", reading: "nritô xikā.", ipa: "nritj xika" }
+  - id: "as-3613"
+    target: "সংগীতজ্ঞ"
+    reading: "xôṅgitôgyô"
+    ipa: "soŋɡitɔɡj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সংগীতজ্ঞ আহিছে।", reading: "xôṅgitôgyô āhise.", ipa: "soŋɡitɔɡj ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "সংগীতজ্ঞ ভাল।", reading: "xôṅgitôgyô bhāl.", ipa: "soŋɡitɔɡj bʱal" }
+  - id: "as-3614"
+    target: "প্ৰতিভা"
+    reading: "prôtibhā"
+    ipa: "pɹotibʱa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰতিভা বহুত।", reading: "prôtibhā bohut.", ipa: "pɹotibʱa bohut" }
+      - { target: "প্ৰতিভা আছে।", reading: "prôtibhā āse.", ipa: "pɹotibʱa ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-3615"
+    target: "গীত গোৱা"
+    reading: "git guwā"
+    ipa: "ɡit ɡʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+  - id: "as-3616"
+    target: "ছবি আঁকা"
+    reading: "sôbi ām̐kā"
+    ipa: "sobi ãka"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:

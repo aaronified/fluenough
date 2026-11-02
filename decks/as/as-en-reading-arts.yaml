@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-arts"
+name: "Assamese reading: arts: music, dance, painting and the stage"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-music-class"
+    title: "A teacher explains a music class"
+    theme: "arts"
+    sentences:
+      - text: "আজি সুৰ আৰু তাল শিকিম।"
+        reading: "āzi sur āru tāl xikim."
+      - text: "এইটো গীত গোৱা।"
+        reading: "eitu git guwā."
+      - text: "বাদকে ঢোল বজায়।"
+        reading: "bādôke dhol bôzāy."
+      - text: "সকলোৱে গায়।"
+        reading: "xôkôluwe gāy."
+    questions:
+      - id: "as-3625"
+        prompt: { en: "Today the class learns tune and rhythm." }
+        answer: true
+      - id: "as-3626"
+        prompt: { en: "Which instrument is played?" }
+        options:
+          - { en: "A drum" }
+          - { en: "A horn" }
+          - { en: "A flute" }
+        answer: 1
+      - id: "as-3627"
+        prompt: { en: "What does everyone do?" }
+        options:
+          - { en: "Sing" }
+          - { en: "Sleep" }
+          - { en: "Dance only" }
+        answer: 1
+  - id: "as-exhibition-notice"
+    title: "A notice for an art exhibition"
+    theme: "arts"
+    sentences:
+      - text: "প্ৰদৰ্শনী কাইলৈ শুৰু।"
+        reading: "prôdôrxônī kāilôi xurū."
+      - text: "চিত্ৰকলা আৰু ভাস্কৰ্য।"
+        reading: "citrôkôlā āru bhāskôrjô."
+      - text: "শিল্পীসকলে ক'ত থাকে?"
+        reading: "xilpīxôkôle kot thāke?"
+      - text: "মঞ্চত সংগীত।"
+        reading: "mônchôt xôṅgit."
+    questions:
+      - id: "as-3628"
+        prompt: { en: "The exhibition starts tomorrow." }
+        answer: true
+      - id: "as-3629"
+        prompt: { en: "What is shown besides paintings?" }
+        options:
+          - { en: "Sculptures" }
+          - { en: "Cars" }
+          - { en: "Books" }
+        answer: 1
+      - id: "as-3630"
+        prompt: { en: "What happens on the stage?" }
+        options:
+          - { en: "Music" }
+          - { en: "Cooking" }
+          - { en: "A meeting" }
+        answer: 1
