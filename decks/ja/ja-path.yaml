@@ -164,7 +164,8 @@ units:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "ja-quantities", theme: "quantities", words: 20 }
+  - decks: ["ja-quantities", "ja-quantities-sentences", "ja-reading-quantities", "*"]
+    words: 20
     listening_passages:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery" } }
     reading_passages:
