@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-about-me"
+name: "Japanese reading: about me"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-about-me-1"
+    title: "Self-introduction"
+    sentences:
+      - text: "わたしはがくせいです。"
+        reading: "watashi wa gakusei desu."
+      - text: "わたしのくにはにほんです。"
+        reading: "watashi no kuni wa nihon desu."
+      - text: "わたしはにほんごがすきです。"
+        reading: "watashi wa nihongo ga suki desu."
+      - text: "えいごはきらいです。"
+        reading: "eigo wa kirai desu."
+    questions:
+      - id: "ja-0335"
+        prompt:
+          en: "Which line says that the speaker is a student?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0336"
+        prompt:
+          en: "The speaker likes Japanese."
+        answer: true
+      - id: "ja-0337"
+        prompt:
+          en: "Which line says that the speaker dislikes English?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-about-me-2"
+    title: "A registration card"
+    sentences:
+      - text: "なまえはなんですか。"
+        reading: "namae wa nan desu ka."
+      - text: "としはいくつですか。"
+        reading: "toshi hai ku tsu desu ka."
+      - text: "くにはどこですか。"
+        reading: "kuni wa doko desu ka."
+      - text: "しゅみはなんですか。"
+        reading: "shumi wa nan desu ka."
+    questions:
+      - id: "ja-0338"
+        prompt:
+          en: "Which line asks for the age?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-0339"
+        prompt:
+          en: "The third line asks for the country."
+        answer: true
+      - id: "ja-0340"
+        prompt:
+          en: "Which line asks for a hobby?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2

@@ -1,0 +1,120 @@
+schema: 1
+id: "ja-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0329"
+    target: "わたしはがくせいです。"
+    words: ["わたし", "は", "がくせい", "です"]
+    reading: "watashi wa gakusei desu."
+    ipa: "wataɕi wa ɡakɯseː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        ref: "ja-0070"
+        kind: "word"
+      - id: "w2"
+        word: "がっこう"
+        reading: "gakkou"
+        kind: "word"
+  - id: "ja-0330"
+    target: "あなたのなまえはなんですか。"
+    words: ["あなた", "の", "なまえ", "は", "なん", "です", "か"]
+    reading: "anata no namae wa nan desu ka."
+    ipa: "anata no namae wa naɴ desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "なん", base: "なん", reading: "nan" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "とし"
+        reading: "toshi"
+        kind: "word"
+      - id: "w2"
+        word: "くに"
+        reading: "kuni"
+        kind: "word"
+  - id: "ja-0331"
+    target: "わたしはにほんごがすきです。"
+    words: ["わたし", "は", "にほんご", "が", "すき", "です"]
+    reading: "watashi wa nihongo ga suki desu."
+    ipa: "wataɕi wa nihoɴɡo ɡa sɯki desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "きらい"
+        reading: "kirai"
+        kind: "word"
+      - id: "w2"
+        word: "じょうず"
+        reading: "jouzu"
+        kind: "word"
+  - id: "ja-0332"
+    target: "かのじょはいんどのひとです。"
+    words: ["かのじょ", "はい", "ん", "どの", "ひと", "です"]
+    reading: "kanojo hai n dono hito desu."
+    ipa: "kanodʑo hai ɴ dono çito desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はい", base: "はい", reading: "hai" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        ref: "ja-0072"
+        kind: "word"
+      - id: "w2"
+        word: "かんこく"
+        reading: "kankoku"
+        kind: "word"
+  - id: "ja-0333"
+    target: "わたしのくにはかんこくです。"
+    words: ["わたし", "の", "くに", "は", "かんこく", "です"]
+    reading: "watashi no kuni wa kankoku desu."
+    ipa: "wataɕi no kɯni wa kaɴkokɯ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "ちゅうごく"
+        reading: "chuugoku"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0072"
+        kind: "word"
+  - id: "ja-0334"
+    target: "あなたのしゅみはなんですか。"
+    words: ["あなた", "の", "しゅみ", "は", "なん", "です", "か"]
+    reading: "anata no shumi wa nan desu ka."
+    ipa: "anata no ɕɯmi wa naɴ desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "なん", base: "なん", reading: "nan" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        ref: "ja-0144"
+        kind: "word"
+      - id: "w2"
+        word: "とし"
+        reading: "toshi"
+        kind: "word"

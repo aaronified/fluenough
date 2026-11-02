@@ -1,0 +1,468 @@
+schema: 1
+id: "ja-en-about-me"
+kind: "layer"
+core: "ja-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+description: "Twenty words for talking about yourself: your country, your age, the school or university you go to, the languages you like or are good at, your hobby, and where you are from. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0309":
+    native: "country; home country"
+    notes:
+      "n1": "くに (kuni) is a country. Ask どこ (doko) for the country, not the city."
+    examples:
+      "わたしのくにはにほんです。":
+        native: "My country is Japan."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "あなたのくにはどこですか。":
+        native: "Which is your country?"
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0310":
+    native: "age"
+    notes:
+      "n1": "とし (toshi) is how old a person is, and also a year. Ask how old someone is with いくつ (ikutsu)."
+    examples:
+      "わたしのとしはいくつですか。":
+        native: "How old am I?"
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "はい":
+            meaning: "yes"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "あなたのとしはいくつですか。":
+        native: "How old are you?"
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "はい":
+            meaning: "yes"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0311":
+    native: "man; male"
+    notes:
+      "n1": "おとこ (otoko) is a man. Opposite: おんな (onna), woman."
+    examples:
+      "かれはおとこです。":
+        native: "He is a man."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "かれはおとこのひとです。":
+        native: "He is a man."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0312":
+    native: "woman; female"
+    notes:
+      "n1": "おんな (onna) is a woman. Opposite: おとこ (otoko), man."
+    examples:
+      "かのじょはおんなです。":
+        native: "She is a woman."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "かのじょはおんなのせんせいです。":
+        native: "She is a female teacher."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0313":
+    native: "school"
+    notes:
+      "n1": "がっこう (gakkou) is a school of any level. A university is だいがく (daigaku)."
+    examples:
+      "わたしはがっこうのがくせいです。":
+        native: "I am a school student."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "がっこうはどこですか。":
+        native: "Where is the school?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0314":
+    native: "university; college"
+    notes:
+      "n1": "だいがく (daigaku) is a university or college. A school is がっこう (gakkou)."
+    examples:
+      "わたしはだいがくのがくせいです。":
+        native: "I am a university student."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "あなたのだいがくはどこですか。":
+        native: "Where is your university?"
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0315":
+    native: "the Japanese language"
+    notes:
+      "n1": "にほんご (nihongo) is the Japanese language. English is えいご (eigo)."
+    examples:
+      "わたしはにほんごがすきです。":
+        native: "I like Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "にほんごのせんせいはどなたですか。":
+        native: "Who is the Japanese teacher?"
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0316":
+    native: "the English language; English"
+    notes:
+      "n1": "えいご (eigo) is English, the language. Japanese is にほんご (nihongo)."
+    examples:
+      "わたしはえいごがきらいです。":
+        native: "I dislike English."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "えいごのせんせいはどなたですか。":
+        native: "Who is the English teacher?"
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0317":
+    native: "hobby; pastime"
+    notes:
+      "n1": "しゅみ (shumi) is a hobby, what you do for fun."
+    examples:
+      "わたしのしゅみはにほんごです。":
+        native: "My hobby is Japanese."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "あなたのしゅみはなんですか。":
+        native: "What is your hobby?"
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "なん":
+            meaning: "what (asks for a thing)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0318":
+    native: "liked; fond of; like"
+    notes:
+      "n1": "すき (suki) is said of something you like: ～がすきです (ga suki desu), I like ～. Opposite: きらい (kirai)."
+    examples:
+      "はい、すきです。":
+        native: "Yes, I like it."
+        bases:
+          "はい":
+            meaning: "yes"
+          "です":
+            meaning: "is (polite)"
+      "わたしはにほんごがすきです。":
+        native: "I like Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0319":
+    native: "disliked; do not like"
+    notes:
+      "n1": "きらい (kirai) is said of something you do not like: ～がきらいです (ga kirai desu). Opposite: すき (suki)."
+    examples:
+      "いいえ、きらいです。":
+        native: "No, I do not like it."
+        bases:
+          "いいえ":
+            meaning: "no"
+          "です":
+            meaning: "is (polite)"
+      "にほんごはきらいですか。":
+        native: "Do you dislike Japanese?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0320":
+    native: "good at; skilled; well done"
+    notes:
+      "n1": "じょうず (jouzu) is good at doing something: ～がじょうずです (ga jouzu desu). Opposite: へた (heta), poor at."
+    examples:
+      "えいごはじょうずですか。":
+        native: "Are you good at English?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "かれはにほんごがじょうずです。":
+        native: "He is good at Japanese."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0321":
+    native: "holiday; day off; rest"
+    notes:
+      "n1": "やすみ (yasumi) is a day or time off, such as a holiday or a closed day."
+    examples:
+      "はい、やすみです。":
+        native: "Yes, it is a day off."
+        bases:
+          "はい":
+            meaning: "yes"
+          "です":
+            meaning: "is (polite)"
+      "がっこうはやすみですか。":
+        native: "Is the school closed?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0322":
+    native: "China"
+    notes:
+      "n1": "ちゅうごく (chuugoku) is China, the country. A person from it is ちゅうごくのひと (chuugoku no hito)."
+    examples:
+      "ちゅうごくのひとです。":
+        native: "I am Chinese."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "かれはちゅうごくのせんせいです。":
+        native: "He is a teacher from China."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0323":
+    native: "Korea; South Korea"
+    notes:
+      "n1": "かんこく (kankoku) is Korea, the country. A person from it is かんこくのひと (kankoku no hito)."
+    examples:
+      "かんこくのひとです。":
+        native: "I am Korean."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "あなたはかんこくのがくせいですか。":
+        native: "Are you a student from Korea?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0324":
+    native: "India"
+    notes:
+      "n1": "いんど (indo) is India, the country. A person from it is いんどのひと (indo no hito)."
+    examples:
+      "いんどのひとです。":
+        native: "He is Indian."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "かのじょはいんどのおんなのひとです。":
+        native: "She is an Indian woman."
+        bases:
+          "はい":
+            meaning: "yes"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0325":
+    native: "America; the United States"
+    notes:
+      "n1": "あめりか (amerika) is America, the country. A person from it is あめりかのひと (amerika no hito)."
+    examples:
+      "わたしはあめりかのひとです。":
+        native: "I am American."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "あめりかのがっこうはどこですか。":
+        native: "Where is the American school?"
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0326":
+    native: "adult; grown-up"
+    notes:
+      "n1": "おとな (otona) is an adult. Opposite: こども (kodomo), child."
+    examples:
+      "かれはおとなです。":
+        native: "He is an adult."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "こどもはおとなですか。":
+        native: "Are children adults?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0327":
+    native: "one person; alone"
+    notes:
+      "n1": "ひとり (hitori) is one person, or alone. Two people is ふたり (futari)."
+    examples:
+      "わたしはひとりです。":
+        native: "I am alone."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "おくさまはひとりですか。":
+        native: "Is the lady alone?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0328":
+    native: "Tokyo"
+    notes:
+      "n1": "とうきょう (toukyou) is the capital city of Japan. Japan itself is にほん (nihon)."
+    examples:
+      "とうきょうはどこですか。":
+        native: "Where is Tokyo?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "わたしはとうきょうのひとです。":
+        native: "I am from Tokyo."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
