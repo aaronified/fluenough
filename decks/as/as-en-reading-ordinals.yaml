@@ -13,18 +13,18 @@ passages:
     sentences:
       - text: "ফ্লেটটো প্ৰথম মহলাত নে দ্বিতীয়?"
         reading: "phlettô prôthôm môhôlāt ne dwitīyô?"
-      - text: "তৃতীয় মহলাত আলো বেছি।"
-        reading: "tritīyô môhôlāt ālo besi."
+      - text: "তৃতীয় মহলাত কোঠা বেছি।"
+        reading: "tritiy môhôlāt kuthā besi."
       - text: "চতুৰ্থ মহলাত লিফ্ট নাই।"
         reading: "côturthô môhôlāt lift nāi."
-      - text: "প্ৰথমে দেখিম।"
-        reading: "prôthômē dekhim."
+      - text: "প্ৰথম মহলা দেখিম।"
+        reading: "prôthôm môhôlā dekhim."
     questions:
       - id: "as-4040"
         prompt: { en: "The question asks whether the flat is on the first or second floor." }
         answer: true
       - id: "as-4041"
-        prompt: { en: "Which floor has a lot of light?" }
+        prompt: { en: "Which floor has more rooms?" }
         options:
           - { en: "The first" }
           - { en: "The third" }
@@ -40,29 +40,29 @@ passages:
   - id: "as-month-calendar"
     title: "A calendar of events: the first, second and third week of the month"
     sentences:
-      - text: "প্ৰথম সপ্তাহত সভা।"
-        reading: "prôthôm xôptāhôt xôbhā."
-      - text: "দ্বিতীয় সপ্তাহত ভোজ।"
-        reading: "dwitīyô xôptāhôt bhoz."
-      - text: "তৃতীয় সপ্তাহত ভ্ৰমণ।"
-        reading: "tritīyô xôptāhôt bhrômôn."
-      - text: "শেষ সপ্তাহত বিশ্ৰাম।"
-        reading: "xes xôptāhôt bixrām."
+      - text: "প্ৰথম সপ্তাহত কাম।"
+        reading: "prôthôm xôptāhôt kām."
+      - text: "দ্বিতীয় সপ্তাহত বিহু।"
+        reading: "ditiy xôptāhôt bihu."
+      - text: "তৃতীয় সপ্তাহত পঢ়া।"
+        reading: "tritiy xôptāhôt pôrhā."
+      - text: "শেষ সপ্তাহত ছুটী।"
+        reading: "xex xôptāhôt suti."
     questions:
       - id: "as-4043"
-        prompt: { en: "The meeting is in the first week." }
+        prompt: { en: "Work is in the first week." }
         answer: true
       - id: "as-4044"
         prompt: { en: "What is in the second week?" }
         options:
-          - { en: "A feast" }
-          - { en: "A trip" }
-          - { en: "A rest" }
+          - { en: "Bihu" }
+          - { en: "Study" }
+          - { en: "A holiday" }
         answer: 1
       - id: "as-4045"
         prompt: { en: "What is in the last week?" }
         options:
-          - { en: "A trip" }
-          - { en: "A rest" }
-          - { en: "A meeting" }
+          - { en: "Work" }
+          - { en: "A holiday" }
+          - { en: "Study" }
         answer: 2
