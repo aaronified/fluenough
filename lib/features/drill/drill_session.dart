@@ -886,10 +886,7 @@ class DrillSession extends ChangeNotifier {
       // differs from the answer by a named sound.
       heardCard = _state.cardSaying(deck.language, said.text);
       if (found != null && found.$1.isVowelLength) {
-        graded = GradedAnswer(
-          AnswerOutcome.closeDiacritics,
-          matched: found.$2,
-        );
+        graded = GradedAnswer(AnswerOutcome.closeDiacritics, matched: found.$2);
       }
     }
     return TypedAnswer(
