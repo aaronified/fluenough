@@ -663,7 +663,8 @@ units:
       - { id: "already-at-six", text: { "en": "Saying earlier and later than expected, and about to happen: he came at six already, she only came at nine, the train is about to leave" } }
     reading_passages:
       - { id: "late-again", text: { "en": "A message about a friend who is always late" } }
-  - planned: { id: "zh-geography", theme: "geography", words: 40 }
+  - decks: ["zh-geography", "zh-geography-sentences", "zh-reading-geography", "*"]
+    words: 40
     listening_passages:
       - { id: "provinces-and-cities", text: { "en": "Naming China's provinces, rivers and big cities" } }
     reading_passages:
