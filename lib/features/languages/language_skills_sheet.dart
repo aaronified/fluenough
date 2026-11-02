@@ -136,7 +136,6 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   String get _code => _view.code;
   List<SkillKey> get _shape => _state.skillShape(_view.language);
   List<String> get _scripts => _state.skillScripts(_view.language);
-  bool get _several => _scripts.length > 1;
 
   @override
   void initState() {
