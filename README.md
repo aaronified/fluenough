@@ -147,7 +147,7 @@ below is written from `decks/index.json` each time the decks change.
 | Irish | Latin | in progress |
 | Italian | Latin | in progress |
 | Japanese | Kana, Kanji | in progress |
-| Kannada | Kannada | A1 |
+| Kannada | Kannada | B1 |
 | Koine Greek | Greek | in progress |
 | Korean | Hangul | in progress |
 | Latin | Latin | in progress |
