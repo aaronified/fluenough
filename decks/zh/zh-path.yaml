@@ -546,7 +546,8 @@ units:
       - { id: "at-karaoke", text: { "en": "Friends choose songs at karaoke" } }
     reading_passages:
       - { id: "concert-flyer", text: { "en": "A flyer for a concert" } }
-  - planned: { id: "zh-sports", theme: "sports", words: 45 }
+  - decks: ["zh-sports", "zh-sports-sentences", "zh-reading-sports", "*"]
+    words: 45
     listening_passages:
       - { id: "table-tennis-talk", text: { "en": "Friends talk about a table tennis match" } }
     reading_passages:
