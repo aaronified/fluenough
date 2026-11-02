@@ -836,7 +836,8 @@ units:
       - { id: "as-soon-as-i-got-home", text: { "en": "Telling events in order: as soon as I got home it rained; first, then, after that" } }
     reading_passages:
       - { id: "how-to-steps", text: { "en": "Steps for opening a bank account" } }
-  - planned: { id: "zh-history", theme: "history", words: 50 }
+  - decks: ["zh-history", "zh-history-sentences", "zh-reading-history", "*"]
+    words: 50
     listening_passages:
       - { id: "the-great-wall", text: { "en": "A guide tells the story of the Great Wall" } }
     reading_passages:
