@@ -5,7 +5,6 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/scheduling/ask.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/theme.dart';
 import '../../ui/widgets/card_picture.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
@@ -16,6 +15,7 @@ import '../../ui/widgets/target_text.dart';
 import 'cant_now.dart';
 import 'choice_tile.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'rule_forms.dart';
 import 'set_drill.dart';
 import 'taught_details.dart';
@@ -69,6 +69,7 @@ class ChoiceDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       needsSound: _hears && !answered,
+      going: goingOn(session, answered: answered),
       card: <Widget>[
         ...switch (ask) {
           Ask.chooseMeaning || Ask.chooseFormMeaning => _meaningCard(
@@ -91,7 +92,16 @@ class ChoiceDrill extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              for (final (place, option) in session.options.indexed) ...[
+              // Answered, only the right option and, when the learner chose
+              // wrong, the one they chose, marked wrong (owner, 2026-10-31,
+              // doubt 13); the others are not shown.
+              for (final (place, option) in <Card>[
+                for (final option in session.options)
+                  if (!answered ||
+                      session.isRight(option) ||
+                      picked?.id == option.id)
+                    option,
+              ].indexed) ...[
                 if (place > 0) const SizedBox(height: 10),
                 ChoiceTile(
                   right: answered && session.isRight(option),
@@ -116,33 +126,23 @@ class ChoiceDrill extends StatelessWidget {
       ],
       feedback: !answered
           ? null
-          : right
-          ? FeedbackBanner(
-              kind: FeedbackKind.correct,
-              title: l10n.feedbackCorrect,
-            )
-          : FeedbackBanner(
-              kind: FeedbackKind.wrong,
-              title: l10n.feedbackWrong,
-              detail: l10n.feedbackAnswer(ask.optionOf(card)),
-              quotes: <String>[if (!ask.choosesMeaning) card.target],
-              language: ask.choosesMeaning ? null : language,
-            ),
+          : alreadyAnswered(context, session) ??
+                (right
+                    ? FeedbackBanner(
+                        kind: FeedbackKind.correct,
+                        title: l10n.feedbackCorrect,
+                      )
+                    : FeedbackBanner(
+                        kind: FeedbackKind.wrong,
+                        title: l10n.feedbackWrong,
+                        detail: l10n.feedbackAnswer(ask.optionOf(card)),
+                        quotes: <String>[if (!ask.choosesMeaning) card.target],
+                        language: ask.choosesMeaning ? null : language,
+                      )),
+      // Nothing is left to do once answered: going on is the swipe and the
+      // chevron.
       actions: answered
-          ? <Widget>[
-              FilledButton(
-                onPressed: session.next,
-                style: AppButtonStyles.tall(context),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Flexible(child: Text(l10n.commonContinue)),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.arrow_forward, size: 22),
-                  ],
-                ),
-              ),
-            ]
+          ? const <Widget>[]
           : <Widget>[if (_hears) CantNowButton(session: session)],
     );
   }

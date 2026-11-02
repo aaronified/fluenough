@@ -20,6 +20,7 @@ import '../../ui/widgets/target_text.dart';
 import '../gallery/fixtures.dart';
 import '../gallery/gallery_entry.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'grammar_cells.dart';
 import 'input_mode_choice.dart';
 
@@ -220,6 +221,13 @@ class _GrammarDrillState extends State<GrammarDrill> {
           ? Speaker(onPlay: session.play, playing: session.playing)
           : null,
       onClose: widget.onClose!,
+      going: goingOn(
+        session,
+        answered:
+            given != null && given.graded?.outcome != AnswerOutcome.closeTypo,
+      ),
+      feedbackOverride: alreadyAnswered(context, session),
+      locked: session.readOnly,
       moves: (
         dontKnow: session.dontKnow,
         check: () => session.check(_controller.text),
@@ -240,6 +248,9 @@ class _GrammarDrillState extends State<GrammarDrill> {
     required bool incoming,
     required VoidCallback onClose,
     required _Moves moves,
+    DrillGoing? going,
+    Widget? feedbackOverride,
+    bool locked = false,
     Widget? inputChoice,
     bool latin = false,
     String? reading,
@@ -258,6 +269,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
       reportDetail: '${cell.entry.lemma}, ${cell.slot} in ${deck.id}',
       progress: (position - 1 + (answer == null ? 0 : 0.5)) / total,
       onClose: onClose,
+      going: going,
       card: _card(
         context,
         cell,
@@ -289,15 +301,18 @@ class _GrammarDrillState extends State<GrammarDrill> {
             ],
       feedback: answer == null
           ? null
-          : _feedback(
-              l10n,
-              cell,
-              answer,
-              reading == null
-                  ? cell.answer
-                  : l10n.feedbackReadingWithTarget(reading, cell.answer),
-            ),
-      actions: _actions(context, answer, incoming, moves),
+          : feedbackOverride ??
+                _feedback(
+                  l10n,
+                  cell,
+                  answer,
+                  reading == null
+                      ? cell.answer
+                      : l10n.feedbackReadingWithTarget(reading, cell.answer),
+                ),
+      actions: locked
+          ? const <Widget>[]
+          : _actions(context, answer, incoming, moves),
     );
   }
 
@@ -523,18 +538,8 @@ class _GrammarDrillState extends State<GrammarDrill> {
         ],
       );
     } else {
-      foot = FilledButton(
-        onPressed: live(moves.next),
-        style: AppButtonStyles.tall(context),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Flexible(child: Text(l10n.commonContinue)),
-            const SizedBox(width: 10),
-            const Icon(Icons.arrow_forward, size: 22),
-          ],
-        ),
-      );
+      // Nothing is left to grade: going on is the swipe and the chevron.
+      return const <Widget>[];
     }
     if (!incoming) return <Widget>[foot];
     return <Widget>[

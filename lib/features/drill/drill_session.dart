@@ -1073,7 +1073,8 @@ class DrillSession extends ChangeNotifier {
   /// the first answer was, but records nothing. Nothing heard says why, as
   /// the first listen does ([unheard]).
   Future<void> retry() async {
-    if (readOnly || !canRetry || _hearing || _hearingSelf != SelfTake.idle) return;
+    if (readOnly || !canRetry || _hearing || _hearingSelf != SelfTake.idle)
+      return;
     final listeningIndex = _index;
     _hearing = true;
     _unheard = null;
@@ -1198,7 +1199,7 @@ class DrillSession extends ChangeNotifier {
       return;
     }
     _take = take;
-    _takeLength = null;
+    _takeLength = selfTakeLength;
     _hearingSelf = SelfTake.playing;
     notifyListeners();
     final played = await _state.soundCheck.play(take);
@@ -1423,6 +1424,10 @@ class DrillSession extends ChangeNotifier {
   List<String> get _words => rearrangesReading
       ? tilesOf(item.card.reading!)
       : item.card.tilesOfSpelling(writtenTarget);
+
+  /// The current card's words in the right order: what the learner is shown
+  /// once the order is checked.
+  List<String> get answerWords => _words;
 
   List<String>? _tiles;
 

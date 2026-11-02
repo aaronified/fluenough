@@ -35,7 +35,14 @@ class TeachSwipe extends StatefulWidget {
     required this.onNext,
     this.onBack,
     this.enabled = true,
+    this.pinned = false,
   });
+
+  /// Whether the chevrons stay in view while [enabled], instead of showing
+  /// for a second as the card is swiped: the drill has no Continue button,
+  /// so on an answered question and on a set the chevron is how the
+  /// learner sees there is a way on (owner, 2026-10-31, doubt 15).
+  final bool pinned;
 
   final Widget child;
   final VoidCallback onNext;
@@ -253,14 +260,14 @@ class _TeachSwipeState extends State<TeachSwipe> with TickerProviderStateMixin {
             if (widget.enabled && widget.onBack != null)
               _Chevron(
                 next: false,
-                shown: _chevronsShown,
+                shown: _chevronsShown || widget.pinned,
                 label: l10n.drillPreviousCard,
                 onTap: () => _tapped(-1),
               ),
             if (widget.enabled)
               _Chevron(
                 next: true,
-                shown: _chevronsShown,
+                shown: _chevronsShown || widget.pinned,
                 label: l10n.drillNextCard,
                 onTap: () => _tapped(1),
               ),

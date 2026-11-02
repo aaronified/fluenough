@@ -60,9 +60,7 @@ Set<int> differingWords(String heard, String answer) {
   final wanted = words(answer);
   final differing = <int>{};
   for (var i = 0; i < said.length; i++) {
-    final same = i < wanted.length
-        ? said[i] == wanted[i]
-        : false;
+    final same = i < wanted.length ? said[i] == wanted[i] : false;
     if (same) continue;
     if (said.length != wanted.length && wanted.contains(said[i])) continue;
     differing.add(i);
@@ -164,7 +162,9 @@ String _word(String text, _Script script) {
     } else if (script.consonants.containsKey(rune)) {
       consonant = script.consonants[rune];
       i++;
-      if (script.nukta != null && i < runes.length && runes[i] == script.nukta) {
+      if (script.nukta != null &&
+          i < runes.length &&
+          runes[i] == script.nukta) {
         consonant = script.nuktas[String.fromCharCode(rune)] ?? consonant;
         i++;
       }
@@ -227,12 +227,13 @@ String _render(List<_Unit> units, _Script script) {
       if (!before || n + 1 >= consonants.length) continue;
       if (consonants[n + 1] != at + 1) continue;
       final next = units[at + 1];
-      final nextLast = n + 1 == consonants.length - 1 && _endsWord(units, at + 1);
-      final nextVoiced = next.vowel != null
-          ? next.vowel != ''
-          : !nextLast;
-      final previousSilent = n > 0 && units[consonants[n - 1]].silent
-          && consonants[n - 1] == at - 1;
+      final nextLast =
+          n + 1 == consonants.length - 1 && _endsWord(units, at + 1);
+      final nextVoiced = next.vowel != null ? next.vowel != '' : !nextLast;
+      final previousSilent =
+          n > 0 &&
+          units[consonants[n - 1]].silent &&
+          consonants[n - 1] == at - 1;
       if (nextVoiced && !previousSilent) unit.silent = true;
     }
   }

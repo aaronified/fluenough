@@ -20,6 +20,11 @@ enum FeedbackKind {
 
   /// Wrong, or "Don't know": `errorContainer`, a cross.
   wrong,
+
+  /// A question gone back to: it was answered, and cannot be changed. Neutral
+  /// on purpose, the `surfaceContainerHigh` of the card and a lock, never the
+  /// green or the red of a verdict (#509, phase 0).
+  locked,
 }
 
 /// The status panel at the foot of a drill once an answer is in: a bold
@@ -81,6 +86,11 @@ class FeedbackBanner extends StatelessWidget {
         scheme.errorContainer,
         scheme.onErrorContainer,
         Icons.highlight_off,
+      ),
+      FeedbackKind.locked => (
+        scheme.surfaceContainerHigh,
+        scheme.onSurface,
+        Icons.lock_outline,
       ),
     };
     final text = detail;

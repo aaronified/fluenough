@@ -221,6 +221,37 @@ class DrillHeader extends StatelessWidget {
   }
 }
 
+/// How a screen goes on and back (#509, phase 0; owner, 2026-10-31: "Swipe
+/// is going to be universal"): there is no Continue button. A swipe toward
+/// the end edge, or the chevron there, runs [onNext]; one toward the start
+/// edge, or the chevron there, runs [onBack] where there is one.
+class DrillGoing {
+  const DrillGoing({
+    required this.onNext,
+    this.onBack,
+    this.nextOn = true,
+    this.pinned = false,
+  });
+
+  /// Goes on.
+  final VoidCallback onNext;
+
+  /// Goes back; null where there is nothing to go back to, and then there is
+  /// no back chevron.
+  final VoidCallback? onBack;
+
+  /// Whether going on is live. The swipe is always in the tree, so that the
+  /// card keeps its state as the answer comes in; off, nothing moves it and
+  /// no chevron shows.
+  final bool nextOn;
+
+  /// Whether the chevrons stay in view instead of showing for a second as
+  /// the card is swiped (owner, 2026-10-31, doubt 15: with the buttons
+  /// gone, the end-edge chevron is visible on every answered question and
+  /// set).
+  final bool pinned;
+}
+
 /// The layout every drill shares, from the design's drill screen:
 ///
 /// 1. A 64 px header: close button, the progress wave, "3/8", and the
@@ -230,7 +261,9 @@ class DrillHeader extends StatelessWidget {
 ///    content — then [belowCard], where the answer field and keyboard hint
 ///    go. The body scrolls only when the header, card and foot do not fit the
 ///    screen together (#482).
-/// 3. A fixed foot: [feedback] above [actions].
+/// 3. A fixed foot: [feedback] above [actions]. Where both are empty (a
+///    teach card, a set, a question answered with nothing left to grade) the
+///    foot is not there and the card takes its space.
 ///
 /// Recognition, production and listening (B1) and grammar and minimal pairs
 /// (B4) each fill the slots; nothing here knows about a mode's rules.
@@ -258,22 +291,33 @@ class DrillFrame extends StatelessWidget {
     this.actions = const <Widget>[],
     this.reportDetail,
     this.needsSound = false,
-    this.onSwipe,
-    this.swipeOn = true,
+    this.going,
+    this.pillLabel,
+    this.fade = false,
+    this.snugCard = false,
     this.positionLabel,
   });
 
+  /// A card with less padding and gap, for a result that adds rows under it
+  /// (the answered Say screen).
+  final bool snugCard;
+
+  /// Goes on, and back, by swipe and chevron ([DrillGoing]): the review's
+  /// answer page records Good, a question answered goes to the next. Null
+  /// for a screen with no such swipe.
+  final DrillGoing? going;
+
+  /// What the skill's pill says before the skill's name, "New word", for a
+  /// card taught: the pill reads "New word · Recognition", in the skill's
+  /// colour (owner, 2026-10-31, doubt 4).
+  final String? pillLabel;
+
+  /// Whether a soft fade at the foot of the body says there is more below,
+  /// while there is.
+  final bool fade;
+
   /// What the header says in place of "3/8" ([DrillHeader.positionLabel]).
   final String? positionLabel;
-
-  /// Goes on from the screen under the header when the learner swipes it or
-  /// taps the end-edge chevron ([TeachSwipe]): the review's answer page, where
-  /// it records Good. Null for a drill with no such swipe.
-  final VoidCallback? onSwipe;
-
-  /// Whether [onSwipe] is live; the swipe is always in the tree, so that the
-  /// card keeps its state as it turns on.
-  final bool swipeOn;
 
   /// What a report from this drill says it showed: the card's id and deck.
   final String? reportDetail;
@@ -323,69 +367,77 @@ class DrillFrame extends StatelessWidget {
     final compact = keyboardOpen(context);
     final gap = compact ? 8.0 : 16.0;
 
-    final swipe = onSwipe;
+    final going = this.going;
+    final hasFoot = feedback != null || actions.isNotEmpty;
+    final scroll = SingleChildScrollView(
+      padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 16),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          if (skill != null || deckName.isNotEmpty) ...<Widget>[
+            Row(
+              children: <Widget>[
+                // Flexible, so that a long skill name in a
+                // large text scale wraps inside the pill
+                // rather than pushing the row off the screen.
+                if (skill != null) ...<Widget>[
+                  Flexible(
+                    child: ModePill(skill: skill!, prefix: pillLabel),
+                  ),
+                  const SizedBox(width: 8),
+                ],
+                Expanded(
+                  child: Text(
+                    deckName,
+                    style: theme.textTheme.bodyMedium!.copyWith(
+                      color: scheme.onSurfaceVariant,
+                      fontSize: 13,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: gap),
+          ],
+          // Always this one widget, so that the card's own
+          // widgets, such as a speaker that played as it
+          // appeared, keep their state as needsSound changes.
+          _NeedsSound(
+            card: card,
+            active: needsSound,
+            compact: compact,
+            snug: snugCard,
+          ),
+          if (below != null)
+            for (final widget in below) ...<Widget>[
+              SizedBox(height: gap),
+              widget,
+            ],
+        ],
+      ),
+    );
     final bodyAndFoot = <Widget>[
-      Expanded(
-        child: SingleChildScrollView(
-          padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 16),
+      Expanded(child: fade ? _MoreBelow(child: scroll) : scroll),
+      if (hasFoot)
+        Padding(
+          padding: compact
+              ? const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8)
+              : const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 20),
           child: Column(
+            mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              if (skill != null || deckName.isNotEmpty) ...<Widget>[
-                Row(
-                  children: <Widget>[
-                    // Flexible, so that a long skill name in a
-                    // large text scale wraps inside the pill
-                    // rather than pushing the row off the screen.
-                    if (skill != null) ...<Widget>[
-                      Flexible(child: ModePill(skill: skill!)),
-                      const SizedBox(width: 8),
-                    ],
-                    Expanded(
-                      child: Text(
-                        deckName,
-                        style: theme.textTheme.bodyMedium!.copyWith(
-                          color: scheme.onSurfaceVariant,
-                          fontSize: 13,
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-                SizedBox(height: gap),
+              if (feedback != null) ...<Widget>[
+                feedback!,
+                if (actions.isNotEmpty) const SizedBox(height: 10),
               ],
-              // Always this one widget, so that the card's own
-              // widgets, such as a speaker that played as it
-              // appeared, keep their state as needsSound changes.
-              _NeedsSound(card: card, active: needsSound, compact: compact),
-              if (below != null)
-                for (final widget in below) ...<Widget>[
-                  SizedBox(height: gap),
-                  widget,
-                ],
+              for (var i = 0; i < actions.length; i++) ...<Widget>[
+                if (i > 0) const SizedBox(height: 10),
+                actions[i],
+              ],
             ],
           ),
         ),
-      ),
-      Padding(
-        padding: compact
-            ? const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8)
-            : const EdgeInsetsDirectional.fromSTEB(16, 12, 16, 20),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            if (feedback != null) ...<Widget>[
-              feedback!,
-              if (actions.isNotEmpty) const SizedBox(height: 10),
-            ],
-            for (var i = 0; i < actions.length; i++) ...<Widget>[
-              if (i > 0) const SizedBox(height: 10),
-              actions[i],
-            ],
-          ],
-        ),
-      ),
     ];
 
     return Scaffold(
@@ -401,13 +453,15 @@ class DrillFrame extends StatelessWidget {
               reportDetail: reportDetail ?? deckName,
               positionLabel: positionLabel,
             ),
-            if (swipe == null)
+            if (going == null)
               ...bodyAndFoot
             else
               Expanded(
                 child: TeachSwipe(
-                  enabled: swipeOn,
-                  onNext: swipe,
+                  enabled: going.nextOn,
+                  onNext: going.onNext,
+                  onBack: going.onBack,
+                  pinned: going.pinned && going.nextOn,
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: bodyAndFoot,
@@ -421,15 +475,82 @@ class DrillFrame extends StatelessWidget {
   }
 }
 
+/// A soft fade at the foot of [child] while there is more to scroll below,
+/// the teach card's cue that it goes on (#691).
+class _MoreBelow extends StatefulWidget {
+  const _MoreBelow({required this.child});
+
+  final Widget child;
+
+  @override
+  State<_MoreBelow> createState() => _MoreBelowState();
+}
+
+class _MoreBelowState extends State<_MoreBelow> {
+  bool _more = false;
+
+  bool _update(ScrollMetrics metrics) {
+    final more = metrics.extentAfter > 1;
+    if (more != _more && mounted) setState(() => _more = more);
+    return false;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final surface = Theme.of(context).colorScheme.surface;
+    return NotificationListener<ScrollMetricsNotification>(
+      onNotification: (n) => _update(n.metrics),
+      child: NotificationListener<ScrollNotification>(
+        onNotification: (n) => _update(n.metrics),
+        child: Stack(
+          fit: StackFit.expand,
+          children: <Widget>[
+            widget.child,
+            PositionedDirectional(
+              start: 0,
+              end: 0,
+              bottom: 0,
+              height: 28,
+              child: IgnorePointer(
+                child: AnimatedOpacity(
+                  opacity: _more ? 1 : 0,
+                  duration: const Duration(milliseconds: 150),
+                  child: DecoratedBox(
+                    decoration: BoxDecoration(
+                      gradient: LinearGradient(
+                        begin: Alignment.topCenter,
+                        end: Alignment.bottomCenter,
+                        colors: <Color>[surface.withValues(alpha: 0), surface],
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
 /// The drill's card: as tall as its content, 40 px corners, `surfaceContainerHigh`,
 /// its children centred and 12 apart; [compact], while the keyboard is open,
 /// with less padding and 8 apart. [DrillFrame]
 /// puts one in; use it on its own only in a preview.
 class DrillCard extends StatelessWidget {
-  const DrillCard({super.key, required this.children, this.compact = false});
+  const DrillCard({
+    super.key,
+    required this.children,
+    this.compact = false,
+    this.snug = false,
+  });
 
   final List<Widget> children;
   final bool compact;
+
+  /// Less padding and gap, but the full corners: the card over a result.
+  final bool snug;
 
   @override
   Widget build(BuildContext context) => DecoratedBox(
@@ -442,12 +563,14 @@ class DrillCard extends StatelessWidget {
     child: Padding(
       padding: compact
           ? const EdgeInsetsDirectional.symmetric(horizontal: 16, vertical: 12)
+          : snug
+          ? const EdgeInsetsDirectional.symmetric(horizontal: 16, vertical: 20)
           : const EdgeInsetsDirectional.symmetric(horizontal: 20, vertical: 28),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           for (var i = 0; i < children.length; i++) ...<Widget>[
-            if (i > 0) SizedBox(height: compact ? 8 : 12),
+            if (i > 0) SizedBox(height: compact || snug ? 8 : 12),
             children[i],
           ],
         ],
@@ -471,7 +594,10 @@ class _NeedsSound extends StatelessWidget {
     required this.card,
     required this.active,
     required this.compact,
+    this.snug = false,
   });
+
+  final bool snug;
 
   final List<Widget> card;
   final bool active;
@@ -486,12 +612,13 @@ class _NeedsSound extends StatelessWidget {
       listenable: Listenable.merge(<Listenable>[state.volume, state.settings]),
       builder: (context, _) {
         if (!active || !state.needsVolume) {
-          return DrillCard(compact: compact, children: card);
+          return DrillCard(compact: compact, snug: snug, children: card);
         }
         final l10n = AppLocalizations.of(context)!;
         final theme = Theme.of(context);
         return DrillCard(
           compact: compact,
+          snug: snug,
           children: <Widget>[
             Semantics(
               liveRegion: true,

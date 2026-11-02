@@ -10,6 +10,7 @@ import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'match_hear_toggle.dart';
 
 /// Match pairs (ADR-0024): a few words in the language learned beside their
@@ -101,6 +102,7 @@ class _MatchDrillState extends State<MatchDrill> {
       ].join(', '),
       progress: session.progress,
       onClose: widget.onClose,
+      going: goingOn(session, answered: done),
       card: <Widget>[
         // The speaker button sits at the end of the prompt's line, with
         // room of the same width before it so that the prompt stays centred.
@@ -166,41 +168,26 @@ class _MatchDrillState extends State<MatchDrill> {
       ],
       feedback: !done
           ? null
-          : slips == 0
-          ? FeedbackBanner(
-              kind: FeedbackKind.correct,
-              title: l10n.feedbackCorrect,
-            )
-          : FeedbackBanner(
-              kind: FeedbackKind.nearMiss,
-              title: l10n.drillMatchAgain(slips),
-              detail: <String>[
-                for (final entry in session.item.group)
-                  if (session.wasMissed(entry))
-                    '${entry.card.target} – ${entry.card.native}',
-              ].join('\n'),
-              quotes: <String>[
-                for (final entry in session.item.group)
-                  if (session.wasMissed(entry)) entry.card.target,
-              ],
-              language: language,
-            ),
-      actions: done
-          ? <Widget>[
-              FilledButton(
-                onPressed: session.next,
-                style: AppButtonStyles.tall(context),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Flexible(child: Text(l10n.commonContinue)),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.arrow_forward, size: 22),
-                  ],
-                ),
-              ),
-            ]
-          : const <Widget>[],
+          : alreadyAnswered(context, session) ??
+                (slips == 0
+                    ? FeedbackBanner(
+                        kind: FeedbackKind.correct,
+                        title: l10n.feedbackCorrect,
+                      )
+                    : FeedbackBanner(
+                        kind: FeedbackKind.nearMiss,
+                        title: l10n.drillMatchAgain(slips),
+                        detail: <String>[
+                          for (final entry in session.item.group)
+                            if (session.wasMissed(entry))
+                              '${entry.card.target} – ${entry.card.native}',
+                        ].join('\n'),
+                        quotes: <String>[
+                          for (final entry in session.item.group)
+                            if (session.wasMissed(entry)) entry.card.target,
+                        ],
+                        language: language,
+                      )),
     );
   }
 
