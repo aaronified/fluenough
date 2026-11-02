@@ -779,7 +779,8 @@ units:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
       - { id: "job-advert", text: { "en": "A job advert" } }
-  - planned: { id: "zh-business", theme: "business", words: 50 }
+  - decks: ["zh-business", "zh-business-sentences", "zh-reading-business", "*"]
+    words: 50
     listening_passages:
       - { id: "a-business-call", text: { "en": "A polite phone call between two companies" } }
     reading_passages:
