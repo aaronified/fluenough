@@ -280,7 +280,8 @@ units:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list at a supermarket" } }
     reading_passages:
       - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
-  - planned: { id: "ja-food", theme: "food", words: 60 }
+  - decks: ["ja-food", "*"]
+    words: 60
     listening_passages:
       - { id: "ordering-a-set-meal", text: { "en": "Choosing a set meal at a small restaurant" } }
     reading_passages:
