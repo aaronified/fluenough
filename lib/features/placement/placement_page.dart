@@ -57,6 +57,7 @@ class PlacementPage extends StatefulWidget {
     this.natives = const <String, String>{},
     this.asked = const <String>{},
     this.languageNames = const <String, String>{},
+    this.skippable = false,
   });
 
   /// Language codes, in the order they are placed.
@@ -94,6 +95,12 @@ class PlacementPage extends StatefulWidget {
   /// Devanagari through Hindi"; a language not here is named as the decks
   /// name it, or by its code.
   final Map<String, String> languageNames;
+
+  /// Whether "Do you know any?" offers Skip, which starts the language at
+  /// the beginning with no result screen: onboarding's offer, made once the
+  /// learner has chosen to learn the language (owner, 2026-11-02: "It should
+  /// be offered, and skippable to start at the beginning").
+  final bool skippable;
 
   @override
   State<PlacementPage> createState() => _PlacementPageState();
@@ -281,6 +288,16 @@ class _PlacementPageState extends State<PlacementPage> {
     _startWalk(state, start: _before!);
   });
 
+  /// Skip: nothing placed, the language starts at its beginning, and on to
+  /// the next, with no result between.
+  void _skip() {
+    _begun = true;
+    _toCheck = const <PlacementScript>[];
+    _walk = null;
+    _placed[_code] = const <String>{};
+    _next();
+  }
+
   void _new() => setState(() {
     _begun = true;
     _toCheck = const <PlacementScript>[];
@@ -382,15 +399,37 @@ class _PlacementPageState extends State<PlacementPage> {
         }
       });
     }
-    final checking = switch (_stage) {
-      _Stage.scriptAsk || _Stage.script || _Stage.walk => true,
-      _ => false,
-    };
+    // A question is drawn by the review's own screen, whose header closes it
+    // (owner, 2026-11-02: placement runs in the review shell); the screens
+    // that are not questions keep their own bar.
+    if (_stage == _Stage.script || _stage == _Stage.walk) {
+      final inWalk = _stage == _Stage.walk;
+      final ask = inWalk ? _walk!.question! : _check!.question!;
+      final deck = state.deckOf(ask.card);
+      return PlacementShell(
+        onClose: _stop,
+        deckName: inWalk
+            ? (deck?.deck.name ?? language.name)
+            : l10n.scriptNameOr(_script.script, _script.script),
+        progress: _number / (_number + 8),
+        reportDetail: '${ask.card.id} in placement',
+        child: inWalk
+            ? _question(state, language, ask, _walkAnswer)
+            : _question(
+                state,
+                language,
+                ask,
+                (right) => _scriptAnswer(state, right),
+                inScript: _script.language,
+                onCantSpeak: () => _scriptSkipSay(state),
+              ),
+      );
+    }
     return Scaffold(
       appBar: AppBar(
         title: Text(language.name),
         actions: <Widget>[
-          if (checking)
+          if (_stage == _Stage.scriptAsk)
             TextButton(onPressed: _stop, child: Text(l10n.placementStop)),
           const ReportButton(),
         ],
@@ -412,7 +451,8 @@ class _PlacementPageState extends State<PlacementPage> {
                 : _Ask(
                     language: language,
                     onFind: () => _find(state),
-                    onNew: _new,
+                    onNew: widget.skippable ? _skip : _new,
+                    skip: widget.skippable,
                   ),
           _Stage.scriptAsk => _ScriptAsk(
             script: l10n.scriptNameOr(_script.script, _script.script),
@@ -430,20 +470,7 @@ class _PlacementPageState extends State<PlacementPage> {
             onYes: () => _readsScript(state),
             onNo: () => _newToScript(state),
           ),
-          _Stage.script => _question(
-            state,
-            language,
-            _check!.question!,
-            (right) => _scriptAnswer(state, right),
-            inScript: _script.language,
-            onCantSpeak: () => _scriptSkipSay(state),
-          ),
-          _Stage.walk => _question(
-            state,
-            language,
-            _walk!.question!,
-            _walkAnswer,
-          ),
+          _Stage.script || _Stage.walk => const SizedBox.shrink(),
           _Stage.result => _Result(
             lines: _resultLines(l10n, state, language),
             tryAgainNote: _tryAgainNote(l10n),
@@ -564,6 +591,20 @@ class _PlacementPageState extends State<PlacementPage> {
           romanised: romanised,
           onAnswer: onAnswer,
         );
+      case TileQuestion():
+        final scripts = _walkScripts(state);
+        final shown = state.targetShown(card, written, scripts: scripts);
+        return PlacementTiles(
+          key: key,
+          question: ask,
+          number: number,
+          spelling: shown.text,
+          language: shown.language,
+          latin:
+              (_toCheck.isNotEmpty && (scripts?.isEmpty ?? true)) ||
+              state.readsFirst(written, scripts: scripts),
+          onAnswer: onAnswer,
+        );
       case TypeQuestion(produce: true):
         return PlacementType(
           key: key,
@@ -583,6 +624,7 @@ class _PlacementPageState extends State<PlacementPage> {
             title: Text(l10n.scriptTestQuestion),
             shown: TargetText.hero(card.target, language: written),
             onAnswer: onAnswer,
+            feedback: false,
           );
         }
         final scripts = _walkScripts(state);
@@ -741,11 +783,16 @@ class _Ask extends StatelessWidget {
     required this.language,
     required this.onFind,
     required this.onNew,
+    this.skip = false,
   });
 
   final LanguageInfo language;
   final VoidCallback onFind;
   final VoidCallback onNew;
+
+  /// Whether the second button is Skip, which starts at the beginning, rather
+  /// than "I'm new".
+  final bool skip;
 
   @override
   Widget build(BuildContext context) {
@@ -774,7 +821,9 @@ class _Ask extends StatelessWidget {
         const SizedBox(height: 12),
         OutlinedButton(
           onPressed: onNew,
-          child: Text(l10n.placementNew(language.name)),
+          child: Text(
+            skip ? l10n.placementSkip : l10n.placementNew(language.name),
+          ),
         ),
       ],
     );

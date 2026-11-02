@@ -52,17 +52,6 @@ class RearrangeDrill extends StatelessWidget {
         ? TextDirection.rtl
         : TextDirection.ltr;
 
-    Widget word(int index, {required bool inAnswer}) => _WordTile(
-      text: tiles[index],
-      language: latin ? null : writing,
-      hint: inAnswer ? l10n.drillRearrangeTakeBack : null,
-      onTap: answer != null
-          ? null
-          : inAnswer
-          ? () => session.unplace(index)
-          : () => session.place(index),
-    );
-
     return DrillFrame(
       skill: session.skill,
       deckName: session.deck.deck.name,
@@ -105,53 +94,16 @@ class RearrangeDrill extends StatelessWidget {
       belowCard: <Widget>[
         if (answer == null && session.canTransliterate)
           InputModeChoice(session: session, onChanged: () {}),
-        Semantics(
-          container: true,
-          label: l10n.drillRearrangeAnswer,
-          child: Container(
-            constraints: const BoxConstraints(minHeight: 64),
-            padding: const EdgeInsetsDirectional.symmetric(
-              horizontal: 4,
-              vertical: 8,
-            ),
-            decoration: BoxDecoration(
-              border: Border(
-                bottom: BorderSide(color: scheme.outline, width: 2),
-              ),
-            ),
-            child: Wrap(
-              textDirection: direction,
-              spacing: 8,
-              runSpacing: 8,
-              children: <Widget>[
-                for (final index in placed) word(index, inAnswer: true),
-              ],
-            ),
-          ),
+        ...rearrangeBoard(
+          context,
+          tiles: tiles,
+          placed: placed,
+          language: latin ? null : writing,
+          direction: direction,
+          answered: answer != null,
+          onPlace: session.place,
+          onUnplace: session.unplace,
         ),
-        if (answer == null)
-          Semantics(
-            container: true,
-            label: l10n.drillRearrangeWords,
-            child: Wrap(
-              textDirection: direction,
-              alignment: WrapAlignment.center,
-              spacing: 8,
-              runSpacing: 8,
-              children: <Widget>[
-                for (var i = 0; i < tiles.length; i++)
-                  placed.contains(i)
-                      // Its place kept, so the others don't move.
-                      ? ExcludeSemantics(
-                          child: Visibility.maintain(
-                            visible: false,
-                            child: word(i, inAnswer: false),
-                          ),
-                        )
-                      : word(i, inAnswer: false),
-              ],
-            ),
-          ),
       ],
       feedback: answer == null
           ? null
@@ -196,10 +148,87 @@ class RearrangeDrill extends StatelessWidget {
   }
 }
 
+/// The answer line and the words left to place, the two parts of a
+/// rearrange question's answer area, shared by the review's [RearrangeDrill]
+/// and placement's sentence question: tapping a word puts it next on the
+/// line, and tapping it there takes it back. [language] is the words'
+/// language, or null for Latin letters; [direction] lays them out; once
+/// [answered] the words are no longer tappable.
+List<Widget> rearrangeBoard(
+  BuildContext context, {
+  required List<String> tiles,
+  required List<int> placed,
+  required LanguageInfo? language,
+  required TextDirection direction,
+  required bool answered,
+  required ValueChanged<int> onPlace,
+  required ValueChanged<int> onUnplace,
+}) {
+  final l10n = AppLocalizations.of(context)!;
+  final scheme = Theme.of(context).colorScheme;
+  Widget word(int index, {required bool inAnswer}) => WordTile(
+    text: tiles[index],
+    language: language,
+    hint: inAnswer ? l10n.drillRearrangeTakeBack : null,
+    onTap: answered
+        ? null
+        : inAnswer
+        ? () => onUnplace(index)
+        : () => onPlace(index),
+  );
+  return <Widget>[
+    Semantics(
+      container: true,
+      label: l10n.drillRearrangeAnswer,
+      child: Container(
+        constraints: const BoxConstraints(minHeight: 64),
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: 4,
+          vertical: 8,
+        ),
+        decoration: BoxDecoration(
+          border: Border(bottom: BorderSide(color: scheme.outline, width: 2)),
+        ),
+        child: Wrap(
+          textDirection: direction,
+          spacing: 8,
+          runSpacing: 8,
+          children: <Widget>[
+            for (final index in placed) word(index, inAnswer: true),
+          ],
+        ),
+      ),
+    ),
+    if (!answered)
+      Semantics(
+        container: true,
+        label: l10n.drillRearrangeWords,
+        child: Wrap(
+          textDirection: direction,
+          alignment: WrapAlignment.center,
+          spacing: 8,
+          runSpacing: 8,
+          children: <Widget>[
+            for (var i = 0; i < tiles.length; i++)
+              placed.contains(i)
+                  // Its place kept, so the others don't move.
+                  ? ExcludeSemantics(
+                      child: Visibility.maintain(
+                        visible: false,
+                        child: word(i, inAnswer: false),
+                      ),
+                    )
+                  : word(i, inAnswer: false),
+          ],
+        ),
+      ),
+  ];
+}
+
 /// One word to place: in the deck's [language], or in Latin letters when
 /// that is null.
-class _WordTile extends StatelessWidget {
-  const _WordTile({
+class WordTile extends StatelessWidget {
+  const WordTile({
     required this.text,
     required this.language,
     required this.onTap,

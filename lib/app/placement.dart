@@ -131,6 +131,77 @@ class TypeQuestion extends PlacementAsk {
   }
 }
 
+/// A sentence to put together (owner, 2026-11-02: "There should be no write
+/// questions unless the answer is very specific. Use sentence formation
+/// questions."): [card]'s meaning is shown and the learner puts its words in
+/// order from tiles, as the review's rearrange question does (ADR-0024). The
+/// tiles are the target's own words, as the drills build them, with none
+/// added; [order] is the shuffled order they are shown in.
+class TileQuestion extends PlacementAsk {
+  TileQuestion(this.card, {required this.order});
+
+  /// A question for [card] with its tiles shuffled by [random], never left in
+  /// the order of the sentence where they can be put out of it.
+  factory TileQuestion.shuffled(Card card, Random random) {
+    final count = card.tilesOfSpelling(card.target).length;
+    final order = <int>[for (var i = 0; i < count; i++) i];
+    for (var i = 0; i < 8; i++) {
+      order.shuffle(random);
+      if (!_inOrder(order)) break;
+    }
+    return TileQuestion(card, order: order);
+  }
+
+  @override
+  final Card card;
+
+  /// The words' indexes in the order the tiles are shown.
+  final List<int> order;
+
+  static bool _inOrder(List<int> order) {
+    for (var i = 0; i < order.length; i++) {
+      if (order[i] != i) return false;
+    }
+    return true;
+  }
+
+  /// [words], the sentence's words in their right order, as the tiles are
+  /// shown. [words] of another length, as another spelling may have, are
+  /// shown as they are.
+  List<String> shown(List<String> words) => words.length == order.length
+      ? <String>[for (final i in order) words[i]]
+      : words;
+
+  /// The tiles of [spelling], one of the card's spellings, as shown.
+  List<String> tilesOfSpelling(String spelling) =>
+      shown(card.tilesOfSpelling(spelling));
+
+  /// The tiles of the card's reading in Latin letters, where it has as many
+  /// words as the sentence; null where it has not, and the words are put in
+  /// order in the script.
+  List<String>? get readingTiles {
+    final reading = card.reading;
+    if (reading == null || wordsOf(reading).length != card.wordCount) {
+      return null;
+    }
+    return shown(tilesOf(reading));
+  }
+
+  /// Whether [placed], the tiles put in order, say the sentence: in any of
+  /// its spellings, or, when [latin], in any of its readings.
+  bool isRight(List<String> placed, {bool latin = false}) {
+    final given = placed.join(' ');
+    if (latin) {
+      return card.readings.any((r) => tilesOf(r).join(' ') == given);
+    }
+    return <String>[
+      card.target,
+      ...card.altTarget,
+      ...card.targetScripts.values,
+    ].any((a) => card.tilesOfSpelling(a).join(' ') == given);
+  }
+}
+
 /// A word heard, to choose among [options], words in its script: [answer],
 /// [card]'s spelling there, is the one said, in [language]'s voice.
 class HearQuestion extends PlacementAsk {
@@ -813,12 +884,15 @@ class DeckWalk {
     _question = _choice(next, 0);
   }
 
-  /// The typed questions, from the decks after [point], the last deck known
-  /// right; from the last decks where none follow it.
+  /// The production questions, from the decks after [point], the last deck
+  /// known right; from the last decks where none follow it. A deck's is a
+  /// sentence to put together where it has one, a word to write only where
+  /// the answer is very specific ([_typable]), else a choice (owner,
+  /// 2026-11-02).
   void _produceAfter(int point) {
     final after = <int>[
       for (var i = point + 1; i < _wrongAt && i < _askable.length; i++)
-        if (_typable(_askable[i]).isNotEmpty) i,
+        if (_producible(_askable[i])) i,
     ].take(typed).toList();
     if (after.length < 2 && _wrongAt == _askable.length) {
       final last = <int>[
@@ -827,7 +901,7 @@ class DeckWalk {
           i >= _frontier && i > point - typed;
           i--
         )
-          if (_typable(_askable[i]).isNotEmpty) i,
+          if (_producible(_askable[i])) i,
       ].take(typed).toList().reversed.toList();
       _typedAt = last;
     } else {
@@ -853,8 +927,24 @@ class DeckWalk {
       _land(at);
       return;
     }
-    final entry = decks[_askable[_typedAt[_typedIndex]]];
-    final cards = _typable(_askable[_typedAt[_typedIndex]]);
+    final index = _askable[_typedAt[_typedIndex]];
+    final entry = decks[index];
+    // A sentence or phrase is put together from tiles, never typed (ADR-0024,
+    // `wiki/Deck-Format.md`, "Phrases are not typed").
+    final sentences = _sentences(index);
+    if (sentences.isNotEmpty) {
+      _question = TileQuestion.shuffled(
+        sentences[_random.nextInt(sentences.length)],
+        _random,
+      );
+      return;
+    }
+    final cards = _typable(index);
+    if (cards.isEmpty) {
+      // Nothing to write that has one right spelling: the meaning, chosen.
+      _question = _choice(_typedAt[_typedIndex], 0);
+      return;
+    }
     final card = cards[_random.nextInt(cards.length)];
     _question = TypeQuestion.produce(
       card,
@@ -862,18 +952,54 @@ class DeckWalk {
     );
   }
 
-  /// The cards of deck [index] a meaning can be typed for: words, not a
-  /// table's forms nor a rule's, nor a card that opts out of production
-  /// (`modes`). Such a card's meaning describes a sound, a spelling or a
-  /// register, as "clusters at the start of a word, in Sanskrit words and
-  /// loans" does, and there is no word to write for it; the drills never
-  /// ask it either ([Card.modesIn]).
-  List<Card> _typable(int index) {
+  /// Whether deck [index] has a card its learner can be asked to produce: a
+  /// word, not a table's forms nor a rule's, nor a card that opts out of
+  /// production (`modes`). Such a card's meaning describes a sound, a
+  /// spelling or a register, as "clusters at the start of a word, in
+  /// Sanskrit words and loans" does, and there is no word to write for it;
+  /// the drills never ask it either ([Card.modesIn]).
+  bool _producible(int index) {
+    final entry = decks[index];
+    return _pool(entry).any(
+      (card) =>
+          !_isFormCell(card, entry) &&
+          !card.modes.contains(DrillMode.production),
+    );
+  }
+
+  /// The cards of deck [index] a sentence can be put together for: a card
+  /// that [Card.rearranges] (three words or more, or a phrase of two), asked
+  /// from the drills' own tiles.
+  List<Card> _sentences(int index) {
     final entry = decks[index];
     return <Card>[
       for (final card in _pool(entry))
-        if (!_isFormCell(card, entry) &&
+        if (card.rearranges &&
+            !_isFormCell(card, entry) &&
             !card.modes.contains(DrillMode.production))
+          card,
+    ];
+  }
+
+  /// The cards of deck [index] a meaning can be written for (owner,
+  /// 2026-11-02: "There should be no write questions unless the answer is
+  /// very specific"): a single word of a language that is typed, with one
+  /// valid spelling. A phrase or a sentence is put together from tiles
+  /// instead; a word with other spellings (`alt_target`) has no one answer
+  /// to write, though its spelling in each script of the same word is one
+  /// answer. A table's forms and a card that opts out of production have no
+  /// word to write.
+  List<Card> _typable(int index) {
+    final entry = decks[index];
+    if (!entry.language.typed) return const <Card>[];
+    return <Card>[
+      for (final card in _pool(entry))
+        if (!_isFormCell(card, entry) &&
+            !card.modes.contains(DrillMode.production) &&
+            !card.rearranges &&
+            card.pos != 'phrase' &&
+            card.wordCount == 1 &&
+            card.altTarget.isEmpty)
           card,
     ];
   }

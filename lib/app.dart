@@ -13,6 +13,7 @@ import 'features/whats_new/whats_new_prompt.dart';
 import 'features/downloads/download_page.dart';
 import 'features/onboarding/onboarding_flow.dart';
 import 'features/placement/language_picker_page.dart';
+import 'features/placement/onboarding_placement.dart';
 import 'features/settings/settings_page.dart';
 import 'features/splash/splash_gate.dart';
 import 'features/splash/splash_progress.dart';
@@ -211,13 +212,30 @@ class _Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
-    final missing = state.missingLanguages;
-    return missing.isEmpty
-        ? const AppShell()
-        : DownloadPage(
+    return ListenableBuilder(
+      listenable: state.settings,
+      builder: (context, _) {
+        final missing = state.missingLanguages;
+        if (missing.isNotEmpty) {
+          return DownloadPage(
             key: ValueKey<String>(missing.join()),
             languages: missing,
           );
+        }
+        // The languages chosen to Learn on the first launch are each offered
+        // "Find my level" before the app (owner, 2026-11-02), skippable.
+        final offers = <String>[
+          for (final code in state.settings.placementOffers)
+            if (state.learningCodes.contains(code)) code,
+        ];
+        return offers.isEmpty
+            ? const AppShell()
+            : OnboardingPlacementOffer(
+                key: const ValueKey<String>('onboarding-placement'),
+                languages: offers,
+              );
+      },
+    );
   }
 }
 

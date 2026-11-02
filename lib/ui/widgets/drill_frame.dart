@@ -145,10 +145,15 @@ class DrillHeader extends StatelessWidget {
     required this.total,
     required this.onClose,
     required this.reportDetail,
+    this.positionLabel,
   });
 
   /// How far through the session the wave shows, 0–1.
   final double progress;
+
+  /// What the header says in place of "3/8", for a session with no total:
+  /// placement's "Question 4", which ends as soon as it knows where to start.
+  final String? positionLabel;
 
   /// The current card, 1-based, and how many the session has.
   final int position;
@@ -183,13 +188,14 @@ class DrillHeader extends StatelessWidget {
                 child: WaveProgress(
                   value: progress,
                   semanticsLabel: l10n.drillProgressLabel,
-                  semanticsValue: l10n.drillPosition(position, total),
+                  semanticsValue:
+                      positionLabel ?? l10n.drillPosition(position, total),
                 ),
               ),
               const SizedBox(width: 12),
               ExcludeSemantics(
                 child: Text(
-                  l10n.drillPositionShort(position, total),
+                  positionLabel ?? l10n.drillPositionShort(position, total),
                   style: theme.textTheme.labelLarge!.copyWith(
                     fontWeight: FontWeight.w700,
                     fontFeatures: const <FontFeature>[
@@ -249,7 +255,11 @@ class DrillFrame extends StatelessWidget {
     this.needsSound = false,
     this.onSwipe,
     this.swipeOn = true,
+    this.positionLabel,
   });
+
+  /// What the header says in place of "3/8" ([DrillHeader.positionLabel]).
+  final String? positionLabel;
 
   /// Goes on from the screen under the header when the learner swipes it or
   /// taps the end-edge chevron ([TeachSwipe]): the review's answer page, where
@@ -379,6 +389,7 @@ class DrillFrame extends StatelessWidget {
               total: total,
               onClose: onClose,
               reportDetail: reportDetail ?? deckName,
+              positionLabel: positionLabel,
             ),
             if (swipe == null)
               ...bodyAndFoot

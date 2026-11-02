@@ -4,20 +4,67 @@ import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
 import '../../app/placement.dart';
+import '../../app/skill.dart';
 import '../../core/grading/romanised.dart';
 import '../../core/models/deck.dart';
+import '../../core/models/drill_mode.dart';
 import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
+import '../drill/choice_tile.dart';
+import '../drill/rearrange_drill.dart' show rearrangeBoard;
 import '../drill/speaking_practice.dart' show unheardMessage;
 import '../../ui/theme.dart';
+import '../../ui/widgets/drill_frame.dart';
+import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/target_text.dart';
 
 /// The parts of a placement question's screen (#481): which question it is,
 /// what it shows, what it asks, and the way to answer. Each kind of
 /// [PlacementAsk] has its own, answering only right or wrong.
+///
+/// They sit in the review's own screen, [DrillFrame] (owner, 2026-11-02:
+/// placement runs in "the current daily review/revision shell"): the same top
+/// bar and progress wave, question card, answer area, feedback and buttons.
 
-/// "Question 3", the [shown] word in its box, and [title], the question,
-/// above [children], the ways to answer.
+/// What the page tells every question's frame: how to stop, how far along the
+/// walk is, and what to say in a report, which the questions themselves do
+/// not know.
+class PlacementShell extends InheritedWidget {
+  const PlacementShell({
+    super.key,
+    required this.onClose,
+    required this.deckName,
+    required this.progress,
+    required this.reportDetail,
+    required super.child,
+  });
+
+  /// The close button: stops placement, keeping what it has found.
+  final VoidCallback onClose;
+
+  /// What the line above the card names: the deck asked from, or the script
+  /// checked.
+  final String deckName;
+
+  /// How far along the wave shows, 0–1. Placement has no total, so this only
+  /// grows with the questions asked.
+  final double progress;
+  final String reportDetail;
+
+  static PlacementShell? maybeOf(BuildContext context) =>
+      context.dependOnInheritedWidgetOfExactType<PlacementShell>();
+
+  @override
+  bool updateShouldNotify(PlacementShell old) =>
+      onClose != old.onClose ||
+      deckName != old.deckName ||
+      progress != old.progress ||
+      reportDetail != old.reportDetail;
+}
+
+/// "Question 3" in the review's header, the [shown] word on the card under
+/// [title], the question, and [children], the ways to answer, below it;
+/// [feedback] and [actions] at the foot once there are any.
 class PlacementFrame extends StatelessWidget {
   const PlacementFrame({
     super.key,
@@ -25,6 +72,9 @@ class PlacementFrame extends StatelessWidget {
     required this.title,
     this.shown,
     required this.children,
+    this.feedback,
+    this.actions = const <Widget>[],
+    this.mode = DrillMode.recognition,
   });
 
   /// The question's number, from 1.
@@ -33,41 +83,43 @@ class PlacementFrame extends StatelessWidget {
   final Widget? shown;
   final List<Widget> children;
 
+  /// A `FeedbackBanner`, once the answer is in.
+  final Widget? feedback;
+
+  /// The buttons at the foot: "I don't know", then "Continue".
+  final List<Widget> actions;
+
+  /// The skill the question's pill names: recognising a word, or producing
+  /// one.
+  final DrillMode mode;
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    return ListView(
-      padding: const EdgeInsetsDirectional.all(AppSizes.gutter),
-      children: <Widget>[
-        Text(
-          l10n.placementQuestionNumber(number),
-          style: theme.textTheme.labelLarge!.copyWith(
-            color: scheme.onSurfaceVariant,
-          ),
-        ),
-        const SizedBox(height: 16),
-        if (shown case final shown?) ...<Widget>[
-          Container(
-            constraints: const BoxConstraints(minHeight: 160),
-            alignment: Alignment.center,
-            padding: const EdgeInsetsDirectional.all(24),
-            decoration: BoxDecoration(
-              color: scheme.surfaceContainerHigh,
-              borderRadius: BorderRadius.circular(AppRadii.card),
-            ),
-            child: shown,
-          ),
-          const SizedBox(height: 16),
-        ],
+    final shell = PlacementShell.maybeOf(context);
+    return DrillFrame(
+      skill: Skill.of(mode),
+      deckName: shell?.deckName ?? '',
+      position: number,
+      total: 0,
+      positionLabel: l10n.placementQuestionNumber(number),
+      progress: shell?.progress ?? 0,
+      reportDetail: shell?.reportDetail,
+      onClose: shell?.onClose ?? () => Navigator.of(context).maybePop(),
+      card: <Widget>[
         DefaultTextStyle.merge(
-          style: theme.textTheme.titleMedium,
+          textAlign: TextAlign.center,
+          style: theme.textTheme.labelLarge!.copyWith(
+            color: theme.colorScheme.onSurfaceVariant,
+          ),
           child: title,
         ),
-        const SizedBox(height: 12),
-        ...children,
+        ?shown,
       ],
+      belowCard: children,
+      feedback: feedback,
+      actions: actions,
     );
   }
 }
@@ -85,9 +137,11 @@ class _DontKnow extends StatelessWidget {
   );
 }
 
-/// A [PlacementQuestion]: its options, one button each, [option] drawing
-/// each where they are words in a script.
-class PlacementChoice extends StatelessWidget {
+/// A [PlacementQuestion]: its options, one tile each, as the review's choice
+/// question draws them. With [feedback], the answer is marked and said, and
+/// Continue goes on, as in a review; without, an answer goes on at once, as
+/// the script check's questions do.
+class PlacementChoice extends StatefulWidget {
   const PlacementChoice({
     super.key,
     required this.question,
@@ -95,6 +149,7 @@ class PlacementChoice extends StatelessWidget {
     required this.title,
     required this.shown,
     required this.onAnswer,
+    this.feedback = true,
   });
 
   final PlacementQuestion question;
@@ -102,23 +157,211 @@ class PlacementChoice extends StatelessWidget {
   final Widget title;
   final Widget shown;
   final ValueChanged<bool> onAnswer;
+  final bool feedback;
 
   @override
-  Widget build(BuildContext context) => PlacementFrame(
-    number: number,
-    title: title,
-    shown: shown,
-    children: <Widget>[
-      for (final option in question.options) ...<Widget>[
-        OutlinedButton(
-          onPressed: () => onAnswer(question.isRight(option)),
-          child: Text(option, textAlign: TextAlign.center),
+  State<PlacementChoice> createState() => _PlacementChoiceState();
+}
+
+class _PlacementChoiceState extends State<PlacementChoice> {
+  /// What was chosen: an option, or the empty string for "I don't know";
+  /// null while unanswered.
+  String? _picked;
+
+  void _answer(String picked) {
+    final right = widget.question.isRight(picked);
+    if (!widget.feedback) return widget.onAnswer(right);
+    setState(() => _picked = picked);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final q = widget.question;
+    final picked = _picked;
+    final answered = picked != null;
+    final right = answered && q.isRight(picked);
+    return PlacementFrame(
+      number: widget.number,
+      title: widget.title,
+      shown: widget.shown,
+      children: <Widget>[
+        Semantics(
+          container: true,
+          label: l10n.drillOptionsGroup,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              for (final (place, option) in q.options.indexed) ...<Widget>[
+                if (place > 0) const SizedBox(height: 10),
+                ChoiceTile(
+                  right: answered && q.isRight(option),
+                  chosen: picked == option,
+                  answered: answered,
+                  onTap: () => _answer(option),
+                  label: (style) => Text(option, style: style),
+                ),
+              ],
+            ],
+          ),
         ),
-        const SizedBox(height: 8),
       ],
-      _DontKnow(onTap: () => onAnswer(false)),
-    ],
+      feedback: !answered
+          ? null
+          : right
+          ? FeedbackBanner(
+              kind: FeedbackKind.correct,
+              title: l10n.feedbackCorrect,
+            )
+          : FeedbackBanner(
+              kind: FeedbackKind.wrong,
+              title: l10n.feedbackWrong,
+              detail: l10n.feedbackAnswer(q.answer),
+            ),
+      actions: answered
+          ? <Widget>[_Continue(onTap: () => widget.onAnswer(right))]
+          : <Widget>[_DontKnow(onTap: () => _answer(''))],
+    );
+  }
+}
+
+/// The review's Continue button, after an answer's feedback.
+class _Continue extends StatelessWidget {
+  const _Continue({required this.onTap});
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) => FilledButton(
+    onPressed: onTap,
+    style: AppButtonStyles.tall(context),
+    child: Row(
+      mainAxisSize: MainAxisSize.min,
+      children: <Widget>[
+        Flexible(child: Text(AppLocalizations.of(context)!.commonContinue)),
+        const SizedBox(width: 10),
+        const Icon(Icons.arrow_forward, size: 22),
+      ],
+    ),
   );
+}
+
+/// A [TileQuestion]: the sentence's meaning, and its words to put in order,
+/// as the review's rearrange question asks it. Check once every word is
+/// placed; the feedback says the sentence, and Continue goes on.
+class PlacementTiles extends StatefulWidget {
+  const PlacementTiles({
+    super.key,
+    required this.question,
+    required this.number,
+    required this.spelling,
+    required this.language,
+    required this.latin,
+    required this.onAnswer,
+  });
+
+  final TileQuestion question;
+  final int number;
+
+  /// The spelling of the card's target the words are put in order in, in
+  /// the script the learner reads ([latin] false).
+  final String spelling;
+
+  /// The words' language in that script.
+  final LanguageInfo language;
+
+  /// Whether the words come in Latin letters, from the card's reading, as
+  /// the review's do while typed answers would.
+  final bool latin;
+  final ValueChanged<bool> onAnswer;
+
+  @override
+  State<PlacementTiles> createState() => _PlacementTilesState();
+}
+
+class _PlacementTilesState extends State<PlacementTiles> {
+  final List<int> _placed = <int>[];
+
+  /// Whether the words were checked: null while they are being placed.
+  bool? _right;
+
+  late final List<String> _tiles = widget.latin
+      ? widget.question.readingTiles ??
+            widget.question.tilesOfSpelling(widget.spelling)
+      : widget.question.tilesOfSpelling(widget.spelling);
+
+  bool get _inLatin => widget.latin && widget.question.readingTiles != null;
+
+  void _check() {
+    if (_placed.length != _tiles.length) return;
+    final given = <String>[for (final i in _placed) _tiles[i]];
+    setState(() => _right = widget.question.isRight(given, latin: _inLatin));
+  }
+
+  void _giveUp() => setState(() => _right = false);
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final card = widget.question.card;
+    final answered = _right != null;
+    final direction = !_inLatin && widget.language.rtl
+        ? TextDirection.rtl
+        : TextDirection.ltr;
+    final reading = card.reading;
+    return PlacementFrame(
+      number: widget.number,
+      mode: DrillMode.production,
+      title: Text(l10n.drillRearrangePrompt),
+      shown: Text(
+        card.native,
+        textAlign: TextAlign.center,
+        style: theme.textTheme.headlineMedium!.copyWith(
+          fontWeight: FontWeight.w600,
+        ),
+      ),
+      children: rearrangeBoard(
+        context,
+        tiles: _tiles,
+        placed: _placed,
+        language: _inLatin ? null : widget.language,
+        direction: direction,
+        answered: answered,
+        onPlace: (i) => setState(() {
+          if (!_placed.contains(i)) _placed.add(i);
+        }),
+        onUnplace: (i) => setState(() => _placed.remove(i)),
+      ),
+      feedback: switch (_right) {
+        null => null,
+        true => FeedbackBanner(
+          kind: FeedbackKind.correct,
+          title: l10n.feedbackCorrect,
+        ),
+        false => FeedbackBanner(
+          kind: FeedbackKind.wrong,
+          title: l10n.feedbackWrong,
+          detail: l10n.feedbackAnswer(
+            _inLatin && reading != null ? reading : widget.spelling,
+          ),
+          quotes: <String>[if (!_inLatin) widget.spelling],
+          language: _inLatin ? null : widget.language,
+        ),
+      },
+      actions: answered
+          ? <Widget>[_Continue(onTap: () => widget.onAnswer(_right!))]
+          : <Widget>[
+              FilledButton(
+                key: const ValueKey<String>('placement-tiles-check'),
+                onPressed: _placed.length == _tiles.length ? _check : null,
+                style: AppButtonStyles.tall(context),
+                child: Text(l10n.drillCheck),
+              ),
+              _DontKnow(onTap: _giveUp),
+            ],
+    );
+  }
 }
 
 /// A [MatchQuestion]: letters down one column and what they are down the
@@ -343,6 +586,7 @@ class _PlacementTypeState extends State<PlacementType> {
     final l10n = AppLocalizations.of(context)!;
     return PlacementFrame(
       number: widget.number,
+      mode: DrillMode.production,
       title: widget.title,
       shown: widget.shown,
       children: <Widget>[
@@ -414,6 +658,7 @@ class _PlacementHearState extends State<PlacementHear> {
     final q = widget.question;
     return PlacementFrame(
       number: widget.number,
+      mode: DrillMode.listening,
       title: Text(l10n.placementHearQuestion),
       shown: OutlinedButton.icon(
         onPressed: _play,
@@ -495,6 +740,7 @@ class _PlacementSayState extends State<PlacementSay> {
     final q = widget.question;
     return PlacementFrame(
       number: widget.number,
+      mode: DrillMode.speaking,
       title: Text(l10n.placementSayQuestion),
       shown: TargetText.hero(q.shown, language: q.language),
       children: <Widget>[
