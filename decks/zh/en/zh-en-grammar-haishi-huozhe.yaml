@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-haishi-huozhe"
+"kind": "layer"
+"core": "zh-grammar-haishi-huozhe"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "还是 (háishi) and 或者 (huòzhě): or"
+"license": "CC-BY-SA-4.0"
+"description": "Offering a choice: 还是 (háishi) is or in a question, and 或者 (huòzhě) is or in a statement. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "还是 (háishi) and 或者 (huòzhě): or"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "question": "a question offering a choice, with 还是 (háishi)"
+    "statement": "a statement offering a choice, with 或者 (huòzhě)"
+  "entries":
+    "he": "to drink"
+    "qu": "to go"
+    "chi": "to eat"
+    "zuo": "to sit; to take"
+    "mai": "to buy"
+  "notes": "还是 (háishi) is used in a question that offers two choices: 你喝茶还是咖啡 (nǐ hē chá háishi kāfēi), tea or coffee? 或者 (huòzhě) is used in a statement that offers two choices, and is not used in a question: 我喝茶或者咖啡 (wǒ hē chá huòzhě kāfēi), I drink tea or coffee. The two words are not used the other way round."
