@@ -686,7 +686,8 @@ units:
       - { id: "my-bike-was-stolen", text: { "en": "Telling the police your bike was stolen, with bei" } }
     reading_passages:
       - { id: "news-brief", text: { "en": "A short news item written with bei" } }
-  - planned: { id: "zh-feelings", theme: "feelings", words: 55 }
+  - decks: ["zh-feelings", "zh-feelings-sentences", "zh-reading-feelings", "*"]
+    words: 55
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
