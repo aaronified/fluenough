@@ -239,11 +239,9 @@ units:
       - { id: "what-do-you-do-on-sundays", text: { "en": "Saying politely what you do and do not do on Sundays" } }
     reading_passages:
       - { id: "weekly-routine", text: { "en": "A weekly routine written in polite forms" } }
-  - planned: { id: "ja-grammar-verb-groups", grammar: "verb-groups" }
-    listening_passages:
-      - { id: "taberu-and-nomu", text: { "en": "The same sentences with verbs of each group: eat, drink, come, do" } }
-    reading_passages:
-      - { id: "verb-chart", text: { "en": "A chart of everyday verbs sorted into their three groups" } }
+  - decks: ["ja-grammar-verb-groups"]
+    words: 0
+    grammar: ["verb-groups"]
   - planned: { id: "ja-grammar-aru-iru", grammar: "aru-iru" }
     listening_passages:
       - { id: "is-there-a-bank", text: { "en": "Asking whether there is a bank nearby, and who is at home" } }
