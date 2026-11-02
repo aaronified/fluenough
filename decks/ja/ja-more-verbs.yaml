@@ -1,0 +1,782 @@
+schema: 1
+id: "ja-more-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+theme: "more-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0571"
+    target: "あびる"
+    words: ["あびる"]
+    reading: "abiru"
+    ipa: "abiɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはよるあびます。"
+        words: ["わたし", "は", "よる", "あびます"]
+        reading: "watashi wa yoru abimasu."
+        ipa: "wataɕi wa joɾɯ abimasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "あびます", base: "あびる", reading: "abiru" }
+      - target: "ともだちはあびますか。"
+        words: ["ともだち", "は", "あびます", "か"]
+        reading: "tomodachi wa abimasu ka."
+        ipa: "tomodatɕi wa abimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "あびます", base: "あびる", reading: "abiru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0572"
+    target: "はしる"
+    words: ["はしる"]
+    reading: "hashiru"
+    ipa: "haɕiɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "いぬははしります。"
+        words: ["いぬ", "はは", "しります"]
+        reading: "inu haha shirimasu."
+        ipa: "inɯ haha ɕiɾimasɯ"
+        bases:
+          - { word: "しります", ref: "ja-0366" }
+      - target: "ともだちははしりますか。"
+        words: ["ともだち", "はは", "しります", "か"]
+        reading: "tomodachi haha shirimasu ka."
+        ipa: "tomodatɕi haha ɕiɾimasɯ ka"
+        bases:
+          - { word: "しります", ref: "ja-0366" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0573"
+    target: "とぶ"
+    words: ["とぶ"]
+    reading: "tobu"
+    ipa: "tobɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "いぬがとびます。"
+        words: ["いぬ", "が", "とびます"]
+        reading: "inu ga tobimasu."
+        ipa: "inɯ ɡa tobimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "とびます", base: "とぶ", reading: "tobu" }
+      - target: "こどもはとびますか。"
+        words: ["こども", "は", "とびます", "か"]
+        reading: "kodomo wa tobimasu ka."
+        ipa: "kodomo wa tobimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "とびます", base: "とぶ", reading: "tobu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0574"
+    target: "おどる"
+    words: ["おどる"]
+    reading: "odoru"
+    ipa: "odoɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはおどります。"
+        words: ["ともだち", "は", "おどります"]
+        reading: "tomodachi wa odorimasu."
+        ipa: "tomodatɕi wa odoɾimasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "おどります", base: "おどる", reading: "odoru" }
+      - target: "がくせいはおどりますか。"
+        words: ["がくせい", "は", "おどります", "か"]
+        reading: "gakusei wa odorimasu ka."
+        ipa: "ɡakɯseː wa odoɾimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "おどります", base: "おどる", reading: "odoru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0575"
+    target: "うたう"
+    words: ["うたう"]
+    reading: "utau"
+    ipa: "ɯtaɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ははがうたいます。"
+        words: ["はは", "が", "うたいます"]
+        reading: "haha ga utaimasu."
+        ipa: "haha ɡa ɯtaimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "うたいます", base: "うたう", reading: "utau" }
+      - target: "あなたはうたいますか。"
+        words: ["あなた", "は", "うたいます", "か"]
+        reading: "anata wa utaimasu ka."
+        ipa: "anata wa ɯtaimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "うたいます", base: "うたう", reading: "utau" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0576"
+    target: "かりる"
+    words: ["かりる"]
+    reading: "kariru"
+    ipa: "kaɾiɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちにかぎをかります。"
+        words: ["ともだち", "に", "かぎ", "を", "かります"]
+        reading: "tomodachi ni kagi o karimasu."
+        ipa: "tomodatɕi ni kaɡi o kaɾimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "かります", base: "かりる", reading: "kariru" }
+      - target: "あなたはかぎをかりますか。"
+        words: ["あなた", "は", "かぎ", "を", "かります", "か"]
+        reading: "anata wa kagi o karimasu ka."
+        ipa: "anata wa kaɡi o kaɾimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "かります", base: "かりる", reading: "kariru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0577"
+    target: "かえす"
+    words: ["かえす"]
+    reading: "kaesu"
+    ipa: "kaesɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちにかぎをかえします。"
+        words: ["ともだち", "に", "かぎ", "を", "かえします"]
+        reading: "tomodachi ni kagi o kaeshimasu."
+        ipa: "tomodatɕi ni kaɡi o kaeɕimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "かえします", base: "かえす", reading: "kaesu" }
+      - target: "あなたはかぎをかえしますか。"
+        words: ["あなた", "は", "かぎ", "を", "かえします", "か"]
+        reading: "anata wa kagi o kaeshimasu ka."
+        ipa: "anata wa kaɡi o kaeɕimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "かえします", base: "かえす", reading: "kaesu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0578"
+    target: "わすれる"
+    words: ["わすれる"]
+    reading: "wasureru"
+    ipa: "wasɯɾeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはかぎをわすれます。"
+        words: ["わたし", "は", "かぎ", "を", "わすれます"]
+        reading: "watashi wa kagi o wasuremasu."
+        ipa: "wataɕi wa kaɡi o wasɯɾemasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "わすれます", base: "わすれる", reading: "wasureru" }
+      - target: "ともだちはえいごをわすれましたか。"
+        words: ["ともだち", "は", "えいご", "を", "わすれました", "か"]
+        reading: "tomodachi wa eigo o wasuremashita ka."
+        ipa: "tomodatɕi wa eːɡo o wasɯɾemaɕita ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "わすれました", base: "わすれる", reading: "wasureru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0579"
+    target: "おぼえる"
+    words: ["おぼえる"]
+    reading: "oboeru"
+    ipa: "oboeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはにほんごをおぼえます。"
+        words: ["わたし", "は", "にほんご", "を", "おぼえます"]
+        reading: "watashi wa nihongo o oboemasu."
+        ipa: "wataɕi wa nihoɴɡo o oboemasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "おぼえます", base: "おぼえる", reading: "oboeru" }
+      - target: "せんせいのなまえをおぼえますか。"
+        words: ["せんせい", "の", "なまえ", "を", "おぼえます", "か"]
+        reading: "sensei no namae o oboemasu ka."
+        ipa: "seɴseː no namae o oboemasɯ ka"
+        bases:
+          - { word: "の", base: "の", reading: "no" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "おぼえます", base: "おぼえる", reading: "oboeru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0580"
+    target: "てつだう"
+    words: ["てつだう"]
+    reading: "tetsudau"
+    ipa: "tetsɯdaɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちがてつだいます。"
+        words: ["ともだち", "が", "てつだいます"]
+        reading: "tomodachi ga tetsudaimasu."
+        ipa: "tomodatɕi ɡa tetsɯdaimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "てつだいます", base: "てつだう", reading: "tetsudau" }
+      - target: "ははをてつだいますか。"
+        words: ["はは", "を", "てつだいます", "か"]
+        reading: "haha o tetsudaimasu ka."
+        ipa: "haha o tetsɯdaimasɯ ka"
+        bases:
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "てつだいます", base: "てつだう", reading: "tetsudau" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0581"
+    target: "ひろう"
+    words: ["ひろう"]
+    reading: "hirou"
+    ipa: "çiɾoː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちがかぎをひろいます。"
+        words: ["ともだち", "が", "かぎ", "を", "ひろいます"]
+        reading: "tomodachi ga kagi o hiroimasu."
+        ipa: "tomodatɕi ɡa kaɡi o çiɾoimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ひろいます", base: "ひろう", reading: "hirou" }
+      - target: "いぬはぱんをひろいますか。"
+        words: ["いぬ", "は", "ぱん", "を", "ひろいます", "か"]
+        reading: "inu wa pan o hiroimasu ka."
+        ipa: "inɯ wa paɴ o çiɾoimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ひろいます", base: "ひろう", reading: "hirou" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0582"
+    target: "すてる"
+    words: ["すてる"]
+    reading: "suteru"
+    ipa: "sɯteɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ははがりんごをすてます。"
+        words: ["はは", "が", "りんご", "を", "すてます"]
+        reading: "haha ga ringo o sutemasu."
+        ipa: "haha ɡa ɾiɴɡo o sɯtemasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "すてます", base: "すてる", reading: "suteru" }
+      - target: "あなたはたまごをすてますか。"
+        words: ["あなた", "は", "たまご", "を", "すてます", "か"]
+        reading: "anata wa tamago o sutemasu ka."
+        ipa: "anata wa tamaɡo o sɯtemasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "すてます", base: "すてる", reading: "suteru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0583"
+    target: "なくす"
+    words: ["なくす"]
+    reading: "nakusu"
+    ipa: "nakɯsɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはかぎをなくしました。"
+        words: ["わたし", "は", "かぎ", "を", "なくしました"]
+        reading: "watashi wa kagi o nakushimashita."
+        ipa: "wataɕi wa kaɡi o nakɯɕimaɕita"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "なくしました", base: "なくす", reading: "nakusu" }
+      - target: "あなたはかぎをなくしましたか。"
+        words: ["あなた", "は", "かぎ", "を", "なくしました", "か"]
+        reading: "anata wa kagi o nakushimashita ka."
+        ipa: "anata wa kaɡi o nakɯɕimaɕita ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "なくしました", base: "なくす", reading: "nakusu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0584"
+    target: "のぼる"
+    words: ["のぼる"]
+    reading: "noboru"
+    ipa: "noboɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "いぬはのぼります。"
+        words: ["いぬ", "は", "のぼります"]
+        reading: "inu wa noborimasu."
+        ipa: "inɯ wa noboɾimasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "のぼります", base: "のぼる", reading: "noboru" }
+      - target: "ともだちはのぼりますか。"
+        words: ["ともだち", "は", "のぼります", "か"]
+        reading: "tomodachi wa noborimasu ka."
+        ipa: "tomodatɕi wa noboɾimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "のぼります", base: "のぼる", reading: "noboru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0585"
+    target: "そうじする"
+    words: ["そうじする"]
+    reading: "soujisuru"
+    ipa: "soːdʑisɯɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ははがそうじします。"
+        words: ["はは", "が", "そうじします"]
+        reading: "haha ga soujishimasu."
+        ipa: "haha ɡa soːdʑiɕimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "そうじします", base: "そうじする", reading: "soujisuru" }
+      - target: "あなたはそうじしますか。"
+        words: ["あなた", "は", "そうじします", "か"]
+        reading: "anata wa soujishimasu ka."
+        ipa: "anata wa soːdʑiɕimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "そうじします", base: "そうじする", reading: "soujisuru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0586"
+    target: "りょうりする"
+    words: ["りょうりする"]
+    reading: "ryourisuru"
+    ipa: "ɾjoːɾisɯɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ちちがりょうりします。"
+        words: ["ちち", "が", "りょうりします"]
+        reading: "chichi ga ryourishimasu."
+        ipa: "tɕitɕi ɡa ɾjoːɾiɕimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "りょうりします", base: "りょうりする", reading: "ryourisuru" }
+      - target: "あなたはりょうりしますか。"
+        words: ["あなた", "は", "りょうりします", "か"]
+        reading: "anata wa ryourishimasu ka."
+        ipa: "anata wa ɾjoːɾiɕimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "りょうりします", base: "りょうりする", reading: "ryourisuru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0587"
+    target: "でかける"
+    words: ["でかける"]
+    reading: "dekakeru"
+    ipa: "dekakeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはでかけます。"
+        words: ["ともだち", "は", "でかけます"]
+        reading: "tomodachi wa dekakemasu."
+        ipa: "tomodatɕi wa dekakemasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "でかけます", base: "でかける", reading: "dekakeru" }
+      - target: "あなたはいつでかけますか。"
+        words: ["あなた", "はい", "つ", "でかけます", "か"]
+        reading: "anata hai tsu dekakemasu ka."
+        ipa: "anata hai tsɯ dekakemasɯ ka"
+        bases:
+          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "でかけます", base: "でかける", reading: "dekakeru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0588"
+    target: "もどる"
+    words: ["もどる"]
+    reading: "modoru"
+    ipa: "modoɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちがもどります。"
+        words: ["ともだち", "が", "もどります"]
+        reading: "tomodachi ga modorimasu."
+        ipa: "tomodatɕi ɡa modoɾimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "もどります", base: "もどる", reading: "modoru" }
+      - target: "がくせいはもどりますか。"
+        words: ["がくせい", "は", "もどります", "か"]
+        reading: "gakusei wa modorimasu ka."
+        ipa: "ɡakɯseː wa modoɾimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "もどります", base: "もどる", reading: "modoru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0589"
+    target: "とまる"
+    words: ["とまる"]
+    reading: "tomaru"
+    ipa: "tomaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "でんしゃがとまります。"
+        words: ["でんしゃ", "が", "とまります"]
+        reading: "densha ga tomarimasu."
+        ipa: "deɴɕa ɡa tomaɾimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "とまります", base: "とまる", reading: "tomaru" }
+      - target: "でんしゃはとまりますか。"
+        words: ["でんしゃ", "は", "とまります", "か"]
+        reading: "densha wa tomarimasu ka."
+        ipa: "deɴɕa wa tomaɾimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "とまります", base: "とまる", reading: "tomaru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0590"
+    target: "さがす"
+    words: ["さがす"]
+    reading: "sagasu"
+    ipa: "saɡasɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはかぎをさがします。"
+        words: ["わたし", "は", "かぎ", "を", "さがします"]
+        reading: "watashi wa kagi o sagashimasu."
+        ipa: "wataɕi wa kaɡi o saɡaɕimasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "さがします", base: "さがす", reading: "sagasu" }
+      - target: "あなたはいぬをさがしますか。"
+        words: ["あなた", "はい", "ぬ", "を", "さがします", "か"]
+        reading: "anata hai nu o sagashimasu ka."
+        ipa: "anata hai nɯ o saɡaɕimasɯ ka"
+        bases:
+          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "さがします", base: "さがす", reading: "sagasu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0591"
+    target: "みせる"
+    words: ["みせる"]
+    reading: "miseru"
+    ipa: "miseɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちにかぎをみせます。"
+        words: ["ともだち", "に", "かぎ", "を", "みせます"]
+        reading: "tomodachi ni kagi o misemasu."
+        ipa: "tomodatɕi ni kaɡi o misemasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "みせます", base: "みせる", reading: "miseru" }
+      - target: "せんせいはえいごをみせますか。"
+        words: ["せんせい", "は", "えいご", "を", "みせます", "か"]
+        reading: "sensei wa eigo o misemasu ka."
+        ipa: "seɴseː wa eːɡo o misemasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "みせます", base: "みせる", reading: "miseru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0592"
+    target: "いれる"
+    words: ["いれる"]
+    reading: "ireru"
+    ipa: "iɾeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ははがみずをいれます。"
+        words: ["はは", "が", "みず", "を", "いれます"]
+        reading: "haha ga mizu o iremasu."
+        ipa: "haha ɡa midzɯ o iɾemasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "いれます", base: "いれる", reading: "ireru" }
+      - target: "はこにかぎをいれます。"
+        words: ["はこ", "に", "かぎ", "を", "いれます"]
+        reading: "hako ni kagi o iremasu."
+        ipa: "hako ni kaɡi o iɾemasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "いれます", base: "いれる", reading: "ireru" }
+  - id: "ja-0593"
+    target: "わらう"
+    words: ["わらう"]
+    reading: "warau"
+    ipa: "waɾaɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがわらいます。"
+        words: ["こども", "が", "わらいます"]
+        reading: "kodomo ga waraimasu."
+        ipa: "kodomo ɡa waɾaimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "わらいます", base: "わらう", reading: "warau" }
+      - target: "ともだちはわらいますか。"
+        words: ["ともだち", "は", "わらいます", "か"]
+        reading: "tomodachi wa waraimasu ka."
+        ipa: "tomodatɕi wa waɾaimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "わらいます", base: "わらう", reading: "warau" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0594"
+    target: "おこる"
+    words: ["おこる"]
+    reading: "okoru"
+    ipa: "okoɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ちちがおこります。"
+        words: ["ちち", "が", "おこります"]
+        reading: "chichi ga okorimasu."
+        ipa: "tɕitɕi ɡa okoɾimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "おこります", base: "おこる", reading: "okoru" }
+      - target: "せんせいはおこりますか。"
+        words: ["せんせい", "は", "おこります", "か"]
+        reading: "sensei wa okorimasu ka."
+        ipa: "seɴseː wa okoɾimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "おこります", base: "おこる", reading: "okoru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0595"
+    target: "やめる"
+    words: ["やめる"]
+    reading: "yameru"
+    ipa: "jameɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはがっこうをやめます。"
+        words: ["わたし", "は", "がっこう", "を", "やめます"]
+        reading: "watashi wa gakkou o yamemasu."
+        ipa: "wataɕi wa ɡakkoː o jamemasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "やめます", base: "やめる", reading: "yameru" }
+      - target: "あなたはにほんごをやめますか。"
+        words: ["あなた", "は", "にほんご", "を", "やめます", "か"]
+        reading: "anata wa nihongo o yamemasu ka."
+        ipa: "anata wa nihoɴɡo o jamemasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "やめます", base: "やめる", reading: "yameru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0596"
+    target: "はじめる"
+    words: ["はじめる"]
+    reading: "hajimeru"
+    ipa: "hadʑimeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "せんせいははじめます。"
+        words: ["せんせい", "はは", "じ", "め", "ま", "す"]
+        reading: "sensei haha ji me ma su."
+        ipa: "seɴseː haha dʑi me ma sɯ"
+      - target: "がっこうをはじめますか。"
+        words: ["がっこう", "を", "はじめます", "か"]
+        reading: "gakkou o hajimemasu ka."
+        ipa: "ɡakkoː o hadʑimemasɯ ka"
+        bases:
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "はじめます", base: "はじめる", reading: "hajimeru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0597"
+    target: "ひっこす"
+    words: ["ひっこす"]
+    reading: "hikkosu"
+    ipa: "çikkosɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはひっこします。"
+        words: ["ともだち", "は", "ひっこします"]
+        reading: "tomodachi wa hikkoshimasu."
+        ipa: "tomodatɕi wa çikkoɕimasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ひっこします", base: "ひっこす", reading: "hikkosu" }
+      - target: "わたしはとうきょうにひっこします。"
+        words: ["わたし", "は", "とうきょう", "に", "ひっこします"]
+        reading: "watashi wa toukyou ni hikkoshimasu."
+        ipa: "wataɕi wa toːkjoː ni çikkoɕimasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "ひっこします", base: "ひっこす", reading: "hikkosu" }
+  - id: "ja-0598"
+    target: "あげる"
+    words: ["あげる"]
+    reading: "ageru"
+    ipa: "aɡeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはともだちにりんごをあげます。"
+        words: ["わたし", "は", "ともだち", "に", "りんご", "を", "あげます"]
+        reading: "watashi wa tomodachi ni ringo o agemasu."
+        ipa: "wataɕi wa tomodatɕi ni ɾiɴɡo o aɡemasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "あげます", base: "あげる", reading: "ageru" }
+      - target: "あなたはいぬにぱんをあげますか。"
+        words: ["あなた", "はい", "ぬ", "に", "ぱん", "を", "あげます", "か"]
+        reading: "anata hai nu ni pan o agemasu ka."
+        ipa: "anata hai nɯ ni paɴ o aɡemasɯ ka"
+        bases:
+          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "あげます", base: "あげる", reading: "ageru" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0599"
+    target: "もらう"
+    words: ["もらう"]
+    reading: "morau"
+    ipa: "moɾaɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはともだちにりんごをもらいます。"
+        words: ["わたし", "は", "ともだち", "に", "りんご", "を", "もらいます"]
+        reading: "watashi wa tomodachi ni ringo o moraimasu."
+        ipa: "wataɕi wa tomodatɕi ni ɾiɴɡo o moɾaimasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "もらいます", base: "もらう", reading: "morau" }
+      - target: "あなたはたまごをもらいますか。"
+        words: ["あなた", "は", "たまご", "を", "もらいます", "か"]
+        reading: "anata wa tamago o moraimasu ka."
+        ipa: "anata wa tamaɡo o moɾaimasɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "もらいます", base: "もらう", reading: "morau" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0600"
+    target: "さけぶ"
+    words: ["さけぶ"]
+    reading: "sakebu"
+    ipa: "sakebɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがさけびます。"
+        words: ["こども", "が", "さけびます"]
+        reading: "kodomo ga sakebimasu."
+        ipa: "kodomo ɡa sakebimasɯ"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "さけびます", base: "さけぶ", reading: "sakebu" }
+      - target: "いぬがさけびますか。"
+        words: ["いぬ", "が", "さけびます", "か"]
+        reading: "inu ga sakebimasu ka."
+        ipa: "inɯ ɡa sakebimasɯ ka"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "さけびます", base: "さけぶ", reading: "sakebu" }
+          - { word: "か", base: "か", reading: "ka" }

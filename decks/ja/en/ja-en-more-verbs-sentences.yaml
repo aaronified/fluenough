@@ -1,0 +1,90 @@
+schema: 1
+id: "ja-en-more-verbs-sentences"
+kind: "layer"
+core: "ja-more-verbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "More verbs in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0601":
+    native: "The child laughs."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "わらいます":
+        meaning: "to laugh"
+    confusables:
+      w1:
+        why: "さけぶ (sakebu) is to shout, not to laugh."
+      w2:
+        why: "おこる (okoru) is to get angry, not to laugh."
+  "ja-0602":
+    native: "I look for the key."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+      "さがします":
+        meaning: "to look for; to search"
+    confusables:
+      w1:
+        why: "なくす (nakusu) is to lose something, which is why you look for it."
+      w2:
+        why: "ひろう (hirou) is to pick up, not to look for."
+  "ja-0603":
+    native: "The train stops."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "とまります":
+        meaning: "to stop (of a train, car)"
+    confusables:
+      w1:
+        why: "でかける (dekakeru) is to go out, not to stop."
+      w2:
+        why: "はしる (hashiru) is to run."
+  "ja-0604":
+    native: "Mother cleans."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "そうじします":
+        meaning: "to clean; to do the cleaning"
+    confusables:
+      w1:
+        why: "りょうりする (ryouri suru) is to cook, not to clean."
+      w2:
+        why: "てつだう (tetsudau) is to help."
+  "ja-0605":
+    native: "I give my friend an apple."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "に":
+        meaning: "in; at; to"
+      "を":
+        meaning: "(marks the thing acted on)"
+      "あげます":
+        meaning: "to give (to someone else)"
+    confusables:
+      w1:
+        why: "もらう (morau) is to receive, the opposite side."
+      w2:
+        why: "かえす (kaesu) is to return something."
+  "ja-0606":
+    native: "I forget the key."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+      "わすれます":
+        meaning: "to forget"
+    confusables:
+      w1:
+        why: "おぼえる (oboeru) is to remember, the opposite."
+      w2:
+        why: "なくす (nakusu) is to lose, not to forget."

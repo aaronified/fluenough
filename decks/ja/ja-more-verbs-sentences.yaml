@@ -1,0 +1,120 @@
+schema: 1
+id: "ja-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0601"
+    target: "こどもがわらいます。"
+    words: ["こども", "が", "わらいます"]
+    reading: "kodomo ga waraimasu."
+    ipa: "kodomo ɡa waɾaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "わらいます", base: "わらう", reading: "warau" }
+    confusables:
+      - id: "w1"
+        word: "さけぶ"
+        reading: "sakebu"
+        kind: "word"
+      - id: "w2"
+        word: "おこる"
+        reading: "okoru"
+        kind: "word"
+  - id: "ja-0602"
+    target: "わたしはかぎをさがします。"
+    words: ["わたし", "は", "かぎ", "を", "さがします"]
+    reading: "watashi wa kagi o sagashimasu."
+    ipa: "wataɕi wa kaɡi o saɡaɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "さがします", base: "さがす", reading: "sagasu" }
+    confusables:
+      - id: "w1"
+        word: "なくす"
+        reading: "nakusu"
+        kind: "word"
+      - id: "w2"
+        word: "ひろう"
+        reading: "hirou"
+        kind: "word"
+  - id: "ja-0603"
+    target: "でんしゃがとまります。"
+    words: ["でんしゃ", "が", "とまります"]
+    reading: "densha ga tomarimasu."
+    ipa: "deɴɕa ɡa tomaɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "とまります", base: "とまる", reading: "tomaru" }
+    confusables:
+      - id: "w1"
+        word: "でかける"
+        reading: "dekakeru"
+        kind: "word"
+      - id: "w2"
+        word: "はしる"
+        reading: "hashiru"
+        kind: "word"
+  - id: "ja-0604"
+    target: "ははがそうじします。"
+    words: ["はは", "が", "そうじします"]
+    reading: "haha ga soujishimasu."
+    ipa: "haha ɡa soːdʑiɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "そうじします", base: "そうじする", reading: "soujisuru" }
+    confusables:
+      - id: "w1"
+        word: "りょうりする"
+        reading: "ryouri suru"
+        kind: "word"
+      - id: "w2"
+        word: "てつだう"
+        reading: "tetsudau"
+        kind: "word"
+  - id: "ja-0605"
+    target: "わたしはともだちにりんごをあげます。"
+    words: ["わたし", "は", "ともだち", "に", "りんご", "を", "あげます"]
+    reading: "watashi wa tomodachi ni ringo o agemasu."
+    ipa: "wataɕi wa tomodatɕi ni ɾiɴɡo o aɡemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "あげます", base: "あげる", reading: "ageru" }
+    confusables:
+      - id: "w1"
+        word: "もらう"
+        reading: "morau"
+        kind: "word"
+      - id: "w2"
+        word: "かえす"
+        reading: "kaesu"
+        kind: "word"
+  - id: "ja-0606"
+    target: "わたしはかぎをわすれます。"
+    words: ["わたし", "は", "かぎ", "を", "わすれます"]
+    reading: "watashi wa kagi o wasuremasu."
+    ipa: "wataɕi wa kaɡi o wasɯɾemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "わすれます", base: "わすれる", reading: "wasureru" }
+    confusables:
+      - id: "w1"
+        word: "おぼえる"
+        reading: "oboeru"
+        kind: "word"
+      - id: "w2"
+        word: "なくす"
+        reading: "nakusu"
+        kind: "word"
