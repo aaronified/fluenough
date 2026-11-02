@@ -197,7 +197,9 @@ units:
   # 5. Rules as forms, practised on the words known: the copula and the
   # particles first, then the demonstratives, the polite verb forms, the
   # verb groups, existence and the adjectives.
-  - planned: { id: "ja-grammar-desu", grammar: ["desu", "desu-negative"] }
+  - decks: ["ja-grammar-desu", "ja-grammar-desu-sentences", "ja-reading-grammar-desu"]
+    words: 0
+    grammar: ["desu", "desu-negative"]
     listening_passages:
       - { id: "i-am-a-student", text: { "en": "Saying who and what you are, and are not: a student, not a teacher" } }
     reading_passages:

@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-desu"
+kind: "layer"
+core: "ja-grammar-desu"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Is and is not: です (desu) and ではありません (de wa arimasen)"
+description: "Nouns with です (desu), is, and ではありません (de wa arimasen), is not. Every noun a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "statement": "it is a {meaning}"
+    "negative": "it is not a {meaning}"
+rules:
+  "ja-rule-desu":
+    name: "です (desu): is"
+    explanation: "{1} comes after a noun to say what it is, politely: {2} means I am a student."
+  "ja-rule-desu-negative":
+    name: "ではありません (de wa arimasen): is not"
+    explanation: "{1} comes after a noun to say what it is not: {2} means I am not a student."
