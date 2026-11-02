@@ -383,7 +383,8 @@ units:
       - { id: "walk-to-the-station", text: { "en": "A neighbour names the places you pass on the way to the station" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: post office, bank, hospital, park" } }
-  - planned: { id: "zh-home", theme: "home", words: 40 }
+  - decks: ["zh-home", "zh-home-sentences", "zh-reading-home", "*"]
+    words: 40
     listening_passages:
       - { id: "a-flat-tour", text: { "en": "A tour of a small flat, room by room" } }
     reading_passages:
