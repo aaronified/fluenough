@@ -426,7 +426,8 @@ units:
       - { id: "it-is-raining-now", text: { "en": "Saying what has changed, with le at the end: it is raining now, I am not going any more" } }
     reading_passages:
       - { id: "news-from-home", text: { "en": "A message with news from home: what is new" } }
-  - planned: { id: "zh-calendar", theme: "calendar", words: 40 }
+  - decks: ["zh-calendar", "zh-calendar-sentences", "zh-reading-calendar", "*"]
+    words: 40
     listening_passages:
       - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
     reading_passages:
