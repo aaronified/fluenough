@@ -605,7 +605,9 @@ units:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
       - { id: "diary-entry", text: { "en": "A short diary entry" } }
-  - planned: { id: "zh-grammar-complement-potential", grammar: "potential-complement" }
+  - decks: ["zh-grammar-potential-complement", "zh-grammar-potential-complement-sentences"]
+    words: 0
+    grammar: ["potential-complement"]
     listening_passages:
       - { id: "can-you-hear-me", text: { "en": "Saying whether something can be done: can you hear me, I cannot finish it, it will not fit" } }
     reading_passages:
