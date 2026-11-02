@@ -92,7 +92,8 @@ every card in the shipped decks, then deletes the old.
    the safety net for every step after. It reads a frozen copy of the decks
    kept under `test/fixtures/ask_pin/` (te, es and ipa, whole), so that it
    fails only when code changes the asks, never when a deck changes, and a
-   deck-only pull request cannot turn main red (#524). Owner, 2026-10-17,
+   deck-only pull request cannot turn main red (#524; the 8 test shards run
+   on every pull request, deck-only ones included). Owner, 2026-10-17,
    asked "What should it read?": "Frozen deck copy". Refresh it, with the
    golden, only for an intended change:
    `python3 tools/snapshot_ask_pin.py`, then `UPDATE_ASK_PIN=1 flutter test
