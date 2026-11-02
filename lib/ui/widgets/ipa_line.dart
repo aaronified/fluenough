@@ -84,6 +84,43 @@ extension IpaSwapStyle on TextStyle {
       swapped ? copyWith(fontFamilyFallback: IpaLine.fontFallback) : this;
 }
 
+/// A reading line. When [swapped] says [readingLines] put the IPA in the
+/// reading's place, it is drawn as [IpaLine] draws the IPA: left to right,
+/// in the IPA's fonts, and a screen reader hears "In the IPA: paːlu", not the
+/// slashes. Otherwise it is a plain [Text] in [style].
+class ReadingText extends StatelessWidget {
+  const ReadingText(
+    this.text, {
+    super.key,
+    required this.swapped,
+    this.style,
+    this.textAlign,
+  });
+
+  final String text;
+  final bool swapped;
+  final TextStyle? style;
+  final TextAlign? textAlign;
+
+  @override
+  Widget build(BuildContext context) {
+    if (!swapped) return Text(text, style: style, textAlign: textAlign);
+    final l10n = AppLocalizations.of(context)!;
+    // `/paːlu/` is how wordSheetIpa writes it; the label has no slashes.
+    final plain = text.replaceAll(RegExp(r'^/|/$'), '');
+    return Semantics(
+      label: l10n.ipaSemantics(plain),
+      excludeSemantics: true,
+      child: Text(
+        text,
+        textAlign: textAlign,
+        textDirection: TextDirection.ltr,
+        style: (style ?? const TextStyle()).forIpa(true),
+      ),
+    );
+  }
+}
+
 /// [ipa], if it is to be shown: the deck gives one, it is not just [target]
 /// again (a card written in the IPA itself), and IPA pronunciations is on. Null
 /// otherwise, so that no line is left for it.
