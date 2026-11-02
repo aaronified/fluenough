@@ -1,0 +1,26 @@
+"schema": 1
+"id": "zh-en-grammar-duration-complement"
+"kind": "layer"
+"core": "zh-grammar-duration-complement"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "了 (le) with a length of time: for how long"
+"license": "CC-BY-SA-4.0"
+"description": "How long an action lasted: the verb, then 了 (le), then the length of time, such as 三年 (sān nián) three years. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "了 (le) with a length of time: for how long"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "duration": "for a length of time, after the verb with 了 (le)"
+  "entries":
+    "xue": "to study"
+    "shui": "to sleep"
+    "deng": "to wait for"
+    "gongzuo": "to work"
+  "notes": "The length of time comes after the verb and any 了 (le), and before the object: 我学了三年中文 (wǒ xué le sān nián zhōngwén), I studied Chinese for three years. The time is not the same as the point when: 三年 (sān nián) is three years long, and 三点 (sān diǎn) is three o'clock. With a pronoun as the object, the time goes between the verb and the pronoun: 我等了你一个小时 (wǒ děng le nǐ yí gè xiǎoshí), I waited for you for an hour."
