@@ -1,0 +1,248 @@
+schema: 1
+id: "as-en-weather"
+kind: "layer"
+core: "as-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather"
+license: "CC-BY-SA-4.0"
+description: "The weather and the seasons: sun, rain, wind, the monsoon and what the sky does. Each word has its own sentences in Assamese. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2532":
+    native: "weather; season"
+    notes:
+      "n1": "Also the season of the year: বতৰ (botôr) is used for both."
+    examples:
+      "আজি বতৰ ভাল।": "The weather is good today."
+      "বতৰ বেয়া।": "The weather is bad."
+  "as-2533":
+    native: "sun; sunshine"
+    notes:
+      "n1": "Sunlight and the sun itself are both ৰ'দ (rod)."
+    examples:
+      "ৰ'দ ওপৰত আছে।": { native: "The sun is overhead.", bases: { "আছে": "to be; there is; to have" } }
+      "আজি ৰ'দ বহুত।": "There is a lot of sunshine today."
+  "as-2534":
+    native: "rain"
+    notes:
+      "n1": "Heavy rain is also বৰষুণ (bôrôxun); a light shower is just a little of it."
+    examples:
+      "আজি বৰষুণ আছে।": { native: "It is raining today.", bases: { "আছে": "to be; there is; to have" } }
+      "বৰষুণ বহুত।": "There is a lot of rain."
+  "as-2535":
+    native: "wind; air"
+    notes:
+      "n1": "Also used for air that moves: a cool wind on the face."
+    examples:
+      "বতাহ বহুত।": "There is a strong wind."
+      "ওপৰত বতাহ আছে।": { native: "There is wind up above.", bases: { "আছে": "to be; there is; to have" } }
+  "as-2536":
+    native: "cloud"
+    notes:
+      "n1": "In the monsoon the sky is full of মেঘ (megh) for days."
+    examples:
+      "আকাশত মেঘ আছে।": { native: "There are clouds in the sky.", bases: { "আছে": "to be; there is; to have" } }
+      "মেঘ বহুত।": "There are many clouds."
+  "as-2537":
+    native: "lightning; electricity"
+    notes:
+      "n1": "The same word for lightning in the sky and for electricity in the house."
+    examples:
+      "বিজুলী চমকিছে।": { native: "The lightning flashes.", bases: { "চমকিছে": "to flash" } }
+      "ঘৰত বিজুলী নাই।": "There is no electricity at home."
+  "as-2538":
+    native: "thunder"
+    notes:
+      "n1": "Thunder comes after the lightning, when the rain is near."
+    examples:
+      "বাজ পৰিছে।": "Thunder is rolling."
+      "বাজ বহুত ডাঙৰ।": "The thunder is very loud."
+  "as-2539":
+    native: "cold; winter"
+    notes:
+      "n1": "শীত (xit) is both the cold of the winter and the season itself."
+    examples:
+      "এতিয়া শীত।": "It is cold now."
+      "শীতত ৰাতি দীঘল।": { native: "In winter the nights are long.", bases: { "শীতত": "cold; winter" } }
+  "as-2540":
+    native: "summer"
+    notes:
+      "n1": "A formal word; in speech people say গৰম (gôrôm) time, as hot as it is."
+    examples:
+      "গ্ৰীষ্মকালত বহুত গৰম।": { native: "It is very hot in summer.", bases: { "গ্ৰীষ্মকালত": "summer" } }
+      "এইটো গ্ৰীষ্মকাল।": "This is summer."
+  "as-2541":
+    native: "spring"
+    notes:
+      "n1": "The season of new leaves and flowers."
+    examples:
+      "বসন্তত ফুল ফুটে।": { native: "In spring the flowers bloom.", bases: { "বসন্তত": "spring", "ফুটে": "to bloom; to open" } }
+      "বসন্ত ভাল।": "Spring is good."
+  "as-2542":
+    native: "monsoon; rainy season"
+    notes:
+      "n1": "The monsoon, the wet months of June to September, when the rivers rise."
+    examples:
+      "বৰ্ষাকালত বৰষুণ বহুত।": { native: "In the monsoon there is a lot of rain.", bases: { "বৰ্ষাকালত": "monsoon; rainy season" } }
+      "বৰ্ষাকাল আহিছে।": "The monsoon has come."
+  "as-2543":
+    native: "autumn"
+    notes:
+      "n1": "The season after the monsoon, when the sky clears."
+    examples:
+      "শৰতত আকাশ পৰিষ্কাৰ।": { native: "In autumn the sky is clear.", bases: { "শৰতত": "autumn" } }
+      "শৰৎ ভাল লাগে।": "I like autumn."
+  "as-2544":
+    native: "ice; snow"
+    notes:
+      "n1": "Snow is also বৰফ (bôrôf); it falls only in the hills."
+    examples:
+      "পাহাৰত বৰফ আছে।": { native: "There is snow on the hills.", bases: { "আছে": "to be; there is; to have" } }
+      "বৰফ ঠাণ্ডা।": "Ice is cold."
+  "as-2545":
+    native: "sky"
+    notes:
+      "n1": "The word for the sky, and the weather above."
+    examples:
+      "আকাশ নীলা।": "The sky is blue."
+      "আকাশত মেঘ আছে।": { native: "There are clouds in the sky.", bases: { "আকাশত": "sky", "আছে": "to be; there is; to have" } }
+  "as-2546":
+    native: "moon"
+    notes:
+      "n1": "In the rainy nights the জোন (zon) is often hidden by cloud."
+    examples:
+      "আজি জোন ওপৰত।": "The moon is up tonight."
+      "জোন ডাঙৰ।": "The moon is big."
+  "as-2547":
+    native: "star"
+    notes:
+      "n1": "Used for every star, big or small."
+    examples:
+      "আকাশত বহুত তৰা।": "There are many stars in the sky."
+      "তৰা ওপৰত।": "The stars are up above."
+  "as-2548":
+    native: "rainbow"
+    notes:
+      "n1": "It shows after the rain, when the sun comes out."
+    examples:
+      "আকাশত ৰামধেনু।": "There is a rainbow in the sky."
+      "ৰামধেনু ধুনীয়া।": "The rainbow is beautiful."
+  "as-2549":
+    native: "storm; strong wind"
+    notes:
+      "n1": "A strong, sudden wind that bends the trees."
+    examples:
+      "আজি ধুমুহা উঠিছে।": "A storm has risen today."
+      "ধুমুহাত গছ পৰে।": { native: "In a storm, trees fall.", bases: { "ধুমুহাত": "storm; strong wind" } }
+  "as-2550":
+    native: "sweat"
+    notes:
+      "n1": "Sweat on the skin in the heat."
+    examples:
+      "গৰমত ঘাম ওলায়।": { native: "In the heat, sweat comes out.", bases: { "ওলায়": "to come out" } }
+      "মোৰ ঘাম বহুত।": "I am sweating a lot."
+  "as-2551":
+    native: "dust"
+    notes:
+      "n1": "Dust blows on the road in the dry months."
+    examples:
+      "বাটত ধূলি বহুত।": "There is a lot of dust on the road."
+      "ধূলি ময়লা।": "Dust is dirty."
+  "as-2552":
+    native: "wet; damp"
+    notes:
+      "n1": "The opposite of শুকান (xukān), dry."
+    examples:
+      "কাপোৰ ভিজা।": "The clothes are wet."
+      "মাটি ভিজা।": "The ground is wet."
+  "as-2553":
+    native: "dry"
+    notes:
+      "n1": "Used for clothes, the ground and the air in winter."
+    examples:
+      "কাপোৰ শুকান।": "The clothes are dry."
+      "আজি বতৰ শুকান।": "The weather is dry today."
+  "as-2554":
+    native: "warmth; heat (of the sun)"
+    notes:
+      "n1": "The gentle warmth of the sun or a fire."
+    examples:
+      "ৰ'দৰ উম ভাল লাগে।": "I like the warmth of the sun."
+      "ঘৰত উম আছে।": { native: "There is warmth in the house.", bases: { "আছে": "to be; there is; to have" } }
+  "as-2555":
+    native: "sunny"
+    notes:
+      "n1": "A sunny day, with no cloud."
+    examples:
+      "আজি ৰ'দীয়া দিন।": "Today is a sunny day."
+      "ৰ'দীয়া বতৰ ভাল।": "Sunny weather is good."
+  "as-2556":
+    native: "rainy"
+    notes:
+      "n1": "A rainy day, or a rainy season."
+    examples:
+      "আজি বৰষুণীয়া দিন।": "Today is a rainy day."
+      "বৰষুণীয়া বতৰ।": "Rainy weather."
+  "as-2557":
+    native: "cloudy; overcast"
+    notes:
+      "n1": "The sky is full of cloud and the sun is hidden."
+    examples:
+      "আকাশ মেঘলা।": "The sky is cloudy."
+      "আজি বতৰ মেঘলা।": "The weather is cloudy today."
+  "as-2558":
+    native: "flood"
+    notes:
+      "n1": "When the river rises over the land in the monsoon."
+    examples:
+      "নদীত বান আহিছে।": "A flood has come to the river."
+      "বানত গাঁও ডুবিল।": { native: "The village was flooded.", bases: { "বানত": "flood", "ডুবিল": "to sink; to drown" } }
+  "as-2559":
+    native: "drought; dry spell"
+    notes:
+      "n1": "A long time without rain, when the fields dry out."
+    examples:
+      "এইটো খৰা।": "This is a drought."
+      "খৰাত পথাৰ শুকান।": { native: "In the drought the fields dry up.", bases: { "খৰাত": "drought; dry spell" } }
+  "as-2560":
+    native: "season (of the year)"
+    notes:
+      "n1": "The six seasons of the Assamese year, each with its own weather."
+    examples:
+      "এইটো কোন ঋতু?": "Which season is this?"
+      "ঋতু বদলিছে।": { native: "The seasons are changing.", bases: { "বদলিছে": "to change" } }
+  "as-2561":
+    native: "hail; hailstone"
+    notes:
+      "n1": "Hard ice that falls with the rain in spring."
+    examples:
+      "শিল পৰিছে।": "Hailstones are falling."
+      "শিলত গছ ভাঙিল।": { native: "The hail broke the tree.", bases: { "শিলত": "hail; hailstone" } }
+  "as-2562":
+    native: "heat; temperature"
+    notes:
+      "n1": "The heat of the sun in the day."
+    examples:
+      "দুপৰীয়া তাপ বহুত।": "At midday the heat is great."
+      "আজি তাপ কম।": "The heat is low today."
+  "as-2563":
+    native: "flower"
+    notes:
+      "n1": "Flowers come with the spring and the rains."
+    examples:
+      "বাৰীত ফুল আছে।": { native: "There are flowers in the garden.", bases: { "আছে": "to be; there is; to have" } }
+      "ফুল ধুনীয়া।": "The flower is beautiful."
+  "as-2564":
+    native: "tree; plant"
+    notes:
+      "n1": "The word for any tree or plant standing in the ground."
+    examples:
+      "পথাৰত গছ আছে।": { native: "There are trees in the field.", bases: { "আছে": "to be; there is; to have" } }
+      "গছ ডাঙৰ।": "The tree is big."
+  "as-2565":
+    native: "soil; ground"
+    notes:
+      "n1": "The earth you stand on, and the soil of the fields."
+    examples:
+      "মাটি ভিজা।": "The ground is wet."
+      "মাটিত বৰষুণৰ পানী।": { native: "The rain water is in the soil.", bases: { "মাটিত": "soil; ground" } }

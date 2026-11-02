@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-relationships"
+name: "Assamese reading: relationships: neighbours, friends and thanks"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-neighbours-and-friends"
+    title: "Talking about neighbours and old friends"
+    theme: "relationships"
+    sentences:
+      - text: "আমাৰ চুবুৰীয়া বহুত ভাল।"
+        reading: "āmār suburiyā bohut bhāl."
+      - text: "পুৰণি বন্ধু আজি আহিল।"
+        reading: "puroni bondhu āzi āhil."
+      - text: "আমাৰ বিশ্বাস আছে।"
+        reading: "āmār bixxāx āse."
+      - text: "আমি সকলো মিল থাকোঁ।"
+        reading: "āmi sôkôlu mil thākum̐."
+    questions:
+      - id: "as-3774"
+        prompt: { en: "The neighbours are very good." }
+        answer: true
+      - id: "as-3775"
+        prompt: { en: "Who came today?" }
+        options:
+          - { en: "An old friend" }
+          - { en: "A teacher" }
+          - { en: "A driver" }
+        answer: 1
+      - id: "as-3776"
+        prompt: { en: "What do they have between them?" }
+        options:
+          - { en: "Trust" }
+          - { en: "A quarrel" }
+          - { en: "Debt" }
+        answer: 1
+  - id: "as-thank-you-note"
+    title: "A thank-you note to a neighbour"
+    theme: "relationships"
+    sentences:
+      - text: "প্ৰিয় চুবুৰীয়া, ধন্যবাদ।"
+        reading: "priy suburiyā, dhônyôbād."
+      - text: "আপুনি মোক সহায় কৰিলে।"
+        reading: "āpuni muk xôhāy korile."
+      - text: "আপোনাৰ সন্মান আৰু সহানুভূতি ভাল।"
+        reading: "āpunār xônmān āru xôhānubhuti bhāl."
+      - text: "পুনৰ আহিব।"
+        reading: "punôr āhibô."
+    questions:
+      - id: "as-3777"
+        prompt: { en: "The writer thanks the neighbour." }
+        answer: true
+      - id: "as-3778"
+        prompt: { en: "What did the neighbour do?" }
+        options:
+          - { en: "Helped" }
+          - { en: "Quarrelled" }
+          - { en: "Left" }
+        answer: 1
+      - id: "as-3779"
+        prompt: { en: "What does the writer say at the end?" }
+        options:
+          - { en: "Goodbye forever" }
+          - { en: "Come again" }
+          - { en: "Stay away" }
+        answer: 2

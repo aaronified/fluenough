@@ -1,0 +1,178 @@
+schema: 1
+id: "as-phone"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "phone"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-2943"
+    target: "ফোন"
+    reading: "phon"
+    ipa: "pʰʊn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ ফোন ব্যস্ত।", reading: "mur phon byôst.", ipa: "mʊɹ pʰʊn bjɔst" }
+      - { target: "ফোনটো নতুন।", reading: "phonôtu notun.", ipa: "pʰʊnɔtʊ notun", bases: [{ word: "ফোনটো", base: "ফোন", reading: "phon" }] }
+  - id: "as-2945"
+    target: "ব্যস্ত"
+    reading: "byôst"
+    ipa: "bjɔst"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তেওঁ ব্যস্ত।", reading: "teum̐ byôst.", ipa: "teʊ̃ bjɔst" }
+      - { target: "লাইন ব্যস্ত।", reading: "lāin byôst.", ipa: "lain bjɔst" }
+  - id: "as-2946"
+    target: "মেচেজ"
+    reading: "mesez"
+    ipa: "mesez"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মেচেজ পাইছোঁ।", reading: "mesez pāisum̐.", ipa: "mesez paisʊ̃", bases: [{ word: "পাইছোঁ", base: "পোৱা", reading: "puwā" }] }
+      - { target: "মেচেজ লিখা।", reading: "mesez likhā.", ipa: "mesez likʰa" }
+  - id: "as-2947"
+    target: "চাৰ্জ"
+    reading: "sārz"
+    ipa: "saɹz"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোনত চাৰ্জ নাই।", reading: "phonôt sārz nāi.", ipa: "pʰʊnɔt saɹz nai", bases: [{ word: "ফোনত", ref: "as-2943" }, { word: "নাই", ref: "as-0142" }] }
+      - { target: "চাৰ্জ কিমান?", reading: "sārz kimān?", ipa: "saɹz kiman" }
+  - id: "as-2948"
+    target: "বেটাৰী"
+    reading: "betāri"
+    ipa: "betaɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বেটাৰী শেষ।", reading: "betāri xex.", ipa: "betaɹi xex", bases: [{ word: "শেষ", base: "শেষ", reading: "xex" }] }
+      - { target: "নতুন বেটাৰী।", reading: "notun betāri.", ipa: "notun betaɹi" }
+  - id: "as-2949"
+    target: "নেটৱৰ্ক"
+    reading: "netôwôrk"
+    ipa: "netɔwɔɹk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নেটৱৰ্ক নাই।", reading: "netôwôrk nāi.", ipa: "netɔwɔɹk nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+      - { target: "নেটৱৰ্ক ভাল।", reading: "netôwôrk bhāl.", ipa: "netɔwɔɹk bʱal" }
+  - id: "as-2950"
+    target: "ইণ্টাৰনেট"
+    reading: "intārônet"
+    ipa: "intaɹɔnet"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ইণ্টাৰনেট আছে নেকি?", reading: "intārônet āse neki?", ipa: "intaɹɔnet ase neki", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "ইণ্টাৰনেট নাই।", reading: "intārônet nāi.", ipa: "intaɹɔnet nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-2951"
+    target: "এপ"
+    reading: "ep"
+    ipa: "ep"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এপ খোলা।", reading: "ep khulā.", ipa: "ep kʰʊla" }
+      - { target: "এপটো নতুন।", reading: "epôtu notun.", ipa: "epɔtʊ notun", bases: [{ word: "এপটো", base: "এপ", reading: "ep" }] }
+  - id: "as-2952"
+    target: "ৰিং"
+    reading: "riṅ"
+    ipa: "ɹiŋ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰিং বাজিছে।", reading: "riṅ bāzise.", ipa: "ɹiŋ bazise", bases: [{ word: "বাজিছে", base: "বাজা", reading: "bāzā" }] }
+      - { target: "ৰিং শুনা।", reading: "riṅ xunā.", ipa: "ɹiŋ xuna" }
+  - id: "as-2953"
+    target: "বাতৰি"
+    reading: "bātori"
+    ipa: "batoɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাতৰি ভাল।", reading: "bātori bhāl.", ipa: "batoɹi bʱal" }
+      - { target: "বাতৰি পাইছে।", reading: "bātori pāise.", ipa: "batoɹi paise", bases: [{ word: "পাইছে", base: "পোৱা", reading: "puwā" }] }
+  - id: "as-2954"
+    target: "চিঠি"
+    reading: "sithi"
+    ipa: "sitʰi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চিঠি লিখিছোঁ।", reading: "sithi likhisum̐.", ipa: "sitʰi likʰisʊ̃", bases: [{ word: "লিখিছোঁ", ref: "as-2204" }] }
+      - { target: "চিঠি আহিছে।", reading: "sithi āhise.", ipa: "sitʰi ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-2955"
+    target: "ইমেইল"
+    reading: "imeil"
+    ipa: "imeil"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ইমেইল পাইছোঁ।", reading: "imeil pāisum̐.", ipa: "imeil paisʊ̃", bases: [{ word: "পাইছোঁ", base: "পোৱা", reading: "puwā" }] }
+      - { target: "ইমেইল কৰিবা।", reading: "imeil koribā.", ipa: "imeil koɹiba", bases: [{ word: "কৰিবা", ref: "as-2202" }] }
+  - id: "as-2956"
+    target: "পাছৱৰ্ড"
+    reading: "pāsôwôrd"
+    ipa: "pasɔwɔɹd"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পাছৱৰ্ড কি?", reading: "pāsôwôrd ki?", ipa: "pasɔwɔɹd ki" }
+      - { target: "পাছৱৰ্ড নাই।", reading: "pāsôwôrd nāi.", ipa: "pasɔwɔɹd nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-2957"
+    target: "একাউন্ট"
+    reading: "ekāunt"
+    ipa: "ekaunt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "একাউন্ট আছে।", reading: "ekāunt āse.", ipa: "ekaunt ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "মোৰ একাউন্ট নাই।", reading: "mur ekāunt nāi.", ipa: "mʊɹ ekaunt nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-2958"
+    target: "চালু"
+    reading: "sālu"
+    ipa: "salu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফোন চালু।", reading: "phon sālu.", ipa: "pʰʊn salu" }
+      - { target: "নেটৱৰ্ক চালু।", reading: "netôwôrk sālu.", ipa: "netɔwɔɹk salu" }
+  - id: "as-2960"
+    target: "কথা কোৱা"
+    reading: "kôthā kuwā"
+    ipa: "kɔtʰa kʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কথা", base: "কথা", reading: "kôthā" }
+  - id: "as-2961"
+    target: "লাইন"
+    reading: "lāin"
+    ipa: "lain"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "লাইন ভাল নাই।", reading: "lāin bhāl nāi.", ipa: "lain bʱal nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+      - { target: "লাইনত মানুহ বহুত।", reading: "lāinôt mānuh bohut.", ipa: "lainɔt manuh bohut", bases: [{ word: "লাইনত", base: "লাইন", reading: "lāin" }] }

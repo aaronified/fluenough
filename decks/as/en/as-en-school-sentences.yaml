@@ -1,0 +1,56 @@
+schema: 1
+id: "as-en-school-sentences"
+kind: "layer"
+core: "as-school-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2780":
+    native: "I go to school."
+    confusables:
+      "c1": { why: "To come, the opposite direction." }
+      "c2": { why: "Home, not school." }
+  "as-2781":
+    native: "The female teacher has asked a question."
+    bases:
+      "সুধিছে": "to ask"
+    confusables:
+      "c1": { why: "An answer, not a question." }
+      "c2": { why: "A lesson, not a question." }
+  "as-2782":
+    native: "The student has given the answer."
+    confusables:
+      "c1": { why: "An eraser, not an answer." }
+      "c2": { why: "A notebook, not an answer." }
+  "as-2783":
+    native: "Write the sum in the notebook."
+    confusables:
+      "c1": { why: "Chalk, a board tool, not a notebook." }
+      "c2": { why: "A bench, a piece of furniture." }
+  "as-2784":
+    native: "Are you present today?"
+    bases:
+      "আছা": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Absent, the opposite of present." }
+      "c2": { why: "Why, a question word." }
+  "as-2785":
+    native: "I like science."
+    confusables:
+      "c1": { why: "Geography, another school subject." }
+      "c2": { why: "Maths, another school subject." }
+  "as-2786":
+    native: "The bell is ringing."
+    bases:
+      "বাজিছে": "to play; to sound; to ring"
+    confusables:
+      "c1": { why: "A festival, not a bell." }
+      "c2": { why: "Thunder, the other sort of noise." }
+  "as-2787":
+    native: "I draw a picture."
+    confusables:
+      "c1": { why: "To read, not to draw." }
+      "c2": { why: "To write, not to draw." }

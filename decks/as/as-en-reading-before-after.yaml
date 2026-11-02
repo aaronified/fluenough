@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-before-after"
+name: "Assamese reading: before and after doing something"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-order-of-events"
+    title: "What happens before and after"
+    sentences:
+      - text: "ৰাতিপুৱা উঠাৰ পাছত চাহ খায়।"
+        reading: "rātipuwā uthār pāsôt sāh khāy."
+      - text: "খোৱাৰ আগতে দাঁত মাজা।"
+        reading: "khuwār āgôte dām̐t māzā."
+      - text: "কামৰ পাছত ঘৰলৈ যায়।"
+        reading: "kāmôr pāsôt ghôrôlôi zāy."
+      - text: "শোৱাৰ আগতে কিতাপ পঢ়ে।"
+        reading: "xuwār āgôte kitāp pôrhe."
+    questions:
+      - id: "as-3524"
+        prompt: { en: "The person drinks tea after getting up." }
+        answer: true
+      - id: "as-3525"
+        prompt: { en: "What is done before sleeping?" }
+        options:
+          - { en: "Reading" }
+          - { en: "Eating" }
+          - { en: "Running" }
+        answer: 1
+      - id: "as-3526"
+        prompt: { en: "Where does the person go after work?" }
+        options:
+          - { en: "Home" }
+          - { en: "The road" }
+          - { en: "The sea" }
+        answer: 1
+  - id: "as-event-schedule"
+    title: "A schedule of an event day"
+    sentences:
+      - text: "প্ৰথমে আহা।"
+        reading: "prôthôme āhā."
+      - text: "তাৰ আগতে ভোজ।"
+        reading: "tār āgôte bhuz."
+      - text: "ভোজৰ পাছত গীত।"
+        reading: "bhuzôr pāsôt git."
+      - text: "শেষত ঘৰলৈ যোৱা।"
+        reading: "xexôt ghôrôlôi zuwā."
+    questions:
+      - id: "as-3527"
+        prompt: { en: "The feast comes before the songs." }
+        answer: true
+      - id: "as-3528"
+        prompt: { en: "What comes after the feast?" }
+        options:
+          - { en: "Songs" }
+          - { en: "Sleep" }
+          - { en: "Travel" }
+        answer: 1
+      - id: "as-3529"
+        prompt: { en: "What happens at the end?" }
+        options:
+          - { en: "Going home" }
+          - { en: "Starting work" }
+          - { en: "Sleeping at school" }
+        answer: 1

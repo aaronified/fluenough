@@ -1,0 +1,26 @@
+schema: 1
+id: "as-en-grammar-purpose"
+kind: "layer"
+core: "as-grammar-purpose"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "In order to: for doing something"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says why someone does something: the verb takes -বৰ (-bôr) and বাবে (bābe), for, or -বৰ কাৰণে (kārône), for the reason of. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "In order to: for doing something"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "for the purpose: -বৰ বাবে (-bôr bābe)": "in order to (for)"
+    "for the reason: -বৰ কাৰণে (-bôr kārône)": "for the reason of"
+  entries:
+    "khua": "to eat; to drink"
+    "zua": "to go"
+    "kora": "to do"
+    "aha": "to come"
+    "porha": "to read; to study"
+    "xika": "to learn"
+    "kina": "to buy"
+    "xua": "to sleep; to lie down"
+  notes: "To say why, the verb takes -বৰ (-bôr) and then বাবে (bābe), for, or কাৰণে (kārône), for the reason of: মই পঢ়িবৰ বাবে যাওঁ (moi pôrhibôr bābe zāum̐), I go in order to study. The verb stem changes as in the future: যোৱা (zuwā), go, becomes যাবৰ (zābôr), and কিনা (kinā), buy, becomes কিনিবৰ (kinibôr)."

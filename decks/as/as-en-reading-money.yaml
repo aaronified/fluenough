@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-money"
+name: "Assamese reading: money: banks, bills, prices and payment"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-at-the-bank"
+    title: "Opening an account at a bank counter"
+    theme: "money"
+    sentences:
+      - text: "মই এটা একাউন্ট খুলিব খুজিছোঁ।"
+        reading: "moi etā ekāunt khulibô khuzisum̐."
+      - text: "প্ৰথমে টকা জমা কৰিম।"
+        reading: "prôthôme tôkā zômā korim."
+      - text: "সুদ কিমান?"
+        reading: "xud kimān?"
+      - text: "ৰসিদ দিয়ক।"
+        reading: "roxid diyôk."
+    questions:
+      - id: "as-3984"
+        prompt: { en: "The speaker wants to open an account." }
+        answer: true
+      - id: "as-3985"
+        prompt: { en: "What will the speaker do first?" }
+        options:
+          - { en: "Withdraw money" }
+          - { en: "Deposit money" }
+          - { en: "Burn money" }
+        answer: 2
+      - id: "as-3986"
+        prompt: { en: "What does the speaker ask for at the end?" }
+        options:
+          - { en: "A receipt" }
+          - { en: "A map" }
+          - { en: "A ticket" }
+        answer: 1
+  - id: "as-bill-and-receipt"
+    title: "A bill and a receipt"
+    theme: "money"
+    sentences:
+      - text: "মোট বিল: পাঁচশ টকা।"
+        reading: "mut bil: pām̐sôx tôkā."
+      - text: "মাচুল দহ টকা।"
+        reading: "māsul dôh tôkā."
+      - text: "আপুনি নগদ দিছে।"
+        reading: "āpuni nôgôd dise."
+      - text: "ৰসিদ আপোনাৰ।"
+        reading: "roxid āpunār."
+    questions:
+      - id: "as-3987"
+        prompt: { en: "The total bill is five hundred rupees." }
+        answer: true
+      - id: "as-3988"
+        prompt: { en: "How much is the charge?" }
+        options:
+          - { en: "Ten rupees" }
+          - { en: "Fifty rupees" }
+          - { en: "Five hundred" }
+        answer: 1
+      - id: "as-3989"
+        prompt: { en: "How was the bill paid?" }
+        options:
+          - { en: "In cash" }
+          - { en: "By card" }
+          - { en: "By cheque" }
+        answer: 1

@@ -1,0 +1,69 @@
+schema: 1
+id: "as-grammar-indefinites-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3781"
+    target: "মোৰ কিবা লাগে।"
+    reading: "mur kibā lāge."
+    ipa: "mʊɹ kiba laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "কিবা", ref: "as-0143" }
+    confusables:
+      - { id: "c1", word: "কি", reading: "ki", kind: "word" }
+      - { id: "c2", word: "কিছু", reading: "kisu", kind: "word" }
+  - id: "as-3782"
+    target: "কতোবা শুনিলোঁ।"
+    reading: "kôtubā xunilum̐."
+    ipa: "kɔtʊba xunilʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "কতোবা", ref: "as-0145" }
+      - { word: "শুনিলোঁ", ref: "as-2205" }
+    confusables:
+      - { id: "c1", word: "ক'ত", reading: "kot", kind: "word" }
+      - { id: "c2", word: "কেতিয়া", reading: "ketiyā", kind: "word" }
+  - id: "as-3783"
+    target: "কেতিয়াবা আহিবা।"
+    reading: "ketiyābā āhibā."
+    ipa: "ketijaba ahiba"
+    pos: "phrase"
+    bases:
+      - { word: "আহিবা", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "কেতিয়াও", reading: "ketiyāu", kind: "word" }
+      - { id: "c2", word: "কেতিয়া", reading: "ketiyā", kind: "word" }
+  - id: "as-3784"
+    target: "কেতিয়াও নহয়।"
+    reading: "ketiyāu nôhôy."
+    ipa: "ketijaʊ nɔhɔj"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "কেতিয়াবা", reading: "ketiyābā", kind: "word" }
+      - { id: "c2", word: "কেতিয়া", reading: "ketiyā", kind: "word" }
+  - id: "as-3785"
+    target: "কোনো নাই।"
+    reading: "kunu nāi."
+    ipa: "kʊnʊ nai"
+    pos: "phrase"
+    bases:
+      - { word: "কোনো", ref: "as-0144" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "কোনোবা", reading: "kunubā", kind: "word" }
+      - { id: "c2", word: "কোন", reading: "kun", kind: "word" }
+  - id: "as-3786"
+    target: "একো নাই।"
+    reading: "eku nāi."
+    ipa: "ekʊ nai"
+    pos: "phrase"
+    bases:
+      - { word: "একো", ref: "as-0222" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "কিবা", reading: "kibā", kind: "word" }
+      - { id: "c2", word: "কি", reading: "ki", kind: "word" }

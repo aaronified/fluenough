@@ -1,0 +1,78 @@
+schema: 1
+id: "as-cinema-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3587"
+    target: "অভিনেতা দৃশ্য ভাল কৰে।"
+    reading: "ôbhinetā drixy bhāl kôre."
+    ipa: "ɔbʱineta drixj bʱal kɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "কৰে", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "পৰিচালক", reading: "porisālôk", kind: "word" }
+      - { id: "c2", word: "দৰ্শক", reading: "dôrxôk", kind: "word" }
+  - id: "as-3588"
+    target: "কাহিনী ভাল লাগে।"
+    reading: "kāhini bhāl lāge."
+    ipa: "kahini bʱal laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সংলাপ", reading: "xôṅlāp", kind: "word" }
+      - { id: "c2", word: "ট্ৰেইলাৰ", reading: "treilār", kind: "word" }
+  - id: "as-3589"
+    target: "নায়ক আৰু নায়িকা ধুনীয়া।"
+    reading: "nāyôk āru nāyikā dhuniyā."
+    ipa: "najɔk aɹu najika dʱunija"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "অভিনেত্ৰী", reading: "ôbhinetri", kind: "word" }
+      - { id: "c2", word: "অভিনেতা", reading: "ôbhinetā", kind: "word" }
+  - id: "as-3590"
+    target: "ফিল্ম দেখিলোঁ।"
+    reading: "philm dekhilum̐."
+    ipa: "pʰilm dekʰilʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "দেখিলোঁ", ref: "as-2206" }
+    confusables:
+      - { id: "c1", word: "নাটক", reading: "nātôk", kind: "word" }
+      - { id: "c2", word: "গীত", reading: "git", kind: "word" }
+  - id: "as-3591"
+    target: "দৰ্শক বহুত।"
+    reading: "dôrxôk bohut."
+    ipa: "dɔɹxɔk bohut"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "পুৰস্কাৰ", reading: "purôskār", kind: "word" }
+      - { id: "c2", word: "জেনাৰ", reading: "zenār", kind: "word" }
+  - id: "as-3592"
+    target: "পুৰস্কাৰ পালে।"
+    reading: "purôskār pāle."
+    ipa: "puɹɔskaɹ pale"
+    pos: "phrase"
+    bases:
+      - { word: "পালে", base: "পোৱা", reading: "puwā" }
+    confusables:
+      - { id: "c1", word: "নিৰাশ", reading: "nirāx", kind: "word" }
+      - { id: "c2", word: "আশা", reading: "āxā", kind: "word" }
+  - id: "as-3593"
+    target: "সংলাপ শুনা।"
+    reading: "xôṅlāp xunā."
+    ipa: "sɔŋlap xuna"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "দেখা", reading: "dekhā", kind: "word" }
+      - { id: "c2", word: "পঢ়া", reading: "pôrhā", kind: "word" }
+  - id: "as-3594"
+    target: "চিনেমা হল বহুত ডাঙৰ।"
+    reading: "sinemā hôl bohut dāṅôr."
+    ipa: "sinema hɔl bohut daŋɔɹ"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "মঞ্চ", reading: "môns", kind: "word" }
+      - { id: "c2", word: "হোটেল", reading: "hutel", kind: "word" }

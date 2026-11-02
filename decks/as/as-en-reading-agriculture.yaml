@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-agriculture"
+name: "Assamese reading: agriculture: farms, crops and the harvest"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-farmer-talks"
+    title: "A farmer talks about the season"
+    theme: "agriculture"
+    sentences:
+      - text: "এইবাৰ ধানৰ ফচল ভাল।"
+        reading: "eibār dhānôr phôsôl bhāl."
+      - text: "জুট আৰু চাউল দুয়োটা হ'ল।"
+        reading: "zut āru sāul duyutā hol."
+      - text: "বৰষুণ সময়ত আহিল।"
+        reading: "bôroxun xômôyôt āhil."
+      - text: "এতিয়া ভঁড়ালত ৰাখিম।"
+        reading: "etiyā bhôm̐rālôt rākhim."
+    questions:
+      - id: "as-3552"
+        prompt: { en: "The rice harvest is good this time." }
+        answer: true
+      - id: "as-3553"
+        prompt: { en: "What else grew this season?" }
+        options:
+          - { en: "Jute" }
+          - { en: "Tea" }
+          - { en: "Coffee" }
+        answer: 1
+      - id: "as-3554"
+        prompt: { en: "Where will the farmer keep the harvest?" }
+        options:
+          - { en: "In the granary" }
+          - { en: "In the river" }
+          - { en: "In the sky" }
+        answer: 1
+  - id: "as-market-prices"
+    title: "A crop price board at a market"
+    theme: "agriculture"
+    sentences:
+      - text: "ধান প্ৰতি মণ দুশ টকা।"
+        reading: "dhān proti môn dux tôkā."
+      - text: "আলু প্ৰতি কিলো দহ টকা।"
+        reading: "ālu proti kilo dôh tôkā."
+      - text: "মণ্ডি আজি খোলা।"
+        reading: "mondi āzi khulā."
+      - text: "নতুন দাম কাইলৈ।"
+        reading: "notun dām kāilôi."
+    questions:
+      - id: "as-3555"
+        prompt: { en: "Rice is sold by the kilo." }
+        answer: false
+      - id: "as-3556"
+        prompt: { en: "How much is a kilo of potatoes?" }
+        options:
+          - { en: "Ten rupees" }
+          - { en: "Two hundred rupees" }
+          - { en: "Fifty rupees" }
+        answer: 1
+      - id: "as-3557"
+        prompt: { en: "When is the new price?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Never" }
+        answer: 2

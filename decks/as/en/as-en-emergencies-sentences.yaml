@@ -1,0 +1,54 @@
+schema: 1
+id: "as-en-emergencies-sentences"
+kind: "layer"
+core: "as-emergencies-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emergencies: accidents, fire, help and safety: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3831":
+    native: "Urgent, call an ambulance."
+    bases:
+      "ডাকিব": "to call"
+    confusables:
+      "c1": { why: "The police, not an ambulance." }
+      "c2": { why: "A doctor, who comes after the call." }
+  "as-3832":
+    native: "He was injured."
+    bases:
+      "হ'ল": "to become; to be"
+    confusables:
+      "c1": { why: "Well, the opposite of injured." }
+      "c2": { why: "Safe, the opposite." }
+  "as-3833":
+    native: "The fire is a danger."
+    confusables:
+      "c1": { why: "A flood, another danger." }
+      "c2": { why: "An earthquake, another danger." }
+  "as-3834":
+    native: "I run away from danger."
+    confusables:
+      "c1": { why: "A rescue, the help from outside." }
+      "c2": { why: "Help, a different thing." }
+  "as-3835":
+    native: "Safety is good."
+    confusables:
+      "c1": { why: "Danger, the opposite of safety." }
+      "c2": { why: "Urgent, a different word." }
+  "as-3836":
+    native: "First aid is needed."
+    bases:
+      "প্ৰাথমিক": "first; primary"
+      "চিকিৎসা": "treatment; medical care"
+    confusables:
+      "c1": { why: "Medicine, a different treatment." }
+      "c2": { why: "Medicine, a different word." }
+  "as-3837":
+    native: "The rescue was done."
+    bases:
+      "হ'ল": "to become; to be"
+    confusables:
+      "c1": { why: "An accident, what caused the need." }
+      "c2": { why: "Danger, a related word." }

@@ -1,0 +1,119 @@
+schema: 1
+id: "as-housing"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "housing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3793"
+    target: "ভাড়াঘৰ"
+    reading: "bhārāghôr"
+    ipa: "bʱaɹaɡʱɔɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভাড়াঘৰ ভাল।", reading: "bhārāghôr bhāl.", ipa: "bʱaɹaɡʱɔɹ bʱal" }
+      - { target: "ভাড়াঘৰ বিচাৰোঁ।", reading: "bhārāghôr bisārum̐.", ipa: "bʱaɹaɡʱɔɹ bisaɹʊ̃", bases: [{ word: "বিচাৰোঁ", ref: "as-2300" }] }
+  - id: "as-3794"
+    target: "মালিক"
+    reading: "mālik"
+    ipa: "malik"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মালিক ভাল।", reading: "mālik bhāl.", ipa: "malik bʱal" }
+      - { target: "মালিক আহিছে।", reading: "mālik āhise.", ipa: "malik ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3795"
+    target: "ভাড়াটীয়া"
+    reading: "bhārātiyā"
+    ipa: "bʱaɹatija"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভাড়াটীয়া ভাল।", reading: "bhārātiyā bhāl.", ipa: "bʱaɹatija bʱal" }
+      - { target: "ভাড়াটীয়া আহিছে।", reading: "bhārātiyā āhise.", ipa: "bʱaɹatija ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3796"
+    target: "অগ্ৰিম"
+    reading: "ôgrim"
+    ipa: "ɔɡɹim"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অগ্ৰিম কিমান?", reading: "ôgrim kimān?", ipa: "ɔɡɹim kiman" }
+      - { target: "অগ্ৰিম লাগে।", reading: "ôgrim lāge.", ipa: "ɔɡɹim laɡe" }
+  - id: "as-3797"
+    target: "জায়গা"
+    reading: "zāyôgā"
+    ipa: "zajɔɡa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "জায়গা বহল।", reading: "zāyôgā bôhôl.", ipa: "zajɔɡa bɔhɔl" }
+      - { target: "জায়গা নাই।", reading: "zāyôgā nāi.", ipa: "zajɔɡa nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-3798"
+    target: "বাৰান্দা"
+    reading: "bārāndā"
+    ipa: "baɹanda"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাৰান্দাত বহা।", reading: "bārāndāt bôhā.", ipa: "baɹandat bɔha", bases: [{ word: "বাৰান্দাত", base: "বাৰান্দা", reading: "bārāndā" }] }
+      - { target: "বাৰান্দা ডাঙৰ।", reading: "bārāndā dāṅôr.", ipa: "baɹanda daŋɔɹ" }
+  - id: "as-3799"
+    target: "ছাদ"
+    reading: "sād"
+    ipa: "sad"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ছাদত মানুহ।", reading: "sādôt mānuh.", ipa: "sadɔt manuh", bases: [{ word: "ছাদত", base: "ছাদ", reading: "sād" }] }
+      - { target: "ছাদ নতুন।", reading: "sād notun.", ipa: "sad notun" }
+  - id: "as-3800"
+    target: "গেট"
+    reading: "get"
+    ipa: "ɡet"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গেট বন্ধ।", reading: "get bôndh.", ipa: "ɡet bɔndʱ", bases: [{ word: "বন্ধ", base: "বন্ধ", reading: "bôndh" }] }
+      - { target: "গেট খোলা।", reading: "get khulā.", ipa: "ɡet kʰʊla" }
+  - id: "as-3801"
+    target: "পানী নল"
+    reading: "pāni nôl"
+    ipa: "pani nɔl"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "নল", base: "নল", reading: "nôl" }
+  - id: "as-3802"
+    target: "ভাড়া দিয়া"
+    reading: "bhārā diyā"
+    ipa: "bʱaɹa dija"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-3803"
+    target: "ভাড়া লোৱা"
+    reading: "bhārā luwā"
+    ipa: "bʱaɹa lʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-3804"
+    target: "ঘৰ খালী"
+    reading: "ghôr khāli"
+    ipa: "ɡʱɔɹ kʰali"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }

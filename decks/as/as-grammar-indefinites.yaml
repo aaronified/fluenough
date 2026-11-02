@@ -1,0 +1,62 @@
+schema: 1
+id: "as-grammar-indefinites"
+part: "core"
+kind: "grammar"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "grammar"]
+pattern:
+  slots: ["some one (positive): -বা (-bā)", "none (negative)"]
+  entries:
+    - lemma: "কোন"
+      key: "kon"
+      reading: "kun"
+      ipa: "kʊn"
+      forms:
+        "some one (positive): -বা (-bā)": "কোনোবা"
+        "none (negative)": "কোনেও নাই"
+      readings:
+        "some one (positive): -বা (-bā)": "kunubā"
+        "none (negative)": "kuneu nāi"
+      ipas:
+        "some one (positive): -বা (-bā)": "kʊnʊba"
+        "none (negative)": "kʊneʊ nai"
+    - lemma: "কি"
+      key: "ki"
+      reading: "ki"
+      ipa: "ki"
+      forms:
+        "some one (positive): -বা (-bā)": "কিবা"
+        "none (negative)": "একো নাই"
+      readings:
+        "some one (positive): -বা (-bā)": "kibā"
+        "none (negative)": "eku nāi"
+      ipas:
+        "some one (positive): -বা (-bā)": "kiba"
+        "none (negative)": "ekʊ nai"
+    - lemma: "ক'ত"
+      key: "kot"
+      reading: "kot"
+      ipa: "kot"
+      forms:
+        "some one (positive): -বা (-bā)": "কতোবা"
+        "none (negative)": "কতো নাই"
+      readings:
+        "some one (positive): -বা (-bā)": "kôtubā"
+        "none (negative)": "kôtu nāi"
+      ipas:
+        "some one (positive): -বা (-bā)": "kɔtʊba"
+        "none (negative)": "kɔtʊ nai"
+    - lemma: "কেতিয়া"
+      key: "ketiya"
+      reading: "ketiyā"
+      ipa: "ketija"
+      forms:
+        "some one (positive): -বা (-bā)": "কেতিয়াবা"
+        "none (negative)": "কেতিয়াও নাই"
+      readings:
+        "some one (positive): -বা (-bā)": "ketiyābā"
+        "none (negative)": "ketiyāu nāi"
+      ipas:
+        "some one (positive): -বা (-bā)": "ketijaba"
+        "none (negative)": "ketijaʊ nai"

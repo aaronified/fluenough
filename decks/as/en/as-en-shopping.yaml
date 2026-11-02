@@ -1,0 +1,164 @@
+schema: 1
+id: "as-en-shopping"
+kind: "layer"
+core: "as-shopping"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Shopping"
+license: "CC-BY-SA-4.0"
+description: "Buying and selling: the price, the sale, the size, choosing and paying. The words for a shop and its customers. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2637":
+    native: "to sell"
+    notes:
+      "n1": "The opposite of কিনা (kinā), to buy. A seller is a দোকানী (dukāni)."
+    examples:
+      "দোকানী চাউল বেচে।": { native: "The shopkeeper sells rice.", bases: { "বেচে": "to sell" } }
+      "আমি পুৰণি কিতাপ বেচিছোঁ।": { native: "We have sold old books.", bases: { "বেচিছোঁ": "to sell" } }
+  "as-2638":
+    native: "customer"
+    notes:
+      "n1": "The person who buys in a shop."
+    examples:
+      "গ্ৰাহক বহুত।": "There are many customers."
+      "গ্ৰাহক দাম সুধিছে।": { native: "The customer has asked the price.", bases: { "সুধিছে": "to ask" } }
+  "as-2639":
+    native: "price; value (formal)"
+    notes:
+      "n1": "The formal word for price; in speech people say দাম (dām)."
+    examples:
+      "এইটো মূল্য ভাল।": "This price is good."
+      "মূল্য বেছি।": "The price is too high."
+  "as-2640":
+    native: "discount"
+    notes:
+      "n1": "Said the same as the word for sir, ছাৰ (sār), but a different word."
+    examples:
+      "আজি ছাড় আছে।": { native: "There is a discount today.", bases: { "আছে": "to be; there is; to have" } }
+      "ছাড় বহুত।": "The discount is a lot."
+  "as-2641":
+    native: "cheap"
+    notes:
+      "n1": "The opposite is দামী (dāmi), expensive."
+    examples:
+      "এইটো সস্তা।": "This is cheap."
+      "বজাৰত সস্তা।": "It is cheap at the market."
+  "as-2642":
+    native: "expensive"
+    notes:
+      "n1": "The opposite of সস্তা (xôstā), cheap."
+    examples:
+      "এইটো দামী।": "This is expensive."
+      "দামী কাপোৰ।": "Expensive clothes."
+  "as-2643":
+    native: "back; back again; in change"
+    notes:
+      "n1": "Also the change given back after a payment: ফেৰত দিয়া (pherôt diyā), to give change."
+    examples:
+      "মই ফেৰত দিম।": "I will give it back."
+      "খুচুৰা ফেৰত আহিল।": "The change came back."
+  "as-2644":
+    native: "other; another"
+    notes:
+      "n1": "For something other than the one you have."
+    examples:
+      "আন কাপোৰ নাই।": "There is no other cloth."
+      "আন এটা দিয়ক।": "Please give me another one."
+  "as-2645":
+    native: "to choose; to select"
+    notes:
+      "n1": "Before buying, you বাছা (bāsā) what you want."
+    examples:
+      "মই ভাল মাপ বাছোঁ।": { native: "I choose the right size.", bases: { "বাছোঁ": "to choose; to select" } }
+      "তুমি কোনটো বাছা?": "Which one do you choose?"
+  "as-2646":
+    native: "size; measure"
+    notes:
+      "n1": "The size of a shirt or shoes."
+    examples:
+      "এইটোৰ মাপ কিমান?": "What is the size of this?"
+      "মাপ ঠিক আছে।": { native: "The size is right.", bases: { "আছে": "to be; there is; to have" } }
+  "as-2647":
+    native: "size; shape"
+    notes:
+      "n1": "The size of a thing, its bigness or smallness. For clothes use মাপ (māp)."
+    examples:
+      "ডাঙৰ আকাৰ।": "A large size."
+      "সৰু আকাৰ।": "A small size."
+  "as-2648":
+    native: "sale"
+    notes:
+      "n1": "When the shop sells a lot, or sells things cheaply."
+    examples:
+      "আজি বিক্ৰী আছে।": { native: "There is a sale today.", bases: { "আছে": "to be; there is; to have" } }
+      "বিক্ৰী বহুত।": "There is a lot of selling."
+  "as-2649":
+    native: "offer; deal"
+    notes:
+      "n1": "A special price for a short time."
+    examples:
+      "এইটো অফাৰ ভাল।": "This offer is good."
+      "অফাৰ এতিয়া আছে।": { native: "The offer is on now.", bases: { "আছে": "to be; there is; to have" } }
+  "as-2650":
+    native: "cash"
+    notes:
+      "n1": "Money in notes and coins, paid at once."
+    examples:
+      "নগদ দিব পাৰিবা?": { native: "Can you pay in cash?", bases: { "পাৰিবা": "to be able; can" } }
+      "মই নগদ দিম।": "I will pay in cash."
+  "as-2651":
+    native: "card (bank or shop card)"
+    notes:
+      "n1": "A plastic card, for a bank or a shop."
+    examples:
+      "কাৰ্ড আছে নেকি?": { native: "Do you have a card?", bases: { "আছে": "to be; there is; to have" } }
+      "কাৰ্ডত দিম।": { native: "I will pay by card.", bases: { "কাৰ্ডত": "card (bank or shop card)" } }
+  "as-2652":
+    native: "online"
+    notes:
+      "n1": "On the internet. Written as said in English."
+    examples:
+      "অনলাইনত কিনোঁ।": { native: "I buy online.", bases: { "অনলাইনত": "online" } }
+      "অনলাইনত অফাৰ আছে।": { native: "There is an offer online.", bases: { "অনলাইনত": "online", "আছে": "to be; there is; to have" } }
+  "as-2653":
+    native: "plastic"
+    notes:
+      "n1": "Plastic bags and boxes. Written as said in English."
+    examples:
+      "প্লাষ্টিকৰ মোনা।": { native: "A plastic bag.", bases: { "প্লাষ্টিকৰ": "plastic" } }
+      "প্লাষ্টিক ভাল নহয়।": "Plastic is not good."
+  "as-2654":
+    native: "weight"
+    notes:
+      "n1": "How heavy a thing is. A kilo is a kind of weight."
+    examples:
+      "ওজন ঠিক।": "The weight is right."
+      "ওজন বেছি।": "The weight is too much."
+  "as-2655":
+    native: "profit; gain"
+    notes:
+      "n1": "What a seller keeps after paying for the goods."
+    examples:
+      "দোকানীৰ লাভ বেছি।": "The shopkeeper makes a big profit."
+      "আজি লাভ নাই।": "There is no profit today."
+  "as-2656":
+    native: "loss; damage"
+    notes:
+      "n1": "The opposite of লাভ (lāb)."
+    examples:
+      "এইটোত ক্ষতি।": "There is a loss on this."
+      "ক্ষতি বহুত।": "The loss is a lot."
+  "as-2657":
+    native: "full"
+    notes:
+      "n1": "Used of a full bag or box."
+    examples:
+      "মোনা পূৰণ।": "The bag is full."
+      "বাকচ পূৰণ।": "The box is full."
+  "as-2658":
+    native: "balance; what is still owed"
+    notes:
+      "n1": "Money still owed after a part payment."
+    examples:
+      "বাকী কিমান?": "How much is still owed?"
+      "মোৰ বাকী নাই।": "I owe nothing."

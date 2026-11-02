@@ -1,0 +1,42 @@
+schema: 1
+id: "as-en-grammar-reported-speech-sentences"
+kind: "layer"
+core: "as-grammar-reported-speech-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "He said that: reported speech: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3990":
+    native: "He says that it will rain today."
+    bases:
+      "হ'ব": "to become; to be"
+    confusables:
+      "c1": { why: "The past of say: he said." }
+      "c2": { why: "The perfect of hear, a different verb." }
+  "as-3991":
+    native: "She thinks that I will go."
+    confusables:
+      "c1": { why: "The past of think, a different time." }
+      "c2": { why: "Knows, a different mental verb." }
+  "as-3992":
+    native: "I know that you will come."
+    confusables:
+      "c1": { why: "The past of know, a different time." }
+      "c2": { why: "Understands, a different verb." }
+  "as-3993":
+    native: "He said that he would go tomorrow."
+    confusables:
+      "c1": { why: "The present of say, not the past." }
+      "c2": { why: "Hears, a different verb." }
+  "as-3994":
+    native: "He had heard that the bus had left."
+    confusables:
+      "c1": { why: "The present of hear." }
+      "c2": { why: "The past of understand, a different verb." }
+  "as-3995":
+    native: "I understood that he is right."
+    confusables:
+      "c1": { why: "Thought that, a different verb." }
+      "c2": { why: "Said that, a different verb." }

@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-weather-sentences"
+kind: "layer"
+core: "as-weather-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-2566":
+    native: "The weather is good today, and there is sun."
+    bases:
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Rain is the opposite of the sun, so the wrong weather." }
+      "c2": { why: "Cold season, which does not match good weather today." }
+  "as-2567":
+    native: "There is a lot of rain and the sky is cloudy."
+    confusables:
+      "c1": { why: "Sunshine, the opposite of rain and cloud." }
+      "c2": { why: "Dry, the opposite of heavy rain." }
+  "as-2568":
+    native: "In winter there is a lot of wind."
+    confusables:
+      "c1": { why: "Summer, the wrong season for this sentence." }
+      "c2": { why: "Spring, a different season." }
+  "as-2569":
+    native: "The lightning flashes and the thunder rolls."
+    bases:
+      "চমকিছে": "to flash"
+    confusables:
+      "c1": { why: "A rainbow comes after the rain, not with thunder." }
+      "c2": { why: "The moon, not the storm." }
+  "as-2570":
+    native: "After the rain a rainbow comes out."
+    bases:
+      "ওলায়": "to come out"
+    confusables:
+      "c1": { why: "A storm, not a rainbow." }
+      "c2": { why: "Stars show at night, not after rain." }
+  "as-2571":
+    native: "In summer there is a lot of sweat."
+    confusables:
+      "c1": { why: "The cold season, the opposite of this sentence." }
+      "c2": { why: "Warmth, but not sweat." }
+  "as-2572":
+    native: "Snow stays on the hills."
+    confusables:
+      "c1": { why: "A road, not snow on the hills." }
+      "c2": { why: "Hail falls from the sky, it does not stay on the hills." }
+  "as-2573":
+    native: "This is dry soil."
+    confusables:
+      "c1": { why: "The opposite: wet." }
+      "c2": { why: "Dust, not soil." }
+  "as-2574":
+    native: "In the flood there is a lot of water in the river."
+    confusables:
+      "c1": { why: "A drought, the opposite of a flood." }
+      "c2": { why: "Hail, not water in a river." }
+  "as-2575":
+    native: "Now there is warmth."
+    bases:
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "Cold, the opposite of warmth." }
+      "c2": { why: "Heat, a stronger word than warmth." }

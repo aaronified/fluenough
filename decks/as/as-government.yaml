@@ -1,0 +1,168 @@
+schema: 1
+id: "as-government"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "government"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3390"
+    target: "সৰকাৰ"
+    reading: "xôrôkār"
+    ipa: "sɔɹɔkaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সৰকাৰ ডাঙৰ।", reading: "xôrôkār dāṅôr.", ipa: "sɔɹɔkaɹ daŋɔɹ" }
+      - { target: "সৰকাৰ আহিছে।", reading: "xôrôkār āhise.", ipa: "sɔɹɔkaɹ ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3391"
+    target: "সৰকাৰী"
+    reading: "xôrôkāri"
+    ipa: "sɔɹɔkaɹi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সৰকাৰী কাম।", reading: "xôrôkāri kām.", ipa: "sɔɹɔkaɹi kam" }
+      - { target: "এইটো সৰকাৰী।", reading: "eitu xôrôkāri.", ipa: "eitʊ sɔɹɔkaɹi" }
+  - id: "as-3392"
+    target: "অফিচাৰ"
+    reading: "ôphisār"
+    ipa: "ɔpʰisaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অফিচাৰ আহিছে।", reading: "ôphisār āhise.", ipa: "ɔpʰisaɹ ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "অফিচাৰ ভাল।", reading: "ôphisār bhāl.", ipa: "ɔpʰisaɹ bʱal" }
+  - id: "as-3393"
+    target: "নিয়ম"
+    reading: "niyôm"
+    ipa: "nijɔm"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নিয়ম মানা।", reading: "niyôm mānā.", ipa: "nijɔm mana", bases: [{ word: "মানা", base: "মানা", reading: "mānā" }] }
+      - { target: "নিয়ম বহুত।", reading: "niyôm bohut.", ipa: "nijɔm bohut" }
+  - id: "as-3394"
+    target: "প্ৰমাণপত্ৰ"
+    reading: "prômānôpôtr"
+    ipa: "pɹɔmanɔpɔtɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰমাণপত্ৰ লাগে।", reading: "prômānôpôtr lāge.", ipa: "pɹɔmanɔpɔtɹ laɡe" }
+      - { target: "প্ৰমাণপত্ৰ আছে।", reading: "prômānôpôtr āse.", ipa: "pɹɔmanɔpɔtɹ ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-3395"
+    target: "নাগৰিক"
+    reading: "nāgorik"
+    ipa: "naɡoɹik"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নাগৰিক ভাল।", reading: "nāgorik bhāl.", ipa: "naɡoɹik bʱal" }
+      - { target: "নাগৰিক বহুত।", reading: "nāgorik bohut.", ipa: "naɡoɹik bohut" }
+  - id: "as-3396"
+    target: "মন্ত্ৰী"
+    reading: "montri"
+    ipa: "montɹi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মন্ত্ৰী আহিছে।", reading: "montri āhise.", ipa: "montɹi ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "মন্ত্ৰী ব্যস্ত।", reading: "montri byôst.", ipa: "montɹi bjɔst" }
+  - id: "as-3397"
+    target: "সংসদ"
+    reading: "xôṅxôd"
+    ipa: "sɔŋsɔd"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সংসদ ডাঙৰ।", reading: "xôṅxôd dāṅôr.", ipa: "sɔŋsɔd daŋɔɹ" }
+      - { target: "সংসদত মানুহ।", reading: "xôṅxôdôt mānuh.", ipa: "sɔŋsɔdɔt manuh", bases: [{ word: "সংসদত", base: "সংসদ", reading: "xôṅxôd" }] }
+  - id: "as-3398"
+    target: "কেন্দ্ৰ"
+    reading: "kendr"
+    ipa: "kendɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কেন্দ্ৰ ডাঙৰ।", reading: "kendr dāṅôr.", ipa: "kendɹ daŋɔɹ" }
+      - { target: "কেন্দ্ৰত অফিচ।", reading: "kendrôt ôphis.", ipa: "kendɹɔt ɔpʰis", bases: [{ word: "কেন্দ্ৰত", base: "কেন্দ্ৰ", reading: "kendr" }] }
+  - id: "as-3399"
+    target: "আবেদনপত্ৰ"
+    reading: "ābedônôpôtr"
+    ipa: "abedɔnɔpɔtɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আবেদনপত্ৰ লাগে।", reading: "ābedônôpôtr lāge.", ipa: "abedɔnɔpɔtɹ laɡe" }
+      - { target: "আবেদনপত্ৰ পূৰণ কৰা।", reading: "ābedônôpôtr purôn kôrā.", ipa: "abedɔnɔpɔtɹ puɹɔn kɔɹa" }
+  - id: "as-3400"
+    target: "অনুমতি"
+    reading: "ônumoti"
+    ipa: "ɔnumoti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অনুমতি আছে।", reading: "ônumoti āse.", ipa: "ɔnumoti ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "অনুমতি নাই।", reading: "ônumoti nāi.", ipa: "ɔnumoti nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-3401"
+    target: "লাইচেন্স"
+    reading: "lāisenx"
+    ipa: "laisens"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "লাইচেন্স আছে নেকি?", reading: "lāisenx āse neki?", ipa: "laisens ase neki", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "লাইচেন্স নাই।", reading: "lāisenx nāi.", ipa: "laisens nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-3402"
+    target: "ভোটাৰ"
+    reading: "bhutār"
+    ipa: "bʱʊtaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভোটাৰ বহুত।", reading: "bhutār bohut.", ipa: "bʱʊtaɹ bohut" }
+      - { target: "ভোটাৰ আহিছে।", reading: "bhutār āhise.", ipa: "bʱʊtaɹ ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3403"
+    target: "বিধায়ক"
+    reading: "bidhāyôk"
+    ipa: "bidʱajɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বিধায়ক আহিছে।", reading: "bidhāyôk āhise.", ipa: "bidʱajɔk ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "বিধায়ক ব্যস্ত।", reading: "bidhāyôk byôst.", ipa: "bidʱajɔk bjɔst" }
+  - id: "as-3404"
+    target: "অনুমোদন কৰা"
+    reading: "ônumudôn kôrā"
+    ipa: "ɔnumʊdɔn kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "অনুমোদন", base: "অনুমোদন", reading: "ônumudôn" }
+  - id: "as-3405"
+    target: "নাগৰিকত্ব"
+    reading: "nāgorikôtt"
+    ipa: "naɡoɹikɔtt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নাগৰিকত্ব ভাল।", reading: "nāgorikôtt bhāl.", ipa: "naɡoɹikɔtt bʱal" }
+      - { target: "নাগৰিকত্ব আছে।", reading: "nāgorikôtt āse.", ipa: "naɡoɹikɔtt ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }

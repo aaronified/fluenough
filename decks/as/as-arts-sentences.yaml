@@ -1,0 +1,82 @@
+schema: 1
+id: "as-arts-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3617"
+    target: "গায়ক গীত গায়।"
+    reading: "gāyôk git gāy."
+    ipa: "ɡajɔk ɡit ɡaj"
+    pos: "phrase"
+    bases:
+      - { word: "গায়", ref: "as-2214" }
+    confusables:
+      - { id: "c1", word: "বাদক", reading: "bādôk", kind: "word" }
+      - { id: "c2", word: "শিল্পী", reading: "xilpi", kind: "word" }
+  - id: "as-3618"
+    target: "শিল্পী ছবি আঁকে।"
+    reading: "xilpi sobi ām̐ke."
+    ipa: "xilpi sobi ãke"
+    pos: "phrase"
+    bases:
+      - { word: "আঁকে", ref: "as-2774" }
+    confusables:
+      - { id: "c1", word: "বাদক", reading: "bādôk", kind: "word" }
+      - { id: "c2", word: "গায়ক", reading: "gāyôk", kind: "word" }
+  - id: "as-3619"
+    target: "মঞ্চত নৃত্য।"
+    reading: "mônsôt nrity."
+    ipa: "mɔnsɔt nritj"
+    pos: "phrase"
+    bases:
+      - { word: "মঞ্চত", ref: "as-3608" }
+    confusables:
+      - { id: "c1", word: "প্ৰদৰ্শনী", reading: "prôdôrxoni", kind: "word" }
+      - { id: "c2", word: "ভাস্কৰ্য", reading: "bhāskôrz", kind: "word" }
+  - id: "as-3620"
+    target: "সুৰ মধুৰ।"
+    reading: "xur modhur."
+    ipa: "suɹ modʱuɹ"
+    pos: "phrase"
+    bases:
+      - { word: "মধুৰ", base: "মধুৰ", reading: "modhur" }
+    confusables:
+      - { id: "c1", word: "তাল", reading: "tāl", kind: "word" }
+      - { id: "c2", word: "ডাঙৰ", reading: "dāṅôr", kind: "word" }
+  - id: "as-3621"
+    target: "তাল ঠিক।"
+    reading: "tāl thik."
+    ipa: "tal tʰik"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সুৰ", reading: "xur", kind: "word" }
+      - { id: "c2", word: "কলা", reading: "kôlā", kind: "word" }
+  - id: "as-3622"
+    target: "প্ৰদৰ্শনী ভাল।"
+    reading: "prôdôrxoni bhāl."
+    ipa: "pɹɔdɔɹxoni bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "মঞ্চ", reading: "môns", kind: "word" }
+      - { id: "c2", word: "চিত্ৰকলা", reading: "sitrôkôlā", kind: "word" }
+  - id: "as-3623"
+    target: "তেওঁৰ প্ৰতিভা আছে।"
+    reading: "teum̐r protibhā āse."
+    ipa: "teʊ̃ɹ pɹotibʱa ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "শিল্পী", reading: "xilpi", kind: "word" }
+      - { id: "c2", word: "গায়ক", reading: "gāyôk", kind: "word" }
+  - id: "as-3624"
+    target: "তুলি নতুন।"
+    reading: "tuli notun."
+    ipa: "tuli notun"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ৰং", reading: "rôṅ", kind: "word" }
+      - { id: "c2", word: "কাগজ", reading: "kāgôz", kind: "word" }

@@ -1,0 +1,71 @@
+schema: 1
+id: "as-weddings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3693"
+    target: "কইনা আৰু ডেকা ধুনীয়া।"
+    reading: "koinā āru dekā dhuniyā."
+    ipa: "koina aɹu deka dʱunija"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "নিমন্ত্ৰিত", reading: "nimontrit", kind: "word" }
+      - { id: "c2", word: "বৰযাত্ৰী", reading: "bôrôzātri", kind: "word" }
+  - id: "as-3694"
+    target: "পুৰোহিত আশীৰ্বাদ দিলে।"
+    reading: "puruhit āxirbād dile."
+    ipa: "puɹʊhit axiɹɹad dile"
+    pos: "phrase"
+    bases:
+      - { word: "দিলে", ref: "as-2218" }
+    confusables:
+      - { id: "c1", word: "সাক্ষী", reading: "xākkhi", kind: "word" }
+      - { id: "c2", word: "ৰীতি", reading: "riti", kind: "word" }
+  - id: "as-3695"
+    target: "মণ্ডপত মালা আছে।"
+    reading: "môndôpôt mālā āse."
+    ipa: "mɔndɔpɔt mala ase"
+    pos: "phrase"
+    bases:
+      - { word: "মণ্ডপত", ref: "as-3686" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ফুল", reading: "phul", kind: "word" }
+      - { id: "c2", word: "মণ্ডপ", reading: "môndôp", kind: "word" }
+  - id: "as-3696"
+    target: "শুভ দিন।"
+    reading: "xubh din."
+    ipa: "xubʱ din"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "অশুভ", reading: "ôxubh", kind: "word" }
+      - { id: "c2", word: "শুভেচ্ছা", reading: "xubhessā", kind: "word" }
+  - id: "as-3697"
+    target: "বিবাহ শুভ।"
+    reading: "bibāh xubh."
+    ipa: "bibah xubʱ"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বিয়া", reading: "biyā", kind: "word" }
+      - { id: "c2", word: "বিয়া কৰা", reading: "biyā kôrā", kind: "word" }
+  - id: "as-3698"
+    target: "বৰযাত্ৰী আহিছে।"
+    reading: "bôrôzātri āhise."
+    ipa: "bɔɹɔzatɹi ahise"
+    pos: "phrase"
+    bases:
+      - { word: "আহিছে", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "কইনা", reading: "koinā", kind: "word" }
+      - { id: "c2", word: "নিমন্ত্ৰিত", reading: "nimontrit", kind: "word" }
+  - id: "as-3699"
+    target: "শুভেচ্ছা লোৱা।"
+    reading: "xubhessā luwā."
+    ipa: "xubʱessa lʊwa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "আশীৰ্বাদ", reading: "āxirbād", kind: "word" }
+      - { id: "c2", word: "সাক্ষী", reading: "xākkhi", kind: "word" }

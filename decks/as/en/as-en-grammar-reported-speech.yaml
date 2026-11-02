@@ -1,0 +1,23 @@
+schema: 1
+id: "as-en-grammar-reported-speech"
+kind: "layer"
+core: "as-grammar-reported-speech"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "He said that: reported speech"
+license: "CC-BY-SA-4.0"
+description: "How Assamese reports what someone said or thought: the words are put before বুলি (buli), that, and the verb of saying, thinking or knowing follows. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "He said that: reported speech"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "now or in general: বুলি (buli) and the present verb": "that (present)"
+    "in the past: বুলি (buli) and the past verb": "that (past)"
+  entries:
+    "kua": "to say; to tell"
+    "bhaba": "to think"
+    "zona": "to know"
+    "buza": "to understand"
+    "xuna": "to hear; to listen"
+  notes: "To report what someone said or thought, the reported words come first, and then বুলি (buli), that, and the verb: আজি বৰষুণ হ'ব বুলি সি কয় (āzi bôrôxun hôb buli xi kôy), he says that it will rain today. The reporting verb takes the same person ending as usual."

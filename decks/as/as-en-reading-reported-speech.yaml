@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-reported-speech"
+name: "Assamese reading: he said that: reported speech"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-he-said-that"
+    title: "Telling someone what a third person said"
+    sentences:
+      - text: "তেওঁ আহিব বুলি সি কৈছিল।"
+        reading: "teum̐ āhibô buli si kôisil."
+      - text: "সি মিছা বুলি মই ভাবিছিলোঁ।"
+        reading: "si misā buli moi bhābisilum̐."
+      - text: "তুমি আহিবা বুলি তাই জানিছিল।"
+        reading: "tumi āhibā buli tāi zānisil."
+      - text: "এইটো ঠিক বুলি মই বুজিছোঁ।"
+        reading: "eitu thik buli moi buzisum̐."
+    questions:
+      - id: "as-3996"
+        prompt: { en: "He said that he would come." }
+        answer: true
+      - id: "as-3997"
+        prompt: { en: "What did the speaker think?" }
+        options:
+          - { en: "That he is honest" }
+          - { en: "That he is lying" }
+          - { en: "That he is ill" }
+        answer: 2
+      - id: "as-3998"
+        prompt: { en: "What does the speaker understand?" }
+        options:
+          - { en: "Nothing" }
+          - { en: "That it is right" }
+          - { en: "The price" }
+        answer: 2
+  - id: "as-message-thread"
+    title: "A message thread passing on what someone said"
+    sentences:
+      - text: "বাছ দেৰি বুলি বন্ধুৱে কয়।"
+        reading: "bās deri buli bondhuwe kôy."
+      - text: "ঠিক আছে বুলি মই কৈছিলোঁ।"
+        reading: "thik āse buli moi kôisilum̐."
+      - text: "আমি যাম বুলি তাই শুনিছে।"
+        reading: "āmi zām buli tāi xunise."
+      - text: "বাছ দেৰি বুলি এতিয়া সকলোৱে জানে।"
+        reading: "bās deri buli etiyā sôkôluwe zāne."
+    questions:
+      - id: "as-3999"
+        prompt: { en: "The friend says the bus is late." }
+        answer: true
+      - id: "as-4000"
+        prompt: { en: "What did the writer say?" }
+        options:
+          - { en: "It is all right" }
+          - { en: "It is wrong" }
+          - { en: "It is late" }
+        answer: 1
+      - id: "as-4001"
+        prompt: { en: "Who knows everything now?" }
+        options:
+          - { en: "Nobody" }
+          - { en: "Everyone" }
+          - { en: "The bus" }
+        answer: 2

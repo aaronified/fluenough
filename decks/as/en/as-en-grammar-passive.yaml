@@ -1,0 +1,26 @@
+schema: 1
+id: "as-en-grammar-passive"
+kind: "layer"
+core: "as-grammar-passive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "It is done: the passive"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says that something is done, without saying by whom: the verb stem and হয় (hôy), is, or হ'ল (hôl), was, after it. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "It is done: the passive"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "is done: -া হয় (-ā hôy)": "is done (now)"
+    "was done: -া হ'ল (-ā hôl)": "was done (before now)"
+  entries:
+    "kora": "to do"
+    "khua": "to eat; to drink"
+    "likha": "to write"
+    "porha": "to read; to study"
+    "kina": "to buy"
+    "diya": "to give"
+    "xuna": "to hear; to listen"
+    "dekha": "to see; to look at"
+  notes: "The passive puts the verb's stem before হয় (hôy), it is, or হ'ল (hôl), it was: চাউল খোৱা হয় (sāul khuwā hôy), rice is eaten; এইটো কিতাপ লিখা হ'ল (eitu kitāp likhā hôl), this book was written. Nobody is named as the doer."

@@ -1,0 +1,53 @@
+schema: 1
+id: "as-en-grammar-relative-sentences"
+kind: "layer"
+core: "as-grammar-relative-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Who, which: the relative clause: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3230":
+    native: "The man who has come is my elder brother."
+    bases:
+      "যি": "who; which (relative)"
+    confusables:
+      "c1": { why: "The perfect for I, not a relative clause." }
+      "c2": { why: "The present for I go." }
+  "as-3231":
+    native: "The book which is good, that one I buy."
+    bases:
+      "যি": "who; which (relative)"
+    confusables:
+      "c1": { why: "The perfect: I have bought." }
+      "c2": { why: "The future: I will buy." }
+  "as-3232":
+    native: "The house in which I live is big."
+    bases:
+      "যি": "who; which (relative)"
+    confusables:
+      "c1": { why: "The house itself, not the relative clause." }
+      "c2": { why: "A market, not the house." }
+  "as-3233":
+    native: "The bus that is here is new."
+    bases:
+      "যি": "who; which (relative)"
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "A house, not a bus." }
+      "c2": { why: "A market, not a bus." }
+  "as-3234":
+    native: "The one who goes to the market is my friend."
+    bases:
+      "যি": "who; which (relative)"
+    confusables:
+      "c1": { why: "The present for I go." }
+      "c2": { why: "The future: he will go." }
+  "as-3235":
+    native: "He who reads the book is a student."
+    bases:
+      "যি": "who; which (relative)"
+    confusables:
+      "c1": { why: "The perfect: he has read." }
+      "c2": { why: "The future: he will read." }

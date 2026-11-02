@@ -1,0 +1,79 @@
+schema: 1
+id: "as-grammar-before-after-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3517"
+    target: "খোৱাৰ আগতে হাত ধোৱা।"
+    reading: "khuwār āgôte hāt dhuwā."
+    ipa: "kʰʊwaɹ aɡɔte hat dʱʊwa"
+    pos: "phrase"
+    bases:
+      - { word: "খোৱাৰ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "শোৱাৰ", reading: "xuwār", kind: "form" }
+      - { id: "c2", word: "লোৱাৰ", reading: "luwār", kind: "form" }
+  - id: "as-3518"
+    target: "শোৱাৰ আগতে পানী খোৱা।"
+    reading: "xuwār āgôte pāni khuwā."
+    ipa: "xʊwaɹ aɡɔte pani kʰʊwa"
+    pos: "phrase"
+    bases:
+      - { word: "শোৱাৰ", ref: "as-0379" }
+    confusables:
+      - { id: "c1", word: "কৰাৰ", reading: "kôrār", kind: "form" }
+      - { id: "c2", word: "আহাৰ", reading: "āhār", kind: "form" }
+  - id: "as-3519"
+    target: "কামৰ পাছত চাহ খাওঁ।"
+    reading: "kāmôr pāsôt sāh khāum̐."
+    ipa: "kamɔɹ pasɔt sah kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "কামৰ", ref: "as-0120" }
+      - { word: "খাওঁ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "কামৰ আগতে", reading: "kāmôr āgôte", kind: "form" }
+      - { id: "c2", word: "কাম", reading: "kām", kind: "word" }
+  - id: "as-3520"
+    target: "পঢ়াৰ পাছত খেল।"
+    reading: "pôrhār pāsôt khel."
+    ipa: "pɔɹaɹ pasɔt kʰel"
+    pos: "phrase"
+    bases:
+      - { word: "পঢ়াৰ", ref: "as-2203" }
+    confusables:
+      - { id: "c1", word: "পঢ়াৰ আগতে", reading: "pôrhār āgôte", kind: "form" }
+      - { id: "c2", word: "দিয়াৰ", reading: "diyār", kind: "form" }
+  - id: "as-3521"
+    target: "যোৱাৰ আগতে কিতাপ লোৱা।"
+    reading: "zuwār āgôte kitāp luwā."
+    ipa: "zʊwaɹ aɡɔte kitap lʊwa"
+    pos: "phrase"
+    bases:
+      - { word: "যোৱাৰ", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "আহাৰ", reading: "āhār", kind: "form" }
+      - { id: "c2", word: "ধোৱাৰ", reading: "dhuwār", kind: "form" }
+  - id: "as-3522"
+    target: "আহাৰ আগতে ফোন কৰিবা।"
+    reading: "āhār āgôte phon koribā."
+    ipa: "ahaɹ aɡɔte pʰʊn koɹiba"
+    pos: "phrase"
+    bases:
+      - { word: "কৰিবা", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "যোৱাৰ", reading: "zuwār", kind: "form" }
+      - { id: "c2", word: "ৰান্ধাৰ", reading: "rāndhār", kind: "form" }
+  - id: "as-3523"
+    target: "ৰান্ধাৰ আগতে বাচন ধোৱা।"
+    reading: "rāndhār āgôte bāsôn dhuwā."
+    ipa: "ɹandʱaɹ aɡɔte basɔn dʱʊwa"
+    pos: "phrase"
+    bases:
+      - { word: "ৰান্ধাৰ", ref: "as-2209" }
+    confusables:
+      - { id: "c1", word: "উঠাৰ", reading: "uthār", kind: "form" }
+      - { id: "c2", word: "দিয়াৰ", reading: "diyār", kind: "form" }

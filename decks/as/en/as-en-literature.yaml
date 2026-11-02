@@ -1,0 +1,135 @@
+schema: 1
+id: "as-en-literature"
+kind: "layer"
+core: "as-literature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Literature: books, poems and writers"
+license: "CC-BY-SA-4.0"
+description: "Books and poems in Assamese: the writer and the reader, the novel and the poem, the chapter and the meaning of a word. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-4002":
+    native: "literature"
+    notes:
+      "n1": "Written works of a language: poems, stories, plays and essays."
+    examples:
+      "সাহিত্য ভাল।": "Literature is good."
+      "সাহিত্য পঢ়া।": "To read literature."
+  "as-4003":
+    native: "poem"
+    notes:
+      "n1": "A piece of writing in lines, often with rhythm and rhyme."
+    examples:
+      "কবিতা ধুনীয়া।": "The poem is lovely."
+      "কবিতা লিখিছোঁ।": "I have written a poem."
+  "as-4004":
+    native: "poet"
+    notes:
+      "n1": "A person who writes poems."
+    examples:
+      "কবি ভাল।": "The poet is good."
+      "কবি আহিছে।": "The poet has come."
+  "as-4005":
+    native: "book; text (formal)"
+    notes:
+      "n1": "A book, in the formal sense. The everyday word is কিতাপ (kitāp)."
+    examples:
+      "গ্ৰন্থ পুৰণি।": "The book is old."
+      "গ্ৰন্থ বহুত।": "There are many books."
+  "as-4006":
+    native: "novel"
+    notes:
+      "n1": "A long story in book form."
+    examples:
+      "উপন্যাস দীঘল।": "The novel is long."
+      "উপন্যাস পঢ়িছোঁ।": "I have read a novel."
+  "as-4007":
+    native: "rhythm; metre"
+    notes:
+      "n1": "The beat of the words in a poem."
+    examples:
+      "ছন্দ ভাল।": "The rhythm is good."
+      "ছন্দ শুনা।": "To hear the rhythm."
+  "as-4008":
+    native: "letter (of the alphabet)"
+    notes:
+      "n1": "One letter of the writing system."
+    examples:
+      "অক্ষৰ সৰু।": "The letter is small."
+      "অক্ষৰ বহুত।": "There are many letters."
+  "as-4009":
+    native: "word"
+    notes:
+      "n1": "A single word in a language. The meaning is অৰ্থ (ôrthô)."
+    examples:
+      "শব্দ ভাল।": "The word is good."
+      "শব্দ নতুন।": "The word is new."
+  "as-4010":
+    native: "meaning"
+    notes:
+      "n1": "What a word or a sentence means."
+    examples:
+      "অৰ্থ কি?": "What is the meaning?"
+      "অৰ্থ ঠিক।": "The meaning is right."
+  "as-4011":
+    native: "translation"
+    notes:
+      "n1": "The rendering of words from one language into another."
+    examples:
+      "অনুবাদ ভাল।": "The translation is good."
+      "অনুবাদ কৰা।": "To translate."
+  "as-4012":
+    native: "publisher"
+    notes:
+      "n1": "The company that prints and sells books."
+    examples:
+      "প্ৰকাশক ভাল।": "The publisher is good."
+      "প্ৰকাশক আহিছে।": "The publisher has come."
+  "as-4013":
+    native: "chapter"
+    notes:
+      "n1": "One section of a book."
+    examples:
+      "অধ্যায় এক।": "Chapter one."
+      "অধ্যায় শেষ।": { native: "The chapter is over.", bases: { "শেষ": "end; last; finish" } }
+  "as-4014":
+    native: "edition"
+    notes:
+      "n1": "One printing or version of a book."
+    examples:
+      "সংস্কৰণ নতুন।": "The edition is new."
+      "প্ৰথম সংস্কৰণ।": { native: "The first edition.", bases: { "প্ৰথম": "first" } }
+  "as-4015":
+    native: "reader"
+    notes:
+      "n1": "A person who reads a book."
+    examples:
+      "পাঠক বহুত।": "There are many readers."
+      "পাঠক আহিছে।": "The reader has come."
+  "as-4016":
+    native: "composition; writing"
+    notes:
+      "n1": "A piece of written work."
+    examples:
+      "ৰচনা ভাল।": "The composition is good."
+      "ৰচনা লিখা।": "To write a composition."
+  "as-4017":
+    native: "subject; topic"
+    notes:
+      "n1": "What a text or a lesson is about."
+    examples:
+      "বিষয় কি?": "What is the topic?"
+      "বিষয় ভাল।": "The topic is good."
+  "as-4018":
+    native: "character (in a story)"
+    notes:
+      "n1": "A person or creature in a story or a play."
+    examples:
+      "চৰিত্ৰ ভাল।": "The character is good."
+      "চৰিত্ৰ বহুত।": "There are many characters."
+  "as-4019":
+    native: "to recite"
+    notes:
+      "n1": "To say a poem aloud from memory."
+    bases:
+      "আবৃত্তি": "recitation"

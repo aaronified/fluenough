@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-housing"
+name: "Assamese reading: housing and renting"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-renting-a-flat"
+    title: "Asking an owner about a flat to rent"
+    theme: "housing"
+    sentences:
+      - text: "আপোনাৰ ফ্লেটটো ভাড়া দিব নে?"
+        reading: "āpunār phletôtu bhārā dibô ne?"
+      - text: "কোঠা দুটা আছে।"
+        reading: "kuthā dutā āse."
+      - text: "অগ্ৰিম কিমান?"
+        reading: "ôgrim kimān?"
+      - text: "ভাড়া মাহে মাহে।"
+        reading: "bhārā māhe māhe."
+    questions:
+      - id: "as-3812"
+        prompt: { en: "The speaker asks whether a flat is for rent." }
+        answer: true
+      - id: "as-3813"
+        prompt: { en: "How many rooms are there?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 2
+      - id: "as-3814"
+        prompt: { en: "What does the speaker ask about the money?" }
+        options:
+          - { en: "The advance" }
+          - { en: "The colour" }
+          - { en: "The age" }
+        answer: 1
+  - id: "as-rental-terms"
+    title: "The terms of a rental"
+    theme: "housing"
+    sentences:
+      - text: "ভাড়া প্ৰতি মাহে।"
+        reading: "bhārā proti māhe."
+      - text: "অগ্ৰিম তিনি মাহৰ।"
+        reading: "ôgrim tini māhôr."
+      - text: "পানী নল মালিকৰ।"
+        reading: "pāni nôl mālikôr."
+      - text: "ভাড়াটীয়াই পৰিষ্কাৰ ৰাখিব।"
+        reading: "bhārātiyāi porixkār rākhibô."
+    questions:
+      - id: "as-3815"
+        prompt: { en: "The rent is paid each month." }
+        answer: true
+      - id: "as-3816"
+        prompt: { en: "How many months of advance are needed?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Three" }
+        answer: 3
+      - id: "as-3817"
+        prompt: { en: "Who must keep the house clean?" }
+        options:
+          - { en: "The owner" }
+          - { en: "The tenant" }
+          - { en: "The neighbour" }
+        answer: 2
