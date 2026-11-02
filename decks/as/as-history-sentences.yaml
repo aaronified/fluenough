@@ -1,0 +1,80 @@
+schema: 1
+id: "as-history-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3663"
+    target: "ৰজাই দুৰ্গ সাজিলে।"
+    reading: "rôzāi durgô sāzile."
+    ipa: "ɹɔzai duɹɡ sazile"
+    pos: "phrase"
+    bases:
+      - { word: "ৰজাই", ref: "as-3644" }
+      - { word: "সাজিলে", ref: "as-2305" }
+    confusables:
+      - { id: "c1", word: "ৰাণী", reading: "rāṇī", kind: "word" }
+      - { id: "c2", word: "পূৰ্বপুৰুষ", reading: "pūrbôpurux", kind: "word" }
+  - id: "as-3664"
+    target: "যুদ্ধত বিজয় হ'ল।"
+    reading: "zuddhôt bizoy hôl."
+    ipa: "zuddʱɔt bizɔj hol"
+    pos: "phrase"
+    bases:
+      - { word: "যুদ্ধত", ref: "as-3646" }
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "পৰাজয়", reading: "porāzoy", kind: "word" }
+      - { id: "c2", word: "আক্ৰমণ", reading: "ākrômôn", kind: "word" }
+  - id: "as-3665"
+    target: "আহোম ৰাজত্ব দীঘল।"
+    reading: "ahom rāzôtvô dighôl."
+    ipa: "ahʊm ɹazɔtt diɡʱɔl"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "কামৰূপ", reading: "kāmrup", kind: "word" }
+      - { id: "c2", word: "ৰাজবংশ", reading: "rāzôbôṅxô", kind: "word" }
+  - id: "as-3666"
+    target: "ঐতিহ্য ধুনীয়া।"
+    reading: "oitihyô dhuniyā."
+    ipa: "ɔitihj dʱunija"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "প্ৰাচীন", reading: "prācin", kind: "word" }
+      - { id: "c2", word: "ইতিহাস", reading: "itihās", kind: "word" }
+  - id: "as-3667"
+    target: "স্বাধীনতা ভাল।"
+    reading: "xādhīnôtā bhāl."
+    ipa: "sadʱinɔta bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "শাসন", reading: "xāxôn", kind: "word" }
+      - { id: "c2", word: "যুদ্ধ", reading: "zuddhô", kind: "word" }
+  - id: "as-3668"
+    target: "দুৰ্গ প্ৰাচীন।"
+    reading: "durgô prācin."
+    ipa: "duɹɡ pɹasin"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ডাঙৰ", reading: "dāṅôr", kind: "word" }
+      - { id: "c2", word: "ৰজা", reading: "rôzā", kind: "word" }
+  - id: "as-3669"
+    target: "ৰাণী আহিছে।"
+    reading: "rāṇī āhise."
+    ipa: "ɹani ahise"
+    pos: "phrase"
+    bases:
+      - { word: "আহিছে", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "ৰজা", reading: "rôzā", kind: "word" }
+      - { id: "c2", word: "ৰাণীৰ", reading: "rāṇīr", kind: "word" }
+  - id: "as-3670"
+    target: "সভ্যতা প্ৰাচীন।"
+    reading: "xôbhytā prācin."
+    ipa: "sɔbʱjɔta pɹasin"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ঐতিহ্য", reading: "oitihyô", kind: "word" }
+      - { id: "c2", word: "যুদ্ধ", reading: "zuddhô", kind: "word" }
