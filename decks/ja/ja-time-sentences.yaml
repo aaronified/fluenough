@@ -1,0 +1,120 @@
+schema: 1
+id: "ja-time-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0532"
+    target: "わたしはあさごはんをたべます。"
+    words: ["わたし", "は", "あさ", "ごはん", "を", "たべます"]
+    reading: "watashi wa asa gohan o tabemasu."
+    ipa: "wataɕi wa asa ɡohaɴ o tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", ref: "ja-0341" }
+    confusables:
+      - id: "w1"
+        word: "よる"
+        reading: "yoru"
+        kind: "word"
+      - id: "w2"
+        word: "ゆうがた"
+        reading: "yuugata"
+        kind: "word"
+  - id: "ja-0533"
+    target: "でんしゃはもうすぐきます。"
+    words: ["でんしゃ", "は", "もうすぐ", "きます"]
+    reading: "densha wa mousugu kimasu."
+    ipa: "deɴɕa wa moːsɯɡɯ kimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "きます", ref: "ja-0349" }
+    confusables:
+      - id: "w1"
+        word: "さいきん"
+        reading: "saikin"
+        kind: "word"
+      - id: "w2"
+        word: "あと"
+        reading: "ato"
+        kind: "word"
+  - id: "ja-0534"
+    target: "きょうはがっこうにいきます。"
+    words: ["きょう", "は", "がっこう", "に", "いきます"]
+    reading: "kyou wa gakkou ni ikimasu."
+    ipa: "kjoː wa ɡakkoː ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "あした"
+        reading: "ashita"
+        kind: "word"
+      - id: "w2"
+        word: "きのう"
+        reading: "kinou"
+        kind: "word"
+  - id: "ja-0535"
+    target: "わたしはまいにちにほんごをはなします。"
+    words: ["わたし", "は", "まいにち", "にほんご", "を", "はなします"]
+    reading: "watashi wa mainichi nihongo o hanashimasu."
+    ipa: "wataɕi wa mainitɕi nihoɴɡo o hanaɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "はなします", ref: "ja-0347" }
+    confusables:
+      - id: "w1"
+        word: "まいしゅう"
+        reading: "maishuu"
+        kind: "word"
+      - id: "w2"
+        word: "ときどき"
+        reading: "tokidoki"
+        kind: "word"
+  - id: "ja-0536"
+    target: "がっこうはごごにおわります。"
+    words: ["がっこう", "は", "ごご", "に", "おわります"]
+    reading: "gakkou wa gogo ni owarimasu."
+    ipa: "ɡakkoː wa ɡoɡo ni owaɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "おわります", base: "おわる", reading: "owaru" }
+    confusables:
+      - id: "w1"
+        word: "ごぜん"
+        reading: "gozen"
+        kind: "word"
+      - id: "w2"
+        word: "ゆうがた"
+        reading: "yuugata"
+        kind: "word"
+  - id: "ja-0537"
+    target: "ひるごはんのあとでねます。"
+    words: ["ひる", "ごはん", "の", "あとで", "ねます"]
+    reading: "hiru gohan no atode nemasu."
+    ipa: "çiɾɯ ɡohaɴ no atode nemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "ねます", ref: "ja-0352" }
+    confusables:
+      - id: "w1"
+        word: "まえ"
+        reading: "mae"
+        kind: "word"
+      - id: "w2"
+        word: "よる"
+        reading: "yoru"
+        kind: "word"

@@ -176,7 +176,8 @@ units:
       - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, convenient" } }
     reading_passages:
       - { id: "postcard-from-kyoto", text: { "en": "A short postcard: the weather, the food, the people" } }
-  - planned: { id: "ja-time", theme: "time", words: 25 }
+  - decks: ["ja-time", "ja-time-sentences", "ja-reading-time", "*"]
+    words: 25
     listening_passages:
       - { id: "what-time-is-it", text: { "en": "Asking and telling the time" } }
     reading_passages:

@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-time"
+name: "Japanese reading: time"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-time-1"
+    title: "A morning at home"
+    sentences:
+      - text: "わたしはあさおきます。"
+        reading: "watashi wa asa okimasu."
+      - text: "ははひるごはんをつくります。"
+        reading: "haha hiru gohan o tsukurimasu."
+      - text: "ちちはよるかえります。"
+        reading: "chichi wa yoru kaerimasu."
+      - text: "きょうはやすみです。"
+        reading: "kyou wa yasumi desu."
+    questions:
+      - id: "ja-0538"
+        prompt:
+          en: "Which line says that the speaker gets up in the morning?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0539"
+        prompt:
+          en: "The third line says that father goes home at night."
+        answer: true
+      - id: "ja-0540"
+        prompt:
+          en: "Which line says that today is a day off?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-time-2"
+    title: "A week at school"
+    sentences:
+      - text: "きのうがっこうにいきました。"
+        reading: "kinou gakkou ni ikimashita."
+      - text: "あしたはやすみですか。"
+        reading: "ashita wa yasumi desu ka."
+      - text: "いまおわりますか。"
+        reading: "ima owarimasu ka."
+      - text: "まいしゅうはいそがしいです。"
+        reading: "maishuu hai so ga shi i desu."
+    questions:
+      - id: "ja-0541"
+        prompt:
+          en: "Which line says that the speaker went to school yesterday?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0542"
+        prompt:
+          en: "The second line asks whether tomorrow is a day off."
+        answer: true
+      - id: "ja-0543"
+        prompt:
+          en: "Which line says that the week is busy?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2

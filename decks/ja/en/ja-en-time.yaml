@@ -1,0 +1,411 @@
+schema: 1
+id: "ja-en-time"
+kind: "layer"
+core: "ja-time"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time"
+description: "Twenty-five words for time: the parts of the day, today, tomorrow and yesterday, before and after, every day and every week, and how soon things happen. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0507":
+    native: "time; hour; a period of time"
+    notes:
+      "n1": "じかん (jikan) means a period of time. A time of day is いま (ima) or a named part of the day."
+    examples:
+      "じかんはおそいです。":
+        native: "Time is late."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "じかんはとてもはやいです。":
+        native: "Time goes very fast."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0508":
+    native: "now; the present"
+    notes:
+      "n1": "いま (ima) means now, at this moment."
+    examples:
+      "いまいきます。": "I am going now."
+      "いまねますか。":
+        native: "Are you going to sleep now?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0509":
+    native: "morning"
+    notes:
+      "n1": "あさ (asa) means the morning. Evening is ゆうがた (yuugata)."
+    examples:
+      "あさおきます。": "I get up in the morning."
+      "あさごはんをたべます。":
+        native: "I eat breakfast."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0510":
+    native: "noon; daytime"
+    notes:
+      "n1": "ひる (hiru) means noon, or the daytime."
+    examples:
+      "ひるごはんをたべます。":
+        native: "I eat lunch."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "ひるはあついです。":
+        native: "The daytime is hot."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0511":
+    native: "night; evening"
+    notes:
+      "n1": "よる (yoru) means night, or the evening after dark."
+    examples:
+      "よるねます。": "I sleep at night."
+      "よるはさむいです。":
+        native: "The night is cold."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0512":
+    native: "today"
+    notes:
+      "n1": "きょう (kyou) means today."
+    examples:
+      "きょうはやすみです。":
+        native: "Today is a day off."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "きょうがっこうにいきますか。":
+        native: "Are you going to school today?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0513":
+    native: "tomorrow"
+    notes:
+      "n1": "あした (ashita) means tomorrow."
+    examples:
+      "あしたいきます。": "I will go tomorrow."
+      "あしたはやすみですか。":
+        native: "Is tomorrow a day off?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0514":
+    native: "yesterday"
+    notes:
+      "n1": "きのう (kinou) means yesterday."
+    examples:
+      "きのうがっこうにいきました。":
+        native: "I went to school yesterday."
+        bases:
+          "に":
+            meaning: "in; at; to"
+      "きのうはどこにいきましたか。":
+        native: "Where did you go yesterday?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "に":
+            meaning: "in; at; to"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0515":
+    native: "every day; daily"
+    notes:
+      "n1": "まいにち (mainichi) means every day."
+    examples:
+      "まいにちおきます。": "I get up every day."
+      "まいにちはなしますか。":
+        native: "Do you speak every day?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0516":
+    native: "to end; to finish"
+    notes:
+      "n1": "おわる (owaru) means to end, or to finish. Its polite form is おわります (owarimasu)."
+    examples:
+      "がっこうはおわります。":
+        native: "School ends."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "おわります":
+            meaning: "to end; to finish"
+      "がっこうはおわりましたか。":
+        native: "Has school finished?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "おわりました":
+            meaning: "to end; to finish"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0517":
+    native: "early; fast; quick"
+    notes:
+      "n1": "はやい (hayai) means fast, quick, or early. The adverb for quickly is はやく (hayaku)."
+    examples:
+      "でんしゃははやいです。":
+        native: "The train is fast."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "せんせいははやいです。":
+        native: "The teacher is quick."
+        bases:
+          "です":
+            meaning: "is (polite)"
+  "ja-0518":
+    native: "before; in front of"
+    notes:
+      "n1": "まえ (mae) means before in time, or in front of in place. The opposite is あと (ato)."
+    examples:
+      "ごはんのまえにみずをのみます。":
+        native: "I drink water before the meal."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "に":
+            meaning: "in; at; to"
+          "を":
+            meaning: "(marks the thing acted on)"
+      "がっこうのまえです。":
+        native: "It is in front of the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0519":
+    native: "after; behind; later"
+    notes:
+      "n1": "あと (ato) means after in time, or behind in place. The opposite is まえ (mae)."
+    examples:
+      "ごはんのあとでねます。":
+        native: "I sleep after the meal."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+      "がっこうのあとです。":
+        native: "It is after school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+  "ja-0520":
+    native: "morning; a.m."
+    notes:
+      "n1": "ごぜん (gozen) means the morning, before noon."
+    examples:
+      "ごぜんおきます。": "I get up in the morning."
+      "ごぜんにがっこうにいきます。":
+        native: "I go to school in the morning."
+        bases:
+          "に":
+            meaning: "in; at; to"
+  "ja-0521":
+    native: "afternoon; p.m."
+    notes:
+      "n1": "ごご (gogo) means the afternoon, after noon."
+    examples:
+      "ごごいきます。": "I go in the afternoon."
+      "ごごはいそがしいです。":
+        native: "The afternoon is busy."
+        bases:
+          "はい":
+            meaning: "yes"
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0522":
+    native: "recently; these days"
+    notes:
+      "n1": "さいきん (saikin) means recently, these days."
+    examples:
+      "さいきんいそがしいです。":
+        native: "I have been busy recently."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "さいきんにほんごをならいます。":
+        native: "I have been learning Japanese recently."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0523":
+    native: "soon; before long"
+    notes:
+      "n1": "もうすぐ (mousugu) means soon, before long."
+    examples:
+      "もうすぐおわります。":
+        native: "It will end soon."
+        bases:
+          "おわります":
+            meaning: "to end; to finish"
+      "もうすぐかえりますか。":
+        native: "Will you go home soon?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0524":
+    native: "time; when; occasion"
+    notes:
+      "n1": "とき (toki) means a time, or when. It follows a verb: おきるとき (okiru toki), when you get up."
+    examples:
+      "おきるときみずをのみます。":
+        native: "I drink water when I get up."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "がっこうにいくときあるきます。":
+        native: "I walk when I go to school."
+        bases:
+          "に":
+            meaning: "in; at; to"
+  "ja-0525":
+    native: "week"
+    notes:
+      "n1": "しゅう (shuu) means a week."
+    examples:
+      "しゅうはいそがしいです。":
+        native: "The week is busy."
+        bases:
+          "はい":
+            meaning: "yes"
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "まいしゅうにほんごをならいます。":
+        native: "I learn Japanese every week."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0526":
+    native: "moon; month"
+    notes:
+      "n1": "つき (tsuki) means the moon, or a month."
+    examples:
+      "つきはおおきいです。":
+        native: "The moon is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "つきはあかるいです。":
+        native: "The moon is bright."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0527":
+    native: "between; during"
+    notes:
+      "n1": "あいだ (aida) means between two things, or during a time."
+    examples:
+      "せんせいとともだちのあいだ。":
+        native: "Between the teacher and the friend."
+        bases:
+          "と":
+            meaning: "and (joins two words)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+      "がっこうのあいだにはなします。":
+        native: "I talk during school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "に":
+            meaning: "in; at; to"
+  "ja-0528":
+    native: "free time; not busy"
+    notes:
+      "n1": "ひま (hima) is said of a person with free time. It is a na-adjective: ひまです (hima desu), I am free."
+    examples:
+      "ひまです。":
+        native: "I am free."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ひまですか。":
+        native: "Are you free?"
+        bases:
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0529":
+    native: "end; finish"
+    notes:
+      "n1": "おわり (owari) means the end of something."
+    examples:
+      "おわりです。":
+        native: "It is the end."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "おわりはいつですか。":
+        native: "When is the end?"
+        bases:
+          "はい":
+            meaning: "yes"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0530":
+    native: "evening"
+    notes:
+      "n1": "ゆうがた (yuugata) means the evening, the time before night."
+    examples:
+      "ゆうがたかえります。": "I go home in the evening."
+      "ゆうがたはさむいです。":
+        native: "The evening is cold."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0531":
+    native: "every week; weekly"
+    notes:
+      "n1": "まいしゅう (maishuu) means every week."
+    examples:
+      "まいしゅうにほんごをはなします。":
+        native: "I speak Japanese every week."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "まいしゅうがっこうにいきますか。":
+        native: "Do you go to school every week?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "か":
+            meaning: "(marks a question)"
