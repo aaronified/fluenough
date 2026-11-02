@@ -1,0 +1,26 @@
+schema: 1
+id: "as-en-grammar-while"
+kind: "layer"
+core: "as-grammar-while"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "While doing: the -ওঁতে (-m̐te) form"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says while someone is doing something: the verb takes -ওঁতে (-m̐te), and two things happen together. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "While doing: the -ওঁতে (-m̐te) form"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "while: the verb with -ওঁতে (-m̐te)": "while (doing it)"
+    "at the same time: একেলগে (ekelôge) and the same form": "at the same time (together)"
+  entries:
+    "khua": "to eat; to drink"
+    "zua": "to go"
+    "kora": "to do"
+    "porha": "to read; to study"
+    "xuna": "to hear; to listen"
+    "xua": "to sleep; to lie down"
+    "randha": "to cook"
+    "thoka": "to stay; to remain"
+  notes: "The verb takes -ওঁতে (-m̐te) to say while: মই চাহ খাওঁতে কিতাপ পঢ়োঁ (moi sāh khāum̐te kitāp pôrhum̐), while I drink tea, I read a book. The ending changes the vowel of the stem: খাওঁতে (khāum̐te), যাওঁতে (zāum̐te), কৰোঁতে (kôrum̐te)."

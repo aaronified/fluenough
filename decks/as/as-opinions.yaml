@@ -1,0 +1,194 @@
+schema: 1
+id: "as-opinions"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "opinions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3273"
+    target: "মতামত"
+    reading: "môtāmôt"
+    ipa: "mɔtamɔt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মতামত দিয়ক।", reading: "môtāmôt diyôk.", ipa: "mɔtamɔt dijɔk" }
+      - { target: "মতামত বহুত।", reading: "môtāmôt bohut.", ipa: "mɔtamɔt bohut" }
+  - id: "as-3274"
+    target: "সহমত"
+    reading: "xôhômôt"
+    ipa: "sɔhɔmɔt"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই সহমত।", reading: "moi xôhômôt.", ipa: "moi sɔhɔmɔt" }
+      - { target: "তেওঁ সহমত।", reading: "teum̐ xôhômôt.", ipa: "teʊ̃ sɔhɔmɔt" }
+  - id: "as-3275"
+    target: "অসহমত"
+    reading: "ôxôhômôt"
+    ipa: "ɔsɔhɔmɔt"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই অসহমত।", reading: "moi ôxôhômôt.", ipa: "moi ɔsɔhɔmɔt" }
+      - { target: "তাই অসহমত।", reading: "tāi ôxôhômôt.", ipa: "tai ɔsɔhɔmɔt", bases: [{ word: "তাই", ref: "as-2180" }] }
+  - id: "as-3276"
+    target: "প্ৰশংসা"
+    reading: "prôxôṅxā"
+    ipa: "pɹɔxɔŋsa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰশংসা কৰা।", reading: "prôxôṅxā kôrā.", ipa: "pɹɔxɔŋsa kɔɹa" }
+      - { target: "প্ৰশংসা পালোঁ।", reading: "prôxôṅxā pālum̐.", ipa: "pɹɔxɔŋsa palʊ̃", bases: [{ word: "পালোঁ", base: "পোৱা", reading: "puwā" }] }
+  - id: "as-3277"
+    target: "সমালোচনা"
+    reading: "xômālusônā"
+    ipa: "sɔmalʊsɔna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সমালোচনা ভাল।", reading: "xômālusônā bhāl.", ipa: "sɔmalʊsɔna bʱal" }
+      - { target: "সমালোচনা বহুত।", reading: "xômālusônā bohut.", ipa: "sɔmalʊsɔna bohut" }
+  - id: "as-3278"
+    target: "সমৰ্থন"
+    reading: "xômôrthôn"
+    ipa: "sɔmɔɹtʰɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সমৰ্থন কৰা।", reading: "xômôrthôn kôrā.", ipa: "sɔmɔɹtʰɔn kɔɹa" }
+      - { target: "সমৰ্থন বহুত।", reading: "xômôrthôn bohut.", ipa: "sɔmɔɹtʰɔn bohut" }
+  - id: "as-3279"
+    target: "বিৰোধিতা"
+    reading: "birudhitā"
+    ipa: "biɹʊdʱita"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+      - { id: "n2", kind: "note" }
+    examples:
+      - { target: "বিৰোধিতা আছে।", reading: "birudhitā āse.", ipa: "biɹʊdʱita ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "বিৰোধিতা নকৰিবা।", reading: "birudhitā nôkoribā.", ipa: "biɹʊdʱita nɔkoɹiba", bases: [{ word: "নকৰিবা", ref: "as-2202" }] }
+  - id: "as-3280"
+    target: "যুক্তি"
+    reading: "zukti"
+    ipa: "zukti"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "যুক্তি ভাল।", reading: "zukti bhāl.", ipa: "zukti bʱal" }
+      - { target: "যুক্তি দিয়ক।", reading: "zukti diyôk.", ipa: "zukti dijɔk" }
+  - id: "as-3281"
+    target: "বিবেচনা"
+    reading: "bibesônā"
+    ipa: "bibesɔna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বিবেচনা কৰা।", reading: "bibesônā kôrā.", ipa: "bibesɔna kɔɹa" }
+      - { target: "বিবেচনা ভাল।", reading: "bibesônā bhāl.", ipa: "bibesɔna bʱal" }
+  - id: "as-3282"
+    target: "প্ৰস্তাৱ"
+    reading: "prôstāw"
+    ipa: "pɹɔstaw"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰস্তাৱ ভাল।", reading: "prôstāw bhāl.", ipa: "pɹɔstaw bʱal" }
+      - { target: "প্ৰস্তাৱ দিয়ক।", reading: "prôstāw diyôk.", ipa: "pɹɔstaw dijɔk" }
+  - id: "as-3283"
+    target: "পৰামৰ্শ"
+    reading: "pôrāmôrx"
+    ipa: "pɔɹamɔɹx"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পৰামৰ্শ দিয়ক।", reading: "pôrāmôrx diyôk.", ipa: "pɔɹamɔɹx dijɔk" }
+      - { target: "পৰামৰ্শ ভাল।", reading: "pôrāmôrx bhāl.", ipa: "pɔɹamɔɹx bʱal" }
+  - id: "as-3284"
+    target: "উচিত"
+    reading: "usit"
+    ipa: "usit"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো উচিত।", reading: "eitu usit.", ipa: "eitʊ usit" }
+      - { target: "উচিত কথা।", reading: "usit kôthā.", ipa: "usit kɔtʰa", bases: [{ word: "কথা", base: "কথা", reading: "kôthā" }] }
+  - id: "as-3285"
+    target: "অনুচিত"
+    reading: "ônusit"
+    ipa: "ɔnusit"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো অনুচিত।", reading: "eitu ônusit.", ipa: "eitʊ ɔnusit" }
+      - { target: "অনুচিত কাম।", reading: "ônusit kām.", ipa: "ɔnusit kam" }
+  - id: "as-3286"
+    target: "সত্য"
+    reading: "xôty"
+    ipa: "sɔtj"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কথাটো সত্য।", reading: "kôthātu xôty.", ipa: "kɔtʰatʊ sɔtj", bases: [{ word: "কথাটো", base: "কথা", reading: "kôthā" }] }
+      - { target: "সত্য কথা।", reading: "xôty kôthā.", ipa: "sɔtj kɔtʰa", bases: [{ word: "কথা", base: "কথা", reading: "kôthā" }] }
+  - id: "as-3287"
+    target: "মিছা"
+    reading: "misā"
+    ipa: "misa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কথাটো মিছা।", reading: "kôthātu misā.", ipa: "kɔtʰatʊ misa", bases: [{ word: "কথাটো", base: "কথা", reading: "kôthā" }] }
+      - { target: "মিছা কথা।", reading: "misā kôthā.", ipa: "misa kɔtʰa", bases: [{ word: "কথা", base: "কথা", reading: "kôthā" }] }
+  - id: "as-3288"
+    target: "ধাৰণা"
+    reading: "dhārônā"
+    ipa: "dʱaɹɔna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ধাৰণা ভাল।", reading: "dhārônā bhāl.", ipa: "dʱaɹɔna bʱal" }
+      - { target: "মোৰ ধাৰণা আছে।", reading: "mur dhārônā āse.", ipa: "mʊɹ dʱaɹɔna ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+  - id: "as-3289"
+    target: "বিচাৰ"
+    reading: "bisār"
+    ipa: "bisaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বিচাৰ ভাল।", reading: "bisār bhāl.", ipa: "bisaɹ bʱal" }
+      - { target: "বিচাৰ কৰা।", reading: "bisār kôrā.", ipa: "bisaɹ kɔɹa" }
+  - id: "as-3290"
+    target: "মত দিয়া"
+    reading: "môt diyā"
+    ipa: "mɔt dija"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+  - id: "as-3291"
+    target: "ঠিক নহয়"
+    reading: "thik nôhôy"
+    ipa: "tʰik nɔhɔj"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }

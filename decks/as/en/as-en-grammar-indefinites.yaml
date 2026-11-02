@@ -1,0 +1,22 @@
+schema: 1
+id: "as-en-grammar-indefinites"
+kind: "layer"
+core: "as-grammar-indefinites"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Someone, something, somewhere: the indefinites"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says someone, something or somewhere from the question words: কোন (kun), কি (ki), ক'ত (kot), কেতিয়া (ketiyā), with the ending -বা (-bā), and nobody or nothing with নাই (nāi). Question words already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Someone, something, somewhere: the indefinites"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "some one (positive): -বা (-bā)": "someone or something"
+    "none (negative)": "nobody or nothing (negative)"
+  entries:
+    "kon": "who; which"
+    "ki": "what"
+    "kot": "where"
+    "ketiya": "when"
+  notes: "The question word takes -বা (-bā) to mean someone, something or somewhere: কোনোবা আহিছে (konobā āhise), someone has come. In the negative, the question word stays with নাই (nāi): কোনেও নাই (koneu nāi), there is nobody; একো নাই (eko nāi), there is nothing."

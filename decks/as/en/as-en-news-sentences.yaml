@@ -1,0 +1,54 @@
+schema: 1
+id: "as-en-news-sentences"
+kind: "layer"
+core: "as-news-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News: papers, reporters, elections and warnings: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3259":
+    native: "There is news in the newspaper."
+    bases:
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "A radio, a different news source." }
+      "c2": { why: "A television, a different news source." }
+  "as-3260":
+    native: "The reporter has written the news."
+    confusables:
+      "c1": { why: "The editor, who decides rather than writes." }
+      "c2": { why: "A person in general, not a writer." }
+  "as-3261":
+    native: "Vote in the election."
+    confusables:
+      "c1": { why: "A warning, not a vote." }
+      "c2": { why: "A headline, not a vote." }
+  "as-3262":
+    native: "The headline is big."
+    confusables:
+      "c1": { why: "A detailed account, not the title." }
+      "c2": { why: "News, not the headline." }
+  "as-3263":
+    native: "There is a warning."
+    bases:
+      "আছে": "to be; there is; to have"
+    confusables:
+      "c1": { why: "An event, not a warning." }
+      "c2": { why: "Hope, the opposite feeling." }
+  "as-3264":
+    native: "The television is on."
+    confusables:
+      "c1": { why: "A radio, a different machine." }
+      "c2": { why: "A computer, a different machine." }
+  "as-3265":
+    native: "The interview is good."
+    confusables:
+      "c1": { why: "News, not an interview." }
+      "c2": { why: "An account, close but not an interview." }
+  "as-3266":
+    native: "Today's news is good."
+    confusables:
+      "c1": { why: "A headline, a part of the news." }
+      "c2": { why: "An event, one piece of news." }

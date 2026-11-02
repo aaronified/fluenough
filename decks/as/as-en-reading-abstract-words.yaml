@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-abstract-words"
+name: "Assamese reading: abstract words: ideas, values, feelings and duty"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-discussion"
+    title: "A short discussion of an idea"
+    theme: "abstract-words"
+    sentences:
+      - text: "আমাৰ মূল্যবোধ কি?"
+        reading: "āmār mulyôbudh ki?"
+      - text: "সততা আৰু সহিষ্ণুতা।"
+        reading: "xôtôtā āru xohixnutā."
+      - text: "সকলোৰে মৰ্যাদা আছে।"
+        reading: "sôkôlure môrzādā āse."
+      - text: "সেইটো নৈতিক হ'ব লাগে।"
+        reading: "seitu nôitik hobô lāge."
+    questions:
+      - id: "as-3954"
+        prompt: { en: "The discussion is about values." }
+        answer: true
+      - id: "as-3955"
+        prompt: { en: "Which two values are named?" }
+        options:
+          - { en: "Honesty and tolerance" }
+          - { en: "Greed and pride" }
+          - { en: "Fear and anger" }
+        answer: 1
+      - id: "as-3956"
+        prompt: { en: "What must be moral?" }
+        options:
+          - { en: "That" }
+          - { en: "Nothing" }
+          - { en: "Money" }
+        answer: 1
+  - id: "as-opinion-column"
+    title: "A short opinion column"
+    theme: "abstract-words"
+    sentences:
+      - text: "শান্তি বহুত দৰকাৰ।"
+        reading: "xānti bohut dôrkār."
+      - text: "আমি একতাৰে থাকিব লাগে।"
+        reading: "āmi ekôtāre thākibô lāge."
+      - text: "উদাৰতা আৰু কৃতজ্ঞতা শিকক।"
+        reading: "udārôtā āru kritôgyôtā xikôk."
+      - text: "লোভ ত্যাগ কৰক।"
+        reading: "lubh tyāg kôrôk."
+    questions:
+      - id: "as-3957"
+        prompt: { en: "The column says peace is much needed." }
+        answer: true
+      - id: "as-3958"
+        prompt: { en: "What should be learnt with generosity?" }
+        options:
+          - { en: "Gratitude" }
+          - { en: "Greed" }
+          - { en: "Pride" }
+        answer: 1
+      - id: "as-3959"
+        prompt: { en: "What should be given up?" }
+        options:
+          - { en: "Greed" }
+          - { en: "Peace" }
+          - { en: "Unity" }
+        answer: 1

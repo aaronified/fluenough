@@ -1,0 +1,87 @@
+schema: 1
+id: "as-grammar-concessive-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3706"
+    target: "বৰষুণ হ'লেও মই যাম।"
+    reading: "bôroxun holeu moi zām."
+    ipa: "bɔɹoxun holeʊ moi zam"
+    pos: "phrase"
+    bases:
+      - { word: "হ'লেও", base: "হোৱা", reading: "huwā" }
+      - { word: "যাম", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "তথাপি", reading: "tôthāpi", kind: "word" }
+      - { id: "c2", word: "যদিও", reading: "zodiu", kind: "word" }
+  - id: "as-3707"
+    target: "যদিও বেয়া, তথাপি খাওঁ।"
+    reading: "zodiu beyā, tôthāpi khāum̐."
+    ipa: "zodiʊ beja tɔtʰapi kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "তথাপি", base: "তথাপি", reading: "tôthāpi" }
+      - { word: "খাওঁ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "ভাল", reading: "bhāl", kind: "word" }
+      - { id: "c2", word: "বহুত", reading: "bohut", kind: "word" }
+  - id: "as-3708"
+    target: "তেওঁ খালেও ক্লান্ত।"
+    reading: "teum̐ khāleu klānt."
+    ipa: "teʊ̃ kʰaleʊ klant"
+    pos: "phrase"
+    bases:
+      - { word: "খালেও", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "সুস্থ", reading: "xusth", kind: "word" }
+      - { id: "c2", word: "দুৰ্বল", reading: "durbôl", kind: "word" }
+  - id: "as-3709"
+    target: "সি আহিলেও মই যাম।"
+    reading: "si āhileu moi zām."
+    ipa: "si ahileʊ moi zam"
+    pos: "phrase"
+    bases:
+      - { word: "আহিলেও", ref: "as-2201" }
+      - { word: "যাম", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "আহিছে", reading: "āhise", kind: "form" }
+      - { id: "c2", word: "আহিব", reading: "āhibô", kind: "form" }
+  - id: "as-3710"
+    target: "ৰাতি হ'লেও সি পঢ়ে।"
+    reading: "rāti holeu si pôrhe."
+    ipa: "ɹati holeʊ si pɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "হ'লেও", base: "হোৱা", reading: "huwā" }
+      - { word: "পঢ়ে", ref: "as-2203" }
+    confusables:
+      - { id: "c1", word: "শুইছে", reading: "xuise", kind: "form" }
+      - { id: "c2", word: "পঢ়িব", reading: "porhibô", kind: "form" }
+  - id: "as-3711"
+    target: "তেওঁ শুনিলেও বুজিলে নাই।"
+    reading: "teum̐ xunileu buzile nāi."
+    ipa: "teʊ̃ xunileʊ buzile nai"
+    pos: "phrase"
+    bases:
+      - { word: "শুনিলেও", ref: "as-2205" }
+      - { word: "বুজিলে", ref: "as-2211" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "শুনিছে", reading: "xunise", kind: "form" }
+      - { id: "c2", word: "বুজিছে", reading: "buzise", kind: "form" }
+  - id: "as-3712"
+    target: "মই কৰিলেও কাম নহ'ল।"
+    reading: "moi korileu kām nôhol."
+    ipa: "moi koɹileʊ kam nɔhol"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কৰিলেও", ref: "as-2202" }
+      - { word: "নহ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "কৰিছে", reading: "korise", kind: "form" }
+      - { id: "c2", word: "কৰিম", reading: "korim", kind: "form" }

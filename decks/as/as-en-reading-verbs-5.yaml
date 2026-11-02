@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-verbs-5"
+name: "Assamese reading: sequence actions: what happened next"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-every-step-in-order"
+    title: "Telling a long story with every step in order"
+    theme: "verbs-5"
+    sentences:
+      - text: "প্ৰথমে তেওঁ ঘৰত ঢুকিল।"
+        reading: "prôthôme teum̐ ghôrôt dhukil."
+      - text: "তাৰ পাছত তেওঁ চাদৰ পাতিলে।"
+        reading: "tār pāsôt teum̐ sādôr pātile."
+      - text: "পুনৰ বহিল।"
+        reading: "punôr bohil."
+      - text: "শেষত সকলো সমাপ্ত।"
+        reading: "xexôt sôkôlu xômāpt."
+    questions:
+      - id: "as-4069"
+        prompt: { en: "He entered the house first." }
+        answer: true
+      - id: "as-4070"
+        prompt: { en: "What did he spread out?" }
+        options:
+          - { en: "A sheet" }
+          - { en: "A net" }
+          - { en: "A rug on the wall" }
+        answer: 1
+      - id: "as-4071"
+        prompt: { en: "What is at the end?" }
+        options:
+          - { en: "Everything is finished" }
+          - { en: "It begins again" }
+          - { en: "Nothing happens" }
+        answer: 1
+  - id: "as-long-diary-entry"
+    title: "A long diary entry of the day"
+    theme: "verbs-5"
+    sentences:
+      - text: "প্ৰথমে ঘূমৰ পৰা উঠিলোঁ।"
+        reading: "prôthôme ghumôr pôrā uthilum̐."
+      - text: "তাৰ পাছত চাহ খালোঁ।"
+        reading: "tār pāsôt sāh khālum̐."
+      - text: "শেষত কাম সমাপ্ত কৰিলোঁ।"
+        reading: "xexôt kām xômāpt korilum̐."
+      - text: "আজি ভাল দিন আছিল।"
+        reading: "āzi bhāl din āsil."
+    questions:
+      - id: "as-4072"
+        prompt: { en: "The writer got up first." }
+        answer: true
+      - id: "as-4073"
+        prompt: { en: "What did the writer drink after?" }
+        options:
+          - { en: "Tea" }
+          - { en: "Milk" }
+          - { en: "Water" }
+        answer: 1
+      - id: "as-4074"
+        prompt: { en: "How was the day?" }
+        options:
+          - { en: "Good" }
+          - { en: "Bad" }
+          - { en: "Long" }
+        answer: 1

@@ -1,0 +1,154 @@
+schema: 1
+id: "as-agriculture"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "agriculture"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3530"
+    target: "শস্য"
+    reading: "xôsy"
+    ipa: "xɔsj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "শস্য ভাল।", reading: "xôsy bhāl.", ipa: "xɔsj bʱal" }
+      - { target: "শস্য বহুত।", reading: "xôsy bohut.", ipa: "xɔsj bohut" }
+  - id: "as-3531"
+    target: "ফচল"
+    reading: "phôsôl"
+    ipa: "pʰɔsɔl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ফচল ভাল।", reading: "phôsôl bhāl.", ipa: "pʰɔsɔl bʱal" }
+      - { target: "ফচল ওলাল।", reading: "phôsôl ulāl.", ipa: "pʰɔsɔl ʊlal", bases: [{ word: "ওলাল", ref: "as-2914" }] }
+  - id: "as-3532"
+    target: "খেত"
+    reading: "khet"
+    ipa: "kʰet"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "খেতত ধান।", reading: "khetôt dhān.", ipa: "kʰetɔt dʱan", bases: [{ word: "খেতত", base: "খেত", reading: "khet" }] }
+      - { target: "খেত বহল।", reading: "khet bôhôl.", ipa: "kʰet bɔhɔl" }
+  - id: "as-3533"
+    target: "হাল"
+    reading: "hāl"
+    ipa: "hal"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "হাল নতুন।", reading: "hāl notun.", ipa: "hal notun" }
+      - { target: "হাল বোৱা।", reading: "hāl buwā.", ipa: "hal bʊwa", bases: [{ word: "বোৱা", base: "বোৱা", reading: "buwā" }] }
+  - id: "as-3534"
+    target: "লাঙল"
+    reading: "lāṅôl"
+    ipa: "laŋɔl"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "লাঙল ডাঙৰ।", reading: "lāṅôl dāṅôr.", ipa: "laŋɔl daŋɔɹ" }
+      - { target: "লাঙল ভাৰী।", reading: "lāṅôl bhāri.", ipa: "laŋɔl bʱaɹi" }
+  - id: "as-3535"
+    target: "বলদ"
+    reading: "bôlôd"
+    ipa: "bɔlɔd"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বলদ শক্ত।", reading: "bôlôd xôkt.", ipa: "bɔlɔd xɔkt" }
+      - { target: "বলদ খেতত।", reading: "bôlôd khetôt.", ipa: "bɔlɔd kʰetɔt", bases: [{ word: "খেতত", ref: "as-3532" }] }
+  - id: "as-3536"
+    target: "জলসিঞ্চন"
+    reading: "zôloxinsôn"
+    ipa: "zɔlosinsɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "জলসিঞ্চন ভাল।", reading: "zôloxinsôn bhāl.", ipa: "zɔlosinsɔn bʱal" }
+      - { target: "জলসিঞ্চন বহুত।", reading: "zôloxinsôn bohut.", ipa: "zɔlosinsɔn bohut" }
+  - id: "as-3537"
+    target: "কৃষি"
+    reading: "krixi"
+    ipa: "krixi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কৃষি ভাল।", reading: "krixi bhāl.", ipa: "krixi bʱal" }
+      - { target: "কৃষি কৰা।", reading: "krixi kôrā.", ipa: "krixi kɔɹa" }
+  - id: "as-3538"
+    target: "কৃষক"
+    reading: "krixôk"
+    ipa: "krixɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কৃষক ব্যস্ত।", reading: "krixôk byôst.", ipa: "krixɔk bjɔst" }
+      - { target: "কৃষক আহিছে।", reading: "krixôk āhise.", ipa: "krixɔk ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3539"
+    target: "উৎপাদন"
+    reading: "utpādôn"
+    ipa: "utpadɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "উৎপাদন বেছি।", reading: "utpādôn besi.", ipa: "utpadɔn besi" }
+      - { target: "উৎপাদন কম।", reading: "utpādôn kôm.", ipa: "utpadɔn kɔm" }
+  - id: "as-3540"
+    target: "ভঁড়াল"
+    reading: "bhôm̐rāl"
+    ipa: "bʱɔ̃ɹal"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভঁড়াল ভৰা।", reading: "bhôm̐rāl bhôrā.", ipa: "bʱɔ̃ɹal bʱɔɹa" }
+      - { target: "ভঁড়াল ডাঙৰ।", reading: "bhôm̐rāl dāṅôr.", ipa: "bʱɔ̃ɹal daŋɔɹ" }
+  - id: "as-3541"
+    target: "মণ্ডি"
+    reading: "mondi"
+    ipa: "mondi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মণ্ডি বহুত ডাঙৰ।", reading: "mondi bohut dāṅôr.", ipa: "mondi bohut daŋɔɹ" }
+      - { target: "মণ্ডিত দাম বেছি।", reading: "mondit dām besi.", ipa: "mondit dam besi", bases: [{ word: "মণ্ডিত", base: "মণ্ডি", reading: "mondi" }] }
+  - id: "as-3542"
+    target: "খেতি কৰা"
+    reading: "kheti kôrā"
+    ipa: "kʰeti kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "খেতি", base: "খেতি", reading: "kheti" }
+  - id: "as-3543"
+    target: "হাল বোৱা"
+    reading: "hāl buwā"
+    ipa: "hal bʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "বোৱা", base: "বোৱা", reading: "buwā" }
+  - id: "as-3544"
+    target: "ৰোপণ কৰা"
+    reading: "rupôn kôrā"
+    ipa: "ɹʊpɔn kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }

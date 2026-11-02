@@ -1,0 +1,87 @@
+schema: 1
+id: "as-opinions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3292"
+    target: "মই তোমাৰ মতামতৰ সৈতে সহমত।"
+    reading: "moi tumār môtāmôtôr xôite xôhômôt."
+    ipa: "moi tʊmaɹ mɔtamɔtɔɹ sɔite sɔhɔmɔt"
+    pos: "phrase"
+    bases:
+      - { word: "মতামতৰ", ref: "as-3273" }
+      - { word: "সৈতে", base: "সৈতে", reading: "xôite" }
+    confusables:
+      - { id: "c1", word: "অসহমত", reading: "ôxôhômôt", kind: "word" }
+      - { id: "c2", word: "বিৰোধিতা", reading: "birudhitā", kind: "word" }
+  - id: "as-3293"
+    target: "তাই প্ৰশংসা কৰে।"
+    reading: "tāi prôxôṅxā kôre."
+    ipa: "tai pɹɔxɔŋsa kɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "কৰে", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "সমালোচনা", reading: "xômālusônā", kind: "word" }
+      - { id: "c2", word: "বিচাৰ", reading: "bisār", kind: "word" }
+  - id: "as-3294"
+    target: "এইটো উচিত নহয়।"
+    reading: "eitu usit nôhôy."
+    ipa: "eitʊ usit nɔhɔj"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "অনুচিত", reading: "ônusit", kind: "word" }
+      - { id: "c2", word: "সত্য", reading: "xôty", kind: "word" }
+  - id: "as-3295"
+    target: "কথাটো সত্য।"
+    reading: "kôthātu xôty."
+    ipa: "kɔtʰatʊ sɔtj"
+    pos: "phrase"
+    bases:
+      - { word: "কথাটো", base: "কথা", reading: "kôthā" }
+    confusables:
+      - { id: "c1", word: "মিছা", reading: "misā", kind: "word" }
+      - { id: "c2", word: "ধাৰণা", reading: "dhārônā", kind: "word" }
+  - id: "as-3296"
+    target: "তোমাৰ যুক্তি ভাল।"
+    reading: "tumār zukti bhāl."
+    ipa: "tʊmaɹ zukti bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "পৰামৰ্শ", reading: "pôrāmôrx", kind: "word" }
+      - { id: "c2", word: "প্ৰস্তাৱ", reading: "prôstāw", kind: "word" }
+  - id: "as-3297"
+    target: "মই বিবেচনা কৰিম।"
+    reading: "moi bibesônā korim."
+    ipa: "moi bibesɔna koɹim"
+    pos: "phrase"
+    bases:
+      - { word: "কৰিম", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "সমৰ্থন", reading: "xômôrthôn", kind: "word" }
+      - { id: "c2", word: "বিৰোধিতা", reading: "birudhitā", kind: "word" }
+  - id: "as-3298"
+    target: "প্ৰস্তাৱ ভাল।"
+    reading: "prôstāw bhāl."
+    ipa: "pɹɔstaw bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সমালোচনা", reading: "xômālusônā", kind: "word" }
+      - { id: "c2", word: "প্ৰশংসা", reading: "prôxôṅxā", kind: "word" }
+  - id: "as-3299"
+    target: "মিছা কথা নকৰিবা।"
+    reading: "misā kôthā nôkoribā."
+    ipa: "misa kɔtʰa nɔkoɹiba"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "কথা", base: "কথা", reading: "kôthā" }
+      - { word: "নকৰিবা", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "সত্য", reading: "xôty", kind: "word" }
+      - { id: "c2", word: "উচিত", reading: "usit", kind: "word" }

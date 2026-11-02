@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-passive"
+name: "Assamese reading: it is done: the passive"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-it-was-done"
+    title: "Saying what was done, without saying by whom"
+    sentences:
+      - text: "কাইলৈ বাটটো সাজা হ'ব।"
+        reading: "kāilôi bātôtu sāzā hobô."
+      - text: "পানী দিয়া হ'ল।"
+        reading: "pāni diyā hol."
+      - text: "ভাত ৰান্ধা হয়।"
+        reading: "bhāt rāndhā hôy."
+      - text: "কাম শেষ হ'ল।"
+        reading: "kām xex hol."
+    questions:
+      - id: "as-3920"
+        prompt: { en: "The road will be decorated tomorrow." }
+        answer: true
+      - id: "as-3921"
+        prompt: { en: "What was given?" }
+        options:
+          - { en: "Water" }
+          - { en: "Bread" }
+          - { en: "Tea" }
+        answer: 1
+      - id: "as-3922"
+        prompt: { en: "What is cooked?" }
+        options:
+          - { en: "Rice" }
+          - { en: "Fish" }
+          - { en: "Meat" }
+        answer: 1
+  - id: "as-notice-board"
+    title: "A notice board with announcements"
+    sentences:
+      - text: "কাইলৈ সভা কৰা হ'ব।"
+        reading: "kāilôi xôbhā kôrā hobô."
+      - text: "প্ৰৱেশ বন্ধ কৰা হ'ল।"
+        reading: "prôwex bôndh kôrā hol."
+      - text: "আবেদন গ্ৰহণ কৰা হয়।"
+        reading: "ābedôn grôhôn kôrā hôy."
+      - text: "কিতাপ ঘৰলৈ লৈ যোৱা হ'ব।"
+        reading: "kitāp ghôrôlôi lôi zuwā hobô."
+    questions:
+      - id: "as-3923"
+        prompt: { en: "A meeting will be held tomorrow." }
+        answer: true
+      - id: "as-3924"
+        prompt: { en: "What has been closed?" }
+        options:
+          - { en: "The entrance" }
+          - { en: "The window" }
+          - { en: "The road" }
+        answer: 1
+      - id: "as-3925"
+        prompt: { en: "What are accepted?" }
+        options:
+          - { en: "Applications" }
+          - { en: "Books" }
+          - { en: "Money" }
+        answer: 1

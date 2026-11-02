@@ -1,0 +1,23 @@
+schema: 1
+id: "as-en-grammar-emphasis"
+kind: "layer"
+core: "as-grammar-emphasis"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Very, really, totally: stressing an adjective"
+license: "CC-BY-SA-4.0"
+description: "How Assamese stresses an adjective: put অতি (ôti), very, or সঁচাকৈ (sôm̐sākôi), really, or একেবাৰে (ekebāre), totally, before it. Adjectives already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Very, really, totally: stressing an adjective"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "very: অতি (ôti) before the adjective": "very (অতি)"
+    "really: সঁচাকৈ (sôm̐sākôi) before the adjective": "really (সঁচাকৈ)"
+  entries:
+    "dangor": "big; elder"
+    "bhal": "good"
+    "soru": "small; younger"
+    "beya": "bad"
+    "dighol": "long"
+  notes: "To stress an adjective, put an adverb before it: অতি ভাল (ôti bhāl), very good; সঁচাকৈ ডাঙৰ (sôm̐sākôi dāṅôr), really big; একেবাৰে বেয়া (ekebāre beyā), totally bad. The adjective itself does not change."

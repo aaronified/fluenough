@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-causative"
+name: "Assamese reading: making someone do it: the causative"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-having-things-done"
+    title: "Asking someone to get things done"
+    sentences:
+      - text: "মই ঘৰ মেৰামতি কৰালোঁ।"
+        reading: "moi ghôr merāmoti kôrālum̐."
+      - text: "মিস্ত্ৰীয়ে কাম কৰালে।"
+        reading: "mistriye kām kôrāle."
+      - text: "দৰ্জিক দিয়া কাপোৰ সেলাই কৰালোঁ।"
+        reading: "dorzik diyā kāpur xelāi kôrālum̐."
+      - text: "তাৰ পাছত পৰিষ্কাৰ কৰালোঁ।"
+        reading: "tār pāsôt porixkār kôrālum̐."
+    questions:
+      - id: "as-3637"
+        prompt: { en: "The speaker had the house repaired." }
+        answer: true
+      - id: "as-3638"
+        prompt: { en: "Who did the work on the house?" }
+        options:
+          - { en: "A tailor" }
+          - { en: "A mechanic" }
+          - { en: "A driver" }
+        answer: 2
+      - id: "as-3639"
+        prompt: { en: "What was done with the clothes?" }
+        options:
+          - { en: "Dyed" }
+          - { en: "Stitched" }
+          - { en: "Burnt" }
+        answer: 2
+  - id: "as-service-request"
+    title: "A written service request"
+    sentences:
+      - text: "ফোনটো মেৰামতি কৰাবলৈ লাগে।"
+        reading: "phonôtu merāmoti kôrābôlôi lāge."
+      - text: "স্ক্ৰীন বদলাই দিব লাগিব।"
+        reading: "skrin bôdôlāi dibô lāgibô."
+      - text: "আজি ঠিক কৰালে ভাল।"
+        reading: "āzi thik kôrāle bhāl."
+      - text: "সহায়ৰ বাবে ধন্যবাদ।"
+        reading: "xôhāyôr bābe dhônyôbād."
+    questions:
+      - id: "as-3640"
+        prompt: { en: "The phone needs repair." }
+        answer: true
+      - id: "as-3641"
+        prompt: { en: "What part must be changed?" }
+        options:
+          - { en: "The screen" }
+          - { en: "The battery" }
+          - { en: "The case" }
+        answer: 1
+      - id: "as-3642"
+        prompt: { en: "When would the request be best done?" }
+        options:
+          - { en: "Today" }
+          - { en: "Last year" }
+          - { en: "Never" }
+        answer: 1

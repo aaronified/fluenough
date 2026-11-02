@@ -1,0 +1,73 @@
+schema: 1
+id: "as-verbs-5-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-4062"
+    target: "প্ৰথমে বাটি তোলা, তাৰ পাছত ধোৱা।"
+    reading: "prôthôme bāti tulā, tār pāsôt dhuwā."
+    ipa: "pɹɔtʰɔme bati tʊla taɹ pasɔt dʱʊwa"
+    pos: "phrase"
+    bases:
+      - { word: "তাৰ", ref: "as-2180" }
+    confusables:
+      - { id: "c1", word: "পাতা", reading: "pātā", kind: "word" }
+      - { id: "c2", word: "ধৰা", reading: "dhôrā", kind: "word" }
+  - id: "as-4063"
+    target: "শেষত সি থিয় হ'ল।"
+    reading: "xexôt si thiy hol."
+    ipa: "xexɔt si tʰij hol"
+    pos: "phrase"
+    bases:
+      - { word: "থিয়", base: "থিয়", reading: "thiy" }
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "বহিল", reading: "bohil", kind: "form" }
+      - { id: "c2", word: "শুইল", reading: "xuil", kind: "form" }
+  - id: "as-4064"
+    target: "আমি একেলগে কাম সমাপ্ত কৰিলোঁ।"
+    reading: "āmi ekelôge kām xômāpt korilum̐."
+    ipa: "ami ekelɔɡe kam sɔmapt koɹilʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "কৰিলোঁ", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "আৰম্ভ", reading: "ārômbhô", kind: "word" }
+      - { id: "c2", word: "পুনৰ", reading: "punôr", kind: "word" }
+  - id: "as-4065"
+    target: "চাদৰ ধীৰে পাতা।"
+    reading: "sādôr dhire pātā."
+    ipa: "sadɔɹ dʱiɹe pata"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "দ্ৰুত", reading: "drut", kind: "word" }
+      - { id: "c2", word: "জোৰা", reading: "zurā", kind: "word" }
+  - id: "as-4066"
+    target: "তেওঁ দ্ৰুত দৌৰিলে।"
+    reading: "teum̐ drut dôurile."
+    ipa: "teʊ̃ dɹut dɔuɹile"
+    pos: "phrase"
+    bases:
+      - { word: "দৌৰিলে", ref: "as-2917" }
+    confusables:
+      - { id: "c1", word: "ধীৰে", reading: "dhire", kind: "word" }
+      - { id: "c2", word: "হাঁটা", reading: "hām̐tā", kind: "word" }
+  - id: "as-4067"
+    target: "দুটা কাপোৰ জোৰা।"
+    reading: "dutā kāpur zurā."
+    ipa: "duta kapʊɹ zʊɹa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খোলা", reading: "khulā", kind: "word" }
+      - { id: "c2", word: "তোলা", reading: "tulā", kind: "word" }
+  - id: "as-4068"
+    target: "আৰম্ভ ভাল।"
+    reading: "ārômbhô bhāl."
+    ipa: "aɹɔmbʱ bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "শেষ", reading: "xex", kind: "word" }
+      - { id: "c2", word: "সমাপ্ত", reading: "xômāpt", kind: "word" }

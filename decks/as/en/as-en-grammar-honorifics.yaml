@@ -1,0 +1,25 @@
+schema: 1
+id: "as-en-grammar-honorifics"
+kind: "layer"
+core: "as-grammar-honorifics"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Polite and familiar: the honorifics"
+license: "CC-BY-SA-4.0"
+description: "How Assamese speaks to an elder or a stranger: তুমি (tumi) is for a close friend or child, আপুনি (āpuni) and the polite verb ending -ক (-ôk) for an elder. Verbs and pronouns already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Polite and familiar: the honorifics"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "informal: তুমি (tumi) and the plain verb": "informal (to a close friend or child)"
+    "polite: আপুনি (āpuni) and the -ক (-ôk) verb": "polite (to an elder or a stranger)"
+  entries:
+    "baha": "to sit"
+    "khua": "to eat; to drink"
+    "kora": "to do"
+    "aha": "to come"
+    "xuna": "to hear; to listen"
+    "porha": "to read; to study"
+    "diya": "to give"
+  notes: "With an elder, a stranger or someone you respect, use আপুনি (āpuni), you, and end the verb in -ক (-ôk): আপুনি বহক (āpuni bôhôk), please sit down. With a close friend or a child, তুমি (tumi) and the plain verb: তুমি বহা (tumi bôhā), sit down. The polite forms also take আপোনাৰ (āpunār), your, and তেওঁ (teum̐), he or she, for an elder."

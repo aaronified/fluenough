@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-careers"
+name: "Assamese reading: careers: jobs, work and interviews"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-job-interview"
+    title: "A short job interview"
+    theme: "careers"
+    sentences:
+      - text: "আপোনাৰ অভিজ্ঞতা কিমান?"
+        reading: "āpunār ôbhigyôtā kimān?"
+      - text: "মোৰ পাঁচ বছৰৰ অভিজ্ঞতা।"
+        reading: "mur pām̐s bôsôrôr ôbhigyôtā."
+      - text: "বেতন কিমান হ'ব?"
+        reading: "betôn kimān hobô?"
+      - text: "কাইলৈ জনাম।"
+        reading: "kāilôi zônām."
+    questions:
+      - id: "as-3483"
+        prompt: { en: "The candidate has five years of experience." }
+        answer: true
+      - id: "as-3484"
+        prompt: { en: "What is asked about?" }
+        options:
+          - { en: "The salary" }
+          - { en: "The colour" }
+          - { en: "The weather" }
+        answer: 1
+      - id: "as-3485"
+        prompt: { en: "When will the answer be given?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Never" }
+        answer: 2
+  - id: "as-job-advert"
+    title: "A job advert"
+    theme: "careers"
+    sentences:
+      - text: "এটা নতুন পদ খালী।"
+        reading: "etā notun pôd khāli."
+      - text: "যোগ্যতা: উচ্চ বিদ্যালয়।"
+        reading: "zugyôtā: uss bidyālôy."
+      - text: "বেতন ভাল।"
+        reading: "betôn bhāl."
+      - text: "আবেদন কাইলৈ।"
+        reading: "ābedôn kāilôi."
+    questions:
+      - id: "as-3486"
+        prompt: { en: "A new post is vacant." }
+        answer: true
+      - id: "as-3487"
+        prompt: { en: "What is needed?" }
+        options:
+          - { en: "A school diploma" }
+          - { en: "A boat" }
+          - { en: "A tractor" }
+        answer: 1
+      - id: "as-3488"
+        prompt: { en: "When must applications be sent?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Last year" }
+        answer: 2
