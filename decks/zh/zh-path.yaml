@@ -714,7 +714,8 @@ units:
       - { id: "i-think-that", text: { "en": "Saying what you think and what you heard" } }
     reading_passages:
       - { id: "interview-notes", text: { "en": "Notes from a short street interview" } }
-  - planned: { id: "zh-opinions", theme: "opinions", words: 50 }
+  - decks: ["zh-opinions", "zh-opinions-sentences", "zh-reading-opinions", "*"]
+    words: 50
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
     reading_passages:
