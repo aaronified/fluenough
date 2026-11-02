@@ -452,7 +452,6 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
         settings: const RouteSettings(name: '/placement'),
         builder: (_) => PlacementPage(
           languages: <String>[code],
-          asked: <String>{code},
           alphabet: <String, bool>{
             if (course?.scriptDecks ?? false)
               code: state.settings.learnsAlphabet(code),

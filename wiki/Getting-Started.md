@@ -28,10 +28,10 @@ If a language is taught from more than one of the languages you know, you choose
 
 ## The placement test
 
-For each language the app asks "Do you know any of it?" If you do, a short check finds where to start.
+When you choose to learn a language, a short check finds where to start. It asks nothing you have already said: the scripts you read come from your skills, and on the first launch each language you learn can be started at the beginning instead.
 
 - It asks a few words from each part of the course, until one is new to you.
-- For a script it asks you to match letters, write a word in Latin letters, and write words from their meaning. If you pass, the script lessons are skipped.
+- For a script you read it asks you to match letters and to write words in Latin letters, and if you pass, the script lessons are skipped. A word is written only when it is a single word with one spelling; sentences are put together from their words.
 - It then says where you will start, and why. You can try again from there.
 - Your answers do not count as reviews, and you can still study anything later.
 - The last screen asks how to review the words it placed: **Set in stone** (kept out of Today, counted as known; you can still revise them from a deck page, and those answers are not logged), **Spot-check** (a few tested now and then, and a miss brings more back; picked for you) or **Keep reviewing** (like any other word). Script decks follow your choice too. You can change it later, for each course, on the Languages page.

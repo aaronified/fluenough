@@ -13,6 +13,7 @@ import 'features/whats_new/whats_new_prompt.dart';
 import 'features/downloads/download_page.dart';
 import 'features/onboarding/onboarding_flow.dart';
 import 'features/placement/language_picker_page.dart';
+import 'features/placement/onboarding_placement.dart';
 import 'features/settings/settings_page.dart';
 import 'features/splash/splash_gate.dart';
 import 'features/splash/splash_progress.dart';
@@ -211,13 +212,76 @@ class _Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final state = AppScope.of(context);
-    final missing = state.missingLanguages;
-    return missing.isEmpty
-        ? const AppShell()
-        : DownloadPage(
+    return ListenableBuilder(
+      listenable: Listenable.merge(<Listenable?>[
+        state.settings,
+        state.deckDownloads,
+      ]),
+      builder: (context, _) {
+        final missing = state.missingLanguages;
+        if (missing.isNotEmpty) {
+          return DownloadPage(
             key: ValueKey<String>(missing.join()),
             languages: missing,
           );
+        }
+        // The languages chosen to Learn on the first launch are each placed
+        // in turn before the app (owner, 2026-11-02). Only one the catalogue
+        // has and that is still learned, whose first decks are on the phone
+        // as the picker waits for them: placing against a partial course
+        // would place wrong. Any other is dropped from the saved list, so
+        // that a language that cannot be offered never holds the app back.
+        final loading = state.status == CatalogStatus.loading;
+        final downloads = state.deckDownloads;
+        final spoken = state.settings.spokenLanguages;
+        final saved = state.settings.placementOffers;
+        final offers = <String>[];
+        final waiting = <String>[];
+        for (final code in saved) {
+          if (loading) {
+            offers.add(code);
+            continue;
+          }
+          if (!state.learningCodes.contains(code) ||
+              !state.languages.any((l) => l.code == code) ||
+              (downloads?.index?.language(code)?.appTooOld ?? false)) {
+            continue;
+          }
+          offers.add(code);
+          if (downloads != null && !downloads.isReady(code, spoken)) {
+            waiting.add(code);
+          }
+        }
+        if (offers.length != saved.length) {
+          WidgetsBinding.instance.addPostFrameCallback((_) {
+            state.settings.placementOffers = <String>[
+              for (final code in state.settings.placementOffers)
+                if (offers.contains(code)) code,
+            ];
+          });
+        }
+        void drop(String code) {
+          state.settings.placementOffers = <String>[
+            for (final offered in state.settings.placementOffers)
+              if (offered != code) offered,
+          ];
+        }
+
+        if (waiting.isNotEmpty) {
+          return DownloadPage(
+            key: ValueKey<String>('offer-${waiting.join()}'),
+            languages: waiting,
+            onFailed: drop,
+          );
+        }
+        return offers.isEmpty
+            ? const AppShell()
+            : OnboardingPlacementOffer(
+                key: const ValueKey<String>('onboarding-placement'),
+                languages: offers,
+              );
+      },
+    );
   }
 }
 
