@@ -1,0 +1,94 @@
+schema: 1
+id: "ja-en-grammar-desu-sentences"
+kind: "layer"
+core: "ja-grammar-desu-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Is and is not in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0625":
+    native: "I am a student."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "せんせい (sensei) is a teacher, not a student."
+      w2:
+        why: "がっこう (gakkou) is a school, not a person."
+  "ja-0626":
+    native: "I am not a student."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "で":
+        meaning: "(marks where or how; also part of ではありません (de wa arimasen))"
+      "ありません":
+        meaning: "to be (of things); to exist"
+    confusables:
+      w1:
+        why: "せんせい (sensei) is a teacher, the opposite of a student."
+      w2:
+        why: "ともだち (tomodachi) is a friend, not a role."
+  "ja-0627":
+    native: "Are you a teacher?"
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "がくせい (gakusei) is a student, the other role."
+      w2:
+        why: "ひと (hito) is a person in general."
+  "ja-0628":
+    native: "She is a woman."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "おとこ (otoko) is a man, the opposite."
+      w2:
+        why: "かれ (kare) is he, not she."
+  "ja-0629":
+    native: "It is not a teacher of the school."
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "で":
+        meaning: "(marks where or how; also part of ではありません (de wa arimasen))"
+      "は":
+        meaning: "(marks the topic)"
+      "ありません":
+        meaning: "to be (of things); to exist"
+    confusables:
+      w1:
+        why: "がくせい (gakusei) is a student."
+      w2:
+        why: "こども (kodomo) is a child."
+  "ja-0630":
+    native: "My father is a teacher."
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "はは (haha) is my mother, not my father."
+      w2:
+        why: "おとな (otona) is an adult."
