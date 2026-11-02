@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-subjunctive"
+name: "Assamese reading: let him come: the subjunctive"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-making-suggestions"
+    title: "Friends make suggestions"
+    sentences:
+      - text: "ব'লক বাহিৰলৈ যাওঁ।"
+        reading: "bolôk bāhirôlôi zāum̐."
+      - text: "বৰষুণ নহওক।"
+        reading: "bôrôxun nôhôôk."
+      - text: "আহক, চাহ খাওঁ।"
+        reading: "āhôk, sāh khāum̐."
+      - text: "সকলোৱে ভাল থাকক।"
+        reading: "xôkôluwe bhāl thākôk."
+    questions:
+      - id: "as-3312"
+        prompt: { en: "One friend suggests going outside." }
+        answer: true
+      - id: "as-3313"
+        prompt: { en: "What do they want to drink?" }
+        options:
+          - { en: "Milk" }
+          - { en: "Tea" }
+          - { en: "Water" }
+        answer: 2
+      - id: "as-3314"
+        prompt: { en: "What do they wish for everyone?" }
+        options:
+          - { en: "To be well" }
+          - { en: "To be rich" }
+          - { en: "To sleep" }
+        answer: 1
+  - id: "as-friendly-advice"
+    title: "A friendly note of advice"
+    sentences:
+      - text: "পানী বেছি খাওক।"
+        reading: "pāni besi khāôk."
+      - text: "ৰাতি সোনকালে শোৱক।"
+        reading: "rāti sunôkāle xuwôk."
+      - text: "ব্যায়াম কৰক।"
+        reading: "byāyām kôrôk."
+      - text: "সুস্থ থাকক।"
+        reading: "xusthô thākôk."
+    questions:
+      - id: "as-3315"
+        prompt: { en: "The note advises drinking more water." }
+        answer: true
+      - id: "as-3316"
+        prompt: { en: "When should one sleep?" }
+        options:
+          - { en: "Late" }
+          - { en: "Early" }
+          - { en: "At noon" }
+        answer: 2
+      - id: "as-3317"
+        prompt: { en: "What does the note say about exercise?" }
+        options:
+          - { en: "Do it" }
+          - { en: "Stop it" }
+          - { en: "Avoid it" }
+        answer: 1

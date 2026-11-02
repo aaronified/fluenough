@@ -1,0 +1,71 @@
+schema: 1
+id: "as-grammar-subjunctive-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3306"
+    target: "আহক, চাহ খাওঁ।"
+    reading: "āhôk, sāh khāum̐."
+    ipa: "ahɔk sah kʰaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "আহক", ref: "as-2201" }
+      - { word: "খাওঁ", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "আহিছে", reading: "āhise", kind: "form" }
+      - { id: "c2", word: "আহিব", reading: "āhib", kind: "form" }
+  - id: "as-3307"
+    target: "তেওঁ ভাল থাকক।"
+    reading: "teum̐ bhāl thākôk."
+    ipa: "teʊ̃ bʱal tʰakɔk"
+    pos: "phrase"
+    bases:
+      - { word: "থাকক", ref: "as-2207" }
+    confusables:
+      - { id: "c1", word: "থাকোঁ", reading: "thākum̐", kind: "form" }
+      - { id: "c2", word: "থাকিছে", reading: "thākise", kind: "form" }
+  - id: "as-3308"
+    target: "আপুনি বহক।"
+    reading: "āpuni bôhôk."
+    ipa: "apuni bɔhɔk"
+    pos: "phrase"
+    bases:
+      - { word: "বহক", ref: "as-2208" }
+    confusables:
+      - { id: "c1", word: "বহিছে", reading: "bôhise", kind: "form" }
+      - { id: "c2", word: "বহিম", reading: "bôhim", kind: "form" }
+  - id: "as-3309"
+    target: "সি ঘৰলৈ যাওক।"
+    reading: "xi ghôrôlôi zāôk."
+    ipa: "si ɡʱɔɹɔlɔi zaʊk"
+    pos: "phrase"
+    bases:
+      - { word: "ঘৰলৈ", ref: "as-0052" }
+      - { word: "যাওক", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "যায়", reading: "zāy", kind: "form" }
+      - { id: "c2", word: "গৈছে", reading: "goise", kind: "form" }
+  - id: "as-3310"
+    target: "ব'লক ঘৰলৈ যাওঁ।"
+    reading: "bolôk ghôrôlôi zāum̐."
+    ipa: "bolɔk ɡʱɔɹɔlɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "ঘৰলৈ", ref: "as-0052" }
+      - { word: "যাওঁ", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "ঘৰ", reading: "ghôr", kind: "word" }
+      - { id: "c2", word: "বজাৰ", reading: "bôzār", kind: "word" }
+  - id: "as-3311"
+    target: "তেওঁলোক আহক।"
+    reading: "teum̐lôk āhôk."
+    ipa: "teʊ̃lʊk ahɔk"
+    pos: "phrase"
+    bases:
+      - { word: "আহক", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "আহিছে", reading: "āhise", kind: "form" }
+      - { id: "c2", word: "আহে", reading: "āhe", kind: "form" }

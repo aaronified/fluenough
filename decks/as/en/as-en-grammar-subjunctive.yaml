@@ -1,0 +1,26 @@
+schema: 1
+id: "as-en-grammar-subjunctive"
+kind: "layer"
+core: "as-grammar-subjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Let him come: the subjunctive"
+license: "CC-BY-SA-4.0"
+description: "How Assamese makes a polite wish, a suggestion or a request: the -ক (-ôk) ending for he, she or they, and ব'লক (bolôk), let us, before the verb. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Let him come: the subjunctive"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "he, she or they (polite): -ক (-ôk)": "let him or her (polite wish or request)"
+    "let us: ব'লক (bolôk) and the verb": "let us (together)"
+  entries:
+    "zua": "to go"
+    "khua": "to eat; to drink"
+    "kora": "to do"
+    "aha": "to come"
+    "loa": "to take"
+    "porha": "to read; to study"
+    "xuna": "to hear; to listen"
+    "diya": "to give"
+  notes: "For he, she or they, the verb ends in -ক (-ôk): আহক (āhôk), let him come; আপুনি বহক (āpuni bôhôk), please sit down. For a suggestion to do something together, put ব'লক (bolôk), let us, before the verb: ব'লক যোৱা (bolôk zuwā), let us go."
