@@ -193,7 +193,7 @@ whose set partner is wrongly accepted: `not_synonyms: ["shore"]`.
 
 ### Per-card alternates, as they work now
 
-`;` in `native` and `alt_native` (ADR-0034; docs/DECK-FORMAT.md) are
+`;` in `native` and `alt_native` (ADR-0034; [Deck-Format](Deck-Format)) are
 accepted outright by rule 4 and the grader's `alternates`. They stay the
 first tool of a deck author and are unchanged; the sets only add to them.
 Part 1 of #924 moves unseparated alternatives into `;`.

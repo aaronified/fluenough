@@ -16,7 +16,7 @@ Source of truth: this wiki page.
 ADR-0003 licensed the app. The decks declared their own licence per file,
 and every deck in the repository was `CC0-1.0`, public domain.
 
-The card data planned on #506 (`docs/DECK-FORMAT.md`, "Card data") takes
+The card data planned on #506 ([Deck-Format](Deck-Format), "Card data") takes
 much of its content from outside: word data from Wiktionary (#518),
 recordings from Wikimedia Commons with it, and frequency counted from each
 language's Wikipedia (#516). Wiktionary and Wikipedia are CC BY-SA, and so

@@ -25,7 +25,7 @@ proposals in the decks at once, and agreement merges them to learners; see
 "Reviewers change the decks, with no wait" below.
 
 Written 2026-10-06. **Moved ahead, 2026-10-09:** built now, on today's
-deck format, before the native layers (`docs/DECK-FORMAT.md`, "Core and layer files"), so that
+deck format, before the native layers ([Deck-Format](Deck-Format), "Core and layer files"), so that
 reviewers can check the Bengali and Telugu B1 decks as they arrive; layer
 support is added when #392 lands (owner).
 

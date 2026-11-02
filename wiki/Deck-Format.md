@@ -1,6 +1,6 @@
 # Deck format, schema 1
 
-Mirrors [docs/DECK-FORMAT.md](https://github.com/aaronified/fluenough/blob/main/docs/DECK-FORMAT.md) in the repo, which tools read.
+This page is the only deck format document (owner, 2026-11-02: "Wiki is the main home for all docs. other docs are obsolete"). `docs/DECK-FORMAT.md` in the repo is a pointer to it. Agents read it in the repo as `wiki/Deck-Format.md`. See [ADR-0044](ADR-0044-Documentation-Lives-In-The-Wiki).
 
 
 **This file is the guide; `tools/validate_decks.py` is the test.** When the

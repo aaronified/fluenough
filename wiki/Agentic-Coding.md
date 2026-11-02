@@ -420,7 +420,7 @@ Specific to this repository, roughly in order of likelihood:
 | Treating a `flutter analyze` error as a broken design | It analysed clean on 3.47.1; an error means your change. Fix it. |
 | Typing an English label straight into a widget | Every screen has to be re-laid-out later, not just re-strung. Rule 10. |
 | Fanning out repository reading on a pricier model than Haiku | Searching is cheap-tier work. See *How agents should run work*. |
-| Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `docs/DECK-FORMAT.md`. |
+| Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `wiki/Deck-Format.md`. |
 | Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](ADR-0002-System-Tts). |
 
 When something in this codebase looks inconsistent, check `docs/adr/` before
@@ -570,7 +570,7 @@ contributor.
   for 1.4x text"). The app caps text at 1.4x (#505), so layouts, layout
   tests and bug reports go up to 1.4x; a phone set to 2x is drawn at 1.4x.
 - **Content.** Keep transliteration in deck prose, and say in a card's notes
-  when its base word changes its stem (`docs/DECK-FORMAT.md`).
+  when its base word changes its stem (`wiki/Deck-Format.md`).
   Telugu readings write a word-final anusvara (ం) as `ṁ`, course-wide
   (owner, 2026-10-19).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
