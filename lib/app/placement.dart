@@ -638,8 +638,8 @@ List<ScriptWord> scriptWordsOf(Iterable<DeckEntry> decks, String script) =>
         if (entry.deck.kind == DeckKind.vocab && entry.deck.pattern == null)
           for (final card in entry.cards)
             if (card.rule == null && card.reading != null)
-              if (_spellingOf(card, script, entry.language.script)
-                  case final spelling? when spelling.trim().isNotEmpty)
+              if (_spellingOf(card, script, entry.language) case final spelling?
+                  when spelling.trim().isNotEmpty)
                 (
                   card: card,
                   spelling: spelling,
@@ -647,13 +647,18 @@ List<ScriptWord> scriptWordsOf(Iterable<DeckEntry> decks, String script) =>
                 ),
     ];
 
-/// [card] spelled in [script], in a deck whose first script is [first]. In a
-/// kanji deck (ADR-0053) a word in kana alone is no kanji word and is its own
-/// kana: the kanji check asks only words with a kanji in them, and the kana
-/// check asks every word.
-String? _spellingOf(Card card, String script, String first) {
-  final spelling = card.targetIn(script, firstScript: first);
-  if (first != kanjiScript || hasKanji(card.target)) return spelling;
+/// [card] spelled in [script], in a deck of [language]. In a kanji deck
+/// (ADR-0053: `han` first, `kana` among its scripts) a word in kana alone is
+/// no kanji word and is its own kana: the kanji check asks only words with a
+/// kanji in them, and the kana check asks every word. A Chinese deck also
+/// writes `han`, but lists no kana, so every one of its words, `OK` and
+/// digits too, stays a Han word.
+String? _spellingOf(Card card, String script, LanguageInfo language) {
+  final spelling = card.targetIn(script, firstScript: language.script);
+  final kanjiDeck =
+      language.script == kanjiScript &&
+      language.allScripts.contains(kanaScript);
+  if (!kanjiDeck || hasKanji(card.target)) return spelling;
   if (script == kanjiScript) return null;
   return script == kanaScript ? card.target : spelling;
 }
