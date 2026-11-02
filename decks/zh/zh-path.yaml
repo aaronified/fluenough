@@ -358,7 +358,8 @@ units:
       - { id: "which-bus", text: { "en": "Asking which bus or metro line goes to the city centre" } }
     reading_passages:
       - { id: "station-timetable", text: { "en": "A train and bus timetable at a station" } }
-  - planned: { id: "zh-directions", theme: "directions", words: 30 }
+  - decks: ["zh-directions", "zh-directions-sentences", "zh-reading-directions", "*"]
+    words: 30
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told: go straight, turn left, it is opposite" } }
     reading_passages:
