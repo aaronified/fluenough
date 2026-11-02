@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-places"
+name: "Japanese reading: places"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-places-1"
+    title: "Around town"
+    sentences:
+      - text: "としょかんはどこですか。"
+        reading: "toshokan wa doko desu ka."
+      - text: "かわはながいです。"
+        reading: "kawa wa nagai desu."
+      - text: "やまにのぼります。"
+        reading: "yama ni noborimasu."
+      - text: "えいがかんにいきます。"
+        reading: "eigakan ni ikimasu."
+    questions:
+      - id: "ja-1162"
+        prompt:
+          en: "Which line asks where the library is?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-1163"
+        prompt:
+          en: "The second line says that the river is long."
+        answer: true
+      - id: "ja-1164"
+        prompt:
+          en: "Which line says that someone climbs a mountain?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 1
+  - id: "ja-places-2"
+    title: "Where things are"
+    sentences:
+      - text: "ゆうびんきょくはちかいです。"
+        reading: "yuubinkyoku wa chikai desu."
+      - text: "びじゅつかんはとおいです。"
+        reading: "bijutsukan wa tooi desu."
+      - text: "もりはしずかです。"
+        reading: "mori wa shizuka desu."
+      - text: "こうえんにいきます。"
+        reading: "kouen ni ikimasu."
+    questions:
+      - id: "ja-1165"
+        prompt:
+          en: "Which line says that the post office is near?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-1166"
+        prompt:
+          en: "The third line says that the forest is quiet."
+        answer: true
+      - id: "ja-1167"
+        prompt:
+          en: "Which line says that the speaker goes to a park?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
