@@ -165,7 +165,7 @@ class ReadingIpaLines extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         if (lines.reading case final text?)
-          Text(text, style: style.forIpa(lines.swapped)),
+          ReadingText(text, swapped: lines.swapped, style: style),
         if (lines.ipa case final shown?)
           IpaLine(shown, textAlign: TextAlign.start),
       ],
