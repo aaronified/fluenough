@@ -123,6 +123,8 @@ alphabet:
   - "zh-reading-strokes-radicals"
   - "zh-characters-1"
   - "zh-reading-characters-1"
+  - "zh-characters-4"
+  - "zh-reading-characters-4"
   - "zh-characters-3"
   - "zh-reading-characters-3"
   - "zh-characters-2"
@@ -591,7 +593,8 @@ units:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
       - { id: "lost-child-notice", text: { "en": "A notice describing a lost child at a shopping centre" } }
-  - planned: { id: "zh-characters-4", grammar: "script-characters-4", words: 0 }
+  - decks: ["zh-characters-4", "zh-reading-characters-4"]
+    words: 10
     listening_passages:
       - { id: "characters-in-town", text: { "en": "Hearing the town words whose characters are taught: shop, hospital, bank, school" } }
     reading_passages:
