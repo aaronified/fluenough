@@ -134,7 +134,7 @@ Common to every kind.
 | `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
 | `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa`, `braille` and `other`. Any other name is accepted with a warning ([ADR-0009](ADR-0009-Scripts-Are-Open)). Every script but `latin`, `cyrillic`, `greek`, `ipa` and `braille` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone, and `braille` for [the English Braille course](#the-english-braille-course), whose answers are typed on the app's own braille keyboard. |
-| `scripts` | no | For a language written in more than one script, every script it is taught in, `script` first: `["devanagari", "perso_arabic"]` for Hindustani, `["han", "han_traditional"]` for Chinese. Two or more names, none twice. A card's other spellings are written under [`target_scripts`](#a-cards-other-scripts-target_scripts). A script id is lowercase words joined by an underscore (`perso_arabic`, `ol_chiki`), as the app's own list of scripts has it; the validator accepts a hyphen too. |
+| `scripts` | no | For a language written in more than one script, every script it is taught in, `script` first: `["devanagari", "perso_arabic"]` for Hindustani, `["han", "han_traditional"]` for Chinese, `["han", "kana"]` for Japanese kanji decks ([below](#japanese-kanji)). Two or more names, none twice. A card's other spellings are written under [`target_scripts`](#a-cards-other-scripts-target_scripts). A script id is lowercase words joined by an underscore (`perso_arabic`, `ol_chiki`), as the app's own list of scripts has it; the validator accepts a hyphen too. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. A deck's text is drawn in its own direction, not the interface's: a card's target, the tiles of the word-order drill (built from the right, the words in Latin letters excepted), and where the interface quotes it, as in "Answer: …", the quote is isolated from the words around it so that neither reorders the other. |
 | `typed` | no | `false` for a language whose answers cannot be typed: its production is asked by choosing the word among others, in reviews, in lessons and in the check of a hard word, never by typing. Defaults to `true`. Only [the IPA course](#the-ipa-course) is `false`. [English Braille](#the-english-braille-course) is typed, on the app's own keyboard, which its script names. |
@@ -695,6 +695,96 @@ decks list `scripts: ["perso_arabic", "devanagari"]` and give every card a
 `devanagari` spelling the Hindi voice can read: a letter with its vowel
 (`ب` is `ब`), a word in its normal Hindi spelling. A card with no sensible
 spelling, such as a bare nasal mark, gives none, and no backup is said for it.
+
+### Japanese kanji
+
+Japanese is written in kana and kanji. Its two scripts are `kana` and `han`
+(the app names `han` "Kanji"), and a card written in kanji is a card of a
+language with two scripts, so it uses the machinery above and nothing new
+(owner, 2026-11-02, [ADR-0053](ADR-0053-Japanese-Kanji): "From each kanji unit on, cards write the target in
+kanji with the kana reading shown (like Chinese hanzi with pinyin); earlier
+cards stay kana."). Cards before the first kanji unit are as they were:
+`script: kana`, one script, the target in kana.
+
+A **kanji deck** has `script: han` and `scripts: [han, kana]`. Its card's
+`target` is in kanji, with its okurigana where it has them, and the kana
+reading, the word spelled in kana, is `target_scripts.kana`:
+
+```yaml
+language: { code: ja, iso639_3: jpn, name: Japanese, script: han, scripts: [han, kana], tts: ja-JP }
+cards:
+  - id: "ja-0301"
+    target: "食べる"
+    target_scripts: { kana: "たべる" }
+    words: ["食べる"]
+    reading: "taberu"
+    ipa: "tabeɾɯ"
+    pos: "verb"
+```
+
+- **The kana reading is `target_scripts.kana`, and `reading` stays the
+  romaji.** `reading` is the course's Hepburn romanisation, which typed
+  romaji answers, `ipa` and the readings in prose all follow, so it does not
+  change. The kana is the card's second spelling, so one card has one
+  `reading` and one `ipa`, as Hindustani's two spellings do.
+- **Every target with a kanji in it needs a kana reading.** The validator
+  refuses a kanji target with none, and a reading with a kanji (or romaji)
+  in it: its letters must be hiragana, katakana (ー and ・ too) or halfwidth
+  katakana. 々, 〆 and 〇 count as kanji. A target in kana alone (ありがとう,
+  です, a particle) gives none: the kana is the target.
+- **A word that mixes the two stays one word.** 食べる and 食べました are
+  one `words` entry each; their `bases` name the base in kanji (`base:
+  "食べる"`) with its romaji `reading`, and the card of the base is the card
+  whose `target` is 食べる. `words` is the target's only, as for any
+  `target_scripts` spelling: the kana spelling has no `words` of its own and
+  is split at spaces, since it need not have as many letters (日本語 is
+  three, にほんご is four).
+- **Examples are written in kanji too,** with the romaji `reading` as now. An
+  example has no kana spelling (examples take no `target_scripts`).
+- **A card id never changes when its card moves to kanji.** A card already
+  in a kana deck keeps its id and its history; the kanji spelling lands as a
+  new card of a kanji deck only where the word is new.
+
+**A script unit of kanji** (`script-kanji-1` to `script-kanji-6`, deck ids
+`ja-kanji-N`, listed under the path's `alphabet`) is a vocab deck tagged
+`script`, as Chinese's `characters-N` is, and its cards are single kanji:
+
+```yaml
+  - id: "ja-0401"
+    target: "日"
+    target_scripts: { kana: "ひ" }
+    words: ["日"]
+    reading: "hi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "日曜日です。"
+        words: ["日曜日", "です"]
+        reading: "nichiyoubi desu."
+```
+
+The kana reading is the one reading the unit teaches the kanji by: the word
+it stands for alone (ひ, sun, day), or for a kanji that never stands alone,
+its commonest word's. The other on and kun readings are the card's notes
+(`日: on ニチ (nichi), ジツ (jitsu); kun ひ (hi), か (ka)`, in the layer, with
+the romaji beside each kana, as notes quote any word), and the kanji's use in
+words is taught by the examples and by the kanji word cards that follow.
+
+A learner learns kanji on top of kana. Kana is the script a Japanese course
+starts with, however many of its decks are kanji decks (`primaryScript`),
+and a learner of kana alone sees a kanji deck's cards in kana, from their
+`target_scripts.kana`, and leaves the kanji script units out as any skipped
+script's are. A learner who learns kanji sees the kanji with the kana beneath
+it, as the app shows a card's other spellings, and may write either: the kana
+spelling, which accepts the kanji too, or the kanji.
+
+The released app reads these files, which use fields and script ids it has
+long known, but only an app of this version is held to show a kanji deck as above;
+an older app may show a learner of kana alone the kanji target where they
+should see kana. A kanji deck therefore lands after the
+release that carries this, and may be held to it with `decks/min_app.json`
+([ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index)).
 
 ### A note on `id`
 
