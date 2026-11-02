@@ -867,7 +867,8 @@ units:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
     reading_passages:
       - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
-  - planned: { id: "zh-housing", theme: "housing", words: 50 }
+  - decks: ["zh-housing", "zh-housing-sentences", "zh-reading-housing", "*"]
+    words: 50
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an agent about a flat to rent" } }
     reading_passages:
