@@ -1,0 +1,67 @@
+schema: 1
+id: "as-en-reading-concessive"
+name: "Assamese reading: even though: the concessive"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-even-though"
+    title: "Saying something happened even though it was hard"
+    sentences:
+      - text: "কঠিন হ'লেও মই কৰিলোঁ।"
+        reading: "kôthin hôleu moi kôrilōm̐."
+      - text: "বৰষুণ আহিলেও মই গ'লোঁ।"
+        reading: "bôrôxun āhileu moi golōm̐."
+      - text: "তথাপি সি আহি নাপালে।"
+        reading: "tôthāpi xi āhi nāpāle."
+      - text: "তেওঁ খালেও তেওঁ খুচীয়া নহ'ল।"
+        reading: "teum̐ khāleu teum̐ khushiyā nôhôl."
+    questions:
+      - id: "as-3713"
+        prompt: { en: "The speaker did it even though it was hard." }
+        answer: true
+      - id: "as-3714"
+        prompt: { en: "What came before the speaker went?" }
+        options:
+          - { en: "Rain" }
+          - { en: "A flood" }
+          - { en: "A festival" }
+        answer: 1
+      - id: "as-3715"
+        prompt: { en: "Was the person happy after eating?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 2
+  - id: "as-a-hard-choice"
+    title: "A short text about a hard choice"
+    sentences:
+      - text: "যদিও কঠিন, তথাপি মই যাম।"
+        reading: "zodiu kôthin, tôthāpi moi zām."
+      - text: "পৰিয়ালে নিষেধ কৰিলেও মই যাম।"
+        reading: "pôriyāle nixedh kôrileu moi zām."
+      - text: "সময় কম হ'লেও মই পঢ়িম।"
+        reading: "xômôy kôm hôleu moi pôrhim."
+      - text: "এইটো মোৰ সিদ্ধান্ত।"
+        reading: "eitu mur siddhānt."
+    questions:
+      - id: "as-3716"
+        prompt: { en: "The writer will go although it is hard." }
+        answer: true
+      - id: "as-3717"
+        prompt: { en: "What did the family do?" }
+        options:
+          - { en: "Forbid it" }
+          - { en: "Help" }
+          - { en: "Sing" }
+        answer: 1
+      - id: "as-3718"
+        prompt: { en: "What is the writer's decision?" }
+        options:
+          - { en: "To stop" }
+          - { en: "To go" }
+          - { en: "To sleep" }
+        answer: 2
