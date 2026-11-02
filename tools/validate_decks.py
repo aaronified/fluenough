@@ -6,6 +6,8 @@ Usage:
     python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
 
     python3 tools/validate_decks.py --next-id bn
+    python3 tools/validate_decks.py --jobs 1 decks/     # one process; the default
+                                                        # is one worker per CPU
 
 Requires only Python 3.11+ and PyYAML, so deck contributors need no Flutter
 toolchain. Exits non-zero if any deck fails. See docs/DECK-FORMAT.md.
@@ -28,6 +30,7 @@ from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
+import fast_yaml  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
 
 try:
@@ -436,10 +439,10 @@ if getattr(yaml, "__with_libyaml__", False) and not os.environ.get("FLUENOUGH_PU
     from yaml.cyaml import CParser as _CParser
 
     class CDeckLoader(_CParser, _DeckConstructor, DeckResolver):
-        """[DeckLoader] with libyaml doing the reading, about ten times as
-        fast. Only [_load_deck] uses it, and only for text it reads without
-        error: anything else is read again by [DeckLoader], so that every
-        error message is the pure-Python loader's, word for word."""
+        """[DeckLoader] with libyaml doing the reading. Only [_fast_load]
+        uses it, for the nodes: anything it cannot read is read again by
+        [DeckLoader], so that every error message is the pure-Python
+        loader's, word for word."""
 
         def __init__(self, stream) -> None:
             _CParser.__init__(self, stream)
@@ -456,7 +459,7 @@ else:  # PyYAML built without libyaml, or the escape hatch for debugging
 # bound is on the text, since the trees are ten or more times as large.
 _YAML_CACHE: "collections.OrderedDict[bytes, object]" = collections.OrderedDict()
 _YAML_CACHE_SIZES: dict[bytes, int] = {}
-_YAML_CACHE_LIMIT = 24_000_000
+_YAML_CACHE_LIMIT = 16_000_000
 _YAML_CACHE_BYTES = [0]
 _NO_DATA = object()
 
@@ -498,18 +501,22 @@ def _clone(node: object, memo: dict[int, object]) -> object:
     raise _Uncloneable
 
 
+def _digest(text: str) -> bytes:
+    return hashlib.blake2b(text.encode("utf-8", "surrogatepass"),
+                           digest_size=16).digest()
+
+
 def _load_deck(text: str) -> object:
     """`yaml.load(text, Loader=DeckLoader)`, with the same result and the same
     errors, read once per distinct text and by libyaml where it is built."""
-    key = hashlib.blake2b(text.encode("utf-8", "surrogatepass"),
-                          digest_size=16).digest()
+    key = _digest(text)
     tree = _YAML_CACHE.get(key, _NO_DATA)
     if tree is _NO_DATA:
         tree = _NO_DATA
         if CDeckLoader is not None:
             try:
-                tree = yaml.load(text, Loader=CDeckLoader)
-            except Exception:  # noqa: BLE001 - re-read below, for its message
+                tree = fast_yaml.fast_load(text, CDeckLoader)
+            except fast_yaml.Fallback:
                 tree = _NO_DATA
         if tree is _NO_DATA:
             tree = yaml.load(text, Loader=DeckLoader)
@@ -2801,6 +2808,45 @@ def validate(path: Path) -> Report:
     return r
 
 
+# Fewer files than this are validated in this process: starting workers costs
+# more than they save.
+PARALLEL_MIN_FILES = 24
+
+
+def default_jobs() -> int:
+    """The workers [validate_many] uses unless told: one per CPU this process
+    may run on."""
+    try:
+        return max(1, len(os.sched_getaffinity(0)))
+    except (AttributeError, OSError):
+        return max(1, os.cpu_count() or 1)
+
+
+def validate_many(paths: list[Path], jobs: int | None = None) -> list[Report]:
+    """[validate] of each of [paths], in the order given. Each file is checked
+    on its own, so with [jobs] above 1 (default: [default_jobs]) they are
+    shared among worker processes; the reports are the same as one process
+    makes, in the same order. Without `fork` (Windows) it stays in one
+    process. Left to itself it does not start workers for fewer than
+    PARALLEL_MIN_FILES files; a [jobs] of 2 or more asked for does."""
+    if jobs is None:
+        jobs = default_jobs() if len(paths) >= PARALLEL_MIN_FILES else 1
+    if jobs <= 1 or len(paths) < 2:
+        return [validate(p) for p in paths]
+    try:
+        import multiprocessing
+        from concurrent.futures import ProcessPoolExecutor
+        context = multiprocessing.get_context("fork")
+    except (ImportError, ValueError):
+        return [validate(p) for p in paths]
+    jobs = min(jobs, len(paths))
+    # Small runs of neighbouring files, which are mostly one language's and
+    # share its core files, are what each worker takes at a time.
+    chunk = max(1, min(8, len(paths) // (jobs * 4)))
+    with ProcessPoolExecutor(max_workers=jobs, mp_context=context) as pool:
+        return list(pool.map(validate, paths, chunksize=chunk))
+
+
 def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
     """Every check of a file but its proposals'."""
     # What the file is, before any other check (ADR-0036): a layer, a core,
@@ -3435,6 +3481,40 @@ def _load_raw(path: Path) -> object:
     return raw
 
 
+_VIEW_CACHE: "collections.OrderedDict[bytes, tuple[int, object]]" = collections.OrderedDict()
+_VIEW_CACHE_BYTES = [0]
+
+
+def _load_raw_view(path: Path) -> object:
+    """[_load_raw]'s result, shared: the same tree for every caller, so a
+    caller must only read it. For the checks that look at other files of a
+    language, which would otherwise copy a core's whole tree to read one
+    field of it, once per file asked about."""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return None
+    key = _digest(text)
+    hit = _VIEW_CACHE.get(key)
+    if hit is not None:
+        _VIEW_CACHE.move_to_end(key)
+        return hit[1]
+    try:
+        raw = _load_deck(text)
+    except yaml.YAMLError:
+        return None
+    strip_proposals(raw)
+    strip_checks(raw)
+    size = len(text)
+    if size <= _YAML_CACHE_LIMIT // 2:
+        _VIEW_CACHE[key] = (size, raw)
+        _VIEW_CACHE_BYTES[0] += size
+        while _VIEW_CACHE_BYTES[0] > _YAML_CACHE_LIMIT:
+            _, (old, _) = _VIEW_CACHE.popitem(last=False)
+            _VIEW_CACHE_BYTES[0] -= old
+    return raw
+
+
 def _yaml_files(directory: Path) -> list[Path]:
     """The files of a language: directly in its directory, and one level
     below, where its layers are."""
@@ -3471,7 +3551,7 @@ def _reads_as_course(dirs: list[Path], lang: str, seg: str) -> bool:
         if (d / seg).is_dir():
             return True
         for p in sorted(d.glob(f"{lang}-{seg}-*.yaml")) + sorted(d.glob(f"*/{lang}-{seg}-*.yaml")):
-            raw = _load_raw(p)
+            raw = _load_raw_view(p)
             native = raw.get("native") if isinstance(raw, dict) else None
             if isinstance(native, dict) and native.get("code") == seg:
                 return True
@@ -3984,7 +4064,7 @@ def validate_layer(r: Report, raw: dict, path: Path) -> None:
         r.error("core", f"no core file {core_id}.yaml in {folder}; a layer's core is "
                         f"in the folder above it")
         return
-    core = _load_raw(file)
+    core = _load_raw_view(file)
     if not isinstance(core, dict) or core.get("part") != "core":
         r.error("core", f'{core_id}.yaml is not a core: it has no part: "core"')
         return
@@ -5436,7 +5516,7 @@ def _course_scripts(folder: Path) -> set[str]:
     in, hyphens as underscores: a script guide may be for any of them."""
     found: set[str] = set()
     for p in sorted(folder.glob("*.yaml")):
-        raw = _load_raw(p)
+        raw = _load_raw_view(p)
         if isinstance(raw, dict) and isinstance(raw.get("language"), dict):
             found.update(s.replace("-", "_") for s in _scripts_of(raw["language"]))
     return found
@@ -5880,7 +5960,7 @@ class _Language:
             except (OSError, UnicodeDecodeError):
                 continue
             if re.search(r"(?m)^[\"']?part[\"']?\s*:", text):
-                raw = _load_raw(p)
+                raw = _load_raw_view(p)
                 if isinstance(raw, dict) and raw.get("part") == "core" \
                         and raw.get("kind") not in GUIDE_KINDS:
                     cores.append(raw.get("id") if _is_str(raw.get("id")) else p.stem)
@@ -6101,7 +6181,7 @@ def check_paths_across(reports: list[Report]) -> list[str]:
         for other in sorted(rep.path.parent.glob("*-path.yaml")):
             if other.resolve() in given:
                 continue
-            raw = _load_raw(other)
+            raw = _load_raw_view(other)
             if isinstance(raw, dict) and raw.get("kind") == "path" \
                     and raw.get("language") == lang:
                 problems.append(f"{rep.path}: root: {lang} already has a path, {other}; "
@@ -6934,7 +7014,23 @@ def main(argv: list[str]) -> int:
             return 2
         print(next_card_id(argv[2]))
         return 0
-    targets = [Path(a) for a in argv[1:]] or [Path("decks")]
+    args = argv[1:]
+    jobs: int | None = None
+    for i, a in enumerate(args):
+        if a == "--jobs" or a.startswith("--jobs="):
+            value = a.partition("=")[2] if "=" in a else \
+                (args[i + 1] if i + 1 < len(args) else "")
+            try:
+                jobs = int(value)
+                if jobs < 1:
+                    raise ValueError
+            except ValueError:
+                print(f"error: --jobs takes a number of workers, 1 or more; "
+                      f"got {value!r}", file=sys.stderr)
+                return 2
+            del args[i:i + (1 if "=" in a else 2)]
+            break
+    targets = [Path(a) for a in args] or [Path("decks")]
     paths: list[Path] = []
     for t in targets:
         if not t.exists():
@@ -6946,7 +7042,7 @@ def main(argv: list[str]) -> int:
         print("error: no deck files found", file=sys.stderr)
         return 2
 
-    reports = [validate(p) for p in paths]
+    reports = validate_many(paths, jobs)
 
     ids: dict[str, Path] = {}
     for p in paths:

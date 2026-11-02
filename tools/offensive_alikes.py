@@ -36,6 +36,7 @@ The list is for a person to read; the tool changes no file.
 from __future__ import annotations
 
 import argparse
+import functools
 import os
 import sys
 import unicodedata
@@ -44,6 +45,7 @@ from pathlib import Path
 
 import yaml
 
+import fast_yaml
 from pick_warning import distance, letters, segments
 
 RUDE = "offensive"
@@ -136,8 +138,8 @@ def _safe_load(text: str) -> object:
         yaml, "CSafeLoader", None)
     if loader is not None:
         try:
-            return yaml.load(text, Loader=loader)
-        except Exception:  # noqa: BLE001
+            return fast_yaml.fast_load(text, loader)
+        except fast_yaml.Fallback:
             pass
     return yaml.safe_load(text)
 
@@ -218,6 +220,11 @@ def find_alikes(words: list[Word], limit: int = MAX_DISTANCE) -> list[Alike]:
     """Every word of a language that is close to one of its offensive words,
     by sound and by writing, nearest first."""
     found: list[Alike] = []
+    # Each word is cut into segments or letters once, not once per offensive
+    # word it is set against; the lists are only ever read.
+    segs = functools.lru_cache(maxsize=None)(segments)
+    lets = functools.lru_cache(maxsize=None)(letters)
+    reading = functools.lru_cache(maxsize=None)(_reading_letters)
     for language in sorted({w.language for w in words}):
         group = [w for w in words if w.language == language]
         rudes = [w for w in group if w.rude]
@@ -226,16 +233,16 @@ def find_alikes(words: list[Word], limit: int = MAX_DISTANCE) -> list[Alike]:
                 continue
             for rude in rudes:
                 if word.ipa and rude.ipa:
-                    d = _close(segments(word.ipa), segments(rude.ipa), limit)
+                    d = _close(segs(word.ipa), segs(rude.ipa), limit)
                     if d is not None:
                         found.append(Alike("sound", word, rude, d, "ipa",
                                            _explained(word, rude, SOUND_NOTES,
                                                    "not_sounds_like")))
-                looks = [("script", _close(letters(word.target),
-                                           letters(rude.target), limit))]
+                looks = [("script", _close(lets(word.target),
+                                           lets(rude.target), limit))]
                 if word.reading and rude.reading:
-                    looks.append(("reading", _close(_reading_letters(word.reading),
-                                                    _reading_letters(rude.reading),
+                    looks.append(("reading", _close(reading(word.reading),
+                                                    reading(rude.reading),
                                                     limit)))
                 near = [(d, basis) for basis, d in looks if d is not None]
                 if near:
