@@ -1,0 +1,58 @@
+schema: 1
+id: "ja-en-places-sentences"
+kind: "layer"
+core: "ja-places-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1158":
+    native: "The library is beside the school."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "きょうしつ (kyoushitsu) is a classroom, inside the school."
+      w2:
+        why: "こうえん (kouen) is a park."
+  "ja-1159":
+    native: "I go to the sea."
+    bases:
+      "に":
+        meaning: "in; at; to"
+    confusables:
+      w1:
+        why: "かわ (kawa) is a river, not the sea."
+      w2:
+        why: "やま (yama) is a mountain."
+  "ja-1160":
+    native: "The hospital is near."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "くすりや (kusuriya) is a pharmacy."
+      w2:
+        why: "ゆうびんきょく (yuubinkyoku) is a post office."
+  "ja-1161":
+    native: "The forest is quiet."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "やま (yama) is a mountain, not a forest."
+      w2:
+        why: "いけ (ike) is a pond."
