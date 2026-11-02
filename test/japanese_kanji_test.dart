@@ -219,6 +219,7 @@ language: zh
 alphabet:
   - zh-characters
 units:
+  - [zh-characters]
   - [zh-words]
 ''',
         }),
@@ -230,9 +231,13 @@ units:
       );
       addTearDown(state.dispose);
       await state.load();
-      final check = state
-          .placementScripts('zh')
-          .firstWhere((s) => s.script == han);
+      // A path lists every alphabet deck among its units: without that it
+      // is refused, no script deck is on it and nothing below is checked.
+      final scripts = state.placementScripts('zh');
+      expect(scripts.map((s) => s.script), [
+        han,
+      ], reason: 'the fixture must put a han script deck on the path');
+      final check = scripts.single;
       expect(check.words.map((w) => w.spelling), ['你好', 'OK', '110']);
     });
   });
