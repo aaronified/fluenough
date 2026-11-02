@@ -1,0 +1,116 @@
+schema: 1
+id: "ja-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0495"
+    target: "せんせいはしんせつです。"
+    words: ["せんせい", "は", "しんせつ", "です"]
+    reading: "sensei wa shinsetsu desu."
+    ipa: "seɴseː wa ɕiɴsetsɯ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "やさしい"
+        reading: "yasashii"
+        kind: "word"
+      - id: "w2"
+        word: "いい"
+        reading: "ii"
+        kind: "word"
+  - id: "ja-0496"
+    target: "がっこうはとおいです。"
+    words: ["がっこう", "は", "とおい", "です"]
+    reading: "gakkou wa tooi desu."
+    ipa: "ɡakkoː wa toːi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "ちかい"
+        reading: "chikai"
+        kind: "word"
+      - id: "w2"
+        word: "ながい"
+        reading: "nagai"
+        kind: "word"
+  - id: "ja-0497"
+    target: "てんきはあついです。"
+    words: ["てんき", "は", "あつい", "です"]
+    reading: "tenki wa atsui desu."
+    ipa: "teɴki wa atsɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "さむい"
+        reading: "samui"
+        kind: "word"
+      - id: "w2"
+        word: "あたたかい"
+        reading: "atatakai"
+        kind: "word"
+  - id: "ja-0498"
+    target: "ごはんはおいしいです。"
+    words: ["ごはん", "は", "おいしい", "です"]
+    reading: "gohan wa oishii desu."
+    ipa: "ɡohaɴ wa oiɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "わるい"
+        reading: "warui"
+        kind: "word"
+      - id: "w2"
+        word: "からい"
+        reading: "karai"
+        kind: "word"
+  - id: "ja-0499"
+    target: "ちちはいそがしいです。"
+    words: ["ちち", "はい", "そ", "が", "し", "い", "です"]
+    reading: "chichi hai so ga shi i desu."
+    ipa: "tɕitɕi hai so ɡa ɕi i desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "はい", base: "はい", reading: "hai" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "しずか"
+        reading: "shizuka"
+        kind: "word"
+      - id: "w2"
+        word: "たのしい"
+        reading: "tanoshii"
+        kind: "word"
+  - id: "ja-0500"
+    target: "いぬはおもいです。"
+    words: ["いぬ", "は", "おもい", "です"]
+    reading: "inu wa omoi desu."
+    ipa: "inɯ wa omoi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "かるい"
+        reading: "karui"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0077"
+        kind: "word"

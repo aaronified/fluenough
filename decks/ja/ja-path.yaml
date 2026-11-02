@@ -170,7 +170,8 @@ units:
       - { id: "how-many-do-you-want", text: { "en": "Asking how much and how many at a bakery" } }
     reading_passages:
       - { id: "recipe-amounts", text: { "en": "The amounts on a recipe card" } }
-  - planned: { id: "ja-describing", theme: "describing", words: 35 }
+  - decks: ["ja-describing", "ja-describing-sentences", "ja-reading-describing", "*"]
+    words: 35
     listening_passages:
       - { id: "how-is-it", text: { "en": "A friend asks about your new room: big, quiet, convenient" } }
     reading_passages:
