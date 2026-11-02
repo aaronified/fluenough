@@ -475,7 +475,8 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones: this one is cheaper than that one, they are the same" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Beijing and Shanghai" } }
-  - planned: { id: "zh-things", theme: "things", words: 50 }
+  - decks: ["zh-things", "zh-things-sentences", "zh-reading-things", "*"]
+    words: 50
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
