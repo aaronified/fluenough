@@ -11,14 +11,14 @@ passages:
   - id: "as-he-said-that"
     title: "Telling someone what a third person said"
     sentences:
-      - text: "সি বুলি কৈছিল, তেওঁ আহিব।"
-        reading: "xi buli kaisil, teum̐ āhib."
-      - text: "মই বুলি ভাবিছিলোঁ, সি মিছা।"
-        reading: "moi buli bhābisilōm̐, xi misā."
-      - text: "তাই বুলি জানিছিল।"
-        reading: "tāi buli zānisil."
-      - text: "মই বুলি বুজিছোঁ।"
-        reading: "moi buli buzisum̐."
+      - text: "তেওঁ আহিব বুলি সি কৈছিল।"
+        reading: "teum̐ āhibô buli si kôisil."
+      - text: "সি মিছা বুলি মই ভাবিছিলোঁ।"
+        reading: "si misā buli moi bhābisilum̐."
+      - text: "তুমি আহিবা বুলি তাই জানিছিল।"
+        reading: "tumi āhibā buli tāi zānisil."
+      - text: "এইটো ঠিক বুলি মই বুজিছোঁ।"
+        reading: "eitu thik buli moi buzisum̐."
     questions:
       - id: "as-3996"
         prompt: { en: "He said that he would come." }
@@ -34,20 +34,20 @@ passages:
         prompt: { en: "What does the speaker understand?" }
         options:
           - { en: "Nothing" }
-          - { en: "The meaning" }
+          - { en: "That it is right" }
           - { en: "The price" }
         answer: 2
   - id: "as-message-thread"
     title: "A message thread passing on what someone said"
     sentences:
-      - text: "বন্ধুৱে বুলি কয়, বাছ দেৰি।"
-        reading: "bondhuwe buli kôy, bās deri."
-      - text: "মই বুলি কৈছিলোঁ, ঠিক আছে।"
-        reading: "moi buli kaisilōm̐, ṭhik āse."
-      - text: "তাই বুলি শুনিছে, আমি যাম।"
-        reading: "tāi buli xunise, āmi zām."
-      - text: "এতিয়া সকলো বুলি জানে।"
-        reading: "etiyā sôkôlu buli zāne."
+      - text: "বাছ দেৰি বুলি বন্ধুৱে কয়।"
+        reading: "bās deri buli bondhuwe kôy."
+      - text: "ঠিক আছে বুলি মই কৈছিলোঁ।"
+        reading: "thik āse buli moi kôisilum̐."
+      - text: "আমি যাম বুলি তাই শুনিছে।"
+        reading: "āmi zām buli tāi xunise."
+      - text: "বাছ দেৰি বুলি এতিয়া সকলোৱে জানে।"
+        reading: "bās deri buli etiyā xôkôluwe zāne."
     questions:
       - id: "as-3999"
         prompt: { en: "The friend says the bus is late." }
