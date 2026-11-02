@@ -643,7 +643,9 @@ units:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "zh-grammar-reduplication", grammar: ["verb-reduplication", "adjective-reduplication"] }
+  - decks: ["zh-grammar-verb-reduplication", "zh-grammar-adjective-reduplication", "zh-grammar-verb-reduplication-sentences"]
+    words: 0
+    grammar: ["verb-reduplication", "adjective-reduplication"]
     listening_passages:
       - { id: "have-a-look", text: { "en": "Softening a request by saying the verb twice: have a look, have a try, and adjectives said twice" } }
     reading_passages:
