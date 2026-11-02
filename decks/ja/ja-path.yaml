@@ -268,7 +268,8 @@ units:
   - ["ja-katakana"]
   - decks: ["ja-loanwords", "*"]
     words: 30
-  - planned: { id: "ja-market", theme: "market", words: 40 }
+  - decks: ["ja-market", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-greengrocer", text: { "en": "Buying fruit and vegetables at a greengrocer" } }
     reading_passages:

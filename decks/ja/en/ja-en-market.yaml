@@ -1,0 +1,756 @@
+schema: 1
+id: "ja-en-market"
+kind: "layer"
+core: "ja-market"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Market"
+description: "Forty words for the market: the shops for vegetables, fish, meat and bread, the fruit and vegetables, drinks and sweets, and the people who work and shop there. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0879":
+    native: "market"
+    notes:
+      "n1": "いちば (ichiba) is an open market where food and goods are sold."
+    examples:
+      "いちばはどこですか。":
+        native: "Where is the market?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "いちばはおおぜいです。":
+        native: "The market is full of people."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0880":
+    native: "greengrocer; vegetable shop"
+    notes:
+      "n1": "やおや (yaoya) is a shop that sells vegetables and fruit."
+    examples:
+      "やおやはちかいです。":
+        native: "The greengrocer is near."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "やおやにいきます。":
+        native: "I go to the greengrocer."
+        bases:
+          "に":
+            meaning: "in; at; to"
+  "ja-0881":
+    native: "butcher; meat shop"
+    notes:
+      "n1": "にくや (nikuya) is a shop that sells meat."
+    examples:
+      "にくやはどこですか。":
+        native: "Where is the butcher?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "にくやはやすいです。":
+        native: "The butcher is cheap."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0882":
+    native: "fishmonger; fish shop"
+    notes:
+      "n1": "さかなや (sakanaya) is a shop that sells fish."
+    examples:
+      "さかなやはおおきいです。":
+        native: "The fish shop is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "さかなやにいきますか。":
+        native: "Are you going to the fish shop?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0883":
+    native: "bakery"
+    notes:
+      "n1": "ぱんや (panya) is a shop that sells bread."
+    examples:
+      "ぱんやはとおいです。":
+        native: "The bakery is far."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ぱんやはいくらですか。":
+        native: "How much is it at the bakery?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0884":
+    native: "vegetables"
+    notes:
+      "n1": "やさい (yasai) means vegetables."
+    examples:
+      "やさいをたべます。":
+        native: "I eat vegetables."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "やさいはやすいですか。":
+        native: "Are vegetables cheap?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0885":
+    native: "fruit"
+    notes:
+      "n1": "くだもの (kudamono) means fruit."
+    examples:
+      "くだものはおいしいです。":
+        native: "Fruit is delicious."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "くだものをかいます。":
+        native: "I buy fruit."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0886":
+    native: "mandarin orange"
+    notes:
+      "n1": "みかん (mikan) is a small orange."
+    examples:
+      "みかんをたべます。":
+        native: "I eat mandarin oranges."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "みかんはあまいです。":
+        native: "The mandarin is sweet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0887":
+    native: "banana"
+    notes:
+      "n1": "ばなな (banana) is a banana."
+    examples:
+      "ばななはながいです。":
+        native: "The banana is long."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ばななをかいます。":
+        native: "I buy a banana."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0888":
+    native: "grapes"
+    notes:
+      "n1": "ぶどう (budou) is a grape, the fruit on a bunch."
+    examples:
+      "ぶどうはあまいです。":
+        native: "The grapes are sweet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ぶどうをたべますか。":
+        native: "Do you eat grapes?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0889":
+    native: "strawberry"
+    notes:
+      "n1": "いちご (ichigo) is a strawberry."
+    examples:
+      "いちごはおいしいです。":
+        native: "The strawberry is delicious."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "いちごをかいます。":
+        native: "I buy strawberries."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0890":
+    native: "tomato"
+    notes:
+      "n1": "A word from English \"tomato\", written in katakana."
+    examples:
+      "トマトはおおきいです。":
+        native: "The tomato is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "トマトをたべますか。":
+        native: "Do you eat tomatoes?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0891":
+    native: "cucumber"
+    notes:
+      "n1": "きゅうり (kyuuri) is a cucumber."
+    examples:
+      "きゅうりはながいです。":
+        native: "The cucumber is long."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "きゅうりはすくないです。":
+        native: "There are few cucumbers."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0892":
+    native: "carrot"
+    notes:
+      "n1": "にんじん (ninjin) is a carrot."
+    examples:
+      "にんじんはおおきいです。":
+        native: "The carrot is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "にんじんをかいます。":
+        native: "I buy a carrot."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0893":
+    native: "potato"
+    notes:
+      "n1": "じゃがいも (jagaimo) is a potato."
+    examples:
+      "じゃがいもはやすいです。":
+        native: "Potatoes are cheap."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "じゃがいもをたべます。":
+        native: "I eat potatoes."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0894":
+    native: "onion"
+    notes:
+      "n1": "たまねぎ (tamanegi) is an onion."
+    examples:
+      "たまねぎはからいです。":
+        native: "The onion is strong."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "たまねぎをたべます。":
+        native: "I eat the onion."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0895":
+    native: "radish; daikon"
+    notes:
+      "n1": "だいこん (daikon) is a long white radish."
+    examples:
+      "だいこんはながいです。":
+        native: "The radish is long."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "だいこんはいくらですか。":
+        native: "How much is the radish?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0896":
+    native: "fish"
+    notes:
+      "n1": "さかな (sakana) is a fish, as food or as an animal."
+    examples:
+      "さかなをたべます。":
+        native: "I eat fish."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "さかなはおいしいですか。":
+        native: "Is fish delicious?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0897":
+    native: "meat"
+    notes:
+      "n1": "にく (niku) is meat."
+    examples:
+      "にくをたべません。":
+        native: "I do not eat meat."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "にくはたかいですか。":
+        native: "Is meat expensive?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0898":
+    native: "chicken; bird"
+    notes:
+      "n1": "とり (tori) is a bird, or the chicken meat."
+    examples:
+      "とりをたべます。":
+        native: "I eat chicken."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "とりはいぬのうえです。":
+        native: "The bird is on the dog."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0899":
+    native: "beef"
+    notes:
+      "n1": "ぎゅうにく (gyuuniku) is beef, the meat of cattle."
+    examples:
+      "ぎゅうにくはたかいです。":
+        native: "Beef is expensive."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ぎゅうにくをたべますか。":
+        native: "Do you eat beef?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0900":
+    native: "pork"
+    notes:
+      "n1": "ぶたにく (butaniku) is pork, the meat of pigs."
+    examples:
+      "ぶたにくはおいしいです。":
+        native: "Pork is delicious."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ぶたにくはすきですか。":
+        native: "Do you like pork?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0901":
+    native: "tofu"
+    notes:
+      "n1": "とうふ (toufu) is tofu, soft bean curd."
+    examples:
+      "とうふはやすいです。":
+        native: "Tofu is cheap."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "とうふをたべますか。":
+        native: "Do you eat tofu?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0902":
+    native: "eggplant; aubergine"
+    notes:
+      "n1": "なす (nasu) is an eggplant."
+    examples:
+      "なすはおおきいです。":
+        native: "The eggplant is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "なすをたべます。":
+        native: "I eat the eggplant."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0903":
+    native: "mushroom"
+    notes:
+      "n1": "きのこ (kinoko) is a mushroom."
+    examples:
+      "きのこはおいしいです。":
+        native: "Mushrooms are delicious."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "きのこをかいますか。":
+        native: "Do you buy mushrooms?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0904":
+    native: "spinach"
+    notes:
+      "n1": "ほうれんそう (hourensou) is spinach."
+    examples:
+      "ほうれんそうはおいしいです。":
+        native: "Spinach is delicious."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ほうれんそうをたべます。":
+        native: "I eat spinach."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0905":
+    native: "lemon"
+    notes:
+      "n1": "A word from English \"lemon\", written in katakana."
+    examples:
+      "レモンはおおきいです。":
+        native: "The lemon is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "レモンをかいますか。":
+        native: "Do you buy lemons?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0906":
+    native: "uncooked rice"
+    notes:
+      "n1": "こめ (kome) is uncooked rice. Cooked rice is ごはん (gohan)."
+    examples:
+      "こめはやすいです。":
+        native: "Rice is cheap."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "こめをかいます。":
+        native: "I buy rice."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0907":
+    native: "shop assistant; shop staff"
+    notes:
+      "n1": "てんいん (ten-in) is a member of the staff in a shop."
+    examples:
+      "てんいんはしずかです。":
+        native: "The shop assistant is quiet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "てんいんはしんせつですか。":
+        native: "Is the shop assistant kind?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0908":
+    native: "customer; guest"
+    notes:
+      "n1": "きゃく (kyaku) is a customer or a guest."
+    examples:
+      "きゃくはおおぜいです。":
+        native: "There are many customers."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "きゃくはいそがしいですか。":
+        native: "Are the customers busy?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0909":
+    native: "bag; sack"
+    notes:
+      "n1": "ふくろ (fukuro) is a bag or a sack."
+    examples:
+      "ふくろはおもいです。":
+        native: "The bag is heavy."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ふくろをもちます。":
+        native: "I carry a bag."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0910":
+    native: "sweets; snacks"
+    notes:
+      "n1": "おかし (okashi) means sweets and snacks."
+    examples:
+      "おかしはあまいです。":
+        native: "Sweets are sweet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "おかしをたべます。":
+        native: "I eat sweets."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-0911":
+    native: "tea (green tea)"
+    notes:
+      "n1": "おちゃ (ocha) is tea, usually green tea."
+    examples:
+      "おちゃをのみます。":
+        native: "I drink tea."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "おちゃはあついです。":
+        native: "The tea is hot."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0912":
+    native: "juice"
+    notes:
+      "n1": "A word from English \"juice\", written in katakana."
+    examples:
+      "ジュースをのみます。":
+        native: "I drink juice."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "ジュースはつめたいですか。":
+        native: "Is the juice cold?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0913":
+    native: "alcohol; sake"
+    notes:
+      "n1": "さけ (sake) means alcohol, or rice wine."
+    examples:
+      "さけはすきですか。":
+        native: "Do you like alcohol?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "さけはあまいです。":
+        native: "Sake is sweet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0914":
+    native: "alcohol (polite); sake"
+    notes:
+      "n1": "おさけ (osake) is the polite word for alcohol."
+    examples:
+      "おさけをのみますか。":
+        native: "Do you drink alcohol?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "か":
+            meaning: "(marks a question)"
+      "おさけはたかいです。":
+        native: "Alcohol is expensive."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0915":
+    native: "shop; store"
+    notes:
+      "n1": "みせ (mise) is a shop or a store."
+    examples:
+      "みせはどこですか。":
+        native: "Where is the shop?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "みせはおおきいです。":
+        native: "The shop is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0916":
+    native: "sugar"
+    notes:
+      "n1": "さとう (satou) is sugar."
+    examples:
+      "さとうをいれます。":
+        native: "I put in sugar."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "さとうはすくないです。":
+        native: "There is little sugar."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0917":
+    native: "salt"
+    notes:
+      "n1": "しお (shio) is salt."
+    examples:
+      "しおをかいます。":
+        native: "I buy salt."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "しおはからいです。":
+        native: "The salt is strong."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0918":
+    native: "soy sauce"
+    notes:
+      "n1": "しょうゆ (shouyu) is soy sauce."
+    examples:
+      "しょうゆをかいますか。":
+        native: "Do you buy soy sauce?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "か":
+            meaning: "(marks a question)"
+      "しょうゆはからいです。":
+        native: "Soy sauce is salty."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
