@@ -188,7 +188,8 @@ units:
       - { id: "where-is-my-key", text: { "en": "Looking for a key: on, under, in, next to" } }
     reading_passages:
       - { id: "room-layout", text: { "en": "A note saying where things are in a room" } }
-  - planned: { id: "ja-more-verbs", theme: "more-verbs", words: 30 }
+  - decks: ["ja-more-verbs", "ja-more-verbs-sentences", "ja-reading-more-verbs", "*"]
+    words: 30
     listening_passages:
       - { id: "weekend-chores", text: { "en": "Someone lists what they will do this weekend" } }
     reading_passages:
