@@ -578,7 +578,9 @@ units:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "rubbish-sorting-sign", text: { "en": "A sign on how to sort rubbish in a housing estate" } }
-  - planned: { id: "zh-grammar-ba", grammar: "ba-construction" }
+  - decks: ["zh-grammar-ba-construction", "zh-grammar-ba-construction-sentences"]
+    words: 0
+    grammar: ["ba-construction"]
     listening_passages:
       - { id: "put-it-on-the-table", text: { "en": "Saying what was done to something, with ba: put the book on the table, close the door, eat up the rice" } }
     reading_passages:
