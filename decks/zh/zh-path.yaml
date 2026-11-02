@@ -873,7 +873,9 @@ units:
       - { id: "renting-a-flat", text: { "en": "Asking an agent about a flat to rent" } }
     reading_passages:
       - { id: "rental-terms", text: { "en": "The terms of a rental, with the deposit" } }
-  - planned: { id: "zh-grammar-de-adverbial", grammar: ["de-adverbial", "three-de"] }
+  - decks: ["zh-grammar-de-complement", "zh-grammar-de-adverbial", "zh-grammar-de-complement-sentences"]
+    words: 0
+    grammar: ["de-complement", "de-adverbial"]
     listening_passages:
       - { id: "slowly-and-carefully", text: { "en": "Saying how something is done with de before the verb: slowly, carefully, happily" } }
     reading_passages:
