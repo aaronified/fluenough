@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-ordinals"
+name: "Assamese reading: first, second, third: the ordinal numbers"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-which-floor"
+    title: "Finding a flat: the first floor, the second, the third"
+    sentences:
+      - text: "ফ্লেটটো প্ৰথম মহলাত নে দ্বিতীয়?"
+        reading: "phlettô prôthôm môhôlāt ne dwitīyô?"
+      - text: "তৃতীয় মহলাত আলো বেছি।"
+        reading: "tritīyô môhôlāt ālo besi."
+      - text: "চতুৰ্থ মহলাত লিফ্ট নাই।"
+        reading: "côturthô môhôlāt lift nāi."
+      - text: "প্ৰথমে দেখিম।"
+        reading: "prôthômē dekhim."
+    questions:
+      - id: "as-4040"
+        prompt: { en: "The question asks whether the flat is on the first or second floor." }
+        answer: true
+      - id: "as-4041"
+        prompt: { en: "Which floor has a lot of light?" }
+        options:
+          - { en: "The first" }
+          - { en: "The third" }
+          - { en: "The fourth" }
+        answer: 2
+      - id: "as-4042"
+        prompt: { en: "What is missing on the fourth floor?" }
+        options:
+          - { en: "Light" }
+          - { en: "A lift" }
+          - { en: "A door" }
+        answer: 2
+  - id: "as-month-calendar"
+    title: "A calendar of events: the first, second and third week of the month"
+    sentences:
+      - text: "প্ৰথম সপ্তাহত সভা।"
+        reading: "prôthôm xôptāhôt xôbhā."
+      - text: "দ্বিতীয় সপ্তাহত ভোজ।"
+        reading: "dwitīyô xôptāhôt bhoz."
+      - text: "তৃতীয় সপ্তাহত ভ্ৰমণ।"
+        reading: "tritīyô xôptāhôt bhrômôn."
+      - text: "শেষ সপ্তাহত বিশ্ৰাম।"
+        reading: "xes xôptāhôt bixrām."
+    questions:
+      - id: "as-4043"
+        prompt: { en: "The meeting is in the first week." }
+        answer: true
+      - id: "as-4044"
+        prompt: { en: "What is in the second week?" }
+        options:
+          - { en: "A feast" }
+          - { en: "A trip" }
+          - { en: "A rest" }
+        answer: 1
+      - id: "as-4045"
+        prompt: { en: "What is in the last week?" }
+        options:
+          - { en: "A trip" }
+          - { en: "A rest" }
+          - { en: "A meeting" }
+        answer: 2

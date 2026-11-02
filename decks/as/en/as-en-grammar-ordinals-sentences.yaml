@@ -1,0 +1,52 @@
+schema: 1
+id: "as-en-grammar-ordinals-sentences"
+kind: "layer"
+core: "as-grammar-ordinals-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First, second, third: the ordinal numbers: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-4034":
+    native: "Our house is on the first floor."
+    bases:
+      "প্ৰথম": "one; the first"
+    confusables:
+      "c1": { why: "Second, the wrong floor." }
+      "c2": { why: "Third, another floor." }
+  "as-4035":
+    native: "I go to the third floor."
+    bases:
+      "তৃতীয়": "three; the third"
+    confusables:
+      "c1": { why: "First, not the third." }
+      "c2": { why: "Fourth, a different floor." }
+  "as-4036":
+    native: "On the second day, rain."
+    bases:
+      "দ্বিতীয়": "two; the second"
+    confusables:
+      "c1": { why: "First day, not second." }
+      "c2": { why: "Third, another day." }
+  "as-4037":
+    native: "The fifth lesson is maths."
+    bases:
+      "পঞ্চম": "five; the fifth"
+    confusables:
+      "c1": { why: "Tenth, another lesson." }
+      "c2": { why: "Fourth, another lesson." }
+  "as-4038":
+    native: "The tenth class is big."
+    bases:
+      "দশম": "ten; the tenth"
+    confusables:
+      "c1": { why: "First class, a different one." }
+      "c2": { why: "Small, not big." }
+  "as-4039":
+    native: "He came first."
+    bases:
+      "প্ৰথম": "one; the first"
+    confusables:
+      "c1": { why: "At the end, the opposite order." }
+      "c2": { why: "Second, one place behind first." }
