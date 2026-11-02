@@ -541,11 +541,15 @@ units:
       - { id: "job-advert", text: { "en": "A job advert" } }
   - decks: ["as-reading-careers"]
     words: 0
-  - planned: { id: "as-grammar-before-after", grammar: "before-after" }
+  - decks: ["as-grammar-before-after", "as-grammar-before-after-sentences"]
+    words: 0
+    grammar: ["before-after"]
     listening_passages:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
+  - decks: ["as-reading-before-after"]
+    words: 0
   - decks: ["as-environment", "as-environment-sentences", "*"]
     words: 14
     listening_passages:
