@@ -1,0 +1,586 @@
+schema: 1
+id: "ja-en-directions"
+kind: "layer"
+core: "ja-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+description: "Thirty words for finding the way: left and right, straight on, the corner and the crossroads, north and south, the street, the other side and the way back, with the verbs to turn, cross and head for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1050":
+    native: "to turn (a corner)"
+    notes:
+      "n1": "まがる (magaru) means to turn, as at a corner. Its polite form is まがります (magarimasu)."
+    examples:
+      "みぎにまがります。":
+        native: "I turn right."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "まがります":
+            meaning: "to turn (a corner)"
+      "かどをまがりますか。":
+        native: "Do you turn at the corner?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "まがります":
+            meaning: "to turn (a corner)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1051":
+    native: "straight ahead"
+    notes:
+      "n1": "まっすぐ (massugu) means straight on, without turning."
+    examples:
+      "まっすぐいきます。": "I go straight on."
+      "まっすぐはとおいですか。":
+        native: "Is it far straight on?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1052":
+    native: "behind; back"
+    notes:
+      "n1": "うしろ (ushiro) is the back or the place behind something. The opposite is まえ (mae)."
+    examples:
+      "いぬのうしろです。":
+        native: "It is behind the dog."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "がっこうのうしろです。":
+        native: "It is behind the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-1053":
+    native: "north"
+    notes:
+      "n1": "きた (kita) is north."
+    examples:
+      "きたはどこですか。":
+        native: "Where is north?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "がっこうはきたです。":
+        native: "The school is to the north."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-1054":
+    native: "south"
+    notes:
+      "n1": "みなみ (minami) is south."
+    examples:
+      "みなみはどこですか。":
+        native: "Where is south?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "ともだちはみなみにいます。":
+        native: "My friend is in the south."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "に":
+            meaning: "in; at; to"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+  "ja-1055":
+    native: "east"
+    notes:
+      "n1": "ひがし (higashi) is east."
+    examples:
+      "ひがしはどこですか。":
+        native: "Where is east?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "ひがしにいきます。":
+        native: "I go east."
+        bases:
+          "に":
+            meaning: "in; at; to"
+  "ja-1056":
+    native: "west"
+    notes:
+      "n1": "にし (nishi) is west."
+    examples:
+      "にしはどこですか。":
+        native: "Where is west?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "にしにいきます。":
+        native: "I go west."
+        bases:
+          "に":
+            meaning: "in; at; to"
+  "ja-1057":
+    native: "corner"
+    notes:
+      "n1": "かど (kado) is a corner of a street or a building."
+    examples:
+      "かどはどこですか。":
+        native: "Where is the corner?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "かどはちかいです。":
+        native: "The corner is near."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-1058":
+    native: "crossroads; intersection"
+    notes:
+      "n1": "こうさてん (kousaten) is a place where roads cross."
+    examples:
+      "こうさてんはどこですか。":
+        native: "Where is the crossroads?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "こうさてんはちかいです。":
+        native: "The crossroads is near."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-1059":
+    native: "street; road"
+    notes:
+      "n1": "とおり (toori) is a street, a road in a town."
+    examples:
+      "とおりはながいです。":
+        native: "The street is long."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "このとおりはおおきいです。":
+        native: "This street is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-1060":
+    native: "to cross"
+    notes:
+      "n1": "わたる (wataru) means to cross a road. Its polite form is わたります (watarimasu)."
+    examples:
+      "みちをわたります。":
+        native: "I cross the road."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "わたります":
+            meaning: "to cross"
+      "おうだんほどうをわたりますか。":
+        native: "Do you cross the pedestrian crossing?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "わたります":
+            meaning: "to cross"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1061":
+    native: "to go forward; to advance"
+    notes:
+      "n1": "すすむ (susumu) means to go forward. Its polite form is すすみます (susumimasu)."
+    examples:
+      "まっすぐすすみます。":
+        native: "I go forward straight on."
+        bases:
+          "すすみます":
+            meaning: "to go forward; to advance"
+      "すすみますか。":
+        native: "Do you go forward?"
+        bases:
+          "すすみます":
+            meaning: "to go forward; to advance"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1062":
+    native: "to go back; to step back"
+    notes:
+      "n1": "さがる (sagaru) means to go back, or to step back."
+    examples:
+      "うしろにさがります。":
+        native: "I step back."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "さがります":
+            meaning: "to go back; to step back"
+      "さがりますか。":
+        native: "Do you step back?"
+        bases:
+          "さがります":
+            meaning: "to go back; to step back"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1063":
+    native: "shortcut"
+    notes:
+      "n1": "ちかみち (chikamichi) is a shorter way to a place."
+    examples:
+      "ちかみちはどこですか。":
+        native: "Where is the shortcut?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "ちかみちをいきます。":
+        native: "I take the shortcut."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-1064":
+    native: "guidance; directions"
+    notes:
+      "n1": "あんない (annai) is guidance, the information about how to get somewhere."
+    examples:
+      "あんないはどこですか。":
+        native: "Where are the directions?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "あんないをします。":
+        native: "I give directions."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-1065":
+    native: "walk; stroll"
+    notes:
+      "n1": "さんぽ (sanpo) is a walk taken for pleasure."
+    examples:
+      "さんぽはたのしいです。":
+        native: "A walk is fun."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "さんぽにいきます。":
+        native: "I go for a walk."
+        bases:
+          "に":
+            meaning: "in; at; to"
+  "ja-1066":
+    native: "town"
+    notes:
+      "n1": "まち (machi) is a town or a city."
+    examples:
+      "まちはおおきいです。":
+        native: "The town is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "まちはしずかです。":
+        native: "The town is quiet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-1067":
+    native: "the other side"
+    notes:
+      "n1": "むこうがわ (mukougawa) is the other side of something."
+    examples:
+      "がっこうのむこうがわです。":
+        native: "It is on the other side of the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "むこうがわはどこですか。":
+        native: "Where is the other side?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1068":
+    native: "pavement; sidewalk"
+    notes:
+      "n1": "ほどう (hodou) is the pavement for people on foot."
+    examples:
+      "ほどうはおおきいです。":
+        native: "The pavement is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ほどうをあるきます。":
+        native: "I walk on the pavement."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+  "ja-1069":
+    native: "park"
+    notes:
+      "n1": "こうえん (kouen) is a park."
+    examples:
+      "こうえんはどこですか。":
+        native: "Where is the park?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "こうえんはちかいです。":
+        native: "The park is near."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-1070":
+    native: "to make a mistake; to take the wrong way"
+    notes:
+      "n1": "まちがえる (machigaeru) means to make a mistake, or to take the wrong one."
+    examples:
+      "みちをまちがえます。":
+        native: "I take the wrong road."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "まちがえます":
+            meaning: "to make a mistake; to take the wrong way"
+      "まちがえましたか。":
+        native: "Did you make a mistake?"
+        bases:
+          "まちがえました":
+            meaning: "to make a mistake; to take the wrong way"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1071":
+    native: "to go out; to leave"
+    notes:
+      "n1": "でる (deru) means to go out, or to leave a place. Its polite form is でます (demasu)."
+    examples:
+      "えきをでます。":
+        native: "I leave the station."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "でます":
+            meaning: "to go out; to leave"
+      "がっこうをでますか。":
+        native: "Do you leave school?"
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+          "でます":
+            meaning: "to go out; to leave"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1072":
+    native: "distance"
+    notes:
+      "n1": "きょり (kyori) is the distance between two places."
+    examples:
+      "きょりはとおいです。":
+        native: "The distance is far."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "きょりはちかいですか。":
+        native: "Is the distance short?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1073":
+    native: "opposite; reverse"
+    notes:
+      "n1": "はんたい (hantai) means the opposite direction, or the reverse."
+    examples:
+      "はんたいにいきます。":
+        native: "I go the other way."
+        bases:
+          "に":
+            meaning: "in; at; to"
+      "はんたいです。":
+        native: "It is the opposite."
+        bases:
+          "です":
+            meaning: "is (polite)"
+  "ja-1074":
+    native: "surroundings; neighbourhood"
+    notes:
+      "n1": "しゅうへん (shuuhen) means the area around a place."
+    examples:
+      "しゅうへんはしずかです。":
+        native: "The surroundings are quiet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "がっこうのしゅうへんです。":
+        native: "It is around the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-1075":
+    native: "place; location"
+    notes:
+      "n1": "ばしょ (basho) is a place or a location."
+    examples:
+      "ばしょはどこですか。":
+        native: "Where is the place?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "いいばしょです。":
+        native: "It is a good place."
+        bases:
+          "です":
+            meaning: "is (polite)"
+  "ja-1076":
+    native: "on the way; halfway"
+    notes:
+      "n1": "とちゅう (tochuu) means on the way, halfway there."
+    examples:
+      "とちゅうでまちます。":
+        native: "I wait on the way."
+        bases:
+          "で":
+            meaning: "(marks where or how; also part of ではありません (de wa arimasen))"
+      "とちゅうはとおいですか。":
+        native: "Is the way far?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1077":
+    native: "as it is; straight on"
+    notes:
+      "n1": "そのまま (sonomama) means as it is, without change."
+    examples:
+      "そのままいきます。": "I go straight on."
+      "そのままでいいです。":
+        native: "It is fine as it is."
+        bases:
+          "で":
+            meaning: "(marks where or how; also part of ではありません (de wa arimasen))"
+          "です":
+            meaning: "is (polite)"
+  "ja-1078":
+    native: "to head for"
+    notes:
+      "n1": "むかう (mukau) means to head for a place. Its polite form is むかいます (mukaimasu)."
+    examples:
+      "えきにむかいます。":
+        native: "I head for the station."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "むかいます":
+            meaning: "to head for"
+      "どこにむかいますか。":
+        native: "Where are you heading?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "むかいます":
+            meaning: "to head for"
+          "か":
+            meaning: "(marks a question)"
+  "ja-1079":
+    native: "arrival"
+    notes:
+      "n1": "とうちゃく (touchaku) is the arrival at a place."
+    examples:
+      "とうちゃくはいつですか。":
+        native: "When is the arrival?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "とうちゃくはおそいです。":
+        native: "The arrival is late."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
