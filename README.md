@@ -126,7 +126,7 @@ below is written from `decks/index.json` each time the decks change.
 | Arabic | Arabic | in progress |
 | Archaic Greek | Greek | in progress |
 | Ashokan Prakrit | Devanagari, Brahmi | in progress |
-| Assamese | Eastern Nagari | A1 |
+| Assamese | Eastern Nagari | B1 |
 | Basque | Latin | in progress |
 | Bengali | Eastern Nagari | B1 |
 | Cantonese | Traditional Hanzi | in progress |
