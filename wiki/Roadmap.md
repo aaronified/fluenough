@@ -39,7 +39,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.6.0
 
-9 approved open issues.
+8 approved open issues.
 
 **Bugs**
 
@@ -56,7 +56,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#506](https://github.com/aaronified/fluenough/issues/506) Deck format review: card data list, questions from card data, DECK-FORMAT as the one guide
 - [#630](https://github.com/aaronified/fluenough/issues/630) Telugu offensive-words deck (te-offensive), rated before it ships
 - [#631](https://github.com/aaronified/fluenough/issues/631) Offensive-words decks for the priority languages
-- [#857](https://github.com/aaronified/fluenough/issues/857) Perf: mastery off the UI isolate, cold-start replay, persisted snapshots
 - [#861](https://github.com/aaronified/fluenough/issues/861) Delete a language's data from its sheet in Languages I'm learning, confirmed by typing its name
 
 ### 0.7.0
@@ -138,10 +137,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
 - [#520](https://github.com/aaronified/fluenough/issues/520) Regional flavours: a deck per language after A2, noting major regional variations
 - [#579](https://github.com/aaronified/fluenough/issues/579) Sign languages: a deck format and drills built on images and video
-- [#583](https://github.com/aaronified/fluenough/issues/583) Course: Sumerian (cuneiform), with its path and reading plan
-- [#584](https://github.com/aaronified/fluenough/issues/584) Course: Mycenaean Greek (Linear B), with its path and reading plan
-- [#585](https://github.com/aaronified/fluenough/issues/585) Course: Egyptian (proposed: Middle Egyptian, hieroglyphs and transliteration), with its path and reading plan
-- [#586](https://github.com/aaronified/fluenough/issues/586) Course: Proto-Indo-European (reconstructed), with its path and reading plan
 - [#587](https://github.com/aaronified/fluenough/issues/587) Course: Klingon (tlhIngan Hol), licence check first
 - [#588](https://github.com/aaronified/fluenough/issues/588) Course: Sindarin (Tolkien's Elvish), licence check first
 - [#589](https://github.com/aaronified/fluenough/issues/589) Course: Quenya (Tolkien's High-Elven), licence check first
@@ -153,7 +148,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#681](https://github.com/aaronified/fluenough/issues/681) Language bar: a dot on languages with something to do, and a full-height IPA glyph
 - [#697](https://github.com/aaronified/fluenough/issues/697) Settings: show IPA first, in place of the transliteration
 - [#698](https://github.com/aaronified/fluenough/issues/698) Languages I'm learning: group every language by family, with Indo-European split into branches
-- [#707](https://github.com/aaronified/fluenough/issues/707) Question words get a picture with a '?' badge
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
@@ -253,8 +247,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#337](https://github.com/aaronified/fluenough/issues/337) IPA course: the sounds of this word, on every card
 - [#338](https://github.com/aaronified/fluenough/issues/338) IPA course: review
 - [#340](https://github.com/aaronified/fluenough/issues/340) ISO 15919 decks: one per Indian language, on the path
-- [#341](https://github.com/aaronified/fluenough/issues/341) Listening in context: owner decisions before building
-- [#342](https://github.com/aaronified/fluenough/issues/342) Listening in context: a context field and the validator
 - [#343](https://github.com/aaronified/fluenough/issues/343) Listening in context: scheduling and the drill
 - [#344](https://github.com/aaronified/fluenough/issues/344) Listening in context: content, in phases
 - [#345](https://github.com/aaronified/fluenough/issues/345) Release signing: developer console account and registration
@@ -264,6 +256,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#350](https://github.com/aaronified/fluenough/issues/350) Language paths: new languages, one full course each
 - [#351](https://github.com/aaronified/fluenough/issues/351) New course: Punjabi
 - [#352](https://github.com/aaronified/fluenough/issues/352) New course: Odia
+- [#353](https://github.com/aaronified/fluenough/issues/353) New course: Nepali
+- [#354](https://github.com/aaronified/fluenough/issues/354) New course: Tamil
 - [#355](https://github.com/aaronified/fluenough/issues/355) New course: Malayalam
 - [#356](https://github.com/aaronified/fluenough/issues/356) New course: Sanskrit
 - [#357](https://github.com/aaronified/fluenough/issues/357) New course: Portuguese
@@ -300,15 +294,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#388](https://github.com/aaronified/fluenough/issues/388) New course: Esperanto
 - [#425](https://github.com/aaronified/fluenough/issues/425) Remove the analyzer bound once build_runner supports 14.5.0
 - [#472](https://github.com/aaronified/fluenough/issues/472) Language themes: a colour, icon and background image for each language
-- [#623](https://github.com/aaronified/fluenough/issues/623) Hindustani: one course for Hindi and Urdu, in Devanagari or Nastaliq
 - [#665](https://github.com/aaronified/fluenough/issues/665) English Braille: a facts file (qbe-facts.yaml)
-- [#713](https://github.com/aaronified/fluenough/issues/713) App log: filter to the last 10 minutes or since the app last started
 - [#722](https://github.com/aaronified/fluenough/issues/722) Conversation mode: transcribe two people talking, in real time
 - [#734](https://github.com/aaronified/fluenough/issues/734) Sounds deck for every language: its sounds, and how they differ from the learner's native sounds
-- [#832](https://github.com/aaronified/fluenough/issues/832) Recommend other learning resources per language (Wagotabi for Japanese first)
 - [#836](https://github.com/aaronified/fluenough/issues/836) An IPA keyboard for typed answers in the IPA course
-- [#875](https://github.com/aaronified/fluenough/issues/875) Cold start takes 1–3 s: cache the parsed catalog, show last numbers, parse off the UI isolate
-- [#907](https://github.com/aaronified/fluenough/issues/907) Languages page: Know and Learning merged, per skill (Speak, Hear, Read, Write)
 - [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
 - [#926](https://github.com/aaronified/fluenough/issues/926) English and the Latin script are known by default; Today's fact language chooser
 - [#927](https://github.com/aaronified/fluenough/issues/927) Facts: Bengali and Hindi translations read like a B1 learner's
