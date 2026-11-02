@@ -1,0 +1,486 @@
+schema: 1
+id: "ja-grammar-masu"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["masu", "masen"]
+  rows:
+    - word: "ja-0341"
+      forms:
+        "masu": "たべます"
+        "masen": "たべません"
+      readings:
+        "masu": "tabemasu"
+        "masen": "tabemasen"
+    - word: "ja-0342"
+      forms:
+        "masu": "のみます"
+        "masen": "のみません"
+      readings:
+        "masu": "nomimasu"
+        "masen": "nomimasen"
+    - word: "ja-0343"
+      forms:
+        "masu": "みます"
+        "masen": "みません"
+      readings:
+        "masu": "mimasu"
+        "masen": "mimasen"
+    - word: "ja-0344"
+      forms:
+        "masu": "ききます"
+        "masen": "ききません"
+      readings:
+        "masu": "kikimasu"
+        "masen": "kikimasen"
+    - word: "ja-0345"
+      forms:
+        "masu": "よみます"
+        "masen": "よみません"
+      readings:
+        "masu": "yomimasu"
+        "masen": "yomimasen"
+    - word: "ja-0346"
+      forms:
+        "masu": "かきます"
+        "masen": "かきません"
+      readings:
+        "masu": "kakimasu"
+        "masen": "kakimasen"
+    - word: "ja-0347"
+      forms:
+        "masu": "はなします"
+        "masen": "はなしません"
+      readings:
+        "masu": "hanashimasu"
+        "masen": "hanashimasen"
+    - word: "ja-0348"
+      forms:
+        "masu": "いきます"
+        "masen": "いきません"
+      readings:
+        "masu": "ikimasu"
+        "masen": "ikimasen"
+    - word: "ja-0349"
+      forms:
+        "masu": "きます"
+        "masen": "きません"
+      readings:
+        "masu": "kimasu"
+        "masen": "kimasen"
+    - word: "ja-0350"
+      forms:
+        "masu": "かえります"
+        "masen": "かえりません"
+      readings:
+        "masu": "kaerimasu"
+        "masen": "kaerimasen"
+    - word: "ja-0351"
+      forms:
+        "masu": "おきます"
+        "masen": "おきません"
+      readings:
+        "masu": "okimasu"
+        "masen": "okimasen"
+    - word: "ja-0352"
+      forms:
+        "masu": "ねます"
+        "masen": "ねません"
+      readings:
+        "masu": "nemasu"
+        "masen": "nemasen"
+    - word: "ja-0353"
+      forms:
+        "masu": "はたらきます"
+        "masen": "はたらきません"
+      readings:
+        "masu": "hatarakimasu"
+        "masen": "hatarakimasen"
+    - word: "ja-0354"
+      forms:
+        "masu": "やすみます"
+        "masen": "やすみません"
+      readings:
+        "masu": "yasumimasu"
+        "masen": "yasumimasen"
+    - word: "ja-0355"
+      forms:
+        "masu": "はいります"
+        "masen": "はいりません"
+      readings:
+        "masu": "hairimasu"
+        "masen": "hairimasen"
+    - word: "ja-0356"
+      forms:
+        "masu": "かいます"
+        "masen": "かいません"
+      readings:
+        "masu": "kaimasu"
+        "masen": "kaimasen"
+    - word: "ja-0357"
+      forms:
+        "masu": "あいます"
+        "masen": "あいません"
+      readings:
+        "masu": "aimasu"
+        "masen": "aimasen"
+    - word: "ja-0358"
+      forms:
+        "masu": "まちます"
+        "masen": "まちません"
+      readings:
+        "masu": "machimasu"
+        "masen": "machimasen"
+    - word: "ja-0359"
+      forms:
+        "masu": "もちます"
+        "masen": "もちません"
+      readings:
+        "masu": "mochimasu"
+        "masen": "mochimasen"
+    - word: "ja-0360"
+      forms:
+        "masu": "あるきます"
+        "masen": "あるきません"
+      readings:
+        "masu": "arukimasu"
+        "masen": "arukimasen"
+    - word: "ja-0361"
+      forms:
+        "masu": "のります"
+        "masen": "のりません"
+      readings:
+        "masu": "norimasu"
+        "masen": "norimasen"
+    - word: "ja-0362"
+      forms:
+        "masu": "おります"
+        "masen": "おりません"
+      readings:
+        "masu": "orimasu"
+        "masen": "orimasen"
+    - word: "ja-0363"
+      forms:
+        "masu": "あらいます"
+        "masen": "あらいません"
+      readings:
+        "masu": "araimasu"
+        "masen": "araimasen"
+    - word: "ja-0364"
+      forms:
+        "masu": "つくります"
+        "masen": "つくりません"
+      readings:
+        "masu": "tsukurimasu"
+        "masen": "tsukurimasen"
+    - word: "ja-0365"
+      forms:
+        "masu": "わかります"
+        "masen": "わかりません"
+      readings:
+        "masu": "wakarimasu"
+        "masen": "wakarimasen"
+    - word: "ja-0366"
+      forms:
+        "masu": "しります"
+        "masen": "しりません"
+      readings:
+        "masu": "shirimasu"
+        "masen": "shirimasen"
+    - word: "ja-0367"
+      forms:
+        "masu": "ならいます"
+        "masen": "ならいません"
+      readings:
+        "masu": "naraimasu"
+        "masen": "naraimasen"
+    - word: "ja-0368"
+      forms:
+        "masu": "おしえます"
+        "masen": "おしえません"
+      readings:
+        "masu": "oshiemasu"
+        "masen": "oshiemasen"
+    - word: "ja-0369"
+      forms:
+        "masu": "つかいます"
+        "masen": "つかいません"
+      readings:
+        "masu": "tsukaimasu"
+        "masen": "tsukaimasen"
+    - word: "ja-0370"
+      forms:
+        "masu": "すわります"
+        "masen": "すわりません"
+      readings:
+        "masu": "suwarimasu"
+        "masen": "suwarimasen"
+    - word: "ja-0371"
+      forms:
+        "masu": "たちます"
+        "masen": "たちません"
+      readings:
+        "masu": "tachimasu"
+        "masen": "tachimasen"
+    - word: "ja-0372"
+      forms:
+        "masu": "あけます"
+        "masen": "あけません"
+      readings:
+        "masu": "akemasu"
+        "masen": "akemasen"
+    - word: "ja-0373"
+      forms:
+        "masu": "しめます"
+        "masen": "しめません"
+      readings:
+        "masu": "shimemasu"
+        "masen": "shimemasen"
+    - word: "ja-0374"
+      forms:
+        "masu": "あそびます"
+        "masen": "あそびません"
+      readings:
+        "masu": "asobimasu"
+        "masen": "asobimasen"
+    - word: "ja-0375"
+      forms:
+        "masu": "します"
+        "masen": "しません"
+      readings:
+        "masu": "shimasu"
+        "masen": "shimasen"
+    - word: "ja-0571"
+      forms:
+        "masu": "あびます"
+        "masen": "あびません"
+      readings:
+        "masu": "abimasu"
+        "masen": "abimasen"
+    - word: "ja-0572"
+      forms:
+        "masu": "はしります"
+        "masen": "はしりません"
+      readings:
+        "masu": "hashirimasu"
+        "masen": "hashirimasen"
+    - word: "ja-0573"
+      forms:
+        "masu": "とびます"
+        "masen": "とびません"
+      readings:
+        "masu": "tobimasu"
+        "masen": "tobimasen"
+    - word: "ja-0574"
+      forms:
+        "masu": "おどります"
+        "masen": "おどりません"
+      readings:
+        "masu": "odorimasu"
+        "masen": "odorimasen"
+    - word: "ja-0575"
+      forms:
+        "masu": "うたいます"
+        "masen": "うたいません"
+      readings:
+        "masu": "utaimasu"
+        "masen": "utaimasen"
+    - word: "ja-0576"
+      forms:
+        "masu": "かります"
+        "masen": "かりません"
+      readings:
+        "masu": "karimasu"
+        "masen": "karimasen"
+    - word: "ja-0577"
+      forms:
+        "masu": "かえします"
+        "masen": "かえしません"
+      readings:
+        "masu": "kaeshimasu"
+        "masen": "kaeshimasen"
+    - word: "ja-0578"
+      forms:
+        "masu": "わすれます"
+        "masen": "わすれません"
+      readings:
+        "masu": "wasuremasu"
+        "masen": "wasuremasen"
+    - word: "ja-0579"
+      forms:
+        "masu": "おぼえます"
+        "masen": "おぼえません"
+      readings:
+        "masu": "oboemasu"
+        "masen": "oboemasen"
+    - word: "ja-0580"
+      forms:
+        "masu": "てつだいます"
+        "masen": "てつだいません"
+      readings:
+        "masu": "tetsudaimasu"
+        "masen": "tetsudaimasen"
+    - word: "ja-0581"
+      forms:
+        "masu": "ひろいます"
+        "masen": "ひろいません"
+      readings:
+        "masu": "hiroimasu"
+        "masen": "hiroimasen"
+    - word: "ja-0582"
+      forms:
+        "masu": "すてます"
+        "masen": "すてません"
+      readings:
+        "masu": "sutemasu"
+        "masen": "sutemasen"
+    - word: "ja-0583"
+      forms:
+        "masu": "なくします"
+        "masen": "なくしません"
+      readings:
+        "masu": "nakushimasu"
+        "masen": "nakushimasen"
+    - word: "ja-0584"
+      forms:
+        "masu": "のぼります"
+        "masen": "のぼりません"
+      readings:
+        "masu": "noborimasu"
+        "masen": "noborimasen"
+    - word: "ja-0585"
+      forms:
+        "masu": "そうじします"
+        "masen": "そうじしません"
+      readings:
+        "masu": "soujishimasu"
+        "masen": "soujishimasen"
+    - word: "ja-0586"
+      forms:
+        "masu": "りょうりします"
+        "masen": "りょうりしません"
+      readings:
+        "masu": "ryourishimasu"
+        "masen": "ryourishimasen"
+    - word: "ja-0587"
+      forms:
+        "masu": "でかけます"
+        "masen": "でかけません"
+      readings:
+        "masu": "dekakemasu"
+        "masen": "dekakemasen"
+    - word: "ja-0588"
+      forms:
+        "masu": "もどります"
+        "masen": "もどりません"
+      readings:
+        "masu": "modorimasu"
+        "masen": "modorimasen"
+    - word: "ja-0589"
+      forms:
+        "masu": "とまります"
+        "masen": "とまりません"
+      readings:
+        "masu": "tomarimasu"
+        "masen": "tomarimasen"
+    - word: "ja-0590"
+      forms:
+        "masu": "さがします"
+        "masen": "さがしません"
+      readings:
+        "masu": "sagashimasu"
+        "masen": "sagashimasen"
+    - word: "ja-0591"
+      forms:
+        "masu": "みせります"
+        "masen": "みせりません"
+      readings:
+        "masu": "miserimasu"
+        "masen": "miserimasen"
+    - word: "ja-0592"
+      forms:
+        "masu": "いれます"
+        "masen": "いれません"
+      readings:
+        "masu": "iremasu"
+        "masen": "iremasen"
+    - word: "ja-0593"
+      forms:
+        "masu": "わらいます"
+        "masen": "わらいません"
+      readings:
+        "masu": "waraimasu"
+        "masen": "waraimasen"
+    - word: "ja-0594"
+      forms:
+        "masu": "おこります"
+        "masen": "おこりません"
+      readings:
+        "masu": "okorimasu"
+        "masen": "okorimasen"
+    - word: "ja-0595"
+      forms:
+        "masu": "やめます"
+        "masen": "やめません"
+      readings:
+        "masu": "yamemasu"
+        "masen": "yamemasen"
+    - word: "ja-0596"
+      forms:
+        "masu": "はじめます"
+        "masen": "はじめません"
+      readings:
+        "masu": "hajimemasu"
+        "masen": "hajimemasen"
+    - word: "ja-0597"
+      forms:
+        "masu": "ひっこします"
+        "masen": "ひっこしません"
+      readings:
+        "masu": "hikkoshimasu"
+        "masen": "hikkoshimasen"
+    - word: "ja-0598"
+      forms:
+        "masu": "あげます"
+        "masen": "あげません"
+      readings:
+        "masu": "agemasu"
+        "masen": "agemasen"
+    - word: "ja-0599"
+      forms:
+        "masu": "もらいます"
+        "masen": "もらいません"
+      readings:
+        "masu": "moraimasu"
+        "masen": "moraimasen"
+    - word: "ja-0600"
+      forms:
+        "masu": "さけびます"
+        "masen": "さけびません"
+      readings:
+        "masu": "sakebimasu"
+        "masen": "sakebimasen"
+    - word: "ja-0516"
+      forms:
+        "masu": "おわります"
+        "masen": "おわりません"
+      readings:
+        "masu": "owarimasu"
+        "masen": "owarimasen"
+rules:
+  - id: "ja-rule-masu"
+    slots: ["masu"]
+    words:
+      - { word: "ます", reading: "masu" }
+      - { word: "たべます", reading: "tabemasu" }
+  - id: "ja-rule-masen"
+    slots: ["masen"]
+    words:
+      - { word: "ません", reading: "masen" }
+      - { word: "たべません", reading: "tabemasen" }
