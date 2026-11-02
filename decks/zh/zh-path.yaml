@@ -823,7 +823,8 @@ units:
       - { id: "characters-at-work", text: { "en": "Hearing the work and study words whose characters are taught: meeting, report, exam, question" } }
     reading_passages:
       - { id: "office-memo", text: { "en": "A short office memo in characters" } }
-  - planned: { id: "zh-arts", theme: "arts", words: 50 }
+  - decks: ["zh-arts", "zh-arts-sentences", "zh-reading-arts", "*"]
+    words: 50
     listening_passages:
       - { id: "a-calligraphy-class", text: { "en": "A teacher explains a calligraphy class" } }
     reading_passages:
