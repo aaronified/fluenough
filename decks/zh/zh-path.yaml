@@ -552,7 +552,9 @@ units:
       - { id: "table-tennis-talk", text: { "en": "Friends talk about a table tennis match" } }
     reading_passages:
       - { id: "match-result", text: { "en": "A short match result" } }
-  - planned: { id: "zh-grammar-complement-direction", grammar: ["direction-complement", "compound-direction-complement"] }
+  - decks: ["zh-grammar-direction-complement", "zh-grammar-compound-direction-complement", "zh-grammar-direction-complement-sentences"]
+    words: 0
+    grammar: ["direction-complement", "compound-direction-complement"]
     listening_passages:
       - { id: "come-down-here", text: { "en": "Saying which way an action goes: come in, go out, bring it up, run back" } }
     reading_passages:
