@@ -1,0 +1,80 @@
+schema: 1
+id: "ja-en-time-sentences"
+kind: "layer"
+core: "ja-time-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Time in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0532":
+    native: "I eat breakfast."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "よる (yoru) means night, not morning."
+      w2:
+        why: "ゆうがた (yuugata) means evening, not morning."
+  "ja-0533":
+    native: "The train is coming soon."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+    confusables:
+      w1:
+        why: "さいきん (saikin) means recently, not soon."
+      w2:
+        why: "あと (ato) means after, not soon."
+  "ja-0534":
+    native: "I am going to school today."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "に":
+        meaning: "in; at; to"
+    confusables:
+      w1:
+        why: "あした (ashita) means tomorrow, not today."
+      w2:
+        why: "きのう (kinou) means yesterday, not today."
+  "ja-0535":
+    native: "I speak Japanese every day."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "まいしゅう (maishuu) means every week, not every day."
+      w2:
+        why: "ときどき (tokidoki) means sometimes, not every day."
+  "ja-0536":
+    native: "School ends in the afternoon."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "に":
+        meaning: "in; at; to"
+      "おわります":
+        meaning: "to end; to finish"
+    confusables:
+      w1:
+        why: "ごぜん (gozen) means morning, not afternoon."
+      w2:
+        why: "ゆうがた (yuugata) means evening, not afternoon."
+  "ja-0537":
+    native: "I sleep after lunch."
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+    confusables:
+      w1:
+        why: "まえ (mae) means before, the opposite of after."
+      w2:
+        why: "よる (yoru) means night, not lunch."
