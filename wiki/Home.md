@@ -64,6 +64,7 @@ Code and decks live in the [repository](https://github.com/aaronified/fluenough)
 - [Backup Format](Backup-Format): the backup file
 - [Log Format](Log-Format): the review log
 - [Agentic Coding](Agentic-Coding): rules and skills for agents
+- [Owner decisions history](Owner-Decisions-History): owner rules that no longer govern, and what replaced them
 - [Releasing](Releasing): how a release is cut
 - [ADR Index](ADR-Index): every architecture decision
 - [Mockups and Skills](Mockups-and-Skills): mockup rules and repo skills
