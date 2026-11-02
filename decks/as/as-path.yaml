@@ -700,11 +700,14 @@ units:
       - { id: "notice-board", text: { "en": "A notice board with announcements" } }
   - decks: ["as-reading-passive"]
     words: 0
-  - planned: { id: "as-abstract-words", theme: "abstract-words", words: 55 }
+  - decks: ["as-abstract-words", "as-abstract-words-sentences", "*"]
+    words: 20
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
+  - decks: ["as-reading-abstract-words"]
+    words: 0
   - planned: { id: "as-money", theme: "money", words: 45 }
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }

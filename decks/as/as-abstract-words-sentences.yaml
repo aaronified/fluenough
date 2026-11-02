@@ -1,0 +1,80 @@
+schema: 1
+id: "as-abstract-words-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3946"
+    target: "সততা আৰু ন্যায় ভাল।"
+    reading: "xôtôtā āru nyāy bhāl."
+    ipa: "sɔtɔta aɹu njaj bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "মিছা", reading: "misā", kind: "word" }
+      - { id: "c2", word: "লোভ", reading: "lobh", kind: "word" }
+  - id: "as-3947"
+    target: "শান্তি আৰু একতা দৰকাৰ।"
+    reading: "xāntī āru ekôtā dôrkār."
+    ipa: "xanti aɹu ekɔta dɔɹɔkaɹ"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সংঘৰ্ষ", reading: "xônghôrxô", kind: "word" }
+      - { id: "c2", word: "বিবাদ", reading: "bibād", kind: "word" }
+  - id: "as-3948"
+    target: "তেওঁৰ বিনয় আছে।"
+    reading: "teum̐r binôy āse."
+    ipa: "teʊ̃ɹ binɔj ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "অহংকাৰ", reading: "ôhôṅkār", kind: "word" }
+      - { id: "c2", word: "উদাৰতা", reading: "udārôtā", kind: "word" }
+  - id: "as-3949"
+    target: "লোভ নকৰিবা।"
+    reading: "lobh nôkôribā."
+    ipa: "lʊbʱ nɔkoɹiba"
+    pos: "phrase"
+    bases:
+      - { word: "নকৰিবা", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "কৌতূহল", reading: "koutūhôl", kind: "word" }
+      - { id: "c2", word: "উদাৰতা", reading: "udārôtā", kind: "word" }
+  - id: "as-3950"
+    target: "সাহস আছে।"
+    reading: "xāhôx āse."
+    ipa: "sahɔs ase"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "ভয়", reading: "bhôy", kind: "word" }
+      - { id: "c2", word: "সন্তোষ", reading: "xôntoś", kind: "word" }
+  - id: "as-3951"
+    target: "মৰ্যাদা ৰখা।"
+    reading: "môryādā rôkhā."
+    ipa: "mɔɹzada ɹɔkʰa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "অপমান", reading: "ôpomān", kind: "word" }
+      - { id: "c2", word: "সন্মান", reading: "xônmān", kind: "word" }
+  - id: "as-3952"
+    target: "নৈতিক কাম।"
+    reading: "noitik kām."
+    ipa: "nɔitik kam"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "অনৈতিক", reading: "ônoitik", kind: "word" }
+      - { id: "c2", word: "আইনী", reading: "āinī", kind: "word" }
+  - id: "as-3953"
+    target: "কৃতজ্ঞতা জনাওঁ।"
+    reading: "kritôgyôtā zônāum̐."
+    ipa: "kritɔɡjɔta zɔnaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "জনাওঁ", ref: "as-2212" }
+    confusables:
+      - { id: "c1", word: "অকৃতজ্ঞ", reading: "ôkritôgyô", kind: "word" }
+      - { id: "c2", word: "ধন্যবাদ", reading: "dhônyôbād", kind: "word" }
