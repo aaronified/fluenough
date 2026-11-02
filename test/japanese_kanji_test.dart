@@ -188,28 +188,28 @@ void main() {
         'word in its han check', () async {
       final state = AppState.test(
         decks: MemoryDeckSource(const <String, String>{
-          'decks/zh/zh-words.yaml': '''
+          'decks/zh/zh-en-words.yaml': '''
 schema: 1
-id: zh-words
+id: zh-en-words
 name: "Words"
 language: { code: zh, iso639_3: cmn, name: Mandarin Chinese, script: han, scripts: [han], tts: zh-CN }
 native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
-  - { id: zh-words-0001, target: "你好", native: "hello", reading: "nǐ hǎo" }
-  - { id: zh-words-0002, target: "OK", native: "okay", reading: "ōu kèi" }
-  - { id: zh-words-0003, target: "110", native: "the police number", reading: "yāo yāo líng" }
+  - { id: zh-en-words-0001, target: "你好", native: "hello", reading: "nǐ hǎo" }
+  - { id: zh-en-words-0002, target: "OK", native: "okay", reading: "ōu kèi" }
+  - { id: zh-en-words-0003, target: "110", native: "the police number", reading: "yāo yāo líng" }
 ''',
-          'decks/zh/zh-characters.yaml': '''
+          'decks/zh/zh-en-characters.yaml': '''
 schema: 1
-id: zh-characters
+id: zh-en-characters
 name: "Characters"
 language: { code: zh, iso639_3: cmn, name: Mandarin Chinese, script: han, scripts: [han], tts: zh-CN }
 native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 tags: [script]
 cards:
-  - { id: zh-characters-0001, target: "人", native: "person", reading: "rén" }
+  - { id: zh-en-characters-0001, target: "人", native: "person", reading: "rén" }
 ''',
           'decks/zh/zh-path.yaml': '''
 schema: 1
