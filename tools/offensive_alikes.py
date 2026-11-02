@@ -36,6 +36,8 @@ The list is for a person to read; the tool changes no file.
 from __future__ import annotations
 
 import argparse
+import functools
+import os
 import sys
 import unicodedata
 from dataclasses import dataclass, field
@@ -128,6 +130,41 @@ def _with_offensive_words(paths: list[Path]) -> list[Path]:
     return [p for p in paths if p.parent in folders]
 
 
+def _flow_question(node: yaml.Node, flow: bool = False) -> bool:
+    """Whether a `?` is in a plain scalar inside a flow collection, which
+    libyaml accepts and PyYAML's own scanner refuses."""
+    if isinstance(node, yaml.ScalarNode):
+        return flow and not node.style and "?" in node.value
+    inner = bool(node.flow_style)
+    items = node.value if isinstance(node, yaml.SequenceNode) else [
+        n for pair in node.value for n in pair]
+    return any(_flow_question(n, inner) for n in items)
+
+
+def _safe_load(text: str) -> object:
+    """`yaml.safe_load(text)`, read by libyaml where PyYAML has it. A text it
+    cannot read is read again the usual way, for the usual error. So is one
+    with a tab or a `?` in a plain scalar in a flow collection, which libyaml
+    accepts and PyYAML's own scanner refuses."""
+    cls = None if os.environ.get("FLUENOUGH_PURE_YAML") else getattr(
+        yaml, "CSafeLoader", None)
+    if cls is not None and "\t" not in text and "\ufeff" not in text:
+        loader = None
+        try:
+            loader = cls(text)
+            node = loader.get_single_node()
+            if node is None:
+                return None
+            if not _flow_question(node):
+                return loader.construct_document(node)
+        except Exception:  # noqa: BLE001
+            pass
+        finally:
+            if loader is not None:
+                loader.dispose()
+    return yaml.safe_load(text)
+
+
 def load_words(paths: list[Path]) -> list[Word]:
     """The cards the files write, a core's and a single-file deck's alike,
     for the languages that have an offensive word. A layer, which writes no
@@ -135,7 +172,7 @@ def load_words(paths: list[Path]) -> list[Word]:
     words: dict[str, Word] = {}
     for path in _with_offensive_words(paths):
         try:
-            data = yaml.safe_load(path.read_text(encoding="utf-8"))
+            data = _safe_load(path.read_text(encoding="utf-8"))
         except (OSError, yaml.YAMLError):
             continue
         if not isinstance(data, dict) or not isinstance(data.get("cards"), list):
@@ -204,6 +241,11 @@ def find_alikes(words: list[Word], limit: int = MAX_DISTANCE) -> list[Alike]:
     """Every word of a language that is close to one of its offensive words,
     by sound and by writing, nearest first."""
     found: list[Alike] = []
+    # Each word is cut into segments or letters once, not once per offensive
+    # word it is set against; the lists are only ever read.
+    segs = functools.lru_cache(maxsize=None)(segments)
+    lets = functools.lru_cache(maxsize=None)(letters)
+    reading = functools.lru_cache(maxsize=None)(_reading_letters)
     for language in sorted({w.language for w in words}):
         group = [w for w in words if w.language == language]
         rudes = [w for w in group if w.rude]
@@ -212,16 +254,16 @@ def find_alikes(words: list[Word], limit: int = MAX_DISTANCE) -> list[Alike]:
                 continue
             for rude in rudes:
                 if word.ipa and rude.ipa:
-                    d = _close(segments(word.ipa), segments(rude.ipa), limit)
+                    d = _close(segs(word.ipa), segs(rude.ipa), limit)
                     if d is not None:
                         found.append(Alike("sound", word, rude, d, "ipa",
                                            _explained(word, rude, SOUND_NOTES,
                                                    "not_sounds_like")))
-                looks = [("script", _close(letters(word.target),
-                                           letters(rude.target), limit))]
+                looks = [("script", _close(lets(word.target),
+                                           lets(rude.target), limit))]
                 if word.reading and rude.reading:
-                    looks.append(("reading", _close(_reading_letters(word.reading),
-                                                    _reading_letters(rude.reading),
+                    looks.append(("reading", _close(reading(word.reading),
+                                                    reading(rude.reading),
                                                     limit)))
                 near = [(d, basis) for basis, d in looks if d is not None]
                 if near:

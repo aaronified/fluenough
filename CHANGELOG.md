@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `tools/validate_decks.py` is much faster, about 30 to 40 times on the whole of `decks/`, and prints exactly what it printed: each YAML file is read once, by libyaml where PyYAML has it, and the files are checked by several worker processes (`--jobs N`; `--jobs 1` is one process).
+
 ## [0.8.1] - 2026-11-02
 
 ### Added
