@@ -123,6 +123,8 @@ alphabet:
   - "zh-reading-strokes-radicals"
   - "zh-characters-1"
   - "zh-reading-characters-1"
+  - "zh-characters-2"
+  - "zh-reading-characters-2"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -403,7 +405,8 @@ units:
     reading_passages:
       - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
   # The second set of characters: about 300 by the end of A1.
-  - planned: { id: "zh-characters-2", grammar: "script-characters-2", words: 0 }
+  - decks: ["zh-characters-2", "zh-reading-characters-2"]
+    words: 10
     listening_passages:
       - { id: "days-and-dates", text: { "en": "Hearing the words whose characters are taught: day, month, year, the week, food and places" } }
     reading_passages:
