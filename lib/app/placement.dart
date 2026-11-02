@@ -170,11 +170,28 @@ class TileQuestion extends PlacementAsk {
   }
 
   /// [words], the sentence's words in their right order, as the tiles are
-  /// shown. [words] of another length, as another spelling may have, are
-  /// shown as they are.
-  List<String> shown(List<String> words) => words.length == order.length
-      ? <String>[for (final i in order) words[i]]
-      : words;
+  /// shown. [words] of another count, as another spelling may have, are
+  /// shuffled with [seed], never left in order where they can be put out of
+  /// it.
+  List<String> shown(List<String> words) {
+    if (words.length == order.length) {
+      return <String>[for (final i in order) words[i]];
+    }
+    final tiles = <String>[...words];
+    final random = Random(seed);
+    for (var i = 0; i < 8; i++) {
+      tiles.shuffle(random);
+      if (tiles.length < 2 || !_sameOrder(tiles, words)) break;
+    }
+    return tiles;
+  }
+
+  static bool _sameOrder(List<String> a, List<String> b) {
+    for (var i = 0; i < a.length; i++) {
+      if (a[i] != b[i]) return false;
+    }
+    return true;
+  }
 
   /// The tiles of [spelling], one of the card's spellings, as shown.
   List<String> tilesOfSpelling(String spelling) =>
@@ -420,7 +437,6 @@ class ScriptCheck {
   /// end the second time.
   void answer(bool right) {
     if (_question == null) return;
-    _used.add(_question!.card.id);
     _asked++;
     if (right) {
       _level++;
@@ -778,6 +794,7 @@ class DeckWalk {
   /// Answers the current question, and moves on.
   void answer(bool right) {
     if (_question == null) return;
+    _used.add(_question!.card.id);
     _asked++;
     switch (_phase) {
       case WalkPhase.forward:
