@@ -2939,6 +2939,33 @@ class PathFile(Paths):
 
 
 class PathAcrossDecks(Paths):
+    # These cases use the `hi` language code, so the validator also reads the
+    # repository's real decks/hi/ for context (the test says so below: the
+    # real hi-market core has a theme), and it validated every real file of it
+    # again for each of the 8 cases: 25 minutes in CI. A real file's report
+    # does not depend on the case (nothing here patches the validator, and the
+    # checks across files only read it), so the real files are validated once
+    # for the class; the given files, in a temporary directory, never are
+    # shared.
+    @classmethod
+    def setUpClass(cls) -> None:
+        super().setUpClass()
+        real = validate_decks.validate
+        repo_decks = (validate_decks.ROOT / "decks").resolve()
+        reports: dict[Path, validate_decks.Report] = {}
+
+        def validate_once(path: Path) -> validate_decks.Report:
+            key = Path(path).resolve()
+            if not key.is_relative_to(repo_decks):
+                return real(path)
+            if key not in reports:
+                reports[key] = real(path)
+            return reports[key]
+
+        patcher = mock.patch.object(validate_decks, "validate", validate_once)
+        patcher.start()
+        cls.addClassCleanup(patcher.stop)
+
     def problems(self, units: str, *more: validate_decks.Report) -> list[str]:
         path = self.write("hi-path.yaml", path_file(units))
         return validate_decks.check_paths_across([*self.course(), path, *more])

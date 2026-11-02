@@ -1,6 +1,6 @@
 """pytest hooks for the tools' tests (CI only; the tests are plain unittest).
 
-CI runs these in parallel jobs ("Decks: tools' tests (part N/3)"). Setting
+CI runs these in parallel jobs ("Decks: tools' tests (part N/2)"). Setting
 TOOLS_TESTS_PART=N/M keeps every Mth test, by its position in the sorted list
 of test ids, starting at N: the parts are disjoint, together they are every
 test, and each worker collects the same list, so `pytest -n auto` inside a

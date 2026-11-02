@@ -93,30 +93,59 @@ jobs:
   # (tools/deck_index.py) — so it and the index tool have tests of their
   # own. They are unittest TestCases, run here by pytest in parallel.
   #
-  # They took 29 to 34 minutes in one job, so they run in three parts (every
-  # third test by id, tools/conftest.py) and one more job; every test still
-  # runs, in exactly one of them. The one test that validates all of decks/
-  # takes as long as the validator, so it reads the output of "Decks:
-  # validate" instead of running the validator again. Each part prints its 25
-  # slowest tests (--durations=25) to show where the time goes. The job named
-  # "Decks: tools' tests" is what the required checks and "Validate decks"
-  # see: it passes only if the four above it did.
+  # They took 29 to 34 minutes in one job. The slowest-test table showed why:
+  # three tests read real decks (the validator's pass over decks/, 20+ minutes;
+  # PathAcrossDecks, 25 minutes; the card-id tests over es and bn, 9 minutes)
+  # and every other test took seconds. So the tests run as
+  #   - "today's decks": the validator-over-everything test, which reads the
+  #     output of "Decks: validate" instead of running the validator again;
+  #   - "real decks": the other two slow tests (one of them now validates a
+  #     real file once, not per case), side by side;
+  #   - two "parts" of everything else (every second test by id,
+  #     tools/conftest.py).
+  # Every test runs in exactly one of them. Each prints its 25 slowest
+  # (--durations=25). The job named "Decks: tools' tests" is what the
+  # required checks and "Validate decks" see: it passes only if the four
+  # above it did.
   decks-tools-parts:
-    name: "Decks: tools' tests (part ${{ matrix.part }}/3)"
+    name: "Decks: tools' tests (part ${{ matrix.part }}/2)"
     strategy:
       fail-fast: false
       matrix:
-        part: [1, 2, 3]
+        part: [1, 2]
     runs-on: ubuntu-latest
     env:
-      TOOLS_TESTS_PART: ${{ matrix.part }}/3
+      TOOLS_TESTS_PART: ${{ matrix.part }}/2
     steps:
       - uses: actions/checkout@v7
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
       - run: pip install pyyaml pytest pytest-xdist fonttools
-      - run: python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools -k "not test_todays_decks_get_no_info_and_no_b1_message" --durations=25
+      - run: >-
+          python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools
+          --deselect test_validate_b1.py::Compatibility::test_todays_decks_get_no_info_and_no_b1_message
+          --deselect test_validate_b1.py::PathAcrossDecks::test_a_path_across_the_decks_it_names
+          --deselect test_validate_card_ids.py::CardIds::test_a_file_alone_is_held_to_the_repository
+          --deselect test_validate_card_ids.py::CardIds::test_next_id_follows_the_highest_in_the_language
+          --durations=25
+
+  decks-tools-real:
+    name: "Decks: tools' tests (real decks)"
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml pytest pytest-xdist fonttools
+      # Three tests, three workers.
+      - run: >-
+          python3 -m pytest -n 3 -q -p no:cacheprovider --rootdir tools
+          "tools/test_validate_b1.py::PathAcrossDecks::test_a_path_across_the_decks_it_names"
+          "tools/test_validate_card_ids.py::CardIds::test_a_file_alone_is_held_to_the_repository"
+          "tools/test_validate_card_ids.py::CardIds::test_next_id_follows_the_highest_in_the_language"
+          --durations=5
 
   decks-tools-today:
     name: "Decks: tools' tests (today's decks)"
@@ -133,23 +162,24 @@ jobs:
           name: validate-output
           path: ${{ runner.temp }}/validate
       # Exactly one test is selected; pytest fails if none is.
-      - run: python3 -m pytest -q -p no:cacheprovider --rootdir tools tools/test_validate_b1.py -k "test_todays_decks_get_no_info_and_no_b1_message" --durations=5
+      - run: python3 -m pytest -q -p no:cacheprovider --rootdir tools "tools/test_validate_b1.py::Compatibility::test_todays_decks_get_no_info_and_no_b1_message" --durations=5
         env:
           FLUENOUGH_VALIDATE_OUTPUT: ${{ runner.temp }}/validate/validate-output.txt
           FLUENOUGH_VALIDATE_EXIT: ${{ runner.temp }}/validate/validate-exit.txt
 
   decks-tools-tests:
     name: "Decks: tools' tests"
-    needs: [decks-tools-parts, decks-tools-today]
+    needs: [decks-tools-parts, decks-tools-real, decks-tools-today]
     if: always()
     runs-on: ubuntu-latest
     env:
       PARTS: ${{ needs.decks-tools-parts.result }}
+      REAL: ${{ needs.decks-tools-real.result }}
       TODAY: ${{ needs.decks-tools-today.result }}
     steps:
       - run: |
-          if [ "$PARTS" != "success" ] || [ "$TODAY" != "success" ]; then
-            echo "::error::A tools' tests job did not succeed (parts: $PARTS, today's decks: $TODAY)"
+          if [ "$PARTS" != "success" ] || [ "$REAL" != "success" ] || [ "$TODAY" != "success" ]; then
+            echo "::error::A tools' tests job did not succeed (parts: $PARTS, real decks: $REAL, today's decks: $TODAY)"
             exit 1
           fi
 
