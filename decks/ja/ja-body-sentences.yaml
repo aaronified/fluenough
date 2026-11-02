@@ -1,0 +1,83 @@
+schema: 1
+id: "ja-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1108"
+    target: "わたしはあたまがいたいです。"
+    words: ["わたし", "は", "あたま", "が", "いたい", "です"]
+    reading: "watashi wa atama ga itai desu."
+    ipa: "wataɕi wa atama ɡa itai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "むね"
+        reading: "mune"
+        kind: "word"
+      - id: "w2"
+        word: "ねつ"
+        reading: "netsu"
+        kind: "word"
+  - id: "ja-1109"
+    target: "くすりをのみます。"
+    words: ["くすり", "を", "のみます"]
+    reading: "kusuri o nomimasu."
+    ipa: "kɯsɯɾi o nomimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のみます", ref: "ja-0342" }
+    confusables:
+      - id: "w1"
+        word: "ちゅうしゃ"
+        reading: "chuusha"
+        kind: "word"
+      - id: "w2"
+        word: "おふろ"
+        reading: "ofuro"
+        kind: "word"
+  - id: "ja-1110"
+    target: "せなかがかゆいですか。"
+    words: ["せなか", "が", "かゆい", "です", "か"]
+    reading: "senaka ga kayui desu ka."
+    ipa: "senaka ɡa kajɯi desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "はだ"
+        reading: "hada"
+        kind: "word"
+      - id: "w2"
+        word: "こし"
+        reading: "koshi"
+        kind: "word"
+  - id: "ja-1111"
+    target: "どこがいたいですか。"
+    words: ["どこ", "が", "いたい", "です", "か"]
+    reading: "doko ga itai desu ka."
+    ipa: "doko ɡa itai desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "かた"
+        reading: "kata"
+        kind: "word"
+      - id: "w2"
+        word: "ゆび"
+        reading: "yubi"
+        kind: "word"

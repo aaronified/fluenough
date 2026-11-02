@@ -1,0 +1,62 @@
+schema: 1
+id: "ja-en-body-sentences"
+kind: "layer"
+core: "ja-body-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The body in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1108":
+    native: "My head hurts."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "が":
+        meaning: "(marks the subject)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "むね (mune) is the chest, not the head."
+      w2:
+        why: "ねつ (netsu) is a fever."
+  "ja-1109":
+    native: "I take medicine."
+    bases:
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "ちゅうしゃ (chuusha) is an injection, not a medicine to drink."
+      w2:
+        why: "おふろ (ofuro) is a bath."
+  "ja-1110":
+    native: "Does your back itch?"
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "はだ (hada) is the skin."
+      w2:
+        why: "こし (koshi) is the waist."
+  "ja-1111":
+    native: "Where does it hurt?"
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "かた (kata) is the shoulder."
+      w2:
+        why: "ゆび (yubi) is a finger."
