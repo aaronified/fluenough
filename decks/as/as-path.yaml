@@ -500,11 +500,14 @@ units:
       - { id: "itinerary", text: { "en": "A two-day trip itinerary" } }
   - decks: ["as-reading-travel"]
     words: 0
-  - planned: { id: "as-services", theme: "services", words: 45 }
+  - decks: ["as-services", "as-services-sentences", "*"]
+    words: 16
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
+  - decks: ["as-reading-services"]
+    words: 0
   - planned: { id: "as-government", theme: "government", words: 40 }
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }

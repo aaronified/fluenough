@@ -1,0 +1,78 @@
+schema: 1
+id: "as-services-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3376"
+    target: "মই এটা পাৰ্চেল পঠিয়াওঁ।"
+    reading: "moi etā pārsel pothiyāum̐."
+    ipa: "moi eta paɹsel potʰijaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "পঠিয়াওঁ", ref: "as-2294" }
+    confusables:
+      - { id: "c1", word: "আহিছে", reading: "āhise", kind: "form" }
+      - { id: "c2", word: "লোৱা", reading: "luwā", kind: "word" }
+  - id: "as-3377"
+    target: "ফৰ্ম পূৰণ কৰা।"
+    reading: "phôrm purôn kôrā."
+    ipa: "pʰɔɹm puɹɔn kɔɹa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "আবেদন", reading: "ābedôn", kind: "word" }
+      - { id: "c2", word: "কাউণ্টাৰ", reading: "kāuṇṭār", kind: "word" }
+  - id: "as-3378"
+    target: "দৰ্জি কাপোৰ সেলাই কৰে।"
+    reading: "dôrzi kāpur selāi kôre."
+    ipa: "doɹzi kapʊɹ selai kɔɹe"
+    pos: "phrase"
+    bases:
+      - { word: "কৰে", ref: "as-2202" }
+    confusables:
+      - { id: "c1", word: "মেৰামতি", reading: "merāmôti", kind: "word" }
+      - { id: "c2", word: "ধোৱা", reading: "dhuwā", kind: "word" }
+  - id: "as-3379"
+    target: "মেৰামতি কৰা।"
+    reading: "merāmôti kôrā."
+    ipa: "meɹamoti kɔɹa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ভাঙা", reading: "bhāṅā", kind: "word" }
+      - { id: "c2", word: "সেৱা", reading: "xewā", kind: "word" }
+  - id: "as-3380"
+    target: "ডাক-মাচুল বেছি।"
+    reading: "ḍāk-māxul besi."
+    ipa: "dakmasul besi"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সুদ", reading: "xud", kind: "word" }
+      - { id: "c2", word: "দাম", reading: "dām", kind: "word" }
+  - id: "as-3381"
+    target: "ঋণ লোৱা।"
+    reading: "rinô luwā."
+    ipa: "rin lʊwa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "টকা", reading: "tôkā", kind: "word" }
+      - { id: "c2", word: "পইচা", reading: "poisā", kind: "word" }
+  - id: "as-3382"
+    target: "কাউণ্টাৰত সেৱা ভাল।"
+    reading: "kāuṇṭārôt xewā bhāl."
+    ipa: "kauntaɹɔt sewa bʱal"
+    pos: "phrase"
+    bases:
+      - { word: "কাউণ্টাৰত", ref: "as-3363" }
+    confusables:
+      - { id: "c1", word: "ফৰ্ম", reading: "phôrm", kind: "word" }
+      - { id: "c2", word: "আবেদন", reading: "ābedôn", kind: "word" }
+  - id: "as-3383"
+    target: "পাৰ্চেল ভাৰী।"
+    reading: "pārsel bhāri."
+    ipa: "paɹsel bʱaɹi"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "হালকা", reading: "hālkā", kind: "word" }
+      - { id: "c2", word: "বেগ", reading: "beg", kind: "word" }

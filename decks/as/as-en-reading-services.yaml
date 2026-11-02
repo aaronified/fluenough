@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-services"
+name: "Assamese reading: services: bank, post, repair and tailor"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-at-the-post-office"
+    title: "At the post office counter"
+    theme: "services"
+    sentences:
+      - text: "এইটো পাৰ্চেল পঠিয়াব লাগে।"
+        reading: "eitu pārsel pothiyāb lāge."
+      - text: "ডাক-মাচুল কিমান?"
+        reading: "ḍāk-māxul kimān?"
+      - text: "ফৰ্মটো পূৰণ কৰক।"
+        reading: "phôrmtu purôn kôrôk."
+      - text: "পাঁচ দিনত পৌঁছিব।"
+        reading: "pām̐s dinôt pōm̐chib."
+    questions:
+      - id: "as-3384"
+        prompt: { en: "The customer wants to send a parcel." }
+        answer: true
+      - id: "as-3385"
+        prompt: { en: "What must the customer fill in?" }
+        options:
+          - { en: "A form" }
+          - { en: "A ticket" }
+          - { en: "A photo" }
+        answer: 1
+      - id: "as-3386"
+        prompt: { en: "How long will the parcel take?" }
+        options:
+          - { en: "One day" }
+          - { en: "Five days" }
+          - { en: "A month" }
+        answer: 2
+  - id: "as-bank-form"
+    title: "A simple bank form"
+    theme: "services"
+    sentences:
+      - text: "নাম: ........"
+        reading: "nām: ........"
+      - text: "একাউন্ট নম্বৰ: ........"
+        reading: "ekāunṭ nômbôr: ........"
+      - text: "টকা জমা কৰিব লাগে।"
+        reading: "tôkā zomā kôrib lāge."
+      - text: "সুদ ভাল।"
+        reading: "xud bhāl."
+    questions:
+      - id: "as-3387"
+        prompt: { en: "The form asks for a name." }
+        answer: true
+      - id: "as-3388"
+        prompt: { en: "What must be done with the money?" }
+        options:
+          - { en: "Deposit it" }
+          - { en: "Burn it" }
+          - { en: "Give it away" }
+        answer: 1
+      - id: "as-3389"
+        prompt: { en: "What is said about interest?" }
+        options:
+          - { en: "It is bad" }
+          - { en: "It is good" }
+          - { en: "It is missing" }
+        answer: 2
