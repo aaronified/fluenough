@@ -333,7 +333,8 @@ units:
       - { id: "two-books-three-cups", text: { "en": "Ordering and buying with the right measure word: a cup of tea, two books, a sheet of paper" } }
     reading_passages:
       - { id: "order-slip", text: { "en": "An order slip with counted items" } }
-  - planned: { id: "zh-groceries", theme: "groceries", words: 40 }
+  - decks: ["zh-groceries", "zh-groceries-sentences", "zh-reading-groceries", "*"]
+    words: 40
     listening_passages:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list at a supermarket" } }
     reading_passages:
