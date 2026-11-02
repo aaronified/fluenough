@@ -232,7 +232,9 @@ units:
       - { id: "this-one-that-one", text: { "en": "Pointing at things in a shop: this, that, that over there, which" } }
     reading_passages:
       - { id: "shop-labels", text: { "en": "Labels in a shop window pointing at its goods" } }
-  - planned: { id: "ja-grammar-masu", grammar: ["masu", "masen"] }
+  - decks: ["ja-grammar-masu", "ja-grammar-masu-sentences", "ja-reading-grammar-masu"]
+    words: 0
+    grammar: ["masu", "masen"]
     listening_passages:
       - { id: "what-do-you-do-on-sundays", text: { "en": "Saying politely what you do and do not do on Sundays" } }
     reading_passages:
