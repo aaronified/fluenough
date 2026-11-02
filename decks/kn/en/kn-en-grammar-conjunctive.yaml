@@ -1,0 +1,24 @@
+schema: 1
+id: "kn-en-grammar-conjunctive"
+kind: "layer"
+core: "kn-grammar-conjunctive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The conjunctive: doing one thing and then another"
+license: "CC-BY-SA-4.0"
+description: "Joining two actions with an -i or -u ending (having done), and after doing. Used for a chain of actions in one sentence. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Conjunctive"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "maadu": "to do"
+    "hoogu": "to go"
+    "baru": "to come"
+    "noodu": "to see"
+    "tinnu": "to eat"
+    "kudi": "to drink"
+    "bare": "to write"
+    "oodu": "to read"
+    "kodu": "to give"
+  notes: "The conjunctive joins one action to the next, as in ಮಾಡಿ ಹೋಗು (māḍi hōgu), do it and go. It adds an -i or -u ending to the stem, and the irregular verbs change, as ಬಂದು (bandu) for ಬಾ (bā) and ಕೊಟ್ಟು (koṭṭu) for ಕೊಡು (koḍu). After doing it, say the past form and ಮೇಲೆ (mēle), as in ಓದಿದ ಮೇಲೆ (ōdida mēle), after reading."

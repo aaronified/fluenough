@@ -1,0 +1,259 @@
+schema: 1
+id: "kn-phone"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "phone"
+tags: ["beginner", "unreviewed"]
+cards:
+  - ref: "kn-0879"
+  - id: "kn-1193"
+    target: "ಸಂದೇಶ"
+    reading: "sandēśa"
+    ipa: "sand̪eːʃa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಂದೇಶ ಬಂದಿದೆ.", reading: "sandēśa bandide.", ipa: "sand̪eːʃa band̪id̪e", bases: [{ word: "ಬಂದಿದೆ", ref: "kn-0632" }] }
+      - { target: "ಸಂದೇಶ ಕಳುಹಿಸು.", reading: "sandēśa kaḷuhisu.", ipa: "sand̪eːʃa kaɭuhisu" }
+  - id: "kn-1194"
+    target: "ಮೆಸೇಜ್"
+    reading: "mesēj"
+    ipa: "meseːdʒ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮೆಸೇಜ್ ಕಳುಹಿಸು.", reading: "mesēj kaḷuhisu.", ipa: "meseːdʒ kaɭuhisu" }
+      - { target: "ಮೆಸೇಜ್ ಬಂದಿಲ್ಲ.", reading: "mesēj bandilla.", ipa: "meseːdʒ band̪illa", bases: [{ word: "ಬಂದಿಲ್ಲ", ref: "kn-0632" }] }
+  - id: "kn-1195"
+    target: "ಸಿಮ್"
+    reading: "sim"
+    ipa: "sim"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಿಮ್ ಕಾರ್ಡ್ ಬೇಕು.", reading: "sim kārḍ bēku.", ipa: "sim kaːrɖ beːku" }
+      - { target: "ಸಿಮ್ ಇದೆಯೇ?", reading: "sim ideyē?", ipa: "sim id̪ejeː", bases: [{ word: "ಇದೆಯೇ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1196"
+    target: "ಚಾರ್ಜರ್"
+    reading: "cārjar"
+    ipa: "tʃaːrdʒar"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚಾರ್ಜರ್ ಎಲ್ಲಿ?", reading: "cārjar elli?", ipa: "tʃaːrdʒar elli" }
+      - { target: "ಚಾರ್ಜರ್ ತೆಗೆದುಕೊ.", reading: "cārjar tegeduko.", ipa: "tʃaːrdʒar t̪eɡed̪uko" }
+  - id: "kn-1197"
+    target: "ಬ್ಯಾಟರಿ"
+    reading: "byāṭari"
+    ipa: "bjaːʈari"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬ್ಯಾಟರಿ ಕಡಿಮೆ ಇದೆ.", reading: "byāṭari kaḍime ide.", ipa: "bjaːʈari kaɖime id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಬ್ಯಾಟರಿ ಚಾರ್ಜ್ ಮಾಡು.", reading: "byāṭari cārj māḍu.", ipa: "bjaːʈari tʃaːrdʒ maːɖu" }
+  - id: "kn-1198"
+    target: "ನೆಟ್ವರ್ಕ್"
+    reading: "neṭvark"
+    ipa: "neʈʋark"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನೆಟ್ವರ್ಕ್ ಇಲ್ಲ.", reading: "neṭvark illa.", ipa: "neʈʋark illa", bases: [{ word: "ಇಲ್ಲ", ref: "kn-0165" }] }
+      - { target: "ನೆಟ್ವರ್ಕ್ ಚೆನ್ನಾಗಿದೆ.", reading: "neṭvark cennāgide.", ipa: "neʈʋark tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-1199"
+    target: "ಇಂಟರ್ನೆಟ್"
+    reading: "iṇṭarneṭ"
+    ipa: "iɳʈarneʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂಟರ್ನೆಟ್ ಇದೆಯೇ?", reading: "iṇṭarneṭ ideyē?", ipa: "iɳʈarneʈ id̪ejeː", bases: [{ word: "ಇದೆಯೇ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಇಂಟರ್ನೆಟ್ ಬೇಕು.", reading: "iṇṭarneṭ bēku.", ipa: "iɳʈarneʈ beːku" }
+  - id: "kn-1200"
+    target: "ಆ್ಯಪ್"
+    reading: "āp"
+    ipa: "æːp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆ್ಯಪ್ ತೆರೆ.", reading: "āp tere.", ipa: "æːp t̪ere" }
+      - { target: "ಹೊಸ ಆ್ಯಪ್ ಇದೆ.", reading: "hosa āp ide.", ipa: "hosa æːp id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1201"
+    target: "ಪಾಸ್ವರ್ಡ್"
+    reading: "pāsvarḍ"
+    ipa: "paːsʋarɖ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪಾಸ್ವರ್ಡ್ ಹೇಳು.", reading: "pāsvarḍ hēḷu.", ipa: "paːsʋarɖ heːɭu" }
+      - { target: "ಪಾಸ್ವರ್ಡ್ ಮರೆತೆ.", reading: "pāsvarḍ marete.", ipa: "paːsʋarɖ maret̪e", bases: [{ word: "ಮರೆತೆ", ref: "kn-1179" }] }
+  - id: "kn-1202"
+    target: "ಸಂಖ್ಯೆ"
+    reading: "saṅkhye"
+    ipa: "saŋkʰje"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಿನ್ನ ಸಂಖ್ಯೆ ಎಷ್ಟು?", reading: "ninna saṅkhye eṣṭu?", ipa: "ninna saŋkʰje eʂʈu" }
+      - { target: "ಸಂಖ್ಯೆ ಕಳುಹಿಸು.", reading: "saṅkhye kaḷuhisu.", ipa: "saŋkʰje kaɭuhisu" }
+  - id: "kn-1203"
+    target: "ಪರದೆ"
+    reading: "parade"
+    ipa: "parad̪e"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪರದೆ ದೊಡ್ಡದು.", reading: "parade doḍḍadu.", ipa: "parad̪e d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಪರದೆ ಮೇಲೆ ಚಿತ್ರ ಇದೆ.", reading: "parade mēle citra ide.", ipa: "parad̪e meːle tʃit̪ra id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1204"
+    target: "ಬಟನ್"
+    reading: "baṭan"
+    ipa: "baʈan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಟನ್ ಬೇಕು.", reading: "baṭan bēku.", ipa: "baʈan beːku" }
+      - { target: "ಬಟನ್ ಇದೆ.", reading: "baṭan ide.", ipa: "baʈan id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1205"
+    target: "ವೀಡಿಯೊ"
+    reading: "vīḍiyo"
+    ipa: "ʋiːɖijo"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವೀಡಿಯೊ ನೋಡು.", reading: "vīḍiyo nōḍu.", ipa: "ʋiːɖijo noːɖu" }
+      - { target: "ವೀಡಿಯೊ ಕಳುಹಿಸು.", reading: "vīḍiyo kaḷuhisu.", ipa: "ʋiːɖijo kaɭuhisu" }
+  - id: "kn-1206"
+    target: "ರಿಂಗ್"
+    reading: "riṅg"
+    ipa: "riŋɡ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಿಂಗ್ ಆಯಿತು.", reading: "riṅg āyitu.", ipa: "riŋɡ aːjit̪u" }
+      - { target: "ರಿಂಗ್ ಕೇಳಿಸುತ್ತಿದೆ.", reading: "riṅg kēḷisuttide.", ipa: "riŋɡ keːɭisut̪t̪id̪e", bases: [{ word: "ಕೇಳಿಸುತ್ತಿದೆ", base: "ಕೇಳಿಸು", reading: "kēḷisu" }] }
+  - id: "kn-1208"
+    target: "ಆನ್"
+    reading: "ān"
+    ipa: "aːn"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಫೋನ್ ಆನ್ ಮಾಡು.", reading: "phōn ān māḍu.", ipa: "pʰoːn aːn maːɖu" }
+      - { target: "ಫೋನ್ ಆನ್ ಇದೆ.", reading: "phōn ān ide.", ipa: "pʰoːn aːn id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1209"
+    target: "ಆಫ್"
+    reading: "āph"
+    ipa: "aːpʰ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಫೋನ್ ಆಫ್ ಆಯಿತು.", reading: "phōn āph āyitu.", ipa: "pʰoːn aːpʰ aːjit̪u" }
+      - { target: "ಆಫ್ ಮಾಡು.", reading: "āph māḍu.", ipa: "aːpʰ maːɖu" }
+  - id: "kn-1210"
+    target: "ಬಿಜಿ"
+    reading: "biji"
+    ipa: "bidʒi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಈಗ ಬಿಜಿ ಇದ್ದಾಳೆ.", reading: "īga biji iddāḷe.", ipa: "iːɡa bidʒi id̪d̪aːɭe", bases: [{ word: "ಇದ್ದಾಳೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಅವಳು ಬಿಜಿ.", reading: "avaḷu biji.", ipa: "aʋaɭu bidʒi" }
+  - id: "kn-1211"
+    target: "ಚಾರ್ಜ್"
+    reading: "cārj"
+    ipa: "tʃaːrdʒ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಚಾರ್ಜ್ ಎಷ್ಟು?", reading: "cārj eṣṭu?", ipa: "tʃaːrdʒ eʂʈu" }
+      - { target: "ಚಾರ್ಜ್ ಕಡಿಮೆ ಆಯಿತು.", reading: "cārj kaḍime āyitu.", ipa: "tʃaːrdʒ kaɖime aːjit̪u" }
+  - id: "kn-1212"
+    target: "ಸಿಗ್ನಲ್"
+    reading: "signal"
+    ipa: "siɡnal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಿಗ್ನಲ್ ಇಲ್ಲ.", reading: "signal illa.", ipa: "siɡnal illa", bases: [{ word: "ಇಲ್ಲ", ref: "kn-0165" }] }
+      - { target: "ಸಿಗ್ನಲ್ ಚೆನ್ನಾಗಿದೆ.", reading: "signal cennāgide.", ipa: "siɡnal tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-1213"
+    target: "ಕ್ಲಿಕ್"
+    reading: "klik"
+    ipa: "klik"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಒಂದು ಕ್ಲಿಕ್ ಸಾಕು.", reading: "ondu klik sāku.", ipa: "ond̪u klik saːku" }
+      - { target: "ಕ್ಲಿಕ್ ಮಾಡು.", reading: "klik māḍu.", ipa: "klik maːɖu" }
+  - id: "kn-1214"
+    target: "ಆಯ್ಕೆ"
+    reading: "āyke"
+    ipa: "aːjke"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆಯ್ಕೆ ಮಾಡು.", reading: "āyke māḍu.", ipa: "aːjke maːɖu" }
+      - { target: "ಎರಡು ಆಯ್ಕೆ ಇದೆ.", reading: "eraḍu āyke ide.", ipa: "eraɖu aːjke id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1215"
+    target: "ರಕ್ಷಣೆ"
+    reading: "rakṣaṇe"
+    ipa: "rakʂaɳe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪಾಸ್ವರ್ಡ್ ರಕ್ಷಣೆ ಮಾಡುತ್ತದೆ.", reading: "pāsvarḍ rakṣaṇe māḍuttade.", ipa: "paːsʋarɖ rakʂaɳe maːɖut̪t̪ad̪e", bases: [{ word: "ಮಾಡುತ್ತದೆ", ref: "kn-0630" }] }
+      - { target: "ಫೋನ್ ರಕ್ಷಣೆ ಬೇಕು.", reading: "phōn rakṣaṇe bēku.", ipa: "pʰoːn rakʂaɳe beːku" }
+  - id: "kn-1216"
+    target: "ಸಹಾಯ ಕೇಳು"
+    reading: "sahāya kēḷu"
+    ipa: "sahaːja keːɭu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಹಾಯ ಕೇಳು.", reading: "sahāya kēḷu.", ipa: "sahaːja keːɭu" }
+      - { target: "ಅವನು ಸಹಾಯ ಕೇಳಿದ.", reading: "avanu sahāya kēḷida.", ipa: "aʋanu sahaːja keːɭid̪a", bases: [{ word: "ಕೇಳಿದ", ref: "kn-0637" }] }

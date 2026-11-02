@@ -1,0 +1,239 @@
+schema: 1
+id: "kn-school"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "school"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1108"
+    target: "ತರಗತಿ"
+    reading: "taragati"
+    ipa: "t̪araɡat̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತರಗತಿಯಲ್ಲಿ ಮಕ್ಕಳು ಇದ್ದಾರೆ.", reading: "taragatiyalli makkaḷu iddāre.", ipa: "t̪araɡat̪ijalli makkaɭu id̪d̪aːre", bases: [{ word: "ತರಗತಿಯಲ್ಲಿ", base: "ತರಗತಿ", reading: "taragati" }, { word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ತರಗತಿ ಈಗ ಮುಗಿಯಿತು.", reading: "taragati īga mugiyitu.", ipa: "t̪araɡat̪i iːɡa muɡijit̪u", bases: [{ word: "ಮುಗಿಯಿತು", base: "ಮುಗಿ", reading: "mugi" }] }
+  - id: "kn-1109"
+    target: "ಪಾಠ"
+    reading: "pāṭha"
+    ipa: "paːʈʰa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂದು ಹೊಸ ಪಾಠ ಇದೆ.", reading: "indu hosa pāṭha ide.", ipa: "ind̪u hosa paːʈʰa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಪಾಠ ಓದು.", reading: "pāṭha ōdu.", ipa: "paːʈʰa oːd̪u" }
+  - id: "kn-1110"
+    target: "ಪೆನ್ಸಿಲ್"
+    reading: "pensil"
+    ipa: "pensil"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪೆನ್ಸಿಲ್ ಬೇಕು.", reading: "pensil bēku.", ipa: "pensil beːku" }
+      - { target: "ಪೆನ್ಸಿಲ್ ಕತ್ತರಿಸು.", reading: "pensil kattarisu.", ipa: "pensil kat̪t̪arisu" }
+  - id: "kn-1111"
+    target: "ರಬ್ಬರ್"
+    reading: "rabbar"
+    ipa: "rabbar"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಬ್ಬರ್ ಎಲ್ಲಿ?", reading: "rabbar elli?", ipa: "rabbar elli" }
+      - { target: "ರಬ್ಬರ್ ಕೊಡು.", reading: "rabbar koḍu.", ipa: "rabbar koɖu" }
+  - id: "kn-1112"
+    target: "ನೋಟ್ಬುಕ್"
+    reading: "nōṭbuk"
+    ipa: "noːʈbuk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನೋಟ್ಬುಕ್ ತೆಗೆದುಕೊ.", reading: "nōṭbuk tegeduko.", ipa: "noːʈbuk t̪eɡed̪uko" }
+      - { target: "ನೋಟ್ಬುಕ್ ಹೊಸದು.", reading: "nōṭbuk hosadu.", ipa: "noːʈbuk hosad̪u", bases: [{ word: "ಹೊಸದು", ref: "kn-0404" }] }
+  - id: "kn-1113"
+    target: "ಬೋರ್ಡ್"
+    reading: "bōrḍ"
+    ipa: "boːrɖ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೋರ್ಡ್ ನೋಡು.", reading: "bōrḍ nōḍu.", ipa: "boːrɖ noːɖu" }
+      - { target: "ಶಿಕ್ಷಕರು ಬೋರ್ಡ್ ಮೇಲೆ ಬರೆದರು.", reading: "śikṣakaru bōrḍ mēle baredaru.", ipa: "ʃikʂakaru boːrɖ meːle bared̪aru", bases: [{ word: "ಶಿಕ್ಷಕರು", ref: "kn-0225" }, { word: "ಬರೆದರು", ref: "kn-0639" }] }
+  - ref: "kn-0236"
+  - id: "kn-1114"
+    target: "ಅಂಕ"
+    reading: "aṅka"
+    ipa: "aŋka"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪರೀಕ್ಷೆಯಲ್ಲಿ ಎಷ್ಟು ಅಂಕ?", reading: "parīkṣeyalli eṣṭu aṅka?", ipa: "pariːkʂejalli eʂʈu aŋka", bases: [{ word: "ಪರೀಕ್ಷೆಯಲ್ಲಿ", ref: "kn-1078" }] }
+      - { target: "ಅಂಕ ಚೆನ್ನಾಗಿದೆ.", reading: "aṅka cennāgide.", ipa: "aŋka tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - ref: "kn-0237"
+  - ref: "kn-0420"
+  - id: "kn-1115"
+    target: "ಆಟ"
+    reading: "āṭa"
+    ipa: "aːʈa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಕ್ಕಳು ಆಟ ಆಡುತ್ತಾರೆ.", reading: "makkaḷu āṭa āḍuttāre.", ipa: "makkaɭu aːʈa aːɖut̪t̪aːre", bases: [{ word: "ಆಡುತ್ತಾರೆ", ref: "kn-0645" }] }
+      - { target: "ಮಕ್ಕಳ ಆಟ ಇದೆ.", reading: "makkaḷa āṭa ide.", ipa: "makkaɭa aːʈa id̪e", bases: [{ word: "ಮಕ್ಕಳ", ref: "kn-0212" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - ref: "kn-0843"
+  - ref: "kn-0842"
+  - id: "kn-1116"
+    target: "ಸಮವಸ್ತ್ರ"
+    reading: "samavastra"
+    ipa: "samaʋast̪ra"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಸಮವಸ್ತ್ರ ಹಾಕು.", reading: "samavastra hāku.", ipa: "samaʋast̪ra haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+      - { target: "ಶಾಲೆಗೆ ಸಮವಸ್ತ್ರ ಬೇಕು.", reading: "śālege samavastra bēku.", ipa: "ʃaːleɡe samaʋast̪ra beːku" }
+  - ref: "kn-0640"
+  - ref: "kn-0638"
+  - ref: "kn-0639"
+  - id: "kn-1117"
+    target: "ಉತ್ತರ"
+    reading: "uttara"
+    ipa: "ut̪t̪ara"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಉತ್ತರ ಗೊತ್ತಿದೆ.", reading: "uttara gottide.", ipa: "ut̪t̪ara ɡot̪t̪id̪e", bases: [{ word: "ಗೊತ್ತಿದೆ", base: "ಗೊತ್ತು", reading: "gottu" }] }
+      - { target: "ಉತ್ತರ ಬರೆ.", reading: "uttara bare.", ipa: "ut̪t̪ara bare" }
+  - id: "kn-1118"
+    target: "ಪ್ರಶ್ನೆ"
+    reading: "praśne"
+    ipa: "praʃne"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರಶ್ನೆ ಕೇಳು.", reading: "praśne kēḷu.", ipa: "praʃne keːɭu" }
+      - { target: "ಈ ಪ್ರಶ್ನೆ ಕಷ್ಟ.", reading: "ī praśne kaṣṭa.", ipa: "iː praʃne kaʂʈa" }
+  - id: "kn-1119"
+    target: "ಗೃಹಪಾಠ"
+    reading: "gruhapāṭha"
+    ipa: "ɡruhapaːʈʰa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗೃಹಪಾಠ ಮುಗಿಸಿದೆ.", reading: "gruhapāṭha mugiside.", ipa: "ɡruhapaːʈʰa muɡisid̪e", bases: [{ word: "ಮುಗಿಸಿದೆ", base: "ಮುಗಿಸು", reading: "mugisu" }] }
+      - { target: "ಗೃಹಪಾಠ ಇದೆ.", reading: "gruhapāṭha ide.", ipa: "ɡruhapaːʈʰa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1120"
+    target: "ಅಭ್ಯಾಸ"
+    reading: "abhyāsa"
+    ipa: "abʱjaːsa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ದಿನ ಅಭ್ಯಾಸ ಮಾಡು.", reading: "dina abhyāsa māḍu.", ipa: "d̪ina abʱjaːsa maːɖu" }
+      - { target: "ಅಭ್ಯಾಸ ಬೇಕು.", reading: "abhyāsa bēku.", ipa: "abʱjaːsa beːku" }
+  - id: "kn-1121"
+    target: "ತಪ್ಪು"
+    reading: "tappu"
+    ipa: "t̪appu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಉತ್ತರ ತಪ್ಪು.", reading: "uttara tappu.", ipa: "ut̪t̪ara t̪appu" }
+      - { target: "ನನ್ನ ತಪ್ಪು ಆಯಿತು.", reading: "nanna tappu āyitu.", ipa: "nanna t̪appu aːjit̪u" }
+  - ref: "kn-0147"
+  - ref: "kn-0195"
+  - id: "kn-1122"
+    target: "ಗೆಳತಿ"
+    reading: "geḷati"
+    ipa: "ɡeɭat̪i"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗೆಳತಿ ಶಾಲೆಗೆ ಬಂದಳು.", reading: "geḷati śālege bandaḷu.", ipa: "ɡeɭat̪i ʃaːleɡe band̪aɭu", bases: [{ word: "ಬಂದಳು", ref: "kn-0632" }] }
+      - { target: "ಗೆಳತಿ ಪುಸ್ತಕ ಓದುತ್ತಾಳೆ.", reading: "geḷati pustaka ōduttāḷe.", ipa: "ɡeɭat̪i pust̪aka oːd̪ut̪t̪aːɭe", bases: [{ word: "ಓದುತ್ತಾಳೆ", ref: "kn-0638" }] }
+  - ref: "kn-0827"
+  - id: "kn-1123"
+    target: "ವಿಷಯ"
+    reading: "viṣaya"
+    ipa: "ʋiʂaja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗಣಿತ ನನ್ನ ವಿಷಯ.", reading: "gaṇita nanna viṣaya.", ipa: "ɡaɳit̪a nanna ʋiʂaja" }
+      - { target: "ವಿಷಯ ಕಷ್ಟ.", reading: "viṣaya kaṣṭa.", ipa: "ʋiʂaja kaʂʈa" }
+  - id: "kn-1124"
+    target: "ಗಣಿತ"
+    reading: "gaṇita"
+    ipa: "ɡaɳit̪a"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗಣಿತ ಕಷ್ಟ.", reading: "gaṇita kaṣṭa.", ipa: "ɡaɳit̪a kaʂʈa" }
+      - { target: "ಗಣಿತ ಪರೀಕ್ಷೆ ಇದೆ.", reading: "gaṇita parīkṣe ide.", ipa: "ɡaɳit̪a pariːkʂe id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1125"
+    target: "ವಿಜ್ಞಾನ"
+    reading: "vijñāna"
+    ipa: "ʋidʒɲaːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ವಿಜ್ಞಾನ ಇಷ್ಟ.", reading: "vijñāna iṣṭa.", ipa: "ʋidʒɲaːna iʂʈa" }
+      - { target: "ವಿಜ್ಞಾನ ಪುಸ್ತಕ ಹೊಸದು.", reading: "vijñāna pustaka hosadu.", ipa: "ʋidʒɲaːna pust̪aka hosad̪u", bases: [{ word: "ಹೊಸದು", ref: "kn-0404" }] }
+  - id: "kn-1126"
+    target: "ಇಂಗ್ಲಿಷ್"
+    reading: "iṅgliṣ"
+    ipa: "iŋɡliʂ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಇಂಗ್ಲಿಷ್ ಕಲಿ.", reading: "iṅgliṣ kali.", ipa: "iŋɡliʂ kali" }
+      - { target: "ಇಂಗ್ಲಿಷ್ ಪಾಠ ಇದೆ.", reading: "iṅgliṣ pāṭha ide.", ipa: "iŋɡliʂ paːʈʰa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1127"
+    target: "ಕನ್ನಡ"
+    reading: "kannaḍa"
+    ipa: "kannaɖa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕನ್ನಡ ಪುಸ್ತಕ ಓದು.", reading: "kannaḍa pustaka ōdu.", ipa: "kannaɖa pust̪aka oːd̪u" }
+      - { target: "ಕನ್ನಡ ತರಗತಿ ಇದೆ.", reading: "kannaḍa taragati ide.", ipa: "kannaɖa t̪araɡat̪i id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }

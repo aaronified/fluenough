@@ -1,0 +1,233 @@
+schema: 1
+id: "kn-health"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "health"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1298"
+    target: "ವ್ಯಾಯಾಮ"
+    reading: "vyāyāma"
+    ipa: "ʋjaːjaːma"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪ್ರತಿ ದಿನ ವ್ಯಾಯಾಮ ಮಾಡು.", reading: "prati dina vyāyāma māḍu.", ipa: "prat̪i d̪ina ʋjaːjaːma maːɖu" }
+      - { target: "ವ್ಯಾಯಾಮ ಒಳ್ಳೆಯದು.", reading: "vyāyāma oḷḷeyadu.", ipa: "ʋjaːjaːma oɭɭejad̪u" }
+  - id: "kn-1299"
+    target: "ಯೋಗ"
+    reading: "yōga"
+    ipa: "joːɡa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಯೋಗ ಮಾಡುತ್ತೇನೆ.", reading: "yōga māḍuttēne.", ipa: "joːɡa maːɖut̪t̪eːne" }
+      - { target: "ಬೆಳಿಗ್ಗೆ ಯೋಗ ಮಾಡು.", reading: "beḷigge yōga māḍu.", ipa: "beɭiɡɡe joːɡa maːɖu" }
+  - id: "kn-1300"
+    target: "ಆಹಾರ"
+    reading: "āhāra"
+    ipa: "aːhaːra"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆಹಾರ ಒಳ್ಳೆಯದು.", reading: "āhāra oḷḷeyadu.", ipa: "aːhaːra oɭɭejad̪u" }
+      - { target: "ಒಳ್ಳೆಯ ಆಹಾರ ತಿನ್ನು.", reading: "oḷḷeya āhāra tinnu.", ipa: "oɭɭeja aːhaːra t̪innu" }
+  - id: "kn-1301"
+    target: "ಪೌಷ್ಟಿಕ"
+    reading: "pauṣṭika"
+    ipa: "pauʂʈika"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಪೌಷ್ಟಿಕ ಆಹಾರ.", reading: "pauṣṭika āhāra.", ipa: "pauʂʈika aːhaːra" }
+      - { target: "ಹಣ್ಣು ತುಂಬಾ ಪೌಷ್ಟಿಕ.", reading: "haṇṇu tumbā pauṣṭika.", ipa: "haɳɳu t̪umbaː pauʂʈika" }
+  - id: "kn-1302"
+    target: "ನಿದ್ರೆ"
+    reading: "nidre"
+    ipa: "nid̪re"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಿದ್ರೆ ಬೇಕು.", reading: "nidre bēku.", ipa: "nid̪re beːku" }
+      - { target: "ರಾತ್ರಿ ಚೆನ್ನಾಗಿ ನಿದ್ರೆ ಮಾಡು.", reading: "rātri cennāgi nidre māḍu.", ipa: "raːt̪ri tʃennaːɡi nid̪re maːɖu" }
+  - id: "kn-1303"
+    target: "ಕೊಬ್ಬು"
+    reading: "kobbu"
+    ipa: "kobbu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೊಬ್ಬು ಹೆಚ್ಚು ಆಯಿತು.", reading: "kobbu heccu āyitu.", ipa: "kobbu hetʃtʃu aːjit̪u" }
+      - { target: "ಕೊಬ್ಬು ಕಡಿಮೆ ಮಾಡು.", reading: "kobbu kaḍime māḍu.", ipa: "kobbu kaɖime maːɖu" }
+  - id: "kn-1304"
+    target: "ರಕ್ತದೊತ್ತಡ"
+    reading: "raktadottaḍa"
+    ipa: "rakt̪ad̪ot̪t̪aɖa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಕ್ತದೊತ್ತಡ ನೋಡು.", reading: "raktadottaḍa nōḍu.", ipa: "rakt̪ad̪ot̪t̪aɖa noːɖu" }
+      - { target: "ರಕ್ತದೊತ್ತಡ ಹೆಚ್ಚು ಇದೆ.", reading: "raktadottaḍa heccu ide.", ipa: "rakt̪ad̪ot̪t̪aɖa hetʃtʃu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1305"
+    target: "ದೇಹ"
+    reading: "dēha"
+    ipa: "d̪eːha"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ದೇಹ ಚೆನ್ನಾಗಿದೆ.", reading: "dēha cennāgide.", ipa: "d̪eːha tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ದೇಹಕ್ಕೆ ವ್ಯಾಯಾಮ ಬೇಕು.", reading: "dēhakke vyāyāma bēku.", ipa: "d̪eːhakke ʋjaːjaːma beːku", bases: [{ word: "ದೇಹಕ್ಕೆ", base: "ದೇಹ", reading: "dēha" }] }
+  - id: "kn-1306"
+    target: "ಶಕ್ತಿ"
+    reading: "śakti"
+    ipa: "ʃakt̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಶಕ್ತಿ ಇದೆ.", reading: "śakti ide.", ipa: "ʃakt̪i id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಊಟ ಮಾಡಿದ ಮೇಲೆ ಶಕ್ತಿ ಬರುತ್ತದೆ.", reading: "ūṭa māḍida mēle śakti baruttade.", ipa: "uːʈa maːɖid̪a meːle ʃakt̪i barut̪t̪ad̪e", bases: [{ word: "ಮಾಡಿದ", ref: "kn-0630" }] }
+  - id: "kn-1307"
+    target: "ಉಸಿರು"
+    reading: "usiru"
+    ipa: "usiru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಉಸಿರು ಇದೆ.", reading: "usiru ide.", ipa: "usiru id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಉಸಿರು ಬಿಡು.", reading: "usiru biḍu.", ipa: "usiru biɖu" }
+  - id: "kn-1308"
+    target: "ಮನಸ್ಸು"
+    reading: "manassu"
+    ipa: "manassu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮನಸ್ಸು ಚೆನ್ನಾಗಿದೆ.", reading: "manassu cennāgide.", ipa: "manassu tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಮನಸ್ಸಿಗೆ ವಿಶ್ರಾಂತಿ ಬೇಕು.", reading: "manassige viśrānti bēku.", ipa: "manassiɡe ʋiʃraːnt̪i beːku", bases: [{ word: "ಮನಸ್ಸಿಗೆ", base: "ಮನಸ್ಸು", reading: "manassu" }] }
+  - id: "kn-1309"
+    target: "ಧ್ಯಾನ"
+    reading: "dhyāna"
+    ipa: "d̪ʱjaːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಧ್ಯಾನ ಮಾಡು.", reading: "dhyāna māḍu.", ipa: "d̪ʱjaːna maːɖu" }
+      - { target: "ಬೆಳಿಗ್ಗೆ ಧ್ಯಾನ ಒಳ್ಳೆಯದು.", reading: "beḷigge dhyāna oḷḷeyadu.", ipa: "beɭiɡɡe d̪ʱjaːna oɭɭejad̪u" }
+  - id: "kn-1310"
+    target: "ತಪಾಸಣೆ"
+    reading: "tapāsaṇe"
+    ipa: "t̪apaːsaɳe"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ತಪಾಸಣೆ ಮಾಡು.", reading: "tapāsaṇe māḍu.", ipa: "t̪apaːsaɳe maːɖu" }
+      - { target: "ತಪಾಸಣೆ ಬೇಕು.", reading: "tapāsaṇe bēku.", ipa: "t̪apaːsaɳe beːku" }
+  - id: "kn-1311"
+    target: "ಕಾಯಿಲೆ"
+    reading: "kāyile"
+    ipa: "kaːjile"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕಾಯಿಲೆ ಇದೆ.", reading: "kāyile ide.", ipa: "kaːjile id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಕಾಯಿಲೆ ಗುಣವಾಯಿತು.", reading: "kāyile guṇavāyitu.", ipa: "kaːjile ɡuɳaʋaːjit̪u", bases: [{ word: "ಗುಣವಾಯಿತು", ref: "kn-1068" }] }
+  - id: "kn-1312"
+    target: "ಆರೋಗ್ಯಕರ"
+    reading: "ārōgyakara"
+    ipa: "aːroːɡjakara"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಆರೋಗ್ಯಕರ ಆಹಾರ.", reading: "ārōgyakara āhāra.", ipa: "aːroːɡjakara aːhaːra" }
+      - { target: "ಈ ಊಟ ಆರೋಗ್ಯಕರ.", reading: "ī ūṭa ārōgyakara.", ipa: "iː uːʈa aːroːɡjakara" }
+  - id: "kn-1313"
+    target: "ದುರ್ಬಲ"
+    reading: "durbala"
+    ipa: "d̪urbala"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವಳು ದುರ್ಬಲ.", reading: "avaḷu durbala.", ipa: "aʋaɭu d̪urbala" }
+      - { target: "ದೇಹ ದುರ್ಬಲ ಆಯಿತು.", reading: "dēha durbala āyitu.", ipa: "d̪eːha d̪urbala aːjit̪u" }
+  - id: "kn-1314"
+    target: "ಬಲವಾದ"
+    reading: "balavāda"
+    ipa: "balaʋaːd̪a"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನು ಬಲವಾದ.", reading: "avanu balavāda.", ipa: "aʋanu balaʋaːd̪a" }
+      - { target: "ಬಲವಾದ ಕೈ.", reading: "balavāda kai.", ipa: "balaʋaːd̪a kai" }
+  - id: "kn-1315"
+    target: "ಸ್ವಸ್ಥ"
+    reading: "svastha"
+    ipa: "sʋast̪ʰa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನಾನು ಸ್ವಸ್ಥ.", reading: "nānu svastha.", ipa: "naːnu sʋast̪ʰa" }
+      - { target: "ಅಜ್ಜಿ ಸ್ವಸ್ಥ ಇದ್ದಾರೆ.", reading: "ajji svastha iddāre.", ipa: "adʒdʒi sʋast̪ʰa id̪d̪aːre", bases: [{ word: "ಇದ್ದಾರೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1316"
+    target: "ಧೂಮಪಾನ"
+    reading: "dhūmapāna"
+    ipa: "d̪ʱuːmapaːna"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಧೂಮಪಾನ ಬೇಡ.", reading: "dhūmapāna bēḍa.", ipa: "d̪ʱuːmapaːna beːɖa" }
+      - { target: "ಧೂಮಪಾನ ಬಿಡು.", reading: "dhūmapāna biḍu.", ipa: "d̪ʱuːmapaːna biɖu" }
+  - id: "kn-1317"
+    target: "ಉಸಿರಾಡು"
+    reading: "usirāḍu"
+    ipa: "usiraːɖu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅವನು ಉಸಿರಾಡುತ್ತಾನೆ.", reading: "avanu usirāḍuttāne.", ipa: "aʋanu usiraːɖut̪t̪aːne", bases: [{ word: "ಉಸಿರಾಡುತ್ತಾನೆ", base: "ಉಸಿರಾಡು", reading: "usirāḍu" }] }
+      - { target: "ಅವರು ಉಸಿರಾಡುತ್ತಾರೆ.", reading: "avaru usirāḍuttāre.", ipa: "aʋaru usiraːɖut̪t̪aːre", bases: [{ word: "ಉಸಿರಾಡುತ್ತಾರೆ", base: "ಉಸಿರಾಡು", reading: "usirāḍu" }] }
+  - id: "kn-1318"
+    target: "ನಿದ್ರಿಸು"
+    reading: "nidrisu"
+    ipa: "nid̪risu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಮಕ್ಕಳು ನಿದ್ರಿಸುತ್ತಿದ್ದಾರೆ.", reading: "makkaḷu nidrisuttiddāre.", ipa: "makkaɭu nid̪risut̪t̪id̪d̪aːre", bases: [{ word: "ನಿದ್ರಿಸುತ್ತಿದ್ದಾರೆ", base: "ನಿದ್ರಿಸು", reading: "nidrisu" }] }
+      - { target: "ಅವಳು ಬೇಗ ನಿದ್ರಿಸುತ್ತಾಳೆ.", reading: "avaḷu bēga nidrisuttāḷe.", ipa: "aʋaɭu beːɡa nid̪risut̪t̪aːɭe", bases: [{ word: "ನಿದ್ರಿಸುತ್ತಾಳೆ", base: "ನಿದ್ರಿಸು", reading: "nidrisu" }] }

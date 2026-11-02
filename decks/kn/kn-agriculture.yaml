@@ -1,0 +1,181 @@
+schema: 1
+id: "kn-agriculture"
+part: "core"
+kind: "vocab"
+language: { code: "kn", iso639_3: "kan", name: "Kannada", script: "kannada", tts: "kn-IN", icon: "ಕ" }
+license: "CC-BY-SA-4.0"
+theme: "agriculture"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "kn-1492"
+    target: "ಕೃಷಿ"
+    reading: "kruṣi"
+    ipa: "kruʂi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೃಷಿ ಮಾಡು.", reading: "kruṣi māḍu.", ipa: "kruʂi maːɖu" }
+      - { target: "ಅವರು ಕೃಷಿ ಮಾಡುತ್ತಾರೆ.", reading: "avaru kruṣi māḍuttāre.", ipa: "aʋaru kruʂi maːɖut̪t̪aːre", bases: [{ word: "ಮಾಡುತ್ತಾರೆ", ref: "kn-0630" }] }
+  - ref: "kn-0231"
+  - ref: "kn-0838"
+  - id: "kn-1493"
+    target: "ಫಸಲು"
+    reading: "phasalu"
+    ipa: "pʰasalu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಫಸಲು ಚೆನ್ನಾಗಿದೆ.", reading: "phasalu cennāgide.", ipa: "pʰasalu tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+      - { target: "ಈ ವರ್ಷ ಫಸಲು ಇದೆ.", reading: "ī varṣa phasalu ide.", ipa: "iː ʋarʂa pʰasalu id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1494"
+    target: "ನೀರಾವರಿ"
+    reading: "nīrāvari"
+    ipa: "niːraːʋari"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನೀರಾವರಿ ಬೇಕು.", reading: "nīrāvari bēku.", ipa: "niːraːʋari beːku" }
+      - { target: "ಹೊಲಕ್ಕೆ ನೀರಾವರಿ ಇದೆ.", reading: "holakke nīrāvari ide.", ipa: "holakke niːraːʋari id̪e", bases: [{ word: "ಹೊಲಕ್ಕೆ", ref: "kn-0838" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1495"
+    target: "ನೇಗಿಲು"
+    reading: "nēgilu"
+    ipa: "neːɡilu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ನೇಗಿಲು ಎಲ್ಲಿ?", reading: "nēgilu elli?", ipa: "neːɡilu elli" }
+      - { target: "ನೇಗಿಲು ಎತ್ತು ಎಳೆಯುತ್ತದೆ.", reading: "nēgilu ettu eḷeyuttade.", ipa: "neːɡilu et̪t̪u eɭejut̪t̪ad̪e", bases: [{ word: "ಎಳೆಯುತ್ತದೆ", ref: "kn-1184" }] }
+  - id: "kn-1496"
+    target: "ಗೊಬ್ಬರ"
+    reading: "gobbara"
+    ipa: "ɡobbara"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಗೊಬ್ಬರ ಹಾಕು.", reading: "gobbara hāku.", ipa: "ɡobbara haːku", bases: [{ word: "ಹಾಕು", base: "ಹಾಕು", reading: "hāku" }] }
+      - { target: "ಮಣ್ಣಿನಲ್ಲಿ ಗೊಬ್ಬರ ಇದೆ.", reading: "maṇṇinalli gobbara ide.", ipa: "maɳɳinalli ɡobbara id̪e", bases: [{ word: "ಮಣ್ಣಿನಲ್ಲಿ", ref: "kn-1240" }, { word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+  - id: "kn-1497"
+    target: "ಕೊಯ್ಲು"
+    reading: "koylu"
+    ipa: "kojlu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಕೊಯ್ಲು ಆಯಿತು.", reading: "koylu āyitu.", ipa: "kojlu aːjit̪u" }
+      - { target: "ಕೊಯ್ಲು ಸಮಯ.", reading: "koylu samaya.", ipa: "kojlu samaja" }
+  - id: "kn-1498"
+    target: "ರಾಗಿ"
+    reading: "rāgi"
+    ipa: "raːɡi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ರಾಗಿ ಬೇಕು.", reading: "rāgi bēku.", ipa: "raːɡi beːku" }
+      - { target: "ರಾಗಿ ಬೆಳೆಯುತ್ತಾರೆ.", reading: "rāgi beḷeyuttāre.", ipa: "raːɡi beɭejut̪t̪aːre", bases: [{ word: "ಬೆಳೆಯುತ್ತಾರೆ", ref: "kn-1180" }] }
+  - id: "kn-1499"
+    target: "ಜೋಳ"
+    reading: "jōḷa"
+    ipa: "dʒoːɭa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಜೋಳ ಬೇಕು.", reading: "jōḷa bēku.", ipa: "dʒoːɭa beːku" }
+      - { target: "ಜೋಳ ರಾಗಿ ತಿನ್ನು.", reading: "jōḷa rāgi tinnu.", ipa: "dʒoːɭa raːɡi t̪innu" }
+  - ref: "kn-0494"
+  - id: "kn-1500"
+    target: "ಅಡಿಕೆ"
+    reading: "aḍike"
+    ipa: "aɖike"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಅಡಿಕೆ ತೋಟ ಇದೆ.", reading: "aḍike tōṭa ide.", ipa: "aɖike t̪oːʈa id̪e", bases: [{ word: "ಇದೆ", base: "ಇರು", reading: "iru" }] }
+      - { target: "ಅಡಿಕೆ ಬೇಕು.", reading: "aḍike bēku.", ipa: "aɖike beːku" }
+  - id: "kn-1501"
+    target: "ಹತ್ತಿ"
+    reading: "hatti"
+    ipa: "hat̪t̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಹತ್ತಿ ಬಿಳಿ.", reading: "hatti biḷi.", ipa: "hat̪t̪i biɭi" }
+      - { target: "ಹತ್ತಿ ಬಟ್ಟೆ ಬೇಕು.", reading: "hatti baṭṭe bēku.", ipa: "hat̪t̪i baʈʈe beːku" }
+  - ref: "kn-0789"
+  - id: "kn-1502"
+    target: "ಟ್ರ್ಯಾಕ್ಟರ್"
+    reading: "ṭryākṭar"
+    ipa: "ʈrjaːkʈar"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಟ್ರ್ಯಾಕ್ಟರ್ ಬಂತು.", reading: "ṭryākṭar bantu.", ipa: "ʈrjaːkʈar bant̪u", bases: [{ word: "ಬಂತು", ref: "kn-0632" }] }
+      - { target: "ರೈತ ಟ್ರ್ಯಾಕ್ಟರ್ ಓಡಿಸುತ್ತಾನೆ.", reading: "raita ṭryākṭar ōḍisuttāne.", ipa: "rait̪a ʈrjaːkʈar oːɖisut̪t̪aːne", bases: [{ word: "ಓಡಿಸುತ್ತಾನೆ", base: "ಓಡಿಸು", reading: "ōḍisu" }] }
+  - ref: "kn-0928"
+  - id: "kn-1503"
+    target: "ಬಸವ"
+    reading: "basava"
+    ipa: "basaʋa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಸವ ದೊಡ್ಡದು.", reading: "basava doḍḍadu.", ipa: "basaʋa d̪oɖɖad̪u", bases: [{ word: "ದೊಡ್ಡದು", ref: "kn-0402" }] }
+      - { target: "ಬಸವ ನೇಗಿಲು ಎಳೆಯುತ್ತದೆ.", reading: "basava nēgilu eḷeyuttade.", ipa: "basaʋa neːɡilu eɭejut̪t̪ad̪e", bases: [{ word: "ಎಳೆಯುತ್ತದೆ", ref: "kn-1184" }] }
+  - ref: "kn-0935"
+  - ref: "kn-0929"
+  - ref: "kn-0322"
+  - id: "kn-1504"
+    target: "ಬೇಸಾಯ"
+    reading: "bēsāya"
+    ipa: "beːsaːja"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬೇಸಾಯ ಮಾಡು.", reading: "bēsāya māḍu.", ipa: "beːsaːja maːɖu" }
+      - { target: "ಅವನ ಬೇಸಾಯ ಚೆನ್ನಾಗಿದೆ.", reading: "avana bēsāya cennāgide.", ipa: "aʋana beːsaːja tʃennaːɡid̪e", bases: [{ word: "ಚೆನ್ನಾಗಿದೆ", ref: "kn-0664" }] }
+  - id: "kn-1505"
+    target: "ಬಿತ್ತನೆ"
+    reading: "bittane"
+    ipa: "bit̪t̪ane"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಬಿತ್ತನೆ ಆಯಿತು.", reading: "bittane āyitu.", ipa: "bit̪t̪ane aːjit̪u" }
+      - { target: "ಬಿತ್ತನೆ ಸಮಯ.", reading: "bittane samaya.", ipa: "bit̪t̪ane samaja" }
+  - id: "kn-1506"
+    target: "ಕೊಯ್"
+    reading: "koy"
+    ipa: "koj"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    examples:
+      - { target: "ಫಸಲು ಕೊಯ್.", reading: "phasalu koy.", ipa: "pʰasalu koj" }
+      - { target: "ರೈತರು ಫಸಲು ಕೊಯ್ಯುತ್ತಾರೆ.", reading: "raitaru phasalu koyyuttāre.", ipa: "rait̪aru pʰasalu kojjut̪t̪aːre", bases: [{ word: "ರೈತರು", ref: "kn-0231" }, { word: "ಕೊಯ್ಯುತ್ತಾರೆ", base: "ಕೊಯ್", reading: "koy" }] }

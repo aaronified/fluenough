@@ -1,0 +1,20 @@
+schema: 1
+id: "kn-en-grammar-indefinites"
+kind: "layer"
+core: "kn-grammar-indefinites"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Indefinites: someone, nothing, somewhere"
+license: "CC-BY-SA-4.0"
+description: "Someone, something, somewhere, and their opposites: no one, nothing, nowhere, built on the question words. Not yet checked by a Kannada speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Indefinites"
+  slot_name: "meaning"
+  prompt: "{lemma} ({gloss}) — {slot}"
+  entries:
+    "yaaru": "who"
+    "enu": "what"
+    "elli": "where"
+    "yavaaga": "when"
+    "yavudu": "which"
+  notes: "Add ಓ (ō) to a question word for some: ಯಾರೋ (yārō), someone, and ಏನೋ (ēnō), something. Add ಊ (ū) and ಇಲ್ಲ (illa) for none: ಯಾರೂ ಇಲ್ಲ (yārū illa), no one, and ಏನೂ ಇಲ್ಲ (ēnū illa), nothing."
