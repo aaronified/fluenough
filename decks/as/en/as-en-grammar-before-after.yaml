@@ -1,0 +1,27 @@
+schema: 1
+id: "as-en-grammar-before-after"
+kind: "layer"
+core: "as-grammar-before-after"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Before and after doing something"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says before or after an action: the verb takes -ৰ (-r) and then আগতে (āgôte), before, or পাছত (pāsôt), after. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Before and after doing something"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "before: -ৰ আগতে (-r āgôte)": "before (doing it)"
+    "after: -ৰ পাছত (-r pāsôt)": "after (doing it)"
+  entries:
+    "khua": "to eat; to drink"
+    "zua": "to go"
+    "xua": "to sleep; to lie down"
+    "kora": "to do"
+    "porha": "to read; to study"
+    "aha": "to come"
+    "loa": "to take"
+    "dhua": "to wash"
+    "randha": "to cook"
+  notes: "The verb takes -ৰ (-r), turning it into a noun, then আগতে (āgôte), before, or পাছত (pāsôt), after: খোৱাৰ আগতে হাত ধোৱা (khuwār āgôte hāt dhuwā), wash your hands before eating; খোৱাৰ পাছত (khuwār pāsôt), after eating. The noun keeps the stem of the verb."

@@ -1,0 +1,25 @@
+schema: 1
+id: "as-en-grammar-causative"
+kind: "layer"
+core: "as-grammar-causative"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Making someone do it: the causative"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says someone else makes or lets someone do something: the verb takes -ওৱা (-uwā) or -াওৱা (-āuwā), the causative. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Making someone do it: the causative"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "I caused it: -ালোঁ (-ālum̐) on the causative": "I had it done (past)"
+    "by someone else: কোনে (kone) and -ালে (-āle), by whom": "by someone (who), past"
+  entries:
+    "khua": "to feed (cause to eat)"
+    "kora": "to get done; to have done"
+    "porha": "to teach; to make read"
+    "likha": "to have written"
+    "xuna": "to tell; to make hear"
+    "dekha": "to show"
+    "ana": "to have brought"
+  notes: "The causative adds -ওৱা (-uwā) or -াওৱা (-āuwā) to the verb, so the subject makes someone else act: শিশুক খুৱালোঁ (xixuk khuwālum̐), I fed the child. Past forms take -ালোঁ (-ālum̐), -ালে (-āle). The word কোনে (kone), by whom, names the doer, and the past takes -ালে (-āle): কোনে খুৱালে (kone khuwāle), who fed it? A few verbs add -ুৱা (-uwā) first: পঢ়ুৱা (pôrhuwā), to teach; লিখুৱা (likhuwā), to have written."

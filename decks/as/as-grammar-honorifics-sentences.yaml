@@ -1,0 +1,54 @@
+schema: 1
+id: "as-grammar-honorifics-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-4076"
+    target: "আপুনি কি খাব?"
+    reading: "āpuni ki khāb?"
+    ipa: "apuni ki kʰab"
+    pos: "phrase"
+    bases:
+      - { word: "খাব", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "তুমি কি খাবা?", reading: "tumi ki khābā?", kind: "form" }
+      - { id: "c2", word: "খালে", reading: "khāle", kind: "form" }
+  - id: "as-4077"
+    target: "তেওঁৰ নাম কি?"
+    reading: "teum̐r nām ki?"
+    ipa: "teʊ̃ɹ nam ki"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "আপোনাৰ", reading: "āpunār", kind: "word" }
+      - { id: "c2", word: "তোমাৰ", reading: "tumār", kind: "word" }
+  - id: "as-4078"
+    target: "আপোনালোক আহক।"
+    reading: "āpunāluk āhôk."
+    ipa: "apʊnalʊk ahɔk"
+    pos: "phrase"
+    bases:
+      - { word: "আহক", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "তোমালোক আহা", reading: "tumāluk āhā", kind: "form" }
+      - { id: "c2", word: "আহিছে", reading: "āhise", kind: "form" }
+  - id: "as-4079"
+    target: "ডাঙৰীয়া, আপুনি ভাল আছে নে?"
+    reading: "dāṅoriyā, āpuni bhāl āse ne?"
+    ipa: "daŋoɹija apuni bʱal ase ne"
+    pos: "phrase"
+    bases:
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "তুমি ভাল আছা নে?", reading: "tumi bhāl āsā ne?", kind: "form" }
+      - { id: "c2", word: "ভাল আছে", reading: "bhāl āse", kind: "form" }
+  - id: "as-4080"
+    target: "মেডাম, আপোনাৰ নাম?"
+    reading: "medām, āpunār nām?"
+    ipa: "medam apʊnaɹ nam"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "তোমাৰ নাম?", reading: "tumār nām?", kind: "form" }
+      - { id: "c2", word: "তেওঁৰ নাম?", reading: "teum̐r nām?", kind: "form" }

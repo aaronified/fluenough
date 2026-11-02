@@ -1,0 +1,72 @@
+schema: 1
+id: "as-grammar-ordinals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-4034"
+    target: "আমাৰ ঘৰ প্ৰথম মহলাত।"
+    reading: "āmār ghôr prôthôm môhôlāt."
+    ipa: "amaɹ ɡʱɔɹ pɹɔtʰɔm mɔhɔlat"
+    pos: "phrase"
+    bases:
+      - { word: "প্ৰথম", base: "প্ৰথম", reading: "prôthôm" }
+      - { word: "মহলাত", ref: "as-0336" }
+    confusables:
+      - { id: "c1", word: "দ্বিতীয়", reading: "ditiy", kind: "word" }
+      - { id: "c2", word: "তৃতীয়", reading: "tritiy", kind: "word" }
+  - id: "as-4035"
+    target: "মই তৃতীয় মহলালৈ যাওঁ।"
+    reading: "moi tritiy môhôlālôi zāum̐."
+    ipa: "moi tritij mɔhɔlalɔi zaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "তৃতীয়", base: "তৃতীয়", reading: "tritiy" }
+      - { word: "মহলালৈ", ref: "as-0336" }
+      - { word: "যাওঁ", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "প্ৰথম", reading: "prôthôm", kind: "word" }
+      - { id: "c2", word: "চতুৰ্থ", reading: "soturth", kind: "word" }
+  - id: "as-4036"
+    target: "দ্বিতীয় দিন বৰষুণ।"
+    reading: "ditiy din bôroxun."
+    ipa: "ditij din bɔɹoxun"
+    pos: "phrase"
+    bases:
+      - { word: "দ্বিতীয়", base: "দ্বিতীয়", reading: "ditiy" }
+    confusables:
+      - { id: "c1", word: "প্ৰথম", reading: "prôthôm", kind: "word" }
+      - { id: "c2", word: "তৃতীয়", reading: "tritiy", kind: "word" }
+  - id: "as-4037"
+    target: "পঞ্চম পাঠ অংক।"
+    reading: "pônsôm pāth ôṅk."
+    ipa: "pɔnsɔm patʰ ɔŋk"
+    pos: "phrase"
+    bases:
+      - { word: "পঞ্চম", base: "পঞ্চম", reading: "pônsôm" }
+    confusables:
+      - { id: "c1", word: "দশম", reading: "dôxôm", kind: "word" }
+      - { id: "c2", word: "চতুৰ্থ", reading: "soturth", kind: "word" }
+  - id: "as-4038"
+    target: "দশম শ্ৰেণী ডাঙৰ।"
+    reading: "dôxôm xreni dāṅôr."
+    ipa: "dɔxɔm xɹeni daŋɔɹ"
+    pos: "phrase"
+    bases:
+      - { word: "দশম", base: "দশম", reading: "dôxôm" }
+    confusables:
+      - { id: "c1", word: "প্ৰথম", reading: "prôthôm", kind: "word" }
+      - { id: "c2", word: "সৰু", reading: "soru", kind: "word" }
+  - id: "as-4039"
+    target: "তেওঁ প্ৰথম আহিল।"
+    reading: "teum̐ prôthôm āhil."
+    ipa: "teʊ̃ pɹɔtʰɔm ahil"
+    pos: "phrase"
+    bases:
+      - { word: "প্ৰথম", base: "প্ৰথম", reading: "prôthôm" }
+      - { word: "আহিল", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "শেষত", reading: "xexôt", kind: "word" }
+      - { id: "c2", word: "দ্বিতীয়", reading: "ditiy", kind: "word" }

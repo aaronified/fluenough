@@ -1,0 +1,24 @@
+schema: 1
+id: "as-en-grammar-concessive"
+kind: "layer"
+core: "as-grammar-concessive"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Even though: the concessive"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says even if or although: the verb takes -লেও (-leu), and তথাপি (tôthāpi), still, comes in the main clause. Verbs already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "Even though: the concessive"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "even though: the verb with -লেও (-leu)": "even though (it happened)"
+    "still: তথাপি (tôthāpi) and the same form": "still (in spite of it)"
+  entries:
+    "khua": "to eat; to drink"
+    "kora": "to do"
+    "zua": "to go"
+    "aha": "to come"
+    "porha": "to read; to study"
+    "xuna": "to hear; to listen"
+  notes: "To say even though, put the verb in its -লেও (-leu) form: বৰষুণ হ'লেও মই যাম (bôrôxun hôleu moi zām), even if it rains, I will go. The result may be said with তথাপি (tôthāpi), still, or with যদিও (zodiu), although: যদিও বেয়া (zodiu beyā), although it is bad, তথাপি খাওঁ (tôthāpi khāum̐), I still eat it."

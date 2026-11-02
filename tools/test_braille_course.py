@@ -12,7 +12,8 @@ import yaml
 
 import validate_decks
 
-QBE = Path(__file__).resolve().parent.parent / "decks" / "qbe"
+ROOT = Path(__file__).resolve().parent.parent
+QBE = ROOT / "decks" / "qbe"
 
 
 def cores():
@@ -140,6 +141,17 @@ class BrailleValidator(unittest.TestCase):
                     getattr(fresh, case.__name__)()
                 finally:
                     fresh.doCleanups()
+
+    def test_the_list_gives_the_iso_code_its_decks_carry(self) -> None:
+        """assets/languages.yaml says its iso639_3 is the one a deck's
+        carries; braille's decks say `eng`, so the list must too."""
+        listed = yaml.safe_load(
+            (ROOT / "assets" / "languages.yaml").read_text(encoding="utf-8"))
+        iso = {e["code"]: e["iso639_3"] for e in listed["languages"]}
+        decks = {raw["language"]["code"]: raw["language"]["iso639_3"]
+                 for _, raw in cores()}
+        self.assertEqual(decks, {"qbe": "eng"})
+        self.assertEqual(iso["qbe"], decks["qbe"])
 
 
 if __name__ == "__main__":

@@ -1,0 +1,75 @@
+schema: 1
+id: "as-grammar-passive-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3913"
+    target: "এইটো কাম কৰা হ'ল।"
+    reading: "eitu kām kôrā hol."
+    ipa: "eitʊ kam kɔɹa hol"
+    pos: "phrase"
+    bases:
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "কৰিলোঁ", reading: "korilum̐", kind: "form" }
+      - { id: "c2", word: "কৰিম", reading: "korim", kind: "form" }
+  - id: "as-3914"
+    target: "চাউল খোৱা হয়।"
+    reading: "sāul khuwā hôy."
+    ipa: "saul kʰʊwa hɔj"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খাওঁ", reading: "khāum̐", kind: "form" }
+      - { id: "c2", word: "খালে", reading: "khāle", kind: "form" }
+  - id: "as-3915"
+    target: "চিঠি পঢ়া হ'ল।"
+    reading: "sithi pôrhā hol."
+    ipa: "sitʰi pɔɹa hol"
+    pos: "phrase"
+    bases:
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "পঢ়িছে", reading: "porhise", kind: "form" }
+      - { id: "c2", word: "পঢ়িব", reading: "porhibô", kind: "form" }
+  - id: "as-3916"
+    target: "মাছ কিনা হ'ল।"
+    reading: "mās kinā hol."
+    ipa: "mas kina hol"
+    pos: "phrase"
+    bases:
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "কিনিলে", reading: "kinile", kind: "form" }
+      - { id: "c2", word: "কিনিম", reading: "kinim", kind: "form" }
+  - id: "as-3917"
+    target: "বাটটো পৰিষ্কাৰ কৰা হ'ল।"
+    reading: "bātôtu porixkār kôrā hol."
+    ipa: "batɔtʊ poɹixkaɹ kɔɹa hol"
+    pos: "phrase"
+    bases:
+      - { word: "বাটটো", ref: "as-0325" }
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "দেখা", reading: "dekhā", kind: "word" }
+      - { id: "c2", word: "ধুওঁ", reading: "dhuum̐", kind: "form" }
+  - id: "as-3918"
+    target: "কিতাপ দিয়া হ'ব।"
+    reading: "kitāp diyā hobô."
+    ipa: "kitap dija hob"
+    pos: "phrase"
+    bases:
+      - { word: "হ'ব", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "দিছে", reading: "dise", kind: "form" }
+      - { id: "c2", word: "দিম", reading: "dim", kind: "form" }
+  - id: "as-3919"
+    target: "ঘৰ মেৰামতি কৰা হয়।"
+    reading: "ghôr merāmoti kôrā hôy."
+    ipa: "ɡʱɔɹ meɹamoti kɔɹa hɔj"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "কৰে", reading: "kôre", kind: "form" }
+      - { id: "c2", word: "ৰান্ধা", reading: "rāndhā", kind: "word" }

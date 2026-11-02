@@ -1,0 +1,147 @@
+schema: 1
+id: "as-news"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "news"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3243"
+    target: "কাকত"
+    reading: "kākôt"
+    ipa: "kakɔt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কাকত আহিছে।", reading: "kākôt āhise.", ipa: "kakɔt ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "কাকতত সমাচাৰ।", reading: "kākôtôt xômāsār.", ipa: "kakɔtɔt sɔmasaɹ", bases: [{ word: "কাকতত", base: "কাকত", reading: "kākôt" }] }
+  - id: "as-3244"
+    target: "সম্পাদক"
+    reading: "xômpādôk"
+    ipa: "sɔmpadɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সম্পাদক ব্যস্ত।", reading: "xômpādôk byôst.", ipa: "sɔmpadɔk bjɔst" }
+      - { target: "সম্পাদক আহিছে।", reading: "xômpādôk āhise.", ipa: "sɔmpadɔk ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-3246"
+    target: "নিৰ্বাচন"
+    reading: "nirbāsôn"
+    ipa: "niɹɹasɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নিৰ্বাচন আহিছে।", reading: "nirbāsôn āhise.", ipa: "niɹɹasɔn ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "নিৰ্বাচন বহুত ডাঙৰ।", reading: "nirbāsôn bohut dāṅôr.", ipa: "niɹɹasɔn bohut daŋɔɹ" }
+  - id: "as-3247"
+    target: "ভোট"
+    reading: "bhut"
+    ipa: "bʱʊt"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভোট দিয়া।", reading: "bhut diyā.", ipa: "bʱʊt dija" }
+      - { target: "ভোট বহুত।", reading: "bhut bohut.", ipa: "bʱʊt bohut" }
+  - id: "as-3248"
+    target: "সতৰ্কবাণী"
+    reading: "xôtôrkôbāni"
+    ipa: "sɔtɔɹkɔbani"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সতৰ্কবাণী আছে।", reading: "xôtôrkôbāni āse.", ipa: "sɔtɔɹkɔbani ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "সতৰ্কবাণী ভাল।", reading: "xôtôrkôbāni bhāl.", ipa: "sɔtɔɹkɔbani bʱal" }
+  - id: "as-3249"
+    target: "শিৰোনাম"
+    reading: "xirunām"
+    ipa: "xiɹʊnam"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "শিৰোনাম ডাঙৰ।", reading: "xirunām dāṅôr.", ipa: "xiɹʊnam daŋɔɹ" }
+      - { target: "শিৰোনামটো ভাল।", reading: "xirunāmôtu bhāl.", ipa: "xiɹʊnamɔtʊ bʱal", bases: [{ word: "শিৰোনামটো", base: "শিৰোনাম", reading: "xirunām" }] }
+  - id: "as-3250"
+    target: "খবৰ"
+    reading: "khôbôr"
+    ipa: "kʰɔbɔɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "খবৰ ভাল।", reading: "khôbôr bhāl.", ipa: "kʰɔbɔɹ bʱal" }
+      - { target: "খবৰ পাইছোঁ।", reading: "khôbôr pāisum̐.", ipa: "kʰɔbɔɹ paisʊ̃", bases: [{ word: "পাইছোঁ", base: "পোৱা", reading: "puwā" }] }
+  - id: "as-3251"
+    target: "দেশৰ খবৰ"
+    reading: "dexôr khôbôr"
+    ipa: "dexɔɹ kʰɔbɔɹ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "দেশৰ", ref: "as-0173" }
+  - id: "as-3252"
+    target: "আজিৰ খবৰ"
+    reading: "āzir khôbôr"
+    ipa: "aziɹ kʰɔbɔɹ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আজিৰ", ref: "as-0350" }
+  - id: "as-3253"
+    target: "ৰেডিঅ'"
+    reading: "redio"
+    ipa: "ɹediɔ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰেডিঅ' বাজে।", reading: "redio bāze.", ipa: "ɹediɔ baze", bases: [{ word: "বাজে", base: "বাজা", reading: "bāzā" }] }
+      - { target: "ৰেডিঅ' নতুন।", reading: "redio notun.", ipa: "ɹediɔ notun" }
+  - id: "as-3254"
+    target: "টেলিভিচন"
+    reading: "telibhisôn"
+    ipa: "telibʱisɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "টেলিভিচন চলিছে।", reading: "telibhisôn solise.", ipa: "telibʱisɔn solise", bases: [{ word: "চলিছে", ref: "as-2222" }] }
+      - { target: "টেলিভিচন ডাঙৰ।", reading: "telibhisôn dāṅôr.", ipa: "telibʱisɔn daŋɔɹ" }
+  - id: "as-3256"
+    target: "বিবৰণ"
+    reading: "bibôrôn"
+    ipa: "bibɔɹɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বিবৰণ ভাল।", reading: "bibôrôn bhāl.", ipa: "bibɔɹɔn bʱal" }
+      - { target: "বিবৰণ লিখিছোঁ।", reading: "bibôrôn likhisum̐.", ipa: "bibɔɹɔn likʰisʊ̃", bases: [{ word: "লিখিছোঁ", ref: "as-2204" }] }
+  - id: "as-3257"
+    target: "ঘটনা"
+    reading: "ghôtônā"
+    ipa: "ɡʱɔtɔna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ঘটনা ভাল।", reading: "ghôtônā bhāl.", ipa: "ɡʱɔtɔna bʱal" }
+      - { target: "ঘটনা ডাঙৰ।", reading: "ghôtônā dāṅôr.", ipa: "ɡʱɔtɔna daŋɔɹ" }
+  - id: "as-3258"
+    target: "সাক্ষাৎকাৰ"
+    reading: "xākkhātkār"
+    ipa: "sakkʰatkaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সাক্ষাৎকাৰ আছে।", reading: "xākkhātkār āse.", ipa: "sakkʰatkaɹ ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "সাক্ষাৎকাৰ ভাল।", reading: "xākkhātkār bhāl.", ipa: "sakkʰatkaɹ bʱal" }

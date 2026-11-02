@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-history"
+name: "Assamese reading: history: kings, forts, wars and heritage"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-fort-visit"
+    title: "A guide tells the story of an old fort"
+    theme: "history"
+    sentences:
+      - text: "এইটো প্ৰাচীন দুৰ্গ।"
+        reading: "eitu prāsin durg."
+      - text: "আহোম ৰজাই ইয়াত শাসন কৰিছিল।"
+        reading: "āhum rôzāi iyāt xāxôn korisil."
+      - text: "যুদ্ধৰ পাছত বিজয় হ'ল।"
+        reading: "zuddhôr pāsôt bizôy hol."
+      - text: "আজি ইয়াত ঐতিহ্য আছে।"
+        reading: "āzi iyāt ôitihy āse."
+    questions:
+      - id: "as-3671"
+        prompt: { en: "The fort is ancient." }
+        answer: true
+      - id: "as-3672"
+        prompt: { en: "Who ruled from the fort?" }
+        options:
+          - { en: "The Ahom king" }
+          - { en: "A farmer" }
+          - { en: "A poet" }
+        answer: 1
+      - id: "as-3673"
+        prompt: { en: "What happened after the war?" }
+        options:
+          - { en: "A defeat" }
+          - { en: "A victory" }
+          - { en: "Nothing" }
+        answer: 2
+  - id: "as-museum-card"
+    title: "A museum card about a ruler"
+    theme: "history"
+    sentences:
+      - text: "এই ৰজাৰ ৰাজত্ব শান্তিপূৰ্ণ।"
+        reading: "ei rôzār rāzôtt xāntipurn."
+      - text: "তেওঁ নতুন মন্দিৰ সাজিলে।"
+        reading: "teum̐ notun mondir xāzile."
+      - text: "তেওঁৰ ৰাণী জ্ঞানী আছিল।"
+        reading: "teum̐r rāni gyāni āsil."
+      - text: "ইয়াত তেওঁৰ ছবি আছে।"
+        reading: "iyāt teum̐r sobi āse."
+    questions:
+      - id: "as-3674"
+        prompt: { en: "The king's reign was peaceful." }
+        answer: true
+      - id: "as-3675"
+        prompt: { en: "What did the king build?" }
+        options:
+          - { en: "A temple" }
+          - { en: "A road" }
+          - { en: "A ship" }
+        answer: 1
+      - id: "as-3676"
+        prompt: { en: "What is shown in the museum?" }
+        options:
+          - { en: "A picture of the king" }
+          - { en: "A car" }
+          - { en: "A bicycle" }
+        answer: 1

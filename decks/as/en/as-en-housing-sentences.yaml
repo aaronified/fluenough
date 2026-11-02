@@ -1,0 +1,47 @@
+schema: 1
+id: "as-en-housing-sentences"
+kind: "layer"
+core: "as-housing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing and renting: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3805":
+    native: "The owner lets out the house."
+    confusables:
+      "c1": { why: "The tenant, who rents it, not the owner." }
+      "c2": { why: "The verandah, a part of the house." }
+  "as-3806":
+    native: "An advance is needed."
+    confusables:
+      "c1": { why: "The rent each month, not the advance." }
+      "c2": { why: "A deposit, close in meaning." }
+  "as-3807":
+    native: "There is no verandah on the roof."
+    confusables:
+      "c1": { why: "A gate, a different part." }
+      "c2": { why: "A wall, a different part." }
+  "as-3808":
+    native: "The gate is closed."
+    bases:
+      "বন্ধ": "closed; shut"
+    confusables:
+      "c1": { why: "Open, the opposite." }
+      "c2": { why: "Empty, a different state." }
+  "as-3809":
+    native: "The place is spacious."
+    confusables:
+      "c1": { why: "Small, the opposite." }
+      "c2": { why: "Short, not a place size." }
+  "as-3810":
+    native: "I rent."
+    confusables:
+      "c1": { why: "To give, the opposite side of renting." }
+      "c2": { why: "To buy, a different transaction." }
+  "as-3811":
+    native: "The owner has come."
+    confusables:
+      "c1": { why: "The tenant, a different person." }
+      "c2": { why: "A priest, a different role." }

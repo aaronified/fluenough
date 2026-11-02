@@ -1,0 +1,28 @@
+schema: 1
+id: "as-en-grammar-ordinals"
+kind: "layer"
+core: "as-grammar-ordinals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "First, second, third: the ordinal numbers"
+license: "CC-BY-SA-4.0"
+description: "How Assamese says the first, the second and so on: the number takes -ম (-m) or its own ordinal form, and it goes before the noun. Number words already taught only. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+pattern:
+  name: "First, second, third: the ordinal numbers"
+  slot_name: "form"
+  prompt: "{lemma} ({gloss}), {slot}"
+  slots:
+    "the ordinal: first, second and so on": "the ordinal (first, second, and so on)"
+    "the ordinal before a noun: floor": "the ordinal with a noun (floor)"
+  entries:
+    "ek": "one; the first"
+    "dui": "two; the second"
+    "tini": "three; the third"
+    "sari": "four; the fourth"
+    "pac": "five; the fifth"
+    "soy": "six; the sixth"
+    "sat": "seven; the seventh"
+    "ath": "eight; the eighth"
+    "no": "nine; the ninth"
+    "doh": "ten; the tenth"
+  notes: "Ordinal numbers go before the noun. Each number has its own ordinal: প্ৰথম (prôthôm), first; দ্বিতীয় (dwitiyô), second; তৃতীয় (tritiyô), third; and so on to দশম (dôxôm), tenth. A floor of a building is মহলা (môhôlā): প্ৰথম মহলা (prôthôm môhôlā), the first floor."

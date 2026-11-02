@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-verbs-4"
+name: "Assamese reading: story actions"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-what-happened-next"
+    title: "Telling a long story with every step in order"
+    theme: "verbs-4"
+    sentences:
+      - text: "এদিন এজন ৰাজকুমাৰ আহিল।"
+        reading: "edin ezôn rāzokumār āhil."
+      - text: "তাৰ পাছত দৈত্যই খেদিলে।"
+        reading: "tār pāsôt dôityoi khedile."
+      - text: "শেষত ৰাজকুমাৰে বাচিল।"
+        reading: "xexôt rāzokumāre bāsil."
+      - text: "এইটোৱে গল্পৰ শেষ।"
+        reading: "eituwe gôlpôr xex."
+    questions:
+      - id: "as-3907"
+        prompt: { en: "The prince came one day." }
+        answer: true
+      - id: "as-3908"
+        prompt: { en: "Who chased the prince?" }
+        options:
+          - { en: "The giant" }
+          - { en: "The farmer" }
+          - { en: "The teacher" }
+        answer: 1
+      - id: "as-3909"
+        prompt: { en: "What happened at the end?" }
+        options:
+          - { en: "The prince died" }
+          - { en: "The prince survived" }
+          - { en: "Nothing" }
+        answer: 2
+  - id: "as-short-story"
+    title: "A short story with a turn"
+    theme: "verbs-4"
+    sentences:
+      - text: "এটা ৰাক্ষস বনত থাকিছিল।"
+        reading: "etā rākkhôx bônôt thākisil."
+      - text: "এদিন সি জংগলৰ পৰা ওলাল।"
+        reading: "edin si zôṅgôlôr pôrā ulāl."
+      - text: "মানুহ সকলো ভয় খালে।"
+        reading: "mānuh sôkôlu bhôy khāle."
+      - text: "কিন্তু এজনী ছাত্ৰীয়ে সাহস কৰিলে।"
+        reading: "kintu ezoni sātriye xāhôx korile."
+    questions:
+      - id: "as-3910"
+        prompt: { en: "A demon lived in the forest." }
+        answer: true
+      - id: "as-3911"
+        prompt: { en: "How did the people feel?" }
+        options:
+          - { en: "Happy" }
+          - { en: "Afraid" }
+          - { en: "Bored" }
+        answer: 2
+      - id: "as-3912"
+        prompt: { en: "Who was brave?" }
+        options:
+          - { en: "A girl student" }
+          - { en: "The demon" }
+          - { en: "The king" }
+        answer: 1

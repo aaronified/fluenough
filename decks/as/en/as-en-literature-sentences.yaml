@@ -1,0 +1,52 @@
+schema: 1
+id: "as-en-literature-sentences"
+kind: "layer"
+core: "as-literature-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Literature: books, poems and writers: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-4020":
+    native: "The poet writes poems."
+    confusables:
+      "c1": { why: "A reader, not the writer." }
+      "c2": { why: "A publisher, not the poet." }
+  "as-4021":
+    native: "The novel is long."
+    confusables:
+      "c1": { why: "A poem, usually short." }
+      "c2": { why: "A chapter, one part of a novel." }
+  "as-4022":
+    native: "What is the meaning of this word?"
+    confusables:
+      "c1": { why: "A translation, a different act." }
+      "c2": { why: "A letter, a smaller unit." }
+  "as-4023":
+    native: "Chapter one is finished."
+    bases:
+      "শেষ": "end; last; finish"
+    confusables:
+      "c1": { why: "An edition, a different division." }
+      "c2": { why: "A composition, not a chapter." }
+  "as-4024":
+    native: "The character is good."
+    confusables:
+      "c1": { why: "A villain, the opposite character." }
+      "c2": { why: "Rhythm, a feature of a poem, not a character." }
+  "as-4025":
+    native: "The rhythm is lovely."
+    confusables:
+      "c1": { why: "Tune, a music term." }
+      "c2": { why: "Beat, a music term." }
+  "as-4026":
+    native: "Read literature."
+    confusables:
+      "c1": { why: "To write, not to read." }
+      "c2": { why: "To hear, not to read." }
+  "as-4027":
+    native: "The book is old."
+    confusables:
+      "c1": { why: "New, the opposite of old." }
+      "c2": { why: "Small, a different quality." }

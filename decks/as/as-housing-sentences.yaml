@@ -1,0 +1,76 @@
+schema: 1
+id: "as-housing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3805"
+    target: "মালিকে ভাড়াঘৰ দিয়ে।"
+    reading: "mālike bhārāghôr diye."
+    ipa: "malike bʱaɹaɡʱɔɹ dije"
+    pos: "phrase"
+    bases:
+      - { word: "মালিকে", ref: "as-3794" }
+      - { word: "দিয়ে", ref: "as-2218" }
+    confusables:
+      - { id: "c1", word: "ভাড়াটীয়া", reading: "bhārātiyā", kind: "word" }
+      - { id: "c2", word: "বাৰান্দা", reading: "bārāndā", kind: "word" }
+  - id: "as-3806"
+    target: "অগ্ৰিম লাগে।"
+    reading: "ôgrim lāge."
+    ipa: "ɔɡɹim laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ভাড়া", reading: "bhārā", kind: "word" }
+      - { id: "c2", word: "জমা", reading: "zômā", kind: "word" }
+  - id: "as-3807"
+    target: "ছাদত বাৰান্দা নাই।"
+    reading: "sādôt bārāndā nāi."
+    ipa: "sadɔt baɹanda nai"
+    pos: "phrase"
+    bases:
+      - { word: "ছাদত", ref: "as-3799" }
+      - { word: "নাই", ref: "as-0142" }
+    confusables:
+      - { id: "c1", word: "গেট", reading: "get", kind: "word" }
+      - { id: "c2", word: "দেৱাল", reading: "dewāl", kind: "word" }
+  - id: "as-3808"
+    target: "গেট বন্ধ।"
+    reading: "get bôndh."
+    ipa: "ɡet bɔndʱ"
+    pos: "phrase"
+    bases:
+      - { word: "বন্ধ", base: "বন্ধ", reading: "bôndh" }
+    confusables:
+      - { id: "c1", word: "খোলা", reading: "khulā", kind: "word" }
+      - { id: "c2", word: "খালী", reading: "khāli", kind: "word" }
+  - id: "as-3809"
+    target: "জায়গা বহল।"
+    reading: "zāyôgā bôhôl."
+    ipa: "zajɔɡa bɔhɔl"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সৰু", reading: "soru", kind: "word" }
+      - { id: "c2", word: "চুটি", reading: "suti", kind: "word" }
+  - id: "as-3810"
+    target: "মই ভাড়া লওঁ।"
+    reading: "moi bhārā lôum̐."
+    ipa: "moi bʱaɹa lɔʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "লওঁ", ref: "as-2219" }
+    confusables:
+      - { id: "c1", word: "দিয়া", reading: "diyā", kind: "word" }
+      - { id: "c2", word: "কিনা", reading: "kinā", kind: "word" }
+  - id: "as-3811"
+    target: "মালিক আহিছে।"
+    reading: "mālik āhise."
+    ipa: "malik ahise"
+    pos: "phrase"
+    bases:
+      - { word: "আহিছে", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "ভাড়াটীয়া", reading: "bhārātiyā", kind: "word" }
+      - { id: "c2", word: "পুৰোহিত", reading: "puruhit", kind: "word" }

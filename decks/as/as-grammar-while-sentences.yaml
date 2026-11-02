@@ -1,0 +1,87 @@
+schema: 1
+id: "as-grammar-while-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3558"
+    target: "মই চাহ খাওঁতে কিতাপ পঢ়োঁ।"
+    reading: "moi sāh khāum̐te kitāp pôrhum̐."
+    ipa: "moi sah kʰaʊ̃te kitap pɔɹʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "খাওঁতে", ref: "as-0109" }
+      - { word: "পঢ়োঁ", ref: "as-2203" }
+    confusables:
+      - { id: "c1", word: "খাইছোঁ", reading: "khāisum̐", kind: "form" }
+      - { id: "c2", word: "খাওঁ", reading: "khāum̐", kind: "form" }
+  - id: "as-3559"
+    target: "তাই গীত শুনোঁতে ৰান্ধে।"
+    reading: "tāi git xunum̐te rāndhe."
+    ipa: "tai ɡit xunʊ̃te ɹandʱe"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "শুনোঁতে", ref: "as-2205" }
+      - { word: "ৰান্ধে", ref: "as-2209" }
+    confusables:
+      - { id: "c1", word: "শুনিছে", reading: "xunise", kind: "form" }
+      - { id: "c2", word: "শুনিব", reading: "xunibô", kind: "form" }
+  - id: "as-3560"
+    target: "আমি থাকোঁতে সি আহিল।"
+    reading: "āmi thākum̐te si āhil."
+    ipa: "ami tʰakʊ̃te si ahil"
+    pos: "phrase"
+    bases:
+      - { word: "থাকোঁতে", ref: "as-2207" }
+      - { word: "আহিল", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "থাকিব", reading: "thākibô", kind: "form" }
+      - { id: "c2", word: "থাকিছে", reading: "thākise", kind: "form" }
+  - id: "as-3561"
+    target: "মই ৰান্ধোঁতে তুমি বাচন ধোৱা।"
+    reading: "moi rāndhum̐te tumi bāsôn dhuwā."
+    ipa: "moi ɹandʱʊ̃te tumi basɔn dʱʊwa"
+    pos: "phrase"
+    bases:
+      - { word: "ৰান্ধোঁতে", ref: "as-2209" }
+    confusables:
+      - { id: "c1", word: "ৰান্ধিছোঁ", reading: "rāndhisum̐", kind: "form" }
+      - { id: "c2", word: "ৰান্ধিম", reading: "rāndhim", kind: "form" }
+  - id: "as-3562"
+    target: "তেওঁ শুওঁতে বৰষুণ আহিল।"
+    reading: "teum̐ xuum̐te bôroxun āhil."
+    ipa: "teʊ̃ xuʊ̃te bɔɹoxun ahil"
+    pos: "phrase"
+    bases:
+      - { word: "শুওঁতে", ref: "as-0379" }
+      - { word: "আহিল", ref: "as-2201" }
+    confusables:
+      - { id: "c1", word: "শুইছে", reading: "xuise", kind: "form" }
+      - { id: "c2", word: "শুবৰ", reading: "xubôr", kind: "form" }
+  - id: "as-3563"
+    target: "আমি যাওঁতে বজাৰত ভিৰ আছিল।"
+    reading: "āmi zāum̐te bôzārôt bhir āsil."
+    ipa: "ami zaʊ̃te bɔzaɹɔt bʱiɹ asil"
+    pos: "phrase"
+    bases:
+      - { word: "যাওঁতে", ref: "as-2200" }
+      - { word: "বজাৰত", ref: "as-0266" }
+      - { word: "আছিল", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "যাম", reading: "zām", kind: "form" }
+      - { id: "c2", word: "গৈছো", reading: "gôisu", kind: "form" }
+  - id: "as-3564"
+    target: "মই কৰোঁতে তাই ওলাল।"
+    reading: "moi kôrum̐te tāi ulāl."
+    ipa: "moi kɔɹʊ̃te tai ʊlal"
+    pos: "phrase"
+    bases:
+      - { word: "কৰোঁতে", ref: "as-2202" }
+      - { word: "তাই", ref: "as-2180" }
+      - { word: "ওলাল", ref: "as-2914" }
+    confusables:
+      - { id: "c1", word: "কৰিছোঁ", reading: "korisum̐", kind: "form" }
+      - { id: "c2", word: "কৰিম", reading: "korim", kind: "form" }

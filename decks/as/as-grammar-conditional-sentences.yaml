@@ -1,0 +1,75 @@
+schema: 1
+id: "as-grammar-conditional-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3318"
+    target: "যদি বৰষুণ হ'লে, তেন্তে ঘৰত থাকিম।"
+    reading: "zodi bôroxun hole, tente ghôrôt thākim."
+    ipa: "zodi bɔɹoxun hole tente ɡʱɔɹɔt tʰakim"
+    pos: "phrase"
+    bases:
+      - { word: "হ'লে", base: "হোৱা", reading: "huwā" }
+      - { word: "থাকিম", ref: "as-2207" }
+    confusables:
+      - { id: "c1", word: "বাহিৰলৈ", reading: "bāhirôlôi", kind: "word" }
+      - { id: "c2", word: "ৰ'দ", reading: "rod", kind: "word" }
+  - id: "as-3319"
+    target: "যদি তুমি আহিলে, তেন্তে চাহ খাম।"
+    reading: "zodi tumi āhile, tente sāh khām."
+    ipa: "zodi tumi ahile tente sah kʰam"
+    pos: "phrase"
+    bases:
+      - { word: "আহিলে", ref: "as-2201" }
+      - { word: "খাম", ref: "as-0109" }
+    confusables:
+      - { id: "c1", word: "যাম", reading: "zām", kind: "form" }
+      - { id: "c2", word: "আহা", reading: "āhā", kind: "form" }
+  - id: "as-3320"
+    target: "যদি সময় থাকিলে, তেন্তে পঢ়িম।"
+    reading: "zodi xômôy thākile, tente porhim."
+    ipa: "zodi xɔmɔj tʰakile tente poɹim"
+    pos: "phrase"
+    bases:
+      - { word: "থাকিলে", ref: "as-2207" }
+      - { word: "পঢ়িম", ref: "as-2203" }
+    confusables:
+      - { id: "c1", word: "খাম", reading: "khām", kind: "form" }
+      - { id: "c2", word: "শুনিম", reading: "xunim", kind: "form" }
+  - id: "as-3321"
+    target: "যদি বেছি লাগে, তেন্তে কিনিম।"
+    reading: "zodi besi lāge, tente kinim."
+    ipa: "zodi besi laɡe tente kinim"
+    pos: "phrase"
+    bases:
+      - { word: "কিনিম", ref: "as-2210" }
+    confusables:
+      - { id: "c1", word: "বেচিম", reading: "besim", kind: "form" }
+      - { id: "c2", word: "দিম", reading: "dim", kind: "form" }
+  - id: "as-3322"
+    target: "যদি তেওঁ গ'লে, তেন্তে মইও যাম।"
+    reading: "zodi teum̐ gole, tente moiu zām."
+    ipa: "zodi teʊ̃ ɡole tente moiʊ zam"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "গ'লে", ref: "as-2200" }
+      - { word: "যাম", ref: "as-2200" }
+    confusables:
+      - { id: "c1", word: "আহিব", reading: "āhibô", kind: "form" }
+      - { id: "c2", word: "থাকিব", reading: "thākibô", kind: "form" }
+  - id: "as-3323"
+    target: "যদি বৰষুণ নহয়, তেন্তে বাহিৰলৈ যাম।"
+    reading: "zodi bôroxun nôhôy, tente bāhirôlôi zām."
+    ipa: "zodi bɔɹoxun nɔhɔj tente bahiɹɔlɔi zam"
+    pos: "phrase"
+    bases:
+      - { word: "বাহিৰলৈ", base: "বাহিৰ", reading: "bāhir" }
+      - { word: "যাম", base: "যাম", reading: "zām" }
+    confusables:
+      - { id: "c1", word: "ঘৰলৈ", reading: "ghôrôlôi", kind: "word" }
+      - { id: "c2", word: "বতাহ", reading: "bôtāh", kind: "word" }

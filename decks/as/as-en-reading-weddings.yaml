@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-weddings"
+name: "Assamese reading: weddings: the invitation, the rites and the guests"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-wedding-plans"
+    title: "Relatives plan a wedding"
+    theme: "weddings"
+    sentences:
+      - text: "বিয়া আগন্তুক সপ্তাহত।"
+        reading: "biyā āgontuk xôptāhôt."
+      - text: "কইনাৰ পৰিয়ালে বহুত নিমন্ত্ৰণ কৰিছে।"
+        reading: "koinār poriyāle bohut nimôntrôn korise."
+      - text: "মণ্ডপ সাজিব লাগিব।"
+        reading: "môndôp xāzibô lāgibô."
+      - text: "ভোজৰ বাবে মাছ আনিম।"
+        reading: "bhuzôr bābe mās ānim."
+    questions:
+      - id: "as-3700"
+        prompt: { en: "The wedding is in the coming week." }
+        answer: true
+      - id: "as-3701"
+        prompt: { en: "What must be decorated?" }
+        options:
+          - { en: "The pavilion" }
+          - { en: "The road" }
+          - { en: "The river" }
+        answer: 1
+      - id: "as-3702"
+        prompt: { en: "What is bought for the feast?" }
+        options:
+          - { en: "Fish" }
+          - { en: "Shoes" }
+          - { en: "Books" }
+        answer: 1
+  - id: "as-wedding-card"
+    title: "A wedding invitation card"
+    theme: "weddings"
+    sentences:
+      - text: "আপোনাক শুভ বিয়াত নিমন্ত্ৰণ।"
+        reading: "āpunāk xubh biyāt nimôntrôn."
+      - text: "দিন: শুক্ৰবাৰ।"
+        reading: "din: xukrôbār."
+      - text: "স্থান: মণ্ডপ।"
+        reading: "sthān: môndôp."
+      - text: "আহিবলৈ অনুৰোধ।"
+        reading: "āhibôôlôi ônurudh."
+    questions:
+      - id: "as-3703"
+        prompt: { en: "The card invites someone to a wedding." }
+        answer: true
+      - id: "as-3704"
+        prompt: { en: "What day is the wedding?" }
+        options:
+          - { en: "Friday" }
+          - { en: "Monday" }
+          - { en: "Sunday" }
+        answer: 1
+      - id: "as-3705"
+        prompt: { en: "Where is the wedding held?" }
+        options:
+          - { en: "At the pavilion" }
+          - { en: "At school" }
+          - { en: "At the station" }
+        answer: 1
