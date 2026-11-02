@@ -161,19 +161,68 @@ void main() {
       },
     );
 
+    test('with no audio kept, it records the word again, as Hear yourself '
+        'does, and keeps that take', () async {
+      speech.next = <SpeechAlternative>[
+        SpeechAlternative(session.item.card.target),
+      ];
+      await session.listen();
+      expect(session.hasOwnTake, isFalse);
+
+      await session.replayOwn();
+      expect(sound.recordings, 1);
+      expect(session.hasOwnTake, isTrue);
+
+      // The next press replays that take.
+      await session.replayOwn();
+      expect(sound.recordings, 1);
+      expect(sound.playbacks, 2);
+    });
+  });
+
+  group('the Your recording row', () {
     testWidgets('on a card gone back to, Replay and Again are off and no take '
         'is described', (tester) async {
       usePhone(tester);
-      speech.audio = OwnAudio(Uint8List(32000), sampleRate: 16000);
-      speech.next = <SpeechAlternative>[
-        SpeechAlternative(session.item.card.target),
-      ];
-      await session.listen();
-      session.next();
-      speech.next = <SpeechAlternative>[
-        SpeechAlternative(session.item.card.target),
-      ];
-      await session.listen();
+      final speech = FixedSpeechEngine(onDevice: <String>{'es'});
+      final state = AppState.test(
+        speech: speech,
+        soundCheck: FixedSoundCheck(),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningChosen: true,
+          enabledSkills: <Skill>{
+            ...Skill.values.where((s) => s.onByDefault),
+            Skill.speaking,
+          },
+        ),
+      );
+      addTearDown(state.dispose);
+      late DrillSession session;
+      // Real time for the recogniser's futures: not the test's clock.
+      await tester.runAsync(() async {
+        await state.load();
+        await state.startSpeech();
+        session = DrillSession(
+          state: state,
+          items: state
+              .buildSession(
+                DrillRequest.untaught(_spanish, skill: Skill.speaking),
+              )
+              .items,
+        );
+        speech.audio = OwnAudio(Uint8List(32000), sampleRate: 16000);
+        speech.next = <SpeechAlternative>[
+          SpeechAlternative(session.item.card.target),
+        ];
+        await session.listen();
+        session.next();
+        speech.next = <SpeechAlternative>[
+          SpeechAlternative(session.item.card.target),
+        ];
+        await session.listen();
+      });
+      addTearDown(session.dispose);
 
       Future<void> row() => pumpScreen(
         tester,
@@ -201,24 +250,6 @@ void main() {
       expect(find.text(l10n.sayRecordingNone), findsNothing);
       expect(button(Icons.play_arrow_rounded).onPressed, isNull);
       expect(button(Icons.mic).onPressed, isNull);
-    });
-
-    test('with no audio kept, it records the word again, as Hear yourself '
-        'does, and keeps that take', () async {
-      speech.next = <SpeechAlternative>[
-        SpeechAlternative(session.item.card.target),
-      ];
-      await session.listen();
-      expect(session.hasOwnTake, isFalse);
-
-      await session.replayOwn();
-      expect(sound.recordings, 1);
-      expect(session.hasOwnTake, isTrue);
-
-      // The next press replays that take.
-      await session.replayOwn();
-      expect(sound.recordings, 1);
-      expect(sound.playbacks, 2);
     });
   });
 }
