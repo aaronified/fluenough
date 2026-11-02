@@ -4,12 +4,15 @@ name: CI
 #
 # * Push to main: everything always runs.
 # * Pull request: the `changes` job lists the files the PR changes against
-#   its base. If every one is under decks/, the app jobs (analyse, the 8 test
-#   shards, live downloads, the APK build) are skipped: a deck-only change
-#   needs only "Decks: validate", "Decks: tools' tests", "Validate decks" and
-#   "Released app reads the decks" (owner, 2026-10-17, #524). A change to
-#   anything else, the workflow included, or one that cannot be read,
-#   runs everything.
+#   its base (renames counted as the two files they are). If every one is under
+#   decks/ (decks/themes.yaml and decks/min_app.json are app files: the app
+#   bundles the first and the second gates app versions), only "App: analyse",
+#   "App: live downloads" and "Build debug APK" are skipped. The 8 test
+#   shards ALWAYS run (owner, 2026-11-02: "Keep the 8 test shards"): they
+#   read the real decks, and test/deck_format_test.dart is the one check
+#   before merge that main's code parses the PR's decks (#524). A change to
+#   anything else, the workflow included, or one that cannot be read, runs
+#   everything.
 # * decks/index.json is generated ONCE per run, by "Decks: index", and shared
 #   as the artifact `decks-index`: the 8 test shards and the release reader
 #   download it instead of each running the full validator again. It is made
@@ -19,8 +22,11 @@ name: CI
 #   without the flag. "Decks: validate" still runs the full validator itself.
 # * A skipped job satisfies a required check, so the gates ("Validate decks",
 #   "Analyse and test") run `if: always()` and look at every result
-#   themselves: a skip passes only where `changes` says the app jobs are not
-#   needed, never because an upstream job failed.
+#   themselves: a skip passes only where `changes` says the job is not needed,
+#   never because an upstream job failed. "Build debug APK" is a required
+#   check of its own and is skipped like the others; if `changes` itself
+#   failed it is skipped too, but then "Analyse and test" fails, which blocks
+#   the merge.
 
 on:
   push:
@@ -81,12 +87,14 @@ jobs:
         run: |
           app=true
           if [ "$EVENT" = "pull_request" ]; then
-            if files=$(git diff --name-only HEAD^1 HEAD) && [ -n "$files" ]; then
+            if files=$(git diff --name-only --no-renames HEAD^1 HEAD) && [ -n "$files" ]; then
               echo "Changed files: $(echo "$files" | wc -l)"
-              others=$(echo "$files" | grep -v '^decks/' || true)
+              # Under decks/ and not an app file: themes.yaml is bundled in
+              # the app (pubspec.yaml) and min_app.json changes its gating.
+              others=$( { echo "$files" | grep -v '^decks/'; echo "$files" | grep -xE 'decks/(themes\.yaml|min_app\.json)'; } || true)
               if [ -z "$others" ]; then
                 app=false
-                echo "Only decks/ changed: the app jobs are skipped."
+                echo "Only decks/ changed: analyse, live downloads and the APK build are skipped."
               else
                 echo "Outside decks/ (the app jobs run):"
                 echo "$others" | head -n 20
@@ -120,7 +128,7 @@ jobs:
           name: decks-index
           path: decks/index.json
           if-no-files-found: error
-          retention-days: 1
+          retention-days: 3
 
   decks-validate:
     name: "Decks: validate"
@@ -207,17 +215,14 @@ jobs:
           mkdir -p release/test/release_reader
           cp tools/release_reader/release_reader_test.dart release/test/release_reader/
       # The release reads decks/index.json and checks each listed file's
-      # hash, and the committed index is regenerated only after merge, so
-      # write this change's own index first.
-      - uses: actions/setup-python@v7
+      # hash, and the committed index is regenerated only after merge, so use
+      # this change's own, made once by "Decks: index" (with
+      # --strict-released, so decks/min_app.json is also checked against the
+      # latest release there, ADR-0052).
+      - uses: actions/download-artifact@v8
         with:
-          python-version: "3.12"
-      - run: pip install pyyaml
-      # Tags are fetched here (fetch-depth 0), so decks/min_app.json is also
-      # checked against the latest release's languages and files (ADR-0052).
-      - name: Regenerate the index for this change's decks
-        run: python3 tools/deck_index.py --strict-released
-      - run: cp decks/index.json release/decks/index.json
+          name: decks-index
+          path: release/decks
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
@@ -280,8 +285,7 @@ jobs:
   # ~51 minutes of tests, so each runs about an eighth. Shard indices are 0..7.
   app-tests:
     name: "App: tests ${{ matrix.n }}/8"
-    needs: [changes, decks-index]
-    if: needs.changes.outputs.app == 'true'
+    needs: [decks-index]
     strategy:
       fail-fast: false
       matrix:
@@ -365,10 +369,10 @@ jobs:
         env:
           LIVE_GITHUB: "1"
 
-  # The required check "Analyse and test". If `changes` found only decks, the
-  # app jobs are skipped on purpose and that passes; otherwise every one of
-  # them must have succeeded (a skip then means something upstream failed,
-  # such as "Decks: index", which the test shards wait for).
+  # The required check "Analyse and test". The test shards must always have
+  # succeeded (a skip means "Decks: index" failed, which they wait for). If
+  # `changes` found only decks, analyse and live downloads are skipped on
+  # purpose and that passes; otherwise they must have succeeded too.
   app:
     name: Analyse and test
     runs-on: ubuntu-latest
@@ -386,18 +390,22 @@ jobs:
             echo "::error::The changes job did not succeed ($CHANGES)"
             exit 1
           fi
-          for result in "$ANALYSE" "$TESTS" "$LIVE"; do
+          if [ "$TESTS" != "success" ]; then
+            echo "::error::The test shards did not succeed ($TESTS); if 'Decks: index' failed, see it"
+            exit 1
+          fi
+          for result in "$ANALYSE" "$LIVE"; do
             if [ "$result" = "failure" ] || [ "$result" = "cancelled" ]; then
-              echo "::error::An app job did not succeed ($ANALYSE/$TESTS/$LIVE)"
+              echo "::error::An app job did not succeed ($ANALYSE/$LIVE)"
               exit 1
             fi
             if [ "$APP" = "true" ] && [ "$result" != "success" ]; then
-              echo "::error::An app job did not run ($ANALYSE/$TESTS/$LIVE); if 'Decks: index' failed, see it"
+              echo "::error::An app job did not run ($ANALYSE/$LIVE)"
               exit 1
             fi
           done
           if [ "$APP" != "true" ]; then
-            echo "Only decks changed: the app jobs were skipped."
+            echo "Only decks changed: analyse and live downloads were skipped."
           fi
 
   build:
