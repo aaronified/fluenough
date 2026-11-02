@@ -741,7 +741,8 @@ units:
       - { id: "even-the-teacher", text: { "en": "Saying even the teacher did not know, and not only cheap but good" } }
     reading_passages:
       - { id: "trip-review", text: { "en": "A short review of a trip" } }
-  - planned: { id: "zh-services", theme: "services", words: 45 }
+  - decks: ["zh-services", "zh-services-sentences", "zh-reading-services", "*"]
+    words: 45
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:

@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-services"
+"name": "Chinese reading: services"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-at-the-post-office"
+  "title": "At the post office"
+  "theme": "services"
+  "sentences":
+  - "text": "我 要 寄 一 个 包裹 到 北京。"
+    "reading": "wǒ yào jì yí ge bāoguǒ dào Běijīng."
+  - "text": "请 先 填 表， 然后 在 窗口 等候。"
+    "reading": "qǐng xiān tián biǎo, ránhòu zài chuāngkǒu děnghòu."
+  - "text": "寄 件 的 手续费 是 多少 钱？"
+    "reading": "jì jiàn de shǒuxùfèi shì duōshao qián?"
+  - "text": "请 带 好 身份证。"
+    "reading": "qǐng dài hǎo shēnfènzhèng."
+  "questions":
+  - "id": "zh-3270"
+    "prompt":
+      "en": "包裹 (bāoguǒ) means:"
+    "options":
+    - "en": "parcel"
+    - "en": "letter"
+    "answer": 1
+  - "id": "zh-3271"
+    "prompt":
+      "en": "The speaker wants to send the parcel to Beijing."
+    "answer": true
+  - "id": "zh-3272"
+    "prompt":
+      "en": "等候 (děnghòu) means:"
+    "options":
+    - "en": "to wait"
+    - "en": "to leave"
+    "answer": 1
+- "id": "zh-bank-form"
+  "title": "Bank form"
+  "theme": "services"
+  "sentences":
+  - "text": "姓名： 请 写 全 名。"
+    "reading": "xìngmíng: qǐng xiě quán míng."
+  - "text": "身份证 号码： 请 填 写。"
+    "reading": "shēnfènzhèng hàomǎ: qǐng tiánxiě."
+  - "text": "账户 余额 不 能 低于 零。"
+    "reading": "zhànghù yú'é bù néng dīyú líng."
+  - "text": "请 在 这里 签名。"
+    "reading": "qǐng zài zhèli qiānmíng."
+  "questions":
+  - "id": "zh-3273"
+    "prompt":
+      "en": "签名 (qiānmíng) means:"
+    "options":
+    - "en": "to sign one's name"
+    - "en": "to pay"
+    "answer": 1
+  - "id": "zh-3274"
+    "prompt":
+      "en": "The form asks for the account balance."
+    "answer": false
+  - "id": "zh-3275"
+    "prompt":
+      "en": "余额 (yú'é) means:"
+    "options":
+    - "en": "balance"
+    - "en": "account number"
+    "answer": 1
