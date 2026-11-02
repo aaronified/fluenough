@@ -377,7 +377,8 @@ units:
       - { id: "where-it-hurts", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning exercises in a park" } }
-  - planned: { id: "zh-places", theme: "places", words: 40 }
+  - decks: ["zh-places", "zh-places-sentences", "zh-reading-places", "*"]
+    words: 40
     listening_passages:
       - { id: "walk-to-the-station", text: { "en": "A neighbour names the places you pass on the way to the station" } }
     reading_passages:
