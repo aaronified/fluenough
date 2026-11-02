@@ -467,11 +467,12 @@ class _WordRow extends StatelessWidget {
                         card: card,
                       ),
                       if (reading != null)
-                        Text(
+                        ReadingText(
                           reading,
-                          style: theme.textTheme.bodySmall!
-                              .copyWith(color: scheme.onSurfaceVariant)
-                              .forIpa(lines.swapped),
+                          swapped: lines.swapped,
+                          style: theme.textTheme.bodySmall!.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
                         ),
                     ],
                   ),

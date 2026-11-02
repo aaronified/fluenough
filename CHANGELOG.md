@@ -14,11 +14,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - **Placement uses sentences, not writing.** The level check's closing questions are now the review's tile question for a deck of sentences or phrases, a word is written only when it is a single word with one valid spelling, and any other deck is a choice; the whole check, its result and its feedback with Continue now run in the same screen as the daily review, and it no longer asks whether you know the language, whether you read a script, which language to learn from or whether to learn the alphabet, which your skills already say (owner, 2026-11-02: "There should be no write questions unless the answer is very specific. Use sentence formation questions." and "Language choice itself is now unified. Use the new paradigm.").
-
+- **Japanese cards can be written in kanji.** From the first kanji unit on, a card's target is in kanji with its kana reading shown under it, as Chinese shows pinyin; example sentences get a kana line too; kana-only learners see kana, and earlier cards are unchanged. The deck checker now requires a kana reading on every kanji target and example and refuses a reading with a kanji in it; no Japanese decks use it yet (owner, 2026-11-02, ADR-0053).
 - **Language rows show the skill icons and script letters.** On the Languages page a Learn chip shows its skills' icons beside the cap, and each script chip starts with the first letter of the script's sample word, so a language in two scripts shows two chips told apart; the skills sheet is unchanged (owner, 2026-11-02).
 
 ### Fixed
 
+- **The IPA's script is read only.** The details of the IPA on the Languages page no longer say you can write it.
+- `assets/languages.yaml` gives English Braille the `iso639_3` its decks carry, `eng`, as the file says its field does.
+- **The IPA reads out as the IPA.** With IPA replacing transliteration, a screen reader says "In the IPA" and the sound, not the slashes, and it is always drawn left to right.
+- **The PIN delete button has a full name.** A screen reader says "Delete last digit" for it; the tooltip stays "Backspace".
 - **The IPA and English Braille show on the Languages page.** Courses you learn or know in either now appear in Learning or Know, and in Add a language and the first launch's list, with only the pills that mean something: the IPA has Spoken and a read-only script pill, braille has the script pill alone; older lists read as skills with no change to your data.
 - **No more "write the word" for a sound description.** The level check no longer asks you to write the Bengali, Hindi or Telugu for a description such as "clusters at the start of a word, in Sanskrit words and loans"; cards that the drills never ask you to write, such as the sounds, spelling and register cards, are only chosen among, never typed.
 

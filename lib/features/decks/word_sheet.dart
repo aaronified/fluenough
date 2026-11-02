@@ -151,11 +151,12 @@ class WordSheet extends StatelessWidget {
                   ReadingWithInfo(
                     swapped: lines.swapped,
                     card: card,
-                    reading: Text(
+                    reading: ReadingText(
                       reading,
-                      style: theme.textTheme.titleMedium!
-                          .copyWith(color: scheme.onSurfaceVariant)
-                          .forIpa(lines.swapped),
+                      swapped: lines.swapped,
+                      style: theme.textTheme.titleMedium!.copyWith(
+                        color: scheme.onSurfaceVariant,
+                      ),
                     ),
                   ),
                 Row(

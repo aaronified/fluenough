@@ -274,12 +274,14 @@ class _PairOption extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: <Widget>[
                     if (lines.reading case final reading?)
-                      Text(
+                      ReadingText(
                         reading,
+                        swapped: lines.swapped,
                         textAlign: TextAlign.center,
-                        style: theme.textTheme.titleMedium!
-                            .copyWith(color: fg, fontWeight: FontWeight.w600)
-                            .forIpa(lines.swapped),
+                        style: theme.textTheme.titleMedium!.copyWith(
+                          color: fg,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     if (lines.ipa case final ipa?) IpaLine(ipa, fontSize: 14),
                   ],

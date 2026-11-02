@@ -256,6 +256,45 @@ void main() {
     expect(tester.takeException(), isNull);
   });
 
+  group('the details name what the script allows', () {
+    Future<void> openDetails(WidgetTester tester, String code) async {
+      await pumpLanguages(tester, state: learnsNotations());
+      await tapKey(tester, 'language-$code');
+      await tester.tap(find.byTooltip(l10n(tester).hintInfo));
+      await tester.pumpAndSettle();
+    }
+
+    testWidgets('the IPA is read only', (tester) async {
+      await openDetails(tester, 'ipa');
+      final text = l10n(tester);
+      final dialog = find.byType(AlertDialog);
+      expect(
+        find.descendant(
+          of: dialog,
+          matching: find.text(text.languagesScriptReadOnly),
+        ),
+        findsOneWidget,
+      );
+      expect(find.text(text.languagesScriptRW), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+
+    testWidgets('braille is read and write', (tester) async {
+      await openDetails(tester, 'qbe');
+      final text = l10n(tester);
+      final dialog = find.byType(AlertDialog);
+      expect(
+        find.descendant(
+          of: dialog,
+          matching: find.text(text.languagesScriptRW),
+        ),
+        findsOneWidget,
+      );
+      expect(find.text(text.languagesScriptReadOnly), findsNothing);
+      expect(tester.takeException(), isNull);
+    });
+  });
+
   group('the filters', () {
     testWidgets('Write leaves out the IPA, Speak and Hear leave out braille, '
         'Learning keeps both', (tester) async {

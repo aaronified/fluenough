@@ -313,6 +313,7 @@ const _coreExampleFields = {
   'language',
   'sounds',
   'words',
+  'target_scripts',
 };
 const _layerEntryFields = {
   'native',
@@ -410,6 +411,7 @@ const _exampleFields = {
   'language',
   'sounds',
   'words',
+  'target_scripts',
 };
 const _authorFields = {'name', 'url'};
 
@@ -971,8 +973,14 @@ class _Reader {
   CardExample example(YamlNode node, String path) {
     final fields = this.fields(node, path);
     fields.allowOnly(_exampleFields);
+    final target = fields.string('target');
     return CardExample(
-      target: fields.string('target'),
+      target: target,
+      targetScripts: targetScripts(
+        fields.node('target_scripts'),
+        '$path.target_scripts',
+        target,
+      ),
       native: fields.string('native'),
       reading: fields.optionalString('reading', allowEmpty: false),
       ipa: fields.optionalString('ipa', allowEmpty: false),
@@ -1943,6 +1951,11 @@ class _Reader {
       examples.add(
         CoreExample(
           target: target,
+          targetScripts: targetScripts(
+            fields.node('target_scripts'),
+            '$where.target_scripts',
+            target,
+          ),
           reading: fields.optionalString('reading', allowEmpty: false),
           ipa: fields.optionalString('ipa', allowEmpty: false),
           bases: bases(fields.node('bases'), '$where.bases', core: true),

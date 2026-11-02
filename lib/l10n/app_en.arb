@@ -2785,6 +2785,10 @@
   "@brailleSpace": {
     "description": "Button of the braille keyboard: adds a space, an empty cell between words, to the answer."
   },
+  "pinDeleteLabel": "Delete last digit",
+  "@pinDeleteLabel": {
+    "description": "Screen reader label of the PIN pad's delete button, whose tooltip is the one word of brailleBackspace."
+  },
   "brailleBackspace": "Backspace",
   "@brailleBackspace": {
     "description": "Button of the braille keyboard, an icon with this as its tooltip: deletes the cell or space before the cursor in the answer. The PIN pad's delete button uses the same word."
@@ -12722,6 +12726,14 @@
   "languagesScriptRW": "Script: read and write",
   "@languagesScriptRW": {
     "description": "Heading of the sheet's script row for a language with one script."
+  },
+  "languagesScriptsReadOnly": "Scripts: read only",
+  "@languagesScriptsReadOnly": {
+    "description": "Heading of the sheet's script rows for a language with several scripts that are read and never typed."
+  },
+  "languagesScriptReadOnly": "Script: read only",
+  "@languagesScriptReadOnly": {
+    "description": "Heading of the sheet's script row, and the line in its info dialog, for a language whose script is read and never typed, such as the IPA."
   },
   "languagesNoCourseNote": "There is no {language} course yet. You can mark what you already know.",
   "@languagesNoCourseNote": {

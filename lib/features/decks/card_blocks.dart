@@ -379,11 +379,12 @@ class ExampleBlock extends StatelessWidget {
               textAlign: TextAlign.start,
             ),
             if (reading != null)
-              Text(
+              ReadingText(
                 reading,
-                style: theme.textTheme.bodySmall!
-                    .copyWith(color: scheme.onSurfaceVariant)
-                    .forIpa(lines.swapped),
+                swapped: lines.swapped,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             if (lines.ipa case final ipa?)
               IpaLine(ipa, textAlign: TextAlign.start),
