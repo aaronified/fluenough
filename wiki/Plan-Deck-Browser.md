@@ -233,7 +233,7 @@ Settled with the owner, 2026-10-09:
 - **Reviewers change the decks, with no wait** (**built**, 2026-10-09, in #444,
   closes #441: ADR-0038, the `proposed` format, reviewer mode's
   Accept, Edit and Reject, the bot in `tools/review_bot.py`, and the owner's
-  guide, `docs/review-bot-setup.md`; it waits for the App's secrets) (owner, 2026-10-09:
+  guide, [Review-Bot-Setup](Review-Bot-Setup); it waits for the App's secrets) (owner, 2026-10-09:
   "Make it totally automated then. The first review auto merges the PR
   and shows all changes to all applicable reviewers. If anyone agrees,
   that gets an instant merge to learner decks. This number can be a

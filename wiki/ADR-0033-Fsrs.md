@@ -73,7 +73,7 @@ The owner's answers to #245:
   a word out as Easy would.
 - A backup from before the change replays as it is: the backup keeps each
   grade, its time and whether an answer was given, which is all replay
-  needs (`docs/LOG-FORMAT.md`).
+  needs ([Log-Format](Log-Format)).
 - Leeches still count lapses: a miss after a review that was not a miss.
 - Fitting the parameters to one learner waits for the optimiser, which
   exists only in Rust and Python.

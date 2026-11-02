@@ -299,7 +299,7 @@ Known limit, said plainly: the test knows a list of widgets. A new Material tapp
 
 ### Wording
 
-A switch row follows `docs/plans/settings-wording.md`: a plain title, and one line that says what happens now and changes the moment the switch is flipped. Not an icon-only button, so the one-word tooltip rule does not apply.
+A switch row follows [Plan-Settings-Wording](Plan-Settings-Wording): a plain title, and one line that says what happens now and changes the moment the switch is flipped. Not an icon-only button, so the one-word tooltip rule does not apply.
 
 | | |
 |---|---|
@@ -323,7 +323,7 @@ A switch row follows `docs/plans/settings-wording.md`: a plain title, and one li
 - `SettingsNotifier` (`lib/app/settings.dart`): field `_haptics = true`, `bool get haptics`, `set haptics(bool)` through `_set`, like `pureBlack` (lines 56, 113, 989).
 - Stored key: **`haptics`**, `'$_haptics'` in `toStored()`, `pick('haptics', flag)` in the reader. Stored names are permanent.
 - Per profile, like every setting (the owner's note in `settings.dart`: "Per profile, like every setting").
-- Backup: `settings.json` already holds "every setting", so it rides along with no format change and no version bump (`docs/BACKUP-FORMAT.md`). A backup from before this has no key, `pick` returns null, and the setting stays on. One line is added to the existing round trip in `test/backup_and_restore_test.dart:254` (`..haptics = false`), not a new test.
+- Backup: `settings.json` already holds "every setting", so it rides along with no format change and no version bump ([Backup-Format](Backup-Format)). A backup from before this has no key, `pick` returns null, and the setting stays on. One line is added to the existing round trip in `test/backup_and_restore_test.dart:254` (`..haptics = false`), not a new test.
 
 ### l10n
 
