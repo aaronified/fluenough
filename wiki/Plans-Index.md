@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Every plan in the repo's docs/plans folder, one line each. Each plan has its own page.
+Every plan in the wiki, one line each. Each plan has its own wiki page.
 
 - [Achievements](Plan-Achievements): achievements, quietly
 - [Ai Conversation](Plan-Ai-Conversation): an AI conversation partner, within what the learner knows
@@ -23,9 +23,7 @@ Every plan in the repo's docs/plans folder, one line each. Each plan has its own
 - [Language Themes](Plan-Language-Themes): a look for each language (colour, icon, background image)
 - [Listening In Context](Plan-Listening-In-Context): a listening tier in context
 - [Offensive Words](Plan-Offensive-Words): offensive words, their level, and warnings on words like them
-- [Placement V2](Plan-Placement-V2): placement, script first, then a three-skill check
 - [Profiles](Plan-Profiles): profiles, a PIN lock, and parental supervision
-- [Progress Revamp](Plan-Progress-Revamp): progress screen revamp — mastery across all skills
 - [Question Engine](Plan-Question-Engine): the question engine, derived from card data
 - [Question Engine 2 And Exams](Plan-Question-Engine-2-And-Exams): question engine revamp and milestone exams
 - [Release Signing](Plan-Release-Signing): sign and publish the first release
@@ -39,5 +37,10 @@ Every plan in the repo's docs/plans folder, one line each. Each plan has its own
 - [Web Pwa](Plan-Web-Pwa): Fluenough on the web, as a PWA on GitHub Pages
 - [Word Order Tiles](Plan-Word-Order-Tiles): word-order tiles without giveaways, and with extra tiles
 - [Words Rules Sentences](Plan-Words-Rules-Sentences): a phrasebook, then words, then rules, then sentences
+
+## Shipped
+
+- [Placement V2](Plan-Placement-V2): placement, script first, then a three-skill check
+- [Progress Revamp](Plan-Progress-Revamp): progress screen revamp — mastery across all skills
 
 See also: [Roadmap](Roadmap) · [Home](Home)

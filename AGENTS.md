@@ -27,20 +27,13 @@ adding one means adding deck files.
 **What state it is in.** The domain layer, deck format, tooling and docs are
 written. **The UI is built from the design** and progress is saved in a
 database; what the backend lacks is shown disabled, marked "Feature incoming"
-([ADR-0008](docs/adr/0008-unbuilt-features-are-shown-disabled.md)). See
+([ADR-0008](https://github.com/aaronified/fluenough/wiki/ADR-0008-Unbuilt-Features-Are-Shown-Disabled)). See
 [wiki Roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
 
-**The Dart now compiles, as of 2026-09-21.** It was written without a Flutter
-SDK available, and for a while nobody had run it. That has been done: on
-Flutter 3.47.1, from a clean checkout following the sequence below with
-`--platforms=android`,
-`flutter analyze` reports no issues, `flutter test` passes (35 tests then;
-about 380 now, each checking a behaviour: docs/plans/test-cut.md),
-`dart format lib test` changes nothing, and `dart run build_runner build`
-succeeds. The Python tooling is tested and working too.
+**The Dart compiles, and the Python tooling is tested and working.**
 
-Since then the app has been built and run on Android phones for every
-release, which closed #17. What this does **not** tell you: nobody has built
+The app has been built and run on Android phones for every release, which
+closed #17. What this does **not** tell you: nobody has built
 it on macOS or Windows, or generated the iOS folder.
 
 ---
@@ -70,7 +63,7 @@ flutter pub get
 
 Full toolchain setup, including containers for immutable Linux distributions
 and why Waydroid cannot test audio, is in
-[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+[the wiki's Development Setup page](https://github.com/aaronified/fluenough/wiki/Development-Setup).
 
 ---
 
@@ -89,7 +82,7 @@ and why Waydroid cannot test audio, is in
 | `decks/<lang>/` | Content, one YAML file per deck, or a core and its layers (`decks/<lang>/<native>/`); the language's path, `<lang>-path.yaml`, shared by every native language. The app downloads them from `main` (ADR-0037) | very low |
 | `decks/index.json` | What the app downloads, written by `tools/deck_index.py`; regenerated on main after each merge (`deck-index.yml`) | low — never hand-edit |
 | `tools/` | Python deck validator and importer | low |
-| `docs/adr/` | Architecture decision records | low |
+| `wiki/ADR-*.md` | Architecture decision records (the wiki's flat folder; ADR-0044) | low |
 | `pubspec.yaml` | Dependencies | **high — coordinate** |
 
 State reaches widgets through AppScope (ADR-0007). No state-management package.
@@ -173,8 +166,8 @@ contributors need no Flutter toolchain — do not add a Python package to them.
 ### 7. Do not touch the licence.
 
 GPL-3.0 with an App Store Distribution Exception for the code, reasoned out
-in [ADR-0003](docs/adr/0003-licence.md); CC BY-SA 4.0 for the decks
-([ADR-0040](docs/adr/0040-decks-are-cc-by-sa.md)). It cannot be changed now
+in [ADR-0003](https://github.com/aaronified/fluenough/wiki/ADR-0003-Licence); CC BY-SA 4.0 for the decks
+([ADR-0040](https://github.com/aaronified/fluenough/wiki/ADR-0040-Decks-Are-Cc-By-Sa)). It cannot be changed now
 without the agreement of every contributor. Do not remove the exception, "simplify" to MIT,
 or add a CLA — there is deliberately no CLA.
 
@@ -195,7 +188,7 @@ before you start.
 
 `reviews` is an **append-only log** — never update or delete a row in it. It is
 the only table whose loss is irreparable; everything else can be rebuilt from
-it. See [ADR-0005](docs/adr/0005-scheduling.md). `leech_actions` is
+it. See [ADR-0005](https://github.com/aaronified/fluenough/wiki/ADR-0005-Scheduling). `leech_actions` is
 append-only in the same way.
 
 There is **one exception**, and only one (owner, 2026-10-17: "Logged
@@ -240,7 +233,7 @@ words are its label, the hint stays short.
 
 This is not anticipating a need. Four of the five starter languages are read by
 people whose interface language is not English, and one of them — Urdu — is
-right to left (#33). See [ADR-0006](docs/adr/0006-interface-text-is-tokens.md).
+right to left (#33). See [ADR-0006](https://github.com/aaronified/fluenough/wiki/ADR-0006-Interface-Text-Is-Tokens).
 
 ---
 
@@ -252,7 +245,7 @@ rather than inventing scope. Comment on the issue saying what you are doing
 collisions, and it is the part people skip.
 
 **Read the plan before the issue.** Most issues are parts of a tracker
-labelled `plan`, which links its plan in `docs/plans/`. Read that plan on
+labelled `plan`, which links its plan, a wiki page listed in [Plans Index](https://github.com/aaronified/fluenough/wiki/Plans-Index). Read that plan on
 `main`, and the plans it names: the issue is a summary, and where the two
 differ, the plan is current. A plan that a later one changes says so at its
 top. An issue waits for its own "Blocked by" links and for whatever its
@@ -321,7 +314,7 @@ that at all. You should only check behaviour." A test says what a learner or
 a deck author sees happen, not how the code does it. A change adds a test
 only for a behaviour no test covers yet, never one per code change, and not
 for coverage, for every branch or for every case of a loop. The suite is
-already cut down ([docs/plans/test-cut.md](docs/plans/test-cut.md)). Other
+already cut down ([Plan Test Cut](https://github.com/aaronified/fluenough/wiki/Plan-Test-Cut)). Other
 documents point here.
 
 ### Files where you should expect contention
@@ -424,17 +417,19 @@ Specific to this repository, roughly in order of likelihood:
 | Typing an English label straight into a widget | Every screen has to be re-laid-out later, not just re-strung. Rule 10. |
 | Fanning out repository reading on a pricier model than Haiku | Searching is cheap-tier work. See *How agents should run work*. |
 | Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `docs/DECK-FORMAT.md`. |
-| Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](docs/adr/0002-system-tts.md). |
+| Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](https://github.com/aaronified/fluenough/wiki/ADR-0002-System-Tts). |
 
-When something in this codebase looks inconsistent, check `docs/adr/` before
-correcting it. Much of what looks accidental is decided.
+When something in this codebase looks inconsistent, check the ADR pages in the
+wiki ([ADR Index](https://github.com/aaronified/fluenough/wiki/ADR-Index)) before correcting it. Much of what looks accidental is decided.
 
 ---
 
 ## Adding an ADR
 
-Architectural decisions go in `docs/adr/NNNN-short-name.md`, numbered
-sequentially:
+Architectural decisions are wiki pages: `wiki/ADR-NNNN-Title-With-Dashes.md` in
+the flat `wiki/` folder, numbered sequentially. There is no `docs/adr` file
+(ADR-0044). Add the page to `wiki/ADR-Index.md`. `wiki-sync.yml` publishes it to
+the wiki. The file has this shape:
 
 ```markdown
 # ADR-000N: <the decision, as a statement>

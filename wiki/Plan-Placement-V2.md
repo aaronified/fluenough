@@ -1,4 +1,5 @@
 # Plan: placement, script first, then a three-skill check
+Status: shipped in 0.5.4 (CHANGELOG, #481). Placement now asks sentences, not writing: the sentence-tile question and the review shell are in the Unreleased notes.
 
 Source of truth: this wiki page.
 

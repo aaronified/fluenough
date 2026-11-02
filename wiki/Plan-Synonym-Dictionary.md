@@ -6,6 +6,8 @@ Decision record: [ADR-0050](ADR-0050-English-Synonym-Sets). Issue: #924 (part 2)
 Part 1 (rewriting unseparated alternatives as `;`, then a validator rule) is
 not this plan.
 
+Review batches: [Review synonym batch 0](Review-Synonym-Batch-0).
+
 ## Owner's decisions (2026-10-30, #924)
 
 1. Scope: English answers first; target-language synonyms later, per course.

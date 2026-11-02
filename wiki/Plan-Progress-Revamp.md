@@ -1,4 +1,5 @@
 # Plan: progress screen revamp — mastery across all skills
+Status: shipped in 0.6.7 (CHANGELOG, "Progress is redrawn").
 
 Source of truth: this wiki page.
 
