@@ -93,6 +93,7 @@ regions:
 # skips them. The planned script units join it as each is written.
 alphabet:
   - "ja-hiragana"
+  - "ja-hiragana-marks"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -142,11 +143,7 @@ units:
   # who learns without it). Hiragana first: the 46 basic letters, then the
   # voiced marks, the small ya, yu and yo, the small tsu and long vowels.
   - ["ja-hiragana"]
-  - planned: { id: "ja-hiragana-marks", grammar: "script-hiragana-marks", words: 0 }
-    listening_passages:
-      - { id: "ka-and-ga", text: { "en": "Hearing a letter with and without its voiced mark: ka and ga, ha, ba and pa" } }
-    reading_passages:
-      - { id: "hiragana-signs", text: { "en": "Simple hiragana signs: entrance, exit, toilet" } }
+  - ["ja-hiragana-marks"]
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
   - planned: { id: "ja-about-me", theme: "about-me", words: 20 }
