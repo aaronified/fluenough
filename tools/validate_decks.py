@@ -68,8 +68,14 @@ NO_READING = {"latin", "cyrillic", "greek"} | NOTATION_SCRIPTS
 SCRIPT_RE = re.compile(r"[a-z]+(?:[-_][a-z]+)*")
 _ARABIC_BLOCKS = ((0x0600, 0x06FF), (0x0750, 0x077F), (0x08A0, 0x08FF),
                   (0xFB50, 0xFDFF), (0xFE70, 0xFEFF))
-_HAN_BLOCKS = ((0x3400, 0x4DBF), (0x4E00, 0x9FFF), (0xF900, 0xFAFF),
-               (0x20000, 0x2FA1F))
+# 々 (the repeat mark), 〆 and 〇 are kanji too: 人々, 〆切, 〇.
+_HAN_BLOCKS = ((0x3005, 0x3007), (0x3400, 0x4DBF), (0x4E00, 0x9FFF),
+               (0xF900, 0xFAFF), (0x20000, 0x2FA1F))
+# Kana: hiragana, katakana (with the long-vowel mark ー and the middle dot ・),
+# the small katakana extensions and halfwidth katakana. No kanji: a kana
+# reading with a kanji in it is no reading (docs/DECK-FORMAT.md, Kanji).
+_KANA_BLOCKS = ((0x3040, 0x309F), (0x30A0, 0x30FF), (0x31F0, 0x31FF),
+                (0xFF66, 0xFF9F))
 # The Unicode blocks a script's letters are in, for a card's `target_scripts`
 # (#623). Perso-Arabic and Shahmukhi are written in the Arabic blocks, and
 # Chinese, traditional or simplified, in the CJK ones. A script not listed
@@ -77,6 +83,7 @@ _HAN_BLOCKS = ((0x3400, 0x4DBF), (0x4E00, 0x9FFF), (0xF900, 0xFAFF),
 SCRIPT_BLOCKS = {
     "arabic": _ARABIC_BLOCKS, "perso_arabic": _ARABIC_BLOCKS,
     "shahmukhi": _ARABIC_BLOCKS,
+    "kana": _KANA_BLOCKS,
     "han": _HAN_BLOCKS, "han_traditional": _HAN_BLOCKS,
     "han_simplified": _HAN_BLOCKS, "traditional": _HAN_BLOCKS,
     "simplified": _HAN_BLOCKS,
@@ -726,6 +733,27 @@ def _check_target_scripts(r: Report, where: str, value: object, target: object,
                            f"{key}: {text!r}")
 
 
+def _has_kanji(text: str) -> bool:
+    return any(lo <= ord(ch) <= hi for ch in text for lo, hi in _HAN_BLOCKS)
+
+
+def _check_kanji_reading(r: Report, where: str, card: dict, target: object,
+                         script: str, scripts: list[str] | None) -> None:
+    """A Japanese card written in kanji (script `han`, with `kana` among the
+    language's scripts) shows its kana reading beside the kanji, as a Chinese
+    card shows pinyin: the reading is its `target_scripts.kana`, and every
+    target with a kanji in it needs one. The kana's letters are checked by
+    `_check_target_scripts` (no kanji in a kana reading). A target in kana
+    alone has nothing to read out and gives none."""
+    if script != "han" or "kana" not in (scripts or [])[1:] or not _is_str(target):
+        return
+    spelled = card.get("target_scripts")
+    kana = spelled.get("kana") if isinstance(spelled, dict) else None
+    if _has_kanji(target) and not _is_str(kana):
+        r.error(where, "a card written in kanji needs its kana reading, "
+                       "`target_scripts: { kana: ... }`")
+
+
 def _check_optional_text(r: Report, where: str, block: dict, key: str) -> None:
     """A free-text field may be omitted, but when present it must be text.
 
@@ -996,6 +1024,7 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         check_not_synonyms(r, where, card)
     if "target_scripts" in card:
         _check_target_scripts(r, where, card["target_scripts"], target, scripts)
+    _check_kanji_reading(r, where, card, target, script, scripts)
 
     _check_optional_text(r, where, card, "gender")
     if card.get("pos") == "noun":
