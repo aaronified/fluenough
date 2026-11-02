@@ -8,7 +8,8 @@
 #   1. the new validator three ways (--jobs 1, --jobs 4, the default) and with
 #      the pure-Python YAML reader (FLUENOUGH_PURE_YAML=1, --jobs 4);
 #   2. the new tools/deck_index.py --check;
-#   3. a check that the trees shared between callers are never changed;
+#   3. a copy of decks/ with one known error injected per language folder, old and new;
+#   3b. a check that the trees shared between callers are never changed;
 #   4. the new tests, with the base's validator as the reference they compare
 #      against (VALIDATOR_REFERENCE_ROOT);
 #   5. then tools/ is put back to the base's, and the old validator and old
@@ -26,6 +27,8 @@ on:
       - "tools/deck_index.py"
       - "tools/test_validate_equivalence.py"
       - "tools/test_fast_yaml.py"
+      - "tools/make_broken_copy.py"
+      - "CHANGELOG.md"
       - ".github/workflows/validator-equivalence.yml"
 
 permissions:
@@ -69,8 +72,23 @@ jobs:
           run jobs-4 X=1 python3 tools/validate_decks.py --jobs 4 decks/
           run default X=1 python3 tools/validate_decks.py decks/
           run pure-yaml FLUENOUGH_PURE_YAML=1 python3 tools/validate_decks.py --jobs 4 decks/
+          # Other string-hash orders, in one process and in workers.
+          run seed-1-jobs-1 PYTHONHASHSEED=1 python3 tools/validate_decks.py --jobs 1 decks/
+          run seed-2-jobs-4 PYTHONHASHSEED=2 python3 tools/validate_decks.py --jobs 4 decks/
           # Without the index check skipped, as a contributor runs it by hand.
           run index-check FLUENOUGH_SKIP_INDEX_CHECK= python3 tools/deck_index.py --check
+
+      - name: A broken copy of each language, new validator
+        run: |
+          python3 tools/make_broken_copy.py "$RUNNER_TEMP/broken" 2>&1 | tail -3
+          cd "$RUNNER_TEMP/broken"
+          for v in "--jobs 1" "--jobs 4"; do
+            set +e
+            python3 tools/validate_decks.py $v decks/ \
+              > "$RUNNER_TEMP/out/broken-new-jobs${v##* }.out" 2> "$RUNNER_TEMP/out/broken-new-jobs${v##* }.err"
+            echo $? > "$RUNNER_TEMP/out/broken-new-jobs${v##* }.rc"
+            set -e
+          done
 
       - name: Trees shared between callers are never changed
         run: |
@@ -127,6 +145,15 @@ jobs:
           pid=$!
           run before-index-check FLUENOUGH_SKIP_INDEX_CHECK= python3 tools/deck_index.py --check
           wait $pid
+          # The same broken copy, by the old validator.
+          rm -rf "$RUNNER_TEMP/broken/tools"
+          cp -r tools "$RUNNER_TEMP/broken/tools"
+          cd "$RUNNER_TEMP/broken"
+          set +e
+          python3 tools/validate_decks.py decks/ \
+            > "$RUNNER_TEMP/out/broken-old.out" 2> "$RUNNER_TEMP/out/broken-old.err"
+          echo $? > "$RUNNER_TEMP/out/broken-old.rc"
+          set -e
 
       - name: Compare
         run: |
@@ -141,7 +168,7 @@ jobs:
             echo
           } >> "$GITHUB_STEP_SUMMARY"
           old=$(awk '$1=="before"{print $2}' timings.txt)
-          for name in jobs-1 jobs-4 default pure-yaml; do
+          for name in jobs-1 jobs-4 default pure-yaml seed-1-jobs-1 seed-2-jobs-4; do
             new=$(awk -v n="$name" '$1==n{print $2}' timings.txt)
             echo "$name: ${new}s against ${old}s before: speed-up $(python3 -c "print(round($old / max($new, 1), 1))")x"
             for ext in out err rc; do
@@ -152,6 +179,16 @@ jobs:
               fi
             done
           done
+          for new in broken-new-jobs1 broken-new-jobs4; do
+            for ext in out err rc; do
+              if ! cmp -s broken-old.$ext $new.$ext; then
+                echo "::error::$new differs from the old validator on the broken copy in $ext"
+                diff broken-old.$ext $new.$ext | head -40 || true
+                status=1
+              fi
+            done
+          done
+          echo "broken copy: old exit $(cat broken-old.rc), $(grep -c 'error' broken-old.out) error lines"
           for ext in out err rc; do
             if ! cmp -s before-index-check.$ext index-check.$ext; then
               echo "::error::deck_index.py --check differs from the old one in $ext"

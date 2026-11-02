@@ -42,6 +42,11 @@ BAD = {
     "two documents": "a: 1\n---\nb: 2\n",
     "unknown tag": "a: !foo 1\n",
     "unhashable key": "? [1, 2]\n: x\n",
+    "tab after a value": "a: b\t\n",
+    "tab after a colon": "a:\tb\n",
+    "question mark in a flow scalar": "a: {b: c?}\n",
+    "question mark in a flow list": "a: [what?, b]\n",
+    "lone surrogate": "a: \ud800\n",
 }
 
 
@@ -56,6 +61,19 @@ def same(a: object, b: object) -> bool:
     return a == b
 
 
+def outcome(read) -> tuple:
+    try:
+        return ("data", read())
+    except yaml.YAMLError as exc:
+        return ("error", str(exc).replace("\n", " "))
+    except ValueError as exc:  # a lone surrogate, which no loader takes
+        return ("value", type(exc).__name__)
+
+
+def agree(a: tuple, b: tuple) -> bool:
+    return a[0] == b[0] and (same(a[1], b[1]) if a[0] == "data" else a[1] == b[1])
+
+
 class Reading(unittest.TestCase):
     def test_a_deck_reads_to_the_data_the_pure_loader_gives(self) -> None:
         for name, text in GOOD.items():
@@ -66,11 +84,12 @@ class Reading(unittest.TestCase):
     def test_a_broken_deck_fails_with_the_pure_loaders_message(self) -> None:
         for name, text in BAD.items():
             with self.subTest(name):
-                with self.assertRaises(yaml.YAMLError) as pure:
+                with self.assertRaises((yaml.YAMLError, ValueError)) as pure:
                     yaml.load(text, Loader=vd.DeckLoader)
-                with self.assertRaises(yaml.YAMLError) as fast:
+                with self.assertRaises((yaml.YAMLError, ValueError)) as fast:
                     vd._load_deck(text)
-                self.assertEqual(str(fast.exception), str(pure.exception))
+                self.assertEqual((type(fast.exception), str(fast.exception)),
+                                 (type(pure.exception), str(pure.exception)))
 
     def test_every_caller_gets_its_own_copy(self) -> None:
         text = "cards:\n  - id: a\n    notes: [x]\n"
@@ -100,6 +119,44 @@ class Reading(unittest.TestCase):
                     got = ("error", str(exc))
                 self.assertEqual(want[0], got[0])
                 self.assertTrue(want[1] == got[1] if want[0] == "error" else same(want[1], got[1]))
+
+
+class Drift(unittest.TestCase):
+    """A seeded fuzz, a guard against the two readers parting: the fixtures'
+    YAML, broken at random places with characters that mean something to YAML,
+    must read to the same data, or fail with the same message, by the fast
+    reader and by the pure-Python one."""
+
+    def test_random_breakages_read_alike(self) -> None:
+        import random
+
+        fixtures = Path(__file__).resolve().parent / "fixtures"
+        texts = [p.read_text(encoding="utf-8")
+                 for p in sorted(fixtures.glob("b1/zz/**/*.yaml"))
+                 + sorted(fixtures.glob("index/*.yaml"))]
+        marks = ["\t", "?", ":", "{", "}", "[", "]", ",", '"', "'", "#", "- ", "&a ", "*a",
+                 "!", "<<", "\n", " ", "|", ">", "%", "@", "`", "\x85", "\u2028", "\ufeff",
+                 "key: 1\n", ": ", "? "]
+        rng = random.Random(20261102)
+        for n in range(500):
+            text = rng.choice(texts)
+            for _ in range(rng.choice((1, 1, 2, 3))):
+                at = rng.randrange(len(text) + 1)
+                kind = rng.randrange(3)
+                if kind == 0:
+                    text = text[:at] + rng.choice(marks) + text[at:]
+                elif kind == 1:
+                    text = text[:at] + text[at + rng.randrange(1, 6):]
+                else:
+                    line = text[at:at + rng.randrange(1, 60)]
+                    text = text[:at] + line + text[at:]
+            with self.subTest(n=n):
+                want = outcome(lambda: yaml.load(text, Loader=vd.DeckLoader))
+                got = outcome(lambda: vd._load_deck(text))
+                self.assertTrue(agree(want, got), (text, want, got))
+                want = outcome(lambda: yaml.safe_load(text))
+                got = outcome(lambda: offensive_alikes._safe_load(text))
+                self.assertTrue(agree(want, got), (text, want, got))
 
 
 if __name__ == "__main__":

@@ -133,6 +133,9 @@ MUTATIONS: list[tuple[str, str, Callable[[Files], None]]] = [
                                       'kind: "vocab"\nx: &a { b: 1 }\n<<: *a\n')),
     ("yaml syntax error", "zz", lambda f: sub(f, HOME, 'tags: ["unreviewed"]', 'tags: ["unreviewed"')),
     ("tab in yaml", "zz", tab_in_yaml),
+    ("tab after a value", "zz", lambda f: sub(f, HOME, 'kind: "vocab"', 'kind: "vocab"\t')),
+    ("question mark in a flow scalar", "zz",
+     lambda f: sub(f, LAYER, '{ native: "Mother 1!" }', "{ native: Mother 1? }")),
     ("not utf-8", "zz", not_utf8),
     ("root is a list", "zz", lambda f: f.__setitem__(HOME, "- 1\n")),
     ("boolean target", "zz", lambda f: sub(f, HOME, 'target: "ఇల్లు"', "target: true")),
@@ -261,6 +264,11 @@ class Equivalence(unittest.TestCase):
             "jobs 3": run(self.tool, decks, "--jobs", "3"),
             "pure yaml": run(self.tool, decks, "--jobs", "1",
                              env={"FLUENOUGH_PURE_YAML": "1"}),
+            # Another string-hash order, which set iteration follows.
+            "jobs 1, hash seed 1": run(self.tool, decks, "--jobs", "1",
+                                       env={"PYTHONHASHSEED": "1"}),
+            "jobs 3, hash seed 2": run(self.tool, decks, "--jobs", "3",
+                                       env={"PYTHONHASHSEED": "2"}),
         }
         root = os.environ.get("VALIDATOR_REFERENCE_ROOT")
         if root:

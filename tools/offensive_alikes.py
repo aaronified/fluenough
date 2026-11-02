@@ -130,16 +130,38 @@ def _with_offensive_words(paths: list[Path]) -> list[Path]:
     return [p for p in paths if p.parent in folders]
 
 
+def _flow_question(node: yaml.Node, flow: bool = False) -> bool:
+    """Whether a `?` is in a plain scalar inside a flow collection, which
+    libyaml accepts and PyYAML's own scanner refuses."""
+    if isinstance(node, yaml.ScalarNode):
+        return flow and not node.style and "?" in node.value
+    inner = bool(node.flow_style)
+    items = node.value if isinstance(node, yaml.SequenceNode) else [
+        n for pair in node.value for n in pair]
+    return any(_flow_question(n, inner) for n in items)
+
+
 def _safe_load(text: str) -> object:
     """`yaml.safe_load(text)`, read by libyaml where PyYAML has it. A text it
-    cannot read is read again the usual way, for the usual error."""
-    loader = None if os.environ.get("FLUENOUGH_PURE_YAML") else getattr(
+    cannot read is read again the usual way, for the usual error. So is one
+    with a tab or a `?` in a plain scalar in a flow collection, which libyaml
+    accepts and PyYAML's own scanner refuses."""
+    cls = None if os.environ.get("FLUENOUGH_PURE_YAML") else getattr(
         yaml, "CSafeLoader", None)
-    if loader is not None:
+    if cls is not None and "\t" not in text:
+        loader = None
         try:
-            return yaml.load(text, Loader=loader)
+            loader = cls(text)
+            node = loader.get_single_node()
+            if node is None:
+                return None
+            if not _flow_question(node):
+                return loader.construct_document(node)
         except Exception:  # noqa: BLE001
             pass
+        finally:
+            if loader is not None:
+                loader.dispose()
     return yaml.safe_load(text)
 
 

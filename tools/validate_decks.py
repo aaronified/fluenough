@@ -475,9 +475,15 @@ def _fast_load(text: str, loader_class: type) -> object:
     """`yaml.load(text, Loader=L)`, where [loader_class] is the libyaml-backed
     twin of L (one that builds nodes with `yaml.CParser`). Raises [_Fallback]
     for anything but mappings, lists and scalars, for a duplicate key, for a
-    `<<` key and for every error."""
-    loader = loader_class(text)
+    `<<` key, for every error, and for the two things libyaml accepts that
+    PyYAML's own scanner refuses: a tab outside a quoted scalar, and a `?` in
+    a plain scalar inside a flow collection. So it never reads a text the pure
+    loader would not."""
+    if "\t" in text:
+        raise _Fallback
+    loader = None
     try:
+        loader = loader_class(text)
         node = loader.get_single_node()
         if node is None:
             return None
@@ -487,19 +493,22 @@ def _fast_load(text: str, loader_class: type) -> object:
         construct = loader.construct_object
         str_tag, seq_tag, map_tag = _TAG + "str", _TAG + "seq", _TAG + "map"
 
-        def build(node: yaml.Node) -> object:
+        def build(node: yaml.Node, flow: bool = False) -> object:
             t = type(node)
             if t is scalar:
+                if flow and not node.style and "?" in node.value:
+                    raise _Fallback
                 if node.tag == str_tag:
                     return node.value
                 return construct(node, deep=True)
             done = made.get(id(node), made)
             if done is not made:
                 return done
+            inner = bool(node.flow_style)
             if t is sequence and node.tag == seq_tag:
                 items: list = []
                 made[id(node)] = items
-                items.extend([build(n) for n in node.value])
+                items.extend([build(n, inner) for n in node.value])
                 return items
             if t is mapping and node.tag == map_tag:
                 result: dict = {}
@@ -509,10 +518,10 @@ def _fast_load(text: str, loader_class: type) -> object:
                             or key_node.tag not in _KEY_TAGS \
                             or key_node.value == "<<":
                         raise _Fallback
-                    key = build(key_node)
+                    key = build(key_node, inner)
                     if key in result:
                         raise _Fallback
-                    result[key] = build(value_node)
+                    result[key] = build(value_node, inner)
                 return result
             raise _Fallback
 
@@ -522,17 +531,19 @@ def _fast_load(text: str, loader_class: type) -> object:
     except Exception as exc:  # noqa: BLE001 - re-read, for its message
         raise _Fallback from exc
     finally:
-        loader.dispose()
+        if loader is not None:
+            loader.dispose()
 
 
 # Every file is read many times in one run: a layer reads its core, each core
 # looks at its siblings' `native`, a path looks at the paths beside it. The
 # parsed text is kept, by the digest of the text (so a file written again is
 # read again), and each caller is handed a private copy it may change. The
-# bound is on the text, since the trees are ten or more times as large.
+# bound is on the text, in characters (the trees are about seven times as
+# large, and each process keeps its own).
 _YAML_CACHE: "collections.OrderedDict[bytes, object]" = collections.OrderedDict()
 _YAML_CACHE_SIZES: dict[bytes, int] = {}
-_YAML_CACHE_LIMIT = 16_000_000
+_YAML_CACHE_LIMIT = 12_000_000
 _YAML_CACHE_BYTES = [0]
 _NO_DATA = object()
 
@@ -2886,16 +2897,34 @@ def validate(path: Path) -> Report:
 PARALLEL_MIN_FILES = 24
 
 
+def _single_threaded() -> bool:
+    """Whether no other thread runs here, so that forking is safe. Threads
+    that `threading` does not know (a test runner's) are looked for in /proc."""
+    if threading.active_count() > 1 or os.environ.get("PYTEST_XDIST_WORKER"):
+        return False
+    try:
+        return len(os.listdir("/proc/self/task")) <= 1
+    except OSError:
+        return True
+
+
+# Each worker keeps its own cache of parsed files, so the workers are capped.
+MAX_JOBS = 8
+# Seconds a parallel run may take before it is given up for a serial one.
+PARALLEL_TIMEOUT = 3600
+
+
 def default_jobs() -> int:
     """The workers [validate_many] uses unless told: one per CPU this process
-    may run on, and none where forking is unsafe, in a process with other
-    threads (a test runner's, say)."""
-    if threading.active_count() > 1:
+    may run on, at most MAX_JOBS, and none where forking is unsafe, in a
+    process with other threads."""
+    if not _single_threaded():
         return 1
     try:
-        return max(1, len(os.sched_getaffinity(0)))
+        cpus = len(os.sched_getaffinity(0))
     except (AttributeError, OSError):
-        return max(1, os.cpu_count() or 1)
+        cpus = os.cpu_count() or 1
+    return max(1, min(MAX_JOBS, cpus))
 
 
 def validate_many(paths: list[Path], jobs: int | None = None) -> list[Report]:
@@ -2919,12 +2948,18 @@ def validate_many(paths: list[Path], jobs: int | None = None) -> list[Report]:
     # Small runs of neighbouring files, which are mostly one language's and
     # share its core files, are what each worker takes at a time.
     chunk = max(1, min(8, len(paths) // (jobs * 4)))
+    pool = ProcessPoolExecutor(max_workers=jobs, mp_context=context)
     try:
-        with ProcessPoolExecutor(max_workers=jobs, mp_context=context) as pool:
-            return list(pool.map(validate, paths, chunksize=chunk))
+        reports = list(pool.map(validate, paths, chunksize=chunk,
+                                timeout=PARALLEL_TIMEOUT))
+        pool.shutdown()
+        return reports
     except Exception:  # noqa: BLE001
-        # A worker that died, or a report that cannot be sent back: do it
-        # here, where a crash in a check is the traceback it always was.
+        # A worker that died or hung, or a report that cannot be sent back:
+        # do it here, where a crash in a check is the traceback it always was.
+        for process in list(getattr(pool, "_processes", {}).values()):
+            process.kill()
+        pool.shutdown(wait=False, cancel_futures=True)
         return [validate(p) for p in paths]
 
 
@@ -3564,6 +3599,7 @@ def _load_raw(path: Path) -> object:
 
 _VIEW_CACHE: "collections.OrderedDict[bytes, tuple[int, object]]" = collections.OrderedDict()
 _VIEW_CACHE_BYTES = [0]
+_VIEW_CACHE_LIMIT = 6_000_000  # characters of text
 
 
 def _load_raw_view(path: Path) -> object:
@@ -3587,10 +3623,10 @@ def _load_raw_view(path: Path) -> object:
     strip_proposals(raw)
     strip_checks(raw)
     size = len(text)
-    if size <= _YAML_CACHE_LIMIT // 2:
+    if size <= _VIEW_CACHE_LIMIT // 2:
         _VIEW_CACHE[key] = (size, raw)
         _VIEW_CACHE_BYTES[0] += size
-        while _VIEW_CACHE_BYTES[0] > _YAML_CACHE_LIMIT:
+        while _VIEW_CACHE_BYTES[0] > _VIEW_CACHE_LIMIT:
             _, (old, _) = _VIEW_CACHE.popitem(last=False)
             _VIEW_CACHE_BYTES[0] -= old
     return raw
