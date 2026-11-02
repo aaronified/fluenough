@@ -745,12 +745,16 @@ units:
       - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
   - decks: ["as-reading-verbs-5"]
     words: 0
-  - planned: { id: "as-grammar-honorifics", grammar: "honorifics" }
+  - decks: ["as-grammar-honorifics", "as-grammar-honorifics-sentences"]
+    words: 0
+    grammar: ["honorifics"]
     listening_passages:
       - { id: "addressing-an-elder", text: { "en": "Speaking to an elder, a stranger and a friend" } }
     reading_passages:
       - { id: "formal-letter", text: { "en": "A formal letter and its closing" } }
     milestone: "B1"
+  - decks: ["as-reading-honorifics"]
+    words: 0
   # After B1: spelling, and the first reader.
   - ["as-spelling"]
   - ["as-reading-aitar-mas"]
