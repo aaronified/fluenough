@@ -19,7 +19,7 @@ learner's language in a layer of its own (`docs/plans/native-layers.md`).
 The skill model left grammar understood and produced to this format
 (ADR-0034, 2026-10-09). On 2026-10-09 the owner
 decided that the format is built in the parser, the validator and
-`docs/DECK-FORMAT.md` before any B1 deck is written; that a rule's forms
+[Deck-Format](Deck-Format) before any B1 deck is written; that a rule's forms
 are listed for every word, and the validator checks every taught word of
 the rule's kind has its row; that layers live in `decks/<lang>/<native>/`;
 that notes keep their language facts in the core and each layer writes

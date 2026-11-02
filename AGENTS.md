@@ -120,7 +120,7 @@ or courses is one card (ADR-0018). Neither will be repeated. A new card takes
 A bare `true` or `false` is a boolean, and `007` or `1.0` a number, however
 the field is meant. The validator and the app read plain values as YAML 1.2
 does, so a bare `no`, `yes`, `on` or `off` is text to both (the table is
-"YAML values" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md)). Quote it all
+"YAML values" in [wiki/Deck-Format.md](wiki/Deck-Format.md)). Quote it all
 the same: YAML 1.1, which PyYAML and many editors still read, makes those
 four booleans. The hiragana `の` romanises to `no`, so this is not
 hypothetical — it was a real bug in the first draft of the hiragana deck.
@@ -218,7 +218,7 @@ and stays exactly as it is. So do log messages, exception text, and ids.
 Readings are *based on* ISO 15919; never write that they strictly follow it.
 Within deck content, a word in a script other than Latin is never left without
 its reading: a note says లేదు (lēdu), not లేదు. The validator rejects it; see
-"Script in prose" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md).
+"Script in prose" in [wiki/Deck-Format.md](wiki/Deck-Format.md).
 
 The half that gets skipped is not the strings, it is the layout around them.
 Use `EdgeInsetsDirectional`, `AlignmentDirectional` and `TextAlign.start`, never
@@ -416,7 +416,7 @@ Specific to this repository, roughly in order of likelihood:
 | Treating a `flutter analyze` error as a broken design | It analysed clean on 3.47.1; an error means your change. Fix it. |
 | Typing an English label straight into a widget | Every screen has to be re-laid-out later, not just re-strung. Rule 10. |
 | Fanning out repository reading on a pricier model than Haiku | Searching is cheap-tier work. See *How agents should run work*. |
-| Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `docs/DECK-FORMAT.md`. |
+| Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `wiki/Deck-Format.md`. |
 | Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](https://github.com/aaronified/fluenough/wiki/ADR-0002-System-Tts). |
 
 When something in this codebase looks inconsistent, check the ADR pages in the

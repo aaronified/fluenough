@@ -190,7 +190,7 @@ Converted as each language's B1 plan is written:
    - rule cards;
    - `rules` on sentences;
    - tables whose rows come from known words;
-   - the parser, the validator, `docs/DECK-FORMAT.md`, and an ADR.
+   - the parser, the validator, [Deck-Format](Deck-Format), and an ADR.
 2. **The validator:**
    - every rule a sentence names exists;
    - every phrasebook list is 15–25 cards;

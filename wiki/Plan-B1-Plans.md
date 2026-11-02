@@ -69,7 +69,7 @@ units:
 
 The path names each deck by its core id (`te-family`), and a learner is
 taught their own native language's deck for it (`te-en-family` from
-English); the exact format is in `docs/DECK-FORMAT.md`, "Paths" and "The B1 plan".
+English); the exact format is in [Deck-Format](Deck-Format), "Paths" and "The B1 plan".
 
 Units after the B1 mark, if any, are written as today. Units with the
 alphabet stay where they are; they count neither words nor grammar.
@@ -125,7 +125,7 @@ vocabulary cards. Script decks, grammar tables and learners' own decks
 ## Writing the planned decks
 
 Every deck written for a B1 plan follows "Script in prose" in
-`docs/DECK-FORMAT.md`, as the owner asked: "Always keep the transliteration,
+[Deck-Format](Deck-Format), as the owner asked: "Always keep the transliteration,
 even in descriptions or labels." Each word quoted in a deck's notes,
 meanings, labels, descriptions and facts carries its ISO 15919 reading,
 లేదు (lēdu), so that a beginner who cannot read the script yet can read
@@ -135,7 +135,7 @@ them. The validator rejects a deck that leaves one out.
 
 - **The format first:** the B1 format (phrasebook, rule cards, `rules:`,
   `bases:`, typed notes, planned units, core and layer) is built in the
-  parser, the validator and `docs/DECK-FORMAT.md` before any B1 deck is
+  parser, the validator and [Deck-Format](Deck-Format) before any B1 deck is
   written, so that what is written validates. Then one agent writes the
   Bengali course and another the Telugu one (Sonnet writes the decks;
   CLAUDE.md).
@@ -184,7 +184,7 @@ them. The validator rejects a deck that leaves one out.
 ### The format's open questions, answered 2026-10-09
 
 The owner's answers to the questions of the B1 format spec (now folded into
-`docs/DECK-FORMAT.md`, and in git history):
+[Deck-Format](Deck-Format), and in git history):
 
 - **One path per language learnt,** `<lang>-path.yaml`, shared by every
   native layer, now, before the deck agents start: it lists core ids, and
@@ -226,7 +226,7 @@ target and in its examples:
 
 - **`ref`** names the card that teaches the base, so its target, reading
   and meaning are shown from that card, in the learner's own language
-  (`docs/DECK-FORMAT.md`, "Core and layer files"). A base no card teaches is written in full instead:
+  ([Deck-Format](Deck-Format), "Core and layer files"). A base no card teaches is written in full instead:
   `base`, `reading`, and its meaning in the layer.
 - **Shown** on the lesson's teach card, and in reviews once the question is
   answered, with the other taught details: "गया ← जाना (jānā), to go;
@@ -283,7 +283,7 @@ answers."
   claim names its `source`, and the deck stays marked unreviewed until a
   speaker checks it (owner's choice).
 - **Transliteration** ("Script in prose") applies to every note. Notes live
-  in the native layer (`docs/DECK-FORMAT.md`, "Core and layer files").
+  in the native layer ([Deck-Format](Deck-Format), "Core and layer files").
 - **Today's single `notes` string** reads as one note of kind `note`, so
   existing decks keep working until they are rewritten.
 
@@ -341,7 +341,7 @@ browser:
 
 ## What it takes
 
-1. **Format:** the path parser, the validator, `docs/DECK-FORMAT.md`, and
+1. **Format:** the path parser, the validator, [Deck-Format](Deck-Format), and
    an ADR.
 2. **The skeleton**, from the descriptors above.
 3. **A plan for each of the eight languages,** in its one path. Telugu and Kannada are written
@@ -349,7 +349,7 @@ browser:
    `language-paths.md` calls for.
 4. **"Coming"** on the Decks tab, and lessons skipping planned units.
 5. **Base words:** the `bases` field in the parser, the validator and
-   `docs/DECK-FORMAT.md`; showing them with the taught details; and
+   [Deck-Format](Deck-Format); showing them with the taught details; and
    `tools/suggest_bases.py`.
 6. **Notes:**
    - the list of typed notes, read alongside today's string;

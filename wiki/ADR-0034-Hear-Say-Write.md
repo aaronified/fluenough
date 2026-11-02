@@ -295,7 +295,7 @@ before the script, six after):
   form and choosing what it means;** choosing among forms of the same word,
   the rule cards' question, or typing the form, is produced (owner,
   2026-10-09, settling question 22 of the B1 format spec, now folded into
-  `docs/DECK-FORMAT.md`). Until then grammar keeps one
+  [Deck-Format](Deck-Format)). Until then grammar keeps one
   schedule, typed.
 - **Settings** already has one switch per skill, so one per activity; their
   wording waits for `docs/plans/settings-wording.md`.
@@ -310,7 +310,7 @@ before the script, six after):
 ### Open, not built, or kept elsewhere
 
 - **Grammar understood and produced:** moved to the B1 format, built in #434
-  and described in `docs/DECK-FORMAT.md` ("Rules decks"; settled 2026-10-09).
+  and described in [Deck-Format](Deck-Format) ("Rules decks"; settled 2026-10-09).
 - **Cloze,** with the owner's wording of how it is asked and its easier and
   harder grades: `docs/plans/sentence-building.md` (#222).
 - **The optimiser:** done, ADR-0035.
