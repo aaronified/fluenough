@@ -105,6 +105,8 @@ void main() {
 
       session.chooseScript(han);
       expect(session.acceptedAnswers.first, '食べる');
+      // Kanji grades kanji only: the kana is not an answer.
+      expect(session.acceptedAnswers, isNot(contains('たべる')));
 
       session.chooseScript(kana);
       expect(session.acceptedAnswers.first, 'たべる');
@@ -168,6 +170,18 @@ void main() {
     test('the script check asks about kana, then kanji', () async {
       final state = await japanese(<String>{kana, han});
       expect(state.placementScripts('ja').map((s) => s.script), [kana, han]);
+    });
+
+    test('the kanji check asks only words with a kanji, the kana check '
+        'every word', () async {
+      final state = await japanese(<String>{kana, han});
+      final scripts = {
+        for (final s in state.placementScripts('ja'))
+          s.script: s.words.map((w) => w.spelling).toList(),
+      };
+      expect(scripts[han], ['食べる']);
+      expect(scripts[kana], containsAll(['たべる', 'ありがとう']));
+      expect(scripts[kana], isNot(contains('食べる')));
     });
   });
 }

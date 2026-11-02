@@ -423,6 +423,15 @@ const String latinScript = 'latin';
 const String kanaScript = 'kana';
 const String kanjiScript = 'han';
 
+final RegExp _kanjiLetter = RegExp(
+  r'[\u3005-\u3007\u3400-\u4DBF\u4E00-\u9FFF\uF900-\uFAFF\u{20000}-\u{2FA1F}]',
+  unicode: true,
+);
+
+/// Whether [text] has a kanji in it (々, 〆 and 〇 count): a Japanese word
+/// written in kana alone has none, and needs no kana reading (ADR-0053).
+bool hasKanji(String text) => _kanjiLetter.hasMatch(text);
+
 /// [skills] of a language written in [scripts], with the Latin script's Read
 /// and Write Know (#926; owner, 2026-10-31): everyone who knows English
 /// knows the Latin script, so a Leave or a legacy Learn of it becomes Know.

@@ -71,6 +71,16 @@ class KanjiCards(KanjiCase):
         errors = self.errors_of(dict(EAT, target_scripts={"kana": "たべ流"}))
         self.assertTrue(any("not in kana" in e for e in errors), errors)
 
+    def test_the_symbol_and_number_kanji_are_no_kana(self) -> None:
+        for reading in ("ひ〆", "〇", "ぜろ〇"):
+            with self.subTest(reading=reading):
+                errors = self.errors_of(dict(EAT, target_scripts={"kana": reading}))
+                self.assertTrue(any("not in kana" in e for e in errors), errors)
+        errors = self.errors_of(dict(EAT, examples=[
+            dict(SENTENCE, target_scripts={"kana": "わたしは〇"})]))
+        self.assertTrue(any("examples[0]" in e and "not in kana" in e
+                            for e in errors), errors)
+
     def test_a_kana_reading_in_romaji_is_refused(self) -> None:
         errors = self.errors_of(dict(EAT, target_scripts={"kana": "taberu"}))
         self.assertTrue(any("not in kana" in e for e in errors), errors)

@@ -728,7 +728,10 @@ def _check_target_scripts(r: Report, where: str, value: object, target: object,
             r.error(where, f"target_scripts.{key} is the same as target; give a "
                            f"spelling in {key}")
         blocks = SCRIPT_BLOCKS.get(key) if _is_str(key) else None
-        if blocks and not _letters_in(text, blocks):
+        # `_letters_in` passes only letters and marks, and 〆 and 〇 are neither
+        # (symbol, number): a kanji in a kana reading is refused all the same.
+        if blocks and (not _letters_in(text, blocks)
+                       or (key == "kana" and _has_kanji(text))):
             r.error(where, f"target_scripts.{key} has letters that are not in "
                            f"{key}: {text!r}")
 
