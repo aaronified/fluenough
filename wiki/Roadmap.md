@@ -247,6 +247,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#337](https://github.com/aaronified/fluenough/issues/337) IPA course: the sounds of this word, on every card
 - [#338](https://github.com/aaronified/fluenough/issues/338) IPA course: review
 - [#340](https://github.com/aaronified/fluenough/issues/340) ISO 15919 decks: one per Indian language, on the path
+- [#341](https://github.com/aaronified/fluenough/issues/341) Listening in context: owner decisions before building
+- [#342](https://github.com/aaronified/fluenough/issues/342) Listening in context: a context field and the validator
 - [#343](https://github.com/aaronified/fluenough/issues/343) Listening in context: scheduling and the drill
 - [#344](https://github.com/aaronified/fluenough/issues/344) Listening in context: content, in phases
 - [#345](https://github.com/aaronified/fluenough/issues/345) Release signing: developer console account and registration
@@ -299,8 +301,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#734](https://github.com/aaronified/fluenough/issues/734) Sounds deck for every language: its sounds, and how they differ from the learner's native sounds
 - [#836](https://github.com/aaronified/fluenough/issues/836) An IPA keyboard for typed answers in the IPA course
 - [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
-- [#926](https://github.com/aaronified/fluenough/issues/926) English and the Latin script are known by default; Today's fact language chooser
-- [#927](https://github.com/aaronified/fluenough/issues/927) Facts: Bengali and Hindi translations read like a B1 learner's
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 
