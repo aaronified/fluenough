@@ -1,3 +1,24 @@
+import 'dart:typed_data';
+
+/// The learner's own voice as one listen kept it: 16-bit little-endian mono
+/// PCM and its sample rate. An engine that cannot keep the audio of a listen
+/// gives none ([SpeechHeard.ownAudio] is null), which is what every engine
+/// does today (ADR-0054: `speech_to_text` exposes no audio; a native engine
+/// that does is not built yet).
+class OwnAudio {
+  const OwnAudio(this.pcm16, {required this.sampleRate});
+
+  final Uint8List pcm16;
+  final int sampleRate;
+
+  /// How long the take is.
+  Duration get length => Duration(
+    microseconds: sampleRate <= 0
+        ? 0
+        : pcm16.length * Duration.microsecondsPerSecond ~/ (2 * sampleRate),
+  );
+}
+
 /// One reading of what the learner said, and how sure the recogniser was.
 class SpeechAlternative {
   const SpeechAlternative(this.text, {this.confidence});
@@ -52,10 +73,19 @@ class SpeechError implements Exception {
 /// What one listen produced: the recogniser's readings, best first, or why
 /// there are none.
 class SpeechHeard {
-  const SpeechHeard(this.alternatives) : failure = null, code = null;
+  const SpeechHeard(this.alternatives, {this.ownAudio})
+    : failure = null,
+      code = null;
 
   const SpeechHeard.failed(SpeechFailure this.failure, {this.code})
-    : alternatives = const <SpeechAlternative>[];
+    : alternatives = const <SpeechAlternative>[],
+      ownAudio = null;
+
+  /// The audio of this listen, kept in memory so that the learner can hear
+  /// their own answer back, or null when the engine could not keep it
+  /// (ADR-0054). The drill then falls back to "Hear yourself", which records
+  /// a second take.
+  final OwnAudio? ownAudio;
 
   final List<SpeechAlternative> alternatives;
   final SpeechFailure? failure;
@@ -170,6 +200,10 @@ class FixedSpeechEngine implements SpeechEngine {
   /// What the next listen hears, in order, best first. Empty: no match.
   List<SpeechAlternative> next = const <SpeechAlternative>[];
 
+  /// The audio a listen that heard [next] kept, or null for an engine that
+  /// keeps none (as every real engine does today).
+  OwnAudio? audio;
+
   /// A failure the next listens give, in place of hearing [next], with the
   /// code Android gives for it: a network failure, say.
   SpeechHeard? failing;
@@ -225,7 +259,7 @@ class FixedSpeechEngine implements SpeechEngine {
         code: 'error_no_match',
       );
     }
-    return SpeechHeard(next);
+    return SpeechHeard(next, ownAudio: audio);
   }
 
   @override
