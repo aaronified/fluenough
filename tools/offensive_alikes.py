@@ -36,6 +36,7 @@ The list is for a person to read; the tool changes no file.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import unicodedata
 from dataclasses import dataclass, field
@@ -128,6 +129,19 @@ def _with_offensive_words(paths: list[Path]) -> list[Path]:
     return [p for p in paths if p.parent in folders]
 
 
+def _safe_load(text: str) -> object:
+    """`yaml.safe_load(text)`, read by libyaml where PyYAML has it. A text it
+    cannot read is read again the usual way, for the usual error."""
+    loader = None if os.environ.get("FLUENOUGH_PURE_YAML") else getattr(
+        yaml, "CSafeLoader", None)
+    if loader is not None:
+        try:
+            return yaml.load(text, Loader=loader)
+        except Exception:  # noqa: BLE001
+            pass
+    return yaml.safe_load(text)
+
+
 def load_words(paths: list[Path]) -> list[Word]:
     """The cards the files write, a core's and a single-file deck's alike,
     for the languages that have an offensive word. A layer, which writes no
@@ -135,7 +149,7 @@ def load_words(paths: list[Path]) -> list[Word]:
     words: dict[str, Word] = {}
     for path in _with_offensive_words(paths):
         try:
-            data = yaml.safe_load(path.read_text(encoding="utf-8"))
+            data = _safe_load(path.read_text(encoding="utf-8"))
         except (OSError, yaml.YAMLError):
             continue
         if not isinstance(data, dict) or not isinstance(data.get("cards"), list):

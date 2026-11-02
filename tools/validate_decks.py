@@ -13,6 +13,8 @@ toolchain. Exits non-zero if any deck fails. See docs/DECK-FORMAT.md.
 
 from __future__ import annotations
 
+import collections
+import copy
 import os
 import re
 import sys
@@ -356,24 +358,10 @@ for _tag, _pattern in (
                                        re.compile(_pattern), None)
 
 
-class DeckLoader(yaml.reader.Reader, yaml.scanner.Scanner, yaml.parser.Parser,
-                 yaml.composer.Composer, yaml.constructor.SafeConstructor,
-                 DeckResolver):
-    """A safe loader that refuses what the app's deck parser refuses, and
-    reads plain scalars as it does (YAML 1.2, [DeckResolver]).
-
-    PyYAML keeps the last of two duplicate keys and expands `<<` merge keys.
-    The Dart parser rejects both, so a deck using either would pass CI and then
-    fail to load on a device.
-    """
-
-    def __init__(self, stream) -> None:
-        yaml.reader.Reader.__init__(self, stream)
-        yaml.scanner.Scanner.__init__(self)
-        yaml.parser.Parser.__init__(self)
-        yaml.composer.Composer.__init__(self)
-        yaml.constructor.SafeConstructor.__init__(self)
-        DeckResolver.__init__(self)
+class _DeckConstructor(yaml.constructor.SafeConstructor):
+    """What DeckLoader adds to PyYAML's safe constructor. It is a class of its
+    own so that the pure-Python loader, [DeckLoader], and the libyaml-backed
+    one, [CDeckLoader], build their data exactly alike."""
 
     def construct_yaml_int(self, node: yaml.ScalarNode) -> int:
         value = self.construct_scalar(node)
@@ -393,7 +381,7 @@ class DeckLoader(yaml.reader.Reader, yaml.scanner.Scanner, yaml.parser.Parser,
             # it is refused all the same.
             if key_node.tag == "tag:yaml.org,2002:merge" or (
                     isinstance(key_node, yaml.ScalarNode)
-                    and key_node.value == "<<" and key_node.style is None):
+                    and key_node.value == "<<" and not key_node.style):
                 raise yaml.constructor.ConstructorError(
                     None, None,
                     "found a merge key (<<), which the app does not support; "
@@ -421,7 +409,126 @@ class DeckLoader(yaml.reader.Reader, yaml.scanner.Scanner, yaml.parser.Parser,
         return super().construct_mapping(node, deep=deep)
 
 
-DeckLoader.add_constructor("tag:yaml.org,2002:int", DeckLoader.construct_yaml_int)
+_DeckConstructor.add_constructor("tag:yaml.org,2002:int",
+                                 _DeckConstructor.construct_yaml_int)
+
+
+class DeckLoader(yaml.reader.Reader, yaml.scanner.Scanner, yaml.parser.Parser,
+                 yaml.composer.Composer, _DeckConstructor, DeckResolver):
+    """A safe loader that refuses what the app's deck parser refuses, and
+    reads plain scalars as it does (YAML 1.2, [DeckResolver]).
+
+    PyYAML keeps the last of two duplicate keys and expands `<<` merge keys.
+    The Dart parser rejects both, so a deck using either would pass CI and then
+    fail to load on a device.
+    """
+
+    def __init__(self, stream) -> None:
+        yaml.reader.Reader.__init__(self, stream)
+        yaml.scanner.Scanner.__init__(self)
+        yaml.parser.Parser.__init__(self)
+        yaml.composer.Composer.__init__(self)
+        _DeckConstructor.__init__(self)
+        DeckResolver.__init__(self)
+
+
+if getattr(yaml, "__with_libyaml__", False) and not os.environ.get("FLUENOUGH_PURE_YAML"):
+    from yaml.cyaml import CParser as _CParser
+
+    class CDeckLoader(_CParser, _DeckConstructor, DeckResolver):
+        """[DeckLoader] with libyaml doing the reading, about ten times as
+        fast. Only [_load_deck] uses it, and only for text it reads without
+        error: anything else is read again by [DeckLoader], so that every
+        error message is the pure-Python loader's, word for word."""
+
+        def __init__(self, stream) -> None:
+            _CParser.__init__(self, stream)
+            _DeckConstructor.__init__(self)
+            DeckResolver.__init__(self)
+else:  # PyYAML built without libyaml, or the escape hatch for debugging
+    CDeckLoader = None
+
+
+# Every file is read many times in one run: a layer reads its core, each core
+# looks at its siblings' `native`, a path looks at the paths beside it. The
+# parsed text is kept, by the digest of the text (so a file written again is
+# read again), and each caller is handed a private copy it may change. The
+# bound is on the text, since the trees are ten or more times as large.
+_YAML_CACHE: "collections.OrderedDict[bytes, object]" = collections.OrderedDict()
+_YAML_CACHE_SIZES: dict[bytes, int] = {}
+_YAML_CACHE_LIMIT = 24_000_000
+_YAML_CACHE_BYTES = [0]
+_NO_DATA = object()
+
+
+class _Uncloneable(Exception):
+    """A loaded tree holds something other than dicts, lists and scalars (an
+    explicit `!!set`, say): it is handed out as read and never kept."""
+
+
+_SCALARS = (str, int, float, bool, bytes, datetime.date, datetime.datetime)
+
+
+def _clone(node: object, memo: dict[int, object]) -> object:
+    """A copy of loaded YAML, as copy.deepcopy makes it (shared nodes stay
+    shared) but several times faster, since a loaded tree holds only dicts,
+    lists and scalars."""
+    t = type(node)
+    if t is str or t is int or t is float or t is bool or node is None:
+        return node
+    if t is dict:
+        done = memo.get(id(node))
+        if done is not None:
+            return done
+        copy_: dict = {}
+        memo[id(node)] = copy_
+        for k, v in node.items():
+            copy_[k] = _clone(v, memo)
+        return copy_
+    if t is list:
+        done = memo.get(id(node))
+        if done is not None:
+            return done
+        out: list = []
+        memo[id(node)] = out
+        out.extend([_clone(v, memo) for v in node])
+        return out
+    if t in _SCALARS:
+        return node
+    raise _Uncloneable
+
+
+def _load_deck(text: str) -> object:
+    """`yaml.load(text, Loader=DeckLoader)`, with the same result and the same
+    errors, read once per distinct text and by libyaml where it is built."""
+    key = hashlib.blake2b(text.encode("utf-8", "surrogatepass"),
+                          digest_size=16).digest()
+    tree = _YAML_CACHE.get(key, _NO_DATA)
+    if tree is _NO_DATA:
+        tree = _NO_DATA
+        if CDeckLoader is not None:
+            try:
+                tree = yaml.load(text, Loader=CDeckLoader)
+            except Exception:  # noqa: BLE001 - re-read below, for its message
+                tree = _NO_DATA
+        if tree is _NO_DATA:
+            tree = yaml.load(text, Loader=DeckLoader)
+        size = len(text)
+        if size > _YAML_CACHE_LIMIT // 2:
+            return tree
+        try:
+            copy_ = _clone(tree, {})
+        except _Uncloneable:
+            return tree
+        _YAML_CACHE[key] = tree
+        _YAML_CACHE_SIZES[key] = size
+        _YAML_CACHE_BYTES[0] += size
+        while _YAML_CACHE_BYTES[0] > _YAML_CACHE_LIMIT:
+            old, _ = _YAML_CACHE.popitem(last=False)
+            _YAML_CACHE_BYTES[0] -= _YAML_CACHE_SIZES.pop(old)
+        return copy_
+    _YAML_CACHE.move_to_end(key)
+    return _clone(tree, {})
 
 
 @dataclass
@@ -2123,7 +2230,7 @@ def _readings_in(node: object):
 
 def _uses_iso15919(file: Path) -> bool:
     try:
-        raw = yaml.load(file.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = _load_deck(file.read_text(encoding="utf-8"))
     except (OSError, yaml.YAMLError):
         return False
     return isinstance(raw, dict) and raw.get("standard") == "ISO 15919"
@@ -2670,7 +2777,7 @@ def check_transliterated(r: Report, raw: object, *, fixed: str | None = None,
 def validate(path: Path) -> Report:
     r = Report(path)
     try:
-        raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = _load_deck(path.read_text(encoding="utf-8"))
     except yaml.YAMLError as exc:
         r.error("yaml", str(exc).replace("\n", " "))
         return r
@@ -3222,8 +3329,8 @@ def check_checks_hashable(r: Report, path: Path) -> None:
     every learner an update (#449)."""
     import deck_index
     try:
-        rest = yaml.load(deck_index.content_bytes(path.read_bytes())
-                         .decode("utf-8"), Loader=DeckLoader)
+        rest = _load_deck(deck_index.content_bytes(path.read_bytes())
+                          .decode("utf-8"))
     except (OSError, UnicodeDecodeError, yaml.YAMLError):
         r.error("checked_by", "must be written as the bot writes it, a line "
                               "of its own or last in a card written on one "
@@ -3250,7 +3357,7 @@ def _is_date(text: str) -> bool:
 def proposal_count(path: Path) -> int:
     """How many proposals [path] holds, for the index."""
     try:
-        raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = _load_deck(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, yaml.YAMLError):
         return 0
     return sum(len(p.items) for p in strip_proposals(raw)
@@ -3320,7 +3427,7 @@ def _load_raw(path: Path) -> object:
     """[path] as the checks read it: its proposals, `checked_by` and `verified` taken
     out (ADR-0038)."""
     try:
-        raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = _load_deck(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, yaml.YAMLError):
         return None
     strip_proposals(raw)
