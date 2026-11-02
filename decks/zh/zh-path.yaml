@@ -559,7 +559,8 @@ units:
       - { id: "come-down-here", text: { "en": "Saying which way an action goes: come in, go out, bring it up, run back" } }
     reading_passages:
       - { id: "moving-day", text: { "en": "A short story of moving day: what was carried up and down" } }
-  - planned: { id: "zh-illness", theme: "illness", words: 40 }
+  - decks: ["zh-illness", "zh-illness-sentences", "zh-reading-illness", "*"]
+    words: 40
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
