@@ -1,0 +1,136 @@
+schema: 1
+id: "as-emergencies"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "emergencies"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3818"
+    target: "জৰুৰী"
+    reading: "zôruri"
+    ipa: "zoɹuɹi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "জৰুৰী কাম।", reading: "zôruri kām.", ipa: "zoɹuɹi kam" }
+      - { target: "এইটো জৰুৰী।", reading: "eitu zôruri.", ipa: "eitʊ zoɹuɹi" }
+  - id: "as-3819"
+    target: "দুৰ্ঘটনা"
+    reading: "durghôtnā"
+    ipa: "duɹɡʱɔtɔna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দুৰ্ঘটনা হ'ল।", reading: "durghôtnā hôl.", ipa: "duɹɡʱɔtɔna hol", bases: [{ word: "হ'ল", base: "হোৱা", reading: "huwā" }] }
+      - { target: "দুৰ্ঘটনা বেয়া।", reading: "durghôtnā beyā.", ipa: "duɹɡʱɔtɔna beja" }
+  - id: "as-3820"
+    target: "অগ্নিকাণ্ড"
+    reading: "ôgnikāṇḍô"
+    ipa: "ɔɡnikand"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অগ্নিকাণ্ড হ'ল।", reading: "ôgnikāṇḍô hôl.", ipa: "ɔɡnikand hol", bases: [{ word: "হ'ল", base: "হোৱা", reading: "huwā" }] }
+      - { target: "অগ্নিকাণ্ড বেয়া।", reading: "ôgnikāṇḍô beyā.", ipa: "ɔɡnikand beja" }
+  - id: "as-3821"
+    target: "আহত"
+    reading: "ahôt"
+    ipa: "ahɔt"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তেওঁ আহত।", reading: "teum̐ ahôt.", ipa: "teʊ̃ ahɔt" }
+      - { target: "আহত মানুহ।", reading: "ahôt mānuh.", ipa: "ahɔt manuh" }
+  - id: "as-3822"
+    target: "নিৰাপত্তা"
+    reading: "nirāpôttā"
+    ipa: "niɹapɔtta"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "নিৰাপত্তা ভাল।", reading: "nirāpôttā bhāl.", ipa: "niɹapɔtta bʱal" }
+      - { target: "নিৰাপত্তা দৰকাৰ।", reading: "nirāpôttā dôrkār.", ipa: "niɹapɔtta dɔɹɔkaɹ" }
+  - id: "as-3823"
+    target: "অ্যাম্বুলেন্স"
+    reading: "ambulens"
+    ipa: "ɔzambulens"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অ্যাম্বুলেন্স আহিছে।", reading: "ambulens āhise.", ipa: "ɔzambulens ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+      - { target: "অ্যাম্বুলেন্স ডাকিব।", reading: "ambulens ḍākib.", ipa: "ɔzambulens dakib", bases: [{ word: "ডাকিব", base: "ডাকা", reading: "ḍākā" }] }
+  - id: "as-3824"
+    target: "প্ৰাথমিক চিকিৎসা"
+    reading: "prāthômik cikitsā"
+    ipa: "pɹatʰomik sikitsa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "প্ৰাথমিক", base: "প্ৰাথমিক", reading: "prāthômik" }
+      - { word: "চিকিৎসা", base: "চিকিৎসা", reading: "cikitsā" }
+    examples:
+      - { target: "প্ৰাথমিক চিকিৎসা লাগে।", reading: "prāthômik cikitsā lāge.", ipa: "pɹatʰomik sikitsa laɡe", bases: [{ word: "প্ৰাথমিক", base: "প্ৰাথমিক", reading: "prāthômik" }, { word: "চিকিৎসা", base: "চিকিৎসা", reading: "cikitsā" }] }
+      - { target: "প্ৰাথমিক চিকিৎসা ভাল।", reading: "prāthômik cikitsā bhāl.", ipa: "pɹatʰomik sikitsa bʱal", bases: [{ word: "প্ৰাথমিক", base: "প্ৰাথমিক", reading: "prāthômik" }, { word: "চিকিৎসা", base: "চিকিৎসা", reading: "cikitsā" }] }
+  - id: "as-3825"
+    target: "বিপদ"
+    reading: "bipôd"
+    ipa: "bipɔd"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বিপদ আছে।", reading: "bipôd āse.", ipa: "bipɔd ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "বিপদ বহুত।", reading: "bipôd bohut.", ipa: "bipɔd bohut" }
+  - id: "as-3826"
+    target: "পলোৱা"
+    reading: "polōwā"
+    ipa: "pɔlʊwa"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই পলাওঁ।", reading: "moi polāum̐.", ipa: "moi pɔlaʊ̃", bases: [{ word: "পলাওঁ", base: "পলোৱা", reading: "polōwā" }] }
+      - { target: "তাই পলাই গ'ল।", reading: "tāi polāi gol.", ipa: "tai pɔlai ɡol", bases: [{ word: "তাই", ref: "as-2180" }, { word: "পলাই", base: "পলোৱা", reading: "polōwā" }] }
+  - id: "as-3827"
+    target: "উদ্ধাৰ"
+    reading: "uddhār"
+    ipa: "uddʱaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "উদ্ধাৰ হ'ল।", reading: "uddhār hôl.", ipa: "uddʱaɹ hol", bases: [{ word: "হ'ল", base: "হোৱা", reading: "huwā" }] }
+      - { target: "উদ্ধাৰ ভাল।", reading: "uddhār bhāl.", ipa: "uddʱaɹ bʱal" }
+  - id: "as-3828"
+    target: "জৰুৰী নম্বৰ"
+    reading: "zôruri nômbôr"
+    ipa: "zoɹuɹi nɔmbɔɹ"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+  - id: "as-3829"
+    target: "উদ্ধাৰ কৰা"
+    reading: "uddhār kôrā"
+    ipa: "uddʱaɹ kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+  - id: "as-3830"
+    target: "সহায় কৰা"
+    reading: "xohāy kôrā"
+    ipa: "sɔhaj kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:

@@ -1,0 +1,76 @@
+schema: 1
+id: "as-emergencies-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3831"
+    target: "জৰুৰী, অ্যাম্বুলেন্স ডাকিব।"
+    reading: "zôruri, ambulens ḍākib."
+    ipa: "zoɹuɹi ɔzambulens dakib"
+    pos: "phrase"
+    bases:
+      - { word: "ডাকিব", base: "ডাকা", reading: "ḍākā" }
+    confusables:
+      - { id: "c1", word: "পুলিচ", reading: "pulis", kind: "word" }
+      - { id: "c2", word: "ডাক্তৰ", reading: "dāktôr", kind: "word" }
+  - id: "as-3832"
+    target: "তেওঁ আহত হ'ল।"
+    reading: "teum̐ ahôt hôl."
+    ipa: "teʊ̃ ahɔt hol"
+    pos: "phrase"
+    bases:
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "সুস্থ", reading: "xusthô", kind: "word" }
+      - { id: "c2", word: "নিৰাপদ", reading: "nirāpôd", kind: "word" }
+  - id: "as-3833"
+    target: "অগ্নিকাণ্ড বিপদ।"
+    reading: "ôgnikāṇḍô bipôd."
+    ipa: "ɔɡnikand bipɔd"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বান", reading: "bān", kind: "word" }
+      - { id: "c2", word: "ভূমিকম্প", reading: "bhumikôm̐p", kind: "word" }
+  - id: "as-3834"
+    target: "বিপদত পলাওঁ।"
+    reading: "bipôdôt polāum̐."
+    ipa: "bipɔdɔt pɔlaʊ̃"
+    pos: "phrase"
+    bases:
+      - { word: "বিপদত", ref: "as-3825" }
+      - { word: "পলাওঁ", ref: "as-3826" }
+    confusables:
+      - { id: "c1", word: "উদ্ধাৰ", reading: "uddhār", kind: "word" }
+      - { id: "c2", word: "সহায়", reading: "xohāy", kind: "word" }
+  - id: "as-3835"
+    target: "নিৰাপত্তা ভাল।"
+    reading: "nirāpôttā bhāl."
+    ipa: "niɹapɔtta bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বিপদ", reading: "bipôd", kind: "word" }
+      - { id: "c2", word: "জৰুৰী", reading: "zôruri", kind: "word" }
+  - id: "as-3836"
+    target: "প্ৰাথমিক চিকিৎসা লাগে।"
+    reading: "prāthômik cikitsā lāge."
+    ipa: "pɹatʰomik sikitsa laɡe"
+    pos: "phrase"
+    bases:
+      - { word: "প্ৰাথমিক", base: "প্ৰাথমিক", reading: "prāthômik" }
+      - { word: "চিকিৎসা", base: "চিকিৎসা", reading: "cikitsā" }
+    confusables:
+      - { id: "c1", word: "ঔষধ", reading: "ôxôdh", kind: "word" }
+      - { id: "c2", word: "দৰব", reading: "dôrôb", kind: "word" }
+  - id: "as-3837"
+    target: "উদ্ধাৰ হ'ল।"
+    reading: "uddhār hôl."
+    ipa: "uddʱaɹ hol"
+    pos: "phrase"
+    bases:
+      - { word: "হ'ল", base: "হোৱা", reading: "huwā" }
+    confusables:
+      - { id: "c1", word: "দুৰ্ঘটনা", reading: "durghôtnā", kind: "word" }
+      - { id: "c2", word: "বিপদ", reading: "bipôd", kind: "word" }

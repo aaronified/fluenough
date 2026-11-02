@@ -658,11 +658,14 @@ units:
       - { id: "rental-terms", text: { "en": "The terms of a rental" } }
   - decks: ["as-reading-housing"]
     words: 0
-  - planned: { id: "as-emergencies", theme: "emergencies", words: 35 }
+  - decks: ["as-emergencies", "as-emergencies-sentences", "*"]
+    words: 13
     listening_passages:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
     reading_passages:
       - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
+  - decks: ["as-reading-emergencies"]
+    words: 0
   - planned: { id: "as-grammar-emphasis", grammar: "emphasis" }
     listening_passages:
       - { id: "only-this-one", text: { "en": "Insisting on one choice" } }

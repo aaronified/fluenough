@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-emergencies"
+name: "Assamese reading: emergencies: accidents, fire, help and safety"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-calling-for-help"
+    title: "Calling for help after an accident"
+    theme: "emergencies"
+    sentences:
+      - text: "হেল্প! এটা দুৰ্ঘটনা হ'ল।"
+        reading: "help! etā durghôtnā hôl."
+      - text: "এজন মানুহ আহত।"
+        reading: "ezôn mānuh ahôt."
+      - text: "অ্যাম্বুলেন্স আনিবা।"
+        reading: "ambulens ānibā."
+      - text: "মই বাটত আছোঁ।"
+        reading: "moi bāṭôt āsum̐."
+    questions:
+      - id: "as-3838"
+        prompt: { en: "There has been an accident." }
+        answer: true
+      - id: "as-3839"
+        prompt: { en: "What is needed?" }
+        options:
+          - { en: "An ambulance" }
+          - { en: "A bus" }
+          - { en: "A ticket" }
+        answer: 1
+      - id: "as-3840"
+        prompt: { en: "Where is the speaker?" }
+        options:
+          - { en: "At home" }
+          - { en: "On the road" }
+          - { en: "At school" }
+        answer: 2
+  - id: "as-safety-notice"
+    title: "A safety notice in a building"
+    theme: "emergencies"
+    sentences:
+      - text: "জুইৰ সময়ত লিফ্ট ব্যৱহাৰ নকৰিব।"
+        reading: "zuir xômôytôt lift byôwôhār nôkôribô."
+      - text: "সিঁড়িৰে নামিব।"
+        reading: "sim̐ṛire nāmib."
+      - text: "বিপদ হ'লে জৰুৰী নম্বৰত ফোন কৰক।"
+        reading: "bipôd hôle zôruri nômbôrôt phon kôrôk."
+      - text: "নিৰাপত্তা প্ৰথম।"
+        reading: "nirāpôttā prôthôm."
+    questions:
+      - id: "as-3841"
+        prompt: { en: "In a fire, the lift should be used." }
+        answer: false
+      - id: "as-3842"
+        prompt: { en: "How should people go down?" }
+        options:
+          - { en: "By the stairs" }
+          - { en: "By the window" }
+          - { en: "By jumping" }
+        answer: 1
+      - id: "as-3843"
+        prompt: { en: "What comes first?" }
+        options:
+          - { en: "Speed" }
+          - { en: "Safety" }
+          - { en: "Money" }
+        answer: 2
