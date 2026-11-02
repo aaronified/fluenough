@@ -1,0 +1,88 @@
+schema: 1
+id: "ja-demonstratives-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0669"
+    target: "これはわたしのつくえです。"
+    words: ["これ", "は", "わたし", "の", "つくえ", "です"]
+    reading: "kore wa watashi no tsukue desu."
+    ipa: "koɾe wa wataɕi no tsɯkɯe desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "いす"
+        reading: "isu"
+        kind: "word"
+      - id: "w2"
+        word: "はこ"
+        reading: "hako"
+        kind: "word"
+    rules: ["ja-rule-kosoado", "ja-rule-desu"]
+  - id: "ja-0670"
+    target: "それはがっこうのいすですか。"
+    words: ["それ", "は", "がっこう", "の", "いす", "です", "か"]
+    reading: "sore wa gakkou no isu desu ka."
+    ipa: "soɾe wa ɡakkoː no isɯ desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "つくえ"
+        reading: "tsukue"
+        kind: "word"
+      - id: "w2"
+        word: "あれ"
+        reading: "are"
+        kind: "word"
+    rules: ["ja-rule-kosoado", "ja-rule-question-ka"]
+  - id: "ja-0671"
+    target: "あのひとはせんせいです。"
+    words: ["あの", "ひと", "は", "せんせい", "です"]
+    reading: "ano hito wa sensei desu."
+    ipa: "ano çito wa seɴseː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "その"
+        reading: "sono"
+        kind: "word"
+      - id: "w2"
+        word: "どの"
+        reading: "dono"
+        kind: "word"
+    rules: ["ja-rule-kosoado", "ja-rule-desu"]
+  - id: "ja-0672"
+    target: "どのいぬがつよいですか。"
+    words: ["どの", "いぬ", "が", "つよい", "です", "か"]
+    reading: "dono inu ga tsuyoi desu ka."
+    ipa: "dono inɯ ɡa tsɯjoi desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "この"
+        reading: "kono"
+        kind: "word"
+      - id: "w2"
+        word: "あの"
+        reading: "ano"
+        kind: "word"
+    rules: ["ja-rule-kosoado", "ja-rule-question-ka"]

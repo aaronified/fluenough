@@ -225,7 +225,9 @@ units:
       - { id: "is-it-yours", text: { "en": "Asking yes-no questions with ka, and answering hai and iie" } }
     reading_passages:
       - { id: "quiz-card", text: { "en": "A short quiz of yes-no questions" } }
-  - planned: { id: "ja-grammar-demonstratives", grammar: "kosoado" }
+  - decks: ["ja-demonstratives", "ja-demonstratives-sentences", "ja-reading-demonstratives", "ja-grammar-demonstratives"]
+    words: 8
+    grammar: ["kosoado"]
     listening_passages:
       - { id: "this-one-that-one", text: { "en": "Pointing at things in a shop: this, that, that over there, which" } }
     reading_passages:
