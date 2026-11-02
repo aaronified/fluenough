@@ -6,7 +6,7 @@ a tree full of errors and not only on a clean one.
 
 Usage: python3 tools/make_broken_copy.py <directory>
 
-Each language folder gets its first core or deck file a card with an unknown
+Each language folder gets, in its first core or deck file, an unknown top-level
 field, and a second file with a trailing tab; the validator's output on the
 copy then has an error of each kind per language. The copy has its own tools/
 beside it (the validator finds its repository from its own location).

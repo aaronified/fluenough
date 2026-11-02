@@ -148,7 +148,7 @@ def _safe_load(text: str) -> object:
     accepts and PyYAML's own scanner refuses."""
     cls = None if os.environ.get("FLUENOUGH_PURE_YAML") else getattr(
         yaml, "CSafeLoader", None)
-    if cls is not None and "\t" not in text:
+    if cls is not None and "\t" not in text and "\ufeff" not in text:
         loader = None
         try:
             loader = cls(text)

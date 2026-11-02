@@ -32,6 +32,8 @@ GOOD = {
     "empty": "",
     "explicit tags": "a: !!binary aGk=\nb: !!timestamp 2020-01-01\nc: !!set {x, y}\n",
     "long": "a: " + "x" * 5000 + "\n",
+    "bom at a line start read as a key": "cards:\n\ufeff- id: x\n",
+    "doubled bom": "\ufeff\ufeffa: b\n",
 }
 BAD = {
     "duplicate key": "a: 1\na: 2\n",
@@ -47,6 +49,7 @@ BAD = {
     "question mark in a flow scalar": "a: {b: c?}\n",
     "question mark in a flow list": "a: [what?, b]\n",
     "lone surrogate": "a: \ud800\n",
+    "bom at a line start": "a: b\n\ufeff#c\n",
 }
 
 
@@ -121,6 +124,7 @@ class Reading(unittest.TestCase):
                 self.assertTrue(want[1] == got[1] if want[0] == "error" else same(want[1], got[1]))
 
 
+@unittest.skipUnless(getattr(yaml, "__with_libyaml__", False), "PyYAML without libyaml")
 class Drift(unittest.TestCase):
     """A seeded fuzz, a guard against the two readers parting: the fixtures'
     YAML, broken at random places with characters that mean something to YAML,
@@ -136,7 +140,7 @@ class Drift(unittest.TestCase):
                  + sorted(fixtures.glob("index/*.yaml"))]
         marks = ["\t", "?", ":", "{", "}", "[", "]", ",", '"', "'", "#", "- ", "&a ", "*a",
                  "!", "<<", "\n", " ", "|", ">", "%", "@", "`", "\x85", "\u2028", "\ufeff",
-                 "key: 1\n", ": ", "? "]
+                 "key: 1\n", ": ", "? ", "\n\ufeff"]
         rng = random.Random(20261102)
         for n in range(500):
             text = rng.choice(texts)

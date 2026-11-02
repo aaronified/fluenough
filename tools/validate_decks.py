@@ -475,11 +475,12 @@ def _fast_load(text: str, loader_class: type) -> object:
     """`yaml.load(text, Loader=L)`, where [loader_class] is the libyaml-backed
     twin of L (one that builds nodes with `yaml.CParser`). Raises [_Fallback]
     for anything but mappings, lists and scalars, for a duplicate key, for a
-    `<<` key, for every error, and for the two things libyaml accepts that
-    PyYAML's own scanner refuses: a tab outside a quoted scalar, and a `?` in
-    a plain scalar inside a flow collection. So it never reads a text the pure
-    loader would not."""
-    if "\t" in text:
+    `<<` key, for every error, and for the three things libyaml reads
+    differently from PyYAML's own scanner: a tab outside a quoted scalar, a
+    byte order mark (libyaml skips one at the start of any line, PyYAML only
+    at the start of the text), and a `?` in a plain scalar inside a flow
+    collection. So it never reads a text the pure loader would not."""
+    if "\t" in text or "\ufeff" in text:
         raise _Fallback
     loader = None
     try:
@@ -2911,7 +2912,7 @@ def _single_threaded() -> bool:
 # Each worker keeps its own cache of parsed files, so the workers are capped.
 MAX_JOBS = 8
 # Seconds a parallel run may take before it is given up for a serial one.
-PARALLEL_TIMEOUT = 3600
+PARALLEL_TIMEOUT = 600
 
 
 def default_jobs() -> int:

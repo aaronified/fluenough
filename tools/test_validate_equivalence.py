@@ -14,8 +14,7 @@ exit code. This holds it to that on deliberately broken decks:
 * together the breakages make at least forty different errors and warnings, so
   the comparison is not of silence;
 * when `VALIDATOR_REFERENCE_ROOT` names a checkout of the validator from before
-  the change (the temporary workflow validator-equivalence does, with the pull
-  request's base), each is also validated by that one, and the outputs must be
+  a change to it, each is also validated by that one, and the outputs must be
   the same.
 
 Each validation is a subprocess against a throwaway tree, like the other
@@ -133,6 +132,8 @@ MUTATIONS: list[tuple[str, str, Callable[[Files], None]]] = [
                                       'kind: "vocab"\nx: &a { b: 1 }\n<<: *a\n')),
     ("yaml syntax error", "zz", lambda f: sub(f, HOME, 'tags: ["unreviewed"]', 'tags: ["unreviewed"')),
     ("tab in yaml", "zz", tab_in_yaml),
+    ("byte order mark at a line start", "zz",
+     lambda f: sub(f, HOME, '\ncards:\n  - id: "zz-9001"', '\ncards:\n\ufeff  - id: "zz-9001"')),
     ("tab after a value", "zz", lambda f: sub(f, HOME, 'kind: "vocab"', 'kind: "vocab"\t')),
     ("question mark in a flow scalar", "zz",
      lambda f: sub(f, LAYER, '{ native: "Mother 1!" }', "{ native: Mother 1? }")),
