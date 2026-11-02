@@ -12,10 +12,22 @@ class CardExample {
     this.language,
     this.sounds = true,
     this.words,
+    this.targetScripts = const <String, String>{},
   });
 
   final String target;
   final String native;
+
+  /// [target] spelled in the language's other scripts, by script id
+  /// (`target_scripts`, ADR-0053): the kana of a Japanese example written in
+  /// kanji. Empty for an example with one spelling.
+  final Map<String, String> targetScripts;
+
+  /// The example as spelled in [script]: [target] for the language's first
+  /// script, [targetScripts]'s spelling for another, or null where it has
+  /// none (as [Card.targetIn]).
+  String? targetIn(String script, {required String firstScript}) =>
+      script == firstScript ? target : targetScripts[script];
 
   /// [target]'s words in order, as the deck gives them for a script written
   /// without spaces (`words`, DECK-FORMAT.md, Base words); null where the

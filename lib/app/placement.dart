@@ -3,6 +3,7 @@ import 'dart:math';
 import '../core/data/pattern_expander.dart';
 import '../core/grading/answer_grader.dart';
 import '../core/grading/romanised.dart';
+import '../core/languages/language_skills.dart';
 import '../core/models/aksharas.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
@@ -545,7 +546,7 @@ List<ScriptWord> scriptWordsOf(Iterable<DeckEntry> decks, String script) =>
         if (entry.deck.kind == DeckKind.vocab && entry.deck.pattern == null)
           for (final card in entry.cards)
             if (card.rule == null && card.reading != null)
-              if (card.targetIn(script, firstScript: entry.language.script)
+              if (_spellingOf(card, script, entry.language.script)
                   case final spelling? when spelling.trim().isNotEmpty)
                 (
                   card: card,
@@ -553,6 +554,17 @@ List<ScriptWord> scriptWordsOf(Iterable<DeckEntry> decks, String script) =>
                   language: entry.language.inScript(script),
                 ),
     ];
+
+/// [card] spelled in [script], in a deck whose first script is [first]. In a
+/// kanji deck (ADR-0053) a word in kana alone is no kanji word and is its own
+/// kana: the kanji check asks only words with a kanji in them, and the kana
+/// check asks every word.
+String? _spellingOf(Card card, String script, String first) {
+  final spelling = card.targetIn(script, firstScript: first);
+  if (first != kanjiScript || hasKanji(card.target)) return spelling;
+  if (script == kanjiScript) return null;
+  return script == kanaScript ? card.target : spelling;
+}
 
 // -----------------------------------------------------------------------------
 // The deck walk
