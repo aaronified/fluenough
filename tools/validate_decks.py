@@ -2843,8 +2843,13 @@ def validate_many(paths: list[Path], jobs: int | None = None) -> list[Report]:
     # Small runs of neighbouring files, which are mostly one language's and
     # share its core files, are what each worker takes at a time.
     chunk = max(1, min(8, len(paths) // (jobs * 4)))
-    with ProcessPoolExecutor(max_workers=jobs, mp_context=context) as pool:
-        return list(pool.map(validate, paths, chunksize=chunk))
+    try:
+        with ProcessPoolExecutor(max_workers=jobs, mp_context=context) as pool:
+            return list(pool.map(validate, paths, chunksize=chunk))
+    except Exception:  # noqa: BLE001
+        # A worker that died, or a report that cannot be sent back: do it
+        # here, where a crash in a check is the traceback it always was.
+        return [validate(p) for p in paths]
 
 
 def _validate_raw(r: Report, raw: dict, path: Path) -> Report:

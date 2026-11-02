@@ -1,0 +1,165 @@
+# TEMPORARY: proves that the faster tools/validate_decks.py says exactly what
+# the one on this pull request's base says, and says it faster. Remove this
+# file once it has gone green on the pull request's final head (or keep it,
+# if the owner decides to). It is not part of ci.yml and runs only for the
+# files below.
+#
+# It runs on the real decks/:
+#   1. the new validator three ways (--jobs 1, --jobs 4, the default) and with
+#      the pure-Python YAML reader (FLUENOUGH_PURE_YAML=1, --jobs 4);
+#   2. the new tools/deck_index.py --check;
+#   3. a check that the trees shared between callers are never changed;
+#   4. the new tests, with the base's validator as the reference they compare
+#      against (VALIDATOR_REFERENCE_ROOT);
+#   5. then tools/ is put back to the base's, and the old validator and old
+#      deck_index.py --check run, together.
+# The job fails if the standard output, standard error or exit code of any of
+# the new runs differs in any way from the old one's. Timings go to the log
+# and to the job summary.
+name: validator-equivalence (temporary)
+
+on:
+  pull_request:
+    paths:
+      - "tools/validate_decks.py"
+      - "tools/fast_yaml.py"
+      - "tools/offensive_alikes.py"
+      - "tools/deck_index.py"
+      - "tools/test_validate_equivalence.py"
+      - "tools/test_fast_yaml.py"
+      - ".github/workflows/validator-equivalence.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validator-equivalence:
+    name: "validator-equivalence"
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      FLUENOUGH_SKIP_INDEX_CHECK: "1"
+      BASE_SHA: ${{ github.event.pull_request.base.sha }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml pytest
+      - name: Fetch the base
+        run: |
+          git fetch --no-tags --depth=1 origin "$BASE_SHA"
+          git worktree add "$RUNNER_TEMP/base" "$BASE_SHA"
+          python3 -c "import yaml; print('PyYAML', yaml.__version__, 'libyaml', yaml.__with_libyaml__)"
+          nproc
+
+      - name: New validator, four ways
+        run: |
+          mkdir -p "$RUNNER_TEMP/out"
+          run() {  # name, env assignments..., then the command
+            name=$1; shift
+            start=$SECONDS
+            set +e
+            env "$@" > "$RUNNER_TEMP/out/$name.out" 2> "$RUNNER_TEMP/out/$name.err"
+            echo $? > "$RUNNER_TEMP/out/$name.rc"
+            set -e
+            echo "$name $((SECONDS - start))" >> "$RUNNER_TEMP/out/timings.txt"
+            echo "new $name: $((SECONDS - start))s, exit $(cat "$RUNNER_TEMP/out/$name.rc")"
+          }
+          run jobs-1 X=1 python3 tools/validate_decks.py --jobs 1 decks/
+          run jobs-4 X=1 python3 tools/validate_decks.py --jobs 4 decks/
+          run default X=1 python3 tools/validate_decks.py decks/
+          run pure-yaml FLUENOUGH_PURE_YAML=1 python3 tools/validate_decks.py --jobs 4 decks/
+          # Without the index check skipped, as a contributor runs it by hand.
+          run index-check FLUENOUGH_SKIP_INDEX_CHECK= python3 tools/deck_index.py --check
+
+      - name: Trees shared between callers are never changed
+        run: |
+          python3 - <<'EOF'
+          import json, sys
+          from pathlib import Path
+          sys.path.insert(0, "tools")
+          import validate_decks as v
+          snaps = {}
+          original = v._load_raw_view
+          def watched(path):
+              tree = original(path)
+              if tree is not None and id(tree) not in snaps:
+                  snaps[id(tree)] = (tree, json.dumps(tree, default=str, ensure_ascii=False))
+              return tree
+          v._load_raw_view = watched
+          paths = v.collect(Path("decks"))
+          reports = [v.validate(p) for p in paths]
+          for name in ("check_themes_across", "check_cards_across", "check_layers_across",
+                       "check_numbers_across", "check_paths_across", "check_reading_across",
+                       "check_icons_across", "check_rules_across", "check_notes_across",
+                       "check_bases_across", "check_phrasebook_across", "check_plans_across",
+                       "check_regions_across", "check_genders_across", "check_media_across",
+                       "check_sets_across", "warn_base_stems_across", "warn_forms_across",
+                       "warn_alikes_across"):
+              getattr(v, name)(reports)
+          changed = [1 for t, s in snaps.values()
+                     if json.dumps(t, default=str, ensure_ascii=False) != s]
+          print(len(snaps), "shared trees;", len(changed), "changed")
+          sys.exit(1 if changed else 0)
+          EOF
+
+      - name: Tests, against the base's validator
+        run: |
+          cd tools
+          VALIDATOR_REFERENCE_ROOT="$RUNNER_TEMP/base" python3 -m pytest -q -p no:cacheprovider \
+            --rootdir . test_validate_equivalence.py test_fast_yaml.py
+
+      - name: Old validator and old deck_index.py --check (tools/ put back to the base's)
+        run: |
+          git checkout "$BASE_SHA" -- tools
+          git status --short | head
+          run() {
+            name=$1; shift
+            start=$SECONDS
+            set +e
+            env "$@" > "$RUNNER_TEMP/out/$name.out" 2> "$RUNNER_TEMP/out/$name.err"
+            echo $? > "$RUNNER_TEMP/out/$name.rc"
+            set -e
+            echo "$name $((SECONDS - start))" >> "$RUNNER_TEMP/out/timings.txt"
+            echo "old $name: $((SECONDS - start))s, exit $(cat "$RUNNER_TEMP/out/$name.rc")"
+          }
+          run before X=1 python3 tools/validate_decks.py decks/ &
+          pid=$!
+          run before-index-check FLUENOUGH_SKIP_INDEX_CHECK= python3 tools/deck_index.py --check
+          wait $pid
+
+      - name: Compare
+        run: |
+          cd "$RUNNER_TEMP/out"
+          status=0
+          {
+            echo "### Validator timings (seconds, real decks/)"
+            echo
+            echo "| run | seconds |"
+            echo "|---|---|"
+            while read -r name secs; do echo "| $name | $secs |"; done < timings.txt
+            echo
+          } >> "$GITHUB_STEP_SUMMARY"
+          old=$(awk '$1=="before"{print $2}' timings.txt)
+          for name in jobs-1 jobs-4 default pure-yaml; do
+            new=$(awk -v n="$name" '$1==n{print $2}' timings.txt)
+            echo "$name: ${new}s against ${old}s before: speed-up $(python3 -c "print(round($old / max($new, 1), 1))")x"
+            for ext in out err rc; do
+              if ! cmp -s before.$ext $name.$ext; then
+                echo "::error::$name differs from the old validator in $ext"
+                diff before.$ext $name.$ext | head -40 || true
+                status=1
+              fi
+            done
+          done
+          for ext in out err rc; do
+            if ! cmp -s before-index-check.$ext index-check.$ext; then
+              echo "::error::deck_index.py --check differs from the old one in $ext"
+              diff before-index-check.$ext index-check.$ext | head -40 || true
+              status=1
+            fi
+          done
+          echo "old exit code: $(cat before.rc); output lines: $(wc -l < before.out)"
+          if [ $status -eq 0 ]; then echo "IDENTICAL: stdout, stderr and exit code, every way"; fi
+          exit $status
