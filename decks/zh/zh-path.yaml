@@ -123,6 +123,8 @@ alphabet:
   - "zh-reading-strokes-radicals"
   - "zh-characters-1"
   - "zh-reading-characters-1"
+  - "zh-characters-5"
+  - "zh-reading-characters-5"
   - "zh-characters-4"
   - "zh-reading-characters-4"
   - "zh-characters-3"
@@ -715,7 +717,8 @@ units:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
     reading_passages:
       - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
-  - planned: { id: "zh-characters-5", grammar: "script-characters-5", words: 0 }
+  - decks: ["zh-characters-5", "zh-reading-characters-5"]
+    words: 10
     listening_passages:
       - { id: "characters-in-the-news", text: { "en": "Hearing the news words whose characters are taught: country, city, company, government" } }
     reading_passages:
