@@ -191,7 +191,7 @@ SENTENCE_KEYS = {"text", "reading", "ipa"}
 QUESTION_KEYS = {"id", "prompt", "options", "answer"}
 GLOSS_KEYS = {"word", "modern", "reading", "ipa", "meaning", "note"}
 EXAMPLE_KEYS = {"target", "native", "reading", "ipa", "bases", "source",
-                "language", "sounds", "words"}
+                "language", "sounds", "words", "target_scripts"}
 # A reading question has this many options, and a passage this many
 # questions (#98, ADR-0019).
 CHOICES = range(2, 5)
@@ -232,7 +232,7 @@ LAYER_SET_KEYS = {"native", "explanation"}
 # A set needs at least this many members: one card alone is no group.
 MIN_SET_MEMBERS = 2
 CORE_EXAMPLE_KEYS = {"target", "reading", "ipa", "bases", "source",
-                     "language", "sounds", "words"}
+                     "language", "sounds", "words", "target_scripts"}
 # A word card has at least this many examples (owner, #506: "At least 2").
 MIN_EXAMPLES = 2
 # The languages filled in (#511, #512). In these, a word card with fewer than
@@ -738,11 +738,13 @@ def _has_kanji(text: str) -> bool:
 
 
 def _check_kanji_reading(r: Report, where: str, card: dict, target: object,
-                         script: str, scripts: list[str] | None) -> None:
-    """A Japanese card written in kanji (script `han`, with `kana` among the
+                         script: str, scripts: list[str] | None,
+                         what: str = "card") -> None:
+    """A Japanese card or example sentence written in kanji (script `han`, with `kana` among the
     language's scripts) shows its kana reading beside the kanji, as a Chinese
     card shows pinyin: the reading is its `target_scripts.kana`, and every
-    target with a kanji in it needs one. The kana's letters are checked by
+    target with a kanji in it needs one, as does an example sentence's
+    (ADR-0053). The kana's letters are checked by
     `_check_target_scripts` (no kanji in a kana reading). A target in kana
     alone has nothing to read out and gives none."""
     if script != "han" or "kana" not in (scripts or [])[1:] or not _is_str(target):
@@ -750,7 +752,7 @@ def _check_kanji_reading(r: Report, where: str, card: dict, target: object,
     spelled = card.get("target_scripts")
     kana = spelled.get("kana") if isinstance(spelled, dict) else None
     if _has_kanji(target) and not _is_str(kana):
-        r.error(where, "a card written in kanji needs its kana reading, "
+        r.error(where, f"{'an' if what == 'example' else 'a'} {what} written in kanji needs its kana reading, "
                        "`target_scripts: { kana: ... }`")
 
 
@@ -942,7 +944,8 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
         return
 
     if "ref" in card and form != "layer":
-        check_ref(r, idx, card, seen, id_re, form=form, lang=lang, script=script)
+        check_ref(r, idx, card, seen, id_re, form=form, lang=lang, script=script,
+                  scripts=scripts)
         return
 
     if form == "layer":
@@ -1106,7 +1109,7 @@ def check_card(r: Report, idx: int, card: object, seen: set[str],
     example_words: dict[int, list[str]] = {}
     examples = _check_examples(r, where, card.get("examples"), form=form,
                                cid=cid, lang=lang, script=script,
-                               words=example_words)
+                               words=example_words, scripts=scripts)
     if (lang in FILLED_LANGUAGES and counts_as_word(card, r.deck_kind or "vocab")
             and len(examples) < MIN_EXAMPLES):
         r.error(where, f"{len(examples)} example(s); a word card has at least "
@@ -1734,7 +1737,8 @@ def check_picture(r: Report, where: str, picture: object) -> None:
 def _check_examples(r: Report, where: str, examples: object, *,
                     form: str = "single", cid: str | None = None,
                     lang: str = "xx", script: str = "other",
-                    words: dict[int, list[str]] | None = None
+                    words: dict[int, list[str]] | None = None,
+                    scripts: list[str] | None = None
                     ) -> list[tuple[int, str, list[dict]]]:
     """A card's examples. In a core an example has its language side only,
     and each layer names it by its target. Returns (place, target, bases)
@@ -1792,6 +1796,11 @@ def _check_examples(r: Report, where: str, examples: object, *,
                            f"language code, got {ex['language']!r}")
         if "sounds" in ex and not isinstance(ex["sounds"], bool):
             r.error(where, f"examples[{j}].sounds must be true or false")
+        if "target_scripts" in ex:
+            _check_target_scripts(r, f"{where}: examples[{j}]", ex["target_scripts"],
+                                  ex["target"], scripts)
+        _check_kanji_reading(r, f"{where}: examples[{j}]", ex, ex["target"], script,
+                             scripts, what="example")
         given = check_given_words(r, where, f"examples[{j}].", ex.get("words"),
                                   ex["target"])
         if given is not None and words is not None:
@@ -1805,7 +1814,7 @@ def _check_examples(r: Report, where: str, examples: object, *,
 
 def check_ref(r: Report, idx: int, card: dict, seen: set[str],
               id_re: re.Pattern[str], *, form: str = "single", lang: str = "xx",
-              script: str = "other") -> None:
+              script: str = "other", scripts: list[str] | None = None) -> None:
     """A card written in another deck, listed here by its id, with any
     native-side fields this deck gives it. A core's ref gives none: its
     layers do."""
@@ -1841,7 +1850,7 @@ def check_ref(r: Report, idx: int, card: dict, seen: set[str],
     if "wiktionary" in card and not core:
         _check_wiktionary(r, where, "", card["wiktionary"])
     _check_examples(r, where, card.get("examples"), form=form, cid=rid, lang=lang,
-                    script=script)
+                    script=script, scripts=scripts)
     # A core's refs are only checked to exist: whether a learner sees one is
     # the merge's (ADR-0036), not an error.
     r.refs.append((rid, core or _is_str(card.get("native")), where))

@@ -733,8 +733,24 @@ cards:
   `target_scripts` spelling: the kana spelling has no `words` of its own and
   is split at spaces, since it need not have as many letters (日本語 is
   three, にほんご is four).
-- **Examples are written in kanji too,** with the romaji `reading` as now. An
-  example has no kana spelling (examples take no `target_scripts`).
+- **Examples are written in kanji too, each with its kana line.** An example
+  takes `target_scripts`, in the card's shape, and an example with a kanji in
+  it needs `target_scripts: { kana: ... }` as a card does (owner, 2026-11-02:
+  "Add a kana line"). The romaji `reading` stays, and the translation is in
+  each layer, keyed by the example's `target` as before:
+
+  ```yaml
+  examples:
+    - target: "私は食べます。"
+      target_scripts: { kana: "わたしはたべます。" }
+      words: ["私", "は", "食べます"]
+      reading: "watashi wa tabemasu."
+  ```
+
+  The kana line has no `words` of its own, like a card's. Only `target_scripts`
+  is new on an example; an example in kana alone gives none. The app shows the
+  kana line under the kanji example, as a card shows its kana, for a learner
+  who learns kanji and kana, and the kana alone to one who learns kana only.
 - **A card id never changes when its card moves to kanji.** A card already
   in a kana deck keeps its id and its history; the kanji spelling lands as a
   new card of a kanji deck only where the word is new.
@@ -773,11 +789,12 @@ script's are. A learner who learns kanji sees the kanji with the kana beneath
 it, as the app shows a card's other spellings, and may write either: the kana
 spelling, which accepts the kanji too, or the kanji.
 
-The released app reads these files, which use fields and script ids it has
-long known, but only an app of this version is held to show a kanji deck as above;
-an older app may show a learner of kana alone the kanji target where they
-should see kana. A kanji deck therefore lands after the
-release that carries this, and may be held to it with `decks/min_app.json`
+A card's `target_scripts` is a field the released app reads, but **an
+example's `target_scripts` is new**: the released app refuses an example with
+a field it does not know, so a deck file that has one cannot be read by an
+app before this version. A kanji deck therefore lands after the
+release that carries this, and each such file is held to it with
+`decks/min_app.json`
 ([ADR-0052](adr/0052-minimum-app-version-in-the-deck-index.md)).
 
 ### A note on `id`

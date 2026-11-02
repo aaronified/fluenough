@@ -30,12 +30,15 @@ THANKS = {"id": "zz-9702", "target": "ありがとう", "reading": "arigatou",
           "native": "thank you"}
 
 
-class KanjiCards(B1Case):
+class KanjiCase(B1Case):
 
     def errors_of(self, *cards: dict, language: dict | None = None) -> list[str]:
         self.put(EXTRA, single(cards=[dict(c) for c in cards],
                                language=dict(language or JAPANESE)))
         return self.errors(EXTRA)
+
+
+class KanjiCards(KanjiCase):
 
     def test_a_kanji_card_with_its_kana_reading_is_valid(self) -> None:
         self.assertEqual(self.errors_of(EAT, THANKS), [])
@@ -91,6 +94,55 @@ class KanjiCards(B1Case):
     def test_an_older_kana_deck_is_unchanged(self) -> None:
         language = dict(LANGUAGE, script="kana", tts="ja-JP", icon="日")
         self.assertEqual(self.errors_of(THANKS, language=language), [])
+
+
+# 食べます (tabemasu): an example sentence written in kanji.
+SENTENCE = {"target": "私は食べます。", "native": "I eat.",
+            "reading": "watashi wa tabemasu.",
+            "words": ["私", "は", "食べます"],
+            "target_scripts": {"kana": "わたしはたべます。"}}
+
+
+class KanjiExamples(KanjiCase):
+
+    def with_example(self, **example: object) -> list[str]:
+        shown = {k: v for k, v in SENTENCE.items() if k not in example}
+        shown.update({k: v for k, v in example.items() if v is not None})
+        return self.errors_of(dict(EAT, examples=[shown]))
+
+    def test_an_example_with_its_kana_line_is_valid(self) -> None:
+        self.assertEqual(self.with_example(), [])
+
+    def test_an_example_in_kanji_needs_its_kana_line(self) -> None:
+        bare = {k: v for k, v in SENTENCE.items() if k != "target_scripts"}
+        errors = self.errors_of(dict(EAT, examples=[bare]))
+        self.assertTrue(any("an example written in kanji needs its kana reading" in e
+                            for e in errors), errors)
+
+    def test_an_example_in_kana_alone_needs_none(self) -> None:
+        plain = {"target": "ありがとう。", "native": "Thank you.",
+                 "reading": "arigatou.", "words": ["ありがとう"]}
+        self.assertEqual(self.errors_of(dict(EAT, examples=[plain])), [])
+
+    def test_the_kana_line_has_no_kanji_in_it(self) -> None:
+        errors = self.with_example(target_scripts={"kana": "わたしは食べます。"})
+        self.assertTrue(any("examples[0]" in e and "not in kana" in e
+                            for e in errors), errors)
+
+    def test_the_kana_line_is_not_the_target(self) -> None:
+        plain = {"target": "ありがとう。", "native": "Thank you.",
+                 "reading": "arigatou.", "words": ["ありがとう"],
+                 "target_scripts": {"kana": "ありがとう。"}}
+        errors = self.errors_of(dict(EAT, examples=[plain]))
+        self.assertTrue(any("is the same as target" in e for e in errors), errors)
+
+    def test_the_second_script_must_be_listed(self) -> None:
+        language = dict(JAPANESE, scripts=["han", "han_traditional"])
+        sentence = dict(SENTENCE, target_scripts={"kana": "わたしはたべます。"})
+        errors = self.errors_of(dict(EAT, target_scripts={"han_traditional": "食"},
+                                     examples=[sentence]), language=language)
+        self.assertTrue(any("examples[0]" in e and "target_scripts key 'kana'" in e
+                            for e in errors), errors)
 
 
 if __name__ == "__main__":

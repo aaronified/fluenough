@@ -293,12 +293,15 @@ class TaughtExample extends StatelessWidget {
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            TargetText.card(
-              example.target,
-              language: language,
-              fontSize: 16,
-              color: scheme.onSurface,
-            ),
+            if (example.targetScripts.isEmpty)
+              TargetText.card(
+                example.target,
+                language: language,
+                fontSize: 16,
+                color: scheme.onSurface,
+              )
+            else
+              _SpelledExample(example: example, language: language),
             if (reading != null)
               Text(
                 reading,
@@ -319,6 +322,48 @@ class TaughtExample extends StatelessWidget {
           ],
         ),
       ),
+    );
+  }
+}
+
+/// An example with more than one spelling (`target_scripts`, ADR-0053), in
+/// the script the learner learns, with the other beneath it, smaller: a
+/// Japanese example in kanji with its kana line, as a card shows its other
+/// spellings (`TargetText`).
+class _SpelledExample extends StatelessWidget {
+  const _SpelledExample({required this.example, required this.language});
+
+  final CardExample example;
+  final LanguageInfo language;
+
+  @override
+  Widget build(BuildContext context) {
+    final state = AppScope.of(context);
+    final color = Theme.of(context).colorScheme.onSurface;
+    return ListenableBuilder(
+      listenable: state.settings,
+      builder: (context, _) {
+        final shown = state.exampleShown(example, language);
+        final others = state.exampleOtherSpellings(example, language);
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: <Widget>[
+            TargetText.card(
+              shown.text,
+              language: shown.language,
+              fontSize: 16,
+              color: color,
+            ),
+            for (final other in others)
+              TargetText.card(
+                other.text,
+                language: other.language,
+                fontSize: 12,
+                color: color,
+              ),
+          ],
+        );
+      },
     );
   }
 }

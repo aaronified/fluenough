@@ -24,7 +24,16 @@ language: { code: ja, iso639_3: jpn, name: Japanese, script: han, scripts: [han,
 native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
-  - { id: ja-en-words-0001, target: "食べる", target_scripts: { kana: "たべる" }, native: "to eat", reading: "taberu" }
+  - id: ja-en-words-0001
+    target: "食べる"
+    target_scripts: { kana: "たべる" }
+    native: "to eat"
+    reading: "taberu"
+    examples:
+      - target: "私は食べます。"
+        target_scripts: { kana: "わたしはたべます。" }
+        native: "I eat."
+        reading: "watashi wa tabemasu."
   - { id: ja-en-words-0002, target: "ありがとう", native: "thank you", reading: "arigatou" }
 ''',
   'decks/ja/ja-en-kanji-1.yaml': '''

@@ -33,6 +33,19 @@ kana, and a check that it is kana. (The "Kanji/Hanzi resources" of the
 decision are the per-language `resources.yaml`, #832, "where else to learn":
 they need nothing here.)
 
+## Owner's answers (2026-11-02)
+
+On the first version of the pull request the owner answered five questions:
+1. Romaji beside the kana: keep both, the romaji reading and the kana
+   beneath the kanji.
+2. Example sentences: "Add a kana line."
+3. Typing: writing in kana grades kana and accepts kanji, writing in kanji
+   grades kanji only. OK as designed.
+4. A script known (Read kanji = Know) but not learned: keep the existing
+   rule, which shows known scripts only when none is learned.
+5. A check of the kana against the romaji `reading`: not asked. It is not
+   built.
+
 ## Decision
 
 - **No new field and no new script.** A kanji deck is `script: han`,
@@ -59,6 +72,14 @@ they need nothing here.)
   Everything else is the #623 behaviour, now tested for Japanese: kanji with
   the kana beneath it, kana alone, either script written, the script check
   asking about kana then kanji.
+- **Example sentences take `target_scripts`** (the only format change; owner
+  answer 2): an example in a kanji deck has the kana line as
+  `target_scripts: { kana: ... }`, the translation staying in each layer keyed
+  by the example's `target`. The validator checks its letters as a card's and
+  requires it on an example with a kanji in it; an example in kana alone gives
+  none. The app shows the kana line under the kanji example (smaller, as a
+  card's other spelling) for a learner who learns both, and the kana alone for
+  one who learns kana only.
 - **Typed answers.** Writing in kana grades the kana and accepts the kanji;
   writing in kanji grades the kanji. A learner who learns both chooses with the
   Write option, as for any two-script course.
@@ -94,18 +115,14 @@ CI's "Released app reads the decks" runs the latest released app against a
 pull request's decks, and deck files that use something a release does not
 read break it. This change is code, tools, docs and a test fixture only: it
 touches no file in `decks/`. The kanji decks, and the first cards written in
-kanji, land after the release that carries it, and may be held to it with
-`decks/min_app.json` (ADR-0052). Until then Japanese is as it was.
+kanji, land after the release that carries it, each file held to that release
+with `decks/min_app.json` (ADR-0052). Until then Japanese is as it was.
 
 ## Consequences
 
 - A kanji unit and every word card after it are written once, in kanji; the
   kana is shown, never typed twice.
-- Examples are in kanji with their romaji reading; they have no kana
-  spelling, since examples take no `target_scripts`. Adding one is a later
-  format change if learners ask for it.
-- The kana reading is not checked against the romaji `reading`. A
-  transliteration check (`tools/transcribe.py` has the table) can warn on a
-  mismatch later; particles read は as wa and would need exceptions.
+- An example's kana line is written by hand beside its romaji. The kana is
+  not checked against the romaji `reading` (owner answer 5: not wanted).
 - Furigana inside an example, a kanji's stroke order and handwriting
   ([Plan-Handwriting](Plan-Handwriting)) are not part of this.

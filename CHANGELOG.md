@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Japanese cards can be written in kanji.** From the first kanji unit on, a card's target is in kanji with its kana reading shown under it, as Chinese shows pinyin; kana-only learners see kana, and earlier cards are unchanged. The deck checker now requires a kana reading on every kanji target and refuses a reading with a kanji in it; no Japanese decks use it yet (owner, 2026-11-02, ADR-0053).
+- **Japanese cards can be written in kanji.** From the first kanji unit on, a card's target is in kanji with its kana reading shown under it, as Chinese shows pinyin; example sentences get a kana line too; kana-only learners see kana, and earlier cards are unchanged. The deck checker now requires a kana reading on every kanji target and example and refuses a reading with a kanji in it; no Japanese decks use it yet (owner, 2026-11-02, ADR-0053).
 - **Language rows show the skill icons and script letters.** On the Languages page a Learn chip shows its skills' icons beside the cap, and each script chip starts with the first letter of the script's sample word, so a language in two scripts shows two chips told apart; the skills sheet is unchanged (owner, 2026-11-02).
 
 ### Fixed

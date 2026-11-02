@@ -112,6 +112,45 @@ void main() {
     });
   });
 
+  group('Japanese example sentences in kanji', () {
+    test(
+      'an example keeps its kana line, and the romaji reading stays',
+      () async {
+        final state = await japanese(<String>{kana, han});
+        final eat = state.deckById('ja-en-words')!.cards.first;
+        final example = eat.examples.single;
+        expect(example.target, '私は食べます。');
+        expect(example.targetScripts, <String, String>{kana: 'わたしはたべます。'});
+        expect(example.reading, 'watashi wa tabemasu.');
+        expect(example.targetIn(kana, firstScript: han), 'わたしはたべます。');
+      },
+    );
+
+    test('a learner of kana and kanji sees the kanji with the kana line '
+        'under it', () async {
+      final state = await japanese(<String>{kana, han});
+      final words = state.deckById('ja-en-words')!;
+      final example = words.cards.first.examples.single;
+      expect(state.exampleShown(example, words.language).text, '私は食べます。');
+      final under = state.exampleOtherSpellings(example, words.language);
+      expect(under.map((s) => s.text), ['わたしはたべます。']);
+      expect(under.single.language.script, kana);
+    });
+
+    test(
+      'a learner of kana alone sees the kana line, and no second one',
+      () async {
+        final state = await japanese(<String>{kana});
+        final words = state.deckById('ja-en-words')!;
+        final example = words.cards.first.examples.single;
+        final shown = state.exampleShown(example, words.language);
+        expect(shown.text, 'わたしはたべます。');
+        expect(shown.language.script, kana);
+        expect(state.exampleOtherSpellings(example, words.language), isEmpty);
+      },
+    );
+  });
+
   group('Japanese skills and placement', () {
     test('kana and kanji each have a Read and a Write pill, kanji named as '
         'kanji', () {

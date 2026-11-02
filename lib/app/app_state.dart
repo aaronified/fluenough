@@ -2675,6 +2675,20 @@ class AppState extends ChangeNotifier {
     Card card,
     LanguageInfo language, {
     Set<String>? scripts,
+  }) => _otherSpellings(card.targetIn, language, scripts: scripts);
+
+  /// [otherSpellings] of an example sentence (`target_scripts`, ADR-0053):
+  /// the kana line under a Japanese example written in kanji.
+  List<({String text, LanguageInfo language})> exampleOtherSpellings(
+    CardExample example,
+    LanguageInfo language, {
+    Set<String>? scripts,
+  }) => _otherSpellings(example.targetIn, language, scripts: scripts);
+
+  List<({String text, LanguageInfo language})> _otherSpellings(
+    String? Function(String script, {required String firstScript}) spelling,
+    LanguageInfo language, {
+    Set<String>? scripts,
   }) {
     final first = language.script;
     final shown = _shownScripts(language, scripts: scripts);
@@ -2684,7 +2698,7 @@ class AppState extends ChangeNotifier {
     return <({String text, LanguageInfo language})>[
       for (final script in shown)
         if (script != first)
-          if (card.targetIn(script, firstScript: first) case final text?)
+          if (spelling(script, firstScript: first) case final text?)
             (text: text, language: language.inScript(script)),
     ];
   }
@@ -2698,18 +2712,37 @@ class AppState extends ChangeNotifier {
     Card card,
     LanguageInfo language, {
     Set<String>? scripts,
+  }) => _spellingShown(card.target, card.targetIn, language, scripts: scripts);
+
+  /// [targetShown] of an example sentence (ADR-0053).
+  ({String text, LanguageInfo language}) exampleShown(
+    CardExample example,
+    LanguageInfo language, {
+    Set<String>? scripts,
+  }) => _spellingShown(
+    example.target,
+    example.targetIn,
+    language,
+    scripts: scripts,
+  );
+
+  ({String text, LanguageInfo language}) _spellingShown(
+    String target,
+    String? Function(String script, {required String firstScript}) spelling,
+    LanguageInfo language, {
+    Set<String>? scripts,
   }) {
     final first = language.script;
     final shown = _shownScripts(language, scripts: scripts);
     if (shown.isEmpty || shown.contains(first)) {
-      return (text: card.target, language: language);
+      return (text: target, language: language);
     }
     for (final script in shown) {
-      if (card.targetIn(script, firstScript: first) case final text?) {
+      if (spelling(script, firstScript: first) case final text?) {
         return (text: text, language: language.inScript(script));
       }
     }
-    return (text: card.target, language: language);
+    return (text: target, language: language);
   }
 
   /// Whether [entry] is one of its course's decks that need the alphabet:
