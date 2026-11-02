@@ -1919,18 +1919,44 @@ void main() {
     testWidgets('a script is checked where a pill says it is read, and is new '
         'with no question where none does; the course is begun with no ask, '
         'no script question and no native choice', (tester) async {
-      // Devanagari read through Marathi, Perso-Arabic not said.
-      await pumpPlacement(tester, devanagariReader(<String>{devanagari}));
+      Future<void> pumpHindustani(Map<String, bool> read) async {
+        usePhone(tester);
+        final state = AppState.test(
+          settings: SettingsNotifier(
+            spokenLanguages: const <String>['en', 'hi'],
+            learningLanguages: const <String>['hi'],
+            learningChosen: true,
+            scriptsLearned: <String, Set<String>>{
+              'hi': <String>{persoArabic},
+            },
+          )..scriptsRead = read,
+        );
+        addTearDown(state.dispose);
+        await pumpScreen(
+          tester,
+          PlacementPage(
+            languages: const <String>['hi'],
+            alphabet: const <String, bool>{'hi': true},
+            scripts: <String, Set<String>>{
+              'hi': <String>{persoArabic},
+            },
+            random: Random(3),
+            onFinished: (_) {},
+          ),
+          state: state,
+        );
+        await tester.pumpAndSettle();
+      }
+
+      // Devanagari read, as its pill says: its check runs first.
+      await pumpHindustani(<String, bool>{'en': true, 'hi': true});
       final l10n = l10nOf(tester);
       expect(find.byType(PlacementMatch), findsOneWidget);
-      expect(find.text(l10n.placementAskBody), findsNothing);
+      expect(find.text(l10n.placementQuestion), findsNothing);
       expect(find.text(l10n.placementScriptAskBody), findsNothing);
 
       // No pill says it is read: straight to the words.
-      await pumpPlacement(
-        tester,
-        devanagariReader(<String>{devanagari}, reads: false),
-      );
+      await pumpHindustani(<String, bool>{'en': true});
       expect(find.byType(PlacementMatch), findsNothing);
       expect(find.text(l10n.placementQuestion), findsOneWidget);
     });
@@ -2715,75 +2741,75 @@ void main() {
   });
 
   group('choosing it', () {
-    testWidgets('the taught-from choice is asked on the course\'s card, and in '
-        'placement', (tester) async {
-      usePhone(tester);
-      final state = bengaliFirst();
-      await tester.pumpWidget(
-        withLanguageList(FluenoughApp(key: UniqueKey(), state: state)),
-      );
-      await tester.pumpAndSettle();
-      final l10n = l10nOf(tester);
-
-      // The choice is on the first screen of the language's sheet (#626).
-      await openSheet(tester, 'hi');
-      final choice = find.byType(SegmentedButton<String>);
-      await tester.ensureVisible(choice);
-      await tester.pumpAndSettle();
-      final buttons = tester.widget<SegmentedButton<String>>(choice);
-      expect(buttons.segments.map((s) => s.value), <String>['bn', 'en']);
-      expect(buttons.selected, <String>{'en'}, reason: 'the best covered');
-
-      await tester.tap(
-        find.descendant(of: choice, matching: find.text('Bengali')),
-      );
-      await tester.pumpAndSettle();
-      expect(tester.widget<SegmentedButton<String>>(choice).selected, <String>{
-        'bn',
-      });
-      await tapSheet(tester, 'sheet-learn');
-      while (sheetIsOpen()) {
-        final next = find.byKey(const ValueKey<String>('sheet-next'));
-        await tapSheet(
-          tester,
-          next.evaluate().isNotEmpty ? 'sheet-next' : 'sheet-done',
-        );
-      }
-      await tapText(tester, l10n.commonContinue);
-      expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsNothing);
-      expect(find.text(l10n.placementQuestion), findsOneWidget);
-      expect(
-        state.settings.courseNative('hi'),
-        isNull,
-        reason: 'not yet saved',
-      );
-
-      await giveUp(tester);
-      await tapText(tester, l10n.placementDone);
-      expect(state.settings.courseNative('hi'), 'bn');
-      expect(state.settings.nativesOffered('hi'), <String>{'bn', 'en'});
-      expect(state.needsNativeChoice('hi'), isFalse);
-      expect(state.courseUnits('hi').single.single.id, 'hi-bn-a');
-
-      {
+    testWidgets(
+      'the taught-from choice is asked on the course\'s card, and never in '
+      'placement',
+      (tester) async {
         usePhone(tester);
         final state = bengaliFirst();
-        await pumpScreen(
-          tester,
-          PlacementPage(languages: const <String>['hi'], onFinished: (_) {}),
-          state: state,
+        await tester.pumpWidget(
+          withLanguageList(FluenoughApp(key: UniqueKey(), state: state)),
         );
+        await tester.pumpAndSettle();
         final l10n = l10nOf(tester);
-        expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsOneWidget);
-        expect(find.text(l10n.nativeChoiceCoverageAll(3)), findsOneWidget);
-        expect(find.text(l10n.nativeChoiceCoverage(1, 3)), findsOneWidget);
-        final group = tester.widget<RadioGroup<String>>(
-          find.byType(RadioGroup<String>),
+
+        // The choice is on the first screen of the language's sheet (#626).
+        await openSheet(tester, 'hi');
+        final choice = find.byType(SegmentedButton<String>);
+        await tester.ensureVisible(choice);
+        await tester.pumpAndSettle();
+        final buttons = tester.widget<SegmentedButton<String>>(choice);
+        expect(buttons.segments.map((s) => s.value), <String>['bn', 'en']);
+        expect(buttons.selected, <String>{'en'}, reason: 'the best covered');
+
+        await tester.tap(
+          find.descendant(of: choice, matching: find.text('Bengali')),
         );
-        expect(group.groupValue, 'en', reason: 'the best covered');
-        expect(radioOf(tester, 'bn').value, 'bn');
-      }
-    });
+        await tester.pumpAndSettle();
+        expect(
+          tester.widget<SegmentedButton<String>>(choice).selected,
+          <String>{'bn'},
+        );
+        await tapSheet(tester, 'sheet-learn');
+        while (sheetIsOpen()) {
+          final next = find.byKey(const ValueKey<String>('sheet-next'));
+          await tapSheet(
+            tester,
+            next.evaluate().isNotEmpty ? 'sheet-next' : 'sheet-done',
+          );
+        }
+        await tapText(tester, l10n.commonContinue);
+        expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsNothing);
+        expect(find.text(l10n.placementQuestion), findsOneWidget);
+        expect(
+          state.settings.courseNative('hi'),
+          isNull,
+          reason: 'not yet saved',
+        );
+
+        await giveUp(tester);
+        await tapText(tester, l10n.placementDone);
+        expect(state.settings.courseNative('hi'), 'bn');
+        expect(state.settings.nativesOffered('hi'), <String>{'bn', 'en'});
+        expect(state.needsNativeChoice('hi'), isFalse);
+        expect(state.courseUnits('hi').single.single.id, 'hi-bn-a');
+
+        {
+          usePhone(tester);
+          final state = bengaliFirst();
+          await pumpScreen(
+            tester,
+            PlacementPage(languages: const <String>['hi'], onFinished: (_) {}),
+            state: state,
+          );
+          final l10n = l10nOf(tester);
+          // Placement asks nothing the sheet has not: the course is taught from
+          // the language the sheet chose, or else its own best covered.
+          expect(find.text(l10n.nativeChoiceTitle('Hindi')), findsNothing);
+          expect(find.byType(DrillFrame), findsOneWidget);
+        }
+      },
+    );
   });
 
   group('the language shown', () {
