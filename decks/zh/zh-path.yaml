@@ -462,7 +462,8 @@ units:
       - { id: "a-zoo-visit", text: { "en": "A child names the animals seen at a zoo, each with its measure word" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "zh-weather", theme: "weather", words: 40 }
+  - decks: ["zh-weather", "zh-weather-sentences", "zh-reading-weather", "*"]
+    words: 40
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain, wind, smog" } }
     reading_passages:

@@ -1,0 +1,1346 @@
+"schema": 1
+"id": "zh-weather"
+"part": "core"
+"kind": "vocab"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"license": "CC-BY-SA-4.0"
+"theme": "weather"
+"tags":
+- "beginner"
+- "unreviewed"
+"cards":
+- "id": "zh-1567"
+  "target": "天气"
+  "target_scripts":
+    "han_traditional": "天氣"
+  "words":
+  - "天气"
+  "reading": "tiānqì"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "今天天气很好。"
+    "reading": "jīntiān tiānqì hěn hǎo."
+    "words":
+    - "今天"
+    - "天气"
+    - "很"
+    - "好"
+  - "target": "这里的天气怎么样？"
+    "reading": "zhèlǐ de tiānqì zěnmeyàng?"
+    "words":
+    - "这里"
+    - "的"
+    - "天气"
+    - "怎么样"
+    "bases":
+    - "word": "这里"
+      "base": "这里"
+      "reading": "zhèlǐ"
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+    - "word": "怎么样"
+      "base": "怎么样"
+      "reading": "zěnmeyàng"
+- "id": "zh-1568"
+  "target": "气温"
+  "target_scripts":
+    "han_traditional": "氣溫"
+  "words":
+  - "气温"
+  "reading": "qìwēn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "今天的气温是十度。"
+    "reading": "jīntiān de qìwēn shì shí dù."
+    "words":
+    - "今天"
+    - "的"
+    - "气温"
+    - "是"
+    - "十"
+    - "度"
+    "bases":
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+    - "word": "度"
+      "base": "度"
+      "reading": "dù"
+  - "target": "气温很低。"
+    "reading": "qìwēn hěn dī."
+    "words":
+    - "气温"
+    - "很"
+    - "低"
+    "bases":
+    - "word": "低"
+      "base": "低"
+      "reading": "dī"
+- "id": "zh-1569"
+  "target": "气象"
+  "target_scripts":
+    "han_traditional": "氣象"
+  "words":
+  - "气象"
+  "reading": "qìxiàng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "气象报告说明天晴。"
+    "reading": "qìxiàng bàogào shuō míngtiān qíng."
+    "words":
+    - "气象"
+    - "报告"
+    - "说"
+    - "明天"
+    - "晴"
+  - "target": "气象很好。"
+    "reading": "qìxiàng hěn hǎo."
+    "words":
+    - "气象"
+    - "很"
+    - "好"
+- "id": "zh-1570"
+  "target": "预报"
+  "target_scripts":
+    "han_traditional": "預報"
+  "words":
+  - "预报"
+  "reading": "yùbào"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "天气预报说下雨。"
+    "reading": "tiānqì yùbào shuō xiàyǔ."
+    "words":
+    - "天气"
+    - "预报"
+    - "说"
+    - "下雨"
+  - "target": "我看天气预报。"
+    "reading": "wǒ kàn tiānqì yùbào."
+    "words":
+    - "我"
+    - "看"
+    - "天气"
+    - "预报"
+- "id": "zh-1571"
+  "target": "晴天"
+  "words":
+  - "晴天"
+  "reading": "qíngtiān"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "晴天我去公园。"
+    "reading": "qíngtiān wǒ qù gōngyuán."
+    "words":
+    - "晴天"
+    - "我"
+    - "去"
+    - "公园"
+  - "target": "明天是晴天。"
+    "reading": "míngtiān shì qíngtiān."
+    "words":
+    - "明天"
+    - "是"
+    - "晴天"
+- "id": "zh-1572"
+  "target": "多云"
+  "target_scripts":
+    "han_traditional": "多雲"
+  "words":
+  - "多云"
+  "reading": "duōyún"
+  "pos": "adj"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "今天多云。"
+    "reading": "jīntiān duōyún."
+    "words":
+    - "今天"
+    - "多云"
+  - "target": "多云的天不热。"
+    "reading": "duōyún de tiān bú rè."
+    "words":
+    - "多云"
+    - "的"
+    - "天"
+    - "不"
+    - "热"
+    "bases":
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+- "id": "zh-1573"
+  "target": "雾霾"
+  "target_scripts":
+    "han_traditional": "霧霾"
+  "words":
+  - "雾霾"
+  "reading": "wùmái"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "今天有雾霾。"
+    "reading": "jīntiān yǒu wùmái."
+    "words":
+    - "今天"
+    - "有"
+    - "雾霾"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "雾霾很大，不要出去。"
+    "reading": "wùmái hěn dà, bú yào chūqù."
+    "words":
+    - "雾霾"
+    - "很"
+    - "大"
+    - "不"
+    - "要"
+    - "出去"
+    "bases":
+    - "word": "要"
+      "base": "要"
+      "reading": "yào"
+    - "word": "出去"
+      "base": "出去"
+      "reading": "chūqù"
+- "id": "zh-1574"
+  "target": "空气"
+  "target_scripts":
+    "han_traditional": "空氣"
+  "words":
+  - "空气"
+  "reading": "kōngqì"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "空气很干净。"
+    "reading": "kōngqì hěn gānjìng."
+    "words":
+    - "空气"
+    - "很"
+    - "干净"
+  - "target": "山上的空气很好。"
+    "reading": "shān shàng de kōngqì hěn hǎo."
+    "words":
+    - "山"
+    - "上"
+    - "的"
+    - "空气"
+    - "很"
+    - "好"
+    "bases":
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+- "id": "zh-1575"
+  "target": "污染"
+  "words":
+  - "污染"
+  "reading": "wūrǎn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "空气污染很严重。"
+    "reading": "kōngqì wūrǎn hěn yánzhòng."
+    "words":
+    - "空气"
+    - "污染"
+    - "很"
+    - "严重"
+    "bases":
+    - "word": "严重"
+      "base": "严重"
+      "reading": "yánzhòng"
+  - "target": "河水有污染。"
+    "reading": "hé shuǐ yǒu wūrǎn."
+    "words":
+    - "河"
+    - "水"
+    - "有"
+    - "污染"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+- "id": "zh-1576"
+  "target": "闷热"
+  "target_scripts":
+    "han_traditional": "悶熱"
+  "words":
+  - "闷热"
+  "reading": "mēnrè"
+  "pos": "adj"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "今天很闷热。"
+    "reading": "jīntiān hěn mēnrè."
+    "words":
+    - "今天"
+    - "很"
+    - "闷热"
+  - "target": "房间很闷热。"
+    "reading": "fángjiān hěn mēnrè."
+    "words":
+    - "房间"
+    - "很"
+    - "闷热"
+- "id": "zh-1577"
+  "target": "冷空气"
+  "target_scripts":
+    "han_traditional": "冷空氣"
+  "words":
+  - "冷空气"
+  "reading": "lěngkōngqì"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "冷空气来了。"
+    "reading": "lěngkōngqì lái le."
+    "words":
+    - "冷空气"
+    - "来"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "冷空气让气温降了。"
+    "reading": "lěngkōngqì ràng qìwēn jiàng le."
+    "words":
+    - "冷空气"
+    - "让"
+    - "气温"
+    - "降"
+    - "了"
+    "bases":
+    - "word": "让"
+      "base": "让"
+      "reading": "ràng"
+    - "word": "降"
+      "base": "降"
+      "reading": "jiàng"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1578"
+  "target": "台风"
+  "target_scripts":
+    "han_traditional": "颱風"
+  "words":
+  - "台风"
+  "reading": "táifēng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "台风来了。"
+    "reading": "táifēng lái le."
+    "words":
+    - "台风"
+    - "来"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "台风很危险。"
+    "reading": "táifēng hěn wēixiǎn."
+    "words":
+    - "台风"
+    - "很"
+    - "危险"
+- "id": "zh-1579"
+  "target": "洪水"
+  "words":
+  - "洪水"
+  "reading": "hóngshuǐ"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "洪水来了。"
+    "reading": "hóngshuǐ lái le."
+    "words":
+    - "洪水"
+    - "来"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "洪水让房子坏了。"
+    "reading": "hóngshuǐ ràng fángzi huài le."
+    "words":
+    - "洪水"
+    - "让"
+    - "房子"
+    - "坏"
+    - "了"
+    "bases":
+    - "word": "让"
+      "base": "让"
+      "reading": "ràng"
+    - "word": "坏"
+      "base": "坏"
+      "reading": "huài"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1580"
+  "target": "干旱"
+  "target_scripts":
+    "han_traditional": "乾旱"
+  "words":
+  - "干旱"
+  "reading": "gānhàn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "今年有干旱。"
+    "reading": "jīnnián yǒu gānhàn."
+    "words":
+    - "今年"
+    - "有"
+    - "干旱"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "干旱的时候水很少。"
+    "reading": "gānhàn de shíhou shuǐ hěn shǎo."
+    "words":
+    - "干旱"
+    - "的"
+    - "时候"
+    - "水"
+    - "很"
+    - "少"
+    "bases":
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+- "id": "zh-1581"
+  "target": "霜"
+  "words":
+  - "霜"
+  "reading": "shuāng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "早上地上有霜。"
+    "reading": "zǎoshang dìshàng yǒu shuāng."
+    "words":
+    - "早上"
+    - "地上"
+    - "有"
+    - "霜"
+    "bases":
+    - "word": "地上"
+      "base": "地上"
+      "reading": "dìshàng"
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "霜很冷。"
+    "reading": "shuāng hěn lěng."
+    "words":
+    - "霜"
+    - "很"
+    - "冷"
+- "id": "zh-1582"
+  "target": "冰"
+  "words":
+  - "冰"
+  "reading": "bīng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "湖上有冰。"
+    "reading": "hú shàng yǒu bīng."
+    "words":
+    - "湖"
+    - "上"
+    - "有"
+    - "冰"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "冰很滑。"
+    "reading": "bīng hěn huá."
+    "words":
+    - "冰"
+    - "很"
+    - "滑"
+    "bases":
+    - "word": "滑"
+      "base": "滑"
+      "reading": "huá"
+- "id": "zh-1583"
+  "target": "湿度"
+  "target_scripts":
+    "han_traditional": "濕度"
+  "words":
+  - "湿度"
+  "reading": "shīdù"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "湿度很高。"
+    "reading": "shīdù hěn gāo."
+    "words":
+    - "湿度"
+    - "很"
+    - "高"
+  - "target": "湿度太低了。"
+    "reading": "shīdù tài dī le."
+    "words":
+    - "湿度"
+    - "太"
+    - "低"
+    - "了"
+    "bases":
+    - "word": "低"
+      "base": "低"
+      "reading": "dī"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1584"
+  "target": "降温"
+  "target_scripts":
+    "han_traditional": "降溫"
+  "words":
+  - "降温"
+  "reading": "jiàngwēn"
+  "pos": "verb"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "opposite"
+    "ref": "zh-1585"
+  "examples":
+  - "target": "明天会降温。"
+    "reading": "míngtiān huì jiàngwēn."
+    "words":
+    - "明天"
+    - "会"
+    - "降温"
+    "bases":
+    - "word": "会"
+      "base": "会"
+      "reading": "huì"
+  - "target": "夜里降温了。"
+    "reading": "yèlǐ jiàngwēn le."
+    "words":
+    - "夜里"
+    - "降温"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1585"
+  "target": "升温"
+  "target_scripts":
+    "han_traditional": "升溫"
+  "words":
+  - "升温"
+  "reading": "shēngwēn"
+  "pos": "verb"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "opposite"
+    "ref": "zh-1584"
+  "examples":
+  - "target": "春天气温升温了。"
+    "reading": "chūntiān qìwēn shēngwēn le."
+    "words":
+    - "春天"
+    - "气温"
+    - "升温"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "下午升温很快。"
+    "reading": "xiàwǔ shēngwēn hěn kuài."
+    "words":
+    - "下午"
+    - "升温"
+    - "很"
+    - "快"
+- "id": "zh-1586"
+  "target": "大风"
+  "target_scripts":
+    "han_traditional": "大風"
+  "words":
+  - "大风"
+  "reading": "dàfēng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "外面有大风。"
+    "reading": "wàimiàn yǒu dàfēng."
+    "words":
+    - "外面"
+    - "有"
+    - "大风"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "大风把伞吹坏了。"
+    "reading": "dàfēng bǎ sǎn chuī huài le."
+    "words":
+    - "大风"
+    - "把"
+    - "伞"
+    - "吹"
+    - "坏"
+    - "了"
+    "bases":
+    - "word": "把"
+      "base": "把"
+      "reading": "bǎ"
+    - "word": "伞"
+      "base": "伞"
+      "reading": "sǎn"
+    - "word": "吹"
+      "base": "吹"
+      "reading": "chuī"
+    - "word": "坏"
+      "base": "坏"
+      "reading": "huài"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1587"
+  "target": "小雨"
+  "words":
+  - "小雨"
+  "reading": "xiǎoyǔ"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "opposite"
+    "ref": "zh-1589"
+  "examples":
+  - "target": "外面下小雨。"
+    "reading": "wàimiàn xià xiǎoyǔ."
+    "words":
+    - "外面"
+    - "下"
+    - "小雨"
+  - "target": "小雨不大。"
+    "reading": "xiǎoyǔ bú dà."
+    "words":
+    - "小雨"
+    - "不"
+    - "大"
+- "id": "zh-1588"
+  "target": "中雨"
+  "words":
+  - "中雨"
+  "reading": "zhōngyǔ"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "明天有中雨。"
+    "reading": "míngtiān yǒu zhōngyǔ."
+    "words":
+    - "明天"
+    - "有"
+    - "中雨"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "中雨很常见。"
+    "reading": "zhōngyǔ hěn chángjiàn."
+    "words":
+    - "中雨"
+    - "很"
+    - "常见"
+    "bases":
+    - "word": "常见"
+      "base": "常见"
+      "reading": "chángjiàn"
+- "id": "zh-1589"
+  "target": "大雨"
+  "words":
+  - "大雨"
+  "reading": "dàyǔ"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "opposite"
+    "ref": "zh-1587"
+  "examples":
+  - "target": "外面下大雨了。"
+    "reading": "wàimiàn xià dàyǔ le."
+    "words":
+    - "外面"
+    - "下"
+    - "大雨"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "大雨把路淹了。"
+    "reading": "dàyǔ bǎ lù yān le."
+    "words":
+    - "大雨"
+    - "把"
+    - "路"
+    - "淹"
+    - "了"
+    "bases":
+    - "word": "把"
+      "base": "把"
+      "reading": "bǎ"
+    - "word": "淹"
+      "base": "淹"
+      "reading": "yān"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1590"
+  "target": "雷雨"
+  "words":
+  - "雷雨"
+  "reading": "léiyǔ"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "下午可能有雷雨。"
+    "reading": "xiàwǔ kěnéng yǒu léiyǔ."
+    "words":
+    - "下午"
+    - "可能"
+    - "有"
+    - "雷雨"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "雷雨以后很凉快。"
+    "reading": "léiyǔ yǐhòu hěn liángkuai."
+    "words":
+    - "雷雨"
+    - "以后"
+    - "很"
+    - "凉快"
+- "id": "zh-1591"
+  "target": "冰雹"
+  "words":
+  - "冰雹"
+  "reading": "bīngbáo"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "冰雹打坏了车。"
+    "reading": "bīngbáo dǎ huài le chē."
+    "words":
+    - "冰雹"
+    - "打"
+    - "坏"
+    - "了"
+    - "车"
+    "bases":
+    - "word": "打"
+      "base": "打"
+      "reading": "dǎ"
+    - "word": "坏"
+      "base": "坏"
+      "reading": "huài"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "冰雹很痛。"
+    "reading": "bīngbáo hěn tòng."
+    "words":
+    - "冰雹"
+    - "很"
+    - "痛"
+    "bases":
+    - "word": "痛"
+      "base": "痛"
+      "reading": "tòng"
+- "id": "zh-1592"
+  "target": "天空"
+  "words":
+  - "天空"
+  "reading": "tiānkōng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "天空很蓝。"
+    "reading": "tiānkōng hěn lán."
+    "words":
+    - "天空"
+    - "很"
+    - "蓝"
+    "bases":
+    - "word": "蓝"
+      "base": "蓝"
+      "reading": "lán"
+  - "target": "天空中有很多星星。"
+    "reading": "tiānkōng zhōng yǒu hěn duō xīngxing."
+    "words":
+    - "天空"
+    - "中"
+    - "有"
+    - "很"
+    - "多"
+    - "星星"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+    - "word": "星星"
+      "base": "星星"
+      "reading": "xīngxing"
+- "id": "zh-1593"
+  "target": "云"
+  "target_scripts":
+    "han_traditional": "雲"
+  "words":
+  - "云"
+  "reading": "yún"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "天上有云。"
+    "reading": "tiān shàng yǒu yún."
+    "words":
+    - "天"
+    - "上"
+    - "有"
+    - "云"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "云很白。"
+    "reading": "yún hěn bái."
+    "words":
+    - "云"
+    - "很"
+    - "白"
+- "id": "zh-1594"
+  "target": "雨伞"
+  "target_scripts":
+    "han_traditional": "雨傘"
+  "words":
+  - "雨伞"
+  "reading": "yǔsǎn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "出门带雨伞。"
+    "reading": "chūmén dài yǔsǎn."
+    "words":
+    - "出门"
+    - "带"
+    - "雨伞"
+  - "target": "我的雨伞坏了。"
+    "reading": "wǒ de yǔsǎn huài le."
+    "words":
+    - "我"
+    - "的"
+    - "雨伞"
+    - "坏"
+    - "了"
+    "bases":
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+    - "word": "坏"
+      "base": "坏"
+      "reading": "huài"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1595"
+  "target": "防晒"
+  "target_scripts":
+    "han_traditional": "防曬"
+  "words":
+  - "防晒"
+  "reading": "fángshài"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "夏天要做防晒。"
+    "reading": "xiàtiān yào zuò fángshài."
+    "words":
+    - "夏天"
+    - "要"
+    - "做"
+    - "防晒"
+    "bases":
+    - "word": "要"
+      "base": "要"
+      "reading": "yào"
+  - "target": "防晒霜很好。"
+    "reading": "fángshài shuāng hěn hǎo."
+    "words":
+    - "防晒"
+    - "霜"
+    - "很"
+    - "好"
+- "id": "zh-1596"
+  "target": "气候"
+  "target_scripts":
+    "han_traditional": "氣候"
+  "words":
+  - "气候"
+  "reading": "qìhòu"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "这里的气候很好。"
+    "reading": "zhèlǐ de qìhòu hěn hǎo."
+    "words":
+    - "这里"
+    - "的"
+    - "气候"
+    - "很"
+    - "好"
+    "bases":
+    - "word": "这里"
+      "base": "这里"
+      "reading": "zhèlǐ"
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+  - "target": "气候在变化。"
+    "reading": "qìhòu zài biànhuà."
+    "words":
+    - "气候"
+    - "在"
+    - "变化"
+    "bases":
+    - "word": "变化"
+      "base": "变化"
+      "reading": "biànhuà"
+- "id": "zh-1597"
+  "target": "寒冷"
+  "words":
+  - "寒冷"
+  "reading": "hánlěng"
+  "pos": "adj"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "冬天很寒冷。"
+    "reading": "dōngtiān hěn hánlěng."
+    "words":
+    - "冬天"
+    - "很"
+    - "寒冷"
+  - "target": "外面寒冷得很。"
+    "reading": "wàimiàn hánlěng de hěn."
+    "words":
+    - "外面"
+    - "寒冷"
+    - "得"
+    - "很"
+    "bases":
+    - "word": "得"
+      "base": "得"
+      "reading": "de"
+- "id": "zh-1598"
+  "target": "炎热"
+  "target_scripts":
+    "han_traditional": "炎熱"
+  "words":
+  - "炎热"
+  "reading": "yánrè"
+  "pos": "adj"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "夏天很炎热。"
+    "reading": "xiàtiān hěn yánrè."
+    "words":
+    - "夏天"
+    - "很"
+    - "炎热"
+  - "target": "沙漠很炎热。"
+    "reading": "shāmò hěn yánrè."
+    "words":
+    - "沙漠"
+    - "很"
+    - "炎热"
+    "bases":
+    - "word": "沙漠"
+      "base": "沙漠"
+      "reading": "shāmò"
+- "id": "zh-1599"
+  "target": "温暖"
+  "target_scripts":
+    "han_traditional": "溫暖"
+  "words":
+  - "温暖"
+  "reading": "wēnnuǎn"
+  "pos": "adj"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "cold"
+    "ref": "zh-1597"
+  "examples":
+  - "target": "春天很温暖。"
+    "reading": "chūntiān hěn wēnnuǎn."
+    "words":
+    - "春天"
+    - "很"
+    - "温暖"
+  - "target": "房间很温暖。"
+    "reading": "fángjiān hěn wēnnuǎn."
+    "words":
+    - "房间"
+    - "很"
+    - "温暖"
+- "id": "zh-1600"
+  "target": "闪电"
+  "target_scripts":
+    "han_traditional": "閃電"
+  "words":
+  - "闪电"
+  "reading": "shǎndiàn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "闪电很亮。"
+    "reading": "shǎndiàn hěn liàng."
+    "words":
+    - "闪电"
+    - "很"
+    - "亮"
+    "bases":
+    - "word": "亮"
+      "base": "亮"
+      "reading": "liàng"
+  - "target": "闪电以后有雷。"
+    "reading": "shǎndiàn yǐhòu yǒu léi."
+    "words":
+    - "闪电"
+    - "以后"
+    - "有"
+    - "雷"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+- "id": "zh-1601"
+  "target": "温度计"
+  "target_scripts":
+    "han_traditional": "溫度計"
+  "words":
+  - "温度计"
+  "reading": "wēndùjì"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "温度计上是二十度。"
+    "reading": "wēndùjì shàng shì èrshí dù."
+    "words":
+    - "温度计"
+    - "上"
+    - "是"
+    - "二十"
+    - "度"
+    "bases":
+    - "word": "度"
+      "base": "度"
+      "reading": "dù"
+  - "target": "请看温度计。"
+    "reading": "qǐng kàn wēndùjì."
+    "words":
+    - "请"
+    - "看"
+    - "温度计"
+- "id": "zh-1602"
+  "target": "雨季"
+  "words":
+  - "雨季"
+  "reading": "yǔjì"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "夏天是雨季。"
+    "reading": "xiàtiān shì yǔjì."
+    "words":
+    - "夏天"
+    - "是"
+    - "雨季"
+  - "target": "雨季很潮湿。"
+    "reading": "yǔjì hěn cháoshī."
+    "words":
+    - "雨季"
+    - "很"
+    - "潮湿"
+- "id": "zh-1603"
+  "target": "暴风"
+  "target_scripts":
+    "han_traditional": "暴風"
+  "words":
+  - "暴风"
+  "reading": "bàofēng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "暴风来了。"
+    "reading": "bàofēng lái le."
+    "words":
+    - "暴风"
+    - "来"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+  - "target": "暴风把树吹倒了。"
+    "reading": "bàofēng bǎ shù chuī dǎo le."
+    "words":
+    - "暴风"
+    - "把"
+    - "树"
+    - "吹"
+    - "倒"
+    - "了"
+    "bases":
+    - "word": "把"
+      "base": "把"
+      "reading": "bǎ"
+    - "word": "吹"
+      "base": "吹"
+      "reading": "chuī"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1604"
+  "target": "高温"
+  "target_scripts":
+    "han_traditional": "高溫"
+  "words":
+  - "高温"
+  "reading": "gāowēn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "opposite"
+    "ref": "zh-1605"
+  "examples":
+  - "target": "今天是高温。"
+    "reading": "jīntiān shì gāowēn."
+    "words":
+    - "今天"
+    - "是"
+    - "高温"
+  - "target": "高温天气很难受。"
+    "reading": "gāowēn tiānqì hěn nánshòu."
+    "words":
+    - "高温"
+    - "天气"
+    - "很"
+    - "难受"
+    "bases":
+    - "word": "难受"
+      "base": "难受"
+      "reading": "nánshòu"
+- "id": "zh-1605"
+  "target": "低温"
+  "target_scripts":
+    "han_traditional": "低溫"
+  "words":
+  - "低温"
+  "reading": "dīwēn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "opposite"
+    "ref": "zh-1604"
+  "examples":
+  - "target": "冬天有低温。"
+    "reading": "dōngtiān yǒu dīwēn."
+    "words":
+    - "冬天"
+    - "有"
+    - "低温"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "低温很危险。"
+    "reading": "dīwēn hěn wēixiǎn."
+    "words":
+    - "低温"
+    - "很"
+    - "危险"
+- "id": "zh-1606"
+  "target": "风向"
+  "target_scripts":
+    "han_traditional": "風向"
+  "words":
+  - "风向"
+  "reading": "fēngxiàng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "风向是北风。"
+    "reading": "fēngxiàng shì běi fēng."
+    "words":
+    - "风向"
+    - "是"
+    - "北"
+    - "风"
+  - "target": "风向变了。"
+    "reading": "fēngxiàng biàn le."
+    "words":
+    - "风向"
+    - "变"
+    - "了"
+    "bases":
+    - "word": "变"
+      "base": "变"
+      "reading": "biàn"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
