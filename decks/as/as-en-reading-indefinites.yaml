@@ -1,0 +1,67 @@
+schema: 1
+id: "as-en-reading-indefinites"
+name: "Assamese reading: someone, something, somewhere: the indefinites"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-someone-somewhere"
+    title: "Talking about someone, something and somewhere"
+    sentences:
+      - text: "কোনোবা ইয়াত আছে।"
+        reading: "konobā iyāt āse."
+      - text: "মোৰ কিবা লাগে।"
+        reading: "mur kibā lāge."
+      - text: "কতোবা যাবলৈ লাগে।"
+        reading: "kotôbā zābôlôi lāge."
+      - text: "কেতিয়াবা আহিবা।"
+        reading: "ketiyābā āhibā."
+    questions:
+      - id: "as-3787"
+        prompt: { en: "Someone is here." }
+        answer: true
+      - id: "as-3788"
+        prompt: { en: "What does the speaker need?" }
+        options:
+          - { en: "Something" }
+          - { en: "Nothing" }
+          - { en: "Money" }
+        answer: 1
+      - id: "as-3789"
+        prompt: { en: "When will the other person come?" }
+        options:
+          - { en: "Never" }
+          - { en: "Sometime" }
+          - { en: "Yesterday" }
+        answer: 2
+  - id: "as-lost-property-notice"
+    title: "A notice about something someone lost"
+    sentences:
+      - text: "কোনোবাই এটা বেগ হেৰুৱাইছে।"
+        reading: "konobāi etā beg herōwāise."
+      - text: "বেগত কিবা আছে।"
+        reading: "begôt kibā āse."
+      - text: "কোনেও দেখিছে নেকি?"
+        reading: "koneu dekhise neki?"
+      - text: "ক'তো পাইছে নেকি?"
+        reading: "kotô paise neki?"
+    questions:
+      - id: "as-3790"
+        prompt: { en: "Someone lost a bag." }
+        answer: true
+      - id: "as-3791"
+        prompt: { en: "Is there something in the bag?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 1
+      - id: "as-3792"
+        prompt: { en: "Has anyone seen it?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+          - { en: "Nobody knows" }
+        answer: 3
