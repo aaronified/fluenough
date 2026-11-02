@@ -1,0 +1,167 @@
+schema: 1
+id: "as-money"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "money"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3960"
+    target: "ধন"
+    reading: "dhôn"
+    ipa: "dʱɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ধন বহুত।", reading: "dhôn bohut.", ipa: "dʱɔn bohut" }
+      - { target: "ধন বেছি মানুহ।", reading: "dhôn besi mānuh.", ipa: "dʱɔn besi manuh" }
+  - id: "as-3961"
+    target: "আয়"
+    reading: "āy"
+    ipa: "aj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আয় বেছি।", reading: "āy besi.", ipa: "aj besi" }
+      - { target: "মোৰ আয় কম।", reading: "mur āy kom.", ipa: "mʊɹ aj kɔm" }
+  - id: "as-3962"
+    target: "ব্যয়"
+    reading: "byôy"
+    ipa: "bjɔj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ব্যয় বেছি।", reading: "byôy besi.", ipa: "bjɔj besi" }
+      - { target: "ব্যয় কম।", reading: "byôy kom.", ipa: "bjɔj kɔm" }
+  - id: "as-3963"
+    target: "সঞ্চয়"
+    reading: "xôñxôy"
+    ipa: "sɔnsɔj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সঞ্চয় ভাল।", reading: "xôñxôy bhāl.", ipa: "sɔnsɔj bʱal" }
+      - { target: "সঞ্চয় কৰা।", reading: "xôñxôy kôrā.", ipa: "sɔnsɔj kɔɹa" }
+  - id: "as-3964"
+    target: "বজেট"
+    reading: "bôzet"
+    ipa: "bɔzet"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বজেট ঠিক।", reading: "bôzet ṭhik.", ipa: "bɔzet tʰik" }
+      - { target: "বজেট বনোৱা।", reading: "bôzet bônōwā.", ipa: "bɔzet bɔnʊwa", bases: [{ word: "বনোৱা", base: "বনোৱা", reading: "bônōwā" }] }
+  - id: "as-3965"
+    target: "উধাৰ"
+    reading: "udhār"
+    ipa: "udʱaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "উধাৰ লোৱা।", reading: "udhār luwā.", ipa: "udʱaɹ lʊwa" }
+      - { target: "উধাৰ বহুত।", reading: "udhār bohut.", ipa: "udʱaɹ bohut" }
+  - id: "as-3966"
+    target: "ধাৰ"
+    reading: "dhār"
+    ipa: "dʱaɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ধাৰ আছে।", reading: "dhār āse.", ipa: "dʱaɹ ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "ধাৰ শোধ কৰা।", reading: "dhār xodh kôrā.", ipa: "dʱaɹ xʊdʱ kɔɹa", bases: [{ word: "শোধ", base: "শোধ", reading: "xodh" }] }
+  - id: "as-3967"
+    target: "কৰ"
+    reading: "kôr"
+    ipa: "kɔɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কৰ বেছি।", reading: "kôr besi.", ipa: "kɔɹ besi" }
+      - { target: "কৰ দিয়া।", reading: "kôr diyā.", ipa: "kɔɹ dija" }
+  - id: "as-3968"
+    target: "মুদ্ৰা"
+    reading: "mudrā"
+    ipa: "mudɹa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মুদ্ৰা নতুন।", reading: "mudrā nôtun.", ipa: "mudɹa notun" }
+      - { target: "মুদ্ৰা বহুত।", reading: "mudrā bohut.", ipa: "mudɹa bohut" }
+  - id: "as-3969"
+    target: "এটিএম"
+    reading: "eṭiem"
+    ipa: "etiem"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এটিএম আছে।", reading: "eṭiem āse.", ipa: "etiem ase", bases: [{ word: "আছে", base: "আছ", reading: "ās" }] }
+      - { target: "এটিএম খালী।", reading: "eṭiem khālī.", ipa: "etiem kʰali" }
+  - id: "as-3970"
+    target: "ৰসিদ"
+    reading: "rôsid"
+    ipa: "ɹosid"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰসিদ লোৱা।", reading: "rôsid luwā.", ipa: "ɹosid lʊwa" }
+      - { target: "ৰসিদ নাই।", reading: "rôsid nāi.", ipa: "ɹosid nai", bases: [{ word: "নাই", ref: "as-0142" }] }
+  - id: "as-3971"
+    target: "মাচুল"
+    reading: "māxul"
+    ipa: "masul"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মাচুল বেছি।", reading: "māxul besi.", ipa: "masul besi" }
+      - { target: "মাচুল কিমান?", reading: "māxul kimān?", ipa: "masul kiman" }
+  - id: "as-3972"
+    target: "খৰচ কৰা"
+    reading: "khôrôx kôrā"
+    ipa: "kʰɔɹɔs kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "খৰচ", base: "খৰচ", reading: "khôrôx" }
+    examples:
+  - id: "as-3973"
+    target: "ধাৰ লোৱা"
+    reading: "dhār luwā"
+    ipa: "dʱaɹ lʊwa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+  - id: "as-3974"
+    target: "জমা কৰা"
+    reading: "zomā kôrā"
+    ipa: "zɔma kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "জমা", base: "জমা", reading: "zomā" }
+    examples:
+  - id: "as-3975"
+    target: "ধাৰ শোধ কৰা"
+    reading: "dhār xodh kôrā"
+    ipa: "dʱaɹ xʊdʱ kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "শোধ", base: "শোধ", reading: "xodh" }
+    examples:

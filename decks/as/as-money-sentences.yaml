@@ -1,0 +1,77 @@
+schema: 1
+id: "as-money-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3976"
+    target: "মোৰ আয় বেছি আৰু ব্যয় কম।"
+    reading: "mur āy besi āru byôy kom."
+    ipa: "mʊɹ aj besi aɹu bjɔj kɔm"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ধাৰ", reading: "dhār", kind: "word" }
+      - { id: "c2", word: "সঞ্চয়", reading: "xôñxôy", kind: "word" }
+  - id: "as-3977"
+    target: "বজেট ঠিক কৰা।"
+    reading: "bôzet ṭhik kôrā."
+    ipa: "bɔzet tʰik kɔɹa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "কৰ", reading: "kôr", kind: "word" }
+      - { id: "c2", word: "মাচুল", reading: "māxul", kind: "word" }
+  - id: "as-3978"
+    target: "এটিএমত টকা আছে।"
+    reading: "eṭiemôt tôkā āse."
+    ipa: "etiemɔt tɔka ase"
+    pos: "phrase"
+    bases:
+      - { word: "এটিএমত", ref: "as-3969" }
+      - { word: "আছে", base: "আছ", reading: "ās" }
+    confusables:
+      - { id: "c1", word: "খালী", reading: "khālī", kind: "word" }
+      - { id: "c2", word: "ৰসিদ", reading: "rôsid", kind: "word" }
+  - id: "as-3979"
+    target: "ৰসিদ লোৱা।"
+    reading: "rôsid luwā."
+    ipa: "ɹosid lʊwa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "উধাৰ", reading: "udhār", kind: "word" }
+      - { id: "c2", word: "মুদ্ৰা", reading: "mudrā", kind: "word" }
+  - id: "as-3980"
+    target: "ধাৰ শোধ কৰা।"
+    reading: "dhār xodh kôrā."
+    ipa: "dʱaɹ xʊdʱ kɔɹa"
+    pos: "phrase"
+    bases:
+      - { word: "শোধ", base: "শোধ", reading: "xodh" }
+    confusables:
+      - { id: "c1", word: "উধাৰ লোৱা", reading: "udhār luwā", kind: "word" }
+      - { id: "c2", word: "সঞ্চয় কৰা", reading: "xôñxôy kôrā", kind: "word" }
+  - id: "as-3981"
+    target: "কৰ দিয়া।"
+    reading: "kôr diyā."
+    ipa: "kɔɹ dija"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খৰচ", reading: "khôrôx", kind: "word" }
+      - { id: "c2", word: "ধন", reading: "dhôn", kind: "word" }
+  - id: "as-3982"
+    target: "নগদ টকা লাগে।"
+    reading: "nôgôd tôkā lāge."
+    ipa: "nɔɡɔd tɔka laɡe"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "কাৰ্ড", reading: "kārd", kind: "word" }
+      - { id: "c2", word: "অনলাইন", reading: "ônlāin", kind: "word" }
+  - id: "as-3983"
+    target: "আয় কম।"
+    reading: "āy kom."
+    ipa: "aj kɔm"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ব্যয়", reading: "byôy", kind: "word" }
+      - { id: "c2", word: "বেছি", reading: "besi", kind: "word" }

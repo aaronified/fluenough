@@ -708,11 +708,14 @@ units:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
   - decks: ["as-reading-abstract-words"]
     words: 0
-  - planned: { id: "as-money", theme: "money", words: 45 }
+  - decks: ["as-money", "as-money-sentences", "*"]
+    words: 16
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bill-and-receipt", text: { "en": "A bill and a receipt" } }
+  - decks: ["as-reading-money"]
+    words: 0
   - planned: { id: "as-grammar-reported-speech", grammar: "reported-speech" }
     listening_passages:
       - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
