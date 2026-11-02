@@ -1,0 +1,218 @@
+schema: 1
+id: "ja-demonstratives"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0721"
+    target: "これ"
+    words: ["これ"]
+    reading: "kore"
+    ipa: "koɾe"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "これはつくえです。"
+        words: ["これ", "は", "つくえ", "です"]
+        reading: "kore wa tsukue desu."
+        ipa: "koɾe wa tsɯkɯe desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "これはいすですか。"
+        words: ["これ", "はい", "す", "です", "か"]
+        reading: "kore hai su desu ka."
+        ipa: "koɾe hai sɯ desɯ ka"
+        bases:
+          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0722"
+    target: "それ"
+    words: ["それ"]
+    reading: "sore"
+    ipa: "soɾe"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "それはりんごです。"
+        words: ["それ", "は", "りんご", "です"]
+        reading: "sore wa ringo desu."
+        ipa: "soɾe wa ɾiɴɡo desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "それはぎゅうにゅうですか。"
+        words: ["それ", "は", "ぎゅうにゅう", "です", "か"]
+        reading: "sore wa gyuunyuu desu ka."
+        ipa: "soɾe wa gjɯːɲɯː desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0723"
+    target: "あれ"
+    words: ["あれ"]
+    reading: "are"
+    ipa: "aɾe"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "あれはとうきょうです。"
+        words: ["あれ", "は", "とうきょう", "です"]
+        reading: "are wa toukyou desu."
+        ipa: "aɾe wa toːkjoː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "あれはがっこうですか。"
+        words: ["あれ", "は", "がっこう", "です", "か"]
+        reading: "are wa gakkou desu ka."
+        ipa: "aɾe wa ɡakkoː desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0724"
+    target: "どれ"
+    words: ["どれ"]
+    reading: "dore"
+    ipa: "doɾe"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "どれがいすですか。"
+        words: ["どれ", "が", "いす", "です", "か"]
+        reading: "dore ga isu desu ka."
+        ipa: "doɾe ɡa isɯ desɯ ka"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "どれがりんごですか。"
+        words: ["どれ", "が", "りんご", "です", "か"]
+        reading: "dore ga ringo desu ka."
+        ipa: "doɾe ɡa ɾiɴɡo desɯ ka"
+        bases:
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0725"
+    target: "この"
+    words: ["この"]
+    reading: "kono"
+    ipa: "kono"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "このいぬはおおきいです。"
+        words: ["この", "いぬ", "は", "おおきい", "です"]
+        reading: "kono inu wa ookii desu."
+        ipa: "kono inɯ wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "このがっこうはしずかです。"
+        words: ["この", "がっこう", "は", "しずか", "です"]
+        reading: "kono gakkou wa shizuka desu."
+        ipa: "kono ɡakkoː wa ɕidzɯka desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-0726"
+    target: "その"
+    words: ["その"]
+    reading: "sono"
+    ipa: "sono"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "そのかぎはどこですか。"
+        words: ["その", "かぎ", "は", "どこ", "です", "か"]
+        reading: "sono kagi wa doko desu ka."
+        ipa: "sono kaɡi wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "そのひとはせんせいです。"
+        words: ["その", "ひと", "は", "せんせい", "です"]
+        reading: "sono hito wa sensei desu."
+        ipa: "sono çito wa seɴseː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-0727"
+    target: "あの"
+    words: ["あの"]
+    reading: "ano"
+    ipa: "ano"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "あのいぬはつよいです。"
+        words: ["あの", "いぬ", "は", "つよい", "です"]
+        reading: "ano inu wa tsuyoi desu."
+        ipa: "ano inɯ wa tsɯjoi desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "あのひとはだれですか。"
+        words: ["あの", "ひと", "は", "だれ", "です", "か"]
+        reading: "ano hito wa dare desu ka."
+        ipa: "ano çito wa daɾe desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0728"
+    target: "どの"
+    words: ["どの"]
+    reading: "dono"
+    ipa: "dono"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "どのいぬですか。"
+        words: ["どの", "いぬ", "です", "か"]
+        reading: "dono inu desu ka."
+        ipa: "dono inɯ desɯ ka"
+        bases:
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "どのがっこうですか。"
+        words: ["どの", "がっこう", "です", "か"]
+        reading: "dono gakkou desu ka."
+        ipa: "dono ɡakkoː desɯ ka"
+        bases:
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-0739"
+    kind: "set"
+    members:
+      - ref: "ja-0721"
+      - ref: "ja-0722"
+      - ref: "ja-0723"
+      - ref: "ja-0724"
+      - ref: "ja-0725"
+      - ref: "ja-0726"
+      - ref: "ja-0727"
+      - ref: "ja-0728"

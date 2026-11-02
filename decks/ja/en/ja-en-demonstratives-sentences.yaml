@@ -1,0 +1,66 @@
+schema: 1
+id: "ja-en-demonstratives-sentences"
+kind: "layer"
+core: "ja-demonstratives-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This, that and which in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0729":
+    native: "This is my desk."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "いす (isu) is a chair, not a desk."
+      w2:
+        why: "はこ (hako) is a box."
+  "ja-0730":
+    native: "Is that a school chair?"
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "つくえ (tsukue) is a desk, not a chair."
+      w2:
+        why: "あれ (are) means that one over there."
+  "ja-0731":
+    native: "That person over there is a teacher."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "その (sono) means that one near you, not over there."
+      w2:
+        why: "どの (dono) asks which."
+  "ja-0732":
+    native: "Which dog is strong?"
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "この (kono) means this, not which."
+      w2:
+        why: "あの (ano) means that over there."

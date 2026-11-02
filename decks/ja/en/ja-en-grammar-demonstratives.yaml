@@ -1,0 +1,20 @@
+schema: 1
+id: "ja-en-grammar-demonstratives"
+kind: "layer"
+core: "ja-grammar-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This, that and which, before a noun"
+description: "この (kono), その (sono), あの (ano) and どの (dono) come before a noun: this, that near you, that over there, and which. Every noun a course deck teaches has a row, except places, times and amounts. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "kono": "this {meaning}"
+    "sono": "that {meaning} (near you)"
+    "ano": "that {meaning} (over there)"
+    "dono": "which {meaning}"
+rules:
+  "ja-rule-kosoado":
+    name: "この (kono), その (sono), あの (ano), どの (dono): this, that, which"
+    explanation: "{1} means this, {2} that near you, {3} that over there, and {4} which, each before a noun: {5} means this dog."

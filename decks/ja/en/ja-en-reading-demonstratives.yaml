@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-demonstratives"
+name: "Japanese reading: this, that and which"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-demonstratives-1"
+    title: "A desk and a dog"
+    sentences:
+      - text: "これはつくえです。"
+        reading: "kore wa tsukue desu."
+      - text: "あれはとうきょうです。"
+        reading: "are wa toukyou desu."
+      - text: "そのいぬはおおきいです。"
+        reading: "sono inu wa ookii desu."
+      - text: "どのいぬですか。"
+        reading: "dono inu desu ka."
+    questions:
+      - id: "ja-0733"
+        prompt:
+          en: "Which line says that this is a desk?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0734"
+        prompt:
+          en: "The second line says that the thing over there is Tokyo."
+        answer: true
+      - id: "ja-0735"
+        prompt:
+          en: "Which line asks which dog?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-demonstratives-2"
+    title: "A lost key"
+    sentences:
+      - text: "このかぎはどこですか。"
+        reading: "kono kagi wa doko desu ka."
+      - text: "そのひとはせんせいです。"
+        reading: "sono hito wa sensei desu."
+      - text: "あのがっこうはしずかです。"
+        reading: "ano gakkou wa shizuka desu."
+      - text: "それはりんごですか。"
+        reading: "sore wa ringo desu ka."
+    questions:
+      - id: "ja-0736"
+        prompt:
+          en: "Which line asks where the key is?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0737"
+        prompt:
+          en: "The third line says that the school over there is quiet."
+        answer: true
+      - id: "ja-0738"
+        prompt:
+          en: "Which line asks whether that is an apple?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
