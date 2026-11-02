@@ -456,7 +456,8 @@ units:
       - { id: "the-door-is-open", text: { "en": "Describing a scene with zhe: the door is open, he is wearing a red coat, she sits reading" } }
     reading_passages:
       - { id: "photo-description", text: { "en": "A short description of a family photo" } }
-  - planned: { id: "zh-animals", theme: "animals", words: 35 }
+  - decks: ["zh-animals", "zh-animals-sentences", "zh-reading-animals", "*"]
+    words: 35
     listening_passages:
       - { id: "a-zoo-visit", text: { "en": "A child names the animals seen at a zoo, each with its measure word" } }
     reading_passages:
