@@ -45,7 +45,6 @@ from pathlib import Path
 
 import yaml
 
-import fast_yaml
 from pick_warning import distance, letters, segments
 
 RUDE = "offensive"
@@ -138,8 +137,8 @@ def _safe_load(text: str) -> object:
         yaml, "CSafeLoader", None)
     if loader is not None:
         try:
-            return fast_yaml.fast_load(text, loader)
-        except fast_yaml.Fallback:
+            return yaml.load(text, Loader=loader)
+        except Exception:  # noqa: BLE001
             pass
     return yaml.safe_load(text)
 

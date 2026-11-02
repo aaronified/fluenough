@@ -295,13 +295,29 @@ class Equivalence(unittest.TestCase):
             self.assertEqual((code, err), (0, ""), out)
 
 
+CHECK_ORDER = """
+import sys
+from pathlib import Path
+sys.path.insert(0, sys.argv[1])
+import validate_decks as vd
+
+paths = vd.collect(Path(sys.argv[2]))
+serial = vd.validate_many(paths, 1)
+assert any(r.errors for r in serial), "nothing to compare"
+for jobs in (2, 4, 7):
+    parallel = vd.validate_many(paths, jobs)
+    assert [r.path for r in parallel] == paths, f"--jobs {jobs}: order"
+    assert parallel == serial, f"--jobs {jobs}: reports"
+print("ok", len(paths))
+"""
+
+
 class ManyFiles(unittest.TestCase):
     """More files than a worker takes at a time, reported in the order given."""
 
     def test_jobs_make_the_reports_of_one_process_in_order(self) -> None:
-        sys.path.insert(0, str(REPO / "tools"))
-        import validate_decks as vd
-
+        # In a process of its own: a test runner's process has threads, and
+        # forking one is what the validator itself declines to do.
         tmp = Path(tempfile.mkdtemp()).resolve()
         self.addCleanup(shutil.rmtree, tmp, True)
         files = zz_tree()
@@ -314,15 +330,12 @@ class ManyFiles(unittest.TestCase):
                 '  - { id: "zz-@ID@", target: "పిల్లి", reading: "pilli", native: "cat", pos: "noun" }\n')
         for n in range(40):
             text = deck.replace("@N@", f"{n:02d}").replace("@ID@", str(7000 + n))
-            files[f"zz/zz-en-x{n:02d}.yaml"] = text if n % 2 else text.replace("pos: \"noun\"", "pos: \"nope\"")
+            files[f"zz/zz-en-x{n:02d}.yaml"] = text if n % 2 else text.replace('pos: "noun"', 'pos: "nope"')
         decks = build(tmp, "zz", lambda f: f.update(files))
-        paths = vd.collect(decks)
-        serial = vd.validate_many(paths, 1)
-        for jobs in (2, 4, 7):
-            parallel = vd.validate_many(paths, jobs)
-            self.assertEqual([r.path for r in parallel], paths)
-            self.assertEqual(parallel, serial, f"--jobs {jobs}")
-        self.assertTrue(any(r.errors for r in serial))
+        done = subprocess.run([sys.executable, "-c", CHECK_ORDER, str(REPO / "tools"), str(decks)],
+                              capture_output=True, text=True, check=False)
+        self.assertEqual((done.returncode, done.stdout.split()[:1]), (0, ["ok"]),
+                         done.stdout + done.stderr)
 
 
 if __name__ == "__main__":

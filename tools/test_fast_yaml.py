@@ -2,7 +2,7 @@
 """Reading a deck's YAML the fast way gives what the slow way gave.
 
 tools/validate_decks.py reads each text once, with libyaml where PyYAML has it
-(tools/fast_yaml.py), and hands every caller a private copy. A deck must read
+(`_fast_load`), and hands every caller a private copy. A deck must read
 to the same data, and a broken one fail with the same message, as with the
 pure-Python DeckLoader the validator always used. Stdlib `unittest` plus PyYAML.
 """
@@ -17,7 +17,7 @@ import yaml
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import fast_yaml  # noqa: E402
+import offensive_alikes  # noqa: E402
 import validate_decks as vd  # noqa: E402
 
 GOOD = {
@@ -95,10 +95,11 @@ class Reading(unittest.TestCase):
                 except yaml.YAMLError as exc:
                     want = ("error", str(exc))
                 try:
-                    got = ("data", fast_yaml.fast_load(text, yaml.CSafeLoader))
-                except fast_yaml.Fallback:
-                    got = ("data", yaml.safe_load(text)) if want[0] == "data" else want
-                self.assertTrue(want == got or same(want[1], got[1]))
+                    got = ("data", offensive_alikes._safe_load(text))
+                except yaml.YAMLError as exc:
+                    got = ("error", str(exc))
+                self.assertEqual(want[0], got[0])
+                self.assertTrue(want[1] == got[1] if want[0] == "error" else same(want[1], got[1]))
 
 
 if __name__ == "__main__":

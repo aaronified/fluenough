@@ -20,6 +20,7 @@ import copy
 import os
 import re
 import sys
+import threading
 import unicodedata
 import datetime
 import hashlib
@@ -30,7 +31,6 @@ from urllib.parse import urlparse
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-import fast_yaml  # noqa: E402
 from rater_codes import rater_code  # noqa: E402
 
 try:
@@ -452,6 +452,79 @@ else:  # PyYAML built without libyaml, or the escape hatch for debugging
     CDeckLoader = None
 
 
+# Reading a deck's YAML faster, with the same result. libyaml, which
+# `yaml.CParser` is, is quick at the first half of the job only: turning the
+# text into nodes. Building the data from them stays in Python and takes most
+# of the time. [_fast_load] does that for the plain case, a document of
+# mappings, lists and scalars, which every deck is, and gives up on anything
+# else. It never has an opinion of its own: a text it will not read, for any
+# reason, raises [_Fallback], and [_load_deck] reads it with [DeckLoader], so
+# that every error message is that loader's. What it does read it reads to the
+# same data, scalar for scalar, key order included (tools/test_fast_yaml.py).
+
+
+class _Fallback(Exception):
+    """Not read here; read it with the loader of record."""
+
+
+_TAG = "tag:yaml.org,2002:"
+_KEY_TAGS = frozenset(_TAG + t for t in ("str", "int", "float", "bool", "null"))
+
+
+def _fast_load(text: str, loader_class: type) -> object:
+    """`yaml.load(text, Loader=L)`, where [loader_class] is the libyaml-backed
+    twin of L (one that builds nodes with `yaml.CParser`). Raises [_Fallback]
+    for anything but mappings, lists and scalars, for a duplicate key, for a
+    `<<` key and for every error."""
+    loader = loader_class(text)
+    try:
+        node = loader.get_single_node()
+        if node is None:
+            return None
+        made: dict[int, object] = {}
+        scalar, mapping, sequence = (yaml.ScalarNode, yaml.MappingNode,
+                                     yaml.SequenceNode)
+        construct = loader.construct_object
+        str_tag, seq_tag, map_tag = _TAG + "str", _TAG + "seq", _TAG + "map"
+
+        def build(node: yaml.Node) -> object:
+            t = type(node)
+            if t is scalar:
+                if node.tag == str_tag:
+                    return node.value
+                return construct(node, deep=True)
+            done = made.get(id(node), made)
+            if done is not made:
+                return done
+            if t is sequence and node.tag == seq_tag:
+                items: list = []
+                made[id(node)] = items
+                items.extend([build(n) for n in node.value])
+                return items
+            if t is mapping and node.tag == map_tag:
+                result: dict = {}
+                made[id(node)] = result
+                for key_node, value_node in node.value:
+                    if type(key_node) is not scalar \
+                            or key_node.tag not in _KEY_TAGS \
+                            or key_node.value == "<<":
+                        raise _Fallback
+                    key = build(key_node)
+                    if key in result:
+                        raise _Fallback
+                    result[key] = build(value_node)
+                return result
+            raise _Fallback
+
+        return build(node)
+    except _Fallback:
+        raise
+    except Exception as exc:  # noqa: BLE001 - re-read, for its message
+        raise _Fallback from exc
+    finally:
+        loader.dispose()
+
+
 # Every file is read many times in one run: a layer reads its core, each core
 # looks at its siblings' `native`, a path looks at the paths beside it. The
 # parsed text is kept, by the digest of the text (so a file written again is
@@ -515,8 +588,8 @@ def _load_deck(text: str) -> object:
         tree = _NO_DATA
         if CDeckLoader is not None:
             try:
-                tree = fast_yaml.fast_load(text, CDeckLoader)
-            except fast_yaml.Fallback:
+                tree = _fast_load(text, CDeckLoader)
+            except _Fallback:
                 tree = _NO_DATA
         if tree is _NO_DATA:
             tree = yaml.load(text, Loader=DeckLoader)
@@ -2815,7 +2888,10 @@ PARALLEL_MIN_FILES = 24
 
 def default_jobs() -> int:
     """The workers [validate_many] uses unless told: one per CPU this process
-    may run on."""
+    may run on, and none where forking is unsafe, in a process with other
+    threads (a test runner's, say)."""
+    if threading.active_count() > 1:
+        return 1
     try:
         return max(1, len(os.sched_getaffinity(0)))
     except (AttributeError, OSError):
