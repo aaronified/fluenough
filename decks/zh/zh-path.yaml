@@ -439,7 +439,8 @@ units:
       - { id: "have-you-ever", text: { "en": "Asking and saying whether you have ever been to Beijing or eaten Peking duck" } }
     reading_passages:
       - { id: "experience-survey", text: { "en": "A short survey about experiences" } }
-  - planned: { id: "zh-seasons", theme: "seasons", words: 40 }
+  - decks: ["zh-seasons", "zh-seasons-sentences", "zh-reading-seasons", "*"]
+    words: 40
     listening_passages:
       - { id: "spring-outing", text: { "en": "Friends plan a spring outing to see the flowers" } }
     reading_passages:
