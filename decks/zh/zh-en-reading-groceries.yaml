@@ -53,34 +53,34 @@
     - "en": "milk, bread, rice and eggs"
     - "en": "milk, bread, rice and meat"
     "answer": 1
-- "id": "zh-shelf-notice"
-  "title": "A notice on a shelf"
+- "id": "zh-shopping-list"
+  "title": "A handwritten shopping list"
   "theme": "groceries"
   "sentences":
-  - "text": "这 个 牛奶 过期 了。"
-    "reading": "zhè ge niúnǎi guòqī le."
-  - "text": "请 看 保质期。"
-    "reading": "qǐng kàn bǎozhìqī."
-  - "text": "饺子 是 冷冻 的。"
-    "reading": "jiǎozi shì lěngdòng de."
-  - "text": "购物车 在 门口。"
-    "reading": "gòuwùchē zài ménkǒu."
+  - "text": "牛奶 两 瓶。"
+    "reading": "niúnǎi liǎng píng."
+  - "text": "面包 一 个。"
+    "reading": "miànbāo yí gè."
+  - "text": "糖 和 盐。"
+    "reading": "táng hé yán."
+  - "text": "饼干 打折。"
+    "reading": "bǐnggān dǎzhé."
   "questions":
   - "id": "zh-0873"
     "prompt":
-      "en": "这 个 牛奶 过期 了 (zhè ge niúnǎi guòqī le) says the milk:"
+      "en": "牛奶 两 瓶 (niúnǎi liǎng píng) means:"
     "options":
-    - "en": "is past its date"
-    - "en": "is free"
+    - "en": "two bottles of milk"
+    - "en": "two cups of milk"
     "answer": 1
   - "id": "zh-0874"
     "prompt":
-      "en": "请 看 保质期 (qǐng kàn bǎozhìqī) asks you to look at the best before date."
+      "en": "糖 和 盐 (táng hé yán) on the list means the sugar and the salt."
     "answer": true
   - "id": "zh-0875"
     "prompt":
-      "en": "饺子 是 冷冻 的 (jiǎozi shì lěngdòng de) means the dumplings are:"
+      "en": "饼干 打折 (bǐnggān dǎzhé) says the biscuits are:"
     "options":
-    - "en": "frozen"
-    - "en": "hot"
+    - "en": "on sale"
+    - "en": "sold out"
     "answer": 1
