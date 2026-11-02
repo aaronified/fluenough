@@ -675,11 +675,14 @@ units:
       - { id: "advert-slogans", text: { "en": "Short advert slogans" } }
   - decks: ["as-reading-emphasis"]
     words: 0
-  - planned: { id: "as-law", theme: "law", words: 35 }
+  - decks: ["as-law", "as-law-sentences", "*"]
+    words: 16
     listening_passages:
       - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
     reading_passages:
       - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
+  - decks: ["as-reading-law"]
+    words: 0
   - planned: { id: "as-verbs-4", theme: "verbs-4", words: 65 }
     listening_passages:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }

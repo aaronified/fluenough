@@ -1,0 +1,69 @@
+schema: 1
+id: "as-en-reading-law"
+name: "Assamese reading: law: police, courts, rights and the rules"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-police-complaint"
+    title: "Making a complaint at a police station"
+    theme: "law"
+    sentences:
+      - text: "মোৰ বেগ চুৰি গ'ল।"
+        reading: "mur beg suri gol."
+      - text: "মই থানাত অভিযোগ কৰিম।"
+        reading: "moi thānāt ôbhiyog kôrim."
+      - text: "অপৰাধী কোন?"
+        reading: "oporādhī kon?"
+      - text: "সাক্ষী আছে।"
+        reading: "xākkhī āse."
+    questions:
+      - id: "as-3880"
+        prompt: { en: "The speaker lost a bag." }
+        answer: true
+      - id: "as-3881"
+        prompt: { en: "Where will the complaint be made?" }
+        options:
+          - { en: "At the police station" }
+          - { en: "At the bank" }
+          - { en: "At the school" }
+        answer: 1
+      - id: "as-3882"
+        prompt: { en: "Are there witnesses?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+        answer: 1
+  - id: "as-rights-leaflet"
+    title: "A leaflet on a tenant's rights"
+    theme: "law"
+    sentences:
+      - text: "ভাড়াটীয়াৰ অধিকাৰ আছে।"
+        reading: "bhārāṭiyār ôdhikār āse."
+      - text: "মালিকে বিনা কাৰণে ঘৰ নল'ব।"
+        reading: "mālike bina kāraṇe ghôr nolôb."
+      - text: "আইনে সুৰক্ষা দিয়ে।"
+        reading: "āine xurôkkhā diye."
+      - text: "ন্যায়ৰ বাবে কথা কওক।"
+        reading: "nyāyôr bābe kôthā kôôk."
+    questions:
+      - id: "as-3883"
+        prompt: { en: "Tenants have rights." }
+        answer: true
+      - id: "as-3884"
+        prompt: { en: "What may an owner not do without a reason?" }
+        options:
+          - { en: "Keep the house" }
+          - { en: "Take back the house" }
+          - { en: "Paint it" }
+        answer: 2
+      - id: "as-3885"
+        prompt: { en: "What should a tenant do for justice?" }
+        options:
+          - { en: "Stay silent" }
+          - { en: "Speak up" }
+          - { en: "Leave at once" }
+        answer: 2
