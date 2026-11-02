@@ -117,6 +117,32 @@ class LanguagesList(unittest.TestCase):
                 self.assertTrue((folder / "OFL.txt").is_file())
                 self.assertTrue(family.startswith("Noto Sans"))
 
+    def test_persian_and_pashto_are_drawn_in_naskh_and_match_the_app(self) -> None:
+        self.assertEqual(deck_index.LANGUAGE_FONTS, {
+            ("fa", "perso_arabic"): "perso_arabic_naskh",
+            ("ps", "perso_arabic"): "perso_arabic_naskh"})
+        self.assertEqual(deck_index.FONTS["perso_arabic_naskh"][0], "Noto Naskh Arabic")
+        dart = (REPO / "lib" / "core" / "decks" / "script_fonts.dart").read_text("utf-8")
+        in_app = dict(re.findall(r"'(\w+:\w+)': '(\w+)'", dart))
+        in_tool = {f"{c}:{s}": f for (c, s), f in deck_index.LANGUAGE_FONTS.items()}
+        self.assertEqual(in_app, in_tool)
+        # Hindustani keeps the Nastaliq font.
+        fonts = deck_index._font_entries(["devanagari", "perso_arabic"], "hi")
+        self.assertEqual([f["script"] for f in fonts], ["devanagari", "perso_arabic"])
+        fonts = deck_index._font_entries(["perso_arabic"], "fa")
+        self.assertEqual([(f["script"], f["family"]) for f in fonts],
+                         [("perso_arabic_naskh", "Noto Naskh Arabic")])
+        for entry in self.langs:
+            if entry["code"] in ("fa", "ps"):
+                self.assertIn("dialect", entry)
+
+    def test_malay_teaches_malaysian_and_sanskrit_is_classical(self) -> None:
+        by_code = {e["code"]: e for e in self.langs}
+        self.assertIn("Malaysian", by_code["ms"]["dialect"])
+        self.assertEqual(by_code["sa"]["name"], "Classical Sanskrit")
+        self.assertIn("Sanskrit", by_code["sa"]["aliases"])
+        self.assertIn("Pāṇini", by_code["sa"]["dialect"])
+
     def test_the_first_words_languages_are_listed_in_their_own_script(self) -> None:
         by_code = {e["code"]: e for e in self.langs}
         expect = {

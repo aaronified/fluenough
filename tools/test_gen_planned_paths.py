@@ -183,6 +183,16 @@ class OnlyTheNamedLanguages(unittest.TestCase):
             self.assertEqual(gp.main(["--root", tmp, "--only", "af", "--force"]), 0)
             self.assertEqual(path.read_text("utf-8"), gp.render("af"))
 
+    def test_an_empty_only_is_refused_and_writes_nothing(self) -> None:
+        with tempfile.TemporaryDirectory() as tmp:
+            self.assertEqual(gp.main(["--root", tmp, "--only", ""]), 2)
+            self.assertEqual(list(Path(tmp).rglob("*")), [])
+
+    def test_sanskrit_follows_panini(self) -> None:
+        topics = {t for u in gp.build_units("sa") if u["kind"] == "grammar" for t in u["topics"]}
+        self.assertTrue({"sandhi", "sutra-style-rules", "verb-classes", "karaka",
+                         "samasa", "past-participle"} <= topics)
+
     def test_an_unknown_code_is_refused(self) -> None:
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual(gp.main(["--root", tmp, "--only", "zz"]), 2)

@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- **Six more languages on Add a language.** Afrikaans, Dutch, Ukrainian, Indonesian, Persian and Pashto are listed with no course yet, as Portuguese and Catalan are, and Persian and Pashto sit in a new Iranian family. Indonesian is now a language of its own, no longer found as an alias of Malay. Santali (Ol Chiki) and Yiddish (Hebrew script) can offer their script's font to download once their courses arrive (owner, 2026-11-02).
+- **Six more languages on Add a language.** Afrikaans, Dutch, Ukrainian, Indonesian, Persian and Pashto are listed with no course yet, as Portuguese and Catalan are, and Persian and Pashto sit in a new Iranian family and are drawn in Noto Naskh Arabic, which they offer to download. Indonesian is now a language of its own, no longer found as an alias of Malay, and Malay teaches Malaysian only. Classical Sanskrit is the name of the Sanskrit course. Hebrew and Yiddish offer the Hebrew font to download; Santali's Ol Chiki font waits for its course (owner, 2026-11-02).
 
 ### Changed
 

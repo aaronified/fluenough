@@ -13,6 +13,7 @@ import '../../app/placement_credit.dart';
 import '../../core/data/spoken_languages.dart' show SpokenLanguage;
 import '../../core/decks/font_check.dart';
 import '../../core/decks/language_catalog.dart';
+import '../../core/decks/script_fonts.dart';
 import '../../core/models/deck.dart' show LanguageInfo;
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
@@ -365,15 +366,17 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   Future<bool> _scriptCheck(String script) async {
     final l10n = AppLocalizations.of(context)!;
     final fonts = _state.fontCheck;
-    if (scriptSamples.containsKey(script) &&
-        fonts.stateOf(script) == FontCheckState.notChecked) {
-      await showFontCheckSheet(context, script);
+    // The font this language draws the script in: Persian's Naskh, say.
+    final fontScript = fontScriptFor(_code, script);
+    if (scriptSamples.containsKey(fontScript) &&
+        fonts.stateOf(fontScript) == FontCheckState.notChecked) {
+      await showFontCheckSheet(context, fontScript);
     }
     if (!mounted) return false;
     final name = l10n.scriptNameOr(script, _view.name);
     final ok =
-        !scriptSamples.containsKey(script) ||
-        switch (fonts.stateOf(script)) {
+        !scriptSamples.containsKey(fontScript) ||
+        switch (fonts.stateOf(fontScript)) {
           FontCheckState.phoneFont || FontCheckState.downloaded => true,
           _ => false,
         };

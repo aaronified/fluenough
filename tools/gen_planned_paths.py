@@ -25,7 +25,8 @@ for living languages and `levels` for the ancient and reconstructed ones.
 and never overwrites a path file that already exists unless `--force` is
 given: a new course's plan is made in one safe step, without touching the
 hand-edited paths of the others. A code that is a `WIRED` course is wired
-only when named. Pure Python 3 standard library.
+only when named. `--check --only X` cannot report drift for a path file
+that exists: it is left alone, so it counts as no difference. Pure Python 3 standard library.
 """
 
 from __future__ import annotations
@@ -600,16 +601,17 @@ G = {
     "sanskrit": {
         "a1": [("case-system", ["case-system"]),
                ("a-stems", ["a-stem-nouns"]),
-               ("present-system", ["present-system"])],
-        "a2": [("other-stems", ["other-noun-stems"]),
+               ("present-system", ["present-system", "verb-classes"])],
+        "a2": [("karakas", ["karaka"]),
+               ("other-stems", ["other-noun-stems"]),
                ("past-tenses", ["aorist", "perfect", "imperfect"]),
-               ("imperatives", ["imperative"]),
-               ("participles", ["participles"]),
-               ("compounds", ["compounds"])],
-        "b1": [("passive", ["passive"]),
+               ("participles", ["participles", "past-participle"]),
+               ("samasa", ["samasa"]),
+               ("imperatives", ["imperative"])],
+        "b1": [("sutra-rules", ["sutra-style-rules"]),
+               ("passive", ["passive"]),
                ("causatives", ["causatives"]),
                ("absolutives-infinitives", ["absolutives", "infinitives"]),
-               ("relative-clauses", ["relative-clauses"]),
                ("optative", ["optative"])],
     },
 }
@@ -708,7 +710,7 @@ LANGS = {
     "fil": L("Filipino", "austronesian_ph", genders=[],
              note="Numbers (native + Spanish-derived); ang/ng/sa markers; focus system; aspect affixes; Taglish code-switching."),
     "ms": L("Malay", "malay", genders=[],
-            note="Choose Malaysian or Indonesian; time markers (sudah/akan); affixes (ber-, me-, -kan, -i); reduplication; register."),
+            note="Malaysian and Bruneian Malay only (Indonesian is the course id); time markers (sudah/akan); affixes (ber-, me-, -kan, -i); reduplication; register."),
     "sw": L("Swahili", "bantu", genders=[],
             note="Noun classes (m-wa, ki-vi first); verb slots (subject-tense-object-root); tenses; negation; relatives; applicative/causative."),
     "ha": L("Hausa", "chadic", genders=["m", "f"], tones=True,
@@ -730,9 +732,9 @@ LANGS = {
     "id": L("Indonesian", "malay", genders=[],
             note="Standard Indonesian (Bahasa Indonesia), a course apart from Malay (ms); affixes (ber-, me-, -kan, -i); reduplication; register."),
     "fa": L("Persian", "persian", genders=[], script="perso_arabic", sound=["vowel-length"],
-            note="Perso-Arabic script (RTL), with short vowels unwritten; ezafe; no grammatical gender; compound verbs; choose Iranian or Afghan (Dari) standard."),
+            note="Perso-Arabic script (RTL), with short vowels unwritten; ezafe; no grammatical gender; compound verbs; the Iranian (Tehran) standard, drawn in Naskh."),
     "ps": L("Pashto", "pashto", genders=["m", "f"], script="pashto", sound=["retroflex-consonants"],
-            note="Perso-Arabic script (RTL) with extra letters; two genders; oblique case; ergative past; choose a dialect (Kandahar, Peshawar)."),
+            note="Perso-Arabic script (RTL) with extra letters; two genders; oblique case; ergative past; the southern (Kandahar) standard, drawn in Naskh."),
     "sat": L("Santali", "munda", genders=[], script="ol_chiki",
              note="Ol Chiki first (the other scripts Latin, Devanagari, Bengali); dual number and inclusive/exclusive pronouns; verb endings; animate and inanimate."),
     # Ancient and reconstructed (owner, 2026-10-31): reading courses with
@@ -743,7 +745,7 @@ LANGS = {
     "sa": L("Classical Sanskrit", "sanskrit", genders=["m", "f", "n"], ancient=True,
             script="devanagari_plain", levels={"A1": 400, "A2": 600, "B1": 900},
             sound=["vowel-length", "sandhi"], ancient_reason="is read here, not spoken",
-            note="A reading course in the classical language of Panini and the epics; Vedic Sanskrit is the course vsn."),
+            note="A reading course with a heavy focus on Panini's grammar (sandhi, sutra-style rules, dhatu and gana verb classes, karaka, samasa); Vedic Sanskrit is the course vsn."),
     "vsn": L("Vedic Sanskrit", "vedic", genders=["m", "f", "n"], ancient=True, script="devanagari",
              levels={"A1": 300, "A2": 400, "B1": 600}, sound=["pitch-accent"],
              note="A reading course in the language of the Vedic hymns."),
@@ -998,8 +1000,11 @@ def main(argv: list[str] | None = None) -> int:
                     help="with --only, rewrite a path file that already exists")
     args = ap.parse_args(argv)
     only = None
-    if args.only:
+    if args.only is not None:
         only = [c for c in args.only.split(",") if c]
+        if not only:
+            print("--only needs at least one language code", file=sys.stderr)
+            return 2
         unknown = [c for c in only if c not in LANGS and c not in WIRED]
         if unknown:
             print("unknown language code(s): " + ", ".join(unknown), file=sys.stderr)
