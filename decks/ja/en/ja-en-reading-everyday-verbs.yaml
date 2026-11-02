@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-everyday-verbs"
+name: "Japanese reading: everyday verbs"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-everyday-verbs-1"
+    title: "A morning at home"
+    sentences:
+      - text: "ちちははたらきます。"
+        reading: "chichi wa hatarakimasu."
+      - text: "はははごはんをつくります。"
+        reading: "wa haha gohan o tsukurimasu."
+      - text: "こどもはあそびます。"
+        reading: "kodomo wa asobimasu."
+      - text: "いぬはねます。"
+        reading: "inu wa nemasu."
+    questions:
+      - id: "ja-0382"
+        prompt:
+          en: "Which line says that someone cooks?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-0383"
+        prompt:
+          en: "The third line says that the child plays."
+        answer: true
+      - id: "ja-0384"
+        prompt:
+          en: "Which line says that the dog sleeps?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-everyday-verbs-2"
+    title: "A note on the table"
+    sentences:
+      - text: "ともだちはがっこうにいきます。"
+        reading: "tomodachi wa gakkou ni ikimasu."
+      - text: "あなたはなにをよみますか。"
+        reading: "anata wa nani o yomimasu ka."
+      - text: "わたしはえいごをならいます。"
+        reading: "watashi wa eigo o naraimasu."
+      - text: "わたしはかぎをもちます。"
+        reading: "watashi wa kagi o mochimasu."
+    questions:
+      - id: "ja-0385"
+        prompt:
+          en: "Which line asks what the reader reads?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-0386"
+        prompt:
+          en: "The third line says that the speaker learns English."
+        answer: true
+      - id: "ja-0387"
+        prompt:
+          en: "Which line says that the speaker carries a key?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
