@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-purpose"
+name: "Assamese reading: in order to: for doing something"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-why-are-you-going"
+    title: "Saying what you are going somewhere to do"
+    sentences:
+      - text: "তুমি ক'লৈ যাবা?"
+        reading: "tumi kolôi zābā?"
+      - text: "মই কিনিবৰ বাবে যাওঁ।"
+        reading: "moi kinibôr bābe zāum̐."
+      - text: "তাই শিকিবৰ বাবে আহে।"
+        reading: "tāi xikibôr bābe āhe."
+      - text: "আমি পঢ়িবৰ কাৰণে থাকোঁ।"
+        reading: "āmi pôrhibôr kārônē thākum̐."
+    questions:
+      - id: "as-3425"
+        prompt: { en: "The speaker goes to buy something." }
+        answer: true
+      - id: "as-3426"
+        prompt: { en: "Why does she come?" }
+        options:
+          - { en: "To buy" }
+          - { en: "To learn" }
+          - { en: "To sleep" }
+        answer: 2
+      - id: "as-3427"
+        prompt: { en: "Why do \"we\" stay?" }
+        options:
+          - { en: "To study" }
+          - { en: "To eat" }
+          - { en: "To travel" }
+        answer: 1
+  - id: "as-course-advert"
+    title: "An advert for a course: what it is for"
+    sentences:
+      - text: "এই কোৰ্স শিকিবৰ বাবে।"
+        reading: "ei kors xikibôr bābe."
+      - text: "পঢ়িবৰ বাবে কিতাপ দিয়া হ'ব।"
+        reading: "pôrhibôr bābe kitāp diyā hôb."
+      - text: "কথা কোৱাৰ বাবে অভ্যাস।"
+        reading: "kôthā kuwār bābe ôbhyās."
+      - text: "আহক, নাম লিখক।"
+        reading: "āhôk, nām likhôk."
+    questions:
+      - id: "as-3428"
+        prompt: { en: "The course is for learning." }
+        answer: true
+      - id: "as-3429"
+        prompt: { en: "What is given for studying?" }
+        options:
+          - { en: "Books" }
+          - { en: "Food" }
+          - { en: "Clothes" }
+        answer: 1
+      - id: "as-3430"
+        prompt: { en: "What does the advert ask people to do?" }
+        options:
+          - { en: "Sleep" }
+          - { en: "Write their name" }
+          - { en: "Leave" }
+        answer: 2

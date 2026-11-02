@@ -516,11 +516,15 @@ units:
       - { id: "form-instructions", text: { "en": "Instructions on an application form" } }
   - decks: ["as-reading-government"]
     words: 0
-  - planned: { id: "as-grammar-purpose", grammar: "purpose" }
+  - decks: ["as-grammar-purpose", "as-grammar-purpose-sentences"]
+    words: 0
+    grammar: ["purpose"]
     listening_passages:
       - { id: "why-are-you-going", text: { "en": "Saying what you are going somewhere to do" } }
     reading_passages:
       - { id: "course-advert", text: { "en": "An advert for a course: what it is for" } }
+  - decks: ["as-reading-purpose"]
+    words: 0
   - planned: { id: "as-technology", theme: "technology", words: 50 }
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
