@@ -6,6 +6,7 @@
 import 'dart:io';
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
@@ -820,6 +821,79 @@ void main() {
           expect(s.answer!.typed, 'xyz');
           expect(s.answer!.grade, 1);
         }
+      });
+
+      group('a word heard with only the vowel length changed', () {
+        // Telugu's own sounds file and decks, frozen for the tests.
+        Future<DrillSession> nanna(FixedSpeechEngine engine) async {
+          speech = engine;
+          state = AppState.test(
+            decks: RepositoryDeckSource('test/fixtures/ask_pin'),
+            speech: engine,
+            settings: SettingsNotifier(
+              spokenLanguages: const <String>['en'],
+              learningChosen: true,
+              enabledSkills: <Skill>{
+                ...Skill.values.where((s) => s.onByDefault),
+                Skill.speaking,
+              },
+            ),
+          );
+          await state.load();
+          await state.startSpeech();
+          final queue = state.buildSession(
+            DrillRequest.untaught('te-en-family', skill: Skill.speaking),
+          );
+          final items = queue.items
+              .where((i) => i.card.target == 'నాన్న')
+              .toList();
+          expect(items, isNotEmpty);
+          return DrillSession(state: state, items: items);
+        }
+
+        test('is close and passes, with the length as the contrast; another '
+            'consonant or a double consonant is still wrong', () async {
+          final s = await nanna(FixedSpeechEngine(onDevice: <String>{'te'}));
+          addTearDown(s.dispose);
+
+          s.checkSpoken(const <SpeechAlternative>[SpeechAlternative('నన్న')]);
+          expect(s.answer!.graded!.outcome, AnswerOutcome.closeDiacritics);
+          expect(s.answer!.grade, greaterThanOrEqualTo(Fsrs.passingGrade));
+          expect(s.answer!.contrast!.isVowelLength, isTrue);
+          expect(s.answer!.graded!.matched, 'నాన్న');
+          expect(s.firstTryFailed, isFalse);
+
+          for (final heard in <String>['నాన', 'నాన్ను']) {
+            final again = await nanna(
+              FixedSpeechEngine(onDevice: <String>{'te'}),
+            );
+            addTearDown(again.dispose);
+            again.checkSpoken(<SpeechAlternative>[SpeechAlternative(heard)]);
+            expect(again.answer!.graded!.outcome, AnswerOutcome.wrong);
+            expect(again.answer!.grade, 1);
+            expect(again.answer!.contrast?.isVowelLength, isNot(true));
+          }
+        });
+
+        test('counts when it is a later reading the recogniser was fairly '
+            'sure of, and not when it was not', () async {
+          final s = await nanna(FixedSpeechEngine(onDevice: <String>{'te'}));
+          addTearDown(s.dispose);
+          s.checkSpoken(const <SpeechAlternative>[
+            SpeechAlternative('నాన', confidence: 0.9),
+            SpeechAlternative('నన్న', confidence: 0.6),
+          ]);
+          expect(s.answer!.graded!.outcome, AnswerOutcome.closeDiacritics);
+          expect(s.answer!.typed, 'నన్న');
+
+          final low = await nanna(FixedSpeechEngine(onDevice: <String>{'te'}));
+          addTearDown(low.dispose);
+          low.checkSpoken(const <SpeechAlternative>[
+            SpeechAlternative('నాన', confidence: 0.9),
+            SpeechAlternative('నన్న', confidence: 0.1),
+          ]);
+          expect(low.answer!.graded!.outcome, AnswerOutcome.wrong);
+        });
       });
 
       test('nothing heard records nothing, and the card can be said again or '

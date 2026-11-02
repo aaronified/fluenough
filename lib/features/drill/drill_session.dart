@@ -845,31 +845,50 @@ class DrillSession extends ChangeNotifier {
     }
     // A wrong word that is the answer with one sound changed: the feedback
     // names the sound (ADR-0014's rule: only a slip that changes the word).
+    final sounds = graded.outcome.isCorrect
+        ? null
+        : _state.soundsFor(deck.language);
+    (SoundContrast, String)? contrastOf(SpeechAlternative a) {
+      if (sounds == null) return null;
+      for (final answer in accepted) {
+        final found = sounds.between(a.text, answer);
+        if (found != null) return (found, answer);
+      }
+      return null;
+    }
+
     SoundContrast? contrast;
     Card? heardCard;
-    String? contrastAnswer;
     if (!graded.outcome.isCorrect) {
-      final sounds = _state.soundsFor(deck.language);
-      if (sounds != null) {
-        for (final answer in accepted) {
-          contrast = sounds.between(said.text, answer);
-          if (contrast != null) {
-            contrastAnswer = answer;
+      var found = contrastOf(said);
+      // A recogniser cannot reliably tell a short vowel from a long one and
+      // returns the dictionary spelling, so a word that differs from the
+      // answer only in vowel length is "almost", not wrong: no red, and the
+      // feedback shows the contrast as a hint. Speech only. Any reading the
+      // recogniser was fairly sure of counts, not only the best.
+      if (found == null || !found.$1.isVowelLength) {
+        for (final other in alternatives) {
+          final confidence = other.confidence;
+          if (!identical(other, alternatives.first) &&
+              (confidence == null || confidence < speechConfidence)) {
+            continue;
+          }
+          final length = contrastOf(other);
+          if (length != null && length.$1.isVowelLength) {
+            said = other;
+            found = length;
             break;
           }
         }
       }
+      contrast = found?.$1;
       // The word heard, for its meaning and its IPA, whether or not it
       // differs from the answer by a named sound.
       heardCard = _state.cardSaying(deck.language, said.text);
-      // A recogniser cannot reliably tell a short vowel from a long one and
-      // returns the dictionary spelling, so a word that differs from the
-      // answer only in vowel length is "almost", not wrong: no red, and the
-      // feedback shows the contrast as a hint. Speech only.
-      if (contrast != null && contrast.isVowelLength) {
+      if (found != null && found.$1.isVowelLength) {
         graded = GradedAnswer(
           AnswerOutcome.closeDiacritics,
-          matched: contrastAnswer,
+          matched: found.$2,
         );
       }
     }
