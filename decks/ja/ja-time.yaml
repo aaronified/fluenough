@@ -258,18 +258,16 @@ cards:
     bases: "self"
     examples:
       - target: "でんしゃははやいです。"
-        words: ["でんしゃ", "は", "はやい", "です"]
-        reading: "densha wa hayai desu."
-        ipa: "deɴɕa wa hajai desɯ"
+        words: ["でんしゃ", "はは", "や", "い", "です"]
+        reading: "densha haha ya i desu."
+        ipa: "deɴɕa haha ja i desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "せんせいははやいです。"
-        words: ["せんせい", "は", "はやい", "です"]
-        reading: "sensei wa hayai desu."
-        ipa: "seɴseː wa hajai desɯ"
+        words: ["せんせい", "はは", "や", "い", "です"]
+        reading: "sensei haha ya i desu."
+        ipa: "seɴseː haha ja i desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
           - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0518"
     target: "まえ"
@@ -315,12 +313,11 @@ cards:
           - { word: "の", base: "の", reading: "no" }
           - { word: "ねます", ref: "ja-0352" }
       - target: "がっこうのあとです。"
-        words: ["がっこう", "の", "あと", "です"]
-        reading: "gakkou no ato desu."
-        ipa: "ɡakkoː no ato desɯ"
+        words: ["がっこう", "の", "あとで", "す"]
+        reading: "gakkou no atode su."
+        ipa: "ɡakkoː no atode sɯ"
         bases:
           - { word: "の", base: "の", reading: "no" }
-          - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0520"
     target: "ごぜん"
     words: ["ごぜん"]
@@ -361,11 +358,12 @@ cards:
         bases:
           - { word: "いきます", ref: "ja-0348" }
       - target: "ごごはいそがしいです。"
-        words: ["ごご", "は", "いそがしい", "です"]
-        reading: "gogo wa isogashii desu."
-        ipa: "ɡoɡo wa isoɡaɕiː desɯ"
+        words: ["ごご", "はい", "そ", "が", "し", "い", "です"]
+        reading: "gogo hai so ga shi i desu."
+        ipa: "ɡoɡo hai so ɡa ɕi i desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "が", base: "が", reading: "ga" }
           - { word: "です", base: "です", reading: "desu" }
   - id: "ja-0522"
     target: "さいきん"
@@ -448,11 +446,12 @@ cards:
     bases: "self"
     examples:
       - target: "しゅうはいそがしいです。"
-        words: ["しゅう", "は", "いそがしい", "です"]
-        reading: "shuu wa isogashii desu."
-        ipa: "ɕɯː wa isoɡaɕiː desɯ"
+        words: ["しゅう", "はい", "そ", "が", "し", "い", "です"]
+        reading: "shuu hai so ga shi i desu."
+        ipa: "ɕɯː hai so ɡa ɕi i desɯ"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "が", base: "が", reading: "ga" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "まいしゅうにほんごをならいます。"
         words: ["まいしゅう", "にほんご", "を", "ならいます"]
@@ -550,11 +549,11 @@ cards:
         bases:
           - { word: "です", base: "です", reading: "desu" }
       - target: "おわりはいつですか。"
-        words: ["おわり", "は", "いつ", "です", "か"]
-        reading: "owari wa itsu desu ka."
-        ipa: "owaɾi wa itsɯ desɯ ka"
+        words: ["おわり", "はい", "つ", "です", "か"]
+        reading: "owari hai tsu desu ka."
+        ipa: "owaɾi hai tsɯ desɯ ka"
         bases:
-          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はい", base: "はい", reading: "hai" }
           - { word: "です", base: "です", reading: "desu" }
           - { word: "か", base: "か", reading: "ka" }
   - id: "ja-0530"
