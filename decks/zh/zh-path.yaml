@@ -445,7 +445,8 @@ units:
       - { id: "spring-outing", text: { "en": "Friends plan a spring outing to see the flowers" } }
     reading_passages:
       - { id: "seasonal-greeting", text: { "en": "A seasonal greeting card" } }
-  - planned: { id: "zh-clothes", theme: "clothes", words: 40 }
+  - decks: ["zh-clothes", "zh-clothes-sentences", "zh-reading-clothes", "*"]
+    words: 40
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
