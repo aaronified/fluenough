@@ -235,15 +235,14 @@ class TaughtDetails extends StatelessWidget {
         ReadingWithInfo(
           swapped: swapped,
           card: card,
-          reading: Text(
+          reading: ReadingText(
             reading,
+            swapped: swapped,
             textAlign: TextAlign.center,
-            style: theme.textTheme.bodyLarge!
-                .copyWith(
-                  fontSize: 18,
-                  color: theme.colorScheme.onSurfaceVariant,
-                )
-                .forIpa(swapped),
+            style: theme.textTheme.bodyLarge!.copyWith(
+              fontSize: 18,
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
           ),
         ),
     ];
@@ -300,12 +299,13 @@ class TaughtExample extends StatelessWidget {
               color: scheme.onSurface,
             ),
             if (reading != null)
-              Text(
+              ReadingText(
                 reading,
+                swapped: lines.swapped,
                 textAlign: TextAlign.center,
-                style: theme.textTheme.bodySmall!
-                    .copyWith(color: scheme.onSurfaceVariant)
-                    .forIpa(lines.swapped),
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
             if (lines.ipa case final ipa?) IpaLine(ipa),
             const SizedBox(height: 2),

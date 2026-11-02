@@ -13,6 +13,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Fixed
 
+- **The IPA's script is read only.** The details of the IPA on the Languages page no longer say you can write it.
+- `assets/languages.yaml` gives English Braille the `iso639_3` its decks carry, `eng`, as the file says its field does.
+- **The IPA reads out as the IPA.** With IPA replacing transliteration, a screen reader says "In the IPA" and the sound, not the slashes, and it is always drawn left to right.
+- **The PIN delete button has a full name.** A screen reader says "Delete last digit" for it; the tooltip stays "Backspace".
 - **The IPA and English Braille show on the Languages page.** Courses you learn or know in either now appear in Learning or Know, and in Add a language and the first launch's list, with only the pills that mean something: the IPA has Spoken and a read-only script pill, braille has the script pill alone; older lists read as skills with no change to your data.
 - **No more "write the word" for a sound description.** The level check no longer asks you to write the Bengali, Hindi or Telugu for a description such as "clusters at the start of a word, in Sanskrit words and loans"; cards that the drills never ask you to write, such as the sounds, spelling and register cards, are only chosen among, never typed.
 
