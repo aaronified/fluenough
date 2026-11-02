@@ -7,7 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **The first launch offers "Find my level" for each language you chose to Learn.** Before the app opens, each such language asks "Do you know any Hindustani?" with Find my level, or Skip, which starts that language at the beginning; the offer is kept until you answer it (owner, 2026-11-02: "It should be offered, and skippable to start at the beginning.").
+
 ### Changed
+
+- **Placement asks you to put sentences together, not to write them.** The level check's closing questions are now the review's tile question for a deck of sentences or phrases, a word is written only when it is a single word with one valid spelling, and any other deck is a choice; the whole check, with its feedback and Continue, now runs in the same screen as the daily review (owner, 2026-11-02: "There should be no write questions unless the answer is very specific. Use sentence formation questions.").
 
 - **Language rows show the skill icons and script letters.** On the Languages page a Learn chip shows its skills' icons beside the cap, and each script chip starts with the first letter of the script's sample word, so a language in two scripts shows two chips told apart; the skills sheet is unchanged (owner, 2026-11-02).
 

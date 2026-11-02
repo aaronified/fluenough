@@ -31,6 +31,7 @@ import 'package:fluenough/features/onboarding/onboarding_step.dart';
 import 'package:fluenough/features/onboarding/sound_check_step.dart';
 import 'package:fluenough/features/onboarding/tour_step.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
+import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/profiles/spoken_languages_picker.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
@@ -925,6 +926,63 @@ void main() {
       expect(settings.learningChosen, isTrue);
       expect(settings.spokenLanguages, ['bn', 'en']);
       expect(settings.scriptsRead, <String, bool>{'bn': true, 'en': true});
+    });
+
+    test('saving queues each language set to Learn, in the order set, to be '
+        'offered Find my level; one only known is not queued', () async {
+      final state = AppState.test(settings: SettingsNotifier());
+      await state.load();
+      OnboardingAnswers()
+        ..setSkills(
+          language('hi'),
+          LanguageSkills().withState(
+            const SkillKey(SkillKind.read, 'devanagari'),
+            SkillState.learn,
+          ),
+        )
+        ..setSkills(
+          language('bn'),
+          LanguageSkills().withSpokenLevel(SpokenLevel.hearSpeak),
+        )
+        ..setSkills(
+          language('es'),
+          LanguageSkills().withState(
+            const SkillKey(SkillKind.read, 'latin'),
+            SkillState.learn,
+          ),
+        )
+        ..saveTo(state);
+      expect(state.settings.placementOffers, <String>['hi', 'es']);
+
+      final restored = SettingsNotifier()..restore(state.settings.toStored());
+      expect(restored.placementOffers, <String>['hi', 'es']);
+    });
+
+    testWidgets('the app offers Find my level for a language learned on the '
+        'first launch before it opens, and Skip goes on to the app', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final settings = SettingsNotifier(
+        spokenLanguages: const <String>['en'],
+        learningLanguages: const <String>['hi'],
+        learningChosen: true,
+      )..placementOffers = const <String>['hi'];
+      final state = await pumpApp(
+        tester,
+        state: AppState.test(settings: settings),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.byType(PlacementPage), findsOneWidget);
+      expect(find.byType(NavigationBar), findsNothing);
+      expect(find.text(l10n.placementFind), findsOneWidget);
+
+      await tester.tap(find.text(l10n.placementSkip));
+      await tester.pumpAndSettle();
+      expect(find.byType(PlacementPage), findsNothing);
+      expect(showing(tester, TodayPage), isTrue);
+      expect(state.settings.placementOffers, isEmpty);
+      expect(state.settings.placedDecks, isEmpty);
     });
 
     for (final mode in <ThemeMode>[ThemeMode.light, ThemeMode.dark]) {

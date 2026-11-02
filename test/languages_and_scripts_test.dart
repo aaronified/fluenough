@@ -44,11 +44,14 @@ import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
+import 'package:fluenough/features/drill/choice_tile.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/drill_session.dart';
+import 'package:fluenough/features/drill/rearrange_drill.dart' show WordTile;
 import 'package:fluenough/features/gallery/fixtures.dart';
 import 'package:fluenough/features/placement/language_picker_page.dart';
+import 'package:fluenough/features/placement/onboarding_placement.dart';
 import 'package:fluenough/features/placement/language_row.dart';
 import 'package:fluenough/features/placement/picker_fixtures.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
@@ -58,6 +61,8 @@ import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/today/daily_card.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/script_name.dart';
+import 'package:fluenough/ui/widgets/drill_frame.dart';
+import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/language_bar.dart';
 import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/report_button.dart';
@@ -342,18 +347,75 @@ Future<void> giveUp(WidgetTester tester) async {
     } else if (find.text(l10n.placementDontKnow).evaluate().isNotEmpty ||
         find.byType(PlacementFrame).evaluate().isNotEmpty) {
       await tapInFrame(tester, find.text(l10n.placementDontKnow));
+      await goOn(tester);
     } else {
       return;
     }
   }
 }
 
+/// Taps Continue on the feedback a word question shows once answered, as in
+/// a review; nothing to do after a script check's question, which goes on at
+/// once.
+Future<void> goOn(WidgetTester tester) async {
+  final l10n = l10nOf(tester);
+  final frame = find.byType(PlacementFrame);
+  if (frame.evaluate().isEmpty) return;
+  final next = find.descendant(
+    of: frame,
+    matching: find.widgetWithText(FilledButton, l10n.commonContinue),
+  );
+  if (next.evaluate().isEmpty) return;
+  await tapInFrame(tester, next);
+}
+
+/// Ends placement from the header's close button, keeping what it found.
+Future<void> stopPlacement(WidgetTester tester) async {
+  await tester.tap(find.byTooltip(l10nOf(tester).drillEndSession));
+  await tester.pumpAndSettle();
+}
+
+/// Puts the sentence on screen in order, tile by tile, and checks it.
+Future<void> answerTiles(WidgetTester tester) async {
+  final l10n = l10nOf(tester);
+  final shown = tester.widget<PlacementTiles>(find.byType(PlacementTiles));
+  final q = shown.question;
+  final latin = shown.latin && q.readingTiles != null;
+  final right = latin
+      ? model.tilesOf(q.card.reading!)
+      : q.card.tilesOfSpelling(shown.spelling);
+  final tiles = latin ? q.readingTiles! : q.tilesOfSpelling(shown.spelling);
+  final used = <int>{};
+  for (final word in right) {
+    final at = <int>[
+      for (var i = 0; i < tiles.length; i++)
+        if (tiles[i] == word && !used.contains(i)) i,
+    ].first;
+    used.add(at);
+    final pool = find.descendant(
+      of: find.byWidgetPredicate(
+        (w) => w is Wrap && w.alignment == WrapAlignment.center,
+      ),
+      matching: find.byType(WordTile),
+    );
+    await tapInFrame(tester, pool.at(at));
+  }
+  await tapInFrame(tester, find.widgetWithText(FilledButton, l10n.drillCheck));
+  await goOn(tester);
+}
+
 /// Answers the placement question on screen, of whatever kind: rightly,
 /// or with "I don't know".
 Future<void> answerShown(WidgetTester tester, {bool right = true}) async {
   final l10n = l10nOf(tester);
-  if (!right) return tapInFrame(tester, find.text(l10n.placementDontKnow));
+  if (!right) {
+    await tapInFrame(tester, find.text(l10n.placementDontKnow));
+    return goOn(tester);
+  }
   Future<void> tap(Finder f) => tapInFrame(tester, f);
+  if (find.byType(PlacementTiles).evaluate().isNotEmpty) {
+    return answerTiles(tester);
+  }
 
   final match = find.byType(PlacementMatch);
   if (match.evaluate().isNotEmpty) {
@@ -384,12 +446,16 @@ Future<void> answerShown(WidgetTester tester, {bool right = true}) async {
       .widget<PlacementChoice>(find.byType(PlacementChoice))
       .question;
   // The options are shuffled, so the right one may sit below the fold.
-  return tap(find.widgetWithText(OutlinedButton, q.answer));
+  await tap(
+    find.descendant(of: find.byType(ChoiceTile), matching: find.text(q.answer)),
+  );
+  return goOn(tester);
 }
 
 /// Whether a placement question is on screen.
 bool questionShown() =>
     find.byType(PlacementChoice).evaluate().isNotEmpty ||
+    find.byType(PlacementTiles).evaluate().isNotEmpty ||
     find.byType(PlacementMatch).evaluate().isNotEmpty ||
     find.byType(PlacementType).evaluate().isNotEmpty ||
     find.byType(PlacementHear).evaluate().isNotEmpty ||
@@ -1400,7 +1466,7 @@ void main() {
       await tapText(tester, l10n.commonContinue);
       await tapText(tester, l10n.placementScriptYes);
       await answerShown(tester);
-      await tapText(tester, l10n.placementStop);
+      await stopPlacement(tester);
       expect(
         find.text(l10n.placementScriptLetters(l10n.scriptName(devanagari))),
         findsOneWidget,
@@ -1421,7 +1487,8 @@ void main() {
         await tapText(tester, l10n.commonContinue);
         await tapText(tester, l10n.placementScriptYes);
         await answerShown(tester);
-        await tester.pageBack();
+        // The phone's Back: a question has no bar of its own to go back by.
+        await tester.binding.handlePopRoute();
         await tester.pumpAndSettle();
         expect(find.byType(LanguagePickerPage), findsOneWidget);
         expect(state.settings.learningChosen, isFalse);
@@ -1486,7 +1553,7 @@ void main() {
       await tapText(tester, l10n.commonContinue);
       await tapText(tester, l10n.placementScriptYes);
       await answerShown(tester);
-      await tapText(tester, l10n.placementStop);
+      await stopPlacement(tester);
       expect(find.text(l10n.placedReviewQuestion), findsOneWidget);
       expect(
         find.textContaining(l10n.placedReviewDefault, findRichText: true),
@@ -1505,7 +1572,7 @@ void main() {
         await tapText(tester, l10n.commonContinue);
         await tapText(tester, l10n.placementScriptYes);
         await answerShown(tester);
-        await tapText(tester, l10n.placementStop);
+        await stopPlacement(tester);
         await tapText(tester, l10n.placedReviewSetInStone);
         await tapText(tester, l10n.placementDone);
         expect(state.settings.placedReviewOf('hi'), PlacedReview.setInStone);
@@ -1651,6 +1718,214 @@ void main() {
     );
   });
 
+  group('placement in the review\'s screen', () {
+    const bengali = LanguageInfo(
+      code: 'bn',
+      iso639_3: 'ben',
+      name: 'Bengali',
+      script: 'bengali',
+    );
+    final sentence = model.Card(
+      id: 't-0',
+      deckId: 't',
+      target: 'আমি ভাত খাই',
+      native: 'I eat rice',
+      reading: 'ami bhat khai',
+      pos: 'phrase',
+    );
+
+    Widget inShell(Widget child) => PlacementShell(
+      onClose: () {},
+      deckName: 'Sentences',
+      progress: 0.3,
+      reportDetail: 'test',
+      child: child,
+    );
+
+    testWidgets('a sentence is asked in the review\'s own screen: its header '
+        'and wave, its card with the meaning, tiles to put in order, Check, '
+        'and feedback with Continue', (tester) async {
+      usePhone(tester);
+      final answers = <bool>[];
+      await pumpScreen(
+        tester,
+        inShell(
+          PlacementTiles(
+            question: TileQuestion.shuffled(sentence, Random(1)),
+            number: 2,
+            spelling: sentence.target,
+            language: bengali,
+            latin: false,
+            onAnswer: answers.add,
+          ),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.byType(DrillFrame), findsOneWidget);
+      expect(find.byType(DrillHeader), findsOneWidget);
+      expect(find.text(l10n.placementQuestionNumber(2)), findsOneWidget);
+      expect(find.text('Sentences'), findsOneWidget);
+      expect(find.text(sentence.native), findsOneWidget);
+      expect(find.text(l10n.drillRearrangePrompt), findsOneWidget);
+      expect(find.byType(WordTile), findsNWidgets(3));
+      expect(
+        tester
+            .widget<FilledButton>(
+              find.widgetWithText(FilledButton, l10n.drillCheck),
+            )
+            .onPressed,
+        isNull,
+        reason: 'Check waits for every word',
+      );
+
+      await answerTiles(tester);
+      expect(answers, <bool>[true]);
+    });
+
+    testWidgets('the words in any other order are wrong, and say the '
+        'sentence before going on', (tester) async {
+      usePhone(tester);
+      final answers = <bool>[];
+      await pumpScreen(
+        tester,
+        inShell(
+          PlacementTiles(
+            question: TileQuestion.shuffled(sentence, Random(1)),
+            number: 1,
+            spelling: sentence.target,
+            language: bengali,
+            latin: false,
+            onAnswer: answers.add,
+          ),
+        ),
+      );
+      final l10n = l10nOf(tester);
+      final pool = find.descendant(
+        of: find.byWidgetPredicate(
+          (w) => w is Wrap && w.alignment == WrapAlignment.center,
+        ),
+        matching: find.byType(WordTile),
+      );
+      // In the order they are shown, which is not the sentence's.
+      for (var i = 0; i < 3; i++) {
+        await tapInFrame(tester, pool.at(i));
+      }
+      await tapInFrame(
+        tester,
+        find.widgetWithText(FilledButton, l10n.drillCheck),
+      );
+      expect(answers, isEmpty, reason: 'feedback first, then Continue');
+      expect(find.byType(FeedbackBanner), findsOneWidget);
+      await goOn(tester);
+      expect(answers, <bool>[false]);
+    });
+
+    testWidgets('a choice marks the answer and says it, and goes on only '
+        'with Continue; "I don\'t know" is wrong', (tester) async {
+      usePhone(tester);
+      final answers = <bool>[];
+      final q = PlacementQuestion(
+        card: sentence,
+        options: <String>['I eat rice', 'I drink tea', 'I see you'],
+      );
+      Future<void> pumpChoice() => pumpScreen(
+        tester,
+        inShell(
+          PlacementChoice(
+            question: q,
+            number: 1,
+            title: const Text('What does this mean?'),
+            shown: const Text('shown'),
+            onAnswer: answers.add,
+          ),
+        ),
+      );
+      await pumpChoice();
+      final l10n = l10nOf(tester);
+      expect(find.byType(ChoiceTile), findsNWidgets(3));
+      await tapInFrame(tester, find.text('I drink tea'));
+      expect(answers, isEmpty);
+      expect(find.byType(FeedbackBanner), findsOneWidget);
+      expect(find.text(l10n.feedbackAnswer('I eat rice')), findsOneWidget);
+      await goOn(tester);
+      expect(answers, <bool>[false]);
+
+      answers.clear();
+      await pumpChoice();
+      await tapInFrame(tester, find.text('I eat rice'));
+      await goOn(tester);
+      expect(answers, <bool>[true]);
+
+      answers.clear();
+      await pumpChoice();
+      await tapInFrame(tester, find.text(l10n.placementDontKnow));
+      await goOn(tester);
+      expect(answers, <bool>[false]);
+    });
+
+    testWidgets('the walk through a course is drawn in that screen, each '
+        'word a choice of tiles under the review\'s header', (tester) async {
+      await pumpPlacement(tester, devanagariReader(const <String>{}));
+      var words = 0;
+      await placeAll(tester, (card) {
+        words++;
+        expect(find.byType(DrillFrame), findsOneWidget);
+        expect(find.byType(DrillHeader), findsOneWidget);
+        expect(find.byType(ChoiceTile), findsWidgets);
+        expect(find.byType(AppBar), findsNothing);
+      });
+      expect(words, greaterThan(0));
+    });
+  });
+
+  group('placement offered after Learn on the first launch', () {
+    AppState learnsHindi() {
+      final state = devanagariReader(const <String>{});
+      state.settings.placementOffers = const <String>['hi'];
+      return state;
+    }
+
+    testWidgets('Find my level is offered for the language, in the review\'s '
+        'screen once chosen; Skip starts at the beginning, placing nothing, '
+        'and ends the offer', (tester) async {
+      usePhone(tester);
+      final state = learnsHindi();
+      await pumpScreen(
+        tester,
+        const OnboardingPlacementOffer(languages: <String>['hi']),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.placementAskTitle('Hindustani')), findsOneWidget);
+      expect(find.text(l10n.placementFind), findsOneWidget);
+      expect(find.text(l10n.placementSkip), findsOneWidget);
+      expect(find.text(l10n.placementNew('Hindustani')), findsNothing);
+
+      await tapText(tester, l10n.placementSkip);
+      expect(state.settings.placementOffers, isEmpty);
+      expect(state.settings.placedDecks, isEmpty);
+    });
+
+    testWidgets('Find my level runs the check, saves what it placed, and '
+        'ends the offer', (tester) async {
+      usePhone(tester);
+      final state = learnsHindi();
+      await pumpScreen(
+        tester,
+        const OnboardingPlacementOffer(languages: <String>['hi']),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      await tapText(tester, l10n.placementFind);
+      await placeAll(tester, (card) {
+        expect(find.byType(DrillFrame), findsOneWidget);
+      }, readsScripts: false);
+      await tapText(tester, l10n.placementDone);
+      expect(state.settings.placementOffers, isEmpty);
+      expect(state.settings.placedDecks, isNotEmpty);
+    });
+  });
+
   group('placement in the learner\'s scripts', () {
     testWidgets('a Devanagari reader learning Perso-Arabic is placed on the '
         'Perso-Arabic spelling, never the reading first; learning both, on '
@@ -1794,6 +2069,142 @@ void main() {
         walk.answer(true);
       }
       expect(walk.isFinished, isTrue);
+    });
+
+    // -------------------------------------------------------------------
+    // Owner, 2026-11-02: "There should be no write questions unless the
+    // answer is very specific. Use sentence formation questions."
+
+    DeckEntry deckIn(LanguageInfo lang, String id, List<model.Card> cards) =>
+        DeckEntry(
+          path: '$id.yaml',
+          deck: Deck(
+            id: id,
+            name: id,
+            kind: DeckKind.vocab,
+            language: lang,
+            native: english,
+            license: 'CC-BY-SA-4.0',
+            cards: cards,
+          ),
+        );
+
+    /// Nine decks of four cards, each card's target made by [target].
+    List<DeckEntry> course(
+      String Function(String id, int i) target, {
+      String pos = 'noun',
+      List<String> alt = const <String>[],
+      LanguageInfo? lang,
+    }) => <DeckEntry>[
+      for (var d = 0; d < 9; d++)
+        deckIn(lang ?? language, 'c$d', <model.Card>[
+          for (var i = 0; i < 4; i++)
+            model.Card(
+              id: 'c$d-$i',
+              deckId: 'c$d',
+              target: target('c$d', i),
+              native: 'meaning c$d $i',
+              reading: 'reading c$d $i',
+              pos: pos,
+              altTarget: alt,
+            ),
+        ]),
+    ];
+
+    /// Everything the walk over [decks] asks when each answer is right.
+    List<PlacementAsk> asked(List<DeckEntry> decks) {
+      final asks = <PlacementAsk>[];
+      for (var seed = 0; seed < 10; seed++) {
+        final walk = DeckWalk(decks, random: Random(seed));
+        var n = 0;
+        while (!walk.isFinished && n++ < 100) {
+          asks.add(walk.question!);
+          walk.answer(true);
+        }
+        expect(walk.isFinished, isTrue);
+      }
+      return asks;
+    }
+
+    test('a single word with one valid spelling is written; a word, a '
+        'phrase or a sentence of more, a word with other spellings and a '
+        'course that cannot be typed never are', () {
+      final written = asked(course((id, i) => 'শব্দ$id$i'));
+      final typed = written.whereType<TypeQuestion>().toList();
+      expect(typed, isNotEmpty);
+      expect(typed.every((q) => q.produce && q.card.wordCount == 1), isTrue);
+
+      final never = <String, List<DeckEntry>>{
+        'a sentence': course((id, i) => 'আমি ভাত $id$i খাই'),
+        'a phrase': course((id, i) => 'ধন্যবাদ $id$i', pos: 'phrase'),
+        'two words': course((id, i) => 'দুই $id$i'),
+        'other spellings': course(
+          (id, i) => 'শব্দ$id$i',
+          alt: const <String>['অন্য'],
+        ),
+        'a course not typed': course(
+          (id, i) => 'শব্দ$id$i',
+          lang: const LanguageInfo(
+            code: 'bn',
+            iso639_3: 'ben',
+            name: 'Bengali',
+            script: 'bengali',
+            typed: false,
+          ),
+        ),
+      };
+      for (final MapEntry(:key, :value) in never.entries) {
+        expect(
+          asked(value).whereType<TypeQuestion>().where((q) => q.produce),
+          isEmpty,
+          reason: '$key is not written',
+        );
+      }
+    });
+
+    test('a deck of sentences or phrases is asked as tiles, with no word added '
+        'to them; a deck with neither a sentence nor one word to write is '
+        'asked as a choice', () {
+      for (final decks in <List<DeckEntry>>[
+        course((id, i) => 'আমি ভাত $id$i খাই'),
+        course((id, i) => 'ধন্যবাদ $id$i', pos: 'phrase'),
+      ]) {
+        final tiles = asked(decks).whereType<TileQuestion>().toList();
+        expect(tiles, isNotEmpty);
+        for (final q in tiles) {
+          expect(q.card.rearranges, isTrue);
+          expect(
+            <String>[...q.tilesOfSpelling(q.card.target)]..sort(),
+            <String>[...q.card.tilesOfSpelling(q.card.target)]..sort(),
+            reason: 'the target\'s own words, none added or left out',
+          );
+        }
+      }
+      final choices = asked(course((id, i) => 'দুই $id$i'));
+      expect(choices.whereType<TileQuestion>(), isEmpty);
+      expect(choices.every((q) => q is PlacementQuestion), isTrue);
+    });
+
+    test('putting the tiles in order credits the deck; a wrong order, or '
+        '"I don\'t know", places the learner before it', () {
+      final decks = course((id, i) => 'আমি ভাত $id$i খাই');
+      final all = DeckWalk(decks, random: Random(2));
+      while (!all.isFinished) {
+        all.answer(true);
+      }
+      expect(all.landing, decks.length);
+      expect(all.placedDeckIds, <String>{for (final e in decks) e.id});
+
+      final wrong = DeckWalk(decks, random: Random(2));
+      while (wrong.question is! TileQuestion) {
+        wrong.answer(true);
+      }
+      final at = wrong.asking!;
+      wrong.answer(false);
+      expect(wrong.isFinished, isTrue);
+      expect(wrong.missed, at);
+      expect(wrong.landing, at);
+      expect(wrong.placedDeckIds, isNot(contains(decks[at].id)));
     });
   });
 
@@ -2090,7 +2501,16 @@ void main() {
         expect(w.phase, WalkPhase.produce);
         final typed = <int>[];
         while (w.phase == WalkPhase.produce) {
-          expect(w.question, isA<TypeQuestion>());
+          // A sentence is put together, a word with one spelling written, any
+          // other deck chosen: never a written sentence (owner, 2026-11-02).
+          expect(
+            w.question,
+            anyOf(
+              isA<TypeQuestion>(),
+              isA<TileQuestion>(),
+              isA<PlacementQuestion>(),
+            ),
+          );
           typed.add(w.asking!);
           w.answer(typedRight);
         }
