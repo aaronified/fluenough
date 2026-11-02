@@ -345,7 +345,9 @@ units:
       - { id: "ordering-noodles", text: { "en": "Ordering a bowl of noodles and dumplings at a small restaurant" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - planned: { id: "zh-grammar-le", grammar: "le-completed" }
+  - decks: ["zh-grammar-le-completed", "zh-grammar-le-completed-sentences"]
+    words: 0
+    grammar: ["le-completed"]
     listening_passages:
       - { id: "what-did-you-eat", text: { "en": "Saying what you ate and bought yesterday, with le after the verb, and not, with mei" } }
     reading_passages:
