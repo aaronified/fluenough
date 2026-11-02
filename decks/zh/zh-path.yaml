@@ -514,7 +514,9 @@ units:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes tomato and egg stir-fry" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - planned: { id: "zh-grammar-complement-result", grammar: "result-complement" }
+  - decks: ["zh-grammar-result-complement", "zh-grammar-result-complement-sentences"]
+    words: 0
+    grammar: ["result-complement"]
     listening_passages:
       - { id: "did-you-finish", text: { "en": "Saying whether an action reached its result: finished eating, understood, saw, found" } }
     reading_passages:
