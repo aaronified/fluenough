@@ -274,7 +274,8 @@ units:
       - { id: "at-the-greengrocer", text: { "en": "Buying fruit and vegetables at a greengrocer" } }
     reading_passages:
       - { id: "market-price-board", text: { "en": "A price board at a market" } }
-  - planned: { id: "ja-groceries", theme: "groceries", words: 40 }
+  - decks: ["ja-groceries", "*"]
+    words: 40
     listening_passages:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list at a supermarket" } }
     reading_passages:
