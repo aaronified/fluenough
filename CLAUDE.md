@@ -115,7 +115,7 @@ contributor.
   Telugu readings write a word-final anusvara (ం) as `ṁ`, course-wide
   (owner, 2026-10-19).
 - **Reviewers** are bilingual and the meaning of a card never changes; new
-  themes come only by pull request (`docs/plans/reviewing-scope.md`).
+  themes come only by pull request (`wiki/Plan-Reviewing-Scope.md`).
 - **Tests check behaviour** (owner, 2026-10-20). The rule is in
   [AGENTS.md](AGENTS.md), "Tests check behaviour".
 - **Tests run only in CI** (owner, 2026-10-17: "You should not run tests
@@ -200,7 +200,7 @@ milestone are written in a single PR. After that no new deck work starts;
 open deck PRs are still reviewed and merged. Conversations (#722) are a
 long-horizon ask (owner, 2026-10-23).
 
-**Bengali, Hindustani and Spanish to full B1, and French A1** (owner, 2026-10-30: "Build the bengali, hindustani, and spanish decks to full B1. And add french A1. Haiku deck builders. Sonnet reviews. Also, make all decks compliant with the full [] IPA notations."). This lifts the 2026-10-23 A1 stop for these three courses: the planned A2 and B1 units of bn, hi and es are built (Haiku builds, one Sonnet review per pull request), in that order, then French A1 (a new course: path units, cores and English layers, facts file). Every card also gets its narrow IPA in `[ ]`: the `phonetic` field of docs/plans/ipa-revamp-and-language-phonology.md, written by the tools of that plan, never by hand, and any card still lacking a broad `ipa` is given one. The A1 stop still holds for every other course.
+**Bengali, Hindustani and Spanish to full B1, and French A1** (owner, 2026-10-30: "Build the bengali, hindustani, and spanish decks to full B1. And add french A1. Haiku deck builders. Sonnet reviews. Also, make all decks compliant with the full [] IPA notations."). This lifts the 2026-10-23 A1 stop for these three courses: the planned A2 and B1 units of bn, hi and es are built (Haiku builds, one Sonnet review per pull request), in that order, then French A1 (a new course: path units, cores and English layers, facts file). Every card also gets its narrow IPA in `[ ]`: the `phonetic` field of wiki/Plan-Ipa-Revamp-And-Language-Phonology.md, written by the tools of that plan, never by hand, and any card still lacking a broad `ipa` is given one. The A1 stop still holds for every other course.
 
 **Deck order after Bengali and Hindustani** (owner, 2026-11-01: "Once hindustani and bengali are done, do all first courses, then our priority 10 list to full B1."). Once the Bengali and Hindustani B1 branches are done, build Spanish to B1 and French A1 (the courses already queued above), then the ten courses of the deck priority list (Telugu, Bengali, Spanish, Marathi, Kannada, Assamese, Chinese, Hindustani, Japanese (Korean moved to the later list below, owner 2026-11-02)) to full B1. This lifts the A1 stop for those ten courses. Deck agents work lazily: two Haiku builders, batches of at least 20 units, one branch per language, one Sonnet review of the whole branch at B1 (owner, 2026-11-02). Deck work still yields to coding work (owner: "Deprioritise deck work whenever you have coding work."; "All 7.0.x work must be top priority").
 

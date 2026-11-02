@@ -36,7 +36,7 @@ checked against `fsrs-rs`.
   the log. It is stored in `fsrs_parameters` (migration 7): the 21 values,
   when it ran, the review count it ran at, and the log loss before and
   after. The JSONL backup carries it as a `parameters` line
-  (`docs/LOG-FORMAT.md`), so a restored phone schedules exactly as before;
+  ([Log-Format](Log-Format)), so a restored phone schedules exactly as before;
   a set outside the ranges fitting clips to refuses the file, since it
   could make the scheduler divide by zero.
 - **What a fit learns from:** the skill's reviews of the last three months

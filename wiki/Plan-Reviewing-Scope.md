@@ -116,6 +116,6 @@ then the redesign.
 Also to add when the redesign resumes (owner, 2026-10-09): several decks
 sent in one mail, said at every step (turn-on dialog, How reviewing
 works, the unit's foot, a send sheet listing every deck with unsent
-reviews, the mail body); see `docs/plans/deck-browser.md`.
+reviews, the mail body); see [Plan-Deck-Browser](Plan-Deck-Browser).
 
 See also: [Roadmap](Roadmap) · [Plans-Index](Plans-Index) · [Home](Home)

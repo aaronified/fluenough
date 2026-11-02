@@ -35,7 +35,7 @@ Source of truth: this wiki page.
 ## Context
 
 Reviewers review in the app and send their reviews by mail
-(`docs/plans/deck-browser.md`, "Review in the app, by mail"). Until now a
+([Plan-Deck-Browser](Plan-Deck-Browser), "Review in the app, by mail"). Until now a
 suggested change reached the decks only when the owner read the mail and
 the decks were edited with him. On 2026-10-09 the owner asked for it to be
 automatic (#441, parent #403):

@@ -2265,7 +2265,7 @@ only in exams (placement, #481, and the B1 milestones), and a learner can
 retake an exam but never meets a passage through review. Exam answers move
 the words' schedules like any practice. The app still schedules reading
 questions as described above until that is built, and the format of a deck
-does not change. See `docs/plans/question-engine.md`, "Reading passages".
+does not change. See [Plan-Question-Engine](Plan-Question-Engine), "Reading passages".
 
 ```yaml
 schema: 1
@@ -2802,7 +2802,7 @@ A region is used in two places: the rater's answer to "Where you speak
 Telugu" in reviewer mode, kept with the rater's ratings by region id, and a
 card's region note. Where a rater's regions differ by a band or more on an
 offensive word, the difference becomes a region note
-(`docs/plans/offensive-words.md`).
+([Plan-Offensive-Words](Plan-Offensive-Words)).
 
 ## Writing a B1 course
 
@@ -2813,8 +2813,8 @@ error before moving on. Read the warnings; do not leave them unexplained.
 
 **Before you start:**
 
-- Read [Agentic-Coding](Agentic-Coding), `docs/plans/b1-plans.md` and
-  `docs/plans/words-rules-sentences.md`, and this file through (its
+- Read [Agentic-Coding](Agentic-Coding), [Plan-B1-Plans](Plan-B1-Plans) and
+  [Plan-Words-Rules-Sentences](Plan-Words-Rules-Sentences), and this file through (its
   [Core and layer files](#core-and-layer-files) section replaces the removed
   `native-layers.md` plan).
 - **Card ids are permanent.** Splitting, moving or converting a deck keeps
@@ -2846,7 +2846,7 @@ error before moving on. Read the warnings; do not leave them unexplained.
    `id` and its English description, and the three milestones, about 700,
    1,600 and 2,800 words in. Take the themes
    and grammar of each level from the CEFR skeleton in `b1-plans.md`, and
-   their order from `docs/plans/language-paths-scheme.md` for the language's
+   their order from [Plan-Language-Paths-Scheme](Plan-Language-Paths-Scheme) for the language's
    family. The first unit holds the phrasebook. The plan comes before the
    first core: once the language has one, the path must have its plan. A
    new theme goes into `decks/themes.yaml` in a small change of its own,
