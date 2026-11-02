@@ -533,11 +533,14 @@ units:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
   - decks: ["as-reading-technology"]
     words: 0
-  - planned: { id: "as-careers", theme: "careers", words: 50 }
+  - decks: ["as-careers", "as-careers-sentences", "*"]
+    words: 13
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
       - { id: "job-advert", text: { "en": "A job advert" } }
+  - decks: ["as-reading-careers"]
+    words: 0
   - planned: { id: "as-grammar-before-after", grammar: "before-after" }
     listening_passages:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
