@@ -507,7 +507,7 @@ def build(reports: list[vd.Report] | None = None,
                    if p.is_dir() and p.name not in HIDDEN | {FONTS_DIR.name})
     paths = [p for d in langs for p in vd._yaml_files(d)]
     if reports is None:
-        reports = [vd.validate(p) for p in paths]
+        reports = vd.validate_many(paths)
     by_path = {rep.path.resolve(): rep for rep in reports}
     missing = [p for p in paths if p.resolve() not in by_path]
     if missing:
