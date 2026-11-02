@@ -113,7 +113,9 @@ A card of a `script-kanji-N` unit:
 
 CI's "Released app reads the decks" runs the latest released app against a
 pull request's decks, and deck files that use something a release does not
-read break it. This change is code, tools, docs and a test fixture only: it
+read break it. A card's `target_scripts` is read already, but an example's
+is new, and the released parser refuses an example field it does not know.
+This change is code, tools, docs and a test fixture only: it
 touches no file in `decks/`. The kanji decks, and the first cards written in
 kanji, land after the release that carries it, each file held to that release
 with `decks/min_app.json` (ADR-0052). Until then Japanese is as it was.
