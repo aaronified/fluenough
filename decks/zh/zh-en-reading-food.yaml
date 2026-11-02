@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-food"
+"name": "Chinese reading: food and drink"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-ordering-noodles"
+  "title": "Ordering noodles"
+  "theme": "food"
+  "sentences":
+  - "text": "服务员 来 了。"
+    "reading": "fúwùyuán lái le."
+  - "text": "我 要 一 碗 面条。"
+    "reading": "wǒ yào yì wǎn miàntiáo."
+  - "text": "汤 不 要 太 咸。"
+    "reading": "tāng bú yào tài xián."
+  - "text": "账单 在 这 儿。"
+    "reading": "zhàngdān zài zhèr."
+  "questions":
+  - "id": "zh-0944"
+    "prompt":
+      "en": "我 要 一 碗 面条 (wǒ yào yì wǎn miàntiáo) means:"
+    "options":
+    - "en": "I want a bowl of noodles"
+    - "en": "I want a plate of noodles"
+    "answer": 1
+  - "id": "zh-0945"
+    "prompt":
+      "en": "汤 不 要 太 咸 (tāng bú yào tài xián) asks for a soup that is not too salty."
+    "answer": true
+  - "id": "zh-0946"
+    "prompt":
+      "en": "账单 在 这 儿 (zhàngdān zài zhèr) means:"
+    "options":
+    - "en": "the bill is here"
+    - "en": "the menu is here"
+    "answer": 1
+- "id": "zh-menu-card"
+  "title": "A menu card"
+  "theme": "food"
+  "sentences":
+  - "text": "饺子 十 块。"
+    "reading": "jiǎozi shí kuài."
+  - "text": "炒 青菜 八 块。"
+    "reading": "chǎo qīngcài bā kuài."
+  - "text": "豆浆 三 块。"
+    "reading": "dòujiāng sān kuài."
+  - "text": "饮料 请 点。"
+    "reading": "yǐnliào qǐng diǎn."
+  "questions":
+  - "id": "zh-0947"
+    "prompt":
+      "en": "豆浆 三 块 (dòujiāng sān kuài) says that soy milk costs:"
+    "options":
+    - "en": "three yuan"
+    - "en": "thirteen yuan"
+    "answer": 1
+  - "id": "zh-0948"
+    "prompt":
+      "en": "炒 青菜 (chǎo qīngcài) is a stir-fried green vegetable on this card."
+    "answer": true
+  - "id": "zh-0949"
+    "prompt":
+      "en": "饮料 请 点 (yǐnliào qǐng diǎn) means:"
+    "options":
+    - "en": "please order a drink"
+    - "en": "please pay for a drink"
+    "answer": 1
