@@ -585,7 +585,8 @@ units:
       - { id: "put-it-on-the-table", text: { "en": "Saying what was done to something, with ba: put the book on the table, close the door, eat up the rice" } }
     reading_passages:
       - { id: "house-rules", text: { "en": "A list of house rules for a shared flat" } }
-  - planned: { id: "zh-appearance", theme: "appearance", words: 40 }
+  - decks: ["zh-appearance", "zh-appearance-sentences", "zh-reading-appearance", "*"]
+    words: 40
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
