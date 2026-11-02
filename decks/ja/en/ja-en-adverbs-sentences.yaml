@@ -1,0 +1,72 @@
+schema: 1
+id: "ja-en-adverbs-sentences"
+kind: "layer"
+core: "ja-adverbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0418":
+    native: "My friend sometimes speaks English."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "いつも (itsumo) means always, not sometimes."
+      w2:
+        why: "いつ (itsu) is a question word for when."
+  "ja-0419":
+    native: "I have already eaten."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+    confusables:
+      w1:
+        why: "まだ (mada) means not yet, the opposite of already."
+      w2:
+        why: "もっと (motto) means more."
+  "ja-0420":
+    native: "The teacher speaks slowly."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+    confusables:
+      w1:
+        why: "はやく (hayaku) means quickly or early, not slowly."
+      w2:
+        why: "おおきい (ookii) means big, not slow."
+  "ja-0421":
+    native: "The student comes right away."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+    confusables:
+      w1:
+        why: "あとで (atode) means later, not right away."
+      w2:
+        why: "たぶん (tabun) means probably: the speaker is not sure."
+  "ja-0422":
+    native: "Of course I will go."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+    confusables:
+      w1:
+        why: "ぜひ (zehi) means by all means: a stronger wish."
+      w2:
+        why: "たぶん (tabun) means probably, not of course."
+  "ja-0423":
+    native: "I play together with my friend."
+    bases:
+      "と":
+        meaning: "and (joins two words)"
+    confusables:
+      w1:
+        why: "ずっと (zutto) means all the time, not together."
+      w2:
+        why: "ねる (neru) is to sleep, not to play."
