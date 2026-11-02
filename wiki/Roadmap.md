@@ -61,13 +61,12 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-17 approved open issues.
+16 approved open issues.
 
 **Enhancements**
 
 - [#204](https://github.com/aaronified/fluenough/issues/204) Profiles and a PIN lock
 - [#495](https://github.com/aaronified/fluenough/issues/495) Your decks: custom decks, templates, and an upload review that validates and fixes
-- [#519](https://github.com/aaronified/fluenough/issues/519) Reviewer daily questions: app-generated questions on the weakest data, answered by mail
 - [#522](https://github.com/aaronified/fluenough/issues/522) Question engine: questions derived from card data (ADR-0039)
 - [#612](https://github.com/aaronified/fluenough/issues/612) Transcriber and Wiktionary importer: readings and IPA for the new languages and scripts
 - [#616](https://github.com/aaronified/fluenough/issues/616) Answer grading for transliteration letters and punctuation-letters
@@ -138,10 +137,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
 - [#520](https://github.com/aaronified/fluenough/issues/520) Regional flavours: a deck per language after A2, noting major regional variations
-- [#572](https://github.com/aaronified/fluenough/issues/572) Course: Maithili, with its path and B1 plan
 - [#579](https://github.com/aaronified/fluenough/issues/579) Sign languages: a deck format and drills built on images and video
-- [#580](https://github.com/aaronified/fluenough/issues/580) Course: Interslavic, with its path and B1 plan
-- [#582](https://github.com/aaronified/fluenough/issues/582) Course: Lojban, with its path and B1 plan
 - [#583](https://github.com/aaronified/fluenough/issues/583) Course: Sumerian (cuneiform), with its path and reading plan
 - [#584](https://github.com/aaronified/fluenough/issues/584) Course: Mycenaean Greek (Linear B), with its path and reading plan
 - [#585](https://github.com/aaronified/fluenough/issues/585) Course: Egyptian (proposed: Middle Egyptian, hieroglyphs and transliteration), with its path and reading plan
@@ -268,8 +264,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#350](https://github.com/aaronified/fluenough/issues/350) Language paths: new languages, one full course each
 - [#351](https://github.com/aaronified/fluenough/issues/351) New course: Punjabi
 - [#352](https://github.com/aaronified/fluenough/issues/352) New course: Odia
-- [#353](https://github.com/aaronified/fluenough/issues/353) New course: Nepali
-- [#354](https://github.com/aaronified/fluenough/issues/354) New course: Tamil
 - [#355](https://github.com/aaronified/fluenough/issues/355) New course: Malayalam
 - [#356](https://github.com/aaronified/fluenough/issues/356) New course: Sanskrit
 - [#357](https://github.com/aaronified/fluenough/issues/357) New course: Portuguese
@@ -306,7 +300,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#388](https://github.com/aaronified/fluenough/issues/388) New course: Esperanto
 - [#425](https://github.com/aaronified/fluenough/issues/425) Remove the analyzer bound once build_runner supports 14.5.0
 - [#472](https://github.com/aaronified/fluenough/issues/472) Language themes: a colour, icon and background image for each language
-- [#475](https://github.com/aaronified/fluenough/issues/475) Decks: "Where I am" becomes an icon on the right; "Add deck" moves to Settings
 - [#623](https://github.com/aaronified/fluenough/issues/623) Hindustani: one course for Hindi and Urdu, in Devanagari or Nastaliq
 - [#665](https://github.com/aaronified/fluenough/issues/665) English Braille: a facts file (qbe-facts.yaml)
 - [#713](https://github.com/aaronified/fluenough/issues/713) App log: filter to the last 10 minutes or since the app last started
