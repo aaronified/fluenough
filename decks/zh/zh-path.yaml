@@ -495,7 +495,9 @@ units:
       - { id: "asking-the-price", text: { "en": "Asking about price and size, and bargaining a little" } }
     reading_passages:
       - { id: "receipt", text: { "en": "A shop receipt" } }
-  - planned: { id: "zh-grammar-complement-degree", grammar: "degree-complement" }
+  - decks: ["zh-grammar-degree-complement", "zh-grammar-degree-complement-sentences"]
+    words: 0
+    grammar: ["degree-complement"]
     listening_passages:
       - { id: "you-sing-well", text: { "en": "Saying how well something is done, with de: she sings well, he runs fast" } }
     reading_passages:
