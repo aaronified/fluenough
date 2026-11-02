@@ -322,11 +322,9 @@ units:
       - { id: "an-apartment-tour", text: { "en": "A tour of a small apartment, room by room" } }
     reading_passages:
       - { id: "apartment-advert", text: { "en": "A short advert for an apartment to rent" } }
-  - planned: { id: "ja-grammar-mashou", grammar: ["masen-ka", "mashou"] }
-    listening_passages:
-      - { id: "shall-we-go", text: { "en": "Inviting a friend: won't you come, let's go" } }
-    reading_passages:
-      - { id: "invitation-message", text: { "en": "A message inviting a friend out on Saturday" } }
+  - decks: ["ja-grammar-mashou"]
+    words: 0
+    grammar: ["masen-ka", "mashou"]
   - planned: { id: "ja-help", theme: "help", words: 25 }
     listening_passages:
       - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
