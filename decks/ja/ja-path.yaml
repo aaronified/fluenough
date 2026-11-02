@@ -256,11 +256,8 @@ units:
       - { id: "what-is-your-job", text: { "en": "Two people ask each other what they do for a living" } }
     reading_passages:
       - { id: "meishi", text: { "en": "A business card and a short job description" } }
-  - planned: { id: "ja-numbers-big", theme: "numbers-big", words: 35 }
-    listening_passages:
-      - { id: "prices-and-years", text: { "en": "Hearing prices in yen, years and phone numbers" } }
-    reading_passages:
-      - { id: "price-tags", text: { "en": "Price tags and a bus-route number board" } }
+  - decks: ["ja-numbers-big"]
+    words: 35
   - planned: { id: "ja-grammar-counters", grammar: "counters" }
     listening_passages:
       - { id: "two-coffees-three-people", text: { "en": "Ordering for a group: two coffees, three people, one sheet of paper" } }
