@@ -146,7 +146,8 @@ units:
   - ["ja-hiragana-marks"]
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "ja-about-me", theme: "about-me", words: 20 }
+  - decks: ["ja-about-me", "ja-about-me-sentences", "ja-reading-about-me", "*"]
+    words: 20
     listening_passages:
       - { id: "jikoshoukai", text: { "en": "A self-introduction on the first day at a language school" } }
     reading_passages:
