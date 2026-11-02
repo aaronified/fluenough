@@ -811,7 +811,8 @@ units:
       - { id: "even-if-it-rains", text: { "en": "Saying even if it rains we will go, and whatever you say I will go" } }
     reading_passages:
       - { id: "team-motto", text: { "en": "A sports team's short motto and pledge" } }
-  - planned: { id: "zh-cinema", theme: "cinema", words: 50 }
+  - decks: ["zh-cinema", "zh-cinema-sentences", "zh-reading-cinema", "*"]
+    words: 50
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
