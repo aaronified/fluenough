@@ -546,11 +546,14 @@ units:
       - { id: "order-of-events", text: { "en": "Saying what happens before and after what" } }
     reading_passages:
       - { id: "event-schedule", text: { "en": "A schedule of an event day" } }
-  - planned: { id: "as-environment", theme: "environment", words: 50 }
+  - decks: ["as-environment", "as-environment-sentences", "*"]
+    words: 14
     listening_passages:
       - { id: "floods-and-embankments", text: { "en": "Neighbours talk about the river, the flood and the embankment" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
+  - decks: ["as-reading-environment"]
+    words: 0
   - planned: { id: "as-agriculture", theme: "agriculture", words: 50 }
     listening_passages:
       - { id: "a-farmer-talks", text: { "en": "A farmer talks about the season's rice and jute" } }

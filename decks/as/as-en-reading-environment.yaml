@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-environment"
+name: "Assamese reading: environment: air, pollution, waste and care"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-floods-and-embankments"
+    title: "Neighbours talk about the river"
+    theme: "environment"
+    sentences:
+      - text: "নদীত বহুত বৰষুণ।"
+        reading: "nodit bohut bôrôxun."
+      - text: "বান আহিব পাৰে।"
+        reading: "bān āhib pāre."
+      - text: "বান্ধত বালি লাগিব।"
+        reading: "bāndhôt bāli lāgib."
+      - text: "আমি সকলো মিলি সাজিম।"
+        reading: "āmi sôkôlu mili sāzim."
+    questions:
+      - id: "as-3511"
+        prompt: { en: "The neighbours talk about rain on the river." }
+        answer: true
+      - id: "as-3512"
+        prompt: { en: "What is needed for the embankment?" }
+        options:
+          - { en: "Sand" }
+          - { en: "Paper" }
+          - { en: "Glass" }
+        answer: 1
+      - id: "as-3513"
+        prompt: { en: "What will the neighbours do together?" }
+        options:
+          - { en: "Sleep" }
+          - { en: "Build" }
+          - { en: "Leave" }
+        answer: 2
+  - id: "as-clean-up-notice"
+    title: "A notice for a neighbourhood clean-up"
+    theme: "environment"
+    sentences:
+      - text: "কাইলৈ সকলো মিলি পৰিষ্কাৰ কৰিম।"
+        reading: "kāilôi sôkôlu mili porixkār kôrim."
+      - text: "আবৰ্জনা পেলাব নালাগে।"
+        reading: "ābôrjônā pelāb nālāge."
+      - text: "বৰ্জ্য ঠিকমতে ৰাখক।"
+        reading: "bôrjyô ṭhikmôtē rākhôk."
+      - text: "আহক, সহায় কৰক।"
+        reading: "āhôk, xohāy kôrôk."
+    questions:
+      - id: "as-3514"
+        prompt: { en: "The clean-up is tomorrow." }
+        answer: true
+      - id: "as-3515"
+        prompt: { en: "What should not be thrown away?" }
+        options:
+          - { en: "Rubbish" }
+          - { en: "Nothing" }
+          - { en: "Water" }
+        answer: 1
+      - id: "as-3516"
+        prompt: { en: "What does the notice ask people to do?" }
+        options:
+          - { en: "Leave" }
+          - { en: "Help" }
+          - { en: "Sleep" }
+        answer: 2
