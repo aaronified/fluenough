@@ -5,6 +5,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/skill.dart';
+import '../../core/decks/script_fonts.dart';
 import '../../core/grading/pair_match.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
@@ -909,7 +910,9 @@ bool pairWraps(
   final theme = Theme.of(context);
   final scaler = MediaQuery.textScalerOf(context);
   final scale = cardTextScaleOf(context, state.settings);
-  final family = state.deckDownloads?.fonts.familyFor(language.script);
+  final family = state.deckDownloads?.fonts.familyFor(
+    fontScriptFor(language.code, language.script),
+  );
   // A tile's two sides and its border, and the gap between the tiles.
   const tilePadding = 12 + 12 + 2 * 2;
   final column = (width - 12) / 2 - tilePadding;
