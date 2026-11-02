@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-help"
+"name": "Chinese reading: help"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-lost-in-the-city"
+  "title": "Lost in the city"
+  "theme": "help"
+  "sentences":
+  - "text": "我 迷路 了。"
+    "reading": "wǒ mílù le."
+  - "text": "请问， 警察局 在 哪里？"
+    "reading": "qǐngwèn, jǐngchájú zài nǎlǐ?"
+  - "text": "我 的 钱包 丢 了。"
+    "reading": "wǒ de qiánbāo diū le."
+  - "text": "请 帮助 我。"
+    "reading": "qǐng bāngzhù wǒ."
+  "questions":
+  - "id": "zh-1267"
+    "prompt":
+      "en": "我 迷路 了 (wǒ mílù le) means:"
+    "options":
+    - "en": "I am lost"
+    - "en": "I am late"
+    "answer": 1
+  - "id": "zh-1268"
+    "prompt":
+      "en": "我 的 钱包 丢 了 (wǒ de qiánbāo diū le) says the wallet is lost."
+    "answer": true
+  - "id": "zh-1269"
+    "prompt":
+      "en": "请 帮助 我 (qǐng bāngzhù wǒ) means:"
+    "options":
+    - "en": "please help me"
+    - "en": "please leave me"
+    "answer": 1
+- "id": "zh-emergency-numbers"
+  "title": "Emergency numbers"
+  "theme": "help"
+  "sentences":
+  - "text": "火灾 请 打 一 一 九。"
+    "reading": "huǒzāi qǐng dǎ yī yī jiǔ."
+  - "text": "救护车 请 打 一 二 零。"
+    "reading": "jiùhùchē qǐng dǎ yī èr líng."
+  - "text": "紧急 情况 请 找 警察。"
+    "reading": "jǐnjí qíngkuàng qǐng zhǎo jǐngchá."
+  - "text": "有 危险 要 小心。"
+    "reading": "yǒu wēixiǎn yào xiǎoxīn."
+  "questions":
+  - "id": "zh-1270"
+    "prompt":
+      "en": "火灾 请 打 一 一 九 (huǒzāi qǐng dǎ yī yī jiǔ) is the number to call for:"
+    "options":
+    - "en": "a fire"
+    - "en": "an ambulance"
+    "answer": 1
+  - "id": "zh-1271"
+    "prompt":
+      "en": "有 危险 要 小心 (yǒu wēixiǎn yào xiǎoxīn) says to be careful when there is danger."
+    "answer": true
+  - "id": "zh-1272"
+    "prompt":
+      "en": "救护车 (jiùhùchē) is:"
+    "options":
+    - "en": "an ambulance"
+    - "en": "a fire engine"
+    "answer": 1

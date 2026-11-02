@@ -396,7 +396,8 @@ units:
       - { id: "what-are-you-doing", text: { "en": "Saying what you are doing right now, and suggesting: let's go" } }
     reading_passages:
       - { id: "chat-messages", text: { "en": "A few chat messages about what each person is doing" } }
-  - planned: { id: "zh-help", theme: "help", words: 35 }
+  - decks: ["zh-help", "zh-help-sentences", "zh-reading-help", "*"]
+    words: 35
     listening_passages:
       - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
     reading_passages:
