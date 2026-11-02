@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Say no longer marks a short or long vowel as wrong.** A speech recogniser cannot reliably hear a vowel's length and returns the dictionary spelling, so a word heard that differs from the answer only in vowel length (అక్క for అక్కా) is now "Close, mind the vowel length" instead of "Not quite", with the contrast shown as a hint and no red. Typed answers are unchanged (#1001).
+
 ### Changed
 
 - `tools/validate_decks.py` is much faster, about 30 to 40 times on the whole of `decks/`, and prints exactly what it printed: each YAML file is read once, by libyaml where PyYAML has it, and the files are checked by several worker processes (`--jobs N`; `--jobs 1` is one process).

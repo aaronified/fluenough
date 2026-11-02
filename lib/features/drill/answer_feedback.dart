@@ -101,6 +101,13 @@ class AnswerFeedback extends StatelessWidget {
         l10n.feedbackCorrect,
         shown(null),
       ),
+      AnswerOutcome.closeDiacritics when spoken && answer.contrast != null =>
+        banner(
+          FeedbackKind.close,
+          l10n.feedbackLengthClose,
+          '${l10n.feedbackSaidContrast(answer.typed, answer.contrast!.name)}'
+          '\n${l10n.feedbackAnswer(shown(graded.matched))}',
+        ),
       AnswerOutcome.closeDiacritics => banner(
         FeedbackKind.close,
         graded.droppedArticle && graded.foldedDiacritics
