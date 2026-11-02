@@ -1,0 +1,29 @@
+"schema": 1
+"id": "zh-en-grammar-zai-progressive"
+"kind": "layer"
+"core": "zh-grammar-zai-progressive"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "在 (zài): doing something now"
+"license": "CC-BY-SA-4.0"
+"description": "Doing something now: 在 (zài) goes before the verb, and 没在 (méi zài) says it is not happening now. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "在 (zài): doing something now"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "bare": "a plain statement"
+    "now": "happening now, with 在 (zài)"
+    "not": "not happening now, with 没在 (méi zài)"
+  "entries":
+    "chi": "to eat"
+    "kan": "to read"
+    "xie": "to write"
+    "zuo": "to do; to make"
+    "shuijiao": "to sleep"
+    "gongzuo": "to work"
+  "notes": "在 (zài) goes before the verb to say that something is going on now: 我在吃饭 (wǒ zài chī fàn), I am eating. To say it is not happening now, put 没在 (méi zài) before the verb: 我没在吃饭 (wǒ méi zài chī fàn), I am not eating. 在 (zài) is said with the fourth tone, and 没 (méi) with the second. A sentence often ends with 呢 (ne): 我在吃饭呢 (wǒ zài chī fàn ne), I am eating, right now."

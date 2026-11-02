@@ -389,7 +389,9 @@ units:
       - { id: "a-flat-tour", text: { "en": "A tour of a small flat, room by room" } }
     reading_passages:
       - { id: "flat-advert", text: { "en": "A short advert for a flat to rent" } }
-  - planned: { id: "zh-grammar-zai-ba", grammar: ["zai-progressive", "ba-suggestion"] }
+  - decks: ["zh-grammar-zai-progressive", "zh-grammar-ba-suggestion", "zh-grammar-zai-progressive-sentences"]
+    words: 0
+    grammar: ["zai-progressive", "ba-suggestion"]
     listening_passages:
       - { id: "what-are-you-doing", text: { "en": "Saying what you are doing right now, and suggesting: let's go" } }
     reading_passages:
