@@ -725,11 +725,14 @@ units:
       - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
   - decks: ["as-reading-reported-speech"]
     words: 0
-  - planned: { id: "as-literature", theme: "literature", words: 50 }
+  - decks: ["as-literature", "as-literature-sentences", "*"]
+    words: 18
     listening_passages:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
+  - decks: ["as-reading-literature"]
+    words: 0
   - planned: { id: "as-verbs-5", theme: "verbs-5", words: 45 }
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }

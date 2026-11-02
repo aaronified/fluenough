@@ -1,0 +1,189 @@
+schema: 1
+id: "as-literature"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+theme: "literature"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-4002"
+    target: "সাহিত্য"
+    reading: "xāhityô"
+    ipa: "sahitj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সাহিত্য ভাল।", reading: "xāhityô bhāl.", ipa: "sahitj bʱal" }
+      - { target: "সাহিত্য পঢ়া।", reading: "xāhityô pôrhā.", ipa: "sahitj pɔɹa" }
+  - id: "as-4003"
+    target: "কবিতা"
+    reading: "kôbitā"
+    ipa: "kobita"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কবিতা ধুনীয়া।", reading: "kôbitā dhuniyā.", ipa: "kobita dʱunija" }
+      - { target: "কবিতা লিখিছোঁ।", reading: "kôbitā likhisum̐.", ipa: "kobita likʰisʊ̃", bases: [{ word: "লিখিছোঁ", ref: "as-2204" }] }
+  - id: "as-4004"
+    target: "কবি"
+    reading: "kôbi"
+    ipa: "kobi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কবি ভাল।", reading: "kôbi bhāl.", ipa: "kobi bʱal" }
+      - { target: "কবি আহিছে।", reading: "kôbi āhise.", ipa: "kobi ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-4005"
+    target: "গ্ৰন্থ"
+    reading: "grôntô"
+    ipa: "ɡɹɔntʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গ্ৰন্থ পুৰণি।", reading: "grôntô puroni.", ipa: "ɡɹɔntʰ puɹoni" }
+      - { target: "গ্ৰন্থ বহুত।", reading: "grôntô bohut.", ipa: "ɡɹɔntʰ bohut" }
+  - id: "as-4006"
+    target: "উপন্যাস"
+    reading: "upônyās"
+    ipa: "upɔnjas"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "উপন্যাস দীঘল।", reading: "upônyās dighôl.", ipa: "upɔnjas diɡʱɔl" }
+      - { target: "উপন্যাস পঢ়িছোঁ।", reading: "upônyās pôrhisum̐.", ipa: "upɔnjas poɹisʊ̃", bases: [{ word: "পঢ়িছোঁ", ref: "as-2203" }] }
+  - id: "as-4007"
+    target: "ছন্দ"
+    reading: "xônd"
+    ipa: "sɔnd"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ছন্দ ভাল।", reading: "xônd bhāl.", ipa: "sɔnd bʱal" }
+      - { target: "ছন্দ শুনা।", reading: "xônd xunā.", ipa: "sɔnd xuna" }
+  - id: "as-4008"
+    target: "অক্ষৰ"
+    reading: "ôkkhôr"
+    ipa: "ɔkkʰɔɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অক্ষৰ সৰু।", reading: "ôkkhôr xôru.", ipa: "ɔkkʰɔɹ soɹu" }
+      - { target: "অক্ষৰ বহুত।", reading: "ôkkhôr bohut.", ipa: "ɔkkʰɔɹ bohut" }
+  - id: "as-4009"
+    target: "শব্দ"
+    reading: "xôbdô"
+    ipa: "xɔbd"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "শব্দ ভাল।", reading: "xôbdô bhāl.", ipa: "xɔbd bʱal" }
+      - { target: "শব্দ নতুন।", reading: "xôbdô nôtun.", ipa: "xɔbd notun" }
+  - id: "as-4010"
+    target: "অৰ্থ"
+    reading: "ôrthô"
+    ipa: "ɔɹtʰ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অৰ্থ কি?", reading: "ôrthô ki?", ipa: "ɔɹtʰ ki" }
+      - { target: "অৰ্থ ঠিক।", reading: "ôrthô ṭhik.", ipa: "ɔɹtʰ tʰik" }
+  - id: "as-4011"
+    target: "অনুবাদ"
+    reading: "ônubād"
+    ipa: "ɔnubad"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অনুবাদ ভাল।", reading: "ônubād bhāl.", ipa: "ɔnubad bʱal" }
+      - { target: "অনুবাদ কৰা।", reading: "ônubād kôrā.", ipa: "ɔnubad kɔɹa" }
+  - id: "as-4012"
+    target: "প্ৰকাশক"
+    reading: "prôkāxôk"
+    ipa: "pɹɔkaxɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "প্ৰকাশক ভাল।", reading: "prôkāxôk bhāl.", ipa: "pɹɔkaxɔk bʱal" }
+      - { target: "প্ৰকাশক আহিছে।", reading: "prôkāxôk āhise.", ipa: "pɹɔkaxɔk ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-4013"
+    target: "অধ্যায়"
+    reading: "ôdhyāy"
+    ipa: "ɔdʱjaj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অধ্যায় এক।", reading: "ôdhyāy ek.", ipa: "ɔdʱjaj ek" }
+      - { target: "অধ্যায় শেষ।", reading: "ôdhyāy xes.", ipa: "ɔdʱjaj xex", bases: [{ word: "শেষ", base: "শেষ", reading: "xes" }] }
+  - id: "as-4014"
+    target: "সংস্কৰণ"
+    reading: "xôṅskôrôṇ"
+    ipa: "sɔŋskɔɹɔn"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সংস্কৰণ নতুন।", reading: "xôṅskôrôṇ nôtun.", ipa: "sɔŋskɔɹɔn notun" }
+      - { target: "প্ৰথম সংস্কৰণ।", reading: "prôthôm xôṅskôrôṇ.", ipa: "pɹɔtʰɔm sɔŋskɔɹɔn", bases: [{ word: "প্ৰথম", base: "প্ৰথম", reading: "prôthôm" }] }
+  - id: "as-4015"
+    target: "পাঠক"
+    reading: "pāṭhôk"
+    ipa: "patʰɔk"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পাঠক বহুত।", reading: "pāṭhôk bohut.", ipa: "patʰɔk bohut" }
+      - { target: "পাঠক আহিছে।", reading: "pāṭhôk āhise.", ipa: "patʰɔk ahise", bases: [{ word: "আহিছে", ref: "as-2201" }] }
+  - id: "as-4016"
+    target: "ৰচনা"
+    reading: "rôcônā"
+    ipa: "ɹɔsɔna"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰচনা ভাল।", reading: "rôcônā bhāl.", ipa: "ɹɔsɔna bʱal" }
+      - { target: "ৰচনা লিখা।", reading: "rôcônā likhā.", ipa: "ɹɔsɔna likʰa" }
+  - id: "as-4017"
+    target: "বিষয়"
+    reading: "biṣôy"
+    ipa: "bixɔj"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বিষয় কি?", reading: "biṣôy ki?", ipa: "bixɔj ki" }
+      - { target: "বিষয় ভাল।", reading: "biṣôy bhāl.", ipa: "bixɔj bʱal" }
+  - id: "as-4018"
+    target: "চৰিত্ৰ"
+    reading: "coritrô"
+    ipa: "soɹitɹ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চৰিত্ৰ ভাল।", reading: "coritrô bhāl.", ipa: "soɹitɹ bʱal" }
+      - { target: "চৰিত্ৰ বহুত।", reading: "coritrô bohut.", ipa: "soɹitɹ bohut" }
+  - id: "as-4019"
+    target: "আবৃত্তি কৰা"
+    reading: "ābrittī kôrā"
+    ipa: "abritti kɔɹa"
+    pos: "phrase"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases:
+      - { word: "আবৃত্তি", base: "আবৃত্তি", reading: "ābrittī" }
+    examples:

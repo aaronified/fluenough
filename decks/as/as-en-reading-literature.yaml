@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-literature"
+name: "Assamese reading: literature: books, poems and writers"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-a-poem-read-aloud"
+    title: "A teacher reads a short poem and explains it"
+    theme: "literature"
+    sentences:
+      - text: "এইটো এটা ছোট কবিতা।"
+        reading: "eitu etā choṭ kôbitā."
+      - text: "কবিয়ে ফুলৰ কথা লিখিছে।"
+        reading: "kôbiye phulôr kôthā likhise."
+      - text: "ছন্দ ধুনীয়া।"
+        reading: "xônd dhuniyā."
+      - text: "অৰ্থ বুজিলে ভাল।"
+        reading: "ôrthô buzile bhāl."
+    questions:
+      - id: "as-4028"
+        prompt: { en: "The poem is short." }
+        answer: true
+      - id: "as-4029"
+        prompt: { en: "What does the poet write about?" }
+        options:
+          - { en: "Flowers" }
+          - { en: "Cars" }
+          - { en: "Money" }
+        answer: 1
+      - id: "as-4030"
+        prompt: { en: "What is said about the rhythm?" }
+        options:
+          - { en: "It is bad" }
+          - { en: "It is lovely" }
+          - { en: "It is missing" }
+        answer: 2
+  - id: "as-book-blurb"
+    title: "The back-cover blurb of a novel"
+    theme: "literature"
+    sentences:
+      - text: "এই উপন্যাসত এজন ছোৱালী আছে।"
+        reading: "ei upônyāsôt ezôn suwālī āse."
+      - text: "সি গাঁৱৰ পৰা আহিছে।"
+        reading: "xi gāwôr pôrā āhise."
+      - text: "কাহিনী দীঘল আৰু ধুনীয়া।"
+        reading: "kāhinī dighôl āru dhuniyā."
+      - text: "পাঠকে ভাল পাব।"
+        reading: "pāṭhôkē bhāl pāb."
+    questions:
+      - id: "as-4031"
+        prompt: { en: "The novel has a girl in it." }
+        answer: true
+      - id: "as-4032"
+        prompt: { en: "Where does she come from?" }
+        options:
+          - { en: "A village" }
+          - { en: "A city" }
+          - { en: "A ship" }
+        answer: 1
+      - id: "as-4033"
+        prompt: { en: "What will the reader do?" }
+        options:
+          - { en: "Dislike it" }
+          - { en: "Enjoy it" }
+          - { en: "Burn it" }
+        answer: 2

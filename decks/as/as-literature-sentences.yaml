@@ -1,0 +1,79 @@
+schema: 1
+id: "as-literature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-4020"
+    target: "কবি কবিতা লিখে।"
+    reading: "kôbi kôbitā likhe."
+    ipa: "kobi kobita likʰe"
+    pos: "phrase"
+    bases:
+      - { word: "লিখে", ref: "as-2204" }
+    confusables:
+      - { id: "c1", word: "পাঠক", reading: "pāṭhôk", kind: "word" }
+      - { id: "c2", word: "প্ৰকাশক", reading: "prôkāxôk", kind: "word" }
+  - id: "as-4021"
+    target: "উপন্যাস দীঘল।"
+    reading: "upônyās dighôl."
+    ipa: "upɔnjas diɡʱɔl"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "কবিতা", reading: "kôbitā", kind: "word" }
+      - { id: "c2", word: "অধ্যায়", reading: "ôdhyāy", kind: "word" }
+  - id: "as-4022"
+    target: "এই শব্দৰ অৰ্থ কি?"
+    reading: "ei xôbdôr ôrthô ki?"
+    ipa: "ei xɔbdɔɹ ɔɹtʰ ki"
+    pos: "phrase"
+    bases:
+      - { word: "এই", ref: "as-2193" }
+      - { word: "শব্দৰ", ref: "as-4009" }
+    confusables:
+      - { id: "c1", word: "অনুবাদ", reading: "ônubād", kind: "word" }
+      - { id: "c2", word: "অক্ষৰ", reading: "ôkkhôr", kind: "word" }
+  - id: "as-4023"
+    target: "অধ্যায় এক শেষ।"
+    reading: "ôdhyāy ek xes."
+    ipa: "ɔdʱjaj ek xex"
+    pos: "phrase"
+    bases:
+      - { word: "শেষ", base: "শেষ", reading: "xes" }
+    confusables:
+      - { id: "c1", word: "সংস্কৰণ", reading: "xôṅskôrôṇ", kind: "word" }
+      - { id: "c2", word: "ৰচনা", reading: "rôcônā", kind: "word" }
+  - id: "as-4024"
+    target: "চৰিত্ৰ ভাল।"
+    reading: "coritrô bhāl."
+    ipa: "soɹitɹ bʱal"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "খল", reading: "khôl", kind: "word" }
+      - { id: "c2", word: "ছন্দ", reading: "xônd", kind: "word" }
+  - id: "as-4025"
+    target: "ছন্দ ধুনীয়া।"
+    reading: "xônd dhuniyā."
+    ipa: "sɔnd dʱunija"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "সুৰ", reading: "sur", kind: "word" }
+      - { id: "c2", word: "তাল", reading: "tāl", kind: "word" }
+  - id: "as-4026"
+    target: "সাহিত্য পঢ়া।"
+    reading: "xāhityô pôrhā."
+    ipa: "sahitj pɔɹa"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "লিখা", reading: "likhā", kind: "word" }
+      - { id: "c2", word: "শুনা", reading: "xunā", kind: "word" }
+  - id: "as-4027"
+    target: "গ্ৰন্থ পুৰণি।"
+    reading: "grôntô puroni."
+    ipa: "ɡɹɔntʰ puɹoni"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "নতুন", reading: "nôtun", kind: "word" }
+      - { id: "c2", word: "সৰু", reading: "xôru", kind: "word" }
