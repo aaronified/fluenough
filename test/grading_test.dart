@@ -898,7 +898,7 @@ void main() {
 
       const wrong = GradedAnswer(AnswerOutcome.wrong, matched: null);
 
-      testWidgets('names the sound, and what the word heard means', (
+      testWidgets('gives the answer and names the sound that differs', (
         tester,
       ) async {
         await pump(
@@ -912,13 +912,11 @@ void main() {
           ),
         );
         final l10n = l10nOf(tester);
+        // What was heard is shown in the Say result's box, not here.
         expect(
           find.text(
-            l10n.feedbackSaidContrastMeaning(
-              'খাল',
-              'canal',
-              'a breath after the consonant',
-            ),
+            '${l10n.feedbackAnswer(kal.target)}\n'
+            '${l10n.feedbackSaidDifference('a breath after the consonant')}',
           ),
           findsOneWidget,
         );
