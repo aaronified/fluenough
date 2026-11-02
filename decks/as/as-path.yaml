@@ -463,11 +463,14 @@ units:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
   - decks: ["as-reading-news"]
     words: 0
-  - planned: { id: "as-opinions", theme: "opinions", words: 50 }
+  - decks: ["as-opinions", "as-opinions-sentences", "*"]
+    words: 19
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
     reading_passages:
       - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
+  - decks: ["as-reading-opinions"]
+    words: 0
   - decks: ["as-grammar-can-must"]
     words: 0
     grammar: ["can-must"]

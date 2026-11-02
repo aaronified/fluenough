@@ -1,0 +1,70 @@
+schema: 1
+id: "as-en-reading-opinions"
+name: "Assamese reading: opinions: agree, disagree, praise and criticize"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-agreeing-and-disagreeing"
+    title: "Agreeing and disagreeing over tea"
+    theme: "opinions"
+    sentences:
+      - text: "মই তোমাৰ লগত সহমত।"
+        reading: "moi tomār lôgôt xôhômôt."
+      - text: "কিন্তু মই অসহমত।"
+        reading: "kintu moi ôxôhômôt."
+      - text: "তোমাৰ যুক্তি ভাল।"
+        reading: "tomār zuktī bhāl."
+      - text: "মোৰ ধাৰণা সত্য।"
+        reading: "mur dhāraṇā xôtyô."
+    questions:
+      - id: "as-3300"
+        prompt: { en: "The speaker agrees with the friend." }
+        answer: true
+      - id: "as-3301"
+        prompt: { en: "What does the speaker say about the friend's reason?" }
+        options:
+          - { en: "It is bad" }
+          - { en: "It is good" }
+          - { en: "It is false" }
+        answer: 2
+      - id: "as-3302"
+        prompt: { en: "What does the speaker say about their own idea?" }
+        options:
+          - { en: "It is false" }
+          - { en: "It is true" }
+          - { en: "It is not given" }
+        answer: 2
+  - id: "as-readers-letters"
+    title: "Two short letters to a newspaper"
+    theme: "opinions"
+    sentences:
+      - text: "প্ৰশংসা কৰিছোঁ, কিন্তু সমালোচনাও আছে।"
+        reading: "prôśôṅsā kôrisum̐, kintu xômālôcôna āo āse."
+      - text: "এইটো উচিত নহয়।"
+        reading: "eitu uciti nôhôy."
+      - text: "মই সমৰ্থন কৰোঁ।"
+        reading: "moi xômôrthôn kôrum̐."
+      - text: "পৰামৰ্শ: বিবেচনা কৰক।"
+        reading: "porāmôrś: bibôcôna kôrôk."
+    questions:
+      - id: "as-3303"
+        prompt: { en: "The writer praises the paper." }
+        answer: true
+      - id: "as-3304"
+        prompt: { en: "What is not proper?" }
+        options:
+          - { en: "The paper" }
+          - { en: "The shop" }
+          - { en: "The bus" }
+        answer: 1
+      - id: "as-3305"
+        prompt: { en: "What advice is given?" }
+        options:
+          - { en: "Sleep" }
+          - { en: "Think it over" }
+          - { en: "Run" }
+        answer: 2

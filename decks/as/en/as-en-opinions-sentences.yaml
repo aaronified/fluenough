@@ -1,0 +1,56 @@
+schema: 1
+id: "as-en-opinions-sentences"
+kind: "layer"
+core: "as-opinions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions: agree, disagree, praise and criticize: sentences"
+license: "CC-BY-SA-4.0"
+description: "Sentences built from the words of this unit and the ones before it. Not yet checked by an Assamese speaker: please report any mistake."
+tags: ["unreviewed"]
+cards:
+  "as-3292":
+    native: "I agree with your view."
+    bases:
+      "সৈতে": "with"
+    confusables:
+      "c1": { why: "Not in agreement, the opposite." }
+      "c2": { why: "Opposition, the opposite of agreement." }
+  "as-3293":
+    native: "She praises."
+    confusables:
+      "c1": { why: "Criticism, the opposite." }
+      "c2": { why: "Judgement, not praise." }
+  "as-3294":
+    native: "This is not proper."
+    confusables:
+      "c1": { why: "Improper, the same meaning in the sentence." }
+      "c2": { why: "True, not proper." }
+  "as-3295":
+    native: "What is said is true."
+    bases:
+      "কথাটো": "talk; speech; matter"
+    confusables:
+      "c1": { why: "False, the opposite." }
+      "c2": { why: "An idea, not a truth." }
+  "as-3296":
+    native: "Your reason is good."
+    confusables:
+      "c1": { why: "Advice, not a reason." }
+      "c2": { why: "A suggestion, not a reason." }
+  "as-3297":
+    native: "I will think it over."
+    confusables:
+      "c1": { why: "Support, a different action." }
+      "c2": { why: "Opposition, a different action." }
+  "as-3298":
+    native: "The suggestion is good."
+    confusables:
+      "c1": { why: "Criticism, not a suggestion." }
+      "c2": { why: "Praise, a different thing." }
+  "as-3299":
+    native: "Do not tell lies."
+    bases:
+      "কথা": "talk; speech; matter"
+    confusables:
+      "c1": { why: "True, the opposite of a lie." }
+      "c2": { why: "Right, a different idea." }
