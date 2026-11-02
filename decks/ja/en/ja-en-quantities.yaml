@@ -1,0 +1,372 @@
+schema: 1
+id: "ja-en-quantities"
+kind: "layer"
+core: "ja-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Quantities"
+description: "Twenty words for amounts and prices: many and few, all and half, about and exactly, money and the price, and everyday food and containers. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0430":
+    native: "many; a lot"
+    notes:
+      "n1": "おおい (ooi) means many. The opposite is すくない (sukunai)."
+    examples:
+      "ともだちがおおいです。":
+        native: "I have many friends."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "がくせいはおおいです。":
+        native: "There are many students."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0431":
+    native: "few; little"
+    notes:
+      "n1": "すくない (sukunai) means few or little. The opposite is おおい (ooi)."
+    examples:
+      "おかねはすくないです。":
+        native: "I have little money."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "みずがすくないです。":
+        native: "There is little water."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0432":
+    native: "all; the whole; everything"
+    notes:
+      "n1": "ぜんぶ (zenbu) means all of it, the whole."
+    examples:
+      "ぜんぶたべます。": "I eat it all."
+      "ぜんぶわかりますか。":
+        native: "Do you understand all of it?"
+        bases:
+          "か":
+            meaning: "(marks a question)"
+  "ja-0433":
+    native: "half"
+    notes:
+      "n1": "はんぶん (hanbun) means half of something."
+    examples:
+      "りんごをはんぶんたべます。":
+        native: "I eat half an apple."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "みずがはんぶんです。":
+        native: "The water is half full."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0434":
+    native: "almost; nearly; mostly"
+    notes:
+      "n1": "ほとんど (hotondo) means almost, nearly all of it."
+    examples:
+      "ほとんどわかります。": "I understand almost all of it."
+      "ほとんどねません。": "I almost never sleep."
+  "ja-0435":
+    native: "roughly; about; generally"
+    notes:
+      "n1": "だいたい (daitai) means roughly, in a general way."
+    examples:
+      "だいたいわかります。": "I roughly understand."
+      "だいたいいくらですか。":
+        native: "About how much is it?"
+        bases:
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0436":
+    native: "a lot of people; a crowd"
+    notes:
+      "n1": "おおぜい (oozei) means a lot of people."
+    examples:
+      "がっこうにおおぜいのがくせいがいます。":
+        native: "There are a lot of students at the school."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+      "ひとがおおぜいです。":
+        native: "There are a lot of people."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0437":
+    native: "two people"
+    notes:
+      "n1": "ふたり (futari) means two people. One person is ひとり (hitori)."
+    examples:
+      "ふたりのともだちがいます。":
+        native: "I have two friends."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+      "ふたりはがくせいです。":
+        native: "The two of them are students."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0438":
+    native: "cheap; inexpensive"
+    notes:
+      "n1": "やすい (yasui) means cheap. The opposite is たかい (takai)."
+    examples:
+      "でんしゃはやすいです。":
+        native: "The train is cheap."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ぎゅうにゅうはやすいですか。":
+        native: "Is milk cheap?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0439":
+    native: "expensive; high; tall"
+    notes:
+      "n1": "たかい (takai) means expensive, or high. The opposite is やすい (yasui)."
+    examples:
+      "でんしゃはたかいです。":
+        native: "The train is expensive."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ぱんはたかいですか。":
+        native: "Is bread expensive?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0440":
+    native: "money"
+    notes:
+      "n1": "おかね (okane) means money, the coins and notes."
+    examples:
+      "おかねがすくないです。":
+        native: "I have little money."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "おかねはいくらですか。":
+        native: "How much money is it?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0441":
+    native: "price"
+    notes:
+      "n1": "ねだん (nedan) means the price of something."
+    examples:
+      "ねだんはいくらですか。":
+        native: "What is the price?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "ねだんはたかいです。":
+        native: "The price is high."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0442":
+    native: "size"
+    notes:
+      "n1": "おおきさ (ookisa) means the size of something."
+    examples:
+      "おおきさはおおきいです。":
+        native: "The size is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "いぬのおおきさはちいさいです。":
+        native: "The size of the dog is small."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0443":
+    native: "exactly; just"
+    notes:
+      "n1": "ちょうど (choudo) means exactly, or just."
+    examples:
+      "りんごがちょうどひとつです。":
+        native: "There is exactly one apple."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "ちょうどにほんごがわかります。":
+        native: "I understand Japanese exactly."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+  "ja-0444":
+    native: "apple"
+    notes:
+      "n1": "りんご (ringo) is an apple."
+    examples:
+      "りんごをふたつたべます。":
+        native: "I eat two apples."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "りんごはいくつですか。":
+        native: "How many apples are there?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0445":
+    native: "milk"
+    notes:
+      "n1": "ぎゅうにゅう (gyuunyuu) is milk."
+    examples:
+      "ぎゅうにゅうをのみます。":
+        native: "I drink milk."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "ぎゅうにゅうはすくないです。":
+        native: "There is little milk."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0446":
+    native: "bread"
+    notes:
+      "n1": "ぱん (pan) is bread."
+    examples:
+      "ぱんをたべます。":
+        native: "I eat bread."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "ぱんはおおきいです。":
+        native: "The bread is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0447":
+    native: "egg"
+    notes:
+      "n1": "たまご (tamago) is an egg."
+    examples:
+      "たまごをたべます。":
+        native: "I eat eggs."
+        bases:
+          "を":
+            meaning: "(marks the thing acted on)"
+      "たまごはやすいです。":
+        native: "Eggs are cheap."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0448":
+    native: "box"
+    notes:
+      "n1": "はこ (hako) is a box, a container."
+    examples:
+      "はこがおおきいです。":
+        native: "The box is big."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "はこはいくつですか。":
+        native: "How many boxes are there?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0449":
+    native: "bottle"
+    notes:
+      "n1": "びん (bin) is a bottle, a glass container."
+    examples:
+      "びんがいっぱいです。":
+        native: "The bottle is full."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+      "びんのみずをのみます。":
+        native: "I drink the water from the bottle."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "を":
+            meaning: "(marks the thing acted on)"

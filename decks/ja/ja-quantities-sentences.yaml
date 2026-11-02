@@ -1,0 +1,111 @@
+schema: 1
+id: "ja-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0450"
+    target: "りんごがおおいです。"
+    words: ["りんご", "が", "おおい", "です"]
+    reading: "ringo ga ooi desu."
+    ipa: "ɾiɴɡo ɡa oːi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        ref: "ja-0077"
+        kind: "word"
+      - id: "w2"
+        word: "すくない"
+        reading: "sukunai"
+        kind: "word"
+  - id: "ja-0451"
+    target: "ぎゅうにゅうはやすいです。"
+    words: ["ぎゅうにゅう", "は", "やすい", "です"]
+    reading: "gyuunyuu wa yasui desu."
+    ipa: "gjɯːɲɯː wa jasɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "たかい"
+        reading: "takai"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0078"
+        kind: "word"
+  - id: "ja-0452"
+    target: "おかねがすくないです。"
+    words: ["おかね", "が", "すくない", "です"]
+    reading: "okane ga sukunai desu."
+    ipa: "okane ɡa sɯkɯnai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "おおい"
+        reading: "ooi"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0120"
+        kind: "word"
+  - id: "ja-0453"
+    target: "りんごをはんぶんたべます。"
+    words: ["りんご", "を", "はんぶん", "たべます"]
+    reading: "ringo o hanbun tabemasu."
+    ipa: "ɾiɴɡo o haɴbɯɴ tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", ref: "ja-0341" }
+    confusables:
+      - id: "w1"
+        word: "ぜんぶ"
+        reading: "zenbu"
+        kind: "word"
+      - id: "w2"
+        word: "ふたり"
+        reading: "futari"
+        kind: "word"
+  - id: "ja-0454"
+    target: "ねだんはたかいです。"
+    words: ["ねだん", "は", "たかい", "です"]
+    reading: "nedan wa takai desu."
+    ipa: "nedaɴ wa takai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "やすい"
+        reading: "yasui"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0120"
+        kind: "word"
+  - id: "ja-0455"
+    target: "わたしはぜんぶわかります。"
+    words: ["わたし", "は", "ぜんぶ", "わかります"]
+    reading: "watashi wa zenbu wakarimasu."
+    ipa: "wataɕi wa dzeɴbɯ wakaɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "わかります", ref: "ja-0365" }
+    confusables:
+      - id: "w1"
+        word: "ほとんど"
+        reading: "hotondo"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0395"
+        kind: "word"
