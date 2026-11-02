@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-adverbs"
+name: "Japanese reading: adverbs"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-adverbs-1"
+    title: "A morning at home"
+    sentences:
+      - text: "わたしはいつもおきます。"
+        reading: "watashi wa itsumo okimasu."
+      - text: "ともだちはときどききます。"
+        reading: "tomodachi wa tokidoki kimasu."
+      - text: "ははははやくおきます。"
+        reading: "wa haha hayaku okimasu."
+      - text: "ちちはまだかえりません。"
+        reading: "chichi wa mada kaerimasen."
+    questions:
+      - id: "ja-0424"
+        prompt:
+          en: "Which line says that the speaker always gets up?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0425"
+        prompt:
+          en: "The third line says that mother gets up early."
+        answer: true
+      - id: "ja-0426"
+        prompt:
+          en: "Which line says that the friend sometimes comes?"
+        options:
+          - en: "The second line"
+          - en: "The fourth line"
+        answer: 1
+  - id: "ja-adverbs-2"
+    title: "A note on the table"
+    sentences:
+      - text: "わたしはにほんごがとてもすきです。"
+        reading: "watashi wa nihongo ga totemo suki desu."
+      - text: "えいごはすこしわかります。"
+        reading: "eigo wa sukoshi wakarimasu."
+      - text: "がくせいはもちろんきます。"
+        reading: "gakusei wa mochiron kimasu."
+      - text: "わたしはあとでかえります。"
+        reading: "watashi wa atode kaerimasu."
+    questions:
+      - id: "ja-0427"
+        prompt:
+          en: "Which line says that the speaker understands English a little?"
+        options:
+          - en: "The second line"
+          - en: "The third line"
+        answer: 1
+      - id: "ja-0428"
+        prompt:
+          en: "The fourth line says that the speaker will go home later."
+        answer: true
+      - id: "ja-0429"
+        prompt:
+          en: "Which line says that the speaker likes Japanese very much?"
+        options:
+          - en: "The first line"
+          - en: "The third line"
+        answer: 1
