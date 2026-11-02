@@ -673,7 +673,8 @@ units:
   # B1: the themes and grammar of the CEFR's B1: bei, the conditionals,
   # ba with complements, the extended complements, the written register,
   # and more characters.
-  - planned: { id: "zh-health", theme: "health", words: 55 }
+  - decks: ["zh-health", "zh-health-sentences", "zh-reading-health", "*"]
+    words: 55
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:

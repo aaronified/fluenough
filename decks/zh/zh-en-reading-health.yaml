@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-health"
+"name": "Chinese reading: health"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-doctor-call"
+  "title": "A call to the doctor"
+  "theme": "health"
+  "sentences":
+  - "text": "喂， 医生 吗？ 我 的 孩子 发烧 了。"
+    "reading": "wéi, yīshēng ma? wǒ de háizi fāshāo le."
+  - "text": "他 咳嗽 得 很 厉害， 还 呕吐。"
+    "reading": "tā késou de hěn lìhai, hái ǒutù."
+  - "text": "我 可以 明天 来 看 病 吗？"
+    "reading": "wǒ kěyǐ míngtiān lái kàn bìng ma?"
+  - "text": "请 给 我 挂 号。"
+    "reading": "qǐng gěi wǒ guàhào."
+  "questions":
+  - "id": "zh-2876"
+    "prompt":
+      "en": "发烧 (fāshāo) means:"
+    "options":
+    - "en": "to have a fever"
+    - "en": "to have a cold"
+    "answer": 1
+  - "id": "zh-2877"
+    "prompt":
+      "en": "The child is coughing very badly and is sick."
+    "answer": true
+  - "id": "zh-2878"
+    "prompt":
+      "en": "挂号 (guàhào) means:"
+    "options":
+    - "en": "to register at the clinic"
+    - "en": "to pay the bill"
+    "answer": 1
+- "id": "zh-clinic-notice"
+  "title": "Clinic notice"
+  "theme": "health"
+  "sentences":
+  - "text": "请 带 好 病历 和 处方。"
+    "reading": "qǐng dài hǎo bìnglì hé chǔfāng."
+  - "text": "药房 在 一 楼， 请 排队。"
+    "reading": "yàofáng zài yī lóu, qǐng páiduì."
+  - "text": "不要 在 病房 里 大声 说话。"
+    "reading": "búyào zài bìngfáng lǐ dàshēng shuōhuà."
+  - "text": "戴 好 口罩， 注意 卫生。"
+    "reading": "dài hǎo kǒuzhào, zhùyì wèishēng."
+  "questions":
+  - "id": "zh-2879"
+    "prompt":
+      "en": "处方 (chǔfāng) means:"
+    "options":
+    - "en": "prescription"
+    - "en": "pharmacy"
+    "answer": 1
+  - "id": "zh-2880"
+    "prompt":
+      "en": "The notice says the pharmacy is on the second floor."
+    "answer": false
+  - "id": "zh-2881"
+    "prompt":
+      "en": "病房 (bìngfáng) means:"
+    "options":
+    - "en": "ward"
+    - "en": "clinic"
+    "answer": 1
