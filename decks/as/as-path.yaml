@@ -666,11 +666,15 @@ units:
       - { id: "safety-notice", text: { "en": "A safety notice in a building" } }
   - decks: ["as-reading-emergencies"]
     words: 0
-  - planned: { id: "as-grammar-emphasis", grammar: "emphasis" }
+  - decks: ["as-grammar-emphasis", "as-grammar-emphasis-sentences"]
+    words: 0
+    grammar: ["emphasis"]
     listening_passages:
       - { id: "only-this-one", text: { "en": "Insisting on one choice" } }
     reading_passages:
       - { id: "advert-slogans", text: { "en": "Short advert slogans" } }
+  - decks: ["as-reading-emphasis"]
+    words: 0
   - planned: { id: "as-law", theme: "law", words: 35 }
     listening_passages:
       - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }

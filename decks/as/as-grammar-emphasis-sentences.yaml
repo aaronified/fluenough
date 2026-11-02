@@ -1,0 +1,58 @@
+schema: 1
+id: "as-grammar-emphasis-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "as-3844"
+    target: "তেওঁ অতি ভাল মানুহ।"
+    reading: "teum̐ ôti bhāl mānuh."
+    ipa: "teʊ̃ ɔti bʱal manuh"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "বেয়া", reading: "beyā", kind: "word" }
+      - { id: "c2", word: "সৰু", reading: "xôru", kind: "word" }
+  - id: "as-3845"
+    target: "সেইটো সঁচাকৈ ডাঙৰ।"
+    reading: "seitu sôm̐sākôi dāṅôr."
+    ipa: "seitʊ sɔ̃sakɔi daŋɔɹ"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "চুটি", reading: "suti", kind: "word" }
+      - { id: "c2", word: "দীঘল", reading: "dighôl", kind: "word" }
+  - id: "as-3846"
+    target: "আজি অতি গৰম।"
+    reading: "āzi ôti gôrôm."
+    ipa: "azi ɔti ɡɔɹɔm"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ঠাণ্ডা", reading: "thāndā", kind: "word" }
+      - { id: "c2", word: "শীতল", reading: "xītôl", kind: "word" }
+  - id: "as-3847"
+    target: "এইটো একেবাৰে বেয়া।"
+    reading: "eitu ekebāre beyā."
+    ipa: "eitʊ ekebaɹe beja"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ভাল", reading: "bhāl", kind: "word" }
+      - { id: "c2", word: "ধুনীয়া", reading: "dhuniyā", kind: "word" }
+  - id: "as-3848"
+    target: "মোৰ ঘৰ অতি সৰু।"
+    reading: "mur ghôr ôti xôru."
+    ipa: "mʊɹ ɡʱɔɹ ɔti soɹu"
+    pos: "phrase"
+    confusables:
+      - { id: "c1", word: "ডাঙৰ", reading: "dāṅôr", kind: "word" }
+      - { id: "c2", word: "বহল", reading: "bôhôl", kind: "word" }
+  - id: "as-3849"
+    target: "তাই সঁচাকৈ ধুনীয়া।"
+    reading: "tāi sôm̐sākôi dhuniyā."
+    ipa: "tai sɔ̃sakɔi dʱunija"
+    pos: "phrase"
+    bases:
+      - { word: "তাই", ref: "as-2180" }
+    confusables:
+      - { id: "c1", word: "বেয়া", reading: "beyā", kind: "word" }
+      - { id: "c2", word: "মিঠা", reading: "mithā", kind: "word" }

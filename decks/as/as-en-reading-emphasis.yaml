@@ -1,0 +1,68 @@
+schema: 1
+id: "as-en-reading-emphasis"
+name: "Assamese reading: very, really, totally: stressing an adjective"
+kind: "reading"
+language: { code: "as", iso639_3: "asm", name: "Assamese", script: "bengali", tts: "as-IN", icon: "অ" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["unreviewed"]
+passages:
+  - id: "as-only-this-one"
+    title: "Insisting on one choice"
+    sentences:
+      - text: "এইটো অতি ভাল।"
+        reading: "eitu ôti bhāl."
+      - text: "সেইটো একেবাৰে বেয়া।"
+        reading: "seitu ekebāre beyā."
+      - text: "মই এইটোৱেই লওঁ।"
+        reading: "moi eitōwērē lôu."
+      - text: "আন নালাগে।"
+        reading: "ān nālāge."
+    questions:
+      - id: "as-3850"
+        prompt: { en: "This one is very good." }
+        answer: true
+      - id: "as-3851"
+        prompt: { en: "What is said about that one?" }
+        options:
+          - { en: "Very good" }
+          - { en: "Totally bad" }
+          - { en: "Very small" }
+        answer: 2
+      - id: "as-3852"
+        prompt: { en: "Which one does the speaker choose?" }
+        options:
+          - { en: "That one" }
+          - { en: "This one" }
+          - { en: "Neither" }
+        answer: 2
+  - id: "as-advert-slogans"
+    title: "Short advert slogans"
+    sentences:
+      - text: "অতি সস্তা, অতি ভাল।"
+        reading: "ôti xôstā, ôti bhāl."
+      - text: "সঁচাকৈ নতুন স্বাদ।"
+        reading: "sôm̐sākôi nôtun xwād."
+      - text: "একেবাৰে নিৰাপদ।"
+        reading: "ekebāre nirāpôd."
+      - text: "আজিয়েই কিনক।"
+        reading: "āziyei kinôk."
+    questions:
+      - id: "as-3853"
+        prompt: { en: "The product is very cheap." }
+        answer: true
+      - id: "as-3854"
+        prompt: { en: "What is promised about the taste?" }
+        options:
+          - { en: "It is new" }
+          - { en: "It is bad" }
+          - { en: "It is sour" }
+        answer: 1
+      - id: "as-3855"
+        prompt: { en: "When should you buy it?" }
+        options:
+          - { en: "Today" }
+          - { en: "Never" }
+          - { en: "Last year" }
+        answer: 1
