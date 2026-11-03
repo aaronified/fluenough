@@ -101,29 +101,11 @@ class ReadingDrill extends StatelessWidget {
             _WordsButton(passage: card.passage, language: language),
           if (source != null) _Source(source),
         ],
-        actions: <Widget>[
-          if (heard) ...<Widget>[
-            CantNowButton(session: session),
-            const SizedBox(height: 4),
-          ],
-          FilledButton(
-            onPressed: session.toQuestions,
-            style: AppButtonStyles.tall(context),
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                Flexible(
-                  child: Text(
-                    l10n.readingToQuestions,
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-                const SizedBox(width: 10),
-                const Icon(Icons.arrow_forward, size: 22),
-              ],
-            ),
-          ),
-        ],
+        // From the passage to its questions is a swipe or the chevron, as
+        // going on is everywhere (#509); Can't listen now stays for a heard
+        // passage.
+        going: DrillGoing(onNext: session.toQuestions, pinned: true),
+        actions: <Widget>[if (heard) CantNowButton(session: session)],
       );
     }
 
@@ -156,7 +138,12 @@ class ReadingDrill extends StatelessWidget {
         Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            for (final (place, i) in session.choiceOrder.indexed) ...<Widget>[
+            // Answered, the right choice and, when the learner chose wrong,
+            // the one they chose; the others are not shown (doubt 13).
+            for (final (place, i) in <int>[
+              for (final i in session.choiceOrder)
+                if (!answered || question.isRight(i) || choice == i) i,
+            ].indexed) ...<Widget>[
               if (place > 0) const SizedBox(height: 10),
               ChoiceTile(
                 right: answered && question.isRight(i),

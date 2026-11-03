@@ -168,9 +168,12 @@ void main() {
     final missed = progress.stateOf(card.id, DrillMode.recognition)!;
     expect(missed.repetitions, 0);
     expect(missed.lapses, 0);
+    // Answered wrong: the right picture and the one chosen, no others.
+    expect(find.byType(PictureTile), findsNWidgets(2));
     // A second tap changes nothing.
-    final right = session.options.indexWhere((c) => c.id == card.id);
-    await tester.tap(find.byType(PictureTile).at(right));
+    await tester.tap(
+      find.byWidgetPredicate((w) => w is PictureTile && w.card.id == card.id),
+    );
     await tester.pumpAndSettle();
     expect(session.isRight(session.picked!), isFalse);
     // Had the second tap counted as a right answer, repetitions would be 1.

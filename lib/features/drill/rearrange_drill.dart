@@ -221,7 +221,7 @@ List<Widget> rearrangeBoard(
             ),
             child: line(rightOrder, WordMark.right, l10n.drillRearrangeRight),
           ),
-          if (!correct) ...<Widget>[
+          if (!correct && placed.isNotEmpty) ...<Widget>[
             const SizedBox(height: 8),
             Padding(
               padding: const EdgeInsetsDirectional.symmetric(horizontal: 4),
