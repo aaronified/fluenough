@@ -2,13 +2,13 @@ import 'package:flutter/material.dart' hide Card;
 
 import '../../app/app_scope.dart';
 import '../../app/deck_catalog.dart' show DeckEntry;
+import '../../app/skill.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/speaker.dart';
-import '../../ui/widgets/teach_swipe.dart';
 import 'taught_details.dart' show TaughtReading;
 import 'teach_card.dart';
 
@@ -97,54 +97,49 @@ class _WalkthroughPageState extends State<WalkthroughPage> {
     final expectsScript =
         state.settings.learnsAlphabet(language.code) &&
         state.scriptLearned(language.code);
-    return Scaffold(
-      body: SafeArea(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: <Widget>[
-            DrillHeader(
-              progress: (index + 1) / cards.length,
-              position: index + 1,
-              total: cards.length,
-              onClose: () => Navigator.of(context).maybePop(),
-              reportDetail: '${card.id} in ${entry.id}',
-            ),
-            Expanded(
-              child: TeachSwipe(
-                // One swipe's state for each card.
-                key: ValueKey<String>(card.id),
-                onNext: () {
-                  if (index + 1 >= cards.length) {
-                    Navigator.of(context).maybePop();
-                  } else {
-                    _view(cards[index + 1].card);
-                    setState(() => _index = index + 1);
-                  }
-                },
-                onBack: index == 0
-                    ? null
-                    : () => setState(() => _index = index - 1),
-                child: TeachCard(
-                  card: card,
-                  language: language,
-                  deckName: entry.deck.name,
-                  reading: expectsScript
-                      ? TaughtReading.always
-                      : TaughtReading.first,
-                  audio: state.hasVoice(language)
-                      ? Speaker(
-                          onPlay: () => _play(card, language),
-                          playing: _playing,
-                          size: 56,
-                          playOnAppear: true,
-                        )
-                      : null,
-                ),
-              ),
-            ),
-          ],
-        ),
+    // The shared shell's teach frame (#509, the approved mockup's "Teach:
+    // Relearn"): the header, the skill pill, one card and no foot, going on
+    // and back by swipe and the chevrons. The pill says "New word" for every
+    // card of the walk, as the mockup draws it, whether or not it is taught.
+    return DrillFrame(
+      // One swipe's state for each card.
+      key: ValueKey<String>(card.id),
+      skill: Skill.recognition,
+      pillLabel: card.pos == 'phrase' ? l10n.teachNewPhrase : l10n.teachNewWord,
+      deckName: entry.deck.name,
+      position: index + 1,
+      total: cards.length,
+      progress: (index + 1) / cards.length,
+      onClose: () => Navigator.of(context).maybePop(),
+      reportDetail: '${card.id} in ${entry.id}',
+      fade: true,
+      going: DrillGoing(
+        onNext: () {
+          if (index + 1 >= cards.length) {
+            Navigator.of(context).maybePop();
+          } else {
+            _view(cards[index + 1].card);
+            setState(() => _index = index + 1);
+          }
+        },
+        onBack: index == 0 ? null : () => setState(() => _index = index - 1),
       ),
+      card: <Widget>[
+        TeachCard(
+          card: card,
+          language: language,
+          inShell: true,
+          reading: expectsScript ? TaughtReading.always : TaughtReading.first,
+          audio: state.hasVoice(language)
+              ? Speaker(
+                  onPlay: () => _play(card, language),
+                  playing: _playing,
+                  size: 56,
+                  playOnAppear: true,
+                )
+              : null,
+        ),
+      ],
     );
   }
 }
