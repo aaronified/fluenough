@@ -6,6 +6,7 @@ import '../../app/app_scope.dart';
 import '../../app/placement.dart';
 import '../../app/skill.dart';
 import '../../core/grading/romanised.dart';
+import '../../core/models/card.dart' show tilesOf;
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/speech/speech_engine.dart';
@@ -81,7 +82,12 @@ class PlacementFrame extends StatelessWidget {
     this.feedback,
     this.actions = const <Widget>[],
     this.mode = DrillMode.recognition,
+    this.going,
   });
+
+  /// How the question goes on once answered: by swipe and the chevron, with
+  /// no Continue button (#509). Null for a question that goes on at once.
+  final DrillGoing? going;
 
   /// The question's number, from 1.
   final int number;
@@ -92,7 +98,7 @@ class PlacementFrame extends StatelessWidget {
   /// A `FeedbackBanner`, once the answer is in.
   final Widget? feedback;
 
-  /// The buttons at the foot: "I don't know", then "Continue".
+  /// The buttons at the foot: "I don't know", or "Check".
   final List<Widget> actions;
 
   /// The skill the question's pill names: recognising a word, or producing
@@ -111,6 +117,7 @@ class PlacementFrame extends StatelessWidget {
       total: 0,
       positionLabel: l10n.placementQuestionNumber(number),
       progress: shell?.progress ?? 0,
+      going: going,
       reportDetail: shell?.reportDetail,
       onClose: shell?.onClose ?? () => Navigator.of(context).maybePop(),
       card: <Widget>[
@@ -127,7 +134,7 @@ class PlacementFrame extends StatelessWidget {
       feedback: feedback,
       actions: <Widget>[
         ...actions,
-        // Before an answer only: after one, Continue is the way on.
+        // Before an answer only: after one, the swipe is the way on.
         if (shell?.onSkip case final skip? when feedback == null)
           TextButton(
             key: const ValueKey<String>('placement-skip'),
@@ -153,9 +160,9 @@ class _DontKnow extends StatelessWidget {
 }
 
 /// A [PlacementQuestion]: its options, one tile each, as the review's choice
-/// question draws them. With [feedback], the answer is marked and said, and
-/// Continue goes on, as in a review; without, an answer goes on at once, as
-/// the script check's questions do.
+/// question draws them. With [feedback], the answer is marked and said, and a
+/// swipe or the chevron goes on, as in a review; without, an answer goes on
+/// at once, as the script check's questions do.
 class PlacementChoice extends StatefulWidget {
   const PlacementChoice({
     super.key,
@@ -212,8 +219,15 @@ class _PlacementChoiceState extends State<PlacementChoice> {
               title: l10n.feedbackWrong,
               detail: l10n.feedbackAnswer(q.answer),
             ),
+      going: widget.feedback
+          ? DrillGoing(
+              onNext: () => widget.onAnswer(right),
+              nextOn: answered,
+              pinned: true,
+            )
+          : null,
       actions: answered
-          ? <Widget>[_Continue(onTap: () => widget.onAnswer(right))]
+          ? const <Widget>[]
           : <Widget>[_DontKnow(onTap: () => _answer(''))],
       children: <Widget>[
         Semantics(
@@ -222,7 +236,13 @@ class _PlacementChoiceState extends State<PlacementChoice> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              for (final (place, option) in q.options.indexed) ...<Widget>[
+              // Answered, the right option and, when the learner chose
+              // wrong, the one they chose; the others are not shown.
+              for (final (place, option) in <String>[
+                for (final option in q.options)
+                  if (!answered || q.isRight(option) || picked == option)
+                    option,
+              ].indexed) ...<Widget>[
                 if (place > 0) const SizedBox(height: 10),
                 ChoiceTile(
                   right: answered && q.isRight(option),
@@ -240,30 +260,10 @@ class _PlacementChoiceState extends State<PlacementChoice> {
   }
 }
 
-/// The review's Continue button, after an answer's feedback.
-class _Continue extends StatelessWidget {
-  const _Continue({required this.onTap});
-
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) => FilledButton(
-    onPressed: onTap,
-    style: AppButtonStyles.tall(context),
-    child: Row(
-      mainAxisSize: MainAxisSize.min,
-      children: <Widget>[
-        Flexible(child: Text(AppLocalizations.of(context)!.commonContinue)),
-        const SizedBox(width: 10),
-        const Icon(Icons.arrow_forward, size: 22),
-      ],
-    ),
-  );
-}
-
 /// A [TileQuestion]: the sentence's meaning, and its words to put in order,
 /// as the review's rearrange question asks it. Check once every word is
-/// placed; the feedback says the sentence, and Continue goes on.
+/// placed; the feedback says the sentence, and a swipe or the chevron goes
+/// on.
 class PlacementTiles extends StatefulWidget {
   const PlacementTiles({
     super.key,
@@ -353,8 +353,13 @@ class _PlacementTilesState extends State<PlacementTiles> {
           language: _inLatin ? null : widget.language,
         ),
       },
+      going: DrillGoing(
+        onNext: () => widget.onAnswer(_right!),
+        nextOn: answered,
+        pinned: true,
+      ),
       actions: answered
-          ? <Widget>[_Continue(onTap: () => widget.onAnswer(_right!))]
+          ? const <Widget>[]
           : <Widget>[
               FilledButton(
                 key: const ValueKey<String>('placement-tiles-check'),
@@ -375,6 +380,14 @@ class _PlacementTilesState extends State<PlacementTiles> {
           if (!_placed.contains(i)) _placed.add(i);
         }),
         onUnplace: (i) => setState(() => _placed.remove(i)),
+        // Answered, the right order and, when it was wrong, the learner's
+        // own, marked wrong (owner, 2026-10-31, doubt 13).
+        rightOrder: answered
+            ? (_inLatin
+                  ? tilesOf(card.reading!)
+                  : card.tilesOfSpelling(widget.spelling))
+            : null,
+        correct: _right,
       ),
     );
   }

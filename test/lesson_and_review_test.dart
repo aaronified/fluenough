@@ -878,6 +878,11 @@ AppState readingApp({
   now: noon,
 );
 
+/// Whether the reading drill on screen is on its passage page, the one that
+/// goes on to the questions by swipe or the chevron.
+bool onPassagePage(WidgetTester tester) =>
+    tester.widget<ReadingDrill>(find.byType(ReadingDrill)).session.showsPassage;
+
 /// Goes on from an answered question, a set or a teach card with the
 /// end-edge chevron, as a swipe does: there is no Continue button (#509).
 Future<void> nextCard(WidgetTester tester) async {
@@ -3866,7 +3871,7 @@ cards:
           await tester.pumpAndSettle();
           expect(find.text('nomoshkar. koto dam?'), findsNothing);
 
-          await tapTextReadingDrill(tester, l10n.readingToQuestions);
+          await nextCard(tester);
           expect(find.text('What does the buyer ask first?'), findsOneWidget);
           for (final choice in ['The price', 'The way', 'The time']) {
             expect(find.text(choice), findsOneWidget);
@@ -3885,7 +3890,7 @@ cards:
               state: state,
             );
             final l10n = l10nOf(tester);
-            await tapTextReadingDrill(tester, l10n.readingToQuestions);
+            await nextCard(tester);
 
             await tapTextReadingDrill(tester, 'The price');
             final right = state.progress.log.single;
@@ -3897,13 +3902,15 @@ cards:
             expect(find.text(l10n.feedbackCorrect), findsOneWidget);
             expect(find.text(l10n.feedbackAnswer('The price')), findsOneWidget);
             // Choosing again changes nothing.
-            await tester.tap(find.text('The way'));
+            // (Answered right, only the right choice is left to tap.)
+            expect(find.text('The way'), findsNothing);
+            await tester.tap(find.text('The price'));
             await tester.pumpAndSettle();
             expect(state.progress.log, hasLength(1));
 
             // The next question about the same passage follows at once.
             await nextCard(tester);
-            expect(find.text(l10n.readingToQuestions), findsNothing);
+            expect(onPassagePage(tester), isFalse);
             expect(find.text(l10n.readingTrueOrFalse), findsOneWidget);
             expect(
               find.text('The buyer asks for a lower price.'),
@@ -3925,7 +3932,7 @@ cards:
             await nextCard(tester);
             // The next passage shows on its own first.
             expect(find.text('Going home'), findsOneWidget);
-            expect(find.text(l10n.readingToQuestions), findsOneWidget);
+            expect(onPassagePage(tester), isTrue);
             expect(find.text(home), findsOneWidget);
           }
         },
@@ -4013,7 +4020,7 @@ cards:
         await tester.pumpAndSettle();
         expect(tts.spoken.map((s) => s.text), shop);
 
-        await tapTextReadingDrill(tester, l10n.readingToQuestions);
+        await nextCard(tester);
         expect(find.byType(PlayButton), findsOneWidget);
         for (final sentence in shop) {
           expect(find.text(sentence), findsNothing);
