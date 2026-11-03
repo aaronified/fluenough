@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Learn and Relearn use the shared screen.** The card-by-card walk now has the same header, skill pill and single card as every review screen, with the swipe and the chevrons going on and back (#509).
 - **One look for every question.** Teach cards, sets, every review question, the reading passages and the level check now share one screen: the same header, a pill in the skill's colour ("New word · Recognition"), one card, and one place for the buttons. The drills and the level check have no Continue button any more (Continue stays on the setup screens): swipe, or tap the arrow on the edge, to go on, and swipe back in a review to look at an earlier card, which you can see but not change. A wrong choice or picture shows the right answer and the one you chose; a wrong word order shows the right order and yours. The Say result shows what the phone heard (in script, with its reading or IPA) and a Your recording row that replays your own voice, or records the word again where the phone cannot keep the audio of your answer (#509).
 - `tools/validate_decks.py` is much faster, about 30 to 40 times on the whole of `decks/`, and prints exactly what it printed: each YAML file is read once, by libyaml where PyYAML has it, and the files are checked by several worker processes (`--jobs N`; `--jobs 1` is one process).
 
