@@ -353,19 +353,21 @@ Future<void> giveUp(WidgetTester tester) async {
   }
 }
 
-/// Taps Continue on the feedback a word question shows once answered, as in
-/// a review; nothing to do after a script check's question, which goes on at
-/// once.
+/// Goes on from the feedback a word question shows once answered, as in a
+/// review: the chevron on the end edge, as a swipe does (there is no Continue
+/// button, #509); nothing to do after a script check's question, which goes
+/// on at once.
 Future<void> goOn(WidgetTester tester) async {
   final l10n = l10nOf(tester);
   final frame = find.byType(PlacementFrame);
   if (frame.evaluate().isEmpty) return;
   final next = find.descendant(
     of: frame,
-    matching: find.widgetWithText(FilledButton, l10n.commonContinue),
+    matching: find.byTooltip(l10n.drillNextCard),
   );
   if (next.evaluate().isEmpty) return;
-  await tapInFrame(tester, next);
+  await tester.tap(next.first);
+  await tester.pumpAndSettle();
 }
 
 /// Ends placement from the header's close button, keeping what it found.
@@ -1709,7 +1711,7 @@ void main() {
 
     testWidgets('a sentence is asked in the review\'s own screen: its header '
         'and wave, its card with the meaning, tiles to put in order, Check, '
-        'and feedback with Continue', (tester) async {
+        'and feedback with a swipe on', (tester) async {
       usePhone(tester);
       final answers = <bool>[];
       await pumpScreen(
@@ -1779,14 +1781,14 @@ void main() {
         tester,
         find.widgetWithText(FilledButton, l10n.drillCheck),
       );
-      expect(answers, isEmpty, reason: 'feedback first, then Continue');
+      expect(answers, isEmpty, reason: 'feedback first, then the swipe on');
       expect(find.byType(FeedbackBanner), findsOneWidget);
       await goOn(tester);
       expect(answers, <bool>[false]);
     });
 
     testWidgets('a choice marks the answer and says it, and goes on only '
-        'with Continue; "I don\'t know" is wrong', (tester) async {
+        'with the chevron; "I don\'t know" is wrong', (tester) async {
       usePhone(tester);
       final answers = <bool>[];
       final q = PlacementQuestion(
@@ -1811,6 +1813,10 @@ void main() {
       await tapInFrame(tester, find.text('I drink tea'));
       expect(answers, isEmpty);
       expect(find.byType(FeedbackBanner), findsOneWidget);
+      // Answered wrong: the right option and the one chosen, no others, and
+      // no Continue button.
+      expect(find.byType(ChoiceTile), findsNWidgets(2));
+      expect(find.text(l10n.commonContinue), findsNothing);
       expect(find.text(l10n.feedbackAnswer('I eat rice')), findsOneWidget);
       await goOn(tester);
       expect(answers, <bool>[false]);
