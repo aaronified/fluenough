@@ -113,9 +113,14 @@ void main() {
     await tester.tap(find.byType(PictureTile).at(right));
     await tester.pumpAndSettle();
 
-    // Answered: every picture says what it is, in words.
+    // Answered right: the picture left says what it is, in words, and the
+    // others are not shown (owner, 2026-10-31, doubt 13).
+    expect(find.byType(PictureTile), findsOneWidget);
     for (final option in session.options) {
-      expect(find.bySemanticsLabel(option.native), findsWidgets);
+      expect(
+        find.bySemanticsLabel(option.native),
+        option.id == session.item.card.id ? findsWidgets : findsNothing,
+      );
     }
     expect(find.bySemanticsLabel(l10n.drillPictureOption(1, 4)), findsNothing);
     expect(find.text(l10n.feedbackCorrect), findsOneWidget);
