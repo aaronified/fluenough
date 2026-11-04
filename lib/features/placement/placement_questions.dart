@@ -10,6 +10,7 @@ import '../../core/models/card.dart' show tilesOf;
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/speech/speech_engine.dart';
+import '../../core/tts/speech_gesture.dart';
 import '../../l10n/app_localizations.dart';
 import '../drill/choice_tile.dart';
 import '../drill/rearrange_drill.dart' show rearrangeBoard;
@@ -666,17 +667,24 @@ class _PlacementHearState extends State<PlacementHear> {
   @override
   void initState() {
     super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) => _play());
+    WidgetsBinding.instance.addPostFrameCallback((_) => _play(byTap: false));
   }
 
   @override
   void didUpdateWidget(PlacementHear old) {
     super.didUpdateWidget(old);
-    if (!identical(old.question, widget.question)) _play();
+    if (!identical(old.question, widget.question)) _play(byTap: false);
   }
 
-  void _play() {
+  /// Plays the word. Played as the question appears ([byTap] false) it waits,
+  /// on iOS Safari, for a first tap that unlocks speech.
+  void _play({bool byTap = true}) {
     if (!mounted) return;
+    if (byTap) {
+      SpeechGesture.app.tapped();
+    } else if (!SpeechGesture.app.allowsAutomatic) {
+      return;
+    }
     final q = widget.question;
     unawaited(AppScope.read(context).speak(q.answer, q.language));
   }

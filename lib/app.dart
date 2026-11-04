@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
@@ -6,6 +8,7 @@ import 'app/app_scope.dart';
 import 'app/app_state.dart';
 import 'app/routes.dart';
 import 'app/shell_tab.dart';
+import 'app/storage_persist.dart';
 import 'features/decks/decks_page.dart';
 import 'features/downloads/deck_update_prompt.dart';
 import 'features/fonts/font_check_prompt.dart';
@@ -71,6 +74,9 @@ class _FluenoughAppState extends State<FluenoughApp>
     // depends on them (#90).
     widget.state.load().whenComplete(widget.state.reminders.appResumed);
     widget.state.updates.atLaunch();
+    // The browser may keep the progress past Safari's 7 days; a no-op off
+    // the web, and a refusal is not an error.
+    unawaited(requestPersistentStorage());
     if (widget.splash) _watchStartUp(_splash);
   }
 
