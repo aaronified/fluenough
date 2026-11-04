@@ -20,6 +20,7 @@ import '../decks/card_blocks.dart';
 import '../decks/card_notes.dart';
 import '../review/review_words.dart';
 import 'speaking_practice.dart' show unheardMessage;
+import '../../ui/widgets/ipa_line.dart';
 
 /// The minimal-pair button and its popup (#423, mockup
 /// `minimal-pair`; owner, 2026-10-31).
@@ -75,7 +76,7 @@ class PairCompareButton extends StatelessWidget {
     // The reading only while the setting shows readings, as other target text.
     final reading = AppScope.of(context).settings.showRomanisation;
     final label = l10n.pairCompareWith(
-      reading ? _wordReading(l10n, partner) : partner.target,
+      reading ? _wordReading(context, l10n, partner) : partner.target,
     );
     return OutlinedButton.icon(
       onPressed: () => showPairCompare(
@@ -93,13 +94,24 @@ class PairCompareButton extends StatelessWidget {
   }
 }
 
-String _wordReading(AppLocalizations l10n, Card card) => card.reading == null
-    ? card.target
-    : l10n.pairWordReading(card.target, card.reading!);
+String? _quoted(BuildContext context, Card card) => quotedReading(
+  context,
+  reading: card.reading,
+  ipa: card.ipa,
+  target: card.target,
+);
 
-String _named(AppLocalizations l10n, Card card) => card.reading == null
-    ? l10n.cardPartnerNoReading(card.target, card.native)
-    : l10n.cardPartner(card.target, card.reading!, card.native);
+String _wordReading(BuildContext context, AppLocalizations l10n, Card card) =>
+    switch (_quoted(context, card)) {
+      null => card.target,
+      final reading => l10n.pairWordReading(card.target, reading),
+    };
+
+String _named(BuildContext context, AppLocalizations l10n, Card card) =>
+    switch (_quoted(context, card)) {
+      null => l10n.cardPartnerNoReading(card.target, card.native),
+      final reading => l10n.cardPartner(card.target, reading, card.native),
+    };
 
 /// Opens the minimal-pair popup of [card] and [partner]: full screen, in a
 /// 3 px border of the theme's colour with rounded corners, and a cross at
@@ -532,9 +544,16 @@ class _PairCompareState extends State<PairCompare> {
               fontSize: pairWordSize,
               card: card,
             ),
-            if (card.reading != null)
-              Text(
-                card.reading!,
+            if (readingLines(
+                  context,
+                  reading: card.reading,
+                  ipa: card.ipa,
+                  target: card.target,
+                )
+                case (reading: final reading?, ipa: _, swapped: final swapped))
+              ReadingText(
+                reading,
+                swapped: swapped,
                 textAlign: TextAlign.center,
                 style: _readingStyle(theme),
               ),
@@ -675,7 +694,7 @@ class _PairCompareState extends State<PairCompare> {
     };
     final heard = known == null
         ? l10n.pairHeardPlain(match.heard)
-        : l10n.pairHeardWord(_named(l10n, known));
+        : l10n.pairHeardWord(_named(context, l10n, known));
     final chip = side == null
         ? l10n.pairMatchedNeither
         : l10n.pairMatchedWord(known!.target);
@@ -767,9 +786,16 @@ class _PairCompareState extends State<PairCompare> {
               color: scheme.onSurface,
               card: card,
             ),
-            if (card.reading != null)
-              Text(
-                card.reading!,
+            if (readingLines(
+                  context,
+                  reading: card.reading,
+                  ipa: card.ipa,
+                  target: card.target,
+                )
+                case (reading: final reading?, ipa: _, swapped: final swapped))
+              ReadingText(
+                reading,
+                swapped: swapped,
                 textAlign: TextAlign.center,
                 style: _readingStyle(theme),
               ),
@@ -836,8 +862,11 @@ class _PairCompareState extends State<PairCompare> {
       final picked = _cards[quiz.picked!];
       final right = quiz.picked == quiz.target;
       final text = right
-          ? l10n.pairRight(_named(l10n, target))
-          : l10n.pairWrong(_named(l10n, target), _wordReading(l10n, picked));
+          ? l10n.pairRight(_named(context, l10n, target))
+          : l10n.pairWrong(
+              _named(context, l10n, target),
+              _wordReading(context, l10n, picked),
+            );
       final color = right ? scheme.primary : scheme.error;
       body = Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
@@ -944,7 +973,12 @@ bool pairWraps(
     if (wraps(shown.text, script, locale: targetLocale(shown.language))) {
       return true;
     }
-    final reading = card.reading;
+    final reading = quotedReading(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
     if (reading != null && wraps(reading, _readingStyle(theme))) return true;
     if (wraps(card.native, _meaningStyle(theme))) return true;
   }

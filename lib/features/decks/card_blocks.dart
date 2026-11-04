@@ -247,7 +247,7 @@ class SimilarBlock extends StatelessWidget {
     final overflow = maxLines == null ? null : TextOverflow.ellipsis;
     final partner = similar.partner;
     final text = similar.text;
-    final named = partner == null ? null : _named(l10n, partner);
+    final named = partner == null ? null : _named(context, l10n, partner);
     final Widget body;
     switch (similar.kind) {
       case SimilarKind.sound:
@@ -303,8 +303,17 @@ class SimilarBlock extends StatelessWidget {
   }
 
   /// "काल (kāl), time", or without the reading.
-  static String _named(AppLocalizations l10n, Card partner) {
-    final reading = partner.reading;
+  static String _named(
+    BuildContext context,
+    AppLocalizations l10n,
+    Card partner,
+  ) {
+    final reading = quotedReading(
+      context,
+      reading: partner.reading,
+      ipa: partner.ipa,
+      target: partner.target,
+    );
     return reading == null
         ? l10n.cardPartnerNoReading(partner.target, partner.native)
         : l10n.cardPartner(partner.target, reading, partner.native);

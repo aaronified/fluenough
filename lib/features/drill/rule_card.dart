@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/path_parts.dart' show Pill;
+import '../../ui/widgets/ipa_line.dart';
 
 /// The rule card (#417, owner, 2026-10-18: "Name, explanation, worked
 /// forms"): shown once, before the first question about a cell of a rule.
@@ -133,26 +134,41 @@ class _FormRow extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final cell = card.rule!;
-    Widget word(String text, String? reading, double size, Color? color) =>
-        Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            TargetText(
-              text,
-              language: language,
-              fontSize: size,
-              textAlign: TextAlign.start,
-              color: color,
-            ),
-            if (reading != null)
-              Text(
-                reading,
-                style: theme.textTheme.bodySmall!.copyWith(
-                  color: scheme.onSurfaceVariant,
-                ),
+    Widget word(
+      String text,
+      String? reading,
+      double size,
+      Color? color, {
+      String? ipa,
+    }) {
+      final lines = readingLines(
+        context,
+        reading: reading,
+        ipa: ipa,
+        target: text,
+      );
+      return Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: <Widget>[
+          TargetText(
+            text,
+            language: language,
+            fontSize: size,
+            textAlign: TextAlign.start,
+            color: color,
+          ),
+          if (lines.reading case final shown?)
+            ReadingText(
+              shown,
+              swapped: lines.swapped,
+              style: theme.textTheme.bodySmall!.copyWith(
+                color: scheme.onSurfaceVariant,
               ),
-          ],
-        );
+            ),
+        ],
+      );
+    }
+
     return MergeSemantics(
       child: DecoratedBox(
         decoration: BoxDecoration(
@@ -179,7 +195,13 @@ class _FormRow extends StatelessWidget {
                   const Icon(Icons.arrow_forward, size: 18),
                   const SizedBox(width: 8),
                   Expanded(
-                    child: word(card.target, card.reading, 22, scheme.primary),
+                    child: word(
+                      card.target,
+                      card.reading,
+                      22,
+                      scheme.primary,
+                      ipa: card.ipa,
+                    ),
                   ),
                 ],
               ),
