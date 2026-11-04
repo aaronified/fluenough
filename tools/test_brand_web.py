@@ -18,6 +18,7 @@ import unittest
 from pathlib import Path
 
 import brand_web
+import check_web_page
 
 REPO = Path(__file__).resolve().parent.parent
 
@@ -208,6 +209,21 @@ class BrandedFolder(unittest.TestCase):
         # fills transparency with black.
         self.assertIn(colour, (2, 3))
         self.assertNotIn(b"tRNS", data)
+
+    def test_the_checker_passes_the_branded_folder(self):
+        self.assertEqual(check_web_page.check(self.root / "web"), [])
+
+    def test_the_checker_names_what_a_regression_drops(self):
+        web = self.root / "web"
+        page = web / "index.html"
+        page.write_text(page.read_text().replace("viewport-fit=cover", ""))
+        (web / "icons/apple-touch-icon.png").unlink()
+        manifest = json.loads((web / "manifest.json").read_text())
+        del manifest["scope"]
+        (web / "manifest.json").write_text(json.dumps(manifest))
+        problems = " | ".join(check_web_page.check(web))
+        for want in ("viewport-fit=cover", "apple-touch-icon file", "no scope"):
+            self.assertIn(want, problems)
 
 
 if __name__ == "__main__":
