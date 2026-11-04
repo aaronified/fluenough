@@ -50,12 +50,16 @@ class DailyPlan {
       math.max(DailyBudget.minMinutes, goalMinutes + extraMinutes);
 
   /// Whole minutes done, rounded down and never more than [minutes], for
-  /// "12 of 15 min": it reads "15 of 15" only once the budget is spent and
-  /// the button reads Done for today.
-  int get minutesDone => math.min(minutes, spent.inSeconds ~/ 60);
+  /// "12 of 15 min". With the day [done] it reads the full time, "15 of
+  /// 15", whatever the clock counted: a day that has ended has no minutes
+  /// left to show (#1007).
+  int get minutesDone =>
+      done ? minutes : math.min(minutes, spent.inSeconds ~/ 60);
 
-  /// How much of today's budget is spent, from 0 to 1: the ring.
-  double get fraction => math.min(1.0, spent.inSeconds / (minutes * 60));
+  /// How much of today's budget is spent, from 0 to 1: the ring. Full once
+  /// the day is [done].
+  double get fraction =>
+      done ? 1.0 : math.min(1.0, spent.inSeconds / (minutes * 60));
 
   /// Today's minutes are all spent.
   bool get budgetDone => spent.inSeconds >= minutes * 60;

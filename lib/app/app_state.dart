@@ -2924,6 +2924,29 @@ class AppState extends ChangeNotifier {
         settings.clockTimeOn(at, language: language);
   }
 
+  /// What the summary of [language]'s day shows (#1007): today's answers in
+  /// it, read from the log, so that the ring of a day that has ended opens
+  /// the summary the session ended on, even after a restart.
+  SessionResult dailyResult(String language) {
+    final at = now();
+    final today = dateOnly(at);
+    final answers = <SessionAnswer>[
+      for (final e in progress.log.answered)
+        if (!e.at.isBefore(today) && Abilities.languageOf(e.cardId) == language)
+          SessionAnswer(
+            skill: Skill.of(e.mode),
+            grade: e.grade,
+            time: e.elapsed,
+          ),
+    ];
+    return SessionResult(
+      answers: answers,
+      startedAt: today,
+      endedAt: at,
+      language: language,
+    );
+  }
+
   /// What the daily planner is given for [language], and plans: the same
   /// for Today ([dailyPlanFor]) and for the session ([nextDailyRound]), so
   /// that Today's numbers are the session's (#886, #885).
@@ -2959,6 +2982,11 @@ class AppState extends ChangeNotifier {
   /// The cards a daily round draws on in [language], none of them in
   /// [asked]: those due, the most forgotten first, and those not due, the
   /// closest to due first.
+  ///
+  /// A card already reviewed today is never one of the closest: the session
+  /// would not ask it again, so Today must not promise it either (#1007).
+  /// Both read their pools from here, so what Today offers is what a
+  /// session serves.
   ({List<SessionItem> due, List<SessionItem> closest}) _dailyPools(
     String language,
     DateTime at,
@@ -2971,12 +2999,14 @@ class AppState extends ChangeNotifier {
       ))
         if (!asked.contains(item.card.id)) item,
     ];
+    final today = dateOnly(at);
     final closest = <SessionItem>[
       for (final item in buildSession(
         DrillRequest(revise: true, language: language),
       ).items)
         if (item.state != null &&
             !item.state!.isDue(at) &&
+            item.state!.lastReviewAt.isBefore(today) &&
             !asked.contains(item.card.id))
           item,
     ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));

@@ -4770,6 +4770,39 @@ cards:
       expect(items.where((i) => i.ask == Ask.teach), isNotEmpty);
     });
 
+    test('after the day\'s session, Today offers no review the session would '
+        'not serve (#1007)', () async {
+      // Eight words reviewed yesterday and not due: the closest to due, which
+      // fill the time while nothing is due.
+      final state = await hindiReviewed(<DrillMode, Duration>{
+        DrillMode.production: const Duration(days: 1),
+      });
+      final hindi = state.languages.firstWhere((l) => l.code == 'hi');
+      final cards = state.deckById('hi-en-phrasebook')!.cards.take(8).toList();
+      expect(state.dailyPlanFor(hindi).due, 0);
+      expect(state.dailyPlanFor(hindi).split.reviews, greaterThan(0));
+
+      // The session asks them, and they are answered today.
+      for (final card in cards) {
+        state.progress.record(
+          deckId: card.deckId,
+          cardId: card.id,
+          mode: DrillMode.production,
+          grade: 4,
+          now: state.now(),
+        );
+      }
+
+      // A session would not ask them again, so Today does not promise them.
+      expect(state.dailyPlanFor(hindi).split.reviews, 0);
+      final served = <String>{
+        for (final item in state.nextDailyRound(state.startDaily('hi')!))
+          for (final member in item.group.isEmpty ? [item] : item.group)
+            member.card.id,
+      };
+      expect(served.intersection({for (final c in cards) c.id}), isEmpty);
+    });
+
     testWidgets('catching up says so, and "+ 5 min" adds five minutes a tap '
         'while a long press takes five away', (tester) async {
       usePhone(tester);
@@ -5023,6 +5056,40 @@ cards:
       final drill = tester.widget<DrillPage>(find.byType(DrillPage));
       expect(drill.request.daily, isTrue);
       expect(drill.request.language, 'es');
+    });
+
+    testWidgets('a day that has ended shows the full time and no pending, and '
+        'its greyed ring opens the summary (#1007)', (tester) async {
+      usePhone(tester);
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      // The session ended at 14 of 15 minutes with nothing left to ask.
+      final plan = DailyPlan(
+        language: spanish,
+        goalMinutes: 15,
+        extraMinutes: 0,
+        spent: const Duration(minutes: 14),
+        secondsPerCard: 17.5,
+        due: 0,
+        newAvailable: 0,
+        split: const DailySplit(reviews: 0, newWords: 0, catchingUp: false),
+      );
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: SingleChildScrollView(child: DailyCard(plans: [plan])),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.todayDailyProgress(15, 15)), findsOneWidget);
+      expect(find.text(l10n.todayDailyReviews(0)), findsNothing);
+      expect(find.text(l10n.todayDailyNew(0)), findsNothing);
+      expect(find.bySemanticsLabel(l10n.todayDailyDoneOpens), findsOneWidget);
+      await tester.tap(find.byType(FilledButton));
+      await tester.pumpAndSettle();
+      expect(find.byType(SummaryPage), findsOneWidget);
     });
 
     testWidgets(

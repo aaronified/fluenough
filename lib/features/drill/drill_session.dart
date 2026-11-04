@@ -1684,9 +1684,11 @@ class DrillSession extends ChangeNotifier {
         _settleClock(run);
       } else {
         // The round is done: the next is built on the time left. A round of
-        // cards none can be drilled is passed over for the next, a few
-        // times, so the session does not end with time left.
-        for (var tries = 0; next >= items.length && tries < 5; tries++) {
+        // cards none can be drilled is passed over for the next: the
+        // session ends only when no round is left to build (each round's
+        // cards are marked asked, so this ends), never with time left and
+        // cards waiting (#1007).
+        while (next >= items.length) {
           final more = _state.nextDailyRound(run);
           if (more.isEmpty) break;
           final from = items.length;
@@ -1699,6 +1701,9 @@ class DrillSession extends ChangeNotifier {
       }
     }
     if (next >= items.length) {
+      // The day's session has ended: its time reads full on Today, which
+      // then offers nothing pending (#1007).
+      if (run != null) _settleClock(run);
       _endedAt = _state.now();
       _watch.stop();
       notifyListeners();

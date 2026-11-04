@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Today no longer offers work the session does not have.** After the daily drill, the ring read "Continue", "14 of 15 min" and "1 review", and a tap found nothing. Today counted cards already reviewed that day as reviews still to fill the time, which the session never asks twice. Both now read one pool, a session ends only when no round is left, and the day that has ended shows a greyed ring at "15 of 15 min" with no pending chips; tapping it opens the summary (#1007).
+
 ## [0.8.2] - 2026-11-04
 
 ### Fixed
