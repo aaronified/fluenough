@@ -144,6 +144,7 @@ Set<String> languagesIn(AppState state, DrillRequest request) => <String>{
   for (final item in state.buildSession(request).items)
     state.deckOf(item.card)!.language.code,
 };
+
 const String persoArabic = 'perso_arabic';
 
 // From scripts_drill_test.dart.

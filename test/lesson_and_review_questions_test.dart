@@ -237,6 +237,7 @@ String _unaccented(String text) => text
     .replaceAll('í', 'i')
     .replaceAll('ó', 'o')
     .replaceAll('ú', 'u');
+
 const rulesDeck = 'zz-en-grammar-case-endings';
 final rulesCore = read('$appendix/zz-grammar-case-endings.yaml');
 final rulesLayer = read('$appendix/en/zz-en-grammar-case-endings.yaml');

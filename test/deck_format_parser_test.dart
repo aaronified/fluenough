@@ -100,6 +100,7 @@ Map<String, String> tree(String root) => <String, String>{
       'decks/${file.path.substring(Directory(root).parent.path.length + 1)}':
           file.readAsStringSync(),
 };
+
 final rulesCore = read('$appendix/zz-grammar-case-endings.yaml');
 final rulesLayer = read('$appendix/en/zz-en-grammar-case-endings.yaml');
 final marketCore = read('$features/zz-market.yaml');

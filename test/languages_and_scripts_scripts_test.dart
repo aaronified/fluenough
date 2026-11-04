@@ -68,6 +68,7 @@ Future<AppState> hindustani(Set<String>? scripts) async {
   await state.load();
   return state;
 }
+
 const String persoArabicScriptsDrill = 'کتاب';
 const Set<String> both = <String>{'devanagari', 'perso_arabic'};
 
