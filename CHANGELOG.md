@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.3] - 2026-11-04
+
 ### Fixed
 
 - **The IPA switch now reaches the rest of the screens.** With "IPA replaces transliteration" on, the rules tables (the unit page's and the drill's), the rule card, the minimal-pair popup and its feedback, the "looks like" and "sounds like" partner lines, grammar search results and the pair drill's feedback show the IPA in the transliteration's place. The grammar drill does it for languages written in Latin letters too, with the IPA moved up as the main line. A line that does not show a reading (the passage list with readings off) no longer shows the IPA in its place (#697).
