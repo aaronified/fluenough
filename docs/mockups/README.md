@@ -4,6 +4,13 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
+- `web-install-hint.html`: the web app's install hint (#1012, Storage
+  eviction; owner, 2026-11-04: "Web needs to cover iOS fully... complete all
+  web jobs"). A dismissible card on Today for iPhone Safari and Android
+  Chrome, no hint once installed, and a Storage group in Your data. Telugu,
+  Bengali and Hindustani, light and dark, 1.4x. Tweak controls and open
+  choices are in `web-install-hint.md`, with the self-check.
+
 - `today-chain.html`: the Today chain's screens still to build (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
   screen."): situation cheatsheets and their inspect view (#724, built in 0.7.0, so no longer awaiting), the decks
