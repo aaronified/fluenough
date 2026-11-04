@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.8.2**
 - **v0.8.1**
 - **v0.8.0**
 - **v0.7.1**
@@ -131,6 +132,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 ## Approved, not scheduled
 
 - [#885](https://github.com/aaronified/fluenough/issues/885) Today: a skill tile's number must always equal the cards its review shows
+- [#1007](https://github.com/aaronified/fluenough/issues/1007) Today ring shows "14 of 15 min" and "1 review" after the daily drill ends, and tapping it finds nothing
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
