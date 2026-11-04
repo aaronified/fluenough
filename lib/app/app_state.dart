@@ -3123,6 +3123,9 @@ class AppState extends ChangeNotifier {
             ? left
             : const Duration(minutes: DailyBudget.stepMinutes),
         now: now(),
+        // The budget is spent: this stretch is Keep going, shown as the
+        // time taken (#1009).
+        countsUp: left <= Duration.zero,
       ),
       spentAtStart: plan.spent,
     );

@@ -15,6 +15,7 @@ import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/daily_budget.dart';
+import 'package:fluenough/core/scheduling/daily_timer.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
@@ -27,7 +28,9 @@ import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
+import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:fluenough/ui/widgets/mode_pill.dart';
+import 'package:fluenough/ui/widgets/wave_progress.dart';
 
 import 'support/harness.dart';
 
@@ -488,16 +491,39 @@ void main() {
         expect(dot, findsOneWidget);
         await tester.ensureVisible(dot);
         await tester.pumpAndSettle();
+        // Ask for the figures now: they are worked out off the main thread, so
+        // the popover is not settled on (a spinner never settles).
+        expect(state.pacing.paces, anyOf(isNull, isNotNull));
         await tester.tap(dot);
-        // The figures are worked out off the main thread, so the popover may
-        // still be waiting for them: no settling.
-        await tester.pump();
-        await tester.pump();
+        for (var i = 0; i < 5; i++) {
+          await tester.pump(const Duration(milliseconds: 50));
+        }
         // A popover with this language's part of the page, not the page.
         expect(find.byType(AlertDialog), findsOneWidget);
         expect(find.byType(HowYouLearnView), findsOneWidget);
         expect(find.text(l10n.howYouLearnTitle), findsOneWidget);
         expect(find.byType(HowYouLearnPage), findsNothing);
+        final dialog = find.byType(AlertDialog);
+        // This language's rows, one skill pill each.
+        expect(
+          find.descendant(of: dialog, matching: find.byType(ModePill)),
+          findsWidgets,
+        );
+        // The intro is the small subtitle, once; the "not yet" card with its
+        // Settings button and the privacy line stay on the full page.
+        final intro = tester.widget<Text>(
+          find.descendant(
+            of: dialog,
+            matching: find.text(l10n.howYouLearnIntro),
+          ),
+        );
+        expect(
+          intro.style!.fontSize,
+          Theme.of(tester.element(dialog)).textTheme.bodySmall!.fontSize,
+        );
+        expect(find.text(l10n.howYouLearnNone), findsNothing);
+        expect(find.text(l10n.howYouLearnOpenSettings), findsNothing);
+        expect(find.text(l10n.adjustedPrivacy), findsNothing);
         await tester.tap(find.text(l10n.commonClose));
         await tester.pump();
         await tester.pump(const Duration(seconds: 1));
@@ -574,6 +600,86 @@ void main() {
       expect(find.text(l10n.todayDailyDone), findsOneWidget);
       expect(find.textContaining(' min review'), findsNothing);
       expect(find.text(l10n.summaryKeepGoing), findsNothing);
+    });
+  });
+  group('the session clock', () {
+    /// A header under [clock] after eight screens of 24 s each, so 3:12 used
+    /// (a screen counts for 30 s at most), with the clock reading that time.
+    Future<void> pumpHeader(
+      WidgetTester tester,
+      AppState state,
+      DailyCountdown clock,
+    ) async {
+      var at = _now;
+      for (var i = 0; i < 8; i++) {
+        at = at.add(const Duration(seconds: 24));
+        clock.screenShown(at);
+      }
+      final shown = at;
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: DrillClockScope(
+            clock: clock,
+            now: () => shown,
+            child: const DrillHeader(
+              progress: 0,
+              position: 1,
+              total: 8,
+              onClose: null,
+              reportDetail: 'test',
+            ),
+          ),
+        ),
+        state: state,
+        settle: false,
+      );
+      await tester.pump();
+    }
+
+    testWidgets('a Keep going stretch counts the time taken up, with the bar '
+        'full', (tester) async {
+      usePhone(tester);
+      final state = _learner();
+      await state.load();
+      await pumpHeader(
+        tester,
+        state,
+        DailyCountdown(
+          budget: const Duration(minutes: 5),
+          now: _now,
+          countsUp: true,
+        ),
+      );
+      expect(find.text('3:12'), findsOneWidget);
+      expect(tester.widget<WaveProgress>(find.byType(WaveProgress)).value, 1.0);
+      await tester.pumpWidget(const SizedBox());
+    });
+
+    testWidgets('a normal session counts the time left down, with the bar '
+        'part full', (tester) async {
+      usePhone(tester);
+      final state = _learner();
+      await state.load();
+      await pumpHeader(
+        tester,
+        state,
+        DailyCountdown(budget: const Duration(minutes: 15), now: _now),
+      );
+      expect(find.text('11:48'), findsOneWidget);
+      final bar = tester.widget<WaveProgress>(find.byType(WaveProgress));
+      expect(bar.value, greaterThan(0));
+      expect(bar.value, lessThan(1));
+      await tester.pumpWidget(const SizedBox());
+    });
+
+    test('a day\'s session started with the budget spent is a Keep going '
+        'stretch; one with time left is not', () async {
+      final state = _learner();
+      await state.load();
+      expect(state.startDaily('hi')!.clock.countsUp, isFalse);
+      state.settings.addClockTime('hi', _now, const Duration(minutes: 15));
+      expect(state.startDaily('hi')!.clock.countsUp, isTrue);
     });
   });
 }

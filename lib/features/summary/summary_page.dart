@@ -63,10 +63,10 @@ class SummaryPage extends StatelessWidget {
     final unlocked = result.total == 0 || finished == null
         ? null
         : state.unlockedSince(finished.code, result.startedAt);
-    // Keep going is the way on once the day's minutes are done, and the
-    // day's total includes its time.
+    // Keep going is always on the summary of a language's day (mockup
+    // today-minutes: "Keep going always present"), and the day's total
+    // includes its time.
     final plan = finished == null ? null : state.dailyPlanFor(finished);
-    final keepGoingIn = plan != null && plan.done ? finished : null;
     final total = plan?.totalMinutes ?? 0;
 
     return Scaffold(
@@ -184,12 +184,12 @@ class SummaryPage extends StatelessWidget {
                         ),
                         child: Text(l10n.commonDone),
                       ),
-                      if (keepGoingIn != null)
+                      if (finished != null)
                         FilledButton.tonal(
                           style: AppButtonStyles.secondary(context),
                           onPressed: () => AppNavigator.startDrill(
                             context,
-                            DrillRequest.daily(language: keepGoingIn.code),
+                            DrillRequest.daily(language: finished.code),
                           ),
                           child: Text(l10n.summaryKeepGoing),
                         ),

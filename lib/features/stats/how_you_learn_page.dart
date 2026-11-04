@@ -57,7 +57,6 @@ class HowYouLearnPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final state = AppScope.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.howYouLearnTitle),
@@ -77,7 +76,9 @@ class HowYouLearnView extends StatelessWidget {
 
   final String? language;
 
-  /// Sized to its content, to sit inside a popover.
+  /// For the popover: sized to its content, and only the skills' part of the
+  /// page, with no intro (the popover's subtitle), no "not yet" card and no
+  /// privacy line, which stay on the page.
   final bool compact;
 
   @override
@@ -160,13 +161,14 @@ class _Body extends StatelessWidget {
     final shownAdjusted = paces.any((p) => p.adjusted);
 
     final children = <Widget>[
-      Text(l10n.howYouLearnIntro, style: theme.textTheme.bodyLarge),
-      if (!someAdjusted) ...<Widget>[
+      if (!compact)
+        Text(l10n.howYouLearnIntro, style: theme.textTheme.bodyLarge),
+      if (!someAdjusted && !compact) ...<Widget>[
         const SizedBox(height: 16),
         _NotYet(state: state),
       ],
       if (shownAdjusted) ...<Widget>[
-        const SizedBox(height: 16),
+        if (!compact) const SizedBox(height: 16),
         const _Legend(),
       ],
     ];
@@ -206,29 +208,31 @@ class _Body extends StatelessWidget {
         ),
       ]);
     }
-    children.addAll(<Widget>[
-      const SizedBox(height: 12),
-      Padding(
-        padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: AppSizes.textInset,
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(
-              width: 36,
-              child: Icon(
-                Icons.lock_outline,
-                size: 18,
-                color: scheme.onSurfaceVariant,
+    if (!compact) {
+      children.addAll(<Widget>[
+        const SizedBox(height: 12),
+        Padding(
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(
+                width: 36,
+                child: Icon(
+                  Icons.lock_outline,
+                  size: 18,
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(child: Text(l10n.adjustedPrivacy, style: muted)),
-          ],
+              const SizedBox(width: 12),
+              Expanded(child: Text(l10n.adjustedPrivacy, style: muted)),
+            ],
+          ),
         ),
-      ),
-    ]);
+      ]);
+    }
 
     return ListView(
       shrinkWrap: compact,
@@ -663,13 +667,27 @@ String _languageName(AppState state, String code) {
 /// with Close, as the app's other info dots open theirs.
 Future<void> showHowYouLearnPopover(BuildContext context, String? language) {
   final l10n = AppLocalizations.of(context)!;
+  final theme = Theme.of(context);
   return showDialog<void>(
     context: context,
     builder: (context) => AlertDialog(
       title: Text(l10n.howYouLearnTitle),
       content: SizedBox(
         width: double.maxFinite,
-        child: HowYouLearnView(language: language, compact: true),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              l10n.howYouLearnIntro,
+              style: theme.textTheme.bodySmall!.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(height: 8),
+            Flexible(child: HowYouLearnView(language: language, compact: true)),
+          ],
+        ),
       ),
       actions: <Widget>[
         TextButton(

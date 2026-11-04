@@ -57,10 +57,18 @@ class DailyPlan {
 
   /// The minutes that go to new words, as [split] divides it: each word is
   /// taught, then asked [DailyPlanner.teachPasses] times (#1009).
-  int get newMinutes => DailyBudget.minutesOfSeconds(
-    split.newWords *
-        (secondsPerTeach + DailyPlanner.teachPasses * secondsPerCard),
-  );
+  ///
+  /// The remainder of the time left, so that the two never add up to more
+  /// than is left: with one minute left, 1 min review and 0 min new.
+  int get newMinutes {
+    final planned = DailyBudget.minutesOfSeconds(
+      split.newWords *
+          (secondsPerTeach + DailyPlanner.teachPasses * secondsPerCard),
+    );
+    final leftSeconds = minutes * 60 - spent.inSeconds;
+    final left = DailyBudget.minutesOfSeconds(leftSeconds.toDouble());
+    return math.max(0, math.min(planned, left - reviewMinutes));
+  }
 
   /// The minutes today's session is for: the goal and what was added.
   int get minutes =>
