@@ -3158,6 +3158,7 @@ class AppState extends ChangeNotifier {
       ),
       spentAtStart: plan.spent,
       keepGoing: going,
+      taughtBefore: newWordsToday(now()),
     );
   }
 
@@ -3175,6 +3176,7 @@ class AppState extends ChangeNotifier {
         countsUp: true,
       ),
       keepGoing: true,
+      taughtBefore: newWordsToday(now()),
     );
     return nextDailyRound(run).isNotEmpty;
   }
@@ -3207,7 +3209,9 @@ class AppState extends ChangeNotifier {
             ),
           )
         : DailyPlanner.newCap;
-    final taughtSoFar = going ? max(newWordsToday(at), run.taught) : run.taught;
+    final taughtSoFar = going
+        ? max(newWordsToday(at), run.taughtBefore + run.taught)
+        : run.taught;
     for (var attempt = 0; attempt < 2; attempt++) {
       final round = _planDaily(
         language,
