@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.3] - 2026-11-04
+
 ### Fixed
 
 - **"IPA replaces transliteration" now applies everywhere.** The grammar drill (its prompt and its table), the unit page's word rows, the set and match drills, the Hear and choose-the-word options, placement's words, the situation sheets, the passage list and the "why is it closed" sheet still drew the transliteration of their own, whatever the switch said. They now go through the shared reading lines, so with IPA on and the switch on the IPA takes the transliteration's place, drawn left to right in the IPA fonts, and typed answers are unchanged (#697).
