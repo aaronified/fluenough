@@ -4773,36 +4773,34 @@ cards:
 
     test('after the day\'s session, Today offers no review the session would '
         'not serve (#1007)', () async {
-      // Eight words reviewed three days ago, and again yesterday with Easy:
-      // not due, and the closest to due, which fill the time while nothing is
-      // due.
+      // Eight words, every skill of each reviewed yesterday with Easy: none
+      // is due and none has a skill left to teach, so the closest to due fill
+      // the time.
       final state = await hindiReviewed(<DrillMode, Duration>{
         DrillMode.production: const Duration(days: 3),
       });
       final hindi = state.languages.firstWhere((l) => l.code == 'hi');
       final cards = state.deckById('hi-en-phrasebook')!.cards.take(8).toList();
-      for (final card in cards) {
-        state.progress.record(
-          deckId: card.deckId,
-          cardId: card.id,
-          mode: DrillMode.production,
-          grade: 5,
-          now: state.now().subtract(const Duration(days: 1)),
-        );
+      void review(int grade, DateTime at) {
+        for (final card in cards) {
+          for (final mode in state.drillableModes(card)) {
+            state.progress.record(
+              deckId: card.deckId,
+              cardId: card.id,
+              mode: mode,
+              grade: grade,
+              now: at,
+            );
+          }
+        }
       }
+
+      review(5, state.now().subtract(const Duration(days: 1)));
       expect(state.dailyPlanFor(hindi).due, 0);
       expect(state.dailyPlanFor(hindi).split.reviews, greaterThan(0));
 
       // The session asks them, and they are answered today.
-      for (final card in cards) {
-        state.progress.record(
-          deckId: card.deckId,
-          cardId: card.id,
-          mode: DrillMode.production,
-          grade: 4,
-          now: state.now(),
-        );
-      }
+      review(4, state.now());
 
       // A session would not ask them again, so Today does not promise them.
       expect(state.dailyPlanFor(hindi).split.reviews, 0);
