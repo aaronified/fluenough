@@ -1,0 +1,15 @@
+# DELETE THIS FILE BEFORE THE PR OPENS (owner 2026-11-04: web jobs queued for next week)
+
+Issue #1012. Nothing below was started; no branches exist for them. All depend on #1018 (offline decks/fonts, lib/main_web.dart, web storage files) and #1019 (iOS basics, tools/check_web_page.py) landing; branch each off current main and merge main again, never rebase. J1 (service worker) is on branch feat/web-service-worker, see WEB-JOB-STATUS-J1-service-worker.md.
+
+## J2 fix/web-hide-reminders
+`Feature.reminder` is on but web uses NullReminderScheduler: hide the settings switch when kIsWeb. Find the settings row; one conditional; widget test with kIsWeb overridden through a seam (add a small one if none exists). CHANGELOG line, **bold headline**, refs #1012.
+
+## J3 feat/web-say-engine (or a documented non-change)
+main_web.dart passes no speech engine. Check pubspec.lock's speech_to_text version and its web implementation (Web Speech API: Chrome desktop/Android yes; iOS Safari webkitSpeechRecognition from 14.5, needs a gesture and secure context, browser only, not standalone home-screen apps). If reliable, put the web engine in a new file behind SpeechEngine (conditional imports with stubs, no web-only imports in VM tests), wire it into main_web.dart by the smallest edit after #1018 lands, keep the existing no-recogniser message as fallback. If not reliable, leave the fallback and say why in the PR body and on #1012.
+
+## J4 test/web-browser-smoke
+Playwright job in pages.yml after the build: serve build/web under the /fluenough/ base path, assert the app boots (flt-glass-pane or known text), manifest installable-shaped, SW registers and controls after reload, offline reload (context.set_offline) still shows the shell. Pinned version, clear failure message, not required unless reliable; record what it can and cannot assert. Needs J1 merged to assert the SW.
+
+## J5 feat/web-install-hint (owner 2026-11-04: "Just build it. But it should not show up on the app.")
+Mockup waiver given. Dismissible hint card on Today, web only, plus a Storage status row in Settings, web only. Never in native Android/iOS builds (kIsWeb through a seam so VM tests cover both) and never when already installed (display-mode: standalone, navigator.standalone). iOS Safari not installed: 'Add Fluenough to your Home Screen so Safari keeps your decks and progress', how-to 'Tap Share, then Add to Home Screen', 'Got it' and 'Later'. Android Chrome (beforeinstallprompt): same hint with an Install button. Desktop: nothing unless beforeinstallprompt fires. Dismissal remembered per device through #1018's web storage seam (failure means it shows again). Settings row: 'Storage: kept' when navigator.storage.persisted() or installed, else 'Storage: may be cleared by the browser' with the same how-to. If docs/mockups/web-install-hint.html exists on branch mockup/web-install-hint, follow it exactly; else reuse card, button and info-dot styles, theme tokens only, 1.4x text, l10n in app_en.arb, one-word tooltips with full-phrase labels. Tests: hidden when not web, hidden when installed, shown on iOS-not-installed, dismissal persists, Settings text for persisted and not.
