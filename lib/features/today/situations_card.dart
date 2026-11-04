@@ -11,7 +11,7 @@ import '../../ui/widgets/incoming.dart';
 import '../situations/situation_page.dart';
 import '../situations/situation_visuals.dart';
 
-/// The situation buttons on Today, under quick revision (#724): one button
+/// The situation buttons on Today, under the streak (#724): one button
 /// for each of the six everyday moments, hailing a cab to the rail station,
 /// each in a colour of its own, with how many of its cards the learner has
 /// not met yet. A button opens its sheet.
