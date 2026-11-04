@@ -62,7 +62,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.7.0
 
-16 approved open issues.
+14 approved open issues.
 
 **Enhancements**
 
@@ -78,8 +78,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#91](https://github.com/aaronified/fluenough/issues/91) Pictures as cues: image format, licence and validator, for Write and Hear
 - [#97](https://github.com/aaronified/fluenough/issues/97) Parental supervision: child profiles with no abuse-related content, and admin controls
 - [#403](https://github.com/aaronified/fluenough/issues/403) Plan: reviewing decks in the app, sent by mail
-- [#404](https://github.com/aaronified/fluenough/issues/404) Deck browser: the site generator, tools/deck_site.py
-- [#405](https://github.com/aaronified/fluenough/issues/405) Deck browser: the Pages workflow
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
@@ -188,7 +186,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#224](https://github.com/aaronified/fluenough/issues/224) Plan: hands-free audio drills
 - [#225](https://github.com/aaronified/fluenough/issues/225) Plan: explain a grammar mistake
 - [#226](https://github.com/aaronified/fluenough/issues/226) Plan: writing the script by hand
-- [#228](https://github.com/aaronified/fluenough/issues/228) Plan: an IPA course
 - [#229](https://github.com/aaronified/fluenough/issues/229) Plan: an ISO 15919 letters deck
 - [#230](https://github.com/aaronified/fluenough/issues/230) Plan: a listening tier in context
 - [#232](https://github.com/aaronified/fluenough/issues/232) Plan: Play Protect and developer verification
@@ -241,7 +238,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#332](https://github.com/aaronified/fluenough/issues/332) Handwriting: stroke data
 - [#333](https://github.com/aaronified/fluenough/issues/333) Handwriting: the stroke animation
 - [#334](https://github.com/aaronified/fluenough/issues/334) Handwriting: tracing and drawing blind, recorded as Write
-- [#338](https://github.com/aaronified/fluenough/issues/338) IPA course: review
 - [#340](https://github.com/aaronified/fluenough/issues/340) ISO 15919 decks: one per Indian language, on the path
 - [#341](https://github.com/aaronified/fluenough/issues/341) Listening in context: owner decisions before building
 - [#342](https://github.com/aaronified/fluenough/issues/342) Listening in context: a context field and the validator
@@ -315,7 +311,7 @@ A plan with no tracking issue is flagged.
 - [haptic feedback, one vocabulary for the whole app](https://github.com/aaronified/fluenough/wiki/Plan-Haptics) (Written 2026-11-02), **no tracking issue**
 - [import any text, and make cards from its words](https://github.com/aaronified/fluenough/wiki/Plan-Import-Text) (Written 2026-10-05), tracks #220
 - [readings made in the app, for sentences the learner adds](https://github.com/aaronified/fluenough/wiki/Plan-In-App-Readings) (Written 2026-10-05), tracks #221
-- [the IPA, taught like a language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Course), tracks #228
+- [the IPA, taught like a language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Course), **no tracking issue**
 - [the IPA course revamp, and a phonology deck for every language](https://github.com/aaronified/fluenough/wiki/Plan-Ipa-Revamp-And-Language-Phonology) (Written 2026-10-26), **no tracking issue**
 - [a deck that teaches ISO 15919, in each language](https://github.com/aaronified/fluenough/wiki/Plan-Iso-15919-Deck), tracks #229
 - [language paths, pacing by difficulty, and every language in the scheme](https://github.com/aaronified/fluenough/wiki/Plan-Language-Paths) (Written 2026-10-05), tracks #216
