@@ -332,22 +332,29 @@ class _OptionWord extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final reading = card.reading;
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: readingFirst ? card.ipa : null,
+      target: card.target,
+      showReading: readingFirst,
+    );
+    final reading = lines.reading;
     final word = TargetText(
       card.target,
       language: language,
-      fontSize: readingFirst && reading != null ? 14 : style.fontSize! + 4,
-      color: readingFirst && reading != null
+      fontSize: reading != null ? 14 : style.fontSize! + 4,
+      color: reading != null
           ? style.color!.withValues(alpha: 0.75)
           : style.color,
       textAlign: TextAlign.start,
       card: card,
     );
-    if (!readingFirst || reading == null) return word;
+    if (reading == null) return word;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: <Widget>[
-        Text(reading, style: style),
+        ReadingText(reading, swapped: lines.swapped, style: style),
         word,
       ],
     );
