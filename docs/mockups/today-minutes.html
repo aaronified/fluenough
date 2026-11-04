@@ -134,7 +134,8 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .sum .sk{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 12px;font-size:calc(16px*var(--t))}
 .sum .sk .mp2{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px;border-radius:var(--r-field);font-size:calc(13px*var(--t));font-weight:500}
 .sum .sk .mp2 svg.i{width:16px;height:16px}
-.sum .stat{margin-top:24px;background:var(--sHigh);border-radius:var(--r-card);padding:16px 8px;text-align:center}
+.sum .tot{margin:20px auto 0;font-size:calc(16px*var(--t));font-weight:600;text-align:center}
+.sum .stat{margin-top:16px;margin-top:24px;background:var(--sHigh);border-radius:var(--r-card);padding:16px 8px;text-align:center}
 .sum .stat b{display:block;font-size:calc(32px*var(--t));line-height:1.2;font-weight:800}
 .sum .stat span{font-size:calc(14px*var(--t));color:var(--onSv)}
 .sum .nd{margin-top:24px;text-align:center;font-size:calc(14px*var(--t));color:var(--onSv)}
@@ -198,7 +199,6 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
  <div class="tg">Language <span class="seg" data-k="lang"><button data-v="te">Telugu</button><button data-v="bn">Bengali</button><button data-v="hi">Hindustani</button></span></div>
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Screen <span class="seg" data-k="screen"><button data-v="all">All four</button><button data-v="sum">1 Review end</button><button data-v="todo">2 Not completed</button><button data-v="over">3 Quota over</button><button data-v="ses">4 After Keep going</button></span></div>
- <div class="tg">Hint <span class="seg" data-k="hint"><button data-v="long">Tap a skill to practise only that skill</button><button data-v="short">Tap a skill to practise it alone</button></span></div>
  <div class="tg">Info dot tapped <span class="seg" data-k="tap"><button data-v="1">Show</button><button data-v="0">Hide</button></span></div>
  <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
 </div>
@@ -250,24 +250,25 @@ const L={
 const TILES=[['rec','Recognition','eye',12,'same'],['hear','Hear','hear',24,'north'],['say','Say','mic',44,'south'],['write','Write','key',22,'same'],['gram','Grammar','tf',6,null],['script','Script','abc',31,null]];
 const GOAL=15;
 const CAP={
- sum:{cap:'1  Review end screen',sub:'The summary is THE end screen (owner, 2026-11-04). As built, with Keep going added above the lesson button, a tonal button like "Today\'s lesson". The greyed ring on screen 3 opens it; the old blank end screen is scrapped.'},
- todo:{cap:'2  Today, review not completed',sub:'8 of 15 min. Minutes budgeted in the chips, the hint above the skill tiles, all pending cards on the tiles, tile arrows as today, no Quick revision.'},
- over:{cap:'3  Today, daily quota over',sub:'15 of 15 min, no chips. The greyed ring still presses and opens screen 1. Keep going under the ring is as built today (shown once the day is done); see question 1.'},
+ sum:{cap:'1  Review end screen',sub:'The summary is THE end screen and the only home of Keep going (owner, 2026-11-04): a tonal button above "Today\'s lesson". The day\'s total (23 min today) is new. The greyed ring on screen 3 opens it; the old blank end screen is scrapped.'},
+ todo:{cap:'2  Today, review not completed',sub:'8 of 15 min: the chips show what is left of the budget, 7 min (5 review, 2 new), and count down with the clock. The hint and its info dot above the tiles, all pending cards on the tiles, tile arrows as today, no Quick revision, no Keep going.'},
+ over:{cap:'3  Today, daily quota over',sub:'23 min today: Keep going time is added to the day\'s total, the ring stays full and greyed (arc now the outline colour), no chips, no Keep going button. The ring presses and opens screen 1, where Keep going lives.'},
  ses:{cap:'4  In session after Keep going',sub:'The same header as the drill: close, the bar (full for the whole stretch), the time taken counting up, the word\'s sounds, report.'},
  hyl:{cap:'Info dot tapped: How you learn',sub:'The page the dot on screens 2 and 3 opens (the same page the "Adjusted to you" strip opens): top of the page as built, with two skills.'},
  ref:{cap:'Reference: normal session',sub:'The header as today: the bar 35% full, the time left counting down.'}};
-const PRESETS={todo:{spent:8,keep:false},over:{spent:15,keep:true}};
+const PRESETS={todo:{spent:8},over:{spent:23}};
 const S={lang:'te',theme:'light',screen:'all',hint:'long',tap:'1',hl:'1'};
-const HINT={long:'Tap a skill to practise only that skill',short:'Tap a skill to practise it alone'};
+const HINT='Tap a skill to practise only that';
 
 function phone(k){
  const P=PAL[S.theme],M=MODE[S.theme],lang=L[S.lang],f=PRESETS[k];
  const total=GOAL,done=f.spent>=total,start=f.spent===0;
  const frac=Math.min(1,f.spent/total);
+ const left=Math.max(0,total-f.spent);
  const R=94,C=2*Math.PI*R;
- const track=done?P.sHighest:P.sc, fill=done?P.olv:P.p;
+ const track=done?P.sHighest:P.sc, fill=done?P.ol:P.p;
  const label=done?'Done for today':start?'Start':'Continue';
- const rev=Math.round(total*0.8),nw=total-rev;
+ const rev=Math.round(left*0.7),nw=left-rev;
  const ring=`<div class="ringbox"><svg class="rg" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="${R}" fill="none" stroke="${track}" stroke-width="12"/><circle cx="100" cy="100" r="${R}" fill="none" stroke="${fill}" stroke-width="12" stroke-linecap="round" stroke-dasharray="${(C*frac).toFixed(1)} ${C.toFixed(1)}" transform="rotate(-90 100 100)"/></svg><button class="rbtn" aria-label="${done?'Done for today. Opens the summary.':label}">${ic(done?'check':'play')}<span class="lb">${label}</span></button></div>`;
  return `<div class="ph" data-phone="${k}">
  <div class="lbar"><span class="lpill"><span class="g script">${lang.glyph}</span>${lang.name}</span></div><div class="lline"></div>
@@ -275,12 +276,12 @@ function phone(k){
  <div class="body">
   <div class="daily ${done?'done':''}">
    ${ring}
-   <div class="mins" style="margin-top:10px">${Math.min(f.spent,total)} of ${total} min</div>
-   ${f.keep?`<button class="kg chg stay">Keep going</button>`:''}
+   <div class="mins${done?' chg upd':''}" style="margin-top:10px">${done?f.spent+' min today':f.spent+' of '+total+' min'}</div>
+   
    ${done?'':`<div class="chips chg upd"><span class="chip rev">${rev} min review</span><span class="chip new${nw===0?' zero':''}">${nw} min new</span></div>`}
   </div>
   <div class="due" style="margin-bottom:16px">
-   <div class="hint chg"><span style="flex:1;min-width:0">${S.hint==='long'?HINT.long:HINT.short}</span><button class="idot${S.tap==='1'?' pr':''}" aria-label="How skills are fitted to you" title="Info">${ic('infoo')}${S.tap==='1'?'<span class="itip" aria-hidden="true">Info</span>':''}</button></div>
+   <div class="hint chg"><span style="flex:1;min-width:0">${HINT}</span><button class="idot${S.tap==='1'?' pr':''}" aria-label="How skills are fitted to you" title="Info">${ic('infoo')}${S.tap==='1'?'<span class="itip" aria-hidden="true">Info</span>':''}</button></div>
    <div class="grid chg stay" style="padding:2px">${TILES.map(([id,nm,icn,n,mk])=>{
      const c=M[id]||[P.sc,P.onSc];
      return `<div class="tile"><div class="top"><span class="mp" style="background:${c[0]};color:${c[1]}">${ic(icn)}</span><span class="n">${n}</span><span class="pm">${mk?ic(mk):''}</span></div><div class="nm">${nm}</div></div>`}).join('')}</div>
@@ -321,6 +322,7 @@ function summary(){
   <div class="tick" aria-hidden="true">${ic('check')}</div>
   <h2>You\u2019ve completed ${lang.name} for today</h2>
   <div class="skills">${rows.map(([id,nm,icn,c,t])=>`<div class="sk"><span class="mp2" style="background:${M[id][0]};color:${M[id][1]}">${ic(icn)}${nm}</span><span>${c} right of ${t}</span></div>`).join('')}</div>
+  <div class="tot chg upd">23 min today</div>
   <div class="stat"><b>5</b><span>day streak</span></div>
   <div class="nd">Next due: 23 cards tomorrow</div>
   <div class="bt"><button class="b done">Done</button><button class="b ton chg">Keep going</button><button class="b ton">Today\u2019s lesson</button></div>
@@ -356,7 +358,7 @@ document.addEventListener('click',e=>{
 /* ===== contrast self-check: console only (window.__contrast) ===== */
 const lum=h=>{const c=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]};
 const cr=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
-const PAIRS=[['body text, minutes','onS','s',4.5],['captions','onSv','s',4.5],['ring button label','onP','p',4.5],['done ring label, check','onSv','sHigh',4.5],['Keep going text button','p','s',4.5],['review chip','onSc','sc',4.5],['new chip','onP','p',4.5],['new chip at 0 min, text','onSv','s',4.5],['new chip at 0 min, outline','ol','s',3],['hint on the due card','onPc','pc',4.5],['tile number','onS','sLowest',4.5],['tile name','onSv','sLowest',4.5],['tile pace arrow','onSv','sLowest',3],['ring progress arc, active','p','s',3],['ring progress arc, greyed (done)','olv','s',3],['language pill','onSc','sc',4.5],['streak card text','onS','sLow',4.5],['streak card caption','onSv','sLow',4.5],['quick revision (removed, struck)','onSv','sLow',4.5],['session clock','onS','s',4.5],['wave and end dot','p','s',3],['header icons (close, sound, report)','onSv','s',3],['drill card text','onS','sLow',4.5],['drill card reading, question','onSv','sLow',4.5],['answer option','onS','sLowest',4.5],['answer option on card (shape)','sLowest','sLow',1.0],['summary title, score text','onS','s',4.5],['summary tick','onTc','tc',3],['streak tile value','onS','sHigh',4.5],['streak tile label','onSv','sHigh',4.5],['Done button','onP','p',4.5],['Keep going and lesson buttons','onSc','sc',4.5],['info dot icon on due card','onSv','pc',3],['info dot pressed (16% of onPc) icon','onSv','pc',3],['page text','onS','sLow',4.5],['page captions, axis','onSv','sLow',4.5],['intro on page','onS','s',4.5],['legend','onSv','s',4.5],['seen verdict','onPc','pc',4.5],['slip verdict','onTc','tc',4.5],['track fill on track','p','sHighest',3],['start marker on track','onS','sHighest',3],['change tag','onE','E',4.5],['change outline on page','E','s',3]];
+const PAIRS=[['body text, minutes','onS','s',4.5],['captions','onSv','s',4.5],['ring button label','onP','p',4.5],['done ring label, check','onSv','sHigh',4.5],['Keep going text button','p','s',4.5],['review chip','onSc','sc',4.5],['new chip','onP','p',4.5],['new chip at 0 min, text','onSv','s',4.5],['new chip at 0 min, outline','ol','s',3],['hint on the due card','onPc','pc',4.5],['tile number','onS','sLowest',4.5],['tile name','onSv','sLowest',4.5],['tile pace arrow','onSv','sLowest',3],['ring progress arc, active','p','s',3],['ring progress arc, greyed (done)','ol','s',3],['language pill','onSc','sc',4.5],['streak card text','onS','sLow',4.5],['streak card caption','onSv','sLow',4.5],['quick revision (removed, struck)','onSv','sLow',4.5],['session clock','onS','s',4.5],['wave and end dot','p','s',3],['header icons (close, sound, report)','onSv','s',3],['drill card text','onS','sLow',4.5],['drill card reading, question','onSv','sLow',4.5],['answer option','onS','sLowest',4.5],['answer option on card (shape)','sLowest','sLow',1.0],['summary title, score text, day total','onS','s',4.5],['summary tick','onTc','tc',3],['streak tile value','onS','sHigh',4.5],['streak tile label','onSv','sHigh',4.5],['Done button','onP','p',4.5],['Keep going and lesson buttons','onSc','sc',4.5],['info dot icon on due card','onSv','pc',3],['info dot pressed (16% of onPc) icon','onSv','pc',3],['page text','onS','sLow',4.5],['page captions, axis','onSv','sLow',4.5],['intro on page','onS','s',4.5],['legend','onSv','s',4.5],['seen verdict','onPc','pc',4.5],['slip verdict','onTc','tc',4.5],['track fill on track','p','sHighest',3],['start marker on track','onS','sHighest',3],['change tag','onE','E',4.5],['change outline on page','E','s',3]];
 window.__contrast=[];
 ['light','dark'].forEach(t=>{PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})});
  Object.entries(MODE[t]).forEach(([id,c])=>{const r=cr(c[0],c[1]);window.__contrast.push({theme:t,pair:'tile icon '+id,fg:c[1],bg:c[0],ratio:+r.toFixed(2),need:3,pass:r>=3})});});
