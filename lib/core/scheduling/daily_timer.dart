@@ -139,6 +139,7 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     int taughtSoFar = 0,
     bool catchingUp = false,
+    int cap = newCap,
   }) => _outline(
     left: left,
     due: due,
@@ -148,6 +149,7 @@ abstract final class DailyPlanner {
     secondsPerTeach: secondsPerTeach,
     taughtSoFar: taughtSoFar,
     catchingUp: catchingUp,
+    cap: cap,
   ).total;
 
   /// The next round (owner, 2026-10-30): a share of [whole], so that the
@@ -161,6 +163,7 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     int taughtSoFar = 0,
     bool catchingUp = false,
+    int cap = newCap,
   }) {
     final outline = _outline(
       left: left,
@@ -171,6 +174,7 @@ abstract final class DailyPlanner {
       secondsPerTeach: secondsPerTeach,
       taughtSoFar: taughtSoFar,
       catchingUp: catchingUp,
+      cap: cap,
     );
     final total = outline.total;
     if (outline.rounds <= 1) return total;
@@ -190,6 +194,7 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     required int taughtSoFar,
     required bool catchingUp,
+    required int cap,
   }) {
     final seconds = left.inMilliseconds / 1000;
     if (seconds <= 0) return (total: DailyRound.none, rounds: 1);
@@ -197,7 +202,7 @@ abstract final class DailyPlanner {
     final cost = secondsPerTeach + teachPasses * review;
     final room = catchingUp
         ? 0
-        : math.max(0, math.min(newAvailable, newCap - taughtSoFar));
+        : math.max(0, math.min(newAvailable, cap - taughtSoFar));
 
     if (due <= 0) {
       final teach = room == 0

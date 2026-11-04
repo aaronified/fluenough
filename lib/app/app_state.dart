@@ -2984,6 +2984,7 @@ class AppState extends ChangeNotifier {
     required DateTime at,
     int taught = 0,
     bool whole = false,
+    int cap = DailyPlanner.newCap,
   }) {
     final times = _timesIn(language, at);
     final teach = settings.teachTimeTotal(language: language);
@@ -3001,6 +3002,7 @@ class AppState extends ChangeNotifier {
       secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
       taughtSoFar: taught,
       catchingUp: due > DailyBudget.backlogDays * dayCards,
+      cap: cap,
     );
   }
 
@@ -3012,11 +3014,17 @@ class AppState extends ChangeNotifier {
   /// would not ask it again, so Today must not promise it either (#1007).
   /// Both read their pools from here, so what Today offers is what a
   /// session serves.
+  ///
+  /// With [keepGoing] (#1010), the closest are only those Keep going may pull
+  /// forward ([DailyBudget.canPullForward]): due within a couple of days and
+  /// not so fresh that the review is wasted. Today's own numbers never ask
+  /// for it, so Keep going moves neither the tiles nor the chips.
   ({List<SessionItem> due, List<SessionItem> closest}) _dailyPools(
     String language,
     DateTime at,
-    Set<String> asked,
-  ) {
+    Set<String> asked, {
+    bool keepGoing = false,
+  }) {
     final due = <SessionItem>[
       for (final item in DailyBudget.mostForgottenFirst(
         buildSession(DrillRequest.today(language: language)).items,
@@ -3032,6 +3040,7 @@ class AppState extends ChangeNotifier {
         if (item.state != null &&
             !item.state!.isDue(at) &&
             item.state!.lastReviewAt.isBefore(today) &&
+            (!keepGoing || DailyBudget.canPullForward(item.state!, at)) &&
             !asked.contains(item.card.id))
           item,
     ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));
@@ -3108,7 +3117,11 @@ class AppState extends ChangeNotifier {
   /// today, which is the day's minutes less what is spent, or a step of
   /// minutes once it is all spent ("Keep going"). Null for a language the
   /// learner has no decks of.
-  DailyRun? startDaily(String language) {
+  ///
+  /// With [keepGoing] (#1010), or once the minutes are all spent, it is a
+  /// Keep going stretch: a five minute clock shown as the time taken, and
+  /// the rule of [nextDailyRound] for it.
+  DailyRun? startDaily(String language, {bool keepGoing = false}) {
     final info = <LanguageInfo>[
       for (final entry in decks)
         if (entry.language.code == language) entry.language,
@@ -3116,18 +3129,20 @@ class AppState extends ChangeNotifier {
     if (info == null) return null;
     final plan = dailyPlanFor(info);
     final left = Duration(minutes: plan.minutes) - plan.spent;
+    // The budget is spent, or Keep going was asked for: this stretch is
+    // shown as the time taken (#1009).
+    final going = keepGoing || left <= Duration.zero;
     return DailyRun(
       language: language,
       clock: DailyCountdown(
-        budget: left > Duration.zero
-            ? left
-            : const Duration(minutes: DailyBudget.stepMinutes),
+        budget: going || left <= Duration.zero
+            ? const Duration(minutes: DailyBudget.stepMinutes)
+            : left,
         now: now(),
-        // The budget is spent: this stretch is Keep going, shown as the
-        // time taken (#1009).
-        countsUp: left <= Duration.zero,
+        countsUp: going,
       ),
       spentAtStart: plan.spent,
+      keepGoing: going,
     );
   }
 
@@ -3143,10 +3158,23 @@ class AppState extends ChangeNotifier {
   List<SessionItem> nextDailyRound(DailyRun run) {
     final at = now();
     final language = run.language;
-    final pools = _dailyPools(language, at, run.asked);
+    final going = run.keepGoing;
+    final pools = _dailyPools(language, at, run.asked, keepGoing: going);
     final due = pools.due;
     final closest = pools.closest;
     var fresh = untaughtCards(language).length;
+    // Keep going teaches against the whole day's taught total, not just this
+    // stretch's, under a cap a little over the day's (#1010).
+    final cap = going
+        ? DailyBudget.keepGoingNewCap(
+            due: due.length,
+            dayCards: DailyBudget.cardsFor(
+              settings.dailyMinutesFor(language),
+              secondsPerCard: _timesIn(language, at).secondsPerCard,
+            ),
+          )
+        : DailyPlanner.newCap;
+    final taughtSoFar = going ? max(newWordsToday(at), run.taught) : run.taught;
     for (var attempt = 0; attempt < 2; attempt++) {
       final round = _planDaily(
         language,
@@ -3155,7 +3183,8 @@ class AppState extends ChangeNotifier {
         closest: closest.length,
         fresh: fresh,
         at: at,
-        taught: run.taught,
+        taught: taughtSoFar,
+        cap: cap,
       );
       if (round.isEmpty) return const <SessionItem>[];
       final pick = round.reviews > 0

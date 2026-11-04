@@ -189,7 +189,10 @@ class SummaryPage extends StatelessWidget {
                           style: AppButtonStyles.secondary(context),
                           onPressed: () => AppNavigator.startDrill(
                             context,
-                            DrillRequest.daily(language: finished.code),
+                            DrillRequest.daily(
+                              language: finished.code,
+                              keepGoing: true,
+                            ),
                           ),
                           child: Text(l10n.summaryKeepGoing),
                         ),

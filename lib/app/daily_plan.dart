@@ -130,10 +130,16 @@ class DailyRun {
     required this.language,
     required this.clock,
     this.spentAtStart = Duration.zero,
+    this.keepGoing = false,
   });
 
   final String language;
   final DailyCountdown clock;
+
+  /// A Keep going stretch (#1010): the day's session after its minutes are
+  /// done, which serves the cards closest to due and some new words under
+  /// the guards of [DailyBudget].
+  final bool keepGoing;
 
   /// The time Today counted as spent when the session began.
   final Duration spentAtStart;
