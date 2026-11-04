@@ -1,5 +1,6 @@
 import 'dart:math';
 
+import 'daily_timer.dart';
 import 'fsrs.dart';
 import 'session_queue.dart';
 
@@ -55,6 +56,61 @@ abstract final class DailyBudget {
   /// A backlog of more than this many days of budget is catching up: reviews
   /// only.
   static const int backlogDays = 3;
+
+  /// Keep going (#1010): the most days a card may be pulled forward. Cards
+  /// due later than this are not reviewed early, so Keep going does not
+  /// review too far into the future (owner, 2026-11-04). Tunable.
+  static const int keepGoingDays = 2;
+
+  /// Keep going (#1010): a card is pulled forward only while the chance of
+  /// recalling it now, by the parameters that schedule it, is at most this.
+  /// A fixed 0.95, not a per-learner setting: the scheduler aims a review at
+  /// 0.9, so this leaves a little room before the review is wasted, the card
+  /// being still too fresh whatever its due date. Tunable.
+  static const double keepGoingMaxRecall = 0.95;
+
+  /// Keep going (#1010): new words one Keep going stretch may teach beyond
+  /// the day's [DailyPlanner.newCap] already counted. Tunable.
+  static const int keepGoingNewExtra = 5;
+
+  /// The same while a day's reviews still wait beyond a day's worth, so that
+  /// the busy learner is given fewer new words. Tunable.
+  static const int keepGoingNewExtraBusy = 2;
+
+  /// Whether Keep going may review [state] early at [now] (#1010): due
+  /// within [keepGoingDays] days, and not so fresh that the review is
+  /// wasted ([keepGoingMaxRecall]). A card already due always may.
+  ///
+  /// [parameters] are the ones that schedule the pair, the learner's fitted
+  /// set where there is one, so that recall is judged as the scheduler does.
+  static bool canPullForward(
+    FsrsState state,
+    DateTime now, {
+    List<double> parameters = Fsrs.w,
+  }) {
+    if (state.isDue(now)) return true;
+    return state.dueAt.difference(now) <= const Duration(days: keepGoingDays) &&
+        Fsrs.retrievability(state, now, parameters: parameters) <=
+            keepGoingMaxRecall;
+  }
+
+  /// The most new words the day may have taught once Keep going has
+  /// started (#1010): the day's [DailyPlanner.newCap] plus an allowance for
+  /// the stretch, smaller while [due] reviews wait beyond a day's worth
+  /// ([dayCards]) and none while the backlog is [DailyBudget.backlogDays]
+  /// days deep (catching up). The words already taught today count against
+  /// it, so Keep going cannot flood the learner with new words.
+  static int keepGoingNewCap({required int due, required int dayCards}) {
+    final int extra;
+    if (due > backlogDays * dayCards) {
+      extra = 0;
+    } else if (due > dayCards) {
+      extra = keepGoingNewExtraBusy;
+    } else {
+      extra = keepGoingNewExtra;
+    }
+    return DailyPlanner.newCap + extra;
+  }
 
   /// [minutes], held between [minMinutes] and [maxMinutes].
   static int clampMinutes(int minutes) => minutes < minMinutes

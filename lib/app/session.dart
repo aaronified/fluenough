@@ -22,6 +22,7 @@ class DrillRequest {
     this.sheet = false,
     this.script = ScriptScope.any,
     this.drillableOnly = false,
+    this.keepGoing = false,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
@@ -41,8 +42,10 @@ class DrillRequest {
 
   /// The day's session in [language] (#521): the reviews and new words the
   /// daily minutes buy (#485), in one session on a clock (#886).
-  const DrillRequest.daily({required String language})
-    : this(daily: true, language: language);
+  ///
+  /// With [keepGoing] (#1010), the stretch after the day's minutes are done.
+  const DrillRequest.daily({required String language, bool keepGoing = false})
+    : this(daily: true, language: language, keepGoing: keepGoing);
 
   /// A lesson (ADR-0024): new words from [language]'s pending units, or with
   /// [deckId] from that deck, taught, checked and practised. With [tags], only
@@ -201,6 +204,9 @@ class DrillRequest {
   /// The day's mixed session in [language]: reviews, then new words, sized
   /// by the daily minutes ([AppState.nextDailyRound]).
   final bool daily;
+
+  /// A day's session that is a Keep going stretch (#1010).
+  final bool keepGoing;
 
   /// Only decks in this language, by code; null for every language.
   final String? language;
