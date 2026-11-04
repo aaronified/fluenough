@@ -210,7 +210,14 @@ class DrillSession extends ChangeNotifier {
     final target = run.spentAtStart + run.clock.budget;
     final spent = _state.dailySpent(run.language);
     if (spent < target) {
-      _state.settings.addClockTime(run.language, _state.now(), target - spent);
+      // Clock time is kept in whole milliseconds: rounded up, so that the
+      // day reads the full time rather than a microsecond short of it.
+      final gap = target - spent;
+      _state.settings.addClockTime(
+        run.language,
+        _state.now(),
+        Duration(milliseconds: (gap.inMicroseconds / 1000).ceil()),
+      );
     }
   }
 
