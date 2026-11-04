@@ -24,7 +24,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'support/harness.dart';
 import 'support/paced_learner.dart';
-import 'support/progress_shared.dart';
 
 // From how_you_learn_page_test.dart.
 /// The pace How you learn shows for Hindi [mode].

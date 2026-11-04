@@ -1,6 +1,8 @@
 // Split out of accessibility_test.dart so that CI can spread it over its shards;
 // the tests and their names are unchanged. This file holds: the screen reader never reads out the answer asked for, deck text in an interface string is read in its language: a wrong answer's feedback, a language's own name, but not a heard number's digits, a phone at 2x text draws the app at 1.4x (#505), and below the cap keeps its own size, a toast is a live region a screen reader hears.
 
+import 'dart:ui' show LocaleStringAttribute;
+
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart' show SemanticsNode;
 import 'package:flutter_test/flutter_test.dart';
@@ -15,7 +17,6 @@ import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/drill/recognition_drill.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/features/onboarding/onboarding_flow.dart';
-import 'package:fluenough/features/report/report_page.dart';
 import 'package:fluenough/ui/theme.dart';
 import 'package:fluenough/ui/widgets/snack.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';

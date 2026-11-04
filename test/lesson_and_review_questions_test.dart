@@ -38,7 +38,6 @@ import 'package:fluenough/features/drill/reading_drill.dart';
 import 'package:fluenough/features/drill/reading_fixture.dart';
 import 'package:fluenough/features/drill/speaking_drill.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
-import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/feedback_banner.dart';
 import 'package:fluenough/ui/widgets/incoming.dart';
 import 'package:fluenough/ui/widgets/ipa_line.dart';

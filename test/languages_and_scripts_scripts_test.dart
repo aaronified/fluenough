@@ -24,13 +24,11 @@ import 'package:fluenough/ui/script_name.dart';
 import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'
-    show LogicalKeyboardKey, SystemChannels, rootBundle;
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/braille_course.dart';
 import 'support/harness.dart';
-import 'support/hindi_courses.dart';
 import 'support/ipa_course.dart';
 import 'support/picker.dart';
 import 'support/two_script_course.dart';

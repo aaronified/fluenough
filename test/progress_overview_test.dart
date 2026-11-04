@@ -31,7 +31,6 @@ import 'package:fluenough/ui/widgets/learn_button.dart';
 import 'package:fluenough/features/stats/leeches.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
 import 'package:fluenough/features/stats/stats_page.dart';
-import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/deck_tile.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter/rendering.dart' show RenderParagraph;

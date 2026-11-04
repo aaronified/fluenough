@@ -1,8 +1,6 @@
 // Split out of accessibility_test.dart so that CI can spread it over its shards;
 // the tests and their names are unchanged. This file holds: Progress and settings.
 
-import 'dart:ui' show LocaleStringAttribute;
-
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:fluenough/app/app_state.dart';

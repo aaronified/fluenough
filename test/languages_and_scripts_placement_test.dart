@@ -22,7 +22,6 @@ import 'package:fluenough/features/drill/choice_tile.dart';
 import 'package:fluenough/features/drill/rearrange_drill.dart' show WordTile;
 import 'package:fluenough/features/placement/language_picker_page.dart';
 import 'package:fluenough/features/placement/onboarding_placement.dart';
-import 'package:fluenough/features/placement/language_row.dart';
 import 'package:fluenough/features/placement/placement_page.dart';
 import 'package:fluenough/features/placement/placement_questions.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
@@ -32,8 +31,7 @@ import 'package:fluenough/ui/widgets/mode_pill.dart';
 import 'package:fluenough/ui/widgets/reading_first.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart'
-    show LogicalKeyboardKey, SystemChannels, rootBundle;
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'support/harness.dart';
 import 'support/picker.dart';

@@ -27,7 +27,6 @@ import 'package:fluenough/features/drill/rtl_fixture.dart';
 import 'package:fluenough/features/drill/taught_details.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
-import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/braille_keyboard.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
 import 'package:fluenough/ui/widgets/play_button.dart';
