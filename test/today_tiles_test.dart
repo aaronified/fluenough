@@ -465,31 +465,45 @@ void main() {
     });
   });
   group('the hint above the tiles', () {
-    testWidgets('reads what a tap does, and its info dot opens How you learn', (
-      tester,
-    ) async {
-      usePhone(tester, textScale: 1.4);
-      final handle = tester.ensureSemantics();
-      addTearDown(handle.dispose);
-      final state = _learner();
-      await state.load();
-      await state.startSpeech();
-      await pumpScreen(tester, const TodayPage(), state: state);
-      final l10n = AppLocalizations.of(tester.element(find.byType(TodayPage)))!;
-      expect(tester.takeException(), isNull, reason: 'fits at 1.4x');
-      expect(find.text(l10n.todayDueHint), findsOneWidget);
-      expect(find.bySemanticsLabel(l10n.todayDueHintInfo), findsOneWidget);
-      final dot = find.descendant(
-        of: find.byType(DueCard),
-        matching: find.byTooltip(l10n.hintInfo),
-      );
-      expect(dot, findsOneWidget);
-      await tester.ensureVisible(dot);
-      await tester.pumpAndSettle();
-      await tester.tap(dot);
-      await tester.pumpAndSettle();
-      expect(find.byType(HowYouLearnPage), findsOneWidget);
-    });
+    testWidgets(
+      'reads what a tap does, and its info dot opens a short popover of How you learn',
+      (tester) async {
+        usePhone(tester, textScale: 1.4);
+        final handle = tester.ensureSemantics();
+        addTearDown(handle.dispose);
+        final state = _learner();
+        await state.load();
+        await state.startSpeech();
+        await pumpScreen(tester, const TodayPage(), state: state);
+        final l10n = AppLocalizations.of(
+          tester.element(find.byType(TodayPage)),
+        )!;
+        expect(tester.takeException(), isNull, reason: 'fits at 1.4x');
+        expect(find.text(l10n.todayDueHint), findsOneWidget);
+        expect(find.bySemanticsLabel(l10n.todayDueHintInfo), findsOneWidget);
+        final dot = find.descendant(
+          of: find.byType(DueCard),
+          matching: find.byTooltip(l10n.hintInfo),
+        );
+        expect(dot, findsOneWidget);
+        await tester.ensureVisible(dot);
+        await tester.pumpAndSettle();
+        await tester.tap(dot);
+        // The figures are worked out off the main thread, so the popover may
+        // still be waiting for them: no settling.
+        await tester.pump();
+        await tester.pump();
+        // A popover with this language's part of the page, not the page.
+        expect(find.byType(AlertDialog), findsOneWidget);
+        expect(find.byType(HowYouLearnView), findsOneWidget);
+        expect(find.text(l10n.howYouLearnTitle), findsOneWidget);
+        expect(find.byType(HowYouLearnPage), findsNothing);
+        await tester.tap(find.text(l10n.commonClose));
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 1));
+        expect(find.byType(AlertDialog), findsNothing);
+      },
+    );
   });
 
   group('the end of the day', () {

@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
+import '../../app/app_scope.dart';
 import '../../app/routes.dart';
 import '../../app/session.dart';
 import '../../app/skill.dart';
@@ -13,6 +14,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
 import '../../ui/widgets/mode_pill.dart';
 import '../../ui/widgets/pace_parts.dart';
+import '../stats/how_you_learn_page.dart';
 import 'today_numbers.dart';
 
 /// The design's opacity for a skill tile with nothing due: its fill and
@@ -67,7 +69,7 @@ class DueCard extends StatelessWidget {
               if (pace != null) _AdjustedStrip(pace: pace),
               if (pace != null && !numbers.allDone) const SizedBox(height: 16),
               if (!numbers.allDone) ...<Widget>[
-                const _Hint(),
+                _Hint(numbers: numbers),
                 _SkillGrid(numbers: numbers),
               ],
             ],
@@ -103,15 +105,21 @@ class _AdjustedStrip extends StatelessWidget {
 }
 
 /// The line above the skill tiles, "Tap a skill to practise only that", with
-/// an info dot after it (owner, 2026-11-04) that opens How you learn, the page
-/// the "Adjusted to you" strip opens. Always shown with the tiles.
+/// an info dot after it (owner, 2026-11-04) that opens a short popover with
+/// the language's part of How you learn. Always shown with the tiles.
 class _Hint extends StatelessWidget {
-  const _Hint();
+  const _Hint({required this.numbers});
+
+  final TodayNumbers numbers;
 
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
+    // The language the popover shows: the one in the bar, else the first.
+    final language =
+        AppScope.read(context).shownLanguage ??
+        numbers.daily.firstOrNull?.language.code;
     return Row(
       children: <Widget>[
         Expanded(
@@ -125,11 +133,11 @@ class _Hint extends StatelessWidget {
         Semantics(
           button: true,
           label: l10n.todayDueHintInfo,
-          onTap: () => AppNavigator.openHowYouLearn(context),
+          onTap: () => showHowYouLearnPopover(context, language),
           excludeSemantics: true,
           child: IconButton(
             tooltip: l10n.hintInfo,
-            onPressed: () => AppNavigator.openHowYouLearn(context),
+            onPressed: () => showHowYouLearnPopover(context, language),
             icon: const Icon(Icons.info_outline),
             iconSize: 20,
             // The icon stays small; the tap target is the 48 dp minimum.

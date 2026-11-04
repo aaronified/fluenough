@@ -63,30 +63,45 @@ class HowYouLearnPage extends StatelessWidget {
         title: Text(l10n.howYouLearnTitle),
         actions: const <Widget>[ReportButton()],
       ),
-      body: SafeArea(
-        top: false,
-        child: ListenableBuilder(
-          listenable: Listenable.merge(<Listenable>[
-            state.pacing,
-            state.progress,
-          ]),
-          builder: (context, _) {
-            final paces = state.pacing.paces;
-            if (paces == null) {
-              return Center(
-                child: CircularProgressIndicator(
-                  semanticsLabel: l10n.howYouLearnWorking,
-                ),
-              );
-            }
-            return _Body(
-              state: state,
-              paces: _shown(state, paces.values),
-              someAdjusted: state.pacing.adjusted,
-            );
-          },
-        ),
-      ),
+      body: SafeArea(top: false, child: HowYouLearnView(language: language)),
+    );
+  }
+}
+
+/// What the How you learn page shows, for [language] alone when given, else
+/// every language the profile learns: the content of the page, and of
+/// Today's short popover ([showHowYouLearnPopover]), which is the same
+/// widgets for one language (#1009).
+class HowYouLearnView extends StatelessWidget {
+  const HowYouLearnView({super.key, this.language, this.compact = false});
+
+  final String? language;
+
+  /// Sized to its content, to sit inside a popover.
+  final bool compact;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final state = AppScope.of(context);
+    return ListenableBuilder(
+      listenable: Listenable.merge(<Listenable>[state.pacing, state.progress]),
+      builder: (context, _) {
+        final paces = state.pacing.paces;
+        if (paces == null) {
+          return Center(
+            child: CircularProgressIndicator(
+              semanticsLabel: l10n.howYouLearnWorking,
+            ),
+          );
+        }
+        return _Body(
+          state: state,
+          paces: _shown(state, paces.values),
+          someAdjusted: state.pacing.adjusted,
+          compact: compact,
+        );
+      },
     );
   }
 
@@ -116,10 +131,12 @@ class _Body extends StatelessWidget {
     required this.state,
     required this.paces,
     required this.someAdjusted,
+    required this.compact,
   });
 
   final AppState state;
   final List<SkillPace> paces;
+  final bool compact;
 
   /// Whether some fit kept a set other than the defaults, in any language.
   final bool someAdjusted;
@@ -214,7 +231,10 @@ class _Body extends StatelessWidget {
     ]);
 
     return ListView(
-      padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 24),
+      shrinkWrap: compact,
+      padding: compact
+          ? EdgeInsets.zero
+          : const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 24),
       children: children,
     );
   }
@@ -635,4 +655,28 @@ String _languageName(AppState state, String code) {
     if (language.code == code) return language.name;
   }
   return code;
+}
+
+/// A short popover over Today (owner, 2026-11-04: "Short popover: with only
+/// that language's part of the how to learn page"): how the skills of
+/// [language] are fitted to the learner, as the page shows them, in a popup
+/// with Close, as the app's other info dots open theirs.
+Future<void> showHowYouLearnPopover(BuildContext context, String? language) {
+  final l10n = AppLocalizations.of(context)!;
+  return showDialog<void>(
+    context: context,
+    builder: (context) => AlertDialog(
+      title: Text(l10n.howYouLearnTitle),
+      content: SizedBox(
+        width: double.maxFinite,
+        child: HowYouLearnView(language: language, compact: true),
+      ),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text(l10n.commonClose),
+        ),
+      ],
+    ),
+  );
 }
