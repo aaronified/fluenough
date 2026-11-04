@@ -106,8 +106,9 @@ class ReadingText extends StatelessWidget {
   Widget build(BuildContext context) {
     if (!swapped) return Text(text, style: style, textAlign: textAlign);
     final l10n = AppLocalizations.of(context)!;
-    // `/paːlu/` is how wordSheetIpa writes it; the label has no slashes.
-    final plain = text.replaceAll(RegExp(r'^/|/$'), '');
+    // `/paːlu/` is how wordSheetIpa writes it; the label has no slashes. A
+    // prompt with the IPA among other words keeps the rest as it is.
+    final plain = text.replaceFirstMapped(RegExp(r'/([^/]+)/'), (m) => m[1]!);
     return Semantics(
       label: l10n.ipaSemantics(plain),
       excludeSemantics: true,

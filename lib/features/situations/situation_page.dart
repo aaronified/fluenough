@@ -11,6 +11,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
+import '../../ui/widgets/ipa_line.dart';
 
 /// Which sheet a situation page or its inspect view shows (#724): a
 /// situation of [language]'s sheets, and for the inspect view the card it
@@ -220,7 +221,13 @@ class _SheetRow extends StatelessWidget {
     final state = AppScope.of(context);
     final card = item.card;
     final language = item.deck.language;
-    final reading = card.reading;
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
+    final reading = lines.reading;
     final dot = item.isNew
         ? Tooltip(
             message: l10n.situationNotLearnt,
@@ -262,8 +269,9 @@ class _SheetRow extends StatelessWidget {
                         card: card,
                       ),
                       if (reading != null)
-                        Text(
+                        ReadingText(
                           reading,
+                          swapped: lines.swapped,
                           style: theme.textTheme.bodySmall!.copyWith(
                             color: scheme.onSurfaceVariant,
                           ),

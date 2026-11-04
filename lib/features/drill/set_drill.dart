@@ -14,6 +14,7 @@ import '../../ui/widgets/target_text.dart';
 import '../../app/skill.dart';
 import 'drill_session.dart';
 import 'going_on.dart';
+import '../../ui/widgets/ipa_line.dart';
 
 /// A set card in a lesson (DECK-FORMAT.md, Set cards; #515; the approved
 /// mockup `docs/mockups/set-cards.html`): a closed group's members together,
@@ -234,6 +235,12 @@ class SetMemberRow extends StatelessWidget {
         ),
       ),
     };
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
     final row = ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 72),
       child: Padding(
@@ -255,9 +262,10 @@ class SetMemberRow extends StatelessWidget {
                         textAlign: TextAlign.start,
                         color: known ? muted : scheme.onSurface,
                       ),
-                      if (card.reading case final reading?)
-                        Text(
+                      if (lines.reading case final reading?)
+                        ReadingText(
                           reading,
+                          swapped: lines.swapped,
                           style: theme.textTheme.bodyMedium!.copyWith(
                             color: muted,
                           ),
