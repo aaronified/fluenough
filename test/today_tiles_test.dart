@@ -29,6 +29,7 @@ import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:fluenough/ui/widgets/drill_frame.dart';
+import 'package:fluenough/ui/widgets/grouped_list.dart';
 import 'package:fluenough/ui/widgets/mode_pill.dart';
 import 'package:fluenough/ui/widgets/wave_progress.dart';
 
@@ -483,6 +484,8 @@ void main() {
         expect(tester.takeException(), isNull, reason: 'fits at 1.4x');
         expect(find.text(l10n.todayDueHint), findsOneWidget);
         expect(find.bySemanticsLabel(l10n.todayDueHintInfo), findsOneWidget);
+        // The older "Adjusted to you" strip is gone from Today.
+        expect(find.text(l10n.adjustedTitle), findsNothing);
         final dot = find.descendant(
           of: find.byType(DueCard),
           matching: find.byTooltip(l10n.hintInfo),
@@ -500,7 +503,14 @@ void main() {
         // A popover with this language's part of the page, not the page.
         expect(find.byType(AlertDialog), findsOneWidget);
         expect(find.byType(HowYouLearnView), findsOneWidget);
-        expect(find.text(l10n.howYouLearnTitle), findsOneWidget);
+        expect(
+          find.text(
+            l10n.howYouLearnTitleIn(
+              state.deckById('hi-en-words')!.language.name,
+            ),
+          ),
+          findsOneWidget,
+        );
         expect(find.byType(HowYouLearnPage), findsNothing);
         final dialog = find.byType(AlertDialog);
         // This language's rows, one skill pill each.
@@ -519,6 +529,25 @@ void main() {
         expect(
           intro.style!.fontSize,
           Theme.of(tester.element(dialog)).textTheme.bodySmall!.fontSize,
+        );
+        // Flat: no cards or grouped surfaces, the sections over the full
+        // width of the dialog's content with thin dividers between.
+        expect(
+          find.descendant(of: dialog, matching: find.byType(Card)),
+          findsNothing,
+        );
+        expect(
+          find.descendant(of: dialog, matching: find.byType(GroupedList)),
+          findsNothing,
+        );
+        final dividers = find.descendant(
+          of: dialog,
+          matching: find.byType(Divider),
+        );
+        expect(dividers, findsWidgets);
+        expect(
+          tester.getSize(dividers.first).width,
+          tester.getSize(find.byType(HowYouLearnView)).width,
         );
         expect(find.text(l10n.howYouLearnNone), findsNothing);
         expect(find.text(l10n.howYouLearnOpenSettings), findsNothing);

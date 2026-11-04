@@ -11,6 +11,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **The web app installs to an iPhone's home screen.** The page now carries the iOS home-screen icon, standalone-mode and theme-colour tags (light and dark), a viewport that covers the notch with the notch and home bar kept clear, a relative manifest `id`, `scope` and `start_url` that follow the Pages sub-path, and no double-tap zoom, rubber-band scroll or text inflation. The web build asks the browser to keep its storage, and words wait for a first tap on a speaker before they play by themselves, as iOS Safari speaks nothing otherwise. A test checks the branded page and manifest (#1012).
 
+### Changed
+
+- **The How you learn popover is flat and full width, and the old Adjusted to you card is gone from Today.** The popover opened by the info dot above the skill tiles is titled with the language ("How you learn Telugu") and lays each skill out as a plain section across the whole width, with thin dividers instead of cards. The "Adjusted to you" card at the top of Today is removed; each skill's arrow stays, and the full page is still reached from Settings and Progress.
+
 ## [0.8.4] - 2026-11-04
 
 ### Fixed

@@ -169,16 +169,16 @@ class _Body extends StatelessWidget {
       ],
       if (shownAdjusted) ...<Widget>[
         if (!compact) const SizedBox(height: 16),
-        const _Legend(),
+        _Legend(flat: compact),
       ],
     ];
     for (final code in languages) {
       final group = <Widget>[
         for (final p in paces)
           if (p.key.language == code)
-            _SkillRow(pace: p, axis: axis, state: state),
+            _SkillRow(pace: p, axis: axis, state: state, flat: compact),
       ];
-      children.add(const SizedBox(height: 16));
+      children.add(SizedBox(height: compact ? 8 : 16));
       if (languages.length > 1) {
         children.add(
           Padding(
@@ -195,7 +195,16 @@ class _Body extends StatelessWidget {
           ),
         );
       }
-      children.add(GroupedList(gap: 2, children: group));
+      if (compact) {
+        // The popover: plain sections over the full width, a thin divider
+        // between, no cards.
+        for (final (i, row) in group.indexed) {
+          if (i > 0) children.add(const Divider(height: 1));
+          children.add(row);
+        }
+      } else {
+        children.add(GroupedList(gap: 2, children: group));
+      }
     }
 
     final footnote = _lastFit(context, languages);
@@ -203,7 +212,9 @@ class _Body extends StatelessWidget {
       children.addAll(<Widget>[
         const SizedBox(height: 16),
         Padding(
-          padding: const EdgeInsetsDirectional.only(start: 64, end: 16),
+          padding: compact
+              ? EdgeInsets.zero
+              : const EdgeInsetsDirectional.only(start: 64, end: 16),
           child: Text(footnote, style: muted),
         ),
       ]);
@@ -305,7 +316,10 @@ class _NotYet extends StatelessWidget {
 
 /// "You" (the filled part of a bar) and "At the start" (its tick).
 class _Legend extends StatelessWidget {
-  const _Legend();
+  const _Legend({this.flat = false});
+
+  /// In the popover: the full width, with no side padding.
+  final bool flat;
 
   @override
   Widget build(BuildContext context) {
@@ -325,7 +339,9 @@ class _Legend extends StatelessWidget {
       ],
     );
     return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+      padding: flat
+          ? EdgeInsets.zero
+          : const EdgeInsetsDirectional.symmetric(horizontal: 8),
       child: Wrap(
         spacing: 18,
         runSpacing: 6,
@@ -365,9 +381,14 @@ class _SkillRow extends StatelessWidget {
     required this.pace,
     required this.axis,
     required this.state,
+    this.flat = false,
   });
 
   final SkillPace pace;
+
+  /// In the popover: a plain section over the full width, the pill and name
+  /// on a line and the rest under it, with no padding at the sides.
+  final bool flat;
 
   /// The days at the bar's far end.
   final int axis;
@@ -447,6 +468,41 @@ class _SkillRow extends StatelessWidget {
           style: muted,
         ),
       ]);
+    }
+
+    if (flat) {
+      return Padding(
+        padding: const EdgeInsetsDirectional.symmetric(vertical: 12),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                ExcludeSemantics(
+                  child: ModePill(
+                    skill: Skill.of(pace.key.mode),
+                    size: ModePillSize.small,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Semantics(
+                    header: true,
+                    child: Text(
+                      l10n.paceSkillName(mode),
+                      style: theme.textTheme.titleMedium,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            for (final child in body) ...<Widget>[
+              const SizedBox(height: 8),
+              child,
+            ],
+          ],
+        ),
+      );
     }
 
     return Padding(
@@ -668,10 +724,15 @@ String _languageName(AppState state, String code) {
 Future<void> showHowYouLearnPopover(BuildContext context, String? language) {
   final l10n = AppLocalizations.of(context)!;
   final theme = Theme.of(context);
+  final name = language == null
+      ? null
+      : _languageName(AppScope.read(context), language);
   return showDialog<void>(
     context: context,
     builder: (context) => AlertDialog(
-      title: Text(l10n.howYouLearnTitle),
+      title: Text(
+        name == null ? l10n.howYouLearnTitle : l10n.howYouLearnTitleIn(name),
+      ),
       content: SizedBox(
         width: double.maxFinite,
         child: Column(
