@@ -129,8 +129,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Approved, not scheduled
 
-- [#885](https://github.com/aaronified/fluenough/issues/885) Today: a skill tile's number must always equal the cards its review shows
-- [#1009](https://github.com/aaronified/fluenough/issues/1009) Today numbers: skill tiles show all pending cards and match what a tap serves; the ring shows minutes, not card counts
 - [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
