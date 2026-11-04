@@ -16,6 +16,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/target_text.dart';
+import '../../ui/widgets/ipa_line.dart';
 import '../../ui/widgets/reading_first.dart';
 import 'placed_review_choice.dart';
 import 'placement_questions.dart';
@@ -574,6 +575,13 @@ class _PlacementPageState extends State<PlacementPage> {
         final readsFirst =
             (_toCheck.isNotEmpty && (scripts?.isEmpty ?? true)) ||
             state.readsFirst(written, scripts: scripts);
+        final lines = readingLines(
+          context,
+          reading: card.reading,
+          ipa: card.ipa,
+          target: card.target,
+          showReading: readsFirst,
+        );
         return PlacementChoice(
           key: key,
           question: ask,
@@ -581,12 +589,13 @@ class _PlacementPageState extends State<PlacementPage> {
           title: ask.formOf == null
               ? Text(l10n.placementQuestion)
               : _formQuestion(state, written, ask.formOf!, readsFirst, scripts),
-          shown: switch (card.reading) {
+          shown: switch (lines.reading) {
             final reading? when readsFirst => ReadingFirst(
               reading: reading,
               target: card.target,
               language: written,
               fontSize: 48,
+              ipaFont: lines.swapped,
             ),
             _ => TargetText.hero(
               card.target,

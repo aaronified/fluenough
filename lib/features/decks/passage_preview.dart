@@ -7,6 +7,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/target_text.dart';
+import '../../ui/widgets/ipa_line.dart';
 
 /// "Passages": a reading deck's passages (#98), each its title, first
 /// sentence with its reading, how many questions it asks, and where it
@@ -60,7 +61,14 @@ class _PassageRow extends StatelessWidget {
       color: theme.colorScheme.onSurfaceVariant,
     );
     final first = passage.sentences.first;
-    final reading = first.reading;
+    final lines = readingLines(
+      context,
+      reading: first.reading,
+      ipa: first.ipa,
+      target: first.text,
+      showReading: showReading,
+    );
+    final reading = lines.reading;
     final source = passage.source ?? entry.deck.source;
     return MergeSemantics(
       child: Padding(
@@ -79,7 +87,8 @@ class _PassageRow extends StatelessWidget {
               fontSize: 20,
               textAlign: TextAlign.start,
             ),
-            if (showReading && reading != null) Text(reading, style: secondary),
+            if (reading != null)
+              ReadingText(reading, swapped: lines.swapped, style: secondary),
             const SizedBox(height: 4),
             Text(
               l10n.deckPassageQuestions(passage.questions.length),
