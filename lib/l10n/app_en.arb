@@ -767,60 +767,6 @@
       }
     }
   },
-  "todayRevisionTitle": "Quick revision",
-  "@todayRevisionTitle": {
-    "description": "Today: the heading of the quick revision buttons, which revise words already learned."
-  },
-  "todayRevisionBody": "Words you know, picked at random, for as long as you choose. A miss brings a word back sooner.",
-  "@todayRevisionBody": {
-    "description": "Under Quick revision: what it does. Every answer is recorded (ADR-0033)."
-  },
-  "todayRevisionNone": "Revision opens up once you've had a lesson.",
-  "@todayRevisionNone": {
-    "description": "Under Quick revision when no word has been learned yet, with the buttons off."
-  },
-  "todayRevisionAll": "All",
-  "@todayRevisionAll": {
-    "description": "Quick revision's skill choice: every skill switched on."
-  },
-  "todayRevisionSpoken": "Spoken",
-  "@todayRevisionSpoken": {
-    "description": "Quick revision's skill choice: listening and speaking together."
-  },
-  "todayRevisionSkillsLabel": "Skills to revise",
-  "@todayRevisionSkillsLabel": {
-    "description": "Screen-reader label of quick revision's row of skill choices."
-  },
-  "todayRevisionNoneIn": "No words you know in {skills} yet.",
-  "@todayRevisionNoneIn": {
-    "description": "Under Quick revision when the skill chosen has no words to revise, with the buttons off.",
-    "placeholders": {
-      "skills": {
-        "type": "String",
-        "example": "Speaking"
-      }
-    }
-  },
-  "todayRevisionStart": "{minutes} min",
-  "@todayRevisionStart": {
-    "description": "Quick revision's start button on Today: how many minutes it lasts, between the minus and plus buttons.",
-    "placeholders": {
-      "minutes": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-  "todayRevisionMinutes": "{count, plural, =1{Revise for 1 minute} other{Revise for {count} minutes}}",
-  "@todayRevisionMinutes": {
-    "description": "Screen-reader label of quick revision's start button, which shows the minutes.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
   "todayDailyStart": "Start",
   "@todayDailyStart": {
     "description": "The button inside Today's ring, before anything is done today (#521)."
@@ -837,9 +783,27 @@
   "@todayDailyDoneOpens": {
     "description": "Screen-reader label of Today's ring once the day's session has ended: it says the day is done and that a tap opens the summary (#1007)."
   },
-  "todayDailyKeepGoing": "Keep going",
-  "@todayDailyKeepGoing": {
-    "description": "Under the ring, once today's minutes are done: starts another five minutes."
+  "todayDailyTotal": "{minutes} min today",
+  "@todayDailyTotal": {
+    "description": "Under Today's greyed ring, and on the summary, once Keep going time is added: the whole day's minutes, as in 23 min today.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "23"
+      }
+    }
+  },
+  "summaryKeepGoing": "Keep going",
+  "@summaryKeepGoing": {
+    "description": "The summary's tonal button, once the day's minutes are done: starts another stretch of the day's session."
+  },
+  "todayDueHint": "Tap a skill to practise only that",
+  "@todayDueHint": {
+    "description": "Above Today's skill tiles: what tapping a tile does. No full stop."
+  },
+  "todayDueHintInfo": "How skills are fitted to you",
+  "@todayDueHintInfo": {
+    "description": "Screen-reader label of the info dot after the hint above Today's skill tiles, which opens How you learn."
   },
   "todayDailyProgress": "{done} of {goal} min",
   "@todayDailyProgress": {

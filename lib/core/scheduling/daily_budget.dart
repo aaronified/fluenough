@@ -18,7 +18,7 @@ abstract final class DailyBudget {
   /// The minutes offered as presets.
   static const List<int> presets = <int>[5, 10, 15, 20, 30];
 
-  /// The step of "+ 5 min" and of quick revision's - and +, in minutes.
+  /// The step of "+ 5 min" and of the daily minutes' - and +, in minutes.
   static const int stepMinutes = 5;
 
   /// Seconds a card takes until the learner has [ownTimeAnswers] answers:

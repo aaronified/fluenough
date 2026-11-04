@@ -66,7 +66,10 @@ class DueCard extends StatelessWidget {
             children: <Widget>[
               if (pace != null) _AdjustedStrip(pace: pace),
               if (pace != null && !numbers.allDone) const SizedBox(height: 16),
-              if (!numbers.allDone) _SkillGrid(numbers: numbers),
+              if (!numbers.allDone) ...<Widget>[
+                const _Hint(),
+                _SkillGrid(numbers: numbers),
+              ],
             ],
           ),
         ),
@@ -95,6 +98,47 @@ class _AdjustedStrip extends StatelessWidget {
           : l10n.paceReviews(totals.reviews, totals.was),
       onTap: () => AppNavigator.openHowYouLearn(context),
       underTitle: true,
+    );
+  }
+}
+
+/// The line above the skill tiles, "Tap a skill to practise only that", with
+/// an info dot after it (owner, 2026-11-04) that opens How you learn, the page
+/// the "Adjusted to you" strip opens. Always shown with the tiles.
+class _Hint extends StatelessWidget {
+  const _Hint();
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    return Row(
+      children: <Widget>[
+        Expanded(
+          child: Text(
+            l10n.todayDueHint,
+            style: theme.textTheme.bodyMedium!.copyWith(
+              color: theme.colorScheme.onPrimaryContainer,
+            ),
+          ),
+        ),
+        Semantics(
+          button: true,
+          label: l10n.todayDueHintInfo,
+          onTap: () => AppNavigator.openHowYouLearn(context),
+          excludeSemantics: true,
+          child: IconButton(
+            tooltip: l10n.hintInfo,
+            onPressed: () => AppNavigator.openHowYouLearn(context),
+            icon: const Icon(Icons.info_outline),
+            iconSize: 20,
+            // The icon stays small; the tap target is the 48 dp minimum.
+            constraints: const BoxConstraints(minWidth: 48, minHeight: 48),
+            padding: EdgeInsets.zero,
+            visualDensity: VisualDensity.standard,
+          ),
+        ),
+      ],
     );
   }
 }

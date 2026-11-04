@@ -86,22 +86,12 @@ class DrillRequest {
     : this(deckIds: <String>{deckId}, skill: skill, untaught: true);
 
   /// Every card already learned in one deck, due or not: a finished deck's
-  /// "Revise". Every answer is recorded, like a quick revision's (ADR-0033).
+  /// "Revise". Every answer is recorded, like any revision's (ADR-0033).
   DrillRequest.revise(String deckId, {Set<String> tags = const <String>{}})
     : this(deckIds: <String>{deckId}, tags: tags, revise: true);
 
-  /// Quick revision, from Today (ADR-0029): [count] words the learner has
-  /// been taught, from every language they learn, picked at random, each in
-  /// a skill it has been reviewed in, due or not. Every answer is recorded:
-  /// FSRS counts an early review for what it is, so a right one stretches
-  /// the interval only a little, and a miss brings the card back sooner.
-  ///
-  /// With [skills], only those skills: "Spoken", or one skill.
-  const DrillRequest.revision(int count, {Set<Skill>? skills})
-    : this(revise: true, limit: count, skills: skills);
-
   /// Every word known in [skill], from every language learned, due or not:
-  /// a skill's tile on Today with nothing due. Like a quick revision, every
+  /// a skill's tile on Today with nothing due. Like any revision, every
   /// answer is recorded (ADR-0030, ADR-0033).
   ///
   /// With [script], the script decks' share: [ScriptScope.without] for a
@@ -215,7 +205,7 @@ class DrillRequest {
   /// Only decks in this language, by code; null for every language.
   final String? language;
 
-  /// At most this many words, picked at random: a quick revision. Null for
+  /// At most this many words, picked at random: a tag's practice. Null for
   /// all of them, in order.
   final int? limit;
 

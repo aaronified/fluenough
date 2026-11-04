@@ -21,8 +21,8 @@ const double _buttonSize = 152;
 /// fills as the day's minutes are spent, with "12 of 15 min" under it and
 /// the minutes given to reviews and to new words under that.
 ///
-/// Once the minutes are spent the button reads "Done for today", with a
-/// smaller "Keep going". When reviews have piled up beyond three days of
+/// Once the minutes are spent the button reads "Done for today" and opens
+/// the summary, which holds Keep going (#1009). When reviews have piled up beyond three days of
 /// minutes, a banner says so, with its estimate and plan and a "+ 5 min"
 /// that a long press takes back.
 ///
@@ -70,17 +70,16 @@ class _Daily extends StatelessWidget {
       context,
       AppScope.read(context).dailyResult(code),
     );
-    void keepGoing() {
-      AppScope.read(context).addDailyMinutes(code, DailyBudget.stepMinutes);
-      start();
-    }
-
     final label = plan.done
         ? l10n.todayDailyDone
         : plan.inProgress
         ? l10n.todayDailyContinue
         : l10n.todayDailyStart;
-    final progress = l10n.todayDailyProgress(plan.minutesDone, plan.minutes);
+    // Keep going time is part of the day's total (#1009): the ring stays
+    // full and greyed, and the line reads the total.
+    final progress = plan.done && plan.keptGoing
+        ? l10n.todayDailyTotal(plan.totalMinutes)
+        : l10n.todayDailyProgress(plan.minutesDone, plan.minutes);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
@@ -116,13 +115,6 @@ class _Daily extends StatelessWidget {
             ),
           ),
         ),
-        if (plan.canKeepGoing)
-          Center(
-            child: TextButton(
-              onPressed: keepGoing,
-              child: Text(l10n.todayDailyKeepGoing),
-            ),
-          ),
         if (plan.showsSplit) ...<Widget>[
           const SizedBox(height: 6),
           _Split(plan: plan),
@@ -206,7 +198,7 @@ class _Ring extends StatelessWidget {
                 track: done
                     ? scheme.surfaceContainerHighest
                     : scheme.secondaryContainer,
-                fill: done ? scheme.outlineVariant : scheme.primary,
+                fill: done ? scheme.outline : scheme.primary,
               ),
             ),
           ),

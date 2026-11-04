@@ -19,11 +19,15 @@ import 'package:fluenough/core/scheduling/session_queue.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/tts/fixed_tts_engine.dart';
 import 'package:fluenough/features/drill/drill_page.dart';
+import 'package:fluenough/features/stats/how_you_learn_page.dart';
+import 'package:fluenough/features/summary/summary_page.dart';
 import 'package:fluenough/features/today/daily_card.dart';
 import 'package:fluenough/features/today/due_card.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
 import 'package:fluenough/features/today/today_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
+import 'package:fluenough/ui/skill_visuals.dart';
+import 'package:fluenough/ui/widgets/mode_pill.dart';
 
 import 'support/harness.dart';
 
@@ -458,6 +462,104 @@ void main() {
         );
         expect(text, isNot(contains('$words')));
       }
+    });
+  });
+  group('the hint above the tiles', () {
+    testWidgets('reads what a tap does, and its info dot opens How you learn', (
+      tester,
+    ) async {
+      usePhone(tester, textScale: 1.4);
+      final handle = tester.ensureSemantics();
+      addTearDown(handle.dispose);
+      final state = _learner();
+      await state.load();
+      await state.startSpeech();
+      await pumpScreen(tester, const TodayPage(), state: state);
+      final l10n = AppLocalizations.of(tester.element(find.byType(TodayPage)))!;
+      expect(tester.takeException(), isNull, reason: 'fits at 1.4x');
+      expect(find.text(l10n.todayDueHint), findsOneWidget);
+      expect(find.bySemanticsLabel(l10n.todayDueHintInfo), findsOneWidget);
+      final dot = find.descendant(
+        of: find.byType(DueCard),
+        matching: find.byTooltip(l10n.hintInfo),
+      );
+      expect(dot, findsOneWidget);
+      await tester.ensureVisible(dot);
+      await tester.pumpAndSettle();
+      await tester.tap(dot);
+      await tester.pumpAndSettle();
+      expect(find.byType(HowYouLearnPage), findsOneWidget);
+    });
+  });
+
+  group('the end of the day', () {
+    testWidgets('the summary is the end screen: with no answer of its own it '
+        'still carries the day\'s total and Keep going, and Keep going time '
+        'is added to the total (#1009)', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final state = _learner();
+      await state.load();
+      state.settings.addClockTime('hi', _now, const Duration(minutes: 15));
+      await pumpScreen(
+        tester,
+        SummaryPage(
+          result: SessionResult(
+            answers: const <SessionAnswer>[],
+            startedAt: _now,
+            endedAt: _now,
+            language: 'hi',
+          ),
+        ),
+        state: state,
+      );
+      final l10n = AppLocalizations.of(
+        tester.element(find.byType(SummaryPage)),
+      )!;
+      expect(tester.takeException(), isNull, reason: 'fits at 1.4x');
+      expect(find.text(l10n.summaryEmpty), findsNothing);
+      expect(find.byType(ModePill), findsNothing);
+      expect(find.text(l10n.todayDailyTotal(15)), findsOneWidget);
+      expect(find.text(l10n.summaryKeepGoing), findsOneWidget);
+      expect(find.text(l10n.commonDone), findsOneWidget);
+
+      await tester.ensureVisible(find.text(l10n.summaryKeepGoing));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.summaryKeepGoing));
+      await tester.pumpAndSettle();
+      final request = tester.widget<DrillPage>(find.byType(DrillPage)).request;
+      expect(request.daily, isTrue);
+      expect(request.language, 'hi');
+    });
+
+    test(
+      'time after the goal is the day\'s total, and the ring stays done',
+      () async {
+        final state = _learner();
+        await state.load();
+        final hindi = state.deckById('hi-en-words')!.language;
+        state.settings.addClockTime('hi', _now, const Duration(minutes: 15));
+        expect(state.dailyPlanFor(hindi).keptGoing, isFalse);
+        state.settings.addClockTime('hi', _now, const Duration(minutes: 8));
+        final plan = state.dailyPlanFor(hindi);
+        expect(plan.keptGoing, isTrue);
+        expect(plan.totalMinutes, 23);
+        expect(plan.done, isTrue);
+        expect(plan.fraction, 1.0);
+      },
+    );
+
+    testWidgets('Today reads the total once Keep going time exists, with no '
+        'chips and no Keep going button', (tester) async {
+      usePhone(tester, textScale: 1.4);
+      final state = _learner();
+      await state.load();
+      state.settings.addClockTime('hi', _now, const Duration(minutes: 23));
+      await pumpScreen(tester, const TodayPage(), state: state);
+      final l10n = AppLocalizations.of(tester.element(find.byType(TodayPage)))!;
+      expect(find.text(l10n.todayDailyTotal(23)), findsOneWidget);
+      expect(find.text(l10n.todayDailyDone), findsOneWidget);
+      expect(find.textContaining(' min review'), findsNothing);
+      expect(find.text(l10n.summaryKeepGoing), findsNothing);
     });
   });
 }

@@ -92,8 +92,13 @@ class DailyPlan {
   /// nothing left to ask.
   bool get done => budgetDone || nothingLeft;
 
-  /// "Keep going" is offered: the budget is spent and there is more to do.
-  bool get canKeepGoing => budgetDone && !nothingLeft;
+  /// The day's whole time in minutes, rounded down: the goal's minutes and
+  /// any Keep going time, which the clock adds to [spent] (#1009).
+  int get totalMinutes => spent.inSeconds ~/ 60;
+
+  /// More time was spent than the day's [minutes]: Keep going time exists,
+  /// and Today reads the day's total rather than "15 of 15 min".
+  bool get keptGoing => totalMinutes > minutes;
 
   /// About how many minutes the waiting reviews take, for the catching-up
   /// line.

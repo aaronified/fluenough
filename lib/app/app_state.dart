@@ -3280,10 +3280,6 @@ class AppState extends ChangeNotifier {
     ];
   }
 
-  /// How many words a quick revision can pick from: every word taught, in a
-  /// skill it can be drilled in now.
-  int get revisableCount => revisableIn(null);
-
   /// How many words a revision of [skills] can pick from, or of every skill
   /// switched on when null.
   ///
