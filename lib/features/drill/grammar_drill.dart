@@ -331,7 +331,25 @@ class _GrammarDrillState extends State<GrammarDrill> {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final notes = cell.pattern.notes;
-    final readingPrompt = readingFirst ? cell.readingPrompt : null;
+    // The lemma as it is said, in a reading-first prompt: its reading, or
+    // its IPA when "IPA replaces transliteration" is on (#697).
+    final lemma = readingFirst
+        ? readingLines(
+            context,
+            reading: cell.entry.reading,
+            ipa: cell.entry.ipa,
+            target: cell.entry.lemma,
+          )
+        : null;
+    final readingPrompt = cell.promptWith(lemma?.reading);
+    // The IPA shows in the prompt, or in the table, in place of the reading.
+    final formIpaSwapped =
+        readingFirst &&
+        readingLines(
+          context,
+          ipa: cell.entry.ipas[cell.slot],
+          target: cell.answer,
+        ).swapped;
     final promptSize = typing ? 22.0 : 32.0;
     return <Widget>[
       if (readingPrompt != null)
@@ -340,6 +358,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
           target: cell.prompt,
           language: language,
           fontSize: promptSize,
+          ipaFont: lemma!.swapped,
         )
       else
         TargetText.card(
@@ -350,7 +369,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
         ),
       // The word asked about, as it is said: not the form, which is the
       // answer. Left out while typing, to keep the field in view.
-      if (!typing)
+      if (!typing && !(lemma?.swapped ?? false))
         if (ipaToShow(context, cell.entry.ipa, target: cell.entry.lemma)
             case final ipa?)
           IpaLine(ipa, fontSize: 16),
@@ -393,9 +412,14 @@ class _GrammarDrillState extends State<GrammarDrill> {
       if (answered) ...<Widget>[
         // Only once answered, as hearing it: the form's IPA would give it
         // away.
-        if (ipaToShow(context, cell.entry.ipas[cell.slot], target: cell.answer)
-            case final ipa?)
-          IpaLine(ipa, fontSize: 16),
+        if (!formIpaSwapped)
+          if (ipaToShow(
+                context,
+                cell.entry.ipas[cell.slot],
+                target: cell.answer,
+              )
+              case final ipa?)
+            IpaLine(ipa, fontSize: 16),
         // Only once answered: hearing the form would give it away.
         ?speaker,
         Padding(
@@ -574,6 +598,17 @@ class _GrammarTable extends StatelessWidget {
   Widget build(BuildContext context) {
     final scheme = Theme.of(context).colorScheme;
     final rows = cell.table;
+    // Each form's reading, or its IPA in the reading's place (#697).
+    final lines = <String, ({String? reading, String? ipa, bool swapped})>{
+      for (final row in rows)
+        if (readingFirst)
+          row.slot: readingLines(
+            context,
+            reading: row.reading,
+            ipa: cell.entry.ipas[row.slot],
+            target: row.form,
+          ),
+    };
     // The design's 240 wide on a phone's 318 card; padding rather than a
     // max width, for the frame's intrinsic measurement (see the notes).
     return Padding(
@@ -587,7 +622,12 @@ class _GrammarTable extends StatelessWidget {
           children: <Widget>[
             for (var i = 0; i < rows.length; i++) ...<Widget>[
               if (i > 0) const SizedBox(height: 2),
-              _row(scheme, rows[i], asked: i == cell.slotIndex),
+              _row(
+                scheme,
+                rows[i],
+                lines[rows[i].slot],
+                asked: i == cell.slotIndex,
+              ),
             ],
           ],
         ),
@@ -597,13 +637,14 @@ class _GrammarTable extends StatelessWidget {
 
   Widget _row(
     ColorScheme scheme,
-    ({String slot, String? form, String? reading}) row, {
+    ({String slot, String? form, String? reading}) row,
+    ({String? reading, String? ipa, bool swapped})? lines, {
     required bool asked,
   }) {
     final fg = asked ? scheme.onPrimaryContainer : scheme.onSurface;
     final weight = asked ? FontWeight.w700 : FontWeight.w400;
     final form = row.form;
-    final reading = readingFirst ? row.reading : null;
+    final reading = lines?.reading;
     return MergeSemantics(
       child: Semantics(
         selected: asked ? true : null,
@@ -641,8 +682,9 @@ class _GrammarTable extends StatelessWidget {
                       ? Column(
                           crossAxisAlignment: CrossAxisAlignment.end,
                           children: <Widget>[
-                            Text(
+                            ReadingText(
                               reading,
+                              swapped: lines!.swapped,
                               textAlign: TextAlign.end,
                               style: TextStyle(
                                 fontSize: 15,

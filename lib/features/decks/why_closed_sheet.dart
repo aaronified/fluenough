@@ -13,6 +13,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
 import 'path_parts.dart' show Pill;
+import '../../ui/widgets/ipa_line.dart';
 
 /// Opens the "Why it is closed" sheet for [card], a sentence that waits for
 /// words and rules (#416, owner, 2026-10-23: "Greyed + why sheet; no plan"):
@@ -43,6 +44,12 @@ class WhyClosedSheet extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final needs = state.unlocks.needsOf(card);
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
     final practise = <DrillRequest?>[
       for (final need in needs)
         if (need.kind == NeedKind.rule && need.level != MasteryLevel.known)
@@ -69,9 +76,10 @@ class WhyClosedSheet extends StatelessWidget {
               textAlign: TextAlign.start,
               card: card,
             ),
-            if (card.reading case final reading?)
-              Text(
+            if (lines.reading case final reading?)
+              ReadingText(
                 reading,
+                swapped: lines.swapped,
                 style: theme.textTheme.bodyMedium!.copyWith(
                   color: scheme.onSurfaceVariant,
                 ),

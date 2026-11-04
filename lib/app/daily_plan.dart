@@ -17,6 +17,7 @@ class DailyPlan {
     required this.due,
     required this.newAvailable,
     required this.split,
+    this.secondsPerTeach = DailyBudget.defaultSecondsPerTeach,
   });
 
   final LanguageInfo language;
@@ -35,6 +36,10 @@ class DailyPlan {
   /// Seconds a card takes this learner, for turning minutes to cards.
   final double secondsPerCard;
 
+  /// Seconds teaching a new word takes this learner, for turning the new
+  /// words of the split into minutes.
+  final double secondsPerTeach;
+
   /// Reviews waiting, whatever today's budget.
   final int due;
 
@@ -44,6 +49,26 @@ class DailyPlan {
   /// What the rest of today's budget buys. With the budget spent, what
   /// "Keep going" would buy: one step of minutes.
   final DailySplit split;
+
+  /// The minutes of today's time that go to reviews, as [split] divides it
+  /// (#1009): its reviews at [secondsPerCard] each, about, in whole minutes.
+  int get reviewMinutes =>
+      DailyBudget.minutesOfSeconds(split.reviews * secondsPerCard);
+
+  /// The minutes that go to new words, as [split] divides it: each word is
+  /// taught, then asked [DailyPlanner.teachPasses] times (#1009).
+  ///
+  /// The remainder of the time left, so that the two never add up to more
+  /// than is left: with one minute left, 1 min review and 0 min new.
+  int get newMinutes {
+    final planned = DailyBudget.minutesOfSeconds(
+      split.newWords *
+          (secondsPerTeach + DailyPlanner.teachPasses * secondsPerCard),
+    );
+    final leftSeconds = minutes * 60 - spent.inSeconds;
+    final left = DailyBudget.minutesOfSeconds(leftSeconds.toDouble());
+    return math.max(0, math.min(planned, left - reviewMinutes));
+  }
 
   /// The minutes today's session is for: the goal and what was added.
   int get minutes =>
@@ -75,8 +100,13 @@ class DailyPlan {
   /// nothing left to ask.
   bool get done => budgetDone || nothingLeft;
 
-  /// "Keep going" is offered: the budget is spent and there is more to do.
-  bool get canKeepGoing => budgetDone && !nothingLeft;
+  /// The day's whole time in minutes, rounded down: the goal's minutes and
+  /// any Keep going time, which the clock adds to [spent] (#1009).
+  int get totalMinutes => spent.inSeconds ~/ 60;
+
+  /// More time was spent than the day's [minutes]: Keep going time exists,
+  /// and Today reads the day's total rather than "15 of 15 min".
+  bool get keptGoing => totalMinutes > minutes;
 
   /// About how many minutes the waiting reviews take, for the catching-up
   /// line.

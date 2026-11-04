@@ -33,6 +33,7 @@ import 'why_closed_sheet.dart';
 import 'word_mastery.dart';
 import 'word_sheet.dart';
 import '../../ui/card_text_scale.dart';
+import '../../ui/widgets/ipa_line.dart';
 
 /// A unit of a course's path (the owner's design): its level and number,
 /// its name and description, how many of its words and rules are known and
@@ -675,7 +676,13 @@ class CardRow extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final reading = card.reading;
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
+    final reading = lines.reading;
     final sentence = isSentence(card);
     final closed = waiting != null;
     final muted = scheme.onSurfaceVariant;
@@ -698,8 +705,9 @@ class CardRow extends StatelessWidget {
           ),
         ),
         if (reading != null)
-          Text(
+          ReadingText(
             reading,
+            swapped: lines.swapped,
             style: theme.textTheme.bodySmall!.copyWith(color: muted),
           ),
         if (closed)

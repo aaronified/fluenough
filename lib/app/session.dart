@@ -21,6 +21,7 @@ class DrillRequest {
     this.cardIds,
     this.sheet = false,
     this.script = ScriptScope.any,
+    this.drillableOnly = false,
   });
 
   /// Today's review: every deck the current profile learns, in every skill
@@ -85,30 +86,37 @@ class DrillRequest {
     : this(deckIds: <String>{deckId}, skill: skill, untaught: true);
 
   /// Every card already learned in one deck, due or not: a finished deck's
-  /// "Revise". Every answer is recorded, like a quick revision's (ADR-0033).
+  /// "Revise". Every answer is recorded, like any revision's (ADR-0033).
   DrillRequest.revise(String deckId, {Set<String> tags = const <String>{}})
     : this(deckIds: <String>{deckId}, tags: tags, revise: true);
 
-  /// Quick revision, from Today (ADR-0029): [count] words the learner has
-  /// been taught, from every language they learn, picked at random, each in
-  /// a skill it has been reviewed in, due or not. Every answer is recorded:
-  /// FSRS counts an early review for what it is, so a right one stretches
-  /// the interval only a little, and a miss brings the card back sooner.
-  ///
-  /// With [skills], only those skills: "Spoken", or one skill.
-  const DrillRequest.revision(int count, {Set<Skill>? skills})
-    : this(revise: true, limit: count, skills: skills);
-
   /// Every word known in [skill], from every language learned, due or not:
-  /// a skill's tile on Today with nothing due. Like a quick revision, every
+  /// a skill's tile on Today with nothing due. Like any revision, every
   /// answer is recorded (ADR-0030, ADR-0033).
   ///
   /// With [script], the script decks' share: [ScriptScope.without] for a
   /// word skill's tile, [ScriptScope.only] for the Script tile.
+  ///
+  /// With [drillableOnly], what Today's tile offers: only what can be drilled
+  /// now (#1009).
   const DrillRequest.reviseSkill(
     Skill skill, {
     ScriptScope script = ScriptScope.any,
-  }) : this(revise: true, skill: skill, script: script);
+    bool drillableOnly = false,
+  }) : this(
+         revise: true,
+         skill: skill,
+         script: script,
+         drillableOnly: drillableOnly,
+       );
+
+  /// What a skill's tile on Today counts and starts (#1009): every card
+  /// waiting in [skill], from every language learned, the script decks'
+  /// Recognition and Write left to the Script tile. It holds only what can
+  /// be drilled now ([drillableOnly]), so the tile's number is the number of
+  /// cards tapping it serves.
+  const DrillRequest.tile(Skill skill)
+    : this(skill: skill, script: ScriptScope.without, drillableOnly: true);
 
   /// Today's Script tile: the script decks' due Recognition and Write, script
   /// reading and writing together (owner, 2026-10-24). With [revise], every
@@ -165,6 +173,12 @@ class DrillRequest {
   /// script decks' Recognition and Write, or everything else.
   final ScriptScope script;
 
+  /// Only what can be drilled now: a pair drilled by ear or by voice is left
+  /// out where the voice or the recogniser is still being checked or is
+  /// missing (#1009). Without it, the counts take a phone still being asked
+  /// as able to (#857).
+  final bool drillableOnly;
+
   /// Only cards carrying at least one of these tags; empty means every card.
   final Set<String> tags;
 
@@ -191,7 +205,7 @@ class DrillRequest {
   /// Only decks in this language, by code; null for every language.
   final String? language;
 
-  /// At most this many words, picked at random: a quick revision. Null for
+  /// At most this many words, picked at random: a tag's practice. Null for
   /// all of them, in order.
   final int? limit;
 
@@ -208,7 +222,7 @@ class DrillRequest {
       'tags: $tags, newOnly: $newOnly, numbers: $numbers, '
       'untaught: $untaught, revise: $revise, lesson: $lesson, daily: $daily, '
       'language: $language, limit: $limit, cards: $cardIds, sheet: $sheet, '
-      'script: ${script.name})';
+      'script: ${script.name}, drillableOnly: $drillableOnly)';
 }
 
 /// One answer in a finished session, for the summary.

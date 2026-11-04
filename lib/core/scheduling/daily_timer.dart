@@ -10,8 +10,11 @@ import 'dart:math' as math;
 /// puts a round's cards in order.
 class DailyCountdown {
   /// A countdown of [budget] that starts at [now], on its first screen.
-  DailyCountdown({required this.budget, required DateTime now})
-    : _screenAt = now;
+  DailyCountdown({
+    required this.budget,
+    required DateTime now,
+    this.countsUp = false,
+  }) : _screenAt = now;
 
   /// How long one screen counts for: after this it is taken that the
   /// learner is away, and the clock stops (owner, 2026-10-30: "pauses if a
@@ -20,6 +23,12 @@ class DailyCountdown {
 
   /// The time the session is for.
   final Duration budget;
+
+  /// A Keep going stretch (#1009, owner, 2026-11-04: "the timer bar will not
+  /// show any timer, but the time taken. The progress bar will also be
+  /// full"): the header shows the time used counting up, with the bar full.
+  /// The clock itself runs as any other and ends the stretch at [budget].
+  final bool countsUp;
 
   Duration _used = Duration.zero;
   DateTime _screenAt;
