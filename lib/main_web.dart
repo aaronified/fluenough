@@ -5,14 +5,15 @@ import 'app/added_decks.dart';
 import 'app/app_info.dart';
 import 'app/app_log.dart';
 import 'app/app_state.dart';
+import 'app/browser_blob_store.dart';
 import 'app/synonym_loader.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
-import 'app/downloaded_decks.dart';
 import 'app/pacing.dart';
 import 'features/stats/progress_numbers.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
+import 'app/stored_downloaded_decks.dart';
 import 'app/web_deck_fetcher.dart';
 import 'app/web_frame.dart';
 import 'core/scheduling/skill_fit.dart';
@@ -26,8 +27,10 @@ import 'core/tts/system_tts_engine.dart';
 /// default, which does nothing.
 ///
 /// Progress and settings are kept in the browser's storage by drift. The
-/// decks are downloaded from GitHub on each visit, into memory; keeping them
-/// in the browser's storage is not built.
+/// decks and script fonts are downloaded from GitHub once, and kept in the
+/// browser's IndexedDB (#1012) so that a reload, online or not, opens with
+/// them; a browser that denies or fills its storage keeps them in memory
+/// for the visit, as it always did.
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final log = AppLog(store: MemoryLogStore());
@@ -35,7 +38,10 @@ Future<void> main() async {
   await log.open();
   log.event('App started: ${AppInfo.version}');
   final storage = await openProfileStorage(Profile.defaultProfile);
-  final downloaded = MemoryDownloadedDecks();
+  final downloaded = await StoredDownloadedDecks.load(
+    await openBrowserBlobStore(),
+    onProblem: (problem) => log.warning('Stored decks: $problem'),
+  );
   runApp(
     FluenoughApp(
       frame: webPhoneFrame,

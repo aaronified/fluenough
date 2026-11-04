@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **The web app keeps its decks and script fonts across reloads.** Downloaded decks and the Indic and Naskh fonts are now saved in the browser's own storage (IndexedDB), so a reload opens with them, with or without a connection, instead of downloading them again. The app checks the index at most once a day, as on the phone, and downloads only the files whose hash changed. A browser that denies or fills its storage (a private window) keeps them in memory for the visit, as before; what is stored is versioned, checked against the index's hashes, and bounded at 64 MB, oldest first (#1012).
+
 ## [0.8.3] - 2026-11-04
 
 ### Fixed
