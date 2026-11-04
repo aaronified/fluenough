@@ -144,7 +144,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#593](https://github.com/aaronified/fluenough/issues/593) Course: American Sign Language (ASL), with its path and plan
 - [#614](https://github.com/aaronified/fluenough/issues/614) A second reading field on cards: transliteration and normalised or vocalised form
 - [#681](https://github.com/aaronified/fluenough/issues/681) Language bar: a dot on languages with something to do, and a full-height IPA glyph
-- [#697](https://github.com/aaronified/fluenough/issues/697) Settings: show IPA first, in place of the transliteration
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
 - [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
