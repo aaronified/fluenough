@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.2] - 2026-11-04
+
 ### Fixed
 
 - **Say no longer marks a short or long vowel as wrong.** A speech recogniser cannot reliably hear a vowel's length and returns the dictionary spelling, so a word heard that differs from the answer only in vowel length (అక్క for అక్కా) is now "Close, mind the vowel length" instead of "Not quite", with the contrast shown as a hint and no red. Typed answers are unchanged (#1001).
