@@ -60,13 +60,8 @@ enum WeekDayStatus {
 typedef WeekDay = ({DateTime date, WeekDayStatus status});
 
 /// What Today shows of the learner's pace (ADR-0035,
-/// "Shown prominently"): the strip on the due card, and a mark on each
-/// adjusted skill's tile.
+/// "Shown prominently"): a mark on each adjusted skill's tile.
 typedef TodayPace = ({
-  /// The next 30 days' reviews in every skill of the languages learned,
-  /// now and as at the start; null while they are worked out.
-  ({int reviews, int was})? totals,
-
   /// Which way each adjusted skill moved, in the languages learned
   /// together. A skill not adjusted has none.
   Map<Skill, PaceDirection> marks,
@@ -87,17 +82,11 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   if (!pacing.adjusted) return null;
   final paces = onScreen ? pacing.paces : pacing.latest;
   if (paces == null) {
-    return (
-      totals: null,
-      marks: const <Skill, PaceDirection>{},
-      scriptMark: null,
-    );
+    return (marks: const <Skill, PaceDirection>{}, scriptMark: null);
   }
   // Only the language shown, while one is chosen in the menu (#461).
   final profile = state.currentProfile;
   final language = state.shownLanguage;
-  // Totals are of the word skills, as before: the script skills are
-  // paced on their own tile.
   final learned = <SkillPace>[
     for (final p in paces.values)
       if (profile.learns(p.key.language) &&
@@ -107,11 +96,6 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   final shown = learned.isEmpty && language == null
       ? <SkillPace>[...paces.values]
       : learned;
-  final words = <SkillPace>[
-    for (final p in shown)
-      if (!p.key.mode.isScript) p,
-  ];
-  final all = SkillFit.together(words);
   PaceDirection? markOf(bool Function(DrillMode mode) of) =>
       switch (SkillFit.together(<SkillPace>[
         for (final p in shown)
@@ -121,9 +105,6 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
         _ => null,
       };
   return (
-    totals: all == null
-        ? null
-        : (reviews: all.now.reviews, was: all.start.reviews),
     marks: <Skill, PaceDirection>{
       for (final skill in todaySkills) skill: ?markOf(skill.modes.contains),
     },

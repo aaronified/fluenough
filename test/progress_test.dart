@@ -2781,8 +2781,8 @@ cards:
 
   group('the pace strip', () {
     testWidgets(
-      'before any fit there is no strip; after a slower fit, the skill is '
-      'marked Fewer reviews',
+      'Today has no Adjusted to you strip, before or after a fit; after a '
+      'slower fit, the skill is marked Fewer reviews',
       (tester) async {
         var runs = 0;
         await onToday(
@@ -2803,17 +2803,12 @@ cards:
           final state = await onToday(tester, Paced.fewer);
           final l10n = l10nOf(tester);
           final pace = TodayNumbers.of(state).pace!;
-          final totals = pace.totals!;
 
-          expect(find.text(l10n.adjustedTitle), findsOneWidget);
-          expect(
-            find.text(
-              totals.reviews == totals.was
-                  ? l10n.paceReviewsSteady(totals.reviews)
-                  : l10n.paceReviews(totals.reviews, totals.was),
-            ),
-            findsOneWidget,
-          );
+          // The strip is gone from Today (owner, 2026-11-04); the tile's
+          // arrow is how it shows, and How you learn opens from the info
+          // dot, from Settings and from Progress.
+          expect(find.text(l10n.adjustedTitle), findsNothing);
+          expect(find.byType(PaceStrip), findsNothing);
           expect(pace.marks, {Skill.listening: PaceDirection.fewer});
           // An arrow with no words; the tile's label below names it.
           expect(markOn(tester, Skill.listening), findsOneWidget);
@@ -2831,10 +2826,6 @@ cards:
             ),
             findsOneWidget,
           );
-
-          await tester.tap(find.text(l10n.adjustedTitle));
-          await tester.pumpAndSettle();
-          expect(find.byType(HowYouLearnPage), findsOneWidget);
         }
       },
     );

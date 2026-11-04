@@ -32,12 +32,11 @@ const int _arrowMax = 99;
 /// reading and writing together, kept out of Recognition's and Write's
 /// (owner, 2026-10-24).
 ///
-/// Once some skill is adjusted to the learner ([TodayNumbers.pace]), the
-/// settled "Adjusted to you" strip sits above the tiles, with the 30-day
-/// change, and opens How you learn; each adjusted skill's tile carries an
-/// arrow, up for more reviews and down for fewer. Before the
-/// first fit, neither shows. With nothing due, the card holds the strip
-/// alone, or nothing.
+/// Once some skill is adjusted to the learner ([TodayNumbers.pace]), its
+/// tile carries an arrow, up for more reviews and down for fewer. Before
+/// the first fit, none shows. With nothing due, there is no card. How you
+/// learn opens from the info dot after the hint, as a short popover, and as
+/// a page from Settings and Progress.
 ///
 /// Design screen `today`, the `primaryContainer` section named "Due now".
 class DueCard extends StatelessWidget {
@@ -49,8 +48,7 @@ class DueCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final pace = numbers.pace;
-    if (numbers.allDone && pace == null) return const SizedBox.shrink();
+    if (numbers.allDone) return const SizedBox.shrink();
     return Padding(
       padding: const EdgeInsetsDirectional.only(bottom: 16),
       child: Semantics(
@@ -66,40 +64,12 @@ class DueCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: <Widget>[
-              if (pace != null) _AdjustedStrip(pace: pace),
-              if (pace != null && !numbers.allDone) const SizedBox(height: 16),
-              if (!numbers.allDone) ...<Widget>[
-                _Hint(numbers: numbers),
-                _SkillGrid(numbers: numbers),
-              ],
+              _Hint(numbers: numbers),
+              _SkillGrid(numbers: numbers),
             ],
           ),
         ),
       ),
-    );
-  }
-}
-
-/// "Adjusted to you", settled: one quiet line under it, the next 30 days'
-/// reviews beside what they were at the start. Opens How you learn.
-class _AdjustedStrip extends StatelessWidget {
-  const _AdjustedStrip({required this.pace});
-
-  final TodayPace pace;
-
-  @override
-  Widget build(BuildContext context) {
-    final l10n = AppLocalizations.of(context)!;
-    final totals = pace.totals;
-    return PaceStrip(
-      title: l10n.adjustedTitle,
-      subtitle: totals == null
-          ? null
-          : totals.reviews == totals.was
-          ? l10n.paceReviewsSteady(totals.reviews)
-          : l10n.paceReviews(totals.reviews, totals.was),
-      onTap: () => AppNavigator.openHowYouLearn(context),
-      underTitle: true,
     );
   }
 }
