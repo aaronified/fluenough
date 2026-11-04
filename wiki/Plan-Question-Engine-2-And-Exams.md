@@ -6,6 +6,10 @@ Written 2026-10-26, for **0.7.0** (owner, 2026-10-23: "This week is 0.6.x, next 
 
 **Status:** the owner's decisions below are recorded. Everything marked **Proposed** or "(mine)" is the plan author's and not decided. No issues are filed yet.
 
+**Update 2026-11-04.** Phase 0 is built, tracked by #509: one shared shell for teach and question screens (#1003, 2026-11-02), then placement, the reading passages and the picture and reading answers in it (#1005), then Learn and Relearn (#1006), all in 0.8.2 (owner, 2026-11-02, on the approved mockup: "The shell is fine. All of it."). Only the exam variant of the shell is not built: it waits on the exam screen of #509, whose mockup follows. The letter and word tiles that replace script typing (steps 2 to 9) are not built, so typed script answers stay for now; whether to retire them first is an open owner question in the description of #1006.
+
+**Update 2026-11-04.** Phase 0 is built, tracked by #509: one shared shell for teach and question screens (#1003, 2026-11-02), then placement, the reading passages and the picture and reading answers in it (#1005), then Learn and Relearn (#1006), all in 0.8.2 (owner, 2026-11-02, on the approved mockup: "The shell is fine. All of it."). Only the exam variant of the shell is not built: it waits on the exam screen of #509, whose mockup follows. The letter and word tiles that replace script typing (steps 2 to 9) are not built, so typed script answers stay for now; whether to retire them first is an open owner question in the description of #1006.
+
 ## What the owner asked
 
 Problem (owner, 2026-10-26): typed English meaning answers reject valid synonyms ("with mother" for "with mom") and rephrased sentences. The owner's idea: give the learner the letters instead of the system keyboard, QWERTY-shaped, full width like system keyboards, a budget number on each key, spent keys greyed, and a few extra letters.
