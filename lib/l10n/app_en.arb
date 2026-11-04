@@ -6012,7 +6012,17 @@
   },
   "howYouLearnTitle": "How you learn",
   "@howYouLearnTitle": {
-    "description": "Title of the page that shows, per skill, how fast the learner forgets against how every skill starts; also the card on Progress and the link on the Adjusted to you sheet that open it."
+    "description": "Title of the page that shows, per skill, how fast the learner forgets against how every skill starts; also the card on Progress and the link on the result sheet after Adjust to me in Settings that open it."
+  },
+  "howYouLearnTitleIn": "How you learn {language}",
+  "@howYouLearnTitleIn": {
+    "description": "Title of the short popover opened by the info dot above Today's skill tiles: how the skills of one language are fitted to the learner, as in How you learn Telugu.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
   },
   "howYouLearnCardMore": "Learn more about your pacing",
   "@howYouLearnCardMore": {
