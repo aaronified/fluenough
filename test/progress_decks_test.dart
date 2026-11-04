@@ -36,7 +36,6 @@ import 'package:fluenough/features/drill/drill_page.dart';
 import 'package:fluenough/features/drill/teach_card.dart';
 import 'package:fluenough/features/drill/walkthrough_page.dart';
 import 'package:fluenough/features/stats/stats_numbers.dart';
-import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/l10n/app_localizations_en.dart';
 import 'package:fluenough/ui/skill_visuals.dart';
 import 'package:flutter/material.dart' hide Card;
