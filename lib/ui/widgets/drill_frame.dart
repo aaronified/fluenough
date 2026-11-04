@@ -98,14 +98,20 @@ class _CountdownState extends State<_Countdown> {
     final theme = Theme.of(context);
     final clock = widget.scope.clock;
     final at = widget.scope.now();
-    final text = clockText(clock.remainingAt(at));
+    // A Keep going stretch shows the time taken, counting up, and a full
+    // bar (#1009); a normal session the time left, and the bar filling.
+    final text = clockText(
+      clock.countsUp ? clock.usedAt(at) : clock.remainingAt(at),
+    );
     return Row(
       children: <Widget>[
         Expanded(
           child: WaveProgress(
-            value: clock.fractionAt(at),
+            value: clock.countsUp ? 1.0 : clock.fractionAt(at),
             semanticsLabel: l10n.drillProgressLabel,
-            semanticsValue: l10n.drillTimeLeft(text),
+            semanticsValue: clock.countsUp
+                ? l10n.drillTimeTaken(text)
+                : l10n.drillTimeLeft(text),
           ),
         ),
         const SizedBox(width: 12),

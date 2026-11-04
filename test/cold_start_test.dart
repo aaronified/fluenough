@@ -8,6 +8,7 @@ import 'package:drift/native.dart';
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/database_progress.dart';
 import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/skill.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/replay_isolate.dart';
@@ -304,8 +305,8 @@ void main() {
   });
 
   group('voices still being asked', () {
-    test('Listening stays in the counts, and the answer changes nothing '
-        'when the phone has the voice', () async {
+    test('the session counts Listening while the voice is asked, its tile '
+        'only once the phone has the voice (#1009)', () async {
       final tts = _SlowTts(const <String>{'es', 'hi'});
       final progress = MemoryProgress();
       final seed = AppState.test();
@@ -333,14 +334,28 @@ void main() {
       expect(state.voiceStatus(spanish), VoiceStatus.checking);
 
       int listening() => TodayNumbers.of(state).bySkill[Skill.listening] ?? 0;
-      final before = listening();
+      int sessionHears() => state
+          .buildSession(const DrillRequest.today())
+          .items
+          .where((i) => i.mode == DrillMode.listening)
+          .length;
+      // The session's own count takes the voice as there (#857), so it does
+      // not jump when the answer comes; the tile counts only what can be
+      // drilled now, and a voice still being asked cannot say a word.
+      final before = sessionHears();
       expect(before, greaterThan(0));
+      expect(listening(), 0, reason: 'checking is not available');
 
       state.addListener(() => told++);
       tts.answer.complete();
       await loading;
       expect(state.voiceStatus(spanish), VoiceStatus.available);
-      expect(listening(), before, reason: 'no jump when the voice answers');
+      expect(sessionHears(), before, reason: 'no jump when the voice answers');
+      expect(
+        listening(),
+        greaterThan(0),
+        reason: 'the tile counts it once it can',
+      );
       expect(told, 1, reason: 'the voices notify once');
     });
 
@@ -366,12 +381,15 @@ void main() {
       while (state.status != CatalogStatus.ready) {
         await Future<void>.delayed(Duration.zero);
       }
-      expect(
-        TodayNumbers.of(state).bySkill[Skill.listening] ?? 0,
-        greaterThan(0),
-      );
+      bool sessionHears() => state
+          .buildSession(const DrillRequest.today())
+          .items
+          .any((i) => i.mode == DrillMode.listening);
+      expect(sessionHears(), isTrue, reason: 'asked still: counted (#857)');
+      expect(TodayNumbers.of(state).bySkill[Skill.listening] ?? 0, 0);
       tts.answer.complete();
       await loading;
+      expect(sessionHears(), isFalse);
       expect(TodayNumbers.of(state).bySkill[Skill.listening] ?? 0, 0);
     });
   });

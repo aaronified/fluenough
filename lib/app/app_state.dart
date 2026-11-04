@@ -1796,6 +1796,10 @@ class AppState extends ChangeNotifier {
       request.limit,
       sorted(request.cardIds)?.join('\u0000'),
       request.script,
+      // A drillable-only queue reads the voices and the recogniser as they
+      // are, not as the counts take them, so it follows every answer of
+      // theirs (#1009).
+      request.drillableOnly ? _voiceChanges : null,
       ignorePauses,
     );
     // The cache is per language, so an answer in one leaves the others'
@@ -1821,6 +1825,15 @@ class AppState extends ChangeNotifier {
       return _buildSession(request, ignorePauses: ignorePauses);
     });
   }
+
+  /// What [skill]'s tile on Today counts and starts (#1009): every card
+  /// waiting in the skill, whatever the day's time budget, and only what can
+  /// be drilled now. The tile's number is this queue's length and tapping
+  /// the tile drills this queue ([DrillRequest.tile]), so the two cannot
+  /// differ. Empty while the skill is switched off.
+  SessionQueue skillTile(Skill skill) => settings.isEnabled(skill)
+      ? buildSession(DrillRequest.tile(skill))
+      : SessionQueue.empty;
 
   // Versions that say what a cached queue was built from (#852). An answer
   // follows the progress store's own version of its language (a baseline
@@ -1890,6 +1903,10 @@ class AppState extends ChangeNotifier {
     }
   }
 
+  /// How many times the voices or the recogniser changed: what a
+  /// drillable-only queue is kept against ([DrillRequest.drillableOnly]).
+  int _voiceChanges = 0;
+
   /// What the queues read from the voices and the recogniser, as the counts
   /// see it (#857): for each language the decks teach, whether it counts as
   /// spoken and as heard.
@@ -1914,6 +1931,7 @@ class AppState extends ChangeNotifier {
   List<bool> _notifyVoiceChange(List<bool> before) {
     // What was worked out from the old answers must not be read again.
     _derived.clear();
+    _voiceChanges++;
     final now = _queueInputs();
     var same = now.length == before.length;
     for (var i = 0; same && i < now.length; i++) {
@@ -2177,21 +2195,28 @@ class AppState extends ChangeNotifier {
 
     // A skill switched off for a language is not drilled in it (#89), and
     // nothing is heard while sound is off.
+    // A request for [DrillRequest.drillableOnly] counts a voice or a
+    // recogniser still being checked as missing (#1009).
+    final strict = request.drillableOnly;
     final voiced = derived<Map<String, bool>>(
-      'voiced',
+      ('voiced', strict),
       () => <String, bool>{
         for (final entry in this.decks)
           entry.id:
-              _countsAsSpoken(entry.language) &&
+              (strict
+                  ? canSpeak(entry.language)
+                  : _countsAsSpoken(entry.language)) &&
               !settings.isOffFor(Skill.listening, entry.language.code),
       },
     );
     final heard = derived<Map<String, bool>>(
-      'heard',
+      ('heard', strict),
       () => <String, bool>{
         for (final entry in this.decks)
           entry.id:
-              _countsAsHeard(entry.language) &&
+              (strict
+                  ? canHear(entry.language)
+                  : _countsAsHeard(entry.language)) &&
               !settings.isOffFor(Skill.speaking, entry.language.code),
       },
     );
@@ -3048,12 +3073,14 @@ class AppState extends ChangeNotifier {
       goal,
       secondsPerCard: times.secondsPerCard,
     );
+    final teach = settings.teachTimeTotal(language: code);
     return DailyPlan(
       language: language,
       goalMinutes: goal,
       extraMinutes: extra,
       spent: spent,
       secondsPerCard: times.secondsPerCard,
+      secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
       due: pools.due.length,
       newAvailable: min(dailyNewCap, fresh),
       split: DailySplit(
@@ -3096,6 +3123,9 @@ class AppState extends ChangeNotifier {
             ? left
             : const Duration(minutes: DailyBudget.stepMinutes),
         now: now(),
+        // The budget is spent: this stretch is Keep going, shown as the
+        // time taken (#1009).
+        countsUp: left <= Duration.zero,
       ),
       spentAtStart: plan.spent,
     );
@@ -3253,21 +3283,28 @@ class AppState extends ChangeNotifier {
     ];
   }
 
-  /// How many words a quick revision can pick from: every word taught, in a
-  /// skill it can be drilled in now.
-  int get revisableCount => revisableIn(null);
-
   /// How many words a revision of [skills] can pick from, or of every skill
   /// switched on when null.
   ///
   /// With [script], the script decks' share of it (Today's tiles).
-  int revisableIn(Set<Skill>? skills, {ScriptScope script = ScriptScope.any}) =>
-      <String>{
-        for (final item in buildSession(
-          DrillRequest(revise: true, skills: skills, script: script),
-        ).items)
-          item.card.id,
-      }.length;
+  ///
+  /// With [drillableOnly], only the words it can drill now
+  /// ([DrillRequest.drillableOnly]).
+  int revisableIn(
+    Set<Skill>? skills, {
+    ScriptScope script = ScriptScope.any,
+    bool drillableOnly = false,
+  }) => <String>{
+    for (final item in buildSession(
+      DrillRequest(
+        revise: true,
+        skills: skills,
+        script: script,
+        drillableOnly: drillableOnly,
+      ),
+    ).items)
+      item.card.id,
+  }.length;
 
   // ---------------------------------------------------------------------------
   // Lessons (ADR-0024)

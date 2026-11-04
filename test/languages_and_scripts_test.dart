@@ -2908,19 +2908,6 @@ void main() {
         expect(s.languageChoice, LanguageChoice.all, reason: 'All stays All');
       });
     });
-
-    group('the app', () {
-      test('quick revision revises only the shown language', () async {
-        final state = await withReviews(const <String>['bn', 'hi']);
-        addTearDown(state.dispose);
-        state.showLanguage('hi');
-        final hindi = state.revisableCount;
-        expect(hindi, greaterThan(0));
-        expect(languagesIn(state, const DrillRequest.revision(4)), <String>{
-          'hi',
-        });
-      });
-    });
   });
 
   group('the language bar', () {

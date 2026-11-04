@@ -40,7 +40,13 @@ class SummaryPage extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final now = state.now();
-    final empty = result.total == 0;
+    // A day's session that ended with no answer of its own is not a blank
+    // screen: the summary is the end screen, and shows the day so far
+    // (#1009), with Keep going.
+    final shown = result.total == 0 && result.language != null
+        ? state.dailyResult(result.language!)
+        : result;
+    final empty = shown.total == 0;
     final finished = <LanguageInfo>[
       for (final language in state.languages)
         if (language.code == result.language) language,
@@ -54,9 +60,14 @@ class SummaryPage extends StatelessWidget {
         ? null
         : DrillRequest.lesson(language: finished.code);
     final offersLesson = lesson != null && state.lessonFor(lesson).isNotEmpty;
-    final unlocked = empty || finished == null
+    final unlocked = result.total == 0 || finished == null
         ? null
         : state.unlockedSince(finished.code, result.startedAt);
+    // Keep going is always on the summary of a language's day (mockup
+    // today-minutes: "Keep going always present"), and the day's total
+    // includes its time.
+    final plan = finished == null ? null : state.dailyPlanFor(finished);
+    final total = plan?.totalMinutes ?? 0;
 
     return Scaffold(
       body: SafeArea(
@@ -82,7 +93,7 @@ class SummaryPage extends StatelessWidget {
                         ),
                       ),
                     ),
-                    if (empty) ...<Widget>[
+                    if (empty && finished == null) ...<Widget>[
                       const SizedBox(height: 12),
                       Text(
                         l10n.summaryEmpty,
@@ -94,14 +105,23 @@ class SummaryPage extends StatelessWidget {
                     ],
                     if (!empty) ...<Widget>[
                       const SizedBox(height: 24),
-                      _BySkill(result: result),
+                      _BySkill(result: shown),
+                    ],
+                    if (total > 0) ...<Widget>[
+                      const SizedBox(height: 24),
+                      Text(
+                        l10n.todayDailyTotal(total),
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.titleMedium,
+                      ),
+                    ],
+                    if (!empty || finished != null) ...<Widget>[
                       const SizedBox(height: 24),
                       _Streak(streak: state.progress.streakAt(now)),
+                    ],
+                    if (unlocked != null) ...<Widget>[
                       const SizedBox(height: 24),
-                      if (unlocked != null) ...<Widget>[
-                        _Unlocked(unlocked: unlocked),
-                        const SizedBox(height: 24),
-                      ],
+                      _Unlocked(unlocked: unlocked),
                     ],
                     const SizedBox(height: 24),
                     Text(
@@ -164,6 +184,15 @@ class SummaryPage extends StatelessWidget {
                         ),
                         child: Text(l10n.commonDone),
                       ),
+                      if (finished != null)
+                        FilledButton.tonal(
+                          style: AppButtonStyles.secondary(context),
+                          onPressed: () => AppNavigator.startDrill(
+                            context,
+                            DrillRequest.daily(language: finished.code),
+                          ),
+                          child: Text(l10n.summaryKeepGoing),
+                        ),
                       if (offersLesson)
                         FilledButton.tonal(
                           style: AppButtonStyles.secondary(context),

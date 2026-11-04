@@ -11,8 +11,7 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/theme.dart';
 import 'stats_numbers.dart';
 
-/// How many words a tag's practice asks about at most, as a quick revision's
-/// largest size does.
+/// How many words a tag's practice asks about at most.
 const int kTagPracticeCount = 20;
 
 /// Every tag of the languages counted, weakest first by default: the tags

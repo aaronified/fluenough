@@ -18,7 +18,7 @@ abstract final class DailyBudget {
   /// The minutes offered as presets.
   static const List<int> presets = <int>[5, 10, 15, 20, 30];
 
-  /// The step of "+ 5 min" and of quick revision's - and +, in minutes.
+  /// The step of "+ 5 min" and of the daily minutes' - and +, in minutes.
   static const int stepMinutes = 5;
 
   /// Seconds a card takes until the learner has [ownTimeAnswers] answers:
@@ -87,6 +87,11 @@ abstract final class DailyBudget {
     int cards, {
     double secondsPerCard = defaultSecondsPerCard,
   }) => cards <= 0 ? 0 : max(1, (cards * secondsPerCard / 60).round());
+
+  /// About how many whole minutes [seconds] take, rounded, at least 1 for
+  /// any time, 0 for none.
+  static int minutesOfSeconds(double seconds) =>
+      seconds <= 0 ? 0 : max(1, (seconds / 60).round());
 
   /// The day's split (#485, owner, 2026-10-12: "what you recommended").
   ///
