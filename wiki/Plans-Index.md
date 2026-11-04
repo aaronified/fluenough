@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Every plan in the wiki, one line each. Each plan has its own wiki page.
+Every live plan in the wiki, one line each. Each plan has its own wiki page. Finished plans are under Retired.
 
 - [Achievements](Plan-Achievements): achievements, quietly
 - [Ai Conversation](Plan-Ai-Conversation): an AI conversation partner, within what the learner knows
@@ -15,7 +15,6 @@ Every plan in the wiki, one line each. Each plan has its own wiki page.
 - [Haptics](Plan-Haptics): haptic feedback, one vocabulary for the whole app
 - [Import Text](Plan-Import-Text): import any text, and make cards from its words
 - [In App Readings](Plan-In-App-Readings): readings made in the app, for sentences the learner adds
-- [Ipa Course](Plan-Ipa-Course): the IPA, taught like a language
 - [Ipa Revamp And Language Phonology](Plan-Ipa-Revamp-And-Language-Phonology): the IPA course revamp, and a phonology deck for every language
 - [Iso 15919 Deck](Plan-Iso-15919-Deck): a deck that teaches ISO 15919, in each language
 - [Language Paths](Plan-Language-Paths): language paths, pacing by difficulty, and every language in the scheme
@@ -38,9 +37,12 @@ Every plan in the wiki, one line each. Each plan has its own wiki page.
 - [Word Order Tiles](Plan-Word-Order-Tiles): word-order tiles without giveaways, and with extra tiles
 - [Words Rules Sentences](Plan-Words-Rules-Sentences): a phrasebook, then words, then rules, then sentences
 
-## Shipped
+## Retired
 
-- [Placement V2](Plan-Placement-V2): placement, script first, then a three-skill check
-- [Progress Revamp](Plan-Progress-Revamp): progress screen revamp — mastery across all skills
+Fully built, or dropped: see [Plans Retired](Plans-Retired) for each one's status and pull requests (2026-11-04). Their pages are two-line pointers.
 
-See also: [Roadmap](Roadmap) · [Home](Home)
+- [Ipa Course](Plan-Ipa-Course): the IPA, taught like a language (done)
+- [Placement V2](Plan-Placement-V2): placement, script first, then a three-skill check (done)
+- [Progress Revamp](Plan-Progress-Revamp): progress screen revamp, mastery across all skills (done)
+
+See also: [Roadmap](Roadmap) · [Plans Retired](Plans-Retired) · [Home](Home)

@@ -148,7 +148,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#614](https://github.com/aaronified/fluenough/issues/614) A second reading field on cards: transliteration and normalised or vocalised form
 - [#681](https://github.com/aaronified/fluenough/issues/681) Language bar: a dot on languages with something to do, and a full-height IPA glyph
 - [#697](https://github.com/aaronified/fluenough/issues/697) Settings: show IPA first, in place of the transliteration
-- [#698](https://github.com/aaronified/fluenough/issues/698) Languages I'm learning: group every language by family, with Indo-European split into branches
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
 - [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
 - [#1010](https://github.com/aaronified/fluenough/issues/1010) Keep going: review the closest-to-due cards and teach new ones, balanced so it neither over-teaches nor reviews too far ahead
@@ -241,9 +240,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#332](https://github.com/aaronified/fluenough/issues/332) Handwriting: stroke data
 - [#333](https://github.com/aaronified/fluenough/issues/333) Handwriting: the stroke animation
 - [#334](https://github.com/aaronified/fluenough/issues/334) Handwriting: tracing and drawing blind, recorded as Write
-- [#335](https://github.com/aaronified/fluenough/issues/335) IPA course: examples and confusable symbols
-- [#336](https://github.com/aaronified/fluenough/issues/336) IPA course: the app
-- [#337](https://github.com/aaronified/fluenough/issues/337) IPA course: the sounds of this word, on every card
 - [#338](https://github.com/aaronified/fluenough/issues/338) IPA course: review
 - [#340](https://github.com/aaronified/fluenough/issues/340) ISO 15919 decks: one per Indian language, on the path
 - [#341](https://github.com/aaronified/fluenough/issues/341) Listening in context: owner decisions before building
@@ -326,9 +322,9 @@ A plan with no tracking issue is flagged.
 - [a look for each language (colour, icon, background image)](https://github.com/aaronified/fluenough/wiki/Plan-Language-Themes) (Written 2026-10-10; owner's answers recorded 2026-10-11), **no tracking issue**
 - [a listening tier in context](https://github.com/aaronified/fluenough/wiki/Plan-Listening-In-Context) (Written 2026-10-05), tracks #230
 - [offensive words, their level, and warnings on words like them](https://github.com/aaronified/fluenough/wiki/Plan-Offensive-Words) (Written 2026-10-09), tracks #96, #97
-- [placement, script first, then a three-skill check](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V2) (Written 2026-10-11, for **0), tracks #481
+- [placement, script first, then a three-skill check](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V2), **no tracking issue**
 - [profiles, a PIN lock, and parental supervision](https://github.com/aaronified/fluenough/wiki/Plan-Profiles) (Written 2026-10-10), tracks #97, #204
-- [progress screen revamp — mastery across all skills](https://github.com/aaronified/fluenough/wiki/Plan-Progress-Revamp) (Written 2026-10-20), **no tracking issue**
+- [progress screen revamp — mastery across all skills](https://github.com/aaronified/fluenough/wiki/Plan-Progress-Revamp), **no tracking issue**
 - [the question engine, derived from card data](https://github.com/aaronified/fluenough/wiki/Plan-Question-Engine) (Written 2026-10-13), **no tracking issue**
 - [question engine revamp and milestone exams](https://github.com/aaronified/fluenough/wiki/Plan-Question-Engine-2-And-Exams) (Written 2026-10-26, for **0), **no tracking issue**
 - [sign and publish the first release](https://github.com/aaronified/fluenough/wiki/Plan-Release-Signing), tracks #232
