@@ -131,8 +131,6 @@ class StoredDownloadedDecks implements DownloadedDecks {
         dropped.add('$_fontPrefix${font.path}');
       }
     }
-    await _memory.putAll(files);
-    await _memory.putFonts(fonts);
     for (final file in files.keys) {
       _storedFiles[file.path] = file;
       _order['$_filePrefix${file.path}'] =
@@ -144,6 +142,16 @@ class StoredDownloadedDecks implements DownloadedDecks {
           manifest.order['$_fontPrefix${font.path}'] ?? 0;
     }
     _sequence = manifest.sequence;
+    // What no longer fits the bound is not read in: it is removed.
+    final evicted = _evict();
+    await _memory.putAll(<IndexFile, List<int>>{
+      for (final MapEntry(:key, :value) in files.entries)
+        if (_storedFiles.containsKey(key.path)) key: value,
+    });
+    await _memory.putFonts(<IndexFont, List<int>>{
+      for (final MapEntry(:key, :value) in fonts.entries)
+        if (_storedFonts.containsKey(key.path)) key: value,
+    });
     // Every other entry is a note, or something no manifest lists.
     final known = <String>{
       _schemaKey,
@@ -163,7 +171,6 @@ class StoredDownloadedDecks implements DownloadedDecks {
         dropped.add(key);
       }
     }
-    final evicted = _evict();
     if (dropped.isNotEmpty || evicted.isNotEmpty) {
       _enqueue(const <String, Uint8List>{}, <String>[...dropped, ...evicted]);
     }
