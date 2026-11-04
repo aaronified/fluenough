@@ -351,6 +351,26 @@ class _GrammarDrillState extends State<GrammarDrill> {
           target: cell.answer,
         ).swapped;
     final promptSize = typing ? 22.0 : 32.0;
+    // A word's IPA as its own line: small, or with "IPA replaces
+    // transliteration" on, moved up to the reading's size and weight, as for
+    // a language with no transliteration (#697).
+    Widget? ipaLine(String? raw, String target) {
+      final lines = readingLines(context, ipa: raw, target: target);
+      if (lines.swapped) {
+        return ReadingText(
+          lines.reading!,
+          swapped: true,
+          textAlign: TextAlign.center,
+          style: theme.textTheme.headlineMedium!.copyWith(
+            fontSize: promptSize * 2 / 3,
+            fontWeight: FontWeight.w600,
+          ),
+        );
+      }
+      final shown = lines.ipa;
+      return shown == null ? null : IpaLine(shown, fontSize: 16);
+    }
+
     return <Widget>[
       if (readingPrompt != null)
         ReadingFirst(
@@ -370,9 +390,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
       // The word asked about, as it is said: not the form, which is the
       // answer. Left out while typing, to keep the field in view.
       if (!typing && !(lemma?.swapped ?? false))
-        if (ipaToShow(context, cell.entry.ipa, target: cell.entry.lemma)
-            case final ipa?)
-          IpaLine(ipa, fontSize: 16),
+        ?ipaLine(cell.entry.ipa, cell.entry.lemma),
       Padding(
         padding: EdgeInsetsDirectional.only(top: typing ? 0 : 8),
         child: Wrap(
@@ -412,14 +430,7 @@ class _GrammarDrillState extends State<GrammarDrill> {
       if (answered) ...<Widget>[
         // Only once answered, as hearing it: the form's IPA would give it
         // away.
-        if (!formIpaSwapped)
-          if (ipaToShow(
-                context,
-                cell.entry.ipas[cell.slot],
-                target: cell.answer,
-              )
-              case final ipa?)
-            IpaLine(ipa, fontSize: 16),
+        if (!formIpaSwapped) ?ipaLine(cell.entry.ipas[cell.slot], cell.answer),
         // Only once answered: hearing the form would give it away.
         ?speaker,
         Padding(
