@@ -57,6 +57,10 @@ jobs:
           curl -fsSL -o build/web/sqlite3.wasm "https://github.com/simolus3/sqlite3.dart/releases/download/sqlite3-$(version sqlite3)/sqlite3.wasm"
           curl -fsSL -o build/web/drift_worker.js "https://github.com/simolus3/drift/releases/download/drift-$(version drift)/drift_worker.js"
 
+      # Flutter 3.47's own service worker caches nothing (#1012): the offline
+      # shell is tools/web/sw.js, which brand_web.py puts in the build.
+      - run: python3 tools/check_web_sw.py build/web
+
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name == 'push'
         with:

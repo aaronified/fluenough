@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **The web app now opens with no network after one visit.** A small hand-written service worker keeps the page, script, engine and fonts (Flutter 3.47's own caches nothing); deck downloads are not touched. Web app only. Refs #1012.
+
 ## [0.8.3] - 2026-11-04
 
 ### Fixed
