@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;600&family=Noto+Sans+Bengali:wght@400;600&family=Noto+Sans+Telugu:wght@400;600&display=swap">
 <style>
 /* ===== The page around the phones (not the app) ===== */
-:root{--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36;
+:root{--r-stadium:9999px;--page-bg:#F3F1EF;--page-fg:#1E1B1A;--page-muted:#57504D;--page-card:#FFFFFF;--page-line:#D6CFCC;--page-acc:#8F4C36;
  /* AppRadii (lib/ui/theme.dart): every corner below is one of these, or a circle */
  --r-mark:4px;--r-control:8px;--r-chip:12px;--r-field:16px;--r-card:24px;--r-hero:32px;--r-round:50%;--r-chrome:20px}
 @media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--page-bg:#121010;--page-fg:#ECE6E3;--page-muted:#B4ABA7;--page-card:#1D1A19;--page-line:#3A3331;--page-acc:#FFB59E}}
@@ -124,7 +124,25 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .opts div{min-height:48px;display:flex;align-items:center;padding:0 16px;border-radius:var(--r-field);background:var(--sLowest);font-size:calc(14px*var(--t));font-weight:500}
 .hl-on .dh .chg::after{top:auto;bottom:-14px;right:auto;left:0}
 .dh{margin-bottom:8px}
-.sess-fill{flex:1;min-height:90px}
+.sess-fill{flex:1;min-height:60px}
+/* review end screen (lib/features/summary/summary_page.dart) */
+.sum{padding:56px 16px 20px;display:flex;flex-direction:column;min-height:900px}
+.sum .tick{align-self:center;width:120px;height:120px;display:flex;align-items:center;justify-content:center;background:var(--tc);color:var(--onTc);clip-path:polygon(50% 0,59% 6%,69% 2%,75% 11%,86% 11%,88% 22%,98% 27%,95% 38%,100% 50%,95% 62%,98% 73%,88% 78%,86% 89%,75% 89%,69% 98%,59% 94%,50% 100%,41% 94%,31% 98%,25% 89%,14% 89%,12% 78%,2% 73%,5% 62%,0 50%,5% 38%,2% 27%,12% 22%,14% 11%,25% 11%,31% 2%,41% 6%)}
+.sum .tick svg.i{width:52px;height:52px}
+.sum h2{margin:20px 0 0;text-align:center;font-size:calc(32px*var(--t));line-height:1.2;font-weight:700}
+.sum .skills{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+.sum .sk{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:4px 12px;font-size:calc(16px*var(--t))}
+.sum .sk .mp2{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px;border-radius:var(--r-field);font-size:calc(13px*var(--t));font-weight:500}
+.sum .sk .mp2 svg.i{width:16px;height:16px}
+.sum .stat{margin-top:24px;background:var(--sHigh);border-radius:var(--r-card);padding:16px 8px;text-align:center}
+.sum .stat b{display:block;font-size:calc(32px*var(--t));line-height:1.2;font-weight:800}
+.sum .stat span{font-size:calc(14px*var(--t));color:var(--onSv)}
+.sum .nd{margin-top:24px;text-align:center;font-size:calc(14px*var(--t));color:var(--onSv)}
+.sum .bt{margin-top:auto;padding-top:24px;display:flex;flex-direction:column;gap:8px}
+.sum .b{border:0;border-radius:var(--r-stadium);font-size:calc(14px*var(--t));font-weight:600;display:flex;align-items:center;justify-content:center;padding:6px 16px}
+.sum .b.done{min-height:60px;background:var(--p);color:var(--onP)}
+.sum .b.ton{min-height:52px;background:var(--sc);color:var(--onSc)}
+.hl-off .gone{display:none}
 /* highlight of what changed */
 .hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:var(--r-chip)}
 .hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:var(--r-mark);z-index:6;letter-spacing:.3px}
@@ -140,13 +158,12 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 </head>
 <body>
 <div class="wrap" id="wrap">
-<h1>Today: minutes budgeted</h1>
-<p class="cap1">Owner's spec of 2026-11-04. Quick revision is removed; Keep going is kept; the card-count chips become minutes budgeted; a hint sits above the skill tiles; the finished day is a greyed ring that still opens the summary; tiles show every pending card and keep their arrows. Phone 360 dp at 1.4x text (the app's cap, #505), the forest theme, light and dark. The checks and the questions are in <code>today-minutes.md</code>.</p>
+<h1>Today: review, quota over, Keep going</h1>
+<p class="cap1">Owner's spec of 2026-11-04, four screens: the review end screen with Keep going, Today with the review not completed, Today with the daily quota over, and the session after Keep going (the clock counts the time taken up, the bar is full). Quick revision is removed. Phone 360 dp at 1.4x text (the app's cap, #505), the forest theme, light and dark. The checks and the questions are in <code>today-minutes.md</code>.</p>
 <div class="sticky tw" id="g-tw">
  <div class="tg">Language <span class="seg" data-k="lang"><button data-v="te">Telugu</button><button data-v="bn">Bengali</button><button data-v="hi">Hindustani</button></span></div>
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
- <div class="tg">Screen <span class="seg" data-k="screen"><button data-v="today">Today</button><button data-v="sn">In session</button><button data-v="sk">In session, Keep going</button><button data-v="sb">Session, both</button></span></div>
- <div class="tg">Today state <span class="seg" data-k="state"><button data-v="all">Both</button><button data-v="normal">Normal day</button><button data-v="done">Finished day</button></span></div>
+ <div class="tg">Screen <span class="seg" data-k="screen"><button data-v="all">All four</button><button data-v="sum">1 Review end</button><button data-v="todo">2 Not completed</button><button data-v="over">3 Quota over</button><button data-v="ses">4 After Keep going</button></span></div>
  <div class="tg">Hint <span class="seg" data-k="hint"><button data-v="long">Tap a skill to practise only that skill</button><button data-v="short">Tap a skill to practise it alone</button></span></div>
  <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
 </div>
@@ -195,13 +212,14 @@ const L={
 /* pending cards per skill: more than the budget buys, as #1009 asks; arrows are today's pace marks */
 const TILES=[['rec','Recognition','eye',12,'same'],['hear','Hear','hear',24,'north'],['say','Say','mic',44,'south'],['write','Write','key',22,'same'],['gram','Grammar','tf',6,null],['script','Script','abc',31,null]];
 const GOAL=15;
-const PRESETS={
- normal:{cap:'Normal day',sub:'Goal 15 min, 8 spent. Minutes budgeted for review and new in place of the card counts; Keep going below the ring.',spent:8},
- done:{cap:'Finished day',sub:'Greyed ring, still tappable (opens the end-of-session summary), 15 of 15 min, no chips (#1007, #1008).',spent:15}};
-const SESS={
- sn:{cap:'In session, normal',sub:'The header as today: close, the wave filling with the time used (35%), the time left counting down, the word\'s sounds, report.'},
- sk:{cap:'In session, Keep going',sub:'The day\'s minutes are spent: the wave is full for the whole stretch and the clock counts up the time taken, not down.'}};
-const S={lang:'te',theme:'light',screen:'today',state:'all',hint:'long',hl:'1'};
+const CAP={
+ sum:{cap:'1  Review end screen',sub:'The summary is THE end screen (owner, 2026-11-04). As built, with Keep going added above the lesson button, a tonal button like "Today\'s lesson". The greyed ring on screen 3 opens it; the old blank end screen is scrapped.'},
+ todo:{cap:'2  Today, review not completed',sub:'8 of 15 min. Minutes budgeted in the chips, the hint above the skill tiles, all pending cards on the tiles, tile arrows as today, no Quick revision.'},
+ over:{cap:'3  Today, daily quota over',sub:'15 of 15 min, no chips. The greyed ring still presses and opens screen 1. Keep going under the ring is as built today (shown once the day is done); see question 1.'},
+ ses:{cap:'4  In session after Keep going',sub:'The same header as the drill: close, the bar (full for the whole stretch), the time taken counting up, the word\'s sounds, report.'},
+ ref:{cap:'Reference: normal session',sub:'The header as today: the bar 35% full, the time left counting down.'}};
+const PRESETS={todo:{spent:8,keep:false},over:{spent:15,keep:true}};
+const S={lang:'te',theme:'light',screen:'all',hint:'long',hl:'1'};
 const HINT={long:'Tap a skill to practise only that skill',short:'Tap a skill to practise it alone'};
 
 function phone(k){
@@ -220,7 +238,7 @@ function phone(k){
   <div class="daily ${done?'done':''}">
    ${ring}
    <div class="mins" style="margin-top:10px">${Math.min(f.spent,total)} of ${total} min</div>
-   <button class="kg chg keep">Keep going</button>
+   ${f.keep?`<button class="kg chg stay">Keep going</button>`:''}
    ${done?'':`<div class="chips chg upd"><span class="chip rev">${rev} min review</span><span class="chip new${nw===0?' zero':''}">${nw} min new</span></div>`}
   </div>
   <div class="due" style="margin-bottom:16px">
@@ -245,29 +263,39 @@ function wave(frac,dark){
  const ts=Math.min(usable,end+8);
  return `<svg viewBox="0 0 ${W} 16" preserveAspectRatio="xMinYMid meet" aria-hidden="true">${d?`<path d="${d}" fill="none" stroke="var(--p)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>`:''}${ts<usable?`<line x1="${ts}" y1="${mid}" x2="${usable}" y2="${mid}" stroke="var(--sc)" stroke-width="4" stroke-linecap="round"/>`:''}<circle cx="${W-3}" cy="${mid}" r="2" fill="var(--p)"/></svg>`}
 function session(k){
- const keep=k==='sk',lang=L[S.lang],M=MODE[S.theme].rec;
+ const keep=k==='ses',lang=L[S.lang],M=MODE[S.theme].rec;
  const clk=keep?'3:12':'9:48', frac=keep?1:0.35;
  const lab=keep?'Time taken':'Time left';
  return `<div class="ph" data-phone="${k}">
  <div class="dh"><span class="ib" role="img" aria-label="End the session">${ic('close')}</span>
-  <div class="wv chg${keep?' upd':''}" role="img" aria-label="Progress, ${keep?'full':'35 percent'}">${wave(frac)}</div>
-  <span class="clk chg${keep?' upd':''}" aria-label="${lab} ${clk}">${clk}</span>
+  <div class="wv${keep?' chg upd':''}" role="img" aria-label="Progress, ${keep?'full':'35 percent'}">${wave(frac)}</div>
+  <span class="clk${keep?' chg upd':''}" aria-label="${lab} ${clk}">${clk}</span>
   <span class="ib" role="img" aria-label="Play the word">${ic('vol')}</span><span class="ib" role="img" aria-label="Report a problem">${ic('bug')}</span></div>
  <div class="dcard"><span class="mp2" style="background:${M[0]};color:${M[1]}">${ic('eye')}Recognition</span>
   <div class="word script">${lang.w[0]}</div><div class="rd">${lang.w[1]}</div><div class="q">What does it mean?</div>
   <div class="opts"><div>Water</div><div>Bread</div><div>House</div><div>Rain</div></div></div>
  <div class="sess-fill"></div>
  </div>`}
+function summary(){
+ const lang=L[S.lang],M=MODE[S.theme];
+ const rows=[['rec','Recognition','eye',8,10],['hear','Hear','hear',5,6],['say','Say','mic',4,5],['write','Write','key',3,4]];
+ return `<div class="ph" data-phone="sum"><div class="sum">
+  <div class="tick" aria-hidden="true">${ic('check')}</div>
+  <h2>You\u2019ve completed ${lang.name} for today</h2>
+  <div class="skills">${rows.map(([id,nm,icn,c,t])=>`<div class="sk"><span class="mp2" style="background:${M[id][0]};color:${M[id][1]}">${ic(icn)}${nm}</span><span>${c} right of ${t}</span></div>`).join('')}</div>
+  <div class="stat"><b>5</b><span>day streak</span></div>
+  <div class="nd">Next due: 23 cards tomorrow</div>
+  <div class="bt"><button class="b done">Done</button><button class="b ton chg">Keep going</button><button class="b ton">Today\u2019s lesson</button></div>
+ </div></div>`}
 function render(){
  const d=document.documentElement;d.setAttribute('data-theme',S.theme);
  const P=PAL[S.theme];for(const k in P)d.style.setProperty('--'+k,P[k]);
- document.getElementById('wrap').className='wrap '+(S.hl==='1'?'hl-on':'');
+ document.getElementById('wrap').className='wrap '+(S.hl==='1'?'hl-on':'hl-off');
  document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
- let keys,fn=phone,cap=PRESETS;
- if(S.screen==='today')keys=S.state==='all'?Object.keys(PRESETS):[S.state];
- else{fn=session;cap=SESS;keys=S.screen==='sb'?['sn','sk']:[S.screen]}
+ const keys=S.screen==='all'?['sum','todo','over','ses','ref']:S.screen==='ses'?['ses','ref']:[S.screen];
+ const fn=k=>k==='sum'?summary():(k==='ses'||k==='ref')?session(k):phone(k);
  const y=window.scrollY;
- document.getElementById('root').innerHTML=`<div class="frames">${keys.map(k=>`<div class="fcol"><div class="fcap">${cap[k].cap}</div><p class="fsub">${cap[k].sub}</p>${fn(k)}</div>`).join('')}</div>`;
+ document.getElementById('root').innerHTML=`<div class="frames">${keys.map(k=>`<div class="fcol"><div class="fcap">${CAP[k].cap}</div><p class="fsub">${CAP[k].sub}</p>${fn(k)}</div>`).join('')}</div>`;
  window.scrollTo(0,y);
 }
 document.addEventListener('click',e=>{
@@ -278,7 +306,7 @@ document.addEventListener('click',e=>{
 /* ===== contrast self-check: console only (window.__contrast) ===== */
 const lum=h=>{const c=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]};
 const cr=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
-const PAIRS=[['body text, minutes','onS','s',4.5],['captions','onSv','s',4.5],['ring button label','onP','p',4.5],['done ring label, check','onSv','sHigh',4.5],['Keep going text button','p','s',4.5],['review chip','onSc','sc',4.5],['new chip','onP','p',4.5],['new chip at 0 min, text','onSv','s',4.5],['new chip at 0 min, outline','ol','s',3],['hint on the due card','onPc','pc',4.5],['tile number','onS','sLowest',4.5],['tile name','onSv','sLowest',4.5],['tile pace arrow','onSv','sLowest',3],['ring progress arc, active','p','s',3],['ring progress arc, greyed (done)','olv','s',3],['language pill','onSc','sc',4.5],['streak card text','onS','sLow',4.5],['streak card caption','onSv','sLow',4.5],['quick revision (removed, struck)','onSv','sLow',4.5],['session clock','onS','s',4.5],['wave and end dot','p','s',3],['header icons (close, sound, report)','onSv','s',3],['drill card text','onS','sLow',4.5],['drill card reading, question','onSv','sLow',4.5],['answer option','onS','sLowest',4.5],['answer option on card (shape)','sLowest','sLow',1.0],['change tag','onE','E',4.5],['change outline on page','E','s',3]];
+const PAIRS=[['body text, minutes','onS','s',4.5],['captions','onSv','s',4.5],['ring button label','onP','p',4.5],['done ring label, check','onSv','sHigh',4.5],['Keep going text button','p','s',4.5],['review chip','onSc','sc',4.5],['new chip','onP','p',4.5],['new chip at 0 min, text','onSv','s',4.5],['new chip at 0 min, outline','ol','s',3],['hint on the due card','onPc','pc',4.5],['tile number','onS','sLowest',4.5],['tile name','onSv','sLowest',4.5],['tile pace arrow','onSv','sLowest',3],['ring progress arc, active','p','s',3],['ring progress arc, greyed (done)','olv','s',3],['language pill','onSc','sc',4.5],['streak card text','onS','sLow',4.5],['streak card caption','onSv','sLow',4.5],['quick revision (removed, struck)','onSv','sLow',4.5],['session clock','onS','s',4.5],['wave and end dot','p','s',3],['header icons (close, sound, report)','onSv','s',3],['drill card text','onS','sLow',4.5],['drill card reading, question','onSv','sLow',4.5],['answer option','onS','sLowest',4.5],['answer option on card (shape)','sLowest','sLow',1.0],['summary title, score text','onS','s',4.5],['summary tick','onTc','tc',3],['streak tile value','onS','sHigh',4.5],['streak tile label','onSv','sHigh',4.5],['Done button','onP','p',4.5],['Keep going and lesson buttons','onSc','sc',4.5],['change tag','onE','E',4.5],['change outline on page','E','s',3]];
 window.__contrast=[];
 ['light','dark'].forEach(t=>{PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})});
  Object.entries(MODE[t]).forEach(([id,c])=>{const r=cr(c[0],c[1]);window.__contrast.push({theme:t,pair:'tile icon '+id,fg:c[1],bg:c[0],ratio:+r.toFixed(2),need:3,pass:r>=3})});});
