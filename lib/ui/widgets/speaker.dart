@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../app/app_scope.dart';
+import '../../core/tts/speech_gesture.dart';
 import '../../l10n/app_localizations.dart';
 import 'play_button.dart';
 import 'snack.dart';
@@ -29,6 +30,7 @@ abstract final class SpeakerActions {
     if (!settings.autoplay && settings.countSpeakerTap() % tipEvery == 0) {
       showAppSnackBar(context, l10n.speakerAutoplayTip);
     }
+    SpeechGesture.app.tapped();
     onPlay();
   }
 
@@ -107,6 +109,8 @@ class _SpeakerState extends State<Speaker> {
       if (!mounted || !widget.enabled) return;
       final settings = AppScope.read(context).settings;
       if (!settings.soundOn) return;
+      // On iOS Safari a word spoken outside a tap is silent: wait for one.
+      if (!SpeechGesture.app.allowsAutomatic) return;
       if (widget.playOnAppear || (widget.autoplay && settings.autoplay)) {
         widget.onPlay();
       }

@@ -39,6 +39,8 @@ jobs:
       - run: flutter create . --org app --project-name fluenough --platforms=web
       - run: rm -f test/widget_test.dart
       - run: python3 tools/brand_web.py
+      # Fails the build if flutter create's real output lost an iOS tag.
+      - run: python3 tools/check_web_page.py web
       - run: flutter pub get
       - run: dart run build_runner build
 
