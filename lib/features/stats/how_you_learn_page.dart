@@ -740,7 +740,7 @@ Future<void> showHowYouLearnPopover(BuildContext context, String? language) {
     builder: (context) => AlertDialog(
       // Wide, as a popup can be: 16 from the screen's edges, and the content
       // across all of it (owner, 2026-11-04: "too thin").
-      insetPadding: const EdgeInsetsDirectional.symmetric(
+      insetPadding: const EdgeInsets.symmetric(
         horizontal: _popoverSide,
         vertical: 24,
       ),
