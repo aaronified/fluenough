@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **The web app installs to an iPhone's home screen.** The page now carries the iOS home-screen icon, standalone-mode and theme-colour tags (light and dark), a viewport that covers the notch with the notch and home bar kept clear, a relative manifest `id`, `scope` and `start_url` that follow the Pages sub-path, and no double-tap zoom, rubber-band scroll or text inflation. The web build asks the browser to keep its storage, and words wait for a first tap on a speaker before they play by themselves, as iOS Safari speaks nothing otherwise. A test checks the branded page and manifest (#1012).
+
 ### Changed
 
 - **The web app keeps its decks and script fonts across reloads.** Downloaded decks and the Indic and Naskh fonts are now saved in the browser's own storage (IndexedDB), so a reload opens with them, with or without a connection, instead of downloading them again. The app checks the index at most once a day, as on the phone, and downloads only the files whose hash changed. A browser that denies or fills its storage (a private window) keeps them in memory for the visit, as before; what is stored is versioned, checked against the index's hashes, and bounded at 64 MB, oldest first (#1012).
