@@ -148,7 +148,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#614](https://github.com/aaronified/fluenough/issues/614) A second reading field on cards: transliteration and normalised or vocalised form
 - [#681](https://github.com/aaronified/fluenough/issues/681) Language bar: a dot on languages with something to do, and a full-height IPA glyph
 - [#697](https://github.com/aaronified/fluenough/issues/697) Settings: show IPA first, in place of the transliteration
-- [#698](https://github.com/aaronified/fluenough/issues/698) Languages I'm learning: group every language by family, with Indo-European split into branches
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
 - [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
 - [#1010](https://github.com/aaronified/fluenough/issues/1010) Keep going: review the closest-to-due cards and teach new ones, balanced so it neither over-teaches nor reviews too far ahead
@@ -241,9 +240,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#332](https://github.com/aaronified/fluenough/issues/332) Handwriting: stroke data
 - [#333](https://github.com/aaronified/fluenough/issues/333) Handwriting: the stroke animation
 - [#334](https://github.com/aaronified/fluenough/issues/334) Handwriting: tracing and drawing blind, recorded as Write
-- [#335](https://github.com/aaronified/fluenough/issues/335) IPA course: examples and confusable symbols
-- [#336](https://github.com/aaronified/fluenough/issues/336) IPA course: the app
-- [#337](https://github.com/aaronified/fluenough/issues/337) IPA course: the sounds of this word, on every card
 - [#338](https://github.com/aaronified/fluenough/issues/338) IPA course: review
 - [#340](https://github.com/aaronified/fluenough/issues/340) ISO 15919 decks: one per Indian language, on the path
 - [#341](https://github.com/aaronified/fluenough/issues/341) Listening in context: owner decisions before building
