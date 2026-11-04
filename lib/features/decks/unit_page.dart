@@ -920,7 +920,15 @@ class _RuleTable extends StatelessWidget {
         child: child,
       ),
     );
-    Widget form(String text, String? reading, {String? cardId}) {
+    Widget form(_Form f) {
+      final (text, readingOf, cardId, ipa) = f;
+      final lines = readingLines(
+        context,
+        reading: readingOf,
+        ipa: ipa,
+        target: text,
+      );
+      final reading = lines.reading;
       final level = cardId == null ? null : answers.of(cardId).level;
       final shown = Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -937,8 +945,9 @@ class _RuleTable extends StatelessWidget {
             },
           ),
           if (reading != null)
-            Text(
+            ReadingText(
               reading,
+              swapped: lines.swapped,
               style: theme.textTheme.bodySmall!.copyWith(
                 color: switch (level) {
                   MasteryLevel.known => scheme.onPrimaryContainer,
@@ -1004,13 +1013,9 @@ class _RuleTable extends StatelessWidget {
           for (final (word, forms) in rows)
             TableRow(
               children: <Widget>[
-                cell(form(word.$1, word.$2)),
+                cell(form(word)),
                 for (final f in forms)
-                  cell(
-                    f == null
-                        ? const SizedBox.shrink()
-                        : form(f.$1, f.$2, cardId: f.$3),
-                  ),
+                  cell(f == null ? const SizedBox.shrink() : form(f)),
               ],
             ),
         ],
@@ -1032,11 +1037,11 @@ class _RuleTable extends StatelessWidget {
         <(_Form, List<_Form?>)>[
           for (final row in pattern.entries)
             (
-              (row.lemma, row.reading, null),
+              (row.lemma, row.reading, null, row.ipa),
               <_Form?>[
                 for (final slot in pattern.slots)
                   if (row.forms[slot] case final f?)
-                    (f, row.readings[slot]?.first, null)
+                    (f, row.readings[slot]?.first, null, row.ipas[slot])
                   else
                     null,
               ],
@@ -1055,7 +1060,7 @@ class _RuleTable extends StatelessWidget {
       if (rule == null) continue;
       words.putIfAbsent(
         rule.word,
-        () => (rule.wordTarget, rule.wordReading, null),
+        () => (rule.wordTarget, rule.wordReading, null, null),
       );
       (cells[rule.word] ??= <String, Card>{})[rule.slot] = card;
       used.add(rule.slot);
@@ -1078,7 +1083,7 @@ class _RuleTable extends StatelessWidget {
               <_Form?>[
                 for (final slot in slots)
                   if (cells[word]![slot] case final card?)
-                    (card.target, card.reading, card.id)
+                    (card.target, card.reading, card.id, card.ipa)
                   else
                     null,
               ],
@@ -1100,5 +1105,6 @@ class _RuleTable extends StatelessWidget {
   }
 }
 
-/// A form, its reading if it has one, and the card of a rules table's cell.
-typedef _Form = (String, String?, String?);
+/// A form, its reading if it has one, the card of a rules table's cell, and
+/// the form's IPA if it has one.
+typedef _Form = (String, String?, String?, String?);
