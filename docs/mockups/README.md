@@ -77,6 +77,14 @@ name them. They are in git at 19d200b
   removed once built (owner, 2026-10-20: "delete all obsolete ones"). It is
   in git history at `c6925d6c`:
   `git show c6925d6c:docs/mockups/set-cards.html`.
+- `today-minutes.html`: Today with minutes budgeted (owner, 2026-11-04):
+  Quick revision removed, Keep going kept, "12 min review" and "3 min new"
+  in place of the card-count chips, a hint above the skill tiles, the greyed
+  finished-day ring (#1007, #1008), and the in-session header for Keep going
+  (a full wave, the time taken counting up). Telugu, Bengali and Hindustani,
+  light and dark, 1.4x. Open questions and the self-check are in
+  `today-minutes.md`.
+
 - `progress.html`: the Progress tab redesigned, one colour per skill (owner,
   2026-10-26), built and removed once built (CHANGELOG: "Progress is
   redrawn"). It is in git history at `3ceac77`:
