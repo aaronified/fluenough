@@ -340,7 +340,6 @@ void main() {
         'hold, and tapping it drills exactly those', (tester) async {
       usePhone(tester);
       final handle = tester.ensureSemantics();
-      addTearDown(handle.dispose);
       const words = 40;
       final state = _learner(words: words);
       await state.load();
@@ -379,6 +378,7 @@ void main() {
       expect(request.skill, Skill.recognition);
       expect(request.revise, isFalse);
       expect(_asked(state.sessionItems(request)), words);
+      handle.dispose();
     });
   });
 
@@ -418,7 +418,6 @@ void main() {
         'count in the text or the screen reader\'s label', (tester) async {
       usePhone(tester, textScale: 1.4);
       final handle = tester.ensureSemantics();
-      addTearDown(handle.dispose);
       const words = 40;
       final state = _learner(words: words);
       await state.load();
@@ -465,6 +464,7 @@ void main() {
         );
         expect(text, isNot(contains('$words')));
       }
+      handle.dispose();
     });
   });
   group('the hint above the tiles', () {
@@ -473,7 +473,6 @@ void main() {
       (tester) async {
         usePhone(tester, textScale: 1.4);
         final handle = tester.ensureSemantics();
-        addTearDown(handle.dispose);
         final state = _learner();
         await state.load();
         await state.startSpeech();
@@ -528,6 +527,7 @@ void main() {
         await tester.pump();
         await tester.pump(const Duration(seconds: 1));
         expect(find.byType(AlertDialog), findsNothing);
+        handle.dispose();
       },
     );
   });
