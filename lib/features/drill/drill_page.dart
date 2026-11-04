@@ -18,6 +18,7 @@ import '../../ui/widgets/drill_frame.dart'
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
 import '../script/script_guide_page.dart';
+import '../summary/summary_page.dart';
 import 'choice_drill.dart';
 import 'drill_preset.dart';
 import 'drill_session.dart';
@@ -288,6 +289,13 @@ class _DrillPageState extends State<DrillPage> {
       );
     }
     final session = _session;
+    // A day's session with nothing left to ask ends on the summary, with
+    // Keep going, not on a blank screen (#1009).
+    final request = widget.request;
+    if (session == null && !_failed && request.daily && !request.lesson) {
+      final state = AppScope.read(context);
+      return SummaryPage(result: state.dailyResult(request.language!));
+    }
     if (session == null) {
       return Scaffold(
         appBar: AppBar(
