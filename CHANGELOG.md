@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **The web app keeps its decks and script fonts across reloads.** Downloaded decks and the Indic and Naskh fonts are now saved in the browser's own storage (IndexedDB), so a reload opens with them, with or without a connection, instead of downloading them again. The app checks the index at most once a day, as on the phone, and downloads only the files whose hash changed. A browser that denies or fills its storage (a private window) keeps them in memory for the visit, as before; what is stored is versioned, checked against the index's hashes, and bounded at 64 MB, oldest first (#1012).
 - **The How you learn popover is flat and full width, and the old Adjusted to you card is gone from Today.** The popover opened by the info dot above the skill tiles is titled with the language ("How you learn Telugu") and lays each skill out as a plain section across the whole width, with thin dividers instead of cards. The "Adjusted to you" card at the top of Today is removed; each skill's arrow stays, and the full page is still reached from Settings and Progress.
 
 ## [0.8.4] - 2026-11-04

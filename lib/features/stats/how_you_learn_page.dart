@@ -213,7 +213,7 @@ class _Body extends StatelessWidget {
         const SizedBox(height: 16),
         Padding(
           padding: compact
-              ? EdgeInsets.zero
+              ? const EdgeInsetsDirectional.symmetric(horizontal: _popoverSide)
               : const EdgeInsetsDirectional.only(start: 64, end: 16),
           child: Text(footnote, style: muted),
         ),
@@ -339,9 +339,9 @@ class _Legend extends StatelessWidget {
       ],
     );
     return Padding(
-      padding: flat
-          ? EdgeInsets.zero
-          : const EdgeInsetsDirectional.symmetric(horizontal: 8),
+      padding: EdgeInsetsDirectional.symmetric(
+        horizontal: flat ? _popoverSide : 8,
+      ),
       child: Wrap(
         spacing: 18,
         runSpacing: 6,
@@ -472,7 +472,10 @@ class _SkillRow extends StatelessWidget {
 
     if (flat) {
       return Padding(
-        padding: const EdgeInsetsDirectional.symmetric(vertical: 12),
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: _popoverSide,
+          vertical: 12,
+        ),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
@@ -717,6 +720,11 @@ String _languageName(AppState state, String code) {
   return code;
 }
 
+/// The side padding of the popover's sections: the dialog gives its content
+/// the whole width, so the dividers run edge to edge and each section keeps
+/// its own margin.
+const double _popoverSide = 16;
+
 /// A short popover over Today (owner, 2026-11-04: "Short popover: with only
 /// that language's part of the how to learn page"): how the skills of
 /// [language] are fitted to the learner, as the page shows them, in a popup
@@ -730,6 +738,19 @@ Future<void> showHowYouLearnPopover(BuildContext context, String? language) {
   return showDialog<void>(
     context: context,
     builder: (context) => AlertDialog(
+      // Wide, as a popup can be: 16 from the screen's edges, and the content
+      // across all of it (owner, 2026-11-04: "too thin").
+      insetPadding: const EdgeInsetsDirectional.symmetric(
+        horizontal: _popoverSide,
+        vertical: 24,
+      ),
+      titlePadding: const EdgeInsetsDirectional.fromSTEB(
+        _popoverSide,
+        24,
+        _popoverSide,
+        0,
+      ),
+      contentPadding: const EdgeInsetsDirectional.only(top: 12, bottom: 8),
       title: Text(
         name == null ? l10n.howYouLearnTitle : l10n.howYouLearnTitleIn(name),
       ),
@@ -739,10 +760,15 @@ Future<void> showHowYouLearnPopover(BuildContext context, String? language) {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
-            Text(
-              l10n.howYouLearnIntro,
-              style: theme.textTheme.bodySmall!.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: _popoverSide,
+              ),
+              child: Text(
+                l10n.howYouLearnIntro,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
               ),
             ),
             const SizedBox(height: 8),

@@ -500,6 +500,7 @@ void main() {
         for (var i = 0; i < 5; i++) {
           await tester.pump(const Duration(milliseconds: 50));
         }
+        expect(tester.takeException(), isNull, reason: 'fits at 1.4x');
         // A popover with this language's part of the page, not the page.
         expect(find.byType(AlertDialog), findsOneWidget);
         expect(find.byType(HowYouLearnView), findsOneWidget);
@@ -540,15 +541,26 @@ void main() {
           find.descendant(of: dialog, matching: find.byType(GroupedList)),
           findsNothing,
         );
+        // One divider between each pair of skill rows (a pill per row), as
+        // wide as the dialog, which is 16 from each edge of the phone.
+        final rows = find.descendant(
+          of: dialog,
+          matching: find.byType(ModePill),
+        );
+        final count = rows.evaluate().length;
+        expect(count, greaterThan(1));
         final dividers = find.descendant(
           of: dialog,
           matching: find.byType(Divider),
         );
-        expect(dividers, findsWidgets);
-        expect(
-          tester.getSize(dividers.first).width,
-          tester.getSize(find.byType(HowYouLearnView)).width,
-        );
+        expect(dividers, findsNWidgets(count - 1));
+        final screen =
+            tester.view.physicalSize.width / tester.view.devicePixelRatio;
+        final box = find
+            .descendant(of: dialog, matching: find.byType(Material))
+            .first;
+        expect(tester.getSize(box).width, closeTo(screen - 32, 0.1));
+        expect(tester.getSize(dividers.first).width, closeTo(screen - 32, 0.1));
         expect(find.text(l10n.howYouLearnNone), findsNothing);
         expect(find.text(l10n.howYouLearnOpenSettings), findsNothing);
         expect(find.text(l10n.adjustedPrivacy), findsNothing);
