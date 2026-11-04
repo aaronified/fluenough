@@ -43,6 +43,12 @@ name: Release
 #     tests that read the version compare against AppInfo.version itself, and
 #     whats_new_test.dart uses its own CHANGELOG text, so they cannot change
 #     result with a bump.
+# The shards run in every other case, including when `ci-check` itself fails
+# or is skipped by an error: they are skipped only when ci-check succeeded AND
+# said skip=true. The release job runs when prepare passed (or was skipped)
+# and the tests succeeded, or were skipped on purpose (ci-check succeeded,
+# skip=true, test skipped). A failed shard, a failed prepare or a cancelled
+# run never releases.
 # When the shards are skipped the release job still runs; it keeps its own
 # checks (tag matches pubspec.yaml, deck validator, live downloads).
 #
@@ -263,12 +269,16 @@ jobs:
 
   # The test gate: the same 8 shards as ci.yml's "App: tests", in parallel, on
   # the release commit. Any failed shard stops the others (fail-fast) and the
-  # release job never starts. No secrets and no run number here. Skipped when
-  # `ci-check` found CI's green result for this commit (see the header).
+  # release job never starts. No secrets and no run number here. Runs unless
+  # `ci-check` succeeded and found CI's green result for this commit, so a
+  # failed or skipped ci-check still runs all the tests (see the header).
   test:
     name: "Tests ${{ matrix.n }}/8"
     needs: [prepare, ci-check]
-    if: ${{ !cancelled() && (needs.prepare.result == 'success' || needs.prepare.result == 'skipped') && needs.ci-check.result == 'success' && needs.ci-check.outputs.skip != 'true' }}
+    if: ${{ !cancelled() && (needs.prepare.result == 'success' || needs.prepare.result == 'skipped') && !(needs.ci-check.result == 'success' && needs.ci-check.outputs.skip == 'true') }}
+    # The workflow-level contents: write must not reach the shards.
+    permissions:
+      contents: read
     strategy:
       fail-fast: true
       matrix:
@@ -319,17 +329,19 @@ jobs:
       - run: flutter test --total-shards 8 --shard-index ${{ matrix.shard }}
 
   # Runs when the tests passed, or were skipped on purpose because CI already
-  # passed (ci-check succeeded with skip=true). A skipped test job with
-  # ci-check not saying so (for example ci-check failed), a failed shard or a
+  # passed (ci-check succeeded with skip=true). A failed ci-check does not
+  # block a release: the tests then run and must pass. A failed prepare, a
+  # failed shard, a skipped test job without ci-check's skip=true, or a
   # cancelled run never gets here.
   release:
     needs: [prepare, ci-check, test]
     if: >-
       ${{ !cancelled()
       && (needs.prepare.result == 'success' || needs.prepare.result == 'skipped')
-      && needs.ci-check.result == 'success'
       && (needs.test.result == 'success'
-          || (needs.test.result == 'skipped' && needs.ci-check.outputs.skip == 'true')) }}
+          || (needs.ci-check.result == 'success'
+              && needs.ci-check.outputs.skip == 'true'
+              && needs.test.result == 'skipped')) }}
     runs-on: ubuntu-latest
     env:
       # The tag to build: prepare's for a manual run, else the pushed tag.
