@@ -44,6 +44,7 @@ import 'package:fluenough/core/models/rule.dart';
 import 'package:fluenough/core/numbers/number_practice.dart';
 import 'package:fluenough/core/numbers/number_speller.dart';
 import 'package:fluenough/core/scheduling/daily_budget.dart';
+import 'package:fluenough/core/scheduling/daily_timer.dart';
 import 'package:fluenough/core/scheduling/deck_sampling.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/script_split.dart';
@@ -4801,6 +4802,40 @@ cards:
             member.card.id,
       };
       expect(served.intersection({for (final c in cards) c.id}), isEmpty);
+    });
+
+    test('a day\'s session that has nothing left to ask ends with the full '
+        'time, and Today reads the day done (#1007)', () async {
+      final state = spanishLearner();
+      await state.load();
+      final spanish = state.languages.firstWhere((l) => l.code == 'es');
+      final card = state.decks
+          .firstWhere((d) => d.language.code == 'es')
+          .cards
+          .first;
+      final run = state.startDaily('es')!;
+      // No new word is left to teach today, and the one card is asked.
+      run.taught = DailyPlanner.newCap;
+      run.asked.add(card.id);
+      final session = DrillSession(
+        state: state,
+        items: <SessionItem>[
+          SessionItem(card: card, mode: DrillMode.recognition, state: null),
+        ],
+        daily: run,
+      );
+      addTearDown(session.dispose);
+      session.reveal();
+      session.rate(SelfGrade.good);
+
+      // Nothing was left, so the session ended, with its time full rather
+      // than a minute short.
+      expect(session.finished, isTrue);
+      expect(
+        state.dailySpent('es'),
+        greaterThanOrEqualTo(run.spentAtStart + run.clock.budget),
+      );
+      expect(state.dailyPlanFor(spanish).done, isTrue);
     });
 
     testWidgets('catching up says so, and "+ 5 min" adds five minutes a tap '

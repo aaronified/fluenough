@@ -1684,11 +1684,13 @@ class DrillSession extends ChangeNotifier {
         _settleClock(run);
       } else {
         // The round is done: the next is built on the time left. A round of
-        // cards none can be drilled is passed over for the next: the
-        // session ends only when no round is left to build (each round's
-        // cards are marked asked, so this ends), never with time left and
-        // cards waiting (#1007).
-        while (next >= items.length) {
+        // cards none can be drilled is passed over for the next. Each
+        // round's cards are marked asked, so this ends by itself; the cap
+        // is only a cheap guard, as a round builds two queues, against a
+        // long run of rounds none can be drilled (listening cards with
+        // sound off). It is far above any real pool, so the session still
+        // never ends with time left and cards waiting (#1007).
+        for (var tries = 0; next >= items.length && tries < 50; tries++) {
           final more = _state.nextDailyRound(run);
           if (more.isEmpty) break;
           final from = items.length;
