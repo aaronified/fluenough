@@ -11,6 +11,10 @@ Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the f
 3. **Today, daily quota over**: the ring is greyed, a tick, "Done for today" (the app's words), "15 of 15 min", no chips, and still presses: it opens screen 1 (#1007, #1008). The Keep going text button under the ring is as built today (`plan.canKeepGoing`: shown once the budget is spent) and is outlined "unchanged". Tiles and hint as on screen 2.
 4. **In session after Keep going**: the drill's own `DrillHeader` (close, wave, clock, the word's sounds, report). The bar is full for the whole stretch and the clock counts up the time taken (`3:12`), not down. A small **reference frame** below shows the normal session: bar 35 percent, the time left counting down (`9:48`).
 
+## The info dot on the hint (owner, 2026-11-04)
+
+The hint line "Tap a skill to practise only that skill" ends in an info dot that shows how the skills are fitted to the learner. It reuses the app's existing pattern, `IpaInfoDot` (`lib/features/decks/ipa_info_dot.dart`): an `Icons.info_outline` `IconButton`, 20 dp icon, 48 dp target, the tooltip "Info" (the existing `hintInfo` string, one word; the dot's colour is the icon button default, on-surface-variant). Its screen-reader label is the new phrase "How skills are fitted to you". What it opens: the app's dots open a bottom sheet (`showPronunciation`), but this one opens the full **How you learn** page (`HowYouLearnPage`, `lib/features/stats/how_you_learn_page.dart`), the page the "Adjusted to you" strip on Today already opens (`AppNavigator.openHowYouLearn`). So the tapped state is a page, not a popover: the fourth frame beside screens 2 and 3 draws its top as built (app bar with back and report, the intro, the You / At the start legend, then the skill rows: name, "A seen word you get right comes back in 12 days, not 9.", the track, the verdict chip, "About 118 reviews in the next 30 days, was 160"). The "Info dot tapped" control shows or hides that frame and the dot's pressed state with its tooltip. Numbers on the page are examples.
+
 ## What the blank end screen is today (scrapped)
 
 When a session ends or a finished day is opened with nothing to serve, the learner gets one of two near-empty screens: the drill's empty state ("Nothing to drill right now / Everything here is scheduled for later. New words come in lessons.", `drillEmptyTitle` and `drillEmptyBody` in `lib/features/drill/drill_page.dart`), and the summary's empty variant ("Session done / No cards answered.", `SummaryPage` with `result.total == 0`). Per the owner's answer the summary with Keep going replaces them as the end screen. (Build note: that means the summary must be built for a day with few or no answers in the log, with the by-skill rows left out, and Keep going always present.)
@@ -22,6 +26,8 @@ When a session ends or a finished day is opened with nothing to serve, the learn
 - Ring tap on the finished day (owner, 2026-11-04): "the summary with keep going option is the end screen. the current blank end screen is to be scrapped". The greyed ring opens the summary (screens 3 to 1), and the summary carries Keep going.
 - No add-minutes arrows, no step control (owner, 2026-11-04: "they do not need to add minutes, they can keep going"). Not on the page.
 
+- Info dot on the hint (owner, 2026-11-04): reuse the app's info dot, one-word tooltip, screen-reader label "How skills are fitted to you", opening How you learn; see the section above.
+
 ## Open questions for the owner
 
 1. Keep going on Today: it exists there today (under the ring once the day is done) and now also on the summary. Keep it on both, or only on the summary, so the finished-day ring is the single way on? Drawn: kept on both, as built.
@@ -30,11 +36,12 @@ When a session ends or a finished day is opened with nothing to serve, the learn
 4. After Keep going starts, the time taken: added to the day's total on Today and on the next summary, or kept apart? Does Today's ring then stay full and greyed?
 5. The clock when counting up: `3:12` (the app's m:ss, drawn) or `03:12`? Past an hour it would read `62:10`.
 6. The hint's wording and place (inside the Due now card, above the tiles): this line or the shorter "Tap a skill to practise it alone"? Should it go once the learner has tapped a tile a few times?
-7. The greyed ring's arc fails 3:1 (self-check below). It is #1008's design (outline variant on the page), and "15 of 15 min" says the same in text. Make the done arc stronger?
+7. The info dot opens a full page where the app's other dots open a sheet. Keep the page (drawn, it is the same page as the Adjusted to you strip), or a sheet with a short explanation and a "See how you learn" link? Also: before a skill is adjusted the page shows "Not adjusted yet" rows; is the dot still wanted then?
+8. The greyed ring's arc fails 3:1 (self-check below). It is #1008's design (outline variant on the page), and "15 of 15 min" says the same in text. Make the done arc stronger?
 
 ## Self-check results
 
-WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and run in Chromium for both themes. Text 4.5:1, icons and outlines 3:1. All pairs pass except the greyed done-ring arc (question 7).
+WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and run in Chromium for both themes. Text 4.5:1, icons and outlines 3:1. All pairs pass except the greyed done-ring arc (question 8).
 
 | Theme | Pair | Colours | Ratio | Needs | Result |
 |---|---|---|---|---|---|
@@ -69,6 +76,16 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | light | streak tile label | onSv on sHigh | 7.64 : 1 | 4.5 : 1 | pass |
 | light | Done button | onP on p | 6.46 : 1 | 4.5 : 1 | pass |
 | light | Keep going and lesson buttons | onSc on sc | 7.25 : 1 | 4.5 : 1 | pass |
+| light | info dot icon on due card | onSv on pc | 7.25 : 1 | 3 : 1 | pass |
+| light | info dot pressed (16% of onPc) icon | onSv on pc | 7.25 : 1 | 3 : 1 | pass |
+| light | page text | onS on sLow | 15.5 : 1 | 4.5 : 1 | pass |
+| light | page captions, axis | onSv on sLow | 8.45 : 1 | 4.5 : 1 | pass |
+| light | intro on page | onS on s | 16.33 : 1 | 4.5 : 1 | pass |
+| light | legend | onSv on s | 8.9 : 1 | 4.5 : 1 | pass |
+| light | seen verdict | onPc on pc | 7.21 : 1 | 4.5 : 1 | pass |
+| light | slip verdict | onTc on tc | 7.24 : 1 | 4.5 : 1 | pass |
+| light | track fill on track | p on sHighest | 5.01 : 1 | 3 : 1 | pass |
+| light | start marker on track | onS on sHighest | 13.28 : 1 | 3 : 1 | pass |
 | light | change tag | onE on E | 6.46 : 1 | 4.5 : 1 | pass |
 | light | change outline on page | E on s | 6.16 : 1 | 3 : 1 | pass |
 | light | tile icon rec | #001B3E on #D6E3FF | 13.28 : 1 | 3 : 1 | pass |
@@ -107,6 +124,16 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | dark | streak tile label | onSv on sHigh | 8.48 : 1 | 4.5 : 1 | pass |
 | dark | Done button | onP on p | 7.68 : 1 | 4.5 : 1 | pass |
 | dark | Keep going and lesson buttons | onSc on sc | 7.25 : 1 | 4.5 : 1 | pass |
+| dark | info dot icon on due card | onSv on pc | 5.46 : 1 | 3 : 1 | pass |
+| dark | info dot pressed (16% of onPc) icon | onSv on pc | 5.46 : 1 | 3 : 1 | pass |
+| dark | page text | onS on sLow | 13.28 : 1 | 4.5 : 1 | pass |
+| dark | page captions, axis | onSv on sLow | 10.08 : 1 | 4.5 : 1 | pass |
+| dark | intro on page | onS on s | 14.33 : 1 | 4.5 : 1 | pass |
+| dark | legend | onSv on s | 10.88 : 1 | 4.5 : 1 | pass |
+| dark | seen verdict | onPc on pc | 7.21 : 1 | 4.5 : 1 | pass |
+| dark | slip verdict | onTc on tc | 7.24 : 1 | 4.5 : 1 | pass |
+| dark | track fill on track | p on sHighest | 7.23 : 1 | 3 : 1 | pass |
+| dark | start marker on track | onS on sHighest | 9.55 : 1 | 3 : 1 | pass |
 | dark | change tag | onE on E | 7.72 : 1 | 4.5 : 1 | pass |
 | dark | change outline on page | E on s | 10.89 : 1 | 3 : 1 | pass |
 | dark | tile icon rec | #D6E3FF on #284777 | 7.22 : 1 | 3 : 1 | pass |

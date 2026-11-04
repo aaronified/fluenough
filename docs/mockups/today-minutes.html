@@ -73,7 +73,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 /* due card with the skill tiles */
 .due{background:var(--pc);color:var(--onPc);border-radius:var(--r-hero);padding:24px;margin:16px 0}
 .hint{margin:0 0 12px;font-size:calc(12px*var(--t));line-height:1.35;color:var(--onPc);display:flex;gap:6px;align-items:flex-start}
-.hint svg.i{width:16px;height:16px;margin-top:2px}
+
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}
 .tile{background:var(--sLowest);border-radius:var(--r-field);padding:8px 6px;display:flex;flex-direction:column;min-height:calc(58px*var(--t));color:var(--onS)}
 .tile .top{display:flex;align-items:center;gap:4px}
@@ -143,6 +143,40 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
 .sum .b.done{min-height:60px;background:var(--p);color:var(--onP)}
 .sum .b.ton{min-height:52px;background:var(--sc);color:var(--onSc)}
 .hl-off .gone{display:none}
+/* info dot: the app's IpaInfoDot (info_outline, 20 dp icon, 48 dp target, tooltip "Info") */
+.hint{align-items:center}
+.idot{position:relative;flex:none;width:48px;height:48px;margin:-10px -12px -10px 0;border:0;background:none;color:var(--onSv);display:flex;align-items:center;justify-content:center;border-radius:var(--r-round);padding:0}
+.idot svg.i{width:20px;height:20px}
+.idot.pr::before{content:"";position:absolute;inset:4px;border-radius:var(--r-round);background:color-mix(in srgb,var(--onPc) 16%,transparent)}
+.idot svg{position:relative}
+.itip{position:absolute;bottom:100%;right:0;background:var(--inv);color:var(--onInv);border-radius:var(--r-control);padding:4px 10px;font-size:12px;line-height:16px;font-weight:500;white-space:nowrap;z-index:5}
+/* How you learn page (lib/features/stats/how_you_learn_page.dart), top of the page */
+.hyl .ab2{height:56px;display:flex;align-items:center;padding:0 4px;gap:4px}
+.hyl .ab2 .ib{width:48px;height:48px;display:flex;align-items:center;justify-content:center;color:var(--onSv)}
+.hyl .ab2 .tt{flex:1;font-size:calc(22px*var(--t));line-height:1.2;color:var(--onS)}
+.hyl .pg{padding:4px 16px 24px}
+.hyl .intro{font-size:calc(16px*var(--t));line-height:1.4;margin:0}
+.hyl .leg{display:flex;flex-wrap:wrap;gap:6px 18px;padding:0 8px;margin:16px 0 0;font-size:calc(12px*var(--t));font-weight:600;color:var(--onSv)}
+.hyl .leg span{display:flex;align-items:center;gap:6px}
+.hyl .leg i{display:block;background:var(--p);width:16px;height:8px;border-radius:var(--r-mark)}
+.hyl .leg i.st{background:var(--onS);width:2px;height:14px}
+.hyl .grp{margin-top:16px;display:flex;flex-direction:column;gap:2px;border-radius:var(--r-card);overflow:hidden}
+.hyl .row{background:var(--sLow);padding:16px;display:flex;gap:12px;align-items:flex-start}
+.hyl .row .mp{flex:none;width:36px;height:28px;border-radius:var(--r-chip);display:flex;align-items:center;justify-content:center}
+.hyl .row .mp svg.i{width:20px;height:20px}
+.hyl .row .c{flex:1;min-width:0;display:flex;flex-direction:column;gap:8px}
+.hyl .row h4{margin:2px 0 0;font-size:calc(16px*var(--t));line-height:1.3;font-weight:500}
+.hyl .row p{margin:0;font-size:calc(14px*var(--t));line-height:1.35}
+.hyl .row .mu{font-size:calc(12px*var(--t));line-height:1.35;color:var(--onSv)}
+.hyl .trk{position:relative;height:18px}
+.hyl .trk .bg{position:absolute;left:0;right:0;top:4px;height:10px;border-radius:var(--r-mark);background:var(--sHighest)}
+.hyl .trk .fl{position:absolute;left:0;top:4px;height:10px;border-radius:var(--r-mark);background:var(--p)}
+.hyl .trk .mk{position:absolute;top:0;width:2px;height:18px;border-radius:var(--r-mark);background:var(--onS)}
+.hyl .axis{display:flex;justify-content:space-between;font-size:calc(12px*var(--t));color:var(--onSv)}
+.hyl .vd{align-self:flex-start;display:flex;gap:4px;align-items:flex-start;padding:4px 10px 4px 6px;border-radius:var(--r-chip);font-size:calc(12px*var(--t));line-height:1.35;font-weight:700}
+.hyl .vd svg.i{width:16px;height:16px;margin-top:1px;flex:none}
+.hyl .vd.f{background:var(--pc);color:var(--onPc)}
+.hyl .vd.m{background:var(--tc);color:var(--onTc)}
 /* highlight of what changed */
 .hl-on .chg{outline:2px dashed var(--E);outline-offset:3px;position:relative;border-radius:var(--r-chip)}
 .hl-on .chg::after{content:"new";position:absolute;top:-10px;right:6px;background:var(--E);color:var(--onE);font-size:11px;font-weight:700;line-height:1;padding:3px 6px;border-radius:var(--r-mark);z-index:6;letter-spacing:.3px}
@@ -165,6 +199,7 @@ svg.i{width:24px;height:24px;fill:currentColor;display:block;flex:none}
  <div class="tg">Theme <span class="seg" data-k="theme"><button data-v="light">Light</button><button data-v="dark">Dark</button></span></div>
  <div class="tg">Screen <span class="seg" data-k="screen"><button data-v="all">All four</button><button data-v="sum">1 Review end</button><button data-v="todo">2 Not completed</button><button data-v="over">3 Quota over</button><button data-v="ses">4 After Keep going</button></span></div>
  <div class="tg">Hint <span class="seg" data-k="hint"><button data-v="long">Tap a skill to practise only that skill</button><button data-v="short">Tap a skill to practise it alone</button></span></div>
+ <div class="tg">Info dot tapped <span class="seg" data-k="tap"><button data-v="1">Show</button><button data-v="0">Hide</button></span></div>
  <div class="tg">Highlight changes <span class="seg" data-k="hl"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
 </div>
 <div id="root"></div>
@@ -191,6 +226,8 @@ const IC={
  up:'M7.41 15.41 12 10.83l4.59 4.58L18 14l-6-6-6 6z',
  down:'M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z',
  play:'M8 5v14l11-7z',
+ back:'M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z',
+ infoo:'M11 7h2v2h-2zm0 4h2v6h-2zm1-9C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z',
  vol:'M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 7.97v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z',
  bug:'M20 8h-2.81a5.985 5.985 0 0 0-1.82-1.96L17 4.41 15.59 3l-2.17 2.17a5.9 5.9 0 0 0-2.83 0L8.41 3 7 4.41l1.62 1.63C7.88 6.55 7.26 7.22 6.81 8H4v2h2.09c-.05.33-.09.66-.09 1v1H4v2h2v1c0 .34.04.67.09 1H4v2h2.81c1.04 1.79 2.97 3 5.19 3s4.15-1.21 5.19-3H20v-2h-2.09c.05-.33.09-.66.09-1v-1h2v-2h-2v-1c0-.34-.04-.67-.09-1H20V8zm-6 8h-4v-2h4v2zm0-4h-4v-2h4v2z',
  close:'M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z',
@@ -217,9 +254,10 @@ const CAP={
  todo:{cap:'2  Today, review not completed',sub:'8 of 15 min. Minutes budgeted in the chips, the hint above the skill tiles, all pending cards on the tiles, tile arrows as today, no Quick revision.'},
  over:{cap:'3  Today, daily quota over',sub:'15 of 15 min, no chips. The greyed ring still presses and opens screen 1. Keep going under the ring is as built today (shown once the day is done); see question 1.'},
  ses:{cap:'4  In session after Keep going',sub:'The same header as the drill: close, the bar (full for the whole stretch), the time taken counting up, the word\'s sounds, report.'},
+ hyl:{cap:'Info dot tapped: How you learn',sub:'The page the dot on screens 2 and 3 opens (the same page the "Adjusted to you" strip opens): top of the page as built, with two skills.'},
  ref:{cap:'Reference: normal session',sub:'The header as today: the bar 35% full, the time left counting down.'}};
 const PRESETS={todo:{spent:8,keep:false},over:{spent:15,keep:true}};
-const S={lang:'te',theme:'light',screen:'all',hint:'long',hl:'1'};
+const S={lang:'te',theme:'light',screen:'all',hint:'long',tap:'1',hl:'1'};
 const HINT={long:'Tap a skill to practise only that skill',short:'Tap a skill to practise it alone'};
 
 function phone(k){
@@ -242,7 +280,7 @@ function phone(k){
    ${done?'':`<div class="chips chg upd"><span class="chip rev">${rev} min review</span><span class="chip new${nw===0?' zero':''}">${nw} min new</span></div>`}
   </div>
   <div class="due" style="margin-bottom:16px">
-   <p class="hint chg" style="margin-bottom:14px">${ic('info')}<span>${S.hint==='long'?HINT.long:HINT.short}</span></p>
+   <div class="hint chg"><span style="flex:1;min-width:0">${S.hint==='long'?HINT.long:HINT.short}</span><button class="idot${S.tap==='1'?' pr':''}" aria-label="How skills are fitted to you" title="Info">${ic('infoo')}${S.tap==='1'?'<span class="itip" aria-hidden="true">Info</span>':''}</button></div>
    <div class="grid chg stay" style="padding:2px">${TILES.map(([id,nm,icn,n,mk])=>{
      const c=M[id]||[P.sc,P.onSc];
      return `<div class="tile"><div class="top"><span class="mp" style="background:${c[0]};color:${c[1]}">${ic(icn)}</span><span class="n">${n}</span><span class="pm">${mk?ic(mk):''}</span></div><div class="nm">${nm}</div></div>`}).join('')}</div>
@@ -287,13 +325,25 @@ function summary(){
   <div class="nd">Next due: 23 cards tomorrow</div>
   <div class="bt"><button class="b done">Done</button><button class="b ton chg">Keep going</button><button class="b ton">Today\u2019s lesson</button></div>
  </div></div>`}
+function hyl(){
+ const M=MODE[S.theme];
+ const trk=(fl,mk)=>`<div class="trk"><div class="bg"></div><div class="fl" style="width:${fl}%"></div><div class="mk" style="left:${mk}%"></div></div><div class="axis"><span>0</span><span>60 days</span></div>`;
+ const row=(id,icn,nm,txt,fl,mk,cls,ic2,vt,rv)=>`<div class="row"><span class="mp" style="background:${M[id][0]};color:${M[id][1]}">${ic(icn)}</span><div class="c"><h4>${nm}</h4><p>${txt}</p>${trk(fl,mk)}<span class="vd ${cls}">${ic(ic2)}${vt}</span><span class="mu">${rv}</span></div></div>`;
+ return `<div class="ph hyl" data-phone="hyl"><div class="ab2"><span class="ib" role="img" aria-label="Back">${ic('back')}</span><span class="tt">How you learn</span><span class="ib" role="img" aria-label="Report a problem">${ic('bug')}</span></div>
+ <div class="pg"><p class="intro">Fluenough brings a word back just before you would forget it. Each skill keeps its own pace, worked out from your answers.</p>
+ <div class="leg"><span><i></i>You</span><span><i class="st"></i>At the start</span></div>
+ <div class="grp">
+ ${row('rec','eye','Seen words','A seen word you get right comes back in 12 days, not 9.',20,15,'f','south','You remember seen words well: fewer reviews','About 118 reviews in the next 30 days, was\u00a0160')}
+ ${row('hear','hear','Heard words','A heard word you get right comes back in 3 days, not 4.',5,6.7,'m','north','Heard words slip faster: more reviews','About 96 reviews in the next 30 days, was\u00a080')}
+ </div></div></div>`}
 function render(){
  const d=document.documentElement;d.setAttribute('data-theme',S.theme);
  const P=PAL[S.theme];for(const k in P)d.style.setProperty('--'+k,P[k]);
  document.getElementById('wrap').className='wrap '+(S.hl==='1'?'hl-on':'hl-off');
  document.querySelectorAll('#g-tw .seg').forEach(s=>{const k=s.dataset.k;s.querySelectorAll('button').forEach(b=>b.setAttribute('aria-pressed',String(S[k])===b.dataset.v))});
- const keys=S.screen==='all'?['sum','todo','over','ses','ref']:S.screen==='ses'?['ses','ref']:[S.screen];
- const fn=k=>k==='sum'?summary():(k==='ses'||k==='ref')?session(k):phone(k);
+ let keys=S.screen==='all'?['sum','todo','over','ses','ref']:S.screen==='ses'?['ses','ref']:[S.screen];
+ if(S.tap==='1'){if(S.screen==='all')keys=['sum','todo','over','hyl','ses','ref'];else if(S.screen==='todo'||S.screen==='over')keys=[S.screen,'hyl']}
+ const fn=k=>k==='sum'?summary():k==='hyl'?hyl():(k==='ses'||k==='ref')?session(k):phone(k);
  const y=window.scrollY;
  document.getElementById('root').innerHTML=`<div class="frames">${keys.map(k=>`<div class="fcol"><div class="fcap">${CAP[k].cap}</div><p class="fsub">${CAP[k].sub}</p>${fn(k)}</div>`).join('')}</div>`;
  window.scrollTo(0,y);
@@ -306,7 +356,7 @@ document.addEventListener('click',e=>{
 /* ===== contrast self-check: console only (window.__contrast) ===== */
 const lum=h=>{const c=[1,3,5].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*c[0]+.7152*c[1]+.0722*c[2]};
 const cr=(a,b)=>{const x=lum(a),y=lum(b);return (Math.max(x,y)+.05)/(Math.min(x,y)+.05)};
-const PAIRS=[['body text, minutes','onS','s',4.5],['captions','onSv','s',4.5],['ring button label','onP','p',4.5],['done ring label, check','onSv','sHigh',4.5],['Keep going text button','p','s',4.5],['review chip','onSc','sc',4.5],['new chip','onP','p',4.5],['new chip at 0 min, text','onSv','s',4.5],['new chip at 0 min, outline','ol','s',3],['hint on the due card','onPc','pc',4.5],['tile number','onS','sLowest',4.5],['tile name','onSv','sLowest',4.5],['tile pace arrow','onSv','sLowest',3],['ring progress arc, active','p','s',3],['ring progress arc, greyed (done)','olv','s',3],['language pill','onSc','sc',4.5],['streak card text','onS','sLow',4.5],['streak card caption','onSv','sLow',4.5],['quick revision (removed, struck)','onSv','sLow',4.5],['session clock','onS','s',4.5],['wave and end dot','p','s',3],['header icons (close, sound, report)','onSv','s',3],['drill card text','onS','sLow',4.5],['drill card reading, question','onSv','sLow',4.5],['answer option','onS','sLowest',4.5],['answer option on card (shape)','sLowest','sLow',1.0],['summary title, score text','onS','s',4.5],['summary tick','onTc','tc',3],['streak tile value','onS','sHigh',4.5],['streak tile label','onSv','sHigh',4.5],['Done button','onP','p',4.5],['Keep going and lesson buttons','onSc','sc',4.5],['change tag','onE','E',4.5],['change outline on page','E','s',3]];
+const PAIRS=[['body text, minutes','onS','s',4.5],['captions','onSv','s',4.5],['ring button label','onP','p',4.5],['done ring label, check','onSv','sHigh',4.5],['Keep going text button','p','s',4.5],['review chip','onSc','sc',4.5],['new chip','onP','p',4.5],['new chip at 0 min, text','onSv','s',4.5],['new chip at 0 min, outline','ol','s',3],['hint on the due card','onPc','pc',4.5],['tile number','onS','sLowest',4.5],['tile name','onSv','sLowest',4.5],['tile pace arrow','onSv','sLowest',3],['ring progress arc, active','p','s',3],['ring progress arc, greyed (done)','olv','s',3],['language pill','onSc','sc',4.5],['streak card text','onS','sLow',4.5],['streak card caption','onSv','sLow',4.5],['quick revision (removed, struck)','onSv','sLow',4.5],['session clock','onS','s',4.5],['wave and end dot','p','s',3],['header icons (close, sound, report)','onSv','s',3],['drill card text','onS','sLow',4.5],['drill card reading, question','onSv','sLow',4.5],['answer option','onS','sLowest',4.5],['answer option on card (shape)','sLowest','sLow',1.0],['summary title, score text','onS','s',4.5],['summary tick','onTc','tc',3],['streak tile value','onS','sHigh',4.5],['streak tile label','onSv','sHigh',4.5],['Done button','onP','p',4.5],['Keep going and lesson buttons','onSc','sc',4.5],['info dot icon on due card','onSv','pc',3],['info dot pressed (16% of onPc) icon','onSv','pc',3],['page text','onS','sLow',4.5],['page captions, axis','onSv','sLow',4.5],['intro on page','onS','s',4.5],['legend','onSv','s',4.5],['seen verdict','onPc','pc',4.5],['slip verdict','onTc','tc',4.5],['track fill on track','p','sHighest',3],['start marker on track','onS','sHighest',3],['change tag','onE','E',4.5],['change outline on page','E','s',3]];
 window.__contrast=[];
 ['light','dark'].forEach(t=>{PAIRS.forEach(([n,f,b,need])=>{const r=cr(PAL[t][f],PAL[t][b]);window.__contrast.push({theme:t,pair:n,fg:f,bg:b,ratio:+r.toFixed(2),need,pass:r>=need})});
  Object.entries(MODE[t]).forEach(([id,c])=>{const r=cr(c[0],c[1]);window.__contrast.push({theme:t,pair:'tile icon '+id,fg:c[1],bg:c[0],ratio:+r.toFixed(2),need:3,pass:r>=3})});});
