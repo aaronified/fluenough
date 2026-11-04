@@ -855,23 +855,43 @@
       }
     }
   },
-  "todayDailyReviews": "{count, plural, =1{1 review} other{{count} reviews}}",
-  "@todayDailyReviews": {
-    "description": "Today's split: how many reviews the day's session holds.",
+  "todayDailyReviewMinutes": "{minutes} min review",
+  "@todayDailyReviewMinutes": {
+    "description": "Today's split, under the ring: the minutes of today's time given to reviews, as in 12 min review. No card count.",
     "placeholders": {
-      "count": {
+      "minutes": {
         "type": "int",
-        "example": "8"
+        "example": "12"
       }
     }
   },
-  "todayDailyNew": "{count} new",
-  "@todayDailyNew": {
-    "description": "Today's split: how many new words the day's session teaches.",
+  "todayDailyNewMinutes": "{minutes} min new",
+  "@todayDailyNewMinutes": {
+    "description": "Today's split, under the ring: the minutes of today's time given to new words, as in 3 min new. No card count.",
     "placeholders": {
-      "count": {
+      "minutes": {
         "type": "int",
-        "example": "6"
+        "example": "3"
+      }
+    }
+  },
+  "todayDailyReviewMinutesSemantics": "{minutes, plural, =1{1 minute of review} other{{minutes} minutes of review}}",
+  "@todayDailyReviewMinutesSemantics": {
+    "description": "What a screen reader says of the review minutes under Today's ring.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "todayDailyNewMinutesSemantics": "{minutes, plural, =1{1 minute of new words} other{{minutes} minutes of new words}}",
+  "@todayDailyNewMinutesSemantics": {
+    "description": "What a screen reader says of the new-word minutes under Today's ring.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "3"
       }
     }
   },

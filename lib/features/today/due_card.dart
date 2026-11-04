@@ -119,7 +119,6 @@ class _SkillGrid extends StatelessWidget {
         _SkillTile(
           skill: skill,
           count: count,
-          due: numbers.dueIn[skill] ?? 0,
           revisable: numbers.revisable[skill] ?? 0,
           noVoice: skill.needsVoice && numbers.noVoice,
           mark: pace?.marks[skill],
@@ -127,7 +126,6 @@ class _SkillGrid extends StatelessWidget {
       if (numbers.script case final script?)
         _SkillTile(
           count: script.count,
-          due: script.due,
           revisable: script.revisable,
           noVoice: false,
           mark: pace?.scriptMark,
@@ -154,8 +152,8 @@ class _SkillGrid extends StatelessWidget {
   }
 }
 
-/// One skill: its icon, the arrow of its pace, how many of today's cards
-/// drill it, and its name under them. Without a [skill] it is the Script
+/// One skill: its icon, the arrow of its pace, how many cards wait in it, and
+/// its name under them. Without a [skill] it is the Script
 /// tile. Tapped, it reviews what is due in the skill, in every language
 /// learned. With nothing due, it asks whether to revise every word known in
 /// the skill (ADR-0030).
@@ -171,7 +169,6 @@ class _SkillTile extends StatelessWidget {
   const _SkillTile({
     this.skill,
     required this.count,
-    required this.due,
     required this.revisable,
     required this.noVoice,
     this.mark,
@@ -183,13 +180,12 @@ class _SkillTile extends StatelessWidget {
   /// The arrow: which way the skill's pace moved; null if not adjusted.
   final PaceDirection? mark;
 
-  /// Today's cards in this skill, as the tile shows.
+  /// The cards waiting in this skill that can be drilled now: what the tile
+  /// shows and what tapping it starts, all of them whatever the day's time
+  /// budget (#1009).
   final int count;
 
-  /// The cards a review of this skill alone holds, which tapping starts.
-  final int due;
-
-  /// With nothing [due], how many words the skill can revise; with none,
+  /// With nothing waiting ([count] is 0), how many words the skill can revise; with none,
   /// the tile starts nothing.
   final int revisable;
   final bool noVoice;
@@ -199,13 +195,16 @@ class _SkillTile extends StatelessWidget {
 
   /// What each tap starts: Script's own tiles' sessions are the script
   /// decks' Recognition and Write; a skill's leave those out.
-  DrillRequest get _review => skill == null
-      ? const DrillRequest.script()
-      : DrillRequest(skill: skill, script: ScriptScope.without);
+  DrillRequest get _review =>
+      skill == null ? const DrillRequest.script() : DrillRequest.tile(skill!);
 
   DrillRequest get _revision => skill == null
       ? const DrillRequest.script(revise: true)
-      : DrillRequest.reviseSkill(skill!, script: ScriptScope.without);
+      : DrillRequest.reviseSkill(
+          skill!,
+          script: ScriptScope.without,
+          drillableOnly: true,
+        );
 
   Future<void> _revise(BuildContext context) async {
     final l10n = AppLocalizations.of(context)!;
@@ -358,7 +357,7 @@ class _SkillTile extends StatelessWidget {
 
     final radius = BorderRadius.circular(AppRadii.field);
     void setUp() => AppNavigator.openVoices(context);
-    final VoidCallback? start = due > 0
+    final VoidCallback? start = count > 0
         ? () => AppNavigator.startDrill(context, _review)
         : revisable > 0
         ? () => _revise(context)
@@ -401,7 +400,7 @@ class _SkillTile extends StatelessWidget {
       onTap: start,
       onTapHint: start == null
           ? null
-          : due > 0
+          : count > 0
           ? l10n.todaySkillReviewHint
           : l10n.todaySkillRevise,
       excludeSemantics: true,

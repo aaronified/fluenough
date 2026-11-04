@@ -47,7 +47,6 @@ import 'package:fluenough/core/scheduling/daily_budget.dart';
 import 'package:fluenough/core/scheduling/daily_timer.dart';
 import 'package:fluenough/core/scheduling/deck_sampling.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
-import 'package:fluenough/core/scheduling/script_split.dart';
 import 'package:fluenough/core/scheduling/lesson.dart';
 import 'package:fluenough/core/scheduling/lesson_sets.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
@@ -2390,8 +2389,11 @@ cards:
       final spanish = state.languages.firstWhere((l) => l.code == 'es');
       final words = state.dailyPlanFor(spanish).split.newWords;
       expect(words, greaterThan(0));
-      expect(find.text(l10n.todayDailyReviews(0)), findsOneWidget);
-      expect(find.text(l10n.todayDailyNew(words)), findsOneWidget);
+      // Under the ring the split reads in minutes, never in cards (#1009).
+      final minutes = state.dailyPlanFor(spanish).newMinutes;
+      expect(minutes, greaterThan(0));
+      expect(find.text(l10n.todayDailyReviewMinutes(0)), findsOneWidget);
+      expect(find.text(l10n.todayDailyNewMinutes(minutes)), findsOneWidget);
       expect(find.text(l10n.todayDailyProgress(0, 15)), findsOneWidget);
       // Those words, plus the members of a set one of them belongs to,
       // which come whole.
@@ -4617,9 +4619,9 @@ cards:
         for (final plan in plans) {
           expect(plan.spent, Duration.zero);
           expect(
-            find.text(l10n.todayDailyReviews(plan.split.reviews)),
+            find.text(l10n.todayDailyReviewMinutes(plan.reviewMinutes)),
             findsNWidgets(
-              plans.where((p) => p.split.reviews == plan.split.reviews).length,
+              plans.where((p) => p.reviewMinutes == plan.reviewMinutes).length,
             ),
           );
           expect(
@@ -4628,9 +4630,7 @@ cards:
           );
         }
 
-        // The script decks' Recognition and Write are the Script tile's.
-        final byMode = ScriptSplit(state.progress.skills.scriptDecks)
-            .countByMode(queue);
+        // Each tile counts what tapping it serves (#1009).
         // Recognition is scheduled, so it has a tile (ADR-0034).
         expect(
           find.descendant(
@@ -4647,7 +4647,7 @@ cards:
         ]) {
           expect(
             find.bySemanticsLabel(
-              l10n.todaySkillSemantics(label, byMode[skill.mode] ?? 0),
+              l10n.todaySkillSemantics(label, numbers.bySkill[skill] ?? 0),
             ),
             findsOneWidget,
             reason: skill.name,
@@ -4877,7 +4877,7 @@ cards:
         findsOneWidget,
       );
       // No new words in the split.
-      expect(find.text(l10n.todayDailyNew(0)), findsOneWidget);
+      expect(find.text(l10n.todayDailyNewMinutes(0)), findsOneWidget);
       final add = find.text(l10n.todayDailyAddMinutes(5));
       await tester.tap(add);
       await tester.pump();
@@ -5092,7 +5092,11 @@ cards:
       expect(find.text(l10n.todayDailyProgress(15, 15)), findsOneWidget);
       expect(find.text(l10n.todayDailyStart), findsNothing);
       // The split is for a day still to do.
-      expect(find.text(l10n.todayDailyNew(7)), findsNothing);
+      expect(plan.newMinutes, greaterThan(0));
+      expect(
+        find.text(l10n.todayDailyNewMinutes(plan.newMinutes)),
+        findsNothing,
+      );
       await tester.tap(find.text(l10n.todayDailyKeepGoing));
       await tester.pumpAndSettle();
       expect(state.settings.dailyExtraFor('es', state.now()), 5);
@@ -5127,8 +5131,8 @@ cards:
       );
       final l10n = l10nOf(tester);
       expect(find.text(l10n.todayDailyProgress(15, 15)), findsOneWidget);
-      expect(find.text(l10n.todayDailyReviews(0)), findsNothing);
-      expect(find.text(l10n.todayDailyNew(0)), findsNothing);
+      expect(find.text(l10n.todayDailyReviewMinutes(0)), findsNothing);
+      expect(find.text(l10n.todayDailyNewMinutes(0)), findsNothing);
       expect(find.bySemanticsLabel(l10n.todayDailyDoneOpens), findsOneWidget);
       await tester.tap(find.byType(FilledButton));
       await tester.pumpAndSettle();
@@ -5228,7 +5232,10 @@ cards:
       final noReviews = plans
           .where((p) => p.showsSplit && p.split.reviews == 0)
           .length;
-      expect(find.text(l10n.todayDailyReviews(0)), findsNWidgets(noReviews));
+      expect(
+        find.text(l10n.todayDailyReviewMinutes(0)),
+        findsNWidgets(noReviews),
+      );
       expect(
         find.text(l10n.todayDailyDone),
         findsNWidgets(plans.where((p) => !p.showsSplit).length),

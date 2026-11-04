@@ -88,6 +88,11 @@ abstract final class DailyBudget {
     double secondsPerCard = defaultSecondsPerCard,
   }) => cards <= 0 ? 0 : max(1, (cards * secondsPerCard / 60).round());
 
+  /// About how many whole minutes [seconds] take, rounded, at least 1 for
+  /// any time, 0 for none.
+  static int minutesOfSeconds(double seconds) =>
+      seconds <= 0 ? 0 : max(1, (seconds / 60).round());
+
   /// The day's split (#485, owner, 2026-10-12: "what you recommended").
   ///
   /// [due] reviews are waiting and [budget] cards are left to spend today;

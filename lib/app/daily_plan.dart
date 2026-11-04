@@ -17,6 +17,7 @@ class DailyPlan {
     required this.due,
     required this.newAvailable,
     required this.split,
+    this.secondsPerTeach = DailyBudget.defaultSecondsPerTeach,
   });
 
   final LanguageInfo language;
@@ -35,6 +36,10 @@ class DailyPlan {
   /// Seconds a card takes this learner, for turning minutes to cards.
   final double secondsPerCard;
 
+  /// Seconds teaching a new word takes this learner, for turning the new
+  /// words of the split into minutes.
+  final double secondsPerTeach;
+
   /// Reviews waiting, whatever today's budget.
   final int due;
 
@@ -44,6 +49,18 @@ class DailyPlan {
   /// What the rest of today's budget buys. With the budget spent, what
   /// "Keep going" would buy: one step of minutes.
   final DailySplit split;
+
+  /// The minutes of today's time that go to reviews, as [split] divides it
+  /// (#1009): its reviews at [secondsPerCard] each, about, in whole minutes.
+  int get reviewMinutes =>
+      DailyBudget.minutesOfSeconds(split.reviews * secondsPerCard);
+
+  /// The minutes that go to new words, as [split] divides it: each word is
+  /// taught, then asked [DailyPlanner.teachPasses] times (#1009).
+  int get newMinutes => DailyBudget.minutesOfSeconds(
+    split.newWords *
+        (secondsPerTeach + DailyPlanner.teachPasses * secondsPerCard),
+  );
 
   /// The minutes today's session is for: the goal and what was added.
   int get minutes =>

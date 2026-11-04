@@ -67,20 +67,25 @@ Set<String> idsOf(AppState state, DrillRequest request) => <String>{
 void main() {
   group('Script on Today', () {
     test('script reading and writing are one count, kept out of Recognition '
-        'and Write, and no card is counted twice', () async {
+        'and Write, which count what a tap serves', () async {
       final state = await twoScriptsDue();
       final letters = state.deckById('hi-en-letters')!;
       expect(state.needsAlphabet(letters), isTrue);
       final numbers = TodayNumbers.of(state);
 
       expect(numbers.script!.count, 2, reason: 'Read and Write together');
-      expect(numbers.bySkill[Skill.recognition], 1);
-      expect(numbers.bySkill[Skill.production], 1);
-      // Every card of the session is in exactly one count.
-      final counted =
-          numbers.script!.count +
-          numbers.bySkill.values.fold(0, (a, b) => a + b);
-      expect(counted, numbers.due);
+      // A word tile counts the words waiting in its skill, as its tap serves
+      // them (#1009), and never a script deck's card.
+      for (final skill in <Skill>[Skill.recognition, Skill.production]) {
+        final served = state.skillTile(skill);
+        expect(numbers.bySkill[skill], served.length, reason: skill.name);
+        expect(numbers.bySkill[skill], greaterThan(0), reason: skill.name);
+        expect(
+          served.items.every((i) => i.card.id.startsWith('hi-en-words-')),
+          isTrue,
+          reason: skill.name,
+        );
+      }
     });
 
     test('the Script tile drills only script decks, in Recognition and '

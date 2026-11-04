@@ -19,7 +19,7 @@ const double _buttonSize = 152;
 /// Today's one button (#521): the day's session, which mixes reviews and
 /// new words and follows the daily minutes (#485). A ring around the button
 /// fills as the day's minutes are spent, with "12 of 15 min" under it and
-/// the split of reviews and new words under that.
+/// the minutes given to reviews and to new words under that.
 ///
 /// Once the minutes are spent the button reads "Done for today", with a
 /// smaller "Keep going". When reviews have piled up beyond three days of
@@ -264,7 +264,9 @@ class _RingPainter extends CustomPainter {
       old.fraction != fraction || old.track != track || old.fill != fill;
 }
 
-/// "8 reviews" and "6 new", side by side, as two small badges.
+/// "12 min review" and "3 min new", side by side, as two small badges: the
+/// minutes of the time left that the planner gives to each (#1009). No card
+/// counts are shown or spoken here.
 class _Split extends StatelessWidget {
   const _Split({required this.plan});
 
@@ -274,11 +276,13 @@ class _Split extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final scheme = Theme.of(context).colorScheme;
-    final reviews = l10n.todayDailyReviews(plan.split.reviews);
-    final fresh = l10n.todayDailyNew(plan.split.newWords);
+    final reviews = l10n.todayDailyReviewMinutes(plan.reviewMinutes);
+    final fresh = l10n.todayDailyNewMinutes(plan.newMinutes);
     return Semantics(
       container: true,
-      label: '$reviews, $fresh',
+      label:
+          '${l10n.todayDailyReviewMinutesSemantics(plan.reviewMinutes)}, '
+          '${l10n.todayDailyNewMinutesSemantics(plan.newMinutes)}',
       excludeSemantics: true,
       child: Wrap(
         alignment: WrapAlignment.center,
@@ -292,11 +296,11 @@ class _Split extends StatelessWidget {
           ),
           _Badge(
             text: fresh,
-            background: plan.split.newWords == 0 ? null : scheme.primary,
-            foreground: plan.split.newWords == 0
+            background: plan.newMinutes == 0 ? null : scheme.primary,
+            foreground: plan.newMinutes == 0
                 ? scheme.onSurfaceVariant
                 : scheme.onPrimary,
-            outline: plan.split.newWords == 0 ? scheme.outline : null,
+            outline: plan.newMinutes == 0 ? scheme.outline : null,
           ),
         ],
       ),
