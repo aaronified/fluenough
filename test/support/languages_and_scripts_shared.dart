@@ -2,6 +2,7 @@
 // languages_and_scripts_test.dart use, moved here unchanged.
 
 import 'dart:io';
+
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
@@ -16,6 +17,7 @@ import 'package:fluenough/features/drill/drill_preset.dart';
 import 'package:fluenough/features/placement/placement_questions.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
+
 import 'harness.dart';
 import 'two_script_course.dart';
 

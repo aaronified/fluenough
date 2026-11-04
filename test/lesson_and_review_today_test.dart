@@ -37,6 +37,7 @@ import 'package:fluenough/ui/widgets/stat_tile.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter/semantics.dart';
 import 'package:flutter_test/flutter_test.dart';
+
 import 'support/harness.dart';
 import 'support/lesson_and_review_shared.dart';
 

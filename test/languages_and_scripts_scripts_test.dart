@@ -3,6 +3,7 @@
 
 import 'dart:io';
 import 'dart:math';
+
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/language_offer.dart';

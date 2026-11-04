@@ -2,6 +2,7 @@
 // lesson_and_review_test.dart use, moved here unchanged.
 
 import 'dart:io';
+
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/session.dart';
 import 'package:fluenough/app/settings.dart';
@@ -17,6 +18,7 @@ import 'package:fluenough/features/drill/reading_fixture.dart';
 import 'package:fluenough/features/drill/typed_drill.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
+
 import 'harness.dart';
 
 // From session_queue_test.dart.

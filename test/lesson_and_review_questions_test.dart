@@ -2,6 +2,7 @@
 // the tests and their names are unchanged. This file holds: Hear, the IPA line, speaking, try again and Hear yourself, grammar questions, the grammar drill, minimal pairs, reading.
 
 import 'dart:io';
+
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/features.dart';
@@ -46,6 +47,7 @@ import 'package:fluenough/ui/widgets/speaker.dart';
 import 'package:fluenough/ui/widgets/target_text.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
+
 import 'support/fit_learner.dart';
 import 'support/harness.dart';
 import 'support/lesson_and_review_shared.dart';

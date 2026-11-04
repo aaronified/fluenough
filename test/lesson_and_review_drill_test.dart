@@ -2,6 +2,7 @@
 // the tests and their names are unchanged. This file holds: the drill, choice, match and rearrange, confusables, the braille keyboard, taught details.
 
 import 'dart:math';
+
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';

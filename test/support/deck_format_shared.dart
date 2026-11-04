@@ -2,6 +2,7 @@
 // deck_format_test.dart use, moved here unchanged.
 
 import 'dart:io';
+
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/deck.dart';
