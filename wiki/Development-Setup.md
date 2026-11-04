@@ -59,7 +59,7 @@ broken from a Waydroid run alone.
 
 ## Accessibility
 
-`test/accessibility_test.dart` checks automatically (#26):
+The `test/accessibility_*_test.dart` files check automatically (#26):
 
 - Flutter's tap-target, label and WCAG AA contrast guidelines on every drill
   state, the four tabs and the pushed screens, in both themes

@@ -9,7 +9,7 @@ name: CI
 #   bundles the first and the second gates app versions), only "App: analyse",
 #   "App: live downloads" and "Build debug APK" are skipped. The 8 test
 #   shards ALWAYS run (owner, 2026-11-02: "Keep the 8 test shards"): they
-#   read the real decks, and test/deck_format_test.dart is the one check
+#   read the real decks, and test/deck_format_*_test.dart are the one check
 #   before merge that main's code parses the PR's decks (#524). A change to
 #   anything else, the workflow included, or one that cannot be read, runs
 #   everything.
