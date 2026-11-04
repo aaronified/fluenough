@@ -64,6 +64,12 @@ class _Daily extends StatelessWidget {
     final code = plan.language.code;
     void start() =>
         AppNavigator.startDrill(context, DrillRequest.daily(language: code));
+    // The day has ended: the greyed ring opens the same summary the session
+    // ended on (#1007).
+    void openSummary() => AppNavigator.openSummary(
+      context,
+      AppScope.read(context).dailyResult(code),
+    );
     void keepGoing() {
       AppScope.read(context).addDailyMinutes(code, DailyBudget.stepMinutes);
       start();
@@ -95,7 +101,8 @@ class _Daily extends StatelessWidget {
             fraction: plan.fraction,
             label: label,
             done: plan.done,
-            onPressed: start,
+            doneLabel: l10n.todayDailyDoneOpens,
+            onPressed: plan.done ? openSummary : start,
           ),
         ),
         const SizedBox(height: 6),
@@ -129,26 +136,31 @@ class _Daily extends StatelessWidget {
   }
 }
 
-/// The ring that fills toward the day's minutes, with the button inside, or
-/// with the day done, a tick in its place that starts nothing.
+/// The ring that fills toward the day's minutes, with the button inside. With
+/// the day done the ring is full and greyed, with a tick in the button, which
+/// still presses: it opens the summary of the day's session (#1007).
 class _Ring extends StatelessWidget {
   const _Ring({
     required this.fraction,
     required this.label,
     required this.done,
+    required this.doneLabel,
     required this.onPressed,
   });
 
   final double fraction;
   final String label;
   final bool done;
+
+  /// What a screen reader says of the greyed button.
+  final String doneLabel;
   final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
-    final foreground = done ? scheme.onSecondaryContainer : scheme.onPrimary;
+    final foreground = done ? scheme.onSurfaceVariant : scheme.onPrimary;
     final content = Column(
       mainAxisSize: MainAxisSize.min,
       children: <Widget>[
@@ -169,6 +181,18 @@ class _Ring extends StatelessWidget {
         ),
       ],
     );
+    final button = FilledButton(
+      style: FilledButton.styleFrom(
+        fixedSize: const Size.square(_buttonSize),
+        minimumSize: Size.zero,
+        padding: const EdgeInsetsDirectional.all(8),
+        shape: const CircleBorder(),
+        backgroundColor: done ? scheme.surfaceContainerHigh : null,
+        foregroundColor: done ? scheme.onSurfaceVariant : null,
+      ),
+      onPressed: onPressed,
+      child: content,
+    );
     return SizedBox.square(
       dimension: _ringSize,
       child: Stack(
@@ -179,39 +203,23 @@ class _Ring extends StatelessWidget {
               size: const Size.square(_ringSize),
               painter: _RingPainter(
                 fraction: fraction,
-                track: scheme.secondaryContainer,
-                fill: scheme.primary,
+                track: done
+                    ? scheme.surfaceContainerHighest
+                    : scheme.secondaryContainer,
+                fill: done ? scheme.outlineVariant : scheme.primary,
               ),
             ),
           ),
           if (done)
             Semantics(
               container: true,
-              label: label,
+              button: true,
+              label: doneLabel,
               excludeSemantics: true,
-              child: Container(
-                width: _buttonSize,
-                height: _buttonSize,
-                padding: const EdgeInsetsDirectional.all(8),
-                alignment: Alignment.center,
-                decoration: ShapeDecoration(
-                  color: scheme.secondaryContainer,
-                  shape: const CircleBorder(),
-                ),
-                child: content,
-              ),
+              child: button,
             )
           else
-            FilledButton(
-              style: FilledButton.styleFrom(
-                fixedSize: const Size.square(_buttonSize),
-                minimumSize: Size.zero,
-                padding: const EdgeInsetsDirectional.all(8),
-                shape: const CircleBorder(),
-              ),
-              onPressed: onPressed,
-              child: content,
-            ),
+            button,
         ],
       ),
     );
