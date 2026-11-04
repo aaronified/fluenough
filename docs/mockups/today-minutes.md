@@ -1,19 +1,19 @@
 # Today: review end, quota over, Keep going. Self-check, notes and open questions
 
-Companion to `today-minutes.html` (owner spec of 2026-11-04). The page holds only the four screens and their tweak controls (language, theme, screen picker, hint wording, highlight), with what is new, changed, unchanged or removed outlined in red. The checks and notes are here.
+Companion to `today-minutes.html` (owner spec of 2026-11-04). The page holds only the four screens and their tweak controls (language, theme, screen picker, highlight), with what is new, changed, unchanged or removed outlined in red. The checks and notes are here.
 
 Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the forest seed, light and dark, Telugu, Bengali and Hindustani examples (readings follow the course: no final a in Bengali; Telugu word-final anusvara as `ṁ`). Starting points: `lib/features/summary/summary_page.dart`, `lib/features/today/daily_card.dart` and `due_card.dart` (main after #1008), `lib/ui/widgets/drill_frame.dart` (`DrillHeader`, the clock) and `wave_progress.dart`. New CSS corners use the `--r-*` tokens (`AppRadii`; a circle is `--r-round`, a stadium button `--r-stadium`); no numeric radius.
 
 ## The four screens
 
-1. **Review end screen** (`SummaryPage`, as built): the sunny tick, "You've completed {language} for today", a pill and "N right of M" per skill, the streak tile, "Next due: N cards tomorrow", then Done, and the lesson button. New: a **Keep going** button (tonal, between Done and "Today's lesson"). It is THE end screen (owner answer below). Quick revision has no place on it.
-2. **Today, review not completed**: the ring "Continue", "8 of 15 min", minutes budgeted in the chips ("12 min review", "3 min new": the day's whole budget, an 80 / 20 split drawn; the old badge shape; no card counts, #1009), the hint above the skill tiles ("Tap a skill to practise only that skill"; it wraps to two lines at 1.4x, nothing clips; a shorter wording is a tweak), the tiles with all pending cards (12, 24, 44, 22, 6, 31: more than 15 min buys) and their pace arrows as today, no Quick revision (shown struck through and outlined "removed" under the streak card; the highlight control hides it).
-3. **Today, daily quota over**: the ring is greyed, a tick, "Done for today" (the app's words), "15 of 15 min", no chips, and still presses: it opens screen 1 (#1007, #1008). The Keep going text button under the ring is as built today (`plan.canKeepGoing`: shown once the budget is spent) and is outlined "unchanged". Tiles and hint as on screen 2.
-4. **In session after Keep going**: the drill's own `DrillHeader` (close, wave, clock, the word's sounds, report). The bar is full for the whole stretch and the clock counts up the time taken (`3:12`), not down. A small **reference frame** below shows the normal session: bar 35 percent, the time left counting down (`9:48`).
+1. **Review end screen** (`SummaryPage`, as built): the sunny tick, "You've completed {language} for today", a pill and "N right of M" per skill, the streak tile, "Next due: N cards tomorrow", then Done and the lesson button. New: **Keep going** (tonal, between Done and "Today's lesson"), its only home, and the **day's total** ("23 min today", Keep going time included). It is THE end screen (owner answers below). Quick revision has no place on it.
+2. **Today, review not completed**: the ring "Continue", "8 of 15 min", and chips that show **what is left** of the budget: "5 min review" and "2 min new" (7 min left, split about 70 / 30; illustrative), counting down with the clock (near the end, "1 min review"). The old badge shape, no card counts (#1009). The empty-chip rule follows today's chips (the new chip is outlined and grey at 0, "0 min new" as "0 new" is today); the owner did not decide this one. The hint "Tap a skill to practise only that" with its info dot (always shown), the tiles with all pending cards (12, 24, 44, 22, 6, 31) and their pace arrows as today, no Quick revision (struck through and outlined "removed" under the streak card; the highlight control hides it), no Keep going.
+3. **Today, daily quota over**: the ring is full and greyed, a tick, "Done for today" (the app's words), the day's total "23 min today" (above the 15 min goal; the ring stays full and greyed), no chips, no Keep going button. The ring presses and opens screen 1. The greyed arc now uses the `outline` token (see the self-check).
+4. **In session after Keep going**: the drill's own `DrillHeader` (close, wave, clock, the word's sounds, report). The bar is full for the whole stretch and the clock counts up the time taken (`3:12`, the app's m:ss). A small **reference frame** shows the normal session: bar 35 percent, the time left counting down (`9:48`).
 
 ## The info dot on the hint (owner, 2026-11-04)
 
-The hint line "Tap a skill to practise only that skill" ends in an info dot that shows how the skills are fitted to the learner. It reuses the app's existing pattern, `IpaInfoDot` (`lib/features/decks/ipa_info_dot.dart`): an `Icons.info_outline` `IconButton`, 20 dp icon, 48 dp target, the tooltip "Info" (the existing `hintInfo` string, one word; the dot's colour is the icon button default, on-surface-variant). Its screen-reader label is the new phrase "How skills are fitted to you". What it opens: the app's dots open a bottom sheet (`showPronunciation`), but this one opens the full **How you learn** page (`HowYouLearnPage`, `lib/features/stats/how_you_learn_page.dart`), the page the "Adjusted to you" strip on Today already opens (`AppNavigator.openHowYouLearn`). So the tapped state is a page, not a popover: the fourth frame beside screens 2 and 3 draws its top as built (app bar with back and report, the intro, the You / At the start legend, then the skill rows: name, "A seen word you get right comes back in 12 days, not 9.", the track, the verdict chip, "About 118 reviews in the next 30 days, was 160"). The "Info dot tapped" control shows or hides that frame and the dot's pressed state with its tooltip. Numbers on the page are examples.
+The hint line "Tap a skill to practise only that" ends in an info dot that shows how the skills are fitted to the learner. It reuses the app's existing pattern, `IpaInfoDot` (`lib/features/decks/ipa_info_dot.dart`): an `Icons.info_outline` `IconButton`, 20 dp icon, 48 dp target, the tooltip "Info" (the existing `hintInfo` string, one word; the dot's colour is the icon button default, on-surface-variant). Its screen-reader label is the new phrase "How skills are fitted to you". What it opens: the app's dots open a bottom sheet (`showPronunciation`), but this one opens the full **How you learn** page (`HowYouLearnPage`, `lib/features/stats/how_you_learn_page.dart`), the page the "Adjusted to you" strip on Today already opens (`AppNavigator.openHowYouLearn`). So the tapped state is a page, not a popover: the fourth frame beside screens 2 and 3 draws its top as built (app bar with back and report, the intro, the You / At the start legend, then the skill rows: name, "A seen word you get right comes back in 12 days, not 9.", the track, the verdict chip, "About 118 reviews in the next 30 days, was 160"). The "Info dot tapped" control shows or hides that frame and the dot's pressed state with its tooltip. Numbers on the page are examples.
 
 ## What the blank end screen is today (scrapped)
 
@@ -22,26 +22,24 @@ When a session ends or a finished day is opened with nothing to serve, the learn
 ## Answered by the owner
 
 - Keep going when nothing is due (owner, 2026-11-04): "If user keeps going, let them review closest to due cards and teach them new cards. Change the ratio as needed to not teaching too much and not reviewing too far into the future." Keep going always has something to serve and never says "nothing more due today". (Build note: this lifts #1008's rule that a card reviewed today is never a filler, for Keep going only.)
-- Keep going's timer (owner, 2026-11-04): "When user keeps going, the timer bar will not show any timer, but the time taken. The progress bar will also be full." Drawn on screen 4.
-- Ring tap on the finished day (owner, 2026-11-04): "the summary with keep going option is the end screen. the current blank end screen is to be scrapped". The greyed ring opens the summary (screens 3 to 1), and the summary carries Keep going.
+- Keep going's timer (owner, 2026-11-04): "When user keeps going, the timer bar will not show any timer, but the time taken. The progress bar will also be full." Drawn on screen 4; the clock reads `3:12`, the app's format (answered 2026-11-04).
+- Ring tap on the finished day (owner, 2026-11-04): "the summary with keep going option is the end screen. the current blank end screen is to be scrapped". The greyed ring opens the summary, which carries Keep going.
+- Keep going on Today (owner, 2026-11-04, answer "Summary only"): Keep going lives only on the summary. The text button under the finished-day ring is removed.
+- Keep going on a normal day (owner, 2026-11-04, answer "No"): not shown, as drawn.
+- Chips (owner, 2026-11-04, answer "What is left"): the chips show what is left of the budget and count down with the clock.
+- Keep going's time (owner, 2026-11-04, answer "Add to the day's total"): added to the day's total on Today and on the next summary; the ring stays full and greyed. Drawn as "23 min today" on screens 1 and 3.
+- Hint wording (owner, 2026-11-04): the line reads "Tap a skill to practise only that", always shown, with the info dot after it.
+- Greyed done arc (owner, 2026-11-04): strengthen it to at least 3:1 in light and dark, still clearly greyed. Now the `outline` token, light 4.28 : 1, dark 5.84 : 1 (was 1.62 and 1.98 with outline variant).
+- Info dot on the hint (owner, 2026-11-04): reuse the app's info dot, one-word tooltip, screen-reader label "How skills are fitted to you", opening How you learn; see the section above.
 - No add-minutes arrows, no step control (owner, 2026-11-04: "they do not need to add minutes, they can keep going"). Not on the page.
 
-- Info dot on the hint (owner, 2026-11-04): reuse the app's info dot, one-word tooltip, screen-reader label "How skills are fitted to you", opening How you learn; see the section above.
+## Open question for the owner
 
-## Open questions for the owner
-
-1. Keep going on Today: it exists there today (under the ring once the day is done) and now also on the summary. Keep it on both, or only on the summary, so the finished-day ring is the single way on? Drawn: kept on both, as built.
-2. Keep going on a normal day (before the budget is spent): the brief once asked for it all day. Drawn: not shown, as today, because the ring's "Continue" already does that. Show it anyway?
-3. Chips: the whole day's budget (12 and 3 of 15), or what is left of it? Drawn: the whole budget, so they do not move as the learner answers. And what is the planner's real split; should a day with no new words show "0 min new" outlined, as "0 new" is today?
-4. After Keep going starts, the time taken: added to the day's total on Today and on the next summary, or kept apart? Does Today's ring then stay full and greyed?
-5. The clock when counting up: `3:12` (the app's m:ss, drawn) or `03:12`? Past an hour it would read `62:10`.
-6. The hint's wording and place (inside the Due now card, above the tiles): this line or the shorter "Tap a skill to practise it alone"? Should it go once the learner has tapped a tile a few times?
-7. The info dot opens a full page where the app's other dots open a sheet. Keep the page (drawn, it is the same page as the Adjusted to you strip), or a sheet with a short explanation and a "See how you learn" link? Also: before a skill is adjusted the page shows "Not adjusted yet" rows; is the dot still wanted then?
-8. The greyed ring's arc fails 3:1 (self-check below). It is #1008's design (outline variant on the page), and "15 of 15 min" says the same in text. Make the done arc stronger?
+1. The info dot opens a full page where the app's other dots open a sheet. Keep the page (drawn; it is the same page the Adjusted to you strip opens), or a sheet with a short explanation and a "See how you learn" link? Also: before a skill is adjusted the page shows "Not adjusted yet" rows; is the dot still wanted then?
 
 ## Self-check results
 
-WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and run in Chromium for both themes. Text 4.5:1, icons and outlines 3:1. All pairs pass except the greyed done-ring arc (question 8).
+WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and run in Chromium for both themes. Text 4.5:1, icons and outlines 3:1. All pairs pass.
 
 | Theme | Pair | Colours | Ratio | Needs | Result |
 |---|---|---|---|---|---|
@@ -59,7 +57,7 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | light | tile name | onSv on sLowest | 9.33 : 1 | 4.5 : 1 | pass |
 | light | tile pace arrow | onSv on sLowest | 9.33 : 1 | 3 : 1 | pass |
 | light | ring progress arc, active | p on s | 6.16 : 1 | 3 : 1 | pass |
-| light | ring progress arc, greyed (done) | olv on s | 1.62 : 1 | 3 : 1 | FAIL |
+| light | ring progress arc, greyed (done) | ol on s | 4.28 : 1 | 3 : 1 | pass |
 | light | language pill | onSc on sc | 7.25 : 1 | 4.5 : 1 | pass |
 | light | streak card text | onS on sLow | 15.5 : 1 | 4.5 : 1 | pass |
 | light | streak card caption | onSv on sLow | 8.45 : 1 | 4.5 : 1 | pass |
@@ -70,7 +68,7 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | light | drill card text | onS on sLow | 15.5 : 1 | 4.5 : 1 | pass |
 | light | drill card reading, question | onSv on sLow | 8.45 : 1 | 4.5 : 1 | pass |
 | light | answer option | onS on sLowest | 17.13 : 1 | 4.5 : 1 | pass |
-| light | summary title, score text | onS on s | 16.33 : 1 | 4.5 : 1 | pass |
+| light | summary title, score text, day total | onS on s | 16.33 : 1 | 4.5 : 1 | pass |
 | light | summary tick | onTc on tc | 7.24 : 1 | 3 : 1 | pass |
 | light | streak tile value | onS on sHigh | 14.01 : 1 | 4.5 : 1 | pass |
 | light | streak tile label | onSv on sHigh | 7.64 : 1 | 4.5 : 1 | pass |
@@ -107,7 +105,7 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | dark | tile name | onSv on sLowest | 11.37 : 1 | 4.5 : 1 | pass |
 | dark | tile pace arrow | onSv on sLowest | 11.37 : 1 | 3 : 1 | pass |
 | dark | ring progress arc, active | p on s | 10.86 : 1 | 3 : 1 | pass |
-| dark | ring progress arc, greyed (done) | olv on s | 1.98 : 1 | 3 : 1 | FAIL |
+| dark | ring progress arc, greyed (done) | ol on s | 5.84 : 1 | 3 : 1 | pass |
 | dark | language pill | onSc on sc | 7.25 : 1 | 4.5 : 1 | pass |
 | dark | streak card text | onS on sLow | 13.28 : 1 | 4.5 : 1 | pass |
 | dark | streak card caption | onSv on sLow | 10.08 : 1 | 4.5 : 1 | pass |
@@ -118,7 +116,7 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | dark | drill card text | onS on sLow | 13.28 : 1 | 4.5 : 1 | pass |
 | dark | drill card reading, question | onSv on sLow | 10.08 : 1 | 4.5 : 1 | pass |
 | dark | answer option | onS on sLowest | 14.98 : 1 | 4.5 : 1 | pass |
-| dark | summary title, score text | onS on s | 14.33 : 1 | 4.5 : 1 | pass |
+| dark | summary title, score text, day total | onS on s | 14.33 : 1 | 4.5 : 1 | pass |
 | dark | summary tick | onTc on tc | 7.24 : 1 | 3 : 1 | pass |
 | dark | streak tile value | onS on sHigh | 11.17 : 1 | 4.5 : 1 | pass |
 | dark | streak tile label | onSv on sHigh | 8.48 : 1 | 4.5 : 1 | pass |
