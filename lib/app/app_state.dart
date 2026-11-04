@@ -3040,7 +3040,15 @@ class AppState extends ChangeNotifier {
         if (item.state != null &&
             !item.state!.isDue(at) &&
             item.state!.lastReviewAt.isBefore(today) &&
-            (!keepGoing || DailyBudget.canPullForward(item.state!, at)) &&
+            (!keepGoing ||
+                DailyBudget.canPullForward(
+                  item.state!,
+                  at,
+                  parameters: progress.parameters.forPair((
+                    cardId: item.card.id,
+                    mode: item.mode,
+                  )),
+                )) &&
             !asked.contains(item.card.id))
           item,
     ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));
@@ -3063,10 +3071,16 @@ class AppState extends ChangeNotifier {
         times.spent +
         settings.teachTimeOn(at, language: code) +
         settings.clockTimeOn(at, language: code);
-    final pools = _dailyPools(code, at, const <String>{});
-    final fresh = untaughtCards(code).length;
     final left = minutes * 60 - spent.inSeconds;
-    // With the budget spent, the split is what "Keep going" would buy.
+    // With the budget spent, the split is what "Keep going" would buy, from
+    // the pools and under the caps Keep going serves by (#1010).
+    final going = left <= 0;
+    final pools = _dailyPools(code, at, const <String>{}, keepGoing: going);
+    final fresh = untaughtCards(code).length;
+    final dayCards = DailyBudget.cardsFor(
+      goal,
+      secondsPerCard: times.secondsPerCard,
+    );
     final round = _planDaily(
       code,
       left: left > 0
@@ -3077,10 +3091,13 @@ class AppState extends ChangeNotifier {
       fresh: fresh,
       at: at,
       whole: true,
-    );
-    final dayCards = DailyBudget.cardsFor(
-      goal,
-      secondsPerCard: times.secondsPerCard,
+      taught: going ? newWordsToday(at) : 0,
+      cap: going
+          ? DailyBudget.keepGoingNewCap(
+              due: pools.due.length,
+              dayCards: dayCards,
+            )
+          : DailyPlanner.newCap,
     );
     final teach = settings.teachTimeTotal(language: code);
     return DailyPlan(
@@ -3135,15 +3152,31 @@ class AppState extends ChangeNotifier {
     return DailyRun(
       language: language,
       clock: DailyCountdown(
-        budget: going || left <= Duration.zero
-            ? const Duration(minutes: DailyBudget.stepMinutes)
-            : left,
+        budget: going ? const Duration(minutes: DailyBudget.stepMinutes) : left,
         now: now(),
         countsUp: going,
       ),
       spentAtStart: plan.spent,
       keepGoing: going,
     );
+  }
+
+  /// Whether a Keep going stretch in [language] has anything to serve now
+  /// (#1010): the same question [nextDailyRound] answers for its first
+  /// round, asked of a stretch that is thrown away, so that it changes
+  /// nothing. The summary offers Keep going only while this is true, and
+  /// says so when it is not.
+  bool keepGoingHasWork(String language) {
+    final run = DailyRun(
+      language: language,
+      clock: DailyCountdown(
+        budget: const Duration(minutes: DailyBudget.stepMinutes),
+        now: now(),
+        countsUp: true,
+      ),
+      keepGoing: true,
+    );
+    return nextDailyRound(run).isNotEmpty;
   }
 
   /// The next round of [run]'s session, built only when the last is done

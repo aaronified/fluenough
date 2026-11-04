@@ -15,7 +15,11 @@ import 'package:fluenough/core/scheduling/daily_budget.dart';
 import 'package:fluenough/core/scheduling/daily_timer.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/session_queue.dart';
+import 'package:fluenough/features/summary/summary_page.dart';
 import 'package:fluenough/features/today/today_numbers.dart';
+import 'package:fluenough/l10n/app_localizations.dart';
+
+import 'support/harness.dart';
 
 /// The clock of every fixture, which AppState.test also starts at.
 final DateTime _now = DateTime(2026, 9, 28, 19);
@@ -80,16 +84,14 @@ units:
 ''',
     };
 
-/// The learner's history, recorded card by card: [ripe] seen words reviewed
-/// a day and a half ago (due in half a day, and no longer fresh), [fresh]
-/// seen words reviewed a day ago (due tomorrow, but still too fresh to be
-/// worth an early review), [far] words reviewed on schedule since 40 days
-/// ago and early once at the end, so that they are due in weeks, [overdue]
-/// words long overdue, and [taughtToday] words of the path taught earlier
-/// today. Seen words are numbered in that order.
+/// The learner's history, recorded card by card. Seen words are numbered in
+/// this order: [ripe] reviewed a day and a half ago (one whole day has
+/// passed: due in half a day, recall about 0.947 with the default
+/// parameters), [far] reviewed on schedule since 40 days ago and early once
+/// at the end, so that they are due in weeks, and [overdue] long overdue.
+/// [taughtToday] words of the fresh deck were taught earlier today.
 MemoryProgress _history({
   int ripe = 0,
-  int fresh = 0,
   int far = 0,
   int overdue = 0,
   int taughtToday = 0,
@@ -110,17 +112,11 @@ MemoryProgress _history({
       review('seen', n, mode, 4, _now.subtract(const Duration(hours: 36)));
     }
   }
-  for (var i = 0; i < fresh; i++) {
-    n++;
-    for (final mode in _modes) {
-      review('seen', n, mode, 4, _now.subtract(const Duration(days: 1)));
-    }
-  }
   for (var i = 0; i < far; i++) {
     n++;
     for (final mode in _modes) {
       // Reviewed each time it came due, from a different start for each
-      // word, until the next is after the day before yesterday.
+      // word, until the next is after yesterday.
       var at = _now.subtract(Duration(days: 40 + i));
       review('seen', n, mode, 4, at);
       final yesterday = _now.subtract(const Duration(days: 1));
@@ -208,72 +204,112 @@ Set<String> _newIds(List<SessionItem> items) => <String>{
     if (item.state == null) item.card.id,
 };
 
+FsrsState _state({
+  required double stability,
+  required DateTime last,
+  required DateTime due,
+}) => FsrsState(
+  stability: stability,
+  difficulty: 5,
+  intervalDays: due.difference(last).inDays,
+  dueAt: due,
+  lastReviewAt: last,
+  repetitions: 2,
+);
+
 void main() {
-  group('Keep going', () {
-    test('with nothing due it serves the cards closest to due, none past the '
-        'cap, and some new words', () async {
-      final state = await _learner(
-        seen: 24,
-        progress: _history(ripe: 6, fresh: 6, far: 6),
+  group('the early review guard', () {
+    // Recall after whole days, by FSRS-6's curve with the default
+    // parameters: stability 3 after 1 day is 0.957, after 2 days 0.925.
+    test('a card due soon is pulled forward only while recall is at most '
+        '0.95', () {
+      final fresh = _state(
+        stability: 3,
+        last: _now.subtract(const Duration(days: 1)),
+        due: _now.add(const Duration(days: 2)),
       );
+      final ripe = _state(
+        stability: 3,
+        last: _now.subtract(const Duration(days: 2)),
+        due: _now.add(const Duration(days: 1)),
+      );
+      // Due within two days, but still too fresh: recall 0.957.
+      expect(DailyBudget.canPullForward(fresh, _now), isFalse);
+      // Recall 0.925.
+      expect(DailyBudget.canPullForward(ripe, _now), isTrue);
+    });
+
+    test('a card due beyond two days is never pulled forward, and a due '
+        'one always is', () {
+      final far = _state(
+        stability: 8,
+        last: _now.subtract(const Duration(days: 5)),
+        due: _now.add(const Duration(days: 3)),
+      );
+      expect(DailyBudget.canPullForward(far, _now), isFalse);
+      final due = _state(
+        stability: 3,
+        last: _now.subtract(const Duration(days: 3)),
+        due: _now,
+      );
+      expect(DailyBudget.canPullForward(due, _now), isTrue);
+    });
+
+    test('recall is judged by the parameters that schedule the pair', () {
+      final fresh = _state(
+        stability: 3,
+        last: _now.subtract(const Duration(days: 1)),
+        due: _now.add(const Duration(days: 2)),
+      );
+      // A fitted curve that forgets more slowly (a smaller decay, w[20]):
+      // recall after the same day is 0.94, within reach.
+      final fitted = <double>[...Fsrs.w]..[20] = 0.05;
+      expect(DailyBudget.canPullForward(fresh, _now), isFalse);
+      expect(
+        DailyBudget.canPullForward(fresh, _now, parameters: fitted),
+        isTrue,
+      );
+    });
+  });
+
+  group('Keep going', () {
+    test('with nothing due it reviews the cards due soonest, none far off, '
+        'and teaches some new words', () async {
+      final progress = _history(ripe: 8, far: 6);
+      final state = await _learner(seen: 14, progress: progress);
       final run = state.startDaily('hi', keepGoing: true)!;
       expect(run.keepGoing, isTrue);
       expect(run.clock.countsUp, isTrue);
 
-      // What is within reach, and what is far off, as the log leaves them.
-      final pool = state.buildSession(
-        const DrillRequest(revise: true, language: 'hi'),
-      );
-      final reach = <String>{
-        for (final i in pool.items)
-          if (!i.state!.isDue(_now) &&
-              i.state!.dueAt.difference(_now) <=
-                  const Duration(days: DailyBudget.keepGoingDays) &&
-              Fsrs.retrievability(i.state, _now) <=
-                  DailyBudget.keepGoingMaxRecall)
-            i.card.id,
-      };
-      final farOff = <String>{
-        for (final i in pool.items)
-          if (i.state!.dueAt.difference(_now) >
-              const Duration(days: DailyBudget.keepGoingDays))
-            i.card.id,
-      };
+      // The fixture: eight words due in half a day, six due in weeks.
+      final ripeIds = <String>{for (var i = 1; i <= 8; i++) _id('seen', i)};
+      final farIds = <String>{for (var i = 9; i <= 14; i++) _id('seen', i)};
+      for (final id in farIds) {
+        for (final mode in _modes) {
+          expect(
+            progress.stateOf(id, mode)!.dueAt.difference(_now),
+            greaterThan(const Duration(days: 2)),
+            reason: id,
+          );
+        }
+      }
       expect(
         state.buildSession(const DrillRequest.today(language: 'hi')).due,
         isEmpty,
         reason: 'nothing is due',
       );
-      expect(reach, isNotEmpty, reason: 'some cards are within reach');
-      expect(farOff, isNotEmpty, reason: 'some are far off');
 
       final served = _stretch(state, run);
       final reviews = _reviews(served);
       expect(reviews, isNotEmpty, reason: 'the closest to due are reviewed');
       for (final item in reviews) {
-        expect(reach, contains(item.card.id), reason: item.card.id);
-        expect(farOff, isNot(contains(item.card.id)));
+        expect(ripeIds, contains(item.card.id));
+        expect(farIds, isNot(contains(item.card.id)));
         expect(
           item.state!.dueAt.difference(_now),
-          lessThanOrEqualTo(const Duration(days: DailyBudget.keepGoingDays)),
-        );
-        expect(
-          Fsrs.retrievability(item.state, _now),
-          lessThanOrEqualTo(DailyBudget.keepGoingMaxRecall),
+          lessThanOrEqualTo(const Duration(days: 2)),
         );
       }
-      // The closest to due: no card left out is due sooner than one served.
-      final dueOf = <String, DateTime>{
-        for (final i in pool.items) i.card.id: i.state!.dueAt,
-      };
-      final servedIds = <String>{for (final i in reviews) i.card.id};
-      final latest = servedIds
-          .map((id) => dueOf[id]!)
-          .reduce((a, b) => a.isAfter(b) ? a : b);
-      for (final id in reach.difference(servedIds)) {
-        expect(dueOf[id]!.isBefore(latest), isFalse, reason: id);
-      }
-      // And new words from the path.
       final fresh = _newIds(served);
       expect(fresh, isNotEmpty);
       expect(fresh.every((id) => id.startsWith('hi-en-fresh-')), isTrue);
@@ -340,63 +376,125 @@ void main() {
       );
     });
 
-    test('with a heavy backlog it serves reviews, most overdue first, and '
-        'teaches nothing while catching up', () async {
+    test('with a heavy backlog it serves reviews and teaches nothing while '
+        'catching up', () async {
       // A 5 minute day buys 17 cards, so 60 due is past three days' worth.
       final state = await _learner(
         seen: 60,
         minutes: 5,
         progress: _history(overdue: 60),
       );
-      expect(
-        state.buildSession(const DrillRequest.today(language: 'hi')).due,
-        hasLength(60),
+      final dayCards = DailyBudget.cardsFor(
+        5,
+        secondsPerCard: state.secondsPerCardIn('hi'),
       );
+      final due = state
+          .buildSession(const DrillRequest.today(language: 'hi'))
+          .due
+          .length;
+      expect(due, greaterThan(DailyBudget.backlogDays * dayCards));
       final run = state.startDaily('hi', keepGoing: true)!;
-      final first = state.nextDailyRound(run);
-      final members = _members(first).toList();
+      final members = _members(state.nextDailyRound(run)).toList();
       expect(members, isNotEmpty);
       expect(_newIds(members), isEmpty, reason: 'catching up teaches nothing');
       expect(members.every((i) => i.state != null), isTrue);
       expect(run.taught, 0);
     });
 
-    test('with a backlog under the catching-up line, reviews outnumber the '
-        'new words', () async {
-      // 5 minute day: 17 cards a day; 30 due is more than a day's worth.
-      final state = await _learner(
+    test('with a backlog of more than a day, the busy allowance is smaller: '
+        'the same day teaches words with a small backlog and none with a '
+        'big one', () async {
+      // The day's 15 words are taught and two more would be allowed on a
+      // busy day; the planner would teach one a round, so the second round
+      // is where the allowance is felt. A small backlog allows five.
+      Future<AppState> day(int overdue) => _learner(
         seen: 30,
         minutes: 5,
-        progress: _history(overdue: 30),
+        progress: _history(overdue: overdue, taughtToday: 17),
       );
-      final run = state.startDaily('hi', keepGoing: true)!;
-      final first = _members(state.nextDailyRound(run)).toList();
-      final reviews = _reviews(first);
-      final fresh = _newIds(first);
-      expect(reviews, isNotEmpty);
-      expect(reviews.length, greaterThan(fresh.length));
-      expect(
-        run.taught,
-        lessThanOrEqualTo(
-          DailyBudget.keepGoingNewExtraBusy + DailyPlanner.newCap,
-        ),
+      final busy = await day(30);
+      final dayCards = DailyBudget.cardsFor(
+        5,
+        secondsPerCard: busy.secondsPerCardIn('hi'),
       );
+      final busyDue = busy
+          .buildSession(const DrillRequest.today(language: 'hi'))
+          .due
+          .length;
+      expect(busyDue, greaterThan(dayCards));
+      expect(busyDue, lessThanOrEqualTo(DailyBudget.backlogDays * dayCards));
+      final busyRun = busy.startDaily('hi', keepGoing: true)!;
+      final first = _members(busy.nextDailyRound(busyRun)).toList();
+      // 17 taught of 15 + 2: no room, so reviews only.
+      expect(_newIds(first), isEmpty);
+      expect(_reviews(first), isNotEmpty);
+
+      final light = await day(10);
+      final lightRun = light.startDaily('hi', keepGoing: true)!;
+      final lightFirst = _members(light.nextDailyRound(lightRun)).toList();
+      // 17 taught of 15 + 5: room for three, and the time has some for them.
+      expect(_newIds(lightFirst), isNotEmpty);
+      expect(lightRun.taught, lessThanOrEqualTo(3));
     });
 
     test('it moves neither the tiles nor the day\'s numbers', () async {
       final state = await _learner(
-        seen: 24,
-        progress: _history(ripe: 6, fresh: 6, far: 6),
+        seen: 14,
+        progress: _history(ripe: 8, far: 6),
       );
-      final hindi = state.deckById('hi-en-seen')!.language;
       final tiles = TodayNumbers.of(state).bySkill;
-      final plan = state.dailyPlanFor(hindi);
       _stretch(state, state.startDaily('hi', keepGoing: true)!);
       expect(TodayNumbers.of(state).bySkill, tiles);
-      final after = state.dailyPlanFor(hindi);
-      expect(after.split.reviews, plan.split.reviews);
-      expect(after.split.newWords, plan.split.newWords);
       expect(tiles[Skill.recognition], isNotNull);
+    });
+
+    test('with nothing within reach and the new words done, there is no '
+        'work, and no round', () async {
+      final cap = DailyBudget.keepGoingNewCap(due: 0, dayCards: 51);
+      final state = await _learner(
+        seen: 6,
+        progress: _history(far: 6, taughtToday: cap),
+      );
+      expect(state.keepGoingHasWork('hi'), isFalse);
+      expect(
+        state.nextDailyRound(state.startDaily('hi', keepGoing: true)!),
+        isEmpty,
+      );
+      // Asking changes nothing: still the same answer, nothing recorded.
+      expect(state.keepGoingHasWork('hi'), isFalse);
+      expect(state.newWordsToday(_now), cap);
+
+      // With cards within reach, there is.
+      final ripe = await _learner(seen: 6, progress: _history(ripe: 6));
+      expect(ripe.keepGoingHasWork('hi'), isTrue);
+    });
+
+    testWidgets('the summary explains an empty Keep going instead of '
+        'offering it', (tester) async {
+      usePhone(tester);
+      final cap = DailyBudget.keepGoingNewCap(due: 0, dayCards: 51);
+      final state = await _learner(
+        seen: 6,
+        progress: _history(far: 6, taughtToday: cap),
+      );
+      await pumpScreen(
+        tester,
+        SummaryPage(
+          result: SessionResult(
+            answers: const <SessionAnswer>[],
+            startedAt: _now,
+            endedAt: _now,
+            language: 'hi',
+          ),
+        ),
+        state: state,
+      );
+      final l10n = AppLocalizations.of(
+        tester.element(find.byType(SummaryPage)),
+      )!;
+      expect(find.text(l10n.summaryAllCaughtUp), findsOneWidget);
+      expect(find.text(l10n.summaryKeepGoing), findsNothing);
+      expect(find.text(l10n.commonDone), findsOneWidget);
     });
 
     test('the summary asks for a stretch with the request\'s flag', () {

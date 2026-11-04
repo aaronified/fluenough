@@ -63,10 +63,10 @@ abstract final class DailyBudget {
   static const int keepGoingDays = 2;
 
   /// Keep going (#1010): a card is pulled forward only while the chance of
-  /// recalling it now is at most this, the learner's retention target (0.9,
-  /// [Fsrs] aims a review at it) with a little room. Above it the review
-  /// would be wasted: the card is still too fresh, whatever its due date.
-  /// Tunable.
+  /// recalling it now, by the parameters that schedule it, is at most this.
+  /// A fixed 0.95, not a per-learner setting: the scheduler aims a review at
+  /// 0.9, so this leaves a little room before the review is wasted, the card
+  /// being still too fresh whatever its due date. Tunable.
   static const double keepGoingMaxRecall = 0.95;
 
   /// Keep going (#1010): new words one Keep going stretch may teach beyond
@@ -80,10 +80,18 @@ abstract final class DailyBudget {
   /// Whether Keep going may review [state] early at [now] (#1010): due
   /// within [keepGoingDays] days, and not so fresh that the review is
   /// wasted ([keepGoingMaxRecall]). A card already due always may.
-  static bool canPullForward(FsrsState state, DateTime now) {
+  ///
+  /// [parameters] are the ones that schedule the pair, the learner's fitted
+  /// set where there is one, so that recall is judged as the scheduler does.
+  static bool canPullForward(
+    FsrsState state,
+    DateTime now, {
+    List<double> parameters = Fsrs.w,
+  }) {
     if (state.isDue(now)) return true;
     return state.dueAt.difference(now) <= const Duration(days: keepGoingDays) &&
-        Fsrs.retrievability(state, now) <= keepGoingMaxRecall;
+        Fsrs.retrievability(state, now, parameters: parameters) <=
+            keepGoingMaxRecall;
   }
 
   /// The most new words the day may have taught once Keep going has

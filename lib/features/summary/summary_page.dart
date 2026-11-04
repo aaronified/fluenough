@@ -68,6 +68,10 @@ class SummaryPage extends StatelessWidget {
     // includes its time.
     final plan = finished == null ? null : state.dailyPlanFor(finished);
     final total = plan?.totalMinutes ?? 0;
+    // Keep going is offered while it has something to serve; else the summary
+    // says so (#1010).
+    final keepGoingWork =
+        finished != null && state.keepGoingHasWork(finished.code);
 
     return Scaffold(
       body: SafeArea(
@@ -184,7 +188,15 @@ class SummaryPage extends StatelessWidget {
                         ),
                         child: Text(l10n.commonDone),
                       ),
-                      if (finished != null)
+                      if (finished != null && !keepGoingWork)
+                        Text(
+                          l10n.summaryAllCaughtUp,
+                          textAlign: TextAlign.center,
+                          style: theme.textTheme.bodyMedium!.copyWith(
+                            color: scheme.onSurfaceVariant,
+                          ),
+                        ),
+                      if (finished != null && keepGoingWork)
                         FilledButton.tonal(
                           style: AppButtonStyles.secondary(context),
                           onPressed: () => AppNavigator.startDrill(

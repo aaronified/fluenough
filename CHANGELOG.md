@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Keep going always has something to do.** After the day's minutes are done it serves the cards closest to due, never pulled forward more than two days nor while still too fresh to be worth reviewing, and some new words, within the day's 15 plus 5 for the stretch (fewer while reviews pile up, none while catching up). Reviews come first while a backlog waits (#1010).
+- **Keep going serves the closest-to-due cards and new words, and says so when there is nothing worth doing.** After the day's minutes are done it reviews cards due soon (never more than two days early, nor while still too fresh to be worth it, by your own fitted memory) and teaches new words within the day's 15 plus 5 for the stretch (fewer while reviews pile up, none while catching up), reviews first while a backlog waits. When neither is worth doing, the summary says "All caught up" instead of offering Keep going (#1010).
 
 ## [0.8.2] - 2026-11-04
 
