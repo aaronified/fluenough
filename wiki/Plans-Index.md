@@ -22,6 +22,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Language Themes](Plan-Language-Themes): a look for each language (colour, icon, background image)
 - [Listening In Context](Plan-Listening-In-Context): a listening tier in context
 - [Offensive Words](Plan-Offensive-Words): offensive words, their level, and warnings on words like them
+- [Private Languages](Plan-Private-Languages): build entire languages as private decks, through Your decks
 - [Profiles](Plan-Profiles): profiles, a PIN lock, and parental supervision
 - [Question Engine](Plan-Question-Engine): the question engine, derived from card data
 - [Question Engine 2 And Exams](Plan-Question-Engine-2-And-Exams): question engine revamp and milestone exams
