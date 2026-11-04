@@ -13,7 +13,9 @@ Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the f
 
 ## The info dot on the hint (owner, 2026-11-04)
 
-The hint line "Tap a skill to practise only that" ends in an info dot that shows how the skills are fitted to the learner. It reuses the app's existing pattern, `IpaInfoDot` (`lib/features/decks/ipa_info_dot.dart`): an `Icons.info_outline` `IconButton`, 20 dp icon, 48 dp target, the tooltip "Info" (the existing `hintInfo` string, one word; the dot's colour is the icon button default, on-surface-variant). Its screen-reader label is the new phrase "How skills are fitted to you". What it opens: the app's dots open a bottom sheet (`showPronunciation`), but this one opens the full **How you learn** page (`HowYouLearnPage`, `lib/features/stats/how_you_learn_page.dart`), the page the "Adjusted to you" strip on Today already opens (`AppNavigator.openHowYouLearn`). So the tapped state is a page, not a popover: the fourth frame beside screens 2 and 3 draws its top as built (app bar with back and report, the intro, the You / At the start legend, then the skill rows: name, "A seen word you get right comes back in 12 days, not 9.", the track, the verdict chip, "About 118 reviews in the next 30 days, was 160"). The "Info dot tapped" control shows or hides that frame and the dot's pressed state with its tooltip. Numbers on the page are examples.
+The hint line "Tap a skill to practise only that" ends in an info dot that shows how the skills are fitted to the learner. It reuses the app's existing pattern, `IpaInfoDot` (`lib/features/decks/ipa_info_dot.dart`): an `Icons.info_outline` `IconButton`, 20 dp icon, 48 dp target, the tooltip "Info" (the existing `hintInfo` string, one word; icon colour is the icon button default). Its screen-reader label is the new phrase "How skills are fitted to you".
+
+**Tapped state: a short popover**, the app's convention for these dots: `showPronunciation` opens an `AlertDialog` (`_Popup` in `lib/features/drill/teach_card.dart`): a title, a small subtitle in on-surface-variant, a body that scrolls (`SingleChildScrollView` in a `Flexible`), and a "Close" text button; no link out, so none is drawn. Here: title "How you learn", the page's intro as the subtitle, and as the body only the current language's part of `HowYouLearnPage`: the legend (You, At the start), one row per fitted skill (pill, name, "A seen word you get right comes back in 12 days, not 9.", the track, the verdict chip, "About 118 reviews in the next 30 days, was 160") and the foot "Adjusted today, from 214 of your answers." The page's language heading appears only when several languages are shown, so a one-language popover has none; its privacy line is left on the page. Numbers are examples and differ for Telugu, Bengali and Hindustani. At 1.4x the body scrolls inside the dialog; nothing clips. The "Info dot tapped" control shows or hides this frame and the dot's pressed state with its tooltip.
 
 ## What the blank end screen is today (scrapped)
 
@@ -30,12 +32,13 @@ When a session ends or a finished day is opened with nothing to serve, the learn
 - Keep going's time (owner, 2026-11-04, answer "Add to the day's total"): added to the day's total on Today and on the next summary; the ring stays full and greyed. Drawn as "23 min today" on screens 1 and 3.
 - Hint wording (owner, 2026-11-04): the line reads "Tap a skill to practise only that", always shown, with the info dot after it.
 - Greyed done arc (owner, 2026-11-04): strengthen it to at least 3:1 in light and dark, still clearly greyed. Now the `outline` token, light 4.28 : 1, dark 5.84 : 1 (was 1.62 and 1.98 with outline variant).
-- Info dot on the hint (owner, 2026-11-04): reuse the app's info dot, one-word tooltip, screen-reader label "How skills are fitted to you", opening How you learn; see the section above.
+- Info dot on the hint (owner, 2026-11-04): reuse the app's info dot, one-word tooltip, screen-reader label "How skills are fitted to you", showing how the skills are fitted; see the section above.
+- Info dot: page or popover (owner, 2026-11-04): "Short popover: with only that language's part of the how to learn page". Drawn as the app's dialog, as above.
 - No add-minutes arrows, no step control (owner, 2026-11-04: "they do not need to add minutes, they can keep going"). Not on the page.
 
-## Open question for the owner
+## Open questions for the owner
 
-1. The info dot opens a full page where the app's other dots open a sheet. Keep the page (drawn; it is the same page the Adjusted to you strip opens), or a sheet with a short explanation and a "See how you learn" link? Also: before a skill is adjusted the page shows "Not adjusted yet" rows; is the dot still wanted then?
+None remain.
 
 ## Self-check results
 
@@ -84,6 +87,11 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | light | slip verdict | onTc on tc | 7.24 : 1 | 4.5 : 1 | pass |
 | light | track fill on track | p on sHighest | 5.01 : 1 | 3 : 1 | pass |
 | light | start marker on track | onS on sHighest | 13.28 : 1 | 3 : 1 | pass |
+| light | popover title, text | onS on sHigh | 14.01 : 1 | 4.5 : 1 | pass |
+| light | popover subtitle | onSv on sHigh | 7.64 : 1 | 4.5 : 1 | pass |
+| light | popover Close | p on sHigh | 5.29 : 1 | 4.5 : 1 | pass |
+| light | popover rows text | onS on sLow | 15.5 : 1 | 4.5 : 1 | pass |
+| light | same verdict chip | onSv on sHighest | 7.24 : 1 | 4.5 : 1 | pass |
 | light | change tag | onE on E | 6.46 : 1 | 4.5 : 1 | pass |
 | light | change outline on page | E on s | 6.16 : 1 | 3 : 1 | pass |
 | light | tile icon rec | #001B3E on #D6E3FF | 13.28 : 1 | 3 : 1 | pass |
@@ -132,6 +140,11 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | dark | slip verdict | onTc on tc | 7.24 : 1 | 4.5 : 1 | pass |
 | dark | track fill on track | p on sHighest | 7.23 : 1 | 3 : 1 | pass |
 | dark | start marker on track | onS on sHighest | 9.55 : 1 | 3 : 1 | pass |
+| dark | popover title, text | onS on sHigh | 11.17 : 1 | 4.5 : 1 | pass |
+| dark | popover subtitle | onSv on sHigh | 8.48 : 1 | 4.5 : 1 | pass |
+| dark | popover Close | p on sHigh | 8.46 : 1 | 4.5 : 1 | pass |
+| dark | popover rows text | onS on sLow | 13.28 : 1 | 4.5 : 1 | pass |
+| dark | same verdict chip | onSv on sHighest | 7.25 : 1 | 4.5 : 1 | pass |
 | dark | change tag | onE on E | 7.72 : 1 | 4.5 : 1 | pass |
 | dark | change outline on page | E on s | 10.89 : 1 | 3 : 1 | pass |
 | dark | tile icon rec | #D6E3FF on #284777 | 7.22 : 1 | 3 : 1 | pass |

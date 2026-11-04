@@ -82,7 +82,7 @@ name them. They are in git at 19d200b
   screen), Today with the review not completed (minutes budgeted instead of
   card counts, a hint above the skill tiles, no Quick revision), Today with
   the daily quota over (the greyed ring opens the summary), and the session
-  after Keep going (a full bar, the time taken counting up), and the hint's info dot with the How you learn page it opens. Telugu, Bengali
+  after Keep going (a full bar, the time taken counting up), and the hint's info dot with the short How you learn popover it opens. Telugu, Bengali
   and Hindustani, light and dark, 1.4x. Open questions and the self-check
   are in `today-minutes.md`.
 
