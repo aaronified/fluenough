@@ -250,45 +250,84 @@ void main() {
   });
 
   group('the bound on what is kept', () {
-    test('the oldest written files are removed from the store first, and '
-        'stay in memory for the visit', () async {
+    const hindi = 'decks/hi/hi-food.yaml';
+    const marathi = 'decks/mr/mr-travel.yaml';
+
+    List<String> fileKeys(MemoryBlobStore store) =>
+        store.data.keys
+            .where((k) => k.startsWith('file/') || k.startsWith('font/'))
+            .toList()
+          ..sort();
+
+    test('the oldest written language goes whole from the store first, and '
+        'stays in memory for the visit', () async {
       final store = MemoryBlobStore();
-      // Three files of ten bytes against a bound of twenty-five.
+      // Three languages of ten bytes against a bound of twenty-five.
       final first = await _open(store, maxBytes: 25);
       await first.putAll(_one(_family, '1111111111'));
-      await first.putAll(_one(_food, '2222222222'));
-      await first.putAll(_one(_travel, '3333333333'));
+      await first.putAll(_one(hindi, '2222222222'));
+      await first.putAll(_one(marathi, '3333333333'));
       await first.flush();
-      expect(await first.list(), <String>[_family, _food, _travel]);
-      expect(
-        store.data.keys.where((k) => k.startsWith('file/')).toList()..sort(),
-        <String>['file/$_food', 'file/$_travel'],
-      );
+      expect(await first.list(), <String>[_family, hindi, marathi]);
+      expect(fileKeys(store), <String>['file/$hindi', 'file/$marathi']);
 
       final second = await _open(store, maxBytes: 25);
-      expect(await second.list(), <String>[_food, _travel]);
+      expect(await second.list(), <String>[hindi, marathi]);
 
-      // A file written after the reload is newer than both.
+      // A language written after the reload is newer than both.
       await second.putAll(_one(_family, '4444444444'));
       await second.flush();
       final third = await _open(store, maxBytes: 25);
-      expect(await third.list(), <String>[_family, _travel]);
+      expect(await third.list(), <String>[_family, marathi]);
+    });
+
+    test('a language is never left with some of its files', () async {
+      final store = MemoryBlobStore();
+      final decks = await _open(store, maxBytes: 25);
+      await decks.putAll(<IndexFile, List<int>>{
+        ..._one(_family, '1111111111'),
+        ..._one(_food, '1111111111'),
+      });
+      await decks.putAll(_one(hindi, '2222222222'));
+      await decks.flush();
+      expect(fileKeys(store), <String>['file/$hindi']);
+    });
+
+    test('the language written last is kept even when it alone is over the '
+        'bound', () async {
+      final store = MemoryBlobStore();
+      final decks = await _open(store, maxBytes: 5);
+      await decks.putAll(_one(_family, '1111111111'));
+      await decks.flush();
+      expect(fileKeys(store), <String>['file/$_family']);
+      await decks.putAll(_one(hindi, '2222222222'));
+      await decks.flush();
+      expect(fileKeys(store), <String>['file/$hindi']);
     });
 
     test('fonts count against the bound too', () async {
       final store = MemoryBlobStore();
       final decks = await _open(store, maxBytes: 15);
-      await decks.putAll(_one(_family, '1111111111'));
       await decks.putFonts(<IndexFont, List<int>>{
         _font('222222222'): utf8.encode('222222222'),
       });
+      await decks.putAll(_one(_family, '1111111111'));
       await decks.flush();
-      expect(
-        store.data.keys.where(
-          (k) => k.startsWith('file/') || k.startsWith('font/'),
-        ),
-        <String>['font/$_fontPath'],
-      );
+      expect(fileKeys(store), <String>['file/$_family']);
+    });
+
+    test('recordings and images are not kept, and do not count', () async {
+      final store = MemoryBlobStore();
+      const audio = 'decks/es/audio/es-0001.opus';
+      final decks = await _open(store, maxBytes: 10);
+      await decks.putAll(_one(_family, '1111111111'));
+      await decks.putAll(_one(audio, 'sound sound sound'));
+      await decks.flush();
+      expect(await decks.manifest(), contains(audio));
+      expect(fileKeys(store), <String>['file/$_family']);
+      expect(await (await _open(store, maxBytes: 10)).list(), <String>[
+        _family,
+      ]);
     });
 
     test(
@@ -297,13 +336,13 @@ void main() {
         final store = MemoryBlobStore();
         final first = await _open(store);
         await first.putAll(_one(_family, '1111111111'));
-        await first.putAll(_one(_food, '2222222222'));
+        await first.putAll(_one(hindi, '2222222222'));
         await first.flush();
         final second = await _open(store, maxBytes: 10);
         await second.flush();
-        expect(await second.list(), <String>[_food]);
+        expect(await second.list(), <String>[hindi]);
         expect(await (await _open(store, maxBytes: 10)).list(), <String>[
-          _food,
+          hindi,
         ]);
       },
     );

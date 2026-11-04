@@ -26,7 +26,9 @@ import 'downloaded_decks.dart';
 ///   what the manifest does not list. The downloads see it as never
 ///   downloaded and fetch it again.
 /// - **Too much**: the files and fonts kept are bounded by [maxBytes]; the
-///   oldest written are removed from the store first. They stay in memory
+///   oldest written language (all its files) or font is removed from the
+///   store first, never the language written last. Recordings and images
+///   are not kept. They stay in memory
 ///   for the session.
 ///
 /// What DeckDownloads keeps in notes (the index it last read, when it
@@ -182,8 +184,7 @@ class StoredDownloadedDecks implements DownloadedDecks {
           : <IndexFile>[];
       final fonts = <IndexFont>[
         if (json['fonts'] case final List<Object?> list)
-          for (final entry in list)
-            if (IndexFont.tryParse(entry) case final font?) font,
+          for (final entry in list) ?IndexFont.tryParse(entry),
       ];
       final order = <String, int>{
         if (json['order'] case final Map<Object?, Object?> map)
@@ -206,32 +207,55 @@ class StoredDownloadedDecks implements DownloadedDecks {
   // ---------------------------------------------------------------------------
   // Writing through
 
-  /// Removes from what the store holds, oldest written first, until the
-  /// files and fonts fit [maxBytes]; returns the keys to delete.
+  /// Removes from what the store holds until the files and fonts fit
+  /// [maxBytes]; returns the keys to delete. A language goes whole, all its
+  /// files together, so that none is left half there, and a font alone;
+  /// the oldest written first. The language written last, the one in use,
+  /// is never removed, even if it alone is over the bound: only a language
+  /// left behind is.
   List<String> _evict() {
-    final sizes = <String, int>{
-      for (final file in _storedFiles.values)
-        '$_filePrefix${file.path}': file.size,
-      for (final font in _storedFonts.values)
-        '$_fontPrefix${font.path}': font.size,
-    };
+    final keys = <String, List<String>>{};
+    final sizes = <String, int>{};
+    final orders = <String, int>{};
+    void add(String unit, String key, int size) {
+      (keys[unit] ??= <String>[]).add(key);
+      sizes[unit] = (sizes[unit] ?? 0) + size;
+      final order = _order[key] ?? 0;
+      if (order > (orders[unit] ?? 0)) orders[unit] = order;
+    }
+
+    for (final file in _storedFiles.values) {
+      add('language:${file.language}', '$_filePrefix${file.path}', file.size);
+    }
+    for (final font in _storedFonts.values) {
+      add('font:${font.path}', '$_fontPrefix${font.path}', font.size);
+    }
+    String? inUse;
+    for (final unit in keys.keys) {
+      if (unit.startsWith('language:') &&
+          (inUse == null || orders[unit]! > orders[inUse]!)) {
+        inUse = unit;
+      }
+    }
     var total = sizes.values.fold(0, (sum, size) => sum + size);
-    final oldest = sizes.keys.toList()
+    final oldest = keys.keys.where((unit) => unit != inUse).toList()
       ..sort((a, b) {
-        final byAge = (_order[a] ?? 0).compareTo(_order[b] ?? 0);
+        final byAge = orders[a]!.compareTo(orders[b]!);
         return byAge != 0 ? byAge : a.compareTo(b);
       });
     final evicted = <String>[];
-    for (final key in oldest) {
+    for (final unit in oldest) {
       if (total <= maxBytes) break;
-      total -= sizes[key]!;
-      evicted.add(key);
-      if (key.startsWith(_filePrefix)) {
-        _storedFiles.remove(key.substring(_filePrefix.length));
-      } else {
-        _storedFonts.remove(key.substring(_fontPrefix.length));
+      total -= sizes[unit]!;
+      for (final key in keys[unit]!) {
+        evicted.add(key);
+        if (key.startsWith(_filePrefix)) {
+          _storedFiles.remove(key.substring(_filePrefix.length));
+        } else {
+          _storedFonts.remove(key.substring(_fontPrefix.length));
+        }
+        _order.remove(key);
       }
-      _order.remove(key);
     }
     return evicted;
   }
@@ -305,6 +329,9 @@ class StoredDownloadedDecks implements DownloadedDecks {
       deletes.add('$_filePrefix$path');
     }
     for (final MapEntry(key: file, value: bytes) in files.entries) {
+      // A recording or an image has no file to play or show on the web
+      // (localPath is null), so it is not kept.
+      if (mediaPathPattern.hasMatch(file.path)) continue;
       final key = '$_filePrefix${file.path}';
       _storedFiles[file.path] = file;
       _order[key] = ++_sequence;

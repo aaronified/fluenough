@@ -10,20 +10,39 @@ import 'blob_store.dart';
 /// Only the browser compiles this file; see `browser_blob_store.dart`.
 Future<BlobStore?> openBrowserBlobStore() async {
   try {
-    final factory = _indexedDb;
-    if (factory == null) return null;
-    final request = factory.open(_databaseName, 1);
-    request.onupgradeneeded = ((JSObject _) {
-      (request.result! as _Database).createObjectStore(_storeName);
-    }).toJS;
+    if (_indexedDb == null) return null;
+    final store = _IndexedDbStore();
     // Some browsers never answer when storage is denied: give up and keep
     // the decks in memory rather than hold the app at its start.
-    final database = await _wait(request).timeout(_openTimeout) as _Database?;
-    if (database == null) return null;
-    return _IndexedDbStore(database);
+    await store._handle().timeout(_openTimeout);
+    return store;
   } on Object {
     return null;
   }
+}
+
+/// Opens the database. [onClosed] is called when the browser closes it
+/// (another tab upgrading it, or the browser freeing it), after which the
+/// handle is useless.
+Future<_Database> _openDatabase(void Function() onClosed) async {
+  final request = _indexedDb!.open(_databaseName, 1);
+  request.onupgradeneeded = ((JSObject _) {
+    (request.result! as _Database).createObjectStore(_storeName);
+  }).toJS;
+  final database = await _wait(request) as _Database?;
+  if (database == null) throw StateError('IndexedDB: no database');
+  void closed(JSObject _) {
+    try {
+      database.close();
+    } on Object {
+      // Already closed.
+    }
+    onClosed();
+  }
+
+  database.onversionchange = closed.toJS;
+  database.onclose = closed.toJS;
+  return database;
 }
 
 const String _databaseName = 'fluenough_downloads';
@@ -48,11 +67,15 @@ extension type _Request._(JSObject _) implements JSObject {
 extension type _Database._(JSObject _) implements JSObject {
   external _Transaction transaction(String store, String mode);
   external _ObjectStore createObjectStore(String name);
+  external void close();
+  external set onversionchange(JSFunction? handler);
+  external set onclose(JSFunction? handler);
 }
 
 extension type _Transaction._(JSObject _) implements JSObject {
   external _ObjectStore objectStore(String name);
   external JSAny? get error;
+  external void abort();
   external set oncomplete(JSFunction? handler);
   external set onerror(JSFunction? handler);
   external set onabort(JSFunction? handler);
@@ -97,21 +120,35 @@ Future<void> _commit(_Database database, void Function(_ObjectStore) body) {
   }).toJS;
   transaction.onerror = fail.toJS;
   transaction.onabort = fail.toJS;
-  body(transaction.objectStore(_storeName));
+  try {
+    body(transaction.objectStore(_storeName));
+  } on Object catch (e) {
+    // Part of the body ran: none of it may commit.
+    try {
+      transaction.abort();
+    } on Object {
+      // Already finished.
+    }
+    if (!done.isCompleted) done.completeError(e);
+  }
   return done.future;
 }
 
 class _IndexedDbStore implements BlobStore {
-  _IndexedDbStore(this._database);
+  _Database? _database;
 
-  final _Database _database;
+  /// The open database, opened again if the browser closed it since: one
+  /// transient closure does not end the storage for the visit.
+  Future<_Database> _handle() async =>
+      _database ??= await _openDatabase(() => _database = null);
 
-  _ObjectStore _readOnly() =>
-      _database.transaction(_storeName, 'readonly').objectStore(_storeName);
+  Future<_ObjectStore> _readOnly() async => (await _handle())
+      .transaction(_storeName, 'readonly')
+      .objectStore(_storeName);
 
   @override
   Future<List<String>> keys() async {
-    final result = await _wait(_readOnly().getAllKeys());
+    final result = await _wait((await _readOnly()).getAllKeys());
     if (result == null || !result.isA<JSArray<JSAny?>>()) {
       return const <String>[];
     }
@@ -123,7 +160,7 @@ class _IndexedDbStore implements BlobStore {
 
   @override
   Future<Uint8List?> read(String key) async {
-    final result = await _wait(_readOnly().get(key));
+    final result = await _wait((await _readOnly()).get(key));
     if (result == null || !result.isA<JSUint8Array>()) return null;
     return (result as JSUint8Array).toDart;
   }
@@ -132,7 +169,7 @@ class _IndexedDbStore implements BlobStore {
   Future<void> write(
     Map<String, Uint8List> puts, {
     Iterable<String> deletes = const <String>[],
-  }) => _commit(_database, (store) {
+  }) async => _commit(await _handle(), (store) {
     for (final key in deletes) {
       store.delete(key);
     }
@@ -142,5 +179,6 @@ class _IndexedDbStore implements BlobStore {
   });
 
   @override
-  Future<void> clear() => _commit(_database, (store) => store.clear());
+  Future<void> clear() async =>
+      _commit(await _handle(), (store) => store.clear());
 }
