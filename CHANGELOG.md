@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - **The web app installs to an iPhone's home screen.** The page now carries the iOS home-screen icon, standalone-mode and theme-colour tags (light and dark), a viewport that covers the notch with the notch and home bar kept clear, a relative manifest `id`, `scope` and `start_url` that follow the Pages sub-path, and no double-tap zoom, rubber-band scroll or text inflation. The web build asks the browser to keep its storage, and words wait for a first tap on a speaker before they play by themselves, as iOS Safari speaks nothing otherwise. A test checks the branded page and manifest (#1012).
 
-## [0.8.3] - 2026-11-04
+## [0.8.4] - 2026-11-04
 
 ### Fixed
 
