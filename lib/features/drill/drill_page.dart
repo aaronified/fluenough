@@ -145,7 +145,10 @@ class _DrillPageState extends State<DrillPage> {
     }
     // A preset keeps each item asked its own way, but for its first.
     if (request.daily) {
-      _daily = state.startDaily(request.language!);
+      _daily = state.startDaily(
+        request.language!,
+        keepGoing: request.keepGoing,
+      );
     }
     final run = _daily;
     var items = request.daily
