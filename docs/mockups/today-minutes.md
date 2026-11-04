@@ -1,34 +1,36 @@
-# Today: minutes budgeted. Self-check, notes and open questions
+# Today: review end, quota over, Keep going. Self-check, notes and open questions
 
-Companion to `today-minutes.html` (owner spec of 2026-11-04). The page holds only the screens and their tweak controls, with what is new, changed, kept or removed outlined in red. The checks and notes are here.
+Companion to `today-minutes.html` (owner spec of 2026-11-04). The page holds only the four screens and their tweak controls (language, theme, screen picker, hint wording, highlight), with what is new, changed, unchanged or removed outlined in red. The checks and notes are here.
 
-Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the forest seed, light and dark, Telugu, Bengali and Hindustani examples (readings follow the course: no final a in Bengali; Telugu word-final anusvara as `ṁ`). Starting point: `lib/features/today/daily_card.dart` and `due_card.dart` on main after #1008, and `lib/ui/widgets/drill_frame.dart` (`DrillHeader`, the clock) and `wave_progress.dart`. Tweak controls: language, theme, screen (Today, In session, In session with Keep going, both sessions), Today state (normal, finished day), hint wording, highlight. New CSS corners use the `--r-*` tokens, which are `AppRadii` (a circle is `--r-round`); no numeric radius.
+Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the forest seed, light and dark, Telugu, Bengali and Hindustani examples (readings follow the course: no final a in Bengali; Telugu word-final anusvara as `ṁ`). Starting points: `lib/features/summary/summary_page.dart`, `lib/features/today/daily_card.dart` and `due_card.dart` (main after #1008), `lib/ui/widgets/drill_frame.dart` (`DrillHeader`, the clock) and `wave_progress.dart`. New CSS corners use the `--r-*` tokens (`AppRadii`; a circle is `--r-round`, a stadium button `--r-stadium`); no numeric radius.
 
-## What the screens draw
+## The four screens
 
-1. **Quick revision is removed** from Today: shown struck through, outlined "removed", where it sits now (under the streak card).
-2. **Keep going is kept**, as today: a text button directly under "8 of 15 min", above the minutes chips. Today it appears only once the budget is spent (`plan.canKeepGoing`); the owner asked for it on the normal day too ("continuing to work whenever the learner wants more"), so it is drawn on both days. Always available; it never says "nothing more due".
-3. **Minutes budgeted** in the ring's chips: "12 min review" and "3 min new", the old badge shape (`_Badge`: secondary container, and primary when new is above 0, outlined when 0). They are the day's whole budget (15 min, an 80 / 20 split drawn), not what is left. No card counts in the ring (#1009). On a finished day no chips, 15 of 15 min (#1007, #1008).
-4. **Hint above the skill tiles**, inside the Due now card: "Tap a skill to practise only that skill". At 1.4x it wraps to two lines and nothing clips. A shorter alternative is a tweak control ("Tap a skill to practise it alone"; also wraps at 1.4x).
-5. **Skill tiles** show all pending cards (12, 24, 44, 22, 6, 31: more than 15 min buys) with their pace arrows exactly as today. Outlined "unchanged". At 1.4x the name "Recognition" is scaled to fit its tile, as the app's `FittedBox` does.
-6. **Finished-day ring** (#1007, #1008): greyed (surface container high button, outline-variant arc), a tick, "Done for today", still tappable (opens the end-of-session summary; screen-reader label "Done for today. Opens the summary.").
-7. **In session** (`DrillHeader`, 64 dp): close, the wave, the clock, the sounds of the card's word, report. Normal: wave 35 percent full, the clock counts down the time left (9:48). **Keep going** (owner, 2026-11-04: "When user keeps going, the timer bar will not show any timer, but the time taken. The progress bar will also be full."): the wave is full for the whole stretch and the clock counts up the time taken (3:12). The page writes the clock as the app does (`clockText`: m:ss), not 03:12.
+1. **Review end screen** (`SummaryPage`, as built): the sunny tick, "You've completed {language} for today", a pill and "N right of M" per skill, the streak tile, "Next due: N cards tomorrow", then Done, and the lesson button. New: a **Keep going** button (tonal, between Done and "Today's lesson"). It is THE end screen (owner answer below). Quick revision has no place on it.
+2. **Today, review not completed**: the ring "Continue", "8 of 15 min", minutes budgeted in the chips ("12 min review", "3 min new": the day's whole budget, an 80 / 20 split drawn; the old badge shape; no card counts, #1009), the hint above the skill tiles ("Tap a skill to practise only that skill"; it wraps to two lines at 1.4x, nothing clips; a shorter wording is a tweak), the tiles with all pending cards (12, 24, 44, 22, 6, 31: more than 15 min buys) and their pace arrows as today, no Quick revision (shown struck through and outlined "removed" under the streak card; the highlight control hides it).
+3. **Today, daily quota over**: the ring is greyed, a tick, "Done for today" (the app's words), "15 of 15 min", no chips, and still presses: it opens screen 1 (#1007, #1008). The Keep going text button under the ring is as built today (`plan.canKeepGoing`: shown once the budget is spent) and is outlined "unchanged". Tiles and hint as on screen 2.
+4. **In session after Keep going**: the drill's own `DrillHeader` (close, wave, clock, the word's sounds, report). The bar is full for the whole stretch and the clock counts up the time taken (`3:12`), not down. A small **reference frame** below shows the normal session: bar 35 percent, the time left counting down (`9:48`).
+
+## What the blank end screen is today (scrapped)
+
+When a session ends or a finished day is opened with nothing to serve, the learner gets one of two near-empty screens: the drill's empty state ("Nothing to drill right now / Everything here is scheduled for later. New words come in lessons.", `drillEmptyTitle` and `drillEmptyBody` in `lib/features/drill/drill_page.dart`), and the summary's empty variant ("Session done / No cards answered.", `SummaryPage` with `result.total == 0`). Per the owner's answer the summary with Keep going replaces them as the end screen. (Build note: that means the summary must be built for a day with few or no answers in the log, with the by-skill rows left out, and Keep going always present.)
 
 ## Answered by the owner
 
-- Keep going when nothing is due (owner, 2026-11-04): "If user keeps going, let them review closest to due cards and teach them new cards. Change the ratio as needed to not teaching too much and not reviewing too far into the future." So Keep going always has something to serve and never says "nothing more due today". (Build note: this reverses #1008's rule that a card reviewed today is never a filler, for Keep going only.)
-- No add-minutes arrows, no step control (owner, 2026-11-04: "they do not need to add minutes, they can keep going"). Removed from this page.
-- Keep going's timer (owner, 2026-11-04): quoted above, drawn in screen 7.
+- Keep going when nothing is due (owner, 2026-11-04): "If user keeps going, let them review closest to due cards and teach them new cards. Change the ratio as needed to not teaching too much and not reviewing too far into the future." Keep going always has something to serve and never says "nothing more due today". (Build note: this lifts #1008's rule that a card reviewed today is never a filler, for Keep going only.)
+- Keep going's timer (owner, 2026-11-04): "When user keeps going, the timer bar will not show any timer, but the time taken. The progress bar will also be full." Drawn on screen 4.
+- Ring tap on the finished day (owner, 2026-11-04): "the summary with keep going option is the end screen. the current blank end screen is to be scrapped". The greyed ring opens the summary (screens 3 to 1), and the summary carries Keep going.
+- No add-minutes arrows, no step control (owner, 2026-11-04: "they do not need to add minutes, they can keep going"). Not on the page.
 
 ## Open questions for the owner
 
-1. Keep going on the normal day: it is drawn under the ring on both days. Today it shows only after the budget is spent. Should it show all day, or only once the day is done?
-2. Chips: the whole day's budget (12 and 3 of 15), or what is left of it? Drawn: the whole budget, so they do not move as the learner answers.
-3. The split of the budget: 80 percent review, 20 percent new is drawn. What is the planner's real split, and should a day with no new words show "0 min new" outlined, as "0 new" is today?
-4. After Keep going starts, the ring goes back to "Continue" with a larger budget on Today? Or does the ring stay full and greyed while the stretch runs (drawn in the session only)? Where does the time taken go afterwards: added to the day's total on Today and on the summary?
-5. The clock when counting up: "3:12" (the app's m:ss) or "03:12" (as the brief wrote it)? Past an hour it would read 62:10.
-6. The hint wording and its place (inside the Due now card, above the tiles): this or the shorter line? Should it go away once the learner has tapped a tile a few times?
-7. The greyed ring's arc fails 3:1 (self-check below). It is #1008's design (outline variant on the page), and "15 of 15 min" says the same in text. Should the done arc be stronger (outline instead of outline variant)?
+1. Keep going on Today: it exists there today (under the ring once the day is done) and now also on the summary. Keep it on both, or only on the summary, so the finished-day ring is the single way on? Drawn: kept on both, as built.
+2. Keep going on a normal day (before the budget is spent): the brief once asked for it all day. Drawn: not shown, as today, because the ring's "Continue" already does that. Show it anyway?
+3. Chips: the whole day's budget (12 and 3 of 15), or what is left of it? Drawn: the whole budget, so they do not move as the learner answers. And what is the planner's real split; should a day with no new words show "0 min new" outlined, as "0 new" is today?
+4. After Keep going starts, the time taken: added to the day's total on Today and on the next summary, or kept apart? Does Today's ring then stay full and greyed?
+5. The clock when counting up: `3:12` (the app's m:ss, drawn) or `03:12`? Past an hour it would read `62:10`.
+6. The hint's wording and place (inside the Due now card, above the tiles): this line or the shorter "Tap a skill to practise it alone"? Should it go once the learner has tapped a tile a few times?
+7. The greyed ring's arc fails 3:1 (self-check below). It is #1008's design (outline variant on the page), and "15 of 15 min" says the same in text. Make the done arc stronger?
 
 ## Self-check results
 
@@ -61,6 +63,12 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | light | drill card text | onS on sLow | 15.5 : 1 | 4.5 : 1 | pass |
 | light | drill card reading, question | onSv on sLow | 8.45 : 1 | 4.5 : 1 | pass |
 | light | answer option | onS on sLowest | 17.13 : 1 | 4.5 : 1 | pass |
+| light | summary title, score text | onS on s | 16.33 : 1 | 4.5 : 1 | pass |
+| light | summary tick | onTc on tc | 7.24 : 1 | 3 : 1 | pass |
+| light | streak tile value | onS on sHigh | 14.01 : 1 | 4.5 : 1 | pass |
+| light | streak tile label | onSv on sHigh | 7.64 : 1 | 4.5 : 1 | pass |
+| light | Done button | onP on p | 6.46 : 1 | 4.5 : 1 | pass |
+| light | Keep going and lesson buttons | onSc on sc | 7.25 : 1 | 4.5 : 1 | pass |
 | light | change tag | onE on E | 6.46 : 1 | 4.5 : 1 | pass |
 | light | change outline on page | E on s | 6.16 : 1 | 3 : 1 | pass |
 | light | tile icon rec | #001B3E on #D6E3FF | 13.28 : 1 | 3 : 1 | pass |
@@ -93,6 +101,12 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | dark | drill card text | onS on sLow | 13.28 : 1 | 4.5 : 1 | pass |
 | dark | drill card reading, question | onSv on sLow | 10.08 : 1 | 4.5 : 1 | pass |
 | dark | answer option | onS on sLowest | 14.98 : 1 | 4.5 : 1 | pass |
+| dark | summary title, score text | onS on s | 14.33 : 1 | 4.5 : 1 | pass |
+| dark | summary tick | onTc on tc | 7.24 : 1 | 3 : 1 | pass |
+| dark | streak tile value | onS on sHigh | 11.17 : 1 | 4.5 : 1 | pass |
+| dark | streak tile label | onSv on sHigh | 8.48 : 1 | 4.5 : 1 | pass |
+| dark | Done button | onP on p | 7.68 : 1 | 4.5 : 1 | pass |
+| dark | Keep going and lesson buttons | onSc on sc | 7.25 : 1 | 4.5 : 1 | pass |
 | dark | change tag | onE on E | 7.72 : 1 | 4.5 : 1 | pass |
 | dark | change outline on page | E on s | 10.89 : 1 | 3 : 1 | pass |
 | dark | tile icon rec | #D6E3FF on #284777 | 7.22 : 1 | 3 : 1 | pass |
@@ -101,4 +115,4 @@ WCAG contrast, computed in the page's JS (`window.__contrast`, console only) and
 | dark | tile icon write | #FFDCC2 on #6E3900 | 7.24 : 1 | 3 : 1 | pass |
 | dark | tile icon gram | #B8F0E4 on #00504A | 7.4 : 1 | 3 : 1 | pass |
 
-Also checked in Chromium (Playwright, 1000 px wide page): no page-level horizontal scroll, no JavaScript errors, the hint and the minutes line wrap at 1.4x without clipping, Telugu, Bengali and Devanagari render with Noto Sans.
+Also checked in Chromium (Playwright, a 2100 px wide page): no page-level horizontal scroll, no JavaScript errors, the title, hint, minutes, chips and buttons do not clip at 1.4x (the "Recognition" tile name is scaled to fit its tile, as the app's `FittedBox` does), Telugu, Bengali and Devanagari render with Noto Sans.
