@@ -5,7 +5,6 @@ import 'dart:io';
 import 'package:fluenough/core/data/deck_parser.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/deck.dart';
-import 'package:flutter_test/flutter_test.dart';
 
 // From deck_parser_test.dart.
 Deck parse(String yaml) => DeckParser.parse(yaml, source: 'test.yaml');
