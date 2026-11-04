@@ -4,6 +4,10 @@ Source of truth: this wiki page.
 
 Written 2026-11-02. A plan and a mockup only: no app code is written by it. The mockup of the Settings switch is `docs/mockups/haptics-settings.html` on the branch `mockup/haptics-settings`, with its notes and self-check in `haptics-settings.md` beside it. The owner wants this in the next release.
 
+**Status 2026-11-04.** Owner approval of the plan and the mockup is pending; nothing is built and no issue is filed. It is aimed at 0.9.x. The 0.9.0 milestone does not exist yet, so the issue is filed, and tagged, once the owner creates it.
+
+**Status 2026-11-04.** Owner approval of the plan and the mockup is pending; nothing is built and no issue is filed. It is aimed at 0.9.x. The 0.9.0 milestone does not exist yet, so the issue is filed, and tagged, once the owner creates it.
+
 ## What the owner asked
 
 > Also, all buttons should give haptic feedback, including cycling the pills. Use different feedbacks for each pill value (the language skill pills). And different for every type of action. Plan this well, must be logical and consistent and easy to follow for further UI development. A button in the UI settings section will turn on or off haptic feedback.

@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-- **Status:** Proposed (research done; nothing built, #881).
+- **Status:** Proposed (research done; nothing built, #881). The "Your recording" replay is drawn in the approved shared shell (#509, 2026-11-02); the audio itself waits on on-device recognition (#1004, aimed at 0.9.0), which would supply the bytes.
 - **Date:** 2026-11-02
 
 ## Context

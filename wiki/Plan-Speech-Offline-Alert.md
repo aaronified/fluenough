@@ -5,6 +5,10 @@ Source of truth: this wiki page.
 
 Written 2026-10-05.
 
+See also (2026-11-04): on-device Telugu speech recognition (#1004, aimed at 0.9.0, opt-in) would recognise offline for Telugu without the system recogniser; the alert here still applies to every language it does not cover.
+
+See also (2026-11-04): on-device Telugu speech recognition (#1004, aimed at 0.9.0, opt-in) would recognise offline for Telugu without the system recogniser; the alert here still applies to every language it does not cover.
+
 ## What the owner asked
 
 > also, the app doesnt outright tell me that my voice recognition is not
