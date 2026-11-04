@@ -147,7 +147,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#697](https://github.com/aaronified/fluenough/issues/697) Settings: show IPA first, in place of the transliteration
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
 - [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
-- [#1010](https://github.com/aaronified/fluenough/issues/1010) Keep going: review the closest-to-due cards and teach new ones, balanced so it neither over-teaches nor reviews too far ahead
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
