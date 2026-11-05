@@ -27,11 +27,12 @@ Future<void> showReviewLanguages(BuildContext context) =>
       ),
     );
 
-/// Languages you review (#462): every course in the deck index, a language
+/// Languages you review (#462): the courses in the deck index, a language
 /// and the one it is taught from, such as "Bengali from English",
-/// downloaded or not. A course can be ticked only when the reviewer knows
-/// both languages and reads both scripts; the others are greyed, with the
-/// reason. Ticking a course whose decks are not on the phone offers their
+/// downloaded or not. A course is listed only when the reviewer knows both
+/// languages and reads both scripts, as an info button explains; the others
+/// are hidden. A course already ticked stays listed even when it no longer
+/// qualifies, with the reason, so that it can be unticked. Ticking a course whose decks are not on the phone offers their
 /// download, for reviewing only: the language is not learned, so it stays
 /// out of Today, the language menu and lessons.
 ///
@@ -99,6 +100,11 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     final reviewer = reviewerOf(state);
     final offered = offeredPairs(state);
     final reviewed = reviewPairsOf(state);
+    final stored = state.settings.reviewPairs ?? const <String>{};
+    final shown = <ReviewPair>[
+      for (final pair in offered)
+        if (reviewer.canReview(pair) || stored.contains(pair.key)) pair,
+    ];
     final names = <String, String>{...languageNamesOf(state), ..._knownNames};
     String name(String code) => names[code] ?? code;
     return ListView(
@@ -111,9 +117,21 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
       children: <Widget>[
         Padding(
           padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 12),
-          child: Text(
-            l10n.reviewLanguagesBody,
-            style: settingsHelpStyle(theme),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              Expanded(
+                child: Text(
+                  l10n.reviewLanguagesBody,
+                  style: settingsHelpStyle(theme),
+                ),
+              ),
+              IconButton(
+                tooltip: l10n.reviewLanguagesInfoTooltip,
+                icon: const Icon(Icons.info_outline),
+                onPressed: () => _showInfo(context),
+              ),
+            ],
           ),
         ),
         if (!reviewer.scriptsAnswered)
@@ -153,15 +171,19 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
           ),
         ),
         const SizedBox(height: 16),
-        if (offered.isEmpty)
+        if (shown.isEmpty)
           EmptyState(
-            icon: Icons.cloud_off_outlined,
-            title: l10n.reviewPairsNone,
+            icon: offered.isEmpty
+                ? Icons.cloud_off_outlined
+                : Icons.translate_outlined,
+            title: offered.isEmpty
+                ? l10n.reviewPairsNone
+                : l10n.reviewPairsNoneKnown,
           )
         else
           GroupedList.settings(
             children: <Widget>[
-              for (final pair in offered)
+              for (final pair in shown)
                 _row(
                   context,
                   state,
@@ -174,6 +196,25 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
             ],
           ),
       ],
+    );
+  }
+
+  Future<void> _showInfo(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return showDialog<void>(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: Text(l10n.reviewLanguagesInfoTitle),
+        content: SingleChildScrollView(
+          child: Text(l10n.reviewLanguagesInfoBody),
+        ),
+        actions: <Widget>[
+          TextButton(
+            onPressed: () => Navigator.of(context).pop(),
+            child: Text(l10n.commonGotIt),
+          ),
+        ],
+      ),
     );
   }
 
@@ -194,6 +235,9 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
     String script(String code) => l10n.reviewPairNoScript(
       l10n.scriptNameOr(_scriptOf(state, code), name(code)),
     );
+    final stale =
+        block != null &&
+        (state.settings.reviewPairs ?? const <String>{}).contains(pair.key);
     final line = switch (block) {
       PairBlock.scriptsUnanswered => null,
       PairBlock.unknownTarget => l10n.reviewPairUnknown(target),
@@ -212,8 +256,10 @@ class _ReviewLanguagesPageState extends State<ReviewLanguagesPage> {
       children: <Widget>[
         CheckboxListTile(
           controlAffinity: ListTileControlAffinity.leading,
-          enabled: block == null,
-          value: block == null && ticked,
+          // A ticked course that no longer qualifies stays, ticked, so that
+          // it can be unticked.
+          enabled: block == null || stale,
+          value: ticked || stale,
           title: Text(l10n.reviewPairName(target, name(pair.native))),
           subtitle: line == null ? null : Text(line),
           onChanged: (on) => _tick(context, state, pair, on ?? false, reviewed),

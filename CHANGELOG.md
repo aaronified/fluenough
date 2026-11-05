@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **A language you review no longer says its decks will be removed.** The Languages page and a language's skills sheet marked a Know language for removal, and the app removed its decks at the next open, even when a course taught in it was ticked in Languages you review. Ticked courses you can review now keep their decks.
+- **Languages you review lists only the courses you can review.** Courses whose languages you do not know, or whose scripts you do not read, are hidden instead of greyed, and an info button explains that only decks for languages you know are shown and that the app verifies this. A ticked course that no longer qualifies stays listed so it can be unticked.
+
 ## [0.8.6] - 2026-11-05
 
 ### Fixed
