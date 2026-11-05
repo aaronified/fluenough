@@ -8,7 +8,7 @@ The full text is in git history: `git show 98be3004:wiki/Plan-Placement-V2.md`.
 
 ## Find my level: verify, then fit, and how a run samples questions (plan, owner, 2026-11-05)
 
-Status: a plan only, rewritten on 2026-11-05 to the owner's newest design (hard questions at the last deck across the mastery topics; composite questions that split on a fail; assurance as a number per skill; a checkpoint every 25 questions instead of a cap). Nothing here is built; the owner will be consulted before it is. Open questions are in section 9; each has a default the plan assumes.
+Status: a plan only, rewritten on 2026-11-05 to the owner's newest design (hard questions at the last deck across the mastery topics; composite questions that split on a fail; assurance as a number per skill; a checkpoint every 25 questions instead of a cap). Updated later on 2026-11-05 with two more owner decisions: the 95% target applies **per skill** and is the target of every skill (80% is now only a label), and the run opens with a first question, **how well do you know the language** (Fluent, Advanced, Amateur or Beginner), which only seeds where the questions start. Nothing here is built; the owner will be consulted before it is. Open questions are in section 9; each has a default the plan assumes. The numbers of sections 4.5 to 7 come from a model and a simulation written for this plan (a Python script of about 150 lines, kept in the session scratch folder), **not run in CI**; the implementation's tests must reproduce them (section 5.3).
 
 **Owner quotes, 2026-11-05, in the order they came.**
 
@@ -20,7 +20,9 @@ Status: a plan only, rewritten on 2026-11-05 to the owner's newest design (hard 
 - **Newest design (2).** "Check multiple skills together, and on fails, split the skills. Like ask the meaning of a long sentence written only in the script. Or ask to say it in english."
 - **Newest design (3).** "Ask them to say the meaning of some words."
 - **Confidence.** "Once placement is done, show the confidence level for each skill. It is okay to have low confidence. Learner can fit again later to give the algo more data and fit better." **The "fit again later" part is dropped by the next quote.**
-- **Assurance and the checkpoint (newest).** "Verified opens when there is 95% assurance. Better yet, ignore my last 'fit again' message and prolong the fit as needed to get to the 80% level. Instead, after 25 questions, tell the user that they are positioned as lets say x, y, z on 3 skills and if they think they are better than that, they can keep going or stop."
+- **Assurance and the checkpoint.** "Verified opens when there is 95% assurance. Better yet, ignore my last 'fit again' message and prolong the fit as needed to get to the 80% level. Instead, after 25 questions, tell the user that they are positioned as lets say x, y, z on 3 skills and if they think they are better than that, they can keep going or stop." **The 80% level is superseded by the next quote.**
+- **Per skill, target 95% (owner, 2026-11-05).** Asked "Do 80% and 95% apply per skill or to all skills together?", the owner answered: "Per skill. Target is 95%". So each skill has its own assurance, and the target of the fit is 95% for every skill: the run goes on until each tested skill reaches 95% or the learner stops at a checkpoint. **80% is no longer a stop target.** It stays only as the lower edge of the label "Sure" (section 4.3), which a learner sees when he stops early.
+- **The declaration (owner, 2026-11-05).** "Also, ask whether the user is fluent, advanced, or amateur first (beginner is the third option that skips placement and instead starts from the beginning). That will help determining the starting level. These declarations will be overridden by the determined placement." The owner lists fluent, advanced and amateur and calls beginner "the third option"; this plan reads it as one first question with **four** answers, Fluent, Advanced, Amateur and Beginner (open question 2 asks whether that is exactly what is meant, and for the wording).
 
 **What the newest design replaces, and what it keeps.**
 
@@ -33,12 +35,15 @@ Status: a plan only, rewritten on 2026-11-05 to the owner's newest design (hard 
 | Hard cap of 25 questions | **a checkpoint**: at 25 (and every 25 more) the learner sees where they stand and chooses Keep going or Stop here (section 5.4) | owner, newest message |
 | Verified = pass rule of 3 questions per skill and at most two closed cases | Verified = 95% assurance for the skill, plus the preconditions, plus every mastery topic covered, plus no closed case in the skill (section 4.3) | owner: "Verified opens when there is 95% assurance" |
 | Confidence level and cross-run stored evidence (the confidence message) | confidence is the assurance number (section 4); evidence is **not** kept across runs (section 4.4) | the model needs only this run's answers; the owner dropped "fit again" |
+| Stop target 80% for a skill that cannot be Verified (a gap, a language short of B1) | **95% for every skill**; 80% is the lower edge of the label "Sure" only (section 4.3) | owner: "Per skill. Target is 95%" |
+| "Does a self-declared level seed the search?" (earlier open question: no) | **yes**: a first question (Fluent, Advanced, Amateur, Beginner) seeds where the questions start (section 4.5); Beginner skips the run | owner: "ask whether the user is fluent, advanced, or amateur first" |
 | Kept unchanged | verified needs the path complete to B1 and every deck downloaded; a run never changes a skill's Learn, Know or Leave state; verified is per skill; only the dialect taught; "know" = hear, say, and read plus write in at least one script | not contradicted |
 
 ### 1. Definitions
 
 - **Deck order.** The language's word decks in path order, from the first A1 deck to the unit marked B1 (`CoursePath`, `walkDecks`). Index 0 is the first, N-1 the last (B1's end). **Unit** on screen is the deck index plus 1. Script decks are checked by the script check (section 3.1, topic 7), not here.
 - **Complete to B1.** The path marks B1 and no unit up to it is still to be written. Today (index, 2026-11-05): Assamese, Bengali, Spanish, Hindustani, Kannada, Marathi, Telugu, Toki Pona. Only these can be verified; the others are positioned only (row m).
+- **Declaration.** The learner's first answer in a run: Fluent, Advanced, Amateur or Beginner, once per language (section 4.5). It chooses the **asking prior** (what the next question is aimed at) and nothing else: it is never the result, never shown back as one, and never evidence for a level or for Verified. The placement the answers determine always overrides it.
 - **Skill.** The four app skills Read, Hear, Say, Write, and **Script** where the language has its own script (a script is read and written; Hindustani has two). A learner "knows" a language when he can hear, say, and read plus write in at least one script. A run tests only the skills the learner marks as known.
 - **Mastery topic.** One of the seven topics of section 2.1. A topic is covered when it has had its minimum of 2 questions.
 - **Composite question.** One question that needs several parts at once (reading the script, the meaning, hearing, spelling) and so evidences every skill it needs (section 3).
@@ -108,11 +113,11 @@ Without Hear marked as known, any "by audio" part is shown as the word or senten
 It is a Bayesian update over a short list of hypotheses, small enough for one pure Dart function (`Posterior update(Posterior, Answer)` over twelve numbers, no state but this run's answers):
 
 1. **Hypotheses (classes).** `none`, and the levels `l_k = round(k x (N-1) / 10)` for k = 0 to 10 (for N = 100: 0, 10, 20, 30, 40, 50, 59, 69, 79, 89, 99). A class says "the learner knows every deck up to `l_k` and none above". The top class `l_10` is "the whole path, the last deck included". For N of 20 or fewer the classes are min(10, N) equal parts, at least one deck each.
-2. **Prior.** Equal for the twelve classes (1/12 each): "no opinion". The owner's own words ("the 25%ile and the 75%ile") need no other prior.
+2. **Two posteriors, one prior each.** The **reporting posterior** starts equal for the twelve classes (1/12 each): "no opinion". It alone sets the placed level, the assurance, the names, the 95% target and Verified, so the owner's own words ("the 25%ile and the 75%ile") need no other prior and a declaration can never add to a learner's assurance. The **asking posterior** starts from the prior of his declaration (section 4.5; flat when he skipped the question) and is used for one thing only, picking the deck of the next question (5.3, point 2). Both multiply the same likelihoods.
 3. **A question** at deck `d` has a slip rate `s` (a learner who knows deck `d` still misses it) and a guess rate `g` (a learner who does not know it still gets it right). For a class with `l_k` at least `d`, P(right) = 1 - s; otherwise P(right) = g. The likelihood of the answer is that, or 1 minus it for a miss. A question of the last two decks counts as asked at deck N-1.
 4. **Composite questions.** A composite is right only if every skill it needs worked, so a right answer updates each skill it covers in full. A miss may be the fault of one skill, so it updates each skill at half strength (the likelihood to the power one half) until the split says which part failed; the split answers update their single skill in full (section 3.2).
 5. **Rechecks, splits and slips need no special case.** They are ordinary questions, and a slip is a miss next to two rights: the posterior handles it.
-6. **Posterior** = prior times the product of the likelihoods, normalised. The **placed level** of a skill is the leading class's level (never above it); its **assurance** is that class's posterior mass. The "window" is therefore one tenth of the path, which is what "the vocabulary level is somewhat fixed" means (section 5.3).
+6. **Posterior** (the reporting one, unless said otherwise) = prior times the product of the likelihoods, normalised. The **placed level** of a skill is the leading class's level (never above it); its **assurance** is that class's posterior mass. The "window" is therefore one tenth of the path, which is what "the vocabulary level is somewhat fixed" means (section 5.3).
 7. **Verified** needs the leading class to be the top class with mass of at least 0.95, plus the conditions of 4.3.
 
 **4.2 Parameters (defaults; open question 1).**
@@ -136,91 +141,118 @@ The higher slip for composites and for Say is the extra ways to slip (a recognis
 | Not tested | skill not marked, not asked, no mic, "can't speak now" | "we did not test this" (never a fail) |
 | Not sure yet | under 50% | "too few answers to say; this is a first guess" |
 | Fairly sure | 50% to 79% | |
-| Sure | 80% or more | the fit target; the placement is good |
-| Verified | 95% or more, at the top class, and the conditions below | the language is marked Verified for this skill |
+| Sure | 80% to 94% | a good placement, a little short of the target; what a learner who stops early usually sees. **80% only draws this line; it is not a stop target any more** |
+| Very sure | 95% or more | the fit target for every skill; the run ends for this skill (the placement is as good as the run can make it) |
+| Verified | 95% or more, at the top class, and the conditions below | the language is marked Verified for this skill (a "Very sure" that also meets the conditions) |
 
-**Verified** is the highest name, not a separate test: for each skill it needs (a) the path complete to B1 and every deck of the language downloaded; (b) the top class with assurance 0.95 or more; (c) every mastery topic that skill takes part in covered (the owner: "covered all the mastery topics"); (d) no closed case and no gap in that skill in this run. A run that does not meet them still gives an assurance and a placement: a low name is acceptable and is never called a failure. Verified is per skill, as before.
+**Verified** is the highest name, not a separate test (a skill at the top class that is "Very sure" but misses a condition below stays "Very sure"): for each skill it needs (a) the path complete to B1 and every deck of the language downloaded; (b) the top class with assurance 0.95 or more; (c) every mastery topic that skill takes part in covered (the owner: "covered all the mastery topics"); (d) no closed case and no gap in that skill in this run. A run that does not meet them still gives an assurance and a placement: a low name is acceptable and is never called a failure. Verified is per skill, as before.
 
 **4.4 No evidence is kept across runs.** The model reads only this run's answers, so nothing from an earlier run is stored: no per-deck record, no decay, no carried assurance. Reasons: storing it adds state, a decay rule, a conflict rule and a privacy surface for no benefit to the model, and the owner dropped "fit again later" (a carried evidence would only have served that). If the owner wants it later, earlier evidence enters as the prior of section 4.1 and nothing else changes (open question 14). **When a later run disagrees with an earlier one:** for each skill the later run tested, its placement replaces the earlier one; a skill it did not test keeps its old placement. If the new placement credits fewer decks, the sheet shows both and asks before it removes any credit; if more, it credits at once (and, as always, a run never changes a skill's Learn, Know or Leave state; it only adds credit and the Verified mark).
+
+**4.5 The declaration: a prior for asking, never evidence (owner, 2026-11-05).** The first question of a run, once per language, in simple words (draft labels, open question 2): **Fluent** ("I use it easily"), **Advanced** ("I follow most of it and can say what I need"), **Amateur** ("I know some words and phrases"), **Beginner** ("I am starting from nothing"), and a small "Skip" that means no answer (the flat asking prior, the run of sections 5.1 to 5.3 exactly as before). It is asked once per language and not per skill: the skills the learner marks as known already say which skills to test (rows g, i), so a per-skill declaration would add a second screen for a gain the marks already give (open question 17).
+
+| Answer | What it does | Asking prior over the twelve classes (none, l0 to l10), and where the first question lands |
+|---|---|---|
+| Beginner | **skips the run**: no question, no credit, no placement. The learner starts from deck 0 with the skills as he marked them (Learn, the default); a script he cannot read starts from the script's first deck, because the Script skill is Learn like the others, and the existing script test (a learner who reads the script through another language may skip the script lessons) is offered as it is today, as a separate feature, not as placement (open question 18) | none |
+| Fluent | the expert track of 5.1 (hard questions at the last deck), the asking prior leaning to the top | l10 0.55, l9 0.15, l8 0.08, l7 0.05, the eight lower classes 0.02125 each; first question at deck N-1 (unit 100) |
+| Advanced | no expert track at first: positioning (5.3) starts high | a triangle of three classes either side of l7.5 on a floor of 0.02, normalised: 0.006 (none to l4), 0.058 (l5), 0.16 (l6), 0.263 (l7), 0.263 (l8), 0.16 (l9), 0.058 (l10); first probe at deck 79 (unit 80, the class nearest the 75th percentile; deck 74 lies between l7 and l8) |
+| Amateur | positioning starts in the lower middle | the same triangle around l3.5: 0.006 (none), 0.006 (l0), 0.058 (l1), 0.16 (l2), 0.263 (l3), 0.263 (l4), 0.16 (l5), 0.058 (l6), 0.006 (l7 to l10); first probe at deck 40 (unit 41, the 40th percentile, inside the owner's 25th to 50th band) |
+| Skip | the plan as it stood before this answer | flat; first question at the last deck (the expert track) |
+
+**How it is used.** The reporting posterior is flat (4.1, point 2), so **a declaration is never evidence**: a Fluent learner whose answers show Hear at the top gets the same 95% as one who skipped, and the declared level is not shown on the result sheet or stored (it lives for the run only). Only the asking posterior has the prior: the next question is asked at the deck where the asking posterior is closest to one half (5.3, point 2). Fluent keeps the expert track, whose questions are fixed by the topics of section 2.1, so the prior changes nothing until the learner leaves the track. **A learner who proves the top class while positioning** (an Advanced or Amateur declarer who passes at deck 79, 89 and 99) is then moved to the expert track for the topics of 2.1 that the positioning has not covered (up to the 15 of section 2.1 in all; his passes at the last decks count as evidence); that cost is not simulated.
+
+**What a right and a wrong declaration cost.** Questions per skill to 95% on a clean learner (hard single-skill pick questions, the recheck rule, then model-only; model of 4.1 and 4.2; a Fluent or Skip run includes the 3 questions of the closed topic 1 that every non-expert asks first; a learner at the top class of a Fluent or Skip run is the expert track, 15 in all):
+
+| True level of the skill | Skip (no answer) | Fluent | Advanced | Amateur | Beginner |
+|---|---|---|---|---|---|
+| none (knows nothing) | 14 / 8 | 17 / 9 | 20 / 8 | 14 / 6 | **0** (no run) |
+| about 30% of the path (A2) | 13 / 10 | 13 / 11 | 19 / 10 | **7 / 6** | 0 |
+| about 80% of the path (advanced) | 11 / 10 | 10 / 9 | **7 / 6** | 13 / 12 | 0 |
+| the whole path (native) | 15 / 15 (expert track) | **15 / 15** | 6 / 6 positioning, then the track, at most 21 | 11 / 11 positioning, then the track, at most 26 | 0 |
+
+Read the diagonal as the gain (an Advanced declarer who is advanced: 7 against 11, a saving of 4; an Amateur declarer who is A2: 7 against 13, a saving of 6) and the corners as the cost (a Fluent declarer who knows nothing: 17 against 14, **3 more**; an Advanced declarer who knows nothing: 20 against 14, **6 more**; an Advanced declarer who is A2: 19 against 13, 6 more; an Amateur declarer who is advanced: 13 against 11, 2 more). The wrong declaration costs a few questions and never a wrong placement, because the reporting posterior is flat. The Beginner answer is the one that saves a whole run, and so the one that can be wrong in a way that costs the learner: a native who presses it is not tested (open question 18). Declared and guessing, the cost rises further (section 5.3, point 8).
 
 ### 5. The run: the expert track, then positioning
 
 **5.1 The run in order.**
 
+0. **The declaration** (4.5). Fluent, Advanced, Amateur, Beginner or Skip. **Beginner ends here**: nothing is asked and nothing credited; the learner starts from deck 0. Fluent and Skip go to step 2, the expert track. Advanced and Amateur go to positioning (5.3) at once, with the asking prior of 4.5; a skill that positioning proves to be at the top class goes on to step 2 for the topics not yet covered. The answer may be skipped, and a learner who skips gets the run as it was before the question existed.
 1. **Preconditions.** If the path is complete to B1 and every deck is downloaded, Verified is possible (section 4.3). Otherwise the run only positions (row m).
 2. **The expert track.** Ask the mastery topics in the order of section 2.1, hard questions at the last deck, with checks after a miss. A skill stays on the track while its assurance in the top class stays at 20% or more. It **leaves** when it falls below 20% (for instance after a closed topic 1 or 5, section 3.2) or when two topics are closed; it is then positioned (5.3). A closed topic that is not about meaning (pairs, Say, script, grammar) is a gap and the skill stays.
-3. **Targets.** A skill on the expert track with the preconditions met has the target 95% (Verified); every other skill has the target 80% (Sure). The run **ends** when every tested skill has met its target, and shows the result (5.5). A skill with a closed case or a gap cannot be Verified, so its target is 80%.
+3. **Target: 95% for every tested skill** (owner, 2026-11-05: "Per skill. Target is 95%"). Each skill is judged alone, on its own assurance. The run **ends** when every tested skill is at 95% or more in its leading class ("Very sure", or Verified where 4.3 is met), and shows the result (5.5). A skill with a closed case or a gap cannot be Verified but has the same target: it needs one more question or so (row c). 80% plays no part in ending a run.
 4. **No fixed cap.** The run prolongs itself, as asked, until the targets are met or the learner stops. Every 25 questions it pauses at a checkpoint (5.4).
 
-**5.2 The expert track: cost on a Bengali run (15-question floor).** Each row is from the model of section 4 on the fixed order of section 2.1 (simulated, clean answers apart from the stated miss). "80%" is the question at which every tested skill is at 80% or more; "95%" is the question at which every skill that can be Verified is at 95% or more (and all topics are covered, which on a clean run is also question 15).
+**5.2 The expert track: cost on a Bengali run (15-question floor).** Each row is from the model of section 4 on the fixed order of section 2.1 (simulated, clean answers apart from the stated miss). The column is the question at which **every tested skill is at 95% or more** (the target of 5.1, step 3), which is also where Verified opens for a skill that meets 4.3. With the 80% stop gone, only this column is left (the old "to 80%" column ran from 12 to 18 and is dropped; the 95% numbers are unchanged except where a row says so).
 
-| Case | To 80% | To 95% (Verified) | Note |
-|---|---|---|---|
-| Clean | 14 | 15 | per skill: Read 80% at question 3 and 95% at 5; Hear 4 and 7; Write 7 and 7; Say 12 and 12; Script 14 and 15. The fixed topic order, not the model, sets the 15: the model alone would reach 80% in 8 and 95% in 9 questions, but Verified needs every topic covered |
-| One single-skill slip (a pair with a right recheck) | 15 | 16 (17 if the first check is wrong and the second right) | one or two more questions |
-| One composite slip (both splits right) | 16 | 17 | Hear 80% at 9, 95% at 12; Script last |
-| One gap (one split wrong, e.g. Write) | 17 | 17 for the other skills | the gapped skill reaches 83% ("Sure") and is not Verified |
-| One closed topic that is not about meaning | up to 18 | up to 18 | base 15, minus the skipped second question, plus 3 or 4 for the closed case, plus 1 isolating question |
-| Language with no script topic (Spanish) | 12 | 13 | 13 questions in all |
-| Reads two scripts (Hindustani) | 16 | 17 | a second script topic |
-| No mic (Say not tested; K1, K2 become picks) | 12 | 13 to 14 | Script needs one or two more questions to reach 95% |
-| At the checkpoint | | 25 | about three composite slips, a closed topic and one more slip; the learner then chooses Keep going or Stop here |
+| Case | To 95% (every skill) | Note |
+|---|---|---|
+| Clean | 15 | per skill: Read 95% at question 5; Hear 7; Write 7; Say 12; Script 15. The fixed topic order, not the model, sets the 15: the model alone would reach 95% in 9 questions, but Verified needs every topic covered |
+| One single-skill slip (a pair with a right recheck) | 16 (18 if the first check is wrong and the second right) | one or two more questions; after a miss, a wrong first check and a right second one, Hear is at 87%, so **one more Hear question** is asked to reach 95% (17 questions then, 18 with that one) |
+| One composite slip (both splits right) | 17 | Hear 95% at 12; Script last |
+| One gap (one split wrong, e.g. Write) | 18 | the other skills are at 95% by 17; the gapped skill is at 83% after 17 and reaches 98% with **one more Write question** (a tiles item); it is "Very sure" but not Verified (a gap). Under the old 80% stop the run ended at 17 |
+| One closed topic of one skill (pairs, Say, script) | about 23 | the skill falls under 20% on the track (a closed pair topic leaves Hear at 16%), so it is positioned (5.3): base 17 for the closed case and its isolating question, then about 6 more for that skill |
+| Language with no script topic (Spanish) | 13 | 13 questions in all |
+| Reads two scripts (Hindustani) | 17 | a second script topic |
+| No mic (Say not tested; K1, K2 become picks) | 13 | Script is at 92% after 12 and needs one more script question |
+| At the checkpoint | 25 | about three composite slips, a closed topic and one more slip; the learner then chooses Keep going or Stop here |
 
-**Expert verification fits in 25 questions in every case above and takes more than 25 only after about five or more composite slips or gaps in one run.** The main downside of the design is on the other side: a learner who is not an expert (section 5.3) spends far more questions than the old fixed battery did.
+**Expert verification fits in 25 questions in every case above except a closed topic, and takes more than 25 only after about five or more composite slips or gaps in one run.** The main downside of the design is on the other side: a learner who is not an expert (section 5.3) spends far more questions than the old fixed battery did.
 
 **5.3 Positioning (D): the fallback for a skill that leaves the expert track.** This path places and never verifies.
 
 1. **Vocabulary only.** Owner: "sample around in the mid section of the app (vocab check only now)". A skill has its own stream of single-skill vocabulary questions: Read (a word in the learner's script or reading, pick its meaning), Hear (an audio word, pick its meaning), Say (the English meaning given, say the word), Write (the meaning given, build or type the word), and for a script its own five levels (the classes of a script are `none` and its five levels, the same model).
-2. **Next question: where the evidence is most undecided.** Ask at the deck where P(level at or above that deck) is closest to one half. After the last deck has failed this is the middle of the path (the 50th percentile deck); a failure there moves the next probe to the 25th, a pass to the 75th; then the midpoint of what is left, which is the owner's "go back to 25%ile ... if passes, then to 75%ile" and "once they keep passing", as a single rule.
+2. **Next question: where the evidence is most undecided.** Ask at the deck where P(level at or above that deck) is closest to one half, **in the asking posterior** (4.1, point 2; flat for a learner who skipped the declaration, shaped by it otherwise). With no declaration, after the last deck has failed this is the middle of the path (the 50th percentile deck); a failure there moves the next probe to the 25th, a pass to the 75th; then the midpoint of what is left, which is the owner's "go back to 25%ile ... if passes, then to 75%ile" and "once they keep passing", as a single rule. With a declaration the first probe is where its prior is split in half (deck 79 for Advanced, deck 40 for Amateur, section 4.5) and the same rule goes on from there; the evidence soon outweighs the prior.
 3. **Checks.** Every miss gets the recheck rule of section 1: two more questions at the same deck, other items. Open question 9 asks whether the checks are needed in positioning, because the model uses the next probe as a check anyway (numbers below).
-4. **Stop for the skill** when the leading class reaches 80%, that is when the model is 80% sure the vocabulary level lies in one tenth of the path. The per-skill cost, from the model on a clean learner (deterministic answers, no slips; single-skill four-option questions; the numbers must be reproduced by the implementation's test):
+4. **Stop for the skill** when the leading class reaches **95%** (the owner's target), that is when the model is 95% sure the vocabulary level lies in one tenth of the path. It stops as soon as 95% is reached, even inside a recheck (a second miss at deck 0 after the first is not asked when the first already gave 95%). The per-skill cost, from the model on a clean learner (deterministic answers, no slips; single-skill four-option questions, flat start, the 3 questions of the closed topic 1 not counted; the numbers must be reproduced by the implementation's test). The old 80% columns are dropped; the 95% columns are the earlier ones, unchanged:
 
-| True level of the skill | To 80% with the recheck rule | To 80% model-only (no checks) | To 95% with the rule | To 95% model-only |
-|---|---|---|---|---|
-| none (knows nothing) | 11 | 4 | 11 | 5 |
-| about 30% of the path (A2) | 9 | 5 | 10 | 7 |
-| about 80% of the path (advanced) | 7 | 6 | 8 | 7 |
-| the whole path (a native who left the track) | 5 | 5 | 6 | 6 |
+| True level of the skill | To 95% with the recheck rule | To 95% model-only (no checks) |
+|---|---|---|
+| none (knows nothing) | 11 | 5 |
+| about 30% of the path (A2) | 10 | 7 |
+| about 80% of the path (advanced) | 8 | 7 |
+| the whole path (a native who left the track) | 6 | 6 |
 
-   Formula: the odds of the leading class after `k` right answers at its edge are `(1/11) x LR^k` with `LR = (1-s)/g`; for 80% they must reach 4 and for 95% they must reach 19, so `k = ceil(ln(11 x O) / ln LR)` with O = 4 or 19: for a four-option single question (LR 3.8) 3 right answers give 80% and 5 give 95%; for a pair (LR 1.9) 6 and 9; for a production answer (LR 28 to 30) 2 and 2. A miss costs 15 times more evidence than a right answer, which is why the first miss at a deck moves the next probe at once and why the checks add more than they need to when the learner is clean.
+   Formula: the odds of the leading class after `k` right answers at its edge are `(1/11) x LR^k` with `LR = (1-s)/g`; for 95% they must reach 19 (for the "Sure" line of 80%, 4), so `k = ceil(ln(11 x O) / ln LR)` with O = 19: for a four-option single question (LR 3.8) 5 right answers give 95% (3 would give 80%); for a pair (LR 1.9) 9 (6 for 80%); for a production answer (LR 28 to 30) 2 (2 for 80%). A miss costs 15 times more evidence than a right answer, which is why the first miss at a deck moves the next probe at once and why the checks add more than they need to when the learner is clean.
 5. **Percentile and short paths.** The p-th percentile deck is `round(p/100 x (N-1))`; the classes of section 4.1 are the percentile steps. For N of 20 or fewer the classes are min(10, N) equal parts; N of 9 or fewer gives one deck per class; N under 2 asks the one deck twice.
 6. **Grammar, once the vocabulary level is fixed.** Owner: "check grammar level". Take the skill the learner reads with (Read, else Hear). `G0` is the last grammar unit at or before its placed deck. Ask one grammar question (type G1) at `G0`: if right, ask one at the grammar unit halfway up between `G0` and the last grammar unit; if wrong (after its checks), one at the unit halfway down between the first grammar unit and `G0`. The grammar level is the highest probe answered right (`G0` if the up probe fails; the first grammar unit if the down probe fails too). That is the two bisections, "once each way", and then stop; at most 2 questions plus their checks (about 2 to 4). Grammar is placed, not given an assurance (two questions cannot reach 80%). A language with no grammar units skips this (row l).
-7. **The fixed cost.** The 3 questions already asked on the expert track before the skill left (a closed topic 1: K1, S1, S2) count as evidence. For `k` positioned skills the run costs about `3 + c x k`, with `c` from the table, plus 2 to 4 for grammar: for an advanced learner on four skills 3 + 7 x 4 = 31 (3 + 6 x 4 = 27 model-only); for an A2 learner 39 (23); for a beginner 51 (19). **These exceed 25 for three or more positioned skills; the checkpoint then comes before the end.** The main downside is fatigue. Mitigations (proposals, labelled as such, not simulated for the composites): (a) **floor first:** after a skill's mid probe is closed, probe deck 0 next; two misses there give "none" at 95% (a beginner then costs about 12 for two skills); (b) **pair skills in positioning:** a dictation (Hear plus Write at the same deck) serves two skills at once, up to about 40% fewer questions for those two; (c) **model-only checks in positioning,** open question 9; (d) at the second checkpoint (50 questions) any skill still under 50% is stated "Not sure yet" and the run offers Stop here first.
-8. **Worst case.** Unbounded in principle: answers that contradict each other keep the assurance flat. The model run on a pure guesser (four options, one skill, with the recheck rule) takes a median of 12 questions to 80% (the guesser is placed at none), 21 or fewer in 90% of runs, 30 or fewer in 99%, more than 25 in 3% of runs and more than 50 in none of 4,000; model-only: median 6, 99% within 15. That is the case the checkpoint is for.
+7. **The fixed cost.** The 3 questions already asked on the expert track before the skill left (a closed topic 1: K1, S1, S2) count as evidence. For `k` positioned skills the run costs about `3 + c x k`, with `c` from the table (rule), plus 2 to 4 for grammar: for an advanced learner on four skills 3 + 8 x 4 = 35 (3 + 7 x 4 = 31 model-only); for an A2 learner 43 (31); for a beginner 47 (23); with the 80% stop these were 31, 39 and 51 (the numbers moved with the table: 80% needed fewer questions in some rows and the earlier beginner row used 12 per skill). With a declaration that fits, the 3 are not asked (Advanced or Amateur skip the expert track) and `c` is 7 for an advanced learner who declared Advanced: 4 x 7 = 28. **These exceed 25 for three or more positioned skills; the checkpoint then comes before the end.** The main downside is fatigue. Mitigations (proposals, labelled as such, not simulated for the composites): (a) **floor first:** after a skill's mid probe is closed, probe deck 0 next; two misses there give "none" at 95% (97.8% after a closed mid probe and two floor misses; a closed deck-40 probe and two floor misses give 98.3%): a learner who knows nothing then costs 3 + 5 + 5 = 13 for two skills (an Amateur declarer: 5 each, 10); (b) **pair skills in positioning:** a dictation (Hear plus Write at the same deck) serves two skills at once, up to about 40% fewer questions for those two (not re-simulated for the 95% target); (c) **model-only checks in positioning,** open question 9; (d) at the second checkpoint (50 questions) any skill still under 50% is stated "Not sure yet" and the run offers Stop here first.
+8. **Worst case.** Unbounded in principle: answers that contradict each other keep the assurance flat. The model run on a pure guesser (four options, one skill, flat start, positioning only, 4,000 runs per row, the 95% target, answers right a quarter of the time at every deck) takes a median of 14 questions (the guesser is placed at none in 94% of runs), 23 or fewer in 90% of runs, 34 or fewer in 99%, more than 25 in 7% of runs and more than 50 in none of 4,000; model-only: median 7, 99% within 20. With a declaration the same guesser costs more, because the prior sends him to decks where he fails slowly: Amateur median 18 (90%: 25, 99%: 33, over 25: 8%), Fluent 21 (30, 40, 25%), Advanced 25 (33, 42, 46%). The old 80% stop gave a median of 11 and 19 at 90% (flat). That is the case the checkpoint is for.
 
 **5.4 The checkpoint (replaces the cap).** After 25 questions asked, and again after every 25 more (rechecks and splits count), the run pauses and shows where the learner is positioned, per skill. Draft wording (open question 3):
 
-> You have answered 25 questions. This is where you stand now. Read: unit 80, sure. Hear: unit 80, fairly sure. Say: unit 22, not sure yet. Script: known, sure. If you think you are better than this, keep going. Or stop here and we will place you at these levels.
+> You have answered 25 questions. This is where you stand now. Read: unit 80, very sure. Hear: unit 80, sure. Say: unit 22, not sure yet. Script: known, very sure. If you think you are better than this, keep going. Or stop here and we will place you at these levels.
 > [Keep going] [Stop here]
 
-"Positioned at unit N" means the leading class's level plus one: the learner knows up to unit N and learns from N + 1. A skill that has already reached its target is listed as it will be placed. Keep going continues the same run (the same posterior, the same questions) to the next checkpoint, and a run that reaches all its targets before 25 never shows one. "Fit again later" is dropped, as the owner asked.
+"Positioned at unit N" means the leading class's level plus one: the learner knows up to unit N and learns from N + 1. A skill that has already reached its target (95%, "Very sure") is listed as it will be placed and is not asked any more; the others are still being asked. The learner's declaration is not shown (4.5). Keep going continues the same run (the same posterior, the same questions) to the next checkpoint, and a run that reaches all its targets before 25 never shows one. "Fit again later" is dropped, as the owner asked.
 
-**5.5 What the end of a run, or Stop, writes and shows.** For each tested skill: the placed level (the leading class's level; decks up to it are credited), its assurance name (4.3) with the percentage in the detail line ("about 85% sure"), and the Verified mark where 4.3 is met; a skill not tested says "Not tested". Nothing is written until the run ends or the learner stops (a pause saves the run for 7 days under the same deck set and app version, then discards it). A low assurance is shown plainly and kindly ("Not sure yet: this is a first guess"), never as a fail and never as a score out of 100; the sheet shows the same name on the language's skill row. Stop here writes the placement at the assurance it has, and nothing is held against a learner who stops early.
+**5.5 What the end of a run, or Stop, writes and shows.** For each tested skill: the placed level (the leading class's level; decks up to it are credited), its assurance name (4.3) with the percentage in the detail line ("about 85% sure"; "Sure" is 80 to 94%, "Very sure" 95% and over), and the Verified mark where 4.3 is met; a skill not tested says "Not tested". Nothing is written until the run ends or the learner stops (a pause saves the run for 7 days under the same deck set and app version, then discards it). A low assurance is shown plainly and kindly ("Not sure yet: this is a first guess"), never as a fail and never as a score out of 100; the sheet shows the same name on the language's skill row. Stop here writes the placement at the assurance it has, and nothing is held against a learner who stops early.
 
 ### 6. Deviations (E), planned from the model
 
-Each route is the expert track of section 5.1, positioning (5.3) or both. "To 80%" and "To 95%" count questions for the stated skills; "Checkpoint" says whether 25 is passed. Budgets use the recheck rule; the model-only numbers are in 5.3.
+Each route is the declaration (4.5), the expert track of section 5.1, positioning (5.3) or both. "To 95%" counts questions until every stated skill is at 95% (the target of 5.1; 80% is no longer a target); "Checkpoint" says whether 25 is passed. Budgets use the recheck rule; the model-only numbers are in 5.3 and 4.5. A row that says "declared" assumes the declaration fits (right); rows o and p are the wrong or missing declaration.
 
-| Row | Trigger | Route | To 80% / To 95% | Checkpoint | Outcome written |
+| Row | Trigger | Route | To 95% | Checkpoint | Outcome written |
 |---|---|---|---|---|---|
-| **a. Native or expert, clean** | all topics right | expert track | 14 / 15 (Spanish 12 / 13) | no | every skill Verified; every deck credited |
-| **b. Expert with a slip** | a composite miss with both splits right, or a single-skill miss with a right check | continue | 16 / 17 for a composite; 15 / 16 for a single (17 if the first check is wrong) | no | Verified; the slip is only part of the evidence |
-| **c. Expert with a gap** (one split wrong, or a closed pair, Say or script topic) | the split names the part | record the gap, ask the isolating question, continue | 17 / 17 for the other skills; up to 18 if a topic closed | no | the gapped skill "Sure" (about 83%) but not Verified; the others Verified; a gap record `{kind: grammar, contrast or script, id, deck}`; the app offers that unit or the pair drill; every deck credited except the gap's first failing unit |
-| **d. Native fails early** (a voice, script or recogniser problem makes the first topic close) | a skill falls under 20% on the track | the skill is positioned; a native at the end of the path takes about 5 to 7 more questions; grammar 2 to 4 | 3 + about 5 to 7 per skill | for three or more skills | not Verified; placed near the end with a "Sure" name; a line says why; a new run starts from the last deck as always |
-| **e. Advanced non-native** (about 80% of the path) | topic 1 or 5 closed (both splits wrong) | positioning | 3 + 7 per skill (17 for two skills; 21 with grammar; 31 for four) | for three or more skills | not Verified; placed at the leading tenth (unit 80 in the example) at 80% or more |
-| **f. Intermediate (A2)** | same | positioning | 3 + 9 per skill (21 for two; 39 for four) | for three or more | placed at about a third; learn from the next |
-| **g. Heritage speaker** (hears and speaks, cannot read) | the learner marks Read and Write as not known, or K1 closes with K2 right | expert track on audio variants: topic 1 as two K2 questions, topic 3 as "which sentence sounds right", topic 5 as W2 twice, topics 2 and 7 not asked (they need Write); Say as usual | 11 / 11 | no | Hear and Say Verified; Read, Write and Script "Not tested"; the sheet proposes them as Learn from the script's first deck and the learner confirms (a run never changes a skill's state); the words are credited for Hear and Say |
-| **h. Beginner (A1 or none)** | topic 1 closed and the mid probes closed | positioning | 3 + about 12 per skill (27 for two skills); with floor first (5.3, proposal) about 12 | for two or more skills | not Verified; placed at none ("Sure"); learn from deck 0; the script by its own check |
-| **i. Partial script** (Hindustani: Devanagari known, Perso-Arabic not) | the learner marks a script as not read | each script is its own skill row with its own questions; the unread one is asked at its floor only (two misses give "none" at 95%; with the rule 3 questions); the word questions use the script he reads | expert 15 / 15 + 3 | no | Devanagari Verified with the words; Perso-Arabic: learn from its first script deck, as the owner described |
-| **j. No mic, noisy room, "I can't speak now"** | no recogniser; two "unheard" in a row; the Speak button used | Say is not asked; K1 and K2 become picks (4.3: "Not tested", never a fail) | 12 / 13 to 14 | no | Say "Not tested"; the others Verified or placed on their own evidence; Say can be run alone later; with no sound, Hear is also "Not tested" and the pair questions become Write tiles (open question 15) |
-| **k. Guesser** | answers about as good at depth as at the floor; closed topics in a row; the skills leave the track | positioning (section 5.3) with "I don't know" invited | 35 for two skills in the example below (a median of 12 per skill) | yes, at 25 | not Verified; placed at none or at a low class, whatever the lucky answers; a line asks him to use "I don't know" |
+| **a. Native or expert, clean** | all topics right | expert track | 15 (Spanish 13); declared Fluent | no | every skill Verified; every deck credited |
+| **b. Expert with a slip** | a composite miss with both splits right, or a single-skill miss with a right check | continue | 17 for a composite; 16 for a single (18 if the first check is wrong and the second right) | no | Verified; the slip is only part of the evidence |
+| **c. Expert with a gap** (one split wrong, or a closed pair, Say or script topic) | the split names the part | record the gap, ask the isolating question, continue | 18 (the other skills are at 95% by 17); a closed single-skill topic about 23 | no | the gapped skill "Very sure" (98% after one more question; 83% before it) but not Verified; the others Verified; a gap record `{kind: grammar, contrast or script, id, deck}`; the app offers that unit or the pair drill; every deck credited except the gap's first failing unit |
+| **d. Native fails early** (a voice, script or recogniser problem makes the first topic close) | a skill falls under 20% on the track | the skill is positioned; a native at the end of the path takes about 6 more questions (to 95%); grammar 2 to 4 | 3 + about 6 per skill | for four or more skills | not Verified; placed near the end with a "Very sure" name; a line says why; a new run starts from the last deck as always |
+| **e. Advanced non-native** (about 80% of the path) | topic 1 or 5 closed (both splits wrong) | positioning; declared Advanced starts at deck 79 and skips the track | 7 per skill if declared Advanced (14 for two skills; 18 with grammar; 28 for four); 3 + 8 per skill otherwise (19 for two; 23 with grammar; 35 for four) | for four skills declared, for three or more otherwise | not Verified; placed at the leading tenth (unit 80 in the example) at 95% or more |
+| **f. Intermediate (A2)** | same | positioning; declared Amateur starts at deck 40 | 7 per skill if declared Amateur (14 for two; 28 for four); 3 + 10 per skill otherwise (23 for two; 43 for four) | for four skills declared, for three or more otherwise | placed at about a third; learn from the next |
+| **g. Heritage speaker** (hears and speaks, cannot read) | the learner marks Read and Write as not known, or K1 closes with K2 right | expert track on audio variants: topic 1 as two K2 questions, topic 3 as "which sentence sounds right", topic 5 as W2 twice, topics 2 and 7 not asked (they need Write); Say as usual | 11 | no | Hear and Say Verified; Read, Write and Script "Not tested"; the sheet proposes them as Learn from the script's first deck and the learner confirms (a run never changes a skill's state); the words are credited for Hear and Say |
+| **h. Beginner (A1 or none)** | declared Beginner; or no declaration, topic 1 closed and the mid probes closed | declared Beginner: **no run**. Otherwise positioning | declared Beginner 0; otherwise 3 + 11 per skill (25 for two skills); with floor first (5.3, proposal) 13 for two; declared Amateur and knows nothing 14 per skill (5 with floor first) | for two or more skills, undeclared | no placement is written for a declared Beginner: learn from deck 0, nothing credited, the script lessons from the script's first deck with the script test offered as today (4.5). Otherwise not Verified; placed at none ("Very sure"); the script by its own check |
+| **i. Partial script** (Hindustani: Devanagari known, Perso-Arabic not) | the learner marks a script as not read | each script is its own skill row with its own questions; the unread one is asked at its floor only (two misses give "none" at 95%; with the rule 3 questions); the word questions use the script he reads | 18 (15 + 3) | no | Devanagari Verified with the words; Perso-Arabic: learn from its first script deck, as the owner described |
+| **j. No mic, noisy room, "I can't speak now"** | no recogniser; two "unheard" in a row; the Speak button used | Say is not asked; K1 and K2 become picks (4.3: "Not tested", never a fail) | 13 | no | Say "Not tested"; the others Verified or placed on their own evidence; Say can be run alone later; with no sound, Hear is also "Not tested" and the pair questions become Write tiles (open question 15) |
+| **k. Guesser** | answers about as good at depth as at the floor; closed topics in a row; the skills leave the track | positioning (section 5.3) with "I don't know" invited | 37 for two skills in the example below (a median of 14 per skill; declared Fluent 21) | yes, at 25 | not Verified; placed at none or at a low class, whatever the lucky answers; a line asks him to use "I don't know" |
 | **l. Few decks or no grammar decks** | N under 12, or no grammar family | classes of min(10, N) equal parts; N of 9 or fewer: one deck per class; no grammar family: G1 and G2 use sentence cards with a close wrong form (Toki Pona's particles); no sounds file: pair letters from the decks (section 8) or complex words instead | about as above, minus the grammar step | no | Verified as the baseline if 4.3 is met; a line says what was missing |
 | **m. Not complete to B1** | the path is short of the B1 mark | no Verified (that is what verification is); the expert track and positioning run over the decks that exist, the top class being the last deck that exists | as rows a to h | as above | never Verified; placed; the sheet says known skills cannot be Verified until the course is complete |
 | **n. Pause or abandoned** | the learner leaves; fatigue after two late misses in an otherwise clean run | the run is saved after every answer; resumed within 7 days with the same deck set and app version, else discarded with no answer carried; a pause is offered, not a fail | a pause costs nothing; the checkpoint counts asked questions | n/a | nothing is written until the run ends or the learner stops |
+| **o. Wrong declaration** | the first answers contradict it (a Fluent or Advanced declarer fails the first questions; an Amateur or Advanced declarer passes everything) | nothing special: the asking prior is soon outweighed and the run goes on by 5.3; the placement is the reporting posterior's, never the declaration | Fluent and none: 17 against 14; Advanced and none: 20 against 14; Advanced and A2: 19 against 13; Amateur and advanced: 13 against 11; Amateur and native: 11, then the track, at most 26 (4.5) | depends on the number of skills | the placement the answers determine; the declaration is never shown nor held against him. The cost is a few questions, not a wrong result |
+| **p. The question is skipped** | the learner presses Skip | flat asking prior; the run of 5.1 as before the question existed (expert track first) | as rows a to h, undeclared | as above | as the row it falls into |
 
 **6.2 The guesser guard.** The earlier plan computed that a pure guesser passes a 14-question battery about 1 in 400 (0.578^10 x 0.875^4). Under the new design a guesser can pass a question by luck or by two lucky split questions, and must also lift every skill to 95%, which the model treats as strongly as any other evidence. Simulated with the parameters of 4.2 (60,000 runs, answers independent, four-option guesses right a quarter of the time, a pair a half, production answers 3%, one skill at a time, the fixed order of 2.1, checks and splits as in 3.1, no extra questions):
 
-| Skill | Chance a pure guesser reaches 95% (Verified level) after the 15-question list | Chance he reaches 80% |
+| Skill | Chance a pure guesser reaches 95% (the fit target and the Verified level) after the 15-question list | Chance he reaches 80% (the "Sure" line) |
 |---|---|---|
 | Read | 0.05% (about 1 in 1,900) | 0.19% |
 | Hear | 0.06% (about 1 in 1,700) | 0.12% |
@@ -230,9 +262,9 @@ Each route is the expert track of section 5.1, positioning (5.3) or both. "To 80
 | every skill together | effectively never (none in 60,000) | |
 | no mic: Read / Hear / Write | 0.13% / 0.12% / 0.03% (about 1 in 790, 830, 3,300); Script cannot reach 95% on the list alone | |
 
-These are lower than the old 1 in 400 for every skill except Script, because composites need several parts at once and production answers (K1, K2, Say) are almost impossible to guess. The assumptions are the weakest part: the independence of answers, and a pure guesser (a half-knower is not computed). Also, a run that reaches 95% only through slips reaches a lower number than a clean one (a K1 miss and two right splits leave Script at 94%, under 95%), so the model asks more before it verifies. **Proposals to bring it down, with the main downside:**
+The 95% target does not change these figures (the 95% column was already the Verified level; the 80% column now only draws the "Sure" line). A declaration does not change them either: the reporting posterior is flat (4.5), so a guesser who declares Fluent is as unlikely to be Verified as one who skips. These are lower than the old 1 in 400 for every skill except Script, because composites need several parts at once and production answers (K1, K2, Say) are almost impossible to guess. The assumptions are the weakest part: the independence of answers, and a pure guesser (a half-knower is not computed). Also, a run that reaches 95% only through slips reaches a lower number than a clean one (a K1 miss and two right splits leave Script at 94%, under 95%), so the model asks more before it verifies. **Proposals to bring it down, with the main downside:**
 
-- **A third script question** (a rarest-sign read at a different sign class): divides the Script figure by about 2 to 4; costs 1 question on a clean run (16, 14 to 80%, 15 to 95%+1). Downside: a longer run for scripts only.
+- **A third script question** (a rarest-sign read at a different sign class): divides the Script figure by about 2 to 4; costs 1 question on a clean run (16 in all). Downside: a longer run for scripts only.
 - **More pairs** (a third pair question): Hear 1 in 1,700 becomes about 1 in 1,900; weak per question because a pair is a coin toss, and it does nothing for Read. Downside: a pair is a poor use of a question.
 - **A sentinel block** (two easy deck-0 to 4 items): does not lower a pure guesser's odds (he guesses easy items at the same rate); it only helps against a learner who memorised the hard items. Downside: it costs 2 questions and adds little. Not recommended.
 - **A second pass on suspicious runs** (any pass reached by a slip): already built into the model, since a slip lowers the posterior and the run asks more; no separate rule is needed.
@@ -241,9 +273,9 @@ Recommendation, not a decision: keep the model as it is and take the third scrip
 
 ### 7. Worked examples (F) (N = 100, Bengali, B1 complete)
 
-Assurance figures are from the model of section 4 (simulated). Skills in examples 1 to 3: Read, Hear, Say, Write and Script. `ok` is right. "Name" is the word of 4.3.
+Assurance figures are from the model of section 4 (simulated). Skills in examples 1 to 3: Read, Hear, Say, Write and Script. `ok` is right. "Name" is the word of 4.3. Every run opens with the declaration (4.5), shown as question 0 and not counted. The target of every skill is 95% (5.1).
 
-**Example 1: a native, clean.**
+**Example 1: a native, clean.** Declaration: **Fluent** (right). Asking prior leans to the top; the expert track starts at deck 99.
 
 | # | Topic | Item | Skills | Result |
 |---|---|---|---|---|
@@ -261,9 +293,9 @@ Assurance figures are from the model of section 4 (simulated). Skills in example
 | 14 | 7 | read a word with a rare conjunct; pick its meaning | Script, Read | ok |
 | 15 | 7 | build a conjunct word with tiles | Script, Write | ok |
 
-Result: 15 questions, no miss. The 80% mark was met at question 14 and the 95% mark at 15. End: Read 100%, Hear 100%, Say 100%, Write 100%, Script 99%: every skill **Verified**; every deck credited. The run ended on its own, with no checkpoint. By skill, 80% / 95%: Read 3 / 5, Hear 4 / 7, Write 7 / 7, Say 12 / 12, Script 14 / 15.
+Result: 15 questions, no miss. The 95% target was met at question 15 (every topic covered). End: Read 100%, Hear 100%, Say 100%, Write 100%, Script 99%: every skill **Verified**; every deck credited. The run ended on its own, with no checkpoint. By skill, the question at which 95% was reached: Read 5, Hear 7, Write 7, Say 12, Script 15. The declaration was not shown and was not part of the 99%: a learner who had skipped it gets the same run.
 
-**Example 2: a native with one slip.** The same as Example 1, except that the recogniser misheard the English answer at question 2.
+**Example 2: a native with one slip.** Declaration: **Fluent**. The same as Example 1, except that the recogniser misheard the English answer at question 2.
 
 | # | Item | Result |
 |---|---|---|
@@ -273,9 +305,9 @@ Result: 15 questions, no miss. The 80% mark was met at question 14 and the 95% m
 | 4 | split S2: a short word heard, pick its meaning | ok: slip, forgiven |
 | 5 to 17 | W1, W2, G1, G2, R1, R2, two pairs, three Say, script read, script write (Example 1, rows 3 to 15) | ok x13 |
 
-Result: 17 questions (15 plus the 2 splits). 80% at question 16, 95% at 17. Hear was 12% after question 4 and reached 80% at 9 and 95% at 12. End: Read 100%, Hear 97%, Say 100%, Write 100%, Script 99%: every skill **Verified**. The miss is part of the evidence and is not shown.
+Result: 17 questions (15 plus the 2 splits); 95% at question 17. Hear was 12% after question 4 and reached 95% at 12. End: Read 100%, Hear 97%, Say 100%, Write 100%, Script 99%: every skill **Verified**. The miss is part of the evidence and is not shown.
 
-**Example 3: an expert failing one topic (composite split).** Hear and Write were asked together in R1.
+**Example 3: an expert failing one topic (composite split).** Declaration: **Fluent**. Hear and Write were asked together in R1.
 
 | # | Item | Result |
 |---|---|---|
@@ -288,46 +320,42 @@ Result: 17 questions (15 plus the 2 splits). 80% at question 16, 95% at 17. Hear
 | 13 to 15 | three Say | ok x3 |
 | 16 | script read | ok |
 | 17 | script write | ok |
+| 18 | one more Write question, a tiles item (the 95% target for the gapped skill) | ok: Write 98% |
 
-Result: 17 questions. Hear 97%, Read 100%, Say 100%, Script 99%: **Verified**. Write 83%: **Sure**, but not Verified, because a gap in the Write part was found (the sign class of the miss, recorded as `{kind: script, id, deck}`); the app offers the unit. The gap does not remove Verified from the other skills (the owner's rule: verified is per skill). The run ended at 17 because the Write target is 80% once a gap exists.
+Result: 18 questions. Hear 97%, Read 100%, Say 100%, Script 99%: **Verified**. Write 98%: **Very sure**, but not Verified, because a gap in the Write part was found (the sign class of the miss, recorded as `{kind: script, id, deck}`); the app offers the unit. The gap does not remove Verified from the other skills (the owner's rule: verified is per skill). Write was at 83% ("Sure") after question 17; under the 95% target the run asks the one more Write question (under the old 80% stop it ended at 17).
 
-**Example 4: an advanced non-native, placed by positioning (Read and Hear known).** True level: about deck 80.
-
-| # | Probe | Result |
-|---|---|---|
-| 1 | K1 (Read): a long sentence of deck 99 in the script; say its meaning in English | miss |
-| 2 | split S1: another by audio, pick its meaning (Hear) | miss |
-| 3 | split S2: a short last-deck word in the script, pick its meaning (Read) | miss: topic 1 closed; both skills fall under 20% at the top and leave the track |
-| 4 | Hear, the middle (deck 50) | ok |
-| 5 | Read, deck 50 | ok |
-| 6 | Hear, deck 69 | ok |
-| 7 | Read, deck 69 | ok |
-| 8 to 9 | Hear, Read, deck 79 | ok x2 |
-| 10 to 12 | Hear, deck 89 | miss, miss, miss (the recheck rule): case closed |
-| 13 to 15 | Read, deck 89 | miss x3 |
-| 16 | Hear, deck 79 | ok: 88% |
-| 17 | Read, deck 79 | ok: 88% |
-| 18 | grammar: the last grammar unit at or before deck 79 (deck 77) | ok |
-| 19 to 21 | grammar: the unit halfway up (deck 87) | miss x3: grammar level stays at deck 77 |
-
-Result: 21 questions, no checkpoint (under 25). Read: unit 80 (deck 79), **Sure** (about 88%); Hear: unit 80, **Sure** (about 88%); grammar placed from the unit after deck 77 (not assured); not Verified; the learner is placed at 79 and learns from deck 80. Model-only (no checks) it would be 3 + 6 + 6 + 2 = 17.
-
-**Example 5: a beginner (Read and Hear known).**
+**Example 4: an advanced non-native, placed by positioning (Read and Hear known).** True level: about deck 80. Declaration: **Advanced** (right). No expert track: positioning starts at deck 79 (unit 80), where the asking prior is split in half; each skill has its own stream.
 
 | # | Probe | Result |
 |---|---|---|
-| 1 to 3 | K1, then S1 and S2 | "I don't know" x3: topic 1 closed; both skills leave |
-| 4 to 6 | Hear, deck 50, with its two checks | "I don't know" x3 |
-| 7 to 9 | Read, deck 50 | x3 |
-| 10 to 15 | Hear then Read, deck 20 | x3 each |
-| 16 to 21 | Hear then Read, deck 10 | x3 each |
-| 22 to 24 | Hear, deck 0 | x3: none at 100% |
-| 25 | Read, deck 0 | first miss: **checkpoint** (Read none at 94%, Hear none at 100%, both Sure) |
-| 26 to 27 | Read, deck 0, two checks | x2: Read none at 100% |
+| 1 | Hear, deck 79 (unit 80) | ok |
+| 2 to 4 | Hear, deck 89 | miss, miss, miss (the recheck rule): case closed |
+| 5 to 7 | Hear, deck 79 | ok x3: Hear at deck 79 and 96% (the 95% target) |
+| 8 | Read, deck 79 | ok |
+| 9 to 11 | Read, deck 89 | miss x3 |
+| 12 to 14 | Read, deck 79 | ok x3: Read at deck 79 and 96% |
+| 15 | grammar: the last grammar unit at or before deck 79 (deck 77) | ok |
+| 16 to 18 | grammar: the unit halfway up (deck 87) | miss x3: grammar level stays at deck 77 |
 
-Result: 27 questions, one checkpoint at 25 (a learner who chose Stop here at the checkpoint is placed at none with Sure on both). Placed at none: learn from deck 0; the script by its own check. Not Verified. Proposed floor first (5.3): after the mid probe closes, probe deck 0: 12 questions.
+Result: 18 questions, no checkpoint (under 25). Read: unit 80 (deck 79), **Very sure** (96%); Hear: unit 80, **Very sure** (96%); grammar placed from the unit after deck 77 (not assured); not Verified; the learner is placed at 79 and learns from deck 80. Without the declaration the run is the expert track first: 3 + 8 + 8 + grammar 4 = 23, against 18 here (model-only: 3 + 7 + 7 + 2 = 19 against 6 + 6 + 2 = 14).
 
-**Example 6: a heritage speaker (Hear and Say known; Read, Write and Script not marked).**
+**Example 5: a learner who knows nothing and declares Amateur (Read and Hear known).** Declaration: **Amateur** (wrong: he knows nothing). The asking prior is centred on deck 35, so the first probe is deck 40.
+
+| # | Probe | Result |
+|---|---|---|
+| 1 to 3 | Hear, deck 40, with its two checks | "I don't know" x3 |
+| 4 to 6 | Hear, deck 30 | x3 |
+| 7 to 9 | Hear, deck 20 | x3 |
+| 10 to 12 | Hear, deck 10 | x3 |
+| 13 to 14 | Hear, deck 0 | x2: none at 99.6% (the third question is not asked: 95% is already reached) |
+| 15 to 25 | Read, the same probes: decks 40, 30, 20 (three each), deck 10 (two) | x11: **checkpoint** at 25 (Hear none, very sure; Read none, not sure yet, 49.9%) |
+| 26 to 28 | Read, deck 10 (one more), deck 0 (two) | x3: Read none at 99.6% |
+
+Result: 28 questions, one checkpoint at 25 (a learner who chose Stop here is placed at none, Hear very sure and Read not sure yet). Placed at none: learn from deck 0; the script by its own check. Not Verified. A learner who had **declared Beginner** would have had no run and the same start. A learner who skipped the question would have been asked the closed topic 1 first: 3 + 11 + 11 = 25. With floor first (5.3): 3 + 5 + 5 = 13, or 10 declared Amateur.
+
+**Example 5b: declared Beginner.** Declaration: **Beginner**. The run does not start: no question, no credit, no placement written. The language is added with the skills as the learner marked them (Learn by default); the script lessons start from the script's first deck, and the script test is offered as it is today if he reads the script through another language. The sheet says nothing about a level. He can open Find my level again later (open question 18).
+
+**Example 6: a heritage speaker (Hear and Say known; Read, Write and Script not marked).** Declaration: **Fluent** (right for his speech).
 
 | # | Item | Result |
 |---|---|---|
@@ -339,25 +367,26 @@ Result: 27 questions, one checkpoint at 25 (a learner who chose Stop here at the
 
 Topics 2 and 7 are not asked (they need Write). Result: 11 questions. Hear 100%, Say 100%: **Verified**; Read, Write and Script: **Not tested**; the sheet proposes them as Learn from the script's first deck and the learner confirms.
 
-**Example 7: a guesser (Read and Hear known; right a quarter of the time at four options).**
+**Example 7: a guesser (Read and Hear known; right a quarter of the time at four options).** Declaration: **Fluent** (wrong: he knows nothing; the prior sends the first probes high).
 
 | # | Probe | Result |
 |---|---|---|
 | 1 to 3 | K1 (says nothing), S1, S2 | miss x3: topic 1 closed; both skills leave |
-| 4 | Hear, deck 50 | ok (lucky) |
-| 5 to 7 | Read, deck 50, two checks | miss x3 |
-| 8 to 10 | Hear, deck 69 | miss, ok, ok |
-| 11 to 13 | Hear, deck 69 again | miss, miss, ok |
-| 14 to 16 | Read, deck 20 | miss x3 |
-| 17 to 19 | Hear, deck 50 | miss, miss, ok |
-| 20 to 22 | Hear, deck 20 | miss x3 |
-| 23 to 25 | Hear, deck 10 | miss, miss, ok: **checkpoint**: both skills at none, "Fairly sure" (about 50%) |
-| 26 to 28 | Read, deck 10 | miss x3 |
-| 29 | Hear, deck 0 | ok (lucky) |
-| 30 to 32 | Read, deck 0 | miss x3: Read none at 100% |
-| 33 to 35 | Hear, deck 0 | miss x3: Hear none at 100% |
+| 4 to 6 | Hear, deck 79 (the asking prior's first probe) | miss, miss, ok (lucky) |
+| 7 to 8 | Hear, deck 40 | miss, ok (lucky) |
+| 9 to 11 | Hear, deck 20 | miss x3 |
+| 12 to 14 | Hear, deck 10 | miss x3 |
+| 15 to 20 | Hear, deck 0 | miss, ok, ok, ok (three lucky in a row, weak evidence at the floor), miss, miss: Hear none at 98% |
+| 21 to 23 | Read, deck 79 | miss x3 |
+| 24 to 25 | Read, deck 40 | miss, miss: **checkpoint** at 25: Hear none, very sure (98%); Read none, not sure yet (20%) |
+| 26 | Read, deck 40 | miss |
+| 27 to 29 | Read, decks 20 and 30 | ok (lucky), miss, ok (lucky) |
+| 30 to 32 | Read, deck 20 | miss x3 |
+| 33 to 35 | Read, deck 10 | miss x3 |
+| 36 to 37 | Read, deck 0 | miss x2: Read none at 99.6% |
 
-Result: 35 questions (a median of 12 per skill is typical). Not Verified; placed at none on both; a line asks him to press "I don't know" instead of guessing. Lucky answers cost him questions, not credit.
+Result: 37 questions (3 + 17 for Hear + 17 for Read; a median of 14 per skill is typical, 21 declared Fluent). Not Verified; placed at none on both, "Very sure" only because the answers support it; a line asks him to press "I don't know" instead of guessing. Lucky answers cost him questions, not credit, and the declaration gave him none: it cost him about 7 more questions per skill than a skipped declaration (21 against 14, 4.5).
+
 ### 8. Minimal-pair data today, and what is missing
 
 What the app has: a `<lang>-sounds.yaml` for ten languages (as, bn, gu, hi, ja, kn, ko, mr, te, zh: 4 to 9 contrasts each, as letter pairs, with `within_word` for a sign added at the end of a word). The speaking drill's feedback uses it (ADR-0015). Each contrast id is the tag of a language's sound-differences deck. A minimal-pairs drill, `PairDrill`, exists but is built on fixture data and shown disabled until #31 gives it an ADR, deck data and a device check; nothing in a live session builds it. `alike_warning.dart` already finds sound-alike and look-alike cards for a review.
@@ -372,23 +401,26 @@ What is missing:
 
 ### 9. Part 3: open questions for the owner
 
-Each has the default this plan assumes, in brackets, and the main downside. Answered 2026-11-05 and removed: the verified mark (per skill), the failed-check rule (section 1), the dialect policy (2.4), the hard cap of 25 (superseded: a checkpoint, 5.4), "fit again later" (dropped, 5.4), assurance and its 80% and 95% targets (section 4).
+Each has the default this plan assumes, in brackets, and the main downside. Answered 2026-11-05 and removed: the verified mark (per skill), the failed-check rule (section 1), the dialect policy (2.4), the hard cap of 25 (superseded: a checkpoint, 5.4), "fit again later" (dropped, 5.4), assurance and its 95% target (section 4), **80% and 95% per skill or together** (per skill, target 95%, 2026-11-05: "Per skill. Target is 95%"; 5.1), and **whether a self-declared level seeds the search** (yes, as a first question, 2026-11-05; 4.5).
 
 1. **The model's parameters and prior (4.1, 4.2).** [flat prior over twelve classes; slip 0.05 for a single pick, 0.10 for a composite or an English production, 0.15 for Say; guess 0.25 at four options, 0.5 at a pair, 0.03 for a production, 0.05 and 0.10 for tiles; a composite miss at half weight] Downside: there is no population data, so these are set by feel; wrong values make the run too trusting (a low slip rate makes one miss costly) or too slow. They can be tuned later if the app records, on the device, how often each question kind is missed.
-2. **80% and 95% per skill, or for all skills together?** [per skill: the run ends when every tested skill has met its own target, and Verified is per skill] Downside: the run is as long as its slowest skill (Say, Script). All skills together would be simpler to explain and slower.
-3. **Checkpoint wording and repeats (5.4).** [the draft of 5.4; every 25 questions, repeated] Downside: a learner who keeps going to 75 questions is tired; the plan does not stop him ("they can keep going or stop").
+2. **The declaration: four answers and their wording (4.5).** The owner lists "fluent, advanced, or amateur" and then "beginner is the third option". [exactly four answers, Fluent, Advanced, Amateur, Beginner, plus a small Skip; draft wording: Fluent "I use it easily", Advanced "I follow most of it and can say what I need", Amateur "I know some words and phrases", Beginner "I am starting from nothing"] Downside: if the owner means three answers (Beginner being what the third one, Amateur, is called) the table of 4.5 loses a column; wording in simple words is a guess and a learner may choose by pride rather than level, which costs a few questions (the table of 4.5) but never a wrong placement.
+3. **Checkpoint wording and repeats (5.4).** [the draft of 5.4; every 25 questions, repeated] Downside: a learner who keeps going to 75 questions is tired; the plan does not stop him ("they can keep going or stop"). With the 95% target on every skill the checkpoint is now reached more often: three or more positioned skills cross 25 (5.3, point 7).
 4. **What "positioned" shows per skill.** [the unit and a name (Not sure yet, Fairly sure, Sure, Verified), with the percentage only in the detail line] Downside: a name hides precision; the percentage invites "should I be at 95?". Showing only the percentage reads like a score, which the owner earlier did not want (never shaming a low result).
 5. **Slip cost.** [a single-skill slip costs 1 question (2 if the first check is wrong); a composite always costs 2 (both splits)] Downside: if the owner means that both checks are always asked, every miss costs 2 and each row above rises by one per single-skill slip.
 6. **The mastery topic list (2.1):** long-sentence recognition, long-sentence reproduction, late grammar, minimal pairs, complex words, Say by word meaning, script read and write, 2 questions each, Say 3. [as listed] Downside: seven topics set a floor of 15 (13 without a script) however good the learner is; a shorter list would be quicker but let a real gap through.
 7. **A floor of 3 questions per skill for Verified, on top of 95%?** [yes, kept only because Say needs 3 and the list gives every skill 3 or more; no separate rule] Downside: the model could reach 95% in 2 production answers; the floor is the owner's "covered all the topics", not a statistical need.
 8. **Say by the meaning of a word, and the recogniser for bn-IN.** The recogniser is graded against the taught word and its listed synonyms (a synonym list is needed on the cards; Hindustani already has Sanskrit and Persian-leaning synonyms, other languages have none), and shorter items reduce dialect risk. The earlier finding is that the bn-IN recogniser is uneven. Options: (a) judge against the taught form and listed synonyms only (simplest; a fluent speaker of another dialect can be failed, which closes a Say case); (b) lenient matching on the taught word's sounds (accepts near sounds; a weaker check, and a guess passes more easily); (c) when the recogniser rejects a clearly fluent attempt, leave Say unverified rather than failing it (no false fail; the sheet says why; open: how the app judges "clearly fluent"). **Recommendation, not a decision:** (c) with (a) as the grading, because it avoids a false fail without loosening the check a guess has to pass. Downside of (c): a fluent learner may not get Say Verified in that run, and the synonym list is deck work that the deck-work rules put last.
-9. **The recheck rule in positioning (5.3).** [apply it everywhere: two more questions at the same deck after a miss] Downside: it costs about 2 questions per miss, and a clean beginner pays 11 per skill instead of 4 (an advanced learner 7 instead of 6). Model-only checks are about 40% shorter but let one slip move the next probe.
+9. **The recheck rule in positioning (5.3).** [apply it everywhere: two more questions at the same deck after a miss] Downside: it costs about 2 questions per miss, and a clean beginner pays 11 per skill instead of 5 (an advanced learner 8 instead of 7) to reach 95%. Model-only checks are about 40% shorter but let one slip move the next probe.
 10. **What "failing 2 in a row" means in a topic.** [a closed case: a miss and both checks wrong] Downside: a stricter reading (a miss and one wrong check) fails honest slips more often.
 11. **Floor first for a beginner (5.3, proposal).** [yes] Downside: a learner with a few words and no mid-path knowledge is placed at none after two floor misses only if the floor misses; one lucky floor answer sends him back to the median probe.
 12. **At Stop with low assurance.** [place at the leading class's level, whatever its assurance, and show the name] Downside: a learner stopped at 40% may be placed too high; the alternative (place at the highest level he is 80% sure of, which can be none) never overshoots but under-credits.
 13. **Disagreement between runs (4.4).** [a later run replaces the placement of the skills it tested; a lower placement asks before credit is dropped] Downside: a bad later run (tired, guessing) could lower a good earlier placement; the sheet asks, so the learner can decline.
 14. **Evidence carried across runs.** [dropped, 4.4] Downside: a second run starts from a flat prior and repeats questions the first already answered; the owner dropped "fit again later" so this is not a cost the design needs. If wanted, earlier evidence enters as the prior and nothing else changes.
-15. **Questions kept from the earlier list, still open.** (a) Is "I don't know" a miss? [yes] (b) Minimal pairs for languages without a sounds file (Spanish, Toki Pona) and for tone: [letter-swap pairs from the decks for Spanish; complex words for Toki Pona; leave tone out] (c) Non-prefix and per-skill credit (gaps as exceptions; credit for a heritage speaker per skill by a proposal sheet; `placedDeckIds` is a set so the first looks possible, per-skill credit is not in the model). (d) Pair audio: if the system voice flattens a contrast, pairs go to Write tiles [after a device check per language]. (e) Does a self-declared level seed the search? [no] (f) Resume window of 7 days. (g) The learner's own review history shortens the run, only for cards with high stability and only as skipped evidence [yes]. (h) One Verified label for a native and a B1 learner alike ("Verified to B1") [yes]. (i) The weights of the hardness score `H` (0.35, 0.30, 0.35) [as written]. (j) One run for all known skills [yes; with a checkpoint every 25 the run is as long as it needs]. Downside of each: as in the page's earlier text (history: `git show 16dc8d22:wiki/Plan-Placement-V2.md`).
+15. **Questions kept from the earlier list, still open.** (a) Is "I don't know" a miss? [yes] (b) Minimal pairs for languages without a sounds file (Spanish, Toki Pona) and for tone: [letter-swap pairs from the decks for Spanish; complex words for Toki Pona; leave tone out] (c) Non-prefix and per-skill credit (gaps as exceptions; credit for a heritage speaker per skill by a proposal sheet; `placedDeckIds` is a set so the first looks possible, per-skill credit is not in the model). (d) Pair audio: if the system voice flattens a contrast, pairs go to Write tiles [after a device check per language]. (e) Does a self-declared level seed the search? **Answered 2026-11-05: yes** (4.5; seeds the asking only, never evidence) (f) Resume window of 7 days. (g) The learner's own review history shortens the run, only for cards with high stability and only as skipped evidence [yes]. (h) One Verified label for a native and a B1 learner alike ("Verified to B1") [yes]. (i) The weights of the hardness score `H` (0.35, 0.30, 0.35) [as written]. (j) One run for all known skills [yes; with a checkpoint every 25 the run is as long as it needs]. Downside of each: as in the page's earlier text (history: `git show 16dc8d22:wiki/Plan-Placement-V2.md`).
+16. **The prior of each declaration (4.5).** [Fluent: l10 0.55, l9 0.15, l8 0.08, l7 0.05, rest 0.02125; Advanced: a triangle around l7.5 (first probe deck 79); Amateur: a triangle around l3.5 (first probe deck 40)] Downside: set by feel, like the model's other parameters (question 1); a sharper prior saves a learner who is right a few more questions and costs one who is wrong more (Advanced and knows nothing already costs 6 more); a flatter one costs less when wrong and saves less when right.
+17. **Once per language, or per skill (4.5)?** [once per language; the skills marked as known already refine it] Downside: a learner who is Advanced in Hear and Amateur in Read gets one answer for both; the cost is a few questions on one skill, never a wrong result. A per-skill question adds a screen for every known skill.
+18. **Beginner (4.5): what it skips, and the script.** [it skips the run completely, writes no credit and no placement, and the skills stay as marked (Learn); script lessons start from the script's first deck, and the existing script test is offered as today; Find my level can be opened again later] Downside: a real expert who presses Beginner out of caution is not tested and starts from deck 0, with a card review to catch up on; whether the app today offers Find my level again after Beginner, and offers the script test beside it, is read from `Getting-Started.md` and `Scripts-and-Readings.md` and **not checked in the code**.
 
 **Earlier open questions, now answered or changed.**
 
@@ -401,7 +433,8 @@ Each has the default this plan assumes, in brackets, and the main downside. Answ
 | 5 | Non-prefix credit, per-skill credit | unchanged (15c) |
 | 6 | Pair audio | unchanged (15d) |
 | 7 | Level-mark ladder before halving | replaced by positioning (5.3): halving by the evidence, no ladder |
-| 8 | A self-declared level seeds the search | unchanged (15e) |
+| 8 | A self-declared level seeds the search | **answered 2026-11-05: yes**, as a first question that seeds only the asking prior, never evidence (4.5; open questions 2, 16 to 18) |
+| 2, this section | 80% and 95% per skill, or for all skills together | **answered 2026-11-05: per skill, target 95%** (5.1); 80% is the lower edge of the label "Sure" only |
 | 9 to 14 | resume window, answer-speed detector (off), history, one Verified label, weights, one run per skill | unchanged except that the cap in them is now the checkpoint (15f to 15j) |
 | 15 | Speak and other dialects | now question 8 above (Say by word meaning, with the options and the recommendation) |
 | earlier 1 to 8 (the first walk-back plan) | serious flaw as two misses, 3 misses stop the run, verified in part, 25 runs out | superseded by the recheck rule (section 1), assurance (section 4) and the checkpoint (5.4); "three closed cases stop the battery" is dropped, because the model and the 20% leaving rule do the same job |
@@ -411,7 +444,8 @@ Each has the default this plan assumes, in brackets, and the main downside. Answ
 - **A native fails a correct answer because of the system voice** (a flattened contrast) or because the recogniser rejects a good English or Say answer. Downside: a failed verification feels like an insult; mitigated by the Write fallback, the split (a recogniser miss followed by two right splits is a slip), and the isolating question after a closed case.
 - **Hard items are hard for the wrong reason** (a rare word that is not hard grammar). Downside: a native can miss a word he never met; mitigated by weighting form and closeness, and by the checks.
 - **Hardness is a guess without population data,** and so are the model's parameters (question 1). Downside: early runs may be too easy, too hard, too trusting or too slow.
-- **A positioning run is long.** Downside: three or more skills at 7 or more questions each cross 25 and are tiring (5.3, point 7); mitigated by the checkpoint, the floor-first proposal and model-only checks; the learner can always stop.
+- **A positioning run is long.** Downside: three or more skills at 8 or more questions each (95% target) cross 25 and are tiring (5.3, point 7); mitigated by the declaration (Advanced and Amateur skip the expert track), the checkpoint, the floor-first proposal and model-only checks; the learner can always stop.
+- **A wrong declaration costs questions.** Downside: Fluent and knows nothing costs 3 more per skill, Advanced and knows nothing 6 more (4.5); never a wrong placement, because the reporting posterior is flat. The costliest wrong answer is Beginner by an expert, which skips the run.
 - **No evidence is stored across runs.** Downside: a second run repeats the work of the first; accepted because the owner dropped "fit again later".
 - **A run that stops at the checkpoint has low assurance for some skills.** Downside: the placement can be off by a tenth of the path; shown honestly as "Not sure yet" or "Fairly sure", never as a fail.
 - **The model assumes knowledge is roughly monotone along the path** (what is known at deck d is known below it). Downside: a heritage speaker or a script gap breaks it; the decoupled-skill rows (g, i) handle those, not a longer search.
