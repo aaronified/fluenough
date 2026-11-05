@@ -98,7 +98,7 @@ void main() {
         ..reviewPairs = ticks,
     );
     addTearDown(state.dispose);
-    state.settings.setLanguageSkills('es', knowsEs);
+    state.settings.setLanguageSkills('es', knowEs);
     return state;
   }
 
