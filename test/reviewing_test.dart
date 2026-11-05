@@ -238,7 +238,7 @@ void useTallPhoneReviewSettings(WidgetTester tester) {
 /// each, the page in Settings and the path's "To review" marks.
 
 /// A reviewer who knows [spoken] and reads each one's script, with
-/// reviewing on: by default, Telugu from English is theirs to review.
+/// reviewing on: with Telugu ticked unless [languages] says otherwise.
 Future<AppState> reviewer({
   List<String> spoken = const <String>['en', 'te'],
   Set<String>? languages,
@@ -254,7 +254,7 @@ Future<AppState> reviewer({
             learningLanguages: const <String>['te'],
             learningChosen: true,
           )
-          ..reviewLanguages = languages
+          ..reviewLanguages = languages ?? const <String>{'te'}
           ..scriptsRead = <String, bool>{for (final code in spoken) code: true},
   );
   return state;

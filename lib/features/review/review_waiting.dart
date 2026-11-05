@@ -1,5 +1,6 @@
 import '../../app/app_state.dart';
 import '../../app/deck_catalog.dart';
+import '../../app/language_skills.dart' show LanguageSkillsOnState;
 import '../../app/reviewing.dart' show Reviewing;
 import '../../core/decks/deck_index.dart' show IndexLanguage;
 import '../../core/models/card.dart';
@@ -33,10 +34,7 @@ import 'review_words.dart';
 
 /// What [state]'s reviewer has said about themselves (#462): the languages
 /// they know, and whether they read each one's script.
-ReviewerLanguages reviewerOf(AppState state) => ReviewerLanguages(
-  known: state.settings.spokenLanguages.toSet(),
-  readsScript: state.settings.scriptsRead,
-);
+ReviewerLanguages reviewerOf(AppState state) => state.reviewerLanguages();
 
 /// Every course a reviewer could review (#462), a language and the one its
 /// decks are taught from: each in the deck index, downloaded or not, then
@@ -51,10 +49,9 @@ List<ReviewPair> offeredPairs(AppState state) => <ReviewPair>{
 }.toList();
 
 /// The courses [state]'s reviewer reviews: those they ticked in Languages
-/// you review, or before they ticked any, those on the phone of the
-/// languages they chose before courses (#462), or of the languages they
-/// know, as before. Only those they can review: both languages known, both
-/// scripts read.
+/// you review, or the languages they chose before courses (#462). With none
+/// ticked, none (owner, 2026-11-05). Only those they can review: both
+/// languages known, both scripts read.
 Set<ReviewPair> reviewPairsOf(AppState state) => reviewedPairs(
   chosenPairs: state.settings.reviewPairs,
   chosenLanguages: state.settings.reviewLanguages,
