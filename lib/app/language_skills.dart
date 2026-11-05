@@ -1,3 +1,4 @@
+import '../core/data/course_path.dart' show Milestone;
 import '../core/data/spoken_languages.dart';
 import '../core/languages/language_skills.dart';
 import 'app_state.dart';
@@ -119,6 +120,35 @@ extension LanguageSkillsOnState on AppState {
 
   /// Whether a level was found for [code] (placement credited its words).
   bool levelFound(String code) => settings.placedAtOf(code).isNotEmpty;
+
+  /// Whether [code]'s path is complete to B1 (owner, 2026-11-05: "full B1
+  /// completion level as per the path"): it marks B1 and no unit up to it is
+  /// still to be written.
+  bool pathCompleteToB1(String code) {
+    final course = courseUnits(code, native: courseNative(code));
+    if (course.isEmpty || course.first.isEmpty) return false;
+    final path = pathOf(course.first.first);
+    return path != null &&
+        path.milestoneIndex(Milestone.b1) != null &&
+        path.unitsToWrite == 0;
+  }
+
+  /// Whether a skill of [code] known by the learner counts as verified
+  /// (owner, 2026-11-05: "Verification will only be given after the language
+  /// has all planned decks and verification run has used all of them"): a
+  /// level was found, every deck the index lists for it is on the phone and
+  /// placement credited every word deck of its course.
+  bool levelVerified(String code) {
+    if (!levelFound(code) || !pathCompleteToB1(code)) return false;
+    final downloads = deckDownloads;
+    if (downloads != null &&
+        !downloads.hasAllDecks(code, settings.spokenLanguages)) {
+      return false;
+    }
+    final placed = settings.placedDecks;
+    return walkDecks(code, native: courseNative(code))
+        .every((e) => placed.contains(e.id));
+  }
 
   /// Saves [next] as [language]'s skills and brings the older lists in step:
   /// a language with a Learn skill is learned, in the scripts whose Read or
