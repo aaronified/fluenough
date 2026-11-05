@@ -539,6 +539,46 @@ bool needsLevelFit({
     reviewOn &&
     rows.any((k) => skills.stateOf(k) == SkillState.know && !covered(k));
 
+/// What the sheet's level button does (owner, 2026-11-05): [verify] checks
+/// the skills marked known that are not verified yet, [fit] places the
+/// skills not known. It never changes a skill's state.
+enum LevelStep { verify, fit }
+
+/// The step of the level button and the parts of placement it runs: the
+/// [scripts] whose script check is asked and whether the word walk
+/// ([words], Speak and Hear) is.
+typedef LevelRun = ({LevelStep step, Set<String> scripts, bool words});
+
+/// The run for [skills]: Verify over the known skills while some is not
+/// [verified]; else Fit over the others. [allScripts] are the scripts the
+/// course checks.
+LevelRun levelRunOf(
+  LanguageSkills skills, {
+  required bool verified,
+  required Iterable<String> allScripts,
+}) {
+  final known = <SkillKey>[
+    for (final key in skills.held)
+      if (skills.stateOf(key) == SkillState.know) key,
+  ];
+  final knownScripts = <String>{
+    for (final key in known)
+      if (key.kind.isScript) key.script!,
+  };
+  final knownSpoken = known.any((k) => !k.kind.isScript && !k.kind.isGesture);
+  if (!verified && known.isNotEmpty) {
+    return (step: LevelStep.verify, scripts: knownScripts, words: knownSpoken);
+  }
+  return (
+    step: LevelStep.fit,
+    scripts: <String>{
+      for (final s in allScripts)
+        if (!knownScripts.contains(s)) s,
+    },
+    words: !knownSpoken,
+  );
+}
+
 /// One test run before a skill changed to Learn is left standing.
 sealed class SkillCheck {
   const SkillCheck();

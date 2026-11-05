@@ -439,6 +439,14 @@ class DeckDownloads extends ChangeNotifier {
     (f) => f.language == language && !f.isLanguageFile && !f.isMedia,
   );
 
+  /// Whether every deck the index lists for [language] is on the phone
+  /// (owner, 2026-11-05): false without an index, or while some deck is
+  /// missing or waits for a newer app.
+  bool hasAllDecks(String language, List<String> spoken) =>
+      _index?.language(language) != null &&
+      !needsNewerApp(language, spoken) &&
+      missing(language, spoken).isEmpty;
+
   /// The files of [language] a learner who speaks [spoken] has yet to
   /// download, as the index lists them.
   List<IndexFile> missing(String language, List<String> spoken) {

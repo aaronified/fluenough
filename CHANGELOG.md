@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Find my level no longer changes a skill.** Tapping it only downloads the language's decks (if they are not all on the phone) and checks; Speak and Hear are not set to Learn. The button reads "Verify what you know" while a skill is marked known and not verified, and checks only those; then it reads "Fit my level" and places the skills not known yet. A skill is verified only when all the language's decks are on the phone and the check credited all its word decks.
+
 ## [0.8.6] - 2026-11-05
 
 ### Fixed

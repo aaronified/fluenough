@@ -160,9 +160,24 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   bool get _locked => _code == englishCode;
 
   bool _covers() => levelCovers(
-    levelFound: _state.levelFound(_code),
+    levelFound: _state.levelVerified(_code),
     taught: _view.canLearn,
     english: _locked,
+  );
+
+  /// What the level button does now (owner, 2026-11-05): verify the known
+  /// skills first, then fit the rest.
+  LevelRun get _levelRun => levelRunOf(
+    _skills,
+    // A language not complete to B1 cannot verify: it only fits.
+    verified: _covers() || !_state.pathCompleteToB1(_code),
+    allScripts: <String>[
+      for (final s in _state.placementScripts(
+        _code,
+        native: _state.courseNative(_code),
+      ))
+        s.script,
+    ],
   );
 
   void _toast(String message) => showAppSnackBar(context, message);
@@ -435,30 +450,24 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
   }
 
-  /// Find my level (owner, 2026-11-05): a language with no decks on the
-  /// phone is started first, which downloads them, and placement opens when
-  /// they have arrived.
+  /// The level button (owner, 2026-11-05): a language whose decks are not all
+  /// on the phone has them downloaded first, and placement opens when they
+  /// have arrived. It changes no skill's state.
   Future<void> _findLevel() async {
     final downloads = _state.deckDownloads;
-    if (downloads != null && !downloads.hasDecks(_code)) {
-      if (!await _startForLevel(downloads)) return;
+    if (downloads != null &&
+        !downloads.hasAllDecks(_code, _state.settings.spokenLanguages) &&
+        !downloads.isDownloading(_code)) {
+      if (!await _download(downloads)) return;
       if (!mounted) return;
     }
     _openPlacement();
   }
 
-  /// Starts learning the language (a draft keeps its skills until "Add") and
-  /// waits for its decks, showing the download's progress. False when the
-  /// download failed, after saying why.
-  Future<bool> _startForLevel(DeckDownloads downloads) async {
+  /// Downloads the language's decks, showing the download's progress. False
+  /// when the download failed, after saying why.
+  Future<bool> _download(DeckDownloads downloads) async {
     final l10n = AppLocalizations.of(context)!;
-    if (!_isDraft && !_skills.anyLearn && _view.canLearn) {
-      final next = _skills
-          .withState(const SkillKey(SkillKind.speak), SkillState.learn)
-          .withState(const SkillKey(SkillKind.hear), SkillState.learn);
-      setState(() => _skills = next);
-      _state.applySkills(_view.language, next);
-    }
     final navigator = Navigator.of(context, rootNavigator: true);
     unawaited(
       showDialog<void>(
@@ -482,6 +491,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     final native = state.courseNative(code);
     final skipped = state.scriptLessonsSkipped(code, native: native);
     final course = _view.course;
+    final run = _levelRun;
     Navigator.of(context).push(
       MaterialPageRoute<void>(
         settings: const RouteSettings(name: '/placement'),
@@ -493,16 +503,16 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           },
           natives: <String, String>{code: ?native},
           languageNames: widget.names,
+          parts: <String, PlacementPart>{
+            code: (scripts: run.scripts, words: run.words),
+          },
           onFinished: (found) {
             final settings = state.settings;
-            final replaced = <String>{
-              for (final entry in state.decks)
-                if (entry.language.code == code) entry.id,
-            };
             Navigator.of(context).pop();
+            // A run covers only some skills, so it keeps what earlier runs
+            // placed.
             settings.placedDecks = <String>{
-              for (final id in settings.placedDecks)
-                if (!replaced.contains(id)) id,
+              ...settings.placedDecks,
               ...?found.placed[code],
             };
             state.creditPlacement(
@@ -868,14 +878,16 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
 
   Widget _levelRow(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final found = _state.levelFound(_code);
+    final verify = _levelRun.step == LevelStep.verify;
     return _LinkRow(
       key: const ValueKey<String>('languages-level'),
       icon: Icons.flag_outlined,
-      title: found ? l10n.languagesFitMyLevel : l10n.languagesFindLevel,
-      subtitle: found
-          ? l10n.languagesLevelFoundSub
-          : l10n.languagesLevelNotFoundSub,
+      title: verify ? l10n.languagesVerifyKnown : l10n.languagesFitMyLevel,
+      subtitle: verify
+          ? l10n.languagesVerifyKnownSub
+          : _state.pathCompleteToB1(_code)
+          ? l10n.languagesFitMyLevelSub
+          : l10n.languagesFitMyLevelNoVerify,
       onTap: _findLevel,
     );
   }

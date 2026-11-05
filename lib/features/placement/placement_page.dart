@@ -72,6 +72,7 @@ class PlacementPage extends StatefulWidget {
     this.natives = const <String, String>{},
     this.languageNames = const <String, String>{},
     this.skippable = false,
+    this.parts = const <String, PlacementPart>{},
   });
 
   /// Language codes, in the order they are placed.
@@ -109,9 +110,17 @@ class PlacementPage extends StatefulWidget {
   /// at the beginning").
   final bool skippable;
 
+  /// The parts to run for a language, by code, where only some of its skills
+  /// are checked (Find my level: verify what is known, or fit the rest,
+  /// owner, 2026-11-05). A language not here is placed whole.
+  final Map<String, PlacementPart> parts;
+
   @override
   State<PlacementPage> createState() => _PlacementPageState();
 }
+
+/// The scripts to check and whether to walk the words, for one language.
+typedef PlacementPart = ({Set<String> scripts, bool words});
 
 /// The parts of placement that follow the learner's skills: the script
 /// check, the word walk and the result.
@@ -171,7 +180,10 @@ class _PlacementPageState extends State<PlacementPage> {
     if (!_alphabet.containsKey(_code) && state.hasAlphabet(_code)) {
       _alphabet[_code] = state.settings.learnsAlphabet(_code);
     }
-    _toCheck = state.placementScripts(_code, native: _natives[_code]);
+    _toCheck = <PlacementScript>[
+      for (final s in state.placementScripts(_code, native: _natives[_code]))
+        if (widget.parts[_code]?.scripts.contains(s.script) ?? true) s,
+    ];
     _scriptAt = 0;
     _nextScript(state);
   }
@@ -245,7 +257,10 @@ class _PlacementPageState extends State<PlacementPage> {
       random: widget.random,
     );
     _walk = walk;
-    if (walk.isFinished) {
+    if (!(widget.parts[_code]?.words ?? true)) {
+      _walk = null;
+      _finish();
+    } else if (walk.isFinished) {
       _finish();
     } else {
       _stage = _Stage.walk;
