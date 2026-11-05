@@ -66,7 +66,7 @@ class Played {
   int get asked => run.asked;
 
   List<String> get variants => <String>[
-    for (final a in run.history) a.request.variant,
+    for (final a in run.history) a.request.variant.label,
   ];
 }
 
@@ -241,7 +241,7 @@ void main() {
       () {
         final byVariant = <String, List<PlacementSkill>>{
           for (final a in playWrong(configFor(_bengali), <int>{}).run.history)
-            a.request.variant: a.request.skills,
+            a.request.variant.label: a.request.skills,
         };
         expect(byVariant['K1'], <PlacementSkill>[_read, _script]);
         expect(byVariant['K2'], <PlacementSkill>[_hear]);
@@ -257,7 +257,7 @@ void main() {
         final played = playWrong(configFor(_bengali, seed: seed), <int>{});
         return <String>[
           for (final a in played.run.history)
-            '${a.request.variant}:${a.request.shortlistPick}',
+            '${a.request.variant.label}:${a.request.shortlistPick}',
         ];
       }
 
@@ -281,7 +281,8 @@ void main() {
       final played = playWrong(configFor(_bengali, microphone: false), <int>{});
       expect(played.variants, isNot(contains('Y1')));
       final kinds = <String, PlacementQuestionKind>{
-        for (final a in played.run.history) a.request.variant: a.request.kind,
+        for (final a in played.run.history)
+          a.request.variant.label: a.request.kind,
       };
       expect(kinds['K1'], PlacementQuestionKind.pickMany);
       expect(kinds['K2'], PlacementQuestionKind.pickMany);
@@ -749,6 +750,121 @@ void main() {
     });
   });
 
+  group('short paths finish (N of 1, 2, 5 and 10)', () {
+    const skills = <PlacementSkill>{_read, _hear};
+
+    for (final n in <int>[1, 2, 5, 10]) {
+      group('N = $n', () {
+        test('a clean expert is done, and Verified when the plan allows', () {
+          final played = playWrong(configFor(skills, deckCount: n), <int>{});
+          expect(played.run.isDone, isTrue);
+          expect(played.asked, lessThan(60));
+          for (final skill in skills) {
+            expect(label(played.run, skill), 'verified', reason: skill.name);
+          }
+          // Without the preconditions the same answers are only Very sure.
+          final unverified = playWrong(
+            configFor(skills, deckCount: n, verifiable: false),
+            <int>{},
+          );
+          expect(unverified.run.isDone, isTrue);
+          for (final skill in skills) {
+            expect(label(unverified.run, skill), 'verySure');
+          }
+        });
+
+        test('a learner who knows nothing is placed at none, done', () {
+          final played = playLevel(
+            configFor(
+              skills,
+              deckCount: n,
+              declaration: PlacementDeclaration.amateur,
+            ),
+            -1,
+          );
+          expect(played.run.isDone, isTrue);
+          expect(played.asked, lessThan(100));
+          for (final skill in skills) {
+            expect(played.run.readout[skill]!.placedLevel, -1);
+            expect(played.run.readout[skill]!.isVerified, isFalse);
+          }
+        });
+
+        test('a mid learner is placed and done; Verified only at the top', () {
+          // For one deck "mid" is the whole path: the one level is the top,
+          // so a learner who proves it goes on the expert track and can be
+          // Verified, as for any path. Below the top he never is.
+          final level = (n - 1) ~/ 2;
+          final played = playLevel(
+            configFor(
+              skills,
+              deckCount: n,
+              declaration: PlacementDeclaration.advanced,
+            ),
+            level,
+          );
+          expect(played.run.isDone, isTrue);
+          expect(played.asked, lessThan(100));
+          for (final skill in skills) {
+            final assurance = played.run.readout[skill]!;
+            expect(assurance.placedLevel, level);
+            if (level < n - 1) {
+              expect(assurance.isVerified, isFalse, reason: skill.name);
+            }
+          }
+        });
+
+        test('a Beginner declaration asks nothing', () {
+          final run = PlacementRun(
+            configFor(
+              skills,
+              deckCount: n,
+              declaration: PlacementDeclaration.beginner,
+            ),
+          );
+          expect(run.isDone, isTrue);
+        });
+      });
+    }
+
+    test('one deck has one level: none or the whole path', () {
+      expect(PlacementLevels(1).classCount, 2);
+      final run = PlacementRun(configFor(skills, deckCount: 1));
+      expect(run.next!.deck, 0);
+      expect(run.next!.percentile, 100);
+    });
+  });
+
+  group('the configuration and the state', () {
+    test('the sets and lists of a configuration cannot be changed', () {
+      final units = <int>[3, 5];
+      final config = configFor(_bengali, grammarUnits: units);
+      expect(
+        () => config.skills.add(PlacementSkill.secondScript),
+        throwsA(anything),
+      );
+      expect(() => config.tested.clear(), throwsA(anything));
+      units.add(9);
+      expect(config.grammarUnitDecks, <int>[3, 5]);
+      expect(() => config.grammarUnitDecks.add(1), throwsA(anything));
+    });
+
+    test('answering a finished run is an error', () {
+      final done = playWrong(configFor(_bengali), <int>{}).run;
+      expect(done.isDone, isTrue);
+      expect(() => done.answer(true), throwsStateError);
+    });
+
+    test('a gap in meaning blocks Verified for its skill too (4.3 d)', () {
+      // Q3 W1 missed, S1 (meaning, Read) wrong, S2 right.
+      final played = playWrong(configFor(_bengali), <int>{3, 4});
+      expect(played.run.gaps.single.part, PlacementPart.meaning);
+      expect(played.run.gaps.single.skills, <PlacementSkill>[_read]);
+      expect(label(played.run, _read), isNot('verified'));
+      expect(label(played.run, _hear), 'verified');
+    });
+  });
+
   group('the checkpoint (section 5.4)', () {
     PlacementRun after(PlacementRunConfig config, int questions) {
       var run = PlacementRun(config);
@@ -864,5 +980,8 @@ bool _halfOnMiss(PlacementQuestionRequest request) {
   // K1, G2 and R1 here (several skills at once).
   return request.role == PlacementQuestionRole.base &&
       request.skills.length > 1 &&
-      !<String>{'SR', 'SW'}.contains(request.variant);
+      !<PlacementVariant>{
+        PlacementVariant.sr,
+        PlacementVariant.sw,
+      }.contains(request.variant);
 }

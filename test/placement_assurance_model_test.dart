@@ -33,13 +33,25 @@ void main() {
       expect(hundred.levelOf(hundred.topClass), 99);
     });
 
-    test('a short path has fewer, equal parts and ends at the last deck', () {
+    test('a short path has distinct levels and ends at the last deck', () {
       final five = PlacementLevels(5);
-      expect(five.parts, 5);
-      expect(five.levels.first, 0);
-      expect(five.levels.last, 4);
-      expect(PlacementLevels(1).levels, <int>[0, 0]);
+      expect(five.levels, <int>[0, 1, 2, 3, 4]);
+      expect(five.parts, 4);
+      expect(PlacementLevels(1).levels, <int>[0]);
+      expect(PlacementLevels(2).levels, <int>[0, 1]);
       expect(PlacementLevels(0).deckCount, 1);
+    });
+
+    test('no two classes share a level, for any path length', () {
+      for (var n = 1; n <= 120; n++) {
+        final levels = PlacementLevels(n).levels;
+        expect(levels.toSet().length, levels.length, reason: 'N=$n');
+        expect(levels.first, 0, reason: 'N=$n');
+        expect(levels.last, n - 1, reason: 'N=$n');
+        if (n >= 11) {
+          expect(levels, hasLength(11), reason: 'N=$n');
+        }
+      }
     });
 
     test('a class knows every deck up to its level and none above', () {

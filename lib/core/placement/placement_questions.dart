@@ -71,6 +71,57 @@ enum PlacementQuestionRole {
 /// [sound], [spelling] or [script] marks the skill it tests as not Verified.
 enum PlacementPart { script, meaning, sound, spelling, grammar }
 
+/// The name of a question in the plan (section 2.1 and 3.1).
+enum PlacementVariant {
+  k1('K1'),
+  k1b('K1b'),
+  k2('K2'),
+  k2b('K2b'),
+  w1('W1'),
+  w1b('W1b'),
+  w2('W2'),
+  w2b('W2b'),
+  g1('G1'),
+  g1b('G1b'),
+  g2('G2'),
+  g2b('G2b'),
+  g3('G3'),
+  g3b('G3b'),
+  r1('R1'),
+  r2('R2'),
+  r2b('R2b'),
+  p1('P1'),
+  p2('P2'),
+  y1('Y1'),
+  y2('Y2'),
+  y3('Y3'),
+  sr('SR'),
+  srb('SRb'),
+  sw('SW'),
+  sx('SX'),
+  sr2('SR2'),
+  srb2('SRb2'),
+  sw2('SW2'),
+  sx2('SX2'),
+  s1('S1'),
+  s2('S2'),
+  isolating('I1'),
+
+  /// A top-up question for a skill short of the target.
+  topUp('T'),
+
+  /// A positioning probe.
+  probe('V'),
+
+  /// A grammar bisection probe.
+  grammar('GR');
+
+  const PlacementVariant(this.label);
+
+  /// The plan's name for it: `K1`, `SR2`, `T`, `V`, `GR`.
+  final String label;
+}
+
 /// One question the run asks, as the next step of the controller.
 ///
 /// The caller draws an item from the deck [deck] (a hard one of the last
@@ -104,7 +155,7 @@ class PlacementQuestionRequest {
   /// recheck keeps the name of the question it checks. Letters ending in `b`
   /// are the second question of a topic whose two kinds are not both
   /// available (a language with no script has no `K1`).
-  final String variant;
+  final PlacementVariant variant;
 
   /// What the model takes the answer to be (its slip and guess rates).
   final PlacementQuestionKind kind;
@@ -122,7 +173,7 @@ class PlacementQuestionRequest {
 
   @override
   String toString() =>
-      'Q$number $variant ${role.name} ${kind.name} '
+      'Q$number ${variant.label} ${role.name} ${kind.name} '
       '${skills.map((s) => s.name).join('+')} deck $deck';
 }
 
@@ -137,7 +188,7 @@ class PlacementBaseQuestion {
     this.splits = const <PlacementSplit>[],
   });
 
-  final String id;
+  final PlacementVariant id;
   final PlacementTopic topic;
   final PlacementQuestionKind kind;
   final List<PlacementSkill> skills;
@@ -156,16 +207,10 @@ class PlacementBaseQuestion {
 class PlacementSplit {
   const PlacementSplit(this.id, this.part, this.kind, this.skills);
 
-  final String id;
+  final PlacementVariant id;
   final PlacementPart part;
   final PlacementQuestionKind kind;
   final List<PlacementSkill> skills;
-
-  /// Whether a gap found by this split blocks Verified for its skills.
-  bool get blocksVerified =>
-      part == PlacementPart.sound ||
-      part == PlacementPart.spelling ||
-      part == PlacementPart.script;
 }
 
 /// The number of base questions a topic asks at least (section 2.1).
@@ -228,7 +273,7 @@ List<PlacementBaseQuestion> buildBaseQuestions(
   const pickOne = PlacementQuestionKind.pickOne;
   const tilesWord = PlacementQuestionKind.tilesWord;
 
-  PlacementBaseQuestion k1(String id) {
+  PlacementBaseQuestion k1(PlacementVariant id) {
     final skills = _only(tested, const [read, PlacementSkill.script]);
     return PlacementBaseQuestion(
       id: id,
@@ -236,9 +281,14 @@ List<PlacementBaseQuestion> buildBaseQuestions(
       kind: english,
       skills: skills,
       splits: <PlacementSplit>[
-        const PlacementSplit('S1', PlacementPart.meaning, pickOne, [read]),
+        const PlacementSplit(
+          PlacementVariant.s1,
+          PlacementPart.meaning,
+          pickOne,
+          [read],
+        ),
         PlacementSplit(
-          'S2',
+          PlacementVariant.s2,
           PlacementPart.script,
           pickOne,
           splitSkills(const [PlacementSkill.script], const [read]),
@@ -247,26 +297,33 @@ List<PlacementBaseQuestion> buildBaseQuestions(
     );
   }
 
-  PlacementBaseQuestion k2(String id) => PlacementBaseQuestion(
+  PlacementBaseQuestion k2(PlacementVariant id) => PlacementBaseQuestion(
     id: id,
     topic: PlacementTopic.longRecognition,
     kind: english,
     skills: const [hear],
     splits: const <PlacementSplit>[
-      PlacementSplit('S1', PlacementPart.sound, pickOne, [hear]),
-      PlacementSplit('S2', PlacementPart.meaning, pickOne, [hear]),
+      PlacementSplit(PlacementVariant.s1, PlacementPart.sound, pickOne, [hear]),
+      PlacementSplit(PlacementVariant.s2, PlacementPart.meaning, pickOne, [
+        hear,
+      ]),
     ],
   );
 
-  PlacementBaseQuestion w1(String id) => PlacementBaseQuestion(
+  PlacementBaseQuestion w1(PlacementVariant id) => PlacementBaseQuestion(
     id: id,
     topic: PlacementTopic.complexWords,
     kind: pickOne,
     skills: const [read],
     splits: <PlacementSplit>[
-      const PlacementSplit('S1', PlacementPart.meaning, pickOne, [read]),
+      const PlacementSplit(
+        PlacementVariant.s1,
+        PlacementPart.meaning,
+        pickOne,
+        [read],
+      ),
       PlacementSplit(
-        'S2',
+        PlacementVariant.s2,
         PlacementPart.sound,
         pickOne,
         splitSkills(const [hear], const [read]),
@@ -274,15 +331,20 @@ List<PlacementBaseQuestion> buildBaseQuestions(
     ],
   );
 
-  PlacementBaseQuestion w2(String id) => PlacementBaseQuestion(
+  PlacementBaseQuestion w2(PlacementVariant id) => PlacementBaseQuestion(
     id: id,
     topic: PlacementTopic.complexWords,
     kind: pickOne,
     skills: const [hear],
     splits: <PlacementSplit>[
-      const PlacementSplit('S1', PlacementPart.meaning, pickOne, [hear]),
+      const PlacementSplit(
+        PlacementVariant.s1,
+        PlacementPart.meaning,
+        pickOne,
+        [hear],
+      ),
       PlacementSplit(
-        'S2',
+        PlacementVariant.s2,
         PlacementPart.script,
         pickOne,
         splitSkills(const [read], const [hear]),
@@ -290,54 +352,70 @@ List<PlacementBaseQuestion> buildBaseQuestions(
     ],
   );
 
-  PlacementBaseQuestion g1(String id) => PlacementBaseQuestion(
+  PlacementBaseQuestion g1(PlacementVariant id) => PlacementBaseQuestion(
     id: id,
     topic: PlacementTopic.lateGrammar,
     kind: pickOne,
     skills: const [read],
     splits: const <PlacementSplit>[
-      PlacementSplit('S1', PlacementPart.grammar, pickOne, [read]),
-      PlacementSplit('S2', PlacementPart.grammar, pickOne, [read]),
+      PlacementSplit(PlacementVariant.s1, PlacementPart.grammar, pickOne, [
+        read,
+      ]),
+      PlacementSplit(PlacementVariant.s2, PlacementPart.grammar, pickOne, [
+        read,
+      ]),
     ],
   );
 
-  PlacementBaseQuestion g2(String id) => PlacementBaseQuestion(
+  PlacementBaseQuestion g2(PlacementVariant id) => PlacementBaseQuestion(
     id: id,
     topic: PlacementTopic.lateGrammar,
     kind: PlacementQuestionKind.tilesSentence,
     skills: _only(tested, const [write, read]),
     splits: <PlacementSplit>[
       PlacementSplit(
-        'S1',
+        PlacementVariant.s1,
         PlacementPart.grammar,
         pickOne,
         splitSkills(const [read], const [write]),
       ),
-      const PlacementSplit('S2', PlacementPart.spelling, tilesWord, [write]),
+      const PlacementSplit(
+        PlacementVariant.s2,
+        PlacementPart.spelling,
+        tilesWord,
+        [write],
+      ),
     ],
   );
 
-  PlacementBaseQuestion r1(String id) => PlacementBaseQuestion(
+  PlacementBaseQuestion r1(PlacementVariant id) => PlacementBaseQuestion(
     id: id,
     topic: PlacementTopic.longReproduction,
     kind: PlacementQuestionKind.tilesSentence,
     skills: const [hear, write],
     splits: const <PlacementSplit>[
-      PlacementSplit('S1', PlacementPart.sound, pickOne, [hear]),
-      PlacementSplit('S2', PlacementPart.spelling, tilesWord, [write]),
+      PlacementSplit(PlacementVariant.s1, PlacementPart.sound, pickOne, [hear]),
+      PlacementSplit(PlacementVariant.s2, PlacementPart.spelling, tilesWord, [
+        write,
+      ]),
     ],
   );
 
-  PlacementBaseQuestion r2(String id) => PlacementBaseQuestion(
+  PlacementBaseQuestion r2(PlacementVariant id) => PlacementBaseQuestion(
     id: id,
     topic: PlacementTopic.longReproduction,
     kind: PlacementQuestionKind.tilesSentence,
     skills: const [write],
     splits: const <PlacementSplit>[
-      PlacementSplit('S1', PlacementPart.spelling, tilesWord, [write]),
-      PlacementSplit('S2', PlacementPart.grammar, PlacementQuestionKind.pair, [
+      PlacementSplit(PlacementVariant.s1, PlacementPart.spelling, tilesWord, [
         write,
       ]),
+      PlacementSplit(
+        PlacementVariant.s2,
+        PlacementPart.grammar,
+        PlacementQuestionKind.pair,
+        [write],
+      ),
     ],
   );
 
@@ -346,49 +424,49 @@ List<PlacementBaseQuestion> buildBaseQuestions(
   // Topic 1.
   if (reads && hears) {
     out
-      ..add(k1('K1'))
-      ..add(k2('K2'));
+      ..add(k1(PlacementVariant.k1))
+      ..add(k2(PlacementVariant.k2));
   } else if (reads) {
     out
-      ..add(k1('K1'))
-      ..add(k1('K1b'));
+      ..add(k1(PlacementVariant.k1))
+      ..add(k1(PlacementVariant.k1b));
   } else if (hears) {
     out
-      ..add(k2('K2'))
-      ..add(k2('K2b'));
+      ..add(k2(PlacementVariant.k2))
+      ..add(k2(PlacementVariant.k2b));
   }
 
   // Topic 5.
   if (reads && hears) {
     out
-      ..add(w1('W1'))
-      ..add(w2('W2'));
+      ..add(w1(PlacementVariant.w1))
+      ..add(w2(PlacementVariant.w2));
   } else if (reads) {
     out
-      ..add(w1('W1'))
-      ..add(w1('W1b'));
+      ..add(w1(PlacementVariant.w1))
+      ..add(w1(PlacementVariant.w1b));
   } else if (hears) {
     out
-      ..add(w2('W2'))
-      ..add(w2('W2b'));
+      ..add(w2(PlacementVariant.w2))
+      ..add(w2(PlacementVariant.w2b));
   }
 
   // Topic 3.
   if (reads && writes) {
     out
-      ..add(g1('G1'))
-      ..add(g2('G2'));
+      ..add(g1(PlacementVariant.g1))
+      ..add(g2(PlacementVariant.g2));
   } else if (reads) {
     out
-      ..add(g1('G1'))
-      ..add(g1('G1b'));
+      ..add(g1(PlacementVariant.g1))
+      ..add(g1(PlacementVariant.g1b));
   } else if (writes) {
     out
-      ..add(g2('G2'))
-      ..add(g2('G2b'));
+      ..add(g2(PlacementVariant.g2))
+      ..add(g2(PlacementVariant.g2b));
   } else if (hears) {
     // "Which of two sentences sounds right", two families.
-    for (final id in const ['G3', 'G3b']) {
+    for (final id in const [PlacementVariant.g3, PlacementVariant.g3b]) {
       out.add(
         PlacementBaseQuestion(
           id: id,
@@ -404,18 +482,18 @@ List<PlacementBaseQuestion> buildBaseQuestions(
   if (writes) {
     if (hears) {
       out
-        ..add(r1('R1'))
-        ..add(r2('R2'));
+        ..add(r1(PlacementVariant.r1))
+        ..add(r2(PlacementVariant.r2));
     } else {
       out
-        ..add(r2('R2'))
-        ..add(r2('R2b'));
+        ..add(r2(PlacementVariant.r2))
+        ..add(r2(PlacementVariant.r2b));
     }
   }
 
   // Topic 4.
   if (hears) {
-    for (final id in const ['P1', 'P2']) {
+    for (final id in const [PlacementVariant.p1, PlacementVariant.p2]) {
       out.add(
         PlacementBaseQuestion(
           id: id,
@@ -429,7 +507,11 @@ List<PlacementBaseQuestion> buildBaseQuestions(
 
   // Topic 6.
   if (says) {
-    for (final id in const ['Y1', 'Y2', 'Y3']) {
+    for (final id in const [
+      PlacementVariant.y1,
+      PlacementVariant.y2,
+      PlacementVariant.y3,
+    ]) {
       out.add(
         PlacementBaseQuestion(
           id: id,
@@ -447,31 +529,34 @@ List<PlacementBaseQuestion> buildBaseQuestions(
     PlacementSkill.secondScript,
   ]) {
     if (!tested.contains(script)) continue;
-    final suffix = script == PlacementSkill.script ? '' : '2';
+    final first = script == PlacementSkill.script;
     // The first script has K1 as well; the second one has only its own two
     // questions, so its read question asks for the meaning in English (a
     // production answer), which is what lets two scripts cost 17 questions.
-    final readKind = suffix.isEmpty ? PlacementQuestionKind.pickMany : english;
-    PlacementBaseQuestion scriptRead(String id) => PlacementBaseQuestion(
-      id: '$id$suffix',
-      topic: PlacementTopic.scriptReadWrite,
-      kind: readKind,
-      skills: <PlacementSkill>[script, if (reads) read],
-    );
-    out.add(scriptRead('SR'));
+    final readKind = first ? PlacementQuestionKind.pickMany : english;
+    PlacementBaseQuestion scriptRead(PlacementVariant id) =>
+        PlacementBaseQuestion(
+          id: id,
+          topic: PlacementTopic.scriptReadWrite,
+          kind: readKind,
+          skills: <PlacementSkill>[script, if (reads) read],
+        );
+    out.add(scriptRead(first ? PlacementVariant.sr : PlacementVariant.sr2));
     if (writes) {
       out.add(
         PlacementBaseQuestion(
-          id: 'SW$suffix',
+          id: first ? PlacementVariant.sw : PlacementVariant.sw2,
           topic: PlacementTopic.scriptReadWrite,
           kind: tilesWord,
           skills: <PlacementSkill>[script, write],
         ),
       );
     } else {
-      out.add(scriptRead('SRb'));
+      out.add(scriptRead(first ? PlacementVariant.srb : PlacementVariant.srb2));
     }
-    if (extraScriptQuestion) out.add(scriptRead('SX'));
+    if (extraScriptQuestion) {
+      out.add(scriptRead(first ? PlacementVariant.sx : PlacementVariant.sx2));
+    }
   }
 
   return out;

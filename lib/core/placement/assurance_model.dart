@@ -54,28 +54,34 @@ enum PlacementQuestionKind {
 /// Class 0 is `none`; class `i` (1 and up) has level `levels[i - 1]`; the
 /// last class is the whole path, the last deck included.
 class PlacementLevels {
-  PlacementLevels._(this.deckCount, this.parts, this.levels);
+  PlacementLevels._(this.deckCount, this.levels);
 
   /// The levels of a path of [deckCount] decks (one at least).
+  ///
+  /// A short path would round to the same deck twice (two classes with one
+  /// level cannot be told apart, and the run would never reach 95%), so equal
+  /// levels are merged: the classes are `none` and the distinct levels. A
+  /// path of 11 decks or more has ten distinct tenths, as the plan says; one
+  /// deck has `none` and one level; two have `none`, 0 and 1.
   factory PlacementLevels(int deckCount) {
     final decks = deckCount < 1 ? 1 : deckCount;
     final parts = math.min(10, decks);
     final span = decks - 1;
-    return PlacementLevels._(
-      decks,
-      parts,
-      List<int>.unmodifiable(<int>[
-        // Rounded half up, in integers, so every platform agrees.
-        for (var k = 0; k <= parts; k++) (2 * k * span + parts) ~/ (2 * parts),
-      ]),
-    );
+    final levels = <int>[];
+    for (var k = 0; k <= parts; k++) {
+      // Rounded half up, in integers, so every platform agrees.
+      final level = (2 * k * span + parts) ~/ (2 * parts);
+      if (levels.isEmpty || level > levels.last) levels.add(level);
+    }
+    return PlacementLevels._(decks, List<int>.unmodifiable(levels));
   }
 
   /// How many decks the path has up to B1.
   final int deckCount;
 
-  /// How many equal parts the path is cut into (10 for a long path).
-  final int parts;
+  /// How many parts the path is cut into: one fewer than the levels (10 for
+  /// a path of 11 decks or more).
+  int get parts => levels.length - 1;
 
   /// The deck index of each level, ascending (`l_0` to `l_parts`).
   final List<int> levels;
@@ -96,7 +102,7 @@ class PlacementLevels {
   bool knows(int c, int deck) => c > 0 && levels[c - 1] >= deck;
 
   /// The position of class [c] on the scale of ten tenths of the path.
-  double tenthOf(int c) => (c - 1) * 10 / parts;
+  double tenthOf(int c) => parts == 0 ? 10 : (c - 1) * 10 / parts;
 }
 
 /// The probabilities of the classes of one skill, given the answers so far.

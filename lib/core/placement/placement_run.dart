@@ -20,17 +20,18 @@ class PlacementRunConfig {
     this.pathCompleteToB1 = false,
     this.allDecksDownloaded = false,
     this.microphone = true,
-    this.grammarUnitDecks = const <int>[],
+    List<int> grammarUnitDecks = const <int>[],
     this.floorFirst = true,
     this.recheckInPositioning = true,
     this.extraScriptQuestion = false,
     this.promoteToExpert = true,
     bool? expertTrack,
-  }) : skills = Set<PlacementSkill>.of(skills),
-       tested = <PlacementSkill>{
+  }) : skills = Set<PlacementSkill>.unmodifiable(skills),
+       tested = Set<PlacementSkill>.unmodifiable(<PlacementSkill>{
          for (final skill in skills)
            if (microphone || skill != PlacementSkill.say) skill,
-       },
+       }),
+       grammarUnitDecks = List<int>.unmodifiable(grammarUnitDecks),
        expertTrack =
            expertTrack ??
            (declaration == null || declaration == PlacementDeclaration.fluent);
@@ -145,8 +146,7 @@ class PlacementGap {
   final PlacementTopic topic;
   final PlacementPart part;
 
-  /// The skills the gap stops being Verified; empty for a gap in meaning or
-  /// grammar, which is recorded and credited around.
+  /// The skills the gap stops being Verified (section 4.3, condition d).
   final List<PlacementSkill> skills;
   final int deck;
 }
@@ -195,7 +195,7 @@ class PlacementRun {
 
   /// The state after [correct] was the answer to [next].
   PlacementRun answer(bool correct) {
-    assert(!isDone, 'the run is done');
+    if (isDone) throw StateError('the run is done: there is no question');
     return PlacementRun(
       config,
       results: <bool>[...results, correct],
@@ -260,7 +260,7 @@ class _Spec {
 
   final PlacementQuestionRole role;
   final PlacementTopic topic;
-  final String variant;
+  final PlacementVariant variant;
   final PlacementQuestionKind kind;
   final List<PlacementSkill> skills;
   final int deck;
@@ -445,7 +445,7 @@ class _Engine {
         _Spec(
           role: PlacementQuestionRole.topUp,
           topic: PlacementTopic.topUp,
-          variant: 'T',
+          variant: PlacementVariant.topUp,
           kind: _vocabularyKind(skill),
           skills: <PlacementSkill>[skill],
           deck: _top,
@@ -511,7 +511,7 @@ class _Engine {
     return _Spec(
       role: PlacementQuestionRole.probe,
       topic: PlacementTopic.positioning,
-      variant: 'V',
+      variant: PlacementVariant.probe,
       kind: _vocabularyKind(skill),
       skills: <PlacementSkill>[skill],
       deck: deck,
@@ -545,7 +545,7 @@ class _Engine {
       _Spec(
         role: PlacementQuestionRole.grammar,
         topic: PlacementTopic.grammarLevel,
-        variant: 'GR',
+        variant: PlacementVariant.grammar,
         kind: PlacementQuestionKind.pickOne,
         skills: <PlacementSkill>[skill],
         deck: units[index],
@@ -654,9 +654,8 @@ class _Engine {
     if (wrong == 0) return; // a slip, forgiven
     if (wrong == 1) {
       final failed = open.splitSpecs[open.results.indexOf(false)].split!;
-      final blocked = failed.blocksVerified
-          ? List<PlacementSkill>.of(failed.skills)
-          : const <PlacementSkill>[];
+      // 4.3(d): a gap in any part stops its skills being Verified.
+      final blocked = List<PlacementSkill>.of(failed.skills);
       gapSkills.addAll(blocked);
       gaps.add(
         PlacementGap(
@@ -778,7 +777,7 @@ class _Engine {
         _Spec(
           role: PlacementQuestionRole.isolating,
           topic: origin.topic,
-          variant: 'I1',
+          variant: PlacementVariant.isolating,
           kind: PlacementQuestionKind.tilesWord,
           skills: const <PlacementSkill>[PlacementSkill.write],
           deck: _top,
@@ -790,7 +789,7 @@ class _Engine {
         _Spec(
           role: PlacementQuestionRole.isolating,
           topic: origin.topic,
-          variant: 'I1',
+          variant: PlacementVariant.isolating,
           kind: PlacementQuestionKind.pickOne,
           skills: const <PlacementSkill>[PlacementSkill.hear],
           deck: _top,
