@@ -12,6 +12,18 @@ The owner, 2026-11-05: "when i pressed fit, it only made hear and say as learnin
 - The button never changes a skill's state. If the language's decks are not all on the phone it downloads them first.
 - While a skill is marked known and not verified, it reads "Verify what you know" and checks only the known skills: the script check of each known script, and the word walk when Speak or Hear is known.
 - Otherwise it reads "Fit my level" and places the skills not known (Hindustani: Perso-Arabic script when the rest is known and verified).
-- A skill is verified only when every deck the index lists for the language is on the phone and placement credited every word deck of the course (`AppState.levelVerified`). A run that stops earlier does not verify.
+- Preconditions of verified: the language's path is complete to B1 (below) and every deck the index lists for it is on the phone (`AppState.levelVerified`).
 - "All planned decks" means the whole path to B1 (owner, 2026-11-05: "I mean full B1 completion level as per the path. Bengali already has that."): the path marks B1 and no unit up to it is still to be written (`AppState.pathCompleteToB1`). A language short of that cannot verify; its button reads "Fit my level" and says so. Complete today (index, 2026-11-05): Assamese, Bengali, Spanish, Hindustani, Kannada, Marathi, Telugu, Toki Pona.
-- Question count (owner, 2026-11-05: "Keep placement question count within 25 questions."): the walk is adaptive and already stays within that (a test bounds it at 24 for the longest course), so no run asks more. A run that passes to the end of the word decks credits every deck and so verifies; a sampled run that stops earlier does not. Sampling one question per deck is impossible for a path of over 25 decks (Bengali has well over 100 units), so the existing adaptive walk is kept rather than a per-deck sample.
+- Question count (owner, 2026-11-05: "Keep placement question count within 25 questions."). A verification run asks at most 25 questions.
+- Sampling (owner, 2026-11-05: "Ask the last deck. If known, sample around that till you find serious flaws. If not known at all (2 questions min), go to 1st deck and keep sampling from there. Build a strategy around this kind."), `lib/core/placement/verify_sampler.dart`:
+
+| State | Asks | Next |
+|---|---|---|
+| last | 2 questions of the last deck | one or two right: around; none right: first |
+| around | one question per deck, backward from the last at growing steps (every deck on a path of 20 or fewer), then the first deck | a miss asks the deck again; a serious flaw ends the run; the end of the schedule ends it verified |
+| first | the first deck, then forward at growing steps | a serious flaw ends the run at that deck; the end of the schedule ends it, not verified |
+
+- A serious flaw is two misses in one deck, or three misses over the run. A run cut short by the 25 limit is not verified.
+- Verified means the run ended without a serious flaw across the decks it sampled; it no longer requires touching every deck. A run that began in the first state (the last deck not known) is never verified: it only places.
+- Main downside: a sample can miss a weak deck between two sampled ones, so verified is a spot check, not proof, and a path of 100+ decks is sampled in about 10 to 15.
+- Status: the sampler and its tests are built; drawing the real questions from its decks and recording verified from its result is the next step, until which the word walk places and verified follows the existing credit rule.
