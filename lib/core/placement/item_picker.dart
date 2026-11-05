@@ -247,6 +247,14 @@ class PlacementItemPicker {
     final random = seededRandom(seed, answer.id);
     final shown = <String>{show(answer)};
     final out = <Card>[];
+    // What the cards the answer lists as synonyms mean: an option that shows
+    // it would be right too.
+    final blocked = <String>{
+      for (final s in answer.synonyms)
+        if (s.ref != null)
+          for (final m in data.cardById(s.ref!)?.meanings ?? const <String>[])
+            foldMeaning(m),
+    };
     bool ok(Card c) =>
         c.id != answer.id &&
         isAskable(c) &&
@@ -254,6 +262,7 @@ class PlacementItemPicker {
         !exclude.contains(c.id) &&
         (relaxAsked || !asked.contains(c.id)) &&
         !sameMeaning(answer, c) &&
+        !c.meanings.any((m) => blocked.contains(foldMeaning(m))) &&
         !shown.contains(show(c));
     final last = data.deckCount - 1;
     for (var distance = 0; distance <= last; distance++) {
