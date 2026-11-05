@@ -3,6 +3,7 @@
 Source of truth: this wiki page.
 
 - **Status:** Proposed (research done; nothing built, #881). The "Your recording" replay is drawn in the approved shared shell (#509, 2026-11-02); the audio itself waits on on-device recognition (#1004, aimed at 0.9.0), which would supply the bytes.
+- **Update (2026-11-05):** option 1 is built as a best-effort capture (`MicCapture`, started after the recogniser, self-disabling after two listens that hear nothing), as the owner asked for the first attempt to be recorded with recognition. Option 2 stays the robust route if a device shows the two cannot share the microphone.
 - **Date:** 2026-11-02
 
 ## Context
