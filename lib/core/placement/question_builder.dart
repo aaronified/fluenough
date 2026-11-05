@@ -1162,8 +1162,9 @@ class QuestionBuilder {
                   !ctx.asked.contains(p.partner.id))
                 p,
           ];
-    if (pool.isEmpty)
+    if (pool.isEmpty) {
       return _empty(ctx, PlacementUnavailableReason.noPairFound);
+    }
     // One partner per card: the first by id, so that the choice is stable.
     final byCard =
         <String, ({Card card, Card partner, String contrast, int deck})>{};
