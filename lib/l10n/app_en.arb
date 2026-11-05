@@ -7045,7 +7045,7 @@
   "@reviewSettingsLanguagesNone": {
     "description": "Under Languages you review when the reviewer has unticked every language."
   },
-  "reviewLanguagesBody": "Tick the courses you review, such as Bengali from English. What waits for review shows for them, and the path marks their units “To review”. You can review a course only if you know both languages and read both scripts.",
+  "reviewLanguagesBody": "Tick the courses you review, such as Bengali from English. What waits for review shows for them, and the path marks their units “To review”. Only the courses you can review are listed.",
   "@reviewLanguagesBody": {
     "description": "Top of Languages you review (#462): what the ticks change, and who can review a course, a language taught from another."
   },
@@ -7062,6 +7062,22 @@
         "example": "English"
       }
     }
+  },
+  "reviewLanguagesInfoTooltip": "Why only some courses are listed",
+  "@reviewLanguagesInfoTooltip": {
+    "description": "Tooltip and screen-reader label of the info button beside the intro of Languages you review."
+  },
+  "reviewLanguagesInfoTitle": "Only languages you know",
+  "@reviewLanguagesInfoTitle": {
+    "description": "Title of the dialog the info button of Languages you review opens."
+  },
+  "reviewLanguagesInfoBody": "Only decks for languages you know are shown here. They are verified: the app checks that you know both languages of a course and read both scripts. Courses you cannot review yet are hidden. To see more, add languages or scripts in Languages you know.",
+  "@reviewLanguagesInfoBody": {
+    "description": "Body of the dialog the info button of Languages you review opens: only courses the reviewer can review are listed, and why."
+  },
+  "reviewPairsNoneKnown": "No courses you can review yet. Add the languages you know, and say which scripts you read, in Languages you know.",
+  "@reviewPairsNoneKnown": {
+    "description": "Languages you review when the list of courses is there but none can be reviewed by this reviewer."
   },
   "reviewPairUnknown": "You don’t know {language}",
   "@reviewPairUnknown": {

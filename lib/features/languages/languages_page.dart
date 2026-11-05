@@ -539,7 +539,8 @@ class LanguageRow extends StatelessWidget {
     final pending =
         hasDecks &&
         !learns &&
-        state.settings.languageSkillsOf(view.code) != null;
+        state.settings.languageSkillsOf(view.code) != null &&
+        !state.reviewsLanguage(view.code);
     final dialect =
         !view.language.scriptOnly && !view.language.isNotation && speaks
         ? dialectOf(l10n, view.language)

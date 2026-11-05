@@ -81,6 +81,25 @@ void main() {
     expect(downloads.removed, <String>['es']);
   });
 
+  test('decks a ticked review course uses are not removed, and the language '
+      'is not marked for removal', () async {
+    final downloads = HeldDecks(<String>{'es'});
+    final state = AppState.test(
+      deckDownloads: downloads,
+      settings: SettingsNotifier(spokenLanguages: const <String>['en', 'es'])
+        ..scriptsRead = <String, bool>{'en': true, 'es': true}
+        ..reviewPairs = <String>{'es/en'},
+    );
+    addTearDown(state.dispose);
+    state.settings.setLanguageSkills('es', <String, String>{'speak': 'know'});
+    expect(state.reviewsLanguage('es'), isTrue);
+    await state.removeUnneededDecks();
+    expect(downloads.removed, isEmpty);
+
+    state.settings.reviewPairs = <String>{};
+    expect(state.reviewsLanguage('es'), isFalse);
+  });
+
   test('an unreadable stored entry is not taken for Leave', () async {
     final downloads = HeldDecks(<String>{'es'});
     final state = AppState.test(

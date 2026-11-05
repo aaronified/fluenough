@@ -1,5 +1,6 @@
 import '../core/data/spoken_languages.dart';
 import '../core/languages/language_skills.dart';
+import '../core/review/review_pairs.dart';
 import 'app_state.dart';
 
 /// What the Languages page reads and writes of the app (#907): each
@@ -192,6 +193,24 @@ extension LanguageSkillsOnState on AppState {
     return false;
   }
 
+  /// Whether a course taught in [code] is ticked in Languages you review and
+  /// can be reviewed (both languages known, both scripts read). Its decks are
+  /// in use, so they are neither marked for removal nor removed, whatever the
+  /// language's Learn skills say.
+  bool reviewsLanguage(String code) =>
+      reviewedPairs(
+        chosenPairs: settings.reviewPairs,
+        chosenLanguages: settings.reviewLanguages,
+        offered: <ReviewPair>{
+          for (final deck in decks)
+            ReviewPair(deck.language.code, deck.deck.native.code),
+        },
+        reviewer: ReviewerLanguages(
+          known: settings.spokenLanguages.toSet(),
+          readsScript: settings.scriptsRead,
+        ),
+      ).any((pair) => pair.target == code);
+
   /// At an app open: removes the decks of every language the Languages page
   /// edited and left with no Learn skill. Know needs no decks, and a
   /// language back in the pool needs none either; progress stays in the
@@ -210,6 +229,8 @@ extension LanguageSkillsOnState on AppState {
       // Skills are kept for the whole app: another profile that still learns
       // the language keeps its decks.
       if (_anyProfileLearns(code)) continue;
+      // A course the learner reviews uses the decks.
+      if (reviewsLanguage(code)) continue;
       if (downloads.hasDecks(code)) await downloads.remove(code);
       if (skills.isAllLeave) {
         settings.setLanguageSkills(code, null);
