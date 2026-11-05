@@ -9,7 +9,7 @@ name: CI
 #   bundles the first and the second gates app versions), only "App: analyse",
 #   "App: live downloads" and "Build debug APK" are skipped. The 8 test
 #   shards ALWAYS run (owner, 2026-11-02: "Keep the 8 test shards"): they
-#   read the real decks, and test/deck_format_test.dart is the one check
+#   read the real decks, and the test/deck_format_*_test.dart files are the one check
 #   before merge that main's code parses the PR's decks (#524). A change to
 #   anything else, the workflow included, or one that cannot be read, runs
 #   everything.
@@ -385,6 +385,7 @@ jobs:
 
   # `flutter test` is split over 8 machines (owner, 2026-10-20); the suite is
   # ~51 minutes of tests, so each runs about an eighth. Shard indices are 0..7.
+  # The job name "App: tests N/8" is what the ruleset's gate waits for.
   app-tests:
     name: "App: tests ${{ matrix.n }}/8"
     needs: [decks-index]
@@ -428,8 +429,20 @@ jobs:
         with:
           name: decks-index
           path: decks
-      # The json report gives each test file's time, for balancing the shards.
-      - run: flutter test --total-shards 8 --shard-index ${{ matrix.shard }} --file-reporter json:flutter-test-times.json
+      # Each shard runs whole test files, chosen by tools/test_shard.py from the
+      # weights in test/shard_weights.json (a file with no weight gets a
+      # default, so a new test file needs nothing). `flutter test
+      # --total-shards` split the tests one by one instead, so every shard
+      # compiled every file and a shard's time was luck: 249 s to 750 s on
+      # main run 41886601755. The files are listed first, apart from the
+      # command, so that a failure of the script stops the step: inside $( )
+      # it would leave `flutter test` with no files, which runs them all.
+      # The json report gives each test file's time, for refreshing the weights.
+      - name: Test
+        run: |
+          files=$(python3 tools/test_shard.py --total-shards 8 --shard-index ${{ matrix.shard }})
+          echo "$files"
+          flutter test $files --file-reporter json:flutter-test-times.json
       - uses: actions/upload-artifact@v7
         if: always()
         with:
