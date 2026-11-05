@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Find my level no longer switches Speak and Hear to Learn: it downloads the language's decks if they are missing, then opens placement, and changes no skill.
+
 ## [0.8.6] - 2026-11-05
 
 ### Fixed

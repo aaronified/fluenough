@@ -436,29 +436,21 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   }
 
   /// Find my level (owner, 2026-11-05): a language with no decks on the
-  /// phone is started first, which downloads them, and placement opens when
-  /// they have arrived.
+  /// phone is downloaded first, and placement opens when they have arrived.
+  /// Tapping it never changes a skill's status (owner, 2026-11-05).
   Future<void> _findLevel() async {
     final downloads = _state.deckDownloads;
     if (downloads != null && !downloads.hasDecks(_code)) {
-      if (!await _startForLevel(downloads)) return;
+      if (!await _downloadForLevel(downloads)) return;
       if (!mounted) return;
     }
     _openPlacement();
   }
 
-  /// Starts learning the language (a draft keeps its skills until "Add") and
-  /// waits for its decks, showing the download's progress. False when the
+  /// Downloads the language's decks, showing the progress. False when the
   /// download failed, after saying why.
-  Future<bool> _startForLevel(DeckDownloads downloads) async {
+  Future<bool> _downloadForLevel(DeckDownloads downloads) async {
     final l10n = AppLocalizations.of(context)!;
-    if (!_isDraft && !_skills.anyLearn && _view.canLearn) {
-      final next = _skills
-          .withState(const SkillKey(SkillKind.speak), SkillState.learn)
-          .withState(const SkillKey(SkillKind.hear), SkillState.learn);
-      setState(() => _skills = next);
-      _state.applySkills(_view.language, next);
-    }
     final navigator = Navigator.of(context, rootNavigator: true);
     unawaited(
       showDialog<void>(
