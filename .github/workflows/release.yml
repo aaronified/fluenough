@@ -15,7 +15,7 @@ name: Release
 # and Android refuses to install a lower versionCode over a higher one.
 #
 # The tests gate the release but run as the same 8 shards as ci.yml (the
-# `test` job, `flutter test --total-shards 8 --shard-index N`, owner,
+# `test` job, whole test files per shard from tools/test_shard.py, owner,
 # 2026-11-04: the whole suite in one process took 60 minutes of a 70 minute
 # release). The release job needs every shard to pass before it builds, signs
 # or publishes anything; the signing secrets and versionCode are used only
@@ -326,7 +326,13 @@ jobs:
       - run: dart run build_runner build
       # The tests read the committed decks/index.json of the release commit,
       # as the single-process run did; main regenerates it after each merge.
-      - run: flutter test --total-shards 8 --shard-index ${{ matrix.shard }}
+      # Whole test files per shard, listed apart from the command so that a
+      # failure of the script stops the step (see ci.yml's "App: tests").
+      - name: Test
+        run: |
+          files=$(python3 tools/test_shard.py --total-shards 8 --shard-index ${{ matrix.shard }})
+          echo "$files"
+          flutter test $files
 
   # Runs when the tests passed, or were skipped on purpose because CI already
   # passed (ci-check succeeded with skip=true). A failed ci-check does not
