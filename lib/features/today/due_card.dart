@@ -56,7 +56,10 @@ class DueCard extends StatelessWidget {
         explicitChildNodes: true,
         label: l10n.todayDueSection,
         child: Container(
-          padding: const EdgeInsetsDirectional.all(24),
+          // The hint row is 48 dp tall for the info dot's tap target and its
+          // text sits in the middle, so 10 above keeps the gap to the
+          // heading as even as the 24 at the sides and below.
+          padding: const EdgeInsetsDirectional.fromSTEB(24, 10, 24, 24),
           decoration: BoxDecoration(
             color: scheme.primaryContainer,
             borderRadius: BorderRadius.circular(AppRadii.hero),
