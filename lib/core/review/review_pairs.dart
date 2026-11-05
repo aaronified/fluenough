@@ -94,8 +94,9 @@ class ReviewerLanguages {
 
 /// The pairs reviewed, from what was chosen: [chosenPairs] where the
 /// reviewer has chosen pairs, else their earlier choice of languages,
-/// [chosenLanguages], each turned into its pairs among [offered]; and
-/// before either, the languages they know. Only pairs [reviewer] can
+/// [chosenLanguages], each turned into its pairs among [offered]. With
+/// neither, nothing is reviewed (owner, 2026-11-05: ticking a course is the
+/// review flag). Only pairs [reviewer] can
 /// review are kept, so a script they stop reading takes its pairs away.
 Set<ReviewPair> reviewedPairs({
   required Set<String>? chosenPairs,
@@ -111,7 +112,7 @@ Set<ReviewPair> reviewedPairs({
   } else {
     // Language-level choices from before pairs (#462): every pair with
     // that language as the one reviewed.
-    final languages = chosenLanguages ?? reviewer.known;
+    final languages = chosenLanguages ?? const <String>{};
     chosen = offered.where((p) => languages.contains(p.target));
   }
   return <ReviewPair>{
