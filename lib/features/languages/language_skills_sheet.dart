@@ -647,7 +647,8 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
         !_isDraft &&
         hasDecks &&
         !_skills.anyLearn &&
-        _state.settings.languageSkillsOf(_code) != null;
+        _state.settings.languageSkillsOf(_code) != null &&
+        !_state.reviewsLanguage(_code);
     final dialect = dialectOf(l10n, _view.language);
     final checks = _pending.isNotEmpty;
     return Column(

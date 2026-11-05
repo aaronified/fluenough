@@ -1,5 +1,6 @@
 import '../core/data/spoken_languages.dart';
 import '../core/languages/language_skills.dart';
+import '../core/review/review_pairs.dart';
 import 'app_state.dart';
 
 /// What the Languages page reads and writes of the app (#907): each
@@ -192,6 +193,59 @@ extension LanguageSkillsOnState on AppState {
     return false;
   }
 
+  /// What this reviewer has said about themselves: the languages they know
+  /// and whether they read each one's script (#462). Know means hear, say
+  /// and read and write in at least one script (owner, 2026-11-05): a language
+  /// with skills set on the Languages page that does not have all of those
+  /// is not known here, even when it is in the older spoken list. A language
+  /// with no skills set there is read from the older lists, as before.
+  ReviewerLanguages reviewerLanguages() => ReviewerLanguages(
+    known: <String>{
+      for (final code in settings.spokenLanguages)
+        if (_knowsFully(code)) code,
+    },
+    readsScript: settings.scriptsRead,
+  );
+
+  bool _knowsFully(String code) {
+    if (code == englishCode) return true;
+    final stored = settings.languageSkillsOf(code);
+    if (stored == null) return true;
+    final skills = LanguageSkills.fromStored(stored);
+    if (skills.stateOf(const SkillKey(SkillKind.gesture)) == SkillState.know) {
+      return true;
+    }
+    if (skills.stateOf(const SkillKey(SkillKind.speak)) != SkillState.know ||
+        skills.stateOf(const SkillKey(SkillKind.hear)) != SkillState.know) {
+      return false;
+    }
+    final reads = skills.scriptsIn(
+      SkillState.know,
+      kinds: const <SkillKind>{SkillKind.read},
+    );
+    final writes = skills.scriptsIn(
+      SkillState.know,
+      kinds: const <SkillKind>{SkillKind.write},
+    );
+    return reads.intersection(writes).isNotEmpty;
+  }
+
+  /// Whether a course taught in [code] is ticked in Languages you review and
+  /// can be reviewed (both languages known, both scripts read). Ticking is
+  /// the review flag (owner, 2026-11-05): it keeps the course's decks, which
+  /// are neither marked for removal nor removed while it is ticked. A known
+  /// language with no tick keeps none, and nothing is reviewed until a
+  /// course is ticked.
+  bool reviewsLanguage(String code) => reviewedPairs(
+    chosenPairs: settings.reviewPairs,
+    chosenLanguages: settings.reviewLanguages,
+    offered: <ReviewPair>{
+      for (final deck in decks)
+        ReviewPair(deck.language.code, deck.deck.native.code),
+    },
+    reviewer: reviewerLanguages(),
+  ).any((pair) => pair.target == code);
+
   /// At an app open: removes the decks of every language the Languages page
   /// edited and left with no Learn skill. Know needs no decks, and a
   /// language back in the pool needs none either; progress stays in the
@@ -210,6 +264,8 @@ extension LanguageSkillsOnState on AppState {
       // Skills are kept for the whole app: another profile that still learns
       // the language keeps its decks.
       if (_anyProfileLearns(code)) continue;
+      // A course the learner reviews uses the decks.
+      if (reviewsLanguage(code)) continue;
       if (downloads.hasDecks(code)) await downloads.remove(code);
       if (skills.isAllLeave) {
         settings.setLanguageSkills(code, null);
