@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'assurance_model.dart';
 import 'assurance_readout.dart';
 import 'placement_questions.dart';
+import 'question_outcome.dart';
 
 // The run controller of "Find my level" (wiki/Plan-Placement-V2.md, sections
 // 1, 3 and 5): a pure state machine. Give it the declaration, the size of the
@@ -159,7 +160,9 @@ class PlacementRun {
     this.config, {
     List<bool> results = const <bool>[],
     this.checkpointsKept = 0,
-  }) : results = List<bool>.unmodifiable(results);
+    List<PlacementUnavailable> unavailable = const <PlacementUnavailable>[],
+  }) : results = List<bool>.unmodifiable(results),
+       unavailableLog = List<PlacementUnavailable>.unmodifiable(unavailable);
 
   final PlacementRunConfig config;
 
@@ -170,7 +173,12 @@ class PlacementRun {
   /// How many checkpoints the learner has answered "Keep going" to.
   final int checkpointsKept;
 
-  late final _Engine _engine = _Engine(config, results);
+  /// The questions the question builder could not build, in the order it
+  /// said so ([markUnavailable]). Like [results], part of the state: the same
+  /// answers and the same log always give the same run.
+  final List<PlacementUnavailable> unavailableLog;
+
+  late final _Engine _engine = _Engine(config, results, unavailableLog);
 
   /// The question to ask now, or null when the run is done (or skipped).
   PlacementQuestionRequest? get next => _engine.pending?.request;
@@ -200,12 +208,49 @@ class PlacementRun {
       config,
       results: <bool>[...results, correct],
       checkpointsKept: checkpointsKept,
+      unavailable: unavailableLog,
+    );
+  }
+
+  /// The question builder cannot build [next] from this learner's data (a
+  /// topic with a data gap, see [PlacementUnavailableReason]). The run then
+  /// uses the plan's stated fallback, counts nothing as asked, and moves on:
+  ///
+  /// - minimal pairs: Write tiles where the pair audio is untrusted or not
+  ///   there, complex words where the language has no pair list;
+  /// - any other base question: left out; its skills are then not covered,
+  ///   so they cannot be Verified (section 4.3, condition c);
+  /// - a split or a recheck: the check is dropped, and the miss stays as the
+  ///   evidence it was;
+  /// - a positioning probe or a top-up: the skill is left out of the run;
+  /// - the grammar bisection: it ends.
+  PlacementRun markUnavailable(PlacementUnavailableReason reason) {
+    final current = next;
+    if (current == null) {
+      throw StateError('the run is done: there is no question');
+    }
+    return PlacementRun(
+      config,
+      results: results,
+      checkpointsKept: checkpointsKept,
+      unavailable: <PlacementUnavailable>[
+        ...unavailableLog,
+        PlacementUnavailable(
+          afterAnswers: results.length,
+          variant: current.variant,
+          reason: reason,
+        ),
+      ],
     );
   }
 
   /// The learner chose Keep going at the checkpoint.
-  PlacementRun keepGoing() =>
-      PlacementRun(config, results: results, checkpointsKept: asked ~/ 25);
+  PlacementRun keepGoing() => PlacementRun(
+    config,
+    results: results,
+    checkpointsKept: asked ~/ 25,
+    unavailable: unavailableLog,
+  );
 
   /// The assurance of every skill, as it stands: a skill the learner did not
   /// mark, or that was not asked, is Not tested.
@@ -217,6 +262,11 @@ class PlacementRun {
 
   /// The gaps the splits found.
   List<PlacementGap> get gaps => List<PlacementGap>.unmodifiable(_engine.gaps);
+
+  /// The base questions that were left out because no question could be built
+  /// (and had no fallback), as their plan names.
+  Set<PlacementVariant> get skippedQuestions =>
+      Set<PlacementVariant>.of(_engine.skippedVariants);
 
   /// The skills that have a closed case in this run.
   Set<PlacementSkill> get closedSkills =>
@@ -256,6 +306,7 @@ class _Spec {
     this.first = false,
     this.split,
     this.grammarIndex = -1,
+    this.isFallback = false,
   });
 
   final PlacementQuestionRole role;
@@ -278,6 +329,9 @@ class _Spec {
   final PlacementSplit? split;
   final int grammarIndex;
 
+  /// Asked in place of a question the builder could not build.
+  final bool isFallback;
+
   _Spec asRecheck() => _Spec(
     role: PlacementQuestionRole.recheck,
     topic: topic,
@@ -290,6 +344,7 @@ class _Spec {
     updates: updates,
     first: first,
     grammarIndex: grammarIndex,
+    isFallback: isFallback,
   );
 }
 
@@ -325,8 +380,11 @@ class _Grammar {
 }
 
 class _Engine {
-  _Engine(this.config, List<bool> results)
-    : levels = PlacementLevels(config.deckCount) {
+  _Engine(
+    this.config,
+    List<bool> results,
+    List<PlacementUnavailable> unavailable,
+  ) : levels = PlacementLevels(config.deckCount) {
     final tested = config.tested;
     final skipped = config.declaration == PlacementDeclaration.beginner;
     final flat = PlacementPosterior.flat(levels);
@@ -353,10 +411,27 @@ class _Engine {
     }
     if (skipped) return;
     pending = _choose();
+    var next = 0;
+    var asked = 0;
+    // The builder's "cannot build this" notes come between two answers: the
+    // ones logged after [asked] answers are applied before the next answer.
+    void drain() {
+      while (next < unavailable.length &&
+          unavailable[next].afterAnswers <= asked) {
+        final current = pending;
+        if (current == null) return;
+        _unavailable(current, unavailable[next].reason);
+        next++;
+      }
+    }
+
+    drain();
     for (final result in results) {
       final current = pending;
       if (current == null) break;
       _apply(current, result);
+      asked++;
+      drain();
     }
   }
 
@@ -386,6 +461,13 @@ class _Engine {
   final Set<PlacementSkill> track = <PlacementSkill>{};
   final Set<PlacementSkill> canPromote = <PlacementSkill>{};
   final Set<PlacementTopic> closedTopics = <PlacementTopic>{};
+
+  /// Base questions (by index) not asked because no question could be built.
+  final Set<int> unavailableBase = <int>{};
+  final Set<PlacementVariant> skippedVariants = <PlacementVariant>{};
+
+  /// Skills left out of positioning and top-ups for the same reason.
+  final Set<PlacementSkill> unavailableSkills = <PlacementSkill>{};
   final Set<PlacementSkill> closedSkills = <PlacementSkill>{};
   final Set<PlacementSkill> gapSkills = <PlacementSkill>{};
   final List<PlacementGap> gaps = <PlacementGap>[];
@@ -419,6 +501,8 @@ class _Engine {
         deck: spec.deck,
         percentile: _percentile(spec.deck),
         shortlistPick: random.nextInt(5),
+        part: spec.split?.part,
+        origin: spec.split == null ? null : spec.base?.id,
       ),
     );
   }
@@ -434,7 +518,7 @@ class _Engine {
     // Skills on the track that are short of the target get one more question
     // at a time; one that has fallen under 20% leaves for positioning.
     for (final skill in PlacementSkill.values) {
-      if (!track.contains(skill)) continue;
+      if (!track.contains(skill) || unavailableSkills.contains(skill)) continue;
       final mass = reporting[skill]!.topMass;
       if (reachesTarget(mass)) continue;
       if (mass < _leaveBelow) {
@@ -455,6 +539,7 @@ class _Engine {
 
     for (final skill in _positioningOrder) {
       if (!config.tested.contains(skill) || track.contains(skill)) continue;
+      if (unavailableSkills.contains(skill)) continue;
       if (reachesTarget(reporting[skill]!.leadingMass)) continue;
       return _issue(_probe(skill));
     }
@@ -466,6 +551,7 @@ class _Engine {
     for (var i = 0; i < base.length; i++) {
       final question = base[i];
       if (closedTopics.contains(question.topic)) continue;
+      if (unavailableBase.contains(i)) continue;
       final need = <PlacementSkill>[
         for (final skill in question.skills)
           if (track.contains(skill) && !done[i].contains(skill)) skill,
@@ -553,6 +639,80 @@ class _Engine {
         grammarIndex: index,
       ),
     );
+  }
+
+  // --- a question the builder cannot build ----------------------------------
+
+  void _unavailable(_Pending current, PlacementUnavailableReason reason) {
+    final spec = current.spec;
+    switch (spec.role) {
+      case PlacementQuestionRole.base:
+        unavailableBase.add(spec.baseIndex);
+        final fallback = spec.isFallback ? null : _fallbackFor(spec, reason);
+        if (fallback != null) {
+          pending = _issue(fallback);
+          return;
+        }
+        skippedVariants.add(spec.variant);
+      case PlacementQuestionRole.split:
+        // The check cannot be asked: the miss stays as evidence and nothing
+        // is forgiven or closed.
+        _case = null;
+        _forced.removeWhere((s) => s.role == PlacementQuestionRole.split);
+      case PlacementQuestionRole.recheck:
+        _case = null;
+      case PlacementQuestionRole.isolating:
+        break;
+      case PlacementQuestionRole.topUp:
+      case PlacementQuestionRole.probe:
+        unavailableSkills.addAll(spec.skills);
+        track.removeAll(spec.skills);
+        _forced.clear();
+        _case = null;
+      case PlacementQuestionRole.grammar:
+        _grammar.done = true;
+    }
+    pending = _choose();
+  }
+
+  /// The plan's stated fallback for a base question (row l, row j and
+  /// section 8, items 1, 2 and 4); null where there is none.
+  _Spec? _fallbackFor(_Spec spec, PlacementUnavailableReason reason) {
+    if (spec.topic != PlacementTopic.minimalPairs) return null;
+    final base = spec.base;
+    final noPairs =
+        reason == PlacementUnavailableReason.noSoundsFile ||
+        reason == PlacementUnavailableReason.noPairFound;
+    if (noPairs && config.tested.contains(PlacementSkill.hear)) {
+      // Complex words instead: a heard complex word, pick its meaning.
+      return _Spec(
+        role: PlacementQuestionRole.base,
+        topic: spec.topic,
+        variant: PlacementVariant.w2b,
+        kind: PlacementQuestionKind.pickOne,
+        skills: const <PlacementSkill>[PlacementSkill.hear],
+        deck: spec.deck,
+        base: base,
+        baseIndex: spec.baseIndex,
+        isFallback: true,
+      );
+    }
+    if (config.tested.contains(PlacementSkill.write)) {
+      // The pair audio is not trusted or not there: the same contrast as a
+      // spelling question (Write tiles).
+      return _Spec(
+        role: PlacementQuestionRole.base,
+        topic: spec.topic,
+        variant: spec.variant,
+        kind: PlacementQuestionKind.tilesWord,
+        skills: const <PlacementSkill>[PlacementSkill.write],
+        deck: spec.deck,
+        base: base,
+        baseIndex: spec.baseIndex,
+        isFallback: true,
+      );
+    }
+    return null;
   }
 
   // --- applying an answer ---------------------------------------------------
