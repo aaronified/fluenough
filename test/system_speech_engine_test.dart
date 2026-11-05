@@ -159,8 +159,10 @@ void main() {
       _Capture capture,
       void Function() play,
     ) async {
-      final listening = SystemSpeechEngine(android, capture)
-          .listen(bcp47: 'hi-IN', onDevice: true);
+      final listening = SystemSpeechEngine(
+        android,
+        capture,
+      ).listen(bcp47: 'hi-IN', onDevice: true);
       await tester.pump();
       play();
       await tester.pump(const Duration(seconds: 15));
