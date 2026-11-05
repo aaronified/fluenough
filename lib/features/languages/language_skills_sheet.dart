@@ -435,13 +435,48 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
   }
 
-  void _findLevel() {
-    final l10n = AppLocalizations.of(context)!;
+  /// Find my level (owner, 2026-11-05): a language with no decks on the
+  /// phone is started first, which downloads them, and placement opens when
+  /// they have arrived.
+  Future<void> _findLevel() async {
     final downloads = _state.deckDownloads;
     if (downloads != null && !downloads.hasDecks(_code)) {
-      _toast(l10n.languagesLevelNeedsDecks);
-      return;
+      if (!await _startForLevel(downloads)) return;
+      if (!mounted) return;
     }
+    _openPlacement();
+  }
+
+  /// Starts learning the language (a draft keeps its skills until "Add") and
+  /// waits for its decks, showing the download's progress. False when the
+  /// download failed, after saying why.
+  Future<bool> _startForLevel(DeckDownloads downloads) async {
+    final l10n = AppLocalizations.of(context)!;
+    if (!_isDraft && !_skills.anyLearn && _view.canLearn) {
+      final next = _skills
+          .withState(const SkillKey(SkillKind.speak), SkillState.learn)
+          .withState(const SkillKey(SkillKind.hear), SkillState.learn);
+      setState(() => _skills = next);
+      _state.applySkills(_view.language, next);
+    }
+    final navigator = Navigator.of(context, rootNavigator: true);
+    unawaited(
+      showDialog<void>(
+        context: context,
+        barrierDismissible: false,
+        builder: (_) => _LevelDownloadDialog(downloads: downloads, code: _code),
+      ),
+    );
+    final failure = await _state.downloadLanguage(_code);
+    if (navigator.canPop()) navigator.pop();
+    if (failure != null) {
+      if (mounted) _toast(downloadFailureText(l10n, failure));
+      return false;
+    }
+    return true;
+  }
+
+  void _openPlacement() {
     final code = _code;
     final state = _state;
     final native = state.courseNative(code);
@@ -1591,6 +1626,46 @@ class _InfoDialog extends StatelessWidget {
               ],
             ],
           ],
+        ),
+      ),
+    );
+  }
+}
+
+/// The progress shown while Find my level waits for a language's decks.
+class _LevelDownloadDialog extends StatelessWidget {
+  const _LevelDownloadDialog({required this.downloads, required this.code});
+
+  final DeckDownloads downloads;
+  final String code;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    return PopScope(
+      canPop: false,
+      child: AlertDialog(
+        content: ListenableBuilder(
+          listenable: downloads,
+          builder: (context, _) {
+            final progress = downloads.progressOf(code);
+            return Row(
+              children: <Widget>[
+                const SizedBox.square(
+                  dimension: 24,
+                  child: CircularProgressIndicator(strokeWidth: 3),
+                ),
+                const SizedBox(width: 16),
+                Expanded(
+                  child: Text(
+                    progress == null
+                        ? l10n.languagesLevelDownloading
+                        : downloadProgressText(l10n, downloads, code, progress),
+                  ),
+                ),
+              ],
+            );
+          },
         ),
       ),
     );
