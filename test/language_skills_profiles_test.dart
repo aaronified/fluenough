@@ -81,23 +81,63 @@ void main() {
     expect(downloads.removed, <String>['es']);
   });
 
-  test('decks a ticked review course uses are not removed, and the language '
-      'is not marked for removal', () async {
-    final downloads = HeldDecks(<String>{'es'});
+  /// Spanish known in every skill: hear, say, read and write in Latin.
+  final knowEs = LanguageSkills(<SkillKey, SkillState>{
+    const SkillKey(SkillKind.speak): SkillState.know,
+    const SkillKey(SkillKind.hear): SkillState.know,
+    const SkillKey(SkillKind.read, latinScript): SkillState.know,
+    const SkillKey(SkillKind.write, latinScript): SkillState.know,
+  }).toStored();
+
+  /// A learner who knows Spanish with its decks on the phone.
+  AppState knowsSpanish(HeldDecks downloads, {Set<String>? ticks}) {
     final state = AppState.test(
       deckDownloads: downloads,
       settings: SettingsNotifier(spokenLanguages: const <String>['en', 'es'])
         ..scriptsRead = <String, bool>{'en': true, 'es': true}
-        ..reviewPairs = <String>{'es/en'},
+        ..reviewPairs = ticks,
     );
     addTearDown(state.dispose);
-    state.settings.setLanguageSkills('es', <String, String>{'speak': 'know'});
+    state.settings.setLanguageSkills('es', knowsEs);
+    return state;
+  }
+
+  test('a Know-only language with no course ticked, the screen never opened, '
+      'has its decks removed', () async {
+    final downloads = HeldDecks(<String>{'es'});
+    final state = knowsSpanish(downloads);
+    expect(state.reviewsLanguage('es'), isFalse);
+    await state.removeUnneededDecks();
+    expect(downloads.removed, <String>['es']);
+  });
+
+  test('a ticked course keeps its decks, and unticking releases them for '
+      'removal', () async {
+    final downloads = HeldDecks(<String>{'es'});
+    final state = knowsSpanish(downloads, ticks: <String>{'es/en'});
     expect(state.reviewsLanguage('es'), isTrue);
     await state.removeUnneededDecks();
     expect(downloads.removed, isEmpty);
 
     state.settings.reviewPairs = <String>{};
     expect(state.reviewsLanguage('es'), isFalse);
+    await state.removeUnneededDecks();
+    expect(downloads.removed, <String>['es']);
+  });
+
+  test('a tick on a course whose language is not known in every skill does '
+      'not count: it cannot be reviewed', () async {
+    final downloads = HeldDecks(<String>{'es'});
+    final state = knowsSpanish(downloads, ticks: <String>{'es/en'});
+    // Hear only: no Speak, so Spanish is not known.
+    state.settings.setLanguageSkills('es', <String, String>{
+      'hear': 'know',
+      'read:latin': 'know',
+      'write:latin': 'know',
+    });
+    expect(state.reviewsLanguage('es'), isFalse);
+    await state.removeUnneededDecks();
+    expect(downloads.removed, <String>['es']);
   });
 
   test('an unreadable stored entry is not taken for Leave', () async {
