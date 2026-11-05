@@ -27,7 +27,7 @@ const Set<PlacementSkill> _bengali = <PlacementSkill>{
 
 PlacementRunConfig configFor(
   Set<PlacementSkill> skills, {
-  PlacementDeclaration? declaration = PlacementDeclaration.fluent,
+  PlacementDeclaration? declaration = PlacementDeclaration.expert,
   bool? expertTrack,
   int deckCount = 100,
   bool floorFirst = true,
@@ -118,7 +118,7 @@ void main() {
       }
     });
 
-    test('Fluent starts the expert track at the last deck', () {
+    test('Expert starts the expert track at the last deck', () {
       final first = PlacementRun(configFor(_bengali)).next!;
       expect(first.number, 1);
       expect(first.role, PlacementQuestionRole.base);
@@ -150,7 +150,7 @@ void main() {
     });
 
     test('it is never evidence: the same answers, the same assurance', () {
-      // Fluent and no declaration run the same expert track, so the same
+      // Expert and no declaration run the same expert track, so the same
       // answers must leave the same posterior in every skill.
       final answers = <bool>[
         true, true, true, false, true, true, true, true, //
@@ -179,7 +179,7 @@ void main() {
         for (final declaration in <PlacementDeclaration?>[
           PlacementDeclaration.advanced,
           PlacementDeclaration.amateur,
-          PlacementDeclaration.fluent,
+          PlacementDeclaration.expert,
           null,
         ]) {
           final config = configFor(
@@ -187,7 +187,7 @@ void main() {
             declaration: declaration,
             expertTrack:
                 declaration == null ||
-                    declaration == PlacementDeclaration.fluent
+                    declaration == PlacementDeclaration.expert
                 ? null
                 : false,
           );
@@ -638,7 +638,7 @@ void main() {
     // (12 / 11); every other cell is the published figure.
     final table = <PlacementDeclaration?, List<(int, int, int)>>{
       null: <(int, int, int)>[(-1, 14, 8), (30, 13, 10), (80, 11, 10)],
-      PlacementDeclaration.fluent: <(int, int, int)>[
+      PlacementDeclaration.expert: <(int, int, int)>[
         (-1, 17, 9),
         (30, 13, 11),
         (80, 10, 9),
