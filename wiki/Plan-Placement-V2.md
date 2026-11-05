@@ -8,16 +8,25 @@ The full text is in git history: `git show 98be3004:wiki/Plan-Placement-V2.md`.
 
 ## Find my level: verify, then fit, and how a run samples questions (plan, owner, 2026-11-05)
 
-Status: plan agreed by the owner 2026-11-05; not built yet; build order proposed below. The owner's answers of 2026-11-05 are in section 9 (answered table); the questions still open are there too. The numbers of sections 4.5 to 7 come from a model and a simulation written for this plan (a Python script of about 150 lines, kept in the session scratch folder), **not run in CI**; the implementation's tests must reproduce them (section 5.3).
+Status: plan agreed by the owner 2026-11-05. Step 1 (the pure model in `lib/core/placement/`, PR #1032, merged 2026-11-05) is built and not wired into any screen; steps 2 onward are not built. The build order is below, and the step 1 note follows it. The owner's answers of 2026-11-05 are in section 9 (answered table); the questions still open are there too. The numbers of sections 4.5 to 7 come from a model and a simulation written for this plan (a Python script of about 150 lines, kept in the session scratch folder), **not run in CI**; the implementation's tests must reproduce them (section 5.3).
 
 **Proposed build order**
 
-- Pure model in `lib/core` first, with unit tests: the twelve-class posterior update (4.1), the question parameters (4.2), the run state of this run's answers, and the mastery-topic order (2.1).
-- Then the question generators in `lib/core`, one mastery topic at a time (2.1, topics 1 to 7).
-- Then the run flow and the checkpoint UI (5.1, 5.4).
-- Then the declaration screen (4.5).
-- Then the confidence display (4.3, 5.5).
+- **Built (step 1, PR #1032).** Pure model in `lib/core` first, with unit tests: the twelve-class posterior update (4.1), the question parameters (4.2), the run state of this run's answers, and the mastery-topic order (2.1).
+- **Not built (step 2).** Then the question generators in `lib/core`, one mastery topic at a time (2.1, topics 1 to 7).
+- **Not built (step 3).** Then the run flow and the checkpoint UI (5.1, 5.4).
+- **Not built (step 4).** Then the declaration screen (4.5).
+- **Not built (step 5).** Then the confidence display (4.3, 5.5).
 - Rule for every step: `lib/core` has no Flutter imports (AGENTS.md); Flutter code lives in `lib/features`.
+
+**Step 1 as built.** Files: `lib/core/placement/assurance_model.dart`, `assurance_readout.dart`, `placement_questions.dart` and `placement_run.dart`. The third script question is off by default (`extraScriptQuestion`). A gap in any part blocks Verified. Duplicate levels are merged on paths of 10 decks or fewer. Four deviations from the plan's figures:
+
+- Amateur declared plus an advanced learner: 12 and 11 questions, instead of 13 and 12.
+- Closed pair topic: 21 questions, instead of about 23.
+- Example 3: "Write falls to 35%" occurs after the next question; 3% is right after the split.
+- The two track-cost cells are not simulated.
+
+Not modelled yet: item hardness scoring, no-repeat rules, pause and resume, and the script's own five levels.
 
 **Owner quotes, 2026-11-05, in the order they came.**
 
