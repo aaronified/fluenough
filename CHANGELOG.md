@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.8.6] - 2026-11-05
+
 ### Fixed
 
 - **"Your recording" is there right after a Say drill's first attempt.** The microphone is now also read while the phone's speech recogniser listens, in memory only and handled exactly as a replay take, so the first spoken answer can be replayed without saying it again. It starts only after the recogniser has the microphone, and switches itself off if listens start failing to match while it runs, so a phone that cannot share the microphone behaves as before and "Replay" still records a take there.
