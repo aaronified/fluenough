@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Find my level starts the language.** Tapping it on a language whose decks are not on the phone now starts learning it and downloads the decks, with progress and the usual errors, then opens the level check when they arrive, instead of a message asking to start learning first. The "Tap a skill to practise only that" card on Today has even padding all round.
+
 ## [0.8.5] - 2026-11-04
 
 ### Added
