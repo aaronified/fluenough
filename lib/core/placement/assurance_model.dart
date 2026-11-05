@@ -184,7 +184,7 @@ class PlacementPosterior {
 /// questions start and nothing else: it is never evidence.
 enum PlacementDeclaration {
   /// "I use it easily": the expert track at the last deck.
-  fluent,
+  expert,
 
   /// "I follow most of it and can say what I need": positioning starts high.
   advanced,
@@ -200,7 +200,7 @@ enum PlacementDeclaration {
 /// 4.5, the starting priors the owner approved). `null`, and Beginner (which
 /// asks nothing), give the flat prior of the comparison baseline.
 ///
-/// For ten parts these are the published figures: Fluent puts 0.55, 0.15,
+/// For ten parts these are the published figures: Expert puts 0.55, 0.15,
 /// 0.08 and 0.05 on the top four classes and 0.02125 on each of the eight
 /// below; Advanced and Amateur a triangle of height `max(0, 6 - 2 d)` (d the
 /// distance in tenths from 7.5 or 3.5) times 0.16 on a floor of 0.02,
@@ -211,7 +211,7 @@ List<double> askingPriorWeights(
 ) {
   final count = levels.classCount;
   switch (declaration) {
-    case PlacementDeclaration.fluent:
+    case PlacementDeclaration.expert:
       const top = <double>[0.55, 0.15, 0.08, 0.05];
       final rest = count > top.length ? 0.17 / (count - top.length) : 0.0;
       return <double>[

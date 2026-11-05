@@ -170,12 +170,12 @@ void main() {
       return weights[c] / weights.reduce((a, b) => a + b);
     }
 
-    test('Fluent leans to the top and sums to one', () {
-      expect(mass(PlacementDeclaration.fluent, 11), closeTo(0.55, 1e-9));
-      expect(mass(PlacementDeclaration.fluent, 10), closeTo(0.15, 1e-9));
-      expect(mass(PlacementDeclaration.fluent, 9), closeTo(0.08, 1e-9));
-      expect(mass(PlacementDeclaration.fluent, 8), closeTo(0.05, 1e-9));
-      expect(mass(PlacementDeclaration.fluent, 0), closeTo(0.02125, 1e-9));
+    test('Expert leans to the top and sums to one', () {
+      expect(mass(PlacementDeclaration.expert, 11), closeTo(0.55, 1e-9));
+      expect(mass(PlacementDeclaration.expert, 10), closeTo(0.15, 1e-9));
+      expect(mass(PlacementDeclaration.expert, 9), closeTo(0.08, 1e-9));
+      expect(mass(PlacementDeclaration.expert, 8), closeTo(0.05, 1e-9));
+      expect(mass(PlacementDeclaration.expert, 0), closeTo(0.02125, 1e-9));
     });
 
     test('Advanced is a triangle around l7.5 on a floor', () {
@@ -212,7 +212,7 @@ void main() {
       expect(first(null), 50); // the 50th percentile
       expect(first(PlacementDeclaration.advanced), 79); // unit 80
       expect(first(PlacementDeclaration.amateur), 40); // unit 41
-      expect(first(PlacementDeclaration.fluent), 99); // unit 100
+      expect(first(PlacementDeclaration.expert), 99); // unit 100
     });
   });
 

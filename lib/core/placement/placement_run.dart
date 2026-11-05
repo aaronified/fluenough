@@ -34,7 +34,7 @@ class PlacementRunConfig {
        grammarUnitDecks = List<int>.unmodifiable(grammarUnitDecks),
        expertTrack =
            expertTrack ??
-           (declaration == null || declaration == PlacementDeclaration.fluent);
+           (declaration == null || declaration == PlacementDeclaration.expert);
 
   /// The decks of the path up to B1 (`CoursePath`, `walkDecks`).
   final int deckCount;
@@ -83,7 +83,7 @@ class PlacementRunConfig {
   /// expert track for the topics it has not had (section 4.5).
   final bool promoteToExpert;
 
-  /// Start on the expert track (Fluent, or no declaration) rather than in
+  /// Start on the expert track (Expert, or no declaration) rather than in
   /// positioning (Advanced, Amateur).
   final bool expertTrack;
 
