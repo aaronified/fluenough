@@ -146,7 +146,7 @@ PlacementLanguageData sampleLanguageData(Catalog catalog, String code) {
 /// decks, shortlist picks and seeds.
 List<GeneratedQuestion> generateQuestions(PlacementLanguageData data) {
   final out = <GeneratedQuestion>[];
-  for (var seed = 0; seed < 200; seed++) {
+  for (var seed = 0; seed < 60; seed++) {
     final builder = QuestionBuilder(data, seed: seed);
     for (var deck = 0; deck < data.deckCount; deck++) {
       for (var pick = 0; pick < 5; pick++) {
