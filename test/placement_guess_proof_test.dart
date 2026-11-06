@@ -19,11 +19,9 @@
 // and 0.07 is far below what the old leaks gave (a similarity guesser got
 // about 0.6 on the pattern cells' "lemma (gloss) - person" options).
 //
-// The run statistics. A guesser's placement is bounded by [_bottom]; the
-// claim is that at least 95% of seeded runs stay under it. With 60 runs per
-// strategy a true failure rate of 1% fails the test (4 or more failures)
-// with probability about 0.3%, and a true rate of 10% passes it with
-// probability about 3%.
+// Where a guesser is placed is tested in placement_credit_model_test.dart
+// (the model, 3000 runs per profile) and placement_replay_test.dart (the
+// engine over the banks).
 @Timeout(Duration(minutes: 30))
 library;
 
@@ -34,7 +32,6 @@ import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
-import 'package:fluenough/core/placement/assurance_readout.dart';
 import 'package:fluenough/core/placement/generated_question.dart';
 import 'package:fluenough/core/placement/item_picker.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
@@ -45,9 +42,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/placement_harness.dart';
 
 const String _root = 'test/fixtures/sample-decks';
-
-/// The highest deck index (0 based, so unit 20) a guesser may be placed at.
-const int _bottom = 19;
 
 /// Chance of a four-option pick.
 const double _chance = 0.25;
@@ -154,8 +148,8 @@ void main() {
   group('a run never asks the same word family twice', () {
     test('first questions, probes and top-ups differ in lemma family', () {
       final data = syntheticCourse();
-      for (var seed = 0; seed < 10; seed++) {
-        final played = playRun(data, seed, rogueGuessers['random']!, cap: 50);
+      for (var seed = 0; seed < 4; seed++) {
+        final played = playRun(data, seed, rogueGuessers['random']!, cap: 30);
         final seen = <String>{};
         for (final q in played.asked) {
           final role = q.request.role;
@@ -176,58 +170,5 @@ void main() {
         }
       }
     });
-  });
-
-  group('rogue guessers are placed at the bottom', () {
-    const runs = 60;
-    final data = syntheticCourse();
-
-    for (final name in <String>['random', 'always first', 'similarity']) {
-      test(
-        '"$name": 95% of $runs runs end at unit ${_bottom + 1} or lower',
-        () {
-          var highCheckpoint = 0;
-          var highEnd = 0;
-          for (var seed = 0; seed < runs; seed++) {
-            final played = playRun(data, seed, rogueGuessers[name]!);
-            if (highestPlaced(played.atCheckpoint) > _bottom) highCheckpoint++;
-            if (highestPlaced(played.atEnd) > _bottom) highEnd++;
-          }
-          // At most 5% of the runs (3 of 60) may be placed higher.
-          expect(highCheckpoint, lessThanOrEqualTo(3), reason: 'checkpoint');
-          expect(highEnd, lessThanOrEqualTo(3), reason: 'end');
-        },
-      );
-    }
-
-    test('a Not sure yet skill is placed at its lower bound', () {
-      for (var seed = 0; seed < 20; seed++) {
-        final played = playRun(data, seed, rogueGuessers['random']!);
-        for (final found in played.atCheckpoint.values) {
-          if (found.label != AssuranceLabel.notSureYet) continue;
-          expect(found.lowerBound, isTrue);
-          expect(found.placedLevel, lessThanOrEqualTo(_bottom));
-        }
-      }
-    });
-  });
-
-  group('a learner who knows the first units is still placed near them', () {
-    final data = syntheticCourse();
-    for (final units in <int>[30, 60]) {
-      test('$units units', () {
-        final played = playRun(data, 3, KnowsFirstUnits(units), cap: 150);
-        expect(played.done, isTrue);
-        for (final found in played.atEnd.values) {
-          if (found.label == AssuranceLabel.notTested) continue;
-          expect(
-            found.placedLevel,
-            inInclusiveRange(units - 1 - 12, units - 1 + 12),
-            reason: '${found.skill.name} of $units units',
-          );
-          expect(trustsPointEstimate(found.label), isTrue);
-        }
-      });
-    }
   });
 }

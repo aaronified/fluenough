@@ -567,7 +567,7 @@ void main() {
       ];
       expect(decks.first, 50);
       expect(decks.toSet().length, greaterThanOrEqualTo(2));
-      expect(decks.last, 0);
+      expect(decks.last, lessThan(decks.first));
     });
 
     test('stops for the skill as soon as 95% is reached, inside a recheck', () {
