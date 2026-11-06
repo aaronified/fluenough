@@ -24,6 +24,9 @@ import 'package:fluenough/core/review/review_file.dart';
 import 'package:fluenough/core/review/deck_review.dart' show DeckReview;
 import 'package:fluenough/core/review/rater_code.dart';
 import 'package:fluenough/core/review/review_question.dart';
+import 'package:fluenough/core/review/review_queue.dart';
+import 'package:fluenough/features/review/builder_note.dart';
+import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/features/review/daily_questions_page.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
@@ -789,5 +792,177 @@ cards:
         findsOneWidget,
       );
     });
+  });
+
+  group('the deck builders\' questions (docs/review-queue, 2026-11-06)', () {
+    String file(Map<String, Object?> languages, {Object? version = 1}) =>
+        jsonEncode(<String, Object?>{
+          'format': 'fluenough-review-queue',
+          'version': version,
+          'languages': languages,
+          'a_key_from_the_future': true,
+        });
+    Map<String, Object?> rows(List<String> questions) => <String, Object?>{
+      'cards': <String, Object?>{
+        'xx-0002': <Object?>[
+          for (final q in questions)
+            <String, Object?>{'question': q, 'by': 'Haiku builder'},
+        ],
+      },
+      'unit_level': <Object?>[],
+    };
+
+    test('the file is read, and what is not this format is nothing', () {
+      final queue = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': rows(<String>['  Is it m?  ', '', 'And the tone?']),
+        }),
+      );
+      expect(queue.forCard('xx', 'xx-0002'), <String>[
+        'Is it m?',
+        'And the tone?',
+      ]);
+      expect(queue.has('xx', 'xx-0001'), isFalse);
+      expect(queue.has('yy', 'xx-0002'), isFalse);
+      expect(ReviewQueue.parse('not json').isEmpty, isTrue);
+      expect(ReviewQueue.parse('[]').isEmpty, isTrue);
+      expect(
+        ReviewQueue.parse(
+          file(<String, Object?>{
+            'xx': rows(<String>['q']),
+          }, version: 2),
+        ).isEmpty,
+        isTrue,
+      );
+      expect(
+        ReviewQueue.parse('{"format":"other","version":1,"languages":{}}')
+            .isEmpty,
+        isTrue,
+      );
+    });
+
+    test('a card carries at most three questions', () {
+      final queue = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': rows(<String>['1', '2', '3', '4', '5']),
+        }),
+      );
+      expect(queue.forCard('xx', 'xx-0002'), <String>['1', '2', '3']);
+    });
+
+    final decks = <Deck>[
+      _deck('xx-en-deck', <Card>[
+        _card('xx-0001', 'blorp'),
+        _card('xx-0002', 'quint'),
+        _card(
+          'xx-0003',
+          'zan',
+          examples: const <CardExample>[
+            CardExample(target: 'zan zan', native: 'a zan of zan'),
+          ],
+        ),
+      ]),
+    ];
+
+    test('listed cards come first, each question with the builder\'s', () {
+      final queue = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': rows(<String>['Is it m?']),
+        }),
+      );
+      final asked = generateQuestions(decks, queue: queue);
+      expect(_ids(asked), <String>[
+        'xx-0002|meaning',
+        'xx-0001|meaning',
+        'xx-0003|meaning',
+        'xx-0003|example:${pointHash('zan zan')}',
+      ]);
+      expect(asked.first.builder, <String>['Is it m?']);
+      expect(asked.skip(1).every((q) => q.builder.isEmpty), isTrue);
+      // Without the queue the order is the weakest first, as before.
+      expect(_ids(generateQuestions(decks)).first, 'xx-0001|meaning');
+    });
+
+    test('a listed card keeps the weakest-first order among the listed', () {
+      final queue = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': <String, Object?>{
+            'cards': <String, Object?>{
+              'xx-0003': <Object?>[
+                <String, Object?>{'question': 'Natural?'},
+              ],
+              'xx-0001': <Object?>[
+                <String, Object?>{'question': 'Gender?'},
+              ],
+            },
+          },
+        }),
+      );
+      expect(_ids(generateQuestions(decks, queue: queue)), <String>[
+        'xx-0001|meaning',
+        'xx-0003|meaning',
+        'xx-0003|example:${pointHash('zan zan')}',
+        'xx-0002|meaning',
+      ]);
+    });
+
+    test(
+      'a listed card two reviewers signed off, or answered, is not asked',
+      () {
+        final queue = ReviewQueue.parse(
+          file(<String, Object?>{
+            'xx': rows(<String>['Is it m?']),
+          }),
+        );
+        final signed = <Deck>[
+          _deck(
+            'xx-en-deck',
+            decks.first.cards,
+            checkedBy: const <String, List<String>>{
+              'xx-0002': <String>['A', 'B'],
+            },
+          ),
+        ];
+        expect(
+          _ids(generateQuestions(signed, queue: queue)),
+          isNot(contains('xx-0002|meaning')),
+        );
+        expect(
+          _ids(
+            generateQuestions(
+              decks,
+              queue: queue,
+              skip: const <String>{'xx-0002|meaning'},
+            ),
+          ),
+          isNot(contains('xx-0002|meaning')),
+        );
+      },
+    );
+
+    for (final brightness in Brightness.values) {
+      testWidgets('the note is labelled, in $brightness at 1.4x', (
+        tester,
+      ) async {
+        await tester.pumpWidget(
+          MaterialApp(
+            theme: ThemeData(brightness: brightness),
+            localizationsDelegates: AppLocalizations.localizationsDelegates,
+            supportedLocales: AppLocalizations.supportedLocales,
+            builder: (context, child) => MediaQuery(
+              data: MediaQuery.of(context)
+                  .copyWith(textScaler: const TextScaler.linear(1.4)),
+              child: child!,
+            ),
+            home: const Scaffold(
+              body: BuilderNote(questions: <String>['Is it m, or either?']),
+            ),
+          ),
+        );
+        expect(find.text('Question from the deck builder'), findsOneWidget);
+        expect(find.text('Is it m, or either?'), findsOneWidget);
+        expect(tester.takeException(), isNull);
+      });
+    }
   });
 }

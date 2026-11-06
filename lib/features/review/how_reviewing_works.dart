@@ -132,6 +132,7 @@ final List<ReviewGuideStep> reviewGuideSteps = <ReviewGuideStep>[
     paragraphs: (l10n) => <String>[
       l10n.reviewGuideQuestionsBody,
       l10n.reviewGuideQuestionsSend,
+      l10n.reviewGuideQuestionsBuilder,
       l10n.reviewGuideQuestionsCount,
     ],
     extra: (context) => const QuestionsPerDayChoice(),

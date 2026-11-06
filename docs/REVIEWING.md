@@ -191,6 +191,13 @@ the right meaning of a word, is this example natural, is this a real
 confusable, is this recording correct and by a native speaker. Data written
 without a source comes before data taken from Wiktionary or Tatoeba.
 
+Some cards come with a question from the deck builder, a doubt they could
+not settle, such as a gender or a tone. Those cards are asked first, and the
+question is shown on the card as a note, under **Question from the deck
+builder**. It is a hint for you, not part of your answer: answer the question
+as usual, and use **Suggest a change** on the card if the builder's doubt
+turns out to be a mistake. The same note is on the card in a unit's review.
+
 - **Yes or No.** A No asks why, with a few fixed reasons and an optional
   line. The line goes in the mail for people to read and nowhere else.
 - **Recordings.** There is no recording option yet. A recording can only be

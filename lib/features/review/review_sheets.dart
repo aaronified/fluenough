@@ -25,6 +25,7 @@ import '../decks/card_top_line.dart';
 import '../decks/checked_by_line.dart';
 import '../decks/path_parts.dart' show joinParts;
 import 'alike_warning.dart';
+import 'builder_note.dart';
 import 'move_sheet.dart';
 import 'proposal_card.dart';
 import 'review_warning_sheet.dart';
@@ -220,6 +221,9 @@ class ReviewCardSheet extends StatelessWidget {
     final alike = review?.alike;
     final proposals = waitingProposals(state.decks, deck, card);
     final checked = checkedByOf(state.decks, card, deck: deck).length;
+    final builderQuestions =
+        state.deckDownloads?.reviewQueue.forCard(language.code, card.id) ??
+        const <String>[];
     void close(ReviewCardAction? action) => Navigator.of(context).pop(action);
 
     return SafeArea(
@@ -240,6 +244,10 @@ class ReviewCardSheet extends StatelessWidget {
             if (checked > 0) ...<Widget>[
               const SizedBox(height: 8),
               CheckedByLine(count: checked),
+            ],
+            if (builderQuestions.isNotEmpty) ...<Widget>[
+              const SizedBox(height: 16),
+              BuilderNote(questions: builderQuestions),
             ],
             for (final proposal in proposals) ...<Widget>[
               const SizedBox(height: 16),

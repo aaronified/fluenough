@@ -8,6 +8,7 @@ import '../core/decks/deck_fetch.dart';
 import '../core/decks/deck_index.dart';
 import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
+import '../core/review/review_queue.dart';
 import 'app_info.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
@@ -149,6 +150,7 @@ class DeckDownloads extends ChangeNotifier {
 
   static const String _indexNote = 'index.json';
   static const String _stateNote = 'state.json';
+  static const String _queueNote = 'review-queue.json';
 
   final DeckFetcher fetcher;
   final DownloadedDecks files;
@@ -275,6 +277,32 @@ class DeckDownloads extends ChangeNotifier {
   /// When the last check reached GitHub.
   DateTime? get checkedAt => _checkedAt;
 
+  ReviewQueue _reviewQueue = ReviewQueue.empty;
+
+  /// The deck builders' questions for reviewers, as last read (2026-11-06):
+  /// empty until [refreshReviewQueue] has reached GitHub once.
+  ReviewQueue get reviewQueue => _reviewQueue;
+
+  /// Reads the review queue, `decks/review-queue.json`, from GitHub and
+  /// keeps it. Best effort: a failure keeps the one read before, which is
+  /// nothing the learner needs, so no status is shown. Returns whether it
+  /// was read.
+  Future<bool> refreshReviewQueue() async {
+    try {
+      final fetched = await fetcher.fetch('decks/review-queue.json');
+      final bytes = fetched.bytes;
+      if (bytes == null) return false;
+      final text = utf8.decode(bytes);
+      _reviewQueue = ReviewQueue.parse(text);
+      await files.writeNote(_queueNote, text);
+      _notify();
+      return true;
+    } on Object catch (e) {
+      _log?.warning('Deck downloads: could not read the review queue: $e');
+      return false;
+    }
+  }
+
   /// Reads what is on the phone: the files, the last index and the state
   /// kept beside them. Deletes what a download cut short left. Never
   /// touches the network.
@@ -290,6 +318,12 @@ class DeckDownloads extends ChangeNotifier {
       }
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read what is kept: $e');
+    }
+    try {
+      final queue = await files.readNote(_queueNote);
+      if (queue != null) _reviewQueue = ReviewQueue.parse(queue);
+    } on Object catch (e) {
+      _log?.warning('Deck downloads: could not read the review queue: $e');
     }
     try {
       final state = await files.readNote(_stateNote);
