@@ -712,7 +712,8 @@ units:
       - { id: "kanji-at-work", text: { "en": "Hearing the work and study words whose kanji are taught: meeting, report, exam, question" } }
     reading_passages:
       - { id: "office-memo", text: { "en": "A short office memo in kanji and kana" } }
-  - planned: { id: "ja-arts", theme: "arts", words: 45 }
+  - decks: ["ja-arts", "ja-arts-sentences", "ja-reading-arts", "*"]
+    words: 45
     listening_passages:
       - { id: "a-calligraphy-class", text: { "en": "A teacher explains a calligraphy class" } }
     reading_passages:

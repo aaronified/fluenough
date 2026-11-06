@@ -185,3 +185,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-3307 | manners | Is ひじょうしき (unconventional) the natural word, or should 非常識 be given the sense of rude? | Haiku builder | 2026-11-06 |
 | ja-3382 | environment | Is ぼうさい (disaster prevention) the natural word, or should 防災 be shown with the more common 防災訓練? | Haiku builder | 2026-11-06 |
 | ja-3447 | cinema | Is ようが (a film recorded on disc) the natural word a learner needs, or should DVD stand? | Haiku builder | 2026-11-06 |
+| ja-3512 | arts | Is ひょうげん (expression) the word a learner needs, or should 表現 stand as a loan from Chinese? | Haiku builder | 2026-11-06 |
