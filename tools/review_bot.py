@@ -4,7 +4,8 @@
 
 Run by `tools/mail_to_issues.py`, in the mail workflow, once the
 GitHub App that merges is set up. Three kinds of pull request, each on a
-branch of its own under `review-bot/`, each started afresh from `main`:
+branch of its own under `review-bot/`, each started afresh from `decks-live`
+(the branch the decks live on since 2026-11-06; main's `decks/` is frozen):
 
 - **A review's proposals** (`review-bot/review/<mail>`): each suggestion
   of one review mail becomes a proposal on its card, each acceptance
@@ -31,9 +32,9 @@ dates, so a rerun finds its own PR instead of opening another; a PR the
 owner closed is never opened again. A proposal made again later, after its
 field was changed back, has a new date and so a new branch. A PR whose
 checks fail stays open for the owner. A PR whose branch does not hold all
-of `main` is built again from `main` and pushed over before it merges, and
+of `decks-live` is built again from it and pushed over before it merges, and
 an agreement or outdated PR that a run no longer asks for, because the
-owner changed `main` under it, is closed.
+owner changed `decks-live` under it, is closed.
 
 On one field, one agreement at a time: while one proposal's agreement PR
 is open, no other proposal on that field is applied. When several reach
@@ -116,10 +117,14 @@ KIND_LABELS = {
 }
 FAILED_LABEL = "review-bot: checks failed"
 THRESHOLD = "REVIEW_AGREEMENTS_NEEDED"
-# The checks branch protection requires on `main`: the job names in
-# .github/workflows/ci.yml. Other check runs on a commit do not gate a merge.
-REQUIRED_CHECKS = ("Validate decks", "Analyse and test", "Build debug APK",
-                   "Released app reads the decks")
+# The branch the decks live on, and so the one the bot reads, branches from,
+# opens its PRs against and compares with (owner, 2026-11-06). Main's own
+# `decks/` is frozen.
+DECKS_BRANCH = "decks-live"
+# The checks the ruleset of `decks-live` requires: job names of its Deck CI
+# (the same names exist in main's ci.yml). Other check runs on a commit do not
+# gate a merge.
+REQUIRED_CHECKS = ("Validate decks", "Released app reads the decks")
 # How long a PR's head may go without any required check before the log
 # says so.
 CHECKS_LATE = datetime.timedelta(hours=1)
@@ -338,7 +343,8 @@ class GitHub(Protocol):
 
 class LocalGit:
     """Branches in worktrees of the workflow's checkout, under [work], each
-    from `origin/main`, pushed with the App's token."""
+    from `origin/decks-live` with main's tools and assets laid over it (as
+    Deck CI does), pushed with the App's token."""
 
     NAME = "fluenough-review-bot"
     EMAIL = "fluenough-review-bot@users.noreply.github.com"
@@ -361,14 +367,23 @@ class LocalGit:
         return result
 
     def fresh(self, branch: str) -> Path:
-        self._git("fetch", "--quiet", "origin", "main", auth=True)
+        self._git("fetch", "--quiet", "origin", DECKS_BRANCH, "main", auth=True)
         path = self.work / hashlib.sha256(branch.encode()).hexdigest()[:12]
         if path.exists():
             self._git("worktree", "remove", "--force", str(path), check=False)
             shutil.rmtree(path, ignore_errors=True)
         self._git("worktree", "prune")
         self._git("worktree", "add", "--quiet", "--force", "-B", branch,
-                  str(path), "origin/main")
+                  str(path), f"origin/{DECKS_BRANCH}")
+        # The validator and index tool are main's, the app's contract; the
+        # branch holds decks only. In the working tree, never staged: a
+        # commit holds only the decks (see push).
+        self._git("checkout", "origin/main", "--", "tools", "assets", cwd=path)
+        if self._git("cat-file", "-e", "origin/main:test/fixtures/sample-decks",
+                     check=False).returncode == 0:
+            self._git("checkout", "origin/main", "--", "test/fixtures/sample-decks",
+                      cwd=path)
+        self._git("reset", "--quiet", cwd=path)
         return path
 
     def push(self, root: Path, branch: str, message: str) -> bool:
@@ -451,7 +466,7 @@ class RestGitHub:
 
     def open_pr(self, branch: str, title: str, body: str, labels: list[str]) -> dict:
         status, made = self._call("POST", "/pulls", {
-            "title": title, "head": branch, "base": "main", "body": body,
+            "title": title, "head": branch, "base": DECKS_BRANCH, "body": body,
             "maintainer_can_modify": True})
         if status != 201 or not isinstance(made, dict):
             raise RuntimeError(f"opening the PR for {branch} failed: {status}")
@@ -475,8 +490,8 @@ class RestGitHub:
         return required_state(found.get("check_runs") or [])
 
     def behind(self, sha: str) -> bool | None:
-        """Whether `main` has commits [sha] does not; None when unknown."""
-        status, found = self._call("GET", f"/compare/main...{sha}")
+        """Whether `decks-live` has commits [sha] does not; None when unknown."""
+        status, found = self._call("GET", f"/compare/{DECKS_BRANCH}...{sha}")
         if status != 200 or not isinstance(found, dict) \
                 or not isinstance(found.get("behind_by"), int):
             return None
@@ -786,7 +801,7 @@ class Bot:
         return self._advance(made, branch, build)
 
     def _build(self, branch: str, build: Build) -> Built | str:
-        """Builds [branch] afresh from main and pushes it over whatever it
+        """Builds [branch] afresh from decks-live and pushes it over whatever it
         held. The outcome instead when there is nothing to push."""
         root = self.git.fresh(branch)
         built = build(root)
@@ -820,7 +835,7 @@ class Bot:
                 self.log(f"::warning::PR #{number}'s checks failed; left open "
                          f"for the owner.")
             return "failed"
-        # Built on an older `main`, it is built again: the owner may have
+        # Built on an older `decks-live`, it is built again: the owner may have
         # changed the card or deleted the proposal since, and git would
         # merge the old edit over that cleanly.
         behind = self.github.behind(sha)
@@ -832,10 +847,10 @@ class Bot:
             return "merged"
         if result == "behind":
             if isinstance(self._build(branch, build), str):
-                self.github.close(number, "Nothing is left to change: `main` "
+                self.github.close(number, "Nothing is left to change: `decks-live` "
                                           "already has it, or it is outdated.")
                 return "closed"
-            self.log(f"Rebuilt PR #{number} from main.")
+            self.log(f"Rebuilt PR #{number} from decks-live.")
         return "pending"
 
     # The three kinds of PR.
@@ -958,7 +973,7 @@ class Bot:
         return outcome
 
     def sweep_flags(self) -> dict[str, int]:
-        """On `main`: opens the pull request of each flagged data point and
+        """On `decks-live`: opens the pull request of each flagged data point and
         keeps it open until the second answer decides it (#519, owner,
         2026-10-30: "1st review opens PR. Second review either merges or
         closes it."). Merged once the same "no" has come from
@@ -966,7 +981,7 @@ class Bot:
         said "yes" (the point is then settled, for good) or the flag was
         taken back."""
         counts = {"open": 0, "merged": 0, "closed": 0}
-        root = self.git.fresh(f"{PREFIX}read-main")
+        root = self.git.fresh(f"{PREFIX}read-decks")
         wanted: set[str] = set()
         for lang, key, point in qa.flagged_points(root):
             branch = qa.flag_branch(lang, key)
@@ -1046,7 +1061,7 @@ class Bot:
         return "pending"
 
     def apply(self, lang: str, proposal: pr.Proposal) -> str:
-        """The agreement PR of [proposal], as it is on `main` now."""
+        """The agreement PR of [proposal], as it is on `decks-live` now."""
         pid = proposal.id
 
         def build(root: Path) -> Built | None:
@@ -1193,11 +1208,11 @@ class Bot:
         return found
 
     def sweep(self) -> dict[str, int]:
-        """On `main`: applies each proposal with enough agreement, one per
+        """On `decks-live`: applies each proposal with enough agreement, one per
         field, and closes the outdated ones. Then closes the agreement and
-        outdated PRs that `main` no longer asks for."""
+        outdated PRs that `decks-live` no longer asks for."""
         counts = {"applied": 0, "waiting": 0, "outdated": 0}
-        root = self.git.fresh(f"{PREFIX}read-main")
+        root = self.git.fresh(f"{PREFIX}read-decks")
         wanted: set[str] = set()
         for lang in pr.languages(root):
             found = pr.all_proposals(root, lang)
@@ -1242,8 +1257,8 @@ class Bot:
         for kind in ("apply", "outdated"):
             for left in self.github.open_prs(f"{PREFIX}{kind}/"):
                 if left["head"]["ref"] not in wanted:
-                    self.github.close(left["number"], "No longer needed: `main` "
+                    self.github.close(left["number"], "No longer needed: `decks-live` "
                                       "has changed since this was opened.")
-                    self.log(f"Closed PR #{left['number']}: main no longer "
+                    self.log(f"Closed PR #{left['number']}: decks-live no longer "
                              f"asks for it.")
         return counts

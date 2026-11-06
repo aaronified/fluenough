@@ -44,21 +44,25 @@ have it.
 
 ## 3. Let it past the approval rule, and only that
 
-The App may merge without an approving review. It must still wait for the
-four required checks, which the bot waits for too: `Validate decks`,
-`Analyse and test`, `Build debug APK` and `Released app reads the decks`
-(#524), by name. Other checks on a commit do not hold a bot PR back. If
-none of the four has started on a
-bot PR an hour after it was last pushed, the log says so each run.
+Since 2026-11-06 the bot works on the `decks-live` branch, where the decks
+live: it branches from it and opens its PRs against it, so every rule below
+is set on `decks-live`, not `main` (main's `decks/` is frozen). The App may
+merge without an approving review. It must still wait for the two required
+checks of `decks-live`, which the bot waits for too: `Validate decks` and
+`Released app reads the decks` (#524), by name. Other checks on a commit do
+not hold a bot PR back. If neither has started on a bot PR an hour after it
+was last pushed, the log says so each run. The workflow itself stays on
+`main`, which holds the tools; the bot lays them over its `decks-live`
+worktrees as Deck CI does.
 
 **With a classic branch protection rule** (Settings > Branches):
 
-1. **Edit** the rule for `main`.
+1. **Edit** the rule for `decks-live`.
 2. Under **Require a pull request before merging**, tick **Allow
    specified actors to bypass required pull requests**, and add
    `fluenough-review-bot`.
-3. Under **Require status checks to pass before merging**, keep the three
-   checks and add `Released app reads the decks` (#524). Leave **Do not allow bypassing the above settings**
+3. Under **Require status checks to pass before merging**, keep
+   `Validate decks` and `Released app reads the decks` (#524). Leave **Do not allow bypassing the above settings**
    unticked: ticked, it overrides the bypass list.
 4. **Save changes.**
 
@@ -114,8 +118,8 @@ end, `Agreed proposals: …`. The bot's PRs are labelled `review-bot`, with
 ## Overriding it, and turning it off
 
 - **Any later commit wins:** revert a bot PR, edit the card, or delete a
-  proposal's line from the deck. A bot PR is built again from `main`
-  before it merges whenever `main` has moved, and an open agreement PR
+  proposal's line from the deck. A bot PR is built again from `decks-live`
+  before it merges whenever `decks-live` has moved, and an open agreement PR
   whose proposal you deleted is closed. A bot PR you close is never
   opened again.
 - **What a review left for you:** suggestions on an example or a
