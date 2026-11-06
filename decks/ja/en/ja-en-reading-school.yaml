@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-school",
+  "name": "Japanese reading: school",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-school-1",
+      "title": "A school day",
+      "sentences": [
+        {
+          "text": "じかんわり を みます。",
+          "reading": "jikanwari o mimasu."
+        },
+        {
+          "text": "すうがく と りか が あります。",
+          "reading": "sūgaku to rika ga arimasu."
+        },
+        {
+          "text": "ほうかご に こうてい で あそびます。",
+          "reading": "hōkago ni kōtei de asobimasu."
+        },
+        {
+          "text": "わたし は にっき を かきます。",
+          "reading": "watashi wa nikki o kakimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1877",
+          "prompt": {
+            "en": "Which line says that there is maths and science?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "id": "ja-1878",
+          "prompt": {
+            "en": "The third line says that the speaker plays in the playground after school."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1879",
+          "prompt": {
+            "en": "Which line says that someone writes a diary?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "ja-school-2",
+      "title": "A pupil's note",
+      "sentences": [
+        {
+          "text": "じゅぎょう に おくれました。",
+          "reading": "jugyō ni okuremashita."
+        },
+        {
+          "text": "せんせい に こたえます。",
+          "reading": "sensei ni kotaemasu."
+        },
+        {
+          "text": "しゅくだい を します。",
+          "reading": "shukudai o shimasu."
+        },
+        {
+          "text": "こくばん に かんじ が あります。",
+          "reading": "kokuban ni kanji ga arimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1880",
+          "prompt": {
+            "en": "Which line says that someone answered the teacher?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "id": "ja-1881",
+          "prompt": {
+            "en": "The first line says the pupil was early for class."
+          },
+          "answer": false
+        },
+        {
+          "id": "ja-1882",
+          "prompt": {
+            "en": "Which line says that there are kanji on the blackboard?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The third line"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  ]
+}

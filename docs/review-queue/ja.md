@@ -50,3 +50,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1804 | ja-cooking | Is こげる (to burn, scorch) right for rice that burns, and is ごはんが こげました natural? | Haiku builder | 2026-11-06 |
 | unit-level | ja-cooking | Only 31 of the 45 planned cooking words were fresh: the path count is set to 31. Is that right? | Haiku builder | 2026-11-06 |
 | unit-level | ja-cooking | The example and sentence decks of ja-cooking are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-1859 | ja-school | Is しょうがっこう (elementary school) the natural word for the school a child goes to, or is another word used? | Haiku builder | 2026-11-06 |
+| ja-1862 | ja-school | まなぶ (to learn) and べんきょうする (to study) are both on this unit: is the difference clear enough to keep both cards? | Haiku builder | 2026-11-06 |
+| ja-1866 | ja-school | こたえ (the answer) is also written 答え and has a homograph in こたえる: should a homograph note say so? | Haiku builder | 2026-11-06 |
+| unit-level | ja-school | Only 36 of the 50 planned school words were fresh: the path count is set to 36. Is that right? | Haiku builder | 2026-11-06 |
+| unit-level | ja-school | The example and sentence decks of ja-school are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |

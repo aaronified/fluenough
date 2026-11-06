@@ -443,7 +443,8 @@ units:
       - { id: "may-i-sit-here", text: { "en": "Asking whether you may sit, take photos and smoke, and being told no" } }
     reading_passages:
       - { id: "temple-rules", text: { "en": "The rules on a sign at a temple gate" } }
-  - planned: { id: "ja-school", theme: "school", words: 50 }
+  - decks: ["ja-school", "ja-school-sentences", "ja-reading-school", "*"]
+    words: 36
     listening_passages:
       - { id: "school-day", text: { "en": "A pupil describes the school day" } }
     reading_passages:
