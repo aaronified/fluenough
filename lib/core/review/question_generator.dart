@@ -8,6 +8,7 @@ import '../models/card.dart';
 import '../models/deck.dart';
 import 'card_fields.dart' show fromWiktionary;
 import 'review_question.dart';
+import 'review_queue.dart';
 
 /// How many reviewers' sign-offs settle a card: with this many codes in its
 /// `checked_by` the card is not asked about at all.
@@ -45,10 +46,16 @@ class ImageProposal {
 /// letters and digits, cards at least two reviewers signed off, the points
 /// a card's `verified` lists (settled by agreeing answers), and every
 /// id in [skip] (what this reviewer answered, or put off today).
+///
+/// The cards [queue] lists come first, each question carrying the builder's
+/// (2026-11-06): they keep the weakest-first order among themselves, then
+/// the rest follow in theirs. A listed card that is left out above is still
+/// left out.
 List<ReviewQuestion> generateQuestions(
   Iterable<Deck> decks, {
   Set<String> skip = const <String>{},
   Iterable<ImageProposal> images = const <ImageProposal>[],
+  ReviewQueue queue = ReviewQueue.empty,
 }) {
   final out = <ReviewQuestion>[];
   final seen = <String>{};
@@ -99,6 +106,7 @@ List<ReviewQuestion> generateQuestions(
         shownMeaning: shownMeaning,
         weakness: weakness > floor ? weakness : floor,
         deckId: deck.id,
+        builder: queue.forCard(language, card.id),
       );
 
       if (card.native.trim().isNotEmpty && !settled.contains('meaning')) {
@@ -176,6 +184,9 @@ List<ReviewQuestion> generateQuestions(
         for (final (i, q) in out.indexed)
           if (!skip.contains(q.id)) (i, q),
       ]..sort((a, b) {
+        final byList =
+            (b.$2.builder.isEmpty ? 0 : 1) - (a.$2.builder.isEmpty ? 0 : 1);
+        if (byList != 0) return byList;
         final byWeakness = a.$2.weakness.compareTo(b.$2.weakness);
         return byWeakness != 0 ? byWeakness : a.$1.compareTo(b.$1);
       });

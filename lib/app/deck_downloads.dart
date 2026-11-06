@@ -8,6 +8,7 @@ import '../core/decks/deck_fetch.dart';
 import '../core/decks/deck_index.dart';
 import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
+import '../core/review/review_queue.dart';
 import 'app_info.dart';
 import 'app_log.dart';
 import 'deck_catalog.dart';
@@ -130,6 +131,7 @@ class DeckDownloads extends ChangeNotifier {
     this.check = DeckCatalog.checkFile,
     ScriptFonts? scriptFonts,
     this.appVersion = AppInfo.version,
+    this.reviewQueueTimeout = const Duration(seconds: 5),
   }) : fonts = scriptFonts ?? ScriptFonts();
 
   /// How long after the last check an automatic one is due.
@@ -149,6 +151,17 @@ class DeckDownloads extends ChangeNotifier {
 
   static const String _indexNote = 'index.json';
   static const String _stateNote = 'state.json';
+  static const String _queueNote = 'review-queue.json';
+  static const String _queueAtNote = 'review-queue-at.txt';
+
+  /// How long after the review queue was read an automatic read is due, and
+  /// how long after one that failed.
+  static const Duration reviewQueueInterval = Duration(days: 1);
+  static const Duration reviewQueueRetry = Duration(hours: 1);
+
+  /// How long the review queue's read is waited for: one try, with none of
+  /// the fetcher's retry waits, and the kept copy is used after it.
+  final Duration reviewQueueTimeout;
 
   final DeckFetcher fetcher;
   final DownloadedDecks files;
@@ -275,6 +288,59 @@ class DeckDownloads extends ChangeNotifier {
   /// When the last check reached GitHub.
   DateTime? get checkedAt => _checkedAt;
 
+  ReviewQueue _reviewQueue = ReviewQueue.empty;
+
+  /// The deck builders' questions for reviewers, as last read (2026-11-06):
+  /// empty until [refreshReviewQueue] has reached GitHub once.
+  ReviewQueue get reviewQueue => _reviewQueue;
+
+  DateTime? _queueRead;
+  DateTime? _queueFailed;
+
+  /// Reads the review queue, `decks/review-queue.json`, from GitHub and
+  /// keeps it. Best effort and cheap: with "Check for deck updates
+  /// automatically" off nothing is asked unless [manual] (the learner's own
+  /// "Check for deck updates", which reads it too for a reviewer); it is
+  /// asked at most once a day, an hour after a failure; and it is tried once,
+  /// not waiting through the fetcher's retries, so offline the copy kept is
+  /// used. Returns whether it was read.
+  Future<bool> refreshReviewQueue({bool manual = false}) async {
+    final now = _clock();
+    if (!manual) {
+      if (!_autoCheck) return false;
+      final read = _queueRead;
+      if (read != null && now.difference(read) < reviewQueueInterval) {
+        return false;
+      }
+      final failed = _queueFailed;
+      if (failed != null && now.difference(failed) < reviewQueueRetry) {
+        return false;
+      }
+    }
+    try {
+      final fetched = await fetcher
+          .fetch('decks/review-queue.json')
+          .timeout(reviewQueueTimeout);
+      final bytes = fetched.bytes;
+      if (bytes == null) {
+        _queueFailed = now;
+        return false;
+      }
+      final text = utf8.decode(bytes);
+      _reviewQueue = ReviewQueue.parse(text);
+      _queueRead = now;
+      _queueFailed = null;
+      await files.writeNote(_queueNote, text);
+      await files.writeNote(_queueAtNote, now.toIso8601String());
+      _notify();
+      return true;
+    } on Object catch (e) {
+      _queueFailed = now;
+      _log?.warning('Deck downloads: could not read the review queue: $e');
+      return false;
+    }
+  }
+
   /// Reads what is on the phone: the files, the last index and the state
   /// kept beside them. Deletes what a download cut short left. Never
   /// touches the network.
@@ -290,6 +356,14 @@ class DeckDownloads extends ChangeNotifier {
       }
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read what is kept: $e');
+    }
+    try {
+      final queue = await files.readNote(_queueNote);
+      if (queue != null) _reviewQueue = ReviewQueue.parse(queue);
+      final at = await files.readNote(_queueAtNote);
+      _queueRead = at == null ? null : DateTime.tryParse(at);
+    } on Object catch (e) {
+      _log?.warning('Deck downloads: could not read the review queue: $e');
     }
     try {
       final state = await files.readNote(_stateNote);
@@ -1180,6 +1254,7 @@ class DeckDownloads extends ChangeNotifier {
       return;
     }
     if (!await refreshIndex()) return;
+    if (force && _reviewer) await refreshReviewQueue(manual: true);
     _findUpdates(spoken);
     if (_updates.isNotEmpty) {
       _log?.event('Deck updates found for ${_updates.keys.join(', ')}');

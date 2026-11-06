@@ -118,4 +118,6 @@ sent in one mail, said at every step (turn-on dialog, How reviewing
 works, the unit's foot, a send sheet listing every deck with unsent
 reviews, the mail body); see [Plan-Deck-Browser](Plan-Deck-Browser).
 
+Built: builder questions (owner, 2026-11-06, "go B"). Deck builders' doubts are kept in `docs/review-queue/<lang>.md`; `tools/review_queue.py` turns them into `decks/review-queue.json`, which the app reads to ask those cards first and show the question as a note. See `docs/review-queue/README.md`.
+
 See also: [Roadmap](Roadmap) · [Plans-Index](Plans-Index) · [Home](Home)
