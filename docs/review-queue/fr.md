@@ -34,3 +34,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1333 | fr-weather | Is "Il a neigé hier." the natural past tense for snow, or would a learner hear "il a fait de la neige" more often? | Haiku builder | 2026-11-06 |
 | fr-1341 | fr-weather | Is "une éclaircie" (a bright spell in the rain) used with "il y a" as in "Il y a une éclaircie à midi."? | Haiku builder | 2026-11-06 |
 | fr-1342 | fr-weather | Is "Il fait une chaleur lourde." natural for muggy heat, or should the card teach "il fait lourd" instead? | Haiku builder | 2026-11-06 |
+| fr-1363 | fr-things (A2) | Livre also means a pound (a unit of weight): should the card note that second sense, or leave it out at A2? | Haiku builder | 2026-11-06 |
+| fr-1367 | fr-things (A2) | Journal also means a diary: is the newspaper sense the one a learner meets first, and should the note say so? | Haiku builder | 2026-11-06 |
+| fr-1369 | fr-things (A2) | Timbre also means a doorbell: should the card note that sense? | Haiku builder | 2026-11-06 |
+| fr-1390 | fr-things (A2) | Pile is "battery" here: is that the everyday word in France, or do people say batterie? | Haiku builder | 2026-11-06 |
+| fr-1388 | fr-things (A2) | "Je ne connais pas cette chose." is it natural, or do speakers say "ce truc" for an unnamed thing? | Haiku builder | 2026-11-06 |
+| fr-1403 | fr-things (A2) | "Ferme le rideau, il fait froid.": is the imperative with il fait froid natural as a pair? | Haiku builder | 2026-11-06 |
+| unit-level | fr-things (A2) | Papier, ciseaux and lunettes are taught as objects here; the clothes unit has lunettes-like words too: should the sentences that use them stay? | Haiku builder | 2026-11-06 |
