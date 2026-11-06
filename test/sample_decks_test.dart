@@ -21,9 +21,8 @@ void main() {
   });
 
   test('the index is one this app reads, with every language readable', () {
-    final json =
-        jsonDecode(File('$_root/decks/index.json').readAsStringSync())
-            as Map<String, Object?>;
+    final text = File('$_root/decks/index.json').readAsStringSync();
+    final json = jsonDecode(text) as Map<String, Object?>;
     expect(json['version'], supportedIndexVersion);
     expect(index.languages, isNotEmpty);
     for (final language in index.languages) {
@@ -47,7 +46,7 @@ void main() {
     }
   });
 
-  test('the catalog reads the sample deck whole, with nothing broken', () async {
+  test('the catalog reads the sample deck whole, nothing broken', () async {
     final catalog = await DeckCatalog(RepositoryDeckSource(_root)).load();
     expect(catalog.broken, isEmpty);
     expect(catalog.decks, isNotEmpty);
