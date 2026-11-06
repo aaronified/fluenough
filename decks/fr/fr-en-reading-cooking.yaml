@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-cooking"
+name: "Reading: cooking"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about cooking: a recipe card for pasta, and a note about a sauce on the stove. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-recipe-card"
+    title: "A recipe card with its steps"
+    theme: "cooking"
+    sentences:
+      - text: "Pâtes au fromage pour deux personnes."
+      - text: "Faites bouillir l'eau dans une casserole."
+      - text: "Ajoutez les pâtes et laissez cuire dix minutes."
+      - text: "Versez les pâtes dans la passoire, puis râpez le fromage."
+    questions:
+      - id: "fr-1582"
+        prompt: { en: "How long do the pasta cook?" }
+        options:
+          - { en: "Five minutes" }
+          - { en: "Ten minutes" }
+          - { en: "Twenty minutes" }
+        answer: 2
+      - id: "fr-1583"
+        prompt: { en: "What do you use to drain the pasta?" }
+        options:
+          - { en: "A ladle" }
+          - { en: "A colander" }
+          - { en: "A frying pan" }
+        answer: 2
+      - id: "fr-1584"
+        prompt: { en: "What do you do with the cheese?" }
+        options:
+          - { en: "Fry it" }
+          - { en: "Grate it" }
+          - { en: "Boil it" }
+        answer: 2
+  - id: "fr-kitchen-note"
+    title: "A note about a sauce"
+    theme: "cooking"
+    sentences:
+      - text: "Bonjour Claire, la sauce est sur le feu."
+      - text: "Elle mijote doucement depuis une heure."
+      - text: "Ne la laisse pas brûler. Il faut la remuer souvent."
+      - text: "Ajoute du sel à la fin, puis goûte."
+    questions:
+      - id: "fr-1585"
+        prompt: { en: "Where is the sauce?" }
+        options:
+          - { en: "In the oven" }
+          - { en: "On the stove" }
+          - { en: "In the fridge" }
+        answer: 2
+      - id: "fr-1586"
+        prompt: { en: "How does the sauce cook?" }
+        options:
+          - { en: "Quickly" }
+          - { en: "Gently" }
+          - { en: "Not at all" }
+        answer: 2
+      - id: "fr-1587"
+        prompt: { en: "When should you add the salt?" }
+        options:
+          - { en: "At the start" }
+          - { en: "At the end" }
+          - { en: "Never" }
+        answer: 2

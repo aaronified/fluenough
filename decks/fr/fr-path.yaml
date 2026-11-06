@@ -405,7 +405,8 @@ units:
       - { id: "booking-a-table", text: { "en": "Booking a table and ordering" } }
     reading_passages:
       - { id: "restaurant-bill", text: { "en": "A restaurant bill and a tip" } }
-  - planned: { id: "fr-cooking", theme: "cooking", words: 40 }
+  - decks: ["fr-cooking", "fr-cooking-sentences", "fr-reading-cooking", "*"]
+    words: 40
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
