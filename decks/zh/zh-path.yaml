@@ -886,7 +886,8 @@ units:
       - { id: "fire-drill", text: { "en": "Instructions in a fire drill" } }
     reading_passages:
       - { id: "evacuation-notice", text: { "en": "An evacuation notice in a building" } }
-  - planned: { id: "zh-law", theme: "law", words: 40 }
+  - decks: ["zh-law", "zh-law-sentences", "zh-reading-law", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-police-station", text: { "en": "Reporting a lost wallet at a police station" } }
     reading_passages:

@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-law"
+"name": "Chinese reading: law"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-rights-leaflet"
+  "title": "A tenant's rights"
+  "theme": "law"
+  "sentences":
+  - "text": "租客 有 权利 知道 押金 的 数目。"
+    "reading": "zūkè yǒu quánlì zhīdao yājīn de shùmù."
+  - "text": "房东 不能 随便 进入 房间， 要 先 通知 你。"
+    "reading": "fángdōng bù néng suíbiàn jìnrù fángjiān, yào xiān tōngzhī nǐ."
+  - "text": "合同 的 条款 要 写 清楚， 违约 的 人 要 赔偿。"
+    "reading": "hétong de tiáokuǎn yào xiě qīngchu, wéiyuē de rén yào péicháng."
+  - "text": "如果 有 问题， 可以 先 找 社区 调解。"
+    "reading": "rúguǒ yǒu wèntí, kěyǐ xiān zhǎo shèqū tiáojiě."
+  "questions":
+  - "id": "zh-4240"
+    "prompt":
+      "en": "Which word in the leaflet means 'deposit'?"
+    "options":
+    - "en": "数目 (shùmù)"
+    - "en": "押金 (yājīn)"
+    "answer": 2
+  - "id": "zh-4241"
+    "prompt":
+      "en": "The landlord may enter the room at any time, without warning."
+    "answer": false
+  - "id": "zh-4242"
+    "prompt":
+      "en": "Which word in the leaflet means 'to mediate'?"
+    "options":
+    - "en": "调解 (tiáojiě)"
+    - "en": "禁止 (jìnzhǐ)"
+    "answer": 1
+- "id": "zh-lost-wallet-report"
+  "title": "Reporting a lost wallet"
+  "theme": "law"
+  "sentences":
+  - "text": "我 的 钱包 丢 了， 我 去 派出所 报案。"
+    "reading": "wǒ de qiánbāo diū le, wǒ qù pàichūsuǒ bào'àn."
+  - "text": "警官 让 我 看 一下 笔录， 还 要 看 我 的 证件。"
+    "reading": "jǐngguān ràng wǒ kàn yíxià bǐlù, hái yào kàn wǒ de zhèngjiàn."
+  - "text": "银行卡 要 去 银行 挂失， 警察 不能 做 这件事。"
+    "reading": "yínhángkǎ yào qù yínháng guàshī, jǐngchá bù néng zuò zhè jiàn shì."
+  - "text": "两天 以后， 有人 送来 了 钱包， 里面 的 钱 没有 少。"
+    "reading": "liǎng tiān yǐhòu, yǒu rén sòng lái le qiánbāo, lǐmiàn de qián méiyǒu shǎo."
+  "questions":
+  - "id": "zh-4243"
+    "prompt":
+      "en": "Which word in the report means 'to report a card lost'?"
+    "options":
+    - "en": "报案 (bào'àn)"
+    - "en": "挂失 (guàshī)"
+    "answer": 2
+  - "id": "zh-4244"
+    "prompt":
+      "en": "The officer lets the speaker leave without reading any record."
+    "answer": false
+  - "id": "zh-4245"
+    "prompt":
+      "en": "Which word means 'a written record of a statement'?"
+    "options":
+    - "en": "证件 (zhèngjiàn)"
+    - "en": "笔录 (bǐlù)"
+    "answer": 2
