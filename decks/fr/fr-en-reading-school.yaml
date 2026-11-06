@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-school"
+name: "Reading: school"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about school: a class timetable, and a note from a teacher to the pupils. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-class-timetable"
+    title: "A school timetable"
+    theme: "school"
+    sentences:
+      - text: "Lundi : mathématiques, puis histoire."
+      - text: "Mardi : sciences et dessin."
+      - text: "Jeudi : français et géographie."
+      - text: "Récréation à dix heures chaque jour."
+    questions:
+      - id: "fr-1638"
+        prompt: { en: "What is the first subject on Monday?" }
+        options:
+          - { en: "Maths" }
+          - { en: "Drawing" }
+          - { en: "Geography" }
+        answer: 1
+      - id: "fr-1639"
+        prompt: { en: "Which day has science and drawing?" }
+        options:
+          - { en: "Monday" }
+          - { en: "Tuesday" }
+          - { en: "Thursday" }
+        answer: 2
+      - id: "fr-1640"
+        prompt: { en: "What is on Thursday?" }
+        options:
+          - { en: "French and geography" }
+          - { en: "Science and drawing" }
+          - { en: "Maths and history" }
+        answer: 1
+  - id: "fr-school-note"
+    title: "A note from the teacher"
+    theme: "school"
+    sentences:
+      - text: "Chers élèves, n'oubliez pas vos cahiers."
+      - text: "Demain, il y a un examen de sciences."
+      - text: "Apportez votre calculatrice et un feutre."
+      - text: "Rendez vos devoirs avant la récréation."
+    questions:
+      - id: "fr-1641"
+        prompt: { en: "What must the pupils bring?" }
+        options:
+          - { en: "A ruler and a drawing" }
+          - { en: "A calculator and a felt-tip pen" }
+          - { en: "A bag and a book" }
+        answer: 2
+      - id: "fr-1642"
+        prompt: { en: "When is the science exam?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Next week" }
+        answer: 2
+      - id: "fr-1643"
+        prompt: { en: "When must the homework be handed in?" }
+        options:
+          - { en: "Before break" }
+          - { en: "After school" }
+          - { en: "On Sunday" }
+        answer: 1

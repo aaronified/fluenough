@@ -60,3 +60,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1556 | fr-cooking (A2) | "Levure" is taught as yeast: does "levure" alone name yeast in ordinary cooking, or does the text need "levure de boulanger"? | Haiku builder | 2026-11-06 |
 | fr-1566 | fr-cooking (A2) | "Le chocolat fond dans la bouche.": is it the natural way to say chocolate melts in the mouth? | Haiku builder | 2026-11-06 |
 | unit-level | fr-cooking (A2) | Doucement, pâte, acide, branche and pas are taught only as inline bases here, not as cards: should any of them become a card in a later unit? | Haiku builder | 2026-11-06 |
+| fr-1588 | fr-school (A2) | "Élève" is one form for a boy or a girl and is stored as masculine (un élève): is it right to store it as masculine, or should a card show that it is common gender? | Haiku builder | 2026-11-06 |
+| fr-1598 | fr-school (A2) | "Cartable" is the school bag: is it the everyday word, or do pupils say "sac d'école" or "sac à dos" more often? | Haiku builder | 2026-11-06 |
+| fr-1600 | fr-school (A2) | "Cour" is the playground: is it the everyday word, or do pupils say "cour de récréation" to mean the same place? | Haiku builder | 2026-11-06 |
+| fr-1610 | fr-school (A2) | "Cours" is a class or lesson: is it used this way in school talk, or is "leçon" the usual word for a lesson? | Haiku builder | 2026-11-06 |
+| fr-1605 | fr-school (A2) | "Mathématiques" is taught with "maths" as its spoken short form: do pupils say "les maths" in the way the layer glosses it? | Haiku builder | 2026-11-06 |
+| unit-level | fr-school (A2) | Juste, blanc, long, intéressant and fermer are taught only as inline bases here, not as cards: should any of them become a card in a later unit? | Haiku builder | 2026-11-06 |
