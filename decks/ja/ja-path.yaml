@@ -690,7 +690,8 @@ units:
       - { id: "visiting-a-home", text: { "en": "Visiting a Japanese home: what to say at the door and at the table" } }
     reading_passages:
       - { id: "etiquette-guide", text: { "en": "A short etiquette guide for visitors" } }
-  - planned: { id: "ja-environment", theme: "environment", words: 50 }
+  - decks: ["ja-environment", "ja-environment-sentences", "ja-reading-environment", "*"]
+    words: 50
     listening_passages:
       - { id: "recycling-talk", text: { "en": "Neighbours talk about sorting rubbish and the summer heat" } }
     reading_passages:
