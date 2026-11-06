@@ -191,3 +191,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-3690 | festivals | Is いわう (to celebrate) the word a learner needs, or should おいわい carry the meaning alone? | Haiku builder | 2026-11-06 |
 | ja-3746 | weddings | Is みこん (not yet married) right as a card, or should only どくしん be taught as the word for single? | Haiku builder | 2026-11-06 |
 | ja-3802 | relationships | Is ぎゃくに (on the contrary) right as an adverb card, or should it be taught with a note on its use in speech? | Haiku builder | 2026-11-06 |
+| ja-3853 | housing | Is ようま (the Western-style room, counted) a real word a learner needs, or should ようしつ stand alone? | Haiku builder | 2026-11-06 |
