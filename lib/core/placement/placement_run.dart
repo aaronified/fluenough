@@ -127,9 +127,15 @@ class SkillAssurance {
     required this.leadingClass,
     required this.placedLevel,
     required this.questions,
+    this.lowerBound = false,
   });
 
   final PlacementSkill skill;
+
+  /// Whether [placedLevel] is the conservative lower bound (the highest
+  /// level the evidence supports at 95%) rather than the most probable
+  /// level: true for a skill whose label is Not sure yet.
+  final bool lowerBound;
 
   /// The name shown to the learner.
   final AssuranceLabel label;
@@ -179,7 +185,9 @@ class PlacementRun {
     List<bool> results = const <bool>[],
     this.checkpointsKept = 0,
     List<PlacementUnavailable> unavailable = const <PlacementUnavailable>[],
+    List<double?> guesses = const <double?>[],
   }) : results = List<bool>.unmodifiable(results),
+       guesses = List<double?>.unmodifiable(guesses),
        unavailableLog = List<PlacementUnavailable>.unmodifiable(unavailable);
 
   final PlacementRunConfig config;
@@ -187,6 +195,11 @@ class PlacementRun {
   /// Right (true) or wrong (false) for each question asked, in order. "I
   /// don't know" is a wrong answer.
   final List<bool> results;
+
+  /// The guess rate a question was found to have when it gives its answer
+  /// away (guessability.dart), parallel to [results] (shorter or null where
+  /// the question was as hard to guess as its kind says).
+  final List<double?> guesses;
 
   /// How many checkpoints the learner has answered "Keep going" to.
   final int checkpointsKept;
@@ -196,7 +209,12 @@ class PlacementRun {
   /// answers and the same log always give the same run.
   final List<PlacementUnavailable> unavailableLog;
 
-  late final _Engine _engine = _Engine(config, results, unavailableLog);
+  late final _Engine _engine = _Engine(
+    config,
+    results,
+    unavailableLog,
+    guesses,
+  );
 
   /// The question to ask now, or null when the run is done (or skipped).
   PlacementQuestionRequest? get next => _engine.pending?.request;
@@ -220,13 +238,18 @@ class PlacementRun {
       !isDone && asked > 0 && asked % 25 == 0 && checkpointsKept < asked ~/ 25;
 
   /// The state after [correct] was the answer to [next].
-  PlacementRun answer(bool correct) {
+  PlacementRun answer(bool correct, {double? guess}) {
     if (isDone) throw StateError('the run is done: there is no question');
     return PlacementRun(
       config,
       results: <bool>[...results, correct],
       checkpointsKept: checkpointsKept,
       unavailable: unavailableLog,
+      guesses: <double?>[
+        for (var i = 0; i < results.length; i++)
+          i < guesses.length ? guesses[i] : null,
+        guess,
+      ],
     );
   }
 
@@ -253,6 +276,7 @@ class PlacementRun {
       config,
       results: results,
       checkpointsKept: checkpointsKept,
+      guesses: guesses,
       unavailable: <PlacementUnavailable>[
         ...unavailableLog,
         PlacementUnavailable(
@@ -270,6 +294,7 @@ class PlacementRun {
     results: results,
     checkpointsKept: asked ~/ 25,
     unavailable: unavailableLog,
+    guesses: guesses,
   );
 
   /// The assurance of every skill, as it stands: a skill the learner did not
@@ -414,6 +439,7 @@ class _Engine {
     this.config,
     List<bool> results,
     List<PlacementUnavailable> unavailable,
+    List<double?> guesses,
   ) : levels = PlacementLevels(config.deckCount) {
     final tested = config.tested;
     final skipped = config.declaration == PlacementDeclaration.beginner;
@@ -459,7 +485,7 @@ class _Engine {
     for (final result in results) {
       final current = pending;
       if (current == null) break;
-      _apply(current, result);
+      _apply(current, result, asked < guesses.length ? guesses[asked] : null);
       asked++;
       drain();
     }
@@ -761,7 +787,7 @@ class _Engine {
 
   // --- applying an answer ---------------------------------------------------
 
-  void _apply(_Pending current, bool correct) {
+  void _apply(_Pending current, bool correct, [double? guess]) {
     final spec = current.spec;
     answers.add(PlacementAnswer(current.request, correct));
 
@@ -775,6 +801,7 @@ class _Engine {
           kind: spec.kind,
           correct: correct,
           missWeight: missWeight,
+          guess: guess,
         );
         evidence[skill] = (evidence[skill] ?? 0) + 1;
       }
@@ -792,6 +819,7 @@ class _Engine {
           kind: spec.kind,
           correct: correct,
           missWeight: missWeight,
+          guess: guess,
         );
       }
     }
@@ -1098,13 +1126,23 @@ class _Engine {
           !unresolvedSkills.contains(skill)) {
         label = AssuranceLabel.verified;
       }
+      // Below "Fairly sure" the leading class is a guess among many: it is
+      // never shown or applied as a point estimate. The skill is placed at
+      // the highest level the evidence supports at the 95% target (or at
+      // the start when none is).
+      final bound = trustsPointEstimate(label)
+          ? null
+          : posterior.supportedLevel(kAssuranceTarget);
       out[skill] = SkillAssurance(
         skill: skill,
         label: label,
         mass: posterior.leadingMass,
-        leadingClass: posterior.leadingClass,
-        placedLevel: posterior.placedLevel,
+        leadingClass: bound == null
+            ? posterior.leadingClass
+            : levels.levels.indexOf(bound) + 1,
+        placedLevel: bound ?? posterior.placedLevel,
         questions: questions,
+        lowerBound: bound != null,
       );
     }
     return out;

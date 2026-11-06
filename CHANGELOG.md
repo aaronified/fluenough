@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **Find my level: questions are harder to guess.** A word's wrong meanings now look as much like the word, in letters, as the right one does, so picking the one that is spelled like the prompt no longer works; verb-table cells ("dormir (to sleep) — yo") are no longer asked as words, which also removes the person label that gave the answer away; and a question that still gives itself away counts for less. A skill whose result is Not sure yet is no longer placed at its most likely unit: it is placed at the highest unit the answers support with 95% confidence (or at the start), and its note says there is not enough evidence yet. Fairly sure and above, and the 95% rule for Verified, are unchanged.
+
 ## [0.9.0] - 2026-11-06
 
 ### Added
