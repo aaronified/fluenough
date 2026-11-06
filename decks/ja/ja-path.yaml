@@ -432,7 +432,8 @@ units:
       - { id: "at-an-izakaya", text: { "en": "Ordering at a small izakaya and asking for the bill" } }
     reading_passages:
       - { id: "ticket-machine", text: { "en": "The buttons of a restaurant's meal-ticket machine" } }
-  - planned: { id: "ja-cooking", theme: "cooking", words: 45 }
+  - decks: ["ja-cooking", "ja-cooking-sentences", "ja-reading-cooking", "*"]
+    words: 31
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes miso soup" } }
     reading_passages:

@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-cooking",
+  "name": "Japanese reading: cooking",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-cooking-1",
+      "title": "Miso soup at home",
+      "sentences": [
+        {
+          "text": "わたし は にんじん を きざみます。",
+          "reading": "watashi wa ninjin o kizamimasu."
+        },
+        {
+          "text": "わたし は じゃがいも を むきます。",
+          "reading": "watashi wa jagaimo o mukimasu."
+        },
+        {
+          "text": "しる は しおからい です。",
+          "reading": "shiru wa shiokarai desu."
+        },
+        {
+          "text": "わたし は みそしる を あたためます。",
+          "reading": "watashi wa misoshiru o atatamemasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1825",
+          "prompt": {
+            "en": "Which line says that someone peels the potatoes?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "id": "ja-1826",
+          "prompt": {
+            "en": "The third line says that the soup is sweet."
+          },
+          "answer": false
+        },
+        {
+          "id": "ja-1827",
+          "prompt": {
+            "en": "Which line says that someone warms up the soup?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    },
+    {
+      "id": "ja-cooking-2",
+      "title": "A recipe card",
+      "sentences": [
+        {
+          "text": "ねぎ を きざみます。",
+          "reading": "negi o kizamimasu."
+        },
+        {
+          "text": "あぶら で いためます。",
+          "reading": "abura de itamemasu."
+        },
+        {
+          "text": "さかな を やきます。",
+          "reading": "sakana o yakimasu."
+        },
+        {
+          "text": "ごはん が こげました。",
+          "reading": "gohan ga kogemashita."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1828",
+          "prompt": {
+            "en": "Which line says that someone grills fish?"
+          },
+          "options": [
+            {
+              "en": "The third line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 0
+        },
+        {
+          "id": "ja-1829",
+          "prompt": {
+            "en": "The second line says that oil is used."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1830",
+          "prompt": {
+            "en": "Which line says that the rice burned?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 0
+        }
+      ]
+    }
+  ]
+}
