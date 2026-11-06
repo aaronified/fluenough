@@ -2,9 +2,13 @@
 // declaration question, the run page with its checkpoint and result, and
 // pausing. The decks are a small fixture, the voice and the recogniser are
 // the app's null engines.
+import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/generated_question.dart';
+import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/placement_session.dart';
+import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/placement/find_level_declaration.dart';
 import 'package:fluenough/features/placement/find_level_run_page.dart';
 import 'package:fluenough/features/placement/find_level_summary.dart';
@@ -31,11 +35,13 @@ const LanguageInfo _native = LanguageInfo(
 Future<void> _open(
   WidgetTester tester,
   Widget Function() page,
-  List<Object?> popped,
-) async {
+  List<Object?> popped, {
+  AppState? state,
+}) async {
   usePhone(tester);
   await pumpScreen(
     tester,
+    state: state,
     Builder(
       builder: (context) => Scaffold(
         body: Center(
@@ -69,6 +75,51 @@ FindLevelRunPage _runPage(
   onProgress: (s) => progress?.add(s.events),
   onFinish: (s) => finished?.add(s),
 );
+
+/// A voice that cannot say anything.
+class _BrokenVoice extends NullTtsEngine {
+  const _BrokenVoice();
+
+  @override
+  Future<void> speak(
+    String text, {
+    required String bcp47,
+    double rate = 0.5,
+    String? voice,
+  }) async => throw const TtsFailure('synthesis-failed');
+}
+
+/// A session that is at its 25-question checkpoint from the start, so that
+/// the page's handling of it is tested whatever the course (the fixture's
+/// six decks may end before 25 questions): it shows 25 asked until Keep
+/// going, then goes on as the real session does.
+class _CheckpointSession extends PlacementSession {
+  _CheckpointSession() : super(findLevelConfig(), findLevelData());
+
+  bool _paused = true;
+  final List<String> _kept = <String>[];
+
+  @override
+  bool get atCheckpoint => _paused;
+
+  @override
+  GeneratedQuestion? get question => _paused ? null : super.question;
+
+  @override
+  bool get isDone => !_paused && super.isDone;
+
+  @override
+  int get asked => _paused ? 25 : super.asked;
+
+  @override
+  void keepGoing() {
+    _paused = false;
+    _kept.add('k');
+  }
+
+  @override
+  List<String> get events => <String>[..._kept, ...super.events];
+}
 
 Future<void> _tap(WidgetTester tester, Finder finder) async {
   await tester.ensureVisible(finder);
@@ -237,6 +288,127 @@ void main() {
         find.byKey(const ValueKey<String>('find-level-stop-here')),
       );
       expect(stopped, 1);
+    });
+  });
+
+  group('the run page at a checkpoint', () {
+    testWidgets('Keep going carries on, and the run is saved as it goes', (
+      tester,
+    ) async {
+      final session = _CheckpointSession();
+      final progress = <List<String>>[];
+      final finished = <PlacementSession>[];
+      await _open(
+        tester,
+        () => _runPage(session, progress: progress, finished: finished),
+        <Object?>[],
+      );
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.findLevelCheckpointTitle(25)), findsOneWidget);
+      await _tap(
+        tester,
+        find.byKey(const ValueKey<String>('find-level-keep-going')),
+      );
+      expect(find.text(l10n.findLevelCheckpointTitle(25)), findsNothing);
+      expect(
+        find.byKey(const ValueKey<String>('find-level-dont-know')),
+        findsOneWidget,
+      );
+      expect(progress.last, <String>['k']);
+      expect(finished, isEmpty);
+    });
+
+    testWidgets('Stop here writes the run once and shows where the learner '
+        'stands', (tester) async {
+      final session = _CheckpointSession();
+      final finished = <PlacementSession>[];
+      await _open(
+        tester,
+        () => _runPage(session, finished: finished),
+        <Object?>[],
+      );
+      await _tap(
+        tester,
+        find.byKey(const ValueKey<String>('find-level-stop-here')),
+      );
+      expect(finished, hasLength(1));
+      expect(
+        find.byKey(const ValueKey<String>('find-level-done')),
+        findsOneWidget,
+      );
+    });
+  });
+
+  group('the microphone', () {
+    testWidgets('two listens in a row that heard nothing, on different '
+        'questions, give it up', (tester) async {
+      final session = PlacementSession(
+        findLevelConfig(
+          skills: const <PlacementSkill>{PlacementSkill.say},
+          microphone: true,
+        ),
+        findLevelData(),
+      );
+      final progress = <List<String>>[];
+      final finished = <PlacementSession>[];
+      await _open(
+        tester,
+        () => _runPage(session, progress: progress, finished: finished),
+        <Object?>[],
+      );
+      final speak = find.byKey(const ValueKey<String>('find-level-speak'));
+      // The null recogniser hears nothing. One listen on the first question
+      // is not enough.
+      await _tap(tester, speak);
+      expect(progress, isEmpty);
+      // The learner answers it another way, and the next question to be said
+      // is listened to once more: two in a row over the run.
+      var guard = 0;
+      await _tap(
+        tester,
+        find.byKey(const ValueKey<String>('find-level-dont-know')),
+      );
+      while (speak.evaluate().isEmpty && guard++ < 20) {
+        await _tap(
+          tester,
+          find.byKey(const ValueKey<String>('find-level-dont-know')),
+        );
+      }
+      expect(speak, findsOneWidget);
+      await _tap(tester, speak);
+      expect(progress.last, contains('m'));
+    });
+  });
+
+  group('a heard question whose sound will not play', () {
+    testWidgets('says so and is skipped, never marked wrong', (tester) async {
+      final session = PlacementSession(
+        findLevelConfig(skills: const <PlacementSkill>{PlacementSkill.hear}),
+        findLevelData(),
+      );
+      final progress = <List<String>>[];
+      await _open(
+        tester,
+        () => _runPage(session, progress: progress),
+        <Object?>[],
+        state: AppState.test(tts: const _BrokenVoice()),
+      );
+      expect(
+        find.byKey(const ValueKey<String>('find-level-audio-failed')),
+        findsOneWidget,
+      );
+      // Nothing to guess at, and no "I don't know" that would count a miss.
+      expect(
+        find.byKey(const ValueKey<String>('find-level-dont-know')),
+        findsNothing,
+      );
+      await _tap(
+        tester,
+        find.byKey(const ValueKey<String>('find-level-skip-audio')),
+      );
+      expect(progress.first, <String>['u']);
+      expect(session.events, isNot(contains('a0')));
+      expect(session.asked, 0);
     });
   });
 

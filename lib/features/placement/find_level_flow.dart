@@ -236,12 +236,10 @@ Future<void> startFindLevel(
         native: plan.native,
         cardOf: plan.data.cardById,
         onProgress: save,
-        // The outcome is written first and the paused run dropped after: a
+        // The outcome is written, and the paused run dropped once it is: a
         // write that throws keeps the run to be carried on.
-        onFinish: (finished) {
-          state.writePlacementRun(code, plan, finished.run, native: native);
-          settings.setPlacementRun(code, null);
-        },
+        onFinish: (finished) =>
+            state.writePlacementRun(code, plan, finished.run, native: native),
       ),
     ),
   );
