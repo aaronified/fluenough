@@ -381,7 +381,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
-      - run: python3 tools/validate_decks.py decks/
+      # The sample deck: the decks themselves are checked on decks-live.
+      - run: python3 tools/validate_decks.py test/fixtures/sample-decks/
 
       - uses: actions/setup-java@v6
         with:

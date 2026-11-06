@@ -21,7 +21,7 @@ const String _wordsDeck = 'te-en-family';
 
 AppState _learner({required bool replaces}) {
   final state = AppState.test(
-    decks: RepositoryDeckSource('test/fixtures/ask_pin'),
+    decks: RepositoryDeckSource('test/fixtures/sample-decks'),
     settings: SettingsNotifier(
       spokenLanguages: const <String>['en'],
       learningLanguages: const <String>['te'],
