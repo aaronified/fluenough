@@ -139,6 +139,7 @@ class PlacementQuestionRequest {
     required this.deck,
     required this.percentile,
     required this.shortlistPick,
+    this.originVariant,
   });
 
   /// 1 for the first question of the run.
@@ -170,6 +171,12 @@ class PlacementQuestionRequest {
   final double percentile;
 
   final int shortlistPick;
+
+  /// For a split or an isolating question, the name of the base question
+  /// whose miss it checks (`K1`, `W2`, ...); null for any other question.
+  /// The caller hands that question back to the question builder as
+  /// `failed`.
+  final PlacementVariant? originVariant;
 
   @override
   String toString() =>
