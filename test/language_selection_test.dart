@@ -347,7 +347,16 @@ languages:
           themeMode: mode,
         );
         final text = l10n(tester);
-        final label = tester.getSemantics(key('add-popular-bb')).label;
+        final label = tester
+            .getSemantics(
+              find
+                  .ancestor(
+                    of: key('add-popular-bb'),
+                    matching: find.byType(MergeSemantics),
+                  )
+                  .first,
+            )
+            .label;
         expect(label, contains(text.languagesNoDecksLabel));
         expect(
           label,
