@@ -1,0 +1,184 @@
+schema: 1
+id: "ta-questions"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "questions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0041"
+    target: "யார்"
+    reading: "yār"
+    ipa: "jaːr"
+    pos: "pronoun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இவர் யார்?"
+        reading: "ivar yār?"
+        ipa: "ivaɾ jaːr?"
+        bases: [{ word: "இவர்", base: "இவர்", reading: "ivar" }, { word: "யார்", base: "யார்", reading: "yār" }]
+      - target: "அது யார்?"
+        reading: "atu yār?"
+        ipa: "at̪u jaːr?"
+        bases: [{ word: "அது", base: "அது", reading: "atu" }, { word: "யார்", base: "யார்", reading: "yār" }]
+  - id: "ta-0042"
+    target: "என்ன"
+    reading: "enna"
+    ipa: "enːa"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என்ன?"
+        reading: "itu enna?"
+        ipa: "idu enːa?"
+        bases: [{ word: "இது", base: "இது", reading: "itu" }, { word: "என்ன", base: "என்ன", reading: "enna" }]
+      - target: "உனக்கு என்ன வேண்டும்?"
+        reading: "uṉakku enna vēṇṭum?"
+        ipa: "unakku enːa veːɳɖum?"
+        bases: [{ word: "உனக்கு", base: "நீ", reading: "nī" }, { word: "என்ன", base: "என்ன", reading: "enna" }, { word: "வேண்டும்", base: "வேண்டு", reading: "vēṇṭu" }]
+  - id: "ta-0043"
+    target: "எங்கே"
+    reading: "eṅkē"
+    ipa: "eŋkeː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீடு எங்கே?"
+        reading: "vīṭu eṅkē?"
+        ipa: "viːɖu eŋkeː?"
+        bases: [{ word: "வீடு", ref: "ta-0009" }, { word: "எங்கே", base: "எங்கே", reading: "eṅkē" }]
+      - target: "நீங்கள் எங்கே போகிறீர்கள்?"
+        reading: "nīṅgaḷ eṅkē pōkiṟīrkaḷ?"
+        ipa: "niːŋgaɭ eŋkeː poːkiɾiːrkaɭ?"
+        bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "எங்கே", base: "எங்கே", reading: "eṅkē" }, { word: "போகிறீர்கள்", base: "போ", reading: "pō" }]
+  - id: "ta-0044"
+    target: "எப்போது"
+    reading: "eppōtu"
+    ipa: "eppoːt̪u"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நீங்கள் எப்போது வருகிறீர்கள்?"
+        reading: "nīṅgaḷ eppōtu varukiṟīrkaḷ?"
+        ipa: "niːŋgaɭ eppoːt̪u vaɾukiɾiːrkaɭ?"
+        bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "எப்போது", base: "எப்போது", reading: "eppōtu" }, { word: "வருகிறீர்கள்", base: "வா", reading: "vā" }]
+      - target: "கூட்டம் எப்போது?"
+        reading: "kūṭṭam eppōtu?"
+        ipa: "kuːʈːam eppoːt̪u?"
+        bases: [{ word: "கூட்டம்", base: "கூட்டம்", reading: "kūṭṭam" }, { word: "எப்போது", base: "எப்போது", reading: "eppōtu" }]
+  - id: "ta-0045"
+    target: "எப்படி"
+    reading: "eppaṭi"
+    ipa: "eppaɖi"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது எப்படி?"
+        reading: "itu eppaṭi?"
+        ipa: "idu eppaɖi?"
+        bases: [{ word: "இது", base: "இது", reading: "itu" }, { word: "எப்படி", base: "எப்படி", reading: "eppaṭi" }]
+      - target: "நீங்கள் எப்படி இருக்கிறீர்கள்?"
+        reading: "nīṅgaḷ eppaṭi irukkiṟīrkaḷ?"
+        ipa: "niːŋgaɭ eppaɖi iɾukkiɾiːrkaɭ?"
+        bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "எப்படி", base: "எப்படி", reading: "eppaṭi" }, { word: "இருக்கிறீர்கள்", base: "இரு", reading: "iru" }]
+  - id: "ta-0046"
+    target: "ஏன்"
+    reading: "ēṉ"
+    ipa: "eːn"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நீங்கள் ஏன் வருகிறீர்கள்?"
+        reading: "nīṅgaḷ ēṉ varukiṟīrkaḷ?"
+        ipa: "niːŋgaɭ eːn vaɾukiɾiːrkaɭ?"
+        bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "ஏன்", base: "ஏன்", reading: "ēṉ" }, { word: "வருகிறீர்கள்", base: "வா", reading: "vā" }]
+      - target: "ஏன் தாமதம்?"
+        reading: "ēṉ tāmatam?"
+        ipa: "eːn t̪aːmat̪am?"
+        bases: [{ word: "ஏன்", base: "ஏன்", reading: "ēṉ" }, { word: "தாமதம்", base: "தாமதம்", reading: "tāmatam" }]
+  - id: "ta-0047"
+    target: "எது"
+    reading: "etu"
+    ipa: "et̪u"
+    pos: "pronoun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எது உங்கள் வீடு?"
+        reading: "etu uṅkaḷ vīṭu?"
+        ipa: "et̪u uŋgaɭ viːɖu?"
+        bases: [{ word: "எது", base: "எது", reading: "etu" }, { word: "உங்கள்", base: "உங்கள்", reading: "uṅkaḷ" }, { word: "வீடு", ref: "ta-0009" }]
+      - target: "எது நல்லது?"
+        reading: "etu nallatu?"
+        ipa: "et̪u nalːat̪u?"
+        bases: [{ word: "எது", base: "எது", reading: "etu" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0048"
+    target: "எத்தனை"
+    reading: "ettaṉai"
+    ipa: "et̪t̪anai"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எத்தனை பேர்?"
+        reading: "ettaṉai pēr?"
+        ipa: "et̪t̪anai peːr?"
+        bases: [{ word: "எத்தனை", base: "எத்தனை", reading: "ettaṉai" }, { word: "பேர்", base: "பேர்", reading: "pēr" }]
+      - target: "எத்தனை மணி?"
+        reading: "ettaṉai maṇi?"
+        ipa: "et̪t̪anai maɳi?"
+        bases: [{ word: "எத்தனை", base: "எத்தனை", reading: "ettaṉai" }, { word: "மணி", base: "மணி", reading: "maṇi" }]
+  - id: "ta-0049"
+    target: "எவ்வளவு"
+    reading: "evvaḷavu"
+    ipa: "evːaɭavu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தண்ணீர் எவ்வளவு?"
+        reading: "taṇṇīr evvaḷavu?"
+        ipa: "t̪aɳːiːr evːaɭavu?"
+        bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "எவ்வளவு", base: "எவ்வளவு", reading: "evvaḷavu" }]
+      - target: "எவ்வளவு நேரம்?"
+        reading: "evvaḷavu nēram?"
+        ipa: "evːaɭavu neːram?"
+        bases: [{ word: "எவ்வளவு", base: "எவ்வளவு", reading: "evvaḷavu" }, { word: "நேரம்", base: "நேரம்", reading: "nēram" }]
+  - id: "ta-0050"
+    target: "இல்லையா"
+    reading: "illaiyā"
+    ipa: "illaijaː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நல்லது இல்லையா?"
+        reading: "itu nallatu illaiyā?"
+        ipa: "idu nalːat̪u illaijaː?"
+        bases: [{ word: "இது", base: "இது", reading: "itu" }, { word: "நல்லது", ref: "ta-0006" }, { word: "இல்லையா", base: "இல்லை", reading: "illai" }]
+      - target: "நீங்கள் வருகிறீர்கள் இல்லையா?"
+        reading: "nīṅgaḷ varukiṟīrkaḷ illaiyā?"
+        ipa: "niːŋgaɭ vaɾukiɾiːrkaɭ illaijaː?"
+        bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "வருகிறீர்கள்", base: "வா", reading: "vā" }, { word: "இல்லையா", base: "இல்லை", reading: "illai" }]
+  - id: "ta-0051"
+    kind: "set"
+    members: [{ ref: "ta-0041" }, { ref: "ta-0042" }, { ref: "ta-0043" }, { ref: "ta-0044" }, { ref: "ta-0045" }, { ref: "ta-0046" }, { ref: "ta-0047" }, { ref: "ta-0048" }, { ref: "ta-0049" }]
