@@ -4,9 +4,7 @@ Source of truth: this wiki page.
 
 Written 2026-11-02. A plan and a mockup only: no app code is written by it. The mockup of the Settings switch is `docs/mockups/haptics-settings.html` on the branch `mockup/haptics-settings`, with its notes and self-check in `haptics-settings.md` beside it. The owner wants this in the next release.
 
-**Status 2026-11-04.** Owner approval of the plan and the mockup is pending; nothing is built and no issue is filed. It is aimed at 0.9.x. The 0.9.0 milestone does not exist yet, so the issue is filed, and tagged, once the owner creates it.
-
-**Status 2026-11-04.** Owner approval of the plan and the mockup is pending; nothing is built and no issue is filed. It is aimed at 0.9.x. The 0.9.0 milestone does not exist yet, so the issue is filed, and tagged, once the owner creates it.
+**Status 2026-11-06: approved by the owner 2026-11-06; build after the web work.** Owner, 2026-11-06: "Approve haptics, build it after web" (after being shown the haptics settings mockup `docs/mockups/haptics-settings.html` on 2026-11-06). Nothing is built yet and no issue is filed. It is aimed at 0.9.x. The 0.9.0 milestone does not exist yet, so the issue is filed, and tagged, once the owner creates it.
 
 ## What the owner asked
 
@@ -352,6 +350,8 @@ New behaviours only (AGENTS.md):
 
 ## 7. Rollout
 
+Build scope for the later builder (owner, 2026-11-06, approved): one "Vibrate on touch" toggle row on the Look and language page (`lib/features/settings/appearance_page.dart`), hidden on web and desktop, as in `docs/mockups/haptics-settings.md` (the mockup's notes, on its branch). The rest of this plan is the same build, after the web work.
+
 One pull request (`feature/haptics`, committed and pushed to `wip/haptics` in small steps), because the vocabulary, the setting, the widgets and the enforcement test are one change that is wrong in parts. Build order inside it:
 
 | Step | Work | Size |
@@ -380,12 +380,26 @@ The Sonnet coder takes steps 1 to 8; one Sonnet review of the pull request (CLAU
 
 ## Open questions for the owner
 
+Approved 2026-11-06 (owner, quoted in the status above). The five questions below are **assumed by the approval**: each one's default is what the builder implements, and the builder flags any it changes. No answer is invented here; a question the owner answers later replaces its default.
+
 1. **How far apart do the pills feel?** The plan: Leave tick, Learn tap, Know press, Learnt rise: a ladder up, and Learnt a double. Tick and tap are close, and on a low-end phone the three singles may feel alike. *Wider* (Leave tick, Learn press, Know thud, Learnt rise) makes the singles easier to tell apart. Main downside of wider: a thud on Know, the pill cycled most, is heavy, and thud is also the destructive feel.
+
+   Default (assumed by the approval): the plan's ladder, Leave tick, Learn tap, Know press, Learnt rise (a double).
 2. **Per profile or per phone?** The plan: per profile, saved in the backup, like every other setting. A phone shared by a family could instead keep the switch for the whole phone, off for a child's profile or on for all. Main downside of per phone: it would be the one setting that is not per profile and not in the backup.
+
+   Default (assumed by the approval): per profile, saved in the backup, like every other setting.
 3. **One pull request or two?** One: everything lands together, "all buttons" is true on merge. Two: the service, setting, shared widgets and pills first (small, reviewable), then the 140-file sweep and the enforcement test. Main downside of two: until the second merges, most plain buttons are still silent, and the owner's release would have to wait for both.
+
+   Default (assumed by the approval): one pull request, `feature/haptics`.
 4. **With a screen reader on, what do we play?** The plan: keep the meaningful ones (success, error, danger, pills), drop tap, select, toggle and confirm because TalkBack and VoiceOver already vibrate. *Everything*: simple, and the learner can turn it off. Main downside of everything: a double buzz on every tap for the people who rely on the reader most.
+
+   Default (assumed by the approval): with a screen reader on, keep the meaningful feels (success, error, danger, pills) and drop tap, select, toggle and confirm.
 5. **The AppBar's back arrow.** The plan leaves it silent in v1 (it is Flutter's `BackButton`; the system back gesture has its own). *Give it a tick*: a small `AppBackButton` set as `leading` in about 50 AppBars. Main downside: another 50-file edit for a control that already has the OS's feel, and the owner said "all buttons".
 
+   Default (assumed by the approval): the back arrow stays silent in v1.
+
 ## Mockup
+
+**Approved by the owner 2026-11-06; build after the web work.** Shown to the owner 2026-11-06 and approved in the words quoted in the status. The mockup files are on the branch `mockup/haptics-settings`, which this change does not touch; the mark on the mockup is recorded here, and the mockup is removed once built (owner, 2026-10-16: "Remove when built").
 
 `docs/mockups/haptics-settings.html` (branch `mockup/haptics-settings`): the Look and language screen in the real theme, light and dark, 1x and 1.4x, with the new row highlighted among the existing ones, and a reference panel of the pill feels. Notes, tweak controls and the contrast self-check are in `haptics-settings.md` beside it.
