@@ -543,7 +543,8 @@ units:
       - { id: "why-were-you-late", text: { "en": "Giving reasons: I was late because the train stopped" } }
     reading_passages:
       - { id: "apology-email", text: { "en": "A short email apologising and giving the reason" } }
-  - planned: { id: "ja-nature", theme: "nature", words: 40 }
+  - decks: ["ja-nature", "ja-nature-sentences", "ja-reading-nature", "*"]
+    words: 40
     listening_passages:
       - { id: "a-walk-in-the-hills", text: { "en": "Two people describe a walk in the hills" } }
     reading_passages:

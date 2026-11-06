@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-nature"
+"name": "Japanese reading: nature"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-nature-1"
+  "title": "A walk in the hills"
+  "sentences":
+  - "text": "やまのおくにたにがあります。"
+    "reading": "yama no oku ni tani ga arimasu."
+  - "text": "たきのおとがきこえます。"
+    "reading": "taki no oto ga kikoemasu."
+  - "text": "みずうみのまわりにすぎのきがあります。"
+    "reading": "mizuumi no mawari ni sugi no ki ga arimasu."
+  - "text": "はなはもうさきました。"
+    "reading": "hana wa mou sakimashita."
+  "questions":
+  - "id": "ja-2486"
+    "prompt":
+      "en": "Which line says that a waterfall can be heard?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "2"
+  - "id": "ja-2487"
+    "prompt":
+      "en": "The third line says that there are cedar trees around the lake."
+    "answer": !!bool true
+  - "id": "ja-2488"
+    "prompt":
+      "en": "Which line says that the flowers have already bloomed?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-nature-2"
+  "title": "Signs in a national park"
+  "sentences":
+  - "text": "このみちはがけにちかいです。"
+    "reading": "kono michi wa gake ni chikai desu."
+  - "text": "かわらでたべものをすてないでください。"
+    "reading": "kawara de tabemono o sutenaide kudasai."
+  - "text": "いわにのぼらないでください。"
+    "reading": "iwa ni noboranaide kudasai."
+  - "text": "はなをつまないでください。"
+    "reading": "hana o tsumanaide kudasai."
+  "questions":
+  - "id": "ja-2489"
+    "prompt":
+      "en": "Which line says not to climb the rock?"
+    "options":
+    - "en": "The second line"
+    - "en": "The third line"
+    "answer": !!int "2"
+  - "id": "ja-2490"
+    "prompt":
+      "en": "The first line says that the path is close to a cliff."
+    "answer": !!bool true
+  - "id": "ja-2491"
+    "prompt":
+      "en": "Which line says not to pick the flowers?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
