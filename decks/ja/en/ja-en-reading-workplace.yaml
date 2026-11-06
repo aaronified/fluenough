@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-workplace"
+"name": "Japanese reading: workplace"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-workplace-1"
+  "title": "A busy week at the office"
+  "sentences":
+  - "text": "らいしゅうはしめきりがおおいです。"
+    "reading": "raishuu wa shimekiri ga ooi desu."
+  - "text": "わたしはじょうしにそうだんしました。"
+    "reading": "watashi wa joushi ni soudan shimashita."
+  - "text": "かいぎしつでうちあわせもあります。"
+    "reading": "kaigishitsu de uchiawase mo arimasu."
+  - "text": "でも、ひるやすみにしごとをこなして、しめきりにまにあわせます。"
+    "reading": "demo, hiruyasumi ni shigoto o konashite, shimekiri ni maniawasemasu."
+  "questions":
+  - "id": "ja-2621"
+    "prompt":
+      "en": "Which line says that the writer talked with the boss?"
+    "options":
+    - "en": "The second line"
+    - "en": "The third line"
+    "answer": !!int "1"
+  - "id": "ja-2622"
+    "prompt":
+      "en": "The third line says that there is a meeting in the meeting room."
+    "answer": !!bool true
+  - "id": "ja-2623"
+    "prompt":
+      "en": "Which line says that the writer will make the deadline?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-workplace-2"
+  "title": "A business trip"
+  "sentences":
+  - "text": "らいげつ、おおさかへしゅっちょうします。"
+    "reading": "raigetsu, oosaka e shutchou shimasu."
+  - "text": "しごとのほうこくをかいて、コピーもしました。"
+    "reading": "shigoto no houkoku o kaite, kopii mo shimashita."
+  - "text": "ぶかにまかせたしごとは、もうおわりました。"
+    "reading": "buka ni makaseta shigoto wa, mou owarimashita."
+  - "text": "きゅうじつにはゆっくりやすみたいです。"
+    "reading": "kyuujitsu ni wa yukkuri yasumitai desu."
+  "questions":
+  - "id": "ja-2624"
+    "prompt":
+      "en": "Which line says that the writer will travel to Osaka?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2625"
+    "prompt":
+      "en": "The third line says that the work given to a subordinate is finished."
+    "answer": !!bool true
+  - "id": "ja-2626"
+    "prompt":
+      "en": "Which line says that the writer wants to rest on a day off?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
