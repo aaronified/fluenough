@@ -36,6 +36,25 @@ overhaul with its onboarding) goes in 0.7.0.
 Each entry gives the sentence that stood in `CLAUDE.md`, then the earlier
 rule it replaced, as it was written (from the file's git history).
 
+### The agent slot split (owner, 2026-10-22, 2026-10-23)
+
+Replaced by the 2026-11-06 rule in `CLAUDE.md`, under "Which model does what":
+"one Haiku deck builder, one Sonnet coder, and an extra Sonnet only while a
+review runs, for a deck or a code PR". The three-agent cap, with no more than
+two Sonnet, is kept.
+
+In `CLAUDE.md`, under "Which model does what (owner, 2026-10-22)", as it
+stood on 2026-11-02:
+
+> At most **three agents run at the same time, and never more than two
+> Sonnet** (owner, 2026-10-22).
+>
+> **Slots** (owner, 2026-10-23: "1 haiku and 1 sonnet (reviews and associated
+> bug fixes) keep on decks. 1 sonnet on the today chain."): one Haiku and one
+> Sonnet keep on decks, and the Sonnet takes reviews and their associated bug
+> fixes. One Sonnet runs the Today chain (#722, #723, #724; their mockups are
+> done together on one page).
+
 ### The Opus rules (2026-10-09, 2026-10-12, 2026-10-16, 2026-10-17)
 
 In `CLAUDE.md`, under "Which model does what (owner, 2026-10-22)": "At most
