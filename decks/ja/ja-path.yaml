@@ -388,7 +388,8 @@ units:
       - { id: "a-zoo-visit", text: { "en": "A child names the animals seen at a zoo" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "ja-weather", theme: "weather", words: 40 }
+  - decks: ["ja-weather", "ja-weather-sentences", "ja-reading-weather", "*"]
+    words: 37
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain, typhoon" } }
     reading_passages:
