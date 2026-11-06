@@ -203,6 +203,78 @@
   "@commonNotSavedBody": {
     "description": "Banner body under commonNotSavedTitle."
   },
+  "webInstallTitleIos": "Add Fluenough to your Home Screen",
+  "@webInstallTitleIos": {
+    "description": "Title of the hint on Today, web build on an iPhone or iPad, not installed."
+  },
+  "webInstallBodyIos": "Safari keeps your decks and progress when Fluenough is on your Home Screen.",
+  "@webInstallBodyIos": {
+    "description": "Body of the iPhone install hint."
+  },
+  "webInstallHowTo": "Tap Share, then Add to Home Screen",
+  "@webInstallHowTo": {
+    "description": "How to install on an iPhone or iPad. Share and Add to Home Screen are the names iOS gives its buttons."
+  },
+  "webInstallTitlePrompt": "Install Fluenough",
+  "@webInstallTitlePrompt": {
+    "description": "Title of the hint on Today, web build in a browser that offers its own install prompt."
+  },
+  "webInstallBodyPrompt": "Open it like an app, and keep your decks and progress on this device.",
+  "@webInstallBodyPrompt": {
+    "description": "Body of the install hint in a browser with an install prompt."
+  },
+  "webInstallButton": "Install",
+  "@webInstallButton": {
+    "description": "Button that shows the browser install prompt."
+  },
+  "webInstallGotIt": "Got it",
+  "@webInstallGotIt": {
+    "description": "Hides the install hint for good on this device."
+  },
+  "webInstallLater": "Later",
+  "@webInstallLater": {
+    "description": "Hides the install hint for a week."
+  },
+  "webInstallHidden": "Hint hidden. It stays in Settings, Your data.",
+  "@webInstallHidden": {
+    "description": "Toast after the install hint is hidden, saying where it went."
+  },
+  "webStorageHeading": "Storage",
+  "@webStorageHeading": {
+    "description": "Heading on Your data, web build only."
+  },
+  "webStorageIntro": "On the web, Fluenough keeps your progress in this browser. Clearing the site’s data deletes it, so back up from time to time.",
+  "@webStorageIntro": {
+    "description": "Line under the Storage heading on Your data, web build only."
+  },
+  "webStorageKept": "Storage: kept",
+  "@webStorageKept": {
+    "description": "Row title when the browser has agreed to keep this site’s storage, or the app is installed."
+  },
+  "webStorageKeptDesc": "The browser keeps your progress until you clear this site’s data.",
+  "@webStorageKeptDesc": {
+    "description": "Row caption under webStorageKept."
+  },
+  "webStorageMayClear": "Storage: may be cleared by the browser",
+  "@webStorageMayClear": {
+    "description": "Row title when the browser has not agreed to keep this site’s storage."
+  },
+  "webStorageMayClearDesc": "A browser can delete a site’s data it was not asked to keep. Safari does after 7 days without a visit.",
+  "@webStorageMayClearDesc": {
+    "description": "Row caption under webStorageMayClear."
+  },
+  "webStorageKeepButton": "Keep my data",
+  "@webStorageKeepButton": {
+    "description": "Button that asks the browser to keep this site’s storage."
+  },
+  "webStorageKeepRefused": "The browser did not agree. Installing Fluenough, or backing up below, keeps your progress safe.",
+  "@webStorageKeepRefused": {
+    "description": "Toast when the browser refuses to keep the storage."
+  },
+  "webStorageInstallRowIos": "Add to Home Screen",
+  "@webStorageInstallRowIos": {
+    "description": "Row title on Your data, web build on an iPhone or iPad, not installed."
+  },
   "commonUnnamedProfile": "You",
   "@commonUnnamedProfile": {
     "description": "Stands in for a profile's name when it has none, such as the default profile."
@@ -368,6 +440,10 @@
   "settingsSpeakingNoRecogniser": "This phone has no speech recogniser, so speaking stays off.",
   "@settingsSpeakingNoRecogniser": {
     "description": "SnackBar when Speaking is switched on but the phone cannot recognise speech."
+  },
+  "settingsSpeakingNoRecogniserWeb": "This browser has no speech recogniser, so speaking stays off. Chrome, Edge and Safari have one.",
+  "@settingsSpeakingNoRecogniserWeb": {
+    "description": "SnackBar when Speaking is switched on in the web app but the browser has no speech recogniser (Firefox)."
   },
   "settingsPausedUntil": "Paused until {time}",
   "@settingsPausedUntil": {
@@ -767,60 +843,6 @@
       }
     }
   },
-  "todayRevisionTitle": "Quick revision",
-  "@todayRevisionTitle": {
-    "description": "Today: the heading of the quick revision buttons, which revise words already learned."
-  },
-  "todayRevisionBody": "Words you know, picked at random, for as long as you choose. A miss brings a word back sooner.",
-  "@todayRevisionBody": {
-    "description": "Under Quick revision: what it does. Every answer is recorded (ADR-0033)."
-  },
-  "todayRevisionNone": "Revision opens up once you've had a lesson.",
-  "@todayRevisionNone": {
-    "description": "Under Quick revision when no word has been learned yet, with the buttons off."
-  },
-  "todayRevisionAll": "All",
-  "@todayRevisionAll": {
-    "description": "Quick revision's skill choice: every skill switched on."
-  },
-  "todayRevisionSpoken": "Spoken",
-  "@todayRevisionSpoken": {
-    "description": "Quick revision's skill choice: listening and speaking together."
-  },
-  "todayRevisionSkillsLabel": "Skills to revise",
-  "@todayRevisionSkillsLabel": {
-    "description": "Screen-reader label of quick revision's row of skill choices."
-  },
-  "todayRevisionNoneIn": "No words you know in {skills} yet.",
-  "@todayRevisionNoneIn": {
-    "description": "Under Quick revision when the skill chosen has no words to revise, with the buttons off.",
-    "placeholders": {
-      "skills": {
-        "type": "String",
-        "example": "Speaking"
-      }
-    }
-  },
-  "todayRevisionStart": "{minutes} min",
-  "@todayRevisionStart": {
-    "description": "Quick revision's start button on Today: how many minutes it lasts, between the minus and plus buttons.",
-    "placeholders": {
-      "minutes": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-  "todayRevisionMinutes": "{count, plural, =1{Revise for 1 minute} other{Revise for {count} minutes}}",
-  "@todayRevisionMinutes": {
-    "description": "Screen-reader label of quick revision's start button, which shows the minutes.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
   "todayDailyStart": "Start",
   "@todayDailyStart": {
     "description": "The button inside Today's ring, before anything is done today (#521)."
@@ -833,9 +855,35 @@
   "@todayDailyDone": {
     "description": "The button inside Today's ring when today's minutes are spent or nothing is left (#521)."
   },
-  "todayDailyKeepGoing": "Keep going",
-  "@todayDailyKeepGoing": {
-    "description": "Under the ring, once today's minutes are done: starts another five minutes."
+  "todayDailyDoneOpens": "Done for today. Opens the summary.",
+  "@todayDailyDoneOpens": {
+    "description": "Screen-reader label of Today's ring once the day's session has ended: it says the day is done and that a tap opens the summary (#1007)."
+  },
+  "todayDailyTotal": "{minutes} min today",
+  "@todayDailyTotal": {
+    "description": "Under Today's greyed ring, and on the summary, once Keep going time is added: the whole day's minutes, as in 23 min today.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "23"
+      }
+    }
+  },
+  "summaryAllCaughtUp": "All caught up: nothing is worth reviewing yet, and today’s new words are done.",
+  "@summaryAllCaughtUp": {
+    "description": "On the summary, in place of Keep going, when there is nothing left worth doing today: no card is close enough to due to be worth an early review, and the day's new words are all taught."
+  },
+  "summaryKeepGoing": "Keep going",
+  "@summaryKeepGoing": {
+    "description": "The summary's tonal button, once the day's minutes are done: starts another stretch of the day's session."
+  },
+  "todayDueHint": "Tap a skill to practise only that",
+  "@todayDueHint": {
+    "description": "Above Today's skill tiles: what tapping a tile does. No full stop."
+  },
+  "todayDueHintInfo": "How skills are fitted to you",
+  "@todayDueHintInfo": {
+    "description": "Screen-reader label of the info dot after the hint above Today's skill tiles, which opens How you learn."
   },
   "todayDailyProgress": "{done} of {goal} min",
   "@todayDailyProgress": {
@@ -851,23 +899,43 @@
       }
     }
   },
-  "todayDailyReviews": "{count, plural, =1{1 review} other{{count} reviews}}",
-  "@todayDailyReviews": {
-    "description": "Today's split: how many reviews the day's session holds.",
+  "todayDailyReviewMinutes": "{minutes} min review",
+  "@todayDailyReviewMinutes": {
+    "description": "Today's split, under the ring: the minutes of today's time given to reviews, as in 12 min review. No card count.",
     "placeholders": {
-      "count": {
+      "minutes": {
         "type": "int",
-        "example": "8"
+        "example": "12"
       }
     }
   },
-  "todayDailyNew": "{count} new",
-  "@todayDailyNew": {
-    "description": "Today's split: how many new words the day's session teaches.",
+  "todayDailyNewMinutes": "{minutes} min new",
+  "@todayDailyNewMinutes": {
+    "description": "Today's split, under the ring: the minutes of today's time given to new words, as in 3 min new. No card count.",
     "placeholders": {
-      "count": {
+      "minutes": {
         "type": "int",
-        "example": "6"
+        "example": "3"
+      }
+    }
+  },
+  "todayDailyReviewMinutesSemantics": "{minutes, plural, =1{1 minute of review} other{{minutes} minutes of review}}",
+  "@todayDailyReviewMinutesSemantics": {
+    "description": "What a screen reader says of the review minutes under Today's ring.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "todayDailyNewMinutesSemantics": "{minutes, plural, =1{1 minute of new words} other{{minutes} minutes of new words}}",
+  "@todayDailyNewMinutesSemantics": {
+    "description": "What a screen reader says of the new-word minutes under Today's ring.",
+    "placeholders": {
+      "minutes": {
+        "type": "int",
+        "example": "3"
       }
     }
   },
@@ -2716,6 +2784,16 @@
       }
     }
   },
+  "drillTimeTaken": "{time} taken",
+  "@drillTimeTaken": {
+    "description": "Screen-reader value of the progress wave in a Keep going stretch: the time taken so far, as in 3:12 taken.",
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "3:12"
+      }
+    }
+  },
   "drillTimeLeft": "{time} left",
   "@drillTimeLeft": {
     "description": "Screen-reader value of the progress wave in the day's timed session: the time left, as in 4:32 left.",
@@ -3271,9 +3349,17 @@
   "@drillUnheardPermission": {
     "description": "Speaking: the microphone permission was refused."
   },
+  "drillUnheardPermissionWeb": "Fluenough can’t use the microphone. Allow it for this site in your browser: tap the icon beside the address, then allow the microphone.",
+  "@drillUnheardPermissionWeb": {
+    "description": "Speaking in the web app: the browser’s microphone permission was refused."
+  },
   "drillUnheardNoRecogniser": "This phone has no speech recogniser for this.",
   "@drillUnheardNoRecogniser": {
     "description": "Speaking: the phone cannot recognise speech at all."
+  },
+  "drillUnheardNoRecogniserWeb": "This browser has no speech recogniser. Chrome, Edge and Safari have one.",
+  "@drillUnheardNoRecogniserWeb": {
+    "description": "Speaking in the web app: the browser cannot recognise speech at all (Firefox)."
   },
   "drillUnheardUnsupported": "Your phone can’t recognise {language}, even online.",
   "@drillUnheardUnsupported": {
@@ -3364,6 +3450,15 @@
       "language": {
         "type": "String",
         "example": "Hindi"
+      }
+    }
+  },
+  "drillOnlineAskWeb": "Your browser recognises speech online. Recognise {language} online? What you say would go to your browser’s speech service.",
+  "@drillOnlineAskWeb": {
+    "description": "Speaking in the web app: asks before sending audio to the browser’s speech service (Google in Chrome and Edge, Apple in Safari).",
+    "placeholders": {
+      "language": {
+        "type": "String"
       }
     }
   },
@@ -3813,6 +3908,10 @@
   "feedbackAccent": "Right, but mind the accent",
   "@feedbackAccent": {
     "description": "Feedback: right apart from the accents. Still counted as correct."
+  },
+  "feedbackLengthClose": "Close, mind the vowel length",
+  "@feedbackLengthClose": {
+    "description": "Speaking drill: the word heard differs from the answer only in a short or a long vowel, which a recogniser cannot reliably hear. Counted as almost right, not wrong."
   },
   "feedbackArticle": "Right, but keep the article",
   "@feedbackArticle": {
@@ -4603,6 +4702,10 @@
   "@onboardingSoundBody": {
     "description": "First launch, sound check: what it is for, and that the phone will ask for the microphone."
   },
+  "onboardingSoundBodyWeb": "Speaking drills listen to you, and listening drills read words aloud. Record two seconds and hear them back. Your browser will ask to let Fluenough use the microphone.",
+  "@onboardingSoundBodyWeb": {
+    "description": "First launch, sound check in the web app: what it is for, and that the browser will ask for the microphone."
+  },
   "onboardingSoundHint": "Tap the microphone, then say anything.",
   "@onboardingSoundHint": {
     "description": "First launch, sound check: under the microphone button, before recording."
@@ -4651,6 +4754,10 @@
   "@onboardingSoundRefusedForGood": {
     "description": "First launch, sound check: result after a second refusal, when Android no longer shows the permission dialog."
   },
+  "onboardingSoundRefusedForGoodWeb": "Speaking stays off: Fluenough still can’t use the microphone, and your browser won’t ask again. Allow it for this site in your browser, then try again.",
+  "@onboardingSoundRefusedForGoodWeb": {
+    "description": "First launch, sound check in the web app: the microphone was refused twice, so the browser no longer asks."
+  },
   "onboardingSoundSilent": "Speaking stays off: only silence was recorded. Is the microphone covered or muted?",
   "@onboardingSoundSilent": {
     "description": "First launch, sound check: result, the recording was silent."
@@ -4662,6 +4769,10 @@
   "onboardingSoundNoRecogniser": "Speaking stays off: the microphone works, but this phone has no speech recogniser.",
   "@onboardingSoundNoRecogniser": {
     "description": "First launch, sound check: result, recorded fine but there is no recogniser."
+  },
+  "onboardingSoundNoRecogniserWeb": "Speaking stays off: the microphone works, but this browser has no speech recogniser.",
+  "@onboardingSoundNoRecogniserWeb": {
+    "description": "First launch, sound check in the web app: result, recorded fine but the browser has no recogniser."
   },
   "onboardingSoundListeningOn": "Listening is on: your sound works.",
   "@onboardingSoundListeningOn": {
@@ -4771,7 +4882,7 @@
   "@onboardingSpokenNeedOne": {
     "description": "First-launch question, just above the button while it is disabled: why it is."
   },
-  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Arabic} perso_arabic{Perso-Arabic} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} brahmi{Brahmi} latin{Latin} cyrillic{Cyrillic} greek{Greek} hebrew{Hebrew} thai{Thai} han{Kanji} han_simplified{Simplified Hanzi} han_traditional{Traditional Hanzi} kana{Kana} hangul{Hangul} ipa{IPA} braille{Braille} other{}}",
+  "scriptName": "{script, select, bengali{Eastern Nagari} devanagari{Devanagari} gurmukhi{Gurmukhi} shahmukhi{Shahmukhi} gujarati{Gujarati} odia{Odia} kannada{Kannada} telugu{Telugu} tamil{Tamil} malayalam{Malayalam} ol_chiki{Ol Chiki} arabic{Arabic} perso_arabic{Perso-Arabic} perso_arabic_naskh{Perso-Arabic (Naskh)} meitei_mayek{Meitei Mayek} egyptian_hieroglyphs{Egyptian hieroglyphs} cuneiform{Cuneiform} linear_b{Linear B} brahmi{Brahmi} latin{Latin} cyrillic{Cyrillic} greek{Greek} hebrew{Hebrew} thai{Thai} han{Kanji} han_simplified{Simplified Hanzi} han_traditional{Traditional Hanzi} kana{Kana} hangul{Hangul} ipa{IPA} braille{Braille} other{}}",
   "@scriptName": {
     "description": "A script's own name, never a language's (owner, 2026-10-17, #551: \"All scripts should have their own names, not just inherit the language\"). {script} is the code in assets/languages.yaml and the deck files: bengali is Eastern Nagari, the script of Bengali, Assamese and Manipuri; arabic is the Arabic script of Modern Standard Arabic; perso_arabic is the Perso-Arabic script as Hindustani, Urdu, Kashmiri and Sindhi write it, in Nastaliq (#623, #959); shahmukhi is the Perso-Arabic alphabet as Punjabi writes it. han_simplified and han_traditional are the two forms of Chinese characters Mandarin is written in, shown as Simplified Hanzi and Traditional Hanzi, and han the same characters as Japanese writes them, shown as Kanji (owner, 2026-10-24: the Japanese call their Chinese script kanji). The codes never change, only the names shown; kana is Japanese's hiragana and katakana, hangul Korean's alphabet, and cyrillic Interslavic's second script (#613). A code with no name here gives nothing, and the app then names the script after its language. Every sentence that names a script takes this.",
     "placeholders": {
@@ -4837,7 +4948,7 @@
   "@knownByFamily": {
     "description": "Languages you know: beside that heading."
   },
-  "knownFamily": "{family, select, indo_aryan{Indo-Aryan} dravidian{Dravidian} tibeto_burman{Tibeto-Burman} austroasiatic{Austroasiatic} germanic{Germanic} romance{Romance} sinitic{Sinitic} koreanic{Koreanic} japonic{Japonic} constructed{Constructed} slavic{Slavic} hellenic{Hellenic} italic{Italic} celtic{Celtic} uralic{Uralic} turkic{Turkic} afroasiatic{Afroasiatic} austronesian{Austronesian} kra_dai{Kra-Dai} niger_congo{Niger-Congo} quechuan{Quechuan} indo_european{Indo-European} isolate{Language isolates} sign{Sign languages} other{Other languages}}",
+  "knownFamily": "{family, select, indo_aryan{Indo-Aryan} iranian{Iranian} dravidian{Dravidian} tibeto_burman{Tibeto-Burman} austroasiatic{Austroasiatic} germanic{Germanic} romance{Romance} sinitic{Sinitic} koreanic{Koreanic} japonic{Japonic} constructed{Constructed} slavic{Slavic} hellenic{Hellenic} italic{Italic} celtic{Celtic} uralic{Uralic} turkic{Turkic} afroasiatic{Afroasiatic} austronesian{Austronesian} kra_dai{Kra-Dai} niger_congo{Niger-Congo} quechuan{Quechuan} indo_european{Indo-European} isolate{Language isolates} sign{Sign languages} other{Other languages}}",
   "@knownFamily": {
     "description": "Languages you know: a language family's name. {family} is the id in assets/languages.yaml; constructed groups the languages made on purpose (Esperanto, Toki Pona, Lojban, Interslavic, Klingon) (#613, #959). isolate holds a language with no known relative (Basque, Sumerian).",
     "placeholders": {
@@ -5413,38 +5524,6 @@
   "@nativeChoiceChoose": {
     "description": "Button on the Today card that opens the choice of which language a course is taught from."
   },
-  "alphabetAskTitle": "Learn {language} in the {script} script?",
-  "@alphabetAskTitle": {
-    "description": "Asked for each language chosen to learn whose course has script decks, before placement. {script} is the script's own name, scriptName (#551).",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      },
-      "script": {
-        "type": "String",
-        "example": "Devanagari"
-      }
-    }
-  },
-  "alphabetAskBody": "Or learn {language} in Latin letters only: words show their romanisation first, you answer in Latin letters, and the script, spelling and reading decks are left out. You can change this in Settings.",
-  "@alphabetAskBody": {
-    "description": "Under the alphabet question.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "alphabetLearn": "Learn the alphabet",
-  "@alphabetLearn": {
-    "description": "Button: learn the language with its alphabet."
-  },
-  "alphabetSkip": "Latin letters only",
-  "@alphabetSkip": {
-    "description": "Button: learn the language without its alphabet, in Latin letters only."
-  },
   "placementNoAlphabet": "{language} has no decks without its alphabet yet. You can learn the alphabet from Settings.",
   "@placementNoAlphabet": {
     "description": "Placement result for a language learned without its alphabet whose course has nothing else yet.",
@@ -5455,33 +5534,9 @@
       }
     }
   },
-  "placementAskTitle": "Do you know any {language}?",
-  "@placementAskTitle": {
-    "description": "Title of the placement question for one language.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "placementAskBody": "A short check finds where to start: a few words from each part of the course, until one is new to you. Your answers don’t count as reviews, and you can still study anything it skips.",
-  "@placementAskBody": {
-    "description": "Explanation under the placement question."
-  },
   "placementFind": "Find my level",
   "@placementFind": {
     "description": "Button: start the placement check."
-  },
-  "placementNew": "I’m new to {language}",
-  "@placementNew": {
-    "description": "Button: skip the placement check and start the course from the beginning.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
   },
   "placementQuestion": "What does this mean?",
   "@placementQuestion": {
@@ -5501,13 +5556,13 @@
       }
     }
   },
+  "placementStartAtBeginning": "Start at the beginning",
+  "@placementStartAtBeginning": {
+    "description": "Button under the first placement question after choosing to learn a language on the first launch: skip the level check, place nothing, and start the course from its beginning."
+  },
   "placementDontKnow": "I don’t know",
   "@placementDontKnow": {
     "description": "Button in the placement check: the learner does not know the word."
-  },
-  "placementStop": "Stop here",
-  "@placementStop": {
-    "description": "Button in the placement check: end it, keeping what it has found so far."
   },
   "placementResultStart": "You’ll start {language} from the beginning, with {deck}.",
   "@placementResultStart": {
@@ -5632,42 +5687,6 @@
         "example": "3"
       }
     }
-  },
-  "placementScriptAskTitle": "Do you read {script}?",
-  "@placementScriptAskTitle": {
-    "description": "Placement, before a script's check: whether the learner reads the script. {script} is its name.",
-    "placeholders": {
-      "script": {
-        "type": "String",
-        "example": "Devanagari"
-      }
-    }
-  },
-  "placementScriptAskThrough": "You read {script} through {languages}. A few questions check how well, so that the script decks you know are skipped.",
-  "@placementScriptAskThrough": {
-    "description": "Under the script question, when Languages I know says the learner reads the script.",
-    "placeholders": {
-      "script": {
-        "type": "String",
-        "example": "Devanagari"
-      },
-      "languages": {
-        "type": "String",
-        "example": "Hindi"
-      }
-    }
-  },
-  "placementScriptAskBody": "A few questions check how well, from letters to words, so that the script decks you know are skipped. If you don’t read it, its decks start from the first letters.",
-  "@placementScriptAskBody": {
-    "description": "Under the script question, when the learner is not known to read the script."
-  },
-  "placementScriptYes": "Yes, check me",
-  "@placementScriptYes": {
-    "description": "Button: the learner reads the script; the check starts."
-  },
-  "placementScriptNo": "No, I’m new to it",
-  "@placementScriptNo": {
-    "description": "Button: the learner does not read the script; it is learned from its first deck, with no questions."
   },
   "placementMatchQuestion": "Match each letter with what it is",
   "@placementMatchQuestion": {
@@ -6098,7 +6117,17 @@
   },
   "howYouLearnTitle": "How you learn",
   "@howYouLearnTitle": {
-    "description": "Title of the page that shows, per skill, how fast the learner forgets against how every skill starts; also the card on Progress and the link on the Adjusted to you sheet that open it."
+    "description": "Title of the page that shows, per skill, how fast the learner forgets against how every skill starts; also the card on Progress and the link on the result sheet after Adjust to me in Settings that open it."
+  },
+  "howYouLearnTitleIn": "How you learn {language}",
+  "@howYouLearnTitleIn": {
+    "description": "Title of the short popover opened by the info dot above Today's skill tiles: how the skills of one language are fitted to the learner, as in How you learn Telugu.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
   },
   "howYouLearnCardMore": "Learn more about your pacing",
   "@howYouLearnCardMore": {
@@ -6783,6 +6812,18 @@
   "@appearancePureBlackOff": {
     "description": "Under Pure black, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
   },
+  "appearanceHaptics": "Vibrate on touch",
+  "@appearanceHaptics": {
+    "description": "Switch on Look and language: the phone buzzes a little for buttons, skill pills and answers."
+  },
+  "appearanceHapticsOn": "Buttons, pills and answers buzz a little",
+  "@appearanceHapticsOn": {
+    "description": "Under Vibrate on touch, while it is on. Shown while the switch is on: says what happens now, and changes the moment it is flipped."
+  },
+  "appearanceHapticsOff": "No buzz when you tap",
+  "@appearanceHapticsOff": {
+    "description": "Under Vibrate on touch, while it is off. Shown while the switch is off: says what happens now, and changes the moment it is flipped."
+  },
   "appearanceWallpaper": "Wallpaper colours",
   "@appearanceWallpaper": {
     "description": "Switch: take colours from the wallpaper."
@@ -6798,6 +6839,10 @@
   "appearanceColour": "Colour",
   "@appearanceColour": {
     "description": "Heading of the colour choice."
+  },
+  "appearanceColourFollowing": "Following your wallpaper. Turn off Wallpaper colours to pick one.",
+  "@appearanceColourFollowing": {
+    "description": "Under the Colour heading, only while Wallpaper colours is on: the colours below do not apply now."
   },
   "appearanceSeedForest": "Forest",
   "@appearanceSeedForest": {
@@ -7121,7 +7166,7 @@
   "@reviewSettingsLanguagesNone": {
     "description": "Under Languages you review when the reviewer has unticked every language."
   },
-  "reviewLanguagesBody": "Tick the courses you review, such as Bengali from English. What waits for review shows for them, and the path marks their units “To review”. You can review a course only if you know both languages and read both scripts.",
+  "reviewLanguagesBody": "Tick the courses you review, such as Bengali from English. What waits for review shows for them, and the path marks their units “To review”. Only the courses you can review are listed.",
   "@reviewLanguagesBody": {
     "description": "Top of Languages you review (#462): what the ticks change, and who can review a course, a language taught from another."
   },
@@ -7138,6 +7183,22 @@
         "example": "English"
       }
     }
+  },
+  "reviewLanguagesInfoTooltip": "Why only some courses are listed",
+  "@reviewLanguagesInfoTooltip": {
+    "description": "Tooltip and screen-reader label of the info button beside the intro of Languages you review."
+  },
+  "reviewLanguagesInfoTitle": "Only languages you know",
+  "@reviewLanguagesInfoTitle": {
+    "description": "Title of the dialog the info button of Languages you review opens."
+  },
+  "reviewLanguagesInfoBody": "Only decks for languages you know are shown here. They are verified: the app checks that you know both languages of a course and read both scripts. Courses you cannot review yet are hidden. To see more, add languages or scripts in Languages you know.",
+  "@reviewLanguagesInfoBody": {
+    "description": "Body of the dialog the info button of Languages you review opens: only courses the reviewer can review are listed, and why."
+  },
+  "reviewPairsNoneKnown": "No courses you can review yet. Add the languages you know, and say which scripts you read, in Languages you know.",
+  "@reviewPairsNoneKnown": {
+    "description": "Languages you review when the list of courses is there but none can be reviewed by this reviewer."
   },
   "reviewPairUnknown": "You don’t know {language}",
   "@reviewPairUnknown": {
@@ -13323,9 +13384,9 @@
       }
     }
   },
-  "languagesLevelNeedsDecks": "Start learning this language first, so its decks download. Then find your level.",
-  "@languagesLevelNeedsDecks": {
-    "description": "Toast when Find my level is tapped for a language with no decks on the phone."
+  "languagesLevelDownloading": "Downloading the decks, then your level check starts.",
+  "@languagesLevelDownloading": {
+    "description": "Shown in a dialog after Find my level is tapped for a language with no decks on the phone, before the download reports its progress."
   },
   "languagesAddTitle": "Add a language",
   "@languagesAddTitle": {
@@ -13885,5 +13946,517 @@
   "splashReady": "Ready",
   "@splashReady": {
     "description": "The splash screen's one-line status once everything is loaded, while it waits out its minimum time and fades."
+  },
+  "shellPillLabel": "{prefix} · {skill}",
+  "@shellPillLabel": {
+    "description": "The skill pill at the top of a screen that teaches a card, so that the colour is the skill's: the kind of card first, then the skill it leads into.",
+    "placeholders": {
+      "prefix": {
+        "type": "String",
+        "example": "New word"
+      },
+      "skill": {
+        "type": "String",
+        "example": "Recognition"
+      }
+    }
+  },
+  "shellNewWords": "New words",
+  "@shellNewWords": {
+    "description": "The prefix of the skill pill on a set of words shown before they are asked."
+  },
+  "drillAlreadyAnswered": "Already answered",
+  "@drillAlreadyAnswered": {
+    "description": "Title of the grey banner on a question the learner went back to: it was answered and cannot be changed."
+  },
+  "drillAlreadyAnsweredBody": "You can look, but not change it. Swipe or tap the arrow to go on.",
+  "@drillAlreadyAnsweredBody": {
+    "description": "Under the title of the banner on a question the learner went back to."
+  },
+  "drillRearrangeRight": "Right order",
+  "@drillRearrangeRight": {
+    "description": "Caption over the words in the right order, on a word-order question that has been checked."
+  },
+  "drillRearrangeYours": "Your order, marked wrong",
+  "@drillRearrangeYours": {
+    "description": "Caption over the order the learner chose, on a word-order question answered wrong. Also its screen-reader label."
+  },
+  "sayHeardLabel": "The phone heard, approximately",
+  "@sayHeardLabel": {
+    "description": "Label of the box on a checked Say question that shows what the phone's recogniser heard: a line of script, then its reading."
+  },
+  "sayHeardNoCard": "No card matches this, so no IPA.",
+  "@sayHeardNoCard": {
+    "description": "Under the reading of what the phone heard when the IPA is switched on but the heard text is no word of any deck, so there is no IPA to show."
+  },
+  "sayYourRecording": "Your recording",
+  "@sayYourRecording": {
+    "description": "Label of the row on a checked Say question where the learner replays their own voice."
+  },
+  "sayRecordingKept": "{length}, only on this phone",
+  "@sayRecordingKept": {
+    "description": "Caption under Your recording when a take is kept: its length, and that it stays on the phone.",
+    "placeholders": {
+      "length": {
+        "type": "String",
+        "example": "0:02"
+      }
+    }
+  },
+  "sayRecordingNone": "No recording yet. Replay records one.",
+  "@sayRecordingNone": {
+    "description": "Caption under Your recording when nothing is kept: the replay button records the word again instead."
+  },
+  "sayRecordingProgress": "{played} of {length}",
+  "@sayRecordingProgress": {
+    "description": "Caption under Your recording while it plays: how far it has played, and how long it is.",
+    "placeholders": {
+      "played": {
+        "type": "String",
+        "example": "0:01"
+      },
+      "length": {
+        "type": "String",
+        "example": "0:02"
+      }
+    }
+  },
+  "sayReplayHint": "Replay",
+  "@sayReplayHint": {
+    "description": "One-word tooltip of the button that plays the learner's own recording."
+  },
+  "sayPauseHint": "Pause",
+  "@sayPauseHint": {
+    "description": "One-word tooltip of the same button while the recording plays."
+  },
+  "sayWordHint": "Word",
+  "@sayWordHint": {
+    "description": "One-word tooltip of the button that plays the word in the Your recording row."
+  },
+  "sayAgainHint": "Again",
+  "@sayAgainHint": {
+    "description": "One-word tooltip of the button that records the word again, in the Your recording row."
+  },
+  "sayReplayLabel": "Play your recording",
+  "@sayReplayLabel": {
+    "description": "Screen-reader label of the replay button."
+  },
+  "sayPauseLabel": "Pause your recording",
+  "@sayPauseLabel": {
+    "description": "Screen-reader label of the replay button while the recording plays."
+  },
+  "sayAgainLabel": "Record again",
+  "@sayAgainLabel": {
+    "description": "Screen-reader label of the button that records the word again."
+  },
+  "sayCompareHint": "Replay your own voice and compare it with the word.",
+  "@sayCompareHint": {
+    "description": "Under the Your recording row of a checked Say question."
+  },
+  "sayRetakeHint": "Second take. Your recording is now this one.",
+  "@sayRetakeHint": {
+    "description": "Under the Your recording row after Try again heard a second take."
+  },
+  "feedbackSpokenRight": "The phone heard it as you said it.",
+  "@feedbackSpokenRight": {
+    "description": "Detail of the Correct banner on a Say question."
+  },
+  "feedbackSaidDifference": "The difference is {contrast}.",
+  "@feedbackSaidDifference": {
+    "description": "Detail line of the Not quite banner on a Say question when what was heard differs from the answer by one named sound.",
+    "placeholders": {
+      "contrast": {
+        "type": "String",
+        "example": "the vowel length"
+      }
+    }
+  },
+  "findLevelDeclarationTitle": "How well do you know {language}?",
+  "@findLevelDeclarationTitle": {
+    "description": "Find my level: the first question, above the four answers.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelExpert": "Expert",
+  "@findLevelExpert": {
+    "description": "Find my level, first question: the top answer."
+  },
+  "findLevelExpertSub": "I use it easily",
+  "@findLevelExpertSub": {
+    "description": "Find my level, first question: what Expert means."
+  },
+  "findLevelAdvanced": "Advanced",
+  "@findLevelAdvanced": {
+    "description": "Find my level, first question: the second answer."
+  },
+  "findLevelAdvancedSub": "I follow most of it and can say what I need",
+  "@findLevelAdvancedSub": {
+    "description": "Find my level, first question: what Advanced means."
+  },
+  "findLevelAmateur": "Amateur",
+  "@findLevelAmateur": {
+    "description": "Find my level, first question: the third answer."
+  },
+  "findLevelAmateurSub": "I know some words and phrases",
+  "@findLevelAmateurSub": {
+    "description": "Find my level, first question: what Amateur means."
+  },
+  "findLevelBeginner": "Beginner",
+  "@findLevelBeginner": {
+    "description": "Find my level, first question: the answer for someone who knows nothing yet."
+  },
+  "findLevelBeginnerSub": "I am starting from nothing",
+  "@findLevelBeginnerSub": {
+    "description": "Find my level, first question: what Beginner means."
+  },
+  "findLevelBeginnerToast": "Starting {language} from the beginning. You can find your level later.",
+  "@findLevelBeginnerToast": {
+    "description": "Toast after the Beginner answer: nothing is asked and nothing is credited.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelSayMeaning": "Say what this means in {language}",
+  "@findLevelSayMeaning": {
+    "description": "Find my level: a sentence written in the script, to be said back in the learner’s own language. {language} is that language.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "findLevelListenSayMeaning": "Listen, then say what it means in {language}",
+  "@findLevelListenSayMeaning": {
+    "description": "Find my level: a sentence played aloud, to be said back in the learner’s own language. {language} is that language.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "findLevelWordMeaning": "What does this word mean?",
+  "@findLevelWordMeaning": {
+    "description": "Find my level: a word to choose the meaning of."
+  },
+  "findLevelPickBlank": "Which form fits the blank?",
+  "@findLevelPickBlank": {
+    "description": "Find my level: a sentence with one word form blanked out, to choose from."
+  },
+  "findLevelWhichSentence": "Which sentence is right?",
+  "@findLevelWhichSentence": {
+    "description": "Find my level: two sentences, one with its words in the right order."
+  },
+  "findLevelWhichSentenceSounds": "Which sentence sounds right?",
+  "@findLevelWhichSentenceSounds": {
+    "description": "Find my level: two sentences, one with its words in the right order, with the right one played aloud."
+  },
+  "findLevelBuildFromAudio": "Listen, then put the words in order",
+  "@findLevelBuildFromAudio": {
+    "description": "Find my level: a sentence played aloud, to build from word tiles."
+  },
+  "findLevelBuildFromMeaning": "Put the words in order",
+  "@findLevelBuildFromMeaning": {
+    "description": "Find my level: a meaning shown, to build the sentence from word tiles."
+  },
+  "findLevelBuildWord": "Put the letters in order",
+  "@findLevelBuildWord": {
+    "description": "Find my level: a meaning shown, to build the word from letter tiles."
+  },
+  "findLevelSayWord": "Say this in {language}",
+  "@findLevelSayWord": {
+    "description": "Find my level: a meaning shown, to be said in the language learned.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelSkippedSaying": "We won’t ask you to speak. Speaking isn’t tested this time.",
+  "@findLevelSkippedSaying": {
+    "description": "Toast after the learner says they can’t speak now during Find my level."
+  },
+  "findLevelPaused": "Paused. Choose Find my level again within 7 days to carry on.",
+  "@findLevelPaused": {
+    "description": "Toast after the learner leaves Find my level part-way."
+  },
+  "findLevelCheckpointTitle": "{count} questions answered",
+  "@findLevelCheckpointTitle": {
+    "description": "Find my level, every 25 questions: the heading of the pause.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "25"
+      }
+    }
+  },
+  "findLevelCheckpointBody": "This is where you stand now. If you think you are better than this, keep going. Or stop here and we will place you at these levels.",
+  "@findLevelCheckpointBody": {
+    "description": "Find my level, every 25 questions: what the learner is asked to choose."
+  },
+  "findLevelKeepGoing": "Keep going",
+  "@findLevelKeepGoing": {
+    "description": "Find my level checkpoint: carries on with more questions."
+  },
+  "findLevelStopHere": "Stop here",
+  "@findLevelStopHere": {
+    "description": "Find my level checkpoint: ends the check and places the learner at the levels shown."
+  },
+  "findLevelSkillRead": "Read",
+  "@findLevelSkillRead": {
+    "description": "Find my level: the name of the Read skill in a list of levels."
+  },
+  "findLevelSkillHear": "Hear",
+  "@findLevelSkillHear": {
+    "description": "Find my level: the name of the Hear skill in a list of levels."
+  },
+  "findLevelSkillSay": "Say",
+  "@findLevelSkillSay": {
+    "description": "Find my level: the name of the Speak skill in a list of levels."
+  },
+  "findLevelSkillWrite": "Write",
+  "@findLevelSkillWrite": {
+    "description": "Find my level: the name of the Write skill in a list of levels."
+  },
+  "findLevelSkillScript": "Script",
+  "@findLevelSkillScript": {
+    "description": "Find my level: the name of the script skill in a list of levels."
+  },
+  "findLevelSkillSecondScript": "Second script",
+  "@findLevelSkillSecondScript": {
+    "description": "Find my level: the name of the second script skill in a list of levels."
+  },
+  "findLevelLabelNotSureYet": "Not sure yet",
+  "@findLevelLabelNotSureYet": {
+    "description": "Find my level: how sure the check is, under 50%."
+  },
+  "findLevelLabelFairlySure": "Fairly sure",
+  "@findLevelLabelFairlySure": {
+    "description": "Find my level: how sure the check is, 50% to 79%."
+  },
+  "findLevelLabelSure": "Sure",
+  "@findLevelLabelSure": {
+    "description": "Find my level: how sure the check is, 80% to 94%."
+  },
+  "findLevelLabelVerySure": "Very sure",
+  "@findLevelLabelVerySure": {
+    "description": "Find my level: how sure the check is, 95% or more."
+  },
+  "findLevelLabelVerified": "Verified",
+  "@findLevelLabelVerified": {
+    "description": "Find my level: the learner showed the whole course up to B1 in this skill."
+  },
+  "findLevelStandUnit": "{skill}: unit {unit} · {label}",
+  "@findLevelStandUnit": {
+    "description": "Find my level: where one skill is placed. {unit} is the unit the learner knows up to.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "unit": {
+        "type": "int",
+        "example": "40"
+      },
+      "label": {
+        "type": "String",
+        "example": "Very sure"
+      }
+    }
+  },
+  "findLevelStandStart": "{skill}: from the beginning · {label}",
+  "@findLevelStandStart": {
+    "description": "Find my level: a skill placed at the very start.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "label": {
+        "type": "String",
+        "example": "Very sure"
+      }
+    }
+  },
+  "findLevelStandScriptKnown": "{skill}: known · {label}",
+  "@findLevelStandScriptKnown": {
+    "description": "Find my level: the script is read.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "label": {
+        "type": "String",
+        "example": "Very sure"
+      }
+    }
+  },
+  "findLevelStandScriptNot": "{skill}: not yet · {label}",
+  "@findLevelStandScriptNot": {
+    "description": "Find my level: the script is not read yet.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "label": {
+        "type": "String",
+        "example": "Very sure"
+      }
+    }
+  },
+  "findLevelStandNotTested": "{skill}: not tested",
+  "@findLevelStandNotTested": {
+    "description": "Find my level: a skill that was not asked.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      }
+    }
+  },
+  "findLevelSummaryTitle": "Where you start",
+  "@findLevelSummaryTitle": {
+    "description": "Find my level: the heading of the result."
+  },
+  "findLevelSummaryIntro": "This is where we think you are. Tap a line to see how sure we are.",
+  "@findLevelSummaryIntro": {
+    "description": "Find my level: under the heading of the result."
+  },
+  "findLevelNoteNotSureYet": "A first guess. Low is fine: you can find your level again later.",
+  "@findLevelNoteNotSureYet": {
+    "description": "Find my level: said under a skill the check is not yet sure of (under 50%). Calm, never a fail."
+  },
+  "findLevelNoteFairlySure": "A fair guess. You can find your level again later to sharpen it.",
+  "@findLevelNoteFairlySure": {
+    "description": "Find my level: said under a skill the check is fairly sure of (50% to 79%)."
+  },
+  "findLevelNoteVerified": "You showed this across the whole course up to B1.",
+  "@findLevelNoteVerified": {
+    "description": "Find my level: said under a Verified skill."
+  },
+  "findLevelNotTestedNoMic": "The microphone was not available or was given up, so this was not tested. Nothing is held against you.",
+  "@findLevelNotTestedNoMic": {
+    "description": "Find my level: why Say was not tested (no microphone from the start, or the learner gave it up)."
+  },
+  "findLevelNotTestedUnavailable": "A question for this one could not be played or shown, so it was not tested. Nothing is held against you.",
+  "@findLevelNotTestedUnavailable": {
+    "description": "Find my level: why a skill was not tested, when its questions could not be built, such as a sound that would not play."
+  },
+  "findLevelNotTestedNotAsked": "We did not ask about this one, so it was not tested.",
+  "@findLevelNotTestedNotAsked": {
+    "description": "Find my level: why a skill was not tested, when no question could be asked about it."
+  },
+  "findLevelDetailPercent": "About {percent}% sure, from {count, plural, =1{1 answer} other{{count} answers}}.",
+  "@findLevelDetailPercent": {
+    "description": "Find my level: the detail of a skill's result, the only place a percentage is shown.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      },
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "findLevelSheetLabel": "{skill}: {label}",
+  "@findLevelSheetLabel": {
+    "description": "Languages sheet: one skill and how sure its last level check was, under its row.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "label": {
+        "type": "String",
+        "example": "Sure"
+      }
+    }
+  },
+  "findLevelResumeTitle": "Carry on where you left off?",
+  "@findLevelResumeTitle": {
+    "description": "Find my level: asked when a paused check is waiting."
+  },
+  "findLevelResumeBody": "You paused your level check for {language} after {count} questions.",
+  "@findLevelResumeBody": {
+    "description": "Find my level: the body of the question about a paused check.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "findLevelResumeGo": "Carry on",
+  "@findLevelResumeGo": {
+    "description": "Find my level: carries on the paused check."
+  },
+  "findLevelResumeNew": "Start again",
+  "@findLevelResumeNew": {
+    "description": "Find my level: drops the paused check and starts a new one."
+  },
+  "findLevelNoCourse": "There are no decks to check {language} with yet.",
+  "@findLevelNoCourse": {
+    "description": "Toast when Find my level has no word deck to ask from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelNothingToCheck": "Set a skill to Know or Learn, then find your level.",
+  "@findLevelNothingToCheck": {
+    "description": "Toast when Find my level has no skill to check."
+  },
+  "findLevelResumeDeviceChanged": "Your paused run needs sound or the microphone, which this phone cannot use now, so it starts again.",
+  "@findLevelResumeDeviceChanged": {
+    "description": "Toast when a paused Find my level run can no longer be carried on because the voice or the microphone it used is gone, and a new run is offered."
+  },
+  "findLevelFinishFailed": "Your answers could not be saved just now. They are kept: try again.",
+  "@findLevelFinishFailed": {
+    "description": "Find my level: shown when writing the outcome of a finished run failed, above a Try again button; the run is kept."
+  },
+  "findLevelNothingToCheckNoVoice": "Nothing to check yet: Hear needs sound on and a voice for {language} on this phone.",
+  "@findLevelNothingToCheckNoVoice": {
+    "description": "Toast when the only skill Find my level would check is Hear and the phone has no voice (or sound is off), so nothing is asked and nothing is written.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelAudioFailed": "Couldn’t play this sound. Try Play again, or skip the question.",
+  "@findLevelAudioFailed": {
+    "description": "Find my level: shown in place of a heard question when the phone’s voice failed to play it."
+  },
+  "findLevelSkipQuestion": "Skip this question",
+  "@findLevelSkipQuestion": {
+    "description": "Find my level: button that leaves out a question whose sound would not play. It is not counted as a wrong answer."
+  },
+  "languagesVerifyKnown": "Verify what you know",
+  "@languagesVerifyKnown": {
+    "description": "Languages page, a language’s row: checks the skills marked as known."
+  },
+  "languagesVerifyKnownSub": "Checks the skills you marked as known.",
+  "@languagesVerifyKnownSub": {
+    "description": "Under Verify what you know."
   }
 }

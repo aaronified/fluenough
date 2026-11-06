@@ -86,6 +86,14 @@ class _PairDrillState extends State<PairDrill> {
     final incoming = isIncoming(context, Feature.drillPair);
     final round = _round;
     final heard = round.heard;
+    final heardReading =
+        quotedReading(
+          context,
+          reading: heard.reading,
+          ipa: heard.ipa,
+          target: heard.target,
+        ) ??
+        heard.reading;
     final picked = _picked;
     final heardSide = round.playsB ? PairSide.b : PairSide.a;
     final right = picked == heardSide;
@@ -118,6 +126,7 @@ class _PairDrillState extends State<PairDrill> {
       progress: (_index + (picked == null ? 0 : 0.5)) / widget.rounds.length,
       onClose: () => Navigator.maybePop(context),
       needsSound: picked == null,
+      going: DrillGoing(onNext: _next, nextOn: picked != null, pinned: true),
       card: <Widget>[
         Text(
           l10n.drillPairQuestion,
@@ -167,26 +176,10 @@ class _PairDrillState extends State<PairDrill> {
           : FeedbackBanner(
               kind: right ? FeedbackKind.correct : FeedbackKind.wrong,
               title: right
-                  ? l10n.feedbackPairCorrect(heard.reading)
-                  : l10n.feedbackPairWrong(heard.reading),
+                  ? l10n.feedbackPairCorrect(heardReading)
+                  : l10n.feedbackPairWrong(heardReading),
               detail: l10n.feedbackPairHeard(heard.target),
             ),
-      actions: picked == null
-          ? const <Widget>[]
-          : <Widget>[
-              FilledButton(
-                onPressed: _next,
-                style: AppButtonStyles.tall(context),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Flexible(child: Text(l10n.commonContinue)),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.arrow_forward, size: 22),
-                  ],
-                ),
-              ),
-            ],
     );
   }
 }

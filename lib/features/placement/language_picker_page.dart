@@ -578,7 +578,6 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         settings: const RouteSettings(name: '/placement'),
         builder: (_) => PlacementPage(
           languages: <String>[code],
-          asked: <String>{code},
           alphabet: <String, bool>{
             if (language.scriptDecks) code: state.settings.learnsAlphabet(code),
           },
@@ -775,8 +774,6 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         settings: const RouteSettings(name: '/placement'),
         builder: (_) => PlacementPage(
           languages: place,
-          // "Find my level" is asked for already, in each sheet.
-          asked: place.toSet(),
           languageNames: _spokenNames,
           alphabet: <String, bool>{
             for (final code in place) code: ?alphabet[code],

@@ -3,7 +3,6 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/settings.dart';
 import '../../core/scheduling/ask.dart';
 import '../../l10n/app_localizations.dart';
-import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/ipa_line.dart';
@@ -11,6 +10,7 @@ import '../../ui/widgets/reading_first.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'picture_tile.dart';
 import 'set_drill.dart';
 import 'taught_details.dart';
@@ -44,9 +44,18 @@ class PictureChoiceDrill extends StatelessWidget {
     final answered = picked != null;
     final right = picked != null && session.isRight(picked);
     final options = session.options;
+    // Answered, the right picture and, when the learner chose wrong, the one
+    // they chose; the others are not shown (owner, 2026-10-31, doubt 13).
+    final shown = <int>[
+      for (var i = 0; i < options.length; i++)
+        if (!answered ||
+            session.isRight(options[i]) ||
+            picked.id == options[i].id)
+          i,
+    ];
 
     Widget tile(int place) => Expanded(
-      child: place < options.length
+      child: place >= 0 && place < options.length
           ? PictureTile(
               card: options[place],
               number: place + 1,
@@ -68,6 +77,7 @@ class PictureChoiceDrill extends StatelessWidget {
       progress: session.progress,
       onClose: onClose,
       needsSound: _hears && !answered,
+      going: goingOn(session, answered: answered),
       card: <Widget>[
         ...(_hears
             ? _heardCard(context, answered)
@@ -80,15 +90,15 @@ class PictureChoiceDrill extends StatelessWidget {
           label: l10n.drillOptionsGroup,
           child: Column(
             children: <Widget>[
-              for (var row = 0; row < options.length; row += 2) ...<Widget>[
+              for (var row = 0; row < shown.length; row += 2) ...<Widget>[
                 if (row > 0) const SizedBox(height: 12),
                 IntrinsicHeight(
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      tile(row),
+                      tile(shown[row]),
                       const SizedBox(width: 12),
-                      tile(row + 1),
+                      tile(row + 1 < shown.length ? shown[row + 1] : -1),
                     ],
                   ),
                 ),
@@ -99,32 +109,17 @@ class PictureChoiceDrill extends StatelessWidget {
       ],
       feedback: !answered
           ? null
-          : right
-          ? FeedbackBanner(
-              kind: FeedbackKind.correct,
-              title: l10n.feedbackCorrect,
-            )
-          : FeedbackBanner(
-              kind: FeedbackKind.wrong,
-              title: l10n.feedbackWrong,
-              detail: l10n.feedbackAnswer(card.native),
-            ),
-      actions: answered
-          ? <Widget>[
-              FilledButton(
-                onPressed: session.next,
-                style: AppButtonStyles.tall(context),
-                child: Row(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Flexible(child: Text(l10n.commonContinue)),
-                    const SizedBox(width: 10),
-                    const Icon(Icons.arrow_forward, size: 22),
-                  ],
-                ),
-              ),
-            ]
-          : const <Widget>[],
+          : alreadyAnswered(context, session) ??
+                (right
+                    ? FeedbackBanner(
+                        kind: FeedbackKind.correct,
+                        title: l10n.feedbackCorrect,
+                      )
+                    : FeedbackBanner(
+                        kind: FeedbackKind.wrong,
+                        title: l10n.feedbackWrong,
+                        detail: l10n.feedbackAnswer(card.native),
+                      )),
     );
   }
 

@@ -8,7 +8,8 @@ import '../app/skill.dart';
 /// so that no phone can answer the request for it with another font.
 const String interfaceFontFamily = 'Roboto';
 
-/// The app's Material 3 themes, built from the learner's colour seed.
+/// The app's Material 3 themes, built from the learner's colour seed, or from
+/// the phone's wallpaper colour on Android 12 and later when they ask.
 ///
 /// The design's "Forest" is the M3 tonal-spot scheme from seed `#3F6C51`, so
 /// the schemes are generated with [ColorScheme.fromSeed] and never copied from
@@ -20,36 +21,53 @@ const String interfaceFontFamily = 'Roboto';
 /// chips, 16 px SnackBars, an 80 px navigation bar.
 abstract final class AppTheme {
   // A theme is worked out once for what it reads (#854): a settings change
-  // that is not the seed, the contrast or pure black, hands MaterialApp the
-  // identical object, so nothing under it restyles.
-  static final Map<(ThemeSeed, bool), ThemeData> _lights =
-      <(ThemeSeed, bool), ThemeData>{};
-  static final Map<(ThemeSeed, bool, bool), ThemeData> _darks =
-      <(ThemeSeed, bool, bool), ThemeData>{};
+  // that is not the colour, the contrast or pure black, hands MaterialApp the
+  // identical object, so nothing under it restyles. The colour is the ARGB
+  // the scheme is made from: a seed's, or the wallpaper's.
+  static final Map<(int, bool), ThemeData> _lights = <(int, bool), ThemeData>{};
+  static final Map<(int, bool, bool), ThemeData> _darks =
+      <(int, bool, bool), ThemeData>{};
 
+  /// The light theme. [wallpaper], when the learner has Wallpaper colours on
+  /// and the phone gives one (Android 12 and later), is the colour the scheme
+  /// is made from instead of [seed]; high contrast still applies.
   static ThemeData light({
     ThemeSeed seed = ThemeSeed.forest,
     bool highContrast = false,
-  }) => _lights.putIfAbsent(
-    (seed, highContrast),
-    () => fromScheme(
-      _scheme(seed, Brightness.light, highContrast),
-      modes: highContrast ? ModeColors.lightHigh : ModeColors.light,
-    ),
-  );
+    Color? wallpaper,
+  }) {
+    final source = _source(seed, wallpaper);
+    return _lights.putIfAbsent(
+      (source, highContrast),
+      () => fromScheme(
+        _scheme(source, Brightness.light, highContrast),
+        modes: highContrast ? ModeColors.lightHigh : ModeColors.light,
+      ),
+    );
+  }
 
+  /// The dark theme; pure black goes on top of the scheme, wallpaper colours
+  /// or not.
   static ThemeData dark({
     ThemeSeed seed = ThemeSeed.forest,
     bool highContrast = false,
     bool pureBlack = false,
-  }) => _darks.putIfAbsent((
-    seed,
-    highContrast,
-    pureBlack,
-  ), () => _dark(seed, highContrast, pureBlack));
+    Color? wallpaper,
+  }) {
+    final source = _source(seed, wallpaper);
+    return _darks.putIfAbsent((
+      source,
+      highContrast,
+      pureBlack,
+    ), () => _dark(source, highContrast, pureBlack));
+  }
 
-  static ThemeData _dark(ThemeSeed seed, bool highContrast, bool pureBlack) {
-    final scheme = _scheme(seed, Brightness.dark, highContrast);
+  static int _source(ThemeSeed seed, Color? wallpaper) =>
+      // Opaque, whatever the phone says: the scheme is made from a hue.
+      wallpaper == null ? seed.argb : 0xFF000000 | (wallpaper.toARGB32());
+
+  static ThemeData _dark(int source, bool highContrast, bool pureBlack) {
+    final scheme = _scheme(source, Brightness.dark, highContrast);
     return fromScheme(
       pureBlack
           ? scheme.copyWith(
@@ -62,9 +80,9 @@ abstract final class AppTheme {
     );
   }
 
-  static ColorScheme _scheme(ThemeSeed seed, Brightness b, bool high) =>
+  static ColorScheme _scheme(int source, Brightness b, bool high) =>
       ColorScheme.fromSeed(
-        seedColor: Color(seed.argb),
+        seedColor: Color(source),
         brightness: b,
         contrastLevel: high ? 1.0 : 0.0,
       );

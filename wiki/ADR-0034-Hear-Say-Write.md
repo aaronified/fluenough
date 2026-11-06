@@ -170,9 +170,9 @@ are not interchangeable.
   there are logs enough to compare the two. Not done.
 - **Handwriting answers Write** (owner, 2026-10-06; it replaces "a skill of
   its own"): writing in the script by hand is one way to answer a Write
-  question, not a schedule of its own (`docs/plans/handwriting.md`).
+  question, not a schedule of its own ([Plan-Handwriting](Plan-Handwriting)).
 - **Cloze is a sentence's own item, produced in Write:** the gap is any word
-  the learner has learnt (`docs/plans/sentence-building.md`).
+  the learner has learnt ([Plan-Sentence-Building](Plan-Sentence-Building)).
 - **After the script,** Write expects the script; an answer in Latin letters
   counts as before (#168). Not built.
 - **A picture** is a cue for Write and for Hear's choices, for concrete
@@ -295,10 +295,10 @@ before the script, six after):
   form and choosing what it means;** choosing among forms of the same word,
   the rule cards' question, or typing the form, is produced (owner,
   2026-10-09, settling question 22 of the B1 format spec, now folded into
-  `docs/DECK-FORMAT.md`). Until then grammar keeps one
+  [Deck-Format](Deck-Format)). Until then grammar keeps one
   schedule, typed.
 - **Settings** already has one switch per skill, so one per activity; their
-  wording waits for `docs/plans/settings-wording.md`.
+  wording waits for [Plan-Settings-Wording](Plan-Settings-Wording).
 - **SM-2 goes, all but its history** (owner, 2026-10-09): migration 6 drops
   `reviews.ease_before` and `ease_after`, keeping every row; see ADR-0033.
 - **FSRS fitted to the learner** and everything the owner decided about it
@@ -310,9 +310,9 @@ before the script, six after):
 ### Open, not built, or kept elsewhere
 
 - **Grammar understood and produced:** moved to the B1 format, built in #434
-  and described in `docs/DECK-FORMAT.md` ("Rules decks"; settled 2026-10-09).
+  and described in [Deck-Format](Deck-Format) ("Rules decks"; settled 2026-10-09).
 - **Cloze,** with the owner's wording of how it is asked and its easier and
-  harder grades: `docs/plans/sentence-building.md` (#222).
+  harder grades: [Plan-Sentence-Building](Plan-Sentence-Building) (#222).
 - **The optimiser:** done, ADR-0035.
 - **Tracked for the learner, not per word,** not built, and in no plan:
   accent, from hearing several voices (Bradlow & Bent 2008; Baese-Berk et

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:intl/intl.dart' as intl;
 
+import '../../app/app_scope.dart';
 import '../../core/models/deck.dart';
 import '../theme.dart';
 import 'target_text.dart';
@@ -20,6 +22,11 @@ enum FeedbackKind {
 
   /// Wrong, or "Don't know": `errorContainer`, a cross.
   wrong,
+
+  /// A question gone back to: it was answered, and cannot be changed. Neutral
+  /// on purpose, the `surfaceContainerHigh` of the card and a lock, never the
+  /// green or the red of a verdict (#509, phase 0).
+  locked,
 }
 
 /// The status panel at the foot of a drill once an answer is in: a bold
@@ -29,7 +36,11 @@ enum FeedbackKind {
 /// A live region, so screen readers announce it as it appears. [detail]
 /// often quotes deck content, so its direction is taken from its own text,
 /// and each of [quotes] in the title or the detail is read in [language].
-class FeedbackBanner extends StatelessWidget {
+///
+/// **The one place a verdict is felt** (Plan-Haptics): as the banner
+/// appears, right gives `correct` (a quiet tap), close too, a near miss a
+/// `warning`, wrong the `wrong` knock. A question gone back to is silent.
+class FeedbackBanner extends StatefulWidget {
   const FeedbackBanner({
     super.key,
     required this.kind,
@@ -49,6 +60,49 @@ class FeedbackBanner extends StatelessWidget {
 
   /// The language of [quotes], or null to mark none.
   final LanguageInfo? language;
+
+  @override
+  State<FeedbackBanner> createState() => _FeedbackBannerState();
+}
+
+class _FeedbackBannerState extends State<FeedbackBanner> {
+  @override
+  void initState() {
+    super.initState();
+    _feel();
+  }
+
+  @override
+  void didUpdateWidget(FeedbackBanner old) {
+    super.didUpdateWidget(old);
+    // The same element showing another verdict is a new verdict.
+    if (old.kind != widget.kind) _feel();
+  }
+
+  /// After the frame that draws the verdict, so the learner feels what they
+  /// see.
+  void _feel() {
+    SchedulerBinding.instance.addPostFrameCallback((_) {
+      if (!mounted) return;
+      final haptics = AppScope.maybeRead(context)?.haptics;
+      switch (widget.kind) {
+        case FeedbackKind.correct || FeedbackKind.close:
+          haptics?.correct();
+        case FeedbackKind.nearMiss:
+          haptics?.warning();
+        case FeedbackKind.wrong:
+          haptics?.wrong();
+        case FeedbackKind.locked:
+          break;
+      }
+    });
+  }
+
+  FeedbackKind get kind => widget.kind;
+  String get title => widget.title;
+  String? get detail => widget.detail;
+  List<String> get quotes => widget.quotes;
+  LanguageInfo? get language => widget.language;
 
   TextSpan _span(String text) {
     final language = this.language;
@@ -81,6 +135,11 @@ class FeedbackBanner extends StatelessWidget {
         scheme.errorContainer,
         scheme.onErrorContainer,
         Icons.highlight_off,
+      ),
+      FeedbackKind.locked => (
+        scheme.surfaceContainerHigh,
+        scheme.onSurface,
+        Icons.lock_outline,
       ),
     };
     final text = detail;

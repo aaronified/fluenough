@@ -246,6 +246,9 @@ FONTS = {
         "Noto Sans Egyptian Hieroglyphs", "NotoSansEgyptianHieroglyphs.ttf"),
     "cuneiform": ("Noto Sans Cuneiform", "NotoSansCuneiform.ttf"),
     "linear_b": ("Noto Sans Linear B", "NotoSansLinearB.ttf"),
+    "perso_arabic_naskh": ("Noto Naskh Arabic", "NotoNaskhArabic.ttf"),
+    "ol_chiki": ("Noto Sans Ol Chiki", "NotoSansOlChiki.ttf"),
+    "hebrew": ("Noto Sans Hebrew", "NotoSansHebrew.ttf"),
     "han_simplified": ("Noto Sans SC", "NotoSansSC.ttf"),
     "han_traditional": ("Noto Sans TC", "NotoSansTC.ttf"),
     "han": ("Noto Sans JP", "NotoSansJP.ttf"),
@@ -253,6 +256,17 @@ FONTS = {
     "hangul": ("Noto Sans KR", "NotoSansKR.ttf"),
 }
 FONTS_DIR = DECKS / "fonts"
+
+# A language that draws a script in another font than the script's own
+# (owner, 2026-11-02): Persian and Pashto are set in Naskh, while the Urdu
+# `perso_arabic` font stays Nastaliq for Hindustani and the others. The key
+# is (language code, script), the value a FONTS key; the app's
+# `fontScriptFor` (lib/core/decks/script_fonts.dart) holds the same table,
+# and a test keeps the two equal.
+LANGUAGE_FONTS = {
+    ("fa", "perso_arabic"): "perso_arabic_naskh",
+    ("ps", "perso_arabic"): "perso_arabic_naskh",
+}
 
 # Kinds of file that hold no deck: one of each per language at most. A
 # language whose files are all of these has no written deck, and is left
@@ -456,11 +470,13 @@ def _scripts_of(code: str, block: dict, scripts: dict[str, list[str]]) -> list[s
     return found
 
 
-def _font_entries(scripts: list[str]) -> list[dict]:
+def _font_entries(scripts: list[str], code: str = "") -> list[dict]:
     """The fonts of [scripts] that decks/fonts/ holds (ADR-0042), in the
-    order of [scripts]."""
+    order of [scripts]. [code] is the language: LANGUAGE_FONTS swaps a
+    script's font for the one its language draws it in."""
     entries = []
     for script in scripts:
+        script = LANGUAGE_FONTS.get((code, script), script)
         if script not in FONTS:
             continue
         family, name = FONTS[script]
@@ -491,7 +507,7 @@ def build(reports: list[vd.Report] | None = None,
                    if p.is_dir() and p.name not in HIDDEN | {FONTS_DIR.name})
     paths = [p for d in langs for p in vd._yaml_files(d)]
     if reports is None:
-        reports = [vd.validate(p) for p in paths]
+        reports = vd.validate_many(paths)
     by_path = {rep.path.resolve(): rep for rep in reports}
     missing = [p for p in paths if p.resolve() not in by_path]
     if missing:
@@ -586,7 +602,7 @@ def build(reports: list[vd.Report] | None = None,
             language["media"] = media
         # Apart from `files` and from the size: the released app reads only
         # those, and passes this by (ADR-0042).
-        fonts = _font_entries(_scripts_of(code, block, own_scripts))
+        fonts = _font_entries(_scripts_of(code, block, own_scripts), code)
         if fonts:
             language["fonts"] = fonts
         # Apart from `files` and from the size too: the released app passes

@@ -231,12 +231,16 @@ class CoreExample {
     this.language,
     this.sounds = true,
     this.words,
+    this.targetScripts = const <String, String>{},
   });
 
   final String target;
   final String? reading;
   final String? ipa;
   final List<CardBase> bases;
+
+  /// The example in the language's other scripts (`target_scripts`).
+  final Map<String, String> targetScripts;
 
   /// [target]'s words, where the core gives them (`words`).
   final List<String>? words;
@@ -1057,6 +1061,7 @@ class _Merge {
             language: example.language,
             sounds: example.sounds,
             words: example.words,
+            targetScripts: example.targetScripts,
             bases: bases(
               example.bases,
               translation.bases,

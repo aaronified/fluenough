@@ -57,36 +57,52 @@ class HowYouLearnPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
-    final state = AppScope.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(l10n.howYouLearnTitle),
         actions: const <Widget>[ReportButton()],
       ),
-      body: SafeArea(
-        top: false,
-        child: ListenableBuilder(
-          listenable: Listenable.merge(<Listenable>[
-            state.pacing,
-            state.progress,
-          ]),
-          builder: (context, _) {
-            final paces = state.pacing.paces;
-            if (paces == null) {
-              return Center(
-                child: CircularProgressIndicator(
-                  semanticsLabel: l10n.howYouLearnWorking,
-                ),
-              );
-            }
-            return _Body(
-              state: state,
-              paces: _shown(state, paces.values),
-              someAdjusted: state.pacing.adjusted,
-            );
-          },
-        ),
-      ),
+      body: SafeArea(top: false, child: HowYouLearnView(language: language)),
+    );
+  }
+}
+
+/// What the How you learn page shows, for [language] alone when given, else
+/// every language the profile learns: the content of the page, and of
+/// Today's short popover ([showHowYouLearnPopover]), which is the same
+/// widgets for one language (#1009).
+class HowYouLearnView extends StatelessWidget {
+  const HowYouLearnView({super.key, this.language, this.compact = false});
+
+  final String? language;
+
+  /// For the popover: sized to its content, and only the skills' part of the
+  /// page, with no intro (the popover's subtitle), no "not yet" card and no
+  /// privacy line, which stay on the page.
+  final bool compact;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final state = AppScope.of(context);
+    return ListenableBuilder(
+      listenable: Listenable.merge(<Listenable>[state.pacing, state.progress]),
+      builder: (context, _) {
+        final paces = state.pacing.paces;
+        if (paces == null) {
+          return Center(
+            child: CircularProgressIndicator(
+              semanticsLabel: l10n.howYouLearnWorking,
+            ),
+          );
+        }
+        return _Body(
+          state: state,
+          paces: _shown(state, paces.values),
+          someAdjusted: state.pacing.adjusted,
+          compact: compact,
+        );
+      },
     );
   }
 
@@ -116,10 +132,12 @@ class _Body extends StatelessWidget {
     required this.state,
     required this.paces,
     required this.someAdjusted,
+    required this.compact,
   });
 
   final AppState state;
   final List<SkillPace> paces;
+  final bool compact;
 
   /// Whether some fit kept a set other than the defaults, in any language.
   final bool someAdjusted;
@@ -143,23 +161,24 @@ class _Body extends StatelessWidget {
     final shownAdjusted = paces.any((p) => p.adjusted);
 
     final children = <Widget>[
-      Text(l10n.howYouLearnIntro, style: theme.textTheme.bodyLarge),
-      if (!someAdjusted) ...<Widget>[
+      if (!compact)
+        Text(l10n.howYouLearnIntro, style: theme.textTheme.bodyLarge),
+      if (!someAdjusted && !compact) ...<Widget>[
         const SizedBox(height: 16),
         _NotYet(state: state),
       ],
       if (shownAdjusted) ...<Widget>[
-        const SizedBox(height: 16),
-        const _Legend(),
+        if (!compact) const SizedBox(height: 16),
+        _Legend(flat: compact),
       ],
     ];
     for (final code in languages) {
       final group = <Widget>[
         for (final p in paces)
           if (p.key.language == code)
-            _SkillRow(pace: p, axis: axis, state: state),
+            _SkillRow(pace: p, axis: axis, state: state, flat: compact),
       ];
-      children.add(const SizedBox(height: 16));
+      children.add(SizedBox(height: compact ? 8 : 16));
       if (languages.length > 1) {
         children.add(
           Padding(
@@ -176,7 +195,16 @@ class _Body extends StatelessWidget {
           ),
         );
       }
-      children.add(GroupedList(gap: 2, children: group));
+      if (compact) {
+        // The popover: plain sections over the full width, a thin divider
+        // between, no cards.
+        for (final (i, row) in group.indexed) {
+          if (i > 0) children.add(const Divider(height: 1));
+          children.add(row);
+        }
+      } else {
+        children.add(GroupedList(gap: 2, children: group));
+      }
     }
 
     final footnote = _lastFit(context, languages);
@@ -184,37 +212,44 @@ class _Body extends StatelessWidget {
       children.addAll(<Widget>[
         const SizedBox(height: 16),
         Padding(
-          padding: const EdgeInsetsDirectional.only(start: 64, end: 16),
+          padding: compact
+              ? const EdgeInsetsDirectional.symmetric(horizontal: _popoverSide)
+              : const EdgeInsetsDirectional.only(start: 64, end: 16),
           child: Text(footnote, style: muted),
         ),
       ]);
     }
-    children.addAll(<Widget>[
-      const SizedBox(height: 12),
-      Padding(
-        padding: const EdgeInsetsDirectional.symmetric(
-          horizontal: AppSizes.textInset,
-        ),
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            SizedBox(
-              width: 36,
-              child: Icon(
-                Icons.lock_outline,
-                size: 18,
-                color: scheme.onSurfaceVariant,
+    if (!compact) {
+      children.addAll(<Widget>[
+        const SizedBox(height: 12),
+        Padding(
+          padding: const EdgeInsetsDirectional.symmetric(
+            horizontal: AppSizes.textInset,
+          ),
+          child: Row(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              SizedBox(
+                width: 36,
+                child: Icon(
+                  Icons.lock_outline,
+                  size: 18,
+                  color: scheme.onSurfaceVariant,
+                ),
               ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(child: Text(l10n.adjustedPrivacy, style: muted)),
-          ],
+              const SizedBox(width: 12),
+              Expanded(child: Text(l10n.adjustedPrivacy, style: muted)),
+            ],
+          ),
         ),
-      ),
-    ]);
+      ]);
+    }
 
     return ListView(
-      padding: const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 24),
+      shrinkWrap: compact,
+      padding: compact
+          ? EdgeInsets.zero
+          : const EdgeInsetsDirectional.fromSTEB(16, 4, 16, 24),
       children: children,
     );
   }
@@ -281,7 +316,10 @@ class _NotYet extends StatelessWidget {
 
 /// "You" (the filled part of a bar) and "At the start" (its tick).
 class _Legend extends StatelessWidget {
-  const _Legend();
+  const _Legend({this.flat = false});
+
+  /// In the popover: the full width, with no side padding.
+  final bool flat;
 
   @override
   Widget build(BuildContext context) {
@@ -301,7 +339,9 @@ class _Legend extends StatelessWidget {
       ],
     );
     return Padding(
-      padding: const EdgeInsetsDirectional.symmetric(horizontal: 8),
+      padding: EdgeInsetsDirectional.symmetric(
+        horizontal: flat ? _popoverSide : 8,
+      ),
       child: Wrap(
         spacing: 18,
         runSpacing: 6,
@@ -341,9 +381,14 @@ class _SkillRow extends StatelessWidget {
     required this.pace,
     required this.axis,
     required this.state,
+    this.flat = false,
   });
 
   final SkillPace pace;
+
+  /// In the popover: a plain section over the full width, the pill and name
+  /// on a line and the rest under it, with no padding at the sides.
+  final bool flat;
 
   /// The days at the bar's far end.
   final int axis;
@@ -423,6 +468,44 @@ class _SkillRow extends StatelessWidget {
           style: muted,
         ),
       ]);
+    }
+
+    if (flat) {
+      return Padding(
+        padding: const EdgeInsetsDirectional.symmetric(
+          horizontal: _popoverSide,
+          vertical: 12,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+            Row(
+              children: <Widget>[
+                ExcludeSemantics(
+                  child: ModePill(
+                    skill: Skill.of(pace.key.mode),
+                    size: ModePillSize.small,
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Semantics(
+                    header: true,
+                    child: Text(
+                      l10n.paceSkillName(mode),
+                      style: theme.textTheme.titleMedium,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            for (final child in body) ...<Widget>[
+              const SizedBox(height: 8),
+              child,
+            ],
+          ],
+        ),
+      );
     }
 
     return Padding(
@@ -635,4 +718,70 @@ String _languageName(AppState state, String code) {
     if (language.code == code) return language.name;
   }
   return code;
+}
+
+/// The side padding of the popover's sections: the dialog gives its content
+/// the whole width, so the dividers run edge to edge and each section keeps
+/// its own margin.
+const double _popoverSide = 16;
+
+/// A short popover over Today (owner, 2026-11-04: "Short popover: with only
+/// that language's part of the how to learn page"): how the skills of
+/// [language] are fitted to the learner, as the page shows them, in a popup
+/// with Close, as the app's other info dots open theirs.
+Future<void> showHowYouLearnPopover(BuildContext context, String? language) {
+  final l10n = AppLocalizations.of(context)!;
+  final theme = Theme.of(context);
+  final name = language == null
+      ? null
+      : _languageName(AppScope.read(context), language);
+  return showDialog<void>(
+    context: context,
+    builder: (context) => AlertDialog(
+      // Wide, as a popup can be: 16 from the screen's edges, and the content
+      // across all of it (owner, 2026-11-04: "too thin").
+      insetPadding: const EdgeInsets.symmetric(
+        horizontal: _popoverSide,
+        vertical: 24,
+      ),
+      titlePadding: const EdgeInsetsDirectional.fromSTEB(
+        _popoverSide,
+        24,
+        _popoverSide,
+        0,
+      ),
+      contentPadding: const EdgeInsetsDirectional.only(top: 12, bottom: 8),
+      title: Text(
+        name == null ? l10n.howYouLearnTitle : l10n.howYouLearnTitleIn(name),
+      ),
+      content: SizedBox(
+        width: double.maxFinite,
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(
+                horizontal: _popoverSide,
+              ),
+              child: Text(
+                l10n.howYouLearnIntro,
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+            const SizedBox(height: 8),
+            Flexible(child: HowYouLearnView(language: language, compact: true)),
+          ],
+        ),
+      ),
+      actions: <Widget>[
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text(l10n.commonClose),
+        ),
+      ],
+    ),
+  );
 }

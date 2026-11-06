@@ -11,6 +11,7 @@ import '../../app/system_settings.dart';
 import '../../core/models/deck.dart';
 import '../../core/tts/tts_engine.dart';
 import '../../core/tts/voice_apps.dart';
+import '../../app/browser_words.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -223,7 +224,7 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
     final why = switch (await state.setSpeaking(true)) {
       SpeechSetup.ready => null,
       SpeechSetup.refused => l10n.settingsSpeakingRefused,
-      SpeechSetup.noRecogniser => l10n.settingsSpeakingNoRecogniser,
+      SpeechSetup.noRecogniser => speakingNoRecogniserText(l10n),
     };
     if (why != null && mounted) showAppSnackBar(context, why);
   }

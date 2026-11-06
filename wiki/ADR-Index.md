@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Every architecture decision record in the repo's docs/adr folder. Each one has its own page.
+Every architecture decision record in the wiki. Each one has its own page.
 
 - [ADR-0001](ADR-0001-Flutter): Build with Flutter
 - [ADR-0002](ADR-0002-System-Tts): Use the operating system's TTS, behind an interface
@@ -55,5 +55,7 @@ Every architecture decision record in the repo's docs/adr folder. Each one has i
 - [ADR-0050](ADR-0050-English-Synonym-Sets): Typed English meanings accept words from a curated file of synonym sets
 - [ADR-0051](ADR-0051-Replay-Snapshot): The replay snapshot: what opening the review log works out, kept and checked against the log
 - [ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index): The deck index says which app version a language or deck needs
+- [ADR-0053](ADR-0053-Japanese-Kanji): Japanese kanji is the `han` script of a two-script language, with the kana reading as the card's second spelling
+- [ADR-0054](ADR-0054-Say-Audio-Replay): Replaying the learner's own last answer in Say drills (proposed)
 
 See also: [Contributing](Contributing) · [ADR-Index](ADR-Index) · [Home](Home)

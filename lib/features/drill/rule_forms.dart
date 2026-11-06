@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/target_text.dart';
 import 'drill_session.dart';
+import '../../ui/widgets/ipa_line.dart';
 
 /// The word's forms in the rule, under the answer to a question about one of
 /// them (#417, owner, 2026-10-23: "show forms"), with the cell asked marked:
@@ -53,6 +54,15 @@ class RuleFormsTable extends StatelessWidget {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
     final cell = forms.first.rule!;
+    final lines = <String, ({String? reading, String? ipa, bool swapped})>{
+      for (final form in forms)
+        form.id: readingLines(
+          context,
+          reading: form.reading,
+          ipa: form.ipa,
+          target: form.target,
+        ),
+    };
     return Column(
       crossAxisAlignment: CrossAxisAlignment.stretch,
       spacing: 6,
@@ -101,9 +111,10 @@ class RuleFormsTable extends StatelessWidget {
                                 ? scheme.onPrimaryContainer
                                 : scheme.onSurface,
                           ),
-                          if (form.reading case final reading?)
-                            Text(
+                          if (lines[form.id]!.reading case final reading?)
+                            ReadingText(
                               reading,
+                              swapped: lines[form.id]!.swapped,
                               style: theme.textTheme.bodySmall!.copyWith(
                                 color: form.id == asked
                                     ? scheme.onPrimaryContainer

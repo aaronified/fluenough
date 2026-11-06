@@ -5,6 +5,7 @@ import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
+import 'mic_capture.dart';
 import 'speech_engine.dart';
 
 /// The operating system's speech recogniser, through the `speech_to_text`
@@ -16,10 +17,31 @@ import 'speech_engine.dart';
 /// callbacks into one result, with a deadline: a recogniser that never
 /// answers yields no match rather than a session that waits for ever.
 class SystemSpeechEngine implements SpeechEngine {
-  SystemSpeechEngine([SpeechToText? plugin])
-    : _plugin = plugin ?? SpeechToText();
+  SystemSpeechEngine([SpeechToText? plugin, MicCapture? capture])
+    : _plugin = plugin ?? SpeechToText(),
+      // In a browser two readers of the microphone are not safe, and the
+      // web build uses `WebSpeechEngine`; a capture given here is ignored
+      // rather than started (the same constant as Flutter's `kIsWeb`).
+      _capture = _inBrowser ? null : capture;
+
+  static const bool _inBrowser = bool.fromEnvironment('dart.library.js_util');
 
   final SpeechToText _plugin;
+
+  /// Keeps the learner's audio beside each listen, or null to keep none.
+  /// `speech_to_text` exposes no audio itself, so the capture is a second
+  /// reader of the microphone (ADR-0054, option 1). It is best effort: it
+  /// starts after the recogniser has the microphone, never throws, and
+  /// switches itself off if listens start failing to match while it runs,
+  /// so that a phone that cannot share the microphone listens as before.
+  final MicCapture? _capture;
+  int _unmatchedWithCapture = 0;
+
+  /// After this many listens in a row that heard nothing while the capture
+  /// ran, the capture is given up for good.
+  static const int _captureGivesUpAfter = 2;
+  bool get _capturing =>
+      _capture != null && _unmatchedWithCapture < _captureGivesUpAfter;
   Completer<SpeechHeard>? _listening;
   bool _listeningOnDevice = true;
   bool _started = false;
@@ -105,6 +127,8 @@ class SystemSpeechEngine implements SpeechEngine {
     } on SpeechError catch (e) {
       return SpeechHeard.failed(SpeechFailure.noRecogniser, code: e.code);
     }
+    final capture = _capturing ? _capture : null;
+    if (capture != null) await capture.finish();
     _listening?.complete(const SpeechHeard.failed(SpeechFailure.other));
     final done = _listening = Completer<SpeechHeard>();
     _partial = const <SpeechAlternative>[];
@@ -133,7 +157,10 @@ class SystemSpeechEngine implements SpeechEngine {
     } catch (e) {
       _finish(SpeechHeard.failed(SpeechFailure.other, code: codeOf(e)));
     }
-    return done.future.timeout(
+    // After the recogniser has the microphone, so that it is not the one
+    // that is shut out. Not awaited: it must not hold up the result.
+    if (capture != null) unawaited(capture.start());
+    final heard = await done.future.timeout(
       listenFor + _grace,
       onTimeout: () {
         _plugin.cancel();
@@ -144,6 +171,13 @@ class SystemSpeechEngine implements SpeechEngine {
             : const SpeechHeard.failed(SpeechFailure.noMatch, code: 'timeout');
       },
     );
+    if (capture == null) return heard;
+    final audio = await capture.finish();
+    _unmatchedWithCapture = heard.failure == SpeechFailure.noMatch
+        ? _unmatchedWithCapture + 1
+        : 0;
+    if (heard.failed || audio == null) return heard;
+    return SpeechHeard(heard.alternatives, ownAudio: audio);
   }
 
   @override

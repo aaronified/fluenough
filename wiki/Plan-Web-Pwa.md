@@ -28,10 +28,22 @@ iPhone users try Fluenough from Safari, with progress kept on the phone.
 2. **Installable (the PWA part).**
    - `web/manifest.json`: name, short name, `display: standalone`, theme
      colour, and icons at 192 and 512 px, with a maskable one.
-   - Flutter's service worker caches the app and the bundled decks, so it
-     opens offline after the first visit.
-   - iOS installs it from Safari's Share menu, "Add to Home Screen". The
-     app should say how, once, on iOS Safari.
+   - Offline (built, #1038): Flutter 3.47's generated service worker caches
+     nothing and unregisters itself, so `tools/brand_web.py` writes
+     `flutter_bootstrap.js` without Flutter's service worker settings and the
+     app ships its own worker, `tools/web/sw.js`. It is network-first with
+     the cache as fallback and a 5 s wait, revalidates each fetch, and keeps
+     a versioned cache (old caches are deleted on activate). It never touches
+     `decks/` or cross-origin requests, and only caches ok basic responses; a
+     failing cache write still serves the response. `tools/check_web_sw.py`
+     runs in `pages.yml` after the build and fails if Flutter's worker stops
+     being a stub.
+   - Install hint (built, #1038): a card on Today, web only. On iPhone and
+     iPad it says how to add the app from Safari; in Chrome an Install button
+     uses `beforeinstallprompt`. "Got it" hides it for good, "Later" for 7
+     days, and it is hidden once the app is installed. Its state is kept in
+     `localStorage`.
+   - iOS installs it from Safari's Share menu, "Add to Home Screen".
 3. **Sessions saved in the browser's storage.**
    - Progress is a drift database (ADR-0005). drift runs on the web on
      SQLite compiled to WebAssembly, stored in the browser's origin-private
@@ -45,11 +57,12 @@ iPhone users try Fluenough from Safari, with progress kept on the phone.
    | Feature | On the web |
    |---|---|
    | Speech | `flutter_tts` uses the browser's Web Speech API, which Safari has. Its voices differ from Android's, so the Voices page must show what the browser offers. |
-   | Speaking drill | `speech_to_text` works in Chrome and only partly in Safari. Where it can't hear, the drill says so, as it does for a phone without a recogniser. |
-   | Phone volume | `flutter_volume_controller` has no web support, and its code reads `dart:io`'s `Platform`, which throws on the web. `SystemVolumeMonitor` must not start on the web (`kIsWeb`). |
-   | Updates | The OTA update check and installer are Android-only. On the web, the service worker brings the new version. |
+   | Speaking drill | Built, #1039: `WebSpeechEngine` runs over the browser's Web Speech API. It is online-only, and it asks the learner before audio leaves the device (also in Find my level and placement). Chrome, Edge and Safari have a recogniser, partly in Safari; Firefox has none, so Say is not tested there and the drill says so. |
+   | Phone volume | `flutter_volume_controller` has no web support, and its code reads `dart:io`'s `Platform`, which throws on the web. `SystemVolumeMonitor` must not start on the web (`kIsWeb`). The sound check runs on the web (#1039). |
+   | Reminders | Hidden on the web through `FeatureRegistry.web()` (#1039). |
+   | Updates | The OTA update check and installer are Android-only, so the Updates and What's new rows are hidden on the web (`FeatureRegistry.web()`, #1039). The service worker brings the new version. |
    | Deck import and log export | `file_picker` works on the web: downloads and uploads instead of the file system. |
-   | Bug reports | Mail links work. Screenshots in reports need checking. |
+   | Bug reports | Reports open by `mailto:` in the learner's mail app (#1039). Screenshots in reports need checking. |
 
 5. **Storage that lasts on iOS.**
    - Safari may clear a website's storage after seven days without a visit,
@@ -57,6 +70,27 @@ iPhone users try Fluenough from Safari, with progress kept on the phone.
      persistent storage (`navigator.storage.persist()`) where the browser
      allows it, and suggest installing it.
    - It should also point to Settings > Export log as the backup.
+   - Built (#1038): a Storage group at the top of Your data, web only. It
+     shows whether the browser keeps the progress (`navigator.storage.persisted()`),
+     offers a button to ask for it (`navigator.storage.persist()`), and warns
+     that clearing the site's data deletes progress.
+6. **Checks.**
+   - Built (#1039): the Playwright smoke test job "Web: smoke test" in
+     `pages.yml` opens the built app in headless Chromium (`tools/web_smoke.cjs`),
+     on ubuntu-24.04 with Playwright 1.56.1, because Playwright's Chromium does
+     not yet support ubuntu-latest. It skips deck- and doc-only changes. It is
+     not a required check.
+
+## Known gaps (2026-11-06)
+
+- Private and local decks added from a file are kept in memory only on the
+  web, so they are lost on reload. They need their own storage; this matters
+  for [Plan-Private-Languages](Plan-Private-Languages) (0.9.0).
+- `flutter_tts`'s web plugin ignores a second `speak()` while one plays.
+- Untested on web: real Safari, Firefox and physical microphones; file import
+  and export; deep links; share; haptics.
+- GitHub Pages caches for up to 10 minutes, so a new build can take that long
+  to reach a visitor.
 
 ## To decide
 

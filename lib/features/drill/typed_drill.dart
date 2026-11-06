@@ -15,6 +15,7 @@ import '../../ui/widgets/speaker.dart';
 import 'answer_feedback.dart';
 import 'cant_now.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
 import 'rule_forms.dart';
 import 'set_drill.dart';
 import 'input_mode_choice.dart';
@@ -108,6 +109,11 @@ class _TypedDrillState extends State<TypedDrill> {
       progress: session.progress,
       onClose: widget.onClose,
       needsSound: listening && session.answer == null,
+      // A near miss waits for the learner's judgement before going on.
+      going: goingOn(
+        session,
+        answered: answer != null && !answer.awaitsJudgement,
+      ),
       card: <Widget>[
         ...listening
             ? _listeningCard(context, card, language, typing: typing)
@@ -137,15 +143,16 @@ class _TypedDrillState extends State<TypedDrill> {
             ],
       feedback: answer == null
           ? null
-          : AnswerFeedback(
-              answer: answer,
-              card: card,
-              expected: session.acceptedAnswers.first,
-              transliterating: translit,
-              language: session.typesDigits || session.hearsMeaning
-                  ? null
-                  : writing,
-            ),
+          : alreadyAnswered(context, session) ??
+                AnswerFeedback(
+                  answer: answer,
+                  card: card,
+                  expected: session.acceptedAnswers.first,
+                  transliterating: translit,
+                  language: session.typesDigits || session.hearsMeaning
+                      ? null
+                      : writing,
+                ),
       actions: _actions(context, answer, typing: typing),
     );
   }
@@ -352,6 +359,7 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ];
     }
+    if (session.readOnly) return const <Widget>[];
     if (answer.awaitsJudgement) {
       return <Widget>[
         Row(
@@ -382,19 +390,7 @@ class _TypedDrillState extends State<TypedDrill> {
         ),
       ];
     }
-    return <Widget>[
-      FilledButton(
-        onPressed: session.next,
-        style: AppButtonStyles.tall(context),
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Flexible(child: Text(l10n.commonContinue)),
-            const SizedBox(width: 10),
-            const Icon(Icons.arrow_forward, size: 22),
-          ],
-        ),
-      ),
-    ];
+    // Nothing is left to grade: going on is the swipe and the chevron.
+    return const <Widget>[];
   }
 }

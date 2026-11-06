@@ -162,10 +162,12 @@ class _BackupSectionState extends State<BackupSection> {
     try {
       final saved = await state.backups.backUpNow();
       if (saved && context.mounted) {
+        state.haptics.success();
         showAppSnackBar(context, l10n.settingsDataBackedUp);
       }
     } on Exception catch (e) {
       state.log.warning('Backup not made: ${e.runtimeType}');
+      state.haptics.error();
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsDataBackupFailed);
       }
@@ -181,6 +183,7 @@ class _BackupSectionState extends State<BackupSection> {
     try {
       final saved = await state.backups.download(backup);
       if (saved && context.mounted) {
+        state.haptics.success();
         showAppSnackBar(
           context,
           l10n.settingsBackupSaved(AppBackup.fileName(backup.createdAt)),
@@ -188,6 +191,7 @@ class _BackupSectionState extends State<BackupSection> {
       }
     } on Exception catch (e) {
       state.log.warning('Backup not downloaded: ${e.runtimeType}');
+      state.haptics.error();
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsDataBackupFailed);
       }
@@ -208,6 +212,7 @@ class _BackupSectionState extends State<BackupSection> {
       return;
     } on Exception catch (e) {
       state.log.warning('Backup not read: ${e.runtimeType}');
+      state.haptics.error();
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsDataRestoreNotBackup);
       }
@@ -247,6 +252,7 @@ class _BackupSectionState extends State<BackupSection> {
       backup = await state.backups.read(stored);
     } on Exception catch (e) {
       state.log.warning('Kept backup not read: ${e.runtimeType}');
+      state.haptics.error();
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsDataRestoreNotBackup);
       }
@@ -280,11 +286,13 @@ class _BackupSectionState extends State<BackupSection> {
       await state.backups.restore(backup, fromFile: fromFile);
     } on Object catch (e) {
       state.log.error('Restore failed: ${e.runtimeType}');
+      state.haptics.error();
       if (context.mounted) {
         showAppSnackBar(context, l10n.settingsDataRestoreFailed);
       }
       return;
     }
+    state.haptics.success();
     if (context.mounted) showAppSnackBar(context, l10n.settingsDataRestored);
   }
 }

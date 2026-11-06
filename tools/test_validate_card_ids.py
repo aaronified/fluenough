@@ -197,20 +197,13 @@ class CardIds(unittest.TestCase):
                 finally:
                     fresh.doCleanups()
 
-    def test_a_file_alone_is_held_to_the_repository_and_next_id_follows_the_highest(self) -> None:
-        cases = (
-            self._a_file_checked_alone_is_held_to_the_repository,
-            self._next_id_follows_the_highest_in_the_language,
-        )
-        for case in cases:
-            with self.subTest(case.__name__.lstrip("_")):
-                # Each case on a test of its own: its own setUp, cleanups.
-                fresh = type(self)(case.__name__)
-                fresh.setUp()
-                try:
-                    getattr(fresh, case.__name__)()
-                finally:
-                    fresh.doCleanups()
+    # Each reads the repository's real decks of a language (es, bn): minutes
+    # each, so they are two tests, which CI runs side by side.
+    def test_a_file_alone_is_held_to_the_repository(self) -> None:
+        self._a_file_checked_alone_is_held_to_the_repository()
+
+    def test_next_id_follows_the_highest_in_the_language(self) -> None:
+        self._next_id_follows_the_highest_in_the_language()
 
 
 GRAMMAR = """\

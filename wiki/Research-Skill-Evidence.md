@@ -265,7 +265,7 @@ Assigning question types to these levels is my inference (Low). Citations are li
 
 ## Appendix: the evidence behind Hear, Say and Write
 
-Moved here from `docs/plans/skill-model.md` (deleted when #207 closed); the design it led to is ADR-0034. It was read from abstracts and summaries, not full texts, and the checks above did not cover it. Full citations are to go in the Research and standards page (`docs/plans/research-and-standards.md`).
+Moved here from `docs/plans/skill-model.md` (deleted when #207 closed); the design it led to is ADR-0034. It was read from abstracts and summaries, not full texts, and the checks above did not cover it. Full citations are to go in the Research and standards page ([Plan-Research-And-Standards](Plan-Research-And-Standards)).
 
 The terms are the research's, so that the app's labels match it:
 

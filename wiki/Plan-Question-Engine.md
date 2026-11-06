@@ -4,7 +4,7 @@ Source of truth: this wiki page.
 
 
 Written 2026-10-13. Decision: ADR-0039. The card data it asks for is
-in `docs/DECK-FORMAT.md`, "Card data" and "Set cards" (folded in from the
+in [Deck-Format](Deck-Format), "Card data" and "Set cards" (folded in from the
 card data plan, 2026-10-13, #506).
 
 **Status:** the owner answered the six open questions one by one on
@@ -27,7 +27,7 @@ The wrong-alternatives question (old 1) was decided with the card data
 one shared `confusables` list, generated from card data when a card has none.
 
 The owner also decided on set cards (2026-10-13, #506, recorded in
-`docs/DECK-FORMAT.md`, "Set cards"): "Teach only"; "Every closed group"; "Show the
+[Deck-Format](Deck-Format), "Set cards"): "Teach only"; "Every closed group"; "Show the
 whole set; drill only new ones". See "Set cards" below.
 
 Only the quotations above, the approvals below and the exam answers
@@ -92,7 +92,8 @@ every card in the shipped decks, then deletes the old.
    the safety net for every step after. It reads a frozen copy of the decks
    kept under `test/fixtures/ask_pin/` (te, es and ipa, whole), so that it
    fails only when code changes the asks, never when a deck changes, and a
-   deck-only pull request cannot turn main red (#524). Owner, 2026-10-17,
+   deck-only pull request cannot turn main red (#524; the 8 test shards run
+   on every pull request, deck-only ones included). Owner, 2026-10-17,
    asked "What should it read?": "Frozen deck copy". Refresh it, with the
    golden, only for an intended change:
    `python3 tools/snapshot_ask_pin.py`, then `UPDATE_ASK_PIN=1 flutter test
@@ -245,7 +246,7 @@ every card in the shipped decks, then deletes the old.
 ## Build order: fields first
 
 The owner's order (2026-10-13: "Fields first"): the format and validator for
-the new card data (`docs/DECK-FORMAT.md`, "Card data"; see "Filling the
+the new card data ([Deck-Format](Deck-Format), "Card data"; see "Filling the
 decks" below) land first, so filling the decks can start. The engine,
 steps 1 to 10, comes after.
 Step 1 (pinning today's behaviour) can be done at any time, as it changes no
@@ -398,7 +399,7 @@ filled, not as code.
 
 ## Card data still open
 
-The questions about card data are listed in `docs/DECK-FORMAT.md`, "Card data
+The questions about card data are listed in [Deck-Format](Deck-Format), "Card data
 still open" and "Set cards". Also **Proposed** and about questions: what a
 question type needs from each data item (a type is eligible when its card has
 the data; it is asked for any card that has it):

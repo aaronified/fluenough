@@ -19,7 +19,7 @@ offline on your phone once a language's decks are downloaded.
   <a href="https://github.com/aaronified/fluenough/releases"><img src="https://img.shields.io/github/downloads/aaronified/fluenough/total?label=APK%20downloads" alt="APK downloads"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/aaronified/fluenough" alt="Licence: GPL-3.0"></a>
   <a href="https://github.com/aaronified/fluenough/releases/latest"><img src="https://img.shields.io/badge/platform-Android-3DDC84?logo=android&amp;logoColor=white" alt="Platform: Android"></a>
-  <a href="docs/DEVELOPMENT.md"><img src="https://img.shields.io/badge/Flutter-3.47%2B-02569B?logo=flutter&amp;logoColor=white" alt="Flutter 3.47 or later"></a>
+  <a href="wiki/Development-Setup.md"><img src="https://img.shields.io/badge/Flutter-3.47%2B-02569B?logo=flutter&amp;logoColor=white" alt="Flutter 3.47 or later"></a>
   <a href="#why-fluenough-is-different"><img src="https://img.shields.io/badge/works_offline-once_decks_are_in-2E7D32" alt="Works offline once decks are in"></a>
   <a href="#courses"><img src="https://img.shields.io/badge/languages-57-C2621D" alt="57 languages"></a>
   <a href="https://github.com/aaronified/fluenough/issues"><img src="https://img.shields.io/github/issues/aaronified/fluenough" alt="Open issues"></a>
@@ -121,65 +121,67 @@ B1, in teaching order, those not yet written shown as "Coming". The list
 below is written from `decks/index.json` each time the decks change.
 
 <!-- languages:start -->
-| Language | Scripts | Level reached |
-|---|---|---|
-| Arabic | Arabic | in progress |
-| Archaic Greek | Greek | in progress |
-| Ashokan Prakrit | Devanagari, Brahmi | in progress |
-| Assamese | Eastern Nagari | B1 |
-| Basque | Latin | in progress |
-| Bengali | Eastern Nagari | B1 |
-| Cantonese | Traditional Hanzi | in progress |
-| Catalan | Latin | in progress |
-| Classical Greek | Greek | in progress |
-| Esperanto | Latin | in progress |
-| Filipino | Latin | in progress |
-| Finnish | Latin | in progress |
-| French | Latin | A1 |
-| German | Latin | in progress |
-| Greek (Modern) | Greek | in progress |
-| Gujarati | Gujarati | in progress |
-| Hausa | Latin | in progress |
-| Hebrew | Hebrew | in progress |
-| Hindustani | Devanagari, Perso-Arabic | B1 |
-| Hungarian | Latin | in progress |
-| Interslavic | Latin, Cyrillic | in progress |
-| Irish | Latin | in progress |
-| Italian | Latin | in progress |
-| Japanese | Kana, Kanji | in progress |
-| Kannada | Kannada | B1 |
-| Koine Greek | Greek | in progress |
-| Korean | Hangul | in progress |
-| Latin | Latin | in progress |
-| Lojban | Latin | in progress |
-| Maithili | Devanagari | in progress |
-| Malay | Latin | in progress |
-| Malayalam | Malayalam | in progress |
-| Mandarin Chinese | Simplified Hanzi, Traditional Hanzi | in progress |
-| Marathi | Devanagari | B1 |
-| Middle English | Latin | in progress |
-| Norwegian (Bokmål) | Latin | in progress |
-| Odia | Odia | in progress |
-| Old English | Latin | in progress |
-| Pali | Devanagari | in progress |
-| Polish | Latin | in progress |
-| Portuguese | Latin | in progress |
-| Punjabi | Gurmukhi, Shahmukhi | in progress |
-| Quechua | Latin | in progress |
-| Russian | Cyrillic | in progress |
-| Serbo-Croatian | Latin, Cyrillic | in progress |
-| Somali | Latin | in progress |
-| Spanish | Latin | B1 |
-| Swahili | Latin | in progress |
-| Swedish | Latin | in progress |
-| Tamil | Tamil | in progress |
-| Telugu | Telugu | B1 |
-| Thai | Thai | in progress |
-| Toki Pona | Latin | B1 |
-| Turkish | Latin | in progress |
-| Vedic Sanskrit | Devanagari | in progress |
-| Vietnamese | Latin | in progress |
-| Yiddish | Hebrew | in progress |
+**57 languages**
+
+| Language | Family | Subfamily | Scripts | Level reached |
+|---|---|---|---|---|
+| Arabic | Afro-Asiatic | Semitic | Arabic | in progress |
+| Archaic Greek | Indo-European | Hellenic | Greek | in progress |
+| Ashokan Prakrit | Indo-European | Indo-Aryan | Devanagari, Brahmi | in progress |
+| Assamese | Indo-European | Indo-Aryan | Eastern Nagari | B1 |
+| Basque | Isolate | — | Latin | in progress |
+| Bengali | Indo-European | Indo-Aryan | Eastern Nagari | B1 |
+| Cantonese | Sino-Tibetan | Sinitic | Traditional Hanzi | in progress |
+| Catalan | Indo-European | Romance | Latin | in progress |
+| Classical Greek | Indo-European | Hellenic | Greek | in progress |
+| Esperanto | Constructed | Romance | Latin | in progress |
+| Filipino | Austronesian | Malayo-Polynesian | Latin | in progress |
+| Finnish | Uralic | Finnic | Latin | in progress |
+| French | Indo-European | Romance | Latin | A1 |
+| German | Indo-European | Germanic | Latin | in progress |
+| Greek (Modern) | Indo-European | Hellenic | Greek | in progress |
+| Gujarati | Indo-European | Indo-Aryan | Gujarati | in progress |
+| Hausa | Afro-Asiatic | Chadic | Latin | in progress |
+| Hebrew | Afro-Asiatic | Semitic | Hebrew | in progress |
+| Hindustani | Indo-European | Indo-Aryan | Devanagari, Perso-Arabic | B1 |
+| Hungarian | Uralic | Ugric | Latin | in progress |
+| Interslavic | Constructed | Slavic | Latin, Cyrillic | in progress |
+| Irish | Indo-European | Celtic | Latin | in progress |
+| Italian | Indo-European | Romance | Latin | in progress |
+| Japanese | Japonic | — | Kana, Kanji | in progress |
+| Kannada | Dravidian | South | Kannada | B1 |
+| Koine Greek | Indo-European | Hellenic | Greek | in progress |
+| Korean | Koreanic | — | Hangul | in progress |
+| Latin | Indo-European | Italic | Latin | in progress |
+| Lojban | Constructed | None | Latin | in progress |
+| Maithili | Indo-European | Indo-Aryan | Devanagari | in progress |
+| Malay | Austronesian | Malayo-Polynesian | Latin | in progress |
+| Malayalam | Dravidian | South | Malayalam | in progress |
+| Mandarin Chinese | Sino-Tibetan | Sinitic | Simplified Hanzi, Traditional Hanzi | in progress |
+| Marathi | Indo-European | Indo-Aryan | Devanagari | B1 |
+| Middle English | Indo-European | Germanic | Latin | in progress |
+| Norwegian (Bokmål) | Indo-European | Germanic | Latin | in progress |
+| Odia | Indo-European | Indo-Aryan | Odia | in progress |
+| Old English | Indo-European | Germanic | Latin | in progress |
+| Pali | Indo-European | Indo-Aryan | Devanagari | in progress |
+| Polish | Indo-European | Slavic | Latin | in progress |
+| Portuguese | Indo-European | Romance | Latin | in progress |
+| Punjabi | Indo-European | Indo-Aryan | Gurmukhi, Shahmukhi | in progress |
+| Quechua | Quechuan | — | Latin | in progress |
+| Russian | Indo-European | Slavic | Cyrillic | in progress |
+| Serbo-Croatian | Indo-European | Slavic | Latin, Cyrillic | in progress |
+| Somali | Afro-Asiatic | Cushitic | Latin | in progress |
+| Spanish | Indo-European | Romance | Latin | B1 |
+| Swahili | Niger-Congo | Bantu | Latin | in progress |
+| Swedish | Indo-European | Germanic | Latin | in progress |
+| Tamil | Dravidian | South | Tamil | in progress |
+| Telugu | Dravidian | South-Central | Telugu | B1 |
+| Thai | Kra-Dai | Tai | Thai | in progress |
+| Toki Pona | Constructed | None | Latin | B1 |
+| Turkish | Turkic | Oghuz | Latin | in progress |
+| Vedic Sanskrit | Indo-European | Indo-Aryan | Devanagari | in progress |
+| Vietnamese | Austroasiatic | Vietic | Latin | in progress |
+| Yiddish | Indo-European | Germanic | Hebrew | in progress |
 <!-- languages:end -->
 
 **Levels are approximate.** They come from the vocabulary sizes and the units
@@ -206,7 +208,7 @@ first five are in; after that it works offline. Fixed and new decks arrive
 without an app update: once a day at most it asks whether to fetch them, and
 Settings > Deck downloads lists each language, with Update and Remove, and
 can turn the daily check off
-([ADR-0037](docs/adr/0037-decks-download-from-main.md)).
+([ADR-0037](https://github.com/aaronified/fluenough/wiki/ADR-0037-Decks-Download-From-Main)).
 
 ## Documentation
 

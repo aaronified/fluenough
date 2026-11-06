@@ -53,6 +53,48 @@ enum SelfTake {
   playing,
 }
 
+/// One card as the learner left it: kept so that a swipe back shows it
+/// again, read-only (#509, phase 0). Only the parts a drill draws from.
+class _Frame {
+  _Frame({
+    required this.index,
+    required this.phase,
+    required this.answer,
+    required this.typedRomanised,
+    required this.choice,
+    required this.choiceOrder,
+    required this.options,
+    required this.picked,
+    required this.matchTargets,
+    required this.matchMeanings,
+    required this.matched,
+    required this.missed,
+    required this.tiles,
+    required this.placed,
+    required this.retried,
+    required this.retries,
+    required this.showingPassage,
+  });
+
+  final int index;
+  final DrillPhase phase;
+  final TypedAnswer? answer;
+  final bool typedRomanised;
+  final int? choice;
+  final List<int>? choiceOrder;
+  final List<Card>? options;
+  final Card? picked;
+  final List<SessionItem>? matchTargets;
+  final List<SessionItem>? matchMeanings;
+  final Set<String> matched;
+  final Set<String> missed;
+  final List<String>? tiles;
+  final List<int> placed;
+  final TypedAnswer? retried;
+  final int retries;
+  final bool showingPassage;
+}
+
 /// How a typed answer is typed: in the language's own script, or in Latin
 /// letters (#47, behind [Feature.translitInput]).
 enum InputMode { script, translit }
@@ -168,7 +210,14 @@ class DrillSession extends ChangeNotifier {
     final target = run.spentAtStart + run.clock.budget;
     final spent = _state.dailySpent(run.language);
     if (spent < target) {
-      _state.settings.addClockTime(run.language, _state.now(), target - spent);
+      // Clock time is kept in whole milliseconds: rounded up, so that the
+      // day reads the full time rather than a microsecond short of it.
+      final gap = target - spent;
+      _state.settings.addClockTime(
+        run.language,
+        _state.now(),
+        Duration(milliseconds: (gap.inMicroseconds / 1000).ceil()),
+      );
     }
   }
 
@@ -210,6 +259,118 @@ class DrillSession extends ChangeNotifier {
   DateTime? _endedAt;
   bool _disposed = false;
 
+  // ---------------------------------------------------------------------------
+  // Going back (#509, phase 0)
+
+  /// The cards left behind, oldest first, each as it was left.
+  final List<_Frame> _past = <_Frame>[];
+
+  /// The card the session is on, while an earlier one is shown.
+  _Frame? _live;
+
+  /// How many cards back the screen is: 0 on the current card.
+  int _back = 0;
+
+  /// Whether the screen shows a card already left: it is as the learner
+  /// answered it, read-only. Nothing on it is graded, recorded or changed,
+  /// and going on returns toward the current card.
+  bool get readOnly => _back > 0;
+
+  /// Whether a swipe or the start-edge chevron goes back: a card taught, a
+  /// set shown and a question once it is answered (owner, 2026-10-31); an
+  /// unanswered question has nothing behind it to look at first.
+  bool get canGoBack =>
+      _back < _past.length &&
+      (readOnly || ask.onlyShows || _phase != DrillPhase.prompt);
+
+  _Frame _capture() => _Frame(
+    index: _index,
+    phase: _phase,
+    answer: _answer,
+    typedRomanised: _typedRomanised,
+    choice: _choice,
+    choiceOrder: _choiceOrder,
+    options: _options,
+    picked: _picked,
+    matchTargets: _matchTargets,
+    matchMeanings: _matchMeanings,
+    matched: <String>{..._matched},
+    missed: <String>{..._missed},
+    tiles: _tiles,
+    placed: <int>[..._placed],
+    retried: _retried,
+    retries: _retries,
+    showingPassage: _showingPassage,
+  );
+
+  void _restore(_Frame frame) {
+    _index = frame.index;
+    _phase = frame.phase;
+    _answer = frame.answer;
+    _typedRomanised = frame.typedRomanised;
+    _choice = frame.choice;
+    _choiceOrder = frame.choiceOrder;
+    _options = frame.options;
+    _picked = frame.picked;
+    _matchTargets = frame.matchTargets;
+    _matchMeanings = frame.matchMeanings;
+    _matched
+      ..clear()
+      ..addAll(frame.matched);
+    _missed
+      ..clear()
+      ..addAll(frame.missed);
+    _tiles = frame.tiles;
+    _placed
+      ..clear()
+      ..addAll(frame.placed);
+    _retried = frame.retried;
+    _retries = frame.retries;
+    _showingPassage = frame.showingPassage;
+    _unheard = null;
+    _networkWhy = null;
+    _selfFailure = null;
+  }
+
+  /// Lets go of whatever the screen was doing on its own: the voice, a
+  /// listen, the learner's recording.
+  void _quiet() {
+    if (_playing) _state.stopSpeaking();
+    if (_hearing) _state.stopListening();
+    if (_hearingSelf != SelfTake.idle || _replaying) {
+      _state.soundCheck.stop();
+    }
+    _playing = false;
+    _playingSentence = null;
+    _hearing = false;
+    _hearingSelf = SelfTake.idle;
+    _replaying = false;
+  }
+
+  /// Back one card, read-only.
+  void back() {
+    if (!canGoBack) return;
+    _quiet();
+    if (_back == 0) _live = _capture();
+    _back++;
+    _restore(_past[_past.length - _back]);
+    notifyListeners();
+  }
+
+  /// On one card toward the current one, from a card gone back to.
+  void _forward() {
+    if (_back == 0) return;
+    _quiet();
+    _back--;
+    if (_back == 0) {
+      _restore(_live!);
+      _live = null;
+    } else {
+      _restore(_past[_past.length - _back]);
+    }
+    notifyListeners();
+  }
+
   SessionItem get item => items[_index];
 
   /// The deck the current card comes from.
@@ -250,6 +411,7 @@ class DrillSession extends ChangeNotifier {
   // Recognition
 
   void reveal() {
+    if (readOnly) return;
     if (item.mode != DrillMode.recognition ||
         ask != Ask.own ||
         _phase != DrillPhase.prompt) {
@@ -270,6 +432,7 @@ class DrillSession extends ChangeNotifier {
 
   /// Records the learner's rating and moves on.
   void rate(SelfGrade grade) {
+    if (readOnly) return _forward();
     if (_phase != DrillPhase.revealed) return;
     _record(grade.toGrade());
     _advance();
@@ -459,6 +622,7 @@ class DrillSession extends ChangeNotifier {
   /// Digits are right or wrong, never a typo: 2021 is not a slip for 2020.
   /// Spaces and commas in them are ignored, so 2,020 is 2020.
   void check(String typed) {
+    if (readOnly) return;
     if (_phase != DrillPhase.prompt || typed.trim().isEmpty) return;
     if (item.mode == DrillMode.recognition || question != null) return;
     if (ask != Ask.own) return;
@@ -543,6 +707,7 @@ class DrillSession extends ChangeNotifier {
 
   /// "Don't know": shows the answer and records a failure.
   void dontKnow() {
+    if (readOnly) return;
     if (_phase != DrillPhase.prompt ||
         item.mode == DrillMode.recognition ||
         question != null ||
@@ -559,6 +724,7 @@ class DrillSession extends ChangeNotifier {
 
   /// The learner's verdict on a near miss: recorded, then on to the next.
   void judge(TypoJudgement judgement) {
+    if (readOnly) return;
     final answer = _answer;
     if (answer == null || !answer.awaitsJudgement) return;
     _record(judgement.toGrade(), answerGiven: answer.typed);
@@ -567,6 +733,7 @@ class DrillSession extends ChangeNotifier {
 
   /// "Continue", once the feedback is showing and the answer is recorded.
   void next() {
+    if (readOnly) return _forward();
     if (_phase != DrillPhase.feedback) return;
     if (_choice == null &&
         _picked == null &&
@@ -641,6 +808,7 @@ class DrillSession extends ChangeNotifier {
   /// Chooses [choice] and records it at once: right or wrong, there is no
   /// near miss to judge.
   void choose(int choice) {
+    if (readOnly) return;
     final card = question;
     if (card == null || _showingPassage || _phase != DrillPhase.prompt) {
       return;
@@ -772,6 +940,7 @@ class DrillSession extends ChangeNotifier {
 
   /// Listens for the current card's target and grades what was heard.
   Future<void> listen() async {
+    if (readOnly) return;
     if (item.mode != DrillMode.speaking ||
         _phase != DrillPhase.prompt ||
         _hearing) {
@@ -791,6 +960,7 @@ class DrillSession extends ChangeNotifier {
       if (_unheard == SpeechFailure.network) unawaited(_diagnose());
       return;
     }
+    _keepAudio(heard.ownAudio);
     checkSpoken(heard.alternatives);
   }
 
@@ -804,6 +974,7 @@ class DrillSession extends ChangeNotifier {
   /// fail a learner, and an unscored one does not pass them. Matching is exact once normalised: a near miss in speech is a
   /// different word, not a typo.
   void checkSpoken(List<SpeechAlternative> alternatives) {
+    if (readOnly) return;
     if (_phase != DrillPhase.prompt ||
         item.mode != DrillMode.speaking ||
         alternatives.isEmpty) {
@@ -845,19 +1016,49 @@ class DrillSession extends ChangeNotifier {
     }
     // A wrong word that is the answer with one sound changed: the feedback
     // names the sound (ADR-0014's rule: only a slip that changes the word).
+    final sounds = graded.outcome.isCorrect
+        ? null
+        : _state.soundsFor(deck.language);
+    (SoundContrast, String)? contrastOf(SpeechAlternative a) {
+      if (sounds == null) return null;
+      for (final answer in accepted) {
+        final found = sounds.between(a.text, answer);
+        if (found != null) return (found, answer);
+      }
+      return null;
+    }
+
     SoundContrast? contrast;
     Card? heardCard;
     if (!graded.outcome.isCorrect) {
-      final sounds = _state.soundsFor(deck.language);
-      if (sounds != null) {
-        for (final answer in accepted) {
-          contrast = sounds.between(said.text, answer);
-          if (contrast != null) break;
+      var found = contrastOf(said);
+      // A recogniser cannot reliably tell a short vowel from a long one and
+      // returns the dictionary spelling, so a word that differs from the
+      // answer only in vowel length is "almost", not wrong: no red, and the
+      // feedback shows the contrast as a hint. Speech only. Any reading the
+      // recogniser was fairly sure of counts, not only the best.
+      if (found == null || !found.$1.isVowelLength) {
+        for (final other in alternatives) {
+          final confidence = other.confidence;
+          if (!identical(other, alternatives.first) &&
+              (confidence == null || confidence < speechConfidence)) {
+            continue;
+          }
+          final length = contrastOf(other);
+          if (length != null && length.$1.isVowelLength) {
+            said = other;
+            found = length;
+            break;
+          }
         }
       }
+      contrast = found?.$1;
       // The word heard, for its meaning and its IPA, whether or not it
       // differs from the answer by a named sound.
       heardCard = _state.cardSaying(deck.language, said.text);
+      if (found != null && found.$1.isVowelLength) {
+        graded = GradedAnswer(AnswerOutcome.closeDiacritics, matched: found.$2);
+      }
     }
     return TypedAnswer(
       typed: said.text,
@@ -909,7 +1110,9 @@ class DrillSession extends ChangeNotifier {
   /// the first answer was, but records nothing. Nothing heard says why, as
   /// the first listen does ([unheard]).
   Future<void> retry() async {
-    if (!canRetry || _hearing || _hearingSelf != SelfTake.idle) return;
+    if (readOnly || !canRetry || _hearing || _hearingSelf != SelfTake.idle) {
+      return;
+    }
     final listeningIndex = _index;
     _hearing = true;
     _unheard = null;
@@ -925,6 +1128,7 @@ class DrillSession extends ChangeNotifier {
       _unheard = heard.failure ?? SpeechFailure.noMatch;
     } else {
       _retried = _gradeSpoken(heard.alternatives);
+      _keepAudio(heard.ownAudio);
       _retries++;
     }
     notifyListeners();
@@ -946,6 +1150,62 @@ class DrillSession extends ChangeNotifier {
   /// Why the last "Hear yourself" had nothing to play, or null.
   RecordFailure? get selfFailure => _selfFailure;
 
+  // The learner's own take, for "Your recording" (#509, ADR-0054).
+
+  /// The take kept for replay: the audio of the last listen when the engine
+  /// kept it, or the last "Hear yourself" recording. In memory only, never
+  /// stored or sent, and dropped when the card is left. Null before there is
+  /// one.
+  Recording? _take;
+  Duration? _takeLength;
+  bool _replaying = false;
+
+  /// Whether a take is kept, so that "Your recording" replays it. Without
+  /// one, the control records one, as "Hear yourself" does.
+  bool get hasOwnTake => !readOnly && _take != null;
+
+  /// How long the kept take is, or null when it is not known.
+  Duration? get ownTakeLength => readOnly ? null : _takeLength;
+
+  /// Whether the learner's own take is playing.
+  bool get replaying => _replaying;
+
+  /// Keeps [audio], the audio of a listen, as the card's take, replacing the
+  /// last one (a "Try again" take replaces the first). An engine that kept
+  /// none leaves the take as it is.
+  void _keepAudio(OwnAudio? audio) {
+    if (audio == null || audio.pcm16.isEmpty) return;
+    _take = Recording(wavFromPcm16(audio.pcm16, sampleRate: audio.sampleRate));
+    _takeLength = audio.length;
+  }
+
+  /// "Your recording": plays the kept take; while it plays, stops it.
+  /// Without a kept take, the engine having none to give (ADR-0054's
+  /// fallback), it is "Hear yourself": the learner says the word again, and
+  /// that second take is played back, then the voice, and kept.
+  Future<void> replayOwn() async {
+    if (readOnly || !canHearSelf || _hearing) return;
+    if (_replaying) {
+      _replaying = false;
+      notifyListeners();
+      await _state.soundCheck.stop();
+      return;
+    }
+    if (_hearingSelf != SelfTake.idle) return;
+    final take = _take;
+    if (take == null) return hearSelf();
+    final index = _index;
+    if (_playing) await _state.stopSpeaking();
+    _selfFailure = null;
+    _replaying = true;
+    notifyListeners();
+    final played = await _state.soundCheck.play(take);
+    if (_disposed || _index != index || finished || !_replaying) return;
+    _replaying = false;
+    if (!played) _selfFailure = RecordFailure.failed;
+    notifyListeners();
+  }
+
   /// Whether "Hear yourself" is offered: once a speaking card is answered.
   bool get canHearSelf =>
       item.mode == DrillMode.speaking && _phase == DrillPhase.feedback;
@@ -955,7 +1215,13 @@ class DrillSession extends ChangeNotifier {
   /// voice. The recording stays in memory and is dropped once played, as
   /// in the first launch's sound check. Records nothing in the review log.
   Future<void> hearSelf() async {
-    if (!canHearSelf || _hearing || _hearingSelf != SelfTake.idle) return;
+    if (readOnly ||
+        !canHearSelf ||
+        _hearing ||
+        _replaying ||
+        _hearingSelf != SelfTake.idle) {
+      return;
+    }
     final index = _index;
     bool stale() => _disposed || _index != index || finished;
     if (_playing) await _state.stopSpeaking();
@@ -970,6 +1236,8 @@ class DrillSession extends ChangeNotifier {
       notifyListeners();
       return;
     }
+    _take = take;
+    _takeLength = selfTakeLength;
     _hearingSelf = SelfTake.playing;
     notifyListeners();
     final played = await _state.soundCheck.play(take);
@@ -991,6 +1259,7 @@ class DrillSession extends ChangeNotifier {
   /// language by itself, holds for the language's other speaking cards in
   /// this session, so the question is not asked again on each.
   void skipUnheard() {
+    if (readOnly) return;
     if (item.mode != DrillMode.speaking || _phase != DrillPhase.prompt) return;
     if (_unheard == SpeechFailure.notOnDevice) {
       _declinedOnline.add(deck.language.code);
@@ -1015,6 +1284,7 @@ class DrillSession extends ChangeNotifier {
   /// On from a card being taught, or a set shown. Nothing is recorded: its
   /// questions are.
   void learnt() {
+    if (readOnly) return _forward();
     if (!ask.onlyShows) return;
     // A teach card is timed like an answer (#886): its time counts toward
     // the day's minutes and the hours, kept beside the log.
@@ -1118,6 +1388,7 @@ class DrillSession extends ChangeNotifier {
   /// Picks [option] and records it at once: [Ask.rightChoiceGrade] if
   /// right, 1 if not.
   void pick(Card option) {
+    if (readOnly) return;
     if (!ask.chooses || _phase != DrillPhase.prompt) return;
     _picked = option;
     _record(
@@ -1153,6 +1424,7 @@ class DrillSession extends ChangeNotifier {
   /// wrong one records nothing yet. Once all are matched, the feedback
   /// shows.
   bool match(SessionItem target, SessionItem meaning) {
+    if (readOnly) return false;
     if (ask != Ask.matchPairs ||
         _phase != DrillPhase.prompt ||
         isMatched(target) ||
@@ -1191,6 +1463,10 @@ class DrillSession extends ChangeNotifier {
       ? tilesOf(item.card.reading!)
       : item.card.tilesOfSpelling(writtenTarget);
 
+  /// The current card's words in the right order: what the learner is shown
+  /// once the order is checked.
+  List<String> get answerWords => _words;
+
   List<String>? _tiles;
 
   /// The current card's words to put in order, shuffled out of order where
@@ -1213,6 +1489,7 @@ class DrillSession extends ChangeNotifier {
 
   /// Places tile [index] next in the answer.
   void place(int index) {
+    if (readOnly) return;
     if (ask != Ask.rearrange ||
         _phase != DrillPhase.prompt ||
         index < 0 ||
@@ -1226,6 +1503,7 @@ class DrillSession extends ChangeNotifier {
 
   /// Takes tile [index] out of the answer, back among the others.
   void unplace(int index) {
+    if (readOnly) return;
     if (_phase != DrillPhase.prompt || !_placed.remove(index)) return;
     notifyListeners();
   }
@@ -1234,6 +1512,7 @@ class DrillSession extends ChangeNotifier {
   /// they read as the card's target or another it accepts, in Latin
   /// letters its readings; else 1.
   void checkOrder() {
+    if (readOnly) return;
     if (ask != Ask.rearrange ||
         _phase != DrillPhase.prompt ||
         _placed.length != tiles.length) {
@@ -1355,6 +1634,7 @@ class DrillSession extends ChangeNotifier {
   /// reaches, is skipped unrecorded. What it means beyond the session (a
   /// pause, or switching the skill off) is the caller's, in the settings.
   void skipSkill({String? onlyLanguage}) {
+    if (readOnly) return;
     if (_phase != DrillPhase.prompt) return;
     if (_hearing) _state.stopListening();
     _hearing = false;
@@ -1391,14 +1671,15 @@ class DrillSession extends ChangeNotifier {
 
   void _advance() {
     if (_playing) _state.stopSpeaking();
-    // "Continue" while a "Try again" listens: what it hears is dropped.
+    // Going on while a "Try again" listens: what it hears is dropped.
     if (_hearing) _state.stopListening();
-    // "Continue" while "Hear yourself" records or plays: the recording is
+    // Going on while "Hear yourself" records or plays: the recording is
     // cut short, never played over the next card, and the microphone is
     // free for it. The voice after it is stopped above, or never starts.
-    if (_hearingSelf != SelfTake.idle) _state.soundCheck.stop();
+    if (_hearingSelf != SelfTake.idle || _replaying) _state.soundCheck.stop();
     _playing = false;
     _playingSentence = null;
+    _replaying = false;
     var next = _index + 1;
     while (next < items.length && !_drillable(items[next])) {
       next++;
@@ -1410,9 +1691,13 @@ class DrillSession extends ChangeNotifier {
         _settleClock(run);
       } else {
         // The round is done: the next is built on the time left. A round of
-        // cards none can be drilled is passed over for the next, a few
-        // times, so the session does not end with time left.
-        for (var tries = 0; next >= items.length && tries < 5; tries++) {
+        // cards none can be drilled is passed over for the next. Each
+        // round's cards are marked asked, so this ends by itself; the cap
+        // is only a cheap guard, as a round builds two queues, against a
+        // long run of rounds none can be drilled (listening cards with
+        // sound off). It is far above any real pool, so the session still
+        // never ends with time left and cards waiting (#1007).
+        for (var tries = 0; next >= items.length && tries < 50; tries++) {
           final more = _state.nextDailyRound(run);
           if (more.isEmpty) break;
           final from = items.length;
@@ -1425,6 +1710,9 @@ class DrillSession extends ChangeNotifier {
       }
     }
     if (next >= items.length) {
+      // The day's session has ended: its time reads full on Today, which
+      // then offers nothing pending (#1007).
+      if (run != null) _settleClock(run);
       _endedAt = _state.now();
       _watch.stop();
       notifyListeners();
@@ -1432,6 +1720,12 @@ class DrillSession extends ChangeNotifier {
     }
     // A passage shows once for its questions that come together, and again
     // when it comes back in the other mode.
+    // The card as it is left, for a swipe back to show again, unless it was
+    // set aside unanswered; the learner's recording of it is dropped with it
+    // (ADR-0054).
+    if (_phase != DrillPhase.prompt || ask.onlyShows) _past.add(_capture());
+    _take = null;
+    _takeLength = null;
     _showingPassage =
         items[next].card is QuestionCard &&
         !_samePassage(items[_index], items[next]);
@@ -1467,7 +1761,8 @@ class DrillSession extends ChangeNotifier {
     _disposed = true;
     if (_playing) _state.stopSpeaking();
     if (_hearing) _state.stopListening();
-    if (_hearingSelf != SelfTake.idle) _state.soundCheck.stop();
+    if (_hearingSelf != SelfTake.idle || _replaying) _state.soundCheck.stop();
+    _take = null;
     super.dispose();
   }
 }

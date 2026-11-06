@@ -160,7 +160,7 @@ that catch people most often:
 - Anything touching scheduling or grading needs tests.
 - Do not reformat files you are not changing.
 
-Architectural decisions are recorded in `docs/adr/`. **Read the relevant one
+Architectural decisions are recorded as ADR pages in the wiki ([ADR-Index](ADR-Index)). **Read the relevant one
 before changing something that looks wrong** — much of what appears accidental
 in this codebase was decided, and the reasoning is written down.
 

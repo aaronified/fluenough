@@ -70,9 +70,11 @@ decided is how every later app treats what is newer than itself.
   tag, which an older app already reads. Only new files may be gated, in a
   language of the released app or not. Without git or a tag the check prints
   a warning and is skipped; `--strict-released` (or
-  `FLUENOUGH_STRICT_RELEASED=1`) makes that an error. CI's "Released app
-  reads the decks" job, which fetches every tag, runs the index with it; the
-  other runs (shards, `deck-index.yml`, which fetch no tags) warn only.
+  `FLUENOUGH_STRICT_RELEASED=1`) makes that an error. CI's "Decks: index" job,
+  which fetches every tag, runs the index once with it and shares the file as
+  the `decks-index` artifact; the 8 test shards and "Released app reads the
+  decks" use that file. The other runs (`deck-index.yml`, which fetches no
+  tags) warn only.
   Nothing listed in `min_app.json` means nothing is checked, so the empty
   file still changes nothing. The second (unreleased versions) is not
   checked.

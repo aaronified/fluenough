@@ -26,9 +26,12 @@ import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
 import 'app/startup_marks.dart';
 import 'app/system_settings.dart';
+import 'app/wallpaper_colours.dart';
+import 'core/haptics/system_haptic_engine.dart';
 import 'core/decks/deck_fetch.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
+import 'core/speech/mic_capture.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
@@ -102,11 +105,13 @@ Future<void> main() async {
     settings: storage.settings,
     tts: SystemTtsEngine(),
     clips: SystemClipPlayer(),
-    speech: SystemSpeechEngine(),
+    speech: SystemSpeechEngine(null, RecordMicCapture()),
     volume: SystemVolumeMonitor(),
     soundCheck: SystemSoundCheck(),
     networkProbe: SystemNetworkProbe(),
     systemSettings: const ChannelSystemSettings(),
+    wallpaperSource: const ChannelWallpaperSource(),
+    hapticEngine: const SystemHapticEngine(),
     reminderScheduler: reminderScheduler,
     reports: MailReportSender(
       address: AppLinks.feedbackEmail,

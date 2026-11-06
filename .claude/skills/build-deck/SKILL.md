@@ -7,11 +7,11 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 # Build a deck
 
-An ordered checklist. It does not copy the format: [docs/DECK-FORMAT.md](../../../docs/DECK-FORMAT.md)
+An ordered checklist. It does not copy the format: [wiki/Deck-Format.md](../../../wiki/Deck-Format.md)
 is the guide and `tools/validate_decks.py` is the test (owner, 2026-10-13,
 #506). Where this file and DECK-FORMAT differ, DECK-FORMAT wins. Read it before
 writing, and [AGENTS.md](../../../AGENTS.md) and [CLAUDE.md](../../../CLAUDE.md)
-for the rules. Section names below are headings in DECK-FORMAT.md.
+for the rules. Section names below are headings in wiki/Deck-Format.md.
 
 Before you start:
 
@@ -22,7 +22,7 @@ Before you start:
   #506) is that a simple card should be able to generate all kinds of
   questions. Questions will be derived from card data (ADR-0039, accepted).
   The owner decided the mandatory set (2026-10-13, #506,
-  `docs/DECK-FORMAT.md`, "Card data"): meaning; the reading for a non-Latin script; at
+  `wiki/Deck-Format.md`, "Card data"): meaning; the reading for a non-Latin script; at
   least 2 examples on a word card; the root word (`bases`); gender where the
   language has it (per-language classes, decided: hi m/f; mr, gu, kn m/f/n;
   te mahat/amahat; es m/f; bn, as and ja none); and confusables on a sentence used for word
@@ -192,6 +192,18 @@ Before you start:
    error and each warning or explain it. Do not run `tools/deck_index.py` or
    commit `decks/index.json`: a workflow regenerates it on main after the
    merge (owner, 2026-10-23). Tools details: `tools/README.md`.
+7a. **Flag what you are unsure of.** Before finishing a unit, append a row to
+   `docs/review-queue/<lang>.md` for each card you are unsure of (gender,
+   part of speech, reading or tone, a doubtful note, a traditional form,
+   naturalness, a missing phrase), in the same commit as the deck. Use the
+   card's real id and never invent one; a unit-level question uses
+   `unit-level` (the format is in [docs/review-queue/README.md](../../../docs/review-queue/README.md)).
+   The one-line question must be answerable by a bilingual reviewer. Never
+   put a flag in the deck YAML: released apps reject unknown card keys.
+   Owner decision (2026-11-06), quoted: "go B", answering "Questions for a
+   bilingual reviewer: will these be in the decks? and asked to the reviewer
+   when they review?": a sidecar list per language that the review bot reads;
+   no deck-format change; nothing ships to learners.
 8. **Ship.** Never create tags. For the owner's work, open a pull request
    (owner, 2026-10-16: "Do use PRs for everything"); a deck-only change
    needs only "Validate decks" and "Released app reads the decks" green

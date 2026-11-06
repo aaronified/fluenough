@@ -14,6 +14,8 @@ import readme_languages as rl  # noqa: E402
 NAMES = {"telugu": "Telugu", "devanagari": "Devanagari",
          "perso_arabic": "Perso-Arabic", "latin": "Latin"}
 SCRIPTS = {"hi": ["devanagari", "perso_arabic"]}
+FAMILIES = {"te": ("Dravidian", "South-Central"),
+            "hi": ("Indo-European", "Indo-Aryan")}
 
 
 def unit(planned: bool = False, milestone: str | None = None) -> dict:
@@ -56,17 +58,33 @@ class Rows(unittest.TestCase):
 
     def test_a_row_per_language_by_name_without_the_notation_courses(
             self) -> None:
-        found = rl.rows(self.index, NAMES, SCRIPTS)
+        found = rl.rows(self.index, NAMES, SCRIPTS, FAMILIES)
         self.assertEqual(found, [
-            ("Hindustani", "Devanagari, Perso-Arabic", "in progress"),
-            ("Telugu", "Telugu", "A1"),
+            ("Hindustani", "Indo-European", "Indo-Aryan",
+             "Devanagari, Perso-Arabic", "in progress"),
+            ("Telugu", "Dravidian", "South-Central", "Telugu", "A1"),
         ])
 
     def test_the_table_has_a_header_and_a_row_each(self) -> None:
-        text = rl.table(rl.rows(self.index, NAMES, SCRIPTS))
-        self.assertEqual(text.splitlines()[0],
-                         "| Language | Scripts | Level reached |")
-        self.assertIn("| Telugu | Telugu | A1 |", text)
+        text = rl.table(rl.rows(self.index, NAMES, SCRIPTS, FAMILIES))
+        self.assertIn(
+            "| Language | Family | Subfamily | Scripts | Level reached |",
+            text.splitlines())
+        self.assertIn("| Telugu | Dravidian | South-Central | Telugu | A1 |",
+                      text.splitlines())
+
+    def test_the_count_line_sits_directly_above_the_table(self) -> None:
+        lines = rl.table(rl.rows(self.index, NAMES, SCRIPTS,
+                                 FAMILIES)).splitlines()
+        self.assertEqual(lines[0], "**2 languages**")
+        self.assertEqual(lines[1], "")
+        self.assertTrue(lines[2].startswith("| Language |"))
+        # The count is the number of rows: the notation course is not one.
+        self.assertEqual(len(lines) - 4, 2)
+
+    def test_a_language_without_a_family_shows_dashes(self) -> None:
+        found = rl.rows(self.index, NAMES, SCRIPTS, {})
+        self.assertEqual(found[0][1:3], ("\u2014", "\u2014"))
 
 
 class Fill(unittest.TestCase):
@@ -89,6 +107,39 @@ class RealFiles(unittest.TestCase):
         names = rl.script_names(rl.ARB.read_text(encoding="utf-8"))
         self.assertEqual(names["bengali"], "Eastern Nagari")
         self.assertEqual(names["perso_arabic"], "Perso-Arabic")
+
+
+class Families(unittest.TestCase):
+    families = rl.language_families(
+        rl.FAMILIES.read_text(encoding="utf-8"))
+
+    def test_every_language_of_the_index_has_a_family_and_subfamily(
+            self) -> None:
+        import json
+        index = json.loads(rl.INDEX.read_text(encoding="utf-8"))
+        codes = {l["code"] for l in index["languages"]} - rl.NOTATION_CODES
+        missing = sorted(codes - set(self.families))
+        self.assertEqual(missing, [], "add these to language_families.yaml")
+
+    def test_every_language_of_the_app_has_one_too(self) -> None:
+        import yaml
+        raw = yaml.safe_load(rl.LANGUAGES.read_text(encoding="utf-8"))
+        codes = {e["code"] for e in raw["languages"]}
+        missing = sorted(codes - set(self.families) - rl.NOTATION_CODES)
+        self.assertEqual(missing, [], "add these to language_families.yaml")
+
+    def test_a_constructed_language_names_its_closest_family(self) -> None:
+        f = self.families
+        self.assertEqual(f["eo"], ("Constructed", "Romance"))
+        self.assertEqual(f["isv"], ("Constructed", "Slavic"))
+        self.assertEqual(f["sjn"], ("Constructed", "Celtic"))
+        self.assertEqual(f["qya"], ("Constructed", "Uralic"))
+        for code in ("qhv", "tok", "jbo", "tlh", "qdo"):
+            self.assertEqual(f[code], ("Constructed", "None"), code)
+
+    def test_every_entry_names_a_family_and_a_subfamily(self) -> None:
+        for code, (family, subfamily) in self.families.items():
+            self.assertTrue(family and subfamily, code)
 
 
 if __name__ == "__main__":

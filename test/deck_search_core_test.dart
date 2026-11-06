@@ -152,6 +152,7 @@ void main() {
       expect(scriptOf('ଓଡ଼ିଆ'), 'odia');
       expect(scriptOf('ภาษาไทย'), 'thai');
       expect(scriptOf('שלום'), 'hebrew');
+      expect(scriptOf('ᱥᱟᱱᱛᱟᱲᱤ'), 'ol_chiki');
       expect(scriptOf('\u{10000}\u{10001}'), 'linear_b');
       expect(scriptOf('\u{12000}\u{12001}'), 'cuneiform');
       expect(scriptOf('\u{13000}\u{13001}'), 'egyptian_hieroglyphs');

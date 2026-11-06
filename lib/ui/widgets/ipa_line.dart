@@ -66,7 +66,11 @@ class IpaLine extends StatelessWidget {
   bool showReading = true,
 }) {
   final shown = ipaToShow(context, ipa, target: target);
-  if (shown != null && AppScope.read(context).settings.ipaReplacesReading) {
+  // A line that is not to show a reading (showReading false) is not swapped
+  // either: the IPA does not appear where the reading would not have.
+  if (showReading &&
+      shown != null &&
+      AppScope.read(context).settings.ipaReplacesReading) {
     return (
       reading: AppLocalizations.of(context)!.wordSheetIpa(shown),
       ipa: null,
@@ -75,6 +79,16 @@ class IpaLine extends StatelessWidget {
   }
   return (reading: showReading ? reading : null, ipa: shown, swapped: false);
 }
+
+/// A card's reading as a sentence quotes it in brackets, or null for none:
+/// the transliteration, or the IPA in its place when "IPA replaces
+/// transliteration" is on (#697), as [readingLines] decides.
+String? quotedReading(
+  BuildContext context, {
+  String? reading,
+  String? ipa,
+  String? target,
+}) => readingLines(context, reading: reading, ipa: ipa, target: target).reading;
 
 /// Text styles for a line [readingLines] may have swapped the IPA into: the
 /// IPA's fonts are tried behind the theme's where the glyph is missing, as
@@ -102,12 +116,15 @@ class ReadingText extends StatelessWidget {
   final TextStyle? style;
   final TextAlign? textAlign;
 
+  static final RegExp _slashed = RegExp(r'/([^/]+)/');
+
   @override
   Widget build(BuildContext context) {
     if (!swapped) return Text(text, style: style, textAlign: textAlign);
     final l10n = AppLocalizations.of(context)!;
-    // `/paːlu/` is how wordSheetIpa writes it; the label has no slashes.
-    final plain = text.replaceAll(RegExp(r'^/|/$'), '');
+    // `/paːlu/` is how wordSheetIpa writes it; the label has no slashes. A
+    // prompt with the IPA among other words keeps the rest as it is.
+    final plain = text.replaceFirstMapped(_slashed, (m) => m[1]!);
     return Semantics(
       label: l10n.ipaSemantics(plain),
       excludeSemantics: true,

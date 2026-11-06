@@ -35,7 +35,7 @@ the drill and the sources, on 2 and 3 October 2026.
   and a glossary. Each question has a permanent id, a prompt keyed by the
   learner's language as a fact's text is (`en` required), 2 to 4 options
   keyed the same way or none for true or false, and the answer. The
-  details are in docs/DECK-FORMAT.md, "Reading decks".
+  details are in [Deck-Format](Deck-Format), "Reading decks".
 - **Each question is a card.** The parser makes every question a
   `QuestionCard`, a `Card` that also carries its passage, so it is
   scheduled, recorded, counted and backed up as every card is: its own

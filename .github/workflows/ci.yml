@@ -1,8 +1,55 @@
 name: CI
 
+# What runs when (owner, 2026-11-02: make CI faster without weakening a check).
+#
+# * Push to main: everything always runs.
+# * Pull request: the `changes` job lists the files the PR changes against
+#   its base (renames counted as the two files they are). If every one is under
+#   decks/ (decks/themes.yaml and decks/min_app.json are app files: the app
+#   bundles the first and the second gates app versions), only "App: analyse",
+#   "App: live downloads" and "Build debug APK" are skipped. The 8 test
+#   shards ALWAYS run (owner, 2026-11-02: "Keep the 8 test shards"): they
+#   read the real decks, and the test/deck_format_*_test.dart files are the one check
+#   before merge that main's code parses the PR's decks (#524). A change to
+#   anything else, the workflow included, or one that cannot be read, runs
+#   everything.
+# * decks/index.json is generated ONCE per run, by "Decks: index", and shared
+#   as the artifact `decks-index`: the 8 test shards and the release reader
+#   download it instead of each running the full validator again. It is made
+#   with `deck_index.py --strict-released` on a full-history checkout; the
+#   flag only adds a check against the latest release's tag (it never changes
+#   what is written), so the same file serves the shards, which used to run
+#   without the flag. "Decks: validate" still runs the full validator itself.
+# * A skipped job satisfies a required check, so the gates ("Validate decks",
+#   "Analyse and test") run `if: always()` and look at every result
+#   themselves: a skip passes only where `changes` says the job is not needed,
+#   never because an upstream job failed. "Build debug APK" is a required
+#   check of its own and is skipped like the others; if `changes` itself
+#   failed it is skipped too, but then "Analyse and test" fails, which blocks
+#   the merge.
+
 on:
   push:
     branches: [main]
+    # A push to main that changes documentation only starts no run (owner,
+    # 2026-11-02, after 2026-10-22: "Doc pushes do not need CI"); such a run
+    # used to queue behind, and so cancel, the pending run of a code push and
+    # leave the README's CI badge on "cancelled". The run is skipped only when
+    # EVERY changed file is excluded here. Later patterns win, so the two
+    # Markdown files that tests read from disk are included again: the review
+    # guide (test/reviewing_test.dart). CHANGELOG.md is not excluded either: it
+    # is an app asset (pubspec.yaml). pull_request has no filter, so a
+    # documentation pull request still runs every check the ruleset requires.
+    paths:
+      - "**"
+      - "!README.md"
+      - "!CLAUDE.md"
+      - "!AGENTS.md"
+      - "!CONTRIBUTING.md"
+      - "!docs/**"
+      - "docs/REVIEWING.md"
+      - "!wiki/**"
+      - "wiki/Reviewing-Guide.md"
   pull_request:
 
 # A new push to a PR cancels its older run; main's runs are never cancelled.
@@ -23,6 +70,66 @@ jobs:
   # APK", are the ones the main branch's ruleset names, so they keep their
   # names: the first two are small final jobs that gather the parallel ones.
 
+  # Cheap first job: does this change touch anything outside decks/? On a pull
+  # request the checkout is the merge commit, whose first parent is the base.
+  changes:
+    name: "Which parts changed"
+    runs-on: ubuntu-latest
+    outputs:
+      app: ${{ steps.diff.outputs.app }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+      - id: diff
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          app=true
+          if [ "$EVENT" = "pull_request" ]; then
+            if files=$(git diff --name-only --no-renames HEAD^1 HEAD) && [ -n "$files" ]; then
+              echo "Changed files: $(echo "$files" | wc -l)"
+              # Under decks/ and not an app file: themes.yaml is bundled in
+              # the app (pubspec.yaml) and min_app.json changes its gating.
+              others=$( { echo "$files" | grep -v '^decks/'; echo "$files" | grep -xE 'decks/(themes\.yaml|min_app\.json)'; } || true)
+              if [ -z "$others" ]; then
+                app=false
+                echo "Only decks/ changed: analyse, live downloads and the APK build are skipped."
+              else
+                echo "Outside decks/ (the app jobs run):"
+                echo "$others" | head -n 20
+              fi
+            else
+              echo "Could not list the changed files: the app jobs run."
+            fi
+          else
+            echo "Not a pull request: everything runs."
+          fi
+          echo "app=$app" >> "$GITHUB_OUTPUT"
+
+  # decks/index.json, once, for the jobs that need this change's own index
+  # (the app's tests read it; the release reader checks each file's hash by
+  # it). The committed one is regenerated only after merge.
+  decks-index:
+    name: "Decks: index"
+    runs-on: ubuntu-latest
+    steps:
+      # Full history: --strict-released reads the latest v* tag.
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - run: python3 tools/deck_index.py --strict-released
+      - uses: actions/upload-artifact@v7
+        with:
+          name: decks-index
+          path: decks/index.json
+          if-no-files-found: error
+          retention-days: 3
+
   decks-validate:
     name: "Decks: validate"
     runs-on: ubuntu-latest
@@ -36,9 +143,31 @@ jobs:
       # boolean and a reviewer will not spot it. See docs/DECK-FORMAT.md.
       # The index is regenerated on main after each merge (deck-index.yml),
       # so it is not checked here (owner, 2026-10-23).
-      - run: python3 tools/validate_decks.py decks/
+      # Its stdout and exit code are kept and shared (artifact
+      # `validate-output`): "Decks: tools' tests (today's decks)" asserts on
+      # this very run instead of repeating the 20-minute pass
+      # (tools/test_validate_b1.py, Compatibility).
+      - name: Validate the decks
+        shell: bash
         env:
           FLUENOUGH_SKIP_INDEX_CHECK: "1"
+        run: |
+          set +e
+          # The absolute path, as the test passes it: the test finds a
+          # language's lines by "/decks/<lang>/" in them.
+          python3 -u tools/validate_decks.py "$GITHUB_WORKSPACE/decks" | tee "$RUNNER_TEMP/validate-output.txt"
+          code=${PIPESTATUS[0]}
+          echo "$code" > "$RUNNER_TEMP/validate-exit.txt"
+          exit "$code"
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: validate-output
+          path: |
+            ${{ runner.temp }}/validate-output.txt
+            ${{ runner.temp }}/validate-exit.txt
+          if-no-files-found: error
+          retention-days: 3
       # Rule 10: no user-visible string is a literal in a widget. Checked here
       # rather than by the analyzer because flutter_lints has no such rule, and
       # a rule aimed at parallel agents cannot rest on a checklist box.
@@ -51,8 +180,46 @@ jobs:
   # decks/index.json, which the app downloads decks by, is current
   # (tools/deck_index.py) — so it and the index tool have tests of their
   # own. They are unittest TestCases, run here by pytest in parallel.
-  decks-tools-tests:
-    name: "Decks: tools' tests"
+  #
+  # They took 29 to 34 minutes in one job. The slowest-test table showed why:
+  # three tests read real decks (the validator's pass over decks/, 20+ minutes;
+  # PathAcrossDecks, 25 minutes; the card-id tests over es and bn, 9 minutes)
+  # and every other test took seconds. So the tests run as
+  #   - "today's decks": the validator-over-everything test, which reads the
+  #     output of "Decks: validate" instead of running the validator again;
+  #   - "real decks": the other two slow tests (one of them now validates a
+  #     real file once, not per case), side by side;
+  #   - two "parts" of everything else (every second test by id,
+  #     tools/conftest.py).
+  # Every test runs in exactly one of them. Each prints its 25 slowest
+  # (--durations=25). The job named "Decks: tools' tests" gathers
+  # the four above (it passes only if they all did) and is what "Validate
+  # decks" counts; it is not a required check itself.
+  decks-tools-parts:
+    name: "Decks: tools' tests (part ${{ matrix.part }}/2)"
+    strategy:
+      fail-fast: false
+      matrix:
+        part: [1, 2]
+    runs-on: ubuntu-latest
+    env:
+      TOOLS_TESTS_PART: ${{ matrix.part }}/2
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml pytest pytest-xdist fonttools
+      - run: >-
+          python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools
+          --deselect test_validate_b1.py::Compatibility::test_todays_decks_get_no_info_and_no_b1_message
+          --deselect test_validate_b1.py::PathAcrossDecks::test_a_path_across_the_decks_it_names
+          --deselect test_validate_card_ids.py::CardIds::test_a_file_alone_is_held_to_the_repository
+          --deselect test_validate_card_ids.py::CardIds::test_next_id_follows_the_highest_in_the_language
+          --durations=25
+
+  decks-tools-real:
+    name: "Decks: tools' tests (real decks)"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -60,13 +227,55 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml pytest pytest-xdist fonttools
-      - run: python3 -m pytest -n auto -q -p no:cacheprovider --rootdir tools tools
+      # Three tests, three workers.
+      - run: >-
+          python3 -m pytest -n 3 -q -p no:cacheprovider --rootdir tools
+          "tools/test_validate_b1.py::PathAcrossDecks::test_a_path_across_the_decks_it_names"
+          "tools/test_validate_card_ids.py::CardIds::test_a_file_alone_is_held_to_the_repository"
+          "tools/test_validate_card_ids.py::CardIds::test_next_id_follows_the_highest_in_the_language"
+          --durations=5
+
+  decks-tools-today:
+    name: "Decks: tools' tests (today's decks)"
+    needs: [decks-validate]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml pytest pytest-xdist fonttools
+      - uses: actions/download-artifact@v8
+        with:
+          name: validate-output
+          path: ${{ runner.temp }}/validate
+      # Exactly one test is selected; pytest fails if none is.
+      - run: python3 -m pytest -q -p no:cacheprovider --rootdir tools "tools/test_validate_b1.py::Compatibility::test_todays_decks_get_no_info_and_no_b1_message" --durations=5
+        env:
+          FLUENOUGH_VALIDATE_OUTPUT: ${{ runner.temp }}/validate/validate-output.txt
+          FLUENOUGH_VALIDATE_EXIT: ${{ runner.temp }}/validate/validate-exit.txt
+
+  decks-tools-tests:
+    name: "Decks: tools' tests"
+    needs: [decks-tools-parts, decks-tools-real, decks-tools-today]
+    if: always()
+    runs-on: ubuntu-latest
+    env:
+      PARTS: ${{ needs.decks-tools-parts.result }}
+      REAL: ${{ needs.decks-tools-real.result }}
+      TODAY: ${{ needs.decks-tools-today.result }}
+    steps:
+      - run: |
+          if [ "$PARTS" != "success" ] || [ "$REAL" != "success" ] || [ "$TODAY" != "success" ]; then
+            echo "::error::A tools' tests job did not succeed (parts: $PARTS, real decks: $REAL, today's decks: $TODAY)"
+            exit 1
+          fi
 
   # The required check "Validate decks": passes only if both jobs above did.
   decks:
     name: Validate decks
     runs-on: ubuntu-latest
-    needs: [decks-validate, decks-tools-tests]
+    needs: [decks-validate, decks-tools-tests, decks-index]
     if: always()
     steps:
       - run: |
@@ -82,7 +291,19 @@ jobs:
   release-reader:
     name: Released app reads the decks
     runs-on: ubuntu-latest
+    needs: [decks-index]
+    # Runs even if the index job failed, to fail by itself: a skipped job
+    # would count as a pass for this required check.
+    if: ${{ !cancelled() }}
     steps:
+      - name: The index job must have succeeded
+        env:
+          INDEX: ${{ needs.decks-index.result }}
+        run: |
+          if [ "$INDEX" != "success" ]; then
+            echo "::error::'Decks: index' did not succeed ($INDEX); see that job"
+            exit 1
+          fi
       - uses: actions/checkout@v7
         with:
           fetch-depth: 0
@@ -96,17 +317,14 @@ jobs:
           mkdir -p release/test/release_reader
           cp tools/release_reader/release_reader_test.dart release/test/release_reader/
       # The release reads decks/index.json and checks each listed file's
-      # hash, and the committed index is regenerated only after merge, so
-      # write this change's own index first.
-      - uses: actions/setup-python@v7
+      # hash, and the committed index is regenerated only after merge, so use
+      # this change's own, made once by "Decks: index" (with
+      # --strict-released, so decks/min_app.json is also checked against the
+      # latest release there, ADR-0052).
+      - uses: actions/download-artifact@v8
         with:
-          python-version: "3.12"
-      - run: pip install pyyaml
-      # Tags are fetched here (fetch-depth 0), so decks/min_app.json is also
-      # checked against the latest release's languages and files (ADR-0052).
-      - name: Regenerate the index for this change's decks
-        run: python3 tools/deck_index.py --strict-released
-      - run: cp decks/index.json release/decks/index.json
+          name: decks-index
+          path: release/decks
       - uses: subosito/flutter-action@v2
         with:
           flutter-version: ${{ env.FLUTTER_VERSION }}
@@ -121,6 +339,8 @@ jobs:
 
   app-analyse:
     name: "App: analyse"
+    needs: [changes]
+    if: needs.changes.outputs.app == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -165,8 +385,10 @@ jobs:
 
   # `flutter test` is split over 8 machines (owner, 2026-10-20); the suite is
   # ~51 minutes of tests, so each runs about an eighth. Shard indices are 0..7.
+  # The job name "App: tests N/8" is what the ruleset's gate waits for.
   app-tests:
     name: "App: tests ${{ matrix.n }}/8"
+    needs: [decks-index]
     strategy:
       fail-fast: false
       matrix:
@@ -202,20 +424,40 @@ jobs:
       - run: dart run build_runner build
       # The tests read decks/index.json (RepositoryDeckSource, the catalog
       # tests), and the committed one is regenerated only after merge, so
-      # write this change's own first.
-      - uses: actions/setup-python@v7
+      # use this change's own, made once by "Decks: index".
+      - uses: actions/download-artifact@v8
         with:
-          python-version: "3.12"
-      - run: pip install pyyaml
-      - name: Regenerate the index for this change's decks
-        run: python3 tools/deck_index.py
-      - run: flutter test --total-shards 8 --shard-index ${{ matrix.shard }}
+          name: decks-index
+          path: decks
+      # Each shard runs whole test files, chosen by tools/test_shard.py from the
+      # weights in test/shard_weights.json (a file with no weight gets a
+      # default, so a new test file needs nothing). `flutter test
+      # --total-shards` split the tests one by one instead, so every shard
+      # compiled every file and a shard's time was luck: 249 s to 750 s on
+      # main run 41886601755. The files are listed first, apart from the
+      # command, so that a failure of the script stops the step: inside $( )
+      # it would leave `flutter test` with no files, which runs them all.
+      # The json report gives each test file's time, for refreshing the weights.
+      - name: Test
+        run: |
+          files=$(python3 tools/test_shard.py --total-shards 8 --shard-index ${{ matrix.shard }})
+          echo "$files"
+          flutter test $files --file-reporter json:flutter-test-times.json
+      - uses: actions/upload-artifact@v7
+        if: always()
+        with:
+          name: flutter-test-times-${{ matrix.n }}
+          path: flutter-test-times.json
+          if-no-files-found: ignore
+          retention-days: 14
 
   # Real downloads from GitHub through the app's own fetcher: 0.4.0
   # shipped unable to download any deck, which only a test against the
   # real GitHub could have caught.
   app-live:
     name: "App: live downloads"
+    needs: [changes]
+    if: needs.changes.outputs.app == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
@@ -242,21 +484,49 @@ jobs:
         env:
           LIVE_GITHUB: "1"
 
-  # The required check "Analyse and test": passes only if every app job did.
+  # The required check "Analyse and test". The test shards must always have
+  # succeeded (a skip means "Decks: index" failed, which they wait for). If
+  # `changes` found only decks, analyse and live downloads are skipped on
+  # purpose and that passes; otherwise they must have succeeded too.
   app:
     name: Analyse and test
     runs-on: ubuntu-latest
-    needs: [app-analyse, app-tests, app-live]
+    needs: [changes, app-analyse, app-tests, app-live]
     if: always()
+    env:
+      CHANGES: ${{ needs.changes.result }}
+      APP: ${{ needs.changes.outputs.app }}
+      ANALYSE: ${{ needs.app-analyse.result }}
+      TESTS: ${{ needs.app-tests.result }}
+      LIVE: ${{ needs.app-live.result }}
     steps:
       - run: |
-          if [ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') || contains(needs.*.result, 'skipped') }}" = "true" ]; then
-            echo "::error::An app job did not succeed"
+          if [ "$CHANGES" != "success" ]; then
+            echo "::error::The changes job did not succeed ($CHANGES)"
             exit 1
+          fi
+          if [ "$TESTS" != "success" ]; then
+            echo "::error::The test shards did not succeed ($TESTS); if 'Decks: index' failed, see it"
+            exit 1
+          fi
+          for result in "$ANALYSE" "$LIVE"; do
+            if [ "$result" = "failure" ] || [ "$result" = "cancelled" ]; then
+              echo "::error::An app job did not succeed ($ANALYSE/$LIVE)"
+              exit 1
+            fi
+            if [ "$APP" = "true" ] && [ "$result" != "success" ]; then
+              echo "::error::An app job did not run ($ANALYSE/$LIVE)"
+              exit 1
+            fi
+          done
+          if [ "$APP" != "true" ]; then
+            echo "Only decks changed: analyse and live downloads were skipped."
           fi
 
   build:
     name: Build debug APK
+    needs: [changes]
+    if: needs.changes.outputs.app == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7

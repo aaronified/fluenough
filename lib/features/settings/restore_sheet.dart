@@ -202,7 +202,11 @@ class _RestoreSheet extends StatelessWidget {
                     backgroundColor: scheme.error,
                     foregroundColor: scheme.onError,
                   ),
-                  onPressed: () => Navigator.of(context).pop(true),
+                  onPressed: () {
+                    // Replacing the learner's progress: the heaviest pulse.
+                    AppScope.read(context).haptics.danger();
+                    Navigator.of(context).pop(true);
+                  },
                   child: Text(
                     l10n.settingsRestoreConfirm,
                     textAlign: TextAlign.center,

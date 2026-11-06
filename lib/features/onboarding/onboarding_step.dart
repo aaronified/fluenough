@@ -139,8 +139,9 @@ class OnboardingAnswers extends ChangeNotifier {
   /// Each language is saved as its skills, and the older lists follow
   /// ([LanguageSkillsOnState.applySkills]): what is learned, what is spoken,
   /// the scripts read. A language to learn starts its download, as adding it
-  /// on the Languages page does. With nothing to learn, the learning
-  /// languages are still asked next (`lib/app.dart`).
+  /// on the Languages page does, and is offered "Find my level"
+  /// ([SettingsNotifier.placementOffers], `lib/app.dart`). With nothing to
+  /// learn, the learning languages are still asked next (`lib/app.dart`).
   void saveTo(AppState state) {
     if (_soundCheck case final check?) {
       state.settings.setSkillEnabled(Skill.speaking, check.speaks);
@@ -151,6 +152,14 @@ class OnboardingAnswers extends ChangeNotifier {
     for (final c in _chosen.values) {
       state.applySkills(c.language, c.skills);
     }
+    // Each language to Learn is then offered "Find my level", before the app
+    // (owner, 2026-11-02): kept in the settings so that leaving the app before
+    // the offer is answered does not lose it. Set before the spoken languages,
+    // whose saving ends the first launch.
+    state.settings.placementOffers = <String>[
+      for (final c in _chosen.values)
+        if (c.skills.anyLearn && !c.language.isNotation) c.language.code,
+    ];
     state.settings
       ..setLanguageSkills(englishCode, englishKnownByDefault().toStored())
       ..scriptsRead = <String, bool>{...state.settings.scriptsRead, 'en': true}

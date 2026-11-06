@@ -1,6 +1,6 @@
 # Deck format, schema 1
 
-Mirrors [docs/DECK-FORMAT.md](https://github.com/aaronified/fluenough/blob/main/docs/DECK-FORMAT.md) in the repo, which tools read.
+This page is the only deck format document (owner, 2026-11-02: "Wiki is the main home for all docs. other docs are obsolete"). `docs/DECK-FORMAT.md` in the repo is a pointer to it. Agents read it in the repo as `wiki/Deck-Format.md`. See [ADR-0044](ADR-0044-Documentation-Lives-In-The-Wiki).
 
 
 **This file is the guide; `tools/validate_decks.py` is the test.** When the
@@ -134,7 +134,7 @@ Common to every kind.
 | `iso639_3` | yes | Three-letter ISO 639-3 code, e.g. `spa`, `jpn`, `hin`, `eng`. It names the language unambiguously, including languages with no two-letter code, and sits beside `code` rather than replacing it. |
 | `name` | yes | English name of the language. |
 | `script` | yes | A lowercase script name. The validator knows `latin`, `cyrillic`, `greek`, `arabic`, `hebrew`, `devanagari`, `bengali`, `gujarati`, `gurmukhi`, `odia`, `telugu`, `tamil`, `kannada`, `malayalam`, `sinhala`, `kana`, `han`, `hangul`, `thai`, `ipa`, `braille` and `other`. Any other name is accepted with a warning ([ADR-0009](ADR-0009-Scripts-Are-Open)). Every script but `latin`, `cyrillic`, `greek`, `ipa` and `braille` expects a `reading` on each card. `ipa` is for [the IPA course](#the-ipa-course) alone, and `braille` for [the English Braille course](#the-english-braille-course), whose answers are typed on the app's own braille keyboard. |
-| `scripts` | no | For a language written in more than one script, every script it is taught in, `script` first: `["devanagari", "perso_arabic"]` for Hindustani, `["han", "han_traditional"]` for Chinese. Two or more names, none twice. A card's other spellings are written under [`target_scripts`](#a-cards-other-scripts-target_scripts). A script id is lowercase words joined by an underscore (`perso_arabic`, `ol_chiki`), as the app's own list of scripts has it; the validator accepts a hyphen too. |
+| `scripts` | no | For a language written in more than one script, every script it is taught in, `script` first: `["devanagari", "perso_arabic"]` for Hindustani, `["han", "han_traditional"]` for Chinese, `["han", "kana"]` for Japanese kanji decks ([below](#japanese-kanji)). Two or more names, none twice. A card's other spellings are written under [`target_scripts`](#a-cards-other-scripts-target_scripts). A script id is lowercase words joined by an underscore (`perso_arabic`, `ol_chiki`), as the app's own list of scripts has it; the validator accepts a hyphen too. |
 | `tts` | no | BCP-47 tag handed to the TTS engine, e.g. `es-ES`, `pt-BR`. Defaults to `code`. Omitting it on a language with major regional variation is a mistake. |
 | `rtl` | no | `true` for right-to-left scripts. Defaults to `false`. A deck's text is drawn in its own direction, not the interface's: a card's target, the tiles of the word-order drill (built from the right, the words in Latin letters excepted), and where the interface quotes it, as in "Answer: …", the quote is isolated from the words around it so that neither reorders the other. |
 | `typed` | no | `false` for a language whose answers cannot be typed: its production is asked by choosing the word among others, in reviews, in lessons and in the check of a hard word, never by typing. Defaults to `true`. Only [the IPA course](#the-ipa-course) is `false`. [English Braille](#the-english-braille-course) is typed, on the app's own keyboard, which its script names. |
@@ -695,6 +695,113 @@ decks list `scripts: ["perso_arabic", "devanagari"]` and give every card a
 `devanagari` spelling the Hindi voice can read: a letter with its vowel
 (`ب` is `ब`), a word in its normal Hindi spelling. A card with no sensible
 spelling, such as a bare nasal mark, gives none, and no backup is said for it.
+
+### Japanese kanji
+
+Japanese is written in kana and kanji. Its two scripts are `kana` and `han`
+(the app names `han` "Kanji"), and a card written in kanji is a card of a
+language with two scripts, so it uses the machinery above and nothing new
+(owner, 2026-11-02, [ADR-0053](ADR-0053-Japanese-Kanji): "From each kanji unit on, cards write the target in
+kanji with the kana reading shown (like Chinese hanzi with pinyin); earlier
+cards stay kana."). Cards before the first kanji unit are as they were:
+`script: kana`, one script, the target in kana.
+
+A **kanji deck** has `script: han` and `scripts: [han, kana]`. Its card's
+`target` is in kanji, with its okurigana where it has them, and the kana
+reading, the word spelled in kana, is `target_scripts.kana`:
+
+```yaml
+language: { code: ja, iso639_3: jpn, name: Japanese, script: han, scripts: [han, kana], tts: ja-JP }
+cards:
+  - id: "ja-0301"
+    target: "食べる"
+    target_scripts: { kana: "たべる" }
+    words: ["食べる"]
+    reading: "taberu"
+    ipa: "tabeɾɯ"
+    pos: "verb"
+```
+
+- **The kana reading is `target_scripts.kana`, and `reading` stays the
+  romaji.** `reading` is the course's Hepburn romanisation, which typed
+  romaji answers, `ipa` and the readings in prose all follow, so it does not
+  change. The kana is the card's second spelling, so one card has one
+  `reading` and one `ipa`, as Hindustani's two spellings do.
+- **Every target with a kanji in it needs a kana reading.** The validator
+  refuses a kanji target with none, and a reading with a kanji (or romaji)
+  in it: its letters must be hiragana, katakana (ー and ・ too) or halfwidth
+  katakana. 々, 〆 and 〇 count as kanji. A target in kana alone (ありがとう,
+  です, a particle) gives none: the kana is the target.
+- **A word that mixes the two stays one word.** 食べる and 食べました are
+  one `words` entry each; their `bases` name the base in kanji (`base:
+  "食べる"`) with its romaji `reading`, and the card of the base is the card
+  whose `target` is 食べる. `words` is the target's only, as for any
+  `target_scripts` spelling: the kana spelling has no `words` of its own and
+  is split at spaces, since it need not have as many letters (日本語 is
+  three, にほんご is four).
+- **Examples are written in kanji too, each with its kana line.** An example
+  takes `target_scripts`, in the card's shape, and an example with a kanji in
+  it needs `target_scripts: { kana: ... }` as a card does (owner, 2026-11-02:
+  "Add a kana line"). The romaji `reading` stays, and the translation is in
+  each layer, keyed by the example's `target` as before:
+
+  ```yaml
+  examples:
+    - target: "私は食べます。"
+      target_scripts: { kana: "わたしはたべます。" }
+      words: ["私", "は", "食べます"]
+      reading: "watashi wa tabemasu."
+  ```
+
+  The kana line has no `words` of its own, like a card's. Only `target_scripts`
+  is new on an example; an example in kana alone gives none. The app shows the
+  kana line under the kanji example, as a card shows its kana, for a learner
+  who learns kanji and kana, and the kana alone to one who learns kana only.
+- **A card id never changes when its card moves to kanji.** A card already
+  in a kana deck keeps its id and its history; the kanji spelling lands as a
+  new card of a kanji deck only where the word is new.
+
+**A script unit of kanji** (`script-kanji-1` to `script-kanji-6`, deck ids
+`ja-kanji-N`, listed under the path's `alphabet`) is a vocab deck tagged
+`script`, as Chinese's `characters-N` is, and its cards are single kanji:
+
+```yaml
+  - id: "ja-0401"
+    target: "日"
+    target_scripts: { kana: "ひ" }
+    words: ["日"]
+    reading: "hi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "日曜日です。"
+        words: ["日曜日", "です"]
+        reading: "nichiyoubi desu."
+```
+
+The kana reading is the one reading the unit teaches the kanji by: the word
+it stands for alone (ひ, sun, day), or for a kanji that never stands alone,
+its commonest word's. The other on and kun readings are the card's notes
+(`日: on ニチ (nichi), ジツ (jitsu); kun ひ (hi), か (ka)`, in the layer, with
+the romaji beside each kana, as notes quote any word), and the kanji's use in
+words is taught by the examples and by the kanji word cards that follow.
+
+A learner learns kanji on top of kana. Kana is the script a Japanese course
+starts with, however many of its decks are kanji decks (`primaryScript`),
+and a learner of kana alone sees a kanji deck's cards in kana, from their
+`target_scripts.kana`, and leaves the kanji script units out as any skipped
+script's are. A learner who learns kanji sees the kanji with the kana beneath
+it, as the app shows a card's other spellings, and may write either: the kana
+spelling, which accepts the kanji too, or the kanji.
+
+A card's `target_scripts` is a field the released app reads, but **an
+example's `target_scripts` is new**: the released app refuses an example with
+a field it does not know, so a deck file that has one cannot be read by an
+app before this version. A kanji deck therefore lands after the
+release that carries this, and each such file is held to it with
+`decks/min_app.json`
+([ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index)).
 
 ### A note on `id`
 
@@ -2158,7 +2265,7 @@ only in exams (placement, #481, and the B1 milestones), and a learner can
 retake an exam but never meets a passage through review. Exam answers move
 the words' schedules like any practice. The app still schedules reading
 questions as described above until that is built, and the format of a deck
-does not change. See `docs/plans/question-engine.md`, "Reading passages".
+does not change. See [Plan-Question-Engine](Plan-Question-Engine), "Reading passages".
 
 ```yaml
 schema: 1
@@ -2695,7 +2802,7 @@ A region is used in two places: the rater's answer to "Where you speak
 Telugu" in reviewer mode, kept with the rater's ratings by region id, and a
 card's region note. Where a rater's regions differ by a band or more on an
 offensive word, the difference becomes a region note
-(`docs/plans/offensive-words.md`).
+([Plan-Offensive-Words](Plan-Offensive-Words)).
 
 ## Writing a B1 course
 
@@ -2706,8 +2813,8 @@ error before moving on. Read the warnings; do not leave them unexplained.
 
 **Before you start:**
 
-- Read [Agentic-Coding](Agentic-Coding), `docs/plans/b1-plans.md` and
-  `docs/plans/words-rules-sentences.md`, and this file through (its
+- Read [Agentic-Coding](Agentic-Coding), [Plan-B1-Plans](Plan-B1-Plans) and
+  [Plan-Words-Rules-Sentences](Plan-Words-Rules-Sentences), and this file through (its
   [Core and layer files](#core-and-layer-files) section replaces the removed
   `native-layers.md` plan).
 - **Card ids are permanent.** Splitting, moving or converting a deck keeps
@@ -2739,7 +2846,7 @@ error before moving on. Read the warnings; do not leave them unexplained.
    `id` and its English description, and the three milestones, about 700,
    1,600 and 2,800 words in. Take the themes
    and grammar of each level from the CEFR skeleton in `b1-plans.md`, and
-   their order from `docs/plans/language-paths-scheme.md` for the language's
+   their order from [Plan-Language-Paths-Scheme](Plan-Language-Paths-Scheme) for the language's
    family. The first unit holds the phrasebook. The plan comes before the
    first core: once the language has one, the path must have its plan. A
    new theme goes into `decks/themes.yaml` in a small change of its own,
@@ -2825,6 +2932,22 @@ error before moving on. Read the warnings; do not leave them unexplained.
       words the course teaches: the validator lists those it does not. A
       reading deck that needs the script is listed in `alphabet`; a unit of
       reading decks that are not gives `words: 0`.
+
+   5. **Flag what you are unsure of.** Before finishing the unit, append a
+      row to `docs/review-queue/<lang>.md` ([the sidecar's
+      README](https://github.com/aaronified/fluenough/blob/main/docs/review-queue/README.md))
+      for each card you are unsure of: gender, part of speech, reading or
+      tone, a doubtful note, a traditional form, naturalness, a missing
+      phrase. It goes in the same commit as the unit. Use the card's real id
+      and never invent one; a question about the unit as a whole uses
+      `unit-level`. The one-line question must be answerable by a bilingual
+      reviewer. **Never put a flag in the deck YAML**: released apps reject
+      unknown card keys. The review bot, once built, asks the listed cards
+      first. (Owner, 2026-11-06, asked "Questions for a bilingual reviewer:
+      will these be in the decks? and asked to the reviewer when they
+      review?", answered "go B": one sidecar list per language, nothing
+      shipped to learners.) This is the per-unit counterpart of the
+      build-deck skill's step 7a.
 
    When a planned unit's deck is written, the unit's `planned` becomes
    `decks` in the same change, and its `words` is checked against what it

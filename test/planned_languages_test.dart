@@ -20,7 +20,7 @@ void main() {
 
   final planned =
       'pt it ca sv nb yi ru pl hbs el he fi hu tr eu ga ar yue th vi fil ms '
-              'sw ha so qu gmy sux egy ine vsn la ang enm ins ase tlh sjn qya '
+              'sw ha so qu af nl uk id fa ps sat sa gmy sux egy ine vsn la ang enm ins ase tlh sjn qya '
               'qdo qhv grc qgh qgk pli arc qap'
           .split(' ');
 

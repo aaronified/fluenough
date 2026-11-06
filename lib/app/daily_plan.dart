@@ -17,6 +17,7 @@ class DailyPlan {
     required this.due,
     required this.newAvailable,
     required this.split,
+    this.secondsPerTeach = DailyBudget.defaultSecondsPerTeach,
   });
 
   final LanguageInfo language;
@@ -35,6 +36,10 @@ class DailyPlan {
   /// Seconds a card takes this learner, for turning minutes to cards.
   final double secondsPerCard;
 
+  /// Seconds teaching a new word takes this learner, for turning the new
+  /// words of the split into minutes.
+  final double secondsPerTeach;
+
   /// Reviews waiting, whatever today's budget.
   final int due;
 
@@ -45,17 +50,41 @@ class DailyPlan {
   /// "Keep going" would buy: one step of minutes.
   final DailySplit split;
 
+  /// The minutes of today's time that go to reviews, as [split] divides it
+  /// (#1009): its reviews at [secondsPerCard] each, about, in whole minutes.
+  int get reviewMinutes =>
+      DailyBudget.minutesOfSeconds(split.reviews * secondsPerCard);
+
+  /// The minutes that go to new words, as [split] divides it: each word is
+  /// taught, then asked [DailyPlanner.teachPasses] times (#1009).
+  ///
+  /// The remainder of the time left, so that the two never add up to more
+  /// than is left: with one minute left, 1 min review and 0 min new.
+  int get newMinutes {
+    final planned = DailyBudget.minutesOfSeconds(
+      split.newWords *
+          (secondsPerTeach + DailyPlanner.teachPasses * secondsPerCard),
+    );
+    final leftSeconds = minutes * 60 - spent.inSeconds;
+    final left = DailyBudget.minutesOfSeconds(leftSeconds.toDouble());
+    return math.max(0, math.min(planned, left - reviewMinutes));
+  }
+
   /// The minutes today's session is for: the goal and what was added.
   int get minutes =>
       math.max(DailyBudget.minMinutes, goalMinutes + extraMinutes);
 
   /// Whole minutes done, rounded down and never more than [minutes], for
-  /// "12 of 15 min": it reads "15 of 15" only once the budget is spent and
-  /// the button reads Done for today.
-  int get minutesDone => math.min(minutes, spent.inSeconds ~/ 60);
+  /// "12 of 15 min". With the day [done] it reads the full time, "15 of
+  /// 15", whatever the clock counted: a day that has ended has no minutes
+  /// left to show (#1007).
+  int get minutesDone =>
+      done ? minutes : math.min(minutes, spent.inSeconds ~/ 60);
 
-  /// How much of today's budget is spent, from 0 to 1: the ring.
-  double get fraction => math.min(1.0, spent.inSeconds / (minutes * 60));
+  /// How much of today's budget is spent, from 0 to 1: the ring. Full once
+  /// the day is [done].
+  double get fraction =>
+      done ? 1.0 : math.min(1.0, spent.inSeconds / (minutes * 60));
 
   /// Today's minutes are all spent.
   bool get budgetDone => spent.inSeconds >= minutes * 60;
@@ -71,8 +100,13 @@ class DailyPlan {
   /// nothing left to ask.
   bool get done => budgetDone || nothingLeft;
 
-  /// "Keep going" is offered: the budget is spent and there is more to do.
-  bool get canKeepGoing => budgetDone && !nothingLeft;
+  /// The day's whole time in minutes, rounded down: the goal's minutes and
+  /// any Keep going time, which the clock adds to [spent] (#1009).
+  int get totalMinutes => spent.inSeconds ~/ 60;
+
+  /// More time was spent than the day's [minutes]: Keep going time exists,
+  /// and Today reads the day's total rather than "15 of 15 min".
+  bool get keptGoing => totalMinutes > minutes;
 
   /// About how many minutes the waiting reviews take, for the catching-up
   /// line.
@@ -96,10 +130,22 @@ class DailyRun {
     required this.language,
     required this.clock,
     this.spentAtStart = Duration.zero,
+    this.keepGoing = false,
+    this.taughtBefore = 0,
   });
 
   final String language;
   final DailyCountdown clock;
+
+  /// A Keep going stretch (#1010): the day's session after its minutes are
+  /// done, which serves the cards closest to due and some new words under
+  /// the guards of [DailyBudget].
+  final bool keepGoing;
+
+  /// The words already taught today when the session began (#1010): Keep
+  /// going's cap counts them with the words this session teaches, which the
+  /// log does not hold until they are answered.
+  final int taughtBefore;
 
   /// The time Today counted as spent when the session began.
   final Duration spentAtStart;

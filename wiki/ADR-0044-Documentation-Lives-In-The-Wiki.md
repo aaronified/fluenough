@@ -56,6 +56,22 @@ readable only by workflows, so a session cannot use one either.
   languages badge that `tools/deck_index.py` rewrites, its screenshots and
   a Courses section.
 
+## Update, 2026-11-02 (owner decision)
+
+The owner decided that the wiki is the only home of the deck format and of
+the other documents: "Wiki is the main home for all docs. other docs are
+obsolete". So:
+
+- `wiki/Deck-Format.md` is the only deck format document. Agents read it in
+  the repo by that path.
+- `docs/DECK-FORMAT.md` is now a one-line pointer stub to it. The "Repo docs
+  (option A)" list above, which kept it a full file because tools or agents
+  read it from disk, is amended: nothing reads it from disk (only comments
+  and error messages in `lib/`, `test/` and `tools/` mention it), and its
+  text is kept in the wiki page, which was already the newer copy. The
+  stub stays one more release for the agents' old links.
+- The earlier text of this record is kept as it was written.
+
 ## Consequences
 
 - An edit made in the wiki's web editor is overwritten by the next sync.

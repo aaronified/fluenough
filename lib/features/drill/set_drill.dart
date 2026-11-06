@@ -11,7 +11,10 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/speaker.dart';
 import '../../ui/widgets/target_text.dart';
+import '../../app/skill.dart';
 import 'drill_session.dart';
+import 'going_on.dart';
+import '../../ui/widgets/ipa_line.dart';
 
 /// A set card in a lesson (DECK-FORMAT.md, Set cards; #515; the approved
 /// mockup `docs/mockups/set-cards.html`): a closed group's members together,
@@ -21,7 +24,8 @@ import 'drill_session.dart';
 /// set's explanation; each member a row, its word over its reading, its
 /// meaning and its mark, New or Known, the whole row playing the word; and
 /// on the set's last part, a line saying what comes next and naming the
-/// members it skips. Continue goes on; nothing is recorded.
+/// members it skips. A swipe or the chevrons go on and back; nothing is
+/// recorded.
 ///
 /// Build one per card (key it by the card's position).
 class SetDrill extends StatelessWidget {
@@ -47,13 +51,19 @@ class SetDrill extends StatelessWidget {
     );
 
     return DrillFrame(
-      skill: session.skill,
+      // The pill is the colour of the skill the set leads into: "New words ·
+      // Recognition" (owner, 2026-10-31, #509).
+      skill: Skill.recognition,
+      pillLabel: l10n.shellNewWords,
       deckName: session.deck.deck.name,
       position: session.position,
       total: session.total,
       reportDetail: '${part.set.set.id} in ${part.set.set.deckId}',
       progress: session.progress,
       onClose: onClose,
+      // No foot and no Continue: the card takes the foot's space, and going
+      // on is the swipe and the chevrons, both ways (owner, 2026-10-31).
+      going: goingOn(session, answered: true, onNext: session.learnt),
       card: <Widget>[
         if (part.set.hasFullList)
           Row(
@@ -99,20 +109,6 @@ class SetDrill extends StatelessWidget {
               color: scheme.onSurfaceVariant,
             ),
           ),
-      ],
-      actions: <Widget>[
-        FilledButton(
-          onPressed: session.learnt,
-          style: AppButtonStyles.tall(context),
-          child: Row(
-            mainAxisSize: MainAxisSize.min,
-            children: <Widget>[
-              Flexible(child: Text(l10n.commonContinue)),
-              const SizedBox(width: 10),
-              const Icon(Icons.arrow_forward, size: 22),
-            ],
-          ),
-        ),
       ],
     );
   }
@@ -239,6 +235,12 @@ class SetMemberRow extends StatelessWidget {
         ),
       ),
     };
+    final lines = readingLines(
+      context,
+      reading: card.reading,
+      ipa: card.ipa,
+      target: card.target,
+    );
     final row = ConstrainedBox(
       constraints: const BoxConstraints(minHeight: 72),
       child: Padding(
@@ -260,9 +262,10 @@ class SetMemberRow extends StatelessWidget {
                         textAlign: TextAlign.start,
                         color: known ? muted : scheme.onSurface,
                       ),
-                      if (card.reading case final reading?)
-                        Text(
+                      if (lines.reading case final reading?)
+                        ReadingText(
                           reading,
+                          swapped: lines.swapped,
                           style: theme.textTheme.bodyMedium!.copyWith(
                             color: muted,
                           ),

@@ -201,7 +201,7 @@ python3 tools/gen_planned_paths.py --check
 ## `split_deck.py`
 
 Splits a single-file deck into a core and an English layer, as
-`docs/DECK-FORMAT.md`, "Splitting a deck", describes (#397, #498). It
+[Deck-Format](Deck-Format), "Splitting a deck", describes (#397, #498). It
 keeps every card id, entry key and slot, deletes the old file, and refuses a
 split that, merged back, would not give the old deck. A language's script
 guide and sounds file split the same way: the core keeps the path, the
@@ -337,7 +337,7 @@ are covered; sentences are not on Wiktionary.
 Pronunciations in [ ] adapted from [Wiktionary](https://en.wiktionary.org), licensed [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/). The app's Sources screen carries the same line.
 
 `derive_phonetic.py` applies the ordered rules of
-`decks/<lang>/<lang>-phonetics.yaml` ([format](https://github.com/aaronified/fluenough/blob/main/docs/DECK-FORMAT.md#phonetic-rules-files))
+`decks/<lang>/<lang>-phonetics.yaml` ([format](Deck-Format#phonetic-rules-files))
 to the broad `ipa`. A card the rules do not change gets nothing unless
 `--bracket-unchanged`.
 

@@ -35,6 +35,7 @@
 **6. Roadmap**
 - [Roadmap](Roadmap)
 - [Plans Index](Plans-Index)
+- [Plans Retired](Plans-Retired)
 - [Audit: Tense, Number, Gender](Audit-Tense-Number-Gender)
 
 **7. Sources and attributions**
@@ -50,6 +51,8 @@
 - [Backup Format](Backup-Format)
 - [Log Format](Log-Format)
 - [Agentic Coding](Agentic-Coding)
+- [Owner decisions history](Owner-Decisions-History)
 - [Releasing](Releasing)
 - [ADR Index](ADR-Index)
 - [Mockups and Skills](Mockups-and-Skills)
+- [Design Guidelines](Design-Guidelines)

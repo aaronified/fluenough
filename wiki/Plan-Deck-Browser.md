@@ -25,7 +25,7 @@ proposals in the decks at once, and agreement merges them to learners; see
 "Reviewers change the decks, with no wait" below.
 
 Written 2026-10-06. **Moved ahead, 2026-10-09:** built now, on today's
-deck format, before the native layers (`docs/DECK-FORMAT.md`, "Core and layer files"), so that
+deck format, before the native layers ([Deck-Format](Deck-Format), "Core and layer files"), so that
 reviewers can check the Bengali and Telugu B1 decks as they arrive; layer
 support is added when #392 lands (owner).
 
@@ -233,7 +233,7 @@ Settled with the owner, 2026-10-09:
 - **Reviewers change the decks, with no wait** (**built**, 2026-10-09, in #444,
   closes #441: ADR-0038, the `proposed` format, reviewer mode's
   Accept, Edit and Reject, the bot in `tools/review_bot.py`, and the owner's
-  guide, `docs/review-bot-setup.md`; it waits for the App's secrets) (owner, 2026-10-09:
+  guide, [Review-Bot-Setup](Review-Bot-Setup); it waits for the App's secrets) (owner, 2026-10-09:
   "Make it totally automated then. The first review auto merges the PR
   and shows all changes to all applicable reviewers. If anyone agrees,
   that gets an instant merge to learner decks. This number can be a
