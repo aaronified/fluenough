@@ -1,0 +1,621 @@
+schema: 1
+id: "fr-en-eating-out"
+kind: "layer"
+core: "fr-eating-out"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Eating out"
+license: "CC-BY-SA-4.0"
+description: "Forty words for eating out: booking a table, the terrace and the table things, the sauces and the dishes, the drinks and the bill, and the words for how food is cooked. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1476":
+    native: "to book, to reserve"
+    notes:
+      "n1": "Réserver is 'to book' a table or a room. Je voudrais means I would like, the polite form."
+    examples:
+      "Je voudrais réserver une table.":
+        native: "I would like to book a table."
+        bases:
+          "voudrais": "would like"
+          "réserver": "book"
+      "Nous avons réservé pour deux.":
+        native: "We have booked for two."
+        bases:
+          "avons": "have"
+          "réservé": "booked"
+  "fr-1477":
+    native: "booking, reservation"
+    notes:
+      "n1": "Réservation is 'booking' or 'reservation', feminine. Avoir une réservation means to have a booking."
+    examples:
+      "Ma réservation est à huit heures.":
+        native: "My booking is at eight o'clock."
+        bases:
+          "réservation": "booking"
+          "à": "at"
+          "heures": "o'clock"
+      "Vous avez une réservation ?":
+        native: "Do you have a booking?"
+        bases:
+          "avez": "have"
+          "réservation": "booking"
+  "fr-1478":
+    native: "terrace, outdoor seating"
+    notes:
+      "n1": "Terrasse is 'terrace' or 'outdoor seating', feminine. It is also a terrace on a roof."
+    examples:
+      "Nous mangeons sur la terrasse.":
+        native: "We eat on the terrace."
+        bases:
+          "mangeons": "eat"
+          "terrasse": "terrace"
+      "La terrasse est pleine ce soir.":
+        native: "The terrace is full this evening."
+        bases:
+          "terrasse": "terrace"
+          "pleine": "full"
+  "fr-1479":
+    native: "tablecloth"
+    notes:
+      "n1": "Nappe is 'tablecloth', feminine. A cloth to wipe is a torchon."
+    examples:
+      "La nappe est blanche.":
+        native: "The tablecloth is white."
+        bases:
+          "nappe": "tablecloth"
+          "blanche": "white"
+      "Il y a une tache sur la nappe.":
+        native: "There is a stain on the tablecloth."
+        bases:
+          "y": "there"
+          "tache": "stain"
+          "nappe": "tablecloth"
+  "fr-1480":
+    native: "sauce, gravy"
+    notes:
+      "n1": "Sauce is 'sauce', feminine. Une sauce can also be a gravy for meat."
+    examples:
+      "La sauce est très bonne.":
+        native: "The sauce is very good."
+        bases:
+          "sauce": "sauce"
+          "bonne": "good"
+      "Je mets de la sauce sur les frites.":
+        native: "I put some sauce on the chips."
+        bases:
+          "mets": "put"
+          "de": "some"
+          "sauce": "sauce"
+  "fr-1481":
+    native: "mustard"
+    notes:
+      "n1": "Moutarde is 'mustard', feminine. It is the sauce for ham and sausages."
+    examples:
+      "Tu veux de la moutarde ?":
+        native: "Do you want some mustard?"
+        bases:
+          "veux": "want"
+          "de": "some"
+          "moutarde": "mustard"
+      "La moutarde est sur la table.":
+        native: "The mustard is on the table."
+        bases:
+          "moutarde": "mustard"
+  "fr-1482":
+    native: "oil"
+    notes:
+      "n1": "Huile is 'oil', feminine. Huile d'olive is olive oil, the everyday oil for a salad."
+    examples:
+      "Je mets de l'huile dans la salade.":
+        native: "I put some oil in the salad."
+        bases:
+          "mets": "put"
+          "de": "some"
+          "l'huile": "oil"
+      "L'huile d'olive est bonne.":
+        native: "The olive oil is good."
+        bases:
+          "L'huile": "olive oil"
+          "d'olive": "of olive"
+          "bonne": "good"
+  "fr-1483":
+    native: "dressing, vinaigrette"
+    notes:
+      "n1": "Vinaigrette is 'dressing' for a salad: oil and vinegar. It is also the French word for vinaigrette."
+    examples:
+      "La vinaigrette est bonne.":
+        native: "The dressing is good."
+        bases:
+          "vinaigrette": "dressing"
+          "bonne": "good"
+      "Je veux la vinaigrette à côté.":
+        native: "I want the dressing on the side."
+        bases:
+          "veux": "want"
+          "vinaigrette": "dressing"
+          "à": "on"
+  "fr-1484":
+    native: "vegetables"
+    notes:
+      "n1": "Légumes is 'vegetables', masculine and plural. A single vegetable is un légume."
+    examples:
+      "Les légumes sont frais.":
+        native: "The vegetables are fresh."
+        bases:
+          "légumes": "vegetables"
+      "Je mange des légumes et du poisson.":
+        native: "I eat vegetables and some fish."
+        bases:
+          "mange": "eat"
+          "légumes": "vegetables"
+          "du": "some"
+  "fr-1485":
+    native: "lamb"
+    notes:
+      "n1": "Agneau is 'lamb', masculine. The animal itself is an agneau too."
+    examples:
+      "L'agneau est très tendre.":
+        native: "The lamb is very tender."
+        bases:
+          "L'agneau": "lamb"
+          "tendre": "tender"
+      "Je prends de l'agneau.":
+        native: "I take some lamb."
+        bases:
+          "de": "some"
+          "l'agneau": "lamb"
+  "fr-1486":
+    native: "ham"
+    notes:
+      "n1": "Jambon is 'ham', masculine. Un sandwich au jambon is a ham sandwich."
+    examples:
+      "Le jambon est dans le sandwich.":
+        native: "The ham is in the sandwich."
+        bases:
+          "jambon": "ham"
+      "Je voudrais un sandwich au jambon.":
+        native: "I would like a ham sandwich."
+        bases:
+          "voudrais": "would like"
+          "au": "with the"
+          "jambon": "ham"
+  "fr-1487":
+    native: "sausage"
+    notes:
+      "n1": "Saucisse is 'sausage', feminine. A hot dog sausage is also a saucisse."
+    examples:
+      "La saucisse est grillée.":
+        native: "The sausage is grilled."
+        bases:
+          "saucisse": "sausage"
+          "grillée": "grilled"
+      "Il y a des saucisses et des frites.":
+        native: "There are sausages and chips."
+        bases:
+          "y": "there"
+          "saucisses": "sausages"
+  "fr-1488":
+    native: "pancake, crêpe"
+    notes:
+      "n1": "Crêpe is 'pancake' or 'crêpe', feminine: thin, from Brittany."
+    examples:
+      "La crêpe est chaude.":
+        native: "The crêpe is hot."
+        bases:
+          "crêpe": "crêpe"
+          "chaude": "hot"
+      "Je mange une crêpe au chocolat.":
+        native: "I eat a chocolate crêpe."
+        bases:
+          "mange": "eat"
+          "crêpe": "crêpe"
+          "au": "with"
+  "fr-1489":
+    native: "omelette"
+    notes:
+      "n1": "Omelette is 'omelette', feminine. Une omelette aux champignons is a mushroom omelette."
+    examples:
+      "L'omelette est très bonne.":
+        native: "The omelette is very good."
+        bases:
+          "L'omelette": "omelette"
+          "bonne": "good"
+      "Je prends une omelette aux œufs.":
+        native: "I have an omelette with eggs."
+        bases:
+          "omelette": "omelette"
+          "aux": "with"
+          "œufs": "eggs"
+  "fr-1490":
+    native: "chips, fries"
+    notes:
+      "n1": "Frites is 'chips' or 'fries', feminine and always plural. Un steak frites is a steak with chips."
+    examples:
+      "Les frites sont chaudes.":
+        native: "The chips are hot."
+        bases:
+          "frites": "chips"
+          "chaudes": "hot"
+      "Je prends un steak avec des frites.":
+        native: "I have a steak with chips."
+        bases:
+          "steak": "steak"
+          "frites": "chips"
+  "fr-1491":
+    native: "pasta"
+    notes:
+      "n1": "Pâtes is 'pasta', feminine and plural. It is also the word for a paste or a dough."
+    examples:
+      "Les pâtes sont dans l'eau.":
+        native: "The pasta is in the water."
+        bases:
+          "pâtes": "pasta"
+      "Je prends des pâtes au beurre.":
+        native: "I have pasta with butter."
+        bases:
+          "pâtes": "pasta"
+          "au": "with"
+  "fr-1492":
+    native: "tart, pie"
+    notes:
+      "n1": "Tarte is 'tart' or 'pie', feminine. Tarte aux pommes is an apple tart."
+    examples:
+      "La tarte aux pommes est bonne.":
+        native: "The apple tart is good."
+        bases:
+          "tarte": "tart"
+          "aux": "apple"
+          "pommes": "apples"
+          "bonne": "good"
+      "Je prends une tarte au citron.":
+        native: "I have a lemon tart."
+        bases:
+          "tarte": "tart"
+          "au": "lemon"
+          "citron": "lemon"
+  "fr-1493":
+    native: "lemonade"
+    notes:
+      "n1": "Limonade is 'lemonade', feminine. In French it is a fizzy drink, not only lemon."
+    examples:
+      "La limonade est fraîche.":
+        native: "The lemonade is cold."
+        bases:
+          "limonade": "lemonade"
+          "fraîche": "cold"
+      "Je bois une limonade.":
+        native: "I drink a lemonade."
+        bases:
+          "bois": "drink"
+          "limonade": "lemonade"
+  "fr-1494":
+    native: "cocktail"
+    notes:
+      "n1": "Cocktail is 'cocktail', masculine, the same word as in English."
+    examples:
+      "Le cocktail est très fort.":
+        native: "The cocktail is very strong."
+        bases:
+          "cocktail": "cocktail"
+      "Tu prends un cocktail ?":
+        native: "Are you having a cocktail?"
+        bases:
+          "cocktail": "cocktail"
+  "fr-1495":
+    native: "tip"
+    notes:
+      "n1": "Pourboire is 'tip', masculine. It is the extra money left for the waiter."
+    examples:
+      "Le pourboire est sur la table.":
+        native: "The tip is on the table."
+        bases:
+          "pourboire": "tip"
+      "Je laisse un pourboire au serveur.":
+        native: "I leave a tip for the waiter."
+        bases:
+          "laisse": "leave"
+          "pourboire": "tip"
+          "au": "for the"
+  "fr-1496":
+    native: "carafe, jug"
+    notes:
+      "n1": "Carafe is 'carafe' or 'jug', feminine. A carafe d'eau is a jug of tap water, free in many restaurants."
+    examples:
+      "Une carafe d'eau est sur la table.":
+        native: "A jug of water is on the table."
+        bases:
+          "carafe": "jug"
+          "d'eau": "of water"
+      "Je veux une carafe de vin.":
+        native: "I want a carafe of wine."
+        bases:
+          "veux": "want"
+          "carafe": "carafe"
+          "de": "of"
+  "fr-1497":
+    native: "rare"
+    notes:
+      "n1": "Saignant is 'rare' for meat, literally bleeding. Bien cuit is well done."
+    examples:
+      "Le steak est saignant.":
+        native: "The steak is rare."
+        bases:
+          "steak": "steak"
+          "saignant": "rare"
+      "Je veux la viande saignante.":
+        native: "I want the meat rare."
+        bases:
+          "veux": "want"
+          "saignante": "rare"
+  "fr-1498":
+    native: "cooked"
+    notes:
+      "n1": "Cuit is 'cooked', the past participle of cuire. Bien cuit is well done."
+    examples:
+      "Le poisson est bien cuit.":
+        native: "The fish is well cooked."
+        bases:
+          "cuit": "cooked"
+      "Le pain est cuit.":
+        native: "The bread is baked."
+        bases:
+          "cuit": "baked"
+  "fr-1499":
+    native: "raw"
+    notes:
+      "n1": "Cru is 'raw', masculine, and crue is the feminine. Cru is also the word for a wine of a region."
+    examples:
+      "Je mange la viande crue.":
+        native: "I eat the meat raw."
+        bases:
+          "mange": "eat"
+          "crue": "raw"
+      "Les huîtres sont crues.":
+        native: "The oysters are raw."
+        bases:
+          "huîtres": "oysters"
+          "crues": "raw"
+  "fr-1500":
+    native: "to take away"
+    notes:
+      "n1": "Emporter is 'to take away' or 'to carry'. Sur place means to eat in, on the premises."
+    examples:
+      "Je mange sur place ou à emporter ?":
+        native: "Do you eat in or take away?"
+        bases:
+          "mange": "eat"
+          "place": "the premises"
+          "ou": "or"
+          "à": "to"
+          "emporter": "take away"
+      "Je voudrais un café à emporter.":
+        native: "I would like a coffee to take away."
+        bases:
+          "voudrais": "would like"
+          "à": "to"
+          "emporter": "take away"
+  "fr-1501":
+    native: "drink, beverage"
+    notes:
+      "n1": "Boisson is 'drink' or 'beverage', feminine. A drink is included if le prix la comprend."
+    examples:
+      "Une boisson est incluse.":
+        native: "A drink is included."
+        bases:
+          "boisson": "drink"
+          "incluse": "included"
+      "Quelle boisson tu veux ?":
+        native: "Which drink do you want?"
+        bases:
+          "boisson": "drink"
+          "veux": "want"
+  "fr-1502":
+    native: "service, service charge"
+    notes:
+      "n1": "Service is 'service' or 'service charge', masculine. Service compris means the service is included."
+    examples:
+      "Le service est compris.":
+        native: "The service is included."
+        bases:
+          "service": "service"
+          "compris": "included"
+      "Il y a un service de dix pour cent.":
+        native: "There is a ten per cent service charge."
+        bases:
+          "y": "there"
+          "service": "service"
+          "de": "of"
+  "fr-1503":
+    native: "allergy"
+    notes:
+      "n1": "Allergie is 'allergy', feminine. Allergique means allergic, the adjective."
+    examples:
+      "Je suis allergique au gluten.":
+        native: "I am allergic to gluten."
+        bases:
+          "allergique": "allergic"
+          "au": "to"
+          "gluten": "gluten"
+      "Il y a une allergie dans cette sauce ?":
+        native: "Is there an allergy in this sauce?"
+        bases:
+          "y": "there"
+          "allergie": "allergy"
+  "fr-1504":
+    native: "steak"
+    notes:
+      "n1": "Bifteck is 'steak', masculine: the beef steak as it is served. It is also called steak in some menus."
+    examples:
+      "Le bifteck est très cuit.":
+        native: "The steak is very well done."
+        bases:
+          "bifteck": "steak"
+      "Je prends un bifteck et des frites.":
+        native: "I have a steak and chips."
+        bases:
+          "bifteck": "steak"
+  "fr-1505":
+    native: "cream"
+    notes:
+      "n1": "Crème is 'cream', feminine. Crème fraîche is a thick, slightly sour cream."
+    examples:
+      "La crème est fraîche.":
+        native: "The cream is fresh."
+        bases:
+          "crème": "cream"
+          "fraîche": "fresh"
+      "Je mets de la crème dans le café.":
+        native: "I put some cream in the coffee."
+        bases:
+          "mets": "put"
+          "de": "some"
+          "crème": "cream"
+  "fr-1506":
+    native: "sorbet"
+    notes:
+      "n1": "Sorbet is 'sorbet', masculine: a fruit ice without milk."
+    examples:
+      "Le sorbet est à la fraise.":
+        native: "The sorbet is strawberry."
+        bases:
+          "sorbet": "sorbet"
+          "à": "flavoured"
+      "Je prends un sorbet au citron.":
+        native: "I have a lemon sorbet."
+        bases:
+          "sorbet": "sorbet"
+          "au": "lemon"
+          "citron": "lemon"
+  "fr-1507":
+    native: "garlic"
+    notes:
+      "n1": "Ail is 'garlic', masculine. Its plural is ails, but the word is used in the singular."
+    examples:
+      "Il y a de l'ail dans la sauce.":
+        native: "There is some garlic in the sauce."
+        bases:
+          "y": "there"
+          "de": "some"
+          "l'ail": "garlic"
+      "Le poulet est à l'ail.":
+        native: "The chicken is with garlic."
+        bases:
+          "à": "with"
+          "l'ail": "garlic"
+  "fr-1508":
+    native: "mushroom"
+    notes:
+      "n1": "Champignon is 'mushroom', masculine. A wild mushroom is also a champignon."
+    examples:
+      "Les champignons sont frais.":
+        native: "The mushrooms are fresh."
+        bases:
+          "champignons": "mushrooms"
+      "Je mange une omelette aux champignons.":
+        native: "I eat a mushroom omelette."
+        bases:
+          "mange": "eat"
+          "aux": "with"
+          "champignons": "mushrooms"
+  "fr-1509":
+    native: "prawn, shrimp"
+    notes:
+      "n1": "Crevette is 'prawn' or 'shrimp', feminine. A small shrimp is a crevette grise."
+    examples:
+      "Les crevettes sont très bonnes.":
+        native: "The prawns are very good."
+        bases:
+          "crevettes": "prawns"
+          "bonnes": "good"
+      "Je prends une salade de crevettes.":
+        native: "I have a prawn salad."
+        bases:
+          "de": "of"
+          "crevettes": "prawns"
+  "fr-1510":
+    native: "mussel"
+    notes:
+      "n1": "Moule is 'mussel', feminine. Moules frites is mussels with chips, a classic dish. A mould is also moule."
+    examples:
+      "Les moules sont dans le bouillon.":
+        native: "The mussels are in the broth."
+        bases:
+          "moules": "mussels"
+      "Je mange des moules frites.":
+        native: "I eat mussels and chips."
+        bases:
+          "mange": "eat"
+          "moules": "mussels"
+  "fr-1511":
+    native: "oyster"
+    notes:
+      "n1": "Huître is 'oyster', feminine. A dozen oysters is une douzaine d'huîtres."
+    examples:
+      "Les huîtres sont fraîches.":
+        native: "The oysters are fresh."
+        bases:
+          "huîtres": "oysters"
+          "fraîches": "fresh"
+      "Je prends une douzaine d'huîtres.":
+        native: "I have a dozen oysters."
+        bases:
+          "d'huîtres": "of oysters"
+  "fr-1512":
+    native: "broth, stock"
+    notes:
+      "n1": "Bouillon is 'broth' or 'stock', masculine. It is also a simple restaurant that serves cheap meals."
+    examples:
+      "Le bouillon est chaud.":
+        native: "The broth is hot."
+        bases:
+          "bouillon": "broth"
+      "Je bois un bouillon de légumes.":
+        native: "I drink a vegetable broth."
+        bases:
+          "bois": "drink"
+          "bouillon": "broth"
+          "de": "of"
+  "fr-1513":
+    native: "waitress"
+    notes:
+      "n1": "Serveuse is 'waitress', feminine. The masculine is serveur."
+    examples:
+      "La serveuse arrive avec le menu.":
+        native: "The waitress comes with the menu."
+        bases:
+          "serveuse": "waitress"
+      "Je demande l'addition à la serveuse.":
+        native: "I ask the waitress for the bill."
+        bases:
+          "demande": "ask"
+          "à": "for"
+          "serveuse": "waitress"
+  "fr-1514":
+    native: "mint"
+    notes:
+      "n1": "Menthe is 'mint', feminine. Thé à la menthe is mint tea."
+    examples:
+      "Je prends un thé à la menthe.":
+        native: "I have a mint tea."
+        bases:
+          "à": "with"
+          "menthe": "mint"
+      "La menthe est très fraîche.":
+        native: "The mint is very fresh."
+        bases:
+          "menthe": "mint"
+          "fraîche": "fresh"
+  "fr-1515":
+    native: "pepper, bell pepper"
+    notes:
+      "n1": "Poivron is 'pepper' or 'bell pepper', masculine. Poivre is the spice, black pepper."
+    examples:
+      "Le poivron est rouge.":
+        native: "The pepper is red."
+        bases:
+          "poivron": "pepper"
+      "Je mets des poivrons dans la salade.":
+        native: "I put peppers in the salad."
+        bases:
+          "mets": "put"
+          "poivrons": "peppers"

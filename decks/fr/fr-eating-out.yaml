@@ -1,0 +1,445 @@
+schema: 1
+id: "fr-eating-out"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "eating-out"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1476"
+    target: "réserver"
+    ipa: "ʁezɛʁve"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je voudrais réserver une table.", ipa: "ʒə vudʁɛ ʁezɛʁve yn tabl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voudrais", base: "vouloir" }, { word: "réserver", base: "réserver" }, { word: "une", ref: "fr-0545" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Nous avons réservé pour deux.", ipa: "nu avɔ̃ ʁezɛʁve puʁ dø", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", base: "avoir" }, { word: "réservé", base: "réserver" }, { word: "pour", ref: "fr-0591" }, { word: "deux", ref: "fr-0209" }] }
+  - id: "fr-1477"
+    target: "réservation"
+    ipa: "ʁezɛʁvasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma réservation est à huit heures.", ipa: "ma ʁezɛʁvasjɔ̃ ɛ a ɥit œʁ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "réservation", base: "réservation" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", base: "heure" }] }
+      - { target: "Vous avez une réservation ?", ipa: "vu ave yn ʁezɛʁvasjɔ̃", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "avez", base: "avoir" }, { word: "une", ref: "fr-0545" }, { word: "réservation", base: "réservation" }] }
+  - id: "fr-1478"
+    target: "terrasse"
+    ipa: "tɛʁas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous mangeons sur la terrasse.", ipa: "nu mɑ̃ʒɔ̃ syʁ la tɛʁas", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", base: "manger" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "terrasse", base: "terrasse" }] }
+      - { target: "La terrasse est pleine ce soir.", ipa: "la tɛʁas ɛ plɛn sə swaʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "terrasse", base: "terrasse" }, { word: "est", ref: "fr-0021" }, { word: "pleine", base: "plein" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1479"
+    target: "nappe"
+    ipa: "nap"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La nappe est blanche.", ipa: "la nap ɛ blɑ̃ʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "nappe", base: "nappe" }, { word: "est", ref: "fr-0021" }, { word: "blanche", base: "blanc" }] }
+      - { target: "Il y a une tache sur la nappe.", ipa: "il i a yn taʃ syʁ la nap", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "tache", base: "tache" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "nappe", base: "nappe" }] }
+  - id: "fr-1480"
+    target: "sauce"
+    ipa: "sos"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La sauce est très bonne.", ipa: "la sos ɛ tʁɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "sauce", base: "sauce" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bonne", base: "bon" }] }
+      - { target: "Je mets de la sauce sur les frites.", ipa: "ʒə mɛ də la sos syʁ le fʁit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "sauce", base: "sauce" }, { word: "sur", ref: "fr-0469" }, { word: "les", ref: "fr-0043" }, { word: "frites", ref: "fr-1490" }] }
+  - id: "fr-1481"
+    target: "moutarde"
+    ipa: "mutaʁd"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu veux de la moutarde ?", ipa: "ty vø də la mutaʁd", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "veux", base: "vouloir" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "moutarde", base: "moutarde" }] }
+      - { target: "La moutarde est sur la table.", ipa: "la mutaʁd ɛ syʁ la tabl", bases: [{ word: "La", ref: "fr-0544" }, { word: "moutarde", base: "moutarde" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "table", ref: "fr-0486" }] }
+  - id: "fr-1482"
+    target: "huile"
+    ipa: "ɥil"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets de l'huile dans la salade.", ipa: "ʒə mɛ də lɥil dɑ̃ la salad", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "de", base: "de" }, { word: "l'huile", base: "huile" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "salade", ref: "fr-0746" }] }
+      - { target: "L'huile d'olive est bonne.", ipa: "lɥil dɔliv ɛ bɔn", bases: [{ word: "L'huile", base: "huile" }, { word: "d'olive", base: "olive" }, { word: "est", ref: "fr-0021" }, { word: "bonne", base: "bon" }] }
+  - id: "fr-1483"
+    target: "vinaigrette"
+    ipa: "vinɛɡʁɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La vinaigrette est bonne.", ipa: "la vinɛɡʁɛt ɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "vinaigrette", base: "vinaigrette" }, { word: "est", ref: "fr-0021" }, { word: "bonne", base: "bon" }] }
+      - { target: "Je veux la vinaigrette à côté.", ipa: "ʒə vø la vinɛɡʁɛt a kote", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "la", ref: "fr-0544" }, { word: "vinaigrette", base: "vinaigrette" }, { word: "à", base: "à" }, { word: "côté", ref: "fr-0473" }] }
+  - id: "fr-1484"
+    target: "légumes"
+    ipa: "leɡym"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les légumes sont frais.", ipa: "le leɡym sɔ̃ fʁɛ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "légumes", base: "légumes" }, { word: "sont", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }] }
+      - { target: "Je mange des légumes et du poisson.", ipa: "ʒə mɑ̃ʒ de leɡym e dy pwasɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "des", ref: "fr-0546" }, { word: "légumes", base: "légumes" }, { word: "et", ref: "fr-0027" }, { word: "du", base: "du" }, { word: "poisson", ref: "fr-0783" }] }
+  - id: "fr-1485"
+    target: "agneau"
+    ipa: "aɲo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'agneau est très tendre.", ipa: "laɲo ɛ tʁɛ tɑ̃dʁ", bases: [{ word: "L'agneau", base: "agneau" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "tendre", base: "tendre" }] }
+      - { target: "Je prends de l'agneau.", ipa: "ʒə pʁɑ̃ də laɲo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "de", base: "de" }, { word: "l'agneau", base: "agneau" }] }
+  - id: "fr-1486"
+    target: "jambon"
+    ipa: "ʒɑ̃bɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le jambon est dans le sandwich.", ipa: "lə ʒɑ̃bɔ̃ ɛ dɑ̃ lə sɑ̃dwitʃ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jambon", base: "jambon" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "sandwich", ref: "fr-0832" }] }
+      - { target: "Je voudrais un sandwich au jambon.", ipa: "ʒə vudʁɛ œ̃ sɑ̃dwitʃ o ʒɑ̃bɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voudrais", base: "vouloir" }, { word: "un", ref: "fr-0208" }, { word: "sandwich", ref: "fr-0832" }, { word: "au", base: "au" }, { word: "jambon", base: "jambon" }] }
+  - id: "fr-1487"
+    target: "saucisse"
+    ipa: "sosis"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La saucisse est grillée.", ipa: "la sosis ɛ ɡʁije", bases: [{ word: "La", ref: "fr-0544" }, { word: "saucisse", base: "saucisse" }, { word: "est", ref: "fr-0021" }, { word: "grillée", base: "griller" }] }
+      - { target: "Il y a des saucisses et des frites.", ipa: "il i a de sosis e de fʁit", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "saucisses", base: "saucisse" }, { word: "et", ref: "fr-0027" }, { word: "frites", ref: "fr-1490" }] }
+  - id: "fr-1488"
+    target: "crêpe"
+    ipa: "kʁɛp"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La crêpe est chaude.", ipa: "la kʁɛp ɛ ʃod", bases: [{ word: "La", ref: "fr-0544" }, { word: "crêpe", base: "crêpe" }, { word: "est", ref: "fr-0021" }, { word: "chaude", base: "chaud" }] }
+      - { target: "Je mange une crêpe au chocolat.", ipa: "ʒə mɑ̃ʒ yn kʁɛp o ʃɔkɔla", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "une", ref: "fr-0545" }, { word: "crêpe", base: "crêpe" }, { word: "au", base: "au" }, { word: "chocolat", ref: "fr-0790" }] }
+  - id: "fr-1489"
+    target: "omelette"
+    ipa: "ɔmlɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'omelette est très bonne.", ipa: "lɔmlɛt ɛ tʁɛ bɔn", bases: [{ word: "L'omelette", base: "omelette" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bonne", base: "bon" }] }
+      - { target: "Je prends une omelette aux œufs.", ipa: "ʒə pʁɑ̃ yn ɔmlɛt o ø", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "omelette", base: "omelette" }, { word: "aux", base: "à" }, { word: "œufs", base: "œuf" }] }
+  - id: "fr-1490"
+    target: "frites"
+    ipa: "fʁit"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les frites sont chaudes.", ipa: "le fʁit sɔ̃ ʃod", bases: [{ word: "Les", ref: "fr-0043" }, { word: "frites", base: "frites" }, { word: "sont", ref: "fr-0021" }, { word: "chaudes", base: "chaud" }] }
+      - { target: "Je prends un steak avec des frites.", ipa: "ʒə pʁɑ̃ œ̃ stɛk avɛk de fʁit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "steak", base: "steak" }, { word: "avec", ref: "fr-0590" }, { word: "des", ref: "fr-0546" }, { word: "frites", base: "frites" }] }
+  - id: "fr-1491"
+    target: "pâtes"
+    ipa: "pɑt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les pâtes sont dans l'eau.", ipa: "le pɑt sɔ̃ dɑ̃ lo", bases: [{ word: "Les", ref: "fr-0043" }, { word: "pâtes", base: "pâtes" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "l'eau", ref: "fr-0024" }] }
+      - { target: "Je prends des pâtes au beurre.", ipa: "ʒə pʁɑ̃ de pɑt o bœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "des", ref: "fr-0546" }, { word: "pâtes", base: "pâtes" }, { word: "au", base: "au" }, { word: "beurre", ref: "fr-0774" }] }
+  - id: "fr-1492"
+    target: "tarte"
+    ipa: "taʁt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La tarte aux pommes est bonne.", ipa: "la taʁt o pɔm ɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "tarte", base: "tarte" }, { word: "aux", base: "à" }, { word: "pommes", base: "pomme" }, { word: "est", ref: "fr-0021" }, { word: "bonne", base: "bon" }] }
+      - { target: "Je prends une tarte au citron.", ipa: "ʒə pʁɑ̃ yn taʁt o sitʁɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "tarte", base: "tarte" }, { word: "au", base: "au" }, { word: "citron", base: "citron" }] }
+  - id: "fr-1493"
+    target: "limonade"
+    ipa: "limɔnad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La limonade est fraîche.", ipa: "la limɔnad ɛ fʁɛʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "limonade", base: "limonade" }, { word: "est", ref: "fr-0021" }, { word: "fraîche", base: "frais" }] }
+      - { target: "Je bois une limonade.", ipa: "ʒə bwa yn limɔnad", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", base: "boire" }, { word: "une", ref: "fr-0545" }, { word: "limonade", base: "limonade" }] }
+  - id: "fr-1494"
+    target: "cocktail"
+    ipa: "kɔktɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cocktail est très fort.", ipa: "lə kɔktɛl ɛ tʁɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cocktail", base: "cocktail" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "fort", ref: "fr-0425" }] }
+      - { target: "Tu prends un cocktail ?", ipa: "ty pʁɑ̃ œ̃ kɔktɛl", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "cocktail", base: "cocktail" }] }
+  - id: "fr-1495"
+    target: "pourboire"
+    ipa: "puʁbwaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le pourboire est sur la table.", ipa: "lə puʁbwaʁ ɛ syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pourboire", base: "pourboire" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Je laisse un pourboire au serveur.", ipa: "ʒə lɛs œ̃ puʁbwaʁ o sɛʁvœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "laisse", base: "laisser" }, { word: "un", ref: "fr-0208" }, { word: "pourboire", base: "pourboire" }, { word: "au", base: "au" }, { word: "serveur", ref: "fr-0826" }] }
+  - id: "fr-1496"
+    target: "carafe"
+    ipa: "kaʁaf"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une carafe d'eau est sur la table.", ipa: "yn kaʁaf do ɛ syʁ la tabl", bases: [{ word: "Une", ref: "fr-0545" }, { word: "carafe", base: "carafe" }, { word: "d'eau", base: "eau" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Je veux une carafe de vin.", ipa: "ʒə vø yn kaʁaf də vɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "une", ref: "fr-0545" }, { word: "carafe", base: "carafe" }, { word: "de", base: "de" }, { word: "vin", ref: "fr-0035" }] }
+  - id: "fr-1497"
+    target: "saignant"
+    ipa: "sɛɲɑ̃"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le steak est saignant.", ipa: "lə stɛk ɛ sɛɲɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "steak", base: "steak" }, { word: "est", ref: "fr-0021" }, { word: "saignant", base: "saignant" }] }
+      - { target: "Je veux la viande saignante.", ipa: "ʒə vø la vjɑ̃d sɛɲɑ̃t", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "la", ref: "fr-0544" }, { word: "viande", ref: "fr-0782" }, { word: "saignante", base: "saignant" }] }
+  - id: "fr-1498"
+    target: "cuit"
+    ipa: "kɥi"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le poisson est bien cuit.", ipa: "lə pwasɔ̃ ɛ bjɛ̃ kɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "poisson", ref: "fr-0783" }, { word: "est", ref: "fr-0021" }, { word: "bien", ref: "fr-0032" }, { word: "cuit", base: "cuit" }] }
+      - { target: "Le pain est cuit.", ipa: "lə pɛ̃ ɛ kɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "est", ref: "fr-0021" }, { word: "cuit", base: "cuit" }] }
+  - id: "fr-1499"
+    target: "cru"
+    ipa: "kʁy"
+    pos: "adjective"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange la viande crue.", ipa: "ʒə mɑ̃ʒ la vjɑ̃d kʁy", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "la", ref: "fr-0544" }, { word: "viande", ref: "fr-0782" }, { word: "crue", base: "cru" }] }
+      - { target: "Les huîtres sont crues.", ipa: "le ɥitʁ sɔ̃ kʁy", bases: [{ word: "Les", ref: "fr-0043" }, { word: "huîtres", base: "huître" }, { word: "sont", ref: "fr-0021" }, { word: "crues", base: "cru" }] }
+  - id: "fr-1500"
+    target: "emporter"
+    ipa: "ɑ̃pɔʁte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange sur place ou à emporter ?", ipa: "ʒə mɑ̃ʒ syʁ plas u a ɑ̃pɔʁte", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "sur", ref: "fr-0469" }, { word: "place", base: "place" }, { word: "ou", base: "ou" }, { word: "à", base: "à" }, { word: "emporter", base: "emporter" }] }
+      - { target: "Je voudrais un café à emporter.", ipa: "ʒə vudʁɛ œ̃ kafe a ɑ̃pɔʁte", bases: [{ word: "Je", ref: "fr-0126" }, { word: "voudrais", base: "vouloir" }, { word: "un", ref: "fr-0208" }, { word: "café", ref: "fr-0793" }, { word: "à", base: "à" }, { word: "emporter", base: "emporter" }] }
+  - id: "fr-1501"
+    target: "boisson"
+    ipa: "bwasɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une boisson est incluse.", ipa: "yn bwasɔ̃ ɛ ɛ̃kly", bases: [{ word: "Une", ref: "fr-0545" }, { word: "boisson", base: "boisson" }, { word: "est", ref: "fr-0021" }, { word: "incluse", base: "inclus" }] }
+      - { target: "Quelle boisson tu veux ?", ipa: "kɛl bwasɔ̃ ty vø", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "boisson", base: "boisson" }, { word: "tu", ref: "fr-0095" }, { word: "veux", base: "vouloir" }] }
+  - id: "fr-1502"
+    target: "service"
+    ipa: "sɛʁvis"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le service est compris.", ipa: "lə sɛʁvis ɛ kɔ̃pʁi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "service", base: "service" }, { word: "est", ref: "fr-0021" }, { word: "compris", base: "comprendre" }] }
+      - { target: "Il y a un service de dix pour cent.", ipa: "il i a œ̃ sɛʁvis də di puʁ sɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "service", base: "service" }, { word: "de", base: "de" }, { word: "dix", ref: "fr-0217" }, { word: "pour", ref: "fr-0591" }, { word: "cent", ref: "fr-0709" }] }
+  - id: "fr-1503"
+    target: "allergie"
+    ipa: "alɛʁʒi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis allergique au gluten.", ipa: "ʒə sɥi alɛʁʒik o ɡlyten", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "allergique", base: "allergique" }, { word: "au", base: "au" }, { word: "gluten", base: "gluten" }] }
+      - { target: "Il y a une allergie dans cette sauce ?", ipa: "il i a yn alɛʁʒi dɑ̃ sɛt sos", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "allergie", base: "allergie" }, { word: "dans", ref: "fr-0049" }, { word: "cette", ref: "fr-0144" }, { word: "sauce", ref: "fr-1480" }] }
+  - id: "fr-1504"
+    target: "bifteck"
+    ipa: "biftɛk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bifteck est très cuit.", ipa: "lə biftɛk ɛ tʁɛ kɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bifteck", base: "bifteck" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "cuit", ref: "fr-1498" }] }
+      - { target: "Je prends un bifteck et des frites.", ipa: "ʒə pʁɑ̃ œ̃ biftɛk e de fʁit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "bifteck", base: "bifteck" }, { word: "et", ref: "fr-0027" }, { word: "des", ref: "fr-0546" }, { word: "frites", ref: "fr-1490" }] }
+  - id: "fr-1505"
+    target: "crème"
+    ipa: "kʁɛm"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La crème est fraîche.", ipa: "la kʁɛm ɛ fʁɛʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "crème", base: "crème" }, { word: "est", ref: "fr-0021" }, { word: "fraîche", base: "frais" }] }
+      - { target: "Je mets de la crème dans le café.", ipa: "ʒə mɛ də la kʁɛm dɑ̃ lə kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "crème", base: "crème" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }] }
+  - id: "fr-1506"
+    target: "sorbet"
+    ipa: "sɔʁbɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sorbet est à la fraise.", ipa: "lə sɔʁbɛ ɛ a la fʁɛz", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sorbet", base: "sorbet" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "fraise", ref: "fr-0743" }] }
+      - { target: "Je prends un sorbet au citron.", ipa: "ʒə pʁɑ̃ œ̃ sɔʁbɛ o sitʁɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "sorbet", base: "sorbet" }, { word: "au", base: "au" }, { word: "citron", base: "citron" }] }
+  - id: "fr-1507"
+    target: "ail"
+    ipa: "aj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a de l'ail dans la sauce.", ipa: "il i a də laj dɑ̃ la sos", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "l'ail", base: "ail" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "sauce", ref: "fr-1480" }] }
+      - { target: "Le poulet est à l'ail.", ipa: "lə pulɛ ɛ a laj", bases: [{ word: "Le", ref: "fr-0543" }, { word: "poulet", ref: "fr-0784" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "l'ail", base: "ail" }] }
+  - id: "fr-1508"
+    target: "champignon"
+    ipa: "ʃɑ̃piɲɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les champignons sont frais.", ipa: "le ʃɑ̃piɲɔ̃ sɔ̃ fʁɛ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "champignons", base: "champignon" }, { word: "sont", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }] }
+      - { target: "Je mange une omelette aux champignons.", ipa: "ʒə mɑ̃ʒ yn ɔmlɛt o ʃɑ̃piɲɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "une", ref: "fr-0545" }, { word: "omelette", ref: "fr-1489" }, { word: "aux", base: "à" }, { word: "champignons", base: "champignon" }] }
+  - id: "fr-1509"
+    target: "crevette"
+    ipa: "kʁəvɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les crevettes sont très bonnes.", ipa: "le kʁəvɛt sɔ̃ tʁɛ bɔn", bases: [{ word: "Les", ref: "fr-0043" }, { word: "crevettes", base: "crevette" }, { word: "sont", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bonnes", base: "bon" }] }
+      - { target: "Je prends une salade de crevettes.", ipa: "ʒə pʁɑ̃ yn salad də kʁəvɛt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "salade", ref: "fr-0746" }, { word: "de", base: "de" }, { word: "crevettes", base: "crevette" }] }
+  - id: "fr-1510"
+    target: "moule"
+    ipa: "mul"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les moules sont dans le bouillon.", ipa: "le mul sɔ̃ dɑ̃ lə bujɔ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "moules", base: "moule" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "bouillon", ref: "fr-1512" }] }
+      - { target: "Je mange des moules frites.", ipa: "ʒə mɑ̃ʒ de mul fʁit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", base: "manger" }, { word: "des", ref: "fr-0546" }, { word: "moules", base: "moule" }, { word: "frites", ref: "fr-1490" }] }
+  - id: "fr-1511"
+    target: "huître"
+    ipa: "ɥitʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les huîtres sont fraîches.", ipa: "le ɥitʁ sɔ̃ fʁɛʃ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "huîtres", base: "huître" }, { word: "sont", ref: "fr-0021" }, { word: "fraîches", base: "frais" }] }
+      - { target: "Je prends une douzaine d'huîtres.", ipa: "ʒə pʁɑ̃ yn duzɛn dɥitʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "douzaine", ref: "fr-0387" }, { word: "d'huîtres", base: "huître" }] }
+  - id: "fr-1512"
+    target: "bouillon"
+    ipa: "bujɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bouillon est chaud.", ipa: "lə bujɔ̃ ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bouillon", base: "bouillon" }, { word: "est", ref: "fr-0021" }, { word: "chaud", ref: "fr-0419" }] }
+      - { target: "Je bois un bouillon de légumes.", ipa: "ʒə bwa œ̃ bujɔ̃ də leɡym", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bois", base: "boire" }, { word: "un", ref: "fr-0208" }, { word: "bouillon", base: "bouillon" }, { word: "de", base: "de" }, { word: "légumes", ref: "fr-1484" }] }
+  - id: "fr-1513"
+    target: "serveuse"
+    ipa: "sɛʁvøz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La serveuse arrive avec le menu.", ipa: "la sɛʁvøz aʁiv avɛk lə mənu", bases: [{ word: "La", ref: "fr-0544" }, { word: "serveuse", base: "serveuse" }, { word: "arrive", ref: "fr-0305" }, { word: "avec", ref: "fr-0590" }, { word: "le", ref: "fr-0543" }, { word: "menu", ref: "fr-0823" }] }
+      - { target: "Je demande l'addition à la serveuse.", ipa: "ʒə dəmɑ̃d ladisjɔ̃ a la sɛʁvøz", bases: [{ word: "Je", ref: "fr-0126" }, { word: "demande", base: "demander" }, { word: "l'addition", ref: "fr-0825" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "serveuse", base: "serveuse" }] }
+  - id: "fr-1514"
+    target: "menthe"
+    ipa: "mɑ̃t"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends un thé à la menthe.", ipa: "ʒə pʁɑ̃ œ̃ te a la mɑ̃t", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "thé", ref: "fr-0792" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "menthe", base: "menthe" }] }
+      - { target: "La menthe est très fraîche.", ipa: "la mɑ̃t ɛ tʁɛ fʁɛʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "menthe", base: "menthe" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "fraîche", base: "frais" }] }
+  - id: "fr-1515"
+    target: "poivron"
+    ipa: "pwavʁɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le poivron est rouge.", ipa: "lə pwavʁɔ̃ ɛ ʁuʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "poivron", base: "poivron" }, { word: "est", ref: "fr-0021" }, { word: "rouge", ref: "fr-1232" }] }
+      - { target: "Je mets des poivrons dans la salade.", ipa: "ʒə mɛ de pwavʁɔ̃ dɑ̃ la salad", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "des", ref: "fr-0546" }, { word: "poivrons", base: "poivron" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "salade", ref: "fr-0746" }] }

@@ -1,0 +1,156 @@
+schema: 1
+id: "fr-eating-out-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1516"
+    target: "Nous voudrions une table pour quatre."
+    ipa: "nu vudʁjɔ̃ yn tabl puʁ katʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "voudrions", base: "vouloir" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "table", ref: "fr-0486" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "quatre", ref: "fr-0211" }
+    confusables:
+      - { id: "réservation", ref: "fr-1477", kind: "word" }
+      - { id: "terrasse", ref: "fr-1478", kind: "word" }
+  - id: "fr-1517"
+    target: "Le serveur apporte le menu."
+    ipa: "lə sɛʁvœʁ apɔʁt lə mənu"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "serveur", ref: "fr-0826" }
+      - { word: "apporte", base: "apporter" }
+      - { word: "menu", ref: "fr-0823" }
+    confusables:
+      - { id: "addition", ref: "fr-0825", kind: "word" }
+      - { id: "pourboire", ref: "fr-1495", kind: "word" }
+  - id: "fr-1518"
+    target: "Je prends le plat du jour."
+    ipa: "ʒə pʁɑ̃ lə pla dy ʒuʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "prends", ref: "fr-0288" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "plat", ref: "fr-0819" }
+      - { word: "du", base: "du" }
+      - { word: "jour", ref: "fr-1032" }
+    confusables:
+      - { id: "entrée", ref: "fr-0818", kind: "word" }
+      - { id: "dessert", ref: "fr-0817", kind: "word" }
+  - id: "fr-1519"
+    target: "Le dessert est sur la carte."
+    ipa: "lə desɛʁ ɛ syʁ la kaʁt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "dessert", ref: "fr-0817" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "carte", ref: "fr-0824" }
+    confusables:
+      - { id: "addition", ref: "fr-0825", kind: "word" }
+      - { id: "soupe", ref: "fr-0816", kind: "word" }
+  - id: "fr-1520"
+    target: "Nous voudrions payer, merci."
+    ipa: "nu vudʁjɔ̃ pɛje mɛʁsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "voudrions", base: "vouloir" }
+      - { word: "payer", ref: "fr-0310" }
+      - { word: "merci", ref: "fr-0002" }
+    confusables:
+      - { id: "pourboire", ref: "fr-1495", kind: "word" }
+      - { id: "monnaie", ref: "fr-0750", kind: "word" }
+  - id: "fr-1521"
+    target: "Le poulet est très épicé."
+    ipa: "lə pulɛ ɛ tʁɛ epise"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "poulet", ref: "fr-0784" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "très", ref: "fr-0031" }
+      - { word: "épicé", ref: "fr-0837" }
+    confusables:
+      - { id: "salé", ref: "fr-0799", kind: "word" }
+      - { id: "sucré", ref: "fr-0798", kind: "word" }
+  - id: "fr-1522"
+    target: "Ce vin est frais."
+    ipa: "sə vɛ̃ ɛ fʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "vin", ref: "fr-0035" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "frais", ref: "fr-0753" }
+    confusables:
+      - { id: "chaud", ref: "fr-0419", kind: "word" }
+      - { id: "froid", ref: "fr-0420", kind: "word" }
+  - id: "fr-1523"
+    target: "Je mange une salade avec de l'huile."
+    ipa: "ʒə mɑ̃ʒ yn salad avɛk də lɥil"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "mange", base: "manger" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "salade", ref: "fr-0746" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "de", base: "de" }
+      - { word: "l'huile", base: "huile" }
+    confusables:
+      - { id: "vinaigrette", ref: "fr-1483", kind: "word" }
+      - { id: "sauce", ref: "fr-1480", kind: "word" }
+  - id: "fr-1524"
+    target: "Il y a des boissons à dix euros."
+    ipa: "il i a de bwasɔ̃ a di øʁo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "y", base: "y" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "boissons", base: "boisson" }
+      - { word: "à", base: "à" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "euros", base: "euro" }
+    confusables:
+      - { id: "limonade", ref: "fr-1493", kind: "word" }
+      - { id: "cocktail", ref: "fr-1494", kind: "word" }
+  - id: "fr-1525"
+    target: "Je prends la viande cuite, pas saignante."
+    ipa: "ʒə pʁɑ̃ la vjɑ̃d kɥit pa sɛɲɑ̃t"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "prends", ref: "fr-0288" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "viande", ref: "fr-0782" }
+      - { word: "cuite", base: "cuit" }
+      - { word: "pas", base: "pas" }
+      - { word: "saignante", ref: "fr-1497" }
+    confusables:
+      - { id: "cru", ref: "fr-1499", kind: "word" }
+      - { id: "crêpe", ref: "fr-1488", kind: "word" }
