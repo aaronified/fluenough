@@ -1,0 +1,505 @@
+schema: 1
+id: "fr-things"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "things"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1359"
+    target: "objet"
+    ipa: "ɔbʒɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cet objet est utile.", ipa: "sɛt ɔbʒɛ ɛ ytil", bases: [{ word: "Cet", ref: "fr-0644" }, { word: "objet", base: "objet" }, { word: "est", ref: "fr-0021" }, { word: "utile", base: "utile" }] }
+      - { target: "Je cherche un objet dans le sac.", ipa: "ʒə ʃɛʁʃ œ̃ ɔbʒɛ dɑ̃ lə sak", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "un", ref: "fr-0208" }, { word: "objet", base: "objet" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1360"
+    target: "stylo"
+    ipa: "stilo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le stylo est sur la table.", ipa: "lə stilo ɛ syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "stylo", base: "stylo" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Tu as un stylo ?", ipa: "ty a œ̃ stilo", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "stylo", base: "stylo" }] }
+  - id: "fr-1361"
+    target: "crayon"
+    ipa: "kʁɛjɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le crayon est cassé.", ipa: "lə kʁɛjɔ̃ ɛ kase", bases: [{ word: "Le", ref: "fr-0543" }, { word: "crayon", base: "crayon" }, { word: "est", ref: "fr-0021" }, { word: "cassé", base: "casser" }] }
+      - { target: "Je dessine avec un crayon.", ipa: "ʒə desin avɛk œ̃ kʁɛjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dessine", base: "dessiner" }, { word: "avec", ref: "fr-0590" }, { word: "un", ref: "fr-0208" }, { word: "crayon", base: "crayon" }] }
+  - id: "fr-1362"
+    target: "cahier"
+    ipa: "kaje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon cahier est dans le sac.", ipa: "mɔ̃ kaje ɛ dɑ̃ lə sak", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "cahier", base: "cahier" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Nous écrivons dans le cahier.", ipa: "nu ekʁivɔ̃ dɑ̃ lə kaje", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "écrivons", base: "écrire" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "cahier", base: "cahier" }] }
+  - id: "fr-1363"
+    target: "livre"
+    ipa: "livʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce livre est très bon.", ipa: "sə livʁ ɛ tʁɛ bɔ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "livre", base: "livre" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Je lis un livre le soir.", ipa: "ʒə li œ̃ livʁ lə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", base: "lire" }, { word: "un", ref: "fr-0208" }, { word: "livre", base: "livre" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1364"
+    target: "gomme"
+    ipa: "ɡɔm"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La gomme est sur le bureau.", ipa: "la ɡɔm ɛ syʁ lə byʁo", bases: [{ word: "La", ref: "fr-0544" }, { word: "gomme", base: "gomme" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "bureau", ref: "fr-0660" }] }
+      - { target: "Il manque une gomme.", ipa: "il mɑ̃k yn ɡɔm", bases: [{ word: "Il", ref: "fr-0127" }, { word: "manque", ref: "fr-0797" }, { word: "une", ref: "fr-0545" }, { word: "gomme", base: "gomme" }] }
+  - id: "fr-1365"
+    target: "règle"
+    ipa: "ʁɛɡl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La règle est longue.", ipa: "la ʁɛɡl ɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "règle", base: "règle" }, { word: "est", ref: "fr-0021" }, { word: "longue", base: "long" }] }
+      - { target: "Tu prends la règle ?", ipa: "ty pʁɑ̃ la ʁɛɡl", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "prends", ref: "fr-0288" }, { word: "la", ref: "fr-0544" }, { word: "règle", base: "règle" }] }
+  - id: "fr-1366"
+    target: "ciseaux"
+    ipa: "sizo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les ciseaux sont dans le tiroir.", ipa: "le sizo sɔ̃ dɑ̃ lə tiʁwaʁ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "ciseaux", base: "ciseaux" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "tiroir", base: "tiroir" }] }
+      - { target: "Je coupe le papier avec les ciseaux.", ipa: "ʒə kup lə papje avɛk le sizo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "coupe", base: "couper" }, { word: "le", ref: "fr-0543" }, { word: "papier", ref: "fr-1374" }, { word: "avec", ref: "fr-0590" }, { word: "les", ref: "fr-0043" }, { word: "ciseaux", base: "ciseaux" }] }
+  - id: "fr-1367"
+    target: "journal"
+    ipa: "ʒuʁnal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le journal est sur la table.", ipa: "lə ʒuʁnal ɛ syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "journal", base: "journal" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Je lis le journal le matin.", ipa: "ʒə li lə ʒuʁnal lə matɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", base: "lire" }, { word: "le", ref: "fr-0543" }, { word: "journal", base: "journal" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1368"
+    target: "enveloppe"
+    ipa: "ɑ̃vlɔp"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une enveloppe est sur la table.", ipa: "yn ɑ̃vlɔp ɛ syʁ la tabl", bases: [{ word: "Une", ref: "fr-0545" }, { word: "enveloppe", base: "enveloppe" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Je mets une enveloppe dans le sac.", ipa: "ʒə mɛ yn ɑ̃vlɔp dɑ̃ lə sak", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "une", ref: "fr-0545" }, { word: "enveloppe", base: "enveloppe" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1369"
+    target: "timbre"
+    ipa: "tɛ̃bʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il manque un timbre.", ipa: "il mɑ̃k œ̃ tɛ̃bʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "manque", ref: "fr-0797" }, { word: "un", ref: "fr-0208" }, { word: "timbre", base: "timbre" }] }
+      - { target: "Le timbre est sur l'enveloppe.", ipa: "lə tɛ̃bʁ ɛ syʁ lɑ̃vlɔp", bases: [{ word: "Le", ref: "fr-0543" }, { word: "timbre", base: "timbre" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "l'enveloppe", base: "enveloppe" }] }
+  - id: "fr-1370"
+    target: "lunettes"
+    ipa: "lynɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes lunettes sont sur la table.", ipa: "me lynɛt sɔ̃ syʁ la tabl", bases: [{ word: "Mes", ref: "fr-0623" }, { word: "lunettes", base: "lunettes" }, { word: "sont", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Je ne vois pas bien sans mes lunettes.", ipa: "ʒə nə vwa pa bjɛ̃ sɑ̃ me lynɛt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "vois", base: "voir" }, { word: "pas", base: "pas" }, { word: "bien", ref: "fr-0032" }, { word: "sans", ref: "fr-0592" }, { word: "mes", ref: "fr-0623" }, { word: "lunettes", base: "lunettes" }] }
+  - id: "fr-1371"
+    target: "portefeuille"
+    ipa: "pɔʁtfœj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon portefeuille est dans ma poche.", ipa: "mɔ̃ pɔʁtfœj ɛ dɑ̃ ma pɔʃ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "portefeuille", base: "portefeuille" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "ma", ref: "fr-0137" }, { word: "poche", base: "poche" }] }
+      - { target: "Il a perdu son portefeuille.", ipa: "il a pɛʁdy sɔ̃ pɔʁtfœj", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "perdu", base: "perdre" }, { word: "son", ref: "fr-0138" }, { word: "portefeuille", base: "portefeuille" }] }
+  - id: "fr-1372"
+    target: "chargeur"
+    ipa: "ʃaʁʒœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chargeur est dans la cuisine.", ipa: "lə ʃaʁʒœʁ ɛ dɑ̃ la kɥizin", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chargeur", base: "chargeur" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "cuisine", ref: "fr-0822" }] }
+      - { target: "Je cherche mon chargeur.", ipa: "ʒə ʃɛʁʃ mɔ̃ ʃaʁʒœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "mon", ref: "fr-0037" }, { word: "chargeur", base: "chargeur" }] }
+  - id: "fr-1373"
+    target: "photo"
+    ipa: "foto"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette photo est très belle.", ipa: "sɛt foto ɛ tʁɛ bɛl", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "photo", base: "photo" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "belle", base: "beau" }] }
+      - { target: "Je prends une photo de la mer.", ipa: "ʒə pʁɑ̃ yn foto də la mɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "photo", base: "photo" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mer", base: "mer" }] }
+  - id: "fr-1374"
+    target: "papier"
+    ipa: "papje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a du papier dans le tiroir.", ipa: "il i a dy papje dɑ̃ lə tiʁwaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "du" }, { word: "papier", base: "papier" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "tiroir", base: "tiroir" }] }
+      - { target: "Je prends une feuille de papier.", ipa: "ʒə pʁɑ̃ yn fœj də papje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "feuille", base: "feuille" }, { word: "de", base: "de" }, { word: "papier", base: "papier" }] }
+  - id: "fr-1375"
+    target: "trousse"
+    ipa: "tʁus"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La trousse est pleine de crayons.", ipa: "la tʁus ɛ plɛn də kʁɛjɔ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "trousse", base: "trousse" }, { word: "est", ref: "fr-0021" }, { word: "pleine", base: "plein" }, { word: "de", base: "de" }, { word: "crayons", base: "crayon" }] }
+      - { target: "Mets ta trousse dans ton sac.", ipa: "mɛ ta tʁus dɑ̃ tɔ̃ sak", bases: [{ word: "Mets", base: "mettre" }, { word: "ta", ref: "fr-0626" }, { word: "trousse", base: "trousse" }, { word: "dans", ref: "fr-0049" }, { word: "ton", ref: "fr-0141" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1376"
+    target: "mouchoir"
+    ipa: "muʃwaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il me faut un mouchoir.", ipa: "il mə fo œ̃ muʃwaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "me", base: "me" }, { word: "faut", base: "falloir" }, { word: "un", ref: "fr-0208" }, { word: "mouchoir", base: "mouchoir" }] }
+      - { target: "Je pleure et je prends mon mouchoir.", ipa: "ʒə plœʁ e ʒə pʁɑ̃ mɔ̃ muʃwaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "pleure", base: "pleurer" }, { word: "et", ref: "fr-0027" }, { word: "prends", ref: "fr-0288" }, { word: "mon", ref: "fr-0037" }, { word: "mouchoir", base: "mouchoir" }] }
+  - id: "fr-1377"
+    target: "peigne"
+    ipa: "pɛɲ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le peigne est dans la salle de bain.", ipa: "lə pɛɲ ɛ dɑ̃ la sal də bɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "peigne", base: "peigne" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "salle", ref: "fr-1014" }, { word: "de", base: "de" }, { word: "bain", ref: "fr-1107" }] }
+      - { target: "Je cherche mon peigne.", ipa: "ʒə ʃɛʁʃ mɔ̃ pɛɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "mon", ref: "fr-0037" }, { word: "peigne", base: "peigne" }] }
+  - id: "fr-1378"
+    target: "miroir"
+    ipa: "miʁwaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le miroir est au mur.", ipa: "lə miʁwaʁ ɛ o myʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "miroir", base: "miroir" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "au" }, { word: "mur", ref: "fr-1015" }] }
+      - { target: "Je me regarde dans le miroir.", ipa: "ʒə mə ʁəɡaʁd dɑ̃ lə miʁwaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "me", base: "me" }, { word: "regarde", ref: "fr-0293" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "miroir", base: "miroir" }] }
+  - id: "fr-1379"
+    target: "couverture"
+    ipa: "kuvɛʁtyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La couverture est chaude.", ipa: "la kuvɛʁtyʁ ɛ ʃod", bases: [{ word: "La", ref: "fr-0544" }, { word: "couverture", base: "couverture" }, { word: "est", ref: "fr-0021" }, { word: "chaude", base: "chaud" }] }
+      - { target: "Il fait froid, prends une couverture.", ipa: "il fɛ fʁwa pʁɑ̃ yn kuvɛʁtyʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "froid", ref: "fr-0420" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "couverture", base: "couverture" }] }
+  - id: "fr-1380"
+    target: "oreiller"
+    ipa: "ɔʁɛje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'oreiller est très doux.", ipa: "lɔʁɛje ɛ tʁɛ du", bases: [{ word: "L'oreiller", base: "oreiller" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "doux", ref: "fr-1337" }] }
+      - { target: "Je dors avec un oreiller.", ipa: "ʒə dɔʁ avɛk œ̃ ɔʁɛje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dors", base: "dormir" }, { word: "avec", ref: "fr-0590" }, { word: "un", ref: "fr-0208" }, { word: "oreiller", base: "oreiller" }] }
+  - id: "fr-1381"
+    target: "ruban"
+    ipa: "ʁybɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ruban est rouge.", ipa: "lə ʁybɑ̃ ɛ ʁuʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ruban", base: "ruban" }, { word: "est", ref: "fr-0021" }, { word: "rouge", ref: "fr-1232" }] }
+      - { target: "Elle met un ruban dans les cheveux.", ipa: "ɛl mɛ œ̃ ʁybɑ̃ dɑ̃ le ʃəvø", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "met", base: "mettre" }, { word: "un", ref: "fr-0208" }, { word: "ruban", base: "ruban" }, { word: "dans", ref: "fr-0049" }, { word: "les", ref: "fr-0043" }, { word: "cheveux", base: "cheveu" }] }
+  - id: "fr-1382"
+    target: "corde"
+    ipa: "kɔʁd"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La corde est longue.", ipa: "la kɔʁd ɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "corde", base: "corde" }, { word: "est", ref: "fr-0021" }, { word: "longue", base: "long" }] }
+      - { target: "Il attache le sac avec une corde.", ipa: "il ataʃ lə sak avɛk yn kɔʁd", bases: [{ word: "Il", ref: "fr-0127" }, { word: "attache", base: "attacher" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }, { word: "avec", ref: "fr-0590" }, { word: "une", ref: "fr-0545" }, { word: "corde", base: "corde" }] }
+  - id: "fr-1383"
+    target: "marteau"
+    ipa: "maʁto"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le marteau est dans le garage.", ipa: "lə maʁto ɛ dɑ̃ lə ɡaʁaʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "marteau", base: "marteau" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "garage", ref: "fr-1012" }] }
+      - { target: "Je prends le marteau et le clou.", ipa: "ʒə pʁɑ̃ lə maʁto e lə klu", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "marteau", base: "marteau" }, { word: "et", ref: "fr-0027" }, { word: "clou", ref: "fr-1384" }] }
+  - id: "fr-1384"
+    target: "clou"
+    ipa: "klu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un clou tient le tableau.", ipa: "œ̃ klu tjɛ̃ lə tablo", bases: [{ word: "Un", ref: "fr-0208" }, { word: "clou", base: "clou" }, { word: "tient", base: "tenir" }, { word: "le", ref: "fr-0543" }, { word: "tableau", base: "tableau" }] }
+      - { target: "Il y a un clou dans le mur.", ipa: "il i a œ̃ klu dɑ̃ lə myʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "clou", base: "clou" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "mur", ref: "fr-1015" }] }
+  - id: "fr-1385"
+    target: "jouet"
+    ipa: "ʒwɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le jouet est dans le salon.", ipa: "lə ʒwɛ ɛ dɑ̃ lə salɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jouet", base: "jouet" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "salon", ref: "fr-0999" }] }
+      - { target: "L'enfant joue avec son jouet.", ipa: "lɑ̃fɑ̃ ʒu avɛk sɔ̃ ʒwɛ", bases: [{ word: "L'enfant", base: "enfant" }, { word: "joue", base: "jouer" }, { word: "avec", ref: "fr-0590" }, { word: "son", ref: "fr-0138" }, { word: "jouet", base: "jouet" }] }
+  - id: "fr-1386"
+    target: "poupée"
+    ipa: "pupe"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La poupée est petite.", ipa: "la pupe ɛ pəti", bases: [{ word: "La", ref: "fr-0544" }, { word: "poupée", base: "poupée" }, { word: "est", ref: "fr-0021" }, { word: "petite", base: "petit" }] }
+      - { target: "La fille joue avec sa poupée.", ipa: "la fij ʒu avɛk sa pupe", bases: [{ word: "La", ref: "fr-0544" }, { word: "fille", ref: "fr-0168" }, { word: "joue", base: "jouer" }, { word: "avec", ref: "fr-0590" }, { word: "sa", ref: "fr-0627" }, { word: "poupée", base: "poupée" }] }
+  - id: "fr-1387"
+    target: "ballon"
+    ipa: "balɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ballon roule dans le jardin.", ipa: "lə balɔ̃ ʁul dɑ̃ lə ʒaʁdɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ballon", base: "ballon" }, { word: "roule", base: "rouler" }, { word: "dans", ref: "fr-0049" }, { word: "jardin", ref: "fr-1000" }] }
+      - { target: "Les enfants jouent au ballon.", ipa: "le ɑ̃fɑ̃ ʒu o balɔ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "enfants", base: "enfant" }, { word: "jouent", base: "jouer" }, { word: "au", base: "au" }, { word: "ballon", base: "ballon" }] }
+  - id: "fr-1388"
+    target: "chose"
+    ipa: "ʃoz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une chose est sûre.", ipa: "yn ʃoz ɛ syʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "chose", base: "chose" }, { word: "est", ref: "fr-0021" }, { word: "sûre", base: "sûr" }] }
+      - { target: "Je ne connais pas cette chose.", ipa: "ʒə nə kɔnɛ pa sɛt ʃoz", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "connais", base: "connaître" }, { word: "pas", base: "pas" }, { word: "cette", ref: "fr-0144" }, { word: "chose", base: "chose" }] }
+  - id: "fr-1389"
+    target: "sachet"
+    ipa: "saʃɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un sachet de thé est dans la tasse.", ipa: "œ̃ saʃɛ də te ɛ dɑ̃ la tas", bases: [{ word: "Un", ref: "fr-0208" }, { word: "sachet", base: "sachet" }, { word: "de", base: "de" }, { word: "thé", ref: "fr-0792" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "tasse", ref: "fr-0386" }] }
+      - { target: "J'achète un sachet de sucre.", ipa: "ʒaʃɛt œ̃ saʃɛ də sykʁ", bases: [{ word: "J'achète", base: "acheter" }, { word: "un", ref: "fr-0208" }, { word: "sachet", base: "sachet" }, { word: "de", base: "de" }, { word: "sucre", ref: "fr-0777" }] }
+  - id: "fr-1390"
+    target: "pile"
+    ipa: "pil"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La pile est vide.", ipa: "la pil ɛ vid", bases: [{ word: "La", ref: "fr-0544" }, { word: "pile", base: "pile" }, { word: "est", ref: "fr-0021" }, { word: "vide", ref: "fr-0440" }] }
+      - { target: "Il faut une pile.", ipa: "il fo yn pil", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "une", ref: "fr-0545" }, { word: "pile", base: "pile" }] }
+  - id: "fr-1391"
+    target: "casserole"
+    ipa: "kasʁɔl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La casserole est sur le feu.", ipa: "la kasʁɔl ɛ syʁ lə fø", bases: [{ word: "La", ref: "fr-0544" }, { word: "casserole", base: "casserole" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "feu", ref: "fr-0899" }] }
+      - { target: "Je mets l'eau dans la casserole.", ipa: "ʒə mɛ lo dɑ̃ la kasʁɔl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", base: "mettre" }, { word: "l'eau", ref: "fr-0024" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "casserole", base: "casserole" }] }
+  - id: "fr-1392"
+    target: "bouilloire"
+    ipa: "bujwaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bouilloire chauffe.", ipa: "la bujwaʁ ʃof", bases: [{ word: "La", ref: "fr-0544" }, { word: "bouilloire", base: "bouilloire" }, { word: "chauffe", base: "chauffer" }] }
+      - { target: "Tu prépares le thé avec la bouilloire ?", ipa: "ty pʁepaʁ lə te avɛk la bujwaʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "prépares", base: "préparer" }, { word: "le", ref: "fr-0543" }, { word: "thé", ref: "fr-0792" }, { word: "avec", ref: "fr-0590" }, { word: "la", ref: "fr-0544" }, { word: "bouilloire", base: "bouilloire" }] }
+  - id: "fr-1393"
+    target: "écran"
+    ipa: "ekʁɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'écran est très grand.", ipa: "lekʁɑ̃ ɛ tʁɛ ɡʁɑ̃", bases: [{ word: "L'écran", base: "écran" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "Je regarde l'écran de mon ordinateur.", ipa: "ʒə ʁəɡaʁd lekʁɑ̃ də mɔ̃ ɔʁdinatœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", ref: "fr-0293" }, { word: "l'écran", base: "écran" }, { word: "de", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "ordinateur", ref: "fr-0666" }] }
+  - id: "fr-1394"
+    target: "clavier"
+    ipa: "klavje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le clavier est sale.", ipa: "lə klavje ɛ sal", bases: [{ word: "Le", ref: "fr-0543" }, { word: "clavier", base: "clavier" }, { word: "est", ref: "fr-0021" }, { word: "sale", ref: "fr-0428" }] }
+      - { target: "Tu tapes sur le clavier ?", ipa: "ty tap syʁ lə klavje", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "tapes", base: "taper" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "clavier", base: "clavier" }] }
+  - id: "fr-1395"
+    target: "prise"
+    ipa: "pʁiz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La prise est près de la fenêtre.", ipa: "la pʁiz ɛ pʁɛ də la fənɛtʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "prise", base: "prise" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "fenêtre", ref: "fr-1004" }] }
+      - { target: "Le chargeur est dans la prise.", ipa: "lə ʃaʁʒœʁ ɛ dɑ̃ la pʁiz", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chargeur", ref: "fr-1372" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "prise", base: "prise" }] }
+  - id: "fr-1396"
+    target: "bougie"
+    ipa: "buʒi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bougie est allumée.", ipa: "la buʒi ɛ alyme", bases: [{ word: "La", ref: "fr-0544" }, { word: "bougie", base: "bougie" }, { word: "est", ref: "fr-0021" }, { word: "allumée", base: "allumer" }] }
+      - { target: "On allume une bougie le soir.", ipa: "ɔ̃ alym yn buʒi lə swaʁ", bases: [{ word: "On", ref: "fr-0132" }, { word: "allume", base: "allumer" }, { word: "une", ref: "fr-0545" }, { word: "bougie", base: "bougie" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1397"
+    target: "ampoule"
+    ipa: "ɑ̃pul"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'ampoule ne marche pas.", ipa: "lɑ̃pul nə maʁʃ pa", bases: [{ word: "L'ampoule", base: "ampoule" }, { word: "ne", base: "ne" }, { word: "marche", base: "marcher" }, { word: "pas", base: "pas" }] }
+      - { target: "Il faut changer l'ampoule.", ipa: "il fo ʃɑ̃ʒe lɑ̃pul", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "changer", ref: "fr-0526" }, { word: "l'ampoule", base: "ampoule" }] }
+  - id: "fr-1398"
+    target: "seau"
+    ipa: "so"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le seau est plein d'eau.", ipa: "lə so ɛ plɛ̃ do", bases: [{ word: "Le", ref: "fr-0543" }, { word: "seau", base: "seau" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }, { word: "d'eau", base: "eau" }] }
+      - { target: "Je prends un seau pour laver la voiture.", ipa: "ʒə pʁɑ̃ œ̃ so puʁ lave la vwatyʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "seau", base: "seau" }, { word: "pour", ref: "fr-0591" }, { word: "laver", ref: "fr-0296" }, { word: "la", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }] }
+  - id: "fr-1399"
+    target: "balai"
+    ipa: "balɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le balai est derrière la porte.", ipa: "lə balɛ ɛ dɛʁjɛʁ la pɔʁt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "balai", base: "balai" }, { word: "est", ref: "fr-0021" }, { word: "derrière", ref: "fr-0467" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+      - { target: "Je balaie la cuisine.", ipa: "ʒə balɛ la kɥizin", bases: [{ word: "Je", ref: "fr-0126" }, { word: "balaie", base: "balayer" }, { word: "la", ref: "fr-0544" }, { word: "cuisine", ref: "fr-0822" }] }
+  - id: "fr-1400"
+    target: "éponge"
+    ipa: "epɔ̃ʒ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'éponge est sale.", ipa: "lepɔ̃ʒ ɛ sal", bases: [{ word: "L'éponge", base: "éponge" }, { word: "est", ref: "fr-0021" }, { word: "sale", ref: "fr-0428" }] }
+      - { target: "Je lave la table avec une éponge.", ipa: "ʒə lav la tabl avɛk yn epɔ̃ʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lave", base: "laver" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }, { word: "avec", ref: "fr-0590" }, { word: "une", ref: "fr-0545" }, { word: "éponge", base: "éponge" }] }
+  - id: "fr-1401"
+    target: "poubelle"
+    ipa: "pubɛl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La poubelle est pleine.", ipa: "la pubɛl ɛ plɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "poubelle", base: "poubelle" }, { word: "est", ref: "fr-0021" }, { word: "pleine", base: "plein" }] }
+      - { target: "Tu sors la poubelle ce soir ?", ipa: "ty sɔʁ la pubɛl sə swaʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "sors", base: "sortir" }, { word: "la", ref: "fr-0544" }, { word: "poubelle", base: "poubelle" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1402"
+    target: "tapis"
+    ipa: "tapi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tapis est sous la table.", ipa: "lə tapi ɛ su la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tapis", base: "tapis" }, { word: "est", ref: "fr-0021" }, { word: "sous", ref: "fr-0468" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Le chat dort sur le tapis.", ipa: "lə ʃa dɔʁ syʁ lə tapi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chat", ref: "fr-1252" }, { word: "dort", base: "dormir" }, { word: "sur", ref: "fr-0469" }, { word: "tapis", base: "tapis" }] }
+  - id: "fr-1403"
+    target: "rideau"
+    ipa: "ʁido"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le rideau est bleu.", ipa: "lə ʁido ɛ blø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "rideau", base: "rideau" }, { word: "est", ref: "fr-0021" }, { word: "bleu", ref: "fr-1233" }] }
+      - { target: "Ferme le rideau, il fait froid.", ipa: "fɛʁm lə ʁido il fɛ fʁwa", bases: [{ word: "Ferme", base: "fermer" }, { word: "le", ref: "fr-0543" }, { word: "rideau", base: "rideau" }, { word: "il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "froid", ref: "fr-0420" }] }

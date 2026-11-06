@@ -1,0 +1,672 @@
+schema: 1
+id: "fr-en-things"
+kind: "layer"
+core: "fr-things"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Things around you"
+license: "CC-BY-SA-4.0"
+description: "Forty-five everyday objects: things on a desk, in a bag, in the kitchen, the bathroom and the house, and the toys and tools you find around them. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1359":
+    native: "object, thing"
+    notes:
+      "n1": "Objet is 'object', masculine. In everyday talk people often say chose for 'thing' instead."
+    examples:
+      "Cet objet est utile.":
+        native: "This object is useful."
+        bases:
+          "objet": "object"
+          "utile": "useful"
+      "Je cherche un objet dans le sac.":
+        native: "I am looking for an object in the bag."
+        bases:
+          "objet": "object"
+  "fr-1360":
+    native: "pen"
+    notes:
+      "n1": "Stylo is 'pen', masculine. A pencil is a crayon, not a stylo."
+    examples:
+      "Le stylo est sur la table.":
+        native: "The pen is on the table."
+        bases:
+          "stylo": "pen"
+      "Tu as un stylo ?":
+        native: "Do you have a pen?"
+        bases:
+          "stylo": "pen"
+  "fr-1361":
+    native: "pencil"
+    notes:
+      "n1": "Crayon is 'pencil', masculine. The word also means a crayon, the coloured kind."
+    examples:
+      "Le crayon est cassé.":
+        native: "The pencil is broken."
+        bases:
+          "crayon": "pencil"
+          "cassé": "broken"
+      "Je dessine avec un crayon.":
+        native: "I draw with a pencil."
+        bases:
+          "dessine": "draw"
+          "crayon": "pencil"
+  "fr-1362":
+    native: "exercise book, notebook"
+    notes:
+      "n1": "Cahier is 'exercise book' or 'notebook', masculine. It is what a pupil writes in."
+    examples:
+      "Mon cahier est dans le sac.":
+        native: "My exercise book is in the bag."
+        bases:
+          "cahier": "exercise book"
+      "Nous écrivons dans le cahier.":
+        native: "We write in the exercise book."
+        bases:
+          "écrivons": "write"
+          "cahier": "exercise book"
+  "fr-1363":
+    native: "book"
+    notes:
+      "n1": "Livre is 'book', masculine. It is also a pound, as in a weight of bread."
+    examples:
+      "Ce livre est très bon.":
+        native: "This book is very good."
+        bases:
+          "livre": "book"
+      "Je lis un livre le soir.":
+        native: "I read a book in the evening."
+        bases:
+          "lis": "read"
+          "livre": "book"
+  "fr-1364":
+    native: "eraser, rubber"
+    notes:
+      "n1": "Gomme is 'eraser' or 'rubber', feminine. It also means gum, the sweet kind."
+    examples:
+      "La gomme est sur le bureau.":
+        native: "The eraser is on the desk."
+        bases:
+          "gomme": "eraser"
+      "Il manque une gomme.":
+        native: "An eraser is missing."
+        bases:
+          "gomme": "eraser"
+  "fr-1365":
+    native: "ruler"
+    notes:
+      "n1": "Règle is 'ruler', feminine. It also means a rule, as in a rule of grammar."
+    examples:
+      "La règle est longue.":
+        native: "The ruler is long."
+        bases:
+          "règle": "ruler"
+          "longue": "long"
+      "Tu prends la règle ?":
+        native: "Are you taking the ruler?"
+        bases:
+          "règle": "ruler"
+  "fr-1366":
+    native: "scissors"
+    notes:
+      "n1": "Ciseaux is always plural in French: les ciseaux, a pair of scissors. It is masculine."
+    examples:
+      "Les ciseaux sont dans le tiroir.":
+        native: "The scissors are in the drawer."
+        bases:
+          "ciseaux": "scissors"
+          "tiroir": "drawer"
+      "Je coupe le papier avec les ciseaux.":
+        native: "I cut the paper with the scissors."
+        bases:
+          "coupe": "cut"
+          "ciseaux": "scissors"
+  "fr-1367":
+    native: "newspaper"
+    notes:
+      "n1": "Journal is 'newspaper', masculine. It can also mean a diary, but here it is the paper."
+    examples:
+      "Le journal est sur la table.":
+        native: "The newspaper is on the table."
+        bases:
+          "journal": "newspaper"
+      "Je lis le journal le matin.":
+        native: "I read the newspaper in the morning."
+        bases:
+          "lis": "read"
+          "journal": "newspaper"
+  "fr-1368":
+    native: "envelope"
+    notes:
+      "n1": "Enveloppe is 'envelope', feminine. Note the word-final e in the spelling."
+    examples:
+      "Une enveloppe est sur la table.":
+        native: "An envelope is on the table."
+        bases:
+          "enveloppe": "envelope"
+      "Je mets une enveloppe dans le sac.":
+        native: "I put an envelope in the bag."
+        bases:
+          "mets": "put"
+          "enveloppe": "envelope"
+  "fr-1369":
+    native: "stamp"
+    notes:
+      "n1": "Timbre is 'stamp', masculine, as for a letter. It also means a doorbell."
+    examples:
+      "Il manque un timbre.":
+        native: "A stamp is missing."
+        bases:
+          "timbre": "stamp"
+      "Le timbre est sur l'enveloppe.":
+        native: "The stamp is on the envelope."
+        bases:
+          "timbre": "stamp"
+          "l'enveloppe": "the envelope"
+  "fr-1370":
+    native: "glasses, spectacles"
+    notes:
+      "n1": "Lunettes is always plural: des lunettes, a pair of glasses. It is feminine."
+    examples:
+      "Mes lunettes sont sur la table.":
+        native: "My glasses are on the table."
+        bases:
+          "lunettes": "glasses"
+      "Je ne vois pas bien sans mes lunettes.":
+        native: "I cannot see well without my glasses."
+        bases:
+          "ne": "not"
+          "vois": "see"
+          "pas": "not"
+          "lunettes": "glasses"
+  "fr-1371":
+    native: "wallet"
+    notes:
+      "n1": "Portefeuille is 'wallet', masculine. It is the word for a purse of bills and cards."
+    examples:
+      "Mon portefeuille est dans ma poche.":
+        native: "My wallet is in my pocket."
+        bases:
+          "portefeuille": "wallet"
+          "poche": "pocket"
+      "Il a perdu son portefeuille.":
+        native: "He has lost his wallet."
+        bases:
+          "perdu": "lost"
+          "portefeuille": "wallet"
+  "fr-1372":
+    native: "charger"
+    notes:
+      "n1": "Chargeur is 'charger', masculine, for a phone or a battery. It comes from charger, to load."
+    examples:
+      "Le chargeur est dans la cuisine.":
+        native: "The charger is in the kitchen."
+        bases:
+          "chargeur": "charger"
+      "Je cherche mon chargeur.":
+        native: "I am looking for my charger."
+        bases:
+          "chargeur": "charger"
+  "fr-1373":
+    native: "photo, picture"
+    notes:
+      "n1": "Photo is 'photo', feminine. It is short for photographie."
+    examples:
+      "Cette photo est très belle.":
+        native: "This photo is very beautiful."
+        bases:
+          "photo": "photo"
+          "belle": "beautiful"
+      "Je prends une photo de la mer.":
+        native: "I take a photo of the sea."
+        bases:
+          "photo": "photo"
+          "de": "of"
+          "mer": "sea"
+  "fr-1374":
+    native: "paper"
+    notes:
+      "n1": "Papier is 'paper', masculine, and it is uncountable: du papier, some paper."
+    examples:
+      "Il y a du papier dans le tiroir.":
+        native: "There is some paper in the drawer."
+        bases:
+          "y": "there"
+          "du": "some"
+          "papier": "paper"
+          "tiroir": "drawer"
+      "Je prends une feuille de papier.":
+        native: "I take a sheet of paper."
+        bases:
+          "feuille": "sheet"
+          "de": "of"
+          "papier": "paper"
+  "fr-1375":
+    native: "pencil case"
+    notes:
+      "n1": "Trousse is 'pencil case', feminine. It is also a kit, as a first-aid kit."
+    examples:
+      "La trousse est pleine de crayons.":
+        native: "The pencil case is full of pencils."
+        bases:
+          "trousse": "pencil case"
+          "pleine": "full"
+          "de": "of"
+          "crayons": "pencils"
+      "Mets ta trousse dans ton sac.":
+        native: "Put your pencil case in your bag."
+        bases:
+          "Mets": "put"
+          "trousse": "pencil case"
+  "fr-1376":
+    native: "handkerchief, tissue"
+    notes:
+      "n1": "Mouchoir is 'handkerchief' or 'tissue', masculine. A paper tissue is a mouchoir en papier."
+    examples:
+      "Il me faut un mouchoir.":
+        native: "I need a handkerchief."
+        bases:
+          "me": "me"
+          "faut": "need"
+          "mouchoir": "handkerchief"
+      "Je pleure et je prends mon mouchoir.":
+        native: "I am crying and I take my handkerchief."
+        bases:
+          "pleure": "cry"
+          "mouchoir": "handkerchief"
+  "fr-1377":
+    native: "comb"
+    notes:
+      "n1": "Peigne is 'comb', masculine. To comb your hair is se peigner."
+    examples:
+      "Le peigne est dans la salle de bain.":
+        native: "The comb is in the bathroom."
+        bases:
+          "peigne": "comb"
+          "de": "of"
+      "Je cherche mon peigne.":
+        native: "I am looking for my comb."
+        bases:
+          "peigne": "comb"
+  "fr-1378":
+    native: "mirror"
+    notes:
+      "n1": "Miroir is 'mirror', masculine. The verb regarder means to look at, here at yourself."
+    examples:
+      "Le miroir est au mur.":
+        native: "The mirror is on the wall."
+        bases:
+          "miroir": "mirror"
+          "au": "on"
+      "Je me regarde dans le miroir.":
+        native: "I look at myself in the mirror."
+        bases:
+          "me": "myself"
+          "miroir": "mirror"
+  "fr-1379":
+    native: "blanket"
+    notes:
+      "n1": "Couverture is 'blanket' or 'cover', feminine. It also means a cover of a book."
+    examples:
+      "La couverture est chaude.":
+        native: "The blanket is warm."
+        bases:
+          "couverture": "blanket"
+          "chaude": "warm"
+      "Il fait froid, prends une couverture.":
+        native: "It is cold, take a blanket."
+        bases:
+          "couverture": "blanket"
+  "fr-1380":
+    native: "pillow"
+    notes:
+      "n1": "Oreiller is 'pillow', masculine. A cushion on a sofa is a coussin."
+    examples:
+      "L'oreiller est très doux.":
+        native: "The pillow is very soft."
+        bases:
+          "L'oreiller": "pillow"
+      "Je dors avec un oreiller.":
+        native: "I sleep with a pillow."
+        bases:
+          "dors": "sleep"
+          "oreiller": "pillow"
+  "fr-1381":
+    native: "ribbon"
+    notes:
+      "n1": "Ruban is 'ribbon', masculine. It is also a tape, as a sticky tape."
+    examples:
+      "Le ruban est rouge.":
+        native: "The ribbon is red."
+        bases:
+          "ruban": "ribbon"
+      "Elle met un ruban dans les cheveux.":
+        native: "She puts a ribbon in her hair."
+        bases:
+          "met": "puts"
+          "ruban": "ribbon"
+          "cheveux": "hair"
+  "fr-1382":
+    native: "rope, cord"
+    notes:
+      "n1": "Corde is 'rope' or 'cord', feminine. A washing line is also une corde à linge."
+    examples:
+      "La corde est longue.":
+        native: "The rope is long."
+        bases:
+          "corde": "rope"
+          "longue": "long"
+      "Il attache le sac avec une corde.":
+        native: "He ties the bag with a rope."
+        bases:
+          "attache": "ties"
+          "corde": "rope"
+  "fr-1383":
+    native: "hammer"
+    notes:
+      "n1": "Marteau is 'hammer', masculine. The word also means a mallet."
+    examples:
+      "Le marteau est dans le garage.":
+        native: "The hammer is in the garage."
+        bases:
+          "marteau": "hammer"
+      "Je prends le marteau et le clou.":
+        native: "I take the hammer and the nail."
+        bases:
+          "marteau": "hammer"
+  "fr-1384":
+    native: "nail"
+    notes:
+      "n1": "Clou is 'nail', masculine. It also means a stud or a drawing pin in some uses."
+    examples:
+      "Un clou tient le tableau.":
+        native: "A nail holds the picture."
+        bases:
+          "clou": "nail"
+          "tient": "holds"
+          "tableau": "picture"
+      "Il y a un clou dans le mur.":
+        native: "There is a nail in the wall."
+        bases:
+          "y": "there"
+          "clou": "nail"
+  "fr-1385":
+    native: "toy"
+    notes:
+      "n1": "Jouet is 'toy', masculine. From jouer, to play."
+    examples:
+      "Le jouet est dans le salon.":
+        native: "The toy is in the living room."
+        bases:
+          "jouet": "toy"
+      "L'enfant joue avec son jouet.":
+        native: "The child plays with its toy."
+        bases:
+          "L'enfant": "child"
+          "joue": "plays"
+          "jouet": "toy"
+  "fr-1386":
+    native: "doll"
+    notes:
+      "n1": "Poupée is 'doll', feminine. The adjective is petite for small, feminine."
+    examples:
+      "La poupée est petite.":
+        native: "The doll is small."
+        bases:
+          "poupée": "doll"
+          "petite": "small"
+      "La fille joue avec sa poupée.":
+        native: "The girl plays with her doll."
+        bases:
+          "joue": "plays"
+          "poupée": "doll"
+  "fr-1387":
+    native: "ball"
+    notes:
+      "n1": "Ballon is 'ball', masculine, as for football. A small ball is a balle."
+    examples:
+      "Le ballon roule dans le jardin.":
+        native: "The ball rolls in the garden."
+        bases:
+          "ballon": "ball"
+          "roule": "rolls"
+      "Les enfants jouent au ballon.":
+        native: "The children play with the ball."
+        bases:
+          "enfants": "children"
+          "jouent": "play"
+          "au": "with the"
+          "ballon": "ball"
+  "fr-1388":
+    native: "thing"
+    notes:
+      "n1": "Chose is 'thing', feminine. It is the everyday word when the name does not matter."
+    examples:
+      "Une chose est sûre.":
+        native: "One thing is sure."
+        bases:
+          "chose": "thing"
+          "sûre": "sure"
+      "Je ne connais pas cette chose.":
+        native: "I do not know this thing."
+        bases:
+          "connais": "know"
+          "ne": "not"
+          "pas": "not"
+          "chose": "thing"
+  "fr-1389":
+    native: "small bag, sachet"
+    notes:
+      "n1": "Sachet is 'small bag' or 'sachet', masculine: un sachet de thé, a tea bag."
+    examples:
+      "Un sachet de thé est dans la tasse.":
+        native: "A tea bag is in the cup."
+        bases:
+          "sachet": "tea bag"
+          "de": "of"
+      "J'achète un sachet de sucre.":
+        native: "I buy a bag of sugar."
+        bases:
+          "J'achète": "I buy"
+          "sachet": "bag"
+          "de": "of"
+  "fr-1390":
+    native: "battery"
+    notes:
+      "n1": "Pile is 'battery', feminine. It also means a pile, as a heap of things."
+    examples:
+      "La pile est vide.":
+        native: "The battery is empty."
+        bases:
+          "pile": "battery"
+      "Il faut une pile.":
+        native: "You need a battery."
+        bases:
+          "faut": "need"
+          "pile": "battery"
+  "fr-1391":
+    native: "saucepan"
+    notes:
+      "n1": "Casserole is 'saucepan', feminine. A pan with no lid is a poêle, a frying pan."
+    examples:
+      "La casserole est sur le feu.":
+        native: "The saucepan is on the stove."
+        bases:
+          "casserole": "saucepan"
+      "Je mets l'eau dans la casserole.":
+        native: "I put the water in the saucepan."
+        bases:
+          "mets": "put"
+          "casserole": "saucepan"
+  "fr-1392":
+    native: "kettle"
+    notes:
+      "n1": "Bouilloire is 'kettle', feminine. From bouillir, to boil."
+    examples:
+      "La bouilloire chauffe.":
+        native: "The kettle is heating up."
+        bases:
+          "bouilloire": "kettle"
+          "chauffe": "heats"
+      "Tu prépares le thé avec la bouilloire ?":
+        native: "Are you making the tea with the kettle?"
+        bases:
+          "prépares": "make"
+          "bouilloire": "kettle"
+  "fr-1393":
+    native: "screen"
+    notes:
+      "n1": "Écran is 'screen', masculine. It is used for a computer, a television or a phone."
+    examples:
+      "L'écran est très grand.":
+        native: "The screen is very big."
+        bases:
+          "L'écran": "screen"
+      "Je regarde l'écran de mon ordinateur.":
+        native: "I look at the screen of my computer."
+        bases:
+          "l'écran": "screen"
+          "de": "of"
+  "fr-1394":
+    native: "keyboard"
+    notes:
+      "n1": "Clavier is 'keyboard', masculine. It also means the keys of a piano."
+    examples:
+      "Le clavier est sale.":
+        native: "The keyboard is dirty."
+        bases:
+          "clavier": "keyboard"
+      "Tu tapes sur le clavier ?":
+        native: "Are you typing on the keyboard?"
+        bases:
+          "tapes": "type"
+          "clavier": "keyboard"
+  "fr-1395":
+    native: "socket, power point"
+    notes:
+      "n1": "Prise is 'socket' or 'power point', feminine. It also means a grip or a catch."
+    examples:
+      "La prise est près de la fenêtre.":
+        native: "The socket is near the window."
+        bases:
+          "prise": "socket"
+          "de": "of"
+      "Le chargeur est dans la prise.":
+        native: "The charger is in the socket."
+        bases:
+          "prise": "socket"
+  "fr-1396":
+    native: "candle"
+    notes:
+      "n1": "Bougie is 'candle', feminine. It is also a spark plug in a car."
+    examples:
+      "La bougie est allumée.":
+        native: "The candle is lit."
+        bases:
+          "bougie": "candle"
+          "allumée": "lit"
+      "On allume une bougie le soir.":
+        native: "People light a candle in the evening."
+        bases:
+          "allume": "light"
+          "bougie": "candle"
+  "fr-1397":
+    native: "light bulb"
+    notes:
+      "n1": "Ampoule is 'light bulb', feminine. It is also a blister or a bubble."
+    examples:
+      "L'ampoule ne marche pas.":
+        native: "The bulb does not work."
+        bases:
+          "L'ampoule": "bulb"
+          "ne": "not"
+          "marche": "works"
+          "pas": "not"
+      "Il faut changer l'ampoule.":
+        native: "The bulb has to be changed."
+        bases:
+          "faut": "need"
+          "l'ampoule": "bulb"
+  "fr-1398":
+    native: "bucket"
+    notes:
+      "n1": "Seau is 'bucket', masculine. Un seau d'eau is a bucket of water."
+    examples:
+      "Le seau est plein d'eau.":
+        native: "The bucket is full of water."
+        bases:
+          "seau": "bucket"
+          "d'eau": "of water"
+      "Je prends un seau pour laver la voiture.":
+        native: "I take a bucket to wash the car."
+        bases:
+          "seau": "bucket"
+  "fr-1399":
+    native: "broom"
+    notes:
+      "n1": "Balai is 'broom', masculine. The verb balayer means to sweep."
+    examples:
+      "Le balai est derrière la porte.":
+        native: "The broom is behind the door."
+        bases:
+          "balai": "broom"
+      "Je balaie la cuisine.":
+        native: "I sweep the kitchen."
+        bases:
+          "balaie": "sweep"
+  "fr-1400":
+    native: "sponge"
+    notes:
+      "n1": "Éponge is 'sponge', feminine. It is the one for washing up."
+    examples:
+      "L'éponge est sale.":
+        native: "The sponge is dirty."
+        bases:
+          "L'éponge": "sponge"
+      "Je lave la table avec une éponge.":
+        native: "I wash the table with a sponge."
+        bases:
+          "lave": "wash"
+          "éponge": "sponge"
+  "fr-1401":
+    native: "bin, rubbish bin"
+    notes:
+      "n1": "Poubelle is 'bin', feminine. Taking it out is sortir la poubelle."
+    examples:
+      "La poubelle est pleine.":
+        native: "The bin is full."
+        bases:
+          "poubelle": "bin"
+          "pleine": "full"
+      "Tu sors la poubelle ce soir ?":
+        native: "Are you taking the bin out tonight?"
+        bases:
+          "sors": "take out"
+          "poubelle": "bin"
+  "fr-1402":
+    native: "rug, carpet"
+    notes:
+      "n1": "Tapis is 'rug' or 'carpet', masculine. It also means a mat, and a conveyor belt in a shop."
+    examples:
+      "Le tapis est sous la table.":
+        native: "The rug is under the table."
+        bases:
+          "tapis": "rug"
+      "Le chat dort sur le tapis.":
+        native: "The cat sleeps on the rug."
+        bases:
+          "dort": "sleeps"
+          "tapis": "rug"
+  "fr-1403":
+    native: "curtain"
+    notes:
+      "n1": "Rideau is 'curtain', masculine. The verb fermer is to close, so ferme is an order: close."
+    examples:
+      "Le rideau est bleu.":
+        native: "The curtain is blue."
+        bases:
+          "rideau": "curtain"
+      "Ferme le rideau, il fait froid.":
+        native: "Close the curtain, it is cold."
+        bases:
+          "Ferme": "Close"
+          "rideau": "curtain"
