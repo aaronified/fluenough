@@ -162,6 +162,15 @@ jobs:
     needs: [decks-validate, decks-tools-parts]
     if: always()
     steps:
+      # Main's decks/ is frozen (decks live on decks-live): a pull request to
+      # main may change only decks/themes.yaml and decks/min_app.json there.
+      - uses: actions/checkout@v7
+        if: github.event_name == 'pull_request'
+        with:
+          fetch-depth: 2
+      - name: Main's decks/ is frozen
+        if: github.event_name == 'pull_request'
+        run: git diff --name-only --no-renames HEAD^1 HEAD | python3 tools/check_main_decks_guard.py
       - run: |
           if [ "${{ contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled') || contains(needs.*.result, 'skipped') }}" = "true" ]; then
             echo "::error::A deck job did not succeed"

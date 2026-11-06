@@ -24,7 +24,7 @@
 - [ ] Every `language` and `native` block has its ISO 639-3 code (`iso639_3`)
 - [ ] A new language comes with a `<code>-facts.yaml` of 30+ facts, or an issue for one
 
-- [ ] One concern only; rebased on `main`
+- [ ] One concern only; rebased on its base branch (`decks-live` for decks, `main` for everything else)
 - [ ] Agent assistance disclosed with a `Co-Authored-By:` trailer, if any
 
 New here? See [CONTRIBUTING.md](../CONTRIBUTING.md) and [AGENTS.md](../AGENTS.md).
