@@ -410,7 +410,8 @@ units:
       - { id: "kanji-at-the-station", text: { "en": "Hearing the station words whose kanji are taught: in, out, east, west, north, south" } }
     reading_passages:
       - { id: "station-signs", text: { "en": "Station signs in kanji: entrance, exit, platform, ticket gate" } }
-  - planned: { id: "ja-shopping", theme: "shopping", words: 50 }
+  - decks: ["ja-shopping", "ja-shopping-sentences", "ja-reading-shopping", "*"]
+    words: 21
     listening_passages:
       - { id: "asking-the-price", text: { "en": "Asking about price and size in a department store" } }
     reading_passages:

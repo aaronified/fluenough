@@ -31,3 +31,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1629 | ja-weather | あられ and ひょう both mean hail: is the difference clear enough to keep both cards, and is あられ the right word for small hail? | Haiku builder | 2026-11-06 |
 | ja-1674 | ja-things | かみ means paper here, but it is also the word for hair (髪) and for god (神): should a homograph note say so? | Haiku builder | 2026-11-06 |
 | ja-1699 | ja-things | Is ふろしき (the square cloth for wrapping things) a good single-word card, or does it need a note on its culture? | Haiku builder | 2026-11-06 |
+| ja-1716 | ja-shopping | Is おつり (the change given back by a shop) the natural word, and is おつりがあります natural for "there is change"? | Haiku builder | 2026-11-06 |
+| ja-1720 | ja-shopping | Is おみせは まけます natural for "the shop gives a discount", or is another phrase used? | Haiku builder | 2026-11-06 |
+| ja-1725 | ja-shopping | Is ぶっか (prices of goods) a natural everyday word, or should ねだん carry it? | Haiku builder | 2026-11-06 |
+| ja-1735 | ja-shopping | Is じょうぶな ふくろ (a sturdy bag) natural? | Haiku builder | 2026-11-06 |
+| ja-1736 | ja-shopping | Is らく (easy, comfortable) right for clothes that are comfortable, as in らくな ふく? | Haiku builder | 2026-11-06 |
+| unit-level | ja-shopping | Only 21 of the 50 planned shopping words were fresh: the path count is set to 21. Is that right, or should the unit wait for more words? | Haiku builder | 2026-11-06 |
+| unit-level | ja-shopping | The example and sentence decks of ja-shopping are short and simple, close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
