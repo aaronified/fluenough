@@ -141,6 +141,8 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
   Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
   Map<String, Set<String>> _verifiedSkills = const <String, Set<String>>{};
+  Map<String, Map<String, String>> _skillLabels =
+      const <String, Map<String, String>>{};
   Map<String, String> _placementRuns = const <String, String>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
@@ -798,6 +800,28 @@ class SettingsNotifier extends ChangeNotifier {
   Set<String> verifiedSkillsOf(String language) =>
       _verifiedSkills[language] ?? const <String>{};
 
+  /// How sure the last Find my level run was of each skill it tested, by the
+  /// skill's name in a run and the name of the label (`notSureYet`,
+  /// `fairlySure`, `sure`, `verySure`, `verified`); empty until a run has
+  /// been done. The learner sees words, never a number (wiki,
+  /// Plan-Placement-V2, section 5.5).
+  Map<String, String> skillLabelsOf(String language) =>
+      _skillLabels[language] ?? const <String, String>{};
+
+  /// Sets [language]'s skill labels to [labels].
+  void setSkillLabels(String language, Map<String, String> labels) {
+    final was = _skillLabels[language] ?? const <String, String>{};
+    if (mapEquals(was, labels)) return;
+    final next = <String, Map<String, String>>{..._skillLabels};
+    if (labels.isEmpty) {
+      next.remove(language);
+    } else {
+      next[language] = Map<String, String>.unmodifiable(labels);
+    }
+    _skillLabels = Map<String, Map<String, String>>.unmodifiable(next);
+    notifyListeners();
+  }
+
   /// Sets [language]'s verified skills to [skills].
   void setVerifiedSkills(String language, Set<String> skills) {
     final was = _verifiedSkills[language] ?? const <String>{};
@@ -1185,6 +1209,7 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _verifiedSkills.entries)
         key: value.toList()..sort(),
     }),
+    'skill_labels': jsonEncode(_skillLabels),
     'placement_runs': jsonEncode(_placementRuns),
     'collapsed_levels': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
@@ -1525,6 +1550,19 @@ class SettingsNotifier extends ChangeNotifier {
         setVerifiedSkills(key, <String>{
           for (final name in value)
             if (name is String && RegExp(r'^[a-zA-Z]+$').hasMatch(name)) name,
+        });
+      }
+    }
+    if (pick('skill_labels', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        setSkillLabels(key, <String, String>{
+          for (final MapEntry(key: name, value: label) in value.entries)
+            if (name is String &&
+                label is String &&
+                RegExp(r'^[a-zA-Z]+$').hasMatch(name) &&
+                RegExp(r'^[a-zA-Z]+$').hasMatch(label))
+              name: label,
         });
       }
     }

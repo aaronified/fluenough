@@ -15,6 +15,7 @@ import 'package:fluenough/core/placement/assurance_readout.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/placement_run.dart';
 import 'package:fluenough/core/placement/placement_session.dart';
+import 'package:fluenough/features/placement/skill_labels_line.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -148,6 +149,37 @@ void main() {
       // Read was tested and not Verified; Say was not in the run.
       expect(state.settings.verifiedSkillsOf('hi'), <String>{'say'});
       expect(state.settings.placedDecks, isEmpty);
+      // Its label is kept for the sheet's row, and Say has none.
+      expect(state.settings.skillLabelsOf('hi').keys, <String>['read']);
+    });
+
+    test('a skill the run covered but could not test loses its stored label, '
+        'one it tested is replaced, and one it did not cover keeps it', () {
+      state.settings.setSkillLabels('hi', <String, String>{
+        'read': 'fairlySure',
+        'say': 'verySure',
+        'script': 'sure',
+      });
+      // The run's microphone is off: Say is in play and cannot be tested.
+      final session = finishedRun(<PlacementSkill>{
+        PlacementSkill.read,
+        PlacementSkill.say,
+      }, true);
+      final readout = session.run.readout;
+      expect(readout[PlacementSkill.say]!.label, AssuranceLabel.notTested);
+      state.writePlacementRun('hi', plan, session.run);
+      expect(state.settings.skillLabelsOf('hi'), <String, String>{
+        'read': readout[PlacementSkill.read]!.label.name,
+        'script': 'sure',
+      });
+    });
+
+    test('a run that tested nothing still drops the label of a skill it '
+        'covered', () {
+      state.settings.setSkillLabels('hi', <String, String>{'say': 'sure'});
+      final session = finishedRun(<PlacementSkill>{PlacementSkill.say}, true);
+      state.writePlacementRun('hi', plan, session.run);
+      expect(state.settings.skillLabelsOf('hi'), isEmpty);
     });
 
     test('credit an earlier run gave survives a later run that places the '
@@ -274,12 +306,78 @@ void main() {
       expect(settings.placementRunOf('hi'), 'run');
     });
 
+    test('skill labels: keeps what is well formed and ignores the rest', () {
+      final settings = SettingsNotifier()
+        ..restore(<String, String>{
+          'skill_labels':
+              '{"hi":{"read":"sure","say":3,"bad name!":"sure","hear":"a b"},'
+              '"HIN":{"read":"sure"},"bn":"sure","de":{}}',
+        });
+      expect(settings.skillLabelsOf('hi'), <String, String>{'read': 'sure'});
+      expect(settings.skillLabelsOf('bn'), isEmpty);
+      expect(settings.skillLabelsOf('de'), isEmpty);
+    });
+
+    test('skill labels: a value that is not a map, or not JSON, changes '
+        'nothing', () {
+      final settings = SettingsNotifier()
+        ..setSkillLabels('hi', <String, String>{'read': 'sure'});
+      settings.restore(const <String, String>{'skill_labels': '[1,2]'});
+      expect(settings.skillLabelsOf('hi'), <String, String>{'read': 'sure'});
+      settings.restore(const <String, String>{'skill_labels': 'not json'});
+      expect(settings.skillLabelsOf('hi'), <String, String>{'read': 'sure'});
+    });
+
+    test('skill labels: a backup from before them restores without any, and '
+        'a round trip keeps them', () {
+      final old = SettingsNotifier()..restore(const <String, String>{});
+      expect(old.skillLabelsOf('hi'), isEmpty);
+
+      final source = SettingsNotifier()
+        ..setSkillLabels('hi', <String, String>{
+          'read': 'verySure',
+          'hear': 'notSureYet',
+        });
+      final copy = SettingsNotifier()..restore(source.toStored());
+      expect(copy.skillLabelsOf('hi'), <String, String>{
+        'read': 'verySure',
+        'hear': 'notSureYet',
+      });
+    });
+
     test('settings saved before Find my level had them restore without '
         'either', () {
       final settings = SettingsNotifier()..restore(const <String, String>{});
       expect(settings.verifiedSkillsOf('hi'), isEmpty);
       expect(settings.placementRunOf('hi'), isNull);
     });
+  });
+
+  group('the labels the sheet shows', () {
+    const skills = <PlacementSkill>[
+      PlacementSkill.read,
+      PlacementSkill.hear,
+      PlacementSkill.say,
+    ];
+
+    test(
+      'a stored name is shown, but Verified only with the skill\'s mark',
+      () {
+        state.settings
+          ..setSkillLabels('hi', <String, String>{
+            'read': 'verified',
+            'hear': 'verified',
+            'say': 'sure',
+          })
+          ..setVerifiedSkills('hi', <String>{'hear'});
+        final shown = placedLabelsOf(state.settings, 'hi', skills);
+        // Read's stored `verified` has no mark behind it: not shown at all.
+        expect(shown, <PlacementSkill, AssuranceLabel>{
+          PlacementSkill.hear: AssuranceLabel.verified,
+          PlacementSkill.say: AssuranceLabel.sure,
+        });
+      },
+    );
   });
 
   group('what is kept', () {
