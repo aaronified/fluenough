@@ -112,6 +112,7 @@ enum Feature {
     Feature.persistence,
     Feature.appearance,
     Feature.colourSeeds,
+    Feature.dynamicColour,
     Feature.contrast,
     Feature.cardSize,
     Feature.stats,

@@ -46,6 +46,7 @@ class SettingsPage extends StatelessWidget {
         child: ListenableBuilder(
           listenable: Listenable.merge(<Listenable>[
             state.settings,
+            state.wallpaper,
             state.progress,
             state.log,
           ]),
@@ -149,7 +150,11 @@ class SettingsPage extends StatelessWidget {
         leading: const Icon(Icons.palette_outlined),
         title: l10n.settingsRowLook,
         subtitle: l10n.settingsSumLook(
-          appearanceSummary(l10n, settings),
+          appearanceSummary(
+            l10n,
+            settings,
+            wallpaperInUse: state.wallpaperInUse != null,
+          ),
           AppLanguagePicker.ownName(AppLanguagePicker.current(context)),
         ),
         trailing: const Icon(Icons.chevron_right),

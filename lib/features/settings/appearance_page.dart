@@ -39,9 +39,13 @@ String seedLabel(AppLocalizations l10n, ThemeSeed seed) => switch (seed) {
 
 /// The line under Settings' Appearance row: "System · Forest", with
 /// "· High contrast" when that is on.
-String appearanceSummary(AppLocalizations l10n, SettingsNotifier settings) {
+String appearanceSummary(
+  AppLocalizations l10n,
+  SettingsNotifier settings, {
+  bool wallpaperInUse = false,
+}) {
   final theme = themeModeLabel(l10n, settings.themeMode);
-  final colour = settings.dynamicColour
+  final colour = wallpaperInUse
       ? l10n.appearanceWallpaper
       : seedLabel(l10n, settings.seed);
   return settings.highContrast
@@ -54,11 +58,12 @@ String appearanceSummary(AppLocalizations l10n, SettingsNotifier settings) {
 /// Design screen `appearance`. Each control sits behind its feature: the
 /// theme and pure black behind `Feature.appearance`, the seeds behind `colourSeeds`,
 /// wallpaper colours behind `dynamicColour`, contrast behind `contrast` and
-/// the card size behind `cardSize`. All but wallpaper colours are live, and
-/// change [SettingsNotifier]: `FluenoughApp` builds its themes from the
-/// theme, pure black, seed and contrast, and drill text follows the card size
-/// (`TargetText.hero`, `TargetText.card`, `AnswerField`). Wallpaper colours
-/// wait for their dependency, and show as incoming.
+/// the card size behind `cardSize`. All are live, and change
+/// [SettingsNotifier]: `FluenoughApp` builds its themes from the theme, pure
+/// black, seed, wallpaper colour and contrast, and drill text follows the
+/// card size (`TargetText.hero`, `TargetText.card`, `AnswerField`). The
+/// Wallpaper colours row is drawn only where the phone gives a palette
+/// (Android 12 and later, `AppState.wallpaper`); elsewhere there is no row.
 ///
 /// The preview at the top draws a real card from the loaded decks in the
 /// chosen theme, colour, contrast and card size.
@@ -83,12 +88,12 @@ class AppearancePage extends StatelessWidget {
         actions: const <Widget>[ReportButton()],
       ),
       body: ListenableBuilder(
-        listenable: settings,
+        listenable: Listenable.merge(<Listenable>[settings, state.wallpaper]),
         builder: (context, _) {
           final features = state.features;
-          final dynamicOn =
-              features.isAvailable(Feature.dynamicColour) &&
-              settings.dynamicColour;
+          // The phone's palette, where there is one: the row is drawn only
+          // then, and the seeds step aside only while it applies.
+          final dynamicOn = state.wallpaperInUse != null;
           // Card text stops at a 1.4x total with the phone's own (#505).
           final cardMax = maxCardTextScaleOf(context);
           final cardScale = cardTextScaleOf(context, settings);
@@ -100,7 +105,11 @@ class AppearancePage extends StatelessWidget {
               24,
             ).clearingSystemBar(context),
             children: <Widget>[
-              _Preview(sample: previewCard(state), settings: settings),
+              _Preview(
+                sample: previewCard(state),
+                settings: settings,
+                wallpaper: state.wallpaperInUse,
+              ),
               const SizedBox(height: 24),
               SettingsSection(
                 feature: Feature.appearance,
@@ -139,26 +148,29 @@ class AppearancePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              _Block(
-                child: GroupedTile.toggle(
-                  title: l10n.appearanceWallpaper,
-                  subtitleOn: l10n.appearanceWallpaperOn,
-                  subtitleOff: l10n.appearanceWallpaperOff,
-                  feature: Feature.dynamicColour,
-                  padding: const EdgeInsetsDirectional.symmetric(
-                    horizontal: 20,
-                    vertical: 16,
+              if (state.wallpaper.available) ...<Widget>[
+                _Block(
+                  child: GroupedTile.toggle(
+                    title: l10n.appearanceWallpaper,
+                    subtitleOn: l10n.appearanceWallpaperOn,
+                    subtitleOff: l10n.appearanceWallpaperOff,
+                    feature: Feature.dynamicColour,
+                    padding: const EdgeInsetsDirectional.symmetric(
+                      horizontal: 20,
+                      vertical: 16,
+                    ),
+                    value: dynamicOn,
+                    onChanged: (on) => settings.dynamicColour = on,
                   ),
-                  value: dynamicOn,
-                  onChanged: (on) => settings.dynamicColour = on,
                 ),
-              ),
-              const SizedBox(height: 24),
+                const SizedBox(height: 24),
+              ],
               SettingsSection(
                 feature: Feature.colourSeeds,
                 heading: l10n.appearanceColour,
                 // The seeds do not apply while wallpaper colours are on.
                 dimmed: dynamicOn,
+                help: dynamicOn ? l10n.appearanceColourFollowing : null,
                 child: _SeedPicker(
                   selected: dynamicOn ? null : settings.seed,
                   onSelected:
@@ -325,10 +337,17 @@ class _Block extends StatelessWidget {
 /// contrast and card size. Decorative, so hidden from screen readers, as the
 /// design marks it.
 class _Preview extends StatelessWidget {
-  const _Preview({required this.sample, required this.settings});
+  const _Preview({
+    required this.sample,
+    required this.settings,
+    this.wallpaper,
+  });
 
   final ({Card card, LanguageInfo language})? sample;
   final SettingsNotifier settings;
+
+  /// The wallpaper colour the preview follows, or null for the seed.
+  final Color? wallpaper;
 
   @override
   Widget build(BuildContext context) {
@@ -343,10 +362,12 @@ class _Preview extends StatelessWidget {
             seed: settings.seed,
             highContrast: settings.highContrast,
             pureBlack: settings.pureBlack,
+            wallpaper: wallpaper,
           )
         : AppTheme.light(
             seed: settings.seed,
             highContrast: settings.highContrast,
+            wallpaper: wallpaper,
           );
     final scheme = theme.colorScheme;
     final s = sample;

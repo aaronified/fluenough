@@ -74,6 +74,8 @@ class _FluenoughAppState extends State<FluenoughApp>
     // depends on them (#90).
     widget.state.load().whenComplete(widget.state.reminders.appResumed);
     widget.state.updates.atLaunch();
+    // Android 12 and later give the wallpaper colour; nothing elsewhere.
+    unawaited(widget.state.wallpaper.refresh());
     // The browser may keep the progress past Safari's 7 days; a no-op off
     // the web, and a refusal is not an error.
     // Then the Storage row of Your data is read again, so Chrome, which may
@@ -137,6 +139,8 @@ class _FluenoughAppState extends State<FluenoughApp>
         reminders.appResumed();
         // Android's installer, if it was open, has been closed (#487).
         widget.state.updates.appResumed();
+        // The wallpaper may have changed while the app was away.
+        unawaited(widget.state.wallpaper.refresh());
       case AppLifecycleState.paused:
       case AppLifecycleState.hidden:
         reminders.appPaused();
@@ -163,7 +167,10 @@ class _FluenoughAppState extends State<FluenoughApp>
     return AppScope(
       state: widget.state,
       child: ListenableBuilder(
-        listenable: settings,
+        listenable: Listenable.merge(<Listenable>[
+          settings,
+          widget.state.wallpaper,
+        ]),
         builder: (context, _) => MaterialApp(
           onGenerateTitle: (context) => AppLocalizations.of(context)!.appTitle,
           localizationsDelegates: const <LocalizationsDelegate<dynamic>>[
@@ -176,11 +183,13 @@ class _FluenoughAppState extends State<FluenoughApp>
           theme: AppTheme.light(
             seed: settings.seed,
             highContrast: settings.highContrast,
+            wallpaper: widget.state.wallpaperInUse,
           ),
           darkTheme: AppTheme.dark(
             seed: settings.seed,
             highContrast: settings.highContrast,
             pureBlack: settings.pureBlack,
+            wallpaper: widget.state.wallpaperInUse,
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,
