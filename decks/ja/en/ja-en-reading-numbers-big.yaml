@@ -1,0 +1,56 @@
+schema: 1
+id: "ja-en-reading-numbers-big"
+name: "Japanese reading: big numbers"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-numbers-big-1"
+    title: "Prices on a sign"
+    sentences:
+      - { text: "さんびゃくえんです。", reading: "sanbyaku en desu." }
+      - { text: "よんせんえんです。", reading: "yonsen en desu." }
+      - { text: "ごひゃくえんはたかいです。", reading: "gohyaku en wa takai desu." }
+      - { text: "ばんごうはななじゅうです。", reading: "bangou wa nanajuu desu." }
+    questions:
+      - id: "ja-1264"
+        prompt: { en: "Which line gives the price as 300 yen?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1265"
+        prompt: { en: "The second line says the price is four thousand yen." }
+        answer: true
+      - id: "ja-1266"
+        prompt: { en: "Which line says the number is seventy?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
+  - id: "ja-numbers-big-2"
+    title: "A number on a receipt"
+    sentences:
+      - { text: "ぜろえん。", reading: "zero en." }
+      - { text: "はっぴゃくえんです。", reading: "happyaku en desu." }
+      - { text: "きゅうせんえんはたかいです。", reading: "kyuusen en wa takai desu." }
+      - { text: "ばんごうはにじゅうです。", reading: "bangou wa nijuu desu." }
+    questions:
+      - id: "ja-1267"
+        prompt: { en: "Which line says the price is 800 yen?" }
+        options:
+          - { en: "The second line" }
+          - { en: "The third line" }
+        answer: 1
+      - id: "ja-1268"
+        prompt: { en: "The third line says that 9,000 yen is cheap." }
+        answer: false
+      - id: "ja-1269"
+        prompt: { en: "Which line says the number is twenty?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2

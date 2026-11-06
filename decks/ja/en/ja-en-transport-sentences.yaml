@@ -1,0 +1,38 @@
+schema: 1
+id: "ja-en-transport-sentences"
+kind: "layer"
+core: "ja-transport-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Getting around in sentences"
+description: "Sentences about trains, buses and tickets, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1311":
+    native: "I go to Kyoto by bullet train."
+    bases:
+      "まで": { meaning: "as far as; until" }
+    confusables:
+      w1: { why: "ちかてつ (chikatetsu) is the subway." }
+      w2: { why: "ひこうき (hikouki) is an aeroplane." }
+  "ja-1312":
+    native: "Where is the station?"
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "くうこう (kuukou) is an airport." }
+      w2: { why: "きっぷうりば (kippuuriba) is a ticket office." }
+  "ja-1313":
+    native: "I buy a ticket."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "にもつ (nimotsu) is luggage." }
+      w2: { why: "ふね (fune) is a ship." }
+  "ja-1314":
+    native: "I go to school by car."
+    confusables:
+      w1: { why: "じてんしゃ (jitensha) is a bicycle." }
+      w2: { why: "バス (basu) is a bus." }

@@ -1,0 +1,56 @@
+schema: 1
+id: "ja-en-reading-transport"
+name: "Japanese reading: transport"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-transport-1"
+    title: "At the station"
+    sentences:
+      - { text: "えきののりばはあそこです。", reading: "eki no noriba wa asoko desu." }
+      - { text: "きっぷうりばはひだりです。", reading: "kippuuriba wa hidari desu." }
+      - { text: "ちかてつははやいです。", reading: "chikatetsu wa hayai desu." }
+      - { text: "にもつをもってください。", reading: "nimotsu o motte kudasai." }
+    questions:
+      - id: "ja-1315"
+        prompt: { en: "Which line says where the platform is?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1316"
+        prompt: { en: "The third line says the subway is slow." }
+        answer: false
+      - id: "ja-1317"
+        prompt: { en: "Which line says to carry the luggage?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
+  - id: "ja-transport-2"
+    title: "A trip by car"
+    sentences:
+      - { text: "くるまでくうこうにいきます。", reading: "kuruma de kuukou ni ikimasu." }
+      - { text: "ちゅうしゃじょうはたかいです。", reading: "chuushajou wa takai desu." }
+      - { text: "たいやはだいじょうぶですか。", reading: "taiya wa daijoubu desu ka." }
+      - { text: "ガソリンをいれます。", reading: "gasorin o iremasu." }
+    questions:
+      - id: "ja-1318"
+        prompt: { en: "Which line says the speaker goes to the airport by car?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1319"
+        prompt: { en: "The second line says the car park is cheap." }
+        answer: false
+      - id: "ja-1320"
+        prompt: { en: "Which line says the speaker puts in petrol?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2

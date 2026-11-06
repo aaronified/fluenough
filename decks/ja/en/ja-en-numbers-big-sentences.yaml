@@ -1,0 +1,40 @@
+schema: 1
+id: "ja-en-numbers-big-sentences"
+kind: "layer"
+core: "ja-numbers-big-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Big numbers in sentences"
+description: "Sentences with prices and large numbers, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1260":
+    native: "It is 100 yen."
+    bases:
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "せん (sen) is a thousand, ten times the size of a hundred." }
+      w2: { why: "まん (man) is ten thousand." }
+  "ja-1261":
+    native: "It is 2,000 yen."
+    bases:
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "にひゃく (nihyaku) is two hundred." }
+      w2: { why: "さんぜん (sanzen) is three thousand." }
+  "ja-1262":
+    native: "The number is fifty."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "すう (suu) is a number in general, not one number." }
+      w2: { why: "れい (rei) is zero." }
+  "ja-1263":
+    native: "A million yen is expensive."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "おく (oku) is a hundred million." }
+      w2: { why: "じゅうまん (juuman) is a hundred thousand." }

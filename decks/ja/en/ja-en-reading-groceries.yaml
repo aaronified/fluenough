@@ -1,0 +1,56 @@
+schema: 1
+id: "ja-en-reading-groceries"
+name: "Japanese reading: groceries"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-groceries-1"
+    title: "A shopping trip"
+    sentences:
+      - { text: "ヨーグルトとチーズをかいます。", reading: "yooguruto to chiizu o kaimasu." }
+      - { text: "のりはやわらかいです。", reading: "nori wa yawarakai desu." }
+      - { text: "せっけんとシャンプーはどこですか。", reading: "sekken to shanpuu wa doko desu ka." }
+      - { text: "ティッシュをふたつください。", reading: "tisshu o futatsu kudasai." }
+    questions:
+      - id: "ja-1295"
+        prompt: { en: "Which line says the speaker buys yogurt and cheese?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1296"
+        prompt: { en: "The second line says the seaweed is thick." }
+        answer: false
+      - id: "ja-1297"
+        prompt: { en: "Which line asks for two tissues?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
+  - id: "ja-groceries-2"
+    title: "In the kitchen"
+    sentences:
+      - { text: "たまごとにんじんをかいます。", reading: "tamago to ninjin o kaimasu." }
+      - { text: "さらのうえにおかずがおいしいです。", reading: "sara no ue ni okazu ga oishii desu." }
+      - { text: "はしはどこですか。", reading: "hashi wa doko desu ka." }
+      - { text: "コップにみずをいれます。", reading: "koppu ni mizu o iremasu." }
+    questions:
+      - id: "ja-1298"
+        prompt: { en: "Which line says the side dish is delicious?" }
+        options:
+          - { en: "The second line" }
+          - { en: "The third line" }
+        answer: 1
+      - id: "ja-1299"
+        prompt: { en: "The third line asks where the spoon is." }
+        answer: false
+      - id: "ja-1300"
+        prompt: { en: "Which line says the speaker puts water in a glass?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2

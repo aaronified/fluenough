@@ -1,0 +1,66 @@
+schema: 1
+id: "ja-transport-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1311"
+    target: "しんかんせんできょうとまでいきます。"
+    words: ["しんかんせん", "で", "きょうと", "まで", "いきます"]
+    reading: "shinkansen de kyouto made ikimasu."
+    ipa: "ɕiɴkaɴseɴ de kjoːto made ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "しんかんせん", ref: "ja-1020" }
+      - { word: "で", ref: "ja-0293" }
+      - { word: "きょうと", ref: "ja-1031" }
+      - { word: "まで", base: "まで", reading: "made" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", word: "ちかてつ", reading: "chikatetsu", kind: "word" }
+      - { id: "w2", word: "ひこうき", reading: "hikouki", kind: "word" }
+  - id: "ja-1312"
+    target: "えきはどこですか。"
+    words: ["えき", "は", "どこ", "です", "か"]
+    reading: "eki wa doko desu ka."
+    ipa: "eki wa doko desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "えき", ref: "ja-1021" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "どこ", ref: "ja-0110" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", word: "くうこう", reading: "kuukou", kind: "word" }
+      - { id: "w2", word: "きっぷうりば", reading: "kippuuriba", kind: "word" }
+  - id: "ja-1313"
+    target: "きっぷをかいます。"
+    words: ["きっぷ", "を", "かいます"]
+    reading: "kippu o kaimasu."
+    ipa: "kippɯ o kaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "きっぷ", ref: "ja-1023" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいます", ref: "ja-0356" }
+    confusables:
+      - { id: "w1", word: "にもつ", reading: "nimotsu", kind: "word" }
+      - { id: "w2", word: "ふね", reading: "fune", kind: "word" }
+  - id: "ja-1314"
+    target: "くるまでがっこうにいきます。"
+    words: ["くるま", "で", "がっこう", "に", "いきます"]
+    reading: "kuruma de gakkou ni ikimasu."
+    ipa: "kɯɾɯma de ɡakkoː ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "くるま", ref: "ja-1017" }
+      - { word: "で", ref: "ja-0293" }
+      - { word: "がっこう", ref: "ja-0313" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", word: "じてんしゃ", reading: "jitensha", kind: "word" }
+      - { id: "w2", word: "バス", reading: "basu", kind: "word" }
