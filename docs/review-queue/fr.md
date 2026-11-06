@@ -55,3 +55,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1507 | fr-eating-out (A2) | "Le poulet est à l'ail." is à l'ail the usual way to say with garlic on a menu? | Haiku builder | 2026-11-06 |
 | fr-1490 | fr-eating-out (A2) | Frites is glossed as "chips" in the layer: is "fries" the better English word for a learner from the app's English layer? | Haiku builder | 2026-11-06 |
 | unit-level | fr-eating-out (A2) | Pain, poisson, fromage, beurre, poulet and pommes are taught here as well as in fr-food: should the sentences that use them stay in this unit? | Haiku builder | 2026-11-06 |
+| fr-1550 | fr-cooking (A2) | "Passoire" is a colander: is it the word a French kitchen uses, or is "égouttoir" more common for the draining tool? | Haiku builder | 2026-11-06 |
+| fr-1549 | fr-cooking (A2) | "Louche" is a ladle: is it the everyday word for a ladle in a French home? | Haiku builder | 2026-11-06 |
+| fr-1556 | fr-cooking (A2) | "Levure" is taught as yeast: does "levure" alone name yeast in ordinary cooking, or does the text need "levure de boulanger"? | Haiku builder | 2026-11-06 |
+| fr-1566 | fr-cooking (A2) | "Le chocolat fond dans la bouche.": is it the natural way to say chocolate melts in the mouth? | Haiku builder | 2026-11-06 |
+| unit-level | fr-cooking (A2) | Doucement, pâte, acide, branche and pas are taught only as inline bases here, not as cards: should any of them become a card in a later unit? | Haiku builder | 2026-11-06 |

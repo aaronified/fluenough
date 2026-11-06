@@ -1,0 +1,568 @@
+schema: 1
+id: "fr-en-cooking"
+kind: "layer"
+core: "fr-cooking"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cooking"
+license: "CC-BY-SA-4.0"
+description: "Forty words for cooking: the verbs of heat and cutting, the pans and tools, the ingredients and the flavours. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1532":
+    native: "to cook"
+    notes:
+      "n1": "Cuire is to cook food with heat, in an oven or a pan. Cuisiner is the general word for cooking."
+    examples:
+      "Je cuis les pâtes dans l'eau.":
+        native: "I cook the pasta in the water."
+        bases:
+          "cuis": "cook"
+          "l'eau": "water"
+      "Le gâteau cuit au four.":
+        native: "The cake bakes in the oven."
+        bases:
+          "au": "at, in"
+  "fr-1533":
+    native: "to roast"
+    notes:
+      "n1": "Rôtir is to roast meat or vegetables in the oven. The roast meat itself is a rôti."
+    examples:
+      "Je rôtis les légumes au four.":
+        native: "I roast the vegetables in the oven."
+        bases:
+          "rôtis": "roast"
+          "au": "at, in"
+      "On rôtit un poulet le dimanche.":
+        native: "We roast a chicken on Sundays."
+        bases:
+          "rôtit": "roasts"
+  "fr-1534":
+    native: "to grill, to toast"
+    notes:
+      "n1": "Griller is to grill food over a flame or to toast bread in a toaster."
+    examples:
+      "Nous grillons la viande sur le feu.":
+        native: "We grill the meat over the fire."
+        bases:
+          "grillons": "grill"
+      "Je grille deux tranches de pain.":
+        native: "I toast two slices of bread."
+        bases:
+          "grille": "grill"
+          "de": "of, some"
+  "fr-1535":
+    native: "to fry"
+    notes:
+      "n1": "Frire is to fry food in hot oil or fat. Frit is fried; frites are chips or fries."
+    examples:
+      "Je fais frire les oignons.":
+        native: "I fry the onions."
+        bases:
+          "frire": "to fry"
+      "L'huile est chaude pour frire.":
+        native: "The oil is hot for frying."
+        bases:
+          "frire": "to fry"
+  "fr-1536":
+    native: "to boil"
+    notes:
+      "n1": "Bouillir is to boil. Faire bouillir is to bring something to the boil."
+    examples:
+      "L'eau bout dans la casserole.":
+        native: "The water boils in the pan."
+        bases:
+          "L'eau": "water"
+          "bout": "boils"
+      "Faites bouillir l'eau.":
+        native: "Boil the water."
+        bases:
+          "bouillir": "to boil"
+          "l'eau": "water"
+  "fr-1537":
+    native: "to simmer"
+    notes:
+      "n1": "Mijoter is to simmer slowly over low heat for a long time."
+    examples:
+      "Je laisse mijoter la sauce dix minutes.":
+        native: "I let the sauce simmer for ten minutes."
+        bases:
+          "laisse": "let"
+          "mijoter": "to simmer"
+      "La soupe mijote doucement.":
+        native: "The soup simmers gently."
+        bases:
+          "mijote": "simmers"
+          "doucement": "gently"
+  "fr-1538":
+    native: "to cut"
+    notes:
+      "n1": "Couper is to cut with a knife or scissors. Its imperative is coupe."
+    examples:
+      "Coupe les tomates en morceaux.":
+        native: "Cut the tomatoes into pieces."
+        bases:
+          "Coupe": "cut"
+          "en": "in, as"
+      "Je coupe le pain avec un couteau.":
+        native: "I cut the bread with a knife."
+        bases:
+          "coupe": "cut"
+  "fr-1539":
+    native: "to peel"
+    notes:
+      "n1": "Éplucher is to peel fruit and vegetables."
+    examples:
+      "Il épluche les carottes.":
+        native: "He peels the carrots."
+        bases:
+          "épluche": "peel"
+      "Épluche l'ail avant de le couper.":
+        native: "Peel the garlic before you cut it."
+        bases:
+          "Épluche": "peel"
+          "de": "of, some"
+  "fr-1540":
+    native: "to mix"
+    notes:
+      "n1": "Mélanger is to mix or stir ingredients together."
+    examples:
+      "Mélange la farine et le sucre.":
+        native: "Mix the flour and the sugar."
+        bases:
+          "Mélange": "mix"
+      "Il mélange les œufs avec du lait.":
+        native: "He mixes the eggs with some milk."
+        bases:
+          "mélange": "mix"
+          "du": "some"
+  "fr-1541":
+    native: "to beat"
+    notes:
+      "n1": "Battre is to beat, for example eggs or cream. It has other meanings too."
+    examples:
+      "Je bats les œufs avec une fourchette.":
+        native: "I beat the eggs with a fork."
+        bases:
+          "bats": "beat"
+      "Battez le beurre avec le sucre.":
+        native: "Beat the butter with the sugar."
+        bases:
+          "Battez": "beat"
+  "fr-1542":
+    native: "to pour"
+    notes:
+      "n1": "Verser is to pour a liquid into something."
+    examples:
+      "Verse l'eau dans la casserole.":
+        native: "Pour the water into the pan."
+        bases:
+          "Verse": "pour"
+          "l'eau": "water"
+      "Je verse un peu d'huile dans la poêle.":
+        native: "I pour a little oil into the frying pan."
+        bases:
+          "verse": "pour"
+  "fr-1543":
+    native: "to grate"
+    notes:
+      "n1": "Râper is to grate cheese, carrots or ginger."
+    examples:
+      "Râpe le fromage sur les pâtes.":
+        native: "Grate the cheese over the pasta."
+        bases:
+          "Râpe": "grate"
+      "Je râpe une carotte pour la salade.":
+        native: "I grate a carrot for the salad."
+        bases:
+          "râpe": "grate"
+  "fr-1544":
+    native: "to weigh"
+    notes:
+      "n1": "Peser is to weigh an ingredient on scales."
+    examples:
+      "Je pèse le sucre pour le gâteau.":
+        native: "I weigh the sugar for the cake."
+        bases:
+          "pèse": "weigh"
+      "Pèse la farine avant de la mettre dans le bol.":
+        native: "Weigh the flour before you put it in the bowl."
+        bases:
+          "Pèse": "weigh"
+          "de": "of, some"
+  "fr-1545":
+    native: "to measure"
+    notes:
+      "n1": "Mesurer is to measure an amount, such as a liquid or flour."
+    examples:
+      "Mesure un verre d'eau.":
+        native: "Measure a glass of water."
+        bases:
+          "Mesure": "measure"
+          "d'eau": "water"
+      "Il mesure la farine avec une tasse.":
+        native: "He measures the flour with a cup."
+        bases:
+          "mesure": "measure"
+  "fr-1546":
+    native: "oven"
+    notes:
+      "n1": "Four is an oven, masculine. Au four means baked or cooked in the oven."
+    examples:
+      "Le gâteau est dans le four.":
+        native: "The cake is in the oven."
+        bases:
+          "four": "oven"
+      "Mets le pain au four.":
+        native: "Put the bread in the oven."
+        bases:
+          "au": "at, in"
+          "four": "oven"
+  "fr-1547":
+    native: "frying pan"
+    notes:
+      "n1": "Poêle is a frying pan, feminine: une poêle."
+    examples:
+      "Je mets l'huile dans la poêle.":
+        native: "I put the oil in the frying pan."
+        bases:
+          "poêle": "frying pan"
+      "La poêle est très chaude.":
+        native: "The frying pan is very hot."
+        bases:
+          "poêle": "frying pan"
+  "fr-1548":
+    native: "bowl"
+    notes:
+      "n1": "Bol is a bowl, masculine: un bol de soupe is a bowl of soup."
+    examples:
+      "Il y a un bol de soupe sur la table.":
+        native: "There is a bowl of soup on the table."
+        bases:
+          "y": "there"
+          "bol": "bowl"
+          "de": "of, some"
+      "Mets les œufs dans un grand bol.":
+        native: "Put the eggs in a large bowl."
+        bases:
+          "bol": "bowl"
+  "fr-1549":
+    native: "ladle"
+    notes:
+      "n1": "Louche is a ladle, feminine: une louche."
+    examples:
+      "Prends la louche et sers la soupe.":
+        native: "Take the ladle and serve the soup."
+        bases:
+          "louche": "ladle"
+      "Il met la soupe dans un bol avec une louche.":
+        native: "He puts the soup in a bowl with a ladle."
+        bases:
+          "louche": "ladle"
+  "fr-1550":
+    native: "colander, sieve"
+    notes:
+      "n1": "Passoire is a colander or sieve, feminine. It is used to drain pasta."
+    examples:
+      "Verse les pâtes dans la passoire.":
+        native: "Pour the pasta into the colander."
+        bases:
+          "passoire": "colander, sieve"
+      "Je lave la passoire après les pâtes.":
+        native: "I wash the colander after the pasta."
+        bases:
+          "passoire": "colander, sieve"
+  "fr-1551":
+    native: "board"
+    notes:
+      "n1": "Planche is a board, feminine. A chopping board is a planche à découper."
+    examples:
+      "Coupe les légumes sur la planche.":
+        native: "Cut the vegetables on the board."
+        bases:
+          "planche": "board"
+      "Je lave la planche.":
+        native: "I wash the board."
+        bases:
+          "planche": "board"
+  "fr-1552":
+    native: "recipe"
+    notes:
+      "n1": "Recette is a recipe, feminine: a list of ingredients and steps."
+    examples:
+      "C'est une recette facile.":
+        native: "It is an easy recipe."
+        bases:
+          "recette": "recipe"
+      "Je lis la recette avant de cuisiner.":
+        native: "I read the recipe before cooking."
+        bases:
+          "recette": "recipe"
+          "de": "of, some"
+  "fr-1553":
+    native: "ingredient"
+    notes:
+      "n1": "Ingrédient is an ingredient, masculine. The plural is ingrédients."
+    examples:
+      "Les ingrédients sont frais.":
+        native: "The ingredients are fresh."
+        bases:
+          "ingrédients": "ingredients"
+      "Mets les ingrédients dans le bol.":
+        native: "Put the ingredients in the bowl."
+        bases:
+          "ingrédients": "ingredients"
+  "fr-1554":
+    native: "cooking"
+    notes:
+      "n1": "Cuisson is the cooking itself, or the time it takes."
+    examples:
+      "Le temps de cuisson est de dix minutes.":
+        native: "The cooking time is ten minutes."
+        bases:
+          "de": "of, some"
+          "cuisson": "cooking"
+      "La cuisson du riz prend dix minutes.":
+        native: "Cooking the rice takes ten minutes."
+        bases:
+          "cuisson": "cooking"
+          "du": "some"
+  "fr-1555":
+    native: "pinch"
+    notes:
+      "n1": "Une pincée is a pinch, the amount held between two fingers."
+    examples:
+      "Ajoute une pincée de sel.":
+        native: "Add a pinch of salt."
+        bases:
+          "pincée": "pinch"
+          "de": "of, some"
+      "Il met une pincée de cannelle.":
+        native: "He puts in a pinch of cinnamon."
+        bases:
+          "pincée": "pinch"
+          "de": "of, some"
+  "fr-1556":
+    native: "yeast"
+    notes:
+      "n1": "Levure is yeast, feminine. It makes bread and cakes rise."
+    examples:
+      "Mets un peu de levure dans la pâte.":
+        native: "Put a little yeast in the dough."
+        bases:
+          "de": "of, some"
+          "levure": "yeast"
+          "pâte": "dough"
+      "La levure fait monter le pain.":
+        native: "The yeast makes the bread rise."
+        bases:
+          "levure": "yeast"
+  "fr-1557":
+    native: "honey"
+    notes:
+      "n1": "Miel is honey, masculine."
+    examples:
+      "Je mets du miel dans le thé.":
+        native: "I put some honey in the tea."
+        bases:
+          "du": "some"
+          "miel": "honey"
+      "Ce miel est très doux.":
+        native: "This honey is very sweet."
+        bases:
+          "miel": "honey"
+  "fr-1558":
+    native: "vinegar"
+    notes:
+      "n1": "Vinaigre is vinegar, masculine."
+    examples:
+      "Ajoute un peu de vinaigre dans la sauce.":
+        native: "Add a little vinegar to the sauce."
+        bases:
+          "de": "of, some"
+          "vinaigre": "vinegar"
+      "La salade a du vinaigre.":
+        native: "The salad has vinegar in it."
+        bases:
+          "du": "some"
+          "vinaigre": "vinegar"
+  "fr-1559":
+    native: "thyme"
+    notes:
+      "n1": "Thym is thyme, an herb, masculine. The h is silent."
+    examples:
+      "Mets une branche de thym dans la soupe.":
+        native: "Put a sprig of thyme in the soup."
+        bases:
+          "branche": "branch"
+          "de": "of, some"
+          "thym": "thyme"
+      "Le thym est frais.":
+        native: "The thyme is fresh."
+        bases:
+          "thym": "thyme"
+  "fr-1560":
+    native: "parsley"
+    notes:
+      "n1": "Persil is parsley, masculine."
+    examples:
+      "Ajoute du persil sur la soupe.":
+        native: "Add some parsley to the soup."
+        bases:
+          "du": "some"
+          "persil": "parsley"
+      "Le persil est vert.":
+        native: "The parsley is green."
+        bases:
+          "persil": "parsley"
+  "fr-1561":
+    native: "cinnamon"
+    notes:
+      "n1": "Cannelle is cinnamon, feminine."
+    examples:
+      "Il met de la cannelle dans le lait.":
+        native: "He puts cinnamon in the milk."
+        bases:
+          "de": "of, some"
+          "cannelle": "cinnamon"
+      "La cannelle est douce.":
+        native: "Cinnamon is sweet."
+        bases:
+          "cannelle": "cinnamon"
+  "fr-1562":
+    native: "lemon"
+    notes:
+      "n1": "Citron is a lemon, masculine."
+    examples:
+      "Mets un peu de citron dans l'eau.":
+        native: "Put a little lemon in the water."
+        bases:
+          "de": "of, some"
+          "citron": "lemon"
+          "l'eau": "water"
+      "Le citron est acide.":
+        native: "The lemon is sour."
+        bases:
+          "citron": "lemon"
+          "acide": "sour"
+  "fr-1563":
+    native: "lid"
+    notes:
+      "n1": "Couvercle is a lid, masculine."
+    examples:
+      "Mets le couvercle sur la casserole.":
+        native: "Put the lid on the pan."
+        bases:
+          "couvercle": "lid"
+      "Le couvercle est chaud.":
+        native: "The lid is hot."
+        bases:
+          "couvercle": "lid"
+  "fr-1564":
+    native: "fatty"
+    notes:
+      "n1": "Gras is fatty or greasy. The feminine is grasse."
+    examples:
+      "Ce fromage est très gras.":
+        native: "This cheese is very fatty."
+        bases:
+          "gras": "fatty"
+      "La viande est grasse.":
+        native: "The meat is fatty."
+        bases:
+          "grasse": "fatty"
+  "fr-1565":
+    native: "bitter"
+    notes:
+      "n1": "Amer is bitter. The feminine is amère."
+    examples:
+      "Le café est amer.":
+        native: "The coffee is bitter."
+        bases:
+          "amer": "bitter"
+      "Ce chocolat est un peu amer.":
+        native: "This chocolate is a little bitter."
+        bases:
+          "amer": "bitter"
+  "fr-1566":
+    native: "to melt"
+    notes:
+      "n1": "Fondre is to melt, such as butter or chocolate."
+    examples:
+      "Fais fondre le beurre dans la poêle.":
+        native: "Melt the butter in the frying pan."
+        bases:
+          "fondre": "to melt"
+      "Le chocolat fond dans la bouche.":
+        native: "The chocolate melts in the mouth."
+        bases:
+          "fond": "melts"
+  "fr-1567":
+    native: "to cool"
+    notes:
+      "n1": "Refroidir is to cool down, or to let something cool."
+    examples:
+      "Laisse refroidir le gâteau.":
+        native: "Let the cake cool."
+        bases:
+          "Laisse": "let"
+          "refroidir": "to cool"
+      "Le café refroidit vite.":
+        native: "The coffee cools quickly."
+        bases:
+          "refroidit": "cools"
+  "fr-1568":
+    native: "lukewarm"
+    notes:
+      "n1": "Tiède is lukewarm, neither hot nor cold."
+    examples:
+      "L'eau est tiède.":
+        native: "The water is lukewarm."
+        bases:
+          "L'eau": "water"
+          "tiède": "lukewarm"
+      "Mets le lait tiède dans le bol.":
+        native: "Put the lukewarm milk in the bowl."
+        bases:
+          "tiède": "lukewarm"
+  "fr-1569":
+    native: "to salt"
+    notes:
+      "n1": "Saler is to add salt to food."
+    examples:
+      "Sale la soupe, mais pas trop.":
+        native: "Add salt to the soup, but not too much."
+        bases:
+          "Sale": "salt"
+          "pas": "not"
+      "Je sale les pâtes dans l'eau.":
+        native: "I salt the pasta in the water."
+        bases:
+          "sale": "salt"
+          "l'eau": "water"
+  "fr-1570":
+    native: "to chop"
+    notes:
+      "n1": "Hacher is to chop finely or to mince."
+    examples:
+      "Hache l'oignon très fin.":
+        native: "Chop the onion very finely."
+        bases:
+          "Hache": "chop"
+      "Je hache le persil.":
+        native: "I chop the parsley."
+        bases:
+          "hache": "chop"
+  "fr-1571":
+    native: "to slice"
+    notes:
+      "n1": "Trancher is to slice or to cut through, such as bread or cheese."
+    examples:
+      "Il tranche le pain avec le couteau.":
+        native: "He slices the bread with the knife."
+        bases:
+          "tranche": "slice"
+      "Tranche le fromage en fines tranches.":
+        native: "Slice the cheese into thin slices."
+        bases:
+          "Tranche": "slice"
+          "en": "in, as"
