@@ -147,7 +147,11 @@ class PlacementSession {
       throw StateError('there is no question to answer');
     }
     _events.add(correct ? 'a1' : 'a0');
-    _run = _run.answer(correct, guess: creditBaseOf(_question!));
+    _run = _run.answer(
+      correct,
+      guess: creditBaseOf(_question!),
+      itemDeck: _question!.difficulty.deck,
+    );
     _advance();
   }
 
@@ -197,6 +201,7 @@ class PlacementSession {
         checkpointsKept: _run.checkpointsKept,
         unavailable: _run.unavailableLog,
         guesses: _run.guesses,
+        itemDecks: _run.itemDecks,
       );
       _builder = _newBuilder();
     }

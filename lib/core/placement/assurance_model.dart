@@ -49,12 +49,12 @@ enum PlacementQuestionKind {
   /// point 4): how fast a true knower is credited; it plays no part in the
   /// guarantee.
   double get creditSlip => switch (this) {
-    pickOne || pickMany => 0.10,
-    pair => 0.05,
-    english => 0.10,
-    tilesSentence => 0.10,
-    tilesWord => 0.05,
-    say => 0.15,
+    pickOne || pickMany => 0.15,
+    pair => 0.10,
+    english => 0.15,
+    tilesSentence => 0.15,
+    tilesWord => 0.10,
+    say => 0.20,
   };
 
   /// The base guess of a question of this kind with no cue: `1/k` for a pick

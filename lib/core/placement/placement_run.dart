@@ -191,8 +191,10 @@ class PlacementRun {
     this.checkpointsKept = 0,
     List<PlacementUnavailable> unavailable = const <PlacementUnavailable>[],
     List<double?> guesses = const <double?>[],
+    List<int?> itemDecks = const <int?>[],
   }) : results = List<bool>.unmodifiable(results),
        guesses = List<double?>.unmodifiable(guesses),
+       itemDecks = List<int?>.unmodifiable(itemDecks),
        unavailableLog = List<PlacementUnavailable>.unmodifiable(unavailable);
 
   final PlacementRunConfig config;
@@ -207,6 +209,12 @@ class PlacementRun {
   /// which counts for nothing.
   final List<double?> guesses;
 
+  /// The deck index of the card each question asked, parallel to [results]
+  /// (shorter, or null, where unknown). The credit posterior credits the
+  /// lower of this and the request's deck (a range that widened to an earlier
+  /// deck must not credit a deck the learner may not know).
+  final List<int?> itemDecks;
+
   /// How many checkpoints the learner has answered "Keep going" to.
   final int checkpointsKept;
 
@@ -220,6 +228,7 @@ class PlacementRun {
     results,
     unavailableLog,
     guesses,
+    itemDecks,
   );
 
   /// The question to ask now, or null when the run is done (or skipped).
@@ -244,7 +253,7 @@ class PlacementRun {
       !isDone && asked > 0 && asked % 25 == 0 && checkpointsKept < asked ~/ 25;
 
   /// The state after [correct] was the answer to [next].
-  PlacementRun answer(bool correct, {double? guess}) {
+  PlacementRun answer(bool correct, {double? guess, int? itemDeck}) {
     if (isDone) throw StateError('the run is done: there is no question');
     return PlacementRun(
       config,
@@ -255,6 +264,11 @@ class PlacementRun {
         for (var i = 0; i < results.length; i++)
           i < guesses.length ? guesses[i] : null,
         guess,
+      ],
+      itemDecks: <int?>[
+        for (var i = 0; i < results.length; i++)
+          i < itemDecks.length ? itemDecks[i] : null,
+        itemDeck,
       ],
     );
   }
@@ -283,6 +297,7 @@ class PlacementRun {
       results: results,
       checkpointsKept: checkpointsKept,
       guesses: guesses,
+      itemDecks: itemDecks,
       unavailable: <PlacementUnavailable>[
         ...unavailableLog,
         PlacementUnavailable(
@@ -301,6 +316,7 @@ class PlacementRun {
     checkpointsKept: asked ~/ 25,
     unavailable: unavailableLog,
     guesses: guesses,
+    itemDecks: itemDecks,
   );
 
   /// The assurance of every skill, as it stands: a skill the learner did not
@@ -446,6 +462,7 @@ class _Engine {
     List<bool> results,
     List<PlacementUnavailable> unavailable,
     List<double?> guesses,
+    List<int?> itemDecks,
   ) : levels = PlacementLevels(config.deckCount) {
     final tested = config.tested;
     final skipped = config.declaration == PlacementDeclaration.beginner;
@@ -491,7 +508,12 @@ class _Engine {
     for (final result in results) {
       final current = pending;
       if (current == null) break;
-      _apply(current, result, asked < guesses.length ? guesses[asked] : null);
+      _apply(
+        current,
+        result,
+        asked < guesses.length ? guesses[asked] : null,
+        asked < itemDecks.length ? itemDecks[asked] : null,
+      );
       asked++;
       drain();
     }
@@ -689,8 +711,14 @@ class _Engine {
   bool _done(PlacementSkill skill) {
     final posterior = reporting[skill]!;
     final placed = posterior.placedClass();
-    return placed == posterior.leadingClass &&
-        reachesTarget(posterior.probabilities[placed]);
+    if (placed == posterior.leadingClass &&
+        reachesTarget(posterior.probabilities[placed])) {
+      return true;
+    }
+    // The bottom stop: the learner is almost surely at none or the first
+    // class (plan section 13, point 12).
+    return posterior.leadingClass <= 1 &&
+        posterior.probabilities[0] + posterior.probabilities[1] >= 0.99;
   }
 
   PlacementSkill? get _grammarSkill {
@@ -812,7 +840,7 @@ class _Engine {
 
   // --- applying an answer ---------------------------------------------------
 
-  void _apply(_Pending current, bool correct, [double? guess]) {
+  void _apply(_Pending current, bool correct, [double? guess, int? itemDeck]) {
     final spec = current.spec;
     answers.add(PlacementAnswer(current.request, correct));
 
@@ -822,7 +850,7 @@ class _Engine {
         final before = reporting[skill];
         if (before == null) continue;
         reporting[skill] = before.updateCredit(
-          deck: spec.deck,
+          deck: itemDeck == null ? spec.deck : math.min(spec.deck, itemDeck),
           kind: spec.kind,
           correct: correct,
           base: guess,
