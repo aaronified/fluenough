@@ -69,6 +69,7 @@ function serve() {
   return new Promise((resolve) => server.listen(0, '127.0.0.1', () => resolve(server)));
 }
 
+let offline = false; // failed requests are expected while offline
 const problems = [];
 const problem = (text) => {
   problems.push(text);
@@ -102,7 +103,7 @@ async function main() {
 
   page.on('pageerror', (e) => problem(`uncaught error: ${String(e).split('\n')[0]}`));
   page.on('console', (m) => {
-    if (m.type() !== 'error') return;
+    if (m.type() !== 'error' || offline) return;
     problem(`console error: ${m.text().slice(0, 300)}`);
   });
   page.on('response', (r) => {
@@ -299,10 +300,12 @@ async function main() {
       });
       console.log(`  service worker controls the page: ${controlled}`);
       if (controlled) {
+        offline = true;
         await context.setOffline(true);
         await openApp();
         await waitFor('Today', 'the app offline, under its service worker', 60000);
         await context.setOffline(false);
+        offline = false;
       }
     });
   } catch (e) {

@@ -211,6 +211,9 @@ void main() {
       tester,
     ) async {
       usePhone(tester);
+      final before = browserWords;
+      addTearDown(() => browserWords = before);
+      browserWords = true;
       final (state, browser) = await webState();
       final entry = state.decks.firstWhere((e) => e.language.code == 'hi');
       final card = entry.deck.cards.first;
