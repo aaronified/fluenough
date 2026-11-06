@@ -465,7 +465,8 @@ units:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones, and pick the best" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Tokyo and Osaka" } }
-  - planned: { id: "ja-music", theme: "music", words: 40 }
+  - decks: ["ja-music", "ja-music-sentences", "ja-reading-music", "*"]
+    words: 14
     listening_passages:
       - { id: "at-karaoke", text: { "en": "Friends choose songs at karaoke" } }
     reading_passages:
