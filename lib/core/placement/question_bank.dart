@@ -46,11 +46,14 @@ class BankEntry {
 
   /// The ids that stop an answer card being asked again: the card, its word
   /// families and the concept.
-  Set<String> get answerIds => <String>{
+  late final Set<String> answerIds = <String>{
     ?question.cardId,
     for (final id in question.itemIds)
       if (id.startsWith('family:') || id.startsWith('concept:')) id,
   };
+
+  /// Whether the credit posterior counts this question (no cue).
+  late final bool counted = (creditBaseOf(question) ?? 0) < 1;
 
   /// What the model takes the guess rate of this question to be.
   double get guessRate {
@@ -477,7 +480,7 @@ class BankedBuilder implements QuestionSource {
     final pool = <BankEntry>[
       for (final e in all)
         if ((!needsOrigin || e.origin == failed!.bankId) &&
-            e.answerIds.intersection(asked).isEmpty)
+            !e.answerIds.any(asked.contains))
           e,
     ];
     if (pool.isEmpty) {
@@ -530,8 +533,8 @@ class BankedBuilder implements QuestionSource {
     // Counted questions before leaky ones, then the hardest first, one entry
     // per card.
     best.sort((a, b) {
-      final x = (creditBaseOf(a.question) ?? 0) >= 1 ? 1 : 0;
-      final y = (creditBaseOf(b.question) ?? 0) >= 1 ? 1 : 0;
+      final x = a.counted ? 0 : 1;
+      final y = b.counted ? 0 : 1;
       if (x != y) return x.compareTo(y);
       final c = b.question.difficulty.score.compareTo(
         a.question.difficulty.score,

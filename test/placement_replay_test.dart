@@ -68,7 +68,7 @@ void main() {
         grammar = <int>[for (final m in key['grammarDecks']! as List) m as int];
         final pattern = RegExp('^$language-(.+)-draw[0-9]+\\.json\$');
         for (final f in Directory(
-          '$_fixtures/answers',
+          '$_fixtures/answers/v3',
         ).listSync().whereType<File>()) {
           final m = pattern.firstMatch(f.uri.pathSegments.last);
           if (m == null) continue;
