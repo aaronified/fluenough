@@ -42,7 +42,7 @@ typedef _Answerer = bool Function(PlacementQuestionRequest, math.Random);
 /// is right at the guess floor of the question.
 _Answerer _learner(int known, double slip, {double? flat}) => (request, rng) {
   if (request.deck <= known) return rng.nextDouble() >= slip;
-  return rng.nextDouble() < (flat ?? _floor(request.kind));
+  return rng.nextDouble() < math.min(flat ?? 1, _floor(request.kind));
 };
 
 typedef _Result = ({
