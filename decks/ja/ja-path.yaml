@@ -498,7 +498,8 @@ units:
       - { id: "you-should-rest", text: { "en": "A doctor says what you must do and what you had better do" } }
     reading_passages:
       - { id: "clinic-advice", text: { "en": "A clinic's advice sheet" } }
-  - planned: { id: "ja-chores", theme: "chores", words: 35 }
+  - decks: ["ja-chores", "ja-chores-sentences", "ja-reading-chores", "*"]
+    words: 35
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
