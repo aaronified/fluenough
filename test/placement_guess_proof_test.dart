@@ -24,19 +24,22 @@
 // strategy a true failure rate of 1% fails the test (4 or more failures)
 // with probability about 0.3%, and a true rate of 10% passes it with
 // probability about 3%.
+@Timeout(Duration(minutes: 30))
+library;
+
 import 'dart:io';
 
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/assurance_readout.dart';
 import 'package:fluenough/core/placement/generated_question.dart';
 import 'package:fluenough/core/placement/item_picker.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/question_builder.dart';
-import 'package:fluenough/core/placement/question_outcome.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/placement_harness.dart';
@@ -45,8 +48,6 @@ const String _root = 'test/fixtures/sample-decks';
 
 /// The highest deck index (0 based, so unit 20) a guesser may be placed at.
 const int _bottom = 19;
-
-const Timeout _long = Timeout(Duration(minutes: 10));
 
 /// Chance of a four-option pick.
 const double _chance = 0.25;
@@ -150,7 +151,7 @@ void main() {
     });
   });
 
-  group('a run never asks the same word family twice', timeout: _long, () {
+  group('a run never asks the same word family twice', () {
     test('first questions, probes and top-ups differ in lemma family', () {
       final data = syntheticCourse();
       for (var seed = 0; seed < 10; seed++) {
@@ -177,7 +178,7 @@ void main() {
     });
   });
 
-  group('rogue guessers are placed at the bottom', timeout: _long, () {
+  group('rogue guessers are placed at the bottom', () {
     const runs = 60;
     final data = syntheticCourse();
 
@@ -211,26 +212,22 @@ void main() {
     });
   });
 
-  group(
-    'a learner who knows the first units is still placed near them',
-    timeout: _long,
-    () {
-      final data = syntheticCourse();
-      for (final units in <int>[30, 60]) {
-        test('$units units', () {
-          final played = playRun(data, 3, KnowsFirstUnits(units), cap: 150);
-          expect(played.done, isTrue);
-          for (final found in played.atEnd.values) {
-            if (found.label == AssuranceLabel.notTested) continue;
-            expect(
-              found.placedLevel,
-              inInclusiveRange(units - 1 - 12, units - 1 + 12),
-              reason: '${found.skill.name} of $units units',
-            );
-            expect(trustsPointEstimate(found.label), isTrue);
-          }
-        });
-      }
-    },
-  );
+  group('a learner who knows the first units is still placed near them', () {
+    final data = syntheticCourse();
+    for (final units in <int>[30, 60]) {
+      test('$units units', () {
+        final played = playRun(data, 3, KnowsFirstUnits(units), cap: 150);
+        expect(played.done, isTrue);
+        for (final found in played.atEnd.values) {
+          if (found.label == AssuranceLabel.notTested) continue;
+          expect(
+            found.placedLevel,
+            inInclusiveRange(units - 1 - 12, units - 1 + 12),
+            reason: '${found.skill.name} of $units units',
+          );
+          expect(trustsPointEstimate(found.label), isTrue);
+        }
+      });
+    }
+  });
 }

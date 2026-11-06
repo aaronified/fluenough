@@ -31,7 +31,6 @@ import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/placement_run.dart';
 import 'package:fluenough/core/placement/placement_session.dart';
 import 'package:fluenough/core/placement/question_builder.dart';
-import 'package:fluenough/core/placement/question_outcome.dart';
 
 typedef OptionStrategy = int Function(GeneratedQuestion q);
 
