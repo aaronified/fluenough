@@ -1,0 +1,261 @@
+schema: 1
+id: "ta-family"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "family"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0072"
+    target: "அம்மா"
+    reading: "ammā"
+    ipa: "ammaː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அம்மா வருகிறார்."
+        reading: "ammā varukiṟār."
+        ipa: "ammaː vaɾukiɾaːr."
+        bases: [{ word: "அம்மா", base: "அம்மா", reading: "ammā" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+      - target: "என் அம்மா வீட்டில் இருக்கிறார்."
+        reading: "eṉ ammā vīṭṭil irukkiṟār."
+        ipa: "en ammaː viːʈːil iɾukkiɾaːr."
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "அம்மா", base: "அம்மா", reading: "ammā" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-0073"
+    target: "அப்பா"
+    reading: "appā"
+    ipa: "appaː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அப்பா எங்கே?"
+        reading: "appā eṅkē?"
+        ipa: "appaː eŋkeː?"
+        bases: [{ word: "அப்பா", base: "அப்பா", reading: "appā" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "என் அப்பா நல்லவர்."
+        reading: "eṉ appā nallavar."
+        ipa: "en appaː nalːavaɾ."
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "அப்பா", base: "அப்பா", reading: "appā" }, { word: "நல்லவர்", base: "நல்ல", reading: "nalla" }]
+  - id: "ta-0074"
+    target: "அக்கா"
+    reading: "akkā"
+    ipa: "akkaː"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அக்கா வருகிறாள்."
+        reading: "akkā varukiṟāḷ."
+        ipa: "akkaː vaɾukiɾaːɭ."
+        bases: [{ word: "அக்கா", base: "அக்கா", reading: "akkā" }, { word: "வருகிறாள்", base: "வா", reading: "vā" }]
+      - target: "இது என் அக்கா."
+        reading: "itu eṉ akkā."
+        ipa: "idu en akkaː."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "அக்கா", base: "அக்கா", reading: "akkā" }]
+  - id: "ta-0075"
+    target: "அண்ணன்"
+    reading: "aṇṇaṉ"
+    ipa: "aɳɳan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அண்ணன் வீட்டில் இருக்கிறார்."
+        reading: "aṇṇaṉ vīṭṭil irukkiṟār."
+        ipa: "aɳɳan viːʈːil iɾukkiɾaːr."
+        bases: [{ word: "அண்ணன்", base: "அண்ணன்", reading: "aṇṇaṉ" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "என் அண்ணன் நல்லவன்."
+        reading: "eṉ aṇṇaṉ nallavaṉ."
+        ipa: "en aɳɳan nalːavan."
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "அண்ணன்", base: "அண்ணன்", reading: "aṇṇaṉ" }, { word: "நல்லவன்", base: "நல்ல", reading: "nalla" }]
+  - id: "ta-0076"
+    target: "தங்கை"
+    reading: "taṅkai"
+    ipa: "t̪aŋgai"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தங்கை படிக்கிறாள்."
+        reading: "taṅkai paṭikkiṟāḷ."
+        ipa: "t̪aŋgai paɖikkiɾaːɭ."
+        bases: [{ word: "தங்கை", base: "தங்கை", reading: "taṅkai" }, { word: "படிக்கிறாள்", base: "படி", reading: "paṭi" }]
+      - target: "என் தங்கை எங்கே?"
+        reading: "eṉ taṅkai eṅkē?"
+        ipa: "en t̪aŋgai eŋkeː?"
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "தங்கை", base: "தங்கை", reading: "taṅkai" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-0077"
+    target: "தம்பி"
+    reading: "tampi"
+    ipa: "t̪ampi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தம்பி வருகிறான்."
+        reading: "tampi varukiṟāṉ."
+        ipa: "t̪ampi vaɾukiɾaːn."
+        bases: [{ word: "தம்பி", base: "தம்பி", reading: "tampi" }, { word: "வருகிறான்", base: "வா", reading: "vā" }]
+      - target: "தம்பிக்கு பால் வேண்டும்."
+        reading: "tampikku pāl vēṇṭum."
+        ipa: "t̪ampikːu paːl veːɳɖum."
+        bases: [{ word: "தம்பிக்கு", base: "தம்பி", reading: "tampi" }, { word: "பால்", ref: "ta-0036" }, { word: "வேண்டும்", base: "வேண்டு", reading: "vēṇṭu" }]
+  - id: "ta-0078"
+    target: "மகன்"
+    reading: "makaṉ"
+    ipa: "makan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் மகன் வீட்டில் இருக்கிறான்."
+        reading: "eṉ makaṉ vīṭṭil irukkiṟāṉ."
+        ipa: "en makan viːʈːil iɾukkiɾaːn."
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "மகன்", base: "மகன்", reading: "makaṉ" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறான்", base: "இரு", reading: "iru" }]
+      - target: "மகன் நல்லவன்."
+        reading: "makaṉ nallavaṉ."
+        ipa: "makan nalːavan."
+        bases: [{ word: "மகன்", base: "மகன்", reading: "makaṉ" }, { word: "நல்லவன்", base: "நல்ல", reading: "nalla" }]
+  - id: "ta-0079"
+    target: "மகள்"
+    reading: "makaḷ"
+    ipa: "makaɭ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் மகள் படிக்கிறாள்."
+        reading: "eṉ makaḷ paṭikkiṟāḷ."
+        ipa: "en makaɭ paɖikkiɾaːɭ."
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "மகள்", base: "மகள்", reading: "makaḷ" }, { word: "படிக்கிறாள்", base: "படி", reading: "paṭi" }]
+      - target: "மகள் எங்கே?"
+        reading: "makaḷ eṅkē?"
+        ipa: "makaɭ eŋkeː?"
+        bases: [{ word: "மகள்", base: "மகள்", reading: "makaḷ" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-0080"
+    target: "கணவர்"
+    reading: "kaṇavar"
+    ipa: "kaɳavaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் கணவர் வருகிறார்."
+        reading: "eṉ kaṇavar varukiṟār."
+        ipa: "en kaɳavaɾ vaɾukiɾaːr."
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "கணவர்", base: "கணவர்", reading: "kaṇavar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+      - target: "கணவர் வீட்டில் இருக்கிறார்."
+        reading: "kaṇavar vīṭṭil irukkiṟār."
+        ipa: "kaɳavaɾ viːʈːil iɾukkiɾaːr."
+        bases: [{ word: "கணவர்", base: "கணவர்", reading: "kaṇavar" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-0081"
+    target: "மனைவி"
+    reading: "maṉaivi"
+    ipa: "manaivi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் மனைவி வருகிறாள்."
+        reading: "eṉ maṉaivi varukiṟāḷ."
+        ipa: "en manaivi vaɾukiɾaːɭ."
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "மனைவி", base: "மனைவி", reading: "maṉaivi" }, { word: "வருகிறாள்", base: "வா", reading: "vā" }]
+      - target: "மனைவி எங்கே?"
+        reading: "maṉaivi eṅkē?"
+        ipa: "manaivi eŋkeː?"
+        bases: [{ word: "மனைவி", base: "மனைவி", reading: "maṉaivi" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-0082"
+    target: "பாட்டி"
+    reading: "pāṭṭi"
+    ipa: "paːʈːi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பாட்டி வீட்டில் இருக்கிறார்."
+        reading: "pāṭṭi vīṭṭil irukkiṟār."
+        ipa: "paːʈːi viːʈːil iɾukkiɾaːr."
+        bases: [{ word: "பாட்டி", base: "பாட்டி", reading: "pāṭṭi" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+      - target: "பாட்டிக்கு தண்ணீர் வேண்டும்."
+        reading: "pāṭṭikku taṇṇīr vēṇṭum."
+        ipa: "paːʈːikːu t̪aɳːiːr veːɳɖum."
+        bases: [{ word: "பாட்டிக்கு", base: "பாட்டி", reading: "pāṭṭi" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "வேண்டும்", base: "வேண்டு", reading: "vēṇṭu" }]
+  - id: "ta-0083"
+    target: "தாத்தா"
+    reading: "tāttā"
+    ipa: "t̪aːt̪t̪aː"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தாத்தா நடக்கிறார்."
+        reading: "tāttā naṭakkiṟār."
+        ipa: "t̪aːt̪t̪aː naɖakkiɾaːr."
+        bases: [{ word: "தாத்தா", base: "தாத்தா", reading: "tāttā" }, { word: "நடக்கிறார்", base: "நட", reading: "naṭa" }]
+      - target: "தாத்தா எங்கே?"
+        reading: "tāttā eṅkē?"
+        ipa: "t̪aːt̪t̪aː eŋkeː?"
+        bases: [{ word: "தாத்தா", base: "தாத்தா", reading: "tāttā" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-0084"
+    target: "குழந்தை"
+    reading: "kuḻantai"
+    ipa: "kuɻant̪ai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குழந்தை தூங்குகிறது."
+        reading: "kuḻantai tūṅkukiṟatu."
+        ipa: "kuɻant̪ai t̪uːŋgukiɾat̪u."
+        bases: [{ word: "குழந்தை", base: "குழந்தை", reading: "kuḻantai" }, { word: "தூங்குகிறது", base: "தூங்கு", reading: "tūṅku" }]
+      - target: "குழந்தை பால் குடிக்கிறது."
+        reading: "kuḻantai pāl kuṭikkiṟatu."
+        ipa: "kuɻant̪ai paːl kuɖikkiɾat̪u."
+        bases: [{ word: "குழந்தை", base: "குழந்தை", reading: "kuḻantai" }, { word: "பால்", ref: "ta-0036" }, { word: "குடிக்கிறது", base: "குடி", reading: "kuṭi" }]
+  - id: "ta-0085"
+    target: "குடும்பம்"
+    reading: "kuṭumpam"
+    ipa: "kuɖumbam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் குடும்பம் பெரியது."
+        reading: "eṉ kuṭumpam periyatu."
+        ipa: "en kuɖumbam peɾijat̪u."
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "குடும்பம்", base: "குடும்பம்", reading: "kuṭumpam" }, { word: "பெரியது", base: "பெரிய", reading: "periya" }]
+      - target: "என் குடும்பம் எங்கே?"
+        reading: "eṉ kuṭumpam eṅkē?"
+        ipa: "en kuɖumbam eŋkeː?"
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "குடும்பம்", base: "குடும்பம்", reading: "kuṭumpam" }, { word: "எங்கே", ref: "ta-0043" }]

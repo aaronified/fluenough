@@ -1,0 +1,32 @@
+schema: 1
+id: "ta-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0068"
+    target: "நீ எங்கே இருக்கிறாய்?"
+    reading: "nī eṅkē irukkiṟāy?"
+    ipa: "niː eŋkeː iɾukkiɾaːj?"
+    pos: "phrase"
+    bases: [{ word: "நீ", ref: "ta-0057" }, { word: "எங்கே", ref: "ta-0043" }, { word: "இருக்கிறாய்", base: "இரு", reading: "iru" }]
+  - id: "ta-0069"
+    target: "அவன் எங்கே போகிறான்?"
+    reading: "avaṉ eṅkē pōkiṟāṉ?"
+    ipa: "avan eŋkeː poːkiɾaːn?"
+    pos: "phrase"
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "எங்கே", ref: "ta-0043" }, { word: "போகிறான்", base: "போ", reading: "pō" }]
+  - id: "ta-0070"
+    target: "நாங்கள் வீட்டுக்குப் போகிறோம்."
+    reading: "nāṅkaḷ vīṭṭukkup pōkiṟōm."
+    ipa: "naːŋgaɭ viːʈːukkup poːkiɾoːm."
+    pos: "phrase"
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "வீட்டுக்குப்", base: "வீடு", reading: "vīṭu" }, { word: "போகிறோம்", base: "போ", reading: "pō" }]
+  - id: "ta-0071"
+    target: "அது நல்லது இல்லையா?"
+    reading: "atu nallatu illaiyā?"
+    ipa: "at̪u nalːat̪u illaijaː?"
+    pos: "phrase"
+    bases: [{ word: "அது", ref: "ta-0061" }, { word: "நல்லது", ref: "ta-0006" }, { word: "இல்லையா", ref: "ta-0050" }]
