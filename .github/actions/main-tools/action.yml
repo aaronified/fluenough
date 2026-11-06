@@ -1,0 +1,19 @@
+name: Main's tools
+description: >-
+  Lays main's tools/, assets/ and sample deck over the checkout, so that the
+  decks-live branch is always held to main's current validator and index tool
+  (the app's contract). Run right after actions/checkout.
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      run: |
+        set -e
+        git fetch --quiet --no-tags origin main
+        git checkout FETCH_HEAD -- tools assets
+        if git cat-file -e FETCH_HEAD:test/fixtures/sample-decks 2>/dev/null; then
+          git checkout FETCH_HEAD -- test/fixtures/sample-decks
+        fi
+        # Main's files are in the working tree only: nothing staged, so that a
+        # later commit holds just what a step adds.
+        git reset --quiet
