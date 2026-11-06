@@ -210,7 +210,12 @@ languages:
           findsWidgets,
         );
         // No decks: the line is empty and says so.
-        expect(find.bySemanticsLabel(text.languagesNoDecksLabel), findsWidgets);
+        expect(
+          find.byWidgetPredicate(
+            (w) => w is CourseLine && w.label == text.languagesNoDecksLabel,
+          ),
+          findsWidgets,
+        );
         expect(
           find.descendant(
             of: key('add-ipa'),
