@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/physics.dart';
 
+import '../../app/app_scope.dart';
 import '../../app/shell_tab.dart';
 
 /// The four tabs side by side, which a sideways swipe moves between (#683).
@@ -170,6 +171,8 @@ class _TabPagerState extends State<TabPager>
         _self = true;
         widget.tab.value = ShellTab.values[nearest];
         _self = false;
+        // The page passes the middle: a tick (Plan-Haptics).
+        AppScope.maybeRead(context)?.haptics.select();
       }
     }
     if (mounted) setState(() {});

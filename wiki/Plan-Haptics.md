@@ -403,3 +403,13 @@ Approved 2026-11-06 (owner, quoted in the status above). The five questions belo
 **Approved by the owner 2026-11-06; build after the web work.** Shown to the owner 2026-11-06 and approved in the words quoted in the status. The mockup files are on the branch `mockup/haptics-settings`, which this change does not touch; the mark on the mockup is recorded here, and the mockup is removed once built (owner, 2026-10-16: "Remove when built").
 
 `docs/mockups/haptics-settings.html` (branch `mockup/haptics-settings`): the Look and language screen in the real theme, light and dark, 1x and 1.4x, with the new row highlighted among the existing ones, and a reference panel of the pill feels. Notes, tweak controls and the contrast self-check are in `haptics-settings.md` beside it.
+
+## Built (2026-11-06, pull request #1043): what differs from this plan
+
+The first build is the service and the setting plus the central call sites; it is **not** the whole plan.
+
+- **Scope cut.** No `App*` wrapper widgets, no rename sweep, no `haptics_rules_test.dart` allow-list (steps 3, 5 and 7). Plain buttons, icon buttons, the bottom navigation bar's ripple, chips and dialog buttons stay silent in v1; only what goes through a shared widget (`GroupedTile`, `Segmented`, the language wheel, the tab pager, `SettingsSlider`, `Hint`, the speaker, `FeedbackBanner`, the rating buttons, the pills, the summary, backups, restores, removals, the PIN pad) has a haptic. `test/haptics_test.dart` instead checks that only `system_haptic_engine.dart` calls `HapticFeedback`, `Feedback.for*`, `Feedback.wrapFor*` or `SystemSound`.
+- **Screen reader.** With a screen reader on, the service also drops `longPress`, `dragStart` and `drop` (as it does `tap`, `select`, `toggle` and `confirm`), and keeps `success`, `error`, `danger`, `warning`, `correct`, `wrong` and the pills.
+- **Throttle.** `success`, `error` and `danger` are not thinned by the 50 ms throttle (a last card's rating, then the summary's success a frame later, must both play); only a double still playing drops them. The throttle clock is a `Stopwatch`, so a step of the phone's clock cannot silence haptics.
+- **Flutter's own feedback** (the Android click sound, the long-press buzz) is turned off in the app's widgets only while the service is on and the phone can vibrate (`Haptics.takesOverFeedback`); with Vibrate on touch off, the platform default stays.
+- **Not checked:** iOS (no folder yet) and how each feel reads on real phones.

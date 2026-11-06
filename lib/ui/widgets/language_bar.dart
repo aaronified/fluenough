@@ -91,7 +91,7 @@ class _LanguageBarFrameState extends State<LanguageBarFrame> {
 ///   the last language comes the first, and a few languages repeat round
 ///   it. At launch the pill is already grown to the name.
 /// * A finger moves the wheel 1:1, a long drag passes many languages. Each
-///   language is a detent, with a tick (`HapticFeedback.selectionClick`),
+///   language is a detent, with a tick (`Haptics.select`),
 ///   in a drag and in a fling.
 /// * On release the wheel keeps the finger's speed and coasts to the
 ///   detent that plain friction ([friction] per second) would stop at,
@@ -270,7 +270,7 @@ class _LanguageBarState extends State<LanguageBar>
     final detent = x.round();
     if (detent != _lastDetent) {
       _lastDetent = detent;
-      HapticFeedback.selectionClick();
+      AppScope.read(context).haptics.select();
       if (!_still) _pulse.forward(from: 0);
     }
     _repaint();

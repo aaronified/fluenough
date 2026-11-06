@@ -128,7 +128,13 @@ class _OwnDeck extends StatelessWidget {
     );
     if (remove != true || !context.mounted) return;
     showAppSnackBar(context, l10n.deckRemoved(name));
-    await state.removeDeck(entry.id);
+    try {
+      await state.removeDeck(entry.id);
+    } on Object {
+      state.haptics.error();
+      rethrow;
+    }
+    state.haptics.danger();
   }
 
   @override
