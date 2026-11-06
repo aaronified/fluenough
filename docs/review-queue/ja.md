@@ -108,3 +108,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2055 | ja-illness | Is きもちわるい (to feel sick) the natural word for nausea, given that はきけ (nausea) was left out of this unit? | Haiku builder | 2026-11-06 |
 | unit-level | ja-illness | はきけ, さむけ, だるい and しっぷ were flagged in the plan and left out of ja-illness: should they come back in a later unit? | Haiku builder | 2026-11-06 |
 | unit-level | ja-illness | The example and sentence decks of ja-illness are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-2098 | ja-chores | Is ぞうきんがけ the everyday word for wiping a floor by hand, and is the example まいにち ぞうきんがけ を します natural? | Haiku builder | 2026-11-06 |
+| ja-2104 | ja-chores | Is しげんごみ the everyday word for recyclable rubbish, or do people name the kinds (びん, かん) instead? | Haiku builder | 2026-11-06 |
+| ja-2099 | ja-chores | Is ふきそうじ natural for wiping a window or a table, or is it used only for cleaning a whole room? | Haiku builder | 2026-11-06 |
+| ja-2129 | ja-chores | Is ちらかす natural with a room as its object, as in the example へや を ちらかしました? | Haiku builder | 2026-11-06 |
+| unit-level | ja-chores | The example and sentence decks of ja-chores are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
