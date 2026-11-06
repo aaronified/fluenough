@@ -239,10 +239,11 @@ cards:
     bases: "self"
     examples:
       - target: "がっこうのむこうです。"
-        words: ["がっこう", "のむ", "こ", "う", "です"]
-        reading: "gakkou nomu ko u desu."
-        ipa: "ɡakkoː nomɯ ko ɯ desɯ"
+        words: ["がっこう", "の", "むこう", "です"]
+        reading: "gakkou no mukou desu."
+        ipa: "ɡakkoː no mɯkoː desɯ"
         bases:
+          - { word: "の", base: "の", reading: "no" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "むこうにいぬがいます。"
         words: ["むこう", "に", "いぬ", "が", "います"]
@@ -338,11 +339,11 @@ cards:
     bases: "self"
     examples:
       - target: "つくえはいすのよこです。"
-        words: ["つくえ", "はい", "す", "の", "よこ", "です"]
-        reading: "tsukue hai su no yoko desu."
-        ipa: "tsɯkɯe hai sɯ no joko desɯ"
+        words: ["つくえ", "は", "いす", "の", "よこ", "です"]
+        reading: "tsukue wa isu no yoko desu."
+        ipa: "tsɯkɯe wa isɯ no joko desɯ"
         bases:
-          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "は", base: "は", reading: "wa" }
           - { word: "の", base: "の", reading: "no" }
           - { word: "です", base: "です", reading: "desu" }
       - target: "つくえのまえにいきます。"

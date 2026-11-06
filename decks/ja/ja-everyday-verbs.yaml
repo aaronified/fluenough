@@ -77,11 +77,11 @@ cards:
           - { word: "を", base: "を", reading: "o" }
           - { word: "みます", base: "みる", reading: "miru" }
       - target: "あなたはいぬをみますか。"
-        words: ["あなた", "はい", "ぬ", "を", "みます", "か"]
-        reading: "anata hai nu o mimasu ka."
-        ipa: "anata hai nɯ o mimasɯ ka"
+        words: ["あなた", "は", "いぬ", "を", "みます", "か"]
+        reading: "anata wa inu o mimasu ka."
+        ipa: "anata wa inɯ o mimasɯ ka"
         bases:
-          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "は", base: "は", reading: "wa" }
           - { word: "を", base: "を", reading: "o" }
           - { word: "みます", base: "みる", reading: "miru" }
           - { word: "か", base: "か", reading: "ka" }
@@ -322,18 +322,20 @@ cards:
     bases: "self"
     examples:
       - target: "わたしのちちははたらきます。"
-        words: ["わたし", "の", "ちち", "はは", "た", "ら", "きます"]
-        reading: "watashi no chichi haha ta ra kimasu."
-        ipa: "wataɕi no tɕitɕi haha ta ɾa kimasɯ"
+        words: ["わたし", "の", "ちち", "は", "はたらきます"]
+        reading: "watashi no chichi wa hatarakimasu."
+        ipa: "wataɕi no tɕitɕi wa hataɾakimasɯ"
         bases:
           - { word: "の", base: "の", reading: "no" }
-          - { word: "きます", base: "くる", reading: "kuru" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はたらきます", base: "はたらく", reading: "hataraku" }
       - target: "かぞくははたらきますか。"
-        words: ["かぞく", "はは", "た", "ら", "きます", "か"]
-        reading: "kazoku haha ta ra kimasu ka."
-        ipa: "kadzokɯ haha ta ɾa kimasɯ ka"
+        words: ["かぞく", "は", "はたらきます", "か"]
+        reading: "kazoku wa hatarakimasu ka."
+        ipa: "kadzokɯ wa hataɾakimasɯ ka"
         bases:
-          - { word: "きます", base: "くる", reading: "kuru" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はたらきます", base: "はたらく", reading: "hataraku" }
           - { word: "か", base: "か", reading: "ka" }
   - id: "ja-0354"
     target: "やすむ"
@@ -398,19 +400,19 @@ cards:
     bases: "self"
     examples:
       - target: "ともだちはいぬをかいます。"
-        words: ["ともだち", "はい", "ぬ", "を", "かいます"]
-        reading: "tomodachi hai nu o kaimasu."
-        ipa: "tomodatɕi hai nɯ o kaimasɯ"
+        words: ["ともだち", "は", "いぬ", "を", "かいます"]
+        reading: "tomodachi wa inu o kaimasu."
+        ipa: "tomodatɕi wa inɯ o kaimasɯ"
         bases:
-          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "は", base: "は", reading: "wa" }
           - { word: "を", base: "を", reading: "o" }
           - { word: "かいます", base: "かう", reading: "kau" }
       - target: "あなたはいぬをかいますか。"
-        words: ["あなた", "はい", "ぬ", "を", "かいます", "か"]
-        reading: "anata hai nu o kaimasu ka."
-        ipa: "anata hai nɯ o kaimasɯ ka"
+        words: ["あなた", "は", "いぬ", "を", "かいます", "か"]
+        reading: "anata wa inu o kaimasu ka."
+        ipa: "anata wa inɯ o kaimasɯ ka"
         bases:
-          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "は", base: "は", reading: "wa" }
           - { word: "を", base: "を", reading: "o" }
           - { word: "かいます", base: "かう", reading: "kau" }
           - { word: "か", base: "か", reading: "ka" }

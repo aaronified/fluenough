@@ -437,11 +437,11 @@ cards:
           - { word: "は", base: "は", reading: "wa" }
           - { word: "でかけます", base: "でかける", reading: "dekakeru" }
       - target: "あなたはいつでかけますか。"
-        words: ["あなた", "はい", "つ", "でかけます", "か"]
-        reading: "anata hai tsu dekakemasu ka."
-        ipa: "anata hai tsɯ dekakemasɯ ka"
+        words: ["あなた", "は", "いつ", "でかけます", "か"]
+        reading: "anata wa itsu dekakemasu ka."
+        ipa: "anata wa itsɯ dekakemasɯ ka"
         bases:
-          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "は", base: "は", reading: "wa" }
           - { word: "でかけます", base: "でかける", reading: "dekakeru" }
           - { word: "か", base: "か", reading: "ka" }
   - id: "ja-0588"
@@ -513,11 +513,11 @@ cards:
           - { word: "を", base: "を", reading: "o" }
           - { word: "さがします", base: "さがす", reading: "sagasu" }
       - target: "あなたはいぬをさがしますか。"
-        words: ["あなた", "はい", "ぬ", "を", "さがします", "か"]
-        reading: "anata hai nu o sagashimasu ka."
-        ipa: "anata hai nɯ o saɡaɕimasɯ ka"
+        words: ["あなた", "は", "いぬ", "を", "さがします", "か"]
+        reading: "anata wa inu o sagashimasu ka."
+        ipa: "anata wa inɯ o saɡaɕimasɯ ka"
         bases:
-          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "は", base: "は", reading: "wa" }
           - { word: "を", base: "を", reading: "o" }
           - { word: "さがします", base: "さがす", reading: "sagasu" }
           - { word: "か", base: "か", reading: "ka" }
@@ -662,9 +662,12 @@ cards:
     bases: "self"
     examples:
       - target: "せんせいははじめます。"
-        words: ["せんせい", "はは", "じ", "め", "ま", "す"]
-        reading: "sensei haha ji me ma su."
-        ipa: "seɴseː haha dʑi me ma sɯ"
+        words: ["せんせい", "は", "はじめます"]
+        reading: "sensei wa hajimemasu."
+        ipa: "seɴseː wa hadʑimemasɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "はじめます", base: "はじめる", reading: "hajimeru" }
       - target: "がっこうをはじめますか。"
         words: ["がっこう", "を", "はじめます", "か"]
         reading: "gakkou o hajimemasu ka."
@@ -718,11 +721,11 @@ cards:
           - { word: "を", base: "を", reading: "o" }
           - { word: "あげます", base: "あげる", reading: "ageru" }
       - target: "あなたはいぬにぱんをあげますか。"
-        words: ["あなた", "はい", "ぬ", "に", "ぱん", "を", "あげます", "か"]
-        reading: "anata hai nu ni pan o agemasu ka."
-        ipa: "anata hai nɯ ni paɴ o aɡemasɯ ka"
+        words: ["あなた", "は", "いぬ", "に", "ぱん", "を", "あげます", "か"]
+        reading: "anata wa inu ni pan o agemasu ka."
+        ipa: "anata wa inɯ ni paɴ o aɡemasɯ ka"
         bases:
-          - { word: "はい", base: "はい", reading: "hai" }
+          - { word: "は", base: "は", reading: "wa" }
           - { word: "に", base: "に", reading: "ni" }
           - { word: "を", base: "を", reading: "o" }
           - { word: "あげます", base: "あげる", reading: "ageru" }
