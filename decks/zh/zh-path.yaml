@@ -123,6 +123,8 @@ alphabet:
   - "zh-reading-strokes-radicals"
   - "zh-characters-1"
   - "zh-reading-characters-1"
+  - "zh-characters-7"
+  - "zh-reading-characters-7"
   - "zh-characters-6"
   - "zh-reading-characters-6"
   - "zh-characters-5"
@@ -916,7 +918,8 @@ units:
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
       - { id: "values-in-talk", text: { "en": "A short talk in class about what makes a good life" } }
-  - planned: { id: "zh-characters-7", grammar: "script-characters-7", words: 0 }
+  - decks: ["zh-characters-7", "zh-reading-characters-7"]
+    words: 10
     listening_passages:
       - { id: "characters-in-society", text: { "en": "Hearing the society words whose characters are taught: economy, culture, environment, problem" } }
     reading_passages:

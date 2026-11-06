@@ -95,3 +95,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | zh-grammar-le-change-of-state | The 想 row gives 我想喝水了 as a new want. Is it natural beside 我不想喝水了? | Sonnet builder | 2026-11-06 |
 | unit-level | zh-grammar-zhe-continuous | The note says to deny a 着 (zhe) state 没 (méi) goes before the verb and 着 (zhe) is usually dropped (他没带钱). Is that the right guidance, since 门没开着 also exists? | Sonnet builder | 2026-11-06 |
 | unit-level | zh-grammar-zhe-continuous | The `while` slot (他坐着看书, 我开着门睡觉) uses 着 (zhe) for the manner of a second verb. Are all seven examples natural? | Sonnet builder | 2026-11-06 |
+| unit-level | zh-characters-7 (ids zh-4852 to zh-4861) | Are the parts of speech given to the ten characters (经 verb, 社 noun, 会 noun, 化 verb, 环 noun, 境 noun, 保 verb, 护 verb, 展 verb, 决 verb) and the glosses fair for single characters? | Sonnet builder | 2026-11-06 |
+| unit-level | zh-characters-7 | The notes tie 化, 境 and 展 to 文化, 环境 and 发展 and 决 to 解决 only. Is that enough to teach these bound characters? | Sonnet builder | 2026-11-06 |
