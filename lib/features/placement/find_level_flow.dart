@@ -21,19 +21,28 @@ import 'find_level_run_page.dart';
 
 /// What a tap of Find my level checks and what it is called, for a language
 /// whose skills are [skills] (see [selectFindLevelSkills]).
+///
+/// [scripts] are the names of the course's own scripts in path order; reading
+/// them takes a walk over the whole course, so a caller that asks often (a
+/// row drawn on every build) keeps them ([findLevelScriptNames]).
 FindLevelSkills findLevelSkillsOf(
   AppState state,
   String code, {
   required LanguageSkills skills,
   required List<SkillKey> shape,
+  List<String>? scripts,
 }) => selectFindLevelSkills(
   skills.stateOf,
   shape,
   verified: state.settings.verifiedSkillsOf(code),
-  scripts: <String>[
-    for (final script in state.placementScripts(code)) script.script,
-  ],
+  scripts: scripts ?? findLevelScriptNames(state, code),
 );
+
+/// The names of [code]'s own scripts, in path order, as
+/// [AppState.placementScripts] finds them.
+List<String> findLevelScriptNames(AppState state, String code) => <String>[
+  for (final script in state.placementScripts(code)) script.script,
+];
 
 /// Find my level, after the decks are on the phone (wiki/Plan-Placement-V2.md,
 /// steps 3 and 4): a paused run is offered back; else the declaration
@@ -62,7 +71,18 @@ Future<void> startFindLevel(
     return;
   }
   final settings = state.settings;
-  final pick = findLevelSkillsOf(state, code, skills: skills, shape: shape);
+  final pick = findLevelSkillsOf(
+    state,
+    code,
+    skills: skills,
+    shape: shape,
+    scripts: <String>[for (final script in plan.scripts) script.script],
+  );
+  // Hear needs sound on and a voice, or its questions could not be heard.
+  final canPlay = settings.soundOn && state.hasVoice(plan.language);
+  // Say needs the recogniser for the language, and the long sentences are
+  // said back in the learner's own language.
+  final canSpeak = state.canHear(plan.language) && state.canHear(plan.native);
   final deckSet = placementDeckSetKey(plan.data);
   int nowSeconds() => state.now().millisecondsSinceEpoch ~/ 1000;
 
@@ -79,7 +99,11 @@ Future<void> startFindLevel(
           nowSeconds: nowSeconds(),
           deckSet: deckSet,
           appVersion: AppInfo.version,
-        )) {
+        ) ||
+        // A voice or recogniser the run was begun with is gone: its answers
+        // would replay onto other questions, so it is dropped like a stale
+        // run and the next one is asked as a new run.
+        !saved.fitsDevice(voice: canPlay, microphone: canSpeak)) {
       settings.setPlacementRun(code, null);
       saved = null;
     }
@@ -130,6 +154,13 @@ Future<void> startFindLevel(
       showAppSnackBar(context, l10n.findLevelNothingToCheck);
       return;
     }
+    inPlay = placementSkillsForDevice(pick.skills, voice: canPlay);
+    // Hear was the only skill and there is no voice: nothing can be checked,
+    // so nothing is asked and nothing is written.
+    if (inPlay.isEmpty) {
+      showAppSnackBar(context, l10n.findLevelNothingToCheckNoVoice(name));
+      return;
+    }
     final answer = await navigator.push<PlacementDeclaration>(
       MaterialPageRoute<PlacementDeclaration>(
         settings: const RouteSettings(name: '/find-level-declaration'),
@@ -148,17 +179,8 @@ Future<void> startFindLevel(
       return;
     }
     declaration = answer;
-    // Hear needs a voice, or the questions could not be heard.
-    inPlay = <PlacementSkill>{
-      for (final skill in pick.skills)
-        if (skill != PlacementSkill.hear ||
-            (settings.soundOn && state.hasVoice(plan.language)))
-          skill,
-    };
     seed = nowSeconds() & 0x7fffffff;
-    // Say needs the recogniser for the language, and the long sentences are
-    // said back in the learner's own language.
-    microphone = state.canHear(plan.language) && state.canHear(plan.native);
+    microphone = canSpeak;
   }
 
   final downloads = state.deckDownloads;
@@ -214,9 +236,11 @@ Future<void> startFindLevel(
         native: plan.native,
         cardOf: plan.data.cardById,
         onProgress: save,
+        // The outcome is written first and the paused run dropped after: a
+        // write that throws keeps the run to be carried on.
         onFinish: (finished) {
-          settings.setPlacementRun(code, null);
           state.writePlacementRun(code, plan, finished.run, native: native);
+          settings.setPlacementRun(code, null);
         },
       ),
     ),
