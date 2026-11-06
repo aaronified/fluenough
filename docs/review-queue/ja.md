@@ -102,3 +102,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1992 | ja-sports | Is ひきわけ の あと に あるきます (after the draw I walk) natural, or should the second example change? | Haiku builder | 2026-11-06 |
 | ja-1997 | ja-sports | Is うつ (to hit) the natural verb for hitting a ball in tennis and volleyball, or is another verb used? | Haiku builder | 2026-11-06 |
 | unit-level | ja-sports | The example and sentence decks of ja-sports are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-2062 | ja-illness | Is ちんつうざい the everyday word for a painkiller, or is いたみどめ used more often? | Haiku builder | 2026-11-06 |
+| ja-2041 | ja-illness | Is おふろ で やけど を しました (a burn in the bath) a natural example for やけど, or should the example change? | Haiku builder | 2026-11-06 |
+| ja-2048 | ja-illness | Is かんせん (infection) a natural B1 card, or is its example かんせん は うつります too close to the flu example? | Haiku builder | 2026-11-06 |
+| ja-2055 | ja-illness | Is きもちわるい (to feel sick) the natural word for nausea, given that はきけ (nausea) was left out of this unit? | Haiku builder | 2026-11-06 |
+| unit-level | ja-illness | はきけ, さむけ, だるい and しっぷ were flagged in the plan and left out of ja-illness: should they come back in a later unit? | Haiku builder | 2026-11-06 |
+| unit-level | ja-illness | The example and sentence decks of ja-illness are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
