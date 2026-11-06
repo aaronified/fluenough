@@ -313,6 +313,7 @@ A plan with no tracking issue is flagged.
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
+- [decks in a branch of their own](https://github.com/aaronified/fluenough/wiki/Plan-Decks-Branch), **no tracking issue**
 - [explain the mistake on a wrong grammar answer](https://github.com/aaronified/fluenough/wiki/Plan-Explain-Mistakes) (Written 2026-10-05), tracks #225
 - [handwriting the script, stroke by stroke](https://github.com/aaronified/fluenough/wiki/Plan-Handwriting) (Written 2026-10-05), tracks #226
 - [haptic feedback, one vocabulary for the whole app](https://github.com/aaronified/fluenough/wiki/Plan-Haptics) (Written 2026-11-02), **no tracking issue**
