@@ -22,3 +22,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | demonstratives | The path word count for demonstratives was lowered to 9: is the lower count right? | Haiku builder | 2026-11-05 or 2026-11-06 |
 | unit-level | body | The path word count for body was lowered to 28: is the lower count right? | Haiku builder | 2026-11-05 or 2026-11-06 |
 | unit-level | groceries | The path word count for groceries was lowered to 36: is the lower count right? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| course-wide | ja-phrasebook | いってきます and いってらっしゃい are not added: the phrasebook holds 15 to 25 phrase cards and is now at 25 with いただきます, ごちそうさま, ただいま, おかえり and おやすみなさい. Should one card make room for them, or should the limit change? | Haiku builder | 2026-11-06 |
+| ja-1464 | seasons | Is こうよう (the autumn colours of the trees) the natural word here, or should もみじ carry it? | Haiku builder | 2026-11-06 |
+| ja-1534 | clothes | Is いろ (colour, as a word of its own) right as a card, or should the colour names stand without it? | Haiku builder | 2026-11-06 |
+| ja-1536 | clothes | Is ぴったり (fitting exactly) right as a な-adjective in the rules table (ぴったりな)? | Haiku builder | 2026-11-06 |
