@@ -740,7 +740,8 @@ units:
       - { id: "saving-to-travel", text: { "en": "Saying what you do in order to travel, and so as not to forget" } }
     reading_passages:
       - { id: "study-tips", text: { "en": "A short list of study tips" } }
-  - planned: { id: "ja-festivals", theme: "festivals", words: 45 }
+  - decks: ["ja-festivals", "ja-festivals-sentences", "ja-reading-festivals", "*"]
+    words: 45
     listening_passages:
       - { id: "summer-festival", text: { "en": "Neighbours plan a summer festival together" } }
     reading_passages:

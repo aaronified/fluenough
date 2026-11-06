@@ -188,3 +188,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-3512 | arts | Is ひょうげん (expression) the word a learner needs, or should 表現 stand as a loan from Chinese? | Haiku builder | 2026-11-06 |
 | ja-3568 | history | Is ほろびる (to perish; to fall) right as a verb card, or is the meaning of a country falling better left to ほろぼす? | Haiku builder | 2026-11-06 |
 | ja-3604 | religion | Is ぼくし (a Christian pastor) right, or should the word 牧師 be marked as the more common term for a minister? | Haiku builder | 2026-11-06 |
+| ja-3690 | festivals | Is いわう (to celebrate) the word a learner needs, or should おいわい carry the meaning alone? | Haiku builder | 2026-11-06 |
