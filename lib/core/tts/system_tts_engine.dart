@@ -17,6 +17,9 @@ class SystemTtsEngine implements TtsEngine {
 
   final FlutterTts _tts;
 
+  /// The same constant as Flutter's `kIsWeb`; `lib/core` imports no Flutter.
+  static const bool _inBrowser = bool.fromEnvironment('dart.library.js_util');
+
   /// Availability is stable for the lifetime of the process and each query
   /// crosses the platform channel, so it is worth caching.
   final Map<String, bool> _availability = <String, bool>{};
@@ -51,7 +54,9 @@ class SystemTtsEngine implements TtsEngine {
       // false. Not remembered: the app log has it, and it is asked again.
       throw TtsFailure(_codeOf(e));
     }
-    _availability[bcp47] = available;
+    // A browser lists its voices a moment after the page opens, so an early
+    // "no voice" is not remembered there; elsewhere it is stable.
+    if (available || !_inBrowser) _availability[bcp47] = available;
     return available;
   }
 

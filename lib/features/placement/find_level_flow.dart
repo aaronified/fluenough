@@ -82,7 +82,9 @@ Future<void> startFindLevel(
   final canPlay = settings.soundOn && state.hasVoice(plan.language);
   // Say needs the recogniser for the language, and the long sentences are
   // said back in the learner's own language.
-  final canSpeak = state.canHear(plan.language) && state.canHear(plan.native);
+  final canSpeak =
+      state.canHearAfterAsking(plan.language) &&
+      state.canHearAfterAsking(plan.native);
   final deckSet = placementDeckSetKey(plan.data);
   int nowSeconds() => state.now().millisecondsSinceEpoch ~/ 1000;
 

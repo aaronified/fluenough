@@ -19,6 +19,7 @@ import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
 import '../../ui/widgets/feedback_banner.dart';
 import '../../ui/widgets/target_text.dart';
+import 'online_speech_ask.dart';
 
 /// The parts of a placement question's screen (#481): which question it is,
 /// what it shows, what it asks, and the way to answer. Each kind of
@@ -789,7 +790,16 @@ class _PlacementSayState extends State<PlacementSay> {
             _listening ? l10n.placementSayListening : l10n.placementSayStart,
           ),
         ),
-        if (_unheard != null && !_listening)
+        if (_unheard == SpeechFailure.notOnDevice && !_listening)
+          Padding(
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            child: OnlineSpeechAsk(
+              language: q.language,
+              onAllowed: _listen,
+              onDeclined: widget.onCantSpeak,
+            ),
+          )
+        else if (_unheard != null && !_listening)
           Padding(
             padding: const EdgeInsets.symmetric(vertical: 12),
             child: Semantics(

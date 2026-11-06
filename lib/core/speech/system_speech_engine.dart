@@ -19,7 +19,12 @@ import 'speech_engine.dart';
 class SystemSpeechEngine implements SpeechEngine {
   SystemSpeechEngine([SpeechToText? plugin, MicCapture? capture])
     : _plugin = plugin ?? SpeechToText(),
-      _capture = capture;
+      // In a browser two readers of the microphone are not safe, and the
+      // web build uses `WebSpeechEngine`; a capture given here is ignored
+      // rather than started (the same constant as Flutter's `kIsWeb`).
+      _capture = _inBrowser ? null : capture;
+
+  static const bool _inBrowser = bool.fromEnvironment('dart.library.js_util');
 
   final SpeechToText _plugin;
 

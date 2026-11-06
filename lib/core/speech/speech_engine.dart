@@ -146,6 +146,12 @@ abstract interface class SpeechEngine {
   Future<void> stop();
 }
 
+/// A [SpeechEngine] that recognises online only, and lists no languages: a
+/// browser's. The app treats each language as online-only from the start,
+/// so the learner is asked before any audio leaves the device, never after
+/// a failed on-device try.
+abstract interface class OnlineOnlySpeech implements SpeechEngine {}
+
 /// No recogniser: tests, and phones without one.
 class NullSpeechEngine implements SpeechEngine {
   const NullSpeechEngine();

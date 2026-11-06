@@ -8,6 +8,7 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/speech/speech_engine.dart';
+import '../../app/browser_words.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/target_text.dart';
 import '../decks/word_sheet.dart' show isRude;
@@ -354,8 +355,8 @@ class _SpeechTestSheetState extends State<SpeechTestSheet> {
     if (failure == SpeechFailure.notOnDevice) return _askOnline(context);
     final why = switch (failure) {
       SpeechFailure.noMatch => l10n.drillUnheardNoMatch,
-      SpeechFailure.permissionDenied => l10n.drillUnheardPermission,
-      SpeechFailure.noRecogniser => l10n.drillUnheardNoRecogniser,
+      SpeechFailure.permissionDenied => microphoneRefusedText(l10n),
+      SpeechFailure.noRecogniser => noRecogniserText(l10n),
       SpeechFailure.unsupported => l10n.drillUnheardUnsupported(language.name),
       SpeechFailure.network => l10n.drillUnheardNetwork,
       SpeechFailure.notOnDevice ||
@@ -395,7 +396,7 @@ class _SpeechTestSheetState extends State<SpeechTestSheet> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Text(
-          l10n.drillOnlineAsk(language.name),
+          onlineAskText(l10n, language.name),
           textAlign: TextAlign.center,
           style: theme.textTheme.bodyLarge,
         ),

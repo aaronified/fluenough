@@ -9,6 +9,9 @@ import 'app/browser_blob_store.dart';
 import 'app/synonym_loader.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
+import 'app/features.dart';
+import 'app/links.dart';
+import 'app/report_mail.dart';
 import 'app/pacing.dart';
 import 'features/stats/progress_numbers.dart';
 import 'app/profile.dart';
@@ -19,6 +22,8 @@ import 'app/web_platform.dart';
 import 'app/web_deck_fetcher.dart';
 import 'app/web_frame.dart';
 import 'core/scheduling/skill_fit.dart';
+import 'core/sound/system_sound_check.dart';
+import 'core/speech/web_speech_engine.dart';
 import 'core/tts/system_tts_engine.dart';
 
 /// The web build's entry point (`.github/workflows/pages.yml`). Like
@@ -63,6 +68,19 @@ Future<void> main() async {
         synonymLoader: loadSynonymSets,
         settings: storage.settings,
         tts: SystemTtsEngine(),
+        // The Web Speech API where the browser has one (Chrome, Edge,
+        // Safari); Firefox has none and says so. "Hear yourself" records
+        // through the browser's microphone.
+        speech: WebSpeechEngine(),
+        soundCheck: SystemSoundCheck(),
+        // A browser has no notifications at a set time and no APK: those
+        // rows are not drawn.
+        features: const FeatureRegistry.web(),
+        // A report opens the reporter's mail app by a mailto link.
+        reports: const MailReportSender(
+          address: AppLinks.feedbackEmail,
+          links: LauncherLinks(),
+        ),
         // A browser has no isolates: fitting and pacing run in place.
         fitRunner: (job) async => SkillFit.run(job),
         paceRunner: paceInPlace,
