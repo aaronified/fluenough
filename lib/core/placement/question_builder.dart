@@ -25,8 +25,17 @@ const int longSentenceWords = 8;
 /// A sentence this short or shorter is "short" for a split question.
 const int shortSentenceWords = 3;
 
+/// Where a run gets its questions: the builder, or a question bank.
+abstract interface class QuestionSource {
+  QuestionOutcome build(
+    PlacementQuestionRequest request, {
+    Set<String> asked,
+    GeneratedQuestion? failed,
+  });
+}
+
 /// Builds the questions of a run from one learner's [data].
-class QuestionBuilder {
+class QuestionBuilder implements QuestionSource {
   QuestionBuilder(
     this.data, {
     Set<PlacementSkill>? tested,
@@ -63,6 +72,7 @@ class QuestionBuilder {
   /// the questions that need its word, family or contrast are unavailable
   /// ([PlacementUnavailableReason.noOrigin]), never asked about some other
   /// item.
+  @override
   QuestionOutcome build(
     PlacementQuestionRequest request, {
     Set<String> asked = const <String>{},
