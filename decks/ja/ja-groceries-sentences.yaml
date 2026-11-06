@@ -1,0 +1,63 @@
+schema: 1
+id: "ja-groceries-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1291"
+    target: "バターはかたいです。"
+    words: ["バター", "は", "かたい", "です"]
+    reading: "bataa wa katai desu."
+    ipa: "bataː wa katai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "バター", ref: "ja-0921" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "かたい", ref: "ja-0952" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "ジャム", reading: "jamu", kind: "word" }
+      - { id: "w2", word: "はちみつ", reading: "hachimitsu", kind: "word" }
+  - id: "ja-1292"
+    target: "うどんをたべます。"
+    words: ["うどん", "を", "たべます"]
+    reading: "udon o tabemasu."
+    ipa: "ɯdoɴ o tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "うどん", ref: "ja-0930" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", word: "そば", reading: "soba", kind: "word" }
+      - { id: "w2", word: "ラーメン", reading: "raamen", kind: "word" }
+  - id: "ja-1293"
+    target: "ごみをすてます。"
+    words: ["ごみ", "を", "すてます"]
+    reading: "gomi o sutemasu."
+    ipa: "ɡomi o sɯtemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ごみ", ref: "ja-0946" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "すてます", ref: "ja-0582" }
+    confusables:
+      - { id: "w1", word: "かご", reading: "kago", kind: "word" }
+      - { id: "w2", word: "ふくろ", reading: "fukuro", kind: "word" }
+  - id: "ja-1294"
+    target: "しおとこしょうをください。"
+    words: ["しお", "と", "こしょう", "を", "ください"]
+    reading: "shio to koshou o kudasai."
+    ipa: "ɕio to koɕoː o kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "しお", ref: "ja-0917" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "こしょう", ref: "ja-0927" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", word: "さとう", reading: "satou", kind: "word" }
+      - { id: "w2", word: "しょうゆ", reading: "shouyu", kind: "word" }

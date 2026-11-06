@@ -1,0 +1,66 @@
+schema: 1
+id: "ja-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1301"
+    target: "あさごはんにおかゆをたべます。"
+    words: ["あさごはん", "に", "おかゆ", "を", "たべます"]
+    reading: "asagohan ni okayu o tabemasu."
+    ipa: "asaɡohaɴ ni okajɯ o tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "あさごはん", ref: "ja-0955" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "おかゆ", ref: "ja-0970" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", ref: "ja-0341" }
+    confusables:
+      - { id: "w1", word: "ひるごはん", reading: "hirugohan", kind: "word" }
+      - { id: "w2", word: "おべんとう", reading: "obentou", kind: "word" }
+  - id: "ja-1302"
+    target: "おすしはおいしいです。"
+    words: ["おすし", "は", "おいしい", "です"]
+    reading: "osushi wa oishii desu."
+    ipa: "osɯɕi wa oiɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "おすし", ref: "ja-0961" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おいしい", ref: "ja-0471" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "てんぷら", reading: "tenpura", kind: "word" }
+      - { id: "w2", word: "やきとり", reading: "yakitori", kind: "word" }
+  - id: "ja-1303"
+    target: "みそしるはしょっぱいです。"
+    words: ["みそしる", "は", "しょっぱい", "です"]
+    reading: "misoshiru wa shoppai desu."
+    ipa: "misoɕiɾɯ wa ɕoppai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "みそしる", ref: "ja-0960" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "しょっぱい", ref: "ja-0979" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "すっぱい", reading: "suppai", kind: "word" }
+      - { id: "w2", word: "にがい", reading: "nigai", kind: "word" }
+  - id: "ja-1304"
+    target: "コーヒーのおかわりをください。"
+    words: ["コーヒー", "の", "おかわり", "を", "ください"]
+    reading: "koohii no okawari o kudasai."
+    ipa: "koːçiː no okawaɾi o kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "おかわり", ref: "ja-1001" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", word: "ジュース", reading: "juusu", kind: "word" }
+      - { id: "w2", word: "おちゃ", reading: "ocha", kind: "word" }

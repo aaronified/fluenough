@@ -1,0 +1,67 @@
+schema: 1
+id: "ja-market-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1281"
+    target: "やおやでやさいをかいます。"
+    words: ["やおや", "で", "やさい", "を", "かいます"]
+    reading: "yaoya de yasai o kaimasu."
+    ipa: "jaoja de jasai o kaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "やおや", ref: "ja-0880" }
+      - { word: "で", ref: "ja-0293" }
+      - { word: "やさい", ref: "ja-0884" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいます", ref: "ja-0356" }
+    confusables:
+      - { id: "w1", word: "にくや", reading: "nikuya", kind: "word" }
+      - { id: "w2", word: "さかなや", reading: "sakanaya", kind: "word" }
+  - id: "ja-1282"
+    target: "いちばはとおいですか。"
+    words: ["いちば", "は", "とおい", "です", "か"]
+    reading: "ichiba wa tooi desu ka."
+    ipa: "itɕiba wa toːi desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "いちば", ref: "ja-0879" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "とおい", ref: "ja-0485" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", word: "みせ", reading: "mise", kind: "word" }
+      - { id: "w2", word: "ふくろ", reading: "fukuro", kind: "word" }
+  - id: "ja-1283"
+    target: "てんいんはやさしいです。"
+    words: ["てんいん", "は", "やさしい", "です"]
+    reading: "ten'in wa yasashii desu."
+    ipa: "teɴiɴ wa jasaɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "てんいん", ref: "ja-0907" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "やさしい", ref: "ja-0474" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "きゃく", reading: "kyaku", kind: "word" }
+      - { id: "w2", word: "みせ", reading: "mise", kind: "word" }
+  - id: "ja-1284"
+    target: "しょうゆとさとうをかいます。"
+    words: ["しょうゆ", "と", "さとう", "を", "かいます"]
+    reading: "shouyu to satou o kaimasu."
+    ipa: "ɕoːjɯ to satoː o kaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "しょうゆ", ref: "ja-0918" }
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "さとう", ref: "ja-0916" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいます", ref: "ja-0356" }
+    confusables:
+      - { id: "w1", word: "しお", reading: "shio", kind: "word" }
+      - { id: "w2", word: "みそ", reading: "miso", kind: "word" }

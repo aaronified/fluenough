@@ -1,0 +1,42 @@
+schema: 1
+id: "ja-en-market-sentences"
+kind: "layer"
+core: "ja-market-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "The market in sentences"
+description: "Sentences about buying at the market, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1281":
+    native: "I buy vegetables at the greengrocer's."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "にくや (nikuya) is a butcher's." }
+      w2: { why: "さかなや (sakanaya) is a fishmonger's." }
+  "ja-1282":
+    native: "Is the market far?"
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "みせ (mise) is a shop." }
+      w2: { why: "ふくろ (fukuro) is a bag." }
+  "ja-1283":
+    native: "The shop assistant is kind."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "きゃく (kyaku) is a customer." }
+      w2: { why: "みせ (mise) is a shop." }
+  "ja-1284":
+    native: "I buy soy sauce and sugar."
+    bases:
+      "と": { meaning: "and (joins two words)" }
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "しお (shio) is salt." }
+      w2: { why: "みそ (miso) is miso." }

@@ -1,0 +1,76 @@
+schema: 1
+id: "ja-loanwords-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1270"
+    target: "コーヒーをのみます。"
+    words: ["コーヒー", "を", "のみます"]
+    reading: "koohii o nomimasu."
+    ipa: "koːçiː o nomimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "コーヒー", ref: "ja-0849" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のみます", ref: "ja-0342" }
+    confusables:
+      - { id: "w1", word: "おちゃ", reading: "ocha", kind: "word" }
+      - { id: "w2", word: "ビール", reading: "biiru", kind: "word" }
+  - id: "ja-1271"
+    target: "テレビをみます。"
+    words: ["テレビ", "を", "みます"]
+    reading: "terebi o mimasu."
+    ipa: "teɾebi o mimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "テレビ", ref: "ja-0850" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みます", ref: "ja-0343" }
+    confusables:
+      - { id: "w1", word: "ラジオ", reading: "rajio", kind: "word" }
+      - { id: "w2", word: "ゲーム", reading: "geemu", kind: "word" }
+  - id: "ja-1272"
+    target: "ホテルはどこですか。"
+    words: ["ホテル", "は", "どこ", "です", "か"]
+    reading: "hoteru wa doko desu ka."
+    ipa: "hoteɾɯ wa doko desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "ホテル", ref: "ja-0857" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "どこ", ref: "ja-0110" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", word: "スーパー", reading: "suupaa", kind: "word" }
+      - { id: "w2", word: "レストラン", reading: "resutoran", kind: "word" }
+  - id: "ja-1273"
+    target: "タクシーでいきます。"
+    words: ["タクシー", "で", "いきます"]
+    reading: "takushii de ikimasu."
+    ipa: "takɯɕiː de ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "タクシー", ref: "ja-0855" }
+      - { word: "で", ref: "ja-0293" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - { id: "w1", word: "バス", reading: "basu", kind: "word" }
+      - { id: "w2", word: "ちかてつ", reading: "chikatetsu", kind: "word" }
+  - id: "ja-1274"
+    target: "カメラはたかいです。"
+    words: ["カメラ", "は", "たかい", "です"]
+    reading: "kamera wa takai desu."
+    ipa: "kameɾa wa takai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "カメラ", ref: "ja-0860" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たかい", ref: "ja-0439" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "パソコン", reading: "pasokon", kind: "word" }
+      - { id: "w2", word: "テレビ", reading: "terebi", kind: "word" }
