@@ -66,3 +66,34 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1941 | ja-music | ひく (to play a stringed or keyed instrument): is it right for the koto and the piano, and not for the flute? | Haiku builder | 2026-11-06 |
 | unit-level | ja-music | Only 14 of the 40 planned music words were fresh: the path count is set to 14. Is that right? | Haiku builder | 2026-11-06 |
 | unit-level | ja-music | The example and sentence decks of ja-music are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| unit-level | ja-appearance | ふとい (thick/fat) and やせる (to lose weight) describe bodies: are they acceptable as plain vocabulary, or should they carry a register or warning note? みにくい (ugly) is blunt: keep it? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-appearance | ハンサム and かっこいい: is ハンサム dated, and is かっこいい too casual for a B1 card? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-illness | Are はきけ (nausea), さむけ (chill) and だるい (sluggish) right for a learner at this level, and is しっぷ the everyday word for a compress? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-health | ぼしてちょう (母子手帳) is a Japan-specific document: is it a useful word at B1, or should it be dropped? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-religion | いはい, ごりやく, ばち, ぶつだん and かみだな are specific to Japanese religion: is the level right, and do they need a culture note with a source? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-religion | Is むしんろん (atheism) a word a B1 learner needs, or too abstract for the religion unit? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-festivals | とりのいち (酉の市) is a local fair: should it stay, or be replaced by a more widely known festival word? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-weddings | Are ひろうえん, ごしゅうぎ and ひきでもの the usual words now, and is にじかい right for the after-party? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-weddings | The older wedding terms しろむく, もんつき and なこうど: are they still used, or dated? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-journey | Is おうふく (round trip) and かたみち (one way) natural as separate word cards, or are they only used in set phrases at the ticket counter? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-journey | ていしゃ and のりこし are rail-specific nouns: are they natural for a learner at this level? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-nature | こもれび, ひだまり and なみうちぎわ are literary: are they common enough for B1, or should they go? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-adjectives-2 | Are もったいない, ずるい, しつこい, なまいき and わがまま natural to list as plain adjectives, or do they need a register note (colloquial, or blunt)? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-adjectives-2 | Several words here are written as な-adjectives (ざんねん, しんぱい, ゆうめい, ていねい, ひつよう): is each right as a な-adjective card in the rules table? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-opinions | The adverbs どうやら, まさか, せめて, かえって and いちおう: are they right at B1, and is the gloss for each the main use? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-opinions | The connectives つまり, たとえば, けれども, しかし, だから and ところが are marked pos other: is that the right part of speech, or should they be adverbs? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-onomatopoeia | Which of the 76 sound-symbolic words belong at B1? ぺこり, きりきり, じりじり, かんかん, びしょびしょ and どたどた may be above that level; the unit needs only 50. | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-verbs-5 | Several verbs here are formal or literary: しいる, さずける, さとる, くらう, しりぞく and くいる. Are they right at B1, or should the unit take the more common verbs first? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-verbs-4 | Verbs written with two spellings (もうける 設ける and 儲ける, すすめる 勧める and 進める, うつす 写す and 映す) are one kana card here: which spelling is the main sense, and where should the other sit? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-law | Are めいよきそん, ちょさくけん and しょうげん too specialised for B1? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-emergencies | Are すり (pickpocket) and ひったくり natural single-word cards, and does すり need a homograph note (to rub, a print)? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-society | Are ひきこもり, いじめ and ふとうこう acceptable as plain vocabulary at B1, or do they need a sensitivity note? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-business | Are ごうべん (joint venture), ごうどう, とうさん (bankruptcy) and ふさい (debt) above B1? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-technology | Is しょうエネ (省エネ) the clipped form a B1 course should teach, or the full しょうエネルギー? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-feelings | Are せつない, いとしい, もどかしい and ゆううつ natural for B1, and is the gloss of each the main sense? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-careers | Is フリーター still used for casual workers, and is はけん right as a single noun card? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-manners | Are ぶしつけ, ごうまん and いやみ too negative or too formal for a manners unit at B1? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-shopping | Is ひゃくえんショップ the natural word, or ひゃっきん (百均)? And is おとく natural as a な-adjective card for "good value"? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-eating-out | Is おあいそ (the bill) polite enough to teach next to かんじょう, or is it restaurant slang that should carry a note? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-music | Is おんち (tone-deaf) acceptable as a plain card, and are ひきがたり and リサイタル natural words for this unit? | Sonnet re-planner | 2026-11-06 |
+| unit-level | ja-news | Are ほうじる (to report), ごほう (a false report) and とくだね (a scoop) the words a news reader would meet at B1? | Sonnet re-planner | 2026-11-06 |

@@ -471,6 +471,11 @@ units:
       - { id: "at-karaoke", text: { "en": "Friends choose songs at karaoke" } }
     reading_passages:
       - { id: "concert-flyer", text: { "en": "A flyer for a concert" } }
+  # The planned word units from here to the B1 mark take their words from
+  # the wiki page Plan-Japanese-B1-Wordlists (owner, 2026-11-06: "go with
+  # C"). Each unit has a list at least as long as its size, every word fresh
+  # against the cards written up to ja-music and against the other lists: a
+  # word an earlier unit teaches is used by ref, never written again.
   - planned: { id: "ja-sports", theme: "sports", words: 45 }
     listening_passages:
       - { id: "baseball-talk", text: { "en": "Friends talk about a baseball game" } }
