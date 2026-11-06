@@ -388,7 +388,8 @@ units:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
-  - planned: { id: "fr-shopping", theme: "shopping", words: 40 }
+  - decks: ["fr-shopping", "fr-shopping-sentences", "fr-reading-shopping", "*"]
+    words: 40
     listening_passages:
       - { id: "asking-the-price", text: { "en": "Asking about price and size at a shop" } }
     reading_passages:

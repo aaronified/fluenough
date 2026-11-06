@@ -41,3 +41,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1388 | fr-things (A2) | "Je ne connais pas cette chose." is it natural, or do speakers say "ce truc" for an unnamed thing? | Haiku builder | 2026-11-06 |
 | fr-1403 | fr-things (A2) | "Ferme le rideau, il fait froid.": is the imperative with il fait froid natural as a pair? | Haiku builder | 2026-11-06 |
 | unit-level | fr-things (A2) | Papier, ciseaux and lunettes are taught as objects here; the clothes unit has lunettes-like words too: should the sentences that use them stay? | Haiku builder | 2026-11-06 |
+| fr-1436 | fr-shopping (A2) | In a French shop, is "allée" the word for the aisle, or do people say "rayon" (the shelf or department) more often? | Haiku builder | 2026-11-06 |
+| fr-1424 | fr-shopping (A2) | Remise and réduction both mean a discount: should the card say which one a shop uses on a bill? | Haiku builder | 2026-11-06 |
+| fr-1434 | fr-shopping (A2) | Fleuriste is written as feminine here: is it used with la for both men and women, or do speakers say le fleuriste? | Haiku builder | 2026-11-06 |
+| fr-1441 | fr-shopping (A2) | "Je veux être remboursé." is it natural, or should the card teach "Je voudrais un remboursement."? | Haiku builder | 2026-11-06 |
+| fr-1454 | fr-shopping (A2) | File is given as "queue": is "faire la queue" the better everyday phrase to teach beside it? | Haiku builder | 2026-11-06 |
+| fr-1460 | fr-shopping (A2) | "Je paie avec ma carte, pas en espèces." is it natural, or do people say "par carte" more often? | Haiku builder | 2026-11-06 |
+| unit-level | fr-shopping (A2) | Pain, lait and fruit overlap with fr-food and fr-groceries: should the sentences that use them stay here? | Haiku builder | 2026-11-06 |
