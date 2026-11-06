@@ -1,0 +1,435 @@
+schema: 1
+id: "fr-daily-life"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "daily-life"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1098"
+    target: "journée"
+    ipa: "ʒuʁne"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle longue journée !", ipa: "kɛl lɔ̃ɡ ʒuʁne", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "longue", ref: "fr-0421" }, { word: "journée", base: "journée" }] }
+      - { target: "La journée est courte.", ipa: "la ʒuʁne ɛ kuʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "journée", base: "journée" }, { word: "est", ref: "fr-0021" }, { word: "courte", ref: "fr-0422" }] }
+  - id: "fr-1099"
+    target: "matinée"
+    ipa: "matine"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Toute la matinée, je travaille.", ipa: "tut la matine ʒə tʁavaj", bases: [{ word: "Toute", ref: "fr-0372" }, { word: "la", ref: "fr-0544" }, { word: "matinée", base: "matinée" }, { word: "je", ref: "fr-0126" }, { word: "travaille", ref: "fr-0252" }] }
+      - { target: "La matinée est calme.", ipa: "la matine ɛ kalm", bases: [{ word: "La", ref: "fr-0544" }, { word: "matinée", base: "matinée" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-1100"
+    target: "soirée"
+    ipa: "swaʁe"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une soirée avec des amis.", ipa: "yn swaʁe avɛk de ami", bases: [{ word: "Une", ref: "fr-0545" }, { word: "soirée", base: "soirée" }, { word: "avec", ref: "fr-0590" }, { word: "des", ref: "fr-0546" }, { word: "amis", ref: "fr-0100" }] }
+      - { target: "La soirée est longue.", ipa: "la swaʁe ɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "soirée", base: "soirée" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+  - id: "fr-1101"
+    target: "habitude"
+    ipa: "abityd"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une bonne habitude.", ipa: "sɛ yn bɔn abityd", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "une", ref: "fr-0545" }, { word: "bonne", ref: "fr-0040" }, { word: "habitude", base: "habitude" }] }
+      - { target: "J'ai l'habitude de dormir tôt.", ipa: "ʒe labityd də dɔʁmiʁ to", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "l'habitude", base: "habitude" }, { word: "de", base: "de" }, { word: "dormir", ref: "fr-0284" }, { word: "tôt", ref: "fr-0337" }] }
+  - id: "fr-1102"
+    target: "routine"
+    ipa: "ʁutin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma routine est calme.", ipa: "ma ʁutin ɛ kalm", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "routine", base: "routine" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+      - { target: "C'est la routine.", ipa: "sɛ la ʁutin", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "la", ref: "fr-0544" }, { word: "routine", base: "routine" }] }
+  - id: "fr-1103"
+    target: "sommeil"
+    ipa: "sɔmɛj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai besoin de sommeil.", ipa: "ʒe bəzwɛ̃ də sɔmɛj", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "besoin", ref: "fr-1080" }, { word: "de", base: "de" }, { word: "sommeil", base: "sommeil" }] }
+      - { target: "Le sommeil est important.", ipa: "lə sɔmɛj ɛ ɛ̃poʁtɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sommeil", base: "sommeil" }, { word: "est", ref: "fr-0021" }, { word: "important", ref: "fr-0443" }] }
+  - id: "fr-1104"
+    target: "sieste"
+    ipa: "sjɛst"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais une sieste.", ipa: "ʒə fɛ yn sjɛst", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "sieste", base: "sieste" }] }
+      - { target: "La sieste est courte.", ipa: "la sjɛst ɛ kuʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "sieste", base: "sieste" }, { word: "est", ref: "fr-0021" }, { word: "courte", ref: "fr-0422" }] }
+  - id: "fr-1105"
+    target: "repos"
+    ipa: "ʁəpo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vous avez besoin de repos.", ipa: "vu zave bəzwɛ̃ də ʁəpo", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "avez", ref: "fr-0022" }, { word: "besoin", ref: "fr-1080" }, { word: "de", base: "de" }, { word: "repos", base: "repos" }] }
+      - { target: "C'est un jour de repos.", ipa: "sɛ œ̃ ʒuʁ də ʁəpo", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "un", ref: "fr-0208" }, { word: "jour", ref: "fr-1032" }, { word: "de", base: "de" }, { word: "repos", base: "repos" }] }
+  - id: "fr-1106"
+    target: "fatigue"
+    ipa: "fatiɡ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fatigue est grande.", ipa: "la fatiɡ ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "fatigue", base: "fatigue" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Quelle fatigue !", ipa: "kɛl fatiɡ", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "fatigue", base: "fatigue" }] }
+  - id: "fr-1107"
+    target: "bain"
+    ipa: "bɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends un bain.", ipa: "ʒə pʁɑ̃ œ̃ bɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "bain", base: "bain" }] }
+      - { target: "Le bain est chaud.", ipa: "lə bɛ̃ ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bain", base: "bain" }, { word: "est", ref: "fr-0021" }, { word: "chaud", ref: "fr-0419" }] }
+  - id: "fr-1108"
+    target: "petit-déjeuner"
+    ipa: "pətidʒøne"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le petit-déjeuner est prêt.", ipa: "lə pətidʒøne ɛ pʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "petit-déjeuner", base: "petit-déjeuner" }, { word: "est", ref: "fr-0021" }, { word: "prêt", ref: "fr-0687" }] }
+      - { target: "Je prends le petit-déjeuner à sept heures.", ipa: "ʒə pʁɑ̃ lə pətidʒøne a sɛt œʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "petit-déjeuner", base: "petit-déjeuner" }, { word: "à", base: "à" }, { word: "sept", ref: "fr-0214" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-1109"
+    target: "rêve"
+    ipa: "ʁɛv"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai fait un beau rêve.", ipa: "ʒe fɛ œ̃ bo ʁɛv", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "beau", ref: "fr-0412" }, { word: "rêve", base: "rêve" }] }
+      - { target: "Le rêve est court.", ipa: "lə ʁɛv ɛ kuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "rêve", base: "rêve" }, { word: "est", ref: "fr-0021" }, { word: "court", ref: "fr-0422" }] }
+  - id: "fr-1110"
+    target: "fin"
+    ipa: "fɛ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est la fin de la journée.", ipa: "sɛ la fɛ̃ də la ʒuʁne", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "la", ref: "fr-0544" }, { word: "fin", base: "fin" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "journée", ref: "fr-1098" }] }
+      - { target: "À la fin, je dors.", ipa: "a la fɛ̃ ʒə dɔʁ", bases: [{ word: "À", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "fin", base: "fin" }, { word: "je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }] }
+  - id: "fr-1111"
+    target: "bruit"
+    ipa: "bʁɥi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bruit est fort.", ipa: "lə bʁɥi ɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bruit", base: "bruit" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+      - { target: "Il y a un bruit dehors.", ipa: "il i a œ̃ bʁɥi dəɔʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "bruit", base: "bruit" }, { word: "dehors", ref: "fr-0354" }] }
+  - id: "fr-1112"
+    target: "silence"
+    ipa: "silɑ̃s"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le silence est important.", ipa: "lə silɑ̃s ɛ ɛ̃poʁtɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "silence", base: "silence" }, { word: "est", ref: "fr-0021" }, { word: "important", ref: "fr-0443" }] }
+      - { target: "J'aime le silence.", ipa: "ʒɛm lə silɑ̃s", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "le", ref: "fr-0543" }, { word: "silence", base: "silence" }] }
+  - id: "fr-1113"
+    target: "lumière"
+    ipa: "lymjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La lumière est forte.", ipa: "la lymjɛʁ ɛ fɔʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "lumière", base: "lumière" }, { word: "est", ref: "fr-0021" }, { word: "forte", ref: "fr-0425" }] }
+      - { target: "Il y a de la lumière.", ipa: "il i a də la lymjɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "lumière", base: "lumière" }] }
+  - id: "fr-1114"
+    target: "rendez-vous"
+    ipa: "ʁɑ̃devu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai un rendez-vous à dix heures.", ipa: "ʒe œ̃ ʁɑ̃devu a dis œʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "rendez-vous", base: "rendez-vous" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Le rendez-vous est demain.", ipa: "lə ʁɑ̃devu ɛ dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "rendez-vous", base: "rendez-vous" }, { word: "est", ref: "fr-0021" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1115"
+    target: "couloir"
+    ipa: "kulwaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le couloir est long.", ipa: "lə kulwaʁ ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "couloir", base: "couloir" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "Je marche dans le couloir.", ipa: "ʒə maʁʃ dɑ̃ lə kulwaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "marche", ref: "fr-0306" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "couloir", base: "couloir" }] }
+  - id: "fr-1116"
+    target: "brosse"
+    ipa: "bʁɔs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une brosse à dents.", ipa: "yn bʁɔs a dɑ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "brosse", base: "brosse" }, { word: "à", base: "à" }, { word: "dents", ref: "fr-0935" }] }
+      - { target: "Ma brosse est sale.", ipa: "ma bʁɔs ɛ sal", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "brosse", base: "brosse" }, { word: "est", ref: "fr-0021" }, { word: "sale", ref: "fr-0428" }] }
+  - id: "fr-1117"
+    target: "savon"
+    ipa: "savɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le savon est là.", ipa: "lə savɔ̃ ɛ la", bases: [{ word: "Le", ref: "fr-0543" }, { word: "savon", base: "savon" }, { word: "est", ref: "fr-0021" }, { word: "là", ref: "fr-0030" }] }
+      - { target: "J'ai besoin de savon.", ipa: "ʒe bəzwɛ̃ də savɔ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "besoin", ref: "fr-1080" }, { word: "de", base: "de" }, { word: "savon", base: "savon" }] }
+  - id: "fr-1118"
+    target: "serviette"
+    ipa: "sɛʁvjɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une serviette propre.", ipa: "yn sɛʁvjɛt pʁɔpʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "serviette", base: "serviette" }, { word: "propre", ref: "fr-0427" }] }
+      - { target: "Où est la serviette ?", ipa: "u ɛ la sɛʁvjɛt", bases: [{ word: "Où", ref: "fr-0067" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "serviette", base: "serviette" }] }
+  - id: "fr-1119"
+    target: "vacances"
+    ipa: "vakɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis en vacances.", ipa: "ʒə sɥi ɑ̃ vakɑ̃s", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "vacances", base: "vacances" }] }
+      - { target: "Les vacances sont courtes.", ipa: "le vakɑ̃s sɔ̃ kuʁt", bases: [{ word: "Les", ref: "fr-0043" }, { word: "vacances", base: "vacances" }, { word: "sont", ref: "fr-0021" }, { word: "courtes", ref: "fr-0422" }] }
+  - id: "fr-1120"
+    target: "montre"
+    ipa: "mɔ̃tʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma montre est en retard.", ipa: "ma mɔ̃tʁ ɛ ɑ̃ ʁətaʁ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "montre", base: "montre" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", ref: "fr-0870" }] }
+      - { target: "Regarde ta montre.", ipa: "ʁəɡaʁd ta mɔ̃tʁ", bases: [{ word: "Regarde", ref: "fr-0293" }, { word: "ta", ref: "fr-0626" }, { word: "montre", base: "montre" }] }
+  - id: "fr-1121"
+    target: "pendule"
+    ipa: "pɑ̃dyl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La pendule sonne à huit heures.", ipa: "la pɑ̃dyl sɔn a ɥit œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "pendule", base: "pendule" }, { word: "sonne", ref: "fr-1127" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Une pendule est sur le mur.", ipa: "yn pɑ̃dyl ɛ syʁ lə myʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "pendule", base: "pendule" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "mur", ref: "fr-1015" }] }
+  - id: "fr-1122"
+    target: "avance"
+    ipa: "avɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis en avance.", ipa: "ʒə sɥi ɑ̃ avɑ̃s", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "avance", base: "avance" }] }
+      - { target: "Le train est en avance.", ipa: "lə tʁɛ̃ ɛ ɑ̃ avɑ̃s", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "avance", base: "avance" }] }
+  - id: "fr-1123"
+    target: "réveiller"
+    ipa: "ʁevɛje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bruit réveille le bébé.", ipa: "lə bʁɥi ʁevɛj lə bebe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bruit", ref: "fr-1111" }, { word: "réveille", base: "réveiller" }, { word: "le", ref: "fr-0543" }, { word: "bébé", ref: "fr-0180" }] }
+      - { target: "Je réveille ma sœur à sept heures.", ipa: "ʒə ʁevɛj ma sœʁ a sɛt œʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "réveille", base: "réveiller" }, { word: "ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "à", base: "à" }, { word: "sept", ref: "fr-0214" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-1124"
+    target: "rentrer"
+    ipa: "ʁɑ̃tʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je rentre à la maison.", ipa: "ʒə ʁɑ̃tʁ a la mɛzɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rentre", base: "rentrer" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }] }
+      - { target: "Nous rentrons le soir.", ipa: "nu ʁɑ̃tʁɔ̃ lə swaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "rentrons", base: "rentrer" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1125"
+    target: "sortir"
+    ipa: "sɔʁtiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je sors ce soir.", ipa: "ʒə sɔʁ sə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "sors", base: "sortir" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "Tu sors souvent ?", ipa: "ty sɔʁ suvɑ̃", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "sors", base: "sortir" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-1126"
+    target: "déranger"
+    ipa: "deʁɑ̃ʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je dérange le voisin.", ipa: "ʒə deʁɑ̃ʒ lə vwazɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dérange", base: "déranger" }, { word: "le", ref: "fr-0543" }, { word: "voisin", ref: "fr-0101" }] }
+      - { target: "Vous dérangez ma sœur ?", ipa: "vu deʁɑ̃ʒe ma sœʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "dérangez", base: "déranger" }, { word: "ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }] }
+  - id: "fr-1127"
+    target: "sonner"
+    ipa: "sɔne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le réveil sonne tôt.", ipa: "lə ʁevɛj sɔn to", bases: [{ word: "Le", ref: "fr-0543" }, { word: "réveil", ref: "fr-1042" }, { word: "sonne", base: "sonner" }, { word: "tôt", ref: "fr-0337" }] }
+      - { target: "Le matin, le réveil sonne.", ipa: "lə matɛ̃ lə ʁevɛj sɔn", bases: [{ word: "Le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }, { word: "le", ref: "fr-0543" }, { word: "réveil", ref: "fr-1042" }, { word: "sonne", base: "sonner" }] }
+  - id: "fr-1128"
+    target: "réparer"
+    ipa: "ʁepaʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je répare la porte.", ipa: "ʒə ʁepaʁ la pɔʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "répare", base: "réparer" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+      - { target: "Nous réparons la fenêtre.", ipa: "nu ʁepaʁɔ̃ la fənɛtʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "réparons", base: "réparer" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", ref: "fr-1004" }] }
+  - id: "fr-1129"
+    target: "emmener"
+    ipa: "ɑ̃mne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'emmène mon fils à l'école.", ipa: "ʒɑ̃mɛn mɔ̃ fis a lekɔl", bases: [{ word: "J'emmène", base: "emmener" }, { word: "mon", ref: "fr-0037" }, { word: "fils", ref: "fr-0167" }, { word: "à", base: "à" }, { word: "l'école", ref: "fr-0964" }] }
+      - { target: "Il emmène la voiture au garage.", ipa: "il ɑ̃mɛn la vwatyʁ o ɡaʁaʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "emmène", base: "emmener" }, { word: "la", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }, { word: "au", base: "au" }, { word: "garage", ref: "fr-1012" }] }
+  - id: "fr-1130"
+    target: "amener"
+    ipa: "amne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'amène mon ami.", ipa: "ʒamɛn mɔ̃ ami", bases: [{ word: "J'amène", base: "amener" }, { word: "mon", ref: "fr-0037" }, { word: "ami", ref: "fr-0100" }] }
+      - { target: "Tu amènes ta sœur au parc.", ipa: "ty amɛn ta sœʁ o paʁk", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "amènes", base: "amener" }, { word: "ta", ref: "fr-0626" }, { word: "sœur", ref: "fr-0170" }, { word: "au", base: "au" }, { word: "parc", ref: "fr-0968" }] }
+  - id: "fr-1131"
+    target: "durer"
+    ipa: "dyʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La réunion dure une heure.", ipa: "la ʁeynjɔ̃ dyʁ yn œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "réunion", ref: "fr-0664" }, { word: "dure", base: "durer" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+      - { target: "Le repas dure une heure.", ipa: "lə ʁəpa dyʁ yn œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "repas", ref: "fr-0813" }, { word: "dure", base: "durer" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+  - id: "fr-1132"
+    target: "quotidien"
+    ipa: "kɔtidjɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est le travail quotidien.", ipa: "sɛ lə tʁavaj kɔtidjɛ̃", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "le", ref: "fr-0543" }, { word: "travail", ref: "fr-0255" }, { word: "quotidien", base: "quotidien" }] }
+      - { target: "Le sport quotidien est bon.", ipa: "lə spɔʁ kɔtidjɛ̃ ɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sport", ref: "fr-0265" }, { word: "quotidien", base: "quotidien" }, { word: "est", ref: "fr-0021" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-1133"
+    target: "pressé"
+    ipa: "pʁese"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis pressé.", ipa: "ʒə sɥi pʁese", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "pressé", base: "pressé" }] }
+      - { target: "Il est pressé ce matin.", ipa: "il ɛ pʁese sə matɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "pressé", base: "pressé" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1134"
+    target: "tranquille"
+    ipa: "tʁɑ̃kil"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La maison est tranquille.", ipa: "la mɛzɔ̃ ɛ tʁɑ̃kil", bases: [{ word: "La", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }, { word: "est", ref: "fr-0021" }, { word: "tranquille", base: "tranquille" }] }
+      - { target: "Le matin, la rue est tranquille.", ipa: "lə matɛ̃ la ʁy ɛ tʁɑ̃kil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }, { word: "est", ref: "fr-0021" }, { word: "tranquille", base: "tranquille" }] }
+  - id: "fr-1135"
+    target: "puis"
+    ipa: "pɥi"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mange, puis je dors.", ipa: "ʒə mɑ̃ʒ pɥi ʒə dɔʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }, { word: "puis", base: "puis" }, { word: "je", ref: "fr-0126" }, { word: "dors", ref: "fr-0284" }] }
+      - { target: "Je prends le café, puis le pain.", ipa: "ʒə pʁɑ̃ lə kafe pɥi lə pɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }, { word: "puis", base: "puis" }, { word: "le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }] }
+  - id: "fr-1136"
+    target: "d'abord"
+    ipa: "dabɔʁ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "D'abord, je mange.", ipa: "dabɔʁ ʒə mɑ̃ʒ", bases: [{ word: "D'abord", base: "d'abord" }, { word: "je", ref: "fr-0126" }, { word: "mange", ref: "fr-0282" }] }
+      - { target: "Lisez d'abord la carte.", ipa: "lize dabɔʁ la kaʁt", bases: [{ word: "Lisez", ref: "fr-0290" }, { word: "d'abord", base: "d'abord" }, { word: "la", ref: "fr-0544" }, { word: "carte", ref: "fr-0824" }] }
+  - id: "fr-1137"
+    target: "tout de suite"
+    ipa: "tutsɥit"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'arrive tout de suite.", ipa: "ʒaʁiv tu də sɥit", bases: [{ word: "J'arrive", ref: "fr-0305" }, { word: "tout de suite", base: "tout de suite" }] }
+      - { target: "Je rentre tout de suite.", ipa: "ʒə ʁɑ̃tʁ tu də sɥit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rentre", ref: "fr-1124" }, { word: "tout de suite", base: "tout de suite" }] }
