@@ -17,6 +17,8 @@ import 'features/stats/progress_numbers.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/stored_downloaded_decks.dart';
+import 'app/web_install.dart';
+import 'app/web_platform.dart';
 import 'app/web_deck_fetcher.dart';
 import 'app/web_frame.dart';
 import 'core/scheduling/skill_fit.dart';
@@ -83,6 +85,7 @@ Future<void> main() async {
         fitRunner: (job) async => SkillFit.run(job),
         paceRunner: paceInPlace,
         progressRunner: progressInPlace,
+        webInstall: WebInstall(openWebPlatform()),
         log: log,
       ),
     ),
