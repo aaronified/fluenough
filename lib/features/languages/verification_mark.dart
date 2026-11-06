@@ -83,8 +83,9 @@ class VerificationMark extends StatelessWidget {
       color: theme.colorScheme.onSurface,
     );
     final word = verificationWord(l10n, state);
+    // Not `container`: a row's MergeSemantics must read this label with the
+    // names and the line, as one button.
     return Semantics(
-      container: true,
       label: l10n.languagesVerifiedLabel(word.toLowerCase()),
       excludeSemantics: true,
       child: Row(
