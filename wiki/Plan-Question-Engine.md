@@ -175,7 +175,7 @@ every card in the shipped decks, then deletes the old.
    eligibility. **Convert at release** (owner, 2026-10-23: "Convert at
    release"): the code lands on main first; `tools/convert_modes.py`
    rewrites every shipped list to its complement over the four vocabulary
-   skills, with no grammar names, on `decks-next`, merged when the release
+   skills, with no grammar names, on `decks-live`, merged when the release
    that reads the new meaning ships, so installed apps never read converted
    lists. The validator's "excludes every skill" check is not built.
 7. **Hear form or meaning by the card (#7).** Whether the heard form is
@@ -238,7 +238,7 @@ every card in the shipped decks, then deletes the old.
     error); DECK-FORMAT marks the field retired. **Released apps still need
     the key**, since they read it as required, so no shipped deck drops it
     yet: that is a deck change for a release after the one that ships this,
-    on `decks-next`, and the validator's warning stays until then. The
+    on `decks-live`, and the validator's warning stays until then. The
     default's wording is mine, taken from the most common shipped prompt;
     the cells of the 17 decks that wrote another would read differently
     once their `prompt` is removed.

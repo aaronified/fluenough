@@ -1,5 +1,11 @@
 # ADR-0037: Decks download from main, by an index, and update when asked
 
+> **Superseded by decks-live (2026-11-06).** Decks now download from the
+> permanent branch `decks-live`, not `main`. Main's `decks/` is frozen and
+> kept only for apps released before that change, and `decks-next` is retired.
+> The index and the review queue are regenerated on `decks-live`. The rest
+> of this record (the index, the hashes, the daily check) still holds.
+
 Source of truth: this wiki page.
 
 
