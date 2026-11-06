@@ -172,7 +172,8 @@ units:
       - { id: "what-i-do", text: { "en": "Someone lists what they do each day" } }
     reading_passages:
       - { id: "to-do-list", text: { "en": "A short to-do list" } }
-  - planned: { id: "ta-adverbs", theme: "adverbs", words: 50 }
+  - decks: ["ta-adverbs", "ta-adverbs-sentences", "*"]
+    words: 50
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
