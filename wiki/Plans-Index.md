@@ -30,6 +30,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Question Engine 2 And Exams](Plan-Question-Engine-2-And-Exams): question engine revamp and milestone exams
 - [Release Signing](Plan-Release-Signing): sign and publish the first release
 - [Research And Standards](Plan-Research-And-Standards): a Research and standards page, with the sources
+- [Review Staging](Plan-Review-Staging): a decks-staging branch where review mails land, confirmed, then applied to decks-live (brainstorm)
 - [Reviewing Scope](Plan-Reviewing-Scope): what reviewing covers, and how reviewers change cards
 - [Sentence Building](Plan-Sentence-Building): building sentences by reasoning
 - [Settings Wording](Plan-Settings-Wording): settings that say what they do, on and off
