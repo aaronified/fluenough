@@ -1,0 +1,390 @@
+schema: 1
+id: "fr-clothes"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "clothes"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1201"
+    target: "chemise"
+    ipa: "ʃəmiz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma chemise est bleue.", ipa: "ma ʃəmiz ɛ blø", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "chemise", base: "chemise" }, { word: "est", ref: "fr-0021" }, { word: "bleue", base: "bleu" }] }
+      - { target: "Il porte une chemise rouge.", ipa: "il pɔʁt yn ʃəmiz ʁuʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-0527" }, { word: "une", ref: "fr-0545" }, { word: "chemise", base: "chemise" }, { word: "rouge", base: "rouge" }] }
+  - id: "fr-1202"
+    target: "pantalon"
+    ipa: "pɑ̃talɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le pantalon est trop long.", ipa: "lə pɑ̃talɔ̃ ɛ tʁo lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pantalon", base: "pantalon" }, { word: "est", ref: "fr-0021" }, { word: "trop", ref: "fr-0344" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "J'ai un pantalon noir.", ipa: "ʒe œ̃ pɑ̃talɔ̃ nwaʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "pantalon", base: "pantalon" }, { word: "noir", base: "noir" }] }
+  - id: "fr-1203"
+    target: "robe"
+    ipa: "ʁɔb"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La robe est belle.", ipa: "la ʁɔb ɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "robe", base: "robe" }, { word: "est", ref: "fr-0021" }, { word: "belle", ref: "fr-0412" }] }
+      - { target: "Elle essaie une robe rouge.", ipa: "ɛl esɛ yn ʁɔb ʁuʒ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "essaie", base: "essayer" }, { word: "une", ref: "fr-0545" }, { word: "robe", base: "robe" }, { word: "rouge", base: "rouge" }] }
+  - id: "fr-1204"
+    target: "jupe"
+    ipa: "ʒyp"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma jupe est courte.", ipa: "ma ʒyp ɛ kuʁt", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "jupe", base: "jupe" }, { word: "est", ref: "fr-0021" }, { word: "courte", ref: "fr-0422" }] }
+      - { target: "Cette jupe est jolie.", ipa: "sɛt ʒyp ɛ ʒoli", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "jupe", base: "jupe" }, { word: "est", ref: "fr-0021" }, { word: "jolie", ref: "fr-0414" }] }
+  - id: "fr-1205"
+    target: "veste"
+    ipa: "vɛst"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets une veste.", ipa: "ʒə mɛ yn vɛst", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "une", ref: "fr-0545" }, { word: "veste", base: "veste" }] }
+      - { target: "La veste est dans le sac.", ipa: "la vɛst ɛ dɑ̃ lə sak", bases: [{ word: "La", ref: "fr-0544" }, { word: "veste", base: "veste" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1206"
+    target: "manteau"
+    ipa: "mɑ̃to"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il fait froid, je prends mon manteau.", ipa: "il fɛ fʁwa ʒə pʁɑ̃ mɔ̃ mɑ̃to", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "froid", ref: "fr-0420" }, { word: "je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "mon", ref: "fr-0037" }, { word: "manteau", base: "manteau" }] }
+      - { target: "Le manteau est chaud.", ipa: "lə mɑ̃to ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "manteau", base: "manteau" }, { word: "est", ref: "fr-0021" }, { word: "chaud", ref: "fr-0419" }] }
+  - id: "fr-1207"
+    target: "pull"
+    ipa: "pyl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce pull est gris.", ipa: "sə pyl ɛ ɡʁi", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pull", base: "pull" }, { word: "est", ref: "fr-0021" }, { word: "gris", base: "gris" }] }
+      - { target: "Mon père porte un pull.", ipa: "mɔ̃ pɛʁ pɔʁt œ̃ pyl", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "porte", ref: "fr-0527" }, { word: "un", ref: "fr-0208" }, { word: "pull", base: "pull" }] }
+  - id: "fr-1208"
+    target: "chaussure"
+    ipa: "ʃosyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les chaussures sont petites.", ipa: "le ʃosyʁ sɔ̃ pəti", bases: [{ word: "Les", ref: "fr-0043" }, { word: "chaussures", base: "chaussure" }, { word: "sont", ref: "fr-0021" }, { word: "petites", ref: "fr-0411" }] }
+      - { target: "Je cherche mes chaussures.", ipa: "ʒə ʃɛʁʃ me ʃosyʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "mes", ref: "fr-0623" }, { word: "chaussures", base: "chaussure" }] }
+  - id: "fr-1209"
+    target: "chaussette"
+    ipa: "ʃosɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets des chaussettes.", ipa: "ʒə mɛ de ʃosɛt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "des", ref: "fr-0546" }, { word: "chaussettes", base: "chaussette" }] }
+      - { target: "Mes chaussettes sont sales.", ipa: "me ʃosɛt sɔ̃ sal", bases: [{ word: "Mes", ref: "fr-0623" }, { word: "chaussettes", base: "chaussette" }, { word: "sont", ref: "fr-0021" }, { word: "sales", ref: "fr-0428" }] }
+  - id: "fr-1210"
+    target: "chapeau"
+    ipa: "ʃapo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il porte un chapeau.", ipa: "il pɔʁt œ̃ ʃapo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-0527" }, { word: "un", ref: "fr-0208" }, { word: "chapeau", base: "chapeau" }] }
+      - { target: "Le chapeau est sur la table.", ipa: "lə ʃapo ɛ syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chapeau", base: "chapeau" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+  - id: "fr-1211"
+    target: "casquette"
+    ipa: "kaskɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a une casquette rouge.", ipa: "ɛl a yn kaskɛt ʁuʒ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "casquette", base: "casquette" }, { word: "rouge", base: "rouge" }] }
+      - { target: "Ma casquette est dans le sac.", ipa: "ma kaskɛt ɛ dɑ̃ lə sak", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "casquette", base: "casquette" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1212"
+    target: "écharpe"
+    ipa: "ekaʁp"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il fait froid, prends ton écharpe.", ipa: "il fɛ fʁwa pʁɑ̃ tɔ̃ ekaʁp", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "froid", ref: "fr-0420" }, { word: "prends", ref: "fr-0288" }, { word: "ton", ref: "fr-0141" }, { word: "écharpe", base: "écharpe" }] }
+      - { target: "Une écharpe grise est longue.", ipa: "yn ekaʁp ɡʁiz ɛ lɔ̃ɡ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "écharpe", base: "écharpe" }, { word: "grise", base: "gris" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+  - id: "fr-1213"
+    target: "gant"
+    ipa: "ɡɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je cherche mes gants.", ipa: "ʒə ʃɛʁʃ me ɡɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "mes", ref: "fr-0623" }, { word: "gants", base: "gant" }] }
+      - { target: "Un gant est sous la chaise.", ipa: "œ̃ ɡɑ̃ ɛ su la ʃɛz", bases: [{ word: "Un", ref: "fr-0208" }, { word: "gant", base: "gant" }, { word: "est", ref: "fr-0021" }, { word: "sous", ref: "fr-0468" }, { word: "la", ref: "fr-0544" }, { word: "chaise", ref: "fr-1006" }] }
+  - id: "fr-1214"
+    target: "ceinture"
+    ipa: "sɛ̃tyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma ceinture est noire.", ipa: "ma sɛ̃tyʁ ɛ nwaʁ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "ceinture", base: "ceinture" }, { word: "est", ref: "fr-0021" }, { word: "noire", base: "noir" }] }
+      - { target: "Il met une ceinture.", ipa: "il mɛ yn sɛ̃tyʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "une", ref: "fr-0545" }, { word: "ceinture", base: "ceinture" }] }
+  - id: "fr-1215"
+    target: "cravate"
+    ipa: "kʁavat"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le monsieur porte une cravate.", ipa: "lə məsjø pɔʁt yn kʁavat", bases: [{ word: "Le", ref: "fr-0543" }, { word: "monsieur", ref: "fr-0097" }, { word: "porte", ref: "fr-0527" }, { word: "une", ref: "fr-0545" }, { word: "cravate", base: "cravate" }] }
+      - { target: "La cravate est trop grande.", ipa: "la kʁavat ɛ tʁo ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "cravate", base: "cravate" }, { word: "est", ref: "fr-0021" }, { word: "trop", ref: "fr-0344" }, { word: "grande", ref: "fr-0410" }] }
+  - id: "fr-1216"
+    target: "costume"
+    ipa: "kɔstym"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon oncle porte un costume.", ipa: "mɔ̃n ɔ̃kl pɔʁt œ̃ kɔstym", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "oncle", ref: "fr-0176" }, { word: "porte", ref: "fr-0527" }, { word: "un", ref: "fr-0208" }, { word: "costume", base: "costume" }] }
+      - { target: "Le costume est nouveau.", ipa: "lə kɔstym ɛ nuvo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "costume", base: "costume" }, { word: "est", ref: "fr-0021" }, { word: "nouveau", ref: "fr-0413" }] }
+  - id: "fr-1217"
+    target: "imperméable"
+    ipa: "ɛ̃pɛʁmeabl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il pleut, prends ton imperméable.", ipa: "il plø pʁɑ̃ tɔ̃ ɛ̃pɛʁmeabl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "pleut", base: "pleuvoir" }, { word: "prends", ref: "fr-0288" }, { word: "ton", ref: "fr-0141" }, { word: "imperméable", base: "imperméable" }] }
+      - { target: "L'imperméable est dans la voiture.", ipa: "lɛ̃pɛʁmeabl ɛ dɑ̃ la vwatyʁ", bases: [{ word: "L'imperméable", base: "imperméable" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }] }
+  - id: "fr-1218"
+    target: "pyjama"
+    ipa: "piʒama"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets mon pyjama le soir.", ipa: "ʒə mɛ mɔ̃ piʒama lə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "mon", ref: "fr-0037" }, { word: "pyjama", base: "pyjama" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "Le pyjama est bleu.", ipa: "lə piʒama ɛ blø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pyjama", base: "pyjama" }, { word: "est", ref: "fr-0021" }, { word: "bleu", base: "bleu" }] }
+  - id: "fr-1219"
+    target: "sandale"
+    ipa: "sɑ̃dal"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il fait chaud, je mets des sandales.", ipa: "il fɛ ʃo ʒə mɛ de sɑ̃dal", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "chaud", ref: "fr-0419" }, { word: "je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "des", ref: "fr-0546" }, { word: "sandales", base: "sandale" }] }
+      - { target: "Mes sandales sont dans la rue.", ipa: "me sɑ̃dal sɔ̃ dɑ̃ la ʁy", bases: [{ word: "Mes", ref: "fr-0623" }, { word: "sandales", base: "sandale" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }] }
+  - id: "fr-1220"
+    target: "botte"
+    ipa: "bɔt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "En hiver, je porte des bottes.", ipa: "ɑ̃ ivɛʁ ʒə pɔʁt de bɔt", bases: [{ word: "En", base: "en" }, { word: "hiver", ref: "fr-1172" }, { word: "je", ref: "fr-0126" }, { word: "porte", ref: "fr-0527" }, { word: "des", ref: "fr-0546" }, { word: "bottes", base: "botte" }] }
+      - { target: "Les bottes sont vertes.", ipa: "le bɔt sɔ̃ vɛʁt", bases: [{ word: "Les", ref: "fr-0043" }, { word: "bottes", base: "botte" }, { word: "sont", ref: "fr-0021" }, { word: "vertes", base: "vert" }] }
+  - id: "fr-1221"
+    target: "bijou"
+    ipa: "biʒu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle porte un bijou.", ipa: "ɛl pɔʁt œ̃ biʒu", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "porte", ref: "fr-0527" }, { word: "un", ref: "fr-0208" }, { word: "bijou", base: "bijou" }] }
+      - { target: "Ce bijou est très joli.", ipa: "sə biʒu ɛ tʁɛ ʒoli", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "bijou", base: "bijou" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "joli", ref: "fr-0414" }] }
+  - id: "fr-1222"
+    target: "bague"
+    ipa: "baɡ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma bague est en or.", ipa: "ma baɡ ɛ tɑ̃ ɔʁ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "bague", base: "bague" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "or", base: "or" }] }
+      - { target: "Je mets une bague au doigt.", ipa: "ʒə mɛ yn baɡ o dwa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "une", ref: "fr-0545" }, { word: "bague", base: "bague" }, { word: "au", base: "au" }, { word: "doigt", ref: "fr-0941" }] }
+  - id: "fr-1223"
+    target: "collier"
+    ipa: "kɔlje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a un joli collier.", ipa: "ɛl a œ̃ ʒoli kɔlje", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "joli", ref: "fr-0414" }, { word: "collier", base: "collier" }] }
+      - { target: "Le collier est en or.", ipa: "lə kɔlje ɛ tɑ̃ ɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "collier", base: "collier" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "or", base: "or" }] }
+  - id: "fr-1224"
+    target: "vêtement"
+    ipa: "vɛtmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les vêtements sont dans la chambre.", ipa: "le vɛtmɑ̃ sɔ̃ dɑ̃ la ʃɑ̃bʁ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "vêtements", base: "vêtement" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "chambre", ref: "fr-0998" }] }
+      - { target: "Ce vêtement est propre.", ipa: "sə vɛtmɑ̃ ɛ pʁɔpʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "vêtement", base: "vêtement" }, { word: "est", ref: "fr-0021" }, { word: "propre", ref: "fr-0427" }] }
+  - id: "fr-1225"
+    target: "tissu"
+    ipa: "tisy"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce tissu est doux.", ipa: "sə tisy ɛ du", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "tissu", base: "tissu" }, { word: "est", ref: "fr-0021" }, { word: "doux", base: "doux" }] }
+      - { target: "Le tissu est très léger.", ipa: "lə tisy ɛ tʁɛ leʒe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tissu", base: "tissu" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "léger", ref: "fr-0441" }] }
+  - id: "fr-1226"
+    target: "coton"
+    ipa: "kɔtɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma chemise est en coton.", ipa: "ma ʃəmiz ɛ ɑ̃ kɔtɔ̃", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "chemise", base: "chemise" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "coton", base: "coton" }] }
+      - { target: "Le coton est doux.", ipa: "lə kɔtɔ̃ ɛ du", bases: [{ word: "Le", ref: "fr-0543" }, { word: "coton", base: "coton" }, { word: "est", ref: "fr-0021" }, { word: "doux", base: "doux" }] }
+  - id: "fr-1227"
+    target: "laine"
+    ipa: "lɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce pull est en laine.", ipa: "sə pyl ɛ ɑ̃ lɛn", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pull", base: "pull" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "laine", base: "laine" }] }
+      - { target: "La laine est chaude.", ipa: "la lɛn ɛ ʃod", bases: [{ word: "La", ref: "fr-0544" }, { word: "laine", base: "laine" }, { word: "est", ref: "fr-0021" }, { word: "chaude", ref: "fr-0419" }] }
+  - id: "fr-1228"
+    target: "cuir"
+    ipa: "kɥiʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il porte des chaussures en cuir.", ipa: "il pɔʁt de ʃosyʁ ɑ̃ kɥiʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-0527" }, { word: "des", ref: "fr-0546" }, { word: "chaussures", base: "chaussure" }, { word: "en", base: "en" }, { word: "cuir", base: "cuir" }] }
+      - { target: "Ma veste est en cuir.", ipa: "ma vɛst ɛ ɑ̃ kɥiʁ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "veste", base: "veste" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "cuir", base: "cuir" }] }
+  - id: "fr-1229"
+    target: "taille"
+    ipa: "taj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle est ta taille ?", ipa: "kɛl ɛ ta taj", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "ta", ref: "fr-0626" }, { word: "taille", base: "taille" }] }
+      - { target: "Ce pantalon n'est pas à ma taille.", ipa: "sə pɑ̃talɔ̃ nɛ pa a ma taj", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pantalon", base: "pantalon" }, { word: "n'est", ref: "fr-0021" }, { word: "pas", base: "pas" }, { word: "à", base: "à" }, { word: "ma", ref: "fr-0137" }, { word: "taille", base: "taille" }] }
+  - id: "fr-1230"
+    target: "couleur"
+    ipa: "kulœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle est la couleur de ta chemise ?", ipa: "kɛl ɛ la kulœʁ də ta ʃəmiz", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "couleur", base: "couleur" }, { word: "de", base: "de" }, { word: "ta", ref: "fr-0626" }, { word: "chemise", base: "chemise" }] }
+      - { target: "Tu aimes quelle couleur ?", ipa: "ty ɛm kɛl kulœʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "aimes", ref: "fr-0263" }, { word: "quelle", ref: "fr-0072" }, { word: "couleur", base: "couleur" }] }
+  - id: "fr-1231"
+    target: "essayer"
+    ipa: "eseje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je veux essayer la veste.", ipa: "ʒə vø esɛje la vɛst", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", ref: "fr-0311" }, { word: "essayer", base: "essayer" }, { word: "la", ref: "fr-0544" }, { word: "veste", base: "veste" }] }
+      - { target: "Elle essaie le pantalon.", ipa: "ɛl esɛ lə pɑ̃talɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "essaie", base: "essayer" }, { word: "le", ref: "fr-0543" }, { word: "pantalon", base: "pantalon" }] }
+  - id: "fr-1232"
+    target: "rouge"
+    ipa: "ʁuʒ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sac est rouge.", ipa: "lə sak ɛ ʁuʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }, { word: "est", ref: "fr-0021" }, { word: "rouge", base: "rouge" }] }
+      - { target: "Une tomate est rouge.", ipa: "yn tɔmat ɛ ʁuʒ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "tomate", ref: "fr-0744" }, { word: "est", ref: "fr-0021" }, { word: "rouge", base: "rouge" }] }
+  - id: "fr-1233"
+    target: "bleu"
+    ipa: "blø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ciel est bleu.", ipa: "lə sjɛl ɛ blø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ciel", base: "ciel" }, { word: "est", ref: "fr-0021" }, { word: "bleu", base: "bleu" }] }
+      - { target: "Ce pull bleu est grand.", ipa: "sə pyl blø ɛ ɡʁɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pull", base: "pull" }, { word: "bleu", base: "bleu" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+  - id: "fr-1234"
+    target: "vert"
+    ipa: "vɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La salade est verte.", ipa: "la salad ɛ vɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "salade", ref: "fr-0746" }, { word: "est", ref: "fr-0021" }, { word: "verte", base: "vert" }] }
+      - { target: "Le sapin est vert.", ipa: "lə sapɛ̃ ɛ vɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sapin", base: "sapin" }, { word: "est", ref: "fr-0021" }, { word: "vert", base: "vert" }] }
+  - id: "fr-1235"
+    target: "noir"
+    ipa: "nwaʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a des cheveux noirs.", ipa: "il a de ʃəvø nwaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "cheveux", ref: "fr-0939" }, { word: "noirs", base: "noir" }] }
+      - { target: "Le café est noir.", ipa: "lə kafe ɛ nwaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }, { word: "est", ref: "fr-0021" }, { word: "noir", base: "noir" }] }

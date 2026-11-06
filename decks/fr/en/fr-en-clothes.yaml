@@ -1,0 +1,503 @@
+schema: 1
+id: "fr-en-clothes"
+kind: "layer"
+core: "fr-clothes"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Clothes and colours"
+license: "CC-BY-SA-4.0"
+description: "Thirty-five words for clothes and colours: the garments a learner wears and buys, the materials they are made of, the size, and the colours red, blue, green and black. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1201":
+    native: "shirt"
+    notes:
+      "n1": "Chemise is 'shirt'. It is feminine: une chemise, la chemise."
+    examples:
+      "Ma chemise est bleue.":
+        native: "My shirt is blue."
+        bases:
+          "chemise": "shirt"
+          "bleue": "blue"
+      "Il porte une chemise rouge.":
+        native: "He wears a red shirt."
+        bases:
+          "chemise": "shirt"
+          "rouge": "red"
+  "fr-1202":
+    native: "trousers"
+    notes:
+      "n1": "Pantalon is 'trousers'. It is masculine: un pantalon, le pantalon."
+    examples:
+      "Le pantalon est trop long.":
+        native: "The trousers are too long."
+        bases:
+          "pantalon": "trousers"
+      "J'ai un pantalon noir.":
+        native: "I have black trousers."
+        bases:
+          "pantalon": "trousers"
+          "noir": "black"
+  "fr-1203":
+    native: "dress"
+    notes:
+      "n1": "Robe is 'dress'. It is feminine, and it is also used for a woman's dress in general."
+    examples:
+      "La robe est belle.":
+        native: "The dress is beautiful."
+        bases:
+          "robe": "dress"
+      "Elle essaie une robe rouge.":
+        native: "She tries on a red dress."
+        bases:
+          "essaie": "tries on"
+          "robe": "dress"
+          "rouge": "red"
+  "fr-1204":
+    native: "skirt"
+    notes:
+      "n1": "Jupe is 'skirt'. It is feminine: une jupe, la jupe."
+    examples:
+      "Ma jupe est courte.":
+        native: "My skirt is short."
+        bases:
+          "jupe": "skirt"
+      "Cette jupe est jolie.":
+        native: "This skirt is pretty."
+        bases:
+          "jupe": "skirt"
+  "fr-1205":
+    native: "jacket"
+    notes:
+      "n1": "Veste is 'jacket', a light coat that goes over a shirt. It is feminine."
+    examples:
+      "Je mets une veste.":
+        native: "I put on a jacket."
+        bases:
+          "veste": "jacket"
+      "La veste est dans le sac.":
+        native: "The jacket is in the bag."
+        bases:
+          "veste": "jacket"
+  "fr-1206":
+    native: "coat"
+    notes:
+      "n1": "Manteau is 'coat', the warm outer coat for cold weather. It is masculine."
+    examples:
+      "Il fait froid, je prends mon manteau.":
+        native: "It is cold, so I take my coat."
+        bases:
+          "manteau": "coat"
+      "Le manteau est chaud.":
+        native: "The coat is warm."
+        bases:
+          "manteau": "coat"
+  "fr-1207":
+    native: "jumper"
+    notes:
+      "n1": "Pull is 'jumper' or 'sweater'. It is masculine, short for pull-over."
+    examples:
+      "Ce pull est gris.":
+        native: "This jumper is grey."
+        bases:
+          "pull": "jumper"
+          "gris": "grey"
+      "Mon père porte un pull.":
+        native: "My father wears a jumper."
+        bases:
+          "pull": "jumper"
+  "fr-1208":
+    native: "shoe"
+    notes:
+      "n1": "Chaussure is 'shoe', feminine. People usually say the plural chaussures for a pair of shoes."
+    examples:
+      "Les chaussures sont petites.":
+        native: "The shoes are small."
+        bases:
+          "chaussures": "shoes"
+      "Je cherche mes chaussures.":
+        native: "I am looking for my shoes."
+        bases:
+          "chaussures": "shoes"
+  "fr-1209":
+    native: "sock"
+    notes:
+      "n1": "Chaussette is 'sock', feminine. People usually say the plural, des chaussettes."
+    examples:
+      "Je mets des chaussettes.":
+        native: "I put on socks."
+        bases:
+          "chaussettes": "socks"
+      "Mes chaussettes sont sales.":
+        native: "My socks are dirty."
+        bases:
+          "chaussettes": "socks"
+  "fr-1210":
+    native: "hat"
+    notes:
+      "n1": "Chapeau is 'hat'. It is masculine: un chapeau."
+    examples:
+      "Il porte un chapeau.":
+        native: "He wears a hat."
+        bases:
+          "chapeau": "hat"
+      "Le chapeau est sur la table.":
+        native: "The hat is on the table."
+        bases:
+          "chapeau": "hat"
+  "fr-1211":
+    native: "cap"
+    notes:
+      "n1": "Casquette is 'cap', a hat with a peak. It is feminine."
+    examples:
+      "Elle a une casquette rouge.":
+        native: "She has a red cap."
+        bases:
+          "casquette": "cap"
+          "rouge": "red"
+      "Ma casquette est dans le sac.":
+        native: "My cap is in the bag."
+        bases:
+          "casquette": "cap"
+  "fr-1212":
+    native: "scarf"
+    notes:
+      "n1": "Écharpe is 'scarf', the long warm cloth for the neck in winter. It is feminine."
+    examples:
+      "Il fait froid, prends ton écharpe.":
+        native: "It is cold, take your scarf."
+        bases:
+          "écharpe": "scarf"
+      "Une écharpe grise est longue.":
+        native: "A grey scarf is long."
+        bases:
+          "écharpe": "scarf"
+          "grise": "grey"
+  "fr-1213":
+    native: "glove"
+    notes:
+      "n1": "Gant is 'glove', masculine. The plural gants is 'gloves'."
+    examples:
+      "Je cherche mes gants.":
+        native: "I am looking for my gloves."
+        bases:
+          "gants": "gloves"
+      "Un gant est sous la chaise.":
+        native: "A glove is under the chair."
+        bases:
+          "gant": "glove"
+  "fr-1214":
+    native: "belt"
+    notes:
+      "n1": "Ceinture is 'belt', the strap worn round the waist. It is feminine."
+    examples:
+      "Ma ceinture est noire.":
+        native: "My belt is black."
+        bases:
+          "ceinture": "belt"
+          "noire": "black"
+      "Il met une ceinture.":
+        native: "He puts on a belt."
+        bases:
+          "ceinture": "belt"
+  "fr-1215":
+    native: "tie"
+    notes:
+      "n1": "Cravate is 'tie', the strip of cloth worn with a shirt. It is feminine."
+    examples:
+      "Le monsieur porte une cravate.":
+        native: "The man wears a tie."
+        bases:
+          "cravate": "tie"
+      "La cravate est trop grande.":
+        native: "The tie is too big."
+        bases:
+          "cravate": "tie"
+  "fr-1216":
+    native: "suit"
+    notes:
+      "n1": "Costume is 'suit', the matching jacket and trousers. It is masculine: un costume."
+    examples:
+      "Mon oncle porte un costume.":
+        native: "My uncle wears a suit."
+        bases:
+          "costume": "suit"
+      "Le costume est nouveau.":
+        native: "The suit is new."
+        bases:
+          "costume": "suit"
+  "fr-1217":
+    native: "raincoat"
+    notes:
+      "n1": "Imperméable is 'raincoat', a coat that keeps out the rain. It is masculine."
+    examples:
+      "Il pleut, prends ton imperméable.":
+        native: "It is raining, so take your raincoat."
+        bases:
+          "pleut": "is raining"
+          "imperméable": "raincoat"
+      "L'imperméable est dans la voiture.":
+        native: "The raincoat is in the car."
+        bases:
+          "L'imperméable": "raincoat"
+  "fr-1218":
+    native: "pyjamas"
+    notes:
+      "n1": "Pyjama is 'pyjamas', the clothes worn to sleep in. It is masculine, and it is used as a singular noun: un pyjama."
+    examples:
+      "Je mets mon pyjama le soir.":
+        native: "I put on my pyjamas in the evening."
+        bases:
+          "pyjama": "pyjamas"
+      "Le pyjama est bleu.":
+        native: "The pyjamas are blue."
+        bases:
+          "pyjama": "pyjamas"
+          "bleu": "blue"
+  "fr-1219":
+    native: "sandal"
+    notes:
+      "n1": "Sandale is 'sandal', an open shoe for hot weather. It is feminine."
+    examples:
+      "Il fait chaud, je mets des sandales.":
+        native: "It is hot, so I put on sandals."
+        bases:
+          "sandales": "sandals"
+      "Mes sandales sont dans la rue.":
+        native: "My sandals are in the street."
+        bases:
+          "sandales": "sandals"
+  "fr-1220":
+    native: "boot"
+    notes:
+      "n1": "Botte is 'boot', a shoe that covers the ankle or the leg. It is feminine. The plural bottes is 'boots'."
+    examples:
+      "En hiver, je porte des bottes.":
+        native: "In winter, I wear boots."
+        bases:
+          "En": "in"
+          "bottes": "boots"
+      "Les bottes sont vertes.":
+        native: "The boots are green."
+        bases:
+          "bottes": "boots"
+          "vertes": "green"
+  "fr-1221":
+    native: "piece of jewellery"
+    notes:
+      "n1": "Bijou is 'piece of jewellery', masculine. The plural bijoux is 'jewellery' in general."
+    examples:
+      "Elle porte un bijou.":
+        native: "She wears a piece of jewellery."
+        bases:
+          "bijou": "piece of jewellery"
+      "Ce bijou est très joli.":
+        native: "This piece of jewellery is very pretty."
+        bases:
+          "bijou": "piece of jewellery"
+  "fr-1222":
+    native: "ring"
+    notes:
+      "n1": "Bague is 'ring', the piece of jewellery worn on a finger. It is feminine."
+    examples:
+      "Ma bague est en or.":
+        native: "My ring is made of gold."
+        bases:
+          "bague": "ring"
+          "en": "of"
+          "or": "gold"
+      "Je mets une bague au doigt.":
+        native: "I put a ring on my finger."
+        bases:
+          "bague": "ring"
+          "au": "on"
+  "fr-1223":
+    native: "necklace"
+    notes:
+      "n1": "Collier is 'necklace', worn round the neck. It is masculine."
+    examples:
+      "Elle a un joli collier.":
+        native: "She has a pretty necklace."
+        bases:
+          "collier": "necklace"
+      "Le collier est en or.":
+        native: "The necklace is made of gold."
+        bases:
+          "collier": "necklace"
+          "en": "of"
+          "or": "gold"
+  "fr-1224":
+    native: "garment"
+    notes:
+      "n1": "Vêtement is 'garment', one item of clothing. Its plural vêtements means 'clothes' in general."
+    examples:
+      "Les vêtements sont dans la chambre.":
+        native: "The clothes are in the bedroom."
+        bases:
+          "vêtements": "clothes"
+      "Ce vêtement est propre.":
+        native: "This garment is clean."
+        bases:
+          "vêtement": "garment"
+  "fr-1225":
+    native: "fabric"
+    notes:
+      "n1": "Tissu is 'fabric' or 'cloth', the material cloth is made from. It is masculine."
+    examples:
+      "Ce tissu est doux.":
+        native: "This fabric is soft."
+        bases:
+          "tissu": "fabric"
+          "doux": "soft"
+      "Le tissu est très léger.":
+        native: "The fabric is very light."
+        bases:
+          "tissu": "fabric"
+  "fr-1226":
+    native: "cotton"
+    notes:
+      "n1": "Coton is 'cotton', the material. En coton means 'made of cotton'."
+    examples:
+      "Ma chemise est en coton.":
+        native: "My shirt is made of cotton."
+        bases:
+          "chemise": "shirt"
+          "en": "of"
+          "coton": "cotton"
+      "Le coton est doux.":
+        native: "Cotton is soft."
+        bases:
+          "coton": "cotton"
+          "doux": "soft"
+  "fr-1227":
+    native: "wool"
+    notes:
+      "n1": "Laine is 'wool', the material from sheep. En laine means 'made of wool'. It is feminine."
+    examples:
+      "Ce pull est en laine.":
+        native: "This jumper is made of wool."
+        bases:
+          "pull": "jumper"
+          "en": "of"
+          "laine": "wool"
+      "La laine est chaude.":
+        native: "Wool is warm."
+        bases:
+          "laine": "wool"
+  "fr-1228":
+    native: "leather"
+    notes:
+      "n1": "Cuir is 'leather', the material. En cuir means 'made of leather'. It is masculine."
+    examples:
+      "Il porte des chaussures en cuir.":
+        native: "He wears shoes made of leather."
+        bases:
+          "chaussures": "shoes"
+          "en": "of"
+          "cuir": "leather"
+      "Ma veste est en cuir.":
+        native: "My jacket is made of leather."
+        bases:
+          "veste": "jacket"
+          "en": "of"
+          "cuir": "leather"
+  "fr-1229":
+    native: "size"
+    notes:
+      "n1": "Taille is 'size' in clothes, and also 'waist'. Quelle est ta taille ? is 'What is your size?'"
+    examples:
+      "Quelle est ta taille ?":
+        native: "What is your size?"
+        bases:
+          "taille": "size"
+      "Ce pantalon n'est pas à ma taille.":
+        native: "These trousers are not my size."
+        bases:
+          "pantalon": "trousers"
+          "pas": "not"
+          "à": "in"
+          "taille": "size"
+  "fr-1230":
+    native: "colour"
+    notes:
+      "n1": "Couleur is 'colour'. It is feminine: quelle couleur ? is 'what colour?'"
+    examples:
+      "Quelle est la couleur de ta chemise ?":
+        native: "What colour is your shirt?"
+        bases:
+          "couleur": "colour"
+          "de": "of"
+          "chemise": "shirt"
+      "Tu aimes quelle couleur ?":
+        native: "What colour do you like?"
+        bases:
+          "couleur": "colour"
+  "fr-1231":
+    native: "to try on"
+    notes:
+      "n1": "Essayer is 'to try', and for clothes 'to try on'. It is a regular -er verb: j'essaie, tu essaies, il essaie."
+    examples:
+      "Je veux essayer la veste.":
+        native: "I want to try on the jacket."
+        bases:
+          "essayer": "to try on"
+          "veste": "jacket"
+      "Elle essaie le pantalon.":
+        native: "She tries on the trousers."
+        bases:
+          "essaie": "tries on"
+          "pantalon": "trousers"
+  "fr-1232":
+    native: "red"
+    notes:
+      "n1": "Rouge is 'red'. It is the same in the feminine: une jupe rouge, une robe rouge."
+    examples:
+      "Le sac est rouge.":
+        native: "The bag is red."
+        bases:
+          "rouge": "red"
+      "Une tomate est rouge.":
+        native: "A tomato is red."
+        bases:
+          "rouge": "red"
+  "fr-1233":
+    native: "blue"
+    notes:
+      "n1": "Bleu is 'blue'. Its feminine is bleue, as in ma chemise est bleue."
+    examples:
+      "Le ciel est bleu.":
+        native: "The sky is blue."
+        bases:
+          "ciel": "sky"
+          "bleu": "blue"
+      "Ce pull bleu est grand.":
+        native: "This blue jumper is big."
+        bases:
+          "pull": "jumper"
+          "bleu": "blue"
+  "fr-1234":
+    native: "green"
+    notes:
+      "n1": "Vert is 'green'. Its feminine is verte."
+    examples:
+      "La salade est verte.":
+        native: "The salad is green."
+        bases:
+          "verte": "green"
+      "Le sapin est vert.":
+        native: "The fir tree is green."
+        bases:
+          "sapin": "fir tree"
+          "vert": "green"
+  "fr-1235":
+    native: "black"
+    notes:
+      "n1": "Noir is 'black'. Its feminine is noire, and its plural is noirs."
+    examples:
+      "Il a des cheveux noirs.":
+        native: "He has black hair."
+        bases:
+          "noirs": "black"
+      "Le café est noir.":
+        native: "The coffee is black."
+        bases:
+          "noir": "black"

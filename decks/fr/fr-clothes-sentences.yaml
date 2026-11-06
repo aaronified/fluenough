@@ -1,0 +1,140 @@
+schema: 1
+id: "fr-clothes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1236"
+    target: "Je cherche une veste pour l'hiver."
+    ipa: "ʒə ʃɛʁʃ yn vɛst puʁ livɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "cherche", ref: "fr-0300" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "veste", ref: "fr-1205" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "l'hiver", ref: "fr-1172" }
+    confusables:
+      - { id: "manteau", ref: "fr-1206", kind: "word" }
+  - id: "fr-1237"
+    target: "Cette robe est trop grande."
+    ipa: "sɛt ʁɔb ɛ tʁo ɡʁɑ̃d"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cette", ref: "fr-0144" }
+      - { word: "robe", ref: "fr-1203" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "trop", ref: "fr-0344" }
+      - { word: "grande", ref: "fr-0410" }
+  - id: "fr-1238"
+    target: "Le pantalon coûte vingt euros."
+    ipa: "lə pɑ̃talɔ̃ kut vɛ̃t øʁo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "pantalon", ref: "fr-1202" }
+      - { word: "coûte", ref: "fr-0752" }
+      - { word: "vingt", ref: "fr-0227" }
+      - { word: "euros", base: "euro" }
+  - id: "fr-1239"
+    target: "Elle met une casquette pour le sport."
+    ipa: "ɛl mɛ yn kaskɛt puʁ lə spɔʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "met", ref: "fr-0529" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "casquette", ref: "fr-1211" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "sport", ref: "fr-0265" }
+    confusables:
+      - { id: "chapeau", ref: "fr-1210", kind: "word" }
+  - id: "fr-1240"
+    target: "Mes chaussures sont dans le couloir."
+    ipa: "me ʃosyʁ sɔ̃ dɑ̃ lə kulwaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mes", ref: "fr-0623" }
+      - { word: "chaussures", ref: "fr-1208" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "couloir", ref: "fr-1115" }
+    confusables:
+      - { id: "chaussette", ref: "fr-1209", kind: "word" }
+  - id: "fr-1241"
+    target: "Il porte un costume noir au mariage."
+    ipa: "il pɔʁt œ̃ kɔstym nwaʁ o maʁjaʒ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "porte", ref: "fr-0527" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "costume", ref: "fr-1216" }
+      - { word: "noir", ref: "fr-1235" }
+      - { word: "au", base: "au" }
+      - { word: "mariage", ref: "fr-0187" }
+  - id: "fr-1242"
+    target: "Le magasin a des soldes."
+    ipa: "lə magazɛ̃ a de sold"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "magasin", ref: "fr-0795" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "soldes", base: "solde" }
+  - id: "fr-1243"
+    target: "Je peux essayer ce pull en laine."
+    ipa: "ʒə pø esɛje sə pyl ɑ̃ lɛn"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "peux", ref: "fr-0500" }
+      - { word: "essayer", ref: "fr-1231" }
+      - { word: "ce", ref: "fr-0143" }
+      - { word: "pull", ref: "fr-1207" }
+      - { word: "en", base: "en" }
+      - { word: "laine", ref: "fr-1227" }
+    confusables:
+      - { id: "coton", ref: "fr-1226", kind: "word" }
+  - id: "fr-1244"
+    target: "Elle n'aime pas les bijoux."
+    ipa: "ɛl nɛm pa le biʒu"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "n'aime", ref: "fr-0263" }
+      - { word: "pas", base: "pas" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "bijoux", ref: "fr-1221" }
+    confusables:
+      - { id: "bague", ref: "fr-1222", kind: "word" }
+  - id: "fr-1245"
+    target: "Le coton est doux et frais."
+    ipa: "lə kɔtɔ̃ ɛ du e fʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "coton", ref: "fr-1226" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "doux", base: "doux" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "frais", ref: "fr-0753" }
+    confusables:
+      - { id: "laine", ref: "fr-1227", kind: "word" }

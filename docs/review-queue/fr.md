@@ -17,3 +17,16 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1184 | fr-calendar | In "Nous fêtons Noël" and "À Noël, il neige souvent", is the article-less Noël right in both? | Haiku builder | 2026-11-06 |
 | fr-1179 | fr-calendar | Is "Je suis venu avant-hier." natural, or is "avant-hier" usually placed before the verb? | Haiku builder | 2026-11-06 |
 | unit-level | fr-calendar (35 words, the months as set fr-1164) | The path counts 35 words: the twelve months and their set card, plus 22 words. Is that the count the B1 plan intends? | Haiku builder | 2026-11-06 |
+| fr-1231 | fr-clothes (35 words, clothes and colours) | Is "essayer" used alone for "to try on" a garment, as in "Je veux essayer la veste."? | Haiku builder | 2026-11-06 |
+| fr-1229 | fr-clothes | Is "à ma taille" the natural way to say "in my size", as in "Ce pantalon n'est pas à ma taille."? | Haiku builder | 2026-11-06 |
+| fr-1217 | fr-clothes | Is "imperméable" as a noun the everyday word for a raincoat, or is "manteau de pluie" more common? | Haiku builder | 2026-11-06 |
+| fr-1222 | fr-clothes | Is "en or" the natural way to say "made of gold" for a ring, or is "d'or" more usual? | Haiku builder | 2026-11-06 |
+| fr-1209 | fr-clothes | Chaussette is usually said in the plural (des chaussettes): should the card be the plural form? | Haiku builder | 2026-11-06 |
+| fr-1218 | fr-clothes | Is "un pyjama" (singular) used in speech, or is "pyjamas" always the form a learner hears? | Haiku builder | 2026-11-06 |
+| fr-1224 | fr-clothes | Is "Ce vêtement est propre" natural, or do speakers use the plural vêtements for clothes in general? | Haiku builder | 2026-11-06 |
+| fr-1245 | fr-clothes-sentences | Does "frais" describe a fabric naturally, as in "Le coton est doux et frais."? | Haiku builder | 2026-11-06 |
+| unit-level | fr-clothes | Blanc, gris and jaune are not taught in this unit, only rouge, bleu, vert and noir: should the other colours go in this unit or a later one? | Haiku builder | 2026-11-06 |
+| fr-1283 | fr-animals | Chèvre also means goat cheese in everyday speech: should the card note the cheese sense? | Haiku builder | 2026-11-06 |
+| fr-1286 | fr-animals | Plume also means a quill pen: should the pen sense be noted on the card? | Haiku builder | 2026-11-06 |
+| fr-1282 | fr-animals | Is "L'âne est gris." a natural description of a donkey, or should a learner first see brown (brun)? | Haiku builder | 2026-11-06 |
+| unit-level | fr-animals (35 words) | Poisson, lait, herbe and the colours overlap with fr-food and fr-clothes: should the animal unit keep its sentences that use them? | Haiku builder | 2026-11-06 |
