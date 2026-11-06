@@ -526,7 +526,8 @@ units:
       - { id: "have-you-ever", text: { "en": "Asking and saying whether you have ever climbed Mount Fuji" } }
     reading_passages:
       - { id: "experience-survey", text: { "en": "A short survey about experiences" } }
-  - planned: { id: "ja-phone", theme: "phone", words: 35 }
+  - decks: ["ja-phone", "ja-phone-sentences", "ja-reading-phone", "*"]
+    words: 35
     listening_passages:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:

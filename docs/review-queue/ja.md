@@ -121,3 +121,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2272 | ja-verbs-3 | Is いきる (to live) natural in ねこ は いきて います (the cat is alive), or is another phrase used for it? | Haiku builder | 2026-11-06 |
 | ja-2273 | ja-verbs-3 | Is しごと を たのしんで います (I enjoy my work) natural, or is たのしい (enjoyable) the more usual form? | Haiku builder | 2026-11-06 |
 | unit-level | ja-verbs-3 | The example and sentence decks of ja-verbs-3 are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-2309 | ja-phone | Is 電源 (dengen) the usual word for the power switch of a phone or device, or is another word such as でんげん スイッチ more natural? | Haiku builder | 2026-11-06 |
+| ja-2311 | ja-phone | Is めいわくメール the usual word for spam email, or is スパム (supamu) more common? | Haiku builder | 2026-11-06 |
+| ja-2322 | ja-phone | Is でんわを かけます (to make a call) the natural phrase, or is でんわを します more usual in speech? | Haiku builder | 2026-11-06 |
+| ja-2334 | ja-phone | Is ビデオつうわ (bideo tsuuwa) the usual term for a video call, or is ビデオでんわ more common? | Haiku builder | 2026-11-06 |
+| unit-level | ja-phone | The example and sentence decks of ja-phone are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
