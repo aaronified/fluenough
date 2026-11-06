@@ -371,7 +371,8 @@ units:
       - { id: "what-are-you-doing", text: { "en": "Saying what you are doing right now, and where someone lives" } }
     reading_passages:
       - { id: "chat-messages", text: { "en": "A few chat messages about what each person is doing" } }
-  - planned: { id: "ja-clothes", theme: "clothes", words: 40 }
+  - decks: ["ja-clothes", "ja-clothes-sentences", "ja-reading-clothes", "*"]
+    words: 40
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
