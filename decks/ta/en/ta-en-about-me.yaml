@@ -1,0 +1,76 @@
+schema: 1
+id: "ta-en-about-me"
+kind: "layer"
+core: "ta-about-me"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me"
+description: "Six words for telling someone about yourself: name, town, here, male friend, female friend and to study. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0110":
+    native: "name"
+    notes:
+      n1: "Your name. To ask, say உங்கள் பெயர் என்ன? (uṅkaḷ peyar enna?), what is your name?"
+    examples:
+      "என் பெயர் அமுதா.":
+        native: "My name is Amutha."
+        bases: { "என்": "my; from நான் (nāṉ), I", "அமுதா": "a woman's name" }
+      "உங்கள் பெயர் என்ன?":
+        native: "What is your name?"
+        bases: { "உங்கள்": "your (polite)", "என்ன": "what" }
+  "ta-0111":
+    native: "town; village"
+    notes:
+      n1: "The place you come from."
+    examples:
+      "என் ஊர் சென்னை.":
+        native: "My town is Chennai."
+        bases: { "என்": "my; from நான் (nāṉ), I", "சென்னை": "Chennai" }
+      "உங்கள் ஊர் எது?":
+        native: "Which is your town?"
+        bases: { "உங்கள்": "your (polite)", "எது": "which" }
+  "ta-0112":
+    native: "here"
+    notes:
+      n1: "The place where you are. For 'there', use அங்கே (aṅkē)."
+    examples:
+      "இங்கே வா.":
+        native: "Come here."
+        bases: { "வா": "come" }
+      "நான் இங்கே இருக்கிறேன்.":
+        native: "I am here."
+        bases: { "நான்": "I", "இருக்கிறேன்": "am; from இரு (iru), to be" }
+  "ta-0113":
+    native: "male friend"
+    notes:
+      n1: "A male friend. A female friend is நண்பி (naṇpi)."
+    examples:
+      "அவன் என் நண்பன்.":
+        native: "He is my friend."
+        bases: { "அவன்": "he", "என்": "my; from நான் (nāṉ), I" }
+      "நண்பன் எங்கே?":
+        native: "Where is my friend?"
+        bases: { "எங்கே": "where" }
+  "ta-0114":
+    native: "female friend"
+    notes:
+      n1: "A female friend. A male friend is நண்பன் (naṇpaṉ)."
+    examples:
+      "அவள் என் நண்பி.":
+        native: "She is my friend."
+        bases: { "அவள்": "she", "என்": "my; from நான் (nāṉ), I" }
+      "நண்பி வருகிறாள்.":
+        native: "My female friend is coming."
+        bases: { "வருகிறாள்": "is coming; from வா (vā), to come" }
+  "ta-0115":
+    native: "to study"
+    notes:
+      n1: "A verb. A learner says நான் தமிழ் படிக்கிறேன் (nāṉ tamiḻ paṭikkiṟēṉ), I study Tamil."
+    examples:
+      "நான் தமிழ் படிக்கிறேன்.":
+        native: "I am studying Tamil."
+        bases: { "நான்": "I", "தமிழ்": "Tamil", "படிக்கிறேன்": "am studying; from படி (paṭi), to study" }
+      "அவர் ஆங்கிலம் படிக்கிறார்.":
+        native: "He studies English."
+        bases: { "அவர்": "he or she (polite)", "ஆங்கிலம்": "English", "படிக்கிறார்": "studies; from படி (paṭi), to study" }

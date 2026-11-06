@@ -139,7 +139,8 @@ units:
       - { id: "family-photo", text: { "en": "Someone names the people in a family photo" } }
     reading_passages:
       - { id: "family-tree", text: { "en": "A family tree with its labels" } }
-  - planned: { id: "ta-numbers-1-20", theme: "numbers-1-20", words: 20 }
+  - decks: ["ta-numbers-1-20", "ta-numbers-sentences", "*"]
+    words: 20
     listening_passages:
       - { id: "phone-number", text: { "en": "Someone reads out a phone number" } }
     reading_passages:
@@ -159,7 +160,8 @@ units:
       - { id: "name-boards", text: { "en": "Name boards with borrowed sounds and dead consonants" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "ta-about-me", theme: "about-me", words: 7 }
+  - decks: ["ta-about-me", "ta-about-me-sentences", "*"]
+    words: 7
     listening_passages:
       - { id: "introducing-myself", text: { "en": "Someone says their name, home town and work" } }
     reading_passages:
