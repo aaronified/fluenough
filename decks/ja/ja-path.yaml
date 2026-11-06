@@ -602,7 +602,8 @@ units:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains" } }
     reading_passages:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
-  - planned: { id: "ja-news", theme: "news", words: 55 }
+  - decks: ["ja-news", "ja-news-sentences", "ja-reading-news", "*"]
+    words: 55
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:

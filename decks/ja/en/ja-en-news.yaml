@@ -1,0 +1,866 @@
+"schema": !!int "1"
+"id": "ja-en-news"
+"kind": "layer"
+"core": "ja-news"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "News"
+"description": "News: 55 words for papers, reporters, broadcasts, the events they report, elections, the economy, crime and the news media. Not yet checked by a Japanese speaker: please report any mistake."
+"license": "CC-BY-SA-4.0"
+"tags":
+- "beginner"
+- "unreviewed"
+"cards":
+  "ja-2833":
+    "native": "news"
+    "notes":
+      "n1": "nyuusu is news, a report of something that has just happened. It is written in katakana as ニュース (nyuusu)."
+    "examples":
+      "ニュースをみました。":
+        "native": "I watched the news."
+        "bases":
+          "みました":
+            "meaning": "see; to look at; to watch (polite past)"
+      "そのニュースはほんとうです。":
+        "native": "That news is true."
+        "bases":
+          "ほんとう":
+            "meaning": "true; real"
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2834":
+    "native": "article"
+    "notes":
+      "n1": "kiji is an article, a piece of writing in a newspaper or magazine. It is written 記事 (kiji)."
+    "examples":
+      "しんぶんのきじをよみました。":
+        "native": "I read a newspaper article."
+        "bases":
+          "よみました":
+            "meaning": "read (polite past)"
+      "このきじはおもしろいです。":
+        "native": "This article is interesting."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2835":
+    "native": "news report"
+    "notes":
+      "n1": "houdou is a news report, the reporting of events to the public. It is written 報道 (houdou)."
+    "examples":
+      "ほうどうをみました。":
+        "native": "I watched the news report."
+        "bases":
+          "みました":
+            "meaning": "see; to look at; to watch (polite past)"
+      "ほうどうははやいです。":
+        "native": "The news report is fast."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2836":
+    "native": "news gathering"
+    "notes":
+      "n1": "shuzai is news gathering, going out to collect the facts for a story. It is written 取材 (shuzai)."
+    "examples":
+      "しゅざいにいきました。":
+        "native": "I went out to gather the news."
+        "bases":
+          "いきました":
+            "meaning": "went (polite)"
+      "しゅざいはたいへんです。":
+        "native": "News gathering is hard work."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2837":
+    "native": "reporter"
+    "notes":
+      "n1": "kisha is a reporter who writes or broadcasts the news. It is written 記者 (kisha)."
+    "examples":
+      "きしゃがはなしました。":
+        "native": "The reporter spoke."
+        "bases":
+          "はなしました":
+            "meaning": "speak; to talk (polite past)"
+      "わたしはきしゃです。":
+        "native": "I am a reporter."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2838":
+    "native": "broadcast"
+    "notes":
+      "n1": "housou is a broadcast, a programme sent out on radio or television. It is written 放送 (housou)."
+    "examples":
+      "ほうそうをみました。":
+        "native": "I watched the broadcast."
+        "bases":
+          "みました":
+            "meaning": "see; to look at; to watch (polite past)"
+      "ほうそうはよるにあります。":
+        "native": "The broadcast is in the evening."
+        "bases":
+          "あります":
+            "meaning": "there is (polite)"
+  "ja-2839":
+    "native": "programme"
+    "notes":
+      "n1": "bangumi is a programme on radio or television. It is written 番組 (bangumi)."
+    "examples":
+      "すきなばんぐみです。":
+        "native": "It is a programme I like."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "このばんぐみをみてください。":
+        "native": "Please watch this programme."
+        "bases":
+          "みて":
+            "meaning": "see; to look at; to watch (te-form)"
+          "ください":
+            "meaning": "(please give)"
+  "ja-2840":
+    "native": "weather forecast"
+    "notes":
+      "n1": "tenkiyohou is the weather forecast. It is written 天気予報 (tenkiyohou)."
+    "examples":
+      "てんきよほうをききました。":
+        "native": "I listened to the weather forecast."
+        "bases":
+          "ききました":
+            "meaning": "listen; to hear; to ask (polite past)"
+      "てんきよほうはあたっていました。":
+        "native": "The weather forecast was right."
+        "bases":
+          "あたって":
+            "meaning": "hit; to be correct (te-form)"
+          "いました":
+            "meaning": "was (polite)"
+  "ja-2841":
+    "native": "forecast"
+    "notes":
+      "n1": "yohou is a forecast, a prediction of what will happen. It is written 予報 (yohou)."
+    "examples":
+      "よほうはあたりました。":
+        "native": "The forecast was right."
+        "bases":
+          "あたりました":
+            "meaning": "hit; to be correct (polite past)"
+      "てんきのよほうをみます。":
+        "native": "I look at the weather forecast."
+        "bases":
+          "みます":
+            "meaning": "look at (polite)"
+  "ja-2842":
+    "native": "broadcasting station"
+    "notes":
+      "n1": "housoukyoku is a broadcasting station, the company that makes radio or television. It is written 放送局 (housoukyoku)."
+    "examples":
+      "ほうそうきょくではたらいています。":
+        "native": "I work at a broadcasting station."
+        "bases":
+          "はたらいて":
+            "meaning": "work (te-form)"
+          "います":
+            "meaning": "there is (polite)"
+      "ほうそうきょくにでんわします。":
+        "native": "I phone the broadcasting station."
+        "bases":
+          "します":
+            "meaning": "do (polite)"
+  "ja-2843":
+    "native": "information"
+    "notes":
+      "n1": "jouhou is information, facts and data. It is written 情報 (jouhou)."
+    "examples":
+      "じょうほうをください。":
+        "native": "Please give me the information."
+        "bases":
+          "ください":
+            "meaning": "(please give)"
+      "じょうほうがおおいです。":
+        "native": "There is a lot of information."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2844":
+    "native": "announcement"
+    "notes":
+      "n1": "happyou is an announcement, the public statement of a fact. It is written 発表 (happyou)."
+    "examples":
+      "はっぴょうをしました。":
+        "native": "They made an announcement."
+        "bases":
+          "しました":
+            "meaning": "did (polite)"
+      "はっぴょうはあしたです。":
+        "native": "The announcement is tomorrow."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2845":
+    "native": "occurrence; outbreak"
+    "notes":
+      "n1": "hassei is the occurrence or outbreak of something bad, such as a fire. It is written 発生 (hassei)."
+    "examples":
+      "じしんのはっせいでした。":
+        "native": "It was the outbreak of an earthquake."
+        "bases":
+          "でした":
+            "meaning": "was (polite)"
+      "でんわがはっせいしました。":
+        "native": "A call came up."
+        "bases":
+          "しました":
+            "meaning": "did (polite)"
+  "ja-2846":
+    "native": "incident; case"
+    "notes":
+      "n1": "jiken is an incident or a case, something that happened and needs attention. It is written 事件 (jiken)."
+    "examples":
+      "じけんがおきました。":
+        "native": "An incident happened."
+        "bases":
+          "おきました":
+            "meaning": "get up; to wake up (polite past)"
+      "じけんのはんにんをさがします。":
+        "native": "I look for the criminal in the case."
+        "bases":
+          "さがします":
+            "meaning": "look for; to search (polite)"
+  "ja-2847":
+    "native": "disaster"
+    "notes":
+      "n1": "saigai is a disaster, a natural or man-made event that causes great harm. It is written 災害 (saigai)."
+    "examples":
+      "さいがいがおきました。":
+        "native": "A disaster happened."
+        "bases":
+          "おきました":
+            "meaning": "get up; to wake up (polite past)"
+      "さいがいはこわいです。":
+        "native": "Disasters are frightening."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2848":
+    "native": "earthquake"
+    "notes":
+      "n1": "jishin is an earthquake, the shaking of the ground. It is written 地震 (jishin)."
+    "examples":
+      "じしんがきました。":
+        "native": "An earthquake came."
+        "bases":
+          "きました":
+            "meaning": "came (polite)"
+      "じしんはこわいです。":
+        "native": "Earthquakes are frightening."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2849":
+    "native": "tsunami"
+    "notes":
+      "n1": "tsunami is a tsunami, a large wave after an earthquake under the sea. It is written 津波 (tsunami)."
+    "examples":
+      "つなみがきました。":
+        "native": "A tsunami came."
+        "bases":
+          "きました":
+            "meaning": "came (polite)"
+      "つなみははやいです。":
+        "native": "A tsunami is fast."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2850":
+    "native": "flood"
+    "notes":
+      "n1": "kouzui is a flood, when water covers the land after heavy rain. It is written 洪水 (kouzui)."
+    "examples":
+      "こうずいがおきました。":
+        "native": "A flood happened."
+        "bases":
+          "おきました":
+            "meaning": "get up; to wake up (polite past)"
+      "かわのこうずいはたいへんです。":
+        "native": "The river flood is serious."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2851":
+    "native": "war"
+    "notes":
+      "n1": "sensou is war, fighting between countries. It is written 戦争 (sensou)."
+    "examples":
+      "せんそうはかなしいです。":
+        "native": "War is sad."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "せんそうがおわりました。":
+        "native": "The war ended."
+        "bases":
+          "おわりました":
+            "meaning": "finished (polite)"
+  "ja-2852":
+    "native": "peace"
+    "notes":
+      "n1": "heiwa is peace, the state without war. It is written 平和 (heiwa)."
+    "examples":
+      "へいわがいちばんです。":
+        "native": "Peace is the most important."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "へいわをまもります。":
+        "native": "I protect peace."
+        "bases":
+          "まもります":
+            "meaning": "protect; to keep (polite)"
+  "ja-2853":
+    "native": "election"
+    "notes":
+      "n1": "senkyo is an election, the choosing of people by vote. It is written 選挙 (senkyo)."
+    "examples":
+      "せんきょにいきました。":
+        "native": "I went to the election."
+        "bases":
+          "いきました":
+            "meaning": "went (polite)"
+      "せんきょはらいねんです。":
+        "native": "The election is next year."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2854":
+    "native": "vote"
+    "notes":
+      "n1": "touhyou is a vote, a choice marked on a paper or a screen. It is written 投票 (touhyou)."
+    "examples":
+      "とうひょうをします。":
+        "native": "I vote."
+        "bases":
+          "します":
+            "meaning": "do (polite)"
+      "とうひょうにいきました。":
+        "native": "I went to vote."
+        "bases":
+          "いきました":
+            "meaning": "went (polite)"
+  "ja-2855":
+    "native": "bill (legislation)"
+    "notes":
+      "n1": "houan is a bill, a law that is proposed but not yet passed. It is written 法案 (houan)."
+    "examples":
+      "ほうあんがとおりました。":
+        "native": "The bill was passed."
+        "bases":
+          "とおりました":
+            "meaning": "pass through (polite past)"
+      "ほうあんをよみます。":
+        "native": "I read the bill."
+        "bases":
+          "よみます":
+            "meaning": "read (polite)"
+  "ja-2856":
+    "native": "economy"
+    "notes":
+      "n1": "keizai is the economy, the making, buying and selling of goods and money. It is written 経済 (keizai)."
+    "examples":
+      "けいざいはたいせつです。":
+        "native": "The economy is important."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "けいざいのニュースをみます。":
+        "native": "I watch the economic news."
+        "bases":
+          "みます":
+            "meaning": "look at (polite)"
+  "ja-2857":
+    "native": "recession"
+    "notes":
+      "n1": "fukeiki is a recession, a time when business is bad. It is written 不景気 (fukeiki)."
+    "examples":
+      "ふけいきになりました。":
+        "native": "There was a recession."
+        "bases":
+          "なりました":
+            "meaning": "became (polite)"
+      "ふけいきがこわいです。":
+        "native": "The recession is frightening."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2858":
+    "native": "business conditions"
+    "notes":
+      "n1": "keiki is business conditions, how well the economy is doing. It is written 景気 (keiki)."
+    "examples":
+      "けいきがいいです。":
+        "native": "Business conditions are good."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "けいきのはなしをきいてください。":
+        "native": "Please listen to the talk about business conditions."
+        "bases":
+          "はなし":
+            "meaning": "talk"
+          "きいて":
+            "meaning": "listen; to hear; to ask (te-form)"
+          "ください":
+            "meaning": "(please give)"
+  "ja-2859":
+    "native": "price rise"
+    "notes":
+      "n1": "neagari is a rise in price. It is written 値上がり (neagari)."
+    "examples":
+      "ねあがりがたいへんです。":
+        "native": "The price rise is serious."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "ねあがりにこまります。":
+        "native": "I am troubled by the price rise."
+        "bases":
+          "こまります":
+            "meaning": "be in trouble (polite)"
+  "ja-2860":
+    "native": "price fall"
+    "notes":
+      "n1": "nesagari is a fall in price. It is written 値下がり (nesagari)."
+    "examples":
+      "ねさがりはうれしいです。":
+        "native": "The price fall is pleasing."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "ねさがりのニュースをみました。":
+        "native": "I watched the news of the price fall."
+        "bases":
+          "みました":
+            "meaning": "see; to look at; to watch (polite past)"
+  "ja-2861":
+    "native": "raising prices"
+    "notes":
+      "n1": "neage is raising prices, the act of making a price higher. It is written 値上げ (neage)."
+    "examples":
+      "ねあげをしました。":
+        "native": "They raised their prices."
+        "bases":
+          "しました":
+            "meaning": "did (polite)"
+      "ねあげはたいへんです。":
+        "native": "Raising prices is serious."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2862":
+    "native": "prime minister"
+    "notes":
+      "n1": "shushou is the prime minister, the head of a government. It is written 首相 (shushou)."
+    "examples":
+      "しゅしょうがはなしました。":
+        "native": "The prime minister spoke."
+        "bases":
+          "はなしました":
+            "meaning": "speak; to talk (polite past)"
+      "しゅしょうはあしたいきます。":
+        "native": "The prime minister goes tomorrow."
+        "bases":
+          "いきます":
+            "meaning": "go (polite)"
+  "ja-2863":
+    "native": "president"
+    "notes":
+      "n1": "daitouryou is a president, the head of a country. It is written 大統領 (daitouryou)."
+    "examples":
+      "だいとうりょうにあいました。":
+        "native": "I met the president."
+        "bases":
+          "あいました":
+            "meaning": "met (polite)"
+      "わたしはだいとうりょうをしっています。":
+        "native": "I know the president."
+        "bases":
+          "しって":
+            "meaning": "know (a fact) (te-form)"
+          "います":
+            "meaning": "there is (polite)"
+  "ja-2864":
+    "native": "politics"
+    "notes":
+      "n1": "seiji is politics, the work of government and public life. It is written 政治 (seiji)."
+    "examples":
+      "せいじにきょうみがあります。":
+        "native": "I am interested in politics."
+        "bases":
+          "あります":
+            "meaning": "there is (polite)"
+      "せいじのはなしはむずかしいです。":
+        "native": "Talk about politics is difficult."
+        "bases":
+          "はなし":
+            "meaning": "talk"
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2865":
+    "native": "politician"
+    "notes":
+      "n1": "seijika is a politician, a person who works in politics. It is written 政治家 (seijika)."
+    "examples":
+      "せいじかになりました。":
+        "native": "He became a politician."
+        "bases":
+          "なりました":
+            "meaning": "became (polite)"
+      "せいじかがかいけんをしました。":
+        "native": "The politician held a press conference."
+        "bases":
+          "しました":
+            "meaning": "did (polite)"
+  "ja-2866":
+    "native": "press conference"
+    "notes":
+      "n1": "kaiken is a press conference, a meeting where a person answers reporters' questions. It is written 会見 (kaiken)."
+    "examples":
+      "かいけんをひらきます。":
+        "native": "I hold a press conference."
+        "bases":
+          "ひらきます":
+            "meaning": "open; to hold (an event) (polite)"
+      "かいけんにいきました。":
+        "native": "I went to the press conference."
+        "bases":
+          "いきました":
+            "meaning": "went (polite)"
+  "ja-2867":
+    "native": "member of parliament"
+    "notes":
+      "n1": "giin is a member of parliament, a person elected to make laws. It is written 議員 (giin)."
+    "examples":
+      "ぎいんがはなしました。":
+        "native": "The member of parliament spoke."
+        "bases":
+          "はなしました":
+            "meaning": "speak; to talk (polite past)"
+      "わたしはぎいんにてがみをかきました。":
+        "native": "I wrote a letter to a member of parliament."
+        "bases":
+          "かきました":
+            "meaning": "wrote (polite)"
+  "ja-2868":
+    "native": "criminal"
+    "notes":
+      "n1": "hannin is a criminal, the person who did a crime. It is written 犯人 (hannin)."
+    "examples":
+      "はんにんをさがします。":
+        "native": "I look for the criminal."
+        "bases":
+          "さがします":
+            "meaning": "look for; to search (polite)"
+      "はんにんはだれですか。":
+        "native": "Who is the criminal?"
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2869":
+    "native": "robbery; robber"
+    "notes":
+      "n1": "goutou is a robbery, or the robber who steals by force. It is written 強盗 (goutou)."
+    "examples":
+      "ごうとうがはいりました。":
+        "native": "A robber broke in."
+        "bases":
+          "はいりました":
+            "meaning": "got in, entered (polite)"
+      "ごうとうはこわいです。":
+        "native": "Robbers are frightening."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2870":
+    "native": "thief"
+    "notes":
+      "n1": "dorobou is a thief, a person who steals in secret. It is written 泥棒 (dorobou)."
+    "examples":
+      "どろぼうがきました。":
+        "native": "A thief came."
+        "bases":
+          "きました":
+            "meaning": "came (polite)"
+      "どろぼうをみました。":
+        "native": "I saw a thief."
+        "bases":
+          "みました":
+            "meaning": "see; to look at; to watch (polite past)"
+  "ja-2871":
+    "native": "murder"
+    "notes":
+      "n1": "satsujin is murder, the crime of killing a person. It is written 殺人 (satsujin)."
+    "examples":
+      "さつじんはひどいです。":
+        "native": "Murder is terrible."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "さつじんのじけんです。":
+        "native": "It is a murder case."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2872":
+    "native": "protection"
+    "notes":
+      "n1": "hogo is protection, keeping someone or something safe. It is written 保護 (hogo)."
+    "examples":
+      "どうぶつのほごをします。":
+        "native": "We protect animals."
+        "bases":
+          "どうぶつ":
+            "meaning": "animal"
+          "します":
+            "meaning": "do (polite)"
+      "ほごがひつようです。":
+        "native": "Protection is needed."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2873":
+    "native": "damage; harm"
+    "notes":
+      "n1": "higai is damage or harm caused by an event. It is written 被害 (higai)."
+    "examples":
+      "ひがいがおおきいです。":
+        "native": "The damage is great."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "ひがいをうけました。":
+        "native": "I suffered damage."
+        "bases":
+          "うけました":
+            "meaning": "received (polite)"
+  "ja-2874":
+    "native": "victim"
+    "notes":
+      "n1": "higaisha is a victim, a person who suffers harm. It is written 被害者 (higaisha)."
+    "examples":
+      "ひがいしゃのかぞくがなきました。":
+        "native": "The victim's family wept."
+        "bases":
+          "なきました":
+            "meaning": "cried (polite)"
+      "ひがいしゃをたすけます。":
+        "native": "I help the victim."
+        "bases":
+          "たすけます":
+            "meaning": "help; to save (polite)"
+  "ja-2875":
+    "native": "interview"
+    "notes":
+      "n1": "intabyuu is an interview, questions put to a person by a reporter. It is written in katakana as インタビュー (intabyuu)."
+    "examples":
+      "インタビューをうけます。":
+        "native": "I give an interview."
+        "bases":
+          "うけます":
+            "meaning": "receive, take (polite)"
+      "インタビューのばんぐみをみました。":
+        "native": "I watched an interview programme."
+        "bases":
+          "みました":
+            "meaning": "see; to look at; to watch (polite past)"
+  "ja-2876":
+    "native": "to tell; to narrate"
+    "notes":
+      "n1": "kataru means to tell or to narrate a story. It is written 語る (kataru), and is a godan verb."
+    "examples":
+      "かれはじけんをかたりました。":
+        "native": "He told the story of the incident."
+        "bases":
+          "かたりました":
+            "meaning": "tell; to narrate (polite past)"
+      "わたしはけいけんをかたります。":
+        "native": "I tell about my experience."
+        "bases":
+          "かたります":
+            "meaning": "tell; to narrate (polite)"
+  "ja-2877":
+    "native": "to spread"
+    "notes":
+      "n1": "hiromaru means to spread, to become known widely. It is written 広まる (hiromaru), and is a godan verb."
+    "examples":
+      "うわさがひろまりました。":
+        "native": "The rumour spread."
+        "bases":
+          "ひろまりました":
+            "meaning": "spread (polite past)"
+      "ニュースがひろまっています。":
+        "native": "The news is spreading."
+        "bases":
+          "ひろまって":
+            "meaning": "spread (te-form)"
+          "います":
+            "meaning": "there is (polite)"
+  "ja-2878":
+    "native": "rumour"
+    "notes":
+      "n1": "uwasa is a rumour, a story that people pass on without proof. It is written 噂 (uwasa)."
+    "examples":
+      "うわさはほんとうですか。":
+        "native": "Is the rumour true?"
+        "bases":
+          "ほんとう":
+            "meaning": "true; real"
+          "ですか":
+            "meaning": "is (question)"
+      "うわさをきいてびっくりしました。":
+        "native": "I was startled to hear the rumour."
+        "bases":
+          "きいて":
+            "meaning": "listen; to hear; to ask (te-form)"
+          "しました":
+            "meaning": "did (polite)"
+  "ja-2879":
+    "native": "weekly magazine"
+    "notes":
+      "n1": "shuukanshi is a weekly magazine, one that comes out every week. It is written 週刊誌 (shuukanshi)."
+    "examples":
+      "しゅうかんしをよみます。":
+        "native": "I read a weekly magazine."
+        "bases":
+          "よみます":
+            "meaning": "read (polite)"
+      "しゅうかんしはまいしゅうでます。":
+        "native": "The weekly magazine comes out every week."
+        "bases":
+          "でます":
+            "meaning": "leave, set off (polite)"
+  "ja-2880":
+    "native": "newspaper company"
+    "notes":
+      "n1": "shinbunsha is a newspaper company, the business that prints a paper. It is written 新聞社 (shinbunsha)."
+    "examples":
+      "しんぶんしゃではたらきます。":
+        "native": "I work at a newspaper company."
+        "bases":
+          "はたらきます":
+            "meaning": "work (polite)"
+      "しんぶんしゃにでんわします。":
+        "native": "I phone the newspaper company."
+        "bases":
+          "します":
+            "meaning": "do (polite)"
+  "ja-2881":
+    "native": "publication (in print)"
+    "notes":
+      "n1": "keisai is publication, the printing of an article in a paper. It is written 掲載 (keisai)."
+    "examples":
+      "きじのけいさいです。":
+        "native": "It is the publication of an article."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "けいさいはらいしゅうです。":
+        "native": "The publication is next week."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2882":
+    "native": "publishing; issue"
+    "notes":
+      "n1": "hakkou is publishing, the printing and selling of a paper or a book. It is written 発行 (hakkou)."
+    "examples":
+      "しんぶんのはっこうはまいにちです。":
+        "native": "The paper is published every day."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "ざっしをはっこうします。":
+        "native": "We publish a magazine."
+        "bases":
+          "します":
+            "meaning": "do (polite)"
+  "ja-2883":
+    "native": "subscription (to a paper)"
+    "notes":
+      "n1": "koudoku is a subscription to a paper, paying to receive it regularly. It is written 購読 (koudoku)."
+    "examples":
+      "しんぶんをこうどくします。":
+        "native": "I subscribe to a newspaper."
+        "bases":
+          "します":
+            "meaning": "do (polite)"
+      "こうどくはいくらですか。":
+        "native": "How much is the subscription?"
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2884":
+    "native": "forcible action"
+    "notes":
+      "n1": "kyoukou is a forcible action, something done by force against others' wishes. It is written 強行 (kyoukou)."
+    "examples":
+      "きょうこうなほうあんです。":
+        "native": "It is a bill passed by force."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"
+      "きょうこうはだめです。":
+        "native": "Forcible action is not allowed."
+        "bases":
+          "だめ":
+            "meaning": "no good; not allowed"
+          "です":
+            "meaning": "(to be, polite)"
+  "ja-2885":
+    "native": "investigation; survey"
+    "notes":
+      "n1": "chousa is an investigation or a survey, a careful study of a matter. It is written 調査 (chousa)."
+    "examples":
+      "ちょうさをしました。":
+        "native": "They carried out an investigation."
+        "bases":
+          "しました":
+            "meaning": "did (polite)"
+      "ちょうさはいつおわりますか。":
+        "native": "When will the survey finish?"
+        "bases":
+          "おわります":
+            "meaning": "end; to finish (polite)"
+  "ja-2886":
+    "native": "front page"
+    "notes":
+      "n1": "ichimen is the front page of a newspaper. It is written 一面 (ichimen)."
+    "examples":
+      "いちめんにニュースがのりました。":
+        "native": "The news was on the front page."
+        "bases":
+          "のりました":
+            "meaning": "ride; to board (polite past)"
+      "いちめんをよみました。":
+        "native": "I read the front page."
+        "bases":
+          "よみました":
+            "meaning": "read (polite past)"
+  "ja-2887":
+    "native": "editorial"
+    "notes":
+      "n1": "shasetsu is an editorial, the opinion piece of a newspaper. It is written 社説 (shasetsu)."
+    "examples":
+      "しゃせつをよみました。":
+        "native": "I read the editorial."
+        "bases":
+          "よみました":
+            "meaning": "read (polite past)"
+      "しゃせつはむずかしいです。":
+        "native": "The editorial is difficult."
+        "bases":
+          "です":
+            "meaning": "(to be, polite)"

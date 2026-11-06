@@ -169,3 +169,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2801 | ja-feelings | Is こらえる (to hold back, endure) the natural word for holding back tears, as in なみだを こらえる? | Haiku builder | 2026-11-06 |
 | ja-2809 | ja-feelings | Is ゆかい (pleasant, merry) the natural everyday word, or is たのしい used for the same sense? | Haiku builder | 2026-11-06 |
 | unit-level | ja-feelings | The example and sentence decks of ja-feelings are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-2845 | ja-news | Is はっせい (outbreak, occurrence) the natural word for the start of a fire or an illness in news, or is おきる used instead? | Haiku builder | 2026-11-06 |
+| ja-2855 | ja-news | Is ほうあん (a bill, a proposed law) the natural word in news at B1, or is ほうりつ (a law that has been passed) more common? | Haiku builder | 2026-11-06 |
+| ja-2881 | ja-news | Is けいさい (publication in print) an everyday word a learner needs, or is のる (to be printed in a paper) the word used instead? | Haiku builder | 2026-11-06 |
+| ja-2882 | ja-news | はっこう (publishing) is also written 発光 for light emission, with the same reading: should a homograph note say so? | Haiku builder | 2026-11-06 |
+| ja-2884 | ja-news | Is きょうこう (forcible action) a word a news reader would meet at B1, or should it wait for a later unit? | Haiku builder | 2026-11-06 |
+| ja-2886 | ja-news | いちめん also means all over, as in いちめんの ゆき (snow all over): should a homograph note say so beside 一面 (front page)? | Haiku builder | 2026-11-06 |
+| unit-level | ja-news | The example and sentence decks of ja-news are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
