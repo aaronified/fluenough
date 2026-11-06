@@ -316,6 +316,7 @@ A plan with no tracking issue is flagged.
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
 - [decks in a branch of their own](https://github.com/aaronified/fluenough/wiki/Plan-Decks-Branch), **no tracking issue**
 - [explain the mistake on a wrong grammar answer](https://github.com/aaronified/fluenough/wiki/Plan-Explain-Mistakes) (Written 2026-10-05), tracks #225
+- [a recent fit for FSRS, with the window chosen from the learner's own reviews](https://github.com/aaronified/fluenough/wiki/Plan-Fsrs-Recent-Fit), **no tracking issue**
 - [handwriting the script, stroke by stroke](https://github.com/aaronified/fluenough/wiki/Plan-Handwriting) (Written 2026-10-05), tracks #226
 - [haptic feedback, one vocabulary for the whole app](https://github.com/aaronified/fluenough/wiki/Plan-Haptics) (Written 2026-11-02), **no tracking issue**
 - [import any text, and make cards from its words](https://github.com/aaronified/fluenough/wiki/Plan-Import-Text) (Written 2026-10-05), tracks #220
