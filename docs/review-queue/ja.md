@@ -195,3 +195,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-3915 | emergencies | Is にがす (to let escape) right with its two senses, a bird let go and a thief let escape, or should the second be split? | Haiku builder | 2026-11-06 |
 | ja-3963 | law | Is きんじる (to forbid) right as a verb card, or does the course use きんし and the 'not allowed' phrasing instead? | Haiku builder | 2026-11-06 |
 | ja-4004 | onomatopoeia | Is ぺこぺこ (very hungry) right as a plain sentence card, or should the everyday word はらぺこ be taught instead? | Haiku builder | 2026-11-06 |
+| ja-4049 | verbs4 | Is おさめる (govern, pay, store) right as one card with its three senses, or should each sense be a card of its own? | Haiku builder | 2026-11-06 |
