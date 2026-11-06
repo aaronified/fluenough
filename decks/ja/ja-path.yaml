@@ -746,7 +746,8 @@ units:
       - { id: "summer-festival", text: { "en": "Neighbours plan a summer festival together" } }
     reading_passages:
       - { id: "festival-poster", text: { "en": "A poster for a summer festival" } }
-  - planned: { id: "ja-weddings", theme: "weddings", words: 40 }
+  - decks: ["ja-weddings", "ja-weddings-sentences", "ja-reading-weddings", "*"]
+    words: 40
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
