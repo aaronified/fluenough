@@ -538,14 +538,104 @@ class BankedBuilder implements QuestionSource {
   );
 }
 
-/// A question's answer in an answer table (question id to a pick index or
-/// text) judged right or wrong.
+/// A question's answer in an answer table judged right or wrong: a pick
+/// index, an option's text (for a pick) or a typed or built text, or a
+/// boolean (right or wrong as the persona's answer was scored).
 bool judgeAnswer(GeneratedQuestion q, Object? answer) {
   if (answer == null) return false;
+  if (answer is bool) return answer;
   if (answer is int) return q.isRightPick(answer);
   if (answer is String) {
     final norm = answer.trim().toLowerCase();
+    if (q.mode == PlacementAnswerMode.pick) {
+      final right = q.correctIndex;
+      return right != null &&
+          right >= 0 &&
+          right < q.options.length &&
+          q.options[right].trim().toLowerCase() == norm;
+    }
     return q.accepted.any((a) => a.trim().toLowerCase() == norm);
   }
   return false;
+}
+
+T _named<T extends Enum>(List<T> values, Object? name) =>
+    values.firstWhere((v) => v.name == name);
+
+/// The bank written by `tool/placement_bank.dart`, read back from its two
+/// JSON files ([questions] of the public file, [keys] of the key file), as
+/// questions a run can be asked.
+QuestionBank bankFromJson(
+  List<Object?> questions,
+  Map<String, Object?> keys, {
+  required String language,
+}) {
+  final entries = <BankEntry>[];
+  for (final raw in questions) {
+    final pub = raw! as Map<String, Object?>;
+    final id = pub['id']! as String;
+    final key = keys[id] as Map<String, Object?>?;
+    if (key == null) continue;
+    final variant = PlacementVariant.values.firstWhere(
+      (v) => v.label == key['type'],
+    );
+    final skills = <PlacementSkill>[
+      for (final name in key['skills']! as List<Object?>)
+        _named(PlacementSkill.values, name),
+    ];
+    final request = PlacementQuestionRequest(
+      number: 1,
+      role: _named(PlacementQuestionRole.values, key['role']),
+      topic: _named(PlacementTopic.values, key['topic']),
+      variant: variant,
+      kind: _named(PlacementQuestionKind.values, key['kind']),
+      skills: skills,
+      deck: key['deck']! as int,
+      percentile: 0,
+      shortlistPick: 0,
+    );
+    final heard = pub['heardText'] as String?;
+    final question = GeneratedQuestion(
+      request: request,
+      prompt: _named(PlacementPromptKind.values, pub['promptKind']),
+      mode: _named(PlacementAnswerMode.values, key['mode']),
+      difficulty: ItemDifficulty(
+        deck: key['deck']! as int,
+        depth: 0,
+        form: 0,
+        closeness: 0,
+        score: (key['score']! as num).toDouble(),
+        level: key['level']! as int,
+      ),
+      itemIds: <String>{
+        for (final i in key['itemIds']! as List<Object?>) i! as String,
+      },
+      promptText: pub['prompt'] as String?,
+      promptReading: pub['reading'] as String?,
+      audio: heard == null
+          ? null
+          : PlacementAudio(text: heard, language: language),
+      options: <String>[for (final o in pub['options']! as List<Object?>) '$o'],
+      correctIndex: key['correctIndex'] as int?,
+      accepted: <String>[
+        for (final a in key['accepted']! as List<Object?>) '$a',
+      ],
+      tiles: <String>[for (final t in pub['tiles']! as List<Object?>) '$t'],
+      joiner: pub['joiner'] as String? ?? ' ',
+      cardId: key['cardId'] as String?,
+      concept: key['concept'] as String?,
+      optionsAreAudio: pub['optionsAreAudio'] as bool? ?? false,
+      meaningHint: pub['meaningHint'] as String?,
+      bankId: id,
+    );
+    entries.add(
+      BankEntry(
+        id: id,
+        question: question,
+        signature: key['signature']! as String,
+        origin: key['origin'] as String?,
+      ),
+    );
+  }
+  return QuestionBank(entries);
 }
