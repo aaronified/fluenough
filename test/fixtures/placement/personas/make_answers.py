@@ -65,10 +65,11 @@ def shared_letters(a, b):
     return sum((ca & cb).values())
 
 class Persona:
-    def __init__(self, name, known, guess_mode):
+    def __init__(self, name, known, guess_mode, cognate=True):
         self.name = name
         self.known = set(known)
         self.guess_mode = guess_mode  # "random" or "combined"
+        self.cognate = cognate  # P6 cognate votes on written prompts
 
     def known_all(self, tk):
         return bool(tk) and all(t in self.known for t in tk)
@@ -103,14 +104,14 @@ class Persona:
             return rng.randrange(n)
         votes = collections.defaultdict(float)
         text_ok = q["promptKind"] in ("writtenWord", "writtenSentence", "blankSentence")
-        if tgt is not None and text_ok:
+        if tgt is not None and text_ok and self.cognate:
             ts = norm(tgt)
             sims = [sim(ts, norm(o)) for o in opts]
             top = max(sims)
             win = [i for i, s in enumerate(sims) if s == top]
             for i in win:
                 votes[i] += 1 / len(win)
-            if any(o.lower() == o.lower() and re.search(r"[a-z]", o.lower()) for o in opts):
+            if self.cognate and any(re.search(r"[a-z]", o.lower()) for o in opts):
                 cog = [shared_letters(strip_art(o), ts) for o in opts]
                 top = max(cog)
                 win = [i for i, s in enumerate(cog) if s == top]
@@ -149,6 +150,7 @@ class Persona:
 
 AMATEUR_LEX = Persona("es-amateur-lexodle", amateur_lex, "combined")
 AMATEUR_WIK = Persona("es-amateur-wiktionary", amateur_wik, "combined")
+AMATEUR_LEX_NOCOG = Persona("es-amateur-lexodle-nocognate", amateur_lex, "combined", cognate=False)
 BEGINNER = Persona("es-beginner", beginner, "random")
 
 def expert_answers(name, draw, slip_rare, rare_unit, slip_common=0.0):
@@ -236,6 +238,7 @@ if __name__ == "__main__":
         ("native", None),
         ("amateur-lexodle", AMATEUR_LEX),
         ("amateur-wiktionary", AMATEUR_WIK),
+        ("amateur-lexodle-nocognate", AMATEUR_LEX_NOCOG),
         ("beginner", BEGINNER),
     ]
     for label, p in plans:
