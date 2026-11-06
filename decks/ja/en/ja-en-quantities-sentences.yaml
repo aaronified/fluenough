@@ -1,0 +1,78 @@
+schema: 1
+id: "ja-en-quantities-sentences"
+kind: "layer"
+core: "ja-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Quantities in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0450":
+    native: "There are many apples."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "おおきい (ookii) means big, not many."
+      w2:
+        why: "すくない (sukunai) means few, the opposite."
+  "ja-0451":
+    native: "Milk is cheap."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "たかい (takai) means expensive, the opposite."
+      w2:
+        why: "ちいさい (chiisai) means small, not cheap."
+  "ja-0452":
+    native: "I have little money."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "おおい (ooi) means many, the opposite."
+      w2:
+        why: "いくら (ikura) asks how much, not how little."
+  "ja-0453":
+    native: "I eat half an apple."
+    bases:
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "ぜんぶ (zenbu) means all, not half."
+      w2:
+        why: "ふたり (futari) means two people."
+  "ja-0454":
+    native: "The price is high."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "やすい (yasui) means cheap, the opposite."
+      w2:
+        why: "いくら (ikura) asks how much."
+  "ja-0455":
+    native: "I understand everything."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+    confusables:
+      w1:
+        why: "ほとんど (hotondo) means almost, not all."
+      w2:
+        why: "すこし (sukoshi) means a little."

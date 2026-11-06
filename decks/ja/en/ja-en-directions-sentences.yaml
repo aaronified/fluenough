@@ -1,0 +1,43 @@
+schema: 1
+id: "ja-en-directions-sentences"
+kind: "layer"
+core: "ja-directions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions in sentences"
+description: "Sentences giving directions in town, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1321":
+    native: "Please go straight ahead."
+    bases:
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "まがる (magaru) is to turn, not to go straight." }
+      w2: { why: "わたる (wataru) is to cross." }
+  "ja-1322":
+    native: "Please turn right at the crossroads."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "かど (kado) is a corner." }
+      w2: { why: "とおり (toori) is a street." }
+  "ja-1323":
+    native: "Is the park over there?"
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "まち (machi) is a town." }
+      w2: { why: "ほどう (hodou) is a pavement." }
+  "ja-1324":
+    native: "Is the shortcut far?"
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "きょり (kyori) is a distance." }
+      w2: { why: "あんない (annai) is guidance." }

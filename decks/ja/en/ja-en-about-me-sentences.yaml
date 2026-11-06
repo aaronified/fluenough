@@ -1,0 +1,100 @@
+schema: 1
+id: "ja-en-about-me-sentences"
+kind: "layer"
+core: "ja-about-me-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "About me in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0329":
+    native: "I am a student."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "せんせい (sensei) is a teacher, not a student."
+      w2:
+        why: "がっこう (gakkou) is a school, not a person."
+  "ja-0330":
+    native: "What is your name?"
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "は":
+        meaning: "(marks the topic)"
+      "なん":
+        meaning: "what (asks for a thing)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "とし (toshi) is age, not a name."
+      w2:
+        why: "くに (kuni) is a country, not a name."
+  "ja-0331":
+    native: "I like Japanese."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "が":
+        meaning: "(marks the subject)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "きらい (kirai) means you dislike it: the opposite."
+      w2:
+        why: "じょうず (jouzu) is being good at it, not liking it."
+  "ja-0332":
+    native: "She is Indian."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "にほん (nihon) is Japan, not India."
+      w2:
+        why: "かんこく (kankoku) is Korea, a different country."
+  "ja-0333":
+    native: "My country is Korea."
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "ちゅうごく (chuugoku) is China, a different country."
+      w2:
+        why: "にほん (nihon) is Japan, a different country."
+  "ja-0334":
+    native: "What is your hobby?"
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "は":
+        meaning: "(marks the topic)"
+      "なん":
+        meaning: "what (asks for a thing)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "なまえ (namae) is a name, not a hobby."
+      w2:
+        why: "とし (toshi) is age, not a hobby."

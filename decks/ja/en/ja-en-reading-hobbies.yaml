@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-hobbies",
+  "name": "Japanese reading: hobbies",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-hobbies-1",
+      "title": "A club poster",
+      "sentences": [
+        {
+          "text": "やきゅう と すいえい が あります。",
+          "reading": "yakyū to suiei ga arimasu."
+        },
+        {
+          "text": "わたし は うた が へた です。",
+          "reading": "watashi wa uta ga heta desu."
+        },
+        {
+          "text": "わたし は どくしょ が すき です。",
+          "reading": "watashi wa dokusho ga suki desu."
+        },
+        {
+          "text": "おりがみ を します。",
+          "reading": "origami o shimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1922",
+          "prompt": {
+            "en": "Which line says that there is baseball and swimming?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1923",
+          "prompt": {
+            "en": "The second line says that the speaker is good at singing."
+          },
+          "answer": false
+        },
+        {
+          "id": "ja-1924",
+          "prompt": {
+            "en": "Which line says that someone folds paper?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The third line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "ja-hobbies-2",
+      "title": "A weekend message",
+      "sentences": [
+        {
+          "text": "わたし は つり を します。",
+          "reading": "watashi wa tsuri o shimasu."
+        },
+        {
+          "text": "わたし は ぼんさい を みます。",
+          "reading": "watashi wa bonsai o mimasu."
+        },
+        {
+          "text": "わたし は おはなし を よみます。",
+          "reading": "watashi wa ohanashi o yomimasu."
+        },
+        {
+          "text": "ともだち と おしゃべり します。",
+          "reading": "tomodachi to oshaberi shimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1925",
+          "prompt": {
+            "en": "Which line says that someone watches bonsai?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1926",
+          "prompt": {
+            "en": "The third line says that the speaker reads a story."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1927",
+          "prompt": {
+            "en": "Which line says that the speaker chats with a friend?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

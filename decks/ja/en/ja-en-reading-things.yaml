@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-things",
+  "name": "Japanese reading: things",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-things-1",
+      "title": "Things at home",
+      "sentences": [
+        {
+          "text": "つくえのうえにえんぴつがあります。",
+          "reading": "tsukue no ue ni enpitsu ga arimasu."
+        },
+        {
+          "text": "まどをあけます。",
+          "reading": "mado o akemasu."
+        },
+        {
+          "text": "かみにかきます。",
+          "reading": "kami ni kakimasu."
+        },
+        {
+          "text": "めがねをかけます。",
+          "reading": "megane o kakemasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1710",
+          "prompt": {
+            "en": "Which line says that there is a pencil on the desk?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The second line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1711",
+          "prompt": {
+            "en": "The second line says that the window is closed."
+          },
+          "answer": false
+        },
+        {
+          "id": "ja-1712",
+          "prompt": {
+            "en": "Which line says that the glasses are put on?"
+          },
+          "options": [
+            {
+              "en": "The third line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "ja-things-2",
+      "title": "Things in use",
+      "sentences": [
+        {
+          "text": "これはほんです。",
+          "reading": "kore wa hon desu."
+        },
+        {
+          "text": "はさみでかみをきります。",
+          "reading": "hasami de kami o kirimasu."
+        },
+        {
+          "text": "てがみをかきます。",
+          "reading": "tegami o kakimasu."
+        },
+        {
+          "text": "ふとんでねます。",
+          "reading": "futon de nemasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1713",
+          "prompt": {
+            "en": "Which line says that the scissors cut paper?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1714",
+          "prompt": {
+            "en": "The first line says that this is a book."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1715",
+          "prompt": {
+            "en": "Which line says that someone sleeps on a futon?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}

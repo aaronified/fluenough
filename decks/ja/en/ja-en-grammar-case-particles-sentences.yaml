@@ -1,0 +1,78 @@
+schema: 1
+id: "ja-en-grammar-case-particles-sentences"
+kind: "layer"
+core: "ja-grammar-case-particles-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Particles after a noun in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0625":
+    native: "I go to school."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "に":
+        meaning: "in; at; to"
+    confusables:
+      w1:
+        why: "せんせい (sensei) is a teacher, not a place."
+      w2:
+        why: "うえ (ue) means above, not to a place."
+  "ja-0626":
+    native: "I drink water."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "ごはん (gohan) is a meal or rice, which is eaten, not drunk."
+      w2:
+        why: "ぎゅうにゅう (gyuunyuu) is milk, a drink too."
+  "ja-0627":
+    native: "My friend is coming."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+    confusables:
+      w1:
+        why: "わたし (watashi) is I, not a friend."
+      w2:
+        why: "せんせい (sensei) is a teacher."
+  "ja-0628":
+    native: "I go by train."
+    bases:
+      "で":
+        meaning: "(marks where or how; also part of ではありません (de wa arimasen))"
+    confusables:
+      w1:
+        why: "がっこう (gakkou) is a school, a place."
+      w2:
+        why: "いぬ (inu) is a dog."
+  "ja-0629":
+    native: "I learn English."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "にほんご (nihongo) is Japanese, a different language."
+      w2:
+        why: "なまえ (namae) is a name, not a language."
+  "ja-0630":
+    native: "Mother goes to school."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "に":
+        meaning: "in; at; to"
+    confusables:
+      w1:
+        why: "ちち (chichi) is my father, not mother."
+      w2:
+        why: "いぬ (inu) is a dog."

@@ -1,0 +1,56 @@
+schema: 1
+id: "ja-en-reading-market"
+name: "Japanese reading: market"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-market-1"
+    title: "A shopping list"
+    sentences:
+      - { text: "やさいとくだものをかいます。", reading: "yasai to kudamono o kaimasu." }
+      - { text: "さかなはにくやでかいます。", reading: "sakana wa nikuya de kaimasu." }
+      - { text: "いちごはおいしいです。", reading: "ichigo wa oishii desu." }
+      - { text: "たまねぎをください。", reading: "tamanegi o kudasai." }
+    questions:
+      - id: "ja-1285"
+        prompt: { en: "Which line says the speaker buys vegetables and fruit?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1286"
+        prompt: { en: "The second line says the fish is bought at the fishmonger's." }
+        answer: false
+      - id: "ja-1287"
+        prompt: { en: "Which line asks for onions?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
+  - id: "ja-market-2"
+    title: "At the greengrocer's"
+    sentences:
+      - { text: "トマトはいくらですか。", reading: "tomato wa ikura desu ka." }
+      - { text: "きゅうりをふたつください。", reading: "kyuuri o futatsu kudasai." }
+      - { text: "てんいんはやさしいです。", reading: "ten'in wa yasashii desu." }
+      - { text: "みせはとおいです。", reading: "mise wa tooi desu." }
+    questions:
+      - id: "ja-1288"
+        prompt: { en: "Which line asks for two cucumbers?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 2
+      - id: "ja-1289"
+        prompt: { en: "The third line says the shop assistant is kind." }
+        answer: true
+      - id: "ja-1290"
+        prompt: { en: "Which line says the shop is far?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2

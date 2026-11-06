@@ -1,0 +1,56 @@
+schema: 1
+id: "ja-en-reading-food"
+name: "Japanese reading: food"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-food-1"
+    title: "At a restaurant"
+    sentences:
+      - { text: "メニューをください。", reading: "menyuu o kudasai." }
+      - { text: "ちゅうもんはさかなです。", reading: "chuumon wa sakana desu." }
+      - { text: "ごはんとみそしるをください。", reading: "gohan to misoshiru o kudasai." }
+      - { text: "おかんじょうはいくらですか。", reading: "okanjou wa ikura desu ka." }
+    questions:
+      - id: "ja-1305"
+        prompt: { en: "Which line asks for the menu?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1306"
+        prompt: { en: "The second line says the order is meat." }
+        answer: false
+      - id: "ja-1307"
+        prompt: { en: "Which line asks how much the bill is?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
+  - id: "ja-food-2"
+    title: "A family dinner"
+    sentences:
+      - { text: "ばんごはんはやきにくです。", reading: "bangohan wa yakiniku desu." }
+      - { text: "サラダとスープもおいしいです。", reading: "sarada to suupu mo oishii desu." }
+      - { text: "たこはすきですか。", reading: "tako wa suki desu ka." }
+      - { text: "なすときのこをたべます。", reading: "nasu to kinoko o tabemasu." }
+    questions:
+      - id: "ja-1308"
+        prompt: { en: "Which line says dinner is grilled meat?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1309"
+        prompt: { en: "The second line says there is no soup." }
+        answer: false
+      - id: "ja-1310"
+        prompt: { en: "Which line says the speaker eats eggplant and mushroom?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2

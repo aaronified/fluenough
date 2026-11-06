@@ -1,0 +1,80 @@
+"schema": 1
+"id": "ja-en-reading-technology"
+"name": "Japanese reading: technology"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "ja-technology-1"
+    "title": "A broken laptop"
+    "sentences":
+      - "text": "きのう、コンピューターがこわれました。"
+        "reading": "kinou, konpyuutaa ga kowaremashita."
+      - "text": "ウイルスかもしれません。"
+        "reading": "uirusu ka mo shiremasen."
+      - "text": "バックアップは、とってありました。"
+        "reading": "bakkuappu wa, totte arimashita."
+      - "text": "エンジニアに、そうだんします。"
+        "reading": "enjinia ni, soudan shimasu."
+    "questions":
+      - "id": "ja-3150"
+        "prompt":
+          "en": "What broke yesterday?"
+        "options":
+          - "en": "The computer"
+          - "en": "The door"
+        "answer": 1
+      - "id": "ja-3151"
+        "prompt":
+          "en": "The backup had been made."
+        "answer": true
+      - "id": "ja-3152"
+        "prompt":
+          "en": "Which line says the person will ask an engineer?"
+        "options":
+          - "en": "The third line"
+          - "en": "The fourth line"
+        "answer": 2
+  - "id": "ja-technology-2"
+    "title": "A new robot"
+    "sentences":
+      - "text": "あたらしいロボットが、きました。"
+        "reading": "atarashii robotto ga, kimashita."
+      - "text": "じんこうちのうで、はたらきます。"
+        "reading": "jinkouchinou de, hataraki masu."
+      - "text": "プログラムのアップデートも、むりょうです。"
+        "reading": "puroguramu no appudeeto mo, muryou desu."
+      - "text": "まだ、かいりょうのよちがあります。"
+        "reading": "mada, kairyou no yochi ga arimasu."
+    "questions":
+      - "id": "ja-3153"
+        "prompt":
+          "en": "Which line says that the update is free?"
+        "options":
+          - "en": "The second line"
+          - "en": "The third line"
+        "answer": 1
+      - "id": "ja-3154"
+        "prompt":
+          "en": "The first line says that an old robot came."
+        "answer": false
+      - "id": "ja-3155"
+        "prompt":
+          "en": "Which line says that there is room for improvement?"
+        "options":
+          - "en": "The third line"
+          - "en": "The fourth line"
+        "answer": 2

@@ -1,0 +1,313 @@
+schema: 1
+id: "ja-en-location"
+kind: "layer"
+core: "ja-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Where things are"
+description: "Fifteen words for where things are: above and below, inside and outside, left and right, next to, near, here and there, and a desk and a chair. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0544":
+    native: "top; above; on"
+    notes:
+      "n1": "うえ (ue) means above, or on top of something. The opposite is した (shita)."
+    examples:
+      "つくえのうえです。":
+        native: "It is on the desk."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "いすのうえにいぬがいます。":
+        native: "There is a dog on the chair."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "に":
+            meaning: "in; at; to"
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+  "ja-0545":
+    native: "under; below; bottom"
+    notes:
+      "n1": "した (shita) means under, or below. The opposite is うえ (ue)."
+    examples:
+      "いぬのしたです。":
+        native: "It is under the dog."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "つくえのしたです。":
+        native: "It is under the desk."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0546":
+    native: "inside; in the middle"
+    notes:
+      "n1": "なか (naka) means inside. The opposite is そと (soto)."
+    examples:
+      "はこのなかです。":
+        native: "It is inside the box."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "がっこうのなかです。":
+        native: "It is inside the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0547":
+    native: "outside"
+    notes:
+      "n1": "そと (soto) means outside. The opposite is なか (naka)."
+    examples:
+      "がっこうのそとです。":
+        native: "It is outside the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "そとにいぬがいます。":
+        native: "There is a dog outside."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+  "ja-0548":
+    native: "right; the right side"
+    notes:
+      "n1": "みぎ (migi) means the right side. The opposite is ひだり (hidari)."
+    examples:
+      "がっこうはみぎです。":
+        native: "The school is on the right."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "みぎにいきます。":
+        native: "I go to the right."
+        bases:
+          "に":
+            meaning: "in; at; to"
+  "ja-0549":
+    native: "left; the left side"
+    notes:
+      "n1": "ひだり (hidari) means the left side. The opposite is みぎ (migi)."
+    examples:
+      "ともだちはひだりです。":
+        native: "My friend is on the left."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ひだりにいきますか。":
+        native: "Do you go to the left?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0550":
+    native: "side; beside"
+    notes:
+      "n1": "よこ (yoko) means the side of something, beside it."
+    examples:
+      "いぬのよこです。":
+        native: "It is beside the dog."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "がっこうのよこです。":
+        native: "It is beside the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0551":
+    native: "nearby area"
+    notes:
+      "n1": "ちかく (chikaku) means the area near a place."
+    examples:
+      "がっこうのちかくです。":
+        native: "It is near the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "ちかくにきますか。":
+        native: "Are you coming nearby?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0552":
+    native: "next to; neighbour"
+    notes:
+      "n1": "となり (tonari) means next to, or the neighbour."
+    examples:
+      "ともだちのとなりです。":
+        native: "It is next to my friend."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "せんせいのとなりです。":
+        native: "It is next to the teacher."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0553":
+    native: "over there; the other side"
+    notes:
+      "n1": "むこう (mukou) means over there, on the other side of something."
+    examples:
+      "がっこうのむこうです。":
+        native: "It is over there, beyond the school."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "むこうにいぬがいます。":
+        native: "There is a dog over there."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+  "ja-0554":
+    native: "here"
+    notes:
+      "n1": "ここ (koko) means here, this place."
+    examples:
+      "ここはがっこうです。":
+        native: "This is the school."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "ここにきますか。":
+        native: "Are you coming here?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0555":
+    native: "there; that place"
+    notes:
+      "n1": "そこ (soko) means there, a place near the listener."
+    examples:
+      "そこはがっこうです。":
+        native: "That place is the school."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "そこにいますか。":
+        native: "Are you there?"
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0556":
+    native: "over there; that place far away"
+    notes:
+      "n1": "あそこ (asoko) means over there, a place far from both speaker and listener."
+    examples:
+      "あそこはとうきょうです。":
+        native: "Over there is Tokyo."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "あそこにいぬがいます。":
+        native: "There is a dog over there."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+  "ja-0557":
+    native: "desk; table for work"
+    notes:
+      "n1": "つくえ (tsukue) is a desk."
+    examples:
+      "つくえはいすのよこです。":
+        native: "The desk is beside the chair."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"
+      "つくえのまえにいきます。":
+        native: "I go in front of the desk."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "に":
+            meaning: "in; at; to"
+  "ja-0558":
+    native: "chair; seat"
+    notes:
+      "n1": "いす (isu) is a chair."
+    examples:
+      "いすのうえにいぬがいます。":
+        native: "There is a dog on the chair."
+        bases:
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "に":
+            meaning: "in; at; to"
+          "が":
+            meaning: "(marks the subject)"
+          "います":
+            meaning: "to be (of people and animals); to exist"
+      "いすはつくえのみぎです。":
+        native: "The chair is to the right of the desk."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "の":
+            meaning: "(links two nouns: of, 's)"
+          "です":
+            meaning: "is (polite)"

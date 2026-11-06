@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-grammar-desu"
+name: "Japanese reading: is and is not"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-grammar-desu-1"
+    title: "About me"
+    sentences:
+      - text: "わたしはがくせいです。"
+        reading: "watashi wa gakusei desu."
+      - text: "わたしのちちはせんせいです。"
+        reading: "watashi no chichi wa sensei desu."
+      - text: "わたしはせんせいではありません。"
+        reading: "watashi wa sensei de wa arimasen."
+      - text: "はははせんせいではありません。"
+        reading: "wa haha sensei de wa arimasen."
+    questions:
+      - id: "ja-0619"
+        prompt:
+          en: "Which line says that the speaker is a student?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0620"
+        prompt:
+          en: "The second line says that the speaker's father is a teacher."
+        answer: true
+      - id: "ja-0621"
+        prompt:
+          en: "Which line says that the mother is not a teacher?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-grammar-desu-2"
+    title: "A profile card"
+    sentences:
+      - text: "なまえはなんですか。"
+        reading: "namae wa nan desu ka."
+      - text: "おとこではありません。"
+        reading: "otoko de wa arimasen."
+      - text: "わたしはがっこうのせんせいです。"
+        reading: "watashi wa gakkou no sensei desu."
+      - text: "かのじょはおんなのひとです。"
+        reading: "kanojo wa onna no hito desu."
+    questions:
+      - id: "ja-0622"
+        prompt:
+          en: "Which line says that the speaker is a teacher at a school?"
+        options:
+          - en: "The second line"
+          - en: "The third line"
+        answer: 2
+      - id: "ja-0623"
+        prompt:
+          en: "The fourth line says that she is a woman."
+        answer: true
+      - id: "ja-0624"
+        prompt:
+          en: "Which line says that the person is not a man?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2

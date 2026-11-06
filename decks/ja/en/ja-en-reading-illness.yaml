@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-illness"
+"name": "Japanese reading: illness"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-illness-1"
+  "title": "A cold at school"
+  "sentences":
+  - "text": "わたしはかぜでくるしいです。"
+    "reading": "watashi wa kaze de kurushii desu."
+  - "text": "いしゃはのみぐすりをだしました。"
+    "reading": "isha wa nomigusuri o dashimashita."
+  - "text": "かぜぐすりをかいました。"
+    "reading": "kazegusuri o kaimashita."
+  - "text": "あしたはなおります。"
+    "reading": "ashita wa naorimasu."
+  "questions":
+  - "id": "ja-2089"
+    "prompt":
+      "en": "Which line says that the writer has a cold and feels bad?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2090"
+    "prompt":
+      "en": "The third line says that the writer bought cold medicine."
+    "answer": !!bool "true"
+  - "id": "ja-2091"
+    "prompt":
+      "en": "Which line says that the cold will get better tomorrow?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-illness-2"
+  "title": "A visit to the clinic"
+  "sentences":
+  - "text": "わたしはゆびにきりきずがあります。"
+    "reading": "watashi wa yubi ni kirikizu ga arimasu."
+  - "text": "いしゃがしんさつをします。"
+    "reading": "isha ga shinsatsu o shimasu."
+  - "text": "ほうたいはきれいです。"
+    "reading": "houtai wa kirei desu."
+  - "text": "けがはいたいです。"
+    "reading": "kega wa itai desu."
+  "questions":
+  - "id": "ja-2092"
+    "prompt":
+      "en": "Which line says that the doctor examines the patient?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "2"
+  - "id": "ja-2093"
+    "prompt":
+      "en": "The first line says that the writer has a cut on a finger."
+    "answer": !!bool "true"
+  - "id": "ja-2094"
+    "prompt":
+      "en": "Which line says that the injury hurts?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"

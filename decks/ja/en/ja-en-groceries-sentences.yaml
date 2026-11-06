@@ -1,0 +1,41 @@
+schema: 1
+id: "ja-en-groceries-sentences"
+kind: "layer"
+core: "ja-groceries-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries in sentences"
+description: "Sentences about buying food and things for the home, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1291":
+    native: "The butter is hard."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "ジャム (jamu) is jam." }
+      w2: { why: "はちみつ (hachimitsu) is honey." }
+  "ja-1292":
+    native: "I eat udon."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "そば (soba) is soba, a thinner noodle." }
+      w2: { why: "ラーメン (raamen) is ramen." }
+  "ja-1293":
+    native: "I throw away the rubbish."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "かご (kago) is a basket." }
+      w2: { why: "ふくろ (fukuro) is a bag." }
+  "ja-1294":
+    native: "Salt and pepper, please."
+    bases:
+      "と": { meaning: "and (joins two words)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "さとう (satou) is sugar." }
+      w2: { why: "しょうゆ (shouyu) is soy sauce." }

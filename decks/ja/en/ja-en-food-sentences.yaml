@@ -1,0 +1,42 @@
+schema: 1
+id: "ja-en-food-sentences"
+kind: "layer"
+core: "ja-food-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Food and drink in sentences"
+description: "Sentences about meals and dishes, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1301":
+    native: "I eat rice porridge for breakfast."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "ひるごはん (hirugohan) is lunch." }
+      w2: { why: "おべんとう (obentou) is a boxed lunch." }
+  "ja-1302":
+    native: "Sushi is delicious."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "てんぷら (tenpura) is tempura." }
+      w2: { why: "やきとり (yakitori) is grilled chicken." }
+  "ja-1303":
+    native: "The miso soup is salty."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "すっぱい (suppai) is sour." }
+      w2: { why: "にがい (nigai) is bitter." }
+  "ja-1304":
+    native: "A second coffee, please."
+    bases:
+      "の": { meaning: "(links two nouns: of, 's)" }
+      "を": { meaning: "(marks the thing acted on)" }
+      "ください": { meaning: "please (give me)" }
+    confusables:
+      w1: { why: "ジュース (juusu) is juice." }
+      w2: { why: "おちゃ (ocha) is tea." }

@@ -1,0 +1,80 @@
+"schema": 1
+"id": "ja-en-reading-environment"
+"name": "Japanese reading: environment"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "ja-environment-1"
+    "title": "A walk by the lake"
+    "sentences":
+      - "text": "きょう、みずうみのまわりをあるきました。"
+        "reading": "kyou, mizuumi no mawari o arukimashita."
+      - "text": "ごみが すくなくて、きれいでした。"
+        "reading": "gomi ga sukunakute, kirei deshita."
+      - "text": "でも、おせんが すこし ふえたと いいます。"
+        "reading": "demo, osen ga sukoshi futeta to iimasu."
+      - "text": "わたしたちは、たいようこうはつでんを ふやしたいです。"
+        "reading": "watashitachi wa, taiyoukouhatsuden o fuyashitai desu."
+    "questions":
+      - "id": "ja-3401"
+        "prompt":
+          "en": "What did the person see at the lake?"
+        "options":
+          - "en": "Litter"
+          - "en": "Little rubbish"
+        "answer": 1
+      - "id": "ja-3402"
+        "prompt":
+          "en": "The third line says that pollution has decreased."
+        "answer": false
+      - "id": "ja-3403"
+        "prompt":
+          "en": "Which line says the people want to increase solar power?"
+        "options":
+          - "en": "The third line"
+          - "en": "The fourth line"
+        "answer": 2
+  - "id": "ja-environment-2"
+    "title": "A town that saves water"
+    "sentences":
+      - "text": "まちは、せっすいを します。"
+        "reading": "machi wa, sessui o shimasu."
+      - "text": "はいきぶつを へらして、リサイクルも します。"
+        "reading": "haikibutsu o herashite, risaikuru mo shimasu."
+      - "text": "しんりんを まもるため、ばっさいを とめました。"
+        "reading": "shinrin o mamoru tame, bassai o tomemashita."
+      - "text": "ひとびとの つながりも たいせつです。"
+        "reading": "hitobito no tsunagari mo taisetsu desu."
+    "questions":
+      - "id": "ja-3404"
+        "prompt":
+          "en": "Which line says the town stopped cutting trees?"
+        "options":
+          - "en": "The third line"
+          - "en": "The fourth line"
+        "answer": 1
+      - "id": "ja-3405"
+        "prompt":
+          "en": "The first line says the town saves water."
+        "answer": true
+      - "id": "ja-3406"
+        "prompt":
+          "en": "Which line says the connections between people matter?"
+        "options":
+          - "en": "The second line"
+          - "en": "The fourth line"
+        "answer": 2

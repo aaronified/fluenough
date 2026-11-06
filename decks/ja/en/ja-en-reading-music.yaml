@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-music",
+  "name": "Japanese reading: music",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-music-1",
+      "title": "A concert poster",
+      "sentences": [
+        {
+          "text": "かしゅ の うた は すてき です。",
+          "reading": "kashu no uta wa suteki desu."
+        },
+        {
+          "text": "わたし は ふえ を かなでます。",
+          "reading": "watashi wa fue o kanademasu."
+        },
+        {
+          "text": "たいこ の おと が きこえます。",
+          "reading": "taiko no oto ga kikoemasu."
+        },
+        {
+          "text": "がくふ を よみます。",
+          "reading": "gakufu o yomimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1952",
+          "prompt": {
+            "en": "Which line says that the flute is played?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1953",
+          "prompt": {
+            "en": "The first line says that the singer's song is wonderful."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1954",
+          "prompt": {
+            "en": "Which line says that a score is read?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The third line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "ja-music-2",
+      "title": "At home",
+      "sentences": [
+        {
+          "text": "おと が うるさい です。",
+          "reading": "oto ga urusai desu."
+        },
+        {
+          "text": "かなしい うた は すき です。",
+          "reading": "kanashii uta wa suki desu."
+        },
+        {
+          "text": "でんわ を ならします。",
+          "reading": "denwa o narashimasu."
+        },
+        {
+          "text": "て で たたきます。",
+          "reading": "te de tatakimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1955",
+          "prompt": {
+            "en": "Which line says that the phone is rung?"
+          },
+          "options": [
+            {
+              "en": "The third line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1956",
+          "prompt": {
+            "en": "The first line says the sound is quiet."
+          },
+          "answer": false
+        },
+        {
+          "id": "ja-1957",
+          "prompt": {
+            "en": "Which line says that someone hits with a hand?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The second line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

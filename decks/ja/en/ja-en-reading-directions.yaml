@@ -1,0 +1,56 @@
+schema: 1
+id: "ja-en-reading-directions"
+name: "Japanese reading: directions"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-directions-1"
+    title: "Lost in town"
+    sentences:
+      - { text: "みちにまよいました。", reading: "michi ni mayoimashita." }
+      - { text: "こうさてんはまっすぐです。", reading: "kousaten wa massugu desu." }
+      - { text: "うしろはえきです。", reading: "ushiro wa eki desu." }
+      - { text: "ちずをみてください。", reading: "chizu o mite kudasai." }
+    questions:
+      - id: "ja-1325"
+        prompt: { en: "Which line says the speaker got lost?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1326"
+        prompt: { en: "The second line says the crossroads is behind." }
+        answer: false
+      - id: "ja-1327"
+        prompt: { en: "Which line says to look at the map?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
+  - id: "ja-directions-2"
+    title: "A walk in the park"
+    sentences:
+      - { text: "こうえんまでさんぽします。", reading: "kouen made sanpo shimasu." }
+      - { text: "ほどうをわたってください。", reading: "hodou o watatte kudasai." }
+      - { text: "みなみにむかいます。", reading: "minami ni mukaimasu." }
+      - { text: "にしのでぐちはどこですか。", reading: "nishi no deguchi wa doko desu ka." }
+    questions:
+      - id: "ja-1328"
+        prompt: { en: "Which line says the speaker walks to the park?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1329"
+        prompt: { en: "The third line says the speaker heads north." }
+        answer: false
+      - id: "ja-1330"
+        prompt: { en: "Which line asks where the west exit is?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2

@@ -1,0 +1,46 @@
+schema: 1
+id: "ja-en-loanwords-sentences"
+kind: "layer"
+core: "ja-loanwords-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Loanwords in sentences"
+description: "Sentences built from the katakana loanwords of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1270":
+    native: "I drink coffee."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "おちゃ (ocha) is tea." }
+      w2: { why: "ビール (biiru) is beer." }
+  "ja-1271":
+    native: "I watch television."
+    bases:
+      "を": { meaning: "(marks the thing acted on)" }
+    confusables:
+      w1: { why: "ラジオ (rajio) is a radio." }
+      w2: { why: "ゲーム (geemu) is a game." }
+  "ja-1272":
+    native: "Where is the hotel?"
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+      "か": { meaning: "(marks a question)" }
+    confusables:
+      w1: { why: "スーパー (suupaa) is a supermarket." }
+      w2: { why: "レストラン (resutoran) is a restaurant." }
+  "ja-1273":
+    native: "I go by taxi."
+    confusables:
+      w1: { why: "バス (basu) is a bus." }
+      w2: { why: "ちかてつ (chikatetsu) is the subway." }
+  "ja-1274":
+    native: "The camera is expensive."
+    bases:
+      "は": { meaning: "(marks the topic)" }
+      "です": { meaning: "is (polite)" }
+    confusables:
+      w1: { why: "パソコン (pasokon) is a personal computer." }
+      w2: { why: "テレビ (terebi) is a television." }

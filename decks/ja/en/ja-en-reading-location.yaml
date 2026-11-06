@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-location"
+name: "Japanese reading: where things are"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-location-1"
+    title: "Where is my key"
+    sentences:
+      - text: "かぎはつくえのうえです。"
+        reading: "kagi wa tsukue no ue desu."
+      - text: "かぎはいすのしたです。"
+        reading: "kagi wa isu no shita desu."
+      - text: "かぎははこのなかです。"
+        reading: "kagi wa hako no naka desu."
+      - text: "かぎはつくえのよこです。"
+        reading: "kagi wa tsukue no yoko desu."
+    questions:
+      - id: "ja-0565"
+        prompt:
+          en: "Which line says that the key is on the desk?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0566"
+        prompt:
+          en: "The third line says that the key is inside the box."
+        answer: true
+      - id: "ja-0567"
+        prompt:
+          en: "Which line says that the key is beside the desk?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-location-2"
+    title: "A room note"
+    sentences:
+      - text: "いすはつくえのみぎです。"
+        reading: "isu wa tsukue no migi desu."
+      - text: "いぬはあそこです。"
+        reading: "inu wa asoko desu."
+      - text: "ともだちはちかくにいます。"
+        reading: "tomodachi hachi ka kuni imasu."
+      - text: "がっこうはむこうです。"
+        reading: "gakkou wa mukou desu."
+    questions:
+      - id: "ja-0568"
+        prompt:
+          en: "Which line says that the chair is to the right of the desk?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 1
+      - id: "ja-0569"
+        prompt:
+          en: "The second line says that the dog is over there."
+        answer: true
+      - id: "ja-0570"
+        prompt:
+          en: "Which line says that the friend is nearby?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 1

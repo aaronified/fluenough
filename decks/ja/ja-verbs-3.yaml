@@ -1,0 +1,1708 @@
+schema: 1
+id: "ja-verbs-3"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-3"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-2217"
+    target: "かわる"
+    words: ["かわる"]
+    reading: "kawaru"
+    ipa: "kawaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "かみがたがかわりました。"
+        words: ["かみがた", "が", "かわりました"]
+        reading: "kamigata ga kawarimashita."
+        ipa: "kamiɡata ɡa kawaɾimaɕita"
+        bases:
+          - { word: "かみがた", ref: "ja-2167" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "かわりました", base: "かわる", reading: "kawaru" }
+      - target: "ともだちはかわりません。"
+        words: ["ともだち", "は", "かわりません"]
+        reading: "tomodachi wa kawarimasen."
+        ipa: "tomodatɕi wa kawaɾimaseɴ"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "かわりません", base: "かわる", reading: "kawaru" }
+  - id: "ja-2218"
+    target: "きまる"
+    words: ["きまる"]
+    reading: "kimaru"
+    ipa: "kimaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "あしたはまだきまりません。"
+        words: ["あした", "は", "まだ", "きまりません"]
+        reading: "ashita wa mada kimarimasen."
+        ipa: "aɕita wa mada kimaɾimaseɴ"
+        bases:
+          - { word: "あした", ref: "ja-0513" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まだ", ref: "ja-0398" }
+          - { word: "きまりません", base: "きまる", reading: "kimaru" }
+      - target: "ごはんはもうきまりました。"
+        words: ["ごはん", "は", "もう", "きまりました"]
+        reading: "gohan wa mou kimarimashita."
+        ipa: "ɡohaɴ wa moː kimaɾimaɕita"
+        bases:
+          - { word: "ごはん", ref: "ja-0074" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "もう", ref: "ja-0397" }
+          - { word: "きまりました", base: "きまる", reading: "kimaru" }
+  - id: "ja-2219"
+    target: "きめる"
+    words: ["きめる"]
+    reading: "kimeru"
+    ipa: "kimeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはきめました。"
+        words: ["ともだち", "は", "きめました"]
+        reading: "tomodachi wa kimemashita."
+        ipa: "tomodatɕi wa kimemaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "きめました", base: "きめる", reading: "kimeru" }
+      - target: "あしたまでにきめてください。"
+        words: ["あした", "まで", "に", "きめて", "ください"]
+        reading: "ashita made ni kimete kudasai."
+        ipa: "aɕita made ni kimete kɯdasai"
+        bases:
+          - { word: "あした", ref: "ja-0513" }
+          - { word: "まで", base: "まで", reading: "made" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "きめて", base: "きめる", reading: "kimeru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2220"
+    target: "なる"
+    words: ["なる"]
+    reading: "naru"
+    ipa: "naɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがおおきくなりました。"
+        words: ["こども", "が", "おおきく", "なりました"]
+        reading: "kodomo ga ookiku narimashita."
+        ipa: "kodomo ɡa oːkikɯ naɾimaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "おおきく", ref: "ja-0077" }
+          - { word: "なりました", base: "なる", reading: "naru" }
+      - target: "きょうはあめになりました。"
+        words: ["きょう", "は", "あめ", "に", "なりました"]
+        reading: "kyou wa ame ni narimashita."
+        ipa: "kjoː wa ame ni naɾimaɕita"
+        bases:
+          - { word: "きょう", ref: "ja-0512" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "あめ", ref: "ja-1454" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "なりました", base: "なる", reading: "naru" }
+  - id: "ja-2221"
+    target: "なれる"
+    words: ["なれる"]
+    reading: "nareru"
+    ipa: "naɾeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはまだなれません。"
+        words: ["わたし", "は", "まだ", "なれません"]
+        reading: "watashi wa mada naremasen."
+        ipa: "wataɕi wa mada naɾemaseɴ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まだ", ref: "ja-0398" }
+          - { word: "なれません", base: "なれる", reading: "nareru" }
+      - target: "へやになれました。"
+        words: ["へや", "に", "なれました"]
+        reading: "heya ni naremashita."
+        ipa: "heja ni naɾemaɕita"
+        bases:
+          - { word: "へや", ref: "ja-1168" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "なれました", base: "なれる", reading: "nareru" }
+  - id: "ja-2222"
+    target: "つく"
+    words: ["つく"]
+    reading: "tsuku"
+    ipa: "tsɯkɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "いえにつきました。"
+        words: ["いえ", "に", "つきました"]
+        reading: "ie ni tsukimashita."
+        ipa: "ie ni tsɯkimaɕita"
+        bases:
+          - { word: "いえ", ref: "ja-1153" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "つきました", base: "つく", reading: "tsuku" }
+      - target: "ともだちはまだつきません。"
+        words: ["ともだち", "は", "まだ", "つきません"]
+        reading: "tomodachi wa mada tsukimasen."
+        ipa: "tomodatɕi wa mada tsɯkimaseɴ"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まだ", ref: "ja-0398" }
+          - { word: "つきません", base: "つく", reading: "tsuku" }
+  - id: "ja-2223"
+    target: "つける"
+    words: ["つける"]
+    reading: "tsukeru"
+    ipa: "tsɯkeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "でんきをつけました。"
+        words: ["でんき", "を", "つけました"]
+        reading: "denki o tsukemashita."
+        ipa: "deɴki o tsɯkemaɕita"
+        bases:
+          - { word: "でんき", ref: "ja-0092" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "つけました", base: "つける", reading: "tsukeru" }
+      - target: "テレビをつけてください。"
+        words: ["テレビ", "を", "つけて", "ください"]
+        reading: "terebi o tsukete kudasai."
+        ipa: "teɾebi o tsɯkete kɯdasai"
+        bases:
+          - { word: "テレビ", ref: "ja-0850" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "つけて", base: "つける", reading: "tsukeru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2224"
+    target: "けす"
+    words: ["けす"]
+    reading: "kesu"
+    ipa: "kesɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "でんきをけしました。"
+        words: ["でんき", "を", "けしました"]
+        reading: "denki o keshimashita."
+        ipa: "deɴki o keɕimaɕita"
+        bases:
+          - { word: "でんき", ref: "ja-0092" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "けしました", base: "けす", reading: "kesu" }
+      - target: "テレビをけさないでください。"
+        words: ["テレビ", "を", "けさないで", "ください"]
+        reading: "terebi o kesanaide kudasai."
+        ipa: "teɾebi o kesanaide kɯdasai"
+        bases:
+          - { word: "テレビ", ref: "ja-0850" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "けさないで", base: "けす", reading: "kesu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2225"
+    target: "きえる"
+    words: ["きえる"]
+    reading: "kieru"
+    ipa: "kieɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "でんきがきえました。"
+        words: ["でんき", "が", "きえました"]
+        reading: "denki ga kiemashita."
+        ipa: "deɴki ɡa kiemaɕita"
+        bases:
+          - { word: "でんき", ref: "ja-0092" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "きえました", base: "きえる", reading: "kieru" }
+      - target: "ねこがきえました。"
+        words: ["ねこ", "が", "きえました"]
+        reading: "neko ga kiemashita."
+        ipa: "neko ɡa kiemaɕita"
+        bases:
+          - { word: "ねこ", ref: "ja-1565" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "きえました", base: "きえる", reading: "kieru" }
+  - id: "ja-2226"
+    target: "あく"
+    words: ["あく"]
+    reading: "aku"
+    ipa: "akɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ドアがあきました。"
+        words: ["ドア", "が", "あきました"]
+        reading: "doa ga akimashita."
+        ipa: "doa ɡa akimaɕita"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "あきました", base: "あく", reading: "aku" }
+      - target: "まどはあきません。"
+        words: ["まど", "は", "あきません"]
+        reading: "mado wa akimasen."
+        ipa: "mado wa akimaseɴ"
+        bases:
+          - { word: "まど", ref: "ja-1170" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "あきません", base: "あく", reading: "aku" }
+  - id: "ja-2227"
+    target: "しまる"
+    words: ["しまる"]
+    reading: "shimaru"
+    ipa: "ɕimaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ドアがしまりました。"
+        words: ["ドア", "が", "しまりました"]
+        reading: "doa ga shimarimashita."
+        ipa: "doa ɡa ɕimaɾimaɕita"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "しまりました", base: "しまる", reading: "shimaru" }
+      - target: "まどがしまりません。"
+        words: ["まど", "が", "しまりません"]
+        reading: "mado ga shimarimasen."
+        ipa: "mado ɡa ɕimaɾimaseɴ"
+        bases:
+          - { word: "まど", ref: "ja-1170" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "しまりません", base: "しまる", reading: "shimaru" }
+  - id: "ja-2228"
+    target: "つかまえる"
+    words: ["つかまえる"]
+    reading: "tsukamaeru"
+    ipa: "tsɯkamaeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ねこをつかまえました。"
+        words: ["ねこ", "を", "つかまえました"]
+        reading: "neko o tsukamaemashita."
+        ipa: "neko o tsɯkamaemaɕita"
+        bases:
+          - { word: "ねこ", ref: "ja-1565" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "つかまえました", base: "つかまえる", reading: "tsukamaeru" }
+      - target: "ねこをつかまえないでください。"
+        words: ["ねこ", "を", "つかまえないで", "ください"]
+        reading: "neko o tsukamaenaide kudasai."
+        ipa: "neko o tsɯkamaenaide kɯdasai"
+        bases:
+          - { word: "ねこ", ref: "ja-1565" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "つかまえないで", base: "つかまえる", reading: "tsukamaeru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2229"
+    target: "つかむ"
+    words: ["つかむ"]
+    reading: "tsukamu"
+    ipa: "tsɯkamɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがふくをつかみました。"
+        words: ["こども", "が", "ふく", "を", "つかみました"]
+        reading: "kodomo ga fuku o tsukamimashita."
+        ipa: "kodomo ɡa ɸɯkɯ o tsɯkamimaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "ふく", ref: "ja-1512" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "つかみました", base: "つかむ", reading: "tsukamu" }
+      - target: "ふくをつかまないでください。"
+        words: ["ふく", "を", "つかまないで", "ください"]
+        reading: "fuku o tsukamanaide kudasai."
+        ipa: "ɸɯkɯ o tsɯkamanaide kɯdasai"
+        bases:
+          - { word: "ふく", ref: "ja-1512" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "つかまないで", base: "つかむ", reading: "tsukamu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2230"
+    target: "おす"
+    words: ["おす"]
+    reading: "osu"
+    ipa: "osɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ドアをおしました。"
+        words: ["ドア", "を", "おしました"]
+        reading: "doa o oshimashita."
+        ipa: "doa o oɕimaɕita"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "おしました", base: "おす", reading: "osu" }
+      - target: "ドアをおさないでください。"
+        words: ["ドア", "を", "おさないで", "ください"]
+        reading: "doa o osanaide kudasai."
+        ipa: "doa o osanaide kɯdasai"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "おさないで", base: "おす", reading: "osu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2231"
+    target: "ひっぱる"
+    words: ["ひっぱる"]
+    reading: "hipparu"
+    ipa: "çippaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがふくをひっぱりました。"
+        words: ["こども", "が", "ふく", "を", "ひっぱりました"]
+        reading: "kodomo ga fuku o hipparimashita."
+        ipa: "kodomo ɡa ɸɯkɯ o çippaɾimaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "ふく", ref: "ja-1512" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ひっぱりました", base: "ひっぱる", reading: "hipparu" }
+      - target: "ドアをひっぱってください。"
+        words: ["ドア", "を", "ひっぱって", "ください"]
+        reading: "doa o hippatte kudasai."
+        ipa: "doa o çippatte kɯdasai"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ひっぱって", base: "ひっぱる", reading: "hipparu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2232"
+    target: "おとす"
+    words: ["おとす"]
+    reading: "otosu"
+    ipa: "otosɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "さらをおとしました。"
+        words: ["さら", "を", "おとしました"]
+        reading: "sara o otoshimashita."
+        ipa: "saɾa o otoɕimaɕita"
+        bases:
+          - { word: "さら", ref: "ja-0984" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "おとしました", base: "おとす", reading: "otosu" }
+      - target: "ほんをおとさないでください。"
+        words: ["ほん", "を", "おとさないで", "ください"]
+        reading: "hon o otosanaide kudasai."
+        ipa: "hoɴ o otosanaide kɯdasai"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "おとさないで", base: "おとす", reading: "otosu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2233"
+    target: "おちる"
+    words: ["おちる"]
+    reading: "ochiru"
+    ipa: "otɕiɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ほんがおちました。"
+        words: ["ほん", "が", "おちました"]
+        reading: "hon ga ochimashita."
+        ipa: "hoɴ ɡa otɕimaɕita"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "おちました", base: "おちる", reading: "ochiru" }
+      - target: "さらはおちません。"
+        words: ["さら", "は", "おちません"]
+        reading: "sara wa ochimasen."
+        ipa: "saɾa wa otɕimaseɴ"
+        bases:
+          - { word: "さら", ref: "ja-0984" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "おちません", base: "おちる", reading: "ochiru" }
+  - id: "ja-2234"
+    target: "ひらく"
+    words: ["ひらく"]
+    reading: "hiraku"
+    ipa: "çiɾakɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ほんをひらきました。"
+        words: ["ほん", "を", "ひらきました"]
+        reading: "hon o hirakimashita."
+        ipa: "hoɴ o çiɾakimaɕita"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ひらきました", base: "ひらく", reading: "hiraku" }
+      - target: "まどをひらいてください。"
+        words: ["まど", "を", "ひらいて", "ください"]
+        reading: "mado o hiraite kudasai."
+        ipa: "mado o çiɾaite kɯdasai"
+        bases:
+          - { word: "まど", ref: "ja-1170" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ひらいて", base: "ひらく", reading: "hiraku" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2235"
+    target: "とじる"
+    words: ["とじる"]
+    reading: "tojiru"
+    ipa: "todʑiɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ほんをとじました。"
+        words: ["ほん", "を", "とじました"]
+        reading: "hon o tojimashita."
+        ipa: "hoɴ o todʑimaɕita"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "とじました", base: "とじる", reading: "tojiru" }
+      - target: "ほんをとじないでください。"
+        words: ["ほん", "を", "とじないで", "ください"]
+        reading: "hon o tojinaide kudasai."
+        ipa: "hoɴ o todʑinaide kɯdasai"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "とじないで", base: "とじる", reading: "tojiru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2236"
+    target: "わたす"
+    words: ["わたす"]
+    reading: "watasu"
+    ipa: "watasɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちにかぎをわたしました。"
+        words: ["ともだち", "に", "かぎ", "を", "わたしました"]
+        reading: "tomodachi ni kagi o watashimashita."
+        ipa: "tomodatɕi ni kaɡi o wataɕimaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "かぎ", ref: "ja-0093" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "わたしました", base: "わたす", reading: "watasu" }
+      - target: "ごはんをわたしてください。"
+        words: ["ごはん", "を", "わたして", "ください"]
+        reading: "gohan o watashite kudasai."
+        ipa: "ɡohaɴ o wataɕite kɯdasai"
+        bases:
+          - { word: "ごはん", ref: "ja-0074" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "わたして", base: "わたす", reading: "watasu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2237"
+    target: "うける"
+    words: ["うける"]
+    reading: "ukeru"
+    ipa: "ɯkeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはしけんをうけました。"
+        words: ["わたし", "は", "しけん", "を", "うけました"]
+        reading: "watashi wa shiken o ukemashita."
+        ipa: "wataɕi wa ɕikeɴ o ɯkemaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "しけん", ref: "ja-0721" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "うけました", base: "うける", reading: "ukeru" }
+      - target: "わたしはしけんをうけませんでした。"
+        words: ["わたし", "は", "しけん", "を", "うけません", "でした"]
+        reading: "watashi wa shiken o ukemasen deshita."
+        ipa: "wataɕi wa ɕikeɴ o ɯkemaseɴ deɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "しけん", ref: "ja-0721" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "うけません", base: "うける", reading: "ukeru" }
+          - { word: "でした", base: "です", reading: "desu" }
+  - id: "ja-2238"
+    target: "つたえる"
+    words: ["つたえる"]
+    reading: "tsutaeru"
+    ipa: "tsɯtaeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちにつたえました。"
+        words: ["ともだち", "に", "つたえました"]
+        reading: "tomodachi ni tsutaemashita."
+        ipa: "tomodatɕi ni tsɯtaemaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "つたえました", base: "つたえる", reading: "tsutaeru" }
+      - target: "ともだちにつたえないでください。"
+        words: ["ともだち", "に", "つたえないで", "ください"]
+        reading: "tomodachi ni tsutaenaide kudasai."
+        ipa: "tomodatɕi ni tsɯtaenaide kɯdasai"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "つたえないで", base: "つたえる", reading: "tsutaeru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2239"
+    target: "つたわる"
+    words: ["つたわる"]
+    reading: "tsutawaru"
+    ipa: "tsɯtawaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "おとがつたわりました。"
+        words: ["おと", "が", "つたわりました"]
+        reading: "oto ga tsutawarimashita."
+        ipa: "oto ɡa tsɯtawaɾimaɕita"
+        bases:
+          - { word: "おと", ref: "ja-0087" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "つたわりました", base: "つたわる", reading: "tsutawaru" }
+      - target: "ともだちにつたわりません。"
+        words: ["ともだち", "に", "つたわりません"]
+        reading: "tomodachi ni tsutawarimasen."
+        ipa: "tomodatɕi ni tsɯtawaɾimaseɴ"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "つたわりません", base: "つたわる", reading: "tsutawaru" }
+  - id: "ja-2240"
+    target: "むかえる"
+    words: ["むかえる"]
+    reading: "mukaeru"
+    ipa: "mɯkaeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちをえきでむかえました。"
+        words: ["ともだち", "を", "えき", "で", "むかえました"]
+        reading: "tomodachi o eki de mukaemashita."
+        ipa: "tomodatɕi o eki de mɯkaemaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "えき", ref: "ja-1021" }
+          - { word: "で", ref: "ja-0293" }
+          - { word: "むかえました", base: "むかえる", reading: "mukaeru" }
+      - target: "おかあさんがともだちをいえにむかえました。"
+        words: ["おかあさん", "が", "ともだち", "を", "いえ", "に", "むかえました"]
+        reading: "okaasan ga tomodachi o ie ni mukaemashita."
+        ipa: "okaːsaɴ ɡa tomodatɕi o ie ni mɯkaemaɕita"
+        bases:
+          - { word: "おかあさん", ref: "ja-0215" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "いえ", ref: "ja-1153" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "むかえました", base: "むかえる", reading: "mukaeru" }
+  - id: "ja-2241"
+    target: "おくる"
+    words: ["おくる"]
+    reading: "okuru"
+    ipa: "okɯɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ほんをともだちにおくりました。"
+        words: ["ほん", "を", "ともだち", "に", "おくりました"]
+        reading: "hon o tomodachi ni okurimashita."
+        ipa: "hoɴ o tomodatɕi ni okɯɾimaɕita"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "おくりました", base: "おくる", reading: "okuru" }
+      - target: "ともだちをえきまでおくりました。"
+        words: ["ともだち", "を", "えき", "まで", "おくりました"]
+        reading: "tomodachi o eki made okurimashita."
+        ipa: "tomodatɕi o eki made okɯɾimaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "えき", ref: "ja-1021" }
+          - { word: "まで", base: "まで", reading: "made" }
+          - { word: "おくりました", base: "おくる", reading: "okuru" }
+  - id: "ja-2242"
+    target: "とどく"
+    words: ["とどく"]
+    reading: "todoku"
+    ipa: "todokɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ほんがとどきました。"
+        words: ["ほん", "が", "とどきました"]
+        reading: "hon ga todokimashita."
+        ipa: "hoɴ ɡa todokimaɕita"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "とどきました", base: "とどく", reading: "todoku" }
+      - target: "くつはまだとどきません。"
+        words: ["くつ", "は", "まだ", "とどきません"]
+        reading: "kutsu wa mada todokimasen."
+        ipa: "kɯtsɯ wa mada todokimaseɴ"
+        bases:
+          - { word: "くつ", ref: "ja-1522" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まだ", ref: "ja-0398" }
+          - { word: "とどきません", base: "とどく", reading: "todoku" }
+  - id: "ja-2243"
+    target: "とどける"
+    words: ["とどける"]
+    reading: "todokeru"
+    ipa: "todokeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ほんをともだちにとどけました。"
+        words: ["ほん", "を", "ともだち", "に", "とどけました"]
+        reading: "hon o tomodachi ni todokemashita."
+        ipa: "hoɴ o tomodatɕi ni todokemaɕita"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "とどけました", base: "とどける", reading: "todokeru" }
+      - target: "ほんをいえにとどけてください。"
+        words: ["ほん", "を", "いえ", "に", "とどけて", "ください"]
+        reading: "hon o ie ni todokete kudasai."
+        ipa: "hoɴ o ie ni todokete kɯdasai"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "いえ", ref: "ja-1153" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "とどけて", base: "とどける", reading: "todokeru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2244"
+    target: "たずねる"
+    words: ["たずねる"]
+    reading: "tazuneru"
+    ipa: "tadzɯneɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはせんせいにじかんをたずねました。"
+        words: ["わたし", "は", "せんせい", "に", "じかん", "を", "たずねました"]
+        reading: "watashi wa sensei ni jikan o tazunemashita."
+        ipa: "wataɕi wa seɴseː ni dʑikaɴ o tadzɯnemaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "せんせい", ref: "ja-0070" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "じかん", ref: "ja-0507" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "たずねました", base: "たずねる", reading: "tazuneru" }
+      - target: "せんせいにみちをたずねないでください。"
+        words: ["せんせい", "に", "みち", "を", "たずねないで", "ください"]
+        reading: "sensei ni michi o tazunenaide kudasai."
+        ipa: "seɴseː ni mitɕi o tadzɯnenaide kɯdasai"
+        bases:
+          - { word: "せんせい", ref: "ja-0070" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "みち", ref: "ja-1026" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "たずねないで", base: "たずねる", reading: "tazuneru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2245"
+    target: "まちがう"
+    words: ["まちがう"]
+    reading: "machigau"
+    ipa: "matɕiɡaɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはまちがいません。"
+        words: ["ともだち", "は", "まちがいません"]
+        reading: "tomodachi wa machigaimasen."
+        ipa: "tomodatɕi wa matɕiɡaimaseɴ"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まちがいません", base: "まちがう", reading: "machigau" }
+      - target: "わたしがまちがいました。"
+        words: ["わたし", "が", "まちがいました"]
+        reading: "watashi ga machigaimashita."
+        ipa: "wataɕi ɡa matɕiɡaimaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "まちがいました", base: "まちがう", reading: "machigau" }
+  - id: "ja-2246"
+    target: "あやまる"
+    words: ["あやまる"]
+    reading: "ayamaru"
+    ipa: "ajamaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはともだちにあやまりました。"
+        words: ["わたし", "は", "ともだち", "に", "あやまりました"]
+        reading: "watashi wa tomodachi ni ayamarimashita."
+        ipa: "wataɕi wa tomodatɕi ni ajamaɾimaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "あやまりました", base: "あやまる", reading: "ayamaru" }
+      - target: "わたしはすぐにあやまります。"
+        words: ["わたし", "は", "すぐ", "に", "あやまります"]
+        reading: "watashi wa sugu ni ayamarimasu."
+        ipa: "wataɕi wa sɯɡɯ ni ajamaɾimasɯ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "すぐ", ref: "ja-0403" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "あやまります", base: "あやまる", reading: "ayamaru" }
+  - id: "ja-2247"
+    target: "ゆるす"
+    words: ["ゆるす"]
+    reading: "yurusu"
+    ipa: "jɯɾɯsɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはわたしをゆるしました。"
+        words: ["ともだち", "は", "わたし", "を", "ゆるしました"]
+        reading: "tomodachi wa watashi o yurushimashita."
+        ipa: "tomodatɕi wa wataɕi o jɯɾɯɕimaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ゆるしました", base: "ゆるす", reading: "yurusu" }
+      - target: "わたしはともだちをゆるせません。"
+        words: ["わたし", "は", "ともだち", "を", "ゆるせません"]
+        reading: "watashi wa tomodachi o yurusemasen."
+        ipa: "wataɕi wa tomodatɕi o jɯɾɯsemaseɴ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ゆるせません", base: "ゆるす", reading: "yurusu" }
+  - id: "ja-2248"
+    target: "ことわる"
+    words: ["ことわる"]
+    reading: "kotowaru"
+    ipa: "kotowaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはともだちにことわりました。"
+        words: ["わたし", "は", "ともだち", "に", "ことわりました"]
+        reading: "watashi wa tomodachi ni kotowarimashita."
+        ipa: "wataɕi wa tomodatɕi ni kotowaɾimaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "ことわりました", base: "ことわる", reading: "kotowaru" }
+      - target: "せんせいはことわりません。"
+        words: ["せんせい", "は", "ことわりません"]
+        reading: "sensei wa kotowarimasen."
+        ipa: "seɴseː wa kotowaɾimaseɴ"
+        bases:
+          - { word: "せんせい", ref: "ja-0070" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ことわりません", base: "ことわる", reading: "kotowaru" }
+  - id: "ja-2249"
+    target: "さそう"
+    words: ["さそう"]
+    reading: "sasou"
+    ipa: "sasoː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちをさそいました。"
+        words: ["ともだち", "を", "さそいました"]
+        reading: "tomodachi o sasoimashita."
+        ipa: "tomodatɕi o sasoimaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "さそいました", base: "さそう", reading: "sasou" }
+      - target: "ともだちをいえにさそってください。"
+        words: ["ともだち", "を", "いえ", "に", "さそって", "ください"]
+        reading: "tomodachi o ie ni sasotte kudasai."
+        ipa: "tomodatɕi o ie ni sasotte kɯdasai"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "いえ", ref: "ja-1153" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "さそって", base: "さそう", reading: "sasou" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2250"
+    target: "かよう"
+    words: ["かよう"]
+    reading: "kayou"
+    ipa: "kajoː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはまいにちがっこうにかよいます。"
+        words: ["わたし", "は", "まいにち", "がっこう", "に", "かよいます"]
+        reading: "watashi wa mainichi gakkou ni kayoimasu."
+        ipa: "wataɕi wa mainitɕi ɡakkoː ni kajoimasɯ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まいにち", ref: "ja-0515" }
+          - { word: "がっこう", ref: "ja-0313" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "かよいます", base: "かよう", reading: "kayou" }
+      - target: "ともだちはがっこうにかよいません。"
+        words: ["ともだち", "は", "がっこう", "に", "かよいません"]
+        reading: "tomodachi wa gakkou ni kayoimasen."
+        ipa: "tomodatɕi wa ɡakkoː ni kajoimaseɴ"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "がっこう", ref: "ja-0313" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "かよいません", base: "かよう", reading: "kayou" }
+  - id: "ja-2251"
+    target: "とおる"
+    words: ["とおる"]
+    reading: "tooru"
+    ipa: "toːɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはドアをとおりました。"
+        words: ["ともだち", "は", "ドア", "を", "とおりました"]
+        reading: "tomodachi wa doa o toorimashita."
+        ipa: "tomodatɕi wa doa o toːɾimaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "とおりました", base: "とおる", reading: "tooru" }
+      - target: "くるまがいえをとおりました。"
+        words: ["くるま", "が", "いえ", "を", "とおりました"]
+        reading: "kuruma ga ie o toorimashita."
+        ipa: "kɯɾɯma ɡa ie o toːɾimaɕita"
+        bases:
+          - { word: "くるま", ref: "ja-1017" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "いえ", ref: "ja-1153" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "とおりました", base: "とおる", reading: "tooru" }
+  - id: "ja-2252"
+    target: "すぎる"
+    words: ["すぎる"]
+    reading: "sugiru"
+    ipa: "sɯɡiɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "じかんがすぎました。"
+        words: ["じかん", "が", "すぎました"]
+        reading: "jikan ga sugimashita."
+        ipa: "dʑikaɴ ɡa sɯɡimaɕita"
+        bases:
+          - { word: "じかん", ref: "ja-0507" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "すぎました", base: "すぎる", reading: "sugiru" }
+      - target: "わたしはともだちのいえをすぎました。"
+        words: ["わたし", "は", "ともだち", "の", "いえ", "を", "すぎました"]
+        reading: "watashi wa tomodachi no ie o sugimashita."
+        ipa: "wataɕi wa tomodatɕi no ie o sɯɡimaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "の", base: "の", reading: "no" }
+          - { word: "いえ", ref: "ja-1153" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "すぎました", base: "すぎる", reading: "sugiru" }
+  - id: "ja-2253"
+    target: "まわる"
+    words: ["まわる"]
+    reading: "mawaru"
+    ipa: "mawaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ドアがまわりました。"
+        words: ["ドア", "が", "まわりました"]
+        reading: "doa ga mawarimashita."
+        ipa: "doa ɡa mawaɾimaɕita"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "まわりました", base: "まわる", reading: "mawaru" }
+      - target: "ドアがまわりません。"
+        words: ["ドア", "が", "まわりません"]
+        reading: "doa ga mawarimasen."
+        ipa: "doa ɡa mawaɾimaseɴ"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "まわりません", base: "まわる", reading: "mawaru" }
+  - id: "ja-2254"
+    target: "まわす"
+    words: ["まわす"]
+    reading: "mawasu"
+    ipa: "mawasɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはドアをまわしました。"
+        words: ["ともだち", "は", "ドア", "を", "まわしました"]
+        reading: "tomodachi wa doa o mawashimashita."
+        ipa: "tomodatɕi wa doa o mawaɕimaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "まわしました", base: "まわす", reading: "mawasu" }
+      - target: "ドアをまわさないでください。"
+        words: ["ドア", "を", "まわさないで", "ください"]
+        reading: "doa o mawasanaide kudasai."
+        ipa: "doa o mawasanaide kɯdasai"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "まわさないで", base: "まわす", reading: "mawasu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2255"
+    target: "うごく"
+    words: ["うごく"]
+    reading: "ugoku"
+    ipa: "ɯɡokɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "くるまがうごきました。"
+        words: ["くるま", "が", "うごきました"]
+        reading: "kuruma ga ugokimashita."
+        ipa: "kɯɾɯma ɡa ɯɡokimaɕita"
+        bases:
+          - { word: "くるま", ref: "ja-1017" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "うごきました", base: "うごく", reading: "ugoku" }
+      - target: "ねこがうごきません。"
+        words: ["ねこ", "が", "うごきません"]
+        reading: "neko ga ugokimasen."
+        ipa: "neko ɡa ɯɡokimaseɴ"
+        bases:
+          - { word: "ねこ", ref: "ja-1565" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "うごきません", base: "うごく", reading: "ugoku" }
+  - id: "ja-2256"
+    target: "うごかす"
+    words: ["うごかす"]
+    reading: "ugokasu"
+    ipa: "ɯɡokasɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはつくえをうごかしました。"
+        words: ["わたし", "は", "つくえ", "を", "うごかしました"]
+        reading: "watashi wa tsukue o ugokashimashita."
+        ipa: "wataɕi wa tsɯkɯe o ɯɡokaɕimaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "つくえ", ref: "ja-0557" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "うごかしました", base: "うごかす", reading: "ugokasu" }
+      - target: "ドアをうごかさないでください。"
+        words: ["ドア", "を", "うごかさないで", "ください"]
+        reading: "doa o ugokasanaide kudasai."
+        ipa: "doa o ɯɡokasanaide kɯdasai"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "うごかさないで", base: "うごかす", reading: "ugokasu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2257"
+    target: "のこる"
+    words: ["のこる"]
+    reading: "nokoru"
+    ipa: "nokoɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ごはんがのこりました。"
+        words: ["ごはん", "が", "のこりました"]
+        reading: "gohan ga nokorimashita."
+        ipa: "ɡohaɴ ɡa nokoɾimaɕita"
+        bases:
+          - { word: "ごはん", ref: "ja-0074" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "のこりました", base: "のこる", reading: "nokoru" }
+      - target: "おかねがのこりません。"
+        words: ["おかね", "が", "のこりません"]
+        reading: "okane ga nokorimasen."
+        ipa: "okane ɡa nokoɾimaseɴ"
+        bases:
+          - { word: "おかね", ref: "ja-0440" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "のこりません", base: "のこる", reading: "nokoru" }
+  - id: "ja-2258"
+    target: "のこす"
+    words: ["のこす"]
+    reading: "nokosu"
+    ipa: "nokosɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちはごはんをのこしました。"
+        words: ["ともだち", "は", "ごはん", "を", "のこしました"]
+        reading: "tomodachi wa gohan o nokoshimashita."
+        ipa: "tomodatɕi wa ɡohaɴ o nokoɕimaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ごはん", ref: "ja-0074" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "のこしました", base: "のこす", reading: "nokosu" }
+      - target: "ごはんをのこさないでください。"
+        words: ["ごはん", "を", "のこさないで", "ください"]
+        reading: "gohan o nokosanaide kudasai."
+        ipa: "ɡohaɴ o nokosanaide kɯdasai"
+        bases:
+          - { word: "ごはん", ref: "ja-0074" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "のこさないで", base: "のこす", reading: "nokosu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2259"
+    target: "あつまる"
+    words: ["あつまる"]
+    reading: "atsumaru"
+    ipa: "atsɯmaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちがえきにあつまりました。"
+        words: ["ともだち", "が", "えき", "に", "あつまりました"]
+        reading: "tomodachi ga eki ni atsumarimashita."
+        ipa: "tomodatɕi ɡa eki ni atsɯmaɾimaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "えき", ref: "ja-1021" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "あつまりました", base: "あつまる", reading: "atsumaru" }
+      - target: "こどもがへやにあつまりました。"
+        words: ["こども", "が", "へや", "に", "あつまりました"]
+        reading: "kodomo ga heya ni atsumarimashita."
+        ipa: "kodomo ɡa heja ni atsɯmaɾimaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "へや", ref: "ja-1168" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "あつまりました", base: "あつまる", reading: "atsumaru" }
+  - id: "ja-2260"
+    target: "あつめる"
+    words: ["あつめる"]
+    reading: "atsumeru"
+    ipa: "atsɯmeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはほんをあつめます。"
+        words: ["わたし", "は", "ほん", "を", "あつめます"]
+        reading: "watashi wa hon o atsumemasu."
+        ipa: "wataɕi wa hoɴ o atsɯmemasɯ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "あつめます", base: "あつめる", reading: "atsumeru" }
+      - target: "せんせいはほんをあつめました。"
+        words: ["せんせい", "は", "ほん", "を", "あつめました"]
+        reading: "sensei wa hon o atsumemashita."
+        ipa: "seɴseː wa hoɴ o atsɯmemaɕita"
+        bases:
+          - { word: "せんせい", ref: "ja-0070" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "あつめました", base: "あつめる", reading: "atsumeru" }
+  - id: "ja-2261"
+    target: "わける"
+    words: ["わける"]
+    reading: "wakeru"
+    ipa: "wakeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ごはんをともだちにわけました。"
+        words: ["ごはん", "を", "ともだち", "に", "わけました"]
+        reading: "gohan o tomodachi ni wakemashita."
+        ipa: "ɡohaɴ o tomodatɕi ni wakemaɕita"
+        bases:
+          - { word: "ごはん", ref: "ja-0074" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "わけました", base: "わける", reading: "wakeru" }
+      - target: "ほんをわけないでください。"
+        words: ["ほん", "を", "わけないで", "ください"]
+        reading: "hon o wakenaide kudasai."
+        ipa: "hoɴ o wakenaide kɯdasai"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "わけないで", base: "わける", reading: "wakeru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2262"
+    target: "くらべる"
+    words: ["くらべる"]
+    reading: "kuraberu"
+    ipa: "kɯɾabeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどものせいをくらべました。"
+        words: ["こども", "の", "せい", "を", "くらべました"]
+        reading: "kodomo no sei o kurabemashita."
+        ipa: "kodomo no seː o kɯɾabemaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "の", base: "の", reading: "no" }
+          - { word: "せい", ref: "ja-2176" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "くらべました", base: "くらべる", reading: "kuraberu" }
+      - target: "わたしのせいをくらべないでください。"
+        words: ["わたし", "の", "せい", "を", "くらべないで", "ください"]
+        reading: "watashi no sei o kurabenaide kudasai."
+        ipa: "wataɕi no seː o kɯɾabenaide kɯdasai"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "の", base: "の", reading: "no" }
+          - { word: "せい", ref: "ja-2176" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "くらべないで", base: "くらべる", reading: "kuraberu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2263"
+    target: "かくれる"
+    words: ["かくれる"]
+    reading: "kakureru"
+    ipa: "kakɯɾeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがへやにかくれました。"
+        words: ["こども", "が", "へや", "に", "かくれました"]
+        reading: "kodomo ga heya ni kakuremashita."
+        ipa: "kodomo ɡa heja ni kakɯɾemaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "へや", ref: "ja-1168" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "かくれました", base: "かくれる", reading: "kakureru" }
+      - target: "ねこはかくれません。"
+        words: ["ねこ", "は", "かくれません"]
+        reading: "neko wa kakuremasen."
+        ipa: "neko wa kakɯɾemaseɴ"
+        bases:
+          - { word: "ねこ", ref: "ja-1565" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "かくれません", base: "かくれる", reading: "kakureru" }
+  - id: "ja-2264"
+    target: "かくす"
+    words: ["かくす"]
+    reading: "kakusu"
+    ipa: "kakɯsɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはかぎをかくしました。"
+        words: ["わたし", "は", "かぎ", "を", "かくしました"]
+        reading: "watashi wa kagi o kakushimashita."
+        ipa: "wataɕi wa kaɡi o kakɯɕimaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "かぎ", ref: "ja-0093" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "かくしました", base: "かくす", reading: "kakusu" }
+      - target: "ほんをかくさないでください。"
+        words: ["ほん", "を", "かくさないで", "ください"]
+        reading: "hon o kakusanaide kudasai."
+        ipa: "hoɴ o kakɯsanaide kɯdasai"
+        bases:
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "かくさないで", base: "かくす", reading: "kakusu" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2265"
+    target: "みつかる"
+    words: ["みつかる"]
+    reading: "mitsukaru"
+    ipa: "mitsɯkaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "かぎがみつかりました。"
+        words: ["かぎ", "が", "みつかりました"]
+        reading: "kagi ga mitsukarimashita."
+        ipa: "kaɡi ɡa mitsɯkaɾimaɕita"
+        bases:
+          - { word: "かぎ", ref: "ja-0093" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "みつかりました", base: "みつかる", reading: "mitsukaru" }
+      - target: "ねこはまだみつかりません。"
+        words: ["ねこ", "は", "まだ", "みつかりません"]
+        reading: "neko wa mada mitsukarimasen."
+        ipa: "neko wa mada mitsɯkaɾimaseɴ"
+        bases:
+          - { word: "ねこ", ref: "ja-1565" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まだ", ref: "ja-0398" }
+          - { word: "みつかりません", base: "みつかる", reading: "mitsukaru" }
+  - id: "ja-2266"
+    target: "みつける"
+    words: ["みつける"]
+    reading: "mitsukeru"
+    ipa: "mitsɯkeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはかぎをみつけました。"
+        words: ["わたし", "は", "かぎ", "を", "みつけました"]
+        reading: "watashi wa kagi o mitsukemashita."
+        ipa: "wataɕi wa kaɡi o mitsɯkemaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "かぎ", ref: "ja-0093" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "みつけました", base: "みつける", reading: "mitsukeru" }
+      - target: "ともだちはほんをみつけました。"
+        words: ["ともだち", "は", "ほん", "を", "みつけました"]
+        reading: "tomodachi wa hon o mitsukemashita."
+        ipa: "tomodatɕi wa hoɴ o mitsɯkemaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "ほん", ref: "ja-1180" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "みつけました", base: "みつける", reading: "mitsukeru" }
+  - id: "ja-2267"
+    target: "ふえる"
+    words: ["ふえる"]
+    reading: "fueru"
+    ipa: "ɸɯeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ともだちがふえました。"
+        words: ["ともだち", "が", "ふえました"]
+        reading: "tomodachi ga fuemashita."
+        ipa: "tomodatɕi ɡa ɸɯemaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "ふえました", base: "ふえる", reading: "fueru" }
+      - target: "ごはんがふえました。"
+        words: ["ごはん", "が", "ふえました"]
+        reading: "gohan ga fuemashita."
+        ipa: "ɡohaɴ ɡa ɸɯemaɕita"
+        bases:
+          - { word: "ごはん", ref: "ja-0074" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "ふえました", base: "ふえる", reading: "fueru" }
+  - id: "ja-2268"
+    target: "へる"
+    words: ["へる"]
+    reading: "heru"
+    ipa: "heɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "おかねがへりました。"
+        words: ["おかね", "が", "へりました"]
+        reading: "okane ga herimashita."
+        ipa: "okane ɡa heɾimaɕita"
+        bases:
+          - { word: "おかね", ref: "ja-0440" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "へりました", base: "へる", reading: "heru" }
+      - target: "ごはんがへりません。"
+        words: ["ごはん", "が", "へりません"]
+        reading: "gohan ga herimasen."
+        ipa: "ɡohaɴ ɡa heɾimaseɴ"
+        bases:
+          - { word: "ごはん", ref: "ja-0074" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "へりません", base: "へる", reading: "heru" }
+  - id: "ja-2269"
+    target: "そだてる"
+    words: ["そだてる"]
+    reading: "sodateru"
+    ipa: "sodateɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "わたしはいぬをそだてました。"
+        words: ["わたし", "は", "いぬ", "を", "そだてました"]
+        reading: "watashi wa inu o sodatemashita."
+        ipa: "wataɕi wa inɯ o sodatemaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "いぬ", ref: "ja-0076" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "そだてました", base: "そだてる", reading: "sodateru" }
+      - target: "ともだちはこどもをそだてました。"
+        words: ["ともだち", "は", "こども", "を", "そだてました"]
+        reading: "tomodachi wa kodomo o sodatemashita."
+        ipa: "tomodatɕi wa kodomo o sodatemaɕita"
+        bases:
+          - { word: "ともだち", ref: "ja-0143" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "そだてました", base: "そだてる", reading: "sodateru" }
+  - id: "ja-2270"
+    target: "そだつ"
+    words: ["そだつ"]
+    reading: "sodatsu"
+    ipa: "sodatsɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがおおきくそだちました。"
+        words: ["こども", "が", "おおきく", "そだちました"]
+        reading: "kodomo ga ookiku sodachimashita."
+        ipa: "kodomo ɡa oːkikɯ sodatɕimaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "おおきく", ref: "ja-0077" }
+          - { word: "そだちました", base: "そだつ", reading: "sodatsu" }
+      - target: "わたしはまちでそだちました。"
+        words: ["わたし", "は", "まち", "で", "そだちました"]
+        reading: "watashi wa machi de sodachimashita."
+        ipa: "wataɕi wa matɕi de sodatɕimaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まち", ref: "ja-1066" }
+          - { word: "で", ref: "ja-0293" }
+          - { word: "そだちました", base: "そだつ", reading: "sodatsu" }
+  - id: "ja-2271"
+    target: "うまれる"
+    words: ["うまれる"]
+    reading: "umareru"
+    ipa: "ɯmaɾeɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがうまれました。"
+        words: ["こども", "が", "うまれました"]
+        reading: "kodomo ga umaremashita."
+        ipa: "kodomo ɡa ɯmaɾemaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "うまれました", base: "うまれる", reading: "umareru" }
+      - target: "わたしはまちでうまれました。"
+        words: ["わたし", "は", "まち", "で", "うまれました"]
+        reading: "watashi wa machi de umaremashita."
+        ipa: "wataɕi wa matɕi de ɯmaɾemaɕita"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まち", ref: "ja-1066" }
+          - { word: "で", ref: "ja-0293" }
+          - { word: "うまれました", base: "うまれる", reading: "umareru" }
+  - id: "ja-2272"
+    target: "いきる"
+    words: ["いきる"]
+    reading: "ikiru"
+    ipa: "ikiɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ねこはいきています。"
+        words: ["ねこ", "は", "いきて", "います"]
+        reading: "neko wa ikite imasu."
+        ipa: "neko wa ikite imasɯ"
+        bases:
+          - { word: "ねこ", ref: "ja-1565" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "いきて", base: "いきる", reading: "ikiru" }
+          - { word: "います", base: "いる", reading: "iru" }
+      - target: "わたしはまちでいきています。"
+        words: ["わたし", "は", "まち", "で", "いきて", "います"]
+        reading: "watashi wa machi de ikite imasu."
+        ipa: "wataɕi wa matɕi de ikite imasɯ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "まち", ref: "ja-1066" }
+          - { word: "で", ref: "ja-0293" }
+          - { word: "いきて", base: "いきる", reading: "ikiru" }
+          - { word: "います", base: "いる", reading: "iru" }
+  - id: "ja-2273"
+    target: "たのしむ"
+    words: ["たのしむ"]
+    reading: "tanoshimu"
+    ipa: "tanoɕimɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもはにわでたのしみました。"
+        words: ["こども", "は", "にわ", "で", "たのしみました"]
+        reading: "kodomo wa niwa de tanoshimimashita."
+        ipa: "kodomo wa niwa de tanoɕimimaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "にわ", ref: "ja-1143" }
+          - { word: "で", ref: "ja-0293" }
+          - { word: "たのしみました", base: "たのしむ", reading: "tanoshimu" }
+      - target: "わたしはしごとをたのしんでいます。"
+        words: ["わたし", "は", "しごと", "を", "たのしんで", "います"]
+        reading: "watashi wa shigoto o tanoshinde imasu."
+        ipa: "wataɕi wa ɕiɡoto o tanoɕiɴde imasɯ"
+        bases:
+          - { word: "わたし", ref: "ja-0067" }
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "しごと", ref: "ja-0691" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "たのしんで", base: "たのしむ", reading: "tanoshimu" }
+          - { word: "います", base: "いる", reading: "iru" }
+  - id: "ja-2274"
+    target: "あたる"
+    words: ["あたる"]
+    reading: "ataru"
+    ipa: "ataɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "くるまがまどにあたりました。"
+        words: ["くるま", "が", "まど", "に", "あたりました"]
+        reading: "kuruma ga mado ni atarimashita."
+        ipa: "kɯɾɯma ɡa mado ni ataɾimaɕita"
+        bases:
+          - { word: "くるま", ref: "ja-1017" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "まど", ref: "ja-1170" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "あたりました", base: "あたる", reading: "ataru" }
+      - target: "ドアにあたらないでください。"
+        words: ["ドア", "に", "あたらないで", "ください"]
+        reading: "doa ni ataranaide kudasai."
+        ipa: "doa ni ataɾanaide kɯdasai"
+        bases:
+          - { word: "ドア", ref: "ja-0859" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "あたらないで", base: "あたる", reading: "ataru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }
+  - id: "ja-2275"
+    target: "はじまる"
+    words: ["はじまる"]
+    reading: "hajimaru"
+    ipa: "hadʑimaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "がっこうがはじまりました。"
+        words: ["がっこう", "が", "はじまりました"]
+        reading: "gakkou ga hajimarimashita."
+        ipa: "ɡakkoː ɡa hadʑimaɾimaɕita"
+        bases:
+          - { word: "がっこう", ref: "ja-0313" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "はじまりました", base: "はじまる", reading: "hajimaru" }
+      - target: "あしたからはじまります。"
+        words: ["あした", "から", "はじまります"]
+        reading: "ashita kara hajimarimasu."
+        ipa: "aɕita kaɾa hadʑimaɾimasɯ"
+        bases:
+          - { word: "あした", ref: "ja-0513" }
+          - { word: "から", base: "から", reading: "kara" }
+          - { word: "はじまります", base: "はじまる", reading: "hajimaru" }
+  - id: "ja-2276"
+    target: "さわる"
+    words: ["さわる"]
+    reading: "sawaru"
+    ipa: "sawaɾɯ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こどもがねこをさわりました。"
+        words: ["こども", "が", "ねこ", "を", "さわりました"]
+        reading: "kodomo ga neko o sawarimashita."
+        ipa: "kodomo ɡa neko o sawaɾimaɕita"
+        bases:
+          - { word: "こども", ref: "ja-0225" }
+          - { word: "が", ref: "ja-0280" }
+          - { word: "ねこ", ref: "ja-1565" }
+          - { word: "を", base: "を", reading: "o" }
+          - { word: "さわりました", base: "さわる", reading: "sawaru" }
+      - target: "ふくにさわらないでください。"
+        words: ["ふく", "に", "さわらないで", "ください"]
+        reading: "fuku ni sawaranaide kudasai."
+        ipa: "ɸɯkɯ ni sawaɾanaide kɯdasai"
+        bases:
+          - { word: "ふく", ref: "ja-1512" }
+          - { word: "に", ref: "ja-0230" }
+          - { word: "さわらないで", base: "さわる", reading: "sawaru" }
+          - { word: "ください", base: "ください", reading: "kudasai" }

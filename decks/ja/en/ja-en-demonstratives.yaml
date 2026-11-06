@@ -1,0 +1,179 @@
+schema: 1
+id: "ja-en-demonstratives"
+kind: "layer"
+core: "ja-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "This, that and which"
+description: "The words これ (kore), それ (sore), あれ (are) and どれ (dore), and the words before a noun, この (kono), その (sono), あの (ano) and どの (dono): this, that near you, that over there, and which. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0661":
+    native: "this (one, near me)"
+    notes:
+      "n1": "これ (kore) means this one, near the speaker. This dog: この (kono)."
+    examples:
+      "これはつくえです。":
+        native: "This is a desk."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "これはいすですか。":
+        native: "Is this a chair?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0662":
+    native: "that (one, near you)"
+    notes:
+      "n1": "それ (sore) means that one, near the listener. That dog: その (sono)."
+    examples:
+      "それはりんごです。":
+        native: "That is an apple."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "それはぎゅうにゅうですか。":
+        native: "Is that milk?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0663":
+    native: "that (one, over there)"
+    notes:
+      "n1": "あれ (are) means that one over there, far from both. That dog over there: あの (ano)."
+    examples:
+      "あれはとうきょうです。":
+        native: "That over there is Tokyo."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "あれはがっこうですか。":
+        native: "Is that over there a school?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0664":
+    native: "which one"
+    notes:
+      "n1": "どれ (dore) asks which one. Which dog: どの (dono)."
+    examples:
+      "どれがいすですか。":
+        native: "Which one is the chair?"
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "どれがりんごですか。":
+        native: "Which one is the apple?"
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0665":
+    native: "this (before a noun)"
+    notes:
+      "n1": "この (kono) comes before a noun: this one near me, as このいぬ (kono inu), this dog."
+    examples:
+      "このいぬはおおきいです。":
+        native: "This dog is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "このがっこうはしずかです。":
+        native: "This school is quiet."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0666":
+    native: "that (before a noun, near you)"
+    notes:
+      "n1": "その (sono) comes before a noun: that one near the listener, as そのかぎ (sono kagi), that key."
+    examples:
+      "そのかぎはどこですか。":
+        native: "Where is that key?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "そのひとはせんせいです。":
+        native: "That person is a teacher."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0667":
+    native: "that (before a noun, over there)"
+    notes:
+      "n1": "あの (ano) comes before a noun: that one over there, as あのいぬ (ano inu), that dog over there."
+    examples:
+      "あのいぬはつよいです。":
+        native: "That dog over there is strong."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "あのひとはだれですか。":
+        native: "Who is that person?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0668":
+    native: "which (before a noun)"
+    notes:
+      "n1": "どの (dono) comes before a noun to ask which, as どのいぬ (dono inu), which dog."
+    examples:
+      "どのいぬですか。":
+        native: "Which dog is it?"
+        bases:
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "どのがっこうですか。":
+        native: "Which school is it?"
+        bases:
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0679":
+    native: "this, that and which: the kosoado words"
+    explanation: "Japanese has words for this and that by distance, and one for which: これ (kore), それ (sore), あれ (are), どれ (dore). Before a noun they become この (kono), その (sono), あの (ano) and どの (dono)."

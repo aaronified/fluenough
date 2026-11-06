@@ -1,0 +1,80 @@
+"schema": 1
+"id": "ja-en-reading-religion"
+"name": "Japanese reading: religion"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "ja-religion-1"
+    "title": "A visit to the shrine"
+    "sentences":
+      - "text": "はつもうでに、じんじゃへいきました。"
+        "reading": "hatsumoude ni, jinja e ikimashita."
+      - "text": "さいせんばこに、おかねを いれて、いのりました。"
+        "reading": "saisenbako ni, okane o irete, inorimashita."
+      - "text": "おみくじを ひいたら、きちきちでした。"
+        "reading": "omikuji o hiitara, kichikichi deshita."
+      - "text": "えまに ねがいを かいて、かけました。"
+        "reading": "ema ni negai o kaite, kakemashita."
+    "questions":
+      - "id": "ja-3642"
+        "prompt":
+          "en": "What did the person put in the offering box?"
+        "options":
+          - "en": "Money"
+          - "en": "A charm"
+        "answer": 1
+      - "id": "ja-3643"
+        "prompt":
+          "en": "The fortune slip was bad."
+        "answer": false
+      - "id": "ja-3644"
+        "prompt":
+          "en": "Which line says the person hung a votive plate?"
+        "options":
+          - "en": "The third line"
+          - "en": "The fourth line"
+        "answer": 2
+  - "id": "ja-religion-2"
+    "title": "A funeral"
+    "sentences":
+      - "text": "きのう、そうしきに でました。"
+        "reading": "kinou, soushiki ni demashita."
+      - "text": "おぼうさんが おきょうを よみました。"
+        "reading": "obousan ga okyou o yomimashita."
+      - "text": "ぶつだんに、おそなえを しました。"
+        "reading": "butsudan ni, osonae o shimashita."
+      - "text": "わたしは、ほとけに てを あわせました。"
+        "reading": "watashi wa, hotoke ni te o awasemashita."
+    "questions":
+      - "id": "ja-3645"
+        "prompt":
+          "en": "Who read the sutra?"
+        "options":
+          - "en": "A Buddhist monk"
+          - "en": "A shrine maiden"
+        "answer": 1
+      - "id": "ja-3646"
+        "prompt":
+          "en": "The third line says that an offering was made at the household altar."
+        "answer": true
+      - "id": "ja-3647"
+        "prompt":
+          "en": "Which line says the person joined their hands before the Buddha?"
+        "options":
+          - "en": "The third line"
+          - "en": "The fourth line"
+        "answer": 2

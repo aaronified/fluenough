@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-quantities"
+name: "Japanese reading: quantities"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-quantities-1"
+    title: "Prices"
+    sentences:
+      - text: "りんごはやすいです。"
+        reading: "ringo wa yasui desu."
+      - text: "ぎゅうにゅうはたかいです。"
+        reading: "gyuunyuu wa takai desu."
+      - text: "おかねはすくないです。"
+        reading: "okane wa sukunai desu."
+      - text: "ぱんはおおきいです。"
+        reading: "pan wa ookii desu."
+    questions:
+      - id: "ja-0456"
+        prompt:
+          en: "Which line says that milk is expensive?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-0457"
+        prompt:
+          en: "The third line says that the speaker has little money."
+        answer: true
+      - id: "ja-0458"
+        prompt:
+          en: "Which line says that the bread is big?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-quantities-2"
+    title: "A shopping note"
+    sentences:
+      - text: "りんごをふたつたべます。"
+        reading: "ringo o futatsu tabemasu."
+      - text: "たまごをはんぶんたべます。"
+        reading: "tamago o hanbun tabemasu."
+      - text: "ねだんはだいたいいくらですか。"
+        reading: "nedan wa daitai ikura desu ka."
+      - text: "はこはちょうどひとつです。"
+        reading: "hako wa choudo hitotsu desu."
+    questions:
+      - id: "ja-0459"
+        prompt:
+          en: "Which line says that the speaker eats half an egg?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-0460"
+        prompt:
+          en: "The first line says that the speaker eats two apples."
+        answer: true
+      - id: "ja-0461"
+        prompt:
+          en: "Which line says that there is exactly one box?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2

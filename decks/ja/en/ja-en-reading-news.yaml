@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-news"
+"name": "Japanese reading: news"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-news-1"
+  "title": "A morning paper"
+  "sentences":
+  - "text": "けさ、しんぶんの いちめんを よみました。"
+    "reading": "kesa, shinbun no ichimen o yomimashita."
+  - "text": "じしんの きじが のって いました。"
+    "reading": "jishin no kiji ga notte imashita."
+  - "text": "きしゃが まちの ひとに はなしを きいて いました。"
+    "reading": "kisha ga machi no hito ni hanashi o kiite imashita."
+  - "text": "わたしは、そのきじを よんで ふあんに なりました。"
+    "reading": "watashi wa, sono kiji o yonde fuan ni narimashita."
+  "questions":
+  - "id": "ja-2902"
+    "prompt":
+      "en": "Which line says that the writer read the front page?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2903"
+    "prompt":
+      "en": "The writer was worried after reading the article."
+    "answer": !!bool true
+  - "id": "ja-2904"
+    "prompt":
+      "en": "Which line says that a reporter spoke with people in the town?"
+    "options":
+    - "en": "The second line"
+    - "en": "The third line"
+    "answer": !!int "2"
+- "id": "ja-news-2"
+  "title": "A radio report"
+  "sentences":
+  - "text": "らじおで、てんきよほうを ききました。"
+    "reading": "rajio de, tenkiyohou o kikimashita."
+  - "text": "ほうそうきょくの ひとが、おおきい かぜの ことを はなしました。"
+    "reading": "housoukyoku no hito ga, ookii kaze no koto o hanashimashita."
+  - "text": "そのあと、ほうどうが すこし ありました。"
+    "reading": "sono ato, houdou ga sukoshi arimashita."
+  - "text": "わたしは、ニュースの あとで ばんぐみを みました。"
+    "reading": "watashi wa, nyuusu no ato de bangumi o mimashita."
+  "questions":
+  - "id": "ja-2905"
+    "prompt":
+      "en": "Which line says that the writer listened to the weather forecast?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2906"
+    "prompt":
+      "en": "The writer watched a programme after the news."
+    "answer": !!bool true
+  - "id": "ja-2907"
+    "prompt":
+      "en": "Which line says that a broadcasting station spoke about the wind?"
+    "options":
+    - "en": "The second line"
+    - "en": "The fourth line"
+    "answer": !!int "2"

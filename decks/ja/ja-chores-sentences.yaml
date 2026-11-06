@@ -1,0 +1,291 @@
+schema: 1
+id: "ja-chores-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-2130"
+    target: "わたしはよるおさらをあらいます。"
+    words: ["わたし", "は", "よる", "おさら", "を", "あらいます"]
+    reading: "watashi wa yoru osara o araimasu."
+    ipa: "wataɕi wa joɾɯ osaɾa o aɾaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "よる", ref: "ja-0511" }
+      - { word: "おさら", ref: "ja-1797" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "あらいます", ref: "ja-0363" }
+    confusables:
+      - { id: "w1", word: "せんたくもの", reading: "sentakumono", kind: "word" }
+      - { id: "w2", word: "ごみ", reading: "gomi", kind: "word" }
+  - id: "ja-2131"
+    target: "おかあさんがせんたくものをものほしにほします。"
+    words: ["おかあさん", "が", "せんたくもの", "を", "ものほし", "に", "ほします"]
+    reading: "okaasan ga sentakumono o monohoshi ni hoshimasu."
+    ipa: "okaːsaɴ ɡa seɴtakɯmono o monohoɕi ni hoɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "おかあさん", ref: "ja-0215" }
+      - { word: "が", ref: "ja-0280" }
+      - { word: "せんたくもの", ref: "ja-2095" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ものほし", ref: "ja-2113" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "ほします", ref: "ja-1350" }
+    confusables:
+      - { id: "w1", word: "ほこり", reading: "hokori", kind: "word" }
+      - { id: "w2", word: "せんたくばさみ", reading: "sentakubasami", kind: "word" }
+  - id: "ja-2132"
+    target: "ごみすてはあしたです。"
+    words: ["ごみすて", "は", "あした", "です"]
+    reading: "gomisute wa ashita desu."
+    ipa: "ɡomisɯte wa aɕita desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ごみすて", ref: "ja-2100" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あした", ref: "ja-0513" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "きょう", reading: "kyou", kind: "word" }
+      - { id: "w2", word: "あさ", reading: "asa", kind: "word" }
+  - id: "ja-2133"
+    target: "もえるごみをあさにだします。"
+    words: ["もえるごみ", "を", "あさ", "に", "だします"]
+    reading: "moerugomi o asa ni dashimasu."
+    ipa: "moeɾɯɡomi o asa ni daɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "もえるごみ", ref: "ja-2101" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "あさ", ref: "ja-0509" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "だします", ref: "ja-1348" }
+    confusables:
+      - { id: "w1", word: "しげんごみ", reading: "shigengomi", kind: "word" }
+      - { id: "w2", word: "もえないごみ", reading: "moenaigomi", kind: "word" }
+  - id: "ja-2134"
+    target: "わたしはさらをたわしであらいます。"
+    words: ["わたし", "は", "さら", "を", "たわし", "で", "あらいます"]
+    reading: "watashi wa sara o tawashi de araimasu."
+    ipa: "wataɕi wa saɾa o tawaɕi de aɾaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "さら", ref: "ja-0984" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たわし", ref: "ja-2110" }
+      - { word: "で", ref: "ja-0293" }
+      - { word: "あらいます", ref: "ja-0363" }
+    confusables:
+      - { id: "w1", word: "スポンジ", reading: "suponji", kind: "word" }
+      - { id: "w2", word: "みず", reading: "mizu", kind: "word" }
+  - id: "ja-2135"
+    target: "こどもがふくをよごしました。"
+    words: ["こども", "が", "ふく", "を", "よごしました"]
+    reading: "kodomo ga fuku o yogoshimashita."
+    ipa: "kodomo ɡa ɸɯkɯ o joɡoɕimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "が", ref: "ja-0280" }
+      - { word: "ふく", ref: "ja-1512" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よごしました", ref: "ja-2128" }
+    confusables:
+      - { id: "w1", word: "ほこり", reading: "hokori", kind: "word" }
+      - { id: "w2", word: "ごみ", reading: "gomi", kind: "word" }
+  - id: "ja-2136"
+    target: "わたしはへやをきれいにしまいました。"
+    words: ["わたし", "は", "へや", "を", "きれい", "に", "しまいました"]
+    reading: "watashi wa heya o kirei ni shimaimashita."
+    ipa: "wataɕi wa heja o kiɾeː ni ɕimaimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "へや", ref: "ja-1168" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "きれい", ref: "ja-0479" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "しまいました", ref: "ja-2120" }
+    confusables:
+      - { id: "w1", word: "ちらかす", reading: "chirakasu", kind: "word" }
+      - { id: "w2", word: "そろえる", reading: "soroeru", kind: "word" }
+  - id: "ja-2137"
+    target: "かぞくであとかたづけをしました。"
+    words: ["かぞく", "で", "あとかたづけ", "を", "しました"]
+    reading: "kazoku de atokatazuke o shimashita."
+    ipa: "kadzokɯ de atokatadzɯke o ɕimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "かぞく", ref: "ja-0224" }
+      - { word: "で", ref: "ja-0293" }
+      - { word: "あとかたづけ", ref: "ja-2106" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "しました", ref: "ja-0375" }
+    confusables:
+      - { id: "w1", word: "したく", reading: "shitaku", kind: "word" }
+      - { id: "w2", word: "てつだい", reading: "tetsudai", kind: "word" }
+  - id: "ja-2138"
+    target: "ゴミぶくろにごみをいれてください。"
+    words: ["ゴミぶくろ", "に", "ごみ", "を", "いれて", "ください"]
+    reading: "gomibukuro ni gomi o irete kudasai."
+    ipa: "ɡomibɯkɯɾo ni ɡomi o iɾete kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "ゴミぶくろ", ref: "ja-2103" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "ごみ", ref: "ja-0946" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "いれて", ref: "ja-0592" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", word: "つめる", reading: "tsumeru", kind: "word" }
+      - { id: "w2", word: "くばる", reading: "kubaru", kind: "word" }
+  - id: "ja-2139"
+    target: "せんざいはどこにありますか。"
+    words: ["せんざい", "は", "どこ", "に", "あります", "か"]
+    reading: "senzai wa doko ni arimasu ka."
+    ipa: "seɴdzai wa doko ni aɾimasɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "せんざい", ref: "ja-2096" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "どこ", ref: "ja-0110" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "あります", base: "ある", reading: "aru" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", word: "せんたくばさみ", reading: "sentakubasami", kind: "word" }
+      - { id: "w2", word: "アイロン", reading: "airon", kind: "word" }
+  - id: "ja-2140"
+    target: "こどもはそうじどうぐをつかいません。"
+    words: ["こども", "は", "そうじどうぐ", "を", "つかいません"]
+    reading: "kodomo wa soujidougu o tsukaimasen."
+    ipa: "kodomo wa soːdʑidoːɡɯ o tsɯkaimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "そうじどうぐ", ref: "ja-2109" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つかいません", ref: "ja-0369" }
+    confusables:
+      - { id: "w1", word: "たわし", reading: "tawashi", kind: "word" }
+      - { id: "w2", word: "ゴミぶくろ", reading: "gomibukuro", kind: "word" }
+  - id: "ja-2141"
+    target: "わたしはともだちにほんをくばりました。"
+    words: ["わたし", "は", "ともだち", "に", "ほん", "を", "くばりました"]
+    reading: "watashi wa tomodachi ni hon o kubarimashita."
+    ipa: "wataɕi wa tomodatɕi ni hoɴ o kɯbaɾimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ともだち", ref: "ja-0143" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "ほん", ref: "ja-1180" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "くばりました", ref: "ja-2125" }
+    confusables:
+      - { id: "w1", word: "つくえ", reading: "tsukue", kind: "word" }
+      - { id: "w2", word: "ほこり", reading: "hokori", kind: "word" }
+  - id: "ja-2142"
+    target: "スポンジはあたらしいです。"
+    words: ["スポンジ", "は", "あたらしい", "です"]
+    reading: "suponji wa atarashii desu."
+    ipa: "sɯpoɴdʑi wa ataɾaɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "スポンジ", ref: "ja-2111" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あたらしい", ref: "ja-0462" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "たわし", reading: "tawashi", kind: "word" }
+      - { id: "w2", word: "ものほし", reading: "monohoshi", kind: "word" }
+  - id: "ja-2143"
+    target: "せんたくばさみはどこにありますか。"
+    words: ["せんたくばさみ", "は", "どこ", "に", "あります", "か"]
+    reading: "sentakubasami wa doko ni arimasu ka."
+    ipa: "seɴtakɯbasami wa doko ni aɾimasɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "せんたくばさみ", ref: "ja-2112" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "どこ", ref: "ja-0110" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "あります", base: "ある", reading: "aru" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", word: "ほこり", reading: "hokori", kind: "word" }
+      - { id: "w2", word: "せんざい", reading: "senzai", kind: "word" }
+  - id: "ja-2144"
+    target: "へやにほこりがあります。"
+    words: ["へや", "に", "ほこり", "が", "あります"]
+    reading: "heya ni hokori ga arimasu."
+    ipa: "heja ni hokoɾi ɡa aɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "へや", ref: "ja-1168" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "ほこり", ref: "ja-2114" }
+      - { word: "が", ref: "ja-0280" }
+      - { word: "あります", base: "ある", reading: "aru" }
+    confusables:
+      - { id: "w1", word: "きれい", reading: "kirei", kind: "word" }
+      - { id: "w2", word: "おおきい", reading: "ookii", kind: "word" }
+  - id: "ja-2145"
+    target: "こどもがおかあさんのてつだいをしました。"
+    words: ["こども", "が", "おかあさん", "の", "てつだい", "を", "しました"]
+    reading: "kodomo ga okaasan no tetsudai o shimashita."
+    ipa: "kodomo ɡa okaːsaɴ no tetsɯdai o ɕimaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "こども", ref: "ja-0225" }
+      - { word: "が", ref: "ja-0280" }
+      - { word: "おかあさん", ref: "ja-0215" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "てつだい", ref: "ja-2108" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "しました", ref: "ja-0375" }
+    confusables:
+      - { id: "w1", word: "おとうさん", reading: "otousan", kind: "word" }
+      - { id: "w2", word: "かぞく", reading: "kazoku", kind: "word" }
+  - id: "ja-2146"
+    target: "しげんごみはきょうです。"
+    words: ["しげんごみ", "は", "きょう", "です"]
+    reading: "shigengomi wa kyou desu."
+    ipa: "ɕiɡeɴɡomi wa kjoː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "しげんごみ", ref: "ja-2104" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "きょう", ref: "ja-0512" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "もえるごみ", reading: "moerugomi", kind: "word" }
+      - { id: "w2", word: "もえないごみ", reading: "moenaigomi", kind: "word" }
+  - id: "ja-2147"
+    target: "わたしはくつをきれいにそろえます。"
+    words: ["わたし", "は", "くつ", "を", "きれい", "に", "そろえます"]
+    reading: "watashi wa kutsu o kirei ni soroemasu."
+    ipa: "wataɕi wa kɯtsɯ o kiɾeː ni soɾoemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "わたし", ref: "ja-0067" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "くつ", ref: "ja-1522" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "きれい", ref: "ja-0479" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "そろえます", ref: "ja-2121" }
+    confusables:
+      - { id: "w1", word: "ふく", reading: "fuku", kind: "word" }
+      - { id: "w2", word: "かざる", reading: "kazaru", kind: "word" }

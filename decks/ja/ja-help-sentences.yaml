@@ -1,0 +1,80 @@
+schema: 1
+id: "ja-help-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1243"
+    target: "けいさつをよびます。"
+    words: ["けいさつ", "を", "よびます"]
+    reading: "keisatsu o yobimasu."
+    ipa: "keːsatsɯ o jobimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "よびます", base: "よぶ", reading: "yobu" }
+    confusables:
+      - id: "w1"
+        word: "きゅうきゅうしゃ"
+        reading: "kyuukyuusha"
+        kind: "word"
+      - id: "w2"
+        word: "しょうぼう"
+        reading: "shoubou"
+        kind: "word"
+  - id: "ja-1244"
+    target: "びょうきですか。"
+    words: ["びょうき", "です", "か"]
+    reading: "byouki desu ka."
+    ipa: "bjoːki desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "けが"
+        reading: "kega"
+        kind: "word"
+      - id: "w2"
+        word: "ぐあい"
+        reading: "guai"
+        kind: "word"
+  - id: "ja-1245"
+    target: "ここはあぶないです。"
+    words: ["ここ", "は", "あぶない", "です"]
+    reading: "koko wa abunai desu."
+    ipa: "koko wa abɯnai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "あんぜん"
+        reading: "anzen"
+        kind: "word"
+      - id: "w2"
+        word: "だいじょうぶ"
+        reading: "daijoubu"
+        kind: "word"
+  - id: "ja-1246"
+    target: "みちにまよいます。"
+    words: ["みち", "に", "まよいます"]
+    reading: "michi ni mayoimasu."
+    ipa: "mitɕi ni majoimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "まよいます", base: "まよう", reading: "mayou" }
+    confusables:
+      - id: "w1"
+        word: "こまる"
+        reading: "komaru"
+        kind: "word"
+      - id: "w2"
+        word: "いぬ"
+        reading: "inu"
+        kind: "word"
