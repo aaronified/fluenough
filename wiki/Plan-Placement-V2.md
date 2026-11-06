@@ -14,8 +14,8 @@ Status: plan agreed by the owner 2026-11-05. Step 1 (the pure model in `lib/core
 
 - **Built (step 1, PR #1032).** Pure model in `lib/core` first, with unit tests: the twelve-class posterior update (4.1), the question parameters (4.2), the run state of this run's answers, and the mastery-topic order (2.1).
 - **Built, not wired (step 2, `feat/placement-question-generators`).** Then the question generators in `lib/core`, one mastery topic at a time (2.1, topics 1 to 7). Section 11 holds the data audit, the gaps and their fallbacks.
-- **Not built (step 3).** Then the run flow and the checkpoint UI (5.1, 5.4).
-- **Not built (step 4).** Then the declaration screen (4.5).
+- **Built (step 3, `feat/placement-run-flow`).** Then the run flow and the checkpoint UI (5.1, 5.4). Section 12 holds how it was built and the choices the plan was silent on.
+- **Built (step 4, `feat/placement-run-flow`).** Then the declaration screen (4.5).
   - offer options by built level (4.5).
 - **Not built (step 5).** Then the confidence display (4.3, 5.5).
 - Rule for every step: `lib/core` has no Flutter imports (AGENTS.md); Flutter code lives in `lib/features`.
@@ -542,3 +542,26 @@ Status: built in `lib/core/placement/`, no screen uses it and `lib/app/placement
 **The run controller's hook.** `PlacementRun.markUnavailable(reason)` records that the next question could not be built (the state is the answers and these notes, so a run is still rebuilt from them). The plan's fallbacks: a minimal pair with `noSoundsFile` or `noPairFound` becomes a heard complex word (`W2b`); with `pairAudioUntrusted` or `noAudio` it becomes Write tiles (Hear is then not covered); any other base question is left out, its skills are not covered and so not Verified (4.3 c); a split or a recheck that cannot be built is dropped and the miss stays as evidence, **unresolved** (the plan was silent; decided in review of the step-2 pull request): the skills of that question cannot be Verified in this run (`PlacementRun.unresolvedSkills`), because a miss that no check settled is not proof; a probe or a top-up that cannot be built leaves its skill out of the run; the grammar bisection ends (a later probe that cannot be built keeps the level the earlier probes found). `PlacementQuestionRequest` gained `originVariant` (set on a split and on an isolating question: the base question it checks); the caller hands that question back to `build(failed:)`, and a split or an isolating question that needs its word, family or contrast is unavailable (`noOrigin`) without it, never asked about some other item. Both options of a sentence-order pair (G3, R2's second split) are written the same way, from the sentence's tiles, so that nothing but the order shows the right one.
 
 **Not done in step 2.** Loading the learner's decks, the path, the script check's data and the review history into `PlacementLanguageData`, and showing and grading a question, are step 3. The existing `lib/app/placement*.dart` flow is unchanged and the CHANGELOG has no line, because nothing the learner sees has changed.
+
+### 12. Steps 3 and 4: the declaration and the run, as built (2026-11-06)
+
+Status: built and wired into the skills sheet's Find my level row (`LanguageSkillsSheet._findLevel`). The old `PlacementPage` is unchanged and still serves the first launch and the language picker. Not run locally; CI runs the tests (`test/find_level_*_test.dart`).
+
+**What a learner sees.** The row reads "Verify what you know" while a skill marked Know is not Verified yet, then "Fit my level" (or "Find my level" before a level was found). A tap downloads every deck of the language if any is missing, then asks the declaration, then runs. Below A1 the row is not shown at all (open question 10: nothing).
+
+**Where it lives.** `lib/core/placement/`: `declaration_options.dart` (the options by built level), `skills_in_play.dart` (which skills a tap checks), `placement_session.dart` (the run controller and the question builder together; its state is its events, so a paused run is replayed), `saved_run.dart` (the paused run, 7 days, the deck-set key). `lib/app/placement_run_setup.dart` reads a course into `PlacementLanguageData` and writes the outcome. `lib/features/placement/find_level_*.dart` are the screens. `B1Progress.builtLevel` says how many levels are written to their end (0 to 3).
+
+**Choices the plan was silent on** (the simplest option was taken):
+
+1. *Built level* is read from the catalog's `B1Progress` (a level counts when the path marks it and no unit up to it is still to be written), so it is known before the decks are downloaded.
+2. *Skills in play.* Know skills that are not Verified; when every known skill is Verified, the Learn skills; else the known skills again. Speak is Say, Read and Write as marked, and the Read of a script the course has its own decks for is also that script's skill (Hindustani's two are `script` and `secondScript`). Hear is left out of a run when there is no voice (so a skill that cannot be heard is not failed).
+3. *Microphone.* The run uses it only when the recogniser works for the language and for the learner's own language (long sentences are said back in it). "I can't speak now", or two listens in a row that heard nothing, gives it up for the rest of the run: before any Say answer the run goes on as if there had been none from the start (K1 and K2 become picks); after one, each later Say question is skipped, never counted as a miss.
+4. *No feedback* is shown after an answer (a run that told the answers could not place a learner by them).
+5. *Pair audio* is asked as audio with `pairAudioTrusted` left false (nothing checks it yet); the plan's Write fallback applies only after a device check exists.
+6. *The third script question* is on (owner, 2026-11-05).
+7. *Stable cards* (never asked, section 2.2) are those reviewed in any drill with a stability of 30 days or more.
+8. *What a run writes.* Each skill's decks up to its placed level are credited in that skill's drills (Read: recognition, reading, understood grammar; Write: production, produced grammar; Hear: listening; Say: speaking) through the existing `creditPlacement` (new `only` argument). The course's placed decks (`placedDecks`) are those up to the lowest placed level of the word skills, so no skill is denied a lesson it still needs. A script placed at its top class is credited as read; below it the script lessons stay. A run only adds credit: the plan's section 4.4 (ask before a lower placement drops credit) is not built. The learner's choice of how placed words are reviewed is left as it is.
+9. *Verified marks* are kept per language in the settings (`verified_skills`, by skill name), set for the skills a run tested and left alone for the others. A paused run is kept in the settings too (`placement_runs`), dropped when the run ends.
+10. *The checkpoint's lines* are "Read: unit 80 · Very sure"; a script reads "Script: known" or "not yet"; a skill not in play is not listed.
+
+**Where step 5 plugs in.** `FindLevelSummary` (`find_level_summary.dart`) is the whole result screen, shown by `FindLevelRunPage` once the outcome is written; replace it (it gets the finished `PlacementRun`, whose `readout` has each skill's name, assurance and placed level, and calls `onDone`). `findLevelStandings` builds the per-skill lines for it and for the checkpoint. The sheet's skill row should read the Verified marks with `Settings.verifiedSkillsOf`.

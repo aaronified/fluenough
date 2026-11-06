@@ -13949,5 +13949,311 @@
         "example": "the vowel length"
       }
     }
+  },
+  "findLevelDeclarationTitle": "How well do you know {language}?",
+  "@findLevelDeclarationTitle": {
+    "description": "Find my level: the first question, above the four answers.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelExpert": "Expert",
+  "@findLevelExpert": {
+    "description": "Find my level, first question: the top answer."
+  },
+  "findLevelExpertSub": "I use it easily",
+  "@findLevelExpertSub": {
+    "description": "Find my level, first question: what Expert means."
+  },
+  "findLevelAdvanced": "Advanced",
+  "@findLevelAdvanced": {
+    "description": "Find my level, first question: the second answer."
+  },
+  "findLevelAdvancedSub": "I follow most of it and can say what I need",
+  "@findLevelAdvancedSub": {
+    "description": "Find my level, first question: what Advanced means."
+  },
+  "findLevelAmateur": "Amateur",
+  "@findLevelAmateur": {
+    "description": "Find my level, first question: the third answer."
+  },
+  "findLevelAmateurSub": "I know some words and phrases",
+  "@findLevelAmateurSub": {
+    "description": "Find my level, first question: what Amateur means."
+  },
+  "findLevelBeginner": "Beginner",
+  "@findLevelBeginner": {
+    "description": "Find my level, first question: the answer for someone who knows nothing yet."
+  },
+  "findLevelBeginnerSub": "I am starting from nothing",
+  "@findLevelBeginnerSub": {
+    "description": "Find my level, first question: what Beginner means."
+  },
+  "findLevelBeginnerToast": "Starting {language} from the beginning. You can find your level later.",
+  "@findLevelBeginnerToast": {
+    "description": "Toast after the Beginner answer: nothing is asked and nothing is credited.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelSayMeaning": "Say what this means in {language}",
+  "@findLevelSayMeaning": {
+    "description": "Find my level: a sentence written in the script, to be said back in the learner’s own language. {language} is that language.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "findLevelListenSayMeaning": "Listen, then say what it means in {language}",
+  "@findLevelListenSayMeaning": {
+    "description": "Find my level: a sentence played aloud, to be said back in the learner’s own language. {language} is that language.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "English"
+      }
+    }
+  },
+  "findLevelWordMeaning": "What does this word mean?",
+  "@findLevelWordMeaning": {
+    "description": "Find my level: a word to choose the meaning of."
+  },
+  "findLevelPickBlank": "Which form fits the blank?",
+  "@findLevelPickBlank": {
+    "description": "Find my level: a sentence with one word form blanked out, to choose from."
+  },
+  "findLevelWhichSentence": "Which sentence is right?",
+  "@findLevelWhichSentence": {
+    "description": "Find my level: two sentences, one with its words in the right order."
+  },
+  "findLevelWhichSentenceSounds": "Which sentence sounds right?",
+  "@findLevelWhichSentenceSounds": {
+    "description": "Find my level: two sentences, one with its words in the right order, with the right one played aloud."
+  },
+  "findLevelBuildFromAudio": "Listen, then put the words in order",
+  "@findLevelBuildFromAudio": {
+    "description": "Find my level: a sentence played aloud, to build from word tiles."
+  },
+  "findLevelBuildFromMeaning": "Put the words in order",
+  "@findLevelBuildFromMeaning": {
+    "description": "Find my level: a meaning shown, to build the sentence from word tiles."
+  },
+  "findLevelBuildWord": "Put the letters in order",
+  "@findLevelBuildWord": {
+    "description": "Find my level: a meaning shown, to build the word from letter tiles."
+  },
+  "findLevelSayWord": "Say this in {language}",
+  "@findLevelSayWord": {
+    "description": "Find my level: a meaning shown, to be said in the language learned.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelSkippedSaying": "We won’t ask you to speak. Speaking isn’t tested this time.",
+  "@findLevelSkippedSaying": {
+    "description": "Toast after the learner says they can’t speak now during Find my level."
+  },
+  "findLevelPaused": "Paused. Choose Find my level again within 7 days to carry on.",
+  "@findLevelPaused": {
+    "description": "Toast after the learner leaves Find my level part-way."
+  },
+  "findLevelCheckpointTitle": "{count} questions answered",
+  "@findLevelCheckpointTitle": {
+    "description": "Find my level, every 25 questions: the heading of the pause.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "25"
+      }
+    }
+  },
+  "findLevelCheckpointBody": "This is where you stand now. If you think you are better than this, keep going. Or stop here and we will place you at these levels.",
+  "@findLevelCheckpointBody": {
+    "description": "Find my level, every 25 questions: what the learner is asked to choose."
+  },
+  "findLevelKeepGoing": "Keep going",
+  "@findLevelKeepGoing": {
+    "description": "Find my level checkpoint: carries on with more questions."
+  },
+  "findLevelStopHere": "Stop here",
+  "@findLevelStopHere": {
+    "description": "Find my level checkpoint: ends the check and places the learner at the levels shown."
+  },
+  "findLevelSkillRead": "Read",
+  "@findLevelSkillRead": {
+    "description": "Find my level: the name of the Read skill in a list of levels."
+  },
+  "findLevelSkillHear": "Hear",
+  "@findLevelSkillHear": {
+    "description": "Find my level: the name of the Hear skill in a list of levels."
+  },
+  "findLevelSkillSay": "Say",
+  "@findLevelSkillSay": {
+    "description": "Find my level: the name of the Speak skill in a list of levels."
+  },
+  "findLevelSkillWrite": "Write",
+  "@findLevelSkillWrite": {
+    "description": "Find my level: the name of the Write skill in a list of levels."
+  },
+  "findLevelSkillScript": "Script",
+  "@findLevelSkillScript": {
+    "description": "Find my level: the name of the script skill in a list of levels."
+  },
+  "findLevelSkillSecondScript": "Second script",
+  "@findLevelSkillSecondScript": {
+    "description": "Find my level: the name of the second script skill in a list of levels."
+  },
+  "findLevelLabelNotSureYet": "Not sure yet",
+  "@findLevelLabelNotSureYet": {
+    "description": "Find my level: how sure the check is, under 50%."
+  },
+  "findLevelLabelFairlySure": "Fairly sure",
+  "@findLevelLabelFairlySure": {
+    "description": "Find my level: how sure the check is, 50% to 79%."
+  },
+  "findLevelLabelSure": "Sure",
+  "@findLevelLabelSure": {
+    "description": "Find my level: how sure the check is, 80% to 94%."
+  },
+  "findLevelLabelVerySure": "Very sure",
+  "@findLevelLabelVerySure": {
+    "description": "Find my level: how sure the check is, 95% or more."
+  },
+  "findLevelLabelVerified": "Verified",
+  "@findLevelLabelVerified": {
+    "description": "Find my level: the learner showed the whole course up to B1 in this skill."
+  },
+  "findLevelStandUnit": "{skill}: unit {unit} · {label}",
+  "@findLevelStandUnit": {
+    "description": "Find my level: where one skill is placed. {unit} is the unit the learner knows up to.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "unit": {
+        "type": "int",
+        "example": "40"
+      },
+      "label": {
+        "type": "String",
+        "example": "Very sure"
+      }
+    }
+  },
+  "findLevelStandStart": "{skill}: from the beginning · {label}",
+  "@findLevelStandStart": {
+    "description": "Find my level: a skill placed at the very start.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "label": {
+        "type": "String",
+        "example": "Very sure"
+      }
+    }
+  },
+  "findLevelStandScriptKnown": "{skill}: known · {label}",
+  "@findLevelStandScriptKnown": {
+    "description": "Find my level: the script is read.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "label": {
+        "type": "String",
+        "example": "Very sure"
+      }
+    }
+  },
+  "findLevelStandScriptNot": "{skill}: not yet · {label}",
+  "@findLevelStandScriptNot": {
+    "description": "Find my level: the script is not read yet.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "label": {
+        "type": "String",
+        "example": "Very sure"
+      }
+    }
+  },
+  "findLevelStandNotTested": "{skill}: not tested",
+  "@findLevelStandNotTested": {
+    "description": "Find my level: a skill that was not asked.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      }
+    }
+  },
+  "findLevelSummaryTitle": "Where you start",
+  "@findLevelSummaryTitle": {
+    "description": "Find my level: the heading of the result."
+  },
+  "findLevelResumeTitle": "Carry on where you left off?",
+  "@findLevelResumeTitle": {
+    "description": "Find my level: asked when a paused check is waiting."
+  },
+  "findLevelResumeBody": "You paused your level check for {language} after {count} questions.",
+  "@findLevelResumeBody": {
+    "description": "Find my level: the body of the question about a paused check.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      },
+      "count": {
+        "type": "int",
+        "example": "12"
+      }
+    }
+  },
+  "findLevelResumeGo": "Carry on",
+  "@findLevelResumeGo": {
+    "description": "Find my level: carries on the paused check."
+  },
+  "findLevelResumeNew": "Start again",
+  "@findLevelResumeNew": {
+    "description": "Find my level: drops the paused check and starts a new one."
+  },
+  "findLevelNoCourse": "There are no decks to check {language} with yet.",
+  "@findLevelNoCourse": {
+    "description": "Toast when Find my level has no word deck to ask from.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelNothingToCheck": "Set a skill to Know or Learn, then find your level.",
+  "@findLevelNothingToCheck": {
+    "description": "Toast when Find my level has no skill to check."
+  },
+  "languagesVerifyKnown": "Verify what you know",
+  "@languagesVerifyKnown": {
+    "description": "Languages page, a language’s row: checks the skills marked as known."
+  },
+  "languagesVerifyKnownSub": "Checks the skills you marked as known.",
+  "@languagesVerifyKnownSub": {
+    "description": "Under Verify what you know."
   }
 }

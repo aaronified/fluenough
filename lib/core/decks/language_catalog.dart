@@ -85,6 +85,7 @@ class B1Progress {
     required this.grammarWritten,
     required this.stage,
     required this.levels,
+    required this.builtLevel,
     required this.unitsWritten,
     required this.unitCount,
     required this._upToB1,
@@ -125,6 +126,15 @@ class B1Progress {
     bool allWritten(int end) =>
         units.take(end + 1).every((u) => u.written || _unwritable(u));
     final hasPlan = b1 != null && planned > 0;
+    // The levels written to their end, in order: a level counts once the
+    // path marks it and no unit up to it is still to be written.
+    var built = 0;
+    if (!isNotation) {
+      for (final (level, end) in <int?>[a1, a2, b1].indexed) {
+        if (end == null || !allWritten(end)) break;
+        built = level + 1;
+      }
+    }
     final stage = isNotation
         ? (units.isNotEmpty && allWritten(units.length - 1)
               ? CourseStage.complete
@@ -136,6 +146,7 @@ class B1Progress {
         : CourseStage.complete;
     return B1Progress._(
       levels: _levels(units, <int?>[a1, a2, b1]),
+      builtLevel: built,
       unitsWritten: units.where((u) => u.written).length,
       unitCount: units.length,
       hasPlan: hasPlan,
@@ -204,6 +215,12 @@ class B1Progress {
   /// course line on a language's sheet draws one part for each, and a fourth
   /// for the culture part, which nothing fills yet.
   final List<double> levels;
+
+  /// How many levels are written to their end: 0 below A1, 1 for A1, 2 for
+  /// A2, 3 for B1 (complete). A level counts when the path marks it and no
+  /// unit up to it is still to be written. Find my level offers only what
+  /// this supports (wiki, Plan-Placement-V2, section 4.5).
+  final int builtLevel;
 
   /// The units of the path written, planned ones counted in [unitCount].
   final int unitsWritten;

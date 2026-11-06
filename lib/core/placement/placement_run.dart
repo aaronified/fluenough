@@ -90,6 +90,24 @@ class PlacementRunConfig {
 
   /// Whether Verified can open at all (section 4.3, condition a).
   bool get verifiedPossible => pathCompleteToB1 && allDecksDownloaded;
+
+  /// The same run settings with the microphone on or off: "I can't speak
+  /// now" turns it off for the rest of the run (row j of section 6).
+  PlacementRunConfig copyWith({bool? microphone}) => PlacementRunConfig(
+    deckCount: deckCount,
+    skills: skills,
+    declaration: declaration,
+    seed: seed,
+    pathCompleteToB1: pathCompleteToB1,
+    allDecksDownloaded: allDecksDownloaded,
+    microphone: microphone ?? this.microphone,
+    grammarUnitDecks: grammarUnitDecks,
+    floorFirst: floorFirst,
+    recheckInPositioning: recheckInPositioning,
+    extraScriptQuestion: extraScriptQuestion,
+    promoteToExpert: promoteToExpert,
+    expertTrack: expertTrack,
+  );
 }
 
 /// One answered question.
