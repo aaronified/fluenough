@@ -24,6 +24,10 @@ def forbidden(paths: list[str]) -> list[str]:
     out = []
     for raw in paths:
         p = raw.strip()
+        if len(p) > 1 and p[0] == '"':
+            # git quotes odd paths ("decks/\303\251.yaml") unless
+            # core.quotepath=false; never let a quote hide a decks/ path.
+            p = p[1:]
         if p.startswith("decks/") and p not in ALLOWED:
             out.append(p)
     return out

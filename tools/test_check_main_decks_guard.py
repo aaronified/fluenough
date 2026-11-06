@@ -35,3 +35,8 @@ def test_main_exit_codes(tmp_path):
     f.write_text("decks/bn/core.yaml\n")
     assert g.main(["x", str(f)]) == 1
     assert g.main(["x", "a", "b"]) == 2
+
+
+def test_non_ascii_and_quoted_deck_paths_are_forbidden():
+    assert g.forbidden(["decks/\u00e9s/core.yaml"]) == ["decks/\u00e9s/core.yaml"]
+    assert g.forbidden(['"decks/\\303\\251.yaml"']) == ['decks/\\303\\251.yaml"']
