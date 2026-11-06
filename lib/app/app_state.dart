@@ -86,6 +86,7 @@ import 'skill.dart';
 import 'today_summary.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
+import 'web_install.dart';
 
 /// A native language that teaches a course, as the learner is offered it
 /// (ADR-0036): the language, and how many of the language's written units
@@ -193,6 +194,7 @@ class AppState extends ChangeNotifier {
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
+    WebInstall? webInstall,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     this.reports = const NullReportSender(),
     this._mailShare = const NullMailShare(),
@@ -214,6 +216,7 @@ class AppState extends ChangeNotifier {
     this._secureRandom,
   }) : assert(profiles.isNotEmpty, 'there is always a profile'),
        random = random ?? Random(),
+       webInstall = webInstall ?? WebInstall.off(),
        volume = volume ?? FixedVolumeMonitor(),
        deckCatalog = catalog,
        settings = settings ?? SettingsNotifier(),
@@ -344,6 +347,7 @@ class AppState extends ChangeNotifier {
     DeckStore? addedDecks,
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
+    WebInstall? webInstall,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     ReportSender reports = const NullReportSender(),
     MailShare mailShare = const NullMailShare(),
@@ -382,6 +386,7 @@ class AppState extends ChangeNotifier {
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
+      webInstall: webInstall,
       reminderScheduler: reminderScheduler,
       reports: reports,
       mailShare: mailShare,
@@ -475,6 +480,10 @@ class AppState extends ChangeNotifier {
   /// Opens the phone's own settings: Settings > Voices' "Install voices in
   /// phone settings".
   final SystemSettings systemSettings;
+
+  /// Installing the web build, and whether the browser keeps its storage
+  /// (#1012). Off in the apps: only `main_web.dart` gives it a browser.
+  final WebInstall webInstall;
 
   /// Where a report from the bug icon goes once mail is on (ADR-0021): the
   /// reporter's mail app, or nowhere in a build that was given none.

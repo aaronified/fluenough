@@ -17,6 +17,7 @@ import '../placement/native_choice.dart';
 import 'daily_card.dart';
 import 'fact_languages_sheet.dart';
 import 'due_card.dart';
+import 'install_hint_card.dart';
 import 'situations_card.dart';
 import 'streak_card.dart';
 import 'today_numbers.dart';
@@ -153,6 +154,7 @@ class _TodayContent extends StatelessWidget {
         ],
         // Which language to learn a course from, once one the learner
         // speaks starts teaching it (ADR-0036).
+        InstallHintCard(state: state),
         const NativeChoiceCards(),
         if (numbers.hasDecks) ...<Widget>[
           DailyCard(plans: numbers.daily),
