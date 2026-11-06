@@ -382,7 +382,8 @@ units:
       - { id: "but-and-so", text: { "en": "Joining two sentences: and, but, so, then" } }
     reading_passages:
       - { id: "short-blog-post", text: { "en": "A short blog post about a weekend" } }
-  - planned: { id: "ja-animals", theme: "animals", words: 35 }
+  - decks: ["ja-animals", "ja-animals-sentences", "ja-reading-animals", "*"]
+    words: 35
     listening_passages:
       - { id: "a-zoo-visit", text: { "en": "A child names the animals seen at a zoo" } }
     reading_passages:

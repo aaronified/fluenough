@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-animals",
+  "name": "Japanese reading: animals",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-animals-1",
+      "title": "Animals in the park",
+      "sentences": [
+        {
+          "text": "うまはおおきいです。",
+          "reading": "uma wa ookii desu."
+        },
+        {
+          "text": "ねこはちいさいです。",
+          "reading": "neko wa chiisai desu."
+        },
+        {
+          "text": "ぞうのはなはながいです。",
+          "reading": "zou no hana wa nagai desu."
+        },
+        {
+          "text": "ちょうはきれいです。",
+          "reading": "chou wa kirei desu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1610",
+          "prompt": {
+            "en": "Which line says that the elephant's trunk is long?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The third line"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "id": "ja-1611",
+          "prompt": {
+            "en": "The first line says that the horse is big."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1612",
+          "prompt": {
+            "en": "Which line says that the butterfly is pretty?"
+          },
+          "options": [
+            {
+              "en": "The third line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "ja-animals-2",
+      "title": "On the farm",
+      "sentences": [
+        {
+          "text": "うしとぶたがいます。",
+          "reading": "ushi to buta ga imasu."
+        },
+        {
+          "text": "にわとりはあさなきます。",
+          "reading": "niwatori wa asa nakimasu."
+        },
+        {
+          "text": "うさぎはおもしろいです。",
+          "reading": "usagi wa omoshiroi desu."
+        },
+        {
+          "text": "いのししはもりにいます。",
+          "reading": "inoshishi wa mori ni imasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1613",
+          "prompt": {
+            "en": "Which line says that the chicken crows in the morning?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1614",
+          "prompt": {
+            "en": "The third line says that the rabbit is big."
+          },
+          "answer": false
+        },
+        {
+          "id": "ja-1615",
+          "prompt": {
+            "en": "Which line says where the wild boar is?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}
