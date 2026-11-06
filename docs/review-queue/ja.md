@@ -56,3 +56,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1866 | ja-school | こたえ (the answer) is also written 答え and has a homograph in こたえる: should a homograph note say so? | Haiku builder | 2026-11-06 |
 | unit-level | ja-school | Only 36 of the 50 planned school words were fresh: the path count is set to 36. Is that right? | Haiku builder | 2026-11-06 |
 | unit-level | ja-school | The example and sentence decks of ja-school are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-1889 | ja-hobbies | つり (fishing) is also the spoken word for change (おつり, money given back): should a homograph note say so? | Haiku builder | 2026-11-06 |
+| ja-1894 | ja-hobbies | へた (bad at, unskilled) as a な-adjective in へたです: is that the natural form in speech? | Haiku builder | 2026-11-06 |
+| ja-1895 | ja-hobbies | きょく (a piece of music) in the sense of a song or tune: is it natural in a hobbies card? | Haiku builder | 2026-11-06 |
+| unit-level | ja-hobbies | Only 29 of the 50 planned hobbies words were fresh: the path count is set to 29. Is that right? | Haiku builder | 2026-11-06 |
+| unit-level | ja-hobbies | The example and sentence decks of ja-hobbies are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
