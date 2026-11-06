@@ -753,7 +753,8 @@ class _Engine {
     }
     // The bottom stop: the learner is almost surely at none or the first
     // class (plan section 13, point 12).
-    return posterior.leadingClass <= 1 &&
+    return levels.levels.length >= 10 &&
+        posterior.leadingClass <= 1 &&
         posterior.probabilities[0] + posterior.probabilities[1] >= 0.99;
   }
 

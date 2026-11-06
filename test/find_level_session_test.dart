@@ -340,8 +340,8 @@ void main() {
 
     test('asks a question first, and a right-answering run ends Verified', () {
       final session = PlacementSession(
-        findLevelConfig(decks: 12),
-        findLevelData(decks: 12, words: 36),
+        findLevelConfig(decks: 24),
+        findLevelData(decks: 24, words: 40),
       );
       expect(session.question, isNotNull);
       expect(session.atCheckpoint, isFalse);

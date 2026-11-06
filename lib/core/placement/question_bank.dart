@@ -370,7 +370,7 @@ QuestionBank buildQuestionBank(
             );
           }
         }
-        if (!onlyProbes)
+        if (!onlyProbes) {
           tagged(
             _request(
               PlacementTopic.grammarLevel,
@@ -385,6 +385,7 @@ QuestionBank buildQuestionBank(
             null,
             null,
           );
+        }
       }
     }
   }
