@@ -416,7 +416,8 @@ units:
       - { id: "how-many-do-you-want", text: { "en": "At a bakery: how many do you want? I'll take three of them" } }
     reading_passages:
       - { id: "recipe-questions", text: { "en": "Questions and answers under a recipe: do you go there, do you need some" } }
-  - planned: { id: "fr-school", theme: "school", words: 40 }
+  - decks: ["fr-school", "fr-school-sentences", "fr-reading-school", "*"]
+    words: 40
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:

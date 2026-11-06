@@ -1,0 +1,163 @@
+schema: 1
+id: "fr-school-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1628"
+    target: "Le professeur écrit la leçon au tableau."
+    ipa: "lə pʁɔfesœʁ ekʁi la ləsɔ̃ o tablo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "professeur", ref: "fr-0105" }
+      - { word: "écrit", ref: "fr-0291" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "leçon", ref: "fr-1590" }
+      - { word: "au", base: "à" }
+      - { word: "tableau", ref: "fr-1596" }
+    confusables:
+      - { id: "cahier", ref: "fr-1362", kind: "word" }
+      - { id: "stylo", ref: "fr-1360", kind: "word" }
+  - id: "fr-1629"
+    target: "Les élèves rendent leurs devoirs demain."
+    ipa: "lez elɛv ʁɑ̃d lœʁ dəvwaʁ dəmɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0043" }
+      - { word: "élèves", ref: "fr-1588" }
+      - { word: "rendent", ref: "fr-1616" }
+      - { word: "leurs", ref: "fr-0630" }
+      - { word: "devoirs", ref: "fr-1618" }
+      - { word: "demain", ref: "fr-0078" }
+    confusables:
+      - { id: "examen", ref: "fr-1592", kind: "word" }
+      - { id: "punition", ref: "fr-1617", kind: "word" }
+  - id: "fr-1630"
+    target: "Je réponds à la question."
+    ipa: "ʒə ʁepɔ̃ a la kɛstjɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "réponds", ref: "fr-0504" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "question", ref: "fr-1593" }
+    confusables:
+      - { id: "reponse", ref: "fr-1594", kind: "word" }
+      - { id: "poser", ref: "fr-1613", kind: "word" }
+  - id: "fr-1631"
+    target: "Les élèves mangent à la cantine."
+    ipa: "lez elɛv mɑ̃ʒ a la kɑ̃tin"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0043" }
+      - { word: "élèves", ref: "fr-1588" }
+      - { word: "mangent", ref: "fr-0282" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "cantine", ref: "fr-1601" }
+    confusables:
+      - { id: "recreation", ref: "fr-1599", kind: "word" }
+      - { id: "cour", ref: "fr-1600", kind: "word" }
+  - id: "fr-1632"
+    target: "Tu copies la leçon dans ton cahier."
+    ipa: "ty kɔpi la ləsɔ̃ dɑ̃ tɔ̃ kaje"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tu", ref: "fr-0095" }
+      - { word: "copies", ref: "fr-1612" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "leçon", ref: "fr-1590" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "ton", ref: "fr-0141" }
+      - { word: "cahier", ref: "fr-1362" }
+    confusables:
+      - { id: "dictionnaire", ref: "fr-1622", kind: "word" }
+      - { id: "feutre", ref: "fr-1627", kind: "word" }
+  - id: "fr-1633"
+    target: "Le surveillant est dans la cour."
+    ipa: "lə syʁvɛjɑ̃ ɛ dɑ̃ la kuʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "surveillant", ref: "fr-1625" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "cour", ref: "fr-1600" }
+    confusables:
+      - { id: "professeur", ref: "fr-0105", kind: "word" }
+      - { id: "cantine", ref: "fr-1601", kind: "word" }
+  - id: "fr-1634"
+    target: "Ma calculatrice est dans mon cartable."
+    ipa: "ma kalkylatʁis ɛ dɑ̃ mɔ̃ kaʁtabl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "calculatrice", ref: "fr-1626" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "cartable", ref: "fr-1598" }
+    confusables:
+      - { id: "trousse", ref: "fr-1375", kind: "word" }
+      - { id: "feutre", ref: "fr-1627", kind: "word" }
+  - id: "fr-1635"
+    target: "Pendant l'examen, il ne faut pas parler."
+    ipa: "pɑ̃dɑ̃ lɛɡzamɛ̃ il nə fo pa paʁle"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Pendant", ref: "fr-0597" }
+      - { word: "l'examen", ref: "fr-1592" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "ne", base: "ne" }
+      - { word: "faut", base: "falloir" }
+      - { word: "pas", base: "pas" }
+      - { word: "parler", ref: "fr-0023" }
+    confusables:
+      - { id: "recreation", ref: "fr-1599", kind: "word" }
+      - { id: "cour", ref: "fr-1600", kind: "word" }
+  - id: "fr-1636"
+    target: "Le collège commence après les vacances."
+    ipa: "lə kɔlɛʒ kɔmɑ̃s apʁɛ le vakɑ̃s"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "collège", ref: "fr-1623" }
+      - { word: "commence", ref: "fr-0508" }
+      - { word: "après", ref: "fr-0595" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "vacances", ref: "fr-1119" }
+    confusables:
+      - { id: "lycee", ref: "fr-1624", kind: "word" }
+      - { id: "rentree", ref: "fr-1603", kind: "word" }
+  - id: "fr-1637"
+    target: "La géographie est facile, mais l'histoire est longue."
+    ipa: "la ʒeɔɡʁafi ɛ fasil mɛ listwaʁ ɛ lɔ̃ɡ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "géographie", ref: "fr-1607" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "facile", ref: "fr-0417" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "l'histoire", ref: "fr-1606" }
+      - { word: "longue", ref: "fr-0421" }
+    confusables:
+      - { id: "sciences", ref: "fr-1608", kind: "word" }
+      - { id: "mathematiques", ref: "fr-1605", kind: "word" }
+
