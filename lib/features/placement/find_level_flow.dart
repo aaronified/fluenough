@@ -88,6 +88,7 @@ Future<void> startFindLevel(
 
   // A run paused within the last 7 days, on the same decks and app version.
   SavedPlacementRun? saved;
+  var droppedForDevice = false;
   if (settings.placementRunOf(code) case final json?) {
     try {
       saved = SavedPlacementRun.fromJson(jsonDecode(json));
@@ -99,13 +100,17 @@ Future<void> startFindLevel(
           nowSeconds: nowSeconds(),
           deckSet: deckSet,
           appVersion: AppInfo.version,
-        ) ||
-        // A voice or recogniser the run was begun with is gone: its answers
-        // would replay onto other questions, so it is dropped like a stale
-        // run and the next one is asked as a new run.
-        !saved.fitsDevice(voice: canPlay, microphone: canSpeak)) {
+        )) {
       settings.setPlacementRun(code, null);
       saved = null;
+    } else if (!saved.fitsDevice(voice: canPlay, microphone: canSpeak)) {
+      // A voice or recogniser the run was begun with is gone: its answers
+      // would replay onto other questions, so the next one is asked as a new
+      // run. The learner is told, and the saved run is deleted only when the
+      // new one starts, so that backing out of the declaration keeps it.
+      saved = null;
+      droppedForDevice = true;
+      showAppSnackBar(context, l10n.findLevelResumeDeviceChanged);
     }
   }
   if (saved != null && saved.events.isNotEmpty) {
@@ -226,6 +231,9 @@ Future<void> startFindLevel(
     ),
   );
 
+  // The run that no longer fits this phone is replaced now that the new one
+  // begins.
+  if (droppedForDevice) settings.setPlacementRun(code, null);
   final done = await navigator.push<bool>(
     MaterialPageRoute<bool>(
       settings: const RouteSettings(name: '/find-level'),

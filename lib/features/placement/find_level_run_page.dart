@@ -61,6 +61,10 @@ class FindLevelRunPage extends StatefulWidget {
 class _FindLevelRunPageState extends State<FindLevelRunPage> {
   bool _finished = false;
 
+  /// Whether writing the outcome threw: the page then says so and offers
+  /// Retry, and the run is kept.
+  bool _failed = false;
+
   /// Listens in a row that heard nothing, counted across questions: two give
   /// the microphone up (row j of section 6). A listen that heard something
   /// starts the count again.
@@ -77,8 +81,17 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
     if (_finished) return;
     // The outcome is written before the summary shows: if the write throws
     // the run is still there to be carried on.
-    widget.onFinish(_session);
-    setState(() => _finished = true);
+    try {
+      widget.onFinish(_session);
+    } on Object catch (error, stack) {
+      debugPrint('Find my level: writing the outcome failed: $error\n$stack');
+      setState(() => _failed = true);
+      return;
+    }
+    setState(() {
+      _failed = false;
+      _finished = true;
+    });
   }
 
   void _answer(bool right) {
@@ -126,6 +139,40 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
       return FindLevelSummary(
         run: _session.run,
         onDone: () => Navigator.of(context).pop(true),
+      );
+    }
+    if (_failed) {
+      return PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, _) {
+          if (!didPop) _pause();
+        },
+        child: Scaffold(
+          body: SafeArea(
+            child: Center(
+              child: Padding(
+                padding: const EdgeInsets.all(24),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: <Widget>[
+                    Text(
+                      l10n.findLevelFinishFailed,
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.titleMedium,
+                    ),
+                    const SizedBox(height: 16),
+                    FilledButton(
+                      key: const ValueKey<String>('find-level-retry'),
+                      style: AppButtonStyles.tall(context),
+                      onPressed: _finish,
+                      child: Text(l10n.commonRetry),
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
+        ),
       );
     }
     if (_session.isDone) {

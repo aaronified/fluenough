@@ -293,6 +293,11 @@ class PlacementRun {
   Set<PlacementSkill> get unresolvedSkills =>
       Set<PlacementSkill>.of(_engine.unresolvedSkills);
 
+  /// The skills a probe or top-up could not be built for (a sound that would
+  /// not play, say): the run did not test them, and the summary says why.
+  Set<PlacementSkill> get unavailableSkills =>
+      Set<PlacementSkill>.of(_engine.unavailableSkills);
+
   /// The skills that have a closed case in this run.
   Set<PlacementSkill> get closedSkills =>
       Set<PlacementSkill>.of(_engine.closedSkills);

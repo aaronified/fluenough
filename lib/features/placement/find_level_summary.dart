@@ -132,6 +132,7 @@ class FindLevelSummary extends StatelessWidget {
                       line: findLevelStanding(l10n, run, found),
                       found: found,
                       microphone: run.config.microphone,
+                      unavailable: run.unavailableSkills.contains(found.skill),
                     ),
                 ],
               ),
@@ -177,16 +178,22 @@ class _SkillResult extends StatelessWidget {
     required this.line,
     required this.found,
     required this.microphone,
+    this.unavailable = false,
   });
 
   final String line;
   final SkillAssurance found;
   final bool microphone;
 
+  /// Whether a question for this skill could not be built.
+  final bool unavailable;
+
   String? _note(AppLocalizations l10n) => switch (found.label) {
     AssuranceLabel.notTested =>
       found.skill == PlacementSkill.say && !microphone
           ? l10n.findLevelNotTestedNoMic
+          : unavailable
+          ? l10n.findLevelNotTestedUnavailable
           : l10n.findLevelNotTestedNotAsked,
     AssuranceLabel.notSureYet => l10n.findLevelNoteNotSureYet,
     AssuranceLabel.fairlySure => l10n.findLevelNoteFairlySure,
@@ -206,11 +213,9 @@ class _SkillResult extends StatelessWidget {
         Flexible(child: Text(line, style: theme.textTheme.titleMedium)),
         if (verified) ...<Widget>[
           const SizedBox(width: 8),
-          Icon(
-            Icons.verified,
-            size: 20,
-            color: scheme.primary,
-            semanticLabel: l10n.findLevelLabelVerified,
+          // The line already ends in Verified: no second announcement.
+          ExcludeSemantics(
+            child: Icon(Icons.verified, size: 20, color: scheme.primary),
           ),
         ],
       ],

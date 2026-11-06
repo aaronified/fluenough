@@ -8,6 +8,7 @@ import '../../app/app_state.dart';
 import '../../app/deck_downloads.dart';
 import '../../app/language_offer.dart';
 import '../../app/language_skills.dart';
+import '../../app/placement_plan.dart';
 import '../../core/data/spoken_languages.dart' show SpokenLanguage;
 import '../../core/decks/font_check.dart';
 import '../../core/decks/language_catalog.dart';
@@ -809,14 +810,16 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                     title: l10n.scriptNameOr(script, _view.name),
                     keys: _skills.keysOfScript(script),
                     pill: _scriptPill(context, script),
-                    // The words (Read, Write) sit with the first script.
+                    // The words (Read, Write) sit with the first script row;
+                    // Script and Second script follow the run's own order
+                    // (the course's non-Latin scripts in deck order), so a
+                    // label sits under the script it was found for.
                     placed: <PlacementSkill>[
                       if (index == 0) ...<PlacementSkill>[
                         PlacementSkill.read,
                         PlacementSkill.write,
-                        PlacementSkill.script,
-                      ] else if (index == 1)
-                        PlacementSkill.secondScript,
+                      ],
+                      ?_scriptSkillOf(script),
                     ],
                   ),
                 if (!_isDraft && _skills.anyLearn) _learningBlock(context),
@@ -915,6 +918,26 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
 
   /// One row: its tile, its title and its one [pill] (for the stored [keys]),
   /// with what is known from elsewhere or still to fit under it.
+  /// The skill of a run's script check that [script] is: the first script
+  /// of the course's [placementScripts] is Script and the second Second
+  /// script, as the run lists them (Latin is skipped there); null for any
+  /// other row, such as Latin.
+  PlacementSkill? _scriptSkillOf(String script) {
+    // Nothing to place under a row before a run has been done.
+    if (_state.settings.skillLabelsOf(_code).isEmpty &&
+        _state.settings.verifiedSkillsOf(_code).isEmpty) {
+      return null;
+    }
+    final order = <String>[
+      for (final s in _state.placementScripts(_code)) s.script,
+    ];
+    return switch (order.indexOf(script)) {
+      0 => PlacementSkill.script,
+      1 => PlacementSkill.secondScript,
+      _ => null,
+    };
+  }
+
   Widget _skillRow(
     BuildContext context, {
     required Widget tile,

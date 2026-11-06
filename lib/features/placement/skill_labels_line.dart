@@ -25,7 +25,10 @@ Map<PlacementSkill, AssuranceLabel> placedLabelsOf(
       continue;
     }
     for (final label in AssuranceLabel.values) {
+      // A stored `verified` is not enough: only the skill's Verified mark
+      // (set with the run's write) shows as Verified.
       if (label != AssuranceLabel.notTested &&
+          label != AssuranceLabel.verified &&
           stored[skill.name] == label.name) {
         out[skill] = label;
       }

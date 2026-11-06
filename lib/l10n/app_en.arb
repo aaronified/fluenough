@@ -14224,9 +14224,13 @@
   "@findLevelNoteVerified": {
     "description": "Find my level: said under a Verified skill."
   },
-  "findLevelNotTestedNoMic": "No microphone was available, so this was not tested. Nothing is held against you.",
+  "findLevelNotTestedNoMic": "The microphone was not available or was given up, so this was not tested. Nothing is held against you.",
   "@findLevelNotTestedNoMic": {
-    "description": "Find my level: why Say was not tested."
+    "description": "Find my level: why Say was not tested (no microphone from the start, or the learner gave it up)."
+  },
+  "findLevelNotTestedUnavailable": "A question for this one could not be played or shown, so it was not tested. Nothing is held against you.",
+  "@findLevelNotTestedUnavailable": {
+    "description": "Find my level: why a skill was not tested, when its questions could not be built, such as a sound that would not play."
   },
   "findLevelNotTestedNotAsked": "We did not ask about this one, so it was not tested.",
   "@findLevelNotTestedNotAsked": {
@@ -14299,6 +14303,14 @@
   "findLevelNothingToCheck": "Set a skill to Know or Learn, then find your level.",
   "@findLevelNothingToCheck": {
     "description": "Toast when Find my level has no skill to check."
+  },
+  "findLevelResumeDeviceChanged": "Your paused run needs sound or the microphone, which this phone cannot use now, so it starts again.",
+  "@findLevelResumeDeviceChanged": {
+    "description": "Toast when a paused Find my level run can no longer be carried on because the voice or the microphone it used is gone, and a new run is offered."
+  },
+  "findLevelFinishFailed": "Your answers could not be saved just now. They are kept: try again.",
+  "@findLevelFinishFailed": {
+    "description": "Find my level: shown when writing the outcome of a finished run failed, above a Try again button; the run is kept."
   },
   "findLevelNothingToCheckNoVoice": "Nothing to check yet: Hear needs sound on and a voice for {language} on this phone.",
   "@findLevelNothingToCheckNoVoice": {

@@ -171,6 +171,7 @@ extension PlacementRunSetup on AppState {
       for (final MapEntry(:key, :value) in readout.entries)
         if (value.label != AssuranceLabel.notTested) key: value,
     };
+    _writeSkillLabels(code, run, tested);
     if (tested.isEmpty) return;
     Set<String> idsUpTo(int level) => <String>{
       for (final entry in plan.decks.take(level + 1)) entry.id,
@@ -229,10 +230,23 @@ extension PlacementRunSetup on AppState {
       for (final MapEntry(:key, :value) in tested.entries)
         if (value.isVerified) key.name,
     });
-    // How sure each tested skill was, for the language's skill rows.
+  }
+
+  /// How sure each tested skill was, for the language's skill rows. A skill
+  /// the run covered but could not test (no microphone, a sound that would
+  /// not play) loses its stored label, so that an older run's name is never
+  /// shown as if this run had found it; a skill the run did not cover keeps
+  /// its label. The labels are not tied to the deck set they were found
+  /// with: they stay until the next run covers the skill.
+  void _writeSkillLabels(
+    String code,
+    PlacementRun run,
+    Map<PlacementSkill, SkillAssurance> tested,
+  ) {
+    final covered = run.config.skills;
     settings.setSkillLabels(code, <String, String>{
       for (final MapEntry(:key, :value) in settings.skillLabelsOf(code).entries)
-        if (!tested.keys.any((skill) => skill.name == key)) key: value,
+        if (!covered.any((skill) => skill.name == key)) key: value,
       for (final MapEntry(:key, :value) in tested.entries)
         key.name: value.label.name,
     });
