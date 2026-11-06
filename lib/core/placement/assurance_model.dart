@@ -140,10 +140,15 @@ class PlacementPosterior {
     required PlacementQuestionKind kind,
     required bool correct,
     double missWeight = 1,
+    double? guess,
   }) {
+    // A question whose options give the answer away (see guessability.dart)
+    // is not as hard to guess as its kind says: [guess] raises the guess
+    // rate, never lowers it.
+    final guessRate = guess == null ? kind.guess : math.max(kind.guess, guess);
     final next = <double>[];
     for (var c = 0; c < probabilities.length; c++) {
-      final right = levels.knows(c, deck) ? 1 - kind.slip : kind.guess;
+      final right = levels.knows(c, deck) ? 1 - kind.slip : guessRate;
       final likelihood = correct
           ? right
           : math.pow(1 - right, missWeight).toDouble();
@@ -166,6 +171,19 @@ class PlacementPosterior {
     var best = 0;
     for (var c = 1; c < probabilities.length; c++) {
       if (probabilities[c] > probabilities[best]) best = c;
+    }
+    return best;
+  }
+
+  /// The highest level (a deck index) the evidence supports at [confidence]:
+  /// the highest level whose [massAtOrAbove] reaches it, or -1 when even the
+  /// first deck is not that sure. A conservative lower bound, not a point
+  /// estimate: used to place a skill whose leading class is too weak to be
+  /// trusted (below "Fairly sure").
+  int supportedLevel(double confidence) {
+    var best = -1;
+    for (final level in levels.levels) {
+      if (massAtOrAbove(level) >= confidence - 1e-9) best = level;
     }
     return best;
   }

@@ -1,5 +1,6 @@
 import 'assurance_model.dart';
 import 'generated_question.dart';
+import 'guessability.dart';
 import 'placement_data.dart';
 import 'placement_questions.dart';
 import 'placement_run.dart';
@@ -139,7 +140,7 @@ class PlacementSession {
       throw StateError('there is no question to answer');
     }
     _events.add(correct ? 'a1' : 'a0');
-    _run = _run.answer(correct);
+    _run = _run.answer(correct, guess: guessRateOf(_question!));
     _advance();
   }
 
@@ -188,6 +189,7 @@ class PlacementSession {
         results: _run.results,
         checkpointsKept: _run.checkpointsKept,
         unavailable: _run.unavailableLog,
+        guesses: _run.guesses,
       );
       _builder = _newBuilder();
     }

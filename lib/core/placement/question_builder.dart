@@ -229,6 +229,9 @@ class QuestionBuilder {
     int count = 3,
   }) {
     return (Card card, int deck) {
+      // Meanings are picked for a prompt in the language: the wrong ones
+      // must be as much like it, as letters, as the right one.
+      final lure = show == _meaningOf ? card.target : null;
       var wrong = _picker.distractorsFor(
         card,
         deck,
@@ -236,6 +239,7 @@ class QuestionBuilder {
         show: show,
         count: count,
         asked: ctx.asked,
+        lure: lure,
       );
       if (wrong.length < count) {
         wrong = _picker.distractorsFor(
@@ -246,6 +250,7 @@ class QuestionBuilder {
           count: count,
           asked: ctx.asked,
           relaxAsked: true,
+          lure: lure,
         );
       }
       return wrong.length < count ? null : wrong;
