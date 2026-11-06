@@ -135,7 +135,6 @@ void main() {
     final calls = <(String, Object?)>[];
     setUp(() {
       calls.clear();
-      debugDefaultTargetPlatformOverride = TargetPlatform.android;
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(SystemChannels.platform, (call) async {
             calls.add((call.method, call.arguments));
@@ -143,7 +142,6 @@ void main() {
           });
     });
     tearDown(() {
-      debugDefaultTargetPlatformOverride = null;
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
           .setMockMethodCallHandler(SystemChannels.platform, null);
     });
@@ -154,6 +152,7 @@ void main() {
     ];
 
     testWidgets('gives each action its feel', (tester) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
       const engine = SystemHapticEngine();
       final table = <Haptic, List<String>>{
         Haptic.select: <String>['selectionClick'],
@@ -178,16 +177,19 @@ void main() {
         await tester.pump(const Duration(milliseconds: 300));
         expect(felt(), entry.value, reason: '${entry.key}');
       }
+      debugDefaultTargetPlatformOverride = null;
     });
 
     testWidgets('drops the second pulse of a double when switched off', (
       tester,
     ) async {
+      debugDefaultTargetPlatformOverride = TargetPlatform.android;
       var on = true;
       const SystemHapticEngine().play(Haptic.success, stillOn: () => on);
       on = false;
       await tester.pump(const Duration(milliseconds: 300));
       expect(felt(), <String>['lightImpact']);
+      debugDefaultTargetPlatformOverride = null;
     });
 
     testWidgets('is not available, and silent, on the web and desktop', (
@@ -199,6 +201,7 @@ void main() {
       expect(calls, isEmpty);
       debugDefaultTargetPlatformOverride = TargetPlatform.iOS;
       expect(const SystemHapticEngine().available, isTrue);
+      debugDefaultTargetPlatformOverride = null;
     });
   });
 
@@ -277,15 +280,16 @@ void main() {
         final l10n = l10nOf(tester);
         final help = find.text(l10n.appearanceColourFollowing);
         final forest = find.text(l10n.appearanceSeedForest);
-        await scrollToFind(tester, help);
+        await scrollToFind(tester, forest);
         await tester.ensureVisible(forest);
         await tester.pumpAndSettle();
+        // The swatches are drawn dimmed and say nothing to a screen reader.
+        expect(find.bySemanticsLabel(l10n.appearanceSeedForest), findsNothing);
+        await scrollToFind(tester, help);
         expect(help, findsOneWidget);
         final box = tester.getRect(help);
         expect(box.left, greaterThanOrEqualTo(0));
         expect(box.right, lessThanOrEqualTo(390));
-        // The swatches are drawn dimmed and say nothing to a screen reader.
-        expect(find.bySemanticsLabel(l10n.appearanceSeedForest), findsNothing);
         await scrollToFind(tester, find.text(l10n.appearanceHaptics));
         expect(find.text(l10n.appearanceHaptics), findsOneWidget);
         expect(tester.takeException(), isNull);
