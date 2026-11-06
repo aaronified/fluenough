@@ -357,15 +357,22 @@ cards:
     native: "weekend"
     notes:
       "n1": "Week-end is 'weekend', with a hyphen, and a masculine noun. Le week-end means 'at the weekend', as a habit."
+    bases:
+      "week": "part of week-end"
+      "end": "part of week-end"
     examples:
       "Le week-end, je ne travaille pas.":
         native: "At the weekend, I do not work."
         bases:
+          "week": "part of week-end"
+          "end": "part of week-end"
           "ne": "(with pas)"
           "pas": "not"
       "Le week-end, nous sortons souvent.":
         native: "At the weekend, we often go out."
         bases:
+          "week": "part of week-end"
+          "end": "part of week-end"
           "souvent": "often"
   "fr-1175":
     native: "birthday"

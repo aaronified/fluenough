@@ -191,10 +191,11 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases:
+      - { word: "rendez", base: "rendez-vous" }
     examples:
-      - { target: "J'ai un rendez-vous à dix heures.", ipa: "ʒe œ̃ ʁɑ̃devu a dis œʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", ref: "fr-0074" }] }
-      - { target: "Le rendez-vous est demain.", ipa: "lə ʁɑ̃devu ɛ dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "est", ref: "fr-0021" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "J'ai un rendez-vous à dix heures.", ipa: "ʒe œ̃ ʁɑ̃devu a dis œʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", ref: "fr-0074" }, { word: "rendez", base: "rendez-vous" }] }
+      - { target: "Le rendez-vous est demain.", ipa: "lə ʁɑ̃devu ɛ dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "est", ref: "fr-0021" }, { word: "demain", ref: "fr-0078" }, { word: "rendez", base: "rendez-vous" }] }
   - id: "fr-1115"
     target: "couloir"
     ipa: "kulwaʁ"
@@ -429,7 +430,9 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases:
+      - { word: "de", base: "tout de suite" }
+      - { word: "suite", base: "tout de suite" }
     examples:
-      - { target: "J'arrive tout de suite.", ipa: "ʒaʁiv tu də sɥit", bases: [{ word: "J'arrive", ref: "fr-0305" }] }
-      - { target: "Je rentre tout de suite.", ipa: "ʒə ʁɑ̃tʁ tu də sɥit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rentre", ref: "fr-1124" }] }
+      - { target: "J'arrive tout de suite.", ipa: "ʒaʁiv tu də sɥit", bases: [{ word: "J'arrive", ref: "fr-0305" }, { word: "de", base: "tout de suite" }, { word: "suite", base: "tout de suite" }] }
+      - { target: "Je rentre tout de suite.", ipa: "ʒə ʁɑ̃tʁ tu də sɥit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rentre", ref: "fr-1124" }, { word: "de", base: "tout de suite" }, { word: "suite", base: "tout de suite" }] }

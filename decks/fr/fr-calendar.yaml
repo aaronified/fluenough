@@ -175,7 +175,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Le calendrier est au mur.", ipa: "lə kalɑ̃dʁije ɛ o myʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "calendrier", base: "calendrier" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "au" }, { word: "mur", base: "mur" }] }
-      - { target: "Je note le rendez-vous dans mon calendrier.", ipa: "ʒə nɔt lə ʁɑ̃devu dɑ̃ mɔ̃ kalɑ̃dʁije", bases: [{ word: "Je", ref: "fr-0126" }, { word: "note", base: "noter" }, { word: "le", ref: "fr-0543" }, { word: "dans", ref: "fr-0049" }, { word: "mon", ref: "fr-0037" }, { word: "calendrier", base: "calendrier" }] }
+      - { target: "Je note le rendez-vous dans mon calendrier.", ipa: "ʒə nɔt lə ʁɑ̃devu dɑ̃ mɔ̃ kalɑ̃dʁije", bases: [{ word: "Je", ref: "fr-0126" }, { word: "note", base: "noter" }, { word: "le", ref: "fr-0543" }, { word: "dans", ref: "fr-0049" }, { word: "mon", ref: "fr-0037" }, { word: "calendrier", base: "calendrier" }, { word: "rendez", ref: "fr-1114" }] }
   - id: "fr-1168"
     target: "saison"
     ipa: "sɛzɔ̃"
@@ -249,10 +249,12 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases:
+      - { word: "week", base: "week-end" }
+      - { word: "end", base: "week-end" }
     examples:
-      - { target: "Le week-end, je ne travaille pas.", ipa: "lə wikɛnd ʒə nə tʁavaj pa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "travaille", ref: "fr-0252" }, { word: "pas", base: "pas" }] }
-      - { target: "Le week-end, nous sortons souvent.", ipa: "lə wikɛnd nu sɔʁtɔ̃ suvɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "nous", ref: "fr-0129" }, { word: "sortons", ref: "fr-1125" }, { word: "souvent", base: "souvent" }] }
+      - { target: "Le week-end, je ne travaille pas.", ipa: "lə wikɛnd ʒə nə tʁavaj pa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "travaille", ref: "fr-0252" }, { word: "pas", base: "pas" }, { word: "week", base: "week-end" }, { word: "end", base: "week-end" }] }
+      - { target: "Le week-end, nous sortons souvent.", ipa: "lə wikɛnd nu sɔʁtɔ̃ suvɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "nous", ref: "fr-0129" }, { word: "sortons", ref: "fr-1125" }, { word: "souvent", base: "souvent" }, { word: "week", base: "week-end" }, { word: "end", base: "week-end" }] }
   - id: "fr-1175"
     target: "anniversaire"
     ipa: "anivɛʁsɛʁ"
@@ -295,7 +297,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "C'est un rendez-vous annuel.", ipa: "sɛ œ̃ ʁɑ̃devu anɥɛl", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "un", ref: "fr-0208" }, { word: "annuel", base: "annuel" }] }
+      - { target: "C'est un rendez-vous annuel.", ipa: "sɛ œ̃ ʁɑ̃devu anɥɛl", bases: [{ word: "C'est", ref: "fr-0143" }, { word: "un", ref: "fr-0208" }, { word: "annuel", base: "annuel" }, { word: "rendez", ref: "fr-1114" }] }
       - { target: "Le congé annuel est en août.", ipa: "lə kɔ̃ʒe anɥɛl ɛ ɑ̃ u", bases: [{ word: "Le", ref: "fr-0543" }, { word: "congé", base: "congé" }, { word: "annuel", base: "annuel" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "août", base: "août" }] }
   - id: "fr-1179"
     target: "avant-hier"
