@@ -399,7 +399,8 @@ units:
       - { id: "talking-with-friends", text: { "en": "Friends talk casually: what they do and do not do" } }
     reading_passages:
       - { id: "casual-messages", text: { "en": "Casual messages between friends, in plain forms" } }
-  - planned: { id: "ja-things", theme: "things", words: 50 }
+  - decks: ["ja-things", "ja-things-sentences", "ja-reading-things", "*"]
+    words: 31
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:

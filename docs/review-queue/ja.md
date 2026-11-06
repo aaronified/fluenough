@@ -30,3 +30,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1592 | ja-animals | こうもり also means umbrella (こうもりがさ): should a homograph note say so? | Haiku builder | 2026-11-06 |
 | ja-1613 | ja-reading-animals | Is なきます the natural verb for a chicken crowing in the morning, or is another word used? | Haiku builder | 2026-11-06 |
 | ja-1629 | ja-weather | あられ and ひょう both mean hail: is the difference clear enough to keep both cards, and is あられ the right word for small hail? | Haiku builder | 2026-11-06 |
+| ja-1674 | ja-things | かみ means paper here, but it is also the word for hair (髪) and for god (神): should a homograph note say so? | Haiku builder | 2026-11-06 |
+| ja-1699 | ja-things | Is ふろしき (the square cloth for wrapping things) a good single-word card, or does it need a note on its culture? | Haiku builder | 2026-11-06 |
