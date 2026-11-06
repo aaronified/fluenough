@@ -931,7 +931,9 @@ units:
     reading_passages:
       - { id: "bill-and-receipt", text: { "en": "A utility bill and a payment receipt" } }
       - { id: "market-prices", text: { "en": "Prices on a market stall: fruit by the jin and a bargain" } }
-  - planned: { id: "zh-grammar-written-register", grammar: "written-register" }
+  - decks: ["zh-grammar-written-register", "zh-grammar-written-register-sentences"]
+    words: 0
+    grammar: ["written-register"]
     listening_passages:
       - { id: "news-reader", text: { "en": "A news reader's formal words beside their everyday ones" } }
     reading_passages:

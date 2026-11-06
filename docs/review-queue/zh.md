@@ -97,3 +97,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | zh-grammar-zhe-continuous | The `while` slot (他坐着看书, 我开着门睡觉) uses 着 (zhe) for the manner of a second verb. Are all seven examples natural? | Sonnet builder | 2026-11-06 |
 | unit-level | zh-characters-7 (ids zh-4852 to zh-4861) | Are the parts of speech given to the ten characters (经 verb, 社 noun, 会 noun, 化 verb, 环 noun, 境 noun, 保 verb, 护 verb, 展 verb, 决 verb) and the glosses fair for single characters? | Sonnet builder | 2026-11-06 |
 | unit-level | zh-characters-7 | The notes tie 化, 境 and 展 to 文化, 环境 and 发展 and 决 to 解决 only. Is that enough to teach these bound characters? | Sonnet builder | 2026-11-06 |
+| unit-level | zh-grammar-written-register | Are the eleven spoken and written pairs right in meaning and register (举行/开会, 禁止/不能, 取消/不开会了, 通知/告诉, 支付/付钱, 参加/去开会, 感谢您/谢谢你, 光临, 已/已经, 及/和, 均/都)? | Sonnet builder | 2026-11-06 |
+| unit-level | zh-grammar-written-register | 光临 is glossed as a shop host's welcome (欢迎光临) and 感谢您的光临 as thanks for coming. Is that the right use, and is the spoken pair 欢迎你来 fair? | Sonnet builder | 2026-11-06 |
+| unit-level | zh-grammar-written-register-sentences | 已, 及 and 均 have no cards of their own, so they are bases glossed as written-style words. Is 老师及学生均参加会议 a natural written sentence? | Sonnet builder | 2026-11-06 |
