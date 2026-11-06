@@ -936,16 +936,20 @@ units:
     reading_passages:
       - { id: "survey-results", text: { "en": "The results of a short survey on work and life" } }
       - { id: "village-letter", text: { "en": "A letter from a village family about a son who works in the city" } }
-  - planned: { id: "zh-university", theme: "university", words: 50 }
+  - decks: ["zh-university", "zh-university-sentences", "zh-reading-university", "*"]
+    words: 50
     listening_passages:
       - { id: "choosing-a-course", text: { "en": "Students talk about which course to choose" } }
     reading_passages:
       - { id: "campus-notice", text: { "en": "A campus notice about exams" } }
-  - planned: { id: "zh-food-culture", theme: "food-culture", words: 50 }
+      - { id: "student-diary", text: { "en": "A student's diary of a busy week of study" } }
+  - decks: ["zh-food-culture", "zh-food-culture-sentences", "zh-reading-food-culture", "*"]
+    words: 50
     listening_passages:
       - { id: "new-year-dumplings", text: { "en": "A family makes dumplings and explains the New Year dishes" } }
     reading_passages:
       - { id: "regional-cuisines", text: { "en": "A short article about China's regional cuisines" } }
+      - { id: "tea-house-visit", text: { "en": "A morning at a teahouse with friends, and the dim sum they order" } }
   - planned: { id: "zh-literature", theme: "literature", words: 50 }
     listening_passages:
       - { id: "a-poem-explained", text: { "en": "A teacher reads a short Tang poem and explains it" } }

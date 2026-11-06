@@ -64,3 +64,24 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | zh-society (ids zh-4521 to zh-4570) | 农民工 is used in an example as a non-card word (a migrant farm worker). Should it be a card of its own in a later unit? | Haiku builder | 2026-11-06 |
 | unit-level | zh-society (ids zh-4521 to zh-4570) | The reading passage 'village-letter' was added to the path (the plan had one reading passage, the build-deck skill asks for two): is the second passage wanted? | Haiku builder | 2026-11-06 |
 | unit-level | zh-society-sentences (ids zh-4571 to zh-4578) | The confusables on each sentence (for example 包容 and 宽容, 差异 and 区别, 参与 and 组织) are the builder's pick: are they the right contrasts? | Haiku builder | 2026-11-06 |
+| unit-level | zh-university (ids zh-4585 to zh-4634) | Traditional forms were typed by hand: please check them. | Haiku builder | 2026-11-06 |
+| unit-level | zh-university (ids zh-4585 to zh-4634) | 一 before a neutral measure (一个, yí ge) or before a fourth tone (一月, yí yuè) is written yí, and before the other tones yì: is that the right reading in these cards? | Haiku builder | 2026-11-06 |
+| unit-level | zh-university (ids zh-4585 to zh-4634) | Sentences deck: are the 2 confusables per sentence the right near-misses for a learner? | Haiku builder | 2026-11-06 |
+| zh-4601 | zh-university (ids zh-4585 to zh-4634) | Part of speech of 学术 is noun; it also comes before a noun as an adjective (学术会议). Is noun right? | Haiku builder | 2026-11-06 |
+| zh-4606 | zh-university (ids zh-4585 to zh-4634) | Part of speech of 答辩 is verb and the note gives a second sense (a formal reply to a charge). Should the second sense stay in the note? | Haiku builder | 2026-11-06 |
+| zh-4592 | zh-university (ids zh-4585 to zh-4634) | The note gives the rank order 助教, 讲师, 副教授, 教授. Is that the right order in mainland academic titles? | Haiku builder | 2026-11-06 |
+| zh-4611 | zh-university (ids zh-4585 to zh-4634) | Is 考研 (a short form of 考研究生) natural as a dictionary entry, or should it be listed under 考试? | Haiku builder | 2026-11-06 |
+| zh-4593 | zh-university (ids zh-4585 to zh-4634) | The note says a 助教 helps with marking (批改). Is that the usual role in a university? | Haiku builder | 2026-11-06 |
+| zh-4607 | zh-university (ids zh-4585 to zh-4634) | Is 导师 used for a thesis supervisor in the sense the note gives? | Haiku builder | 2026-11-06 |
+| zh-4677 | zh-food-culture (ids zh-4649 to zh-4698) | The note says a whole fish is served at New Year because 鱼 sounds like 余 (surplus). Is that cultural claim right and worth keeping? | Haiku builder | 2026-11-06 |
+| zh-4651 | zh-food-culture (ids zh-4649 to zh-4698) | The note says 八宝饭 is served at festivals. Is that right for the New Year table? | Haiku builder | 2026-11-06 |
+| zh-4672 | zh-food-culture (ids zh-4649 to zh-4698) | The example says bitter food is thought good for the body. Is that a fair statement, or should it be cut? | Haiku builder | 2026-11-06 |
+| zh-4682 | zh-food-culture (ids zh-4649 to zh-4698) | The note calls 腊肉 a speciality of some southern regions. Which regions are most known for it? | Haiku builder | 2026-11-06 |
+| zh-4693 | zh-food-culture (ids zh-4649 to zh-4698) | The note calls 米线 a speciality of the south-west. Is that the right region? | Haiku builder | 2026-11-06 |
+| zh-4673 | zh-food-culture (ids zh-4649 to zh-4698) | The note says 味道 is felt by the tongue while 香味 is smelt. Is that the right distinction? | Haiku builder | 2026-11-06 |
+| zh-4696 | zh-food-culture (ids zh-4649 to zh-4698) | The note says 饮茶 means to have a tea meal with dim sum in Cantonese. Is that the usual sense in speech? | Haiku builder | 2026-11-06 |
+| zh-4681 | zh-food-culture (ids zh-4649 to zh-4698) | Traditional form 滷 was typed by hand: please check it. | Haiku builder | 2026-11-06 |
+| zh-4687 | zh-food-culture (ids zh-4649 to zh-4698) | The note says many foods are eaten at particular solar terms. Is that a fair statement for the cards' examples? | Haiku builder | 2026-11-06 |
+| zh-4686 | zh-food-culture (ids zh-4649 to zh-4698) | The second example says southern people eat sweet dumplings at the winter solstice. Is that a fair generalisation? | Haiku builder | 2026-11-06 |
+| zh-4698 | zh-food-culture (ids zh-4649 to zh-4698) | In the example 边 is used for 'while' (我喜欢边喝茶边吃茶点). Is that natural? | Haiku builder | 2026-11-06 |
+| zh-4670 | zh-food-culture (ids zh-4649 to zh-4698) | The note says in Cantonese tea houses 点心 is dim sum. Is that accurate for a learner's first meaning? | Haiku builder | 2026-11-06 |
