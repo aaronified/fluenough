@@ -504,7 +504,8 @@ units:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "rubbish-calendar", text: { "en": "A neighbourhood calendar of rubbish collection days" } }
-  - planned: { id: "ja-appearance", theme: "appearance", words: 40 }
+  - decks: ["ja-appearance", "ja-appearance-sentences", "ja-reading-appearance", "*"]
+    words: 40
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
