@@ -48,7 +48,7 @@ none twice.
 ## `deck_index.py`
 
 Writes `decks/index.json`, the list the app downloads decks from (#210,
-ADR-0037). The `deck-index.yml` workflow runs it on main after each merge
+ADR-0037). The `deck-index.yml` workflow runs it on decks-live after each merge
 that touches `decks/` and commits the result (owner, 2026-10-23); builders
 do not run it (it runs the full validator, up to an hour).
 

@@ -2,7 +2,7 @@
 
 Source of truth: this wiki page.
 
-Status: audit written, migration started in stages (2026-11-06). Owner's idea, quoted:
+Status: stages 1 to 3 done, open items below (2026-11-06). Audit written, migration started in stages (2026-11-06). Owner's idea, quoted:
 "Can we instead keep all decks in a separate decks branch and the app will then
 pull the decks from there? The branch can have deck CI. While the app portion
 (main) will have app CI along with checking that it can read the decks from a
@@ -15,7 +15,16 @@ updated simply stops getting deck updates.
 
 "First create decks and the sample deck. And let the app read the sample deck. Make app ready to read from the decks branch only. Release. Copy the decks to the decks branch, but do not delete anything in main. New deck works will merge into the decks branch. Those on old app still gets the decks they had, those who updated get the new ones."
 
-So: main keeps its decks, frozen (old apps keep reading them); the branch is created from main, so it starts with a copy; the app then reads the branch only. Stages: (1) create the branch; (2) deck CI and the index, min_app and README jobs live on the branch and write there; main's deck-index job stops writing, the `Validate decks` gate stays as a cheap always-reporting job; (3) one main PR: sample deck, tests switched to it, "Released app reads the decks" on the sample, downloader and web read the branch only, CHANGELOG line; (4) the owner releases. Step 7 of the plan below (removing `decks/` from main) is **not** done. The branch is named `decks`, not `decks-live`: see the first finding, which needs the `decks/*` branches renamed or deleted first.
+So: main keeps its decks, frozen (old apps keep reading them); the branch is created from main, so it starts with a copy; the app then reads the branch only. Stages: (1) create the branch; (2) deck CI and the index, min_app and README jobs live on the branch and write there; main's deck-index job stops writing, the `Validate decks` gate stays as a cheap always-reporting job; (3) one main PR: sample deck, tests switched to it, "Released app reads the decks" on the sample, downloader and web read the branch only, CHANGELOG line; (4) the owner releases. Step 7 of the plan below (removing `decks/` from main) is **not** done. The branch is named `decks-live`, not `decks`: see the first finding.
+
+**Done (owner, 2026-11-06):** stage 1, the branch `decks-live` exists; stage 2, the ruleset for `decks-live` is in place and the secret `WIKI_TOKEN` is now `ADMIN_TOKEN`; stage 3, PR #1052 is merged (sample deck, tests on it, "Released app reads the decks" on the sample, downloader and web read `decks-live` only, CHANGELOG line). The app reads `decks-live` from the next release. `decks-next` is retired (its role is `min_app`, ADR-0052).
+
+**Open items (2026-11-06):**
+- **Release.** The owner runs the Release workflow from main. Until an app with the new base is out, phones keep the decks they have; old apps keep main's frozen `decks/`.
+- **Review bot retarget.** In progress: `feedback-mail.yml` and `tools/review_bot.py` still aim at main (step 6). Bot branches still start from main until it lands.
+- **Bundled `themes.yaml`.** `decks/themes.yaml` is bundled in the app, so it is edited only on main, never on `decks-live`.
+- **About 85 tests still on frozen decks.** They still read main's `decks/` and move to the sample or to `decks-live` (see Audit 1).
+- **Rebase open deck branches** (`fr-b1`, `ja-b1`, `ta-a1`, `bn-b1-3`, `hi-b1-3`, `hi-b1-4`, `te-*`) onto `decks-live` with `git rebase --onto decks-live main <branch>`, then move each open PR's base to `decks-live`.
 
 ## Decision recorded
 
@@ -148,7 +157,7 @@ on `decks-live`. Instead:
 
 | # | Step | Risk | Effort | Who |
 |---|---|---|---|---|
-| 0 | **Name the branch** (`decks-live`, not `decks`; see finding 1) and answer the open questions below. | None | S | Owner |
+| 0 | **Name the branch** (`decks-live`, not `decks`; see finding 1; done 2026-11-06) and answer the open questions below. | None | S | Owner |
 | 1 | **Decouple tests on main first, nothing moved.** Add `FLUENOUGH_DECKS_ROOT` (default `decks/`), promote the sample to `assets/sample-decks/`, run the shards with `FLUENOUGH_DECKS_ROOT=assets/sample-decks`, tag the 5 real-deck test files `real-decks` and move them out of the shards; rewrite assertions that name real ids. Ship in 3 to 5 PRs by test group. | A test passes against the sample for the wrong reason; a shard weight file (`test/shard_weights.json`) gets stale | L | Sonnet (reviews: one Sonnet each) |
 | 2 | **Create `decks-live`** from main: `decks/` and `.gitattributes` and workflows. Do **not** delete `decks/` on main yet. Both carry the same decks for a day. | Two copies drift if PRs land in between: freeze deck merges during steps 2 to 5 | S | Sonnet |
 | 3 | **Deck CI on `decks-live`**: `ci.yml` with the overlay: validate, index, tools' tests, `release-reader`, `real-decks` tests, synonyms, sample-contract check. `deck-index.yml` moves; README job on main fetches the index. Same job names (`Validate decks`, `Released app reads the decks`). | The overlay checkout of a PR needs fork handling (decks PRs from forks cannot use secrets: not needed here); CI minutes: the 8 shards no longer run per deck PR (a saving) | M | Sonnet; owner for tokens (step 6) |

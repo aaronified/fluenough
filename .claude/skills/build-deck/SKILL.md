@@ -190,8 +190,10 @@ Before you start:
 7. **Check.** CI runs the validator
    (`python3 tools/validate_decks.py decks/`); read its result, and fix every
    error and each warning or explain it. Do not run `tools/deck_index.py` or
-   commit `decks/index.json`: a workflow regenerates it on main after the
-   merge (owner, 2026-10-23). Tools details: `tools/README.md`.
+   commit `decks/index.json`: a workflow regenerates it on `decks-live` after the
+   merge (owner, 2026-10-23). A deck branch starts from `decks-live`, and its
+   pull request opens against `decks-live`, not main (owner, 2026-11-06).
+   Tools details: `tools/README.md`.
 7a. **Flag what you are unsure of.** Before finishing a unit, append a row to
    `docs/review-queue/<lang>.md` for each card you are unsure of (gender,
    part of speech, reading or tone, a doubtful note, a traditional form,
