@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **Find my level asks how well you know the language, then checks you.** It first asks "How well do you know the language?" with only the answers the course supports (Expert, Advanced, Amateur, Beginner; a course with only A1 written offers Beginner and Amateur, and a course below A1 offers no check). Back cancels it and writes nothing; Beginner starts from the beginning with nothing asked. The questions come from the course's own decks and run as long as they need, with a pause every 25 questions where you see where you stand and choose Keep going or Stop here; leaving part-way keeps the run for 7 days. At the end each skill is credited up to the level it was placed at, and a course written to B1 can mark a skill Verified. A skill marked Know is verified first ("Verify what you know"), then "Fit my level" checks the rest; a check never changes a skill's Leave, Know or Learn.
+
 ### Fixed
 
 - Find my level no longer switches Speak and Hear to Learn: it downloads the language's decks if they are missing, then opens placement, and changes no skill.

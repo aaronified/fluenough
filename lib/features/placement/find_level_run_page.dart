@@ -124,7 +124,7 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
         if (!didPop) _pause();
       },
       child: question == null
-          ? _Checkpoint(
+          ? FindLevelCheckpoint(
               count: _session.asked,
               lines: findLevelStandings(l10n, _session.run),
               onKeepGoing: _keepGoing,
@@ -156,8 +156,9 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
 
 /// The pause every 25 questions (section 5.4): where the learner stands, per
 /// skill, and the choice to keep going or stop here.
-class _Checkpoint extends StatelessWidget {
-  const _Checkpoint({
+class FindLevelCheckpoint extends StatelessWidget {
+  const FindLevelCheckpoint({
+    super.key,
     required this.count,
     required this.lines,
     required this.onKeepGoing,
