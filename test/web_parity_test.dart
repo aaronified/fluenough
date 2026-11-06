@@ -13,6 +13,7 @@ import 'package:fluenough/core/speech/web_speech_browser.dart';
 import 'package:fluenough/core/speech/web_speech_engine.dart';
 import 'package:fluenough/features/drill/speaking_practice.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
+import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -182,11 +183,8 @@ void main() {
 
   group('the words about the microphone', () {
     const hindi = LanguageInfo(code: 'hi', iso639_3: 'hin', name: 'Hindi');
-    testWidgets('name the browser on the web, and the phone elsewhere', (
-      tester,
-    ) async {
-      await pumpScreen(tester, const SizedBox());
-      final l10n = l10nOf(tester);
+    test('name the browser on the web, and the phone elsewhere', () async {
+      final l10n = await AppLocalizations.delegate.load(const Locale('en'));
       final before = browserWords;
       addTearDown(() => browserWords = before);
 

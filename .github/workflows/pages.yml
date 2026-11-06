@@ -80,7 +80,8 @@ jobs:
   smoke:
     name: "Web: smoke test"
     needs: build
-    runs-on: ubuntu-latest
+    # Playwright's Chromium does not support ubuntu-latest's newest release.
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v7
         with:
