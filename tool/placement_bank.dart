@@ -10,7 +10,7 @@
 //
 //   dart run tool/placement_bank.dart --language es \
 //     [--root decks | $FLUENOUGH_DECKS_ROOT] [--native en] \
-//     [--out test/fixtures/placement/banks] [--max 3000] [--seeds 2]
+//     [--out test/fixtures/placement/banks] [--max 3000] [--seeds 2] [--stride 1] [--picks 5]
 import 'dart:convert';
 import 'dart:io';
 
@@ -56,6 +56,8 @@ Future<void> main(List<String> args) async {
     course.data,
     seeds: int.parse(options['seeds'] ?? '2'),
     maxQuestions: int.parse(options['max'] ?? '3000'),
+    deckStride: int.parse(options['stride'] ?? '1'),
+    picks: int.parse(options['picks'] ?? '5'),
   );
   Directory(out).createSync(recursive: true);
   const encoder = JsonEncoder.withIndent(' ');
