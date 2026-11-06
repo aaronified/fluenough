@@ -297,7 +297,7 @@ void main() {
         // Wallpaper colours off: the choices are back, and read as choices.
         state.settings.dynamicColour = false;
         await tester.pumpAndSettle();
-        await scrollToFind(tester, forest);
+        await scrollListTo(tester, forest);
         await tester.ensureVisible(forest);
         await tester.pumpAndSettle();
         expect(find.bySemanticsLabel(l10n.appearanceSeedForest), findsWidgets);
