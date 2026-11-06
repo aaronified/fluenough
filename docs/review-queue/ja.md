@@ -44,3 +44,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1761 | ja-eating-out | Is まんぞく (full, satisfied) the natural word for being full after a meal, as in はらは まんぞくです? | Haiku builder | 2026-11-06 |
 | unit-level | ja-eating-out | Only 15 of the 50 planned eating-out words were fresh: the path count is set to 15. Is that right? | Haiku builder | 2026-11-06 |
 | unit-level | ja-eating-out | The example and sentence decks of ja-eating-out are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-1796 | ja-cooking | こい (strong, thick) for soy sauce and miso soup: is it the natural word for strong flavour, or is another word used? Also check the homograph with こい (love). | Haiku builder | 2026-11-06 |
+| ja-1795 | ja-cooking | Is うすい (thin, weak in taste) natural for a soup that is weak in flavour? | Haiku builder | 2026-11-06 |
+| ja-1798 | ja-cooking | Is しおからい (salty) the natural word, or is しょっぱい more common in everyday speech? | Haiku builder | 2026-11-06 |
+| ja-1804 | ja-cooking | Is こげる (to burn, scorch) right for rice that burns, and is ごはんが こげました natural? | Haiku builder | 2026-11-06 |
+| unit-level | ja-cooking | Only 31 of the 45 planned cooking words were fresh: the path count is set to 31. Is that right? | Haiku builder | 2026-11-06 |
+| unit-level | ja-cooking | The example and sentence decks of ja-cooking are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
