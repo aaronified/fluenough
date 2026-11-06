@@ -18,10 +18,6 @@ import '../drill/rearrange_drill.dart' show rearrangeBoard;
 import '../drill/speaking_practice.dart' show unheardMessage;
 import 'placement_questions.dart' show PlacementFrame;
 
-/// A listen that heard nothing twice in a row gives the microphone up
-/// (wiki/Plan-Placement-V2.md, row j of section 6).
-const int _unheardLimit = 2;
-
 /// One question of a Find my level run, drawn in the review's own frame
 /// ([PlacementFrame]) from a [GeneratedQuestion]: the options as the
 /// review's choice tiles, tiles as its rearrange board, a word said as its
@@ -37,6 +33,8 @@ class FindLevelQuestionView extends StatefulWidget {
     required this.native,
     required this.onAnswer,
     required this.onGiveUpMicrophone,
+    required this.onListened,
+    required this.onSkip,
     this.cardOf,
   });
 
@@ -54,8 +52,17 @@ class FindLevelQuestionView extends StatefulWidget {
   /// Whether the learner answered right.
   final ValueChanged<bool> onAnswer;
 
-  /// "I can't speak now", or two listens in a row that heard nothing.
+  /// "I can't speak now".
   final VoidCallback onGiveUpMicrophone;
+
+  /// A listen ended: whether it heard anything. The run counts the listens
+  /// that heard nothing across its questions (two in a row give the
+  /// microphone up), which a question cannot, as it is drawn anew each time.
+  final void Function({required bool heard}) onListened;
+
+  /// The question's sound could not be played, and it is left out (never a
+  /// miss).
+  final VoidCallback onSkip;
 
   /// The card [PlacementAudio.cardId] names, so that its recording plays.
   final Card? Function(String id)? cardOf;
@@ -68,7 +75,10 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
   final List<int> _placed = <int>[];
   bool _listening = false;
   SpeechFailure? _unheard;
-  int _unheardInARow = 0;
+
+  /// The voice failed to play the question: it cannot be answered, so it is
+  /// skipped, not marked wrong.
+  bool _audioFailed = false;
 
   GeneratedQuestion get _q => widget.question;
 
@@ -78,11 +88,11 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
     // A heard question plays as it appears, where speech may start by
     // itself; the Play button plays it again.
     if (_q.audio != null) {
-      WidgetsBinding.instance.addPostFrameCallback((_) => _play());
+      WidgetsBinding.instance.addPostFrameCallback((_) => unawaited(_play()));
     }
   }
 
-  void _play() {
+  Future<void> _play() async {
     if (!mounted) return;
     final audio = _q.audio;
     if (audio == null) return;
@@ -90,11 +100,13 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
     final card = audio.cardId == null
         ? null
         : widget.cardOf?.call(audio.cardId!);
-    unawaited(
-      card != null
-          ? state.speakCard(card, widget.language)
-          : state.speak(audio.text, widget.language),
-    );
+    final failed = await (card != null
+        ? state.speakCard(card, widget.language)
+        : state.speak(audio.text, widget.language));
+    if (!mounted) return;
+    if (failed != null || _audioFailed) {
+      setState(() => _audioFailed = failed != null);
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -260,18 +272,15 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
         .listenFor(english ? widget.native : widget.language);
     if (!mounted) return;
     if (heard.failed) {
-      _unheardInARow++;
-      if (_unheardInARow >= _unheardLimit) {
-        widget.onGiveUpMicrophone();
-        return;
-      }
       setState(() {
         _listening = false;
         _unheard = heard.failure ?? SpeechFailure.noMatch;
       });
+      widget.onListened(heard: false);
       return;
     }
     setState(() => _listening = false);
+    widget.onListened(heard: true);
     final accepted = _q.accepted;
     if (accepted.isEmpty) return widget.onAnswer(false);
     final grader = english
@@ -329,6 +338,40 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
     ];
   }
 
+  /// The sound would not play: say so, offer it again (Play) and a way on
+  /// that is not a miss. Nothing to answer is shown, as it could only be
+  /// guessed.
+  Widget _audioFailedFrame(BuildContext context, AppLocalizations l10n) {
+    final theme = Theme.of(context);
+    return PlacementFrame(
+      number: widget.number,
+      mode: _mode,
+      title: Text(_title(l10n)),
+      shown: _shown(context),
+      actions: <Widget>[
+        FilledButton(
+          key: const ValueKey<String>('find-level-skip-audio'),
+          onPressed: widget.onSkip,
+          style: AppButtonStyles.tall(context),
+          child: Text(l10n.findLevelSkipQuestion),
+        ),
+      ],
+      children: <Widget>[
+        Semantics(
+          liveRegion: true,
+          child: Text(
+            l10n.findLevelAudioFailed,
+            key: const ValueKey<String>('find-level-audio-failed'),
+            textAlign: TextAlign.center,
+            style: theme.textTheme.bodyLarge!.copyWith(
+              color: theme.colorScheme.error,
+            ),
+          ),
+        ),
+      ],
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
@@ -336,6 +379,7 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
         _q.mode == PlacementAnswerMode.say ||
         _q.mode == PlacementAnswerMode.sayEnglish;
     final tiles = _q.mode == PlacementAnswerMode.tiles;
+    if (_audioFailed) return _audioFailedFrame(context, l10n);
     return PlacementFrame(
       number: widget.number,
       mode: _mode,

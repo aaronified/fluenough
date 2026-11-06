@@ -76,6 +76,18 @@ FindLevelSkills selectFindLevelSkills(
     return FindLevelSkills(skills: learning, verifying: false);
   }
   // Everything known is verified and nothing is being learned: check what is
-  // known again.
-  return FindLevelSkills(skills: known, verifying: true);
+  // known again. With nothing known either there is nothing to check, and the
+  // row reads "Fit my level" (or "Find my level"), never "Verify".
+  return FindLevelSkills(skills: known, verifying: known.isNotEmpty);
 }
+
+/// [skills] without those this phone cannot ask: Hear needs sound on and a
+/// [voice] for the language, or its questions could not be heard and would
+/// count as misses. Empty when nothing is left to check.
+Set<PlacementSkill> placementSkillsForDevice(
+  Set<PlacementSkill> skills, {
+  required bool voice,
+}) => <PlacementSkill>{
+  for (final skill in skills)
+    if (skill != PlacementSkill.hear || voice) skill,
+};

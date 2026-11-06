@@ -137,6 +137,21 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   List<SkillKey> get _shape => _state.skillShape(_view.language);
   List<String> get _scripts => _state.skillScripts(_view.language);
 
+  /// The course's own scripts for the Find my level row, read once: finding
+  /// them walks the whole course, and the row is built on every change. Read
+  /// again when the decks arrive (whether the language's decks are on the
+  /// phone is part of what it was read for).
+  List<String>? _levelScripts;
+  bool? _levelScriptsHeld;
+  List<String> get _scriptsForLevel {
+    final held = _state.deckDownloads?.hasDecks(_code) ?? true;
+    if (_levelScripts == null || _levelScriptsHeld != held) {
+      _levelScripts = findLevelScriptNames(_state, _code);
+      _levelScriptsHeld = held;
+    }
+    return _levelScripts!;
+  }
+
   @override
   void initState() {
     super.initState();
@@ -846,6 +861,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       _code,
       skills: _skills,
       shape: _shape,
+      scripts: _scriptsForLevel,
     ).verifying;
     return _LinkRow(
       key: const ValueKey<String>('languages-level'),

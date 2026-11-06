@@ -147,7 +147,20 @@ extension PlacementRunSetup on AppState {
   /// earlier one leaves the earlier credit, which the plan's section 4.4
   /// would ask about first; not built). It never changes a skill's Leave,
   /// Know or Learn.
+  ///
+  /// The code's paused run is dropped last, once all of this is written: a
+  /// write that throws leaves the run to be carried on.
   void writePlacementRun(
+    String code,
+    PlacementRunPlan plan,
+    PlacementRun run, {
+    String? native,
+  }) {
+    _writeOutcome(code, plan, run, native: native);
+    settings.setPlacementRun(code, null);
+  }
+
+  void _writeOutcome(
     String code,
     PlacementRunPlan plan,
     PlacementRun run, {
