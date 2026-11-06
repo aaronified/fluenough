@@ -38,7 +38,7 @@ readable only by workflows, so a session cannot use one either.
   `wiki/ADR-NNNN-Title-With-Dashes.md`. No `docs/adr` file is added.
 - **A workflow mirrors them.** `.github/workflows/wiki-sync.yml` (PR #709)
   copies `wiki/` to the wiki on every push to main that touches `wiki/`,
-  and on a manual run. It uses the repository Actions secret `WIKI_TOKEN`,
+  and on a manual run. It uses the repository Actions secret `ADMIN_TOKEN`,
   a fine-grained token with Contents: write, and falls back to
   `GITHUB_TOKEN`. The owner chose "Use the workflow only".
 - **Repo docs (option A).** A moved doc became a one-line pointer to the

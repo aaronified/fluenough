@@ -5,8 +5,8 @@ name: Deck index
 # not failed for a stale index and builders do not run tools/deck_index.py.
 #
 # Pushing to the protected decks-live needs a token that may bypass the rules: it uses
-# the secret WIKI_TOKEN (a fine-grained token with Contents: write), else
-# GITHUB_TOKEN, which cannot bypass the pull-request rule. WIKI_TOKEN's owner
+# the secret ADMIN_TOKEN (a fine-grained token with Contents: write), else
+# GITHUB_TOKEN, which cannot bypass the pull-request rule. ADMIN_TOKEN's owner
 # must be allowed to bypass it in decks-live's ruleset. The README's
 # languages list is on main: its own workflow reads this branch's index.
 
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: decks-live
-          token: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ADMIN_TOKEN || secrets.GITHUB_TOKEN }}
       - uses: ./.github/actions/main-tools
       - uses: actions/setup-python@v7
         with:
@@ -63,5 +63,5 @@ jobs:
             git rebase --abort 2>/dev/null || true
             sleep $((attempt * 5))
           done
-          echo "::error::Could not push the regenerated decks/index.json to decks-live. Most likely the token may not bypass decks-live's pull-request rule: WIKI_TOKEN must be allowed to bypass it in the ruleset (GITHUB_TOKEN cannot)."
+          echo "::error::Could not push the regenerated decks/index.json to decks-live. Most likely the token may not bypass decks-live's pull-request rule: ADMIN_TOKEN must be allowed to bypass it in the ruleset (GITHUB_TOKEN cannot)."
           exit 1
