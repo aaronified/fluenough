@@ -8,13 +8,12 @@ import '../../app/app_state.dart';
 import '../../app/deck_downloads.dart';
 import '../../app/language_offer.dart';
 import '../../app/language_skills.dart';
-import '../../app/placement.dart' show ScriptStanding;
-import '../../app/placement_credit.dart';
 import '../../core/data/spoken_languages.dart' show SpokenLanguage;
 import '../../core/decks/font_check.dart';
 import '../../core/decks/language_catalog.dart';
 import '../../core/decks/script_fonts.dart';
 import '../../core/models/deck.dart' show LanguageInfo;
+import '../../core/placement/declaration_options.dart';
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
@@ -26,7 +25,7 @@ import '../fonts/font_check_sheet.dart';
 import '../placement/course_line.dart';
 import '../placement/language_row.dart';
 import '../placement/placed_review_choice.dart';
-import '../placement/placement_page.dart';
+import '../placement/find_level_flow.dart';
 import 'language_views.dart';
 import 'skill_widgets.dart';
 
@@ -435,23 +434,49 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
   }
 
-  /// Find my level (owner, 2026-11-05): a language with no decks on the
-  /// phone is downloaded first, and placement opens when they have arrived.
-  /// Tapping it never changes a skill's status (owner, 2026-11-05).
+  /// Find my level (owner, 2026-11-05): a language whose decks are not all on
+  /// the phone is downloaded first (placement asks about the whole course),
+  /// then the declaration and the run open (wiki, Plan-Placement-V2, steps 3
+  /// and 4). Tapping it never changes a skill's status (owner, 2026-11-05).
   Future<void> _findLevel() async {
     final downloads = _state.deckDownloads;
-    if (downloads != null && !downloads.hasDecks(_code)) {
+    if (downloads != null &&
+        (!downloads.hasDecks(_code) ||
+            downloads.isDownloading(_code) ||
+            downloads
+                .missing(_code, _state.settings.spokenLanguages)
+                .isNotEmpty)) {
       if (!await _downloadForLevel(downloads)) return;
       if (!mounted) return;
     }
-    _openPlacement();
+    await startFindLevel(
+      context,
+      state: _state,
+      code: _code,
+      name: _view.name,
+      built: _builtLevel,
+      skills: _skills,
+      shape: _shape,
+    );
+    if (mounted) setState(() {});
   }
 
-  /// Downloads the language's decks, showing the progress. False when the
-  /// download failed, after saying why.
+  /// How many levels of the course are written to their end.
+  int get _builtLevel =>
+      _view.course
+          ?.progressFor(
+            _state.settings.spokenLanguages,
+            native: _state.courseNative(_code),
+          )
+          ?.builtLevel ??
+      0;
+
+  /// Downloads the language's decks, all of them, showing the progress.
+  /// False when the download failed, after saying why.
   Future<bool> _downloadForLevel(DeckDownloads downloads) async {
     final l10n = AppLocalizations.of(context)!;
     final navigator = Navigator.of(context, rootNavigator: true);
+    final spoken = _state.settings.spokenLanguages;
     unawaited(
       showDialog<void>(
         context: context,
@@ -459,67 +484,19 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
         builder: (_) => _LevelDownloadDialog(downloads: downloads, code: _code),
       ),
     );
-    final failure = await _state.downloadLanguage(_code);
+    var failure = downloads.hasDecks(_code)
+        ? null
+        : await _state.downloadLanguage(_code);
+    // The rest of the course follows the first decks; placement waits for it.
+    if (failure == null && downloads.missing(_code, spoken).isNotEmpty) {
+      failure = await downloads.downloadRest(_code, spoken);
+    }
     if (navigator.canPop()) navigator.pop();
     if (failure != null) {
       if (mounted) _toast(downloadFailureText(l10n, failure));
       return false;
     }
     return true;
-  }
-
-  void _openPlacement() {
-    final code = _code;
-    final state = _state;
-    final native = state.courseNative(code);
-    final skipped = state.scriptLessonsSkipped(code, native: native);
-    final course = _view.course;
-    Navigator.of(context).push(
-      MaterialPageRoute<void>(
-        settings: const RouteSettings(name: '/placement'),
-        builder: (_) => PlacementPage(
-          languages: <String>[code],
-          alphabet: <String, bool>{
-            if (course?.scriptDecks ?? false)
-              code: state.settings.learnsAlphabet(code),
-          },
-          natives: <String, String>{code: ?native},
-          languageNames: widget.names,
-          onFinished: (found) {
-            final settings = state.settings;
-            final replaced = <String>{
-              for (final entry in state.decks)
-                if (entry.language.code == code) entry.id,
-            };
-            Navigator.of(context).pop();
-            settings.placedDecks = <String>{
-              for (final id in settings.placedDecks)
-                if (!replaced.contains(id)) id,
-              ...?found.placed[code],
-            };
-            state.creditPlacement(
-              code,
-              placed: found.placed[code] ?? const <String>{},
-              standings:
-                  found.scripts[code] ?? const <String, ScriptStanding>{},
-              native: native,
-            );
-            settings.setPlacedReview(
-              code,
-              found.review[code] ?? settings.placedReviewOf(code),
-            );
-            if (skipped && settings.learnsAlphabet(code)) {
-              state.skipScriptLessons(code, true, native: native);
-            }
-            if (mounted) setState(() {});
-            showAppSnackBar(
-              context,
-              AppLocalizations.of(context)!.languagesToastLevel(_view.name),
-            );
-          },
-        ),
-      ),
-    );
   }
 
   Future<void> _delete() async {
@@ -744,7 +721,8 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                     _view.canLearn &&
                     !_locked &&
                     !_view.language.isNotation) ...<Widget>[
-                  _levelRow(context),
+                  // Below A1 no placement is offered (owner, 2026-11-05).
+                  if (_builtLevel >= builtA1) _levelRow(context),
                   _placedRow(context),
                 ],
                 if (_view.language.isSign) ...<Widget>[
@@ -862,11 +840,24 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
   Widget _levelRow(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final found = _state.levelFound(_code);
+    // Known skills are verified first; Fit my level follows for the rest.
+    final verifying = findLevelSkillsOf(
+      _state,
+      _code,
+      skills: _skills,
+      shape: _shape,
+    ).verifying;
     return _LinkRow(
       key: const ValueKey<String>('languages-level'),
       icon: Icons.flag_outlined,
-      title: found ? l10n.languagesFitMyLevel : l10n.languagesFindLevel,
-      subtitle: found
+      title: verifying
+          ? l10n.languagesVerifyKnown
+          : found
+          ? l10n.languagesFitMyLevel
+          : l10n.languagesFindLevel,
+      subtitle: verifying
+          ? l10n.languagesVerifyKnownSub
+          : found
           ? l10n.languagesLevelFoundSub
           : l10n.languagesLevelNotFoundSub,
       onTap: _findLevel,

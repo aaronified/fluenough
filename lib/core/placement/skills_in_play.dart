@@ -33,3 +33,49 @@ Set<PlacementSkill> placementSkillsOf(
   }
   return out;
 }
+
+/// The skills one tap of Find my level checks, and what the tap is called.
+class FindLevelSkills {
+  const FindLevelSkills({required this.skills, required this.verifying});
+
+  /// The skills the run asks about; empty when there is nothing to check.
+  final Set<PlacementSkill> skills;
+
+  /// True for "Verify what you know" (the skills marked Know that are not
+  /// Verified yet), false for "Fit my level" (the skills marked Learn, once
+  /// every known one is Verified; owner, 2026-11-05: "Let it show verify
+  /// knowledge first for known parts. And then after that or if all the
+  /// known parts are verified, change it to fit my level").
+  final bool verifying;
+}
+
+/// The skills to check for a language whose skills are [states] (the state
+/// of each key of [shape]), given the skills already [verified] (by name).
+/// A run never changes a state: Know and Learn are only read here.
+FindLevelSkills selectFindLevelSkills(
+  SkillState Function(SkillKey key) states,
+  List<SkillKey> shape, {
+  required Set<String> verified,
+  List<String> scripts = const <String>[],
+}) {
+  Set<PlacementSkill> skillsIn(SkillState state) =>
+      placementSkillsOf(<SkillKey>[
+        for (final key in shape)
+          if (states(key) == state) key,
+      ], scripts: scripts);
+  final known = skillsIn(SkillState.know);
+  final unverified = <PlacementSkill>{
+    for (final skill in known)
+      if (!verified.contains(skill.name)) skill,
+  };
+  if (unverified.isNotEmpty) {
+    return FindLevelSkills(skills: unverified, verifying: true);
+  }
+  final learning = skillsIn(SkillState.learn);
+  if (learning.isNotEmpty) {
+    return FindLevelSkills(skills: learning, verifying: false);
+  }
+  // Everything known is verified and nothing is being learned: check what is
+  // known again.
+  return FindLevelSkills(skills: known, verifying: true);
+}

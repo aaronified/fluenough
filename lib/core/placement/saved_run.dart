@@ -104,10 +104,7 @@ class SavedPlacementRun {
     return SavedPlacementRun(
       language: language,
       declaration: declaration,
-      skills: <PlacementSkill>{
-        for (final s in skills)
-          if (names[s] case final skill?) skill,
-      },
+      skills: <PlacementSkill>{for (final s in skills) ?names[s]},
       seed: seed,
       microphone: microphone,
       deckSet: deckSet,
