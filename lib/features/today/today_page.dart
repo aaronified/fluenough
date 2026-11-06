@@ -152,9 +152,10 @@ class _TodayContent extends StatelessWidget {
           const _NotSavedBanner(),
           const SizedBox(height: 16),
         ],
+        // Web only: how to install, and a browser may clear the data (#1012).
+        InstallHintCard(state: state),
         // Which language to learn a course from, once one the learner
         // speaks starts teaching it (ADR-0036).
-        InstallHintCard(state: state),
         const NativeChoiceCards(),
         if (numbers.hasDecks) ...<Widget>[
           DailyCard(plans: numbers.daily),

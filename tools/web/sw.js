@@ -71,18 +71,25 @@ async function networkFirst(request) {
   const cached = async () =>
     (await cache.match(request, { ignoreSearch: true })) ||
     (request.mode === 'navigate' ? await cache.match('index.html') : undefined);
-  const fresh = fetch(request).then(async (response) => {
+  // Revalidate: GitHub Pages sends max-age=600, which would otherwise hide a
+  // new build for ten minutes.
+  const fresh = fetch(request, { cache: 'no-cache' }).then(async (response) => {
     if (response.ok && response.type === 'basic') {
-      await cache.put(request, response.clone());
+      try {
+        await cache.put(request, response.clone());
+      } catch (e) {
+        // Quota or a private window: the answer is still served.
+      }
     }
     return response;
   });
   const old = await cached();
   if (!old) return fresh;
-  // A cached copy exists: use it if the network fails or is very slow.
+  // A cached copy exists: use it if the network fails, answers with an error
+  // (a 404, a 5xx, an outage page) or is very slow.
   fresh.catch(() => {});
   return Promise.race([
-    fresh.catch(() => old),
+    fresh.then((response) => (response.ok ? response : old)).catch(() => old),
     new Promise((resolve) => setTimeout(() => resolve(old), NETWORK_WAIT_MS)),
   ]);
 }

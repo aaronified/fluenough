@@ -37,7 +37,7 @@ function makeCache(name) {
       const k = strip(key(r), o && o.ignoreSearch);
       for (const [u, v] of m) if (strip(u, o && o.ignoreSearch) === k) return v;
     },
-    async put(r, v) { m.set(key(r), v); },
+    async put(r, v) { if (putFails) throw new Error('quota'); m.set(key(r), v); },
     async add(r) {
       const res = await fetch(r);
       if (!res.ok) throw new Error('bad');
@@ -47,6 +47,10 @@ function makeCache(name) {
 }
 const fetched = [];
 let online = true;
+let putFails = false;
+let slow = false;
+const broken = new Set();
+const sleepers = [];
 const files = JSON.parse(process.env.FILES);
 global.Request = class { constructor(u, o) { this.url = key(u); this.method = (o && o.method) || 'GET'; this.headers = new Map(Object.entries((o && o.headers) || {})); this.mode = (o && o.mode) || 'cors'; } };
 global.Response = class { constructor(b, o) { this.body = b; this.ok = !o || o.ok !== false; this.type = (o && o.type) || 'basic'; } clone() { return this; } static error() { const r = new Response(null, { ok: false }); r.type = 'error'; return r; } };
@@ -55,6 +59,8 @@ global.fetch = async (r) => {
   fetched.push(u);
   if (!online) throw new TypeError('offline');
   const path = new URL(u).pathname.replace('/fluenough/', '');
+  if (broken.has(path)) return new Response('OUTAGE', { ok: false });
+  if (slow) await new Promise(() => {});
   if (!(path in files)) return new Response('', { ok: false });
   return new Response(files[path]);
 };
@@ -70,6 +76,8 @@ global.self = {
   addEventListener: (t, f) => { listeners[t] = f; },
 };
 for (const k of Object.keys(global.self)) if (!(k in global)) global[k] = global.self[k];
+const realSetTimeout = setTimeout;
+global.setTimeout = (f, ms) => realSetTimeout(f, ms >= 1000 ? 50 : ms);
 eval(fs.readFileSync(process.env.SW, 'utf8'));
 const waits = [];
 const ev = (extra) => Object.assign({ waitUntil: (p) => waits.push(p) }, extra);
@@ -102,6 +110,31 @@ async function drain() { while (waits.length) await waits.shift(); }
   const nav = await dispatchFetch(new Request('https://x.test/fluenough/?utm=1', { mode: 'navigate' }));
   results.offlineNav = nav.body;
   results.missingOffline = (await dispatchFetch(new Request('https://x.test/fluenough/nope.js'))).type;
+  online = true;
+  results.noCacheOption = true;
+  const seen = [];
+  const origFetch = global.fetch;
+  global.fetch = async (r, o) => { seen.push(o && o.cache); return origFetch(r, o); };
+  await dispatchFetch(new Request('https://x.test/fluenough/main.dart.js'));
+  results.fetchCacheModes = seen;
+  broken.add('main.dart.js');
+  const bad = await dispatchFetch(new Request('https://x.test/fluenough/main.dart.js'));
+  results.errorFallsBack = bad.body;
+  results.errorNotCached = (await stores['fluenough-shell-v1'].get('https://x.test/fluenough/main.dart.js')).body;
+  broken.add('fresh-miss.js');
+  const noCopy = await dispatchFetch(new Request('https://x.test/fluenough/fresh-miss.js'));
+  results.errorWithoutCopy = noCopy.body;
+  broken.clear();
+  slow = true;
+  const slowRes = await dispatchFetch(new Request('https://x.test/fluenough/main.dart.js'));
+  results.slowFallsBack = slowRes.body;
+  slow = false;
+  putFails = true;
+  const nocopy = await dispatchFetch(new Request('https://x.test/fluenough/brand-new.js'));
+  results.putFailsBody = nocopy.body;
+  files['brand-new.js'] = 'NEW';
+  const nc = await dispatchFetch(new Request('https://x.test/fluenough/brand-new.js'));
+  results.putFailsServed = nc.body;
   console.log(JSON.stringify(results));
 })();
 """
@@ -157,6 +190,23 @@ class ServiceWorkerBehaviour(unittest.TestCase):
         self.assertEqual(self.r["offlineBody"], "APP")
         self.assertEqual(self.r["offlineNav"], "PAGE")
 
+    def test_network_fetch_revalidates(self):
+        self.assertTrue(self.r["fetchCacheModes"])
+        self.assertTrue(all(m == "no-cache" for m in self.r["fetchCacheModes"]))
+
+    def test_error_answer_is_not_cached_and_the_cached_copy_is_served(self):
+        self.assertEqual(self.r["errorFallsBack"], "APP")
+        self.assertEqual(self.r["errorNotCached"], "APP")
+
+    def test_error_answer_without_a_cached_copy_is_passed_on(self):
+        self.assertEqual(self.r["errorWithoutCopy"], "OUTAGE")
+
+    def test_slow_network_falls_back_to_the_cached_copy(self):
+        self.assertEqual(self.r["slowFallsBack"], "APP")
+
+    def test_a_failing_cache_put_still_serves_the_response(self):
+        self.assertEqual(self.r["putFailsServed"], "NEW")
+
     def test_offline_miss_is_an_error_not_a_hang(self):
         self.assertEqual(self.r["missingOffline"], "error")
 
@@ -201,6 +251,14 @@ class BuiltOutputCheck(unittest.TestCase):
     def test_a_good_build_passes(self):
         with tempfile.TemporaryDirectory() as tmp:
             self.assertEqual(check_web_sw.check(self.built(tmp)), [])
+
+    def test_a_flutter_worker_that_caches_is_reported(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            web = self.built(tmp)
+            (web / "flutter_service_worker.js").write_text("// stub: unregisters itself")
+            self.assertEqual(check_web_sw.check(web), [])
+            (web / "flutter_service_worker.js").write_text("caches.open('x'); cache.addAll([])")
+            self.assertIn("no longer a stub", " ".join(check_web_sw.check(web)))
 
     def test_each_failure_is_reported(self):
         with tempfile.TemporaryDirectory() as tmp:

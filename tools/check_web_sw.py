@@ -44,6 +44,19 @@ def check(web: Path) -> list[str]:
             )
         if "{{" in text:
             problems.append("flutter_bootstrap.js still holds an unfilled {{template}} tag")
+
+    # A Flutter upgrade that makes its own worker cache things, or that the
+    # bootstrap starts to reference again, would fight sw.js.
+    flutter_sw = web / "flutter_service_worker.js"
+    if flutter_sw.is_file():
+        fsw = flutter_sw.read_text()
+        referenced = bootstrap.is_file() and "flutter_service_worker" in bootstrap.read_text()
+        caches_things = "cache.addAll" in fsw or "caches.open" in fsw or "RESOURCES" in fsw
+        if referenced or caches_things:
+            problems.append(
+                "flutter_service_worker.js is no longer a stub (or the bootstrap uses it): "
+                "Flutter changed its worker, so check it against sw.js"
+            )
     return problems
 
 

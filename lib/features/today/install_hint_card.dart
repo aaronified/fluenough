@@ -38,78 +38,81 @@ class InstallHintCard extends StatelessWidget {
 
         return Padding(
           padding: const EdgeInsetsDirectional.only(bottom: 16),
-          child: Container(
-            key: const ValueKey<String>('install-hint'),
-            padding: const EdgeInsetsDirectional.fromSTEB(16, 14, 16, 8),
-            decoration: BoxDecoration(
-              color: scheme.surfaceContainerHighest,
-              borderRadius: BorderRadius.circular(AppRadii.field),
-            ),
-            child: Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Icon(
-                  Icons.install_mobile_outlined,
-                  color: scheme.onSurfaceVariant,
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      Text(
-                        prompt
-                            ? l10n.webInstallTitlePrompt
-                            : l10n.webInstallTitleIos,
-                        style: theme.textTheme.titleSmall,
-                      ),
-                      const SizedBox(height: 2),
-                      Text(
-                        prompt
-                            ? l10n.webInstallBodyPrompt
-                            : l10n.webInstallBodyIos,
-                        style: theme.textTheme.bodyMedium!.copyWith(
-                          color: scheme.onSurfaceVariant,
-                        ),
-                      ),
-                      if (!prompt) ...<Widget>[
-                        const SizedBox(height: 8),
+          child: Semantics(
+            container: true,
+            child: Container(
+              key: const ValueKey<String>('install-hint'),
+              padding: const EdgeInsetsDirectional.fromSTEB(16, 14, 16, 8),
+              decoration: BoxDecoration(
+                color: scheme.surfaceContainerHighest,
+                borderRadius: BorderRadius.circular(AppRadii.field),
+              ),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Icon(
+                    Icons.install_mobile_outlined,
+                    color: scheme.onSurfaceVariant,
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: <Widget>[
                         Text(
-                          l10n.webInstallHowTo,
+                          prompt
+                              ? l10n.webInstallTitlePrompt
+                              : l10n.webInstallTitleIos,
+                          style: theme.textTheme.titleSmall,
+                        ),
+                        const SizedBox(height: 2),
+                        Text(
+                          prompt
+                              ? l10n.webInstallBodyPrompt
+                              : l10n.webInstallBodyIos,
                           style: theme.textTheme.bodyMedium!.copyWith(
-                            fontWeight: FontWeight.w600,
+                            color: scheme.onSurfaceVariant,
                           ),
+                        ),
+                        if (!prompt) ...<Widget>[
+                          const SizedBox(height: 8),
+                          Text(
+                            l10n.webInstallHowTo,
+                            style: theme.textTheme.bodyMedium!.copyWith(
+                              fontWeight: FontWeight.w600,
+                            ),
+                          ),
+                        ],
+                        const SizedBox(height: 8),
+                        Wrap(
+                          spacing: 8,
+                          children: <Widget>[
+                            if (prompt)
+                              FilledButton(
+                                onPressed: install.install,
+                                child: Text(l10n.webInstallButton),
+                              )
+                            else
+                              FilledButton.tonal(
+                                onPressed: () => hide(install.gotIt),
+                                child: Text(l10n.webInstallGotIt),
+                              ),
+                            TextButton(
+                              onPressed: () => hide(install.later),
+                              child: Text(l10n.webInstallLater),
+                            ),
+                            if (prompt)
+                              TextButton(
+                                onPressed: () => hide(install.gotIt),
+                                child: Text(l10n.webInstallGotIt),
+                              ),
+                          ],
                         ),
                       ],
-                      const SizedBox(height: 8),
-                      Wrap(
-                        spacing: 8,
-                        children: <Widget>[
-                          if (prompt)
-                            FilledButton(
-                              onPressed: install.install,
-                              child: Text(l10n.webInstallButton),
-                            )
-                          else
-                            FilledButton.tonal(
-                              onPressed: () => hide(install.gotIt),
-                              child: Text(l10n.webInstallGotIt),
-                            ),
-                          TextButton(
-                            onPressed: () => hide(install.later),
-                            child: Text(l10n.webInstallLater),
-                          ),
-                          if (prompt)
-                            TextButton(
-                              onPressed: () => hide(install.gotIt),
-                              child: Text(l10n.webInstallGotIt),
-                            ),
-                        ],
-                      ),
-                    ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         );
