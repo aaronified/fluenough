@@ -14300,6 +14300,24 @@
   "@findLevelNothingToCheck": {
     "description": "Toast when Find my level has no skill to check."
   },
+  "findLevelNothingToCheckNoVoice": "Nothing to check yet: Hear needs sound on and a voice for {language} on this phone.",
+  "@findLevelNothingToCheckNoVoice": {
+    "description": "Toast when the only skill Find my level would check is Hear and the phone has no voice (or sound is off), so nothing is asked and nothing is written.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Bengali"
+      }
+    }
+  },
+  "findLevelAudioFailed": "Couldn’t play this sound. Try Play again, or skip the question.",
+  "@findLevelAudioFailed": {
+    "description": "Find my level: shown in place of a heard question when the phone’s voice failed to play it."
+  },
+  "findLevelSkipQuestion": "Skip this question",
+  "@findLevelSkipQuestion": {
+    "description": "Find my level: button that leaves out a question whose sound would not play. It is not counted as a wrong answer."
+  },
   "languagesVerifyKnown": "Verify what you know",
   "@languagesVerifyKnown": {
     "description": "Languages page, a language’s row: checks the skills marked as known."

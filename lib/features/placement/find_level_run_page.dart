@@ -19,6 +19,10 @@ import 'placement_questions.dart' show PlacementShell;
 /// [onFinish] is called once when the run ends or the learner stops, to
 /// write the outcome. Leaving part-way (the close button or Back) pauses the
 /// run; the page pops with `false`. Done on the summary pops with `true`.
+/// Two listens in a row, over the whole run, that heard nothing give the
+/// microphone up (wiki/Plan-Placement-V2.md, row j of section 6).
+const int _unheardLimit = 2;
+
 class FindLevelRunPage extends StatefulWidget {
   const FindLevelRunPage({
     super.key,
@@ -57,6 +61,11 @@ class FindLevelRunPage extends StatefulWidget {
 class _FindLevelRunPageState extends State<FindLevelRunPage> {
   bool _finished = false;
 
+  /// Listens in a row that heard nothing, counted across questions: two give
+  /// the microphone up (row j of section 6). A listen that heard something
+  /// starts the count again.
+  int _unheardInARow = 0;
+
   PlacementSession get _session => widget.session;
 
   void _afterChange() {
@@ -66,8 +75,10 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
 
   void _finish() {
     if (_finished) return;
-    setState(() => _finished = true);
+    // The outcome is written before the summary shows: if the write throws
+    // the run is still there to be carried on.
     widget.onFinish(_session);
+    setState(() => _finished = true);
   }
 
   void _answer(bool right) {
@@ -75,7 +86,18 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
     _afterChange();
   }
 
+  void _skipUnplayable() {
+    setState(_session.skipUnplayable);
+    _afterChange();
+  }
+
+  void _listened({required bool heard}) {
+    _unheardInARow = heard ? 0 : _unheardInARow + 1;
+    if (_unheardInARow >= _unheardLimit) _giveUpMicrophone();
+  }
+
   void _giveUpMicrophone() {
+    _unheardInARow = 0;
     setState(_session.dropMicrophone);
     showAppSnackBar(
       context,
@@ -148,6 +170,8 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
                 cardOf: widget.cardOf,
                 onAnswer: _answer,
                 onGiveUpMicrophone: _giveUpMicrophone,
+                onListened: _listened,
+                onSkip: _skipUnplayable,
               ),
             ),
     );

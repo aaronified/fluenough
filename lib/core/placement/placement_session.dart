@@ -18,7 +18,8 @@ import 'question_outcome.dart';
 
 /// What a session was asked to do, in the order it happened: `a1` an answer
 /// that was right, `a0` one that was wrong, `k` Keep going at a checkpoint,
-/// `m` the microphone was given up.
+/// `m` the microphone was given up, `u` a question was skipped because its
+/// sound could not be played.
 typedef PlacementEvent = String;
 
 /// The note a skipped Say question is logged with: nothing to play or hear.
@@ -66,6 +67,9 @@ class PlacementSession {
           session.keepGoing();
         case 'm':
           session.dropMicrophone();
+        case 'u':
+          if (session.question == null) return session;
+          session.skipUnplayable();
       }
     }
     return session;
@@ -147,6 +151,20 @@ class PlacementSession {
     _advance();
   }
 
+  /// The question on show cannot be played (the voice failed): it is left
+  /// out and never counts as a miss, like a Say question that cannot be
+  /// asked ([PlacementRun.markUnavailable]), so the skill it was for is not
+  /// proved rather than failed.
+  void skipUnplayable() {
+    if (_question == null) {
+      throw StateError('there is no question to skip');
+    }
+    _events.add('u');
+    _askedLog.removeLast();
+    _run = _run.markUnavailable(PlacementUnavailableReason.noAudio);
+    _advance();
+  }
+
   /// "I can't speak now", or two listens in a row that heard nothing: a
   /// question the learner is not asked to say is never a miss (row j of
   /// section 6). With no Say answer given yet the run goes on as if there
@@ -158,9 +176,9 @@ class PlacementSession {
     _events.add('m');
     final current = _question;
     if (current != null) _askedLog.removeLast();
-    final said = _run.history.any(
-      (a) => a.request.kind == PlacementQuestionKind.say,
-    );
+    // The English questions (K1 and K2) are said too: a spoken answer
+    // already given cannot be rebuilt as a pick.
+    final said = _run.history.any((a) => _needsMicrophone(a.request));
     if (said) {
       _skipSay = true;
     } else {
