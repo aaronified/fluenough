@@ -128,6 +128,10 @@ Japanese, 10. Korean, 11. Toki Pona (owner, 2026-10-20: "Make it high priority
 have added the movies songs books parts, we can finally start advertising the
 app." Other languages' paths and decks follow."
 
+### The second list to B1 (owner, 2026-11-06, replaced the same day)
+
+The first correction of 2026-11-06 made the second list a B1 target: "Complete the placement fix, then carry on with the decks. On the 1st list of languages, get the situations cards before the all A1. Both will come after the 2nd list gets B1." The owner then replaced it the same day: "Ok, sorry. 2nd list A1 and all languages first deck only. Only classical sanskrit to B1." The second list therefore stays at A1 as set on 2026-11-02 ("the second list to A1"), and only Classical Sanskrit goes to B1. See "Deck order after the placement fix" in `CLAUDE.md`. Nothing about A1 was superseded.
+
 ### Push straight to main (owner, 2026-10-11)
 
 `CLAUDE.md` still says, in "Pull requests for everything else": "(owner,
