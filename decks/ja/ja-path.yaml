@@ -729,7 +729,8 @@ units:
       - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about a shogun" } }
-  - planned: { id: "ja-religion", theme: "religion", words: 45 }
+  - decks: ["ja-religion", "ja-religion-sentences", "ja-reading-religion", "*"]
+    words: 45
     listening_passages:
       - { id: "at-the-shrine", text: { "en": "A friend explains how to pray at a shrine and a temple" } }
     reading_passages:
