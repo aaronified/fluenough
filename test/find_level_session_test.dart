@@ -106,6 +106,22 @@ void main() {
       },
     );
 
+    test('a path that skips a level mark is built to the highest level '
+        'it marks, written to its end', () {
+      // A1 and B1 marked, no A2: B1 written is built to B1, so Expert is
+      // offered, and B1 not yet written is built to A1.
+      expect(
+        progress(<B1Unit>[written(Milestone.a1), written(Milestone.b1)])
+            .builtLevel,
+        builtB1,
+      );
+      expect(
+        progress(<B1Unit>[written(Milestone.a1), coming(Milestone.b1)])
+            .builtLevel,
+        builtA1,
+      );
+    });
+
     test('a path with no level marks is below A1', () {
       expect(progress(<B1Unit>[written(null)]).builtLevel, builtBelowA1);
     });
@@ -170,8 +186,26 @@ void main() {
       });
     });
 
-    test('Leave is never checked, and nothing marked gives nothing', () {
-      expect(pick(const <SkillKey, SkillState>{}).skills, isEmpty);
+    test('Leave is never checked, and nothing marked gives nothing to '
+        'verify', () {
+      final found = pick(const <SkillKey, SkillState>{});
+      expect(found.skills, isEmpty);
+      expect(found.verifying, isFalse);
+    });
+
+    test('Hear is left out when there is no voice, and nothing is left when '
+        'it was the only skill', () {
+      const both = <PlacementSkill>{PlacementSkill.hear, PlacementSkill.read};
+      expect(placementSkillsForDevice(both, voice: true), both);
+      expect(placementSkillsForDevice(both, voice: false), <PlacementSkill>{
+        PlacementSkill.read,
+      });
+      expect(
+        placementSkillsForDevice(<PlacementSkill>{
+          PlacementSkill.hear,
+        }, voice: false),
+        isEmpty,
+      );
     });
 
     test('the read of a script of its own is that script\'s skill too', () {
@@ -236,6 +270,50 @@ void main() {
       expect(fresh(1000 + week + 1), isFalse);
       expect(fresh(1000, decks: 'other'), isFalse);
       expect(fresh(1000, version: '0.9.0'), isFalse);
+    });
+
+    test('a corrupt or unknown event is dropped on reading', () {
+      final back = SavedPlacementRun.fromJson(<String, Object?>{
+        ...saved().toJson(),
+        'events': <Object?>['a1', 7, 'zz', 'u', null, 'k'],
+      })!;
+      expect(back.events, <String>['a1', 'u', 'k']);
+      expect(
+        SavedPlacementRun.fromJson(<String, Object?>{
+          ...saved().toJson(),
+          'saved_at': 'yesterday',
+        }),
+        isNull,
+      );
+      expect(
+        SavedPlacementRun.fromJson(<String, Object?>{
+          ...saved().toJson(),
+          'declaration': 'master',
+        }),
+        isNull,
+      );
+    });
+
+    test('is dropped when the voice or the recogniser it began with is '
+        'gone', () {
+      final run = saved();
+      expect(run.fitsDevice(voice: true, microphone: true), isTrue);
+      expect(run.fitsDevice(voice: false, microphone: true), isFalse);
+      expect(run.fitsDevice(voice: true, microphone: false), isFalse);
+      // A run that did not ask Hear, or used no recogniser, does not need
+      // them.
+      final quiet = SavedPlacementRun(
+        language: 'xx',
+        declaration: PlacementDeclaration.advanced,
+        skills: const <PlacementSkill>{PlacementSkill.read},
+        seed: 7,
+        microphone: false,
+        deckSet: run.deckSet,
+        appVersion: run.appVersion,
+        savedAt: 1000,
+        events: const <String>[],
+      );
+      expect(quiet.fitsDevice(voice: false, microphone: false), isTrue);
     });
 
     test('the deck set changes when a deck, or a known card, does', () {
@@ -359,6 +437,72 @@ void main() {
       expect(
         session.readout[PlacementSkill.say]!.label,
         AssuranceLabel.notTested,
+      );
+    });
+
+    test('giving up the microphone after an English question was said '
+        'skips the rest of the saying instead of rebuilding the run', () {
+      final config = findLevelConfig(
+        skills: const <PlacementSkill>{PlacementSkill.read, PlacementSkill.say},
+        microphone: true,
+      );
+      final session = PlacementSession(config, findLevelData());
+      expect(session.question!.mode, PlacementAnswerMode.sayEnglish);
+      session.answer(true);
+      session.dropMicrophone();
+      expect(session.microphone, isFalse);
+      // Not rebuilt without it, which would read the spoken answer again as
+      // a pick: the run still begins with the microphone, and later saying
+      // is skipped.
+      expect(session.config.microphone, isTrue);
+      var guard = 0;
+      while (!session.isDone && guard++ < 150) {
+        if (session.atCheckpoint) {
+          session.keepGoing();
+          continue;
+        }
+        final mode = session.question!.mode;
+        expect(mode, isNot(PlacementAnswerMode.say));
+        expect(mode, isNot(PlacementAnswerMode.sayEnglish));
+        session.answer(true);
+      }
+      final again = PlacementSession.replay(
+        config,
+        findLevelData(),
+        session.events,
+      );
+      expect(again.asked, session.asked);
+      expect(again.isDone, isTrue);
+    });
+
+    test('a question whose sound would not play is left out, never a miss, '
+        'and is replayed the same', () {
+      final config = findLevelConfig(
+        skills: const <PlacementSkill>{PlacementSkill.hear},
+      );
+      final session = PlacementSession(config, findLevelData());
+      expect(session.question!.audio, isNotNull);
+      session.skipUnplayable();
+      expect(session.asked, 0, reason: 'a skipped question is not answered');
+      expect(session.events, <String>['u']);
+      final again = PlacementSession.replay(
+        config,
+        findLevelData(),
+        session.events,
+      );
+      expect(again.asked, 0);
+      expect(again.isDone, session.isDone);
+      expect(again.question?.cardId, session.question?.cardId);
+      // Skipping everything never proves Hear, and never fails it.
+      var guard = 0;
+      while (!session.isDone && guard++ < 150) {
+        session.skipUnplayable();
+      }
+      expect(session.isDone, isTrue);
+      expect(session.asked, 0);
+      expect(
+        session.readout[PlacementSkill.hear]!.label,
+        isNot(AssuranceLabel.verified),
       );
     });
 

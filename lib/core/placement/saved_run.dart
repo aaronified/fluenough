@@ -48,7 +48,7 @@ class SavedPlacementRun {
   /// When it was saved, in whole seconds since the epoch.
   final int savedAt;
 
-  /// The session's events: `a1`, `a0`, `k`, `m`.
+  /// The session's events: `a1`, `a0`, `k`, `m`, `u`.
   final List<String> events;
 
   /// Whether the run can still be carried on at [nowSeconds], with the deck
@@ -62,6 +62,14 @@ class SavedPlacementRun {
       this.appVersion == appVersion &&
       nowSeconds >= savedAt &&
       nowSeconds - savedAt <= savedRunLife.inSeconds;
+
+  /// Whether this phone can still ask the run as it was begun: a run that
+  /// asked Hear needs a [voice] still, and one that used the recogniser
+  /// needs it ([microphone]) still. Otherwise its answers would replay onto
+  /// other questions, so the run is dropped like a stale one.
+  bool fitsDevice({required bool voice, required bool microphone}) =>
+      (voice || !skills.contains(PlacementSkill.hear)) &&
+      (microphone || !this.microphone);
 
   Map<String, Object?> toJson() => <String, Object?>{
     'language': language,
@@ -99,7 +107,7 @@ class SavedPlacementRun {
         events is! List) {
       return null;
     }
-    const known = <String>{'a1', 'a0', 'k', 'm'};
+    const known = <String>{'a1', 'a0', 'k', 'm', 'u'};
     final names = PlacementSkill.values.asNameMap();
     return SavedPlacementRun(
       language: language,

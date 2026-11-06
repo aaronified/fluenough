@@ -126,12 +126,16 @@ class B1Progress {
     bool allWritten(int end) =>
         units.take(end + 1).every((u) => u.written || _unwritable(u));
     final hasPlan = b1 != null && planned > 0;
-    // The levels written to their end, in order: a level counts once the
-    // path marks it and no unit up to it is still to be written.
+    // The highest level written to its end: a level counts once the path
+    // marks it and no unit up to it is still to be written. A level the path
+    // does not mark is skipped, not a stop (a path that gives B1 but no A2
+    // mark is built to B1 once its units up to B1 are written); the first
+    // marked level that is not written to its end is.
     var built = 0;
     if (!isNotation) {
       for (final (level, end) in <int?>[a1, a2, b1].indexed) {
-        if (end == null || !allWritten(end)) break;
+        if (end == null) continue;
+        if (!allWritten(end)) break;
         built = level + 1;
       }
     }
@@ -216,9 +220,10 @@ class B1Progress {
   /// for the culture part, which nothing fills yet.
   final List<double> levels;
 
-  /// How many levels are written to their end: 0 below A1, 1 for A1, 2 for
-  /// A2, 3 for B1 (complete). A level counts when the path marks it and no
-  /// unit up to it is still to be written. Find my level offers only what
+  /// The highest level written to its end: 0 below A1, 1 for A1, 2 for A2,
+  /// 3 for B1 (complete). A level counts when the path marks it and no unit
+  /// up to it is still to be written; a level the path does not mark is
+  /// passed over. Find my level offers only what
   /// this supports (wiki, Plan-Placement-V2, section 4.5).
   final int builtLevel;
 

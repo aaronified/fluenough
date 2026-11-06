@@ -7,6 +7,8 @@ import 'package:fluenough/app/language_skills.dart';
 import 'package:fluenough/app/placement_plan.dart';
 import 'package:fluenough/app/placement_credit.dart';
 import 'package:fluenough/app/placement_run_setup.dart';
+import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/app/language_offer.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/assurance_readout.dart';
@@ -90,13 +92,12 @@ void main() {
         PlacementSkill.read: DrillMode.recognition,
         PlacementSkill.write: DrillMode.production,
       };
-      var credited = 0;
       for (final MapEntry(:key, :value) in modes.entries) {
         final found = readout[key]!;
-        if (found.label == AssuranceLabel.notTested || found.placedLevel < 0) {
-          continue;
-        }
-        credited++;
+        // A clean run tests each skill and places it past the first deck:
+        // nothing here is skipped, so a write that credits nothing fails.
+        expect(found.label, isNot(AssuranceLabel.notTested), reason: key.name);
+        expect(found.placedLevel, greaterThanOrEqualTo(0), reason: key.name);
         final first = plan.decks.first;
         expect(
           first.cards.any((c) => state.progress.stateOf(c.id, value) != null),
@@ -104,7 +105,6 @@ void main() {
           reason: '${key.name} credits the first deck',
         );
       }
-      expect(credited, greaterThan(0), reason: 'a clean run places a skill');
       expect(state.settings.verifiedSkillsOf('hi'), <String>{
         for (final skill in <PlacementSkill>[
           PlacementSkill.read,
@@ -150,11 +150,135 @@ void main() {
       expect(state.settings.placedDecks, isEmpty);
     });
 
+    test('credit an earlier run gave survives a later run that places the '
+        'skill lower', () {
+      final first = plan.decks.first;
+      state.writePlacementRun(
+        'hi',
+        plan,
+        finishedRun(<PlacementSkill>{PlacementSkill.read}, true).run,
+      );
+      bool credited() => first.cards.any(
+        (c) => state.progress.stateOf(c.id, DrillMode.recognition) != null,
+      );
+      expect(credited(), isTrue, reason: 'the first run credits Read');
+      expect(state.settings.placedDecks, contains(first.id));
+      final reviews = <String, Object?>{
+        for (final c in first.cards)
+          c.id: state.progress.stateOf(c.id, DrillMode.recognition),
+      };
+
+      // Not one right answer: Read is now placed at the beginning.
+      state.writePlacementRun(
+        'hi',
+        plan,
+        finishedRun(<PlacementSkill>{PlacementSkill.read}, false).run,
+      );
+      expect(credited(), isTrue);
+      expect(state.settings.placedDecks, contains(first.id));
+      for (final c in first.cards) {
+        expect(
+          state.progress.stateOf(c.id, DrillMode.recognition),
+          reviews[c.id],
+          reason: '${c.id} keeps its review',
+        );
+      }
+    });
+
+    test('a learner who has not learned the alphabet keeps the script '
+        'lessons and the placed-review choice as they were', () {
+      state.settings.setLearnsAlphabet('hi', false);
+      final review = state.settings.placedReviewOf('hi');
+      final skipped = state.scriptLessonsSkipped('hi', native: 'en');
+      state.writePlacementRun(
+        'hi',
+        plan,
+        finishedRun(<PlacementSkill>{
+          PlacementSkill.read,
+          PlacementSkill.write,
+        }, true).run,
+      );
+      expect(state.settings.learnsAlphabet('hi'), isFalse);
+      expect(state.settings.placedReviewOf('hi'), review);
+      expect(state.scriptLessonsSkipped('hi', native: 'en'), skipped);
+      final lessons = <String>{
+        for (final entry in state.scriptLessons('hi', native: 'en')) entry.id,
+      };
+      expect(state.settings.placedDecks.intersection(lessons), isEmpty);
+    });
+
     test('never changes a skill\'s Leave, Know or Learn', () {
       final before = state.settings.languageSkillsOf('hi');
       final session = finishedRun(<PlacementSkill>{PlacementSkill.read}, true);
       state.writePlacementRun('hi', plan, session.run);
       expect(state.settings.languageSkillsOf('hi'), before);
+    });
+  });
+
+  group('the paused run', () {
+    PlacementRunConfig config() => PlacementRunConfig(
+      deckCount: plan.data.deckCount,
+      skills: const <PlacementSkill>{PlacementSkill.read},
+      declaration: PlacementDeclaration.expert,
+      pathCompleteToB1: true,
+      allDecksDownloaded: true,
+      microphone: false,
+    );
+
+    test('is dropped once the outcome is written', () {
+      state.settings.setPlacementRun('hi', '{"events":[]}');
+      final session = finishedRun(<PlacementSkill>{PlacementSkill.read}, true);
+      state.writePlacementRun('hi', plan, session.run);
+      expect(state.settings.placementRunOf('hi'), isNull);
+    });
+
+    test('is kept when the write throws', () {
+      state.settings.setPlacementRun('hi', '{"events":[]}');
+      expect(
+        () => state.writePlacementRun('hi', plan, _BrokenRun(config())),
+        throwsStateError,
+      );
+      expect(state.settings.placementRunOf('hi'), '{"events":[]}');
+    });
+  });
+
+  group('what is read back from the stored settings', () {
+    Map<String, String> stored(String verified, String runs) =>
+        <String, String>{'verified_skills': verified, 'placement_runs': runs};
+
+    test('keeps what is well formed and ignores the rest', () {
+      final settings = SettingsNotifier()
+        ..restore(
+          stored(
+            '{"hi":["read",3,"bad name!","hear"],"HIN":["read"],'
+                '"bn":"read","de":[]}',
+            '{"hi":"{\\"events\\":[]}","bn":5,"BAD":"x"}',
+          ),
+        );
+      expect(settings.verifiedSkillsOf('hi'), <String>{'read', 'hear'});
+      expect(settings.verifiedSkillsOf('bn'), isEmpty);
+      expect(settings.verifiedSkillsOf('de'), isEmpty);
+      expect(settings.placementRunOf('hi'), '{"events":[]}');
+      expect(settings.placementRunOf('bn'), isNull);
+    });
+
+    test('a value that is not a map, or not JSON, changes nothing', () {
+      final settings = SettingsNotifier()
+        ..setVerifiedSkills('hi', <String>{'read'})
+        ..setPlacementRun('hi', 'run');
+      settings.restore(stored('[1,2]', 'not json'));
+      expect(settings.verifiedSkillsOf('hi'), <String>{'read'});
+      expect(settings.placementRunOf('hi'), 'run');
+      settings.restore(stored('"read"', '{'));
+      expect(settings.verifiedSkillsOf('hi'), <String>{'read'});
+      expect(settings.placementRunOf('hi'), 'run');
+    });
+
+    test('settings saved before Find my level had them restore without '
+        'either', () {
+      final settings = SettingsNotifier()..restore(const <String, String>{});
+      expect(settings.verifiedSkillsOf('hi'), isEmpty);
+      expect(settings.placementRunOf('hi'), isNull);
     });
   });
 
@@ -173,4 +297,13 @@ void main() {
       expect(state.settings.toStored()['placement_runs'], '{}');
     });
   });
+}
+
+/// A run whose outcome cannot be read, as a write that fails part-way.
+class _BrokenRun extends PlacementRun {
+  _BrokenRun(super.config);
+
+  @override
+  Map<PlacementSkill, SkillAssurance> get readout =>
+      throw StateError('the outcome cannot be read');
 }
