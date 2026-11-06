@@ -11,13 +11,22 @@ import '../../l10n/app_localizations.dart';
 /// Its figures are in the text around it, so a screen reader reads one
 /// label for the whole line, not four bars.
 class CourseLine extends StatelessWidget {
-  const CourseLine({super.key, required this.levels, this.culture = 0});
+  const CourseLine({
+    super.key,
+    required this.levels,
+    this.culture = 0,
+    this.label,
+  });
 
   /// How much of A1, A2 and B1 is written, each 0–1.
   final List<double> levels;
 
   /// How much of the culture part is written, 0–1.
   final double culture;
+
+  /// What a screen reader reads instead of the figures, for an empty line
+  /// (no decks yet, or first words only); null reads the figures.
+  final String? label;
 
   /// The thin bar's height; the course card's is 8.
   static const double thickness = 4;
@@ -36,11 +45,14 @@ class CourseLine extends StatelessWidget {
     final fills = <double>[...levels, culture];
     String percent(double share) => l10n.commonPercent(share.clamp(0.0, 1.0));
     return Semantics(
-      label: l10n.pickerCourseLineLabel(
-        <String>[
-          for (final (i, name) in names.indexed) '$name ${percent(fills[i])}',
-        ].join(l10n.commonListSeparator),
-      ),
+      label:
+          label ??
+          l10n.pickerCourseLineLabel(
+            <String>[
+              for (final (i, name) in names.indexed)
+                '$name ${percent(fills[i])}',
+            ].join(l10n.commonListSeparator),
+          ),
       excludeSemantics: true,
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
