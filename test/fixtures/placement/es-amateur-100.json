@@ -288,13 +288,15 @@
     "100": 2
   },
   "true_position": {
-    "path_unit": 11,
+    "rule": "first path unit (in path order) at which the cumulative known generous cards reach 70% of all known generous cards",
+    "path_unit": 42,
+    "share_at_unit": 0.744,
     "unit_decks": [
-      "es-quantities",
-      "es-quantities-sentences",
-      "es-reading-quantities"
+      "es-things",
+      "es-things-sentences",
+      "es-reading-things"
     ],
-    "basis": "Known words cluster in path units 1 to 11 (phrasebook through es-quantities): 26 of 43 generous cards. Units 22 to 100 hold 17 scattered matches from shared lemmas, not the list's core. For teaching purposes the 100 words are exhausted by unit 11; the tail is noise to check."
+    "note": "Lexodle list. Known cards are spread across the path (units 1 to 11 hold 26 of 43; the rest sit in units 22 to 100). The 70% rule is one stated cut; it is not stable: the Wiktionary variant gives unit 8."
   },
   "variant_wiktionary_top100": {
     "name": "Top 100 Spanish words, OpenSubtitles frequency list (Wiktionary: Frequency lists/Spanish1000, revision 68654381)",
@@ -566,6 +568,14 @@
       "40": 1,
       "64": 1,
       "70": 1
+    },
+    "true_position": {
+      "rule": "same 70% rule",
+      "path_unit": 8,
+      "share_at_unit": 0.702,
+      "unit_decks": [
+        "es-core-100"
+      ]
     }
   }
 }
