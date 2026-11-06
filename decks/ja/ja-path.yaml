@@ -651,7 +651,8 @@ units:
       - { id: "the-person-who-came", text: { "en": "Describing people and things by what they did: the person who came, the book I bought" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - planned: { id: "ja-technology", theme: "technology", words: 50 }
+  - decks: ["ja-technology", "ja-technology-sentences", "ja-reading-technology", "*"]
+    words: 50
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
