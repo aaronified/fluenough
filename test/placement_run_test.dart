@@ -198,11 +198,10 @@ void main() {
             for (final answer in played.run.history) {
               if (!answer.request.skills.contains(skill)) continue;
               final request = answer.request;
-              expected = expected.update(
+              expected = expected.updateCredit(
                 deck: request.deck,
                 kind: request.kind,
                 correct: answer.correct,
-                missWeight: _halfOnMiss(request) ? 0.5 : 1,
               );
             }
             final actual = played.run.posteriorOf(skill)!.probabilities;
@@ -1001,15 +1000,4 @@ void main() {
       expect(topAtTarget, lessThanOrEqualTo(runs * _bengali.length ~/ 500));
     });
   });
-}
-
-bool _halfOnMiss(PlacementQuestionRequest request) {
-  // Only a composite question with a split counts a miss at half strength:
-  // K1, G2 and R1 here (several skills at once).
-  return request.role == PlacementQuestionRole.base &&
-      request.skills.length > 1 &&
-      !<PlacementVariant>{
-        PlacementVariant.sr,
-        PlacementVariant.sw,
-      }.contains(request.variant);
 }
