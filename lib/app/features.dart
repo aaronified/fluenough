@@ -157,7 +157,11 @@ class FeatureRegistry {
   final Set<Feature> _on;
   final bool _browser;
 
-  bool isAvailable(Feature feature) => _on.contains(feature);
+  bool isAvailable(Feature feature) =>
+      // A reminder setting restored from an Android backup must not make the
+      // service schedule a notification a browser cannot show.
+      (feature != Feature.reminder || hasNotifications) &&
+      _on.contains(feature);
 
   /// Built but not yet switched on: shown disabled, with a badge.
   bool isIncoming(Feature feature) => !isAvailable(feature);

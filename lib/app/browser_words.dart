@@ -35,3 +35,8 @@ String soundCheckNoRecogniserText(AppLocalizations l10n) => browserWords
 String soundCheckRefusedForGoodText(AppLocalizations l10n) => browserWords
     ? l10n.onboardingSoundRefusedForGoodWeb
     : l10n.onboardingSoundRefusedForGood;
+
+/// Speaking: asks before audio goes online to recognise [language].
+String onlineAskText(AppLocalizations l10n, String language) => browserWords
+    ? l10n.drillOnlineAskWeb(language)
+    : l10n.drillOnlineAsk(language);

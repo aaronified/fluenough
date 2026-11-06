@@ -78,8 +78,21 @@ class _WebSpeechBrowser implements SpeechBrowser {
         track.callMethod<JSAny?>('stop'.toJS);
       }
       return true;
-    } on Object {
+    } on Object catch (e) {
+      // No microphone at all is not a refusal: said apart, so that the app
+      // does not tell the learner to allow what is not there.
+      if (_errorName(e) case 'NotFoundError' || 'DevicesNotFoundError') {
+        throw const SpeechError('no-microphone');
+      }
       return false;
+    }
+  }
+
+  static String? _errorName(Object error) {
+    try {
+      return (error as JSObject).getProperty<JSString?>('name'.toJS)?.toDart;
+    } on Object {
+      return null;
     }
   }
 

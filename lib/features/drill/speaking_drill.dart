@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/speech/speech_engine.dart';
+import '../../app/browser_words.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/drill_frame.dart';
@@ -231,7 +232,7 @@ class SpeakingDrill extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Text(
-          l10n.drillOnlineAsk(language.name),
+          onlineAskText(l10n, language.name),
           textAlign: TextAlign.center,
           style: theme.textTheme.bodyLarge,
         ),

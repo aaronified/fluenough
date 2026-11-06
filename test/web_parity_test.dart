@@ -15,6 +15,10 @@ import 'package:fluenough/features/drill/speaking_practice.dart';
 import 'package:fluenough/features/settings/settings_page.dart';
 import 'package:fluenough/l10n/app_localizations.dart';
 import 'package:fluenough/core/models/deck.dart';
+import 'package:fluenough/app/placement.dart';
+import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/features/placement/placement_questions.dart';
+import 'package:flutter/material.dart' show Scaffold;
 import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -178,6 +182,115 @@ void main() {
       expect(const FeatureRegistry.shipped().inBrowser, isFalse);
       expect(const FeatureRegistry.shipped().hasNotifications, isTrue);
       expect(FeatureRegistry.all().hasApkUpdates, isTrue);
+    });
+  });
+
+  group('Say on the web engine, which listens online only', () {
+    Future<(AppState, FixedSpeechBrowser)> webState({
+      bool hasRecognition = true,
+    }) async {
+      final browser = FixedSpeechBrowser(
+        hasRecognition: hasRecognition,
+        heard: const BrowserHeard(<SpeechAlternative>[]),
+      );
+      final state = AppState.test(
+        speech: WebSpeechEngine(browser),
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningChosen: true,
+        ),
+      );
+      addTearDown(state.dispose);
+      await state.load();
+      await state.startSpeech();
+      return (state, browser);
+    }
+
+    testWidgets('a language is online-only from the start: Find my level '
+        'plans Say, and the learner is asked before anything is heard', (
+      tester,
+    ) async {
+      usePhone(tester);
+      final (state, browser) = await webState();
+      final entry = state.decks.firstWhere((e) => e.language.code == 'hi');
+      final card = entry.deck.cards.first;
+      browser.heard = BrowserHeard(<SpeechAlternative>[
+        SpeechAlternative(card.target),
+      ]);
+      expect(state.speechStatus(entry.language), SpeechStatus.onlineOnly);
+      expect(state.canHear(entry.language), isFalse);
+      expect(state.canHearAfterAsking(entry.language), isTrue);
+
+      final answers = <bool>[];
+      var declined = 0;
+      await pumpScreen(
+        tester,
+        Scaffold(
+          body: PlacementSay(
+            question: SayQuestion(
+              card: card,
+              shown: card.target,
+              language: entry.language,
+            ),
+            number: 1,
+            onAnswer: answers.add,
+            onCantSpeak: () => declined++,
+          ),
+        ),
+        state: state,
+      );
+      final l10n = l10nOf(tester);
+
+      await tester.tap(find.text(l10n.placementSayStart));
+      await tester.pumpAndSettle();
+      expect(browser.listens, isEmpty, reason: 'no audio before consent');
+      expect(
+        find.text(l10n.drillOnlineAskWeb(entry.language.name)),
+        findsOneWidget,
+      );
+      expect(answers, isEmpty);
+
+      // Not now: Say is skipped, never a miss.
+      await tester.tap(find.text(l10n.drillOnlineNotNow));
+      await tester.pumpAndSettle();
+      expect(declined, 1);
+      expect(answers, isEmpty);
+      expect(state.settings.allowsOnlineSpeech('hi'), isFalse);
+
+      // Allow: it listens, and the answer is graded.
+      await tester.tap(find.text(l10n.placementSayStart));
+      await tester.pumpAndSettle();
+      await tester.tap(find.text(l10n.drillOnlineAllow(entry.language.name)));
+      await tester.pumpAndSettle();
+      expect(state.settings.allowsOnlineSpeech('hi'), isTrue);
+      expect(browser.listens, hasLength(1));
+      expect(answers, <bool>[true]);
+    });
+
+    test('Firefox (no recogniser): Say is not planned', () async {
+      final (state, _) = await webState(hasRecognition: false);
+      const hindi = LanguageInfo(code: 'hi', iso639_3: 'hin', name: 'Hindi');
+      expect(state.canHearAfterAsking(hindi), isFalse);
+    });
+
+    test('a device with no microphone is not "refused"', () async {
+      final engine = WebSpeechEngine(FixedSpeechBrowser(noDevice: true));
+      await expectLater(engine.start(), throwsA(isA<SpeechError>()));
+      final state = AppState.test(speech: engine);
+      addTearDown(state.dispose);
+      await state.load();
+      expect(await state.startSpeech(), SpeechSetup.noRecogniser);
+    });
+
+    test('a reminder restored from a backup is not available in a browser', () {
+      expect(
+        const FeatureRegistry.web().isAvailable(Feature.reminder),
+        isFalse,
+      );
+      expect(
+        const FeatureRegistry.shipped().isAvailable(Feature.reminder),
+        isTrue,
+      );
     });
   });
 

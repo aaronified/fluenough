@@ -3453,6 +3453,15 @@
       }
     }
   },
+  "drillOnlineAskWeb": "Your browser recognises speech online. Recognise {language} online? What you say would go to your browser’s speech service.",
+  "@drillOnlineAskWeb": {
+    "description": "Speaking in the web app: asks before sending audio to the browser’s speech service (Google in Chrome and Edge, Apple in Safari).",
+    "placeholders": {
+      "language": {
+        "type": "String"
+      }
+    }
+  },
   "drillOnlineAllow": "Allow online for {language}",
   "@drillOnlineAllow": {
     "description": "Speaking: allows online recognition for this language, from now on.",

@@ -48,7 +48,8 @@ abstract interface class SpeechBrowser {
   Future<BrowserMicrophone> microphone();
 
   /// Asks for the microphone, which shows the browser's own prompt the first
-  /// time. True when it is allowed. Never throws.
+  /// time. True when it is allowed, false when refused. Throws a
+  /// [SpeechError] (`no-microphone`) when the device has no microphone.
   Future<bool> askMicrophone();
 
   /// Listens once for one utterance in [lang] and reports its readings.
@@ -70,6 +71,7 @@ class FixedSpeechBrowser implements SpeechBrowser {
     this.allows = true,
     this.heard = const BrowserHeard(<SpeechAlternative>[]),
     this.never = false,
+    this.noDevice = false,
   });
 
   @override
@@ -86,6 +88,9 @@ class FixedSpeechBrowser implements SpeechBrowser {
   /// A listen that never answers, to test the deadline.
   final bool never;
 
+  /// A device with no microphone: [askMicrophone] throws.
+  final bool noDevice;
+
   /// How often the microphone was asked for, listens begun, and cancels.
   int asked = 0;
   final List<String> listens = <String>[];
@@ -98,6 +103,7 @@ class FixedSpeechBrowser implements SpeechBrowser {
   @override
   Future<bool> askMicrophone() async {
     asked++;
+    if (noDevice) throw const SpeechError('no-microphone');
     if (allows) state = BrowserMicrophone.granted;
     return allows;
   }

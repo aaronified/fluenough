@@ -203,7 +203,7 @@ class _PlacementPageState extends State<PlacementPage> {
         canHear:
             state.settings.soundOn &&
             state.voiceStatus(language) == VoiceStatus.available,
-        canSay: state.canHear(language),
+        canSay: state.canHearAfterAsking(language),
         random: widget.random,
       );
       if (check.isFinished) {

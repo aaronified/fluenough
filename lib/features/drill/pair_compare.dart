@@ -11,6 +11,7 @@ import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
 import '../../core/speech/speech_engine.dart';
+import '../../app/browser_words.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/card_text_scale.dart';
 import '../../ui/theme.dart';
@@ -590,7 +591,7 @@ class _PairCompareState extends State<PairCompare> {
         spacing: 8,
         children: <Widget>[
           _label(l10n.pairSayOne),
-          Text(l10n.drillOnlineAsk(language.name), style: help),
+          Text(onlineAskText(l10n, language.name), style: help),
           FilledButton(
             onPressed: () {
               _state.settings.allowOnlineSpeech(language.code, true);

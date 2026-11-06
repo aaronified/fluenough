@@ -24,7 +24,7 @@ import 'web_speech_browser.dart';
 /// record-while-recognising capture of ADR-0054 is not used in a browser,
 /// where two readers of the microphone are not safe in every browser, and
 /// "Hear yourself" records a second take instead.
-class WebSpeechEngine implements SpeechEngine {
+class WebSpeechEngine implements OnlineOnlySpeech {
   WebSpeechEngine([SpeechBrowser? browser])
     : _browser = browser ?? openSpeechBrowser();
 
@@ -54,6 +54,9 @@ class WebSpeechEngine implements SpeechEngine {
     if (_started) return true;
     try {
       _started = await _browser.askMicrophone();
+    } on SpeechError {
+      _started = false;
+      rethrow;
     } catch (e) {
       _started = false;
       throw SpeechError(codeOf(e));
@@ -98,6 +101,7 @@ class WebSpeechEngine implements SpeechEngine {
       );
       return heardFrom(heard);
     } on SpeechError catch (e) {
+      // Without a microphone nothing can be heard.
       return SpeechHeard.failed(SpeechFailure.noRecogniser, code: e.code);
     } catch (e) {
       return SpeechHeard.failed(SpeechFailure.other, code: codeOf(e));
@@ -114,8 +118,11 @@ class WebSpeechEngine implements SpeechEngine {
   }
 
   /// An error's code for the app log: its type, never what was said.
-  static String codeOf(Object error) =>
-      error is TimeoutException ? 'timeout' : '${error.runtimeType}';
+  static String codeOf(Object error) => switch (error) {
+    TimeoutException() => 'timeout',
+    SpeechError(:final code) => code,
+    _ => '${error.runtimeType}',
+  };
 
   /// What a finished session gives the app: its readings, or why not.
   static SpeechHeard heardFrom(BrowserHeard heard) {

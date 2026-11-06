@@ -396,7 +396,7 @@ class _SpeechTestSheetState extends State<SpeechTestSheet> {
       crossAxisAlignment: CrossAxisAlignment.stretch,
       children: <Widget>[
         Text(
-          l10n.drillOnlineAsk(language.name),
+          onlineAskText(l10n, language.name),
           textAlign: TextAlign.center,
           style: theme.textTheme.bodyLarge,
         ),
