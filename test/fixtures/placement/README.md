@@ -65,8 +65,11 @@ card, for example `como`, `está`, `esta`, `todo`. Wiktionary list: 40 strict,
 The known cards sit mostly in path units 1 to 11 (phrasebook through
 `es-quantities`): 26 of the 43 generous cards for the Lexodle list, and 49 of
 57 for the Wiktionary list. A sparse tail of matches reaches unit 100. The
-amateur's **true position is path unit 11** (`es-quantities`), where the
-known words are used up. The tail is noise to check, not a position.
+amateur's position depends on the cut. Under the 70% rule (first path unit where
+the cumulative known generous cards reach 70%), the Lexodle set gives **unit 42**
+(`es-things`) and the Wiktionary set gives **unit 8** (`es-core-100`). Known cards are spread
+along the path, so no single unit is "where the words run out". Use both values; do not
+read one as the truth.
 
 ## Simulated learners: decision rules
 
