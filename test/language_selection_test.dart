@@ -11,6 +11,8 @@ import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/features/languages/add_language_page.dart';
+import 'package:fluenough/features/languages/language_pick_list.dart';
+import 'package:fluenough/features/languages/language_views.dart';
 import 'package:fluenough/features/languages/languages_page.dart';
 import 'package:fluenough/features/languages/verification_mark.dart';
 import 'package:fluenough/features/placement/course_line.dart';
@@ -269,6 +271,96 @@ languages:
             findsOneWidget,
           );
         }
+      });
+
+      testWidgets('the Popular heading shows in the first frame on a '
+          '360 x 800 phone at 1.4x, without scrolling', (tester) async {
+        usePhone(tester, textScale: 1.4);
+        tester.view.physicalSize = const Size(360 * 3, 800 * 3);
+        await pumpScreen(
+          tester,
+          AddLanguagePage(spokenList: sample),
+          themeMode: mode,
+        );
+        final text = l10n(tester);
+        final heading = find.text(text.languagesPopular);
+        expect(heading, findsOneWidget);
+        final rect = tester.getRect(heading);
+        expect(rect.top, greaterThanOrEqualTo(0));
+        expect(rect.bottom, lessThanOrEqualTo(800));
+        expect(tester.takeException(), isNull);
+      });
+
+      testWidgets('an added language shows the Added badge in Popular and '
+          'in the full list; others show none', (tester) async {
+        final state = AppState.test();
+        await state.load();
+        usePhone(tester, textScale: 1.4);
+        tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
+        await pumpScreen(
+          tester,
+          Scaffold(
+            body: LanguagePickList(
+              views: languageViews(state, sample),
+              isAdded: (v) => v.code == 'bb',
+              onPick: (_) {},
+            ),
+          ),
+          state: state,
+          themeMode: mode,
+        );
+        final added = l10n(tester).languagesAdded;
+        for (final k in <String>['add-popular-bb', 'add-bb']) {
+          expect(
+            find.descendant(of: key(k), matching: find.text(added)),
+            findsOneWidget,
+          );
+        }
+        for (final k in <String>['add-popular-dd', 'add-dd', 'add-aa']) {
+          expect(
+            find.descendant(of: key(k), matching: find.text(added)),
+            findsNothing,
+          );
+        }
+      });
+
+      testWidgets('tapping a Popular copy picks that language; a row reads '
+          'as one button with its level line and its verification', (
+        tester,
+      ) async {
+        final handle = tester.ensureSemantics();
+        final state = AppState.test();
+        await state.load();
+        final picked = <String>[];
+        usePhone(tester, textScale: 1.4);
+        tester.view.physicalSize = const Size(390 * 3, 3000 * 3);
+        await pumpScreen(
+          tester,
+          Scaffold(
+            body: LanguagePickList(
+              views: languageViews(state, sample),
+              isAdded: (v) => false,
+              onPick: (v) => picked.add(v.code),
+            ),
+          ),
+          state: state,
+          themeMode: mode,
+        );
+        final text = l10n(tester);
+        final label = tester.getSemantics(key('add-popular-bb')).label;
+        expect(label, contains(text.languagesNoDecksLabel));
+        expect(
+          label,
+          contains(
+            text.languagesVerifiedLabel(
+              text.languagesVerifiedSome.toLowerCase(),
+            ),
+          ),
+        );
+        await tester.tap(key('add-popular-dd'));
+        await tester.pumpAndSettle();
+        expect(picked, <String>['dd']);
+        handle.dispose();
       });
 
       testWidgets('a search collapses the sections: Popular matches first, '
