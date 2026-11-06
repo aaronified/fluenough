@@ -113,3 +113,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2099 | ja-chores | Is ふきそうじ natural for wiping a window or a table, or is it used only for cleaning a whole room? | Haiku builder | 2026-11-06 |
 | ja-2129 | ja-chores | Is ちらかす natural with a room as its object, as in the example へや を ちらかしました? | Haiku builder | 2026-11-06 |
 | unit-level | ja-chores | The example and sentence decks of ja-chores are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-2159 | ja-appearance | Is ハンサム natural for a man only, or can it describe a woman too? | Haiku builder | 2026-11-06 |
+| ja-2160 | ja-appearance | Is おしゃれ natural as a na-adjective card for stylish, as in おしゃれ な ふく を かいました? | Haiku builder | 2026-11-06 |
+| unit-level | ja-appearance | Is ピアス を あけました (had her ears pierced) natural, given that あける is taught as to open? | Haiku builder | 2026-11-06 |
+| unit-level | ja-appearance | The example and sentence decks of ja-appearance are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
