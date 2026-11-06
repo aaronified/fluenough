@@ -187,6 +187,7 @@ QuestionBank buildQuestionBank(
   int seeds = 2,
   int maxQuestions = 4000,
   int deckStride = 1,
+  int picks = 5,
 }) {
   final n = data.deckCount;
   final entries = <BankEntry>[];
@@ -241,7 +242,7 @@ QuestionBank buildQuestionBank(
     }
 
     for (var deck = 0; deck < n; deck += deckStride) {
-      for (var pick = 0; pick < 5; pick++) {
+      for (var pick = 0; pick < picks; pick++) {
         for (final base in bases) {
           final request = _request(
             base.topic,
