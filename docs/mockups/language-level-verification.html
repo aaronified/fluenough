@@ -89,9 +89,12 @@ svg.i16{width:16px;height:16px;fill:currentColor;display:block;flex:none}
 .vf b{font-weight:600;color:var(--onS)}
 .vf.v-not svg{color:var(--onSv)}
 /* the key */
-.key{display:flex;flex-wrap:wrap;gap:4px 14px;padding:8px 0 0;font-size:calc(12px*var(--t));line-height:1.35;color:var(--onS)}
+.hs{display:flex;gap:14px;align-items:center;overflow-x:auto;scrollbar-width:none;margin:0 -16px;padding-left:16px;padding-right:16px;-webkit-mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 4%,#000 96%,transparent 100%)}
+.hs::-webkit-scrollbar{display:none}
+.hs>*{flex:none;white-space:nowrap}
+.key{padding-top:8px;padding-bottom:2px;font-size:calc(12px*var(--t));line-height:1.35;color:var(--onS)}
 .key .ke{display:inline-flex;align-items:center;gap:4px}
-.key .kl{width:100%;color:var(--onSv)}
+.key .kl{color:var(--onSv)}
 /* languages page: rows, chips */
 .sec{padding:12px 0 2px;font-size:calc(14px*var(--t));line-height:1.4;font-weight:700;color:var(--p)}
 .lrow{padding:4px 0}
@@ -107,7 +110,7 @@ svg.i16{width:16px;height:16px;fill:currentColor;display:block;flex:none}
 .know-m svg{width:10px;height:10px}
 .ver-m{width:26px;height:18px;border-radius:9px;background:var(--cf);display:flex;align-items:center;justify-content:center;flex:none}
 .ver-m svg{width:14px;height:14px;fill:var(--cb)}
-.fchips{display:flex;gap:8px;padding:8px 16px 4px;overflow:hidden;flex:none}
+.fchips{gap:8px;padding-top:8px;padding-bottom:4px}
 .fch{display:inline-flex;align-items:center;gap:6px;min-height:32px;padding:0 12px 0 8px;border-radius:12px;border:1px solid var(--ol);font-size:calc(14px*var(--t));line-height:1.2;font-weight:600;color:var(--onSv);white-space:nowrap;flex:none}
 .addrow{display:flex;align-items:center;gap:12px;min-height:56px;margin-top:8px}
 .addrow .gl{background:var(--p);color:var(--onP)}
@@ -118,6 +121,8 @@ svg.i16{width:16px;height:16px;fill:currentColor;display:block;flex:none}
 .dlg .dh{display:flex;align-items:center}
 .dlg .kvk{font-size:calc(14px*var(--t));font-weight:700;color:var(--onSv);line-height:1.3}
 .dlg .kvv{font-size:calc(16px*var(--t));line-height:1.3}
+.dlg .kv{padding-bottom:0}
+.dlg .vf{font-size:calc(16px*var(--t))}
 .dlg .def{font-size:calc(14px*var(--t));line-height:1.35;color:var(--onSv);margin:2px 0 0}
 .tags{display:flex;flex-wrap:wrap;gap:4px 12px;align-items:center}
 .plain{display:inline-block;padding:2px 10px;border-radius:8px;border:1px solid var(--ol);font-size:calc(14px*var(--t));line-height:1.3;color:var(--onS)}
@@ -149,7 +154,7 @@ svg.i16{width:16px;height:16px;fill:currentColor;display:block;flex:none}
  <div class="tg">Bar fills <span class="seg" data-k="fills"><button data-v="prog">In progress</button><button data-v="whole">Whole bars</button></span></div>
  <div class="tg">Flag icon <span class="seg" data-k="flag"><button data-v="flag">Flag</button><button data-v="person">Person</button></span></div>
  <div class="tg">Key above lists <span class="seg" data-k="key"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
- <div class="tg">Level line on Languages too <span class="seg" data-k="both"><button data-v="0">Off</button><button data-v="1">On</button></span></div>
+ <div class="tg">Full list <span class="seg" data-k="grp"><button data-v="flat">One flat list</button><button data-v="fam">By language family</button></span></div>
  <div class="tg">Search query <input class="qin" id="q" type="text" placeholder="try ben or ta" aria-label="Search query" autocomplete="off"></div>
  <div class="tg">Popular holds <span class="seg" data-k="pop"><button data-v="cur">The curated eight</button><button data-v="all">All full-deck languages</button></span></div>
  <div class="tg">Popular also in the full list <span class="seg" data-k="again"><button data-v="1">On</button><button data-v="0">Off</button></span></div>
@@ -193,7 +198,7 @@ const GS={
 
 /* ===== state ===== */
 const dark0=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches;
-const S={theme:dark0?'dark':'light',t:1.4,seed:'forest',ex:'hi',names:'0',pre:'empty',fills:'prog',flag:'flag',key:'1',both:'0',hl:'1',again:'1',q:'',pop:'cur'};
+const S={theme:dark0?'dark':'light',t:1.4,seed:'forest',ex:'hi',names:'0',pre:'empty',fills:'prog',flag:'flag',key:'1',grp:'flat',hl:'1',again:'1',q:'',pop:'cur'};
 const VER=[['not','Not at all'],['some','Somewhat'],['full','Completely']];
 const LVL=[['none','No decks'],['pre','Pre-alpha'],['alpha','Alpha'],['beta','Beta'],['complete','Complete']];
 /* the languages of Add a language (owner's screenshot) and of the Languages page; levels and verification are PLACEHOLDERS */
@@ -271,7 +276,7 @@ function addRow(k,o={}){
 }
 /* the key */
 function flagKey(){
- return `<div class="key" role="group" aria-label="Key to the verification marks"><span class="kl">Verified by native speakers</span>${VER.map(v=>`<span class="ke chg"><span class="vf v-${v[0]}">${flagSvg(v[0])}<b>${v[1]}</b></span></span>`).join('')}</div>`;
+ return `<div class="key hs" role="group" aria-label="Key to the verification marks"><span class="kl">Verified by native speakers:</span>${VER.map(v=>`<span class="ke"><span class="vf v-${v[0]}">${flagSvg(v[0])}<b>${v[1]}</b></span></span>`).join('')}</div>`;
 }
 function chip(kind,icons,mark,glyph){
  const c=PILL[S.theme][mark.startsWith('know')?'know':mark==='ver'?'ver':mark];
@@ -285,8 +290,7 @@ function langRow(k,chips,o={}){
  const l=L[k],learn=!!o.learn;
  return `<div class="lrow" id="lang-${k}"><div class="lr-main"><div class="gl script" style="${learn?'background:var(--pc);color:var(--onPc)':''}" aria-hidden="true">${l.g}</div>
   <div class="tx"><div class="nm">${l.name}${l.own?` · <span class="script">${l.own}</span>`:''}</div></div>${ic('chev','i chv')}</div>
-  <div class="lchips">${chips}</div>
-  ${(l.ver!=='na'||S.both==='1')?`<div class="lmk">${S.both==='1'&&l.lvl!=='na'?lvline(l,o.first?'lab upd':''):''}${vflag(l.ver,o.first?'lab':'')}</div>`:''}</div>`;
+  <div class="lchips">${chips}</div></div>`;
 }
 const appbar=(title,actions='')=>`<div class="appbar"><button class="ib" aria-label="Back">${ic('back')}</button><div class="ttl">${title}</div>${actions}</div>`;
 function phone(inner,cls='',extra=''){
@@ -301,15 +305,16 @@ const famKeys=ks=>[...ks].sort((a,b)=>(L[b].added?1:0)-(L[a].added?1:0)||L[a].na
 const hit=(k,q)=>L[k].name.toLowerCase().includes(q)||L[k].own.toLowerCase().includes(q);
 function addList(q,first){
  q=q.trim().toLowerCase();let n=0;const row=(k,sfx)=>addRow(k,{first:first&&n++===0,n:sfx});
- const pop=popular();
+ const pop=popular(),byName=ks=>[...ks].sort((a,b)=>L[a].name.localeCompare(L[b].name));
  if(q){
-  const rest=FAMS.flatMap(f=>famKeys(f[2])).filter(k=>!pop.includes(k));
-  const res=[...pop,...rest].filter(k=>hit(k,q));
+  const res=[...pop,...byName(ALL.filter(k=>!pop.includes(k)))].filter(k=>hit(k,q));
   return res.length?res.map(k=>row(k,'-r')).join(''):'<div class="nomatch" role="status">No language matches</div>';
  }
+ const keep=k=>S.again==='1'||!pop.includes(k);
  let h=`<div class="sech chg lab" role="heading" aria-level="2" data-h="pop">Popular</div><p class="subh">${S.pop==='cur'?'Our most complete courses':'Courses written up to B1'}</p>`+pop.map(k=>row(k,'-p')).join('');
  h+=`<div class="sech chg lab" role="heading" aria-level="2" data-h="all" style="margin-top:8px">All languages</div>`;
- for(const [id,nm,ks] of FAMS){const l=famKeys(ks).filter(k=>S.again==='1'||!pop.includes(k));if(l.length)h+=`<div class="fam" role="heading" aria-level="3">${nm}</div>`+l.map(k=>row(k,'')).join('')}
+ if(S.grp==='flat')h+=byName(ALL.filter(keep)).map(k=>row(k,'')).join('');
+ else for(const [id,nm,ks] of FAMS){const l=famKeys(ks).filter(keep);if(l.length)h+=`<div class="fam" role="heading" aria-level="3">${nm}</div>`+l.map(k=>row(k,'')).join('')}
  return h;
 }
 function addScreen(i,q,sc,first){
@@ -322,13 +327,12 @@ function addScreen(i,q,sc,first){
 function langScreen(i){
  const cT=(g)=>script(g,'learn',true);
  return phone(`${appbar('Languages',`<button class="ib" aria-label="Add">${ic('plus')}</button><button class="ib" aria-label="Report">${ic('bug')}</button>`)}<div class="scroll" data-sc="${10+i}">
-  <div class="key" style="padding-top:0"><span class="ke">${chip('k',['ear'],'know')}Know</span><span class="ke">${chip('k',['eye','kbd'],'know')}Read and write, or hear and speak</span><span class="ke">${chip('k',['eye'],'ver')}Level found</span><span class="ke">${chip('k',['eye','kbd'],'learn')}Learn</span><span class="ke">${chip('k',[],'leave')}Leave</span></div>
-  ${S.key==='1'?flagKey():''}
-  <div class="fchips"><span class="fch">${ic('cap','i16')}Learning</span><span class="fch">${ic('check','i16')}Know</span><span class="fch">${ic('mic','i16')}Speak</span></div>
+  <div class="key hs" style="padding-top:0"><span class="ke">${chip('k',['ear'],'know')}Know</span><span class="ke">${chip('k',['eye','kbd'],'know')}Read and write, or hear and speak</span><span class="ke">${chip('k',['eye'],'ver')}Level found</span><span class="ke">${chip('k',['eye','kbd'],'learn')}Learn</span><span class="ke">${chip('k',[],'leave')}Leave</span></div>
+  <div class="fchips hs"><span class="fch">${ic('cap','i16')}Learning</span><span class="fch">${ic('check','i16')}Know</span><span class="fch">${ic('mic','i16')}Speak</span></div>
   <div class="sec">Learning · 4</div>
   ${langRow('ipa',script('ə','learn',true),{learn:1})}
   ${langRow('brl',script('⠃','learn',true),{learn:1})}
-  ${langRow('te',spoken('learn',true)+script('అ','learn',true),{learn:1,first:true})}
+  ${langRow('te',spoken('learn',true)+script('అ','learn',true),{learn:1})}
   ${langRow('tok',spoken('learn',true)+script('a','learn',true),{learn:1})}
   <div class="sec">Know · 2</div>
   ${langRow('en',spoken('ver',true)+script('A','ver',true))}
@@ -343,14 +347,21 @@ function specimen(){
  for(const [vv,nm] of VER)rows.push([`verified: ${nm} (course Complete)`,{...e,lvl:'complete',ver:vv,added:1}]);
  return phone(`${appbar('Add a language')}<div class="scroll" style="padding-top:0">${rows.map(([a,l],i)=>{L['_s'+i]=l;return `<div class="ann">${a}</div>${addRow('_s'+i)}`}).join('')}</div>`,'tall');
 }
-function dialog(){
- const e=L[S.ex],hi=S.ex==='hi',l={...e,lvl:'complete',ver:'some'};
- return phone(`${appbar('Languages')}<div class="scroll"><div class="sec">Learning · 2</div>${langRow('te',spoken('learn',true)+script('అ','learn',true),{learn:1})}</div>`,'',
- `<div class="scrim"></div><div class="dlg"><div class="dh"><h3 class="script">${e.name}</h3><button class="ib" aria-label="Close">${ic('close')}</button></div>
-  <div class="tags"><span class="stage">Complete</span><span class="plain">Indo-Aryan</span></div>
+/* the i dialog as _InfoDialog builds it (language_skills_sheet.dart): title and close, tags (stage, family, % of B1), the line, then the kv rows; the Verified row is the new one */
+function dialog(state){
+ const e=L[S.ex],hi=S.ex==='hi',l={...e,lvl:'complete'};
+ const def={not:'No native speaker has checked this course.',some:'Native speakers have checked some of this course.',full:'Native speakers have checked all of this course.'}[state];
+ const kv=(k,v,x='')=>`<div class="${x}"><div class="kvk">${k}</div><div class="kvv script">${v}</div></div>`;
+ return phone(`${appbar('Languages')}<div class="scroll"><div class="sec">Learning · 2</div>${langRow('te',spoken('learn',true)+script('అ','learn',true),{learn:1})}${langRow('tok',spoken('learn',true)+script('a','learn',true),{learn:1})}</div>`,'',
+ `<div class="scrim"></div><div class="dlg"><div class="dh"><h3 class="script">${e.name} · ${e.own}</h3><button class="ib" aria-label="Close details">${ic('close')}</button></div>
+  <div class="tags"><span class="stage">Complete</span><span class="plain">Indo-Aryan</span><span>100% of B1</span><b style="color:var(--p)">You: 12%</b></div>
   ${lvline(l)}
-  <div><div class="kvk">${hi?'Script':'Script'}</div><div class="kvv script">${hi?'Devanagari':'Bengali'}</div></div>
-  <div class="chg lab" style="align-self:flex-start"><div class="kvk">Verified by native speakers</div><div style="margin:2px 0 4px">${vflag('some')}</div><p class="def">Native speakers have checked some of this course. The rest has not been checked yet.</p></div>
+  <div class="chg lab" style="align-self:flex-start" role="group" aria-label="Verified by native speakers: ${verWord(state).toLowerCase()}"><div class="kvk">Verified by native speakers</div><div class="kvv"><span class="vf v-${state}">${flagSvg(state)}<b>${verWord(state)}</b></span></div><p class="def">${def}</p></div>
+  ${kv('Dialect taught in the app',hi?'Standard Hindustani (Delhi)':'Standard Bengali (Kolkata)')}
+  ${kv('Script: read and write',hi?'Devanagari':'Bengali')}
+  ${kv('Taught from','English')}
+  ${kv('Size','38 MB')}
+  ${kv('Units built','36 of 36')}
  </div>`);
 }
 /* ===== page ===== */
@@ -361,17 +372,17 @@ function render(){
  R.className=S.hl==='1'?'hl-on':'';
  R.innerHTML=`
 <section class="opt" id="sec-a"><h2>A. Add a language</h2>
- <p class="note">Each row gets the A1 A2 B1 line, exactly as the course card and the i dialog draw it, then the new verification mark, both under the texts. The only new state of the line is the empty one (no decks, and pre-alpha). Three views of one scrolling list, with the search field live (type in "Search query" above).</p>
+ <p class="note">Each row gets the A1 A2 B1 line, exactly as the course card and the i dialog draw it, then the new verification mark, both under the texts. Popular is first, then one flat alphabetical list (the family grouping is a comparison tweak, off). The only new state of the line is the empty one (no decks, and pre-alpha). Three views of one scrolling list (top, the start of All languages, the end), with the search field live (type in "Search query" above).</p>
  <div class="frames"><div class="fcol"><div class="fcap">Top of the list</div>${(addRow.shown=1,'')}${addScreen(0,S.q,0,true)}</div><div class="fcol"><div class="fcap">Further down</div>${(addRow.shown=0,'')}${addScreen(1,S.q,1)}</div><div class="fcol"><div class="fcap">End of the list</div>${(addRow.shown=1,'')}${addScreen(2,S.q,2)}</div></div></section>
 <section class="opt" id="sec-a2"><h2>A2. Search states</h2>
  <p class="note">The search field stays on top and works over both sections. With a query the sections collapse into one result list, Popular matches first, no section headers (a language is listed once). No match shows a plain "No language matches".</p>
  <div class="frames"><div class="fcol"><div class="fcap">Empty query</div>${addScreen(0,'',20)}</div><div class="fcol"><div class="fcap">Query "${S.ex==='hi'?'ta':'ben'}"</div>${addScreen(0,S.ex==='hi'?'ta':'ben',21)}</div><div class="fcol"><div class="fcap">No result ("zq")</div>${addScreen(0,'zq',22)}</div></div></section>
 <section class="opt" id="sec-b"><h2>B. Languages, after selection</h2>
- <p class="note">The list the learner reaches after choosing languages. Its rows keep their skill chips; each language with a course gains the verification mark. IPA and English Braille have no native speakers, so they show none (proposed). The level line is not drawn here unless the tweak "Level line on Languages too" is On.</p>
+ <p class="note">The list the learner reaches after choosing languages. The rows are as the app draws them; and no verification mark: that status lives in the i dialog (section C), as built (owner, 2026-11-06). Every key and pill row is one horizontally scrollable row with the app's edge mask, and the Learning, Know, Speak row now starts at the same 16 dp inset as the content (in the app today it is drawn at 32 dp: the list's 16 dp plus the row's own 16 dp).</p>
  <div class="frames"><div class="fcol"><div class="fcap">Top</div>${langScreen(0)}</div><div class="fcol"><div class="fcap">Know section</div>${langScreen(1)}</div></div></section>
 <section class="opt" id="sec-c"><h2>C. Every state, for ${L[S.ex].name}</h2>
- <p class="note">Left: the five levels, then the three verification states, on one row ("Example language" switches Hindustani and Bengali). Right: the i dialog, where the long wording lives (proposed text).</p>
- <div class="frames"><div class="fcol"><div class="fcap">Specimen, as on Add a language</div>${specimen()}</div><div class="fcol"><div class="fcap">The i dialog of ${L[S.ex].name}</div>${dialog()}</div></div></section>`;
+ <p class="note">Left: the five levels, then the three verification states, on one row ("Example language" switches Hindustani and Bengali). Right: the i dialog of the language as built (title and close, stage and family tags, the line, then the rows), in the three verification states; the new row "Verified by native speakers" sits under the line. Its sample values (dialect, size, units, the percentages) are placeholders.</p>
+ <div class="frames"><div class="fcol"><div class="fcap">Specimen, as on Add a language</div>${specimen()}</div>${VER.map(v=>`<div class="fcol"><div class="fcap">The i dialog: ${v[1]}</div>${dialog(v[0])}</div>`).join('')}</div></section>`;
  document.querySelectorAll('[data-sc]').forEach(e=>{e.scrollTop=sc[e.dataset.sc]||0});
  if(!render.once){render.once=1;scrollDefaults()}
  syncControls();
@@ -418,7 +429,7 @@ window.__contrast=[];
 }));
 /* layout check: nothing wider than its phone, and every row at least 48 dp high (run by the Playwright check) */
 window.__layout=()=>{const out=[];document.querySelectorAll('.ph').forEach((p,i)=>{const pr=p.getBoundingClientRect();
- p.querySelectorAll('.nm,.own,.nomatch,.sech,.subh,.fam,.vf,.lvl,.stage,.added,.nocourse,.chip,.key,.dlg *').forEach(e=>{const r=e.getBoundingClientRect();if(r.width&&(r.right>pr.right+0.5||r.left<pr.left-0.5))out.push({frame:i,cls:e.className&&e.className.baseVal!==undefined?'svg':e.className,right:Math.round(r.right-pr.right)})});
+ p.querySelectorAll('.nm,.own,.nomatch,.sech,.subh,.fam,.vf,.lvl,.stage,.added,.nocourse,.chip,.dlg *').forEach(e=>{if(e.closest('.hs'))return;const r=e.getBoundingClientRect();if(r.width&&(r.right>pr.right+0.5||r.left<pr.left-0.5))out.push({frame:i,cls:e.className&&e.className.baseVal!==undefined?'svg':e.className,right:Math.round(r.right-pr.right)})});
  p.querySelectorAll('.arow,.lrow').forEach(e=>{const h=e.getBoundingClientRect().height;if(h<48)out.push({frame:i,short:e.id,h})});
  p.querySelectorAll('.scroll').forEach(s=>{if(s.scrollWidth>s.clientWidth+1)out.push({frame:i,hscroll:s.scrollWidth-s.clientWidth})});
 });return out};
