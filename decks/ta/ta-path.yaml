@@ -127,13 +127,14 @@ units:
     reading_passages:
       - { id: "question-cards", text: { "en": "Cards with who, what, where and when" } }
   # ta-addressing joins this unit.
-  - decks: ["ta-pronouns", "*"]
+  - decks: ["ta-pronouns", "ta-pronouns-sentences", "*"]
     words: 33
     listening_passages:
       - { id: "polite-or-not", text: { "en": "Speaking to a friend, an elder and a shopkeeper" } }
     reading_passages:
       - { id: "who-is-who", text: { "en": "A short list of people and how to address them" } }
-  - planned: { id: "ta-family", theme: "family", words: 25 }
+  - decks: ["ta-family", "ta-family-sentences", "*"]
+    words: 25
     listening_passages:
       - { id: "family-photo", text: { "en": "Someone names the people in a family photo" } }
     reading_passages:
