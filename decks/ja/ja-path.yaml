@@ -515,7 +515,8 @@ units:
       - { id: "kanji-in-town", text: { "en": "Hearing the town words whose kanji are taught: shop, station, hospital, bank" } }
     reading_passages:
       - { id: "town-signs", text: { "en": "Shop and building signs in kanji" } }
-  - planned: { id: "ja-verbs-3", theme: "verbs-3", words: 60 }
+  - decks: ["ja-verbs-3", "ja-verbs-3-sentences", "ja-reading-verbs-3", "*"]
+    words: 60
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:

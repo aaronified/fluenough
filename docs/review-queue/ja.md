@@ -117,3 +117,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2160 | ja-appearance | Is おしゃれ natural as a na-adjective card for stylish, as in おしゃれ な ふく を かいました? | Haiku builder | 2026-11-06 |
 | unit-level | ja-appearance | Is ピアス を あけました (had her ears pierced) natural, given that あける is taught as to open? | Haiku builder | 2026-11-06 |
 | unit-level | ja-appearance | The example and sentence decks of ja-appearance are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-2239 | ja-verbs-3 | Is つたわる (to be conveyed) natural with a sound as its subject, as in おと が つたわりました (the sound carried)? | Haiku builder | 2026-11-06 |
+| ja-2272 | ja-verbs-3 | Is いきる (to live) natural in ねこ は いきて います (the cat is alive), or is another phrase used for it? | Haiku builder | 2026-11-06 |
+| ja-2273 | ja-verbs-3 | Is しごと を たのしんで います (I enjoy my work) natural, or is たのしい (enjoyable) the more usual form? | Haiku builder | 2026-11-06 |
+| unit-level | ja-verbs-3 | The example and sentence decks of ja-verbs-3 are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
