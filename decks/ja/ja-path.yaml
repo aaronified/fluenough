@@ -476,7 +476,8 @@ units:
   # C"). Each unit has a list at least as long as its size, every word fresh
   # against the cards written up to ja-music and against the other lists: a
   # word an earlier unit teaches is used by ref, never written again.
-  - planned: { id: "ja-sports", theme: "sports", words: 45 }
+  - decks: ["ja-sports", "ja-sports-sentences", "ja-reading-sports", "*"]
+    words: 45
     listening_passages:
       - { id: "baseball-talk", text: { "en": "Friends talk about a baseball game" } }
     reading_passages:

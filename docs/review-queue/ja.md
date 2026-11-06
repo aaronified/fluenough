@@ -97,3 +97,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ja-eating-out | Is おあいそ (the bill) polite enough to teach next to かんじょう, or is it restaurant slang that should carry a note? | Sonnet re-planner | 2026-11-06 |
 | unit-level | ja-music | Is おんち (tone-deaf) acceptable as a plain card, and are ひきがたり and リサイタル natural words for this unit? | Sonnet re-planner | 2026-11-06 |
 | unit-level | ja-news | Are ほうじる (to report), ごほう (a false report) and とくだね (a scoop) the words a news reader would meet at B1? | Sonnet re-planner | 2026-11-06 |
+| ja-1966 | ja-sports | Is ダンス (dance) natural as a sport word, or does it mean a dance class more than a sport here? | Haiku builder | 2026-11-06 |
+| ja-1975 | ja-sports | Is ヨガ は あたらしい です a natural sentence for a yoga card, or should the second example change? | Haiku builder | 2026-11-06 |
+| ja-1992 | ja-sports | Is ひきわけ の あと に あるきます (after the draw I walk) natural, or should the second example change? | Haiku builder | 2026-11-06 |
+| ja-1997 | ja-sports | Is うつ (to hit) the natural verb for hitting a ball in tennis and volleyball, or is another verb used? | Haiku builder | 2026-11-06 |
+| unit-level | ja-sports | The example and sentence decks of ja-sports are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
