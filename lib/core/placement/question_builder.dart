@@ -1804,7 +1804,8 @@ class _Ctx {
   _Ctx(this.request, this.asked, this.failed, int seed)
     : random = seededRandom(
         seed,
-        '${request.number}:${request.variant.label}:${request.role.name}',
+        '${request.number}:${request.variant.label}:${request.role.name}:'
+        '${request.deck}:${request.shortlistPick}',
       );
 
   final PlacementQuestionRequest request;

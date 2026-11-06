@@ -59,6 +59,16 @@ Future<void> main(List<String> args) async {
     deckStride: int.parse(options['stride'] ?? '1'),
     picks: int.parse(options['picks'] ?? '5'),
   );
+  if (faults.isNotEmpty) {
+    stderr.writeln('${faults.length} faulty questions left out:');
+    for (final f in faults.take(20)) {
+      stderr.writeln(' $f');
+    }
+    if (options['strict'] == 'true') {
+      exitCode = 1;
+      return;
+    }
+  }
   Directory(out).createSync(recursive: true);
   const encoder = JsonEncoder.withIndent(' ');
   File('$out/$language-bank.json').writeAsStringSync(
