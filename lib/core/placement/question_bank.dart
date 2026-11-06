@@ -118,6 +118,22 @@ class BankEntry {
   }
 }
 
+/// What is wrong with [q], or null: a pick needs distinct options and one
+/// right index in range; a built or said answer needs an accepted answer.
+String? questionFault(GeneratedQuestion q) {
+  if (q.mode == PlacementAnswerMode.pick) {
+    final right = q.correctIndex;
+    if (right == null || right < 0 || right >= q.options.length) {
+      return 'no correct option';
+    }
+    if (q.options.toSet().length != q.options.length) {
+      return 'duplicate options';
+    }
+    return null;
+  }
+  return q.accepted.isEmpty ? 'no accepted answer' : null;
+}
+
 /// A set of questions with their ids.
 class QuestionBank {
   QuestionBank(Iterable<BankEntry> entries)
@@ -141,7 +157,7 @@ String _idOf(GeneratedQuestion q, String? origin) {
     q.request.role.name,
     q.cardId ?? '',
     q.promptText ?? '',
-    q.options.join('|'),
+    ([...q.options]..sort()).join('|'),
     q.tiles.join('|'),
     origin ?? '',
   ].join('\u0001');
@@ -171,6 +187,9 @@ PlacementQuestionRequest _request(
   originVariant: origin,
 );
 
+/// The faults found while building the last bank (questions left out).
+final List<String> faults = <String>[];
+
 /// Every question the real generators make for [data]: each base question,
 /// its two splits (each checking every base question built), the
 /// positioning probes, the top-ups, the grammar probes and the isolating
@@ -192,6 +211,7 @@ QuestionBank buildQuestionBank(
   final n = data.deckCount;
   final entries = <BankEntry>[];
   final ids = <String>{};
+  faults.clear();
   final bases = buildBaseQuestions(tested, microphone: false);
   for (var seed = 0; seed < seeds; seed++) {
     final builder = QuestionBuilder(
@@ -208,6 +228,11 @@ QuestionBank buildQuestionBank(
       final outcome = builder.build(request, failed: failed);
       if (outcome is! QuestionBuilt) return null;
       final q = outcome.question;
+      final fault = questionFault(q);
+      if (fault != null) {
+        faults.add('${q.request.variant.label} ${q.cardId}: $fault');
+        return null;
+      }
       final entry = BankEntry(
         id: _idOf(q, origin),
         question: GeneratedQuestion(
