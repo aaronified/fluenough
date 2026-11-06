@@ -114,7 +114,8 @@ units:
   - decks: ["ta-phrasebook", "ta-first-words", "*"]
     words: 10
   # 2. The first word units.
-  - planned: { id: "ta-sound-differences", grammar: "sound-differences", words: 10 }
+  - decks: ["ta-sound-differences", "*"]
+    words: 10
     listening_passages:
       - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
     reading_passages:
