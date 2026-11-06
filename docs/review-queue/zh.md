@@ -93,3 +93,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | zh-4823 | zh-verbs-5 (ids zh-4774 to zh-4834) | The second example says 他最近变好了很多. Is 变好了很多 natural, or should a different word be used? | Haiku builder | 2026-11-06 |
 | unit-level | zh-grammar-le-change-of-state | Is it right that a plain state takes 很 (hěn) (天很冷) and the change drops it (天冷了), and that 不 ... 了 (我不饿了) is the way to say no longer, never 没 ... 了? | Sonnet builder | 2026-11-06 |
 | unit-level | zh-grammar-le-change-of-state | The 想 row gives 我想喝水了 as a new want. Is it natural beside 我不想喝水了? | Sonnet builder | 2026-11-06 |
+| unit-level | zh-grammar-zhe-continuous | The note says to deny a 着 (zhe) state 没 (méi) goes before the verb and 着 (zhe) is usually dropped (他没带钱). Is that the right guidance, since 门没开着 also exists? | Sonnet builder | 2026-11-06 |
+| unit-level | zh-grammar-zhe-continuous | The `while` slot (他坐着看书, 我开着门睡觉) uses 着 (zhe) for the manner of a second verb. Are all seven examples natural? | Sonnet builder | 2026-11-06 |
