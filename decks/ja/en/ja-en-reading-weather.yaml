@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-weather",
+  "name": "Japanese reading: weather",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-weather-1",
+      "title": "Today's weather",
+      "sentences": [
+        {
+          "text": "きょうはあめです。",
+          "reading": "kyou wa ame desu."
+        },
+        {
+          "text": "あしたはてんきがいいです。",
+          "reading": "ashita wa tenki ga ii desu."
+        },
+        {
+          "text": "かぜがつよいです。",
+          "reading": "kaze ga tsuyoi desu."
+        },
+        {
+          "text": "ゆうやけがきれいです。",
+          "reading": "yuuyake ga kirei desu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1663",
+          "prompt": {
+            "en": "Which line says that tomorrow the weather is good?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The second line"
+            }
+          ],
+          "answer": 2
+        },
+        {
+          "id": "ja-1664",
+          "prompt": {
+            "en": "The first line says that it rains today."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1665",
+          "prompt": {
+            "en": "Which line says that the sunset is pretty?"
+          },
+          "options": [
+            {
+              "en": "The third line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    },
+    {
+      "id": "ja-weather-2",
+      "title": "A storm warning",
+      "sentences": [
+        {
+          "text": "たいふうはとてもはげしいです。",
+          "reading": "taifuu wa totemo hageshii desu."
+        },
+        {
+          "text": "なみがたかいです。",
+          "reading": "nami ga takai desu."
+        },
+        {
+          "text": "こさめがふります。",
+          "reading": "kosame ga furimasu."
+        },
+        {
+          "text": "あさはさむいです。",
+          "reading": "asa wa samui desu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1666",
+          "prompt": {
+            "en": "Which line says that the typhoon is fierce?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The second line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1667",
+          "prompt": {
+            "en": "The third line says that it is snowing."
+          },
+          "answer": false
+        },
+        {
+          "id": "ja-1668",
+          "prompt": {
+            "en": "Which line says that the morning is cold?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 2
+        }
+      ]
+    }
+  ]
+}
