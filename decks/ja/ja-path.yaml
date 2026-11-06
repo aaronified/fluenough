@@ -723,7 +723,8 @@ units:
       - { id: "it-looks-like-rain", text: { "en": "Saying it looks like rain, and that you heard the shop closed" } }
     reading_passages:
       - { id: "rumour-messages", text: { "en": "Messages passing on what people heard" } }
-  - planned: { id: "ja-history", theme: "history", words: 45 }
+  - decks: ["ja-history", "ja-history-sentences", "ja-reading-history", "*"]
+    words: 45
     listening_passages:
       - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
     reading_passages:
