@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **The web app opens with no network after one visit, and can say how to install it.** A small hand-written service worker keeps the page, script, engine and fonts (Flutter 3.47's own caches nothing; the newest copy is used whenever the network answers, and deck downloads are never touched). A quiet card on Today, web only, offers Install in Chrome or says "Tap Share, then Add to Home Screen" on an iPhone, hides for good on Got it or for a week on Later, and never shows in the apps or once installed. Your data has a Storage group, web only: whether the browser keeps your progress, a button to ask it to, and that clearing the site's data deletes it. Refs #1012.
+
 ### Changed
 
 - **Find my level asks how well you know the language, then checks you.** It first asks "How well do you know the language?" with only the answers the course supports (Expert, Advanced, Amateur, Beginner; a course with only A1 written offers Beginner and Amateur, and a course below A1 offers no check). Back cancels it and writes nothing; Beginner starts from the beginning with nothing asked. The questions come from the course's own decks and run as long as they need, with a pause every 25 questions where you see where you stand and choose Keep going or Stop here; leaving part-way keeps the run for 7 days. At the end each skill is credited up to the level it was placed at, and a course written to B1 can mark a skill Verified. A skill marked Know is verified first ("Verify what you know"), then "Fit my level" checks the rest; a check never changes a skill's Leave, Know or Learn.
