@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math';
+import 'dart:ui' show Color;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
@@ -86,6 +87,7 @@ import 'skill.dart';
 import 'today_summary.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
+import 'wallpaper_colours.dart';
 import 'web_install.dart';
 
 /// A native language that teaches a course, as the learner is offered it
@@ -195,6 +197,7 @@ class AppState extends ChangeNotifier {
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
     WebInstall? webInstall,
+    WallpaperSource wallpaperSource = const NullWallpaperSource(),
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     this.reports = const NullReportSender(),
     this._mailShare = const NullMailShare(),
@@ -217,6 +220,7 @@ class AppState extends ChangeNotifier {
   }) : assert(profiles.isNotEmpty, 'there is always a profile'),
        random = random ?? Random(),
        webInstall = webInstall ?? WebInstall.off(),
+       wallpaper = WallpaperColours(wallpaperSource),
        volume = volume ?? FixedVolumeMonitor(),
        deckCatalog = catalog,
        settings = settings ?? SettingsNotifier(),
@@ -348,6 +352,7 @@ class AppState extends ChangeNotifier {
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
     WebInstall? webInstall,
+    WallpaperSource wallpaperSource = const NullWallpaperSource(),
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     ReportSender reports = const NullReportSender(),
     MailShare mailShare = const NullMailShare(),
@@ -387,6 +392,7 @@ class AppState extends ChangeNotifier {
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
       webInstall: webInstall,
+      wallpaperSource: wallpaperSource,
       reminderScheduler: reminderScheduler,
       reports: reports,
       mailShare: mailShare,
@@ -484,6 +490,19 @@ class AppState extends ChangeNotifier {
   /// Installing the web build, and whether the browser keeps its storage
   /// (#1012). Off in the apps: only `main_web.dart` gives it a browser.
   final WebInstall webInstall;
+
+  /// The phone's wallpaper colour, for Wallpaper colours (Android 12 and
+  /// later; nothing elsewhere).
+  final WallpaperColours wallpaper;
+
+  /// The wallpaper colour the themes are made from: set only while the
+  /// learner has Wallpaper colours on and the phone gives one. Null means
+  /// the chosen seed colour applies, as it does on every phone without a
+  /// palette, whatever a restored backup says.
+  Color? get wallpaperInUse =>
+      features.isAvailable(Feature.dynamicColour) && settings.dynamicColour
+      ? wallpaper.seed
+      : null;
 
   /// Where a report from the bug icon goes once mail is on (ADR-0021): the
   /// reporter's mail app, or nowhere in a build that was given none.
@@ -3925,6 +3944,7 @@ class AppState extends ChangeNotifier {
       ..removeListener(_logTab)
       ..dispose();
     updates.dispose();
+    wallpaper.dispose();
     _fontCheck?.dispose();
     deckDownloads?.onFilesChanged = null;
     tuner.dispose();

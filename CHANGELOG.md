@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Wallpaper colours work on Android 12 and later.** Settings > Look and language > Wallpaper colours (off by default, saved per profile and in backups) makes the app's colours follow the phone's wallpaper; the Colour row says it is following your wallpaper, Contrast and Pure black still apply. The row is not drawn on the web, iOS, desktop or Android below 12, and a phone that gives no palette keeps the chosen colour. No new dependency: a small channel call reads the system accent colour.
 - **The web app opens with no network after one visit, and can say how to install it.** A small hand-written service worker keeps the page, script, engine and fonts (Flutter 3.47's own caches nothing; the newest copy is used whenever the network answers, and deck downloads are never touched). A quiet card on Today, web only, offers Install in Chrome or says "Tap Share, then Add to Home Screen" on an iPhone, hides for good on Got it or for a week on Later, and never shows in the apps or once installed. Your data has a Storage group, web only: whether the browser keeps your progress, a button to ask it to, and that clearing the site's data deletes it. Refs #1012.
 
 ### Changed

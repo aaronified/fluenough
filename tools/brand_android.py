@@ -55,7 +55,10 @@ in CI, in the release workflow and on a first checkout. It
 - gives the same channel installApk, which reopens Android's installer on
   an update already downloaded into files/ota_update, through ota_update's
   FileProvider, so that Install after a cancelled install needs no second
-  download (#487). A MainActivity without it is brought up to date.
+  download (#487). A MainActivity without it is brought up to date;
+- gives the same channel wallpaperColour, the system's primary accent colour
+  on Android 12 and later, from which Settings' Wallpaper colours builds the
+  app's colours. A MainActivity without it is brought up to date.
 
 - sets up flutter_local_notifications, which shows the daily reminder (#90).
   The reminder is scheduled inexactly, so there is no exact-alarm
@@ -221,6 +224,7 @@ KOTLIN_IMPORTS = (
     "android.content.ActivityNotFoundException",
     "android.content.Intent",
     "android.net.Uri",
+    "android.os.Build",
     "android.provider.Settings",
     "android.speech.tts.TextToSpeech",
     "androidx.core.content.FileProvider",
@@ -413,9 +417,50 @@ def install(text: str) -> str:
     return text.replace(SHARE_MEMBERS_BEFORE, INSTALL_MEMBERS + SHARE_MEMBERS_BEFORE)
 
 
-# What goes in MainActivity: the channel, with openVoiceSettings, shareFiles
-# and installApk.
-CHANNEL_MEMBERS = install(share(VOICE_MEMBERS))
+# What [wallpaper] adds to the channel: wallpaperColour, the system's primary
+# accent colour on Android 12 (API 31) and later, which Wallpaper colours in
+# Settings > Look and language builds the app's scheme from.
+WALLPAPER_METHOD = '"wallpaperColour" ->'
+WALLPAPER_DISPATCH = (
+    '                    "wallpaperColour" -> result.success(wallpaperColour())\n'
+)
+WALLPAPER_MEMBERS = """    // Written by tools/brand_android.py: the colour Android 12 and later
+    // draw their Material You palette from the wallpaper: the middle tone
+    // of the system's primary accent. Null below Android 12, where there is
+    // none. Read by lib/app/wallpaper_colours.dart.
+    private fun wallpaperColour(): Int? {
+        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.S) return null
+        return try {
+            resources.getColor(android.R.color.system_accent1_500, theme)
+        } catch (e: Exception) {
+            null
+        }
+    }
+
+"""
+
+
+def wallpaper(text: str) -> str:
+    """[text], MainActivity.kt or the members written into it, with
+    wallpaperColour added to the app.fluenough/system channel, unless it
+    has it. Fails if the channel is not in the shape this wrote."""
+    if WALLPAPER_METHOD in text:
+        return text
+    if (
+        text.count(INSTALL_DISPATCH) != 1
+        or text.count(SHARE_MEMBERS_BEFORE) != 1
+    ):
+        raise BrandError(
+            f"{ACTIVITY} has the {CHANNEL} channel, but not as this writes "
+            "it; add wallpaperColour to it by hand, or run flutter create again"
+        )
+    text = text.replace(INSTALL_DISPATCH, INSTALL_DISPATCH + WALLPAPER_DISPATCH)
+    return text.replace(SHARE_MEMBERS_BEFORE, WALLPAPER_MEMBERS + SHARE_MEMBERS_BEFORE)
+
+
+# What goes in MainActivity: the channel, with openVoiceSettings, shareFiles,
+# installApk and wallpaperColour.
+CHANNEL_MEMBERS = wallpaper(install(share(VOICE_MEMBERS)))
 
 # The version ota_update 7.1.0's own build uses.
 DESUGAR_LIBS = "com.android.tools:desugar_jdk_libs:2.1.4"
@@ -511,7 +556,7 @@ def channel(text: str) -> str:
     else in the file is kept. One with the channel from before shareFiles
     gets shareFiles."""
     if CHANNEL in text:
-        shared = install(share(text))
+        shared = wallpaper(install(share(text)))
         return text if shared == text else imported(shared)
     if len(ACTIVITY_CLASS.findall(text)) != 1:
         raise BrandError(

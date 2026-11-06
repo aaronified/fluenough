@@ -287,6 +287,24 @@ class ApplyTest(unittest.TestCase):
         brand_android.apply(self.root)
         self.assertEqual(self.kotlin().count("private fun installApk"), 1)
 
+    def _the_wallpaper_colour_is_read_on_android_12_and_later_only(self) -> None:
+        # Wallpaper colours: the channel answers the system's accent, and
+        # null below API 31, once, in a new and an earlier activity.
+        brand_android.apply(self.root)
+        self.assertIn(
+            '"wallpaperColour" -> result.success(wallpaperColour())', self.kotlin()
+        )
+        self.assertIn("import android.os.Build", self.kotlin())
+        body = self.kotlin().split("private fun wallpaperColour", 1)[1]
+        body = body.split("\n    }\n", 1)[0]
+        self.assertIn("Build.VERSION_CODES.S) return null", body)
+        self.assertIn("android.R.color.system_accent1_500", body)
+        self.activity.write_text(self.earlier_activity(), encoding="utf-8")
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin().count("private fun wallpaperColour"), 1)
+        self.assertEqual(self.kotlin().count("import android.os.Build"), 1)
+
     def _the_installer_is_visible_and_not_gated_on_resolve_activity(self) -> None:
         # #487: on Android 11+ the package installer is hidden from
         # resolveActivity without this <queries> entry.
@@ -350,6 +368,7 @@ class ApplyTest(unittest.TestCase):
             self._the_internet_and_https_links_are_declared,
             self._the_files_are_lent_through_the_apps_own_provider,
             self._a_kept_update_reopens_the_installer_through_the_ota_provider,
+            self._the_wallpaper_colour_is_read_on_android_12_and_later_only,
             self._the_installer_is_visible_and_not_gated_on_resolve_activity,
         )
         for case in cases:
