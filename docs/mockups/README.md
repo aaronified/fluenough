@@ -13,6 +13,14 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   Bengali, light and dark, 1.4x. Open choices are tweak controls and are
   listed in `today-chain.md`, with the self-check.
 
+- `language-level-verification.html`: two markers on every language on Add a
+  language and on the Languages list: the course's level (no decks,
+  pre-alpha, alpha, beta, complete, as the A1 A2 B1 line with a new empty
+  state) and whether native speakers verified it (Not at all, Somewhat,
+  Completely) (owner, 2026-11-06). Hindustani and Bengali, light and dark,
+  1.4x. Open choices are tweak controls and are listed in
+  `language-level-verification.md`, with the self-check.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
