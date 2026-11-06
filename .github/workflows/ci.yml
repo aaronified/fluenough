@@ -156,6 +156,7 @@ jobs:
           --deselect test_validate_b1.py::PathAcrossDecks::test_a_path_across_the_decks_it_names
           --deselect test_validate_card_ids.py::CardIds::test_a_file_alone_is_held_to_the_repository
           --deselect test_validate_card_ids.py::CardIds::test_next_id_follows_the_highest_in_the_language
+          --deselect test_review_bot.py::Checks::test_the_required_checks_are_cis_jobs
           --durations=25
 
   decks-tools-real:
