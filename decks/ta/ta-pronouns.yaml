@@ -1,0 +1,184 @@
+schema: 1
+id: "ta-pronouns"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "pronouns"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0057"
+    target: "நீ"
+    reading: "nī"
+    ipa: "niː"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நீ எங்கே போகிறாய்?"
+        reading: "nī eṅkē pōkiṟāy?"
+        ipa: "niː eŋkeː poːkiɾaːj?"
+        bases: [{ word: "நீ", base: "நீ", reading: "nī" }, { word: "எங்கே", ref: "ta-0043" }, { word: "போகிறாய்", base: "போ", reading: "pō" }]
+      - target: "நீ நல்லவன்."
+        reading: "nī nallavaṉ."
+        ipa: "niː nalːavan."
+        bases: [{ word: "நீ", base: "நீ", reading: "nī" }, { word: "நல்லவன்", base: "நல்ல", reading: "nalla" }]
+  - id: "ta-0058"
+    target: "அவன்"
+    reading: "avaṉ"
+    ipa: "avan"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவன் வருகிறான்."
+        reading: "avaṉ varukiṟāṉ."
+        ipa: "avan vaɾukiɾaːn."
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "வருகிறான்", base: "வா", reading: "vā" }]
+      - target: "அவன் ஒரு நண்பன்."
+        reading: "avaṉ oru naṇpaṉ."
+        ipa: "avan oɾu naɳpan."
+        bases: [{ word: "அவன்", base: "அவன்", reading: "avaṉ" }, { word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "நண்பன்", base: "நண்பன்", reading: "naṇpaṉ" }]
+  - id: "ta-0059"
+    target: "அவள்"
+    reading: "avaḷ"
+    ipa: "avaɭ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் வீட்டில் இருக்கிறாள்."
+        reading: "avaḷ vīṭṭil irukkiṟāḷ."
+        ipa: "avaɭ viːʈːil iɾukkiɾaːɭ."
+        bases: [{ word: "அவள்", base: "அவள்", reading: "avaḷ" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறாள்", base: "இரு", reading: "iru" }]
+      - target: "அவள் நல்லவள்."
+        reading: "avaḷ nallavaḷ."
+        ipa: "avaɭ nalːavaɭ."
+        bases: [{ word: "அவள்", base: "அவள்", reading: "avaḷ" }, { word: "நல்லவள்", base: "நல்ல", reading: "nalla" }]
+  - id: "ta-0060"
+    target: "அவர்"
+    reading: "avar"
+    ipa: "avaɾ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் யார்?"
+        reading: "avar yār?"
+        ipa: "avaɾ jaːr?"
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "யார்", ref: "ta-0041" }]
+      - target: "அவர் வருகிறார்."
+        reading: "avar varukiṟār."
+        ipa: "avaɾ vaɾukiɾaːr."
+        bases: [{ word: "அவர்", base: "அவர்", reading: "avar" }, { word: "வருகிறார்", base: "வா", reading: "vā" }]
+  - id: "ta-0061"
+    target: "அது"
+    reading: "atu"
+    ipa: "at̪u"
+    pos: "pronoun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அது என்ன?"
+        reading: "atu enna?"
+        ipa: "at̪u enːa?"
+        bases: [{ word: "அது", base: "அது", reading: "atu" }, { word: "என்ன", ref: "ta-0042" }]
+      - target: "அது நல்லது."
+        reading: "atu nallatu."
+        ipa: "at̪u nalːat̪u."
+        bases: [{ word: "அது", base: "அது", reading: "atu" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0062"
+    target: "இவர்"
+    reading: "ivar"
+    ipa: "ivaɾ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இவர் என் நண்பர்."
+        reading: "ivar eṉ naṇpar."
+        ipa: "ivaɾ en naɳpaɾ."
+        bases: [{ word: "இவர்", base: "இவர்", reading: "ivar" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "நண்பர்", base: "நண்பர்", reading: "naṇpar" }]
+      - target: "இவர் வீட்டில் இருக்கிறார்."
+        reading: "ivar vīṭṭil irukkiṟār."
+        ipa: "ivaɾ viːʈːil iɾukkiɾaːr."
+        bases: [{ word: "இவர்", base: "இவர்", reading: "ivar" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறார்", base: "இரு", reading: "iru" }]
+  - id: "ta-0063"
+    target: "நாம்"
+    reading: "nām"
+    ipa: "naːm"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாம் போகலாம்."
+        reading: "nām pōkalām."
+        ipa: "naːm poːkalaːm."
+        bases: [{ word: "நாம்", base: "நாம்", reading: "nām" }, { word: "போகலாம்", base: "போ", reading: "pō" }]
+      - target: "நாம் நண்பர்கள்."
+        reading: "nām naṇpargaḷ."
+        ipa: "naːm naɳpargaɭ."
+        bases: [{ word: "நாம்", base: "நாம்", reading: "nām" }, { word: "நண்பர்கள்", base: "நண்பர்", reading: "naṇpar" }]
+  - id: "ta-0064"
+    target: "நாங்கள்"
+    reading: "nāṅkaḷ"
+    ipa: "naːŋgaɭ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாங்கள் வருகிறோம்."
+        reading: "nāṅkaḷ varukiṟōm."
+        ipa: "naːŋgaɭ vaɾukiɾoːm."
+        bases: [{ word: "நாங்கள்", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "வருகிறோம்", base: "வா", reading: "vā" }]
+      - target: "நாங்கள் நண்பர்கள்."
+        reading: "nāṅkaḷ naṇpargaḷ."
+        ipa: "naːŋgaɭ naɳpargaɭ."
+        bases: [{ word: "நாங்கள்", base: "நாங்கள்", reading: "nāṅkaḷ" }, { word: "நண்பர்கள்", base: "நண்பர்", reading: "naṇpar" }]
+  - id: "ta-0065"
+    target: "அவர்கள்"
+    reading: "avargaḷ"
+    ipa: "avaɾgaɭ"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர்கள் வருகிறார்கள்."
+        reading: "avargaḷ varukiṟārgaḷ."
+        ipa: "avaɾgaɭ vaɾukiɾaːrgaɭ."
+        bases: [{ word: "அவர்கள்", base: "அவர்கள்", reading: "avargaḷ" }, { word: "வருகிறார்கள்", base: "வா", reading: "vā" }]
+      - target: "அவர்கள் வீட்டில் இருக்கிறார்கள்."
+        reading: "avargaḷ vīṭṭil irukkiṟārgaḷ."
+        ipa: "avaɾgaɭ viːʈːil iɾukkiɾaːrgaɭ."
+        bases: [{ word: "அவர்கள்", base: "அவர்கள்", reading: "avargaḷ" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறார்கள்", base: "இரு", reading: "iru" }]
+  - id: "ta-0066"
+    target: "இது"
+    reading: "itu"
+    ipa: "idu"
+    pos: "pronoun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என் வீடு."
+        reading: "itu eṉ vīṭu."
+        ipa: "idu en viːɖu."
+        bases: [{ word: "இது", base: "இது", reading: "itu" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "வீடு", ref: "ta-0009" }]
+      - target: "இது நல்லது இல்லையா?"
+        reading: "itu nallatu illaiyā?"
+        ipa: "idu nalːat̪u illaijaː?"
+        bases: [{ word: "இது", base: "இது", reading: "itu" }, { word: "நல்லது", ref: "ta-0006" }, { word: "இல்லையா", ref: "ta-0050" }]
+  - id: "ta-0067"
+    kind: "set"
+    members: [{ ref: "ta-0003" }, { ref: "ta-0004" }, { ref: "ta-0057" }, { ref: "ta-0058" }, { ref: "ta-0059" }, { ref: "ta-0060" }, { ref: "ta-0063" }, { ref: "ta-0064" }, { ref: "ta-0065" }]
