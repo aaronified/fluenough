@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-phone"
+"name": "Japanese reading: phone"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-phone-1"
+  "title": "A phone that will not charge"
+  "sentences":
+  - "text": "わたしのスマホはでんちがきれました。"
+    "reading": "watashi no sumaho wa denchi ga kiremashita."
+  - "text": "じゅうでんきがありません。"
+    "reading": "juudenki ga arimasen."
+  - "text": "ともだちにでんわをかけました。"
+    "reading": "tomodachi ni denwa o kakemashita."
+  - "text": "でんわはつながりませんでした。"
+    "reading": "denwa wa tsunagarimasendeshita."
+  "questions":
+  - "id": "ja-2355"
+    "prompt":
+      "en": "Which line says that the battery ran out?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2356"
+    "prompt":
+      "en": "The second line says that there is no charger."
+    "answer": !!bool true
+  - "id": "ja-2357"
+    "prompt":
+      "en": "Which line says that the call did not connect?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-phone-2"
+  "title": "A message for you"
+  "sentences":
+  - "text": "るすばんでんわにメッセージがあります。"
+    "reading": "rusubandenwa ni messeeji ga arimasu."
+  - "text": "ははからのでんごんです。"
+    "reading": "haha kara no dengon desu."
+  - "text": "ひるにでんわをかけてください。"
+    "reading": "hiru ni denwa o kakete kudasai."
+  - "text": "でんわばんごうはここにあります。"
+    "reading": "denwabangou wa koko ni arimasu."
+  "questions":
+  - "id": "ja-2358"
+    "prompt":
+      "en": "Which line says who left the message?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "2"
+  - "id": "ja-2359"
+    "prompt":
+      "en": "The third line asks the reader to call in the daytime."
+    "answer": !!bool true
+  - "id": "ja-2360"
+    "prompt":
+      "en": "Which line says where the phone number is?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
