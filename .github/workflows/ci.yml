@@ -78,6 +78,14 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
+      # The app bundles main's decks/themes.yaml; it is edited on main only
+      # (owner, 2026-11-06), so decks-live's copy must be identical.
+      - name: decks/themes.yaml matches main's
+        run: |
+          git fetch --no-tags --depth=1 origin +main:refs/sync/main
+          git show refs/sync/main:tools/check_themes_in_sync.py > "$RUNNER_TEMP/check_themes_in_sync.py"
+          git show refs/sync/main:decks/themes.yaml > "$RUNNER_TEMP/main-themes.yaml"
+          python3 "$RUNNER_TEMP/check_themes_in_sync.py" "$RUNNER_TEMP/main-themes.yaml" decks/themes.yaml
       # Runs on every PR because YAML fails quietly: a bare `no` becomes a
       # boolean and a reviewer will not spot it. See docs/DECK-FORMAT.md.
       # The index is regenerated on main after each merge (deck-index.yml),
