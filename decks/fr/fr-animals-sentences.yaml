@@ -1,0 +1,142 @@
+schema: 1
+id: "fr-animals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1287"
+    target: "Le lapin a peur du renard."
+    ipa: "lə lapɛ̃ a pœʁ dy ʁənaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "lapin", ref: "fr-1262" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "peur", base: "peur" }
+      - { word: "du", base: "du" }
+      - { word: "renard", ref: "fr-1271" }
+  - id: "fr-1288"
+    target: "Les poules et les coqs vivent à la ferme."
+    ipa: "le pul e le kɔk vivɑ̃ a la fɛʁm"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0043" }
+      - { word: "poules", ref: "fr-1259" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "coqs", ref: "fr-1260" }
+      - { word: "vivent", base: "vivre" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "ferme", ref: "fr-1285" }
+  - id: "fr-1289"
+    target: "Le cheval est plus grand que le chien."
+    ipa: "lə ʃəval ɛ plys ɡʁɑ̃ kə lə ʃjɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "cheval", ref: "fr-1255" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "plus", ref: "fr-0345" }
+      - { word: "grand", ref: "fr-0410" }
+      - { word: "que", base: "que" }
+      - { word: "chien", ref: "fr-1253" }
+  - id: "fr-1290"
+    target: "Les oiseaux chantent le matin."
+    ipa: "le zwazo ʃɑ̃t lə matɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0043" }
+      - { word: "oiseaux", ref: "fr-1254" }
+      - { word: "chantent", ref: "fr-0522" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "matin", ref: "fr-1033" }
+    confusables:
+      - { id: "coq", ref: "fr-1260", kind: "word" }
+      - { id: "chien", ref: "fr-1253", kind: "word" }
+  - id: "fr-1291"
+    target: "Mon chat mange du poisson."
+    ipa: "mɔ̃ ʃa mɑ̃ʒ dy pwasɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "chat", ref: "fr-1252" }
+      - { word: "mange", ref: "fr-0282" }
+      - { word: "du", base: "du" }
+      - { word: "poisson", ref: "fr-0783" }
+    confusables:
+      - { id: "chien", ref: "fr-1253", kind: "word" }
+      - { id: "lait", ref: "fr-0044", kind: "word" }
+  - id: "fr-1292"
+    target: "Le tigre et le lion vivent en Afrique."
+    ipa: "lə tiɡʁ e lə ljɔ̃ vivɑ̃ ɑ̃ afʁik"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "tigre", ref: "fr-1265" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "lion", ref: "fr-1264" }
+      - { word: "vivent", base: "vivre" }
+      - { word: "en", base: "en" }
+      - { word: "Afrique", base: "Afrique" }
+  - id: "fr-1293"
+    target: "La tortue est lente."
+    ipa: "la tɔʁty ɛ lɑ̃t"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "tortue", ref: "fr-1274" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "lente", ref: "fr-0448" }
+  - id: "fr-1294"
+    target: "L'abeille et le papillon volent dans un jardin."
+    ipa: "labɛj e lə papijɔ̃ vɔl dɑ̃ œ̃ ʒaʁdɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'abeille", ref: "fr-1278" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "papillon", ref: "fr-1279" }
+      - { word: "volent", base: "voler" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "jardin", ref: "fr-1000" }
+    confusables:
+      - { id: "fourmi", ref: "fr-1280", kind: "word" }
+      - { id: "oiseaux", ref: "fr-1254", kind: "word" }
+  - id: "fr-1295"
+    target: "Le loup et le renard sont des animaux sauvages."
+    ipa: "lə lu e lə ʁənaʁ sɔ̃ de animo sovaʒ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "loup", ref: "fr-1270" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "renard", ref: "fr-1271" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "animaux", ref: "fr-1284" }
+      - { word: "sauvages", base: "sauvage" }
+  - id: "fr-1296"
+    target: "Le serpent et l'ours sont dangereux."
+    ipa: "lə sɛʁpɑ̃ e luʁs sɔ̃ dɑ̃ʒʁø"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "serpent", ref: "fr-1272" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "l'ours", ref: "fr-1269" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "dangereux", base: "dangereux" }

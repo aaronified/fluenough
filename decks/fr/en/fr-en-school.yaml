@@ -1,0 +1,560 @@
+schema: 1
+id: "fr-en-school"
+kind: "layer"
+core: "fr-school"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "School"
+license: "CC-BY-SA-4.0"
+description: "Forty words for school: the pupils and their teachers, the lessons and subjects, the things a pupil carries, and the words for tests and homework. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1588":
+    native: "pupil"
+    notes:
+      "n1": "Élève is a pupil, masculine or feminine: un élève, une élève. The plural is élèves."
+    examples:
+      "Chaque élève a un cahier.":
+        native: "Each pupil has an exercise book."
+        bases:
+          "élève": "pupil"
+      "Les élèves sont dans la classe.":
+        native: "The pupils are in the classroom."
+        bases:
+          "élèves": "pupils"
+  "fr-1589":
+    native: "class, classroom"
+    notes:
+      "n1": "Classe is a class or a classroom, feminine. Être en classe is to be in class."
+    examples:
+      "La classe est grande.":
+        native: "The classroom is big."
+        bases:
+          "classe": "class, classroom"
+      "Il est dans ma classe.":
+        native: "He is in my class."
+        bases:
+          "classe": "class, classroom"
+  "fr-1590":
+    native: "lesson"
+    notes:
+      "n1": "Leçon is a lesson, feminine: une leçon de français is a French lesson."
+    examples:
+      "La leçon est difficile.":
+        native: "The lesson is difficult."
+        bases:
+          "leçon": "lesson"
+      "Ne rate pas la leçon.":
+        native: "Do not miss the lesson."
+        bases:
+          "Ne": "not"
+          "pas": "not"
+          "leçon": "lesson"
+  "fr-1591":
+    native: "mark, grade"
+    notes:
+      "n1": "Note is a mark or grade at school, feminine. It is also a musical note."
+    examples:
+      "Elle a une bonne note en maths.":
+        native: "She has a good mark in maths."
+        bases:
+          "note": "mark, grade"
+          "en": "in, as"
+      "Le professeur met une note.":
+        native: "The teacher gives a mark."
+        bases:
+          "note": "mark, grade"
+  "fr-1592":
+    native: "exam"
+    notes:
+      "n1": "Examen is an exam, masculine. Passer un examen is to sit an exam."
+    examples:
+      "Il y a un examen de maths.":
+        native: "There is a maths exam."
+        bases:
+          "y": "there"
+          "examen": "exam"
+          "de": "of, some"
+      "Elle réussit son examen.":
+        native: "She passes her exam."
+        bases:
+          "examen": "exam"
+  "fr-1593":
+    native: "question"
+    notes:
+      "n1": "Question is a question, feminine. Poser une question is to ask a question."
+    examples:
+      "Tu as une question ?":
+        native: "Do you have a question?"
+        bases:
+          "question": "question"
+      "Je pose une question au professeur.":
+        native: "I ask the teacher a question."
+        bases:
+          "question": "question"
+          "au": "at, in"
+  "fr-1594":
+    native: "answer"
+    notes:
+      "n1": "Réponse is an answer, feminine. Répondre is the verb: to answer."
+    examples:
+      "La réponse est juste.":
+        native: "The answer is right."
+        bases:
+          "réponse": "answer"
+          "juste": "right"
+      "Je n'ai pas la réponse.":
+        native: "I do not have the answer."
+        bases:
+          "pas": "not"
+          "réponse": "answer"
+  "fr-1595":
+    native: "exercise"
+    notes:
+      "n1": "Exercice is an exercise or a task, masculine. Faire un exercice is to do an exercise."
+    examples:
+      "Fais cet exercice.":
+        native: "Do this exercise."
+        bases:
+          "exercice": "exercise"
+      "Les exercices sont difficiles.":
+        native: "The exercises are difficult."
+        bases:
+          "exercices": "exercises"
+  "fr-1596":
+    native: "board"
+    notes:
+      "n1": "Tableau is a board or a chart, masculine. In a classroom it is the board at the front."
+    examples:
+      "Le professeur écrit au tableau.":
+        native: "The teacher writes on the board."
+        bases:
+          "au": "at, in"
+          "tableau": "board"
+      "Regarde le tableau.":
+        native: "Look at the board."
+        bases:
+          "tableau": "board"
+  "fr-1597":
+    native: "chalk"
+    notes:
+      "n1": "Craie is chalk, feminine: une craie is a stick of chalk."
+    examples:
+      "Le professeur prend une craie.":
+        native: "The teacher takes a piece of chalk."
+        bases:
+          "craie": "chalk"
+      "La craie est blanche.":
+        native: "The chalk is white."
+        bases:
+          "craie": "chalk"
+          "blanche": "white"
+  "fr-1598":
+    native: "school bag"
+    notes:
+      "n1": "Cartable is a school bag, masculine. It holds books and exercise books."
+    examples:
+      "Mon cartable est lourd.":
+        native: "My school bag is heavy."
+        bases:
+          "cartable": "school bag"
+      "Je mets mon livre dans le cartable.":
+        native: "I put my book in the school bag."
+        bases:
+          "cartable": "school bag"
+  "fr-1599":
+    native: "break time"
+    notes:
+      "n1": "Récréation is the break between lessons, feminine. Its short form is la récré."
+    examples:
+      "Pendant la récréation, on joue.":
+        native: "During break, we play."
+        bases:
+          "récréation": "break time"
+      "Les élèves parlent à la récréation.":
+        native: "The pupils talk at break time."
+        bases:
+          "à": "to, at"
+          "récréation": "break time"
+  "fr-1600":
+    native: "playground"
+    notes:
+      "n1": "Cour is a yard or playground, feminine. Cours, with an s, is a class: a different word."
+    examples:
+      "Les élèves jouent dans la cour.":
+        native: "The pupils play in the playground."
+        bases:
+          "cour": "playground"
+      "La cour est grande.":
+        native: "The playground is big."
+        bases:
+          "cour": "playground"
+  "fr-1601":
+    native: "canteen"
+    notes:
+      "n1": "Cantine is the school canteen, feminine, where pupils eat their lunch."
+    examples:
+      "On mange à la cantine.":
+        native: "We eat at the canteen."
+        bases:
+          "à": "to, at"
+          "cantine": "canteen"
+      "La cantine est pleine.":
+        native: "The canteen is full."
+        bases:
+          "cantine": "canteen"
+  "fr-1602":
+    native: "uniform"
+    notes:
+      "n1": "Uniforme is a uniform, masculine. Un uniforme scolaire is a school uniform."
+    examples:
+      "L'uniforme est bleu.":
+        native: "The uniform is blue."
+        bases:
+          "L'uniforme": "uniform"
+      "Il porte un uniforme.":
+        native: "He wears a uniform."
+        bases:
+          "uniforme": "uniform"
+  "fr-1603":
+    native: "start of the school year"
+    notes:
+      "n1": "La rentrée is the first day back at school after the holidays, feminine."
+    examples:
+      "La rentrée est en septembre.":
+        native: "The start of the school year is in September."
+        bases:
+          "rentrée": "start of the school year"
+          "en": "in, as"
+      "Après les vacances, c'est la rentrée.":
+        native: "After the holidays, it is the start of the school year."
+        bases:
+          "rentrée": "start of the school year"
+  "fr-1604":
+    native: "school subject"
+    notes:
+      "n1": "Matière is a subject taught at school, feminine. It also means matter or material."
+    examples:
+      "La géographie est une matière difficile.":
+        native: "Geography is a difficult subject."
+        bases:
+          "matière": "school subject"
+      "C'est ma matière.":
+        native: "It is my subject."
+        bases:
+          "matière": "school subject"
+  "fr-1605":
+    native: "mathematics"
+    notes:
+      "n1": "Mathématiques is mathematics, feminine and plural. In speech it is shortened to maths."
+    examples:
+      "J'aime les mathématiques.":
+        native: "I like maths."
+        bases:
+          "mathématiques": "mathematics"
+      "Les mathématiques sont difficiles.":
+        native: "Maths is difficult."
+        bases:
+          "mathématiques": "mathematics"
+  "fr-1606":
+    native: "history, story"
+    notes:
+      "n1": "Histoire is history, a school subject, or a story. It is feminine."
+    examples:
+      "Nous étudions l'histoire.":
+        native: "We study history."
+        bases:
+          "l'histoire": "history"
+      "Le professeur raconte une histoire.":
+        native: "The teacher tells a story."
+        bases:
+          "histoire": "history, story"
+  "fr-1607":
+    native: "geography"
+    notes:
+      "n1": "Géographie is geography, feminine: a school subject."
+    examples:
+      "La géographie est une matière.":
+        native: "Geography is a subject."
+        bases:
+          "géographie": "geography"
+      "Le cours de géographie commence après la récréation.":
+        native: "The geography lesson starts after break."
+        bases:
+          "de": "of, some"
+          "géographie": "geography"
+  "fr-1608":
+    native: "science"
+    notes:
+      "n1": "Sciences is science as a school subject. It is feminine and plural: les sciences."
+    examples:
+      "J'aime les sciences.":
+        native: "I like science."
+        bases:
+          "sciences": "science"
+      "Les sciences sont intéressantes.":
+        native: "Science is interesting."
+        bases:
+          "sciences": "science"
+          "intéressantes": "interesting"
+  "fr-1609":
+    native: "drawing"
+    notes:
+      "n1": "Dessin is drawing, masculine. The art lesson is le dessin."
+    examples:
+      "Je fais un dessin.":
+        native: "I am making a drawing."
+        bases:
+          "dessin": "drawing"
+      "Le dessin est facile.":
+        native: "Drawing is easy."
+        bases:
+          "dessin": "drawing"
+  "fr-1610":
+    native: "class, lesson"
+    notes:
+      "n1": "Cours is a class or a lesson, masculine. Cour, without the s, is a playground."
+    examples:
+      "Le cours commence maintenant.":
+        native: "The class starts now."
+        bases:
+          "cours": "class, lesson"
+      "J'ai un cours de sciences.":
+        native: "I have a science class."
+        bases:
+          "cours": "class, lesson"
+          "de": "of, some"
+  "fr-1611":
+    native: "to miss, to fail"
+    notes:
+      "n1": "Rater is to miss something, or to fail a test, in everyday speech."
+    examples:
+      "Il a raté l'examen.":
+        native: "He failed the exam."
+        bases:
+          "raté": "failed"
+      "Ne rate pas la leçon.":
+        native: "Do not miss the lesson."
+        bases:
+          "Ne": "not"
+          "rate": "miss"
+          "pas": "not"
+  "fr-1612":
+    native: "to copy"
+    notes:
+      "n1": "Copier is to copy, by hand or on a machine."
+    examples:
+      "Ne copie pas la réponse.":
+        native: "Do not copy the answer."
+        bases:
+          "Ne": "not"
+          "copie": "copy"
+          "pas": "not"
+      "Je copie la leçon dans le cahier.":
+        native: "I copy the lesson into the exercise book."
+        bases:
+          "copie": "copy"
+  "fr-1613":
+    native: "to ask, to put down"
+    notes:
+      "n1": "Poser une question is to ask a question. Poser is also to put something down."
+    examples:
+      "Je pose une question.":
+        native: "I ask a question."
+        bases:
+          "pose": "ask"
+      "Pose ta question au professeur.":
+        native: "Ask your question to the teacher."
+        bases:
+          "Pose": "ask"
+          "au": "at, in"
+  "fr-1614":
+    native: "to correct, to mark"
+    notes:
+      "n1": "Corriger is to correct mistakes, or to mark homework."
+    examples:
+      "Le professeur corrige les devoirs.":
+        native: "The teacher marks the homework."
+        bases:
+          "corrige": "correct, mark"
+      "Corrige cette phrase.":
+        native: "Correct this sentence."
+        bases:
+          "Corrige": "correct, mark"
+  "fr-1615":
+    native: "to revise"
+    notes:
+      "n1": "Réviser is to revise, to go over lessons before a test."
+    examples:
+      "Je révise pour l'examen.":
+        native: "I revise for the exam."
+        bases:
+          "révise": "revise"
+      "Nous révisons la leçon ce soir.":
+        native: "We revise the lesson tonight."
+        bases:
+          "révisons": "revise"
+  "fr-1616":
+    native: "to hand back, to hand in"
+    notes:
+      "n1": "Rendre is to give back. Rendre un devoir is to hand in homework."
+    examples:
+      "Rends le cahier au professeur.":
+        native: "Give the exercise book back to the teacher."
+        bases:
+          "Rends": "give back"
+          "au": "at, in"
+      "Les élèves rendent les devoirs.":
+        native: "The pupils hand in the homework."
+        bases:
+          "rendent": "hand in"
+  "fr-1617":
+    native: "punishment"
+    notes:
+      "n1": "Punition is a punishment, feminine."
+    examples:
+      "La punition est très longue.":
+        native: "The punishment is very long."
+        bases:
+          "punition": "punishment"
+      "Il a une punition après la classe.":
+        native: "He has a punishment after class."
+        bases:
+          "punition": "punishment"
+  "fr-1618":
+    native: "homework"
+    notes:
+      "n1": "Devoirs is homework, masculine and plural: faire ses devoirs is to do one's homework."
+    examples:
+      "Je fais mes devoirs après l'école.":
+        native: "I do my homework after school."
+        bases:
+          "devoirs": "homework"
+      "Les devoirs sont longs.":
+        native: "The homework is long."
+        bases:
+          "devoirs": "homework"
+  "fr-1619":
+    native: "page"
+    notes:
+      "n1": "Page is a page, feminine: la page dix is page ten."
+    examples:
+      "Ouvre le livre à la page dix.":
+        native: "Open the book at page ten."
+        bases:
+          "à": "to, at"
+          "page": "page"
+      "La page est blanche.":
+        native: "The page is blank."
+        bases:
+          "page": "page"
+          "blanche": "white"
+  "fr-1620":
+    native: "word"
+    notes:
+      "n1": "Mot is a word, masculine. The plural is mots."
+    examples:
+      "Je ne connais pas ce mot.":
+        native: "I do not know this word."
+        bases:
+          "ne": "not"
+          "pas": "not"
+          "mot": "word"
+      "Écris le mot dans le cahier.":
+        native: "Write the word in the exercise book."
+        bases:
+          "mot": "word"
+  "fr-1621":
+    native: "sentence"
+    notes:
+      "n1": "Phrase is a sentence, feminine. It also means a phrase."
+    examples:
+      "Lis cette phrase.":
+        native: "Read this sentence."
+        bases:
+          "phrase": "sentence"
+      "Cette phrase est longue.":
+        native: "This sentence is long."
+        bases:
+          "phrase": "sentence"
+  "fr-1622":
+    native: "dictionary"
+    notes:
+      "n1": "Dictionnaire is a dictionary, masculine."
+    examples:
+      "Cherche le mot dans le dictionnaire.":
+        native: "Look up the word in the dictionary."
+        bases:
+          "dictionnaire": "dictionary"
+      "Le dictionnaire est sur la table.":
+        native: "The dictionary is on the table."
+        bases:
+          "dictionnaire": "dictionary"
+  "fr-1623":
+    native: "middle school"
+    notes:
+      "n1": "Collège is a middle school, masculine, for pupils of about eleven to fifteen."
+    examples:
+      "Mon frère est au collège.":
+        native: "My brother is at middle school."
+        bases:
+          "au": "at, in"
+          "collège": "middle school"
+      "Le collège commence en septembre.":
+        native: "Middle school starts in September."
+        bases:
+          "collège": "middle school"
+          "en": "in, as"
+  "fr-1624":
+    native: "high school"
+    notes:
+      "n1": "Lycée is a high school, masculine, for pupils of about fifteen to eighteen."
+    examples:
+      "Ma sœur est au lycée.":
+        native: "My sister is at high school."
+        bases:
+          "au": "at, in"
+          "lycée": "high school"
+      "Après le collège, on va au lycée.":
+        native: "After middle school, you go to high school."
+        bases:
+          "au": "at, in"
+          "lycée": "high school"
+  "fr-1625":
+    native: "supervisor"
+    notes:
+      "n1": "Surveillant is a supervisor who watches pupils, masculine. The feminine is surveillante."
+    examples:
+      "Le surveillant ferme la porte.":
+        native: "The supervisor shuts the door."
+        bases:
+          "surveillant": "supervisor"
+      "Le surveillant regarde la cour.":
+        native: "The supervisor watches the playground."
+        bases:
+          "surveillant": "supervisor"
+  "fr-1626":
+    native: "calculator"
+    notes:
+      "n1": "Calculatrice is a calculator, feminine."
+    examples:
+      "Tu as une calculatrice ?":
+        native: "Do you have a calculator?"
+        bases:
+          "calculatrice": "calculator"
+      "La calculatrice est dans le sac.":
+        native: "The calculator is in the bag."
+        bases:
+          "calculatrice": "calculator"
+  "fr-1627":
+    native: "felt-tip pen"
+    notes:
+      "n1": "Feutre is a felt-tip pen, masculine."
+    examples:
+      "J'ai un feutre rouge.":
+        native: "I have a red felt-tip pen."
+        bases:
+          "feutre": "felt-tip pen"
+      "Prends le feutre et écris ton nom.":
+        native: "Take the felt-tip pen and write your name."
+        bases:
+          "feutre": "felt-tip pen"

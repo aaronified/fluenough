@@ -1,0 +1,50 @@
+schema: 1
+id: "fr-en-law-sentences"
+kind: "layer"
+core: "fr-law-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: law"
+license: "CC-BY-SA-4.0"
+description: "Sentences about law, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2563":
+    native: "The judge sentences the defendant to a prison term."
+    bases:
+      "à": "to, at"
+      "de": "of, from, some"
+    confusables:
+      "acquitter": { why: "To acquit is the opposite of sentencing, and the sentence sentences." }
+      "amende": { why: "A fine is a different penalty; the sentence says prison." }
+  "fr-2564":
+    native: "The lawyer presents evidence to the court."
+    bases:
+      "présente": "presents"
+      "au": "at, to the"
+    confusables:
+      "dossier": { why: "A file holds evidence; the sentence names the proof itself." }
+      "temoin": { why: "A witness gives testimony; the sentence names the evidence." }
+  "fr-2565":
+    native: "The victim files a complaint against the neighbour."
+    confusables:
+      "crime": { why: "A crime is the offence; the sentence is about the complaint." }
+      "delit": { why: "An offence is named generally; the sentence names the victim." }
+  "fr-2566":
+    native: "This contract contains an illegal clause."
+    bases:
+      "contient": "contains"
+    confusables:
+      "legal": { why: "Legal is the opposite; the sentence names an illegal clause." }
+      "signature": { why: "A signature is the act; the sentence is about the clause." }
+  "fr-2567":
+    native: "The court’s ruling is unfair."
+    bases:
+      "du": "some, of the"
+    confusables:
+      "juste": { why: "Fair is the opposite of unfair; the sentence is about the ruling." }
+      "appel": { why: "An appeal is a request; the sentence says the ruling is unfair." }
+  "fr-2568":
+    native: "The investigator questions the victim and the witness."
+    confusables:
+      "juge": { why: "A judge hears the case; the sentence names the investigator." }
+      "accuse": { why: "The accused is not named; the sentence names two people." }

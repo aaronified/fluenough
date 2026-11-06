@@ -1,0 +1,557 @@
+schema: 1
+id: "fr-en-daily-life"
+kind: "layer"
+core: "fr-daily-life"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Daily life"
+license: "CC-BY-SA-4.0"
+description: "Forty words for an ordinary day: journée, matinée, soirée, habitude, sommeil, sieste, repos, petit-déjeuner, bruit, rendez-vous, réveiller, rentrer, sortir, durer, pressé, tranquille, puis, tout de suite and the rest. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1098":
+    native: "day"
+    notes:
+      "n1": "Journée is 'day' as the whole span from morning to night. Jour is the day of the calendar, and the word for a day in a week."
+    examples:
+      "Quelle longue journée !":
+        native: "What a long day!"
+        bases:
+          "journée": "day"
+      "La journée est courte.":
+        native: "The day is short."
+        bases:
+          "journée": "day"
+  "fr-1099":
+    native: "morning"
+    notes:
+      "n1": "Matinée is 'morning' as a stretch of time: toute la matinée is 'all morning'. Matin is the morning itself."
+    examples:
+      "Toute la matinée, je travaille.":
+        native: "I work all morning."
+        bases:
+          "matinée": "morning"
+      "La matinée est calme.":
+        native: "The morning is quiet."
+        bases:
+          "matinée": "morning"
+  "fr-1100":
+    native: "evening, party"
+    notes:
+      "n1": "Soirée is a whole evening, or a party held in the evening. Soir is the evening itself."
+    examples:
+      "Une soirée avec des amis.":
+        native: "An evening with friends."
+        bases:
+          "soirée": "evening"
+      "La soirée est longue.":
+        native: "The evening is long."
+        bases:
+          "soirée": "evening"
+  "fr-1101":
+    native: "habit"
+    notes:
+      "n1": "Habitude is 'habit'. Avoir l'habitude de is 'to be used to' doing something, and takes de before a verb."
+    examples:
+      "C'est une bonne habitude.":
+        native: "It is a good habit."
+        bases:
+          "habitude": "habit"
+      "J'ai l'habitude de dormir tôt.":
+        native: "I am used to sleeping early."
+        bases:
+          "l'habitude": "habit"
+          "de": "to (before a verb)"
+  "fr-1102":
+    native: "routine"
+    notes:
+      "n1": "Routine is 'routine', a feminine noun, the same in English."
+    examples:
+      "Ma routine est calme.":
+        native: "My routine is calm."
+        bases:
+          "routine": "routine"
+      "C'est la routine.":
+        native: "It is the routine."
+        bases:
+          "routine": "routine"
+  "fr-1103":
+    native: "sleep"
+    notes:
+      "n1": "Sommeil is 'sleep', a masculine noun. Avoir sommeil is 'to be sleepy'."
+    examples:
+      "J'ai besoin de sommeil.":
+        native: "I need sleep."
+        bases:
+          "de": "of"
+          "sommeil": "sleep"
+      "Le sommeil est important.":
+        native: "Sleep is important."
+        bases:
+          "sommeil": "sleep"
+  "fr-1104":
+    native: "nap"
+    notes:
+      "n1": "Sieste is 'nap', a short sleep in the day. Faire la sieste is 'to take a nap'."
+    examples:
+      "Je fais une sieste.":
+        native: "I take a nap."
+        bases:
+          "sieste": "nap"
+      "La sieste est courte.":
+        native: "The nap is short."
+        bases:
+          "sieste": "nap"
+  "fr-1105":
+    native: "rest"
+    notes:
+      "n1": "Repos is 'rest', a masculine noun. Repos is also 'a day of rest', as in un jour de repos."
+    examples:
+      "Vous avez besoin de repos.":
+        native: "You need rest."
+        bases:
+          "de": "of"
+          "repos": "rest"
+      "C'est un jour de repos.":
+        native: "It is a day of rest."
+        bases:
+          "de": "of"
+          "repos": "rest"
+  "fr-1106":
+    native: "tiredness"
+    notes:
+      "n1": "Fatigue is 'tiredness', a feminine noun. The adjective fatigué (tired) is taught with describing."
+    examples:
+      "La fatigue est grande.":
+        native: "The tiredness is great."
+        bases:
+          "fatigue": "tiredness"
+      "Quelle fatigue !":
+        native: "What tiredness!"
+        bases:
+          "fatigue": "tiredness"
+  "fr-1107":
+    native: "bath"
+    notes:
+      "n1": "Bain is 'bath', a masculine noun. Prendre un bain is 'to have a bath'. Douche (shower) is taught with home."
+    examples:
+      "Je prends un bain.":
+        native: "I have a bath."
+        bases:
+          "bain": "bath"
+      "Le bain est chaud.":
+        native: "The bath is hot."
+        bases:
+          "bain": "bath"
+  "fr-1108":
+    native: "breakfast"
+    notes:
+      "n1": "Petit-déjeuner is 'breakfast', a masculine noun. It is written with hyphens."
+    examples:
+      "Le petit-déjeuner est prêt.":
+        native: "Breakfast is ready."
+      "Je prends le petit-déjeuner à sept heures.":
+        native: "I have breakfast at seven o'clock."
+        bases:
+          "à": "at"
+  "fr-1109":
+    native: "dream"
+    notes:
+      "n1": "Rêve is 'dream', a masculine noun. Faire un rêve is 'to have a dream' (the verb faire is used)."
+    examples:
+      "J'ai fait un beau rêve.":
+        native: "I had a beautiful dream."
+        bases:
+          "rêve": "dream"
+      "Le rêve est court.":
+        native: "The dream is short."
+        bases:
+          "rêve": "dream"
+  "fr-1110":
+    native: "end"
+    notes:
+      "n1": "Fin is 'end', a feminine noun. À la fin is 'in the end' or 'at the end'."
+    examples:
+      "C'est la fin de la journée.":
+        native: "It is the end of the day."
+        bases:
+          "fin": "end"
+          "de": "of"
+      "À la fin, je dors.":
+        native: "In the end, I sleep."
+        bases:
+          "À": "at"
+          "fin": "end"
+  "fr-1111":
+    native: "noise"
+    notes:
+      "n1": "Bruit is 'noise', a masculine noun. Il y a is 'there is' or 'there are'."
+    examples:
+      "Le bruit est fort.":
+        native: "The noise is loud."
+        bases:
+          "bruit": "noise"
+      "Il y a un bruit dehors.":
+        native: "There is a noise outside."
+        bases:
+          "y": "there"
+          "bruit": "noise"
+  "fr-1112":
+    native: "silence"
+    notes:
+      "n1": "Silence is 'silence', a masculine noun, the same word in English."
+    examples:
+      "Le silence est important.":
+        native: "Silence is important."
+        bases:
+          "silence": "silence"
+      "J'aime le silence.":
+        native: "I like silence."
+        bases:
+          "silence": "silence"
+  "fr-1113":
+    native: "light"
+    notes:
+      "n1": "Lumière is 'light', a feminine noun. Il y a de la lumière is 'there is some light'."
+    examples:
+      "La lumière est forte.":
+        native: "The light is strong."
+        bases:
+          "lumière": "light"
+      "Il y a de la lumière.":
+        native: "There is some light."
+        bases:
+          "y": "there"
+          "de": "some"
+          "lumière": "light"
+  "fr-1114":
+    native: "appointment"
+    notes:
+      "n1": "Rendez-vous is 'appointment' or 'meeting', a masculine noun. Avoir rendez-vous is 'to have an appointment'."
+    bases:
+      "rendez": "part of rendez-vous"
+    examples:
+      "J'ai un rendez-vous à dix heures.":
+        native: "I have an appointment at ten o'clock."
+        bases:
+          "rendez": "part of rendez-vous"
+          "à": "at"
+      "Le rendez-vous est demain.":
+        native: "The appointment is tomorrow."
+        bases:
+          "rendez": "part of rendez-vous"
+  "fr-1115":
+    native: "corridor"
+    notes:
+      "n1": "Couloir is 'corridor' or 'hallway', a masculine noun."
+    examples:
+      "Le couloir est long.":
+        native: "The corridor is long."
+        bases:
+          "couloir": "corridor"
+      "Je marche dans le couloir.":
+        native: "I walk down the corridor."
+        bases:
+          "couloir": "corridor"
+  "fr-1116":
+    native: "brush"
+    notes:
+      "n1": "Brosse is 'brush', a feminine noun. Une brosse à dents is 'a toothbrush', and the à is part of the set phrase."
+    examples:
+      "Une brosse à dents.":
+        native: "A toothbrush."
+        bases:
+          "brosse": "brush"
+          "à": "for"
+      "Ma brosse est sale.":
+        native: "My brush is dirty."
+        bases:
+          "brosse": "brush"
+  "fr-1117":
+    native: "soap"
+    notes:
+      "n1": "Savon is 'soap', a masculine noun."
+    examples:
+      "Le savon est là.":
+        native: "The soap is there."
+        bases:
+          "savon": "soap"
+      "J'ai besoin de savon.":
+        native: "I need soap."
+        bases:
+          "de": "of"
+          "savon": "soap"
+  "fr-1118":
+    native: "towel"
+    notes:
+      "n1": "Serviette is 'towel' or 'napkin', a feminine noun. Serviette is also a napkin at the table."
+    examples:
+      "Une serviette propre.":
+        native: "A clean towel."
+        bases:
+          "serviette": "towel"
+      "Où est la serviette ?":
+        native: "Where is the towel?"
+        bases:
+          "serviette": "towel"
+  "fr-1119":
+    native: "holiday"
+    notes:
+      "n1": "Vacances is 'holiday' or 'holidays', a feminine noun used only in the plural. Être en vacances is 'to be on holiday'."
+    examples:
+      "Je suis en vacances.":
+        native: "I am on holiday."
+        bases:
+          "en": "on"
+          "vacances": "holiday"
+      "Les vacances sont courtes.":
+        native: "The holidays are short."
+        bases:
+          "vacances": "holiday"
+  "fr-1120":
+    native: "watch"
+    notes:
+      "n1": "Montre is 'watch', a feminine noun. En retard, for a watch, is 'slow', and for a person 'late'."
+    examples:
+      "Ma montre est en retard.":
+        native: "My watch is slow."
+        bases:
+          "montre": "watch"
+          "en": "in (en retard means slow or late)"
+      "Regarde ta montre.":
+        native: "Look at your watch."
+        bases:
+          "montre": "watch"
+  "fr-1121":
+    native: "clock"
+    notes:
+      "n1": "Pendule is 'clock', a feminine noun, a clock on a wall or a shelf. Montre is a watch worn on the wrist."
+    examples:
+      "La pendule sonne à huit heures.":
+        native: "The clock strikes eight."
+        bases:
+          "pendule": "clock"
+          "à": "at"
+      "Une pendule est sur le mur.":
+        native: "A clock is on the wall."
+        bases:
+          "pendule": "clock"
+  "fr-1122":
+    native: "earliness"
+    notes:
+      "n1": "Avance is 'advance' or 'earliness', a feminine noun. En avance is 'early' (the opposite of en retard)."
+    examples:
+      "Je suis en avance.":
+        native: "I am early."
+        bases:
+          "en": "in"
+          "avance": "advance (en avance means early)"
+      "Le train est en avance.":
+        native: "The train is early."
+        bases:
+          "en": "in"
+          "avance": "advance (en avance means early)"
+  "fr-1123":
+    native: "to wake (someone up)"
+    notes:
+      "n1": "Réveiller is 'to wake someone up', a regular verb in -er. To wake oneself up is a reflexive verb, taught later."
+    examples:
+      "Le bruit réveille le bébé.":
+        native: "The noise wakes the baby."
+        bases:
+          "réveille": "wakes (someone up)"
+      "Je réveille ma sœur à sept heures.":
+        native: "I wake my sister at seven o'clock."
+        bases:
+          "réveille": "wake (someone up)"
+          "à": "at"
+  "fr-1124":
+    native: "to go home"
+    notes:
+      "n1": "Rentrer is 'to go home' or 'to come back', a regular verb in -er. It is used with à and a place."
+    examples:
+      "Je rentre à la maison.":
+        native: "I go home."
+        bases:
+          "rentre": "go home"
+          "à": "to"
+      "Nous rentrons le soir.":
+        native: "We go home in the evening."
+        bases:
+          "rentrons": "go home"
+  "fr-1125":
+    native: "to go out"
+    notes:
+      "n1": "Sortir is 'to go out' or 'to leave'. It is an irregular verb: je sors, tu sors, il sort."
+    examples:
+      "Je sors ce soir.":
+        native: "I am going out tonight."
+        bases:
+          "sors": "go out"
+      "Tu sors souvent ?":
+        native: "Do you go out often?"
+        bases:
+          "sors": "go out"
+  "fr-1126":
+    native: "to disturb"
+    notes:
+      "n1": "Déranger is 'to disturb' or 'to bother' someone, a regular verb in -er."
+    examples:
+      "Je dérange le voisin.":
+        native: "I disturb the neighbour."
+        bases:
+          "dérange": "disturb"
+      "Vous dérangez ma sœur ?":
+        native: "Are you disturbing my sister?"
+        bases:
+          "dérangez": "disturb"
+  "fr-1127":
+    native: "to ring"
+    notes:
+      "n1": "Sonner is 'to ring', as a bell or an alarm. It is a regular verb in -er."
+    examples:
+      "Le réveil sonne tôt.":
+        native: "The alarm rings early."
+        bases:
+          "sonne": "rings"
+      "Le matin, le réveil sonne.":
+        native: "In the morning, the alarm rings."
+        bases:
+          "sonne": "rings"
+  "fr-1128":
+    native: "to repair"
+    notes:
+      "n1": "Réparer is 'to repair' or 'to fix', a regular verb in -er."
+    examples:
+      "Je répare la porte.":
+        native: "I repair the door."
+        bases:
+          "répare": "repair"
+      "Nous réparons la fenêtre.":
+        native: "We repair the window."
+        bases:
+          "réparons": "repair"
+  "fr-1129":
+    native: "to take (someone) along"
+    notes:
+      "n1": "Emmener is 'to take someone along' or 'to take someone somewhere', a regular verb in -er. The verb for things is emporter."
+    examples:
+      "J'emmène mon fils à l'école.":
+        native: "I take my son to school."
+        bases:
+          "J'emmène": "take (someone) along"
+          "à": "to"
+      "Il emmène la voiture au garage.":
+        native: "He takes the car to the garage."
+        bases:
+          "emmène": "take"
+          "au": "to the"
+  "fr-1130":
+    native: "to bring (someone)"
+    notes:
+      "n1": "Amener is 'to bring someone' along to a place, a regular verb in -er. It is the opposite of emmener."
+    examples:
+      "J'amène mon ami.":
+        native: "I bring my friend."
+        bases:
+          "J'amène": "bring"
+      "Tu amènes ta sœur au parc.":
+        native: "You bring your sister to the park."
+        bases:
+          "amènes": "bring"
+          "au": "to the"
+  "fr-1131":
+    native: "to last"
+    notes:
+      "n1": "Durer is 'to last', a regular verb in -er. It is used with a length of time."
+    examples:
+      "La réunion dure une heure.":
+        native: "The meeting lasts an hour."
+        bases:
+          "dure": "lasts"
+      "Le repas dure une heure.":
+        native: "The meal lasts an hour."
+        bases:
+          "dure": "lasts"
+  "fr-1132":
+    native: "daily"
+    notes:
+      "n1": "Quotidien is 'daily', an adjective: quotidienne in the feminine. It agrees with the noun it describes."
+    examples:
+      "C'est le travail quotidien.":
+        native: "It is the daily work."
+        bases:
+          "quotidien": "daily"
+      "Le sport quotidien est bon.":
+        native: "Daily exercise is good."
+        bases:
+          "quotidien": "daily"
+  "fr-1133":
+    native: "in a hurry"
+    notes:
+      "n1": "Pressé is 'in a hurry' or 'in a rush', an adjective. Être pressé is 'to be in a hurry'."
+    examples:
+      "Je suis pressé.":
+        native: "I am in a hurry."
+        bases:
+          "pressé": "in a hurry"
+      "Il est pressé ce matin.":
+        native: "He is in a hurry this morning."
+        bases:
+          "pressé": "in a hurry"
+  "fr-1134":
+    native: "quiet"
+    notes:
+      "n1": "Tranquille is 'quiet' or 'calm', an adjective, the same in the masculine and the feminine."
+    examples:
+      "La maison est tranquille.":
+        native: "The house is quiet."
+        bases:
+          "tranquille": "quiet"
+      "Le matin, la rue est tranquille.":
+        native: "In the morning, the street is quiet."
+        bases:
+          "tranquille": "quiet"
+  "fr-1135":
+    native: "then"
+    notes:
+      "n1": "Puis is 'then' or 'next', an adverb that joins two actions in order. It is different from the verb pouvoir."
+    examples:
+      "Je mange, puis je dors.":
+        native: "I eat, then I sleep."
+        bases:
+          "puis": "then"
+      "Je prends le café, puis le pain.":
+        native: "I have coffee, then bread."
+        bases:
+          "puis": "then"
+  "fr-1136":
+    native: "first"
+    notes:
+      "n1": "D'abord is 'first' or 'at first', an adverb. It is written with an apostrophe and no space."
+    examples:
+      "D'abord, je mange.":
+        native: "First, I eat."
+        bases:
+          "D'abord": "first"
+      "Lisez d'abord la carte.":
+        native: "Read the menu first."
+        bases:
+          "d'abord": "first"
+  "fr-1137":
+    native: "straight away"
+    notes:
+      "n1": "Tout de suite is 'straight away' or 'right now', an adverb of three words that act as one."
+    bases:
+      "de": "part of tout de suite"
+      "suite": "part of tout de suite"
+    examples:
+      "J'arrive tout de suite.":
+        native: "I am coming straight away."
+        bases:
+          "de": "part of tout de suite"
+          "suite": "part of tout de suite"
+      "Je rentre tout de suite.":
+        native: "I go home straight away."
+        bases:
+          "de": "part of tout de suite"
+          "suite": "part of tout de suite"

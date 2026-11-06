@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-weather"
+name: "Reading: weather"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the weather: a message to a friend about the day, and a radio forecast with rain, wind and cold. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-weather-message"
+    title: "A message to a friend about the weather"
+    theme: "weather"
+    sentences:
+      - text: "Salut, il fait beau aujourd'hui."
+      - text: "Le soleil brille le matin."
+      - text: "L'après-midi, il va pleuvoir."
+      - text: "Prends ton parapluie !"
+    questions:
+      - id: "fr-1353"
+        prompt: { en: "What is the weather like in the morning?" }
+        options:
+          - { en: "Rainy" }
+          - { en: "Sunny" }
+          - { en: "Snowy" }
+        answer: 2
+      - id: "fr-1354"
+        prompt: { en: "When will it rain?" }
+        options:
+          - { en: "In the morning" }
+          - { en: "In the afternoon" }
+          - { en: "At night" }
+        answer: 2
+      - id: "fr-1355"
+        prompt: { en: "What should the friend take?" }
+        options:
+          - { en: "An umbrella" }
+          - { en: "A hat" }
+          - { en: "Sunglasses" }
+        answer: 1
+  - id: "fr-a-radio-forecast"
+    title: "A radio forecast"
+    theme: "weather"
+    sentences:
+      - text: "Demain, le temps est nuageux."
+      - text: "Il y a de la pluie au nord."
+      - text: "Le vent souffle fort à l'ouest."
+      - text: "Il fait sept degrés."
+    questions:
+      - id: "fr-1356"
+        prompt: { en: "What is the weather like tomorrow?" }
+        options:
+          - { en: "Cloudy" }
+          - { en: "Foggy" }
+          - { en: "Icy" }
+        answer: 1
+      - id: "fr-1357"
+        prompt: { en: "Where is the rain?" }
+        options:
+          - { en: "In the north" }
+          - { en: "In the south" }
+          - { en: "In the east" }
+        answer: 1
+      - id: "fr-1358"
+        prompt: { en: "How cold is it?" }
+        options:
+          - { en: "Seven degrees" }
+          - { en: "Seventeen degrees" }
+          - { en: "Seventy degrees" }
+        answer: 1

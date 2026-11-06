@@ -1,0 +1,331 @@
+schema: 1
+id: "fr-environment"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "environment"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2162"
+    target: "environnement"
+    ipa: "ɑ̃vironmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il faut protéger l'environnement.", ipa: "il fo pʁɔtɛʒe lɑ̃vironmɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "protéger", ref: "fr-2178" }, { word: "l'environnement", base: "environnement" }] }
+      - { target: "Cet environnement est très calme.", ipa: "sɛt ɑ̃vironmɑ̃ ɛ tʁɛ kalm", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "environnement", base: "environnement" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-2163"
+    target: "pollution"
+    ipa: "pɔlysjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La pollution de l'air est forte.", ipa: "la pɔlysjɔ̃ də lɛʁ ɛ fɔʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "pollution", base: "pollution" }, { word: "de", base: "de" }, { word: "l'air", ref: "fr-2183" }, { word: "est", ref: "fr-0021" }, { word: "forte", ref: "fr-0425" }] }
+      - { target: "Cette usine crée beaucoup de pollution.", ipa: "sɛt yzin kʁe boku də pɔlysjɔ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "usine", ref: "fr-0669" }, { word: "crée", base: "créer" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "pollution", base: "pollution" }] }
+  - id: "fr-2164"
+    target: "climat"
+    ipa: "klima"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le climat change vite.", ipa: "lə klima ʃɑ̃ʒ vit", bases: [{ word: "Le", ref: "fr-0543" }, { word: "climat", base: "climat" }, { word: "change", ref: "fr-0526" }, { word: "vite", ref: "fr-0338" }] }
+      - { target: "Ce pays a un climat doux.", ipa: "sə pei a œ̃ klima du", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pays", ref: "fr-0243" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "climat", base: "climat" }, { word: "doux", ref: "fr-1337" }] }
+  - id: "fr-2165"
+    target: "écologie"
+    ipa: "ekɔlɔʒi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle s'intéresse à l'écologie.", ipa: "ɛl sɛ̃teʁɛs a lekɔlɔʒi", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "s'intéresse", base: "intéresser" }, { word: "à", base: "à" }, { word: "l'écologie", base: "écologie" }] }
+      - { target: "L'écologie est importante pour tous.", ipa: "lekɔlɔʒi ɛ ɛ̃pɔʁtɑ̃t puʁ tus", bases: [{ word: "L'écologie", base: "écologie" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }, { word: "pour", ref: "fr-0591" }, { word: "tous", ref: "fr-0372" }] }
+  - id: "fr-2166"
+    target: "recyclage"
+    ipa: "ʁəsiklaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le recyclage du verre est facile.", ipa: "lə ʁəsiklaʒ dy vɛʁ ɛ fasil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "recyclage", base: "recyclage" }, { word: "du", base: "de" }, { word: "verre", ref: "fr-0385" }, { word: "est", ref: "fr-0021" }, { word: "facile", ref: "fr-0417" }] }
+      - { target: "Faites du recyclage chaque semaine.", ipa: "fɛt dy ʁəsiklaʒ ʃak səmɛn", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "du", base: "de" }, { word: "recyclage", base: "recyclage" }, { word: "chaque", ref: "fr-0375" }, { word: "semaine", ref: "fr-0668" }] }
+  - id: "fr-2167"
+    target: "déchet"
+    ipa: "deʃɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce déchet va dans la poubelle jaune.", ipa: "sə deʃɛ va dɑ̃ la pubɛl ʒon", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "déchet", base: "déchet" }, { word: "va", ref: "fr-0286" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "poubelle", ref: "fr-1401" }, { word: "jaune", base: "jaune" }] }
+      - { target: "Trop de déchets finissent dans la mer.", ipa: "tʁo də deʃɛ finis dɑ̃ la mɛʁ", bases: [{ word: "Trop", ref: "fr-0344" }, { word: "de", base: "de" }, { word: "déchets", base: "déchet" }, { word: "finissent", ref: "fr-0506" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "mer", ref: "fr-1939" }] }
+  - id: "fr-2168"
+    target: "plastique"
+    ipa: "plastik"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bouteille est en plastique.", ipa: "la butɛj ɛ ɑ̃ plastik", bases: [{ word: "La", ref: "fr-0544" }, { word: "bouteille", ref: "fr-0786" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "plastique", base: "plastique" }] }
+      - { target: "Il faut réduire le plastique.", ipa: "il fo ʁedɥiʁ lə plastik", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "réduire", ref: "fr-2181" }, { word: "le", ref: "fr-0543" }, { word: "plastique", base: "plastique" }] }
+  - id: "fr-2169"
+    target: "forêt"
+    ipa: "fɔʁɛ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La forêt est très grande.", ipa: "la fɔʁɛ ɛ tʁɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "forêt", base: "forêt" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Nous marchons dans la forêt.", ipa: "nu maʁʃɔ̃ dɑ̃ la fɔʁɛ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marchons", ref: "fr-0306" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "forêt", base: "forêt" }] }
+  - id: "fr-2170"
+    target: "arbre"
+    ipa: "aʁbʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cet arbre a cent ans.", ipa: "sɛt aʁbʁ a sɑ̃ ɑ̃", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "arbre", base: "arbre" }, { word: "a", ref: "fr-0022" }, { word: "cent", ref: "fr-0709" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Nous plantons un arbre demain.", ipa: "nu plɑ̃tɔ̃ œ̃ naʁbʁ dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "plantons", base: "planter" }, { word: "un", ref: "fr-0208" }, { word: "arbre", base: "arbre" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2171"
+    target: "énergie"
+    ipa: "enɛʁʒi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'énergie coûte de plus en plus cher.", ipa: "lenɛʁʒi kut də ply ɑ̃ ply ʃɛʁ", bases: [{ word: "L'énergie", base: "énergie" }, { word: "coûte", ref: "fr-0752" }, { word: "de", base: "de" }, { word: "plus", ref: "fr-0345" }, { word: "en", base: "en" }, { word: "cher", ref: "fr-0104" }] }
+      - { target: "Cette énergie est propre.", ipa: "sɛt enɛʁʒi ɛ pʁɔpʁ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "énergie", base: "énergie" }, { word: "est", ref: "fr-0021" }, { word: "propre", ref: "fr-0427" }] }
+  - id: "fr-2172"
+    target: "solaire"
+    ipa: "sɔlɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les panneaux solaires chauffent l'eau.", ipa: "le pano solɛʁ ʃofɑ̃t lo", bases: [{ word: "Les", ref: "fr-0543" }, { word: "panneaux", base: "panneau" }, { word: "solaires", base: "solaire" }, { word: "chauffent", base: "chauffer" }, { word: "l'eau", ref: "fr-0024" }] }
+      - { target: "L'énergie solaire est gratuite.", ipa: "lenɛʁʒi sɔlɛʁ ɛ ɡʁatɥit", bases: [{ word: "L'énergie", ref: "fr-2171" }, { word: "solaire", base: "solaire" }, { word: "est", ref: "fr-0021" }, { word: "gratuite", ref: "fr-1448" }] }
+  - id: "fr-2173"
+    target: "éolien"
+    ipa: "eɔljɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une éolienne tourne dans le champ.", ipa: "yn eɔljɛn tuʁn dɑ̃ lə ʃɑ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "éolienne", base: "éolien" }, { word: "tourne", ref: "fr-0895" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "champ", base: "champ" }] }
+      - { target: "L'énergie éolienne est propre.", ipa: "lenɛʁʒi eɔljɛn ɛ pʁɔpʁ", bases: [{ word: "L'énergie", ref: "fr-2171" }, { word: "éolienne", base: "éolien" }, { word: "est", ref: "fr-0021" }, { word: "propre", ref: "fr-0427" }] }
+  - id: "fr-2174"
+    target: "océan"
+    ipa: "ɔseɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'océan est immense.", ipa: "lɔseɑ̃ ɛ imɑ̃s", bases: [{ word: "L'océan", base: "océan" }, { word: "est", ref: "fr-0021" }, { word: "immense", base: "immense" }] }
+      - { target: "Les océans se réchauffent.", ipa: "lez ɔseɑ̃ sə ʁeʃofɑ̃", bases: [{ word: "Les", ref: "fr-0543" }, { word: "océans", base: "océan" }, { word: "se", base: "se" }, { word: "réchauffent", base: "réchauffer" }] }
+  - id: "fr-2175"
+    target: "espèce"
+    ipa: "ɛspɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette espèce est menacée.", ipa: "sɛt ɛspɛs ɛ mənase", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "espèce", base: "espèce" }, { word: "est", ref: "fr-0021" }, { word: "menacée", base: "menacé" }] }
+      - { target: "Beaucoup d'espèces disparaissent.", ipa: "boku dɛspɛs dispaʁɛs", bases: [{ word: "Beaucoup", ref: "fr-0034" }, { word: "d'espèces", ref: "fr-1426" }, { word: "disparaissent", base: "disparaître" }] }
+  - id: "fr-2176"
+    target: "réchauffement"
+    ipa: "ʁeʃofmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le réchauffement est rapide.", ipa: "lə ʁeʃofmɑ̃ ɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "réchauffement", base: "réchauffement" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Le réchauffement menace la côte.", ipa: "lə ʁeʃofmɑ̃ mənas la kot", bases: [{ word: "Le", ref: "fr-0543" }, { word: "réchauffement", base: "réchauffement" }, { word: "menace", base: "menacer" }, { word: "la", ref: "fr-0544" }, { word: "côte", base: "côte" }] }
+  - id: "fr-2177"
+    target: "carbone"
+    ipa: "kaʁbɔn"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le carbone sort des usines.", ipa: "lə kaʁbɔn sɔʁ de zyzin", bases: [{ word: "Le", ref: "fr-0543" }, { word: "carbone", base: "carbone" }, { word: "sort", ref: "fr-1125" }, { word: "des", ref: "fr-0546" }, { word: "usines", ref: "fr-0669" }] }
+      - { target: "Réduisez votre empreinte carbone.", ipa: "ʁedɥizez vɔtʁ ɑ̃pʁɛ̃t kaʁbɔn", bases: [{ word: "Réduisez", ref: "fr-2181" }, { word: "votre", ref: "fr-0140" }, { word: "empreinte", base: "empreinte" }, { word: "carbone", base: "carbone" }] }
+  - id: "fr-2178"
+    target: "protéger"
+    ipa: "pʁɔteʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il faut protéger les animaux.", ipa: "il fo pʁɔteʒe lezanimo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "protéger", base: "protéger" }, { word: "les", ref: "fr-0543" }, { word: "animaux", ref: "fr-1284" }] }
+      - { target: "Je protège la nature.", ipa: "ʒə pʁɔtɛʒ la natyʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "protège", base: "protéger" }, { word: "la", ref: "fr-0544" }, { word: "nature", base: "nature" }] }
+  - id: "fr-2179"
+    target: "polluer"
+    ipa: "pɔlɥe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les usines polluent l'air.", ipa: "lezyzin pɔlyt lɛʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "usines", ref: "fr-0669" }, { word: "polluent", base: "polluer" }, { word: "l'air", ref: "fr-2183" }] }
+      - { target: "Ne polluez pas la rivière.", ipa: "nə pɔlɥe pa la ʁivjɛʁ", bases: [{ word: "Ne", base: "ne" }, { word: "polluez", base: "polluer" }, { word: "pas", base: "pas" }, { word: "la", ref: "fr-0544" }, { word: "rivière", base: "rivière" }] }
+  - id: "fr-2180"
+    target: "recycler"
+    ipa: "ʁəsikle"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous recyclons le papier.", ipa: "nu ʁəsiklɔ̃ lə papje", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "recyclons", base: "recycler" }, { word: "le", ref: "fr-0543" }, { word: "papier", ref: "fr-1374" }] }
+      - { target: "Recyclez les bouteilles en verre.", ipa: "ʁəsikle le butɛj ɑ̃ vɛʁ", bases: [{ word: "Recyclez", base: "recycler" }, { word: "les", ref: "fr-0543" }, { word: "bouteilles", ref: "fr-0786" }, { word: "en", base: "en" }, { word: "verre", ref: "fr-0385" }] }
+  - id: "fr-2181"
+    target: "réduire"
+    ipa: "ʁedɥiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je réduis ma consommation.", ipa: "ʒə ʁedɥi ma kɔ̃sɔmasjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "réduis", base: "réduire" }, { word: "ma", ref: "fr-0037" }, { word: "consommation", base: "consommation" }] }
+      - { target: "Il faut réduire les déchets.", ipa: "il fo ʁedɥiʁ le deʃɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "réduire", base: "réduire" }, { word: "les", ref: "fr-0543" }, { word: "déchets", ref: "fr-2167" }] }
+  - id: "fr-2183"
+    target: "air"
+    ipa: "ɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'air est frais ce matin.", ipa: "lɛʁ ɛ fʁɛ sə matɛ̃", bases: [{ word: "L'air", base: "air" }, { word: "est", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Il y a de l'air pur ici.", ipa: "il i a də lɛʁ pyʁ isi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "l'air", base: "air" }, { word: "pur", base: "pur" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-2186"
+    target: "durable"
+    ipa: "dyʁabl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un choix durable.", ipa: "sɛ tœ̃ ʃwa dyʁabl", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "choix", base: "choix" }, { word: "durable", base: "durable" }] }
+      - { target: "Ce développement est durable.", ipa: "sə devlɔpmɑ̃ ɛ dyʁabl", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "développement", base: "développement" }, { word: "est", ref: "fr-0021" }, { word: "durable", base: "durable" }] }
+  - id: "fr-2187"
+    target: "menace"
+    ipa: "mənas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La menace est réelle.", ipa: "la mənas ɛ ʁeɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "menace", base: "menacer" }, { word: "est", ref: "fr-0021" }, { word: "réelle", base: "réel" }] }
+      - { target: "Le feu est une menace pour la forêt.", ipa: "lə fø ɛ yn mənas puʁ la fɔʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "feu", ref: "fr-0899" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "menace", base: "menacer" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "forêt", ref: "fr-2169" }] }
+  - id: "fr-2188"
+    target: "catastrophe"
+    ipa: "katastʁɔf"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une vraie catastrophe.", ipa: "sɛ tyn vʁɛ katastʁɔf", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "vraie", ref: "fr-1901" }, { word: "catastrophe", base: "catastrophe" }] }
+      - { target: "La catastrophe a touché le village.", ipa: "la katastʁɔf a tuʃe lə vilaʒ", bases: [{ word: "La", ref: "fr-0544" }, { word: "catastrophe", base: "catastrophe" }, { word: "a", ref: "fr-0022" }, { word: "touché", base: "toucher" }, { word: "le", ref: "fr-0543" }, { word: "village", base: "village" }] }
+  - id: "fr-2189"
+    target: "inondation"
+    ipa: "inɔ̃dasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'inondation a détruit la route.", ipa: "linɔ̃dasjɔ̃ a detʁɥi la ʁut", bases: [{ word: "L'inondation", base: "inondation" }, { word: "a", ref: "fr-0022" }, { word: "détruit", base: "détruire" }, { word: "la", ref: "fr-0544" }, { word: "route", ref: "fr-0892" }] }
+      - { target: "Il y a une inondation dans la ville.", ipa: "il i a yn inɔ̃dasjɔ̃ dɑ̃ la vil", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "inondation", base: "inondation" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-2190"
+    target: "sécheresse"
+    ipa: "seʃʁɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La sécheresse dure depuis un mois.", ipa: "la seʃʁɛs dyʁ dəpɥi œ̃ mwa", bases: [{ word: "La", ref: "fr-0544" }, { word: "sécheresse", base: "sécheresse" }, { word: "dure", ref: "fr-1131" }, { word: "depuis", base: "depuis" }, { word: "un", ref: "fr-0208" }, { word: "mois", ref: "fr-1165" }] }
+      - { target: "Cette sécheresse est très grave.", ipa: "sɛt seʃʁɛs ɛ tʁɛ ɡʁav", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "sécheresse", base: "sécheresse" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "grave", base: "grave" }] }
+  - id: "fr-2192"
+    target: "déforestation"
+    ipa: "deforɛstasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La déforestation augmente.", ipa: "la deforɛstasjɔ̃ ogmɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "déforestation", base: "déforestation" }, { word: "augmente", base: "augmenter" }] }
+      - { target: "La déforestation menace les animaux.", ipa: "la deforɛstasjɔ̃ mənas lezanimo", bases: [{ word: "La", ref: "fr-0544" }, { word: "déforestation", base: "déforestation" }, { word: "menace", base: "menacer" }, { word: "les", ref: "fr-0543" }, { word: "animaux", ref: "fr-1284" }] }
+  - id: "fr-2193"
+    target: "gaspiller"
+    ipa: "ɡaspije"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ne gaspillez pas l'eau.", ipa: "nə ɡaspije pa lo", bases: [{ word: "Ne", base: "ne" }, { word: "gaspillez", base: "gaspiller" }, { word: "pas", base: "pas" }, { word: "l'eau", ref: "fr-0024" }] }
+      - { target: "Il gaspille beaucoup d'argent.", ipa: "il ɡaspij boku daʁʒɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "gaspille", base: "gaspiller" }, { word: "beaucoup", ref: "fr-0034" }, { word: "d'argent", ref: "fr-0751" }] }
+  - id: "fr-2194"
+    target: "trier"
+    ipa: "tʁije"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je trie les déchets.", ipa: "ʒə tʁi le deʃɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "trie", base: "trier" }, { word: "les", ref: "fr-0543" }, { word: "déchets", ref: "fr-2167" }] }
+      - { target: "Triez le papier et le verre.", ipa: "tʁije lə papje e lə vɛʁ", bases: [{ word: "Triez", base: "trier" }, { word: "le", ref: "fr-0543" }, { word: "papier", ref: "fr-1374" }, { word: "et", ref: "fr-0027" }, { word: "verre", ref: "fr-0385" }] }
+  - id: "fr-2195"
+    target: "composter"
+    ipa: "kɔ̃pɔste"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous compostons les restes.", ipa: "nu kɔ̃pɔstɔ̃ le ʁɛst", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "compostons", base: "composter" }, { word: "les", ref: "fr-0543" }, { word: "restes", base: "reste" }] }
+      - { target: "Il compose les épluchures.", ipa: "il kɔ̃pɔz lezeplyʃyʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "compose", base: "composter" }, { word: "les", ref: "fr-0543" }, { word: "épluchures", base: "épluchure" }] }
+

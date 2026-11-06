@@ -1,0 +1,560 @@
+schema: 1
+id: "fr-en-technology"
+kind: "layer"
+core: "fr-technology"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Technology"
+license: "CC-BY-SA-4.0"
+description: "Forty words for technology: the devices we use, the software and files on them, and the verbs for switching them on and keeping them working. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2067":
+    native: "software"
+    notes:
+      "n1": "Un logiciel is a program that runs on a computer."
+    examples:
+      "Ce logiciel est gratuit.":
+        native: "This software is free."
+        bases:
+          "logiciel": "software"
+      "Installez le logiciel avant de commencer.":
+        native: "Install the software before you start."
+        bases:
+          "logiciel": "software"
+          "de": "of, from, some"
+  "fr-2068":
+    native: "internet"
+    notes:
+      "n1": "L’internet is the network; it is masculine in French."
+    examples:
+      "L'internet est lent ce soir.":
+        native: "The internet is slow tonight."
+        bases:
+          "L'internet": "internet"
+      "Je cherche sur internet.":
+        native: "I search on the internet."
+        bases:
+          "internet": "internet"
+  "fr-2069":
+    native: "battery"
+    notes:
+      "n1": "Une batterie is the battery of a phone or car."
+    examples:
+      "La batterie est presque vide.":
+        native: "The battery is almost empty."
+        bases:
+          "batterie": "battery"
+      "Cette batterie dure toute la journée.":
+        native: "This battery lasts all day."
+        bases:
+          "batterie": "battery"
+  "fr-2070":
+    native: "cable"
+    notes:
+      "n1": "Un câble is a wire that connects two devices."
+    examples:
+      "Le câble est trop court.":
+        native: "The cable is too short."
+        bases:
+          "câble": "cable"
+      "Branchez le câble sur l'ordinateur.":
+        native: "Plug the cable into the computer."
+        bases:
+          "Branchez": "plug in"
+          "câble": "cable"
+  "fr-2071":
+    native: "connection"
+    notes:
+      "n1": "Une connexion is the link to a network or device."
+    examples:
+      "La connexion est instable.":
+        native: "The connection is unstable."
+        bases:
+          "connexion": "connection"
+          "instable": "unstable"
+      "Ma connexion coupe souvent.":
+        native: "My connection often drops."
+        bases:
+          "connexion": "connection"
+  "fr-2072":
+    native: "data"
+    notes:
+      "n1": "Les données are the data; the singular donnée is less used."
+    examples:
+      "Les données sont protégées.":
+        native: "The data is protected."
+        bases:
+          "données": "data"
+          "protégées": "protected"
+      "Ces données changent chaque jour.":
+        native: "This data changes every day."
+        bases:
+          "données": "data"
+  "fr-2073":
+    native: "robot"
+    notes:
+      "n1": "Un robot is a machine that does tasks by itself."
+    examples:
+      "Le robot nettoie la maison.":
+        native: "The robot cleans the house."
+        bases:
+          "robot": "robot"
+      "Ce robot travaille seul.":
+        native: "This robot works alone."
+        bases:
+          "robot": "robot"
+  "fr-2074":
+    native: "program"
+    notes:
+      "n1": "Un programme is a set of instructions for a computer; also a plan or a TV show."
+    examples:
+      "Ce programme est très utile.":
+        native: "This program is very useful."
+        bases:
+          "programme": "program"
+          "utile": "useful"
+      "Le programme se lance tout seul.":
+        native: "The program starts on its own."
+        bases:
+          "programme": "program"
+          "se": "oneself"
+          "lance": "starts"
+  "fr-2075":
+    native: "tablet"
+    notes:
+      "n1": "Une tablette is a flat portable computer with a touch screen."
+    examples:
+      "Elle lit sur sa tablette.":
+        native: "She reads on her tablet."
+        bases:
+          "tablette": "tablet"
+      "La tablette est dans le sac.":
+        native: "The tablet is in the bag."
+        bases:
+          "tablette": "tablet"
+  "fr-2076":
+    native: "file"
+    notes:
+      "n1": "Un fichier is a file stored on a computer."
+    examples:
+      "Ouvrez le fichier joint.":
+        native: "Open the attached file."
+        bases:
+          "fichier": "file"
+          "joint": "attached"
+      "Ce fichier est trop lourd.":
+        native: "This file is too heavy."
+        bases:
+          "fichier": "file"
+  "fr-2077":
+    native: "to download"
+    notes:
+      "n1": "Télécharger is regular; the opposite is to upload, téléverser."
+    examples:
+      "Je télécharge une application.":
+        native: "I download an app."
+        bases:
+          "télécharge": "to download"
+      "Téléchargez le document ici.":
+        native: "Download the document here."
+        bases:
+          "Téléchargez": "to download"
+  "fr-2078":
+    native: "to install"
+    notes:
+      "n1": "Installer is regular; it also means to set up or settle in."
+    examples:
+      "J'installe le logiciel demain.":
+        native: "I install the software tomorrow."
+        bases:
+          "J'installe": "to install"
+      "Il installe la nouvelle imprimante.":
+        native: "He sets up the new printer."
+        bases:
+          "installe": "to install"
+  "fr-2079":
+    native: "to charge, to load"
+    notes:
+      "n1": "Charger is regular: charger le téléphone is to charge the phone."
+    examples:
+      "Je charge mon téléphone.":
+        native: "I charge my phone."
+        bases:
+          "charge": "to charge, to load"
+      "Chargez la batterie cette nuit.":
+        native: "Charge the battery tonight."
+        bases:
+          "Chargez": "to charge, to load"
+  "fr-2080":
+    native: "to switch on, to light"
+    notes:
+      "n1": "Allumer is regular; the opposite is éteindre."
+    examples:
+      "J'allume l'ordinateur.":
+        native: "I switch on the computer."
+        bases:
+          "J'allume": "to switch on, to light"
+      "Allumez la lumière, s'il vous plaît.":
+        native: "Switch on the light, please."
+        bases:
+          "Allumez": "to switch on, to light"
+          "plaît": "pleases"
+  "fr-2081":
+    native: "to switch off"
+    notes:
+      "n1": "Éteindre is irregular: j’éteins, nous éteignons."
+    examples:
+      "Éteignez votre téléphone.":
+        native: "Switch off your phone."
+        bases:
+          "Éteignez": "to switch off"
+      "J'éteins la télé avant de partir.":
+        native: "I switch off the TV before leaving."
+        bases:
+          "J'éteins": "to switch off"
+          "télé": "TV"
+          "de": "of, from, some"
+  "fr-2082":
+    native: "app, application"
+    notes:
+      "n1": "Une application is a program for a phone or tablet."
+    examples:
+      "Cette application est gratuite.":
+        native: "This app is free."
+        bases:
+          "application": "app, application"
+      "J'ouvre l'application de la banque.":
+        native: "I open the bank’s app."
+        bases:
+          "l'application": "app, application"
+          "de": "of, from, some"
+  "fr-2083":
+    native: "click"
+    notes:
+      "n1": "Un clic is one press of a mouse button."
+    examples:
+      "Un seul clic suffit.":
+        native: "One single click is enough."
+        bases:
+          "clic": "click"
+          "suffit": "is enough"
+      "Faites un clic droit.":
+        native: "Make a right click."
+        bases:
+          "clic": "click"
+  "fr-2085":
+    native: "printer"
+    notes:
+      "n1": "Une imprimante prints documents from a computer."
+    examples:
+      "L'imprimante est en panne.":
+        native: "The printer is broken."
+        bases:
+          "L'imprimante": "printer"
+          "en": "in"
+          "panne": "breakdown"
+      "Imprimez deux copies.":
+        native: "Print two copies."
+        bases:
+          "Imprimez": "print"
+          "copies": "copies"
+  "fr-2086":
+    native: "camera"
+    notes:
+      "n1": "Une caméra records moving images."
+    examples:
+      "La caméra filme la rue.":
+        native: "The camera films the street."
+        bases:
+          "caméra": "camera"
+          "filme": "films"
+      "Cette caméra est très petite.":
+        native: "This camera is very small."
+        bases:
+          "caméra": "camera"
+  "fr-2087":
+    native: "device, appliance"
+    notes:
+      "n1": "Un appareil is any machine or device for a task."
+    examples:
+      "Cet appareil marche très bien.":
+        native: "This device works very well."
+        bases:
+          "appareil": "device, appliance"
+      "Éteignez les appareils la nuit.":
+        native: "Switch off the devices at night."
+        bases:
+          "appareils": "device, appliance"
+  "fr-2088":
+    native: "earphones"
+    notes:
+      "n1": "Les écouteurs are small headphones for the ears."
+    examples:
+      "Mes écouteurs sont dans le sac.":
+        native: "My earphones are in the bag."
+        bases:
+          "écouteurs": "earphones"
+      "Je mets mes écouteurs pour écouter.":
+        native: "I put my earphones in to listen."
+        bases:
+          "écouteurs": "earphones"
+  "fr-2089":
+    native: "backup"
+    notes:
+      "n1": "Une sauvegarde is a copy of files kept safe."
+    examples:
+      "Faites une sauvegarde chaque semaine.":
+        native: "Make a backup every week."
+        bases:
+          "sauvegarde": "backup"
+      "La sauvegarde est sur le disque.":
+        native: "The backup is on the disk."
+        bases:
+          "sauvegarde": "backup"
+          "disque": "disk"
+  "fr-2090":
+    native: "update"
+    notes:
+      "n1": "Une mise à jour is an update of software."
+    bases:
+      "mise": "update"
+      "à": "at"
+    examples:
+      "La mise à jour est prête.":
+        native: "The update is ready."
+        bases:
+          "mise": "update"
+          "à": "at"
+      "Faites la mise à jour ce soir.":
+        native: "Install the update tonight."
+        bases:
+          "mise": "update"
+          "à": "at"
+  "fr-2091":
+    native: "bug"
+    notes:
+      "n1": "Un bug is an error in a program."
+    examples:
+      "Il y a un bug dans l'application.":
+        native: "There is a bug in the app."
+        bases:
+          "y": "there"
+          "bug": "bug"
+      "Ce bug bloque tout.":
+        native: "This bug blocks everything."
+        bases:
+          "bug": "bug"
+          "bloque": "blocks"
+  "fr-2092":
+    native: "virus"
+    notes:
+      "n1": "Un virus is a harmful program on a computer."
+    examples:
+      "Le virus efface les fichiers.":
+        native: "The virus deletes the files."
+        bases:
+          "virus": "virus"
+          "efface": "deletes"
+      "Mon ordinateur a un virus.":
+        native: "My computer has a virus."
+        bases:
+          "virus": "virus"
+  "fr-2093":
+    native: "algorithm"
+    notes:
+      "n1": "Un algorithme is a set of steps a computer follows."
+    examples:
+      "L'algorithme choisit les vidéos.":
+        native: "The algorithm chooses the videos."
+        bases:
+          "L'algorithme": "algorithm"
+      "Cet algorithme est très simple.":
+        native: "This algorithm is very simple."
+        bases:
+          "algorithme": "algorithm"
+          "simple": "simple"
+  "fr-2094":
+    native: "artificial intelligence"
+    notes:
+      "n1": "L’intelligence artificielle is abbreviated IA."
+    bases:
+      "intelligence": "intelligence"
+      "artificielle": "artificial"
+    examples:
+      "L'intelligence artificielle progresse vite.":
+        native: "Artificial intelligence is progressing fast."
+        bases:
+          "L'intelligence": "intelligence"
+          "artificielle": "artificial"
+          "progresse": "progresses"
+      "Elle travaille sur l'intelligence artificielle.":
+        native: "She works on artificial intelligence."
+        bases:
+          "l'intelligence": "intelligence"
+          "artificielle": "artificial"
+  "fr-2095":
+    native: "memory"
+    notes:
+      "n1": "La mémoire is the memory of a computer or a person."
+    examples:
+      "La mémoire est pleine.":
+        native: "The memory is full."
+        bases:
+          "mémoire": "memory"
+      "Cet ordinateur a beaucoup de mémoire.":
+        native: "This computer has a lot of memory."
+        bases:
+          "de": "of, from, some"
+          "mémoire": "memory"
+  "fr-2096":
+    native: "hard drive"
+    notes:
+      "n1": "Un disque dur stores the files of a computer."
+    bases:
+      "disque": "disk"
+    examples:
+      "Le disque dur est plein.":
+        native: "The hard drive is full."
+        bases:
+          "disque": "disk"
+      "Je copie les photos sur le disque dur.":
+        native: "I copy the photos onto the hard drive."
+        bases:
+          "disque": "disk"
+  "fr-2097":
+    native: "video"
+    notes:
+      "n1": "Une vidéo is a recording with moving pictures."
+    examples:
+      "Cette vidéo est très drôle.":
+        native: "This video is very funny."
+        bases:
+          "vidéo": "video"
+      "Je regarde une vidéo en ligne.":
+        native: "I watch a video online."
+        bases:
+          "vidéo": "video"
+          "en": "in"
+  "fr-2098":
+    native: "browser"
+    notes:
+      "n1": "Un navigateur is the program used to visit websites."
+    examples:
+      "Le navigateur est ouvert.":
+        native: "The browser is open."
+        bases:
+          "navigateur": "browser"
+      "Changez de navigateur si le site bogue.":
+        native: "Change browser if the site is buggy."
+        bases:
+          "de": "of, from, some"
+          "navigateur": "browser"
+          "si": "if"
+          "bogue": "buggy"
+  "fr-2100":
+    native: "code, password"
+    notes:
+      "n1": "Un code is a secret number or word; also the program code."
+    examples:
+      "Entrez votre code.":
+        native: "Enter your code."
+        bases:
+          "code": "code, password"
+      "Le code est simple à lire.":
+        native: "The code is simple to read."
+        bases:
+          "code": "code, password"
+          "simple": "simple"
+          "à": "at"
+  "fr-2101":
+    native: "password"
+    notes:
+      "n1": "Un mot de passe is the secret word that opens an account."
+    bases:
+      "de": "of, from, some"
+    examples:
+      "Mon mot de passe est secret.":
+        native: "My password is secret."
+        bases:
+          "de": "of, from, some"
+          "secret": "secret"
+      "Changez votre mot de passe.":
+        native: "Change your password."
+        bases:
+          "de": "of, from, some"
+  "fr-2102":
+    native: "to delete"
+    notes:
+      "n1": "Supprimer is regular; it is the usual word for deleting a file."
+    examples:
+      "Je supprime ce message.":
+        native: "I delete this message."
+        bases:
+          "supprime": "to delete"
+      "Supprimez les fichiers inutiles.":
+        native: "Delete the useless files."
+        bases:
+          "Supprimez": "to delete"
+          "inutiles": "useless"
+  "fr-2103":
+    native: "robotics"
+    notes:
+      "n1": "La robotique is the study and building of robots."
+    examples:
+      "La robotique intéresse les élèves.":
+        native: "Robotics interests the pupils."
+        bases:
+          "robotique": "robotics"
+          "intéresse": "interests"
+      "Il étudie la robotique à l'université.":
+        native: "He studies robotics at university."
+        bases:
+          "robotique": "robotics"
+          "à": "at"
+  "fr-2114":
+    native: "pixel"
+    notes:
+      "n1": "Un pixel is the smallest dot of a picture on a screen."
+    examples:
+      "Chaque pixel change de couleur.":
+        native: "Each pixel changes colour."
+        bases:
+          "pixel": "pixel"
+          "de": "of, from, some"
+      "Cette image a beaucoup de pixels.":
+        native: "This image has many pixels."
+        bases:
+          "image": "image"
+          "de": "of, from, some"
+          "pixels": "pixel"
+  "fr-2115":
+    native: "webcam"
+    notes:
+      "n1": "Une webcam is a small camera on a computer for video calls."
+    examples:
+      "La webcam ne marche pas.":
+        native: "The webcam does not work."
+        bases:
+          "webcam": "webcam"
+          "ne": "not"
+          "pas": "not"
+      "J'allume la webcam pour l'appel.":
+        native: "I switch on the webcam for the call."
+        bases:
+          "webcam": "webcam"
+          "l'appel": "call"
+  "fr-2116":
+    native: "monitor"
+    notes:
+      "n1": "Un moniteur is the display unit of a computer."
+    examples:
+      "Le moniteur est très grand.":
+        native: "The monitor is very big."
+        bases:
+          "moniteur": "monitor"
+      "Branchez le moniteur à la prise.":
+        native: "Plug the monitor into the socket."
+        bases:
+          "Branchez": "plug in"
+          "moniteur": "monitor"
+          "à": "at"

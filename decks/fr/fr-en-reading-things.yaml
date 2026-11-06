@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-things"
+name: "Reading: things"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about things: a lost-property list at a station, and a note about what to pack for a trip. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-lost-property-list"
+    title: "A lost-property list at a railway station"
+    theme: "things"
+    sentences:
+      - text: "Objets trouvés à la gare."
+      - text: "Un portefeuille noir, avec une carte."
+      - text: "Un sac bleu, avec un livre et des lunettes."
+      - text: "Un parapluie vert, sur le quai deux."
+    questions:
+      - id: "fr-1414"
+        prompt: { en: "What was found in the blue bag?" }
+        options:
+          - { en: "A pen and a map" }
+          - { en: "A book and glasses" }
+          - { en: "A wallet and a card" }
+        answer: 2
+      - id: "fr-1415"
+        prompt: { en: "What colour is the wallet?" }
+        options:
+          - { en: "White" }
+          - { en: "Black" }
+          - { en: "Red" }
+        answer: 2
+      - id: "fr-1416"
+        prompt: { en: "Where was the umbrella found?" }
+        options:
+          - { en: "At the ticket desk" }
+          - { en: "On platform two" }
+          - { en: "In the café" }
+        answer: 2
+  - id: "fr-trip-bag"
+    title: "A note about a trip"
+    theme: "things"
+    sentences:
+      - text: "Pour le voyage, je prends un sac, une trousse et deux livres."
+      - text: "Il faut aussi des lunettes, un chargeur et une bouteille d'eau."
+      - text: "Mon portefeuille est dans la poche du sac."
+      - text: "Le parapluie reste à la maison."
+    questions:
+      - id: "fr-1417"
+        prompt: { en: "What does the writer take for the trip?" }
+        options:
+          - { en: "A bag, a pencil case and two books" }
+          - { en: "A car and a bike" }
+          - { en: "A table and a lamp" }
+        answer: 1
+      - id: "fr-1418"
+        prompt: { en: "Where is the wallet?" }
+        options:
+          - { en: "In the pocket of the bag" }
+          - { en: "On the table" }
+          - { en: "In the car" }
+        answer: 1
+      - id: "fr-1419"
+        prompt: { en: "What stays at home?" }
+        options:
+          - { en: "The glasses" }
+          - { en: "The umbrella" }
+          - { en: "The charger" }
+        answer: 2

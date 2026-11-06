@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-law"
+name: "Reading: law"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about law. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-rights-leaflet"
+    title: "A leaflet on a tenant’s rights"
+    theme: "law"
+    sentences:
+      - text: "Vos droits de locataire : vous avez le droit à un logement en bon état."
+      - text: "Le propriétaire doit réparer la panne de chauffage dans un délai raisonnable."
+      - text: "Si le loyer n’est pas respecté, un avocat peut vous conseiller."
+      - text: "En cas de litige, vous pouvez saisir le tribunal."
+    questions:
+      - id: "fr-2569"
+        prompt: { en: "What right does the tenant have?" }
+        options:
+          - { en: "A flat in good condition" }
+          - { en: "A free car" }
+          - { en: "A new owner" }
+        answer: 1
+      - id: "fr-2570"
+        prompt: { en: "What must the owner do about the heating?" }
+        options:
+          - { en: "Repair it in a reasonable time" }
+          - { en: "Sell the flat" }
+          - { en: "Move out" }
+        answer: 1
+      - id: "fr-2571"
+        prompt: { en: "Who can advise you if the rent is not respected?" }
+        options:
+          - { en: "A lawyer" }
+          - { en: "A teacher" }
+          - { en: "A driver" }
+        answer: 1

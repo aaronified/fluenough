@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-festivals"
+name: "Reading: festivals"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about festivals. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-festival-invitation"
+    title: "An invitation to a festival meal"
+    theme: "festivals"
+    sentences:
+      - text: "Chers voisins,"
+      - text: "Nous vous invitons au repas de fête du quartier, samedi à partir de sept heures."
+      - text: "Chacun apporte un plat ou un gâteau, et la fanfare jouera après le dîner."
+      - text: "Merci de confirmer votre présence avant jeudi."
+    questions:
+      - id: "fr-2789"
+        prompt: { en: "What is the invitation for?" }
+        options:
+          - { en: "A festival meal in the neighbourhood" }
+          - { en: "A football match" }
+          - { en: "A wedding" }
+        answer: 1
+      - id: "fr-2790"
+        prompt: { en: "When does the meal start?" }
+        options:
+          - { en: "Saturday, from seven o’clock" }
+          - { en: "Sunday at noon" }
+          - { en: "Friday evening" }
+        answer: 1
+      - id: "fr-2791"
+        prompt: { en: "What should each guest bring?" }
+        options:
+          - { en: "A dish or a cake" }
+          - { en: "A tent" }
+          - { en: "A bicycle" }
+        answer: 1

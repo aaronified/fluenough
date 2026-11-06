@@ -1,0 +1,112 @@
+schema: 1
+id: "fr-travel-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1950"
+    target: "Montrez votre passeport et votre visa à la douane."
+    ipa: "mɔ̃tʁe vɔtʁ paspɔʁ e vɔtʁ viza a la dwan"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Montrez", base: "montrer" }
+      - { word: "votre", ref: "fr-0140" }
+      - { word: "passeport", ref: "fr-1912" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "visa", ref: "fr-1913" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "douane", ref: "fr-1914" }
+    confusables:
+      - { id: "identite", ref: "fr-1933", kind: "word" }
+      - { id: "frontiere", ref: "fr-1940", kind: "word" }
+  - id: "fr-1951"
+    target: "Le départ du train est à huit heures, l'arrivée à midi."
+    ipa: "lə depaʁ dy tʁɛ̃ ɛ a ɥi tœʁ laʁive a midi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "départ", ref: "fr-1915" }
+      - { word: "du", base: "de" }
+      - { word: "train", ref: "fr-0076" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "à", base: "à" }
+      - { word: "huit", ref: "fr-0215" }
+      - { word: "heures", ref: "fr-0074" }
+      - { word: "l'arrivée", ref: "fr-1916" }
+      - { word: "midi", ref: "fr-1036" }
+    confusables:
+      - { id: "itineraire", ref: "fr-1921", kind: "word" }
+      - { id: "trajet", ref: "fr-0874", kind: "word" }
+  - id: "fr-1952"
+    target: "Nous passons la nuit dans une auberge à la mer."
+    ipa: "nu pasɔ̃ la nɥi dɑ̃ zyn obɛʁʒ a la mɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "passons", ref: "fr-0519" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "nuit", ref: "fr-1035" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "auberge", ref: "fr-1919" }
+      - { word: "à", base: "à" }
+      - { word: "mer", ref: "fr-1939" }
+    confusables:
+      - { id: "hebergement", ref: "fr-1935", kind: "word" }
+      - { id: "plage", ref: "fr-1926", kind: "word" }
+  - id: "fr-1953"
+    target: "Le guide montre la montagne et le paysage."
+    ipa: "lə ɡid mɔ̃tʁ la mɔ̃taɲ e lə pei̯zaʒ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "guide", ref: "fr-1925" }
+      - { word: "montre", ref: "fr-1120" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "montagne", ref: "fr-1927" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "paysage", ref: "fr-1938" }
+    confusables:
+      - { id: "excursion", ref: "fr-1922", kind: "word" }
+      - { id: "touriste", ref: "fr-1924", kind: "word" }
+  - id: "fr-1954"
+    target: "L'avion décolle et atterrit à l'heure."
+    ipa: "lavjɔ̃ dekɔl e atəʁi a lœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'avion", ref: "fr-0861" }
+      - { word: "décolle", ref: "fr-1930" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "atterrit", ref: "fr-1929" }
+      - { word: "à", base: "à" }
+      - { word: "l'heure", ref: "fr-0074" }
+    confusables:
+      - { id: "embarquer", ref: "fr-1928", kind: "word" }
+      - { id: "escale", ref: "fr-1948", kind: "word" }
+  - id: "fr-1955"
+    target: "Le voyageur cherche son ticket et sa clé."
+    ipa: "lə vwajaʒœʁ ʃɛʁʃ sɔ̃ tikɛ e sa kle"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "voyageur", ref: "fr-1946" }
+      - { word: "cherche", ref: "fr-0300" }
+      - { word: "son", ref: "fr-0138" }
+      - { word: "ticket", ref: "fr-1428" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "sa", ref: "fr-0138" }
+      - { word: "clé", ref: "fr-0484" }
+    confusables:
+      - { id: "sac", ref: "fr-0485", kind: "word" }
+      - { id: "reveil", ref: "fr-1042", kind: "word" }
+

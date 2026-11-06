@@ -1,0 +1,48 @@
+schema: 1
+id: "fr-en-technology-sentences"
+kind: "layer"
+core: "fr-technology-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: technology"
+license: "CC-BY-SA-4.0"
+description: "Sentences about technology, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2105":
+    native: "Install the software, then switch off the computer."
+    confusables:
+      "allumer": { why: "To switch on is the opposite of switching off; the sentence wants the computer off at the end." }
+      "telecharger": { why: "Downloading is not named; the sentence installs." }
+  "fr-2106":
+    native: "The battery is empty, I must charge the phone."
+    confusables:
+      "cable": { why: "A cable is needed to charge, but the sentence names the battery." }
+      "appareil": { why: "A device is general; the sentence names the phone." }
+  "fr-2107":
+    native: "Make a backup before the update."
+    bases:
+      "mise": "update"
+      "à": "at"
+    confusables:
+      "virus": { why: "A virus is a danger, not a step in the sentence." }
+      "bug": { why: "A bug is an error; the sentence is about a planned step." }
+  "fr-2108":
+    native: "The virus deletes the file and the hard drive is full."
+    bases:
+      "efface": "deletes"
+      "disque": "disk"
+    confusables:
+      "memoire": { why: "Memory is close to hard drive, but the sentence names the disk." }
+      "supprimer": { why: "To delete is the act; the sentence says the virus does it." }
+  "fr-2109":
+    native: "My password is in the code."
+    bases:
+      "de": "of, from, some"
+    confusables:
+      "clic": { why: "A click is one action, not a secret word." }
+      "virus": { why: "A virus is a harmful program, not a secret word." }
+  "fr-2110":
+    native: "The mouse and the keyboard work with the browser."
+    confusables:
+      "clic": { why: "A click is one action, not a device; the sentence names devices." }
+      "serveur": { why: "A server stores data; the sentence names a browser." }

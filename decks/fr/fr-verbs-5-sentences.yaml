@@ -1,0 +1,111 @@
+schema: 1
+id: "fr-verbs-5-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2632"
+    target: "Je quitte la maison et je rentre tard."
+    ipa: "ʒə kit la mɛzɔ̃ e ʒə ʁɑ̃tʁ taʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "quitte", ref: "fr-2610" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "maison", ref: "fr-0996" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "rentre", ref: "fr-1124" }
+      - { word: "tard", ref: "fr-0336" }
+    confusables:
+      - { id: "revenir", ref: "fr-2612", kind: "word" }
+      - { id: "sortir", ref: "fr-1125", kind: "word" }
+  - id: "fr-2633"
+    target: "Le professeur explique la règle et je comprends."
+    ipa: "lə pʁɔfesœʁ ɛksplik la ʁɛɡl e ʒə kɔ̃pʁɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "professeur", ref: "fr-0105" }
+      - { word: "explique", ref: "fr-2618" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "règle", ref: "fr-1365" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "comprends", ref: "fr-0512" }
+    confusables:
+      - { id: "enseigner", ref: "fr-2617", kind: "word" }
+      - { id: "apprendre", ref: "fr-0513", kind: "word" }
+  - id: "fr-2634"
+    target: "Il décrit le paysage et répond à la question."
+    ipa: "il dekʁi lə pei̯zaʒ e ʁepɔ̃ a la kɛstjɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "décrit", ref: "fr-2620" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "paysage", ref: "fr-1938" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "répond", ref: "fr-0504" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "question", ref: "fr-1593" }
+    confusables:
+      - { id: "proposer", ref: "fr-2621", kind: "word" }
+      - { id: "poser", ref: "fr-1613", kind: "word" }
+  - id: "fr-2635"
+    target: "Elle arrête de chercher et trouve la clé."
+    ipa: "ɛl aʁɛt də ʃɛʁʃe e tʁuv la kle"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "arrête", ref: "fr-2622" }
+      - { word: "de", base: "de" }
+      - { word: "chercher", ref: "fr-0300" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "trouve", ref: "fr-0301" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "clé", ref: "fr-0484" }
+    confusables:
+      - { id: "perdre", ref: "fr-1084", kind: "word" }
+      - { id: "ramasser", ref: "fr-2625", kind: "word" }
+  - id: "fr-2636"
+    target: "Nous commençons le voyage et finissons le repas."
+    ipa: "nu kɔmɑ̃sɔ̃ lə vwajaʒ e finisɔ̃ lə ʁəpa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "commençons", ref: "fr-0508" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "voyage", ref: "fr-0867" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "finissons", ref: "fr-0506" }
+      - { word: "repas", ref: "fr-0813" }
+    confusables:
+      - { id: "continuer", ref: "fr-0897", kind: "word" }
+      - { id: "repondre", ref: "fr-0504", kind: "word" }
+  - id: "fr-2637"
+    target: "Je me souviens de ma réussite et je m'éloigne."
+    ipa: "ʒə mə suvjɛ̃ də ma ʁeysit e ʒə mɛlwaɲ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "me", base: "me" }
+      - { word: "souviens", ref: "fr-2623" }
+      - { word: "de", base: "de" }
+      - { word: "ma", ref: "fr-0037" }
+      - { word: "réussite", ref: "fr-2630" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "m'éloigne", base: "éloigner" }
+    confusables:
+      - { id: "oublier", ref: "fr-0509", kind: "word" }
+      - { id: "avouer", ref: "fr-2627", kind: "word" }
+

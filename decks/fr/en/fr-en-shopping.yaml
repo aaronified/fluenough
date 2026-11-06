@@ -1,0 +1,629 @@
+schema: 1
+id: "fr-en-shopping"
+kind: "layer"
+core: "fr-shopping"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Shopping"
+license: "CC-BY-SA-4.0"
+description: "Forty words for shopping: the shop and its parts, the prices and offers, paying and the receipt, the shop assistants, and the verbs for buying, paying, exchanging and saving. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1420":
+    native: "purchase"
+    notes:
+      "n1": "Achat is 'purchase', masculine. Faire un achat means to make a purchase, with faire, not prendre."
+    examples:
+      "Cet achat coûte cher.":
+        native: "This purchase costs a lot."
+        bases:
+          "achat": "purchase"
+          "coûte": "costs"
+      "Je fais un achat au magasin.":
+        native: "I make a purchase at the shop."
+        bases:
+          "fais": "make"
+          "achat": "purchase"
+          "au": "at the"
+  "fr-1421":
+    native: "sales"
+    notes:
+      "n1": "Soldes is 'sales', masculine and always plural: the winter or summer sales."
+    examples:
+      "Les soldes commencent en janvier.":
+        native: "The sales start in January."
+        bases:
+          "soldes": "sales"
+          "commencent": "start"
+          "en": "in"
+      "Il y a des soldes dans ce magasin.":
+        native: "There are sales in this shop."
+        bases:
+          "y": "there"
+          "soldes": "sales"
+  "fr-1422":
+    native: "promotion, special offer"
+    notes:
+      "n1": "Promotion is 'promotion' or 'special offer', feminine. En promotion means on offer."
+    examples:
+      "Il y a une promotion sur le pain.":
+        native: "There is an offer on bread."
+        bases:
+          "y": "there"
+          "promotion": "offer"
+      "La promotion finit demain.":
+        native: "The offer ends tomorrow."
+        bases:
+          "promotion": "offer"
+          "finit": "ends"
+  "fr-1423":
+    native: "discount, reduction"
+    notes:
+      "n1": "Réduction is 'discount' or 'reduction', feminine. Dix pour cent is ten per cent."
+    examples:
+      "Il y a une réduction de dix pour cent.":
+        native: "There is a ten per cent discount."
+        bases:
+          "y": "there"
+          "réduction": "discount"
+          "de": "of"
+      "Je demande une réduction au vendeur.":
+        native: "I ask the salesman for a discount."
+        bases:
+          "demande": "ask for"
+          "réduction": "discount"
+          "au": "to the"
+  "fr-1424":
+    native: "discount, rebate"
+    notes:
+      "n1": "Remise is 'discount' or 'rebate', feminine. It is the reduction in a price, as on a bill."
+    examples:
+      "Une remise est possible pour les clients.":
+        native: "A discount is possible for customers."
+        bases:
+          "remise": "discount"
+          "possible": "possible"
+          "clients": "customers"
+      "Il donne une remise de cinq euros.":
+        native: "He gives a discount of five euros."
+        bases:
+          "donne": "gives"
+          "remise": "discount"
+          "de": "of"
+          "euros": "euros"
+  "fr-1425":
+    native: "gift, present"
+    notes:
+      "n1": "Cadeau is 'gift' or 'present', masculine. Faire un cadeau means to give a present."
+    examples:
+      "Ce cadeau est pour mon frère.":
+        native: "This present is for my brother."
+        bases:
+          "cadeau": "present"
+      "J'achète un cadeau pour ma mère.":
+        native: "I buy a present for my mother."
+        bases:
+          "J'achète": "I buy"
+          "cadeau": "present"
+  "fr-1426":
+    native: "cash"
+    notes:
+      "n1": "Espèces is 'cash', feminine and plural: en espèces means in cash, and it is always plural."
+    examples:
+      "Vous payez en espèces ?":
+        native: "Are you paying in cash?"
+        bases:
+          "payez": "pay"
+          "en": "in"
+          "espèces": "cash"
+      "Je paie en espèces, pas par carte.":
+        native: "I pay in cash, not by card."
+        bases:
+          "paie": "pay"
+          "en": "in"
+          "espèces": "cash"
+          "pas": "not"
+  "fr-1427":
+    native: "receipt"
+    notes:
+      "n1": "Reçu is 'receipt', masculine. It comes from the verb recevoir, to receive."
+    examples:
+      "Le reçu est dans le sac.":
+        native: "The receipt is in the bag."
+        bases:
+          "reçu": "receipt"
+      "Tu veux un reçu ?":
+        native: "Do you want a receipt?"
+        bases:
+          "veux": "want"
+          "reçu": "receipt"
+  "fr-1428":
+    native: "ticket, receipt"
+    notes:
+      "n1": "Ticket is 'ticket', masculine. Un ticket de caisse is a till receipt, the usual word in a shop."
+    examples:
+      "Garde ton ticket de caisse.":
+        native: "Keep your till receipt."
+        bases:
+          "Garde": "keep"
+          "ticket": "receipt"
+          "de": "of"
+      "Le ticket coûte deux euros.":
+        native: "The ticket costs two euros."
+        bases:
+          "ticket": "ticket"
+          "coûte": "costs"
+          "euros": "euros"
+  "fr-1429":
+    native: "shop, boutique"
+    notes:
+      "n1": "Boutique is 'shop' or 'boutique', feminine. It is a small shop, often for clothes or gifts."
+    examples:
+      "La boutique est ouverte.":
+        native: "The shop is open."
+        bases:
+          "boutique": "shop"
+          "ouverte": "open"
+      "Je cherche une boutique de vêtements.":
+        native: "I am looking for a clothes shop."
+        bases:
+          "boutique": "shop"
+          "de": "of"
+          "vêtements": "clothes"
+  "fr-1430":
+    native: "supermarket"
+    notes:
+      "n1": "Supermarché is 'supermarket', masculine. A small grocer's is an épicerie."
+    examples:
+      "Le supermarché ouvre à huit heures.":
+        native: "The supermarket opens at eight o'clock."
+        bases:
+          "supermarché": "supermarket"
+          "ouvre": "opens"
+          "à": "at"
+          "heures": "hours"
+      "On achète le pain au supermarché.":
+        native: "You buy bread at the supermarket."
+        bases:
+          "achète": "buy"
+          "au": "at the"
+          "supermarché": "supermarket"
+  "fr-1431":
+    native: "bookshop"
+    notes:
+      "n1": "Librairie is 'bookshop', feminine. Un libraire is a bookseller."
+    examples:
+      "La librairie vend des livres.":
+        native: "The bookshop sells books."
+        bases:
+          "librairie": "bookshop"
+          "vend": "sells"
+          "livres": "books"
+      "J'achète un roman à la librairie.":
+        native: "I buy a novel at the bookshop."
+        bases:
+          "J'achète": "I buy"
+          "roman": "novel"
+          "à": "at"
+          "librairie": "bookshop"
+  "fr-1432":
+    native: "stationer's"
+    notes:
+      "n1": "Papeterie is 'stationer's' or 'paper shop', feminine: pens, paper and envelopes."
+    examples:
+      "La papeterie vend des stylos et du papier.":
+        native: "The stationer's sells pens and paper."
+        bases:
+          "papeterie": "stationer's"
+          "vend": "sells"
+          "stylos": "pens"
+          "du": "some"
+      "Je prends une enveloppe à la papeterie.":
+        native: "I take an envelope from the stationer's."
+        bases:
+          "à": "from"
+          "papeterie": "stationer's"
+  "fr-1433":
+    native: "jeweller's, jewellery shop"
+    notes:
+      "n1": "Bijouterie is 'jeweller's', feminine. A jeweller is a bijoutier."
+    examples:
+      "La bijouterie est près de la gare.":
+        native: "The jeweller's is near the station."
+        bases:
+          "bijouterie": "jeweller's"
+          "de": "of"
+      "Une bague vient de la bijouterie.":
+        native: "A ring comes from the jeweller's."
+        bases:
+          "vient": "comes"
+          "de": "from"
+          "bijouterie": "jeweller's"
+  "fr-1434":
+    native: "florist"
+    notes:
+      "n1": "Fleuriste is 'florist', and it is the same for a man or a woman. The shop is also a fleuriste."
+    examples:
+      "La fleuriste vend des roses.":
+        native: "The florist sells roses."
+        bases:
+          "fleuriste": "florist"
+          "vend": "sells"
+          "roses": "roses"
+      "Je vais chez le fleuriste.":
+        native: "I am going to the florist's."
+        bases:
+          "vais": "go"
+          "fleuriste": "florist"
+  "fr-1435":
+    native: "shop window"
+    notes:
+      "n1": "Vitrine is 'shop window' or 'display case', feminine. Regarder les vitrines means window shopping."
+    examples:
+      "La vitrine est très belle.":
+        native: "The shop window is very attractive."
+        bases:
+          "vitrine": "shop window"
+          "belle": "beautiful"
+      "Je regarde les vitrines.":
+        native: "I look at the shop windows."
+        bases:
+          "vitrines": "shop windows"
+  "fr-1436":
+    native: "aisle"
+    notes:
+      "n1": "Allée is 'aisle' in a shop, or a path, or a driveway, feminine."
+    examples:
+      "L'allée est près de la caisse.":
+        native: "The aisle is near the till."
+        bases:
+          "L'allée": "aisle"
+          "de": "of"
+      "Le pain est dans la deuxième allée.":
+        native: "The bread is in the second aisle."
+        bases:
+          "deuxième": "second"
+          "allée": "aisle"
+  "fr-1437":
+    native: "item, article"
+    notes:
+      "n1": "Article is 'item' or 'article', masculine. In a shop it means one thing for sale."
+    examples:
+      "Cet article est en promotion.":
+        native: "This item is on offer."
+        bases:
+          "article": "item"
+          "en": "on"
+      "Je cherche un article bleu.":
+        native: "I am looking for a blue item."
+        bases:
+          "article": "item"
+  "fr-1438":
+    native: "product"
+    notes:
+      "n1": "Produit is 'product', masculine. Bon marché is cheap, literally good market."
+    examples:
+      "Ce produit est très bon marché.":
+        native: "This product is very cheap."
+        bases:
+          "produit": "product"
+      "Les produits sont dans l'allée.":
+        native: "The products are in the aisle."
+        bases:
+          "produits": "products"
+          "l'allée": "the aisle"
+  "fr-1439":
+    native: "brand"
+    notes:
+      "n1": "Marque is 'brand', feminine. It is also a mark or a sign."
+    examples:
+      "Quelle est la marque ?":
+        native: "What is the brand?"
+        bases:
+          "marque": "brand"
+      "Je connais cette marque.":
+        native: "I know this brand."
+        bases:
+          "connais": "know"
+          "marque": "brand"
+  "fr-1440":
+    native: "size, shoe size"
+    notes:
+      "n1": "Pointure is 'shoe size', feminine, used for shoes and gloves. Taille is the size for clothes."
+    examples:
+      "Quelle est ta pointure ?":
+        native: "What is your shoe size?"
+        bases:
+          "pointure": "shoe size"
+      "Ma pointure est trente-huit.":
+        native: "My shoe size is thirty-eight."
+        bases:
+          "pointure": "shoe size"
+  "fr-1441":
+    native: "to refund, to pay back"
+    notes:
+      "n1": "Rembourser is 'to refund' or 'to pay back'. Échanger is the word for an exchange, a different thing."
+    examples:
+      "Le magasin rembourse le client.":
+        native: "The shop refunds the customer."
+        bases:
+          "rembourse": "refunds"
+      "Je veux être remboursé.":
+        native: "I want to be refunded."
+        bases:
+          "veux": "want"
+          "remboursé": "refunded"
+  "fr-1442":
+    native: "to exchange, to swap"
+    notes:
+      "n1": "Échanger is 'to exchange' or 'to swap', as for an item that is the wrong size."
+    examples:
+      "Je peux échanger ce pull ?":
+        native: "Can I exchange this jumper?"
+        bases:
+          "peux": "can"
+          "échanger": "exchange"
+      "Le vendeur échange la taille.":
+        native: "The salesman exchanges the size."
+        bases:
+          "échange": "exchanges"
+  "fr-1443":
+    native: "delivery"
+    notes:
+      "n1": "Livraison is 'delivery', feminine. À domicile means to the home."
+    examples:
+      "La livraison est gratuite.":
+        native: "Delivery is free."
+        bases:
+          "livraison": "delivery"
+          "gratuite": "free"
+      "Je veux une livraison à domicile.":
+        native: "I want a delivery to my home."
+        bases:
+          "veux": "want"
+          "livraison": "delivery"
+          "à": "to"
+          "domicile": "home"
+  "fr-1444":
+    native: "stock"
+    notes:
+      "n1": "Stock is 'stock', masculine. The word is the same as in English."
+    examples:
+      "Le stock est vide.":
+        native: "The stock is empty."
+        bases:
+          "stock": "stock"
+      "Il y a encore du stock.":
+        native: "There is still some stock."
+        bases:
+          "y": "there"
+          "du": "some"
+          "stock": "stock"
+  "fr-1445":
+    native: "available"
+    notes:
+      "n1": "Disponible is 'available', and it is used for things and for people."
+    examples:
+      "Cette taille est disponible ?":
+        native: "Is this size available?"
+        bases:
+          "disponible": "available"
+      "Le modèle est disponible demain.":
+        native: "The model is available tomorrow."
+        bases:
+          "modèle": "model"
+          "disponible": "available"
+  "fr-1446":
+    native: "saleswoman, shop assistant"
+    notes:
+      "n1": "Vendeuse is 'saleswoman' or 'shop assistant', feminine. The masculine is vendeur."
+    examples:
+      "La vendeuse est très gentille.":
+        native: "The saleswoman is very kind."
+        bases:
+          "vendeuse": "saleswoman"
+          "gentille": "kind"
+      "Je demande à la vendeuse.":
+        native: "I ask the saleswoman."
+        bases:
+          "demande": "ask"
+          "à": "to"
+          "vendeuse": "saleswoman"
+  "fr-1447":
+    native: "bargain, second-hand"
+    notes:
+      "n1": "Occasion is 'bargain' or 'opportunity', feminine. D'occasion means second-hand."
+    examples:
+      "J'achète cette veste d'occasion.":
+        native: "I buy this jacket second-hand."
+        bases:
+          "J'achète": "I buy"
+          "d'occasion": "second-hand"
+      "Une occasion est rare.":
+        native: "A bargain is rare."
+        bases:
+          "occasion": "bargain"
+          "rare": "rare"
+  "fr-1448":
+    native: "free"
+    notes:
+      "n1": "Gratuit is 'free', as in no charge. It is an adjective: gratuit, gratuite."
+    examples:
+      "L'entrée est gratuite.":
+        native: "Entry is free."
+        bases:
+          "L'entrée": "entry"
+          "gratuite": "free"
+      "Le parking est gratuit le dimanche.":
+        native: "The car park is free on Sundays."
+        bases:
+          "parking": "car park"
+          "gratuit": "free"
+  "fr-1449":
+    native: "offer"
+    notes:
+      "n1": "Offre is 'offer', feminine. It is the same as an offer to buy, or a special deal."
+    examples:
+      "Il y a une offre spéciale.":
+        native: "There is a special offer."
+        bases:
+          "y": "there"
+          "offre": "offer"
+          "spéciale": "special"
+      "Je prends l'offre du jour.":
+        native: "I take the offer of the day."
+        bases:
+          "l'offre": "the offer"
+          "du": "of the"
+  "fr-1450":
+    native: "label, price tag"
+    notes:
+      "n1": "Étiquette is 'label' or 'price tag', feminine. It is the tag on an item."
+    examples:
+      "Le prix est sur l'étiquette.":
+        native: "The price is on the tag."
+        bases:
+          "l'étiquette": "tag"
+      "Je lis l'étiquette.":
+        native: "I read the label."
+        bases:
+          "lis": "read"
+          "l'étiquette": "label"
+  "fr-1451":
+    native: "euro"
+    notes:
+      "n1": "Euro is 'euro', masculine: the currency. Its plural is euros."
+    examples:
+      "Ce pain coûte deux euros.":
+        native: "This bread costs two euros."
+        bases:
+          "coûte": "costs"
+          "euros": "euros"
+      "Il y a un euro dans le sac.":
+        native: "There is a euro in the bag."
+        bases:
+          "y": "there"
+          "euro": "euro"
+  "fr-1452":
+    native: "packaging, wrapping"
+    notes:
+      "n1": "Emballage is 'packaging' or 'wrapping', masculine. It is the box or wrapper round an item."
+    examples:
+      "L'emballage est vert.":
+        native: "The packaging is green."
+        bases:
+          "L'emballage": "packaging"
+      "Je jette l'emballage.":
+        native: "I throw away the packaging."
+        bases:
+          "jette": "throw away"
+          "l'emballage": "packaging"
+  "fr-1453":
+    native: "trolley, shopping cart"
+    notes:
+      "n1": "Chariot is 'trolley' or 'shopping cart', masculine. A basket is a panier."
+    examples:
+      "Le chariot est plein.":
+        native: "The trolley is full."
+        bases:
+          "chariot": "trolley"
+      "Je pousse le chariot vers la caisse.":
+        native: "I push the trolley towards the till."
+        bases:
+          "pousse": "push"
+          "chariot": "trolley"
+  "fr-1454":
+    native: "queue, line"
+    notes:
+      "n1": "File is 'queue' or 'line', feminine. Faire la queue is the usual way to say to queue."
+    examples:
+      "Il y a une longue file.":
+        native: "There is a long queue."
+        bases:
+          "y": "there"
+          "longue": "long"
+          "file": "queue"
+      "J'attends dans la file.":
+        native: "I wait in the queue."
+        bases:
+          "J'attends": "I wait"
+          "file": "queue"
+  "fr-1455":
+    native: "to spend"
+    notes:
+      "n1": "Dépenser is 'to spend', as money. The noun is une dépense."
+    examples:
+      "Je dépense trop d'argent.":
+        native: "I spend too much money."
+        bases:
+          "dépense": "spend"
+          "d'argent": "money"
+      "Il ne faut pas dépenser trop.":
+        native: "You must not spend too much."
+        bases:
+          "ne": "not"
+          "faut": "must"
+          "pas": "not"
+          "dépenser": "spend"
+  "fr-1456":
+    native: "to save, to economise"
+    notes:
+      "n1": "Économiser is 'to save' money. Épargner is the other word for saving."
+    examples:
+      "J'économise pour un vélo.":
+        native: "I am saving for a bicycle."
+        bases:
+          "J'économise": "I save"
+      "Je veux économiser de l'argent.":
+        native: "I want to save money."
+        bases:
+          "veux": "want"
+          "économiser": "save"
+          "de": "some"
+          "l'argent": "money"
+  "fr-1457":
+    native: "budget"
+    notes:
+      "n1": "Budget is 'budget', masculine. It is the same word as in English."
+    examples:
+      "Mon budget est petit.":
+        native: "My budget is small."
+        bases:
+          "budget": "budget"
+      "Je fais un budget pour le mois.":
+        native: "I make a budget for the month."
+        bases:
+          "fais": "make"
+          "budget": "budget"
+  "fr-1458":
+    native: "cashier"
+    notes:
+      "n1": "Caissier is 'cashier', masculine. The feminine is caissière."
+    examples:
+      "Le caissier est très aimable.":
+        native: "The cashier is very friendly."
+        bases:
+          "caissier": "cashier"
+          "aimable": "friendly"
+      "Je donne l'argent au caissier.":
+        native: "I give the money to the cashier."
+        bases:
+          "donne": "give"
+          "l'argent": "money"
+          "au": "to the"
+          "caissier": "cashier"
+  "fr-1459":
+    native: "fitting room"
+    notes:
+      "n1": "Cabine is 'fitting room' or 'booth', feminine. A cabin in a boat is also a cabine."
+    examples:
+      "La cabine est au fond du magasin.":
+        native: "The fitting room is at the back of the shop."
+        bases:
+          "cabine": "fitting room"
+          "au": "at the"
+          "du": "of the"
+      "J'essaie une robe dans la cabine.":
+        native: "I try on a dress in the fitting room."
+        bases:
+          "J'essaie": "I try on"
+          "cabine": "fitting room"

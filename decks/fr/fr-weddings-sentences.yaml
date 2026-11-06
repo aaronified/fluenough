@@ -1,0 +1,110 @@
+schema: 1
+id: "fr-weddings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2387"
+    target: "Le témoin signe l'alliance et le registre."
+    ipa: "lə temwɛ̃ siɲ laljɑ̃s e lə ʁəʒistʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "témoin", ref: "fr-1820" }
+      - { word: "signe", ref: "fr-1987" }
+      - { word: "l'alliance", ref: "fr-2369" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "registre", ref: "fr-2396" }
+    confusables:
+      - { id: "bague", ref: "fr-1222", kind: "word" }
+      - { id: "mariage", ref: "fr-0187", kind: "word" }
+  - id: "fr-2388"
+    target: "Les invités dansent après le banquet."
+    ipa: "lezɛ̃vite dɑ̃s apʁɛ lə bɑ̃kɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0543" }
+      - { word: "invités", ref: "fr-2370" }
+      - { word: "dansent", ref: "fr-0523" }
+      - { word: "après", ref: "fr-0595" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "banquet", ref: "fr-2372" }
+    confusables:
+      - { id: "fetedefamille", ref: "fr-2385", kind: "word" }
+      - { id: "discours", ref: "fr-2381", kind: "word" }
+  - id: "fr-2389"
+    target: "La mariée porte une robe blanche et un bouquet."
+    ipa: "la maʁje pɔʁt yn ʁɔb blɑ̃ʃ e œ̃ bukɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "mariée", ref: "fr-0249" }
+      - { word: "porte", ref: "fr-1003" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "robe", ref: "fr-1203" }
+      - { word: "blanche", base: "blanc" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "bouquet", ref: "fr-2371" }
+    confusables:
+      - { id: "costume", ref: "fr-1216", kind: "word" }
+      - { id: "demoiselledhonneur", ref: "fr-2373", kind: "word" }
+  - id: "fr-2390"
+    target: "Les époux partent en lune de miel après la cérémonie."
+    ipa: "lezepu paʁt ɑ̃ lyn də mjɛl apʁɛ la seʁemɔni"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0543" }
+      - { word: "époux", ref: "fr-2367" }
+      - { word: "partent", ref: "fr-0304" }
+      - { word: "en", base: "en" }
+      - { word: "lune", ref: "fr-2386" }
+      - { word: "de", base: "de" }
+      - { word: "miel", ref: "fr-1557" }
+      - { word: "après", ref: "fr-0595" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "cérémonie", ref: "fr-2368" }
+    confusables:
+      - { id: "marie", ref: "fr-0249", kind: "word" }
+      - { id: "fiance", ref: "fr-0191", kind: "word" }
+  - id: "fr-2391"
+    target: "Mon mari fait un discours émouvant."
+    ipa: "mɔ̃ maʁi fɛ œ̃ diskuʁ emuvɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "mari", ref: "fr-0171" }
+      - { word: "fait", ref: "fr-0287" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "discours", ref: "fr-2381" }
+      - { word: "émouvant", ref: "fr-2382" }
+    confusables:
+      - { id: "veuf", ref: "fr-2378", kind: "word" }
+      - { id: "celibataire", ref: "fr-0250", kind: "word" }
+  - id: "fr-2392"
+    target: "Ma famille et mes parents arrivent à la cérémonie."
+    ipa: "ma famij e me paʁɑ̃ aʁiv a la seʁemɔni"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0037" }
+      - { word: "famille", ref: "fr-0164" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "mes", ref: "fr-0037" }
+      - { word: "parents", ref: "fr-0173" }
+      - { word: "arrivent", ref: "fr-0305" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "cérémonie", ref: "fr-2368" }
+    confusables:
+      - { id: "invite", ref: "fr-2370", kind: "word" }
+      - { id: "amoureux", ref: "fr-1789", kind: "word" }
+

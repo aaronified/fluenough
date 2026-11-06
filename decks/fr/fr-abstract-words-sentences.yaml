@@ -1,0 +1,115 @@
+schema: 1
+id: "fr-abstract-words-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2704"
+    target: "Le sens de la vérité n'est pas clair."
+    ipa: "lə sɑ̃s də la veʁite nɛ pa klɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "sens", ref: "fr-2659" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "vérité", ref: "fr-2660" }
+      - { word: "n'est", ref: "fr-0021" }
+      - { word: "pas", base: "pas" }
+      - { word: "clair", base: "clair" }
+    confusables:
+      - { id: "mensonge", ref: "fr-2661", kind: "word" }
+      - { id: "valeur", ref: "fr-2664", kind: "word" }
+  - id: "fr-2705"
+    target: "Il y a une grande différence entre la réalité et l'imagination."
+    ipa: "il i a yn ɡʁɑ̃d difeʁɑ̃s ɑ̃tʁ la ʁealite e limaʒinasjɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "y", base: "y" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "grande", ref: "fr-0410" }
+      - { word: "différence", ref: "fr-2679" }
+      - { word: "entre", ref: "fr-0470" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "réalité", ref: "fr-2691" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "l'imagination", ref: "fr-2692" }
+    confusables:
+      - { id: "ressemblance", ref: "fr-2680", kind: "word" }
+      - { id: "incertitude", ref: "fr-2694", kind: "word" }
+  - id: "fr-2706"
+    target: "Le hasard et la chance décident de l'avenir."
+    ipa: "lə azaʁ e la ʃɑ̃s desid də lavniʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "hasard", ref: "fr-2668" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "chance", ref: "fr-2669" }
+      - { word: "décident", ref: "fr-2033" }
+      - { word: "de", base: "de" }
+      - { word: "l'avenir", ref: "fr-2671" }
+    confusables:
+      - { id: "destin", ref: "fr-2670", kind: "word" }
+      - { id: "possibilite", ref: "fr-2684", kind: "word" }
+  - id: "fr-2707"
+    target: "C'est un principe nécessaire pour l'équilibre."
+    ipa: "sɛ tœ̃ pʁɛ̃sip nesesɛʁ puʁ lekilibʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "C'est", ref: "fr-0021" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "principe", ref: "fr-2689" }
+      - { word: "nécessaire", ref: "fr-2696" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "l'équilibre", ref: "fr-2678" }
+    confusables:
+      - { id: "impossible", ref: "fr-2695", kind: "word" }
+      - { id: "ideal", ref: "fr-2687", kind: "word" }
+  - id: "fr-2708"
+    target: "Le désordre est inutile, il faut de l'ordre."
+    ipa: "lə dezɔʁdʁ ɛ inytil il fo də lɔʁdʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "désordre", ref: "fr-2677" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "inutile", ref: "fr-2697" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "faut", base: "falloir" }
+      - { word: "de", base: "de" }
+      - { word: "l'ordre", ref: "fr-2676" }
+    confusables:
+      - { id: "equilibre", ref: "fr-2678", kind: "word" }
+      - { id: "force", ref: "fr-2665", kind: "word" }
+  - id: "fr-2709"
+    target: "La qualité et la valeur de ce défaut sont très différentes."
+    ipa: "la kalite e la valœʁ də sə defo sɔ̃ tʁɛ difeʁɑ̃t"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "qualité", ref: "fr-2682" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "valeur", ref: "fr-2664" }
+      - { word: "de", base: "de" }
+      - { word: "ce", ref: "fr-0143" }
+      - { word: "défaut", ref: "fr-2683" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "très", ref: "fr-0031" }
+      - { word: "différentes", ref: "fr-2699" }
+    confusables:
+      - { id: "difference", ref: "fr-2679", kind: "word" }
+      - { id: "semblable", ref: "fr-2700", kind: "word" }
+

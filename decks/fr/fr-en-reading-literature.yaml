@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-literature"
+name: "Reading: literature"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about literature. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-book-blurb"
+    title: "The back-cover blurb of a novel"
+    theme: "literature"
+    sentences:
+      - text: "Une jeune femme découvre un vieux journal dans le grenier de sa grand-mère."
+      - text: "Le récit la mène d’un petit village à une grande ville, à la recherche de la vérité."
+      - text: "Un roman plein de suspense, écrit dans une langue simple et très belle."
+      - text: "Traduit dans dix langues, ce livre est un grand succès de librairie."
+    questions:
+      - id: "fr-2781"
+        prompt: { en: "Where does the young woman find an old diary?" }
+        options:
+          - { en: "In the attic" }
+          - { en: "In a library" }
+          - { en: "In a shop" }
+        answer: 1
+      - id: "fr-2782"
+        prompt: { en: "What is the novel about?" }
+        options:
+          - { en: "A search for the truth" }
+          - { en: "A holiday" }
+          - { en: "A cooking contest" }
+        answer: 1
+      - id: "fr-2783"
+        prompt: { en: "How many languages has the book been translated into?" }
+        options:
+          - { en: "Two" }
+          - { en: "Five" }
+          - { en: "Ten" }
+        answer: 3

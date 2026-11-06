@@ -1,0 +1,88 @@
+schema: 1
+id: "fr-en-shopping-sentences"
+kind: "layer"
+core: "fr-shopping-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: shopping"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about shopping, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1460":
+    native: "I pay with my card, not in cash."
+    bases:
+      "paie": "pay"
+      "pas": "not"
+      "en": "in"
+    confusables:
+      "monnaie": { why: "Monnaie is change, the coins back from a payment, not the way you pay." }
+      "ticket": { why: "Ticket is a receipt or a ticket, not a payment method." }
+  "fr-1461":
+    native: "The shop opens at nine o'clock."
+    bases:
+      "ouvre": "opens"
+      "à": "at"
+      "heures": "o'clock"
+    confusables:
+      "supermarche": { why: "Supermarché is a supermarket, a larger shop, not the shop in the sentence." }
+      "boutique": { why: "Boutique is a small shop, not a time." }
+  "fr-1462":
+    native: "This jacket costs too much."
+    bases:
+      "coûte": "costs"
+    confusables:
+      "remise": { why: "Remise is a discount, not a price." }
+      "reduction": { why: "Réduction is a discount: the sentence says the price is too high." }
+  "fr-1463":
+    native: "Keep the till receipt."
+    bases:
+      "Garde": "keep"
+      "de": "of"
+    confusables:
+      "chariot": { why: "Chariot is a trolley, not a receipt." }
+      "panier": { why: "Panier is a basket, not a receipt." }
+  "fr-1464":
+    native: "You can exchange this jumper tomorrow."
+    bases:
+      "peux": "can"
+    confusables:
+      "rembourser": { why: "Rembourser is to refund money, not to swap an item." }
+      "occasion": { why: "Occasion is a bargain or second-hand, not an exchange." }
+  "fr-1465":
+    native: "I would like a bag, thank you."
+    bases:
+      "voudrais": "would like"
+    confusables:
+      "panier": { why: "Panier is a basket, not a bag." }
+      "valise": { why: "Valise is a suitcase, not a shopping bag." }
+  "fr-1466":
+    native: "The price of bread is low."
+    bases:
+      "du": "of the"
+    confusables:
+      "promotion": { why: "Promotion is an offer: the sentence gives a price, not an offer." }
+      "gratuit": { why: "Gratuit is free, which is not a low price." }
+  "fr-1467":
+    native: "The saleswoman opens the till."
+    bases:
+      "ouvre": "opens"
+    confusables:
+      "caissier": { why: "Caissier is the cashier, a man; the sentence has a saleswoman." }
+      "vendeur": { why: "Vendeur is a salesman, the masculine word for the saleswoman." }
+  "fr-1468":
+    native: "This shop sells books and pens."
+    bases:
+      "vend": "sells"
+      "livres": "books"
+      "stylos": "pens"
+    confusables:
+      "librairie": { why: "Librairie is a bookshop, a shop for books only." }
+      "papeterie": { why: "Papeterie is a stationer's, which sells pens and paper, not books." }
+  "fr-1469":
+    native: "You pay at the till."
+    bases:
+      "paie": "pay"
+      "à": "at"
+    confusables:
+      "chariot": { why: "Chariot is a trolley, not the place where you pay." }
+      "file": { why: "File is a queue, where you wait before you pay." }

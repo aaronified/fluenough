@@ -1,0 +1,295 @@
+schema: 1
+id: "fr-en-emergencies"
+kind: "layer"
+core: "fr-emergencies"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Emergencies"
+license: "CC-BY-SA-4.0"
+description: "Forty words for emergencies: calling for help, the accident and the hospital, the services who come, and the verbs for saying what has happened. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2508":
+    native: "ambulance"
+    notes:
+      "n1": "Une ambulance takes ill or injured people to hospital."
+    examples:
+      "L'ambulance arrive vite.":
+        native: "The ambulance arrives quickly."
+        bases:
+          "L'ambulance": "ambulance"
+      "Ils appellent une ambulance.":
+        native: "They call an ambulance."
+        bases:
+          "ambulance": "ambulance"
+  "fr-2509":
+    native: "injury, wound"
+    notes:
+      "n1": "Une blessure is a wound or injury to the body."
+    examples:
+      "La blessure saigne beaucoup.":
+        native: "The wound is bleeding a lot."
+        bases:
+          "blessure": "injury, wound"
+      "Sa blessure n'est pas grave.":
+        native: "His injury is not serious."
+        bases:
+          "blessure": "injury, wound"
+          "pas": "not"
+          "grave": "serious"
+  "fr-2510":
+    native: "fire"
+    notes:
+      "n1": "Un incendie is a large fire that damages things."
+    examples:
+      "L'incendie est éteint.":
+        native: "The fire is out."
+        bases:
+          "L'incendie": "fire"
+      "Un incendie a détruit la forêt.":
+        native: "A fire has destroyed the forest."
+        bases:
+          "incendie": "fire"
+          "détruit": "destroyed"
+  "fr-2511":
+    native: "smoke"
+    notes:
+      "n1": "La fumée is the smoke from a fire."
+    examples:
+      "La fumée sort de la fenêtre.":
+        native: "The smoke comes out of the window."
+        bases:
+          "fumée": "smoke"
+          "de": "of, from, some"
+      "Il y a beaucoup de fumée.":
+        native: "There is a lot of smoke."
+        bases:
+          "de": "of, from, some"
+          "fumée": "smoke"
+  "fr-2512":
+    native: "alarm"
+    notes:
+      "n1": "Une alarme sounds to warn people of danger."
+    examples:
+      "L'alarme sonne dans l'immeuble.":
+        native: "The alarm rings in the building."
+        bases:
+          "L'alarme": "alarm"
+      "Quelqu'un a déclenché l'alarme.":
+        native: "Someone set off the alarm."
+        bases:
+          "déclenché": "set off"
+          "l'alarme": "alarm"
+  "fr-2513":
+    native: "faint, dizzy spell"
+    notes:
+      "n1": "Un malaise is a sudden feeling of being unwell, such as fainting."
+    examples:
+      "Il a fait un malaise dans la rue.":
+        native: "He fainted in the street."
+        bases:
+          "malaise": "faint, dizzy spell"
+      "Elle a eu un malaise au travail.":
+        native: "She felt faint at work."
+        bases:
+          "malaise": "faint, dizzy spell"
+          "au": "at, to the"
+  "fr-2514":
+    native: "fainting"
+    notes:
+      "n1": "Un évanouissement is the loss of consciousness for a short time."
+    examples:
+      "Son évanouissement a duré une minute.":
+        native: "His fainting lasted a minute."
+        bases:
+          "évanouissement": "fainting"
+      "Après l'évanouissement, il va mieux.":
+        native: "After fainting, he is better."
+        bases:
+          "l'évanouissement": "fainting"
+  "fr-2515":
+    native: "fracture"
+    notes:
+      "n1": "Une fracture is a broken bone."
+    examples:
+      "Il a une fracture du bras.":
+        native: "He has a broken arm."
+        bases:
+          "fracture": "fracture"
+          "du": "some, of the"
+      "La fracture guérit en six semaines.":
+        native: "The fracture heals in six weeks."
+        bases:
+          "fracture": "fracture"
+          "en": "in"
+  "fr-2516":
+    native: "burn"
+    notes:
+      "n1": "Une brûlure is a burn on the skin."
+    examples:
+      "La brûlure est légère.":
+        native: "The burn is slight."
+        bases:
+          "brûlure": "burn"
+      "Mettez la brûlure sous l'eau froide.":
+        native: "Put the burn under cold water."
+        bases:
+          "brûlure": "burn"
+  "fr-2517":
+    native: "first aider"
+    notes:
+      "n1": "Un secouriste gives first aid; it is used for both genders."
+    examples:
+      "Le secouriste soigne la blessure.":
+        native: "The first aider treats the wound."
+        bases:
+          "secouriste": "first aider"
+      "Un secouriste arrive en premier.":
+        native: "A first aider arrives first."
+        bases:
+          "secouriste": "first aider"
+          "en": "in"
+  "fr-2518":
+    native: "gendarme, police officer"
+    notes:
+      "n1": "Un gendarme is a police officer in rural areas and small towns; used for both genders."
+    examples:
+      "Le gendarme note le numéro.":
+        native: "The gendarme notes the number."
+        bases:
+          "gendarme": "gendarme, police officer"
+          "note": "notes"
+      "Un gendarme contrôle la route.":
+        native: "A gendarme checks the road."
+        bases:
+          "gendarme": "gendarme, police officer"
+          "contrôle": "check"
+  "fr-2519":
+    native: "call"
+    notes:
+      "n1": "Un appel is a phone call, or the act of calling."
+    examples:
+      "Je fais un appel urgent.":
+        native: "I make an urgent call."
+        bases:
+          "appel": "call"
+          "urgent": "urgent"
+      "Le médecin reçoit un appel.":
+        native: "The doctor receives a call."
+        bases:
+          "appel": "call"
+  "fr-2520":
+    native: "breakdown"
+    notes:
+      "n1": "Une panne is a breakdown of a machine or vehicle."
+    examples:
+      "La voiture est en panne.":
+        native: "The car has broken down."
+        bases:
+          "en": "in"
+          "panne": "breakdown"
+      "Il y a une panne de courant.":
+        native: "There is a power cut."
+        bases:
+          "panne": "breakdown"
+          "de": "of, from, some"
+          "courant": "current"
+  "fr-2521":
+    native: "intensive care"
+    notes:
+      "n1": "La réanimation is the intensive care unit of a hospital."
+    examples:
+      "Il est en réanimation.":
+        native: "He is in intensive care."
+        bases:
+          "en": "in"
+          "réanimation": "intensive care"
+      "La réanimation est pleine ce soir.":
+        native: "Intensive care is full tonight."
+        bases:
+          "réanimation": "intensive care"
+  "fr-2522":
+    native: "to save, to rescue"
+    notes:
+      "n1": "Sauver is regular: to rescue someone from danger."
+    examples:
+      "Le pompier sauve l'enfant.":
+        native: "The firefighter rescues the child."
+        bases:
+          "sauve": "to save, to rescue"
+          "l'enfant": "child"
+      "Ils sauvent deux personnes.":
+        native: "They save two people."
+        bases:
+          "sauvent": "to save, to rescue"
+          "personnes": "people"
+  "fr-2523":
+    native: "to help, to assist"
+    notes:
+      "n1": "Secourir is irregular: je secours, nous secourons."
+    examples:
+      "Les gendarmes secourent les blessés.":
+        native: "The gendarmes help the injured."
+        bases:
+          "secourent": "to help, to assist"
+      "Nous devons secourir les voisins.":
+        native: "We must help the neighbours."
+        bases:
+          "secourir": "to help, to assist"
+  "fr-2524":
+    native: "to evacuate"
+    notes:
+      "n1": "Évacuer is regular: to leave a place quickly for safety."
+    examples:
+      "On évacue le bâtiment.":
+        native: "The building is being evacuated."
+        bases:
+          "évacue": "to evacuate"
+          "bâtiment": "building"
+      "Évacuez le bâtiment, s'il vous plaît.":
+        native: "Evacuate the building, please."
+        bases:
+          "Évacuez": "to evacuate"
+          "bâtiment": "building"
+          "plaît": "pleases"
+  "fr-2525":
+    native: "to slip"
+    notes:
+      "n1": "Glisser is regular: to slip on a surface."
+    examples:
+      "Il glisse sur la glace.":
+        native: "He slips on the ice."
+        bases:
+          "glisse": "to slip"
+      "Attention, le sol glisse.":
+        native: "Careful, the floor is slippery."
+        bases:
+          "glisse": "to slip"
+  "fr-2526":
+    native: "to burn"
+    notes:
+      "n1": "Brûler is regular: to burn something or to be on fire."
+    examples:
+      "Le feu brûle la maison.":
+        native: "The fire burns the house."
+        bases:
+          "brûle": "to burn"
+      "Attention, la casserole brûle.":
+        native: "Careful, the pan is burning."
+        bases:
+          "brûle": "to burn"
+  "fr-2527":
+    native: "leak, escape"
+    notes:
+      "n1": "Une fuite is a leak of gas or water, or an escape."
+    examples:
+      "Il y a une fuite de gaz.":
+        native: "There is a gas leak."
+        bases:
+          "fuite": "leak, escape"
+          "de": "of, from, some"
+          "gaz": "gas"
+      "Le voleur prend la fuite.":
+        native: "The thief runs away."
+        bases:
+          "voleur": "thief"
+          "fuite": "leak, escape"

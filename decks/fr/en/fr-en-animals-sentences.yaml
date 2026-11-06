@@ -1,0 +1,59 @@
+schema: 1
+id: "fr-en-animals-sentences"
+kind: "layer"
+core: "fr-animals-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: animals"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about animals, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1287":
+    native: "The rabbit is afraid of the fox."
+    bases:
+      "peur": "fear"
+      "du": "of the"
+  "fr-1288":
+    native: "The hens and the roosters live at the farm."
+    bases:
+      "vivent": "live"
+      "à": "at"
+  "fr-1289":
+    native: "The horse is bigger than the dog."
+    bases:
+      "que": "than"
+  "fr-1290":
+    native: "The birds sing in the morning."
+    confusables:
+      "coq": { why: "Coq is 'rooster', a bird that crows, not the word for birds in general." }
+      "chien": { why: "Chien is 'dog', an animal, not a bird." }
+  "fr-1291":
+    native: "My cat eats some fish."
+    bases:
+      "du": "some"
+    confusables:
+      "chien": { why: "Chien is 'dog', not 'cat'." }
+      "lait": { why: "Lait is 'milk'; the cat eats fish here." }
+  "fr-1292":
+    native: "The tiger and the lion live in Africa."
+    bases:
+      "vivent": "live"
+      "en": "in"
+      "Afrique": "Africa"
+  "fr-1293":
+    native: "The tortoise is slow."
+  "fr-1294":
+    native: "The bee and the butterfly fly in a garden."
+    bases:
+      "volent": "fly"
+    confusables:
+      "fourmi": { why: "Fourmi is 'ant', a different insect from the bee or the butterfly." }
+      "oiseaux": { why: "Oiseaux is 'birds', not the insects in the sentence." }
+  "fr-1295":
+    native: "The wolf and the fox are wild animals."
+    bases:
+      "sauvages": "wild"
+  "fr-1296":
+    native: "The snake and the bear are dangerous."
+    bases:
+      "dangereux": "dangerous"

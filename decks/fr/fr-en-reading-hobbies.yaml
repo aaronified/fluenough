@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-hobbies"
+name: "Reading: hobbies"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about hobbies: a poster for a sports and music club, and a note about weekend plans. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-club-poster"
+    title: "A poster for a sports and music club"
+    theme: "hobbies"
+    sentences:
+      - text: "Club des loisirs : football, tennis et natation."
+      - text: "Musique : guitare, piano et chanson."
+      - text: "Entraînement le mardi et le jeudi."
+      - text: "Venez au club le samedi après-midi !"
+    questions:
+      - id: "fr-1694"
+        prompt: { en: "Which sport is not on the poster?" }
+        options:
+          - { en: "Tennis" }
+          - { en: "Swimming" }
+          - { en: "Chess" }
+        answer: 3
+      - id: "fr-1695"
+        prompt: { en: "When is the training?" }
+        options:
+          - { en: "Monday and Wednesday" }
+          - { en: "Tuesday and Thursday" }
+          - { en: "Saturday only" }
+        answer: 2
+      - id: "fr-1696"
+        prompt: { en: "When can you come to the club?" }
+        options:
+          - { en: "On Saturday afternoon" }
+          - { en: "On Sunday morning" }
+          - { en: "Every evening" }
+        answer: 1
+  - id: "fr-weekend-plans"
+    title: "A note about weekend plans"
+    theme: "hobbies"
+    sentences:
+      - text: "Salut Paul, tu fais quoi samedi ?"
+      - text: "Moi, je joue au tennis le matin."
+      - text: "L'après-midi, je fais de la peinture avec ma sœur."
+      - text: "Dimanche, on fait une randonnée ?"
+    questions:
+      - id: "fr-1697"
+        prompt: { en: "What does the writer play in the morning?" }
+        options:
+          - { en: "Tennis" }
+          - { en: "Chess" }
+          - { en: "Football" }
+        answer: 1
+      - id: "fr-1698"
+        prompt: { en: "What does the writer do with the sister in the afternoon?" }
+        options:
+          - { en: "Painting" }
+          - { en: "Cooking" }
+          - { en: "Knitting" }
+        answer: 1
+      - id: "fr-1699"
+        prompt: { en: "What does the writer suggest for Sunday?" }
+        options:
+          - { en: "A hike" }
+          - { en: "A concert" }
+          - { en: "A match" }
+        answer: 1

@@ -1,0 +1,543 @@
+schema: 1
+id: "fr-en-services"
+kind: "layer"
+core: "fr-services"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Services"
+license: "CC-BY-SA-4.0"
+description: "Forty words for the services we use: the post office, the bank counter, the repairer and the forms we fill in. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1971":
+    native: "parcel"
+    notes:
+      "n1": "Un colis is a parcel sent by post or courier."
+    examples:
+      "J'attends un colis demain.":
+        native: "I am waiting for a parcel tomorrow."
+        bases:
+          "colis": "parcel"
+      "Le colis est arrivé ce matin.":
+        native: "The parcel arrived this morning."
+        bases:
+          "colis": "parcel"
+  "fr-1972":
+    native: "letter"
+    notes:
+      "n1": "Une lettre is a letter in the post; a single letter of the alphabet is also une lettre."
+    examples:
+      "J'envoie une lettre à mon frère.":
+        native: "I send a letter to my brother."
+        bases:
+          "lettre": "letter"
+          "à": "to, at"
+      "La lettre est dans la boîte.":
+        native: "The letter is in the box."
+        bases:
+          "lettre": "letter"
+  "fr-1973":
+    native: "counter, window"
+    notes:
+      "n1": "Un guichet is the counter where you are served in a bank, post office or station."
+    examples:
+      "Allez au guichet numéro trois.":
+        native: "Go to counter number three."
+        bases:
+          "au": "at, to the"
+          "guichet": "counter, window"
+      "Le guichet ferme à seize heures.":
+        native: "The counter closes at four."
+        bases:
+          "guichet": "counter, window"
+          "à": "to, at"
+  "fr-1974":
+    native: "account"
+    notes:
+      "n1": "Un compte is a bank account; also a count."
+    examples:
+      "J'ouvre un compte à la banque.":
+        native: "I open an account at the bank."
+        bases:
+          "compte": "account"
+          "à": "to, at"
+      "Votre compte est vérifié.":
+        native: "Your account is checked."
+        bases:
+          "compte": "account"
+  "fr-1975":
+    native: "repair"
+    notes:
+      "n1": "Une réparation is the fixing of something broken."
+    examples:
+      "La réparation prend trois jours.":
+        native: "The repair takes three days."
+        bases:
+          "réparation": "repair"
+      "Cette réparation coûte cher.":
+        native: "This repair costs a lot."
+        bases:
+          "réparation": "repair"
+  "fr-1976":
+    native: "subscription"
+    notes:
+      "n1": "Un abonnement is a contract to pay for a service regularly."
+    examples:
+      "Je prends un abonnement de téléphone.":
+        native: "I take a phone subscription."
+        bases:
+          "abonnement": "subscription"
+          "de": "of, from, some"
+      "L'abonnement coûte vingt euros par mois.":
+        native: "The subscription costs twenty euros a month."
+        bases:
+          "L'abonnement": "subscription"
+  "fr-1977":
+    native: "insurance"
+    notes:
+      "n1": "L’assurance is the contract that pays if something goes wrong."
+    examples:
+      "Ma voiture a une assurance.":
+        native: "My car has insurance."
+        bases:
+          "assurance": "insurance"
+      "L'assurance paie la réparation.":
+        native: "The insurance pays for the repair."
+        bases:
+          "L'assurance": "insurance"
+  "fr-1978":
+    native: "form"
+    notes:
+      "n1": "Un formulaire is a paper with boxes to fill in."
+    examples:
+      "Remplissez ce formulaire, s'il vous plaît.":
+        native: "Fill in this form, please."
+        bases:
+          "formulaire": "form"
+          "plaît": "pleases"
+      "Le formulaire est en double.":
+        native: "The form is in two copies."
+        bases:
+          "formulaire": "form"
+          "en": "in, by, as"
+          "double": "double"
+  "fr-1979":
+    native: "document"
+    notes:
+      "n1": "Un document is a paper or file with information."
+    examples:
+      "Voici le document demandé.":
+        native: "Here is the requested document."
+        bases:
+          "Voici": "here is"
+          "document": "document"
+      "Ce document est très important.":
+        native: "This document is very important."
+        bases:
+          "document": "document"
+  "fr-1980":
+    native: "request, application"
+    notes:
+      "n1": "Une demande is a request or an application for something."
+    examples:
+      "Ma demande est acceptée.":
+        native: "My application is accepted."
+        bases:
+          "demande": "request, application"
+          "acceptée": "accepted"
+      "Faites une demande par courriel.":
+        native: "Make a request by email."
+        bases:
+          "demande": "request, application"
+  "fr-1981":
+    native: "cleaning"
+    notes:
+      "n1": "Le nettoyage is the act of cleaning; the verb is nettoyer."
+    examples:
+      "Le nettoyage de la voiture est cher.":
+        native: "Cleaning the car is expensive."
+        bases:
+          "nettoyage": "cleaning"
+          "de": "of, from, some"
+      "Ils font le nettoyage du bureau.":
+        native: "They do the office cleaning."
+        bases:
+          "nettoyage": "cleaning"
+          "du": "some, of the"
+  "fr-1982":
+    native: "hairdresser"
+    notes:
+      "n1": "Un coiffeur cuts hair; the feminine is coiffeuse."
+    examples:
+      "Le coiffeur coupe mes cheveux.":
+        native: "The hairdresser cuts my hair."
+        bases:
+          "coiffeur": "hairdresser"
+      "Je vais chez le coiffeur demain.":
+        native: "I am going to the hairdresser tomorrow."
+        bases:
+          "coiffeur": "hairdresser"
+  "fr-1983":
+    native: "plumber"
+    notes:
+      "n1": "Un plombier fixes pipes and water; the feminine is plombière."
+    examples:
+      "Le plombier répare le robinet.":
+        native: "The plumber fixes the tap."
+        bases:
+          "plombier": "plumber"
+          "robinet": "tap"
+      "Le plombier vient demain matin.":
+        native: "The plumber comes tomorrow morning."
+        bases:
+          "plombier": "plumber"
+  "fr-1984":
+    native: "electrician"
+    notes:
+      "n1": "Un électricien fixes electric wires; the feminine is électricienne."
+    examples:
+      "L'électricien vérifie la prise.":
+        native: "The electrician checks the socket."
+        bases:
+          "L'électricien": "electrician"
+      "Il appelle un électricien.":
+        native: "He calls an electrician."
+        bases:
+          "électricien": "electrician"
+  "fr-1985":
+    native: "mechanic"
+    notes:
+      "n1": "Un mécanicien repairs cars and machines; the feminine is mécanicienne."
+    examples:
+      "Le mécanicien regarde le moteur.":
+        native: "The mechanic looks at the engine."
+        bases:
+          "mécanicien": "mechanic"
+          "moteur": "engine"
+      "La voiture est chez le mécanicien.":
+        native: "The car is at the mechanic’s."
+        bases:
+          "mécanicien": "mechanic"
+  "fr-1986":
+    native: "to receive"
+    notes:
+      "n1": "Recevoir is irregular: je reçois, nous recevons."
+    examples:
+      "Je reçois un message.":
+        native: "I receive a message."
+        bases:
+          "reçois": "to receive"
+      "Nous recevons le colis demain.":
+        native: "We receive the parcel tomorrow."
+        bases:
+          "recevons": "to receive"
+  "fr-1987":
+    native: "to sign"
+    notes:
+      "n1": "Signer is regular; the noun is signature."
+    examples:
+      "Signez ici, s'il vous plaît.":
+        native: "Sign here, please."
+        bases:
+          "Signez": "to sign"
+          "plaît": "pleases"
+      "Il signe le contrat.":
+        native: "He signs the contract."
+        bases:
+          "signe": "to sign"
+          "contrat": "contract"
+  "fr-1988":
+    native: "to fill in, to fill"
+    notes:
+      "n1": "Remplir is an -ir verb: remplir un formulaire is to fill in a form."
+    examples:
+      "Je remplis le formulaire.":
+        native: "I fill in the form."
+        bases:
+          "remplis": "to fill in, to fill"
+      "Remplissez la fiche.":
+        native: "Fill in the card."
+        bases:
+          "Remplissez": "to fill in, to fill"
+          "fiche": "card"
+  "fr-1989":
+    native: "to deliver"
+    notes:
+      "n1": "Livrer is regular; the noun is livraison."
+    examples:
+      "Le magasin livre à domicile.":
+        native: "The shop delivers to the home."
+        bases:
+          "à": "to, at"
+          "domicile": "home"
+      "Nous livrons les colis le matin.":
+        native: "We deliver the parcels in the morning."
+        bases:
+          "livrons": "to deliver"
+  "fr-1990":
+    native: "bill, invoice"
+    notes:
+      "n1": "Une facture is a bill for work or goods."
+    examples:
+      "La facture est trop élevée.":
+        native: "The bill is too high."
+        bases:
+          "facture": "bill, invoice"
+          "élevée": "high"
+      "Je paie la facture par carte.":
+        native: "I pay the bill by card."
+        bases:
+          "facture": "bill, invoice"
+  "fr-1991":
+    native: "signature"
+    notes:
+      "n1": "Une signature is the name written by hand on a document."
+    examples:
+      "Votre signature est nécessaire.":
+        native: "Your signature is needed."
+        bases:
+          "signature": "signature"
+          "nécessaire": "needed"
+      "La signature est en bas de la page.":
+        native: "The signature is at the bottom of the page."
+        bases:
+          "signature": "signature"
+          "en": "in, by, as"
+          "de": "of, from, some"
+  "fr-1992":
+    native: "time limit, delay"
+    notes:
+      "n1": "Un délai is the time you have to do something."
+    examples:
+      "Le délai est de trente jours.":
+        native: "The time limit is thirty days."
+        bases:
+          "délai": "time limit, delay"
+          "de": "of, from, some"
+      "Vous avez un délai d'une semaine.":
+        native: "You have a week’s time limit."
+        bases:
+          "délai": "time limit, delay"
+          "d'une": "of a"
+  "fr-1993":
+    native: "agency"
+    notes:
+      "n1": "Une agence is a local office of a company or service."
+    examples:
+      "L'agence est ouverte le samedi.":
+        native: "The agency is open on Saturday."
+        bases:
+          "L'agence": "agency"
+      "Je vais à l'agence de voyages.":
+        native: "I am going to the travel agency."
+        bases:
+          "à": "to, at"
+          "l'agence": "agency"
+          "de": "of, from, some"
+  "fr-1994":
+    native: "adviser"
+    notes:
+      "n1": "Un conseiller gives advice; the feminine is conseillère."
+    examples:
+      "Le conseiller répond à mes questions.":
+        native: "The adviser answers my questions."
+        bases:
+          "conseiller": "adviser"
+          "à": "to, at"
+      "Parlez à votre conseiller.":
+        native: "Speak to your adviser."
+        bases:
+          "à": "to, at"
+          "conseiller": "adviser"
+  "fr-1995":
+    native: "deposit, drop-off"
+    notes:
+      "n1": "Un dépôt is money put down in advance, or a place where things are left."
+    examples:
+      "Le dépôt est remboursé à la fin.":
+        native: "The deposit is refunded at the end."
+        bases:
+          "dépôt": "deposit, drop-off"
+          "à": "to, at"
+      "Faites le dépôt à l'accueil.":
+        native: "Leave it at reception."
+        bases:
+          "dépôt": "deposit, drop-off"
+          "à": "to, at"
+          "l'accueil": "reception"
+  "fr-1996":
+    native: "withdrawal"
+    notes:
+      "n1": "Un retrait is money taken out of a bank."
+    examples:
+      "Je fais un retrait au distributeur.":
+        native: "I make a withdrawal at the cash machine."
+        bases:
+          "retrait": "withdrawal"
+          "au": "at, to the"
+      "Le retrait est limité à deux cents euros.":
+        native: "The withdrawal is limited to two hundred euros."
+        bases:
+          "retrait": "withdrawal"
+          "limité": "limited"
+          "à": "to, at"
+  "fr-1997":
+    native: "price list, rate"
+    notes:
+      "n1": "Un tarif is the price for a service, shown in a list."
+    examples:
+      "Le tarif est affiché à l'entrée.":
+        native: "The price list is shown at the entrance."
+        bases:
+          "tarif": "price list, rate"
+          "affiché": "shown"
+          "à": "to, at"
+      "Quel est le tarif de la visite ?":
+        native: "What is the price of the visit?"
+        bases:
+          "tarif": "price list, rate"
+          "de": "of, from, some"
+          "visite": "visit"
+  "fr-1999":
+    native: "dry cleaner’s"
+    notes:
+      "n1": "Un pressing is a shop where clothes are cleaned and ironed."
+    examples:
+      "Je porte mon manteau au pressing.":
+        native: "I take my coat to the dry cleaner’s."
+        bases:
+          "au": "at, to the"
+          "pressing": "dry cleaner’s"
+      "Le pressing rend les vêtements demain.":
+        native: "The dry cleaner’s returns the clothes tomorrow."
+        bases:
+          "pressing": "dry cleaner’s"
+  "fr-2000":
+    native: "locksmith"
+    notes:
+      "n1": "Un serrurier opens doors and fixes locks; the feminine is serrurière."
+    examples:
+      "Le serrurier ouvre la porte.":
+        native: "The locksmith opens the door."
+        bases:
+          "serrurier": "locksmith"
+      "J'appelle un serrurier, j'ai perdu la clé.":
+        native: "I call a locksmith, I have lost the key."
+        bases:
+          "serrurier": "locksmith"
+  "fr-2001":
+    native: "gardener"
+    notes:
+      "n1": "Un jardinier looks after gardens; the feminine is jardinière."
+    examples:
+      "Le jardinier coupe la haie.":
+        native: "The gardener cuts the hedge."
+        bases:
+          "jardinier": "gardener"
+          "haie": "hedge"
+      "Notre jardinier vient le samedi.":
+        native: "Our gardener comes on Saturdays."
+        bases:
+          "jardinier": "gardener"
+  "fr-2003":
+    native: "complaint"
+    notes:
+      "n1": "Une réclamation is a formal complaint about a service."
+    examples:
+      "Je fais une réclamation.":
+        native: "I make a complaint."
+        bases:
+          "réclamation": "complaint"
+      "La réclamation est acceptée.":
+        native: "The complaint is accepted."
+        bases:
+          "réclamation": "complaint"
+          "acceptée": "accepted"
+  "fr-2004":
+    native: "guarantee, warranty"
+    notes:
+      "n1": "Une garantie is a promise to repair or replace a product."
+    examples:
+      "La garantie dure deux ans.":
+        native: "The warranty lasts two years."
+        bases:
+          "garantie": "guarantee, warranty"
+      "Cet appareil est sous garantie.":
+        native: "This appliance is under warranty."
+        bases:
+          "appareil": "appliance"
+          "garantie": "guarantee, warranty"
+  "fr-2006":
+    native: "to send, to dispatch"
+    notes:
+      "n1": "Expédier is regular; it is used for sending goods."
+    examples:
+      "Nous expédions le colis lundi.":
+        native: "We send the parcel on Monday."
+        bases:
+          "expédions": "to send, to dispatch"
+      "Il expédie les commandes chaque jour.":
+        native: "He dispatches orders each day."
+        bases:
+          "expédie": "to send, to dispatch"
+          "commandes": "orders"
+  "fr-2007":
+    native: "to accept"
+    notes:
+      "n1": "Accepter is regular; accepter de is to agree to do something."
+    examples:
+      "J'accepte votre demande.":
+        native: "I accept your request."
+        bases:
+          "J'accepte": "to accept"
+      "Elle accepte de signer.":
+        native: "She agrees to sign."
+        bases:
+          "accepte": "to accept"
+          "de": "of, from, some"
+  "fr-2017":
+    native: "postman"
+    notes:
+      "n1": "Un facteur delivers the post; the feminine is factrice."
+    examples:
+      "Le facteur apporte une lettre.":
+        native: "The postman brings a letter."
+        bases:
+          "facteur": "postman"
+          "apporte": "brings"
+      "Le facteur passe à midi.":
+        native: "The postman comes by at noon."
+        bases:
+          "facteur": "postman"
+          "à": "to, at"
+  "fr-2018":
+    native: "email"
+    notes:
+      "n1": "Un courriel is an email; the French word is preferred in official text."
+    examples:
+      "J'envoie un courriel au bureau.":
+        native: "I send an email to the office."
+        bases:
+          "courriel": "email"
+          "au": "at, to the"
+      "Le courriel est arrivé ce matin.":
+        native: "The email arrived this morning."
+        bases:
+          "courriel": "email"
+  "fr-2019":
+    native: "cash machine, dispenser"
+    notes:
+      "n1": "Un distributeur gives out cash or drinks."
+    examples:
+      "Le distributeur est en panne.":
+        native: "The cash machine is out of order."
+        bases:
+          "distributeur": "cash machine, dispenser"
+          "en": "in, by, as"
+          "panne": "breakdown"
+      "Je retire de l'argent au distributeur.":
+        native: "I take money out at the cash machine."
+        bases:
+          "retire": "withdraw"
+          "de": "of, from, some"
+          "au": "at, to the"
+          "distributeur": "cash machine, dispenser"

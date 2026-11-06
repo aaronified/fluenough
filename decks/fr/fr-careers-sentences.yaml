@@ -1,0 +1,107 @@
+schema: 1
+id: "fr-careers-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2150"
+    target: "Le candidat passe un entretien pour le poste."
+    ipa: "lə kɑ̃dida pas œ̃ nɑ̃tʁətjɛ̃ puʁ lə pɔst"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "candidat", ref: "fr-2119" }
+      - { word: "passe", ref: "fr-0519" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "entretien", ref: "fr-2120" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "poste", ref: "fr-0679" }
+    confusables:
+      - { id: "embaucher", ref: "fr-2126", kind: "word" }
+      - { id: "stage", ref: "fr-2121", kind: "word" }
+  - id: "fr-2151"
+    target: "L'entreprise embauche un ingénieur et un architecte."
+    ipa: "lɑ̃tʁəpʁiz ɑ̃boʃ œ̃ nɛ̃ʒenjœʁ e œ̃ naʁʃitɛkt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'entreprise", ref: "fr-0661" }
+      - { word: "embauche", ref: "fr-2126" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "ingénieur", ref: "fr-2122" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "architecte", ref: "fr-2145" }
+    confusables:
+      - { id: "licencier", ref: "fr-2127", kind: "word" }
+      - { id: "employe", ref: "fr-0663", kind: "word" }
+  - id: "fr-2152"
+    target: "Le salarié donne sa démission après dix ans."
+    ipa: "lə salaʁje dɔn sa demisjɔ̃ apʁɛ di ɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "salarié", ref: "fr-2142" }
+      - { word: "donne", ref: "fr-0302" }
+      - { word: "sa", ref: "fr-0138" }
+      - { word: "démission", ref: "fr-2134" }
+      - { word: "après", ref: "fr-0595" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "ans", ref: "fr-0259" }
+    confusables:
+      - { id: "retraite", ref: "fr-2146", kind: "word" }
+      - { id: "chomage", ref: "fr-2135", kind: "word" }
+  - id: "fr-2153"
+    target: "Elle dirige le projet avec son équipe."
+    ipa: "ɛl diʁiʒ lə pʁɔʒɛ avɛk sɔ̃ tɛki"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "dirige", ref: "fr-2128" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "projet", ref: "fr-0682" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "son", ref: "fr-0138" }
+      - { word: "équipe", ref: "fr-1680" }
+    confusables:
+      - { id: "cadre", ref: "fr-2133", kind: "word" }
+      - { id: "mission", ref: "fr-2139", kind: "word" }
+  - id: "fr-2154"
+    target: "Il suit une formation pour avoir un diplôme."
+    ipa: "il sɥi yn fɔʁmasjɔ̃ puʁ avwaʁ œ̃ diplom"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "suit", ref: "fr-0910" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "formation", ref: "fr-2132" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "avoir", ref: "fr-0022" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "diplôme", ref: "fr-2130" }
+    confusables:
+      - { id: "competence", ref: "fr-2131", kind: "word" }
+      - { id: "experience", ref: "fr-2129", kind: "word" }
+  - id: "fr-2155"
+    target: "Le syndicat défend les salariés au travail."
+    ipa: "lə sɛ̃dika defɑ̃ le salaʁje o tʁavaj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "syndicat", ref: "fr-2136" }
+      - { word: "défend", ref: "fr-1876" }
+      - { word: "les", ref: "fr-0543" }
+      - { word: "salariés", ref: "fr-2142" }
+      - { word: "au", base: "à" }
+      - { word: "travail", ref: "fr-0255" }
+    confusables:
+      - { id: "secretaire", ref: "fr-2144", kind: "word" }
+      - { id: "gerant", ref: "fr-2148", kind: "word" }
+

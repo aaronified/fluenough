@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-environment"
+name: "Reading: environment"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about environment. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-clean-up-notice"
+    title: "A notice for a neighbourhood clean-up"
+    theme: "environment"
+    sentences:
+      - text: "Nettoyage du quartier samedi matin."
+      - text: "Rendez-vous à neuf heures devant l’école, avec des gants."
+      - text: "Nous trierons les déchets et recyclerons le verre et le papier."
+      - text: "Merci de ne pas polluer le parc : utilisez les poubelles."
+    questions:
+      - id: "fr-2203"
+        prompt: { en: "When does the clean-up start?" }
+        options:
+          - { en: "Saturday morning" }
+          - { en: "Sunday evening" }
+          - { en: "Friday night" }
+        answer: 1
+      - id: "fr-2204"
+        prompt: { en: "What should volunteers bring?" }
+        options:
+          - { en: "Gloves" }
+          - { en: "A tent" }
+          - { en: "A bicycle" }
+        answer: 1
+      - id: "fr-2205"
+        prompt: { en: "What will the volunteers do with the glass?" }
+        options:
+          - { en: "Recycle it" }
+          - { en: "Throw it in the river" }
+          - { en: "Burn it" }
+        answer: 1

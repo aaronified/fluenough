@@ -1,0 +1,103 @@
+schema: 1
+id: "fr-history-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2323"
+    target: "L'empereur régnait sur un grand empire."
+    ipa: "lɑ̃pʁœʁ ʁeɲɛ syʁ œ̃ ɡʁɑ̃ tɑ̃piʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'empereur", ref: "fr-2299" }
+      - { word: "régnait", ref: "fr-2320" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "grand", ref: "fr-0410" }
+      - { word: "empire", ref: "fr-2292" }
+    confusables:
+      - { id: "roi", ref: "fr-2290", kind: "word" }
+      - { id: "reine", ref: "fr-2291", kind: "word" }
+  - id: "fr-2324"
+    target: "La révolution a changé l'époque et la dynastie."
+    ipa: "la ʁevɔlysjɔ̃ a ʃɑ̃ʒe lepɔk e la dinasti"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "révolution", ref: "fr-2293" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "changé", ref: "fr-0526" }
+      - { word: "l'époque", ref: "fr-2289" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "dynastie", ref: "fr-2300" }
+    confusables:
+      - { id: "siecle", ref: "fr-1173", kind: "word" }
+      - { id: "regne", ref: "fr-2318", kind: "word" }
+  - id: "fr-2325"
+    target: "Les fouilles montrent des vestiges du château."
+    ipa: "le fuj mɔ̃tʁ de vɛstiʒ dy ʃɑto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0543" }
+      - { word: "fouilles", ref: "fr-2302" }
+      - { word: "montrent", base: "montrer" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "vestiges", ref: "fr-2303" }
+      - { word: "du", base: "de" }
+      - { word: "château", ref: "fr-2295" }
+    confusables:
+      - { id: "ruine", ref: "fr-2305", kind: "word" }
+      - { id: "archeologie", ref: "fr-2301", kind: "word" }
+  - id: "fr-2326"
+    target: "Le traité met fin à la bataille."
+    ipa: "lə tʁete mɛ fɛ̃ a la bataj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "traité", ref: "fr-2308" }
+      - { word: "met", ref: "fr-0529" }
+      - { word: "fin", ref: "fr-1110" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "bataille", ref: "fr-2316" }
+    confusables:
+      - { id: "invasion", ref: "fr-2307", kind: "word" }
+      - { id: "guerrier", ref: "fr-2315", kind: "word" }
+  - id: "fr-2327"
+    target: "Cette tradition vient du Moyen Âge."
+    ipa: "sɛt tʁadisjɔ̃ vjɛ̃ dy mwajɛn aʒ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cette", ref: "fr-0144" }
+      - { word: "tradition", ref: "fr-2313" }
+      - { word: "vient", ref: "fr-0285" }
+      - { word: "du", base: "de" }
+      - { word: "Moyen", base: "moyen" }
+      - { word: "Âge", ref: "fr-0193" }
+    confusables:
+      - { id: "medieval", ref: "fr-2297", kind: "word" }
+      - { id: "coutume", ref: "fr-2314", kind: "word" }
+  - id: "fr-2328"
+    target: "Le témoignage parle d'une découverte ancienne."
+    ipa: "lə temwaɲaʒ paʁl dyn dekuvɛʁt ɑ̃sjɛn"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "témoignage", ref: "fr-2310" }
+      - { word: "parle", ref: "fr-0023" }
+      - { word: "d'une", base: "de" }
+      - { word: "découverte", ref: "fr-2306" }
+      - { word: "ancienne", ref: "fr-2296" }
+    confusables:
+      - { id: "archive", ref: "fr-2309", kind: "word" }
+      - { id: "evolution", ref: "fr-2311", kind: "word" }
+

@@ -1,0 +1,48 @@
+schema: 1
+id: "fr-en-reading-housing"
+name: "Reading: housing"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about housing. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-rental-terms"
+    title: "The terms of a rental"
+    theme: "housing"
+    sentences:
+      - text: "Durée du bail : trois ans, renouvelable."
+      - text: "Loyer mensuel : sept cent cinquante euros, payable le premier de chaque mois."
+      - text: "Caution : deux mois de loyer, rendue à la fin du bail si les lieux sont propres."
+      - text: "Le locataire doit prévenir le propriétaire trois mois avant de partir."
+    questions:
+      - id: "fr-2792"
+        prompt: { en: "How long is the lease?" }
+        options:
+          - { en: "One year" }
+          - { en: "Three years" }
+          - { en: "Five years" }
+        answer: 2
+      - id: "fr-2793"
+        prompt: { en: "When is the rent paid?" }
+        options:
+          - { en: "On the first of each month" }
+          - { en: "On the last day of the year" }
+          - { en: "Once a year" }
+        answer: 1
+      - id: "fr-2794"
+        prompt: { en: "When is the deposit returned?" }
+        options:
+          - { en: "At the end, if the flat is clean" }
+          - { en: "Never" }
+          - { en: "After one week" }
+        answer: 1
+      - id: "fr-2795"
+        prompt: { en: "How much notice must the tenant give?" }
+        options:
+          - { en: "Three months" }
+          - { en: "One day" }
+          - { en: "One year" }
+        answer: 1

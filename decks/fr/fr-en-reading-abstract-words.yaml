@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-abstract-words"
+name: "Reading: abstract words"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about abstract words. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-opinion-column"
+    title: "A short opinion column"
+    theme: "abstract-words"
+    sentences:
+      - text: "À mon avis, la liberté et la justice vont ensemble."
+      - text: "Le hasard joue un rôle, mais la volonté compte davantage."
+      - text: "Un désordre dans la société n’est jamais utile, et il faut chercher un équilibre."
+      - text: "Chacun peut changer d’avis, et c’est une force, non une faiblesse."
+    questions:
+      - id: "fr-2802"
+        prompt: { en: "What does the writer say goes together?" }
+        options:
+          - { en: "Freedom and justice" }
+          - { en: "Money and time" }
+          - { en: "Fear and anger" }
+        answer: 1
+      - id: "fr-2803"
+        prompt: { en: "What does the writer say about disorder?" }
+        options:
+          - { en: "It is never useful" }
+          - { en: "It is always useful" }
+          - { en: "It is a kind of art" }
+        answer: 1
+      - id: "fr-2804"
+        prompt: { en: "How does the writer see changing one’s mind?" }
+        options:
+          - { en: "As a strength" }
+          - { en: "As a weakness" }
+          - { en: "As a crime" }
+        answer: 1

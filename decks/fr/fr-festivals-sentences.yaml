@@ -1,0 +1,110 @@
+schema: 1
+id: "fr-festivals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2358"
+    target: "Le musicien joue pendant le défilé et les chants."
+    ipa: "lə myzisjɛ̃ ʒu pɑ̃dɑ̃ lə defile e le ʃɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "musicien", ref: "fr-2336" }
+      - { word: "joue", ref: "fr-0048" }
+      - { word: "pendant", ref: "fr-0597" }
+      - { word: "défilé", ref: "fr-2334" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "les", ref: "fr-0543" }
+      - { word: "chants", ref: "fr-2351" }
+    confusables:
+      - { id: "bal", ref: "fr-2352", kind: "word" }
+      - { id: "fanfare", ref: "fr-2356", kind: "word" }
+  - id: "fr-2359"
+    target: "Nous offrons un cadeau pour l'anniversaire de Paul."
+    ipa: "nu zɔfʁɔ̃ œ̃ kado puʁ lanivɛʁsɛʁ də pɔl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "offrons", ref: "fr-2339" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "cadeau", ref: "fr-1425" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "l'anniversaire", ref: "fr-1175" }
+      - { word: "de", base: "de" }
+      - { word: "Paul", base: "Paul" }
+    confusables:
+      - { id: "invitation", ref: "fr-2333", kind: "word" }
+      - { id: "gateau", ref: "fr-0789", kind: "word" }
+  - id: "fr-2360"
+    target: "Les bougies du gâteau sont allumées pendant la fête."
+    ipa: "le buʒi dy ɡɑto sɔ̃ talyme pɑ̃dɑ̃ la fɛt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0543" }
+      - { word: "bougies", ref: "fr-1396" }
+      - { word: "du", base: "de" }
+      - { word: "gâteau", ref: "fr-0789" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "allumées", ref: "fr-2080" }
+      - { word: "pendant", ref: "fr-0597" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "fête", ref: "fr-1176" }
+    confusables:
+      - { id: "feudartifice", ref: "fr-2335", kind: "word" }
+      - { id: "lanterne", ref: "fr-2349", kind: "word" }
+  - id: "fr-2361"
+    target: "Le carnaval a des masques et des déguisements."
+    ipa: "lə kaʁnaval a de mask e de degizmɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "carnaval", ref: "fr-2343" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "masques", ref: "fr-2344" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "déguisements", ref: "fr-2345" }
+    confusables:
+      - { id: "confetti", ref: "fr-2346", kind: "word" }
+      - { id: "defiler", ref: "fr-2337", kind: "word" }
+  - id: "fr-2362"
+    target: "Le réveillon est une fête joyeuse."
+    ipa: "lə ʁevɛjɔ̃ ɛ yn fɛt ʒwajøz"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "réveillon", ref: "fr-2341" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "fête", ref: "fr-1176" }
+      - { word: "joyeuse", ref: "fr-2347" }
+    confusables:
+      - { id: "noel", ref: "fr-1184", kind: "word" }
+      - { id: "traditionnel", ref: "fr-2348", kind: "word" }
+  - id: "fr-2363"
+    target: "On célèbre Pâques avec un repas en famille."
+    ipa: "ɔ̃ selɛbʁ pɑk avɛk œ̃ ʁəpa ɑ̃ famij"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "On", ref: "fr-0132" }
+      - { word: "célèbre", ref: "fr-2275" }
+      - { word: "Pâques", ref: "fr-2342" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "repas", ref: "fr-0813" }
+      - { word: "en", base: "en" }
+      - { word: "famille", ref: "fr-0164" }
+    confusables:
+      - { id: "calendrier", ref: "fr-1167", kind: "word" }
+      - { id: "feter", ref: "fr-2338", kind: "word" }
+

@@ -1,0 +1,448 @@
+schema: 1
+id: "fr-hobbies"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "hobbies"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1644"
+    target: "piano"
+    ipa: "pjano"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je joue du piano le soir.", ipa: "ʒə ʒu dy pjano lə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "joue", ref: "fr-0048" }, { word: "du", base: "de" }, { word: "piano", base: "piano" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "Le piano est très beau.", ipa: "lə pjano ɛ tʁɛ bo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "piano", base: "piano" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "beau", ref: "fr-0412" }] }
+  - id: "fr-1645"
+    target: "guitare"
+    ipa: "ɡitaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il joue de la guitare.", ipa: "il ʒu də la ɡitaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", ref: "fr-0048" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "guitare", base: "guitare" }] }
+      - { target: "La guitare est dans ma chambre.", ipa: "la ɡitaʁ ɛ dɑ̃ ma ʃɑ̃bʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "guitare", base: "guitare" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "ma", ref: "fr-0137" }, { word: "chambre", ref: "fr-0998" }] }
+  - id: "fr-1646"
+    target: "flûte"
+    ipa: "flyt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma sœur joue de la flûte.", ipa: "ma sœʁ ʒu də la flyt", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "joue", ref: "fr-0048" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "flûte", base: "flûte" }] }
+      - { target: "La flûte est légère.", ipa: "la flyt ɛ leʒɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "flûte", base: "flûte" }, { word: "est", ref: "fr-0021" }, { word: "légère", ref: "fr-0441" }] }
+  - id: "fr-1647"
+    target: "violon"
+    ipa: "vjɔlɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il joue du violon.", ipa: "il ʒu dy vjɔlɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", ref: "fr-0048" }, { word: "du", base: "de" }, { word: "violon", base: "violon" }] }
+      - { target: "Elle a un violon.", ipa: "ɛl a œ̃ vjɔlɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "violon", base: "violon" }] }
+  - id: "fr-1648"
+    target: "tambour"
+    ipa: "tɑ̃buʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tambour est très fort.", ipa: "lə tɑ̃buʁ ɛ tʁɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tambour", base: "tambour" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "fort", ref: "fr-0425" }] }
+      - { target: "Il joue du tambour dans l'orchestre.", ipa: "il ʒu dy tɑ̃buʁ dɑ̃ lɔʁkɛstʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", ref: "fr-0048" }, { word: "du", base: "de" }, { word: "tambour", base: "tambour" }, { word: "dans", ref: "fr-0049" }, { word: "l'orchestre", ref: "fr-1650" }] }
+  - id: "fr-1649"
+    target: "chanson"
+    ipa: "ʃɑ̃sɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime cette chanson.", ipa: "ʒɛm sɛt ʃɑ̃sɔ̃", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "cette", ref: "fr-0144" }, { word: "chanson", base: "chanson" }] }
+      - { target: "Elle chante une chanson française.", ipa: "ɛl ʃɑ̃t yn ʃɑ̃sɔ̃ fʁɑ̃sɛz", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "chante", ref: "fr-0522" }, { word: "une", ref: "fr-0545" }, { word: "chanson", base: "chanson" }, { word: "française", ref: "fr-0246" }] }
+  - id: "fr-1650"
+    target: "orchestre"
+    ipa: "ɔʁkɛstʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il joue dans un orchestre.", ipa: "il ʒu dɑ̃ zœ̃ ɔʁkɛstʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", ref: "fr-0048" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "orchestre", base: "orchestre" }] }
+      - { target: "L'orchestre joue ce soir.", ipa: "lɔʁkɛstʁ ʒu sə swaʁ", bases: [{ word: "L'orchestre", base: "orchestre" }, { word: "joue", ref: "fr-0048" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1651"
+    target: "dessiner"
+    ipa: "desine"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je dessine une maison.", ipa: "ʒə desin yn mɛzɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dessine", base: "dessiner" }, { word: "une", ref: "fr-0545" }, { word: "maison", ref: "fr-0996" }] }
+      - { target: "Elle aime dessiner le soir.", ipa: "ɛl ɛm desine lə swaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "aime", ref: "fr-0263" }, { word: "dessiner", base: "dessiner" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1652"
+    target: "peindre"
+    ipa: "pɛ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il peint des tableaux.", ipa: "il pɛ̃ de tablo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "peint", base: "peindre" }, { word: "des", ref: "fr-0546" }, { word: "tableaux", ref: "fr-1596" }] }
+      - { target: "Nous peignons le mur en blanc.", ipa: "nu pɛɲɔ̃ lə myʁ ɑ̃ blɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "peignons", base: "peindre" }, { word: "le", ref: "fr-0543" }, { word: "mur", ref: "fr-1015" }, { word: "en", base: "en" }, { word: "blanc", base: "blanc" }] }
+  - id: "fr-1653"
+    target: "peinture"
+    ipa: "pɛ̃tyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime la peinture.", ipa: "ʒɛm la pɛ̃tyʁ", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "la", ref: "fr-0544" }, { word: "peinture", base: "peinture" }] }
+      - { target: "Cette peinture est très belle.", ipa: "sɛt pɛ̃tyʁ ɛ tʁɛ bɛl", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "peinture", base: "peinture" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "belle", ref: "fr-0412" }] }
+  - id: "fr-1654"
+    target: "photographie"
+    ipa: "fɔtɔɡʁafi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La photographie est son loisir.", ipa: "la fɔtɔɡʁafi ɛ sɔ̃ lwazir", bases: [{ word: "La", ref: "fr-0544" }, { word: "photographie", base: "photographie" }, { word: "est", ref: "fr-0021" }, { word: "son", ref: "fr-0138" }, { word: "loisir", base: "loisir" }] }
+      - { target: "Je fais de la photographie.", ipa: "ʒə fɛ də la fɔtɔɡʁafi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "photographie", base: "photographie" }] }
+  - id: "fr-1655"
+    target: "collection"
+    ipa: "kɔlɛksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une grande collection.", ipa: "il a yn ɡʁɑ̃d kɔlɛksjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "grande", ref: "fr-0410" }, { word: "collection", base: "collection" }] }
+      - { target: "Ma collection de cartes est grande.", ipa: "ma kɔlɛksjɔ̃ də kaʁt ɛ ɡʁɑ̃d", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "collection", base: "collection" }, { word: "de", base: "de" }, { word: "cartes", ref: "fr-1662" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+  - id: "fr-1656"
+    target: "collectionner"
+    ipa: "kɔlɛksjɔne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle collectionne les cartes.", ipa: "ɛl kɔlɛksjɔn le kaʁt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "collectionne", base: "collectionner" }, { word: "les", ref: "fr-0043" }, { word: "cartes", ref: "fr-1662" }] }
+      - { target: "Nous collectionnons les livres.", ipa: "nu kɔlɛksjɔnɔ̃ le livʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "collectionnons", base: "collectionner" }, { word: "les", ref: "fr-0043" }, { word: "livres", ref: "fr-1363" }] }
+  - id: "fr-1657"
+    target: "couture"
+    ipa: "kutyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle fait de la couture.", ipa: "ɛl fɛ də la kutyʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0287" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "couture", base: "couture" }] }
+      - { target: "La couture est un bon loisir.", ipa: "la kutyʁ ɛ œ̃ bɔ̃ lwazir", bases: [{ word: "La", ref: "fr-0544" }, { word: "couture", base: "couture" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "loisir", base: "loisir" }] }
+  - id: "fr-1658"
+    target: "tricot"
+    ipa: "tʁiko"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma mère fait du tricot.", ipa: "ma mɛʁ fɛ dy tʁiko", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "mère", ref: "fr-0166" }, { word: "fait", ref: "fr-0287" }, { word: "du", base: "de" }, { word: "tricot", base: "tricot" }] }
+      - { target: "Le tricot est calme.", ipa: "lə tʁiko ɛ kalm", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tricot", base: "tricot" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-1659"
+    target: "bricolage"
+    ipa: "bʁikɔlaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il aime le bricolage.", ipa: "il ɛm lə bʁikɔlaʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "aime", ref: "fr-0263" }, { word: "le", ref: "fr-0543" }, { word: "bricolage", base: "bricolage" }] }
+      - { target: "Nous faisons du bricolage le samedi.", ipa: "nu fəzɔ̃ dy bʁikɔlaʒ lə samdi", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", ref: "fr-0287" }, { word: "du", base: "de" }, { word: "bricolage", base: "bricolage" }, { word: "le", ref: "fr-0543" }, { word: "samedi", ref: "fr-1049" }] }
+  - id: "fr-1660"
+    target: "jeu"
+    ipa: "ʒø"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le jeu est amusant.", ipa: "lə ʒø ɛ amyzɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jeu", base: "jeu" }, { word: "est", ref: "fr-0021" }, { word: "amusant", base: "amusant" }] }
+      - { target: "C'est un jeu de cartes.", ipa: "sɛ tœ̃ ʒø də kaʁt", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "jeu", base: "jeu" }, { word: "de", base: "de" }, { word: "cartes", ref: "fr-1662" }] }
+  - id: "fr-1661"
+    target: "échecs"
+    ipa: "eʃɛk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il joue aux échecs.", ipa: "il ʒu o eʃɛk", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", ref: "fr-0048" }, { word: "aux", base: "à" }, { word: "échecs", base: "échecs" }] }
+      - { target: "Les échecs sont un jeu difficile.", ipa: "lezeʃɛk sɔ̃ tœ̃ ʒø difisil", bases: [{ word: "Les", ref: "fr-0043" }, { word: "échecs", base: "échecs" }, { word: "sont", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "jeu", ref: "fr-1660" }, { word: "difficile", ref: "fr-0418" }] }
+  - id: "fr-1662"
+    target: "cartes"
+    ipa: "kaʁt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous jouons aux cartes.", ipa: "nu ʒwɔ̃ o kaʁt", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "jouons", ref: "fr-0308" }, { word: "aux", base: "à" }, { word: "cartes", base: "cartes" }] }
+      - { target: "Il y a des cartes sur la table.", ipa: "il i a de kaʁt syʁ la tabl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "cartes", base: "cartes" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+  - id: "fr-1663"
+    target: "puzzle"
+    ipa: "pœzl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il fait un puzzle.", ipa: "il fɛ œ̃ pœzl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "puzzle", base: "puzzle" }] }
+      - { target: "Le puzzle est très difficile.", ipa: "lə pœzl ɛ tʁɛ difisil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "puzzle", base: "puzzle" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "difficile", ref: "fr-0418" }] }
+  - id: "fr-1664"
+    target: "roman"
+    ipa: "ʁɔmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je lis un roman.", ipa: "ʒə li œ̃ ʁɔmɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "un", ref: "fr-0208" }, { word: "roman", base: "roman" }] }
+      - { target: "Ce roman est très long.", ipa: "sə ʁɔmɑ̃ ɛ tʁɛ lɔ̃ɡ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "roman", base: "roman" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "long", ref: "fr-0421" }] }
+  - id: "fr-1665"
+    target: "poème"
+    ipa: "pɔɛm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle écrit un poème.", ipa: "ɛl ekʁi œ̃ pɔɛm", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "écrit", ref: "fr-0291" }, { word: "un", ref: "fr-0208" }, { word: "poème", base: "poème" }] }
+      - { target: "Ce poème est beau.", ipa: "sə pɔɛm ɛ bo", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "poème", base: "poème" }, { word: "est", ref: "fr-0021" }, { word: "beau", ref: "fr-0412" }] }
+  - id: "fr-1666"
+    target: "lecture"
+    ipa: "lɛktyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La lecture est mon loisir préféré.", ipa: "la lɛktyʁ ɛ mɔ̃ lwazir pʁefeʁe", bases: [{ word: "La", ref: "fr-0544" }, { word: "lecture", base: "lecture" }, { word: "est", ref: "fr-0021" }, { word: "mon", ref: "fr-0037" }, { word: "loisir", base: "loisir" }, { word: "préféré", base: "préférer" }] }
+      - { target: "J'aime la lecture le soir.", ipa: "ʒɛm la lɛktyʁ lə swaʁ", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "la", ref: "fr-0544" }, { word: "lecture", base: "lecture" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1667"
+    target: "football"
+    ipa: "futbol"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il joue au football le samedi.", ipa: "il ʒu o futbol lə samdi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", ref: "fr-0048" }, { word: "au", base: "à" }, { word: "football", base: "football" }, { word: "le", ref: "fr-0543" }, { word: "samedi", ref: "fr-1049" }] }
+      - { target: "Le football est un sport.", ipa: "lə futbol ɛ œ̃ spɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "football", base: "football" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "sport", ref: "fr-0265" }] }
+  - id: "fr-1668"
+    target: "tennis"
+    ipa: "tenis"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous jouons au tennis.", ipa: "nu ʒwɔ̃ o tenis", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "jouons", ref: "fr-0308" }, { word: "au", base: "à" }, { word: "tennis", base: "tennis" }] }
+      - { target: "Le tennis est rapide.", ipa: "lə tenis ɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tennis", base: "tennis" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+  - id: "fr-1669"
+    target: "natation"
+    ipa: "natasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais de la natation.", ipa: "ʒə fɛ də la natasjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "natation", base: "natation" }] }
+      - { target: "La natation est très bonne.", ipa: "la natasjɔ̃ ɛ tʁɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "natation", base: "natation" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bonne", ref: "fr-0040" }] }
+  - id: "fr-1670"
+    target: "basket"
+    ipa: "baskɛt"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il joue au basket.", ipa: "il ʒu o baskɛt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "joue", ref: "fr-0048" }, { word: "au", base: "à" }, { word: "basket", base: "basket" }] }
+      - { target: "Le basket est rapide.", ipa: "lə baskɛt ɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "basket", base: "basket" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+  - id: "fr-1671"
+    target: "yoga"
+    ipa: "jɔɡa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle fait du yoga le matin.", ipa: "ɛl fɛ dy jɔɡa lə matɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0287" }, { word: "du", base: "de" }, { word: "yoga", base: "yoga" }, { word: "le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Le yoga est calme.", ipa: "lə jɔɡa ɛ kalm", bases: [{ word: "Le", ref: "fr-0543" }, { word: "yoga", base: "yoga" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-1672"
+    target: "randonnée"
+    ipa: "ʁɑ̃dɔne"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous faisons une randonnée.", ipa: "nu fəzɔ̃ yn ʁɑ̃dɔne", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "randonnée", base: "randonnée" }] }
+      - { target: "La randonnée est longue.", ipa: "la ʁɑ̃dɔne ɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "randonnée", base: "randonnée" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+  - id: "fr-1673"
+    target: "pêche"
+    ipa: "pɛʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon père fait de la pêche.", ipa: "mɔ̃ pɛʁ fɛ də la pɛʃ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "père", ref: "fr-0165" }, { word: "fait", ref: "fr-0287" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "pêche", base: "pêche" }] }
+      - { target: "La pêche est un loisir calme.", ipa: "la pɛʃ ɛ œ̃ lwazir kalm", bases: [{ word: "La", ref: "fr-0544" }, { word: "pêche", base: "pêche" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "loisir", base: "loisir" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-1674"
+    target: "camping"
+    ipa: "kɑ̃piŋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous faisons du camping.", ipa: "nu fəzɔ̃ dy kɑ̃piŋ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", ref: "fr-0287" }, { word: "du", base: "de" }, { word: "camping", base: "camping" }] }
+      - { target: "Le camping est calme.", ipa: "lə kɑ̃piŋ ɛ kalm", bases: [{ word: "Le", ref: "fr-0543" }, { word: "camping", base: "camping" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-1675"
+    target: "ski"
+    ipa: "ski"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle fait du ski.", ipa: "ɛl fɛ dy ski", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0287" }, { word: "du", base: "de" }, { word: "ski", base: "ski" }] }
+      - { target: "Le ski est cher.", ipa: "lə ski ɛ ʃɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ski", base: "ski" }, { word: "est", ref: "fr-0021" }, { word: "cher", ref: "fr-0104" }] }
+  - id: "fr-1676"
+    target: "promenade"
+    ipa: "pʁɔmnad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais une promenade le soir.", ipa: "ʒə fɛ yn pʁɔmnad lə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "promenade", base: "promenade" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "La promenade est belle.", ipa: "la pʁɔmnad ɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "promenade", base: "promenade" }, { word: "est", ref: "fr-0021" }, { word: "belle", ref: "fr-0412" }] }
+  - id: "fr-1677"
+    target: "club"
+    ipa: "klœb"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis dans un club de sport.", ipa: "ʒə sɥi dɑ̃ zœ̃ klœb də spɔʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "club", base: "club" }, { word: "de", base: "de" }, { word: "sport", ref: "fr-0265" }] }
+      - { target: "Le club est à l'école.", ipa: "lə klœb ɛ a lekɔl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "club", base: "club" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "l'école", ref: "fr-0964" }] }
+  - id: "fr-1678"
+    target: "association"
+    ipa: "asɔsjasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il travaille pour une association.", ipa: "il tʁavaj puʁ yn asɔsjasjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", ref: "fr-0252" }, { word: "pour", ref: "fr-0591" }, { word: "une", ref: "fr-0545" }, { word: "association", base: "association" }] }
+      - { target: "Cette association est grande.", ipa: "sɛt asɔsjasjɔ̃ ɛ ɡʁɑ̃d", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "association", base: "association" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+  - id: "fr-1679"
+    target: "match"
+    ipa: "matʃ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous regardons un match de football.", ipa: "nu ʁəɡaʁdɔ̃ œ̃ matʃ də futbol", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "regardons", ref: "fr-0293" }, { word: "un", ref: "fr-0208" }, { word: "match", base: "match" }, { word: "de", base: "de" }, { word: "football", ref: "fr-1667" }] }
+      - { target: "Le match est fini.", ipa: "lə matʃ ɛ fini", bases: [{ word: "Le", ref: "fr-0543" }, { word: "match", base: "match" }, { word: "est", ref: "fr-0021" }, { word: "fini", ref: "fr-0506" }] }
+  - id: "fr-1680"
+    target: "équipe"
+    ipa: "ekip"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon frère est dans une équipe.", ipa: "mɔ̃ fʁɛʁ ɛ dɑ̃ zyn ekip", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "équipe", base: "équipe" }] }
+      - { target: "L'équipe gagne le match.", ipa: "lekip ɡaɲ lə matʃ", bases: [{ word: "L'équipe", base: "équipe" }, { word: "gagne", ref: "fr-0670" }, { word: "le", ref: "fr-0543" }, { word: "match", ref: "fr-1679" }] }
+  - id: "fr-1681"
+    target: "entraînement"
+    ipa: "ɑ̃tʁɛnmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'entraînement est difficile.", ipa: "lɑ̃tʁɛnmɑ̃ ɛ difisil", bases: [{ word: "L'entraînement", base: "entraînement" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }] }
+      - { target: "Il fait un entraînement chaque jour.", ipa: "il fɛ œ̃ nɑ̃tʁɛnmɑ̃ ʃak ʒuʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "entraînement", base: "entraînement" }, { word: "chaque", ref: "fr-0375" }, { word: "jour", ref: "fr-1032" }] }
+  - id: "fr-1682"
+    target: "champion"
+    ipa: "ʃɑ̃pjɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est champion de tennis.", ipa: "il ɛ ʃɑ̃pjɔ̃ də tenis", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "champion", base: "champion" }, { word: "de", base: "de" }, { word: "tennis", ref: "fr-1668" }] }
+      - { target: "Elle veut être championne.", ipa: "ɛl vø ɛtʁ ʃɑ̃pjɔn", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "veut", ref: "fr-0311" }, { word: "être", ref: "fr-0021" }, { word: "championne", base: "champion" }] }
+  - id: "fr-1683"
+    target: "passion"
+    ipa: "pasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La musique est sa passion.", ipa: "la myzik ɛ sa pasjɔ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }, { word: "est", ref: "fr-0021" }, { word: "sa", ref: "fr-0627" }, { word: "passion", base: "passion" }] }
+      - { target: "Sa passion, c'est le piano.", ipa: "sa pasjɔ̃ sɛ lə pjano", bases: [{ word: "Sa", ref: "fr-0627" }, { word: "passion", base: "passion" }, { word: "c'est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "piano", ref: "fr-1644" }] }
+

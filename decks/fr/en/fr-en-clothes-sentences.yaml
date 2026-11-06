@@ -1,0 +1,60 @@
+schema: 1
+id: "fr-en-clothes-sentences"
+kind: "layer"
+core: "fr-clothes-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: clothes and colours"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about clothes and colours, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1236":
+    native: "I am looking for a jacket for the winter."
+    confusables:
+      "manteau": { why: "Manteau is 'coat', a heavier and warmer garment than a veste." }
+      "chapeau": { why: "Chapeau is 'hat', a head covering, not a winter garment for the body." }
+  "fr-1237":
+    native: "This dress is too big."
+  "fr-1238":
+    native: "The trousers cost twenty euros."
+    bases:
+      "euros": "euros"
+  "fr-1239":
+    native: "She puts on a cap for sport."
+    confusables:
+      "chapeau": { why: "Chapeau is 'hat' in general. A casquette has a peak." }
+      "manteau": { why: "Manteau is 'coat', not a cap for sport." }
+  "fr-1240":
+    native: "My shoes are in the corridor."
+    confusables:
+      "chaussette": { why: "Chaussette is 'sock', not 'shoe'." }
+      "veste": { why: "Veste is 'jacket', a garment, not footwear." }
+  "fr-1241":
+    native: "He wears a black suit to the wedding."
+    bases:
+      "au": "to the"
+  "fr-1242":
+    native: "The shop has sales."
+    bases:
+      "soldes": "sales"
+  "fr-1243":
+    native: "I can try on this wool jumper."
+    bases:
+      "en": "of"
+    confusables:
+      "coton": { why: "Coton is 'cotton', a different material from laine, which is 'wool'." }
+      "veste": { why: "Veste is 'jacket', a different garment from the jumper." }
+  "fr-1244":
+    native: "She does not like jewellery."
+    bases:
+      "pas": "not"
+    confusables:
+      "bague": { why: "Bague is 'ring', one piece of bijou, not the word for all of them." }
+      "manteau": { why: "Manteau is 'coat', not jewellery." }
+  "fr-1245":
+    native: "Cotton is soft and fresh."
+    bases:
+      "doux": "soft"
+    confusables:
+      "laine": { why: "Laine is 'wool', the material from sheep, not 'cotton'." }
+      "pull": { why: "Pull is 'jumper', a garment, not a fabric." }

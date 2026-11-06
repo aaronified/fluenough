@@ -1,0 +1,102 @@
+schema: 1
+id: "fr-relationships-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2467"
+    target: "Mon voisin et moi bavardons souvent."
+    ipa: "mɔ̃ vwazɛ̃ e mwa bavaʁdɔ̃ suvɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "voisin", ref: "fr-0101" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "moi", ref: "fr-0133" }
+      - { word: "bavardons", ref: "fr-2453" }
+      - { word: "souvent", ref: "fr-0326" }
+    confusables:
+      - { id: "dispute", ref: "fr-2443", kind: "word" }
+      - { id: "ami", ref: "fr-0100", kind: "word" }
+  - id: "fr-2468"
+    target: "Après la dispute, ils se réconcilient."
+    ipa: "apʁɛ la dispyt il sə ʁekɔ̃silj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Après", ref: "fr-0595" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "dispute", ref: "fr-2443" }
+      - { word: "ils", ref: "fr-0130" }
+      - { word: "se", base: "se" }
+      - { word: "réconcilient", base: "réconcilier" }
+    confusables:
+      - { id: "rupture", ref: "fr-2462", kind: "word" }
+      - { id: "conflit", ref: "fr-2444", kind: "word" }
+  - id: "fr-2469"
+    target: "Elle pardonne son excuse sincère."
+    ipa: "ɛl paʁdɔn sɔ̃n ɛkskyz sɛ̃sɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "pardonne", ref: "fr-2455" }
+      - { word: "son", ref: "fr-0138" }
+      - { word: "excuse", ref: "fr-2446" }
+      - { word: "sincère", ref: "fr-2449" }
+    confusables:
+      - { id: "pardon", ref: "fr-1076", kind: "word" }
+      - { id: "respect", ref: "fr-1894", kind: "word" }
+  - id: "fr-2470"
+    target: "Un inconnu est fidèle ? Non, il est jaloux."
+    ipa: "œ̃ɛ̃kɔny ɛ fidɛl non il ɛ ʒalu"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Un", ref: "fr-0208" }
+      - { word: "inconnu", ref: "fr-2452" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "fidèle", ref: "fr-2447" }
+      - { word: "Non", ref: "fr-0026" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "jaloux", ref: "fr-2448" }
+    confusables:
+      - { id: "honnete", ref: "fr-2450", kind: "word" }
+      - { id: "timide", ref: "fr-2451", kind: "word" }
+  - id: "fr-2471"
+    target: "Nous aidons notre amie quand elle est triste."
+    ipa: "nu zɛdɔ̃ nɔtʁ ami kɑ̃ ɛl ɛ tʁist"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "aidons", ref: "fr-1066" }
+      - { word: "notre", ref: "fr-0139" }
+      - { word: "amie", ref: "fr-0100" }
+      - { word: "quand", ref: "fr-0068" }
+      - { word: "elle", ref: "fr-0128" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "triste", ref: "fr-0430" }
+    confusables:
+      - { id: "soutenir", ref: "fr-1878", kind: "word" }
+      - { id: "embrasser", ref: "fr-2376", kind: "word" }
+  - id: "fr-2472"
+    target: "La solitude est douloureuse sans amitié."
+    ipa: "la sɔlityd ɛ dulune sɑ̃z amitje"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "solitude", ref: "fr-2464" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "douloureuse", base: "douloureux" }
+      - { word: "sans", ref: "fr-0592" }
+      - { word: "amitié", ref: "fr-2442" }
+    confusables:
+      - { id: "complicite", ref: "fr-2465", kind: "word" }
+      - { id: "rencontre", ref: "fr-2461", kind: "word" }
+

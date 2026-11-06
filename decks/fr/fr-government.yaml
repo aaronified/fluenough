@@ -1,0 +1,368 @@
+schema: 1
+id: "fr-government"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "government"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2020"
+    target: "loi"
+    ipa: "lwa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette loi protège les enfants.", ipa: "sɛt lwa pʁɔtɛʒ lezɑ̃fɑ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "loi", base: "loi" }, { word: "protège", base: "protéger" }, { word: "les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }] }
+      - { target: "La loi entre en vigueur demain.", ipa: "la lwa ɑ̃tʁ ɑ̃ vigœʁ dəmɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "loi", base: "loi" }, { word: "entre", ref: "fr-0515" }, { word: "en", base: "en" }, { word: "vigueur", base: "vigueur" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2021"
+    target: "vote"
+    ipa: "vɔt"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vote a lieu dimanche.", ipa: "lə vɔt a ljø dimɑ̃ʃ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vote", base: "voter" }, { word: "a", ref: "fr-0022" }, { word: "lieu", base: "lieu" }, { word: "dimanche", ref: "fr-1050" }] }
+      - { target: "Ce vote est très serré.", ipa: "sə vɔt ɛ tʁɛ seʁe", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "vote", base: "voter" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "serré", base: "serré" }] }
+  - id: "fr-2022"
+    target: "parlement"
+    ipa: "paʁləmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le parlement discute du budget.", ipa: "lə paʁləmɑ̃ diskyt dy bydʒɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "parlement", base: "parlement" }, { word: "discute", ref: "fr-1875" }, { word: "du", base: "de" }, { word: "budget", ref: "fr-1457" }] }
+      - { target: "Elle travaille au parlement.", ipa: "ɛl tʁavaj o paʁləmɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", ref: "fr-0252" }, { word: "au", base: "à" }, { word: "parlement", base: "parlement" }] }
+  - id: "fr-2023"
+    target: "député"
+    ipa: "depyte"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le député répond aux questions.", ipa: "lə depyte ʁepɔ̃ o kɛstjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "député", base: "député" }, { word: "répond", ref: "fr-0504" }, { word: "aux", base: "à" }, { word: "questions", ref: "fr-1593" }] }
+      - { target: "Ce député veut une nouvelle loi.", ipa: "sə depyte vø yn nuvɛl lwa", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "député", base: "député" }, { word: "veut", ref: "fr-0311" }, { word: "une", ref: "fr-0545" }, { word: "nouvelle", base: "nouvelle" }, { word: "loi", ref: "fr-2020" }] }
+  - id: "fr-2024"
+    target: "maire"
+    ipa: "mɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le maire inaugure le pont.", ipa: "lə mɛʁ inɔɡyʁ lə pɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "maire", base: "maire" }, { word: "inaugure", base: "inaugurer" }, { word: "pont", ref: "fr-0900" }] }
+      - { target: "Le maire de Lille parle ce soir.", ipa: "lə mɛʁ də lil paʁl sə swaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "maire", base: "maire" }, { word: "de", base: "de" }, { word: "Lille", base: "Lille" }, { word: "parle", ref: "fr-0023" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-2025"
+    target: "impôt"
+    ipa: "ɛ̃po"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je paie mes impôts en mai.", ipa: "ʒə pe me zɛ̃po ɑ̃ mɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", ref: "fr-0310" }, { word: "mes", ref: "fr-0037" }, { word: "impôts", base: "impôt" }, { word: "en", base: "en" }, { word: "mai", ref: "fr-1156" }] }
+      - { target: "Cet impôt est très élevé.", ipa: "sɛt ɛ̃po ɛ tʁɛ elve", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "impôt", base: "impôt" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "élevé", base: "élevé" }] }
+  - id: "fr-2026"
+    target: "citoyen"
+    ipa: "sitwajɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chaque citoyen peut voter.", ipa: "ʃak sitwajɛ̃ pø vɔte", bases: [{ word: "Chaque", ref: "fr-0375" }, { word: "citoyen", base: "citoyen" }, { word: "peut", ref: "fr-0500" }, { word: "voter", base: "voter" }] }
+      - { target: "Le citoyen pose une question.", ipa: "lə sitwajɛ̃ poz yn kɛstjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "citoyen", base: "citoyen" }, { word: "pose", ref: "fr-1613" }, { word: "une", ref: "fr-0545" }, { word: "question", ref: "fr-1593" }] }
+  - id: "fr-2027"
+    target: "décret"
+    ipa: "dekʁɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le décret est publié demain.", ipa: "lə dekʁɛ ɛ pyblje dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "décret", base: "décret" }, { word: "est", ref: "fr-0021" }, { word: "publié", ref: "fr-1831" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Ce décret change les règles.", ipa: "sə dekʁɛ ʃɑ̃ʒ le ʁɛɡl", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "décret", base: "décret" }, { word: "change", ref: "fr-0526" }, { word: "les", ref: "fr-0543" }, { word: "règles", ref: "fr-1365" }] }
+  - id: "fr-2028"
+    target: "administration"
+    ipa: "administʁasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'administration demande un document.", ipa: "ladministʁasjɔ̃ dəmɑ̃d œ̃ dɔkymɑ̃", bases: [{ word: "L'administration", base: "administration" }, { word: "demande", ref: "fr-1980" }, { word: "un", ref: "fr-0208" }, { word: "document", ref: "fr-1979" }] }
+      - { target: "Elle travaille dans une administration.", ipa: "ɛl tʁavaj dɑ̃ zyn administʁasjɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", ref: "fr-0252" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "administration", base: "administration" }] }
+  - id: "fr-2029"
+    target: "fonctionnaire"
+    ipa: "fɔ̃ksjɔnɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le fonctionnaire vous reçoit à dix heures.", ipa: "lə fɔ̃ksjɔnɛʁ vu ʁəswa a di œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "fonctionnaire", base: "fonctionnaire" }, { word: "vous", ref: "fr-0096" }, { word: "reçoit", ref: "fr-1986" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Ma sœur est fonctionnaire.", ipa: "ma sœʁ ɛ fɔ̃ksjɔnɛʁ", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "fonctionnaire", base: "fonctionnaire" }] }
+  - id: "fr-2030"
+    target: "ambassade"
+    ipa: "ɑ̃basad"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'ambassade est en centre-ville.", ipa: "lɑ̃basad ɛ ɑ̃ sɑ̃tʁəvil", bases: [{ word: "L'ambassade", base: "ambassade" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "centre", ref: "fr-0978" }, { word: "ville", ref: "fr-0244" }] }
+      - { target: "Je vais à l'ambassade pour mon visa.", ipa: "ʒə vɛ a lɑ̃basad puʁ mɔ̃ viza", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "l'ambassade", base: "ambassade" }, { word: "pour", ref: "fr-0591" }, { word: "mon", ref: "fr-0037" }, { word: "visa", ref: "fr-1913" }] }
+  - id: "fr-2031"
+    target: "élire"
+    ipa: "eliʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les habitants élisent leur maire.", ipa: "lezabitɑ̃ elizɛt lœʁ mɛʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "habitants", base: "habitant" }, { word: "élisent", base: "élire" }, { word: "leur", ref: "fr-0142" }, { word: "maire", ref: "fr-2024" }] }
+      - { target: "Nous élisons un nouveau député.", ipa: "nu elizɔ̃ œ̃ nuvo depyte", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "élisons", base: "élire" }, { word: "un", ref: "fr-0208" }, { word: "nouveau", ref: "fr-0413" }, { word: "député", ref: "fr-2023" }] }
+  - id: "fr-2032"
+    target: "nommer"
+    ipa: "nɔme"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le président nomme un ministre.", ipa: "lə pʁezidɑ̃ nɔm œ̃ ministʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "président", base: "président" }, { word: "nomme", base: "nommer" }, { word: "un", ref: "fr-0208" }, { word: "ministre", base: "ministre" }] }
+      - { target: "Ils nomment une commission.", ipa: "il nɔm yn kɔmisjɔ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "nomment", base: "nommer" }, { word: "une", ref: "fr-0545" }, { word: "commission", base: "commission" }] }
+  - id: "fr-2033"
+    target: "décider"
+    ipa: "deside"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le conseil décide demain.", ipa: "lə kɔ̃sɛj desid dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "conseil", ref: "fr-2045" }, { word: "décide", base: "décider" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Je décide de voter.", ipa: "ʒə desid də vɔte", bases: [{ word: "Je", ref: "fr-0126" }, { word: "décide", base: "décider" }, { word: "de", base: "de" }, { word: "voter", base: "voter" }] }
+  - id: "fr-2034"
+    target: "appliquer"
+    ipa: "aplike"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La police applique la loi.", ipa: "la pɔlis aplik la lwa", bases: [{ word: "La", ref: "fr-0544" }, { word: "police", ref: "fr-1067" }, { word: "applique", base: "appliquer" }, { word: "loi", ref: "fr-2020" }] }
+      - { target: "Cette règle s'applique à tous.", ipa: "sɛt ʁɛɡl sapplik a tu", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "règle", ref: "fr-1365" }, { word: "s'applique", base: "appliquer" }, { word: "à", base: "à" }, { word: "tous", ref: "fr-0372" }] }
+  - id: "fr-2035"
+    target: "interdire"
+    ipa: "ɛ̃tɛʁdiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La loi interdit la fumée ici.", ipa: "la lwa ɛ̃tɛʁdi la fyme isi", bases: [{ word: "La", ref: "fr-0544" }, { word: "loi", ref: "fr-2020" }, { word: "interdit", base: "interdire" }, { word: "fumée", base: "fumée" }, { word: "ici", ref: "fr-0029" }] }
+      - { target: "Il est interdit de stationner.", ipa: "il ɛ ɛ̃tɛʁdi də stasjɔne", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "interdit", base: "interdire" }, { word: "de", base: "de" }, { word: "stationner", base: "stationner" }] }
+  - id: "fr-2036"
+    target: "autoriser"
+    ipa: "otɔʁize"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le maire autorise le marché.", ipa: "lə mɛʁ otɔʁiz lə maʁʃe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "maire", ref: "fr-2024" }, { word: "autorise", base: "autoriser" }, { word: "marché", ref: "fr-0735" }] }
+      - { target: "Cette carte autorise l'entrée.", ipa: "sɛt kaʁt otɔʁiz lɑ̃tʁe", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "carte", ref: "fr-0824" }, { word: "autorise", base: "autoriser" }, { word: "l'entrée", ref: "fr-0818" }] }
+  - id: "fr-2037"
+    target: "citoyenneté"
+    ipa: "sitwajɛnte"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il demande la citoyenneté.", ipa: "il dəmɑ̃d la sitwajɛnte", bases: [{ word: "Il", ref: "fr-0127" }, { word: "demande", ref: "fr-1980" }, { word: "la", ref: "fr-0544" }, { word: "citoyenneté", base: "citoyenneté" }] }
+      - { target: "La citoyenneté donne des droits.", ipa: "la sitwajɛnte dɔn de dʁwa", bases: [{ word: "La", ref: "fr-0544" }, { word: "citoyenneté", base: "citoyenneté" }, { word: "donne", ref: "fr-0302" }, { word: "des", ref: "fr-0546" }, { word: "droits", ref: "fr-0894" }] }
+  - id: "fr-2038"
+    target: "république"
+    ipa: "ʁepyblik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La république est une démocratie.", ipa: "la ʁepyblik ɛ yn demɔkʁasi", bases: [{ word: "La", ref: "fr-0544" }, { word: "république", base: "république" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "démocratie", ref: "fr-2039" }] }
+      - { target: "Le drapeau de la république est bleu, blanc et rouge.", ipa: "lə dʁapo də la ʁepyblik ɛ blø blɑ̃ e ʁuʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "drapeau", base: "drapeau" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "république", base: "république" }, { word: "est", ref: "fr-0021" }, { word: "bleu", ref: "fr-1233" }, { word: "blanc", base: "blanc" }, { word: "et", ref: "fr-0027" }, { word: "rouge", ref: "fr-1232" }] }
+  - id: "fr-2039"
+    target: "démocratie"
+    ipa: "demɔkʁasi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La démocratie protège la liberté.", ipa: "la demɔkʁasi pʁɔtɛʒ la libɛʁte", bases: [{ word: "La", ref: "fr-0544" }, { word: "démocratie", base: "démocratie" }, { word: "protège", base: "protéger" }, { word: "liberté", ref: "fr-1893" }] }
+      - { target: "Le pays vit en démocratie.", ipa: "lə pei vi ɑ̃ demɔkʁasi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pays", ref: "fr-0243" }, { word: "vit", base: "vivre" }, { word: "en", base: "en" }, { word: "démocratie", base: "démocratie" }] }
+  - id: "fr-2040"
+    target: "constitution"
+    ipa: "kɔ̃stitysjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La constitution garantit les droits.", ipa: "la kɔ̃stitysjɔ̃ ɡaʁɑ̃tit le dʁwa", bases: [{ word: "La", ref: "fr-0544" }, { word: "constitution", base: "constitution" }, { word: "garantit", base: "garantir" }, { word: "les", ref: "fr-0543" }, { word: "droits", ref: "fr-0894" }] }
+      - { target: "Cette loi respecte la constitution.", ipa: "sɛt lwa ʁɛspɛkt la kɔ̃stitysjɔ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "loi", ref: "fr-2020" }, { word: "respecte", base: "respecter" }, { word: "la", ref: "fr-0544" }, { word: "constitution", base: "constitution" }] }
+  - id: "fr-2041"
+    target: "réforme"
+    ipa: "ʁefɔʁm"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La réforme des retraites est débattue.", ipa: "la ʁefɔʁm de ʁətʁɛt ɛ debatyy", bases: [{ word: "La", ref: "fr-0544" }, { word: "réforme", base: "réforme" }, { word: "des", ref: "fr-0546" }, { word: "retraites", base: "retraite" }, { word: "est", ref: "fr-0021" }, { word: "débattue", base: "débattre" }] }
+      - { target: "Cette réforme est importante.", ipa: "sɛt ʁefɔʁm ɛ ɛ̃pɔʁtɑ̃t", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "réforme", base: "réforme" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+  - id: "fr-2043"
+    target: "taxe"
+    ipa: "taks"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La taxe est ajoutée au prix.", ipa: "la taks ɛ aʒute o pʁi", bases: [{ word: "La", ref: "fr-0544" }, { word: "taxe", base: "taxe" }, { word: "est", ref: "fr-0021" }, { word: "ajoutée", ref: "fr-0796" }, { word: "au", base: "à" }, { word: "prix", ref: "fr-0737" }] }
+      - { target: "Cette taxe touche tout le monde.", ipa: "sɛt taks tuʃ tu lə mɔ̃d", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "taxe", base: "taxe" }, { word: "touche", base: "toucher" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "monde", base: "monde" }] }
+  - id: "fr-2044"
+    target: "ministère"
+    ipa: "ministɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ministère publie un rapport.", ipa: "lə ministɛʁ pyblje œ̃ ʁapɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ministère", base: "ministère" }, { word: "publie", ref: "fr-1831" }, { word: "un", ref: "fr-0208" }, { word: "rapport", base: "rapport" }] }
+      - { target: "Elle travaille au ministère de la santé.", ipa: "ɛl tʁavaj o ministɛʁ də la sɑ̃te", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", ref: "fr-0252" }, { word: "au", base: "à" }, { word: "ministère", base: "ministère" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "santé", ref: "fr-1700" }] }
+  - id: "fr-2045"
+    target: "conseil"
+    ipa: "kɔ̃sɛj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le conseil municipal se réunit lundi.", ipa: "lə kɔ̃sɛj mynisipal sə ʁeyni lœ̃di", bases: [{ word: "Le", ref: "fr-0543" }, { word: "conseil", base: "conseil" }, { word: "municipal", base: "municipal" }, { word: "se", base: "se" }, { word: "réunit", base: "réunir" }, { word: "lundi", ref: "fr-1044" }] }
+      - { target: "Donnez-moi un conseil.", ipa: "dɔne mwa œ̃ kɔ̃sɛj", bases: [{ word: "Donnez", ref: "fr-0302" }, { word: "moi", ref: "fr-0133" }, { word: "un", ref: "fr-0208" }, { word: "conseil", base: "conseil" }] }
+  - id: "fr-2046"
+    target: "tribunal"
+    ipa: "tʁibynal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tribunal rend son jugement.", ipa: "lə tʁibynal ʁɑ̃ sɔ̃ ʒyʒmɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tribunal", base: "tribunal" }, { word: "rend", ref: "fr-1616" }, { word: "son", ref: "fr-0138" }, { word: "jugement", base: "jugement" }] }
+      - { target: "Le tribunal se trouve près de la mairie.", ipa: "lə tʁibynal sə tʁuv pʁɛ də la mɛʁi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tribunal", base: "tribunal" }, { word: "se", base: "se" }, { word: "trouve", ref: "fr-0301" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mairie", ref: "fr-0974" }] }
+  - id: "fr-2047"
+    target: "permis"
+    ipa: "pɛʁmi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je passe mon permis de conduire.", ipa: "ʒə pas mɔ̃ pɛʁmi də kɔ̃dɥiʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "passe", ref: "fr-0519" }, { word: "mon", ref: "fr-0037" }, { word: "permis", base: "permis" }, { word: "de", base: "de" }, { word: "conduire", ref: "fr-0869" }] }
+      - { target: "Le permis de construire est accordé.", ipa: "lə pɛʁmi də kɔ̃stʁɥiʁ ɛ akɔʁde", bases: [{ word: "Le", ref: "fr-0543" }, { word: "permis", base: "permis" }, { word: "de", base: "de" }, { word: "construire", base: "construire" }, { word: "est", ref: "fr-0021" }, { word: "accordé", base: "accorder" }] }
+  - id: "fr-2048"
+    target: "autorisation"
+    ipa: "otɔʁizasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai besoin d'une autorisation.", ipa: "ʒe bəzwɛ̃ dyn otɔʁizasjɔ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "besoin", ref: "fr-1080" }, { word: "d'une", base: "de" }, { word: "autorisation", base: "autorisation" }] }
+      - { target: "L'autorisation est donnée par le maire.", ipa: "lotɔʁizasjɔ̃ ɛ dɔnɛ paʁ lə mɛʁ", bases: [{ word: "L'autorisation", base: "autorisation" }, { word: "est", ref: "fr-0021" }, { word: "donnée", ref: "fr-0302" }, { word: "par", ref: "fr-0593" }, { word: "le", ref: "fr-0543" }, { word: "maire", ref: "fr-2024" }] }
+  - id: "fr-2049"
+    target: "procédure"
+    ipa: "pʁɔsedyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La procédure dure longtemps.", ipa: "la pʁɔsedyʁ dyʁ lɔ̃tɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "procédure", base: "procédure" }, { word: "dure", ref: "fr-1131" }, { word: "longtemps", ref: "fr-0357" }] }
+      - { target: "Suivez la procédure indiquée.", ipa: "sɥivez la pʁɔsedyʁ ɛ̃dike", bases: [{ word: "Suivez", ref: "fr-0910" }, { word: "la", ref: "fr-0544" }, { word: "procédure", base: "procédure" }, { word: "indiquée", base: "indiquer" }] }
+  - id: "fr-2050"
+    target: "sanction"
+    ipa: "sɑ̃ksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La sanction est une amende.", ipa: "la sɑ̃ksjɔ̃ ɛ tyn amɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "sanction", base: "sanction" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "amende", ref: "fr-2051" }] }
+      - { target: "Il reçoit une sanction.", ipa: "il ʁəswa yn sɑ̃ksjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "reçoit", ref: "fr-1986" }, { word: "une", ref: "fr-0545" }, { word: "sanction", base: "sanction" }] }
+  - id: "fr-2051"
+    target: "amende"
+    ipa: "amɑ̃d"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'amende est de cent euros.", ipa: "lamɑ̃d ɛ də sɑ̃ øʁo", bases: [{ word: "L'amende", base: "amende" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "cent", ref: "fr-0709" }, { word: "euros", ref: "fr-1451" }] }
+      - { target: "Il paie une amende pour stationnement.", ipa: "il pe yn amɑ̃d puʁ stasjɔnəmɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "paie", ref: "fr-0310" }, { word: "une", ref: "fr-0545" }, { word: "amende", base: "amende" }, { word: "pour", ref: "fr-0591" }, { word: "stationnement", base: "stationnement" }] }
+  - id: "fr-2065"
+    target: "référendum"
+    ipa: "ʁefeʁɛ̃dɔm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le référendum aura lieu en juin.", ipa: "lə ʁefeʁɛ̃dɔm ɔʁa ljø ɑ̃ ʒɥɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "référendum", base: "référendum" }, { word: "aura", ref: "fr-0022" }, { word: "lieu", base: "lieu" }, { word: "en", base: "en" }, { word: "juin", ref: "fr-1157" }] }
+      - { target: "Un référendum sur la loi est prévu.", ipa: "œ̃ ʁefeʁɛ̃dɔm syʁ la lwa ɛ pʁevy", bases: [{ word: "Un", ref: "fr-0208" }, { word: "référendum", base: "référendum" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "loi", ref: "fr-2020" }, { word: "est", ref: "fr-0021" }, { word: "prévu", base: "prévoir" }] }
+  - id: "fr-2066"
+    target: "pétition"
+    ipa: "petisjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une pétition circule dans le quartier.", ipa: "yn petisjɔ̃ siʁkyl dɑ̃ lə kaʁtje", bases: [{ word: "Une", ref: "fr-0545" }, { word: "pétition", base: "pétition" }, { word: "circule", base: "circuler" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "quartier", ref: "fr-0981" }] }
+      - { target: "Elle signe la pétition.", ipa: "ɛl siɲ la petisjɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "signe", ref: "fr-1987" }, { word: "la", ref: "fr-0544" }, { word: "pétition", base: "pétition" }] }
+

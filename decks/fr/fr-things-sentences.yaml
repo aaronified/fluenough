@@ -1,0 +1,165 @@
+schema: 1
+id: "fr-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1404"
+    target: "Je range mon sac et mon portefeuille."
+    ipa: "ʒə ʁɑ̃ʒ mɔ̃ sak e mɔ̃ pɔʁtfœj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "range", base: "ranger" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "sac", ref: "fr-0485" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "portefeuille", ref: "fr-1371" }
+    confusables:
+      - { id: "stylo", ref: "fr-1360", kind: "word" }
+      - { id: "livre", ref: "fr-1363", kind: "word" }
+  - id: "fr-1405"
+    target: "Le journal est sur la table du salon."
+    ipa: "lə ʒuʁnal ɛ syʁ la tabl dy salɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "journal", ref: "fr-1367" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "table", ref: "fr-0486" }
+      - { word: "du", base: "du" }
+      - { word: "salon", ref: "fr-0999" }
+    confusables:
+      - { id: "enveloppe", ref: "fr-1368", kind: "word" }
+      - { id: "timbre", ref: "fr-1369", kind: "word" }
+  - id: "fr-1406"
+    target: "Il faut acheter une pile."
+    ipa: "il fo aʃte yn pil"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "faut", base: "falloir" }
+      - { word: "acheter", ref: "fr-0294" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "pile", ref: "fr-1390" }
+    confusables:
+      - { id: "gomme", ref: "fr-1364", kind: "word" }
+      - { id: "bougie", ref: "fr-1396", kind: "word" }
+  - id: "fr-1407"
+    target: "Ma poubelle est pleine ce matin."
+    ipa: "ma pubɛl ɛ plɛn sə matɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "poubelle", ref: "fr-1401" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "pleine", base: "plein" }
+      - { word: "ce", ref: "fr-0143" }
+      - { word: "matin", ref: "fr-1033" }
+    confusables:
+      - { id: "balai", ref: "fr-1399", kind: "word" }
+      - { id: "eponge", ref: "fr-1400", kind: "word" }
+  - id: "fr-1408"
+    target: "Le chat dort dans le panier."
+    ipa: "lə ʃa dɔʁ dɑ̃ lə panje"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "chat", ref: "fr-1252" }
+      - { word: "dort", base: "dormir" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "panier", ref: "fr-0748" }
+    confusables:
+      - { id: "tapis", ref: "fr-1402", kind: "word" }
+      - { id: "oreiller", ref: "fr-1380", kind: "word" }
+  - id: "fr-1409"
+    target: "Je ferme la fenêtre et le rideau."
+    ipa: "ʒə fɛʁm la fənɛtʁ e lə ʁido"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "ferme", base: "fermer" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "fenêtre", ref: "fr-1004" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "rideau", ref: "fr-1403" }
+    confusables:
+      - { id: "porte", ref: "fr-1003", kind: "word" }
+      - { id: "miroir", ref: "fr-1378", kind: "word" }
+  - id: "fr-1410"
+    target: "Tu prends ton parapluie, il pleut."
+    ipa: "ty pʁɑ̃ tɔ̃ paʁapɥi il plø"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tu", ref: "fr-0095" }
+      - { word: "prends", ref: "fr-0288" }
+      - { word: "ton", ref: "fr-0141" }
+      - { word: "parapluie", ref: "fr-1329" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "pleut", ref: "fr-1332" }
+    confusables:
+      - { id: "lunettes", ref: "fr-1370", kind: "word" }
+      - { id: "chapeau", ref: "fr-1210", kind: "word" }
+  - id: "fr-1411"
+    target: "Je mets le couteau sur la table."
+    ipa: "ʒə mɛ lə kuto syʁ la tabl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "mets", base: "mettre" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "couteau", ref: "fr-0829" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "table", ref: "fr-0486" }
+    confusables:
+      - { id: "cuillere", ref: "fr-0831", kind: "word" }
+      - { id: "fourchette", ref: "fr-0830", kind: "word" }
+  - id: "fr-1412"
+    target: "Il y a une lampe dans la chambre."
+    ipa: "il i a yn lɑ̃p dɑ̃ la ʃɑ̃bʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "y", base: "y" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "lampe", ref: "fr-1017" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "chambre", ref: "fr-0998" }
+    confusables:
+      - { id: "lit", ref: "fr-1005", kind: "word" }
+      - { id: "fenetre", ref: "fr-1004", kind: "word" }
+  - id: "fr-1413"
+    target: "Une bougie et une boîte sont sur le lit."
+    ipa: "yn buʒi e yn bwat sɔ̃ syʁ lə li"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Une", ref: "fr-0545" }
+      - { word: "bougie", ref: "fr-1396" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "boîte", ref: "fr-0785" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "lit", ref: "fr-1005" }
+    confusables:
+      - { id: "sac", ref: "fr-0485", kind: "word" }
+      - { id: "valise", ref: "fr-0876", kind: "word" }

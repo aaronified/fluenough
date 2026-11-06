@@ -1,0 +1,445 @@
+schema: 1
+id: "fr-school"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "school"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1588"
+    target: "élève"
+    ipa: "elɛv"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chaque élève a un cahier.", ipa: "ʃak elɛv a œ̃ kaje", bases: [{ word: "Chaque", ref: "fr-0375" }, { word: "élève", base: "élève" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "cahier", ref: "fr-1362" }] }
+      - { target: "Les élèves sont dans la classe.", ipa: "lez elɛv sɔ̃ dɑ̃ la klas", bases: [{ word: "Les", ref: "fr-0043" }, { word: "élèves", base: "élève" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "classe", ref: "fr-1589" }] }
+  - id: "fr-1589"
+    target: "classe"
+    ipa: "klas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La classe est grande.", ipa: "la klas ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "classe", base: "classe" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+      - { target: "Il est dans ma classe.", ipa: "il ɛ dɑ̃ ma klas", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "ma", ref: "fr-0137" }, { word: "classe", base: "classe" }] }
+  - id: "fr-1590"
+    target: "leçon"
+    ipa: "ləsɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La leçon est difficile.", ipa: "la ləsɔ̃ ɛ difisil", bases: [{ word: "La", ref: "fr-0544" }, { word: "leçon", base: "leçon" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }] }
+      - { target: "Ne rate pas la leçon.", ipa: "nə ʁat pa la ləsɔ̃", bases: [{ word: "Ne", base: "ne" }, { word: "rate", ref: "fr-1611" }, { word: "pas", base: "pas" }, { word: "la", ref: "fr-0544" }, { word: "leçon", base: "leçon" }] }
+  - id: "fr-1591"
+    target: "note"
+    ipa: "nɔt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a une bonne note en maths.", ipa: "ɛl a yn bɔn nɔt ɑ̃ mat", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "bonne", ref: "fr-0040" }, { word: "note", base: "note" }, { word: "en", base: "en" }, { word: "maths", ref: "fr-1605" }] }
+      - { target: "Le professeur met une note.", ipa: "lə pʁɔfesœʁ mɛ yn nɔt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "met", ref: "fr-0529" }, { word: "une", ref: "fr-0545" }, { word: "note", base: "note" }] }
+  - id: "fr-1592"
+    target: "examen"
+    ipa: "ɛɡzamɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a un examen de maths.", ipa: "il i a œ̃ ɛɡzamɛ̃ də mat", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "examen", base: "examen" }, { word: "de", base: "de" }, { word: "maths", ref: "fr-1605" }] }
+      - { target: "Elle réussit son examen.", ipa: "ɛl ʁeysi sɔ̃ ɛɡzamɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "réussit", ref: "fr-0674" }, { word: "son", ref: "fr-0138" }, { word: "examen", base: "examen" }] }
+  - id: "fr-1593"
+    target: "question"
+    ipa: "kɛstjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu as une question ?", ipa: "ty a yn kɛstjɔ̃", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "question", base: "question" }] }
+      - { target: "Je pose une question au professeur.", ipa: "ʒə poz yn kɛstjɔ̃ o pʁɔfesœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "pose", ref: "fr-1613" }, { word: "une", ref: "fr-0545" }, { word: "question", base: "question" }, { word: "au", base: "à" }, { word: "professeur", ref: "fr-0105" }] }
+  - id: "fr-1594"
+    target: "réponse"
+    ipa: "ʁepɔ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La réponse est juste.", ipa: "la ʁepɔ̃s ɛ ʒyst", bases: [{ word: "La", ref: "fr-0544" }, { word: "réponse", base: "réponse" }, { word: "est", ref: "fr-0021" }, { word: "juste", base: "juste" }] }
+      - { target: "Je n'ai pas la réponse.", ipa: "ʒə ne pa la ʁepɔ̃s", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'ai", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "la", ref: "fr-0544" }, { word: "réponse", base: "réponse" }] }
+  - id: "fr-1595"
+    target: "exercice"
+    ipa: "ɛɡzɛʁsis"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Fais cet exercice.", ipa: "fɛ sɛt ɛɡzɛʁsis", bases: [{ word: "Fais", ref: "fr-0287" }, { word: "cet", ref: "fr-0644" }, { word: "exercice", base: "exercice" }] }
+      - { target: "Les exercices sont difficiles.", ipa: "lez ɛɡzɛʁsis sɔ̃ difisil", bases: [{ word: "Les", ref: "fr-0043" }, { word: "exercices", base: "exercice" }, { word: "sont", ref: "fr-0021" }, { word: "difficiles", ref: "fr-0418" }] }
+  - id: "fr-1596"
+    target: "tableau"
+    ipa: "tablo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le professeur écrit au tableau.", ipa: "lə pʁɔfesœʁ ekʁi o tablo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "écrit", ref: "fr-0291" }, { word: "au", base: "à" }, { word: "tableau", base: "tableau" }] }
+      - { target: "Regarde le tableau.", ipa: "ʁəɡaʁd lə tablo", bases: [{ word: "Regarde", ref: "fr-0293" }, { word: "le", ref: "fr-0543" }, { word: "tableau", base: "tableau" }] }
+  - id: "fr-1597"
+    target: "craie"
+    ipa: "kʁɛ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le professeur prend une craie.", ipa: "lə pʁɔfesœʁ pʁɑ̃ yn kʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "prend", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "craie", base: "craie" }] }
+      - { target: "La craie est blanche.", ipa: "la kʁɛ ɛ blɑ̃ʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "craie", base: "craie" }, { word: "est", ref: "fr-0021" }, { word: "blanche", base: "blanc" }] }
+  - id: "fr-1598"
+    target: "cartable"
+    ipa: "kaʁtabl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon cartable est lourd.", ipa: "mɔ̃ kaʁtabl ɛ luʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "cartable", base: "cartable" }, { word: "est", ref: "fr-0021" }, { word: "lourd", ref: "fr-0442" }] }
+      - { target: "Je mets mon livre dans le cartable.", ipa: "ʒə mɛ mɔ̃ livʁ dɑ̃ lə kaʁtabl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "mon", ref: "fr-0037" }, { word: "livre", ref: "fr-1363" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "cartable", base: "cartable" }] }
+  - id: "fr-1599"
+    target: "récréation"
+    ipa: "ʁekʁeasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pendant la récréation, on joue.", ipa: "pɑ̃dɑ̃ la ʁekʁeasjɔ̃ ɔ̃ ʒu", bases: [{ word: "Pendant", ref: "fr-0597" }, { word: "la", ref: "fr-0544" }, { word: "récréation", base: "récréation" }, { word: "on", ref: "fr-0132" }, { word: "joue", ref: "fr-0048" }] }
+      - { target: "Les élèves parlent à la récréation.", ipa: "lez elɛv paʁl a la ʁekʁeasjɔ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "élèves", ref: "fr-1588" }, { word: "parlent", ref: "fr-0023" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "récréation", base: "récréation" }] }
+  - id: "fr-1600"
+    target: "cour"
+    ipa: "kuʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les élèves jouent dans la cour.", ipa: "lez elɛv ʒu dɑ̃ la kuʁ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "élèves", ref: "fr-1588" }, { word: "jouent", ref: "fr-0308" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "cour", base: "cour" }] }
+      - { target: "La cour est grande.", ipa: "la kuʁ ɛ ɡʁɑ̃d", bases: [{ word: "La", ref: "fr-0544" }, { word: "cour", base: "cour" }, { word: "est", ref: "fr-0021" }, { word: "grande", ref: "fr-0410" }] }
+  - id: "fr-1601"
+    target: "cantine"
+    ipa: "kɑ̃tin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "On mange à la cantine.", ipa: "ɔ̃ mɑ̃ʒ a la kɑ̃tin", bases: [{ word: "On", ref: "fr-0132" }, { word: "mange", ref: "fr-0282" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "cantine", base: "cantine" }] }
+      - { target: "La cantine est pleine.", ipa: "la kɑ̃tin ɛ plɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "cantine", base: "cantine" }, { word: "est", ref: "fr-0021" }, { word: "pleine", ref: "fr-0439" }] }
+  - id: "fr-1602"
+    target: "uniforme"
+    ipa: "ynifɔʁm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'uniforme est bleu.", ipa: "lynifɔʁm ɛ blø", bases: [{ word: "L'uniforme", base: "uniforme" }, { word: "est", ref: "fr-0021" }, { word: "bleu", ref: "fr-1233" }] }
+      - { target: "Il porte un uniforme.", ipa: "il pɔʁt œ̃ ynifɔʁm", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-1003" }, { word: "un", ref: "fr-0208" }, { word: "uniforme", base: "uniforme" }] }
+  - id: "fr-1603"
+    target: "rentrée"
+    ipa: "ʁɑ̃tʁe"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La rentrée est en septembre.", ipa: "la ʁɑ̃tʁe ɛ ɑ̃ sɛptɑ̃bʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "rentrée", base: "rentrée" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "septembre", ref: "fr-1160" }] }
+      - { target: "Après les vacances, c'est la rentrée.", ipa: "apʁɛ le vakɑ̃s sɛ la ʁɑ̃tʁe", bases: [{ word: "Après", ref: "fr-0595" }, { word: "les", ref: "fr-0043" }, { word: "vacances", ref: "fr-1119" }, { word: "c'est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "rentrée", base: "rentrée" }] }
+  - id: "fr-1604"
+    target: "matière"
+    ipa: "matjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La géographie est une matière difficile.", ipa: "la ʒeɔɡʁafi ɛ yn matjɛʁ difisil", bases: [{ word: "La", ref: "fr-0544" }, { word: "géographie", ref: "fr-1607" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "matière", base: "matière" }, { word: "difficile", ref: "fr-0418" }] }
+      - { target: "C'est ma matière.", ipa: "sɛ ma matjɛʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "ma", ref: "fr-0137" }, { word: "matière", base: "matière" }] }
+  - id: "fr-1605"
+    target: "mathématiques"
+    ipa: "matematik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime les mathématiques.", ipa: "ʒɛm le matematik", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "les", ref: "fr-0043" }, { word: "mathématiques", base: "mathématiques" }] }
+      - { target: "Les mathématiques sont difficiles.", ipa: "le matematik sɔ̃ difisil", bases: [{ word: "Les", ref: "fr-0043" }, { word: "mathématiques", base: "mathématiques" }, { word: "sont", ref: "fr-0021" }, { word: "difficiles", ref: "fr-0418" }] }
+  - id: "fr-1606"
+    target: "histoire"
+    ipa: "istwaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous étudions l'histoire.", ipa: "nu etydjɔ̃ listwaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "étudions", ref: "fr-0253" }, { word: "l'histoire", base: "histoire" }] }
+      - { target: "Le professeur raconte une histoire.", ipa: "lə pʁɔfesœʁ ʁakɔ̃t yn istwaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "raconte", ref: "fr-0525" }, { word: "une", ref: "fr-0545" }, { word: "histoire", base: "histoire" }] }
+  - id: "fr-1607"
+    target: "géographie"
+    ipa: "ʒeɔɡʁafi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La géographie est une matière.", ipa: "la ʒeɔɡʁafi ɛ yn matjɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "géographie", base: "géographie" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "matière", ref: "fr-1604" }] }
+      - { target: "Le cours de géographie commence après la récréation.", ipa: "lə kuʁ də ʒeɔɡʁafi kɔmɑ̃s apʁɛ la ʁekʁeasjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cours", ref: "fr-1610" }, { word: "de", base: "de" }, { word: "géographie", base: "géographie" }, { word: "commence", ref: "fr-0508" }, { word: "après", ref: "fr-0595" }, { word: "la", ref: "fr-0544" }, { word: "récréation", ref: "fr-1599" }] }
+  - id: "fr-1608"
+    target: "sciences"
+    ipa: "sjɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime les sciences.", ipa: "ʒɛm le sjɑ̃s", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "les", ref: "fr-0043" }, { word: "sciences", base: "sciences" }] }
+      - { target: "Les sciences sont intéressantes.", ipa: "le sjɑ̃s sɔ̃ ɛ̃teʁesɑ̃t", bases: [{ word: "Les", ref: "fr-0043" }, { word: "sciences", base: "sciences" }, { word: "sont", ref: "fr-0021" }, { word: "intéressantes", base: "intéressant" }] }
+  - id: "fr-1609"
+    target: "dessin"
+    ipa: "desɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais un dessin.", ipa: "ʒə fɛ œ̃ desɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "dessin", base: "dessin" }] }
+      - { target: "Le dessin est facile.", ipa: "lə desɛ̃ ɛ fasil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dessin", base: "dessin" }, { word: "est", ref: "fr-0021" }, { word: "facile", ref: "fr-0417" }] }
+  - id: "fr-1610"
+    target: "cours"
+    ipa: "kuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cours commence maintenant.", ipa: "lə kuʁ kɔmɑ̃s mɛ̃tnɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cours", base: "cours" }, { word: "commence", ref: "fr-0508" }, { word: "maintenant", ref: "fr-0350" }] }
+      - { target: "J'ai un cours de sciences.", ipa: "ʒe œ̃ kuʁ də sjɑ̃s", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "cours", base: "cours" }, { word: "de", base: "de" }, { word: "sciences", ref: "fr-1608" }] }
+  - id: "fr-1611"
+    target: "rater"
+    ipa: "ʁate"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a raté l'examen.", ipa: "il a ʁate lɛɡzamɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "raté", base: "rater" }, { word: "l'examen", ref: "fr-1592" }] }
+      - { target: "Ne rate pas la leçon.", ipa: "nə ʁat pa la ləsɔ̃", bases: [{ word: "Ne", base: "ne" }, { word: "rate", base: "rater" }, { word: "pas", base: "pas" }, { word: "la", ref: "fr-0544" }, { word: "leçon", ref: "fr-1590" }] }
+  - id: "fr-1612"
+    target: "copier"
+    ipa: "kɔpje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ne copie pas la réponse.", ipa: "nə kɔpi pa la ʁepɔ̃s", bases: [{ word: "Ne", base: "ne" }, { word: "copie", base: "copier" }, { word: "pas", base: "pas" }, { word: "la", ref: "fr-0544" }, { word: "réponse", ref: "fr-1594" }] }
+      - { target: "Je copie la leçon dans le cahier.", ipa: "ʒə kɔpi la ləsɔ̃ dɑ̃ lə kaje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "copie", base: "copier" }, { word: "la", ref: "fr-0544" }, { word: "leçon", ref: "fr-1590" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "cahier", ref: "fr-1362" }] }
+  - id: "fr-1613"
+    target: "poser"
+    ipa: "poze"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je pose une question.", ipa: "ʒə poz yn kɛstjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "pose", base: "poser" }, { word: "une", ref: "fr-0545" }, { word: "question", ref: "fr-1593" }] }
+      - { target: "Pose ta question au professeur.", ipa: "poz ta kɛstjɔ̃ o pʁɔfesœʁ", bases: [{ word: "Pose", base: "poser" }, { word: "ta", ref: "fr-0626" }, { word: "question", ref: "fr-1593" }, { word: "au", base: "à" }, { word: "professeur", ref: "fr-0105" }] }
+  - id: "fr-1614"
+    target: "corriger"
+    ipa: "kɔʁiʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le professeur corrige les devoirs.", ipa: "lə pʁɔfesœʁ kɔʁiʒ le dəvwaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "corrige", base: "corriger" }, { word: "les", ref: "fr-0043" }, { word: "devoirs", ref: "fr-1618" }] }
+      - { target: "Corrige cette phrase.", ipa: "kɔʁiʒ sɛt fʁaz", bases: [{ word: "Corrige", base: "corriger" }, { word: "cette", ref: "fr-0144" }, { word: "phrase", ref: "fr-1621" }] }
+  - id: "fr-1615"
+    target: "réviser"
+    ipa: "ʁevize"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je révise pour l'examen.", ipa: "ʒə ʁevis puʁ lɛɡzamɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "révise", base: "réviser" }, { word: "pour", ref: "fr-0591" }, { word: "l'examen", ref: "fr-1592" }] }
+      - { target: "Nous révisons la leçon ce soir.", ipa: "nu ʁevizɔ̃ la ləsɔ̃ sə swaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "révisons", base: "réviser" }, { word: "la", ref: "fr-0544" }, { word: "leçon", ref: "fr-1590" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1616"
+    target: "rendre"
+    ipa: "ʁɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Rends le cahier au professeur.", ipa: "ʁɑ̃ lə kaje o pʁɔfesœʁ", bases: [{ word: "Rends", base: "rendre" }, { word: "le", ref: "fr-0543" }, { word: "cahier", ref: "fr-1362" }, { word: "au", base: "à" }, { word: "professeur", ref: "fr-0105" }] }
+      - { target: "Les élèves rendent les devoirs.", ipa: "lez elɛv ʁɑ̃d le dəvwaʁ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "élèves", ref: "fr-1588" }, { word: "rendent", base: "rendre" }, { word: "devoirs", ref: "fr-1618" }] }
+  - id: "fr-1617"
+    target: "punition"
+    ipa: "pynisjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La punition est très longue.", ipa: "la pynisjɔ̃ ɛ tʁɛ lɔ̃ɡ", bases: [{ word: "La", ref: "fr-0544" }, { word: "punition", base: "punition" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "longue", ref: "fr-0421" }] }
+      - { target: "Il a une punition après la classe.", ipa: "il a yn pynisjɔ̃ apʁɛ la klas", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "punition", base: "punition" }, { word: "après", ref: "fr-0595" }, { word: "la", ref: "fr-0544" }, { word: "classe", ref: "fr-1589" }] }
+  - id: "fr-1618"
+    target: "devoirs"
+    ipa: "dəvwaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais mes devoirs après l'école.", ipa: "ʒə fɛ me dəvwaʁ apʁɛ lekɔl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "mes", ref: "fr-0623" }, { word: "devoirs", base: "devoirs" }, { word: "après", ref: "fr-0595" }, { word: "l'école", ref: "fr-0964" }] }
+      - { target: "Les devoirs sont longs.", ipa: "le dəvwaʁ sɔ̃ lɔ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "devoirs", base: "devoirs" }, { word: "sont", ref: "fr-0021" }, { word: "longs", ref: "fr-0421" }] }
+  - id: "fr-1619"
+    target: "page"
+    ipa: "paʒ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ouvre le livre à la page dix.", ipa: "uvʁ lə livʁ a la paʒ dis", bases: [{ word: "Ouvre", ref: "fr-0298" }, { word: "le", ref: "fr-0543" }, { word: "livre", ref: "fr-1363" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "page", base: "page" }, { word: "dix", ref: "fr-0217" }] }
+      - { target: "La page est blanche.", ipa: "la paʒ ɛ blɑ̃ʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "page", base: "page" }, { word: "est", ref: "fr-0021" }, { word: "blanche", base: "blanc" }] }
+  - id: "fr-1620"
+    target: "mot"
+    ipa: "mo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je ne connais pas ce mot.", ipa: "ʒə nə kɔnɛ pa sə mo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ne", base: "ne" }, { word: "connais", ref: "fr-0503" }, { word: "pas", base: "pas" }, { word: "ce", ref: "fr-0143" }, { word: "mot", base: "mot" }] }
+      - { target: "Écris le mot dans le cahier.", ipa: "ekʁi lə mo dɑ̃ lə kaje", bases: [{ word: "Écris", ref: "fr-0291" }, { word: "le", ref: "fr-0543" }, { word: "mot", base: "mot" }, { word: "dans", ref: "fr-0049" }, { word: "cahier", ref: "fr-1362" }] }
+  - id: "fr-1621"
+    target: "phrase"
+    ipa: "fʁaz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Lis cette phrase.", ipa: "li sɛt fʁaz", bases: [{ word: "Lis", ref: "fr-0290" }, { word: "cette", ref: "fr-0144" }, { word: "phrase", base: "phrase" }] }
+      - { target: "Cette phrase est longue.", ipa: "sɛt fʁaz ɛ lɔ̃ɡ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "phrase", base: "phrase" }, { word: "est", ref: "fr-0021" }, { word: "longue", ref: "fr-0421" }] }
+  - id: "fr-1622"
+    target: "dictionnaire"
+    ipa: "diksjɔnɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cherche le mot dans le dictionnaire.", ipa: "ʃɛʁʃ lə mo dɑ̃ lə diksjɔnɛʁ", bases: [{ word: "Cherche", ref: "fr-0300" }, { word: "le", ref: "fr-0543" }, { word: "mot", ref: "fr-1620" }, { word: "dans", ref: "fr-0049" }, { word: "dictionnaire", base: "dictionnaire" }] }
+      - { target: "Le dictionnaire est sur la table.", ipa: "lə diksjɔnɛʁ ɛ syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dictionnaire", base: "dictionnaire" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+  - id: "fr-1623"
+    target: "collège"
+    ipa: "kɔlɛʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon frère est au collège.", ipa: "mɔ̃ fʁɛʁ ɛ o kɔlɛʒ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "à" }, { word: "collège", base: "collège" }] }
+      - { target: "Le collège commence en septembre.", ipa: "lə kɔlɛʒ kɔmɑ̃s ɑ̃ sɛptɑ̃bʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "collège", base: "collège" }, { word: "commence", ref: "fr-0508" }, { word: "en", base: "en" }, { word: "septembre", ref: "fr-1160" }] }
+  - id: "fr-1624"
+    target: "lycée"
+    ipa: "lise"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma sœur est au lycée.", ipa: "ma sœʁ ɛ o lise", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "à" }, { word: "lycée", base: "lycée" }] }
+      - { target: "Après le collège, on va au lycée.", ipa: "apʁɛ lə kɔlɛʒ ɔ̃ va o lise", bases: [{ word: "Après", ref: "fr-0595" }, { word: "le", ref: "fr-0543" }, { word: "collège", ref: "fr-1623" }, { word: "on", ref: "fr-0132" }, { word: "va", ref: "fr-0286" }, { word: "au", base: "à" }, { word: "lycée", base: "lycée" }] }
+  - id: "fr-1625"
+    target: "surveillant"
+    ipa: "syʁvɛjɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le surveillant ferme la porte.", ipa: "lə syʁvɛjɑ̃ fɛʁm la pɔʁt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "surveillant", base: "surveillant" }, { word: "ferme", ref: "fr-0299" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+      - { target: "Le surveillant regarde la cour.", ipa: "lə syʁvɛjɑ̃ ʁəɡaʁd la kuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "surveillant", base: "surveillant" }, { word: "regarde", ref: "fr-0293" }, { word: "la", ref: "fr-0544" }, { word: "cour", ref: "fr-1600" }] }
+  - id: "fr-1626"
+    target: "calculatrice"
+    ipa: "kalkylatʁis"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu as une calculatrice ?", ipa: "ty a yn kalkylatʁis", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "calculatrice", base: "calculatrice" }] }
+      - { target: "La calculatrice est dans le sac.", ipa: "la kalkylatʁis ɛ dɑ̃ lə sak", bases: [{ word: "La", ref: "fr-0544" }, { word: "calculatrice", base: "calculatrice" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1627"
+    target: "feutre"
+    ipa: "føtʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai un feutre rouge.", ipa: "ʒe œ̃ føtʁ ʁuʒ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "feutre", base: "feutre" }, { word: "rouge", ref: "fr-1232" }] }
+      - { target: "Prends le feutre et écris ton nom.", ipa: "pʁɑ̃ lə føtʁ e ekʁi tɔ̃ nɔ̃", bases: [{ word: "Prends", ref: "fr-0288" }, { word: "le", ref: "fr-0543" }, { word: "feutre", base: "feutre" }, { word: "et", ref: "fr-0027" }, { word: "écris", ref: "fr-0291" }, { word: "ton", ref: "fr-0141" }, { word: "nom", ref: "fr-0073" }] }
+

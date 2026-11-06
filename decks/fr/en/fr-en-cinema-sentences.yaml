@@ -1,0 +1,55 @@
+schema: 1
+id: "fr-en-cinema-sentences"
+kind: "layer"
+core: "fr-cinema-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: cinema"
+license: "CC-BY-SA-4.0"
+description: "Sentences about cinema, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2238":
+    native: "The director and the actor talk about the script."
+    bases:
+      "du": "some, of the"
+    confusables:
+      "actrice": { why: "An actress is a woman actor; the sentence has one male actor." }
+      "critique": { why: "A review is written after the film; the sentence is about the script." }
+  "fr-2239":
+    native: "The comedy makes the audience laugh."
+    confusables:
+      "drame": { why: "A drama is serious; the sentence is about laughter." }
+      "suspense": { why: "Suspense is tension; the sentence is about laughter." }
+  "fr-2240":
+    native: "The documentary shows nature and its beauty."
+    bases:
+      "montre": "shows"
+      "nature": "nature"
+      "beauté": "beauty"
+    confusables:
+      "dessinanime": { why: "A cartoon is drawn; the sentence is about real nature." }
+      "musique": { why: "Music is not named in the sentence." }
+  "fr-2241":
+    native: "The viewer reads the film’s subtitles."
+    bases:
+      "du": "some, of the"
+    confusables:
+      "doublage": { why: "Dubbing replaces speech; the sentence has written subtitles." }
+      "seance": { why: "A screening is the showing; the sentence is about reading." }
+  "fr-2242":
+    native: "The trailer shows a scene from the film."
+    bases:
+      "bande": "band"
+      "montre": "shows"
+      "du": "some, of the"
+    confusables:
+      "affiche": { why: "A poster is printed; the sentence is about a short video." }
+      "scenario": { why: "A script is the whole story; the sentence shows one scene." }
+  "fr-2243":
+    native: "The price of the screening is high."
+    bases:
+      "de": "of, from, some"
+      "élevé": "high"
+    confusables:
+      "billet": { why: "A ticket is what you buy; the sentence names the price of the screening." }
+      "sortie": { why: "A release is when a film comes out, not a price." }

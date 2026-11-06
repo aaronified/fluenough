@@ -1,0 +1,107 @@
+schema: 1
+id: "fr-literature-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2775"
+    target: "Le lecteur lit le roman et relit le chapitre."
+    ipa: "lə lɛktœʁ li lə ʁɔmɑ̃ e ʁəli lə ʃapitʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "lecteur", ref: "fr-1840" }
+      - { word: "lit", ref: "fr-0290" }
+      - { word: "roman", ref: "fr-1664" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "relit", ref: "fr-2767" }
+      - { word: "chapitre", ref: "fr-2748" }
+    confusables:
+      - { id: "editeur", ref: "fr-2750", kind: "word" }
+      - { id: "lecture", ref: "fr-1666", kind: "word" }
+  - id: "fr-2776"
+    target: "Le poète écrit un sonnet et une strophe."
+    ipa: "lə pɔɛt ekʁi œ̃ sɔnɛ e yn stʁɔf"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "poète", ref: "fr-2758" }
+      - { word: "écrit", ref: "fr-0291" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "sonnet", ref: "fr-2766" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "une", ref: "fr-0208" }
+      - { word: "strophe", ref: "fr-2756" }
+    confusables:
+      - { id: "vers", ref: "fr-0594", kind: "word" }
+      - { id: "rime", ref: "fr-2755", kind: "word" }
+  - id: "fr-2777"
+    target: "Le dramaturge écrit une tragédie, pas une fable."
+    ipa: "lə dʁamatyʁʒ ekʁi yn tʁaʒedi pa yn fabl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "dramaturge", ref: "fr-2759" }
+      - { word: "écrit", ref: "fr-0291" }
+      - { word: "une", ref: "fr-0208" }
+      - { word: "tragédie", ref: "fr-2760" }
+      - { word: "pas", base: "pas" }
+      - { word: "fable", ref: "fr-2746" }
+    confusables:
+      - { id: "conte", ref: "fr-2745", kind: "word" }
+      - { id: "legende", ref: "fr-2747", kind: "word" }
+  - id: "fr-2778"
+    target: "Le narrateur résume la préface et cite le sommaire."
+    ipa: "lə naʁatœʁ ʁezym la pʁefas e site lə sɔmɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "narrateur", ref: "fr-2763" }
+      - { word: "résume", ref: "fr-2768" }
+      - { word: "la", ref: "fr-0543" }
+      - { word: "préface", ref: "fr-2764" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "cite", ref: "fr-2771" }
+      - { word: "sommaire", ref: "fr-2765" }
+    confusables:
+      - { id: "page", ref: "fr-1619", kind: "word" }
+      - { id: "chapitre", ref: "fr-2748", kind: "word" }
+  - id: "fr-2779"
+    target: "L'éditeur accepte le texte du traducteur."
+    ipa: "lediteœʁ aksɛpt lə tɛkst dy tʁadyktœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'éditeur", ref: "fr-2750" }
+      - { word: "accepte", ref: "fr-2007" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "texte", ref: "fr-2749" }
+      - { word: "du", base: "de" }
+      - { word: "traducteur", ref: "fr-2751" }
+    confusables:
+      - { id: "librairie", ref: "fr-1431", kind: "word" }
+      - { id: "auteur", ref: "fr-2265", kind: "word" }
+  - id: "fr-2780"
+    target: "J'imagine une métaphore et je la commente."
+    ipa: "ʒimaʒin yn metafɔʁ e ʒə la kɔmɑ̃t"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "J'imagine", ref: "fr-2773" }
+      - { word: "une", ref: "fr-0208" }
+      - { word: "métaphore", ref: "fr-2754" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "la", ref: "fr-0543" }
+      - { word: "commente", ref: "fr-2770" }
+    confusables:
+      - { id: "symbole", ref: "fr-2753", kind: "word" }
+      - { id: "analyser", ref: "fr-2769", kind: "word" }
+

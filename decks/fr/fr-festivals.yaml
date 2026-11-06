@@ -1,0 +1,290 @@
+schema: 1
+id: "fr-festivals"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "festivals"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2332"
+    target: "festival"
+    ipa: "fɛstival"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le festival dure une semaine.", ipa: "lə fɛstival dyʁ yn səmɛn", bases: [{ word: "Le", ref: "fr-0543" }, { word: "festival", base: "festival" }, { word: "dure", ref: "fr-1131" }, { word: "une", ref: "fr-0545" }, { word: "semaine", ref: "fr-0668" }] }
+      - { target: "Nous allons au festival de musique.", ipa: "nu zalɔ̃ o fɛstival də myzik", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "au", base: "à" }, { word: "festival", base: "festival" }, { word: "de", base: "de" }, { word: "musique", ref: "fr-0266" }] }
+  - id: "fr-2333"
+    target: "invitation"
+    ipa: "ɛ̃vitasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Merci pour votre invitation.", ipa: "mɛʁsi puʁ vɔtʁ ɛ̃vitasjɔ̃", bases: [{ word: "Merci", ref: "fr-0002" }, { word: "pour", ref: "fr-0591" }, { word: "votre", ref: "fr-0140" }, { word: "invitation", base: "invitation" }] }
+      - { target: "Je reçois une invitation au mariage.", ipa: "ʒə ʁəswa yn ɛ̃vitasjɔ̃ o maʁjaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "reçois", ref: "fr-1986" }, { word: "une", ref: "fr-0545" }, { word: "invitation", base: "invitation" }, { word: "au", base: "à" }, { word: "mariage", ref: "fr-0187" }] }
+  - id: "fr-2334"
+    target: "défilé"
+    ipa: "defile"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le défilé passe par le centre.", ipa: "lə defile pas paʁ lə sɑ̃tʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "défilé", base: "défilé" }, { word: "passe", ref: "fr-0519" }, { word: "par", ref: "fr-0593" }, { word: "centre", ref: "fr-0978" }] }
+      - { target: "Les enfants suivent le défilé.", ipa: "lez ɑ̃fɑ̃ sɥiv lə defile", bases: [{ word: "Les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "suivent", ref: "fr-0910" }, { word: "le", ref: "fr-0543" }, { word: "défilé", base: "défilé" }] }
+  - id: "fr-2335"
+    target: "feu d'artifice"
+    ipa: "fø daʁtifis"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "feu", ref: "fr-0899" }, { word: "d'artifice", base: "artifice" }]
+    examples:
+      - { target: "Le feu d'artifice est à minuit.", ipa: "lə fø daʁtifis ɛ a minɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "feu", ref: "fr-0899" }, { word: "d'artifice", base: "artifice" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "minuit", ref: "fr-1037" }] }
+      - { target: "Nous regardons le feu d'artifice.", ipa: "nu ʁəɡaʁdɔ̃ lə fø daʁtifis", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "regardons", ref: "fr-0293" }, { word: "le", ref: "fr-0543" }, { word: "feu", ref: "fr-0899" }, { word: "d'artifice", base: "artifice" }] }
+  - id: "fr-2336"
+    target: "musicien"
+    ipa: "myzisjɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le musicien joue du violon.", ipa: "lə myzisjɛ̃ ʒu dy vjɔlɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "musicien", base: "musicien" }, { word: "joue", ref: "fr-0048" }, { word: "du", base: "de" }, { word: "violon", ref: "fr-1647" }] }
+      - { target: "Ce musicien est très connu.", ipa: "sə myzisjɛ̃ ɛ tʁɛ kɔny", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "musicien", base: "musicien" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "connu", ref: "fr-0503" }] }
+  - id: "fr-2337"
+    target: "défiler"
+    ipa: "defile"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les chars défilent dans la rue.", ipa: "le ʃaʁ defil dɑ̃ la ʁy", bases: [{ word: "Les", ref: "fr-0543" }, { word: "chars", base: "char" }, { word: "défilent", base: "défiler" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Nous défilons avec la fanfare.", ipa: "nu defilɔ̃ avɛk la fɑ̃faʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "défilons", base: "défiler" }, { word: "avec", ref: "fr-0590" }, { word: "la", ref: "fr-0544" }, { word: "fanfare", ref: "fr-2356" }] }
+  - id: "fr-2338"
+    target: "fêter"
+    ipa: "fete"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous fêtons son anniversaire.", ipa: "nu fɛtɔ̃ sɔ̃ nanivɛʁsɛʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "fêtons", base: "fêter" }, { word: "son", ref: "fr-0138" }, { word: "anniversaire", ref: "fr-1175" }] }
+      - { target: "Ils fêtent la fin de l'année.", ipa: "il fɛt la fɛ̃ dlane", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "fêtent", base: "fêter" }, { word: "la", ref: "fr-0544" }, { word: "fin", ref: "fr-1110" }, { word: "de", base: "de" }, { word: "l'année", ref: "fr-1166" }] }
+  - id: "fr-2339"
+    target: "offrir"
+    ipa: "ɔfʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je t'offre un cadeau.", ipa: "ʒə tɔfʁ œ̃ kado", bases: [{ word: "Je", ref: "fr-0126" }, { word: "t'offre", ref: "fr-1449" }, { word: "un", ref: "fr-0208" }, { word: "cadeau", ref: "fr-1425" }] }
+      - { target: "Elle offre des fleurs à sa mère.", ipa: "ɛl ɔfʁ de flœʁ a sa mɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "offre", base: "offrir" }, { word: "des", ref: "fr-0546" }, { word: "fleurs", base: "fleur" }, { word: "à", base: "à" }, { word: "sa", ref: "fr-0138" }, { word: "mère", ref: "fr-0166" }] }
+  - id: "fr-2340"
+    target: "célébrer"
+    ipa: "selebʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous célébrons la fête nationale.", ipa: "nu selebʁɔ̃ la fɛt nasjɔnal", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "célébrons", base: "célébrer" }, { word: "la", ref: "fr-0544" }, { word: "fête", ref: "fr-1176" }, { word: "nationale", base: "national" }] }
+      - { target: "On célèbre la fin de la guerre.", ipa: "ɔ̃ selɛbʁ la fɛ̃ də la ɡɛʁ", bases: [{ word: "On", ref: "fr-0132" }, { word: "célèbre", ref: "fr-2275" }, { word: "la", ref: "fr-0544" }, { word: "fin", ref: "fr-1110" }, { word: "de", base: "de" }, { word: "guerre", ref: "fr-1824" }] }
+  - id: "fr-2341"
+    target: "réveillon"
+    ipa: "ʁevɛjɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le réveillon est à minuit.", ipa: "lə ʁevɛjɔ̃ ɛ a minɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "réveillon", base: "réveillon" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "minuit", ref: "fr-1037" }] }
+      - { target: "Nous passons le réveillon ensemble.", ipa: "nu pasɔ̃ lə ʁevɛjɔ̃ ɑ̃sɑ̃bl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "passons", ref: "fr-0519" }, { word: "le", ref: "fr-0543" }, { word: "réveillon", base: "réveillon" }, { word: "ensemble", ref: "fr-0333" }] }
+  - id: "fr-2342"
+    target: "Pâques"
+    ipa: "pɑk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Pâques tombe en avril.", ipa: "pɑk tɔ̃b ɑ̃ avʁil", bases: [{ word: "Pâques", base: "Pâques" }, { word: "tombe", ref: "fr-0518" }, { word: "en", base: "en" }, { word: "avril", ref: "fr-1155" }] }
+      - { target: "Nous mangeons du chocolat à Pâques.", ipa: "nu mɑ̃ʒɔ̃ dy ʃɔkɔla a pɑk", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "mangeons", ref: "fr-0282" }, { word: "du", base: "de" }, { word: "chocolat", ref: "fr-0790" }, { word: "à", base: "à" }, { word: "Pâques", base: "Pâques" }] }
+  - id: "fr-2343"
+    target: "carnaval"
+    ipa: "kaʁnaval"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le carnaval a lieu en février.", ipa: "lə kaʁnaval a ljø ɑ̃ fevʁje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "carnaval", base: "carnaval" }, { word: "a", ref: "fr-0022" }, { word: "lieu", base: "lieu" }, { word: "en", base: "en" }, { word: "février", ref: "fr-1153" }] }
+      - { target: "Les enfants portent des masques au carnaval.", ipa: "lez ɑ̃fɑ̃ pɔʁt de mask o kaʁnaval", bases: [{ word: "Les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "portent", ref: "fr-0527" }, { word: "des", ref: "fr-0546" }, { word: "masques", ref: "fr-2344" }, { word: "au", base: "à" }, { word: "carnaval", base: "carnaval" }] }
+  - id: "fr-2344"
+    target: "masque"
+    ipa: "mask"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il porte un masque vert.", ipa: "il pɔʁt œ̃ mask vɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-1003" }, { word: "un", ref: "fr-0208" }, { word: "masque", base: "masque" }, { word: "vert", ref: "fr-1234" }] }
+      - { target: "Le masque cache son visage.", ipa: "lə mask kaʃ sɔ̃ vizaʒ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "masque", base: "masque" }, { word: "cache", base: "cacher" }, { word: "son", ref: "fr-0138" }, { word: "visage", ref: "fr-0944" }] }
+  - id: "fr-2345"
+    target: "déguisement"
+    ipa: "degizmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son déguisement est très drôle.", ipa: "sɔ̃ degizmɑ̃ ɛ tʁɛ dʁol", bases: [{ word: "Son", ref: "fr-0138" }, { word: "déguisement", base: "déguisement" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
+      - { target: "Elle porte un déguisement de princesse.", ipa: "ɛl pɔʁt œ̃ degizmɑ̃ də pʁɛ̃sɛs", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "porte", ref: "fr-1003" }, { word: "un", ref: "fr-0208" }, { word: "déguisement", base: "déguisement" }, { word: "de", base: "de" }, { word: "princesse", base: "princesse" }] }
+  - id: "fr-2346"
+    target: "confetti"
+    ipa: "kɔ̃feti"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Des confettis tombent du ciel.", ipa: "de kɔ̃feti tɔ̃b dy sjɛl", bases: [{ word: "Des", ref: "fr-0546" }, { word: "confettis", base: "confetti" }, { word: "tombent", ref: "fr-0518" }, { word: "du", base: "de" }, { word: "ciel", ref: "fr-1314" }] }
+      - { target: "Ils jettent des confettis.", ipa: "il ʒɛt de kɔ̃feti", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "jettent", base: "jeter" }, { word: "des", ref: "fr-0546" }, { word: "confettis", base: "confetti" }] }
+  - id: "fr-2347"
+    target: "joyeux"
+    ipa: "ʒwajø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Bonne année, joyeux Noël !", ipa: "bɔn ane ʒwajø nɔɛl", bases: [{ word: "Bonne", ref: "fr-0040" }, { word: "année", ref: "fr-1166" }, { word: "joyeux", base: "joyeux" }, { word: "Noël", ref: "fr-1184" }] }
+      - { target: "Une fête joyeuse commence ce soir.", ipa: "yn fɛt ʒwajøz kɔmɑ̃s sə swaʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "fête", ref: "fr-1176" }, { word: "joyeuse", base: "joyeux" }, { word: "commence", ref: "fr-0508" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-2348"
+    target: "traditionnel"
+    ipa: "tʁadisjɔnɛl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un plat traditionnel.", ipa: "sɛ tœ̃ pla tʁadisjɔnɛl", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "plat", ref: "fr-0819" }, { word: "traditionnel", base: "traditionnel" }] }
+      - { target: "La fête a un costume traditionnel.", ipa: "la fɛt a œ̃ kɔstym tʁadisjɔnɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "fête", ref: "fr-1176" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "costume", ref: "fr-1216" }, { word: "traditionnel", base: "traditionnel" }] }
+  - id: "fr-2349"
+    target: "lanterne"
+    ipa: "lɑ̃tɛʁn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les lanternes brillent dans la nuit.", ipa: "le lɑ̃tɛʁn bʁije dɑ̃ la nɥi", bases: [{ word: "Les", ref: "fr-0543" }, { word: "lanternes", base: "lanterne" }, { word: "brillent", ref: "fr-1335" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "Il porte une lanterne rouge.", ipa: "il pɔʁt yn lɑ̃tɛʁn ʁuʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-1003" }, { word: "une", ref: "fr-0545" }, { word: "lanterne", base: "lanterne" }, { word: "rouge", ref: "fr-1232" }] }
+  - id: "fr-2350"
+    target: "pétard"
+    ipa: "petaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les pétards font beaucoup de bruit.", ipa: "le petaʁ fɔ̃ boku də bʁɥi", bases: [{ word: "Les", ref: "fr-0543" }, { word: "pétards", base: "pétard" }, { word: "font", ref: "fr-0287" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "bruit", ref: "fr-1111" }] }
+      - { target: "Un pétard explose près de la maison.", ipa: "œ̃ petaʁ ɛksplɔz pʁɛ də la mɛzɔ̃", bases: [{ word: "Un", ref: "fr-0208" }, { word: "pétard", base: "pétard" }, { word: "explose", base: "exploser" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }] }
+  - id: "fr-2351"
+    target: "chant"
+    ipa: "ʃɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chant de la foule est fort.", ipa: "lə ʃɑ̃ də la ful ɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chant", base: "chant" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "foule", base: "foule" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+      - { target: "On entend un chant traditionnel.", ipa: "ɔ̃ ɑ̃tɑ̃ œ̃ ʃɑ̃ tʁadisjɔnɛl", bases: [{ word: "On", ref: "fr-0132" }, { word: "entend", ref: "fr-0520" }, { word: "un", ref: "fr-0208" }, { word: "chant", base: "chant" }, { word: "traditionnel", ref: "fr-2348" }] }
+  - id: "fr-2352"
+    target: "bal"
+    ipa: "bal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bal commence à minuit.", ipa: "lə bal kɔmɑ̃s a minɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bal", base: "bal" }, { word: "commence", ref: "fr-0508" }, { word: "à", base: "à" }, { word: "minuit", ref: "fr-1037" }] }
+      - { target: "Nous allons au bal du village.", ipa: "nu zalɔ̃ o bal dy vilaʒ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "au", base: "à" }, { word: "bal", base: "bal" }, { word: "du", base: "de" }, { word: "village", base: "village" }] }
+  - id: "fr-2353"
+    target: "farce"
+    ipa: "faʁs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une farce du premier avril.", ipa: "sɛ tyn faʁs dy pʁəmje avʁil", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "farce", base: "farce" }, { word: "du", base: "de" }, { word: "premier", ref: "fr-0905" }, { word: "avril", ref: "fr-1155" }] }
+      - { target: "Il fait une farce à son frère.", ipa: "il fɛ yn faʁs a sɔ̃ fʁɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0046" }, { word: "une", ref: "fr-0545" }, { word: "farce", base: "farce" }, { word: "à", base: "à" }, { word: "son", ref: "fr-0138" }, { word: "frère", ref: "fr-0169" }] }
+  - id: "fr-2354"
+    target: "ambiance"
+    ipa: "ɑ̃bjɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'ambiance est très gaie.", ipa: "lɑ̃bjɑ̃s ɛ tʁɛ ɡɛ", bases: [{ word: "L'ambiance", base: "ambiance" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "gaie", ref: "fr-2355" }] }
+      - { target: "Il y a une bonne ambiance.", ipa: "il i a yn bɔn ɑ̃bjɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "bonne", ref: "fr-0040" }, { word: "ambiance", base: "ambiance" }] }
+  - id: "fr-2355"
+    target: "gaie"
+    ipa: "ɡɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette chanson est gaie.", ipa: "sɛt ʃɑ̃sɔ̃ ɛ ɡɛ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "chanson", ref: "fr-1649" }, { word: "est", ref: "fr-0021" }, { word: "gaie", base: "gaie" }] }
+      - { target: "Une fête gaie et joyeuse.", ipa: "yn fɛt ɡɛ e ʒwajøz", bases: [{ word: "Une", ref: "fr-0545" }, { word: "fête", ref: "fr-1176" }, { word: "gaie", base: "gaie" }, { word: "et", ref: "fr-0027" }, { word: "joyeuse", ref: "fr-2347" }] }
+  - id: "fr-2356"
+    target: "fanfare"
+    ipa: "fɑ̃faʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fanfare joue dans la rue.", ipa: "la fɑ̃faʁ ʒu dɑ̃ la ʁy", bases: [{ word: "La", ref: "fr-0544" }, { word: "fanfare", base: "fanfare" }, { word: "joue", ref: "fr-0048" }, { word: "dans", ref: "fr-0049" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Une fanfare accueille les visiteurs.", ipa: "yn fɑ̃faʁ akœj le vizitœʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "fanfare", base: "fanfare" }, { word: "accueille", base: "accueillir" }, { word: "les", ref: "fr-0543" }, { word: "visiteurs", base: "visiteur" }] }
+  - id: "fr-2357"
+    target: "défilés"
+    ipa: "defile"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les défilés durent toute la journée.", ipa: "le defile dyʁ tut la ʒuʁne", bases: [{ word: "Les", ref: "fr-0543" }, { word: "défilés", base: "défilés" }, { word: "durent", ref: "fr-1131" }, { word: "toute", ref: "fr-0372" }, { word: "la", ref: "fr-0544" }, { word: "journée", ref: "fr-1098" }] }
+      - { target: "Il y a deux défilés demain.", ipa: "il i a dø defile dəmɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "deux", ref: "fr-0209" }, { word: "défilés", base: "défilés" }, { word: "demain", ref: "fr-0078" }] }
+

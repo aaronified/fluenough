@@ -1,0 +1,387 @@
+schema: 1
+id: "fr-en-festivals"
+kind: "layer"
+core: "fr-festivals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Festivals"
+license: "CC-BY-SA-4.0"
+description: "Forty words for festivals and celebrations: the days we mark, the food and the gifts, and the words for having fun together. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2332":
+    native: "festival"
+    notes:
+      "n1": "Un festival is a set of events, often music or films, over a few days."
+    examples:
+      "Le festival dure une semaine.":
+        native: "The festival lasts a week."
+        bases:
+          "festival": "festival"
+      "Nous allons au festival de musique.":
+        native: "We are going to the music festival."
+        bases:
+          "au": "at, to the"
+          "festival": "festival"
+          "de": "of, from, some"
+  "fr-2333":
+    native: "invitation"
+    notes:
+      "n1": "Une invitation is a card or message asking someone to come."
+    examples:
+      "Merci pour votre invitation.":
+        native: "Thank you for your invitation."
+        bases:
+          "invitation": "invitation"
+      "Je reçois une invitation au mariage.":
+        native: "I receive an invitation to the wedding."
+        bases:
+          "invitation": "invitation"
+          "au": "at, to the"
+  "fr-2334":
+    native: "parade"
+    notes:
+      "n1": "Un défilé is a parade of people or vehicles through a street."
+    examples:
+      "Le défilé passe par le centre.":
+        native: "The parade goes through the centre."
+        bases:
+          "défilé": "parade"
+      "Les enfants suivent le défilé.":
+        native: "The children follow the parade."
+        bases:
+          "enfants": "children"
+          "défilé": "parade"
+  "fr-2335":
+    native: "fireworks"
+    notes:
+      "n1": "Un feu d’artifice is a display of fireworks."
+    bases:
+      "d'artifice": "fireworks"
+    examples:
+      "Le feu d'artifice est à minuit.":
+        native: "The fireworks are at midnight."
+        bases:
+          "d'artifice": "fireworks"
+          "à": "to, at"
+      "Nous regardons le feu d'artifice.":
+        native: "We watch the fireworks."
+        bases:
+          "d'artifice": "fireworks"
+  "fr-2336":
+    native: "musician"
+    notes:
+      "n1": "Un musicien plays music; the feminine is musicienne."
+    examples:
+      "Le musicien joue du violon.":
+        native: "The musician plays the violin."
+        bases:
+          "musicien": "musician"
+          "du": "some, of the"
+      "Ce musicien est très connu.":
+        native: "This musician is very well known."
+        bases:
+          "musicien": "musician"
+  "fr-2337":
+    native: "to parade"
+    notes:
+      "n1": "Défiler is regular: to march past in a parade."
+    examples:
+      "Les chars défilent dans la rue.":
+        native: "The floats parade along the street."
+        bases:
+          "chars": "floats"
+          "défilent": "to parade"
+      "Nous défilons avec la fanfare.":
+        native: "We march with the band."
+        bases:
+          "défilons": "to parade"
+  "fr-2338":
+    native: "to celebrate"
+    notes:
+      "n1": "Fêter is regular: to celebrate an event or a birthday."
+    examples:
+      "Nous fêtons son anniversaire.":
+        native: "We celebrate his birthday."
+        bases:
+          "fêtons": "to celebrate"
+      "Ils fêtent la fin de l'année.":
+        native: "They celebrate the end of the year."
+        bases:
+          "fêtent": "to celebrate"
+          "de": "of, from, some"
+  "fr-2339":
+    native: "to give, to offer"
+    notes:
+      "n1": "Offrir is an -ir verb: to give a gift."
+    examples:
+      "Je t'offre un cadeau.":
+        native: "I give you a present."
+      "Elle offre des fleurs à sa mère.":
+        native: "She gives flowers to her mother."
+        bases:
+          "offre": "to give, to offer"
+          "fleurs": "flowers"
+          "à": "to, at"
+  "fr-2340":
+    native: "to celebrate"
+    notes:
+      "n1": "Célébrer is regular: to hold a celebration."
+    examples:
+      "Nous célébrons la fête nationale.":
+        native: "We celebrate the national day."
+        bases:
+          "célébrons": "to celebrate"
+          "nationale": "national"
+      "On célèbre la fin de la guerre.":
+        native: "We celebrate the end of the war."
+        bases:
+          "de": "of, from, some"
+  "fr-2341":
+    native: "festive evening meal"
+    notes:
+      "n1": "Le réveillon is the festive meal on Christmas Eve or New Year’s Eve."
+    examples:
+      "Le réveillon est à minuit.":
+        native: "The festive meal is at midnight."
+        bases:
+          "réveillon": "festive evening meal"
+          "à": "to, at"
+      "Nous passons le réveillon ensemble.":
+        native: "We spend New Year’s Eve together."
+        bases:
+          "réveillon": "festive evening meal"
+  "fr-2342":
+    native: "Easter"
+    notes:
+      "n1": "Pâques is Easter; it is used in the plural."
+    examples:
+      "Pâques tombe en avril.":
+        native: "Easter falls in April."
+        bases:
+          "Pâques": "Easter"
+          "en": "in, by, as"
+      "Nous mangeons du chocolat à Pâques.":
+        native: "We eat chocolate at Easter."
+        bases:
+          "du": "some, of the"
+          "à": "to, at"
+          "Pâques": "Easter"
+  "fr-2343":
+    native: "carnival"
+    notes:
+      "n1": "Un carnaval is a festival with parades and costumes."
+    examples:
+      "Le carnaval a lieu en février.":
+        native: "The carnival takes place in February."
+        bases:
+          "carnaval": "carnival"
+          "lieu": "place"
+          "en": "in, by, as"
+      "Les enfants portent des masques au carnaval.":
+        native: "The children wear masks at the carnival."
+        bases:
+          "enfants": "children"
+          "au": "at, to the"
+          "carnaval": "carnival"
+  "fr-2344":
+    native: "mask"
+    notes:
+      "n1": "Un masque hides the face; it is also a face mask."
+    examples:
+      "Il porte un masque vert.":
+        native: "He wears a green mask."
+        bases:
+          "masque": "mask"
+      "Le masque cache son visage.":
+        native: "The mask hides his face."
+        bases:
+          "masque": "mask"
+          "cache": "hides"
+  "fr-2345":
+    native: "costume, fancy dress"
+    notes:
+      "n1": "Un déguisement is a costume worn for a party."
+    examples:
+      "Son déguisement est très drôle.":
+        native: "His costume is very funny."
+        bases:
+          "déguisement": "costume, fancy dress"
+      "Elle porte un déguisement de princesse.":
+        native: "She wears a princess costume."
+        bases:
+          "déguisement": "costume, fancy dress"
+          "de": "of, from, some"
+          "princesse": "princess"
+  "fr-2346":
+    native: "confetti"
+    notes:
+      "n1": "Des confettis are small coloured paper pieces thrown at parties."
+    examples:
+      "Des confettis tombent du ciel.":
+        native: "Confetti falls from the sky."
+        bases:
+          "confettis": "confetti"
+          "du": "some, of the"
+      "Ils jettent des confettis.":
+        native: "They throw confetti."
+        bases:
+          "jettent": "throw"
+          "confettis": "confetti"
+  "fr-2347":
+    native: "joyful, happy"
+    notes:
+      "n1": "Joyeux takes the feminine joyeuse."
+    examples:
+      "Bonne année, joyeux Noël !":
+        native: "Happy New Year, merry Christmas!"
+        bases:
+          "joyeux": "joyful, happy"
+      "Une fête joyeuse commence ce soir.":
+        native: "A joyful party starts tonight."
+        bases:
+          "joyeuse": "joyful, happy"
+  "fr-2348":
+    native: "traditional"
+    notes:
+      "n1": "Traditionnel takes the feminine traditionnelle."
+    examples:
+      "C'est un plat traditionnel.":
+        native: "It is a traditional dish."
+        bases:
+          "traditionnel": "traditional"
+      "La fête a un costume traditionnel.":
+        native: "The festival has a traditional costume."
+        bases:
+          "traditionnel": "traditional"
+  "fr-2349":
+    native: "lantern"
+    notes:
+      "n1": "Une lanterne gives light, often at a festival."
+    examples:
+      "Les lanternes brillent dans la nuit.":
+        native: "The lanterns shine in the night."
+        bases:
+          "lanternes": "lantern"
+      "Il porte une lanterne rouge.":
+        native: "He carries a red lantern."
+        bases:
+          "lanterne": "lantern"
+  "fr-2350":
+    native: "firecracker"
+    notes:
+      "n1": "Un pétard is a firecracker, loud and quick."
+    examples:
+      "Les pétards font beaucoup de bruit.":
+        native: "The firecrackers make a lot of noise."
+        bases:
+          "pétards": "firecracker"
+          "de": "of, from, some"
+      "Un pétard explose près de la maison.":
+        native: "A firecracker explodes near the house."
+        bases:
+          "pétard": "firecracker"
+          "explose": "explodes"
+          "de": "of, from, some"
+  "fr-2351":
+    native: "song, singing"
+    notes:
+      "n1": "Un chant is a song, often sung together."
+    examples:
+      "Le chant de la foule est fort.":
+        native: "The crowd’s singing is loud."
+        bases:
+          "chant": "song, singing"
+          "de": "of, from, some"
+          "foule": "crowd"
+      "On entend un chant traditionnel.":
+        native: "We hear a traditional song."
+        bases:
+          "chant": "song, singing"
+  "fr-2352":
+    native: "dance, ball"
+    notes:
+      "n1": "Un bal is a dance party, often in a village."
+    examples:
+      "Le bal commence à minuit.":
+        native: "The dance starts at midnight."
+        bases:
+          "bal": "dance, ball"
+          "à": "to, at"
+      "Nous allons au bal du village.":
+        native: "We are going to the village dance."
+        bases:
+          "au": "at, to the"
+          "bal": "dance, ball"
+          "du": "some, of the"
+          "village": "village"
+  "fr-2353":
+    native: "joke, prank"
+    notes:
+      "n1": "Une farce is a joke or a prank played on someone."
+    examples:
+      "C'est une farce du premier avril.":
+        native: "It is an April Fools’ joke."
+        bases:
+          "farce": "joke, prank"
+          "du": "some, of the"
+      "Il fait une farce à son frère.":
+        native: "He plays a prank on his brother."
+        bases:
+          "farce": "joke, prank"
+          "à": "to, at"
+  "fr-2354":
+    native: "atmosphere"
+    notes:
+      "n1": "Une ambiance is the mood of a place or event."
+    examples:
+      "L'ambiance est très gaie.":
+        native: "The atmosphere is very cheerful."
+        bases:
+          "L'ambiance": "atmosphere"
+      "Il y a une bonne ambiance.":
+        native: "There is a good atmosphere."
+        bases:
+          "y": "there"
+          "ambiance": "atmosphere"
+  "fr-2355":
+    native: "cheerful"
+    notes:
+      "n1": "Gai takes the feminine gaie; the spelling gai is also used."
+    examples:
+      "Cette chanson est gaie.":
+        native: "This song is cheerful."
+        bases:
+          "gaie": "cheerful"
+      "Une fête gaie et joyeuse.":
+        native: "A cheerful and joyful party."
+        bases:
+          "gaie": "cheerful"
+  "fr-2356":
+    native: "brass band"
+    notes:
+      "n1": "Une fanfare is a band playing brass instruments."
+    examples:
+      "La fanfare joue dans la rue.":
+        native: "The brass band plays in the street."
+        bases:
+          "fanfare": "brass band"
+      "Une fanfare accueille les visiteurs.":
+        native: "A brass band welcomes the visitors."
+        bases:
+          "fanfare": "brass band"
+          "accueille": "welcomes"
+          "visiteurs": "visitors"
+  "fr-2357":
+    native: "parades"
+    notes:
+      "n1": "Les défilés are parades, the plural of défilé."
+    examples:
+      "Les défilés durent toute la journée.":
+        native: "The parades last all day."
+        bases:
+          "défilés": "parades"
+      "Il y a deux défilés demain.":
+        native: "There are two parades tomorrow."
+        bases:
+          "y": "there"
+          "défilés": "parades"

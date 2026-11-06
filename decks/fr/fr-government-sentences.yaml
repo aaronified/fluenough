@@ -1,0 +1,109 @@
+schema: 1
+id: "fr-government-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2056"
+    target: "Le député vote la loi et le maire applique le décret."
+    ipa: "lə depyte vɔt la lwa e lə mɛʁ aplik lə dekʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "député", ref: "fr-2023" }
+      - { word: "vote", base: "voter" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "loi", ref: "fr-2020" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "maire", ref: "fr-2024" }
+      - { word: "applique", ref: "fr-2034" }
+      - { word: "décret", ref: "fr-2027" }
+    confusables:
+      - { id: "ministere", ref: "fr-2044", kind: "word" }
+      - { id: "parlement", ref: "fr-2022", kind: "word" }
+  - id: "fr-2057"
+    target: "Les citoyens élisent leur maire et leur député."
+    ipa: "lezsitwajɛ̃ elizɛt lœʁ mɛʁ e lœʁ depyte"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0543" }
+      - { word: "citoyens", ref: "fr-2026" }
+      - { word: "élisent", ref: "fr-2031" }
+      - { word: "leur", ref: "fr-0142" }
+      - { word: "maire", ref: "fr-2024" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "député", ref: "fr-2023" }
+    confusables:
+      - { id: "impot", ref: "fr-2025", kind: "word" }
+      - { id: "election", ref: "fr-1822", kind: "word" }
+  - id: "fr-2058"
+    target: "L'administration demande une autorisation et un document."
+    ipa: "ladministʁasjɔ̃ dəmɑ̃d ynotɔʁizasjɔ̃ e œ̃ dɔkymɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'administration", ref: "fr-2028" }
+      - { word: "demande", ref: "fr-1980" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "autorisation", ref: "fr-2048" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "document", ref: "fr-1979" }
+    confusables:
+      - { id: "permis", ref: "fr-2047", kind: "word" }
+      - { id: "amende", ref: "fr-2051", kind: "word" }
+  - id: "fr-2059"
+    target: "L'ambassade interdit le visa sans procédure."
+    ipa: "lɑ̃basad ɛ̃tɛʁdi lə viza sɑ̃ pʁɔsedyʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'ambassade", ref: "fr-2030" }
+      - { word: "interdit", ref: "fr-2035" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "visa", ref: "fr-1913" }
+      - { word: "sans", ref: "fr-0592" }
+      - { word: "procédure", ref: "fr-2049" }
+    confusables:
+      - { id: "autoriser", ref: "fr-2036", kind: "word" }
+      - { id: "constitution", ref: "fr-2040", kind: "word" }
+  - id: "fr-2060"
+    target: "La réforme du budget est décidée par le conseil."
+    ipa: "la ʁefɔʁm dy bydʒɛ ɛ deside paʁ lə kɔ̃sɛj"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "réforme", ref: "fr-2041" }
+      - { word: "du", base: "de" }
+      - { word: "budget", ref: "fr-1457" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "décidée", ref: "fr-2033" }
+      - { word: "par", ref: "fr-0593" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "conseil", ref: "fr-2045" }
+    confusables:
+      - { id: "loi", ref: "fr-2020", kind: "word" }
+      - { id: "decret", ref: "fr-2027", kind: "word" }
+  - id: "fr-2061"
+    target: "Le tribunal applique la sanction et l'amende."
+    ipa: "lə tʁibynal aplik la sɑ̃ksjɔ̃ e lamɑ̃d"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "tribunal", ref: "fr-2046" }
+      - { word: "applique", ref: "fr-2034" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "sanction", ref: "fr-2050" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "l'amende", ref: "fr-2051" }
+    confusables:
+      - { id: "droit", ref: "fr-0894", kind: "word" }
+      - { id: "regle", ref: "fr-1365", kind: "word" }
+

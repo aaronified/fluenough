@@ -1,0 +1,436 @@
+schema: 1
+id: "fr-health"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "health"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1753"
+    target: "patient"
+    ipa: "pasjɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le patient attend le médecin.", ipa: "lə pasjɑ̃ atɑ̃ lə medsɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "patient", base: "patient" }, { word: "attend", ref: "fr-0303" }, { word: "médecin", ref: "fr-1073" }] }
+      - { target: "Le patient respire mieux maintenant.", ipa: "lə pasjɑ̃ ʁɛspiʁ mjø mɛ̃tnɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "patient", base: "patient" }, { word: "respire", ref: "fr-1732" }, { word: "mieux", ref: "fr-0341" }, { word: "maintenant", ref: "fr-0350" }] }
+  - id: "fr-1754"
+    target: "pilule"
+    ipa: "pilyl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il avale une pilule avec de l'eau.", ipa: "il avalə yn pilyl avɛk də lo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "avale", base: "avaler" }, { word: "une", ref: "fr-0545" }, { word: "pilule", base: "pilule" }, { word: "avec", ref: "fr-0590" }, { word: "de", base: "de" }, { word: "l'eau", ref: "fr-0024" }] }
+      - { target: "La pilule est très petite.", ipa: "la pilyl ɛ tʁɛ pətit", bases: [{ word: "La", ref: "fr-0544" }, { word: "pilule", base: "pilule" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "petite", ref: "fr-0411" }] }
+  - id: "fr-1758"
+    target: "cheville"
+    ipa: "ʃəvij"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai mal à la cheville.", ipa: "ʒe mal a la ʃəvij", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "mal", ref: "fr-0340" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "cheville", base: "cheville" }] }
+      - { target: "La cheville est enflée.", ipa: "la ʃəvij ɛ ɑ̃fle", bases: [{ word: "La", ref: "fr-0544" }, { word: "cheville", base: "cheville" }, { word: "est", ref: "fr-0021" }, { word: "enflée", base: "enflé" }] }
+  - id: "fr-1756"
+    target: "pharmacien"
+    ipa: "faʁmasjɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le pharmacien donne le sirop.", ipa: "lə faʁmasjɛ̃ dɔn lə siʁo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pharmacien", base: "pharmacien" }, { word: "donne", ref: "fr-0302" }, { word: "sirop", ref: "fr-1713" }] }
+      - { target: "Demandez conseil au pharmacien.", ipa: "dəmɑ̃de kɔ̃sɛj o faʁmasjɛ̃", bases: [{ word: "Demandez", ref: "fr-0521" }, { word: "conseil", base: "conseil" }, { word: "au", base: "à" }, { word: "pharmacien", base: "pharmacien" }] }
+  - id: "fr-1757"
+    target: "béquille"
+    ipa: "bekij"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il marche avec des béquilles.", ipa: "il maʁʃ avɛk de bekij", bases: [{ word: "Il", ref: "fr-0127" }, { word: "marche", ref: "fr-0306" }, { word: "avec", ref: "fr-0590" }, { word: "des", ref: "fr-0546" }, { word: "béquilles", base: "béquille" }] }
+      - { target: "La béquille est trop courte.", ipa: "la bekij ɛ tʁo kuʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "béquille", base: "béquille" }, { word: "est", ref: "fr-0021" }, { word: "trop", ref: "fr-0344" }, { word: "courte", ref: "fr-0422" }] }
+  - id: "fr-1700"
+    target: "santé"
+    ipa: "sɑ̃te"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma santé est bonne.", ipa: "ma sɑ̃te ɛ bɔn", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "santé", base: "santé" }, { word: "est", ref: "fr-0021" }, { word: "bonne", ref: "fr-0040" }] }
+      - { target: "Prenez soin de votre santé.", ipa: "pʁəne swɛ̃ də vɔtʁ sɑ̃te", bases: [{ word: "Prenez", ref: "fr-0288" }, { word: "soin", base: "soin" }, { word: "de", base: "de" }, { word: "votre", ref: "fr-0140" }, { word: "santé", base: "santé" }] }
+  - id: "fr-1702"
+    target: "fièvre"
+    ipa: "fjɛvʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a de la fièvre.", ipa: "il a də la fjɛvʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "fièvre", base: "fièvre" }] }
+      - { target: "La fièvre est tombée ce matin.", ipa: "la fjɛvʁ ɛ tɔ̃be sə matɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "fièvre", base: "fièvre" }, { word: "est", ref: "fr-0021" }, { word: "tombée", ref: "fr-0518" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1703"
+    target: "toux"
+    ipa: "tu"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai une toux depuis une semaine.", ipa: "ʒe yn tu dəpɥi yn səmɛn", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "toux", base: "toux" }, { word: "depuis", base: "depuis" }, { word: "semaine", ref: "fr-0668" }] }
+      - { target: "Cette toux est très fatigante.", ipa: "sɛt tu ɛ tʁɛ fatiɡɑ̃t", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "toux", base: "toux" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "fatigante", base: "fatigant" }] }
+  - id: "fr-1704"
+    target: "rhume"
+    ipa: "ʁym"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a attrapé un rhume.", ipa: "ɛl a atʁape œ̃ ʁym", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "attrapé", base: "attraper" }, { word: "un", ref: "fr-0208" }, { word: "rhume", base: "rhume" }] }
+      - { target: "Un rhume dure souvent une semaine.", ipa: "œ̃ ʁym dyʁ suvɑ̃ yn səmɛn", bases: [{ word: "Un", ref: "fr-0208" }, { word: "rhume", base: "rhume" }, { word: "dure", ref: "fr-1131" }, { word: "souvent", ref: "fr-0326" }, { word: "une", ref: "fr-0545" }, { word: "semaine", ref: "fr-0668" }] }
+  - id: "fr-1706"
+    target: "médicament"
+    ipa: "medikamɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Prenez ce médicament deux fois par jour.", ipa: "pʁəne sə medikamɑ̃ dø fwa paʁ ʒuʁ", bases: [{ word: "Prenez", ref: "fr-0288" }, { word: "ce", ref: "fr-0143" }, { word: "médicament", base: "médicament" }, { word: "deux", ref: "fr-0209" }, { word: "fois", ref: "fr-1043" }, { word: "par", ref: "fr-0593" }, { word: "jour", ref: "fr-1032" }] }
+      - { target: "Le médicament est dans la pharmacie.", ipa: "lə medikamɑ̃ ɛ dɑ̃ la faʁmasi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médicament", base: "médicament" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "pharmacie", ref: "fr-0963" }] }
+  - id: "fr-1707"
+    target: "ordonnance"
+    ipa: "ɔʁdɔnɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médecin écrit une ordonnance.", ipa: "lə medsɛ̃ ekʁi yn ɔʁdɔnɑ̃s", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }, { word: "écrit", ref: "fr-0291" }, { word: "une", ref: "fr-0545" }, { word: "ordonnance", base: "ordonnance" }] }
+      - { target: "Sans ordonnance, on ne peut pas le prendre.", ipa: "sɑ̃z ɔʁdɔnɑ̃s ɔ̃ nə pø pa lə pʁɑ̃dʁ", bases: [{ word: "Sans", ref: "fr-0592" }, { word: "ordonnance", base: "ordonnance" }, { word: "on", ref: "fr-0132" }, { word: "ne", base: "ne" }, { word: "peut", ref: "fr-0500" }, { word: "pas", base: "pas" }, { word: "le", ref: "fr-0543" }, { word: "prendre", ref: "fr-0288" }] }
+  - id: "fr-1710"
+    target: "infirmière"
+    ipa: "ɛ̃fiʁmjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'infirmière prend ma température.", ipa: "lɛ̃fiʁmjɛʁ pʁɑ̃ ma tɑ̃peʁatyʁ", bases: [{ word: "L'infirmière", base: "infirmière" }, { word: "prend", ref: "fr-0288" }, { word: "ma", ref: "fr-0037" }, { word: "température", ref: "fr-1315" }] }
+      - { target: "Mon amie est infirmière.", ipa: "mɔ̃ ami ɛ ɛ̃fiʁmjɛʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "amie", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "infirmière", base: "infirmière" }] }
+  - id: "fr-1711"
+    target: "infirmier"
+    ipa: "ɛ̃fiʁmje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un infirmier attend dans le couloir.", ipa: "œ̃ ɛ̃fiʁmje atɑ̃ dɑ̃ lə kulwaʁ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "infirmier", base: "infirmier" }, { word: "attend", ref: "fr-0303" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "couloir", ref: "fr-1115" }] }
+      - { target: "Mon frère est infirmier à Lyon.", ipa: "mɔ̃ fʁɛʁ ɛ ɛ̃fiʁmje a ljɔ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "est", ref: "fr-0021" }, { word: "infirmier", base: "infirmier" }, { word: "à", base: "à" }, { word: "Lyon", base: "Lyon" }] }
+  - id: "fr-1713"
+    target: "sirop"
+    ipa: "siʁo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sirop est très sucré.", ipa: "lə siʁo ɛ tʁɛ sykʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sirop", base: "sirop" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "sucré", ref: "fr-0798" }] }
+      - { target: "Je prends un sirop pour la toux.", ipa: "ʒə pʁɑ̃ œ̃ siʁo puʁ la tu", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "sirop", base: "sirop" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "toux", ref: "fr-1703" }] }
+  - id: "fr-1714"
+    target: "comprimé"
+    ipa: "kɔ̃pʁime"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Prenez deux comprimés le matin.", ipa: "pʁəne dø kɔ̃pʁime lə matɛ̃", bases: [{ word: "Prenez", ref: "fr-0288" }, { word: "deux", ref: "fr-0209" }, { word: "comprimés", base: "comprimé" }, { word: "le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Ce comprimé est grand.", ipa: "sə kɔ̃pʁime ɛ ɡʁɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "comprimé", base: "comprimé" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+  - id: "fr-1715"
+    target: "pansement"
+    ipa: "pɑ̃smɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mets un pansement sur la coupure.", ipa: "mɛ œ̃ pɑ̃smɑ̃ syʁ la kupyʁ", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "un", ref: "fr-0208" }, { word: "pansement", base: "pansement" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "coupure", base: "coupure" }] }
+      - { target: "Le pansement est propre.", ipa: "lə pɑ̃smɑ̃ ɛ pʁɔpʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pansement", base: "pansement" }, { word: "est", ref: "fr-0021" }, { word: "propre", ref: "fr-0427" }] }
+  - id: "fr-1716"
+    target: "thermomètre"
+    ipa: "tɛʁmɔmɛtʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Où est le thermomètre ?", ipa: "u ɛ lə tɛʁmɔmɛtʁ", bases: [{ word: "Où", ref: "fr-0067" }, { word: "est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "thermomètre", base: "thermomètre" }] }
+      - { target: "Ce thermomètre affiche trente-huit.", ipa: "sə tɛʁmɔmɛtʁ afiʃ tʁɑ̃tɥit", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "thermomètre", base: "thermomètre" }, { word: "affiche", base: "afficher" }, { word: "trente", ref: "fr-0702" }, { word: "huit", ref: "fr-0215" }] }
+  - id: "fr-1717"
+    target: "vitamine"
+    ipa: "vitamin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les fruits donnent des vitamines.", ipa: "le fʁɥi dɔn de vitamin", bases: [{ word: "Les", ref: "fr-0543" }, { word: "fruits", ref: "fr-0738" }, { word: "donnent", ref: "fr-0302" }, { word: "des", ref: "fr-0546" }, { word: "vitamines", base: "vitamine" }] }
+      - { target: "Je prends des vitamines en hiver.", ipa: "ʒə pʁɑ̃ de vitamin ɑ̃ ivɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "des", ref: "fr-0546" }, { word: "vitamines", base: "vitamine" }, { word: "en", base: "en" }, { word: "hiver", ref: "fr-1172" }] }
+  - id: "fr-1718"
+    target: "régime"
+    ipa: "ʁeʒim"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est au régime depuis janvier.", ipa: "il ɛ o ʁeʒim dəpɥi ʒɑ̃vje", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "à" }, { word: "régime", base: "régime" }, { word: "depuis", base: "depuis" }, { word: "janvier", ref: "fr-1152" }] }
+      - { target: "Ce régime est difficile à suivre.", ipa: "sə ʁeʒim ɛ difisil a sɥivʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "régime", base: "régime" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }, { word: "à", base: "à" }, { word: "suivre", ref: "fr-0910" }] }
+  - id: "fr-1719"
+    target: "dentiste"
+    ipa: "dɑ̃tist"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vais chez le dentiste demain.", ipa: "ʒə vɛ ʃe lə dɑ̃tist dəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "chez", ref: "fr-0472" }, { word: "le", ref: "fr-0543" }, { word: "dentiste", base: "dentiste" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Le dentiste regarde ma dent.", ipa: "lə dɑ̃tist ʁəɡaʁd ma dɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dentiste", base: "dentiste" }, { word: "regarde", ref: "fr-0293" }, { word: "ma", ref: "fr-0037" }, { word: "dent", ref: "fr-0935" }] }
+  - id: "fr-1720"
+    target: "opération"
+    ipa: "ɔpeʁasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une opération du genou.", ipa: "il a yn ɔpeʁasjɔ̃ dy ʒənu", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "opération", base: "opération" }, { word: "du", base: "de" }, { word: "genou", ref: "fr-0931" }] }
+      - { target: "L'opération a duré deux heures.", ipa: "lɔpeʁasjɔ̃ a dyʁe dø zœʁ", bases: [{ word: "L'opération", base: "opération" }, { word: "a", ref: "fr-0022" }, { word: "duré", ref: "fr-1131" }, { word: "deux", ref: "fr-0209" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-1721"
+    target: "analyse"
+    ipa: "analiz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le résultat de l'analyse arrive demain.", ipa: "lə ʁezylta də lanaliz aʁiv dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "résultat", base: "résultat" }, { word: "de", base: "de" }, { word: "l'analyse", base: "analyse" }, { word: "arrive", ref: "fr-0305" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Il fait une analyse de sang.", ipa: "il fɛ yn analiz də sɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0046" }, { word: "une", ref: "fr-0545" }, { word: "analyse", base: "analyse" }, { word: "de", base: "de" }, { word: "sang", ref: "fr-0947" }] }
+  - id: "fr-1722"
+    target: "radiographie"
+    ipa: "ʁadjɔɡʁafi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médecin demande une radiographie.", ipa: "lə medsɛ̃ dəmɑ̃d yn ʁadjɔɡʁafi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }, { word: "demande", ref: "fr-0521" }, { word: "une", ref: "fr-0545" }, { word: "radiographie", base: "radiographie" }] }
+      - { target: "La radiographie montre une petite fracture.", ipa: "la ʁadjɔɡʁafi mɔ̃tʁ yn pətit fʁaktyʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "radiographie", base: "radiographie" }, { word: "montre", base: "montrer" }, { word: "une", ref: "fr-0545" }, { word: "petite", ref: "fr-0411" }, { word: "fracture", base: "fracture" }] }
+  - id: "fr-1723"
+    target: "estomac"
+    ipa: "estɔma"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon estomac me fait mal.", ipa: "mɔ̃ estɔma mə fɛ mal", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "estomac", base: "estomac" }, { word: "me", base: "me" }, { word: "fait", ref: "fr-0046" }, { word: "mal", ref: "fr-0340" }] }
+      - { target: "L'estomac est vide le matin.", ipa: "lestɔma ɛ vid lə matɛ̃", bases: [{ word: "L'estomac", base: "estomac" }, { word: "est", ref: "fr-0021" }, { word: "vide", ref: "fr-0440" }, { word: "le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1724"
+    target: "poumon"
+    ipa: "pumɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les poumons respirent de l'air.", ipa: "le pumɔ̃ ʁɛspiʁ də lɛʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "poumons", base: "poumon" }, { word: "respirent", ref: "fr-1732" }, { word: "de", base: "de" }, { word: "l'air", base: "air" }] }
+      - { target: "Il a un poumon fragile.", ipa: "il a œ̃ pumɔ̃ fʁaʒil", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "poumon", base: "poumon" }, { word: "fragile", base: "fragile" }] }
+  - id: "fr-1725"
+    target: "tousser"
+    ipa: "tuse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il tousse depuis ce matin.", ipa: "il tus dəpɥi sə matɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "tousse", base: "tousser" }, { word: "depuis", base: "depuis" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Ne toussez pas dans la salle.", ipa: "nə tuse pa dɑ̃ la sal", bases: [{ word: "Ne", base: "ne" }, { word: "toussez", base: "tousser" }, { word: "pas", base: "pas" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "salle", ref: "fr-1014" }] }
+  - id: "fr-1726"
+    target: "éternuer"
+    ipa: "etɛʁnɥe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle éternue souvent en été.", ipa: "ɛl etɛʁny suvɑ̃ ɑ̃ ete", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "éternue", base: "éternuer" }, { word: "souvent", ref: "fr-0326" }, { word: "en", base: "en" }, { word: "été", ref: "fr-0021" }] }
+      - { target: "Je n'éternue jamais le matin.", ipa: "ʒə netɛʁny ʒamɛ lə matɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'éternue", base: "éternuer" }, { word: "jamais", ref: "fr-0328" }, { word: "le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1727"
+    target: "guérir"
+    ipa: "ɡeʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il va guérir bientôt.", ipa: "il va ɡeʁiʁ bjɛ̃to", bases: [{ word: "Il", ref: "fr-0127" }, { word: "va", ref: "fr-0286" }, { word: "guérir", base: "guérir" }, { word: "bientôt", ref: "fr-0335" }] }
+      - { target: "Le repos aide à guérir.", ipa: "lə ʁəpo ɛd a ɡeʁiʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "repos", ref: "fr-1105" }, { word: "aide", ref: "fr-1065" }, { word: "à", base: "à" }, { word: "guérir", base: "guérir" }] }
+  - id: "fr-1728"
+    target: "soigner"
+    ipa: "swaɲe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'infirmière soigne le malade.", ipa: "lɛ̃fiʁmjɛʁ swaɲ lə malad", bases: [{ word: "L'infirmière", ref: "fr-1710" }, { word: "soigne", base: "soigner" }, { word: "le", ref: "fr-0543" }, { word: "malade", ref: "fr-0432" }] }
+      - { target: "Je soigne mon chien quand il est malade.", ipa: "ʒə swaɲ mɔ̃ ʃjɛ̃ kɑ̃ il ɛ malad", bases: [{ word: "Je", ref: "fr-0126" }, { word: "soigne", base: "soigner" }, { word: "mon", ref: "fr-0037" }, { word: "chien", ref: "fr-1253" }, { word: "quand", ref: "fr-0068" }, { word: "il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "malade", ref: "fr-0432" }] }
+  - id: "fr-1729"
+    target: "consulter"
+    ipa: "kɔ̃sylte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je consulte un médecin cette semaine.", ipa: "ʒə kɔ̃sylt œ̃ medsɛ̃ sɛt səmɛn", bases: [{ word: "Je", ref: "fr-0126" }, { word: "consulte", base: "consulter" }, { word: "un", ref: "fr-0208" }, { word: "médecin", ref: "fr-1073" }, { word: "cette", ref: "fr-0144" }, { word: "semaine", ref: "fr-0668" }] }
+      - { target: "Consultez votre pharmacien.", ipa: "kɔ̃sylte vɔtʁ faʁmasjɛ̃", bases: [{ word: "Consultez", base: "consulter" }, { word: "votre", ref: "fr-0140" }, { word: "pharmacien", ref: "fr-1756" }] }
+  - id: "fr-1730"
+    target: "vomir"
+    ipa: "vɔmiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a vomi dans la voiture.", ipa: "il a vɔmi dɑ̃ la vwatyʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "vomi", base: "vomir" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }] }
+      - { target: "Le bébé vomit après le repas.", ipa: "lə bebe vɔmi apʁɛ lə ʁəpa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bébé", ref: "fr-0180" }, { word: "vomit", base: "vomir" }, { word: "après", ref: "fr-0595" }, { word: "repas", ref: "fr-0813" }] }
+  - id: "fr-1731"
+    target: "saigner"
+    ipa: "sɛɲe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son nez saigne.", ipa: "sɔ̃ ne sɛɲ", bases: [{ word: "Son", ref: "fr-0138" }, { word: "nez", ref: "fr-0936" }, { word: "saigne", base: "saigner" }] }
+      - { target: "La coupure saigne encore.", ipa: "la kupyʁ sɛɲ ɑ̃kɔʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "coupure", base: "coupure" }, { word: "saigne", base: "saigner" }, { word: "encore", ref: "fr-0332" }] }
+  - id: "fr-1732"
+    target: "respirer"
+    ipa: "ʁɛspiʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Respirez lentement.", ipa: "ʁɛspiʁe lɑ̃tmɑ̃", bases: [{ word: "Respirez", base: "respirer" }, { word: "lentement", ref: "fr-0339" }] }
+      - { target: "Je respire mieux à la campagne.", ipa: "ʒə ʁɛspiʁ mjø a la kɑ̃paɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "respire", base: "respirer" }, { word: "mieux", ref: "fr-0341" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "campagne", base: "campagne" }] }
+  - id: "fr-1733"
+    target: "maigrir"
+    ipa: "mɛɡʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a maigri de cinq kilos.", ipa: "ɛl a mɛɡʁi də sɛ̃k kilo", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "maigri", base: "maigrir" }, { word: "de", base: "de" }, { word: "cinq", ref: "fr-0212" }, { word: "kilos", ref: "fr-0381" }] }
+      - { target: "Il veut maigrir avant l'été.", ipa: "il vø mɛɡʁiʁ avɑ̃ lete", bases: [{ word: "Il", ref: "fr-0127" }, { word: "veut", ref: "fr-0311" }, { word: "maigrir", base: "maigrir" }, { word: "avant", ref: "fr-0596" }, { word: "l'été", ref: "fr-1170" }] }
+  - id: "fr-1734"
+    target: "grossir"
+    ipa: "ɡʁosiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je grossis en hiver.", ipa: "ʒə ɡʁosi ɑ̃ ivɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "grossis", base: "grossir" }, { word: "en", base: "en" }, { word: "hiver", ref: "fr-1172" }] }
+      - { target: "Il a grossi pendant les vacances.", ipa: "il a ɡʁosi pɑ̃dɑ̃ le vakɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "grossi", base: "grossir" }, { word: "pendant", ref: "fr-0597" }, { word: "les", ref: "fr-0543" }, { word: "vacances", ref: "fr-1119" }] }
+  - id: "fr-1735"
+    target: "enceinte"
+    ipa: "ɑ̃sɛ̃t"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle est enceinte de deux mois.", ipa: "ɛl ɛ ɑ̃sɛ̃t də dø mwa", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "enceinte", base: "enceinte" }, { word: "de", base: "de" }, { word: "deux", ref: "fr-0209" }, { word: "mois", ref: "fr-1165" }] }
+      - { target: "Une femme enceinte doit se reposer.", ipa: "yn fam ɑ̃sɛ̃t dwa sə ʁəpoze", bases: [{ word: "Une", ref: "fr-0545" }, { word: "femme", ref: "fr-0172" }, { word: "enceinte", base: "enceinte" }, { word: "doit", ref: "fr-0501" }, { word: "se", base: "se" }, { word: "reposer", base: "reposer" }] }
+  - id: "fr-1736"
+    target: "sain"
+    ipa: "sɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il mène une vie saine.", ipa: "il mɛn yn vi sɛn", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mène", base: "mener" }, { word: "une", ref: "fr-0545" }, { word: "vie", ref: "fr-0267" }, { word: "saine", base: "sain" }] }
+      - { target: "Ce repas est sain et bon.", ipa: "sə ʁəpa ɛ sɛ̃ e bɔ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "repas", ref: "fr-0813" }, { word: "est", ref: "fr-0021" }, { word: "sain", base: "sain" }, { word: "et", ref: "fr-0027" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-1737"
+    target: "blessé"
+    ipa: "blese"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cycliste est blessé.", ipa: "lə siklist ɛ blese", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cycliste", base: "cycliste" }, { word: "est", ref: "fr-0021" }, { word: "blessé", base: "blessé" }] }
+      - { target: "Elle a le bras blessé.", ipa: "ɛl a lə bʁa blese", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "le", ref: "fr-0543" }, { word: "bras", ref: "fr-0928" }, { word: "blessé", base: "blessé" }] }
+  - id: "fr-1738"
+    target: "cassé"
+    ipa: "kase"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai le bras cassé.", ipa: "ʒe lə bʁa kase", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "le", ref: "fr-0543" }, { word: "bras", ref: "fr-0928" }, { word: "cassé", base: "cassé" }] }
+      - { target: "La chaise est cassée.", ipa: "la ʃɛz ɛ kase", bases: [{ word: "La", ref: "fr-0544" }, { word: "chaise", ref: "fr-1006" }, { word: "est", ref: "fr-0021" }, { word: "cassée", base: "cassé" }] }
+  - id: "fr-1739"
+    target: "fatiguer"
+    ipa: "fatiɡe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce travail me fatigue beaucoup.", ipa: "sə tʁavaj mə fatiɡ boku", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "travail", ref: "fr-0255" }, { word: "me", base: "me" }, { word: "fatigue", ref: "fr-1106" }, { word: "beaucoup", ref: "fr-0034" }] }
+      - { target: "Ne vous fatiguez pas trop.", ipa: "nə vu fatiɡe pa tʁo", bases: [{ word: "Ne", base: "ne" }, { word: "vous", ref: "fr-0096" }, { word: "fatiguez", base: "fatiguer" }, { word: "pas", base: "pas" }, { word: "trop", ref: "fr-0344" }] }
+

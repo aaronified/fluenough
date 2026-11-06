@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-en-weddings-sentences"
+kind: "layer"
+core: "fr-weddings-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: weddings"
+license: "CC-BY-SA-4.0"
+description: "Sentences about weddings, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2387":
+    native: "The witness signs the ring and the register."
+    confusables:
+      "bague": { why: "A ring is worn on a finger; the sentence names the wedding ring as a thing to sign." }
+      "mariage": { why: "A wedding is the whole event; the sentence names the signing." }
+  "fr-2388":
+    native: "The guests dance after the banquet."
+    confusables:
+      "fetedefamille": { why: "A family party is a type of event; the sentence says guests and a banquet." }
+      "discours": { why: "A speech is given, not danced to." }
+  "fr-2389":
+    native: "The bride wears a white dress and a bouquet."
+    bases:
+      "blanche": "white"
+    confusables:
+      "costume": { why: "A suit is worn by a man; the sentence has a bride’s dress." }
+      "demoiselledhonneur": { why: "A bridesmaid is a helper; the sentence is about the bride." }
+  "fr-2390":
+    native: "The couple leave on honeymoon after the ceremony."
+    bases:
+      "en": "in, by, as"
+      "de": "of, from, some"
+    confusables:
+      "marie": { why: "Married is the state; the sentence says they leave on a trip." }
+      "fiance": { why: "A fiancé is before the wedding; the sentence is after it." }
+  "fr-2391":
+    native: "My husband gives a moving speech."
+    confusables:
+      "veuf": { why: "A widower has lost a spouse; the sentence is about a speech." }
+      "celibataire": { why: "Single is not married; the sentence names a husband." }
+  "fr-2392":
+    native: "My family and my parents arrive at the ceremony."
+    bases:
+      "à": "to, at"
+    confusables:
+      "invite": { why: "A guest is invited; the sentence names family." }
+      "amoureux": { why: "A lover is a romantic partner; the sentence names family." }

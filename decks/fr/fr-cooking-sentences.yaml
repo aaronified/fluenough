@@ -1,0 +1,174 @@
+schema: 1
+id: "fr-cooking-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1572"
+    target: "Tu coupes les oignons avec le couteau."
+    ipa: "ty kup lez ɔɲɔ̃ avɛk lə kuto"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tu", ref: "fr-0095" }
+      - { word: "coupes", ref: "fr-1538" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "oignons", ref: "fr-0747" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "couteau", ref: "fr-0829" }
+    confusables:
+      - { id: "bol", ref: "fr-1548", kind: "word" }
+      - { id: "passoire", ref: "fr-1550", kind: "word" }
+  - id: "fr-1573"
+    target: "Le poulet cuit dans le four."
+    ipa: "lə pulɛ kɥi dɑ̃ lə fuʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "poulet", ref: "fr-0784" }
+      - { word: "cuit", ref: "fr-1498" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "four", ref: "fr-1546" }
+    confusables:
+      - { id: "poele", ref: "fr-1547", kind: "word" }
+      - { id: "bol", ref: "fr-1548", kind: "word" }
+  - id: "fr-1574"
+    target: "Mets le sel et le poivre dans la soupe."
+    ipa: "mɛ lə sɛl e lə pwavʁ dɑ̃ la sup"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mets", ref: "fr-0529" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "sel", ref: "fr-0778" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "poivre", ref: "fr-0779" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "soupe", ref: "fr-0816" }
+    confusables:
+      - { id: "miel", ref: "fr-1557", kind: "word" }
+      - { id: "citron", ref: "fr-1562", kind: "word" }
+  - id: "fr-1575"
+    target: "Ajoute une pincée de cannelle dans le lait."
+    ipa: "aʒut yn pɛ̃se də kanɛl dɑ̃ lə lɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ajoute", ref: "fr-0796" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "pincée", ref: "fr-1555" }
+      - { word: "de", base: "de" }
+      - { word: "cannelle", ref: "fr-1561" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "lait", ref: "fr-0044" }
+    confusables:
+      - { id: "levure", ref: "fr-1556", kind: "word" }
+      - { id: "thym", ref: "fr-1559", kind: "word" }
+  - id: "fr-1576"
+    target: "La recette dit de battre les œufs."
+    ipa: "la ʁəsɛt di də batʁ lez ø"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "recette", ref: "fr-1552" }
+      - { word: "dit", base: "dire" }
+      - { word: "de", base: "de" }
+      - { word: "battre", ref: "fr-1541" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "œufs", ref: "fr-0776" }
+    confusables:
+      - { id: "couvercle", ref: "fr-1563", kind: "word" }
+      - { id: "levure", ref: "fr-1556", kind: "word" }
+  - id: "fr-1577"
+    target: "Laisse refroidir le gâteau avant de le couper."
+    ipa: "lɛs ʁəfʁwadiʁ lə ɡɑto avɑ̃ də lə kupe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Laisse", base: "laisser" }
+      - { word: "refroidir", ref: "fr-1567" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "gâteau", ref: "fr-0789" }
+      - { word: "avant", ref: "fr-0596" }
+      - { word: "de", base: "de" }
+      - { word: "couper", ref: "fr-1538" }
+    confusables:
+      - { id: "tiede", ref: "fr-1568", kind: "word" }
+      - { id: "saler", ref: "fr-1569", kind: "word" }
+  - id: "fr-1578"
+    target: "Le beurre fond dans la poêle chaude."
+    ipa: "lə bœʁ fɔ̃ dɑ̃ la pwal ʃod"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "beurre", ref: "fr-0774" }
+      - { word: "fond", ref: "fr-1566" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "poêle", ref: "fr-1547" }
+      - { word: "chaude", ref: "fr-0419" }
+    confusables:
+      - { id: "gras", ref: "fr-1564", kind: "word" }
+      - { id: "vinaigre", ref: "fr-1558", kind: "word" }
+  - id: "fr-1579"
+    target: "Le café est amer, mais le miel est doux."
+    ipa: "lə kafe ɛ amɛʁ mɛ lə mjɛl ɛ du"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "café", ref: "fr-0793" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "amer", ref: "fr-1565" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "miel", ref: "fr-1557" }
+      - { word: "doux", ref: "fr-1337" }
+    confusables:
+      - { id: "sucre", ref: "fr-0777", kind: "word" }
+      - { id: "citron", ref: "fr-1562", kind: "word" }
+  - id: "fr-1580"
+    target: "Je râpe le fromage sur les pâtes chaudes."
+    ipa: "ʒə ʁap lə fʁɔmaʒ syʁ lez pɑt ʃod"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "râpe", ref: "fr-1543" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "fromage", ref: "fr-0775" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "pâtes", ref: "fr-1491" }
+      - { word: "chaudes", ref: "fr-0419" }
+    confusables:
+      - { id: "planche", ref: "fr-1551", kind: "word" }
+      - { id: "passoire", ref: "fr-1550", kind: "word" }
+  - id: "fr-1581"
+    target: "Fais bouillir l'eau et verse les pâtes dans la passoire."
+    ipa: "fɛ bujiʁ lo e vɛʁs le pɑt dɑ̃ la paswaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Fais", ref: "fr-0287" }
+      - { word: "bouillir", ref: "fr-1536" }
+      - { word: "l'eau", base: "eau" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "verse", ref: "fr-1542" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "pâtes", ref: "fr-1491" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "passoire", ref: "fr-1550" }
+    confusables:
+      - { id: "louche", ref: "fr-1549", kind: "word" }
+      - { id: "bol", ref: "fr-1548", kind: "word" }
+

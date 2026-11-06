@@ -1,0 +1,436 @@
+schema: 1
+id: "fr-weather"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "weather"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1303"
+    target: "soleil"
+    ipa: "sɔlɛj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le soleil brille.", ipa: "lə sɔlɛj bʁij", bases: [{ word: "Le", ref: "fr-0543" }, { word: "soleil", base: "soleil" }, { word: "brille", base: "briller" }] }
+      - { target: "Il y a du soleil ce matin.", ipa: "il i a dy sɔlɛj sə matɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "du" }, { word: "soleil", base: "soleil" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1304"
+    target: "pluie"
+    ipa: "plɥi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a de la pluie.", ipa: "il i a də la plɥi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "pluie", base: "pluie" }] }
+      - { target: "La pluie tombe sur la ville.", ipa: "la plɥi tɔ̃b syʁ la vil", bases: [{ word: "La", ref: "fr-0544" }, { word: "pluie", base: "pluie" }, { word: "tombe", ref: "fr-0518" }, { word: "sur", ref: "fr-0469" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-1305"
+    target: "nuage"
+    ipa: "nɥaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un nuage passe dans le ciel.", ipa: "œ̃ nɥaʒ pas dɑ̃ lə sjɛl", bases: [{ word: "Un", ref: "fr-0208" }, { word: "nuage", base: "nuage" }, { word: "passe", ref: "fr-0519" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "ciel", ref: "fr-1314" }] }
+      - { target: "Il y a des nuages ce soir.", ipa: "il i a de nɥaʒ sə swaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "nuages", base: "nuage" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1306"
+    target: "neige"
+    ipa: "nɛʒ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il neige en hiver.", ipa: "il nɛʒ ɑ̃ ivɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "neige", base: "neiger" }, { word: "en", base: "en" }, { word: "hiver", ref: "fr-1172" }] }
+      - { target: "La neige est blanche.", ipa: "la nɛʒ ɛ blɑ̃ʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "neige", base: "neige" }, { word: "est", ref: "fr-0021" }, { word: "blanche", base: "blanc" }] }
+  - id: "fr-1307"
+    target: "orage"
+    ipa: "ɔʁaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a un orage ce soir.", ipa: "il i a œ̃ ɔʁaʒ sə swaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "orage", base: "orage" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "L'orage fait peur aux enfants.", ipa: "lɔʁaʒ fɛ pœʁ o ɑ̃fɑ̃", bases: [{ word: "L'orage", base: "orage" }, { word: "fait", ref: "fr-0287" }, { word: "peur", base: "peur" }, { word: "aux", base: "aux" }, { word: "enfants", base: "enfant" }] }
+  - id: "fr-1308"
+    target: "tonnerre"
+    ipa: "tɔnɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "On entend le tonnerre.", ipa: "ɔ̃ ɑ̃tɑ̃ lə tɔnɛʁ", bases: [{ word: "On", ref: "fr-0132" }, { word: "entend", ref: "fr-0520" }, { word: "le", ref: "fr-0543" }, { word: "tonnerre", base: "tonnerre" }] }
+      - { target: "Le tonnerre est fort.", ipa: "lə tɔnɛʁ ɛ fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tonnerre", base: "tonnerre" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+  - id: "fr-1309"
+    target: "éclair"
+    ipa: "eklɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un éclair brille dans le ciel.", ipa: "œ̃ eklɛʁ bʁij dɑ̃ lə sjɛl", bases: [{ word: "Un", ref: "fr-0208" }, { word: "éclair", base: "éclair" }, { word: "brille", base: "briller" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "ciel", ref: "fr-1314" }] }
+      - { target: "L'éclair est très rapide.", ipa: "lekleɛʁ ɛ tʁɛ ʁapid", bases: [{ word: "L'éclair", base: "éclair" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "rapide", ref: "fr-0447" }] }
+  - id: "fr-1310"
+    target: "brouillard"
+    ipa: "bʁujaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a du brouillard sur la route.", ipa: "il i a dy bʁujaʁ syʁ la ʁut", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "du" }, { word: "brouillard", base: "brouillard" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "route", ref: "fr-0892" }] }
+      - { target: "Le brouillard est épais.", ipa: "lə bʁujaʁ ɛ epɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "brouillard", base: "brouillard" }, { word: "est", ref: "fr-0021" }, { word: "épais", base: "épais" }] }
+  - id: "fr-1311"
+    target: "brume"
+    ipa: "bʁym"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La brume couvre la mer.", ipa: "la bʁym kuvʁ la mɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "brume", base: "brume" }, { word: "couvre", base: "couvrir" }, { word: "mer", base: "mer" }] }
+      - { target: "Le matin, il y a de la brume.", ipa: "lə matɛ̃ il i a də la bʁym", bases: [{ word: "Le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }, { word: "il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "brume", base: "brume" }] }
+  - id: "fr-1312"
+    target: "averse"
+    ipa: "avɛʁs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une averse tombe ce matin.", ipa: "yn avɛʁs tɔ̃b sə matɛ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "averse", base: "averse" }, { word: "tombe", ref: "fr-0518" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Il y a une averse et du vent.", ipa: "il i a yn avɛʁs e dy vɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "averse", base: "averse" }, { word: "et", ref: "fr-0027" }, { word: "du", base: "du" }, { word: "vent", ref: "fr-0036" }] }
+  - id: "fr-1313"
+    target: "grêle"
+    ipa: "ɡʁɛl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La grêle tombe sur les voitures.", ipa: "la ɡʁɛl tɔ̃b syʁ le vwatyʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "grêle", base: "grêle" }, { word: "tombe", ref: "fr-0518" }, { word: "sur", ref: "fr-0469" }, { word: "les", ref: "fr-0043" }, { word: "voitures", ref: "fr-0859" }] }
+      - { target: "La grêle fait mal.", ipa: "la ɡʁɛl fɛ mal", bases: [{ word: "La", ref: "fr-0544" }, { word: "grêle", base: "grêle" }, { word: "fait", ref: "fr-0287" }, { word: "mal", ref: "fr-0340" }] }
+  - id: "fr-1314"
+    target: "ciel"
+    ipa: "sjɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ciel est bleu aujourd'hui.", ipa: "lə sjɛl ɛ blø oʒuʁdɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ciel", base: "ciel" }, { word: "est", ref: "fr-0021" }, { word: "bleu", ref: "fr-1233" }, { word: "aujourd'hui", ref: "fr-0079" }] }
+      - { target: "Le ciel est couvert.", ipa: "lə sjɛl ɛ kuvɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ciel", base: "ciel" }, { word: "est", ref: "fr-0021" }, { word: "couvert", ref: "fr-1328" }] }
+  - id: "fr-1315"
+    target: "température"
+    ipa: "tɑ̃peʁatyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La température est douce ce matin.", ipa: "la tɑ̃peʁatyʁ ɛ du sə matɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "température", base: "température" }, { word: "est", ref: "fr-0021" }, { word: "douce", base: "doux" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Quelle est la température ?", ipa: "kɛl ɛ la tɑ̃peʁatyʁ", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "température", base: "température" }] }
+  - id: "fr-1316"
+    target: "degré"
+    ipa: "dəɡʁe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il fait cinq degrés.", ipa: "il fɛ sɛ̃k dəɡʁe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "cinq", ref: "fr-0212" }, { word: "degrés", base: "degré" }] }
+      - { target: "Le degré baisse la nuit.", ipa: "lə dəɡʁe bɛs la nɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "degré", base: "degré" }, { word: "baisse", base: "baisser" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+  - id: "fr-1317"
+    target: "prévision"
+    ipa: "pʁevizjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La prévision annonce du soleil.", ipa: "la pʁevizjɔ̃ anɔ̃s dy sɔlɛj", bases: [{ word: "La", ref: "fr-0544" }, { word: "prévision", base: "prévision" }, { word: "annonce", base: "annoncer" }, { word: "du", base: "du" }, { word: "soleil", ref: "fr-1303" }] }
+      - { target: "Quelle est la prévision pour demain ?", ipa: "kɛl ɛ la pʁevizjɔ̃ puʁ dəmɛ̃", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "prévision", base: "prévision" }, { word: "pour", ref: "fr-0591" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1318"
+    target: "météo"
+    ipa: "meteo"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La météo annonce de la pluie.", ipa: "la meteo anɔ̃s də la plɥi", bases: [{ word: "La", ref: "fr-0544" }, { word: "météo", base: "météo" }, { word: "annonce", base: "annoncer" }, { word: "de", base: "de" }, { word: "pluie", ref: "fr-1304" }] }
+      - { target: "Je regarde la météo chaque matin.", ipa: "ʒə ʁəɡaʁd la meteo ʃak matɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", ref: "fr-0293" }, { word: "la", ref: "fr-0544" }, { word: "météo", base: "météo" }, { word: "chaque", ref: "fr-0375" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1319"
+    target: "humidité"
+    ipa: "ymidite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a beaucoup d'humidité.", ipa: "il i a boku dymidite", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "d'humidité", base: "humidité" }] }
+      - { target: "L'humidité rend l'air lourd.", ipa: "lymidite ʁɑ̃ lɛʁ luʁ", bases: [{ word: "L'humidité", base: "humidité" }, { word: "rend", base: "rendre" }, { word: "l'air", base: "air" }, { word: "lourd", ref: "fr-0442" }] }
+  - id: "fr-1320"
+    target: "tempête"
+    ipa: "tɑ̃pɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une tempête arrive ce soir.", ipa: "yn tɑ̃pɛt aʁiv sə swaʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "tempête", base: "tempête" }, { word: "arrive", ref: "fr-0305" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "La tempête casse les branches.", ipa: "la tɑ̃pɛt kas le bʁɑ̃ʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "tempête", base: "tempête" }, { word: "casse", base: "casser" }, { word: "les", ref: "fr-0043" }, { word: "branches", base: "branche" }] }
+  - id: "fr-1321"
+    target: "nuageux"
+    ipa: "nɥaʒø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ciel est nuageux.", ipa: "lə sjɛl ɛ nɥaʒø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ciel", ref: "fr-1314" }, { word: "est", ref: "fr-0021" }, { word: "nuageux", base: "nuageux" }] }
+      - { target: "Demain, le temps est nuageux.", ipa: "dəmɛ̃ lə tɑ̃ ɛ nɥaʒø", bases: [{ word: "Demain", ref: "fr-0078" }, { word: "le", ref: "fr-0543" }, { word: "temps", ref: "fr-1040" }, { word: "est", ref: "fr-0021" }, { word: "nuageux", base: "nuageux" }] }
+  - id: "fr-1322"
+    target: "pluvieux"
+    ipa: "plyvjø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Novembre est un mois pluvieux.", ipa: "nɔvɑ̃bʁ ɛ œ̃ mwa plyvjø", bases: [{ word: "Novembre", ref: "fr-1162" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "mois", ref: "fr-1165" }, { word: "pluvieux", base: "pluvieux" }] }
+      - { target: "Une journée pluvieuse commence.", ipa: "yn ʒuʁne plyvjøz kɔmɑ̃s", bases: [{ word: "Une", ref: "fr-0545" }, { word: "journée", ref: "fr-1098" }, { word: "pluvieuse", base: "pluvieux" }, { word: "commence", ref: "fr-0508" }] }
+  - id: "fr-1323"
+    target: "ensoleillé"
+    ipa: "ɑ̃sɔlɛje"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le temps est ensoleillé.", ipa: "lə tɑ̃ ɛ ɑ̃sɔlɛje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "temps", ref: "fr-1040" }, { word: "est", ref: "fr-0021" }, { word: "ensoleillé", base: "ensoleillé" }] }
+      - { target: "Une journée ensoleillée commence.", ipa: "yn ʒuʁne ɑ̃sɔlɛje kɔmɑ̃s", bases: [{ word: "Une", ref: "fr-0545" }, { word: "journée", ref: "fr-1098" }, { word: "ensoleillée", base: "ensoleillé" }, { word: "commence", ref: "fr-0508" }] }
+  - id: "fr-1324"
+    target: "orageux"
+    ipa: "ɔʁaʒø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le soir est orageux.", ipa: "lə swaʁ ɛ ɔʁaʒø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }, { word: "est", ref: "fr-0021" }, { word: "orageux", base: "orageux" }] }
+      - { target: "Le temps devient orageux.", ipa: "lə tɑ̃ dəvjɛ̃ ɔʁaʒø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "temps", ref: "fr-1040" }, { word: "devient", base: "devenir" }, { word: "orageux", base: "orageux" }] }
+  - id: "fr-1325"
+    target: "humide"
+    ipa: "ymid"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'air est humide.", ipa: "lɛʁ ɛ ymid", bases: [{ word: "L'air", base: "air" }, { word: "est", ref: "fr-0021" }, { word: "humide", base: "humide" }] }
+      - { target: "La maison est humide.", ipa: "la mɛzɔ̃ ɛ ymid", bases: [{ word: "La", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }, { word: "est", ref: "fr-0021" }, { word: "humide", base: "humide" }] }
+  - id: "fr-1326"
+    target: "sec"
+    ipa: "sɛk"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sol est sec.", ipa: "lə sɔl ɛ sɛk", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sol", ref: "fr-1016" }, { word: "est", ref: "fr-0021" }, { word: "sec", base: "sec" }] }
+      - { target: "L'été est sec ici.", ipa: "lete ɛ sɛk isi", bases: [{ word: "L'été", ref: "fr-1170" }, { word: "est", ref: "fr-0021" }, { word: "sec", base: "sec" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-1327"
+    target: "mouillé"
+    ipa: "muje"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes chaussures sont mouillées.", ipa: "me ʃosyʁ sɔ̃ muje", bases: [{ word: "Mes", ref: "fr-0623" }, { word: "chaussures", ref: "fr-1208" }, { word: "sont", ref: "fr-0021" }, { word: "mouillées", base: "mouillé" }] }
+      - { target: "Le sol est mouillé après la pluie.", ipa: "lə sɔl ɛ muje apʁɛ la plɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sol", ref: "fr-1016" }, { word: "est", ref: "fr-0021" }, { word: "mouillé", base: "mouillé" }, { word: "après", ref: "fr-0595" }, { word: "la", ref: "fr-0544" }, { word: "pluie", ref: "fr-1304" }] }
+  - id: "fr-1328"
+    target: "couvert"
+    ipa: "kuvɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le temps est couvert.", ipa: "lə tɑ̃ ɛ kuvɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "temps", ref: "fr-1040" }, { word: "est", ref: "fr-0021" }, { word: "couvert", base: "couvert" }] }
+      - { target: "Il fait gris et le ciel est couvert.", ipa: "il fɛ ɡʁi e lə sjɛl ɛ kuvɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "gris", base: "gris" }, { word: "et", ref: "fr-0027" }, { word: "le", ref: "fr-0543" }, { word: "ciel", ref: "fr-1314" }, { word: "est", ref: "fr-0021" }, { word: "couvert", base: "couvert" }] }
+  - id: "fr-1329"
+    target: "parapluie"
+    ipa: "paʁaplɥi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Prends ton parapluie.", ipa: "pʁɑ̃ tɔ̃ paʁaplɥi", bases: [{ word: "Prends", ref: "fr-0288" }, { word: "ton", ref: "fr-0141" }, { word: "parapluie", base: "parapluie" }] }
+      - { target: "Mon parapluie est dans le sac.", ipa: "mɔ̃ paʁaplɥi ɛ dɑ̃ lə sak", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "parapluie", base: "parapluie" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1330"
+    target: "gel"
+    ipa: "ʒɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a du gel la nuit.", ipa: "il i a dy ʒɛl la nɥi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "du" }, { word: "gel", base: "gel" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "Le gel tue les plantes.", ipa: "lə ʒɛl ty le plɑ̃t", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gel", base: "gel" }, { word: "tue", base: "tuer" }, { word: "les", ref: "fr-0043" }, { word: "plantes", base: "plante" }] }
+  - id: "fr-1331"
+    target: "verglas"
+    ipa: "vɛʁɡla"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Attention, il y a du verglas.", ipa: "atɑ̃sjɔ̃ il i a dy vɛʁɡla", bases: [{ word: "Attention", ref: "fr-1075" }, { word: "il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "du" }, { word: "verglas", base: "verglas" }] }
+      - { target: "Le verglas rend la route glissante.", ipa: "lə vɛʁɡla ʁɑ̃ la ʁut ɡlisɑ̃t", bases: [{ word: "Le", ref: "fr-0543" }, { word: "verglas", base: "verglas" }, { word: "rend", base: "rendre" }, { word: "la", ref: "fr-0544" }, { word: "route", ref: "fr-0892" }, { word: "glissante", base: "glissant" }] }
+  - id: "fr-1332"
+    target: "pleuvoir"
+    ipa: "pløvwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il pleut.", ipa: "il plø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "pleut", base: "pleuvoir" }] }
+      - { target: "Il pleut souvent en avril.", ipa: "il plø suvɑ̃ ɑ̃ avʁil", bases: [{ word: "Il", ref: "fr-0127" }, { word: "pleut", base: "pleuvoir" }, { word: "souvent", ref: "fr-0326" }, { word: "en", base: "en" }, { word: "avril", ref: "fr-1155" }] }
+  - id: "fr-1333"
+    target: "neiger"
+    ipa: "neʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il neige en janvier.", ipa: "il nɛʒ ɑ̃ ʒɑ̃vje", bases: [{ word: "Il", ref: "fr-0127" }, { word: "neige", base: "neiger" }, { word: "en", base: "en" }, { word: "janvier", ref: "fr-1152" }] }
+      - { target: "Il a neigé hier.", ipa: "il a neʒe jɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "neigé", base: "neiger" }, { word: "hier", ref: "fr-1038" }] }
+  - id: "fr-1334"
+    target: "geler"
+    ipa: "ʒəle"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il gèle la nuit.", ipa: "il ʒɛl la nɥi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "gèle", base: "geler" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "Ce matin, l'eau gèle.", ipa: "sə matɛ̃ lo ʒɛl", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }, { word: "l'eau", ref: "fr-0024" }, { word: "gèle", base: "geler" }] }
+  - id: "fr-1335"
+    target: "briller"
+    ipa: "bʁije"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les étoiles brillent la nuit.", ipa: "le etwal bʁij la nɥi", bases: [{ word: "Les", ref: "fr-0043" }, { word: "étoiles", base: "étoile" }, { word: "brillent", base: "briller" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "Le soleil ne brille pas aujourd'hui.", ipa: "lə sɔlɛj nə bʁij pa oʒuʁdɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "soleil", ref: "fr-1303" }, { word: "ne", base: "ne" }, { word: "brille", base: "briller" }, { word: "pas", base: "pas" }, { word: "aujourd'hui", ref: "fr-0079" }] }
+  - id: "fr-1336"
+    target: "souffler"
+    ipa: "sufle"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vent souffle fort.", ipa: "lə vɑ̃ sufl fɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vent", ref: "fr-0036" }, { word: "souffle", base: "souffler" }, { word: "fort", ref: "fr-0425" }] }
+      - { target: "Le vent souffle dans les arbres.", ipa: "lə vɑ̃ sufl dɑ̃ le aʁbʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vent", ref: "fr-0036" }, { word: "souffle", base: "souffler" }, { word: "dans", ref: "fr-0049" }, { word: "les", ref: "fr-0043" }, { word: "arbres", base: "arbre" }] }
+  - id: "fr-1337"
+    target: "doux"
+    ipa: "du"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il fait doux.", ipa: "il fɛ du", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "doux", base: "doux" }] }
+      - { target: "Le printemps est doux.", ipa: "lə pʁɛ̃tɑ̃ ɛ du", bases: [{ word: "Le", ref: "fr-0543" }, { word: "printemps", ref: "fr-1169" }, { word: "est", ref: "fr-0021" }, { word: "doux", base: "doux" }] }
+  - id: "fr-1338"
+    target: "rayon"
+    ipa: "ʁɛjɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un rayon de soleil passe.", ipa: "œ̃ ʁɛjɔ̃ də sɔlɛj pas", bases: [{ word: "Un", ref: "fr-0208" }, { word: "rayon", base: "rayon" }, { word: "de", base: "de" }, { word: "soleil", ref: "fr-1303" }, { word: "passe", ref: "fr-0519" }] }
+      - { target: "Les rayons chauffent la plage.", ipa: "le ʁɛjɔ̃ ʃofɛ̃t la plaʒ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "rayons", base: "rayon" }, { word: "chauffent", base: "chauffer" }, { word: "la", ref: "fr-0544" }, { word: "plage", base: "plage" }] }
+  - id: "fr-1339"
+    target: "goutte"
+    ipa: "ɡut"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une goutte tombe sur mon nez.", ipa: "yn ɡut tɔ̃b syʁ mɔ̃ ne", bases: [{ word: "Une", ref: "fr-0545" }, { word: "goutte", base: "goutte" }, { word: "tombe", ref: "fr-0518" }, { word: "sur", ref: "fr-0469" }, { word: "mon", ref: "fr-0037" }, { word: "nez", ref: "fr-0936" }] }
+      - { target: "Il y a une goutte de pluie.", ipa: "il i a yn ɡut də plɥi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "goutte", base: "goutte" }, { word: "de", base: "de" }, { word: "pluie", ref: "fr-1304" }] }
+  - id: "fr-1340"
+    target: "flaque"
+    ipa: "flak"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une flaque dans la rue.", ipa: "il i a yn flak dɑ̃ la ʁy", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "flaque", base: "flaque" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Le chien saute dans la flaque.", ipa: "lə ʃjɛ̃ sot dɑ̃ la flak", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chien", ref: "fr-1253" }, { word: "saute", base: "sauter" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "flaque", base: "flaque" }] }
+  - id: "fr-1341"
+    target: "éclaircie"
+    ipa: "eklɛʁsi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une éclaircie arrive après l'averse.", ipa: "yn eklɛʁsi aʁiv apʁɛ laves", bases: [{ word: "Une", ref: "fr-0545" }, { word: "éclaircie", base: "éclaircie" }, { word: "arrive", ref: "fr-0305" }, { word: "après", ref: "fr-0595" }, { word: "l'averse", base: "averse" }] }
+      - { target: "Il y a une éclaircie à midi.", ipa: "il i a yn eklɛʁsi a midi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "éclaircie", base: "éclaircie" }, { word: "à", base: "à" }, { word: "midi", ref: "fr-1036" }] }
+  - id: "fr-1342"
+    target: "chaleur"
+    ipa: "ʃalœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La chaleur est forte en été.", ipa: "la ʃalœʁ ɛ fɔʁt ɑ̃ ete", bases: [{ word: "La", ref: "fr-0544" }, { word: "chaleur", base: "chaleur" }, { word: "est", ref: "fr-0021" }, { word: "forte", ref: "fr-0425" }, { word: "en", base: "en" }, { word: "été", ref: "fr-1170" }] }
+      - { target: "Il fait une chaleur lourde.", ipa: "il fɛ yn ʃalœʁ luʁd", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "chaleur", base: "chaleur" }, { word: "lourde", ref: "fr-0442" }] }

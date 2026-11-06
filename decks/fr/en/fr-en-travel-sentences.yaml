@@ -1,0 +1,50 @@
+schema: 1
+id: "fr-en-travel-sentences"
+kind: "layer"
+core: "fr-travel-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: travel"
+license: "CC-BY-SA-4.0"
+description: "Sentences about travel, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1950":
+    native: "Show your passport and your visa at customs."
+    bases:
+      "Montrez": "show"
+      "à": "to, at"
+    confusables:
+      "identite": { why: "An identity card can be shown, but the sentence asks for a passport and a visa." }
+      "frontiere": { why: "The border is where customs is, not a document." }
+  "fr-1951":
+    native: "The train leaves at eight and arrives at noon."
+    bases:
+      "du": "some, of the"
+      "à": "to, at"
+    confusables:
+      "itineraire": { why: "The route is not given in this sentence, only the times." }
+      "trajet": { why: "A journey is the whole trip; the sentence gives the times." }
+  "fr-1952":
+    native: "We spend the night in an inn by the sea."
+    bases:
+      "à": "to, at"
+    confusables:
+      "hebergement": { why: "Accommodation is the general word; the sentence names an inn." }
+      "plage": { why: "A beach is not named; the sea is." }
+  "fr-1953":
+    native: "The guide shows the mountain and the landscape."
+    confusables:
+      "excursion": { why: "An excursion is a trip; the sentence is about what the guide shows." }
+      "touriste": { why: "The tourist is not named in this sentence." }
+  "fr-1954":
+    native: "The plane takes off and lands on time."
+    bases:
+      "à": "to, at"
+    confusables:
+      "embarquer": { why: "Boarding comes before taking off, not in this sentence." }
+      "escale": { why: "A stopover is a stop; the plane goes straight on." }
+  "fr-1955":
+    native: "The traveller looks for his ticket and his key."
+    confusables:
+      "sac": { why: "A bag may hold the things, but the sentence does not name it." }
+      "reveil": { why: "An alarm clock is not named in the sentence." }

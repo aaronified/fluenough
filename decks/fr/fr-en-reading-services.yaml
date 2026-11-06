@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-services"
+name: "Reading: services"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about services. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-bank-form"
+    title: "A simple bank form"
+    theme: "services"
+    sentences:
+      - text: "Formulaire de demande de compte."
+      - text: "Nom : Dupont. Adresse : 12 rue des Lilas."
+      - text: "Joindre un document d’identité et un justificatif de domicile."
+      - text: "Le délai de traitement est de cinq jours ouvrés."
+    questions:
+      - id: "fr-2014"
+        prompt: { en: "What must the applicant attach?" }
+        options:
+          - { en: "A photo and a letter" }
+          - { en: "An identity document and proof of address" }
+          - { en: "A bill" }
+        answer: 2
+      - id: "fr-2015"
+        prompt: { en: "How long does processing take?" }
+        options:
+          - { en: "Five working days" }
+          - { en: "One day" }
+          - { en: "Thirty days" }
+        answer: 1
+      - id: "fr-2016"
+        prompt: { en: "What is the form for?" }
+        options:
+          - { en: "An account request" }
+          - { en: "A complaint" }
+          - { en: "A repair" }
+        answer: 1

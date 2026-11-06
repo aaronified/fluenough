@@ -1,0 +1,70 @@
+schema: 1
+id: "fr-en-school-sentences"
+kind: "layer"
+core: "fr-school-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: school"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about school, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1628":
+    native: "The teacher writes the lesson on the board."
+    bases:
+      "au": "at, in"
+    confusables:
+      "cahier": { why: "An exercise book is the pupil's; the board is the teacher's." }
+      "stylo": { why: "A pen is what pupils write with, not what the board is." }
+  "fr-1629":
+    native: "The pupils hand in their homework tomorrow."
+    confusables:
+      "examen": { why: "An exam is a test, not homework." }
+      "punition": { why: "A punishment is not homework." }
+  "fr-1630":
+    native: "I answer the question."
+    bases:
+      "à": "to, at"
+    confusables:
+      "reponse": { why: "Réponse is the noun, an answer; the sentence uses the verb." }
+      "poser": { why: "Poser is to ask; the sentence says answer." }
+  "fr-1631":
+    native: "The pupils eat in the canteen."
+    bases:
+      "à": "to, at"
+    confusables:
+      "recreation": { why: "Break time is between lessons; the sentence is about lunch." }
+      "cour": { why: "The playground is outside; the sentence is about eating." }
+  "fr-1632":
+    native: "You copy the lesson into your exercise book."
+    confusables:
+      "dictionnaire": { why: "A dictionary gives word meanings; the sentence is about copying a lesson." }
+      "feutre": { why: "A felt-tip pen is a tool; the sentence is about copying." }
+  "fr-1633":
+    native: "The supervisor is in the playground."
+    confusables:
+      "professeur": { why: "A teacher teaches in a class; the supervisor watches the yard." }
+      "cantine": { why: "The canteen is where pupils eat, not where they are watched." }
+  "fr-1634":
+    native: "My calculator is in my school bag."
+    confusables:
+      "trousse": { why: "A pencil case holds pens; the sentence names the calculator." }
+      "feutre": { why: "A felt-tip pen is a small tool, not a calculator." }
+  "fr-1635":
+    native: "During the exam, you must not talk."
+    bases:
+      "ne": "not"
+      "faut": "is necessary"
+      "pas": "not"
+    confusables:
+      "recreation": { why: "Break time is a break, not a test." }
+      "cour": { why: "The playground is outside the exam room." }
+  "fr-1636":
+    native: "Middle school starts after the holidays."
+    confusables:
+      "lycee": { why: "A high school is for older pupils; the sentence is about middle school." }
+      "rentree": { why: "The rentrée is the start of the year; the sentence is about one school." }
+  "fr-1637":
+    native: "Geography is easy, but history is long."
+    confusables:
+      "sciences": { why: "Science is a subject too, but the sentence contrasts two others." }
+      "mathematiques": { why: "Maths is a subject; it is not in the sentence." }

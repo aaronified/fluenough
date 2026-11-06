@@ -1,0 +1,129 @@
+schema: 1
+id: "fr-verbs-4-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2600"
+    target: "Je réussis à réparer le vélo, mais j'oublie le pain."
+    ipa: "ʒə ʁeysi a ʁepaʁe lə velo mɛ ʒubli lə pɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "réussis", ref: "fr-0674" }
+      - { word: "à", base: "à" }
+      - { word: "réparer", ref: "fr-1128" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "vélo", ref: "fr-0860" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "j'oublie", ref: "fr-0509" }
+      - { word: "pain", ref: "fr-0773" }
+    confusables:
+      - { id: "echouer", ref: "fr-2572", kind: "word" }
+      - { id: "rappeler", ref: "fr-2573", kind: "word" }
+  - id: "fr-2601"
+    target: "Le vendeur vend le vélo et prête le casque."
+    ipa: "lə vɑ̃dœʁ vɑ̃ lə velo e pʁɛt lə kask"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "vendeur", ref: "fr-0736" }
+      - { word: "vend", ref: "fr-0505" }
+      - { word: "vélo", ref: "fr-0860" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "prête", ref: "fr-2580" }
+      - { word: "casque", base: "casque" }
+    confusables:
+      - { id: "emprunter", ref: "fr-2581", kind: "word" }
+      - { id: "depenser", ref: "fr-1455", kind: "word" }
+  - id: "fr-2602"
+    target: "Le jardin pousse, les enfants grandissent."
+    ipa: "lə ʒaʁdɛ̃ pus lezɑ̃fɑ̃ ɡʁɑ̃dis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "jardin", ref: "fr-1000" }
+      - { word: "pousse", ref: "fr-2596" }
+      - { word: "les", ref: "fr-0543" }
+      - { word: "enfants", base: "enfant" }
+      - { word: "grandissent", ref: "fr-2576" }
+    confusables:
+      - { id: "vieillir", ref: "fr-2577", kind: "word" }
+      - { id: "naitre", ref: "fr-2589", kind: "word" }
+  - id: "fr-2603"
+    target: "Il ment, alors je le punis."
+    ipa: "il mɑ̃ alɔʁ ʒə lə pyni"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "ment", ref: "fr-2574" }
+      - { word: "alors", ref: "fr-0351" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "punis", ref: "fr-2579" }
+    confusables:
+      - { id: "obeir", ref: "fr-2578", kind: "word" }
+      - { id: "rougir", ref: "fr-2641", kind: "word" }
+  - id: "fr-2604"
+    target: "Le film m'ennuie, mais il plaît à mon frère."
+    ipa: "lə fil mɑ̃nɥi mɛ il plɛ a mɔ̃ fʁɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "film", ref: "fr-2206" }
+      - { word: "m'ennuie", ref: "fr-2585" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "plaît", ref: "fr-2586" }
+      - { word: "à", base: "à" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "frère", ref: "fr-0169" }
+    confusables:
+      - { id: "etonner", ref: "fr-2584", kind: "word" }
+      - { id: "aimer", ref: "fr-0263", kind: "word" }
+  - id: "fr-2605"
+    target: "Il cuisine, je cache le sel et je goûte la soupe."
+    ipa: "il kɥizin ʒə kaʃ lə sɛl ʒə ɡut la sup"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "cuisine", ref: "fr-0822" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "cache", ref: "fr-2594" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "sel", ref: "fr-0778" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "goûte", ref: "fr-0840" }
+      - { word: "la", ref: "fr-0543" }
+      - { word: "soupe", ref: "fr-0816" }
+    confusables:
+      - { id: "preparer", ref: "fr-0295", kind: "word" }
+      - { id: "servir", ref: "fr-0839", kind: "word" }
+  - id: "fr-2606"
+    target: "Elle ressemble à sa mère et rêve de voyager."
+    ipa: "ɛl ʁəsɑ̃bl a sa mɛʁ e ʁɛv də vwajaʒe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "ressemble", ref: "fr-2592" }
+      - { word: "à", base: "à" }
+      - { word: "sa", ref: "fr-0138" }
+      - { word: "mère", ref: "fr-0166" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "rêve", ref: "fr-1109" }
+      - { word: "de", base: "de" }
+      - { word: "voyager", ref: "fr-0868" }
+    confusables:
+      - { id: "naitre", ref: "fr-2589", kind: "word" }
+      - { id: "persuader", ref: "fr-2583", kind: "word" }
+
