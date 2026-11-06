@@ -7,7 +7,7 @@ name: README languages
 # one reads it, nightly or when run by hand.
 #
 # Pushing to protected main needs a token that may bypass the pull-request
-# rule: the secret WIKI_TOKEN (as the old deck-index workflow used), else
+# rule: the secret ADMIN_TOKEN (as the old deck-index workflow used), else
 # GITHUB_TOKEN, which cannot.
 
 on:
@@ -30,7 +30,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: main
-          token: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ADMIN_TOKEN || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
@@ -61,5 +61,5 @@ jobs:
             git rebase --abort 2>/dev/null || true
             sleep $((attempt * 5))
           done
-          echo "::error::Could not push the README to main (WIKI_TOKEN must be allowed to bypass main's pull-request rule)."
+          echo "::error::Could not push the README to main (ADMIN_TOKEN must be allowed to bypass main's pull-request rule)."
           exit 1

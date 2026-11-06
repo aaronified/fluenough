@@ -10,7 +10,7 @@ name: Wiki sync
 #
 # Uses GITHUB_TOKEN. If the clone or push is refused, the token has no wiki
 # access: create a fine-grained personal access token with "Contents: write"
-# on this repository and save it as the repository secret WIKI_TOKEN, which
+# on this repository and save it as the repository secret ADMIN_TOKEN, which
 # is then used instead. The wiki must also exist: create its first page once
 # in the web UI.
 
@@ -38,12 +38,12 @@ jobs:
 
       - name: Mirror wiki/ to the wiki
         env:
-          TOKEN: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+          TOKEN: ${{ secrets.ADMIN_TOKEN || secrets.GITHUB_TOKEN }}
           REPO: ${{ github.repository }}
           SHA: ${{ github.sha }}
         run: |
           set -euo pipefail
-          hint="Likely cause: GITHUB_TOKEN has no access to the wiki, or the wiki does not exist yet (create its first page in the web UI). Fallback: create a fine-grained PAT with Contents: write on this repository and save it as the secret WIKI_TOKEN."
+          hint="Likely cause: GITHUB_TOKEN has no access to the wiki, or the wiki does not exist yet (create its first page in the web UI). Fallback: create a fine-grained PAT with Contents: write on this repository and save it as the secret ADMIN_TOKEN."
 
           shopt -s nullglob
           pages=(wiki/*.md)
