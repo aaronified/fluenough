@@ -227,13 +227,18 @@ cards:
     native: "appointment"
     notes:
       "n1": "Rendez-vous is 'appointment' or 'meeting', a masculine noun. Avoir rendez-vous is 'to have an appointment'."
+    bases:
+      "rendez": "part of rendez-vous"
     examples:
       "J'ai un rendez-vous à dix heures.":
         native: "I have an appointment at ten o'clock."
         bases:
+          "rendez": "part of rendez-vous"
           "à": "at"
       "Le rendez-vous est demain.":
         native: "The appointment is tomorrow."
+        bases:
+          "rendez": "part of rendez-vous"
   "fr-1115":
     native: "corridor"
     notes:
@@ -536,8 +541,17 @@ cards:
     native: "straight away"
     notes:
       "n1": "Tout de suite is 'straight away' or 'right now', an adverb of three words that act as one."
+    bases:
+      "de": "part of tout de suite"
+      "suite": "part of tout de suite"
     examples:
       "J'arrive tout de suite.":
         native: "I am coming straight away."
+        bases:
+          "de": "part of tout de suite"
+          "suite": "part of tout de suite"
       "Je rentre tout de suite.":
         native: "I go home straight away."
+        bases:
+          "de": "part of tout de suite"
+          "suite": "part of tout de suite"
