@@ -917,11 +917,13 @@ units:
       - { id: "characters-in-society", text: { "en": "Hearing the society words whose characters are taught: economy, culture, environment, problem" } }
     reading_passages:
       - { id: "newspaper-paragraph", text: { "en": "One paragraph of a newspaper article" } }
-  - planned: { id: "zh-money", theme: "money", words: 50 }
+  - decks: ["zh-money", "zh-money-sentences", "zh-reading-money", "*"]
+    words: 50
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bill-and-receipt", text: { "en": "A utility bill and a payment receipt" } }
+      - { id: "market-prices", text: { "en": "Prices on a market stall: fruit by the jin and a bargain" } }
   - planned: { id: "zh-grammar-written-register", grammar: "written-register" }
     listening_passages:
       - { id: "news-reader", text: { "en": "A news reader's formal words beside their everyday ones" } }
