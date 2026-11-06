@@ -7,7 +7,7 @@ name: Review queue
 # file here: a person does that. The report is in the run's summary.
 #
 # Pushing to the protected decks-live needs the token that deck-index.yml uses: the
-# secret WIKI_TOKEN, else GITHUB_TOKEN.
+# secret ADMIN_TOKEN, else GITHUB_TOKEN.
 
 on:
   push:
@@ -35,7 +35,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: decks-live
-          token: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ADMIN_TOKEN || secrets.GITHUB_TOKEN }}
       - uses: ./.github/actions/main-tools
       - uses: actions/setup-python@v7
         with:
@@ -63,5 +63,5 @@ jobs:
             git rebase --abort 2>/dev/null || true
             sleep $((attempt * 5))
           done
-          echo "::error::Could not push decks/review-queue.json to decks-live (WIKI_TOKEN must be allowed to bypass decks-live's pull-request rule)."
+          echo "::error::Could not push decks/review-queue.json to decks-live (ADMIN_TOKEN must be allowed to bypass decks-live's pull-request rule)."
           exit 1
