@@ -46,6 +46,7 @@ class SettingsPage extends StatelessWidget {
         child: ListenableBuilder(
           listenable: Listenable.merge(<Listenable>[
             state.settings,
+            state.wallpaper,
             state.progress,
             state.log,
           ]),
@@ -149,7 +150,11 @@ class SettingsPage extends StatelessWidget {
         leading: const Icon(Icons.palette_outlined),
         title: l10n.settingsRowLook,
         subtitle: l10n.settingsSumLook(
-          appearanceSummary(l10n, settings),
+          appearanceSummary(
+            l10n,
+            settings,
+            wallpaperInUse: state.wallpaperInUse != null,
+          ),
           AppLanguagePicker.ownName(AppLanguagePicker.current(context)),
         ),
         trailing: const Icon(Icons.chevron_right),
@@ -174,24 +179,25 @@ class SettingsPage extends StatelessWidget {
     final remindersOn =
         state.features.isAvailable(Feature.reminder) && settings.reminder;
     return <Widget>[
-      _row(
-        context,
-        icon: Icons.notifications_outlined,
-        title: l10n.settingsRowReminders,
-        line: remindersOn
-            ? l10n.settingsSumRemindersOn(
-                MaterialLocalizations.of(context).formatTimeOfDay(
-                  settings.reminderTime,
-                  alwaysUse24HourFormat: MediaQuery.alwaysUse24HourFormatOf(
-                    context,
+      if (state.features.hasNotifications)
+        _row(
+          context,
+          icon: Icons.notifications_outlined,
+          title: l10n.settingsRowReminders,
+          line: remindersOn
+              ? l10n.settingsSumRemindersOn(
+                  MaterialLocalizations.of(context).formatTimeOfDay(
+                    settings.reminderTime,
+                    alwaysUse24HourFormat: MediaQuery.alwaysUse24HourFormatOf(
+                      context,
+                    ),
                   ),
-                ),
-              )
-            : l10n.settingsReminderOff,
-        route: AppRoutes.settingsReminders,
-        feature: Feature.reminder,
-        opensWhileIncoming: true,
-      ),
+                )
+              : l10n.settingsReminderOff,
+          route: AppRoutes.settingsReminders,
+          feature: Feature.reminder,
+          opensWhileIncoming: true,
+        ),
       _row(
         context,
         icon: Icons.folder_outlined,
@@ -207,13 +213,14 @@ class SettingsPage extends StatelessWidget {
         feature: Feature.logs,
         onTap: () => AppNavigator.openAppLog(context),
       ),
-      _row(
-        context,
-        icon: Icons.system_update_outlined,
-        title: l10n.settingsRowUpdates,
-        line: l10n.settingsUpdateCurrent(AppInfo.version),
-        route: AppRoutes.settingsUpdates,
-      ),
+      if (state.features.hasApkUpdates)
+        _row(
+          context,
+          icon: Icons.system_update_outlined,
+          title: l10n.settingsRowUpdates,
+          line: l10n.settingsUpdateCurrent(AppInfo.version),
+          route: AppRoutes.settingsUpdates,
+        ),
       _row(
         context,
         icon: Icons.local_cafe_outlined,

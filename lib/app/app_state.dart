@@ -1,11 +1,13 @@
 import 'dart:async';
 import 'dart:math';
+import 'dart:ui' show Color;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
+import '../core/haptics/haptic.dart';
 import '../core/languages/language_skills.dart';
 import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
@@ -54,11 +56,13 @@ import 'card_sets.dart';
 import 'unlocks.dart';
 import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
+import '../core/decks/script_fonts.dart';
 import 'deck_catalog.dart';
 import 'deck_downloads.dart';
 import 'font_check.dart';
 import 'deck_import.dart';
 import 'features.dart';
+import 'haptics.dart';
 import 'language_choice.dart';
 import 'language_skills.dart';
 import 'links.dart';
@@ -85,6 +89,8 @@ import 'skill.dart';
 import 'today_summary.dart';
 import 'system_settings.dart';
 import 'update_checker.dart';
+import 'wallpaper_colours.dart';
+import 'web_install.dart';
 
 /// A native language that teaches a course, as the learner is offered it
 /// (ADR-0036): the language, and how many of the language's written units
@@ -192,6 +198,10 @@ class AppState extends ChangeNotifier {
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
+    WebInstall? webInstall,
+    WallpaperSource wallpaperSource = const NullWallpaperSource(),
+    this._hapticEngine = const NullHapticEngine(),
+    this._hapticClock,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     this.reports = const NullReportSender(),
     this._mailShare = const NullMailShare(),
@@ -213,6 +223,8 @@ class AppState extends ChangeNotifier {
     this._secureRandom,
   }) : assert(profiles.isNotEmpty, 'there is always a profile'),
        random = random ?? Random(),
+       webInstall = webInstall ?? WebInstall.off(),
+       wallpaper = WallpaperColours(wallpaperSource),
        volume = volume ?? FixedVolumeMonitor(),
        deckCatalog = catalog,
        settings = settings ?? SettingsNotifier(),
@@ -343,6 +355,10 @@ class AppState extends ChangeNotifier {
     DeckStore? addedDecks,
     LinkOpener? links,
     SystemSettings systemSettings = const NullSystemSettings(),
+    WebInstall? webInstall,
+    WallpaperSource wallpaperSource = const NullWallpaperSource(),
+    HapticEngine hapticEngine = const NullHapticEngine(),
+    Duration Function()? hapticClock,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     ReportSender reports = const NullReportSender(),
     MailShare mailShare = const NullMailShare(),
@@ -381,6 +397,10 @@ class AppState extends ChangeNotifier {
       deckFiles: deckFiles,
       links: links ?? FixedLinks(),
       systemSettings: systemSettings,
+      webInstall: webInstall,
+      wallpaperSource: wallpaperSource,
+      hapticEngine: hapticEngine,
+      hapticClock: hapticClock ?? steppingClock(),
       reminderScheduler: reminderScheduler,
       reports: reports,
       mailShare: mailShare,
@@ -474,6 +494,35 @@ class AppState extends ChangeNotifier {
   /// Opens the phone's own settings: Settings > Voices' "Install voices in
   /// phone settings".
   final SystemSettings systemSettings;
+
+  /// Installing the web build, and whether the browser keeps its storage
+  /// (#1012). Off in the apps: only `main_web.dart` gives it a browser.
+  final WebInstall webInstall;
+
+  /// The phone's wallpaper colour, for Wallpaper colours (Android 12 and
+  /// later; nothing elsewhere).
+  final WallpaperColours wallpaper;
+
+  final HapticEngine _hapticEngine;
+  final Duration Function()? _hapticClock;
+
+  /// Every haptic the app plays, by meaning, gated by the "Vibrate on touch"
+  /// setting (Plan-Haptics). Screens say what happened and never call
+  /// `HapticFeedback` themselves.
+  late final Haptics haptics = Haptics(
+    engine: _hapticEngine,
+    enabled: () => settings.haptics,
+    clock: _hapticClock,
+  );
+
+  /// The wallpaper colour the themes are made from: set only while the
+  /// learner has Wallpaper colours on and the phone gives one. Null means
+  /// the chosen seed colour applies, as it does on every phone without a
+  /// palette, whatever a restored backup says.
+  Color? get wallpaperInUse =>
+      features.isAvailable(Feature.dynamicColour) && settings.dynamicColour
+      ? wallpaper.seed
+      : null;
 
   /// Where a report from the bug icon goes once mail is on (ADR-0021): the
   /// reporter's mail app, or nowhere in a build that was given none.
@@ -1084,8 +1133,13 @@ class AppState extends ChangeNotifier {
     if (fonts == null || fonts.isEmpty) return;
     // The language block's script comes first in the index's list.
     final scripts = <String>[for (final font in fonts) font.script];
-    final learned = settings.scriptsLearned(language, primary: scripts.first);
-    fontCheck.request(scripts.where(learned.contains));
+    final learned = settings.scriptsLearned(
+      language,
+      primary: readingScriptOf(scripts.first),
+    );
+    fontCheck.request(
+      scripts.where((script) => learned.contains(readingScriptOf(script))),
+    );
   }
 
   /// Deletes [language]'s decks from the phone, and stops learning it. Its
@@ -1164,7 +1218,7 @@ class AppState extends ChangeNotifier {
       log.warning('Speech error: permission ${_errorCode(e)}');
       return;
     }
-    await startSpeech();
+    await startSpeech(quiet: true);
   }
 
   /// A speech or voice error's code for the app log: the engine's own, or
@@ -1188,7 +1242,10 @@ class AppState extends ChangeNotifier {
   /// Readies the recogniser and asks which languages it knows. Asks for the
   /// microphone permission if it has not been granted, so call it only when
   /// the learner switches speaking on.
-  Future<SpeechSetup> startSpeech() async {
+  ///
+  /// With [quiet], a browser with no recogniser (Firefox) is not logged as
+  /// an error: the launch check would log it on every visit.
+  Future<SpeechSetup> startSpeech({bool quiet = false}) async {
     var queues = _queueInputs();
     _speechChecking = true;
     queues = _notifyVoiceChange(queues);
@@ -1202,7 +1259,10 @@ class AppState extends ChangeNotifier {
           : await _speech.hasPermission()
           ? SpeechSetup.noRecogniser
           : SpeechSetup.refused;
-      if (setup != SpeechSetup.ready) {
+      if (setup != SpeechSetup.ready &&
+          !(quiet &&
+              _speech is OnlineOnlySpeech &&
+              setup == SpeechSetup.noRecogniser)) {
         log.warning('Speech error: start ${setup.name}');
       }
     } catch (e) {
@@ -1260,7 +1320,10 @@ class AppState extends ChangeNotifier {
     if (_speechReady != true) return SpeechStatus.off;
     final code = language.code;
     if (settings.speechUnsupported.contains(code)) return SpeechStatus.missing;
-    final listed = _speechLanguages.isEmpty || _speechLanguages.contains(code);
+    // A browser recognises online only: the learner is asked first.
+    final listed =
+        _speech is! OnlineOnlySpeech &&
+        (_speechLanguages.isEmpty || _speechLanguages.contains(code));
     if (listed && !settings.speechNotOnDevice.contains(code)) {
       return SpeechStatus.onDevice;
     }
@@ -1274,6 +1337,15 @@ class AppState extends ChangeNotifier {
     SpeechStatus.onDevice || SpeechStatus.online => true,
     _ => false,
   };
+
+  /// Whether a speaking question in [language] can be asked now, or asked
+  /// after the learner is asked to allow listening online: a browser's
+  /// recogniser, which only ever listens online. Find my level and placement
+  /// plan Say on it, and a refused ask leaves Say not tested.
+  bool canHearAfterAsking(LanguageInfo language) =>
+      canHear(language) ||
+      (_speech is OnlineOnlySpeech &&
+          speechStatus(language) == SpeechStatus.onlineOnly);
 
   /// Listens for [language]: on the device while it may be recognised
   /// there, otherwise online if the learner allowed it. What a listen finds
@@ -1790,6 +1862,10 @@ class AppState extends ChangeNotifier {
       request.limit,
       sorted(request.cardIds)?.join('\u0000'),
       request.script,
+      // A drillable-only queue reads the voices and the recogniser as they
+      // are, not as the counts take them, so it follows every answer of
+      // theirs (#1009).
+      request.drillableOnly ? _voiceChanges : null,
       ignorePauses,
     );
     // The cache is per language, so an answer in one leaves the others'
@@ -1815,6 +1891,15 @@ class AppState extends ChangeNotifier {
       return _buildSession(request, ignorePauses: ignorePauses);
     });
   }
+
+  /// What [skill]'s tile on Today counts and starts (#1009): every card
+  /// waiting in the skill, whatever the day's time budget, and only what can
+  /// be drilled now. The tile's number is this queue's length and tapping
+  /// the tile drills this queue ([DrillRequest.tile]), so the two cannot
+  /// differ. Empty while the skill is switched off.
+  SessionQueue skillTile(Skill skill) => settings.isEnabled(skill)
+      ? buildSession(DrillRequest.tile(skill))
+      : SessionQueue.empty;
 
   // Versions that say what a cached queue was built from (#852). An answer
   // follows the progress store's own version of its language (a baseline
@@ -1884,6 +1969,10 @@ class AppState extends ChangeNotifier {
     }
   }
 
+  /// How many times the voices or the recogniser changed: what a
+  /// drillable-only queue is kept against ([DrillRequest.drillableOnly]).
+  int _voiceChanges = 0;
+
   /// What the queues read from the voices and the recogniser, as the counts
   /// see it (#857): for each language the decks teach, whether it counts as
   /// spoken and as heard.
@@ -1908,6 +1997,7 @@ class AppState extends ChangeNotifier {
   List<bool> _notifyVoiceChange(List<bool> before) {
     // What was worked out from the old answers must not be read again.
     _derived.clear();
+    _voiceChanges++;
     final now = _queueInputs();
     var same = now.length == before.length;
     for (var i = 0; same && i < now.length; i++) {
@@ -2171,21 +2261,28 @@ class AppState extends ChangeNotifier {
 
     // A skill switched off for a language is not drilled in it (#89), and
     // nothing is heard while sound is off.
+    // A request for [DrillRequest.drillableOnly] counts a voice or a
+    // recogniser still being checked as missing (#1009).
+    final strict = request.drillableOnly;
     final voiced = derived<Map<String, bool>>(
-      'voiced',
+      ('voiced', strict),
       () => <String, bool>{
         for (final entry in this.decks)
           entry.id:
-              _countsAsSpoken(entry.language) &&
+              (strict
+                  ? canSpeak(entry.language)
+                  : _countsAsSpoken(entry.language)) &&
               !settings.isOffFor(Skill.listening, entry.language.code),
       },
     );
     final heard = derived<Map<String, bool>>(
-      'heard',
+      ('heard', strict),
       () => <String, bool>{
         for (final entry in this.decks)
           entry.id:
-              _countsAsHeard(entry.language) &&
+              (strict
+                  ? canHear(entry.language)
+                  : _countsAsHeard(entry.language)) &&
               !settings.isOffFor(Skill.speaking, entry.language.code),
       },
     );
@@ -2918,6 +3015,29 @@ class AppState extends ChangeNotifier {
         settings.clockTimeOn(at, language: language);
   }
 
+  /// What the summary of [language]'s day shows (#1007): today's answers in
+  /// it, read from the log, so that the ring of a day that has ended opens
+  /// the summary the session ended on, even after a restart.
+  SessionResult dailyResult(String language) {
+    final at = now();
+    final today = dateOnly(at);
+    final answers = <SessionAnswer>[
+      for (final e in progress.log.answered)
+        if (!e.at.isBefore(today) && Abilities.languageOf(e.cardId) == language)
+          SessionAnswer(
+            skill: Skill.of(e.mode),
+            grade: e.grade,
+            time: e.elapsed,
+          ),
+    ];
+    return SessionResult(
+      answers: answers,
+      startedAt: today,
+      endedAt: at,
+      language: language,
+    );
+  }
+
   /// What the daily planner is given for [language], and plans: the same
   /// for Today ([dailyPlanFor]) and for the session ([nextDailyRound]), so
   /// that Today's numbers are the session's (#886, #885).
@@ -2930,6 +3050,7 @@ class AppState extends ChangeNotifier {
     required DateTime at,
     int taught = 0,
     bool whole = false,
+    int cap = DailyPlanner.newCap,
   }) {
     final times = _timesIn(language, at);
     final teach = settings.teachTimeTotal(language: language);
@@ -2947,17 +3068,29 @@ class AppState extends ChangeNotifier {
       secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
       taughtSoFar: taught,
       catchingUp: due > DailyBudget.backlogDays * dayCards,
+      cap: cap,
     );
   }
 
   /// The cards a daily round draws on in [language], none of them in
   /// [asked]: those due, the most forgotten first, and those not due, the
   /// closest to due first.
+  ///
+  /// A card already reviewed today is never one of the closest: the session
+  /// would not ask it again, so Today must not promise it either (#1007).
+  /// Both read their pools from here, so what Today offers is what a
+  /// session serves.
+  ///
+  /// With [keepGoing] (#1010), the closest are only those Keep going may pull
+  /// forward ([DailyBudget.canPullForward]): due within a couple of days and
+  /// not so fresh that the review is wasted. Today's own numbers never ask
+  /// for it, so Keep going moves neither the tiles nor the chips.
   ({List<SessionItem> due, List<SessionItem> closest}) _dailyPools(
     String language,
     DateTime at,
-    Set<String> asked,
-  ) {
+    Set<String> asked, {
+    bool keepGoing = false,
+  }) {
     final due = <SessionItem>[
       for (final item in DailyBudget.mostForgottenFirst(
         buildSession(DrillRequest.today(language: language)).items,
@@ -2965,12 +3098,23 @@ class AppState extends ChangeNotifier {
       ))
         if (!asked.contains(item.card.id)) item,
     ];
+    final today = dateOnly(at);
     final closest = <SessionItem>[
       for (final item in buildSession(
         DrillRequest(revise: true, language: language),
       ).items)
         if (item.state != null &&
             !item.state!.isDue(at) &&
+            item.state!.lastReviewAt.isBefore(today) &&
+            (!keepGoing ||
+                DailyBudget.canPullForward(
+                  item.state!,
+                  at,
+                  parameters: progress.parameters.forPair((
+                    cardId: item.card.id,
+                    mode: item.mode,
+                  )),
+                )) &&
             !asked.contains(item.card.id))
           item,
     ]..sort((a, b) => a.state!.dueAt.compareTo(b.state!.dueAt));
@@ -2993,10 +3137,16 @@ class AppState extends ChangeNotifier {
         times.spent +
         settings.teachTimeOn(at, language: code) +
         settings.clockTimeOn(at, language: code);
-    final pools = _dailyPools(code, at, const <String>{});
-    final fresh = untaughtCards(code).length;
     final left = minutes * 60 - spent.inSeconds;
-    // With the budget spent, the split is what "Keep going" would buy.
+    // With the budget spent, the split is what "Keep going" would buy, from
+    // the pools and under the caps Keep going serves by (#1010).
+    final going = left <= 0;
+    final pools = _dailyPools(code, at, const <String>{}, keepGoing: going);
+    final fresh = untaughtCards(code).length;
+    final dayCards = DailyBudget.cardsFor(
+      goal,
+      secondsPerCard: times.secondsPerCard,
+    );
     final round = _planDaily(
       code,
       left: left > 0
@@ -3007,17 +3157,22 @@ class AppState extends ChangeNotifier {
       fresh: fresh,
       at: at,
       whole: true,
+      taught: going ? newWordsToday(at) : 0,
+      cap: going
+          ? DailyBudget.keepGoingNewCap(
+              due: pools.due.length,
+              dayCards: dayCards,
+            )
+          : DailyPlanner.newCap,
     );
-    final dayCards = DailyBudget.cardsFor(
-      goal,
-      secondsPerCard: times.secondsPerCard,
-    );
+    final teach = settings.teachTimeTotal(language: code);
     return DailyPlan(
       language: language,
       goalMinutes: goal,
       extraMinutes: extra,
       spent: spent,
       secondsPerCard: times.secondsPerCard,
+      secondsPerTeach: DailyBudget.secondsPerTeach(teach.time, teach.cards),
       due: pools.due.length,
       newAvailable: min(dailyNewCap, fresh),
       split: DailySplit(
@@ -3045,7 +3200,11 @@ class AppState extends ChangeNotifier {
   /// today, which is the day's minutes less what is spent, or a step of
   /// minutes once it is all spent ("Keep going"). Null for a language the
   /// learner has no decks of.
-  DailyRun? startDaily(String language) {
+  ///
+  /// With [keepGoing] (#1010), or once the minutes are all spent, it is a
+  /// Keep going stretch: a five minute clock shown as the time taken, and
+  /// the rule of [nextDailyRound] for it.
+  DailyRun? startDaily(String language, {bool keepGoing = false}) {
     final info = <LanguageInfo>[
       for (final entry in decks)
         if (entry.language.code == language) entry.language,
@@ -3053,16 +3212,39 @@ class AppState extends ChangeNotifier {
     if (info == null) return null;
     final plan = dailyPlanFor(info);
     final left = Duration(minutes: plan.minutes) - plan.spent;
+    // The budget is spent, or Keep going was asked for: this stretch is
+    // shown as the time taken (#1009).
+    final going = keepGoing || left <= Duration.zero;
     return DailyRun(
       language: language,
       clock: DailyCountdown(
-        budget: left > Duration.zero
-            ? left
-            : const Duration(minutes: DailyBudget.stepMinutes),
+        budget: going ? const Duration(minutes: DailyBudget.stepMinutes) : left,
         now: now(),
+        countsUp: going,
       ),
       spentAtStart: plan.spent,
+      keepGoing: going,
+      taughtBefore: newWordsToday(now()),
     );
+  }
+
+  /// Whether a Keep going stretch in [language] has anything to serve now
+  /// (#1010): the same question [nextDailyRound] answers for its first
+  /// round, asked of a stretch that is thrown away, so that it changes
+  /// nothing. The summary offers Keep going only while this is true, and
+  /// says so when it is not.
+  bool keepGoingHasWork(String language) {
+    final run = DailyRun(
+      language: language,
+      clock: DailyCountdown(
+        budget: const Duration(minutes: DailyBudget.stepMinutes),
+        now: now(),
+        countsUp: true,
+      ),
+      keepGoing: true,
+      taughtBefore: newWordsToday(now()),
+    );
+    return nextDailyRound(run).isNotEmpty;
   }
 
   /// The next round of [run]'s session, built only when the last is done
@@ -3077,10 +3259,25 @@ class AppState extends ChangeNotifier {
   List<SessionItem> nextDailyRound(DailyRun run) {
     final at = now();
     final language = run.language;
-    final pools = _dailyPools(language, at, run.asked);
+    final going = run.keepGoing;
+    final pools = _dailyPools(language, at, run.asked, keepGoing: going);
     final due = pools.due;
     final closest = pools.closest;
     var fresh = untaughtCards(language).length;
+    // Keep going teaches against the whole day's taught total, not just this
+    // stretch's, under a cap a little over the day's (#1010).
+    final cap = going
+        ? DailyBudget.keepGoingNewCap(
+            due: due.length,
+            dayCards: DailyBudget.cardsFor(
+              settings.dailyMinutesFor(language),
+              secondsPerCard: _timesIn(language, at).secondsPerCard,
+            ),
+          )
+        : DailyPlanner.newCap;
+    final taughtSoFar = going
+        ? max(newWordsToday(at), run.taughtBefore + run.taught)
+        : run.taught;
     for (var attempt = 0; attempt < 2; attempt++) {
       final round = _planDaily(
         language,
@@ -3089,7 +3286,8 @@ class AppState extends ChangeNotifier {
         closest: closest.length,
         fresh: fresh,
         at: at,
-        taught: run.taught,
+        taught: taughtSoFar,
+        cap: cap,
       );
       if (round.isEmpty) return const <SessionItem>[];
       final pick = round.reviews > 0
@@ -3217,21 +3415,28 @@ class AppState extends ChangeNotifier {
     ];
   }
 
-  /// How many words a quick revision can pick from: every word taught, in a
-  /// skill it can be drilled in now.
-  int get revisableCount => revisableIn(null);
-
   /// How many words a revision of [skills] can pick from, or of every skill
   /// switched on when null.
   ///
   /// With [script], the script decks' share of it (Today's tiles).
-  int revisableIn(Set<Skill>? skills, {ScriptScope script = ScriptScope.any}) =>
-      <String>{
-        for (final item in buildSession(
-          DrillRequest(revise: true, skills: skills, script: script),
-        ).items)
-          item.card.id,
-      }.length;
+  ///
+  /// With [drillableOnly], only the words it can drill now
+  /// ([DrillRequest.drillableOnly]).
+  int revisableIn(
+    Set<Skill>? skills, {
+    ScriptScope script = ScriptScope.any,
+    bool drillableOnly = false,
+  }) => <String>{
+    for (final item in buildSession(
+      DrillRequest(
+        revise: true,
+        skills: skills,
+        script: script,
+        drillableOnly: drillableOnly,
+      ),
+    ).items)
+      item.card.id,
+  }.length;
 
   // ---------------------------------------------------------------------------
   // Lessons (ADR-0024)
@@ -3759,6 +3964,7 @@ class AppState extends ChangeNotifier {
       ..removeListener(_logTab)
       ..dispose();
     updates.dispose();
+    wallpaper.dispose();
     _fontCheck?.dispose();
     deckDownloads?.onFilesChanged = null;
     tuner.dispose();

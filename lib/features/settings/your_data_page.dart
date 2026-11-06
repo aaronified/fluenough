@@ -17,6 +17,7 @@ import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import 'backup_section.dart';
 import 'settings_controls.dart';
+import 'web_storage_section.dart';
 
 /// Settings' Your data page, the backup page itself (owner, 2026-10-12):
 /// [BackupSection], then the review log fully expanded, never folded, on
@@ -90,6 +91,8 @@ class _BodyState extends State<_Body> {
     }
     final help = settingsHelpStyle(Theme.of(context));
     final top = <Widget>[
+      // Web build only: nothing, and no room, in the apps.
+      if (state.webInstall.onWeb) const WebStorageSection(),
       const BackupSection(),
       const SizedBox(height: 20),
       SettingsHeading(l10n.settingsDataLog),

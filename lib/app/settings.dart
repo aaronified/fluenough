@@ -54,6 +54,7 @@ class SettingsNotifier extends ChangeNotifier {
     this._dynamicColour = false,
     this._highContrast = false,
     this._pureBlack = false,
+    this._haptics = true,
     this._cardTextScale = 1.0,
     this._reminder = false,
     this._reminderTime = const TimeOfDay(hour: 19, minute: 30),
@@ -111,6 +112,7 @@ class SettingsNotifier extends ChangeNotifier {
   bool _dynamicColour;
   bool _highContrast;
   bool _pureBlack;
+  bool _haptics;
   double _cardTextScale;
   bool _reminder;
   TimeOfDay _reminderTime;
@@ -140,6 +142,10 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
   Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
   Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
+  Map<String, Set<String>> _verifiedSkills = const <String, Set<String>>{};
+  Map<String, Map<String, String>> _skillLabels =
+      const <String, Map<String, String>>{};
+  Map<String, String> _placementRuns = const <String, String>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
@@ -788,6 +794,67 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The skills of [language] that Find my level has verified, by their names
+  /// in a run (`read`, `hear`, `say`, `write`, `script`, `secondScript`):
+  /// the learner showed the whole course up to B1 in each (wiki,
+  /// Plan-Placement-V2, section 4.3). Never changes a skill's Leave, Know or
+  /// Learn.
+  Set<String> verifiedSkillsOf(String language) =>
+      _verifiedSkills[language] ?? const <String>{};
+
+  /// How sure the last Find my level run was of each skill it tested, by the
+  /// skill's name in a run and the name of the label (`notSureYet`,
+  /// `fairlySure`, `sure`, `verySure`, `verified`); empty until a run has
+  /// been done. The learner sees words, never a number (wiki,
+  /// Plan-Placement-V2, section 5.5).
+  Map<String, String> skillLabelsOf(String language) =>
+      _skillLabels[language] ?? const <String, String>{};
+
+  /// Sets [language]'s skill labels to [labels].
+  void setSkillLabels(String language, Map<String, String> labels) {
+    final was = _skillLabels[language] ?? const <String, String>{};
+    if (mapEquals(was, labels)) return;
+    final next = <String, Map<String, String>>{..._skillLabels};
+    if (labels.isEmpty) {
+      next.remove(language);
+    } else {
+      next[language] = Map<String, String>.unmodifiable(labels);
+    }
+    _skillLabels = Map<String, Map<String, String>>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// Sets [language]'s verified skills to [skills].
+  void setVerifiedSkills(String language, Set<String> skills) {
+    final was = _verifiedSkills[language] ?? const <String>{};
+    if (setEquals(was, skills)) return;
+    final next = <String, Set<String>>{..._verifiedSkills};
+    if (skills.isEmpty) {
+      next.remove(language);
+    } else {
+      next[language] = Set<String>.unmodifiable(skills);
+    }
+    _verifiedSkills = Map<String, Set<String>>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// [language]'s paused Find my level run as the JSON `SavedPlacementRun`
+  /// writes it, or null. Kept until the run ends or it is a week old.
+  String? placementRunOf(String language) => _placementRuns[language];
+
+  /// Saves [json] as [language]'s paused run, or drops it when null.
+  void setPlacementRun(String language, String? json) {
+    if (_placementRuns[language] == json) return;
+    final next = <String, String>{..._placementRuns};
+    if (json == null) {
+      next.remove(language);
+    } else {
+      next[language] = json;
+    }
+    _placementRuns = Map<String, String>.unmodifiable(next);
+    notifyListeners();
+  }
+
   /// Whether the reviewer unfolded [language] on Waiting for review (#471).
   /// Folded by default; what is unfolded is remembered.
   bool isWaitingLanguageOpen(String language) =>
@@ -990,8 +1057,10 @@ class SettingsNotifier extends ChangeNotifier {
   ThemeSeed get seed => _seed;
   set seed(ThemeSeed value) => _set(_seed, value, (v) => _seed = v);
 
-  /// Wallpaper colours (Material You). Needs a dependency; see
-  /// `Feature.dynamicColour`.
+  /// Wallpaper colours (Material You): the app's colours follow the phone's
+  /// wallpaper where the phone gives a palette (Android 12 and later). Off by
+  /// default, saved per profile and in the backup; a backup without it
+  /// restores as off. It only applies while `AppState.wallpaper.available`.
   bool get dynamicColour => _dynamicColour;
   set dynamicColour(bool value) =>
       _set(_dynamicColour, value, (v) => _dynamicColour = v);
@@ -1004,6 +1073,13 @@ class SettingsNotifier extends ChangeNotifier {
   /// phone is dark. For OLED screens. Light ignores it.
   bool get pureBlack => _pureBlack;
   set pureBlack(bool value) => _set(_pureBlack, value, (v) => _pureBlack = v);
+
+  /// "Vibrate on touch": buttons, pills and answers buzz a little. On by
+  /// default (Plan-Haptics), and never drawn where the phone cannot vibrate.
+  /// Per profile, like every setting, and in the backup: one saved before it
+  /// existed has no key and restores as on.
+  bool get haptics => _haptics;
+  set haptics(bool value) => _set(_haptics, value, (v) => _haptics = v);
 
   /// A multiplier on target text in drills, 0.8–1.4. Menus follow the phone's
   /// own font size instead. Drills draw it no larger than keeps a card within
@@ -1101,6 +1177,7 @@ class SettingsNotifier extends ChangeNotifier {
     'dynamic_colour': '$_dynamicColour',
     'high_contrast': '$_highContrast',
     'pure_black': '$_pureBlack',
+    'haptics': '$_haptics',
     'card_text_scale': '$_cardTextScale',
     'reminder': '$_reminder',
     'reminder_time': '${_reminderTime.hour}:${_reminderTime.minute}',
@@ -1140,6 +1217,12 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _placedAt.entries)
         key: value.toList()..sort(),
     }),
+    'verified_skills': jsonEncode(<String, List<String>>{
+      for (final MapEntry(:key, :value) in _verifiedSkills.entries)
+        key: value.toList()..sort(),
+    }),
+    'skill_labels': jsonEncode(_skillLabels),
+    'placement_runs': jsonEncode(_placementRuns),
     'collapsed_levels': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
         key: value.toList()..sort(),
@@ -1260,6 +1343,7 @@ class SettingsNotifier extends ChangeNotifier {
     if (pick('dynamic_colour', flag) case final v?) dynamicColour = v;
     if (pick('high_contrast', flag) case final v?) highContrast = v;
     if (pick('pure_black', flag) case final v?) pureBlack = v;
+    if (pick('haptics', flag) case final v?) haptics = v;
     if (pick('card_text_scale', _parseFinite) case final v?) {
       cardTextScale = v;
     }
@@ -1470,6 +1554,35 @@ class SettingsNotifier extends ChangeNotifier {
         if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
         for (final seconds in value) {
           if (seconds is int) addPlacedAt(key, seconds);
+        }
+      }
+    }
+    if (pick('verified_skills', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        setVerifiedSkills(key, <String>{
+          for (final name in value)
+            if (name is String && RegExp(r'^[a-zA-Z]+$').hasMatch(name)) name,
+        });
+      }
+    }
+    if (pick('skill_labels', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        setSkillLabels(key, <String, String>{
+          for (final MapEntry(key: name, value: label) in value.entries)
+            if (name is String &&
+                label is String &&
+                RegExp(r'^[a-zA-Z]+$').hasMatch(name) &&
+                RegExp(r'^[a-zA-Z]+$').hasMatch(label))
+              name: label,
+        });
+      }
+    }
+    if (pick('placement_runs', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is String) {
+          setPlacementRun(key, value);
         }
       }
     }

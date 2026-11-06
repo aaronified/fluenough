@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../../app/features.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/incoming.dart';
@@ -166,7 +167,15 @@ class SettingsSlider extends StatelessWidget {
                 divisions: divisions,
                 padding: EdgeInsets.zero,
                 semanticFormatterCallback: (v) => semanticValue(held(v)),
-                onChanged: incoming ? null : (v) => onChanged(held(v)),
+                onChanged: incoming
+                    ? null
+                    : (v) {
+                        // A step is a tick (Plan-Haptics).
+                        if (held(v) != held(value.clamp(min, max))) {
+                          AppScope.maybeRead(context)?.haptics.select();
+                        }
+                        onChanged(held(v));
+                      },
               ),
             ),
           ),
@@ -232,6 +241,9 @@ class SettingsSection extends StatelessWidget {
               dim(
                 Semantics(
                   header: true,
+                  // A section dimmed because something else governs it is
+                  // not enabled, and a screen reader says so.
+                  enabled: dimmed ? false : null,
                   child: Text(
                     heading,
                     style: theme.textTheme.titleMedium!.copyWith(
@@ -247,7 +259,13 @@ class SettingsSection extends StatelessWidget {
         ),
         const SizedBox(height: 10),
         dim(
-          IgnorePointer(ignoring: incoming, child: child),
+          // Dimmed is drawn at 38% and no longer touchable, and no longer
+          // read as controls either: a screen reader gets the heading,
+          // marked disabled, and the help line saying why.
+          ExcludeSemantics(
+            excluding: dimmed,
+            child: IgnorePointer(ignoring: incoming || dimmed, child: child),
+          ),
           also: dimmed,
         ),
         if (help != null) ...<Widget>[

@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+
+import 'package:fluenough/core/speech/mic_capture.dart';
 import 'package:fluenough/core/speech/speech_engine.dart';
 import 'package:fluenough/core/speech/system_speech_engine.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -45,6 +48,23 @@ class _Android extends SpeechToText {
 
   @override
   Future<void> cancel() async {}
+}
+
+/// A capture that keeps [audio], and notes when it started and finished.
+class _Capture implements MicCapture {
+  _Capture(this.audio);
+
+  final OwnAudio? audio;
+  final List<String> calls = <String>[];
+
+  @override
+  Future<void> start() async => calls.add('start');
+
+  @override
+  Future<OwnAudio?> finish() async {
+    calls.add('finish');
+    return audio;
+  }
 }
 
 SpeechRecognitionResult _said(String words, {required bool isFinal}) =>
@@ -128,5 +148,67 @@ void main() {
     );
     expect(empty.failure, SpeechFailure.noMatch);
     expect(empty.code, 'empty-result');
+  });
+
+  group('keeping the first attempt audio', () {
+    final audio = OwnAudio(Uint8List(64), sampleRate: 16000);
+
+    Future<SpeechHeard> listenWith(
+      WidgetTester tester,
+      _Android android,
+      _Capture capture,
+      void Function() play,
+    ) async {
+      final listening = SystemSpeechEngine(
+        android,
+        capture,
+      ).listen(bcp47: 'hi-IN', onDevice: true);
+      await tester.pump();
+      play();
+      await tester.pump(const Duration(seconds: 15));
+      return listening;
+    }
+
+    testWidgets('a heard listen carries the audio kept beside it', (
+      tester,
+    ) async {
+      final android = _Android();
+      final capture = _Capture(audio);
+      final h = await listenWith(tester, android, capture, () {
+        android.result!(_said('नमस्ते', isFinal: true));
+      });
+      expect(h.alternatives.single.text, 'नमस्ते');
+      expect(h.ownAudio, same(audio));
+      // Started once the recogniser was listening, and let go after.
+      expect(capture.calls.contains('start'), isTrue);
+      expect(capture.calls.last, 'finish');
+    });
+
+    testWidgets('a capture that kept nothing leaves the listen as it was', (
+      tester,
+    ) async {
+      final android = _Android();
+      final h = await listenWith(tester, android, _Capture(null), () {
+        android.result!(_said('नमस्ते', isFinal: true));
+      });
+      expect(h.failed, isFalse);
+      expect(h.ownAudio, isNull);
+    });
+
+    testWidgets('listens that hear nothing switch the capture off', (
+      tester,
+    ) async {
+      final android = _Android();
+      final capture = _Capture(audio);
+      final engine = SystemSpeechEngine(android, capture);
+      for (var i = 0; i < 3; i++) {
+        final listening = engine.listen(bcp47: 'hi-IN', onDevice: true);
+        await tester.pump();
+        await tester.pump(const Duration(seconds: 15));
+        await listening;
+      }
+      // Two listens with the capture, none for the third.
+      expect(capture.calls.where((c) => c == 'start').length, 2);
+    });
   });
 }

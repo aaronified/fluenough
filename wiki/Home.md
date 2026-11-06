@@ -13,6 +13,7 @@ Code and decks live in the [repository](https://github.com/aaronified/fluenough)
 - [Today and Daily Lessons](Today-and-Daily-Lessons): the Today screen and daily lessons
 - [Drills and Skills](Drills-and-Skills): drill types, skills, grading, scheduling
 - [Courses and Paths](Courses-and-Paths): courses, paths, decks, downloads
+- [Proficiency Levels](Proficiency-Levels): the A1, A2 and B1 stages, and the standards behind them
 - [Scripts and Readings](Scripts-and-Readings): scripts and how to learn them
 - [Readings ISO 15919](Readings-ISO-15919): Latin readings, based on ISO 15919
 - [Speaking and Listening](Speaking-and-Listening): voices and speaking drills
@@ -45,7 +46,8 @@ Code and decks live in the [repository](https://github.com/aaronified/fluenough)
 ## 6. Roadmap
 
 - [Roadmap](Roadmap): what is shipped, built and next
-- [Plans Index](Plans-Index): every plan, one line each
+- [Plans Index](Plans-Index): every live plan, one line each
+- [Plans Retired](Plans-Retired): finished plans, with the pull requests that built them
 - [Audit: Tense, Number, Gender](Audit-Tense-Number-Gender): what each path teaches
 
 ## 7. Sources and attributions
@@ -63,6 +65,7 @@ Code and decks live in the [repository](https://github.com/aaronified/fluenough)
 - [Backup Format](Backup-Format): the backup file
 - [Log Format](Log-Format): the review log
 - [Agentic Coding](Agentic-Coding): rules and skills for agents
+- [Owner decisions history](Owner-Decisions-History): owner rules that no longer govern, and what replaced them
 - [Releasing](Releasing): how a release is cut
 - [ADR Index](ADR-Index): every architecture decision
 - [Mockups and Skills](Mockups-and-Skills): mockup rules and repo skills

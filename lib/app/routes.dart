@@ -291,6 +291,11 @@ abstract final class AppNavigator {
       Navigator.of(context)
           .pushReplacementNamed(AppRoutes.summary, arguments: result);
 
+  /// The summary of a day's session, opened from Today's ring once the day
+  /// has ended, on top of Today (its Done returns there).
+  static Future<void> openSummary(BuildContext context, SessionResult result) =>
+      Navigator.of(context).pushNamed(AppRoutes.summary, arguments: result);
+
   /// Leeches, in [language] only when given.
   static Future<void> openLeeches(BuildContext context, {String? language}) =>
       Navigator.of(context).pushNamed(AppRoutes.leeches, arguments: language);

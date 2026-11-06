@@ -6,6 +6,8 @@ Usage:
     python3 tools/validate_decks.py decks/es/es-en-core-100.yaml
 
     python3 tools/validate_decks.py --next-id bn
+    python3 tools/validate_decks.py --jobs 1 decks/     # one process; the default
+                                                        # is one worker per CPU
 
 Requires only Python 3.11+ and PyYAML, so deck contributors need no Flutter
 toolchain. Exits non-zero if any deck fails. See docs/DECK-FORMAT.md.
@@ -13,9 +15,12 @@ toolchain. Exits non-zero if any deck fails. See docs/DECK-FORMAT.md.
 
 from __future__ import annotations
 
+import collections
+import copy
 import os
 import re
 import sys
+import threading
 import unicodedata
 import datetime
 import hashlib
@@ -356,24 +361,10 @@ for _tag, _pattern in (
                                        re.compile(_pattern), None)
 
 
-class DeckLoader(yaml.reader.Reader, yaml.scanner.Scanner, yaml.parser.Parser,
-                 yaml.composer.Composer, yaml.constructor.SafeConstructor,
-                 DeckResolver):
-    """A safe loader that refuses what the app's deck parser refuses, and
-    reads plain scalars as it does (YAML 1.2, [DeckResolver]).
-
-    PyYAML keeps the last of two duplicate keys and expands `<<` merge keys.
-    The Dart parser rejects both, so a deck using either would pass CI and then
-    fail to load on a device.
-    """
-
-    def __init__(self, stream) -> None:
-        yaml.reader.Reader.__init__(self, stream)
-        yaml.scanner.Scanner.__init__(self)
-        yaml.parser.Parser.__init__(self)
-        yaml.composer.Composer.__init__(self)
-        yaml.constructor.SafeConstructor.__init__(self)
-        DeckResolver.__init__(self)
+class _DeckConstructor(yaml.constructor.SafeConstructor):
+    """What DeckLoader adds to PyYAML's safe constructor. It is a class of its
+    own so that the pure-Python loader, [DeckLoader], and the libyaml-backed
+    one, [CDeckLoader], build their data exactly alike."""
 
     def construct_yaml_int(self, node: yaml.ScalarNode) -> int:
         value = self.construct_scalar(node)
@@ -393,7 +384,7 @@ class DeckLoader(yaml.reader.Reader, yaml.scanner.Scanner, yaml.parser.Parser,
             # it is refused all the same.
             if key_node.tag == "tag:yaml.org,2002:merge" or (
                     isinstance(key_node, yaml.ScalarNode)
-                    and key_node.value == "<<" and key_node.style is None):
+                    and key_node.value == "<<" and not key_node.style):
                 raise yaml.constructor.ConstructorError(
                     None, None,
                     "found a merge key (<<), which the app does not support; "
@@ -421,7 +412,215 @@ class DeckLoader(yaml.reader.Reader, yaml.scanner.Scanner, yaml.parser.Parser,
         return super().construct_mapping(node, deep=deep)
 
 
-DeckLoader.add_constructor("tag:yaml.org,2002:int", DeckLoader.construct_yaml_int)
+_DeckConstructor.add_constructor("tag:yaml.org,2002:int",
+                                 _DeckConstructor.construct_yaml_int)
+
+
+class DeckLoader(yaml.reader.Reader, yaml.scanner.Scanner, yaml.parser.Parser,
+                 yaml.composer.Composer, _DeckConstructor, DeckResolver):
+    """A safe loader that refuses what the app's deck parser refuses, and
+    reads plain scalars as it does (YAML 1.2, [DeckResolver]).
+
+    PyYAML keeps the last of two duplicate keys and expands `<<` merge keys.
+    The Dart parser rejects both, so a deck using either would pass CI and then
+    fail to load on a device.
+    """
+
+    def __init__(self, stream) -> None:
+        yaml.reader.Reader.__init__(self, stream)
+        yaml.scanner.Scanner.__init__(self)
+        yaml.parser.Parser.__init__(self)
+        yaml.composer.Composer.__init__(self)
+        _DeckConstructor.__init__(self)
+        DeckResolver.__init__(self)
+
+
+if getattr(yaml, "__with_libyaml__", False) and not os.environ.get("FLUENOUGH_PURE_YAML"):
+    from yaml.cyaml import CParser as _CParser
+
+    class CDeckLoader(_CParser, _DeckConstructor, DeckResolver):
+        """[DeckLoader] with libyaml doing the reading. Only [_fast_load]
+        uses it, for the nodes: anything it cannot read is read again by
+        [DeckLoader], so that every error message is the pure-Python
+        loader's, word for word."""
+
+        def __init__(self, stream) -> None:
+            _CParser.__init__(self, stream)
+            _DeckConstructor.__init__(self)
+            DeckResolver.__init__(self)
+else:  # PyYAML built without libyaml, or the escape hatch for debugging
+    CDeckLoader = None
+
+
+# Reading a deck's YAML faster, with the same result. libyaml, which
+# `yaml.CParser` is, is quick at the first half of the job only: turning the
+# text into nodes. Building the data from them stays in Python and takes most
+# of the time. [_fast_load] does that for the plain case, a document of
+# mappings, lists and scalars, which every deck is, and gives up on anything
+# else. It never has an opinion of its own: a text it will not read, for any
+# reason, raises [_Fallback], and [_load_deck] reads it with [DeckLoader], so
+# that every error message is that loader's. What it does read it reads to the
+# same data, scalar for scalar, key order included (tools/test_fast_yaml.py).
+
+
+class _Fallback(Exception):
+    """Not read here; read it with the loader of record."""
+
+
+_TAG = "tag:yaml.org,2002:"
+_KEY_TAGS = frozenset(_TAG + t for t in ("str", "int", "float", "bool", "null"))
+
+
+def _fast_load(text: str, loader_class: type) -> object:
+    """`yaml.load(text, Loader=L)`, where [loader_class] is the libyaml-backed
+    twin of L (one that builds nodes with `yaml.CParser`). Raises [_Fallback]
+    for anything but mappings, lists and scalars, for a duplicate key, for a
+    `<<` key, for every error, and for the three things libyaml reads
+    differently from PyYAML's own scanner: a tab outside a quoted scalar, a
+    byte order mark (libyaml skips one at the start of any line, PyYAML only
+    at the start of the text), and a `?` in a plain scalar inside a flow
+    collection. So it never reads a text the pure loader would not."""
+    if "\t" in text or "\ufeff" in text:
+        raise _Fallback
+    loader = None
+    try:
+        loader = loader_class(text)
+        node = loader.get_single_node()
+        if node is None:
+            return None
+        made: dict[int, object] = {}
+        scalar, mapping, sequence = (yaml.ScalarNode, yaml.MappingNode,
+                                     yaml.SequenceNode)
+        construct = loader.construct_object
+        str_tag, seq_tag, map_tag = _TAG + "str", _TAG + "seq", _TAG + "map"
+
+        def build(node: yaml.Node, flow: bool = False) -> object:
+            t = type(node)
+            if t is scalar:
+                if flow and not node.style and "?" in node.value:
+                    raise _Fallback
+                if node.tag == str_tag:
+                    return node.value
+                return construct(node, deep=True)
+            done = made.get(id(node), made)
+            if done is not made:
+                return done
+            inner = bool(node.flow_style)
+            if t is sequence and node.tag == seq_tag:
+                items: list = []
+                made[id(node)] = items
+                items.extend([build(n, inner) for n in node.value])
+                return items
+            if t is mapping and node.tag == map_tag:
+                result: dict = {}
+                made[id(node)] = result
+                for key_node, value_node in node.value:
+                    if type(key_node) is not scalar \
+                            or key_node.tag not in _KEY_TAGS \
+                            or key_node.value == "<<":
+                        raise _Fallback
+                    key = build(key_node, inner)
+                    if key in result:
+                        raise _Fallback
+                    result[key] = build(value_node, inner)
+                return result
+            raise _Fallback
+
+        return build(node)
+    except _Fallback:
+        raise
+    except Exception as exc:  # noqa: BLE001 - re-read, for its message
+        raise _Fallback from exc
+    finally:
+        if loader is not None:
+            loader.dispose()
+
+
+# Every file is read many times in one run: a layer reads its core, each core
+# looks at its siblings' `native`, a path looks at the paths beside it. The
+# parsed text is kept, by the digest of the text (so a file written again is
+# read again), and each caller is handed a private copy it may change. The
+# bound is on the text, in characters (the trees are about seven times as
+# large, and each process keeps its own).
+_YAML_CACHE: "collections.OrderedDict[bytes, object]" = collections.OrderedDict()
+_YAML_CACHE_SIZES: dict[bytes, int] = {}
+_YAML_CACHE_LIMIT = 12_000_000
+_YAML_CACHE_BYTES = [0]
+_NO_DATA = object()
+
+
+class _Uncloneable(Exception):
+    """A loaded tree holds something other than dicts, lists and scalars (an
+    explicit `!!set`, say): it is handed out as read and never kept."""
+
+
+_SCALARS = (str, int, float, bool, bytes, datetime.date, datetime.datetime)
+
+
+def _clone(node: object, memo: dict[int, object]) -> object:
+    """A copy of loaded YAML, as copy.deepcopy makes it (shared nodes stay
+    shared) but several times faster, since a loaded tree holds only dicts,
+    lists and scalars."""
+    t = type(node)
+    if t is str or t is int or t is float or t is bool or node is None:
+        return node
+    if t is dict:
+        done = memo.get(id(node))
+        if done is not None:
+            return done
+        copy_: dict = {}
+        memo[id(node)] = copy_
+        for k, v in node.items():
+            copy_[k] = _clone(v, memo)
+        return copy_
+    if t is list:
+        done = memo.get(id(node))
+        if done is not None:
+            return done
+        out: list = []
+        memo[id(node)] = out
+        out.extend([_clone(v, memo) for v in node])
+        return out
+    if t in _SCALARS:
+        return node
+    raise _Uncloneable
+
+
+def _digest(text: str) -> bytes:
+    return hashlib.blake2b(text.encode("utf-8", "surrogatepass"),
+                           digest_size=16).digest()
+
+
+def _load_deck(text: str) -> object:
+    """`yaml.load(text, Loader=DeckLoader)`, with the same result and the same
+    errors, read once per distinct text and by libyaml where it is built."""
+    key = _digest(text)
+    tree = _YAML_CACHE.get(key, _NO_DATA)
+    if tree is _NO_DATA:
+        tree = _NO_DATA
+        if CDeckLoader is not None:
+            try:
+                tree = _fast_load(text, CDeckLoader)
+            except _Fallback:
+                tree = _NO_DATA
+        if tree is _NO_DATA:
+            tree = yaml.load(text, Loader=DeckLoader)
+        size = len(text)
+        if size > _YAML_CACHE_LIMIT // 2:
+            return tree
+        try:
+            copy_ = _clone(tree, {})
+        except _Uncloneable:
+            return tree
+        _YAML_CACHE[key] = tree
+        _YAML_CACHE_SIZES[key] = size
+        _YAML_CACHE_BYTES[0] += size
+        while _YAML_CACHE_BYTES[0] > _YAML_CACHE_LIMIT:
+            old, _ = _YAML_CACHE.popitem(last=False)
+            _YAML_CACHE_BYTES[0] -= _YAML_CACHE_SIZES.pop(old)
+        return copy_
+    _YAML_CACHE.move_to_end(key)
+    return _clone(tree, {})
 
 
 @dataclass
@@ -743,20 +942,24 @@ def _has_kanji(text: str) -> bool:
 def _check_kanji_reading(r: Report, where: str, card: dict, target: object,
                          script: str, scripts: list[str] | None,
                          what: str = "card") -> None:
-    """A Japanese card or example sentence written in kanji (script `han`, with `kana` among the
-    language's scripts) shows its kana reading beside the kanji, as a Chinese
-    card shows pinyin: the reading is its `target_scripts.kana`, and every
-    target with a kanji in it needs one, as does an example sentence's
-    (ADR-0053). The kana's letters are checked by
-    `_check_target_scripts` (no kanji in a kana reading). A target in kana
-    alone has nothing to read out and gives none."""
+    """A Japanese card or example in kanji needs its kana reading.
+
+    A card or example sentence written in kanji (script `han`, with `kana`
+    among the language's scripts) shows its kana reading beside the kanji, as
+    a Chinese card shows pinyin: the reading is its `target_scripts.kana`, and
+    every target with a kanji in it needs one, as does an example sentence's
+    (ADR-0053). The kana's letters are checked by `_check_target_scripts`
+    (no kanji in a kana reading). A target in kana alone has nothing to read
+    out and gives none.
+    """
     if script != "han" or "kana" not in (scripts or [])[1:] or not _is_str(target):
         return
     spelled = card.get("target_scripts")
     kana = spelled.get("kana") if isinstance(spelled, dict) else None
     if _has_kanji(target) and not _is_str(kana):
-        r.error(where, f"{'an' if what == 'example' else 'a'} {what} written in kanji needs its kana reading, "
-                       "`target_scripts: { kana: ... }`")
+        article = "an" if what == "example" else "a"
+        r.error(where, f"{article} {what} written in kanji needs its kana "
+                       "reading, `target_scripts: { kana: ... }`")
 
 
 def _check_optional_text(r: Report, where: str, block: dict, key: str) -> None:
@@ -2119,7 +2322,7 @@ def _readings_in(node: object):
 
 def _uses_iso15919(file: Path) -> bool:
     try:
-        raw = yaml.load(file.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = _load_deck(file.read_text(encoding="utf-8"))
     except (OSError, yaml.YAMLError):
         return False
     return isinstance(raw, dict) and raw.get("standard") == "ISO 15919"
@@ -2666,7 +2869,7 @@ def check_transliterated(r: Report, raw: object, *, fixed: str | None = None,
 def validate(path: Path) -> Report:
     r = Report(path)
     try:
-        raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = _load_deck(path.read_text(encoding="utf-8"))
     except yaml.YAMLError as exc:
         r.error("yaml", str(exc).replace("\n", " "))
         return r
@@ -2688,6 +2891,77 @@ def validate(path: Path) -> Report:
     if checks:
         check_checks_hashable(r, path)
     return r
+
+
+# Fewer files than this are validated in this process: starting workers costs
+# more than they save.
+PARALLEL_MIN_FILES = 24
+
+
+def _single_threaded() -> bool:
+    """Whether no other thread runs here, so that forking is safe. Threads
+    that `threading` does not know (a test runner's) are looked for in /proc."""
+    if threading.active_count() > 1 or os.environ.get("PYTEST_XDIST_WORKER"):
+        return False
+    try:
+        return len(os.listdir("/proc/self/task")) <= 1
+    except OSError:
+        return True
+
+
+# Each worker keeps its own cache of parsed files, so the workers are capped.
+MAX_JOBS = 8
+# Seconds a parallel run may take before it is given up for a serial one.
+PARALLEL_TIMEOUT = 600
+
+
+def default_jobs() -> int:
+    """The workers [validate_many] uses unless told: one per CPU this process
+    may run on, at most MAX_JOBS, and none where forking is unsafe, in a
+    process with other threads."""
+    if not _single_threaded():
+        return 1
+    try:
+        cpus = len(os.sched_getaffinity(0))
+    except (AttributeError, OSError):
+        cpus = os.cpu_count() or 1
+    return max(1, min(MAX_JOBS, cpus))
+
+
+def validate_many(paths: list[Path], jobs: int | None = None) -> list[Report]:
+    """[validate] of each of [paths], in the order given. Each file is checked
+    on its own, so with [jobs] above 1 (default: [default_jobs]) they are
+    shared among worker processes; the reports are the same as one process
+    makes, in the same order. Without `fork` (Windows) it stays in one
+    process. Left to itself it does not start workers for fewer than
+    PARALLEL_MIN_FILES files; a [jobs] of 2 or more asked for does."""
+    if jobs is None:
+        jobs = default_jobs() if len(paths) >= PARALLEL_MIN_FILES else 1
+    if jobs <= 1 or len(paths) < 2:
+        return [validate(p) for p in paths]
+    try:
+        import multiprocessing
+        from concurrent.futures import ProcessPoolExecutor
+        context = multiprocessing.get_context("fork")
+    except (ImportError, ValueError):
+        return [validate(p) for p in paths]
+    jobs = min(jobs, len(paths))
+    # Small runs of neighbouring files, which are mostly one language's and
+    # share its core files, are what each worker takes at a time.
+    chunk = max(1, min(8, len(paths) // (jobs * 4)))
+    pool = ProcessPoolExecutor(max_workers=jobs, mp_context=context)
+    try:
+        reports = list(pool.map(validate, paths, chunksize=chunk,
+                                timeout=PARALLEL_TIMEOUT))
+        pool.shutdown()
+        return reports
+    except Exception:  # noqa: BLE001
+        # A worker that died or hung, or a report that cannot be sent back:
+        # do it here, where a crash in a check is the traceback it always was.
+        for process in list(getattr(pool, "_processes", {}).values()):
+            process.kill()
+        pool.shutdown(wait=False, cancel_futures=True)
+        return [validate(p) for p in paths]
 
 
 def _validate_raw(r: Report, raw: dict, path: Path) -> Report:
@@ -3218,8 +3492,8 @@ def check_checks_hashable(r: Report, path: Path) -> None:
     every learner an update (#449)."""
     import deck_index
     try:
-        rest = yaml.load(deck_index.content_bytes(path.read_bytes())
-                         .decode("utf-8"), Loader=DeckLoader)
+        rest = _load_deck(deck_index.content_bytes(path.read_bytes())
+                          .decode("utf-8"))
     except (OSError, UnicodeDecodeError, yaml.YAMLError):
         r.error("checked_by", "must be written as the bot writes it, a line "
                               "of its own or last in a card written on one "
@@ -3246,7 +3520,7 @@ def _is_date(text: str) -> bool:
 def proposal_count(path: Path) -> int:
     """How many proposals [path] holds, for the index."""
     try:
-        raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = _load_deck(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, yaml.YAMLError):
         return 0
     return sum(len(p.items) for p in strip_proposals(raw)
@@ -3316,11 +3590,46 @@ def _load_raw(path: Path) -> object:
     """[path] as the checks read it: its proposals, `checked_by` and `verified` taken
     out (ADR-0038)."""
     try:
-        raw = yaml.load(path.read_text(encoding="utf-8"), Loader=DeckLoader)
+        raw = _load_deck(path.read_text(encoding="utf-8"))
     except (OSError, UnicodeDecodeError, yaml.YAMLError):
         return None
     strip_proposals(raw)
     strip_checks(raw)
+    return raw
+
+
+_VIEW_CACHE: "collections.OrderedDict[bytes, tuple[int, object]]" = collections.OrderedDict()
+_VIEW_CACHE_BYTES = [0]
+_VIEW_CACHE_LIMIT = 6_000_000  # characters of text
+
+
+def _load_raw_view(path: Path) -> object:
+    """[_load_raw]'s result, shared: the same tree for every caller, so a
+    caller must only read it. For the checks that look at other files of a
+    language, which would otherwise copy a core's whole tree to read one
+    field of it, once per file asked about."""
+    try:
+        text = path.read_text(encoding="utf-8")
+    except (OSError, UnicodeDecodeError):
+        return None
+    key = _digest(text)
+    hit = _VIEW_CACHE.get(key)
+    if hit is not None:
+        _VIEW_CACHE.move_to_end(key)
+        return hit[1]
+    try:
+        raw = _load_deck(text)
+    except yaml.YAMLError:
+        return None
+    strip_proposals(raw)
+    strip_checks(raw)
+    size = len(text)
+    if size <= _VIEW_CACHE_LIMIT // 2:
+        _VIEW_CACHE[key] = (size, raw)
+        _VIEW_CACHE_BYTES[0] += size
+        while _VIEW_CACHE_BYTES[0] > _VIEW_CACHE_LIMIT:
+            _, (old, _) = _VIEW_CACHE.popitem(last=False)
+            _VIEW_CACHE_BYTES[0] -= old
     return raw
 
 
@@ -3360,7 +3669,7 @@ def _reads_as_course(dirs: list[Path], lang: str, seg: str) -> bool:
         if (d / seg).is_dir():
             return True
         for p in sorted(d.glob(f"{lang}-{seg}-*.yaml")) + sorted(d.glob(f"*/{lang}-{seg}-*.yaml")):
-            raw = _load_raw(p)
+            raw = _load_raw_view(p)
             native = raw.get("native") if isinstance(raw, dict) else None
             if isinstance(native, dict) and native.get("code") == seg:
                 return True
@@ -3873,7 +4182,7 @@ def validate_layer(r: Report, raw: dict, path: Path) -> None:
         r.error("core", f"no core file {core_id}.yaml in {folder}; a layer's core is "
                         f"in the folder above it")
         return
-    core = _load_raw(file)
+    core = _load_raw_view(file)
     if not isinstance(core, dict) or core.get("part") != "core":
         r.error("core", f'{core_id}.yaml is not a core: it has no part: "core"')
         return
@@ -5325,7 +5634,7 @@ def _course_scripts(folder: Path) -> set[str]:
     in, hyphens as underscores: a script guide may be for any of them."""
     found: set[str] = set()
     for p in sorted(folder.glob("*.yaml")):
-        raw = _load_raw(p)
+        raw = _load_raw_view(p)
         if isinstance(raw, dict) and isinstance(raw.get("language"), dict):
             found.update(s.replace("-", "_") for s in _scripts_of(raw["language"]))
     return found
@@ -5769,7 +6078,7 @@ class _Language:
             except (OSError, UnicodeDecodeError):
                 continue
             if re.search(r"(?m)^[\"']?part[\"']?\s*:", text):
-                raw = _load_raw(p)
+                raw = _load_raw_view(p)
                 if isinstance(raw, dict) and raw.get("part") == "core" \
                         and raw.get("kind") not in GUIDE_KINDS:
                     cores.append(raw.get("id") if _is_str(raw.get("id")) else p.stem)
@@ -5990,7 +6299,7 @@ def check_paths_across(reports: list[Report]) -> list[str]:
         for other in sorted(rep.path.parent.glob("*-path.yaml")):
             if other.resolve() in given:
                 continue
-            raw = _load_raw(other)
+            raw = _load_raw_view(other)
             if isinstance(raw, dict) and raw.get("kind") == "path" \
                     and raw.get("language") == lang:
                 problems.append(f"{rep.path}: root: {lang} already has a path, {other}; "
@@ -6823,7 +7132,23 @@ def main(argv: list[str]) -> int:
             return 2
         print(next_card_id(argv[2]))
         return 0
-    targets = [Path(a) for a in argv[1:]] or [Path("decks")]
+    args = argv[1:]
+    jobs: int | None = None
+    for i, a in enumerate(args):
+        if a == "--jobs" or a.startswith("--jobs="):
+            value = a.partition("=")[2] if "=" in a else \
+                (args[i + 1] if i + 1 < len(args) else "")
+            try:
+                jobs = int(value)
+                if jobs < 1:
+                    raise ValueError
+            except ValueError:
+                print(f"error: --jobs takes a number of workers, 1 or more; "
+                      f"got {value!r}", file=sys.stderr)
+                return 2
+            del args[i:i + (1 if "=" in a else 2)]
+            break
+    targets = [Path(a) for a in args] or [Path("decks")]
     paths: list[Path] = []
     for t in targets:
         if not t.exists():
@@ -6835,7 +7160,7 @@ def main(argv: list[str]) -> int:
         print("error: no deck files found", file=sys.stderr)
         return 2
 
-    reports = [validate(p) for p in paths]
+    reports = validate_many(paths, jobs)
 
     ids: dict[str, Path] = {}
     for p in paths:

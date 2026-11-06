@@ -5,8 +5,10 @@ Source of truth: this wiki page.
 
 Written 2026-10-26. Builds on [Plan-Ipa-Course](Plan-Ipa-Course) and
 [ADR-0041](ADR-0041-The-Ipa-Course), and touches
-[ADR-0025](ADR-0025-Iso-15919-And-Ipa) (`ipa` is broad). Nothing here is
-built. Everything marked **Proposed** is the author's, not a decision.
+[ADR-0025](ADR-0025-Iso-15919-And-Ipa) (`ipa` is broad). Not built when written. Since then (checked 2026-11-04):
+cards may carry a narrow `[ ]` IPA in `phonetic`, with `phonetic_source`, written by
+`tools/import_phonetic.py` from Wiktionary (CHANGELOG 0.6.6 and 0.6.8), and the Bengali B1
+batch shipped with it (#984). The rest of the plan was not found built. Everything marked **Proposed** is the author's, not a decision.
 
 ## What the owner asked (2026-10-26)
 

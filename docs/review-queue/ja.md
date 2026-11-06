@@ -11,6 +11,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ja-daily-life | Are the bases given for でした and ください right? | Haiku builder | 2026-11-05 or 2026-11-06 |
 | unit-level | units 18 to 37 (ids ja-1260 to ja-1330 and ja-1331 to ja-1391) | Sentence and reading decks for units 18 to 37 are owed and not written: should they be built, and in what order? | Haiku builder | 2026-11-05 or 2026-11-06 |
 | unit-level | not stated | Should these example words stay as bases though they are not cards: ぼうし, かみ, くつ, とき, しゅうまつ, とりに, ねむれる, せんたくもの? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| course-wide | not in any deck | These daily phrases are in no deck: いただきます, ごちそうさま, ただいま, おかえり, いってきます, いってらっしゃい, おやすみなさい. Should they be added? | Haiku builder | 2026-11-05 or 2026-11-06 |
 | course-wide | ja-phrasebook | いってきます and いってらっしゃい are not added: the phrasebook holds 15 to 25 phrase cards and is now at 25 with いただきます, ごちそうさま, ただいま, おかえり and おやすみなさい. Should one card make room for them, or should the limit change? | Haiku builder | 2026-11-06 |
 | course-wide | all ja decks | Is the IPA style of tools/transcribe.py (medzamaɕi for めざまし) right, or should it follow the existing ja decks? | Haiku builder | 2026-11-05 or 2026-11-06 |
 | course-wide | rules rows for the new nouns, verbs and adjectives | Spot-check the readings in the generated rules rows for the new nouns, verbs and adjectives: are they right? | Haiku builder | 2026-11-05 or 2026-11-06 |

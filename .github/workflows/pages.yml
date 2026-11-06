@@ -39,6 +39,8 @@ jobs:
       - run: flutter create . --org app --project-name fluenough --platforms=web
       - run: rm -f test/widget_test.dart
       - run: python3 tools/brand_web.py
+      # Fails the build if flutter create's real output lost an iOS tag.
+      - run: python3 tools/check_web_page.py web
       - run: flutter pub get
       - run: dart run build_runner build
 
@@ -57,15 +59,74 @@ jobs:
           curl -fsSL -o build/web/sqlite3.wasm "https://github.com/simolus3/sqlite3.dart/releases/download/sqlite3-$(version sqlite3)/sqlite3.wasm"
           curl -fsSL -o build/web/drift_worker.js "https://github.com/simolus3/drift/releases/download/drift-$(version drift)/drift_worker.js"
 
+      # Flutter 3.47's own service worker caches nothing (#1012): the offline
+      # shell is tools/web/sw.js, which brand_web.py puts in the build.
+      - run: python3 tools/check_web_sw.py build/web
+
       - uses: actions/upload-pages-artifact@v3
         if: github.event_name == 'push'
         with:
           path: build/web
+      # Kept on every run: a pull request's page can be opened from it, and
+      # "Web: smoke test" reads it.
       - uses: actions/upload-artifact@v7
-        if: github.event_name == 'pull_request'
         with:
           name: web
           path: build/web
+          retention-days: 3
+
+  # The built app, opened in headless Chromium (tools/web_smoke.cjs): it
+  # loads, Today, Decks, Progress and Settings are reachable, a reload keeps
+  # the progress, and nothing logs an error. It is its own job, after the
+  # build, so that the required checks in ci.yml are no slower. On a pull
+  # request that changes only decks and documents it does nothing: the app is
+  # the same (the same rule as "Which parts changed" in ci.yml).
+  smoke:
+    name: "Web: smoke test"
+    needs: build
+    # Playwright's Chromium does not support ubuntu-latest's newest release.
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 2
+      - id: diff
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          run=true
+          if [ "$EVENT" = "pull_request" ]; then
+            if files=$(git diff --name-only --no-renames HEAD^1 HEAD) && [ -n "$files" ]; then
+              others=$( { echo "$files" | grep -vE '^(decks/|docs/|wiki/|.*\.md$)'; echo "$files" | grep -xE 'decks/(themes\.yaml|min_app\.json)|CHANGELOG\.md'; } || true)
+              if [ -z "$others" ]; then
+                run=false
+                echo "Only decks and documents changed: the smoke test is skipped."
+              fi
+            fi
+          fi
+          echo "run=$run" >> "$GITHUB_OUTPUT"
+      - uses: actions/download-artifact@v8
+        if: steps.diff.outputs.run == 'true'
+        with:
+          name: web
+          path: build/web
+      - name: Install Playwright and Chromium
+        if: steps.diff.outputs.run == 'true'
+        run: |
+          npm install --no-save --no-audit --no-fund --prefix "$RUNNER_TEMP/pw" playwright@1.56.1
+          node "$RUNNER_TEMP/pw/node_modules/playwright/cli.js" install --with-deps chromium
+      - name: Smoke test
+        if: steps.diff.outputs.run == 'true'
+        run: >
+          NODE_PATH="$RUNNER_TEMP/pw/node_modules"
+          node tools/web_smoke.cjs build/web --shots "$RUNNER_TEMP/shots"
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: web-smoke-screenshots
+          path: ${{ runner.temp }}/shots
+          if-no-files-found: ignore
+          retention-days: 3
 
   deploy:
     name: "Web: deploy"

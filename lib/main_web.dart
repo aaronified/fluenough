@@ -5,17 +5,25 @@ import 'app/added_decks.dart';
 import 'app/app_info.dart';
 import 'app/app_log.dart';
 import 'app/app_state.dart';
+import 'app/browser_blob_store.dart';
 import 'app/synonym_loader.dart';
 import 'app/deck_catalog.dart';
 import 'app/deck_downloads.dart';
-import 'app/downloaded_decks.dart';
+import 'app/features.dart';
+import 'app/links.dart';
+import 'app/report_mail.dart';
 import 'app/pacing.dart';
 import 'features/stats/progress_numbers.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
+import 'app/stored_downloaded_decks.dart';
+import 'app/web_install.dart';
+import 'app/web_platform.dart';
 import 'app/web_deck_fetcher.dart';
 import 'app/web_frame.dart';
 import 'core/scheduling/skill_fit.dart';
+import 'core/sound/system_sound_check.dart';
+import 'core/speech/web_speech_engine.dart';
 import 'core/tts/system_tts_engine.dart';
 
 /// The web build's entry point (`.github/workflows/pages.yml`). Like
@@ -26,8 +34,10 @@ import 'core/tts/system_tts_engine.dart';
 /// default, which does nothing.
 ///
 /// Progress and settings are kept in the browser's storage by drift. The
-/// decks are downloaded from GitHub on each visit, into memory; keeping them
-/// in the browser's storage is not built.
+/// decks and script fonts are downloaded from GitHub once, and kept in the
+/// browser's IndexedDB (#1012) so that a reload, online or not, opens with
+/// them; a browser that denies or fills its storage keeps them in memory
+/// for the visit, as it always did.
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final log = AppLog(store: MemoryLogStore());
@@ -35,7 +45,10 @@ Future<void> main() async {
   await log.open();
   log.event('App started: ${AppInfo.version}');
   final storage = await openProfileStorage(Profile.defaultProfile);
-  final downloaded = MemoryDownloadedDecks();
+  final downloaded = await StoredDownloadedDecks.load(
+    await openBrowserBlobStore(),
+    onProblem: (problem) => log.warning('Stored decks: $problem'),
+  );
   runApp(
     FluenoughApp(
       frame: webPhoneFrame,
@@ -55,10 +68,24 @@ Future<void> main() async {
         synonymLoader: loadSynonymSets,
         settings: storage.settings,
         tts: SystemTtsEngine(),
+        // The Web Speech API where the browser has one (Chrome, Edge,
+        // Safari); Firefox has none and says so. "Hear yourself" records
+        // through the browser's microphone.
+        speech: WebSpeechEngine(),
+        soundCheck: SystemSoundCheck(),
+        // A browser has no notifications at a set time and no APK: those
+        // rows are not drawn.
+        features: const FeatureRegistry.web(),
+        // A report opens the reporter's mail app by a mailto link.
+        reports: const MailReportSender(
+          address: AppLinks.feedbackEmail,
+          links: LauncherLinks(),
+        ),
         // A browser has no isolates: fitting and pacing run in place.
         fitRunner: (job) async => SkillFit.run(job),
         paceRunner: paceInPlace,
         progressRunner: progressInPlace,
+        webInstall: WebInstall(openWebPlatform()),
         log: log,
       ),
     ),

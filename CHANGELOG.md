@@ -9,6 +9,74 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- **Your phone buzzes a little as you use the app.** Settings > Look and language > Vibrate on touch (on by default, saved per profile and in backups, not shown on the web or desktop) turns it off. Each kind of touch has its own feel: a tick for a pick (the language wheel, tabs, segments, sliders), a tap for a row, a firmer press for a rating or a switch turned on, a heavy thud for deleting or restoring, a quick rising double for success (a finished session, a backup, a restore) and a slow level double for a wrong answer or a failure; the four skill pills each feel different (Leave a tick, Learn a tap, Know a press, Learnt a rise). With a screen reader on, only the ones that carry a meaning stay.
+- **Wallpaper colours work on Android 12 and later.** Settings > Look and language > Wallpaper colours (off by default, saved per profile and in backups) makes the app's colours follow the phone's wallpaper; the Colour row says it is following your wallpaper, Contrast and Pure black still apply. The row is not drawn on the web, iOS, desktop or Android below 12, and a phone that gives no palette keeps the chosen colour. No new dependency: a small channel call reads the system accent colour.
+- **The web app opens with no network after one visit, and can say how to install it.** A small hand-written service worker keeps the page, script, engine and fonts (Flutter 3.47's own caches nothing; the newest copy is used whenever the network answers, and deck downloads are never touched). A quiet card on Today, web only, offers Install in Chrome or says "Tap Share, then Add to Home Screen" on an iPhone, hides for good on Got it or for a week on Later, and never shows in the apps or once installed. Your data has a Storage group, web only: whether the browser keeps your progress, a button to ask it to, and that clearing the site's data deletes it. Refs #1012.
+
+### Changed
+
+- **The web app speaks and listens, and draws nothing a browser cannot do.** Saying a word uses the browser's speech recogniser where it has one (Chrome, Edge, Safari) and says so where it has not (Firefox); a browser listens online only, so it asks first, in Find my level and placement too, and declining leaves Say not tested. Settings no longer shows Reminders or Updates in a browser, reports open your mail app, and the microphone words name the browser, not the phone.
+- **Find my level asks how well you know the language, then checks you.** It first asks "How well do you know the language?" with only the answers the course supports (Expert, Advanced, Amateur, Beginner; a course with only A1 written offers Beginner and Amateur, and a course below A1 offers no check). Back cancels it and writes nothing; Beginner starts from the beginning with nothing asked. The questions come from the course's own decks and run as long as they need, with a pause every 25 questions where you see where you stand and choose Keep going or Stop here; leaving part-way keeps the run for 7 days. At the end each skill is credited up to the level it was placed at, and a course written to B1 can mark a skill Verified. A skill marked Know is verified first ("Verify what you know"), then "Fit my level" checks the rest; a check never changes a skill's Leave, Know or Learn.
+- **Find my level shows how sure it is.** The result lists each skill with where you start in plain words, a name (Not sure yet, Fairly sure, Sure, Very sure, Verified), a calm note when it is low, and the percentage one tap away; a skill that could not be tested says why. The Languages sheet shows the same names under the skill rows once a level check has been done (placement plan step 5).
+
+### Fixed
+
+- **A dimmed Colour choice is no longer read as choices.** While Wallpaper colours is on, a screen reader hears the Colour heading as disabled and the line that says why, not four colours it cannot pick.
+- **Find my level is steadier.** With only Hear to check and no voice on the phone it now says nothing could be checked instead of reporting a level; a paused run is dropped if its voice or microphone is gone; two listens in a row that heard nothing give the microphone up across questions, not only within one; a heard question whose sound will not play can be skipped without counting as a miss; a course with no A2 mark but written to B1 offers Expert; and a run that cannot be written keeps its paused run.
+- **A paused Find my level run this phone cannot carry on says so, and a result that cannot be saved no longer spins.** The paused run is deleted only when the new run starts, and a failed save shows a message with Try again and keeps the run.
+- Find my level no longer switches Speak and Hear to Learn: it downloads the language's decks if they are missing, then opens placement, and changes no skill.
+- **Ticking a course in Languages you review is what keeps its decks; a Know language keeps none.** With no course ticked (including a learner who never opened Languages you review), nothing is reviewed and the decks of a language you only know are removed at the next app open, as the note on the Languages page already says. Existing learners who have decks of a Know-only language and no tick will see them removed once. Tick the course to download them again and keep them; unticking releases them for removal. A language now counts as known for review only when its Hear, Speak and Read and Write in at least one script are all Know.
+- **A language you review no longer says its decks will be removed.** The Languages page and a language's skills sheet marked a Know language for removal, and the app removed its decks at the next open, even when a course taught in it was ticked in Languages you review. Ticked courses you can review now keep their decks.
+- **Languages you review lists only the courses you can review.** Courses whose languages you do not know, or whose scripts you do not read, are hidden instead of greyed, and an info button explains that only decks for languages you know are shown and that the app verifies this. A ticked course that no longer qualifies stays listed so it can be unticked.
+
+## [0.8.6] - 2026-11-05
+
+### Fixed
+
+- **"Your recording" is there right after a Say drill's first attempt.** The microphone is now also read while the phone's speech recogniser listens, in memory only and handled exactly as a replay take, so the first spoken answer can be replayed without saying it again. It starts only after the recogniser has the microphone, and switches itself off if listens start failing to match while it runs, so a phone that cannot share the microphone behaves as before and "Replay" still records a take there.
+- **Find my level starts the language.** Tapping it on a language whose decks are not on the phone now starts learning it and downloads the decks, with progress and the usual errors, then opens the level check when they arrive, instead of a message asking to start learning first. The "Tap a skill to practise only that" card on Today has even padding all round.
+
+## [0.8.5] - 2026-11-04
+
+### Added
+
+- **The web app installs to an iPhone's home screen.** The page now carries the iOS home-screen icon, standalone-mode and theme-colour tags (light and dark), a viewport that covers the notch with the notch and home bar kept clear, a relative manifest `id`, `scope` and `start_url` that follow the Pages sub-path, and no double-tap zoom, rubber-band scroll or text inflation. The web build asks the browser to keep its storage, and words wait for a first tap on a speaker before they play by themselves, as iOS Safari speaks nothing otherwise. A test checks the branded page and manifest (#1012).
+
+### Changed
+
+- **The web app keeps its decks and script fonts across reloads.** Downloaded decks and the Indic and Naskh fonts are now saved in the browser's own storage (IndexedDB), so a reload opens with them, with or without a connection, instead of downloading them again. The app checks the index at most once a day, as on the phone, and downloads only the files whose hash changed. A browser that denies or fills its storage (a private window) keeps them in memory for the visit, as before; what is stored is versioned, checked against the index's hashes, and bounded at 64 MB, oldest first (#1012).
+- **The How you learn popover is flat and full width, and the old Adjusted to you card is gone from Today.** The popover opened by the info dot above the skill tiles is titled with the language ("How you learn Telugu") and lays each skill out as a plain section across the whole width, with thin dividers instead of cards. The "Adjusted to you" card at the top of Today is removed; each skill's arrow stays, and the full page is still reached from Settings and Progress.
+
+## [0.8.4] - 2026-11-04
+
+### Fixed
+
+- **The IPA switch now reaches the rest of the screens.** With "IPA replaces transliteration" on, the rules tables (the unit page's and the drill's), the rule card, the minimal-pair popup and its feedback, the "looks like" and "sounds like" partner lines, grammar search results and the pair drill's feedback show the IPA in the transliteration's place. The grammar drill does it for languages written in Latin letters too, with the IPA moved up as the main line. A line that does not show a reading (the passage list with readings off) no longer shows the IPA in its place (#697).
+- **"IPA replaces transliteration" now applies everywhere.** The grammar drill (its prompt and its table), the unit page's word rows, the set and match drills, the Hear and choose-the-word options, placement's words, the situation sheets, the passage list and the "why is it closed" sheet still drew the transliteration of their own, whatever the switch said. They now go through the shared reading lines, so with IPA on and the switch on the IPA takes the transliteration's place, drawn left to right in the IPA fonts, and typed answers are unchanged (#697).
+- **Today no longer offers work the session does not have.** After the daily drill, the ring read "Continue", "14 of 15 min" and "1 review", and a tap found nothing. Today counted cards already reviewed that day as reviews still to fill the time, which the session never asks twice. Both now read one pool, a session ends only when no round is left, and the day that has ended shows a greyed ring at "15 of 15 min" with no pending chips; tapping it opens the summary (#1007).
+- **Today's numbers match what you can do, and the day ends on the summary.** Each skill tile shows every card waiting in that skill, even when the day's minutes cannot hold them all, and the number is exactly what tapping it starts; a skill that cannot run now (no voice or recogniser yet, sound off, no microphone) shows 0. Under the ring, the "N review" and "N new" card counts become the minutes left for each, such as "5 min review" and "2 min new". A hint above the tiles, "Tap a skill to practise only that", ends in an info dot that opens a short popover of how skills are fitted to the language shown. Quick revision is removed from Today. The finished-day ring is darker, shows the day's total ("23 min today") once Keep going time exists, and opens the summary, which now carries Keep going (a Keep going stretch shows the time taken counting up, with a full bar); the blank "Nothing to drill" and "No cards answered" end screens give way to it (#1009).
+
+### Changed
+
+- **Keep going serves the closest-to-due cards and new words, and says so when there is nothing worth doing.** After the day's minutes are done it reviews cards due soon (never more than two days early, nor while still too fresh to be worth it, by your own fitted memory) and teaches new words within the day's 15 plus 5 for the stretch (fewer while reviews pile up, none while catching up), reviews first while a backlog waits. When neither is worth doing, the summary says "All caught up" instead of offering Keep going (#1010).
+
+## [0.8.2] - 2026-11-04
+
+### Fixed
+
+- **Say no longer marks a short or long vowel as wrong.** A speech recogniser cannot reliably hear a vowel's length and returns the dictionary spelling, so a word heard that differs from the answer only in vowel length (అక్క for అక్కా) is now "Close, mind the vowel length" instead of "Not quite", with the contrast shown as a hint and no red. Typed answers are unchanged (#1001).
+
+### Changed
+
+- **Learn and Relearn use the shared screen.** The card-by-card walk now has the same header, skill pill and single card as every review screen, with the swipe and the chevrons going on and back (#509).
+- **One look for every question.** Teach cards, sets, every review question, the reading passages and the level check now share one screen: the same header, a pill in the skill's colour ("New word · Recognition"), one card, and one place for the buttons. The drills and the level check have no Continue button any more (Continue stays on the setup screens): swipe, or tap the arrow on the edge, to go on, and swipe back in a review to look at an earlier card, which you can see but not change. A wrong choice or picture shows the right answer and the one you chose; a wrong word order shows the right order and yours. The Say result shows what the phone heard (in script, with its reading or IPA) and a Your recording row that replays your own voice, or records the word again where the phone cannot keep the audio of your answer (#509).
+- `tools/validate_decks.py` is much faster, about 30 to 40 times on the whole of `decks/`, and prints exactly what it printed: each YAML file is read once, by libyaml where PyYAML has it, and the files are checked by several worker processes (`--jobs N`; `--jobs 1` is one process).
+
+## [0.8.1] - 2026-11-02
+
+### Added
+
+- **Six more languages on Add a language.** Afrikaans, Dutch, Ukrainian, Indonesian, Persian and Pashto are listed with no course yet, as Portuguese and Catalan are, and Persian and Pashto sit in a new Iranian family and are drawn in Noto Naskh Arabic, which they offer to download. Indonesian is now a language of its own, no longer found as an alias of Malay, and Malay teaches Malaysian only. Classical Sanskrit is the name of the Sanskrit course. Hebrew and Yiddish offer the Hebrew font to download; Santali's Ol Chiki font waits for its course (owner, 2026-11-02).
 - **The first launch places each language you chose to Learn.** Before the app opens, each such language goes straight to its level check once its first decks are on the phone. Under the first question, "Start at the beginning" places nothing for that language and goes on; the close button instead stops the check and keeps what it found so far. Each result is saved as it is done (owner, 2026-11-02: "It should be offered, and skippable to start at the beginning.").
 
 ### Changed

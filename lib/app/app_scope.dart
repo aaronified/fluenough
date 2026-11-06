@@ -31,4 +31,9 @@ class AppScope extends InheritedNotifier<AppState> {
     assert(scope != null, 'no AppScope above this widget');
     return scope!.notifier!;
   }
+
+  /// The state, or null where there is no scope: a widget that only adds a
+  /// haptic and can be drawn on its own.
+  static AppState? maybeRead(BuildContext context) =>
+      context.getInheritedWidgetOfExactType<AppScope>()?.notifier;
 }

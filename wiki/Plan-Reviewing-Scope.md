@@ -99,8 +99,8 @@ medium, because moving cards between deck files is the least known part.
 ## Earlier notes on reviewer mode (owner, 2026-10-09)
 
 These come from the reviewer-mode mockup drafts, replaced on 2026-10-17 by
-the adapted `docs/mockups/reviewer-mode.html` (awaiting approval) and
-deleted; they are in git history at 6715716 (their notes file is folded in
+the adapted `docs/mockups/reviewer-mode.html` (approved 2026-10-17, built, and
+removed 2026-11-04; see Mockups-and-Skills) and deleted; they are in git history at 6715716 (their notes file is folded in
 here):
 
 `reviewer-mode-screens.js`: half-done rework of `../reviewer-mode.html`
@@ -116,6 +116,6 @@ then the redesign.
 Also to add when the redesign resumes (owner, 2026-10-09): several decks
 sent in one mail, said at every step (turn-on dialog, How reviewing
 works, the unit's foot, a send sheet listing every deck with unsent
-reviews, the mail body); see `docs/plans/deck-browser.md`.
+reviews, the mail body); see [Plan-Deck-Browser](Plan-Deck-Browser).
 
 See also: [Roadmap](Roadmap) · [Plans-Index](Plans-Index) · [Home](Home)

@@ -105,7 +105,7 @@ rule 6), with a Dart test that runs the same seeds through the real
 The `glyph` replaces the block `icon`. It moves out of every deck file's
 `language:` block into the look file, so one place holds it. Migration: keep
 reading the block `icon` as a fallback for a language with no look file, and
-mark it deprecated in `docs/DECK-FORMAT.md`; the index writes
+mark it deprecated in [Deck-Format](Deck-Format); the index writes
 `languages[].icon` from whichever exists, so older apps keep working and
 `INDEX_VERSION` does not rise.
 
@@ -244,7 +244,7 @@ dependency, `flutter_svg`, for review (see Background image).
 
 ## Pieces, in order
 
-1. Format, `docs/DECK-FORMAT.md`, validator and index (Python, no Flutter).
+1. Format, [Deck-Format](Deck-Format), validator and index (Python, no Flutter).
 2. Hindi and Spanish look files as the first two, without images.
 3. Download, `LanguageLook`, glyph read from the look file.
 4. Per-language look with #461's dropdown (needs it first).

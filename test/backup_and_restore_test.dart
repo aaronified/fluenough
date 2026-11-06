@@ -252,6 +252,7 @@ void changeAll(SettingsNotifier s) {
     ..dynamicColour = true
     ..highContrast = true
     ..pureBlack = true
+    ..haptics = false
     ..setLearnsAlphabet('hi', false)
     ..cardTextScale = 1.2
     ..reminder = true

@@ -27,20 +27,13 @@ adding one means adding deck files.
 **What state it is in.** The domain layer, deck format, tooling and docs are
 written. **The UI is built from the design** and progress is saved in a
 database; what the backend lacks is shown disabled, marked "Feature incoming"
-([ADR-0008](docs/adr/0008-unbuilt-features-are-shown-disabled.md)). See
+([ADR-0008](https://github.com/aaronified/fluenough/wiki/ADR-0008-Unbuilt-Features-Are-Shown-Disabled)). See
 [wiki Roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
 
-**The Dart now compiles, as of 2026-09-21.** It was written without a Flutter
-SDK available, and for a while nobody had run it. That has been done: on
-Flutter 3.47.1, from a clean checkout following the sequence below with
-`--platforms=android`,
-`flutter analyze` reports no issues, `flutter test` passes (35 tests then;
-about 380 now, each checking a behaviour: docs/plans/test-cut.md),
-`dart format lib test` changes nothing, and `dart run build_runner build`
-succeeds. The Python tooling is tested and working too.
+**The Dart compiles, and the Python tooling is tested and working.**
 
-Since then the app has been built and run on Android phones for every
-release, which closed #17. What this does **not** tell you: nobody has built
+The app has been built and run on Android phones for every release, which
+closed #17. What this does **not** tell you: nobody has built
 it on macOS or Windows, or generated the iOS folder.
 
 ---
@@ -70,7 +63,7 @@ flutter pub get
 
 Full toolchain setup, including containers for immutable Linux distributions
 and why Waydroid cannot test audio, is in
-[docs/DEVELOPMENT.md](docs/DEVELOPMENT.md).
+[the wiki's Development Setup page](https://github.com/aaronified/fluenough/wiki/Development-Setup).
 
 ---
 
@@ -83,13 +76,14 @@ and why Waydroid cannot test audio, is in
 | `lib/core/grading/` | Answer comparison | low |
 | `lib/core/tts/` | `TtsEngine` + system implementation | low |
 | `lib/core/speech/`, `lib/core/sound/` | `SpeechEngine`, `SoundCheckEngine` + system implementations | low |
+| `lib/core/haptics/` | `HapticEngine`, the `Haptic` meanings (pure Dart) + the system engine (Flutter's `HapticFeedback`) | low |
 | `lib/core/data/` | drift database, repositories | **high — coordinate** |
 | `lib/features/` | UI, one directory per screen area | low if you stay in yours |
 | `lib/l10n/` | Interface strings, one ARB file per locale | low |
 | `decks/<lang>/` | Content, one YAML file per deck, or a core and its layers (`decks/<lang>/<native>/`); the language's path, `<lang>-path.yaml`, shared by every native language. The app downloads them from `main` (ADR-0037) | very low |
 | `decks/index.json` | What the app downloads, written by `tools/deck_index.py`; regenerated on main after each merge (`deck-index.yml`) | low — never hand-edit |
 | `tools/` | Python deck validator and importer | low |
-| `docs/adr/` | Architecture decision records | low |
+| `wiki/ADR-*.md` | Architecture decision records (the wiki's flat folder; ADR-0044) | low |
 | `pubspec.yaml` | Dependencies | **high — coordinate** |
 
 State reaches widgets through AppScope (ADR-0007). No state-management package.
@@ -127,7 +121,7 @@ or courses is one card (ADR-0018). Neither will be repeated. A new card takes
 A bare `true` or `false` is a boolean, and `007` or `1.0` a number, however
 the field is meant. The validator and the app read plain values as YAML 1.2
 does, so a bare `no`, `yes`, `on` or `off` is text to both (the table is
-"YAML values" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md)). Quote it all
+"YAML values" in [wiki/Deck-Format.md](wiki/Deck-Format.md)). Quote it all
 the same: YAML 1.1, which PyYAML and many editors still read, makes those
 four booleans. The hiragana `の` romanises to `no`, so this is not
 hypothetical — it was a real bug in the first draft of the hiragana deck.
@@ -146,7 +140,17 @@ from Flutter.
 
 That is what keeps them testable in milliseconds with no device or emulator.
 `lib/core/tts`, `lib/core/speech` and `lib/core/sound` are exempt — they
-wrap platform plugins by definition.
+wrap platform plugins by definition — and so is the one file
+`lib/core/haptics/system_haptic_engine.dart`, which wraps Flutter's
+`HapticFeedback`. The rest of `lib/core/haptics/` is pure Dart and stays
+under the rule.
+
+Haptics are named by meaning and go through `AppScope.read(context).haptics`
+(`tap`, `select`, `toggle`, `confirm`, `danger`, `success`, `error`, ...):
+never call `HapticFeedback`, `Feedback` or `SystemSound` anywhere but
+`lib/core/haptics/system_haptic_engine.dart` (`test/haptics_test.dart` fails
+for it), and never buzz for something the learner did not just do. See
+[Plan-Haptics](https://github.com/aaronified/fluenough/wiki/Plan-Haptics).
 
 If you find yourself wanting `BuildContext` in the scheduler, the logic belongs
 in the feature layer instead.
@@ -173,8 +177,8 @@ contributors need no Flutter toolchain — do not add a Python package to them.
 ### 7. Do not touch the licence.
 
 GPL-3.0 with an App Store Distribution Exception for the code, reasoned out
-in [ADR-0003](docs/adr/0003-licence.md); CC BY-SA 4.0 for the decks
-([ADR-0040](docs/adr/0040-decks-are-cc-by-sa.md)). It cannot be changed now
+in [ADR-0003](https://github.com/aaronified/fluenough/wiki/ADR-0003-Licence); CC BY-SA 4.0 for the decks
+([ADR-0040](https://github.com/aaronified/fluenough/wiki/ADR-0040-Decks-Are-Cc-By-Sa)). It cannot be changed now
 without the agreement of every contributor. Do not remove the exception, "simplify" to MIT,
 or add a CLA — there is deliberately no CLA.
 
@@ -195,7 +199,7 @@ before you start.
 
 `reviews` is an **append-only log** — never update or delete a row in it. It is
 the only table whose loss is irreparable; everything else can be rebuilt from
-it. See [ADR-0005](docs/adr/0005-scheduling.md). `leech_actions` is
+it. See [ADR-0005](https://github.com/aaronified/fluenough/wiki/ADR-0005-Scheduling). `leech_actions` is
 append-only in the same way.
 
 There is **one exception**, and only one (owner, 2026-10-17: "Logged
@@ -225,7 +229,7 @@ and stays exactly as it is. So do log messages, exception text, and ids.
 Readings are *based on* ISO 15919; never write that they strictly follow it.
 Within deck content, a word in a script other than Latin is never left without
 its reading: a note says లేదు (lēdu), not లేదు. The validator rejects it; see
-"Script in prose" in [docs/DECK-FORMAT.md](docs/DECK-FORMAT.md).
+"Script in prose" in [wiki/Deck-Format.md](wiki/Deck-Format.md).
 
 The half that gets skipped is not the strings, it is the layout around them.
 Use `EdgeInsetsDirectional`, `AlignmentDirectional` and `TextAlign.start`, never
@@ -240,7 +244,7 @@ words are its label, the hint stays short.
 
 This is not anticipating a need. Four of the five starter languages are read by
 people whose interface language is not English, and one of them — Urdu — is
-right to left (#33). See [ADR-0006](docs/adr/0006-interface-text-is-tokens.md).
+right to left (#33). See [ADR-0006](https://github.com/aaronified/fluenough/wiki/ADR-0006-Interface-Text-Is-Tokens).
 
 ---
 
@@ -252,7 +256,7 @@ rather than inventing scope. Comment on the issue saying what you are doing
 collisions, and it is the part people skip.
 
 **Read the plan before the issue.** Most issues are parts of a tracker
-labelled `plan`, which links its plan in `docs/plans/`. Read that plan on
+labelled `plan`, which links its plan, a wiki page listed in [Plans Index](https://github.com/aaronified/fluenough/wiki/Plans-Index). Read that plan on
 `main`, and the plans it names: the issue is a summary, and where the two
 differ, the plan is current. A plan that a later one changes says so at its
 top. An issue waits for its own "Blocked by" links and for whatever its
@@ -309,8 +313,8 @@ when the owner asks for a score.
 
 **Tests run only in CI.** No agent runs the tests or the validator locally,
 and none is launched just to run them. Push code and deck changes, then read
-CI's result, ignoring checks irrelevant to the change (CLAUDE.md, "How the
-owner works"). A docs-only push to main needs no CI check (owner, 2026-10-22:
+CI's result, ignoring checks irrelevant to the change (CLAUDE.md, "Git, PRs
+and CI"). A docs-only push to main needs no CI check (owner, 2026-10-22:
 "Doc pushes do not need CI.").
 
 ### Tests check behaviour
@@ -321,7 +325,7 @@ that at all. You should only check behaviour." A test says what a learner or
 a deck author sees happen, not how the code does it. A change adds a test
 only for a behaviour no test covers yet, never one per code change, and not
 for coverage, for every branch or for every case of a loop. The suite is
-already cut down ([docs/plans/test-cut.md](docs/plans/test-cut.md)). Other
+already cut down ([Plan Test Cut](https://github.com/aaronified/fluenough/wiki/Plan-Test-Cut)). Other
 documents point here.
 
 ### Files where you should expect contention
@@ -423,18 +427,20 @@ Specific to this repository, roughly in order of likelihood:
 | Treating a `flutter analyze` error as a broken design | It analysed clean on 3.47.1; an error means your change. Fix it. |
 | Typing an English label straight into a widget | Every screen has to be re-laid-out later, not just re-strung. Rule 10. |
 | Fanning out repository reading on a pricier model than Haiku | Searching is cheap-tier work. See *How agents should run work*. |
-| Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `docs/DECK-FORMAT.md`. |
-| Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](docs/adr/0002-system-tts.md). |
+| Making the grader stricter so tests look cleaner | Typo tolerance is deliberate — see `wiki/Deck-Format.md`. |
+| Bundling a neural TTS model | Covers ~10 languages against a language-agnostic goal. [ADR-0002](https://github.com/aaronified/fluenough/wiki/ADR-0002-System-Tts). |
 
-When something in this codebase looks inconsistent, check `docs/adr/` before
-correcting it. Much of what looks accidental is decided.
+When something in this codebase looks inconsistent, check the ADR pages in the
+wiki ([ADR Index](https://github.com/aaronified/fluenough/wiki/ADR-Index)) before correcting it. Much of what looks accidental is decided.
 
 ---
 
 ## Adding an ADR
 
-Architectural decisions go in `docs/adr/NNNN-short-name.md`, numbered
-sequentially:
+Architectural decisions are wiki pages: `wiki/ADR-NNNN-Title-With-Dashes.md` in
+the flat `wiki/` folder, numbered sequentially. There is no `docs/adr` file
+(ADR-0044). Add the page to `wiki/ADR-Index.md`. `wiki-sync.yml` publishes it to
+the wiki. The file has this shape:
 
 ```markdown
 # ADR-000N: <the decision, as a statement>

@@ -3,12 +3,12 @@
 Source of truth: this wiki page.
 
 
-- **Status:** Accepted (owner, 2026-10-24, #506: "Accept; build now"). The whole ADR is accepted, and the question engine (#522) is built now, without waiting for the exam design (#509). Before that, it was accepted in part (owner, 2026-10-13, #506). The owner approved, one by one: the principle that questions are derived from card data, whatever the card's kind; the answers to the open questions of `docs/plans/question-engine.md`; the ability rule ("This is approved as proposed"); the set card shape (kind `set`, members by card id, explanation in the layer, closed groups listed per language); and the exam answers on reading passages (#509), which replace the earlier "scheduled as a whole" decision. What the plan marked **Proposed** then (the step order, the registry's names and the other card data fields) was approved later: the step order on 2026-10-18 ("approve the #522 step order") and the rest with this acceptance.
+- **Status:** Accepted (owner, 2026-10-24, #506: "Accept; build now"). The whole ADR is accepted, and the question engine (#522) is built now, without waiting for the exam design (#509). Before that, it was accepted in part (owner, 2026-10-13, #506). The owner approved, one by one: the principle that questions are derived from card data, whatever the card's kind; the answers to the open questions of [Plan-Question-Engine](Plan-Question-Engine); the ability rule ("This is approved as proposed"); the set card shape (kind `set`, members by card id, explanation in the layer, closed groups listed per language); and the exam answers on reading passages (#509), which replace the earlier "scheduled as a whole" decision. What the plan marked **Proposed** then (the step order, the registry's names and the other card data fields) was approved later: the step order on 2026-10-18 ("approve the #522 step order") and the rest with this acceptance.
 - **Date:** 2026-10-13, accepted in full 2026-10-24
 - **Amends:** ADR-0024 (which question each skill is asked as), ADR-0034
   (Hear asks for the meaning; the skills stay as they are).
-- **Plan:** `docs/plans/question-engine.md`. The card data it relies on is
-  in `docs/DECK-FORMAT.md`, "Card data".
+- **Plan:** [Plan-Question-Engine](Plan-Question-Engine). The card data it relies on is
+  in [Deck-Format](Deck-Format), "Card data".
 
 ## Context
 
@@ -37,7 +37,7 @@ Today the question follows the card's kind, not its data:
 So each planned type (cloze, sentence bank, word-order extras, listening
 in context, explaining mistakes, the IPA course, handwriting, audio
 drills) would add one more special case. The audit is in
-`docs/plans/question-engine.md`.
+[Plan-Question-Engine](Plan-Question-Engine).
 
 ## Decision
 
@@ -81,7 +81,7 @@ drills) would add one more special case. The audit is in
   first so decks can be filled; the engine follows (owner: "Fields first").
 - **Neutral card data, not per-question fields.** A card does not carry
   "its cloze", "its Hear options" or "its question". It carries what is
-  true of the word (`docs/DECK-FORMAT.md`, "Card data"), and each type reads that.
+  true of the word ([Deck-Format](Deck-Format), "Card data"), and each type reads that.
   Where a type needs something nobody can derive, such as the wrong
   alternatives of a sentence, the field is a shared one with a neutral
   name that several types read: `confusables` (owner: "One shared list"),
@@ -100,7 +100,7 @@ drills) would add one more special case. The audit is in
   known ones as review when due. Its members are ordinary cards. The shape
   is approved (owner, 2026-10-13): kind `set`, members by card id, the
   explanation in the layer, closed groups listed per language, in
-  `docs/DECK-FORMAT.md`, "Set cards".
+  [Deck-Format](Deck-Format), "Set cards".
 - **Nothing is rewritten.** Existing cards, ids and log entries stay valid;
   card ids are permanent.
 - **`lib/core` stays free of Flutter.** The registry is plain Dart; pages

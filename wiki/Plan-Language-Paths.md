@@ -9,7 +9,7 @@ Written 2026-10-05.
 differ from this one:**
 
 - decks are a core and a layer per native language (built; see
-  `docs/DECK-FORMAT.md`, "Core and layer files");
+  [Deck-Format](Deck-Format), "Core and layer files");
 - a course is a phrasebook, then words, then rules, then sentences, and a
   lesson's new items come in that order (`words-rules-sentences.md`);
 - "Writing the planned decks" in `b1-plans.md`.

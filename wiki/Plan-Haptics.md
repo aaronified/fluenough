@@ -4,6 +4,8 @@ Source of truth: this wiki page.
 
 Written 2026-11-02. A plan and a mockup only: no app code is written by it. The mockup of the Settings switch is `docs/mockups/haptics-settings.html` on the branch `mockup/haptics-settings`, with its notes and self-check in `haptics-settings.md` beside it. The owner wants this in the next release.
 
+**Status 2026-11-06: approved by the owner 2026-11-06; build after the web work.** Owner, 2026-11-06: "Approve haptics, build it after web" (after being shown the haptics settings mockup `docs/mockups/haptics-settings.html` on 2026-11-06). Nothing is built yet and no issue is filed. It is aimed at 0.9.x. The 0.9.0 milestone does not exist yet, so the issue is filed, and tagged, once the owner creates it.
+
 ## What the owner asked
 
 > Also, all buttons should give haptic feedback, including cycling the pills. Use different feedbacks for each pill value (the language skill pills). And different for every type of action. Plan this well, must be logical and consistent and easy to follow for further UI development. A button in the UI settings section will turn on or off haptic feedback.
@@ -299,7 +301,7 @@ Known limit, said plainly: the test knows a list of widgets. A new Material tapp
 
 ### Wording
 
-A switch row follows `docs/plans/settings-wording.md`: a plain title, and one line that says what happens now and changes the moment the switch is flipped. Not an icon-only button, so the one-word tooltip rule does not apply.
+A switch row follows [Plan-Settings-Wording](Plan-Settings-Wording): a plain title, and one line that says what happens now and changes the moment the switch is flipped. Not an icon-only button, so the one-word tooltip rule does not apply.
 
 | | |
 |---|---|
@@ -323,7 +325,7 @@ A switch row follows `docs/plans/settings-wording.md`: a plain title, and one li
 - `SettingsNotifier` (`lib/app/settings.dart`): field `_haptics = true`, `bool get haptics`, `set haptics(bool)` through `_set`, like `pureBlack` (lines 56, 113, 989).
 - Stored key: **`haptics`**, `'$_haptics'` in `toStored()`, `pick('haptics', flag)` in the reader. Stored names are permanent.
 - Per profile, like every setting (the owner's note in `settings.dart`: "Per profile, like every setting").
-- Backup: `settings.json` already holds "every setting", so it rides along with no format change and no version bump (`docs/BACKUP-FORMAT.md`). A backup from before this has no key, `pick` returns null, and the setting stays on. One line is added to the existing round trip in `test/backup_and_restore_test.dart:254` (`..haptics = false`), not a new test.
+- Backup: `settings.json` already holds "every setting", so it rides along with no format change and no version bump ([Backup-Format](Backup-Format)). A backup from before this has no key, `pick` returns null, and the setting stays on. One line is added to the existing round trip in `test/backup_and_restore_test.dart:254` (`..haptics = false`), not a new test.
 
 ### l10n
 
@@ -347,6 +349,8 @@ New behaviours only (AGENTS.md):
 8. The round trip (one added line, above).
 
 ## 7. Rollout
+
+Build scope for the later builder (owner, 2026-11-06, approved): one "Vibrate on touch" toggle row on the Look and language page (`lib/features/settings/appearance_page.dart`), hidden on web and desktop, as in `docs/mockups/haptics-settings.md` (the mockup's notes, on its branch). The rest of this plan is the same build, after the web work.
 
 One pull request (`feature/haptics`, committed and pushed to `wip/haptics` in small steps), because the vocabulary, the setting, the widgets and the enforcement test are one change that is wrong in parts. Build order inside it:
 
@@ -376,12 +380,36 @@ The Sonnet coder takes steps 1 to 8; one Sonnet review of the pull request (CLAU
 
 ## Open questions for the owner
 
+Approved 2026-11-06 (owner, quoted in the status above). The five questions below are **assumed by the approval**: each one's default is what the builder implements, and the builder flags any it changes. No answer is invented here; a question the owner answers later replaces its default.
+
 1. **How far apart do the pills feel?** The plan: Leave tick, Learn tap, Know press, Learnt rise: a ladder up, and Learnt a double. Tick and tap are close, and on a low-end phone the three singles may feel alike. *Wider* (Leave tick, Learn press, Know thud, Learnt rise) makes the singles easier to tell apart. Main downside of wider: a thud on Know, the pill cycled most, is heavy, and thud is also the destructive feel.
+
+   Default (assumed by the approval): the plan's ladder, Leave tick, Learn tap, Know press, Learnt rise (a double).
 2. **Per profile or per phone?** The plan: per profile, saved in the backup, like every other setting. A phone shared by a family could instead keep the switch for the whole phone, off for a child's profile or on for all. Main downside of per phone: it would be the one setting that is not per profile and not in the backup.
+
+   Default (assumed by the approval): per profile, saved in the backup, like every other setting.
 3. **One pull request or two?** One: everything lands together, "all buttons" is true on merge. Two: the service, setting, shared widgets and pills first (small, reviewable), then the 140-file sweep and the enforcement test. Main downside of two: until the second merges, most plain buttons are still silent, and the owner's release would have to wait for both.
+
+   Default (assumed by the approval): one pull request, `feature/haptics`.
 4. **With a screen reader on, what do we play?** The plan: keep the meaningful ones (success, error, danger, pills), drop tap, select, toggle and confirm because TalkBack and VoiceOver already vibrate. *Everything*: simple, and the learner can turn it off. Main downside of everything: a double buzz on every tap for the people who rely on the reader most.
+
+   Default (assumed by the approval): with a screen reader on, keep the meaningful feels (success, error, danger, pills) and drop tap, select, toggle and confirm.
 5. **The AppBar's back arrow.** The plan leaves it silent in v1 (it is Flutter's `BackButton`; the system back gesture has its own). *Give it a tick*: a small `AppBackButton` set as `leading` in about 50 AppBars. Main downside: another 50-file edit for a control that already has the OS's feel, and the owner said "all buttons".
+
+   Default (assumed by the approval): the back arrow stays silent in v1.
 
 ## Mockup
 
+**Approved by the owner 2026-11-06; build after the web work.** Shown to the owner 2026-11-06 and approved in the words quoted in the status. The mockup files are on the branch `mockup/haptics-settings`, which this change does not touch; the mark on the mockup is recorded here, and the mockup is removed once built (owner, 2026-10-16: "Remove when built").
+
 `docs/mockups/haptics-settings.html` (branch `mockup/haptics-settings`): the Look and language screen in the real theme, light and dark, 1x and 1.4x, with the new row highlighted among the existing ones, and a reference panel of the pill feels. Notes, tweak controls and the contrast self-check are in `haptics-settings.md` beside it.
+
+## Built (2026-11-06, pull request #1043): what differs from this plan
+
+The first build is the service and the setting plus the central call sites; it is **not** the whole plan.
+
+- **Scope cut.** No `App*` wrapper widgets, no rename sweep, no `haptics_rules_test.dart` allow-list (steps 3, 5 and 7). Plain buttons, icon buttons, the bottom navigation bar's ripple, chips and dialog buttons stay silent in v1; only what goes through a shared widget (`GroupedTile`, `Segmented`, the language wheel, the tab pager, `SettingsSlider`, `Hint`, the speaker, `FeedbackBanner`, the rating buttons, the pills, the summary, backups, restores, removals, the PIN pad) has a haptic. `test/haptics_test.dart` instead checks that only `system_haptic_engine.dart` calls `HapticFeedback`, `Feedback.for*`, `Feedback.wrapFor*` or `SystemSound`.
+- **Screen reader.** With a screen reader on, the service also drops `longPress`, `dragStart` and `drop` (as it does `tap`, `select`, `toggle` and `confirm`), and keeps `success`, `error`, `danger`, `warning`, `correct`, `wrong` and the pills.
+- **Throttle.** `success`, `error` and `danger` are not thinned by the 50 ms throttle (a last card's rating, then the summary's success a frame later, must both play); only a double still playing drops them. The throttle clock is a `Stopwatch`, so a step of the phone's clock cannot silence haptics.
+- **Flutter's own feedback** (the Android click sound, the long-press buzz) is turned off in the app's widgets only while the service is on and the phone can vibrate (`Haptics.takesOverFeedback`); with Vibrate on touch off, the platform default stays.
+- **Not checked:** iOS (no folder yet) and how each feel reads on real phones.

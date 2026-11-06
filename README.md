@@ -19,7 +19,7 @@ offline on your phone once a language's decks are downloaded.
   <a href="https://github.com/aaronified/fluenough/releases"><img src="https://img.shields.io/github/downloads/aaronified/fluenough/total?label=APK%20downloads" alt="APK downloads"></a>
   <a href="LICENSE"><img src="https://img.shields.io/github/license/aaronified/fluenough" alt="Licence: GPL-3.0"></a>
   <a href="https://github.com/aaronified/fluenough/releases/latest"><img src="https://img.shields.io/badge/platform-Android-3DDC84?logo=android&amp;logoColor=white" alt="Platform: Android"></a>
-  <a href="docs/DEVELOPMENT.md"><img src="https://img.shields.io/badge/Flutter-3.47%2B-02569B?logo=flutter&amp;logoColor=white" alt="Flutter 3.47 or later"></a>
+  <a href="wiki/Development-Setup.md"><img src="https://img.shields.io/badge/Flutter-3.47%2B-02569B?logo=flutter&amp;logoColor=white" alt="Flutter 3.47 or later"></a>
   <a href="#why-fluenough-is-different"><img src="https://img.shields.io/badge/works_offline-once_decks_are_in-2E7D32" alt="Works offline once decks are in"></a>
   <a href="#courses"><img src="https://img.shields.io/badge/languages-57-C2621D" alt="57 languages"></a>
   <a href="https://github.com/aaronified/fluenough/issues"><img src="https://img.shields.io/github/issues/aaronified/fluenough" alt="Open issues"></a>
@@ -208,7 +208,7 @@ first five are in; after that it works offline. Fixed and new decks arrive
 without an app update: once a day at most it asks whether to fetch them, and
 Settings > Deck downloads lists each language, with Update and Remove, and
 can turn the daily check off
-([ADR-0037](docs/adr/0037-decks-download-from-main.md)).
+([ADR-0037](https://github.com/aaronified/fluenough/wiki/ADR-0037-Decks-Download-From-Main)).
 
 ## Documentation
 

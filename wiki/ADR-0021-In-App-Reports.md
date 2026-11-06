@@ -154,7 +154,7 @@ lines, whichever is smaller, so a crash's log survives a restart".
     `tools/brand_android.py` writes the method, the class, its manifest
     entry, its paths file and a query for mail apps, each once.
   - It takes a list of files, so that sending review files
-    (`docs/plans/deck-browser.md`) can reuse it.
+    ([Plan-Deck-Browser](Plan-Deck-Browser)) can reuse it.
   - Without the log ticked, the report goes by `mailto` as before. If the
     share fails, it goes by `mailto` without the log, and the reporter is
     told the log was not attached.

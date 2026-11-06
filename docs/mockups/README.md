@@ -4,26 +4,9 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 
 ## Awaiting approval
 
-- `progress.html`: the Progress tab redesigned (owner, 2026-10-26: "Redesign
-  the progress screen. The overall structure is fine, just think on the
-  colours, accents, etc. Each skill should have one colour associated with
-  it always"). One colour per skill, from the Today tile icons, with the
-  skill's name always written in it; redrawn count, Level and Hours tiles.
-  Today's screen beside the proposal, clay and forest, light and dark,
-  1.4x, Hindustani and Bengali. Tweak controls and open choices are in
-  `progress.md`, with the self-check.
-
-- `all-tags.html`: the All tags page (#499), beautified (owner, 2026-10-24:
-  "Beautify the all tags page. This needs a small mockup, as not much is
-  happening here anyway."). Today's page beside a proposal: Practise as an
-  inline play icon, a thin bar, and tweak controls for one-line or two-line
-  rows, grouping by kind and sorting. Hindustani and Bengali, light and
-  dark, 1.4x. Open choices are listed in `all-tags.md`, with the
-  self-check.
-
 - `today-chain.html`: the Today chain's screens still to build (owner,
   2026-10-23: "Do all the mockups needed for the today chain together, in one
-  screen."): situation cheatsheets and their inspect view (#724), the decks
+  screen."): situation cheatsheets and their inspect view (#724, built in 0.7.0, so no longer awaiting), the decks
   page's Learn only... chooser for every course (#723) and the conversation
   screen (#722). Today with one button (#521, #680) and the minutes-a-day
   setting (#485) are built, so their screens are removed. Hindustani and
@@ -35,9 +18,6 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
 Each is the spec for its screen. Don't rewrite one without the owner's
 approval.
 
-- `session-result-and-hours.html`: the session result's count line,
-  correct share and minutes (#486), and hours spent and hours left on
-  Progress (#227). Approved by the owner, 2026-10-12.
 - `settings.html`: Settings as a short list of section pages, with every
   planned change folded in: Sources in Your languages (#469); Look and
   language as the Look screen with an App language row, English only until
@@ -50,21 +30,6 @@ approval.
   (PIN lock, profiles, Delete this profile) from the profile card (#204);
   and destructive actions in the error colour. Approved by the owner,
   2026-10-12, with the decisions the page marks Proposed (#496).
-- `reviewer-mode.html`: reviewer mode, adapted to today's app (owner,
-  2026-10-17: "Mockup first"). Waiting for review with Reviewed, not sent
-  and Reviewed and sent first, each sent suggestion Accepted, Rejected or
-  Waiting for a second review with no rater codes, then the languages
-  folded with their counts (#471); Suggest a change with a BASE card's
-  pencil, Add a base, Remove with Undo before ✓, and a Word change as a
-  new identity that keeps the old word as `alt_target` and goes as one
-  review (#476); PLACE, offering only the B1 plan's units and themes, the
-  meaning rule, and the reviewer rules and daily question count (default
-  10) in onboarding (#477); and every field of a card, with Flag this
-  recording alone and Wiktionary items marked semi-verified and placed
-  last (#508). Hindi and Bengali, light and dark, 1x and 1.4x. It replaces
-  the 2026-10-09 drafts, which are in git history
-  (`git show 6715716:docs/mockups/reviewer-mode.html`). Approved by the owner, 2026-10-17, with the decisions the page marks
-  Proposed ("The reviewer mode mockup looks fine. Build it.").
 
 ## Approved
 
@@ -76,6 +41,16 @@ These were fully built, so their mockups were deleted. Code comments still
 name them. They are in git at 19d200b
 (`git show 19d200b:docs/mockups/<name>.html`):
 
+- `reviewer-mode.html`: reviewer mode (#471, #476, #477, #508), approved by
+  the owner, 2026-10-17 ("The reviewer mode mockup looks fine. Build it."),
+  built and removed once built (owner, 2026-10-16: "Remove when built"; all
+  four issues are in the CHANGELOG, removed 2026-11-04). It is in git history
+  at `98be3004`: `git show 98be3004:docs/mockups/reviewer-mode.html`.
+- `session-result-and-hours.html`: hours spent and hours left on Progress
+  (#227) and the session result (#486), built and removed once built
+  (CHANGELOG 0.6.x; the result is now a pill per skill, owner, 2026-10-30;
+  removed 2026-11-04). It is in git history at `98be3004`:
+  `git show 98be3004:docs/mockups/session-result-and-hours.html`.
 - `adapted-to-you.html`, with its earlier versions `ambient.html`,
   `moment.html` and `story.html`: "Adjusted to you" (ADR-0035).
 - `language-picker.html`: the language picker (#443).
@@ -94,3 +69,11 @@ name them. They are in git at 19d200b
   removed once built (owner, 2026-10-20: "delete all obsolete ones"). It is
   in git history at `c6925d6c`:
   `git show c6925d6c:docs/mockups/set-cards.html`.
+- `progress.html`: the Progress tab redesigned, one colour per skill (owner,
+  2026-10-26), built and removed once built (CHANGELOG: "Progress is
+  redrawn"). It is in git history at `3ceac77`:
+  `git show 3ceac77:docs/mockups/progress.html`, with `progress.md`.
+- `all-tags.html`: the All tags page (#499), beautified (owner, 2026-10-24),
+  built and removed once built (CHANGELOG: "All tags is two lines and a thin
+  bar a row"). It is in git history at `3ceac77`:
+  `git show 3ceac77:docs/mockups/all-tags.html`, with `all-tags.md`.

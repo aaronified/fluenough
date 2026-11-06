@@ -10,8 +10,11 @@ import 'dart:math' as math;
 /// puts a round's cards in order.
 class DailyCountdown {
   /// A countdown of [budget] that starts at [now], on its first screen.
-  DailyCountdown({required this.budget, required DateTime now})
-    : _screenAt = now;
+  DailyCountdown({
+    required this.budget,
+    required DateTime now,
+    this.countsUp = false,
+  }) : _screenAt = now;
 
   /// How long one screen counts for: after this it is taken that the
   /// learner is away, and the clock stops (owner, 2026-10-30: "pauses if a
@@ -20,6 +23,12 @@ class DailyCountdown {
 
   /// The time the session is for.
   final Duration budget;
+
+  /// A Keep going stretch (#1009, owner, 2026-11-04: "the timer bar will not
+  /// show any timer, but the time taken. The progress bar will also be
+  /// full"): the header shows the time used counting up, with the bar full.
+  /// The clock itself runs as any other and ends the stretch at [budget].
+  final bool countsUp;
 
   Duration _used = Duration.zero;
   DateTime _screenAt;
@@ -130,6 +139,7 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     int taughtSoFar = 0,
     bool catchingUp = false,
+    int cap = newCap,
   }) => _outline(
     left: left,
     due: due,
@@ -139,6 +149,7 @@ abstract final class DailyPlanner {
     secondsPerTeach: secondsPerTeach,
     taughtSoFar: taughtSoFar,
     catchingUp: catchingUp,
+    cap: cap,
   ).total;
 
   /// The next round (owner, 2026-10-30): a share of [whole], so that the
@@ -152,6 +163,7 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     int taughtSoFar = 0,
     bool catchingUp = false,
+    int cap = newCap,
   }) {
     final outline = _outline(
       left: left,
@@ -162,6 +174,7 @@ abstract final class DailyPlanner {
       secondsPerTeach: secondsPerTeach,
       taughtSoFar: taughtSoFar,
       catchingUp: catchingUp,
+      cap: cap,
     );
     final total = outline.total;
     if (outline.rounds <= 1) return total;
@@ -181,6 +194,7 @@ abstract final class DailyPlanner {
     required double secondsPerTeach,
     required int taughtSoFar,
     required bool catchingUp,
+    required int cap,
   }) {
     final seconds = left.inMilliseconds / 1000;
     if (seconds <= 0) return (total: DailyRound.none, rounds: 1);
@@ -188,7 +202,7 @@ abstract final class DailyPlanner {
     final cost = secondsPerTeach + teachPasses * review;
     final room = catchingUp
         ? 0
-        : math.max(0, math.min(newAvailable, newCap - taughtSoFar));
+        : math.max(0, math.min(newAvailable, cap - taughtSoFar));
 
     if (due <= 0) {
       final teach = room == 0

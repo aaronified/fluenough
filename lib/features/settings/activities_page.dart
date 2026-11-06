@@ -6,6 +6,7 @@ import '../../app/routes.dart';
 import '../../app/settings.dart';
 import '../../app/skill.dart';
 import '../../core/models/deck.dart';
+import '../../app/browser_words.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/skill_visuals.dart';
 import '../../ui/widgets/grouped_list.dart';
@@ -284,7 +285,7 @@ class ActivitiesPage extends StatelessWidget {
     final why = switch (setup) {
       SpeechSetup.ready => null,
       SpeechSetup.refused => l10n.settingsSpeakingRefused,
-      SpeechSetup.noRecogniser => l10n.settingsSpeakingNoRecogniser,
+      SpeechSetup.noRecogniser => speakingNoRecogniserText(l10n),
     };
     if (why != null && context.mounted) showAppSnackBar(context, why);
   }

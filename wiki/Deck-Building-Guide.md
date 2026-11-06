@@ -119,4 +119,6 @@ are fine, and each item taken from outside names its source. The deck's
 
 The build steps for agents are in [build-deck](https://github.com/aaronified/fluenough/blob/main/.claude/skills/build-deck/SKILL.md). Deck work goes in larger pull requests: several units per branch, one review per pull request (owner, 2026-10-30).
 
+Before finishing a unit, a builder flags each card it is unsure of in `docs/review-queue/<lang>.md`, in the same commit as the deck (build-deck step 7a; in the wiki, [Deck-Format](Deck-Format#writing-a-b1-course) step 7, item 5). Flags never go in the deck YAML. Owner, 2026-11-06: the questions go to a sidecar list per language that the review bot reads, not into the decks ("go B").
+
 See also: [Home](Home)

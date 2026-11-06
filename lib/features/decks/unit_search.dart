@@ -29,6 +29,7 @@ import 'path_model.dart';
 import 'path_parts.dart';
 import 'unit_page.dart' show CardRow;
 import 'word_sheet.dart';
+import '../../ui/widgets/ipa_line.dart';
 
 /// One thing a search on the Decks tab finds.
 sealed class SearchHit {
@@ -1090,7 +1091,12 @@ class _HitTile extends StatelessWidget {
         hit.entry.lemma,
         joinParts(l10n, <String>[
           language,
-          ?hit.entry.reading,
+          ?quotedReading(
+            context,
+            reading: hit.entry.reading,
+            ipa: hit.entry.ipa,
+            target: hit.entry.lemma,
+          ),
           hit.entry.gloss,
         ]),
         const SizedBox.shrink(),

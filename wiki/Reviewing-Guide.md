@@ -82,6 +82,11 @@ You can turn reviewing off whenever you like. Your code is kept.
 
 Open a unit and tap **Review**. Mark each card that is right (**Looks right**).
 
+Some cards come with a question from the builder who wrote them. Once the
+review bot change lands, you will see those questions on their cards, and the
+bot will ask about them first. No date is set for that change; until it lands,
+nothing changes for you.
+
 Where a base word changes its stem in the card's form, such as Telugu రావడం
 (rāvaḍam), "to come", in వచ్చింది (vaccindi), "she came", the notes should
 say so. If they don't, suggest a change to the notes.

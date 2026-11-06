@@ -45,13 +45,16 @@ class GrammarCell {
 
   /// [prompt] with the lemma's reading in place of the lemma, or null if
   /// the entry gives none (#47).
-  String? get readingPrompt {
-    final reading = entry.reading;
-    if (reading == null) return null;
+  String? get readingPrompt => promptWith(entry.reading);
+
+  /// [prompt] with [lemma] in the lemma's place, or null if it is null. The
+  /// reading, or the IPA when it takes the reading's place (#697).
+  String? promptWith(String? lemma) {
+    if (lemma == null) return null;
     return pattern.prompt.replaceAllMapped(
       _placeholder,
       (m) => switch (m[1]) {
-        'lemma' => reading,
+        'lemma' => lemma,
         'gloss' => entry.gloss,
         _ => slot,
       },

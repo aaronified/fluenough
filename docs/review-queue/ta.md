@@ -1,0 +1,27 @@
+# Review queue: Tamil (ta)
+
+Questions for a bilingual reviewer. See [README](README.md). Rows are removed when a reviewer settles the card.
+
+| card id | unit | question for the reviewer | raised by | date |
+|---|---|---|---|---|
+| ta-0041 | ta-questions | யார் (who): is gender m right, or could it be either, since a person can be m or f? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0084 | ta-family | குழந்தை (child): is gender n right, or should it be m or f, since a rational child can be either? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0037 | ta-sound-differences | ஏழு (seven): part of speech is 'other' in the deck; should it be numeral? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0043 | ta-questions | எங்கே (where): part of speech is 'other' in the deck; should it be adverb? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0044 | ta-questions | எப்போது (when): part of speech is 'other' in the deck; should it be adverb? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0045 | ta-questions | எப்படி (how): part of speech is 'other' in the deck; should it be adverb? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0056 | ta-questions-sentences | நீங்கள் வருகிறீர்களா? is a yes-no question with no question word: is it a natural way to ask? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0062 | ta-pronouns | இவர் is glossed 'this person (polite)': is that the right meaning? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0060 | ta-pronouns | The gloss 'he or she (polite)': is that the right meaning? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0147 | ta-time | The note says கிழமை means 'day of the week': is that the right gloss? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0145 | ta-time | Is bare திங்கள் (without கிழமை) ok in திங்கள் வருகிறேன் for 'on Monday'? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0112 | ta-about-me | The note on இங்கே (here) brings in அங்கே (there) before it is taught: should it be reworded? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0136 | ta-adverbs | The IPA vowels of சில சமயம் (sometimes) are guesses: can they be checked? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0121 | ta-verbs | The verb note on பார் (look): are the spoken and written present forms right? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0122 | ta-verbs | The verb note on கேள் (listen): are the spoken and written present forms right? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| unit-level | ta-verbs | Check all of ta-verbs for spoken versus written present forms. | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0051 | ta-questions | Set card (closed group): is the list of members right? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0067 | ta-pronouns | Set card (closed group): is the list of members right? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0107 | ta-numbers-1-20 | Set card (closed group): is the list of members right? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0157 | ta-time | Set card (closed group): is the list of members right? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| course-wide | all ta decks | Every Tamil reading and broad IPA is hand-written (no Tamil table in tools/transcribe.py): does each one need a check? | Haiku builder | 2026-11-05 or 2026-11-06 |

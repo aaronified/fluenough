@@ -11,15 +11,15 @@ Source of truth: this wiki page.
 
 ## Context
 
-The owner asked for a B1 plan in every path (`docs/plans/b1-plans.md`),
+The owner asked for a B1 plan in every path ([Plan-B1-Plans](Plan-B1-Plans)),
 for sentences to wait until their words and rules are known, with a
 small phrasebook first and grammar taught as rules over known words
-(`docs/plans/words-rules-sentences.md`), and for each deck to keep the
+([Plan-Words-Rules-Sentences](Plan-Words-Rules-Sentences)), and for each deck to keep the
 learner's language in a layer of its own (`docs/plans/native-layers.md`).
 The skill model left grammar understood and produced to this format
 (ADR-0034, 2026-10-09). On 2026-10-09 the owner
 decided that the format is built in the parser, the validator and
-`docs/DECK-FORMAT.md` before any B1 deck is written; that a rule's forms
+[Deck-Format](Deck-Format) before any B1 deck is written; that a rule's forms
 are listed for every word, and the validator checks every taught word of
 the rule's kind has its row; that layers live in `decks/<lang>/<native>/`;
 that notes keep their language facts in the core and each layer writes

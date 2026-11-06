@@ -27,7 +27,8 @@ const List<Skill> todaySkills = <Skill>[
 /// script writing together, the script decks' Recognition and Write. They
 /// are left out of Recognition's and Write's tiles.
 typedef TodayScript = ({
-  /// Today's session items in the script decks' Recognition and Write.
+  /// Cards waiting in the script decks' Recognition and Write: what the tile
+  /// shows and what tapping it starts, so the same as [due] (#1009).
   int count,
 
   /// Cards a review of them holds, which tapping starts.
@@ -59,13 +60,8 @@ enum WeekDayStatus {
 typedef WeekDay = ({DateTime date, WeekDayStatus status});
 
 /// What Today shows of the learner's pace (ADR-0035,
-/// "Shown prominently"): the strip on the due card, and a mark on each
-/// adjusted skill's tile.
+/// "Shown prominently"): a mark on each adjusted skill's tile.
 typedef TodayPace = ({
-  /// The next 30 days' reviews in every skill of the languages learned,
-  /// now and as at the start; null while they are worked out.
-  ({int reviews, int was})? totals,
-
   /// Which way each adjusted skill moved, in the languages learned
   /// together. A skill not adjusted has none.
   Map<Skill, PaceDirection> marks,
@@ -86,17 +82,11 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   if (!pacing.adjusted) return null;
   final paces = onScreen ? pacing.paces : pacing.latest;
   if (paces == null) {
-    return (
-      totals: null,
-      marks: const <Skill, PaceDirection>{},
-      scriptMark: null,
-    );
+    return (marks: const <Skill, PaceDirection>{}, scriptMark: null);
   }
   // Only the language shown, while one is chosen in the menu (#461).
   final profile = state.currentProfile;
   final language = state.shownLanguage;
-  // Totals are of the word skills, as before: the script skills are
-  // paced on their own tile.
   final learned = <SkillPace>[
     for (final p in paces.values)
       if (profile.learns(p.key.language) &&
@@ -106,11 +96,6 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
   final shown = learned.isEmpty && language == null
       ? <SkillPace>[...paces.values]
       : learned;
-  final words = <SkillPace>[
-    for (final p in shown)
-      if (!p.key.mode.isScript) p,
-  ];
-  final all = SkillFit.together(words);
   PaceDirection? markOf(bool Function(DrillMode mode) of) =>
       switch (SkillFit.together(<SkillPace>[
         for (final p in shown)
@@ -120,9 +105,6 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
         _ => null,
       };
   return (
-    totals: all == null
-        ? null
-        : (reviews: all.now.reviews, was: all.start.reviews),
     marks: <Skill, PaceDirection>{
       for (final skill in todaySkills) skill: ?markOf(skill.modes.contains),
     },
@@ -133,10 +115,14 @@ TodayPace? todayPaceOf(AppState state, {bool onScreen = true}) {
 /// Everything Today shows, computed from the state rather than drawn from the
 /// design's sample numbers (streak 12, 8 new cards, and so on).
 ///
-/// The count and the skill tiles come from `buildSession(DrillRequest.today())`,
-/// the same queue Start review drills. That queue holds one item per card
-/// (`SessionQueue.build`), so the number on the card is the number of words
-/// the session asks, whatever number of skills a word is due in.
+/// The count comes from `buildSession(DrillRequest.today())`, the same queue
+/// Start review drills. That queue holds one item per card
+/// (`SessionQueue.build`), so the number is the number of words the session
+/// asks, whatever number of skills a word is due in.
+///
+/// A skill tile counts something else, and exactly what tapping it serves
+/// (#1009): every card waiting in its skill ([AppState.skillTile]), a word
+/// due in several skills in each of them.
 class TodayNumbers {
   const TodayNumbers({
     required this.hasDecks,
@@ -163,7 +149,6 @@ class TodayNumbers {
     final queue = state.buildSession(const DrillRequest.today());
     // The script decks' Recognition and Write are the Script tile's.
     final split = ScriptSplit(progress.skills.scriptDecks);
-    final byMode = split.countByMode(queue);
 
     // "No voice" only once every language has been asked about and none can
     // be spoken, so the tile does not flash it while the check runs.
@@ -213,24 +198,15 @@ class TodayNumbers {
       return (date: date, status: status);
     }
 
+    // A tile counts what tapping it serves, from one queue
+    // ([AppState.skillTile]): all the skill's pending cards, whatever the
+    // day's time budget, and only those that can be drilled now (#1009).
     final bySkill = <Skill, int>{
       for (final skill in todaySkills)
         if (skill != Skill.speaking ||
             (state.settings.isEnabled(skill) &&
                 state.features.isAvailable(skill.feature)))
-          skill: <int>[for (final mode in skill.modes) byMode[mode] ?? 0]
-              .fold(0, (a, b) => a + b),
-    };
-    // A skill switched off is not reviewed from its tile either.
-    final dueIn = <Skill, int>{
-      for (final skill in bySkill.keys)
-        skill: state.settings.isEnabled(skill)
-            ? state
-                  .buildSession(
-                    DrillRequest(skill: skill, script: ScriptScope.without),
-                  )
-                  .length
-            : 0,
+          skill: state.skillTile(skill).length,
     };
     final hasScript = decks.any((d) => split.scriptDecks.contains(d.id));
     final scriptDue = hasScript
@@ -240,19 +216,21 @@ class TodayNumbers {
       hasDecks: decks.isNotEmpty,
       due: queue.length,
       bySkill: bySkill,
-      dueIn: dueIn,
+      dueIn: bySkill,
       // A skill switched off has nothing to revise from its tile.
       revisable: <Skill, int>{
-        for (final MapEntry(key: skill, value: due) in dueIn.entries)
+        for (final MapEntry(key: skill, value: due) in bySkill.entries)
           if (due == 0 && state.settings.isEnabled(skill))
-            skill: state.revisableIn(<Skill>{
-              skill,
-            }, script: ScriptScope.without),
+            skill: state.revisableIn(
+              <Skill>{skill},
+              script: ScriptScope.without,
+              drillableOnly: true,
+            ),
       },
       script: !hasScript
           ? null
           : (
-              count: scriptModes.fold(0, (a, mode) => a + (byMode[mode] ?? 0)),
+              count: scriptDue,
               due: scriptDue,
               revisable: scriptDue == 0
                   ? state.revisableIn(null, script: ScriptScope.only)
@@ -301,19 +279,22 @@ class TodayNumbers {
   final bool hasDecks;
 
   /// Words in today's session: due reviews, and the new skills of words
-  /// already taught, each word once, in the one skill it is asked in. New
+  /// already taught, each word once, in the one skill it is asked in. It
+  /// says whether anything is left, not what a tile shows. New
   /// words come in [lessons] (ADR-0024). A reading passage's questions are
   /// cards of their own (ADR-0019) and count one each.
   final int due;
 
-  /// Today's session per skill, for each skill with a tile, in
-  /// [todaySkills] order.
+  /// Each skill tile's count, for each skill with a tile, in [todaySkills]
+  /// order: all the cards waiting in the skill, whatever the day's time
+  /// budget, that can be drilled now, and exactly what tapping the tile
+  /// serves (#1009). A word due in several skills is counted in each. A
+  /// skill whose drills cannot run (no voice or recogniser yet, sound off)
+  /// counts none.
   final Map<Skill, int> bySkill;
 
-  /// For each tile, how many cards a review of its skill alone holds, what
-  /// tapping it starts (ADR-0030). It can be more than [bySkill]'s count: a
-  /// word due in several skills is asked in one of them in today's session,
-  /// but in each skill's own review.
+  /// What tapping each tile starts (ADR-0030): the same as [bySkill], kept
+  /// under its own name for what is saved between launches.
   final Map<Skill, int> dueIn;
 
   /// For a tile whose skill has nothing due: how many words it can revise
