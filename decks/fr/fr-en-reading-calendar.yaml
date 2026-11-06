@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-calendar"
+name: "Reading: months and years"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about the calendar: a wall calendar with the months and seasons, and a birthday party, with words such as printemps, en juin and fête. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-wall-calendar"
+    title: "A wall calendar with appointments"
+    theme: "calendar"
+    sentences:
+      - text: "Une année a douze mois."
+      - text: "Le printemps arrive en mars."
+      - text: "Les vacances commencent en juin."
+      - text: "Le calendrier est au mur."
+    questions:
+      - id: "fr-1195"
+        prompt: { en: "When does spring come?" }
+        options:
+          - { en: "In June" }
+          - { en: "In March" }
+          - { en: "In August" }
+        answer: 2
+      - id: "fr-1196"
+        prompt: { en: "When do the holidays start?" }
+        options:
+          - { en: "In June" }
+          - { en: "In January" }
+          - { en: "In October" }
+        answer: 1
+      - id: "fr-1197"
+        prompt: { en: "How many months are in a year?" }
+        options:
+          - { en: "Ten" }
+          - { en: "Twelve" }
+          - { en: "Twenty" }
+        answer: 2
+  - id: "fr-a-birthday-party"
+    title: "A birthday party"
+    theme: "calendar"
+    sentences:
+      - text: "Mon anniversaire est le quinze juin."
+      - text: "Il y a une fête à la maison."
+      - text: "La fête commence le samedi."
+      - text: "Le lendemain, je range l'agenda."
+    questions:
+      - id: "fr-1198"
+        prompt: { en: "When is the birthday?" }
+        options:
+          - { en: "On the fifth of June" }
+          - { en: "On the fifteenth of May" }
+          - { en: "On the fifteenth of June" }
+        answer: 3
+      - id: "fr-1199"
+        prompt: { en: "What is the event at home?" }
+        options:
+          - { en: "A meeting" }
+          - { en: "A party" }
+          - { en: "A journey" }
+        answer: 2
+      - id: "fr-1200"
+        prompt: { en: "What does the speaker do the next day?" }
+        options:
+          - { en: "Puts the diary away" }
+          - { en: "Goes to the sea" }
+          - { en: "Buys a calendar" }
+        answer: 1

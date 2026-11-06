@@ -1,0 +1,124 @@
+schema: 1
+id: "fr-calendar-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1187"
+    target: "Le mois de janvier est froid."
+    ipa: "lə mwa də ʒɑ̃vje ɛ fʁwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "mois", ref: "fr-1165" }
+      - { word: "de", base: "de" }
+      - { word: "janvier", ref: "fr-1152" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "froid", ref: "fr-0420" }
+    confusables:
+      - { id: "année", ref: "fr-1166", kind: "word" }
+      - { id: "saison", ref: "fr-1168", kind: "word" }
+  - id: "fr-1188"
+    target: "Mon anniversaire est en juin."
+    ipa: "mɔ̃ anivɛʁsɛʁ ɛ ɑ̃ ʒɥɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "anniversaire", ref: "fr-1175" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "en", base: "en" }
+      - { word: "juin", ref: "fr-1157" }
+    confusables:
+      - { id: "fête", ref: "fr-1176", kind: "word" }
+      - { id: "vacances", ref: "fr-1119", kind: "word" }
+  - id: "fr-1189"
+    target: "Nous fêtons Noël avec les amis."
+    ipa: "nu fɛtɔ̃ nɔɛl avɛk lez ami"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "fêtons", base: "fêter" }
+      - { word: "Noël", ref: "fr-1184" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "amis", ref: "fr-0100" }
+    confusables:
+      - { id: "fête", ref: "fr-1176", kind: "word" }
+      - { id: "année", ref: "fr-1166", kind: "word" }
+  - id: "fr-1190"
+    target: "Le week-end, je ne travaille pas."
+    ipa: "lə wikɛnd ʒə nə tʁavaj pa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "week-end", ref: "fr-1174" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "ne", base: "ne" }
+      - { word: "travaille", ref: "fr-0252" }
+      - { word: "pas", base: "pas" }
+    confusables:
+      - { id: "semaine", ref: "fr-0668", kind: "word" }
+      - { id: "travail", ref: "fr-0255", kind: "word" }
+  - id: "fr-1191"
+    target: "Le printemps arrive en mars."
+    ipa: "lə pʁɛ̃tɑ̃ aʁiv ɑ̃ maʁs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "printemps", ref: "fr-1169" }
+      - { word: "arrive", base: "arriver" }
+      - { word: "en", base: "en" }
+      - { word: "mars", ref: "fr-1154" }
+    confusables:
+      - { id: "saison", ref: "fr-1168", kind: "word" }
+      - { id: "hiver", ref: "fr-1172", kind: "word" }
+  - id: "fr-1192"
+    target: "Une année a douze mois."
+    ipa: "yn ane a duz mwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Une", ref: "fr-0545" }
+      - { word: "année", ref: "fr-1166" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "douze", ref: "fr-0219" }
+      - { word: "mois", ref: "fr-1165" }
+    confusables:
+      - { id: "siècle", ref: "fr-1173", kind: "word" }
+      - { id: "trimestre", ref: "fr-1183", kind: "word" }
+  - id: "fr-1193"
+    target: "Le lendemain, je range l'agenda."
+    ipa: "lə lɑ̃dmɛ̃ ʒə ʁɑ̃ʒ laʒɛ̃da"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "lendemain", ref: "fr-1181" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "range", base: "ranger" }
+      - { word: "l'agenda", ref: "fr-1177" }
+    confusables:
+      - { id: "calendrier", ref: "fr-1167", kind: "word" }
+      - { id: "veille", ref: "fr-1182", kind: "word" }
+  - id: "fr-1194"
+    target: "Ce siècle est très rapide."
+    ipa: "sə sjɛkl ɛ tʁɛ ʁapid"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "siècle", ref: "fr-1173" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "très", ref: "fr-0031" }
+      - { word: "rapide", base: "rapide" }
+    confusables:
+      - { id: "année", ref: "fr-1166", kind: "word" }
+      - { id: "trimestre", ref: "fr-1183", kind: "word" }

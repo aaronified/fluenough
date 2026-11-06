@@ -1,0 +1,569 @@
+schema: 1
+id: "fr-en-calendar"
+kind: "layer"
+core: "fr-calendar"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Months and years"
+license: "CC-BY-SA-4.0"
+description: "Thirty-five words for the calendar: the twelve months from janvier to décembre as one set, mois, année, calendrier, the four seasons, siècle, week-end, anniversaire, fête, agenda and the words for days near today, such as avant-hier and lendemain. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1152":
+    native: "January"
+    notes:
+      "n1": "Months are written in small letters in French. Say en janvier for 'in January'."
+    examples:
+      "En janvier, il fait froid.":
+        native: "In January, it is cold."
+        bases:
+          "En": "in"
+          "janvier": "January"
+      "Mon anniversaire est en janvier.":
+        native: "My birthday is in January."
+        bases:
+          "anniversaire": "birthday"
+          "en": "in"
+          "janvier": "January"
+  "fr-1153":
+    native: "February"
+    notes:
+      "n1": "Février is 'February', with an accent on the first e. Like all months, it has no capital letter in French."
+    examples:
+      "Février est un mois court.":
+        native: "February is a short month."
+        bases:
+          "Février": "February"
+          "mois": "month"
+      "Nous avons un examen en février.":
+        native: "We have an exam in February."
+        bases:
+          "examen": "exam"
+          "en": "in"
+          "février": "February"
+  "fr-1154":
+    native: "March"
+    notes:
+      "n1": "Mars is 'March'. The word is the same as the name of the planet, but the month is the usual sense."
+    examples:
+      "Le printemps arrive en mars.":
+        native: "Spring comes in March."
+        bases:
+          "printemps": "spring"
+          "arrive": "comes"
+          "en": "in"
+          "mars": "March"
+      "Mars est le troisième mois.":
+        native: "March is the third month."
+        bases:
+          "Mars": "March"
+          "troisième": "third"
+          "mois": "month"
+  "fr-1155":
+    native: "April"
+    notes:
+      "n1": "Avril is 'April'. Like all months, it is written in small letters."
+    examples:
+      "En avril, il pleut souvent.":
+        native: "In April, it often rains."
+        bases:
+          "En": "in"
+          "avril": "April"
+          "pleut": "rains"
+          "souvent": "often"
+      "Le printemps commence en avril.":
+        native: "Spring starts in April."
+        bases:
+          "printemps": "spring"
+          "en": "in"
+          "avril": "April"
+  "fr-1156":
+    native: "May"
+    notes:
+      "n1": "Mai is 'May'. Au mois de mai means 'in the month of May'."
+    examples:
+      "Mai est un joli mois.":
+        native: "May is a pretty month."
+        bases:
+          "Mai": "May"
+          "joli": "pretty"
+          "mois": "month"
+      "Il fait beau au mois de mai.":
+        native: "The weather is fine in the month of May."
+        bases:
+          "au": "in the"
+          "mois": "month"
+          "de": "of"
+          "mai": "May"
+  "fr-1157":
+    native: "June"
+    notes:
+      "n1": "Juin is 'June'. Like all months, it is written in small letters."
+    examples:
+      "Les vacances commencent en juin.":
+        native: "The holidays start in June."
+        bases:
+          "en": "in"
+          "juin": "June"
+      "Juin est chaud.":
+        native: "June is hot."
+        bases:
+          "Juin": "June"
+  "fr-1158":
+    native: "July"
+    notes:
+      "n1": "Juillet is 'July'. The ll is not pronounced as a separate sound."
+    examples:
+      "Juillet est très chaud.":
+        native: "July is very hot."
+        bases:
+          "Juillet": "July"
+      "Les vacances de juillet sont longues.":
+        native: "The July holidays are long."
+        bases:
+          "de": "of"
+          "juillet": "July"
+  "fr-1159":
+    native: "August"
+    notes:
+      "n1": "Août is 'August'. The t is silent, so the word sounds like 'oo'."
+    examples:
+      "Août est un mois chaud.":
+        native: "August is a hot month."
+        bases:
+          "Août": "August"
+          "mois": "month"
+      "Il fait chaud en août.":
+        native: "It is hot in August."
+        bases:
+          "en": "in"
+          "août": "August"
+  "fr-1160":
+    native: "September"
+    notes:
+      "n1": "Septembre is 'September'. La rentrée is the start of the school or work year, after the summer."
+    examples:
+      "La rentrée est en septembre.":
+        native: "The back-to-school season is in September."
+        bases:
+          "rentrée": "back-to-school season"
+          "en": "in"
+          "septembre": "September"
+      "Septembre est un mois de travail.":
+        native: "September is a month of work."
+        bases:
+          "Septembre": "September"
+          "mois": "month"
+          "de": "of"
+  "fr-1161":
+    native: "October"
+    notes:
+      "n1": "Octobre is 'October'. Say d'octobre, with the elision, for 'of October'."
+    examples:
+      "En octobre, il fait moins froid.":
+        native: "In October, it is less cold."
+        bases:
+          "En": "in"
+          "octobre": "October"
+          "moins": "less"
+      "Le mois d'octobre est court.":
+        native: "The month of October is short."
+        bases:
+          "mois": "month"
+          "d'octobre": "of October"
+  "fr-1162":
+    native: "November"
+    notes:
+      "n1": "Novembre is 'November'. Férié is a public holiday, as the first of November is in France."
+    examples:
+      "Novembre est un mois gris.":
+        native: "November is a grey month."
+        bases:
+          "Novembre": "November"
+          "mois": "month"
+          "gris": "grey"
+      "Le premier novembre est un jour férié.":
+        native: "The first of November is a public holiday."
+        bases:
+          "novembre": "November"
+          "férié": "public holiday"
+  "fr-1163":
+    native: "December"
+    notes:
+      "n1": "Décembre is 'December'. Tomber is 'to fall', and la nuit tombe means 'it gets dark'."
+    examples:
+      "En décembre, la nuit tombe tôt.":
+        native: "In December, it gets dark early."
+        bases:
+          "En": "in"
+          "décembre": "December"
+          "tombe": "falls"
+      "Noël est en décembre.":
+        native: "Christmas is in December."
+        bases:
+          "Noël": "Christmas"
+          "en": "in"
+          "décembre": "December"
+  "fr-1164":
+    native: "the months of the year"
+    explanation: "The twelve months, from janvier (January) to décembre (December). They are written with a small letter in French, and each is a masculine noun."
+  "fr-1165":
+    native: "month"
+    notes:
+      "n1": "Mois is 'month'. Un mois has about four weeks, and a year has douze mois."
+    examples:
+      "Un mois a environ quatre semaines.":
+        native: "A month has about four weeks."
+        bases:
+          "mois": "month"
+          "environ": "about"
+          "quatre": "four"
+      "Le mois prochain, je pars en vacances.":
+        native: "Next month, I am going on holiday."
+        bases:
+          "mois": "month"
+          "pars": "leave"
+          "en": "on"
+  "fr-1166":
+    native: "year"
+    notes:
+      "n1": "Année is 'year'. For 'one year' or a count of years, French also says un an."
+    examples:
+      "Une année a douze mois.":
+        native: "A year has twelve months."
+        bases:
+          "année": "year"
+          "mois": "months"
+      "Cette année, je travaille beaucoup.":
+        native: "This year, I work a lot."
+        bases:
+          "année": "year"
+  "fr-1167":
+    native: "calendar"
+    notes:
+      "n1": "Calendrier is 'calendar', the wall or printed one as well as an app. Agenda is the diary for appointments."
+    examples:
+      "Le calendrier est au mur.":
+        native: "The calendar is on the wall."
+        bases:
+          "calendrier": "calendar"
+          "au": "on the"
+          "mur": "wall"
+      "Je note le rendez-vous dans mon calendrier.":
+        native: "I write the appointment down in my calendar."
+        bases:
+          "note": "write down"
+          "calendrier": "calendar"
+  "fr-1168":
+    native: "season"
+    notes:
+      "n1": "Saison is 'season'. The four seasons are le printemps, l'été, l'automne and l'hiver."
+    examples:
+      "Chaque saison dure trois mois.":
+        native: "Each season lasts three months."
+        bases:
+          "saison": "season"
+          "dure": "lasts"
+          "trois": "three"
+          "mois": "months"
+      "Quelle est ta saison préférée ?":
+        native: "What is your favourite season?"
+        bases:
+          "ta": "your"
+          "saison": "season"
+          "préférée": "favourite"
+  "fr-1169":
+    native: "spring"
+    notes:
+      "n1": "Printemps is 'spring', a masculine noun. Au printemps means 'in spring'."
+    examples:
+      "Au printemps, il fait doux.":
+        native: "In spring, the weather is mild."
+        bases:
+          "Au": "in"
+          "printemps": "spring"
+          "doux": "mild"
+      "Les fleurs sortent au printemps.":
+        native: "The flowers come out in spring."
+        bases:
+          "fleurs": "flowers"
+          "au": "in"
+          "printemps": "spring"
+  "fr-1170":
+    native: "summer"
+    notes:
+      "n1": "Été is 'summer', a masculine noun. En été means 'in summer'."
+    examples:
+      "L'été est chaud et long.":
+        native: "Summer is hot and long."
+        bases:
+          "L'été": "summer"
+      "En été, je mange des fruits.":
+        native: "In summer, I eat fruit."
+        bases:
+          "En": "in"
+          "été": "summer"
+          "fruits": "fruit"
+  "fr-1171":
+    native: "autumn"
+    notes:
+      "n1": "Automne is 'autumn'. En automne means 'in autumn'."
+    examples:
+      "En automne, les feuilles tombent.":
+        native: "In autumn, the leaves fall."
+        bases:
+          "En": "in"
+          "automne": "autumn"
+          "feuilles": "leaves"
+          "tombent": "fall"
+      "L'automne est doux à Paris.":
+        native: "Autumn is mild in Paris."
+        bases:
+          "L'automne": "autumn"
+          "doux": "mild"
+          "à": "in"
+          "Paris": "Paris"
+  "fr-1172":
+    native: "winter"
+    notes:
+      "n1": "Hiver is 'winter', a masculine noun. En hiver means 'in winter'."
+    examples:
+      "En hiver, il fait très froid.":
+        native: "In winter, it is very cold."
+        bases:
+          "En": "in"
+          "hiver": "winter"
+      "Je préfère l'été à l'hiver.":
+        native: "I prefer summer to winter."
+        bases:
+          "préfère": "prefer"
+          "l'été": "summer"
+          "à": "to"
+          "l'hiver": "winter"
+  "fr-1173":
+    native: "century"
+    notes:
+      "n1": "Siècle is 'century', a masculine noun. Le siècle dernier means 'the last century'."
+    examples:
+      "Ce siècle est très rapide.":
+        native: "This century is very fast."
+        bases:
+          "siècle": "century"
+          "rapide": "fast"
+      "Le siècle dernier était calme.":
+        native: "The last century was calm."
+        bases:
+          "siècle": "century"
+  "fr-1174":
+    native: "weekend"
+    notes:
+      "n1": "Week-end is 'weekend', with a hyphen, and a masculine noun. Le week-end means 'at the weekend', as a habit."
+    examples:
+      "Le week-end, je ne travaille pas.":
+        native: "At the weekend, I do not work."
+        bases:
+          "week-end": "weekend"
+          "ne": "(with pas)"
+          "pas": "not"
+      "Le week-end, nous sortons souvent.":
+        native: "At the weekend, we often go out."
+        bases:
+          "week-end": "weekend"
+          "souvent": "often"
+  "fr-1175":
+    native: "birthday"
+    notes:
+      "n1": "Anniversaire is 'birthday', and also 'anniversary'. Bon anniversaire is what you say to someone on their birthday."
+    examples:
+      "Bon anniversaire !":
+        native: "Happy birthday!"
+        bases:
+          "anniversaire": "birthday"
+      "C'est mon anniversaire aujourd'hui.":
+        native: "It is my birthday today."
+        bases:
+          "anniversaire": "birthday"
+          "aujourd'hui": "today"
+  "fr-1176":
+    native: "party, holiday"
+    notes:
+      "n1": "Fête is 'party', 'feast' or 'holiday'. Fêter is 'to celebrate'."
+    examples:
+      "Il y a une fête samedi.":
+        native: "There is a party on Saturday."
+        bases:
+          "y": "there"
+          "fête": "party"
+          "samedi": "Saturday"
+      "C'est la fête de Noël.":
+        native: "It is the Christmas holiday."
+        bases:
+          "fête": "holiday"
+          "de": "of"
+          "Noël": "Christmas"
+  "fr-1177":
+    native: "diary, planner"
+    notes:
+      "n1": "Agenda is the appointment book or diary. It is a masculine noun."
+    examples:
+      "Je note tout dans mon agenda.":
+        native: "I write everything in my diary."
+        bases:
+          "note": "write down"
+          "agenda": "diary"
+      "Mon agenda est plein.":
+        native: "My diary is full."
+        bases:
+          "agenda": "diary"
+          "plein": "full"
+  "fr-1178":
+    native: "yearly"
+    notes:
+      "n1": "Annuel is an adjective: 'yearly' or 'annual'. It is used for a holiday or a meeting that happens once a year."
+    examples:
+      "C'est un rendez-vous annuel.":
+        native: "It is a yearly appointment."
+        bases:
+          "annuel": "yearly"
+      "Le congé annuel est en août.":
+        native: "The annual leave is in August."
+        bases:
+          "congé": "leave, time off"
+          "annuel": "yearly"
+          "en": "in"
+          "août": "August"
+  "fr-1179":
+    native: "the day before yesterday"
+    notes:
+      "n1": "Avant-hier is an adverb. Hier is 'yesterday' and demain is 'tomorrow'."
+    examples:
+      "Avant-hier, il pleuvait.":
+        native: "The day before yesterday, it was raining."
+        bases:
+          "Avant-hier": "the day before yesterday"
+          "pleuvait": "it was raining"
+      "Je suis venu avant-hier.":
+        native: "I came the day before yesterday."
+        bases:
+          "avant-hier": "the day before yesterday"
+  "fr-1180":
+    native: "the day after tomorrow"
+    notes:
+      "n1": "Après-demain is an adverb. It is the day after demain."
+    examples:
+      "Après-demain, c'est mon anniversaire.":
+        native: "The day after tomorrow is my birthday."
+        bases:
+          "Après-demain": "the day after tomorrow"
+          "anniversaire": "birthday"
+      "Je pars après-demain.":
+        native: "I leave the day after tomorrow."
+        bases:
+          "pars": "leave"
+          "après-demain": "the day after tomorrow"
+  "fr-1181":
+    native: "the next day"
+    notes:
+      "n1": "Lendemain is 'the next day'. Le lendemain de means 'the day after' a date or an event."
+    examples:
+      "Le lendemain, il pleut encore.":
+        native: "The next day, it is still raining."
+        bases:
+          "lendemain": "the next day"
+          "pleut": "rains"
+          "encore": "still"
+      "Le lendemain de la fête, je dors.":
+        native: "The day after the party, I sleep."
+        bases:
+          "lendemain": "the next day"
+          "de": "of"
+          "fête": "party"
+          "dors": "sleep"
+  "fr-1182":
+    native: "the day before, the eve"
+    notes:
+      "n1": "Veille is 'the day before' or 'the eve'. La veille de Noël is 'Christmas Eve'."
+    examples:
+      "La veille, je travaille tard.":
+        native: "The day before, I work late."
+        bases:
+          "veille": "the day before"
+          "tard": "late"
+      "La veille de Noël, nous mangeons tôt.":
+        native: "On Christmas Eve, we eat early."
+        bases:
+          "veille": "eve"
+          "de": "of"
+          "Noël": "Christmas"
+  "fr-1183":
+    native: "term, quarter"
+    notes:
+      "n1": "Trimestre is a period of three months, such as a school term. Le troisième trimestre is 'the third term'."
+    examples:
+      "Le trimestre finit en décembre.":
+        native: "The term ends in December."
+        bases:
+          "trimestre": "term"
+          "finit": "ends"
+          "en": "in"
+          "décembre": "December"
+      "C'est le troisième trimestre de l'année.":
+        native: "It is the third quarter of the year."
+        bases:
+          "troisième": "third"
+          "trimestre": "quarter"
+          "de": "of"
+          "l'année": "the year"
+  "fr-1184":
+    native: "Christmas"
+    notes:
+      "n1": "Noël is 'Christmas', written with a capital letter. It is used without an article, as in À Noël."
+    examples:
+      "Nous fêtons Noël avec les amis.":
+        native: "We celebrate Christmas with friends."
+        bases:
+          "fêtons": "celebrate"
+          "Noël": "Christmas"
+      "À Noël, il neige souvent.":
+        native: "At Christmas, it often snows."
+        bases:
+          "À": "At"
+          "Noël": "Christmas"
+          "neige": "snows"
+          "souvent": "often"
+  "fr-1185":
+    native: "about a fortnight"
+    notes:
+      "n1": "Quinzaine means about fifteen days, or two weeks. Une quinzaine de jours is 'about two weeks'."
+    examples:
+      "Je pars dans une quinzaine de jours.":
+        native: "I leave in about two weeks."
+        bases:
+          "pars": "leave"
+          "dans": "in"
+          "une": "a"
+          "quinzaine": "about two weeks"
+          "de": "of"
+      "Le contrat dure une quinzaine.":
+        native: "The contract lasts about two weeks."
+        bases:
+          "contrat": "contract"
+          "dure": "lasts"
+          "quinzaine": "about two weeks"
+  "fr-1186":
+    native: "start, beginning"
+    notes:
+      "n1": "Début is 'start' or 'beginning'. Au début means 'at first'."
+    examples:
+      "Le début de l'année est en janvier.":
+        native: "The start of the year is in January."
+        bases:
+          "début": "start"
+          "de": "of"
+          "l'année": "the year"
+          "en": "in"
+          "janvier": "January"
+      "Au début, il fait froid.":
+        native: "At first, it is cold."
+        bases:
+          "Au": "at"
+          "début": "first"
