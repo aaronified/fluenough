@@ -180,3 +180,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-3007 | services | Is あずけいれ (a deposit into a bank account) the natural word, or should the bank's own term stand? | Haiku builder | 2026-11-06 |
 | ja-3063 | government | Is せいど (a system) the natural word here, or should せいど's sense be carried by きまり? | Haiku builder | 2026-11-06 |
 | ja-3124 | technology | Is でんし (electronic) right as a card on its own, or should only the compounds stand? | Haiku builder | 2026-11-06 |
+| ja-3175 | careers | Is しゅふ (a married woman who runs the home) the natural word, or should the phrase 主婦 be glossed as homemaker? | Haiku builder | 2026-11-06 |

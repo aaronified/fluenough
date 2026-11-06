@@ -662,7 +662,8 @@ units:
       - { id: "my-hobby-is", text: { "en": "Saying that your hobby is reading, and that you like walking" } }
     reading_passages:
       - { id: "hobby-essay", text: { "en": "A short essay about a hobby" } }
-  - planned: { id: "ja-careers", theme: "careers", words: 50 }
+  - decks: ["ja-careers", "ja-careers-sentences", "ja-reading-careers", "*"]
+    words: 50
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
