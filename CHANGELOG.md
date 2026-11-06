@@ -17,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Decks, new and corrected, now reach apps only through this release: until you update, the app keeps the decks it already has. Nothing changes in what you see or in your progress.
 - **The web app speaks and listens, and draws nothing a browser cannot do.** Saying a word uses the browser's speech recogniser where it has one (Chrome, Edge, Safari) and says so where it has not (Firefox); a browser listens online only, so it asks first, in Find my level and placement too, and declining leaves Say not tested. Settings no longer shows Reminders or Updates in a browser, reports open your mail app, and the microphone words name the browser, not the phone.
 - **Find my level asks how well you know the language, then checks you.** It first asks "How well do you know the language?" with only the answers the course supports (Expert, Advanced, Amateur, Beginner; a course with only A1 written offers Beginner and Amateur, and a course below A1 offers no check). Back cancels it and writes nothing; Beginner starts from the beginning with nothing asked. The questions come from the course's own decks and run as long as they need, with a pause every 25 questions where you see where you stand and choose Keep going or Stop here; leaving part-way keeps the run for 7 days. At the end each skill is credited up to the level it was placed at, and a course written to B1 can mark a skill Verified. A skill marked Know is verified first ("Verify what you know"), then "Fit my level" checks the rest; a check never changes a skill's Leave, Know or Learn.
 - **Find my level shows how sure it is.** The result lists each skill with where you start in plain words, a name (Not sure yet, Fairly sure, Sure, Very sure, Verified), a calm note when it is low, and the percentage one tap away; a skill that could not be tested says why. The Languages sheet shows the same names under the skill rows once a level check has been done (placement plan step 5).
@@ -46,6 +47,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - **The web app keeps its decks and script fonts across reloads.** Downloaded decks and the Indic and Naskh fonts are now saved in the browser's own storage (IndexedDB), so a reload opens with them, with or without a connection, instead of downloading them again. The app checks the index at most once a day, as on the phone, and downloads only the files whose hash changed. A browser that denies or fills its storage (a private window) keeps them in memory for the visit, as before; what is stored is versioned, checked against the index's hashes, and bounded at 64 MB, oldest first (#1012).
 - **The How you learn popover is flat and full width, and the old Adjusted to you card is gone from Today.** The popover opened by the info dot above the skill tiles is titled with the language ("How you learn Telugu") and lays each skill out as a plain section across the whole width, with thin dividers instead of cards. The "Adjusted to you" card at the top of Today is removed; each skill's arrow stays, and the full page is still reached from Settings and Progress.
 
@@ -60,6 +62,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - **Keep going serves the closest-to-due cards and new words, and says so when there is nothing worth doing.** After the day's minutes are done it reviews cards due soon (never more than two days early, nor while still too fresh to be worth it, by your own fitted memory) and teaches new words within the day's 15 plus 5 for the stretch (fewer while reviews pile up, none while catching up), reviews first while a backlog waits. When neither is worth doing, the summary says "All caught up" instead of offering Keep going (#1010).
 
 ## [0.8.2] - 2026-11-04
@@ -70,6 +73,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - **Learn and Relearn use the shared screen.** The card-by-card walk now has the same header, skill pill and single card as every review screen, with the swipe and the chevrons going on and back (#509).
 - **One look for every question.** Teach cards, sets, every review question, the reading passages and the level check now share one screen: the same header, a pill in the skill's colour ("New word · Recognition"), one card, and one place for the buttons. The drills and the level check have no Continue button any more (Continue stays on the setup screens): swipe, or tap the arrow on the edge, to go on, and swipe back in a review to look at an earlier card, which you can see but not change. A wrong choice or picture shows the right answer and the one you chose; a wrong word order shows the right order and yours. The Say result shows what the phone heard (in script, with its reading or IPA) and a Your recording row that replays your own voice, or records the word again where the phone cannot keep the audio of your answer (#509).
 - `tools/validate_decks.py` is much faster, about 30 to 40 times on the whole of `decks/`, and prints exactly what it printed: each YAML file is read once, by libyaml where PyYAML has it, and the files are checked by several worker processes (`--jobs N`; `--jobs 1` is one process).
@@ -83,6 +87,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - **Placement uses sentences, not writing.** The level check's closing questions are now the review's tile question for a deck of sentences or phrases, a word is written only when it is a single word with one valid spelling, and any other deck is a choice; the whole check, its result and its feedback with Continue now run in the same screen as the daily review, and it no longer asks whether you know the language, whether you read a script, which language to learn from or whether to learn the alphabet, which your skills already say (owner, 2026-11-02: "There should be no write questions unless the answer is very specific. Use sentence formation questions." and "Language choice itself is now unified. Use the new paradigm.").
 - **Japanese cards can be written in kanji.** From the first kanji unit on, a card's target is in kanji with its kana reading shown under it, as Chinese shows pinyin; example sentences get a kana line too; kana-only learners see kana, and earlier cards are unchanged. The deck checker now requires a kana reading on every kanji target and example and refuses a reading with a kanji in it; no Japanese decks use it yet (owner, 2026-11-02, ADR-0053).
 - **Language rows show the skill icons and script letters.** On the Languages page a Learn chip shows its skills' icons beside the cap, and each script chip starts with the first letter of the script's sample word, so a language in two scripts shows two chips told apart; the skills sheet is unchanged (owner, 2026-11-02).
@@ -112,6 +117,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - **Plain toasts.** Changing a skill on Languages now says what it means ("Hindustani: you’re learning speaking and listening", "you already know reading and writing Devanagari", "not learning sign language now") instead of the level names Know, Learn and Leave; removing a language, finding your level, copying the reviewer code, marking a unit done and a word with no sound symbols are in plain words too, as are the lines beside them on Languages (owner, 2026-11-01: "make the toasts sound natural, do not depend on our invented skill names. People do not know what those are").
 
 ## [0.7.1] - 2026-11-01
@@ -126,6 +132,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - **One pill for speaking, one for each script.** On Languages, Speak and Hear are now one Spoken pill that cycles Leave, Learn, Hear, Hear and Speak, and a script's Read and Write are one pill that cycles Leave, Learn, Read, Read and Write. The two Know levels are marked with a tick and the extra skill's icon (microphone or keyboard). Stored skills, backups and Today's tiles are unchanged.
 - **Cards swipe, and IPA sits behind a dot.** A situation sheet's cards (the info mark on a sheet's card) now swipe from one to the next, with the numbered chips showing where you are; the Previous and Next chevron buttons are gone. Wherever a card shows its IPA (the word sheet, the teach card and the recognition, choice and picture drills), a small info dot beside it opens the sounds of the IPA with their examples and Practise, instead of listing them under the card.
 - **Compact skill pills, fixed English, Latin known.** On Languages, each language's skill chips are as wide as their icons and share a line, instead of one full-width bar each; Know is a little darker so it differs from Learn; English is always Know with the double tick and cannot be changed; and the Latin script's Read and Write are Know in every language written in it (a saved Learn of it becomes Know once). The second Review switch under Your languages is gone: the fit-your-level lines show for a learner signed up as a reviewer, under Review decks.
@@ -154,6 +161,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Deck and unit pages learn by a card-by-card walkthrough (#694, ADR-0024): Learn, or Relearn once every card is taught, walks every card on the teach card in place of the drilled lesson, taught or not (the deck page's cards in view; the unit page's every deck in order, each card showing its deck), and a sentence still waiting is walked and logged too. The unit page's Continue bar is now this one control, with "N new · M due" under it. The first view of an untaught card appends one review-log row (graded 0, in recognition, `asked: teach`) so FSRS starts it at the lowest window; a repeat view writes nothing, and accuracy, lapses, the FSRS fit, study hours and streaks skip the row. Today's lesson is unchanged.
 - Validator: an English card meaning with a sentence break and no `;` is an error, since the typed-meaning grader accepts alternatives only across `;` (#924). Four cards whose sentences must all be said are listed in `MEANING_ALL_REQUIRED`.
 - English is known by default, in Speak, Hear, Read and Write, for every learner, and the Latin script is known for everyone (#926): an existing install gets it at the next app open, a new one after setup; a choice made on the Languages page is kept. Learn stays Learn, so the diacritics of Spanish or French are still taught.
@@ -182,6 +190,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Opening the app is faster after the first launch: the decks' YAML is kept as one compact JSON file and read again only for a deck file that changed, so a cold start no longer parses every downloaded deck's YAML (#875, ADR-0048). Nothing a learner sees changes but the wait.
 - Corners are consistent across the app: one radius scale (4, 8, 12, 16, 24, 32, 40 and a stadium for shapes that follow their size) with a token for each role, every hand-written radius in the interface is now a token, and the theme's buttons, chips, text fields, dialogs, bottom sheets, snack bars, cards and list tiles take their shape from the same tokens (#878). Corners move by 2 to 4 px at most.
 
@@ -197,6 +206,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - The teach card is redrawn like the review's answer screen: a New word or New phrase pill beside the deck name, one card as tall as its content with the word, its speaker and IPA on one row, the meaning with a dictionary icon and part of speech, the picture, every note in full, up to three examples and a short table of forms, scrolling when it is long. Review's answer page shows Again, Hard, Good and Easy in one row at every text size, and a swipe on the card (or the chevron) records Good.
 
 ### Added
@@ -220,6 +230,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Layout follow-ups from the 1.4x screenshot review: the script guide puts a letter tile above its text at large text; each source on Sources is its own line; the onboarding languages list has a divider above its button; the speaking test buttons are two equal halves; trailing controls in Settings rows share one right edge; Today's skill tile names share a baseline; the mastery star keeps 16 px above and below instead of about 60.
 - Progress is redrawn: two count tiles on top (words and rules) with an icon and a bar, the level tile filled before A1, icons on the hours tiles, a check when there are no leeches, and a larger mastery star whose skill names are each always in their own colour, the same in light and dark and on every theme.
 - All tags is two lines and a thin bar a row, with a round play button inline, "Nothing taught yet" for a tag with no taught word, and a sort menu (weakest first, A to Z, most words).
@@ -242,6 +253,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Decks may carry a narrow IPA form for a word, with its source (`phonetic` and `phonetic_source`, from Wiktionary or from rules). The app reads them and does not show them yet; the decks will use them from the release after this one.
 - A release's notes, which "What's new" shows, are now this changelog's section for that version and nothing else: GitHub's list of merged pull requests, which named every deck pull request, is no longer added.
 
@@ -249,6 +261,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - A language's sheet names the scripts being learnt in one line, such as "Devanagari (1/2)", above the Change scripts button, and no longer has a button for each script (#859).
 
 
@@ -286,6 +299,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Today's skill tiles are thinner, three to a row, each showing only the skill's icon, an arrow up or down when its pace is adjusted, and the number due, with the skill's name in small type under them; the words "More reviews" and "Fewer reviews" are gone, the arrow keeping them for a screen reader. A new Script tile, in a course with script decks, holds script reading and writing together (the script decks' Recognition and Write), and tapping it drills those; they no longer count in Recognition's and Write's tiles or pace.
 
 - Japanese's Chinese-character script is named "Kanji", and Mandarin's two are "Simplified Hanzi" and "Traditional Hanzi", wherever the app and the README name a script; they were "Han", "Simplified Han" and "Traditional Han". Only the names shown change, never the script codes.
@@ -309,6 +323,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - A grammar pattern's `prompt` is optional and retired: without one, the app asks a cell as the lemma, its meaning and the slot, "hablar (to speak) — nosotros", and a deck that gives one is read as written; the deck validator accepts a pattern or a layer without one and warns of one given. Shipped decks keep theirs until the apps that require it are out of use (#522, ADR-0039).
 - A word or rule is known as Progress counts known, in the unit page and the unlock gate too: your last review in each skill was right and the app gave you at least 85% recall then, in place of 9 of your last 10 answers right; a word reviewed once is not known yet (#416).
 - Progress shows three tiles, Words, Rules and Sentences, in place of the Words tile, counted against what is taught so far with words counted by base word; the Level tile sits alone below them. The end of a lesson says how many words and rules it made known and how many sentences it opened (#418).
@@ -347,6 +362,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Progress: Weakest tags and All tags rank by what you know now, not by the share of right answers all time: a tag's weakness is the share of its taught words and forms that are not known now (the star's rule), ties going to the lower recall now, then the name; the bars show the share known. The Over time page ends with a How you learn entry that opens that page (#678).
 - The language bar is a centred, looping wheel with the selection fixed at the centre (All moves to the left on Progress): it follows the finger 1:1, ticks at each language, coasts to a detent on a fling and settles on a spring, a touch stops it, and the pill then grows over 0.3 s to the language's name (#703, #682).
 - The four tabs slide: the pages follow the finger and settle on a tab with a spring (stiffness 400, damping ratio 0.75, no bounce on a slow release), a tap on the bar slides in 0.3 s, a touch catches the pages mid-way, and the pages rubber-band at Today and Settings (#683).
@@ -377,6 +393,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - A sideways swipe on Home, Decks, Progress or Settings moves to the next or previous tab, stopping at the ends (#683). An upright drag still scrolls the page, and the language bar keeps its own swipe.
 - The language bar scrolls with momentum (#682): a drag or fling across its width passes at least five languages, each highlighted with a light tick as it goes by, and it settles on the nearest one, switching the screen once, at the end. A short flick still moves one, and it stops at the ends.
 - Find my level is shorter and checks each script (#481). It asks "Do you read Devanagari?" for each of a course's scripts, saying so when you read it through a language you know; No starts its script decks from the first letters with no questions, and Yes asks up to five questions, from a letter to a word read aloud, with one more try at each. Then it walks the word decks one question each, skipping ahead and jumping to the end while you know them, says where you start and why, and lets you try again from there.
@@ -404,6 +421,7 @@ The app's database moves to version 9: each answer now records the script it was
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Hindustani's Perso-Arabic script is drawn in Nastaliq (#646).
 - Meaning answers are graded by rule (#654): case, punctuation, contractions, text in brackets, a leading "to", "please", and ok, okay or o.k. no longer make a right answer wrong, and any one of a card's meanings is accepted.
 - A long drag or a hard fling on the language bar passes several languages (#647).
@@ -423,6 +441,7 @@ The app's database moves to version 9: each answer now records the script it was
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Hindi and Urdu are one course, Hindustani (#623): the `hi` course and its card ids stay, and it is named Hindustani wherever the app shows a language. Languages I know offers its two scripts, Devanagari and Perso-Arabic, as it does for Punjabi; knowing Hindustani never hides it from Languages I'm learning, so you can learn it for a script you don't read.
 - Languages I know asks about a language's script in that language's own script, with the English under it, for every language that has the sentences, checked by a speaker or not (#621). Those not yet checked have a bug icon to report a mistake.
 
@@ -447,6 +466,7 @@ The app's database moves to version 8 (a log of restores). A backup made by 0.5.
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Every course's path is rebuilt (#562): a phrasebook, the first words, the script after the first units, a core of about 200 common words, then rules, then sentences.
 - Scripts have their own names (#551, #559): Eastern Nagari, not "Bengali script", and a language can have several. Languages I know asks whether you read a script in that script (#552, #563) and names the language it is about (#553, #560); Languages I'm learning has a switch to learn each language's script, by its name (#555, #561). A script you read for one language counts for every language written in it, and a short test skips the script lessons (#554).
 - The language bar's selection follows your swipe, with rounded glyphs and a one-line label (#550).
@@ -472,6 +492,7 @@ The decks on GitHub are now split further, their script guides and sounds files 
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Activities that are always asked have no switch any more: Seen words, Grammar, Matching pairs, Choosing answers and Phonemic contrasts. A learner who had switched any of them off finds it on again. The Sound switch is gone. The phone's volume mutes the app, and Heard words off skips listening; a learner who had Sound off finds Heard words off.
 - Review is offered for a course only when you speak both its language and the language it is taught from (#525).
 - A deck's page, a unit's page and Inspect have no language switcher, as each belongs to one deck (#526).
@@ -527,6 +548,7 @@ The decks on GitHub are now split further, their script guides and sounds files 
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - A change reviewers propose to a deck no longer offers learners a deck update, as they never see proposals: `decks/index.json` gives each file a `content_sha256`, its hash with the proposals left out, and the phone, which keeps it beside each file, asks only when that changes. Files whose proposals alone changed come along with the next real update. With Review decks on, a proposal is an update, as before. Every file is still checked against its size and SHA-256 (#444).
 - The app no longer bundles the language folders, only the theme list and the spoken languages. Updating from an earlier version downloads the languages you learn before the app opens; your progress is kept. Tests read the repository's `decks/` through its index (#271, ADR-0037).
 - The app goes online to download decks too, and once a day to look for deck updates unless you turn that off. Like the update check, this tells GitHub the phone's IP address and which files it asked for, and nothing else. The welcome screen and the Settings footer now say the app works offline once its decks are downloaded (#272).
@@ -549,6 +571,7 @@ The decks on GitHub are now split further, their script guides and sounds files 
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - In Settings, "Languages I speak" moves up to the top of the Learning section, above "Languages I’m learning", from Look and language (#195).
 - Settings now calls the minimal-pairs switch Phonemic contrasts, and says what it lets you practise: the sounds the languages you speak don't have. It is still marked as incoming, and the skill is still Minimal pairs on decks and cards (#196).
 - Where the decks' texts come from has a page of its own: Settings shows one Sources row that opens it, in place of the whole list, so Settings is less crowded. With no sources to show, there is no row (#197).
@@ -570,6 +593,7 @@ The decks on GitHub are now split further, their script guides and sounds files 
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - While you type an answer in a language's own script, the "No keyboard? Try HeliBoard." line hides too, giving the card more room; it comes back when the keyboard closes (#185).
 
 
@@ -589,6 +613,7 @@ The decks on GitHub are now split further, their script guides and sounds files 
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Readings now use the letters of ISO 15919, written as the word is said, so words that differ only by a long vowel or a curled-back consonant read differently: పాలు, milk, is *pālu* and పలు, many, is *palu*. The README has the table. Typed answers don't need the marks: *palu*, *paalu* and *pālu* are all right (#180).
 - While you type an answer, the Script / Latin letters switch hides and the card gets smaller, so it stays in view above the keyboard (#178).
 - Today no longer lists your decks; the Decks tab does (#183).
@@ -621,6 +646,7 @@ The decks on GitHub are now split further, their script guides and sounds files 
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Every course now opens with a few words and basic sentences, then the sounds English lacks and how the grammar differs, then five more themes; the script comes after those six themes. Until you reach it, typed answers start in Latin letters and count in full; after it, a right answer in Latin letters counts as a hard recall (#168).
 - New words come only in lessons. Start review is your due reviews and the other skills of words you have been taught, and the new-cards-per-day setting is gone. A deck with nothing due offers a lesson of its words (#174).
 - Every reading now follows one scheme per language, the way it is typed in chat: lowercase, with no length or retroflex marks, spelled as said (`pani`, not `paanii`). Hindi writes ड़ as `r` (`larka`) (#164).
@@ -651,6 +677,7 @@ The decks on GitHub are now split further, their script guides and sounds files 
 
 ### Changed
 
+- **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - A word's id now names only its language, not the deck or course it's taught in, so the same word taught in two decks shares one schedule; progress recorded by 0.1.0 does not carry over to 0.2.0 (#145).
 
 

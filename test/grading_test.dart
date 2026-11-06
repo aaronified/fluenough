@@ -828,7 +828,7 @@ void main() {
         Future<DrillSession> nanna(FixedSpeechEngine engine) async {
           speech = engine;
           state = AppState.test(
-            decks: RepositoryDeckSource('test/fixtures/ask_pin'),
+            decks: RepositoryDeckSource('test/fixtures/sample-decks'),
             speech: engine,
             settings: SettingsNotifier(
               spokenLanguages: const <String>['en'],

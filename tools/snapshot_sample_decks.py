@@ -1,18 +1,19 @@
 #!/usr/bin/env python3
-"""Refresh the frozen deck copy that test/core/scheduling/ask_pin_test.dart reads.
+"""Refresh the SAMPLE DECK, the frozen deck set the app's tests read (owner, 2026-11-06).
 
 Usage:
-    python3 tools/snapshot_ask_pin.py
+    python3 tools/snapshot_sample_decks.py
 
 Copies the shipped files of a few whole languages from decks/ into
-test/fixtures/ask_pin/decks/, with an index of their own, so that the pin
+test/fixtures/sample-decks/decks/, with an index of their own, so that the pin
 fails only when code changes how asks are chosen, never when a deck changes
 (#522). Run it, then regenerate the golden, only for an intended change to
 the pin; never as part of a deck pull request. See the test's header.
 
-Two tests read the copy: ask_pin_test.dart and, for the Telugu path's unit
-numbers, test/features/decks/decks_page_test.dart (#567). A refresh moves
-those numbers: update them in the same change.
+The tests that read it: grading_test, ipa_switch_everywhere_test,
+progress_decks_test and sample_decks_test. A refresh may move numbers they
+assert: update them in the same change. The decks-live branch's CI checks that
+its real decks speak the sample's format (tools/check_sample_contract.py).
 
 Needs only Python 3.11+, like the other deck tools. The fixture is not a
 shipped deck: the validator and deck_index.py read decks/ only.
@@ -21,13 +22,16 @@ shipped deck: the validator and deck_index.py read decks/ only.
 from __future__ import annotations
 
 import json
+import os
 import shutil
 import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
-SOURCE = ROOT / "decks"
-TARGET = ROOT / "test" / "fixtures" / "ask_pin" / "decks"
+# The real decks: the decks-live branch, checked out beside, or this checkout's
+# own decks/ (main's frozen copy) when FLUENOUGH_DECKS_SOURCE is not set.
+SOURCE = Path(os.environ.get("FLUENOUGH_DECKS_SOURCE", ROOT / "decks")).resolve()
+TARGET = ROOT / "test" / "fixtures" / "sample-decks" / "decks"
 
 # Whole languages, because a deck's cards refer to its path and its siblings.
 # te: every card shape, rules cells, numbers, a script guide, layers.
@@ -51,7 +55,7 @@ def main() -> int:
     for path in paths:
         to = TARGET.parent / path
         to.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copyfile(ROOT / path, to)
+        shutil.copyfile(SOURCE.parent / path, to)
     (TARGET / "index.json").write_text(
         json.dumps(index, ensure_ascii=False, indent=1, sort_keys=True) + "\n",
         encoding="utf-8",

@@ -6,7 +6,7 @@ name: Roadmap
 # only when the page changed, and only that file, so it does not trigger
 # itself: the push filter below leaves wiki/Roadmap.md out.
 #
-# Pushing to protected main uses the same token as deck-index.yml: WIKI_TOKEN
+# Pushing to protected main uses the same token as deck-index.yml: ADMIN_TOKEN
 # (allowed to bypass main's pull-request rule), else GITHUB_TOKEN.
 
 on:
@@ -42,7 +42,7 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: main
-          token: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.ADMIN_TOKEN || secrets.GITHUB_TOKEN }}
       - uses: actions/setup-python@v7
         with:
           python-version: "3.12"

@@ -973,15 +973,15 @@ void main() {
       return (fetched, client);
     }
 
-    test('downloads a file from main, and says why when GitHub limits it, '
-        'the file is gone, or there is no network', () async {
+    test('downloads a file from decks-live, and says why when it fails: '
+        'GitHub limits it, the file is gone, or there is no network', () async {
       final (fetched, client) = await fetch(
         () async => (200, utf8.encode('kind: path\n')),
       );
       expect(utf8.decode(fetched.bytes!), 'kind: path\n');
       expect(
         client.asked.toString(),
-        'https://raw.githubusercontent.com/aaronified/fluenough/main/'
+        'https://raw.githubusercontent.com/aaronified/fluenough/decks-live/'
         'decks/hi/hi-path.yaml',
       );
       expect(client.sent[HttpHeaders.userAgentHeader], 'fluenough/test');
