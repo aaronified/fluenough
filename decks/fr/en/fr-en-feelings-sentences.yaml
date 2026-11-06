@@ -1,0 +1,59 @@
+schema: 1
+id: "fr-en-feelings-sentences"
+kind: "layer"
+core: "fr-feelings-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: feelings"
+license: "CC-BY-SA-4.0"
+description: "Sentences about feelings, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1798":
+    native: "I am sad, but I laugh with my friends."
+    confusables:
+      "joie": { why: "Joy is the opposite of sadness; the sentence has both." }
+      "colere": { why: "Anger is not a feeling named in the sentence." }
+  "fr-1799":
+    native: "She is afraid and she cries."
+    confusables:
+      "craindre": { why: "Craindre is the verb; the sentence uses the noun phrase avoir peur." }
+      "detester": { why: "To hate is not the feeling in the sentence." }
+  "fr-1800":
+    native: "He is embarrassed, he is ashamed of his mistake."
+    bases:
+      "de": "of, from, some"
+      "erreur": "mistake"
+    confusables:
+      "fier": { why: "Proud is the opposite feeling to shame." }
+      "etonne": { why: "Astonished is a surprise, not shame." }
+  "fr-1801":
+    native: "We are proud of our son."
+    bases:
+      "de": "of, from, some"
+    confusables:
+      "honte": { why: "Shame is the opposite of pride." }
+      "espoir": { why: "Hope is not named in this sentence." }
+  "fr-1802":
+    native: "I am worried, I have a big worry."
+    confusables:
+      "soulagement": { why: "Relief is the end of a worry, not its start." }
+      "angoisse": { why: "Anguish is much stronger than the worry in this sentence." }
+  "fr-1803":
+    native: "After the exam, he feels a great relief."
+    confusables:
+      "deception": { why: "Disappointment is the opposite of relief." }
+      "stress": { why: "Stress comes before the relief in the sentence." }
+  "fr-1804":
+    native: "Her sadness comes from her disappointment."
+    bases:
+      "de": "of, from, some"
+    confusables:
+      "bonheur": { why: "Happiness is the opposite of sadness." }
+      "larme": { why: "Tears are not named in the sentence." }
+  "fr-1805":
+    native: "He smiles, he trusts us."
+    bases:
+      "en": "in, by, as"
+    confusables:
+      "jalousie": { why: "Jealousy is the opposite of trust." }
+      "amour": { why: "Love is not named in the sentence." }

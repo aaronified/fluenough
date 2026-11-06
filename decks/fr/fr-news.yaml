@@ -1,0 +1,484 @@
+schema: 1
+id: "fr-news"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "news"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1809"
+    target: "actualité"
+    ipa: "aktɥalite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je regarde les actualités le soir.", ipa: "ʒə ʁəɡaʁd lez aktɥalite lə swaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", ref: "fr-0293" }, { word: "les", ref: "fr-0543" }, { word: "actualités", base: "actualité" }, { word: "le", ref: "fr-0543" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "L'actualité est très chargée.", ipa: "laktɥalite ɛ tʁɛ ʃaʁʒe", bases: [{ word: "L'actualité", base: "actualité" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "chargée", base: "chargé" }] }
+  - id: "fr-1810"
+    target: "titre"
+    ipa: "titʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le titre est en grosses lettres.", ipa: "lə titʁ ɛ ɑ̃ ɡʁos lɛtʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "titre", base: "titre" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "grosses", base: "gros" }, { word: "lettres", base: "lettre" }] }
+      - { target: "Je lis le titre et j'arrête là.", ipa: "ʒə li lə titʁ e ʒaʁɛt la", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "le", ref: "fr-0543" }, { word: "titre", base: "titre" }, { word: "et", ref: "fr-0027" }, { word: "j'arrête", base: "arrêter" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-1811"
+    target: "journaliste"
+    ipa: "ʒuʁnalist"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le journaliste pose une question.", ipa: "lə ʒuʁnalist poz yn kɛstjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "journaliste", base: "journaliste" }, { word: "pose", ref: "fr-1613" }, { word: "une", ref: "fr-0545" }, { word: "question", ref: "fr-1593" }] }
+      - { target: "Ma cousine est journaliste.", ipa: "ma kuzin ɛ ʒuʁnalist", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "cousine", ref: "fr-0179" }, { word: "est", ref: "fr-0021" }, { word: "journaliste", base: "journaliste" }] }
+  - id: "fr-1812"
+    target: "reportage"
+    ipa: "ʁəpɔʁtaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le reportage dure vingt minutes.", ipa: "lə ʁəpɔʁtaʒ dyʁ vɛ̃t minyt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "reportage", base: "reportage" }, { word: "dure", ref: "fr-1131" }, { word: "vingt", ref: "fr-0227" }, { word: "minutes", ref: "fr-1031" }] }
+      - { target: "Un reportage sur le climat passe ce soir.", ipa: "œ̃ ʁəpɔʁtaʒ syʁ lə klima pas sə swaʁ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "reportage", base: "reportage" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "climat", base: "climat" }, { word: "passe", ref: "fr-0519" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1813"
+    target: "émission"
+    ipa: "emisjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette émission parle de la politique.", ipa: "sɛt emisjɔ̃ paʁl də la pɔlitik", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "émission", base: "émission" }, { word: "parle", ref: "fr-0023" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "politique", base: "politique" }] }
+      - { target: "J'écoute une émission à la radio.", ipa: "ʒekut yn emisjɔ̃ a la ʁadjo", bases: [{ word: "J'écoute", ref: "fr-0292" }, { word: "une", ref: "fr-0545" }, { word: "émission", base: "émission" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "radio", ref: "fr-1815" }] }
+  - id: "fr-1814"
+    target: "chaîne"
+    ipa: "ʃɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle chaîne regardez-vous ?", ipa: "kɛl ʃɛn ʁəɡaʁdevu", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "chaîne", base: "chaîne" }, { word: "regardez", ref: "fr-0293" }, { word: "vous", ref: "fr-0096" }] }
+      - { target: "Cette chaîne diffuse les informations.", ipa: "sɛt ʃɛn difyz lez ɛ̃fɔʁmasjɔ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "chaîne", base: "chaîne" }, { word: "diffuse", ref: "fr-1833" }, { word: "les", ref: "fr-0543" }, { word: "informations", ref: "fr-1081" }] }
+  - id: "fr-1815"
+    target: "radio"
+    ipa: "ʁadjo"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La radio joue de la musique.", ipa: "la ʁadjo ʒu də la myzik", bases: [{ word: "La", ref: "fr-0544" }, { word: "radio", base: "radio" }, { word: "joue", ref: "fr-0048" }, { word: "de", base: "de" }, { word: "musique", ref: "fr-0266" }] }
+      - { target: "J'écoute la radio dans la voiture.", ipa: "ʒekut la ʁadjo dɑ̃ la vwatyʁ", bases: [{ word: "J'écoute", ref: "fr-0292" }, { word: "la", ref: "fr-0544" }, { word: "radio", base: "radio" }, { word: "dans", ref: "fr-0049" }, { word: "voiture", ref: "fr-0859" }] }
+  - id: "fr-1816"
+    target: "présentateur"
+    ipa: "pʁezɑ̃tatœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le présentateur lit les nouvelles.", ipa: "lə pʁezɑ̃tatœʁ li le nuvɛl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "présentateur", base: "présentateur" }, { word: "lit", ref: "fr-0290" }, { word: "les", ref: "fr-0543" }, { word: "nouvelles", base: "nouvelle" }] }
+      - { target: "Le présentateur parle lentement.", ipa: "lə pʁezɑ̃tatœʁ paʁl lɑ̃tmɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "présentateur", base: "présentateur" }, { word: "parle", ref: "fr-0023" }, { word: "lentement", ref: "fr-0339" }] }
+  - id: "fr-1817"
+    target: "média"
+    ipa: "medja"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les médias parlent de la crise.", ipa: "le medja paʁl də la kʁiz", bases: [{ word: "Les", ref: "fr-0543" }, { word: "médias", base: "média" }, { word: "parlent", ref: "fr-0023" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "crise", ref: "fr-1823" }] }
+      - { target: "Il travaille dans les médias.", ipa: "il tʁavaj dɑ̃ le medja", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", ref: "fr-0252" }, { word: "dans", ref: "fr-0049" }, { word: "les", ref: "fr-0543" }, { word: "médias", base: "média" }] }
+  - id: "fr-1818"
+    target: "sujet"
+    ipa: "syʒɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un sujet important.", ipa: "sɛ œ̃ syʒɛ ɛ̃pɔʁtɑ̃", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "sujet", base: "sujet" }, { word: "important", ref: "fr-0443" }] }
+      - { target: "Le sujet du reportage est la pollution.", ipa: "lə syʒɛ dy ʁəpɔʁtaʒ ɛ la pɔlysjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sujet", base: "sujet" }, { word: "du", base: "de" }, { word: "reportage", ref: "fr-1812" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "pollution", base: "pollution" }] }
+  - id: "fr-1819"
+    target: "enquête"
+    ipa: "ɑ̃kɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La police fait une enquête.", ipa: "la pɔlis fɛ yn ɑ̃kɛt", bases: [{ word: "La", ref: "fr-0544" }, { word: "police", ref: "fr-1067" }, { word: "fait", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "enquête", base: "enquête" }] }
+      - { target: "Cette enquête montre un problème.", ipa: "sɛt ɑ̃kɛt mɔ̃tʁ œ̃ pʁɔblɛm", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "enquête", base: "enquête" }, { word: "montre", base: "montrer" }, { word: "un", ref: "fr-0208" }, { word: "problème", ref: "fr-0684" }] }
+  - id: "fr-1820"
+    target: "témoin"
+    ipa: "temwɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un témoin a tout vu.", ipa: "œ̃ temwɛ̃ a tu vy", bases: [{ word: "Un", ref: "fr-0208" }, { word: "témoin", base: "témoin" }, { word: "a", ref: "fr-0022" }, { word: "tout", ref: "fr-0372" }, { word: "vu", ref: "fr-0289" }] }
+      - { target: "Le témoin parle à la journaliste.", ipa: "lə temwɛ̃ paʁl a la ʒuʁnalist", bases: [{ word: "Le", ref: "fr-0543" }, { word: "témoin", base: "témoin" }, { word: "parle", ref: "fr-0023" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "journaliste", ref: "fr-1811" }] }
+  - id: "fr-1821"
+    target: "événement"
+    ipa: "evɛnmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un événement rare.", ipa: "sɛ tœn evɛnmɑ̃ ʁaʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "événement", base: "événement" }, { word: "rare", base: "rare" }] }
+      - { target: "Cet événement a fait la une.", ipa: "sɛt evɛnmɑ̃ a fɛ la yn", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "événement", base: "événement" }, { word: "a", ref: "fr-0022" }, { word: "fait", ref: "fr-0287" }, { word: "la", ref: "fr-0544" }, { word: "une", ref: "fr-0545" }] }
+  - id: "fr-1822"
+    target: "élection"
+    ipa: "elɛksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les élections ont lieu en mai.", ipa: "lezelɛksjɔ̃ ɔ̃ ljø ɑ̃ mɛ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "élections", base: "élection" }, { word: "ont", ref: "fr-0022" }, { word: "lieu", base: "lieu" }, { word: "en", base: "en" }, { word: "mai", ref: "fr-1156" }] }
+      - { target: "Il gagne l'élection.", ipa: "il ɡaɲ lelɛksjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "gagne", ref: "fr-0670" }, { word: "l'élection", base: "élection" }] }
+  - id: "fr-1823"
+    target: "crise"
+    ipa: "kʁiz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La crise dure depuis un an.", ipa: "la kʁiz dyʁ dəpɥi œ̃ nɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "crise", base: "crise" }, { word: "dure", ref: "fr-1131" }, { word: "depuis", base: "depuis" }, { word: "un", ref: "fr-0208" }, { word: "an", ref: "fr-0259" }] }
+      - { target: "Il y a une crise économique.", ipa: "il i a yn kʁiz ekɔnɔmik", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "crise", base: "crise" }, { word: "économique", base: "économique" }] }
+  - id: "fr-1824"
+    target: "guerre"
+    ipa: "ɡɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La guerre finit en mars.", ipa: "la ɡɛʁ fini ɑ̃ maʁs", bases: [{ word: "La", ref: "fr-0544" }, { word: "guerre", base: "guerre" }, { word: "finit", ref: "fr-0506" }, { word: "en", base: "en" }, { word: "mars", ref: "fr-1154" }] }
+      - { target: "Les journaux parlent de la guerre.", ipa: "le ʒuʁno paʁl də la ɡɛʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "journaux", ref: "fr-1367" }, { word: "parlent", ref: "fr-0023" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "guerre", base: "guerre" }] }
+  - id: "fr-1825"
+    target: "paix"
+    ipa: "pɛ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "On veut la paix.", ipa: "ɔ̃ vø la pɛ", bases: [{ word: "On", ref: "fr-0132" }, { word: "veut", ref: "fr-0311" }, { word: "la", ref: "fr-0544" }, { word: "paix", base: "paix" }] }
+      - { target: "La paix revient dans la région.", ipa: "la pɛ ʁəvjɛ̃ dɑ̃ la ʁeʒjɔ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "paix", base: "paix" }, { word: "revient", base: "revenir" }, { word: "dans", ref: "fr-0049" }, { word: "région", base: "région" }] }
+  - id: "fr-1826"
+    target: "économie"
+    ipa: "ekɔnɔmi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'économie va mieux.", ipa: "lekɔnɔmi va mjø", bases: [{ word: "L'économie", base: "économie" }, { word: "va", ref: "fr-0286" }, { word: "mieux", ref: "fr-0341" }] }
+      - { target: "Le journal parle de l'économie.", ipa: "lə ʒuʁnal paʁl dlekɔnɔmi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "journal", ref: "fr-1367" }, { word: "parle", ref: "fr-0023" }, { word: "de", base: "de" }, { word: "l'économie", base: "économie" }] }
+  - id: "fr-1827"
+    target: "commentaire"
+    ipa: "kɔmɑ̃tɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son commentaire est très juste.", ipa: "sɔ̃ kɔmɑ̃tɛʁ ɛ tʁɛ ʒyst", bases: [{ word: "Son", ref: "fr-0138" }, { word: "commentaire", base: "commentaire" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "juste", base: "juste" }] }
+      - { target: "Le commentaire du match est clair.", ipa: "lə kɔmɑ̃tɛʁ dy matʃ ɛ klɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "commentaire", base: "commentaire" }, { word: "du", base: "de" }, { word: "match", ref: "fr-1679" }, { word: "est", ref: "fr-0021" }, { word: "clair", base: "clair" }] }
+  - id: "fr-1828"
+    target: "source"
+    ipa: "suʁs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La source est fiable.", ipa: "la suʁs ɛ fjabl", bases: [{ word: "La", ref: "fr-0544" }, { word: "source", base: "source" }, { word: "est", ref: "fr-0021" }, { word: "fiable", base: "fiable" }] }
+      - { target: "Donnez-moi votre source.", ipa: "dɔnemwa vɔtʁ suʁs", bases: [{ word: "Donnez", ref: "fr-0302" }, { word: "moi", ref: "fr-0133" }, { word: "votre", ref: "fr-0140" }, { word: "source", base: "source" }] }
+  - id: "fr-1829"
+    target: "rumeur"
+    ipa: "ʁymœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une rumeur circule dans la ville.", ipa: "yn ʁymœʁ siʁkyl dɑ̃ la vil", bases: [{ word: "Une", ref: "fr-0545" }, { word: "rumeur", base: "rumeur" }, { word: "circule", base: "circuler" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }] }
+      - { target: "Ce n'est qu'une rumeur.", ipa: "sə nɛ kyn ʁymœʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "n'est", ref: "fr-0021" }, { word: "qu'une", ref: "fr-0545" }, { word: "rumeur", base: "rumeur" }] }
+  - id: "fr-1830"
+    target: "annoncer"
+    ipa: "anɔ̃se"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le journal annonce une grève.", ipa: "lə ʒuʁnal anɔ̃s yn ɡʁɛv", bases: [{ word: "Le", ref: "fr-0543" }, { word: "journal", ref: "fr-1367" }, { word: "annonce", base: "annoncer" }, { word: "une", ref: "fr-0545" }, { word: "grève", base: "grève" }] }
+      - { target: "Elle annonce la nouvelle à la radio.", ipa: "ɛl anɔ̃s la nuvɛl a la ʁadjo", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "annonce", base: "annoncer" }, { word: "la", ref: "fr-0544" }, { word: "nouvelle", base: "nouvelle" }, { word: "à", base: "à" }, { word: "radio", ref: "fr-1815" }] }
+  - id: "fr-1831"
+    target: "publier"
+    ipa: "pyblje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le journal publie un article.", ipa: "lə ʒuʁnal pyblik œ̃ naʁtikl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "journal", ref: "fr-1367" }, { word: "publie", base: "publier" }, { word: "un", ref: "fr-0208" }, { word: "article", ref: "fr-1437" }] }
+      - { target: "Ils publient une enquête demain.", ipa: "il pyblje yn ɑ̃kɛt dəmɛ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "publient", base: "publier" }, { word: "une", ref: "fr-0545" }, { word: "enquête", ref: "fr-1819" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1832"
+    target: "informer"
+    ipa: "ɛ̃fɔʁme"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vous informe de la décision.", ipa: "ʒə vu ɛ̃fɔʁm də la desizjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vous", ref: "fr-0096" }, { word: "informe", base: "informer" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "décision", base: "décision" }] }
+      - { target: "Informez-vous avant de voter.", ipa: "ɛ̃fɔʁmevu avɑ̃ də vɔte", bases: [{ word: "Informez", base: "informer" }, { word: "vous", ref: "fr-0096" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "voter", base: "voter" }] }
+  - id: "fr-1833"
+    target: "diffuser"
+    ipa: "difyze"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La chaîne diffuse le match.", ipa: "la ʃɛn difyz lə matʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "chaîne", ref: "fr-1814" }, { word: "diffuse", base: "diffuser" }, { word: "le", ref: "fr-0543" }, { word: "match", ref: "fr-1679" }] }
+      - { target: "Le message est diffusé partout.", ipa: "lə mesaʒ ɛ difyze paʁtu", bases: [{ word: "Le", ref: "fr-0543" }, { word: "message", ref: "fr-1082" }, { word: "est", ref: "fr-0021" }, { word: "diffusé", base: "diffuser" }, { word: "partout", ref: "fr-0356" }] }
+  - id: "fr-1834"
+    target: "signaler"
+    ipa: "siɲale"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il signale un accident.", ipa: "il siɲal œ̃ naksidɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "signale", base: "signaler" }, { word: "un", ref: "fr-0208" }, { word: "accident", ref: "fr-1083" }] }
+      - { target: "Signalez les erreurs au journal.", ipa: "siɲale lezeʁœʁ o ʒuʁnal", bases: [{ word: "Signalez", base: "signaler" }, { word: "les", ref: "fr-0543" }, { word: "erreurs", base: "erreur" }, { word: "au", base: "à" }, { word: "journal", ref: "fr-1367" }] }
+  - id: "fr-1835"
+    target: "vérifier"
+    ipa: "veʁifje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il vérifie l'information.", ipa: "il veʁifi lɛ̃fɔʁmasjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "vérifie", base: "vérifier" }, { word: "l'information", ref: "fr-1081" }] }
+      - { target: "Vérifiez la source avant de partager.", ipa: "veʁifje la suʁs avɑ̃ də paʁtaʒe", bases: [{ word: "Vérifiez", base: "vérifier" }, { word: "la", ref: "fr-0544" }, { word: "source", ref: "fr-1828" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "partager", base: "partager" }] }
+  - id: "fr-1836"
+    target: "sondage"
+    ipa: "sɔ̃daʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sondage montre une hausse.", ipa: "lə sɔ̃daʒ mɔ̃tʁ yn oss", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sondage", base: "sondage" }, { word: "montre", base: "montrer" }, { word: "une", ref: "fr-0545" }, { word: "hausse", base: "hausse" }] }
+      - { target: "Un sondage a été publié hier.", ipa: "œ̃ sɔ̃daʒ a ete pyblije jɛʁ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "sondage", base: "sondage" }, { word: "a", ref: "fr-0022" }, { word: "été", ref: "fr-0021" }, { word: "publié", ref: "fr-1831" }, { word: "hier", ref: "fr-1038" }] }
+  - id: "fr-1837"
+    target: "scandale"
+    ipa: "skɑ̃dal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le scandale fait la une.", ipa: "lə skɑ̃dal fɛ la yn", bases: [{ word: "Le", ref: "fr-0543" }, { word: "scandale", base: "scandale" }, { word: "fait", ref: "fr-0287" }, { word: "la", ref: "fr-0544" }, { word: "une", ref: "fr-0545" }] }
+      - { target: "C'est un vrai scandale.", ipa: "sɛ tœn vʁɛ skɑ̃dal", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "vrai", base: "vrai" }, { word: "scandale", base: "scandale" }] }
+  - id: "fr-1838"
+    target: "record"
+    ipa: "ʁəkɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il bat le record du monde.", ipa: "il ba lə ʁəkɔʁ dy mɔ̃d", bases: [{ word: "Il", ref: "fr-0127" }, { word: "bat", ref: "fr-1541" }, { word: "le", ref: "fr-0543" }, { word: "record", base: "record" }, { word: "du", base: "de" }, { word: "monde", base: "monde" }] }
+      - { target: "Le record date de deux ans.", ipa: "lə ʁəkɔʁ dat də dø ɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "record", base: "record" }, { word: "date", base: "dater" }, { word: "de", base: "de" }, { word: "deux", ref: "fr-0209" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-1839"
+    target: "vedette"
+    ipa: "vədɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette vedette est très connue.", ipa: "sɛt vədɛt ɛ tʁɛ kɔny", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "vedette", base: "vedette" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "connue", base: "connu" }] }
+      - { target: "La vedette répond aux journalistes.", ipa: "la vədɛt ʁepɔ̃d o ʒuʁnalist", bases: [{ word: "La", ref: "fr-0544" }, { word: "vedette", base: "vedette" }, { word: "répond", ref: "fr-0504" }, { word: "aux", base: "à" }, { word: "journalistes", ref: "fr-1811" }] }
+  - id: "fr-1840"
+    target: "lecteur"
+    ipa: "lɛktœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les lecteurs aiment cet article.", ipa: "le lɛktœʁ ɛme sɛt naʁtikl", bases: [{ word: "Les", ref: "fr-0543" }, { word: "lecteurs", base: "lecteur" }, { word: "aiment", ref: "fr-0263" }, { word: "cet", ref: "fr-0143" }, { word: "article", ref: "fr-1437" }] }
+      - { target: "Un lecteur a écrit au journal.", ipa: "œ̃ lɛktœʁ a ekʁi o ʒuʁnal", bases: [{ word: "Un", ref: "fr-0208" }, { word: "lecteur", base: "lecteur" }, { word: "a", ref: "fr-0022" }, { word: "écrit", ref: "fr-0291" }, { word: "au", base: "à" }, { word: "journal", ref: "fr-1367" }] }
+  - id: "fr-1841"
+    target: "abonné"
+    ipa: "abɔne"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'abonné reçoit le journal chaque matin.", ipa: "labɔne ʁəswa lə ʒuʁnal ʃak matɛ̃", bases: [{ word: "L'abonné", base: "abonné" }, { word: "reçoit", base: "recevoir" }, { word: "le", ref: "fr-0543" }, { word: "journal", ref: "fr-1367" }, { word: "chaque", ref: "fr-0375" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Je suis abonné à ce magazine.", ipa: "ʒə sɥi abɔne a sə magazin", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "abonné", base: "abonné" }, { word: "à", base: "à" }, { word: "ce", ref: "fr-0143" }, { word: "magazine", base: "magazine" }] }
+  - id: "fr-1842"
+    target: "site"
+    ipa: "sit"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le site du journal est rapide.", ipa: "lə sit dy ʒuʁnal ɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "site", base: "site" }, { word: "du", base: "de" }, { word: "journal", ref: "fr-1367" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Je lis les nouvelles sur ce site.", ipa: "ʒə li le nuvɛl syʁ sə sit", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "les", ref: "fr-0543" }, { word: "nouvelles", base: "nouvelle" }, { word: "sur", ref: "fr-0469" }, { word: "ce", ref: "fr-0143" }, { word: "site", base: "site" }] }
+  - id: "fr-1844"
+    target: "réseau"
+    ipa: "ʁezo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le réseau social est très populaire.", ipa: "lə ʁezo sɔsjal ɛ tʁɛ pɔpyl ɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "réseau", base: "réseau" }, { word: "social", base: "social" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "populaire", base: "populaire" }] }
+      - { target: "Ce réseau diffuse des nouvelles.", ipa: "sə ʁezo difyz de nuvɛl", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "réseau", base: "réseau" }, { word: "diffuse", ref: "fr-1833" }, { word: "des", ref: "fr-0546" }, { word: "nouvelles", base: "nouvelle" }] }
+  - id: "fr-1845"
+    target: "hebdomadaire"
+    ipa: "ɛbdɔmadɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un magazine hebdomadaire.", ipa: "sɛ tœ̃ magazin ɛbdɔmadɛʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "magazine", base: "magazine" }, { word: "hebdomadaire", base: "hebdomadaire" }] }
+      - { target: "Le journal est hebdomadaire.", ipa: "lə ʒuʁnal ɛ ɛbdɔmadɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "journal", ref: "fr-1367" }, { word: "est", ref: "fr-0021" }, { word: "hebdomadaire", base: "hebdomadaire" }] }
+  - id: "fr-1847"
+    target: "officiel"
+    ipa: "ɔfisjɛl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une information officielle.", ipa: "sɛt yn ɛ̃fɔʁmasjɔ̃ ɔfisjɛl", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "information", ref: "fr-1081" }, { word: "officielle", base: "officiel" }] }
+      - { target: "Le communiqué est officiel.", ipa: "lə kɔmynikɛ ɛ ɔfisjɛl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "communiqué", base: "communiqué" }, { word: "est", ref: "fr-0021" }, { word: "officiel", base: "officiel" }] }
+  - id: "fr-1848"
+    target: "récent"
+    ipa: "ʁesɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un événement récent.", ipa: "sɛ tœn evɛnmɑ̃ ʁesɑ̃", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "événement", ref: "fr-1821" }, { word: "récent", base: "récent" }] }
+      - { target: "Cette nouvelle est très récente.", ipa: "sɛt nuvɛl ɛ tʁɛ ʁesɑ̃t", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "nouvelle", base: "nouvelle" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "récente", base: "récent" }] }
+  - id: "fr-1849"
+    target: "faux"
+    ipa: "fo"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette information est fausse.", ipa: "sɛt ɛ̃fɔʁmasjɔ̃ ɛ fos", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "information", ref: "fr-1081" }, { word: "est", ref: "fr-0021" }, { word: "fausse", base: "faux" }] }
+      - { target: "Attention aux fausses nouvelles.", ipa: "atɑ̃sjɔ̃ o fos nuvɛl", bases: [{ word: "Attention", ref: "fr-1075" }, { word: "aux", base: "à" }, { word: "fausses", base: "faux" }, { word: "nouvelles", base: "nouvelle" }] }
+  - id: "fr-1850"
+    target: "scoop"
+    ipa: "skup"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le journal a un scoop.", ipa: "lə ʒuʁnal a œ̃ skup", bases: [{ word: "Le", ref: "fr-0543" }, { word: "journal", ref: "fr-1367" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "scoop", base: "scoop" }] }
+      - { target: "C'est un scoop sur le ministre.", ipa: "sɛ tœ̃ skup syʁ lə ministʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "scoop", base: "scoop" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "ministre", base: "ministre" }] }
+  - id: "fr-1851"
+    target: "diffusion"
+    ipa: "difyzjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La diffusion commence à vingt heures.", ipa: "la difyzjɔ̃ kɔmɑ̃s a vɛ̃t œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "diffusion", base: "diffusion" }, { word: "commence", ref: "fr-0508" }, { word: "à", base: "à" }, { word: "vingt", ref: "fr-0227" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "La diffusion est retardée.", ipa: "la difyzjɔ̃ ɛ ʁətaʁde", bases: [{ word: "La", ref: "fr-0544" }, { word: "diffusion", base: "diffusion" }, { word: "est", ref: "fr-0021" }, { word: "retardée", base: "retarder" }] }
+  - id: "fr-1852"
+    target: "enregistrer"
+    ipa: "ɑ̃ʁəʒistʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'enregistre l'émission.", ipa: "ʒɑ̃ʁəʒistʁ lemisjɔ̃", bases: [{ word: "J'enregistre", base: "enregistrer" }, { word: "l'émission", ref: "fr-1813" }] }
+      - { target: "Le journaliste enregistre l'interview.", ipa: "lə ʒuʁnalist ɑ̃ʁəʒistʁ lɛ̃tɛʁvju", bases: [{ word: "Le", ref: "fr-0543" }, { word: "journaliste", ref: "fr-1811" }, { word: "enregistre", base: "enregistrer" }, { word: "l'interview", base: "interview" }] }
+  - id: "fr-1863"
+    target: "tournage"
+    ipa: "tuʁnaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tournage commence demain.", ipa: "lə tuʁnaʒ kɔmɑ̃s dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tournage", base: "tournage" }, { word: "commence", ref: "fr-0508" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Le tournage a lieu à Paris.", ipa: "lə tuʁnaʒ a ljø a paʁi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tournage", base: "tournage" }, { word: "a", ref: "fr-0022" }, { word: "lieu", base: "lieu" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+  - id: "fr-1864"
+    target: "manchette"
+    ipa: "mɑ̃ʃɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La manchette parle du match.", ipa: "la mɑ̃ʃɛt paʁl dy matʃ", bases: [{ word: "La", ref: "fr-0544" }, { word: "manchette", base: "manchette" }, { word: "parle", ref: "fr-0023" }, { word: "du", base: "de" }, { word: "match", ref: "fr-1679" }] }
+      - { target: "Cette manchette est choquante.", ipa: "sɛt mɑ̃ʃɛt ɛ ʃɔkɑ̃t", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "manchette", base: "manchette" }, { word: "est", ref: "fr-0021" }, { word: "choquante", base: "choquant" }] }
+

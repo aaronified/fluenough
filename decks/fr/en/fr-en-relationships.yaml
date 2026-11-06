@@ -1,0 +1,390 @@
+schema: 1
+id: "fr-en-relationships"
+kind: "layer"
+core: "fr-relationships"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Relationships"
+license: "CC-BY-SA-4.0"
+description: "Forty words for relationships: friends and neighbours, trust and conflict, saying sorry and making up, and the verbs of getting along. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2441":
+    native: "relationship"
+    notes:
+      "n1": "Une relation is a link between people; avoir une relation is to be in a relationship."
+    examples:
+      "Leur relation est forte.":
+        native: "Their relationship is strong."
+        bases:
+          "relation": "relationship"
+      "Cette relation dure depuis dix ans.":
+        native: "This relationship has lasted ten years."
+        bases:
+          "relation": "relationship"
+          "depuis": "since"
+  "fr-2442":
+    native: "friendship"
+    notes:
+      "n1": "L’amitié is the friendship between people."
+    examples:
+      "Notre amitié dure longtemps.":
+        native: "Our friendship lasts a long time."
+        bases:
+          "amitié": "friendship"
+      "L'amitié est un grand bien.":
+        native: "Friendship is a great good."
+        bases:
+          "L'amitié": "friendship"
+  "fr-2443":
+    native: "argument, quarrel"
+    notes:
+      "n1": "Une dispute is an argument between people."
+    examples:
+      "La dispute dure une heure.":
+        native: "The argument lasts an hour."
+        bases:
+          "dispute": "argument, quarrel"
+      "Ils ont eu une dispute hier.":
+        native: "They had an argument yesterday."
+        bases:
+          "dispute": "argument, quarrel"
+  "fr-2444":
+    native: "conflict"
+    notes:
+      "n1": "Un conflit is a serious disagreement between people or groups."
+    examples:
+      "Le conflit est réglé.":
+        native: "The conflict is settled."
+        bases:
+          "conflit": "conflict"
+          "réglé": "settled"
+      "Ce conflit dure depuis longtemps.":
+        native: "This conflict has lasted a long time."
+        bases:
+          "conflit": "conflict"
+          "depuis": "since"
+  "fr-2445":
+    native: "reconciliation"
+    notes:
+      "n1": "Une réconciliation is the making up after a quarrel."
+    examples:
+      "La réconciliation est rapide.":
+        native: "The reconciliation is quick."
+        bases:
+          "réconciliation": "reconciliation"
+      "Leur réconciliation fait plaisir.":
+        native: "Their reconciliation is a pleasure."
+        bases:
+          "réconciliation": "reconciliation"
+          "plaisir": "pleasure"
+  "fr-2446":
+    native: "excuse, apology"
+    notes:
+      "n1": "Une excuse is a reason given, or an apology; the plural excuses means an apology."
+    examples:
+      "Il présente ses excuses.":
+        native: "He offers his apologies."
+        bases:
+          "présente": "presents"
+          "excuses": "excuse, apology"
+      "Ce n'est pas une bonne excuse.":
+        native: "That is not a good excuse."
+        bases:
+          "pas": "not"
+          "excuse": "excuse, apology"
+  "fr-2447":
+    native: "loyal, faithful"
+    notes:
+      "n1": "Fidèle takes the same form in both genders."
+    examples:
+      "C'est un ami fidèle.":
+        native: "He is a loyal friend."
+        bases:
+          "fidèle": "loyal, faithful"
+      "Elle reste fidèle à ses principes.":
+        native: "She stays loyal to her principles."
+        bases:
+          "fidèle": "loyal, faithful"
+          "à": "to, at"
+          "principes": "principles"
+  "fr-2448":
+    native: "jealous"
+    notes:
+      "n1": "Jaloux takes the feminine jalouse."
+    examples:
+      "Il est jaloux de son frère.":
+        native: "He is jealous of his brother."
+        bases:
+          "jaloux": "jealous"
+          "de": "of"
+      "Elle devient jalouse facilement.":
+        native: "She becomes jealous easily."
+        bases:
+          "devient": "becomes"
+          "jalouse": "jealous"
+          "facilement": "easily"
+  "fr-2449":
+    native: "sincere"
+    notes:
+      "n1": "Sincère takes the same form in both genders."
+    examples:
+      "Ses excuses sont sincères.":
+        native: "His apologies are sincere."
+        bases:
+          "sincères": "sincere"
+      "C'est une réponse sincère.":
+        native: "It is a sincere answer."
+        bases:
+          "sincère": "sincere"
+  "fr-2450":
+    native: "honest"
+    notes:
+      "n1": "Honnête takes the same form in both genders."
+    examples:
+      "Il est honnête avec ses amis.":
+        native: "He is honest with his friends."
+        bases:
+          "honnête": "honest"
+      "Une réponse honnête fait du bien.":
+        native: "An honest answer does good."
+        bases:
+          "honnête": "honest"
+          "du": "some, of the"
+  "fr-2451":
+    native: "shy"
+    notes:
+      "n1": "Timide takes the same form in both genders."
+    examples:
+      "Le petit garçon est timide.":
+        native: "The little boy is shy."
+        bases:
+          "timide": "shy"
+      "Elle est timide avec les inconnus.":
+        native: "She is shy with strangers."
+        bases:
+          "timide": "shy"
+  "fr-2452":
+    native: "stranger"
+    notes:
+      "n1": "Un inconnu is a person you do not know; the feminine is une inconnue."
+    examples:
+      "Un inconnu me parle dans la rue.":
+        native: "A stranger speaks to me in the street."
+        bases:
+          "inconnu": "stranger"
+          "me": "me"
+      "Ne parle pas aux inconnus.":
+        native: "Do not speak to strangers."
+        bases:
+          "Ne": "not"
+          "pas": "not"
+          "aux": "to the"
+          "inconnus": "stranger"
+  "fr-2453":
+    native: "to chat"
+    notes:
+      "n1": "Bavarder is regular: to chat with someone."
+    examples:
+      "Nous bavardons pendant des heures.":
+        native: "We chat for hours."
+        bases:
+          "bavardons": "to chat"
+          "des": "of"
+      "Elles bavardent devant la porte.":
+        native: "They chat in front of the door."
+        bases:
+          "bavardent": "to chat"
+  "fr-2454":
+    native: "to joke"
+    notes:
+      "n1": "Plaisanter is regular: to joke with someone."
+    examples:
+      "Il aime plaisanter avec ses amis.":
+        native: "He likes to joke with his friends."
+        bases:
+          "plaisanter": "to joke"
+      "Ne plaisante pas, c'est sérieux.":
+        native: "Do not joke, it is serious."
+        bases:
+          "Ne": "not"
+          "plaisante": "to joke"
+          "pas": "not"
+          "sérieux": "serious"
+  "fr-2455":
+    native: "to forgive"
+    notes:
+      "n1": "Pardonner is regular: pardonner à quelqu’un is to forgive someone."
+    examples:
+      "Je te pardonne.":
+        native: "I forgive you."
+        bases:
+          "te": "you"
+          "pardonne": "to forgive"
+      "Elle pardonne facilement.":
+        native: "She forgives easily."
+        bases:
+          "pardonne": "to forgive"
+          "facilement": "easily"
+  "fr-2456":
+    native: "to apologise"
+    notes:
+      "n1": "S’excuser is regular: to say sorry."
+    bases:
+      "s'excuser": "apologise"
+    examples:
+      "Excusez-moi pour le retard.":
+        native: "Excuse me for being late."
+        bases:
+          "Excusez": "apologise"
+      "Il s'excuse de son erreur.":
+        native: "He apologises for his mistake."
+        bases:
+          "s'excuse": "apologises"
+          "de": "of"
+          "erreur": "mistake"
+  "fr-2457":
+    native: "to make up"
+    notes:
+      "n1": "Se réconcilier is regular: to make up after a quarrel."
+    bases:
+      "se": "oneself"
+      "réconcilier": "make up"
+    examples:
+      "Ils se réconcilient enfin.":
+        native: "They finally make up."
+        bases:
+          "se": "oneself"
+          "réconcilient": "make up"
+      "Nous nous réconcilions demain.":
+        native: "We make up tomorrow."
+        bases:
+          "réconcilions": "make up"
+  "fr-2458":
+    native: "to argue"
+    notes:
+      "n1": "Se disputer is regular: to have an argument."
+    bases:
+      "se": "oneself"
+      "disputer": "argue"
+    examples:
+      "Ils se disputent souvent.":
+        native: "They argue often."
+        bases:
+          "se": "oneself"
+          "disputent": "argue"
+      "Ne vous disputez pas.":
+        native: "Do not argue."
+        bases:
+          "Ne": "not"
+          "disputez": "argue"
+          "pas": "not"
+  "fr-2459":
+    native: "to hurt"
+    notes:
+      "n1": "Blesser is regular: to hurt, in body or feelings."
+    examples:
+      "Ses mots m'ont blessé.":
+        native: "His words hurt me."
+        bases:
+          "blessé": "to hurt"
+      "Ne blesse personne avec tes mots.":
+        native: "Do not hurt anyone with your words."
+        bases:
+          "Ne": "not"
+          "blesse": "to hurt"
+          "personne": "person"
+  "fr-2460":
+    native: "understanding"
+    notes:
+      "n1": "La compréhension is the understanding between people."
+    examples:
+      "Il montre de la compréhension.":
+        native: "He shows understanding."
+        bases:
+          "de": "of"
+          "compréhension": "understanding"
+      "La compréhension est importante.":
+        native: "Understanding is important."
+        bases:
+          "compréhension": "understanding"
+  "fr-2461":
+    native: "meeting"
+    notes:
+      "n1": "Une rencontre is a meeting, often unplanned."
+    examples:
+      "C'est une belle rencontre.":
+        native: "It is a lovely meeting."
+        bases:
+          "rencontre": "meeting"
+      "Notre rencontre date de l'école.":
+        native: "We met at school."
+        bases:
+          "rencontre": "meeting"
+          "date": "dates"
+          "de": "of"
+  "fr-2462":
+    native: "break-up"
+    notes:
+      "n1": "Une rupture is the end of a relationship or a contract."
+    examples:
+      "La rupture est douloureuse.":
+        native: "The break-up is painful."
+        bases:
+          "rupture": "break-up"
+          "douloureuse": "painful"
+      "Après la rupture, il part.":
+        native: "After the break-up, he leaves."
+        bases:
+          "rupture": "break-up"
+  "fr-2463":
+    native: "contempt"
+    notes:
+      "n1": "Le mépris is the feeling that someone is not worth respect."
+    examples:
+      "Il montre du mépris.":
+        native: "He shows contempt."
+        bases:
+          "du": "some, of the"
+          "mépris": "contempt"
+      "Ce mépris blesse tout le monde.":
+        native: "This contempt hurts everyone."
+        bases:
+          "mépris": "contempt"
+          "monde": "world"
+  "fr-2464":
+    native: "loneliness"
+    notes:
+      "n1": "La solitude is the state of being alone."
+    examples:
+      "La solitude est difficile.":
+        native: "Loneliness is hard."
+        bases:
+          "solitude": "loneliness"
+      "Il vit dans la solitude.":
+        native: "He lives in solitude."
+        bases:
+          "solitude": "loneliness"
+  "fr-2465":
+    native: "complicity, closeness"
+    notes:
+      "n1": "La complicité is a close understanding between people."
+    examples:
+      "Leur complicité est évidente.":
+        native: "Their closeness is obvious."
+        bases:
+          "complicité": "complicity, closeness"
+      "Elles ont une grande complicité.":
+        native: "They have a great closeness."
+        bases:
+          "complicité": "complicity, closeness"
+  "fr-2466":
+    native: "good mood"
+    notes:
+      "n1": "La bonne humeur is a cheerful mood shared with others."
+    examples:
+      "Il est plein de bonne humeur.":
+        native: "He is full of good humour."
+        bases:
+          "de": "of"
+      "La bonne humeur règne.":
+        native: "Good humour reigns."

@@ -1,0 +1,109 @@
+schema: 1
+id: "fr-services-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2008"
+    target: "Remplissez le formulaire et signez la demande."
+    ipa: "ʁɑ̃plise lə fɔʁmylɛʁ e siɲe la dəmɑ̃d"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Remplissez", ref: "fr-1988" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "formulaire", ref: "fr-1978" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "signez", ref: "fr-1987" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "demande", ref: "fr-1980" }
+    confusables:
+      - { id: "facture", ref: "fr-1990", kind: "word" }
+      - { id: "document", ref: "fr-1979", kind: "word" }
+  - id: "fr-2009"
+    target: "Le plombier vient réparer le robinet demain."
+    ipa: "lə plɔ̃bje vjɛ̃ ʁepaʁe lə ʁɔbinɛ dəmɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "plombier", ref: "fr-1983" }
+      - { word: "vient", ref: "fr-0285" }
+      - { word: "réparer", ref: "fr-1128" }
+      - { word: "robinet", base: "robinet" }
+      - { word: "demain", ref: "fr-0078" }
+    confusables:
+      - { id: "electricien", ref: "fr-1984", kind: "word" }
+      - { id: "serrurier", ref: "fr-2000", kind: "word" }
+  - id: "fr-2010"
+    target: "Mon colis est arrivé, mais la livraison est en retard."
+    ipa: "mɔ̃ kɔli ɛ aʁive mɛ la livʁɛzɔ̃ ɛ ɑ̃ ʁətaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "colis", ref: "fr-1971" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "arrivé", ref: "fr-0305" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "livraison", ref: "fr-1443" }
+      - { word: "en", base: "en" }
+      - { word: "retard", ref: "fr-0870" }
+    confusables:
+      - { id: "lettre", ref: "fr-1972", kind: "word" }
+      - { id: "enveloppe", ref: "fr-1368", kind: "word" }
+  - id: "fr-2011"
+    target: "Le conseiller vérifie le compte et le dépôt."
+    ipa: "lə kɔ̃sɛje veʁifi lə kɔ̃t e lə depo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "conseiller", ref: "fr-1994" }
+      - { word: "vérifie", ref: "fr-1835" }
+      - { word: "compte", ref: "fr-1974" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "dépôt", ref: "fr-1995" }
+    confusables:
+      - { id: "retrait", ref: "fr-1996", kind: "word" }
+      - { id: "agence", ref: "fr-1993", kind: "word" }
+  - id: "fr-2012"
+    target: "Le mécanicien répare la voiture sous garantie."
+    ipa: "lə mekanisjɛ̃ ʁepaʁ la vwatyʁ su ɡaʁɑ̃ti"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "mécanicien", ref: "fr-1985" }
+      - { word: "répare", ref: "fr-1128" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "voiture", ref: "fr-0859" }
+      - { word: "sous", ref: "fr-0468" }
+      - { word: "garantie", ref: "fr-2004" }
+    confusables:
+      - { id: "reclamation", ref: "fr-2003", kind: "word" }
+      - { id: "reparation", ref: "fr-1975", kind: "word" }
+  - id: "fr-2013"
+    target: "Le coiffeur coupe les cheveux et la couture est propre."
+    ipa: "lə kwafœʁ kup le ʃəvø e la kutyʁ ɛ pʁɔpʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "coiffeur", ref: "fr-1982" }
+      - { word: "coupe", ref: "fr-1538" }
+      - { word: "les", ref: "fr-0543" }
+      - { word: "cheveux", ref: "fr-0939" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "couture", ref: "fr-1657" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "propre", ref: "fr-0427" }
+    confusables:
+      - { id: "pressing", ref: "fr-1999", kind: "word" }
+      - { id: "jardinier", ref: "fr-2001", kind: "word" }
+

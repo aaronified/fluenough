@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-clothes"
+name: "Reading: clothes and colours"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about clothes: a shop's sign with its offers, and a shopping trip for a dress, with words such as chemise, essayer and collier. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-shop-offer-sign"
+    title: "A clothes shop's sign with its offers"
+    theme: "clothes"
+    sentences:
+      - text: "Les soldes sont là !"
+      - text: "Le manteau est à cinquante euros."
+      - text: "Essayez les chaussures avant d'acheter."
+      - text: "Ouvert du mardi au samedi."
+    questions:
+      - id: "fr-1246"
+        prompt: { en: "What can you do before you buy?" }
+        options:
+          - { en: "Pay the bill" }
+          - { en: "Try the shoes on" }
+          - { en: "Leave the shop" }
+        answer: 2
+      - id: "fr-1247"
+        prompt: { en: "How much is the coat?" }
+        options:
+          - { en: "Five euros" }
+          - { en: "Fifteen euros" }
+          - { en: "Fifty euros" }
+        answer: 3
+      - id: "fr-1248"
+        prompt: { en: "When is the shop open?" }
+        options:
+          - { en: "On Sunday" }
+          - { en: "From Tuesday to Saturday" }
+          - { en: "Every day" }
+        answer: 2
+  - id: "fr-a-shopping-trip"
+    title: "A shopping trip"
+    theme: "clothes"
+    sentences:
+      - text: "Mon amie cherche une robe bleue."
+      - text: "Elle essaie la robe dans la cabine."
+      - text: "La robe est belle, mais elle est chère."
+      - text: "Elle achète la robe et un collier."
+    questions:
+      - id: "fr-1249"
+        prompt: { en: "What colour is the dress she looks for?" }
+        options:
+          - { en: "Red" }
+          - { en: "Blue" }
+          - { en: "Green" }
+        answer: 2
+      - id: "fr-1250"
+        prompt: { en: "Where does she try the dress on?" }
+        options:
+          - { en: "In the cabin" }
+          - { en: "At the door" }
+          - { en: "On the bus" }
+        answer: 1
+      - id: "fr-1251"
+        prompt: { en: "What does she buy?" }
+        options:
+          - { en: "A dress and a necklace" }
+          - { en: "Shoes and a hat" }
+          - { en: "A coat" }
+        answer: 1

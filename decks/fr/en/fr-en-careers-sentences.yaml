@@ -1,0 +1,42 @@
+schema: 1
+id: "fr-en-careers-sentences"
+kind: "layer"
+core: "fr-careers-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: careers"
+license: "CC-BY-SA-4.0"
+description: "Sentences about careers, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2150":
+    native: "The candidate has an interview for the job."
+    confusables:
+      "embaucher": { why: "To hire is the result of the interview, not the interview itself." }
+      "stage": { why: "An internship is a placement; the sentence names a job interview." }
+  "fr-2151":
+    native: "The company hires an engineer and an architect."
+    confusables:
+      "licencier": { why: "To dismiss is the opposite of hiring." }
+      "employe": { why: "An employee is already working; the sentence hires new people." }
+  "fr-2152":
+    native: "The employee hands in his resignation after ten years."
+    confusables:
+      "retraite": { why: "Retirement is the end of working life, not a resignation." }
+      "chomage": { why: "Unemployment follows a resignation, but it is not named." }
+  "fr-2153":
+    native: "She leads the project with her team."
+    confusables:
+      "cadre": { why: "A manager leads too; the sentence names the project, so it is a different word." }
+      "mission": { why: "A mission is a task; the sentence says she leads." }
+  "fr-2154":
+    native: "He takes a training course to get a diploma."
+    confusables:
+      "competence": { why: "A skill is learned by training; the sentence names the course." }
+      "experience": { why: "Experience comes from work, not from a course." }
+  "fr-2155":
+    native: "The union defends the employees at work."
+    bases:
+      "au": "at, to the"
+    confusables:
+      "secretaire": { why: "A secretary helps managers; the sentence is about a union." }
+      "gerant": { why: "A manager is the boss; the sentence names the union." }

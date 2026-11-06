@@ -1,0 +1,288 @@
+schema: 1
+id: "fr-law"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "law"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2537"
+    target: "juge"
+    ipa: "ʒyʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le juge rend sa décision.", ipa: "lə ʒyʒ ʁɑ̃ sa desizjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "juge", ref: "fr-1879" }, { word: "rend", ref: "fr-1616" }, { word: "sa", ref: "fr-0138" }, { word: "décision", base: "décision" }] }
+      - { target: "Ma tante est juge.", ipa: "ma tɑ̃t ɛ ʒyʒ", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "tante", ref: "fr-0177" }, { word: "est", ref: "fr-0021" }, { word: "juge", ref: "fr-1879" }] }
+  - id: "fr-2538"
+    target: "procès"
+    ipa: "pʁɔsɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le procès commence lundi.", ipa: "lə pʁɔsɛ kɔmɑ̃s lœ̃di", bases: [{ word: "Le", ref: "fr-0543" }, { word: "procès", base: "procès" }, { word: "commence", ref: "fr-0508" }, { word: "lundi", ref: "fr-1044" }] }
+      - { target: "Il gagne le procès.", ipa: "il ɡaɲ lə pʁɔsɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "gagne", ref: "fr-0670" }, { word: "le", ref: "fr-0543" }, { word: "procès", base: "procès" }] }
+  - id: "fr-2539"
+    target: "plainte"
+    ipa: "plɛ̃t"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle dépose une plainte.", ipa: "ɛl depoz yn plɛ̃t", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "dépose", base: "déposer" }, { word: "une", ref: "fr-0545" }, { word: "plainte", base: "plainte" }] }
+      - { target: "La plainte est enregistrée.", ipa: "la plɛ̃t ɛ ɑ̃ʁəʒistʁe", bases: [{ word: "La", ref: "fr-0543" }, { word: "plainte", base: "plainte" }, { word: "est", ref: "fr-0021" }, { word: "enregistrée", ref: "fr-1852" }] }
+  - id: "fr-2540"
+    target: "accusé"
+    ipa: "akyze"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'accusé nie les faits.", ipa: "lakyze ni le fɛ", bases: [{ word: "L'accusé", base: "accusé" }, { word: "nie", base: "nier" }, { word: "les", ref: "fr-0543" }, { word: "faits", ref: "fr-0046" }] }
+      - { target: "L'accusée est très calme.", ipa: "lakyze ɛ tʁɛ kalm", bases: [{ word: "L'accusée", base: "accusé" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-2541"
+    target: "victime"
+    ipa: "viktim"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La victime porte plainte.", ipa: "la viktim pɔʁt plɛ̃t", bases: [{ word: "La", ref: "fr-0543" }, { word: "victime", base: "victime" }, { word: "porte", ref: "fr-1003" }, { word: "plainte", ref: "fr-2539" }] }
+      - { target: "Cette victime a besoin d'aide.", ipa: "sɛt viktim a bəzwɛ̃ dɛd", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "victime", base: "victime" }, { word: "a", ref: "fr-0022" }, { word: "besoin", ref: "fr-1080" }, { word: "d'aide", ref: "fr-1065" }] }
+  - id: "fr-2542"
+    target: "crime"
+    ipa: "kʁim"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le crime a eu lieu la nuit.", ipa: "lə kʁim a y ljø la nɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "crime", base: "crime" }, { word: "a", ref: "fr-0022" }, { word: "eu", ref: "fr-0022" }, { word: "lieu", base: "lieu" }, { word: "la", ref: "fr-0543" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "Ce crime reste sans réponse.", ipa: "sə kʁim ʁɛst sɑ̃ ʁepɔ̃s", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "crime", base: "crime" }, { word: "reste", ref: "fr-0514" }, { word: "sans", ref: "fr-0592" }, { word: "réponse", ref: "fr-1594" }] }
+  - id: "fr-2543"
+    target: "délit"
+    ipa: "deli"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le délit est puni d'une amende.", ipa: "lə deli ɛ pyni dyn amɑ̃d", bases: [{ word: "Le", ref: "fr-0543" }, { word: "délit", base: "délit" }, { word: "est", ref: "fr-0021" }, { word: "puni", base: "punir" }, { word: "d'une", base: "de" }, { word: "amende", ref: "fr-2051" }] }
+      - { target: "C'est un délit routier.", ipa: "sɛ tœ̃ deli ʁutje", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "délit", base: "délit" }, { word: "routier", base: "routier" }] }
+  - id: "fr-2544"
+    target: "avocate"
+    ipa: "avɔkat"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'avocate parle au juge.", ipa: "lavɔkat paʁl o ʒyʒ", bases: [{ word: "L'avocate", base: "avocate" }, { word: "parle", ref: "fr-0023" }, { word: "au", base: "à" }, { word: "juge", ref: "fr-1879" }] }
+      - { target: "Mon amie est avocate.", ipa: "mɔ̃n ami ɛ avɔkat", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "amie", ref: "fr-0100" }, { word: "est", ref: "fr-0021" }, { word: "avocate", base: "avocate" }] }
+  - id: "fr-2545"
+    target: "jugement"
+    ipa: "ʒyʒmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le jugement est rendu demain.", ipa: "lə ʒyʒmɑ̃ ɛ ʁɑ̃dy dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jugement", base: "jugement" }, { word: "est", ref: "fr-0021" }, { word: "rendu", ref: "fr-1616" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Ce jugement est injuste.", ipa: "sə ʒyʒmɑ̃ ɛ ɛ̃ʒyst", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "jugement", base: "jugement" }, { word: "est", ref: "fr-0021" }, { word: "injuste", ref: "fr-1882" }] }
+  - id: "fr-2546"
+    target: "peine"
+    ipa: "pɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La peine est de deux ans.", ipa: "la pɛn ɛ də dø ɑ̃", bases: [{ word: "La", ref: "fr-0543" }, { word: "peine", base: "peine" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "deux", ref: "fr-0209" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Il purge sa peine en prison.", ipa: "il pyʁʒ sa pɛn ɑ̃ pʁizɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "purge", base: "purger" }, { word: "sa", ref: "fr-0138" }, { word: "peine", base: "peine" }, { word: "en", base: "en" }, { word: "prison", ref: "fr-2547" }] }
+  - id: "fr-2547"
+    target: "prison"
+    ipa: "pʁizɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est en prison depuis un an.", ipa: "il ɛ ɑ̃ pʁizɔ̃ dəpɥi œ̃ nɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "prison", base: "prison" }, { word: "depuis", base: "depuis" }, { word: "un", ref: "fr-0208" }, { word: "an", ref: "fr-0259" }] }
+      - { target: "La prison est près de la ville.", ipa: "la pʁizɔ̃ ɛ pʁɛ də la vil", bases: [{ word: "La", ref: "fr-0543" }, { word: "prison", base: "prison" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-2548"
+    target: "avertissement"
+    ipa: "avɛʁtismɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il reçoit un avertissement.", ipa: "il ʁəswa œ̃n avɛʁtismɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "reçoit", ref: "fr-1986" }, { word: "un", ref: "fr-0208" }, { word: "avertissement", base: "avertissement" }] }
+      - { target: "L'avertissement est écrit.", ipa: "lavɛʁtismɑ̃ ɛ ekʁi", bases: [{ word: "L'avertissement", base: "avertissement" }, { word: "est", ref: "fr-0021" }, { word: "écrit", ref: "fr-0291" }] }
+  - id: "fr-2549"
+    target: "contrat"
+    ipa: "kɔ̃tʁa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le contrat est signé.", ipa: "lə kɔ̃tʁa ɛ siɲe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "contrat", base: "contrat" }, { word: "est", ref: "fr-0021" }, { word: "signé", ref: "fr-1987" }] }
+      - { target: "Lisez le contrat avant de signer.", ipa: "lize lə kɔ̃tʁa avɑ̃ də siɲe", bases: [{ word: "Lisez", ref: "fr-0290" }, { word: "le", ref: "fr-0543" }, { word: "contrat", base: "contrat" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "signer", ref: "fr-1987" }] }
+  - id: "fr-2550"
+    target: "clause"
+    ipa: "kloz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette clause est importante.", ipa: "sɛt kloz ɛ ɛ̃pɔʁtɑ̃t", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "clause", base: "clause" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+      - { target: "La clause change les règles.", ipa: "la kloz ʃɑ̃ʒ le ʁɛɡl", bases: [{ word: "La", ref: "fr-0543" }, { word: "clause", base: "clause" }, { word: "change", ref: "fr-0526" }, { word: "les", ref: "fr-0543" }, { word: "règles", ref: "fr-1365" }] }
+  - id: "fr-2551"
+    target: "avocat général"
+    ipa: "avɔka ʒeneʁal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "avocat", ref: "fr-2123" }, { word: "général", base: "général" }]
+    examples:
+      - { target: "L'avocat général demande une peine.", ipa: "lavɔka ʒeneʁal dəmɑ̃d yn pɛn", bases: [{ word: "L'avocat", ref: "fr-2123" }, { word: "général", base: "général" }, { word: "demande", ref: "fr-1980" }, { word: "une", ref: "fr-0545" }, { word: "peine", ref: "fr-2546" }] }
+      - { target: "Il parle au nom de l'État.", ipa: "il paʁl o nɔ̃ də letat", bases: [{ word: "Il", ref: "fr-0127" }, { word: "parle", ref: "fr-0023" }, { word: "au", base: "à" }, { word: "nom", ref: "fr-0073" }, { word: "de", base: "de" }, { word: "l'État", base: "État" }] }
+  - id: "fr-2552"
+    target: "enquêteur"
+    ipa: "ɑ̃kɛtœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'enquêteur interroge le témoin.", ipa: "lɑ̃kɛtœʁ ɛ̃tɛʁɔʒ lə temwɛ̃", bases: [{ word: "L'enquêteur", base: "enquêteur" }, { word: "interroge", ref: "fr-2562" }, { word: "le", ref: "fr-0543" }, { word: "témoin", ref: "fr-1820" }] }
+      - { target: "Un enquêteur visite la maison.", ipa: "œ̃n ɑ̃kɛtœʁ vizit la mɛzɔ̃", bases: [{ word: "Un", ref: "fr-0208" }, { word: "enquêteur", base: "enquêteur" }, { word: "visite", ref: "fr-2493" }, { word: "la", ref: "fr-0543" }, { word: "maison", ref: "fr-0996" }] }
+  - id: "fr-2553"
+    target: "preuve"
+    ipa: "pʁœv"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La preuve est dans le dossier.", ipa: "la pʁœv ɛ dɑ̃ lə dosje", bases: [{ word: "La", ref: "fr-0543" }, { word: "preuve", base: "preuve" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "dossier", ref: "fr-0665" }] }
+      - { target: "Il n'a pas de preuve.", ipa: "il na pa də pʁœv", bases: [{ word: "Il", ref: "fr-0127" }, { word: "n'a", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "de", base: "de" }, { word: "preuve", base: "preuve" }] }
+  - id: "fr-2554"
+    target: "innocent"
+    ipa: "inosɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il se dit innocent.", ipa: "il sə di inosɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "se", base: "se" }, { word: "dit", base: "dire" }, { word: "innocent", base: "innocent" }] }
+      - { target: "Elle est innocente.", ipa: "ɛl ɛ inosɑ̃t", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "innocente", base: "innocent" }] }
+  - id: "fr-2555"
+    target: "coupable"
+    ipa: "kupabl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le juge le déclare coupable.", ipa: "lə ʒyʒ lə deklaʁ kupabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "juge", ref: "fr-1879" }, { word: "déclare", base: "déclarer" }, { word: "coupable", base: "coupable" }] }
+      - { target: "Elle n'est pas coupable.", ipa: "ɛl nɛ pa kupabl", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "n'est", ref: "fr-0021" }, { word: "pas", base: "pas" }, { word: "coupable", base: "coupable" }] }
+  - id: "fr-2556"
+    target: "légal"
+    ipa: "legal"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette action est légale.", ipa: "sɛt aksjɔ̃ ɛ legal", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "action", base: "action" }, { word: "est", ref: "fr-0021" }, { word: "légale", base: "légal" }] }
+      - { target: "La procédure est légale.", ipa: "la pʁɔsedyʁ ɛ legal", bases: [{ word: "La", ref: "fr-0543" }, { word: "procédure", ref: "fr-2049" }, { word: "est", ref: "fr-0021" }, { word: "légale", base: "légal" }] }
+  - id: "fr-2557"
+    target: "illégal"
+    ipa: "ilegal"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce vol est illégal.", ipa: "sə vɔl ɛ ilegal", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "vol", ref: "fr-0863" }, { word: "est", ref: "fr-0021" }, { word: "illégal", base: "illégal" }] }
+      - { target: "Le stationnement est illégal ici.", ipa: "lə stasjɔnəmɑ̃ ɛ ilegal isi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "stationnement", base: "stationnement" }, { word: "est", ref: "fr-0021" }, { word: "illégal", base: "illégal" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-2558"
+    target: "plaider"
+    ipa: "plede"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'avocat plaide la cause.", ipa: "lavɔka plɛd la kozə", bases: [{ word: "L'avocat", ref: "fr-2123" }, { word: "plaide", base: "plaider" }, { word: "la", ref: "fr-0543" }, { word: "cause", base: "cause" }] }
+      - { target: "Il plaide non coupable.", ipa: "il plɛd nɔ̃ kupabl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "plaide", base: "plaider" }, { word: "non", ref: "fr-0026" }, { word: "coupable", ref: "fr-2555" }] }
+  - id: "fr-2559"
+    target: "condamner"
+    ipa: "kɔ̃dane"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le juge condamne le voleur.", ipa: "lə ʒyʒ kɔ̃dan lə vɔlœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "juge", ref: "fr-1879" }, { word: "condamne", base: "condamner" }, { word: "voleur", base: "voleur" }] }
+      - { target: "Il est condamné à trois ans.", ipa: "il ɛ kɔ̃dane a tʁwa ɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "condamné", base: "condamner" }, { word: "à", base: "à" }, { word: "trois", ref: "fr-0210" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-2560"
+    target: "acquitter"
+    ipa: "akite"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tribunal acquitte l'accusé.", ipa: "lə tʁibynal akit lakyze", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tribunal", ref: "fr-2046" }, { word: "acquitte", base: "acquitter" }, { word: "l'accusé", ref: "fr-2540" }] }
+      - { target: "Elle est acquittée.", ipa: "ɛl ɛ akite", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "acquittée", base: "acquitter" }] }
+  - id: "fr-2561"
+    target: "porter plainte"
+    ipa: "pɔʁte plɛ̃t"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "porter", ref: "fr-0527" }, { word: "plainte", ref: "fr-2539" }]
+    examples:
+      - { target: "Je veux porter plainte.", ipa: "ʒə vø pɔʁte plɛ̃t", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", ref: "fr-0311" }, { word: "porter", ref: "fr-0527" }, { word: "plainte", ref: "fr-2539" }] }
+      - { target: "Elle a porté plainte hier.", ipa: "ɛl a pɔʁte plɛ̃t jɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "porté", ref: "fr-0527" }, { word: "plainte", ref: "fr-2539" }, { word: "hier", ref: "fr-1038" }] }
+  - id: "fr-2562"
+    target: "interroger"
+    ipa: "ɛ̃tɛʁɔʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La police interroge le témoin.", ipa: "la pɔlis ɛ̃tɛʁɔʒ lə temwɛ̃", bases: [{ word: "La", ref: "fr-0543" }, { word: "police", ref: "fr-1067" }, { word: "interroge", base: "interroger" }, { word: "le", ref: "fr-0543" }, { word: "témoin", ref: "fr-1820" }] }
+      - { target: "Le juge interroge l'accusé.", ipa: "lə ʒyʒ ɛ̃tɛʁɔʒ lakyze", bases: [{ word: "Le", ref: "fr-0543" }, { word: "juge", ref: "fr-1879" }, { word: "interroge", base: "interroger" }, { word: "l'accusé", ref: "fr-2540" }] }
+

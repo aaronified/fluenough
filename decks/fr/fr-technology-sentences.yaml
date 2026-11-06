@@ -1,0 +1,112 @@
+schema: 1
+id: "fr-technology-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2105"
+    target: "Installez le logiciel, puis éteignez l'ordinateur."
+    ipa: "ɛ̃stalez lə lɔʒisjɛl pɥi etɛɲe lɔʁdinatœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Installez", ref: "fr-2078" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "logiciel", ref: "fr-2067" }
+      - { word: "puis", ref: "fr-1135" }
+      - { word: "éteignez", ref: "fr-2081" }
+      - { word: "l'ordinateur", ref: "fr-0666" }
+    confusables:
+      - { id: "allumer", ref: "fr-2080", kind: "word" }
+      - { id: "telecharger", ref: "fr-2077", kind: "word" }
+  - id: "fr-2106"
+    target: "La batterie est vide, je dois charger le téléphone."
+    ipa: "la batʁi ɛ vid ʒə dwa ʃaʁʒe lə telefɔn"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "batterie", ref: "fr-2069" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "vide", ref: "fr-0440" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "dois", ref: "fr-0501" }
+      - { word: "charger", ref: "fr-2079" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "téléphone", ref: "fr-0257" }
+    confusables:
+      - { id: "cable", ref: "fr-2070", kind: "word" }
+      - { id: "appareil", ref: "fr-2087", kind: "word" }
+  - id: "fr-2107"
+    target: "Faites une sauvegarde avant la mise à jour."
+    ipa: "fɛt yn sovɡaʁd avɑ̃ la miz a ʒuʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Faites", ref: "fr-0287" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "sauvegarde", ref: "fr-2089" }
+      - { word: "avant", ref: "fr-0596" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "mise", base: "mise" }
+      - { word: "à", base: "à" }
+      - { word: "jour", ref: "fr-1032" }
+    confusables:
+      - { id: "virus", ref: "fr-2092", kind: "word" }
+      - { id: "bug", ref: "fr-2091", kind: "word" }
+  - id: "fr-2108"
+    target: "Le virus efface le fichier et le disque dur est plein."
+    ipa: "lə viʁys efas lə fiʃje e lə disk dyʁ ɛ plɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "virus", ref: "fr-2092" }
+      - { word: "efface", base: "effacer" }
+      - { word: "fichier", ref: "fr-2076" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "disque", base: "disque" }
+      - { word: "dur", ref: "fr-0449" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "plein", ref: "fr-0439" }
+    confusables:
+      - { id: "memoire", ref: "fr-2095", kind: "word" }
+      - { id: "supprimer", ref: "fr-2102", kind: "word" }
+  - id: "fr-2109"
+    target: "Mon mot de passe est dans le code."
+    ipa: "mɔ̃ mo də pas ɛ dɑ̃ lə kɔd"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "mot", ref: "fr-1620" }
+      - { word: "de", base: "de" }
+      - { word: "passe", ref: "fr-0519" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "code", ref: "fr-2100" }
+    confusables:
+      - { id: "clic", ref: "fr-2083", kind: "word" }
+      - { id: "virus", ref: "fr-2092", kind: "word" }
+  - id: "fr-2110"
+    target: "La souris et le clavier marchent avec le navigateur."
+    ipa: "la suʁi e lə klavje maʁʃ avɛk lə navigatœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "souris", ref: "fr-1263" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "clavier", ref: "fr-1394" }
+      - { word: "marchent", ref: "fr-0306" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "navigateur", ref: "fr-2098" }
+    confusables:
+      - { id: "clic", ref: "fr-2083", kind: "word" }
+      - { id: "serveur", ref: "fr-0826", kind: "word" }
+

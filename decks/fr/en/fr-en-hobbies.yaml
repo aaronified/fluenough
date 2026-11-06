@@ -1,0 +1,564 @@
+schema: 1
+id: "fr-en-hobbies"
+kind: "layer"
+core: "fr-hobbies"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Hobbies"
+license: "CC-BY-SA-4.0"
+description: "Forty words for hobbies: instruments, games and sports, the arts and crafts, the clubs and teams. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1644":
+    native: "piano"
+    notes:
+      "n1": "Piano is the piano, masculine. Jouer du piano is to play the piano."
+    examples:
+      "Je joue du piano le soir.":
+        native: "I play the piano in the evening."
+        bases:
+          "du": "some"
+          "piano": "piano"
+      "Le piano est très beau.":
+        native: "The piano is very beautiful."
+        bases:
+          "piano": "piano"
+  "fr-1645":
+    native: "guitar"
+    notes:
+      "n1": "Guitare is a guitar, feminine. Jouer de la guitare is to play the guitar."
+    examples:
+      "Il joue de la guitare.":
+        native: "He plays the guitar."
+        bases:
+          "de": "of, some"
+          "guitare": "guitar"
+      "La guitare est dans ma chambre.":
+        native: "The guitar is in my room."
+        bases:
+          "guitare": "guitar"
+  "fr-1646":
+    native: "flute"
+    notes:
+      "n1": "Flûte is a flute, feminine: jouer de la flûte."
+    examples:
+      "Ma sœur joue de la flûte.":
+        native: "My sister plays the flute."
+        bases:
+          "de": "of, some"
+          "flûte": "flute"
+      "La flûte est légère.":
+        native: "The flute is light."
+        bases:
+          "flûte": "flute"
+  "fr-1647":
+    native: "violin"
+    notes:
+      "n1": "Violon is a violin, masculine."
+    examples:
+      "Il joue du violon.":
+        native: "He plays the violin."
+        bases:
+          "du": "some"
+          "violon": "violin"
+      "Elle a un violon.":
+        native: "She has a violin."
+        bases:
+          "violon": "violin"
+  "fr-1648":
+    native: "drum"
+    notes:
+      "n1": "Tambour is a drum, masculine. Jouer du tambour is to play the drum."
+    examples:
+      "Le tambour est très fort.":
+        native: "The drum is very loud."
+        bases:
+          "tambour": "drum"
+      "Il joue du tambour dans l'orchestre.":
+        native: "He plays the drum in the orchestra."
+        bases:
+          "du": "some"
+          "tambour": "drum"
+  "fr-1649":
+    native: "song"
+    notes:
+      "n1": "Chanson is a song, feminine. Chanter is the verb: to sing."
+    examples:
+      "J'aime cette chanson.":
+        native: "I like this song."
+        bases:
+          "chanson": "song"
+      "Elle chante une chanson française.":
+        native: "She sings a French song."
+        bases:
+          "chanson": "song"
+  "fr-1650":
+    native: "orchestra"
+    notes:
+      "n1": "Orchestre is an orchestra, masculine."
+    examples:
+      "Il joue dans un orchestre.":
+        native: "He plays in an orchestra."
+        bases:
+          "orchestre": "orchestra"
+      "L'orchestre joue ce soir.":
+        native: "The orchestra plays tonight."
+        bases:
+          "L'orchestre": "orchestra"
+  "fr-1651":
+    native: "to draw"
+    notes:
+      "n1": "Dessiner is to draw. Un dessin is a drawing."
+    examples:
+      "Je dessine une maison.":
+        native: "I draw a house."
+        bases:
+          "dessine": "draws"
+      "Elle aime dessiner le soir.":
+        native: "She likes to draw in the evening."
+        bases:
+          "dessiner": "to draw"
+  "fr-1652":
+    native: "to paint"
+    notes:
+      "n1": "Peindre is to paint, such as a picture or a wall. Peinture is paint or a painting."
+    examples:
+      "Il peint des tableaux.":
+        native: "He paints pictures."
+        bases:
+          "peint": "paints"
+      "Nous peignons le mur en blanc.":
+        native: "We paint the wall white."
+        bases:
+          "peignons": "paint"
+          "en": "in, as"
+          "blanc": "white"
+  "fr-1653":
+    native: "painting, paint"
+    notes:
+      "n1": "Peinture is paint, or a painting, feminine."
+    examples:
+      "J'aime la peinture.":
+        native: "I like painting."
+        bases:
+          "peinture": "painting, paint"
+      "Cette peinture est très belle.":
+        native: "This painting is very beautiful."
+        bases:
+          "peinture": "painting, paint"
+  "fr-1654":
+    native: "photography"
+    notes:
+      "n1": "Photographie is photography, feminine. A photo is une photo."
+    examples:
+      "La photographie est son loisir.":
+        native: "Photography is his hobby."
+        bases:
+          "photographie": "photography"
+          "loisir": "hobby"
+      "Je fais de la photographie.":
+        native: "I do photography."
+        bases:
+          "de": "of, some"
+          "photographie": "photography"
+  "fr-1655":
+    native: "collection"
+    notes:
+      "n1": "Collection is a collection, feminine: une collection de cartes is a collection of cards."
+    examples:
+      "Il a une grande collection.":
+        native: "He has a large collection."
+        bases:
+          "collection": "collection"
+      "Ma collection de cartes est grande.":
+        native: "My collection of cards is large."
+        bases:
+          "collection": "collection"
+          "de": "of, some"
+  "fr-1656":
+    native: "to collect"
+    notes:
+      "n1": "Collectionner is to collect things as a hobby."
+    examples:
+      "Elle collectionne les cartes.":
+        native: "She collects cards."
+        bases:
+          "collectionne": "collects"
+      "Nous collectionnons les livres.":
+        native: "We collect books."
+        bases:
+          "collectionnons": "collect"
+  "fr-1657":
+    native: "sewing"
+    notes:
+      "n1": "Couture is sewing or dressmaking, feminine."
+    examples:
+      "Elle fait de la couture.":
+        native: "She does sewing."
+        bases:
+          "de": "of, some"
+          "couture": "sewing"
+      "La couture est un bon loisir.":
+        native: "Sewing is a good hobby."
+        bases:
+          "couture": "sewing"
+          "loisir": "hobby"
+  "fr-1658":
+    native: "knitting"
+    notes:
+      "n1": "Tricot is knitting, masculine: faire du tricot."
+    examples:
+      "Ma mère fait du tricot.":
+        native: "My mother does knitting."
+        bases:
+          "du": "some"
+          "tricot": "knitting"
+      "Le tricot est calme.":
+        native: "Knitting is calm."
+        bases:
+          "tricot": "knitting"
+  "fr-1659":
+    native: "DIY"
+    notes:
+      "n1": "Bricolage is do-it-yourself work, masculine: faire du bricolage."
+    examples:
+      "Il aime le bricolage.":
+        native: "He likes DIY."
+        bases:
+          "bricolage": "DIY"
+      "Nous faisons du bricolage le samedi.":
+        native: "We do DIY on Saturdays."
+        bases:
+          "du": "some"
+          "bricolage": "DIY"
+  "fr-1660":
+    native: "game"
+    notes:
+      "n1": "Jeu is a game, masculine. Jouer is the verb: to play."
+    examples:
+      "Le jeu est amusant.":
+        native: "The game is fun."
+        bases:
+          "jeu": "game"
+          "amusant": "fun"
+      "C'est un jeu de cartes.":
+        native: "It is a card game."
+        bases:
+          "jeu": "game"
+          "de": "of, some"
+  "fr-1661":
+    native: "chess"
+    notes:
+      "n1": "Échecs is chess, masculine and plural: jouer aux échecs is to play chess."
+    examples:
+      "Il joue aux échecs.":
+        native: "He plays chess."
+        bases:
+          "aux": "to the"
+          "échecs": "chess"
+      "Les échecs sont un jeu difficile.":
+        native: "Chess is a difficult game."
+        bases:
+          "échecs": "chess"
+  "fr-1662":
+    native: "playing cards"
+    notes:
+      "n1": "Cartes is playing cards, feminine and plural. A single card is une carte."
+    examples:
+      "Nous jouons aux cartes.":
+        native: "We play cards."
+        bases:
+          "aux": "to the"
+          "cartes": "playing cards"
+      "Il y a des cartes sur la table.":
+        native: "There are cards on the table."
+        bases:
+          "y": "there"
+          "cartes": "playing cards"
+  "fr-1663":
+    native: "jigsaw puzzle"
+    notes:
+      "n1": "Puzzle is a jigsaw puzzle, masculine: faire un puzzle."
+    examples:
+      "Il fait un puzzle.":
+        native: "He does a jigsaw puzzle."
+        bases:
+          "puzzle": "jigsaw puzzle"
+      "Le puzzle est très difficile.":
+        native: "The jigsaw puzzle is very difficult."
+        bases:
+          "puzzle": "jigsaw puzzle"
+  "fr-1664":
+    native: "novel"
+    notes:
+      "n1": "Roman is a novel, masculine. Un roman policier is a crime novel."
+    examples:
+      "Je lis un roman.":
+        native: "I read a novel."
+        bases:
+          "roman": "novel"
+      "Ce roman est très long.":
+        native: "This novel is very long."
+        bases:
+          "roman": "novel"
+  "fr-1665":
+    native: "poem"
+    notes:
+      "n1": "Poème is a poem, masculine."
+    examples:
+      "Elle écrit un poème.":
+        native: "She writes a poem."
+        bases:
+          "poème": "poem"
+      "Ce poème est beau.":
+        native: "This poem is beautiful."
+        bases:
+          "poème": "poem"
+  "fr-1666":
+    native: "reading"
+    notes:
+      "n1": "Lecture is reading, feminine: the act of reading."
+    examples:
+      "La lecture est mon loisir préféré.":
+        native: "Reading is my favourite hobby."
+        bases:
+          "lecture": "reading"
+          "loisir": "hobby"
+          "préféré": "favourite"
+      "J'aime la lecture le soir.":
+        native: "I like reading in the evening."
+        bases:
+          "lecture": "reading"
+  "fr-1667":
+    native: "football"
+    notes:
+      "n1": "Football is football, masculine. Jouer au football is to play football."
+    examples:
+      "Il joue au football le samedi.":
+        native: "He plays football on Saturdays."
+        bases:
+          "au": "at, in"
+          "football": "football"
+      "Le football est un sport.":
+        native: "Football is a sport."
+        bases:
+          "football": "football"
+  "fr-1668":
+    native: "tennis"
+    notes:
+      "n1": "Tennis is tennis, masculine. Jouer au tennis is to play tennis."
+    examples:
+      "Nous jouons au tennis.":
+        native: "We play tennis."
+        bases:
+          "au": "at, in"
+          "tennis": "tennis"
+      "Le tennis est rapide.":
+        native: "Tennis is fast."
+        bases:
+          "tennis": "tennis"
+  "fr-1669":
+    native: "swimming"
+    notes:
+      "n1": "Natation is swimming, feminine. Nager is the verb: to swim."
+    examples:
+      "Je fais de la natation.":
+        native: "I go swimming."
+        bases:
+          "de": "of, some"
+          "natation": "swimming"
+      "La natation est très bonne.":
+        native: "Swimming is very good."
+        bases:
+          "natation": "swimming"
+  "fr-1670":
+    native: "basketball"
+    notes:
+      "n1": "Basket is basketball, masculine, the short form of basketball."
+    examples:
+      "Il joue au basket.":
+        native: "He plays basketball."
+        bases:
+          "au": "at, in"
+          "basket": "basketball"
+      "Le basket est rapide.":
+        native: "Basketball is fast."
+        bases:
+          "basket": "basketball"
+  "fr-1671":
+    native: "yoga"
+    notes:
+      "n1": "Yoga is yoga, masculine: faire du yoga."
+    examples:
+      "Elle fait du yoga le matin.":
+        native: "She does yoga in the morning."
+        bases:
+          "du": "some"
+          "yoga": "yoga"
+      "Le yoga est calme.":
+        native: "Yoga is calm."
+        bases:
+          "yoga": "yoga"
+  "fr-1672":
+    native: "hike"
+    notes:
+      "n1": "Randonnée is a hike or a long walk, feminine: faire une randonnée."
+    examples:
+      "Nous faisons une randonnée.":
+        native: "We go on a hike."
+        bases:
+          "randonnée": "hike"
+      "La randonnée est longue.":
+        native: "The hike is long."
+        bases:
+          "randonnée": "hike"
+  "fr-1673":
+    native: "fishing"
+    notes:
+      "n1": "Pêche is fishing, feminine. The word also means a peach."
+    examples:
+      "Mon père fait de la pêche.":
+        native: "My father goes fishing."
+        bases:
+          "de": "of, some"
+          "pêche": "fishing"
+      "La pêche est un loisir calme.":
+        native: "Fishing is a calm hobby."
+        bases:
+          "pêche": "fishing"
+          "loisir": "hobby"
+  "fr-1674":
+    native: "camping"
+    notes:
+      "n1": "Camping is camping, masculine: faire du camping."
+    examples:
+      "Nous faisons du camping.":
+        native: "We go camping."
+        bases:
+          "du": "some"
+          "camping": "camping"
+      "Le camping est calme.":
+        native: "The camping site is calm."
+        bases:
+          "camping": "camping"
+  "fr-1675":
+    native: "skiing"
+    notes:
+      "n1": "Ski is skiing, masculine: faire du ski."
+    examples:
+      "Elle fait du ski.":
+        native: "She goes skiing."
+        bases:
+          "du": "some"
+          "ski": "skiing"
+      "Le ski est cher.":
+        native: "Skiing is expensive."
+        bases:
+          "ski": "skiing"
+  "fr-1676":
+    native: "walk"
+    notes:
+      "n1": "Promenade is a walk or a stroll, feminine: faire une promenade."
+    examples:
+      "Je fais une promenade le soir.":
+        native: "I go for a walk in the evening."
+        bases:
+          "promenade": "walk"
+      "La promenade est belle.":
+        native: "The walk is nice."
+        bases:
+          "promenade": "walk"
+  "fr-1677":
+    native: "club"
+    notes:
+      "n1": "Club is a club, masculine: un club de sport is a sports club."
+    examples:
+      "Je suis dans un club de sport.":
+        native: "I am in a sports club."
+        bases:
+          "club": "club"
+          "de": "of, some"
+      "Le club est à l'école.":
+        native: "The club is at the school."
+        bases:
+          "club": "club"
+          "à": "to, at"
+  "fr-1678":
+    native: "association"
+    notes:
+      "n1": "Association is an association, a group run by volunteers, feminine."
+    examples:
+      "Il travaille pour une association.":
+        native: "He works for an association."
+        bases:
+          "association": "association"
+      "Cette association est grande.":
+        native: "This association is big."
+        bases:
+          "association": "association"
+  "fr-1679":
+    native: "match"
+    notes:
+      "n1": "Match is a match or game, masculine."
+    examples:
+      "Nous regardons un match de football.":
+        native: "We watch a football match."
+        bases:
+          "match": "match"
+          "de": "of, some"
+      "Le match est fini.":
+        native: "The match is over."
+        bases:
+          "match": "match"
+  "fr-1680":
+    native: "team"
+    notes:
+      "n1": "Équipe is a team, feminine: une équipe de football."
+    examples:
+      "Mon frère est dans une équipe.":
+        native: "My brother is in a team."
+        bases:
+          "équipe": "team"
+      "L'équipe gagne le match.":
+        native: "The team wins the match."
+        bases:
+          "L'équipe": "team"
+  "fr-1681":
+    native: "training, practice"
+    notes:
+      "n1": "Entraînement is training or practice, masculine. S'entraîner is to train."
+    examples:
+      "L'entraînement est difficile.":
+        native: "The training is hard."
+        bases:
+          "L'entraînement": "training"
+      "Il fait un entraînement chaque jour.":
+        native: "He trains every day."
+        bases:
+          "entraînement": "training, practice"
+  "fr-1682":
+    native: "champion"
+    notes:
+      "n1": "Champion is a champion, masculine. The feminine is championne."
+    examples:
+      "Il est champion de tennis.":
+        native: "He is a tennis champion."
+        bases:
+          "champion": "champion"
+          "de": "of, some"
+      "Elle veut être championne.":
+        native: "She wants to be a champion."
+        bases:
+          "championne": "champion"
+  "fr-1683":
+    native: "passion"
+    notes:
+      "n1": "Passion is a strong love of something, feminine."
+    examples:
+      "La musique est sa passion.":
+        native: "Music is his passion."
+        bases:
+          "passion": "passion"
+      "Sa passion, c'est le piano.":
+        native: "His passion is the piano."
+        bases:
+          "passion": "passion"

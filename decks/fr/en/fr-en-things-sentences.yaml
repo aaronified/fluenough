@@ -1,0 +1,76 @@
+schema: 1
+id: "fr-en-things-sentences"
+kind: "layer"
+core: "fr-things-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: things"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about everyday things, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1404":
+    native: "I tidy my bag and my wallet."
+    bases:
+      "range": "tidy"
+    confusables:
+      "stylo": { why: "Stylo is a pen, not a bag." }
+      "livre": { why: "Livre is a book, not a bag." }
+  "fr-1405":
+    native: "The newspaper is on the living-room table."
+    bases:
+      "du": "of the"
+    confusables:
+      "enveloppe": { why: "Enveloppe is an envelope, not a newspaper." }
+      "timbre": { why: "Timbre is a stamp, the thing that goes on an envelope." }
+  "fr-1406":
+    native: "You need to buy a battery."
+    bases:
+      "faut": "need"
+    confusables:
+      "gomme": { why: "Gomme is an eraser, not a battery." }
+      "bougie": { why: "Bougie is a candle, not a battery." }
+  "fr-1407":
+    native: "My bin is full this morning."
+    bases:
+      "pleine": "full"
+    confusables:
+      "balai": { why: "Balai is a broom, used to sweep, not a bin." }
+      "eponge": { why: "Éponge is a sponge, used to wash, not a bin." }
+  "fr-1408":
+    native: "The cat sleeps in the basket."
+    bases:
+      "dort": "sleeps"
+    confusables:
+      "tapis": { why: "Tapis is a rug: the cat sleeps in a basket, not on a rug." }
+      "oreiller": { why: "Oreiller is a pillow, not a basket." }
+  "fr-1409":
+    native: "I close the window and the curtain."
+    bases:
+      "ferme": "close"
+    confusables:
+      "porte": { why: "Porte is a door, and the sentence closes a window and a curtain." }
+      "miroir": { why: "Miroir is a mirror, not a window." }
+  "fr-1410":
+    native: "Take your umbrella, it is raining."
+    confusables:
+      "lunettes": { why: "Lunettes are glasses, not an umbrella." }
+      "chapeau": { why: "Chapeau is a hat, not an umbrella." }
+  "fr-1411":
+    native: "I put the knife on the table."
+    bases:
+      "mets": "put"
+    confusables:
+      "cuillere": { why: "Cuillère is a spoon, not a knife." }
+      "fourchette": { why: "Fourchette is a fork, not a knife." }
+  "fr-1412":
+    native: "There is a lamp in the bedroom."
+    bases:
+      "y": "there"
+    confusables:
+      "lit": { why: "Lit is a bed: it is in the bedroom, but it is not in this sentence." }
+      "fenetre": { why: "Fenêtre is a window, not a lamp." }
+  "fr-1413":
+    native: "A candle and a box are on the bed."
+    confusables:
+      "sac": { why: "Sac is a bag, not a candle or a box." }
+      "valise": { why: "Valise is a suitcase, not a small box." }

@@ -1,0 +1,51 @@
+schema: 1
+id: "fr-en-environment-sentences"
+kind: "layer"
+core: "fr-environment-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: environment"
+license: "CC-BY-SA-4.0"
+description: "Sentences about environment, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2197":
+    native: "Recycling reduces waste and protects the forest."
+    confusables:
+      "polluer": { why: "To pollute is the opposite of protecting, so it is a tempting but wrong answer." }
+      "gaspiller": { why: "Wasting is the opposite of recycling in this sentence." }
+  "fr-2198":
+    native: "Air pollution threatens the climate."
+    bases:
+      "de": "of"
+      "menace": "threatens"
+    confusables:
+      "rechauffement": { why: "Warming is a result of the climate change, not the pollution named in the sentence." }
+      "secheresse": { why: "Drought is not named in the sentence." }
+  "fr-2199":
+    native: "Solar and wind energy are clean."
+    confusables:
+      "sale": { why: "Dirty is the opposite of clean in the sentence." }
+      "carbone": { why: "Carbon is pollution; the sentence names clean energy." }
+  "fr-2200":
+    native: "The forest floor is dry because of the drought."
+    bases:
+      "de": "of"
+      "à": "to, at"
+      "cause": "cause"
+    confusables:
+      "inondation": { why: "A flood is too much water; the sentence says it is dry." }
+      "tempete": { why: "A storm is wind and rain; the sentence is about dryness." }
+  "fr-2201":
+    native: "The oceans are threatened by plastic."
+    bases:
+      "menacés": "threatened"
+    confusables:
+      "dechet": { why: "Waste is what plastic becomes, but the sentence names plastic." }
+      "espece": { why: "A species is a group of animals; the sentence is about oceans." }
+  "fr-2202":
+    native: "We sort the waste and compost the leftovers."
+    bases:
+      "restes": "leftovers"
+    confusables:
+      "recycler": { why: "Recycling is close, but the sentence names sorting and composting." }
+      "economiser": { why: "Saving is not named; the sentence is about rubbish." }

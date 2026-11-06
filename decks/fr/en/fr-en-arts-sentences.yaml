@@ -1,0 +1,48 @@
+schema: 1
+id: "fr-en-arts-sentences"
+kind: "layer"
+core: "fr-arts-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: arts"
+license: "CC-BY-SA-4.0"
+description: "Sentences about arts, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2279":
+    native: "The artist paints a painting for the exhibition."
+    confusables:
+      "sculpture": { why: "A sculpture is three-dimensional; the sentence paints a painting." }
+      "galerie": { why: "A gallery shows the work; the sentence says the artist makes it." }
+  "fr-2280":
+    native: "The novel tells the life of a writer."
+    bases:
+      "d'un": "of a"
+    confusables:
+      "poeme": { why: "A poem is short; the sentence is about a novel." }
+      "auteur": { why: "The author is named as the writer; the sentence names the book." }
+  "fr-2281":
+    native: "The theatre presents a dance show."
+    bases:
+      "présente": "presents"
+      "de": "of, from, some"
+    confusables:
+      "concert": { why: "A concert is music; the sentence is about dance." }
+      "roman": { why: "A novel is a book; the sentence is about a theatre show." }
+  "fr-2282":
+    native: "This concert is famous for its classical music."
+    confusables:
+      "moderne": { why: "Modern is the opposite of classical in this sentence." }
+      "original": { why: "Original is not named; the sentence is about classical music." }
+  "fr-2283":
+    native: "The museum exhibits a modern sculpture."
+    confusables:
+      "peinture": { why: "Painting is an alternative, but the sentence names a sculpture." }
+      "tableau": { why: "A painting is flat; the sentence has a sculpture." }
+  "fr-2284":
+    native: "The work shows the talent and style of the artist."
+    bases:
+      "montre": "shows"
+      "de": "of, from, some"
+    confusables:
+      "inspirer": { why: "To inspire is what the work may do; the sentence says it shows." }
+      "esthetique": { why: "Aesthetic is a quality; the sentence names talent and style." }

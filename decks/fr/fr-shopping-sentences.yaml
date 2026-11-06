@@ -1,0 +1,156 @@
+schema: 1
+id: "fr-shopping-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1460"
+    target: "Je paie avec ma carte, pas en espèces."
+    ipa: "ʒə pɛ avɛk ma kaʁt pa ɑ̃ ɛspɛs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "paie", base: "payer" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "ma", ref: "fr-0137" }
+      - { word: "carte", ref: "fr-0824" }
+      - { word: "pas", base: "pas" }
+      - { word: "en", base: "en" }
+      - { word: "espèces", ref: "fr-1426" }
+    confusables:
+      - { id: "monnaie", ref: "fr-0750", kind: "word" }
+      - { id: "ticket", ref: "fr-1428", kind: "word" }
+  - id: "fr-1461"
+    target: "Le magasin ouvre à neuf heures."
+    ipa: "lə magazɛ̃ uvʁ a nœf œʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "magasin", ref: "fr-0795" }
+      - { word: "ouvre", base: "ouvrir" }
+      - { word: "à", base: "à" }
+      - { word: "neuf", ref: "fr-0216" }
+      - { word: "heures", base: "heure" }
+    confusables:
+      - { id: "supermarche", ref: "fr-1430", kind: "word" }
+      - { id: "boutique", ref: "fr-1429", kind: "word" }
+  - id: "fr-1462"
+    target: "Cette veste coûte trop cher."
+    ipa: "sɛt vɛst kut tʁo ʃɛʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Cette", ref: "fr-0144" }
+      - { word: "veste", ref: "fr-1205" }
+      - { word: "coûte", base: "coûter" }
+      - { word: "trop", ref: "fr-0344" }
+      - { word: "cher", ref: "fr-0104" }
+    confusables:
+      - { id: "remise", ref: "fr-1424", kind: "word" }
+      - { id: "reduction", ref: "fr-1423", kind: "word" }
+  - id: "fr-1463"
+    target: "Garde le ticket de caisse."
+    ipa: "ɡaʁd lə tikɛ də kɛs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Garde", base: "garder" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "ticket", ref: "fr-1428" }
+      - { word: "de", base: "de" }
+      - { word: "caisse", ref: "fr-0749" }
+    confusables:
+      - { id: "chariot", ref: "fr-1453", kind: "word" }
+      - { id: "panier", ref: "fr-0748", kind: "word" }
+  - id: "fr-1464"
+    target: "Tu peux échanger ce pull demain."
+    ipa: "ty pø eʃɑ̃ʒe sə pyl dəmɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Tu", ref: "fr-0095" }
+      - { word: "peux", base: "pouvoir" }
+      - { word: "échanger", ref: "fr-1442" }
+      - { word: "ce", ref: "fr-0143" }
+      - { word: "pull", ref: "fr-1207" }
+      - { word: "demain", ref: "fr-0078" }
+    confusables:
+      - { id: "rembourser", ref: "fr-1441", kind: "word" }
+      - { id: "occasion", ref: "fr-1447", kind: "word" }
+  - id: "fr-1465"
+    target: "Je voudrais un sac, merci."
+    ipa: "ʒə vudʁɛ œ̃ sak mɛʁsi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "voudrais", base: "vouloir" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "sac", ref: "fr-0485" }
+      - { word: "merci", ref: "fr-0002" }
+    confusables:
+      - { id: "panier", ref: "fr-0748", kind: "word" }
+      - { id: "valise", ref: "fr-0876", kind: "word" }
+  - id: "fr-1466"
+    target: "Le prix du pain est bas."
+    ipa: "lə pʁi dy pɛ̃ ɛ ba"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "prix", ref: "fr-0737" }
+      - { word: "du", base: "du" }
+      - { word: "pain", ref: "fr-0773" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "bas", ref: "fr-0424" }
+    confusables:
+      - { id: "promotion", ref: "fr-1422", kind: "word" }
+      - { id: "gratuit", ref: "fr-1448", kind: "word" }
+  - id: "fr-1467"
+    target: "La vendeuse ouvre la caisse."
+    ipa: "la vɑ̃døz uvʁ la kɛs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "vendeuse", ref: "fr-1446" }
+      - { word: "ouvre", base: "ouvrir" }
+      - { word: "caisse", ref: "fr-0749" }
+    confusables:
+      - { id: "caissier", ref: "fr-1458", kind: "word" }
+      - { id: "vendeur", ref: "fr-0736", kind: "word" }
+  - id: "fr-1468"
+    target: "Ce magasin vend des livres et des stylos."
+    ipa: "sə magazɛ̃ vɑ̃ de livʁ e de stilo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "magasin", ref: "fr-0795" }
+      - { word: "vend", base: "vendre" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "livres", base: "livre" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "stylos", base: "stylo" }
+    confusables:
+      - { id: "librairie", ref: "fr-1431", kind: "word" }
+      - { id: "papeterie", ref: "fr-1432", kind: "word" }
+  - id: "fr-1469"
+    target: "On paie à la caisse."
+    ipa: "ɔ̃ pɛ a la kɛs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "On", ref: "fr-0132" }
+      - { word: "paie", base: "payer" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "caisse", ref: "fr-0749" }
+    confusables:
+      - { id: "chariot", ref: "fr-1453", kind: "word" }
+      - { id: "file", ref: "fr-1454", kind: "word" }

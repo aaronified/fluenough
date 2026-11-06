@@ -1,0 +1,144 @@
+schema: 1
+id: "fr-weather-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1343"
+    target: "Le temps change souvent au printemps."
+    ipa: "lə tɑ̃ ʃɑ̃ʒ suvɑ̃ o pʁɛ̃tɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "temps", ref: "fr-1040" }
+      - { word: "change", ref: "fr-0526" }
+      - { word: "souvent", ref: "fr-0326" }
+      - { word: "au", base: "au" }
+      - { word: "printemps", ref: "fr-1169" }
+  - id: "fr-1344"
+    target: "Ce matin, la neige tombe sur les toits."
+    ipa: "sə matɛ̃ la nɛʒ tɔ̃b syʁ le twa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "matin", ref: "fr-1033" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "neige", ref: "fr-1306" }
+      - { word: "tombe", ref: "fr-0518" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "toits", base: "toit" }
+    confusables:
+      - { id: "pluie", ref: "fr-1304", kind: "word" }
+      - { id: "brume", ref: "fr-1311", kind: "word" }
+  - id: "fr-1345"
+    target: "Quelle est la météo de demain ?"
+    ipa: "kɛl ɛ la meteo də dəmɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Quelle", ref: "fr-0072" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "météo", ref: "fr-1318" }
+      - { word: "de", base: "de" }
+      - { word: "demain", ref: "fr-0078" }
+    confusables:
+      - { id: "prevision", ref: "fr-1317", kind: "word" }
+      - { id: "pluie", ref: "fr-1304", kind: "word" }
+  - id: "fr-1346"
+    target: "Le vent souffle, il fait froid."
+    ipa: "lə vɑ̃ sufl il fɛ fʁwa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "vent", ref: "fr-0036" }
+      - { word: "souffle", ref: "fr-1336" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "fait", ref: "fr-0287" }
+      - { word: "froid", ref: "fr-0420" }
+  - id: "fr-1347"
+    target: "La pluie et l'orage arrivent ensemble."
+    ipa: "la plɥi e lɔʁaʒ aʁiv ɑ̃sɑ̃bl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "pluie", ref: "fr-1304" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "l'orage", ref: "fr-1307" }
+      - { word: "arrivent", ref: "fr-0305" }
+      - { word: "ensemble", ref: "fr-0333" }
+    confusables:
+      - { id: "tonnerre", ref: "fr-1308", kind: "word" }
+      - { id: "neige", ref: "fr-1306", kind: "word" }
+  - id: "fr-1348"
+    target: "Un ciel bleu et un soleil chaud."
+    ipa: "œ̃ sjɛl blø e œ̃ sɔlɛj ʃo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Un", ref: "fr-0208" }
+      - { word: "ciel", ref: "fr-1314" }
+      - { word: "bleu", ref: "fr-1233" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "soleil", ref: "fr-1303" }
+      - { word: "chaud", ref: "fr-0419" }
+  - id: "fr-1349"
+    target: "Il neige, et les routes sont glissantes."
+    ipa: "il nɛʒ e le ʁut sɔ̃ ɡlisɑ̃t"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "neige", ref: "fr-1333" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "routes", ref: "fr-0892" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "glissantes", base: "glissant" }
+  - id: "fr-1350"
+    target: "Le brouillard couvre la vallée."
+    ipa: "lə bʁujaʁ kuvʁ la vale"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "brouillard", ref: "fr-1310" }
+      - { word: "couvre", base: "couvrir" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "vallée", base: "vallée" }
+    confusables:
+      - { id: "brume", ref: "fr-1311", kind: "word" }
+      - { id: "neige", ref: "fr-1306", kind: "word" }
+  - id: "fr-1351"
+    target: "Il y a dix degrés aujourd'hui."
+    ipa: "il i a dis dəɡʁe oʒuʁdɥi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "y", base: "y" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "dix", ref: "fr-0217" }
+      - { word: "degrés", ref: "fr-1316" }
+      - { word: "aujourd'hui", ref: "fr-0079" }
+  - id: "fr-1352"
+    target: "Je prends mon parapluie quand il pleut."
+    ipa: "ʒə pʁɑ̃ mɔ̃ paʁaplɥi kɑ̃ il plø"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "prends", ref: "fr-0288" }
+      - { word: "mon", ref: "fr-0037" }
+      - { word: "parapluie", ref: "fr-1329" }
+      - { word: "quand", ref: "fr-0068" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "pleut", ref: "fr-1332" }

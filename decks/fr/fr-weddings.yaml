@@ -1,0 +1,301 @@
+schema: 1
+id: "fr-weddings"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "weddings"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2367"
+    target: "époux"
+    ipa: "epu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les époux sortent de la mairie.", ipa: "lezepu sɔʁt də la mɛʁi", bases: [{ word: "Les", ref: "fr-0543" }, { word: "époux", base: "époux" }, { word: "sortent", ref: "fr-1125" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mairie", ref: "fr-0974" }] }
+      - { target: "Mon époux est médecin.", ipa: "mɔ̃n epu ɛ medsɛ̃", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "époux", base: "époux" }, { word: "est", ref: "fr-0021" }, { word: "médecin", ref: "fr-1073" }] }
+  - id: "fr-2368"
+    target: "cérémonie"
+    ipa: "seʁemɔni"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cérémonie commence à quinze heures.", ipa: "la seʁemɔni kɔmɑ̃s a kɛ̃z œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "cérémonie", base: "cérémonie" }, { word: "commence", ref: "fr-0508" }, { word: "à", base: "à" }, { word: "quinze", ref: "fr-0222" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Cette cérémonie est très émouvante.", ipa: "sɛt seʁemɔni ɛ tʁɛ emuvɑ̃t", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "cérémonie", base: "cérémonie" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "émouvante", ref: "fr-2382" }] }
+  - id: "fr-2369"
+    target: "alliance"
+    ipa: "aljɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il porte son alliance.", ipa: "il pɔʁt sɔ̃n aljɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-1003" }, { word: "son", ref: "fr-0138" }, { word: "alliance", base: "alliance" }] }
+      - { target: "L'alliance est en or.", ipa: "laljɑ̃s ɛ ɑ̃ ɔʁ", bases: [{ word: "L'alliance", base: "alliance" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "or", base: "or" }] }
+  - id: "fr-2370"
+    target: "invité"
+    ipa: "ɛ̃vite"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les invités arrivent à midi.", ipa: "lezɛ̃vite aʁiv a midi", bases: [{ word: "Les", ref: "fr-0543" }, { word: "invités", base: "invité" }, { word: "arrivent", ref: "fr-0305" }, { word: "à", base: "à" }, { word: "midi", ref: "fr-1036" }] }
+      - { target: "Chaque invité reçoit un cadeau.", ipa: "ʃak ɛ̃vite ʁəswa œ̃ kado", bases: [{ word: "Chaque", ref: "fr-0375" }, { word: "invité", base: "invité" }, { word: "reçoit", ref: "fr-1986" }, { word: "un", ref: "fr-0208" }, { word: "cadeau", ref: "fr-1425" }] }
+  - id: "fr-2371"
+    target: "bouquet"
+    ipa: "bukɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bouquet est très joli.", ipa: "lə bukɛ ɛ tʁɛ ʒɔli", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bouquet", base: "bouquet" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "joli", ref: "fr-0414" }] }
+      - { target: "Elle reçoit un bouquet de roses.", ipa: "ɛl ʁəswa œ̃ bukɛ də ʁoz", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "reçoit", ref: "fr-1986" }, { word: "un", ref: "fr-0208" }, { word: "bouquet", base: "bouquet" }, { word: "de", base: "de" }, { word: "roses", base: "rose" }] }
+  - id: "fr-2372"
+    target: "banquet"
+    ipa: "bɑ̃kɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le banquet est servi à huit heures.", ipa: "lə bɑ̃kɛ ɛ sɛʁvi a ɥit œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "banquet", base: "banquet" }, { word: "est", ref: "fr-0021" }, { word: "servi", ref: "fr-0839" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Nous dansons après le banquet.", ipa: "nu dɑ̃sɔ̃ apʁɛ lə bɑ̃kɛ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "dansons", ref: "fr-0523" }, { word: "après", ref: "fr-0595" }, { word: "le", ref: "fr-0543" }, { word: "banquet", base: "banquet" }] }
+  - id: "fr-2373"
+    target: "demoiselle d'honneur"
+    ipa: "dəmwazɛl dɔnœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "demoiselle", base: "demoiselle" }, { word: "d'honneur", base: "honneur" }]
+    examples:
+      - { target: "La demoiselle d'honneur porte un bouquet.", ipa: "la dəmwazɛl dɔnœʁ pɔʁt œ̃ bukɛ", bases: [{ word: "La", ref: "fr-0544" }, { word: "demoiselle", base: "demoiselle" }, { word: "d'honneur", base: "honneur" }, { word: "porte", ref: "fr-1003" }, { word: "un", ref: "fr-0208" }, { word: "bouquet", ref: "fr-2371" }] }
+      - { target: "Ma cousine est demoiselle d'honneur.", ipa: "ma kuzin ɛ dəmwazɛl dɔnœʁ", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "cousine", ref: "fr-0179" }, { word: "est", ref: "fr-0021" }, { word: "demoiselle", base: "demoiselle" }, { word: "d'honneur", base: "honneur" }] }
+  - id: "fr-2374"
+    target: "fiancer"
+    ipa: "fjɑ̃se"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils se fiancent au printemps.", ipa: "il sə fjɑ̃s o pʁɛ̃tɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "se", base: "se" }, { word: "fiancent", base: "fiancer" }, { word: "au", base: "à" }, { word: "printemps", ref: "fr-1169" }] }
+      - { target: "Nous nous fiançons demain.", ipa: "nu nu fjɑ̃sɔ̃ dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "fiançons", base: "fiancer" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2375"
+    target: "marier"
+    ipa: "maʁje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils se marient en juin.", ipa: "il sə maʁi ɑ̃ ʒɥɛ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "se", base: "se" }, { word: "marient", base: "marier" }, { word: "en", base: "en" }, { word: "juin", ref: "fr-1157" }] }
+      - { target: "Le maire marie le couple.", ipa: "lə mɛʁ maʁi lə kupl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "maire", ref: "fr-2024" }, { word: "marie", base: "marier" }, { word: "couple", ref: "fr-2397" }] }
+  - id: "fr-2376"
+    target: "embrasser"
+    ipa: "ɑ̃bʁase"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les mariés s'embrassent.", ipa: "le maʁje sɑ̃bʁas", bases: [{ word: "Les", ref: "fr-0543" }, { word: "mariés", ref: "fr-0249" }, { word: "s'embrassent", base: "embrasser" }] }
+      - { target: "J'embrasse ma mère.", ipa: "ʒɑ̃bʁas ma mɛʁ", bases: [{ word: "J'embrasse", base: "embrasser" }, { word: "ma", ref: "fr-0037" }, { word: "mère", ref: "fr-0166" }] }
+  - id: "fr-2377"
+    target: "inviter"
+    ipa: "ɛ̃vite"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous invitons toute la famille.", ipa: "nu ɛ̃vitɔ̃ tut la famij", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "invitons", base: "inviter" }, { word: "toute", ref: "fr-0372" }, { word: "la", ref: "fr-0544" }, { word: "famille", ref: "fr-0164" }] }
+      - { target: "Je t'invite au mariage.", ipa: "ʒə tɛ̃vit o maʁjaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "t'invite", base: "inviter" }, { word: "au", base: "à" }, { word: "mariage", ref: "fr-0187" }] }
+  - id: "fr-2378"
+    target: "veuf"
+    ipa: "vœf"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon grand-père est veuf.", ipa: "mɔ̃ ɡʁɑ̃pɛʁ ɛ vœf", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "grand", ref: "fr-0410" }, { word: "père", ref: "fr-0165" }, { word: "est", ref: "fr-0021" }, { word: "veuf", base: "veuf" }] }
+      - { target: "Elle est veuve depuis cinq ans.", ipa: "ɛl ɛ vœv dəpɥi sɛ̃k ɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "veuve", base: "veuve" }, { word: "depuis", base: "depuis" }, { word: "cinq", ref: "fr-0212" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-2379"
+    target: "lune de miel"
+    ipa: "lyn də mjɛl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "lune", ref: "fr-2386" }, { word: "de", base: "de" }, { word: "miel", ref: "fr-1557" }]
+    examples:
+      - { target: "Ils partent en lune de miel.", ipa: "il paʁt ɑ̃ lyn də mjɛl", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "partent", ref: "fr-0304" }, { word: "en", base: "en" }, { word: "lune", ref: "fr-2386" }, { word: "de", base: "de" }, { word: "miel", ref: "fr-1557" }] }
+      - { target: "La lune de miel dure une semaine.", ipa: "la lyn də mjɛl dyʁ yn səmɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "lune", ref: "fr-2386" }, { word: "de", base: "de" }, { word: "miel", ref: "fr-1557" }, { word: "dure", ref: "fr-1131" }, { word: "une", ref: "fr-0545" }, { word: "semaine", ref: "fr-0668" }] }
+  - id: "fr-2380"
+    target: "vœu"
+    ipa: "vø"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle fait un vœu.", ipa: "ɛl fɛ œ̃ vø", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "vœu", base: "vœu" }] }
+      - { target: "Les vœux du couple sont beaux.", ipa: "le vø dy kupl sɔ̃ bo", bases: [{ word: "Les", ref: "fr-0543" }, { word: "vœux", base: "vœu" }, { word: "du", base: "de" }, { word: "couple", ref: "fr-2397" }, { word: "sont", ref: "fr-0021" }, { word: "beaux", ref: "fr-0412" }] }
+  - id: "fr-2381"
+    target: "discours"
+    ipa: "diskuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le témoin fait un discours.", ipa: "lə temwɛ̃ fɛ œ̃ diskuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "témoin", ref: "fr-1820" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "discours", base: "discours" }] }
+      - { target: "Ce discours est très drôle.", ipa: "sə diskuʁ ɛ tʁɛ dʁol", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "discours", base: "discours" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
+  - id: "fr-2382"
+    target: "émouvant"
+    ipa: "emuvɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce moment est émouvant.", ipa: "sə mɔmɑ̃ ɛ emuvɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "moment", ref: "fr-1039" }, { word: "est", ref: "fr-0021" }, { word: "émouvant", base: "émouvant" }] }
+      - { target: "La musique est très émouvante.", ipa: "la myzik ɛ tʁɛ emuvɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "émouvante", base: "émouvant" }] }
+  - id: "fr-2383"
+    target: "élégant"
+    ipa: "elegɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il porte un costume élégant.", ipa: "il pɔʁt œ̃ kɔstym elegɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-1003" }, { word: "un", ref: "fr-0208" }, { word: "costume", ref: "fr-1216" }, { word: "élégant", base: "élégant" }] }
+      - { target: "Elle est très élégante ce soir.", ipa: "ɛl ɛ tʁɛ elegɑ̃t sə swaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "élégante", base: "élégant" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-2384"
+    target: "promesse"
+    ipa: "pʁɔmɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il fait une promesse à sa femme.", ipa: "il fɛ yn pʁɔmɛs a sa fam", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "promesse", base: "promesse" }, { word: "à", base: "à" }, { word: "sa", ref: "fr-0138" }, { word: "femme", ref: "fr-0172" }] }
+      - { target: "Cette promesse est importante.", ipa: "sɛt pʁɔmɛs ɛ ɛ̃pɔʁtɑ̃t", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "promesse", base: "promesse" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+  - id: "fr-2385"
+    target: "fête de famille"
+    ipa: "fɛt də famij"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "fête", ref: "fr-1176" }, { word: "de", base: "de" }, { word: "famille", ref: "fr-0164" }]
+    examples:
+      - { target: "C'est une fête de famille.", ipa: "sɛ tyn fɛt də famij", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "fête", ref: "fr-1176" }, { word: "de", base: "de" }, { word: "famille", ref: "fr-0164" }] }
+      - { target: "La fête de famille dure toute la journée.", ipa: "la fɛt də famij dyʁ tut la ʒuʁne", bases: [{ word: "La", ref: "fr-0544" }, { word: "fête", ref: "fr-1176" }, { word: "de", base: "de" }, { word: "famille", ref: "fr-0164" }, { word: "dure", ref: "fr-1131" }, { word: "toute", ref: "fr-0372" }, { word: "journée", ref: "fr-1098" }] }
+  - id: "fr-2386"
+    target: "lune"
+    ipa: "lyn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La lune est pleine ce soir.", ipa: "la lyn ɛ plɛn sə swaʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "lune", base: "lune" }, { word: "est", ref: "fr-0021" }, { word: "pleine", ref: "fr-0439" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "Elle regarde la lune.", ipa: "ɛl ʁəɡaʁd la lyn", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "regarde", ref: "fr-0293" }, { word: "la", ref: "fr-0544" }, { word: "lune", base: "lune" }] }
+  - id: "fr-2396"
+    target: "registre"
+    ipa: "ʁəʒistʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le registre est sur la table.", ipa: "lə ʁəʒistʁ ɛ syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "registre", base: "registre" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Ils signent le registre de la mairie.", ipa: "il siɲ lə ʁəʒistʁ də la mɛʁi", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "signent", ref: "fr-1987" }, { word: "le", ref: "fr-0543" }, { word: "registre", base: "registre" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mairie", ref: "fr-0974" }] }
+  - id: "fr-2397"
+    target: "couple"
+    ipa: "kupl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce couple est très heureux.", ipa: "sə kupl ɛ tʁɛ øʁø", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "couple", base: "couple" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "heureux", ref: "fr-0429" }] }
+      - { target: "Le couple danse ensemble.", ipa: "lə kupl dɑ̃s ɑ̃sɑ̃bl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "couple", base: "couple" }, { word: "danse", ref: "fr-0523" }, { word: "ensemble", ref: "fr-0333" }] }
+  - id: "fr-2398"
+    target: "voile"
+    ipa: "vwal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La mariée porte un long voile.", ipa: "la maʁje pɔʁt œ̃ lɔ̃ vwal", bases: [{ word: "La", ref: "fr-0544" }, { word: "mariée", ref: "fr-0249" }, { word: "porte", ref: "fr-1003" }, { word: "un", ref: "fr-0208" }, { word: "long", ref: "fr-0421" }, { word: "voile", base: "voile" }] }
+      - { target: "Le voile est très léger.", ipa: "lə vwal ɛ tʁɛ leʒe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "voile", base: "voile" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "léger", ref: "fr-0441" }] }
+  - id: "fr-2399"
+    target: "anneau"
+    ipa: "ano"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'anneau brille au doigt.", ipa: "lano bʁij o dwa", bases: [{ word: "L'anneau", base: "anneau" }, { word: "brille", ref: "fr-1335" }, { word: "au", base: "à" }, { word: "doigt", ref: "fr-0941" }] }
+      - { target: "Il met un anneau à son doigt.", ipa: "il mɛ œ̃ ano a sɔ̃ dwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "un", ref: "fr-0208" }, { word: "anneau", base: "anneau" }, { word: "à", base: "à" }, { word: "son", ref: "fr-0138" }, { word: "doigt", ref: "fr-0941" }] }
+  - id: "fr-2400"
+    target: "traiteur"
+    ipa: "tʁɛtœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le traiteur sert le repas.", ipa: "lə tʁɛtœʁ sɛʁ lə ʁəpa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "traiteur", base: "traiteur" }, { word: "sert", ref: "fr-0839" }, { word: "repas", ref: "fr-0813" }] }
+      - { target: "Nous choisissons un traiteur.", ipa: "nu ʃwazisɔ̃ œ̃ tʁɛtœʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "choisissons", ref: "fr-0507" }, { word: "un", ref: "fr-0208" }, { word: "traiteur", base: "traiteur" }] }
+  - id: "fr-2401"
+    target: "photographe"
+    ipa: "fɔtɔɡʁaf"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le photographe prend les photos.", ipa: "lə fɔtɔɡʁaf pʁɑ̃ le foto", bases: [{ word: "Le", ref: "fr-0543" }, { word: "photographe", base: "photographe" }, { word: "prend", ref: "fr-0288" }, { word: "les", ref: "fr-0543" }, { word: "photos", ref: "fr-1373" }] }
+      - { target: "Ma sœur est photographe.", ipa: "ma sœʁ ɛ fɔtɔɡʁaf", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "photographe", base: "photographe" }] }
+  - id: "fr-2402"
+    target: "nuit de noces"
+    ipa: "nɥi də nɔs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: [{ word: "nuit", ref: "fr-1035" }, { word: "de", base: "de" }, { word: "noces", base: "noce" }]
+    examples:
+      - { target: "La nuit de noces est douce.", ipa: "la nɥi də nɔs ɛ dus", bases: [{ word: "La", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }, { word: "de", base: "de" }, { word: "noces", base: "noce" }, { word: "est", ref: "fr-0021" }, { word: "douce", ref: "fr-1337" }] }
+      - { target: "Ils passent la nuit de noces à Paris.", ipa: "il pas la nɥi də nɔs a paʁi", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "passent", ref: "fr-0519" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }, { word: "de", base: "de" }, { word: "noces", base: "noce" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+

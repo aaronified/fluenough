@@ -1,0 +1,53 @@
+schema: 1
+id: "fr-en-money-sentences"
+kind: "layer"
+core: "fr-money-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: money"
+license: "CC-BY-SA-4.0"
+description: "Sentences about money, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2735":
+    native: "I pay by bank card or in cash."
+    bases:
+      "bancaire": "bank"
+      "ou": "or"
+      "en": "in, by, as"
+    confusables:
+      "cheque": { why: "A cheque is another way to pay; the sentence names two ways." }
+      "virement": { why: "A bank transfer is another way; the sentence names card and cash." }
+  "fr-2736":
+    native: "The cashier gives the change to the customer."
+    bases:
+      "à": "to, at"
+    confusables:
+      "caisse": { why: "The till is the place; the sentence names the person giving change." }
+      "reduction": { why: "A discount changes the price; the sentence is about change." }
+  "fr-2737":
+    native: "This investment brings in more than the loan."
+    bases:
+      "rapporte": "brings in"
+      "que": "that"
+    confusables:
+      "interet": { why: "Interest is paid on a loan; the sentence compares investment and credit." }
+      "gain": { why: "A gain is money won; the sentence names an investment." }
+  "fr-2738":
+    native: "She saves and pays back her debt."
+    confusables:
+      "epargne": { why: "Savings are kept money; the sentence names saving and paying back." }
+      "emprunt": { why: "A loan is taken out; the sentence names paying back." }
+  "fr-2739":
+    native: "The sales bring down the cost of clothes."
+    bases:
+      "baisser": "fall"
+    confusables:
+      "promotion": { why: "A promotion is an offer; the sentence names sales as the cause." }
+      "depense": { why: "An expense is money spent; the sentence names the cost falling." }
+  "fr-2740":
+    native: "This project needs a big investment and a loan."
+    bases:
+      "gros": "big"
+    confusables:
+      "dette": { why: "A debt is owed; the sentence names a loan and an investment." }
+      "revenu": { why: "Income is money received; the sentence names the project’s needs." }

@@ -1,0 +1,58 @@
+schema: 1
+id: "fr-en-sports-sentences"
+kind: "layer"
+core: "fr-sports-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: sports"
+license: "CC-BY-SA-4.0"
+description: "Sentences about sports, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2426":
+    native: "The player takes the penalty and scores a goal."
+    bases:
+      "tire": "takes"
+    confusables:
+      "arbitre": { why: "The referee decides; the sentence has the player act." }
+      "entraineur": { why: "The coach trains; the sentence is about a shot." }
+  "fr-2427":
+    native: "The team plays at the stadium and wins the victory."
+    bases:
+      "au": "at, to the"
+    confusables:
+      "defaite": { why: "A defeat is a loss; the sentence says the team wins." }
+      "match": { why: "A match is the game; the sentence names the stadium and the result." }
+  "fr-2428":
+    native: "The champion lifts the trophy on the pitch."
+    bases:
+      "lève": "lifts"
+    confusables:
+      "supporter": { why: "A fan watches; the sentence is about the winner." }
+      "maillot": { why: "A shirt is worn; the sentence names the trophy." }
+  "fr-2429":
+    native: "I swim at the pool, then I ride my bike."
+    bases:
+      "à": "to, at"
+      "du": "some, of the"
+    confusables:
+      "natation": { why: "Swimming is the sport; the sentence names the place." }
+      "cyclisme": { why: "Cycling is the sport; the sentence says I ride." }
+  "fr-2430":
+    native: "Tennis needs a racket and sports shoes."
+    bases:
+      "de": "of, from, some"
+    confusables:
+      "ballon": { why: "A ball is used in many sports; the sentence names tennis equipment." }
+      "gymnase": { why: "A gym is a place; the sentence names equipment." }
+  "fr-2431":
+    native: "Running and the marathon are hard sports."
+    bases:
+      "à": "to, at"
+    confusables:
+      "competition": { why: "A competition is a contest; the sentence names two sports." }
+      "trophee": { why: "A trophy is a prize; the sentence is about sports in general." }
+  "fr-2432":
+    native: "The coach wins the match with his team."
+    confusables:
+      "perdre": { why: "To lose is the opposite of winning in the sentence." }
+      "score": { why: "A score is the result; the sentence says the team wins." }

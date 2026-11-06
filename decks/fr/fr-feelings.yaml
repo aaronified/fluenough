@@ -1,0 +1,422 @@
+schema: 1
+id: "fr-feelings"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "feelings"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1759"
+    target: "peur"
+    ipa: "pœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai peur du noir.", ipa: "ʒe pœʁ dy nwaʁ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "peur", base: "peur" }, { word: "du", base: "de" }, { word: "noir", ref: "fr-1235" }] }
+      - { target: "La peur disparaît vite.", ipa: "la pœʁ dispaʁɛ vit", bases: [{ word: "La", ref: "fr-0544" }, { word: "peur", base: "peur" }, { word: "disparaît", base: "disparaître" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-1760"
+    target: "joie"
+    ipa: "ʒwa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle pleure de joie.", ipa: "ɛl plœʁ də ʒwa", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "pleure", ref: "fr-1774" }, { word: "de", base: "de" }, { word: "joie", base: "joie" }] }
+      - { target: "Quelle joie de vous voir !", ipa: "kɛl ʒwa də vu vwaʁ", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "joie", base: "joie" }, { word: "de", base: "de" }, { word: "vous", ref: "fr-0096" }, { word: "voir", ref: "fr-0289" }] }
+  - id: "fr-1761"
+    target: "colère"
+    ipa: "kɔlɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est en colère contre moi.", ipa: "il ɛ ɑ̃ kɔlɛʁ kɔ̃tʁ mwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "colère", base: "colère" }, { word: "contre", ref: "fr-0471" }, { word: "moi", ref: "fr-0133" }] }
+      - { target: "Sa colère disparaît vite.", ipa: "sa kɔlɛʁ dispaʁɛ vit", bases: [{ word: "Sa", ref: "fr-0138" }, { word: "colère", base: "colère" }, { word: "disparaît", base: "disparaître" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-1762"
+    target: "amour"
+    ipa: "amuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'amour est important pour elle.", ipa: "lamuʁ ɛ ɛ̃pɔʁtɑ̃ puʁ ɛl", bases: [{ word: "L'amour", base: "amour" }, { word: "est", ref: "fr-0021" }, { word: "important", ref: "fr-0443" }, { word: "pour", ref: "fr-0591" }, { word: "elle", ref: "fr-0128" }] }
+      - { target: "Ils parlent d'amour toute la nuit.", ipa: "il paʁl damuʁ tut la nɥi", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "parlent", ref: "fr-0023" }, { word: "d'amour", base: "amour" }, { word: "toute", ref: "fr-0372" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+  - id: "fr-1763"
+    target: "ennui"
+    ipa: "ɑ̃nɥi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel ennui ce film !", ipa: "kɛl ɑ̃nɥi sə fil", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "ennui", base: "ennui" }, { word: "ce", ref: "fr-0143" }, { word: "film", base: "film" }] }
+      - { target: "L'ennui arrive le dimanche.", ipa: "lɑ̃nɥi aʁiv lə dimɑ̃ʃ", bases: [{ word: "L'ennui", base: "ennui" }, { word: "arrive", ref: "fr-0305" }, { word: "le", ref: "fr-0543" }, { word: "dimanche", ref: "fr-1050" }] }
+  - id: "fr-1764"
+    target: "stress"
+    ipa: "stʁɛs"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le travail donne du stress.", ipa: "lə tʁavaj dɔn dy stʁɛs", bases: [{ word: "Le", ref: "fr-0543" }, { word: "travail", ref: "fr-0255" }, { word: "donne", ref: "fr-0302" }, { word: "du", base: "de" }, { word: "stress", base: "stress" }] }
+      - { target: "Elle a beaucoup de stress.", ipa: "ɛl a boku də stʁɛs", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "stress", base: "stress" }] }
+  - id: "fr-1765"
+    target: "inquiet"
+    ipa: "ɛ̃kjɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis inquiet pour toi.", ipa: "ʒə sɥi ɛ̃kjɛ puʁ twa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "inquiet", base: "inquiet" }, { word: "pour", ref: "fr-0591" }, { word: "toi", ref: "fr-0134" }] }
+      - { target: "Ma mère est inquiète ce soir.", ipa: "ma mɛʁ ɛ ɛ̃kjɛt sə swaʁ", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "mère", ref: "fr-0166" }, { word: "est", ref: "fr-0021" }, { word: "inquiète", base: "inquiet" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1766"
+    target: "anxieux"
+    ipa: "ɑ̃ksjø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est anxieux avant l'examen.", ipa: "il ɛ ɑ̃ksjø avɑ̃ lɛɡzamɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "anxieux", base: "anxieux" }, { word: "avant", ref: "fr-0596" }, { word: "l'examen", ref: "fr-1592" }] }
+      - { target: "Elle devient anxieuse quand elle conduit.", ipa: "ɛl dəvjɛ ɑ̃ksjøz kɑ̃ tɛl kɔ̃dɥi", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "devient", base: "devenir" }, { word: "anxieuse", base: "anxieux" }, { word: "quand", ref: "fr-0068" }, { word: "conduit", ref: "fr-0869" }] }
+  - id: "fr-1767"
+    target: "nerveux"
+    ipa: "nɛʁvø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis nerveux le jour du match.", ipa: "ʒə sɥi nɛʁvø lə ʒuʁ dy matʃ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "nerveux", base: "nerveux" }, { word: "le", ref: "fr-0543" }, { word: "jour", ref: "fr-1032" }, { word: "du", base: "de" }, { word: "match", ref: "fr-1679" }] }
+      - { target: "Le chien est nerveux avec les enfants.", ipa: "lə ʃjɛ̃ ɛ nɛʁvø avɛk lez ɑ̃fɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chien", ref: "fr-1253" }, { word: "est", ref: "fr-0021" }, { word: "nerveux", base: "nerveux" }, { word: "avec", ref: "fr-0590" }, { word: "les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }] }
+  - id: "fr-1768"
+    target: "surpris"
+    ipa: "syʁpʁi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous sommes surpris par la nouvelle.", ipa: "nu sɔm syʁpʁi paʁ la nuvɛl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sommes", ref: "fr-0021" }, { word: "surpris", base: "surpris" }, { word: "par", ref: "fr-0593" }, { word: "la", ref: "fr-0544" }, { word: "nouvelle", base: "nouvelle" }] }
+      - { target: "Elle était surprise de le voir.", ipa: "ɛl etɛ syʁpʁiz də lə vwaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "était", ref: "fr-0021" }, { word: "surprise", base: "surpris" }, { word: "de", base: "de" }, { word: "le", ref: "fr-0543" }, { word: "voir", ref: "fr-0289" }] }
+  - id: "fr-1769"
+    target: "fier"
+    ipa: "fjɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes parents sont fiers de moi.", ipa: "me paʁɑ̃ sɔ̃ fjɛʁ də mwa", bases: [{ word: "Mes", ref: "fr-0037" }, { word: "parents", ref: "fr-0173" }, { word: "sont", ref: "fr-0021" }, { word: "fiers", base: "fier" }, { word: "de", base: "de" }, { word: "moi", ref: "fr-0133" }] }
+      - { target: "Elle est fière de son travail.", ipa: "ɛl ɛ fjɛʁ də sɔ̃ tʁavaj", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "fière", base: "fier" }, { word: "de", base: "de" }, { word: "son", ref: "fr-0138" }, { word: "travail", ref: "fr-0255" }] }
+  - id: "fr-1770"
+    target: "honte"
+    ipa: "ɔ̃t"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a honte de son erreur.", ipa: "il a ɔ̃t də sɔ̃ nɛʁœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "honte", base: "honte" }, { word: "de", base: "de" }, { word: "son", ref: "fr-0138" }, { word: "erreur", base: "erreur" }] }
+      - { target: "Quelle honte !", ipa: "kɛl ɔ̃t", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "honte", base: "honte" }] }
+  - id: "fr-1771"
+    target: "espoir"
+    ipa: "ɛspwaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle garde l'espoir.", ipa: "ɛl ɡaʁd lɛspwaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "garde", base: "garder" }, { word: "l'espoir", base: "espoir" }] }
+      - { target: "Il n'a plus d'espoir.", ipa: "il na plys dɛspwaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "n'a", ref: "fr-0022" }, { word: "plus", ref: "fr-0345" }, { word: "d'espoir", base: "espoir" }] }
+  - id: "fr-1772"
+    target: "souci"
+    ipa: "susi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ne te fais pas de souci.", ipa: "nə tə fɛ pa də susi", bases: [{ word: "Ne", base: "ne" }, { word: "te", base: "te" }, { word: "fais", ref: "fr-0287" }, { word: "pas", base: "pas" }, { word: "de", base: "de" }, { word: "souci", base: "souci" }] }
+      - { target: "Ce problème est un gros souci.", ipa: "sə pʁɔblɛm ɛ œ̃ ɡʁo susi", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "problème", ref: "fr-0684" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "gros", base: "gros" }, { word: "souci", base: "souci" }] }
+  - id: "fr-1773"
+    target: "rire"
+    ipa: "ʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous rions beaucoup ensemble.", ipa: "nu ʁijɔ̃ boku ɑ̃sɑ̃bl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "rions", base: "rire" }, { word: "beaucoup", ref: "fr-0034" }, { word: "ensemble", ref: "fr-0333" }] }
+      - { target: "Il ne ment pas, il rit.", ipa: "il nə mɑ̃ pa il ʁi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "ne", base: "ne" }, { word: "ment", base: "mentir" }, { word: "pas", base: "pas" }, { word: "rit", base: "rire" }] }
+  - id: "fr-1774"
+    target: "pleurer"
+    ipa: "pløʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bébé pleure.", ipa: "lə bebe plœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bébé", ref: "fr-0180" }, { word: "pleure", base: "pleurer" }] }
+      - { target: "Elle a pleuré pendant le film.", ipa: "ɛl a pløʁe pɑ̃dɑ̃ lə fil", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "pleuré", base: "pleurer" }, { word: "pendant", ref: "fr-0597" }, { word: "le", ref: "fr-0543" }, { word: "film", base: "film" }] }
+  - id: "fr-1775"
+    target: "détester"
+    ipa: "detɛste"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je déteste attendre le bus.", ipa: "ʒə detɛst atɑ̃dʁ lə bys", bases: [{ word: "Je", ref: "fr-0126" }, { word: "déteste", base: "détester" }, { word: "attendre", ref: "fr-0303" }, { word: "le", ref: "fr-0543" }, { word: "bus", ref: "fr-0854" }] }
+      - { target: "Il déteste les araignées.", ipa: "il detɛst lez aʁɛɲe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "déteste", base: "détester" }, { word: "les", ref: "fr-0543" }, { word: "araignées", base: "araignée" }] }
+  - id: "fr-1776"
+    target: "craindre"
+    ipa: "kʁɛ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je crains le pire.", ipa: "ʒə kʁɛ̃ lə piʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "crains", base: "craindre" }, { word: "le", ref: "fr-0543" }, { word: "pire", base: "pire" }] }
+      - { target: "Elle craint l'hiver.", ipa: "ɛl kʁɛ̃ livɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "craint", base: "craindre" }, { word: "l'hiver", ref: "fr-1172" }] }
+  - id: "fr-1777"
+    target: "rassurer"
+    ipa: "ʁasyʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ses mots m'ont rassuré.", ipa: "se mo mɔ̃ ʁasyʁe", bases: [{ word: "Ses", ref: "fr-0138" }, { word: "mots", ref: "fr-1620" }, { word: "m'ont", ref: "fr-0022" }, { word: "rassuré", base: "rassurer" }] }
+      - { target: "Essayez de rassurer votre ami.", ipa: "ɛseje də ʁasyʁe vɔtʁ ami", bases: [{ word: "Essayez", ref: "fr-1231" }, { word: "de", base: "de" }, { word: "rassurer", base: "rassurer" }, { word: "votre", ref: "fr-0140" }, { word: "ami", ref: "fr-0100" }] }
+  - id: "fr-1778"
+    target: "espérer"
+    ipa: "ɛspeʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'espère que tu vas bien.", ipa: "ʒɛspɛʁ kə ty va bjɛ̃", bases: [{ word: "J'espère", base: "espérer" }, { word: "que", base: "que" }, { word: "tu", ref: "fr-0095" }, { word: "vas", ref: "fr-0286" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Nous espérons gagner.", ipa: "nu zɛspeʁɔ̃ ɡaɲe", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "espérons", base: "espérer" }, { word: "gagner", ref: "fr-0670" }] }
+  - id: "fr-1779"
+    target: "ressentir"
+    ipa: "ʁəsɑ̃tiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je ressens une grande fatigue.", ipa: "ʒə ʁəsɑ̃ yn ɡʁɑ̃d fatiɡ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ressens", base: "ressentir" }, { word: "une", ref: "fr-0545" }, { word: "grande", ref: "fr-0410" }, { word: "fatigue", ref: "fr-1106" }] }
+      - { target: "Elle ressent la joie de la fête.", ipa: "ɛl ʁəsɑ̃ la ʒwa də la fɛt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "ressent", base: "ressentir" }, { word: "la", ref: "fr-0544" }, { word: "joie", ref: "fr-1760" }, { word: "de", base: "de" }, { word: "fête", ref: "fr-1176" }] }
+  - id: "fr-1780"
+    target: "émotion"
+    ipa: "emosjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une grande émotion.", ipa: "il a yn ɡʁɑ̃d emosjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "grande", ref: "fr-0410" }, { word: "émotion", base: "émotion" }] }
+      - { target: "Cette musique donne beaucoup d'émotion.", ipa: "sɛt myzik dɔn boku demosjɔ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "musique", ref: "fr-0266" }, { word: "donne", ref: "fr-0302" }, { word: "beaucoup", ref: "fr-0034" }, { word: "d'émotion", base: "émotion" }] }
+  - id: "fr-1781"
+    target: "humeur"
+    ipa: "ymœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est de bonne humeur ce matin.", ipa: "il ɛ də bɔn ymœʁ sə matɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "bonne", ref: "fr-0040" }, { word: "humeur", base: "humeur" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Son humeur change souvent.", ipa: "sɔ̃ ymœʁ ʃɑ̃ʒ suvɑ̃", bases: [{ word: "Son", ref: "fr-0138" }, { word: "humeur", base: "humeur" }, { word: "change", ref: "fr-0526" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-1782"
+    target: "sourire"
+    ipa: "suʁiʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a un beau sourire.", ipa: "ɛl a œ̃ bo suʁiʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "beau", ref: "fr-0412" }, { word: "sourire", base: "sourire" }] }
+      - { target: "Son sourire rend tout le monde heureux.", ipa: "sɔ̃ suʁiʁ ʁɑ̃ tu lə mɔ̃d ørø", bases: [{ word: "Son", ref: "fr-0138" }, { word: "sourire", base: "sourire" }, { word: "rend", ref: "fr-1616" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "monde", base: "monde" }, { word: "heureux", ref: "fr-0429" }] }
+  - id: "fr-1783"
+    target: "larme"
+    ipa: "laʁm"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une larme coule sur sa joue.", ipa: "yn laʁm kul syʁ sa ʒu", bases: [{ word: "Une", ref: "fr-0545" }, { word: "larme", base: "larme" }, { word: "coule", base: "couler" }, { word: "sur", ref: "fr-0469" }, { word: "sa", ref: "fr-0138" }, { word: "joue", ref: "fr-0048" }] }
+      - { target: "Il a des larmes dans les yeux.", ipa: "il a de laʁm dɑ̃ lez jø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "larmes", base: "larme" }, { word: "dans", ref: "fr-0049" }, { word: "les", ref: "fr-0543" }, { word: "yeux", ref: "fr-0937" }] }
+  - id: "fr-1784"
+    target: "soulagement"
+    ipa: "sulaʒmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel soulagement !", ipa: "kɛl sulaʒmɑ̃", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "soulagement", base: "soulagement" }] }
+      - { target: "Elle pousse un soupir de soulagement.", ipa: "ɛl pus œ̃ supiʁ də sulaʒmɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "pousse", base: "pousser" }, { word: "un", ref: "fr-0208" }, { word: "soupir", base: "soupir" }, { word: "de", base: "de" }, { word: "soulagement", base: "soulagement" }] }
+  - id: "fr-1785"
+    target: "déception"
+    ipa: "desɛpsjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une grande déception.", ipa: "sɛt yn ɡʁɑ̃d desɛpsjɔ̃", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "grande", ref: "fr-0410" }, { word: "déception", base: "déception" }] }
+      - { target: "Sa réponse a causé une déception.", ipa: "sa ʁepɔ̃s a kozɛ yn desɛpsjɔ̃", bases: [{ word: "Sa", ref: "fr-0138" }, { word: "réponse", ref: "fr-1594" }, { word: "a", ref: "fr-0022" }, { word: "causé", base: "causer" }, { word: "une", ref: "fr-0545" }, { word: "déception", base: "déception" }] }
+  - id: "fr-1786"
+    target: "jalousie"
+    ipa: "ʒaluzi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La jalousie rend triste.", ipa: "la ʒaluzi ʁɑ̃ tʁist", bases: [{ word: "La", ref: "fr-0544" }, { word: "jalousie", base: "jalousie" }, { word: "rend", ref: "fr-1616" }, { word: "triste", ref: "fr-0430" }] }
+      - { target: "Il montre de la jalousie.", ipa: "il mɔ̃tʁ də la ʒaluzi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "montre", ref: "fr-1120" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "jalousie", base: "jalousie" }] }
+  - id: "fr-1787"
+    target: "confiance"
+    ipa: "kɔ̃fjɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai confiance en toi.", ipa: "ʒe kɔ̃fjɑ̃s ɑ̃ twa", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "confiance", base: "confiance" }, { word: "en", base: "en" }, { word: "toi", ref: "fr-0134" }] }
+      - { target: "Elle a perdu confiance.", ipa: "ɛl a pɛʁdy kɔ̃fjɑ̃s", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "perdu", ref: "fr-0906" }, { word: "confiance", base: "confiance" }] }
+  - id: "fr-1788"
+    target: "gêné"
+    ipa: "ʒene"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis gêné de vous déranger.", ipa: "ʒə sɥi ʒene də vu deʁɑ̃ʒe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "gêné", base: "gêné" }, { word: "de", base: "de" }, { word: "vous", ref: "fr-0096" }, { word: "déranger", ref: "fr-1126" }] }
+      - { target: "Elle est gênée par le bruit.", ipa: "ɛl ɛ ʒene paʁ lə bʁɥi", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "gênée", base: "gêné" }, { word: "par", ref: "fr-0593" }, { word: "le", ref: "fr-0543" }, { word: "bruit", ref: "fr-1111" }] }
+  - id: "fr-1789"
+    target: "amoureux"
+    ipa: "amuʁø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils sont amoureux depuis dix ans.", ipa: "il sɔ̃ tamuʁø dəpɥi dis ɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sont", ref: "fr-0021" }, { word: "amoureux", base: "amoureux" }, { word: "depuis", base: "depuis" }, { word: "dix", ref: "fr-0217" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Elle est amoureuse de son voisin.", ipa: "ɛl ɛ amuʁøz də sɔ̃ vwazɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "amoureuse", base: "amoureux" }, { word: "de", base: "de" }, { word: "son", ref: "fr-0138" }, { word: "voisin", ref: "fr-0101" }] }
+  - id: "fr-1790"
+    target: "angoisse"
+    ipa: "ɑ̃ɡwas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il ressent une angoisse terrible.", ipa: "il ʁəsɑ̃ yn ɑ̃ɡwas tɛʁibl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "ressent", ref: "fr-1779" }, { word: "une", ref: "fr-0545" }, { word: "angoisse", base: "angoisse" }, { word: "terrible", base: "terrible" }] }
+      - { target: "Cette angoisse ne part pas.", ipa: "sɛt ɑ̃ɡwas nə paʁ pa", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "angoisse", base: "angoisse" }, { word: "ne", base: "ne" }, { word: "part", ref: "fr-0304" }, { word: "pas", base: "pas" }] }
+  - id: "fr-1791"
+    target: "bonheur"
+    ipa: "bɔnœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bonheur est simple.", ipa: "lə bɔnœʁ ɛ sɛ̃pl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bonheur", base: "bonheur" }, { word: "est", ref: "fr-0021" }, { word: "simple", base: "simple" }] }
+      - { target: "Ils vivent dans le bonheur.", ipa: "il vivə dɑ̃ lə bɔnœʁ", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "vivent", base: "vivre" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "bonheur", base: "bonheur" }] }
+  - id: "fr-1792"
+    target: "tristesse"
+    ipa: "tʁistɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il cache sa tristesse.", ipa: "il kaʃ sa tʁistɛs", bases: [{ word: "Il", ref: "fr-0127" }, { word: "cache", base: "cacher" }, { word: "sa", ref: "fr-0138" }, { word: "tristesse", base: "tristesse" }] }
+      - { target: "La tristesse passe avec le temps.", ipa: "la tʁistɛs pas avɛk lə tɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "tristesse", base: "tristesse" }, { word: "passe", ref: "fr-0519" }, { word: "avec", ref: "fr-0590" }, { word: "le", ref: "fr-0543" }, { word: "temps", ref: "fr-1040" }] }
+  - id: "fr-1793"
+    target: "sentiment"
+    ipa: "sɑ̃timɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai un sentiment étrange.", ipa: "ʒe œ̃ sɑ̃timɑ̃ etʁɑ̃ʒ", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "sentiment", base: "sentiment" }, { word: "étrange", base: "étrange" }] }
+      - { target: "Ce sentiment est fort.", ipa: "sə sɑ̃timɑ̃ ɛ fɔʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "sentiment", base: "sentiment" }, { word: "est", ref: "fr-0021" }, { word: "fort", ref: "fr-0425" }] }
+  - id: "fr-1794"
+    target: "fâché"
+    ipa: "faʃe"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est fâché contre son frère.", ipa: "il ɛ faʃe kɔ̃tʁ sɔ̃ fʁɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "fâché", base: "fâché" }, { word: "contre", ref: "fr-0471" }, { word: "son", ref: "fr-0138" }, { word: "frère", ref: "fr-0169" }] }
+      - { target: "Elle est fâchée à cause du retard.", ipa: "ɛl ɛ faʃe a kozə dy ʁətaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "fâchée", base: "fâché" }, { word: "à", base: "à" }, { word: "cause", base: "causer" }, { word: "du", base: "de" }, { word: "retard", ref: "fr-0870" }] }
+  - id: "fr-1795"
+    target: "étonné"
+    ipa: "etɔne"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis étonné de la nouvelle.", ipa: "ʒə sɥi etɔne də la nuvɛl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "étonné", base: "étonné" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "nouvelle", base: "nouvelle" }] }
+      - { target: "Elle est étonnée qu'il vienne.", ipa: "ɛl ɛ etɔne kil vjɛn", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "étonnée", base: "étonné" }, { word: "qu'il", ref: "fr-0127" }, { word: "vienne", ref: "fr-0285" }] }
+  - id: "fr-1796"
+    target: "ému"
+    ipa: "emy"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est ému par ce film.", ipa: "il ɛ emy paʁ sə fil", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "ému", base: "ému" }, { word: "par", ref: "fr-0593" }, { word: "ce", ref: "fr-0143" }, { word: "film", base: "film" }] }
+      - { target: "Elle est émue de vous revoir.", ipa: "ɛl ɛ emy də vu ʁəvwaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "émue", base: "ému" }, { word: "de", base: "de" }, { word: "vous", ref: "fr-0096" }, { word: "revoir", base: "revoir" }] }
+  - id: "fr-1797"
+    target: "mécontent"
+    ipa: "mekɔ̃tɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le client est mécontent du service.", ipa: "lə klijɑ̃ ɛ mekɔ̃tɑ̃ dy sɛʁvis", bases: [{ word: "Le", ref: "fr-0543" }, { word: "client", ref: "fr-0685" }, { word: "est", ref: "fr-0021" }, { word: "mécontent", base: "mécontent" }, { word: "du", base: "de" }, { word: "service", ref: "fr-1502" }] }
+      - { target: "Elle reste mécontente du résultat.", ipa: "ɛl ʁɛst mekɔ̃tɑ̃t dy ʁezylta", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "reste", ref: "fr-0514" }, { word: "mécontente", base: "mécontent" }, { word: "du", base: "de" }, { word: "résultat", base: "résultat" }] }
+

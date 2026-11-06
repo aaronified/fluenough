@@ -1,0 +1,579 @@
+schema: 1
+id: "fr-en-health"
+kind: "layer"
+core: "fr-health"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Health"
+license: "CC-BY-SA-4.0"
+description: "Forty words for health: illness, the body in pain, the pharmacy and the doctor, and the verbs of getting better. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1753":
+    native: "patient"
+    notes:
+      "n1": "Un patient is a person who is treated; the feminine is patiente."
+    examples:
+      "Le patient attend le médecin.":
+        native: "The patient waits for the doctor."
+        bases:
+          "patient": "patient"
+      "Le patient respire mieux maintenant.":
+        native: "The patient is breathing better now."
+        bases:
+          "patient": "patient"
+  "fr-1754":
+    native: "pill"
+    notes:
+      "n1": "Une pilule is a pill; for a tablet, comprimé is the word of the box."
+    examples:
+      "Il avale une pilule avec de l'eau.":
+        native: "He swallows a pill with some water."
+        bases:
+          "avale": "swallows"
+          "pilule": "pill"
+          "de": "of, from, some"
+      "La pilule est très petite.":
+        native: "The pill is very small."
+        bases:
+          "pilule": "pill"
+  "fr-1758":
+    native: "ankle"
+    notes:
+      "n1": "Une cheville is an ankle; the body part is a joint of the foot."
+    examples:
+      "J'ai mal à la cheville.":
+        native: "My ankle hurts."
+        bases:
+          "à": "to, at"
+          "cheville": "ankle"
+      "La cheville est enflée.":
+        native: "The ankle is swollen."
+        bases:
+          "cheville": "ankle"
+          "enflée": "swollen"
+  "fr-1756":
+    native: "pharmacist"
+    notes:
+      "n1": "Pharmacien is the person; pharmacie is the shop."
+    examples:
+      "Le pharmacien donne le sirop.":
+        native: "The pharmacist gives the syrup."
+        bases:
+          "pharmacien": "pharmacist"
+      "Demandez conseil au pharmacien.":
+        native: "Ask the pharmacist for advice."
+        bases:
+          "conseil": "advice"
+          "au": "at, to the"
+          "pharmacien": "pharmacist"
+  "fr-1757":
+    native: "crutch"
+    notes:
+      "n1": "Des béquilles are crutches; the word is always in the plural in speech."
+    examples:
+      "Il marche avec des béquilles.":
+        native: "He walks with crutches."
+        bases:
+          "béquilles": "crutch"
+      "La béquille est trop courte.":
+        native: "The crutch is too short."
+        bases:
+          "béquille": "crutch"
+  "fr-1700":
+    native: "health"
+    notes:
+      "n1": "Santé is health; à votre santé is the phrase for a toast."
+    examples:
+      "Ma santé est bonne.":
+        native: "My health is good."
+        bases:
+          "santé": "health"
+      "Prenez soin de votre santé.":
+        native: "Take care of your health."
+        bases:
+          "soin": "care"
+          "de": "of, from, some"
+          "santé": "health"
+  "fr-1702":
+    native: "fever"
+    notes:
+      "n1": "Avoir de la fièvre is to have a temperature."
+    examples:
+      "Il a de la fièvre.":
+        native: "He has a fever."
+        bases:
+          "de": "of, from, some"
+          "fièvre": "fever"
+      "La fièvre est tombée ce matin.":
+        native: "The fever went down this morning."
+        bases:
+          "fièvre": "fever"
+  "fr-1703":
+    native: "cough"
+    notes:
+      "n1": "Toux is the noun; the verb is tousser."
+    examples:
+      "J'ai une toux depuis une semaine.":
+        native: "I have had a cough for a week."
+        bases:
+          "toux": "cough"
+          "depuis": "since"
+      "Cette toux est très fatigante.":
+        native: "This cough is very tiring."
+        bases:
+          "toux": "cough"
+          "fatigante": "tiring"
+  "fr-1704":
+    native: "cold (illness)"
+    notes:
+      "n1": "Un rhume is a common cold: the word is masculine."
+    examples:
+      "Elle a attrapé un rhume.":
+        native: "She caught a cold."
+        bases:
+          "attrapé": "caught"
+          "rhume": "cold (illness)"
+      "Un rhume dure souvent une semaine.":
+        native: "A cold often lasts a week."
+        bases:
+          "rhume": "cold (illness)"
+  "fr-1706":
+    native: "medicine"
+    notes:
+      "n1": "Médicament is a medicine in general; comprimé and sirop are its forms."
+    examples:
+      "Prenez ce médicament deux fois par jour.":
+        native: "Take this medicine twice a day."
+        bases:
+          "médicament": "medicine"
+      "Le médicament est dans la pharmacie.":
+        native: "The medicine is in the pharmacy."
+        bases:
+          "médicament": "medicine"
+  "fr-1707":
+    native: "prescription"
+    notes:
+      "n1": "Une ordonnance is the doctor’s written prescription."
+    examples:
+      "Le médecin écrit une ordonnance.":
+        native: "The doctor writes a prescription."
+        bases:
+          "ordonnance": "prescription"
+      "Sans ordonnance, on ne peut pas le prendre.":
+        native: "Without a prescription, you cannot take it."
+        bases:
+          "ordonnance": "prescription"
+          "ne": "not"
+          "pas": "not"
+  "fr-1710":
+    native: "nurse"
+    notes:
+      "n1": "Infirmière is the female form; the male form is infirmier."
+    examples:
+      "L'infirmière prend ma température.":
+        native: "The nurse takes my temperature."
+        bases:
+          "L'infirmière": "nurse"
+      "Mon amie est infirmière.":
+        native: "My friend is a nurse."
+        bases:
+          "infirmière": "nurse"
+  "fr-1711":
+    native: "male nurse"
+    notes:
+      "n1": "Infirmier is the male form of infirmière."
+    examples:
+      "Un infirmier attend dans le couloir.":
+        native: "A male nurse waits in the corridor."
+        bases:
+          "infirmier": "male nurse"
+      "Mon frère est infirmier à Lyon.":
+        native: "My brother is a male nurse in Lyon."
+        bases:
+          "infirmier": "male nurse"
+          "à": "to, at"
+          "Lyon": "Lyon"
+  "fr-1713":
+    native: "syrup"
+    notes:
+      "n1": "Un sirop is a liquid medicine, often for a cough."
+    examples:
+      "Le sirop est très sucré.":
+        native: "The syrup is very sweet."
+        bases:
+          "sirop": "syrup"
+      "Je prends un sirop pour la toux.":
+        native: "I take a syrup for the cough."
+        bases:
+          "sirop": "syrup"
+  "fr-1714":
+    native: "tablet, pill"
+    notes:
+      "n1": "Un comprimé is a tablet; the plural is comprimés."
+    examples:
+      "Prenez deux comprimés le matin.":
+        native: "Take two tablets in the morning."
+        bases:
+          "comprimés": "tablet, pill"
+      "Ce comprimé est grand.":
+        native: "This tablet is big."
+        bases:
+          "comprimé": "tablet, pill"
+  "fr-1715":
+    native: "plaster, dressing"
+    notes:
+      "n1": "Un pansement is a plaster for a cut or a bandage."
+    examples:
+      "Mets un pansement sur la coupure.":
+        native: "Put a plaster on the cut."
+        bases:
+          "pansement": "plaster, dressing"
+          "coupure": "cut"
+      "Le pansement est propre.":
+        native: "The dressing is clean."
+        bases:
+          "pansement": "plaster, dressing"
+  "fr-1716":
+    native: "thermometer"
+    notes:
+      "n1": "Un thermomètre measures the temperature."
+    examples:
+      "Où est le thermomètre ?":
+        native: "Where is the thermometer?"
+        bases:
+          "thermomètre": "thermometer"
+      "Ce thermomètre affiche trente-huit.":
+        native: "This thermometer shows thirty-eight."
+        bases:
+          "thermomètre": "thermometer"
+          "affiche": "shows"
+  "fr-1717":
+    native: "vitamin"
+    notes:
+      "n1": "Les vitamines are taken in a pill or in food."
+    examples:
+      "Les fruits donnent des vitamines.":
+        native: "Fruit gives vitamins."
+        bases:
+          "vitamines": "vitamin"
+      "Je prends des vitamines en hiver.":
+        native: "I take vitamins in winter."
+        bases:
+          "vitamines": "vitamin"
+          "en": "in, by, as"
+  "fr-1718":
+    native: "diet"
+    notes:
+      "n1": "Être au régime is to be on a diet."
+    examples:
+      "Il est au régime depuis janvier.":
+        native: "He has been on a diet since January."
+        bases:
+          "au": "at, to the"
+          "régime": "diet"
+          "depuis": "since"
+      "Ce régime est difficile à suivre.":
+        native: "This diet is hard to follow."
+        bases:
+          "régime": "diet"
+          "à": "to, at"
+  "fr-1719":
+    native: "dentist"
+    notes:
+      "n1": "Dentiste is used for both genders."
+    examples:
+      "Je vais chez le dentiste demain.":
+        native: "I am going to the dentist tomorrow."
+        bases:
+          "dentiste": "dentist"
+      "Le dentiste regarde ma dent.":
+        native: "The dentist looks at my tooth."
+        bases:
+          "dentiste": "dentist"
+  "fr-1720":
+    native: "operation, surgery"
+    notes:
+      "n1": "Une opération is a surgical operation."
+    examples:
+      "Il a une opération du genou.":
+        native: "He has a knee operation."
+        bases:
+          "opération": "operation, surgery"
+          "du": "some, of the"
+      "L'opération a duré deux heures.":
+        native: "The operation lasted two hours."
+        bases:
+          "L'opération": "operation, surgery"
+  "fr-1721":
+    native: "test, analysis"
+    notes:
+      "n1": "Une analyse de sang is a blood test."
+    examples:
+      "Le résultat de l'analyse arrive demain.":
+        native: "The test result arrives tomorrow."
+        bases:
+          "résultat": "result"
+          "de": "of, from, some"
+          "l'analyse": "test, analysis"
+      "Il fait une analyse de sang.":
+        native: "He is having a blood test."
+        bases:
+          "analyse": "test, analysis"
+          "de": "of, from, some"
+  "fr-1722":
+    native: "X-ray"
+    notes:
+      "n1": "Une radiographie is a picture of the bones."
+    examples:
+      "Le médecin demande une radiographie.":
+        native: "The doctor asks for an X-ray."
+        bases:
+          "radiographie": "X-ray"
+      "La radiographie montre une petite fracture.":
+        native: "The X-ray shows a small fracture."
+        bases:
+          "radiographie": "X-ray"
+          "montre": "shows"
+          "fracture": "fracture"
+  "fr-1723":
+    native: "stomach"
+    notes:
+      "n1": "Avoir mal à l’estomac is to have a stomach ache."
+    examples:
+      "Mon estomac me fait mal.":
+        native: "My stomach hurts."
+        bases:
+          "estomac": "stomach"
+          "me": "me"
+      "L'estomac est vide le matin.":
+        native: "The stomach is empty in the morning."
+        bases:
+          "L'estomac": "stomach"
+  "fr-1724":
+    native: "lung"
+    notes:
+      "n1": "Les poumons are the lungs; the word is masculine."
+    examples:
+      "Les poumons respirent de l'air.":
+        native: "The lungs breathe air."
+        bases:
+          "poumons": "lung"
+          "de": "of, from, some"
+          "l'air": "air"
+      "Il a un poumon fragile.":
+        native: "He has a fragile lung."
+        bases:
+          "poumon": "lung"
+          "fragile": "fragile"
+  "fr-1725":
+    native: "to cough"
+    notes:
+      "n1": "Tousser is regular; the forms are tousse and toussent."
+    examples:
+      "Il tousse depuis ce matin.":
+        native: "He has been coughing since this morning."
+        bases:
+          "tousse": "cough"
+          "depuis": "since"
+      "Ne toussez pas dans la salle.":
+        native: "Do not cough in the room."
+        bases:
+          "Ne": "not"
+          "toussez": "cough"
+          "pas": "not"
+  "fr-1726":
+    native: "to sneeze"
+    notes:
+      "n1": "Éternuer is regular."
+    examples:
+      "Elle éternue souvent en été.":
+        native: "She sneezes often in summer."
+        bases:
+          "éternue": "sneeze"
+          "en": "in, by, as"
+      "Je n'éternue jamais le matin.":
+        native: "I never sneeze in the morning."
+        bases:
+          "n'éternue": "to sneeze"
+  "fr-1727":
+    native: "to recover, to heal"
+    notes:
+      "n1": "Guérir is a regular -ir verb; guérit is he or she recovers."
+    examples:
+      "Il va guérir bientôt.":
+        native: "He will recover soon."
+        bases:
+          "guérir": "to recover, to heal"
+      "Le repos aide à guérir.":
+        native: "Rest helps you to recover."
+        bases:
+          "à": "to, at"
+          "guérir": "to recover, to heal"
+  "fr-1728":
+    native: "to treat, to look after"
+    notes:
+      "n1": "Soigner is to treat a patient or care for someone."
+    examples:
+      "L'infirmière soigne le malade.":
+        native: "The nurse looks after the patient."
+        bases:
+          "soigne": "treats"
+      "Je soigne mon chien quand il est malade.":
+        native: "I look after my dog when it is ill."
+        bases:
+          "soigne": "treats"
+  "fr-1729":
+    native: "to consult, to see (a doctor)"
+    notes:
+      "n1": "Consulter un médecin is to see a doctor."
+    examples:
+      "Je consulte un médecin cette semaine.":
+        native: "I am seeing a doctor this week."
+        bases:
+          "consulte": "consults"
+      "Consultez votre pharmacien.":
+        native: "Consult your pharmacist."
+        bases:
+          "Consultez": "consult"
+  "fr-1730":
+    native: "to vomit"
+    notes:
+      "n1": "Vomir is an -ir verb; vomis is I vomit."
+    examples:
+      "Il a vomi dans la voiture.":
+        native: "He vomited in the car."
+        bases:
+          "vomi": "to vomit"
+      "Le bébé vomit après le repas.":
+        native: "The baby vomits after the meal."
+        bases:
+          "vomit": "vomits"
+  "fr-1731":
+    native: "to bleed"
+    notes:
+      "n1": "Saigner is regular; the nose bleeds is le nez saigne."
+    examples:
+      "Son nez saigne.":
+        native: "His nose is bleeding."
+        bases:
+          "saigne": "bleeds"
+      "La coupure saigne encore.":
+        native: "The cut is still bleeding."
+        bases:
+          "coupure": "cut"
+          "saigne": "bleeds"
+  "fr-1732":
+    native: "to breathe"
+    notes:
+      "n1": "Respirer is regular."
+    examples:
+      "Respirez lentement.":
+        native: "Breathe slowly."
+        bases:
+          "Respirez": "to breathe"
+      "Je respire mieux à la campagne.":
+        native: "I breathe better in the country."
+        bases:
+          "respire": "to breathe"
+          "à": "to, at"
+          "campagne": "countryside"
+  "fr-1733":
+    native: "to lose weight"
+    notes:
+      "n1": "Maigrir is the opposite of grossir."
+    examples:
+      "Elle a maigri de cinq kilos.":
+        native: "She has lost five kilos."
+        bases:
+          "maigri": "to lose weight"
+          "de": "of, from, some"
+      "Il veut maigrir avant l'été.":
+        native: "He wants to lose weight before summer."
+        bases:
+          "maigrir": "to lose weight"
+  "fr-1734":
+    native: "to gain weight"
+    notes:
+      "n1": "Grossir is the opposite of maigrir."
+    examples:
+      "Je grossis en hiver.":
+        native: "I put on weight in winter."
+        bases:
+          "grossis": "to gain weight"
+          "en": "in, by, as"
+      "Il a grossi pendant les vacances.":
+        native: "He put on weight during the holidays."
+        bases:
+          "grossi": "to gain weight"
+  "fr-1735":
+    native: "pregnant"
+    notes:
+      "n1": "Enceinte is used for both genders."
+    examples:
+      "Elle est enceinte de deux mois.":
+        native: "She is two months pregnant."
+        bases:
+          "enceinte": "pregnant"
+          "de": "of, from, some"
+      "Une femme enceinte doit se reposer.":
+        native: "A pregnant woman must rest."
+        bases:
+          "enceinte": "pregnant"
+          "se": "oneself"
+          "reposer": "rest"
+  "fr-1736":
+    native: "healthy"
+    notes:
+      "n1": "Sain takes the feminine saine."
+    examples:
+      "Il mène une vie saine.":
+        native: "He leads a healthy life."
+        bases:
+          "mène": "leads"
+          "saine": "healthy"
+      "Ce repas est sain et bon.":
+        native: "This meal is healthy and good."
+        bases:
+          "sain": "healthy"
+  "fr-1737":
+    native: "injured"
+    notes:
+      "n1": "Blessé takes the feminine blessée."
+    examples:
+      "Le cycliste est blessé.":
+        native: "The cyclist is injured."
+        bases:
+          "cycliste": "cyclist"
+          "blessé": "injured"
+      "Elle a le bras blessé.":
+        native: "Her arm is injured."
+        bases:
+          "blessé": "injured"
+  "fr-1738":
+    native: "broken"
+    notes:
+      "n1": "Cassé takes the feminine cassée; it is used for bones too."
+    examples:
+      "J'ai le bras cassé.":
+        native: "I have a broken arm."
+        bases:
+          "cassé": "broken"
+      "La chaise est cassée.":
+        native: "The chair is broken."
+        bases:
+          "cassée": "broken"
+  "fr-1739":
+    native: "to tire"
+    notes:
+      "n1": "Se fatiguer is to get tired; this card is the verb to tire."
+    examples:
+      "Ce travail me fatigue beaucoup.":
+        native: "This work tires me a lot."
+        bases:
+          "me": "me"
+      "Ne vous fatiguez pas trop.":
+        native: "Do not tire yourselves too much."
+        bases:
+          "Ne": "not"
+          "fatiguez": "to tire"
+          "pas": "not"

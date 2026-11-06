@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-health"
+name: "Reading: health"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about health. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-clinic-notice"
+    title: "A notice at the clinic"
+    theme: "health"
+    sentences:
+      - text: "Cabinet médical : ouvert du lundi au samedi."
+      - text: "Pour une ordonnance, présentez votre carte vitale."
+      - text: "Si vous avez de la fièvre ou mal à la gorge, consultez le médecin sans attendre."
+      - text: "En cas de douleur forte, appelez le 15."
+    questions:
+      - id: "fr-1748"
+        prompt: { en: "What should you show for a prescription?" }
+        options:
+          - { en: "Your passport" }
+          - { en: "Your health card" }
+          - { en: "Your phone" }
+        answer: 2
+      - id: "fr-1749"
+        prompt: { en: "What should you do if you have a fever?" }
+        options:
+          - { en: "Wait a week" }
+          - { en: "See the doctor quickly" }
+          - { en: "Take a bath" }
+        answer: 2
+      - id: "fr-1750"
+        prompt: { en: "When should you call 15?" }
+        options:
+          - { en: "For a light cough" }
+          - { en: "For a strong pain" }
+          - { en: "On Sundays" }
+        answer: 2

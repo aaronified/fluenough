@@ -1,0 +1,60 @@
+schema: 1
+id: "fr-en-news-sentences"
+kind: "layer"
+core: "fr-news-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: news"
+license: "CC-BY-SA-4.0"
+description: "Sentences about news, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1853":
+    native: "The journalist reads the headline and announces the news."
+    bases:
+      "nouvelle": "news"
+    confusables:
+      "reportage": { why: "A report is a longer piece, not the reading of a headline." }
+      "sondage": { why: "A poll is a survey of opinions, not the announcement." }
+  "fr-1854":
+    native: "The rumour has not been checked."
+    bases:
+      "pas": "not"
+    confusables:
+      "source": { why: "A source is named when a fact is checked, so it is a different idea." }
+      "scoop": { why: "A scoop is exclusive news; the sentence says the opposite." }
+  "fr-1855":
+    native: "The poll shows that the war worries people."
+    bases:
+      "montre": "shows"
+      "que": "that"
+      "inquiète": "worries"
+    confusables:
+      "paix": { why: "Peace is the opposite of war in this sentence." }
+      "crise": { why: "A crisis is a different situation from the poll." }
+  "fr-1856":
+    native: "This witness speaks on the radio about the investigation."
+    bases:
+      "à": "to, at"
+      "de": "of, from, some"
+    confusables:
+      "presentateur": { why: "The presenter introduces the report; the sentence has a witness." }
+      "lecteur": { why: "A reader reads, and the sentence has a radio." }
+  "fr-1857":
+    native: "The channel broadcasts a programme on the economy."
+    confusables:
+      "media": { why: "Media is a general word; the sentence names one channel." }
+      "abonne": { why: "A subscriber pays; the sentence does not name payment." }
+  "fr-1858":
+    native: "The scandal makes the front page of the paper."
+    bases:
+      "du": "some, of the"
+    confusables:
+      "evenement": { why: "An event is a general word; the sentence is about a scandal." }
+      "titre": { why: "A headline is named by la une in this sentence." }
+  "fr-1859":
+    native: "I check the source before I publish."
+    bases:
+      "de": "of, from, some"
+    confusables:
+      "informer": { why: "To inform is the result of publishing, not the check." }
+      "annoncer": { why: "To announce is public; the sentence says before publishing." }

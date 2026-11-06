@@ -337,7 +337,8 @@ units:
       - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - planned: { id: "fr-daily-life", theme: "daily-life", words: 40 }
+  - decks: ["fr-daily-life", "fr-daily-life-sentences", "fr-reading-daily-life", "*"]
+    words: 40
     listening_passages:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
     reading_passages:
@@ -352,22 +353,26 @@ units:
       - { id: "right-now", text: { "en": "Saying what people are doing right now on the phone: je suis en train de manger" } }
     reading_passages:
       - { id: "busy-messages", text: { "en": "Short messages saying what each person is in the middle of doing" } }
-  - planned: { id: "fr-calendar", theme: "calendar", words: 35 }
+  - decks: ["fr-calendar", "fr-calendar-sentences", "fr-reading-calendar", "*"]
+    words: 35
     listening_passages:
       - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
-  - planned: { id: "fr-clothes", theme: "clothes", words: 35 }
+  - decks: ["fr-clothes", "fr-clothes-sentences", "fr-reading-clothes", "*"]
+    words: 35
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "fr-animals", theme: "animals", words: 35 }
+  - decks: ["fr-animals", "fr-animals-sentences", "fr-reading-animals", "*"]
+    words: 35
     listening_passages:
       - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "fr-weather", theme: "weather", words: 40 }
+  - decks: ["fr-weather", "fr-weather-sentences", "fr-reading-weather", "*"]
+    words: 40
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:
@@ -377,12 +382,14 @@ units:
       - { id: "what-i-did-yesterday", text: { "en": "Saying what you did yesterday" } }
     reading_passages:
       - { id: "yesterday-diary", text: { "en": "A short diary entry about yesterday" } }
-  - planned: { id: "fr-things", theme: "things", words: 45 }
+  - decks: ["fr-things", "fr-things-sentences", "fr-reading-things", "*"]
+    words: 45
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
-  - planned: { id: "fr-shopping", theme: "shopping", words: 40 }
+  - decks: ["fr-shopping", "fr-shopping-sentences", "fr-reading-shopping", "*"]
+    words: 40
     listening_passages:
       - { id: "asking-the-price", text: { "en": "Asking about price and size at a shop" } }
     reading_passages:
@@ -392,12 +399,14 @@ units:
       - { id: "give-it-to-me", text: { "en": "Asking someone to pass, give and show things" } }
     reading_passages:
       - { id: "short-requests", text: { "en": "Short written requests that use le, la, lui and leur" } }
-  - planned: { id: "fr-eating-out", theme: "eating-out", words: 40 }
+  - decks: ["fr-eating-out", "fr-eating-out-sentences", "fr-reading-eating-out", "*"]
+    words: 40
     listening_passages:
       - { id: "booking-a-table", text: { "en": "Booking a table and ordering" } }
     reading_passages:
       - { id: "restaurant-bill", text: { "en": "A restaurant bill and a tip" } }
-  - planned: { id: "fr-cooking", theme: "cooking", words: 40 }
+  - decks: ["fr-cooking", "fr-cooking-sentences", "fr-reading-cooking", "*"]
+    words: 40
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes a dish" } }
     reading_passages:
@@ -407,12 +416,14 @@ units:
       - { id: "how-many-do-you-want", text: { "en": "At a bakery: how many do you want? I'll take three of them" } }
     reading_passages:
       - { id: "recipe-questions", text: { "en": "Questions and answers under a recipe: do you go there, do you need some" } }
-  - planned: { id: "fr-school", theme: "school", words: 40 }
+  - decks: ["fr-school", "fr-school-sentences", "fr-reading-school", "*"]
+    words: 40
     listening_passages:
       - { id: "school-day", text: { "en": "A child describes the school day" } }
     reading_passages:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
-  - planned: { id: "fr-hobbies", theme: "hobbies", words: 40 }
+  - decks: ["fr-hobbies", "fr-hobbies-sentences", "fr-reading-hobbies", "*"]
+    words: 40
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they do at weekends" } }
     reading_passages:
@@ -494,7 +505,8 @@ units:
       - { id: "francophone-map", text: { "en": "A map caption: where French is spoken" } }
     milestone: "A2"
   # B1: the themes and grammar of the CEFR's B1.
-  - planned: { id: "fr-health", theme: "health", words: 55 }
+  - decks: ["fr-health", "fr-health-sentences", "fr-reading-health", "*"]
+    words: 40
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
@@ -504,7 +516,8 @@ units:
       - { id: "it-was-raining-when", text: { "en": "Telling a story: it was raining when the bus arrived" } }
     reading_passages:
       - { id: "holiday-story", text: { "en": "A short story about a holiday, with what was going on and what happened" } }
-  - planned: { id: "fr-feelings", theme: "feelings", words: 55 }
+  - decks: ["fr-feelings", "fr-feelings-sentences", "fr-reading-feelings", "*"]
+    words: 39
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
@@ -514,12 +527,14 @@ units:
       - { id: "next-year", text: { "en": "Saying what will happen next year" } }
     reading_passages:
       - { id: "horoscope-column", text: { "en": "A short horoscope column" } }
-  - planned: { id: "fr-news", theme: "news", words: 55 }
+  - decks: ["fr-news", "fr-news-sentences", "fr-reading-news", "*"]
+    words: 44
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - planned: { id: "fr-opinions", theme: "opinions", words: 50 }
+  - decks: ["fr-opinions", "fr-opinions-sentences", "fr-reading-opinions", "*"]
+    words: 37
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over coffee" } }
     reading_passages:
@@ -529,7 +544,8 @@ units:
       - { id: "what-would-you-do", text: { "en": "Saying what you would do in another situation" } }
     reading_passages:
       - { id: "polite-requests", text: { "en": "Polite requests written with the conditional: je voudrais, pourriez-vous" } }
-  - planned: { id: "fr-travel", theme: "travel", words: 55 }
+  - decks: ["fr-travel", "fr-travel-sentences", "fr-reading-travel", "*"]
+    words: 38
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
@@ -539,12 +555,14 @@ units:
       - { id: "the-man-who-came", text: { "en": "Describing people and places by what happened: the one who came, the town where we met" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - planned: { id: "fr-services", theme: "services", words: 45 }
+  - decks: ["fr-services", "fr-services-sentences", "fr-reading-services", "*"]
+    words: 37
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
-  - planned: { id: "fr-government", theme: "government", words: 40 }
+  - decks: ["fr-government", "fr-government-sentences", "fr-reading-government", "*"]
+    words: 33
     listening_passages:
       - { id: "at-the-office", text: { "en": "Asking an officer which document is needed" } }
     reading_passages:
@@ -554,12 +572,14 @@ units:
       - { id: "wishes-and-advice", text: { "en": "Friends make wishes and give advice: I want you to come, you must rest" } }
     reading_passages:
       - { id: "friendly-advice", text: { "en": "A friendly note that suggests what to do and what to hope for" } }
-  - planned: { id: "fr-technology", theme: "technology", words: 50 }
+  - decks: ["fr-technology", "fr-technology-sentences", "fr-reading-technology", "*"]
+    words: 38
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app" } }
-  - planned: { id: "fr-careers", theme: "careers", words: 50 }
+  - decks: ["fr-careers", "fr-careers-sentences", "fr-reading-careers", "*"]
+    words: 33
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
@@ -569,12 +589,14 @@ units:
       - { id: "doubts-and-hopes", text: { "en": "Saying what you doubt, fear or are glad of" } }
     reading_passages:
       - { id: "opinion-notes", text: { "en": "Short notes of opinion that use il faut que and bien que" } }
-  - planned: { id: "fr-environment", theme: "environment", words: 50 }
+  - decks: ["fr-environment", "fr-environment-sentences", "fr-reading-environment", "*"]
+    words: 30
     listening_passages:
       - { id: "recycling-talk", text: { "en": "Neighbours talk about recycling and the heat" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - planned: { id: "fr-cinema", theme: "cinema", words: 55 }
+  - decks: ["fr-cinema", "fr-cinema-sentences", "fr-reading-cinema", "*"]
+    words: 33
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
@@ -584,12 +606,14 @@ units:
       - { id: "he-said-that", text: { "en": "Telling someone what a third person said" } }
     reading_passages:
       - { id: "message-thread", text: { "en": "A message thread passing on what someone said" } }
-  - planned: { id: "fr-arts", theme: "arts", words: 45 }
+  - decks: ["fr-arts", "fr-arts-sentences", "fr-reading-arts", "*"]
+    words: 25
     listening_passages:
       - { id: "a-music-class", text: { "en": "A teacher explains a music class" } }
     reading_passages:
       - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
-  - planned: { id: "fr-history", theme: "history", words: 45 }
+  - decks: ["fr-history", "fr-history-sentences", "fr-reading-history", "*"]
+    words: 35
     listening_passages:
       - { id: "a-castle-visit", text: { "en": "A guide tells the story of an old castle" } }
     reading_passages:
@@ -599,12 +623,14 @@ units:
       - { id: "it-had-already-happened", text: { "en": "Saying what had already happened when something else began" } }
     reading_passages:
       - { id: "police-report", text: { "en": "A short report of what had happened before" } }
-  - planned: { id: "fr-festivals", theme: "festivals", words: 40 }
+  - decks: ["fr-festivals", "fr-festivals-sentences", "fr-reading-festivals", "*"]
+    words: 26
     listening_passages:
       - { id: "festival-days", text: { "en": "Neighbours plan the days of a festival together" } }
     reading_passages:
       - { id: "festival-invitation", text: { "en": "An invitation to a festival meal" } }
-  - planned: { id: "fr-weddings", theme: "weddings", words: 40 }
+  - decks: ["fr-weddings", "fr-weddings-sentences", "fr-reading-weddings", "*"]
+    words: 27
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
@@ -614,12 +640,14 @@ units:
       - { id: "rain-plans", text: { "en": "A friend's plans if it rains, and what they would do if they could" } }
     reading_passages:
       - { id: "late-train", text: { "en": "A message: if the train is late" } }
-  - planned: { id: "fr-sports", theme: "sports", words: 40 }
+  - decks: ["fr-sports", "fr-sports-sentences", "fr-reading-sports", "*"]
+    words: 28
     listening_passages:
       - { id: "football-talk", text: { "en": "Friends talk about a football match" } }
     reading_passages:
       - { id: "match-report", text: { "en": "A short match report" } }
-  - planned: { id: "fr-relationships", theme: "relationships", words: 45 }
+  - decks: ["fr-relationships", "fr-relationships-sentences", "fr-reading-relationships", "*"]
+    words: 26
     listening_passages:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
     reading_passages:
@@ -629,12 +657,14 @@ units:
       - { id: "it-was-done", text: { "en": "Saying what is done or was done, with on and with the passive" } }
     reading_passages:
       - { id: "notice-board", text: { "en": "A notice board with announcements" } }
-  - planned: { id: "fr-housing", theme: "housing", words: 40 }
+  - decks: ["fr-housing", "fr-housing-sentences", "fr-reading-housing", "*"]
+    words: 22
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an owner about a flat to rent" } }
     reading_passages:
       - { id: "rental-terms", text: { "en": "The terms of a rental" } }
-  - planned: { id: "fr-emergencies", theme: "emergencies", words: 35 }
+  - decks: ["fr-emergencies", "fr-emergencies-sentences", "fr-reading-emergencies", "*"]
+    words: 20
     listening_passages:
       - { id: "calling-for-help", text: { "en": "Calling for help after an accident" } }
     reading_passages:
@@ -644,12 +674,14 @@ units:
       - { id: "while-walking", text: { "en": "Saying what you do while doing something else: listening while walking" } }
     reading_passages:
       - { id: "safety-tips", text: { "en": "Safety tips: by slowing down, while crossing" } }
-  - planned: { id: "fr-law", theme: "law", words: 35 }
+  - decks: ["fr-law", "fr-law-sentences", "fr-reading-law", "*"]
+    words: 26
     listening_passages:
       - { id: "police-complaint", text: { "en": "Making a complaint at a police station" } }
     reading_passages:
       - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
-  - planned: { id: "fr-verbs-4", theme: "verbs-4", words: 60 }
+  - decks: ["fr-verbs-4", "fr-verbs-4-sentences", "fr-reading-verbs-4", "*"]
+    words: 38
     listening_passages:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
@@ -659,12 +691,14 @@ units:
       - { id: "the-book-i-told-you-about", text: { "en": "Talking about the book I told you about and the friend I travelled with" } }
     reading_passages:
       - { id: "classified-ads", text: { "en": "Classified ads that describe what is offered and what it is for" } }
-  - planned: { id: "fr-abstract-words", theme: "abstract-words", words: 55 }
+  - decks: ["fr-abstract-words", "fr-abstract-words-sentences", "fr-reading-abstract-words", "*"]
+    words: 45
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - planned: { id: "fr-money", theme: "money", words: 45 }
+  - decks: ["fr-money", "fr-money-sentences", "fr-reading-money", "*"]
+    words: 27
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
@@ -674,7 +708,8 @@ units:
       - { id: "i-would-have-come", text: { "en": "Saying what you would have done, and regrets: I should have left earlier" } }
     reading_passages:
       - { id: "advice-column", text: { "en": "A short advice column" } }
-  - planned: { id: "fr-literature", theme: "literature", words: 50 }
+  - decks: ["fr-literature", "fr-literature-sentences", "fr-reading-literature", "*"]
+    words: 31
     listening_passages:
       - { id: "a-poem-read-aloud", text: { "en": "A teacher reads a short poem and explains it" } }
     reading_passages:
@@ -684,7 +719,8 @@ units:
       - { id: "a-tale-read-aloud", text: { "en": "A folk tale read aloud: il était une fois, and what the hero did" } }
     reading_passages:
       - { id: "fairy-tale-page", text: { "en": "A page of a fairy tale in the passé simple, to read and not to speak" } }
-  - planned: { id: "fr-verbs-5", theme: "verbs-5", words: 45 }
+  - decks: ["fr-verbs-5", "fr-verbs-5-sentences", "fr-reading-verbs-5", "*"]
+    words: 30
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
     reading_passages:

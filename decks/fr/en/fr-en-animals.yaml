@@ -1,0 +1,524 @@
+schema: 1
+id: "fr-en-animals"
+kind: "layer"
+core: "fr-animals"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Animals"
+license: "CC-BY-SA-4.0"
+description: "Thirty-five words for animals: pets, farm animals, wild animals such as the lion and the giraffe, the sea and the insects, and the farm itself. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1252":
+    native: "cat"
+    notes:
+      "n1": "Chat is 'cat', masculine: un chat, le chat."
+    examples:
+      "Le chat dort sur le lit.":
+        native: "The cat sleeps on the bed."
+        bases:
+          "chat": "cat"
+      "Mon chat aime le lait.":
+        native: "My cat likes milk."
+        bases:
+          "chat": "cat"
+  "fr-1253":
+    native: "dog"
+    notes:
+      "n1": "Chien is 'dog', masculine. The plural is chiens."
+    examples:
+      "Le chien court dans le jardin.":
+        native: "The dog runs in the garden."
+        bases:
+          "chien": "dog"
+      "Mon chien est gentil.":
+        native: "My dog is kind."
+        bases:
+          "chien": "dog"
+  "fr-1254":
+    native: "bird"
+    notes:
+      "n1": "Oiseau is 'bird', masculine. The plural is oiseaux."
+    examples:
+      "Un oiseau vole dans le ciel.":
+        native: "A bird flies in the sky."
+        bases:
+          "oiseau": "bird"
+          "vole": "flies"
+          "ciel": "sky"
+      "L'oiseau chante le matin.":
+        native: "The bird sings in the morning."
+        bases:
+          "L'oiseau": "bird"
+  "fr-1255":
+    native: "horse"
+    notes:
+      "n1": "Cheval is 'horse', masculine. Its plural is chevaux."
+    examples:
+      "Le cheval mange de l'herbe.":
+        native: "The horse eats grass."
+        bases:
+          "cheval": "horse"
+          "de": "some"
+          "l'herbe": "grass"
+      "Ce cheval est grand.":
+        native: "This horse is big."
+        bases:
+          "cheval": "horse"
+  "fr-1256":
+    native: "cow"
+    notes:
+      "n1": "Vache is 'cow', feminine: une vache, la vache."
+    examples:
+      "La vache donne du lait.":
+        native: "The cow gives milk."
+        bases:
+          "vache": "cow"
+          "du": "some"
+      "Les vaches sont dans le pré.":
+        native: "The cows are in the field."
+        bases:
+          "vaches": "cows"
+          "pré": "field"
+  "fr-1257":
+    native: "pig"
+    notes:
+      "n1": "Cochon is 'pig', masculine."
+    examples:
+      "Le cochon aime la boue.":
+        native: "The pig likes mud."
+        bases:
+          "cochon": "pig"
+          "boue": "mud"
+      "Un cochon mange beaucoup.":
+        native: "A pig eats a lot."
+        bases:
+          "cochon": "pig"
+  "fr-1258":
+    native: "sheep"
+    notes:
+      "n1": "Mouton is 'sheep', masculine. It is the same for one sheep and for many."
+    examples:
+      "Le mouton a de la laine.":
+        native: "The sheep has wool."
+        bases:
+          "mouton": "sheep"
+          "de": "some"
+      "Les moutons sont blancs.":
+        native: "The sheep are white."
+        bases:
+          "moutons": "sheep"
+          "blancs": "white"
+  "fr-1259":
+    native: "hen"
+    notes:
+      "n1": "Poule is 'hen', feminine. It lays eggs: pondre is 'to lay'."
+    examples:
+      "La poule pond un œuf.":
+        native: "The hen lays an egg."
+        bases:
+          "poule": "hen"
+          "pond": "lays"
+      "Ma poule est dans la cour.":
+        native: "My hen is in the yard."
+        bases:
+          "poule": "hen"
+          "cour": "yard"
+  "fr-1260":
+    native: "rooster"
+    notes:
+      "n1": "Coq is 'rooster', masculine. It is the male of the hen."
+    examples:
+      "Le coq chante le matin.":
+        native: "The rooster crows in the morning."
+        bases:
+          "coq": "rooster"
+      "Un coq a une belle crête.":
+        native: "A rooster has a fine comb."
+        bases:
+          "coq": "rooster"
+          "crête": "comb"
+  "fr-1261":
+    native: "duck"
+    notes:
+      "n1": "Canard is 'duck', masculine."
+    examples:
+      "Le canard nage sur l'eau.":
+        native: "The duck swims on the water."
+        bases:
+          "canard": "duck"
+          "l'eau": "water"
+      "Les canards sont jaunes.":
+        native: "The ducks are yellow."
+        bases:
+          "canards": "ducks"
+          "jaunes": "yellow"
+  "fr-1262":
+    native: "rabbit"
+    notes:
+      "n1": "Lapin is 'rabbit', masculine."
+    examples:
+      "Le lapin mange une carotte.":
+        native: "The rabbit eats a carrot."
+        bases:
+          "lapin": "rabbit"
+      "Mon lapin est petit.":
+        native: "My rabbit is small."
+        bases:
+          "lapin": "rabbit"
+  "fr-1263":
+    native: "mouse"
+    notes:
+      "n1": "Souris is 'mouse', feminine. It is also the word for a computer mouse."
+    examples:
+      "La souris a peur du chat.":
+        native: "The mouse is afraid of the cat."
+        bases:
+          "souris": "mouse"
+          "peur": "fear"
+          "du": "of the"
+          "chat": "cat"
+      "Une souris est très petite.":
+        native: "A mouse is very small."
+        bases:
+          "souris": "mouse"
+  "fr-1264":
+    native: "lion"
+    notes:
+      "n1": "Lion is 'lion', masculine. Le roi des animaux means 'the king of the animals'."
+    examples:
+      "Le lion est le roi des animaux.":
+        native: "The lion is the king of the animals."
+        bases:
+          "lion": "lion"
+          "roi": "king"
+          "animaux": "animals"
+      "Le lion court vite.":
+        native: "The lion runs fast."
+        bases:
+          "lion": "lion"
+  "fr-1265":
+    native: "tiger"
+    notes:
+      "n1": "Tigre is 'tiger', masculine."
+    examples:
+      "Le tigre est rapide.":
+        native: "The tiger is fast."
+        bases:
+          "tigre": "tiger"
+      "Un tigre a des rayures.":
+        native: "A tiger has stripes."
+        bases:
+          "tigre": "tiger"
+          "rayures": "stripes"
+  "fr-1266":
+    native: "elephant"
+    notes:
+      "n1": "Éléphant is 'elephant', masculine. Before a vowel it is l'éléphant."
+    examples:
+      "L'éléphant est très grand.":
+        native: "The elephant is very big."
+        bases:
+          "L'éléphant": "elephant"
+      "L'éléphant a une longue trompe.":
+        native: "The elephant has a long trunk."
+        bases:
+          "L'éléphant": "elephant"
+          "trompe": "trunk"
+  "fr-1267":
+    native: "giraffe"
+    notes:
+      "n1": "Girafe is 'giraffe', feminine."
+    examples:
+      "La girafe mange les feuilles.":
+        native: "The giraffe eats the leaves."
+        bases:
+          "girafe": "giraffe"
+          "feuilles": "leaves"
+      "Une girafe a un long cou.":
+        native: "A giraffe has a long neck."
+        bases:
+          "girafe": "giraffe"
+  "fr-1268":
+    native: "monkey"
+    notes:
+      "n1": "Singe is 'monkey', masculine."
+    examples:
+      "Le singe grimpe dans l'arbre.":
+        native: "The monkey climbs up the tree."
+        bases:
+          "singe": "monkey"
+          "grimpe": "climbs"
+          "l'arbre": "tree"
+      "Le singe mange une banane.":
+        native: "The monkey eats a banana."
+        bases:
+          "singe": "monkey"
+  "fr-1269":
+    native: "bear"
+    notes:
+      "n1": "Ours is 'bear', masculine. It is the same in the plural."
+    examples:
+      "L'ours dort en hiver.":
+        native: "The bear sleeps in winter."
+        bases:
+          "L'ours": "bear"
+          "en": "in"
+      "Un ours est très fort.":
+        native: "A bear is very strong."
+        bases:
+          "ours": "bear"
+  "fr-1270":
+    native: "wolf"
+    notes:
+      "n1": "Loup is 'wolf', masculine. Hurler is 'to howl'."
+    examples:
+      "Le loup hurle la nuit.":
+        native: "The wolf howls at night."
+        bases:
+          "loup": "wolf"
+          "hurle": "howls"
+      "Le loup est dans la forêt.":
+        native: "The wolf is in the forest."
+        bases:
+          "loup": "wolf"
+          "forêt": "forest"
+  "fr-1271":
+    native: "fox"
+    notes:
+      "n1": "Renard is 'fox', masculine."
+    examples:
+      "Le renard est rusé.":
+        native: "The fox is sly."
+        bases:
+          "renard": "fox"
+          "rusé": "sly"
+      "Un renard a une queue rousse.":
+        native: "A fox has a ginger tail."
+        bases:
+          "renard": "fox"
+          "queue": "tail"
+          "rousse": "ginger"
+  "fr-1272":
+    native: "snake"
+    notes:
+      "n1": "Serpent is 'snake', masculine. Ramper is 'to crawl'."
+    examples:
+      "Le serpent rampe sur le sol.":
+        native: "The snake crawls on the ground."
+        bases:
+          "serpent": "snake"
+          "rampe": "crawls"
+      "Le serpent est dangereux.":
+        native: "The snake is dangerous."
+        bases:
+          "serpent": "snake"
+          "dangereux": "dangerous"
+  "fr-1273":
+    native: "frog"
+    notes:
+      "n1": "Grenouille is 'frog', feminine."
+    examples:
+      "La grenouille saute dans l'eau.":
+        native: "The frog jumps into the water."
+        bases:
+          "grenouille": "frog"
+          "saute": "jumps"
+          "l'eau": "water"
+      "Une grenouille est verte.":
+        native: "A frog is green."
+        bases:
+          "grenouille": "frog"
+  "fr-1274":
+    native: "tortoise"
+    notes:
+      "n1": "Tortue is 'tortoise' or 'turtle', feminine."
+    examples:
+      "La tortue marche lentement.":
+        native: "The tortoise walks slowly."
+        bases:
+          "tortue": "tortoise"
+      "Une tortue vit très longtemps.":
+        native: "A tortoise lives for a very long time."
+        bases:
+          "tortue": "tortoise"
+          "vit": "lives"
+  "fr-1275":
+    native: "zebra"
+    notes:
+      "n1": "Zèbre is 'zebra', masculine."
+    examples:
+      "Le zèbre a des rayures noires.":
+        native: "The zebra has black stripes."
+        bases:
+          "zèbre": "zebra"
+          "rayures": "stripes"
+      "Le zèbre vit en Afrique.":
+        native: "The zebra lives in Africa."
+        bases:
+          "zèbre": "zebra"
+          "vit": "lives"
+          "en": "in"
+          "Afrique": "Africa"
+  "fr-1276":
+    native: "shark"
+    notes:
+      "n1": "Requin is 'shark', masculine."
+    examples:
+      "Le requin nage dans la mer.":
+        native: "The shark swims in the sea."
+        bases:
+          "requin": "shark"
+          "mer": "sea"
+      "Un requin est dangereux.":
+        native: "A shark is dangerous."
+        bases:
+          "requin": "shark"
+          "dangereux": "dangerous"
+  "fr-1277":
+    native: "dolphin"
+    notes:
+      "n1": "Dauphin is 'dolphin', masculine."
+    examples:
+      "Le dauphin joue dans l'eau.":
+        native: "The dolphin plays in the water."
+        bases:
+          "dauphin": "dolphin"
+          "l'eau": "water"
+      "Le dauphin est intelligent.":
+        native: "The dolphin is clever."
+        bases:
+          "dauphin": "dolphin"
+  "fr-1278":
+    native: "bee"
+    notes:
+      "n1": "Abeille is 'bee', feminine. Faire du miel is 'to make honey'."
+    examples:
+      "L'abeille fait du miel.":
+        native: "The bee makes honey."
+        bases:
+          "L'abeille": "bee"
+          "du": "some"
+          "miel": "honey"
+      "Une abeille vole vers la fleur.":
+        native: "A bee flies towards the flower."
+        bases:
+          "abeille": "bee"
+          "vole": "flies"
+          "fleur": "flower"
+  "fr-1279":
+    native: "butterfly"
+    notes:
+      "n1": "Papillon is 'butterfly', masculine."
+    examples:
+      "Le papillon est très beau.":
+        native: "The butterfly is very beautiful."
+        bases:
+          "papillon": "butterfly"
+      "Un papillon vole dans le jardin.":
+        native: "A butterfly flies in the garden."
+        bases:
+          "papillon": "butterfly"
+          "vole": "flies"
+  "fr-1280":
+    native: "ant"
+    notes:
+      "n1": "Fourmi is 'ant', feminine. The plural is fourmis."
+    examples:
+      "La fourmi porte une feuille.":
+        native: "The ant carries a leaf."
+        bases:
+          "fourmi": "ant"
+          "feuille": "leaf"
+      "Les fourmis travaillent beaucoup.":
+        native: "Ants work a lot."
+        bases:
+          "fourmis": "ants"
+  "fr-1281":
+    native: "owl"
+    notes:
+      "n1": "Hibou is 'owl', masculine."
+    examples:
+      "Le hibou dort le jour.":
+        native: "The owl sleeps in the day."
+        bases:
+          "hibou": "owl"
+      "Le hibou voit la nuit.":
+        native: "The owl sees at night."
+        bases:
+          "hibou": "owl"
+  "fr-1282":
+    native: "donkey"
+    notes:
+      "n1": "Âne is 'donkey', masculine."
+    examples:
+      "L'âne est gris.":
+        native: "The donkey is grey."
+        bases:
+          "L'âne": "donkey"
+          "gris": "grey"
+      "Un âne porte un sac.":
+        native: "A donkey carries a bag."
+        bases:
+          "âne": "donkey"
+  "fr-1283":
+    native: "goat"
+    notes:
+      "n1": "Chèvre is 'goat', feminine. It is also the word for the cheese made from goat's milk in some contexts."
+    examples:
+      "La chèvre monte sur la colline.":
+        native: "The goat climbs up the hill."
+        bases:
+          "chèvre": "goat"
+          "colline": "hill"
+      "Une chèvre donne du lait.":
+        native: "A goat gives milk."
+        bases:
+          "chèvre": "goat"
+          "du": "some"
+  "fr-1284":
+    native: "animal"
+    notes:
+      "n1": "Animal is 'animal', masculine. The plural is animaux."
+    examples:
+      "Un animal dort dans la nuit.":
+        native: "An animal sleeps at night."
+        bases:
+          "animal": "animal"
+      "Le chien est un animal.":
+        native: "The dog is an animal."
+        bases:
+          "chien": "dog"
+          "animal": "animal"
+  "fr-1285":
+    native: "farm"
+    notes:
+      "n1": "Ferme is 'farm', feminine. Also 'farmhouse'."
+    examples:
+      "La ferme est près de la route.":
+        native: "The farm is near the road."
+        bases:
+          "ferme": "farm"
+          "de": "of"
+      "Les enfants visitent la ferme.":
+        native: "The children visit the farm."
+        bases:
+          "enfants": "children"
+          "visitent": "visit"
+          "ferme": "farm"
+  "fr-1286":
+    native: "feather"
+    notes:
+      "n1": "Plume is 'feather', feminine. It is also the word for a pen."
+    examples:
+      "Le canard a des plumes blanches.":
+        native: "The duck has white feathers."
+        bases:
+          "canard": "duck"
+          "plumes": "feathers"
+          "blanches": "white"
+      "Une plume tombe du ciel.":
+        native: "A feather falls from the sky."
+        bases:
+          "plume": "feather"
+          "du": "from the"
+          "ciel": "sky"

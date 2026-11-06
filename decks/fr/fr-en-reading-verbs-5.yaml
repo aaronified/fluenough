@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-verbs-5"
+name: "Reading: verbs 5"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about verbs 5. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-newspaper-feature"
+    title: "A short newspaper feature"
+    theme: "verbs-5"
+    sentences:
+      - text: "Chaque matin, Léa quitte la maison à sept heures et prend le train."
+      - text: "Un jour, elle perd son portefeuille dans le métro."
+      - text: "Elle le cherche partout, puis elle trouve un ami qui lui propose de l’aider."
+      - text: "À la fin, elle rentre tard, mais elle est contente d’avoir retrouvé ses papiers."
+    questions:
+      - id: "fr-2799"
+        prompt: { en: "What does Léa lose?" }
+        options:
+          - { en: "Her keys" }
+          - { en: "Her wallet" }
+          - { en: "Her phone" }
+        answer: 1
+      - id: "fr-2800"
+        prompt: { en: "Who helps her?" }
+        options:
+          - { en: "A friend" }
+          - { en: "A police officer" }
+          - { en: "Her teacher" }
+        answer: 1
+      - id: "fr-2801"
+        prompt: { en: "How does Léa feel at the end?" }
+        options:
+          - { en: "Happy to have her papers back" }
+          - { en: "Angry at the train" }
+          - { en: "Bored" }
+        answer: 1

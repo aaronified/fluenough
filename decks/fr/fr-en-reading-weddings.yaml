@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-weddings"
+name: "Reading: weddings"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about weddings. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-wedding-card"
+    title: "A wedding invitation card"
+    theme: "weddings"
+    sentences:
+      - text: "Marie et Paul ont le plaisir de vous inviter à leur mariage."
+      - text: "La cérémonie aura lieu le samedi 14 juin à quinze heures."
+      - text: "Suivie d’un banquet dans le jardin de la famille."
+      - text: "Merci de confirmer votre présence avant le premier mai."
+    questions:
+      - id: "fr-2393"
+        prompt: { en: "What is the invitation for?" }
+        options:
+          - { en: "A wedding" }
+          - { en: "A funeral" }
+          - { en: "A birthday" }
+        answer: 1
+      - id: "fr-2394"
+        prompt: { en: "When does the ceremony take place?" }
+        options:
+          - { en: "On the 14th of June at three" }
+          - { en: "On the 1st of May" }
+          - { en: "At midnight" }
+        answer: 1
+      - id: "fr-2395"
+        prompt: { en: "What must guests do?" }
+        options:
+          - { en: "Confirm their attendance" }
+          - { en: "Bring a cake" }
+          - { en: "Send a letter" }
+        answer: 1

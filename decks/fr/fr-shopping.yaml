@@ -1,0 +1,444 @@
+schema: 1
+id: "fr-shopping"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "shopping"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1420"
+    target: "achat"
+    ipa: "aʃa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cet achat coûte cher.", ipa: "sɛt aʃa kut ʃɛʁ", bases: [{ word: "Cet", ref: "fr-0644" }, { word: "achat", base: "achat" }, { word: "coûte", base: "coûter" }, { word: "cher", ref: "fr-0104" }] }
+      - { target: "Je fais un achat au magasin.", ipa: "ʒə fɛ œ̃ naʃa o magazɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "un", ref: "fr-0208" }, { word: "achat", base: "achat" }, { word: "au", base: "au" }, { word: "magasin", ref: "fr-0795" }] }
+  - id: "fr-1421"
+    target: "soldes"
+    ipa: "sold"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les soldes commencent en janvier.", ipa: "le sold kɔmɑ̃s ɑ̃ ʒɑ̃vje", bases: [{ word: "Les", ref: "fr-0043" }, { word: "soldes", base: "soldes" }, { word: "commencent", base: "commencer" }, { word: "en", base: "en" }, { word: "janvier", ref: "fr-1152" }] }
+      - { target: "Il y a des soldes dans ce magasin.", ipa: "il i a de sold dɑ̃ sə magazɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "soldes", base: "soldes" }, { word: "dans", ref: "fr-0049" }, { word: "ce", ref: "fr-0143" }, { word: "magasin", ref: "fr-0795" }] }
+  - id: "fr-1422"
+    target: "promotion"
+    ipa: "pʁɔmosjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une promotion sur le pain.", ipa: "il i a yn pʁɔmosjɔ̃ syʁ lə pɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "promotion", base: "promotion" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }] }
+      - { target: "La promotion finit demain.", ipa: "la pʁɔmosjɔ̃ finit dəmɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "promotion", base: "promotion" }, { word: "finit", base: "finir" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1423"
+    target: "réduction"
+    ipa: "ʁedyksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une réduction de dix pour cent.", ipa: "il i a yn ʁedyksjɔ̃ də di puʁ sɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "réduction", base: "réduction" }, { word: "de", base: "de" }, { word: "dix", ref: "fr-0217" }, { word: "pour", ref: "fr-0591" }, { word: "cent", ref: "fr-0709" }] }
+      - { target: "Je demande une réduction au vendeur.", ipa: "ʒə dəmɑ̃d yn ʁedyksjɔ̃ o vɑ̃døʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "demande", base: "demander" }, { word: "une", ref: "fr-0545" }, { word: "réduction", base: "réduction" }, { word: "au", base: "au" }, { word: "vendeur", ref: "fr-0736" }] }
+  - id: "fr-1424"
+    target: "remise"
+    ipa: "ʁəmiz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une remise est possible pour les clients.", ipa: "yn ʁəmiz ɛ pɔsibl puʁ le klijɑ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "remise", base: "remise" }, { word: "est", ref: "fr-0021" }, { word: "possible", base: "possible" }, { word: "pour", ref: "fr-0591" }, { word: "les", ref: "fr-0043" }, { word: "clients", base: "client" }] }
+      - { target: "Il donne une remise de cinq euros.", ipa: "il dɔn yn ʁəmiz də sɛ̃k øʁo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "donne", base: "donner" }, { word: "une", ref: "fr-0545" }, { word: "remise", base: "remise" }, { word: "de", base: "de" }, { word: "cinq", ref: "fr-0212" }, { word: "euros", base: "euro" }] }
+  - id: "fr-1425"
+    target: "cadeau"
+    ipa: "kado"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce cadeau est pour mon frère.", ipa: "sə kado ɛ puʁ mɔ̃ fʁɛʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "cadeau", base: "cadeau" }, { word: "est", ref: "fr-0021" }, { word: "pour", ref: "fr-0591" }, { word: "mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0170" }] }
+      - { target: "J'achète un cadeau pour ma mère.", ipa: "ʒaʃɛt œ̃ kado puʁ ma mɛʁ", bases: [{ word: "J'achète", base: "acheter" }, { word: "un", ref: "fr-0208" }, { word: "cadeau", base: "cadeau" }, { word: "pour", ref: "fr-0591" }, { word: "ma", ref: "fr-0137" }, { word: "mère", ref: "fr-0166" }] }
+  - id: "fr-1426"
+    target: "espèces"
+    ipa: "ɛspɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vous payez en espèces ?", ipa: "vu pɛje ɑ̃ ɛspɛs", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "payez", base: "payer" }, { word: "en", base: "en" }, { word: "espèces", base: "espèces" }] }
+      - { target: "Je paie en espèces, pas par carte.", ipa: "ʒə pɛ ɑ̃ ɛspɛs pa paʁ kaʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", base: "payer" }, { word: "en", base: "en" }, { word: "espèces", base: "espèces" }, { word: "pas", base: "pas" }, { word: "par", ref: "fr-0593" }, { word: "carte", ref: "fr-0824" }] }
+  - id: "fr-1427"
+    target: "reçu"
+    ipa: "ʁəsy"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le reçu est dans le sac.", ipa: "lə ʁəsy ɛ dɑ̃ lə sak", bases: [{ word: "Le", ref: "fr-0543" }, { word: "reçu", base: "reçu" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Tu veux un reçu ?", ipa: "ty vø œ̃ ʁəsy", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "veux", base: "vouloir" }, { word: "un", ref: "fr-0208" }, { word: "reçu", base: "reçu" }] }
+  - id: "fr-1428"
+    target: "ticket"
+    ipa: "tikɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Garde ton ticket de caisse.", ipa: "ɡaʁd tɔ̃ tikɛ də kɛs", bases: [{ word: "Garde", base: "garder" }, { word: "ton", ref: "fr-0141" }, { word: "ticket", base: "ticket" }, { word: "de", base: "de" }, { word: "caisse", ref: "fr-0749" }] }
+      - { target: "Le ticket coûte deux euros.", ipa: "lə tikɛ kut dø øʁo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ticket", base: "ticket" }, { word: "coûte", base: "coûter" }, { word: "deux", ref: "fr-0209" }, { word: "euros", base: "euro" }] }
+  - id: "fr-1429"
+    target: "boutique"
+    ipa: "butik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La boutique est ouverte.", ipa: "la butik ɛ uvɛʁt", bases: [{ word: "La", ref: "fr-0544" }, { word: "boutique", base: "boutique" }, { word: "est", ref: "fr-0021" }, { word: "ouverte", base: "ouvert" }] }
+      - { target: "Je cherche une boutique de vêtements.", ipa: "ʒə ʃɛʁʃ yn butik də vɛtmɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "une", ref: "fr-0545" }, { word: "boutique", base: "boutique" }, { word: "de", base: "de" }, { word: "vêtements", base: "vêtement" }] }
+  - id: "fr-1430"
+    target: "supermarché"
+    ipa: "sypɛʁmaʁʃe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le supermarché ouvre à huit heures.", ipa: "lə sypɛʁmaʁʃe uvʁ a ɥit œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "supermarché", base: "supermarché" }, { word: "ouvre", base: "ouvrir" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", base: "heure" }] }
+      - { target: "On achète le pain au supermarché.", ipa: "ɔ̃ aʃɛt lə pɛ̃ o sypɛʁmaʁʃe", bases: [{ word: "On", ref: "fr-0132" }, { word: "achète", base: "acheter" }, { word: "le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "au", base: "au" }, { word: "supermarché", base: "supermarché" }] }
+  - id: "fr-1431"
+    target: "librairie"
+    ipa: "libʁɛʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La librairie vend des livres.", ipa: "la libʁɛʁi vɑ̃ de livʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "librairie", base: "librairie" }, { word: "vend", base: "vendre" }, { word: "des", ref: "fr-0546" }, { word: "livres", base: "livre" }] }
+      - { target: "J'achète un roman à la librairie.", ipa: "ʒaʃɛt œ̃ ʁɔmɑ̃ a la libʁɛʁi", bases: [{ word: "J'achète", base: "acheter" }, { word: "un", ref: "fr-0208" }, { word: "roman", base: "roman" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "librairie", base: "librairie" }] }
+  - id: "fr-1432"
+    target: "papeterie"
+    ipa: "papɛtʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La papeterie vend des stylos et du papier.", ipa: "la papɛtʁi vɑ̃ de stilo e dy papje", bases: [{ word: "La", ref: "fr-0544" }, { word: "papeterie", base: "papeterie" }, { word: "vend", base: "vendre" }, { word: "des", ref: "fr-0546" }, { word: "stylos", base: "stylo" }, { word: "et", ref: "fr-0027" }, { word: "du", base: "du" }, { word: "papier", ref: "fr-1374" }] }
+      - { target: "Je prends une enveloppe à la papeterie.", ipa: "ʒə pʁɑ̃ yn ɑ̃vlɔp a la papɛtʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "enveloppe", ref: "fr-1368" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "papeterie", base: "papeterie" }] }
+  - id: "fr-1433"
+    target: "bijouterie"
+    ipa: "biʒutʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bijouterie est près de la gare.", ipa: "la biʒutʁi ɛ pʁɛ də la ɡaʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "bijouterie", base: "bijouterie" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Une bague vient de la bijouterie.", ipa: "yn baɡ vjɛ̃ də la biʒutʁi", bases: [{ word: "Une", ref: "fr-0545" }, { word: "bague", ref: "fr-1222" }, { word: "vient", base: "venir" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "bijouterie", base: "bijouterie" }] }
+  - id: "fr-1434"
+    target: "fleuriste"
+    ipa: "flœʁist"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fleuriste vend des roses.", ipa: "la flœʁist vɑ̃ de ʁoz", bases: [{ word: "La", ref: "fr-0544" }, { word: "fleuriste", base: "fleuriste" }, { word: "vend", base: "vendre" }, { word: "des", ref: "fr-0546" }, { word: "roses", base: "rose" }] }
+      - { target: "Je vais chez le fleuriste.", ipa: "ʒə vɛ ʃe lə flœʁist", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", base: "aller" }, { word: "chez", ref: "fr-0472" }, { word: "le", ref: "fr-0543" }, { word: "fleuriste", base: "fleuriste" }] }
+  - id: "fr-1435"
+    target: "vitrine"
+    ipa: "vitʁin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La vitrine est très belle.", ipa: "la vitʁin ɛ tʁɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "vitrine", base: "vitrine" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "belle", base: "beau" }] }
+      - { target: "Je regarde les vitrines.", ipa: "ʒə ʁəɡaʁd le vitʁin", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", ref: "fr-0293" }, { word: "les", ref: "fr-0043" }, { word: "vitrines", base: "vitrine" }] }
+  - id: "fr-1436"
+    target: "allée"
+    ipa: "ale"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'allée est près de la caisse.", ipa: "lale ɛ pʁɛ də la kɛs", bases: [{ word: "L'allée", base: "allée" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "caisse", ref: "fr-0749" }] }
+      - { target: "Le pain est dans la deuxième allée.", ipa: "lə pɛ̃ ɛ dɑ̃ la døzjɛm ale", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "deuxième", base: "deuxième" }, { word: "allée", base: "allée" }] }
+  - id: "fr-1437"
+    target: "article"
+    ipa: "aʁtikl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cet article est en promotion.", ipa: "sɛt aʁtikl ɛ ɑ̃ pʁɔmosjɔ̃", bases: [{ word: "Cet", ref: "fr-0644" }, { word: "article", base: "article" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "promotion", ref: "fr-1422" }] }
+      - { target: "Je cherche un article bleu.", ipa: "ʒə ʃɛʁʃ œ̃ naʁtikl blø", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "un", ref: "fr-0208" }, { word: "article", base: "article" }, { word: "bleu", ref: "fr-1233" }] }
+  - id: "fr-1438"
+    target: "produit"
+    ipa: "pʁɔdɥi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce produit est très bon marché.", ipa: "sə pʁɔdɥi ɛ tʁɛ bɔ̃ maʁʃe", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "produit", base: "produit" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bon", ref: "fr-0040" }, { word: "marché", ref: "fr-0735" }] }
+      - { target: "Les produits sont dans l'allée.", ipa: "le pʁɔdɥi sɔ̃ dɑ̃ lale", bases: [{ word: "Les", ref: "fr-0043" }, { word: "produits", base: "produit" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "l'allée", base: "allée" }] }
+  - id: "fr-1439"
+    target: "marque"
+    ipa: "maʁk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle est la marque ?", ipa: "kɛl ɛ la maʁk", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "marque", base: "marque" }] }
+      - { target: "Je connais cette marque.", ipa: "ʒə kɔnɛ sɛt maʁk", bases: [{ word: "Je", ref: "fr-0126" }, { word: "connais", base: "connaître" }, { word: "cette", ref: "fr-0144" }, { word: "marque", base: "marque" }] }
+  - id: "fr-1440"
+    target: "pointure"
+    ipa: "pwɛ̃tyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quelle est ta pointure ?", ipa: "kɛl ɛ ta pwɛ̃tyʁ", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "ta", ref: "fr-0626" }, { word: "pointure", base: "pointure" }] }
+      - { target: "Ma pointure est trente-huit.", ipa: "ma pwɛ̃tyʁ ɛ tʁɑ̃tɥit", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "pointure", base: "pointure" }, { word: "est", ref: "fr-0021" }] }
+  - id: "fr-1441"
+    target: "rembourser"
+    ipa: "ʁɑ̃buʁse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le magasin rembourse le client.", ipa: "lə magazɛ̃ ʁɑ̃buʁs lə klijɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "magasin", ref: "fr-0795" }, { word: "rembourse", base: "rembourser" }, { word: "client", ref: "fr-0685" }] }
+      - { target: "Je veux être remboursé.", ipa: "ʒə vø ɛtʁ ʁɑ̃buʁse", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "être", ref: "fr-0021" }, { word: "remboursé", base: "rembourser" }] }
+  - id: "fr-1442"
+    target: "échanger"
+    ipa: "eʃɑ̃ʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je peux échanger ce pull ?", ipa: "ʒə pø eʃɑ̃ʒe sə pyl", bases: [{ word: "Je", ref: "fr-0126" }, { word: "peux", base: "pouvoir" }, { word: "échanger", base: "échanger" }, { word: "ce", ref: "fr-0143" }, { word: "pull", ref: "fr-1207" }] }
+      - { target: "Le vendeur échange la taille.", ipa: "lə vɑ̃døʁ eʃɑ̃ʒ la tɑj", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vendeur", ref: "fr-0736" }, { word: "échange", base: "échanger" }, { word: "la", ref: "fr-0544" }, { word: "taille", ref: "fr-1229" }] }
+  - id: "fr-1443"
+    target: "livraison"
+    ipa: "livʁɛzɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La livraison est gratuite.", ipa: "la livʁɛzɔ̃ ɛ ɡʁatɥit", bases: [{ word: "La", ref: "fr-0544" }, { word: "livraison", base: "livraison" }, { word: "est", ref: "fr-0021" }, { word: "gratuite", base: "gratuit" }] }
+      - { target: "Je veux une livraison à domicile.", ipa: "ʒə vø yn livʁɛzɔ̃ a dɔmisil", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "une", ref: "fr-0545" }, { word: "livraison", base: "livraison" }, { word: "à", base: "à" }, { word: "domicile", base: "domicile" }] }
+  - id: "fr-1444"
+    target: "stock"
+    ipa: "stɔk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le stock est vide.", ipa: "lə stɔk ɛ vid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "stock", base: "stock" }, { word: "est", ref: "fr-0021" }, { word: "vide", ref: "fr-0440" }] }
+      - { target: "Il y a encore du stock.", ipa: "il i a ɑ̃kɔʁ dy stɔk", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "encore", ref: "fr-0332" }, { word: "du", base: "du" }, { word: "stock", base: "stock" }] }
+  - id: "fr-1445"
+    target: "disponible"
+    ipa: "dispɔnibl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette taille est disponible ?", ipa: "sɛt tɑj ɛ dispɔnibl", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "taille", ref: "fr-1229" }, { word: "est", ref: "fr-0021" }, { word: "disponible", base: "disponible" }] }
+      - { target: "Le modèle est disponible demain.", ipa: "lə mɔdɛl ɛ dispɔnibl dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "modèle", base: "modèle" }, { word: "est", ref: "fr-0021" }, { word: "disponible", base: "disponible" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1446"
+    target: "vendeuse"
+    ipa: "vɑ̃døz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La vendeuse est très gentille.", ipa: "la vɑ̃døz ɛ tʁɛ ʒɑ̃tij", bases: [{ word: "La", ref: "fr-0544" }, { word: "vendeuse", base: "vendeuse" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "gentille", base: "gentil" }] }
+      - { target: "Je demande à la vendeuse.", ipa: "ʒə dəmɑ̃d a la vɑ̃døz", bases: [{ word: "Je", ref: "fr-0126" }, { word: "demande", base: "demander" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "vendeuse", base: "vendeuse" }] }
+  - id: "fr-1447"
+    target: "occasion"
+    ipa: "ɔkazjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'achète cette veste d'occasion.", ipa: "ʒaʃɛt sɛt vɛst dɔkazjɔ̃", bases: [{ word: "J'achète", base: "acheter" }, { word: "cette", ref: "fr-0144" }, { word: "veste", ref: "fr-1205" }, { word: "d'occasion", base: "occasion" }] }
+      - { target: "Une occasion est rare.", ipa: "yn ɔkazjɔ̃ ɛ ʁaʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "occasion", base: "occasion" }, { word: "est", ref: "fr-0021" }, { word: "rare", base: "rare" }] }
+  - id: "fr-1448"
+    target: "gratuit"
+    ipa: "ɡʁatɥi"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'entrée est gratuite.", ipa: "lɑ̃tʁe ɛ ɡʁatɥit", bases: [{ word: "L'entrée", base: "entrée" }, { word: "est", ref: "fr-0021" }, { word: "gratuite", base: "gratuit" }] }
+      - { target: "Le parking est gratuit le dimanche.", ipa: "lə paʁkiŋ ɛ ɡʁatɥi lə dimɑ̃ʃ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "parking", base: "parking" }, { word: "est", ref: "fr-0021" }, { word: "gratuit", base: "gratuit" }, { word: "dimanche", ref: "fr-1050" }] }
+  - id: "fr-1449"
+    target: "offre"
+    ipa: "ɔfʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une offre spéciale.", ipa: "il i a yn ɔfʁ speʃjal", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "offre", base: "offre" }, { word: "spéciale", base: "spécial" }] }
+      - { target: "Je prends l'offre du jour.", ipa: "ʒə pʁɑ̃ lɔfʁ dy ʒuʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "l'offre", base: "offre" }, { word: "du", base: "du" }, { word: "jour", ref: "fr-1032" }] }
+  - id: "fr-1450"
+    target: "étiquette"
+    ipa: "etikɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le prix est sur l'étiquette.", ipa: "lə pʁi ɛ syʁ letikɛt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "prix", ref: "fr-0737" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "l'étiquette", base: "étiquette" }] }
+      - { target: "Je lis l'étiquette.", ipa: "ʒə li letikɛt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", base: "lire" }, { word: "l'étiquette", base: "étiquette" }] }
+  - id: "fr-1451"
+    target: "euro"
+    ipa: "øʁo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce pain coûte deux euros.", ipa: "sə pɛ̃ kut dø øʁo", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pain", ref: "fr-0773" }, { word: "coûte", base: "coûter" }, { word: "deux", ref: "fr-0209" }, { word: "euros", base: "euro" }] }
+      - { target: "Il y a un euro dans le sac.", ipa: "il i a œ̃ øʁo dɑ̃ lə sak", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "euro", base: "euro" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1452"
+    target: "emballage"
+    ipa: "ɑ̃balaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'emballage est vert.", ipa: "lɑ̃balaʒ ɛ vɛʁ", bases: [{ word: "L'emballage", base: "emballage" }, { word: "est", ref: "fr-0021" }, { word: "vert", ref: "fr-1234" }] }
+      - { target: "Je jette l'emballage.", ipa: "ʒə ʒɛt lɑ̃balaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "jette", base: "jeter" }, { word: "l'emballage", base: "emballage" }] }
+  - id: "fr-1453"
+    target: "chariot"
+    ipa: "ʃaʁjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chariot est plein.", ipa: "lə ʃaʁjo ɛ plɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chariot", base: "chariot" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Je pousse le chariot vers la caisse.", ipa: "ʒə pus lə ʃaʁjo vɛʁ la kɛs", bases: [{ word: "Je", ref: "fr-0126" }, { word: "pousse", base: "pousser" }, { word: "le", ref: "fr-0543" }, { word: "chariot", base: "chariot" }, { word: "vers", ref: "fr-0594" }, { word: "la", ref: "fr-0544" }, { word: "caisse", ref: "fr-0749" }] }
+  - id: "fr-1454"
+    target: "file"
+    ipa: "fil"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une longue file.", ipa: "il i a yn lɔ̃ɡ fil", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "longue", base: "long" }, { word: "file", base: "file" }] }
+      - { target: "J'attends dans la file.", ipa: "ʒatɑ̃ dɑ̃ la fil", bases: [{ word: "J'attends", base: "attendre" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "file", base: "file" }] }
+  - id: "fr-1455"
+    target: "dépenser"
+    ipa: "depɑ̃se"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je dépense trop d'argent.", ipa: "ʒə depɑ̃s tʁo daʁʒɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dépense", base: "dépenser" }, { word: "trop", ref: "fr-0344" }, { word: "d'argent", base: "argent" }] }
+      - { target: "Il ne faut pas dépenser trop.", ipa: "il nə fo pa depɑ̃se tʁo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "ne", base: "ne" }, { word: "faut", base: "falloir" }, { word: "pas", base: "pas" }, { word: "dépenser", base: "dépenser" }, { word: "trop", ref: "fr-0344" }] }
+  - id: "fr-1456"
+    target: "économiser"
+    ipa: "ekɔnɔmize"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'économise pour un vélo.", ipa: "ʒekɔnɔmiz puʁ œ̃ velo", bases: [{ word: "J'économise", base: "économiser" }, { word: "pour", ref: "fr-0591" }, { word: "un", ref: "fr-0208" }, { word: "vélo", ref: "fr-0860" }] }
+      - { target: "Je veux économiser de l'argent.", ipa: "ʒə vø ekɔnɔmize də laʁʒɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", base: "vouloir" }, { word: "économiser", base: "économiser" }, { word: "de", base: "de" }, { word: "l'argent", base: "argent" }] }
+  - id: "fr-1457"
+    target: "budget"
+    ipa: "bydʒɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon budget est petit.", ipa: "mɔ̃ bydʒɛ ɛ pəti", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "budget", base: "budget" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+      - { target: "Je fais un budget pour le mois.", ipa: "ʒə fɛ œ̃ bydʒɛ puʁ lə mwa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", base: "faire" }, { word: "un", ref: "fr-0208" }, { word: "budget", base: "budget" }, { word: "pour", ref: "fr-0591" }, { word: "le", ref: "fr-0543" }, { word: "mois", ref: "fr-1165" }] }
+  - id: "fr-1458"
+    target: "caissier"
+    ipa: "kesje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le caissier est très aimable.", ipa: "lə kesje ɛ tʁɛ ɛmabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "caissier", base: "caissier" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "aimable", base: "aimable" }] }
+      - { target: "Je donne l'argent au caissier.", ipa: "ʒə dɔn laʁʒɑ̃ o kesje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "donne", base: "donner" }, { word: "l'argent", base: "argent" }, { word: "au", base: "au" }, { word: "caissier", base: "caissier" }] }
+  - id: "fr-1459"
+    target: "cabine"
+    ipa: "kabin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cabine est au fond du magasin.", ipa: "la kabin ɛ o fɔ̃ dy magazɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "cabine", base: "cabine" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "au" }, { word: "fond", ref: "fr-0476" }, { word: "du", base: "du" }, { word: "magasin", ref: "fr-0795" }] }
+      - { target: "J'essaie une robe dans la cabine.", ipa: "ʒesɛ yn ʁɔb dɑ̃ la kabin", bases: [{ word: "J'essaie", base: "essayer" }, { word: "une", ref: "fr-0545" }, { word: "robe", ref: "fr-1203" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "cabine", base: "cabine" }] }

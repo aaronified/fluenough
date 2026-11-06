@@ -1,0 +1,226 @@
+schema: 1
+id: "fr-emergencies"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "emergencies"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2508"
+    target: "ambulance"
+    ipa: "ɑ̃bylɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'ambulance arrive vite.", ipa: "lɑ̃bylɑ̃s aʁiv vit", bases: [{ word: "L'ambulance", base: "ambulance" }, { word: "arrive", ref: "fr-0305" }, { word: "vite", ref: "fr-0338" }] }
+      - { target: "Ils appellent une ambulance.", ipa: "il apɛl yn ɑ̃bylɑ̃s", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "appellent", ref: "fr-1071" }, { word: "une", ref: "fr-0545" }, { word: "ambulance", base: "ambulance" }] }
+  - id: "fr-2509"
+    target: "blessure"
+    ipa: "blesyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La blessure saigne beaucoup.", ipa: "la blesyʁ sɛɲ boku", bases: [{ word: "La", ref: "fr-0544" }, { word: "blessure", base: "blessure" }, { word: "saigne", ref: "fr-1731" }, { word: "beaucoup", ref: "fr-0034" }] }
+      - { target: "Sa blessure n'est pas grave.", ipa: "sa blesyʁ nɛ pa ɡʁav", bases: [{ word: "Sa", ref: "fr-0138" }, { word: "blessure", base: "blessure" }, { word: "n'est", ref: "fr-0021" }, { word: "pas", base: "pas" }, { word: "grave", base: "grave" }] }
+  - id: "fr-2510"
+    target: "incendie"
+    ipa: "ɛ̃sɑ̃di"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'incendie est éteint.", ipa: "lɛ̃sɑ̃di ɛ etɛ̃", bases: [{ word: "L'incendie", base: "incendie" }, { word: "est", ref: "fr-0021" }, { word: "éteint", ref: "fr-2081" }] }
+      - { target: "Un incendie a détruit la forêt.", ipa: "œ̃n ɛ̃sɑ̃di a detʁɥi la fɔʁɛ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "incendie", base: "incendie" }, { word: "a", ref: "fr-0022" }, { word: "détruit", base: "détruire" }, { word: "la", ref: "fr-0544" }, { word: "forêt", ref: "fr-2169" }] }
+  - id: "fr-2511"
+    target: "fumée"
+    ipa: "fyme"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fumée sort de la fenêtre.", ipa: "la fyme sɔʁ də la fənɛtʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "fumée", base: "fumée" }, { word: "sort", ref: "fr-1125" }, { word: "de", base: "de" }, { word: "fenêtre", ref: "fr-1004" }] }
+      - { target: "Il y a beaucoup de fumée.", ipa: "il i a boku də fyme", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", ref: "fr-0022" }, { word: "a", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "fumée", base: "fumée" }] }
+  - id: "fr-2512"
+    target: "alarme"
+    ipa: "alaʁm"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'alarme sonne dans l'immeuble.", ipa: "lalaʁm sɔn dɑ̃ limœbl", bases: [{ word: "L'alarme", base: "alarme" }, { word: "sonne", ref: "fr-1127" }, { word: "dans", ref: "fr-0049" }, { word: "l'immeuble", ref: "fr-1011" }] }
+      - { target: "Quelqu'un a déclenché l'alarme.", ipa: "kɛlkœ̃ a deklɑ̃ʃe lalaʁm", bases: [{ word: "Quelqu'un", ref: "fr-0208" }, { word: "a", ref: "fr-0022" }, { word: "déclenché", base: "déclencher" }, { word: "l'alarme", base: "alarme" }] }
+  - id: "fr-2513"
+    target: "malaise"
+    ipa: "malɛz"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a fait un malaise dans la rue.", ipa: "il a fɛ œ̃ malɛz dɑ̃ la ʁy", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "malaise", base: "malaise" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Elle a eu un malaise au travail.", ipa: "ɛl a y œ̃ malɛz o tʁavaj", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "eu", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "malaise", base: "malaise" }, { word: "au", base: "à" }, { word: "travail", ref: "fr-0255" }] }
+  - id: "fr-2514"
+    target: "évanouissement"
+    ipa: "evanwismɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son évanouissement a duré une minute.", ipa: "sɔ̃n evanwismɑ̃ a dyʁe yn minyt", bases: [{ word: "Son", ref: "fr-0138" }, { word: "évanouissement", base: "évanouissement" }, { word: "a", ref: "fr-0022" }, { word: "duré", ref: "fr-1131" }, { word: "une", ref: "fr-0545" }, { word: "minute", ref: "fr-1031" }] }
+      - { target: "Après l'évanouissement, il va mieux.", ipa: "apʁɛ levanwismɑ̃ il va mjø", bases: [{ word: "Après", ref: "fr-0595" }, { word: "l'évanouissement", base: "évanouissement" }, { word: "il", ref: "fr-0127" }, { word: "va", ref: "fr-0286" }, { word: "mieux", ref: "fr-0341" }] }
+  - id: "fr-2515"
+    target: "fracture"
+    ipa: "fʁaktyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une fracture du bras.", ipa: "il a yn fʁaktyʁ dy bʁa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "fracture", base: "fracture" }, { word: "du", base: "de" }, { word: "bras", ref: "fr-0928" }] }
+      - { target: "La fracture guérit en six semaines.", ipa: "la fʁaktyʁ ɡeʁi ɑ̃ sis səmɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "fracture", base: "fracture" }, { word: "guérit", ref: "fr-1727" }, { word: "en", base: "en" }, { word: "six", ref: "fr-0213" }, { word: "semaines", ref: "fr-0668" }] }
+  - id: "fr-2516"
+    target: "brûlure"
+    ipa: "bʁylyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La brûlure est légère.", ipa: "la bʁylyʁ ɛ leʒɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "brûlure", base: "brûlure" }, { word: "est", ref: "fr-0021" }, { word: "légère", ref: "fr-0441" }] }
+      - { target: "Mettez la brûlure sous l'eau froide.", ipa: "mɛtɛ la bʁylyʁ su lo fʁwad", bases: [{ word: "Mettez", ref: "fr-0529" }, { word: "la", ref: "fr-0544" }, { word: "brûlure", base: "brûlure" }, { word: "sous", ref: "fr-0468" }, { word: "l'eau", ref: "fr-0024" }, { word: "froide", ref: "fr-0420" }] }
+  - id: "fr-2517"
+    target: "secouriste"
+    ipa: "səkuʁist"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le secouriste soigne la blessure.", ipa: "lə səkuʁist swaɲ la blesyʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "secouriste", base: "secouriste" }, { word: "soigne", ref: "fr-1728" }, { word: "la", ref: "fr-0544" }, { word: "blessure", ref: "fr-2509" }] }
+      - { target: "Un secouriste arrive en premier.", ipa: "œ̃ səkuʁist aʁiv ɑ̃ pʁəmje", bases: [{ word: "Un", ref: "fr-0208" }, { word: "secouriste", base: "secouriste" }, { word: "arrive", ref: "fr-0305" }, { word: "en", base: "en" }, { word: "premier", ref: "fr-0905" }] }
+  - id: "fr-2518"
+    target: "gendarme"
+    ipa: "ʒɑ̃daʁm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gendarme note le numéro.", ipa: "lə ʒɑ̃daʁm nɔt lə nymeʁo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gendarme", base: "gendarme" }, { word: "note", base: "noter" }, { word: "numéro", ref: "fr-1070" }] }
+      - { target: "Un gendarme contrôle la route.", ipa: "œ̃ ʒɑ̃daʁm kɔ̃tʁol la ʁut", bases: [{ word: "Un", ref: "fr-0208" }, { word: "gendarme", base: "gendarme" }, { word: "contrôle", base: "contrôle" }, { word: "la", ref: "fr-0544" }, { word: "route", ref: "fr-0892" }] }
+  - id: "fr-2519"
+    target: "appel"
+    ipa: "apɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais un appel urgent.", ipa: "ʒə fɛ œ̃n apɛl yʁʒɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "appel", base: "appel" }, { word: "urgent", base: "urgent" }] }
+      - { target: "Le médecin reçoit un appel.", ipa: "lə medsɛ̃ ʁəswa œ̃n apɛl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }, { word: "reçoit", ref: "fr-1986" }, { word: "un", ref: "fr-0208" }, { word: "appel", base: "appel" }] }
+  - id: "fr-2520"
+    target: "panne"
+    ipa: "pan"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La voiture est en panne.", ipa: "la vwatyʁ ɛ ɑ̃ pan", bases: [{ word: "La", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "panne", base: "panne" }] }
+      - { target: "Il y a une panne de courant.", ipa: "il i a yn pan də kuʁɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", ref: "fr-0022" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "panne", base: "panne" }, { word: "de", base: "de" }, { word: "courant", base: "courant" }] }
+  - id: "fr-2521"
+    target: "réanimation"
+    ipa: "ʁeanimasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est en réanimation.", ipa: "il ɛ ɑ̃ ʁeanimasjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "réanimation", base: "réanimation" }] }
+      - { target: "La réanimation est pleine ce soir.", ipa: "la ʁeanimasjɔ̃ ɛ plɛn sə swaʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "réanimation", base: "réanimation" }, { word: "est", ref: "fr-0021" }, { word: "pleine", ref: "fr-0439" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-2522"
+    target: "sauver"
+    ipa: "sove"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le pompier sauve l'enfant.", ipa: "lə pɔ̃pje sov lɑ̃fɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pompier", ref: "fr-1072" }, { word: "sauve", base: "sauver" }, { word: "l'enfant", base: "enfant" }] }
+      - { target: "Ils sauvent deux personnes.", ipa: "il sov dø pɛʁsɔn", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "sauvent", base: "sauver" }, { word: "deux", ref: "fr-0209" }, { word: "personnes", base: "personne" }] }
+  - id: "fr-2523"
+    target: "secourir"
+    ipa: "səkuʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les gendarmes secourent les blessés.", ipa: "le ʒɑ̃daʁm səkuʁ le blese", bases: [{ word: "Les", ref: "fr-0543" }, { word: "gendarmes", ref: "fr-2518" }, { word: "secourent", base: "secourir" }, { word: "blessés", ref: "fr-1737" }] }
+      - { target: "Nous devons secourir les voisins.", ipa: "nu dəvɔ̃ səkuʁiʁ le vwazɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "devons", ref: "fr-0501" }, { word: "secourir", base: "secourir" }, { word: "les", ref: "fr-0543" }, { word: "voisins", ref: "fr-0101" }] }
+  - id: "fr-2524"
+    target: "évacuer"
+    ipa: "evakɥe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "On évacue le bâtiment.", ipa: "ɔ̃ evakɥ lə batimɑ̃", bases: [{ word: "On", ref: "fr-0132" }, { word: "évacue", base: "évacuer" }, { word: "le", ref: "fr-0543" }, { word: "bâtiment", base: "bâtiment" }] }
+      - { target: "Évacuez le bâtiment, s'il vous plaît.", ipa: "evakɥe lə batimɑ̃ sil vu plɛ", bases: [{ word: "Évacuez", base: "évacuer" }, { word: "le", ref: "fr-0543" }, { word: "bâtiment", base: "bâtiment" }, { word: "s'il", ref: "fr-0127" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+  - id: "fr-2525"
+    target: "glisser"
+    ipa: "ɡlise"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il glisse sur la glace.", ipa: "il ɡlis syʁ la ɡlas", bases: [{ word: "Il", ref: "fr-0127" }, { word: "glisse", base: "glisser" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "glace", ref: "fr-0821" }] }
+      - { target: "Attention, le sol glisse.", ipa: "atɑ̃sjɔ̃ lə sɔl ɡlis", bases: [{ word: "Attention", ref: "fr-1075" }, { word: "le", ref: "fr-0543" }, { word: "sol", ref: "fr-1016" }, { word: "glisse", base: "glisser" }] }
+  - id: "fr-2526"
+    target: "brûler"
+    ipa: "bʁyle"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le feu brûle la maison.", ipa: "lə fø bʁyl la mɛzɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "feu", ref: "fr-0899" }, { word: "brûle", base: "brûler" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }] }
+      - { target: "Attention, la casserole brûle.", ipa: "atɑ̃sjɔ̃ la kasʁɔl bʁyl", bases: [{ word: "Attention", ref: "fr-1075" }, { word: "la", ref: "fr-0544" }, { word: "casserole", ref: "fr-1391" }, { word: "brûle", base: "brûler" }] }
+  - id: "fr-2527"
+    target: "fuite"
+    ipa: "fɥit"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une fuite de gaz.", ipa: "il i a yn fɥit də ɡaz", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", ref: "fr-0022" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "fuite", base: "fuite" }, { word: "de", base: "de" }, { word: "gaz", base: "gaz" }] }
+      - { target: "Le voleur prend la fuite.", ipa: "lə vɔlœʁ pʁɑ̃ la fɥit", bases: [{ word: "Le", ref: "fr-0543" }, { word: "voleur", base: "voleur" }, { word: "prend", ref: "fr-0288" }, { word: "la", ref: "fr-0544" }, { word: "fuite", base: "fuite" }] }
+

@@ -1,0 +1,44 @@
+schema: 1
+id: "fr-en-services-sentences"
+kind: "layer"
+core: "fr-services-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: services"
+license: "CC-BY-SA-4.0"
+description: "Sentences about services, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2008":
+    native: "Fill in the form and sign the request."
+    confusables:
+      "facture": { why: "A bill is sent to pay; the sentence asks you to sign and fill in." }
+      "document": { why: "A document is named generally; the sentence asks for the form." }
+  "fr-2009":
+    native: "The plumber comes to repair the tap tomorrow."
+    bases:
+      "robinet": "tap"
+    confusables:
+      "electricien": { why: "An electrician fixes electricity; the sentence has a tap, so it is plumbing." }
+      "serrurier": { why: "A locksmith works on locks, not taps." }
+  "fr-2010":
+    native: "My parcel arrived, but the delivery is late."
+    bases:
+      "en": "in, by, as"
+    confusables:
+      "lettre": { why: "A letter is post too, but the sentence names a parcel." }
+      "enveloppe": { why: "An envelope holds letters, not a late delivery." }
+  "fr-2011":
+    native: "The adviser checks the account and the deposit."
+    confusables:
+      "retrait": { why: "A withdrawal is taking money out; the sentence checks what is in." }
+      "agence": { why: "The agency is the office; the sentence names the adviser." }
+  "fr-2012":
+    native: "The mechanic repairs the car under warranty."
+    confusables:
+      "reclamation": { why: "A complaint is made by the customer; the sentence is a repair." }
+      "reparation": { why: "A repair is the same idea; the sentence uses the verb form." }
+  "fr-2013":
+    native: "The hairdresser cuts the hair and the seam is clean."
+    confusables:
+      "pressing": { why: "A dry cleaner’s cleans clothes; the sentence is about hair." }
+      "jardinier": { why: "A gardener cuts hedges, not hair." }

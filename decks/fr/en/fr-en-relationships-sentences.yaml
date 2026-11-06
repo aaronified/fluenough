@@ -1,0 +1,45 @@
+schema: 1
+id: "fr-en-relationships-sentences"
+kind: "layer"
+core: "fr-relationships-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: relationships"
+license: "CC-BY-SA-4.0"
+description: "Sentences about relationships, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2467":
+    native: "My neighbour and I often chat."
+    confusables:
+      "dispute": { why: "An argument is not in the sentence; the sentence says we chat." }
+      "ami": { why: "A friend is close; the sentence names a neighbour." }
+  "fr-2468":
+    native: "After the argument, they make up."
+    bases:
+      "se": "oneself"
+      "réconcilient": "make up"
+    confusables:
+      "rupture": { why: "A break-up is the end; the sentence says they make up." }
+      "conflit": { why: "A conflict is the bigger problem; the sentence names an argument." }
+  "fr-2469":
+    native: "She forgives his sincere apology."
+    confusables:
+      "pardon": { why: "Forgiveness is the act; the sentence has the verb." }
+      "respect": { why: "Respect is not named; the sentence is about forgiving." }
+  "fr-2470":
+    native: "A stranger is loyal, no: he is jealous."
+    confusables:
+      "honnete": { why: "Honest is a quality; the sentence names jealous." }
+      "timide": { why: "Shy is a different trait; the sentence names jealousy." }
+  "fr-2471":
+    native: "We help our friend when she is sad."
+    confusables:
+      "soutenir": { why: "To support is close, but the sentence says help." }
+      "embrasser": { why: "To kiss is not named; the sentence is about help." }
+  "fr-2472":
+    native: "Loneliness is painful without friendship."
+    bases:
+      "douloureuse": "painful"
+    confusables:
+      "complicite": { why: "Closeness is the opposite of loneliness in the sentence." }
+      "rencontre": { why: "A meeting is not named; the sentence is about being alone." }

@@ -1,0 +1,143 @@
+schema: 1
+id: "fr-health-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1740"
+    target: "Je prends un sirop pour la toux."
+    ipa: "ʒə pʁɑ̃ œ̃ siʁo puʁ la tu"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "prends", ref: "fr-0288" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "sirop", ref: "fr-1713" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "toux", ref: "fr-1703" }
+    confusables:
+      - { id: "comprime", ref: "fr-1714", kind: "word" }
+      - { id: "pansement", ref: "fr-1715", kind: "word" }
+  - id: "fr-1741"
+    target: "Le médecin écrit une ordonnance pour le médicament."
+    ipa: "lə medsɛ̃ ekʁi yn ɔʁdɔnɑ̃s puʁ lə medikamɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "médecin", ref: "fr-1073" }
+      - { word: "écrit", ref: "fr-0291" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "ordonnance", ref: "fr-1707" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "médicament", ref: "fr-1706" }
+    confusables:
+      - { id: "pharmacie", ref: "fr-0963", kind: "word" }
+      - { id: "hopital", ref: "fr-0976", kind: "word" }
+  - id: "fr-1752"
+    target: "Ma sœur est à l'hôpital depuis lundi."
+    ipa: "ma sœʁ ɛ a lɔpital dəpɥi lœ̃di"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0037" }
+      - { word: "sœur", ref: "fr-0170" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "à", base: "à" }
+      - { word: "l'hôpital", ref: "fr-0976" }
+      - { word: "depuis", base: "depuis" }
+      - { word: "lundi", ref: "fr-1044" }
+    confusables:
+      - { id: "infirmiere", ref: "fr-1710", kind: "word" }
+      - { id: "malade", ref: "fr-0432", kind: "word" }
+  - id: "fr-1743"
+    target: "Il a mal à la gorge et il tousse."
+    ipa: "il a mal a la ɡɔʁʒ e il tus"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "mal", ref: "fr-0340" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "gorge", ref: "fr-0948" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "tousse", ref: "fr-1725" }
+    confusables:
+      - { id: "rhume", ref: "fr-1704", kind: "word" }
+      - { id: "fievre", ref: "fr-1702", kind: "word" }
+  - id: "fr-1744"
+    target: "La radiographie montre une fracture du bras."
+    ipa: "la ʁadjɔɡʁafi mɔ̃tʁ yn fʁaktyʁ dy bʁa"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "radiographie", ref: "fr-1722" }
+      - { word: "montre", base: "montrer" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "fracture", base: "fracture" }
+      - { word: "du", base: "de" }
+      - { word: "bras", ref: "fr-0928" }
+    confusables:
+      - { id: "analyse", ref: "fr-1721", kind: "word" }
+      - { id: "operation", ref: "fr-1720", kind: "word" }
+  - id: "fr-1745"
+    target: "Je vais chez le dentiste pour une douleur à la dent."
+    ipa: "ʒə vɛ ʃe lə dɑ̃tist puʁ yn dulœʁ a la dɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "vais", ref: "fr-0286" }
+      - { word: "chez", ref: "fr-0472" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "dentiste", ref: "fr-1719" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "douleur", ref: "fr-0946" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "dent", ref: "fr-0935" }
+    confusables:
+      - { id: "gorge", ref: "fr-0948", kind: "word" }
+      - { id: "estomac", ref: "fr-1723", kind: "word" }
+  - id: "fr-1746"
+    target: "Le régime aide à maigrir après la fièvre."
+    ipa: "lə ʁeʒim ɛd a mɛɡʁiʁ apʁɛ la fjɛvʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "régime", ref: "fr-1718" }
+      - { word: "aide", ref: "fr-1066" }
+      - { word: "à", base: "à" }
+      - { word: "maigrir", ref: "fr-1733" }
+      - { word: "après", ref: "fr-0595" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "fièvre", ref: "fr-1702" }
+    confusables:
+      - { id: "grossir", ref: "fr-1734", kind: "word" }
+      - { id: "vitamine", ref: "fr-1717", kind: "word" }
+  - id: "fr-1747"
+    target: "Le patient respire mieux après le sirop."
+    ipa: "lə pasjɑ̃ ʁɛspiʁ mjø apʁɛ lə siʁo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "patient", ref: "fr-1753" }
+      - { word: "respire", ref: "fr-1732" }
+      - { word: "mieux", ref: "fr-0341" }
+      - { word: "après", ref: "fr-0595" }
+      - { word: "sirop", ref: "fr-1713" }
+    confusables:
+      - { id: "poumon", ref: "fr-1724", kind: "word" }
+      - { id: "saigner", ref: "fr-1731", kind: "word" }
+

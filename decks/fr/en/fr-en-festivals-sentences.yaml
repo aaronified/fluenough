@@ -1,0 +1,47 @@
+schema: 1
+id: "fr-en-festivals-sentences"
+kind: "layer"
+core: "fr-festivals-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: festivals"
+license: "CC-BY-SA-4.0"
+description: "Sentences about festivals, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2358":
+    native: "The musician plays during the parade and the songs."
+    confusables:
+      "bal": { why: "A dance is a party; the sentence has a parade and songs." }
+      "fanfare": { why: "A brass band plays music; the sentence names a musician." }
+  "fr-2359":
+    native: "We give a present for Paul’s birthday."
+    bases:
+      "de": "of, from, some"
+      "Paul": "Paul"
+    confusables:
+      "invitation": { why: "An invitation asks someone to come; the sentence gives a present." }
+      "gateau": { why: "A cake is a food; the sentence names a present." }
+  "fr-2360":
+    native: "The candles on the cake are lit during the party."
+    bases:
+      "du": "some, of the"
+    confusables:
+      "feudartifice": { why: "Fireworks are in the sky; the sentence is about candles on a cake." }
+      "lanterne": { why: "A lantern gives light; the sentence says candles." }
+  "fr-2361":
+    native: "The carnival has masks and costumes."
+    confusables:
+      "confetti": { why: "Confetti are thrown; the sentence names masks and costumes." }
+      "defiler": { why: "To parade is an action; the sentence names items." }
+  "fr-2362":
+    native: "The festive meal is a joyful party."
+    confusables:
+      "noel": { why: "Christmas is a festival; the sentence is about the evening meal." }
+      "traditionnel": { why: "Traditional describes customs; the sentence says joyful." }
+  "fr-2363":
+    native: "We celebrate Easter with a family meal."
+    bases:
+      "en": "in, by, as"
+    confusables:
+      "calendrier": { why: "A calendar shows dates; the sentence is about a meal." }
+      "feter": { why: "To celebrate is the verb, and the sentence already uses célèbre." }

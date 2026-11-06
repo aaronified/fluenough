@@ -1,0 +1,124 @@
+schema: 1
+id: "fr-housing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2498"
+    target: "Le locataire paie le loyer et la caution."
+    ipa: "lə lɔkatɛʁ pe lə lwaje e la kosjɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "locataire", ref: "fr-2478" }
+      - { word: "paie", ref: "fr-0310" }
+      - { word: "loyer", ref: "fr-2477" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "caution", ref: "fr-2481" }
+    confusables:
+      - { id: "proprietaire", ref: "fr-2479", kind: "word" }
+      - { id: "bail", ref: "fr-2480", kind: "word" }
+  - id: "fr-2499"
+    target: "L'appartement a une grande cuisine et un balcon."
+    ipa: "lapaʁtəmɑ̃ a yn ɡʁɑ̃d kɥizin e œ̃ balkɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'appartement", ref: "fr-0997" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "grande", ref: "fr-0410" }
+      - { word: "cuisine", ref: "fr-0822" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "balcon", ref: "fr-1001" }
+    confusables:
+      - { id: "salon", ref: "fr-0999", kind: "word" }
+      - { id: "jardin", ref: "fr-1000", kind: "word" }
+  - id: "fr-2500"
+    target: "L'immeuble a un ascenseur et un escalier."
+    ipa: "limœbl a œ̃n asɑ̃sœʁ e œ̃n ɛskalje"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'immeuble", ref: "fr-1011" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "ascenseur", ref: "fr-2482" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "escalier", ref: "fr-1002" }
+    confusables:
+      - { id: "etage", ref: "fr-1010", kind: "word" }
+      - { id: "grenier", ref: "fr-2484", kind: "word" }
+  - id: "fr-2501"
+    target: "Ranger le meuble dans la cave est difficile."
+    ipa: "ʁɑ̃ʒe lə mœbl dɑ̃ la kav ɛ difisil"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ranger", ref: "fr-2497" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "meuble", ref: "fr-2486" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "cave", ref: "fr-2485" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "difficile", ref: "fr-0418" }
+    confusables:
+      - { id: "armoire", ref: "fr-2487", kind: "word" }
+      - { id: "canape", ref: "fr-1007", kind: "word" }
+  - id: "fr-2502"
+    target: "Le chauffage et l'eau chaude sont coupés."
+    ipa: "lə ʃofaʒ e lo ʃod sɔ̃ kupe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "chauffage", ref: "fr-2490" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "l'eau", ref: "fr-0024" }
+      - { word: "chaude", ref: "fr-0419" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "coupés", ref: "fr-1538" }
+    confusables:
+      - { id: "voisinage", ref: "fr-2492", kind: "word" }
+      - { id: "plafond", ref: "fr-2489", kind: "word" }
+  - id: "fr-2503"
+    target: "Nous signons le bail et déménageons en mai."
+    ipa: "nu siɲɔ̃ lə baj e demenaʒɔ̃ ɑ̃ mɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "signons", ref: "fr-1987" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "bail", ref: "fr-2480" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "déménageons", ref: "fr-2494" }
+      - { word: "en", base: "en" }
+      - { word: "mai", ref: "fr-1156" }
+    confusables:
+      - { id: "emmenager", ref: "fr-2495", kind: "word" }
+      - { id: "louer", ref: "fr-2496", kind: "word" }
+  - id: "fr-2504"
+    target: "La visite de l'appartement commence à midi."
+    ipa: "la vizit də lapaʁtəmɑ̃ kɔmɑ̃s a midi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "visite", ref: "fr-2493" }
+      - { word: "de", base: "de" }
+      - { word: "l'appartement", ref: "fr-0997" }
+      - { word: "commence", ref: "fr-0508" }
+      - { word: "à", base: "à" }
+      - { word: "midi", ref: "fr-1036" }
+    confusables:
+      - { id: "porte", ref: "fr-1003", kind: "word" }
+      - { id: "fenetre", ref: "fr-1004", kind: "word" }
+

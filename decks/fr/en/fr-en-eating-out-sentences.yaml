@@ -1,0 +1,80 @@
+schema: 1
+id: "fr-en-eating-out-sentences"
+kind: "layer"
+core: "fr-eating-out-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: eating out"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about eating out, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1516":
+    native: "We would like a table for four."
+    bases:
+      "voudrions": "would like"
+    confusables:
+      "reservation": { why: "Réservation is a booking made in advance, not a request for a table now." }
+      "terrasse": { why: "Terrasse is the outdoor seating, not a table for four." }
+  "fr-1517":
+    native: "The waiter brings the menu."
+    bases:
+      "apporte": "brings"
+    confusables:
+      "addition": { why: "Addition is the bill, which comes at the end, not the menu." }
+      "pourboire": { why: "Pourboire is the tip, which is given after the meal." }
+  "fr-1518":
+    native: "I have the dish of the day."
+    bases:
+      "du": "of the"
+    confusables:
+      "entree": { why: "Entrée is the starter, not the main dish." }
+      "dessert": { why: "Dessert is the sweet course, which comes after the main dish." }
+  "fr-1519":
+    native: "The dessert is on the menu."
+    confusables:
+      "addition": { why: "Addition is the bill, not the list of dishes." }
+      "soupe": { why: "Soupe is soup, one dish on the card, not the dessert." }
+  "fr-1520":
+    native: "We would like to pay, thank you."
+    bases:
+      "voudrions": "would like"
+    confusables:
+      "pourboire": { why: "Pourboire is the tip, which you add to the bill." }
+      "monnaie": { why: "Monnaie is the change, the coins you get back." }
+  "fr-1521":
+    native: "The chicken is very spicy."
+    confusables:
+      "sale": { why: "Salé is salty, not spicy." }
+      "sucre": { why: "Sucré is sweet, the opposite of spicy." }
+  "fr-1522":
+    native: "This wine is chilled."
+    confusables:
+      "chaud": { why: "Chaud is hot, the opposite of chilled." }
+      "froid": { why: "Froid is cold: a wine is served fresh, not cold." }
+  "fr-1523":
+    native: "I eat a salad with oil."
+    bases:
+      "mange": "eat"
+      "de": "some"
+      "l'huile": "oil"
+    confusables:
+      "vinaigrette": { why: "Vinaigrette is a dressing of oil and vinegar, and the sentence says only oil." }
+      "sauce": { why: "Sauce is a sauce, not oil on a salad." }
+  "fr-1524":
+    native: "There are drinks at ten euros."
+    bases:
+      "y": "there"
+      "boissons": "drinks"
+      "à": "at"
+      "euros": "euros"
+    confusables:
+      "limonade": { why: "Limonade is one drink, the sentence speaks of drinks in general." }
+      "cocktail": { why: "Cocktail is one kind of drink, not drinks in general." }
+  "fr-1525":
+    native: "I have the meat cooked, not rare."
+    bases:
+      "cuite": "cooked"
+      "pas": "not"
+    confusables:
+      "cru": { why: "Cru is raw, the opposite of cooked." }
+      "crepe": { why: "Crêpe is a pancake, not meat." }

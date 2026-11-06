@@ -1,0 +1,134 @@
+schema: 1
+id: "fr-feelings-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1798"
+    target: "Je suis triste, mais je ris avec mes amis."
+    ipa: "ʒə sɥi tʁist mɛ ʒə ʁi avɛk me zami"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "triste", ref: "fr-0430" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "ris", ref: "fr-1773" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "mes", ref: "fr-0037" }
+      - { word: "amis", ref: "fr-0100" }
+    confusables:
+      - { id: "joie", ref: "fr-1760", kind: "word" }
+      - { id: "colere", ref: "fr-1761", kind: "word" }
+  - id: "fr-1799"
+    target: "Elle a peur et elle pleure."
+    ipa: "ɛl a pœʁ e ɛl plœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "peur", ref: "fr-1759" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "pleure", ref: "fr-1774" }
+    confusables:
+      - { id: "craindre", ref: "fr-1776", kind: "word" }
+      - { id: "detester", ref: "fr-1775", kind: "word" }
+  - id: "fr-1800"
+    target: "Il est gêné, il a honte de son erreur."
+    ipa: "il ɛ ʒene il a ɔ̃t də sɔ̃ nɛʁœʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "gêné", ref: "fr-1788" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "honte", ref: "fr-1770" }
+      - { word: "de", base: "de" }
+      - { word: "son", ref: "fr-0138" }
+      - { word: "erreur", base: "erreur" }
+    confusables:
+      - { id: "fier", ref: "fr-1769", kind: "word" }
+      - { id: "etonne", ref: "fr-1795", kind: "word" }
+  - id: "fr-1801"
+    target: "Nous sommes fiers de notre fils."
+    ipa: "nu sɔm fjɛʁ də nɔtʁ fis"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "sommes", ref: "fr-0021" }
+      - { word: "fiers", ref: "fr-1769" }
+      - { word: "de", base: "de" }
+      - { word: "notre", ref: "fr-0139" }
+      - { word: "fils", ref: "fr-0167" }
+    confusables:
+      - { id: "honte", ref: "fr-1770", kind: "word" }
+      - { id: "espoir", ref: "fr-1771", kind: "word" }
+  - id: "fr-1802"
+    target: "Je suis inquiet, j'ai un grand souci."
+    ipa: "ʒə sɥi ɛ̃kjɛ ʒe œ̃ ɡʁɑ̃ susi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "inquiet", ref: "fr-1765" }
+      - { word: "j'ai", ref: "fr-0022" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "grand", ref: "fr-0410" }
+      - { word: "souci", ref: "fr-1772" }
+    confusables:
+      - { id: "soulagement", ref: "fr-1784", kind: "word" }
+      - { id: "angoisse", ref: "fr-1790", kind: "word" }
+  - id: "fr-1803"
+    target: "Après l'examen, il ressent un grand soulagement."
+    ipa: "apʁɛ lɛɡzamɛ̃ il ʁəsɑ̃ œ̃ ɡʁɑ̃ sulaʒmɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Après", ref: "fr-0595" }
+      - { word: "l'examen", ref: "fr-1592" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "ressent", ref: "fr-1779" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "grand", ref: "fr-0410" }
+      - { word: "soulagement", ref: "fr-1784" }
+    confusables:
+      - { id: "deception", ref: "fr-1785", kind: "word" }
+      - { id: "stress", ref: "fr-1764", kind: "word" }
+  - id: "fr-1804"
+    target: "Sa tristesse vient de sa déception."
+    ipa: "sa tʁistɛs vjɛ̃ də sa desɛpsjɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Sa", ref: "fr-0138" }
+      - { word: "tristesse", ref: "fr-1792" }
+      - { word: "vient", ref: "fr-0285" }
+      - { word: "de", base: "de" }
+      - { word: "déception", ref: "fr-1785" }
+    confusables:
+      - { id: "bonheur", ref: "fr-1791", kind: "word" }
+      - { id: "larme", ref: "fr-1783", kind: "word" }
+  - id: "fr-1805"
+    target: "Il sourit, il a confiance en nous."
+    ipa: "il suʁi il a kɔ̃fjɑ̃s ɑ̃ nu"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "sourit", ref: "fr-1782" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "confiance", ref: "fr-1787" }
+      - { word: "en", base: "en" }
+      - { word: "nous", ref: "fr-0129" }
+    confusables:
+      - { id: "jalousie", ref: "fr-1786", kind: "word" }
+      - { id: "amour", ref: "fr-1762", kind: "word" }
+

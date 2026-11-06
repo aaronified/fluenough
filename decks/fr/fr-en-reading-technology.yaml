@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-technology"
+name: "Reading: technology"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about technology. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-app-instructions"
+    title: "Instructions inside a phone app"
+    theme: "technology"
+    sentences:
+      - text: "Bienvenue ! Pour commencer, créez un compte avec votre adresse courriel."
+      - text: "Choisissez un mot de passe de huit caractères au minimum."
+      - text: "Téléchargez la mise à jour pour améliorer la sécurité."
+      - text: "Pour désactiver les notifications, allez dans les réglages."
+    questions:
+      - id: "fr-2111"
+        prompt: { en: "What must you choose to start?" }
+        options:
+          - { en: "A password of at least eight characters" }
+          - { en: "A photo" }
+          - { en: "A phone number only" }
+        answer: 1
+      - id: "fr-2112"
+        prompt: { en: "Why download the update?" }
+        options:
+          - { en: "To improve security" }
+          - { en: "To delete the app" }
+          - { en: "To change the colour" }
+        answer: 1
+      - id: "fr-2113"
+        prompt: { en: "Where do you turn off notifications?" }
+        options:
+          - { en: "In the settings" }
+          - { en: "On the screen" }
+          - { en: "In the battery" }
+        answer: 1

@@ -1,0 +1,657 @@
+schema: 1
+id: "fr-en-news"
+kind: "layer"
+core: "fr-news"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "News"
+license: "CC-BY-SA-4.0"
+description: "Forty words for the news: the media, the stories they tell, and the verbs of reporting them. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1809":
+    native: "current affairs, news"
+    notes:
+      "n1": "Les actualités are the news; l’actualité is the news in general."
+    examples:
+      "Je regarde les actualités le soir.":
+        native: "I watch the news in the evening."
+        bases:
+          "actualités": "current affairs, news"
+      "L'actualité est très chargée.":
+        native: "The news is very busy."
+        bases:
+          "L'actualité": "current affairs, news"
+          "chargée": "busy"
+  "fr-1810":
+    native: "headline, title"
+    notes:
+      "n1": "Un titre is a headline in a paper, or the title of a book."
+    examples:
+      "Le titre est en grosses lettres.":
+        native: "The headline is in large letters."
+        bases:
+          "titre": "headline, title"
+          "en": "in, by, as"
+          "grosses": "large"
+          "lettres": "letters"
+      "Je lis le titre et j'arrête là.":
+        native: "I read the headline and stop there."
+        bases:
+          "titre": "headline, title"
+          "j'arrête": "stop"
+  "fr-1811":
+    native: "journalist"
+    notes:
+      "n1": "Journaliste is used for both genders."
+    examples:
+      "Le journaliste pose une question.":
+        native: "The journalist asks a question."
+        bases:
+          "journaliste": "journalist"
+      "Ma cousine est journaliste.":
+        native: "My cousin is a journalist."
+        bases:
+          "journaliste": "journalist"
+  "fr-1812":
+    native: "report, reportage"
+    notes:
+      "n1": "Un reportage is a report from the place where things happen."
+    examples:
+      "Le reportage dure vingt minutes.":
+        native: "The report lasts twenty minutes."
+        bases:
+          "reportage": "report, reportage"
+      "Un reportage sur le climat passe ce soir.":
+        native: "A report on the climate is on tonight."
+        bases:
+          "reportage": "report, reportage"
+          "climat": "climate"
+  "fr-1813":
+    native: "programme, broadcast"
+    notes:
+      "n1": "Une émission is a radio or TV programme."
+    examples:
+      "Cette émission parle de la politique.":
+        native: "This programme talks about politics."
+        bases:
+          "émission": "programme, broadcast"
+          "de": "of, from, some"
+          "politique": "politics"
+      "J'écoute une émission à la radio.":
+        native: "I listen to a programme on the radio."
+        bases:
+          "émission": "programme, broadcast"
+          "à": "to, at"
+  "fr-1814":
+    native: "channel"
+    notes:
+      "n1": "Une chaîne is a TV or radio channel; it also means a chain."
+    examples:
+      "Quelle chaîne regardez-vous ?":
+        native: "Which channel are you watching?"
+        bases:
+          "chaîne": "channel"
+      "Cette chaîne diffuse les informations.":
+        native: "This channel broadcasts the news."
+        bases:
+          "chaîne": "channel"
+  "fr-1815":
+    native: "radio"
+    notes:
+      "n1": "La radio is the medium; the set is also une radio."
+    examples:
+      "La radio joue de la musique.":
+        native: "The radio plays music."
+        bases:
+          "radio": "radio"
+          "de": "of, from, some"
+      "J'écoute la radio dans la voiture.":
+        native: "I listen to the radio in the car."
+        bases:
+          "radio": "radio"
+  "fr-1816":
+    native: "presenter, anchor"
+    notes:
+      "n1": "Présentateur is the male form; the female is présentatrice."
+    examples:
+      "Le présentateur lit les nouvelles.":
+        native: "The presenter reads the news."
+        bases:
+          "présentateur": "presenter, anchor"
+          "nouvelles": "news"
+      "Le présentateur parle lentement.":
+        native: "The presenter speaks slowly."
+        bases:
+          "présentateur": "presenter, anchor"
+  "fr-1817":
+    native: "media"
+    notes:
+      "n1": "Les médias are the media as a whole."
+    examples:
+      "Les médias parlent de la crise.":
+        native: "The media talk about the crisis."
+        bases:
+          "médias": "media"
+          "de": "of, from, some"
+      "Il travaille dans les médias.":
+        native: "He works in the media."
+        bases:
+          "médias": "media"
+  "fr-1818":
+    native: "subject, topic"
+    notes:
+      "n1": "Un sujet is a topic of talk or writing."
+    examples:
+      "C'est un sujet important.":
+        native: "It is an important topic."
+        bases:
+          "sujet": "subject, topic"
+      "Le sujet du reportage est la pollution.":
+        native: "The subject of the report is pollution."
+        bases:
+          "sujet": "subject, topic"
+          "du": "some, of the"
+          "pollution": "pollution"
+  "fr-1819":
+    native: "investigation, survey"
+    notes:
+      "n1": "Une enquête is an investigation or a survey."
+    examples:
+      "La police fait une enquête.":
+        native: "The police are carrying out an investigation."
+        bases:
+          "enquête": "investigation, survey"
+      "Cette enquête montre un problème.":
+        native: "This survey shows a problem."
+        bases:
+          "enquête": "investigation, survey"
+          "montre": "shows"
+  "fr-1820":
+    native: "witness"
+    notes:
+      "n1": "Un témoin saw an event; the feminine is une témoin, also used."
+    examples:
+      "Un témoin a tout vu.":
+        native: "A witness saw everything."
+        bases:
+          "témoin": "witness"
+      "Le témoin parle à la journaliste.":
+        native: "The witness speaks to the journalist."
+        bases:
+          "témoin": "witness"
+          "à": "to, at"
+  "fr-1821":
+    native: "event"
+    notes:
+      "n1": "Un événement is something that happens, often important."
+    examples:
+      "C'est un événement rare.":
+        native: "It is a rare event."
+        bases:
+          "événement": "event"
+          "rare": "rare"
+      "Cet événement a fait la une.":
+        native: "This event made the front page."
+        bases:
+          "événement": "event"
+  "fr-1822":
+    native: "election"
+    notes:
+      "n1": "Une élection is a vote to choose people for office."
+    examples:
+      "Les élections ont lieu en mai.":
+        native: "The elections are held in May."
+        bases:
+          "élections": "election"
+          "lieu": "place"
+          "en": "in, by, as"
+      "Il gagne l'élection.":
+        native: "He wins the election."
+        bases:
+          "l'élection": "election"
+  "fr-1823":
+    native: "crisis"
+    notes:
+      "n1": "Une crise is a serious problem or a sudden difficult time."
+    examples:
+      "La crise dure depuis un an.":
+        native: "The crisis has lasted for a year."
+        bases:
+          "crise": "crisis"
+          "depuis": "since"
+      "Il y a une crise économique.":
+        native: "There is an economic crisis."
+        bases:
+          "y": "there"
+          "crise": "crisis"
+          "économique": "economic"
+  "fr-1824":
+    native: "war"
+    notes:
+      "n1": "La guerre is war; la paix is peace."
+    examples:
+      "La guerre finit en mars.":
+        native: "The war ends in March."
+        bases:
+          "guerre": "war"
+          "en": "in, by, as"
+      "Les journaux parlent de la guerre.":
+        native: "The newspapers talk about the war."
+        bases:
+          "de": "of, from, some"
+          "guerre": "war"
+  "fr-1825":
+    native: "peace"
+    notes:
+      "n1": "La paix is peace, the opposite of la guerre."
+    examples:
+      "On veut la paix.":
+        native: "We want peace."
+        bases:
+          "paix": "peace"
+      "La paix revient dans la région.":
+        native: "Peace returns to the region."
+        bases:
+          "paix": "peace"
+          "revient": "returns"
+          "région": "region"
+  "fr-1826":
+    native: "economy"
+    notes:
+      "n1": "L’économie is the economy of a country."
+    examples:
+      "L'économie va mieux.":
+        native: "The economy is doing better."
+        bases:
+          "L'économie": "economy"
+      "Le journal parle de l'économie.":
+        native: "The paper talks about the economy."
+        bases:
+          "de": "of, from, some"
+          "l'économie": "economy"
+  "fr-1827":
+    native: "comment, commentary"
+    notes:
+      "n1": "Un commentaire is a comment or a spoken commentary on events."
+    examples:
+      "Son commentaire est très juste.":
+        native: "His comment is very fair."
+        bases:
+          "commentaire": "comment, commentary"
+          "juste": "fair"
+      "Le commentaire du match est clair.":
+        native: "The commentary on the match is clear."
+        bases:
+          "commentaire": "comment, commentary"
+          "du": "some, of the"
+          "clair": "clear"
+  "fr-1828":
+    native: "source"
+    notes:
+      "n1": "Une source is where information comes from."
+    examples:
+      "La source est fiable.":
+        native: "The source is reliable."
+        bases:
+          "source": "source"
+          "fiable": "reliable"
+      "Donnez-moi votre source.":
+        native: "Give me your source."
+        bases:
+          "source": "source"
+  "fr-1829":
+    native: "rumour"
+    notes:
+      "n1": "Une rumeur is a story that may not be true."
+    examples:
+      "Une rumeur circule dans la ville.":
+        native: "A rumour is going round the town."
+        bases:
+          "rumeur": "rumour"
+          "circule": "circulates"
+      "Ce n'est qu'une rumeur.":
+        native: "It is only a rumour."
+        bases:
+          "rumeur": "rumour"
+  "fr-1830":
+    native: "to announce"
+    notes:
+      "n1": "Annoncer is regular; it is used for news and for arrivals."
+    examples:
+      "Le journal annonce une grève.":
+        native: "The paper announces a strike."
+        bases:
+          "annonce": "to announce"
+          "grève": "strike"
+      "Elle annonce la nouvelle à la radio.":
+        native: "She announces the news on the radio."
+        bases:
+          "annonce": "to announce"
+          "nouvelle": "news"
+          "à": "to, at"
+  "fr-1831":
+    native: "to publish"
+    notes:
+      "n1": "Publier is regular: publier un article is to publish an article."
+    examples:
+      "Le journal publie un article.":
+        native: "The paper publishes an article."
+        bases:
+          "publie": "to publish"
+      "Ils publient une enquête demain.":
+        native: "They publish an investigation tomorrow."
+        bases:
+          "publient": "to publish"
+  "fr-1832":
+    native: "to inform"
+    notes:
+      "n1": "Informer is regular; s’informer is to find out."
+    examples:
+      "Je vous informe de la décision.":
+        native: "I inform you of the decision."
+        bases:
+          "informe": "to inform"
+          "de": "of, from, some"
+          "décision": "decision"
+      "Informez-vous avant de voter.":
+        native: "Inform yourselves before you vote."
+        bases:
+          "Informez": "to inform"
+          "de": "of, from, some"
+          "voter": "vote"
+  "fr-1833":
+    native: "to broadcast"
+    notes:
+      "n1": "Diffuser is regular; it is used for programmes and messages."
+    examples:
+      "La chaîne diffuse le match.":
+        native: "The channel broadcasts the match."
+        bases:
+          "diffuse": "to broadcast"
+      "Le message est diffusé partout.":
+        native: "The message is broadcast everywhere."
+        bases:
+          "diffusé": "to broadcast"
+  "fr-1834":
+    native: "to report, to signal"
+    notes:
+      "n1": "Signaler is regular; signaler un problème is to report a problem."
+    examples:
+      "Il signale un accident.":
+        native: "He reports an accident."
+        bases:
+          "signale": "to report, to signal"
+      "Signalez les erreurs au journal.":
+        native: "Report the errors to the paper."
+        bases:
+          "Signalez": "to report, to signal"
+          "erreurs": "mistakes"
+          "au": "at, to the"
+  "fr-1835":
+    native: "to check"
+    notes:
+      "n1": "Vérifier is regular: to check that something is true."
+    examples:
+      "Il vérifie l'information.":
+        native: "He checks the information."
+        bases:
+          "vérifie": "to check"
+      "Vérifiez la source avant de partager.":
+        native: "Check the source before you share."
+        bases:
+          "Vérifiez": "to check"
+          "de": "of, from, some"
+          "partager": "share"
+  "fr-1836":
+    native: "poll, survey"
+    notes:
+      "n1": "Un sondage is an opinion poll."
+    examples:
+      "Le sondage montre une hausse.":
+        native: "The poll shows a rise."
+        bases:
+          "sondage": "poll, survey"
+          "montre": "shows"
+          "hausse": "rise"
+      "Un sondage a été publié hier.":
+        native: "A poll was published yesterday."
+        bases:
+          "sondage": "poll, survey"
+  "fr-1837":
+    native: "scandal"
+    notes:
+      "n1": "Un scandale is a public outrage about wrongdoing."
+    examples:
+      "Le scandale fait la une.":
+        native: "The scandal makes the front page."
+        bases:
+          "scandale": "scandal"
+      "C'est un vrai scandale.":
+        native: "It is a real scandal."
+        bases:
+          "vrai": "real"
+          "scandale": "scandal"
+  "fr-1838":
+    native: "record"
+    notes:
+      "n1": "Un record is the best or largest result so far."
+    examples:
+      "Il bat le record du monde.":
+        native: "He breaks the world record."
+        bases:
+          "record": "record"
+          "du": "some, of the"
+          "monde": "world"
+      "Le record date de deux ans.":
+        native: "The record dates from two years ago."
+        bases:
+          "record": "record"
+          "date": "dates"
+          "de": "of, from, some"
+  "fr-1839":
+    native: "star, celebrity"
+    notes:
+      "n1": "Une vedette is a famous person in the media."
+    examples:
+      "Cette vedette est très connue.":
+        native: "This star is very well known."
+        bases:
+          "vedette": "star, celebrity"
+          "connue": "known"
+      "La vedette répond aux journalistes.":
+        native: "The star answers the journalists."
+        bases:
+          "vedette": "star, celebrity"
+          "aux": "to the"
+  "fr-1840":
+    native: "reader"
+    notes:
+      "n1": "Un lecteur reads a paper or book; the feminine is une lectrice."
+    examples:
+      "Les lecteurs aiment cet article.":
+        native: "The readers like this article."
+        bases:
+          "lecteurs": "reader"
+      "Un lecteur a écrit au journal.":
+        native: "A reader has written to the paper."
+        bases:
+          "lecteur": "reader"
+          "au": "at, to the"
+  "fr-1841":
+    native: "subscriber"
+    notes:
+      "n1": "Un abonné pays for a service each month; the feminine is une abonnée."
+    examples:
+      "L'abonné reçoit le journal chaque matin.":
+        native: "The subscriber receives the paper each morning."
+        bases:
+          "L'abonné": "subscriber"
+          "reçoit": "receives"
+      "Je suis abonné à ce magazine.":
+        native: "I am a subscriber to this magazine."
+        bases:
+          "abonné": "subscriber"
+          "à": "to, at"
+          "magazine": "magazine"
+  "fr-1842":
+    native: "website, site"
+    notes:
+      "n1": "Un site is a website; un site web is the full phrase."
+    examples:
+      "Le site du journal est rapide.":
+        native: "The paper’s website is fast."
+        bases:
+          "site": "website, site"
+          "du": "some, of the"
+      "Je lis les nouvelles sur ce site.":
+        native: "I read the news on this site."
+        bases:
+          "nouvelles": "news"
+          "site": "website, site"
+  "fr-1844":
+    native: "network"
+    notes:
+      "n1": "Un réseau is a network of people, media or wires."
+    examples:
+      "Le réseau social est très populaire.":
+        native: "The social network is very popular."
+        bases:
+          "réseau": "network"
+          "social": "social"
+          "populaire": "popular"
+      "Ce réseau diffuse des nouvelles.":
+        native: "This network broadcasts news."
+        bases:
+          "réseau": "network"
+          "nouvelles": "news"
+  "fr-1845":
+    native: "weekly"
+    notes:
+      "n1": "Hebdomadaire is used for a weekly magazine; it is the same in both genders."
+    examples:
+      "C'est un magazine hebdomadaire.":
+        native: "It is a weekly magazine."
+        bases:
+          "magazine": "magazine"
+          "hebdomadaire": "weekly"
+      "Le journal est hebdomadaire.":
+        native: "The paper is weekly."
+        bases:
+          "hebdomadaire": "weekly"
+  "fr-1847":
+    native: "official"
+    notes:
+      "n1": "Officiel takes the feminine officielle."
+    examples:
+      "C'est une information officielle.":
+        native: "It is official information."
+        bases:
+          "officielle": "official"
+      "Le communiqué est officiel.":
+        native: "The statement is official."
+        bases:
+          "communiqué": "statement"
+          "officiel": "official"
+  "fr-1848":
+    native: "recent"
+    notes:
+      "n1": "Récent takes the feminine récente."
+    examples:
+      "C'est un événement récent.":
+        native: "It is a recent event."
+        bases:
+          "récent": "recent"
+      "Cette nouvelle est très récente.":
+        native: "This news is very recent."
+        bases:
+          "nouvelle": "news"
+          "récente": "recent"
+  "fr-1849":
+    native: "false, fake"
+    notes:
+      "n1": "Faux takes the feminine fausse; the opposite is vrai."
+    examples:
+      "Cette information est fausse.":
+        native: "This information is false."
+        bases:
+          "fausse": "false, fake"
+      "Attention aux fausses nouvelles.":
+        native: "Be careful of fake news."
+        bases:
+          "aux": "to the"
+          "fausses": "false, fake"
+          "nouvelles": "news"
+  "fr-1850":
+    native: "scoop"
+    notes:
+      "n1": "Un scoop is an exclusive piece of news; the word is used in French as in English."
+    examples:
+      "Le journal a un scoop.":
+        native: "The paper has a scoop."
+        bases:
+          "scoop": "scoop"
+      "C'est un scoop sur le ministre.":
+        native: "It is a scoop about the minister."
+        bases:
+          "scoop": "scoop"
+          "ministre": "minister"
+  "fr-1851":
+    native: "broadcast"
+    notes:
+      "n1": "La diffusion is the broadcast of a programme."
+    examples:
+      "La diffusion commence à vingt heures.":
+        native: "The broadcast starts at eight."
+        bases:
+          "diffusion": "broadcast"
+          "à": "to, at"
+      "La diffusion est retardée.":
+        native: "The broadcast is delayed."
+        bases:
+          "diffusion": "broadcast"
+          "retardée": "delayed"
+  "fr-1852":
+    native: "to record"
+    notes:
+      "n1": "Enregistrer is regular; it is used for recording audio and video."
+    examples:
+      "J'enregistre l'émission.":
+        native: "I record the programme."
+        bases:
+          "J'enregistre": "to record"
+      "Le journaliste enregistre l'interview.":
+        native: "The journalist records the interview."
+        bases:
+          "enregistre": "to record"
+          "l'interview": "interview"
+  "fr-1863":
+    native: "filming, shoot"
+    notes:
+      "n1": "Un tournage is the filming of a film or a programme."
+    examples:
+      "Le tournage commence demain.":
+        native: "The filming starts tomorrow."
+        bases:
+          "tournage": "filming, shoot"
+      "Le tournage a lieu à Paris.":
+        native: "The filming takes place in Paris."
+        bases:
+          "tournage": "filming, shoot"
+          "lieu": "place"
+          "à": "to, at"
+          "Paris": "Paris"
+  "fr-1864":
+    native: "front-page headline"
+    notes:
+      "n1": "Une manchette is the big headline across the top of a paper."
+    examples:
+      "La manchette parle du match.":
+        native: "The headline is about the match."
+        bases:
+          "manchette": "front-page headline"
+          "du": "some, of the"
+      "Cette manchette est choquante.":
+        native: "This headline is shocking."
+        bases:
+          "manchette": "front-page headline"
+          "choquante": "shocking"

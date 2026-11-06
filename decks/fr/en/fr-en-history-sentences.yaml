@@ -1,0 +1,50 @@
+schema: 1
+id: "fr-en-history-sentences"
+kind: "layer"
+core: "fr-history-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: history"
+license: "CC-BY-SA-4.0"
+description: "Sentences about history, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2323":
+    native: "The emperor reigned over a great empire."
+    confusables:
+      "roi": { why: "A king is a ruler too, but the sentence names an emperor." }
+      "reine": { why: "A queen is a female ruler; the sentence names a man." }
+  "fr-2324":
+    native: "The revolution changed the era and the dynasty."
+    confusables:
+      "siecle": { why: "A century is a length of time; the sentence names the era." }
+      "regne": { why: "A reign is a ruler’s time; the sentence is about change." }
+  "fr-2325":
+    native: "The digs show remains of the castle."
+    bases:
+      "montrent": "show"
+      "du": "some, of the"
+    confusables:
+      "ruine": { why: "A ruin is the castle now, not the remains shown by the digs." }
+      "archeologie": { why: "Archaeology is the study; the sentence names the digs and remains." }
+  "fr-2326":
+    native: "The treaty ends the battle."
+    bases:
+      "à": "to, at"
+    confusables:
+      "invasion": { why: "An invasion starts a war; the sentence says the treaty ends the battle." }
+      "guerrier": { why: "A warrior fights; the sentence is about a treaty." }
+  "fr-2327":
+    native: "This tradition comes from the Middle Ages."
+    bases:
+      "du": "some, of the"
+      "Moyen": "middle"
+    confusables:
+      "medieval": { why: "Medieval is an adjective; the sentence has the noun phrase." }
+      "coutume": { why: "A custom is a habit; the sentence names a tradition." }
+  "fr-2328":
+    native: "The account talks about an ancient discovery."
+    bases:
+      "d'une": "of a"
+    confusables:
+      "archive": { why: "An archive is a stored record; the sentence names a testimony." }
+      "evolution": { why: "An evolution is a slow change; the sentence names a discovery." }

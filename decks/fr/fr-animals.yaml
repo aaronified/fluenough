@@ -1,0 +1,395 @@
+schema: 1
+id: "fr-animals"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "animals"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1252"
+    target: "chat"
+    ipa: "ʃa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chat dort sur le lit.", ipa: "lə ʃa dɔʁ syʁ lə li", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chat", base: "chat" }, { word: "dort", ref: "fr-0284" }, { word: "sur", ref: "fr-0469" }, { word: "lit", ref: "fr-1005" }] }
+      - { target: "Mon chat aime le lait.", ipa: "mɔ̃ ʃa ɛm lə lɛ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "chat", base: "chat" }, { word: "aime", ref: "fr-0263" }, { word: "le", ref: "fr-0543" }, { word: "lait", ref: "fr-0044" }] }
+  - id: "fr-1253"
+    target: "chien"
+    ipa: "ʃjɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chien court dans le jardin.", ipa: "lə ʃjɛ̃ kuʁ dɑ̃ lə ʒaʁdɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chien", base: "chien" }, { word: "court", ref: "fr-0307" }, { word: "dans", ref: "fr-0049" }, { word: "jardin", ref: "fr-1000" }] }
+      - { target: "Mon chien est gentil.", ipa: "mɔ̃ ʃjɛ̃ ɛ ʒɑ̃ti", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "chien", base: "chien" }, { word: "est", ref: "fr-0021" }, { word: "gentil", ref: "fr-0434" }] }
+  - id: "fr-1254"
+    target: "oiseau"
+    ipa: "wazo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un oiseau vole dans le ciel.", ipa: "œ̃ nwazo vɔl dɑ̃ lə sjɛl", bases: [{ word: "Un", ref: "fr-0208" }, { word: "oiseau", base: "oiseau" }, { word: "vole", base: "voler" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "ciel", base: "ciel" }] }
+      - { target: "L'oiseau chante le matin.", ipa: "lwazo ʃɑ̃t lə matɛ̃", bases: [{ word: "L'oiseau", base: "oiseau" }, { word: "chante", ref: "fr-0522" }, { word: "le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1255"
+    target: "cheval"
+    ipa: "ʃəval"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cheval mange de l'herbe.", ipa: "lə ʃəval mɑ̃ʒ də lɛʁb", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cheval", base: "cheval" }, { word: "mange", ref: "fr-0282" }, { word: "de", base: "de" }, { word: "l'herbe", base: "herbe" }] }
+      - { target: "Ce cheval est grand.", ipa: "sə ʃəval ɛ ɡʁɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "cheval", base: "cheval" }, { word: "est", ref: "fr-0021" }, { word: "grand", ref: "fr-0410" }] }
+  - id: "fr-1256"
+    target: "vache"
+    ipa: "vaʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La vache donne du lait.", ipa: "la vaʃ dɔn dy lɛ", bases: [{ word: "La", ref: "fr-0544" }, { word: "vache", base: "vache" }, { word: "donne", ref: "fr-0302" }, { word: "du", base: "du" }, { word: "lait", ref: "fr-0044" }] }
+      - { target: "Les vaches sont dans le pré.", ipa: "le vaʃ sɔ̃ dɑ̃ lə pʁe", bases: [{ word: "Les", ref: "fr-0043" }, { word: "vaches", base: "vache" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "pré", base: "pré" }] }
+  - id: "fr-1257"
+    target: "cochon"
+    ipa: "kɔʃɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cochon aime la boue.", ipa: "lə kɔʃɔ̃ ɛm la bu", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cochon", base: "cochon" }, { word: "aime", ref: "fr-0263" }, { word: "la", ref: "fr-0544" }, { word: "boue", base: "boue" }] }
+      - { target: "Un cochon mange beaucoup.", ipa: "œ̃ kɔʃɔ̃ mɑ̃ʒ boku", bases: [{ word: "Un", ref: "fr-0208" }, { word: "cochon", base: "cochon" }, { word: "mange", ref: "fr-0282" }, { word: "beaucoup", ref: "fr-0034" }] }
+  - id: "fr-1258"
+    target: "mouton"
+    ipa: "mutɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le mouton a de la laine.", ipa: "lə mutɔ̃ a də la lɛn", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mouton", base: "mouton" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "laine", ref: "fr-1227" }] }
+      - { target: "Les moutons sont blancs.", ipa: "le mutɔ̃ sɔ̃ blɑ̃", bases: [{ word: "Les", ref: "fr-0043" }, { word: "moutons", base: "mouton" }, { word: "sont", ref: "fr-0021" }, { word: "blancs", base: "blanc" }] }
+  - id: "fr-1259"
+    target: "poule"
+    ipa: "pul"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La poule pond un œuf.", ipa: "la pul pɔ̃ œ̃ nœf", bases: [{ word: "La", ref: "fr-0544" }, { word: "poule", base: "poule" }, { word: "pond", base: "pondre" }, { word: "un", ref: "fr-0208" }, { word: "œuf", ref: "fr-0776" }] }
+      - { target: "Ma poule est dans la cour.", ipa: "ma pul ɛ dɑ̃ la kuʁ", bases: [{ word: "Ma", ref: "fr-0137" }, { word: "poule", base: "poule" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "cour", base: "cour" }] }
+  - id: "fr-1260"
+    target: "coq"
+    ipa: "kɔk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le coq chante le matin.", ipa: "lə kɔk ʃɑ̃t lə matɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "coq", base: "coq" }, { word: "chante", ref: "fr-0522" }, { word: "matin", ref: "fr-1033" }] }
+      - { target: "Un coq a une belle crête.", ipa: "œ̃ kɔk a yn bɛl kʁɛt", bases: [{ word: "Un", ref: "fr-0208" }, { word: "coq", base: "coq" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "belle", ref: "fr-0412" }, { word: "crête", base: "crête" }] }
+  - id: "fr-1261"
+    target: "canard"
+    ipa: "kanaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le canard nage sur l'eau.", ipa: "lə kanaʁ naʒ syʁ lo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "canard", base: "canard" }, { word: "nage", ref: "fr-0524" }, { word: "sur", ref: "fr-0469" }, { word: "l'eau", base: "eau" }] }
+      - { target: "Les canards sont jaunes.", ipa: "le kanaʁ sɔ̃ ʒon", bases: [{ word: "Les", ref: "fr-0043" }, { word: "canards", base: "canard" }, { word: "sont", ref: "fr-0021" }, { word: "jaunes", base: "jaune" }] }
+  - id: "fr-1262"
+    target: "lapin"
+    ipa: "lapɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le lapin mange une carotte.", ipa: "lə lapɛ̃ mɑ̃ʒ yn kaʁɔt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lapin", base: "lapin" }, { word: "mange", ref: "fr-0282" }, { word: "une", ref: "fr-0545" }, { word: "carotte", ref: "fr-0745" }] }
+      - { target: "Mon lapin est petit.", ipa: "mɔ̃ lapɛ̃ ɛ pəti", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "lapin", base: "lapin" }, { word: "est", ref: "fr-0021" }, { word: "petit", ref: "fr-0411" }] }
+  - id: "fr-1263"
+    target: "souris"
+    ipa: "suʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La souris a peur du chat.", ipa: "la suʁi a pœʁ dy ʃa", bases: [{ word: "La", ref: "fr-0544" }, { word: "souris", base: "souris" }, { word: "a", ref: "fr-0022" }, { word: "peur", base: "peur" }, { word: "du", base: "du" }, { word: "chat", base: "chat" }] }
+      - { target: "Une souris est très petite.", ipa: "yn suʁi ɛ tʁɛ pəti", bases: [{ word: "Une", ref: "fr-0545" }, { word: "souris", base: "souris" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "petite", ref: "fr-0411" }] }
+  - id: "fr-1264"
+    target: "lion"
+    ipa: "ljɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le lion est le roi des animaux.", ipa: "lə ljɔ̃ ɛ lə ʁwa de zanimo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lion", base: "lion" }, { word: "est", ref: "fr-0021" }, { word: "roi", base: "roi" }, { word: "des", ref: "fr-0546" }, { word: "animaux", base: "animal" }] }
+      - { target: "Le lion court vite.", ipa: "lə ljɔ̃ kuʁ vit", bases: [{ word: "Le", ref: "fr-0543" }, { word: "lion", base: "lion" }, { word: "court", ref: "fr-0307" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-1265"
+    target: "tigre"
+    ipa: "tiɡʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tigre est rapide.", ipa: "lə tiɡʁ ɛ ʁapid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tigre", base: "tigre" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Un tigre a des rayures.", ipa: "œ̃ tiɡʁ a de ʁɛjyʁ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "tigre", base: "tigre" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "rayures", base: "rayure" }] }
+  - id: "fr-1266"
+    target: "éléphant"
+    ipa: "elefɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'éléphant est très grand.", ipa: "lelefɑ̃ ɛ tʁɛ ɡʁɑ̃", bases: [{ word: "L'éléphant", base: "éléphant" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "L'éléphant a une longue trompe.", ipa: "lelefɑ̃ a yn lɔ̃ɡ tʁɔ̃p", bases: [{ word: "L'éléphant", base: "éléphant" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "longue", ref: "fr-0421" }, { word: "trompe", base: "trompe" }] }
+  - id: "fr-1267"
+    target: "girafe"
+    ipa: "ʒiʁaf"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La girafe mange les feuilles.", ipa: "la ʒiʁaf mɑ̃ʒ le føj", bases: [{ word: "La", ref: "fr-0544" }, { word: "girafe", base: "girafe" }, { word: "mange", ref: "fr-0282" }, { word: "les", ref: "fr-0043" }, { word: "feuilles", base: "feuille" }] }
+      - { target: "Une girafe a un long cou.", ipa: "yn ʒiʁaf a œ̃ lɔ̃ ku", bases: [{ word: "Une", ref: "fr-0545" }, { word: "girafe", base: "girafe" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "long", ref: "fr-0421" }, { word: "cou", ref: "fr-0943" }] }
+  - id: "fr-1268"
+    target: "singe"
+    ipa: "sɛ̃ʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le singe grimpe dans l'arbre.", ipa: "lə sɛ̃ʒ ɡʁɛ̃p dɑ̃ laʁbʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "singe", base: "singe" }, { word: "grimpe", base: "grimper" }, { word: "dans", ref: "fr-0049" }, { word: "l'arbre", base: "arbre" }] }
+      - { target: "Le singe mange une banane.", ipa: "lə sɛ̃ʒ mɑ̃ʒ yn banan", bases: [{ word: "Le", ref: "fr-0543" }, { word: "singe", base: "singe" }, { word: "mange", ref: "fr-0282" }, { word: "une", ref: "fr-0545" }, { word: "banane", ref: "fr-0742" }] }
+  - id: "fr-1269"
+    target: "ours"
+    ipa: "uʁs"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'ours dort en hiver.", ipa: "luʁs dɔʁ ɑ̃ ivɛʁ", bases: [{ word: "L'ours", base: "ours" }, { word: "dort", ref: "fr-0284" }, { word: "en", base: "en" }, { word: "hiver", ref: "fr-1172" }] }
+      - { target: "Un ours est très fort.", ipa: "œ̃ uʁs ɛ tʁɛ fɔʁ", bases: [{ word: "Un", ref: "fr-0208" }, { word: "ours", base: "ours" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "fort", ref: "fr-0425" }] }
+  - id: "fr-1270"
+    target: "loup"
+    ipa: "lu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le loup hurle la nuit.", ipa: "lə lu yʁl la nɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "loup", base: "loup" }, { word: "hurle", base: "hurler" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "Le loup est dans la forêt.", ipa: "lə lu ɛ dɑ̃ la fɔʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "loup", base: "loup" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "forêt", base: "forêt" }] }
+  - id: "fr-1271"
+    target: "renard"
+    ipa: "ʁənaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le renard est rusé.", ipa: "lə ʁənaʁ ɛ ʁyze", bases: [{ word: "Le", ref: "fr-0543" }, { word: "renard", base: "renard" }, { word: "est", ref: "fr-0021" }, { word: "rusé", base: "rusé" }] }
+      - { target: "Un renard a une queue rousse.", ipa: "œ̃ ʁənaʁ a yn kø ʁus", bases: [{ word: "Un", ref: "fr-0208" }, { word: "renard", base: "renard" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "queue", base: "queue" }, { word: "rousse", base: "roux" }] }
+  - id: "fr-1272"
+    target: "serpent"
+    ipa: "sɛʁpɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le serpent rampe sur le sol.", ipa: "lə sɛʁpɑ̃ ʁɑ̃p syʁ lə sɔl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "serpent", base: "serpent" }, { word: "rampe", base: "ramper" }, { word: "sur", ref: "fr-0469" }, { word: "sol", ref: "fr-1016" }] }
+      - { target: "Le serpent est dangereux.", ipa: "lə sɛʁpɑ̃ ɛ dɑ̃ʒʁø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "serpent", base: "serpent" }, { word: "est", ref: "fr-0021" }, { word: "dangereux", base: "dangereux" }] }
+  - id: "fr-1273"
+    target: "grenouille"
+    ipa: "ɡʁənuj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La grenouille saute dans l'eau.", ipa: "la ɡʁənuj sot dɑ̃ lo", bases: [{ word: "La", ref: "fr-0544" }, { word: "grenouille", base: "grenouille" }, { word: "saute", base: "sauter" }, { word: "dans", ref: "fr-0049" }, { word: "l'eau", base: "eau" }] }
+      - { target: "Une grenouille est verte.", ipa: "yn ɡʁənuj ɛ vɛʁt", bases: [{ word: "Une", ref: "fr-0545" }, { word: "grenouille", base: "grenouille" }, { word: "est", ref: "fr-0021" }, { word: "verte", ref: "fr-1234" }] }
+  - id: "fr-1274"
+    target: "tortue"
+    ipa: "tɔʁty"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La tortue marche lentement.", ipa: "la tɔʁty maʁʃ lɑ̃tmɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "tortue", base: "tortue" }, { word: "marche", ref: "fr-0306" }, { word: "lentement", ref: "fr-0339" }] }
+      - { target: "Une tortue vit très longtemps.", ipa: "yn tɔʁty vi tʁɛ lɔ̃tɑ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "tortue", base: "tortue" }, { word: "vit", base: "vivre" }, { word: "très", ref: "fr-0031" }, { word: "longtemps", ref: "fr-0357" }] }
+  - id: "fr-1275"
+    target: "zèbre"
+    ipa: "zɛbʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le zèbre a des rayures noires.", ipa: "lə zɛbʁ a de ʁɛjyʁ nwaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "zèbre", base: "zèbre" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "rayures", base: "rayure" }, { word: "noires", ref: "fr-1235" }] }
+      - { target: "Le zèbre vit en Afrique.", ipa: "lə zɛbʁ vi ɑ̃ afʁik", bases: [{ word: "Le", ref: "fr-0543" }, { word: "zèbre", base: "zèbre" }, { word: "vit", base: "vivre" }, { word: "en", base: "en" }, { word: "Afrique", base: "Afrique" }] }
+  - id: "fr-1276"
+    target: "requin"
+    ipa: "ʁəkɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le requin nage dans la mer.", ipa: "lə ʁəkɛ̃ naʒ dɑ̃ la mɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "requin", base: "requin" }, { word: "nage", ref: "fr-0524" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "mer", base: "mer" }] }
+      - { target: "Un requin est dangereux.", ipa: "œ̃ ʁəkɛ̃ ɛ dɑ̃ʒʁø", bases: [{ word: "Un", ref: "fr-0208" }, { word: "requin", base: "requin" }, { word: "est", ref: "fr-0021" }, { word: "dangereux", base: "dangereux" }] }
+  - id: "fr-1277"
+    target: "dauphin"
+    ipa: "dofɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le dauphin joue dans l'eau.", ipa: "lə dofɛ̃ ʒu dɑ̃ lo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dauphin", base: "dauphin" }, { word: "joue", ref: "fr-0308" }, { word: "dans", ref: "fr-0049" }, { word: "l'eau", base: "eau" }] }
+      - { target: "Le dauphin est intelligent.", ipa: "lə dofɛ̃ ɛ ɛ̃teliʒɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dauphin", base: "dauphin" }, { word: "est", ref: "fr-0021" }, { word: "intelligent", ref: "fr-0435" }] }
+  - id: "fr-1278"
+    target: "abeille"
+    ipa: "abɛj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'abeille fait du miel.", ipa: "labɛj fɛ dy mjɛl", bases: [{ word: "L'abeille", base: "abeille" }, { word: "fait", ref: "fr-0287" }, { word: "du", base: "du" }, { word: "miel", base: "miel" }] }
+      - { target: "Une abeille vole vers la fleur.", ipa: "yn abɛj vɔl vɛʁ la flœʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "abeille", base: "abeille" }, { word: "vole", base: "voler" }, { word: "vers", ref: "fr-0594" }, { word: "la", ref: "fr-0544" }, { word: "fleur", base: "fleur" }] }
+  - id: "fr-1279"
+    target: "papillon"
+    ipa: "papijɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le papillon est très beau.", ipa: "lə papijɔ̃ ɛ tʁɛ bo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "papillon", base: "papillon" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "beau", ref: "fr-0412" }] }
+      - { target: "Un papillon vole dans le jardin.", ipa: "œ̃ papijɔ̃ vɔl dɑ̃ lə ʒaʁdɛ̃", bases: [{ word: "Un", ref: "fr-0208" }, { word: "papillon", base: "papillon" }, { word: "vole", base: "voler" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "jardin", ref: "fr-1000" }] }
+  - id: "fr-1280"
+    target: "fourmi"
+    ipa: "fuʁmi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fourmi porte une feuille.", ipa: "la fuʁmi pɔʁt yn føj", bases: [{ word: "La", ref: "fr-0544" }, { word: "fourmi", base: "fourmi" }, { word: "porte", ref: "fr-0527" }, { word: "une", ref: "fr-0545" }, { word: "feuille", base: "feuille" }] }
+      - { target: "Les fourmis travaillent beaucoup.", ipa: "le fuʁmi tʁavaj bokup", bases: [{ word: "Les", ref: "fr-0043" }, { word: "fourmis", base: "fourmi" }, { word: "travaillent", ref: "fr-0252" }, { word: "beaucoup", ref: "fr-0034" }] }
+  - id: "fr-1281"
+    target: "hibou"
+    ipa: "ibu"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le hibou dort le jour.", ipa: "lə ibu dɔʁ lə ʒuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "hibou", base: "hibou" }, { word: "dort", ref: "fr-0284" }, { word: "jour", ref: "fr-1032" }] }
+      - { target: "Le hibou voit la nuit.", ipa: "lə ibu vwa la nɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "hibou", base: "hibou" }, { word: "voit", ref: "fr-0289" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+  - id: "fr-1282"
+    target: "âne"
+    ipa: "an"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'âne est gris.", ipa: "lan ɛ ɡʁi", bases: [{ word: "L'âne", base: "âne" }, { word: "est", ref: "fr-0021" }, { word: "gris", base: "gris" }] }
+      - { target: "Un âne porte un sac.", ipa: "œ̃ an pɔʁt œ̃ sak", bases: [{ word: "Un", ref: "fr-0208" }, { word: "âne", base: "âne" }, { word: "porte", ref: "fr-0527" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1283"
+    target: "chèvre"
+    ipa: "ʃɛvʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La chèvre monte sur la colline.", ipa: "la ʃɛvʁ mɔ̃t syʁ la kɔlin", bases: [{ word: "La", ref: "fr-0544" }, { word: "chèvre", base: "chèvre" }, { word: "monte", ref: "fr-0516" }, { word: "sur", ref: "fr-0469" }, { word: "colline", base: "colline" }] }
+      - { target: "Une chèvre donne du lait.", ipa: "yn ʃɛvʁ dɔn dy lɛ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "chèvre", base: "chèvre" }, { word: "donne", ref: "fr-0302" }, { word: "du", base: "du" }, { word: "lait", ref: "fr-0044" }] }
+  - id: "fr-1284"
+    target: "animal"
+    ipa: "animal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un animal dort dans la nuit.", ipa: "œ̃ animal dɔʁ dɑ̃ la nɥi", bases: [{ word: "Un", ref: "fr-0208" }, { word: "animal", base: "animal" }, { word: "dort", ref: "fr-0284" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "Le chien est un animal.", ipa: "lə ʃjɛ̃ ɛ œ̃ animal", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chien", base: "chien" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "animal", base: "animal" }] }
+  - id: "fr-1285"
+    target: "ferme"
+    ipa: "fɛʁm"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La ferme est près de la route.", ipa: "la fɛʁm ɛ pʁɛ də la ʁut", bases: [{ word: "La", ref: "fr-0544" }, { word: "ferme", base: "ferme" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "route", ref: "fr-0892" }] }
+      - { target: "Les enfants visitent la ferme.", ipa: "le ɑ̃fɑ̃ vizit la fɛʁm", bases: [{ word: "Les", ref: "fr-0043" }, { word: "enfants", base: "enfant" }, { word: "visitent", base: "visiter" }, { word: "la", ref: "fr-0544" }, { word: "ferme", base: "ferme" }] }
+  - id: "fr-1286"
+    target: "plume"
+    ipa: "plym"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le canard a des plumes blanches.", ipa: "lə kanaʁ a de plym blɑ̃ʃ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "canard", base: "canard" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "plumes", base: "plume" }, { word: "blanches", base: "blanc" }] }
+      - { target: "Une plume tombe du ciel.", ipa: "yn plym tɔ̃b dy sjɛl", bases: [{ word: "Une", ref: "fr-0545" }, { word: "plume", base: "plume" }, { word: "tombe", ref: "fr-0518" }, { word: "du", base: "du" }, { word: "ciel", base: "ciel" }] }

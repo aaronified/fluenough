@@ -1,0 +1,497 @@
+schema: 1
+id: "fr-abstract-words"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "abstract-words"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2659"
+    target: "sens"
+    ipa: "sɑ̃s"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sens de ce mot est clair.", ipa: "lə sɑ̃s də sə mo ɛ klɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sens", base: "sens" }, { word: "de", base: "de" }, { word: "ce", ref: "fr-0143" }, { word: "mot", ref: "fr-1620" }, { word: "est", ref: "fr-0021" }, { word: "clair", base: "clair" }] }
+      - { target: "Dans quel sens va le train ?", ipa: "dɑ̃ kɛl sɑ̃s va lə tʁɛ̃", bases: [{ word: "Dans", ref: "fr-0049" }, { word: "quel", ref: "fr-0072" }, { word: "sens", base: "sens" }, { word: "va", ref: "fr-0286" }, { word: "le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }] }
+  - id: "fr-2660"
+    target: "vérité"
+    ipa: "veʁite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La vérité finit toujours par sortir.", ipa: "la veʁite finit tuʒuʁ paʁ sɔʁtiʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "vérité", base: "vérité" }, { word: "finit", ref: "fr-0506" }, { word: "toujours", ref: "fr-0327" }, { word: "par", ref: "fr-0593" }, { word: "sortir", ref: "fr-1125" }] }
+      - { target: "Dites-moi la vérité.", ipa: "dit mwa la veʁite", bases: [{ word: "Dites", base: "dire" }, { word: "moi", ref: "fr-0133" }, { word: "la", ref: "fr-0544" }, { word: "vérité", base: "vérité" }] }
+  - id: "fr-2661"
+    target: "mensonge"
+    ipa: "mɑ̃sɔ̃ʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce mensonge est grave.", ipa: "sə mɑ̃sɔ̃ʒ ɛ ɡʁav", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "mensonge", base: "mensonge" }, { word: "est", ref: "fr-0021" }, { word: "grave", base: "grave" }] }
+      - { target: "Il raconte un petit mensonge.", ipa: "il ʁakɔ̃t œ̃ pəti mɑ̃sɔ̃ʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "raconte", ref: "fr-0525" }, { word: "un", ref: "fr-0208" }, { word: "petit", ref: "fr-0411" }, { word: "mensonge", base: "mensonge" }] }
+  - id: "fr-2662"
+    target: "effet"
+    ipa: "efɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médicament a un bon effet.", ipa: "lə medikamɑ̃ a œ̃ bɔ̃n efɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médicament", ref: "fr-1706" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "effet", base: "effet" }] }
+      - { target: "Quel est l'effet de cette décision ?", ipa: "kɛl ɛ lefɛ də sɛt desizjɔ̃", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "l'effet", base: "effet" }, { word: "de", base: "de" }, { word: "cette", ref: "fr-0143" }, { word: "décision", base: "décision" }] }
+  - id: "fr-2663"
+    target: "moyen"
+    ipa: "mwajɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un bon moyen de voyager.", ipa: "sɛ tœ̃ bɔ̃ mwajɛ̃ də vwajaʒe", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "moyen", base: "moyen" }, { word: "de", base: "de" }, { word: "voyager", ref: "fr-0868" }] }
+      - { target: "Nous n'avons pas les moyens.", ipa: "nu navɔ̃ pa le mwajɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "n'avons", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "les", ref: "fr-0543" }, { word: "moyens", base: "moyen" }] }
+  - id: "fr-2664"
+    target: "valeur"
+    ipa: "valœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La valeur de cette maison est élevée.", ipa: "la valœʁ də sɛt mɛzɔ̃ ɛ elve", bases: [{ word: "La", ref: "fr-0544" }, { word: "valeur", base: "valeur" }, { word: "de", base: "de" }, { word: "cette", ref: "fr-0143" }, { word: "maison", ref: "fr-0996" }, { word: "est", ref: "fr-0021" }, { word: "élevée", base: "élevé" }] }
+      - { target: "La famille a de grandes valeurs.", ipa: "la famij a də ɡʁɑ̃d valœʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "famille", ref: "fr-0164" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "grandes", ref: "fr-0410" }, { word: "valeurs", base: "valeur" }] }
+  - id: "fr-2665"
+    target: "force"
+    ipa: "fɔʁs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a beaucoup de force.", ipa: "il a boku də fɔʁs", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "force", base: "force" }] }
+      - { target: "La force de la vague est impressionnante.", ipa: "la fɔʁs də la vag ɛ ɛ̃pʁɛsjɔnɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "force", base: "force" }, { word: "de", base: "de" }, { word: "vague", base: "vague" }, { word: "est", ref: "fr-0021" }, { word: "impressionnante", base: "impressionnant" }] }
+  - id: "fr-2666"
+    target: "faiblesse"
+    ipa: "fɛblɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sa faiblesse est visible.", ipa: "sa fɛblɛs ɛ vizibl", bases: [{ word: "Sa", ref: "fr-0138" }, { word: "faiblesse", base: "faiblesse" }, { word: "est", ref: "fr-0021" }, { word: "visible", base: "visible" }] }
+      - { target: "Chacun a ses faiblesses.", ipa: "ʃakœ̃ a se fɛblɛs", bases: [{ word: "Chacun", ref: "fr-0395" }, { word: "a", ref: "fr-0022" }, { word: "ses", ref: "fr-0138" }, { word: "faiblesses", base: "faiblesse" }] }
+  - id: "fr-2667"
+    target: "changement"
+    ipa: "ʃɑ̃ʒmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a un changement de plan.", ipa: "il i a œ̃ ʃɑ̃ʒmɑ̃ də plɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "changement", base: "changement" }, { word: "de", base: "de" }, { word: "plan", ref: "fr-0907" }] }
+      - { target: "Le changement est difficile.", ipa: "lə ʃɑ̃ʒmɑ̃ ɛ difisil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "changement", base: "changement" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }] }
+  - id: "fr-2668"
+    target: "hasard"
+    ipa: "azaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est le hasard qui décide.", ipa: "sɛ lə azaʁ ki desid", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "hasard", base: "hasard" }, { word: "qui", ref: "fr-0065" }, { word: "décide", ref: "fr-2033" }] }
+      - { target: "Je l'ai rencontré par hasard.", ipa: "ʒə le ʁɑ̃kɔ̃tʁe paʁ azaʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "l'ai", ref: "fr-0022" }, { word: "rencontré", base: "rencontrer" }, { word: "par", ref: "fr-0593" }, { word: "hasard", base: "hasard" }] }
+  - id: "fr-2669"
+    target: "chance"
+    ipa: "ʃɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu as beaucoup de chance.", ipa: "ty a boku də ʃɑ̃s", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "chance", base: "chance" }] }
+      - { target: "Il n'y a aucune chance.", ipa: "il ni a okyn ʃɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "n'y", base: "ne" }, { word: "a", ref: "fr-0022" }, { word: "aucune", ref: "fr-0374" }, { word: "chance", base: "chance" }] }
+  - id: "fr-2670"
+    target: "destin"
+    ipa: "dɛstɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est son destin de partir.", ipa: "sɛ sɔ̃ dɛstɛ̃ də paʁtiʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "son", ref: "fr-0138" }, { word: "destin", base: "destin" }, { word: "de", base: "de" }, { word: "partir", ref: "fr-0304" }] }
+      - { target: "Le destin nous réunit.", ipa: "lə dɛstɛ̃ nu ʁeyni", bases: [{ word: "Le", ref: "fr-0543" }, { word: "destin", base: "destin" }, { word: "nous", ref: "fr-0129" }, { word: "réunit", base: "réunir" }] }
+  - id: "fr-2671"
+    target: "avenir"
+    ipa: "avniʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'avenir est incertain.", ipa: "lavniʁ ɛ ɛ̃sɛʁtɛ̃", bases: [{ word: "L'avenir", base: "avenir" }, { word: "est", ref: "fr-0021" }, { word: "incertain", base: "incertain" }] }
+      - { target: "Je pense à mon avenir.", ipa: "ʒə pɑ̃s a mɔ̃n avniʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "pense", ref: "fr-0510" }, { word: "à", base: "à" }, { word: "mon", ref: "fr-0037" }, { word: "avenir", base: "avenir" }] }
+  - id: "fr-2672"
+    target: "présent"
+    ipa: "pʁezɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Vivons dans le présent.", ipa: "vivɔ̃ dɑ̃ lə pʁezɑ̃", bases: [{ word: "Vivons", base: "vivre" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "présent", base: "présent" }] }
+      - { target: "Tous les élèves sont présents.", ipa: "tu le elɛv sɔ̃ pʁezɑ̃", bases: [{ word: "Tous", ref: "fr-0372" }, { word: "les", ref: "fr-0543" }, { word: "élèves", ref: "fr-1588" }, { word: "sont", ref: "fr-0021" }, { word: "présents", base: "présent" }] }
+  - id: "fr-2673"
+    target: "espace"
+    ipa: "ɛspas"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a de l'espace dans la chambre.", ipa: "il i a dlɛspas dɑ̃ la ʃɑ̃bʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "de", base: "de" }, { word: "l'espace", base: "espace" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "chambre", ref: "fr-0998" }] }
+      - { target: "Ce jardin est un espace calme.", ipa: "sə ʒaʁdɛ̃ ɛ tœ̃n ɛspas kalm", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "jardin", ref: "fr-1000" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "espace", base: "espace" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-2674"
+    target: "mouvement"
+    ipa: "muvmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le mouvement du train est doux.", ipa: "lə muvmɑ̃ dy tʁɛ̃ ɛ du", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mouvement", base: "mouvement" }, { word: "du", base: "de" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "doux", ref: "fr-1337" }] }
+      - { target: "Un mouvement de protestation commence.", ipa: "œ̃ muvmɑ̃ də pʁɔtɛstasjɔ̃ kɔmɑ̃s", bases: [{ word: "Un", ref: "fr-0208" }, { word: "mouvement", base: "mouvement" }, { word: "de", base: "de" }, { word: "protestation", base: "protestation" }, { word: "commence", ref: "fr-0508" }] }
+  - id: "fr-2675"
+    target: "limite"
+    ipa: "limit"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a dépassé la limite de vitesse.", ipa: "il a depase la limit də vitɛs", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "dépassé", base: "dépasser" }, { word: "la", ref: "fr-0544" }, { word: "limite", base: "limite" }, { word: "de", base: "de" }, { word: "vitesse", base: "vitesse" }] }
+      - { target: "Nous sommes à la limite de la ville.", ipa: "nu sɔm a la limit də la vil", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "sommes", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "limite", base: "limite" }, { word: "de", base: "de" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-2676"
+    target: "ordre"
+    ipa: "ɔʁdʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il aime l'ordre dans sa chambre.", ipa: "il ɛm lɔʁdʁ dɑ̃ sa ʃɑ̃bʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "aime", ref: "fr-0263" }, { word: "l'ordre", base: "ordre" }, { word: "dans", ref: "fr-0049" }, { word: "sa", ref: "fr-0138" }, { word: "chambre", ref: "fr-0998" }] }
+      - { target: "Donnez-moi un ordre clair.", ipa: "dɔne mwa œ̃n ɔʁdʁ klɛʁ", bases: [{ word: "Donnez", ref: "fr-0302" }, { word: "moi", ref: "fr-0133" }, { word: "un", ref: "fr-0208" }, { word: "ordre", base: "ordre" }, { word: "clair", base: "clair" }] }
+  - id: "fr-2677"
+    target: "désordre"
+    ipa: "dezɔʁdʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a du désordre partout.", ipa: "il i a dy dezɔʁdʁ paʁtu", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "de" }, { word: "désordre", base: "désordre" }, { word: "partout", ref: "fr-0356" }] }
+      - { target: "Le désordre fatigue tout le monde.", ipa: "lə dezɔʁdʁ fatiɡ tu lə mɔ̃d", bases: [{ word: "Le", ref: "fr-0543" }, { word: "désordre", base: "désordre" }, { word: "fatigue", ref: "fr-1739" }, { word: "tout", ref: "fr-0372" }, { word: "monde", base: "monde" }] }
+  - id: "fr-2678"
+    target: "équilibre"
+    ipa: "ekilibʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il garde son équilibre.", ipa: "il ɡaʁd sɔ̃n ekilibʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "garde", base: "garder" }, { word: "son", ref: "fr-0138" }, { word: "équilibre", base: "équilibre" }] }
+      - { target: "La vie demande un bon équilibre.", ipa: "la vi dəmɑ̃d œ̃ bɔ̃ ekilibʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "vie", ref: "fr-0267" }, { word: "demande", ref: "fr-1980" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "équilibre", base: "équilibre" }] }
+  - id: "fr-2679"
+    target: "différence"
+    ipa: "difeʁɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une grande différence.", ipa: "il i a yn ɡʁɑ̃d difeʁɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "grande", ref: "fr-0410" }, { word: "différence", base: "différence" }] }
+      - { target: "Quelle est la différence ?", ipa: "kɛl ɛ la difeʁɑ̃s", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "différence", base: "différence" }] }
+  - id: "fr-2680"
+    target: "ressemblance"
+    ipa: "ʁəsɑ̃blɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une ressemblance entre eux.", ipa: "il i a yn ʁəsɑ̃blɑ̃s ɑ̃tʁ ø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "ressemblance", base: "ressemblance" }, { word: "entre", ref: "fr-0470" }, { word: "eux", ref: "fr-0136" }] }
+      - { target: "La ressemblance est frappante.", ipa: "la ʁəsɑ̃blɑ̃s ɛ fʁapɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "ressemblance", base: "ressemblance" }, { word: "est", ref: "fr-0021" }, { word: "frappante", base: "frappant" }] }
+  - id: "fr-2681"
+    target: "partie"
+    ipa: "paʁti"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une partie du film est drôle.", ipa: "yn paʁti dy fil ɛ dʁol", bases: [{ word: "Une", ref: "fr-0545" }, { word: "partie", base: "partie" }, { word: "du", base: "de" }, { word: "film", ref: "fr-2206" }, { word: "est", ref: "fr-0021" }, { word: "drôle", ref: "fr-0436" }] }
+      - { target: "Je suis dans la partie.", ipa: "ʒə sɥi dɑ̃ la paʁti", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "partie", base: "partie" }] }
+  - id: "fr-2682"
+    target: "qualité"
+    ipa: "kalite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La qualité du pain est bonne.", ipa: "la kalite dy pɛ̃ ɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "qualité", base: "qualité" }, { word: "du", base: "de" }, { word: "pain", ref: "fr-0773" }, { word: "est", ref: "fr-0021" }, { word: "bonne", ref: "fr-0040" }] }
+      - { target: "C'est une qualité importante.", ipa: "sɛ tyn kalite ɛ̃pɔʁtɑ̃t", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "qualité", base: "qualité" }, { word: "importante", ref: "fr-0443" }] }
+  - id: "fr-2683"
+    target: "défaut"
+    ipa: "defo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son défaut est la paresse.", ipa: "sɔ̃ defo ɛ la paʁɛs", bases: [{ word: "Son", ref: "fr-0138" }, { word: "défaut", base: "défaut" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "paresse", base: "paresse" }] }
+      - { target: "Ce vase a un petit défaut.", ipa: "sə vaz a œ̃ pəti defo", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "vase", base: "vase" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "petit", ref: "fr-0411" }, { word: "défaut", base: "défaut" }] }
+  - id: "fr-2684"
+    target: "possibilité"
+    ipa: "pɔsibilite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a une possibilité de pluie.", ipa: "il i a yn pɔsibilite də plɥi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "possibilité", base: "possibilité" }, { word: "de", base: "de" }, { word: "pluie", ref: "fr-1304" }] }
+      - { target: "C'est une bonne possibilité.", ipa: "sɛ tyn bɔn pɔsibilite", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "bonne", ref: "fr-0040" }, { word: "possibilité", base: "possibilité" }] }
+  - id: "fr-2685"
+    target: "nécessité"
+    ipa: "nesesite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une nécessité absolue.", ipa: "sɛ tyn nesesite absolu", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "nécessité", base: "nécessité" }, { word: "absolue", base: "absolu" }] }
+      - { target: "La nécessité nous oblige à partir.", ipa: "la nesesite nu ɔbliʒ a paʁtiʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "nécessité", base: "nécessité" }, { word: "nous", ref: "fr-0129" }, { word: "oblige", base: "obliger" }, { word: "à", base: "à" }, { word: "partir", ref: "fr-0304" }] }
+  - id: "fr-2686"
+    target: "obligation"
+    ipa: "ɔbligasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est mon obligation.", ipa: "sɛ mɔ̃n ɔbligasjɔ̃", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "mon", ref: "fr-0037" }, { word: "obligation", base: "obligation" }] }
+      - { target: "Le contrat crée une obligation.", ipa: "lə kɔ̃tʁa kʁe yn ɔbligasjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "contrat", ref: "fr-2549" }, { word: "crée", ref: "fr-2259" }, { word: "une", ref: "fr-0545" }, { word: "obligation", base: "obligation" }] }
+  - id: "fr-2687"
+    target: "idéal"
+    ipa: "ideal"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son idéal est la justice.", ipa: "sɔ̃ ideal ɛ la ʒystis", bases: [{ word: "Son", ref: "fr-0138" }, { word: "idéal", base: "idéal" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "justice", ref: "fr-1892" }] }
+      - { target: "C'est un idéal difficile à atteindre.", ipa: "sɛ tœ̃n ideal difisil a atɛ̃dʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "idéal", base: "idéal" }, { word: "difficile", ref: "fr-0418" }, { word: "à", base: "à" }, { word: "atteindre", base: "atteindre" }] }
+  - id: "fr-2688"
+    target: "perfection"
+    ipa: "pɛʁfɛksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce tableau est une perfection.", ipa: "sə tablo ɛ tyn pɛʁfɛksjɔ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "tableau", ref: "fr-1596" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "perfection", base: "perfection" }] }
+      - { target: "Personne n'atteint la perfection.", ipa: "pɛʁsɔn natɛ̃ la pɛʁfɛksjɔ̃", bases: [{ word: "Personne", base: "personne" }, { word: "n'atteint", base: "atteindre" }, { word: "la", ref: "fr-0544" }, { word: "perfection", base: "perfection" }] }
+  - id: "fr-2689"
+    target: "principe"
+    ipa: "pʁɛ̃sip"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un principe simple.", ipa: "sɛ tœ̃ pʁɛ̃sip sɛ̃pl", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "principe", base: "principe" }, { word: "simple", base: "simple" }] }
+      - { target: "Il respecte ses principes.", ipa: "il ʁɛspɛkt se pʁɛ̃sip", bases: [{ word: "Il", ref: "fr-0127" }, { word: "respecte", base: "respecter" }, { word: "ses", ref: "fr-0138" }, { word: "principes", base: "principe" }] }
+  - id: "fr-2690"
+    target: "hypothèse"
+    ipa: "ipotɛz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette hypothèse est intéressante.", ipa: "sɛt ipotɛz ɛ ɛ̃teʁɛsɑ̃t", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "hypothèse", base: "hypothèse" }, { word: "est", ref: "fr-0021" }, { word: "intéressante", base: "intéressant" }] }
+      - { target: "Nous faisons une hypothèse.", ipa: "nu fəzɔ̃ yn ipotɛz", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "hypothèse", base: "hypothèse" }] }
+  - id: "fr-2691"
+    target: "réalité"
+    ipa: "ʁealite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La réalité est différente.", ipa: "la ʁealite ɛ difeʁɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "réalité", base: "réalité" }, { word: "est", ref: "fr-0021" }, { word: "différente", ref: "fr-2699" }] }
+      - { target: "Il accepte la réalité.", ipa: "il aksɛpt la ʁealite", bases: [{ word: "Il", ref: "fr-0127" }, { word: "accepte", ref: "fr-2007" }, { word: "la", ref: "fr-0544" }, { word: "réalité", base: "réalité" }] }
+  - id: "fr-2692"
+    target: "imagination"
+    ipa: "imaʒinasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a beaucoup d'imagination.", ipa: "ɛl a boku dimaʒinasjɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "d'imagination", base: "imagination" }] }
+      - { target: "Son imagination est sans limite.", ipa: "sɔ̃n imaʒinasjɔ̃ ɛ sɑ̃z limit", bases: [{ word: "Son", ref: "fr-0138" }, { word: "imagination", base: "imagination" }, { word: "est", ref: "fr-0021" }, { word: "sans", ref: "fr-0592" }, { word: "limite", ref: "fr-2675" }] }
+  - id: "fr-2693"
+    target: "certitude"
+    ipa: "sɛʁtityd"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai la certitude qu'il vient.", ipa: "ʒe la sɛʁtityd kil vjɛ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "la", ref: "fr-0544" }, { word: "certitude", base: "certitude" }, { word: "qu'il", ref: "fr-0127" }, { word: "vient", ref: "fr-0285" }] }
+      - { target: "Rien n'est une certitude.", ipa: "ʁjɛ̃ nɛ yn sɛʁtityd", bases: [{ word: "Rien", ref: "fr-0373" }, { word: "n'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "certitude", base: "certitude" }] }
+  - id: "fr-2694"
+    target: "incertitude"
+    ipa: "ɛ̃sɛʁtityd"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il vit dans l'incertitude.", ipa: "il vi dɑ̃ lɛ̃sɛʁtityd", bases: [{ word: "Il", ref: "fr-0127" }, { word: "vit", base: "vivre" }, { word: "dans", ref: "fr-0049" }, { word: "l'incertitude", base: "incertitude" }] }
+      - { target: "Cette incertitude est difficile.", ipa: "sɛt ɛ̃sɛʁtityd ɛ difisil", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "incertitude", base: "incertitude" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }] }
+  - id: "fr-2695"
+    target: "impossible"
+    ipa: "ɛ̃pɔsibl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est impossible à faire.", ipa: "sɛ tɛ̃pɔsibl a fɛʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "impossible", base: "impossible" }, { word: "à", base: "à" }, { word: "faire", ref: "fr-0287" }] }
+      - { target: "Une telle décision est impossible.", ipa: "yn tɛl desizjɔ̃ ɛ ɛ̃pɔsibl", bases: [{ word: "Une", ref: "fr-0545" }, { word: "telle", base: "tel" }, { word: "décision", base: "décision" }, { word: "est", ref: "fr-0021" }, { word: "impossible", base: "impossible" }] }
+  - id: "fr-2696"
+    target: "nécessaire"
+    ipa: "nesesɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce document est nécessaire.", ipa: "sə dɔkymɑ̃ ɛ nesesɛʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "document", ref: "fr-1979" }, { word: "est", ref: "fr-0021" }, { word: "nécessaire", base: "nécessaire" }] }
+      - { target: "Une pause est nécessaire.", ipa: "yn pozə ɛ nesesɛʁ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "pause", ref: "fr-0681" }, { word: "est", ref: "fr-0021" }, { word: "nécessaire", base: "nécessaire" }] }
+  - id: "fr-2697"
+    target: "inutile"
+    ipa: "inytil"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce bruit est inutile.", ipa: "sə bʁɥi ɛ inytil", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "bruit", ref: "fr-1111" }, { word: "est", ref: "fr-0021" }, { word: "inutile", base: "inutile" }] }
+      - { target: "Une dispute inutile fatigue tout le monde.", ipa: "yn dispyt inytil fatiɡ tu lə mɔ̃d", bases: [{ word: "Une", ref: "fr-0545" }, { word: "dispute", ref: "fr-2443" }, { word: "inutile", base: "inutile" }, { word: "fatigue", ref: "fr-1739" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "monde", base: "monde" }] }
+  - id: "fr-2698"
+    target: "essentiel"
+    ipa: "esɑ̃sjɛl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'eau est essentielle à la vie.", ipa: "lo ɛ esɑ̃sjɛl a la vi", bases: [{ word: "L'eau", ref: "fr-0024" }, { word: "est", ref: "fr-0021" }, { word: "essentielle", base: "essentiel" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "vie", ref: "fr-0267" }] }
+      - { target: "C'est un point essentiel.", ipa: "sɛ tœ̃ pwɛ̃ esɑ̃sjɛl", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "point", base: "point" }, { word: "essentiel", base: "essentiel" }] }
+  - id: "fr-2699"
+    target: "différent"
+    ipa: "difeʁɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son avis est différent.", ipa: "sɔ̃n avi ɛ difeʁɑ̃", bases: [{ word: "Son", ref: "fr-0138" }, { word: "avis", ref: "fr-1865" }, { word: "est", ref: "fr-0021" }, { word: "différent", base: "différent" }] }
+      - { target: "Chaque pays est différent.", ipa: "ʃak pei ɛ difeʁɑ̃", bases: [{ word: "Chaque", ref: "fr-0375" }, { word: "pays", ref: "fr-0243" }, { word: "est", ref: "fr-0021" }, { word: "différent", base: "différent" }] }
+  - id: "fr-2700"
+    target: "semblable"
+    ipa: "sɑ̃blabl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils ont des idées semblables.", ipa: "il ɔ̃ de zide sɑ̃blabl", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "ont", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "idées", ref: "fr-0683" }, { word: "semblables", base: "semblable" }] }
+      - { target: "Cette maison est semblable à la mienne.", ipa: "sɛt mɛzɔ̃ ɛ sɑ̃blabl a la mjɛn", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "maison", ref: "fr-0996" }, { word: "est", ref: "fr-0021" }, { word: "semblable", base: "semblable" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "mienne", base: "mien" }] }
+  - id: "fr-2701"
+    target: "général"
+    ipa: "ʒeneʁal"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une idée générale.", ipa: "sɛ tyn ide ʒeneʁal", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "idée", ref: "fr-0683" }, { word: "générale", base: "général" }] }
+      - { target: "La situation générale est calme.", ipa: "la sityasjɔ̃ ʒeneʁal ɛ kalm", bases: [{ word: "La", ref: "fr-0544" }, { word: "situation", base: "situation" }, { word: "générale", base: "général" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+  - id: "fr-2702"
+    target: "particulier"
+    ipa: "paʁtikylje"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un cas particulier.", ipa: "sɛ tœ̃ ka paʁtikylje", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "cas", base: "cas" }, { word: "particulier", base: "particulier" }] }
+      - { target: "Elle a un goût particulier.", ipa: "ɛl a œ̃ ɡu paʁtikylje", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "goût", base: "goût" }, { word: "particulier", base: "particulier" }] }
+  - id: "fr-2703"
+    target: "constant"
+    ipa: "kɔ̃stɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bruit est constant.", ipa: "lə bʁɥi ɛ kɔ̃stɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bruit", ref: "fr-1111" }, { word: "est", ref: "fr-0021" }, { word: "constant", base: "constant" }] }
+      - { target: "Elle fait des efforts constants.", ipa: "ɛl fɛ de zefɔʁ kɔ̃stɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0046" }, { word: "des", ref: "fr-0546" }, { word: "efforts", base: "effort" }, { word: "constants", base: "constant" }] }
+

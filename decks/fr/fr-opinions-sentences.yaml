@@ -1,0 +1,130 @@
+schema: 1
+id: "fr-opinions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1902"
+    target: "Je ne suis pas d'accord, je trouve que ton argument est discutable."
+    ipa: "ʒə nə sɥi pa dakɔʁ ʒə tʁuv kə tɔ̃ naʁɡymɑ̃ ɛ diskytabl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "ne", base: "ne" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "pas", base: "pas" }
+      - { word: "d'accord", ref: "fr-1868" }
+      - { word: "trouve", ref: "fr-0301" }
+      - { word: "que", base: "que" }
+      - { word: "ton", ref: "fr-0141" }
+      - { word: "argument", ref: "fr-1870" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "discutable", ref: "fr-1884" }
+    confusables:
+      - { id: "approuver", ref: "fr-1873", kind: "word" }
+      - { id: "evident", ref: "fr-1885", kind: "word" }
+  - id: "fr-1903"
+    target: "Il refuse l'idée car il la juge injuste."
+    ipa: "il ʁəfyz lide kaʁ il la ʒyʒ ɛ̃ʒyst"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "refuse", ref: "fr-1881" }
+      - { word: "l'idée", ref: "fr-0683" }
+      - { word: "car", base: "car" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "juge", ref: "fr-1879" }
+      - { word: "injuste", ref: "fr-1882" }
+    confusables:
+      - { id: "soutenir", ref: "fr-1878", kind: "word" }
+      - { id: "juste", ref: "fr-1896", kind: "word" }
+  - id: "fr-1904"
+    target: "Probablement, le débat va continuer."
+    ipa: "pʁɔbabləmɑ̃ lə deba va kɔ̃tinɥe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Probablement", ref: "fr-1897" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "débat", ref: "fr-1889" }
+      - { word: "va", ref: "fr-0286" }
+      - { word: "continuer", ref: "fr-0897" }
+    confusables:
+      - { id: "certain", ref: "fr-1887", kind: "word" }
+      - { id: "surement", ref: "fr-1899", kind: "word" }
+  - id: "fr-1905"
+    target: "Elle admet son erreur et défend son point de vue."
+    ipa: "ɛl admɛ sɔ̃ nɛʁœʁ e defɑ̃ sɔ̃ pwɛ̃ də vy"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "admet", ref: "fr-1880" }
+      - { word: "son", ref: "fr-0138" }
+      - { word: "erreur", base: "erreur" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "défend", ref: "fr-1876" }
+      - { word: "point", base: "point" }
+      - { word: "de", base: "de" }
+      - { word: "vue", base: "vue" }
+    confusables:
+      - { id: "contester", ref: "fr-1877", kind: "word" }
+      - { id: "refuser", ref: "fr-1881", kind: "word" }
+  - id: "fr-1906"
+    target: "Ce préjugé est faux, et c'est un vrai problème."
+    ipa: "sə pʁeʒyʒe ɛ fo e sɛ tɛ̃ vʁɛ pʁɔblɛm"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "préjugé", ref: "fr-1891" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "faux", ref: "fr-1849" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "c'est", ref: "fr-0021" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "vrai", ref: "fr-1901" }
+      - { word: "problème", ref: "fr-0684" }
+    confusables:
+      - { id: "conviction", ref: "fr-1890", kind: "word" }
+      - { id: "tolerance", ref: "fr-1895", kind: "word" }
+  - id: "fr-1907"
+    target: "Ils discutent de la liberté et du respect."
+    ipa: "il diskyt də la libɛʁte e dy ʁɛspɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ils", ref: "fr-0130" }
+      - { word: "discutent", ref: "fr-1875" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "liberté", ref: "fr-1893" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "du", base: "de" }
+      - { word: "respect", ref: "fr-1894" }
+    confusables:
+      - { id: "justice", ref: "fr-1892", kind: "word" }
+      - { id: "argument", ref: "fr-1870", kind: "word" }
+  - id: "fr-1908"
+    target: "Mon avis est que c'est une opinion raisonnable."
+    ipa: "mɔ̃ navi ɛ kə sɛ tynɔpinjɔ̃ ʁɛzɔnabl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "avis", ref: "fr-1865" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "que", base: "que" }
+      - { word: "c'est", ref: "fr-0021" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "opinion", ref: "fr-1866" }
+      - { word: "raisonnable", ref: "fr-1888" }
+    confusables:
+      - { id: "desaccord", ref: "fr-1869", kind: "word" }
+      - { id: "doute", ref: "fr-1872", kind: "word" }
+

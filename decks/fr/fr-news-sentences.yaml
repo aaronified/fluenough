@@ -1,0 +1,122 @@
+schema: 1
+id: "fr-news-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1853"
+    target: "Le journaliste lit le titre et annonce la nouvelle."
+    ipa: "lə ʒuʁnalist li lə titʁ e anɔ̃s la nuvɛl"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "journaliste", ref: "fr-1811" }
+      - { word: "lit", ref: "fr-0290" }
+      - { word: "titre", ref: "fr-1810" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "annonce", ref: "fr-1830" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "nouvelle", base: "nouvelle" }
+    confusables:
+      - { id: "reportage", ref: "fr-1812", kind: "word" }
+      - { id: "sondage", ref: "fr-1836", kind: "word" }
+  - id: "fr-1854"
+    target: "La rumeur n'est pas vérifiée."
+    ipa: "la ʁymœʁ nɛ pa veʁifje"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "rumeur", ref: "fr-1829" }
+      - { word: "n'est", ref: "fr-0021" }
+      - { word: "pas", base: "pas" }
+      - { word: "vérifiée", ref: "fr-1835" }
+    confusables:
+      - { id: "source", ref: "fr-1828", kind: "word" }
+      - { id: "scoop", ref: "fr-1850", kind: "word" }
+  - id: "fr-1855"
+    target: "Le sondage montre que la guerre inquiète."
+    ipa: "lə sɔ̃daʒ mɔ̃tʁ kə la ɡɛʁ ɛ̃kjɛt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "sondage", ref: "fr-1836" }
+      - { word: "montre", base: "montrer" }
+      - { word: "que", base: "que" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "guerre", ref: "fr-1824" }
+      - { word: "inquiète", base: "inquiéter" }
+    confusables:
+      - { id: "paix", ref: "fr-1825", kind: "word" }
+      - { id: "crise", ref: "fr-1823", kind: "word" }
+  - id: "fr-1856"
+    target: "Ce témoin parle à la radio de l'enquête."
+    ipa: "sə temwɛ̃ paʁl a la ʁadjo də lɑ̃kɛt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "témoin", ref: "fr-1820" }
+      - { word: "parle", ref: "fr-0023" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "radio", ref: "fr-1815" }
+      - { word: "de", base: "de" }
+      - { word: "l'enquête", ref: "fr-1819" }
+    confusables:
+      - { id: "presentateur", ref: "fr-1816", kind: "word" }
+      - { id: "lecteur", ref: "fr-1840", kind: "word" }
+  - id: "fr-1857"
+    target: "La chaîne diffuse une émission sur l'économie."
+    ipa: "la ʃɛn difyz yn emisjɔ̃ syʁ lekɔnɔmi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "chaîne", ref: "fr-1814" }
+      - { word: "diffuse", ref: "fr-1833" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "émission", ref: "fr-1813" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "l'économie", ref: "fr-1826" }
+    confusables:
+      - { id: "media", ref: "fr-1817", kind: "word" }
+      - { id: "abonne", ref: "fr-1841", kind: "word" }
+  - id: "fr-1858"
+    target: "Le scandale fait la une du journal."
+    ipa: "lə skɑ̃dal fɛ la yn dy ʒuʁnal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "scandale", ref: "fr-1837" }
+      - { word: "fait", ref: "fr-0287" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "du", base: "de" }
+      - { word: "journal", ref: "fr-1367" }
+    confusables:
+      - { id: "evenement", ref: "fr-1821", kind: "word" }
+      - { id: "titre", ref: "fr-1810", kind: "word" }
+  - id: "fr-1859"
+    target: "Je vérifie la source avant de publier."
+    ipa: "ʒə veʁifi la suʁs avɑ̃ də pyblje"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "vérifie", ref: "fr-1835" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "source", ref: "fr-1828" }
+      - { word: "avant", ref: "fr-0596" }
+      - { word: "de", base: "de" }
+      - { word: "publier", ref: "fr-1831" }
+    confusables:
+      - { id: "informer", ref: "fr-1832", kind: "word" }
+      - { id: "annoncer", ref: "fr-1830", kind: "word" }
+

@@ -1,0 +1,551 @@
+schema: 1
+id: "fr-en-opinions"
+kind: "layer"
+core: "fr-opinions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Opinions"
+license: "CC-BY-SA-4.0"
+description: "Forty words for opinions: agreeing and disagreeing, giving reasons, doubting and judging, and the words of debate. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1865":
+    native: "opinion, view"
+    notes:
+      "n1": "Un avis is a view or an opinion; à mon avis means in my opinion."
+    examples:
+      "À mon avis, c'est une bonne idée.":
+        native: "In my opinion, it is a good idea."
+        bases:
+          "À": "to, at"
+          "avis": "opinion, view"
+      "Donnez-moi votre avis.":
+        native: "Give me your opinion."
+        bases:
+          "avis": "opinion, view"
+  "fr-1866":
+    native: "opinion"
+    notes:
+      "n1": "Une opinion is what someone thinks about something."
+    examples:
+      "Chacun a son opinion.":
+        native: "Everyone has their own opinion."
+        bases:
+          "opinion": "opinion"
+      "Son opinion change souvent.":
+        native: "His opinion changes often."
+        bases:
+          "opinion": "opinion"
+  "fr-1867":
+    native: "point of view"
+    notes:
+      "n1": "Un point de vue is a way of seeing a question."
+    bases:
+      "point": "point"
+      "de": "of, from, some"
+      "vue": "view"
+    examples:
+      "De mon point de vue, c'est juste.":
+        native: "From my point of view, it is fair."
+        bases:
+          "De": "of, from, some"
+          "point": "point"
+          "vue": "view"
+      "Chacun a un point de vue différent.":
+        native: "Everyone has a different point of view."
+        bases:
+          "point": "point"
+          "de": "of, from, some"
+          "vue": "view"
+          "différent": "different"
+  "fr-1868":
+    native: "agreement"
+    notes:
+      "n1": "Être d’accord is to agree; the opposite is ne pas être d’accord."
+    examples:
+      "Je suis d'accord avec toi.":
+        native: "I agree with you."
+        bases:
+          "d'accord": "agreement"
+      "Nous avons conclu un accord.":
+        native: "We reached an agreement."
+        bases:
+          "conclu": "concluded"
+          "accord": "agreement"
+  "fr-1869":
+    native: "disagreement"
+    notes:
+      "n1": "Un désaccord is a difference of opinion."
+    examples:
+      "Il y a un désaccord entre eux.":
+        native: "There is a disagreement between them."
+        bases:
+          "y": "there"
+          "désaccord": "disagreement"
+      "Leur désaccord dure depuis longtemps.":
+        native: "Their disagreement has lasted a long time."
+        bases:
+          "désaccord": "disagreement"
+          "depuis": "since"
+  "fr-1870":
+    native: "argument, reason"
+    notes:
+      "n1": "Un argument is a reason given to support a view."
+    examples:
+      "Son argument est logique.":
+        native: "His argument is logical."
+        bases:
+          "argument": "argument, reason"
+      "Je n'ai pas d'argument à donner.":
+        native: "I have no argument to give."
+        bases:
+          "pas": "not"
+          "d'argument": "argument, reason"
+          "à": "to, at"
+  "fr-1871":
+    native: "reason, right"
+    notes:
+      "n1": "Avoir raison is to be right; avoir tort is to be wrong."
+    examples:
+      "Tu as raison, il faut partir.":
+        native: "You are right, we must leave."
+        bases:
+          "raison": "reason, right"
+          "faut": "must"
+      "Quelle est la raison de ce choix ?":
+        native: "What is the reason for this choice?"
+        bases:
+          "raison": "reason, right"
+          "de": "of, from, some"
+          "choix": "choice"
+  "fr-1872":
+    native: "doubt"
+    notes:
+      "n1": "Sans doute is probably; avoir un doute is to have a doubt."
+    examples:
+      "Il a des doutes sur le projet.":
+        native: "He has doubts about the project."
+        bases:
+          "doutes": "doubt"
+      "Sans doute, il viendra demain.":
+        native: "Probably, he will come tomorrow."
+        bases:
+          "doute": "doubt"
+  "fr-1873":
+    native: "to approve"
+    notes:
+      "n1": "Approuver is regular; the opposite is désapprouver."
+    examples:
+      "Je n'approuve pas cette décision.":
+        native: "I do not approve of this decision."
+        bases:
+          "n'approuve": "to approve"
+          "pas": "not"
+          "décision": "decision"
+      "Le comité approuve le plan.":
+        native: "The committee approves the plan."
+        bases:
+          "comité": "committee"
+          "approuve": "to approve"
+  "fr-1874":
+    native: "to criticise"
+    notes:
+      "n1": "Critiquer is regular; a critique is a review."
+    examples:
+      "Il critique le gouvernement.":
+        native: "He criticises the government."
+        bases:
+          "critique": "to criticise"
+          "gouvernement": "government"
+      "Ne critiquez pas les autres.":
+        native: "Do not criticise others."
+        bases:
+          "Ne": "not"
+          "critiquez": "to criticise"
+          "pas": "not"
+          "autres": "others"
+  "fr-1875":
+    native: "to discuss"
+    notes:
+      "n1": "Discuter is regular; it also means to chat."
+    examples:
+      "Nous discutons du projet.":
+        native: "We discuss the project."
+        bases:
+          "discutons": "to discuss"
+          "du": "some, of the"
+      "Ils discutent toute la soirée.":
+        native: "They talk all evening."
+        bases:
+          "discutent": "to discuss"
+  "fr-1876":
+    native: "to defend"
+    notes:
+      "n1": "Défendre is regular; défendre une idée is to defend an idea."
+    examples:
+      "Elle défend ses idées.":
+        native: "She defends her ideas."
+        bases:
+          "défend": "to defend"
+      "Je défends le droit de parler.":
+        native: "I defend the right to speak."
+        bases:
+          "défends": "to defend"
+          "de": "of, from, some"
+  "fr-1877":
+    native: "to dispute, to contest"
+    notes:
+      "n1": "Contester is regular; it is used for disputing a decision."
+    examples:
+      "Il conteste la décision du juge.":
+        native: "He disputes the judge’s decision."
+        bases:
+          "conteste": "to dispute, to contest"
+          "décision": "decision"
+          "du": "some, of the"
+      "On peut contester cette idée.":
+        native: "One can dispute this idea."
+        bases:
+          "contester": "to dispute, to contest"
+  "fr-1878":
+    native: "to support"
+    notes:
+      "n1": "Soutenir is like tenir; it means to support or to hold up."
+    examples:
+      "Je soutiens ton projet.":
+        native: "I support your project."
+        bases:
+          "soutiens": "to support"
+      "Ses amis le soutiennent.":
+        native: "His friends support him."
+        bases:
+          "soutiennent": "to support"
+  "fr-1879":
+    native: "to judge"
+    notes:
+      "n1": "Juger is regular; juger que is to think that."
+    examples:
+      "Je juge son travail très bon.":
+        native: "I judge his work to be very good."
+        bases:
+          "juge": "to judge"
+      "Il ne faut pas juger les gens.":
+        native: "You must not judge people."
+        bases:
+          "ne": "not"
+          "faut": "must"
+          "pas": "not"
+          "juger": "to judge"
+          "gens": "people"
+  "fr-1880":
+    native: "to admit, to accept"
+    notes:
+      "n1": "Admettre is like mettre: admettre que is to accept that."
+    examples:
+      "J'admets mon erreur.":
+        native: "I admit my mistake."
+        bases:
+          "J'admets": "to admit, to accept"
+          "erreur": "mistake"
+      "Il admet qu'il a tort.":
+        native: "He admits that he is wrong."
+        bases:
+          "admet": "to admit, to accept"
+          "tort": "wrong"
+  "fr-1881":
+    native: "to refuse"
+    notes:
+      "n1": "Refuser is regular; refuser de is to refuse to do something."
+    examples:
+      "Il refuse de changer d'avis.":
+        native: "He refuses to change his mind."
+        bases:
+          "refuse": "to refuse"
+          "de": "of, from, some"
+      "Je refuse cette idée.":
+        native: "I refuse this idea."
+        bases:
+          "refuse": "to refuse"
+  "fr-1882":
+    native: "unfair"
+    notes:
+      "n1": "Injuste takes the same form in both genders."
+    examples:
+      "C'est une règle injuste.":
+        native: "It is an unfair rule."
+        bases:
+          "injuste": "unfair"
+      "La décision est injuste pour tous.":
+        native: "The decision is unfair to everyone."
+        bases:
+          "décision": "decision"
+          "injuste": "unfair"
+  "fr-1883":
+    native: "logical"
+    notes:
+      "n1": "Logique takes the same form in both genders."
+    examples:
+      "Ton raisonnement est logique.":
+        native: "Your reasoning is logical."
+        bases:
+          "raisonnement": "reasoning"
+          "logique": "logical"
+      "Ce n'est pas très logique.":
+        native: "That is not very logical."
+        bases:
+          "pas": "not"
+          "logique": "logical"
+  "fr-1884":
+    native: "debatable"
+    notes:
+      "n1": "Discutable takes the same form in both genders."
+    examples:
+      "Son idée est discutable.":
+        native: "His idea is debatable."
+        bases:
+          "discutable": "debatable"
+      "Le résultat reste discutable.":
+        native: "The result remains debatable."
+        bases:
+          "résultat": "result"
+          "discutable": "debatable"
+  "fr-1885":
+    native: "obvious"
+    notes:
+      "n1": "Évident takes the feminine évidente."
+    examples:
+      "C'est évident pour tout le monde.":
+        native: "It is obvious to everyone."
+        bases:
+          "évident": "obvious"
+          "monde": "world"
+      "La réponse est évidente.":
+        native: "The answer is obvious."
+        bases:
+          "évidente": "obvious"
+  "fr-1886":
+    native: "possible"
+    notes:
+      "n1": "Possible takes the same form in both genders."
+    examples:
+      "Ce n'est pas possible.":
+        native: "That is not possible."
+        bases:
+          "pas": "not"
+          "possible": "possible"
+      "Une autre solution est possible.":
+        native: "Another solution is possible."
+        bases:
+          "autre": "other"
+          "solution": "solution"
+          "possible": "possible"
+  "fr-1887":
+    native: "certain, sure"
+    notes:
+      "n1": "Certain takes the feminine certaine."
+    examples:
+      "Je suis certain de mon choix.":
+        native: "I am certain of my choice."
+        bases:
+          "certain": "certain, sure"
+          "de": "of, from, some"
+          "choix": "choice"
+      "C'est une idée certaine.":
+        native: "It is a certain idea."
+        bases:
+          "certaine": "certain, sure"
+  "fr-1888":
+    native: "reasonable"
+    notes:
+      "n1": "Raisonnable takes the same form in both genders."
+    examples:
+      "C'est une demande raisonnable.":
+        native: "It is a reasonable request."
+        bases:
+          "raisonnable": "reasonable"
+      "Il faut être raisonnable.":
+        native: "You must be reasonable."
+        bases:
+          "faut": "must"
+          "raisonnable": "reasonable"
+  "fr-1889":
+    native: "debate"
+    notes:
+      "n1": "Un débat is a formal discussion of an issue."
+    examples:
+      "Le débat est très animé.":
+        native: "The debate is very lively."
+        bases:
+          "débat": "debate"
+          "animé": "lively"
+      "Ce débat dure depuis des mois.":
+        native: "This debate has lasted for months."
+        bases:
+          "débat": "debate"
+          "depuis": "since"
+  "fr-1890":
+    native: "conviction"
+    notes:
+      "n1": "Une conviction is a firm belief."
+    examples:
+      "Il a une forte conviction.":
+        native: "He has a strong conviction."
+        bases:
+          "conviction": "conviction"
+      "Sa conviction est sincère.":
+        native: "His conviction is sincere."
+        bases:
+          "conviction": "conviction"
+          "sincère": "sincere"
+  "fr-1891":
+    native: "prejudice"
+    notes:
+      "n1": "Un préjugé is an opinion formed before knowing the facts."
+    examples:
+      "Il combat les préjugés.":
+        native: "He fights prejudices."
+        bases:
+          "combat": "fights"
+          "préjugés": "prejudice"
+      "Ce préjugé est faux.":
+        native: "This prejudice is false."
+        bases:
+          "préjugé": "prejudice"
+  "fr-1892":
+    native: "justice, fairness"
+    notes:
+      "n1": "La justice is also the courts and the legal system."
+    examples:
+      "La justice doit être égale.":
+        native: "Justice must be equal."
+        bases:
+          "justice": "justice, fairness"
+          "égale": "equal"
+      "Il attend la justice.":
+        native: "He waits for justice."
+        bases:
+          "justice": "justice, fairness"
+  "fr-1893":
+    native: "freedom"
+    notes:
+      "n1": "La liberté is freedom; the adjective is libre."
+    examples:
+      "La liberté d'expression est importante.":
+        native: "Freedom of speech is important."
+        bases:
+          "liberté": "freedom"
+          "d'expression": "expression"
+      "Ils luttent pour la liberté.":
+        native: "They fight for freedom."
+        bases:
+          "luttent": "fight"
+          "liberté": "freedom"
+  "fr-1894":
+    native: "respect"
+    notes:
+      "n1": "Le respect is respect for people or rules."
+    examples:
+      "Il montre du respect aux autres.":
+        native: "He shows respect for others."
+        bases:
+          "du": "some, of the"
+          "respect": "respect"
+          "aux": "to the"
+          "autres": "others"
+      "Le respect des règles est important.":
+        native: "Respect for the rules is important."
+        bases:
+          "respect": "respect"
+  "fr-1895":
+    native: "tolerance"
+    notes:
+      "n1": "La tolérance is accepting views different from one’s own."
+    examples:
+      "La tolérance est une vertu.":
+        native: "Tolerance is a virtue."
+        bases:
+          "tolérance": "tolerance"
+          "vertu": "virtue"
+      "Il pratique la tolérance.":
+        native: "He practises tolerance."
+        bases:
+          "pratique": "practises"
+          "tolérance": "tolerance"
+  "fr-1896":
+    native: "fair, just"
+    notes:
+      "n1": "Juste takes the same form in both genders."
+    examples:
+      "C'est une décision juste.":
+        native: "It is a fair decision."
+        bases:
+          "décision": "decision"
+          "juste": "fair, just"
+      "Le prix est juste.":
+        native: "The price is fair."
+        bases:
+          "juste": "fair, just"
+  "fr-1897":
+    native: "probably"
+    notes:
+      "n1": "Probablement is an adverb of likelihood."
+    examples:
+      "Il a probablement raison.":
+        native: "He is probably right."
+        bases:
+          "probablement": "probably"
+      "Elle viendra probablement demain.":
+        native: "She will probably come tomorrow."
+        bases:
+          "probablement": "probably"
+  "fr-1898":
+    native: "perhaps, maybe"
+    notes:
+      "n1": "Peut-être is written with a hyphen."
+    examples:
+      "Peut-être que tu as raison.":
+        native: "Perhaps you are right."
+        bases:
+          "que": "that"
+      "Peut-être demain, peut-être pas.":
+        native: "Perhaps tomorrow, perhaps not."
+        bases:
+          "pas": "not"
+  "fr-1899":
+    native: "surely, certainly"
+    notes:
+      "n1": "Sûrement is an adverb of certainty."
+    examples:
+      "Ce sera sûrement vrai.":
+        native: "It will surely be true."
+        bases:
+          "sûrement": "surely, certainly"
+      "Elle a sûrement raison.":
+        native: "She is surely right."
+        bases:
+          "sûrement": "surely, certainly"
+  "fr-1900":
+    native: "obviously"
+    notes:
+      "n1": "Évidemment is an adverb meaning of course or obviously."
+    examples:
+      "Évidemment, tu as raison.":
+        native: "Obviously, you are right."
+        bases:
+          "Évidemment": "obviously"
+      "Il vient évidemment ce soir.":
+        native: "He is obviously coming tonight."
+        bases:
+          "évidemment": "obviously"
+  "fr-1901":
+    native: "true, real"
+    notes:
+      "n1": "Vrai takes the feminine vraie."
+    examples:
+      "C'est vrai, tu as raison.":
+        native: "It is true, you are right."
+        bases:
+          "vrai": "true, real"
+      "C'est une vraie question.":
+        native: "It is a real question."
+        bases:
+          "vraie": "true, real"

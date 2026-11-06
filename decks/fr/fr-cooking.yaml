@@ -1,0 +1,429 @@
+schema: 1
+id: "fr-cooking"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "cooking"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1532"
+    target: "cuire"
+    ipa: "kɥiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je cuis les pâtes dans l'eau.", ipa: "ʒə kɥi le pɑt dɑ̃ lo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cuis", base: "cuire" }, { word: "les", ref: "fr-0043" }, { word: "pâtes", ref: "fr-1491" }, { word: "dans", ref: "fr-0049" }, { word: "l'eau", base: "eau" }] }
+      - { target: "Le gâteau cuit au four.", ipa: "lə ɡɑto kɥi o fuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gâteau", ref: "fr-0789" }, { word: "cuit", ref: "fr-1498" }, { word: "au", base: "à" }, { word: "four", ref: "fr-1546" }] }
+  - id: "fr-1533"
+    target: "rôtir"
+    ipa: "ʁotiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je rôtis les légumes au four.", ipa: "ʒə ʁotis le leɡym o fuʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rôtis", base: "rôtir" }, { word: "les", ref: "fr-0043" }, { word: "légumes", ref: "fr-1484" }, { word: "au", base: "à" }, { word: "four", ref: "fr-1546" }] }
+      - { target: "On rôtit un poulet le dimanche.", ipa: "ɔ̃ ʁotit œ̃ pulɛ lə dimɑ̃ʃ", bases: [{ word: "On", ref: "fr-0132" }, { word: "rôtit", base: "rôtir" }, { word: "un", ref: "fr-0208" }, { word: "poulet", ref: "fr-0784" }, { word: "le", ref: "fr-0543" }, { word: "dimanche", ref: "fr-1050" }] }
+  - id: "fr-1534"
+    target: "griller"
+    ipa: "ɡʁije"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous grillons la viande sur le feu.", ipa: "nu ɡʁijɔ̃ la vjɑ̃d syʁ lə fø", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "grillons", base: "griller" }, { word: "la", ref: "fr-0544" }, { word: "viande", ref: "fr-0782" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "feu", ref: "fr-0899" }] }
+      - { target: "Je grille deux tranches de pain.", ipa: "ʒə ɡʁij dø tʁɑ̃ʃ də pɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "grille", base: "griller" }, { word: "deux", ref: "fr-0209" }, { word: "tranches", ref: "fr-0389" }, { word: "de", base: "de" }, { word: "pain", ref: "fr-0773" }] }
+  - id: "fr-1535"
+    target: "frire"
+    ipa: "fʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais frire les oignons.", ipa: "ʒə fɛ fʁiʁ lez ɔɲɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "frire", base: "frire" }, { word: "les", ref: "fr-0043" }, { word: "oignons", ref: "fr-0747" }] }
+      - { target: "L'huile est chaude pour frire.", ipa: "lɥil ɛ ʃod puʁ fʁiʁ", bases: [{ word: "L'huile", ref: "fr-1482" }, { word: "est", ref: "fr-0021" }, { word: "chaude", ref: "fr-0419" }, { word: "pour", ref: "fr-0591" }, { word: "frire", base: "frire" }] }
+  - id: "fr-1536"
+    target: "bouillir"
+    ipa: "bujiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'eau bout dans la casserole.", ipa: "lo bu dɑ̃ la kasʁɔl", bases: [{ word: "L'eau", base: "eau" }, { word: "bout", base: "bouillir" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "casserole", ref: "fr-1391" }] }
+      - { target: "Faites bouillir l'eau.", ipa: "fɛt bujiʁ lo", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "bouillir", base: "bouillir" }, { word: "l'eau", base: "eau" }] }
+  - id: "fr-1537"
+    target: "mijoter"
+    ipa: "miʒɔte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je laisse mijoter la sauce dix minutes.", ipa: "ʒə lɛs miʒɔte la sos dis minyt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "laisse", base: "laisser" }, { word: "mijoter", base: "mijoter" }, { word: "la", ref: "fr-0544" }, { word: "sauce", ref: "fr-1480" }, { word: "dix", ref: "fr-0217" }, { word: "minutes", ref: "fr-1031" }] }
+      - { target: "La soupe mijote doucement.", ipa: "la sup miʒɔt dusmɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }, { word: "mijote", base: "mijoter" }, { word: "doucement", base: "doucement" }] }
+  - id: "fr-1538"
+    target: "couper"
+    ipa: "kupe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Coupe les tomates en morceaux.", ipa: "kup le tɔmat ɑ̃ mɔʁso", bases: [{ word: "Coupe", base: "couper" }, { word: "les", ref: "fr-0043" }, { word: "tomates", ref: "fr-0744" }, { word: "en", base: "en" }, { word: "morceaux", ref: "fr-0384" }] }
+      - { target: "Je coupe le pain avec un couteau.", ipa: "ʒə kup lə pɛ̃ avɛk œ̃ kuto", bases: [{ word: "Je", ref: "fr-0126" }, { word: "coupe", base: "couper" }, { word: "le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "avec", ref: "fr-0590" }, { word: "un", ref: "fr-0208" }, { word: "couteau", ref: "fr-0829" }] }
+  - id: "fr-1539"
+    target: "éplucher"
+    ipa: "eplyʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il épluche les carottes.", ipa: "il eplyʃ le kaʁɔt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "épluche", base: "éplucher" }, { word: "les", ref: "fr-0043" }, { word: "carottes", ref: "fr-0745" }] }
+      - { target: "Épluche l'ail avant de le couper.", ipa: "eplyʃ laj avɑ̃ də lə kupe", bases: [{ word: "Épluche", base: "éplucher" }, { word: "l'ail", ref: "fr-1507" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "le", ref: "fr-0543" }, { word: "couper", ref: "fr-1538" }] }
+  - id: "fr-1540"
+    target: "mélanger"
+    ipa: "melɑ̃ʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mélange la farine et le sucre.", ipa: "melɑ̃ʒ la faʁin e lə sykʁ", bases: [{ word: "Mélange", base: "mélanger" }, { word: "la", ref: "fr-0544" }, { word: "farine", ref: "fr-0780" }, { word: "et", ref: "fr-0027" }, { word: "le", ref: "fr-0543" }, { word: "sucre", ref: "fr-0777" }] }
+      - { target: "Il mélange les œufs avec du lait.", ipa: "il melɑ̃ʒ lez ø avɛk dy lɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mélange", base: "mélanger" }, { word: "les", ref: "fr-0043" }, { word: "œufs", ref: "fr-0776" }, { word: "avec", ref: "fr-0590" }, { word: "du", base: "de" }, { word: "lait", ref: "fr-0044" }] }
+  - id: "fr-1541"
+    target: "battre"
+    ipa: "batʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je bats les œufs avec une fourchette.", ipa: "ʒə ba lez ø avɛk yn fuʁʃɛt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "bats", base: "battre" }, { word: "les", ref: "fr-0043" }, { word: "œufs", ref: "fr-0776" }, { word: "avec", ref: "fr-0590" }, { word: "une", ref: "fr-0545" }, { word: "fourchette", ref: "fr-0830" }] }
+      - { target: "Battez le beurre avec le sucre.", ipa: "batɛ lə bœʁ avɛk lə sykʁ", bases: [{ word: "Battez", base: "battre" }, { word: "le", ref: "fr-0543" }, { word: "beurre", ref: "fr-0774" }, { word: "avec", ref: "fr-0590" }, { word: "sucre", ref: "fr-0777" }] }
+  - id: "fr-1542"
+    target: "verser"
+    ipa: "vɛʁse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Verse l'eau dans la casserole.", ipa: "vɛʁs lo dɑ̃ la kasʁɔl", bases: [{ word: "Verse", base: "verser" }, { word: "l'eau", base: "eau" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "casserole", ref: "fr-1391" }] }
+      - { target: "Je verse un peu d'huile dans la poêle.", ipa: "ʒə vɛʁs œ̃ pø dɥil dɑ̃ la pwal", bases: [{ word: "Je", ref: "fr-0126" }, { word: "verse", base: "verser" }, { word: "un", ref: "fr-0208" }, { word: "peu", ref: "fr-0342" }, { word: "d'huile", ref: "fr-1482" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "poêle", ref: "fr-1547" }] }
+  - id: "fr-1543"
+    target: "râper"
+    ipa: "ʁape"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Râpe le fromage sur les pâtes.", ipa: "ʁap lə fʁɔmaʒ syʁ le pɑt", bases: [{ word: "Râpe", base: "râper" }, { word: "le", ref: "fr-0543" }, { word: "fromage", ref: "fr-0775" }, { word: "sur", ref: "fr-0469" }, { word: "les", ref: "fr-0043" }, { word: "pâtes", ref: "fr-1491" }] }
+      - { target: "Je râpe une carotte pour la salade.", ipa: "ʒə ʁap yn kaʁɔt puʁ la salad", bases: [{ word: "Je", ref: "fr-0126" }, { word: "râpe", base: "râper" }, { word: "une", ref: "fr-0545" }, { word: "carotte", ref: "fr-0745" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "salade", ref: "fr-0746" }] }
+  - id: "fr-1544"
+    target: "peser"
+    ipa: "pəze"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je pèse le sucre pour le gâteau.", ipa: "ʒə pɛz lə sykʁ puʁ lə ɡɑto", bases: [{ word: "Je", ref: "fr-0126" }, { word: "pèse", base: "peser" }, { word: "le", ref: "fr-0543" }, { word: "sucre", ref: "fr-0777" }, { word: "pour", ref: "fr-0591" }, { word: "gâteau", ref: "fr-0789" }] }
+      - { target: "Pèse la farine avant de la mettre dans le bol.", ipa: "pɛz la faʁin avɑ̃ də la mɛtʁ dɑ̃ lə bɔl", bases: [{ word: "Pèse", base: "peser" }, { word: "la", ref: "fr-0544" }, { word: "farine", ref: "fr-0780" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "mettre", ref: "fr-0529" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "bol", ref: "fr-1548" }] }
+  - id: "fr-1545"
+    target: "mesurer"
+    ipa: "məzyʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mesure un verre d'eau.", ipa: "məzyʁ œ̃ vɛʁ do", bases: [{ word: "Mesure", base: "mesurer" }, { word: "un", ref: "fr-0208" }, { word: "verre", ref: "fr-0385" }, { word: "d'eau", base: "eau" }] }
+      - { target: "Il mesure la farine avec une tasse.", ipa: "il məzyʁ la faʁin avɛk yn tas", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mesure", base: "mesurer" }, { word: "la", ref: "fr-0544" }, { word: "farine", ref: "fr-0780" }, { word: "avec", ref: "fr-0590" }, { word: "une", ref: "fr-0545" }, { word: "tasse", ref: "fr-0386" }] }
+  - id: "fr-1546"
+    target: "four"
+    ipa: "fuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gâteau est dans le four.", ipa: "lə ɡɑto ɛ dɑ̃ lə fuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gâteau", ref: "fr-0789" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "four", base: "four" }] }
+      - { target: "Mets le pain au four.", ipa: "mɛ lə pɛ̃ o fuʁ", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "au", base: "à" }, { word: "four", base: "four" }] }
+  - id: "fr-1547"
+    target: "poêle"
+    ipa: "pwal"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets l'huile dans la poêle.", ipa: "ʒə mɛ lɥil dɑ̃ la pwal", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "l'huile", ref: "fr-1482" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "poêle", base: "poêle" }] }
+      - { target: "La poêle est très chaude.", ipa: "la pwal ɛ tʁɛ ʃod", bases: [{ word: "La", ref: "fr-0544" }, { word: "poêle", base: "poêle" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "chaude", ref: "fr-0419" }] }
+  - id: "fr-1548"
+    target: "bol"
+    ipa: "bɔl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a un bol de soupe sur la table.", ipa: "il i a œ̃ bɔl də sup syʁ la tabl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "bol", base: "bol" }, { word: "de", base: "de" }, { word: "soupe", ref: "fr-0816" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Mets les œufs dans un grand bol.", ipa: "mɛ lez ø dɑ̃ zœ̃ ɡʁɑ̃ bɔl", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "les", ref: "fr-0043" }, { word: "œufs", ref: "fr-0776" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "grand", ref: "fr-0410" }, { word: "bol", base: "bol" }] }
+  - id: "fr-1549"
+    target: "louche"
+    ipa: "luʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Prends la louche et sers la soupe.", ipa: "pʁɑ̃ la luʃ e sɛʁ la sup", bases: [{ word: "Prends", ref: "fr-0288" }, { word: "la", ref: "fr-0544" }, { word: "louche", base: "louche" }, { word: "et", ref: "fr-0027" }, { word: "sers", ref: "fr-0839" }, { word: "soupe", ref: "fr-0816" }] }
+      - { target: "Il met la soupe dans un bol avec une louche.", ipa: "il mɛ la sup dɑ̃ zœ̃ bɔl avɛk yn luʃ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "la", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "bol", ref: "fr-1548" }, { word: "avec", ref: "fr-0590" }, { word: "une", ref: "fr-0545" }, { word: "louche", base: "louche" }] }
+  - id: "fr-1550"
+    target: "passoire"
+    ipa: "paswaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Verse les pâtes dans la passoire.", ipa: "vɛʁs le pɑt dɑ̃ la paswaʁ", bases: [{ word: "Verse", ref: "fr-1542" }, { word: "les", ref: "fr-0043" }, { word: "pâtes", ref: "fr-1491" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "passoire", base: "passoire" }] }
+      - { target: "Je lave la passoire après les pâtes.", ipa: "ʒə lav la paswaʁ apʁɛ le pɑt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lave", ref: "fr-0296" }, { word: "la", ref: "fr-0544" }, { word: "passoire", base: "passoire" }, { word: "après", ref: "fr-0595" }, { word: "les", ref: "fr-0043" }, { word: "pâtes", ref: "fr-1491" }] }
+  - id: "fr-1551"
+    target: "planche"
+    ipa: "plɑ̃ʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Coupe les légumes sur la planche.", ipa: "kup le leɡym syʁ la plɑ̃ʃ", bases: [{ word: "Coupe", ref: "fr-1538" }, { word: "les", ref: "fr-0043" }, { word: "légumes", ref: "fr-1484" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "planche", base: "planche" }] }
+      - { target: "Je lave la planche.", ipa: "ʒə lav la plɑ̃ʃ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lave", ref: "fr-0296" }, { word: "la", ref: "fr-0544" }, { word: "planche", base: "planche" }] }
+  - id: "fr-1552"
+    target: "recette"
+    ipa: "ʁəsɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une recette facile.", ipa: "sɛ yn ʁəsɛt fasil", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "recette", base: "recette" }, { word: "facile", ref: "fr-0417" }] }
+      - { target: "Je lis la recette avant de cuisiner.", ipa: "ʒə li la ʁəsɛt avɑ̃ də kɥizine", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "la", ref: "fr-0544" }, { word: "recette", base: "recette" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "cuisiner", ref: "fr-0309" }] }
+  - id: "fr-1553"
+    target: "ingrédient"
+    ipa: "ɛ̃ɡʁedjɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les ingrédients sont frais.", ipa: "lez ɛ̃ɡʁedjɑ̃ sɔ̃ fʁɛ", bases: [{ word: "Les", ref: "fr-0043" }, { word: "ingrédients", base: "ingrédient" }, { word: "sont", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }] }
+      - { target: "Mets les ingrédients dans le bol.", ipa: "mɛ lez ɛ̃ɡʁedjɑ̃ dɑ̃ lə bɔl", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "les", ref: "fr-0043" }, { word: "ingrédients", base: "ingrédient" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "bol", ref: "fr-1548" }] }
+  - id: "fr-1554"
+    target: "cuisson"
+    ipa: "kɥisɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le temps de cuisson est de dix minutes.", ipa: "lə tɑ̃ də kɥisɔ̃ ɛ də dis minyt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "temps", ref: "fr-1040" }, { word: "de", base: "de" }, { word: "cuisson", base: "cuisson" }, { word: "est", ref: "fr-0021" }, { word: "dix", ref: "fr-0217" }, { word: "minutes", ref: "fr-1031" }] }
+      - { target: "La cuisson du riz prend dix minutes.", ipa: "la kɥisɔ̃ dy ʁi pʁɑ̃ dis minyt", bases: [{ word: "La", ref: "fr-0544" }, { word: "cuisson", base: "cuisson" }, { word: "du", base: "de" }, { word: "riz", ref: "fr-0781" }, { word: "prend", ref: "fr-0288" }, { word: "dix", ref: "fr-0217" }, { word: "minutes", ref: "fr-1031" }] }
+  - id: "fr-1555"
+    target: "pincée"
+    ipa: "pɛ̃se"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ajoute une pincée de sel.", ipa: "aʒut yn pɛ̃se də sɛl", bases: [{ word: "Ajoute", ref: "fr-0796" }, { word: "une", ref: "fr-0545" }, { word: "pincée", base: "pincée" }, { word: "de", base: "de" }, { word: "sel", ref: "fr-0778" }] }
+      - { target: "Il met une pincée de cannelle.", ipa: "il mɛ yn pɛ̃se də kanɛl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "une", ref: "fr-0545" }, { word: "pincée", base: "pincée" }, { word: "de", base: "de" }, { word: "cannelle", ref: "fr-1561" }] }
+  - id: "fr-1556"
+    target: "levure"
+    ipa: "ləvyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mets un peu de levure dans la pâte.", ipa: "mɛ œ̃ pø də ləvyʁ dɑ̃ la pɑt", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "un", ref: "fr-0208" }, { word: "peu", ref: "fr-0342" }, { word: "de", base: "de" }, { word: "levure", base: "levure" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "pâte", base: "pâte" }] }
+      - { target: "La levure fait monter le pain.", ipa: "la ləvyʁ fɛ mɔ̃te lə pɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "levure", base: "levure" }, { word: "fait", ref: "fr-0287" }, { word: "monter", ref: "fr-0516" }, { word: "le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }] }
+  - id: "fr-1557"
+    target: "miel"
+    ipa: "mjɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je mets du miel dans le thé.", ipa: "ʒə mɛ dy mjɛl dɑ̃ lə te", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "du", base: "de" }, { word: "miel", base: "miel" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "thé", ref: "fr-0792" }] }
+      - { target: "Ce miel est très doux.", ipa: "sə mjɛl ɛ tʁɛ du", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "miel", base: "miel" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "doux", ref: "fr-1337" }] }
+  - id: "fr-1558"
+    target: "vinaigre"
+    ipa: "vinɛɡʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ajoute un peu de vinaigre dans la sauce.", ipa: "aʒut œ̃ pø də vinɛɡʁ dɑ̃ la sos", bases: [{ word: "Ajoute", ref: "fr-0796" }, { word: "un", ref: "fr-0208" }, { word: "peu", ref: "fr-0342" }, { word: "de", base: "de" }, { word: "vinaigre", base: "vinaigre" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "sauce", ref: "fr-1480" }] }
+      - { target: "La salade a du vinaigre.", ipa: "la salad a dy vinɛɡʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "salade", ref: "fr-0746" }, { word: "a", ref: "fr-0022" }, { word: "du", base: "de" }, { word: "vinaigre", base: "vinaigre" }] }
+  - id: "fr-1559"
+    target: "thym"
+    ipa: "tɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mets une branche de thym dans la soupe.", ipa: "mɛ yn bʁɑ̃ʃ də tɛ̃ dɑ̃ la sup", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "une", ref: "fr-0545" }, { word: "branche", base: "branche" }, { word: "de", base: "de" }, { word: "thym", base: "thym" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }] }
+      - { target: "Le thym est frais.", ipa: "lə tɛ̃ ɛ fʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "thym", base: "thym" }, { word: "est", ref: "fr-0021" }, { word: "frais", ref: "fr-0753" }] }
+  - id: "fr-1560"
+    target: "persil"
+    ipa: "pɛʁsi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ajoute du persil sur la soupe.", ipa: "aʒut dy pɛʁsi syʁ la sup", bases: [{ word: "Ajoute", ref: "fr-0796" }, { word: "du", base: "de" }, { word: "persil", base: "persil" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }] }
+      - { target: "Le persil est vert.", ipa: "lə pɛʁsi ɛ vɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "persil", base: "persil" }, { word: "est", ref: "fr-0021" }, { word: "vert", ref: "fr-1234" }] }
+  - id: "fr-1561"
+    target: "cannelle"
+    ipa: "kanɛl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il met de la cannelle dans le lait.", ipa: "il mɛ də la kanɛl dɑ̃ lə lɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "cannelle", base: "cannelle" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "lait", ref: "fr-0044" }] }
+      - { target: "La cannelle est douce.", ipa: "la kanɛl ɛ dus", bases: [{ word: "La", ref: "fr-0544" }, { word: "cannelle", base: "cannelle" }, { word: "est", ref: "fr-0021" }, { word: "douce", ref: "fr-1337" }] }
+  - id: "fr-1562"
+    target: "citron"
+    ipa: "sitʁɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mets un peu de citron dans l'eau.", ipa: "mɛ œ̃ pø də sitʁɔ̃ dɑ̃ lo", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "un", ref: "fr-0208" }, { word: "peu", ref: "fr-0342" }, { word: "de", base: "de" }, { word: "citron", base: "citron" }, { word: "dans", ref: "fr-0049" }, { word: "l'eau", base: "eau" }] }
+      - { target: "Le citron est acide.", ipa: "lə sitʁɔ̃ ɛ asid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "citron", base: "citron" }, { word: "est", ref: "fr-0021" }, { word: "acide", base: "acide" }] }
+  - id: "fr-1563"
+    target: "couvercle"
+    ipa: "kuvɛʁkl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mets le couvercle sur la casserole.", ipa: "mɛ lə kuvɛʁkl syʁ la kasʁɔl", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "le", ref: "fr-0543" }, { word: "couvercle", base: "couvercle" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "casserole", ref: "fr-1391" }] }
+      - { target: "Le couvercle est chaud.", ipa: "lə kuvɛʁkl ɛ ʃo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "couvercle", base: "couvercle" }, { word: "est", ref: "fr-0021" }, { word: "chaud", ref: "fr-0419" }] }
+  - id: "fr-1564"
+    target: "gras"
+    ipa: "ɡʁɑ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce fromage est très gras.", ipa: "sə fʁɔmaʒ ɛ tʁɛ ɡʁɑ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "fromage", ref: "fr-0775" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "gras", base: "gras" }] }
+      - { target: "La viande est grasse.", ipa: "la vjɑ̃d ɛ ɡʁɑs", bases: [{ word: "La", ref: "fr-0544" }, { word: "viande", ref: "fr-0782" }, { word: "est", ref: "fr-0021" }, { word: "grasse", base: "gras" }] }
+  - id: "fr-1565"
+    target: "amer"
+    ipa: "amɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le café est amer.", ipa: "lə kafe ɛ amɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }, { word: "est", ref: "fr-0021" }, { word: "amer", base: "amer" }] }
+      - { target: "Ce chocolat est un peu amer.", ipa: "sə ʃɔkɔla ɛ œ̃ pø amɛʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "chocolat", ref: "fr-0790" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "peu", ref: "fr-0342" }, { word: "amer", base: "amer" }] }
+  - id: "fr-1566"
+    target: "fondre"
+    ipa: "fɔ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Fais fondre le beurre dans la poêle.", ipa: "fɛ fɔ̃dʁ lə bœʁ dɑ̃ la pwal", bases: [{ word: "Fais", ref: "fr-0287" }, { word: "fondre", base: "fondre" }, { word: "le", ref: "fr-0543" }, { word: "beurre", ref: "fr-0774" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "poêle", ref: "fr-1547" }] }
+      - { target: "Le chocolat fond dans la bouche.", ipa: "lə ʃɔkɔla fɔ̃ dɑ̃ la buʃ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chocolat", ref: "fr-0790" }, { word: "fond", base: "fondre" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "bouche", ref: "fr-0934" }] }
+  - id: "fr-1567"
+    target: "refroidir"
+    ipa: "ʁəfʁwadiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Laisse refroidir le gâteau.", ipa: "lɛs ʁəfʁwadiʁ lə ɡɑto", bases: [{ word: "Laisse", base: "laisser" }, { word: "refroidir", base: "refroidir" }, { word: "le", ref: "fr-0543" }, { word: "gâteau", ref: "fr-0789" }] }
+      - { target: "Le café refroidit vite.", ipa: "lə kafe ʁəfʁwadi vit", bases: [{ word: "Le", ref: "fr-0543" }, { word: "café", ref: "fr-0793" }, { word: "refroidit", base: "refroidir" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-1568"
+    target: "tiède"
+    ipa: "tjɛd"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'eau est tiède.", ipa: "lo ɛ tjɛd", bases: [{ word: "L'eau", base: "eau" }, { word: "est", ref: "fr-0021" }, { word: "tiède", base: "tiède" }] }
+      - { target: "Mets le lait tiède dans le bol.", ipa: "mɛ lə lɛ tjɛd dɑ̃ lə bɔl", bases: [{ word: "Mets", ref: "fr-0529" }, { word: "le", ref: "fr-0543" }, { word: "lait", ref: "fr-0044" }, { word: "tiède", base: "tiède" }, { word: "dans", ref: "fr-0049" }, { word: "bol", ref: "fr-1548" }] }
+  - id: "fr-1569"
+    target: "saler"
+    ipa: "sale"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sale la soupe, mais pas trop.", ipa: "sal la sup mɛ pa tʁo", bases: [{ word: "Sale", base: "saler" }, { word: "la", ref: "fr-0544" }, { word: "soupe", ref: "fr-0816" }, { word: "mais", ref: "fr-0028" }, { word: "pas", base: "pas" }, { word: "trop", ref: "fr-0344" }] }
+      - { target: "Je sale les pâtes dans l'eau.", ipa: "ʒə sal le pɑt dɑ̃ lo", bases: [{ word: "Je", ref: "fr-0126" }, { word: "sale", base: "saler" }, { word: "les", ref: "fr-0043" }, { word: "pâtes", ref: "fr-1491" }, { word: "dans", ref: "fr-0049" }, { word: "l'eau", base: "eau" }] }
+  - id: "fr-1570"
+    target: "hacher"
+    ipa: "aʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Hache l'oignon très fin.", ipa: "aʃ lɔɲɔ̃ tʁɛ fɛ̃", bases: [{ word: "Hache", base: "hacher" }, { word: "l'oignon", ref: "fr-0747" }, { word: "très", ref: "fr-0031" }, { word: "fin", ref: "fr-1110" }] }
+      - { target: "Je hache le persil.", ipa: "ʒə aʃ lə pɛʁsi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "hache", base: "hacher" }, { word: "le", ref: "fr-0543" }, { word: "persil", ref: "fr-1560" }] }
+  - id: "fr-1571"
+    target: "trancher"
+    ipa: "tʁɑ̃ʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il tranche le pain avec le couteau.", ipa: "il tʁɑ̃ʃ lə pɛ̃ avɛk lə kuto", bases: [{ word: "Il", ref: "fr-0127" }, { word: "tranche", base: "trancher" }, { word: "le", ref: "fr-0543" }, { word: "pain", ref: "fr-0773" }, { word: "avec", ref: "fr-0590" }, { word: "couteau", ref: "fr-0829" }] }
+      - { target: "Tranche le fromage en fines tranches.", ipa: "tʁɑ̃ʃ lə fʁɔmaʒ ɑ̃ fin tʁɑ̃ʃ", bases: [{ word: "Tranche", base: "trancher" }, { word: "le", ref: "fr-0543" }, { word: "fromage", ref: "fr-0775" }, { word: "en", base: "en" }, { word: "fines", ref: "fr-1110" }, { word: "tranches", ref: "fr-0389" }] }
+

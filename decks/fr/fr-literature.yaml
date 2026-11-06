@@ -1,0 +1,344 @@
+schema: 1
+id: "fr-literature"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "literature"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2744"
+    target: "récit"
+    ipa: "ʁesi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce récit est très émouvant.", ipa: "sə ʁesi ɛ tʁɛ emuvɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "récit", base: "récit" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "émouvant", ref: "fr-2382" }] }
+      - { target: "Elle raconte son récit de voyage.", ipa: "ɛl ʁakɔ̃t sɔ̃ ʁesi də vwajaʒ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "raconte", ref: "fr-0525" }, { word: "son", ref: "fr-0138" }, { word: "récit", base: "récit" }, { word: "de", base: "de" }, { word: "voyage", ref: "fr-0867" }] }
+  - id: "fr-2745"
+    target: "conte"
+    ipa: "kɔ̃t"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le conte commence par « il était une fois ».", ipa: "lə kɔ̃t kɔmɑ̃s paʁ il etɛ yn fwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "conte", base: "conte" }, { word: "commence", ref: "fr-0508" }, { word: "par", ref: "fr-0593" }, { word: "il", ref: "fr-0127" }, { word: "était", ref: "fr-0021" }, { word: "une", ref: "fr-0208" }, { word: "fois", ref: "fr-1043" }] }
+      - { target: "Elle lit un conte à ses enfants.", ipa: "ɛl li œ̃ kɔ̃t a se zɑ̃fɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "lit", ref: "fr-0290" }, { word: "un", ref: "fr-0208" }, { word: "conte", base: "conte" }, { word: "à", base: "à" }, { word: "ses", ref: "fr-0138" }, { word: "enfants", base: "enfant" }] }
+  - id: "fr-2746"
+    target: "fable"
+    ipa: "fabl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fable enseigne une leçon.", ipa: "la fabl ɑ̃sɛɲ yn ləsɔ̃", bases: [{ word: "La", ref: "fr-0543" }, { word: "fable", base: "fable" }, { word: "enseigne", base: "enseigner" }, { word: "une", ref: "fr-0208" }, { word: "leçon", ref: "fr-1590" }] }
+      - { target: "Cette fable parle d'un renard.", ipa: "sɛt fabl paʁl dœ̃ ʁənaʁ", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "fable", base: "fable" }, { word: "parle", ref: "fr-0023" }, { word: "d'un", base: "de" }, { word: "renard", ref: "fr-1271" }] }
+  - id: "fr-2747"
+    target: "légende"
+    ipa: "leʒɑ̃d"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une vieille légende.", ipa: "sɛ tyn vjɛj leʒɑ̃d", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0208" }, { word: "vieille", ref: "fr-0109" }, { word: "légende", base: "légende" }] }
+      - { target: "La légende raconte la fondation de la ville.", ipa: "la leʒɑ̃d ʁakɔ̃t la fɔ̃dasjɔ̃ də la vil", bases: [{ word: "La", ref: "fr-0543" }, { word: "légende", base: "légende" }, { word: "raconte", ref: "fr-0525" }, { word: "fondation", ref: "fr-2317" }, { word: "de", base: "de" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-2748"
+    target: "chapitre"
+    ipa: "ʃapitʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le premier chapitre est court.", ipa: "lə pʁəmje ʃapitʁ ɛ kuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "premier", ref: "fr-0905" }, { word: "chapitre", base: "chapitre" }, { word: "est", ref: "fr-0021" }, { word: "court", ref: "fr-0422" }] }
+      - { target: "Nous lisons un chapitre par jour.", ipa: "nu lizɔ̃ œ̃ ʃapitʁ paʁ ʒuʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "lisons", ref: "fr-0290" }, { word: "un", ref: "fr-0208" }, { word: "chapitre", base: "chapitre" }, { word: "par", ref: "fr-0593" }, { word: "jour", ref: "fr-1032" }] }
+  - id: "fr-2749"
+    target: "texte"
+    ipa: "tɛkst"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce texte est difficile à lire.", ipa: "sə tɛkst ɛ difisil a liʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "texte", base: "texte" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }, { word: "à", base: "à" }, { word: "lire", ref: "fr-0290" }] }
+      - { target: "Lisez le texte à voix haute.", ipa: "lize lə tɛkst a vwa o", bases: [{ word: "Lisez", ref: "fr-0290" }, { word: "le", ref: "fr-0543" }, { word: "texte", base: "texte" }, { word: "à", base: "à" }, { word: "voix", base: "voix" }, { word: "haute", ref: "fr-0423" }] }
+  - id: "fr-2750"
+    target: "éditeur"
+    ipa: "editœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'éditeur accepte le manuscrit.", ipa: "lediteœʁ aksɛpt lə manyskʁi", bases: [{ word: "L'éditeur", base: "éditeur" }, { word: "accepte", ref: "fr-2007" }, { word: "le", ref: "fr-0543" }, { word: "manuscrit", base: "manuscrit" }] }
+      - { target: "Ce livre vient d'un petit éditeur.", ipa: "sə livʁ vjɛ̃ dœ̃ pəti editœʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "livre", ref: "fr-1363" }, { word: "vient", ref: "fr-0285" }, { word: "d'un", base: "de" }, { word: "petit", ref: "fr-0411" }, { word: "éditeur", base: "éditeur" }] }
+  - id: "fr-2751"
+    target: "traducteur"
+    ipa: "tʁadyktœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le traducteur change le titre.", ipa: "lə tʁadyktœʁ ʃɑ̃ʒ lə titʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "traducteur", base: "traducteur" }, { word: "change", ref: "fr-0526" }, { word: "titre", ref: "fr-1810" }] }
+      - { target: "Ma sœur est traductrice.", ipa: "ma sœʁ ɛ tʁadyktʁis", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "traductrice", base: "traducteur" }] }
+  - id: "fr-2752"
+    target: "thème"
+    ipa: "tɛm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le thème du livre est l'amitié.", ipa: "lə tɛm dy livʁ ɛ lamitje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "thème", base: "thème" }, { word: "du", base: "de" }, { word: "livre", ref: "fr-1363" }, { word: "est", ref: "fr-0021" }, { word: "l'amitié", ref: "fr-2442" }] }
+      - { target: "Ce thème revient souvent.", ipa: "sə tɛm ʁəvjɛ̃ suvɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "thème", base: "thème" }, { word: "revient", base: "revenir" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-2753"
+    target: "symbole"
+    ipa: "sɛ̃bɔl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La colombe est un symbole de paix.", ipa: "la kɔlɔ̃b ɛ tœ̃ sɛ̃bɔl də pɛ", bases: [{ word: "La", ref: "fr-0543" }, { word: "colombe", base: "colombe" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "symbole", base: "symbole" }, { word: "de", base: "de" }, { word: "paix", ref: "fr-1825" }] }
+      - { target: "Le symbole est clair.", ipa: "lə sɛ̃bɔl ɛ klɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "symbole", base: "symbole" }, { word: "est", ref: "fr-0021" }, { word: "clair", base: "clair" }] }
+  - id: "fr-2754"
+    target: "métaphore"
+    ipa: "metafɔʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette métaphore est belle.", ipa: "sɛt metafɔʁ ɛ bɛl", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "métaphore", base: "métaphore" }, { word: "est", ref: "fr-0021" }, { word: "belle", ref: "fr-0412" }] }
+      - { target: "Il emploie une métaphore pour parler de la mer.", ipa: "il ɑ̃plwa yn metafɔʁ puʁ paʁle də la mɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "emploie", base: "employer" }, { word: "une", ref: "fr-0208" }, { word: "métaphore", base: "métaphore" }, { word: "pour", ref: "fr-0591" }, { word: "parler", ref: "fr-0023" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0543" }, { word: "mer", ref: "fr-1939" }] }
+  - id: "fr-2755"
+    target: "rime"
+    ipa: "ʁim"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les deux vers ont la même rime.", ipa: "le dø vɛʁ ɔ la mɛm ʁim", bases: [{ word: "Les", ref: "fr-0543" }, { word: "deux", ref: "fr-0209" }, { word: "vers", ref: "fr-0594" }, { word: "ont", ref: "fr-0022" }, { word: "la", ref: "fr-0543" }, { word: "même", base: "même" }, { word: "rime", base: "rime" }] }
+      - { target: "Ce poème n'a pas de rime.", ipa: "sə pɔɛm na pa də ʁim", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "poème", ref: "fr-1665" }, { word: "n'a", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "de", base: "de" }, { word: "rime", base: "rime" }] }
+  - id: "fr-2756"
+    target: "strophe"
+    ipa: "stʁɔf"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La première strophe est triste.", ipa: "la pʁəmjɛʁ stʁɔf ɛ tʁist", bases: [{ word: "La", ref: "fr-0543" }, { word: "première", ref: "fr-0905" }, { word: "strophe", base: "strophe" }, { word: "est", ref: "fr-0021" }, { word: "triste", ref: "fr-0430" }] }
+      - { target: "Chaque strophe a quatre vers.", ipa: "ʃak stʁɔf a katʁ vɛʁ", bases: [{ word: "Chaque", ref: "fr-0375" }, { word: "strophe", base: "strophe" }, { word: "a", ref: "fr-0022" }, { word: "quatre", ref: "fr-0211" }, { word: "vers", ref: "fr-0594" }] }
+  - id: "fr-2757"
+    target: "prose"
+    ipa: "pʁoz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce roman est écrit en prose.", ipa: "sə ʁɔmɑ̃ ɛ ekʁi ɑ̃ pʁoz", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "roman", ref: "fr-1664" }, { word: "est", ref: "fr-0021" }, { word: "écrit", ref: "fr-0291" }, { word: "en", base: "en" }, { word: "prose", base: "prose" }] }
+      - { target: "La prose est plus libre que le vers.", ipa: "la pʁoz ɛ ply libʁ kə lə vɛʁ", bases: [{ word: "La", ref: "fr-0543" }, { word: "prose", base: "prose" }, { word: "est", ref: "fr-0021" }, { word: "plus", ref: "fr-0345" }, { word: "libre", ref: "fr-0444" }, { word: "que", base: "que" }, { word: "le", ref: "fr-0543" }, { word: "vers", ref: "fr-0594" }] }
+  - id: "fr-2758"
+    target: "poète"
+    ipa: "pɔɛt"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le poète lit ses vers.", ipa: "lə pɔɛt li se vɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "poète", base: "poète" }, { word: "lit", ref: "fr-0290" }, { word: "ses", ref: "fr-0138" }, { word: "vers", ref: "fr-0594" }] }
+      - { target: "Elle est poète depuis l'enfance.", ipa: "ɛl ɛ pɔɛt dəpɥi lɑ̃fɑ̃s", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "poète", base: "poète" }, { word: "depuis", base: "depuis" }, { word: "l'enfance", base: "enfance" }] }
+  - id: "fr-2759"
+    target: "dramaturge"
+    ipa: "dʁamatyʁʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le dramaturge écrit une pièce.", ipa: "lə dʁamatyʁʒ ekʁi yn pjɛs", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dramaturge", base: "dramaturge" }, { word: "écrit", ref: "fr-0291" }, { word: "une", ref: "fr-0208" }, { word: "pièce", ref: "fr-2784" }] }
+      - { target: "Ce dramaturge est célèbre.", ipa: "sə dʁamatyʁʒ ɛ selɛbʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "dramaturge", base: "dramaturge" }, { word: "est", ref: "fr-0021" }, { word: "célèbre", ref: "fr-2275" }] }
+  - id: "fr-2760"
+    target: "tragédie"
+    ipa: "tʁaʒedi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La tragédie finit mal.", ipa: "la tʁaʒedi fini mal", bases: [{ word: "La", ref: "fr-0543" }, { word: "tragédie", base: "tragédie" }, { word: "finit", ref: "fr-0506" }, { word: "mal", ref: "fr-0340" }] }
+      - { target: "Nous lisons une tragédie de Racine.", ipa: "nu lizɔ̃ yn tʁaʒedi də ʁasin", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "lisons", ref: "fr-0290" }, { word: "une", ref: "fr-0208" }, { word: "tragédie", base: "tragédie" }, { word: "de", base: "de" }, { word: "Racine", base: "Racine" }] }
+  - id: "fr-2761"
+    target: "fiction"
+    ipa: "fiksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime la fiction historique.", ipa: "ʒɛm la fiksjɔ̃ istɔʁik", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "la", ref: "fr-0543" }, { word: "fiction", base: "fiction" }, { word: "historique", base: "historique" }] }
+      - { target: "Ce livre est une fiction.", ipa: "sə livʁ ɛ tyn fiksjɔ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "livre", ref: "fr-1363" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0208" }, { word: "fiction", base: "fiction" }] }
+  - id: "fr-2762"
+    target: "biographie"
+    ipa: "bjɔɡʁafi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette biographie est passionnante.", ipa: "sɛt bjɔɡʁafi ɛ pasjɔnɑ̃t", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "biographie", base: "biographie" }, { word: "est", ref: "fr-0021" }, { word: "passionnante", base: "passionnant" }] }
+      - { target: "Il lit la biographie d'un peintre.", ipa: "il li la bjɔɡʁafi dœ̃ pɛ̃tʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "lit", ref: "fr-0290" }, { word: "la", ref: "fr-0543" }, { word: "biographie", base: "biographie" }, { word: "d'un", base: "de" }, { word: "peintre", base: "peintre" }] }
+  - id: "fr-2763"
+    target: "narrateur"
+    ipa: "naʁatœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le narrateur raconte son enfance.", ipa: "lə naʁatœʁ ʁakɔ̃t sɔ̃n ɑ̃fɑ̃s", bases: [{ word: "Le", ref: "fr-0543" }, { word: "narrateur", base: "narrateur" }, { word: "raconte", ref: "fr-0525" }, { word: "son", ref: "fr-0138" }, { word: "enfance", base: "enfance" }] }
+      - { target: "Ce narrateur est très honnête.", ipa: "sə naʁatœʁ ɛ tʁɛ ɔnɛt", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "narrateur", base: "narrateur" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "honnête", ref: "fr-2450" }] }
+  - id: "fr-2764"
+    target: "préface"
+    ipa: "pʁefas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La préface explique le livre.", ipa: "la pʁefas ɛksplik lə livʁ", bases: [{ word: "La", ref: "fr-0543" }, { word: "préface", base: "préface" }, { word: "explique", base: "expliquer" }, { word: "le", ref: "fr-0543" }, { word: "livre", ref: "fr-1363" }] }
+      - { target: "Lisez la préface avant le roman.", ipa: "lize la pʁefas avɑ̃ lə ʁɔmɑ̃", bases: [{ word: "Lisez", ref: "fr-0290" }, { word: "la", ref: "fr-0543" }, { word: "préface", base: "préface" }, { word: "avant", ref: "fr-0596" }, { word: "le", ref: "fr-0543" }, { word: "roman", ref: "fr-1664" }] }
+  - id: "fr-2765"
+    target: "sommaire"
+    ipa: "sɔmɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le sommaire est à la fin.", ipa: "lə sɔmɛʁ ɛ a la fɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sommaire", base: "sommaire" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0543" }, { word: "fin", ref: "fr-1110" }] }
+      - { target: "Regarde le sommaire du livre.", ipa: "ʁəɡaʁd lə sɔmɛʁ dy livʁ", bases: [{ word: "Regarde", ref: "fr-0293" }, { word: "le", ref: "fr-0543" }, { word: "sommaire", base: "sommaire" }, { word: "du", base: "de" }, { word: "livre", ref: "fr-1363" }] }
+  - id: "fr-2766"
+    target: "sonnet"
+    ipa: "sɔnɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce sonnet est célèbre.", ipa: "sə sɔnɛ ɛ selɛbʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "sonnet", base: "sonnet" }, { word: "est", ref: "fr-0021" }, { word: "célèbre", ref: "fr-2275" }] }
+      - { target: "Le sonnet a quatorze vers.", ipa: "lə sɔnɛ a katɔʁz vɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "sonnet", base: "sonnet" }, { word: "a", ref: "fr-0022" }, { word: "quatorze", ref: "fr-0221" }, { word: "vers", ref: "fr-0594" }] }
+  - id: "fr-2767"
+    target: "relire"
+    ipa: "ʁəliʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je relis le chapitre.", ipa: "ʒə ʁəli lə ʃapitʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "relis", base: "relire" }, { word: "le", ref: "fr-0543" }, { word: "chapitre", ref: "fr-2748" }] }
+      - { target: "Elle relit toujours ses lettres.", ipa: "ɛl ʁəli tuʒuʁ se lɛtʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "relit", base: "relire" }, { word: "toujours", ref: "fr-0327" }, { word: "ses", ref: "fr-0138" }, { word: "lettres", ref: "fr-1972" }] }
+  - id: "fr-2768"
+    target: "résumer"
+    ipa: "ʁezyme"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Résume l'histoire en trois phrases.", ipa: "ʁezym listwaʁ ɑ̃ tʁwa fʁaz", bases: [{ word: "Résume", base: "résumer" }, { word: "l'histoire", ref: "fr-1606" }, { word: "en", base: "en" }, { word: "trois", ref: "fr-0210" }, { word: "phrases", ref: "fr-1621" }] }
+      - { target: "Je résume le livre pour toi.", ipa: "ʒə ʁezym lə livʁ puʁ twa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "résume", base: "résumer" }, { word: "le", ref: "fr-0543" }, { word: "livre", ref: "fr-1363" }, { word: "pour", ref: "fr-0591" }, { word: "toi", ref: "fr-0134" }] }
+  - id: "fr-2769"
+    target: "analyser"
+    ipa: "analize"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous analysons le poème.", ipa: "nu analizɔ̃ lə pɔɛm", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "analysons", base: "analyser" }, { word: "le", ref: "fr-0543" }, { word: "poème", ref: "fr-1665" }] }
+      - { target: "Il analyse la phrase.", ipa: "il analiz la fʁaz", bases: [{ word: "Il", ref: "fr-0127" }, { word: "analyse", base: "analyser" }, { word: "la", ref: "fr-0543" }, { word: "phrase", ref: "fr-1621" }] }
+  - id: "fr-2770"
+    target: "commenter"
+    ipa: "kɔmɑ̃te"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le professeur commente le texte.", ipa: "lə pʁɔfesœʁ kɔmɑ̃t lə tɛkst", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "commente", base: "commenter" }, { word: "texte", ref: "fr-2749" }] }
+      - { target: "Ils commentent le film.", ipa: "il kɔmɑ̃t lə fil", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "commentent", base: "commenter" }, { word: "le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }] }
+  - id: "fr-2771"
+    target: "citer"
+    ipa: "site"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il cite un poème de Hugo.", ipa: "il sit œ̃ pɔɛm də ygo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "cite", base: "citer" }, { word: "un", ref: "fr-0208" }, { word: "poème", ref: "fr-1665" }, { word: "de", base: "de" }, { word: "Hugo", base: "Hugo" }] }
+      - { target: "Citez vos sources.", ipa: "site vo suʁs", bases: [{ word: "Citez", base: "citer" }, { word: "vos", ref: "fr-0140" }, { word: "sources", ref: "fr-1828" }] }
+  - id: "fr-2772"
+    target: "inventer"
+    ipa: "ɛ̃vɑ̃te"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle invente une histoire.", ipa: "ɛl ɛ̃vɑ̃t yn istwaʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "invente", base: "inventer" }, { word: "une", ref: "fr-0208" }, { word: "histoire", ref: "fr-1606" }] }
+      - { target: "Il invente un nouveau jeu.", ipa: "il ɛ̃vɑ̃t œ̃ nuvo ʒø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "invente", base: "inventer" }, { word: "un", ref: "fr-0208" }, { word: "nouveau", ref: "fr-0413" }, { word: "jeu", ref: "fr-1660" }] }
+  - id: "fr-2773"
+    target: "imaginer"
+    ipa: "imaʒine"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'imagine la scène.", ipa: "ʒimaʒin la sɛn", bases: [{ word: "J'imagine", base: "imaginer" }, { word: "la", ref: "fr-0543" }, { word: "scène", ref: "fr-2212" }] }
+      - { target: "Imaginez un monde sans livres.", ipa: "imaʒine œ̃ mɔ̃d sɑ̃ livʁ", bases: [{ word: "Imaginez", base: "imaginer" }, { word: "un", ref: "fr-0208" }, { word: "monde", base: "monde" }, { word: "sans", ref: "fr-0592" }, { word: "livres", ref: "fr-1363" }] }
+  - id: "fr-2774"
+    target: "rédiger"
+    ipa: "ʁedise"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle rédige un rapport.", ipa: "ɛl ʁedig œ̃ ʁapɔʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "rédige", base: "rédiger" }, { word: "un", ref: "fr-0208" }, { word: "rapport", base: "rapport" }] }
+      - { target: "Rédigez votre lettre.", ipa: "ʁedise vɔtʁ lɛtʁ", bases: [{ word: "Rédigez", base: "rédiger" }, { word: "votre", ref: "fr-0140" }, { word: "lettre", ref: "fr-1972" }] }
+

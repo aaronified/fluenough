@@ -1,0 +1,132 @@
+schema: 1
+id: "fr-sports-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2426"
+    target: "Le joueur tire le penalty et marque un but."
+    ipa: "lə ʒwœʁ tiʁ lə penalti e maʁk œ̃ by"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "joueur", ref: "fr-2403" }
+      - { word: "tire", base: "tirer" }
+      - { word: "penalty", ref: "fr-2413" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "marque", ref: "fr-2425" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "but", ref: "fr-2409" }
+    confusables:
+      - { id: "arbitre", ref: "fr-2404", kind: "word" }
+      - { id: "entraineur", ref: "fr-2405", kind: "word" }
+  - id: "fr-2427"
+    target: "L'équipe joue au stade et gagne la victoire."
+    ipa: "lekip ʒu o stad e ɡaɲ la viktwaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'équipe", ref: "fr-1680" }
+      - { word: "joue", ref: "fr-0308" }
+      - { word: "au", base: "à" }
+      - { word: "stade", ref: "fr-0979" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "gagne", ref: "fr-0670" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "victoire", ref: "fr-2410" }
+    confusables:
+      - { id: "defaite", ref: "fr-2411", kind: "word" }
+      - { id: "match", ref: "fr-1679", kind: "word" }
+  - id: "fr-2428"
+    target: "Le champion lève le trophée sur le terrain."
+    ipa: "lə ʃɑ̃pjɔ̃ lɛv lə tʁɔfe syʁ lə teʁɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "champion", ref: "fr-1682" }
+      - { word: "lève", base: "lever" }
+      - { word: "trophée", ref: "fr-2419" }
+      - { word: "sur", ref: "fr-0469" }
+      - { word: "terrain", ref: "fr-2406" }
+    confusables:
+      - { id: "supporter", ref: "fr-2423", kind: "word" }
+      - { id: "maillot", ref: "fr-2420", kind: "word" }
+  - id: "fr-2429"
+    target: "Je nage à la piscine, puis je fais du vélo."
+    ipa: "ʒə naʒ a la pisin pɥi ʒə fɛ dy velo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "nage", ref: "fr-0524" }
+      - { word: "à", base: "à" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "piscine", ref: "fr-0975" }
+      - { word: "puis", ref: "fr-1135" }
+      - { word: "fais", ref: "fr-0287" }
+      - { word: "du", base: "de" }
+      - { word: "vélo", ref: "fr-0860" }
+    confusables:
+      - { id: "natation", ref: "fr-1669", kind: "word" }
+      - { id: "cyclisme", ref: "fr-2415", kind: "word" }
+  - id: "fr-2430"
+    target: "Le tennis demande une raquette et des chaussures de sport."
+    ipa: "lə tenis dəmɑ̃d yn ʁakɛt e de ʃosyʁ də spɔʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "tennis", ref: "fr-1668" }
+      - { word: "demande", ref: "fr-1980" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "raquette", ref: "fr-2416" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "chaussures", ref: "fr-2421" }
+      - { word: "de", base: "de" }
+      - { word: "sport", ref: "fr-0265" }
+    confusables:
+      - { id: "ballon", ref: "fr-1387", kind: "word" }
+      - { id: "gymnase", ref: "fr-2407", kind: "word" }
+  - id: "fr-2431"
+    target: "La course à pied et le marathon sont des sports difficiles."
+    ipa: "la kuʁs a pje e lə maʁatɔ̃ sɔ̃ de spɔʁ difisil"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "course", ref: "fr-2408" }
+      - { word: "à", base: "à" }
+      - { word: "pied", ref: "fr-0930" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "marathon", ref: "fr-2417" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "sports", ref: "fr-0265" }
+      - { word: "difficiles", ref: "fr-0418" }
+    confusables:
+      - { id: "competition", ref: "fr-2418", kind: "word" }
+      - { id: "trophee", ref: "fr-2419", kind: "word" }
+  - id: "fr-2432"
+    target: "L'entraîneur gagne le match avec son équipe."
+    ipa: "lɑ̃tʁɛnœʁ ɡaɲ lə matʃ avɛk sɔ̃ nɛkip"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'entraîneur", ref: "fr-2405" }
+      - { word: "gagne", ref: "fr-0670" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "match", ref: "fr-1679" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "son", ref: "fr-0138" }
+      - { word: "équipe", ref: "fr-1680" }
+    confusables:
+      - { id: "perdre", ref: "fr-1084", kind: "word" }
+      - { id: "score", ref: "fr-2412", kind: "word" }
+

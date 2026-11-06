@@ -1,0 +1,70 @@
+schema: 1
+id: "fr-en-cooking-sentences"
+kind: "layer"
+core: "fr-cooking-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: cooking"
+license: "CC-BY-SA-4.0"
+description: "Ten sentences about cooking, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1572":
+    native: "You cut the onions with the knife."
+    confusables:
+      "bol": { why: "A bowl holds food; it does not cut it." }
+      "passoire": { why: "A colander drains food; it does not cut it." }
+  "fr-1573":
+    native: "The chicken cooks in the oven."
+    confusables:
+      "poele": { why: "A frying pan is used on the hob, not in the oven." }
+      "bol": { why: "A bowl holds food; it is not a cooking place." }
+  "fr-1574":
+    native: "Put the salt and the pepper in the soup."
+    confusables:
+      "miel": { why: "Honey is sweet, not salty." }
+      "citron": { why: "Lemon is sour; the sentence is about salt and pepper." }
+  "fr-1575":
+    native: "Add a pinch of cinnamon to the milk."
+    bases:
+      "de": "of, some"
+    confusables:
+      "levure": { why: "Yeast makes dough rise; it is not a spice." }
+      "thym": { why: "Thyme is an herb, not a warm spice like cinnamon." }
+  "fr-1576":
+    native: "The recipe says to beat the eggs."
+    bases:
+      "dit": "says"
+      "de": "of, some"
+    confusables:
+      "couvercle": { why: "A lid covers a pan; it is not used to beat eggs." }
+      "levure": { why: "Yeast is an ingredient, not a method." }
+  "fr-1577":
+    native: "Let the cake cool before you cut it."
+    bases:
+      "Laisse": "let"
+      "de": "of, some"
+    confusables:
+      "tiede": { why: "Lukewarm describes a temperature, not an action." }
+      "saler": { why: "To salt is to add salt, not to cool food." }
+  "fr-1578":
+    native: "The butter melts in the hot frying pan."
+    confusables:
+      "gras": { why: "Fatty describes food; the sentence says what happens to the butter." }
+      "vinaigre": { why: "Vinegar is a liquid that does not melt." }
+  "fr-1579":
+    native: "The coffee is bitter, but the honey is sweet."
+    confusables:
+      "sucre": { why: "Sugar is sweet, but the sentence contrasts bitter with the honey." }
+      "citron": { why: "Lemon is sour, not bitter." }
+  "fr-1580":
+    native: "I grate the cheese over the hot pasta."
+    confusables:
+      "planche": { why: "A board is where you cut; the sentence is about grating." }
+      "passoire": { why: "A colander drains pasta; it does not grate cheese." }
+  "fr-1581":
+    native: "Boil the water and pour the pasta into the colander."
+    bases:
+      "l'eau": "water"
+    confusables:
+      "louche": { why: "A ladle serves soup; it does not drain pasta." }
+      "bol": { why: "A bowl holds food; the sentence is about boiling and draining." }
