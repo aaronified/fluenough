@@ -796,7 +796,8 @@ units:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
-  - planned: { id: "ja-onomatopoeia", theme: "onomatopoeia", words: 50 }
+  - decks: ["ja-onomatopoeia", "ja-onomatopoeia-sentences", "ja-reading-onomatopoeia", "*"]
+    words: 50
     listening_passages:
       - { id: "sounds-and-feelings", text: { "en": "A friend describes rain, a headache and a smile with sound words: zaazaa, zukizuki, nikoniko" } }
     reading_passages:
