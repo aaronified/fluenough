@@ -571,7 +571,8 @@ units:
       - { id: "plans-for-the-holidays", text: { "en": "Saying what you are going to do and intend to do in the holidays" } }
     reading_passages:
       - { id: "new-year-resolutions", text: { "en": "A list of New Year resolutions" } }
-  - planned: { id: "ja-geography", theme: "geography", words: 40 }
+  - decks: ["ja-geography", "ja-geography-sentences", "ja-reading-geography", "*"]
+    words: 40
     listening_passages:
       - { id: "islands-and-cities", text: { "en": "Naming Japan's main islands, regions and cities" } }
     reading_passages:

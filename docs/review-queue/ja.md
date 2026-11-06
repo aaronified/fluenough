@@ -149,3 +149,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2581 | ja-workplace | Is ホチキス (stapler, from the brand name) the everyday word for a stapler, or is another word more usual? | Haiku builder | 2026-11-06 |
 | ja-2598 | ja-workplace | Is こうじ (construction work) used alone in the examples, or is こうじ中 or a more specific word more natural? | Haiku builder | 2026-11-06 |
 | ja-2601 | ja-workplace | Is そのきかくはひきうけられません (I cannot take on that project) natural, or is another verb used for declining work? | Haiku builder | 2026-11-06 |
+| ja-2631 | ja-geography | Is そん (son, village, the smallest administrative unit) the everyday word for a village, or is むら (mura) more usual in speech? | Haiku builder | 2026-11-06 |
+| ja-2633 | ja-geography | Is とかい (tokai, city or urban area) used alone as the everyday word for 'the city', or is まち (machi) more usual? | Haiku builder | 2026-11-06 |
+| ja-2630 | ja-geography | Is けん (ken) used alone to mean 'prefecture' in speech, or only in place names such as しずおかけん (shizuoka-ken)? | Haiku builder | 2026-11-06 |
+| ja-2639 | ja-geography | Is ちゅうおう (chuuou) used with に as a place noun (ちゅうおうに, in the centre), or is まんなか (mannaka) more natural? | Haiku builder | 2026-11-06 |
+| ja-2666 | ja-geography | Is ほっきょく (hokkyoku) は さむい ところ です natural for 'the North Pole is a cold place', or would another phrase be used? | Haiku builder | 2026-11-06 |
+| unit-level | ja-geography | The example and sentence decks of ja-geography are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| unit-level | ja-geography | Row 5 of the plan's list was く (ku, ward), left out because く is already the hiragana card; ほっきょく takes its place. Should the ward noun 区 (ku) come back in a later unit? | Haiku builder | 2026-11-06 |
