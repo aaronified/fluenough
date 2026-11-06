@@ -29,6 +29,10 @@ extension PlacementCredit on AppState {
   /// - The cards of the other decks in [placed] get a review in each skill
   ///   the learner has switched on.
   ///
+  /// With [only], the word decks are credited in those modes alone (Find
+  /// my level credits each skill up to its own placed level); the script
+  /// decks follow [standings] whatever [only] says.
+  ///
   /// The course's `PlacedReview` choice decides whether these reviews are
   /// ever asked for again.
   ///
@@ -41,6 +45,7 @@ extension PlacementCredit on AppState {
     required Set<String> placed,
     Map<String, ScriptStanding> standings = const <String, ScriptStanding>{},
     String? native,
+    Set<DrillMode>? only,
   }) {
     final wanted = <String, List<_Credit>>{};
     void want(Card card, String deckId, DrillMode mode, String? script) {
@@ -82,7 +87,9 @@ extension PlacementCredit on AppState {
           speechAvailable: speaks,
           siblings: siblingsOf(card),
         )) {
-          if (on.contains(mode)) want(card, id, mode, null);
+          if (on.contains(mode) && (only?.contains(mode) ?? true)) {
+            want(card, id, mode, null);
+          }
         }
       }
     }
