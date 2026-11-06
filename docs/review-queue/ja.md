@@ -135,3 +135,11 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2384 | ja-journey | Is ちこくしないでください (please do not be late) natural, or is another phrase more usual? | Haiku builder | 2026-11-06 |
 | unit-level | ja-journey (ja-2361 to ja-2415) | The path word count is 55: the 59 words of the plan minus the four flagged doubtful words (ていしゃ, のりこし, おうふく, かたみち). Is the count right? | Haiku builder | 2026-11-06 |
 | unit-level | ja-journey | The nine place nouns (airfield, inn, guesthouse, left-luggage office, bus stop, taxi rank, rest area, expressway, famous place) have へ, から and まで rows in ja-grammar-place-particles: are those forms natural? | Haiku builder | 2026-11-06 |
+| unit-level | ja-nature (ja-2434 to ja-2473) | The path word count is 40. The plan list had 56 candidates: ね and か are left out (single kana that are particles), and the tree word き is left out because き is already the hiragana card ja-0007. あじさい (hydrangea) takes its place. Is that right, and should the tree word get its own card later (as 木)? | Haiku builder | 2026-11-06 |
+| ja-2454 | ja-nature | Is あじさい (hydrangea) a natural choice here, a shrub of the rainy season, as a replacement for the tree word? | Haiku builder | 2026-11-06 |
+| ja-2441 | ja-nature | Is かわら (a dry riverbank of stones) the everyday word for a riverbank, or is かわぎし more usual? | Haiku builder | 2026-11-06 |
+| ja-2455 | ja-nature | Is すぎ (Japanese cedar) used alone in the examples as the tree's name, or is すぎのき more natural? | Haiku builder | 2026-11-06 |
+| ja-2460 | ja-nature | Is こけ (moss) with the adjective しめった (damp) natural in こけはしめったところにあります, or is another adjective used? | Haiku builder | 2026-11-06 |
+| ja-2466 | ja-nature | くも is also the word for cloud (the same sound): should a homograph note say so? | Haiku builder | 2026-11-06 |
+| ja-2465 | ja-nature | Is はえ (fly) with はえています (grows, of moss) natural in the sentence いわにこけがはえています? | Haiku builder | 2026-11-06 |
+| unit-level | ja-nature | The nine place nouns of ja-nature (desert, valley, waterfall, lake, riverbank, beach, sandy beach, cliff) have へ, から and まで rows in ja-grammar-place-particles: are those forms natural? | Haiku builder | 2026-11-06 |
