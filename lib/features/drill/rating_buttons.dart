@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../../core/grading/self_grade.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
@@ -120,9 +121,15 @@ class _RatingButton extends StatelessWidget {
       SelfGrade.good => (scheme.primary, scheme.onPrimary),
       SelfGrade.easy => (scheme.tertiaryContainer, scheme.onTertiaryContainer),
     };
+    // A rating finishes the card: confirm, felt after it is recorded.
+    final haptics = AppScope.maybeRead(context)?.haptics;
     return FilledButton(
-      onPressed: onPressed,
+      onPressed: () {
+        onPressed();
+        haptics?.confirm();
+      },
       style: FilledButton.styleFrom(
+        enableFeedback: AppScope.maybeRead(context)?.haptics.ownFeedback,
         backgroundColor: bg,
         foregroundColor: fg,
         minimumSize: const Size(0, 64),

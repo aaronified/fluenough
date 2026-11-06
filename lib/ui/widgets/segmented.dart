@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../theme.dart';
 
 /// One choice in a [Segmented] group.
@@ -59,6 +60,7 @@ class Segmented<T> extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final n = options.length;
+    final haptics = AppScope.maybeRead(context)?.haptics;
     return Semantics(
       container: true,
       explicitChildNodes: true,
@@ -80,7 +82,13 @@ class Segmented<T> extends StatelessWidget {
                   height: height,
                   onTap: onSelected == null
                       ? null
-                      : () => onSelected!(options[i].value),
+                      : () {
+                          final value = options[i].value;
+                          onSelected!(value);
+                          // A pick is a tick; the one already chosen is not
+                          // a change.
+                          if (value != selected) haptics?.select();
+                        },
                 ),
               ),
             ],
@@ -167,6 +175,8 @@ class _Segment<T> extends StatelessWidget {
         child: Material(
           type: MaterialType.transparency,
           child: InkWell(
+            enableFeedback:
+                AppScope.maybeRead(context)?.haptics.takesOverFeedback != true,
             onTap: onTap,
             child: Padding(
               padding: const EdgeInsetsDirectional.symmetric(

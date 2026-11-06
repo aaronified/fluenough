@@ -27,6 +27,7 @@ import 'app/report_mail.dart';
 import 'app/startup_marks.dart';
 import 'app/system_settings.dart';
 import 'app/wallpaper_colours.dart';
+import 'core/haptics/system_haptic_engine.dart';
 import 'core/decks/deck_fetch.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
@@ -110,6 +111,7 @@ Future<void> main() async {
     networkProbe: SystemNetworkProbe(),
     systemSettings: const ChannelSystemSettings(),
     wallpaperSource: const ChannelWallpaperSource(),
+    hapticEngine: const SystemHapticEngine(),
     reminderScheduler: reminderScheduler,
     reports: MailReportSender(
       address: AppLinks.feedbackEmail,

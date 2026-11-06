@@ -53,7 +53,10 @@ class _PinPageState extends State<PinPage> {
       _entered = '';
       _wrong = !right;
     });
-    if (!right) return;
+    if (!right) {
+      state.haptics.error();
+      return;
+    }
     state.selectProfile(widget.profileId);
     AppNavigator.backToShell(context, tab: ShellTab.today);
   }

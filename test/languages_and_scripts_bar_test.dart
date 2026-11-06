@@ -17,6 +17,7 @@ import 'package:fluenough/app/shell_tab.dart';
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/decks/deck_fetch.dart';
 import 'package:fluenough/core/decks/deck_index.dart' show decksBeforeReady;
+import 'package:fluenough/core/haptics/haptic.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/decks/course_card.dart';
 import 'package:fluenough/features/decks/decks_page.dart';
@@ -33,14 +34,14 @@ import 'package:fluenough/ui/widgets/report_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/semantics.dart'
     show CustomSemanticsAction, SemanticsAction;
-import 'package:flutter/services.dart'
-    show LogicalKeyboardKey, SystemChannels, rootBundle;
+import 'package:flutter/services.dart' show LogicalKeyboardKey, rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/deck_remote.dart';
 import 'support/harness.dart';
 import 'support/hindi_courses.dart';
 import 'support/picker.dart';
+import 'support/recording_haptic_engine.dart';
 import 'support/languages_and_scripts_shared.dart';
 
 // From language_picker_page_test.dart.
@@ -311,15 +312,19 @@ Future<AppState> aro({String? choice}) async {
 }
 
 /// A learner of [languages], in that order, with no reviews.
-AppState learnerLanguageBar(List<String> languages, {String? choice}) =>
-    AppState.test(
-      settings: SettingsNotifier(
-        spokenLanguages: const <String>['en'],
-        learningLanguages: languages,
-        learningChosen: true,
-        languageChoice: choice,
-      ),
-    );
+AppState learnerLanguageBar(
+  List<String> languages, {
+  String? choice,
+  HapticEngine hapticEngine = const NullHapticEngine(),
+}) => AppState.test(
+  hapticEngine: hapticEngine,
+  settings: SettingsNotifier(
+    spokenLanguages: const <String>['en'],
+    learningLanguages: languages,
+    learningChosen: true,
+    languageChoice: choice,
+  ),
+);
 
 /// Eight languages, as the mockup's edge mask draws them.
 const List<String> eight = <String>[
@@ -1235,24 +1240,13 @@ void main() {
 
     testWidgets('each language passed is a detent with a tick', (tester) async {
       usePhone(tester);
-      final state = learnerLanguageBar(eight, choice: eight.first);
+      final engine = RecordingHapticEngine();
+      final state = learnerLanguageBar(
+        eight,
+        choice: eight.first,
+        hapticEngine: engine,
+      );
       await pumpApp(tester, state: state);
-      final ticks = <Object?>[];
-      tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
-        SystemChannels.platform,
-        (call) async {
-          if (call.method == 'HapticFeedback.vibrate') {
-            ticks.add(call.arguments);
-          }
-          return null;
-        },
-      );
-      addTearDown(
-        () => tester.binding.defaultBinaryMessenger.setMockMethodCallHandler(
-          SystemChannels.platform,
-          null,
-        ),
-      );
       final finger = await tester.startGesture(tester.getCenter(zone()));
       for (var i = 0; i < 3; i++) {
         await finger.moveBy(const Offset(-44, 0));
@@ -1260,8 +1254,11 @@ void main() {
       }
       await finger.up();
       await tester.pumpAndSettle(const Duration(seconds: 2));
-      expect(ticks, everyElement('HapticFeedbackType.selectionClick'));
-      expect(ticks, hasLength(3));
+      expect(engine.played, <Haptic>[
+        Haptic.select,
+        Haptic.select,
+        Haptic.select,
+      ]);
       expect(codesOf(state).indexOf(state.shownLanguage!), 3);
     });
 
