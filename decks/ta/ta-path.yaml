@@ -120,7 +120,8 @@ units:
       - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word pairs with their readings" } }
-  - planned: { id: "ta-questions", theme: "questions", words: 11 }
+  - decks: ["ta-questions", "ta-questions-sentences", "*"]
+    words: 11
     listening_passages:
       - { id: "yes-or-no", text: { "en": "Short questions answered with yes and no" } }
     reading_passages:
