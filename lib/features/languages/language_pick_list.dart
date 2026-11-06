@@ -195,155 +195,164 @@ class _LanguagePickListState extends State<LanguagePickList> {
     final needs = view.needsApp;
     final haptics = AppScope.maybeRead(context)?.haptics;
     final (levels, lineLabel) = _line(context, view);
-    // hint-ok: shows text
-    return InkWell(
-      key: ValueKey<String>(
-        popular ? 'add-popular-${view.code}' : 'add-${view.code}',
-      ),
-      enableFeedback: haptics?.takesOverFeedback != true,
-      onTap: () {
-        if (needs == null) {
-          widget.onPick(view);
-        } else {
-          openAppUpdate(context);
-        }
-        haptics?.tap();
-      },
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: <Widget>[
-          ConstrainedBox(
-            constraints: const BoxConstraints(minHeight: 56),
-            child: Row(
-              children: <Widget>[
-                ExcludeSemantics(
-                  child: Container(
-                    width: 36,
-                    height: 36,
-                    alignment: Alignment.center,
-                    decoration: BoxDecoration(
-                      color: needs != null
-                          ? scheme.surfaceContainerHighest
-                          : added
-                          ? scheme.primary
-                          : scheme.secondaryContainer,
-                      shape: BoxShape.circle,
-                    ),
-                    child: Text(
-                      view.glyph,
-                      textScaler: TextScaler.noScaling,
-                      style: TextStyle(
-                        fontSize: 16,
-                        height: 1,
-                        color: needs != null
-                            ? scheme.onSurfaceVariant
-                            : added
-                            ? scheme.onPrimary
-                            : scheme.onSecondaryContainer,
+    // One button for a screen reader, reading the names, the line and the
+    // verification together.
+    return MergeSemantics(
+      child: Semantics(
+        button: true,
+        // hint-ok: shows text
+        child: InkWell(
+          key: ValueKey<String>(
+            popular ? 'add-popular-${view.code}' : 'add-${view.code}',
+          ),
+          enableFeedback: haptics?.takesOverFeedback != true,
+          onTap: () {
+            if (needs == null) {
+              widget.onPick(view);
+            } else {
+              openAppUpdate(context);
+            }
+            haptics?.tap();
+          },
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: <Widget>[
+              ConstrainedBox(
+                constraints: const BoxConstraints(minHeight: 56),
+                child: Row(
+                  children: <Widget>[
+                    ExcludeSemantics(
+                      child: Container(
+                        width: 36,
+                        height: 36,
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          color: needs != null
+                              ? scheme.surfaceContainerHighest
+                              : added
+                              ? scheme.primary
+                              : scheme.secondaryContainer,
+                          shape: BoxShape.circle,
+                        ),
+                        child: Text(
+                          view.glyph,
+                          textScaler: TextScaler.noScaling,
+                          style: TextStyle(
+                            fontSize: 16,
+                            height: 1,
+                            color: needs != null
+                                ? scheme.onSurfaceVariant
+                                : added
+                                ? scheme.onPrimary
+                                : scheme.onSecondaryContainer,
+                          ),
+                        ),
                       ),
                     ),
-                  ),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Text(
+                            view.name,
+                            style: theme.textTheme.titleMedium!.copyWith(
+                              fontWeight: FontWeight.w600,
+                              color: needs != null
+                                  ? scheme.onSurfaceVariant
+                                  : null,
+                            ),
+                          ),
+                          if (needs != null)
+                            Text(
+                              l10n.appUpdateNeeded(needs),
+                              style: theme.textTheme.bodyMedium!.copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                          if (own.isNotEmpty && own != view.name)
+                            Text(
+                              own,
+                              style: theme.textTheme.bodyMedium!.copyWith(
+                                color: scheme.onSurfaceVariant,
+                              ),
+                            ),
+                        ],
+                      ),
+                    ),
+                    if (needs != null)
                       Text(
-                        view.name,
-                        style: theme.textTheme.titleMedium!.copyWith(
-                          fontWeight: FontWeight.w600,
-                          color: needs != null ? scheme.onSurfaceVariant : null,
+                        l10n.appUpdateAction,
+                        style: theme.textTheme.labelLarge!.copyWith(
+                          color: scheme.primary,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      )
+                    else if (added)
+                      Container(
+                        padding: const EdgeInsetsDirectional.symmetric(
+                          horizontal: 10,
+                          vertical: 2,
+                        ),
+                        decoration: BoxDecoration(
+                          color: scheme.primaryContainer,
+                          borderRadius: BorderRadius.circular(AppRadii.control),
+                        ),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.min,
+                          children: <Widget>[
+                            Icon(
+                              Icons.check,
+                              size: 16,
+                              color: scheme.onPrimaryContainer,
+                            ),
+                            const SizedBox(width: 4),
+                            Text(
+                              l10n.languagesAdded,
+                              style: theme.textTheme.labelMedium!.copyWith(
+                                color: scheme.onPrimaryContainer,
+                                fontWeight: FontWeight.w700,
+                              ),
+                            ),
+                          ],
+                        ),
+                      )
+                    else if (!view.canLearn)
+                      Text(
+                        l10n.languagesNoCourse,
+                        style: theme.textTheme.labelMedium!.copyWith(
+                          color: scheme.onSurfaceVariant,
                         ),
                       ),
-                      if (needs != null)
-                        Text(
-                          l10n.appUpdateNeeded(needs),
-                          style: theme.textTheme.bodyMedium!.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                      if (own.isNotEmpty && own != view.name)
-                        Text(
-                          own,
-                          style: theme.textTheme.bodyMedium!.copyWith(
-                            color: scheme.onSurfaceVariant,
-                          ),
-                        ),
-                    ],
-                  ),
+                    const SizedBox(width: 4),
+                    Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
+                  ],
                 ),
-                if (needs != null)
-                  Text(
-                    l10n.appUpdateAction,
-                    style: theme.textTheme.labelLarge!.copyWith(
-                      color: scheme.primary,
-                      fontWeight: FontWeight.w700,
-                    ),
-                  )
-                else if (added)
-                  Container(
-                    padding: const EdgeInsetsDirectional.symmetric(
-                      horizontal: 10,
-                      vertical: 2,
-                    ),
-                    decoration: BoxDecoration(
-                      color: scheme.primaryContainer,
-                      borderRadius: BorderRadius.circular(AppRadii.control),
-                    ),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        Icon(
-                          Icons.check,
-                          size: 16,
-                          color: scheme.onPrimaryContainer,
-                        ),
-                        const SizedBox(width: 4),
-                        Text(
-                          l10n.languagesAdded,
-                          style: theme.textTheme.labelMedium!.copyWith(
-                            color: scheme.onPrimaryContainer,
-                            fontWeight: FontWeight.w700,
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                else if (!view.canLearn)
-                  Text(
-                    l10n.languagesNoCourse,
-                    style: theme.textTheme.labelMedium!.copyWith(
-                      color: scheme.onSurfaceVariant,
-                    ),
-                  ),
-                const SizedBox(width: 4),
-                Icon(Icons.chevron_right, color: scheme.onSurfaceVariant),
-              ],
-            ),
+              ),
+              // The two markers, under the names (the glyph's 36 dp and its gap
+              // indent them): the course's line, the one new state of which is
+              // the empty line, and whether native speakers have checked it.
+              Padding(
+                padding: const EdgeInsetsDirectional.only(
+                  start: 48,
+                  top: 2,
+                  bottom: 10,
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    CourseLine(levels: levels, label: lineLabel),
+                    // A notation has no native speakers to have checked it.
+                    if (!view.language.isNotation) ...<Widget>[
+                      const SizedBox(height: 6),
+                      VerificationMark(state: view.language.verification),
+                    ],
+                  ],
+                ),
+              ),
+            ],
           ),
-          // The two markers, under the names (the glyph's 36 dp and its gap
-          // indent them): the course's line, the one new state of which is
-          // the empty line, and whether native speakers have checked it.
-          Padding(
-            padding: const EdgeInsetsDirectional.only(
-              start: 48,
-              top: 2,
-              bottom: 10,
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                CourseLine(levels: levels, label: lineLabel),
-                // A notation has no native speakers to have checked it.
-                if (!view.language.isNotation) ...<Widget>[
-                  const SizedBox(height: 6),
-                  VerificationMark(state: view.language.verification),
-                ],
-              ],
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }

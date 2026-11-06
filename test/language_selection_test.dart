@@ -179,7 +179,6 @@ languages:
 
       testWidgets('each row carries the A1 A2 B1 line and the verification '
           'flag as icon and word; a notation has no flag', (tester) async {
-        final semantics = tester.ensureSemantics();
         await pumpAdd(tester, mode: mode);
         final text = l10n(tester);
         for (final (code, word) in <(String, String)>[
@@ -201,11 +200,16 @@ languages:
             findsOneWidget,
           );
         }
+        // A screen reader reads the state in one sentence, which the icon and
+        // the text leave out.
         expect(
-          find.bySemanticsLabel(
-            text.languagesVerifiedLabel(
-              text.languagesVerifiedSome.toLowerCase(),
-            ),
+          find.byWidgetPredicate(
+            (w) =>
+                w is Semantics &&
+                w.properties.label ==
+                    text.languagesVerifiedLabel(
+                      text.languagesVerifiedSome.toLowerCase(),
+                    ),
           ),
           findsWidgets,
         );
@@ -231,7 +235,6 @@ languages:
           findsOneWidget,
         );
         expect(tester.takeException(), isNull);
-        semantics.dispose();
       });
 
       testWidgets('the key is one scrolling row, edge masked, starting at '
