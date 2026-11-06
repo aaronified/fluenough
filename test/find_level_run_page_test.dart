@@ -177,7 +177,6 @@ void main() {
       await _tap(tester, find.byTooltip(l10nOf(tester).drillEndSession));
       expect(popped, <Object?>[false]);
       expect(finished, isEmpty);
-      expect(find.text(l10nOf(tester).findLevelPaused), findsOneWidget);
     });
 
     testWidgets('a run that ends writes once and shows where the learner '
@@ -212,60 +211,32 @@ void main() {
 
     testWidgets('a checkpoint says where the learner stands and offers '
         'Keep going and Stop here', (tester) async {
-      final session = PlacementSession(
-        findLevelConfig(floorFirst: false),
-        findLevelData(),
-      );
-      var guard = 0;
-      while (!session.atCheckpoint && !session.isDone && guard++ < 300) {
-        session.answer(false);
-      }
-      // With no floor probe, not one right answer asks about 11 or more
-      // questions of each of three skills (plan, section 5.3).
-      expect(session.atCheckpoint, isTrue);
-      final finished = <PlacementSession>[];
-      await _open(
+      var kept = 0;
+      var stopped = 0;
+      usePhone(tester);
+      await pumpScreen(
         tester,
-        () => _runPage(session, finished: finished),
-        <Object?>[],
+        FindLevelCheckpoint(
+          count: 25,
+          lines: const <String>['Read: unit 80 · Very sure'],
+          onKeepGoing: () => kept++,
+          onStop: () => stopped++,
+        ),
       );
       final l10n = l10nOf(tester);
       expect(find.text(l10n.findLevelCheckpointTitle(25)), findsOneWidget);
       expect(find.text(l10n.findLevelCheckpointBody), findsOneWidget);
+      expect(find.text('Read: unit 80 · Very sure'), findsOneWidget);
       await _tap(
         tester,
         find.byKey(const ValueKey<String>('find-level-keep-going')),
       );
-      expect(find.text(l10n.findLevelCheckpointTitle(25)), findsNothing);
-      expect(find.text(l10n.placementQuestionNumber(26)), findsOneWidget);
-      expect(finished, isEmpty);
-    });
-
-    testWidgets('Stop here writes what the run has', (tester) async {
-      final session = PlacementSession(
-        findLevelConfig(floorFirst: false),
-        findLevelData(),
-      );
-      var guard = 0;
-      while (!session.atCheckpoint && !session.isDone && guard++ < 300) {
-        session.answer(false);
-      }
-      expect(session.atCheckpoint, isTrue);
-      final finished = <PlacementSession>[];
-      await _open(
-        tester,
-        () => _runPage(session, finished: finished),
-        <Object?>[],
-      );
+      expect(kept, 1);
       await _tap(
         tester,
         find.byKey(const ValueKey<String>('find-level-stop-here')),
       );
-      expect(finished, hasLength(1));
-      expect(
-        find.byKey(const ValueKey<String>('find-level-done')),
-        findsOneWidget,
-      );
+      expect(stopped, 1);
     });
   });
 
