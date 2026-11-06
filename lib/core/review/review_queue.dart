@@ -22,6 +22,10 @@ class ReviewQueue {
   /// The newest file version this app reads.
   static const int version = 1;
 
+  /// The most characters of a question: longer is cut, with an ellipsis,
+  /// as `tools/review_queue.py` cuts it.
+  static const int maxLength = 400;
+
   /// The most a card's questions may be, so that a long queue never fills a
   /// screen.
   static const int maxPerCard = 3;
@@ -54,7 +58,7 @@ class ReviewQueue {
               if (row is Map &&
                   row['question'] is String &&
                   (row['question'] as String).trim().isNotEmpty)
-                (row['question'] as String).trim(),
+                _cut((row['question'] as String).trim()),
           ];
           if (questions.isNotEmpty) {
             byCard[id] = questions.take(maxPerCard).toList(growable: false);
@@ -66,6 +70,17 @@ class ReviewQueue {
     } on FormatException {
       return empty;
     }
+  }
+
+  static String _cut(String question) {
+    if (question.length <= maxLength) return question;
+    var end = maxLength - 1;
+    // Never between the halves of a surrogate pair.
+    if (question.codeUnitAt(end - 1) >= 0xD800 &&
+        question.codeUnitAt(end - 1) <= 0xDBFF) {
+      end--;
+    }
+    return '${question.substring(0, end).trimRight()}\u2026';
   }
 
   /// What the builder asks about [card] of [language], in the order written.

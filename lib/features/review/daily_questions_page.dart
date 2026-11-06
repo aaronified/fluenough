@@ -77,14 +77,15 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
     _readBuilderQuestions(state);
   }
 
-  /// Reads the deck builders' questions again, and asks them first if the
-  /// reviewer has not started: what is asked does not shift under a thumb.
+  /// Reads the deck builders' questions again. A card already on screen
+  /// never changes under the reviewer's thumb: when there is one, the new
+  /// questions are used the next time the screen opens (the file is kept).
+  /// Only a screen with nothing to ask is worked out again.
   Future<void> _readBuilderQuestions(AppState state) async {
     final downloads = state.deckDownloads;
     if (downloads == null || !state.reviewing.on) return;
-    if (!await downloads.refreshReviewQueue() || !mounted || _past.isNotEmpty) {
-      return;
-    }
+    if (!await downloads.refreshReviewQueue() || !mounted) return;
+    if (_queue!.isNotEmpty || _past.isNotEmpty) return;
     setState(() => _queue = dailyQuestionsOf(state));
   }
 

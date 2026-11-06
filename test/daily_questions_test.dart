@@ -5,11 +5,16 @@
 //
 // The words are made up (AGENTS.md: tests check behaviour).
 
+import 'dart:async';
 import 'dart:convert';
 import 'dart:io';
 
 import 'package:fluenough/app/app_info.dart';
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/deck_downloads.dart';
+import 'package:fluenough/app/downloaded_decks.dart';
+import 'package:fluenough/core/decks/deck_fetch.dart';
 import 'package:fluenough/app/links.dart';
 import 'package:fluenough/app/mail_share.dart';
 import 'package:fluenough/app/reviewing.dart';
@@ -31,6 +36,7 @@ import 'package:fluenough/features/review/daily_questions_page.dart';
 import 'package:flutter/material.dart' hide Card;
 import 'package:flutter_test/flutter_test.dart';
 
+import 'support/deck_remote.dart';
 import 'support/harness.dart';
 import 'support/review_fixture.dart';
 
@@ -848,6 +854,173 @@ cards:
         }),
       );
       expect(queue.forCard('xx', 'xx-0002'), <String>['1', '2', '3']);
+    });
+
+    test('a question longer than 400 characters is cut with an ellipsis', () {
+      final long = 'x' * 900;
+      final queue = ReviewQueue.parse(
+        file(<String, Object?>{
+          'xx': rows(<String>[long, 'short']),
+        }),
+      );
+      final got = queue.forCard('xx', 'xx-0002');
+      expect(got.first.length, ReviewQueue.maxLength);
+      expect(got.first.endsWith('…'), isTrue);
+      expect(got.last, 'short');
+    });
+
+    group('reading the file from GitHub', () {
+      final feed = file(<String, Object?>{
+        'xx': rows(<String>['Is it m?']),
+      });
+      var now = DateTime(2026, 11, 6, 9);
+      late FakeDeckRemote remote;
+      late MemoryDownloadedDecks phone;
+
+      Future<DeckDownloads> open({
+        Duration timeout = const Duration(seconds: 5),
+      }) async {
+        final downloads = DeckDownloads(
+          fetcher: remote,
+          files: phone,
+          clock: () => now,
+          reviewQueueTimeout: timeout,
+        );
+        await downloads.open();
+        addTearDown(downloads.dispose);
+        return downloads;
+      }
+
+      setUp(() {
+        now = DateTime(2026, 11, 6, 9);
+        remote = FakeDeckRemote(<String, String>{
+          'decks/review-queue.json': feed,
+        });
+        phone = MemoryDownloadedDecks();
+      });
+
+      test('it is read, kept, and used again with no network', () async {
+        final first = await open();
+        expect(await first.refreshReviewQueue(), isTrue);
+        expect(first.reviewQueue.forCard('xx', 'xx-0002'), <String>[
+          'Is it m?',
+        ]);
+        remote.failAll = FetchFailure.offline;
+        final later = await open();
+        expect(later.reviewQueue.forCard('xx', 'xx-0002'), <String>[
+          'Is it m?',
+        ]);
+      });
+
+      test('with automatic checks off nothing is asked, until a manual '
+          'one', () async {
+        final downloads = await open();
+        await downloads.setChecksAutomatically(false);
+        expect(await downloads.refreshReviewQueue(), isFalse);
+        expect(remote.asked, isEmpty);
+        expect(downloads.reviewQueue.isEmpty, isTrue);
+        expect(await downloads.refreshReviewQueue(manual: true), isTrue);
+        expect(remote.asked, <String>['decks/review-queue.json']);
+      });
+
+      test('it is asked at most once a day', () async {
+        final downloads = await open();
+        expect(await downloads.refreshReviewQueue(), isTrue);
+        now = now.add(const Duration(hours: 23));
+        expect(await downloads.refreshReviewQueue(), isFalse);
+        expect(remote.asked, hasLength(1));
+        // The time of the last read is kept with the file.
+        expect(await (await open()).refreshReviewQueue(), isFalse);
+        expect(remote.asked, hasLength(1));
+        now = now.add(const Duration(hours: 2));
+        expect(await downloads.refreshReviewQueue(), isTrue);
+        expect(remote.asked, hasLength(2));
+      });
+
+      test(
+        'offline it tries once, waits an hour, and keeps the copy',
+        () async {
+          final downloads = await open();
+          expect(await downloads.refreshReviewQueue(), isTrue);
+          now = now.add(const Duration(days: 2));
+          remote.failAll = FetchFailure.offline;
+          expect(await downloads.refreshReviewQueue(), isFalse);
+          expect(remote.asked, hasLength(2));
+          expect(await downloads.refreshReviewQueue(), isFalse);
+          expect(remote.asked, hasLength(2));
+          expect(downloads.reviewQueue.has('xx', 'xx-0002'), isTrue);
+          now = now.add(const Duration(minutes: 61));
+          remote.failAll = null;
+          expect(await downloads.refreshReviewQueue(), isTrue);
+        },
+      );
+
+      test(
+        'a fetch that hangs, as through retry waits, is given up on',
+        () async {
+          remote.gate = Completer<void>();
+          final downloads = await open(
+            timeout: const Duration(milliseconds: 20),
+          );
+          expect(await downloads.refreshReviewQueue(), isFalse);
+          remote.gate!.complete();
+        },
+      );
+
+      testWidgets('a card on screen does not change when the file arrives; '
+          'the next open asks the listed card first, with its note', (
+        tester,
+      ) async {
+        usePhone(tester);
+        remote.gate = Completer<void>();
+        remote.files['decks/review-queue.json'] = file(<String, Object?>{
+          'te': <String, Object?>{
+            'cards': <String, Object?>{
+              plainCard: <Object?>[
+                <String, Object?>{'question': 'Is the gender right?'},
+              ],
+            },
+          },
+        });
+        final downloads = DeckDownloads(
+          fetcher: remote,
+          files: phone,
+          clock: () => now,
+        );
+        await downloads.open();
+        final state = AppState.test(
+          decks: MemoryDeckSource(reviewCourse()),
+          deckDownloads: downloads,
+          settings:
+              SettingsNotifier(
+                  spokenLanguages: const <String>['en', 'te'],
+                  learningLanguages: const <String>['te'],
+                  learningChosen: true,
+                )
+                ..reviewLanguages = const <String>{'te'}
+                ..scriptsRead = const <String, bool>{'en': true, 'te': true},
+        );
+        await state.load();
+        state.reviewing.turnOn();
+        await pumpScreen(tester, const DailyQuestionsPage(), state: state);
+        final l10n = l10nOf(tester);
+        final first = find.text(l10n.reviewQuestionMeaning('విధవ (vidhava)'));
+        expect(first, findsOneWidget);
+        remote.gate!.complete();
+        await tester.pumpAndSettle();
+        expect(first, findsOneWidget);
+        expect(find.text(l10n.reviewBuilderQuestion), findsNothing);
+        expect(downloads.reviewQueue.has('te', plainCard), isTrue);
+
+        await tester.pumpWidget(const SizedBox());
+        await pumpScreen(tester, const DailyQuestionsPage(), state: state);
+        expect(
+          find.text(l10n.reviewQuestionMeaning('అమ్మ (amma)')),
+          findsOneWidget,
+        );
+        expect(find.text(l10n.reviewBuilderQuestion), findsOneWidget);
+        expect(find.text('Is the gender right?'), findsOneWidget);
+      });
     });
 
     final decks = <Deck>[
