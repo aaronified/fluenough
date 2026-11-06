@@ -623,7 +623,8 @@ units:
       - { id: "kanji-in-the-news", text: { "en": "Hearing the news words whose kanji are taught: country, city, company, government" } }
     reading_passages:
       - { id: "simple-headlines", text: { "en": "Simple headlines in kanji and kana" } }
-  - planned: { id: "ja-travel", theme: "travel", words: 55 }
+  - decks: ["ja-travel", "ja-travel-sentences", "ja-reading-travel", "*"]
+    words: 55
     listening_passages:
       - { id: "ryokan-booking", text: { "en": "Booking a room at a traditional inn over the phone" } }
     reading_passages:
