@@ -61,3 +61,8 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1895 | ja-hobbies | きょく (a piece of music) in the sense of a song or tune: is it natural in a hobbies card? | Haiku builder | 2026-11-06 |
 | unit-level | ja-hobbies | Only 29 of the 50 planned hobbies words were fresh: the path count is set to 29. Is that right? | Haiku builder | 2026-11-06 |
 | unit-level | ja-hobbies | The example and sentence decks of ja-hobbies are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-1934 | ja-music | ならす (to sound, to ring) is used here for ringing a phone: is でんわを ならします natural, or is another verb used? | Haiku builder | 2026-11-06 |
+| ja-1935 | ja-music | Is ひびく (to resonate, echo) the natural word for a voice or sound that echoes? | Haiku builder | 2026-11-06 |
+| ja-1941 | ja-music | ひく (to play a stringed or keyed instrument): is it right for the koto and the piano, and not for the flute? | Haiku builder | 2026-11-06 |
+| unit-level | ja-music | Only 14 of the 40 planned music words were fresh: the path count is set to 14. Is that right? | Haiku builder | 2026-11-06 |
+| unit-level | ja-music | The example and sentence decks of ja-music are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
