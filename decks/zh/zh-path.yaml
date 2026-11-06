@@ -929,11 +929,13 @@ units:
       - { id: "news-reader", text: { "en": "A news reader's formal words beside their everyday ones" } }
     reading_passages:
       - { id: "official-notice", text: { "en": "A short official notice in the written style" } }
-  - planned: { id: "zh-society", theme: "society", words: 50 }
+  - decks: ["zh-society", "zh-society-sentences", "zh-reading-society", "*"]
+    words: 50
     listening_passages:
       - { id: "city-and-village", text: { "en": "Residents talk about moving from a village to a city" } }
     reading_passages:
       - { id: "survey-results", text: { "en": "The results of a short survey on work and life" } }
+      - { id: "village-letter", text: { "en": "A letter from a village family about a son who works in the city" } }
   - planned: { id: "zh-university", theme: "university", words: 50 }
     listening_passages:
       - { id: "choosing-a-course", text: { "en": "Students talk about which course to choose" } }
