@@ -359,12 +359,14 @@ units:
       - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
-  - planned: { id: "fr-clothes", theme: "clothes", words: 35 }
+  - decks: ["fr-clothes", "fr-clothes-sentences", "fr-reading-clothes", "*"]
+    words: 35
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "shop-offer-sign", text: { "en": "A clothes shop's sign with its offers" } }
-  - planned: { id: "fr-animals", theme: "animals", words: 35 }
+  - decks: ["fr-animals", "fr-animals-sentences", "fr-reading-animals", "*"]
+    words: 35
     listening_passages:
       - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
     reading_passages:
