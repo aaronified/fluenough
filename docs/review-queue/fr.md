@@ -48,3 +48,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1454 | fr-shopping (A2) | File is given as "queue": is "faire la queue" the better everyday phrase to teach beside it? | Haiku builder | 2026-11-06 |
 | fr-1460 | fr-shopping (A2) | "Je paie avec ma carte, pas en espèces." is it natural, or do people say "par carte" more often? | Haiku builder | 2026-11-06 |
 | unit-level | fr-shopping (A2) | Pain, lait and fruit overlap with fr-food and fr-groceries: should the sentences that use them stay here? | Haiku builder | 2026-11-06 |
+| fr-1497 | fr-eating-out (A2) | "Le steak est saignant." gives rare for the steak: is saignant the natural word a French waiter uses, or is "à point" more usual for medium? | Haiku builder | 2026-11-06 |
+| fr-1502 | fr-eating-out (A2) | "Il y a un service de dix pour cent." is it natural, or do bills say "service compris" more often than a percentage? | Haiku builder | 2026-11-06 |
+| fr-1503 | fr-eating-out (A2) | "Il y a une allergie dans cette sauce ?" is it the natural way to ask about an allergy, or should the card teach "Il y a du gluten dans cette sauce ?"? | Haiku builder | 2026-11-06 |
+| fr-1506 | fr-eating-out (A2) | "Le sorbet est à la fraise." is the à la phrase natural for a flavour, or do menus say "sorbet fraise"? | Haiku builder | 2026-11-06 |
+| fr-1507 | fr-eating-out (A2) | "Le poulet est à l'ail." is à l'ail the usual way to say with garlic on a menu? | Haiku builder | 2026-11-06 |
+| fr-1490 | fr-eating-out (A2) | Frites is glossed as "chips" in the layer: is "fries" the better English word for a learner from the app's English layer? | Haiku builder | 2026-11-06 |
+| unit-level | fr-eating-out (A2) | Pain, poisson, fromage, beurre, poulet and pommes are taught here as well as in fr-food: should the sentences that use them stay in this unit? | Haiku builder | 2026-11-06 |

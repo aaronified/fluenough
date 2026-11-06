@@ -399,7 +399,8 @@ units:
       - { id: "give-it-to-me", text: { "en": "Asking someone to pass, give and show things" } }
     reading_passages:
       - { id: "short-requests", text: { "en": "Short written requests that use le, la, lui and leur" } }
-  - planned: { id: "fr-eating-out", theme: "eating-out", words: 40 }
+  - decks: ["fr-eating-out", "fr-eating-out-sentences", "fr-reading-eating-out", "*"]
+    words: 40
     listening_passages:
       - { id: "booking-a-table", text: { "en": "Booking a table and ordering" } }
     reading_passages:

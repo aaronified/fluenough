@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-eating-out"
+name: "Reading: eating out"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about eating out: a restaurant bill with a note about the service, and a note to the waiter asking for a table. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-restaurant-bill"
+    title: "A restaurant bill and a tip"
+    theme: "eating-out"
+    sentences:
+      - text: "Addition : deux menus, une carafe d'eau, un dessert."
+      - text: "Total : quarante-deux euros."
+      - text: "Service compris. Un pourboire est possible."
+      - text: "Merci de votre visite !"
+    questions:
+      - id: "fr-1526"
+        prompt: { en: "How many menus were ordered?" }
+        options:
+          - { en: "One" }
+          - { en: "Two" }
+          - { en: "Four" }
+        answer: 2
+      - id: "fr-1527"
+        prompt: { en: "What is the total?" }
+        options:
+          - { en: "Twenty-four euros" }
+          - { en: "Forty-two euros" }
+          - { en: "Forty euros" }
+        answer: 2
+      - id: "fr-1528"
+        prompt: { en: "Is the service included?" }
+        options:
+          - { en: "Yes" }
+          - { en: "No" }
+          - { en: "Only for drinks" }
+        answer: 1
+  - id: "fr-a-table-request"
+    title: "A note to the waiter"
+    theme: "eating-out"
+    sentences:
+      - text: "Bonjour, nous sommes trois."
+      - text: "Nous voudrions une table près de la fenêtre."
+      - text: "Une personne est végétarienne."
+      - text: "Pour le dessert, nous prenons une glace."
+    questions:
+      - id: "fr-1529"
+        prompt: { en: "How many people are coming?" }
+        options:
+          - { en: "Two" }
+          - { en: "Three" }
+          - { en: "Four" }
+        answer: 2
+      - id: "fr-1530"
+        prompt: { en: "Where do they want to sit?" }
+        options:
+          - { en: "On the terrace" }
+          - { en: "Near the window" }
+          - { en: "At the bar" }
+        answer: 2
+      - id: "fr-1531"
+        prompt: { en: "What is one person?" }
+        options:
+          - { en: "Vegetarian" }
+          - { en: "Allergic" }
+          - { en: "Late" }
+        answer: 1
