@@ -634,7 +634,8 @@ units:
       - { id: "i-lost-my-wallet", text: { "en": "Saying what went wrong, what you tried and what you got ready" } }
     reading_passages:
       - { id: "trip-checklist", text: { "en": "A checklist of things to do before a trip" } }
-  - planned: { id: "ja-services", theme: "services", words: 45 }
+  - decks: ["ja-services", "ja-services-sentences", "ja-reading-services", "*"]
+    words: 45
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:

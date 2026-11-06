@@ -177,3 +177,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2886 | ja-news | いちめん also means all over, as in いちめんの ゆき (snow all over): should a homograph note say so beside 一面 (front page)? | Haiku builder | 2026-11-06 |
 | unit-level | ja-news | The example and sentence decks of ja-news are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
 | ja-2933 | travel | Is りょうがえ or こうかん the word a learner needs for changing money? | Haiku builder | 2026-11-06 |
+| ja-3007 | services | Is あずけいれ (a deposit into a bank account) the natural word, or should the bank's own term stand? | Haiku builder | 2026-11-06 |
