@@ -1,0 +1,20 @@
+schema: 1
+id: "ta-about-me-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN" , icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0116"
+    target: "நான் சென்னையில் இருக்கிறேன்."
+    reading: "nāṉ ceṉṉaiyil irukkiṟēṉ."
+    ipa: "naːn senːaijil iɾukkiɾeːn."
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சென்னையில்", base: "சென்னை", reading: "ceṉṉai" }, { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }]
+  - id: "ta-0117"
+    target: "நண்பன் இங்கே இருக்கிறான்."
+    reading: "naṇpaṉ iṅkē irukkiṟāṉ."
+    ipa: "naɳpan iŋkeː iɾukkiɾaːn."
+    pos: "phrase"
+    bases: [{ word: "நண்பன்", ref: "ta-0113" }, { word: "இங்கே", ref: "ta-0112" }, { word: "இருக்கிறான்", base: "இரு", reading: "iru" }]
