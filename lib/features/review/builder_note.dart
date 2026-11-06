@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../../ui/theme.dart';
 
 /// What the deck's builder could not settle about a card and asks the
 /// reviewer (docs/review-queue/README.md, 2026-11-06): a labelled note on a
@@ -21,7 +22,7 @@ class BuilderNote extends StatelessWidget {
       child: DecoratedBox(
         decoration: BoxDecoration(
           color: scheme.tertiaryContainer,
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: BorderRadius.circular(AppRadii.field),
         ),
         child: Padding(
           padding: const EdgeInsetsDirectional.all(12),
