@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'assurance_model.dart';
 import 'generated_question.dart';
 
 // How guessable a pick is (wiki/Plan-Placement-V2.md, "Guess-proof
@@ -120,23 +121,45 @@ bool rightIsCognate(GeneratedQuestion question) {
 }
 
 /// Whether a pick has a cue that lets it be guessed by what it shows (plan
-/// section 13, point 4): its spelling, the shape or length of its options, a
-/// cognate. Such a question counts for nothing in the credit posterior.
+/// section 13, points 4 and 13): the right option's shape is its own, its
+/// spelling, its length, a cognate; or it is a pair. Such a question counts
+/// for nothing in the credit posterior.
 bool hasCue(GeneratedQuestion question) =>
     question.mode == PlacementAnswerMode.pick &&
-    !question.optionsAreAudio &&
-    (leaksBySimilarity(question) ||
-        optionsDifferInShape(question) ||
-        rightIsLengthOutlier(question) ||
-        rightIsCognate(question));
+    (creditBaseOf(question) ?? 0) >= 1;
 
 /// The base guess a question gives the credit posterior: null where its
-/// kind's own holds, 1 for a pick with a cue (no evidence), else `1/k`.
+/// kind's own holds, 1 for a pick with a cue or a pair (no evidence), else
+/// `1/(k - m)`, where m is the number of wrong options whose shape is unique
+/// (a guesser rules those out).
 double? creditBaseOf(GeneratedQuestion question) {
   if (question.mode != PlacementAnswerMode.pick ||
       question.options.length < 2) {
     return null;
   }
-  if (hasCue(question)) return 1;
-  return 1 / question.options.length;
+  if (question.request.kind == PlacementQuestionKind.pair ||
+      question.optionsAreAudio) {
+    return 1;
+  }
+  if (leaksBySimilarity(question) ||
+      rightIsLengthOutlier(question) ||
+      rightIsCognate(question)) {
+    return 1;
+  }
+  final right = question.correctIndex;
+  final shapes = <String>[for (final o in question.options) optionShape(o)];
+  var unique = 0;
+  var rightUnique = false;
+  for (final (i, shape) in shapes.indexed) {
+    final alone = shapes.where((x) => x == shape).length == 1;
+    if (!alone) continue;
+    if (i == right) {
+      rightUnique = true;
+    } else {
+      unique++;
+    }
+  }
+  if (rightUnique) return 1;
+  final k = question.options.length;
+  return 1 / (k - unique);
 }

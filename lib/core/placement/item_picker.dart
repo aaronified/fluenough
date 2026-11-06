@@ -253,6 +253,7 @@ class PlacementItemPicker {
     bool relaxAsked = false,
     Set<String> exclude = const <String>{},
     String? lure,
+    bool matchShape = false,
   }) {
     final random = seededRandom(seed, answer.id);
     final shown = <String>{show(answer)};
@@ -273,7 +274,8 @@ class PlacementItemPicker {
         (relaxAsked || !asked.contains(c.id)) &&
         !sameMeaning(answer, c) &&
         !c.meanings.any((m) => blocked.contains(foldMeaning(m))) &&
-        !shown.contains(show(c));
+        !shown.contains(show(c)) &&
+        (!matchShape || optionShape(show(c)) == optionShape(show(answer)));
     final last = data.deckCount - 1;
     // With a [lure] (the text the learner is shown as the prompt) the wrong
     // options must look as much like it as the right one does: a pool of

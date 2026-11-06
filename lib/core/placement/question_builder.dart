@@ -191,6 +191,23 @@ class QuestionBuilder implements QuestionSource {
     ];
   }
 
+  /// The ranges of a request: a probe or a top-up draws from the band of its
+  /// class, `(l_(k-1), l_k]`, widening downward only inside it (plan section
+  /// 13, point 13); any other question as [_ranges] says.
+  List<List<int>> _rangesFor(_Ctx ctx) {
+    final role = ctx.request.role;
+    if (role != PlacementQuestionRole.probe &&
+        role != PlacementQuestionRole.topUp) {
+      return _ranges(ctx.request.deck);
+    }
+    final band = PlacementLevels(data.deckCount).bandOf(ctx.request.deck);
+    final at = ctx.request.deck.clamp(band.from, band.to);
+    return <List<int>>[
+      <int>[at],
+      <int>[for (var i = band.from; i <= at; i++) i],
+    ];
+  }
+
   bool _eligible(Card card, Set<String> asked) =>
       isAskable(card) &&
       !data.stableCardIds.contains(card.id) &&
@@ -488,7 +505,7 @@ class QuestionBuilder implements QuestionSource {
     } else {
       item = _item(
         ctx,
-        _ranges(ctx.request.deck),
+        _rangesFor(ctx),
         keep: (c, d) =>
             isWordCard(c) &&
             (!short || c.target.runes.length <= 6) &&
@@ -1611,10 +1628,7 @@ class QuestionBuilder implements QuestionSource {
   QuestionOutcome _tilesWord(_Ctx ctx, {bool short = true}) {
     final item = _item(
       ctx,
-      _ranges(
-        ctx.request.deck,
-        around: ctx.request.role == PlacementQuestionRole.probe,
-      ),
+      _rangesFor(ctx),
       keep: (c, d) =>
           isWordCard(c) &&
           c.wordCount == 1 &&

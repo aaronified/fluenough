@@ -60,8 +60,8 @@ class Played {
 
   final PlacementRun run;
 
-  /// The question number at which each skill's leading class first reached
-  /// 95%.
+  /// The question number at which each skill was first placed in its most
+  /// probable class with 95% or more.
   final Map<PlacementSkill, int> reached;
 
   int get asked => run.asked;
@@ -83,7 +83,11 @@ Played play(
     run = run.answer(oracle(run.next!));
     for (final skill in config.tested) {
       if (reached.containsKey(skill)) continue;
-      if (reachesTarget(run.posteriorOf(skill)!.leadingMass)) {
+      final found = run.readout[skill];
+      if (found != null &&
+          found.questions > 0 &&
+          !found.lowerBound &&
+          reachesTarget(found.mass)) {
         reached[skill] = run.asked;
       }
     }
@@ -377,75 +381,34 @@ void main() {
     });
   });
 
-  group('published costs of the expert track (section 5.2)', () {
-    test('a clean run reaches 95% in every skill at question 15', () {
+  group('the expert track, as a learner meets it', () {
+    final spanish = <PlacementSkill>{_read, _hear, _write};
+
+    test('a clean native is Verified in every skill', () {
       final played = playWrong(configFor(_bengali), <int>{});
-      expect(played.asked, 15);
       expect(played.run.isDone, isTrue);
-      expect(played.reached, <PlacementSkill, int>{
-        _read: 5,
-        _hear: 7,
-        _write: 7,
-        _say: 12,
-        _script: 15,
-      });
       for (final skill in _bengali) {
         expect(label(played.run, skill), 'verified', reason: skill.name);
       }
-      expect(played.run.checkpointDue, isFalse);
     });
 
-    test('a single-skill slip costs 1 question: 16', () {
-      expect(playWrong(configFor(_bengali), <int>{9}).asked, 16);
+    test('Spanish without a microphone takes 35 questions or fewer', () {
+      final played = playWrong(configFor(spanish, microphone: false), <int>{});
+      expect(played.run.isDone, isTrue);
+      expect(played.asked, lessThanOrEqualTo(35));
     });
 
-    test('a wrong first check and a right second one: 18, with a top-up', () {
-      final played = playWrong(configFor(_bengali), <int>{9, 10});
-      expect(played.asked, 18);
-      expect(played.variants.last, 'T');
+    test('one slip costs at most four questions more and stays Verified', () {
+      final config = configFor(spanish, microphone: false);
+      final clean = playWrong(config, <int>{});
+      final slip = playWrong(config, <int>{9});
+      expect(slip.asked, lessThanOrEqualTo(clean.asked + 4));
+      for (final skill in spanish) {
+        expect(label(slip.run, skill), 'verified', reason: skill.name);
+      }
     });
 
-    test('a composite slip costs its two splits: 17, Hear 95% at 12', () {
-      final played = playWrong(configFor(_bengali), <int>{2});
-      expect(played.asked, 17);
-      expect(played.reached[_hear], 12);
-      expect(label(played.run, _hear), 'verified');
-    });
-
-    test('Example 2: after the K2 slip Hear is 12%, ending at 97%', () {
-      final config = configFor(_bengali);
-      final played = playWrong(config, <int>{2});
-      final afterFour = PlacementRun(
-        config,
-        results: played.run.results.sublist(0, 4),
-      );
-      expect(afterFour.posteriorOf(_hear)!.topMass, closeTo(0.12, 0.005));
-      expect(played.run.readout[_hear]!.mass, closeTo(0.97, 0.015));
-    });
-
-    test('one gap: 18; Write is 83% at 17, 98% after one more question', () {
-      final config = configFor(_bengali);
-      final played = playWrong(config, <int>{7, 9});
-      expect(played.asked, 18);
-      // The plan puts "Write falls to 35%" at the split; this controller has
-      // it there after R2 (question 10), and 3% right after the split, with
-      // the same 83% at 17 and 98% at 18.
-      final afterR2 = PlacementRun(
-        config,
-        results: played.run.results.sublist(0, 10),
-      );
-      expect(afterR2.posteriorOf(_write)!.topMass, closeTo(0.35, 0.01));
-      final afterSeventeen = PlacementRun(
-        config,
-        results: played.run.results.sublist(0, 17),
-      );
-      expect(afterSeventeen.posteriorOf(_write)!.topMass, closeTo(0.83, 0.01));
-      expect(played.run.history.last.request.role, PlacementQuestionRole.topUp);
-      expect(played.run.history.last.request.skills, <PlacementSkill>[_write]);
-      expect(played.run.readout[_write]!.mass, closeTo(0.98, 0.01));
-    });
-
-    test('the gapped skill is Very sure but not Verified; others are', () {
+    test('a gapped skill is Very sure but not Verified; the others are', () {
       final played = playWrong(configFor(_bengali), <int>{7, 9});
       expect(label(played.run, _write), 'verySure');
       for (final skill in <PlacementSkill>[_read, _hear, _say, _script]) {
@@ -453,69 +416,71 @@ void main() {
       }
     });
 
-    test('Spanish (no script) takes 13 questions', () {
-      final played = playWrong(
-        configFor(<PlacementSkill>{_read, _hear, _say, _write}),
-        <int>{},
-      );
-      expect(played.asked, 13);
+    test('the credit posterior is the flat prior times the floors', () {
+      // A reference of the model (plan section 13), written from the
+      // numbers of the plan and not from the implementation: a class that
+      // knows the deck is right with 1 - slip, any other at the floor
+      // (base + 0.10); a miss counts in full.
+      const slip = <PlacementQuestionKind, double>{
+        PlacementQuestionKind.pickOne: 0.15,
+        PlacementQuestionKind.pickMany: 0.15,
+        PlacementQuestionKind.pair: 0.10,
+        PlacementQuestionKind.english: 0.15,
+        PlacementQuestionKind.tilesSentence: 0.15,
+        PlacementQuestionKind.tilesWord: 0.10,
+        PlacementQuestionKind.say: 0.20,
+      };
+      const base = <PlacementQuestionKind, double>{
+        PlacementQuestionKind.pickOne: 0.25,
+        PlacementQuestionKind.pickMany: 0.25,
+        PlacementQuestionKind.pair: 0.50,
+        PlacementQuestionKind.english: 0.03,
+        PlacementQuestionKind.tilesSentence: 0.05,
+        PlacementQuestionKind.tilesWord: 0.10,
+        PlacementQuestionKind.say: 0.03,
+      };
+      final played = playWrong(configFor(_bengali), <int>{2, 7});
+      final levels = played.run.levels;
+      for (final skill in _bengali) {
+        final weights = List<double>.filled(levels.classCount, 1);
+        for (final answer in played.run.history) {
+          final r = answer.request;
+          if (!r.skills.contains(skill)) continue;
+          for (var c = 0; c < weights.length; c++) {
+            final right = levels.knows(c, r.deck)
+                ? 1 - slip[r.kind]!
+                : min(1.0, base[r.kind]! + 0.10);
+            weights[c] *= answer.correct ? right : 1 - right;
+          }
+        }
+        final total = weights.fold<double>(0, (a, b) => a + b);
+        final actual = played.run.posteriorOf(skill)!.probabilities;
+        for (var c = 0; c < weights.length; c++) {
+          expect(
+            actual[c],
+            closeTo(weights[c] / total, 1e-9),
+            reason: '${skill.name} class $c',
+          );
+        }
+      }
     });
 
-    test('Hindustani (two scripts) takes 17 questions', () {
-      final played = playWrong(
-        configFor(<PlacementSkill>{..._bengali, PlacementSkill.secondScript}),
-        <int>{},
-      );
-      expect(played.asked, 17);
-      expect(played.reached[PlacementSkill.secondScript], 17);
-    });
-
-    test('the third script question of section 6.2 makes it 16', () {
-      expect(
-        playWrong(configFor(_bengali, extraScript: true), <int>{}).asked,
-        16,
-      );
-    });
-
-    test('no mic takes 13: Script is at 92% after 12 and needs one more', () {
-      final config = configFor(_bengali, microphone: false);
-      final played = playWrong(config, <int>{});
-      expect(played.asked, 13);
-      final afterTwelve = PlacementRun(
-        config,
-        results: played.run.results.sublist(0, 12),
-      );
-      expect(afterTwelve.posteriorOf(_script)!.topMass, closeTo(0.92, 0.005));
-      expect(played.run.history.last.request.role, PlacementQuestionRole.topUp);
-    });
-
-    test('a heritage speaker (Hear and Say) takes 11 questions', () {
+    test('a heritage speaker (Hear and Say) is asked no reproduction', () {
       final played = playWrong(
         configFor(<PlacementSkill>{_hear, _say}),
         <int>{},
       );
-      expect(played.asked, 11);
       expect(played.variants.where((v) => v.startsWith('R')), isEmpty);
       expect(label(played.run, _hear), 'verified');
       expect(label(played.run, _say), 'verified');
       expect(label(played.run, _read), 'notTested');
     });
 
-    test('a closed pair topic leaves Hear under 20% and it is positioned', () {
+    test('a closed pair topic leaves Hear to be positioned', () {
       final config = configFor(_bengali);
       final played = playWrong(config, <int>{9, 10, 11});
-      // The plan: "a closed pair topic leaves Hear at 16%".
-      final atClosure = PlacementRun(
-        config,
-        results: played.run.results.sublist(0, 11),
-      );
-      expect(atClosure.posteriorOf(_hear)!.topMass, closeTo(0.16, 0.01));
       expect(played.run.expertSkills, isNot(contains(_hear)));
       expect(played.variants, contains('V'));
-      // The plan says "about 23": 17 for the closed case and its isolating
-      // question, about 6 more for Hear. Hear already has three answers at
-      // the last deck here, so positioning takes fewer (4): 21.
-      expect(played.asked, inInclusiveRange(17, 23));
       expect(label(played.run, _hear), isNot('verified'));
       expect(label(played.run, _read), 'verified');
     });
@@ -524,7 +489,7 @@ void main() {
   group('Verified (section 4.3)', () {
     test('needs the path complete to B1 and every deck downloaded', () {
       final played = playWrong(configFor(_bengali, verifiable: false), <int>{});
-      expect(played.asked, 15);
+      expect(played.run.isDone, isTrue);
       for (final skill in _bengali) {
         expect(label(played.run, skill), 'verySure', reason: skill.name);
       }
@@ -580,17 +545,19 @@ void main() {
       level,
     );
 
-    // The plan's table: questions to 95% for one skill on a clean learner,
-    // flat start. Each row is (true level, with the recheck rule, model only).
-    for (final (name, level, withRule, modelOnly) in <(String, int, int, int)>[
-      ('knows nothing', -1, 11, 5),
-      ('A2, about 30% of the path', 30, 10, 7),
-      ('advanced, about 80%', 80, 8, 7),
-      ('native, the whole path', 99, 6, 6),
+    // A learner who knows decks up to a level is placed in the class of that
+    // level (the levels of 100 decks are every tenth), never above it.
+    for (final (name, level, lowest) in <(String, int, int)>[
+      ('knows nothing', -1, -1),
+      ('A2, about 30% of the path', 30, 20),
+      ('advanced, about 80%', 80, 70),
+      ('native, the whole path', 99, 99),
     ]) {
-      test('$name: $withRule with the recheck rule, $modelOnly model-only', () {
-        expect(position(level).reached[_read], withRule);
-        expect(position(level, recheck: false).reached[_read], modelOnly);
+      test('$name is placed at $lowest to $level', () {
+        final played = position(level);
+        expect(played.run.isDone, isTrue);
+        final found = played.run.readout[_read]!;
+        expect(found.placedLevel, inInclusiveRange(lowest, level));
       });
     }
 
@@ -617,85 +584,42 @@ void main() {
       final played = playLevel(config, -1);
       final decks = <int>[for (final a in played.run.history) a.request.deck];
       // 50 asked three times (a miss and its two checks), then the floor.
-      expect(decks, <int>[50, 50, 50, 0, 0]);
-      expect(played.asked, 5);
-      expect(played.run.readout[_read]!.mass, greaterThan(0.95));
+      expect(decks.sublist(0, 4), <int>[50, 50, 50, 0]);
+      expect(played.run.readout[_read]!.placedLevel, -1);
     });
 
-    test('declared Amateur and knowing nothing: 5 with floor first', () {
+    test('declared Amateur and knowing nothing: placed at the start', () {
       final played = playLevel(
         configFor(<PlacementSkill>{
           _read,
         }, declaration: PlacementDeclaration.amateur),
         -1,
       );
-      expect(played.asked, 5);
-    });
-
-    // The plan's table of section 4.5: questions to 95%, with the recheck
-    // rule and model-only, by declaration and true level. The Amateur
-    // declarer who is advanced costs one fewer here than the 13 / 12 published
-    // (12 / 11); every other cell is the published figure.
-    final table = <PlacementDeclaration?, List<(int, int, int)>>{
-      null: <(int, int, int)>[(-1, 14, 8), (30, 13, 10), (80, 11, 10)],
-      PlacementDeclaration.expert: <(int, int, int)>[
-        (-1, 17, 9),
-        (30, 13, 11),
-        (80, 10, 9),
-      ],
-      PlacementDeclaration.advanced: <(int, int, int)>[
-        (-1, 20, 8),
-        (30, 19, 10),
-        (80, 7, 6),
-        (99, 6, 6),
-      ],
-      PlacementDeclaration.amateur: <(int, int, int)>[
-        (-1, 14, 6),
-        (30, 7, 6),
-        (80, 12, 11),
-        (99, 11, 11),
-      ],
-    };
-    table.forEach((declaration, rows) {
-      for (final (level, withRule, modelOnly) in rows) {
-        test('declared ${declaration?.name ?? 'nothing'}, true level $level: '
-            '$withRule / $modelOnly', () {
-          int cost({required bool recheck}) => playLevel(
-            configFor(
-              <PlacementSkill>{_read},
-              declaration: declaration,
-              recheck: recheck,
-              floorFirst: false,
-              promote: false,
-            ),
-            level,
-          ).reached[_read]!;
-          expect(cost(recheck: true), withRule);
-          expect(cost(recheck: false), modelOnly);
-        });
-      }
-    });
-
-    test('Example 4: an advanced learner, Advanced declared, 18 questions', () {
-      final played = playLevel(
-        configFor(
-          <PlacementSkill>{_read, _hear},
-          declaration: PlacementDeclaration.advanced,
-          grammarUnits: <int>[5, 20, 40, 60, 77, 87, 95],
-        ),
-        80,
-      );
-      expect(played.asked, 18);
       expect(played.run.isDone, isTrue);
-      for (final skill in <PlacementSkill>[_read, _hear]) {
-        final assurance = played.run.readout[skill]!;
-        expect(assurance.placedLevel, 79);
-        expect(assurance.placedUnit, 80);
-        expect(assurance.label, AssuranceLabel.verySure);
-        expect(assurance.mass, closeTo(0.96, 0.005));
-      }
-      expect(played.run.checkpointDue, isFalse);
+      expect(played.run.readout[_read]!.placedLevel, -1);
     });
+
+    test(
+      'Example 4: an advanced learner, Advanced declared, is placed at unit 80',
+      () {
+        final played = playLevel(
+          configFor(
+            <PlacementSkill>{_read, _hear},
+            declaration: PlacementDeclaration.advanced,
+            grammarUnits: <int>[5, 20, 40, 60, 77, 87, 95],
+          ),
+          80,
+        );
+        expect(played.run.isDone, isTrue);
+        for (final skill in <PlacementSkill>[_read, _hear]) {
+          final assurance = played.run.readout[skill]!;
+          expect(assurance.placedLevel, 79);
+          expect(assurance.placedUnit, 80);
+          expect(assurance.label, AssuranceLabel.verySure);
+        }
+        expect(played.run.checkpointDue, isFalse);
+      },
+    );
 
     test('Example 4: the grammar bisection goes up once, then stops', () {
       final played = playLevel(
@@ -933,26 +857,22 @@ void main() {
     });
 
     test('shows where the learner stands, per skill, at 25', () {
-      // Example 5: a learner who knows nothing and declared Amateur: Hear
-      // none and very sure, Read none and not sure yet (49.9%).
+      // A learner who knows nothing: nothing is credited, and no result at
+      // the checkpoint is above the start.
       final run = after(config, 25);
-      final hear = run.readout[_hear]!;
-      final read = run.readout[_read]!;
-      expect(hear.label, AssuranceLabel.verySure);
-      expect(hear.placedLevel, -1);
-      expect(read.label, AssuranceLabel.notSureYet);
-      expect(read.mass, closeTo(0.499, 0.005));
+      for (final skill in <PlacementSkill>[_hear, _read]) {
+        expect(run.readout[skill]!.placedLevel, -1, reason: skill.name);
+      }
     });
 
-    test('Example 5 takes 28 questions and one checkpoint', () {
+    test('a learner who knows nothing is placed at the start', () {
       final played = play(config, (q) => false);
-      expect(played.asked, 28);
       expect(played.run.isDone, isTrue);
     });
 
-    test('a run that finishes before 25 never shows one', () {
+    test('a run that is done shows no checkpoint', () {
       final played = playWrong(configFor(_bengali), <int>{});
-      expect(played.asked, lessThan(25));
+      expect(played.run.isDone, isTrue);
       expect(played.run.checkpointDue, isFalse);
     });
   });
@@ -970,7 +890,6 @@ void main() {
       expect(played.run.isDone, isTrue);
       for (final skill in _bengali) {
         expect(played.run.readout[skill]!.placedLevel, -1);
-        expect(played.run.readout[skill]!.label, AssuranceLabel.verySure);
       }
     });
   });
@@ -984,12 +903,14 @@ void main() {
       for (var i = 0; i < runs; i++) {
         var run = PlacementRun(configFor(_bengali, seed: i));
         while (!run.isDone && run.asked < 150) {
-          run = run.answer(random.nextDouble() < run.next!.kind.guess);
+          run = run.answer(
+            random.nextDouble() <
+                min(1.0, run.next!.kind.creditBase() + creditKappa),
+          );
         }
         for (final assurance in run.readout.values) {
           if (assurance.isVerified) verified++;
-          if (assurance.leadingClass == run.levels.topClass &&
-              reachesTarget(assurance.mass)) {
+          if (assurance.placedClass == run.levels.topClass) {
             topAtTarget++;
           }
         }

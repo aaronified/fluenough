@@ -128,6 +128,18 @@ class PlacementLevels {
   /// The deck index class [c] knows up to, or -1 for `none`.
   int levelOf(int c) => c == 0 ? -1 : levels[c - 1];
 
+  /// The decks a probe at [deck] draws from (plan section 13, point 13): the
+  /// band of the class whose level is the first at or above [deck],
+  /// `(l_(k-1), l_k]`; the first band starts at deck 0. Any deck of the band
+  /// is full evidence for that class.
+  ({int from, int to}) bandOf(int deck) {
+    var k = 0;
+    while (k < levels.length - 1 && levels[k] < deck) {
+      k++;
+    }
+    return (from: k == 0 ? 0 : levels[k - 1] + 1, to: levels[k]);
+  }
+
   /// Whether a learner of class [c] knows the deck at index [deck].
   bool knows(int c, int deck) => c > 0 && levels[c - 1] >= deck;
 

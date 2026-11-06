@@ -223,13 +223,10 @@ class PlacementRun {
   /// answers and the same log always give the same run.
   final List<PlacementUnavailable> unavailableLog;
 
-  late final _Engine _engine = _Engine(
-    config,
-    results,
-    unavailableLog,
-    guesses,
-    itemDecks,
-  );
+  _Engine? _owned;
+
+  _Engine get _engine =>
+      _owned ??= _Engine(config, results, unavailableLog, guesses, itemDecks);
 
   /// The question to ask now, or null when the run is done (or skipped).
   PlacementQuestionRequest? get next => _engine.pending?.request;
@@ -255,7 +252,10 @@ class PlacementRun {
   /// The state after [correct] was the answer to [next].
   PlacementRun answer(bool correct, {double? guess, int? itemDeck}) {
     if (isDone) throw StateError('the run is done: there is no question');
-    return PlacementRun(
+    final engine = _engine;
+    _owned = null;
+    engine.feed(correct, guess, itemDeck);
+    return (PlacementRun(
       config,
       results: <bool>[...results, correct],
       checkpointsKept: checkpointsKept,
@@ -270,7 +270,7 @@ class PlacementRun {
           i < itemDecks.length ? itemDecks[i] : null,
         itemDeck,
       ],
-    );
+    )).._owned = engine;
   }
 
   /// The question builder cannot build [next] from this learner's data (a
@@ -490,33 +490,42 @@ class _Engine {
     }
     if (skipped) return;
     pending = _choose();
-    var next = 0;
-    var asked = 0;
-    // The builder's "cannot build this" notes come between two answers: the
-    // ones logged after [asked] answers are applied before the next answer.
-    void drain() {
-      while (next < unavailable.length &&
-          unavailable[next].afterAnswers <= asked) {
-        final current = pending;
-        if (current == null) return;
-        _unavailable(current, unavailable[next].reason);
-        next++;
-      }
-    }
-
-    drain();
+    _log = unavailable;
+    _drain();
     for (final result in results) {
-      final current = pending;
-      if (current == null) break;
-      _apply(
-        current,
+      if (pending == null) break;
+      feed(
         result,
-        asked < guesses.length ? guesses[asked] : null,
-        asked < itemDecks.length ? itemDecks[asked] : null,
+        _asked < guesses.length ? guesses[_asked] : null,
+        _asked < itemDecks.length ? itemDecks[_asked] : null,
       );
-      asked++;
-      drain();
     }
+  }
+
+  late final List<PlacementUnavailable> _log;
+  int _logNext = 0;
+  int _asked = 0;
+
+  /// The builder's "cannot build this" notes come between two answers: the
+  /// ones logged after [_asked] answers are applied before the next answer.
+  void _drain() {
+    while (_logNext < _log.length && _log[_logNext].afterAnswers <= _asked) {
+      final current = pending;
+      if (current == null) return;
+      _unavailable(current, _log[_logNext].reason);
+      _logNext++;
+    }
+  }
+
+  /// One more answer, applied to the engine as it stands (a run hands its
+  /// engine on to the run that answers it, so a run is not replayed from the
+  /// start at every answer).
+  void feed(bool result, double? guess, int? itemDeck) {
+    final current = pending;
+    if (current == null) return;
+    _apply(current, result, guess, itemDeck);
+    _asked++;
+    _drain();
   }
 
   static const double _leaveBelow = 0.20;

@@ -207,13 +207,15 @@ QuestionBank buildQuestionBank(
   int maxQuestions = 4000,
   int deckStride = 1,
   int picks = 5,
+  bool onlyProbes = false,
 }) {
   final n = data.deckCount;
   final entries = <BankEntry>[];
   final ids = <String>{};
   faults.clear();
   final bases = buildBaseQuestions(tested, microphone: false);
-  for (var seed = 0; seed < seeds; seed++) {
+  final bandAsked = <String, Set<String>>{};
+  for (var seed = 0; seed < seeds * (onlyProbes ? 6 : 1); seed++) {
     final builder = QuestionBuilder(
       data,
       tested: tested,
@@ -225,7 +227,17 @@ QuestionBank buildQuestionBank(
       GeneratedQuestion? failed,
       String? origin,
     ) {
-      final outcome = builder.build(request, failed: failed);
+      // A probe or top-up asked again in the same band skips the items
+      // already in the bank, so that a band holds many different items.
+      final bandKey =
+          request.role == PlacementQuestionRole.probe ||
+              request.role == PlacementQuestionRole.topUp
+          ? '${request.skills.first.name}:${PlacementLevels(n).bandOf(request.deck).to}'
+          : null;
+      final skip = bandKey == null || !onlyProbes
+          ? const <String>{}
+          : (bandAsked[bandKey] ??= <String>{});
+      final outcome = builder.build(request, asked: skip, failed: failed);
       if (outcome is! QuestionBuilt) return null;
       final q = outcome.question;
       final fault = questionFault(q);
@@ -261,6 +273,9 @@ QuestionBank buildQuestionBank(
         signature: signatureOf(request),
         origin: origin,
       );
+      if (bandKey != null && onlyProbes) {
+        bandAsked[bandKey]!.addAll(entry.answerIds);
+      }
       if (!ids.add(entry.id)) return null;
       entries.add(entry);
       return entry;
@@ -268,7 +283,8 @@ QuestionBank buildQuestionBank(
 
     for (var deck = 0; deck < n; deck += deckStride) {
       for (var pick = 0; pick < picks; pick++) {
-        for (final base in bases) {
+        for (final base
+            in onlyProbes ? const <PlacementBaseQuestion>[] : bases) {
           final request = _request(
             base.topic,
             PlacementQuestionRole.base,
@@ -351,20 +367,21 @@ QuestionBank buildQuestionBank(
             );
           }
         }
-        tagged(
-          _request(
-            PlacementTopic.grammarLevel,
-            PlacementQuestionRole.grammar,
-            PlacementVariant.grammar,
-            PlacementQuestionKind.pickOne,
-            const <PlacementSkill>[PlacementSkill.read],
-            deck,
-            n,
-            pick,
-          ),
-          null,
-          null,
-        );
+        if (!onlyProbes)
+          tagged(
+            _request(
+              PlacementTopic.grammarLevel,
+              PlacementQuestionRole.grammar,
+              PlacementVariant.grammar,
+              PlacementQuestionKind.pickOne,
+              const <PlacementSkill>[PlacementSkill.read],
+              deck,
+              n,
+              pick,
+            ),
+            null,
+            null,
+          );
       }
     }
   }
@@ -473,10 +490,24 @@ class BankedBuilder implements QuestionSource {
     }
     List<BankEntry> best = const <BankEntry>[];
     final seen = <String>{};
-    for (final range in _ranges(
-      request.deck,
-      around: request.role == PlacementQuestionRole.probe,
-    )) {
+    final probing =
+        request.role == PlacementQuestionRole.probe ||
+        request.role == PlacementQuestionRole.topUp;
+    final band = PlacementLevels(deckCount).bandOf(request.deck);
+    final ranges = probing
+        ? <List<int>>[
+            <int>[request.deck.clamp(band.from, band.to)],
+            <int>[
+              for (
+                var i = band.from;
+                i <= request.deck.clamp(band.from, band.to);
+                i++
+              )
+                i,
+            ],
+          ]
+        : _ranges(request.deck, around: false);
+    for (final range in ranges) {
       if (range.isEmpty || !seen.add('${range.first}-${range.last}')) continue;
       final from = range.first;
       final to = range.last;
@@ -489,9 +520,19 @@ class BankedBuilder implements QuestionSource {
       if (candidates.length > best.length) best = candidates;
       if (candidates.length >= 5) break;
     }
-    if (best.isEmpty) best = pool;
-    // One entry per card, the hardest first.
+    if (best.isEmpty && !probing) best = pool;
+    if (best.isEmpty) {
+      return QuestionUnavailable(
+        PlacementUnavailableReason.noWords,
+        'no bank question in the band of deck ${request.deck}',
+      );
+    }
+    // Counted questions before leaky ones, then the hardest first, one entry
+    // per card.
     best.sort((a, b) {
+      final x = (creditBaseOf(a.question) ?? 0) >= 1 ? 1 : 0;
+      final y = (creditBaseOf(b.question) ?? 0) >= 1 ? 1 : 0;
+      if (x != y) return x.compareTo(y);
       final c = b.question.difficulty.score.compareTo(
         a.question.difficulty.score,
       );

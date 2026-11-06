@@ -58,6 +58,7 @@ Future<void> main(List<String> args) async {
     maxQuestions: int.parse(options['max'] ?? '3000'),
     deckStride: int.parse(options['stride'] ?? '1'),
     picks: int.parse(options['picks'] ?? '5'),
+    onlyProbes: options['merge'] == 'true',
   );
   if (faults.isNotEmpty) {
     stderr.writeln('${faults.length} faulty questions left out:');
@@ -70,6 +71,30 @@ Future<void> main(List<String> args) async {
     }
   }
   Directory(out).createSync(recursive: true);
+  if (options['merge'] == 'true') {
+    // Add the questions not in the bank file yet, keeping every id there.
+    final publicFile = File('$out/$language-bank.json');
+    final keyFile = File('$out/$language-bank-key.json');
+    final pub =
+        jsonDecode(publicFile.readAsStringSync()) as Map<String, Object?>;
+    final key = jsonDecode(keyFile.readAsStringSync()) as Map<String, Object?>;
+    final questions = pub['questions']! as List<Object?>;
+    final keys = key['questions']! as Map<String, Object?>;
+    final fresh = <String>[];
+    for (final e in bank.entries) {
+      if (keys.containsKey(e.id)) continue;
+      questions.add(e.toPublicJson());
+      keys[e.id] = e.toKeyJson();
+      fresh.add(e.id);
+    }
+    const enc = JsonEncoder.withIndent(' ');
+    publicFile.writeAsStringSync('${enc.convert(pub)}\n');
+    keyFile.writeAsStringSync('${enc.convert(key)}\n');
+    File('$out/$language-bank-new-ids.txt')
+        .writeAsStringSync('${fresh.join('\n')}\n');
+    stdout.writeln('${fresh.length} new questions merged');
+    return;
+  }
   const encoder = JsonEncoder.withIndent(' ');
   File('$out/$language-bank.json').writeAsStringSync(
     '${encoder.convert(<String, Object?>{
