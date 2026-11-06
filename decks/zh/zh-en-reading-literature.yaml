@@ -1,0 +1,55 @@
+"schema": 1
+"id": "zh-en-reading-literature"
+"name": "Chinese reading: literature"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+    - "han_simplified"
+    - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "book-blurb"
+    "title": "The back cover of a novel"
+    "theme": "literature"
+    "sentences":
+      - "text": "这部 小说 讲 的 是 一个 年轻人 在 大 城市 里 找 工作 的 故事。"
+        "reading": "zhè bù xiǎoshuō jiǎng de shì yí ge niánqīngrén zài dà chéngshì lǐ zhǎo gōngzuò de gùshi."
+      - "text": "主人公 很 努力， 但是 生活 并 不 容易。"
+        "reading": "zhǔréngōng hěn nǔlì, dànshì shēnghuó bìng bù róngyì."
+      - "text": "书 里 有 很多 有趣 的 人物， 也 有 感人 的 情节。"
+        "reading": "shū lǐ yǒu hěnduō yǒuqù de rénwù, yě yǒu gǎnrén de qíngjié."
+      - "text": "读完 以后， 你 会 对 友情 有 新 的 想法。"
+        "reading": "dúwán yǐhòu, nǐ huì duì yǒuqíng yǒu xīn de xiǎngfǎ."
+    "questions":
+      - "id": "zh-4771"
+        "prompt":
+          "en": "Which word means 'novel'?"
+        "options":
+          - "en": "小说 (xiǎoshuō)"
+          - "en": "书评 (shūpíng)"
+        "answer": 0
+      - "id": "zh-4772"
+        "prompt":
+          "en": "Which word means 'protagonist'?"
+        "options":
+          - "en": "反派 (fǎnpài)"
+          - "en": "主人公 (zhǔréngōng)"
+        "answer": 1
+      - "id": "zh-4773"
+        "prompt":
+          "en": "The main character in this novel is very lazy."
+        "answer": false

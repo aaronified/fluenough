@@ -85,3 +85,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | zh-4686 | zh-food-culture (ids zh-4649 to zh-4698) | The second example says southern people eat sweet dumplings at the winter solstice. Is that a fair generalisation? | Haiku builder | 2026-11-06 |
 | zh-4698 | zh-food-culture (ids zh-4649 to zh-4698) | In the example 边 is used for 'while' (我喜欢边喝茶边吃茶点). Is that natural? | Haiku builder | 2026-11-06 |
 | zh-4670 | zh-food-culture (ids zh-4649 to zh-4698) | The note says in Cantonese tea houses 点心 is dim sum. Is that accurate for a learner's first meaning? | Haiku builder | 2026-11-06 |
+| zh-4722 | zh-literature (ids zh-4713 to zh-4773) | The second example says 我们在课上学了怎么押韵. Is 课上 natural here, or should 上课 be used? | Haiku builder | 2026-11-06 |
+| zh-4755 | zh-literature (ids zh-4713 to zh-4773) | The note says 隐喻 is the metaphor that says one thing is another, and 比喻 the general word. Is that split right, and is 他是一头牛 (he is a hard worker) a fair example? | Haiku builder | 2026-11-06 |
+| zh-4751 | zh-literature (ids zh-4713 to zh-4773) | The second example says readers wait each week for the next instalment of a serial. Is 等下一期连载 natural? | Haiku builder | 2026-11-06 |
