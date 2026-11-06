@@ -1,0 +1,29 @@
+"schema": 1
+"id": "zh-en-grammar-potential-complement"
+"kind": "layer"
+"core": "zh-grammar-potential-complement"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "得 (de) and 不 (bù) between the verb and the result: can or cannot do it"
+"license": "CC-BY-SA-4.0"
+"description": "The potential complement says whether an action can be done: 吃得完 (chī de wán), can finish eating, and 吃不完 (chī bù wán), cannot finish. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "得 (de) and 不 (bù) between the verb and the result: can or cannot do it"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of the action"
+    "possible": "the action can be done, with 得 (de) before the result word"
+    "not-possible": "the action cannot be done, with 不 (bù) before the result word"
+  "entries":
+    "chi": "to eat"
+    "ting": "to listen"
+    "kan": "to read; to look"
+    "zhao": "to look for"
+    "xie": "to write"
+    "mai": "to buy"
+  "notes": "The result word goes after 得 (de) for can, and after 不 (bù) for cannot: 吃得完 (chī de wán), can finish eating; 吃不完 (chī bù wán), cannot finish. 得 (de) is said without stress here, and 不 (bù) is said with a fourth tone, because the word after it is a first, second or fourth tone. Do not use the le (了) of the result form in these sentences. A question is made with 吗 (ma) at the end, as in 这本书你看得懂吗 (zhè běn shū nǐ kàn de dǒng ma), can you understand this book? The words 得起 (de qǐ) and 不起 (bù qǐ) mean can afford and cannot afford."

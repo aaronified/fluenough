@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-geography"
+"name": "Chinese reading: geography"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-provinces-and-cities"
+  "title": "Provinces and cities"
+  "theme": "geography"
+  "sentences":
+  - "text": "中国 有 很 多 省， 每 个 省 都 有 首府。"
+    "reading": "Zhōngguó yǒu hěn duō shěng, měi ge shěng dōu yǒu shǒufǔ."
+  - "text": "北京 是 首都， 上海 是 大 城市。"
+    "reading": "Běijīng shì shǒudū, Shànghǎi shì dà chéngshì."
+  - "text": "南方 的 城市 很 热， 北方 的 城市 很 冷。"
+    "reading": "nánfāng de chéngshì hěn rè, běifāng de chéngshì hěn lěng."
+  - "text": "有 一 条 大 河 在 中部。"
+    "reading": "yǒu yì tiáo dà hé zài zhōngbù."
+  "questions":
+  - "id": "zh-2807"
+    "prompt":
+      "en": "首府 (shǒufǔ) means:"
+    "options":
+    - "en": "capital of a province"
+    - "en": "national capital"
+    "answer": 1
+  - "id": "zh-2808"
+    "prompt":
+      "en": "The speaker says Beijing is the capital."
+    "answer": true
+  - "id": "zh-2809"
+    "prompt":
+      "en": "中部 (zhōngbù) means:"
+    "options":
+    - "en": "central part"
+    - "en": "eastern part"
+    "answer": 1
+- "id": "zh-map-caption"
+  "title": "Map caption"
+  "theme": "geography"
+  "sentences":
+  - "text": "这 张 地图 显示 中国 的 地区。"
+    "reading": "zhè zhāng dìtú xiǎnshì Zhōngguó de dìqū."
+  - "text": "西部 有 高 山， 东部 有 平原。"
+    "reading": "xībù yǒu gāo shān, dōngbù yǒu píngyuán."
+  - "text": "沿海 地区 很 多 人。"
+    "reading": "yánhǎi dìqū hěn duō rén."
+  - "text": "请 看 海拔 的 颜色。"
+    "reading": "qǐng kàn hǎibá de yánsè."
+  "questions":
+  - "id": "zh-2810"
+    "prompt":
+      "en": "平原 (píngyuán) means:"
+    "options":
+    - "en": "mountain"
+    - "en": "plain"
+    "answer": 2
+  - "id": "zh-2811"
+    "prompt":
+      "en": "The caption says the east has mountains."
+    "answer": false
+  - "id": "zh-2812"
+    "prompt":
+      "en": "海拔 (hǎibá) means:"
+    "options":
+    - "en": "altitude"
+    - "en": "longitude"
+    "answer": 1

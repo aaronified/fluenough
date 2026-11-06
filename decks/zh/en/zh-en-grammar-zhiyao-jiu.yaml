@@ -1,0 +1,26 @@
+"schema": 1
+"id": "zh-en-grammar-zhiyao-jiu"
+"kind": "layer"
+"core": "zh-grammar-zhiyao-jiu"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "只要 (zhǐyào) ... 就 (jiù): as long as, then"
+"license": "CC-BY-SA-4.0"
+"description": "只要 (zhǐyào) says that one condition is enough for the result: 只要你来 (zhǐyào nǐ lái)，我就高兴 (wǒ jiù gāoxìng), as long as you come I am happy. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "只要 (zhǐyào) ... 就 (jiù): as long as, then"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of the plan"
+    "as-long-as": "只要 (zhǐyào) before the condition, then 就 (jiù) before the result"
+    "as-long-as-not": "只要 (zhǐyào) with a negated condition, then 就 (jiù) before the result"
+  "entries":
+    "nuli": "to work hard"
+    "chenggong": "to succeed"
+    "lai2": "to come"
+  "notes": "只要 (zhǐyào) means as long as: one condition is enough for the result. Use 就 (jiù) in the result: 只要你努力 (zhǐyào nǐ nǔlì)，我就高兴 (wǒ jiù gāoxìng), as long as you work hard, I will be happy. 只要 (zhǐyào) is used when the condition is easy to meet, while 如果 (rúguǒ) is more neutral. Do not use 只要 (zhǐyào) for a condition that is not needed."

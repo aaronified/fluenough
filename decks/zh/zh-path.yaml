@@ -123,6 +123,18 @@ alphabet:
   - "zh-reading-strokes-radicals"
   - "zh-characters-1"
   - "zh-reading-characters-1"
+  - "zh-characters-7"
+  - "zh-reading-characters-7"
+  - "zh-characters-6"
+  - "zh-reading-characters-6"
+  - "zh-characters-5"
+  - "zh-reading-characters-5"
+  - "zh-characters-4"
+  - "zh-reading-characters-4"
+  - "zh-characters-3"
+  - "zh-reading-characters-3"
+  - "zh-characters-2"
+  - "zh-reading-characters-2"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -333,63 +345,78 @@ units:
       - { id: "two-books-three-cups", text: { "en": "Ordering and buying with the right measure word: a cup of tea, two books, a sheet of paper" } }
     reading_passages:
       - { id: "order-slip", text: { "en": "An order slip with counted items" } }
-  - planned: { id: "zh-groceries", theme: "groceries", words: 40 }
+  - decks: ["zh-groceries", "zh-groceries-sentences", "zh-reading-groceries", "*"]
+    words: 40
     listening_passages:
       - { id: "shopping-list-aloud", text: { "en": "Two people go through a shopping list at a supermarket" } }
     reading_passages:
       - { id: "shopping-list", text: { "en": "A handwritten shopping list" } }
-  - planned: { id: "zh-food", theme: "food", words: 60 }
+  - decks: ["zh-food", "zh-food-sentences", "zh-reading-food", "*"]
+    words: 60
     listening_passages:
       - { id: "ordering-noodles", text: { "en": "Ordering a bowl of noodles and dumplings at a small restaurant" } }
     reading_passages:
       - { id: "menu-card", text: { "en": "A restaurant menu card with dishes and prices" } }
-  - planned: { id: "zh-grammar-le", grammar: "le-completed" }
+  - decks: ["zh-grammar-le-completed", "zh-grammar-le-completed-sentences"]
+    words: 0
+    grammar: ["le-completed"]
     listening_passages:
       - { id: "what-did-you-eat", text: { "en": "Saying what you ate and bought yesterday, with le after the verb, and not, with mei" } }
     reading_passages:
       - { id: "yesterday-note", text: { "en": "A short note about yesterday" } }
-  - planned: { id: "zh-transport", theme: "transport", words: 35 }
+  - decks: ["zh-transport", "zh-transport-sentences", "zh-reading-transport", "*"]
+    words: 35
     listening_passages:
       - { id: "which-bus", text: { "en": "Asking which bus or metro line goes to the city centre" } }
     reading_passages:
       - { id: "station-timetable", text: { "en": "A train and bus timetable at a station" } }
-  - planned: { id: "zh-directions", theme: "directions", words: 30 }
+  - decks: ["zh-directions", "zh-directions-sentences", "zh-reading-directions", "*"]
+    words: 30
     listening_passages:
       - { id: "asking-the-way", text: { "en": "Asking the way to the station and being told: go straight, turn left, it is opposite" } }
     reading_passages:
       - { id: "simple-map", text: { "en": "A simple map with a route in words" } }
-  - planned: { id: "zh-grammar-modal-verbs", grammar: ["xiang-yao", "hui-neng-keyi"] }
+  - decks: ["zh-grammar-xiang-yao", "zh-grammar-hui-neng-keyi", "zh-grammar-xiang-yao-sentences"]
+    words: 0
+    grammar: ["xiang-yao", "hui-neng-keyi"]
     listening_passages:
       - { id: "i-want-to-go", text: { "en": "Saying what you want to do, can do and may do: want to go, can swim, may sit" } }
     reading_passages:
       - { id: "wish-list", text: { "en": "A wish list for a trip" } }
-  - planned: { id: "zh-body", theme: "body", words: 35 }
+  - decks: ["zh-body", "zh-body-sentences", "zh-reading-body", "*"]
+    words: 35
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Telling a doctor where it hurts" } }
     reading_passages:
       - { id: "stretching-chart", text: { "en": "A chart of simple morning exercises in a park" } }
-  - planned: { id: "zh-places", theme: "places", words: 40 }
+  - decks: ["zh-places", "zh-places-sentences", "zh-reading-places", "*"]
+    words: 40
     listening_passages:
       - { id: "walk-to-the-station", text: { "en": "A neighbour names the places you pass on the way to the station" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Signs along a street: post office, bank, hospital, park" } }
-  - planned: { id: "zh-home", theme: "home", words: 40 }
+  - decks: ["zh-home", "zh-home-sentences", "zh-reading-home", "*"]
+    words: 40
     listening_passages:
       - { id: "a-flat-tour", text: { "en": "A tour of a small flat, room by room" } }
     reading_passages:
       - { id: "flat-advert", text: { "en": "A short advert for a flat to rent" } }
-  - planned: { id: "zh-grammar-zai-ba", grammar: ["zai-progressive", "ba-suggestion"] }
+  - decks: ["zh-grammar-zai-progressive", "zh-grammar-ba-suggestion", "zh-grammar-zai-progressive-sentences"]
+    words: 0
+    grammar: ["zai-progressive", "ba-suggestion"]
     listening_passages:
       - { id: "what-are-you-doing", text: { "en": "Saying what you are doing right now, and suggesting: let's go" } }
     reading_passages:
       - { id: "chat-messages", text: { "en": "A few chat messages about what each person is doing" } }
-  - planned: { id: "zh-help", theme: "help", words: 35 }
+  - decks: ["zh-help", "zh-help-sentences", "zh-reading-help", "*"]
+    words: 35
     listening_passages:
       - { id: "lost-in-the-city", text: { "en": "Asking for help when lost" } }
     reading_passages:
       - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
   # The second set of characters: about 300 by the end of A1.
-  - planned: { id: "zh-characters-2", grammar: "script-characters-2", words: 0 }
+  - decks: ["zh-characters-2", "zh-reading-characters-2"]
+    words: 10
     listening_passages:
       - { id: "days-and-dates", text: { "en": "Hearing the words whose characters are taught: day, month, year, the week, food and places" } }
     reading_passages:
@@ -398,202 +425,256 @@ units:
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences: le, guo and zhe, comparison, the complements of
   # degree, result, direction and potential, ba, and more characters.
-  - planned: { id: "zh-daily-life", theme: "daily-life", words: 45 }
+  - decks: ["zh-daily-life", "zh-daily-life-sentences", "zh-reading-daily-life", "*"]
+    words: 45
     listening_passages:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary working day" } }
     reading_passages:
       - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, wash, sleep" } }
-  - planned: { id: "zh-grammar-le-change", grammar: "le-change-of-state" }
+  - decks: ["zh-grammar-le-change-of-state", "zh-grammar-le-change-of-state-sentences"]
+    words: 0
+    grammar: ["le-change-of-state"]
     listening_passages:
       - { id: "it-is-raining-now", text: { "en": "Saying what has changed, with le at the end: it is raining now, I am not going any more" } }
     reading_passages:
       - { id: "news-from-home", text: { "en": "A message with news from home: what is new" } }
-  - planned: { id: "zh-calendar", theme: "calendar", words: 40 }
+  - decks: ["zh-calendar", "zh-calendar-sentences", "zh-reading-calendar", "*"]
+    words: 40
     listening_passages:
       - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
     reading_passages:
       - { id: "wall-calendar", text: { "en": "A wall calendar with appointments" } }
-  - planned: { id: "zh-grammar-guo", grammar: "guo-experience" }
+  - decks: ["zh-grammar-guo-experience", "zh-grammar-guo-experience-sentences"]
+    words: 0
+    grammar: ["guo-experience"]
     listening_passages:
       - { id: "have-you-ever", text: { "en": "Asking and saying whether you have ever been to Beijing or eaten Peking duck" } }
     reading_passages:
       - { id: "experience-survey", text: { "en": "A short survey about experiences" } }
-  - planned: { id: "zh-seasons", theme: "seasons", words: 40 }
+  - decks: ["zh-seasons", "zh-seasons-sentences", "zh-reading-seasons", "*"]
+    words: 40
     listening_passages:
       - { id: "spring-outing", text: { "en": "Friends plan a spring outing to see the flowers" } }
     reading_passages:
       - { id: "seasonal-greeting", text: { "en": "A seasonal greeting card" } }
-  - planned: { id: "zh-clothes", theme: "clothes", words: 40 }
+  - decks: ["zh-clothes", "zh-clothes-sentences", "zh-reading-clothes", "*"]
+    words: 40
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a colour and a size in a clothes shop" } }
     reading_passages:
       - { id: "sale-sign", text: { "en": "A clothes shop's sale sign" } }
-  - planned: { id: "zh-grammar-zhe", grammar: "zhe-continuous" }
+  - decks: ["zh-grammar-zhe-continuous", "zh-grammar-zhe-continuous-sentences"]
+    words: 0
+    grammar: ["zhe-continuous"]
     listening_passages:
       - { id: "the-door-is-open", text: { "en": "Describing a scene with zhe: the door is open, he is wearing a red coat, she sits reading" } }
     reading_passages:
       - { id: "photo-description", text: { "en": "A short description of a family photo" } }
-  - planned: { id: "zh-animals", theme: "animals", words: 35 }
+  - decks: ["zh-animals", "zh-animals-sentences", "zh-reading-animals", "*"]
+    words: 35
     listening_passages:
       - { id: "a-zoo-visit", text: { "en": "A child names the animals seen at a zoo, each with its measure word" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "zh-weather", theme: "weather", words: 40 }
+  - decks: ["zh-weather", "zh-weather-sentences", "zh-reading-weather", "*"]
+    words: 40
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain, wind, smog" } }
     reading_passages:
       - { id: "weather-message", text: { "en": "A message to a friend about the weather" } }
-  - planned: { id: "zh-grammar-comparison", grammar: ["bi", "gen-yiyang", "mei-you-comparison"] }
+  - decks: ["zh-grammar-bi", "zh-grammar-gen-yiyang", "zh-grammar-mei-you-comparison", "zh-grammar-bi-sentences"]
+    words: 0
+    grammar: ["bi", "gen-yiyang", "mei-you-comparison"]
     listening_passages:
       - { id: "which-is-better", text: { "en": "Two friends compare two phones: this one is cheaper than that one, they are the same" } }
     reading_passages:
       - { id: "two-cities", text: { "en": "A short text comparing Beijing and Shanghai" } }
-  - planned: { id: "zh-things", theme: "things", words: 50 }
+  - decks: ["zh-things", "zh-things-sentences", "zh-reading-things", "*"]
+    words: 50
     listening_passages:
       - { id: "packing-for-a-trip", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a railway station" } }
-  - planned: { id: "zh-characters-3", grammar: "script-characters-3", words: 0 }
+  - decks: ["zh-characters-3", "zh-reading-characters-3"]
+    words: 10
     listening_passages:
       - { id: "characters-at-the-station", text: { "en": "Hearing the station words whose characters are taught: in, out, east, west, north, south" } }
     reading_passages:
       - { id: "station-signs", text: { "en": "Station and metro signs in characters: entrance, exit, line, transfer" } }
-  - planned: { id: "zh-shopping", theme: "shopping", words: 50 }
+  - decks: ["zh-shopping", "zh-shopping-sentences", "zh-reading-shopping", "*"]
+    words: 50
     listening_passages:
       - { id: "asking-the-price", text: { "en": "Asking about price and size, and bargaining a little" } }
     reading_passages:
       - { id: "receipt", text: { "en": "A shop receipt" } }
-  - planned: { id: "zh-grammar-complement-degree", grammar: "degree-complement" }
+  - decks: ["zh-grammar-degree-complement", "zh-grammar-degree-complement-sentences"]
+    words: 0
+    grammar: ["degree-complement"]
     listening_passages:
       - { id: "you-sing-well", text: { "en": "Saying how well something is done, with de: she sings well, he runs fast" } }
     reading_passages:
       - { id: "teacher-comments", text: { "en": "A teacher's comments on a report card" } }
-  - planned: { id: "zh-eating-out", theme: "eating-out", words: 50 }
+  - decks: ["zh-eating-out", "zh-eating-out-sentences", "zh-reading-eating-out", "*"]
+    words: 50
     listening_passages:
       - { id: "a-hotpot-dinner", text: { "en": "Ordering hotpot with friends and asking for the bill" } }
     reading_passages:
       - { id: "scan-to-order-menu", text: { "en": "A phone menu for ordering at the table" } }
-  - planned: { id: "zh-cooking", theme: "cooking", words: 45 }
+  - decks: ["zh-cooking", "zh-cooking-sentences", "zh-reading-cooking", "*"]
+    words: 45
     listening_passages:
       - { id: "a-recipe-aloud", text: { "en": "A grandmother says how she makes tomato and egg stir-fry" } }
     reading_passages:
       - { id: "recipe-card", text: { "en": "A recipe card with its steps" } }
-  - planned: { id: "zh-grammar-complement-result", grammar: "result-complement" }
+  - decks: ["zh-grammar-result-complement", "zh-grammar-result-complement-sentences"]
+    words: 0
+    grammar: ["result-complement"]
     listening_passages:
       - { id: "did-you-finish", text: { "en": "Saying whether an action reached its result: finished eating, understood, saw, found" } }
     reading_passages:
       - { id: "homework-check", text: { "en": "A note checking which homework is done" } }
-  - planned: { id: "zh-school", theme: "school", words: 50 }
+  - decks: ["zh-school", "zh-school-sentences", "zh-reading-school", "*"]
+    words: 50
     listening_passages:
       - { id: "school-day", text: { "en": "A pupil describes the school day" } }
     reading_passages:
       - { id: "class-timetable", text: { "en": "A school timetable" } }
-  - planned: { id: "zh-hobbies", theme: "hobbies", words: 50 }
+  - decks: ["zh-hobbies", "zh-hobbies-sentences", "zh-reading-hobbies", "*"]
+    words: 50
     listening_passages:
       - { id: "weekend-hobbies", text: { "en": "Friends talk about what they like doing at weekends" } }
     reading_passages:
       - { id: "club-poster", text: { "en": "A poster for a school's sports and music clubs" } }
-  - planned: { id: "zh-grammar-conjunctions", grammar: ["yinwei-suoyi", "suiran-danshi", "haishi-huozhe"] }
+  - decks: ["zh-grammar-yinwei-suoyi", "zh-grammar-suiran-danshi", "zh-grammar-haishi-huozhe", "zh-grammar-yinwei-suoyi-sentences"]
+    words: 0
+    grammar: ["yinwei-suoyi", "suiran-danshi", "haishi-huozhe"]
     listening_passages:
       - { id: "because-and-so", text: { "en": "Joining two sentences: because and so, although and but, or" } }
     reading_passages:
       - { id: "short-blog-post", text: { "en": "A short blog post about a weekend" } }
-  - planned: { id: "zh-music", theme: "music", words: 40 }
+  - decks: ["zh-music", "zh-music-sentences", "zh-reading-music", "*"]
+    words: 40
     listening_passages:
       - { id: "at-karaoke", text: { "en": "Friends choose songs at karaoke" } }
     reading_passages:
       - { id: "concert-flyer", text: { "en": "A flyer for a concert" } }
-  - planned: { id: "zh-sports", theme: "sports", words: 45 }
+  - decks: ["zh-sports", "zh-sports-sentences", "zh-reading-sports", "*"]
+    words: 45
     listening_passages:
       - { id: "table-tennis-talk", text: { "en": "Friends talk about a table tennis match" } }
     reading_passages:
       - { id: "match-result", text: { "en": "A short match result" } }
-  - planned: { id: "zh-grammar-complement-direction", grammar: ["direction-complement", "compound-direction-complement"] }
+  - decks: ["zh-grammar-direction-complement", "zh-grammar-compound-direction-complement", "zh-grammar-direction-complement-sentences"]
+    words: 0
+    grammar: ["direction-complement", "compound-direction-complement"]
     listening_passages:
       - { id: "come-down-here", text: { "en": "Saying which way an action goes: come in, go out, bring it up, run back" } }
     reading_passages:
       - { id: "moving-day", text: { "en": "A short story of moving day: what was carried up and down" } }
-  - planned: { id: "zh-illness", theme: "illness", words: 40 }
+  - decks: ["zh-illness", "zh-illness-sentences", "zh-reading-illness", "*"]
+    words: 40
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
       - { id: "medicine-label", text: { "en": "The label on a packet of medicine" } }
-  - planned: { id: "zh-grammar-duration", grammar: ["duration-complement", "frequency-ci"] }
+  - decks: ["zh-grammar-duration-complement", "zh-grammar-frequency-ci", "zh-grammar-duration-complement-sentences"]
+    words: 0
+    grammar: ["duration-complement", "frequency-ci"]
     listening_passages:
       - { id: "how-long-have-you-studied", text: { "en": "Saying how long and how many times: I have studied Chinese for two years, been there three times" } }
     reading_passages:
       - { id: "exercise-log", text: { "en": "A week's exercise log" } }
-  - planned: { id: "zh-chores", theme: "chores", words: 35 }
+  - decks: ["zh-chores", "zh-chores-sentences", "zh-reading-chores", "*"]
+    words: 35
     listening_passages:
       - { id: "cleaning-day", text: { "en": "Family members share the cleaning" } }
     reading_passages:
       - { id: "rubbish-sorting-sign", text: { "en": "A sign on how to sort rubbish in a housing estate" } }
-  - planned: { id: "zh-grammar-ba", grammar: "ba-construction" }
+  - decks: ["zh-grammar-ba-construction", "zh-grammar-ba-construction-sentences"]
+    words: 0
+    grammar: ["ba-construction"]
     listening_passages:
       - { id: "put-it-on-the-table", text: { "en": "Saying what was done to something, with ba: put the book on the table, close the door, eat up the rice" } }
     reading_passages:
       - { id: "house-rules", text: { "en": "A list of house rules for a shared flat" } }
-  - planned: { id: "zh-appearance", theme: "appearance", words: 40 }
+  - decks: ["zh-appearance", "zh-appearance-sentences", "zh-reading-appearance", "*"]
+    words: 40
     listening_passages:
       - { id: "describing-a-friend", text: { "en": "Describing a friend to someone who will meet them at the station" } }
     reading_passages:
       - { id: "lost-child-notice", text: { "en": "A notice describing a lost child at a shopping centre" } }
-  - planned: { id: "zh-characters-4", grammar: "script-characters-4", words: 0 }
+  - decks: ["zh-characters-4", "zh-reading-characters-4"]
+    words: 10
     listening_passages:
       - { id: "characters-in-town", text: { "en": "Hearing the town words whose characters are taught: shop, hospital, bank, school" } }
     reading_passages:
       - { id: "town-signs", text: { "en": "Shop and building signs in characters" } }
-  - planned: { id: "zh-verbs-3", theme: "verbs-3", words: 60 }
+  - decks: ["zh-verbs-3", "zh-verbs-3-sentences", "zh-reading-verbs-3", "*"]
+    words: 60
     listening_passages:
       - { id: "a-busy-day", text: { "en": "Someone lists everything they did in a day" } }
     reading_passages:
       - { id: "diary-entry", text: { "en": "A short diary entry" } }
-  - planned: { id: "zh-grammar-complement-potential", grammar: "potential-complement" }
+  - decks: ["zh-grammar-potential-complement", "zh-grammar-potential-complement-sentences"]
+    words: 0
+    grammar: ["potential-complement"]
     listening_passages:
       - { id: "can-you-hear-me", text: { "en": "Saying whether something can be done: can you hear me, I cannot finish it, it will not fit" } }
     reading_passages:
       - { id: "help-forum-post", text: { "en": "A forum post asking for help with a phone" } }
-  - planned: { id: "zh-phone", theme: "phone", words: 35 }
+  - decks: ["zh-phone", "zh-phone-sentences", "zh-reading-phone", "*"]
+    words: 35
     listening_passages:
       - { id: "phone-call", text: { "en": "A phone call to arrange a meeting" } }
     reading_passages:
       - { id: "text-messages", text: { "en": "A few text messages between friends" } }
-  - planned: { id: "zh-journey", theme: "journey", words: 55 }
+  - decks: ["zh-journey", "zh-journey-sentences", "zh-reading-journey", "*"]
+    words: 55
     listening_passages:
       - { id: "high-speed-rail-ticket", text: { "en": "Buying a high-speed rail ticket at the counter" } }
     reading_passages:
       - { id: "platform-notice", text: { "en": "A train timetable and a platform notice" } }
-  - planned: { id: "zh-grammar-shi-de", grammar: "shi-de" }
+  - decks: ["zh-grammar-shi-de", "zh-grammar-shi-de-sentences"]
+    words: 0
+    grammar: ["shi-de"]
     listening_passages:
       - { id: "how-did-you-come", text: { "en": "Asking when, how and with whom someone came, with shi and de" } }
     reading_passages:
       - { id: "arrival-interview", text: { "en": "A short interview with a new arrival" } }
-  - planned: { id: "zh-nature", theme: "nature", words: 40 }
+  - decks: ["zh-nature", "zh-nature-sentences", "zh-reading-nature", "*"]
+    words: 40
     listening_passages:
       - { id: "a-walk-in-the-hills", text: { "en": "Two people describe a walk in the hills" } }
     reading_passages:
       - { id: "park-signs", text: { "en": "Signs in a national park" } }
-  - planned: { id: "zh-adjectives-2", theme: "adjectives-2", words: 50 }
+  - decks: ["zh-adjectives-2", "zh-adjectives-2-sentences", "zh-reading-adjectives-2", "*"]
+    words: 50
     listening_passages:
       - { id: "describing-a-room", text: { "en": "Describing a rented room" } }
     reading_passages:
       - { id: "room-to-let", text: { "en": "A room-to-let advert" } }
-  - planned: { id: "zh-grammar-reduplication", grammar: ["verb-reduplication", "adjective-reduplication"] }
+  - decks: ["zh-grammar-verb-reduplication", "zh-grammar-adjective-reduplication", "zh-grammar-verb-reduplication-sentences"]
+    words: 0
+    grammar: ["verb-reduplication", "adjective-reduplication"]
     listening_passages:
       - { id: "have-a-look", text: { "en": "Softening a request by saying the verb twice: have a look, have a try, and adjectives said twice" } }
     reading_passages:
       - { id: "shop-assistant-chat", text: { "en": "A shop assistant's friendly messages to a customer" } }
-  - planned: { id: "zh-workplace", theme: "workplace", words: 45 }
+  - decks: ["zh-workplace", "zh-workplace-sentences", "zh-reading-workplace", "*"]
+    words: 45
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day at the office" } }
     reading_passages:
       - { id: "office-notice", text: { "en": "An office notice about a meeting" } }
-  - planned: { id: "zh-grammar-jiu-cai", grammar: ["jiu-cai", "yao-le"] }
+  - decks: ["zh-grammar-jiu-cai", "zh-grammar-yao-le", "zh-grammar-jiu-cai-sentences"]
+    words: 0
+    grammar: ["jiu-cai", "yao-le"]
     listening_passages:
       - { id: "already-at-six", text: { "en": "Saying earlier and later than expected, and about to happen: he came at six already, she only came at nine, the train is about to leave" } }
     reading_passages:
       - { id: "late-again", text: { "en": "A message about a friend who is always late" } }
-  - planned: { id: "zh-geography", theme: "geography", words: 40 }
+  - decks: ["zh-geography", "zh-geography-sentences", "zh-reading-geography", "*"]
+    words: 40
     listening_passages:
       - { id: "provinces-and-cities", text: { "en": "Naming China's provinces, rivers and big cities" } }
     reading_passages:
@@ -602,232 +683,297 @@ units:
   # B1: the themes and grammar of the CEFR's B1: bei, the conditionals,
   # ba with complements, the extended complements, the written register,
   # and more characters.
-  - planned: { id: "zh-health", theme: "health", words: 55 }
+  - decks: ["zh-health", "zh-health-sentences", "zh-reading-health", "*"]
+    words: 55
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:
       - { id: "clinic-notice", text: { "en": "A notice at the clinic" } }
-  - planned: { id: "zh-grammar-bei", grammar: "bei-passive" }
+  - decks: ["zh-grammar-bei-passive", "zh-grammar-bei-passive-sentences"]
+    words: 0
+    grammar: ["bei-passive"]
     listening_passages:
       - { id: "my-bike-was-stolen", text: { "en": "Telling the police your bike was stolen, with bei" } }
     reading_passages:
       - { id: "news-brief", text: { "en": "A short news item written with bei" } }
-  - planned: { id: "zh-feelings", theme: "feelings", words: 55 }
+  - decks: ["zh-feelings", "zh-feelings-sentences", "zh-reading-feelings", "*"]
+    words: 55
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:
       - { id: "letter-to-a-friend", text: { "en": "A letter to a friend about worries and hopes" } }
-  - planned: { id: "zh-grammar-conditionals", grammar: ["ruguo-jiu", "zhiyao-jiu", "chufei"] }
+  - decks: ["zh-grammar-ruguo-jiu", "zh-grammar-zhiyao-jiu", "zh-grammar-chufei", "zh-grammar-ruguo-jiu-sentences"]
+    words: 0
+    grammar: ["ruguo-jiu", "zhiyao-jiu", "chufei"]
     listening_passages:
       - { id: "if-it-rains", text: { "en": "Saying what happens if it rains, as long as you go, and unless it is late" } }
     reading_passages:
       - { id: "machine-instructions", text: { "en": "Instructions on a ticket machine" } }
-  - planned: { id: "zh-news", theme: "news", words: 55 }
+  - decks: ["zh-news", "zh-news-sentences", "zh-reading-news", "*"]
+    words: 55
     listening_passages:
       - { id: "radio-news", text: { "en": "A short radio news bulletin" } }
     reading_passages:
       - { id: "headline-list", text: { "en": "A list of newspaper headlines" } }
-  - planned: { id: "zh-grammar-opinion", grammar: ["juede-renwei", "ting-shuo"] }
+  - decks: ["zh-grammar-juede-renwei", "zh-grammar-ting-shuo", "zh-grammar-juede-renwei-sentences"]
+    words: 0
+    grammar: ["juede-renwei", "ting-shuo"]
     listening_passages:
       - { id: "i-think-that", text: { "en": "Saying what you think and what you heard" } }
     reading_passages:
       - { id: "interview-notes", text: { "en": "Notes from a short street interview" } }
-  - planned: { id: "zh-opinions", theme: "opinions", words: 50 }
+  - decks: ["zh-opinions", "zh-opinions-sentences", "zh-reading-opinions", "*"]
+    words: 50
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over tea" } }
     reading_passages:
       - { id: "readers-letters", text: { "en": "Two short letters to a newspaper" } }
-  - planned: { id: "zh-characters-5", grammar: "script-characters-5", words: 0 }
+  - decks: ["zh-characters-5", "zh-reading-characters-5"]
+    words: 10
     listening_passages:
       - { id: "characters-in-the-news", text: { "en": "Hearing the news words whose characters are taught: country, city, company, government" } }
     reading_passages:
       - { id: "simple-headlines", text: { "en": "Simple headlines in characters" } }
-  - planned: { id: "zh-travel", theme: "travel", words: 55 }
+  - decks: ["zh-travel", "zh-travel-sentences", "zh-reading-travel", "*"]
+    words: 55
     listening_passages:
       - { id: "hotel-booking", text: { "en": "Booking a hotel room over the phone" } }
     reading_passages:
       - { id: "itinerary", text: { "en": "A three-day trip itinerary" } }
-  - planned: { id: "zh-grammar-lian-budan", grammar: ["lian-dou", "budan-erqie"] }
+  - decks: ["zh-grammar-lian-dou", "zh-grammar-budan-erqie", "zh-grammar-lian-dou-sentences"]
+    words: 0
+    grammar: ["lian-dou", "budan-erqie"]
     listening_passages:
       - { id: "even-the-teacher", text: { "en": "Saying even the teacher did not know, and not only cheap but good" } }
     reading_passages:
       - { id: "trip-review", text: { "en": "A short review of a trip" } }
-  - planned: { id: "zh-services", theme: "services", words: 45 }
+  - decks: ["zh-services", "zh-services-sentences", "zh-reading-services", "*"]
+    words: 45
     listening_passages:
       - { id: "at-the-post-office", text: { "en": "Sending a parcel at the post office counter" } }
     reading_passages:
       - { id: "bank-form", text: { "en": "A simple bank form" } }
-  - planned: { id: "zh-government", theme: "government", words: 40 }
+  - decks: ["zh-government", "zh-government-sentences", "zh-reading-government", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-service-hall", text: { "en": "Asking at a government service hall which document is needed" } }
     reading_passages:
       - { id: "form-instructions", text: { "en": "Instructions on a residence registration form" } }
-  - planned: { id: "zh-grammar-relative-clauses", grammar: "de-relative-clause" }
+  - decks: ["zh-grammar-de-relative-clause", "zh-grammar-de-relative-clause-sentences"]
+    words: 0
+    grammar: ["de-relative-clause"]
     listening_passages:
       - { id: "the-person-who-came", text: { "en": "Describing people and things by what they did, with de: the person who came, the book I bought" } }
     reading_passages:
       - { id: "shop-reviews", text: { "en": "Short reviews of a shop and its staff" } }
-  - planned: { id: "zh-technology", theme: "technology", words: 50 }
+  - decks: ["zh-technology", "zh-technology-sentences", "zh-reading-technology", "*"]
+    words: 50
     listening_passages:
       - { id: "fixing-a-phone", text: { "en": "Asking a shop to fix a phone" } }
     reading_passages:
       - { id: "app-instructions", text: { "en": "Instructions inside a phone app for paying by code" } }
-  - planned: { id: "zh-grammar-complement-extended", grammar: ["qilai", "xiaqu", "chulai"] }
+  - decks: ["zh-grammar-qilai", "zh-grammar-xiaqu", "zh-grammar-chulai", "zh-grammar-qilai-sentences"]
+    words: 0
+    grammar: ["qilai", "xiaqu", "chulai"]
     listening_passages:
       - { id: "it-sounds-good", text: { "en": "The direction complements in their other senses: it sounds good, keep on talking, I recognised him" } }
     reading_passages:
       - { id: "product-review", text: { "en": "A short product review" } }
-  - planned: { id: "zh-careers", theme: "careers", words: 50 }
+  - decks: ["zh-careers", "zh-careers-sentences", "zh-reading-careers", "*"]
+    words: 50
     listening_passages:
       - { id: "job-interview", text: { "en": "A short job interview" } }
     reading_passages:
       - { id: "job-advert", text: { "en": "A job advert" } }
-  - planned: { id: "zh-business", theme: "business", words: 50 }
+  - decks: ["zh-business", "zh-business-sentences", "zh-reading-business", "*"]
+    words: 50
     listening_passages:
       - { id: "a-business-call", text: { "en": "A polite phone call between two companies" } }
     reading_passages:
       - { id: "business-email", text: { "en": "A short business email" } }
-  - planned: { id: "zh-grammar-ba-complements", grammar: ["ba-with-complements", "ba-bei-contrast"] }
+  - decks: ["zh-grammar-ba-with-complements", "zh-grammar-ba-bei-contrast", "zh-grammar-ba-with-complements-sentences"]
+    words: 0
+    grammar: ["ba-with-complements", "ba-bei-contrast"]
     listening_passages:
       - { id: "put-it-back", text: { "en": "Using ba with a complement: put the chairs back, translate it into English, and the same event told with bei" } }
     reading_passages:
       - { id: "office-closing-checklist", text: { "en": "A checklist for closing the office: lights off, windows shut, papers put away" } }
-  - planned: { id: "zh-manners", theme: "manners", words: 50 }
+  - decks: ["zh-manners", "zh-manners-sentences", "zh-reading-manners", "*"]
+    words: 50
     listening_passages:
       - { id: "visiting-a-home", text: { "en": "Visiting a Chinese home: what to bring, what to say at the door and at the table" } }
     reading_passages:
       - { id: "etiquette-guide", text: { "en": "A short etiquette guide for visitors" } }
-  - planned: { id: "zh-environment", theme: "environment", words: 50 }
+  - decks: ["zh-environment", "zh-environment-sentences", "zh-reading-environment", "*"]
+    words: 50
     listening_passages:
       - { id: "recycling-talk", text: { "en": "Neighbours talk about sorting rubbish and clean air" } }
     reading_passages:
       - { id: "clean-up-notice", text: { "en": "A notice for a neighbourhood clean-up" } }
-  - planned: { id: "zh-grammar-concession", grammar: ["jishi-ye", "buguan-dou"] }
+  - decks: ["zh-grammar-jishi-ye", "zh-grammar-buguan-dou", "zh-grammar-jishi-ye-sentences"]
+    words: 0
+    grammar: ["jishi-ye", "buguan-dou"]
     listening_passages:
       - { id: "even-if-it-rains", text: { "en": "Saying even if it rains we will go, and whatever you say I will go" } }
     reading_passages:
       - { id: "team-motto", text: { "en": "A sports team's short motto and pledge" } }
-  - planned: { id: "zh-cinema", theme: "cinema", words: 50 }
+  - decks: ["zh-cinema", "zh-cinema-sentences", "zh-reading-cinema", "*"]
+    words: 50
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about a film they saw" } }
     reading_passages:
       - { id: "film-review", text: { "en": "A short film review" } }
-  - planned: { id: "zh-characters-6", grammar: "script-characters-6", words: 0 }
+  - decks: ["zh-characters-6", "zh-reading-characters-6"]
+    words: 10
     listening_passages:
       - { id: "characters-at-work", text: { "en": "Hearing the work and study words whose characters are taught: meeting, report, exam, question" } }
     reading_passages:
       - { id: "office-memo", text: { "en": "A short office memo in characters" } }
-  - planned: { id: "zh-arts", theme: "arts", words: 50 }
+  - decks: ["zh-arts", "zh-arts-sentences", "zh-reading-arts", "*"]
+    words: 50
     listening_passages:
       - { id: "a-calligraphy-class", text: { "en": "A teacher explains a calligraphy class" } }
     reading_passages:
       - { id: "exhibition-notice", text: { "en": "A notice for an art exhibition" } }
-  - planned: { id: "zh-grammar-sequence", grammar: ["yi-jiu", "xian-zai-ranhou"] }
+  - decks: ["zh-grammar-yi-jiu", "zh-grammar-xian-ranhou", "zh-grammar-yi-jiu-sentences"]
+    words: 0
+    grammar: ["yi-jiu", "xian-ranhou"]
     listening_passages:
       - { id: "as-soon-as-i-got-home", text: { "en": "Telling events in order: as soon as I got home it rained; first, then, after that" } }
     reading_passages:
       - { id: "how-to-steps", text: { "en": "Steps for opening a bank account" } }
-  - planned: { id: "zh-history", theme: "history", words: 50 }
+  - decks: ["zh-history", "zh-history-sentences", "zh-reading-history", "*"]
+    words: 50
     listening_passages:
       - { id: "the-great-wall", text: { "en": "A guide tells the story of the Great Wall" } }
     reading_passages:
       - { id: "museum-card", text: { "en": "A museum card about an emperor" } }
-  - planned: { id: "zh-festivals", theme: "festivals", words: 45 }
+  - decks: ["zh-festivals", "zh-festivals-sentences", "zh-reading-festivals", "*"]
+    words: 45
     listening_passages:
       - { id: "spring-festival", text: { "en": "A family gets ready for the Spring Festival" } }
     reading_passages:
       - { id: "festival-poster", text: { "en": "A poster for the Mid-Autumn Festival" } }
-  - planned: { id: "zh-weddings", theme: "weddings", words: 45 }
+  - decks: ["zh-weddings", "zh-weddings-sentences", "zh-reading-weddings", "*"]
+    words: 45
     listening_passages:
       - { id: "wedding-plans", text: { "en": "Relatives plan a wedding" } }
     reading_passages:
       - { id: "wedding-card", text: { "en": "A wedding invitation card" } }
-  - planned: { id: "zh-grammar-aspect-contrast", grammar: ["aspect-contrast", "zhengzai-ne"] }
+  - decks: ["zh-grammar-le-guo-zhe", "zh-grammar-zhengzai-ne", "zh-grammar-le-guo-zhe-sentences"]
+    words: 0
+    grammar: ["le-guo-zhe", "zhengzai-ne"]
     listening_passages:
       - { id: "three-aspects", text: { "en": "One story told with le, guo and zhe side by side: what happened, what has been done before, what was going on" } }
     reading_passages:
       - { id: "holiday-story", text: { "en": "A short story of a holiday" } }
-  - planned: { id: "zh-relationships", theme: "relationships", words: 50 }
+  - decks: ["zh-relationships", "zh-relationships-sentences", "zh-reading-relationships", "*"]
+    words: 50
     listening_passages:
       - { id: "neighbours-and-friends", text: { "en": "Talking about neighbours and old friends" } }
     reading_passages:
       - { id: "thank-you-note", text: { "en": "A thank-you note to a neighbour" } }
-  - planned: { id: "zh-housing", theme: "housing", words: 50 }
+  - decks: ["zh-housing", "zh-housing-sentences", "zh-reading-housing", "*"]
+    words: 50
     listening_passages:
       - { id: "renting-a-flat", text: { "en": "Asking an agent about a flat to rent" } }
     reading_passages:
       - { id: "rental-terms", text: { "en": "The terms of a rental, with the deposit" } }
-  - planned: { id: "zh-grammar-de-adverbial", grammar: ["de-adverbial", "three-de"] }
+  - decks: ["zh-grammar-de-complement", "zh-grammar-de-adverbial", "zh-grammar-de-complement-sentences"]
+    words: 0
+    grammar: ["de-complement", "de-adverbial"]
     listening_passages:
       - { id: "slowly-and-carefully", text: { "en": "Saying how something is done with de before the verb: slowly, carefully, happily" } }
     reading_passages:
       - { id: "three-de-chart", text: { "en": "One sentence written with each of the three de, and what each does" } }
-  - planned: { id: "zh-emergencies", theme: "emergencies", words: 40 }
+  - decks: ["zh-emergencies", "zh-reading-emergencies", "*"]
+    words: 40
     listening_passages:
       - { id: "fire-drill", text: { "en": "Instructions in a fire drill" } }
     reading_passages:
       - { id: "evacuation-notice", text: { "en": "An evacuation notice in a building" } }
-  - planned: { id: "zh-law", theme: "law", words: 40 }
+  - decks: ["zh-law", "zh-law-sentences", "zh-reading-law", "*"]
+    words: 40
     listening_passages:
       - { id: "at-the-police-station", text: { "en": "Reporting a lost wallet at a police station" } }
     reading_passages:
       - { id: "rights-leaflet", text: { "en": "A leaflet on a tenant's rights" } }
-  - planned: { id: "zh-verbs-4", theme: "verbs-4", words: 60 }
+  - decks: ["zh-verbs-4", "zh-verbs-4-sentences", "zh-reading-verbs-4", "*"]
+    words: 60
     listening_passages:
       - { id: "a-long-story", text: { "en": "A story told in a sequence of events" } }
     reading_passages:
       - { id: "short-story", text: { "en": "A short story with a turn" } }
-  - planned: { id: "zh-idioms", theme: "idioms", words: 50 }
+  - decks: ["zh-idioms", "zh-idioms-sentences", "zh-reading-idioms", "*"]
+    words: 50
     listening_passages:
       - { id: "four-character-idioms", text: { "en": "A friend uses a few common four-character idioms, and says what each means" } }
     reading_passages:
       - { id: "idiom-story", text: { "en": "The short old story behind an idiom" } }
-  - planned: { id: "zh-abstract-words", theme: "abstract-words", words: 55 }
+      - { id: "idiom-in-use", text: { "en": "A friend uses idioms in everyday talk" } }
+  - decks: ["zh-abstract-words", "zh-abstract-words-sentences", "zh-reading-abstract-words", "*"]
+    words: 55
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
-  - planned: { id: "zh-characters-7", grammar: "script-characters-7", words: 0 }
+      - { id: "values-in-talk", text: { "en": "A short talk in class about what makes a good life" } }
+  - decks: ["zh-characters-7", "zh-reading-characters-7"]
+    words: 10
     listening_passages:
       - { id: "characters-in-society", text: { "en": "Hearing the society words whose characters are taught: economy, culture, environment, problem" } }
     reading_passages:
       - { id: "newspaper-paragraph", text: { "en": "One paragraph of a newspaper article" } }
-  - planned: { id: "zh-money", theme: "money", words: 50 }
+  - decks: ["zh-money", "zh-money-sentences", "zh-reading-money", "*"]
+    words: 50
     listening_passages:
       - { id: "at-the-bank", text: { "en": "Opening an account at a bank counter" } }
     reading_passages:
       - { id: "bill-and-receipt", text: { "en": "A utility bill and a payment receipt" } }
-  - planned: { id: "zh-grammar-written-register", grammar: "written-register" }
+      - { id: "market-prices", text: { "en": "Prices on a market stall: fruit by the jin and a bargain" } }
+  - decks: ["zh-grammar-written-register", "zh-grammar-written-register-sentences"]
+    words: 0
+    grammar: ["written-register"]
     listening_passages:
       - { id: "news-reader", text: { "en": "A news reader's formal words beside their everyday ones" } }
     reading_passages:
       - { id: "official-notice", text: { "en": "A short official notice in the written style" } }
-  - planned: { id: "zh-society", theme: "society", words: 50 }
+  - decks: ["zh-society", "zh-society-sentences", "zh-reading-society", "*"]
+    words: 50
     listening_passages:
       - { id: "city-and-village", text: { "en": "Residents talk about moving from a village to a city" } }
     reading_passages:
       - { id: "survey-results", text: { "en": "The results of a short survey on work and life" } }
-  - planned: { id: "zh-university", theme: "university", words: 50 }
+      - { id: "village-letter", text: { "en": "A letter from a village family about a son who works in the city" } }
+  - decks: ["zh-university", "zh-university-sentences", "zh-reading-university", "*"]
+    words: 50
     listening_passages:
       - { id: "choosing-a-course", text: { "en": "Students talk about which course to choose" } }
     reading_passages:
       - { id: "campus-notice", text: { "en": "A campus notice about exams" } }
-  - planned: { id: "zh-food-culture", theme: "food-culture", words: 50 }
+      - { id: "student-diary", text: { "en": "A student's diary of a busy week of study" } }
+  - decks: ["zh-food-culture", "zh-food-culture-sentences", "zh-reading-food-culture", "*"]
+    words: 50
     listening_passages:
       - { id: "new-year-dumplings", text: { "en": "A family makes dumplings and explains the New Year dishes" } }
     reading_passages:
       - { id: "regional-cuisines", text: { "en": "A short article about China's regional cuisines" } }
-  - planned: { id: "zh-literature", theme: "literature", words: 50 }
+      - { id: "tea-house-visit", text: { "en": "A morning at a teahouse with friends, and the dim sum they order" } }
+  - decks: ["zh-literature", "zh-literature-sentences", "zh-reading-literature", "*"]
+    words: 50
     listening_passages:
       - { id: "a-poem-explained", text: { "en": "A teacher reads a short Tang poem and explains it" } }
     reading_passages:
       - { id: "book-blurb", text: { "en": "The back-cover blurb of a novel" } }
-  - planned: { id: "zh-verbs-5", theme: "verbs-5", words: 50 }
+  - decks: ["zh-verbs-5", "zh-verbs-5-sentences", "zh-reading-verbs-5", "*"]
+    words: 50
     listening_passages:
       - { id: "what-happened-next", text: { "en": "Telling a long story with every step in order" } }
     reading_passages:
       - { id: "newspaper-feature", text: { "en": "A newspaper feature with a short interview" } }
-  - planned: { id: "zh-grammar-politeness", grammar: ["polite-requests", "rhetorical-questions"] }
+  - decks: ["zh-grammar-polite-requests", "zh-grammar-rhetorical-questions", "zh-grammar-politeness-sentences"]
+    words: 0
+    grammar: ["polite-requests", "rhetorical-questions"]
     listening_passages:
       - { id: "speaking-to-a-stranger", text: { "en": "Speaking to an elder, a stranger and a friend: nin, qing and the softer ways to ask" } }
     reading_passages:

@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-de-adverbial"
+"kind": "layer"
+"core": "zh-grammar-de-adverbial"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "地 (de) before a verb: the action is done in this way"
+"license": "CC-BY-SA-4.0"
+"description": "地 (de) turns an adjective into an adverb before a verb: 他很快地说 (tā hěn kuài de shuō), he says it quickly. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "地 (de) before a verb: the action is done in this way"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of the action"
+    "adverbial": "a description with 地 (de) before the verb"
+    "adverbial-not": "a description with 地 (de), negated"
+  "entries":
+    "shuo2": "to speak"
+    "zou": "to walk"
+    "xue": "to learn"
+    "chang": "to sing"
+  "notes": "地 (de) turns a description into an adverb before a verb, to say how it is done: 他很快地说 (tā hěn kuài de shuō), he says it quickly; 我认真地学 (wǒ rènzhēn de xué), I study seriously. Use 地 (de) before the verb; use 得 (de) after the verb. Many two-syllable adverbs need no 地 (de): 马上走 (mǎshàng zǒu), leave at once."

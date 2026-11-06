@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-adjective-reduplication"
+"kind": "layer"
+"core": "zh-grammar-adjective-reduplication"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Doubling an adjective: 小小的 (xiǎoxiǎo de), a lively description"
+"license": "CC-BY-SA-4.0"
+"description": "An adjective can be doubled, with 的 (de) after it before a noun, to make the description lively or affectionate: 小小的房间 (xiǎoxiǎo de fángjiān), a small room. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Doubling an adjective: 小小的 (xiǎoxiǎo de), a lively description"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain description with 很 (hěn)"
+    "reduplicated": "the adjective doubled, with 的 (de) after it, before a noun"
+  "entries":
+    "xiao": "small"
+    "hong": "red"
+    "da": "big"
+    "chang": "long"
+    "gao": "tall; high"
+  "notes": "Doubling an adjective makes the description lively and often affectionate: 小小的房间 (xiǎoxiǎo de fángjiān), a small room; 红红的脸 (hónghóng de liǎn), a rosy face. The second syllable takes a first tone when it is the adjective 红 (hóng), 大 (dà), or 长 (cháng), the same as the first. The 的 (de) after the doubled form is said with a neutral tone. Only some adjectives double this way, and not every adjective can be doubled."

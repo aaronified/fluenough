@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-clothes"
+"name": "Chinese reading: clothes and colours"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-choosing-a-shirt"
+  "title": "Choosing a shirt"
+  "theme": "clothes"
+  "sentences":
+  - "text": "你 要 什么 颜色？"
+    "reading": "nǐ yào shénme yánsè?"
+  - "text": "白色 的 还是 蓝色 的？"
+    "reading": "báisè de háishi lánsè de?"
+  - "text": "我 要 蓝色 的， 大 号。"
+    "reading": "wǒ yào lánsè de, dà hào."
+  - "text": "试穿 一下 吧。"
+    "reading": "shìchuān yíxià ba."
+  "questions":
+  - "id": "zh-1512"
+    "prompt":
+      "en": "你 要 什么 颜色 (nǐ yào shénme yánsè) asks:"
+    "options":
+    - "en": "what size do you want"
+    - "en": "what colour do you want"
+    "answer": 2
+  - "id": "zh-1513"
+    "prompt":
+      "en": "我要蓝色的 (wǒ yào lánsè de) and 大号 (dà hào) say the speaker wants a large blue one."
+    "answer": true
+  - "id": "zh-1514"
+    "prompt":
+      "en": "试穿 一下 吧 (shìchuān yíxià ba) means:"
+    "options":
+    - "en": "try it on, please"
+    - "en": "pay for it, please"
+    "answer": 1
+- "id": "zh-sale-sign"
+  "title": "A sale sign"
+  "theme": "clothes"
+  "sentences":
+  - "text": "全场 打折！"
+    "reading": "quánchǎng dǎzhé!"
+  - "text": "裤子 打 八 折。"
+    "reading": "kùzi dǎ bā zhé."
+  - "text": "衬衫 质量 很 好。"
+    "reading": "chènshān zhìliàng hěn hǎo."
+  - "text": "欢迎 试穿！"
+    "reading": "huānyíng shìchuān!"
+  "questions":
+  - "id": "zh-1515"
+    "prompt":
+      "en": "全场 打折 (quánchǎng dǎzhé) means:"
+    "options":
+    - "en": "everything is on sale"
+    - "en": "nothing is on sale"
+    "answer": 1
+  - "id": "zh-1516"
+    "prompt":
+      "en": "衬衫 质量 很 好 (chènshān zhìliàng hěn hǎo) says the shirts are good quality."
+    "answer": true
+  - "id": "zh-1517"
+    "prompt":
+      "en": "欢迎 试穿 (huānyíng shìchuān) means:"
+    "options":
+    - "en": "you are welcome to try it on"
+    - "en": "you may not try it on"
+    "answer": 1

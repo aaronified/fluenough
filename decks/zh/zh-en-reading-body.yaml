@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-body"
+"name": "Chinese reading: the body"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-where-it-hurts"
+  "title": "Where it hurts"
+  "theme": "body"
+  "sentences":
+  - "text": "你 哪儿 不 舒服？"
+    "reading": "nǐ nǎr bù shūfu?"
+  - "text": "我 的 头 疼。"
+    "reading": "wǒ de tóu téng."
+  - "text": "肚子 也 疼。"
+    "reading": "dùzi yě téng."
+  - "text": "请 你 去 医院。"
+    "reading": "qǐng nǐ qù yīyuàn."
+  "questions":
+  - "id": "zh-1102"
+    "prompt":
+      "en": "你 哪儿 不 舒服 (nǐ nǎr bù shūfu) asks:"
+    "options":
+    - "en": "where it hurts"
+    - "en": "what time it is"
+    "answer": 1
+  - "id": "zh-1103"
+    "prompt":
+      "en": "我 的 头 疼 (wǒ de tóu téng) says the head hurts."
+    "answer": true
+  - "id": "zh-1104"
+    "prompt":
+      "en": "请 你 去 医院 (qǐng nǐ qù yīyuàn) means:"
+    "options":
+    - "en": "please go to the hospital"
+    - "en": "please go home"
+    "answer": 1
+- "id": "zh-stretching-chart"
+  "title": "A stretching chart"
+  "theme": "body"
+  "sentences":
+  - "text": "举 手 十 次。"
+    "reading": "jǔ shǒu shí cì."
+  - "text": "弯 腰 五 次。"
+    "reading": "wān yāo wǔ cì."
+  - "text": "转 头 三 次。"
+    "reading": "zhuǎn tóu sān cì."
+  - "text": "锻炼 身体 很 好。"
+    "reading": "duànliàn shēntǐ hěn hǎo."
+  "questions":
+  - "id": "zh-1105"
+    "prompt":
+      "en": "举 手 十 次 (jǔ shǒu shí cì) means:"
+    "options":
+    - "en": "raise your hands ten times"
+    - "en": "wash your hands ten times"
+    "answer": 1
+  - "id": "zh-1106"
+    "prompt":
+      "en": "转 头 三 次 (zhuǎn tóu sān cì) says to turn the head three times."
+    "answer": true
+  - "id": "zh-1107"
+    "prompt":
+      "en": "锻炼 身体 很 好 (duànliàn shēntǐ hěn hǎo) means:"
+    "options":
+    - "en": "exercise is good for the body"
+    - "en": "exercise is bad for the body"
+    "answer": 1

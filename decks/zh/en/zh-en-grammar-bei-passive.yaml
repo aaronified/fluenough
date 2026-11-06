@@ -1,0 +1,29 @@
+"schema": 1
+"id": "zh-en-grammar-bei-passive"
+"kind": "layer"
+"core": "zh-grammar-bei-passive"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "被 (bèi): the passive with the doer or without it"
+"license": "CC-BY-SA-4.0"
+"description": "The passive with 被 (bèi) says that something was done to someone or something: 我的书被他拿走了 (wǒ de shū bèi tā názǒu le), my book was taken by him. When the doer is not named, 被 (bèi) comes before the verb: 门被打开了 (mén bèi dǎkāi le), the door was opened. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "被 (bèi): the passive with the doer or without it"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "an active statement: someone did something"
+    "passive": "被 (bèi) before the doer, then the verb"
+    "no-doer": "被 (bèi) before the verb with no doer named"
+  "entries":
+    "nazou": "to take away"
+    "yao": "to bite"
+    "dakai": "to open"
+    "dasui": "to break"
+    "xie": "to write"
+    "xi": "to wash"
+  "notes": "被 (bèi) comes before the doer in the passive: 我的书被他拿走了 (wǒ de shū bèi tā názǒu le), my book was taken away by him. The thing that was affected comes first, then 被 (bèi), then the doer, then the verb and 了 (le). When the doer is not known or not important, drop it: 门被打开了 (mén bèi dǎkāi le), the door was opened. Do not use 被 (bèi) for a good thing that someone did. Put 没 (méi) before 被 (bèi) to say something was not done: 我的书没被他拿走 (wǒ de shū méi bèi tā názǒu), my book was not taken away by him."

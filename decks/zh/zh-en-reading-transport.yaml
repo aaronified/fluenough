@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-transport"
+"name": "Chinese reading: transport"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-which-bus"
+  "title": "Which bus?"
+  "theme": "transport"
+  "sentences":
+  - "text": "请问，去 机场 的 车 是 几 路？"
+    "reading": "qǐngwèn, qù jīchǎng de chē shì jǐ lù?"
+  - "text": "三 路 公共汽车 去 机场。"
+    "reading": "sān lù gōnggòngqìchē qù jīchǎng."
+  - "text": "坐 地铁 也 可以。"
+    "reading": "zuò dìtiě yě kěyǐ."
+  - "text": "车费 五 块。"
+    "reading": "chēfèi wǔ kuài."
+  "questions":
+  - "id": "zh-1001"
+    "prompt":
+      "en": "三 路 公共汽车 去 机场 (sān lù gōnggòngqìchē qù jīchǎng) means:"
+    "options":
+    - "en": "the number three bus goes to the airport"
+    - "en": "the number three metro goes to the airport"
+    "answer": 1
+  - "id": "zh-1002"
+    "prompt":
+      "en": "坐 地铁 也 可以 (zuò dìtiě yě kěyǐ) says the metro is also an option."
+    "answer": true
+  - "id": "zh-1003"
+    "prompt":
+      "en": "车费 五 块 (chēfèi wǔ kuài) says the fare is:"
+    "options":
+    - "en": "five yuan"
+    - "en": "fifteen yuan"
+    "answer": 1
+- "id": "zh-station-timetable"
+  "title": "A station timetable"
+  "theme": "transport"
+  "sentences":
+  - "text": "火车 八 点 出发。"
+    "reading": "huǒchē bā diǎn chūfā."
+  - "text": "火车 十 点 到。"
+    "reading": "huǒchē shí diǎn dào."
+  - "text": "站台 是 三 号。"
+    "reading": "zhàntái shì sān hào."
+  - "text": "车票 请 在 车站 买。"
+    "reading": "chēpiào qǐng zài chēzhàn mǎi."
+  "questions":
+  - "id": "zh-1004"
+    "prompt":
+      "en": "火车 八 点 出发 (huǒchē bā diǎn chūfā) means the train:"
+    "options":
+    - "en": "leaves at eight"
+    - "en": "arrives at eight"
+    "answer": 1
+  - "id": "zh-1005"
+    "prompt":
+      "en": "站台 是 三 号 (zhàntái shì sān hào) says the platform is number three."
+    "answer": true
+  - "id": "zh-1006"
+    "prompt":
+      "en": "车票 请 在 车站 买 (chēpiào qǐng zài chēzhàn mǎi) says to buy tickets:"
+    "options":
+    - "en": "at the station"
+    - "en": "on the bus"
+    "answer": 1

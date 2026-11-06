@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-directions"
+"name": "Chinese reading: directions"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-asking-the-way"
+  "title": "Asking the way"
+  "theme": "directions"
+  "sentences":
+  - "text": "请问，去 车站 怎么 走？"
+    "reading": "qǐngwèn, qù chēzhàn zěnme zǒu?"
+  - "text": "一直 走， 到 十字路口。"
+    "reading": "yìzhí zǒu, dào shízìlùkǒu."
+  - "text": "左 转， 车站 在 右边。"
+    "reading": "zuǒ zhuǎn, chēzhàn zài yòubiān."
+  - "text": "车站 离 这儿 不 远。"
+    "reading": "chēzhàn lí zhèr bù yuǎn."
+  "questions":
+  - "id": "zh-1045"
+    "prompt":
+      "en": "一直 走 (yìzhí zǒu) means:"
+    "options":
+    - "en": "keep going straight"
+    - "en": "turn back"
+    "answer": 1
+  - "id": "zh-1046"
+    "prompt":
+      "en": "车站 离 这儿 不 远 (chēzhàn lí zhèr bù yuǎn) says the station is not far from here."
+    "answer": true
+  - "id": "zh-1047"
+    "prompt":
+      "en": "左 转 (zuǒ zhuǎn) means:"
+    "options":
+    - "en": "turn left"
+    - "en": "turn right"
+    "answer": 1
+- "id": "zh-simple-map"
+  "title": "A simple map"
+  "theme": "directions"
+  "sentences":
+  - "text": "银行 在 超市 的 北边。"
+    "reading": "yínháng zài chāoshì de běibian."
+  - "text": "医院 在 银行 的 东边。"
+    "reading": "yīyuàn zài yínháng de dōngbian."
+  - "text": "公园 在 学校 对面。"
+    "reading": "gōngyuán zài xuéxiào duìmiàn."
+  - "text": "从 学校 到 公园 走 两 分钟。"
+    "reading": "cóng xuéxiào dào gōngyuán zǒu liǎng fēnzhōng."
+  "questions":
+  - "id": "zh-1048"
+    "prompt":
+      "en": "银行 在 超市 的 北边 (yínháng zài chāoshì de běibian) means the bank is:"
+    "options":
+    - "en": "north of the supermarket"
+    - "en": "south of the supermarket"
+    "answer": 1
+  - "id": "zh-1049"
+    "prompt":
+      "en": "公园 在 学校 对面 (gōngyuán zài xuéxiào duìmiàn) says the park is across from the school."
+    "answer": true
+  - "id": "zh-1050"
+    "prompt":
+      "en": "从 学校 到 公园 走 两 分钟 (cóng xuéxiào dào gōngyuán zǒu liǎng fēnzhōng) means it takes:"
+    "options":
+    - "en": "two minutes to walk"
+    - "en": "two kilometres to walk"
+    "answer": 1

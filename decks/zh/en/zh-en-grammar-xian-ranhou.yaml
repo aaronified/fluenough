@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-xian-ranhou"
+"kind": "layer"
+"core": "zh-grammar-xian-ranhou"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "先 (xiān) ... 然后 (ránhòu): first ... then"
+"license": "CC-BY-SA-4.0"
+"description": "先 (xiān) ... 然后 (ránhòu) puts actions in order: 先吃饭 (xiān chīfàn)，然后工作 (ránhòu gōngzuò), first eat, then work. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "先 (xiān) ... 然后 (ránhòu): first ... then"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of two actions"
+    "first-then": "先 (xiān) before the first action, then 然后 (ránhòu) before the second"
+    "first-then-not": "先 (xiān) with a negated first action, then 然后 (ránhòu)"
+  "entries":
+    "chifan": "to eat a meal"
+    "xizao": "to take a bath"
+    "xie": "to write"
+    "kan": "to look"
+  "notes": "先 (xiān) puts the first action before the second, and 然后 (ránhòu) is then: 先吃饭 (xiān chīfàn)，然后工作 (ránhòu gōngzuò), first eat, then work. 然后 (ránhòu) can be used alone, and 先 (xiān) can be dropped when the order is clear. Put 不 (bù) before the verb of the first action to say it is not done."

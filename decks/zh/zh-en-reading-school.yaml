@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-school"
+"name": "Chinese reading: school"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-school-day"
+  "title": "A school day"
+  "theme": "school"
+  "sentences":
+  - "text": "我 每天 七 点 去 学校。"
+    "reading": "wǒ měitiān qī diǎn qù xuéxiào."
+  - "text": "上午 有 四节课。"
+    "reading": "shàngwǔ yǒu sìjiékè."
+  - "text": "中午 去 食堂 吃 饭。"
+    "reading": "zhōngwǔ qù shítáng chī fàn."
+  - "text": "放学以后我写作业。"
+    "reading": "fàngxué yǐhòu wǒ xiě zuòyè."
+  "questions":
+  - "id": "zh-1970"
+    "prompt":
+      "en": "四节课 (sì jié kè) means:"
+    "options":
+    - "en": "four exams"
+    - "en": "four lessons"
+    "answer": 2
+  - "id": "zh-1971"
+    "prompt":
+      "en": "中午去食堂吃饭 (zhōngwǔ qù shítáng chī fàn) says they eat in the canteen at noon."
+    "answer": true
+  - "id": "zh-1972"
+    "prompt":
+      "en": "放学以后我写作业 (fàngxué yǐhòu wǒ xiě zuòyè) means:"
+    "options":
+    - "en": "after school I do homework"
+    - "en": "before school I do homework"
+    "answer": 1
+- "id": "zh-class-timetable"
+  "title": "A class timetable"
+  "theme": "school"
+  "sentences":
+  - "text": "星期一： 语文， 数学， 英语。"
+    "reading": "xīngqīyī: yǔwén, shùxué, yīngyǔ."
+  - "text": "星期二： 体育， 美术。"
+    "reading": "xīngqī'èr: tǐyù, měishù."
+  - "text": "星期三： 科学， 音乐。"
+    "reading": "xīngqīsān: kēxué, yīnyuè."
+  - "text": "星期一有数学 (xīngqīyī yǒu shùxué) 。"
+    "reading": "xīngqīyī yǒu shùxué."
+  "questions":
+  - "id": "zh-1973"
+    "prompt":
+      "en": "体育 (tǐyù) means:"
+    "options":
+    - "en": "art"
+    - "en": "PE"
+    "answer": 2
+  - "id": "zh-1974"
+    "prompt":
+      "en": "星期一有数学 (xīngqīyī yǒu shùxué) says there is maths on Monday."
+    "answer": true
+  - "id": "zh-1975"
+    "prompt":
+      "en": "美术 (měishù) means:"
+    "options":
+    - "en": "art"
+    - "en": "music"
+    "answer": 1

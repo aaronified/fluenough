@@ -1,0 +1,28 @@
+"schema": 1
+"id": "zh-en-grammar-le-guo-zhe"
+"kind": "layer"
+"core": "zh-grammar-le-guo-zhe"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "了 (le), 过 (guo) and 着 (zhe): done, done before, and going on"
+"license": "CC-BY-SA-4.0"
+"description": "了 (le) says an action is done, 过 (guo) says it was done at some time before, and 着 (zhe) says a state goes on. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "了 (le), 过 (guo) and 着 (zhe): done, done before, and going on"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "le": "了 (le) after the verb: the action is finished"
+    "guo": "过 (guo) after the verb: the action has been done before"
+    "zhe": "着 (zhe) after the verb: the state continues"
+  "entries":
+    "chi": "to eat"
+    "kan": "to read"
+    "zuo": "to sit"
+    "chuan": "to wear"
+    "gua": "to hang"
+  "notes": "了 (le) shows that an action is finished; 过 (guo) shows that it happened before, at some time in the past; 着 (zhe) shows a state that continues: 门开着 (mén kāi zhe), the door is open. Do not put 了 (le) and 过 (guo) on the same verb unless the sentence needs both."

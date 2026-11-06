@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-university"
+"name": "Chinese reading: university"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+    - "han_simplified"
+    - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "zh-campus-notice"
+    "title": "Notice about the final exams"
+    "theme": "university"
+    "sentences":
+      - "text": "各位 同学， 期末 考试 从 一 月 十 号 开始。"
+        "reading": "gèwèi tóngxué, qīmò kǎoshì cóng yí yuè shí hào kāishǐ."
+      - "text": "考场 在 图书馆 旁边 的 教室 里。"
+        "reading": "kǎochǎng zài túshūguǎn pángbiān de jiàoshì lǐ."
+      - "text": "请 同学们 提前 十五 分钟 到。"
+        "reading": "qǐng tóngxuémen tíqián shíwǔ fēnzhōng dào."
+      - "text": "没有 学生证 的 同学 不 能 进入 考场。"
+        "reading": "méiyǒu xuéshēngzhèng de tóngxué bù néng jìnrù kǎochǎng."
+    "questions":
+      - "id": "zh-4643"
+        "prompt":
+          "en": "Which word means 'exam room'?"
+        "options":
+          - "en": "考场 (kǎochǎng)"
+          - "en": "校园 (xiàoyuán)"
+        "answer": 1
+      - "id": "zh-4644"
+        "prompt":
+          "en": "Which word means 'final exam'?"
+        "options":
+          - "en": "期末 (qīmò)"
+          - "en": "期中 (qīzhōng)"
+        "answer": 1
+      - "id": "zh-4645"
+        "prompt":
+          "en": "Students without a student card may enter the exam room."
+        "answer": false
+  - "id": "zh-student-diary"
+    "title": "A week of study"
+    "theme": "university"
+    "sentences":
+      - "text": "这个 学期 我 选 了 三 门 课。"
+        "reading": "zhège xuéqī wǒ xuǎn le sān mén kè."
+      - "text": "周一 我 去 实验室 做 实验， 很 累。"
+        "reading": "zhōuyī wǒ qù shíyànshì zuò shíyàn, hěn lèi."
+      - "text": "周三 的 讲座 很 有意思， 我 做 了 很多 笔记。"
+        "reading": "zhōusān de jiǎngzuò hěn yǒuyìsi, wǒ zuò le hěnduō bǐjì."
+      - "text": "周末 我 和 同学 一起 复习， 准备 下周 的 考试。"
+        "reading": "zhōumò wǒ hé tóngxué yìqǐ fùxí, zhǔnbèi xiàzhōu de kǎoshì."
+    "questions":
+      - "id": "zh-4646"
+        "prompt":
+          "en": "Which word means 'lecture'?"
+        "options":
+          - "en": "讲座 (jiǎngzuò)"
+          - "en": "教材 (jiàocái)"
+        "answer": 1
+      - "id": "zh-4647"
+        "prompt":
+          "en": "Which word means 'notes'?"
+        "options":
+          - "en": "笔记 (bǐjì)"
+          - "en": "论文 (lùnwén)"
+        "answer": 1
+      - "id": "zh-4648"
+        "prompt":
+          "en": "The writer took notes at the lecture on Wednesday."
+        "answer": true

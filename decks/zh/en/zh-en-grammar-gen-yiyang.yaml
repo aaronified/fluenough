@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-gen-yiyang"
+"kind": "layer"
+"core": "zh-grammar-gen-yiyang"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "跟 (gēn) ... 一样 (yíyàng): as ... as"
+"license": "CC-BY-SA-4.0"
+"description": "Saying two things are the same: 跟 (gēn) ... 一样 (yíyàng) puts the two things either side, and 不一样 (bù yíyàng) says they are not the same. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "跟 (gēn) ... 一样 (yíyàng): as ... as"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "same": "as ... as, with 跟 (gēn) ... 一样 (yíyàng)"
+    "not-same": "not as ... as, with 跟 (gēn) ... 不一样 (bù yíyàng)"
+  "entries":
+    "gao": "tall"
+    "da": "big"
+    "gui": "expensive"
+    "leng": "cold"
+  "notes": "跟 (gēn) puts the thing compared with before 一样 (yíyàng), and the adjective goes last: 他跟我一样高 (tā gēn wǒ yíyàng gāo), he is as tall as me. The negative is 不一样 (bù yíyàng): 他跟我不一样高 (tā gēn wǒ bù yíyàng gāo), he is not as tall as me. 跟 (gēn) can also mean 'with', as in 跟朋友 (gēn péngyou), with a friend."

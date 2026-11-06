@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-xiaqu"
+"kind": "layer"
+"core": "zh-grammar-xiaqu"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "下去 (xiàqu): go on, keep doing"
+"license": "CC-BY-SA-4.0"
+"description": "下去 (xiàqu) after a verb means to keep doing it: 请说下去 (qǐng shuō xiàqu), please go on speaking. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "下去 (xiàqu): go on, keep doing"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain request or statement"
+    "continue": "the verb followed by 下去 (xiàqu): keep going"
+    "continue-not": "下去 (xiàqu) with 不 (bù) or 不能 (bù néng): cannot go on"
+  "entries":
+    "shuo": "to say"
+    "zuo": "to do"
+    "du": "to read aloud"
+    "zou": "to walk"
+  "notes": "下去 (xiàqu) after a verb means to keep on: 请说下去 (qǐng shuō xiàqu), please go on speaking. 不能再 (bù néng zài) ... 下去 (xiàqu) says one cannot go on any longer: 不能再说下去了 (bù néng zài shuō xiàqu le), I cannot go on speaking. Use it for an action that is still happening or could go on."

@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-juede-renwei"
+"kind": "layer"
+"core": "zh-grammar-juede-renwei"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "觉得 (juéde) and 认为 (rènwéi): giving an opinion"
+"license": "CC-BY-SA-4.0"
+"description": "觉得 (juéde) and 认为 (rènwéi) say what you think: 我觉得这个很好 (wǒ juéde zhè ge hěn hǎo), I think this is very good. Put 不 (bù) after 觉得 (juéde) to say the opposite. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "觉得 (juéde) and 认为 (rènwéi): giving an opinion"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of fact or view"
+    "opinion": "觉得 (juéde) before the statement, to give an opinion"
+    "opinion-not": "觉得 (juéde) with 不 (bù) before the statement, to say one does not think it"
+  "entries":
+    "hao": "good"
+    "gui": "expensive"
+    "nan": "difficult"
+    "dui": "right"
+  "notes": "觉得 (juéde) and 认为 (rènwéi) both give an opinion, and the statement after them is a full sentence: 我觉得这个很好 (wǒ juéde zhè ge hěn hǎo), I think this is very good. 认为 (rènwéi) is a little more formal. To say you do not think so, put 不 (bù) before the verb: 我不觉得 (wǒ bù juéde), I do not think. The statement itself keeps its normal form, so 很 (hěn) is still used before an adjective."

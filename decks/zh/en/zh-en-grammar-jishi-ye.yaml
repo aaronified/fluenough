@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-jishi-ye"
+"kind": "layer"
+"core": "zh-grammar-jishi-ye"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "即使 (jíshǐ) ... 也 (yě): even if ... still"
+"license": "CC-BY-SA-4.0"
+"description": "即使 (jíshǐ) grants a condition that does not change the result, and 也 (yě) gives the result: 即使下雨 (jíshǐ xiàyǔ)，我也去 (wǒ yě qù), even if it rains I will still go. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "即使 (jíshǐ) ... 也 (yě): even if ... still"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of the plan"
+    "even-if": "即使 (jíshǐ) before the condition, then 也 (yě) before the result"
+    "even-if-not": "即使 (jíshǐ) with a negated condition, then 也 (yě) before the result"
+  "entries":
+    "xiayu": "to rain"
+    "gui": "expensive"
+    "lei": "tired"
+    "nuli": "to work hard"
+  "notes": "即使 (jíshǐ) gives a case that is not expected to change the result: 即使下雨 (jíshǐ xiàyǔ)，我也去 (wǒ yě qù), even if it rains I will still go. 也 (yě) comes in the result. 即使 (jíshǐ) is more emphatic than 就算 (jiùsuàn), which is a close word. 即使 (jíshǐ) can be used with 也不 (yě bù) for a negative result."

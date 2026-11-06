@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-de-complement"
+"kind": "layer"
+"core": "zh-grammar-de-complement"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "得 (de) after a verb: how the action is done"
+"license": "CC-BY-SA-4.0"
+"description": "得 (de) after a verb introduces how the action is done: 他说得很快 (tā shuō de hěn kuài), he speaks very fast. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "得 (de) after a verb: how the action is done"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of the action"
+    "complement": "the verb, then 得 (de), then how it is done"
+    "complement-not": "the verb, then 得 (de), then 不 (bù) with the description"
+  "entries":
+    "shuo": "to speak"
+    "pao": "to run"
+    "xie": "to write"
+    "zuo": "to do"
+  "notes": "得 (de) after a verb puts the description of how the action is done: 他说得很快 (tā shuō de hěn kuài), he speaks very fast. The object is put before the verb, or repeated: 他说中文说得很好 (tā shuō Zhōngwén shuō de hěn hǎo). Use 不 (bù) before the description to say it is not good or not fast: 他跑得不快 (tā pǎo de bù kuài), he does not run fast. The description is an adjective or a phrase with 很 (hěn)."

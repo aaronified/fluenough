@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-eating-out"
+"name": "Chinese reading: eating out"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-a-hotpot-dinner"
+  "title": "A hot pot dinner"
+  "theme": "eating-out"
+  "sentences":
+  - "text": "我们 去 吃 火锅， 预订了包间。"
+    "reading": "wǒmen qù chī huǒguō, yùdìng le bāojiān."
+  - "text": "先 点菜 吧。"
+    "reading": "xiān diǎncài ba."
+  - "text": "还 要 一 碗 米饭。"
+    "reading": "hái yào yì wǎn mǐfàn."
+  - "text": "结账 的 时候 有 服务费 吗？"
+    "reading": "jiézhàng de shíhou yǒu fúwùfèi ma?"
+  "questions":
+  - "id": "zh-1839"
+    "prompt":
+      "en": "预订了包间 (yùdìng le bāojiān) means:"
+    "options":
+    - "en": "they booked a private room"
+    - "en": "they booked a table outside"
+    "answer": 1
+  - "id": "zh-1840"
+    "prompt":
+      "en": "还要一碗米饭 (hái yào yì wǎn mǐfàn) says they want one more bowl of rice."
+    "answer": true
+  - "id": "zh-1841"
+    "prompt":
+      "en": "结账的时候有服务费吗 (jiézhàng de shíhou yǒu fúwùfèi ma) asks:"
+    "options":
+    - "en": "whether there is a service charge"
+    - "en": "whether the food is free"
+    "answer": 1
+- "id": "zh-scan-to-order-menu"
+  "title": "Scan to order"
+  "theme": "eating-out"
+  "sentences":
+  - "text": "扫码 点菜， 很 方便。"
+    "reading": "sǎomǎ diǎncài, hěn fāngbiàn."
+  - "text": "招牌菜 是 烤鸭。"
+    "reading": "zhāopáicài shì kǎoyā."
+  - "text": "凉菜 和 热菜 都 有。"
+    "reading": "liángcài hé rècài dōu yǒu."
+  - "text": "有问题请找服务员。"
+    "reading": "yǒu wèntí qǐng zhǎo fúwùyuán."
+  "questions":
+  - "id": "zh-1842"
+    "prompt":
+      "en": "扫码 点菜 (sǎomǎ diǎncài) means:"
+    "options":
+    - "en": "order by scanning a code"
+    - "en": "pay by scanning a code"
+    "answer": 1
+  - "id": "zh-1843"
+    "prompt":
+      "en": "招牌菜 是 烤鸭 (zhāopáicài shì kǎoyā) says the signature dish is roast duck."
+    "answer": true
+  - "id": "zh-1844"
+    "prompt":
+      "en": "有问题请找服务员 (yǒu wèntí qǐng zhǎo fúwùyuán) means:"
+    "options":
+    - "en": "if you have a problem, ask a waiter"
+    - "en": "if you have a bill, pay at the door"
+    "answer": 1

@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-music"
+"name": "Chinese reading: music"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-at-karaoke"
+  "title": "At karaoke"
+  "theme": "music"
+  "sentences":
+  - "text": "我们 去 唱歌， 选 一 首 歌。"
+    "reading": "wǒmen qù chànggē, xuǎn yì shǒu gē."
+  - "text": "这首歌很好听 (zhè shǒu gē hěn hǎotīng)。"
+    "reading": "zhè shǒu gē hěn hǎotīng."
+  - "text": "声音太大了， 请 小 一点。"
+    "reading": "shēngyīn tài dà le, qǐng xiǎo yìdiǎn."
+  - "text": "伴奏 很 好。"
+    "reading": "bànzòu hěn hǎo."
+  "questions":
+  - "id": "zh-2096"
+    "prompt":
+      "en": "这首歌很好听 (zhè shǒu gē hěn hǎotīng) says:"
+    "options":
+    - "en": "this song sounds nice"
+    - "en": "this song is too long"
+    "answer": 1
+  - "id": "zh-2097"
+    "prompt":
+      "en": "声音太大了 (shēngyīn tài dà le) says the sound is too loud."
+    "answer": true
+  - "id": "zh-2098"
+    "prompt":
+      "en": "请小一点 (qǐng xiǎo yìdiǎn) means:"
+    "options":
+    - "en": "please turn it down a little"
+    - "en": "please turn it up"
+    "answer": 1
+- "id": "zh-concert-flyer"
+  "title": "A concert flyer"
+  "theme": "music"
+  "sentences":
+  - "text": "音乐会 时间： 星期六 晚上 七 点。"
+    "reading": "yīnyuèhuì shíjiān: xīngqīliù wǎnshang qī diǎn."
+  - "text": "地点： 大 礼堂。"
+    "reading": "dìdiǎn: dà lǐtáng."
+  - "text": "乐队 和 合唱 团 都 来。"
+    "reading": "yuèduì hé héchàng tuán dōu lái."
+  - "text": "门票在门口买 (ménpiào zài ménkǒu mǎi)。"
+    "reading": "ménpiào zài ménkǒu mǎi."
+  "questions":
+  - "id": "zh-2099"
+    "prompt":
+      "en": "音乐会 (yīnyuèhuì) means:"
+    "options":
+    - "en": "concert"
+    - "en": "lesson"
+    "answer": 1
+  - "id": "zh-2100"
+    "prompt":
+      "en": "门票在门口买 (ménpiào zài ménkǒu mǎi) says tickets are bought at the door."
+    "answer": true
+  - "id": "zh-2101"
+    "prompt":
+      "en": "乐队 (yuèduì) means:"
+    "options":
+    - "en": "band"
+    - "en": "choir"
+    "answer": 1

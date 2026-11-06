@@ -1,0 +1,28 @@
+"schema": 1
+"id": "zh-en-grammar-rhetorical-questions"
+"kind": "layer"
+"core": "zh-grammar-rhetorical-questions"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "Rhetorical questions: asking without needing an answer"
+"license": "CC-BY-SA-4.0"
+"description": "Rhetorical questions with 不是 (bú shì) ... 吗 (ma), 难道 (nándào), 怎么 (zěnme), 谁 (shéi), 哪里 (nǎlǐ) and 什么 (shénme). Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "Rhetorical questions: asking without needing an answer"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "rhetorical": "the same thing as a rhetorical question"
+  "entries":
+    "shi": "to be (isn't he ...?)"
+    "nandao": "can it be that ...?"
+    "zenme": "how could ...?"
+    "shei": "who ...? (nobody)"
+    "nali": "where ...? (not at all)"
+    "shenme": "what ...? (nothing)"
+  "notes": "A rhetorical question asks for no answer: it states something strongly. A question with a negative says the opposite, as a positive: 他不是老师吗 (tā bú shì lǎoshī ma), isn't he the teacher? means that he is. 难道 (nándào) adds surprise: 难道他不知道吗 (nándào tā bù zhīdào ma), can it be that he does not know? Question words say a thing is not so: 谁知道呢 (shéi zhīdào ne), who knows? means nobody knows, 我哪里有钱 (wǒ nǎlǐ yǒu qián), where would I have money? means I have none, and 这有什么难的 (zhè yǒu shénme nán de), what is hard about it? means it is not hard. Say them with a falling, firm voice; with a rising voice they are real questions. Use them with friends: to a stranger or an elder they sound sharp."

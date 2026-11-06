@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-jiu-cai"
+"kind": "layer"
+"core": "zh-grammar-jiu-cai"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "就 (jiù) and 才 (cái): early or quick, and late or only then"
+"license": "CC-BY-SA-4.0"
+"description": "The pair 就 (jiù) and 才 (cái) shows whether an action was early or late, quick or slow: 我六点就起床了 (wǒ liù diǎn jiù qǐchuáng le), I got up as early as six; 我七点才起床 (wǒ qī diǎn cái qǐchuáng), I only got up at seven. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "就 (jiù) and 才 (cái): early or quick, and late or only then"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of the time"
+    "jiu": "就 (jiù) before the verb: early, or quicker than expected"
+    "cai": "才 (cái) before the verb: late, or only then"
+  "entries":
+    "qichuang": "to get up"
+    "dao": "to arrive"
+    "xue": "to learn; to study"
+    "chifan": "to eat a meal"
+  "notes": "就 (jiù) says an action was early or quicker than expected: 我六点就起床了 (wǒ liù diǎn jiù qǐchuáng le), I got up as early as six. 才 (cái) says it was late, or that it happened only then: 我七点才起床 (wǒ qī diǎn cái qǐchuáng), I only got up at seven. Both come before the verb. A number of years or a time after 就 (jiù) or 才 (cái) helps show which: 我三岁就学中文 (wǒ sān suì jiù xué Zhōngwén), I started learning Chinese at three; 我大学才学中文 (wǒ dàxué cái xué Zhōngwén), I only started at university."

@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-phone"
+"name": "Chinese reading: phone"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-phone-call"
+  "title": "A phone call"
+  "theme": "phone"
+  "sentences":
+  - "text": "喂，小 王 吗？"
+    "reading": "wéi, xiǎo wáng ma?"
+  - "text": "我 是 李 明。"
+    "reading": "wǒ shì lǐ míng."
+  - "text": "明天 的 会议 几 点？"
+    "reading": "míngtiān de huìyì jǐ diǎn?"
+  - "text": "我 很 忙， 我 再 打 给 你。"
+    "reading": "wǒ hěn máng, wǒ zài dǎ gěi nǐ."
+  "questions":
+  - "id": "zh-2483"
+    "prompt":
+      "en": "喂 (wéi) is said:"
+    "options":
+    - "en": "when you end a call"
+    - "en": "when you answer a call"
+    "answer": 2
+  - "id": "zh-2484"
+    "prompt":
+      "en": "忙线 (mángxiàn) means the line is busy."
+    "answer": true
+  - "id": "zh-2485"
+    "prompt":
+      "en": "再 打 给 你 (zài dǎ gěi nǐ) means:"
+    "options":
+    - "en": "I will call you again"
+    - "en": "I will not call you"
+    "answer": 1
+- "id": "zh-text-messages"
+  "title": "Text messages"
+  "theme": "phone"
+  "sentences":
+  - "text": "我 发 了 一 条 短信 给 你。"
+    "reading": "wǒ fā le yì tiáo duǎnxìn gěi nǐ."
+  - "text": "你 收到 了 吗？"
+    "reading": "nǐ shōudào le ma?"
+  - "text": "我 的 手机 没 电 了， 我 要 充电。"
+    "reading": "wǒ de shǒujī méi diàn le, wǒ yào chōngdiàn."
+  - "text": "请 回 我 的 微信。"
+    "reading": "qǐng huí wǒ de wēixìn."
+  "questions":
+  - "id": "zh-2486"
+    "prompt":
+      "en": "收到 (shōudào) means:"
+    "options":
+    - "en": "to receive"
+    - "en": "to send"
+    "answer": 1
+  - "id": "zh-2487"
+    "prompt":
+      "en": "手机没电了 (shǒujī méi diàn le) says the phone needs charging."
+    "answer": true
+  - "id": "zh-2488"
+    "prompt":
+      "en": "回 (huí) means:"
+    "options":
+    - "en": "to reply"
+    - "en": "to delete"
+    "answer": 1
