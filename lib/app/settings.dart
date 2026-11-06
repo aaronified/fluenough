@@ -140,6 +140,8 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
   Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
   Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
+  Map<String, Set<String>> _verifiedSkills = const <String, Set<String>>{};
+  Map<String, String> _placementRuns = const <String, String>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
   Map<Skill, Set<String>> _offFor = const <Skill, Set<String>>{};
@@ -788,6 +790,45 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The skills of [language] that Find my level has verified, by their names
+  /// in a run (`read`, `hear`, `say`, `write`, `script`, `secondScript`):
+  /// the learner showed the whole course up to B1 in each (wiki,
+  /// Plan-Placement-V2, section 4.3). Never changes a skill's Leave, Know or
+  /// Learn.
+  Set<String> verifiedSkillsOf(String language) =>
+      _verifiedSkills[language] ?? const <String>{};
+
+  /// Sets [language]'s verified skills to [skills].
+  void setVerifiedSkills(String language, Set<String> skills) {
+    final was = _verifiedSkills[language] ?? const <String>{};
+    if (setEquals(was, skills)) return;
+    final next = <String, Set<String>>{..._verifiedSkills};
+    if (skills.isEmpty) {
+      next.remove(language);
+    } else {
+      next[language] = Set<String>.unmodifiable(skills);
+    }
+    _verifiedSkills = Map<String, Set<String>>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// [language]'s paused Find my level run as the JSON `SavedPlacementRun`
+  /// writes it, or null. Kept until the run ends or it is a week old.
+  String? placementRunOf(String language) => _placementRuns[language];
+
+  /// Saves [json] as [language]'s paused run, or drops it when null.
+  void setPlacementRun(String language, String? json) {
+    if (_placementRuns[language] == json) return;
+    final next = <String, String>{..._placementRuns};
+    if (json == null) {
+      next.remove(language);
+    } else {
+      next[language] = json;
+    }
+    _placementRuns = Map<String, String>.unmodifiable(next);
+    notifyListeners();
+  }
+
   /// Whether the reviewer unfolded [language] on Waiting for review (#471).
   /// Folded by default; what is unfolded is remembered.
   bool isWaitingLanguageOpen(String language) =>
@@ -1140,6 +1181,11 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _placedAt.entries)
         key: value.toList()..sort(),
     }),
+    'verified_skills': jsonEncode(<String, List<String>>{
+      for (final MapEntry(:key, :value) in _verifiedSkills.entries)
+        key: value.toList()..sort(),
+    }),
+    'placement_runs': jsonEncode(_placementRuns),
     'collapsed_levels': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
         key: value.toList()..sort(),
@@ -1470,6 +1516,22 @@ class SettingsNotifier extends ChangeNotifier {
         if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
         for (final seconds in value) {
           if (seconds is int) addPlacedAt(key, seconds);
+        }
+      }
+    }
+    if (pick('verified_skills', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        setVerifiedSkills(key, <String>{
+          for (final name in value)
+            if (name is String && RegExp(r'^[a-zA-Z]+$').hasMatch(name)) name,
+        });
+      }
+    }
+    if (pick('placement_runs', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is String) {
+          setPlacementRun(key, value);
         }
       }
     }
