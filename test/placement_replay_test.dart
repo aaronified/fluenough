@@ -119,20 +119,36 @@ void main() {
         });
       }
 
-      for (final persona in <String>['expert', 'native']) {
-        test('$persona: the top-class rates are reported', () {
-          if (personas[persona] == null) return;
+      for (final (persona, need) in <(String, double)>[
+        ('expert', 0.95),
+        ('native', 0.99),
+      ]) {
+        test('$persona reaches the top class in $need of runs per skill', () {
+          expect(personas[persona], isNotEmpty, reason: 'answer files');
           final outcomes = runAll(persona, PlacementDeclaration.expert);
-          final top = <String, int>{};
+          final top = <PlacementSkill, int>{};
           for (final o in outcomes) {
             for (final e in o.atEnd.entries) {
-              if (e.value.unit >= deckCount - deckCount ~/ 10) {
-                top[e.key.name] = (top[e.key.name] ?? 0) + 1;
+              // The unit shown is the deck index + 1: the top class is the
+              // last deck.
+              if (e.value.unit == deckCount) {
+                top[e.key] = (top[e.key] ?? 0) + 1;
               }
             }
           }
           // ignore: avoid_print
-          print('$language $persona reached the last tenth: $top of $_runs');
+          print('$language $persona reached the top: $top of $_runs');
+          for (final skill in <PlacementSkill>[
+            PlacementSkill.read,
+            PlacementSkill.hear,
+            PlacementSkill.write,
+          ]) {
+            expect(
+              (top[skill] ?? 0) / outcomes.length,
+              greaterThanOrEqualTo(need),
+              reason: skill.name,
+            );
+          }
         });
       }
     });

@@ -467,7 +467,22 @@ class BankedBuilder implements QuestionSource {
     Set<String> asked = const <String>{},
     GeneratedQuestion? failed,
   }) {
-    final all = bank.bySignature[signatureOf(request)] ?? const <BankEntry>[];
+    final probingRole =
+        request.role == PlacementQuestionRole.probe ||
+        request.role == PlacementQuestionRole.topUp;
+    // Probes and top-ups of one skill and kind share a pool.
+    final all = probingRole
+        ? <BankEntry>[
+            for (final role in <PlacementQuestionRole>[
+              PlacementQuestionRole.probe,
+              PlacementQuestionRole.topUp,
+            ])
+              ...?bank.bySignature['${role.name}|'
+                  '${role == PlacementQuestionRole.probe ? PlacementVariant.probe.label : PlacementVariant.topUp.label}|'
+                  '${request.kind.name}|'
+                  '${request.skills.map((s) => s.name).join('+')}'],
+          ]
+        : bank.bySignature[signatureOf(request)] ?? const <BankEntry>[];
     final needsOrigin =
         request.role == PlacementQuestionRole.split ||
         request.role == PlacementQuestionRole.isolating;

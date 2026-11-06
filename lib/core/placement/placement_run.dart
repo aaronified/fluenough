@@ -561,6 +561,32 @@ class _Engine {
 
   /// Skills left out of positioning and top-ups for the same reason.
   final Set<PlacementSkill> unavailableSkills = <PlacementSkill>{};
+
+  /// The bands whose pool ran out of questions, as `skill:class`.
+  final Set<String> exhausted = <String>{};
+
+  /// The class whose band holds [deck]: `(l_(k-1), l_k]`.
+  int _classOfDeck(int deck) {
+    final at = levels.levels.indexWhere((l) => l >= deck);
+    return (at < 0 ? levels.levels.length - 1 : at) + 1;
+  }
+
+  /// [deck], or the level of the nearest class whose band still has
+  /// questions for [skill] (the lower one first); null when none has.
+  int? _openLevel(PlacementSkill skill, int deck) {
+    final from = _classOfDeck(deck);
+    for (var d = 0; d < levels.levels.length; d++) {
+      for (final c in <int>[from - d, from + d]) {
+        if (c >= 1 &&
+            c <= levels.levels.length &&
+            !exhausted.contains('${skill.name}:$c')) {
+          return levels.levels[c - 1];
+        }
+      }
+    }
+    return null;
+  }
+
   final Set<PlacementSkill> closedSkills = <PlacementSkill>{};
   final Set<PlacementSkill> gapSkills = <PlacementSkill>{};
 
@@ -696,11 +722,12 @@ class _Engine {
         lead > 0 &&
         credit.leadingMass >= kSureFrom &&
         credit.placedClass() < lead;
-    final deck = state.floorPending
+    final wanted = state.floorPending
         ? levels.levels.first
         : confirm
         ? levels.levelOf(lead)
         : askingDeck(asking[skill]!);
+    final deck = _openLevel(skill, wanted) ?? wanted;
     final first = state.probes == 0;
     state.floorPending = false;
     state.probes += 1;
@@ -792,8 +819,20 @@ class _Engine {
         break;
       case PlacementQuestionRole.topUp:
       case PlacementQuestionRole.probe:
-        unavailableSkills.addAll(spec.skills);
-        track.removeAll(spec.skills);
+        // An empty pool closes a band, not the skill (plan section 13,
+        // point 14): the skill leaves the expert track and is probed in the
+        // bands that still have questions; it is left out only when every
+        // class from its most probable one down is exhausted.
+        for (final skill in spec.skills) {
+          exhausted.add('${skill.name}:${_classOfDeck(spec.deck)}');
+          track.remove(skill);
+          final lead = reporting[skill]?.leadingClass ?? 0;
+          var open = false;
+          for (var c = math.max(1, lead); c >= 1; c--) {
+            if (!exhausted.contains('${skill.name}:$c')) open = true;
+          }
+          if (!open) unavailableSkills.add(skill);
+        }
         _forced.clear();
         _case = null;
       case PlacementQuestionRole.grammar:

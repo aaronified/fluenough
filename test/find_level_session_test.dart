@@ -327,8 +327,22 @@ void main() {
   });
 
   group('the session drives the run and the question builder', () {
-    test('asks a question first, and a right-answering run ends Verified', () {
+    test('a small course cannot be Verified: a clean run ends below the top '
+        'class or at it, never above', () {
       final session = PlacementSession(findLevelConfig(), findLevelData());
+      play(session, (_) => true);
+      for (final found in session.readout.values) {
+        if (found.label == AssuranceLabel.notTested) continue;
+        expect(found.isVerified, isFalse);
+        expect(found.placedLevel, lessThanOrEqualTo(5));
+      }
+    });
+
+    test('asks a question first, and a right-answering run ends Verified', () {
+      final session = PlacementSession(
+        findLevelConfig(decks: 12),
+        findLevelData(decks: 12, words: 36),
+      );
       expect(session.question, isNotNull);
       expect(session.atCheckpoint, isFalse);
       expect(session.isDone, isFalse);
