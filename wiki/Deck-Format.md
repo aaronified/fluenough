@@ -2933,6 +2933,22 @@ error before moving on. Read the warnings; do not leave them unexplained.
       reading deck that needs the script is listed in `alphabet`; a unit of
       reading decks that are not gives `words: 0`.
 
+   5. **Flag what you are unsure of.** Before finishing the unit, append a
+      row to `docs/review-queue/<lang>.md` ([the sidecar's
+      README](https://github.com/aaronified/fluenough/blob/main/docs/review-queue/README.md))
+      for each card you are unsure of: gender, part of speech, reading or
+      tone, a doubtful note, a traditional form, naturalness, a missing
+      phrase. It goes in the same commit as the unit. Use the card's real id
+      and never invent one; a question about the unit as a whole uses
+      `unit-level`. The one-line question must be answerable by a bilingual
+      reviewer. **Never put a flag in the deck YAML**: released apps reject
+      unknown card keys. The review bot, once built, asks the listed cards
+      first. (Owner, 2026-11-06, asked "Questions for a bilingual reviewer:
+      will these be in the decks? and asked to the reviewer when they
+      review?", answered "go B": one sidecar list per language, nothing
+      shipped to learners.) This is the per-unit counterpart of the
+      build-deck skill's step 7a.
+
    When a planned unit's deck is written, the unit's `planned` becomes
    `decks` in the same change, and its `words` is checked against what it
    now counts.
