@@ -774,7 +774,8 @@ units:
       - { id: "the-door-opened", text: { "en": "Saying I opened the door and the door opened" } }
     reading_passages:
       - { id: "office-closing-checklist", text: { "en": "A checklist for closing the office: lights off, windows shut" } }
-  - planned: { id: "ja-emergencies", theme: "emergencies", words: 40 }
+  - decks: ["ja-emergencies", "ja-emergencies-sentences", "ja-reading-emergencies", "*"]
+    words: 40
     listening_passages:
       - { id: "earthquake-drill", text: { "en": "Instructions in an earthquake drill" } }
     reading_passages:
