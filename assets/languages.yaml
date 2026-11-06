@@ -40,7 +40,9 @@
 #                   quechuan, indo_european, isolate or sign: the folded
 #                   group it is listed in. A new family is named in
 #                   `knownFamily` in lib/l10n/app_en.arb and listed in
-#                   `_families` in lib/features/languages/add_language_page.dart.
+#                   `languageFamilies` in lib/features/languages/language_views.dart.
+#                   The family is shown in a language's i dialog; Add a
+#                   language no longer groups by it.
 #   code            two or three letters. A language with no ISO 639-1 code
 #                   uses its 639-3 code; one with no ISO code at all (Dothraki,
 #                   High Valyrian) takes a private-use code, qaa to qtz, as
@@ -82,6 +84,21 @@
 #                   (`SpokenLanguage.localeCodeFor`, `isRtlText`). A script
 #                   with no answer is asked in English.
 #
+#   verification    optional, set by hand by the owner: how far native speakers
+#                   have checked the course, `"none"`, `"some"` or `"full"`.
+#                   Absent is `"none"`, so a language starts at "Not at all"
+#                   and nothing needs filling in first (owner, 2026-11-06).
+#                   Add a language marks each row with it, and the language's
+#                   i dialog says it in words. Per language, not per deck.
+#   popular         optional, `true` on the languages Add a language lists
+#                   first under "Popular", alphabetical by name (owner,
+#                   2026-11-06: Bengali, French, Hindustani, Japanese,
+#                   Kannada, Mandarin Chinese, Marathi, Spanish). Hand-kept,
+#                   not worked out from the decks, so the list changes by
+#                   editing this file; the file is bundled, so a change
+#                   needs an app release. A popular language is also in the full
+#                   list below.
+#
 #   script_text     optional: `"unchecked"` marks an entry's texts above as
 #                   written by Claude (#552), not by a speaker: not yet
 #                   checked by a speaker. It no longer hides them. The sheet
@@ -104,9 +121,9 @@ kind: languages
 languages:
   - { code: "en", iso639_3: "eng", name: "English", own_name: "English", scripts: ["latin"], family: "germanic", dialect: "Any variety",
       script_question: "Can you read the Latin script?", script_can_read: "I can read the Latin script" }
-  - { code: "bn", dialect: "Standard Colloquial Bengali (চলিত), Kolkata (Rarhi)", iso639_3: "ben", name: "Bengali", own_name: "বাংলা", scripts: ["bengali"], family: "indo_aryan",
+  - { code: "bn", popular: true, dialect: "Standard Colloquial Bengali (চলিত), Kolkata (Rarhi)", iso639_3: "ben", name: "Bengali", own_name: "বাংলা", scripts: ["bengali"], family: "indo_aryan",
       script_question: "আপনি কি পূর্ব নাগরী লিপি পড়তে পারেন?", script_can_read: "আমি পূর্ব নাগরী লিপি পড়তে পারি" }
-  - { code: "hi", dialect: "Khari Boli (खड़ी बोली), standard Hindustani", iso639_3: "hin", name: "Hindustani", own_name: "हिन्दुस्तानी · ہندوستانی", scripts: ["devanagari", "perso_arabic"], family: "indo_aryan",
+  - { code: "hi", popular: true, dialect: "Khari Boli (खड़ी बोली), standard Hindustani", iso639_3: "hin", name: "Hindustani", own_name: "हिन्दुस्तानी · ہندوستانی", scripts: ["devanagari", "perso_arabic"], family: "indo_aryan",
       aliases: ["Hindi", "Urdu", "हिन्दी", "उर्दू", "اردو", "ہندی"],
       scripts_question: "आप हिन्दुस्तानी किन लिपियों में पढ़ सकते हैं?",
       script_can_read: { devanagari: "मुझे देवनागरी लिपि पढ़नी आती है", "perso_arabic": "مجھے فارسی-عربی (اردو) رسم الخط پڑھنا آتا ہے" }, script_text: "unchecked" }  # Hindi and Urdu as one course (#623); Claude-written, for a speaker to check
@@ -118,7 +135,7 @@ languages:
       script_question: "के तुसेंगी देवनागरी लिपि पढ़नी औंदी ऐ?", script_can_read: "मिगी देवनागरी लिपि पढ़नी औंदी ऐ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "gu", iso639_3: "guj", name: "Gujarati", own_name: "ગુજરાતી", scripts: ["gujarati"], family: "indo_aryan",
       script_question: "શું તમે ગુજરાતી લિપિ વાંચી શકો છો?", script_can_read: "હું ગુજરાતી લિપિ વાંચી શકું છું", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
-  - { code: "kn", iso639_3: "kan", name: "Kannada", own_name: "ಕನ್ನಡ", scripts: ["kannada"], family: "dravidian",
+  - { code: "kn", popular: true, iso639_3: "kan", name: "Kannada", own_name: "ಕನ್ನಡ", scripts: ["kannada"], family: "dravidian",
       script_question: "ನೀವು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲಿರಾ?", script_can_read: "ನಾನು ಕನ್ನಡ ಲಿಪಿಯನ್ನು ಓದಬಲ್ಲೆ", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ks", iso639_3: "kas", name: "Kashmiri", own_name: "کٲشُر", scripts: ["perso_arabic", "devanagari"], family: "indo_aryan",
       scripts_question: "توٚہہِ کوٚن لِپِیَن منٛز ہیکِو کٲشُر پَرُن؟",
@@ -133,7 +150,7 @@ languages:
   - { code: "mni", iso639_3: "mni", name: "Manipuri", own_name: "মৈতৈলোন্", scripts: ["bengali", "meitei_mayek"], family: "tibeto_burman",
       scripts_question: "নহাক্না মৈতৈলোন্ করি করি লিপিদা পাবা ঙম্মগা?",
       script_can_read: { bengali: "ঐনা পূর্ব নাগরী লিপি পাবা ঙম্মি", meitei_mayek: "ঐনা মীতৈ মায়েক লিপি পাবা ঙম্মি" }, script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
-  - { code: "mr", iso639_3: "mar", name: "Marathi", own_name: "मराठी", scripts: ["devanagari"], family: "indo_aryan",
+  - { code: "mr", popular: true, iso639_3: "mar", name: "Marathi", own_name: "मराठी", scripts: ["devanagari"], family: "indo_aryan",
       script_question: "तुम्हाला देवनागरी लिपी वाचता येते का?", script_can_read: "मला देवनागरी लिपी वाचता येते", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
   - { code: "ne", iso639_3: "npi", name: "Nepali", own_name: "नेपाली", scripts: ["devanagari"], family: "indo_aryan",
       script_question: "के तपाईं देवनागरी लिपि पढ्न सक्नुहुन्छ?", script_can_read: "म देवनागरी लिपि पढ्न सक्छु", script_text: "unchecked" }  # Claude-written, for a speaker to check (#552)
@@ -176,17 +193,17 @@ languages:
   - { code: "kha", iso639_3: "kha", name: "Khasi", own_name: "Ka Ktien Khasi", scripts: ["latin"], family: "austroasiatic" }
   - { code: "gom", iso639_3: "gom", name: "Goan Konkani", own_name: "Konknni", scripts: ["latin"], family: "indo_aryan" }
   # The living and constructed languages the course paths teach (#613).
-  - { code: "fr", dialect: "Standard French (France)", iso639_3: "fra", name: "French", own_name: "Français", scripts: ["latin"], family: "romance",
+  - { code: "fr", popular: true, dialect: "Standard French (France)", iso639_3: "fra", name: "French", own_name: "Français", scripts: ["latin"], family: "romance",
       script_question: "Savez-vous lire l'écriture latine ?", script_can_read: "Je sais lire l'écriture latine", script_text: "unchecked" }  # Claude-written, for a speaker to check
-  - { code: "es", dialect: "Castilian Spanish (Spain)", iso639_3: "spa", name: "Spanish", own_name: "Español", scripts: ["latin"], family: "romance",
+  - { code: "es", popular: true, dialect: "Castilian Spanish (Spain)", iso639_3: "spa", name: "Spanish", own_name: "Español", scripts: ["latin"], family: "romance",
       script_question: "¿Sabes leer la escritura latina?", script_can_read: "Sé leer la escritura latina", script_text: "unchecked" }  # Claude-written, for a speaker to check
   - { code: "de", dialect: "Standard German (Germany)", iso639_3: "deu", name: "German", own_name: "Deutsch", scripts: ["latin"], family: "germanic",
       script_question: "Können Sie die lateinische Schrift lesen?", script_can_read: "Ich kann die lateinische Schrift lesen", script_text: "unchecked" }  # Claude-written, for a speaker to check
-  - { code: "zh", dialect: "Putonghua (普通话), as taught in mainland China", iso639_3: "cmn", name: "Mandarin Chinese", own_name: "中文", scripts: ["han_simplified", "han_traditional"], family: "sinitic",
+  - { code: "zh", popular: true, dialect: "Putonghua (普通话), as taught in mainland China", iso639_3: "cmn", name: "Mandarin Chinese", own_name: "中文", scripts: ["han_simplified", "han_traditional"], family: "sinitic",
       aliases: ["Chinese", "Mandarin", "汉语", "漢語", "普通话"],
       scripts_question: "你能读哪几种汉字？",
       script_can_read: { han_simplified: "我能读简体汉字", han_traditional: "我能讀繁體漢字" }, script_text: "unchecked" }  # Claude-written, for a speaker to check
-  - { code: "ja", dialect: "Standard Japanese (標準語), Tokyo", iso639_3: "jpn", name: "Japanese", own_name: "日本語", scripts: ["kana", "han"], family: "japonic",
+  - { code: "ja", popular: true, dialect: "Standard Japanese (標準語), Tokyo", iso639_3: "jpn", name: "Japanese", own_name: "日本語", scripts: ["kana", "han"], family: "japonic",
       scripts_question: "どの文字を読めますか？",
       script_can_read: { kana: "かなが読めます", han: "漢字が読めます" }, script_text: "unchecked" }  # Claude-written, for a speaker to check
   - { code: "ko", dialect: "Standard Korean (표준어), Seoul", iso639_3: "kor", name: "Korean", own_name: "한국어", scripts: ["hangul"], family: "koreanic",

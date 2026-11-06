@@ -17,6 +17,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [In App Readings](Plan-In-App-Readings): readings made in the app, for sentences the learner adds
 - [Ipa Revamp And Language Phonology](Plan-Ipa-Revamp-And-Language-Phonology): the IPA course revamp, and a phonology deck for every language
 - [Iso 15919 Deck](Plan-Iso-15919-Deck): a deck that teaches ISO 15919, in each language
+- [Japanese B1 Wordlists](Plan-Japanese-B1-Wordlists): fresh candidate words for every planned Japanese unit, and top-ups for the short ones
 - [Language Paths](Plan-Language-Paths): language paths, pacing by difficulty, and every language in the scheme
 - [Language Paths Scheme](Plan-Language-Paths-Scheme): Language Learning Paths (English Base, 30 min/day)
 - [Language Themes](Plan-Language-Themes): a look for each language (colour, icon, background image)

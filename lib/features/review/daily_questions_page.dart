@@ -13,6 +13,7 @@ import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
 import '../../ui/widgets/target_text.dart';
+import 'builder_note.dart';
 import 'daily_questions.dart';
 import 'send_reviews_sheet.dart' show reviewMailBody;
 
@@ -73,6 +74,19 @@ class _DailyQuestionsPageState extends State<DailyQuestionsPage> {
     if (_queue != null) return;
     final state = AppScope.read(context);
     _queue = dailyQuestionsOf(state);
+    _readBuilderQuestions(state);
+  }
+
+  /// Reads the deck builders' questions again. A card already on screen
+  /// never changes under the reviewer's thumb: when there is one, the new
+  /// questions are used the next time the screen opens (the file is kept).
+  /// Only a screen with nothing to ask is worked out again.
+  Future<void> _readBuilderQuestions(AppState state) async {
+    final downloads = state.deckDownloads;
+    if (downloads == null || !state.reviewing.on) return;
+    if (!await downloads.refreshReviewQueue() || !mounted) return;
+    if (_queue!.isNotEmpty || _past.isNotEmpty) return;
+    setState(() => _queue = dailyQuestionsOf(state));
   }
 
   LanguageInfo _languageOf(AppState state, String code) => state.languages
@@ -329,6 +343,8 @@ class _QuestionCard extends StatelessWidget {
                 ),
             ] else if (about != null)
               Text(about, style: theme.textTheme.titleMedium),
+            if (question.builder.isNotEmpty)
+              BuilderNote(questions: question.builder),
           ],
         ),
       ),

@@ -15,6 +15,7 @@ on:
     paths:
       - "decks/**"
       - "!decks/index.json"
+      - "!decks/review-queue.json"
   workflow_dispatch:
 
 # One at a time; a second waits rather than cancelling the first.

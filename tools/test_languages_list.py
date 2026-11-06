@@ -54,6 +54,23 @@ class LanguagesList(unittest.TestCase):
             with self.subTest(code=entry["code"]):
                 self.assertRegex(entry.get("iso639_3", ""), r"^[a-z]{3}$")
 
+    def test_verification_is_none_some_or_full_when_given(self) -> None:
+        # Hand-set by the owner; absent means "none" (Add a language).
+        for entry in self.langs:
+            with self.subTest(code=entry["code"]):
+                self.assertIn(entry.get("verification", "none"), {"none", "some", "full"})
+
+    def test_popular_is_a_boolean_and_is_the_owners_eight(self) -> None:
+        for entry in self.langs:
+            with self.subTest(code=entry["code"]):
+                self.assertIsInstance(entry.get("popular", False), bool)
+        popular = sorted(e["name"] for e in self.langs if e.get("popular"))
+        self.assertEqual(
+            popular,
+            ["Bengali", "French", "Hindustani", "Japanese", "Kannada",
+             "Mandarin Chinese", "Marathi", "Spanish"],
+        )
+
     def test_codes_are_unique(self) -> None:
         codes = [e["code"] for e in self.langs]
         self.assertEqual(len(codes), len(set(codes)))

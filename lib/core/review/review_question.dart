@@ -89,6 +89,7 @@ class ReviewQuestion {
     this.shownMeaning,
     this.meaning,
     this.deckId,
+    this.builder = const <String>[],
   });
 
   /// The course's language, by code.
@@ -118,6 +119,10 @@ class ReviewQuestion {
 
   /// The deck the card was found in, for the screen's sake.
   final String? deckId;
+
+  /// What the deck's builder asks the reviewer about this card, from the
+  /// review queue (2026-11-06): shown as a note, never part of the answer.
+  final List<String> builder;
 
   /// How weak the data is: 0 is unverified (written by Claude, or from no
   /// source), 1 semi-verified (taken from Wiktionary or Tatoeba, or signed
