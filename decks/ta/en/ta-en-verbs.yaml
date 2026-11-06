@@ -1,139 +1,173 @@
 schema: 1
-id: "ta-en-verbs"
-kind: "layer"
-core: "ta-verbs"
-native: { code: "en", iso639_3: "eng", name: "English" }
-name: "Everyday verbs"
-description: "Twelve everyday verbs: to go, to eat, to drink, to see, to listen, to speak, to write, to give, to sleep, to do, to cook and to buy. Each card is the dictionary form; the examples show the present tense. Not yet checked by a Tamil speaker: please report any mistake."
-license: "CC-BY-SA-4.0"
-tags: ["unreviewed"]
+id: ta-en-verbs
+kind: layer
+core: ta-verbs
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Everyday verbs
+description: 'Twelve everyday verbs: to go, to eat, to drink, to see, to listen, to speak, to write, to give, to sleep, to do, to cook and to buy. Each card is the dictionary form; the examples show the present tense. Not yet checked by a Tamil speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
 cards:
-  "ta-0118":
-    native: "to go"
+  ta-0118:
+    native: to go
     notes:
-      n1: "The dictionary form. The present is போகிறேன் (pōkiṟēṉ), I go."
+      n1: The dictionary form. The present is போகிறேன் (pōkiṟēṉ), I go.
     examples:
-      "நான் வீட்டுக்குப் போகிறேன்.":
-        native: "I am going home."
-        bases: { "நான்": "I", "வீட்டுக்குப்": "home, to the house; from வீடு (vīṭu), house", "போகிறேன்": "am going; from போ (pō), to go" }
-      "நாம் போகலாம்.":
-        native: "Let's go."
-        bases: { "நாம்": "we, including you", "போகலாம்": "let's go; from போ (pō), to go" }
-  "ta-0119":
-    native: "to eat"
+      நான் வீட்டுக்குப் போகிறேன்.:
+        native: I am going home.
+        bases:
+          வீட்டுக்குப்: home, to the house; from வீடு (vīṭu), house
+          போகிறேன்: am going; from போ (pō), to go
+      நாம் போகலாம்.:
+        native: Let's go.
+        bases:
+          போகலாம்: let's go; from போ (pō), to go
+  ta-0119:
+    native: to eat
     notes:
-      n1: "The dictionary form, from the spoken word சாப்பிடு (cāppiṭu)."
+      n1: The dictionary form, from the spoken word சாப்பிடு (cāppiṭu).
     examples:
-      "நான் சாப்பிடுகிறேன்.":
-        native: "I am eating."
-        bases: { "நான்": "I", "சாப்பிடுகிறேன்": "am eating; from சாப்பிடு (cāppiṭu), to eat" }
-      "சாப்பிடலாம்.":
-        native: "Let's eat."
-        bases: { "சாப்பிடலாம்": "let's eat; from சாப்பிடு (cāppiṭu), to eat" }
-  "ta-0120":
-    native: "to drink"
+      நான் சாப்பிடுகிறேன்.:
+        native: I am eating.
+        bases:
+          சாப்பிடுகிறேன்: am eating; from சாப்பிடு (cāppiṭu), to eat
+      சாப்பிடலாம்.:
+        native: Let's eat.
+        bases:
+          சாப்பிடலாம்: let's eat; from சாப்பிடு (cāppiṭu), to eat
+  ta-0120:
+    native: to drink
     notes:
-      n1: "The dictionary form. The present is குடிக்கிறேன் (kuṭikkiṟēṉ), I drink."
+      n1: The dictionary form. The present is குடிக்கிறேன் (kuṭikkiṟēṉ), I drink.
     examples:
-      "தண்ணீர் குடி.":
-        native: "Drink water."
-        bases: { "தண்ணீர்": "water", "குடி": "drink" }
-      "நான் தண்ணீர் குடிக்கிறேன்.":
-        native: "I am drinking water."
-        bases: { "நான்": "I", "தண்ணீர்": "water", "குடிக்கிறேன்": "am drinking; from குடி (kuṭi), to drink" }
-  "ta-0121":
-    native: "to see; to look"
+      தண்ணீர் குடி.:
+        native: Drink water.
+        bases:
+          குடி: drink
+      நான் தண்ணீர் குடிக்கிறேன்.:
+        native: I am drinking water.
+        bases:
+          குடிக்கிறேன்: am drinking; from குடி (kuṭi), to drink
+  ta-0121:
+    native: to see; to look
     notes:
-      n1: "The dictionary form. The present is பார்க்கிறேன் (pārkkiṟēṉ), I see."
+      n1: The dictionary form. The present is பார்க்கிறேன் (pārkkiṟēṉ), I see.
     examples:
-      "பார்!":
-        native: "Look!"
-      "அவர் பார்க்கிறார்.":
-        native: "He is looking."
-        bases: { "அவர்": "he or she (polite)", "பார்க்கிறார்": "is looking; from பார் (pār), to see" }
-  "ta-0122":
-    native: "to listen; to ask"
+      பார்!:
+        native: Look!
+      அவர் பார்க்கிறார்.:
+        native: He is looking.
+        bases:
+          பார்க்கிறார்: is looking; from பார் (pār), to see
+  ta-0122:
+    native: to listen; to ask
     notes:
-      n1: "The dictionary form, from the spoken word கேள் (kēḷ). The present is கேட்கிறேன் (kēṭkiṟēṉ), I listen or I ask."
+      n1: The dictionary form, from the spoken word கேள் (kēḷ). The present is கேட்கிறேன் (kēṭkiṟēṉ), I listen or I ask.
     examples:
-      "கேள்!":
-        native: "Listen!"
-      "நான் கேட்கிறேன்.":
-        native: "I am listening."
-        bases: { "நான்": "I", "கேட்கிறேன்": "am listening; from கேள் (kēḷ), to listen" }
-  "ta-0123":
-    native: "to speak"
+      கேள்!:
+        native: Listen!
+      நான் கேட்கிறேன்.:
+        native: I am listening.
+        bases:
+          கேட்கிறேன்: am listening; from கேள் (kēḷ), to listen
+  ta-0123:
+    native: to speak
     notes:
-      n1: "The dictionary form. The present is பேசுகிறேன் (pēcukiṟēṉ), I speak."
+      n1: The dictionary form. The present is பேசுகிறேன் (pēcukiṟēṉ), I speak.
     examples:
-      "நான் தமிழ் பேசுகிறேன்.":
-        native: "I speak Tamil."
-        bases: { "நான்": "I", "தமிழ்": "Tamil", "பேசுகிறேன்": "speak; from பேசு (pēcu), to speak" }
-      "நீங்கள் தமிழ் பேசுகிறீர்களா?":
-        native: "Do you speak Tamil?"
-        bases: { "நீங்கள்": "you (polite)", "தமிழ்": "Tamil", "பேசுகிறீர்களா": "speak; from பேசு (pēcu), to speak" }
-  "ta-0124":
-    native: "to write"
+      நான் தமிழ் பேசுகிறேன்.:
+        native: I speak Tamil.
+        bases:
+          தமிழ்: Tamil
+          பேசுகிறேன்: speak; from பேசு (pēcu), to speak
+      நீங்கள் தமிழ் பேசுகிறீர்களா?:
+        native: Do you speak Tamil?
+        bases:
+          தமிழ்: Tamil
+          பேசுகிறீர்களா: speak; from பேசு (pēcu), to speak
+  ta-0124:
+    native: to write
     notes:
-      n1: "The dictionary form. The present is எழுதுகிறேன் (eḻutukiṟēṉ), I write. Not to be confused with எழு (eḻu), to get up, in the sound pairs."
+      n1: The dictionary form. The present is எழுதுகிறேன் (eḻutukiṟēṉ), I write. Not to be confused with எழு (eḻu), to get up, in the sound pairs.
     examples:
-      "நான் எழுதுகிறேன்.":
-        native: "I am writing."
-        bases: { "நான்": "I", "எழுதுகிறேன்": "am writing; from எழுது (eḻutu), to write" }
-      "எழுது!":
-        native: "Write!"
-  "ta-0125":
-    native: "to give"
+      நான் எழுதுகிறேன்.:
+        native: I am writing.
+        bases:
+          எழுதுகிறேன்: am writing; from எழுது (eḻutu), to write
+      எழுது!:
+        native: Write!
+  ta-0125:
+    native: to give
     notes:
-      n1: "The dictionary form. The present is கொடுக்கிறேன் (koṭukkiṟēṉ), I give."
+      n1: The dictionary form. The present is கொடுக்கிறேன் (koṭukkiṟēṉ), I give.
     examples:
-      "இதைக் கொடு.":
-        native: "Give this."
-        bases: { "இதைக்": "this; from இது (itu), this", "கொடு": "give" }
-      "அவர் எனக்குப் பால் கொடுக்கிறார்.":
-        native: "He is giving me milk."
-        bases: { "அவர்": "he or she (polite)", "எனக்குப்": "to me; from என் (eṉ), I", "பால்": "milk", "கொடுக்கிறார்": "is giving; from கொடு (koṭu), to give" }
-  "ta-0126":
-    native: "to sleep"
+      இதைக் கொடு.:
+        native: Give this.
+        bases:
+          இதைக்: this; from இது (itu), this
+          கொடு: give
+      அவர் எனக்குப் பால் கொடுக்கிறார்.:
+        native: He is giving me milk.
+        bases:
+          எனக்குப்: to me; from என் (eṉ), I
+          கொடுக்கிறார்: is giving; from கொடு (koṭu), to give
+  ta-0126:
+    native: to sleep
     notes:
-      n1: "The dictionary form. The present is தூங்குகிறேன் (tūṅkukiṟēṉ), I sleep."
+      n1: The dictionary form. The present is தூங்குகிறேன் (tūṅkukiṟēṉ), I sleep.
     examples:
-      "நான் இரவில் தூங்குகிறேன்.":
-        native: "I sleep at night."
-        bases: { "நான்": "I", "இரவில்": "at night; from இரவு (iravu), night", "தூங்குகிறேன்": "sleep; from தூங்கு (tūṅku), to sleep" }
-      "குழந்தை தூங்குகிறது.":
-        native: "The child is sleeping."
-        bases: { "குழந்தை": "child", "தூங்குகிறது": "is sleeping; from தூங்கு (tūṅku), to sleep" }
-  "ta-0127":
-    native: "to do; to make"
+      நான் இரவில் தூங்குகிறேன்.:
+        native: I sleep at night.
+        bases:
+          இரவில்: at night; from இரவு (iravu), night
+          தூங்குகிறேன்: sleep; from தூங்கு (tūṅku), to sleep
+      குழந்தை தூங்குகிறது.:
+        native: The child is sleeping.
+        bases:
+          தூங்குகிறது: is sleeping; from தூங்கு (tūṅku), to sleep
+  ta-0127:
+    native: to do; to make
     notes:
-      n1: "The dictionary form. Used with a noun to make a verb, as with வேலை (vēlai), work. The present is செய்கிறேன் (ceykiṟēṉ), I do."
+      n1: The dictionary form. Used with a noun to make a verb, as with வேலை (vēlai), work. The present is செய்கிறேன் (ceykiṟēṉ), I do.
     examples:
-      "என்ன செய்கிறீர்கள்?":
-        native: "What are you doing?"
-        bases: { "என்ன": "what", "செய்கிறீர்கள்": "are doing; from செய் (cey), to do" }
-      "நான் வேலை செய்கிறேன்.":
-        native: "I work."
-        bases: { "நான்": "I", "வேலை": "work", "செய்கிறேன்": "work; from செய் (cey), to do" }
-  "ta-0128":
-    native: "to cook"
+      என்ன செய்கிறீர்கள்?:
+        native: What are you doing?
+        bases:
+          செய்கிறீர்கள்: are doing; from செய் (cey), to do
+      நான் வேலை செய்கிறேன்.:
+        native: I work.
+        bases:
+          வேலை: work
+          செய்கிறேன்: work; from செய் (cey), to do
+  ta-0128:
+    native: to cook
     notes:
-      n1: "The dictionary form. The present is சமைக்கிறேன் (camaikkiṟēṉ), I cook."
+      n1: The dictionary form. The present is சமைக்கிறேன் (camaikkiṟēṉ), I cook.
     examples:
-      "அம்மா சமைக்கிறார்.":
-        native: "Mother is cooking."
-        bases: { "அம்மா": "mother", "சமைக்கிறார்": "is cooking; from சமை (camai), to cook" }
-      "இன்று கறி சமைக்கிறேன்.":
-        native: "I am cooking curry today."
-        bases: { "இன்று": "today", "கறி": "curry", "சமைக்கிறேன்": "am cooking; from சமை (camai), to cook" }
-  "ta-0129":
-    native: "to buy"
+      அம்மா சமைக்கிறார்.:
+        native: Mother is cooking.
+        bases:
+          சமைக்கிறார்: is cooking; from சமை (camai), to cook
+      இன்று கறி சமைக்கிறேன்.:
+        native: I am cooking curry today.
+        bases:
+          இன்று: today
+          சமைக்கிறேன்: am cooking; from சமை (camai), to cook
+  ta-0129:
+    native: to buy
     notes:
-      n1: "The dictionary form. The present is வாங்குகிறேன் (vāṅkukiṟēṉ), I buy."
+      n1: The dictionary form. The present is வாங்குகிறேன் (vāṅkukiṟēṉ), I buy.
     examples:
-      "நான் பால் வாங்குகிறேன்.":
-        native: "I am buying milk."
-        bases: { "நான்": "I", "பால்": "milk", "வாங்குகிறேன்": "am buying; from வாங்கு (vāṅku), to buy" }
-      "வாங்கு, போகலாம்.":
-        native: "Buy it, let's go."
-        bases: { "வாங்கு": "buy", "போகலாம்": "let's go; from போ (pō), to go" }
+      நான் பால் வாங்குகிறேன்.:
+        native: I am buying milk.
+        bases:
+          வாங்குகிறேன்: am buying; from வாங்கு (vāṅku), to buy
+      வாங்கு, போகலாம்.:
+        native: Buy it, let's go.
+        bases:
+          வாங்கு: buy
+          போகலாம்: let's go; from போ (pō), to go
