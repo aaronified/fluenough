@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-11-06
+
 ### Added
 
 - **Reviewers see the deck builder's questions.** When a deck builder was unsure of a card (a gender, a tone, a part of speech), the card is asked first in the daily questions, and a note, Question from the deck builder, shows on the daily question and on the card's review. It is a hint, not part of your answer. The questions come from a small file beside the decks that the app downloads when the daily questions open and keeps for offline; learners see nothing, and apps without this change never ask for it.
