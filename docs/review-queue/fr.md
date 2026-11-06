@@ -66,3 +66,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1610 | fr-school (A2) | "Cours" is a class or lesson: is it used this way in school talk, or is "leçon" the usual word for a lesson? | Haiku builder | 2026-11-06 |
 | fr-1605 | fr-school (A2) | "Mathématiques" is taught with "maths" as its spoken short form: do pupils say "les maths" in the way the layer glosses it? | Haiku builder | 2026-11-06 |
 | unit-level | fr-school (A2) | Juste, blanc, long, intéressant and fermer are taught only as inline bases here, not as cards: should any of them become a card in a later unit? | Haiku builder | 2026-11-06 |
+| fr-1673 | fr-hobbies (A2) | "Pêche" is fishing here, but the same spelling also means peach: is the fishing sense clear enough on its own, or should the layer say "fishing (not peach)"? | Haiku builder | 2026-11-06 |
+| fr-1649 | fr-hobbies (A2) | "Chanson" is taught as a song: is "Elle chante une chanson française" natural, or is "une chanson en français" more usual? | Haiku builder | 2026-11-06 |
+| fr-1656 | fr-hobbies (A2) | "Collectionner" is taught as to collect a hobby: is "Ma sœur collectionne les livres" natural for books, or is "collectionner" used mainly for objects? | Haiku builder | 2026-11-06 |
+| fr-1666 | fr-hobbies (A2) | "La lecture est mon loisir préféré.": is it the natural way to say reading is a favourite hobby? | Haiku builder | 2026-11-06 |
+| fr-1679 | fr-hobbies (A2) | "Le match est fini.": is "fini" natural for a finished match, or is "terminé" more usual? | Haiku builder | 2026-11-06 |
+| unit-level | fr-hobbies (A2) | Légère, blanc, belle, tous, aime and several other forms are taught as inline bases here, not as cards, and "loisir" and "amusant" are not cards either: should any become a card in a later unit? | Haiku builder | 2026-11-06 |

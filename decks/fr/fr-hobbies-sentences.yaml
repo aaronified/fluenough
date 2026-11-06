@@ -1,0 +1,173 @@
+schema: 1
+id: "fr-hobbies-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1684"
+    target: "Je joue au tennis avec mes amis."
+    ipa: "ʒə ʒu o tenis avɛk me zami"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "joue", ref: "fr-0048" }
+      - { word: "au", base: "à" }
+      - { word: "tennis", ref: "fr-1668" }
+      - { word: "avec", ref: "fr-0590" }
+      - { word: "mes", ref: "fr-0623" }
+      - { word: "amis", ref: "fr-0100" }
+    confusables:
+      - { id: "football", ref: "fr-1667", kind: "word" }
+      - { id: "natation", ref: "fr-1669", kind: "word" }
+  - id: "fr-1685"
+    target: "Elle joue du piano et de la guitare."
+    ipa: "ɛl ʒu dy pjano e də la ɡitaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "joue", ref: "fr-0048" }
+      - { word: "du", base: "de" }
+      - { word: "piano", ref: "fr-1644" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "guitare", ref: "fr-1645" }
+    confusables:
+      - { id: "flute", ref: "fr-1646", kind: "word" }
+      - { id: "violon", ref: "fr-1647", kind: "word" }
+  - id: "fr-1686"
+    target: "Nous faisons de la randonnée le dimanche."
+    ipa: "nu fəzɔ̃ də la ʁɑ̃dɔne lə dimɑ̃ʃ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "faisons", ref: "fr-0287" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "randonnée", ref: "fr-1672" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "dimanche", ref: "fr-1050" }
+    confusables:
+      - { id: "camping", ref: "fr-1674", kind: "word" }
+      - { id: "promenade", ref: "fr-1676", kind: "word" }
+  - id: "fr-1687"
+    target: "Il aime lire des romans et des poèmes."
+    ipa: "il ɛm liʁ de ʁɔmɑ̃ e de pɔɛm"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "aime", ref: "fr-0263" }
+      - { word: "lire", ref: "fr-0290" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "romans", ref: "fr-1664" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "poèmes", ref: "fr-1665" }
+    confusables:
+      - { id: "chanson", ref: "fr-1649", kind: "word" }
+      - { id: "puzzle", ref: "fr-1663", kind: "word" }
+  - id: "fr-1688"
+    target: "Mon club de sport a un match samedi."
+    ipa: "mɔ̃ klœb də spɔʁ a œ̃ matʃ samdi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Mon", ref: "fr-0037" }
+      - { word: "club", ref: "fr-1677" }
+      - { word: "de", base: "de" }
+      - { word: "sport", ref: "fr-0265" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "match", ref: "fr-1679" }
+      - { word: "samedi", ref: "fr-1049" }
+    confusables:
+      - { id: "equipe", ref: "fr-1680", kind: "word" }
+      - { id: "entrainement", ref: "fr-1681", kind: "word" }
+  - id: "fr-1689"
+    target: "Le tricot et la couture sont des loisirs calmes."
+    ipa: "lə tʁiko e la kutyʁ sɔ̃ de lwaziʁ kalm"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "tricot", ref: "fr-1658" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "couture", ref: "fr-1657" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "loisirs", base: "loisir" }
+      - { word: "calmes", ref: "fr-0433" }
+    confusables:
+      - { id: "bricolage", ref: "fr-1659", kind: "word" }
+      - { id: "jeu", ref: "fr-1660", kind: "word" }
+  - id: "fr-1690"
+    target: "Ils sont dans une association de théâtre."
+    ipa: "il sɔ̃ dɑ̃ zyn asɔsjasjɔ̃ də teatʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ils", ref: "fr-0130" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "association", ref: "fr-1678" }
+      - { word: "de", base: "de" }
+      - { word: "théâtre", ref: "fr-0972" }
+    confusables:
+      - { id: "club", ref: "fr-1677", kind: "word" }
+      - { id: "orchestre", ref: "fr-1650", kind: "word" }
+  - id: "fr-1691"
+    target: "Elle peint et dessine tous les jours."
+    ipa: "ɛl pɛ̃ e desin tu le ʒuʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "peint", ref: "fr-1652" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "dessine", ref: "fr-1651" }
+      - { word: "tous", base: "tous" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "jours", ref: "fr-1032" }
+    confusables:
+      - { id: "photographie", ref: "fr-1654", kind: "word" }
+      - { id: "couture", ref: "fr-1657", kind: "word" }
+  - id: "fr-1692"
+    target: "Ma sœur collectionne les livres et les cartes."
+    ipa: "ma sœʁ kɔlɛksjɔn le livʁ e le kaʁt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ma", ref: "fr-0137" }
+      - { word: "sœur", ref: "fr-0170" }
+      - { word: "collectionne", ref: "fr-1656" }
+      - { word: "les", ref: "fr-0043" }
+      - { word: "livres", ref: "fr-1363" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "cartes", ref: "fr-1662" }
+    confusables:
+      - { id: "puzzle", ref: "fr-1663", kind: "word" }
+      - { id: "tricot", ref: "fr-1658", kind: "word" }
+  - id: "fr-1693"
+    target: "Le samedi, on fait du bricolage."
+    ipa: "lə samdi ɔ̃ fɛ dy bʁikɔlaʒ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "samedi", ref: "fr-1049" }
+      - { word: "on", ref: "fr-0132" }
+      - { word: "fait", ref: "fr-0287" }
+      - { word: "du", base: "de" }
+      - { word: "bricolage", ref: "fr-1659" }
+    confusables:
+      - { id: "yoga", ref: "fr-1671", kind: "word" }
+      - { id: "peche", ref: "fr-1673", kind: "word" }
+
