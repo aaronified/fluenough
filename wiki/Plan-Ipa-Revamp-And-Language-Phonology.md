@@ -148,7 +148,7 @@ language), which the owner rejected.
   "all decks" means every card Wiktionary covers, not every card. Order: the
   field, its validator rule and the coverage table first (a pull request,
   then a release that reads it, since released apps reject unknown fields);
-  the import pull requests go to `decks-next` after that release. Until
+  the import pull requests go to `decks-live` after that release. Until
   then a deck builder writes no narrow form by hand (see
   `.claude/skills/build-deck/SKILL.md`).
 - **Built (owner asked, 2026-10-30: "make all decks compliant with the full []
@@ -371,7 +371,7 @@ Bengali as the pilot because the owner named it (**Proposed**).
 | 2 | IPA course units 1 to 3 and 12 | they read in the app at 1.4x; the validator passes |
 | 3 | The whole-chart unit | the chart is shown and read by axes |
 | 4 | Phonology deck for Bengali, parts 1 to 6, | a Bengali speaker or phonetician has checked the inventory |
-| 5 | (Fields, validator and both tools are built, 2026-10-30; the runs per language are not.) The `phonetic` and `phonetic_source` fields: format, validator, `tools/import_phonetic.py` and `tools/derive_phonetic.py` (Sonnet), then a release; then Haiku runs the import per language (one pull request each on `decks-next`, one Sonnet review each), then the rules per language | the validator accepts both fields; every Wiktionary form is imported; each remaining card has a rules form marked `rules`; the app reads the source |
+| 5 | (Fields, validator and both tools are built, 2026-10-30; the runs per language are not.) The `phonetic` and `phonetic_source` fields: format, validator, `tools/import_phonetic.py` and `tools/derive_phonetic.py` (Sonnet), then a release; then Haiku runs the import per language (one pull request each on `decks-live`, one Sonnet review each), then the rules per language | the validator accepts both fields; every Wiktionary form is imported; each remaining card has a rules form marked `rules`; the app reads the source |
 | 6 | The rest of the languages in the owner's order | each one as in step 4 |
 | 7 | Pronouncing-words decks | after step 5, and after B1 for the path position |
 

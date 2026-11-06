@@ -203,7 +203,7 @@ on the app's own six-dot keyboard). Each is tagged Complete once its path is
 written. See [wiki Roadmap](https://github.com/aaronified/fluenough/wiki/Roadmap).
 
 The app comes with no decks. It downloads a language's decks from this
-repository's `main` branch when you choose it, and you can start once its
+repository's `decks-live` branch when you choose it, and you can start once its
 first five are in; after that it works offline. Fixed and new decks arrive
 without an app update: once a day at most it asks whether to fetch them, and
 Settings > Deck downloads lists each language, with Update and Remove, and

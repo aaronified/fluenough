@@ -22,6 +22,7 @@ ones that matter most; read the section before acting on one.
 - **Off limits:** `homelab-stacks` is never cloned, modified or pushed to ([Repositories off limits](#repositories-off-limits-owner-2026-10-12)).
 - **Releases:** the owner runs the Release workflow; each PR adds its own CHANGELOG line; deck content stays out of a release ([Releases and milestones](#releases-and-milestones)).
 - **Deck work:** the language lists, priorities and what is in scope this week are in one place; deck PRs are large, and `tools/deck_index.py` is never run locally ([Content and decks](#content-and-decks)).
+- **Decks live on `decks-live`** (owner, 2026-11-06): deck PRs target it; its index and review queue are regenerated there; `decks/themes.yaml` is edited only on main ([Content and decks](#content-and-decks)).
 - **Card ids are permanent**, YAML scalars are quoted, and `lib/core` has no Flutter imports ([AGENTS.md](AGENTS.md)).
 - **Mockups and text size:** build the approved spec exactly, at 1.4x text only; a `direct-code` issue has every decision made ([Mockups, issues and dependencies](#mockups-issues-and-dependencies)).
 - **Never stop anything** unless the owner explicitly asks ([Agents and models](#agents-and-models)).
@@ -109,7 +110,7 @@ contributor.
 - **Pull requests for everything else** (owner, 2026-10-16: "Do use PRs for
   everything", replacing "Push straight to main" of 2026-10-11). Every other
   change goes through a pull request to main
-  (or to `decks-next`). Before it merges, CI's checks pass (`flutter
+  (or, for decks, to `decks-live`). Before it merges, CI's checks pass (`flutter
   analyze`, the full `flutter test`, the deck validator and the tools'
   tests) and one review finds nothing blocking (see "Which model does what").
   The owner approves it in review; then merge it
@@ -118,14 +119,14 @@ contributor.
 - **Commit and push often** (owner, 2026-10-15: "Keep committing and pushing
   to a branch frequently"). Long work is committed in small steps and pushed
   to a work branch (`wip/<topic>`) as it goes, so nothing is lost if a
-  session ends. Only checked, approved work reaches main or `decks-next`.
+  session ends. Only checked, approved work reaches main or `decks-live`.
 - **No stray branches** (owner, 2026-10-24). Merged pull requests delete
   their head branch (repo setting). So: never push a branch again after its
   pull request has merged; never push scratch, review or worktree branches;
   and never merge one work branch into another and leave it pushed: open
   its own pull request instead. Agents cannot delete remote branches (the
   session's git proxy refuses it), so list any branch left over for the
-  owner to delete. Never ask to delete `decks-next` or an open pull
+  owner to delete. Never ask to delete `decks-live` or an open pull
   request's base.
 - **Tests check behaviour** (owner, 2026-10-20). The rule is in
   [AGENTS.md](AGENTS.md), "Tests check behaviour".
@@ -217,10 +218,17 @@ adjectives, verbs) are full tables covering every word, as Bengali's are
 
 - **Larger deck pull requests** (owner, 2026-10-30: "Open larger PRs for decks, to minimize ci burden, when you restart work on decks"). CI runners are the bottleneck, so deck work goes in larger pull requests: several units (a course's next 3 to 6 units, theme and sentences decks together) per branch and per pull request, one Sonnet review per pull request, instead of one pull request per unit. Fix review findings on the same branch before opening it where possible.
 - **Deck work waits for the rest** (owner, 2026-10-30: "Don't do deck work till all else is done"). No new deck work starts (no new units, facts or decks, no deck agents) until all the other work is done: the code, app, tooling and documentation issues and pull requests. Deck pull requests already open are still reviewed and merged. When the rest is done, deck work restarts in larger pull requests (see above).
+- **Decks live on `decks-live`** (owner, 2026-11-06). Decks live on the
+  permanent branch `decks-live`, and the apps download decks from it (PR
+  #1052 merged). Deck PRs target `decks-live`. `main`'s `decks/` is frozen,
+  kept only for old apps. `decks-next` is retired. `decks/themes.yaml` is
+  bundled in the app, so it is edited only on main. Deck content never needs
+  a release.
 - **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
-  main by a workflow after each merge (`.github/workflows/deck-index.yml`,
-  PR #719). Never run `tools/deck_index.py` locally: it runs the full
-  validator. On a conflict in `decks/index.json`, take main's side.
+  `decks-live` by its workflow after each merge (`.github/workflows/deck-index.yml`,
+  PR #719). The review queue (`decks/review-queue.json`) is regenerated there
+  too. Never run `tools/deck_index.py` locally: it runs the full
+  validator. On a conflict in `decks/index.json`, take `decks-live`'s side.
 
 ## Mockups, issues and dependencies
 

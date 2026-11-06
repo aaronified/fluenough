@@ -40,9 +40,9 @@ review bot reads. No deck-format change, and nothing ships to learners.
   the builder's question as a note, **Question from the deck builder**, in
   the daily questions and in the card's review sheet, and is asked first.
 - **The review bot reads these files** (`tools/review_queue.py`, run by
-  `.github/workflows/review-queue.yml` on main after a change to a queue file
+  `.github/workflows/review-queue.yml` on decks-live after a change to a queue file
   or a deck). It writes `decks/review-queue.json`, which the app downloads
-  from main, as it does the deck index, when the daily questions open, and
+  from decks-live, as it does the deck index, when the daily questions open, and
   keeps for offline. Rows with a card id become that card's builder
   questions (at most three show per card); `unit-level` and `course-wide`
   rows go in the file's `unit_level` list and never choose a card. Spacing,

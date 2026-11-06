@@ -526,9 +526,9 @@ and refuses to write a split that, merged back, would not be the old deck.
 5. **The old file is deleted in the same change.** The validator refuses the
    two side by side: they have the same id.
 6. **Nothing goes in `pubspec.yaml`.** The app bundles no deck: it downloads
-   them from `main` ([ADR-0037](ADR-0037-Decks-Download-From-Main)), so a
+   them from `decks-live` ([ADR-0037](ADR-0037-Decks-Download-From-Main)), so a
    new layer folder needs no asset line. `decks/index.json` is regenerated
-   on main after the merge
+   on decks-live after the merge
    ([How the app gets decks](#how-the-app-gets-decks-indexjson)).
 7. The path does not change: it lists the deck's core id, `te-home`, which
    the single-file deck had too. Once a language has a core, its path needs
@@ -2983,7 +2983,7 @@ error before moving on. Read the warnings; do not leave them unexplained.
 ## How the app gets decks: `index.json`
 
 The app bundles no deck. It downloads each language's files from this
-repository's `main` branch, on `raw.githubusercontent.com`, the first time
+repository's `decks-live` branch, on `raw.githubusercontent.com`, the first time
 a learner chooses the language, and checks for changes at most once a day
 after that ([ADR-0037](ADR-0037-Decks-Download-From-Main)). What it
 downloads is listed in `decks/index.json`:
@@ -3038,7 +3038,7 @@ downloads is listed in `decks/index.json`:
   not downloaded.
 
 **You do not write the index.** A workflow (`deck-index.yml`) runs
-`python3 tools/deck_index.py` on main after each merge that touches `decks/`
+`python3 tools/deck_index.py` on decks-live after each merge that touches `decks/`
 and commits the result (owner, 2026-10-23), so a pull request is not failed
 for a stale index: the validate job and the tools' test that validates the real decks set `FLUENOUGH_SKIP_INDEX_CHECK`. The validator still checks it when run locally. A phone
 checks each file against its hash and refuses one that does not match.
