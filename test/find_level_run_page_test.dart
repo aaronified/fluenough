@@ -5,8 +5,10 @@
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/assurance_readout.dart';
 import 'package:fluenough/core/placement/generated_question.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
+import 'package:fluenough/core/placement/placement_run.dart';
 import 'package:fluenough/core/placement/placement_session.dart';
 import 'package:fluenough/core/tts/tts_engine.dart';
 import 'package:fluenough/features/placement/find_level_declaration.dart';
@@ -119,6 +121,25 @@ class _CheckpointSession extends PlacementSession {
 
   @override
   List<String> get events => <String>[..._kept, ...super.events];
+}
+
+/// A run that reads out what it is told, to put a skill at a name the
+/// fixture's answers do not reach.
+class _FixedRun extends PlacementRun {
+  _FixedRun(
+    super.config,
+    this.fixed, {
+    this.unavailable = const <PlacementSkill>{},
+  });
+
+  final Map<PlacementSkill, SkillAssurance> fixed;
+  final Set<PlacementSkill> unavailable;
+
+  @override
+  Set<PlacementSkill> get unavailableSkills => unavailable;
+
+  @override
+  Map<PlacementSkill, SkillAssurance> get readout => fixed;
 }
 
 Future<void> _tap(WidgetTester tester, Finder finder) async {
@@ -412,6 +433,54 @@ void main() {
     });
   });
 
+  group('a run whose outcome cannot be written', () {
+    testWidgets('shows an error with Retry, keeps the run, and Retry writes '
+        'again', (tester) async {
+      final session = PlacementSession(findLevelConfig(), findLevelData());
+      var writes = 0;
+      final popped = <Object?>[];
+      await _open(
+        tester,
+        () => FindLevelRunPage(
+          session: session,
+          languageName: 'Xish',
+          language: _language,
+          native: _native,
+          onProgress: (_) {},
+          onFinish: (_) {
+            writes++;
+            if (writes == 1) throw StateError('the write failed');
+          },
+        ),
+        popped,
+      );
+      final l10n = l10nOf(tester);
+      final retry = find.byKey(const ValueKey<String>('find-level-retry'));
+      final done = find.byKey(const ValueKey<String>('find-level-done'));
+      final keep = find.byKey(const ValueKey<String>('find-level-keep-going'));
+      var taps = 0;
+      while (retry.evaluate().isEmpty && taps++ < 400) {
+        await _tap(
+          tester,
+          keep.evaluate().isNotEmpty
+              ? keep
+              : find.byKey(const ValueKey<String>('find-level-dont-know')),
+        );
+      }
+      // Not a spinner: the learner is told, and the run is still there.
+      expect(retry, findsOneWidget);
+      expect(find.text(l10n.findLevelFinishFailed), findsOneWidget);
+      expect(find.byType(CircularProgressIndicator), findsNothing);
+      expect(writes, 1);
+      expect(popped, isEmpty);
+
+      await _tap(tester, retry);
+      expect(writes, 2);
+      expect(done, findsOneWidget);
+      expect(find.text(l10n.findLevelSummaryTitle), findsOneWidget);
+    });
+  });
+
   group('the result lists each skill in play', () {
     testWidgets('as a unit and a name, in the plan\'s words', (tester) async {
       final session = PlacementSession(findLevelConfig(), findLevelData());
@@ -442,6 +511,110 @@ void main() {
       // Say and Script were not marked: they are not listed at all.
       expect(find.textContaining(l10n.findLevelSkillSay), findsNothing);
       expect(find.textContaining(l10n.findLevelSkillScript), findsNothing);
+    });
+
+    testWidgets('a low name is explained calmly, and the percentage waits in '
+        'a detail a tap opens', (tester) async {
+      // A first guess: a fixed readout, so that the name is the one under
+      // test whatever the fixture's answers reach.
+      final run = _FixedRun(
+        findLevelConfig(skills: const <PlacementSkill>{PlacementSkill.read}),
+        <PlacementSkill, SkillAssurance>{
+          PlacementSkill.read: const SkillAssurance(
+            skill: PlacementSkill.read,
+            label: AssuranceLabel.notSureYet,
+            mass: 0.4,
+            leadingClass: 1,
+            placedLevel: 1,
+            questions: 3,
+          ),
+        },
+      );
+      usePhone(tester);
+      await pumpScreen(tester, FindLevelSummary(run: run, onDone: () {}));
+      final l10n = l10nOf(tester);
+      expect(find.textContaining('% sure'), findsNothing);
+      expect(find.text(l10n.findLevelNoteNotSureYet), findsOneWidget);
+      await _tap(
+        tester,
+        find.byKey(const ValueKey<String>('find-level-result-read')),
+      );
+      expect(find.textContaining('% sure'), findsOneWidget);
+      expect(find.text(l10n.findLevelLabelVerified), findsNothing);
+    });
+
+    testWidgets('a Verified skill is marked, and Say with no microphone says '
+        'it was not tested and why', (tester) async {
+      final session = PlacementSession(
+        findLevelConfig(
+          skills: const <PlacementSkill>{
+            PlacementSkill.read,
+            PlacementSkill.say,
+          },
+        ),
+        findLevelData(),
+      );
+      while (!session.isDone) {
+        if (session.atCheckpoint) {
+          session.keepGoing();
+        } else {
+          session.answer(true);
+        }
+      }
+      expect(
+        session.run.readout[PlacementSkill.read]!.label,
+        AssuranceLabel.verified,
+      );
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        FindLevelSummary(run: session.run, onDone: () {}),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.byIcon(Icons.verified), findsOneWidget);
+      // The line already says Verified: the icon is not announced again.
+      expect(
+        find.ancestor(
+          of: find.byIcon(Icons.verified),
+          matching: find.byType(ExcludeSemantics),
+        ),
+        findsWidgets,
+      );
+      expect(find.text(l10n.findLevelNoteVerified), findsOneWidget);
+      expect(
+        find.text('${l10n.findLevelSkillSay}: not tested'),
+        findsOneWidget,
+      );
+      expect(find.text(l10n.findLevelNotTestedNoMic), findsOneWidget);
+    });
+    testWidgets('a skill whose questions could not be asked says so, and one '
+        'that was just not asked says that', (tester) async {
+      SkillAssurance notTested(PlacementSkill skill) => SkillAssurance(
+        skill: skill,
+        label: AssuranceLabel.notTested,
+        mass: 0,
+        leadingClass: 0,
+        placedLevel: -1,
+        questions: 0,
+      );
+      final run = _FixedRun(
+        findLevelConfig(
+          skills: const <PlacementSkill>{
+            PlacementSkill.read,
+            PlacementSkill.hear,
+          },
+        ),
+        <PlacementSkill, SkillAssurance>{
+          PlacementSkill.read: notTested(PlacementSkill.read),
+          PlacementSkill.hear: notTested(PlacementSkill.hear),
+        },
+        unavailable: const <PlacementSkill>{PlacementSkill.hear},
+      );
+      usePhone(tester);
+      await pumpScreen(tester, FindLevelSummary(run: run, onDone: () {}));
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.findLevelNotTestedUnavailable), findsOneWidget);
+      expect(find.text(l10n.findLevelNotTestedNotAsked), findsOneWidget);
     });
   });
 }

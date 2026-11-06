@@ -9,13 +9,18 @@ import 'dart:convert';
 
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/deck_downloads.dart';
+import 'package:fluenough/app/app_info.dart';
 import 'package:fluenough/app/downloaded_decks.dart';
 import 'package:fluenough/app/language_skills.dart';
+import 'package:fluenough/app/placement_run_setup.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/data/course_path.dart' show Milestone;
 import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/decks/language_catalog.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
+import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/placement_questions.dart';
+import 'package:fluenough/core/placement/saved_run.dart';
 import 'package:fluenough/features/languages/language_skills_sheet.dart';
 import 'package:fluenough/features/languages/language_views.dart';
 import 'package:fluenough/features/placement/find_level_declaration.dart';
@@ -162,6 +167,47 @@ void main() {
       expect(find.text(l10n.languagesVerifyKnown), findsOneWidget);
     });
 
+    testWidgets('a language never placed shows no labels; a placed one shows '
+        'each skill\'s name and the Verified mark', (tester) async {
+      await _pumpSheet(tester, built: 3);
+      final l10n = l10nOf(tester);
+      expect(find.textContaining('${l10n.findLevelSkillHear}: '), findsNothing);
+
+      final settings =
+          SettingsNotifier(
+              spokenLanguages: const <String>['en'],
+              learningChosen: true,
+            )
+            ..setSkillLabels('es', <String, String>{
+              'hear': 'verified',
+              'say': 'notSureYet',
+              'read': 'sure',
+            })
+            ..setVerifiedSkills('es', <String>{'hear'});
+      await _pumpSheet(
+        tester,
+        built: 3,
+        state: AppState.test(settings: settings),
+      );
+      expect(
+        find.text('${l10n.findLevelSkillHear}: ${l10n.findLevelLabelVerified}'),
+        findsOneWidget,
+      );
+      expect(find.byIcon(Icons.verified), findsOneWidget);
+      expect(
+        find.text(
+          '${l10n.findLevelSkillSay}: ${l10n.findLevelLabelNotSureYet}',
+        ),
+        findsOneWidget,
+      );
+      expect(
+        find.text('${l10n.findLevelSkillRead}: ${l10n.findLevelLabelSure}'),
+        findsOneWidget,
+      );
+      // A percentage is never on the row.
+      expect(find.textContaining('%'), findsNothing);
+    });
+
     testWidgets('is not offered below A1', (tester) async {
       await _pumpSheet(tester, built: 0);
       expect(
@@ -301,6 +347,48 @@ void main() {
       await tester.tap(find.text(l10n.findLevelResumeNew));
       await tester.pumpAndSettle();
       expect(find.byType(FindLevelDeclarationPage), findsOneWidget);
+      expect(state.settings.placementRunOf('es'), isNull);
+    });
+
+    testWidgets('a paused run this phone can no longer ask is said so, and '
+        'is deleted only when the new run starts', (tester) async {
+      final state = await _pumpSheet(tester, built: 3);
+      final l10n = l10nOf(tester);
+      final plan = state.placementRunPlan(
+        'es',
+        native: state.courseNative('es'),
+      )!;
+      // Begun with a microphone, which this phone does not have.
+      final paused = jsonEncode(
+        SavedPlacementRun(
+          language: 'es',
+          declaration: PlacementDeclaration.expert,
+          skills: const <PlacementSkill>{PlacementSkill.read},
+          seed: 1,
+          microphone: true,
+          deckSet: placementDeckSetKey(plan.data),
+          appVersion: AppInfo.version,
+          savedAt: state.now().millisecondsSinceEpoch ~/ 1000,
+          events: const <String>['a0'],
+        ).toJson(),
+      );
+      state.settings.setPlacementRun('es', paused);
+
+      await _tapLevel(tester);
+      expect(find.text(l10n.findLevelResumeDeviceChanged), findsOneWidget);
+      expect(find.text(l10n.findLevelResumeTitle), findsNothing);
+      expect(find.byType(FindLevelDeclarationPage), findsOneWidget);
+      // Nothing is deleted before the learner chooses: Back keeps it.
+      expect(state.settings.placementRunOf('es'), paused);
+      await tester.pageBack();
+      await tester.pumpAndSettle();
+      expect(state.settings.placementRunOf('es'), paused);
+
+      // Starting the new run replaces it.
+      await _tapLevel(tester);
+      await tester.tap(find.byKey(const ValueKey<String>('find-level-expert')));
+      await tester.pumpAndSettle();
+      expect(find.byType(FindLevelRunPage), findsOneWidget);
       expect(state.settings.placementRunOf('es'), isNull);
     });
   });
