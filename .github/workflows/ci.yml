@@ -120,7 +120,7 @@ jobs:
       - run: pip install pyyaml
       # YAML fails quietly: a bare `no` becomes a boolean. The sample is held
       # to the validator like every deck.
-      - run: python3 tools/validate_decks.py test/fixtures/sample-decks/
+      - run: python3 tools/validate_sample_decks.py
       # Rule 10: no user-visible string is a literal in a widget.
       - run: python3 tools/check_ui_strings.py lib/
       # The English synonym sets (ADR-0050): format and sorting. Their match

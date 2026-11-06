@@ -9,8 +9,8 @@ The list is the table between `<!-- languages:start -->` and
 languages, then one row per language the index offers, with its name, its
 language family and subfamily, the scripts it is written in, and the highest
 level whose units are all written. That is A1, A2 or B1, or "in progress"
-before A1. The deck-index workflow runs it after `tools/deck_index.py`, so
-the list follows the decks.
+before A1. The readme-languages workflow runs it nightly on decks-live's
+index, so the list follows the decks.
 
 The family and subfamily come from `tools/language_families.yaml`, a data
 file of the tools alone (the app does not read it), keyed by language code.
