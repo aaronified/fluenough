@@ -580,7 +580,8 @@ units:
     milestone: "A2"
   # B1: the themes and grammar of the CEFR's B1: the conditionals, the
   # passive and causative, reported speech and keigo, more kanji.
-  - planned: { id: "ja-health", theme: "health", words: 55 }
+  - decks: ["ja-health", "ja-health-sentences", "ja-reading-health", "*"]
+    words: 55
     listening_passages:
       - { id: "doctor-call", text: { "en": "Booking a doctor's appointment by phone" } }
     reading_passages:

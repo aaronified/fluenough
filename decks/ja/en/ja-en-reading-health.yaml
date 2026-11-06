@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-health"
+"name": "Japanese reading: health"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-health-1"
+  "title": "A health check-up"
+  "sentences":
+  - "text": "きのう、けんこうしんだんをうけました。"
+    "reading": "kinou, kenkoushindan o ukemashita."
+  - "text": "たいじゅうはすこしふえましたが、けつあつはふつうでした。"
+    "reading": "taijuu wa sukoshi fuemashita ga, ketsuatsu wa futsuu deshita."
+  - "text": "せんせいは、いんしゅをへらすようにといいました。"
+    "reading": "sensei wa, inshu o herasu you ni to iimashita."
+  - "text": "これからは、まいにちすいぶんをとります。"
+    "reading": "korekara wa, mainichi suibun o torimasu."
+  "questions":
+  - "id": "ja-2752"
+    "prompt":
+      "en": "Which line says that the writer had a health check-up?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2753"
+    "prompt":
+      "en": "The second line says that the blood pressure was high."
+    "answer": !!bool false
+  - "id": "ja-2754"
+    "prompt":
+      "en": "Which line says that the writer will drink water every day?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-health-2"
+  "title": "A cold"
+  "sentences":
+  - "text": "ふゆに、かぜをひいて、ねつがでました。"
+    "reading": "fuyu ni, kaze o hiite, netsu ga demashita."
+  - "text": "しごとをやすんで、きゅうようをとりました。"
+    "reading": "shigoto o yasunde, kyuuyou o torimashita."
+  - "text": "びょういんにはいかなかったので、くすりをのみました。"
+    "reading": "byouin ni wa ikanakatta node, kusuri o nomimashita."
+  - "text": "もうすぐ、かいふくするとおもいます。"
+    "reading": "mou sugu, kaifuku suru to omoimasu."
+  "questions":
+  - "id": "ja-2755"
+    "prompt":
+      "en": "Which line says that the writer had a fever?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2756"
+    "prompt":
+      "en": "The second line says that the writer went to the hospital."
+    "answer": !!bool false
+  - "id": "ja-2757"
+    "prompt":
+      "en": "Which line says that the writer took medicine?"
+    "options":
+    - "en": "The second line"
+    - "en": "The third line"
+    "answer": !!int "2"

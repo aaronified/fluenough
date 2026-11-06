@@ -156,3 +156,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2666 | ja-geography | Is ほっきょく (hokkyoku) は さむい ところ です natural for 'the North Pole is a cold place', or would another phrase be used? | Haiku builder | 2026-11-06 |
 | unit-level | ja-geography | The example and sentence decks of ja-geography are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
 | unit-level | ja-geography | Row 5 of the plan's list was く (ku, ward), left out because く is already the hiragana card; ほっきょく takes its place. Should the ward noun 区 (ku) come back in a later unit? | Haiku builder | 2026-11-06 |
+| ja-2716 | ja-health | Is せいかつが かたよって います (my life is one-sided, unbalanced) natural, or is another word more usual for an unbalanced diet or life? | Haiku builder | 2026-11-06 |
+| ja-2710 | ja-health | Is ワクチンで よぼう します (I prevent illness with a vaccine) natural, or would ワクチンを うちます (get a vaccine) be the usual phrase? | Haiku builder | 2026-11-06 |
+| ja-2734 | ja-health | Is ゆっくり こきゅうを します (breathe slowly) the usual phrase, or is ふかい こきゅう (deep breathing) more natural? | Haiku builder | 2026-11-06 |
+| ja-2725 | ja-health | Is きんえんを かんがえて います (I am thinking about giving up smoking) natural, or is やめる (to quit) with a reason more usual? | Haiku builder | 2026-11-06 |
+| unit-level | ja-health | The example and sentence decks of ja-health are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| unit-level | ja-health | The plan's list had すこやか (healthy, a na-adjective) at row 50, left out because the rules tables do not cover na-adjectives here; すいぶん takes its place. Should すこやか come back in a later adjectives unit? | Haiku builder | 2026-11-06 |
