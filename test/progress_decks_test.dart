@@ -122,7 +122,9 @@ Future<AppState> pumpDecks(
 /// deck pull request that adds a unit would otherwise change (#567). It is
 /// refreshed only on purpose, with tools/snapshot_sample_decks.py, and then these
 /// numbers are updated with it. The other tests read the live decks.
-final DeckSource frozenDecks = RepositoryDeckSource('test/fixtures/sample-decks');
+final DeckSource frozenDecks = RepositoryDeckSource(
+  'test/fixtures/sample-decks',
+);
 
 /// The design's Telugu learner, with Family up next. With [decks] the frozen
 /// copy, the path is the one that copy holds.

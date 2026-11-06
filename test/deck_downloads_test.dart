@@ -973,8 +973,8 @@ void main() {
       return (fetched, client);
     }
 
-    test('downloads a file from decks-live, and says why when GitHub limits it, '
-        'the file is gone, or there is no network', () async {
+    test('downloads a file from decks-live, and says why when it fails: '
+        'GitHub limits it, the file is gone, or there is no network', () async {
       final (fetched, client) = await fetch(
         () async => (200, utf8.encode('kind: path\n')),
       );
