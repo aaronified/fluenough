@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-adjectives-2"
+"name": "Japanese reading: adjectives-2"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-adjectives-2-1"
+  "title": "A letter from a friend"
+  "sentences":
+  - "text": "ともだちからてがみがきました。"
+    "reading": "tomodachi kara tegami ga kimashita."
+  - "text": "わたしはうれしかったです。"
+    "reading": "watashi wa ureshikatta desu."
+  - "text": "でも、ともだちはさびしいとかいていました。"
+    "reading": "demo, tomodachi wa sabishii to kaite imashita."
+  - "text": "つぎはいっしょにりょこうしたいです。"
+    "reading": "tsugi wa issho ni ryokou shitai desu."
+  "questions":
+  - "id": "ja-2556"
+    "prompt":
+      "en": "Which line says that the writer was glad?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "2"
+  - "id": "ja-2557"
+    "prompt":
+      "en": "The third line says that the friend felt lonely."
+    "answer": !!bool true
+  - "id": "ja-2558"
+    "prompt":
+      "en": "Which line says that the writer wants to travel together?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-adjectives-2-2"
+  "title": "A strict teacher"
+  "sentences":
+  - "text": "わたしのせんせいはきびしいです。"
+    "reading": "watashi no sensei wa kibishii desu."
+  - "text": "でも、わたしのためにいつもていねいにおしえてくれます。"
+    "reading": "demo, watashi no tame ni itsumo teinei ni oshiete kuremasu."
+  - "text": "しけんがちかくなると、わたしははずかしいほどしんぱいになります。"
+    "reading": "shiken ga chikaku naru to, watashi wa hazukashii hodo shinpai ni narimasu."
+  - "text": "それでもせんせいはとてもたいせつなひとです。"
+    "reading": "sore de mo sensei wa totemo taisetsu na hito desu."
+  "questions":
+  - "id": "ja-2559"
+    "prompt":
+      "en": "Which line says that the teacher is strict?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2560"
+    "prompt":
+      "en": "The second line says that the teacher explains carefully."
+    "answer": !!bool true
+  - "id": "ja-2561"
+    "prompt":
+      "en": "Which line says that the writer thinks the teacher is precious?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
