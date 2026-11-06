@@ -1,0 +1,20 @@
+schema: 1
+id: "ta-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0130"
+    target: "நாங்கள் சாப்பிடுகிறோம்."
+    reading: "nāṅkaḷ cāppiṭukiṟōm."
+    ipa: "naːŋgaɭ saːppiɖukiɾoːm."
+    pos: "phrase"
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "சாப்பிடுகிறோம்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-0131"
+    target: "அவன் எழுதுகிறான்."
+    reading: "avaṉ eḻutukiṟāṉ."
+    ipa: "avan eɻut̪ukiɾaːn."
+    pos: "phrase"
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "எழுதுகிறான்", base: "எழுது", reading: "eḻutu" }]
