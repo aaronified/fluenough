@@ -1,0 +1,125 @@
+schema: 1
+id: "ja-work-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0726"
+    target: "わたしはかいしゃいんです。"
+    words: ["わたし", "は", "かいしゃいん", "です"]
+    reading: "watashi wa kaishain desu."
+    ipa: "wataɕi wa kaiɕaiɴ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "がくせい"
+        reading: "gakusei"
+        kind: "word"
+      - id: "w2"
+        word: "しゃいん"
+        reading: "shain"
+        kind: "word"
+    rules: ["ja-rule-desu"]
+  - id: "ja-0727"
+    target: "ははがびょういんにつとめます。"
+    words: ["はは", "が", "びょういん", "に", "つとめます"]
+    reading: "haha ga byouin ni tsutomemasu."
+    ipa: "haha ɡa bjoːiɴ ni tsɯtomemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "つとめます", base: "つとめる", reading: "tsutomeru" }
+    confusables:
+      - id: "w1"
+        word: "いしゃ"
+        reading: "isha"
+        kind: "word"
+      - id: "w2"
+        word: "ぎんこう"
+        reading: "ginkou"
+        kind: "word"
+    rules: ["ja-rule-masu"]
+  - id: "ja-0728"
+    target: "しごとはたいへんです。"
+    words: ["しごと", "は", "たいへん", "です"]
+    reading: "shigoto wa taihen desu."
+    ipa: "ɕiɡoto wa taiheɴ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "とくい"
+        reading: "tokui"
+        kind: "word"
+      - id: "w2"
+        word: "すごい"
+        reading: "sugoi"
+        kind: "word"
+    rules: ["ja-rule-desu"]
+  - id: "ja-0729"
+    target: "かいぎはいつですか。"
+    words: ["かいぎ", "は", "いつ", "です", "か"]
+    reading: "kaigi wa itsu desu ka."
+    ipa: "kaiɡi wa itsɯ desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "しけん"
+        reading: "shiken"
+        kind: "word"
+      - id: "w2"
+        word: "じむしょ"
+        reading: "jimusho"
+        kind: "word"
+    rules: ["ja-rule-question-ka"]
+  - id: "ja-0730"
+    target: "ちちはざんぎょうをします。"
+    words: ["ちち", "は", "ざんぎょう", "を", "します"]
+    reading: "chichi wa zangyou o shimasu."
+    ipa: "tɕitɕi wa dzaɴgjoː o ɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "します", ref: "ja-0375" }
+    confusables:
+      - id: "w1"
+        word: "けんきゅう"
+        reading: "kenkyuu"
+        kind: "word"
+      - id: "w2"
+        word: "しゅっきん"
+        reading: "shukkin"
+        kind: "word"
+    rules: ["ja-rule-masu"]
+  - id: "ja-0731"
+    target: "かのじょはかんごしです。"
+    words: ["かのじょ", "は", "かんごし", "です"]
+    reading: "kanojo wa kangoshi desu."
+    ipa: "kanodʑo wa kaɴɡoɕi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "はいしゃ"
+        reading: "haisha"
+        kind: "word"
+      - id: "w2"
+        word: "けんきゅうしゃ"
+        reading: "kenkyuusha"
+        kind: "word"
+    rules: ["ja-rule-desu"]

@@ -1,0 +1,120 @@
+schema: 1
+id: "ja-everyday-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0376"
+    target: "せんせいはにほんごをおしえます。"
+    words: ["せんせい", "は", "にほんご", "を", "おしえます"]
+    reading: "sensei wa nihongo o oshiemasu."
+    ipa: "seɴseː wa nihoɴɡo o oɕiemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "おしえます", base: "おしえる", reading: "oshieru" }
+    confusables:
+      - id: "w1"
+        word: "ならう"
+        reading: "narau"
+        kind: "word"
+      - id: "w2"
+        word: "きく"
+        reading: "kiku"
+        kind: "word"
+  - id: "ja-0377"
+    target: "ははがごはんをつくります。"
+    words: ["はは", "が", "ごはん", "を", "つくります"]
+    reading: "haha ga gohan o tsukurimasu."
+    ipa: "haha ɡa ɡohaɴ o tsɯkɯɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つくります", base: "つくる", reading: "tsukuru" }
+    confusables:
+      - id: "w1"
+        word: "あらう"
+        reading: "arau"
+        kind: "word"
+      - id: "w2"
+        word: "たべる"
+        reading: "taberu"
+        kind: "word"
+  - id: "ja-0378"
+    target: "いぬがすわります。"
+    words: ["いぬ", "が", "すわります"]
+    reading: "inu ga suwarimasu."
+    ipa: "inɯ ɡa sɯwaɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "すわります", base: "すわる", reading: "suwaru" }
+    confusables:
+      - id: "w1"
+        word: "たつ"
+        reading: "tatsu"
+        kind: "word"
+      - id: "w2"
+        word: "ねる"
+        reading: "neru"
+        kind: "word"
+  - id: "ja-0379"
+    target: "わたしはにほんごがわかります。"
+    words: ["わたし", "は", "にほんご", "が", "わかります"]
+    reading: "watashi wa nihongo ga wakarimasu."
+    ipa: "wataɕi wa nihoɴɡo ɡa wakaɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "わかります", base: "わかる", reading: "wakaru" }
+    confusables:
+      - id: "w1"
+        word: "しる"
+        reading: "shiru"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0318"
+        kind: "word"
+  - id: "ja-0380"
+    target: "なにをつかいますか。"
+    words: ["なに", "を", "つかいます", "か"]
+    reading: "nani o tsukaimasu ka."
+    ipa: "nani o tsɯkaimasɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つかいます", base: "つかう", reading: "tsukau" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "もつ"
+        reading: "motsu"
+        kind: "word"
+      - id: "w2"
+        word: "あける"
+        reading: "akeru"
+        kind: "word"
+  - id: "ja-0381"
+    target: "わたしはかぎをもちます。"
+    words: ["わたし", "は", "かぎ", "を", "もちます"]
+    reading: "watashi wa kagi o mochimasu."
+    ipa: "wataɕi wa kaɡi o motɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "もちます", base: "もつ", reading: "motsu" }
+    confusables:
+      - id: "w1"
+        word: "あける"
+        reading: "akeru"
+        kind: "word"
+      - id: "w2"
+        word: "しめる"
+        reading: "shimeru"
+        kind: "word"

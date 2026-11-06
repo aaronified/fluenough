@@ -1,0 +1,66 @@
+schema: 1
+id: "ja-en-grammar-masu-sentences"
+kind: "layer"
+core: "ja-grammar-masu-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Polite verbs in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0680":
+    native: "I run every day."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+    confusables:
+      w1:
+        why: "あるく (aruku) is to walk, not to run."
+      w2:
+        why: "やすむ (yasumu) is to rest."
+  "ja-0681":
+    native: "I do not sleep at night."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+    confusables:
+      w1:
+        why: "おきる (okiru) is to get up, the opposite."
+      w2:
+        why: "ひる (hiru) means noon, not night."
+  "ja-0682":
+    native: "Mother makes the meal."
+    bases:
+      "が":
+        meaning: "(marks the subject)"
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "あらう (arau) is to wash."
+      w2:
+        why: "たべる (taberu) is to eat."
+  "ja-0683":
+    native: "My friend does not learn Japanese."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "を":
+        meaning: "(marks the thing acted on)"
+    confusables:
+      w1:
+        why: "おしえる (oshieru) is to teach, the opposite side."
+      w2:
+        why: "えいご (eigo) is English."
+  "ja-0684":
+    native: "I go to school."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "に":
+        meaning: "in; at; to"
+    confusables:
+      w1:
+        why: "かえる (kaeru) is to go home."
+      w2:
+        why: "くる (kuru) is to come."

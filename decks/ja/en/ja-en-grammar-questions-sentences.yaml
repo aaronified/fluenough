@@ -1,0 +1,86 @@
+schema: 1
+id: "ja-en-grammar-questions-sentences"
+kind: "layer"
+core: "ja-grammar-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Yes-no questions in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0649":
+    native: "Are you a student?"
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "せんせい (sensei) is a teacher, not a student."
+      w2:
+        why: "ひと (hito) is a person."
+  "ja-0650":
+    native: "Is it a man?"
+    bases:
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "おんな (onna) is a woman, the opposite."
+      w2:
+        why: "こども (kodomo) is a child."
+  "ja-0651":
+    native: "Is it a friend?"
+    bases:
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "かぞく (kazoku) is a family, not a friend."
+      w2:
+        why: "はは (haha) is a mother."
+  "ja-0652":
+    native: "Is it a school?"
+    bases:
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "だいがく (daigaku) is a university."
+      w2:
+        why: "えいご (eigo) is English, not a school."
+  "ja-0653":
+    native: "Are you a Japanese teacher?"
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "えいご (eigo) is English."
+      w2:
+        why: "がくせい (gakusei) is a student."
+  "ja-0654":
+    native: "Is she your mother?"
+    bases:
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "ちち (chichi) is father, not mother."
+      w2:
+        why: "あね (ane) is an older sister."

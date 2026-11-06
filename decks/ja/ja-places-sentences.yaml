@@ -1,0 +1,81 @@
+schema: 1
+id: "ja-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1158"
+    target: "としょかんはがっこうのよこです。"
+    words: ["としょかん", "は", "がっこう", "の", "よこ", "です"]
+    reading: "toshokan wa gakkou no yoko desu."
+    ipa: "toɕokaɴ wa ɡakkoː no joko desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "きょうしつ"
+        reading: "kyoushitsu"
+        kind: "word"
+      - id: "w2"
+        word: "こうえん"
+        reading: "kouen"
+        kind: "word"
+  - id: "ja-1159"
+    target: "うみにいきます。"
+    words: ["うみ", "に", "いきます"]
+    reading: "umi ni ikimasu."
+    ipa: "ɯmi ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "かわ"
+        reading: "kawa"
+        kind: "word"
+      - id: "w2"
+        word: "やま"
+        reading: "yama"
+        kind: "word"
+  - id: "ja-1160"
+    target: "びょういんはちかいです。"
+    words: ["びょういん", "は", "ちかい", "です"]
+    reading: "byouin wa chikai desu."
+    ipa: "bjoːiɴ wa tɕikai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "くすりや"
+        reading: "kusuriya"
+        kind: "word"
+      - id: "w2"
+        word: "ゆうびんきょく"
+        reading: "yuubinkyoku"
+        kind: "word"
+  - id: "ja-1161"
+    target: "もりはしずかです。"
+    words: ["もり", "は", "しずか", "です"]
+    reading: "mori wa shizuka desu."
+    ipa: "moɾi wa ɕidzɯka desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "やま"
+        reading: "yama"
+        kind: "word"
+      - id: "w2"
+        word: "いけ"
+        reading: "ike"
+        kind: "word"

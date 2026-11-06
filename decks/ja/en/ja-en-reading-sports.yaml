@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-sports"
+"name": "Japanese reading: sports"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-sports-1"
+  "title": "A friend's weekend"
+  "sentences":
+  - "text": "きのうのゆうしょうはわたしのチームです。"
+    "reading": "kinou no yuushou wa watashi no chiimu desu."
+  - "text": "わたしはテニスがすきです。"
+    "reading": "watashi wa tenisu ga suki desu."
+  - "text": "まいあさこうえんでジョギングをします。"
+    "reading": "maiasa kouen de jogingu o shimasu."
+  - "text": "ボールをなげました。"
+    "reading": "booru o nagemashita."
+  "questions":
+  - "id": "ja-2023"
+    "prompt":
+      "en": "Which line says that the writer's team won the championship?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2024"
+    "prompt":
+      "en": "The second line says that the writer likes tennis."
+    "answer": !!bool "true"
+  - "id": "ja-2025"
+    "prompt":
+      "en": "Which line says that someone threw a ball?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-sports-2"
+  "title": "A match at the stadium"
+  "sentences":
+  - "text": "スタジアムでサッカーをみました。"
+    "reading": "sutajiamu de sakkaa o mimashita."
+  - "text": "しんぱんはルールをしっています。"
+    "reading": "shinpan wa ruuru o shitte imasu."
+  - "text": "たくさんのかんきゃくがきました。"
+    "reading": "takusan no kankyaku ga kimashita."
+  - "text": "ボールはゴールにはいりました。"
+    "reading": "booru wa gooru ni hairimashita."
+  "questions":
+  - "id": "ja-2026"
+    "prompt":
+      "en": "Which line says that many spectators came?"
+    "options":
+    - "en": "The second line"
+    - "en": "The third line"
+    "answer": !!int "2"
+  - "id": "ja-2027"
+    "prompt":
+      "en": "The first line says that the writer watched a match at the stadium."
+    "answer": !!bool "true"
+  - "id": "ja-2028"
+    "prompt":
+      "en": "Which line says that the ball went into the goal?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"

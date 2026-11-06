@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-feelings"
+"name": "Japanese reading: feelings"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-feelings-1"
+  "title": "A hard day at work"
+  "sentences":
+  - "text": "きのう、しごとで しっぱいを しました。"
+    "reading": "kinou, shigoto de shippai o shimashita."
+  - "text": "かちょうは おこりませんでしたが、わたしは すこし きんちょうしました。"
+    "reading": "kachou wa okorimasen deshita ga, watashi wa sukoshi kinchou shimashita."
+  - "text": "そのあと、ともだちに はなしたら、ほっとしました。"
+    "reading": "sono ato, tomodachi ni hanashitara, hotto shimashita."
+  - "text": "いまは のんびり すごして います。"
+    "reading": "ima wa nonbiri sugoshite imasu."
+  "questions":
+  - "id": "ja-2827"
+    "prompt":
+      "en": "Which line says that the writer made a mistake?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2828"
+    "prompt":
+      "en": "The writer felt relieved after talking to a friend."
+    "answer": !!bool true
+  - "id": "ja-2829"
+    "prompt":
+      "en": "Which line says that the writer is relaxed now?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-feelings-2"
+  "title": "A letter to a friend"
+  "sentences":
+  - "text": "とおくに すむ ともだちへ、てがみを かきます。"
+    "reading": "tooku ni sumu tomodachi e, tegami o kakimasu."
+  - "text": "ひさしぶりに あったので、むかしを なつかしみました。"
+    "reading": "hisashiburi niatta node, mukashi o natsukashimimashita."
+  - "text": "あなたの しんせつに かんしゃしています。"
+    "reading": "anata no shinsetsu ni kansha shite imasu."
+  - "text": "また あえる ことを たのしみに しています。"
+    "reading": "mata aeru koto o tanoshimi ni shite imasu."
+  "questions":
+  - "id": "ja-2830"
+    "prompt":
+      "en": "Which line says that the writer is grateful?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "1"
+  - "id": "ja-2831"
+    "prompt":
+      "en": "The writer looks back on the past fondly."
+    "answer": !!bool true
+  - "id": "ja-2832"
+    "prompt":
+      "en": "Which line says that the writer looks forward to a meeting?"
+    "options":
+    - "en": "The first line"
+    - "en": "The fourth line"
+    "answer": !!int "2"

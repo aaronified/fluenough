@@ -1,0 +1,581 @@
+schema: 1
+id: "ja-en-appearance"
+kind: "layer"
+core: "ja-appearance"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Appearance"
+description: "Appearance: 40 words for hair, face, body and looks: 28 nouns, 10 adjectives and 2 verbs. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-2154":
+    native: "thick; fat"
+    notes: { n1: "ふとい (futoi) means thick, or fat, said of a body or of a thing." }
+    examples:
+      "ともだちはふといペンをつかいます。":
+        native: "My friend uses a thick pen."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "わたしのあしはふとくないです。":
+        native: "My legs are not thick."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "ふとくない": { meaning: "not thick" }
+          "です": { meaning: "is (polite)" }
+  "ja-2155":
+    native: "thin; slender"
+    notes: { n1: "ほそい (hosoi) means thin or slender, said of a body or of a long thing." }
+    examples:
+      "わたしのあしはほそいです。":
+        native: "My legs are thin."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "ほそいペンをかいました。":
+        native: "I bought a thin pen."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2156":
+    native: "good-looking; cool"
+    notes: { n1: "かっこいい (kakkoii) means good-looking or cool, said of a person's looks or style." }
+    examples:
+      "あなたはかっこいいです。":
+        native: "You are cool."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "ともだちはかっこよかったです。":
+        native: "My friend was cool."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "かっこよかった": { meaning: "was cool" }
+          "です": { meaning: "is (polite)" }
+  "ja-2157":
+    native: "cute"
+    notes: { n1: "かわいい (kawaii) means cute, or pretty in a sweet way." }
+    examples:
+      "こどもはかわいいです。":
+        native: "The child is cute."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "いぬはかわいかったです。":
+        native: "The dog was cute."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "かわいかった": { meaning: "was cute" }
+          "です": { meaning: "is (polite)" }
+  "ja-2158":
+    native: "lovely; sweet"
+    notes: { n1: "かわいらしい (kawairashii) means lovely or sweet, a softer and more gentle kind of cute." }
+    examples:
+      "こどもはかわいらしいです。":
+        native: "The child is lovely."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "ねこはかわいらしいです。":
+        native: "The cat is sweet."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2159":
+    native: "handsome"
+    notes: { n1: "ハンサム (hansamu) means handsome, said of a man. It is a na-adjective, so it takes な (na) before a noun." }
+    examples:
+      "おとうさんはハンサムです。":
+        native: "Dad is handsome."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "ともだちはハンサムでした。":
+        native: "My friend was handsome."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "でした": { meaning: "was (polite)" }
+  "ja-2160":
+    native: "stylish; fashionable"
+    notes: { n1: "おしゃれ (oshare) means stylish or fashionable. It is a na-adjective, so it takes な (na) before a noun." }
+    examples:
+      "わたしのともだちはおしゃれです。":
+        native: "My friend is stylish."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "おしゃれなふくをかいました。":
+        native: "I bought stylish clothes."
+        bases:
+          "な": { meaning: "(links an adjective to a noun)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2161":
+    native: "plain; subdued"
+    notes: { n1: "じみ (jimi) means plain or subdued, said of clothes or looks. It is a na-adjective, so it takes な (na) before a noun." }
+    examples:
+      "ふくはじみです。":
+        native: "The clothes are plain."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "わたしはじみなふくがすきです。":
+        native: "I like plain clothes."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "な": { meaning: "(links an adjective to a noun)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2162":
+    native: "flashy; showy"
+    notes: { n1: "はで (hade) means flashy or showy. It is a na-adjective, so it takes な (na) before a noun." }
+    examples:
+      "ともだちははでなふくをきます。":
+        native: "My friend wears flashy clothes."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "な": { meaning: "(links an adjective to a noun)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "ふくははでですか。":
+        native: "Are the clothes flashy?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+          "か": { meaning: "(marks a question)" }
+  "ja-2163":
+    native: "young"
+    notes: { n1: "わかい (wakai) means young, said of a person or a thing." }
+    examples:
+      "わたしのともだちはわかいです。":
+        native: "My friend is young."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "おかあさんはわかかったです。":
+        native: "Mother was young."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "わかかった": { meaning: "was young" }
+          "です": { meaning: "is (polite)" }
+  "ja-2164":
+    native: "to lose weight; to become thin"
+    notes: { n1: "やせる (yaseru) means to lose weight, to become thin." }
+    examples:
+      "わたしはやせました。":
+        native: "I lost weight."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "やせました": { meaning: "lost weight (polite)" }
+      "おとうさんはやせませんでした。":
+        native: "Dad did not lose weight."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "やせません": { meaning: "does not lose weight (polite)" }
+          "でした": { meaning: "was (polite)" }
+  "ja-2165":
+    native: "to put on weight"
+    notes: { n1: "ふとる (futoru) means to put on weight, to become fatter." }
+    examples:
+      "わたしはふとりました。":
+        native: "I put on weight."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "ふとりました": { meaning: "put on weight (polite)" }
+      "おとうさんはふとりました。":
+        native: "Dad put on weight."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "ふとりました": { meaning: "put on weight (polite)" }
+  "ja-2166":
+    native: "hair (strands)"
+    notes: { n1: "かみのけ (kaminoke) is the hair on the head, the strands as a whole." }
+    examples:
+      "かみのけがながいです。":
+        native: "The hair is long."
+        bases:
+          "です": { meaning: "is (polite)" }
+      "わたしのかみのけはみじかいです。":
+        native: "My hair is short."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2167":
+    native: "hairstyle"
+    notes: { n1: "かみがた (kamigata) is a hairstyle, the way the hair is cut or arranged." }
+    examples:
+      "わたしはかみがたをかえました。":
+        native: "I changed my hairstyle."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "かみがたはかわいいです。":
+        native: "The hairstyle is cute."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2168":
+    native: "eyebrow"
+    notes: { n1: "まゆげ (mayuge) is the eyebrow, the hair above the eye." }
+    examples:
+      "ともだちのまゆげはふといです。":
+        native: "My friend's eyebrows are thick."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "こどものまゆげはながいです。":
+        native: "The child's eyebrows are long."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2169":
+    native: "eyelash"
+    notes: { n1: "まつげ (matsuge) is the eyelash, the hair on the edge of the eyelid." }
+    examples:
+      "ともだちのまつげはながいです。":
+        native: "My friend's eyelashes are long."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "まつげがみじかいです。":
+        native: "The eyelashes are short."
+        bases:
+          "です": { meaning: "is (polite)" }
+  "ja-2170":
+    native: "pupil; eye"
+    notes: { n1: "ひとみ (hitomi) is the pupil, the dark centre of the eye." }
+    examples:
+      "ねこのひとみはおおきいです。":
+        native: "A cat's pupils are big."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "こどものひとみはきれいです。":
+        native: "The child's eyes are beautiful."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2171":
+    native: "cheek"
+    notes: { n1: "ほお (hoo) is the cheek, the soft part of the face below the eye." }
+    examples:
+      "こどものほおはかわいいです。":
+        native: "The child's cheeks are cute."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "ほおがいたいです。":
+        native: "My cheek hurts."
+        bases:
+          "です": { meaning: "is (polite)" }
+  "ja-2172":
+    native: "chin; jaw"
+    notes: { n1: "あご (ago) is the chin, the lower part of the face." }
+    examples:
+      "ともだちのあごはほそいです。":
+        native: "My friend's chin is thin."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "おとうさんはあごにひげがあります。":
+        native: "Dad has a beard on his chin."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+  "ja-2173":
+    native: "lip"
+    notes: { n1: "くちびる (kuchibiru) is the lip." }
+    examples:
+      "くちびるがいたいです。":
+        native: "My lip hurts."
+        bases:
+          "です": { meaning: "is (polite)" }
+      "くちびるはちいさいです。":
+        native: "The lip is small."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2174":
+    native: "palm"
+    notes: { n1: "てのひら (tenohira) is the palm of the hand." }
+    examples:
+      "てのひらにみずをいれます。":
+        native: "I put water in my palm."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+      "てのひらはきたないです。":
+        native: "The palm is dirty."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2175":
+    native: "nail (finger)"
+    notes: { n1: "つめ (tsume) is the fingernail or toenail." }
+    examples:
+      "つめがながいです。":
+        native: "The nails are long."
+        bases:
+          "です": { meaning: "is (polite)" }
+      "つめをきりました。":
+        native: "I cut my nails."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2176":
+    native: "height; back"
+    notes: { n1: "せい (sei) is height, how tall a person is." }
+    examples:
+      "ともだちのせいはおおきいです。":
+        native: "My friend is tall."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "わたしはせいがちいさいです。":
+        native: "I am short."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2177":
+    native: "beautiful woman"
+    notes: { n1: "びじん (bijin) is a beautiful woman." }
+    examples:
+      "おかあさんはびじんです。":
+        native: "Mother is a beautiful woman."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "びじんがいます。":
+        native: "There is a beautiful woman."
+        bases:
+          "います": { meaning: "there is (polite)" }
+  "ja-2178":
+    native: "elderly person"
+    notes: { n1: "としより (toshiyori) is an elderly person." }
+    examples:
+      "としよりがいます。":
+        native: "There is an elderly person."
+        bases:
+          "います": { meaning: "there is (polite)" }
+      "わたしはとしよりにあいました。":
+        native: "I met an elderly person."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+  "ja-2179":
+    native: "contact lenses"
+    notes: { n1: "コンタクト (kontakuto) are contact lenses, worn on the eye instead of glasses." }
+    examples:
+      "わたしはコンタクトをいれます。":
+        native: "I put in my contact lenses."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "コンタクトはどこにありますか。":
+        native: "Where are the contact lenses?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+  "ja-2180":
+    native: "sunglasses"
+    notes: { n1: "サングラス (sangurasu) are sunglasses, worn to protect the eyes from the sun." }
+    examples:
+      "サングラスはどこにありますか。":
+        native: "Where are the sunglasses?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+      "わたしはサングラスをかいました。":
+        native: "I bought sunglasses."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2181":
+    native: "pierced earring"
+    notes: { n1: "ピアス (piasu) is an earring worn through a hole in the ear." }
+    examples:
+      "ピアスはどこにありますか。":
+        native: "Where are the earrings?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+      "わたしはピアスをかいました。":
+        native: "I bought pierced earrings."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2182":
+    native: "earring"
+    notes: { n1: "イヤリング (iyaringu) is an earring clipped on, without a hole in the ear." }
+    examples:
+      "わたしはイヤリングをかいました。":
+        native: "I bought clip-on earrings."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "イヤリングはあたらしいです。":
+        native: "The earrings are new."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2183":
+    native: "necklace"
+    notes: { n1: "ネックレス (nekkuresu) is a necklace worn around the neck." }
+    examples:
+      "ネックレスはどこにありますか。":
+        native: "Where is the necklace?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+      "ネックレスはきれいです。":
+        native: "The necklace is beautiful."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2184":
+    native: "curly hair"
+    notes: { n1: "くせげ (kusege) is hair that curls naturally." }
+    examples:
+      "ともだちはくせげがあります。":
+        native: "My friend has curly hair."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "has (polite)" }
+      "くせげはかわいいです。":
+        native: "Curly hair is cute."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2185":
+    native: "frizzy hair"
+    notes: { n1: "ちぢれげ (chijirege) is frizzy hair, hair that is very curly and tight." }
+    examples:
+      "わたしはちぢれげがあります。":
+        native: "I have frizzy hair."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "has (polite)" }
+      "ちぢれげはかわいいです。":
+        native: "Frizzy hair is cute."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2186":
+    native: "freckles"
+    notes: { n1: "そばかす (sobakasu) are freckles, small brown spots on the skin." }
+    examples:
+      "ともだちはそばかすがあります。":
+        native: "My friend has freckles."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "has (polite)" }
+      "そばかすはちいさいです。":
+        native: "The freckles are small."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2187":
+    native: "dimple"
+    notes: { n1: "えくぼ (ekubo) is a dimple, a small dent in the cheek when one smiles." }
+    examples:
+      "こどもはえくぼがあります。":
+        native: "The child has dimples."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "has (polite)" }
+      "えくぼがかわいいです。":
+        native: "The dimples are cute."
+        bases:
+          "です": { meaning: "is (polite)" }
+  "ja-2188":
+    native: "wrinkle"
+    notes: { n1: "しわ (shiwa) is a wrinkle, a line in the skin." }
+    examples:
+      "としよりにしわがあります。":
+        native: "The elderly person has wrinkles."
+        bases:
+          "あります": { meaning: "has (polite)" }
+      "わたしのかおにしわがあります。":
+        native: "My face has wrinkles."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "あります": { meaning: "has (polite)" }
+  "ja-2189":
+    native: "pimple"
+    notes: { n1: "にきび (nikibi) is a pimple, a small red spot on the skin." }
+    examples:
+      "こどものかおににきびがあります。":
+        native: "The child has a pimple on the face."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "あります": { meaning: "has (polite)" }
+      "にきびはいたいです。":
+        native: "The pimple hurts."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2190":
+    native: "mole (on the skin)"
+    notes: { n1: "ほくろ (hokuro) is a mole, a small dark spot on the skin." }
+    examples:
+      "ともだちのかおにほくろがあります。":
+        native: "My friend has a mole on the face."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "あります": { meaning: "has (polite)" }
+      "ほくろはちいさいです。":
+        native: "The mole is small."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2191":
+    native: "blond hair"
+    notes: { n1: "きんぱつ (kinpatsu) is blond hair." }
+    examples:
+      "ともだちはきんぱつです。":
+        native: "My friend has blond hair."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "きんぱつはきれいです。":
+        native: "Blond hair is beautiful."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2192":
+    native: "black hair"
+    notes: { n1: "くろかみ (kurokami) is black hair." }
+    examples:
+      "わたしはくろかみです。":
+        native: "I have black hair."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "くろかみはきれいです。":
+        native: "Black hair is beautiful."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2193":
+    native: "white hair"
+    notes: { n1: "はくはつ (hakuhatsu) is white hair, hair that has turned white with age." }
+    examples:
+      "としよりははくはつです。":
+        native: "The elderly person has white hair."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "はくはつがあります。":
+        native: "There is white hair."
+        bases:
+          "あります": { meaning: "is, there is (polite)" }

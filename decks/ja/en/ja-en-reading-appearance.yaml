@@ -1,0 +1,58 @@
+schema: 1
+id: "ja-en-reading-appearance"
+name: "Japanese reading: appearance"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-appearance-1"
+    title: "A new look"
+    sentences:
+      - { text: "わたしはかみがたをかえました。", reading: "watashi wa kamigata o kaemashita." }
+      - { text: "かみがたはかわいいです。", reading: "kamigata wa kawaii desu." }
+      - { text: "ともだちはピアスをあけました。", reading: "tomodachi wa piasu o akemashita." }
+      - { text: "わたしはおしゃれなイヤリングがすきです。", reading: "watashi wa oshare na iyaringu ga suki desu." }
+    questions:
+      - id: "ja-2211"
+        prompt: { en: "Who changed the hairstyle?" }
+        options:
+          - { en: "The writer" }
+          - { en: "The friend" }
+          - { en: "The child" }
+        answer: 1
+      - id: "ja-2212"
+        prompt: { en: "The hairstyle is cute." }
+        answer: true
+      - id: "ja-2213"
+        prompt: { en: "Which line says that the friend had her ears pierced?" }
+        options:
+          - { en: "The second line" }
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
+  - id: "ja-appearance-2"
+    title: "Who is who"
+    sentences:
+      - { text: "おかあさんはわかかったです。", reading: "okaasan wa wakakatta desu." }
+      - { text: "おとうさんはハンサムです。", reading: "otousan wa hansamu desu." }
+      - { text: "こどもはかわいいです。", reading: "kodomo wa kawaii desu." }
+      - { text: "としよりにしわがあります。", reading: "toshiyori ni shiwa ga arimasu." }
+    questions:
+      - id: "ja-2214"
+        prompt: { en: "Which line says that Dad is handsome?" }
+        options:
+          - { en: "The second line" }
+          - { en: "The third line" }
+        answer: 1
+      - id: "ja-2215"
+        prompt: { en: "The child has wrinkles." }
+        answer: false
+      - id: "ja-2216"
+        prompt: { en: "Which line says that an elderly person has wrinkles?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The fourth line" }
+        answer: 2

@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-eating-out",
+  "name": "Japanese reading: eating out",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-eating-out-1",
+      "title": "At an izakaya",
+      "sentences": [
+        {
+          "text": "おさけ と つまみ が あります。",
+          "reading": "osake to tsumami ga arimasu."
+        },
+        {
+          "text": "おきゃくさん は さしみ を たのみます。",
+          "reading": "okyakusan wa sashimi o tanomimasu."
+        },
+        {
+          "text": "わたし が おごります。",
+          "reading": "watashi ga ogorimasu."
+        },
+        {
+          "text": "はら は まんぞく です。",
+          "reading": "hara wa manzoku desu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1778",
+          "prompt": {
+            "en": "Which line says that the customer orders sashimi?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1779",
+          "prompt": {
+            "en": "The third line says that the speaker will treat."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1780",
+          "prompt": {
+            "en": "Which line says that someone is full?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "ja-eating-out-2",
+      "title": "A small shop's menu",
+      "sentences": [
+        {
+          "text": "どんぶり を たのみます。",
+          "reading": "donburi o tanomimasu."
+        },
+        {
+          "text": "なっとう が すき です。",
+          "reading": "natto ga suki desu."
+        },
+        {
+          "text": "これ は おしぼり です。",
+          "reading": "kore wa oshibori desu."
+        },
+        {
+          "text": "かんじょう を はらいます。",
+          "reading": "kanjō o haraimasu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1781",
+          "prompt": {
+            "en": "Which line says that someone pays the bill?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1782",
+          "prompt": {
+            "en": "The second line says that someone likes natto."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1783",
+          "prompt": {
+            "en": "Which line says that a wet towel is here?"
+          },
+          "options": [
+            {
+              "en": "The third line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

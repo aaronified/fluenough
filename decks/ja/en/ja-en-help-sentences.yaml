@@ -1,0 +1,58 @@
+schema: 1
+id: "ja-en-help-sentences"
+kind: "layer"
+core: "ja-help-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Help in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1243":
+    native: "I call the police."
+    bases:
+      "を":
+        meaning: "(marks the thing acted on)"
+      "よびます":
+        meaning: "to call"
+    confusables:
+      w1:
+        why: "きゅうきゅうしゃ (kyuukyuusha) is an ambulance, not the police."
+      w2:
+        why: "しょうぼう (shoubou) is the fire service."
+  "ja-1244":
+    native: "Are you ill?"
+    bases:
+      "です":
+        meaning: "is (polite)"
+      "か":
+        meaning: "(marks a question)"
+    confusables:
+      w1:
+        why: "けが (kega) is an injury, not an illness."
+      w2:
+        why: "ぐあい (guai) is the condition of a person."
+  "ja-1245":
+    native: "It is dangerous here."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "あんぜん (anzen) means safe, the opposite."
+      w2:
+        why: "だいじょうぶ (daijoubu) means all right."
+  "ja-1246":
+    native: "I get lost."
+    bases:
+      "に":
+        meaning: "in; at; to"
+      "まよいます":
+        meaning: "to get lost; to be unsure"
+    confusables:
+      w1:
+        why: "こまる (komaru) is to be in trouble."
+      w2:
+        why: "いぬ (inu) is a dog, not a road."

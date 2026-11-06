@@ -1,0 +1,80 @@
+"schema": 1
+"id": "ja-en-reading-law"
+"name": "Japanese reading: law"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "ja-law-1"
+    "title": "A small lawsuit"
+    "sentences":
+      - "text": "わたしは、かいしゃを うったえました。"
+        "reading": "watashi wa, kaisha o uttaemashita."
+      - "text": "べんごにんが、しょうこを みせました。"
+        "reading": "bengonin ga, shouko o misemashita."
+      - "text": "さいばんかんは、けいばつを きめませんでした。"
+        "reading": "saibankan wa, keibatsu o kimemasen deshita."
+      - "text": "はんけつは、まだ でていません。"
+        "reading": "hanketsu wa, mada dete imasen."
+    "questions":
+      - "id": "ja-3976"
+        "prompt":
+          "en": "Who sued the company?"
+        "options":
+          - "en": "The person"
+          - "en": "The judge"
+        "answer": 1
+      - "id": "ja-3977"
+        "prompt":
+          "en": "The judge decided the punishment."
+        "answer": false
+      - "id": "ja-3978"
+        "prompt":
+          "en": "Which line says that the verdict has not come out?"
+        "options":
+          - "en": "The third line"
+          - "en": "The fourth line"
+        "answer": 2
+  - "id": "ja-law-2"
+    "title": "Rights and duties"
+    "sentences":
+      - "text": "わたしたちには、じんけんが あります。"
+        "reading": "watashitachi ni wa, jinken ga arimasu."
+      - "text": "けんりを まもるのは、ぎむでもあります。"
+        "reading": "kenri o mamoru no wa, gimu demo arimasu."
+      - "text": "でも、こうつういはんは きんじられています。"
+        "reading": "demo, koutsu ihan wa kinjirarete imasu."
+      - "text": "ほうりつを まもって、じゆうに いきましょう。"
+        "reading": "houritsu o mamotte, jiyuu ni ikimashou."
+    "questions":
+      - "id": "ja-3979"
+        "prompt":
+          "en": "Which line says that human rights exist?"
+        "options":
+          - "en": "The first line"
+          - "en": "The second line"
+        "answer": 1
+      - "id": "ja-3980"
+        "prompt":
+          "en": "The third line says that traffic violations are allowed."
+        "answer": false
+      - "id": "ja-3981"
+        "prompt":
+          "en": "Which line says that people should keep the law?"
+        "options":
+          - "en": "The third line"
+          - "en": "The fourth line"
+        "answer": 2

@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-geography"
+"name": "Japanese reading: geography"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-geography-1"
+  "title": "A map of Japan"
+  "sentences":
+  - "text": "にほんにはよっつのおおきいしまがあります。"
+    "reading": "nihon ni wa yottsu no ookii shima ga arimasu."
+  - "text": "ほっかいどうはさむいです。"
+    "reading": "hokkaidou wa samui desu."
+  - "text": "きゅうしゅうはあたたかいです。"
+    "reading": "kyuushuu wa atatakai desu."
+  - "text": "とうきょうはにほんのしゅとです。"
+    "reading": "toukyou wa nihon no shuto desu."
+  "questions":
+  - "id": "ja-2679"
+    "prompt":
+      "en": "Which line says that Hokkaido is cold?"
+    "options":
+    - "en": "The second line"
+    - "en": "The third line"
+    "answer": !!int "1"
+  - "id": "ja-2680"
+    "prompt":
+      "en": "The third line says that Kyushu is cold."
+    "answer": !!bool false
+  - "id": "ja-2681"
+    "prompt":
+      "en": "Which line says that Tokyo is the capital?"
+    "options":
+    - "en": "The first line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+- "id": "ja-geography-2"
+  "title": "Living in the countryside"
+  "sentences":
+  - "text": "わたしはいなかのまちにすんでいます。"
+    "reading": "watashi wa inaka no machi ni sunde imasu."
+  - "text": "とかいのひとはおおいですが、いなかはしずかです。"
+    "reading": "tokai no hito wa ooi desu ga, inaka wa shizuka desu."
+  - "text": "ちかくにうみがあって、なつはきれいです。"
+    "reading": "chikaku ni umi ga atte, natsu wa kirei desu."
+  - "text": "いつか、フランスへもいってみたいです。"
+    "reading": "itsuka, furansu e mo itte mitai desu."
+  "questions":
+  - "id": "ja-2682"
+    "prompt":
+      "en": "Which line says that the writer lives in a town in the countryside?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2683"
+    "prompt":
+      "en": "The second line says that the countryside is busy."
+    "answer": !!bool false
+  - "id": "ja-2684"
+    "prompt":
+      "en": "Which line says that the writer wants to go to France one day?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"

@@ -1,0 +1,613 @@
+schema: 1
+id: "ja-en-numbers-big"
+kind: "layer"
+core: "ja-numbers-big"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Tens and big numbers"
+description: "Hundreds, thousands, ten thousands, a million and a hundred million, the tens from thirty to ninety, and words for zero, numbers and money. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-0738":
+    native: "a hundred; 100"
+    notes:
+      "n1": "ひゃく (hyaku) is 100. Two hundred is にひゃく (nihyaku)."
+    examples:
+      "ひゃくえんです。":
+        native: "It is 100 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ひゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0739":
+    native: "a thousand; 1,000"
+    notes:
+      "n1": "せん (sen) is 1,000. Two thousand is にせん (nisen)."
+    examples:
+      "せんえんです。":
+        native: "It is 1,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "にせんえんです。":
+        native: "It is 2,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+  "ja-0740":
+    native: "ten thousand; 10,000"
+    notes:
+      "n1": "まん (man) is 10,000, the counting unit after four digits."
+    examples:
+      "まんえんです。":
+        native: "It is 10,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "にまんえんです。":
+        native: "It is 20,000 yen."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "です":
+            meaning: "is (polite)"
+  "ja-0741":
+    native: "a hundred thousand; 100,000"
+    notes:
+      "n1": "じゅうまん (juuman) is 100,000, ten times ten thousand."
+    examples:
+      "じゅうまんえんです。":
+        native: "It is 100,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "じゅうまんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0742":
+    native: "a million; 1,000,000"
+    notes:
+      "n1": "ひゃくまん (hyakuman) is a million."
+    examples:
+      "ひゃくまんえんです。":
+        native: "It is a million yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ひゃくまんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0743":
+    native: "a hundred million; 100,000,000"
+    notes:
+      "n1": "おく (oku) is a hundred million."
+    examples:
+      "おくえんです。":
+        native: "It is a hundred million yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "おくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0744":
+    native: "thirty; 30"
+    notes:
+      "n1": "さんじゅう (sanjuu) is 30."
+    examples:
+      "さんじゅうです。":
+        native: "It is 30."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "さんじゅうはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0745":
+    native: "forty; 40"
+    notes:
+      "n1": "よんじゅう (yonjuu) is 40."
+    examples:
+      "よんじゅうです。":
+        native: "It is 40."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "よんじゅうはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0746":
+    native: "fifty; 50"
+    notes:
+      "n1": "ごじゅう (gojuu) is 50."
+    examples:
+      "ごじゅうです。":
+        native: "It is 50."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ごじゅうえんです。":
+        native: "It is 50 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+  "ja-0747":
+    native: "sixty; 60"
+    notes:
+      "n1": "ろくじゅう (rokujuu) is 60."
+    examples:
+      "ろくじゅうです。":
+        native: "It is 60."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ろくじゅうはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0748":
+    native: "seventy; 70"
+    notes:
+      "n1": "ななじゅう (nanajuu) is 70."
+    examples:
+      "ななじゅうです。":
+        native: "It is 70."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ななじゅうはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0749":
+    native: "eighty; 80"
+    notes:
+      "n1": "はちじゅう (hachijuu) is 80."
+    examples:
+      "はちじゅうです。":
+        native: "It is 80."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "はちじゅうはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0750":
+    native: "ninety; 90"
+    notes:
+      "n1": "きゅうじゅう (kyuujuu) is 90."
+    examples:
+      "きゅうじゅうです。":
+        native: "It is 90."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "きゅうじゅうはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0751":
+    native: "zero; 0"
+    notes:
+      "n1": "ぜろ (zero) is zero, as in a phone number."
+    examples:
+      "ぜろです。":
+        native: "It is zero."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ぜろはなんですか。":
+        native: "What is zero?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "なん":
+            meaning: "what (asks for a thing)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+  "ja-0752":
+    native: "zero (in a number)"
+    notes:
+      "n1": "れい (rei) is zero, as in a year or a figure: 2010 is written with にせんじゅう (nisen juu)."
+    examples:
+      "れいです。":
+        native: "It is zero."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "れいはおおきいです。":
+        native: "Zero is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0753":
+    native: "yen (money)"
+    notes:
+      "n1": "えん (en) is the yen, the money of Japan."
+    examples:
+      "いくらえんですか。":
+        native: "How many yen is it?"
+        bases:
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "ひゃくえんです。":
+        native: "It is 100 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+  "ja-0754":
+    native: "number; code"
+    notes:
+      "n1": "ばんごう (bangou) is a number or a code, as on a phone or a door."
+    examples:
+      "ばんごうはなんですか。":
+        native: "What is the number?"
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "なん":
+            meaning: "what (asks for a thing)"
+          "です":
+            meaning: "is (polite)"
+          "か":
+            meaning: "(marks a question)"
+      "ばんごうはにじゅうです。":
+        native: "The number is twenty."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0755":
+    native: "a number; a figure; several"
+    notes:
+      "n1": "すう (suu) is a number or a figure."
+    examples:
+      "すうはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+      "すうがおおいです。":
+        native: "The figures are many."
+        bases:
+          "が":
+            meaning: "(marks the subject)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0756":
+    native: "two hundred; 200"
+    notes:
+      "n1": "にひゃく (nihyaku) is 200."
+    examples:
+      "にひゃくえんです。":
+        native: "It is 200 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "にひゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0757":
+    native: "three hundred; 300"
+    notes:
+      "n1": "さんびゃく (sanbyaku) is 300."
+    examples:
+      "さんびゃくえんです。":
+        native: "It is 300 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "さんびゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0758":
+    native: "four hundred; 400"
+    notes:
+      "n1": "よんひゃく (yonhyaku) is 400."
+    examples:
+      "よんひゃくえんです。":
+        native: "It is 400 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "よんひゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0759":
+    native: "five hundred; 500"
+    notes:
+      "n1": "ごひゃく (gohyaku) is 500."
+    examples:
+      "ごひゃくえんです。":
+        native: "It is 500 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ごひゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0760":
+    native: "six hundred; 600"
+    notes:
+      "n1": "ろっぴゃく (roppyaku) is 600."
+    examples:
+      "ろっぴゃくえんです。":
+        native: "It is 600 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ろっぴゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0761":
+    native: "seven hundred; 700"
+    notes:
+      "n1": "ななひゃく (nanahyaku) is 700."
+    examples:
+      "ななひゃくえんです。":
+        native: "It is 700 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ななひゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0762":
+    native: "eight hundred; 800"
+    notes:
+      "n1": "はっぴゃく (happyaku) is 800."
+    examples:
+      "はっぴゃくえんです。":
+        native: "It is 800 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "はっぴゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0763":
+    native: "nine hundred; 900"
+    notes:
+      "n1": "きゅうひゃく (kyuuhyaku) is 900."
+    examples:
+      "きゅうひゃくえんです。":
+        native: "It is 900 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "きゅうひゃくはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0764":
+    native: "two thousand; 2,000"
+    notes:
+      "n1": "にせん (nisen) is 2,000."
+    examples:
+      "にせんえんです。":
+        native: "It is 2,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "にせんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0765":
+    native: "three thousand; 3,000"
+    notes:
+      "n1": "さんぜん (sanzen) is 3,000."
+    examples:
+      "さんぜんえんです。":
+        native: "It is 3,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "さんぜんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0766":
+    native: "four thousand; 4,000"
+    notes:
+      "n1": "よんせん (yonsen) is 4,000."
+    examples:
+      "よんせんえんです。":
+        native: "It is 4,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "よんせんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0767":
+    native: "five thousand; 5,000"
+    notes:
+      "n1": "ごせん (gosen) is 5,000."
+    examples:
+      "ごせんえんです。":
+        native: "It is 5,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ごせんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0768":
+    native: "six thousand; 6,000"
+    notes:
+      "n1": "ろくせん (rokusen) is 6,000."
+    examples:
+      "ろくせんえんです。":
+        native: "It is 6,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ろくせんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0769":
+    native: "seven thousand; 7,000"
+    notes:
+      "n1": "ななせん (nanasen) is 7,000."
+    examples:
+      "ななせんえんです。":
+        native: "It is 7,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "ななせんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0770":
+    native: "eight thousand; 8,000"
+    notes:
+      "n1": "はっせん (hassen) is 8,000."
+    examples:
+      "はっせんえんです。":
+        native: "It is 8,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "はっせんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0771":
+    native: "nine thousand; 9,000"
+    notes:
+      "n1": "きゅうせん (kyuusen) is 9,000."
+    examples:
+      "きゅうせんえんです。":
+        native: "It is 9,000 yen."
+        bases:
+          "です":
+            meaning: "is (polite)"
+      "きゅうせんはおおきいです。":
+        native: "It is big."
+        bases:
+          "は":
+            meaning: "(marks the topic)"
+          "です":
+            meaning: "is (polite)"
+  "ja-0772":
+    native: "division; a share; a discount"
+    notes:
+      "n1": "わり (wari) is a share or a division, as in a discount."
+    examples:
+      "にわりです。":
+        native: "It is two parts in ten."
+        bases:
+          "に":
+            meaning: "in; at; to"
+          "です":
+            meaning: "is (polite)"
+      "ごわりです。":
+        native: "It is five parts in ten."
+        bases:
+          "です":
+            meaning: "is (polite)"

@@ -1,0 +1,21 @@
+schema: 1
+id: "ja-en-grammar-masu-past"
+kind: "layer"
+core: "ja-grammar-masu-past"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Polite past: ました (mashita) and ませんでした (masen deshita)"
+description: "The polite past of a verb ends in ました (mashita), I ate, and its negative past in ませんでした (masen deshita), I did not eat. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "mashita": "did {meaning}"
+    "masen-deshita": "did not {meaning}"
+rules:
+  "ja-rule-mashita":
+    name: "ました (mashita): did, polite past"
+    explanation: "{1} ends a verb to make the polite past: {2} means I ate."
+  "ja-rule-masen-deshita":
+    name: "ませんでした (masen deshita): did not, polite past negative"
+    explanation: "{1} ends a verb to make the polite past negative: {2} means I did not eat."

@@ -1,0 +1,83 @@
+schema: 1
+id: "ja-home-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1208"
+    target: "わたしのへやはちいさいです。"
+    words: ["わたし", "の", "へや", "は", "ちいさい", "です"]
+    reading: "watashi no heya wa chiisai desu."
+    ipa: "wataɕi no heja wa tɕiːsai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "げんかん"
+        reading: "genkan"
+        kind: "word"
+      - id: "w2"
+        word: "ベランダ"
+        reading: "beranda"
+        kind: "word"
+  - id: "ja-1209"
+    target: "まどはかべのよこです。"
+    words: ["まど", "は", "かべ", "の", "よこ", "です"]
+    reading: "mado wa kabe no yoko desu."
+    ipa: "mado wa kabe no joko desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "てんじょう"
+        reading: "tenjou"
+        kind: "word"
+      - id: "w2"
+        word: "ゆか"
+        reading: "yuka"
+        kind: "word"
+  - id: "ja-1210"
+    target: "ほんはたなにあります。"
+    words: ["ほん", "は", "たな", "に", "あります"]
+    reading: "hon wa tana ni arimasu."
+    ipa: "hoɴ wa tana ni aɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "あります", base: "ある", reading: "aru" }
+    confusables:
+      - id: "w1"
+        word: "ざっし"
+        reading: "zasshi"
+        kind: "word"
+      - id: "w2"
+        word: "しんぶん"
+        reading: "shinbun"
+        kind: "word"
+  - id: "ja-1211"
+    target: "せんたくきはべんりです。"
+    words: ["せんたくき", "は", "べんり", "です"]
+    reading: "sentakuki wa benri desu."
+    ipa: "seɴtakɯki wa beɴɾi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "そうじき"
+        reading: "soujiki"
+        kind: "word"
+      - id: "w2"
+        word: "れいぞうこ"
+        reading: "reizouko"
+        kind: "word"

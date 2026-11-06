@@ -1,0 +1,17 @@
+schema: 1
+id: "ja-en-grammar-tai"
+kind: "layer"
+core: "ja-grammar-tai"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Wanting to: たい (tai)"
+description: "Put たい (tai) on the stem of a verb to say you want to do it: たべたいです (tabetai desu), I want to eat. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "tai": "want to {meaning}"
+rules:
+  "ja-rule-tai":
+    name: "たい (tai): want to"
+    explanation: "{1} is added to the stem of a verb to say that you want to do it: {2} means I want to eat."

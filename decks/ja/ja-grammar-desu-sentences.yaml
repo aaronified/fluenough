@@ -1,0 +1,126 @@
+schema: 1
+id: "ja-grammar-desu-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0613"
+    target: "わたしはがくせいです。"
+    words: ["わたし", "は", "がくせい", "です"]
+    reading: "watashi wa gakusei desu."
+    ipa: "wataɕi wa ɡakɯseː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "せんせい"
+        reading: "sensei"
+        kind: "word"
+      - id: "w2"
+        word: "がっこう"
+        reading: "gakkou"
+        kind: "word"
+    rules: ["ja-rule-desu"]
+  - id: "ja-0614"
+    target: "わたしはがくせいではありません。"
+    words: ["わたし", "は", "がくせい", "で", "は", "ありません"]
+    reading: "watashi wa gakusei de wa arimasen."
+    ipa: "wataɕi wa ɡakɯseː de wa aɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+    confusables:
+      - id: "w1"
+        ref: "ja-0070"
+        kind: "word"
+      - id: "w2"
+        word: "ともだち"
+        reading: "tomodachi"
+        kind: "word"
+    rules: ["ja-rule-desu-negative"]
+  - id: "ja-0615"
+    target: "あなたはせんせいですか。"
+    words: ["あなた", "は", "せんせい", "です", "か"]
+    reading: "anata wa sensei desu ka."
+    ipa: "anata wa seɴseː desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "がくせい"
+        reading: "gakusei"
+        kind: "word"
+      - id: "w2"
+        word: "ひと"
+        reading: "hito"
+        kind: "word"
+    rules: ["ja-rule-desu"]
+  - id: "ja-0616"
+    target: "かのじょはおんなのひとです。"
+    words: ["かのじょ", "は", "おんな", "の", "ひと", "です"]
+    reading: "kanojo wa onna no hito desu."
+    ipa: "kanodʑo wa oɴna no çito desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "おとこ"
+        reading: "otoko"
+        kind: "word"
+      - id: "w2"
+        word: "かれ"
+        reading: "kare"
+        kind: "word"
+    rules: ["ja-rule-desu"]
+  - id: "ja-0617"
+    target: "がっこうのせんせいではありません。"
+    words: ["がっこう", "の", "せんせい", "で", "は", "ありません"]
+    reading: "gakkou no sensei de wa arimasen."
+    ipa: "ɡakkoː no seɴseː de wa aɾimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ありません", base: "ある", reading: "aru" }
+    confusables:
+      - id: "w1"
+        word: "がくせい"
+        reading: "gakusei"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0225"
+        kind: "word"
+    rules: ["ja-rule-desu-negative"]
+  - id: "ja-0618"
+    target: "わたしのちちはせんせいです。"
+    words: ["わたし", "の", "ちち", "は", "せんせい", "です"]
+    reading: "watashi no chichi wa sensei desu."
+    ipa: "wataɕi no tɕitɕi wa seɴseː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "はは"
+        reading: "haha"
+        kind: "word"
+      - id: "w2"
+        word: "おとな"
+        reading: "otona"
+        kind: "word"
+    rules: ["ja-rule-desu"]

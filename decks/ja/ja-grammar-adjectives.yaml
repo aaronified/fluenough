@@ -1,0 +1,1269 @@
+schema: 1
+id: "ja-grammar-adjectives"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["adj"]
+  slots: ["past", "negative", "na"]
+  rows:
+    - word: "ja-0318"
+      forms:
+        "past": null
+        "negative": null
+        "na": "すきな"
+      readings:
+        "na": "sukina"
+    - word: "ja-0319"
+      forms:
+        "past": null
+        "negative": null
+        "na": "きらいな"
+      readings:
+        "na": "kiraina"
+    - word: "ja-0320"
+      forms:
+        "past": null
+        "negative": null
+        "na": "じょうずな"
+      readings:
+        "na": "jouzuna"
+    - word: "ja-1106"
+      forms:
+        "past": "いたかった"
+        "negative": "いたくない"
+        "na": null
+      readings:
+        "past": "itakatta"
+        "negative": "itakunai"
+    - word: "ja-1107"
+      forms:
+        "past": "かゆかった"
+        "negative": "かゆくない"
+        "na": null
+      readings:
+        "past": "kayukatta"
+        "negative": "kayukunai"
+    - word: "ja-0462"
+      forms:
+        "past": "あたらしかった"
+        "negative": "あたらしくない"
+        "na": null
+      readings:
+        "past": "atarashikatta"
+        "negative": "atarashikunai"
+    - word: "ja-0463"
+      forms:
+        "past": "ふるかった"
+        "negative": "ふるくない"
+        "na": null
+      readings:
+        "past": "furukatta"
+        "negative": "furukunai"
+    - word: "ja-0464"
+      forms:
+        "past": "よかった"
+        "negative": "よくない"
+        "na": null
+      readings:
+        "past": "yokatta"
+        "negative": "yokunai"
+    - word: "ja-0465"
+      forms:
+        "past": "わるかった"
+        "negative": "わるくない"
+        "na": null
+      readings:
+        "past": "warukatta"
+        "negative": "warukunai"
+    - word: "ja-0466"
+      forms:
+        "past": "あつかった"
+        "negative": "あつくない"
+        "na": null
+      readings:
+        "past": "atsukatta"
+        "negative": "atsukunai"
+    - word: "ja-0467"
+      forms:
+        "past": "さむかった"
+        "negative": "さむくない"
+        "na": null
+      readings:
+        "past": "samukatta"
+        "negative": "samukunai"
+    - word: "ja-0468"
+      forms:
+        "past": "あたたかかった"
+        "negative": "あたたかくない"
+        "na": null
+      readings:
+        "past": "atatakakatta"
+        "negative": "atatakakunai"
+    - word: "ja-0469"
+      forms:
+        "past": "つめたかった"
+        "negative": "つめたくない"
+        "na": null
+      readings:
+        "past": "tsumetakatta"
+        "negative": "tsumetakunai"
+    - word: "ja-0470"
+      forms:
+        "past": "ひくかった"
+        "negative": "ひくくない"
+        "na": null
+      readings:
+        "past": "hikukatta"
+        "negative": "hikukunai"
+    - word: "ja-0471"
+      forms:
+        "past": "おいしかった"
+        "negative": "おいしくない"
+        "na": null
+      readings:
+        "past": "oishikatta"
+        "negative": "oishikunai"
+    - word: "ja-0472"
+      forms:
+        "past": "おもしろかった"
+        "negative": "おもしろくない"
+        "na": null
+      readings:
+        "past": "omoshirokatta"
+        "negative": "omoshirokunai"
+    - word: "ja-0473"
+      forms:
+        "past": "むずかしかった"
+        "negative": "むずかしくない"
+        "na": null
+      readings:
+        "past": "muzukashikatta"
+        "negative": "muzukashikunai"
+    - word: "ja-0474"
+      forms:
+        "past": "やさしかった"
+        "negative": "やさしくない"
+        "na": null
+      readings:
+        "past": "yasashikatta"
+        "negative": "yasashikunai"
+    - word: "ja-0475"
+      forms:
+        "past": "たのしかった"
+        "negative": "たのしくない"
+        "na": null
+      readings:
+        "past": "tanoshikatta"
+        "negative": "tanoshikunai"
+    - word: "ja-0476"
+      forms:
+        "past": "いそがしかった"
+        "negative": "いそがしくない"
+        "na": null
+      readings:
+        "past": "isogashikatta"
+        "negative": "isogashikunai"
+    - word: "ja-0477"
+      forms:
+        "past": null
+        "negative": null
+        "na": "しずかな"
+      readings:
+        "na": "shizukana"
+    - word: "ja-0478"
+      forms:
+        "past": null
+        "negative": null
+        "na": "べんりな"
+      readings:
+        "na": "benrina"
+    - word: "ja-0479"
+      forms:
+        "past": null
+        "negative": null
+        "na": "きれいな"
+      readings:
+        "na": "kireina"
+    - word: "ja-0480"
+      forms:
+        "past": "きたなかった"
+        "negative": "きたなくない"
+        "na": null
+      readings:
+        "past": "kitanakatta"
+        "negative": "kitanakunai"
+    - word: "ja-0481"
+      forms:
+        "past": "あかるかった"
+        "negative": "あかるくない"
+        "na": null
+      readings:
+        "past": "akarukatta"
+        "negative": "akarukunai"
+    - word: "ja-0482"
+      forms:
+        "past": "ながかった"
+        "negative": "ながくない"
+        "na": null
+      readings:
+        "past": "nagakatta"
+        "negative": "nagakunai"
+    - word: "ja-0483"
+      forms:
+        "past": "みじかかった"
+        "negative": "みじかくない"
+        "na": null
+      readings:
+        "past": "mijikakatta"
+        "negative": "mijikakunai"
+    - word: "ja-0484"
+      forms:
+        "past": "ちかかった"
+        "negative": "ちかくない"
+        "na": null
+      readings:
+        "past": "chikakatta"
+        "negative": "chikakunai"
+    - word: "ja-0485"
+      forms:
+        "past": "とおかった"
+        "negative": "とおくない"
+        "na": null
+      readings:
+        "past": "tookatta"
+        "negative": "tookunai"
+    - word: "ja-0486"
+      forms:
+        "past": "おそかった"
+        "negative": "おそくない"
+        "na": null
+      readings:
+        "past": "osokatta"
+        "negative": "osokunai"
+    - word: "ja-0487"
+      forms:
+        "past": "おもかった"
+        "negative": "おもくない"
+        "na": null
+      readings:
+        "past": "omokatta"
+        "negative": "omokunai"
+    - word: "ja-0488"
+      forms:
+        "past": "かるかった"
+        "negative": "かるくない"
+        "na": null
+      readings:
+        "past": "karukatta"
+        "negative": "karukunai"
+    - word: "ja-0489"
+      forms:
+        "past": "うつくしかった"
+        "negative": "うつくしくない"
+        "na": null
+      readings:
+        "past": "utsukushikatta"
+        "negative": "utsukushikunai"
+    - word: "ja-0490"
+      forms:
+        "past": null
+        "negative": null
+        "na": "しんせつな"
+      readings:
+        "na": "shinsetsuna"
+    - word: "ja-0491"
+      forms:
+        "past": "つよかった"
+        "negative": "つよくない"
+        "na": null
+      readings:
+        "past": "tsuyokatta"
+        "negative": "tsuyokunai"
+    - word: "ja-0492"
+      forms:
+        "past": "よわかった"
+        "negative": "よわくない"
+        "na": null
+      readings:
+        "past": "yowakatta"
+        "negative": "yowakunai"
+    - word: "ja-0493"
+      forms:
+        "past": "あまかった"
+        "negative": "あまくない"
+        "na": null
+      readings:
+        "past": "amakatta"
+        "negative": "amakunai"
+    - word: "ja-0494"
+      forms:
+        "past": "からかった"
+        "negative": "からくない"
+        "na": null
+      readings:
+        "past": "karakatta"
+        "negative": "karakunai"
+    - word: "ja-0077"
+      forms:
+        "past": "おおきかった"
+        "negative": "おおきくない"
+        "na": null
+      readings:
+        "past": "ookikatta"
+        "negative": "ookikunai"
+    - word: "ja-0078"
+      forms:
+        "past": "ちいさかった"
+        "negative": "ちいさくない"
+        "na": null
+      readings:
+        "past": "chiisakatta"
+        "negative": "chiisakunai"
+    - word: "ja-0977"
+      forms:
+        "past": "すっぱかった"
+        "negative": "すっぱくない"
+        "na": null
+      readings:
+        "past": "suppakatta"
+        "negative": "suppakunai"
+    - word: "ja-0978"
+      forms:
+        "past": "にがかった"
+        "negative": "にがくない"
+        "na": null
+      readings:
+        "past": "nigakatta"
+        "negative": "nigakunai"
+    - word: "ja-0979"
+      forms:
+        "past": "しょっぱかった"
+        "negative": "しょっぱくない"
+        "na": null
+      readings:
+        "past": "shoppakatta"
+        "negative": "shoppakunai"
+    - word: "ja-0980"
+      forms:
+        "past": "まずかった"
+        "negative": "まずくない"
+        "na": null
+      readings:
+        "past": "mazukatta"
+        "negative": "mazukunai"
+    - word: "ja-0951"
+      forms:
+        "past": "まるかった"
+        "negative": "まるくない"
+        "na": null
+      readings:
+        "past": "marukatta"
+        "negative": "marukunai"
+    - word: "ja-0952"
+      forms:
+        "past": "かたかった"
+        "negative": "かたくない"
+        "na": null
+      readings:
+        "past": "katakatta"
+        "negative": "katakunai"
+    - word: "ja-0953"
+      forms:
+        "past": "やわらかかった"
+        "negative": "やわらかくない"
+        "na": null
+      readings:
+        "past": "yawarakakatta"
+        "negative": "yawarakakunai"
+    - word: "ja-1224"
+      forms:
+        "past": "あぶなかった"
+        "negative": "あぶなくない"
+        "na": null
+      readings:
+        "past": "abunakatta"
+        "negative": "abunakunai"
+    - word: "ja-1225"
+      forms:
+        "past": null
+        "negative": null
+        "na": "だいじょうぶな"
+      readings:
+        "na": "daijoubuna"
+    - word: "ja-1230"
+      forms:
+        "past": null
+        "negative": null
+        "na": "あんぜんな"
+      readings:
+        "na": "anzenna"
+    - word: "ja-0430"
+      forms:
+        "past": "おおかった"
+        "negative": "おおくない"
+        "na": null
+      readings:
+        "past": "ookatta"
+        "negative": "ookunai"
+    - word: "ja-0431"
+      forms:
+        "past": "すくなかった"
+        "negative": "すくなくない"
+        "na": null
+      readings:
+        "past": "sukunakatta"
+        "negative": "sukunakunai"
+    - word: "ja-0438"
+      forms:
+        "past": "やすかった"
+        "negative": "やすくない"
+        "na": null
+      readings:
+        "past": "yasukatta"
+        "negative": "yasukunai"
+    - word: "ja-0439"
+      forms:
+        "past": "たかかった"
+        "negative": "たかくない"
+        "na": null
+      readings:
+        "past": "takakatta"
+        "negative": "takakunai"
+    - word: "ja-0517"
+      forms:
+        "past": "はやかった"
+        "negative": "はやくない"
+        "na": null
+      readings:
+        "past": "hayakatta"
+        "negative": "hayakunai"
+    - word: "ja-0528"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ひまな"
+      readings:
+        "na": "himana"
+    - word: "ja-0719"
+      forms:
+        "past": null
+        "negative": null
+        "na": "たいへんな"
+      readings:
+        "na": "taihenna"
+    - word: "ja-0722"
+      forms:
+        "past": null
+        "negative": null
+        "na": "とくいな"
+      readings:
+        "na": "tokuina"
+    - word: "ja-0723"
+      forms:
+        "past": "すごかった"
+        "negative": "すごくない"
+        "na": null
+      readings:
+        "past": "sugokatta"
+        "negative": "sugokunai"
+    - "word": "ja-1340"
+      "forms":
+        "past": "ねむかった"
+        "negative": "ねむくない"
+        "na": null
+      "readings":
+        "past": "nemukatta"
+        "negative": "nemukunai"
+    - "word": "ja-1342"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "げんきな"
+      "readings":
+        "na": "genkina"
+    - "word": "ja-1359"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "むりな"
+      "readings":
+        "na": "murina"
+    - "word": "ja-1360"
+      "forms":
+        "past": "つまらなかった"
+        "negative": "つまらなくない"
+        "na": null
+      "readings":
+        "past": "tsumaranakatta"
+        "negative": "tsumaranakunai"
+    - "word": "ja-1367"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "あんしんな"
+      "readings":
+        "na": "anshinna"
+    - "word": "ja-1375"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "じゅうぶんな"
+      "readings":
+        "na": "juubunna"
+    - "word": "ja-1462"
+      "forms":
+        "past": "すずしかった"
+        "negative": "すずしくない"
+        "na": null
+      "readings":
+        "past": "suzushikatta"
+        "negative": "suzushikunai"
+    - "word": "ja-1536"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "ぴったりな"
+      "readings":
+        "na": "pittarina"
+    - "word": "ja-1537"
+      "forms":
+        "past": "ゆるかった"
+        "negative": "ゆるくない"
+        "na": null
+      "readings":
+        "past": "yurukatta"
+        "negative": "yurukunai"
+    - "word": "ja-1538"
+      "forms":
+        "past": "きつかった"
+        "negative": "きつくない"
+        "na": null
+      "readings":
+        "past": "kitsukatta"
+        "negative": "kitsukunai"
+    - "word": "ja-1620"
+      "forms":
+        "past": "はげしかった"
+        "negative": "はげしくない"
+        "na": null
+      "readings":
+        "past": "hageshikatta"
+        "negative": "hageshikunai"
+    - "word": "ja-1621"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "さわやかな"
+      "readings":
+        "na": "sawayaka na"
+    - "word": "ja-1622"
+      "forms":
+        "past": "むしあつかった"
+        "negative": "むしあつくない"
+        "na": null
+      "readings":
+        "past": "mushiatsukatta"
+        "negative": "mushiatsukunai"
+    - "word": "ja-1623"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "おだやかな"
+      "readings":
+        "na": "odayaka na"
+    - "word": "ja-1624"
+      "forms":
+        "past": "くらかった"
+        "negative": "くらくない"
+        "na": null
+      "readings":
+        "past": "kurakatta"
+        "negative": "kurakunai"
+    - "word": "ja-1644"
+      "forms":
+        "past": "ぬるかった"
+        "negative": "ぬるくない"
+        "na": null
+      "readings":
+        "past": "nurukatta"
+        "negative": "nurukunai"
+    - "word": "ja-1652"
+      "forms":
+        "past": "ひどかった"
+        "negative": "ひどくない"
+        "na": null
+      "readings":
+        "past": "hidokatta"
+        "negative": "hidokunai"
+    - "word": "ja-1732"
+      "forms":
+        "past": "ほしかった"
+        "negative": "ほしくない"
+        "na": null
+      "readings":
+        "past": "hoshikatta"
+        "negative": "hoshikunai"
+    - "word": "ja-1733"
+      "forms":
+        "past": "ひろかった"
+        "negative": "ひろくない"
+        "na": null
+      "readings":
+        "past": "hirokatta"
+        "negative": "hirokunai"
+    - "word": "ja-1734"
+      "forms":
+        "past": "せまかった"
+        "negative": "せまくない"
+        "na": null
+      "readings":
+        "past": "semakatta"
+        "negative": "semakunai"
+    - "word": "ja-1735"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "じょうぶな"
+      "readings":
+        "na": "joubuna"
+    - "word": "ja-1736"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "らくな"
+      "readings":
+        "na": "rakuna"
+    - "word": "ja-1761"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "まんぞくな"
+      "readings":
+        "na": "manzokuna"
+    - "word": "ja-1795"
+      "forms":
+        "past": "うすかった"
+        "negative": "うすくない"
+        "na": null
+      "readings":
+        "past": "usukatta"
+        "negative": "usukunai"
+    - "word": "ja-1796"
+      "forms":
+        "past": "こかった"
+        "negative": "こくない"
+        "na": null
+      "readings":
+        "past": "kokatta"
+        "negative": "kokunai"
+    - "word": "ja-1798"
+      "forms":
+        "past": "しおからかった"
+        "negative": "しおからくない"
+        "na": null
+      "readings":
+        "past": "shiokarakatta"
+        "negative": "shiokarakunai"
+    - "word": "ja-1894"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "へたな"
+      "readings":
+        "na": "hetana"
+    - "word": "ja-1908"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "にがてな"
+      "readings":
+        "na": "nigatena"
+    - "word": "ja-1909"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "かんたんな"
+      "readings":
+        "na": "kantanna"
+    - "word": "ja-1936"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "すてきな"
+      "readings":
+        "na": "sutekina"
+    - "word": "ja-1937"
+      "forms":
+        "past": "うるさかった"
+        "negative": "うるさくない"
+        "na": null
+      "readings":
+        "past": "urusakatta"
+        "negative": "urusakunai"
+    - "word": "ja-1938"
+      "forms":
+        "past": "かなしかった"
+        "negative": "かなしくない"
+        "na": null
+      "readings":
+        "past": "kanashikatta"
+        "negative": "kanashikunai"
+    - word: "ja-2055"
+      forms:
+        "past": "きもちわるかった"
+        "negative": "きもちわるくない"
+        "na": null
+      readings:
+        "past": "kimochiwarukatta"
+        "negative": "kimochiwarukunai"
+    - word: "ja-2056"
+      forms:
+        "past": "くるしかった"
+        "negative": "くるしくない"
+        "na": null
+      readings:
+        "past": "kurushikatta"
+        "negative": "kurushikunai"
+    - word: "ja-2154"
+      forms:
+        "past": "ふとかった"
+        "negative": "ふとくない"
+        "na": null
+      readings:
+        "past": "futokatta"
+        "negative": "futokunai"
+    - word: "ja-2155"
+      forms:
+        "past": "ほそかった"
+        "negative": "ほそくない"
+        "na": null
+      readings:
+        "past": "hosokatta"
+        "negative": "hosokunai"
+    - word: "ja-2156"
+      forms:
+        "past": "かっこよかった"
+        "negative": "かっこよくない"
+        "na": null
+      readings:
+        "past": "kakkoyokatta"
+        "negative": "kakkoyokunai"
+    - word: "ja-2157"
+      forms:
+        "past": "かわいかった"
+        "negative": "かわいくない"
+        "na": null
+      readings:
+        "past": "kawaikatta"
+        "negative": "kawaikunai"
+    - word: "ja-2158"
+      forms:
+        "past": "かわいらしかった"
+        "negative": "かわいらしくない"
+        "na": null
+      readings:
+        "past": "kawairashikatta"
+        "negative": "kawairashikunai"
+    - word: "ja-2159"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ハンサムな"
+      readings:
+        "na": "hansamuna"
+    - word: "ja-2160"
+      forms:
+        "past": null
+        "negative": null
+        "na": "おしゃれな"
+      readings:
+        "na": "osharena"
+    - word: "ja-2161"
+      forms:
+        "past": null
+        "negative": null
+        "na": "じみな"
+      readings:
+        "na": "jimina"
+    - word: "ja-2162"
+      forms:
+        "past": null
+        "negative": null
+        "na": "はでな"
+      readings:
+        "na": "hadena"
+    - word: "ja-2163"
+      forms:
+        "past": "わかかった"
+        "negative": "わかくない"
+        "na": null
+      readings:
+        "past": "wakakatta"
+        "negative": "wakakunai"
+    - word: "ja-2492"
+      forms:
+        "past": "うれしかった"
+        "negative": "うれしくない"
+        "na": null
+      readings:
+        "past": "ureshikatta"
+        "negative": "ureshikunai"
+    - word: "ja-2493"
+      forms:
+        "past": "さびしかった"
+        "negative": "さびしくない"
+        "na": null
+      readings:
+        "past": "sabishikatta"
+        "negative": "sabishikunai"
+    - word: "ja-2494"
+      forms:
+        "past": "こわかった"
+        "negative": "こわくない"
+        "na": null
+      readings:
+        "past": "kowakatta"
+        "negative": "kowakunai"
+    - word: "ja-2495"
+      forms:
+        "past": "はずかしかった"
+        "negative": "はずかしくない"
+        "na": null
+      readings:
+        "past": "hazukashikatta"
+        "negative": "hazukashikunai"
+    - word: "ja-2496"
+      forms:
+        "past": "くやしかった"
+        "negative": "くやしくない"
+        "na": null
+      readings:
+        "past": "kuyashikatta"
+        "negative": "kuyashikunai"
+    - word: "ja-2497"
+      forms:
+        "past": "なつかしかった"
+        "negative": "なつかしくない"
+        "na": null
+      readings:
+        "past": "natsukashikatta"
+        "negative": "natsukashikunai"
+    - word: "ja-2498"
+      forms:
+        "past": "めずらしかった"
+        "negative": "めずらしくない"
+        "na": null
+      readings:
+        "past": "mezurashikatta"
+        "negative": "mezurashikunai"
+    - word: "ja-2499"
+      forms:
+        "past": "うらやましかった"
+        "negative": "うらやましくない"
+        "na": null
+      readings:
+        "past": "urayamashikatta"
+        "negative": "urayamashikunai"
+    - word: "ja-2500"
+      forms:
+        "past": "ありがたかった"
+        "negative": "ありがたくない"
+        "na": null
+      readings:
+        "past": "arigatakatta"
+        "negative": "arigatakunai"
+    - word: "ja-2501"
+      forms:
+        "past": "こまかかった"
+        "negative": "こまかくない"
+        "na": null
+      readings:
+        "past": "komakakatta"
+        "negative": "komakakunai"
+    - word: "ja-2502"
+      forms:
+        "past": "あらかった"
+        "negative": "あらくない"
+        "na": null
+      readings:
+        "past": "arakatta"
+        "negative": "arakunai"
+    - word: "ja-2503"
+      forms:
+        "past": "ふかかった"
+        "negative": "ふかくない"
+        "na": null
+      readings:
+        "past": "fukakatta"
+        "negative": "fukakunai"
+    - word: "ja-2504"
+      forms:
+        "past": "あさかった"
+        "negative": "あさくない"
+        "na": null
+      readings:
+        "past": "asakatta"
+        "negative": "asakunai"
+    - word: "ja-2505"
+      forms:
+        "past": "けむかった"
+        "negative": "けむくない"
+        "na": null
+      readings:
+        "past": "kemukatta"
+        "negative": "kemukunai"
+    - word: "ja-2506"
+      forms:
+        "past": "くさかった"
+        "negative": "くさくない"
+        "na": null
+      readings:
+        "past": "kusakatta"
+        "negative": "kusakunai"
+    - word: "ja-2507"
+      forms:
+        "past": "するどかった"
+        "negative": "するどくない"
+        "na": null
+      readings:
+        "past": "surudokatta"
+        "negative": "surudokunai"
+    - word: "ja-2508"
+      forms:
+        "past": "にぶかった"
+        "negative": "にぶくない"
+        "na": null
+      readings:
+        "past": "nibukatta"
+        "negative": "nibukunai"
+    - word: "ja-2509"
+      forms:
+        "past": "かしこかった"
+        "negative": "かしこくない"
+        "na": null
+      readings:
+        "past": "kashikokatta"
+        "negative": "kashikokunai"
+    - word: "ja-2510"
+      forms:
+        "past": "えらかった"
+        "negative": "えらくない"
+        "na": null
+      readings:
+        "past": "erakatta"
+        "negative": "erakunai"
+    - word: "ja-2511"
+      forms:
+        "past": "やかましかった"
+        "negative": "やかましくない"
+        "na": null
+      readings:
+        "past": "yakamashikatta"
+        "negative": "yakamashikunai"
+    - word: "ja-2512"
+      forms:
+        "past": null
+        "negative": null
+        "na": "にぎやかな"
+      readings:
+        "na": "nigiyakana"
+    - word: "ja-2513"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ゆうめいな"
+      readings:
+        "na": "yuumeina"
+    - word: "ja-2514"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ていねいな"
+      readings:
+        "na": "teineina"
+    - word: "ja-2515"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ざんねんな"
+      readings:
+        "na": "zannenna"
+    - word: "ja-2516"
+      forms:
+        "past": null
+        "negative": null
+        "na": "しんぱいな"
+      readings:
+        "na": "shinpaina"
+    - word: "ja-2517"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ふべんな"
+      readings:
+        "na": "fubenna"
+    - word: "ja-2518"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ふくざつな"
+      readings:
+        "na": "fukuzatsuna"
+    - word: "ja-2519"
+      forms:
+        "past": null
+        "negative": null
+        "na": "じゅうような"
+      readings:
+        "na": "juuyouna"
+    - word: "ja-2520"
+      forms:
+        "past": null
+        "negative": null
+        "na": "たいせつな"
+      readings:
+        "na": "taisetsuna"
+    - word: "ja-2521"
+      forms:
+        "past": null
+        "negative": null
+        "na": "だいじな"
+      readings:
+        "na": "daijina"
+    - word: "ja-2522"
+      forms:
+        "past": null
+        "negative": null
+        "na": "とくべつな"
+      readings:
+        "na": "tokubetsuna"
+    - word: "ja-2523"
+      forms:
+        "past": null
+        "negative": null
+        "na": "べつな"
+      readings:
+        "na": "betsuna"
+    - word: "ja-2524"
+      forms:
+        "past": null
+        "negative": null
+        "na": "むだな"
+      readings:
+        "na": "mudana"
+    - word: "ja-2525"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ひつような"
+      readings:
+        "na": "hitsuyouna"
+    - word: "ja-2526"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ふあんな"
+      readings:
+        "na": "fuanna"
+    - word: "ja-2527"
+      forms:
+        "past": null
+        "negative": null
+        "na": "かんぺきな"
+      readings:
+        "na": "kanpekina"
+    - word: "ja-2528"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ざんこくな"
+      readings:
+        "na": "zankokuna"
+    - word: "ja-2529"
+      forms:
+        "past": "きびしかった"
+        "negative": "きびしくない"
+        "na": null
+      readings:
+        "past": "kibishikatta"
+        "negative": "kibishikunai"
+    - word: "ja-2530"
+      forms:
+        "past": "あやしかった"
+        "negative": "あやしくない"
+        "na": null
+      readings:
+        "past": "ayashikatta"
+        "negative": "ayashikunai"
+    - word: "ja-2531"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ぜいたくな"
+      readings:
+        "na": "zeitakuna"
+    - word: "ja-2532"
+      forms:
+        "past": null
+        "negative": null
+        "na": "しんせんな"
+      readings:
+        "na": "shinsenna"
+    - word: "ja-2533"
+      forms:
+        "past": null
+        "negative": null
+        "na": "せいけつな"
+      readings:
+        "na": "seiketsuna"
+    - word: "ja-2534"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ふけつな"
+      readings:
+        "na": "fuketsuna"
+    - word: "ja-2535"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ゆたかな"
+      readings:
+        "na": "yutakana"
+    - word: "ja-2536"
+      forms:
+        "past": "まずしかった"
+        "negative": "まずしくない"
+        "na": null
+      readings:
+        "past": "mazushikatta"
+        "negative": "mazushikunai"
+    - word: "ja-2537"
+      forms:
+        "past": null
+        "negative": null
+        "na": "きらくな"
+      readings:
+        "na": "kirakuna"
+    - word: "ja-2538"
+      forms:
+        "past": null
+        "negative": null
+        "na": "しょうじきな"
+      readings:
+        "na": "shoujikina"
+    - word: "ja-2539"
+      forms:
+        "past": null
+        "negative": null
+        "na": "けちな"
+      readings:
+        "na": "kechina"
+    - word: "ja-2540"
+      forms:
+        "past": null
+        "negative": null
+        "na": "まじめな"
+      readings:
+        "na": "majimena"
+    - word: "ja-2541"
+      forms:
+        "past": "おそろしかった"
+        "negative": "おそろしくない"
+        "na": null
+      readings:
+        "past": "osoroshikatta"
+        "negative": "osoroshikunai"
+    - word: "ja-2760"
+      forms:
+        "past": null
+        "negative": null
+        "na": "しあわせな"
+      readings:
+        "na": "shiawasena"
+    - word: "ja-2761"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ふしあわせな"
+      readings:
+        "na": "fushiawasena"
+    - word: "ja-2762"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ふこうな"
+      readings:
+        "na": "fukouna"
+    - word: "ja-2808"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ふゆかいな"
+      readings:
+        "na": "fuyukaina"
+    - word: "ja-2809"
+      forms:
+        "past": null
+        "negative": null
+        "na": "ゆかいな"
+      readings:
+        "na": "yukaina"
+    - word: "ja-2810"
+      forms:
+        "past": null
+        "negative": null
+        "na": "かなしげな"
+      readings:
+        "na": "kanashigena"
+    - word: "ja-2811"
+      forms:
+        "past": "たのもしかった"
+        "negative": "たのもしくない"
+        "na": null
+      readings:
+        "past": "tanomoshikatta"
+        "negative": "tanomoshikunai"
+    - "word": "ja-3292"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "ぶしつけな"
+      "readings":
+        "na": "bushitsukena"
+    - "word": "ja-3307"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "ひじょうしきな"
+      "readings":
+        "na": "hijoushikina"
+    - "word": "ja-3308"
+      "forms":
+        "past": "のぞましかった"
+        "negative": "のぞましくない"
+        "na": null
+      "readings":
+        "past": "nozomashikatta"
+        "negative": "nozomashikunai"
+    - "word": "ja-3799"
+      "forms":
+        "past": null
+        "negative": null
+        "na": "ちゅうじつな"
+      "readings":
+        "na": "chuujitsuna"
+rules:
+  - id: "ja-rule-i-adjectives"
+    slots: ["past", "negative"]
+    words:
+      - { word: "おおきくない", reading: "ookikunai" }
+      - { word: "おおきかった", reading: "ookikatta" }
+  - id: "ja-rule-na-adjectives"
+    slots: ["na"]
+    words:
+      - { word: "しずかな", reading: "shizukana" }

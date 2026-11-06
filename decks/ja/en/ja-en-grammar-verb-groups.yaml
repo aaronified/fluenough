@@ -1,0 +1,18 @@
+schema: 1
+id: "ja-en-grammar-verb-groups"
+kind: "layer"
+core: "ja-grammar-verb-groups"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Verb groups: the stem before ます (masu)"
+description: "Every verb has a stem: the part before ます (masu). Its group decides how the stem is made from the dictionary form: a godan verb changes its last sound to the i-row, an ichidan verb drops る (ru), and する (suru) and くる (kuru) are irregular. Every verb a course deck teaches has a row. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  slot_name: "form"
+  slots:
+    "stem": "stem of {meaning}"
+    "polite": "polite form of {meaning}"
+rules:
+  "ja-rule-verb-groups":
+    name: "Verb groups: the stem"
+    explanation: "{1} is the ichidan verb: its stem is what is left without る (ru). {2} is a godan verb: its stem changes the last sound to an i sound. {3} is irregular: its stem is し (shi)."

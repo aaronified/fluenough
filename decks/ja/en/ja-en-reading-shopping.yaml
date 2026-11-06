@@ -1,0 +1,148 @@
+{
+  "schema": 1,
+  "id": "ja-en-reading-shopping",
+  "name": "Japanese reading: shopping",
+  "kind": "reading",
+  "language": {
+    "code": "ja",
+    "iso639_3": "jpn",
+    "name": "Japanese",
+    "script": "kana",
+    "tts": "ja-JP"
+  },
+  "native": {
+    "code": "en",
+    "iso639_3": "eng",
+    "name": "English"
+  },
+  "license": "CC-BY-SA-4.0",
+  "source": "Written for this course",
+  "tags": [
+    "beginner",
+    "unreviewed"
+  ],
+  "passages": [
+    {
+      "id": "ja-shopping-1",
+      "title": "A flyer and a price tag",
+      "sentences": [
+        {
+          "text": "ちらし を よみます。",
+          "reading": "chirashi o yomimasu."
+        },
+        {
+          "text": "ねふだ に ねだん が あります。",
+          "reading": "nefuda ni nedan ga arimasu."
+        },
+        {
+          "text": "おみせ は ひろい です。",
+          "reading": "omise wa hiroi desu."
+        },
+        {
+          "text": "わたし は これ が ほしい です。",
+          "reading": "watashi wa kore ga hoshii desu."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1747",
+          "prompt": {
+            "en": "Which line says that there is a price on the price tag?"
+          },
+          "options": [
+            {
+              "en": "The second line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1748",
+          "prompt": {
+            "en": "The third line says that the shop is spacious."
+          },
+          "answer": true
+        },
+        {
+          "id": "ja-1749",
+          "prompt": {
+            "en": "Which line says that someone wants this?"
+          },
+          "options": [
+            {
+              "en": "The fourth line"
+            },
+            {
+              "en": "The first line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    },
+    {
+      "id": "ja-shopping-2",
+      "title": "At the till",
+      "sentences": [
+        {
+          "text": "おきゃくさん は おかね を はらいます。",
+          "reading": "okyakusan wa okane o haraimasu."
+        },
+        {
+          "text": "おつり が あります。",
+          "reading": "otsuri ga arimasu."
+        },
+        {
+          "text": "ぜいきん を はらいます。",
+          "reading": "zeikin o haraimasu."
+        },
+        {
+          "text": "おみせ は まけません。",
+          "reading": "omise wa makemasen."
+        }
+      ],
+      "questions": [
+        {
+          "id": "ja-1750",
+          "prompt": {
+            "en": "Which line says that the customer pays money?"
+          },
+          "options": [
+            {
+              "en": "The first line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        },
+        {
+          "id": "ja-1751",
+          "prompt": {
+            "en": "The second line says that the shop gives a discount."
+          },
+          "answer": false
+        },
+        {
+          "id": "ja-1752",
+          "prompt": {
+            "en": "Which line says that the shop does not give a discount?"
+          },
+          "options": [
+            {
+              "en": "The third line"
+            },
+            {
+              "en": "The fourth line"
+            }
+          ],
+          "answer": 1
+        }
+      ]
+    }
+  ]
+}

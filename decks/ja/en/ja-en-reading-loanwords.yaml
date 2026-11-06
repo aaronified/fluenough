@@ -1,0 +1,56 @@
+schema: 1
+id: "ja-en-reading-loanwords"
+name: "Japanese reading: loanwords"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-loanwords-1"
+    title: "At a café"
+    sentences:
+      - { text: "コーヒーとケーキをください。", reading: "koohii to keeki o kudasai." }
+      - { text: "ビールとワインをのみます。", reading: "biiru to wain o nomimasu." }
+      - { text: "アイスはすきです。", reading: "aisu wa suki desu." }
+      - { text: "ワインはたかいです。", reading: "wain wa takai desu." }
+    questions:
+      - id: "ja-1275"
+        prompt: { en: "Which line asks for coffee and cake?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1276"
+        prompt: { en: "The second line says the speaker drinks only coffee." }
+        answer: false
+      - id: "ja-1277"
+        prompt: { en: "Which line says that the speaker likes ice cream?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 1
+  - id: "ja-loanwords-2"
+    title: "In the flat"
+    sentences:
+      - { text: "テーブルのうえにラジオがふるいです。", reading: "teeburu no ue ni rajio ga furui desu." }
+      - { text: "ベッドはきれいです。", reading: "beddo wa kirei desu." }
+      - { text: "ドアをあけてください。", reading: "doa o akete kudasai." }
+      - { text: "ノートとペンをかいます。", reading: "nooto to pen o kaimasu." }
+    questions:
+      - id: "ja-1278"
+        prompt: { en: "Which line says the radio is old?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-1279"
+        prompt: { en: "The third line asks the reader to close the door." }
+        answer: false
+      - id: "ja-1280"
+        prompt: { en: "Which line says the speaker buys a notebook and a pen?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2

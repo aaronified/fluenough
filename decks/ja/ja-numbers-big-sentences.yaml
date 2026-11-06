@@ -1,0 +1,63 @@
+schema: 1
+id: "ja-numbers-big-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1260"
+    target: "ひゃくえんです。"
+    words: ["ひゃく", "えん", "です"]
+    reading: "hyaku en desu."
+    ipa: "çakɯ eɴ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ひゃく", ref: "ja-0738" }
+      - { word: "えん", ref: "ja-0753" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "せん", reading: "sen", kind: "word" }
+      - { id: "w2", word: "まん", reading: "man", kind: "word" }
+  - id: "ja-1261"
+    target: "にせんえんです。"
+    words: ["にせん", "えん", "です"]
+    reading: "nisen en desu."
+    ipa: "niseɴ eɴ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "にせん", ref: "ja-0764" }
+      - { word: "えん", ref: "ja-0753" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "にひゃく", reading: "nihyaku", kind: "word" }
+      - { id: "w2", word: "さんぜん", reading: "sanzen", kind: "word" }
+  - id: "ja-1262"
+    target: "ばんごうはごじゅうです。"
+    words: ["ばんごう", "は", "ごじゅう", "です"]
+    reading: "bangou wa gojuu desu."
+    ipa: "baɴɡoː wa ɡodʑɯː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ばんごう", ref: "ja-0754" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ごじゅう", ref: "ja-0746" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "すう", reading: "suu", kind: "word" }
+      - { id: "w2", word: "れい", reading: "rei", kind: "word" }
+  - id: "ja-1263"
+    target: "ひゃくまんえんはたかいです。"
+    words: ["ひゃくまん", "えん", "は", "たかい", "です"]
+    reading: "hyakuman en wa takai desu."
+    ipa: "çakɯmaɴ eɴ wa takai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "ひゃくまん", ref: "ja-0742" }
+      - { word: "えん", ref: "ja-0753" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たかい", ref: "ja-0439" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - { id: "w1", word: "おく", reading: "oku", kind: "word" }
+      - { id: "w2", word: "じゅうまん", reading: "juuman", kind: "word" }

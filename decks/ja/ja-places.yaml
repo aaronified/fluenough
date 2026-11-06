@@ -1,0 +1,997 @@
+schema: 1
+id: "ja-places"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1118"
+    target: "としょかん"
+    words: ["としょかん"]
+    reading: "toshokan"
+    ipa: "toɕokaɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "としょかんはどこですか。"
+        words: ["としょかん", "は", "どこ", "です", "か"]
+        reading: "toshokan wa doko desu ka."
+        ipa: "toɕokaɴ wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "としょかんはおおきいです。"
+        words: ["としょかん", "は", "おおきい", "です"]
+        reading: "toshokan wa ookii desu."
+        ipa: "toɕokaɴ wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1119"
+    target: "びじゅつかん"
+    words: ["びじゅつかん"]
+    reading: "bijutsukan"
+    ipa: "bidʑɯtsɯkaɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "びじゅつかんはとおいです。"
+        words: ["びじゅつかん", "は", "とおい", "です"]
+        reading: "bijutsukan wa tooi desu."
+        ipa: "bidʑɯtsɯkaɴ wa toːi desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "びじゅつかんにいきます。"
+        words: ["びじゅつかん", "に", "いきます"]
+        reading: "bijutsukan ni ikimasu."
+        ipa: "bidʑɯtsɯkaɴ ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1120"
+    target: "げきじょう"
+    words: ["げきじょう"]
+    reading: "gekijou"
+    ipa: "ɡekidʑoː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "げきじょうはどこですか。"
+        words: ["げきじょう", "は", "どこ", "です", "か"]
+        reading: "gekijou wa doko desu ka."
+        ipa: "ɡekidʑoː wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "げきじょうはちかいです。"
+        words: ["げきじょう", "は", "ちかい", "です"]
+        reading: "gekijou wa chikai desu."
+        ipa: "ɡekidʑoː wa tɕikai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1121"
+    target: "えいがかん"
+    words: ["えいがかん"]
+    reading: "eigakan"
+    ipa: "eːɡakaɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "えいがかんはいくらですか。"
+        words: ["えいがかん", "は", "いくら", "です", "か"]
+        reading: "eigakan wa ikura desu ka."
+        ipa: "eːɡakaɴ wa ikɯɾa desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "えいがかんにいきます。"
+        words: ["えいがかん", "に", "いきます"]
+        reading: "eigakan ni ikimasu."
+        ipa: "eːɡakaɴ ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1122"
+    target: "ゆうびんきょく"
+    words: ["ゆうびんきょく"]
+    reading: "yuubinkyoku"
+    ipa: "jɯːbiɴkjokɯ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ゆうびんきょくはどこですか。"
+        words: ["ゆうびんきょく", "は", "どこ", "です", "か"]
+        reading: "yuubinkyoku wa doko desu ka."
+        ipa: "jɯːbiɴkjokɯ wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "ゆうびんきょくはちかいです。"
+        words: ["ゆうびんきょく", "は", "ちかい", "です"]
+        reading: "yuubinkyoku wa chikai desu."
+        ipa: "jɯːbiɴkjokɯ wa tɕikai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1123"
+    target: "けいさつしょ"
+    words: ["けいさつしょ"]
+    reading: "keisatsusho"
+    ipa: "keːsatsɯɕo"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "けいさつしょはどこですか。"
+        words: ["けいさつしょ", "は", "どこ", "です", "か"]
+        reading: "keisatsusho wa doko desu ka."
+        ipa: "keːsatsɯɕo wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "けいさつしょはちかいです。"
+        words: ["けいさつしょ", "は", "ちかい", "です"]
+        reading: "keisatsusho wa chikai desu."
+        ipa: "keːsatsɯɕo wa tɕikai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1124"
+    target: "かわ"
+    words: ["かわ"]
+    reading: "kawa"
+    ipa: "kawa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "かわはながいです。"
+        words: ["かわ", "は", "ながい", "です"]
+        reading: "kawa wa nagai desu."
+        ipa: "kawa wa naɡai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "かわにいきます。"
+        words: ["かわ", "に", "いきます"]
+        reading: "kawa ni ikimasu."
+        ipa: "kawa ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1125"
+    target: "やま"
+    words: ["やま"]
+    reading: "yama"
+    ipa: "jama"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "やまはたかいです。"
+        words: ["やま", "は", "たかい", "です"]
+        reading: "yama wa takai desu."
+        ipa: "jama wa takai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "やまにのぼります。"
+        words: ["やま", "に", "のぼります"]
+        reading: "yama ni noborimasu."
+        ipa: "jama ni noboɾimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "のぼります", ref: "ja-0584" }
+  - id: "ja-1126"
+    target: "うみ"
+    words: ["うみ"]
+    reading: "umi"
+    ipa: "ɯmi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "うみはおおきいです。"
+        words: ["うみ", "は", "おおきい", "です"]
+        reading: "umi wa ookii desu."
+        ipa: "ɯmi wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "うみにいきます。"
+        words: ["うみ", "に", "いきます"]
+        reading: "umi ni ikimasu."
+        ipa: "ɯmi ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1127"
+    target: "じんじゃ"
+    words: ["じんじゃ"]
+    reading: "jinja"
+    ipa: "dʑiɴdʑa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "じんじゃはどこですか。"
+        words: ["じんじゃ", "は", "どこ", "です", "か"]
+        reading: "jinja wa doko desu ka."
+        ipa: "dʑiɴdʑa wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "じんじゃはしずかです。"
+        words: ["じんじゃ", "は", "しずか", "です"]
+        reading: "jinja wa shizuka desu."
+        ipa: "dʑiɴdʑa wa ɕidzɯka desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1128"
+    target: "おてら"
+    words: ["おてら"]
+    reading: "otera"
+    ipa: "oteɾa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "おてらはふるいです。"
+        words: ["おてら", "は", "ふるい", "です"]
+        reading: "otera wa furui desu."
+        ipa: "oteɾa wa ɸɯɾɯi desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "おてらにいきます。"
+        words: ["おてら", "に", "いきます"]
+        reading: "otera ni ikimasu."
+        ipa: "oteɾa ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1129"
+    target: "こうじょう"
+    words: ["こうじょう"]
+    reading: "koujou"
+    ipa: "koːdʑoː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "こうじょうはおおきいです。"
+        words: ["こうじょう", "は", "おおきい", "です"]
+        reading: "koujou wa ookii desu."
+        ipa: "koːdʑoː wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "こうじょうはどこですか。"
+        words: ["こうじょう", "は", "どこ", "です", "か"]
+        reading: "koujou wa doko desu ka."
+        ipa: "koːdʑoː wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-1130"
+    target: "はなや"
+    words: ["はなや"]
+    reading: "hanaya"
+    ipa: "hanaja"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "はなやはどこですか。"
+        words: ["はなや", "は", "どこ", "です", "か"]
+        reading: "hanaya wa doko desu ka."
+        ipa: "hanaja wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "はなやはちかいです。"
+        words: ["はなや", "は", "ちかい", "です"]
+        reading: "hanaya wa chikai desu."
+        ipa: "hanaja wa tɕikai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1131"
+    target: "くすりや"
+    words: ["くすりや"]
+    reading: "kusuriya"
+    ipa: "kɯsɯɾija"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "くすりやはどこですか。"
+        words: ["くすりや", "は", "どこ", "です", "か"]
+        reading: "kusuriya wa doko desu ka."
+        ipa: "kɯsɯɾija wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "くすりやはちかいです。"
+        words: ["くすりや", "は", "ちかい", "です"]
+        reading: "kusuriya wa chikai desu."
+        ipa: "kɯsɯɾija wa tɕikai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1132"
+    target: "ほんや"
+    words: ["ほんや"]
+    reading: "honya"
+    ipa: "hoɴja"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ほんやはどこですか。"
+        words: ["ほんや", "は", "どこ", "です", "か"]
+        reading: "honya wa doko desu ka."
+        ipa: "hoɴja wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "ほんやはおおきいです。"
+        words: ["ほんや", "は", "おおきい", "です"]
+        reading: "honya wa ookii desu."
+        ipa: "hoɴja wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1133"
+    target: "みなと"
+    words: ["みなと"]
+    reading: "minato"
+    ipa: "minato"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "みなとはどこですか。"
+        words: ["みなと", "は", "どこ", "です", "か"]
+        reading: "minato wa doko desu ka."
+        ipa: "minato wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "みなとはちかいです。"
+        words: ["みなと", "は", "ちかい", "です"]
+        reading: "minato wa chikai desu."
+        ipa: "minato wa tɕikai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1134"
+    target: "しま"
+    words: ["しま"]
+    reading: "shima"
+    ipa: "ɕima"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "しまはおおきいです。"
+        words: ["しま", "は", "おおきい", "です"]
+        reading: "shima wa ookii desu."
+        ipa: "ɕima wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "しまにいきます。"
+        words: ["しま", "に", "いきます"]
+        reading: "shima ni ikimasu."
+        ipa: "ɕima ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1135"
+    target: "もり"
+    words: ["もり"]
+    reading: "mori"
+    ipa: "moɾi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "もりはしずかです。"
+        words: ["もり", "は", "しずか", "です"]
+        reading: "mori wa shizuka desu."
+        ipa: "moɾi wa ɕidzɯka desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "もりにいきます。"
+        words: ["もり", "に", "いきます"]
+        reading: "mori ni ikimasu."
+        ipa: "moɾi ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1136"
+    target: "たんぼ"
+    words: ["たんぼ"]
+    reading: "tanbo"
+    ipa: "taɴbo"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "たんぼはおおきいです。"
+        words: ["たんぼ", "は", "おおきい", "です"]
+        reading: "tanbo wa ookii desu."
+        ipa: "taɴbo wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "たんぼはどこですか。"
+        words: ["たんぼ", "は", "どこ", "です", "か"]
+        reading: "tanbo wa doko desu ka."
+        ipa: "taɴbo wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-1137"
+    target: "いけ"
+    words: ["いけ"]
+    reading: "ike"
+    ipa: "ike"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "いけはしずかです。"
+        words: ["いけ", "は", "しずか", "です"]
+        reading: "ike wa shizuka desu."
+        ipa: "ike wa ɕidzɯka desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "いけはおおきいですか。"
+        words: ["いけ", "は", "おおきい", "です", "か"]
+        reading: "ike wa ookii desu ka."
+        ipa: "ike wa oːkiː desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-1138"
+    target: "おか"
+    words: ["おか"]
+    reading: "oka"
+    ipa: "oka"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "おかはたかいです。"
+        words: ["おか", "は", "たかい", "です"]
+        reading: "oka wa takai desu."
+        ipa: "oka wa takai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "おかにのぼります。"
+        words: ["おか", "に", "のぼります"]
+        reading: "oka ni noborimasu."
+        ipa: "oka ni noboɾimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "のぼります", ref: "ja-0584" }
+  - id: "ja-1139"
+    target: "きょうしつ"
+    words: ["きょうしつ"]
+    reading: "kyoushitsu"
+    ipa: "kjoːɕitsɯ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "きょうしつはどこですか。"
+        words: ["きょうしつ", "は", "どこ", "です", "か"]
+        reading: "kyoushitsu wa doko desu ka."
+        ipa: "kjoːɕitsɯ wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "きょうしつはあかるいです。"
+        words: ["きょうしつ", "は", "あかるい", "です"]
+        reading: "kyoushitsu wa akarui desu."
+        ipa: "kjoːɕitsɯ wa akaɾɯi desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1140"
+    target: "ろうか"
+    words: ["ろうか"]
+    reading: "rouka"
+    ipa: "ɾoːka"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ろうかはながいです。"
+        words: ["ろうか", "は", "ながい", "です"]
+        reading: "rouka wa nagai desu."
+        ipa: "ɾoːka wa naɡai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "ろうかはどこですか。"
+        words: ["ろうか", "は", "どこ", "です", "か"]
+        reading: "rouka wa doko desu ka."
+        ipa: "ɾoːka wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-1141"
+    target: "トイレ"
+    words: ["トイレ"]
+    reading: "toire"
+    ipa: "toiɾe"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "トイレはどこですか。"
+        words: ["トイレ", "は", "どこ", "です", "か"]
+        reading: "toire wa doko desu ka."
+        ipa: "toiɾe wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "トイレはきれいです。"
+        words: ["トイレ", "は", "きれい", "です"]
+        reading: "toire wa kirei desu."
+        ipa: "toiɾe wa kiɾeː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1142"
+    target: "だいどころ"
+    words: ["だいどころ"]
+    reading: "daidokoro"
+    ipa: "daidokoɾo"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "だいどころはどこですか。"
+        words: ["だいどころ", "は", "どこ", "です", "か"]
+        reading: "daidokoro wa doko desu ka."
+        ipa: "daidokoɾo wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "だいどころはおおきいです。"
+        words: ["だいどころ", "は", "おおきい", "です"]
+        reading: "daidokoro wa ookii desu."
+        ipa: "daidokoɾo wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1143"
+    target: "にわ"
+    words: ["にわ"]
+    reading: "niwa"
+    ipa: "niwa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "にわはおおきいです。"
+        words: ["にわ", "は", "おおきい", "です"]
+        reading: "niwa wa ookii desu."
+        ipa: "niwa wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "にわにいぬがいます。"
+        words: ["にわ", "に", "いぬ", "が", "います"]
+        reading: "niwa ni inu ga imasu."
+        ipa: "niwa ni inɯ ɡa imasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "が", base: "が", reading: "ga" }
+          - { word: "います", base: "いる", reading: "iru" }
+  - id: "ja-1144"
+    target: "せかい"
+    words: ["せかい"]
+    reading: "sekai"
+    ipa: "sekai"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "せかいはおおきいです。"
+        words: ["せかい", "は", "おおきい", "です"]
+        reading: "sekai wa ookii desu."
+        ipa: "sekai wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "せかいはうつくしいです。"
+        words: ["せかい", "は", "うつくしい", "です"]
+        reading: "sekai wa utsukushii desu."
+        ipa: "sekai wa ɯtsɯkɯɕiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1145"
+    target: "どうぶつえん"
+    words: ["どうぶつえん"]
+    reading: "doubutsuen"
+    ipa: "doːbɯtsɯeɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "どうぶつえんはどこですか。"
+        words: ["どうぶつえん", "は", "どこ", "です", "か"]
+        reading: "doubutsuen wa doko desu ka."
+        ipa: "doːbɯtsɯeɴ wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "どうぶつえんにいきます。"
+        words: ["どうぶつえん", "に", "いきます"]
+        reading: "doubutsuen ni ikimasu."
+        ipa: "doːbɯtsɯeɴ ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1146"
+    target: "うんどうじょう"
+    words: ["うんどうじょう"]
+    reading: "undoujou"
+    ipa: "ɯɴdoːdʑoː"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "うんどうじょうはおおきいです。"
+        words: ["うんどうじょう", "は", "おおきい", "です"]
+        reading: "undoujou wa ookii desu."
+        ipa: "ɯɴdoːdʑoː wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "うんどうじょうにいきます。"
+        words: ["うんどうじょう", "に", "いきます"]
+        reading: "undoujou ni ikimasu."
+        ipa: "ɯɴdoːdʑoː ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1147"
+    target: "ゆうえんち"
+    words: ["ゆうえんち"]
+    reading: "yuuenchi"
+    ipa: "jɯːeɴtɕi"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ゆうえんちはたのしいです。"
+        words: ["ゆうえんち", "は", "たのしい", "です"]
+        reading: "yuuenchi wa tanoshii desu."
+        ipa: "jɯːeɴtɕi wa tanoɕiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "ゆうえんちにいきますか。"
+        words: ["ゆうえんち", "に", "いきます", "か"]
+        reading: "yuuenchi ni ikimasu ka."
+        ipa: "jɯːeɴtɕi ni ikimasɯ ka"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-1148"
+    target: "せんたくや"
+    words: ["せんたくや"]
+    reading: "sentakuya"
+    ipa: "seɴtakɯja"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "せんたくやはどこですか。"
+        words: ["せんたくや", "は", "どこ", "です", "か"]
+        reading: "sentakuya wa doko desu ka."
+        ipa: "seɴtakɯja wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "せんたくやはちかいです。"
+        words: ["せんたくや", "は", "ちかい", "です"]
+        reading: "sentakuya wa chikai desu."
+        ipa: "seɴtakɯja wa tɕikai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1149"
+    target: "びよういん"
+    words: ["びよういん"]
+    reading: "biyouin"
+    ipa: "bijoːiɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "びよういんはどこですか。"
+        words: ["びよういん", "は", "どこ", "です", "か"]
+        reading: "biyouin wa doko desu ka."
+        ipa: "bijoːiɴ wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "びよういんはちかいです。"
+        words: ["びよういん", "は", "ちかい", "です"]
+        reading: "biyouin wa chikai desu."
+        ipa: "bijoːiɴ wa tɕikai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1150"
+    target: "きっさてん"
+    words: ["きっさてん"]
+    reading: "kissaten"
+    ipa: "kissateɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "きっさてんはどこですか。"
+        words: ["きっさてん", "は", "どこ", "です", "か"]
+        reading: "kissaten wa doko desu ka."
+        ipa: "kissateɴ wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "きっさてんはしずかです。"
+        words: ["きっさてん", "は", "しずか", "です"]
+        reading: "kissaten wa shizuka desu."
+        ipa: "kissateɴ wa ɕidzɯka desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1151"
+    target: "むら"
+    words: ["むら"]
+    reading: "mura"
+    ipa: "mɯɾa"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "むらはしずかです。"
+        words: ["むら", "は", "しずか", "です"]
+        reading: "mura wa shizuka desu."
+        ipa: "mɯɾa wa ɕidzɯka desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "むらにいきます。"
+        words: ["むら", "に", "いきます"]
+        reading: "mura ni ikimasu."
+        ipa: "mɯɾa ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1152"
+    target: "たてもの"
+    words: ["たてもの"]
+    reading: "tatemono"
+    ipa: "tatemono"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "たてものはおおきいです。"
+        words: ["たてもの", "は", "おおきい", "です"]
+        reading: "tatemono wa ookii desu."
+        ipa: "tatemono wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "たてものはどこですか。"
+        words: ["たてもの", "は", "どこ", "です", "か"]
+        reading: "tatemono wa doko desu ka."
+        ipa: "tatemono wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-1153"
+    target: "いえ"
+    words: ["いえ"]
+    reading: "ie"
+    ipa: "ie"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "いえはどこですか。"
+        words: ["いえ", "は", "どこ", "です", "か"]
+        reading: "ie wa doko desu ka."
+        ipa: "ie wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "いえはおおきいです。"
+        words: ["いえ", "は", "おおきい", "です"]
+        reading: "ie wa ookii desu."
+        ipa: "ie wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1154"
+    target: "ひろば"
+    words: ["ひろば"]
+    reading: "hiroba"
+    ipa: "çiɾoba"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ひろばはどこですか。"
+        words: ["ひろば", "は", "どこ", "です", "か"]
+        reading: "hiroba wa doko desu ka."
+        ipa: "çiɾoba wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "ひろばはおおきいです。"
+        words: ["ひろば", "は", "おおきい", "です"]
+        reading: "hiroba wa ookii desu."
+        ipa: "çiɾoba wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+  - id: "ja-1155"
+    target: "かいだん"
+    words: ["かいだん"]
+    reading: "kaidan"
+    ipa: "kaidaɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "かいだんはながいです。"
+        words: ["かいだん", "は", "ながい", "です"]
+        reading: "kaidan wa nagai desu."
+        ipa: "kaidaɴ wa naɡai desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "かいだんはどこですか。"
+        words: ["かいだん", "は", "どこ", "です", "か"]
+        reading: "kaidan wa doko desu ka."
+        ipa: "kaidaɴ wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+  - id: "ja-1156"
+    target: "はたけ"
+    words: ["はたけ"]
+    reading: "hatake"
+    ipa: "hatake"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "はたけはおおきいです。"
+        words: ["はたけ", "は", "おおきい", "です"]
+        reading: "hatake wa ookii desu."
+        ipa: "hatake wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+      - target: "はたけにいきます。"
+        words: ["はたけ", "に", "いきます"]
+        reading: "hatake ni ikimasu."
+        ipa: "hatake ni ikimasɯ"
+        bases:
+          - { word: "に", base: "に", reading: "ni" }
+          - { word: "いきます", ref: "ja-0348" }
+  - id: "ja-1157"
+    target: "すいぞくかん"
+    words: ["すいぞくかん"]
+    reading: "suizokukan"
+    ipa: "sɯidzokɯkaɴ"
+    pos: "noun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "すいぞくかんはどこですか。"
+        words: ["すいぞくかん", "は", "どこ", "です", "か"]
+        reading: "suizokukan wa doko desu ka."
+        ipa: "sɯidzokɯkaɴ wa doko desɯ ka"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }
+          - { word: "か", base: "か", reading: "ka" }
+      - target: "すいぞくかんはおおきいです。"
+        words: ["すいぞくかん", "は", "おおきい", "です"]
+        reading: "suizokukan wa ookii desu."
+        ipa: "sɯidzokɯkaɴ wa oːkiː desɯ"
+        bases:
+          - { word: "は", base: "は", reading: "wa" }
+          - { word: "です", base: "です", reading: "desu" }

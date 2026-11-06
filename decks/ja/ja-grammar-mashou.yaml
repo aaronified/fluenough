@@ -1,0 +1,2628 @@
+schema: 1
+id: "ja-grammar-mashou"
+part: "core"
+kind: "rules"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+table:
+  applies_to:
+    pos: ["verb"]
+    except: ["ja-0085"]
+  slots: ["mashou", "masen-ka"]
+  rows:
+    - word: "ja-1050"
+      forms:
+        "mashou": "まがりましょう"
+        "masen-ka": "まがりませんか"
+      readings:
+        "mashou": "magarimashou"
+        "masen-ka": "magarimasenka"
+    - word: "ja-1060"
+      forms:
+        "mashou": "わたりましょう"
+        "masen-ka": "わたりませんか"
+      readings:
+        "mashou": "watarimashou"
+        "masen-ka": "watarimasenka"
+    - word: "ja-1061"
+      forms:
+        "mashou": "すすみましょう"
+        "masen-ka": "すすみませんか"
+      readings:
+        "mashou": "susumimashou"
+        "masen-ka": "susumimasenka"
+    - word: "ja-1062"
+      forms:
+        "mashou": "さがりましょう"
+        "masen-ka": "さがりませんか"
+      readings:
+        "mashou": "sagarimashou"
+        "masen-ka": "sagarimasenka"
+    - word: "ja-1070"
+      forms:
+        "mashou": "まちがえましょう"
+        "masen-ka": "まちがえませんか"
+      readings:
+        "mashou": "machigaemashou"
+        "masen-ka": "machigaemasenka"
+    - word: "ja-1071"
+      forms:
+        "mashou": "でましょう"
+        "masen-ka": "でませんか"
+      readings:
+        "mashou": "demashou"
+        "masen-ka": "demasenka"
+    - word: "ja-1078"
+      forms:
+        "mashou": "むかいましょう"
+        "masen-ka": "むかいませんか"
+      readings:
+        "mashou": "mukaimashou"
+        "masen-ka": "mukaimasenka"
+    - word: "ja-0341"
+      forms:
+        "mashou": "たべましょう"
+        "masen-ka": "たべませんか"
+      readings:
+        "mashou": "tabemashou"
+        "masen-ka": "tabemasenka"
+    - word: "ja-0342"
+      forms:
+        "mashou": "のみましょう"
+        "masen-ka": "のみませんか"
+      readings:
+        "mashou": "nomimashou"
+        "masen-ka": "nomimasenka"
+    - word: "ja-0343"
+      forms:
+        "mashou": "みましょう"
+        "masen-ka": "みませんか"
+      readings:
+        "mashou": "mimashou"
+        "masen-ka": "mimasenka"
+    - word: "ja-0344"
+      forms:
+        "mashou": "ききましょう"
+        "masen-ka": "ききませんか"
+      readings:
+        "mashou": "kikimashou"
+        "masen-ka": "kikimasenka"
+    - word: "ja-0345"
+      forms:
+        "mashou": "よみましょう"
+        "masen-ka": "よみませんか"
+      readings:
+        "mashou": "yomimashou"
+        "masen-ka": "yomimasenka"
+    - word: "ja-0346"
+      forms:
+        "mashou": "かきましょう"
+        "masen-ka": "かきませんか"
+      readings:
+        "mashou": "kakimashou"
+        "masen-ka": "kakimasenka"
+    - word: "ja-0347"
+      forms:
+        "mashou": "はなしましょう"
+        "masen-ka": "はなしませんか"
+      readings:
+        "mashou": "hanashimashou"
+        "masen-ka": "hanashimasenka"
+    - word: "ja-0348"
+      forms:
+        "mashou": "いきましょう"
+        "masen-ka": "いきませんか"
+      readings:
+        "mashou": "ikimashou"
+        "masen-ka": "ikimasenka"
+    - word: "ja-0349"
+      forms:
+        "mashou": "きましょう"
+        "masen-ka": "きませんか"
+      readings:
+        "mashou": "kimashou"
+        "masen-ka": "kimasenka"
+    - word: "ja-0350"
+      forms:
+        "mashou": "かえりましょう"
+        "masen-ka": "かえりませんか"
+      readings:
+        "mashou": "kaerimashou"
+        "masen-ka": "kaerimasenka"
+    - word: "ja-0351"
+      forms:
+        "mashou": "おきましょう"
+        "masen-ka": "おきませんか"
+      readings:
+        "mashou": "okimashou"
+        "masen-ka": "okimasenka"
+    - word: "ja-0352"
+      forms:
+        "mashou": "ねましょう"
+        "masen-ka": "ねませんか"
+      readings:
+        "mashou": "nemashou"
+        "masen-ka": "nemasenka"
+    - word: "ja-0353"
+      forms:
+        "mashou": "はたらきましょう"
+        "masen-ka": "はたらきませんか"
+      readings:
+        "mashou": "hatarakimashou"
+        "masen-ka": "hatarakimasenka"
+    - word: "ja-0354"
+      forms:
+        "mashou": "やすみましょう"
+        "masen-ka": "やすみませんか"
+      readings:
+        "mashou": "yasumimashou"
+        "masen-ka": "yasumimasenka"
+    - word: "ja-0355"
+      forms:
+        "mashou": "はいりましょう"
+        "masen-ka": "はいりませんか"
+      readings:
+        "mashou": "hairimashou"
+        "masen-ka": "hairimasenka"
+    - word: "ja-0356"
+      forms:
+        "mashou": "かいましょう"
+        "masen-ka": "かいませんか"
+      readings:
+        "mashou": "kaimashou"
+        "masen-ka": "kaimasenka"
+    - word: "ja-0357"
+      forms:
+        "mashou": "あいましょう"
+        "masen-ka": "あいませんか"
+      readings:
+        "mashou": "aimashou"
+        "masen-ka": "aimasenka"
+    - word: "ja-0358"
+      forms:
+        "mashou": "まちましょう"
+        "masen-ka": "まちませんか"
+      readings:
+        "mashou": "machimashou"
+        "masen-ka": "machimasenka"
+    - word: "ja-0359"
+      forms:
+        "mashou": "もちましょう"
+        "masen-ka": "もちませんか"
+      readings:
+        "mashou": "mochimashou"
+        "masen-ka": "mochimasenka"
+    - word: "ja-0360"
+      forms:
+        "mashou": "あるきましょう"
+        "masen-ka": "あるきませんか"
+      readings:
+        "mashou": "arukimashou"
+        "masen-ka": "arukimasenka"
+    - word: "ja-0361"
+      forms:
+        "mashou": "のりましょう"
+        "masen-ka": "のりませんか"
+      readings:
+        "mashou": "norimashou"
+        "masen-ka": "norimasenka"
+    - word: "ja-0362"
+      forms:
+        "mashou": "おりましょう"
+        "masen-ka": "おりませんか"
+      readings:
+        "mashou": "orimashou"
+        "masen-ka": "orimasenka"
+    - word: "ja-0363"
+      forms:
+        "mashou": "あらいましょう"
+        "masen-ka": "あらいませんか"
+      readings:
+        "mashou": "araimashou"
+        "masen-ka": "araimasenka"
+    - word: "ja-0364"
+      forms:
+        "mashou": "つくりましょう"
+        "masen-ka": "つくりませんか"
+      readings:
+        "mashou": "tsukurimashou"
+        "masen-ka": "tsukurimasenka"
+    - word: "ja-0365"
+      forms:
+        "mashou": "わかりましょう"
+        "masen-ka": "わかりませんか"
+      readings:
+        "mashou": "wakarimashou"
+        "masen-ka": "wakarimasenka"
+    - word: "ja-0366"
+      forms:
+        "mashou": "しりましょう"
+        "masen-ka": "しりませんか"
+      readings:
+        "mashou": "shirimashou"
+        "masen-ka": "shirimasenka"
+    - word: "ja-0367"
+      forms:
+        "mashou": "ならいましょう"
+        "masen-ka": "ならいませんか"
+      readings:
+        "mashou": "naraimashou"
+        "masen-ka": "naraimasenka"
+    - word: "ja-0368"
+      forms:
+        "mashou": "おしえましょう"
+        "masen-ka": "おしえませんか"
+      readings:
+        "mashou": "oshiemashou"
+        "masen-ka": "oshiemasenka"
+    - word: "ja-0369"
+      forms:
+        "mashou": "つかいましょう"
+        "masen-ka": "つかいませんか"
+      readings:
+        "mashou": "tsukaimashou"
+        "masen-ka": "tsukaimasenka"
+    - word: "ja-0370"
+      forms:
+        "mashou": "すわりましょう"
+        "masen-ka": "すわりませんか"
+      readings:
+        "mashou": "suwarimashou"
+        "masen-ka": "suwarimasenka"
+    - word: "ja-0371"
+      forms:
+        "mashou": "たちましょう"
+        "masen-ka": "たちませんか"
+      readings:
+        "mashou": "tachimashou"
+        "masen-ka": "tachimasenka"
+    - word: "ja-0372"
+      forms:
+        "mashou": "あけましょう"
+        "masen-ka": "あけませんか"
+      readings:
+        "mashou": "akemashou"
+        "masen-ka": "akemasenka"
+    - word: "ja-0373"
+      forms:
+        "mashou": "しめましょう"
+        "masen-ka": "しめませんか"
+      readings:
+        "mashou": "shimemashou"
+        "masen-ka": "shimemasenka"
+    - word: "ja-0374"
+      forms:
+        "mashou": "あそびましょう"
+        "masen-ka": "あそびませんか"
+      readings:
+        "mashou": "asobimashou"
+        "masen-ka": "asobimasenka"
+    - word: "ja-0375"
+      forms:
+        "mashou": "しましょう"
+        "masen-ka": "しませんか"
+      readings:
+        "mashou": "shimashou"
+        "masen-ka": "shimasenka"
+    - word: "ja-0949"
+      forms:
+        "mashou": "かぞえましょう"
+        "masen-ka": "かぞえませんか"
+      readings:
+        "mashou": "kazoemashou"
+        "masen-ka": "kazoemasenka"
+    - word: "ja-1226"
+      forms:
+        "mashou": "こまりましょう"
+        "masen-ka": "こまりませんか"
+      readings:
+        "mashou": "komarimashou"
+        "masen-ka": "komarimasenka"
+    - word: "ja-1227"
+      forms:
+        "mashou": "よびましょう"
+        "masen-ka": "よびませんか"
+      readings:
+        "mashou": "yobimashou"
+        "masen-ka": "yobimasenka"
+    - word: "ja-1228"
+      forms:
+        "mashou": "まよいましょう"
+        "masen-ka": "まよいませんか"
+      readings:
+        "mashou": "mayoimashou"
+        "masen-ka": "mayoimasenka"
+    - word: "ja-1236"
+      forms:
+        "mashou": "たすけりましょう"
+        "masen-ka": "たすけりませんか"
+      readings:
+        "mashou": "tasukerimashou"
+        "masen-ka": "tasukerimasenka"
+    - word: "ja-1237"
+      forms:
+        "mashou": "たすかりましょう"
+        "masen-ka": "たすかりませんか"
+      readings:
+        "mashou": "tasukarimashou"
+        "masen-ka": "tasukarimasenka"
+    - word: "ja-1240"
+      forms:
+        "mashou": "まもりましょう"
+        "masen-ka": "まもりませんか"
+      readings:
+        "mashou": "mamorimashou"
+        "masen-ka": "mamorimasenka"
+    - word: "ja-0571"
+      forms:
+        "mashou": "あびましょう"
+        "masen-ka": "あびませんか"
+      readings:
+        "mashou": "abimashou"
+        "masen-ka": "abimasenka"
+    - word: "ja-0572"
+      forms:
+        "mashou": "はしりましょう"
+        "masen-ka": "はしりませんか"
+      readings:
+        "mashou": "hashirimashou"
+        "masen-ka": "hashirimasenka"
+    - word: "ja-0573"
+      forms:
+        "mashou": "とびましょう"
+        "masen-ka": "とびませんか"
+      readings:
+        "mashou": "tobimashou"
+        "masen-ka": "tobimasenka"
+    - word: "ja-0574"
+      forms:
+        "mashou": "おどりましょう"
+        "masen-ka": "おどりませんか"
+      readings:
+        "mashou": "odorimashou"
+        "masen-ka": "odorimasenka"
+    - word: "ja-0575"
+      forms:
+        "mashou": "うたいましょう"
+        "masen-ka": "うたいませんか"
+      readings:
+        "mashou": "utaimashou"
+        "masen-ka": "utaimasenka"
+    - word: "ja-0576"
+      forms:
+        "mashou": "かりましょう"
+        "masen-ka": "かりませんか"
+      readings:
+        "mashou": "karimashou"
+        "masen-ka": "karimasenka"
+    - word: "ja-0577"
+      forms:
+        "mashou": "かえしましょう"
+        "masen-ka": "かえしませんか"
+      readings:
+        "mashou": "kaeshimashou"
+        "masen-ka": "kaeshimasenka"
+    - word: "ja-0578"
+      forms:
+        "mashou": "わすれましょう"
+        "masen-ka": "わすれませんか"
+      readings:
+        "mashou": "wasuremashou"
+        "masen-ka": "wasuremasenka"
+    - word: "ja-0579"
+      forms:
+        "mashou": "おぼえましょう"
+        "masen-ka": "おぼえませんか"
+      readings:
+        "mashou": "oboemashou"
+        "masen-ka": "oboemasenka"
+    - word: "ja-0580"
+      forms:
+        "mashou": "てつだいましょう"
+        "masen-ka": "てつだいませんか"
+      readings:
+        "mashou": "tetsudaimashou"
+        "masen-ka": "tetsudaimasenka"
+    - word: "ja-0581"
+      forms:
+        "mashou": "ひろいましょう"
+        "masen-ka": "ひろいませんか"
+      readings:
+        "mashou": "hiroimashou"
+        "masen-ka": "hiroimasenka"
+    - word: "ja-0582"
+      forms:
+        "mashou": "すてましょう"
+        "masen-ka": "すてませんか"
+      readings:
+        "mashou": "sutemashou"
+        "masen-ka": "sutemasenka"
+    - word: "ja-0583"
+      forms:
+        "mashou": "なくしましょう"
+        "masen-ka": "なくしませんか"
+      readings:
+        "mashou": "nakushimashou"
+        "masen-ka": "nakushimasenka"
+    - word: "ja-0584"
+      forms:
+        "mashou": "のぼりましょう"
+        "masen-ka": "のぼりませんか"
+      readings:
+        "mashou": "noborimashou"
+        "masen-ka": "noborimasenka"
+    - word: "ja-0585"
+      forms:
+        "mashou": "そうじしましょう"
+        "masen-ka": "そうじしませんか"
+      readings:
+        "mashou": "soujishimashou"
+        "masen-ka": "soujishimasenka"
+    - word: "ja-0586"
+      forms:
+        "mashou": "りょうりしましょう"
+        "masen-ka": "りょうりしませんか"
+      readings:
+        "mashou": "ryourishimashou"
+        "masen-ka": "ryourishimasenka"
+    - word: "ja-0587"
+      forms:
+        "mashou": "でかけましょう"
+        "masen-ka": "でかけませんか"
+      readings:
+        "mashou": "dekakemashou"
+        "masen-ka": "dekakemasenka"
+    - word: "ja-0588"
+      forms:
+        "mashou": "もどりましょう"
+        "masen-ka": "もどりませんか"
+      readings:
+        "mashou": "modorimashou"
+        "masen-ka": "modorimasenka"
+    - word: "ja-0589"
+      forms:
+        "mashou": "とまりましょう"
+        "masen-ka": "とまりませんか"
+      readings:
+        "mashou": "tomarimashou"
+        "masen-ka": "tomarimasenka"
+    - word: "ja-0590"
+      forms:
+        "mashou": "さがしましょう"
+        "masen-ka": "さがしませんか"
+      readings:
+        "mashou": "sagashimashou"
+        "masen-ka": "sagashimasenka"
+    - word: "ja-0591"
+      forms:
+        "mashou": "みせりましょう"
+        "masen-ka": "みせりませんか"
+      readings:
+        "mashou": "miserimashou"
+        "masen-ka": "miserimasenka"
+    - word: "ja-0592"
+      forms:
+        "mashou": "いれましょう"
+        "masen-ka": "いれませんか"
+      readings:
+        "mashou": "iremashou"
+        "masen-ka": "iremasenka"
+    - word: "ja-0593"
+      forms:
+        "mashou": "わらいましょう"
+        "masen-ka": "わらいませんか"
+      readings:
+        "mashou": "waraimashou"
+        "masen-ka": "waraimasenka"
+    - word: "ja-0594"
+      forms:
+        "mashou": "おこりましょう"
+        "masen-ka": "おこりませんか"
+      readings:
+        "mashou": "okorimashou"
+        "masen-ka": "okorimasenka"
+    - word: "ja-0595"
+      forms:
+        "mashou": "やめましょう"
+        "masen-ka": "やめませんか"
+      readings:
+        "mashou": "yamemashou"
+        "masen-ka": "yamemasenka"
+    - word: "ja-0596"
+      forms:
+        "mashou": "はじめましょう"
+        "masen-ka": "はじめませんか"
+      readings:
+        "mashou": "hajimemashou"
+        "masen-ka": "hajimemasenka"
+    - word: "ja-0597"
+      forms:
+        "mashou": "ひっこしましょう"
+        "masen-ka": "ひっこしませんか"
+      readings:
+        "mashou": "hikkoshimashou"
+        "masen-ka": "hikkoshimasenka"
+    - word: "ja-0598"
+      forms:
+        "mashou": "あげましょう"
+        "masen-ka": "あげませんか"
+      readings:
+        "mashou": "agemashou"
+        "masen-ka": "agemasenka"
+    - word: "ja-0599"
+      forms:
+        "mashou": "もらいましょう"
+        "masen-ka": "もらいませんか"
+      readings:
+        "mashou": "moraimashou"
+        "masen-ka": "moraimasenka"
+    - word: "ja-0600"
+      forms:
+        "mashou": "さけびましょう"
+        "masen-ka": "さけびませんか"
+      readings:
+        "mashou": "sakebimashou"
+        "masen-ka": "sakebimasenka"
+    - word: "ja-0516"
+      forms:
+        "mashou": "おわりましょう"
+        "masen-ka": "おわりませんか"
+      readings:
+        "mashou": "owarimashou"
+        "masen-ka": "owarimasenka"
+    - word: "ja-0711"
+      forms:
+        "mashou": "つとめましょう"
+        "masen-ka": "つとめませんか"
+      readings:
+        "mashou": "tsutomemashou"
+        "masen-ka": "tsutomemasenka"
+    - "word": "ja-1334"
+      "forms":
+        "mashou": "きがえましょう"
+        "masen-ka": "きがえませんか"
+      "readings":
+        "mashou": "kigaemashou"
+        "masen-ka": "kigaemasenka"
+    - "word": "ja-1335"
+      "forms":
+        "mashou": "はきましょう"
+        "masen-ka": "はきませんか"
+      "readings":
+        "mashou": "hakimashou"
+        "masen-ka": "hakimasenka"
+    - "word": "ja-1336"
+      "forms":
+        "mashou": "かぶりましょう"
+        "masen-ka": "かぶりませんか"
+      "readings":
+        "mashou": "kaburimashou"
+        "masen-ka": "kaburimasenka"
+    - "word": "ja-1341"
+      "forms":
+        "mashou": "つかれましょう"
+        "masen-ka": "つかれませんか"
+      "readings":
+        "mashou": "tsukaremashou"
+        "masen-ka": "tsukaremasenka"
+    - "word": "ja-1348"
+      "forms":
+        "mashou": "だしましょう"
+        "masen-ka": "だしませんか"
+      "readings":
+        "mashou": "dashimashou"
+        "masen-ka": "dashimasenka"
+    - "word": "ja-1349"
+      "forms":
+        "mashou": "わかしましょう"
+        "masen-ka": "わかしませんか"
+      "readings":
+        "mashou": "wakashimashou"
+        "masen-ka": "wakashimasenka"
+    - "word": "ja-1350"
+      "forms":
+        "mashou": "ほしましょう"
+        "masen-ka": "ほしませんか"
+      "readings":
+        "mashou": "hoshimashou"
+        "masen-ka": "hoshimasenka"
+    - "word": "ja-1351"
+      "forms":
+        "mashou": "かたづけましょう"
+        "masen-ka": "かたづけませんか"
+      "readings":
+        "mashou": "katazukemashou"
+        "masen-ka": "katazukemasenka"
+    - "word": "ja-1352"
+      "forms":
+        "mashou": "たたみましょう"
+        "masen-ka": "たたみませんか"
+      "readings":
+        "mashou": "tatamimashou"
+        "masen-ka": "tatamimasenka"
+    - "word": "ja-1353"
+      "forms":
+        "mashou": "ぬぎましょう"
+        "masen-ka": "ぬぎませんか"
+      "readings":
+        "mashou": "nugimashou"
+        "masen-ka": "nugimasenka"
+    - "word": "ja-1354"
+      "forms":
+        "mashou": "まにあいましょう"
+        "masen-ka": "まにあいませんか"
+      "readings":
+        "mashou": "maniaimashou"
+        "masen-ka": "maniaimasenka"
+    - "word": "ja-1364"
+      "forms":
+        "mashou": "かわきましょう"
+        "masen-ka": "かわきませんか"
+      "readings":
+        "mashou": "kawakimashou"
+        "masen-ka": "kawakimasenka"
+    - "word": "ja-1368"
+      "forms":
+        "mashou": "いそぎましょう"
+        "masen-ka": "いそぎませんか"
+      "readings":
+        "mashou": "isogimashou"
+        "masen-ka": "isogimasenka"
+    - "word": "ja-1718"
+      "forms":
+        "mashou": "うりましょう"
+        "masen-ka": "うりませんか"
+      "readings":
+        "mashou": "urimashou"
+        "masen-ka": "urimasenka"
+    - "word": "ja-1719"
+      "forms":
+        "mashou": "はらいましょう"
+        "masen-ka": "はらいませんか"
+      "readings":
+        "mashou": "haraimashou"
+        "masen-ka": "haraimasenka"
+    - "word": "ja-1720"
+      "forms":
+        "mashou": "まけましょう"
+        "masen-ka": "まけませんか"
+      "readings":
+        "mashou": "makemashou"
+        "masen-ka": "makemasenka"
+    - "word": "ja-1721"
+      "forms":
+        "mashou": "えらびましょう"
+        "masen-ka": "えらびませんか"
+      "readings":
+        "mashou": "erabimashou"
+        "masen-ka": "erabimasenka"
+    - "word": "ja-1758"
+      "forms":
+        "mashou": "たのみましょう"
+        "masen-ka": "たのみませんか"
+      "readings":
+        "mashou": "tanomimashou"
+        "masen-ka": "tanomimasenka"
+    - "word": "ja-1759"
+      "forms":
+        "mashou": "おごりましょう"
+        "masen-ka": "おごりませんか"
+      "readings":
+        "mashou": "ogorimashou"
+        "masen-ka": "ogorimasenka"
+    - "word": "ja-1790"
+      "forms":
+        "mashou": "いためましょう"
+        "masen-ka": "いためませんか"
+      "readings":
+        "mashou": "itamemashou"
+        "masen-ka": "itamemasenka"
+    - "word": "ja-1791"
+      "forms":
+        "mashou": "まぜましょう"
+        "masen-ka": "まぜませんか"
+      "readings":
+        "mashou": "mazemashou"
+        "masen-ka": "mazemasenka"
+    - "word": "ja-1792"
+      "forms":
+        "mashou": "ゆでましょう"
+        "masen-ka": "ゆでませんか"
+      "readings":
+        "mashou": "yudemashou"
+        "masen-ka": "yudemasenka"
+    - "word": "ja-1793"
+      "forms":
+        "mashou": "にましょう"
+        "masen-ka": "にませんか"
+      "readings":
+        "mashou": "nimashou"
+        "masen-ka": "nimasenka"
+    - "word": "ja-1794"
+      "forms":
+        "mashou": "やきましょう"
+        "masen-ka": "やきませんか"
+      "readings":
+        "mashou": "yakimashou"
+        "masen-ka": "yakimasenka"
+    - "word": "ja-1799"
+      "forms":
+        "mashou": "ひやしましょう"
+        "masen-ka": "ひやしませんか"
+      "readings":
+        "mashou": "hiyashimashou"
+        "masen-ka": "hiyashimasenka"
+    - "word": "ja-1800"
+      "forms":
+        "mashou": "あたためましょう"
+        "masen-ka": "あたためませんか"
+      "readings":
+        "mashou": "atatamemashou"
+        "masen-ka": "atatamemasenka"
+    - "word": "ja-1801"
+      "forms":
+        "mashou": "きざみましょう"
+        "masen-ka": "きざみませんか"
+      "readings":
+        "mashou": "kizamimashou"
+        "masen-ka": "kizamimasenka"
+    - "word": "ja-1802"
+      "forms":
+        "mashou": "むきましょう"
+        "masen-ka": "むきませんか"
+      "readings":
+        "mashou": "mukimashou"
+        "masen-ka": "mukimasenka"
+    - "word": "ja-1803"
+      "forms":
+        "mashou": "つつみましょう"
+        "masen-ka": "つつみませんか"
+      "readings":
+        "mashou": "tsutsumimashou"
+        "masen-ka": "tsutsumimasenka"
+    - "word": "ja-1804"
+      "forms":
+        "mashou": "こげましょう"
+        "masen-ka": "こげませんか"
+      "readings":
+        "mashou": "kogemashou"
+        "masen-ka": "kogemasenka"
+    - "word": "ja-1805"
+      "forms":
+        "mashou": "さましましょう"
+        "masen-ka": "さましませんか"
+      "readings":
+        "mashou": "samashimashou"
+        "masen-ka": "samashimasenka"
+    - "word": "ja-1850"
+      "forms":
+        "mashou": "べんきょうしましょう"
+        "masen-ka": "べんきょうしませんか"
+      "readings":
+        "mashou": "benkyoushimashou"
+        "masen-ka": "benkyoushimasenka"
+    - "word": "ja-1861"
+      "forms":
+        "mashou": "おくれましょう"
+        "masen-ka": "おくれませんか"
+      "readings":
+        "mashou": "okuremashou"
+        "masen-ka": "okuremasenka"
+    - "word": "ja-1862"
+      "forms":
+        "mashou": "まなびましょう"
+        "masen-ka": "まなびませんか"
+      "readings":
+        "mashou": "manabimashou"
+        "masen-ka": "manabimasenka"
+    - "word": "ja-1863"
+      "forms":
+        "mashou": "つづけましょう"
+        "masen-ka": "つづけませんか"
+      "readings":
+        "mashou": "tsuzukemashou"
+        "masen-ka": "tsuzukemasenka"
+    - "word": "ja-1864"
+      "forms":
+        "mashou": "かんがえましょう"
+        "masen-ka": "かんがえませんか"
+      "readings":
+        "mashou": "kangaemashou"
+        "masen-ka": "kangaemasenka"
+    - "word": "ja-1865"
+      "forms":
+        "mashou": "こたえましょう"
+        "masen-ka": "こたえませんか"
+      "readings":
+        "mashou": "kotaemashou"
+        "masen-ka": "kotaemasenka"
+    - "word": "ja-1892"
+      "forms":
+        "mashou": "およぎましょう"
+        "masen-ka": "およぎませんか"
+      "readings":
+        "mashou": "oyogimashou"
+        "masen-ka": "oyogimasenka"
+    - "word": "ja-1893"
+      "forms":
+        "mashou": "とりましょう"
+        "masen-ka": "とりませんか"
+      "readings":
+        "mashou": "torimashou"
+        "masen-ka": "torimasenka"
+    - "word": "ja-1896"
+      "forms":
+        "mashou": "えがきましょう"
+        "masen-ka": "えがきませんか"
+      "readings":
+        "mashou": "egakimashou"
+        "masen-ka": "egakimasenka"
+    - "word": "ja-1900"
+      "forms":
+        "mashou": "ぬいましょう"
+        "masen-ka": "ぬいませんか"
+      "readings":
+        "mashou": "nuimashou"
+        "masen-ka": "nuimasenka"
+    - "word": "ja-1901"
+      "forms":
+        "mashou": "あみましょう"
+        "masen-ka": "あみませんか"
+      "readings":
+        "mashou": "amimashou"
+        "masen-ka": "amimasenka"
+    - "word": "ja-1907"
+      "forms":
+        "mashou": "ほめましょう"
+        "masen-ka": "ほめませんか"
+      "readings":
+        "mashou": "homemashou"
+        "masen-ka": "homemasenka"
+    - "word": "ja-1910"
+      "forms":
+        "mashou": "かちましょう"
+        "masen-ka": "かちませんか"
+      "readings":
+        "mashou": "kachimashou"
+        "masen-ka": "kachimasenka"
+    - "word": "ja-1933"
+      "forms":
+        "mashou": "かなでましょう"
+        "masen-ka": "かなでませんか"
+      "readings":
+        "mashou": "kanademashou"
+        "masen-ka": "kanademasenka"
+    - "word": "ja-1934"
+      "forms":
+        "mashou": "ならしましょう"
+        "masen-ka": "ならしませんか"
+      "readings":
+        "mashou": "narashimashou"
+        "masen-ka": "narashimasenka"
+    - "word": "ja-1935"
+      "forms":
+        "mashou": "ひびきましょう"
+        "masen-ka": "ひびきませんか"
+      "readings":
+        "mashou": "hibikimashou"
+        "masen-ka": "hibikimasenka"
+    - "word": "ja-1939"
+      "forms":
+        "mashou": "たたきましょう"
+        "masen-ka": "たたきませんか"
+      "readings":
+        "mashou": "tatakimashou"
+        "masen-ka": "tatakimasenka"
+    - "word": "ja-1940"
+      "forms":
+        "mashou": "きこえましょう"
+        "masen-ka": "きこえませんか"
+      "readings":
+        "mashou": "kikoemashou"
+        "masen-ka": "kikoemasenka"
+    - "word": "ja-1941"
+      "forms":
+        "mashou": "ひきましょう"
+        "masen-ka": "ひきませんか"
+      "readings":
+        "mashou": "hikimashou"
+        "masen-ka": "hikimasenka"
+    - word: "ja-1539"
+      forms:
+        "mashou": "にあいましょう"
+        "masen-ka": "にあいませんか"
+      readings:
+        "mashou": "niaimashou"
+        "masen-ka": "niaimasenka"
+    - word: "ja-1542"
+      forms:
+        "mashou": "きましょう"
+        "masen-ka": "きませんか"
+      readings:
+        "mashou": "kimashou"
+        "masen-ka": "kimasenka"
+    - word: "ja-1996"
+      forms:
+        "mashou": "なげましょう"
+        "masen-ka": "なげませんか"
+      readings:
+        "mashou": "nagemashou"
+        "masen-ka": "nagemasenka"
+    - word: "ja-1997"
+      forms:
+        "mashou": "うちましょう"
+        "masen-ka": "うちませんか"
+      readings:
+        "mashou": "uchimashou"
+        "masen-ka": "uchimasenka"
+    - word: "ja-1998"
+      forms:
+        "mashou": "けりましょう"
+        "masen-ka": "けりませんか"
+      readings:
+        "mashou": "kerimashou"
+        "masen-ka": "kerimasenka"
+    - word: "ja-1999"
+      forms:
+        "mashou": "おいかけましょう"
+        "masen-ka": "おいかけませんか"
+      readings:
+        "mashou": "oikakemashou"
+        "masen-ka": "oikakemasenka"
+    - word: "ja-2000"
+      forms:
+        "mashou": "あきらめましょう"
+        "masen-ka": "あきらめませんか"
+      readings:
+        "mashou": "akiramemashou"
+        "masen-ka": "akiramemasenka"
+    - word: "ja-2001"
+      forms:
+        "mashou": "きたえましょう"
+        "masen-ka": "きたえませんか"
+      readings:
+        "mashou": "kitaemashou"
+        "masen-ka": "kitaemasenka"
+    - word: "ja-2002"
+      forms:
+        "mashou": "ねらいましょう"
+        "masen-ka": "ねらいませんか"
+      readings:
+        "mashou": "neraimashou"
+        "masen-ka": "neraimasenka"
+    - word: "ja-2049"
+      forms:
+        "mashou": "うつりましょう"
+        "masen-ka": "うつりませんか"
+      readings:
+        "mashou": "utsurimashou"
+        "masen-ka": "utsurimasenka"
+    - word: "ja-2050"
+      forms:
+        "mashou": "なおりましょう"
+        "masen-ka": "なおりませんか"
+      readings:
+        "mashou": "naorimashou"
+        "masen-ka": "naorimasenka"
+    - word: "ja-2051"
+      forms:
+        "mashou": "なおしましょう"
+        "masen-ka": "なおしませんか"
+      readings:
+        "mashou": "naoshimashou"
+        "masen-ka": "naoshimasenka"
+    - word: "ja-2052"
+      forms:
+        "mashou": "たおれましょう"
+        "masen-ka": "たおれませんか"
+      readings:
+        "mashou": "taoremashou"
+        "masen-ka": "taoremasenka"
+    - word: "ja-2053"
+      forms:
+        "mashou": "はれましょう"
+        "masen-ka": "はれませんか"
+      readings:
+        "mashou": "haremashou"
+        "masen-ka": "haremasenka"
+    - word: "ja-2054"
+      forms:
+        "mashou": "しびれましょう"
+        "masen-ka": "しびれませんか"
+      readings:
+        "mashou": "shibiremashou"
+        "masen-ka": "shibiremasenka"
+    - word: "ja-2115"
+      forms:
+        "mashou": "みがきましょう"
+        "masen-ka": "みがきませんか"
+      readings:
+        "mashou": "migakimashou"
+        "masen-ka": "migakimasenka"
+    - word: "ja-2116"
+      forms:
+        "mashou": "こすりましょう"
+        "masen-ka": "こすりませんか"
+      readings:
+        "mashou": "kosurimashou"
+        "masen-ka": "kosurimasenka"
+    - word: "ja-2117"
+      forms:
+        "mashou": "すすぎましょう"
+        "masen-ka": "すすぎませんか"
+      readings:
+        "mashou": "susugimashou"
+        "masen-ka": "susugimasenka"
+    - word: "ja-2118"
+      forms:
+        "mashou": "しぼりましょう"
+        "masen-ka": "しぼりませんか"
+      readings:
+        "mashou": "shiborimashou"
+        "masen-ka": "shiborimasenka"
+    - word: "ja-2119"
+      forms:
+        "mashou": "かわかしましょう"
+        "masen-ka": "かわかしませんか"
+      readings:
+        "mashou": "kawakashimashou"
+        "masen-ka": "kawakashimasenka"
+    - word: "ja-2120"
+      forms:
+        "mashou": "しまいましょう"
+        "masen-ka": "しまいませんか"
+      readings:
+        "mashou": "shimaimashou"
+        "masen-ka": "shimaimasenka"
+    - word: "ja-2121"
+      forms:
+        "mashou": "そろえましょう"
+        "masen-ka": "そろえませんか"
+      readings:
+        "mashou": "soroemashou"
+        "masen-ka": "soroemasenka"
+    - word: "ja-2122"
+      forms:
+        "mashou": "かざりましょう"
+        "masen-ka": "かざりませんか"
+      readings:
+        "mashou": "kazarimashou"
+        "masen-ka": "kazarimasenka"
+    - word: "ja-2123"
+      forms:
+        "mashou": "とりかえましょう"
+        "masen-ka": "とりかえませんか"
+      readings:
+        "mashou": "torikaemashou"
+        "masen-ka": "torikaemasenka"
+    - word: "ja-2124"
+      forms:
+        "mashou": "つめましょう"
+        "masen-ka": "つめませんか"
+      readings:
+        "mashou": "tsumemashou"
+        "masen-ka": "tsumemasenka"
+    - word: "ja-2125"
+      forms:
+        "mashou": "くばりましょう"
+        "masen-ka": "くばりませんか"
+      readings:
+        "mashou": "kubarimashou"
+        "masen-ka": "kubarimasenka"
+    - word: "ja-2126"
+      forms:
+        "mashou": "こぼしましょう"
+        "masen-ka": "こぼしませんか"
+      readings:
+        "mashou": "koboshimashou"
+        "masen-ka": "koboshimasenka"
+    - word: "ja-2127"
+      forms:
+        "mashou": "よごれましょう"
+        "masen-ka": "よごれませんか"
+      readings:
+        "mashou": "yogoremashou"
+        "masen-ka": "yogoremasenka"
+    - word: "ja-2128"
+      forms:
+        "mashou": "よごしましょう"
+        "masen-ka": "よごしませんか"
+      readings:
+        "mashou": "yogoshimashou"
+        "masen-ka": "yogoshimasenka"
+    - word: "ja-2129"
+      forms:
+        "mashou": "ちらかしましょう"
+        "masen-ka": "ちらかしませんか"
+      readings:
+        "mashou": "chirakashimashou"
+        "masen-ka": "chirakashimasenka"
+    - word: "ja-2164"
+      forms:
+        "mashou": "やせましょう"
+        "masen-ka": "やせませんか"
+      readings:
+        "mashou": "yasemashou"
+        "masen-ka": "yasemasenka"
+    - word: "ja-2165"
+      forms:
+        "mashou": "ふとりましょう"
+        "masen-ka": "ふとりませんか"
+      readings:
+        "mashou": "futorimashou"
+        "masen-ka": "futorimasenka"
+    - word: "ja-2217"
+      forms:
+        "mashou": "かわりましょう"
+        "masen-ka": "かわりませんか"
+      readings:
+        "mashou": "kawarimashou"
+        "masen-ka": "kawarimasenka"
+    - word: "ja-2218"
+      forms:
+        "mashou": "きまりましょう"
+        "masen-ka": "きまりませんか"
+      readings:
+        "mashou": "kimarimashou"
+        "masen-ka": "kimarimasenka"
+    - word: "ja-2219"
+      forms:
+        "mashou": "きめましょう"
+        "masen-ka": "きめませんか"
+      readings:
+        "mashou": "kimemashou"
+        "masen-ka": "kimemasenka"
+    - word: "ja-2220"
+      forms:
+        "mashou": "なりましょう"
+        "masen-ka": "なりませんか"
+      readings:
+        "mashou": "narimashou"
+        "masen-ka": "narimasenka"
+    - word: "ja-2221"
+      forms:
+        "mashou": "なれましょう"
+        "masen-ka": "なれませんか"
+      readings:
+        "mashou": "naremashou"
+        "masen-ka": "naremasenka"
+    - word: "ja-2222"
+      forms:
+        "mashou": "つきましょう"
+        "masen-ka": "つきませんか"
+      readings:
+        "mashou": "tsukimashou"
+        "masen-ka": "tsukimasenka"
+    - word: "ja-2223"
+      forms:
+        "mashou": "つけましょう"
+        "masen-ka": "つけませんか"
+      readings:
+        "mashou": "tsukemashou"
+        "masen-ka": "tsukemasenka"
+    - word: "ja-2224"
+      forms:
+        "mashou": "けしましょう"
+        "masen-ka": "けしませんか"
+      readings:
+        "mashou": "keshimashou"
+        "masen-ka": "keshimasenka"
+    - word: "ja-2225"
+      forms:
+        "mashou": "きえましょう"
+        "masen-ka": "きえませんか"
+      readings:
+        "mashou": "kiemashou"
+        "masen-ka": "kiemasenka"
+    - word: "ja-2226"
+      forms:
+        "mashou": "あきましょう"
+        "masen-ka": "あきませんか"
+      readings:
+        "mashou": "akimashou"
+        "masen-ka": "akimasenka"
+    - word: "ja-2227"
+      forms:
+        "mashou": "しまりましょう"
+        "masen-ka": "しまりませんか"
+      readings:
+        "mashou": "shimarimashou"
+        "masen-ka": "shimarimasenka"
+    - word: "ja-2228"
+      forms:
+        "mashou": "つかまえましょう"
+        "masen-ka": "つかまえませんか"
+      readings:
+        "mashou": "tsukamaemashou"
+        "masen-ka": "tsukamaemasenka"
+    - word: "ja-2229"
+      forms:
+        "mashou": "つかみましょう"
+        "masen-ka": "つかみませんか"
+      readings:
+        "mashou": "tsukamimashou"
+        "masen-ka": "tsukamimasenka"
+    - word: "ja-2230"
+      forms:
+        "mashou": "おしましょう"
+        "masen-ka": "おしませんか"
+      readings:
+        "mashou": "oshimashou"
+        "masen-ka": "oshimasenka"
+    - word: "ja-2231"
+      forms:
+        "mashou": "ひっぱりましょう"
+        "masen-ka": "ひっぱりませんか"
+      readings:
+        "mashou": "hipparimashou"
+        "masen-ka": "hipparimasenka"
+    - word: "ja-2232"
+      forms:
+        "mashou": "おとしましょう"
+        "masen-ka": "おとしませんか"
+      readings:
+        "mashou": "otoshimashou"
+        "masen-ka": "otoshimasenka"
+    - word: "ja-2233"
+      forms:
+        "mashou": "おちましょう"
+        "masen-ka": "おちませんか"
+      readings:
+        "mashou": "ochimashou"
+        "masen-ka": "ochimasenka"
+    - word: "ja-2234"
+      forms:
+        "mashou": "ひらきましょう"
+        "masen-ka": "ひらきませんか"
+      readings:
+        "mashou": "hirakimashou"
+        "masen-ka": "hirakimasenka"
+    - word: "ja-2235"
+      forms:
+        "mashou": "とじましょう"
+        "masen-ka": "とじませんか"
+      readings:
+        "mashou": "tojimashou"
+        "masen-ka": "tojimasenka"
+    - word: "ja-2236"
+      forms:
+        "mashou": "わたしましょう"
+        "masen-ka": "わたしませんか"
+      readings:
+        "mashou": "watashimashou"
+        "masen-ka": "watashimasenka"
+    - word: "ja-2237"
+      forms:
+        "mashou": "うけましょう"
+        "masen-ka": "うけませんか"
+      readings:
+        "mashou": "ukemashou"
+        "masen-ka": "ukemasenka"
+    - word: "ja-2238"
+      forms:
+        "mashou": "つたえましょう"
+        "masen-ka": "つたえませんか"
+      readings:
+        "mashou": "tsutaemashou"
+        "masen-ka": "tsutaemasenka"
+    - word: "ja-2239"
+      forms:
+        "mashou": "つたわりましょう"
+        "masen-ka": "つたわりませんか"
+      readings:
+        "mashou": "tsutawarimashou"
+        "masen-ka": "tsutawarimasenka"
+    - word: "ja-2240"
+      forms:
+        "mashou": "むかえましょう"
+        "masen-ka": "むかえませんか"
+      readings:
+        "mashou": "mukaemashou"
+        "masen-ka": "mukaemasenka"
+    - word: "ja-2241"
+      forms:
+        "mashou": "おくりましょう"
+        "masen-ka": "おくりませんか"
+      readings:
+        "mashou": "okurimashou"
+        "masen-ka": "okurimasenka"
+    - word: "ja-2242"
+      forms:
+        "mashou": "とどきましょう"
+        "masen-ka": "とどきませんか"
+      readings:
+        "mashou": "todokimashou"
+        "masen-ka": "todokimasenka"
+    - word: "ja-2243"
+      forms:
+        "mashou": "とどけましょう"
+        "masen-ka": "とどけませんか"
+      readings:
+        "mashou": "todokemashou"
+        "masen-ka": "todokemasenka"
+    - word: "ja-2244"
+      forms:
+        "mashou": "たずねましょう"
+        "masen-ka": "たずねませんか"
+      readings:
+        "mashou": "tazunemashou"
+        "masen-ka": "tazunemasenka"
+    - word: "ja-2245"
+      forms:
+        "mashou": "まちがいましょう"
+        "masen-ka": "まちがいませんか"
+      readings:
+        "mashou": "machigaimashou"
+        "masen-ka": "machigaimasenka"
+    - word: "ja-2246"
+      forms:
+        "mashou": "あやまりましょう"
+        "masen-ka": "あやまりませんか"
+      readings:
+        "mashou": "ayamarimashou"
+        "masen-ka": "ayamarimasenka"
+    - word: "ja-2247"
+      forms:
+        "mashou": "ゆるしましょう"
+        "masen-ka": "ゆるしませんか"
+      readings:
+        "mashou": "yurushimashou"
+        "masen-ka": "yurushimasenka"
+    - word: "ja-2248"
+      forms:
+        "mashou": "ことわりましょう"
+        "masen-ka": "ことわりませんか"
+      readings:
+        "mashou": "kotowarimashou"
+        "masen-ka": "kotowarimasenka"
+    - word: "ja-2249"
+      forms:
+        "mashou": "さそいましょう"
+        "masen-ka": "さそいませんか"
+      readings:
+        "mashou": "sasoimashou"
+        "masen-ka": "sasoimasenka"
+    - word: "ja-2250"
+      forms:
+        "mashou": "かよいましょう"
+        "masen-ka": "かよいませんか"
+      readings:
+        "mashou": "kayoimashou"
+        "masen-ka": "kayoimasenka"
+    - word: "ja-2251"
+      forms:
+        "mashou": "とおりましょう"
+        "masen-ka": "とおりませんか"
+      readings:
+        "mashou": "toorimashou"
+        "masen-ka": "toorimasenka"
+    - word: "ja-2252"
+      forms:
+        "mashou": "すぎましょう"
+        "masen-ka": "すぎませんか"
+      readings:
+        "mashou": "sugimashou"
+        "masen-ka": "sugimasenka"
+    - word: "ja-2253"
+      forms:
+        "mashou": "まわりましょう"
+        "masen-ka": "まわりませんか"
+      readings:
+        "mashou": "mawarimashou"
+        "masen-ka": "mawarimasenka"
+    - word: "ja-2254"
+      forms:
+        "mashou": "まわしましょう"
+        "masen-ka": "まわしませんか"
+      readings:
+        "mashou": "mawashimashou"
+        "masen-ka": "mawashimasenka"
+    - word: "ja-2255"
+      forms:
+        "mashou": "うごきましょう"
+        "masen-ka": "うごきませんか"
+      readings:
+        "mashou": "ugokimashou"
+        "masen-ka": "ugokimasenka"
+    - word: "ja-2256"
+      forms:
+        "mashou": "うごかしましょう"
+        "masen-ka": "うごかしませんか"
+      readings:
+        "mashou": "ugokashimashou"
+        "masen-ka": "ugokashimasenka"
+    - word: "ja-2257"
+      forms:
+        "mashou": "のこりましょう"
+        "masen-ka": "のこりませんか"
+      readings:
+        "mashou": "nokorimashou"
+        "masen-ka": "nokorimasenka"
+    - word: "ja-2258"
+      forms:
+        "mashou": "のこしましょう"
+        "masen-ka": "のこしませんか"
+      readings:
+        "mashou": "nokoshimashou"
+        "masen-ka": "nokoshimasenka"
+    - word: "ja-2259"
+      forms:
+        "mashou": "あつまりましょう"
+        "masen-ka": "あつまりませんか"
+      readings:
+        "mashou": "atsumarimashou"
+        "masen-ka": "atsumarimasenka"
+    - word: "ja-2260"
+      forms:
+        "mashou": "あつめましょう"
+        "masen-ka": "あつめませんか"
+      readings:
+        "mashou": "atsumemashou"
+        "masen-ka": "atsumemasenka"
+    - word: "ja-2261"
+      forms:
+        "mashou": "わけましょう"
+        "masen-ka": "わけませんか"
+      readings:
+        "mashou": "wakemashou"
+        "masen-ka": "wakemasenka"
+    - word: "ja-2262"
+      forms:
+        "mashou": "くらべましょう"
+        "masen-ka": "くらべませんか"
+      readings:
+        "mashou": "kurabemashou"
+        "masen-ka": "kurabemasenka"
+    - word: "ja-2263"
+      forms:
+        "mashou": "かくれましょう"
+        "masen-ka": "かくれませんか"
+      readings:
+        "mashou": "kakuremashou"
+        "masen-ka": "kakuremasenka"
+    - word: "ja-2264"
+      forms:
+        "mashou": "かくしましょう"
+        "masen-ka": "かくしませんか"
+      readings:
+        "mashou": "kakushimashou"
+        "masen-ka": "kakushimasenka"
+    - word: "ja-2265"
+      forms:
+        "mashou": "みつかりましょう"
+        "masen-ka": "みつかりませんか"
+      readings:
+        "mashou": "mitsukarimashou"
+        "masen-ka": "mitsukarimasenka"
+    - word: "ja-2266"
+      forms:
+        "mashou": "みつけましょう"
+        "masen-ka": "みつけませんか"
+      readings:
+        "mashou": "mitsukemashou"
+        "masen-ka": "mitsukemasenka"
+    - word: "ja-2267"
+      forms:
+        "mashou": "ふえましょう"
+        "masen-ka": "ふえませんか"
+      readings:
+        "mashou": "fuemashou"
+        "masen-ka": "fuemasenka"
+    - word: "ja-2268"
+      forms:
+        "mashou": "へりましょう"
+        "masen-ka": "へりませんか"
+      readings:
+        "mashou": "herimashou"
+        "masen-ka": "herimasenka"
+    - word: "ja-2269"
+      forms:
+        "mashou": "そだてましょう"
+        "masen-ka": "そだてませんか"
+      readings:
+        "mashou": "sodatemashou"
+        "masen-ka": "sodatemasenka"
+    - word: "ja-2270"
+      forms:
+        "mashou": "そだちましょう"
+        "masen-ka": "そだちませんか"
+      readings:
+        "mashou": "sodachimashou"
+        "masen-ka": "sodachimasenka"
+    - word: "ja-2271"
+      forms:
+        "mashou": "うまれましょう"
+        "masen-ka": "うまれませんか"
+      readings:
+        "mashou": "umaremashou"
+        "masen-ka": "umaremasenka"
+    - word: "ja-2272"
+      forms:
+        "mashou": "いきましょう"
+        "masen-ka": "いきませんか"
+      readings:
+        "mashou": "ikimashou"
+        "masen-ka": "ikimasenka"
+    - word: "ja-2273"
+      forms:
+        "mashou": "たのしみましょう"
+        "masen-ka": "たのしみませんか"
+      readings:
+        "mashou": "tanoshimimashou"
+        "masen-ka": "tanoshimimasenka"
+    - word: "ja-2274"
+      forms:
+        "mashou": "あたりましょう"
+        "masen-ka": "あたりませんか"
+      readings:
+        "mashou": "atarimashou"
+        "masen-ka": "atarimasenka"
+    - word: "ja-2275"
+      forms:
+        "mashou": "はじまりましょう"
+        "masen-ka": "はじまりませんか"
+      readings:
+        "mashou": "hajimarimashou"
+        "masen-ka": "hajimarimasenka"
+    - word: "ja-2276"
+      forms:
+        "mashou": "さわりましょう"
+        "masen-ka": "さわりませんか"
+      readings:
+        "mashou": "sawarimashou"
+        "masen-ka": "sawarimasenka"
+    - word: "ja-2320"
+      forms:
+        "mashou": "つながりましょう"
+        "masen-ka": "つながりませんか"
+      readings:
+        "mashou": "tsunagarimashou"
+        "masen-ka": "tsunagarimasenka"
+    - word: "ja-2321"
+      forms:
+        "mashou": "つなぎましょう"
+        "masen-ka": "つなぎませんか"
+      readings:
+        "mashou": "tsunagimashou"
+        "masen-ka": "tsunagimasenka"
+    - word: "ja-2322"
+      forms:
+        "mashou": "かけましょう"
+        "masen-ka": "かけませんか"
+      readings:
+        "mashou": "kakemashou"
+        "masen-ka": "kakemasenka"
+    - word: "ja-2323"
+      forms:
+        "mashou": "うけとりましょう"
+        "masen-ka": "うけとりませんか"
+      readings:
+        "mashou": "uketorimashou"
+        "masen-ka": "uketorimasenka"
+    - word: "ja-2364"
+      forms:
+        "mashou": "のりおくれましょう"
+        "masen-ka": "のりおくれませんか"
+      readings:
+        "mashou": "noriokuremashou"
+        "masen-ka": "noriokuremasenka"
+    - word: "ja-2365"
+      forms:
+        "mashou": "のりかえましょう"
+        "masen-ka": "のりかえませんか"
+      readings:
+        "mashou": "norikaemashou"
+        "masen-ka": "norikaemasenka"
+    - word: "ja-2407"
+      forms:
+        "mashou": "たちよりましょう"
+        "masen-ka": "たちよりませんか"
+      readings:
+        "mashou": "tachiyorimashou"
+        "masen-ka": "tachiyorimasenka"
+    - word: "ja-2470"
+      forms:
+        "mashou": "さきましょう"
+        "masen-ka": "さきませんか"
+      readings:
+        "mashou": "sakimashou"
+        "masen-ka": "sakimasenka"
+    - word: "ja-2471"
+      forms:
+        "mashou": "ちりましょう"
+        "masen-ka": "ちりませんか"
+      readings:
+        "mashou": "chirimashou"
+        "masen-ka": "chirimasenka"
+    - word: "ja-2472"
+      forms:
+        "mashou": "しげましょう"
+        "masen-ka": "しげませんか"
+      readings:
+        "mashou": "shigemashou"
+        "masen-ka": "shigemasenka"
+    - word: "ja-2473"
+      forms:
+        "mashou": "かれましょう"
+        "masen-ka": "かれませんか"
+      readings:
+        "mashou": "karemashou"
+        "masen-ka": "karemasenka"
+    - word: "ja-2600"
+      forms:
+        "mashou": "まかせましょう"
+        "masen-ka": "まかせませんか"
+      readings:
+        "mashou": "makasemashou"
+        "masen-ka": "makasemasenka"
+    - word: "ja-2601"
+      forms:
+        "mashou": "ひきうけましょう"
+        "masen-ka": "ひきうけませんか"
+      readings:
+        "mashou": "hikiukemashou"
+        "masen-ka": "hikiukemasenka"
+    - word: "ja-2602"
+      forms:
+        "mashou": "こなしましょう"
+        "masen-ka": "こなしませんか"
+      readings:
+        "mashou": "konashimashou"
+        "masen-ka": "konashimasenka"
+    - word: "ja-2603"
+      forms:
+        "mashou": "はげみましょう"
+        "masen-ka": "はげみませんか"
+      readings:
+        "mashou": "hagemimashou"
+        "masen-ka": "hagemimasenka"
+    - word: "ja-2604"
+      forms:
+        "mashou": "てがけましょう"
+        "masen-ka": "てがけませんか"
+      readings:
+        "mashou": "tegakemashou"
+        "masen-ka": "tegakemasenka"
+    - word: "ja-2605"
+      forms:
+        "mashou": "しめきりましょう"
+        "masen-ka": "しめきりませんか"
+      readings:
+        "mashou": "shimekirimashou"
+        "masen-ka": "shimekirimasenka"
+    - word: "ja-2606"
+      forms:
+        "mashou": "まにあわせましょう"
+        "masen-ka": "まにあわせませんか"
+      readings:
+        "mashou": "maniawasemashou"
+        "masen-ka": "maniawasemasenka"
+    - word: "ja-2716"
+      forms:
+        "mashou": "かたよりましょう"
+        "masen-ka": "かたよりませんか"
+      readings:
+        "mashou": "katayorimashou"
+        "masen-ka": "katayorimasenka"
+    - word: "ja-2768"
+      forms:
+        "mashou": "おどろきましょう"
+        "masen-ka": "おどろきませんか"
+      readings:
+        "mashou": "odorokimashou"
+        "masen-ka": "odorokimasenka"
+    - word: "ja-2769"
+      forms:
+        "mashou": "よろこびましょう"
+        "masen-ka": "よろこびませんか"
+      readings:
+        "mashou": "yorokobimashou"
+        "masen-ka": "yorokobimasenka"
+    - word: "ja-2770"
+      forms:
+        "mashou": "かなしみましょう"
+        "masen-ka": "かなしみませんか"
+      readings:
+        "mashou": "kanashimimashou"
+        "masen-ka": "kanashimimasenka"
+    - word: "ja-2771"
+      forms:
+        "mashou": "なやみましょう"
+        "masen-ka": "なやみませんか"
+      readings:
+        "mashou": "nayamimashou"
+        "masen-ka": "nayamimasenka"
+    - word: "ja-2772"
+      forms:
+        "mashou": "あわてましょう"
+        "masen-ka": "あわてませんか"
+      readings:
+        "mashou": "awatemashou"
+        "masen-ka": "awatemasenka"
+    - word: "ja-2773"
+      forms:
+        "mashou": "あせりましょう"
+        "masen-ka": "あせりませんか"
+      readings:
+        "mashou": "aserimashou"
+        "masen-ka": "aserimasenka"
+    - word: "ja-2774"
+      forms:
+        "mashou": "おちつきましょう"
+        "masen-ka": "おちつきませんか"
+      readings:
+        "mashou": "ochitsukimashou"
+        "masen-ka": "ochitsukimasenka"
+    - word: "ja-2794"
+      forms:
+        "mashou": "きらいましょう"
+        "masen-ka": "きらいませんか"
+      readings:
+        "mashou": "kiraimashou"
+        "masen-ka": "kiraimasenka"
+    - word: "ja-2795"
+      forms:
+        "mashou": "あいしましょう"
+        "masen-ka": "あいしませんか"
+      readings:
+        "mashou": "aishimashou"
+        "masen-ka": "aishimasenka"
+    - word: "ja-2796"
+      forms:
+        "mashou": "にくみましょう"
+        "masen-ka": "にくみませんか"
+      readings:
+        "mashou": "nikumimashou"
+        "masen-ka": "nikumimasenka"
+    - word: "ja-2797"
+      forms:
+        "mashou": "ねたみましょう"
+        "masen-ka": "ねたみませんか"
+      readings:
+        "mashou": "netamimashou"
+        "masen-ka": "netamimasenka"
+    - word: "ja-2798"
+      forms:
+        "mashou": "うらみましょう"
+        "masen-ka": "うらみませんか"
+      readings:
+        "mashou": "uramimashou"
+        "masen-ka": "uramimasenka"
+    - word: "ja-2799"
+      forms:
+        "mashou": "なつかしみましょう"
+        "masen-ka": "なつかしみませんか"
+      readings:
+        "mashou": "natsukashimimashou"
+        "masen-ka": "natsukashimimasenka"
+    - word: "ja-2800"
+      forms:
+        "mashou": "いやがりましょう"
+        "masen-ka": "いやがりませんか"
+      readings:
+        "mashou": "iyagarimashou"
+        "masen-ka": "iyagarimasenka"
+    - word: "ja-2801"
+      forms:
+        "mashou": "こらえましょう"
+        "masen-ka": "こらえませんか"
+      readings:
+        "mashou": "koraemashou"
+        "masen-ka": "koraemasenka"
+    - word: "ja-2803"
+      forms:
+        "mashou": "はずかしがりましょう"
+        "masen-ka": "はずかしがりませんか"
+      readings:
+        "mashou": "hazukashigarimashou"
+        "masen-ka": "hazukashigarimasenka"
+    - word: "ja-2806"
+      forms:
+        "mashou": "かんじましょう"
+        "masen-ka": "かんじませんか"
+      readings:
+        "mashou": "kanjimashou"
+        "masen-ka": "kanjimasenka"
+    - word: "ja-2812"
+      forms:
+        "mashou": "さびしがりましょう"
+        "masen-ka": "さびしがりませんか"
+      readings:
+        "mashou": "sabishigarimashou"
+        "masen-ka": "sabishigarimasenka"
+    - word: "ja-2876"
+      forms:
+        "mashou": "かたりましょう"
+        "masen-ka": "かたりませんか"
+      readings:
+        "mashou": "katarimashou"
+        "masen-ka": "katarimasenka"
+    - word: "ja-2877"
+      forms:
+        "mashou": "ひろまりましょう"
+        "masen-ka": "ひろまりませんか"
+      readings:
+        "mashou": "hiromarimashou"
+        "masen-ka": "hiromarimasenka"
+    - "word": "ja-2925"
+      "forms":
+        "mashou": "あずけましょう"
+        "masen-ka": "あずけませんか"
+      "readings":
+        "mashou": "azukemashou"
+        "masen-ka": "azukemasenka"
+    - "word": "ja-2926"
+      "forms":
+        "mashou": "あずかりましょう"
+        "masen-ka": "あずかりませんか"
+      "readings":
+        "mashou": "azukarimashou"
+        "masen-ka": "azukarimasenka"
+    - "word": "ja-2944"
+      "forms":
+        "mashou": "めぐりましょう"
+        "masen-ka": "めぐりませんか"
+      "readings":
+        "mashou": "megurimashou"
+        "masen-ka": "megurimasenka"
+    - "word": "ja-2945"
+      "forms":
+        "mashou": "おとずれましょう"
+        "masen-ka": "おとずれませんか"
+      "readings":
+        "mashou": "otozuremashou"
+        "masen-ka": "otozuremasenka"
+    - "word": "ja-2982"
+      "forms":
+        "mashou": "もうしこみましょう"
+        "masen-ka": "もうしこみませんか"
+      "readings":
+        "mashou": "moushikomimashou"
+        "masen-ka": "moushikomimasenka"
+    - "word": "ja-3062"
+      "forms":
+        "mashou": "とどけでましょう"
+        "masen-ka": "とどけでませんか"
+      "readings":
+        "mashou": "todokedemashou"
+        "masen-ka": "todokedemasenka"
+    - "word": "ja-3140"
+      "forms":
+        "mashou": "つくりだしましょう"
+        "masen-ka": "つくりだしませんか"
+      "readings":
+        "mashou": "tsukuridashimashou"
+        "masen-ka": "tsukuridashimasenka"
+    - "word": "ja-3195"
+      "forms":
+        "mashou": "めざしましょう"
+        "masen-ka": "めざしませんか"
+      "readings":
+        "mashou": "mezashimashou"
+        "masen-ka": "mezashimasenka"
+    - "word": "ja-3294"
+      "forms":
+        "mashou": "きをつかいましょう"
+        "masen-ka": "きをつかいませんか"
+      "readings":
+        "mashou": "kiotsukaimashou"
+        "masen-ka": "kiotsukaimasenka"
+    - "word": "ja-3309"
+      "forms":
+        "mashou": "ゆずりましょう"
+        "masen-ka": "ゆずりませんか"
+      "readings":
+        "mashou": "yuzurimashou"
+        "masen-ka": "yuzurimasenka"
+    - "word": "ja-3310"
+      "forms":
+        "mashou": "ゆずりあいましょう"
+        "masen-ka": "ゆずりあいませんか"
+      "readings":
+        "mashou": "yuzuriaimashou"
+        "masen-ka": "yuzuriaimasenka"
+    - "word": "ja-3311"
+      "forms":
+        "mashou": "ならびましょう"
+        "masen-ka": "ならびませんか"
+      "readings":
+        "mashou": "narabimashou"
+        "masen-ka": "narabimasenka"
+    - "word": "ja-3319"
+      "forms":
+        "mashou": "もてなしましょう"
+        "masen-ka": "もてなしませんか"
+      "readings":
+        "mashou": "motenashimashou"
+        "masen-ka": "motenashimasenka"
+    - "word": "ja-3320"
+      "forms":
+        "mashou": "まねきましょう"
+        "masen-ka": "まねきませんか"
+      "readings":
+        "mashou": "manekimashou"
+        "masen-ka": "manekimasenka"
+    - "word": "ja-3321"
+      "forms":
+        "mashou": "つつしみましょう"
+        "masen-ka": "つつしみませんか"
+      "readings":
+        "mashou": "tsutsushimimashou"
+        "masen-ka": "tsutsushimimasenka"
+    - "word": "ja-3322"
+      "forms":
+        "mashou": "いましめましょう"
+        "masen-ka": "いましめませんか"
+      "readings":
+        "mashou": "imashimemashou"
+        "masen-ka": "imashimemasenka"
+    - "word": "ja-3383"
+      "forms":
+        "mashou": "へらしましょう"
+        "masen-ka": "へらしませんか"
+      "readings":
+        "mashou": "herashimashou"
+        "masen-ka": "herashimasenka"
+    - "word": "ja-3384"
+      "forms":
+        "mashou": "ふやしましょう"
+        "masen-ka": "ふやしませんか"
+      "readings":
+        "mashou": "fuyashimashou"
+        "masen-ka": "fuyashimasenka"
+    - "word": "ja-3385"
+      "forms":
+        "mashou": "こわしましょう"
+        "masen-ka": "こわしませんか"
+      "readings":
+        "mashou": "kowashimashou"
+        "masen-ka": "kowashimasenka"
+    - "word": "ja-3386"
+      "forms":
+        "mashou": "こわれましょう"
+        "masen-ka": "こわれませんか"
+      "readings":
+        "mashou": "kowaremashou"
+        "masen-ka": "kowaremasenka"
+    - "word": "ja-3389"
+      "forms":
+        "mashou": "たもちましょう"
+        "masen-ka": "たもちませんか"
+      "readings":
+        "mashou": "tamochimashou"
+        "masen-ka": "tamochimasenka"
+    - "word": "ja-3390"
+      "forms":
+        "mashou": "さけましょう"
+        "masen-ka": "さけませんか"
+      "readings":
+        "mashou": "sakemashou"
+        "masen-ka": "sakemasenka"
+    - "word": "ja-3434"
+      "forms":
+        "mashou": "えんじましょう"
+        "masen-ka": "えんじませんか"
+      "readings":
+        "mashou": "enjimashou"
+        "masen-ka": "enjimasenka"
+    - "word": "ja-3452"
+      "forms":
+        "mashou": "なきましょう"
+        "masen-ka": "なきませんか"
+      "readings":
+        "mashou": "nakimashou"
+        "masen-ka": "nakimasenka"
+    - "word": "ja-3564"
+      "forms":
+        "mashou": "たたかいましょう"
+        "masen-ka": "たたかいませんか"
+      "readings":
+        "mashou": "tatakaimashou"
+        "masen-ka": "tatakaimasenka"
+    - "word": "ja-3568"
+      "forms":
+        "mashou": "ほろびましょう"
+        "masen-ka": "ほろびませんか"
+      "readings":
+        "mashou": "horobimashou"
+        "masen-ka": "horobimasenka"
+    - "word": "ja-3569"
+      "forms":
+        "mashou": "ほろぼしましょう"
+        "masen-ka": "ほろぼしませんか"
+      "readings":
+        "mashou": "horoboshimashou"
+        "masen-ka": "horoboshimasenka"
+    - "word": "ja-3571"
+      "forms":
+        "mashou": "さかえましょう"
+        "masen-ka": "さかえませんか"
+      "readings":
+        "mashou": "sakaemashou"
+        "masen-ka": "sakaemasenka"
+    - "word": "ja-3611"
+      "forms":
+        "mashou": "いのりましょう"
+        "masen-ka": "いのりませんか"
+      "readings":
+        "mashou": "inorimashou"
+        "masen-ka": "inorimasenka"
+    - "word": "ja-3612"
+      "forms":
+        "mashou": "おがみましょう"
+        "masen-ka": "おがみませんか"
+      "readings":
+        "mashou": "ogamimashou"
+        "masen-ka": "ogamimasenka"
+    - "word": "ja-3690"
+      "forms":
+        "mashou": "いわいましょう"
+        "masen-ka": "いわいませんか"
+      "readings":
+        "mashou": "iwaimashou"
+        "masen-ka": "iwaimasenka"
+    - "word": "ja-3691"
+      "forms":
+        "mashou": "にぎわいましょう"
+        "masen-ka": "にぎわいませんか"
+      "readings":
+        "mashou": "nigiwaimashou"
+        "masen-ka": "nigiwaimasenka"
+    - "word": "ja-3779"
+      "forms":
+        "mashou": "うちとけましょう"
+        "masen-ka": "うちとけませんか"
+      "readings":
+        "mashou": "uchitokemashou"
+        "masen-ka": "uchitokemasenka"
+    - "word": "ja-3780"
+      "forms":
+        "mashou": "しんじあいましょう"
+        "masen-ka": "しんじあいませんか"
+      "readings":
+        "mashou": "shinjiaimashou"
+        "masen-ka": "shinjiaimasenka"
+    - "word": "ja-3781"
+      "forms":
+        "mashou": "たよりましょう"
+        "masen-ka": "たよりませんか"
+      "readings":
+        "mashou": "tayorimashou"
+        "masen-ka": "tayorimasenka"
+    - "word": "ja-3782"
+      "forms":
+        "mashou": "はげましましょう"
+        "masen-ka": "はげましませんか"
+      "readings":
+        "mashou": "hagemashimashou"
+        "masen-ka": "hagemashimasenka"
+    - "word": "ja-3783"
+      "forms":
+        "mashou": "なぐさめましょう"
+        "masen-ka": "なぐさめませんか"
+      "readings":
+        "mashou": "nagusamemashou"
+        "masen-ka": "nagusamemasenka"
+    - "word": "ja-3784"
+      "forms":
+        "mashou": "かばいましょう"
+        "masen-ka": "かばいませんか"
+      "readings":
+        "mashou": "kabaimashou"
+        "masen-ka": "kabaimasenka"
+    - "word": "ja-3785"
+      "forms":
+        "mashou": "ささえましょう"
+        "masen-ka": "ささえませんか"
+      "readings":
+        "mashou": "sasaemashou"
+        "masen-ka": "sasaemasenka"
+    - "word": "ja-3786"
+      "forms":
+        "mashou": "たすけあいましょう"
+        "masen-ka": "たすけあいませんか"
+      "readings":
+        "mashou": "tasukeaimashou"
+        "masen-ka": "tasukeaimasenka"
+    - "word": "ja-3790"
+      "forms":
+        "mashou": "しりあいましょう"
+        "masen-ka": "しりあいませんか"
+      "readings":
+        "mashou": "shiriaimashou"
+        "masen-ka": "shiriaimasenka"
+    - "word": "ja-3791"
+      "forms":
+        "mashou": "であいましょう"
+        "masen-ka": "であいませんか"
+      "readings":
+        "mashou": "deaimashou"
+        "masen-ka": "deaimasenka"
+    - "word": "ja-3833"
+      "forms":
+        "mashou": "くらしましょう"
+        "masen-ka": "くらしませんか"
+      "readings":
+        "mashou": "kurashimashou"
+        "masen-ka": "kurashimasenka"
+    - "word": "ja-3857"
+      "forms":
+        "mashou": "かしましょう"
+        "masen-ka": "かしませんか"
+      "readings":
+        "mashou": "kashimashou"
+        "masen-ka": "kashimasenka"
+    - "word": "ja-3887"
+      "forms":
+        "mashou": "ゆれましょう"
+        "masen-ka": "ゆれませんか"
+      "readings":
+        "mashou": "yuremashou"
+        "masen-ka": "yuremasenka"
+    - "word": "ja-3898"
+      "forms":
+        "mashou": "すくいましょう"
+        "masen-ka": "すくいませんか"
+      "readings":
+        "mashou": "sukuimashou"
+        "masen-ka": "sukuimasenka"
+    - "word": "ja-3914"
+      "forms":
+        "mashou": "にげましょう"
+        "masen-ka": "にげませんか"
+      "readings":
+        "mashou": "nigemashou"
+        "masen-ka": "nigemasenka"
+    - "word": "ja-3915"
+      "forms":
+        "mashou": "にがしましょう"
+        "masen-ka": "にがしませんか"
+      "readings":
+        "mashou": "nigashimashou"
+        "masen-ka": "nigashimasenka"
+    - "word": "ja-3963"
+      "forms":
+        "mashou": "きんじましょう"
+        "masen-ka": "きんじませんか"
+      "readings":
+        "mashou": "kinjimashou"
+        "masen-ka": "kinjimasenka"
+    - "word": "ja-3965"
+      "forms":
+        "mashou": "うったえましょう"
+        "masen-ka": "うったえませんか"
+      "readings":
+        "mashou": "uttaemashou"
+        "masen-ka": "uttaemasenka"
+    - "word": "ja-4046"
+      "forms":
+        "mashou": "おそいましょう"
+        "masen-ka": "おそいませんか"
+      "readings":
+        "mashou": "osoimashou"
+        "masen-ka": "osoimasenka"
+    - "word": "ja-4047"
+      "forms":
+        "mashou": "おさえましょう"
+        "masen-ka": "おさえませんか"
+      "readings":
+        "mashou": "osaemashou"
+        "masen-ka": "osaemasenka"
+    - "word": "ja-4048"
+      "forms":
+        "mashou": "おさまりましょう"
+        "masen-ka": "おさまりませんか"
+      "readings":
+        "mashou": "osamarimashou"
+        "masen-ka": "osamarimasenka"
+    - "word": "ja-4049"
+      "forms":
+        "mashou": "おさめましょう"
+        "masen-ka": "おさめませんか"
+      "readings":
+        "mashou": "osamemashou"
+        "masen-ka": "osamemasenka"
+    - "word": "ja-4050"
+      "forms":
+        "mashou": "おぼれましょう"
+        "masen-ka": "おぼれませんか"
+      "readings":
+        "mashou": "oboremashou"
+        "masen-ka": "oboremasenka"
+    - "word": "ja-4051"
+      "forms":
+        "mashou": "おもいだしましょう"
+        "masen-ka": "おもいだしませんか"
+      "readings":
+        "mashou": "omoidashimashou"
+        "masen-ka": "omoidashimasenka"
+    - "word": "ja-4052"
+      "forms":
+        "mashou": "おもいつきましょう"
+        "masen-ka": "おもいつきませんか"
+      "readings":
+        "mashou": "omoitsukimashou"
+        "masen-ka": "omoitsukimasenka"
+    - "word": "ja-4053"
+      "forms":
+        "mashou": "かかえましょう"
+        "masen-ka": "かかえませんか"
+      "readings":
+        "mashou": "kakaemashou"
+        "masen-ka": "kakaemasenka"
+    - "word": "ja-4054"
+      "forms":
+        "mashou": "かさなりましょう"
+        "masen-ka": "かさなりませんか"
+      "readings":
+        "mashou": "kasanarimashou"
+        "masen-ka": "kasanarimasenka"
+    - "word": "ja-4055"
+      "forms":
+        "mashou": "かさねましょう"
+        "masen-ka": "かさねませんか"
+      "readings":
+        "mashou": "kasanemashou"
+        "masen-ka": "kasanemasenka"
+    - "word": "ja-4056"
+      "forms":
+        "mashou": "かたむきましょう"
+        "masen-ka": "かたむきませんか"
+      "readings":
+        "mashou": "katamukimashou"
+        "masen-ka": "katamukimasenka"
+    - "word": "ja-4057"
+      "forms":
+        "mashou": "かないましょう"
+        "masen-ka": "かないませんか"
+      "readings":
+        "mashou": "kanaimashou"
+        "masen-ka": "kanaimasenka"
+    - "word": "ja-4058"
+      "forms":
+        "mashou": "かぶせましょう"
+        "masen-ka": "かぶせませんか"
+      "readings":
+        "mashou": "kabusemashou"
+        "masen-ka": "kabusemasenka"
+    - "word": "ja-4059"
+      "forms":
+        "mashou": "きづきましょう"
+        "masen-ka": "きづきませんか"
+      "readings":
+        "mashou": "kizukimashou"
+        "masen-ka": "kizukimasenka"
+    - "word": "ja-4060"
+      "forms":
+        "mashou": "くずれましょう"
+        "masen-ka": "くずれませんか"
+      "readings":
+        "mashou": "kuzuremashou"
+        "masen-ka": "kuzuremasenka"
+    - "word": "ja-4061"
+      "forms":
+        "mashou": "くたびれましょう"
+        "masen-ka": "くたびれませんか"
+      "readings":
+        "mashou": "kutabiremashou"
+        "masen-ka": "kutabiremasenka"
+    - "word": "ja-4062"
+      "forms":
+        "mashou": "くっつきましょう"
+        "masen-ka": "くっつきませんか"
+      "readings":
+        "mashou": "kuttsukimashou"
+        "masen-ka": "kuttsukimasenka"
+    - "word": "ja-4063"
+      "forms":
+        "mashou": "くっつけましょう"
+        "masen-ka": "くっつけませんか"
+      "readings":
+        "mashou": "kuttsukemashou"
+        "masen-ka": "kuttsukemasenka"
+    - "word": "ja-4064"
+      "forms":
+        "mashou": "ころがりましょう"
+        "masen-ka": "ころがりませんか"
+      "readings":
+        "mashou": "korogarimashou"
+        "masen-ka": "korogarimasenka"
+    - "word": "ja-4065"
+      "forms":
+        "mashou": "ころしましょう"
+        "masen-ka": "ころしませんか"
+      "readings":
+        "mashou": "koroshimashou"
+        "masen-ka": "koroshimasenka"
+    - "word": "ja-4066"
+      "forms":
+        "mashou": "こめましょう"
+        "masen-ka": "こめませんか"
+      "readings":
+        "mashou": "komemashou"
+        "masen-ka": "komemasenka"
+    - "word": "ja-4067"
+      "forms":
+        "mashou": "さからいましょう"
+        "masen-ka": "さからいませんか"
+      "readings":
+        "mashou": "sakaraimashou"
+        "masen-ka": "sakaraimasenka"
+    - "word": "ja-4068"
+      "forms":
+        "mashou": "さしましょう"
+        "masen-ka": "さしませんか"
+      "readings":
+        "mashou": "sashimashou"
+        "masen-ka": "sashimasenka"
+    - "word": "ja-4069"
+      "forms":
+        "mashou": "さびましょう"
+        "masen-ka": "さびませんか"
+      "readings":
+        "mashou": "sabimashou"
+        "masen-ka": "sabimasenka"
+    - "word": "ja-4070"
+      "forms":
+        "mashou": "しずみましょう"
+        "masen-ka": "しずみませんか"
+      "readings":
+        "mashou": "shizumimashou"
+        "masen-ka": "shizumimasenka"
+    - "word": "ja-4071"
+      "forms":
+        "mashou": "しずめましょう"
+        "masen-ka": "しずめませんか"
+      "readings":
+        "mashou": "shizumemashou"
+        "masen-ka": "shizumemasenka"
+    - "word": "ja-4072"
+      "forms":
+        "mashou": "したがいましょう"
+        "masen-ka": "したがいませんか"
+      "readings":
+        "mashou": "shitagaimashou"
+        "masen-ka": "shitagaimasenka"
+    - "word": "ja-4073"
+      "forms":
+        "mashou": "しばりましょう"
+        "masen-ka": "しばりませんか"
+      "readings":
+        "mashou": "shibarimashou"
+        "masen-ka": "shibarimasenka"
+    - "word": "ja-4074"
+      "forms":
+        "mashou": "しめしましょう"
+        "masen-ka": "しめしませんか"
+      "readings":
+        "mashou": "shimeshimashou"
+        "masen-ka": "shimeshimasenka"
+    - "word": "ja-4075"
+      "forms":
+        "mashou": "すべりましょう"
+        "masen-ka": "すべりませんか"
+      "readings":
+        "mashou": "suberimashou"
+        "masen-ka": "suberimasenka"
+    - "word": "ja-4076"
+      "forms":
+        "mashou": "すませましょう"
+        "masen-ka": "すませませんか"
+      "readings":
+        "mashou": "sumasemashou"
+        "masen-ka": "sumasemasenka"
+    - "word": "ja-4077"
+      "forms":
+        "mashou": "すみましょう"
+        "masen-ka": "すみませんか"
+      "readings":
+        "mashou": "sumimashou"
+        "masen-ka": "sumimasenka"
+    - "word": "ja-4078"
+      "forms":
+        "mashou": "ずれましょう"
+        "masen-ka": "ずれませんか"
+      "readings":
+        "mashou": "zuremashou"
+        "masen-ka": "zuremasenka"
+    - "word": "ja-4079"
+      "forms":
+        "mashou": "せまりましょう"
+        "masen-ka": "せまりませんか"
+      "readings":
+        "mashou": "semarimashou"
+        "masen-ka": "semarimasenka"
+    - "word": "ja-4080"
+      "forms":
+        "mashou": "そなえましょう"
+        "masen-ka": "そなえませんか"
+      "readings":
+        "mashou": "sonaemashou"
+        "masen-ka": "sonaemasenka"
+    - "word": "ja-4081"
+      "forms":
+        "mashou": "そまりましょう"
+        "masen-ka": "そまりませんか"
+      "readings":
+        "mashou": "somarimashou"
+        "masen-ka": "somarimasenka"
+    - "word": "ja-4082"
+      "forms":
+        "mashou": "そめましょう"
+        "masen-ka": "そめませんか"
+      "readings":
+        "mashou": "somemashou"
+        "masen-ka": "somemasenka"
+    - "word": "ja-4083"
+      "forms":
+        "mashou": "たえましょう"
+        "masen-ka": "たえませんか"
+      "readings":
+        "mashou": "taemashou"
+        "masen-ka": "taemasenka"
+    - "word": "ja-4084"
+      "forms":
+        "mashou": "たしかめましょう"
+        "masen-ka": "たしかめませんか"
+      "readings":
+        "mashou": "tashikamemashou"
+        "masen-ka": "tashikamemasenka"
+    - "word": "ja-4085"
+      "forms":
+        "mashou": "たまりましょう"
+        "masen-ka": "たまりませんか"
+      "readings":
+        "mashou": "tamarimashou"
+        "masen-ka": "tamarimasenka"
+    - "word": "ja-4086"
+      "forms":
+        "mashou": "ためしましょう"
+        "masen-ka": "ためしませんか"
+      "readings":
+        "mashou": "tameshimashou"
+        "masen-ka": "tameshimasenka"
+    - "word": "ja-4087"
+      "forms":
+        "mashou": "ちぢみましょう"
+        "masen-ka": "ちぢみませんか"
+      "readings":
+        "mashou": "chijimimashou"
+        "masen-ka": "chijimimasenka"
+    - "word": "ja-4088"
+      "forms":
+        "mashou": "ちぢめましょう"
+        "masen-ka": "ちぢめませんか"
+      "readings":
+        "mashou": "chijimemashou"
+        "masen-ka": "chijimemasenka"
+    - "word": "ja-4089"
+      "forms":
+        "mashou": "つぎましょう"
+        "masen-ka": "つぎませんか"
+      "readings":
+        "mashou": "tsugimashou"
+        "masen-ka": "tsugimasenka"
+    - "word": "ja-4090"
+      "forms":
+        "mashou": "つづきましょう"
+        "masen-ka": "つづきませんか"
+      "readings":
+        "mashou": "tsuzukimashou"
+        "masen-ka": "tsuzukimasenka"
+    - "word": "ja-4091"
+      "forms":
+        "mashou": "つぶしましょう"
+        "masen-ka": "つぶしませんか"
+      "readings":
+        "mashou": "tsubushimashou"
+        "masen-ka": "tsubushimasenka"
+    - "word": "ja-4092"
+      "forms":
+        "mashou": "つぶれましょう"
+        "masen-ka": "つぶれませんか"
+      "readings":
+        "mashou": "tsuburemashou"
+        "masen-ka": "tsuburemasenka"
+    - "word": "ja-4093"
+      "forms":
+        "mashou": "てらしましょう"
+        "masen-ka": "てらしませんか"
+      "readings":
+        "mashou": "terashimashou"
+        "masen-ka": "terashimasenka"
+    - "word": "ja-4094"
+      "forms":
+        "mashou": "とおしましょう"
+        "masen-ka": "とおしませんか"
+      "readings":
+        "mashou": "tooshimashou"
+        "masen-ka": "tooshimasenka"
+    - "word": "ja-4095"
+      "forms":
+        "mashou": "とかしましょう"
+        "masen-ka": "とかしませんか"
+      "readings":
+        "mashou": "tokashimashou"
+        "masen-ka": "tokashimasenka"
+    - "word": "ja-4096"
+      "forms":
+        "mashou": "とけましょう"
+        "masen-ka": "とけませんか"
+      "readings":
+        "mashou": "tokemashou"
+        "masen-ka": "tokemasenka"
+    - "word": "ja-4097"
+      "forms":
+        "mashou": "ととのいましょう"
+        "masen-ka": "ととのいませんか"
+      "readings":
+        "mashou": "totonoimashou"
+        "masen-ka": "totonoimasenka"
+    - "word": "ja-4098"
+      "forms":
+        "mashou": "ととのえましょう"
+        "masen-ka": "ととのえませんか"
+      "readings":
+        "mashou": "totonoemashou"
+        "masen-ka": "totonoemasenka"
+    - "word": "ja-4099"
+      "forms":
+        "mashou": "とびこみましょう"
+        "masen-ka": "とびこみませんか"
+      "readings":
+        "mashou": "tobikomimashou"
+        "masen-ka": "tobikomimasenka"
+    - "word": "ja-4100"
+      "forms":
+        "mashou": "ともないましょう"
+        "masen-ka": "ともないませんか"
+      "readings":
+        "mashou": "tomonaimashou"
+        "masen-ka": "tomonaimasenka"
+    - "word": "ja-4101"
+      "forms":
+        "mashou": "とらえましょう"
+        "masen-ka": "とらえませんか"
+      "readings":
+        "mashou": "toraemashou"
+        "masen-ka": "toraemasenka"
+    - "word": "ja-4102"
+      "forms":
+        "mashou": "とりあげましょう"
+        "masen-ka": "とりあげませんか"
+      "readings":
+        "mashou": "toriagemashou"
+        "masen-ka": "toriagemasenka"
+    - "word": "ja-4103"
+      "forms":
+        "mashou": "とりだしましょう"
+        "masen-ka": "とりだしませんか"
+      "readings":
+        "mashou": "toridashimashou"
+        "masen-ka": "toridashimasenka"
+    - "word": "ja-4104"
+      "forms":
+        "mashou": "とりのぞきましょう"
+        "masen-ka": "とりのぞきませんか"
+      "readings":
+        "mashou": "torinozokimashou"
+        "masen-ka": "torinozokimasenka"
+    - "word": "ja-4105"
+      "forms":
+        "mashou": "ながしましょう"
+        "masen-ka": "ながしませんか"
+      "readings":
+        "mashou": "nagashimashou"
+        "masen-ka": "nagashimasenka"
+rules:
+  - id: "ja-rule-mashou"
+    slots: ["mashou"]
+    words:
+      - { word: "ましょう", reading: "mashou" }
+      - { word: "いきましょう", reading: "ikimashou" }
+  - id: "ja-rule-masen-ka"
+    slots: ["masen-ka"]
+    words:
+      - { word: "ませんか", reading: "masen ka" }
+      - { word: "いきませんか", reading: "ikimasen ka" }

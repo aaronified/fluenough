@@ -1,0 +1,58 @@
+schema: 1
+id: "ja-en-reading-chores"
+name: "Japanese reading: chores"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-chores-1"
+    title: "Cleaning day"
+    sentences:
+      - { text: "わたしはあさにへやをきれいにしまいました。", reading: "watashi wa asa ni heya o kirei ni shimaimashita." }
+      - { text: "おかあさんはせんたくものをあらいました。", reading: "okaasan wa sentakumono o araimashita." }
+      - { text: "おとうさんはおさらをあらいます。", reading: "otousan wa osara o araimasu." }
+      - { text: "わたしはぞうきんがけをしました。", reading: "watashi wa zoukingake o shimashita." }
+    questions:
+      - id: "ja-2148"
+        prompt: { en: "Who washed the laundry?" }
+        options:
+          - { en: "The writer" }
+          - { en: "Mother" }
+          - { en: "Father" }
+        answer: 2
+      - id: "ja-2149"
+        prompt: { en: "The writer tidied the room in the morning." }
+        answer: true
+      - id: "ja-2150"
+        prompt: { en: "Which line says that Dad washes the dishes?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
+  - id: "ja-chores-2"
+    title: "Rubbish day notice"
+    sentences:
+      - { text: "もえるごみはあしたです。", reading: "moerugomi wa ashita desu." }
+      - { text: "もえないごみはきょうです。", reading: "moenaigomi wa kyou desu." }
+      - { text: "しげんごみはゴミぶくろにいれてください。", reading: "shigengomi wa gomibukuro ni irete kudasai." }
+      - { text: "ごみをあさにだしてください。", reading: "gomi o asa ni dashite kudasai." }
+    questions:
+      - id: "ja-2151"
+        prompt: { en: "Which day is burnable rubbish collected?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+        answer: 2
+      - id: "ja-2152"
+        prompt: { en: "Recyclable rubbish goes in a rubbish bag." }
+        answer: true
+      - id: "ja-2153"
+        prompt: { en: "Which line asks you to put the rubbish out in the morning?" }
+        options:
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2

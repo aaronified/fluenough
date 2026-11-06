@@ -1,0 +1,64 @@
+schema: 1
+id: "ja-en-home-sentences"
+kind: "layer"
+core: "ja-home-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Home in sentences"
+description: "Sentences built from the words of this unit, to put in order, each with the words it could be mistaken for. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-1208":
+    native: "My room is narrow."
+    bases:
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "げんかん (genkan) is the entrance hall."
+      w2:
+        why: "ベランダ (beranda) is a balcony."
+  "ja-1209":
+    native: "The window is beside the wall."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "の":
+        meaning: "(links two nouns: of, 's)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "てんじょう (tenjou) is the ceiling."
+      w2:
+        why: "ゆか (yuka) is the floor."
+  "ja-1210":
+    native: "The book is on the shelf."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "に":
+        meaning: "in; at; to"
+      "あります":
+        meaning: "to be (of things); to exist; to have"
+    confusables:
+      w1:
+        why: "ざっし (zasshi) is a magazine."
+      w2:
+        why: "しんぶん (shinbun) is a newspaper."
+  "ja-1211":
+    native: "The washing machine is convenient."
+    bases:
+      "は":
+        meaning: "(marks the topic)"
+      "です":
+        meaning: "is (polite)"
+    confusables:
+      w1:
+        why: "そうじき (soujiki) is a vacuum cleaner."
+      w2:
+        why: "れいぞうこ (reizouko) is a fridge."

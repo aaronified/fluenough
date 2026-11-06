@@ -1,0 +1,114 @@
+schema: 1
+id: "ja-adverbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0418"
+    target: "ともだちはときどきえいごをはなします。"
+    words: ["ともだち", "は", "ときどき", "えいご", "を", "はなします"]
+    reading: "tomodachi wa tokidoki eigo o hanashimasu."
+    ipa: "tomodatɕi wa tokidoki eːɡo o hanaɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "はなします", ref: "ja-0347" }
+    confusables:
+      - id: "w1"
+        word: "いつも"
+        reading: "itsumo"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0111"
+        kind: "word"
+  - id: "ja-0419"
+    target: "わたしはもうたべました。"
+    words: ["わたし", "は", "もう", "たべました"]
+    reading: "watashi wa mou tabemashita."
+    ipa: "wataɕi wa moː tabemaɕita"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たべました", ref: "ja-0341" }
+    confusables:
+      - id: "w1"
+        word: "まだ"
+        reading: "mada"
+        kind: "word"
+      - id: "w2"
+        word: "もっと"
+        reading: "motto"
+        kind: "word"
+  - id: "ja-0420"
+    target: "せんせいはゆっくりはなします。"
+    words: ["せんせい", "は", "ゆっくり", "はなします"]
+    reading: "sensei wa yukkuri hanashimasu."
+    ipa: "seɴseː wa jɯkkɯɾi hanaɕimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "はなします", ref: "ja-0347" }
+    confusables:
+      - id: "w1"
+        word: "はやく"
+        reading: "hayaku"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0077"
+        kind: "word"
+  - id: "ja-0421"
+    target: "がくせいはすぐきます。"
+    words: ["がくせい", "は", "すぐ", "きます"]
+    reading: "gakusei wa sugu kimasu."
+    ipa: "ɡakɯseː wa sɯɡɯ kimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "きます", ref: "ja-0349" }
+    confusables:
+      - id: "w1"
+        word: "あとで"
+        reading: "atode"
+        kind: "word"
+      - id: "w2"
+        word: "たぶん"
+        reading: "tabun"
+        kind: "word"
+  - id: "ja-0422"
+    target: "わたしはもちろんいきます。"
+    words: ["わたし", "は", "もちろん", "いきます"]
+    reading: "watashi wa mochiron ikimasu."
+    ipa: "wataɕi wa motɕiɾoɴ ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "ぜひ"
+        reading: "zehi"
+        kind: "word"
+      - id: "w2"
+        word: "たぶん"
+        reading: "tabun"
+        kind: "word"
+  - id: "ja-0423"
+    target: "ともだちといっしょにあそびます。"
+    words: ["ともだち", "と", "いっしょに", "あそびます"]
+    reading: "tomodachi to isshoni asobimasu."
+    ipa: "tomodatɕi to iɕɕoni asobimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "と", base: "と", reading: "to" }
+      - { word: "あそびます", ref: "ja-0374" }
+    confusables:
+      - id: "w1"
+        word: "ずっと"
+        reading: "zutto"
+        kind: "word"
+      - id: "w2"
+        ref: "ja-0352"
+        kind: "word"

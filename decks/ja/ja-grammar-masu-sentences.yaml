@@ -1,0 +1,106 @@
+schema: 1
+id: "ja-grammar-masu-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0680"
+    target: "わたしはまいにちはしります。"
+    words: ["わたし", "は", "まいにち", "はしります"]
+    reading: "watashi wa mainichi hashirimasu."
+    ipa: "wataɕi wa mainitɕi haɕiɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "はしります", ref: "ja-0572" }
+    confusables:
+      - id: "w1"
+        word: "あるく"
+        reading: "aruku"
+        kind: "word"
+      - id: "w2"
+        word: "やすむ"
+        reading: "yasumu"
+        kind: "word"
+    rules: ["ja-rule-masu"]
+  - id: "ja-0681"
+    target: "わたしはよるねません。"
+    words: ["わたし", "は", "よる", "ねません"]
+    reading: "watashi wa yoru nemasen."
+    ipa: "wataɕi wa joɾɯ nemaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ねません", ref: "ja-0352" }
+    confusables:
+      - id: "w1"
+        word: "おきる"
+        reading: "okiru"
+        kind: "word"
+      - id: "w2"
+        word: "ひる"
+        reading: "hiru"
+        kind: "word"
+    rules: ["ja-rule-masen"]
+  - id: "ja-0682"
+    target: "ははがごはんをつくります。"
+    words: ["はは", "が", "ごはん", "を", "つくります"]
+    reading: "haha ga gohan o tsukurimasu."
+    ipa: "haha ɡa ɡohaɴ o tsɯkɯɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "つくります", ref: "ja-0364" }
+    confusables:
+      - id: "w1"
+        word: "あらう"
+        reading: "arau"
+        kind: "word"
+      - id: "w2"
+        word: "たべる"
+        reading: "taberu"
+        kind: "word"
+    rules: ["ja-rule-masu"]
+  - id: "ja-0683"
+    target: "ともだちはにほんごをならいません。"
+    words: ["ともだち", "は", "にほんご", "を", "ならいません"]
+    reading: "tomodachi wa nihongo o naraimasen."
+    ipa: "tomodatɕi wa nihoɴɡo o naɾaimaseɴ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ならいません", ref: "ja-0367" }
+    confusables:
+      - id: "w1"
+        word: "おしえる"
+        reading: "oshieru"
+        kind: "word"
+      - id: "w2"
+        word: "えいご"
+        reading: "eigo"
+        kind: "word"
+    rules: ["ja-rule-masen"]
+  - id: "ja-0684"
+    target: "わたしはがっこうにいきます。"
+    words: ["わたし", "は", "がっこう", "に", "いきます"]
+    reading: "watashi wa gakkou ni ikimasu."
+    ipa: "wataɕi wa ɡakkoː ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "かえる"
+        reading: "kaeru"
+        kind: "word"
+      - id: "w2"
+        word: "くる"
+        reading: "kuru"
+        kind: "word"
+    rules: ["ja-rule-masu"]

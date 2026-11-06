@@ -1,0 +1,126 @@
+schema: 1
+id: "ja-grammar-case-particles-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-0625"
+    target: "わたしはがっこうにいきます。"
+    words: ["わたし", "は", "がっこう", "に", "いきます"]
+    reading: "watashi wa gakkou ni ikimasu."
+    ipa: "wataɕi wa ɡakkoː ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "せんせい"
+        reading: "sensei"
+        kind: "word"
+      - id: "w2"
+        word: "うえ"
+        reading: "ue"
+        kind: "word"
+    rules: ["ja-rule-particle-wa", "ja-rule-particle-ni"]
+  - id: "ja-0626"
+    target: "わたしはみずをのみます。"
+    words: ["わたし", "は", "みず", "を", "のみます"]
+    reading: "watashi wa mizu o nomimasu."
+    ipa: "wataɕi wa midzɯ o nomimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "のみます", ref: "ja-0342" }
+    confusables:
+      - id: "w1"
+        word: "ごはん"
+        reading: "gohan"
+        kind: "word"
+      - id: "w2"
+        word: "ぎゅうにゅう"
+        reading: "gyuunyuu"
+        kind: "word"
+    rules: ["ja-rule-particle-wa", "ja-rule-particle-o"]
+  - id: "ja-0627"
+    target: "ともだちがきます。"
+    words: ["ともだち", "が", "きます"]
+    reading: "tomodachi ga kimasu."
+    ipa: "tomodatɕi ɡa kimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "きます", ref: "ja-0349" }
+    confusables:
+      - id: "w1"
+        word: "わたし"
+        reading: "watashi"
+        kind: "word"
+      - id: "w2"
+        word: "せんせい"
+        reading: "sensei"
+        kind: "word"
+    rules: ["ja-rule-particle-ga"]
+  - id: "ja-0628"
+    target: "でんしゃでいきます。"
+    words: ["でんしゃ", "で", "いきます"]
+    reading: "densha de ikimasu."
+    ipa: "deɴɕa de ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "がっこう"
+        reading: "gakkou"
+        kind: "word"
+      - id: "w2"
+        word: "いぬ"
+        reading: "inu"
+        kind: "word"
+    rules: ["ja-rule-particle-de"]
+  - id: "ja-0629"
+    target: "わたしはえいごをならいます。"
+    words: ["わたし", "は", "えいご", "を", "ならいます"]
+    reading: "watashi wa eigo o naraimasu."
+    ipa: "wataɕi wa eːɡo o naɾaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "ならいます", ref: "ja-0367" }
+    confusables:
+      - id: "w1"
+        word: "にほんご"
+        reading: "nihongo"
+        kind: "word"
+      - id: "w2"
+        word: "なまえ"
+        reading: "namae"
+        kind: "word"
+    rules: ["ja-rule-particle-wa", "ja-rule-particle-o"]
+  - id: "ja-0630"
+    target: "ははががっこうにいきます。"
+    words: ["はは", "が", "がっこう", "に", "いきます"]
+    reading: "haha ga gakkou ni ikimasu."
+    ipa: "haha ɡa ɡakkoː ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", ref: "ja-0348" }
+    confusables:
+      - id: "w1"
+        word: "ちち"
+        reading: "chichi"
+        kind: "word"
+      - id: "w2"
+        word: "いぬ"
+        reading: "inu"
+        kind: "word"
+    rules: ["ja-rule-particle-ga", "ja-rule-particle-ni"]

@@ -1,0 +1,80 @@
+"schema": !!int "1"
+"id": "ja-en-reading-journey"
+"name": "Japanese reading: journey"
+"kind": "reading"
+"language":
+  "code": "ja"
+  "iso639_3": "jpn"
+  "name": "Japanese"
+  "script": "kana"
+  "tts": "ja-JP"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "ja-journey-1"
+  "title": "A train timetable"
+  "sentences":
+  - "text": "ていきけんでかよいます。"
+    "reading": "teikiken de kayoimasu."
+  - "text": "まどがわのざせきがすきです。"
+    "reading": "madogawa no zaseki ga suki desu."
+  - "text": "でんしゃのじこくひょうをみました。"
+    "reading": "densha no jikokuhyou o mimashita."
+  - "text": "じゅうたいでおくれました。"
+    "reading": "juutai de okuremashita."
+  "questions":
+  - "id": "ja-2428"
+    "prompt":
+      "en": "Which line says that the traffic jam made the person late?"
+    "options":
+    - "en": "The first line"
+    - "en": "The fourth line"
+    "answer": !!int "2"
+  - "id": "ja-2429"
+    "prompt":
+      "en": "The second line says that the person likes the window seat."
+    "answer": !!bool true
+  - "id": "ja-2430"
+    "prompt":
+      "en": "Which line says that the person uses a commuter pass?"
+    "options":
+    - "en": "The first line"
+    - "en": "The third line"
+    "answer": !!int "1"
+- "id": "ja-journey-2"
+  "title": "A platform notice"
+  "sentences":
+  - "text": "ほんじつのとっきゅうはうんきゅうです。"
+    "reading": "honjitsu no tokkyuu wa unkyuu desu."
+  - "text": "かくえきていしゃにのってください。"
+    "reading": "kakuekiteisha ni notte kudasai."
+  - "text": "きっぷはしゃしょうにみせてください。"
+    "reading": "kippu wa shashou ni misete kudasai."
+  - "text": "おくれのつうちはホームにあります。"
+    "reading": "okure no tsuuchi wa hoomu ni arimasu."
+  "questions":
+  - "id": "ja-2431"
+    "prompt":
+      "en": "Which line says that the limited express is cancelled?"
+    "options":
+    - "en": "The first line"
+    - "en": "The second line"
+    "answer": !!int "1"
+  - "id": "ja-2432"
+    "prompt":
+      "en": "The second line tells the reader to take the local train."
+    "answer": !!bool true
+  - "id": "ja-2433"
+    "prompt":
+      "en": "Which line says where the delay information is?"
+    "options":
+    - "en": "The third line"
+    - "en": "The fourth line"
+    "answer": !!int "2"

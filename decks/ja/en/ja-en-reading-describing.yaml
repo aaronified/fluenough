@@ -1,0 +1,70 @@
+schema: 1
+id: "ja-en-reading-describing"
+name: "Japanese reading: describing things"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-describing-1"
+    title: "A new train"
+    sentences:
+      - text: "でんしゃはあたらしいです。"
+        reading: "densha wa atarashii desu."
+      - text: "でんしゃはふるいです。"
+        reading: "densha wa furui desu."
+      - text: "にほんごはむずかしいです。"
+        reading: "nihongo wa muzukashii desu."
+      - text: "せんせいはやさしいです。"
+        reading: "sensei wa yasashii desu."
+    questions:
+      - id: "ja-0501"
+        prompt:
+          en: "Which line says that the train is old?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-0502"
+        prompt:
+          en: "The third line says that Japanese is difficult."
+        answer: true
+      - id: "ja-0503"
+        prompt:
+          en: "Which line says that the teacher is kind?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2
+  - id: "ja-describing-2"
+    title: "A school report"
+    sentences:
+      - text: "がっこうはしずかです。"
+        reading: "gakkou wa shizuka desu."
+      - text: "てんきはさむいです。"
+        reading: "tenki wa samui desu."
+      - text: "でんしゃはながいです。"
+        reading: "densha wa nagai desu."
+      - text: "ごはんはからいです。"
+        reading: "gohan wa karai desu."
+    questions:
+      - id: "ja-0504"
+        prompt:
+          en: "Which line says that the weather is cold?"
+        options:
+          - en: "The first line"
+          - en: "The second line"
+        answer: 2
+      - id: "ja-0505"
+        prompt:
+          en: "The third line says that the train is long."
+        answer: true
+      - id: "ja-0506"
+        prompt:
+          en: "Which line says that the food is spicy?"
+        options:
+          - en: "The third line"
+          - en: "The fourth line"
+        answer: 2

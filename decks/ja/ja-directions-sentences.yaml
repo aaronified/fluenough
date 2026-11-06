@@ -1,0 +1,67 @@
+schema: 1
+id: "ja-directions-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ja-1321"
+    target: "まっすぐいってください。"
+    words: ["まっすぐ", "いって", "ください"]
+    reading: "massugu itte kudasai."
+    ipa: "massɯɡɯ itte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "まっすぐ", ref: "ja-1051" }
+      - { word: "いって", ref: "ja-0348" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", word: "まがる", reading: "magaru", kind: "word" }
+      - { id: "w2", word: "わたる", reading: "wataru", kind: "word" }
+  - id: "ja-1322"
+    target: "こうさてんをみぎにまがってください。"
+    words: ["こうさてん", "を", "みぎ", "に", "まがって", "ください"]
+    reading: "kousaten o migi ni magatte kudasai."
+    ipa: "koːsateɴ o miɡi ni maɡatte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "こうさてん", ref: "ja-1058" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みぎ", ref: "ja-0548" }
+      - { word: "に", ref: "ja-0230" }
+      - { word: "まがって", ref: "ja-1050" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - { id: "w1", word: "かど", reading: "kado", kind: "word" }
+      - { id: "w2", word: "とおり", reading: "toori", kind: "word" }
+  - id: "ja-1323"
+    target: "こうえんはあそこですか。"
+    words: ["こうえん", "は", "あそこ", "です", "か"]
+    reading: "kouen wa asoko desu ka."
+    ipa: "koːeɴ wa asoko desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "こうえん", ref: "ja-1069" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "あそこ", ref: "ja-0556" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", word: "まち", reading: "machi", kind: "word" }
+      - { id: "w2", word: "ほどう", reading: "hodou", kind: "word" }
+  - id: "ja-1324"
+    target: "ちかみちはとおいですか。"
+    words: ["ちかみち", "は", "とおい", "です", "か"]
+    reading: "chikamichi wa tooi desu ka."
+    ipa: "tɕikamitɕi wa toːi desɯ ka"
+    pos: "phrase"
+    bases:
+      - { word: "ちかみち", ref: "ja-1063" }
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "とおい", ref: "ja-0485" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - { id: "w1", word: "きょり", reading: "kyori", kind: "word" }
+      - { id: "w2", word: "あんない", reading: "annai", kind: "word" }

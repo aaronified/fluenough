@@ -1,0 +1,512 @@
+schema: 1
+id: "ja-en-chores"
+kind: "layer"
+core: "ja-chores"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Chores"
+description: "Chores: 35 words for cleaning, laundry and rubbish: 20 nouns and 15 verbs of cleaning and tidying. Not yet checked by a Japanese speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  "ja-2095":
+    native: "laundry"
+    notes: { n1: "せんたくもの (sentakumono) is laundry: clothes waiting to be washed, or washed and waiting to be hung up." }
+    examples:
+      "わたしはせんたくものをたたみます。":
+        native: "I fold the laundry."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "おかあさんがせんたくものをあらいました。":
+        native: "Mother washed the laundry."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2096":
+    native: "detergent"
+    notes: { n1: "せんざい (senzai) is detergent, the powder or liquid for washing clothes or dishes." }
+    examples:
+      "わたしはせんざいをいれます。":
+        native: "I put in the detergent."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "せんざいはどこにありますか。":
+        native: "Where is the detergent?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+  "ja-2097":
+    native: "iron"
+    notes: { n1: "アイロン (airon) is an iron, for smoothing clothes." }
+    examples:
+      "アイロンはどこにありますか。":
+        native: "Where is the iron?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+      "わたしはアイロンをつかいます。":
+        native: "I use the iron."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2098":
+    native: "wiping the floor with a rag"
+    notes: { n1: "ぞうきんがけ (zoukingake) is wiping a floor with a damp rag, usually on hands and knees." }
+    examples:
+      "まいにちわたしはぞうきんがけをします。":
+        native: "I do the rag-wiping every day."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "おとうさんはぞうきんがけをしました。":
+        native: "Dad did the rag-wiping."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2099":
+    native: "wipe-cleaning"
+    notes: { n1: "ふきそうじ (fukisouji) is cleaning by wiping with a cloth, not by sweeping or vacuuming." }
+    examples:
+      "あさにふきそうじをします。":
+        native: "I do wipe-cleaning in the morning."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+      "おかあさんがふきそうじをしました。":
+        native: "Mother did the wipe-cleaning."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2100":
+    native: "taking out the rubbish"
+    notes: { n1: "ごみすて (gomisute) is taking the rubbish out to the collection point on the right day." }
+    examples:
+      "わたしがごみすてをします。":
+        native: "I take the rubbish out."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+      "おとうさんがごみすてをしました。":
+        native: "Dad took the rubbish out."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2101":
+    native: "burnable rubbish"
+    notes: { n1: "もえるごみ (moerugomi) is rubbish that is burned at the incinerator, such as paper and food scraps." }
+    examples:
+      "もえるごみはあしたです。":
+        native: "Burnable rubbish is tomorrow."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "あさにもえるごみをだします。":
+        native: "I put out the burnable rubbish in the morning."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2102":
+    native: "non-burnable rubbish"
+    notes: { n1: "もえないごみ (moenaigomi) is rubbish that is not burned, collected on a different day from the burnable kind." }
+    examples:
+      "もえないごみはきょうです。":
+        native: "Non-burnable rubbish is today."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+      "わたしはもえないごみをだしました。":
+        native: "I put out the non-burnable rubbish."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2103":
+    native: "rubbish bag"
+    notes: { n1: "ゴミぶくろ (gomibukuro) is a rubbish bag, the bag in which rubbish is put out." }
+    examples:
+      "ゴミぶくろにごみをいれます。":
+        native: "I put the rubbish in the rubbish bag."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+      "ゴミぶくろをかいました。":
+        native: "I bought rubbish bags."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2104":
+    native: "recyclable rubbish"
+    notes: { n1: "しげんごみ (shigengomi) is recyclable rubbish, collected separately from burnable rubbish." }
+    examples:
+      "しげんごみをあさにだします。":
+        native: "I put out the recyclable rubbish in the morning."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+      "しげんごみはゴミぶくろにいれます。":
+        native: "Recyclable rubbish goes in the rubbish bag."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+  "ja-2105":
+    native: "washing the dishes"
+    notes: { n1: "おさらあらい (osaraarai) is washing the dishes after a meal." }
+    examples:
+      "わたしはよるおさらあらいをします。":
+        native: "I do the dishes at night."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "おとうさんがおさらあらいをしました。":
+        native: "Dad washed the dishes."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2106":
+    native: "clearing up afterwards"
+    notes: { n1: "あとかたづけ (atokatazuke) is tidying up after a meal or an activity." }
+    examples:
+      "わたしはごはんのあとかたづけをします。":
+        native: "I do the clearing up after the meal."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "おとうさんはあとかたづけをしませんでした。":
+        native: "Dad did not do the clearing up."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2107":
+    native: "preparation; getting ready"
+    notes: { n1: "したく (shitaku) is getting ready or preparing for something, such as a meal or a trip." }
+    examples:
+      "あさのしたくをします。":
+        native: "I get ready in the morning."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "もうしたくをしました。":
+        native: "I have already got ready."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2108":
+    native: "help; a helper"
+    notes: { n1: "てつだい (tetsudai) is help: the act of helping, as with a family chore." }
+    examples:
+      "わたしはおかあさんのてつだいをします。":
+        native: "I help Mother."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "こどもがおかあさんのてつだいをしました。":
+        native: "The child helped Mother."
+        bases:
+          "の": { meaning: "(links two nouns: of, 's)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2109":
+    native: "cleaning tools"
+    notes: { n1: "そうじどうぐ (soujidougu) are the tools for cleaning, such as a brush, a cloth or a sponge." }
+    examples:
+      "そうじどうぐはどこにありますか。":
+        native: "Where are the cleaning tools?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+      "わたしはそうじどうぐをつかいます。":
+        native: "I use the cleaning tools."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2110":
+    native: "scrubbing brush"
+    notes: { n1: "たわし (tawashi) is a scrubbing brush, for scrubbing pots, the bath and dishes." }
+    examples:
+      "わたしはたわしでおさらをあらいます。":
+        native: "I wash the plate with a brush."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+      "たわしはどこにありますか。":
+        native: "Where is the brush?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+  "ja-2111":
+    native: "sponge"
+    notes: { n1: "スポンジ (suponji) is a sponge, for washing dishes or wiping a surface." }
+    examples:
+      "スポンジでさらをあらいます。":
+        native: "I wash the plate with a sponge."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+      "スポンジはあたらしいです。":
+        native: "The sponge is new."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2112":
+    native: "clothes peg"
+    notes: { n1: "せんたくばさみ (sentakubasami) is a clothes peg, used to hang washing on a line." }
+    examples:
+      "せんたくばさみはどこにありますか。":
+        native: "Where are the clothes pegs?"
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+          "か": { meaning: "(marks a question)" }
+      "わたしはせんたくばさみをあたらしくかいました。":
+        native: "I bought new clothes pegs."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+  "ja-2113":
+    native: "clothes-drying rack"
+    notes: { n1: "ものほし (monohoshi) is a clothes-drying rack or line, where washing is hung out to dry." }
+    examples:
+      "せんたくものはものほしにあります。":
+        native: "The laundry is on the drying rack."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "あります": { meaning: "is, there is (polite)" }
+      "ものほしはあたらしいです。":
+        native: "The drying rack is new."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "です": { meaning: "is (polite)" }
+  "ja-2114":
+    native: "dust"
+    notes: { n1: "ほこり (hokori) is dust that gathers on furniture and floors." }
+    examples:
+      "へやにほこりがあります。":
+        native: "There is dust in the room."
+        bases:
+          "あります": { meaning: "is, there is (polite)" }
+      "ほこりがドアにあります。":
+        native: "There is dust on the door."
+        bases:
+          "あります": { meaning: "is, there is (polite)" }
+  "ja-2115":
+    native: "to polish; to brush"
+    notes: { n1: "みがく (migaku) means to polish or brush something until it shines or is clean." }
+    examples:
+      "わたしはあさにくつをみがきます。":
+        native: "I polish my shoes in the morning."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "みがきます": { meaning: "polish (polite)" }
+      "おとうさんはくるまをみがきました。":
+        native: "Dad polished the car."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "みがきました": { meaning: "polished (polite)" }
+  "ja-2116":
+    native: "to rub; to scrub"
+    notes: { n1: "こする (kosuru) means to rub something hard, to scrub a stain off." }
+    examples:
+      "わたしはおさらをこすります。":
+        native: "I scrub the plate."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "こすります": { meaning: "scrub (polite)" }
+      "おとうさんはおふろをたわしでこすりました。":
+        native: "Dad scrubbed the bath with a brush."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "こすりました": { meaning: "scrubbed (polite)" }
+  "ja-2117":
+    native: "to rinse"
+    notes: { n1: "すすぐ (susugu) means to rinse something with clean water to take off soap." }
+    examples:
+      "わたしはさらをみずですすぎます。":
+        native: "I rinse the plate with water."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "すすぎます": { meaning: "rinse (polite)" }
+      "おかあさんはせんたくものをみずですすぎました。":
+        native: "Mother rinsed the laundry with water."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "すすぎました": { meaning: "rinsed (polite)" }
+  "ja-2118":
+    native: "to wring out"
+    notes: { n1: "しぼる (shiboru) means to wring out water by twisting or pressing." }
+    examples:
+      "わたしはせんたくものをしぼります。":
+        native: "I wring out the laundry."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "しぼります": { meaning: "wring out (polite)" }
+      "ふくをしぼってください。":
+        native: "Please wring out the clothes."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "しぼって": { meaning: "wring out (te-form)" }
+          "ください": { meaning: "please (give me)" }
+  "ja-2119":
+    native: "to dry (something)"
+    notes: { n1: "かわかす (kawakasu) means to dry something; someone dries it." }
+    examples:
+      "わたしはせんたくものをかわかします。":
+        native: "I dry the laundry."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "かわかします": { meaning: "dry (polite)" }
+      "おとうさんはふくをかわかしました。":
+        native: "Dad dried the clothes."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "かわかしました": { meaning: "dried (polite)" }
+  "ja-2120":
+    native: "to put away"
+    notes: { n1: "しまう (shimau) means to put something away in its place, out of sight." }
+    examples:
+      "ほんをつくえにしまいます。":
+        native: "I put the book away in the desk."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "しまいます": { meaning: "put away (polite)" }
+      "へやをきれいにしまいましょう。":
+        native: "Let's tidy the room."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "しまいましょう": { meaning: "let's put away (polite)" }
+  "ja-2121":
+    native: "to line up; to put in order"
+    notes: { n1: "そろえる (soroeru) means to line things up or put them in order." }
+    examples:
+      "わたしはくつをきれいにそろえます。":
+        native: "I line up the shoes neatly."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "そろえます": { meaning: "line up (polite)" }
+      "こどもがくつをそろえました。":
+        native: "The child lined up the shoes."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "そろえました": { meaning: "lined up (polite)" }
+  "ja-2122":
+    native: "to decorate"
+    notes: { n1: "かざる (kazaru) means to decorate something, to make it look nicer with things." }
+    examples:
+      "わたしはへやをかざります。":
+        native: "I decorate the room."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "かざります": { meaning: "decorate (polite)" }
+      "おかあさんはまどをかざりました。":
+        native: "Mother decorated the window."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "かざりました": { meaning: "decorated (polite)" }
+  "ja-2123":
+    native: "to replace; to change"
+    notes: { n1: "とりかえる (torikaeru) means to replace something with a new one, or change it." }
+    examples:
+      "わたしはふとんをとりかえます。":
+        native: "I change the bedding."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "とりかえます": { meaning: "change (polite)" }
+      "わたしはふくをとりかえました。":
+        native: "I changed my clothes."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "とりかえました": { meaning: "changed (polite)" }
+  "ja-2124":
+    native: "to pack; to stuff"
+    notes: { n1: "つめる (tsumeru) means to pack things into a space, or to fill it up." }
+    examples:
+      "わたしはかばんにふくをつめます。":
+        native: "I pack clothes into the bag."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "つめます": { meaning: "pack (polite)" }
+      "おとうさんはかばんにほんをつめました。":
+        native: "Dad packed books into the bag."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "つめました": { meaning: "packed (polite)" }
+  "ja-2125":
+    native: "to hand out"
+    notes: { n1: "くばる (kubaru) means to hand things out to several people." }
+    examples:
+      "せんせいはこどもにほんをくばります。":
+        native: "The teacher hands out books to the children."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "くばります": { meaning: "hand out (polite)" }
+      "わたしはともだちにほんをくばりました。":
+        native: "I handed out books to my friends."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "くばりました": { meaning: "handed out (polite)" }
+  "ja-2126":
+    native: "to spill"
+    notes: { n1: "こぼす (kobosu) means to spill something by accident; someone spills it." }
+    examples:
+      "こどもがみずをこぼしました。":
+        native: "The child spilled water."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "こぼしました": { meaning: "spilled (polite)" }
+      "ごはんをこぼさないでください。":
+        native: "Please do not spill the rice."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "こぼさないで": { meaning: "spill (negative te-form)" }
+          "ください": { meaning: "please (give me)" }
+  "ja-2127":
+    native: "to get dirty"
+    notes: { n1: "よごれる (yogoreru) means to get dirty: the thing becomes dirty by itself." }
+    examples:
+      "ふくがよごれました。":
+        native: "The clothes got dirty."
+        bases:
+          "よごれました": { meaning: "got dirty (polite)" }
+      "くつがよごれました。":
+        native: "The shoes got dirty."
+        bases:
+          "よごれました": { meaning: "got dirty (polite)" }
+  "ja-2128":
+    native: "to make dirty"
+    notes: { n1: "よごす (yogosu) means to make something dirty; someone makes it dirty." }
+    examples:
+      "こどもがふくをよごしました。":
+        native: "The child got the clothes dirty."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "よごしました": { meaning: "made dirty (polite)" }
+      "ドアをよごさないでください。":
+        native: "Please do not make the door dirty."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "よごさないで": { meaning: "make dirty (negative te-form)" }
+          "ください": { meaning: "please (give me)" }
+  "ja-2129":
+    native: "to scatter; to make a mess"
+    notes: { n1: "ちらかす (chirakasu) means to scatter things around and make a mess; someone does it." }
+    examples:
+      "こどもがへやをちらかしました。":
+        native: "The child made the room messy."
+        bases:
+          "を": { meaning: "(marks the thing acted on)" }
+          "ちらかしました": { meaning: "made a mess (polite)" }
+      "わたしはつくえをちらかしました。":
+        native: "I made my desk messy."
+        bases:
+          "は": { meaning: "(marks the topic)" }
+          "を": { meaning: "(marks the thing acted on)" }
+          "ちらかしました": { meaning: "made a mess (polite)" }
