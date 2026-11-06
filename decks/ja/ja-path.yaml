@@ -591,7 +591,8 @@ units:
       - { id: "if-you-press-this", text: { "en": "Saying what happens if you press a button, and what to do if it rains" } }
     reading_passages:
       - { id: "machine-instructions", text: { "en": "Instructions on a ticket machine" } }
-  - planned: { id: "ja-feelings", theme: "feelings", words: 55 }
+  - decks: ["ja-feelings", "ja-feelings-sentences", "ja-reading-feelings", "*"]
+    words: 55
     listening_passages:
       - { id: "a-hard-week", text: { "en": "A friend says how the week made them feel" } }
     reading_passages:

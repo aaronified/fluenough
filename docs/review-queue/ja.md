@@ -162,3 +162,10 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2725 | ja-health | Is きんえんを かんがえて います (I am thinking about giving up smoking) natural, or is やめる (to quit) with a reason more usual? | Haiku builder | 2026-11-06 |
 | unit-level | ja-health | The example and sentence decks of ja-health are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
 | unit-level | ja-health | The plan's list had すこやか (healthy, a na-adjective) at row 50, left out because the rules tables do not cover na-adjectives here; すいぶん takes its place. Should すこやか come back in a later adjectives unit? | Haiku builder | 2026-11-06 |
+| ja-2793 | ja-feelings | Is あい (love, 愛) the everyday word at B1, or is あいじょう used more? The same spelling and reading is also an unrelated word, あい (藍, indigo): should a homograph note say so? | Haiku builder | 2026-11-06 |
+| ja-2811 | ja-feelings | Is たのもしい (reliable, reassuring) the natural word for someone one can count on, or is たよりになる used more in everyday speech? | Haiku builder | 2026-11-06 |
+| ja-2810 | ja-feelings | Is かなしげな (sorrowful-looking, as in かなしげな かお) natural at B1, or should it wait for a later unit? | Haiku builder | 2026-11-06 |
+| ja-2800 | ja-feelings | Is いやがる (to be reluctant, to dislike) the natural word for a child who dislikes medicine, or is きらう used there instead? | Haiku builder | 2026-11-06 |
+| ja-2801 | ja-feelings | Is こらえる (to hold back, endure) the natural word for holding back tears, as in なみだを こらえる? | Haiku builder | 2026-11-06 |
+| ja-2809 | ja-feelings | Is ゆかい (pleasant, merry) the natural everyday word, or is たのしい used for the same sense? | Haiku builder | 2026-11-06 |
+| unit-level | ja-feelings | The example and sentence decks of ja-feelings are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
