@@ -214,6 +214,56 @@ Before you start:
    Do not run the validator locally: push and read CI's result, ignoring
    checks irrelevant to a deck. Say what you verified.
 
+## Validator lessons (2026-11-06)
+
+Checks every builder makes by reading before pushing. Each came from the zh
+decks that failed CI's validator (`decks/zh/zh-emergencies.yaml`, the zh
+money, society and reading decks). CI's log repeats each error in its
+`Errors:` section, so count each once.
+
+- **Example bases.** Every word of a target and of each example is a card
+  the course teaches, or has a `bases` entry in that same example. A word
+  with no card gets `{ word, base, reading }` written in full, its base the
+  word itself when it is not inflected (从, 在, 把 in the older zh units).
+  Give a word's base once per text; a repeated `word` is an error.
+- **Transliteration in prose.** Every non-Latin word in a note, a `why`, a
+  prompt or any other layer string is followed by its reading in
+  parentheses: 道德 (dàodé), and in a phrase the syllables spaced, 这 是 什么
+  (zhè shì shénme). A run of Chinese words with spaces between them counts
+  as one, so the reading follows the whole run. Copy each reading from the
+  card's core; never write it from memory. Core strings in the language's
+  own script need none.
+- **Reading answers are 1-based.** `answer: 1` is the first option; a
+  question without options is `true` or `false`.
+- **Passage ids start with the language and name the passage:** `zh-opinion-column`,
+  not `opinion-column`. They share one namespace with the questions' ids, so
+  no passage id is a card id.
+- **No identical spelling in `target_scripts`.** Omit `han_traditional` when
+  it equals the target, as valid cards do.
+- **Rules tables.** Every new noun, verb or adjective gets a row in every
+  rules table of its class (or is listed in its `except`).
+- **Confusable ids are lowercase ASCII slugs (French).** A confusable's `id`
+  matches `[a-z0-9-]+`, starts with a letter and is not a YAML 1.1 boolean
+  word (`yes`, `no`, `on`, `off`, `true`, `false`, `y`, `n`). Strip the
+  accents, spaces and apostrophes: `année` is `annee`, `fête` is `fete`. The
+  layer keys its `why` by id, so rename it there too.
+- **A bases word occurs in its text (French).** The validator splits a text
+  at spaces and punctuation, so a hyphenated or spaced compound (`week-end`,
+  `rendez-vous`, `petit-déjeuner`, `tout de suite`) is never one word. Drop
+  its entry when its parts are taught cards (`petit`, `déjeuner`, `avant`,
+  `hier`). Otherwise give each uncovered part an entry: `ref` to the
+  compound's card where one exists, else `{ word, base: <compound> }` with a
+  layer meaning such as "part of rendez-vous". A card whose own target is
+  hyphenated is covered the same way: `bases: self` covers none of its parts.
+- **Sentence-order confusables: 2 to 3 wrong tiles.** A sentence put in
+  order with one confusable fails ("got 1"). Add a second: a card of the
+  course whose word is not in the answer. A `ref` whose target is a tile of
+  the answer is refused too.
+- **Layer meanings only for inline bases (French).** A base given by `ref`
+  takes its meaning from that card, so a layer that also glosses it fails
+  with "no inline base" (`dors`, `finit`, `dans`, `une` in the calendar
+  unit). Remove the layer entry.
+
 ## Grammar units
 
 A planned unit such as `{ id: "mr-grammar-imperatives", grammar: "imperatives" }`
