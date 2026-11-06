@@ -577,7 +577,6 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
     typed.dispose();
     if (ok != true || !mounted) return;
-    _state.haptics.danger();
     var next = _skills;
     for (final key in _skills.held) {
       if (_skills.stateOf(key) == SkillState.learn) {
@@ -585,7 +584,13 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       }
     }
     _state.applySkills(_view.language, next);
-    await _state.deckDownloads?.remove(_code);
+    try {
+      await _state.deckDownloads?.remove(_code);
+    } on Object {
+      _state.haptics.error();
+      rethrow;
+    }
+    _state.haptics.danger();
     if (!mounted) return;
     _toast(l10n.languagesToastDeleted(_view.name));
     if (next.isAllLeave) {

@@ -31,7 +31,7 @@ import 'support/recording_haptic_engine.dart';
 ({Haptics haptics, RecordingHapticEngine engine, void Function(int ms) wait})
 service({bool Function()? enabled}) {
   final engine = RecordingHapticEngine();
-  var now = DateTime(2026, 11, 6);
+  var now = Duration.zero;
   return (
     haptics: Haptics(
       engine: engine,
@@ -39,7 +39,7 @@ service({bool Function()? enabled}) {
       clock: () => now,
     ),
     engine: engine,
-    wait: (ms) => now = now.add(Duration(milliseconds: ms)),
+    wait: (ms) => now += Duration(milliseconds: ms),
   );
 }
 
@@ -68,6 +68,37 @@ void main() {
       s.wait(60);
       s.haptics.select();
       expect(s.engine.played, <Haptic>[Haptic.select, Haptic.select]);
+    });
+
+    test('a result is not thinned by the touch just before it', () {
+      // The last card's rating, then the summary's success a frame later.
+      final s = service();
+      s.haptics.confirm();
+      s.wait(20);
+      s.haptics.success();
+      expect(s.engine.played, <Haptic>[Haptic.confirm, Haptic.success]);
+      s.wait(300);
+      s.haptics.tap();
+      s.wait(10);
+      s.haptics.danger();
+      s.wait(10);
+      s.haptics.error();
+      expect(s.engine.played.skip(2), <Haptic>[
+        Haptic.tap,
+        Haptic.danger,
+        Haptic.error,
+      ]);
+    });
+
+    test('Flutter\'s own feedback is left alone unless the service buzzes', () {
+      var on = true;
+      final s = service(enabled: () => on);
+      expect(s.haptics.ownFeedback, isFalse);
+      on = false;
+      expect(s.haptics.ownFeedback, isNull);
+      s.engine.available = false;
+      on = true;
+      expect(s.haptics.ownFeedback, isNull);
     });
 
     test('a double is not interrupted while it plays', () {
@@ -358,21 +389,28 @@ void main() {
   });
 
   group('the rule', () {
-    test('only the system engine calls HapticFeedback or Feedback', () {
+    test('only the system engine calls HapticFeedback, Feedback or '
+        'SystemSound', () {
+      final raw = RegExp(
+        r'HapticFeedback\s*\.|\bFeedback\s*\.\s*(for|wrapFor)|'
+        r'SystemSound\s*\.',
+      );
       final offenders = <String>[];
       for (final file in Directory('lib').listSync(recursive: true)) {
         if (file is! File || !file.path.endsWith('.dart')) continue;
         if (file.path.endsWith('core/haptics/system_haptic_engine.dart')) {
           continue;
         }
-        final lines = file.readAsLinesSync();
-        for (var i = 0; i < lines.length; i++) {
-          final line = lines[i].trimLeft();
-          if (line.startsWith('//')) continue;
-          if (line.contains('HapticFeedback.') ||
-              RegExp(r'\bFeedback\.for').hasMatch(line)) {
-            offenders.add('${file.path}:${i + 1}');
-          }
+        // Comments out, then the whole file at once, so a call split over
+        // lines still matches.
+        final code = file
+            .readAsStringSync()
+            .split('\n')
+            .map((l) => l.trimLeft().startsWith('//') ? '' : l)
+            .join('\n');
+        for (final m in raw.allMatches(code)) {
+          final line = '\n'.allMatches(code.substring(0, m.start)).length + 1;
+          offenders.add('${file.path}:$line');
         }
       }
       expect(offenders, isEmpty, reason: 'use AppScope.read(c).haptics');

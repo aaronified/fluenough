@@ -201,7 +201,7 @@ class AppState extends ChangeNotifier {
     WebInstall? webInstall,
     WallpaperSource wallpaperSource = const NullWallpaperSource(),
     this._hapticEngine = const NullHapticEngine(),
-    this._hapticClock = DateTime.now,
+    this._hapticClock,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     this.reports = const NullReportSender(),
     this._mailShare = const NullMailShare(),
@@ -358,7 +358,7 @@ class AppState extends ChangeNotifier {
     WebInstall? webInstall,
     WallpaperSource wallpaperSource = const NullWallpaperSource(),
     HapticEngine hapticEngine = const NullHapticEngine(),
-    DateTime Function()? hapticClock,
+    Duration Function()? hapticClock,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     ReportSender reports = const NullReportSender(),
     MailShare mailShare = const NullMailShare(),
@@ -504,7 +504,7 @@ class AppState extends ChangeNotifier {
   final WallpaperColours wallpaper;
 
   final HapticEngine _hapticEngine;
-  final DateTime Function() _hapticClock;
+  final Duration Function()? _hapticClock;
 
   /// Every haptic the app plays, by meaning, gated by the "Vibrate on touch"
   /// setting (Plan-Haptics). Screens say what happened and never call

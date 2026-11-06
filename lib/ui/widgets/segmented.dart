@@ -175,7 +175,8 @@ class _Segment<T> extends StatelessWidget {
         child: Material(
           type: MaterialType.transparency,
           child: InkWell(
-            enableFeedback: false,
+            enableFeedback:
+                AppScope.maybeRead(context)?.haptics.takesOverFeedback != true,
             onTap: onTap,
             child: Padding(
               padding: const EdgeInsetsDirectional.symmetric(

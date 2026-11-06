@@ -129,7 +129,7 @@ class _RatingButton extends StatelessWidget {
         haptics?.confirm();
       },
       style: FilledButton.styleFrom(
-        enableFeedback: false,
+        enableFeedback: AppScope.maybeRead(context)?.haptics.ownFeedback,
         backgroundColor: bg,
         foregroundColor: fg,
         minimumSize: const Size(0, 64),

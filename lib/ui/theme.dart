@@ -117,9 +117,6 @@ abstract final class AppTheme {
       // compact line of small text, never a wrapped sentence.
       tooltipTheme: TooltipThemeData(
         triggerMode: TooltipTriggerMode.longPress,
-        // Flutter's own long-press buzz, which no setting turned off; the
-        // app's haptics are `Haptics` (Plan-Haptics).
-        enableFeedback: false,
         constraints: const BoxConstraints(minHeight: 24, maxWidth: 220),
         padding: const EdgeInsetsDirectional.symmetric(
           horizontal: 8,

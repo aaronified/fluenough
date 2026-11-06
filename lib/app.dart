@@ -164,6 +164,15 @@ class _FluenoughAppState extends State<FluenoughApp>
   @override
   Widget build(BuildContext context) {
     final settings = widget.state.settings;
+    // While the haptics service is on, Flutter's own long-press buzz on a
+    // tooltip is off (the service plays its own); otherwise the platform
+    // default stays. Read again whenever a setting changes.
+    final own = widget.state.haptics.takesOverFeedback;
+    ThemeData hapticTheme(ThemeData theme) => own
+        ? theme.copyWith(
+            tooltipTheme: theme.tooltipTheme.copyWith(enableFeedback: false),
+          )
+        : theme;
     return AppScope(
       state: widget.state,
       child: ListenableBuilder(
@@ -180,16 +189,20 @@ class _FluenoughAppState extends State<FluenoughApp>
             GlobalCupertinoLocalizations.delegate,
           ],
           supportedLocales: AppLocalizations.supportedLocales,
-          theme: AppTheme.light(
-            seed: settings.seed,
-            highContrast: settings.highContrast,
-            wallpaper: widget.state.wallpaperInUse,
+          theme: hapticTheme(
+            AppTheme.light(
+              seed: settings.seed,
+              highContrast: settings.highContrast,
+              wallpaper: widget.state.wallpaperInUse,
+            ),
           ),
-          darkTheme: AppTheme.dark(
-            seed: settings.seed,
-            highContrast: settings.highContrast,
-            pureBlack: settings.pureBlack,
-            wallpaper: widget.state.wallpaperInUse,
+          darkTheme: hapticTheme(
+            AppTheme.dark(
+              seed: settings.seed,
+              highContrast: settings.highContrast,
+              pureBlack: settings.pureBlack,
+              wallpaper: widget.state.wallpaperInUse,
+            ),
           ),
           themeMode: settings.themeMode,
           onGenerateRoute: AppRoutes.onGenerateRoute,

@@ -76,7 +76,7 @@ and why Waydroid cannot test audio, is in
 | `lib/core/grading/` | Answer comparison | low |
 | `lib/core/tts/` | `TtsEngine` + system implementation | low |
 | `lib/core/speech/`, `lib/core/sound/` | `SpeechEngine`, `SoundCheckEngine` + system implementations | low |
-| `lib/core/haptics/` | `HapticEngine`, the `Haptic` meanings + the system engine (Flutter's `HapticFeedback`) | low |
+| `lib/core/haptics/` | `HapticEngine`, the `Haptic` meanings (pure Dart) + the system engine (Flutter's `HapticFeedback`) | low |
 | `lib/core/data/` | drift database, repositories | **high — coordinate** |
 | `lib/features/` | UI, one directory per screen area | low if you stay in yours |
 | `lib/l10n/` | Interface strings, one ARB file per locale | low |
@@ -139,12 +139,15 @@ wanted, and for a boolean names the cause. Run it.
 from Flutter.
 
 That is what keeps them testable in milliseconds with no device or emulator.
-`lib/core/tts`, `lib/core/speech`, `lib/core/sound` and `lib/core/haptics`
-are exempt — they wrap platform plugins and channels by definition.
+`lib/core/tts`, `lib/core/speech` and `lib/core/sound` are exempt — they
+wrap platform plugins by definition — and so is the one file
+`lib/core/haptics/system_haptic_engine.dart`, which wraps Flutter's
+`HapticFeedback`. The rest of `lib/core/haptics/` is pure Dart and stays
+under the rule.
 
 Haptics are named by meaning and go through `AppScope.read(context).haptics`
 (`tap`, `select`, `toggle`, `confirm`, `danger`, `success`, `error`, ...):
-never call `HapticFeedback` or `Feedback` anywhere but
+never call `HapticFeedback`, `Feedback` or `SystemSound` anywhere but
 `lib/core/haptics/system_haptic_engine.dart` (`test/haptics_test.dart` fails
 for it), and never buzz for something the learner did not just do. See
 [Plan-Haptics](https://github.com/aaronified/fluenough/wiki/Plan-Haptics).

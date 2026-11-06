@@ -69,8 +69,19 @@ class _FeedbackBannerState extends State<FeedbackBanner> {
   @override
   void initState() {
     super.initState();
-    // After the frame that draws the verdict, so the learner feels what they
-    // see.
+    _feel();
+  }
+
+  @override
+  void didUpdateWidget(FeedbackBanner old) {
+    super.didUpdateWidget(old);
+    // The same element showing another verdict is a new verdict.
+    if (old.kind != widget.kind) _feel();
+  }
+
+  /// After the frame that draws the verdict, so the learner feels what they
+  /// see.
+  void _feel() {
     SchedulerBinding.instance.addPostFrameCallback((_) {
       if (!mounted) return;
       final haptics = AppScope.maybeRead(context)?.haptics;

@@ -37,7 +37,7 @@ class Hint extends StatelessWidget {
     excludeFromSemantics: excludeFromSemantics,
     // Flutter's own long-press buzz is off (the theme says so) and the
     // hint's own goes through the Vibrate on touch switch.
-    enableFeedback: false,
+    enableFeedback: AppScope.maybeRead(context)?.haptics.ownFeedback,
     onTriggered: () => AppScope.maybeRead(context)?.haptics.longPress(),
     child: child,
   );

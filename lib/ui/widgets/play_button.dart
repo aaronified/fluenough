@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../../l10n/app_localizations.dart';
 import 'expressive_shape.dart';
 import 'segmented.dart';
@@ -93,7 +94,11 @@ class _PlayButtonState extends State<PlayButton> {
                   shape: const ExpressiveShapeBorder(ExpressiveShape.cookie),
                   clipBehavior: Clip.antiAlias,
                   child: InkWell(
-                    enableFeedback: false,
+                    enableFeedback:
+                        AppScope.maybeRead(context)
+                            ?.haptics
+                            .takesOverFeedback !=
+                        true,
                     onTap: enabled ? _press : null,
                     onLongPress: longPress,
                     child: SizedBox.square(dimension: widget.size),

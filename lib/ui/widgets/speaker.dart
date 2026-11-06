@@ -24,9 +24,7 @@ abstract final class SpeakerActions {
     final state = AppScope.read(context);
     final settings = state.settings;
     final l10n = AppLocalizations.of(context)!;
-    // A long press is recognised: its own feel, Flutter's implicit one being
-    // off on the controls that call this.
-    state.haptics.longPress();
+    state.haptics.tap();
     if (!settings.soundOn) {
       showAppSnackBar(context, l10n.speakerSoundOff);
       return;
@@ -41,8 +39,10 @@ abstract final class SpeakerActions {
   /// A long press: switches playing words automatically, or says that
   /// sound is off.
   static void longPress(BuildContext context) {
-    final settings = AppScope.read(context).settings;
+    final state = AppScope.read(context);
+    final settings = state.settings;
     final l10n = AppLocalizations.of(context)!;
+    state.haptics.longPress();
     if (!settings.soundOn) {
       showAppSnackBar(context, l10n.speakerSoundOff);
       return;
@@ -184,7 +184,9 @@ class SpeakerIcon extends StatelessWidget {
             // Long press is the speaker's own: the tooltip waits for hover.
             triggerMode: TooltipTriggerMode.manual,
             child: InkResponse(
-              enableFeedback: false,
+              enableFeedback:
+                  AppScope.maybeRead(context)?.haptics.takesOverFeedback !=
+                  true,
               onTap: tap,
               onLongPress: longPress,
               radius: 24,

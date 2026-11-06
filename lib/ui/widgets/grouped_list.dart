@@ -307,7 +307,8 @@ class GroupedTile extends StatelessWidget {
       final change = _felt(context, toggle.onChanged);
       return MergeSemantics(
         child: InkWell(
-          enableFeedback: false,
+          enableFeedback:
+              AppScope.maybeRead(context)?.haptics.takesOverFeedback != true,
           onTap: change == null ? null : () => change(!toggle.value),
           child: _row(context, change: change),
         ),
@@ -322,7 +323,8 @@ class GroupedTile extends StatelessWidget {
           button: true,
           expanded: expanded,
           child: InkWell(
-            enableFeedback: false,
+            enableFeedback:
+                AppScope.maybeRead(context)?.haptics.takesOverFeedback != true,
             onTap: () {
               open();
               haptics?.tap();

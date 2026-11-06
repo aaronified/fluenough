@@ -14,27 +14,45 @@ import '../core/languages/language_skills.dart';
 /// - with a screen reader on, the touches it already vibrates for are
 ///   dropped ([silentWithScreenReader]) and the meaningful ones stay;
 /// - a call less than [throttle] after the previous one, or while a double
-///   is still playing, is dropped, which covers a fast fling of the language
+///   is still playing, is dropped (success, error and danger are not thinned
+///   by the throttle, only by a double still playing), which covers a fast fling of the language
 ///   wheel and a pop that follows a button press in the same frame.
 class Haptics {
   Haptics({
     required this._engine,
     required this._enabled,
-    this._clock = DateTime.now,
-  });
+    Duration Function()? clock,
+  }) : _clock = clock ?? _monotonic();
 
   /// At most 20 haptics a second.
   static const Duration throttle = Duration(milliseconds: 50);
 
   final HapticEngine _engine;
   final bool Function() _enabled;
-  final DateTime Function() _clock;
+  final Duration Function() _clock;
 
-  DateTime? _last;
-  DateTime? _busyUntil;
+  Duration? _last;
+  Duration? _busyUntil;
+
+  /// Time since the service began, from a [Stopwatch]: a step of the phone's
+  /// clock cannot silence haptics.
+  static Duration Function() _monotonic() {
+    final watch = Stopwatch()..start();
+    return () => watch.elapsed;
+  }
 
   /// Whether the phone can vibrate: the Settings row is not drawn when not.
   bool get available => _engine.available;
+
+  /// Whether the service is the one that buzzes now: the phone can vibrate
+  /// and Vibrate on touch is on. Only then do the app's widgets turn
+  /// Flutter's own feedback (the Android click sound, the long-press buzz)
+  /// off; otherwise the platform's default stays.
+  bool get takesOverFeedback => available && _enabled();
+
+  /// The value for a widget's `enableFeedback`: false while the service
+  /// takes over, null (the platform default) otherwise.
+  bool? get ownFeedback => takesOverFeedback ? false : null;
 
   /// Whether a screen reader is on, from the root widget's `MediaQuery`.
   bool screenReader = false;
@@ -62,6 +80,11 @@ class Haptics {
     SkillMark.knowCovered || SkillMark.knowBothCovered => Haptic.pillLearnt,
   });
 
+  static bool _bypassesThrottle(Haptic haptic) =>
+      haptic == Haptic.success ||
+      haptic == Haptic.error ||
+      haptic == Haptic.danger;
+
   /// Plays [haptic], if the setting, the screen reader rule and the throttle
   /// allow.
   void play(Haptic haptic) {
@@ -69,12 +92,16 @@ class Haptics {
     if (screenReader && silentWithScreenReader(haptic)) return;
     final now = _clock();
     final busy = _busyUntil;
-    if (busy != null && now.isBefore(busy)) return;
+    if (busy != null && now < busy) return;
+    // What carries a result is never thinned by a touch just before it: a
+    // last card's rating, then the summary's success.
     final last = _last;
-    if (last != null && now.difference(last) < throttle) return;
+    if (!_bypassesThrottle(haptic) && last != null && now - last < throttle) {
+      return;
+    }
     _last = now;
     final length = playTimeOf(haptic);
-    if (length > Duration.zero) _busyUntil = now.add(length);
+    if (length > Duration.zero) _busyUntil = now + length;
     _engine.play(haptic, stillOn: _enabled);
   }
 }
@@ -82,7 +109,7 @@ class Haptics {
 /// A clock that moves one second on each time it is read, so that a test's
 /// haptics are never thrown away as too close together. `AppState.test`
 /// uses it; a test of the throttle itself gives its own.
-DateTime Function() steppingClock() {
-  var now = DateTime(2026, 11, 6);
-  return () => now = now.add(const Duration(seconds: 1));
+Duration Function() steppingClock() {
+  var now = Duration.zero;
+  return () => now += const Duration(seconds: 1);
 }
