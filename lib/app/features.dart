@@ -138,18 +138,40 @@ enum Feature {
 /// [FeatureRegistry.all] to see every screen live, or [FeatureRegistry.only]
 /// to pin a state.
 class FeatureRegistry {
-  const FeatureRegistry.only(this._on);
+  const FeatureRegistry.only(this._on) : _browser = false;
 
   /// What this version ships: [Feature.available].
-  const FeatureRegistry.shipped() : _on = Feature.available;
+  const FeatureRegistry.shipped() : _on = Feature.available, _browser = false;
 
   /// Every feature on, as if every backend had landed.
-  FeatureRegistry.all() : _on = Set<Feature>.unmodifiable(Feature.values);
+  FeatureRegistry.all()
+    : _on = Set<Feature>.unmodifiable(Feature.values),
+      _browser = false;
+
+  /// What the web build ships (`lib/main_web.dart`): the same features, in a
+  /// browser, which has no notifications and no APK to install. A row for
+  /// what a browser cannot do at all is not drawn ([hasNotifications],
+  /// [hasApkUpdates]), unlike an incoming feature, which is shown disabled.
+  const FeatureRegistry.web() : _on = Feature.available, _browser = true;
 
   final Set<Feature> _on;
+  final bool _browser;
 
   bool isAvailable(Feature feature) => _on.contains(feature);
 
   /// Built but not yet switched on: shown disabled, with a badge.
   bool isIncoming(Feature feature) => !isAvailable(feature);
+
+  /// Whether the app runs in a browser, where words that name "your phone"
+  /// or Android's settings name the browser instead.
+  bool get inBrowser => _browser;
+
+  /// Whether the platform can show the daily reminder's notifications. A
+  /// browser tab cannot fire one at a set time with the page closed, so the
+  /// web build draws no Reminders row and no switch (owner, 2026-11-05).
+  bool get hasNotifications => !_browser;
+
+  /// Whether the app updates itself by downloading an APK. The web build is
+  /// updated by its service worker, so it draws no Updates row.
+  bool get hasApkUpdates => !_browser;
 }
