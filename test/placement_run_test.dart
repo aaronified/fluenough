@@ -8,6 +8,7 @@ import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/assurance_readout.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/placement_run.dart';
+import 'package:fluenough/core/placement/question_outcome.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const _read = PlacementSkill.read;
@@ -736,6 +737,33 @@ void main() {
       expect(decks, <int>[77, 77, 77, 40]);
       expect(played.run.grammarDeck, 40);
     });
+
+    test(
+      'a second probe that cannot be built keeps the first one\'s level',
+      () {
+        var run = PlacementRun(
+          configFor(
+            <PlacementSkill>{_read, _hear},
+            declaration: PlacementDeclaration.advanced,
+            grammarUnits: <int>[5, 20, 40, 60, 77, 87, 95],
+          ),
+        );
+        var unavailable = 0;
+        while (!run.isDone && run.asked < 200) {
+          final q = run.next!;
+          if (q.topic == PlacementTopic.grammarLevel && q.deck == 87) {
+            unavailable++;
+            run = run.markUnavailable(
+              PlacementUnavailableReason.noGrammarFamily,
+            );
+            continue;
+          }
+          run = run.answer(q.deck <= 80);
+        }
+        expect(unavailable, 1);
+        expect(run.grammarDeck, 77, reason: 'the stage-0 result is kept');
+      },
+    );
 
     test('a learner who knows nothing is not asked grammar', () {
       final played = playLevel(

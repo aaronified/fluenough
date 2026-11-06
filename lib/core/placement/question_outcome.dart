@@ -46,6 +46,11 @@ enum PlacementUnavailableReason {
 
   /// Every item of the kind was already asked in this run.
   allAsked,
+
+  /// A split or an isolating question needs the question it checks, or part
+  /// of it (the word, the family, the contrast), and the caller gave none.
+  /// Never guessed: the check would be about some other word.
+  noOrigin,
 }
 
 /// One note in a run: [variant], asked after [afterAnswers] answers, could

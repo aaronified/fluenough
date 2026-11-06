@@ -220,8 +220,10 @@ class PlacementRun {
   ///   there, complex words where the language has no pair list;
   /// - any other base question: left out; its skills are then not covered,
   ///   so they cannot be Verified (section 4.3, condition c);
-  /// - a split or a recheck: the check is dropped, and the miss stays as the
-  ///   evidence it was;
+  /// - a split or a recheck: the check is dropped, the miss stays as the
+  ///   evidence it was, and the skills of the question are unresolved: they
+  ///   cannot be Verified (the plan is silent; an unsettled miss is not
+  ///   proof);
   /// - a positioning probe or a top-up: the skill is left out of the run;
   /// - the grammar bisection: it ends.
   PlacementRun markUnavailable(PlacementUnavailableReason reason) {
@@ -267,6 +269,11 @@ class PlacementRun {
   /// (and had no fallback), as their plan names.
   Set<PlacementVariant> get skippedQuestions =>
       Set<PlacementVariant>.of(_engine.skippedVariants);
+
+  /// The skills with a miss that no check settled, because a split or a
+  /// recheck could not be built ([markUnavailable]). They cannot be Verified.
+  Set<PlacementSkill> get unresolvedSkills =>
+      Set<PlacementSkill>.of(_engine.unresolvedSkills);
 
   /// The skills that have a closed case in this run.
   Set<PlacementSkill> get closedSkills =>
@@ -470,6 +477,11 @@ class _Engine {
   final Set<PlacementSkill> unavailableSkills = <PlacementSkill>{};
   final Set<PlacementSkill> closedSkills = <PlacementSkill>{};
   final Set<PlacementSkill> gapSkills = <PlacementSkill>{};
+
+  /// Skills with a miss whose check (the two splits, or the recheck) could not
+  /// be asked: the miss is neither forgiven nor closed, so the skill cannot
+  /// be Verified.
+  final Set<PlacementSkill> unresolvedSkills = <PlacementSkill>{};
   final List<PlacementGap> gaps = <PlacementGap>[];
   final List<PlacementAnswer> answers = <PlacementAnswer>[];
 
@@ -501,8 +513,10 @@ class _Engine {
         deck: spec.deck,
         percentile: _percentile(spec.deck),
         shortlistPick: random.nextInt(5),
-        part: spec.split?.part,
-        origin: spec.split == null ? null : spec.base?.id,
+        originVariant:
+            spec.split != null || spec.role == PlacementQuestionRole.isolating
+            ? spec.base?.id
+            : null,
       ),
     );
   }
@@ -657,9 +671,11 @@ class _Engine {
       case PlacementQuestionRole.split:
         // The check cannot be asked: the miss stays as evidence and nothing
         // is forgiven or closed.
+        unresolvedSkills.addAll(_case?.origin.skills ?? spec.skills);
         _case = null;
         _forced.removeWhere((s) => s.role == PlacementQuestionRole.split);
       case PlacementQuestionRole.recheck:
+        unresolvedSkills.addAll(_case?.origin.skills ?? spec.skills);
         _case = null;
       case PlacementQuestionRole.isolating:
         break;
@@ -671,6 +687,11 @@ class _Engine {
         _case = null;
       case PlacementQuestionRole.grammar:
         _grammar.done = true;
+        // A first probe that could not be asked leaves no grammar level; a
+        // later one keeps what the earlier probes found.
+        if (_grammar.stage == 1) {
+          grammarDeck = config.grammarUnitDecks[_grammar.levelIndex ?? 0];
+        }
     }
     pending = _choose();
   }
@@ -941,6 +962,8 @@ class _Engine {
           kind: PlacementQuestionKind.tilesWord,
           skills: const <PlacementSkill>[PlacementSkill.write],
           deck: _top,
+          base: question,
+          baseIndex: origin.baseIndex,
         ),
       );
     } else if (origin.topic == PlacementTopic.sayByMeaning &&
@@ -953,6 +976,8 @@ class _Engine {
           kind: PlacementQuestionKind.pickOne,
           skills: const <PlacementSkill>[PlacementSkill.hear],
           deck: _top,
+          base: question,
+          baseIndex: origin.baseIndex,
         ),
       );
     }
@@ -1046,7 +1071,8 @@ class _Engine {
           questions >= 3 &&
           _covered(skill) &&
           !closedSkills.contains(skill) &&
-          !gapSkills.contains(skill)) {
+          !gapSkills.contains(skill) &&
+          !unresolvedSkills.contains(skill)) {
         label = AssuranceLabel.verified;
       }
       out[skill] = SkillAssurance(

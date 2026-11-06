@@ -139,8 +139,7 @@ class PlacementQuestionRequest {
     required this.deck,
     required this.percentile,
     required this.shortlistPick,
-    this.part,
-    this.origin,
+    this.originVariant,
   });
 
   /// 1 for the first question of the run.
@@ -173,14 +172,11 @@ class PlacementQuestionRequest {
 
   final int shortlistPick;
 
-  /// For a split, the part of the failed question it isolates (section 3.1);
-  /// null for any other question. The question builder reads it to say what
-  /// to remove from the failed question.
-  final PlacementPart? part;
-
-  /// For a split, the name of the base question whose miss it checks (`K1`,
-  /// `W2`, ...); null for any other question.
-  final PlacementVariant? origin;
+  /// For a split or an isolating question, the name of the base question
+  /// whose miss it checks (`K1`, `W2`, ...); null for any other question.
+  /// The caller hands that question back to the question builder as
+  /// `failed`.
+  final PlacementVariant? originVariant;
 
   @override
   String toString() =>

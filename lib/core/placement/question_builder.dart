@@ -58,20 +58,22 @@ class QuestionBuilder {
 
   /// The question [request] asks for, or why there is none. [asked] is the
   /// no-repeat set: the `itemIds` of every question built so far in the run.
-  /// [origin] is the question a split checks, where the caller kept it.
+  /// [failed] is the question a split or an isolating question checks (the
+  /// request's `originVariant` names it), which the caller kept; without it
+  /// the questions that need its word, family or contrast are unavailable
+  /// ([PlacementUnavailableReason.noOrigin]), never asked about some other
+  /// item.
   QuestionOutcome build(
     PlacementQuestionRequest request, {
     Set<String> asked = const <String>{},
-    GeneratedQuestion? origin,
+    GeneratedQuestion? failed,
   }) {
-    final ctx = _Ctx(request, asked, origin, seed);
+    final ctx = _Ctx(request, asked, failed, seed);
     switch (request.role) {
       case PlacementQuestionRole.split:
         return _split(ctx);
       case PlacementQuestionRole.isolating:
-        return ctx.request.topic == PlacementTopic.minimalPairs
-            ? _pair(ctx, tiles: true)
-            : _wordPick(ctx, heard: true);
+        return _isolating(ctx);
       case PlacementQuestionRole.grammar:
         return _blank(ctx, exactDeck: true);
       case PlacementQuestionRole.probe:
@@ -142,7 +144,7 @@ class QuestionBuilder {
       case PlacementVariant.s2:
         return _split(ctx);
       case PlacementVariant.isolating:
-        return _wordPick(ctx, heard: true);
+        return _isolating(ctx);
     }
   }
 
@@ -683,7 +685,7 @@ class QuestionBuilder {
     final candidates = <({Card card, int deck})>[];
     for (final i in decks) {
       for (final c in data.decks[i].cards) {
-        if (!_eligible(c, exactDeck ? const <String>{} : ctx.asked) ||
+        if (!_eligible(c, ctx.asked) ||
             !isSentenceCard(c) ||
             (shortOnly && c.wordCount > shortSentenceWords + 1)) {
           continue;
@@ -801,6 +803,20 @@ class QuestionBuilder {
   bool _buildable(Card c) =>
       isSentenceCard(c) && !c.modes.contains(DrillMode.production);
 
+  /// The two options of "which sentence has its words in the right order":
+  /// the sentence and the same words in another order. Both are written the
+  /// same way, as [Card.tilesOfSpelling] gives the words (lowercase, marks at
+  /// the edges apart, one space between tiles, with or without spaces in the
+  /// script), so that nothing but the order tells the right one: not a
+  /// capital, a mark stuck to a word, or the spacing of an unspaced script.
+  /// Null where the words cannot be put in another order.
+  ({String right, String wrong})? _orderOptions(Card card, math.Random random) {
+    final tiles = card.tilesOfSpelling(card.target);
+    final right = tiles.join(' ');
+    final wrong = _shuffledNot(tiles, random).join(' ');
+    return wrong == right ? null : (right: right, wrong: wrong);
+  }
+
   /// G3, for a learner who can only hear: which of two sentences sounds
   /// right, the second being the first with its words out of order.
   QuestionOutcome _soundsRight(_Ctx ctx) {
@@ -825,19 +841,21 @@ class QuestionBuilder {
       return _empty(ctx, PlacementUnavailableReason.noSentences);
     }
     final card = item.card;
-    final words = card.tilesOfSpelling(card.target);
-    final scrambled = _shuffledNot(words, ctx.random).join(' ');
-    final options = <String>[card.target, scrambled]..shuffle(ctx.random);
+    final order = _orderOptions(card, ctx.random);
+    if (order == null) {
+      return _empty(ctx, PlacementUnavailableReason.noSentences);
+    }
+    final options = <String>[order.right, order.wrong]..shuffle(ctx.random);
     return QuestionBuilt(
       GeneratedQuestion(
         request: ctx.request,
         prompt: PlacementPromptKind.sentencePair,
         mode: PlacementAnswerMode.pick,
         options: options,
-        correctIndex: options.indexOf(card.target),
+        correctIndex: options.indexOf(order.right),
         optionsAreAudio: tested.contains(PlacementSkill.hear),
         audio: tested.contains(PlacementSkill.hear) ? _audioOf(card) : null,
-        accepted: <String>[card.target],
+        accepted: <String>[order.right],
         cardId: card.id,
         concept: family == null ? null : 'grammar:$family',
         itemIds: _ids(
@@ -999,26 +1017,35 @@ class QuestionBuilder {
   // ---------------------------------------------------------------------------
   // Topic 4: minimal pairs (P1, P2) and their written fallback.
 
-  /// Pairs of words that differ by exactly one swap: [PlacementItemPicker]
-  /// is given the card, the partner and the contrast. The swaps are the
-  /// sounds file's letter pairs; with no file (and [PlacementLanguageData.
-  /// pairsFromDecks]) a swap is any single letter that two words of the
-  /// decks differ by, each such swap being a contrast of its own.
-  List<({Card card, Card partner, String contrast, int deck})> _pairs(
-    _Ctx ctx,
-    int deckLimit,
-  ) {
+  /// Every pair of words of the decks that differ by exactly one swap of a
+  /// real contrast, both ways round (a pair is two entries), computed once
+  /// for the language. With a sounds file the swaps are its letter pairs;
+  /// with none (and [PlacementLanguageData.pairsFromDecks]) they are the
+  /// language's explicit list of letter swaps that are two sounds
+  /// ([PlacementLanguageData.effectiveDeckPairSwaps]), each such swap being a
+  /// contrast of its own. Two words that differ only by an accent, a case, a
+  /// silent letter or a spelling variant are never a pair: both could be the
+  /// word that was heard.
+  late final List<_Pair> _allPairs = _computePairs();
+
+  /// [_allPairs] whose two words are both of the decks up to [deckLimit].
+  List<_Pair> _pairs(int deckLimit) => <_Pair>[
+    for (final p in _allPairs)
+      if (p.deck <= deckLimit) p,
+  ];
+
+  List<_Pair> _computePairs() {
     final sounds = data.sounds;
     final words = <Card>[
-      for (var i = 0; i <= deckLimit && i < data.deckCount; i++)
-        for (final c in data.decks[i].cards)
+      for (final deck in data.decks)
+        for (final c in deck.cards)
           if (isAskable(c) && isWordCard(c) && wordsOf(c.target).length == 1) c,
     ];
     final byForm = <String, List<Card>>{};
     for (final c in words) {
       byForm.putIfAbsent(normaliseForContrast(c.target), () => <Card>[]).add(c);
     }
-    final out = <({Card card, Card partner, String contrast, int deck})>[];
+    final out = <_Pair>[];
     final seen = <String>{};
     void found(Card a, Card b, String contrast) {
       if (a.id == b.id || sameMeaning(a, b)) return;
@@ -1059,33 +1086,38 @@ class QuestionBuilder {
       }
       return out;
     }
-    if (!data.pairsFromDecks) return out;
-    // No sounds file: two words of one length that differ in one letter.
-    final byLength = <int, List<MapEntry<String, List<Card>>>>{};
-    for (final e in byForm.entries) {
-      byLength.putIfAbsent(e.key.runes.length, () => []).add(e);
+    // No sounds file: two words of one length that differ in one letter, and
+    // only where the two letters are a listed swap of the language.
+    final allowed = <String>{
+      for (final (x, y) in data.effectiveDeckPairSwaps)
+        ..._swapKeys(composed(x), composed(y)),
+    };
+    if (allowed.isEmpty) return out;
+    // Words that agree everywhere but at one place share a key made of the
+    // word with that place masked: no all-against-all comparison.
+    final groups = <String, List<({String form, int rune})>>{};
+    for (final form in byForm.keys) {
+      final runes = form.runes.toList();
+      for (var k = 0; k < runes.length; k++) {
+        final masked = <int>[...runes]..[k] = 0;
+        groups
+            .putIfAbsent(
+              '$k:${String.fromCharCodes(masked)}',
+              () => <({String form, int rune})>[],
+            )
+            .add((form: form, rune: runes[k]));
+      }
     }
-    for (final group in byLength.values) {
+    for (final group in groups.values) {
       for (var i = 0; i < group.length; i++) {
-        final a = group[i].key.runes.toList();
         for (var j = i + 1; j < group.length; j++) {
-          final b = group[j].key.runes.toList();
-          var at = -1;
-          var diffs = 0;
-          for (var k = 0; k < a.length && diffs < 2; k++) {
-            if (a[k] != b[k]) {
-              diffs++;
-              at = k;
-            }
-          }
-          if (diffs != 1) continue;
-          final pair = <String>[
-            String.fromCharCode(a[at]),
-            String.fromCharCode(b[at]),
-          ]..sort();
-          for (final x in group[i].value) {
-            for (final y in group[j].value) {
-              found(x, y, 'swap:${pair[0]}-${pair[1]}');
+          final x = String.fromCharCode(group[i].rune);
+          final y = String.fromCharCode(group[j].rune);
+          if (x == y || !allowed.contains('$x|$y')) continue;
+          final sorted = <String>[x, y]..sort();
+          for (final a in byForm[group[i].form]!) {
+            for (final b in byForm[group[j].form]!) {
+              found(a, b, 'swap:${sorted[0]}-${sorted[1]}');
             }
           }
         }
@@ -1093,6 +1125,11 @@ class QuestionBuilder {
     }
     return out;
   }
+
+  static List<String> _swapKeys(String x, String y) => <String>[
+    '$x|$y',
+    '$y|$x',
+  ];
 
   /// Every text that is [text] with one [from] replaced by [to].
   List<String> _swaps(String text, String from, String to, bool withinWord) {
@@ -1120,10 +1157,10 @@ class QuestionBuilder {
   /// case): the meaning of one word is shown and it is built from tiles, the
   /// contrast's other letter among them.
   QuestionOutcome _pair(_Ctx ctx, {required bool tiles}) {
-    if (data.sounds == null && !data.pairsFromDecks) {
+    if (data.sounds == null && data.effectiveDeckPairSwaps.isEmpty) {
       return const QuestionUnavailable(
         PlacementUnavailableReason.noSoundsFile,
-        'no sounds file and pairs from the decks are off',
+        'no sounds file and no list of letter swaps for pairs from the decks',
       );
     }
     if (!tiles && requireTrustedPairAudio && !data.pairAudioTrusted) {
@@ -1138,7 +1175,23 @@ class QuestionBuilder {
         'Hear is not tested',
       );
     }
-    final all = _pairs(ctx, ctx.request.deck);
+    if (ctx.request.role == PlacementQuestionRole.isolating) {
+      final concept = ctx.failed?.concept;
+      if (ctx.failed == null || concept == null) {
+        return const QuestionUnavailable(
+          PlacementUnavailableReason.noOrigin,
+          'the closed pair question was not given',
+        );
+      }
+      if (!concept.startsWith('sound:')) {
+        return const QuestionUnavailable(
+          PlacementUnavailableReason.noPairFound,
+          'the closed question was not about a sound contrast',
+        );
+      }
+    }
+    final isolating = ctx.request.role == PlacementQuestionRole.isolating;
+    final all = _pairs(isolating ? data.deckCount : ctx.request.deck);
     if (all.isEmpty) {
       return QuestionUnavailable(
         data.sounds == null
@@ -1147,21 +1200,38 @@ class QuestionBuilder {
         'no two words of the decks differ by one swap',
       );
     }
-    final fresh = <({Card card, Card partner, String contrast, int deck})>[
-      for (final p in all)
-        if (_eligible(p.card, ctx.asked) &&
-            !ctx.asked.contains(p.partner.id) &&
-            !ctx.asked.contains('concept:sound:${p.contrast}'))
-          p,
-    ];
-    final pool = fresh.isNotEmpty
-        ? fresh
-        : <({Card card, Card partner, String contrast, int deck})>[
-            for (final p in all)
-              if (_eligible(p.card, ctx.asked) &&
-                  !ctx.asked.contains(p.partner.id))
-                p,
-          ];
+    final List<_Pair> pool;
+    if (isolating) {
+      // The contrast that was closed, asked as a spelling: the same word
+      // when it is there, else another pair of the same contrast. Its words
+      // were asked already, so nothing is left out for that.
+      final closed = ctx.failed!.concept!.substring('sound:'.length);
+      final same = <_Pair>[
+        for (final p in all)
+          if (p.contrast == closed) p,
+      ];
+      final sameWord = <_Pair>[
+        for (final p in same)
+          if (p.card.id == ctx.failed!.cardId) p,
+      ];
+      pool = sameWord.isNotEmpty ? sameWord : same;
+    } else {
+      final fresh = <_Pair>[
+        for (final p in all)
+          if (_eligible(p.card, ctx.asked) &&
+              !ctx.asked.contains(p.partner.id) &&
+              !ctx.asked.contains('concept:sound:${p.contrast}'))
+            p,
+      ];
+      pool = fresh.isNotEmpty
+          ? fresh
+          : <_Pair>[
+              for (final p in all)
+                if (_eligible(p.card, ctx.asked) &&
+                    !ctx.asked.contains(p.partner.id))
+                  p,
+            ];
+    }
     if (pool.isEmpty) {
       return _empty(ctx, PlacementUnavailableReason.noPairFound);
     }
@@ -1545,12 +1615,44 @@ class QuestionBuilder {
   // ---------------------------------------------------------------------------
   // The two questions after a composite miss (section 3.1).
 
+  /// The question asked after a closed single-skill case (section 3.2): a
+  /// closed pair case gets the same contrast as a spelling with the swapped
+  /// letter among the tiles (hearing against spelling); a closed Say case
+  /// gets the same word heard, its meaning picked (pronunciation against
+  /// vocabulary).
+  QuestionOutcome _isolating(_Ctx ctx) {
+    if (ctx.request.topic == PlacementTopic.minimalPairs) {
+      return _pair(ctx, tiles: true);
+    }
+    final word = _originCard(ctx);
+    if (word == null) {
+      return const QuestionUnavailable(
+        PlacementUnavailableReason.noOrigin,
+        'the closed Say question was not given',
+      );
+    }
+    return _wordPick(ctx, heard: true, only: word);
+  }
+
   QuestionOutcome _split(_Ctx ctx) {
     final request = ctx.request;
     final first = request.variant == PlacementVariant.s1;
-    final origin = request.origin;
-    final family = ctx.origin?.concept?.startsWith('grammar:') ?? false
-        ? ctx.origin!.concept!.substring('grammar:'.length)
+    final origin = request.originVariant;
+    if (origin == null) {
+      return const QuestionUnavailable(
+        PlacementUnavailableReason.noOrigin,
+        'a split names the question it checks',
+      );
+    }
+    final failed = ctx.failed;
+    QuestionOutcome needsFailed() => const QuestionUnavailable(
+      PlacementUnavailableReason.noOrigin,
+      'this split asks about the word or family of the question it checks, '
+      'which was not given',
+    );
+    final concept = failed?.concept;
+    final family = concept != null && concept.startsWith('grammar:')
+        ? concept.substring('grammar:'.length)
         : null;
     switch (origin) {
       case PlacementVariant.k1:
@@ -1565,22 +1667,26 @@ class QuestionBuilder {
             : _wordPick(ctx, heard: true, short: true);
       case PlacementVariant.w1:
       case PlacementVariant.w1b:
+        if (_originCard(ctx) == null) return needsFailed();
         return first
             ? _baseWordPick(ctx, heard: false)
             : _wordPick(ctx, heard: true, only: _originCard(ctx));
       case PlacementVariant.w2:
       case PlacementVariant.w2b:
+        if (_originCard(ctx) == null) return needsFailed();
         return first
             ? _baseWordPick(ctx, heard: true)
             : _wordPick(ctx, heard: false, only: _originCard(ctx));
       case PlacementVariant.g1:
       case PlacementVariant.g1b:
+        if (family == null) return needsFailed();
         return first
             ? _blank(ctx, family: family, shortOnly: true)
             : _blank(ctx, family: family, earliest: true);
       case PlacementVariant.g2:
       case PlacementVariant.g2b:
-        return first ? _blank(ctx) : _tilesWord(ctx);
+        if (family == null) return needsFailed();
+        return first ? _blank(ctx, family: family) : _tilesWord(ctx);
       case PlacementVariant.r1:
         return first
             ? _wordPick(ctx, heard: true, short: true)
@@ -1594,7 +1700,7 @@ class QuestionBuilder {
   }
 
   Card? _originCard(_Ctx ctx) {
-    final id = ctx.origin?.cardId;
+    final id = ctx.failed?.cardId;
     return id == null ? null : data.cardById(id);
   }
 
@@ -1653,19 +1759,19 @@ class QuestionBuilder {
       return _empty(ctx, PlacementUnavailableReason.noSentences);
     }
     final card = item.card;
-    final scrambled = _shuffledNot(
-      card.tilesOfSpelling(card.target),
-      ctx.random,
-    ).join(' ');
-    final options = <String>[card.target, scrambled]..shuffle(ctx.random);
+    final order = _orderOptions(card, ctx.random);
+    if (order == null) {
+      return _empty(ctx, PlacementUnavailableReason.noSentences);
+    }
+    final options = <String>[order.right, order.wrong]..shuffle(ctx.random);
     return QuestionBuilt(
       GeneratedQuestion(
         request: ctx.request,
         prompt: PlacementPromptKind.sentencePair,
         mode: PlacementAnswerMode.pick,
         options: options,
-        correctIndex: options.indexOf(card.target),
-        accepted: <String>[card.target],
+        correctIndex: options.indexOf(order.right),
+        accepted: <String>[order.right],
         meaningHint: card.native,
         cardId: card.id,
         itemIds: _ids(card, const <Card>[]),
@@ -1675,9 +1781,12 @@ class QuestionBuilder {
   }
 }
 
+/// Two words of the decks that differ by one swap of [contrast].
+typedef _Pair = ({Card card, Card partner, String contrast, int deck});
+
 /// What one call of [QuestionBuilder.build] knows.
 class _Ctx {
-  _Ctx(this.request, this.asked, this.origin, int seed)
+  _Ctx(this.request, this.asked, this.failed, int seed)
     : random = seededRandom(
         seed,
         '${request.number}:${request.variant.label}:${request.role.name}',
@@ -1685,6 +1794,8 @@ class _Ctx {
 
   final PlacementQuestionRequest request;
   final Set<String> asked;
-  final GeneratedQuestion? origin;
+
+  /// The question a split or an isolating question checks, if given.
+  final GeneratedQuestion? failed;
   final math.Random random;
 }

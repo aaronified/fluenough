@@ -53,6 +53,8 @@ PlacementLanguageData _fixture({
   bool grammar = true,
   bool script = true,
   bool trusted = false,
+  bool morePairs = false,
+  List<(String, String)>? deckPairSwaps,
 }) {
   final decks = <PlacementDeck>[];
   final scriptCards = <Card>[];
@@ -103,6 +105,19 @@ PlacementLanguageData _fixture({
       cards
         ..add(_card('p-gala', 'gala', 'feast', deck: 5))
         ..add(_card('p-dola', 'dola', 'swing', deck: 5));
+      if (morePairs) {
+        const more = <(String, String)>[
+          ('mata', 'mada'),
+          ('suka', 'suga'),
+          ('pika', 'piga'),
+          ('nito', 'nido'),
+        ];
+        for (final (j, (x, y)) in more.indexed) {
+          cards
+            ..add(_card('q-$j-a', x, 'pair $j first', deck: 5))
+            ..add(_card('q-$j-b', y, 'pair $j second', deck: 5));
+        }
+      }
     }
     if (sentences && i >= 3) {
       for (var j = 0; j < (i >= 4 ? 6 : 0); j++) {
@@ -185,6 +200,7 @@ PlacementLanguageData _fixture({
         : null,
     levelMarkDecks: const <int>[1, 3, 5],
     pairsFromDecks: pairsFromDecks,
+    deckPairSwaps: deckPairSwaps,
     pairAudioTrusted: trusted,
   );
 }
@@ -198,8 +214,7 @@ PlacementQuestionRequest _request(
   int deck = 5,
   int pick = 0,
   int number = 1,
-  PlacementPart? part,
-  PlacementVariant? origin,
+  PlacementVariant? originVariant,
 }) => PlacementQuestionRequest(
   number: number,
   role: role,
@@ -210,9 +225,22 @@ PlacementQuestionRequest _request(
   deck: deck,
   percentile: deck * 20,
   shortlistPick: pick,
-  part: part,
-  origin: origin,
+  originVariant: originVariant,
 );
+
+PlacementQuestionRequest _requestPick(PlacementQuestionRequest r, int pick) =>
+    PlacementQuestionRequest(
+      number: r.number,
+      role: r.role,
+      topic: r.topic,
+      variant: r.variant,
+      kind: r.kind,
+      skills: r.skills,
+      deck: r.deck,
+      percentile: r.percentile,
+      shortlistPick: pick,
+      originVariant: r.originVariant,
+    );
 
 GeneratedQuestion _built(QuestionOutcome outcome) {
   expect(outcome, isA<QuestionBuilt>(), reason: outcome.toString());
@@ -450,7 +478,10 @@ void main() {
     });
 
     test('with no sounds file the pairs come from the decks', () {
-      final data = _fixture(sounds: false);
+      final data = _fixture(
+        sounds: false,
+        deckPairSwaps: const <(String, String)>[('a', 'b')],
+      );
       final q = _built(
         QuestionBuilder(data).build(
           _request(
@@ -575,11 +606,10 @@ void main() {
             PlacementVariant.s1,
             role: PlacementQuestionRole.split,
             kind: PlacementQuestionKind.pickOne,
-            part: PlacementPart.meaning,
-            origin: PlacementVariant.k1,
+            originVariant: PlacementVariant.k1,
           ),
           asked: k1.itemIds,
-          origin: k1,
+          failed: k1,
         ),
       );
       expect(s1.mode, PlacementAnswerMode.pick);
@@ -1017,6 +1047,441 @@ void main() {
       }
       expect(cards.toSet(), hasLength(cards.length));
       expect(cards.length, greaterThan(10));
+    });
+  });
+
+  group('both options of a sentence pair look alike', () {
+    Card sentence(String id, String target, List<String>? words) => Card(
+      id: id,
+      deckId: 'd0',
+      target: target,
+      native: 'meaning $id',
+      pos: 'phrase',
+      words: words,
+    );
+
+    PlacementLanguageData sentenceData(List<Card> sentences) =>
+        PlacementLanguageData(
+          language: 'xx',
+          decks: <PlacementDeck>[
+            PlacementDeck(
+              id: 'd0',
+              cards: sentences,
+              grammarFamilies: const <String>['order'],
+            ),
+          ],
+        );
+
+    final spaced = sentenceData(<Card>[
+      sentence('a', 'Hello, World again today.', null),
+      sentence('b', 'Where is Anna going tomorrow?', null),
+      sentence('c', 'The Cat sleeps on, the Mat.', null),
+    ]);
+    final unspaced = sentenceData(<Card>[
+      sentence('a', '你好，世界真的很大。', <String>['你好', '世界', '真的', '很大']),
+      sentence('b', '我们明天去北京吗？', <String>['我们', '明天', '去', '北京', '吗']),
+      sentence('c', '这是我的朋友，他很好。', <String>['这是', '我的', '朋友', '他', '很好']),
+    ]);
+
+    List<String> parts(String option) => option.split(' ')..sort();
+
+    void expectSameForm(GeneratedQuestion q) {
+      expect(q.options, hasLength(2));
+      final right = q.options[q.correctIndex!];
+      final wrong = q.options[1 - q.correctIndex!];
+      expect(right, isNot(wrong));
+      expect(
+        parts(right),
+        parts(wrong),
+        reason: 'the same tiles, in another order: nothing else differs',
+      );
+      for (final option in q.options) {
+        expect(option, option.toLowerCase(), reason: 'no capital: $option');
+        expect(
+          option.split(' ').where((t) => t.isEmpty),
+          isEmpty,
+          reason: 'one space between tiles: $option',
+        );
+      }
+      expect(q.accepted, <String>[right]);
+    }
+
+    final g3 = _request(
+      PlacementVariant.g3,
+      topic: PlacementTopic.lateGrammar,
+      kind: PlacementQuestionKind.pair,
+      skills: const [PlacementSkill.hear],
+      deck: 0,
+    );
+    final r2s2 = _request(
+      PlacementVariant.s2,
+      role: PlacementQuestionRole.split,
+      topic: PlacementTopic.longReproduction,
+      kind: PlacementQuestionKind.pair,
+      skills: const [PlacementSkill.write],
+      deck: 0,
+      originVariant: PlacementVariant.r2,
+    );
+
+    for (final entry in <String, PlacementLanguageData>{
+      'capitals and attached marks': spaced,
+      'a script with no spaces': unspaced,
+    }.entries) {
+      for (var pick = 0; pick < 3; pick++) {
+        test('G3, ${entry.key}, pick $pick', () {
+          final q = _built(QuestionBuilder(entry.value, seed: pick).build(g3));
+          expectSameForm(q);
+        });
+
+        test('R2 split S2, ${entry.key}, pick $pick', () {
+          final q = _built(
+            QuestionBuilder(entry.value, seed: pick).build(r2s2),
+          );
+          expectSameForm(q);
+        });
+      }
+    }
+  });
+
+  group('pairs from the decks are real sound contrasts only', () {
+    PlacementLanguageData spanish(List<(String, String)> words) =>
+        PlacementLanguageData(
+          language: 'es',
+          decks: <PlacementDeck>[
+            PlacementDeck(
+              id: 'd0',
+              cards: <Card>[
+                for (final (i, (w, m)) in words.indexed) _card('w$i', w, m),
+              ],
+            ),
+          ],
+        );
+
+    final pair = _request(
+      PlacementVariant.p1,
+      topic: PlacementTopic.minimalPairs,
+      kind: PlacementQuestionKind.pair,
+      skills: const [PlacementSkill.hear],
+      deck: 0,
+    );
+
+    test('accent-only, silent h and b or v pairs are never built', () {
+      final data = spanish(const <(String, String)>[
+        ('si', 'if'),
+        ('sí', 'yes'),
+        ('el', 'the'),
+        ('él', 'he'),
+        ('te', 'you'),
+        ('té', 'tea'),
+        ('ola', 'wave'),
+        ('hola', 'hello'),
+        ('vaca', 'cow'),
+        ('baca', 'roof rack'),
+        ('vello', 'down'),
+        ('bello', 'beautiful'),
+      ]);
+      expect(
+        _why(QuestionBuilder(data).build(pair)),
+        PlacementUnavailableReason.noSoundsFile,
+        reason: 'no real contrast among the words: the run asks complex words',
+      );
+    });
+
+    test('a real contrast is built among the false ones', () {
+      final data = spanish(const <(String, String)>[
+        ('si', 'if'),
+        ('sí', 'yes'),
+        ('ola', 'wave'),
+        ('hola', 'hello'),
+        ('vaca', 'cow'),
+        ('baca', 'roof rack'),
+        ('pero', 'but'),
+        ('pelo', 'hair'),
+      ]);
+      for (var pick = 0; pick < 5; pick++) {
+        final q = _built(QuestionBuilder(data).build(_requestPick(pair, pick)));
+        expect(q.options.toSet(), <String>{
+          'pero',
+          'pelo',
+        }, reason: 'the only pair that two sounds tell apart');
+        expect(q.concept, 'sound:swap:l-r');
+      }
+    });
+
+    test('a language with no list of swaps asks no deck pair', () {
+      final data = PlacementLanguageData(
+        language: 'xx',
+        decks: <PlacementDeck>[
+          PlacementDeck(
+            id: 'd0',
+            cards: <Card>[
+              _card('a', 'pero', 'but'),
+              _card('b', 'pelo', 'hair'),
+            ],
+          ),
+        ],
+      );
+      expect(
+        _why(QuestionBuilder(data).build(pair)),
+        PlacementUnavailableReason.noSoundsFile,
+      );
+    });
+  });
+
+  group('splits and isolating questions are about the failed question', () {
+    final isolatingPair = _request(
+      PlacementVariant.isolating,
+      role: PlacementQuestionRole.isolating,
+      topic: PlacementTopic.minimalPairs,
+      kind: PlacementQuestionKind.tilesWord,
+      skills: const [PlacementSkill.write],
+      originVariant: PlacementVariant.p1,
+    );
+    final isolatingSay = _request(
+      PlacementVariant.isolating,
+      role: PlacementQuestionRole.isolating,
+      topic: PlacementTopic.sayByMeaning,
+      skills: const [PlacementSkill.hear],
+      originVariant: PlacementVariant.y1,
+    );
+
+    test('a closed pair is isolated as a spelling of the same contrast', () {
+      final data = _fixture(morePairs: true);
+      final builder = QuestionBuilder(data);
+      final p1 = _built(
+        builder.build(
+          _request(
+            PlacementVariant.p1,
+            topic: PlacementTopic.minimalPairs,
+            kind: PlacementQuestionKind.pair,
+            skills: const [PlacementSkill.hear],
+          ),
+        ),
+      );
+      final q = _built(
+        builder.build(isolatingPair, asked: p1.itemIds, failed: p1),
+      );
+      expect(q.mode, PlacementAnswerMode.tiles);
+      expect(q.concept, p1.concept);
+      expect(q.cardId, p1.cardId, reason: 'the same word, now written');
+      expect(
+        _why(builder.build(isolatingPair, asked: p1.itemIds)),
+        PlacementUnavailableReason.noOrigin,
+      );
+    });
+
+    test('a closed Say question is isolated as the same word, heard', () {
+      final data = _fixture();
+      final builder = QuestionBuilder(data);
+      final y1 = _built(
+        builder.build(
+          _request(
+            PlacementVariant.y1,
+            topic: PlacementTopic.sayByMeaning,
+            kind: PlacementQuestionKind.say,
+            skills: const [PlacementSkill.say],
+          ),
+        ),
+      );
+      final q = _built(
+        builder.build(isolatingSay, asked: y1.itemIds, failed: y1),
+      );
+      expect(q.cardId, y1.cardId);
+      expect(q.audio, isNotNull);
+      expect(q.mode, PlacementAnswerMode.pick);
+      expect(
+        _why(builder.build(isolatingSay, asked: y1.itemIds)),
+        PlacementUnavailableReason.noOrigin,
+      );
+    });
+
+    PlacementQuestionRequest split(
+      PlacementVariant variant,
+      PlacementVariant origin, {
+      PlacementTopic topic = PlacementTopic.lateGrammar,
+    }) => _request(
+      variant,
+      role: PlacementQuestionRole.split,
+      topic: topic,
+      originVariant: origin,
+    );
+
+    test(
+      'a split that needs the failed question is unavailable without it',
+      () {
+        final builder = QuestionBuilder(_fixture());
+        for (final (variant, origin) in <(PlacementVariant, PlacementVariant)>[
+          (PlacementVariant.s1, PlacementVariant.g1),
+          (PlacementVariant.s2, PlacementVariant.g1),
+          (PlacementVariant.s1, PlacementVariant.g2),
+          (PlacementVariant.s1, PlacementVariant.w1),
+          (PlacementVariant.s2, PlacementVariant.w1),
+          (PlacementVariant.s1, PlacementVariant.w2),
+          (PlacementVariant.s2, PlacementVariant.w2),
+        ]) {
+          expect(
+            _why(builder.build(split(variant, origin))),
+            PlacementUnavailableReason.noOrigin,
+            reason: '${variant.label} of ${origin.label}',
+          );
+        }
+        final noName = _request(
+          PlacementVariant.s1,
+          role: PlacementQuestionRole.split,
+        );
+        expect(
+          _why(builder.build(noName)),
+          PlacementUnavailableReason.noOrigin,
+        );
+      },
+    );
+
+    test('the first split of G2 keeps the failed question\'s family', () {
+      final data = _fixture();
+      final builder = QuestionBuilder(data);
+      final g2 = _built(
+        builder.build(
+          _request(
+            PlacementVariant.g2,
+            topic: PlacementTopic.lateGrammar,
+            kind: PlacementQuestionKind.tilesSentence,
+            skills: const [PlacementSkill.write, PlacementSkill.read],
+          ),
+        ),
+      );
+      final s1 = _built(
+        builder.build(
+          split(PlacementVariant.s1, PlacementVariant.g2),
+          asked: g2.itemIds,
+          failed: g2,
+        ),
+      );
+      expect(s1.concept, g2.concept);
+    });
+
+    test('the grammar probe never repeats the G1 sentence', () {
+      final data = _fixture();
+      final builder = QuestionBuilder(data);
+      final g1 = _built(
+        builder.build(
+          _request(PlacementVariant.g1, topic: PlacementTopic.lateGrammar),
+        ),
+      );
+      final deck = data.deckIndexOf(g1.cardId!)!;
+      final probe = builder.build(
+        _request(
+          PlacementVariant.grammar,
+          role: PlacementQuestionRole.grammar,
+          topic: PlacementTopic.grammarLevel,
+          skills: const [PlacementSkill.read],
+          deck: deck,
+        ),
+        asked: g1.itemIds,
+      );
+      if (probe is QuestionBuilt) {
+        expect(probe.question.cardId, isNot(g1.cardId));
+      } else {
+        expect(probe, isA<QuestionUnavailable>());
+      }
+    });
+  });
+
+  group('a run and the builder together, misses included', () {
+    PlacementRunConfig config() => PlacementRunConfig(
+      deckCount: 6,
+      skills: const {
+        PlacementSkill.read,
+        PlacementSkill.hear,
+        PlacementSkill.say,
+        PlacementSkill.write,
+      },
+      declaration: PlacementDeclaration.expert,
+      pathCompleteToB1: true,
+      allDecksDownloaded: true,
+    );
+
+    // A learner who misses K1, W1, G1, R1 (one split wrong each, a gap) and
+    // fails the pair and Say topics outright (closed, so isolated).
+    bool answer(PlacementQuestionRequest r) {
+      const missed = <PlacementVariant>{
+        PlacementVariant.k1,
+        PlacementVariant.w1,
+        PlacementVariant.g1,
+        PlacementVariant.r1,
+        PlacementVariant.p1,
+        PlacementVariant.y1,
+      };
+      switch (r.role) {
+        case PlacementQuestionRole.base:
+          return !missed.contains(r.variant);
+        case PlacementQuestionRole.split:
+          return r.variant == PlacementVariant.s1;
+        case PlacementQuestionRole.recheck:
+          return r.variant != PlacementVariant.p1 &&
+              r.variant != PlacementVariant.y1;
+        default:
+          return true;
+      }
+    }
+
+    test('splits and isolating questions are built about the failed one', () {
+      final builder = QuestionBuilder(_fixture(morePairs: true), seed: 3);
+      var run = PlacementRun(config());
+      final bases = <PlacementVariant, GeneratedQuestion>{};
+      final asked = <String>{};
+      final built = <GeneratedQuestion>[];
+      final reasons = <PlacementUnavailableReason>[];
+      var guard = 0;
+      while (!run.isDone && guard++ < 200) {
+        final request = run.next!;
+        final outcome = builder.build(
+          request,
+          asked: asked,
+          failed: bases[request.originVariant],
+        );
+        if (outcome is QuestionUnavailable) {
+          reasons.add(outcome.reason);
+          run = run.markUnavailable(outcome.reason);
+          continue;
+        }
+        final q = (outcome as QuestionBuilt).question;
+        if (request.role == PlacementQuestionRole.base) {
+          bases.putIfAbsent(request.variant, () => q);
+        }
+        asked.addAll(q.itemIds);
+        built.add(q);
+        run = run.answer(answer(request));
+      }
+      expect(run.isDone, isTrue);
+      expect(reasons, isNot(contains(PlacementUnavailableReason.noOrigin)));
+      final roles = built.map((q) => q.request.role).toSet();
+      expect(roles, contains(PlacementQuestionRole.split));
+      expect(roles, contains(PlacementQuestionRole.isolating));
+      for (final q in built) {
+        if (q.request.role != PlacementQuestionRole.isolating) continue;
+        final origin = bases[q.request.originVariant]!;
+        if (q.request.topic == PlacementTopic.minimalPairs) {
+          expect(q.concept, origin.concept);
+        } else {
+          expect(q.cardId, origin.cardId);
+        }
+      }
+    });
+
+    test('a split that cannot be built leaves the miss unresolved', () {
+      var run = PlacementRun(config());
+      while (run.next!.variant != PlacementVariant.k1) {
+        run = run.answer(true);
+      }
+      run = run.answer(false);
+      expect(run.next!.role, PlacementQuestionRole.split);
+      run = run.markUnavailable(PlacementUnavailableReason.noSentences);
+      expect(run.unresolvedSkills, contains(PlacementSkill.read));
+      var guard = 0;
+      while (!run.isDone && guard++ < 100) {
+        run = run.answer(true);
+      }
+      expect(run.readout[PlacementSkill.read]!.isVerified, isFalse);
     });
   });
 }

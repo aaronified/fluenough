@@ -70,6 +70,7 @@ class PlacementLanguageData {
     this.stableCardIds = const <String>{},
     this.pairAudioTrusted = false,
     this.pairsFromDecks = true,
+    this.deckPairSwaps,
   }) : decks = List<PlacementDeck>.unmodifiable(decks) {
     for (final (i, deck) in this.decks.indexed) {
       for (final card in deck.cards) {
@@ -107,11 +108,28 @@ class PlacementLanguageData {
   /// false and every pair question is marked untrusted.
   final bool pairAudioTrusted;
 
-  /// Whether a language with no sounds file gets its minimal pairs from the
-  /// decks: words that differ by one letter, each swap being a contrast of
-  /// its own (plan section 8, item 1: Spanish). False for Toki Pona, whose
-  /// stated fallback is complex words.
+  /// Whether a language with no sounds file may get its minimal pairs from
+  /// the decks (plan section 8, item 1: Spanish). False for Toki Pona, whose
+  /// stated fallback is complex words. On, a pair is two words of the decks
+  /// that differ in one letter, and only where that swap is in
+  /// [deckPairSwaps] (or the built-in list of the language): a swap of two
+  /// letters that are not two phonemes of the language (an accent, a silent
+  /// letter, a spelling variant) is never a pair.
   final bool pairsFromDecks;
+
+  /// The letter swaps that are real, distinct sounds of this language, as
+  /// letter pairs, for the pairs taken from the decks where there is no
+  /// sounds file. Null takes [deckPairSwapsByLanguage] for [language]; empty
+  /// (or no entry) means no deck pair can be built.
+  final List<(String, String)>? deckPairSwaps;
+
+  /// The swaps a deck-derived pair may differ by: [deckPairSwaps], else the
+  /// built-in ones of [language], and none when [pairsFromDecks] is off.
+  List<(String, String)> get effectiveDeckPairSwaps => !pairsFromDecks
+      ? const <(String, String)>[]
+      : (deckPairSwaps ??
+            deckPairSwapsByLanguage[language] ??
+            const <(String, String)>[]);
 
   final Map<String, int> _deckOf = <String, int>{};
   final Map<String, Card> _byId = <String, Card>{};
@@ -134,3 +152,31 @@ class PlacementLanguageData {
     return 0;
   }
 }
+
+/// The built-in letter swaps that tell two sounds apart, for the languages
+/// with no sounds file whose minimal pairs come from the decks. Only swaps of
+/// letters that are two phonemes of the language belong here: Spanish `si` and
+/// `sí` (an accent), `ola` and `hola` (a silent h) and `b` and `v` (one
+/// sound) are not contrasts and are left out on purpose.
+const Map<String, List<(String, String)>> deckPairSwapsByLanguage =
+    <String, List<(String, String)>>{
+      'es': <(String, String)>[
+        ('p', 'b'),
+        ('t', 'd'),
+        ('p', 't'),
+        ('b', 'd'),
+        ('m', 'n'),
+        ('n', 'ñ'),
+        ('l', 'r'),
+        ('a', 'e'),
+        ('a', 'i'),
+        ('a', 'o'),
+        ('a', 'u'),
+        ('e', 'i'),
+        ('e', 'o'),
+        ('e', 'u'),
+        ('i', 'o'),
+        ('i', 'u'),
+        ('o', 'u'),
+      ],
+    };
