@@ -76,7 +76,11 @@ class _FluenoughAppState extends State<FluenoughApp>
     widget.state.updates.atLaunch();
     // The browser may keep the progress past Safari's 7 days; a no-op off
     // the web, and a refusal is not an error.
-    unawaited(requestPersistentStorage());
+    // Then the Storage row of Your data is read again, so Chrome, which may
+    // grant it, does not show 'may be cleared' for a moment (#1012).
+    unawaited(
+      requestPersistentStorage().whenComplete(widget.state.webInstall.load),
+    );
     if (widget.splash) _watchStartUp(_splash);
   }
 

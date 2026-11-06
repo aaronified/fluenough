@@ -20,6 +20,8 @@ iOS Safari's double-tap zoom, rubber-band scroll and text inflation, and a
 manifest whose `id`, `scope` and `start_url` are relative, so they follow
 whatever `--base-href` the build uses (/fluenough/ on GitHub Pages).
 tools/test_brand_web.py asserts all of it, so it cannot silently regress.
+
+Last it adds the offline service worker (brand_service_worker, below).
 """
 
 import json
@@ -29,6 +31,7 @@ import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+SW_SOURCE = ROOT / "tools/web"
 DESCRIPTION = "Learn the basics of a new language with drills that come back just before you'd forget them."
 THEME = "#2A6C4A"
 BACKGROUND = "#F6FBF4"
@@ -120,6 +123,25 @@ def brand_manifest(manifest: dict, name: str) -> dict:
     return manifest
 
 
+def brand_service_worker(web: Path, source: Path = SW_SOURCE) -> None:
+    """Add the hand-written service worker to web/ (#1012).
+
+    Flutter 3.47's own flutter_service_worker.js unregisters itself and caches
+    nothing, so sw.js (tools/web/sw.js) is copied beside the page, and
+    flutter_bootstrap.js is written without Flutter's service worker settings
+    (Flutter's worker would replace ours at the same scope) but with
+    tools/web/register_sw.js, which registers sw.js and holds the browser's
+    install prompt for the app. The {{...}} lines are Flutter's bootstrap
+    template, filled in at build time.
+    """
+    shutil.copyfile(source / "sw.js", web / "sw.js")
+    (web / "flutter_bootstrap.js").write_text(
+        "{{flutter_js}}\n{{flutter_build_config}}\n"
+        + (source / "register_sw.js").read_text()
+        + "\n_flutter.loader.load();\n"
+    )
+
+
 def brand(root: Path) -> None:
     """Brands `root`/web, which flutter create wrote, from `root`'s brand."""
     name = json.loads((root / "lib/l10n/app_en.arb").read_text())["appTitle"]
@@ -130,6 +152,7 @@ def brand(root: Path) -> None:
 
     page_path = root / "web/index.html"
     page_path.write_text(brand_page(page_path.read_text(), name))
+    brand_service_worker(root / "web")
 
 
 def main() -> int:
