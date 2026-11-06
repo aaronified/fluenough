@@ -81,7 +81,7 @@ flutter:
   # Builds AppLocalizations from lib/l10n/*.arb on `flutter pub get`.
   generate: true
   # The decks are not bundled: the app downloads them from the repository's
-  # main branch, by decks/index.json (#210, ADR-0037). Only the theme list
+  # decks-live branch, by decks/index.json (#210, ADR-0037). Only the theme list
   # and the spoken languages ship inside the app.
   assets:
     # The release notes' source, read at the first launch after an update for

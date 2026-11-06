@@ -92,11 +92,13 @@ class GitHubDeckFetcher implements DeckFetcher {
     ],
   }) : base = base ?? defaultBase;
 
-  /// The repository's `main` branch, which the app downloads its decks
-  /// from: the latest decks, not those of the app's release (ADR-0037).
+  /// The repository's `decks-live` branch, which the app downloads its decks
+  /// from: the latest decks, not those of the app's release (ADR-0037). Before
+  /// 0.8.x the decks came from `main`, whose copy is frozen: an older app keeps
+  /// the decks it had and gets no new ones.
   static final Uri defaultBase = Uri.https(
     'raw.githubusercontent.com',
-    '/aaronified/fluenough/main/',
+    '/aaronified/fluenough/decks-live/',
   );
 
   final Uri base;

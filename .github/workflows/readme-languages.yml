@@ -1,0 +1,65 @@
+name: README languages
+
+# The README's languages list and badge, from the decks-live branch's
+# decks/index.json (owner, 2026-11-06: decks moved to decks-live; main's own
+# decks/ and its index are frozen for apps that still read them, so this never
+# changes them). decks-live's deck-index workflow writes the index there; this
+# one reads it, nightly or when run by hand.
+#
+# Pushing to protected main needs a token that may bypass the pull-request
+# rule: the secret ADMIN_TOKEN (as the old deck-index workflow used), else
+# GITHUB_TOKEN, which cannot.
+
+on:
+  schedule:
+    - cron: "41 3 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: readme-languages
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  readme:
+    name: README languages list
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ secrets.ADMIN_TOKEN || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Write the list from decks-live's index
+        run: |
+          set -e
+          git fetch --quiet --no-tags origin decks-live
+          # In the working tree only: main's frozen index is never committed.
+          git show origin/decks-live:decks/index.json > decks/index.json
+          python3 tools/readme_languages.py
+          git checkout -- decks/index.json
+      - name: Commit and push
+        run: |
+          if git diff --quiet -- README.md; then
+            echo "The README is current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "README: languages list from decks-live"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push the README to main (ADMIN_TOKEN must be allowed to bypass main's pull-request rule)."
+          exit 1

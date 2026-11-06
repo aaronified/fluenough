@@ -324,8 +324,9 @@ jobs:
       - run: rm -f test/widget_test.dart
       - run: flutter pub get
       - run: dart run build_runner build
-      # The tests read the committed decks/index.json of the release commit,
-      # as the single-process run did; main regenerates it after each merge.
+      # The tests read the committed decks/index.json of the release commit:
+      # main's copy of decks/ is frozen (the decks live on decks-live), and
+      # the tests are moving to the sample deck.
       # Whole test files per shard, listed apart from the command so that a
       # failure of the script stops the step (see ci.yml's "App: tests").
       - name: Test
@@ -381,7 +382,8 @@ jobs:
         with:
           python-version: "3.12"
       - run: pip install pyyaml
-      - run: python3 tools/validate_decks.py decks/
+      # The sample deck: the decks themselves are checked on decks-live.
+      - run: python3 tools/validate_sample_decks.py
 
       - uses: actions/setup-java@v6
         with:
