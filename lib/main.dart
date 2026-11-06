@@ -26,6 +26,7 @@ import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
 import 'app/startup_marks.dart';
 import 'app/system_settings.dart';
+import 'app/wallpaper_colours.dart';
 import 'core/decks/deck_fetch.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
@@ -108,6 +109,7 @@ Future<void> main() async {
     soundCheck: SystemSoundCheck(),
     networkProbe: SystemNetworkProbe(),
     systemSettings: const ChannelSystemSettings(),
+    wallpaperSource: const ChannelWallpaperSource(),
     reminderScheduler: reminderScheduler,
     reports: MailReportSender(
       address: AppLinks.feedbackEmail,

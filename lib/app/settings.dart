@@ -1055,8 +1055,10 @@ class SettingsNotifier extends ChangeNotifier {
   ThemeSeed get seed => _seed;
   set seed(ThemeSeed value) => _set(_seed, value, (v) => _seed = v);
 
-  /// Wallpaper colours (Material You). Needs a dependency; see
-  /// `Feature.dynamicColour`.
+  /// Wallpaper colours (Material You): the app's colours follow the phone's
+  /// wallpaper where the phone gives a palette (Android 12 and later). Off by
+  /// default, saved per profile and in the backup; a backup without it
+  /// restores as off. It only applies while `AppState.wallpaper.available`.
   bool get dynamicColour => _dynamicColour;
   set dynamicColour(bool value) =>
       _set(_dynamicColour, value, (v) => _dynamicColour = v);
