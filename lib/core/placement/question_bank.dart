@@ -53,13 +53,18 @@ class BankEntry {
   };
 
   /// What the model takes the guess rate of this question to be.
-  double get guessRate => guessRateOf(question) ?? question.request.kind.guess;
+  double get guessRate {
+    final base = creditBaseOf(question);
+    return base == null
+        ? question.request.kind.creditBase() + creditKappa
+        : (base >= 1 ? 1 : base + creditKappa);
+  }
 
   /// `leaky` (a pick whose answer shows by letters), `clean` (a pick),
   /// `produced` (built or said: not guessable by picking).
   String get guessClass => question.mode != PlacementAnswerMode.pick
       ? 'produced'
-      : leaksBySimilarity(question)
+      : hasCue(question)
       ? 'leaky'
       : 'clean';
 

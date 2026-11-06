@@ -44,7 +44,37 @@ enum PlacementQuestionKind {
 
   /// What a right answer multiplies the odds by, `(1 - s) / g`.
   double get oddsPerRight => (1 - slip) / guess;
+
+  /// The slip of the credit posterior (plan section 13, "Make or break",
+  /// point 4): how fast a true knower is credited; it plays no part in the
+  /// guarantee.
+  double get creditSlip => switch (this) {
+    pickOne || pickMany => 0.10,
+    pair => 0.05,
+    english => 0.10,
+    tilesSentence => 0.10,
+    tilesWord => 0.05,
+    say => 0.15,
+  };
+
+  /// The base guess of a question of this kind with no cue: `1/k` for a pick
+  /// of [options] (four when not given), and the kind's own for the rest.
+  double creditBase([int? options]) => switch (this) {
+    pickOne || pickMany => 1 / (options == null || options < 2 ? 4 : options),
+    pair => 0.50,
+    english => 0.03,
+    say => 0.03,
+    tilesWord => 0.10,
+    tilesSentence => 0.05,
+  };
 }
+
+/// The margin added to a question's base guess: knowledge that is not exactly
+/// a prefix of the path, and a distractor ruled out from what is known.
+const double creditKappa = 0.10;
+
+/// The chance the credited level may be above what the learner knows.
+const double creditAlpha = 0.01;
 
 /// The hypothesis space of one skill: `none`, then the levels
 /// `l_k = round(k x (N - 1) / parts)` for k = 0 to `parts`, where
@@ -155,6 +185,43 @@ class PlacementPosterior {
       next.add(probabilities[c] * likelihood);
     }
     return PlacementPosterior(levels, next);
+  }
+
+  /// The posterior after one answer in the credit posterior (plan section 13,
+  /// "Make or break"): a class that knows [deck] answers right with `1 - slip`,
+  /// any other with the guess floor `min(1, base + creditKappa)`; a miss counts
+  /// in full. A [base] of 1 or more is a question with a cue (it may be
+  /// guessed by what it shows): left out, no evidence.
+  PlacementPosterior updateCredit({
+    required int deck,
+    required PlacementQuestionKind kind,
+    required bool correct,
+    double? base,
+  }) {
+    final b = base ?? kind.creditBase();
+    if (b >= 1) return this;
+    final floor = math.min(1.0, b + creditKappa);
+    final slip = kind.creditSlip;
+    final next = <double>[];
+    for (var c = 0; c < probabilities.length; c++) {
+      final right = levels.knows(c, deck) ? 1 - slip : floor;
+      next.add(probabilities[c] * (correct ? right : 1 - right));
+    }
+    return PlacementPosterior(levels, next);
+  }
+
+  /// The highest class whose level the learner is at or above with a
+  /// probability of at least `1 - alpha / C` (C the number of classes), or 0
+  /// (`none`). An anytime lower bound that holds against any guessing
+  /// strategy whose success on a counted question is at most its floor (plan
+  /// section 13, point 5); never the most probable class.
+  int placedClass({double alpha = creditAlpha}) {
+    final need = 1 - alpha / levels.classCount - 1e-12;
+    var best = 0;
+    for (var c = 1; c < probabilities.length; c++) {
+      if (massAtOrAbove(levels.levelOf(c)) >= need) best = c;
+    }
+    return best;
   }
 
   /// P(the learner knows at least the deck at index [deck]).

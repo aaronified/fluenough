@@ -147,7 +147,7 @@ class PlacementSession {
       throw StateError('there is no question to answer');
     }
     _events.add(correct ? 'a1' : 'a0');
-    _run = _run.answer(correct, guess: guessRateOf(_question!));
+    _run = _run.answer(correct, guess: creditBaseOf(_question!));
     _advance();
   }
 

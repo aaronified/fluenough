@@ -203,7 +203,7 @@ extension PlacementRunSetup on AppState {
       final found = tested[skill];
       if (found == null || i >= plan.scripts.length) continue;
       final script = plan.scripts[i];
-      final standing = found.leadingClass == run.levels.topClass
+      final standing = found.placedClass == run.levels.topClass
           ? ScriptStanding.reads
           : ScriptStanding.newTo;
       standings[script.script] = standing;

@@ -14281,6 +14281,24 @@
       }
     }
   },
+  "findLevelStandUnitAtLeast": "{skill}: at least unit {unit} · {label}",
+  "@findLevelStandUnitAtLeast": {
+    "description": "Find my level: where one skill is placed when a higher unit is more likely but not yet proven. {unit} is the unit the answers prove the learner knows up to.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "unit": {
+        "type": "int",
+        "example": "40"
+      },
+      "label": {
+        "type": "String",
+        "example": "Not sure yet"
+      }
+    }
+  },
   "findLevelStandStart": "{skill}: from the beginning · {label}",
   "@findLevelStandStart": {
     "description": "Find my level: a skill placed at the very start.",
