@@ -371,7 +371,8 @@ units:
       - { id: "a-farm-visit", text: { "en": "A child names the animals seen on a visit to a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "fr-weather", theme: "weather", words: 40 }
+  - decks: ["fr-weather", "fr-weather-sentences", "fr-reading-weather", "*"]
+    words: 40
     listening_passages:
       - { id: "weather-forecast", text: { "en": "A radio forecast: sun, rain and wind" } }
     reading_passages:

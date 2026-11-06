@@ -1,0 +1,603 @@
+schema: 1
+id: "fr-en-weather"
+kind: "layer"
+core: "fr-weather"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Weather"
+license: "CC-BY-SA-4.0"
+description: "Forty words for the weather: the sky, rain, snow and wind, the storms, the temperature and the forecast, the adjectives for the weather, and the verbs for it rains, snows and freezes. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1303":
+    native: "sun"
+    notes:
+      "n1": "Soleil is 'sun', masculine. Il fait du soleil means 'it is sunny'."
+    examples:
+      "Le soleil brille.":
+        native: "The sun shines."
+        bases:
+          "soleil": "sun"
+          "brille": "shines"
+      "Il y a du soleil ce matin.":
+        native: "There is sun this morning."
+        bases:
+          "y": "there"
+          "du": "some"
+          "soleil": "sun"
+  "fr-1304":
+    native: "rain"
+    notes:
+      "n1": "Pluie is 'rain', feminine. Il y a de la pluie means 'it is raining' in everyday talk."
+    examples:
+      "Il y a de la pluie.":
+        native: "There is rain."
+        bases:
+          "y": "there"
+          "de": "some"
+          "pluie": "rain"
+      "La pluie tombe sur la ville.":
+        native: "The rain falls on the town."
+        bases:
+          "pluie": "rain"
+  "fr-1305":
+    native: "cloud"
+    notes:
+      "n1": "Nuage is 'cloud', masculine. Plural: nuages."
+    examples:
+      "Un nuage passe dans le ciel.":
+        native: "A cloud passes across the sky."
+        bases:
+          "nuage": "cloud"
+          "ciel": "sky"
+      "Il y a des nuages ce soir.":
+        native: "There are clouds this evening."
+        bases:
+          "y": "there"
+          "nuages": "clouds"
+  "fr-1306":
+    native: "snow"
+    notes:
+      "n1": "Neige is 'snow', feminine, and it is also the form of neiger, 'to snow'."
+    examples:
+      "Il neige en hiver.":
+        native: "It snows in winter."
+        bases:
+          "neige": "snows"
+          "en": "in"
+      "La neige est blanche.":
+        native: "Snow is white."
+        bases:
+          "neige": "snow"
+          "blanche": "white"
+  "fr-1307":
+    native: "storm"
+    notes:
+      "n1": "Orage is 'thunderstorm', masculine. It is the storm with thunder and lightning."
+    examples:
+      "Il y a un orage ce soir.":
+        native: "There is a thunderstorm this evening."
+        bases:
+          "y": "there"
+          "orage": "thunderstorm"
+      "L'orage fait peur aux enfants.":
+        native: "The storm frightens the children."
+        bases:
+          "L'orage": "storm"
+          "peur": "fear"
+          "aux": "the"
+          "enfants": "children"
+  "fr-1308":
+    native: "thunder"
+    notes:
+      "n1": "Tonnerre is 'thunder', masculine. The flash is the éclair."
+    examples:
+      "On entend le tonnerre.":
+        native: "We hear the thunder."
+        bases:
+          "tonnerre": "thunder"
+      "Le tonnerre est fort.":
+        native: "The thunder is loud."
+        bases:
+          "tonnerre": "thunder"
+  "fr-1309":
+    native: "flash of lightning"
+    notes:
+      "n1": "Éclair is 'flash of lightning', masculine. In speech it is also a flash of light."
+    examples:
+      "Un éclair brille dans le ciel.":
+        native: "A flash of lightning shines in the sky."
+        bases:
+          "éclair": "flash of lightning"
+          "brille": "flashes"
+          "ciel": "sky"
+      "L'éclair est très rapide.":
+        native: "The flash of lightning is very fast."
+        bases:
+          "L'éclair": "flash of lightning"
+  "fr-1310":
+    native: "fog"
+    notes:
+      "n1": "Brouillard is 'fog', masculine. It is thicker and lower than brume."
+    examples:
+      "Il y a du brouillard sur la route.":
+        native: "There is fog on the road."
+        bases:
+          "y": "there"
+          "du": "some"
+          "brouillard": "fog"
+      "Le brouillard est épais.":
+        native: "The fog is thick."
+        bases:
+          "brouillard": "fog"
+          "épais": "thick"
+  "fr-1311":
+    native: "mist"
+    notes:
+      "n1": "Brume is 'mist', feminine. It is lighter than brouillard."
+    examples:
+      "La brume couvre la mer.":
+        native: "The mist covers the sea."
+        bases:
+          "brume": "mist"
+          "couvre": "covers"
+          "mer": "sea"
+      "Le matin, il y a de la brume.":
+        native: "In the morning, there is mist."
+        bases:
+          "y": "there"
+          "de": "some"
+          "brume": "mist"
+  "fr-1312":
+    native: "shower"
+    notes:
+      "n1": "Averse is 'shower', a short fall of rain. It is feminine."
+    examples:
+      "Une averse tombe ce matin.":
+        native: "A shower falls this morning."
+        bases:
+          "averse": "shower"
+      "Il y a une averse et du vent.":
+        native: "There is a shower and some wind."
+        bases:
+          "y": "there"
+          "averse": "shower"
+          "du": "some"
+  "fr-1313":
+    native: "hail"
+    notes:
+      "n1": "Grêle is 'hail', feminine. Also the verb form is grêler, 'to hail'."
+    examples:
+      "La grêle tombe sur les voitures.":
+        native: "The hail falls on the cars."
+        bases:
+          "grêle": "hail"
+      "La grêle fait mal.":
+        native: "The hail hurts."
+        bases:
+          "grêle": "hail"
+  "fr-1314":
+    native: "sky"
+    notes:
+      "n1": "Ciel is 'sky', masculine. Ciel gris means 'grey sky'."
+    examples:
+      "Le ciel est bleu aujourd'hui.":
+        native: "The sky is blue today."
+        bases:
+          "ciel": "sky"
+      "Le ciel est couvert.":
+        native: "The sky is overcast."
+        bases:
+          "ciel": "sky"
+          "couvert": "overcast"
+  "fr-1315":
+    native: "temperature"
+    notes:
+      "n1": "Température is 'temperature', feminine. Quelle est la température ? is 'What is the temperature?'"
+    examples:
+      "La température est douce ce matin.":
+        native: "The temperature is mild this morning."
+        bases:
+          "température": "temperature"
+          "douce": "mild"
+      "Quelle est la température ?":
+        native: "What is the temperature?"
+        bases:
+          "température": "temperature"
+  "fr-1316":
+    native: "degree"
+    notes:
+      "n1": "Degré is 'degree', as in a temperature. Il fait cinq degrés means 'it is five degrees'."
+    examples:
+      "Il fait cinq degrés.":
+        native: "It is five degrees."
+        bases:
+          "degrés": "degrees"
+      "Le degré baisse la nuit.":
+        native: "The temperature drops at night."
+        bases:
+          "degré": "degree"
+          "baisse": "drops"
+  "fr-1317":
+    native: "forecast"
+    notes:
+      "n1": "Prévision is 'forecast', feminine: the prediction of the weather for the next days."
+    examples:
+      "La prévision annonce du soleil.":
+        native: "The forecast predicts sunshine."
+        bases:
+          "prévision": "forecast"
+          "annonce": "predicts"
+          "du": "some"
+          "soleil": "sunshine"
+      "Quelle est la prévision pour demain ?":
+        native: "What is the forecast for tomorrow?"
+        bases:
+          "prévision": "forecast"
+  "fr-1318":
+    native: "weather forecast"
+    notes:
+      "n1": "Météo is 'weather forecast' or 'the weather report', feminine. It is short for météorologie."
+    examples:
+      "La météo annonce de la pluie.":
+        native: "The forecast predicts rain."
+        bases:
+          "météo": "weather forecast"
+          "annonce": "predicts"
+          "de": "some"
+          "pluie": "rain"
+      "Je regarde la météo chaque matin.":
+        native: "I watch the weather forecast every morning."
+        bases:
+          "météo": "weather forecast"
+  "fr-1319":
+    native: "humidity"
+    notes:
+      "n1": "Humidité is 'humidity', feminine. Beaucoup d'humidité means 'a lot of humidity'."
+    examples:
+      "Il y a beaucoup d'humidité.":
+        native: "There is a lot of humidity."
+        bases:
+          "y": "there"
+          "d'humidité": "humidity"
+      "L'humidité rend l'air lourd.":
+        native: "The humidity makes the air heavy."
+        bases:
+          "L'humidité": "humidity"
+          "rend": "makes"
+          "l'air": "air"
+  "fr-1320":
+    native: "storm"
+    notes:
+      "n1": "Tempête is 'storm' with strong wind, feminine. It is stronger than an orage."
+    examples:
+      "Une tempête arrive ce soir.":
+        native: "A storm is coming this evening."
+        bases:
+          "tempête": "storm"
+      "La tempête casse les branches.":
+        native: "The storm breaks the branches."
+        bases:
+          "tempête": "storm"
+          "casse": "breaks"
+          "branches": "branches"
+  "fr-1321":
+    native: "cloudy"
+    notes:
+      "n1": "Nuageux is 'cloudy', an adjective. The feminine is nuageuse."
+    examples:
+      "Le ciel est nuageux.":
+        native: "The sky is cloudy."
+        bases:
+          "ciel": "sky"
+          "nuageux": "cloudy"
+      "Demain, le temps est nuageux.":
+        native: "Tomorrow, the weather is cloudy."
+        bases:
+          "nuageux": "cloudy"
+  "fr-1322":
+    native: "rainy"
+    notes:
+      "n1": "Pluvieux is 'rainy', an adjective. The feminine is pluvieuse."
+    examples:
+      "Novembre est un mois pluvieux.":
+        native: "November is a rainy month."
+        bases:
+          "pluvieux": "rainy"
+      "Une journée pluvieuse commence.":
+        native: "A rainy day begins."
+        bases:
+          "pluvieuse": "rainy"
+  "fr-1323":
+    native: "sunny"
+    notes:
+      "n1": "Ensoleillé is 'sunny', an adjective. The feminine is ensoleillée."
+    examples:
+      "Le temps est ensoleillé.":
+        native: "The weather is sunny."
+        bases:
+          "ensoleillé": "sunny"
+      "Une journée ensoleillée commence.":
+        native: "A sunny day begins."
+        bases:
+          "ensoleillée": "sunny"
+  "fr-1324":
+    native: "stormy"
+    notes:
+      "n1": "Orageux is 'stormy', an adjective. It goes with the weather or the evening."
+    examples:
+      "Le soir est orageux.":
+        native: "The evening is stormy."
+        bases:
+          "orageux": "stormy"
+      "Le temps devient orageux.":
+        native: "The weather becomes stormy."
+        bases:
+          "devient": "becomes"
+          "orageux": "stormy"
+  "fr-1325":
+    native: "humid"
+    notes:
+      "n1": "Humide is 'humid' or 'damp', an adjective for the same in both genders."
+    examples:
+      "L'air est humide.":
+        native: "The air is humid."
+        bases:
+          "L'air": "air"
+          "humide": "humid"
+      "La maison est humide.":
+        native: "The house is damp."
+        bases:
+          "humide": "damp"
+  "fr-1326":
+    native: "dry"
+    notes:
+      "n1": "Sec is 'dry', an adjective. The feminine is sèche."
+    examples:
+      "Le sol est sec.":
+        native: "The ground is dry."
+        bases:
+          "sec": "dry"
+      "L'été est sec ici.":
+        native: "Summer is dry here."
+        bases:
+          "sec": "dry"
+  "fr-1327":
+    native: "wet"
+    notes:
+      "n1": "Mouillé is 'wet', an adjective. The feminine is mouillée."
+    examples:
+      "Mes chaussures sont mouillées.":
+        native: "My shoes are wet."
+        bases:
+          "mouillées": "wet"
+      "Le sol est mouillé après la pluie.":
+        native: "The ground is wet after the rain."
+        bases:
+          "mouillé": "wet"
+          "pluie": "rain"
+  "fr-1328":
+    native: "overcast"
+    notes:
+      "n1": "Couvert is 'overcast', as in a cloudy sky. It is also the past participle of couvrir, 'to cover'."
+    examples:
+      "Le temps est couvert.":
+        native: "The weather is overcast."
+        bases:
+          "couvert": "overcast"
+      "Il fait gris et le ciel est couvert.":
+        native: "It is grey and the sky is overcast."
+        bases:
+          "gris": "grey"
+          "ciel": "sky"
+          "couvert": "overcast"
+  "fr-1329":
+    native: "umbrella"
+    notes:
+      "n1": "Parapluie is 'umbrella', masculine. Parasol is 'parasol', which is for the sun."
+    examples:
+      "Prends ton parapluie.":
+        native: "Take your umbrella."
+        bases:
+          "parapluie": "umbrella"
+      "Mon parapluie est dans le sac.":
+        native: "My umbrella is in the bag."
+        bases:
+          "parapluie": "umbrella"
+  "fr-1330":
+    native: "frost"
+    notes:
+      "n1": "Gel is 'frost' or 'freezing', masculine. Geler is the verb 'to freeze'."
+    examples:
+      "Il y a du gel la nuit.":
+        native: "There is frost at night."
+        bases:
+          "y": "there"
+          "du": "some"
+          "gel": "frost"
+      "Le gel tue les plantes.":
+        native: "The frost kills the plants."
+        bases:
+          "gel": "frost"
+          "tue": "kills"
+          "plantes": "plants"
+  "fr-1331":
+    native: "black ice"
+    notes:
+      "n1": "Verglas is 'black ice', the thin ice on a road. It is masculine."
+    examples:
+      "Attention, il y a du verglas.":
+        native: "Careful, there is black ice."
+        bases:
+          "y": "there"
+          "du": "some"
+          "verglas": "black ice"
+      "Le verglas rend la route glissante.":
+        native: "The black ice makes the road slippery."
+        bases:
+          "verglas": "black ice"
+          "rend": "makes"
+          "glissante": "slippery"
+  "fr-1332":
+    native: "to rain"
+    notes:
+      "n1": "Pleuvoir is 'to rain', an irregular verb. Il pleut means 'it is raining'."
+    examples:
+      "Il pleut.":
+        native: "It is raining."
+        bases:
+          "pleut": "rains"
+      "Il pleut souvent en avril.":
+        native: "It often rains in April."
+        bases:
+          "pleut": "rains"
+          "en": "in"
+  "fr-1333":
+    native: "to snow"
+    notes:
+      "n1": "Neiger is 'to snow', a regular -er verb. Il neige means 'it is snowing'."
+    examples:
+      "Il neige en janvier.":
+        native: "It snows in January."
+        bases:
+          "neige": "snows"
+          "en": "in"
+      "Il a neigé hier.":
+        native: "It snowed yesterday."
+        bases:
+          "neigé": "snowed"
+  "fr-1334":
+    native: "to freeze"
+    notes:
+      "n1": "Geler is 'to freeze', a regular -er verb with a change in the stem. Il gèle means 'it is freezing'."
+    examples:
+      "Il gèle la nuit.":
+        native: "It freezes at night."
+        bases:
+          "gèle": "freezes"
+      "Ce matin, l'eau gèle.":
+        native: "This morning, the water freezes."
+        bases:
+          "l'eau": "water"
+          "gèle": "freezes"
+  "fr-1335":
+    native: "to shine"
+    notes:
+      "n1": "Briller is 'to shine', a regular -er verb. It is used for the sun and the stars."
+    examples:
+      "Les étoiles brillent la nuit.":
+        native: "The stars shine at night."
+        bases:
+          "étoiles": "stars"
+          "brillent": "shine"
+      "Le soleil ne brille pas aujourd'hui.":
+        native: "The sun does not shine today."
+        bases:
+          "soleil": "sun"
+          "ne": "part of 'not'"
+          "brille": "shine"
+          "pas": "not"
+  "fr-1336":
+    native: "to blow"
+    notes:
+      "n1": "Souffler is 'to blow', as the wind does. It is a regular -er verb."
+    examples:
+      "Le vent souffle fort.":
+        native: "The wind blows hard."
+        bases:
+          "souffle": "blows"
+      "Le vent souffle dans les arbres.":
+        native: "The wind blows in the trees."
+        bases:
+          "souffle": "blows"
+          "arbres": "trees"
+  "fr-1337":
+    native: "mild"
+    notes:
+      "n1": "Doux is 'mild' or 'soft', for the weather and the temperature. Douce is the feminine form."
+    examples:
+      "Il fait doux.":
+        native: "It is mild."
+        bases:
+          "doux": "mild"
+      "Le printemps est doux.":
+        native: "Spring is mild."
+        bases:
+          "doux": "mild"
+  "fr-1338":
+    native: "ray of light"
+    notes:
+      "n1": "Rayon is 'ray' or 'beam' of light, masculine. Plural: rayons."
+    examples:
+      "Un rayon de soleil passe.":
+        native: "A ray of sunshine passes."
+        bases:
+          "rayon": "ray"
+          "de": "of"
+          "soleil": "sunshine"
+      "Les rayons chauffent la plage.":
+        native: "The rays heat the beach."
+        bases:
+          "rayons": "rays"
+          "chauffent": "heat"
+          "plage": "beach"
+  "fr-1339":
+    native: "drop"
+    notes:
+      "n1": "Goutte is 'drop', feminine: une goutte d'eau, 'a drop of water'."
+    examples:
+      "Une goutte tombe sur mon nez.":
+        native: "A drop falls on my nose."
+        bases:
+          "goutte": "drop"
+      "Il y a une goutte de pluie.":
+        native: "There is a drop of rain."
+        bases:
+          "y": "there"
+          "goutte": "drop"
+          "de": "of"
+          "pluie": "rain"
+  "fr-1340":
+    native: "puddle"
+    notes:
+      "n1": "Flaque is 'puddle', feminine. Une flaque d'eau is 'a puddle of water'."
+    examples:
+      "Il y a une flaque dans la rue.":
+        native: "There is a puddle in the street."
+        bases:
+          "y": "there"
+          "flaque": "puddle"
+      "Le chien saute dans la flaque.":
+        native: "The dog jumps into the puddle."
+        bases:
+          "saute": "jumps"
+          "flaque": "puddle"
+  "fr-1341":
+    native: "bright spell"
+    notes:
+      "n1": "Éclaircie is 'bright spell', a short time when the sky clears after the rain. Feminine."
+    examples:
+      "Une éclaircie arrive après l'averse.":
+        native: "A bright spell comes after the shower."
+        bases:
+          "éclaircie": "bright spell"
+          "l'averse": "shower"
+      "Il y a une éclaircie à midi.":
+        native: "There is a bright spell at midday."
+        bases:
+          "y": "there"
+          "éclaircie": "bright spell"
+          "à": "at"
+  "fr-1342":
+    native: "heat"
+    notes:
+      "n1": "Chaleur is 'heat', feminine. Il fait une chaleur means 'it is hot'."
+    examples:
+      "La chaleur est forte en été.":
+        native: "The heat is strong in summer."
+        bases:
+          "chaleur": "heat"
+          "en": "in"
+      "Il fait une chaleur lourde.":
+        native: "It is a heavy heat."
+        bases:
+          "chaleur": "heat"
