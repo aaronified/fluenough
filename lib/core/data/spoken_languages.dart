@@ -191,7 +191,8 @@ class SpokenLanguage {
   final NativeVerification verification;
 
   /// Whether Add a language lists it first, under Popular (`popular: true`,
-  /// a hand-kept list, so it changes without a release).
+  /// a hand-kept list in the bundled `assets/languages.yaml`, so a change
+  /// reaches learners with the next app release).
   final bool popular;
 
   /// Other names a search finds it by (`aliases`), such as "Urdu" for
