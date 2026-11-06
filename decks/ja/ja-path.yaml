@@ -426,7 +426,8 @@ units:
       - { id: "how-was-it", text: { "en": "Asking how a trip was: fun, cold, not expensive" } }
     reading_passages:
       - { id: "trip-review", text: { "en": "A short review of a day trip" } }
-  - planned: { id: "ja-eating-out", theme: "eating-out", words: 50 }
+  - decks: ["ja-eating-out", "ja-eating-out-sentences", "ja-reading-eating-out", "*"]
+    words: 15
     listening_passages:
       - { id: "at-an-izakaya", text: { "en": "Ordering at a small izakaya and asking for the bill" } }
     reading_passages:

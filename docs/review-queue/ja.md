@@ -39,3 +39,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1736 | ja-shopping | Is らく (easy, comfortable) right for clothes that are comfortable, as in らくな ふく? | Haiku builder | 2026-11-06 |
 | unit-level | ja-shopping | Only 21 of the 50 planned shopping words were fresh: the path count is set to 21. Is that right, or should the unit wait for more words? | Haiku builder | 2026-11-06 |
 | unit-level | ja-shopping | The example and sentence decks of ja-shopping are short and simple, close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-1755 | ja-eating-out | Is かんじょう (the bill at a restaurant) the natural everyday word, or is おかいけい used more? | Haiku builder | 2026-11-06 |
+| ja-1758 | ja-eating-out | Is たのみます (to order food) the natural verb in a small shop, or is another phrase used? | Haiku builder | 2026-11-06 |
+| ja-1759 | ja-eating-out | Is おごります (to treat someone to a meal) natural in the sentence わたしが おごります? | Haiku builder | 2026-11-06 |
+| ja-1761 | ja-eating-out | Is まんぞく (full, satisfied) the natural word for being full after a meal, as in はらは まんぞくです? | Haiku builder | 2026-11-06 |
+| unit-level | ja-eating-out | Only 15 of the 50 planned eating-out words were fresh: the path count is set to 15. Is that right? | Haiku builder | 2026-11-06 |
+| unit-level | ja-eating-out | The example and sentence decks of ja-eating-out are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
