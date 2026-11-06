@@ -36,6 +36,7 @@ class PlacementSession {
     PlacementRunConfig config,
     this.data, {
     this.requireTrustedPairAudio = false,
+    this.questionSource,
   }) : _config = config {
     _run = PlacementRun(_config);
     _builder = _newBuilder();
@@ -79,9 +80,13 @@ class PlacementSession {
   final PlacementLanguageData data;
   final bool requireTrustedPairAudio;
 
+  /// Where the questions come from instead of the builder (a question bank,
+  /// for the replay harness); null builds them from [data].
+  final QuestionSource? questionSource;
+
   PlacementRunConfig _config;
   late PlacementRun _run;
-  late QuestionBuilder _builder;
+  late QuestionSource _builder;
   GeneratedQuestion? _question;
   bool _stuck = false;
 
@@ -99,13 +104,15 @@ class PlacementSession {
   final Map<PlacementVariant, GeneratedQuestion> _lastBase =
       <PlacementVariant, GeneratedQuestion>{};
 
-  QuestionBuilder _newBuilder() => QuestionBuilder(
-    data,
-    tested: _config.tested,
-    microphone: _config.microphone,
-    requireTrustedPairAudio: requireTrustedPairAudio,
-    seed: _config.seed,
-  );
+  QuestionSource _newBuilder() =>
+      questionSource ??
+      QuestionBuilder(
+        data,
+        tested: _config.tested,
+        microphone: _config.microphone,
+        requireTrustedPairAudio: requireTrustedPairAudio,
+        seed: _config.seed,
+      );
 
   PlacementRunConfig get config => _config;
   PlacementRun get run => _run;
