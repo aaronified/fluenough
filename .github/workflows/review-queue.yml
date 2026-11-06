@@ -1,0 +1,65 @@
+name: Review queue
+
+# Writes decks/review-queue.json from docs/review-queue/*.md (owner,
+# 2026-11-06, "go B"): the one file the app reads the deck builders' questions
+# from. Runs after a merge that touched a queue file or a deck, so a card two
+# reviewers signed off is reported as settled. Nothing is removed from a queue
+# file here: a person does that. The report is in the run's summary.
+#
+# Pushing to protected main needs the token that deck-index.yml uses: the
+# secret WIKI_TOKEN, else GITHUB_TOKEN.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/review-queue/**"
+      - "decks/**"
+      - "tools/review_queue.py"
+      - "!decks/index.json"
+      - "!decks/review-queue.json"
+  workflow_dispatch:
+
+concurrency:
+  group: review-queue
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  queue:
+    name: Write decks/review-queue.json
+    timeout-minutes: 20
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ secrets.WIKI_TOKEN || secrets.GITHUB_TOKEN }}
+      - uses: actions/setup-python@v7
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Build the feed
+        run: python3 tools/review_queue.py --report "$GITHUB_STEP_SUMMARY"
+      - name: Commit and push
+        run: |
+          if git diff --quiet -- decks/review-queue.json && [ -z "$(git ls-files --others --exclude-standard decks/review-queue.json)" ]; then
+            echo "The feed is current."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add decks/review-queue.json
+          git commit -m "Regenerate decks/review-queue.json"
+          for attempt in 1 2 3; do
+            if git pull --rebase origin main && git push origin HEAD:main; then
+              exit 0
+            fi
+            echo "Push attempt $attempt failed."
+            git rebase --abort 2>/dev/null || true
+            sleep $((attempt * 5))
+          done
+          echo "::error::Could not push decks/review-queue.json to main (WIKI_TOKEN must be allowed to bypass main's pull-request rule)."
+          exit 1

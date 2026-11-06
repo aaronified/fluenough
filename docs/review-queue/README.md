@@ -36,11 +36,33 @@ review bot reads. No deck-format change, and nothing ships to learners.
 - **Builders** add a row for each doubtful card when they finish a unit. The
   step is in [build-deck](../../.claude/skills/build-deck/SKILL.md), step 7a.
   The rows go in the same commit as the deck.
-- **Reviewers** answer in the app, as they do now. A card a reviewer settles
-  loses its row: delete the row when the answer is in the deck.
-- **The review bot** (a later code change, not yet built) reads these files,
-  asks the listed cards first, and attaches the question to each. Until it
-  exists, the files are a list for people to work through.
+- **Reviewers** answer in the app, as they do now. A card with a row shows
+  the builder's question as a note, **Question from the deck builder**, in
+  the daily questions and in the card's review sheet, and is asked first.
+- **The review bot reads these files** (`tools/review_queue.py`, run by
+  `.github/workflows/review-queue.yml` on main after a change to a queue file
+  or a deck). It writes `decks/review-queue.json`, which the app downloads
+  from main, as it does the deck index, when the daily questions open, and
+  keeps for offline. Rows with a card id become that card's builder
+  questions (at most three show per card); `unit-level` and `course-wide`
+  rows go in the file's `unit_level` list and never choose a card. Spacing,
+  backticks around an id and a missing header are tolerated; a line that is
+  not a row with a question is skipped and reported.
+- **Unknown ids** (not a card in the language's decks) are left out of the
+  feed and listed in the run's summary. The run does not fail. Fix the id or
+  delete the row.
+
+## How a row leaves the queue
+
+A person removes it; the bot never edits these files. A builder's question is
+free text ("is gender m right?"), and it may be about a field a sign-off does
+not cover, so deleting a row because a card was signed off could drop a doubt
+nobody answered. The run's summary instead lists the **settled** cards: those
+two reviewers signed off (two codes in `checked_by`), which the app no longer
+asks about. Delete such a row once the answer is in the deck, or the reviewer
+or the owner marks it answered (a pull request that deletes the row, docs
+only, straight to main). A card nobody can be asked about any more (every
+data point verified) keeps its row until someone deletes it.
 
 ## What never goes in a deck
 
