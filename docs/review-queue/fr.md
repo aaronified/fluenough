@@ -30,3 +30,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | fr-1286 | fr-animals | Plume also means a quill pen: should the pen sense be noted on the card? | Haiku builder | 2026-11-06 |
 | fr-1282 | fr-animals | Is "L'âne est gris." a natural description of a donkey, or should a learner first see brown (brun)? | Haiku builder | 2026-11-06 |
 | unit-level | fr-animals (35 words) | Poisson, lait, herbe and the colours overlap with fr-food and fr-clothes: should the animal unit keep its sentences that use them? | Haiku builder | 2026-11-06 |
+| fr-1317 | fr-weather | In everyday speech, is "prévision" used for the weather forecast, or is "météo" the word people use, as in "Quelle est la prévision pour demain ?"? | Haiku builder | 2026-11-06 |
+| fr-1333 | fr-weather | Is "Il a neigé hier." the natural past tense for snow, or would a learner hear "il a fait de la neige" more often? | Haiku builder | 2026-11-06 |
+| fr-1341 | fr-weather | Is "une éclaircie" (a bright spell in the rain) used with "il y a" as in "Il y a une éclaircie à midi."? | Haiku builder | 2026-11-06 |
+| fr-1342 | fr-weather | Is "Il fait une chaleur lourde." natural for muggy heat, or should the card teach "il fait lourd" instead? | Haiku builder | 2026-11-06 |
