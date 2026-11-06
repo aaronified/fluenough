@@ -143,3 +143,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2466 | ja-nature | くも is also the word for cloud (the same sound): should a homograph note say so? | Haiku builder | 2026-11-06 |
 | ja-2465 | ja-nature | Is はえ (fly) with はえています (grows, of moss) natural in the sentence いわにこけがはえています? | Haiku builder | 2026-11-06 |
 | unit-level | ja-nature | The nine place nouns of ja-nature (desert, valley, waterfall, lake, riverbank, beach, sandy beach, cliff) have へ, から and まで rows in ja-grammar-place-particles: are those forms natural? | Haiku builder | 2026-11-06 |
+| ja-2523 | ja-adjectives-2 | べつ is listed as a な-adjective (べつな in the rules table) but is used in the examples only as べつの before a noun: is the な form natural, or should the row go? | Haiku builder | 2026-11-06 |
+| ja-2539 | ja-adjectives-2 | けち (stingy) is written as a な-adjective with けちな in the examples: is けちな natural, or is it used more as a noun or a register-marked word? | Haiku builder | 2026-11-06 |
+| ja-2534 | ja-adjectives-2 | Is ふけつなみずはのめません (unclean water cannot be drunk) natural, or would a more everyday phrase be better? | Haiku builder | 2026-11-06 |
