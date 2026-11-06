@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-money"
+name: "Reading: money"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about money. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-bill-and-receipt"
+    title: "A bill and a receipt"
+    theme: "money"
+    sentences:
+      - text: "Table 4 : deux menus à douze euros, une bouteille d’eau à trois euros."
+      - text: "Total : vingt-sept euros, service compris."
+      - text: "Paiement : carte bancaire. Merci de votre visite."
+      - text: "Réduction : aucune pour cette commande."
+    questions:
+      - id: "fr-2741"
+        prompt: { en: "How much is the total?" }
+        options:
+          - { en: "Twelve euros" }
+          - { en: "Twenty-seven euros" }
+          - { en: "Three euros" }
+        answer: 2
+      - id: "fr-2742"
+        prompt: { en: "How was the bill paid?" }
+        options:
+          - { en: "In cash" }
+          - { en: "By bank card" }
+          - { en: "By cheque" }
+        answer: 2
+      - id: "fr-2743"
+        prompt: { en: "Is there a discount?" }
+        options:
+          - { en: "Yes, twenty per cent" }
+          - { en: "Yes, a small one" }
+          - { en: "No" }
+        answer: 3

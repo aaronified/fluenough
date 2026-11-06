@@ -1,0 +1,48 @@
+schema: 1
+id: "fr-en-verbs-5-sentences"
+kind: "layer"
+core: "fr-verbs-5-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: verbs 5"
+license: "CC-BY-SA-4.0"
+description: "Sentences about verbs 5, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2632":
+    native: "I leave the house and I come home late."
+    confusables:
+      "revenir": { why: "To come back is close; the sentence says come home, so it is a different verb." }
+      "sortir": { why: "To go out is close; the sentence says leave and come home." }
+  "fr-2633":
+    native: "The teacher explains the rule and I understand."
+    confusables:
+      "enseigner": { why: "To teach is close; the sentence says explain." }
+      "apprendre": { why: "To learn is what the student does; the sentence names understanding." }
+  "fr-2634":
+    native: "He describes the landscape and answers the question."
+    bases:
+      "à": "to, at"
+    confusables:
+      "proposer": { why: "To suggest is different; the sentence has describing and answering." }
+      "poser": { why: "To ask is the opposite side of answering in the sentence." }
+  "fr-2635":
+    native: "She stops looking and finds the key."
+    bases:
+      "de": "of, from, some"
+    confusables:
+      "perdre": { why: "To lose is the opposite of finding in the sentence." }
+      "ramasser": { why: "To pick up is an action; the sentence is about finding." }
+  "fr-2636":
+    native: "We begin the journey and finish the meal."
+    confusables:
+      "continuer": { why: "To carry on is close; the sentence names beginning and finishing." }
+      "repondre": { why: "To answer is not in the sentence." }
+  "fr-2637":
+    native: "I remember my success and I move away."
+    bases:
+      "me": "me"
+      "de": "of, from, some"
+      "m'éloigne": "moves away"
+    confusables:
+      "oublier": { why: "To forget is the opposite of remembering in the sentence." }
+      "avouer": { why: "To admit is not named; the sentence is about memory." }

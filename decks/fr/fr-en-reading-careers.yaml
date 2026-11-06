@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-careers"
+name: "Reading: careers"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about careers. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-job-advert"
+    title: "A job advert"
+    theme: "careers"
+    sentences:
+      - text: "Nous recherchons un(e) secrétaire à temps partiel pour notre agence."
+      - text: "Expérience demandée : deux ans minimum. Un diplôme est un plus."
+      - text: "Poste basé à Lyon, horaires flexibles."
+      - text: "Envoyez votre candidature avant le 15 du mois."
+    questions:
+      - id: "fr-2156"
+        prompt: { en: "What kind of work is offered?" }
+        options:
+          - { en: "Full time" }
+          - { en: "Part time" }
+          - { en: "Freelance" }
+        answer: 2
+      - id: "fr-2157"
+        prompt: { en: "What experience is asked for?" }
+        options:
+          - { en: "Two years at least" }
+          - { en: "None" }
+          - { en: "Ten years" }
+        answer: 1
+      - id: "fr-2158"
+        prompt: { en: "How should you apply?" }
+        options:
+          - { en: "Send your application before the 15th" }
+          - { en: "Call on Sunday" }
+          - { en: "Visit the factory" }
+        answer: 1

@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-opinions"
+name: "Reading: opinions"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about opinions. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-readers-letters"
+    title: "Two short letters to a newspaper"
+    theme: "opinions"
+    sentences:
+      - text: "Monsieur le directeur,"
+      - text: "Je ne suis pas d’accord avec l’article. Il me semble injuste et peu logique."
+      - text: "Mon avis est que le débat doit rester ouvert, et que la liberté compte plus que le respect des préjugés."
+      - text: "Cordialement, Claire."
+    questions:
+      - id: "fr-1909"
+        prompt: { en: "What does the writer think of the article?" }
+        options:
+          - { en: "It is fair and logical" }
+          - { en: "It is unfair and not logical" }
+          - { en: "It is too short" }
+        answer: 2
+      - id: "fr-1910"
+        prompt: { en: "What does the writer say about the debate?" }
+        options:
+          - { en: "It should be closed" }
+          - { en: "It should stay open" }
+          - { en: "It is finished" }
+        answer: 2
+      - id: "fr-1911"
+        prompt: { en: "What does the writer say matters more?" }
+        options:
+          - { en: "Respect for prejudices" }
+          - { en: "Freedom" }
+          - { en: "Money" }
+        answer: 2

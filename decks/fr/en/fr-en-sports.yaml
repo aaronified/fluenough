@@ -1,0 +1,409 @@
+schema: 1
+id: "fr-en-sports"
+kind: "layer"
+core: "fr-sports"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sports"
+license: "CC-BY-SA-4.0"
+description: "Forty words for sport: the games and the places we play them, the players and the referee, and the verbs of training and winning. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2403":
+    native: "player"
+    notes:
+      "n1": "Un joueur plays a game; the feminine is joueuse."
+    examples:
+      "Le joueur marque un but.":
+        native: "The player scores a goal."
+        bases:
+          "joueur": "player"
+      "Ce joueur court très vite.":
+        native: "This player runs very fast."
+        bases:
+          "joueur": "player"
+  "fr-2404":
+    native: "referee"
+    notes:
+      "n1": "Un arbitre makes the decisions in a game; it is used for both genders."
+    examples:
+      "L'arbitre siffle la fin.":
+        native: "The referee blows the final whistle."
+        bases:
+          "L'arbitre": "referee"
+          "siffle": "blows"
+      "L'arbitre a donné un penalty.":
+        native: "The referee gave a penalty."
+        bases:
+          "L'arbitre": "referee"
+  "fr-2405":
+    native: "coach"
+    notes:
+      "n1": "Un entraîneur trains a team; the feminine is entraîneuse."
+    examples:
+      "L'entraîneur parle aux joueurs.":
+        native: "The coach speaks to the players."
+        bases:
+          "L'entraîneur": "coach"
+          "aux": "to the"
+      "Notre entraîneur est très strict.":
+        native: "Our coach is very strict."
+        bases:
+          "entraîneur": "coach"
+          "strict": "strict"
+  "fr-2406":
+    native: "pitch, ground"
+    notes:
+      "n1": "Un terrain is a playing field, or a piece of land."
+    examples:
+      "Le terrain est mouillé.":
+        native: "The pitch is wet."
+        bases:
+          "terrain": "pitch, ground"
+      "Les enfants jouent sur le terrain.":
+        native: "The children play on the pitch."
+        bases:
+          "enfants": "children"
+          "terrain": "pitch, ground"
+  "fr-2407":
+    native: "gym"
+    notes:
+      "n1": "Un gymnase is an indoor place for sports."
+    examples:
+      "Le gymnase est fermé le dimanche.":
+        native: "The gym is closed on Sunday."
+        bases:
+          "gymnase": "gym"
+      "Nous jouons au basket dans le gymnase.":
+        native: "We play basketball in the gym."
+        bases:
+          "au": "at, to the"
+          "gymnase": "gym"
+  "fr-2408":
+    native: "race, run"
+    notes:
+      "n1": "Une course is a race or a run."
+    examples:
+      "La course commence à midi.":
+        native: "The race starts at noon."
+        bases:
+          "course": "race, run"
+          "à": "to, at"
+      "Elle gagne la course.":
+        native: "She wins the race."
+        bases:
+          "course": "race, run"
+  "fr-2409":
+    native: "goal, aim"
+    notes:
+      "n1": "Un but is a goal in a game, or an aim in life."
+    examples:
+      "Il marque un but.":
+        native: "He scores a goal."
+        bases:
+          "but": "goal, aim"
+      "Mon but est de gagner.":
+        native: "My aim is to win."
+        bases:
+          "but": "goal, aim"
+          "de": "of, from, some"
+  "fr-2410":
+    native: "victory"
+    notes:
+      "n1": "Une victoire is a win in a game or contest."
+    examples:
+      "C'est une belle victoire.":
+        native: "It is a fine victory."
+        bases:
+          "victoire": "victory"
+      "La victoire est pour nous.":
+        native: "The victory is ours."
+        bases:
+          "victoire": "victory"
+  "fr-2411":
+    native: "defeat"
+    notes:
+      "n1": "Une défaite is a loss in a game or contest."
+    examples:
+      "La défaite est difficile.":
+        native: "The defeat is hard."
+        bases:
+          "défaite": "defeat"
+      "Ils acceptent la défaite.":
+        native: "They accept the defeat."
+        bases:
+          "défaite": "defeat"
+  "fr-2412":
+    native: "score"
+    notes:
+      "n1": "Le score is the number of points or goals in a game."
+    examples:
+      "Le score est de deux à un.":
+        native: "The score is two to one."
+        bases:
+          "score": "score"
+          "de": "of, from, some"
+          "à": "to, at"
+      "Quel est le score final ?":
+        native: "What is the final score?"
+        bases:
+          "score": "score"
+          "final": "final"
+  "fr-2413":
+    native: "penalty"
+    notes:
+      "n1": "Un penalty is a free kick from the penalty spot in football."
+    examples:
+      "Il tire le penalty.":
+        native: "He takes the penalty."
+        bases:
+          "tire": "takes"
+          "penalty": "penalty"
+      "Le penalty est sifflé.":
+        native: "The penalty is given."
+        bases:
+          "penalty": "penalty"
+          "sifflé": "blown"
+  "fr-2414":
+    native: "running"
+    notes:
+      "n1": "La course à pied is running as a sport."
+    examples:
+      "Je fais de la course à pied.":
+        native: "I go running."
+        bases:
+          "de": "of, from, some"
+          "à": "to, at"
+      "La course à pied est saine.":
+        native: "Running is healthy."
+        bases:
+          "à": "to, at"
+  "fr-2415":
+    native: "cycling"
+    notes:
+      "n1": "Le cyclisme is the sport of cycling."
+    examples:
+      "Le cyclisme est très populaire.":
+        native: "Cycling is very popular."
+        bases:
+          "cyclisme": "cycling"
+          "populaire": "popular"
+      "Ils regardent le cyclisme à la télé.":
+        native: "They watch cycling on TV."
+        bases:
+          "cyclisme": "cycling"
+          "à": "to, at"
+          "télé": "TV"
+  "fr-2416":
+    native: "racket"
+    notes:
+      "n1": "Une raquette is the racket used in tennis."
+    examples:
+      "Ma raquette est cassée.":
+        native: "My racket is broken."
+        bases:
+          "raquette": "racket"
+          "cassée": "broken"
+      "Il change de raquette.":
+        native: "He changes racket."
+        bases:
+          "de": "of, from, some"
+          "raquette": "racket"
+  "fr-2417":
+    native: "marathon"
+    notes:
+      "n1": "Un marathon is a long race of about forty-two kilometres."
+    examples:
+      "Il court le marathon.":
+        native: "He runs the marathon."
+        bases:
+          "marathon": "marathon"
+      "Le marathon dure plusieurs heures.":
+        native: "The marathon lasts several hours."
+        bases:
+          "marathon": "marathon"
+  "fr-2418":
+    native: "competition"
+    notes:
+      "n1": "Une compétition is a contest between players or teams."
+    examples:
+      "La compétition commence demain.":
+        native: "The competition starts tomorrow."
+        bases:
+          "compétition": "competition"
+      "Elle participe à une compétition.":
+        native: "She takes part in a competition."
+        bases:
+          "participe": "takes part"
+          "à": "to, at"
+          "compétition": "competition"
+  "fr-2419":
+    native: "trophy"
+    notes:
+      "n1": "Un trophée is a prize cup or award in sport."
+    examples:
+      "Le trophée est en argent.":
+        native: "The trophy is silver."
+        bases:
+          "trophée": "trophy"
+          "en": "in, by, as"
+      "Ils gagnent un trophée.":
+        native: "They win a trophy."
+        bases:
+          "trophée": "trophy"
+  "fr-2420":
+    native: "shirt, jersey"
+    notes:
+      "n1": "Un maillot is a sports shirt worn by a team."
+    examples:
+      "Le maillot est bleu.":
+        native: "The shirt is blue."
+        bases:
+          "maillot": "shirt, jersey"
+      "Il porte le maillot de l'équipe.":
+        native: "He wears the team shirt."
+        bases:
+          "maillot": "shirt, jersey"
+          "de": "of, from, some"
+  "fr-2421":
+    native: "trainers, shoes"
+    notes:
+      "n1": "Des chaussures de sport are sports shoes."
+    examples:
+      "Mes chaussures sont neuves.":
+        native: "My shoes are new."
+        bases:
+          "chaussures": "trainers, shoes"
+      "Il met ses chaussures de course.":
+        native: "He puts on his running shoes."
+        bases:
+          "chaussures": "trainers, shoes"
+          "de": "of, from, some"
+  "fr-2422":
+    native: "changing room"
+    notes:
+      "n1": "Un vestiaire is a room where players change."
+    examples:
+      "Le vestiaire est fermé.":
+        native: "The changing room is closed."
+        bases:
+          "vestiaire": "changing room"
+      "Les joueurs entrent au vestiaire.":
+        native: "The players go into the changing room."
+        bases:
+          "au": "at, to the"
+          "vestiaire": "changing room"
+  "fr-2423":
+    native: "fan, supporter"
+    notes:
+      "n1": "Un supporter cheers for a team; it is used for both genders."
+    examples:
+      "Les supporters chantent.":
+        native: "The fans sing."
+        bases:
+          "supporters": "fan, supporter"
+      "Mon frère est supporter de l'équipe.":
+        native: "My brother is a fan of the team."
+        bases:
+          "supporter": "fan, supporter"
+          "de": "of, from, some"
+  "fr-2424":
+    native: "to train"
+    notes:
+      "n1": "Entraîner is regular: to train a team or oneself."
+    examples:
+      "Il entraîne l'équipe chaque semaine.":
+        native: "He trains the team each week."
+        bases:
+          "entraîne": "to train"
+      "Elle s'entraîne tous les jours.":
+        native: "She trains every day."
+        bases:
+          "s'entraîne": "to train"
+  "fr-2425":
+    native: "to score"
+    notes:
+      "n1": "Marquer is regular: to score a goal or to mark something."
+    examples:
+      "Il marque deux buts.":
+        native: "He scores two goals."
+        bases:
+          "marque": "to score"
+      "Nous marquons un point.":
+        native: "We score a point."
+        bases:
+          "marquons": "to score"
+          "point": "point"
+  "fr-2436":
+    native: "goalkeeper"
+    notes:
+      "n1": "Un gardien guards the goal; the feminine is gardienne."
+    examples:
+      "Le gardien arrête le tir.":
+        native: "The goalkeeper stops the shot."
+        bases:
+          "gardien": "goalkeeper"
+          "arrête": "stops"
+          "tir": "shot"
+      "Notre gardien est très bon.":
+        native: "Our goalkeeper is very good."
+        bases:
+          "gardien": "goalkeeper"
+  "fr-2437":
+    native: "defender"
+    notes:
+      "n1": "Un défenseur defends the goal in a team; the feminine is défenseuse."
+    examples:
+      "Le défenseur coupe la passe.":
+        native: "The defender cuts the pass."
+        bases:
+          "défenseur": "defender"
+          "passe": "pass"
+      "Ce défenseur est très grand.":
+        native: "This defender is very tall."
+        bases:
+          "défenseur": "defender"
+  "fr-2438":
+    native: "striker, attacker"
+    notes:
+      "n1": "Un attaquant attacks in a team; the feminine is attaquante."
+    examples:
+      "L'attaquant marque encore.":
+        native: "The striker scores again."
+        bases:
+          "L'attaquant": "striker, attacker"
+      "Cet attaquant court vite.":
+        native: "This striker runs fast."
+        bases:
+          "attaquant": "striker, attacker"
+  "fr-2439":
+    native: "jump"
+    notes:
+      "n1": "Un saut is a jump in sport."
+    examples:
+      "Son saut est très haut.":
+        native: "His jump is very high."
+        bases:
+          "saut": "jump"
+      "Elle fait un saut en longueur.":
+        native: "She does a long jump."
+        bases:
+          "saut": "jump"
+          "en": "in, by, as"
+          "longueur": "length"
+  "fr-2440":
+    native: "net"
+    notes:
+      "n1": "Un filet is a net, as in tennis or football."
+    examples:
+      "Le ballon passe au-dessus du filet.":
+        native: "The ball goes over the net."
+        bases:
+          "passe": "pass"
+          "au-dessus": "above"
+          "du": "some, of the"
+          "filet": "net"
+      "Le filet est déchiré.":
+        native: "The net is torn."
+        bases:
+          "filet": "net"
+          "déchiré": "torn"

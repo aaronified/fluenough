@@ -1,0 +1,110 @@
+schema: 1
+id: "fr-environment-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2197"
+    target: "Le recyclage réduit les déchets et protège la forêt."
+    ipa: "lə ʁəsiklaʒ ʁedɥi le deʃɛ e pʁɔtɛʒ la fɔʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "recyclage", ref: "fr-2166" }
+      - { word: "réduit", ref: "fr-2181" }
+      - { word: "les", ref: "fr-0543" }
+      - { word: "déchets", ref: "fr-2167" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "protège", ref: "fr-2178" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "forêt", ref: "fr-2169" }
+    confusables:
+      - { id: "polluer", ref: "fr-2179", kind: "word" }
+      - { id: "gaspiller", ref: "fr-2193", kind: "word" }
+  - id: "fr-2198"
+    target: "La pollution de l'air menace le climat."
+    ipa: "la pɔlysjɔ̃ də lɛʁ mənas lə klima"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "pollution", ref: "fr-2163" }
+      - { word: "de", base: "de" }
+      - { word: "l'air", ref: "fr-2183" }
+      - { word: "menace", base: "menacer" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "climat", ref: "fr-2164" }
+    confusables:
+      - { id: "rechauffement", ref: "fr-2176", kind: "word" }
+      - { id: "secheresse", ref: "fr-2190", kind: "word" }
+  - id: "fr-2199"
+    target: "L'énergie solaire et l'énergie éolienne sont propres."
+    ipa: "lenɛʁʒi sɔlɛʁ e lenɛʁʒi eɔljɛn sɔ̃ pʁɔpʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'énergie", ref: "fr-2171" }
+      - { word: "solaire", ref: "fr-2172" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "éolienne", ref: "fr-2173" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "propres", ref: "fr-0427" }
+    confusables:
+      - { id: "sale", ref: "fr-0428", kind: "word" }
+      - { id: "carbone", ref: "fr-2177", kind: "word" }
+  - id: "fr-2200"
+    target: "Le sol de la forêt est sec à cause de la sécheresse."
+    ipa: "lə sɔl də la fɔʁɛ ɛ sɛk a kozə də la seʃʁɛs"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "sol", ref: "fr-1016" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "forêt", ref: "fr-2169" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "sec", ref: "fr-1326" }
+      - { word: "à", base: "à" }
+      - { word: "cause", base: "cause" }
+      - { word: "sécheresse", ref: "fr-2190" }
+    confusables:
+      - { id: "inondation", ref: "fr-2189", kind: "word" }
+      - { id: "tempete", ref: "fr-1320", kind: "word" }
+  - id: "fr-2201"
+    target: "Les océans sont menacés par le plastique."
+    ipa: "lezɔseɑ̃ sɔ̃ mənase paʁ lə plastik"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0543" }
+      - { word: "océans", ref: "fr-2174" }
+      - { word: "sont", ref: "fr-0021" }
+      - { word: "menacés", base: "menacé" }
+      - { word: "par", ref: "fr-0593" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "plastique", ref: "fr-2168" }
+    confusables:
+      - { id: "dechet", ref: "fr-2167", kind: "word" }
+      - { id: "espece", ref: "fr-2175", kind: "word" }
+  - id: "fr-2202"
+    target: "Nous trions les déchets et composter les restes."
+    ipa: "nu tʁijɔ̃ le deʃɛ e kɔ̃pɔste le ʁɛst"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Nous", ref: "fr-0129" }
+      - { word: "trions", ref: "fr-2194" }
+      - { word: "les", ref: "fr-0543" }
+      - { word: "déchets", ref: "fr-2167" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "composter", ref: "fr-2195" }
+      - { word: "restes", base: "reste" }
+    confusables:
+      - { id: "recycler", ref: "fr-2180", kind: "word" }
+      - { id: "economiser", ref: "fr-1456", kind: "word" }
+

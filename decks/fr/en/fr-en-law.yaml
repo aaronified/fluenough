@@ -1,0 +1,369 @@
+schema: 1
+id: "fr-en-law"
+kind: "layer"
+core: "fr-law"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Law"
+license: "CC-BY-SA-4.0"
+description: "Forty words for law and rights: the courts and the police, a complaint and a case, the rights of a citizen and the words of a contract. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2537":
+    native: "judge"
+    notes:
+      "n1": "Un juge decides cases in court; it is used for both genders."
+    examples:
+      "Le juge rend sa décision.":
+        native: "The judge gives his decision."
+        bases:
+          "décision": "decision"
+      "Ma tante est juge.":
+        native: "My aunt is a judge."
+  "fr-2538":
+    native: "trial"
+    notes:
+      "n1": "Un procès is a legal case heard in court."
+    examples:
+      "Le procès commence lundi.":
+        native: "The trial starts on Monday."
+        bases:
+          "procès": "trial"
+      "Il gagne le procès.":
+        native: "He wins the case."
+        bases:
+          "procès": "trial"
+  "fr-2539":
+    native: "complaint"
+    notes:
+      "n1": "Une plainte is a formal complaint to the police or a court."
+    examples:
+      "Elle dépose une plainte.":
+        native: "She files a complaint."
+        bases:
+          "dépose": "files"
+          "plainte": "complaint"
+      "La plainte est enregistrée.":
+        native: "The complaint is registered."
+        bases:
+          "plainte": "complaint"
+  "fr-2540":
+    native: "defendant"
+    notes:
+      "n1": "Un accusé is the person accused of a crime; the feminine is accusée."
+    examples:
+      "L'accusé nie les faits.":
+        native: "The defendant denies the facts."
+        bases:
+          "L'accusé": "defendant"
+          "nie": "denies"
+      "L'accusée est très calme.":
+        native: "The defendant is very calm."
+        bases:
+          "L'accusée": "defendant"
+  "fr-2541":
+    native: "victim"
+    notes:
+      "n1": "Une victime is a person harmed by a crime or accident; used for both genders."
+    examples:
+      "La victime porte plainte.":
+        native: "The victim files a complaint."
+        bases:
+          "victime": "victim"
+      "Cette victime a besoin d'aide.":
+        native: "This victim needs help."
+        bases:
+          "victime": "victim"
+  "fr-2542":
+    native: "crime"
+    notes:
+      "n1": "Un crime is a very serious offence."
+    examples:
+      "Le crime a eu lieu la nuit.":
+        native: "The crime took place at night."
+        bases:
+          "crime": "crime"
+          "lieu": "place"
+      "Ce crime reste sans réponse.":
+        native: "This crime remains unsolved."
+        bases:
+          "crime": "crime"
+  "fr-2543":
+    native: "offence"
+    notes:
+      "n1": "Un délit is a less serious offence than a crime."
+    examples:
+      "Le délit est puni d'une amende.":
+        native: "The offence is punished by a fine."
+        bases:
+          "délit": "offence"
+          "puni": "punished"
+          "d'une": "of a"
+      "C'est un délit routier.":
+        native: "It is a traffic offence."
+        bases:
+          "délit": "offence"
+          "routier": "road"
+  "fr-2544":
+    native: "lawyer (female)"
+    notes:
+      "n1": "Une avocate is the female form of avocat."
+    examples:
+      "L'avocate parle au juge.":
+        native: "The lawyer speaks to the judge."
+        bases:
+          "L'avocate": "lawyer (female)"
+          "au": "at, to the"
+      "Mon amie est avocate.":
+        native: "My friend is a lawyer."
+        bases:
+          "avocate": "lawyer (female)"
+  "fr-2545":
+    native: "judgement, ruling"
+    notes:
+      "n1": "Un jugement is the decision of a court."
+    examples:
+      "Le jugement est rendu demain.":
+        native: "The ruling is given tomorrow."
+        bases:
+          "jugement": "judgement, ruling"
+      "Ce jugement est injuste.":
+        native: "This ruling is unfair."
+        bases:
+          "jugement": "judgement, ruling"
+  "fr-2546":
+    native: "sentence, punishment"
+    notes:
+      "n1": "Une peine is the punishment given by a court."
+    examples:
+      "La peine est de deux ans.":
+        native: "The sentence is two years."
+        bases:
+          "peine": "sentence, punishment"
+          "de": "of, from, some"
+      "Il purge sa peine en prison.":
+        native: "He serves his sentence in prison."
+        bases:
+          "purge": "serves"
+          "peine": "sentence, punishment"
+          "en": "in, by, as"
+  "fr-2547":
+    native: "prison"
+    notes:
+      "n1": "Une prison is a place where people are held as punishment."
+    examples:
+      "Il est en prison depuis un an.":
+        native: "He has been in prison for a year."
+        bases:
+          "en": "in, by, as"
+          "prison": "prison"
+          "depuis": "since"
+      "La prison est près de la ville.":
+        native: "The prison is near the town."
+        bases:
+          "prison": "prison"
+          "de": "of, from, some"
+  "fr-2548":
+    native: "warning"
+    notes:
+      "n1": "Un avertissement is a formal warning."
+    examples:
+      "Il reçoit un avertissement.":
+        native: "He receives a warning."
+        bases:
+          "avertissement": "warning"
+      "L'avertissement est écrit.":
+        native: "The warning is in writing."
+        bases:
+          "L'avertissement": "warning"
+  "fr-2549":
+    native: "contract"
+    notes:
+      "n1": "Un contrat is a written agreement with legal force."
+    examples:
+      "Le contrat est signé.":
+        native: "The contract is signed."
+        bases:
+          "contrat": "contract"
+      "Lisez le contrat avant de signer.":
+        native: "Read the contract before signing."
+        bases:
+          "contrat": "contract"
+          "de": "of, from, some"
+  "fr-2550":
+    native: "clause"
+    notes:
+      "n1": "Une clause is one part of a contract."
+    examples:
+      "Cette clause est importante.":
+        native: "This clause is important."
+        bases:
+          "clause": "clause"
+      "La clause change les règles.":
+        native: "The clause changes the rules."
+        bases:
+          "clause": "clause"
+  "fr-2551":
+    native: "public prosecutor"
+    notes:
+      "n1": "L’avocat général represents the state in court."
+    examples:
+      "L'avocat général demande une peine.":
+        native: "The public prosecutor asks for a sentence."
+        bases:
+          "général": "general"
+      "Il parle au nom de l'État.":
+        native: "He speaks on behalf of the state."
+        bases:
+          "au": "at, to the"
+          "de": "of, from, some"
+          "l'État": "State"
+  "fr-2552":
+    native: "investigator"
+    notes:
+      "n1": "Un enquêteur investigates a crime; the feminine is enquêtrice."
+    examples:
+      "L'enquêteur interroge le témoin.":
+        native: "The investigator questions the witness."
+        bases:
+          "L'enquêteur": "investigator"
+      "Un enquêteur visite la maison.":
+        native: "An investigator visits the house."
+        bases:
+          "enquêteur": "investigator"
+  "fr-2553":
+    native: "proof, evidence"
+    notes:
+      "n1": "Une preuve is evidence that something is true."
+    examples:
+      "La preuve est dans le dossier.":
+        native: "The evidence is in the file."
+        bases:
+          "preuve": "proof, evidence"
+      "Il n'a pas de preuve.":
+        native: "He has no proof."
+        bases:
+          "pas": "not"
+          "de": "of, from, some"
+          "preuve": "proof, evidence"
+  "fr-2554":
+    native: "innocent"
+    notes:
+      "n1": "Innocent takes the feminine innocente."
+    examples:
+      "Il se dit innocent.":
+        native: "He says he is innocent."
+        bases:
+          "se": "oneself"
+          "dit": "says"
+          "innocent": "innocent"
+      "Elle est innocente.":
+        native: "She is innocent."
+        bases:
+          "innocente": "innocent"
+  "fr-2555":
+    native: "guilty"
+    notes:
+      "n1": "Coupable takes the same form in both genders."
+    examples:
+      "Le juge le déclare coupable.":
+        native: "The judge declares him guilty."
+        bases:
+          "déclare": "declares"
+          "coupable": "guilty"
+      "Elle n'est pas coupable.":
+        native: "She is not guilty."
+        bases:
+          "pas": "not"
+          "coupable": "guilty"
+  "fr-2556":
+    native: "legal"
+    notes:
+      "n1": "Légal takes the feminine légale."
+    examples:
+      "Cette action est légale.":
+        native: "This action is legal."
+        bases:
+          "action": "action"
+          "légale": "legal"
+      "La procédure est légale.":
+        native: "The procedure is legal."
+        bases:
+          "légale": "legal"
+  "fr-2557":
+    native: "illegal"
+    notes:
+      "n1": "Illégal takes the feminine illégale."
+    examples:
+      "Ce vol est illégal.":
+        native: "This theft is illegal."
+        bases:
+          "illégal": "illegal"
+      "Le stationnement est illégal ici.":
+        native: "Parking is illegal here."
+        bases:
+          "stationnement": "parking"
+          "illégal": "illegal"
+  "fr-2558":
+    native: "to plead"
+    notes:
+      "n1": "Plaider is regular: an avocat pleads a case in court."
+    examples:
+      "L'avocat plaide la cause.":
+        native: "The lawyer pleads the case."
+        bases:
+          "plaide": "to plead"
+          "cause": "cause"
+      "Il plaide non coupable.":
+        native: "He pleads not guilty."
+        bases:
+          "plaide": "to plead"
+  "fr-2559":
+    native: "to sentence"
+    notes:
+      "n1": "Condamner is regular: to find someone guilty and sentence them."
+    examples:
+      "Le juge condamne le voleur.":
+        native: "The judge sentences the thief."
+        bases:
+          "condamne": "to sentence"
+          "voleur": "thief"
+      "Il est condamné à trois ans.":
+        native: "He is sentenced to three years."
+        bases:
+          "condamné": "to sentence"
+          "à": "to, at"
+  "fr-2560":
+    native: "to acquit"
+    notes:
+      "n1": "Acquitter is regular: to find someone not guilty."
+    examples:
+      "Le tribunal acquitte l'accusé.":
+        native: "The court acquits the defendant."
+        bases:
+          "acquitte": "to acquit"
+      "Elle est acquittée.":
+        native: "She is acquitted."
+        bases:
+          "acquittée": "to acquit"
+  "fr-2561":
+    native: "to file a complaint"
+    notes:
+      "n1": "Porter plainte is the phrase for filing a complaint."
+    examples:
+      "Je veux porter plainte.":
+        native: "I want to file a complaint."
+      "Elle a porté plainte hier.":
+        native: "She filed a complaint yesterday."
+  "fr-2562":
+    native: "to question"
+    notes:
+      "n1": "Interroger is regular: to question someone formally."
+    examples:
+      "La police interroge le témoin.":
+        native: "The police question the witness."
+        bases:
+          "interroge": "to question"
+      "Le juge interroge l'accusé.":
+        native: "The judge questions the defendant."
+        bases:
+          "interroge": "to question"

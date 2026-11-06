@@ -1,0 +1,485 @@
+schema: 1
+id: "fr-en-careers"
+kind: "layer"
+core: "fr-careers"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Careers"
+license: "CC-BY-SA-4.0"
+description: "Forty words for work and careers: jobs and trades, applying and interviewing, contracts and the choices that shape a working life. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2117":
+    native: "career"
+    notes:
+      "n1": "Une carrière is the whole working life in one field."
+    examples:
+      "Elle fait une belle carrière.":
+        native: "She has a fine career."
+        bases:
+          "carrière": "career"
+      "La carrière commence à vingt ans.":
+        native: "The career starts at twenty."
+        bases:
+          "carrière": "career"
+          "à": "to, at"
+  "fr-2118":
+    native: "colleague"
+    notes:
+      "n1": "Un collègue works in the same place; it is used for both genders."
+    examples:
+      "Mon collègue arrive à neuf heures.":
+        native: "My colleague arrives at nine."
+        bases:
+          "collègue": "colleague"
+          "à": "to, at"
+      "Ma collègue est très gentille.":
+        native: "My colleague is very kind."
+        bases:
+          "collègue": "colleague"
+  "fr-2119":
+    native: "candidate"
+    notes:
+      "n1": "Un candidat applies for a job or an election; the feminine is candidate."
+    examples:
+      "Le candidat arrive à l'heure.":
+        native: "The candidate arrives on time."
+        bases:
+          "candidat": "candidate"
+          "à": "to, at"
+      "Il est le meilleur candidat.":
+        native: "He is the best candidate."
+        bases:
+          "candidat": "candidate"
+  "fr-2120":
+    native: "interview"
+    notes:
+      "n1": "Un entretien is a job interview, or a meeting."
+    examples:
+      "J'ai un entretien demain.":
+        native: "I have an interview tomorrow."
+        bases:
+          "entretien": "interview"
+      "L'entretien dure une heure.":
+        native: "The interview lasts an hour."
+        bases:
+          "L'entretien": "interview"
+  "fr-2121":
+    native: "internship, placement"
+    notes:
+      "n1": "Un stage is a short period of work to learn a job."
+    examples:
+      "Elle fait un stage dans une banque.":
+        native: "She does an internship in a bank."
+        bases:
+          "stage": "internship, placement"
+      "Le stage dure six mois.":
+        native: "The internship lasts six months."
+        bases:
+          "stage": "internship, placement"
+  "fr-2122":
+    native: "engineer"
+    notes:
+      "n1": "Un ingénieur designs and builds machines or buildings; the feminine is ingénieure or ingénieure."
+    examples:
+      "L'ingénieur calcule la structure.":
+        native: "The engineer calculates the structure."
+        bases:
+          "L'ingénieur": "engineer"
+          "calcule": "calculates"
+          "structure": "structure"
+      "Mon oncle est ingénieur.":
+        native: "My uncle is an engineer."
+        bases:
+          "ingénieur": "engineer"
+  "fr-2123":
+    native: "lawyer"
+    notes:
+      "n1": "Un avocat defends people in court; the feminine is avocate."
+    examples:
+      "L'avocat parle au juge.":
+        native: "The lawyer speaks to the judge."
+        bases:
+          "L'avocat": "lawyer"
+          "au": "at, to the"
+          "juge": "judge"
+      "Elle est avocate à Paris.":
+        native: "She is a lawyer in Paris."
+        bases:
+          "avocate": "lawyer"
+          "à": "to, at"
+          "Paris": "Paris"
+  "fr-2124":
+    native: "farmer"
+    notes:
+      "n1": "Un agriculteur works on a farm; the feminine is agricultrice."
+    examples:
+      "L'agriculteur cultive le blé.":
+        native: "The farmer grows wheat."
+        bases:
+          "L'agriculteur": "farmer"
+          "cultive": "grows"
+          "blé": "wheat"
+      "Il est agriculteur depuis trente ans.":
+        native: "He has been a farmer for thirty years."
+        bases:
+          "agriculteur": "farmer"
+          "depuis": "since"
+  "fr-2125":
+    native: "to apply"
+    notes:
+      "n1": "Postuler is regular: postuler à un poste is to apply for a job."
+    examples:
+      "Je postule pour ce poste.":
+        native: "I apply for this job."
+        bases:
+          "postule": "to apply"
+      "Vous pouvez postuler en ligne.":
+        native: "You can apply online."
+        bases:
+          "postuler": "to apply"
+          "en": "in, by, as"
+  "fr-2126":
+    native: "to hire"
+    notes:
+      "n1": "Embaucher is regular; the opposite is licencier."
+    examples:
+      "L'entreprise embauche dix personnes.":
+        native: "The company hires ten people."
+        bases:
+          "embauche": "to hire"
+          "personnes": "people"
+      "Nous embauchons un nouvel employé.":
+        native: "We are hiring a new employee."
+        bases:
+          "embauchons": "to hire"
+  "fr-2127":
+    native: "to dismiss"
+    notes:
+      "n1": "Licencier is regular: to dismiss a worker."
+    examples:
+      "Il a été licencié en mars.":
+        native: "He was dismissed in March."
+        bases:
+          "licencié": "to dismiss"
+          "en": "in, by, as"
+      "L'entreprise licencie deux cents personnes.":
+        native: "The company dismisses two hundred people."
+        bases:
+          "licencie": "to dismiss"
+          "personnes": "people"
+  "fr-2128":
+    native: "to manage, to lead"
+    notes:
+      "n1": "Diriger is regular; it is used for running a team or company."
+    examples:
+      "Elle dirige l'équipe.":
+        native: "She leads the team."
+        bases:
+          "dirige": "to manage, to lead"
+      "Il dirige une petite entreprise.":
+        native: "He runs a small company."
+        bases:
+          "dirige": "to manage, to lead"
+  "fr-2129":
+    native: "experience"
+    notes:
+      "n1": "L’expérience is the knowledge and time gained by working."
+    examples:
+      "Elle a dix ans d'expérience.":
+        native: "She has ten years of experience."
+        bases:
+          "d'expérience": "experience"
+      "Cette expérience est utile.":
+        native: "This experience is useful."
+        bases:
+          "expérience": "experience"
+          "utile": "useful"
+  "fr-2130":
+    native: "diploma, degree"
+    notes:
+      "n1": "Un diplôme is a certificate from a school or university."
+    examples:
+      "Il a un diplôme d'ingénieur.":
+        native: "He has an engineering degree."
+        bases:
+          "diplôme": "diploma, degree"
+      "Ce diplôme est reconnu partout.":
+        native: "This diploma is recognised everywhere."
+        bases:
+          "diplôme": "diploma, degree"
+          "reconnu": "recognised"
+  "fr-2131":
+    native: "skill, competence"
+    notes:
+      "n1": "Une compétence is a skill that makes a person able to do a job."
+    examples:
+      "Ses compétences sont reconnues.":
+        native: "His skills are recognised."
+        bases:
+          "compétences": "skill, competence"
+          "reconnues": "recognised"
+      "Cette compétence est très utile.":
+        native: "This skill is very useful."
+        bases:
+          "compétence": "skill, competence"
+          "utile": "useful"
+  "fr-2132":
+    native: "training"
+    notes:
+      "n1": "Une formation is a course that teaches a job skill."
+    examples:
+      "La formation dure trois jours.":
+        native: "The training lasts three days."
+        bases:
+          "formation": "training"
+      "Il suit une formation d'informatique.":
+        native: "He takes a computing course."
+        bases:
+          "formation": "training"
+          "d'informatique": "computing"
+  "fr-2133":
+    native: "manager, executive"
+    notes:
+      "n1": "Un cadre is a senior employee; also a frame or setting."
+    examples:
+      "Le cadre signe le contrat.":
+        native: "The manager signs the contract."
+        bases:
+          "cadre": "manager, executive"
+          "contrat": "contract"
+      "Elle est cadre dans une banque.":
+        native: "She is a manager in a bank."
+        bases:
+          "cadre": "manager, executive"
+  "fr-2134":
+    native: "resignation"
+    notes:
+      "n1": "Une démission is the act of leaving a job by choice."
+    examples:
+      "Il donne sa démission.":
+        native: "He hands in his resignation."
+        bases:
+          "démission": "resignation"
+      "Sa démission surprend tout le monde.":
+        native: "His resignation surprises everyone."
+        bases:
+          "démission": "resignation"
+          "surprend": "surprises"
+          "monde": "world"
+  "fr-2135":
+    native: "unemployment"
+    notes:
+      "n1": "Le chômage is the state of being without a job."
+    examples:
+      "Le chômage baisse un peu.":
+        native: "Unemployment falls a little."
+        bases:
+          "chômage": "unemployment"
+          "baisse": "falls"
+      "Il est au chômage depuis mai.":
+        native: "He has been unemployed since May."
+        bases:
+          "au": "at, to the"
+          "chômage": "unemployment"
+          "depuis": "since"
+  "fr-2136":
+    native: "trade union"
+    notes:
+      "n1": "Un syndicat defends the rights of workers."
+    examples:
+      "Le syndicat défend les salariés.":
+        native: "The union defends the employees."
+        bases:
+          "syndicat": "trade union"
+      "Elle adhère au syndicat.":
+        native: "She joins the union."
+        bases:
+          "adhère": "joins"
+          "au": "at, to the"
+          "syndicat": "trade union"
+  "fr-2137":
+    native: "full time"
+    notes:
+      "n1": "Un temps plein is a full working week."
+    examples:
+      "Elle travaille à temps plein.":
+        native: "She works full time."
+        bases:
+          "à": "to, at"
+      "Ce poste est à temps plein.":
+        native: "This job is full time."
+        bases:
+          "à": "to, at"
+  "fr-2138":
+    native: "part time"
+    notes:
+      "n1": "Un temps partiel is a shorter working week."
+    examples:
+      "Il travaille à temps partiel.":
+        native: "He works part time."
+        bases:
+          "à": "to, at"
+          "partiel": "part"
+      "Le temps partiel convient à ma mère.":
+        native: "Part-time work suits my mother."
+        bases:
+          "partiel": "part"
+          "convient": "suits"
+          "à": "to, at"
+  "fr-2139":
+    native: "assignment, mission"
+    notes:
+      "n1": "Une mission is a task given to a worker or a team."
+    examples:
+      "Sa mission est difficile.":
+        native: "His assignment is difficult."
+        bases:
+          "mission": "assignment, mission"
+      "Elle part en mission à Londres.":
+        native: "She goes on an assignment to London."
+        bases:
+          "en": "in, by, as"
+          "mission": "assignment, mission"
+          "à": "to, at"
+          "Londres": "London"
+  "fr-2141":
+    native: "goal, target"
+    notes:
+      "n1": "Un objectif is something a person aims to reach."
+    examples:
+      "Notre objectif est clair.":
+        native: "Our goal is clear."
+        bases:
+          "objectif": "goal, target"
+          "clair": "clear"
+      "Atteindre cet objectif prend du temps.":
+        native: "Reaching this goal takes time."
+        bases:
+          "Atteindre": "reach"
+          "objectif": "goal, target"
+          "du": "of"
+  "fr-2142":
+    native: "employee"
+    notes:
+      "n1": "Un salarié is a person who is paid by an employer; the feminine is salariée."
+    examples:
+      "Le salarié prend sa pause.":
+        native: "The employee takes his break."
+        bases:
+          "salarié": "employee"
+      "Les salariés votent demain.":
+        native: "The employees vote tomorrow."
+        bases:
+          "salariés": "employee"
+          "votent": "vote"
+  "fr-2144":
+    native: "secretary"
+    notes:
+      "n1": "Un secrétaire helps a manager with letters and diaries; it is used for both genders."
+    examples:
+      "La secrétaire prend des notes.":
+        native: "The secretary takes notes."
+        bases:
+          "secrétaire": "secretary"
+      "Le secrétaire organise la réunion.":
+        native: "The secretary organises the meeting."
+        bases:
+          "secrétaire": "secretary"
+  "fr-2145":
+    native: "architect"
+    notes:
+      "n1": "Un architecte designs buildings; it is used for both genders."
+    examples:
+      "L'architecte dessine la maison.":
+        native: "The architect draws the house."
+        bases:
+          "L'architecte": "architect"
+      "Ma sœur est architecte.":
+        native: "My sister is an architect."
+        bases:
+          "architecte": "architect"
+  "fr-2146":
+    native: "retirement, pension"
+    notes:
+      "n1": "La retraite is the time after work ends, or the pension paid then."
+    examples:
+      "Il part à la retraite en juin.":
+        native: "He retires in June."
+        bases:
+          "à": "to, at"
+          "retraite": "retirement, pension"
+          "en": "in, by, as"
+      "La retraite est payée chaque mois.":
+        native: "The pension is paid each month."
+        bases:
+          "retraite": "retirement, pension"
+  "fr-2148":
+    native: "manager, director"
+    notes:
+      "n1": "Un gérant runs a shop or a business; the feminine is gérante."
+    examples:
+      "Le gérant ouvre le magasin.":
+        native: "The manager opens the shop."
+        bases:
+          "gérant": "manager, director"
+      "La gérante parle au client.":
+        native: "The manager speaks to the customer."
+        bases:
+          "gérante": "manager, director"
+          "au": "at, to the"
+  "fr-2149":
+    native: "worker"
+    notes:
+      "n1": "Un travailleur is a person who works; the feminine is travailleuse."
+    examples:
+      "Le travailleur est fatigué.":
+        native: "The worker is tired."
+        bases:
+          "travailleur": "worker"
+      "C'est un bon travailleur.":
+        native: "He is a good worker."
+        bases:
+          "travailleur": "worker"
+  "fr-2159":
+    native: "task"
+    notes:
+      "n1": "Une tâche is a job or task to do."
+    examples:
+      "Ma tâche est de répondre aux mails.":
+        native: "My task is to answer the emails."
+        bases:
+          "tâche": "task"
+          "de": "of"
+          "aux": "to the"
+          "mails": "emails"
+      "Cette tâche prend une heure.":
+        native: "This task takes an hour."
+        bases:
+          "tâche": "task"
+  "fr-2160":
+    native: "application"
+    notes:
+      "n1": "Une candidature is a formal application for a job."
+    examples:
+      "Ma candidature est acceptée.":
+        native: "My application is accepted."
+        bases:
+          "candidature": "application"
+      "Envoyez votre candidature demain.":
+        native: "Send your application tomorrow."
+        bases:
+          "candidature": "application"
+  "fr-2161":
+    native: "recruitment, hiring"
+    notes:
+      "n1": "Le recrutement is the process of finding new staff."
+    examples:
+      "Le recrutement commence en janvier.":
+        native: "Recruitment starts in January."
+        bases:
+          "recrutement": "recruitment, hiring"
+          "en": "in, by, as"
+      "Le recrutement est long.":
+        native: "Recruitment is long."
+        bases:
+          "recrutement": "recruitment, hiring"

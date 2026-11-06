@@ -1,0 +1,63 @@
+schema: 1
+id: "fr-en-health-sentences"
+kind: "layer"
+core: "fr-health-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: health"
+license: "CC-BY-SA-4.0"
+description: "Sentences about health, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1740":
+    native: "I take a syrup for the cough."
+    confusables:
+      "comprime": { why: "A tablet is a pill, not a syrup." }
+      "pansement": { why: "A plaster is for a cut, not for a cough." }
+  "fr-1741":
+    native: "The doctor writes a prescription for the medicine."
+    confusables:
+      "pharmacie": { why: "A pharmacy sells the medicine; the doctor does not." }
+      "hopital": { why: "A hospital is a building, not a prescription." }
+  "fr-1752":
+    native: "My sister has been in hospital since Monday."
+    bases:
+      "à": "to, at"
+      "depuis": "since"
+    confusables:
+      "infirmiere": { why: "A nurse works there, but the sentence says where the sister is." }
+      "malade": { why: "Malade is how she feels; the sentence says where she is." }
+  "fr-1743":
+    native: "He has a sore throat and he coughs."
+    bases:
+      "à": "to, at"
+    confusables:
+      "rhume": { why: "A cold causes the cough, but the sentence names the throat." }
+      "fievre": { why: "A fever is a temperature, not a cough." }
+  "fr-1744":
+    native: "The X-ray shows a fracture of the arm."
+    bases:
+      "montre": "shows"
+      "fracture": "fracture"
+      "du": "some, of the"
+    confusables:
+      "analyse": { why: "A blood test shows blood, not bones." }
+      "operation": { why: "An operation is surgery, not a picture of bones." }
+  "fr-1745":
+    native: "I am going to the dentist for a toothache."
+    bases:
+      "à": "to, at"
+    confusables:
+      "gorge": { why: "The throat is not the tooth in this sentence." }
+      "estomac": { why: "The stomach is not the tooth in this sentence." }
+  "fr-1746":
+    native: "The diet helps you lose weight after the fever."
+    bases:
+      "à": "to, at"
+    confusables:
+      "grossir": { why: "To gain weight is the opposite of the sentence." }
+      "vitamine": { why: "Vitamins do not appear in this sentence." }
+  "fr-1747":
+    native: "The patient breathes better after the syrup."
+    confusables:
+      "poumon": { why: "The lungs are not named in the sentence." }
+      "saigner": { why: "Bleeding is the opposite of getting better." }

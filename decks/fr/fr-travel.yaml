@@ -1,0 +1,425 @@
+schema: 1
+id: "fr-travel"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "travel"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1912"
+    target: "passeport"
+    ipa: "paspɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Montrez votre passeport, s'il vous plaît.", ipa: "mɔ̃tʁe vɔtʁ paspɔʁ sil vu plɛ", bases: [{ word: "Montrez", base: "montrer" }, { word: "votre", ref: "fr-0140" }, { word: "passeport", base: "passeport" }, { word: "s'il", ref: "fr-0127" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Mon passeport est dans ma valise.", ipa: "mɔ̃ paspɔʁ ɛ dɑ̃ ma valiz", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "passeport", base: "passeport" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "ma", ref: "fr-0037" }, { word: "valise", ref: "fr-0876" }] }
+  - id: "fr-1913"
+    target: "visa"
+    ipa: "viza"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il faut un visa pour entrer.", ipa: "il fo œ̃ viza puʁ ɑ̃tʁe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "un", ref: "fr-0208" }, { word: "visa", base: "visa" }, { word: "pour", ref: "fr-0591" }, { word: "entrer", ref: "fr-0515" }] }
+      - { target: "Le visa est valable trois mois.", ipa: "lə viza ɛ valabl tʁwa mwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "visa", base: "visa" }, { word: "est", ref: "fr-0021" }, { word: "valable", base: "valable" }, { word: "trois", ref: "fr-0210" }, { word: "mois", ref: "fr-1165" }] }
+  - id: "fr-1914"
+    target: "douane"
+    ipa: "dwan"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous passons la douane.", ipa: "nu pasɔ̃ la dwan", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "passons", ref: "fr-0519" }, { word: "la", ref: "fr-0544" }, { word: "douane", base: "douane" }] }
+      - { target: "Il a une valise à la douane.", ipa: "il a yn valiz a la dwan", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "valise", ref: "fr-0876" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "douane", base: "douane" }] }
+  - id: "fr-1915"
+    target: "départ"
+    ipa: "depaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le départ est à huit heures.", ipa: "lə depaʁ ɛ a ɥi tœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "départ", base: "départ" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Le train est en retard au départ.", ipa: "lə tʁɛ̃ ɛ ɑ̃ ʁətaʁ o depaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "retard", ref: "fr-0870" }, { word: "au", base: "à" }, { word: "départ", base: "départ" }] }
+  - id: "fr-1916"
+    target: "arrivée"
+    ipa: "aʁive"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'arrivée du train est à midi.", ipa: "laʁive dy tʁɛ̃ ɛ a midi", bases: [{ word: "L'arrivée", base: "arrivée" }, { word: "du", base: "de" }, { word: "train", ref: "fr-0076" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "midi", ref: "fr-1036" }] }
+      - { target: "Nous attendons leur arrivée.", ipa: "nu atɑ̃dɔ̃ lœʁ aʁive", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "attendons", ref: "fr-0303" }, { word: "leur", ref: "fr-0142" }, { word: "arrivée", base: "arrivée" }] }
+  - id: "fr-1917"
+    target: "croisière"
+    ipa: "kʁwazjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous faisons une croisière.", ipa: "nu fəzɔ̃ yn kʁwazjɛʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "croisière", base: "croisière" }] }
+      - { target: "La croisière dure une semaine.", ipa: "la kʁwazjɛʁ dyʁ yn səmɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "croisière", base: "croisière" }, { word: "dure", ref: "fr-1131" }, { word: "une", ref: "fr-0545" }, { word: "semaine", ref: "fr-0668" }] }
+  - id: "fr-1918"
+    target: "circuit"
+    ipa: "siʁkɥi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le circuit passe par trois villes.", ipa: "lə siʁkɥi pas paʁ tʁwa vil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "circuit", base: "circuit" }, { word: "passe", ref: "fr-0519" }, { word: "par", ref: "fr-0593" }, { word: "trois", ref: "fr-0210" }, { word: "villes", ref: "fr-0244" }] }
+      - { target: "Ce circuit dure dix jours.", ipa: "sə siʁkɥi dyʁ di ʒuʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "circuit", base: "circuit" }, { word: "dure", ref: "fr-1131" }, { word: "dix", ref: "fr-0217" }, { word: "jours", ref: "fr-1032" }] }
+  - id: "fr-1919"
+    target: "auberge"
+    ipa: "obɛʁʒ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'auberge est au bord de la mer.", ipa: "lobɛʁʒ ɛ o bɔʁ də la mɛʁ", bases: [{ word: "L'auberge", base: "auberge" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "à" }, { word: "bord", base: "bord" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mer", ref: "fr-1939" }] }
+      - { target: "Nous dormons dans une auberge.", ipa: "nu dɔʁmɔ̃ dɑ̃ zyn obɛʁʒ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "dormons", ref: "fr-0284" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "auberge", base: "auberge" }] }
+  - id: "fr-1920"
+    target: "siège"
+    ipa: "sjɛʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce siège est libre ?", ipa: "sə sjɛʒ ɛ libʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "siège", base: "siège" }, { word: "est", ref: "fr-0021" }, { word: "libre", ref: "fr-0444" }] }
+      - { target: "Mon siège est près de la fenêtre.", ipa: "mɔ̃ sjɛʒ ɛ pʁɛ də la fənɛtʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "siège", base: "siège" }, { word: "est", ref: "fr-0021" }, { word: "près", ref: "fr-0464" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "fenêtre", ref: "fr-1004" }] }
+  - id: "fr-1921"
+    target: "itinéraire"
+    ipa: "itinəʁɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Voici notre itinéraire.", ipa: "vwasi nɔtʁ itinəʁɛʁ", bases: [{ word: "Voici", base: "voici" }, { word: "notre", ref: "fr-0139" }, { word: "itinéraire", base: "itinéraire" }] }
+      - { target: "L'itinéraire passe par la côte.", ipa: "litinəʁɛʁ pas paʁ la kot", bases: [{ word: "L'itinéraire", base: "itinéraire" }, { word: "passe", ref: "fr-0519" }, { word: "par", ref: "fr-0593" }, { word: "la", ref: "fr-0544" }, { word: "côte", base: "côte" }] }
+  - id: "fr-1922"
+    target: "excursion"
+    ipa: "ɛkskyʁsjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous faisons une excursion demain.", ipa: "nu fəzɔ̃ yn ɛkskyʁsjɔ̃ dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "excursion", base: "excursion" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "L'excursion coûte cher.", ipa: "lɛkskyʁsjɔ̃ kut ʃɛʁ", bases: [{ word: "L'excursion", base: "excursion" }, { word: "coûte", ref: "fr-0752" }, { word: "cher", ref: "fr-0104" }] }
+  - id: "fr-1923"
+    target: "séjour"
+    ipa: "seʒuʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon séjour dure deux semaines.", ipa: "mɔ̃ seʒuʁ dyʁ dø səmɛn", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "séjour", base: "séjour" }, { word: "dure", ref: "fr-1131" }, { word: "deux", ref: "fr-0209" }, { word: "semaines", ref: "fr-0668" }] }
+      - { target: "Nous avons aimé notre séjour.", ipa: "nu zavɔ̃ eme nɔtʁ seʒuʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "aimé", ref: "fr-0263" }, { word: "notre", ref: "fr-0139" }, { word: "séjour", base: "séjour" }] }
+  - id: "fr-1924"
+    target: "touriste"
+    ipa: "tuʁist"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le touriste prend une photo.", ipa: "lə tuʁist pʁɑ̃ yn foto", bases: [{ word: "Le", ref: "fr-0543" }, { word: "touriste", base: "touriste" }, { word: "prend", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "photo", ref: "fr-1373" }] }
+      - { target: "Beaucoup de touristes visitent la ville.", ipa: "boku də tuʁist vizit la vil", bases: [{ word: "Beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "touristes", base: "touriste" }, { word: "visitent", ref: "fr-1931" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-1925"
+    target: "guide"
+    ipa: "ɡid"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le guide parle en français.", ipa: "lə ɡid paʁl ɑ̃ fʁɑ̃sɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "guide", base: "guide" }, { word: "parle", ref: "fr-0023" }, { word: "en", base: "en" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "J'achète un guide de la ville.", ipa: "ʒaʃɛt œ̃ ɡid də la vil", bases: [{ word: "J'achète", ref: "fr-0294" }, { word: "un", ref: "fr-0208" }, { word: "guide", base: "guide" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-1926"
+    target: "plage"
+    ipa: "plaʒ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La plage est très belle.", ipa: "la plaʒ ɛ tʁɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "plage", base: "plage" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "belle", ref: "fr-0412" }] }
+      - { target: "Nous allons à la plage.", ipa: "nu zalɔ̃ a la plaʒ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "plage", base: "plage" }] }
+  - id: "fr-1927"
+    target: "montagne"
+    ipa: "mɔ̃taɲ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La montagne est couverte de neige.", ipa: "la mɔ̃taɲ ɛ kuvɛʁt də nɛʒ", bases: [{ word: "La", ref: "fr-0544" }, { word: "montagne", base: "montagne" }, { word: "est", ref: "fr-0021" }, { word: "couverte", ref: "fr-1328" }, { word: "de", base: "de" }, { word: "neige", ref: "fr-1306" }] }
+      - { target: "Nous partons à la montagne.", ipa: "nu paʁtɔ̃ a la mɔ̃taɲ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "partons", ref: "fr-0304" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "montagne", base: "montagne" }] }
+  - id: "fr-1928"
+    target: "embarquer"
+    ipa: "ɑ̃baʁke"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les passagers embarquent à onze heures.", ipa: "le pasaʒe ɑ̃baʁk a ɔ̃z œʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "passagers", ref: "fr-0872" }, { word: "embarquent", base: "embarquer" }, { word: "à", base: "à" }, { word: "onze", ref: "fr-0218" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Nous embarquons dans le bateau.", ipa: "nu zɑ̃baʁkɔ̃ dɑ̃ lə bato", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "embarquons", base: "embarquer" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "bateau", base: "bateau" }] }
+  - id: "fr-1929"
+    target: "atterrir"
+    ipa: "atəʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'avion atterrit à Paris.", ipa: "lavjɔ̃ atəʁi a paʁi", bases: [{ word: "L'avion", ref: "fr-0861" }, { word: "atterrit", base: "atterrir" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+      - { target: "Nous atterrissons dans une heure.", ipa: "nu zatəʁisɔ̃ dɑ̃ zyn œʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "atterrissons", base: "atterrir" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+  - id: "fr-1930"
+    target: "décoller"
+    ipa: "dekɔle"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'avion décolle à sept heures.", ipa: "lavjɔ̃ dekɔl a sɛt œʁ", bases: [{ word: "L'avion", ref: "fr-0861" }, { word: "décolle", base: "décoller" }, { word: "à", base: "à" }, { word: "sept", ref: "fr-0214" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Le vol décolle en retard.", ipa: "lə vɔl dekɔl ɑ̃ ʁətaʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vol", ref: "fr-0863" }, { word: "décolle", base: "décoller" }, { word: "en", base: "en" }, { word: "retard", ref: "fr-0870" }] }
+  - id: "fr-1931"
+    target: "visiter"
+    ipa: "vizite"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous visitons le musée demain.", ipa: "nu vizitɔ̃ lə myze dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "visitons", base: "visiter" }, { word: "le", ref: "fr-0543" }, { word: "musée", ref: "fr-0077" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Je visite ma tante le week-end.", ipa: "ʒə vizit ma tɑ̃t lə wikɛnd", bases: [{ word: "Je", ref: "fr-0126" }, { word: "visite", base: "visiter" }, { word: "ma", ref: "fr-0037" }, { word: "tante", ref: "fr-0177" }, { word: "le", ref: "fr-0543" }, { word: "week-end", ref: "fr-1174" }] }
+  - id: "fr-1933"
+    target: "identité"
+    ipa: "idɑ̃tite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Montrez votre pièce d'identité.", ipa: "mɔ̃tʁe vɔtʁ pjɛs didɑ̃tite", bases: [{ word: "Montrez", base: "montrer" }, { word: "votre", ref: "fr-0140" }, { word: "pièce", base: "pièce" }, { word: "d'identité", base: "identité" }] }
+      - { target: "Son identité est vérifiée.", ipa: "sɔ̃ nidɑ̃tite ɛ veʁifje", bases: [{ word: "Son", ref: "fr-0138" }, { word: "identité", base: "identité" }, { word: "est", ref: "fr-0021" }, { word: "vérifiée", ref: "fr-1835" }] }
+  - id: "fr-1935"
+    target: "hébergement"
+    ipa: "ebɛʁʒəmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'hébergement est inclus.", ipa: "lebɛʁʒəmɑ̃ ɛ ɛ̃kly", bases: [{ word: "L'hébergement", base: "hébergement" }, { word: "est", ref: "fr-0021" }, { word: "inclus", base: "inclure" }] }
+      - { target: "Nous cherchons un hébergement.", ipa: "nu ʃɛʁʃɔ̃ œ̃ nebɛʁʒəmɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "cherchons", ref: "fr-0300" }, { word: "un", ref: "fr-0208" }, { word: "hébergement", base: "hébergement" }] }
+  - id: "fr-1937"
+    target: "souvenir"
+    ipa: "suvniʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'achète un souvenir pour ma mère.", ipa: "ʒaʃɛt œ̃ suvniʁ puʁ ma mɛʁ", bases: [{ word: "J'achète", ref: "fr-0294" }, { word: "un", ref: "fr-0208" }, { word: "souvenir", base: "souvenir" }, { word: "pour", ref: "fr-0591" }, { word: "ma", ref: "fr-0037" }, { word: "mère", ref: "fr-0166" }] }
+      - { target: "C'est un bon souvenir.", ipa: "sɛ tɔ̃ bɔ̃ suvniʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "souvenir", base: "souvenir" }] }
+  - id: "fr-1938"
+    target: "paysage"
+    ipa: "pei̯zaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le paysage est magnifique.", ipa: "lə pei̯zaʒ ɛ maɲifik", bases: [{ word: "Le", ref: "fr-0543" }, { word: "paysage", base: "paysage" }, { word: "est", ref: "fr-0021" }, { word: "magnifique", base: "magnifique" }] }
+      - { target: "Nous admirons le paysage.", ipa: "nu zadmiʁɔ̃ lə pei̯zaʒ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "admirons", base: "admirer" }, { word: "le", ref: "fr-0543" }, { word: "paysage", base: "paysage" }] }
+  - id: "fr-1939"
+    target: "mer"
+    ipa: "mɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La mer est calme aujourd'hui.", ipa: "la mɛʁ ɛ kalm oʒuʁdɥi", bases: [{ word: "La", ref: "fr-0544" }, { word: "mer", base: "mer" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }, { word: "aujourd'hui", base: "aujourd’hui" }] }
+      - { target: "Nous nageons dans la mer.", ipa: "nu naʒɔ̃ dɑ̃ la mɛʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "nageons", ref: "fr-0524" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "mer", base: "mer" }] }
+  - id: "fr-1940"
+    target: "frontière"
+    ipa: "fʁɔ̃tjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous passons la frontière ce soir.", ipa: "nu pasɔ̃ la fʁɔ̃tjɛʁ sə swaʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "passons", ref: "fr-0519" }, { word: "la", ref: "fr-0544" }, { word: "frontière", base: "frontière" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "La frontière est fermée.", ipa: "la fʁɔ̃tjɛʁ ɛ fɛʁme", bases: [{ word: "La", ref: "fr-0544" }, { word: "frontière", base: "frontière" }, { word: "est", ref: "fr-0021" }, { word: "fermée", ref: "fr-0299" }] }
+  - id: "fr-1941"
+    target: "étranger"
+    ipa: "etʁɑ̃ʒe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il vit à l'étranger.", ipa: "il vi a letʁɑ̃ʒe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "vit", base: "vivre" }, { word: "à", base: "à" }, { word: "l'étranger", base: "étranger" }] }
+      - { target: "Un étranger demande la route.", ipa: "œ̃ netʁɑ̃ʒe dəmɑ̃d la ʁut", bases: [{ word: "Un", ref: "fr-0208" }, { word: "étranger", base: "étranger" }, { word: "demande", ref: "fr-0521" }, { word: "la", ref: "fr-0544" }, { word: "route", ref: "fr-0892" }] }
+  - id: "fr-1946"
+    target: "voyageur"
+    ipa: "vwajaʒœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le voyageur attend le train.", ipa: "lə vwajaʒœʁ atɑ̃ lə tʁɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "voyageur", base: "voyageur" }, { word: "attend", ref: "fr-0303" }, { word: "train", ref: "fr-0076" }] }
+      - { target: "Ce voyageur a perdu son sac.", ipa: "sə vwajaʒœʁ a pɛʁdy sɔ̃ sak", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "voyageur", base: "voyageur" }, { word: "a", ref: "fr-0022" }, { word: "perdu", ref: "fr-1084" }, { word: "son", ref: "fr-0138" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-1948"
+    target: "escale"
+    ipa: "ɛskal"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vol fait une escale à Dubaï.", ipa: "lə vɔl fɛ yn ɛskal a dybaj", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vol", ref: "fr-0863" }, { word: "fait", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "escale", base: "escale" }, { word: "à", base: "à" }, { word: "Dubaï", base: "Dubaï" }] }
+      - { target: "L'escale dure deux heures.", ipa: "lɛskal dyʁ dø zœʁ", bases: [{ word: "L'escale", base: "escale" }, { word: "dure", ref: "fr-1131" }, { word: "deux", ref: "fr-0209" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-1959"
+    target: "embarquement"
+    ipa: "ɑ̃baʁkəmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'embarquement commence à dix heures.", ipa: "lɑ̃baʁkəmɑ̃ kɔmɑ̃s a di œʁ", bases: [{ word: "L'embarquement", base: "embarquement" }, { word: "commence", ref: "fr-0508" }, { word: "à", base: "à" }, { word: "dix", ref: "fr-0217" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Montrez votre carte d'embarquement.", ipa: "mɔ̃tʁe vɔtʁ kaʁt dɑ̃baʁkəmɑ̃", bases: [{ word: "Montrez", base: "montrer" }, { word: "votre", ref: "fr-0140" }, { word: "carte", ref: "fr-0824" }, { word: "d'embarquement", base: "embarquement" }] }
+  - id: "fr-1961"
+    target: "péage"
+    ipa: "peaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La route a un péage.", ipa: "la ʁut a œ̃ peaʒ", bases: [{ word: "La", ref: "fr-0544" }, { word: "route", ref: "fr-0892" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "péage", base: "péage" }] }
+      - { target: "Le péage coûte cher.", ipa: "lə peaʒ kut ʃɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "péage", base: "péage" }, { word: "coûte", ref: "fr-0752" }, { word: "cher", ref: "fr-0104" }] }
+  - id: "fr-1963"
+    target: "consigne"
+    ipa: "kɔ̃siɲ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La consigne ferme à minuit.", ipa: "la kɔ̃siɲ fɛʁm a minɥi", bases: [{ word: "La", ref: "fr-0544" }, { word: "consigne", base: "consigne" }, { word: "ferme", ref: "fr-0299" }, { word: "à", base: "à" }, { word: "minuit", ref: "fr-1037" }] }
+      - { target: "Je laisse mon sac à la consigne.", ipa: "ʒə lɛs mɔ̃ sak a la kɔ̃siɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "laisse", base: "laisser" }, { word: "mon", ref: "fr-0037" }, { word: "sac", ref: "fr-0485" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "consigne", base: "consigne" }] }
+  - id: "fr-1964"
+    target: "tente"
+    ipa: "tɑ̃t"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous dormons dans une tente.", ipa: "nu dɔʁmɔ̃ dɑ̃ zyn tɑ̃t", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "dormons", ref: "fr-0284" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "tente", base: "tente" }] }
+      - { target: "La tente est très légère.", ipa: "la tɑ̃t ɛ tʁɛ leʒɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "tente", base: "tente" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "légère", ref: "fr-0441" }] }
+  - id: "fr-1966"
+    target: "hôtesse"
+    ipa: "otɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'hôtesse annonce le départ.", ipa: "lotɛs anɔ̃s lə depaʁ", bases: [{ word: "L'hôtesse", base: "hôtesse" }, { word: "annonce", ref: "fr-1830" }, { word: "le", ref: "fr-0543" }, { word: "départ", ref: "fr-1915" }] }
+      - { target: "L'hôtesse aide les passagers.", ipa: "lotɛs ɛd le pasaʒe", bases: [{ word: "L'hôtesse", base: "hôtesse" }, { word: "aide", ref: "fr-1066" }, { word: "les", ref: "fr-0543" }, { word: "passagers", ref: "fr-0872" }] }
+  - id: "fr-1967"
+    target: "sac à dos"
+    ipa: "sak a do"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon sac à dos est léger.", ipa: "mɔ̃ sak a do ɛ leʒe", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "sac", ref: "fr-0485" }, { word: "à", base: "à" }, { word: "dos", ref: "fr-0932" }, { word: "est", ref: "fr-0021" }, { word: "léger", ref: "fr-0441" }] }
+      - { target: "Il met ses affaires dans son sac à dos.", ipa: "il mɛ sɛ zafɛʁ dɑ̃ sɔ̃ sak a do", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "ses", ref: "fr-0138" }, { word: "affaires", base: "affaire" }, { word: "dans", ref: "fr-0049" }, { word: "son", ref: "fr-0138" }, { word: "sac", ref: "fr-0485" }, { word: "à", base: "à" }, { word: "dos", ref: "fr-0932" }] }
+  - id: "fr-1968"
+    target: "navette"
+    ipa: "navɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La navette part toutes les dix minutes.", ipa: "la navɛt paʁ tut le di minyt", bases: [{ word: "La", ref: "fr-0544" }, { word: "navette", base: "navette" }, { word: "part", ref: "fr-0304" }, { word: "toutes", ref: "fr-0372" }, { word: "les", ref: "fr-0543" }, { word: "dix", ref: "fr-0217" }, { word: "minutes", ref: "fr-1031" }] }
+      - { target: "Nous prenons la navette pour l'aéroport.", ipa: "nu pʁənɔ̃ la navɛt puʁ laeʁɔpɔʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "prenons", ref: "fr-0288" }, { word: "la", ref: "fr-0544" }, { word: "navette", base: "navette" }, { word: "pour", ref: "fr-0591" }, { word: "l'aéroport", ref: "fr-0862" }] }
+  - id: "fr-1969"
+    target: "ferry"
+    ipa: "fɛʁi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ferry traverse la mer.", ipa: "lə fɛʁi tʁavɛʁs la mɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ferry", base: "ferry" }, { word: "traverse", ref: "fr-0896" }, { word: "la", ref: "fr-0544" }, { word: "mer", ref: "fr-1939" }] }
+      - { target: "Le ferry part à minuit.", ipa: "lə fɛʁi paʁ a minɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ferry", base: "ferry" }, { word: "part", ref: "fr-0304" }, { word: "à", base: "à" }, { word: "minuit", ref: "fr-1037" }] }
+  - id: "fr-1970"
+    target: "péniche"
+    ipa: "peniʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous dormons sur une péniche.", ipa: "nu dɔʁmɔ̃ syʁ yn peniʃ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "dormons", ref: "fr-0284" }, { word: "sur", ref: "fr-0469" }, { word: "une", ref: "fr-0545" }, { word: "péniche", base: "péniche" }] }
+      - { target: "La péniche descend la rivière.", ipa: "la peniʃ desɑ̃ la ʁivjɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "péniche", base: "péniche" }, { word: "descend", ref: "fr-0517" }, { word: "rivière", base: "rivière" }] }
+

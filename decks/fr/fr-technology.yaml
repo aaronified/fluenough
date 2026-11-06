@@ -1,0 +1,423 @@
+schema: 1
+id: "fr-technology"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "technology"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2067"
+    target: "logiciel"
+    ipa: "lɔʒisjɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce logiciel est gratuit.", ipa: "sə lɔʒisjɛl ɛ ɡʁatɥi", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "logiciel", base: "logiciel" }, { word: "est", ref: "fr-0021" }, { word: "gratuit", ref: "fr-1448" }] }
+      - { target: "Installez le logiciel avant de commencer.", ipa: "ɛ̃stalez lə lɔʒisjɛl avɑ̃ də kɔmɑ̃se", bases: [{ word: "Installez", ref: "fr-2078" }, { word: "le", ref: "fr-0543" }, { word: "logiciel", base: "logiciel" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "commencer", ref: "fr-0508" }] }
+  - id: "fr-2068"
+    target: "internet"
+    ipa: "ɛ̃tɛʁnɛt"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'internet est lent ce soir.", ipa: "lɛ̃tɛʁnɛt ɛ lɑ̃ sə swaʁ", bases: [{ word: "L'internet", base: "internet" }, { word: "est", ref: "fr-0021" }, { word: "lent", ref: "fr-0448" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+      - { target: "Je cherche sur internet.", ipa: "ʒə ʃɛʁʃ syʁ ɛ̃tɛʁnɛt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "sur", ref: "fr-0469" }, { word: "internet", base: "internet" }] }
+  - id: "fr-2069"
+    target: "batterie"
+    ipa: "batʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La batterie est presque vide.", ipa: "la batʁi ɛ pʁɛsk vid", bases: [{ word: "La", ref: "fr-0544" }, { word: "batterie", base: "batterie" }, { word: "est", ref: "fr-0021" }, { word: "presque", ref: "fr-0347" }, { word: "vide", ref: "fr-0440" }] }
+      - { target: "Cette batterie dure toute la journée.", ipa: "sɛt batʁi dyʁ tut la ʒuʁne", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "batterie", base: "batterie" }, { word: "dure", ref: "fr-1131" }, { word: "toute", ref: "fr-0372" }, { word: "la", ref: "fr-0544" }, { word: "journée", ref: "fr-1098" }] }
+  - id: "fr-2070"
+    target: "câble"
+    ipa: "kɑbl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le câble est trop court.", ipa: "lə kɑbl ɛ tʁo kuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "câble", base: "câble" }, { word: "est", ref: "fr-0021" }, { word: "trop", ref: "fr-0344" }, { word: "court", ref: "fr-0422" }] }
+      - { target: "Branchez le câble sur l'ordinateur.", ipa: "bʁɑ̃ʃe lə kɑbl syʁ lɔʁdinatœʁ", bases: [{ word: "Branchez", base: "brancher" }, { word: "le", ref: "fr-0543" }, { word: "câble", base: "câble" }, { word: "sur", ref: "fr-0469" }, { word: "l'ordinateur", ref: "fr-0666" }] }
+  - id: "fr-2071"
+    target: "connexion"
+    ipa: "kɔnɛksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La connexion est instable.", ipa: "la kɔnɛksjɔ̃ ɛ ɛ̃stabl", bases: [{ word: "La", ref: "fr-0544" }, { word: "connexion", base: "connexion" }, { word: "est", ref: "fr-0021" }, { word: "instable", base: "instable" }] }
+      - { target: "Ma connexion coupe souvent.", ipa: "ma kɔnɛksjɔ̃ kup suvɑ̃", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "connexion", base: "connexion" }, { word: "coupe", ref: "fr-1538" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-2072"
+    target: "données"
+    ipa: "dɔnez"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les données sont protégées.", ipa: "le dɔnez sɔ̃ pʁɔtɛʒe", bases: [{ word: "Les", ref: "fr-0543" }, { word: "données", base: "données" }, { word: "sont", ref: "fr-0021" }, { word: "protégées", base: "protéger" }] }
+      - { target: "Ces données changent chaque jour.", ipa: "se dɔnez ʃɑ̃ʒ ʃak ʒuʁ", bases: [{ word: "Ces", ref: "fr-0143" }, { word: "données", base: "données" }, { word: "changent", ref: "fr-0526" }, { word: "chaque", ref: "fr-0375" }, { word: "jour", ref: "fr-1032" }] }
+  - id: "fr-2073"
+    target: "robot"
+    ipa: "ʁobo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le robot nettoie la maison.", ipa: "lə ʁobo nɛtwa la mɛzɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "robot", base: "robot" }, { word: "nettoie", ref: "fr-0297" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }] }
+      - { target: "Ce robot travaille seul.", ipa: "sə ʁobo tʁavaj sœl", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "robot", base: "robot" }, { word: "travaille", ref: "fr-0252" }, { word: "seul", ref: "fr-0392" }] }
+  - id: "fr-2074"
+    target: "programme"
+    ipa: "pʁɔɡʁam"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce programme est très utile.", ipa: "sə pʁɔɡʁam ɛ tʁɛ ytil", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "programme", base: "programme" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "utile", base: "utile" }] }
+      - { target: "Le programme se lance tout seul.", ipa: "lə pʁɔɡʁam sə lɑ̃s tu sœl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "programme", base: "programme" }, { word: "se", base: "se" }, { word: "lance", base: "lancer" }, { word: "tout", ref: "fr-0372" }, { word: "seul", ref: "fr-0392" }] }
+  - id: "fr-2075"
+    target: "tablette"
+    ipa: "tablɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle lit sur sa tablette.", ipa: "ɛl li syʁ sa tablɛt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "lit", ref: "fr-0290" }, { word: "sur", ref: "fr-0469" }, { word: "sa", ref: "fr-0138" }, { word: "tablette", base: "tablette" }] }
+      - { target: "La tablette est dans le sac.", ipa: "la tablɛt ɛ dɑ̃ lə sak", bases: [{ word: "La", ref: "fr-0544" }, { word: "tablette", base: "tablette" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+  - id: "fr-2076"
+    target: "fichier"
+    ipa: "fiʃje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ouvrez le fichier joint.", ipa: "uvʁe lə fiʃje ʒwɛ̃", bases: [{ word: "Ouvrez", ref: "fr-0298" }, { word: "le", ref: "fr-0543" }, { word: "fichier", base: "fichier" }, { word: "joint", base: "joindre" }] }
+      - { target: "Ce fichier est trop lourd.", ipa: "sə fiʃje ɛ tʁo luʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "fichier", base: "fichier" }, { word: "est", ref: "fr-0021" }, { word: "trop", ref: "fr-0344" }, { word: "lourd", ref: "fr-0442" }] }
+  - id: "fr-2077"
+    target: "télécharger"
+    ipa: "telɛʃaʁʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je télécharge une application.", ipa: "ʒə telɛʃaʁʒ yn aplikasjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "télécharge", base: "télécharger" }, { word: "une", ref: "fr-0545" }, { word: "application", ref: "fr-2082" }] }
+      - { target: "Téléchargez le document ici.", ipa: "telɛʃaʁʒe lə dɔkymɑ̃ isi", bases: [{ word: "Téléchargez", base: "télécharger" }, { word: "le", ref: "fr-0543" }, { word: "document", ref: "fr-1979" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-2078"
+    target: "installer"
+    ipa: "ɛ̃stale"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'installe le logiciel demain.", ipa: "ʒɛ̃stal lə lɔʒisjɛl dəmɛ̃", bases: [{ word: "J'installe", base: "installer" }, { word: "le", ref: "fr-0543" }, { word: "logiciel", ref: "fr-2067" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Il installe la nouvelle imprimante.", ipa: "il ɛ̃stal la nuvɛl ɛ̃pʁimɑ̃t", bases: [{ word: "Il", ref: "fr-0127" }, { word: "installe", base: "installer" }, { word: "la", ref: "fr-0544" }, { word: "nouvelle", ref: "fr-0413" }, { word: "imprimante", ref: "fr-2085" }] }
+  - id: "fr-2079"
+    target: "charger"
+    ipa: "ʃaʁʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je charge mon téléphone.", ipa: "ʒə ʃaʁʒ mɔ̃ telefɔn", bases: [{ word: "Je", ref: "fr-0126" }, { word: "charge", base: "charger" }, { word: "mon", ref: "fr-0037" }, { word: "téléphone", ref: "fr-0257" }] }
+      - { target: "Chargez la batterie cette nuit.", ipa: "ʃaʁʒe la batʁi sɛt nɥi", bases: [{ word: "Chargez", base: "charger" }, { word: "la", ref: "fr-0544" }, { word: "batterie", ref: "fr-2069" }, { word: "cette", ref: "fr-0144" }, { word: "nuit", ref: "fr-1035" }] }
+  - id: "fr-2080"
+    target: "allumer"
+    ipa: "alyme"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'allume l'ordinateur.", ipa: "ʒalym lɔʁdinatœʁ", bases: [{ word: "J'allume", base: "allumer" }, { word: "l'ordinateur", ref: "fr-0666" }] }
+      - { target: "Allumez la lumière, s'il vous plaît.", ipa: "alyme la lymjɛʁ sil vu plɛ", bases: [{ word: "Allumez", base: "allumer" }, { word: "la", ref: "fr-0544" }, { word: "lumière", ref: "fr-1113" }, { word: "s'il", ref: "fr-0127" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+  - id: "fr-2081"
+    target: "éteindre"
+    ipa: "etɛ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Éteignez votre téléphone.", ipa: "etɛɲe vɔtʁ telefɔn", bases: [{ word: "Éteignez", base: "éteindre" }, { word: "votre", ref: "fr-0140" }, { word: "téléphone", ref: "fr-0257" }] }
+      - { target: "J'éteins la télé avant de partir.", ipa: "ʒetɛ̃ la tele avɑ̃ də paʁtiʁ", bases: [{ word: "J'éteins", base: "éteindre" }, { word: "la", ref: "fr-0544" }, { word: "télé", base: "télé" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "partir", ref: "fr-0304" }] }
+  - id: "fr-2082"
+    target: "application"
+    ipa: "aplikasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette application est gratuite.", ipa: "sɛt aplikasjɔ̃ ɛ ɡʁatɥit", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "application", base: "application" }, { word: "est", ref: "fr-0021" }, { word: "gratuite", ref: "fr-1448" }] }
+      - { target: "J'ouvre l'application de la banque.", ipa: "ʒuvʁ laplikasjɔ̃ də la bɑ̃k", bases: [{ word: "J'ouvre", ref: "fr-0298" }, { word: "l'application", base: "application" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "banque", ref: "fr-0965" }] }
+  - id: "fr-2083"
+    target: "clic"
+    ipa: "klik"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un seul clic suffit.", ipa: "œ̃ sœl klik syfi", bases: [{ word: "Un", ref: "fr-0208" }, { word: "seul", ref: "fr-0392" }, { word: "clic", base: "clic" }, { word: "suffit", base: "suffire" }] }
+      - { target: "Faites un clic droit.", ipa: "fɛt œ̃ klik dʁwa", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "clic", base: "clic" }, { word: "droit", ref: "fr-0894" }] }
+  - id: "fr-2085"
+    target: "imprimante"
+    ipa: "ɛ̃pʁimɑ̃t"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'imprimante est en panne.", ipa: "lɛ̃pʁimɑ̃t ɛ ɑ̃ pan", bases: [{ word: "L'imprimante", base: "imprimante" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "panne", base: "panne" }] }
+      - { target: "Imprimez deux copies.", ipa: "ɛ̃pʁime dø kɔpi", bases: [{ word: "Imprimez", base: "imprimer" }, { word: "deux", ref: "fr-0209" }, { word: "copies", base: "copie" }] }
+  - id: "fr-2086"
+    target: "caméra"
+    ipa: "kaməʁa"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La caméra filme la rue.", ipa: "la kaməʁa film la ʁy", bases: [{ word: "La", ref: "fr-0544" }, { word: "caméra", base: "caméra" }, { word: "filme", base: "filmer" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Cette caméra est très petite.", ipa: "sɛt kaməʁa ɛ tʁɛ pətit", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "caméra", base: "caméra" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "petite", ref: "fr-0411" }] }
+  - id: "fr-2087"
+    target: "appareil"
+    ipa: "apaʁɛj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cet appareil marche très bien.", ipa: "sɛt apaʁɛj maʁʃ tʁɛ bjɛ̃", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "appareil", base: "appareil" }, { word: "marche", ref: "fr-0306" }, { word: "très", ref: "fr-0031" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Éteignez les appareils la nuit.", ipa: "etɛɲe lezapaʁɛj la nɥi", bases: [{ word: "Éteignez", ref: "fr-2081" }, { word: "les", ref: "fr-0543" }, { word: "appareils", base: "appareil" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+  - id: "fr-2088"
+    target: "écouteurs"
+    ipa: "ekutœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes écouteurs sont dans le sac.", ipa: "me zekutœʁ sɔ̃ dɑ̃ lə sak", bases: [{ word: "Mes", ref: "fr-0037" }, { word: "écouteurs", base: "écouteurs" }, { word: "sont", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Je mets mes écouteurs pour écouter.", ipa: "ʒə mɛ me zekutœʁ puʁ ekute", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "mes", ref: "fr-0037" }, { word: "écouteurs", base: "écouteurs" }, { word: "pour", ref: "fr-0591" }, { word: "écouter", ref: "fr-0292" }] }
+  - id: "fr-2089"
+    target: "sauvegarde"
+    ipa: "sovɡaʁd"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Faites une sauvegarde chaque semaine.", ipa: "fɛt yn sovɡaʁd ʃak səmɛn", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "sauvegarde", base: "sauvegarde" }, { word: "chaque", ref: "fr-0375" }, { word: "semaine", ref: "fr-0668" }] }
+      - { target: "La sauvegarde est sur le disque.", ipa: "la sovɡaʁd ɛ syʁ lə disk", bases: [{ word: "La", ref: "fr-0544" }, { word: "sauvegarde", base: "sauvegarde" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "disque", base: "disque" }] }
+  - id: "fr-2090"
+    target: "mise à jour"
+    ipa: "miz a ʒuʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La mise à jour est prête.", ipa: "la miz a ʒuʁ ɛ pʁɛt", bases: [{ word: "La", ref: "fr-0544" }, { word: "mise", base: "mise" }, { word: "à", base: "à" }, { word: "jour", ref: "fr-1032" }, { word: "est", ref: "fr-0021" }, { word: "prête", ref: "fr-0687" }] }
+      - { target: "Faites la mise à jour ce soir.", ipa: "fɛt la miz a ʒuʁ sə swaʁ", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "la", ref: "fr-0544" }, { word: "mise", base: "mise" }, { word: "à", base: "à" }, { word: "jour", ref: "fr-1032" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-2091"
+    target: "bug"
+    ipa: "bœɡ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a un bug dans l'application.", ipa: "il i a œ̃ bœɡ dɑ̃ laplikasjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "bug", base: "bug" }, { word: "dans", ref: "fr-0049" }, { word: "l'application", ref: "fr-2082" }] }
+      - { target: "Ce bug bloque tout.", ipa: "sə bœɡ blɔk tu", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "bug", base: "bug" }, { word: "bloque", base: "bloquer" }, { word: "tout", ref: "fr-0372" }] }
+  - id: "fr-2092"
+    target: "virus"
+    ipa: "viʁys"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le virus efface les fichiers.", ipa: "lə viʁys efas le fiʃje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "virus", base: "virus" }, { word: "efface", base: "effacer" }, { word: "les", ref: "fr-0543" }, { word: "fichiers", ref: "fr-2076" }] }
+      - { target: "Mon ordinateur a un virus.", ipa: "mɔ̃ nɔʁdinatœʁ a œ̃ viʁys", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ordinateur", ref: "fr-0666" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "virus", base: "virus" }] }
+  - id: "fr-2093"
+    target: "algorithme"
+    ipa: "algoʁitm"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'algorithme choisit les vidéos.", ipa: "lalɡoʁitm ʃwazi le vidéo", bases: [{ word: "L'algorithme", base: "algorithme" }, { word: "choisit", ref: "fr-0507" }, { word: "les", ref: "fr-0543" }, { word: "vidéos", ref: "fr-2097" }] }
+      - { target: "Cet algorithme est très simple.", ipa: "sɛt algoʁitm ɛ tʁɛ sɛ̃pl", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "algorithme", base: "algorithme" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "simple", base: "simple" }] }
+  - id: "fr-2094"
+    target: "intelligence artificielle"
+    ipa: "ɛ̃tɛliʒɑ̃s aʁtifisjɛl"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'intelligence artificielle progresse vite.", ipa: "lɛ̃tɛliʒɑ̃s aʁtifisjɛl pʁɔɡʁɛs vit", bases: [{ word: "L'intelligence", base: "intelligence" }, { word: "artificielle", base: "artificiel" }, { word: "progresse", base: "progresser" }, { word: "vite", ref: "fr-0338" }] }
+      - { target: "Elle travaille sur l'intelligence artificielle.", ipa: "ɛl tʁavaj syʁ lɛ̃tɛliʒɑ̃s aʁtifisjɛl", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", ref: "fr-0252" }, { word: "sur", ref: "fr-0469" }, { word: "l'intelligence", base: "intelligence" }, { word: "artificielle", base: "artificiel" }] }
+  - id: "fr-2095"
+    target: "mémoire"
+    ipa: "memwaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La mémoire est pleine.", ipa: "la memwaʁ ɛ plɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "mémoire", base: "mémoire" }, { word: "est", ref: "fr-0021" }, { word: "pleine", ref: "fr-0439" }] }
+      - { target: "Cet ordinateur a beaucoup de mémoire.", ipa: "sɛt ɔʁdinatœʁ a boku də memwaʁ", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "ordinateur", ref: "fr-0666" }, { word: "a", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "mémoire", base: "mémoire" }] }
+  - id: "fr-2096"
+    target: "disque dur"
+    ipa: "disk dyʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le disque dur est plein.", ipa: "lə disk dyʁ ɛ plɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "disque", base: "disque" }, { word: "dur", ref: "fr-0449" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Je copie les photos sur le disque dur.", ipa: "ʒə kɔpi le foto syʁ lə disk dyʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "copie", ref: "fr-1612" }, { word: "les", ref: "fr-0543" }, { word: "photos", ref: "fr-1373" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "disque", base: "disque" }, { word: "dur", ref: "fr-0449" }] }
+  - id: "fr-2097"
+    target: "vidéo"
+    ipa: "video"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette vidéo est très drôle.", ipa: "sɛt video ɛ tʁɛ dʁol", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "vidéo", base: "vidéo" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
+      - { target: "Je regarde une vidéo en ligne.", ipa: "ʒə ʁəɡaʁd yn video ɑ̃ liɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", ref: "fr-0293" }, { word: "une", ref: "fr-0545" }, { word: "vidéo", base: "vidéo" }, { word: "en", base: "en" }, { word: "ligne", ref: "fr-0864" }] }
+  - id: "fr-2098"
+    target: "navigateur"
+    ipa: "navigatœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le navigateur est ouvert.", ipa: "lə navigatœʁ ɛ uvɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "navigateur", base: "navigateur" }, { word: "est", ref: "fr-0021" }, { word: "ouvert", ref: "fr-0298" }] }
+      - { target: "Changez de navigateur si le site bogue.", ipa: "ʃɑ̃ʒe də navigatœʁ si lə sit bɔɡ", bases: [{ word: "Changez", ref: "fr-0526" }, { word: "de", base: "de" }, { word: "navigateur", base: "navigateur" }, { word: "si", base: "si" }, { word: "le", ref: "fr-0543" }, { word: "site", ref: "fr-1842" }, { word: "bogue", base: "bogue" }] }
+  - id: "fr-2100"
+    target: "code"
+    ipa: "kɔd"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Entrez votre code.", ipa: "ɑ̃tʁe vɔtʁ kɔd", bases: [{ word: "Entrez", ref: "fr-0515" }, { word: "votre", ref: "fr-0140" }, { word: "code", base: "code" }] }
+      - { target: "Le code est simple à lire.", ipa: "lə kɔd ɛ sɛ̃pl a liʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "code", base: "code" }, { word: "est", ref: "fr-0021" }, { word: "simple", base: "simple" }, { word: "à", base: "à" }, { word: "lire", ref: "fr-0290" }] }
+  - id: "fr-2101"
+    target: "mot de passe"
+    ipa: "mo də pas"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon mot de passe est secret.", ipa: "mɔ̃ mo də pas ɛ səkʁɛ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "mot", ref: "fr-1620" }, { word: "de", base: "de" }, { word: "passe", ref: "fr-0519" }, { word: "est", ref: "fr-0021" }, { word: "secret", base: "secret" }] }
+      - { target: "Changez votre mot de passe.", ipa: "ʃɑ̃ʒe vɔtʁ mo də pas", bases: [{ word: "Changez", ref: "fr-0526" }, { word: "votre", ref: "fr-0140" }, { word: "mot", ref: "fr-1620" }, { word: "de", base: "de" }, { word: "passe", ref: "fr-0519" }] }
+  - id: "fr-2102"
+    target: "supprimer"
+    ipa: "syprime"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je supprime ce message.", ipa: "ʒə syprim sə mesaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "supprime", base: "supprimer" }, { word: "ce", ref: "fr-0143" }, { word: "message", ref: "fr-1082" }] }
+      - { target: "Supprimez les fichiers inutiles.", ipa: "syprime lezə fiʃje inytil", bases: [{ word: "Supprimez", base: "supprimer" }, { word: "les", ref: "fr-0543" }, { word: "fichiers", ref: "fr-2076" }, { word: "inutiles", base: "inutile" }] }
+  - id: "fr-2103"
+    target: "robotique"
+    ipa: "ʁɔbɔtik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La robotique intéresse les élèves.", ipa: "la ʁɔbɔtik ɛ̃teʁɛs le elɛv", bases: [{ word: "La", ref: "fr-0544" }, { word: "robotique", base: "robotique" }, { word: "intéresse", base: "intéresser" }, { word: "les", ref: "fr-0543" }, { word: "élèves", ref: "fr-1588" }] }
+      - { target: "Il étudie la robotique à l'université.", ipa: "il etydi la ʁɔbɔtik a lyniveʁsite", bases: [{ word: "Il", ref: "fr-0127" }, { word: "étudie", ref: "fr-0253" }, { word: "la", ref: "fr-0544" }, { word: "robotique", base: "robotique" }, { word: "à", base: "à" }, { word: "l'université", ref: "fr-0977" }] }
+  - id: "fr-2114"
+    target: "pixel"
+    ipa: "piksɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chaque pixel change de couleur.", ipa: "ʃak piksɛl ʃɑ̃ʒ də kulœʁ", bases: [{ word: "Chaque", ref: "fr-0375" }, { word: "pixel", base: "pixel" }, { word: "change", ref: "fr-0526" }, { word: "de", base: "de" }, { word: "couleur", ref: "fr-1230" }] }
+      - { target: "Cette image a beaucoup de pixels.", ipa: "sɛt imaʒ a boku də piksɛl", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "image", base: "image" }, { word: "a", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "pixels", base: "pixel" }] }
+  - id: "fr-2115"
+    target: "webcam"
+    ipa: "wɛbkam"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La webcam ne marche pas.", ipa: "la wɛbkam nə maʁʃ pa", bases: [{ word: "La", ref: "fr-0544" }, { word: "webcam", base: "webcam" }, { word: "ne", base: "ne" }, { word: "marche", ref: "fr-0306" }, { word: "pas", base: "pas" }] }
+      - { target: "J'allume la webcam pour l'appel.", ipa: "ʒalym la wɛbkam puʁ lapɛl", bases: [{ word: "J'allume", ref: "fr-2080" }, { word: "la", ref: "fr-0544" }, { word: "webcam", base: "webcam" }, { word: "pour", ref: "fr-0591" }, { word: "l'appel", base: "appel" }] }
+  - id: "fr-2116"
+    target: "moniteur"
+    ipa: "mɔnitœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le moniteur est très grand.", ipa: "lə mɔnitœʁ ɛ tʁɛ ɡʁɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "moniteur", base: "moniteur" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "Branchez le moniteur à la prise.", ipa: "bʁɑ̃ʃe lə mɔnitœʁ a la pʁiz", bases: [{ word: "Branchez", base: "brancher" }, { word: "le", ref: "fr-0543" }, { word: "moniteur", base: "moniteur" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "prise", ref: "fr-1395" }] }
+

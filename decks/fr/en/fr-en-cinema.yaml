@@ -1,0 +1,476 @@
+schema: 1
+id: "fr-en-cinema"
+kind: "layer"
+core: "fr-cinema"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Cinema"
+license: "CC-BY-SA-4.0"
+description: "Forty words for the cinema: going to a film, the people who make and act in it, and how to talk about what you saw. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2206":
+    native: "film, movie"
+    notes:
+      "n1": "Un film is a movie; in the cinema you watch un film."
+    examples:
+      "Ce film est très long.":
+        native: "This film is very long."
+        bases:
+          "film": "film, movie"
+      "On regarde un film ce soir.":
+        native: "We are watching a film tonight."
+        bases:
+          "film": "film, movie"
+  "fr-2208":
+    native: "actor"
+    notes:
+      "n1": "Un acteur acts in films or plays; the feminine is actrice."
+    examples:
+      "L'acteur joue le rôle principal.":
+        native: "The actor plays the main role."
+        bases:
+          "L'acteur": "actor"
+          "principal": "main"
+      "Cet acteur est très connu.":
+        native: "This actor is very well known."
+        bases:
+          "acteur": "actor"
+  "fr-2209":
+    native: "actress"
+    notes:
+      "n1": "Une actrice acts in films or plays."
+    examples:
+      "L'actrice pleure dans la scène.":
+        native: "The actress cries in the scene."
+        bases:
+          "L'actrice": "actress"
+      "Elle est actrice depuis dix ans.":
+        native: "She has been an actress for ten years."
+        bases:
+          "actrice": "actress"
+          "depuis": "since"
+  "fr-2210":
+    native: "director"
+    notes:
+      "n1": "Un réalisateur directs a film; the feminine is réalisatrice."
+    examples:
+      "Le réalisateur explique la scène.":
+        native: "The director explains the scene."
+        bases:
+          "réalisateur": "director"
+          "explique": "explains"
+      "Ce réalisateur a gagné un prix.":
+        native: "This director has won a prize."
+        bases:
+          "réalisateur": "director"
+  "fr-2211":
+    native: "script, plot"
+    notes:
+      "n1": "Un scénario is the written story of a film."
+    examples:
+      "Le scénario est très bon.":
+        native: "The script is very good."
+        bases:
+          "scénario": "script, plot"
+      "J'écris un scénario.":
+        native: "I write a script."
+        bases:
+          "scénario": "script, plot"
+  "fr-2212":
+    native: "scene"
+    notes:
+      "n1": "Une scène is one part of a film or play."
+    examples:
+      "Cette scène est très triste.":
+        native: "This scene is very sad."
+        bases:
+          "scène": "scene"
+      "La scène finale est belle.":
+        native: "The final scene is beautiful."
+        bases:
+          "scène": "scene"
+          "finale": "final"
+  "fr-2213":
+    native: "role, part"
+    notes:
+      "n1": "Un rôle is the part an actor plays."
+    examples:
+      "Elle a un petit rôle.":
+        native: "She has a small part."
+        bases:
+          "rôle": "role, part"
+      "Quel est son rôle dans le film ?":
+        native: "What is his role in the film?"
+        bases:
+          "rôle": "role, part"
+  "fr-2214":
+    native: "screening"
+    notes:
+      "n1": "Une séance is one showing of a film."
+    examples:
+      "La séance commence à vingt heures.":
+        native: "The screening starts at eight."
+        bases:
+          "séance": "screening"
+          "à": "to, at"
+      "Il reste une place pour la séance.":
+        native: "There is one seat left for the screening."
+        bases:
+          "séance": "screening"
+  "fr-2215":
+    native: "comedy"
+    notes:
+      "n1": "Une comédie is a funny film or play."
+    examples:
+      "J'aime les comédies.":
+        native: "I like comedies."
+        bases:
+          "comédies": "comedy"
+      "Cette comédie est très drôle.":
+        native: "This comedy is very funny."
+        bases:
+          "comédie": "comedy"
+  "fr-2216":
+    native: "drama"
+    notes:
+      "n1": "Un drame is a serious film about a sad story."
+    examples:
+      "Ce drame est très triste.":
+        native: "This drama is very sad."
+        bases:
+          "drame": "drama"
+      "Le drame commence par une dispute.":
+        native: "The drama starts with an argument."
+        bases:
+          "drame": "drama"
+          "dispute": "argument"
+  "fr-2217":
+    native: "documentary"
+    notes:
+      "n1": "Un documentaire shows real events or facts."
+    examples:
+      "Le documentaire parle des oiseaux.":
+        native: "The documentary is about birds."
+        bases:
+          "documentaire": "documentary"
+      "J'aime les documentaires sur la nature.":
+        native: "I like documentaries about nature."
+        bases:
+          "documentaires": "documentary"
+          "nature": "nature"
+  "fr-2218":
+    native: "cartoon"
+    notes:
+      "n1": "Un dessin animé is an animated film."
+    examples:
+      "Les enfants regardent un dessin animé.":
+        native: "The children watch a cartoon."
+        bases:
+          "enfants": "children"
+          "animé": "animated"
+      "Ce dessin animé est très drôle.":
+        native: "This cartoon is very funny."
+        bases:
+          "animé": "animated"
+  "fr-2219":
+    native: "suspense"
+    notes:
+      "n1": "Le suspense is the feeling of not knowing what happens next."
+    examples:
+      "Le film a beaucoup de suspense.":
+        native: "The film has a lot of suspense."
+        bases:
+          "de": "of, from, some"
+          "suspense": "suspense"
+      "Quel suspense !":
+        native: "What suspense!"
+        bases:
+          "suspense": "suspense"
+  "fr-2220":
+    native: "trailer"
+    notes:
+      "n1": "Une bande-annonce is a short preview of a film."
+    examples:
+      "La bande-annonce est très bonne.":
+        native: "The trailer is very good."
+        bases:
+          "bande-annonce": "trailer"
+      "Je regarde la bande-annonce en ligne.":
+        native: "I watch the trailer online."
+        bases:
+          "bande-annonce": "trailer"
+          "en": "in, by, as"
+  "fr-2221":
+    native: "subtitle"
+    notes:
+      "n1": "Un sous-titre is the written translation shown at the bottom of a film."
+    examples:
+      "Le film a des sous-titres.":
+        native: "The film has subtitles."
+        bases:
+          "sous-titres": "subtitle"
+      "Je lis les sous-titres en français.":
+        native: "I read the subtitles in French."
+        bases:
+          "sous-titres": "subtitle"
+          "en": "in, by, as"
+  "fr-2222":
+    native: "dubbing"
+    notes:
+      "n1": "Le doublage is the replacement of the voices in a film."
+    examples:
+      "Le doublage est très bien fait.":
+        native: "The dubbing is very well done."
+        bases:
+          "doublage": "dubbing"
+      "Je préfère le film en version originale.":
+        native: "I prefer the film in its original version."
+        bases:
+          "préfère": "prefer"
+          "en": "in, by, as"
+          "version": "version"
+          "originale": "original"
+  "fr-2223":
+    native: "poster"
+    notes:
+      "n1": "Une affiche is a large poster advertising a film or event."
+    examples:
+      "L'affiche du film est jolie.":
+        native: "The poster of the film is pretty."
+        bases:
+          "L'affiche": "poster"
+          "du": "some, of the"
+      "Une affiche annonce la sortie.":
+        native: "A poster announces the release."
+        bases:
+          "affiche": "poster"
+  "fr-2224":
+    native: "spectator, viewer"
+    notes:
+      "n1": "Un spectateur watches a film or show; the feminine is spectatrice."
+    examples:
+      "Le spectateur rit beaucoup.":
+        native: "The viewer laughs a lot."
+        bases:
+          "spectateur": "spectator, viewer"
+      "Les spectateurs applaudissent à la fin.":
+        native: "The viewers applaud at the end."
+        bases:
+          "spectateurs": "spectator, viewer"
+          "à": "to, at"
+  "fr-2225":
+    native: "review, criticism"
+    notes:
+      "n1": "Une critique is a written review of a film or book; also criticism."
+    examples:
+      "La critique est très positive.":
+        native: "The review is very positive."
+        bases:
+          "critique": "review, criticism"
+          "positive": "positive"
+      "Lisez la critique du journal.":
+        native: "Read the review in the paper."
+        bases:
+          "critique": "review, criticism"
+          "du": "some, of the"
+  "fr-2227":
+    native: "release, exit"
+    notes:
+      "n1": "Une sortie is a release of a film, or an exit or outing."
+    examples:
+      "La sortie du film est en mai.":
+        native: "The release of the film is in May."
+        bases:
+          "sortie": "release, exit"
+          "du": "some, of the"
+          "en": "in, by, as"
+      "Nous avons fait une sortie au cinéma.":
+        native: "We went out to the cinema."
+        bases:
+          "sortie": "release, exit"
+          "au": "at, to the"
+  "fr-2228":
+    native: "genre, type"
+    notes:
+      "n1": "Un genre is a type or category of film."
+    examples:
+      "Quel genre de film aimes-tu ?":
+        native: "What type of film do you like?"
+        bases:
+          "genre": "genre, type"
+          "de": "of, from, some"
+      "C'est mon genre préféré.":
+        native: "It is my favourite type."
+        bases:
+          "genre": "genre, type"
+          "préféré": "favourite"
+  "fr-2230":
+    native: "projector"
+    notes:
+      "n1": "Un projecteur throws the film image onto the screen."
+    examples:
+      "Le projecteur est allumé.":
+        native: "The projector is on."
+        bases:
+          "projecteur": "projector"
+      "Le projecteur montre le film.":
+        native: "The projector shows the film."
+        bases:
+          "projecteur": "projector"
+          "montre": "shows"
+  "fr-2232":
+    native: "armchair, cinema seat"
+    notes:
+      "n1": "Un fauteuil is an armchair, or a seat in a cinema or theatre."
+    examples:
+      "Mon fauteuil est au milieu.":
+        native: "My seat is in the middle."
+        bases:
+          "fauteuil": "armchair, cinema seat"
+          "au": "at, to the"
+      "Ce fauteuil est confortable.":
+        native: "This seat is comfortable."
+        bases:
+          "fauteuil": "armchair, cinema seat"
+          "confortable": "comfortable"
+  "fr-2233":
+    native: "cast"
+    notes:
+      "n1": "Les acteurs are the cast of a film."
+    examples:
+      "Les acteurs jouent très bien.":
+        native: "The actors act very well."
+        bases:
+          "acteurs": "cast"
+      "Ces acteurs sont connus.":
+        native: "These actors are well known."
+        bases:
+          "acteurs": "cast"
+          "connus": "known"
+  "fr-2234":
+    native: "to appreciate"
+    notes:
+      "n1": "Apprécier is regular; it means to like or value."
+    examples:
+      "J'apprécie ce film.":
+        native: "I like this film."
+        bases:
+          "J'apprécie": "to appreciate"
+      "Elle apprécie la musique.":
+        native: "She appreciates the music."
+        bases:
+          "apprécie": "to appreciate"
+  "fr-2235":
+    native: "to applaud"
+    notes:
+      "n1": "Applaudir is an -ir verb: the audience applauds."
+    examples:
+      "Le public applaudit à la fin.":
+        native: "The audience applauds at the end."
+        bases:
+          "applaudit": "to applaud"
+          "à": "to, at"
+      "Nous applaudissons le film.":
+        native: "We applaud the film."
+        bases:
+          "applaudissons": "to applaud"
+  "fr-2247":
+    native: "character"
+    notes:
+      "n1": "Un personnage is a character in a film or book."
+    examples:
+      "Le personnage principal est un médecin.":
+        native: "The main character is a doctor."
+        bases:
+          "personnage": "character"
+          "principal": "main"
+      "Ce personnage est très drôle.":
+        native: "This character is very funny."
+        bases:
+          "personnage": "character"
+  "fr-2248":
+    native: "plot"
+    notes:
+      "n1": "L’intrigue is the plot of a film or story."
+    examples:
+      "L'intrigue est simple.":
+        native: "The plot is simple."
+        bases:
+          "L'intrigue": "plot"
+          "simple": "simple"
+      "Cette intrigue surprend tout le monde.":
+        native: "This plot surprises everyone."
+        bases:
+          "intrigue": "plot"
+          "surprend": "surprises"
+          "monde": "world"
+  "fr-2249":
+    native: "thriller"
+    notes:
+      "n1": "Un thriller is a film full of suspense and danger."
+    examples:
+      "Le thriller commence la nuit.":
+        native: "The thriller begins at night."
+        bases:
+          "thriller": "thriller"
+      "J'aime les thrillers.":
+        native: "I like thrillers."
+        bases:
+          "thrillers": "thriller"
+  "fr-2250":
+    native: "hero"
+    notes:
+      "n1": "Un héros is the main hero of a story; the feminine is héroïne."
+    examples:
+      "Le héros sauve la ville.":
+        native: "The hero saves the town."
+        bases:
+          "héros": "hero"
+          "sauve": "saves"
+      "Ce héros est très courageux.":
+        native: "This hero is very brave."
+        bases:
+          "héros": "hero"
+          "courageux": "brave"
+  "fr-2251":
+    native: "heroine"
+    notes:
+      "n1": "Une héroïne is the female hero of a story."
+    examples:
+      "L'héroïne du film chante.":
+        native: "The heroine of the film sings."
+        bases:
+          "L'héroïne": "heroine"
+          "du": "some, of the"
+      "Cette héroïne est très forte.":
+        native: "This heroine is very strong."
+        bases:
+          "héroïne": "heroine"
+  "fr-2252":
+    native: "villain, bad guy"
+    notes:
+      "n1": "Un méchant is the bad character in a story; the adjective means naughty or nasty."
+    examples:
+      "Le méchant veut voler le trésor.":
+        native: "The villain wants to steal the treasure."
+        bases:
+          "méchant": "villain, bad guy"
+          "voler": "steal"
+          "trésor": "treasure"
+      "Ce méchant fait peur.":
+        native: "This villain is frightening."
+        bases:
+          "méchant": "villain, bad guy"
+  "fr-2253":
+    native: "advert"
+    notes:
+      "n1": "Une publicité is an advert, shown on TV or the internet."
+    examples:
+      "La publicité passe avant le film.":
+        native: "The advert is shown before the film."
+        bases:
+          "publicité": "advert"
+      "Cette publicité est très drôle.":
+        native: "This advert is very funny."
+        bases:
+          "publicité": "advert"

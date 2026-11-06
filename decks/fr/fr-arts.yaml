@@ -1,0 +1,276 @@
+schema: 1
+id: "fr-arts"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "arts"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2254"
+    target: "art"
+    ipa: "aʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'art est partout dans la ville.", ipa: "laʁ ɛ paʁtu dɑ̃ la vil", bases: [{ word: "L'art", base: "art" }, { word: "est", ref: "fr-0021" }, { word: "partout", ref: "fr-0356" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }] }
+      - { target: "Il étudie l'art à Paris.", ipa: "il etydi laʁ a paʁi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "étudie", ref: "fr-0253" }, { word: "l'art", base: "art" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+  - id: "fr-2255"
+    target: "artiste"
+    ipa: "aʁtist"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'artiste peint une grande toile.", ipa: "laʁtist pɛ̃ yn ɡʁɑ̃d twal", bases: [{ word: "L'artiste", base: "artiste" }, { word: "peint", ref: "fr-1652" }, { word: "une", ref: "fr-0545" }, { word: "grande", ref: "fr-0410" }, { word: "toile", base: "toile" }] }
+      - { target: "Ma sœur est artiste.", ipa: "ma sœʁ ɛ aʁtist", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "artiste", base: "artiste" }] }
+  - id: "fr-2256"
+    target: "sculpture"
+    ipa: "skyltyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette sculpture est en bronze.", ipa: "sɛt skyltyʁ ɛ ɑ̃ bʁɔ̃z", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "sculpture", base: "sculpture" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "bronze", base: "bronze" }] }
+      - { target: "La sculpture est dans le jardin.", ipa: "la skyltyʁ ɛ dɑ̃ lə ʒaʁdɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "sculpture", base: "sculpture" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "jardin", ref: "fr-1000" }] }
+  - id: "fr-2257"
+    target: "exposition"
+    ipa: "ɛkspozisjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'exposition dure tout l'été.", ipa: "lɛkspozisjɔ̃ dyʁ tu lete", bases: [{ word: "L'exposition", base: "exposition" }, { word: "dure", ref: "fr-1131" }, { word: "tout", ref: "fr-0372" }, { word: "l'été", ref: "fr-1170" }] }
+      - { target: "Cette exposition est gratuite.", ipa: "sɛt ɛkspozisjɔ̃ ɛ ɡʁatɥit", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "exposition", base: "exposition" }, { word: "est", ref: "fr-0021" }, { word: "gratuite", ref: "fr-1448" }] }
+  - id: "fr-2258"
+    target: "sculpter"
+    ipa: "skyltɛ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle sculpte une statue.", ipa: "ɛl skylt yn staty", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "sculpte", base: "sculpter" }, { word: "une", ref: "fr-0545" }, { word: "statue", base: "statue" }] }
+      - { target: "Il sculpte le bois.", ipa: "il skylt lə bwa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "sculpte", base: "sculpter" }, { word: "le", ref: "fr-0543" }, { word: "bois", base: "bois" }] }
+  - id: "fr-2259"
+    target: "créer"
+    ipa: "kʁee"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle crée une belle image.", ipa: "ɛl kʁe yn bɛl imaʒ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "crée", base: "créer" }, { word: "une", ref: "fr-0545" }, { word: "belle", ref: "fr-0412" }, { word: "image", base: "image" }] }
+      - { target: "Nous créons un nouveau spectacle.", ipa: "nu kʁeɔ̃ œ̃ nuvo spɛktakl", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "créons", base: "créer" }, { word: "un", ref: "fr-0208" }, { word: "nouveau", ref: "fr-0413" }, { word: "spectacle", ref: "fr-2271" }] }
+  - id: "fr-2260"
+    target: "exposer"
+    ipa: "ɛkspoze"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il expose ses tableaux à Lyon.", ipa: "il ɛkspoz se tablo a ljɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "expose", base: "exposer" }, { word: "ses", ref: "fr-0138" }, { word: "tableaux", ref: "fr-1596" }, { word: "à", base: "à" }, { word: "Lyon", base: "Lyon" }] }
+      - { target: "Le musée expose des sculptures.", ipa: "lə myze ɛkspoz de skyltyʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "musée", ref: "fr-0077" }, { word: "expose", base: "exposer" }, { word: "des", ref: "fr-0546" }, { word: "sculptures", ref: "fr-2256" }] }
+  - id: "fr-2261"
+    target: "admirer"
+    ipa: "admiʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'admire ce tableau.", ipa: "ʒadmiʁ sə tablo", bases: [{ word: "J'admire", base: "admirer" }, { word: "ce", ref: "fr-0143" }, { word: "tableau", ref: "fr-1596" }] }
+      - { target: "Ils admirent le paysage.", ipa: "il admiʁ lə pei̯zaʒ", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "admirent", base: "admirer" }, { word: "le", ref: "fr-0543" }, { word: "paysage", ref: "fr-1938" }] }
+  - id: "fr-2262"
+    target: "danse"
+    ipa: "dɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La danse est une belle forme d'art.", ipa: "la dɑ̃s ɛ yn bɛl fɔʁm daʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "danse", ref: "fr-0523" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "belle", ref: "fr-0412" }, { word: "forme", base: "forme" }, { word: "d'art", ref: "fr-2254" }] }
+      - { target: "Elle fait de la danse classique.", ipa: "ɛl fɛ də la dɑ̃s klasik", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0046" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "danse", ref: "fr-0523" }, { word: "classique", ref: "fr-2274" }] }
+  - id: "fr-2263"
+    target: "concert"
+    ipa: "kɔ̃sɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le concert commence à huit heures.", ipa: "lə kɔ̃sɛʁ kɔmɑ̃s a ɥi tœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "concert", base: "concert" }, { word: "commence", ref: "fr-0508" }, { word: "à", base: "à" }, { word: "huit", ref: "fr-0215" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Nous allons à un concert demain.", ipa: "nu zalɔ̃ a œ̃ kɔ̃sɛʁ dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "allons", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "un", ref: "fr-0208" }, { word: "concert", base: "concert" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2264"
+    target: "poésie"
+    ipa: "pɔezi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime la poésie française.", ipa: "ʒɛm la pɔezi fʁɑ̃sɛz", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "la", ref: "fr-0544" }, { word: "poésie", base: "poésie" }, { word: "française", ref: "fr-0246" }] }
+      - { target: "La poésie parle de l'amour.", ipa: "la pɔezi paʁl dlamuʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "poésie", base: "poésie" }, { word: "parle", ref: "fr-0023" }, { word: "de", base: "de" }, { word: "l'amour", ref: "fr-1762" }] }
+  - id: "fr-2265"
+    target: "auteur"
+    ipa: "otœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'auteur écrit un nouveau livre.", ipa: "lotœʁ ekʁi œ̃ nuvo livʁ", bases: [{ word: "L'auteur", base: "auteur" }, { word: "écrit", ref: "fr-0291" }, { word: "un", ref: "fr-0208" }, { word: "nouveau", ref: "fr-0413" }, { word: "livre", ref: "fr-1363" }] }
+      - { target: "Cet auteur est très connu.", ipa: "sɛt otœʁ ɛ tʁɛ kɔny", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "auteur", base: "auteur" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "connu", ref: "fr-0503" }] }
+  - id: "fr-2266"
+    target: "écrivain"
+    ipa: "ekʁivɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cet écrivain vit à Paris.", ipa: "sɛt ekʁivɛ̃ vi a paʁi", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "écrivain", base: "écrivain" }, { word: "vit", base: "vivre" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+      - { target: "Elle est écrivain et journaliste.", ipa: "ɛl ɛ ekʁivɛ̃ e ʒuʁnalist", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "écrivain", base: "écrivain" }, { word: "et", ref: "fr-0027" }, { word: "journaliste", ref: "fr-1811" }] }
+  - id: "fr-2267"
+    target: "talent"
+    ipa: "talɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a un grand talent.", ipa: "ɛl a œ̃ ɡʁɑ̃ talɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "grand", ref: "fr-0410" }, { word: "talent", base: "talent" }] }
+      - { target: "Le talent se développe avec le travail.", ipa: "lə talɑ̃ sə devlɔp avɛk lə tʁavaj", bases: [{ word: "Le", ref: "fr-0543" }, { word: "talent", base: "talent" }, { word: "se", base: "se" }, { word: "développe", base: "développer" }, { word: "avec", ref: "fr-0590" }, { word: "travail", ref: "fr-0255" }] }
+  - id: "fr-2268"
+    target: "style"
+    ipa: "stil"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son style est très clair.", ipa: "sɔ̃ stil ɛ tʁɛ klɛʁ", bases: [{ word: "Son", ref: "fr-0138" }, { word: "style", base: "style" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "clair", base: "clair" }] }
+      - { target: "J'aime ce style de musique.", ipa: "ʒɛm sə stil də myzik", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "ce", ref: "fr-0143" }, { word: "style", base: "style" }, { word: "de", base: "de" }, { word: "musique", ref: "fr-0266" }] }
+  - id: "fr-2269"
+    target: "œuvre"
+    ipa: "œvʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette œuvre est célèbre.", ipa: "sɛt œvʁ ɛ selɛbʁ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "œuvre", base: "œuvre" }, { word: "est", ref: "fr-0021" }, { word: "célèbre", ref: "fr-2275" }] }
+      - { target: "Il présente son œuvre au public.", ipa: "il pʁezɑ̃t sɔ̃ nœvʁ o pyblik", bases: [{ word: "Il", ref: "fr-0127" }, { word: "présente", base: "présenter" }, { word: "son", ref: "fr-0138" }, { word: "œuvre", base: "œuvre" }, { word: "au", base: "à" }, { word: "public", ref: "fr-0982" }] }
+  - id: "fr-2270"
+    target: "galerie"
+    ipa: "ɡalʁi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La galerie est ouverte le mardi.", ipa: "la ɡalʁi ɛ uvɛʁt lə maʁdi", bases: [{ word: "La", ref: "fr-0544" }, { word: "galerie", base: "galerie" }, { word: "est", ref: "fr-0021" }, { word: "ouverte", ref: "fr-0437" }, { word: "le", ref: "fr-0543" }, { word: "mardi", ref: "fr-1045" }] }
+      - { target: "Cette galerie montre des peintres modernes.", ipa: "sɛt ɡalʁi mɔ̃tʁ de pɛ̃tʁ mɔdɛʁn", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "galerie", base: "galerie" }, { word: "montre", base: "montrer" }, { word: "des", ref: "fr-0546" }, { word: "peintres", base: "peintre" }, { word: "modernes", ref: "fr-2273" }] }
+  - id: "fr-2271"
+    target: "spectacle"
+    ipa: "spɛktakl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le spectacle est excellent.", ipa: "lə spɛktakl ɛ ɛksɛlɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "spectacle", base: "spectacle" }, { word: "est", ref: "fr-0021" }, { word: "excellent", base: "excellent" }] }
+      - { target: "Nous voyons un spectacle de danse.", ipa: "nu vwajɔ̃ œ̃ spɛktakl də dɑ̃s", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "voyons", ref: "fr-0289" }, { word: "un", ref: "fr-0208" }, { word: "spectacle", base: "spectacle" }, { word: "de", base: "de" }, { word: "danse", ref: "fr-0523" }] }
+  - id: "fr-2272"
+    target: "original"
+    ipa: "ɔʁiʒinal"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une idée originale.", ipa: "sɛ tyn ide ɔʁiʒinal", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "idée", ref: "fr-0683" }, { word: "originale", base: "original" }] }
+      - { target: "Cette peinture est originale.", ipa: "sɛt pɛ̃tyʁ ɛ ɔʁiʒinal", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "peinture", ref: "fr-1653" }, { word: "est", ref: "fr-0021" }, { word: "originale", base: "original" }] }
+  - id: "fr-2273"
+    target: "moderne"
+    ipa: "mɔdɛʁn"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce musée est très moderne.", ipa: "sə myze ɛ tʁɛ mɔdɛʁn", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "musée", ref: "fr-0077" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "moderne", base: "moderne" }] }
+      - { target: "Il aime la musique moderne.", ipa: "il ɛm la myzik mɔdɛʁn", bases: [{ word: "Il", ref: "fr-0127" }, { word: "aime", ref: "fr-0263" }, { word: "la", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }, { word: "moderne", base: "moderne" }] }
+  - id: "fr-2274"
+    target: "classique"
+    ipa: "klasik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'écoute de la musique classique.", ipa: "ʒekut də la myzik klasik", bases: [{ word: "J'écoute", ref: "fr-0292" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }, { word: "classique", base: "classique" }] }
+      - { target: "Ce tableau est classique.", ipa: "sə tablo ɛ klasik", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "tableau", ref: "fr-1596" }, { word: "est", ref: "fr-0021" }, { word: "classique", base: "classique" }] }
+  - id: "fr-2275"
+    target: "célèbre"
+    ipa: "selɛbʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce peintre est célèbre.", ipa: "sə pɛ̃tʁ ɛ selɛbʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "peintre", base: "peintre" }, { word: "est", ref: "fr-0021" }, { word: "célèbre", base: "célèbre" }] }
+      - { target: "La ville est célèbre pour ses musées.", ipa: "la vil ɛ selɛbʁ puʁ se myze", bases: [{ word: "La", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }, { word: "est", ref: "fr-0021" }, { word: "célèbre", base: "célèbre" }, { word: "pour", ref: "fr-0591" }, { word: "ses", ref: "fr-0138" }, { word: "musées", ref: "fr-0077" }] }
+  - id: "fr-2276"
+    target: "inspirer"
+    ipa: "ɛ̃spiʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La nature m'inspire.", ipa: "la natyʁ mɛ̃spiʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "nature", base: "nature" }, { word: "m'inspire", base: "inspirer" }] }
+      - { target: "Elle s'inspire de sa grand-mère.", ipa: "ɛl sɛ̃spiʁ də sa ɡʁɑ̃mɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "s'inspire", base: "inspirer" }, { word: "de", base: "de" }, { word: "sa", ref: "fr-0138" }, { word: "grand-mère", ref: "fr-0175" }] }
+  - id: "fr-2277"
+    target: "esthétique"
+    ipa: "ɛstetik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce bâtiment est esthétique.", ipa: "sə batimɑ̃ ɛ ɛstetik", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "bâtiment", base: "bâtiment" }, { word: "est", ref: "fr-0021" }, { word: "esthétique", base: "esthétique" }] }
+      - { target: "L'aspect esthétique compte beaucoup.", ipa: "lasɛ ɛstetik kɔ̃t boku", bases: [{ word: "L'aspect", base: "aspect" }, { word: "esthétique", base: "esthétique" }, { word: "compte", base: "compter" }, { word: "beaucoup", ref: "fr-0034" }] }
+  - id: "fr-2278"
+    target: "mise en scène"
+    ipa: "miz ɑ̃ sɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La mise en scène est originale.", ipa: "la miz ɑ̃ sɛn ɛ ɔʁiʒinal", bases: [{ word: "La", ref: "fr-0544" }, { word: "mise", base: "mise" }, { word: "en", base: "en" }, { word: "scène", ref: "fr-2212" }, { word: "est", ref: "fr-0021" }, { word: "originale", ref: "fr-2272" }] }
+      - { target: "Il travaille sur la mise en scène.", ipa: "il tʁavaj syʁ la miz ɑ̃ sɛn", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", ref: "fr-0252" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "mise", base: "mise" }, { word: "en", base: "en" }, { word: "scène", ref: "fr-2212" }] }
+

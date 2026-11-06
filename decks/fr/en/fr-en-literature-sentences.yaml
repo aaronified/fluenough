@@ -1,0 +1,44 @@
+schema: 1
+id: "fr-en-literature-sentences"
+kind: "layer"
+core: "fr-literature-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: literature"
+license: "CC-BY-SA-4.0"
+description: "Sentences about literature, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2775":
+    native: "The reader reads the novel and rereads the chapter."
+    confusables:
+      "editeur": { why: "A publisher prints books; the sentence has a reader reading." }
+      "lecture": { why: "Reading is named as an act; the sentence uses the verbs." }
+  "fr-2776":
+    native: "The poet writes a sonnet and a stanza."
+    confusables:
+      "vers": { why: "A line of verse is smaller; the sentence names two poetic forms." }
+      "rime": { why: "A rhyme is a sound; the sentence names forms of verse." }
+  "fr-2777":
+    native: "The playwright writes a tragedy, not a fable."
+    bases:
+      "pas": "not"
+    confusables:
+      "conte": { why: "A tale is a story; the sentence names a tragedy and a fable." }
+      "legende": { why: "A legend is a story; the sentence names a tragedy." }
+  "fr-2778":
+    native: "The narrator summarises the preface and quotes the contents."
+    confusables:
+      "page": { why: "A page is one leaf; the sentence names the preface and contents." }
+      "chapitre": { why: "A chapter is a section; the sentence names the contents as a list." }
+  "fr-2779":
+    native: "The publisher accepts the translator’s text."
+    bases:
+      "du": "some, of the"
+    confusables:
+      "librairie": { why: "A bookshop sells books; the sentence is about the publisher and translator." }
+      "auteur": { why: "An author writes the book; the sentence names the publisher and translator." }
+  "fr-2780":
+    native: "I imagine a metaphor and I comment on it."
+    confusables:
+      "symbole": { why: "A symbol is a sign; the sentence names a metaphor." }
+      "analyser": { why: "To analyse is close to commenting; the sentence names commenting." }

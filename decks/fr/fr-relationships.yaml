@@ -1,0 +1,285 @@
+schema: 1
+id: "fr-relationships"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "relationships"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2441"
+    target: "relation"
+    ipa: "ʁəlasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Leur relation est forte.", ipa: "lœʁ ʁəlasjɔ̃ ɛ fɔʁt", bases: [{ word: "Leur", ref: "fr-0142" }, { word: "relation", base: "relation" }, { word: "est", ref: "fr-0021" }, { word: "forte", ref: "fr-0425" }] }
+      - { target: "Cette relation dure depuis dix ans.", ipa: "sɛt ʁəlasjɔ̃ dyʁ dəpɥi di ɑ̃", bases: [{ word: "Cette", ref: "fr-0143" }, { word: "relation", base: "relation" }, { word: "dure", ref: "fr-1131" }, { word: "depuis", base: "depuis" }, { word: "dix", ref: "fr-0217" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-2442"
+    target: "amitié"
+    ipa: "amitje"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Notre amitié dure longtemps.", ipa: "nɔtʁ amitje dyʁ lɔ̃tɑ̃", bases: [{ word: "Notre", ref: "fr-0139" }, { word: "amitié", base: "amitié" }, { word: "dure", ref: "fr-1131" }, { word: "longtemps", ref: "fr-0357" }] }
+      - { target: "L'amitié est un grand bien.", ipa: "lamitje ɛ tœ̃ ɡʁɑ̃ bjɛ̃", bases: [{ word: "L'amitié", base: "amitié" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "grand", ref: "fr-0410" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-2443"
+    target: "dispute"
+    ipa: "dispyt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La dispute dure une heure.", ipa: "la dispyt dyʁ yn œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "dispute", base: "dispute" }, { word: "dure", ref: "fr-1131" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+      - { target: "Ils ont eu une dispute hier.", ipa: "il ɔ̃ y yn dispyt jɛʁ", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "ont", ref: "fr-0022" }, { word: "eu", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "dispute", base: "dispute" }, { word: "hier", ref: "fr-1038" }] }
+  - id: "fr-2444"
+    target: "conflit"
+    ipa: "kɔ̃fli"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le conflit est réglé.", ipa: "lə kɔ̃fli ɛ ʁeɡle", bases: [{ word: "Le", ref: "fr-0543" }, { word: "conflit", base: "conflit" }, { word: "est", ref: "fr-0021" }, { word: "réglé", base: "régler" }] }
+      - { target: "Ce conflit dure depuis longtemps.", ipa: "sə kɔ̃fli dyʁ dəpɥi lɔ̃tɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "conflit", base: "conflit" }, { word: "dure", ref: "fr-1131" }, { word: "depuis", base: "depuis" }, { word: "longtemps", ref: "fr-0357" }] }
+  - id: "fr-2445"
+    target: "réconciliation"
+    ipa: "ʁekɔ̃siljasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La réconciliation est rapide.", ipa: "la ʁekɔ̃siljasjɔ̃ ɛ ʁapid", bases: [{ word: "La", ref: "fr-0544" }, { word: "réconciliation", base: "réconciliation" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Leur réconciliation fait plaisir.", ipa: "lœʁ ʁekɔ̃siljasjɔ̃ fɛ plɛzir", bases: [{ word: "Leur", ref: "fr-0142" }, { word: "réconciliation", base: "réconciliation" }, { word: "fait", ref: "fr-0287" }, { word: "plaisir", base: "plaisir" }] }
+  - id: "fr-2446"
+    target: "excuse"
+    ipa: "ɛkskyz"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il présente ses excuses.", ipa: "il pʁezɑ̃t sɛz ɛkskyz", bases: [{ word: "Il", ref: "fr-0127" }, { word: "présente", base: "présenter" }, { word: "ses", ref: "fr-0138" }, { word: "excuses", base: "excuse" }] }
+      - { target: "Ce n'est pas une bonne excuse.", ipa: "sə nɛ pa yn bɔn ɛkskyz", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "n'est", ref: "fr-0021" }, { word: "pas", base: "pas" }, { word: "une", ref: "fr-0545" }, { word: "bonne", ref: "fr-0040" }, { word: "excuse", base: "excuse" }] }
+  - id: "fr-2447"
+    target: "fidèle"
+    ipa: "fidɛl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un ami fidèle.", ipa: "sɛ tœ̃n ami fidɛl", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "ami", ref: "fr-0100" }, { word: "fidèle", base: "fidèle" }] }
+      - { target: "Elle reste fidèle à ses principes.", ipa: "ɛl ʁɛst fidɛl a se pʁɛ̃sipə", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "reste", ref: "fr-0514" }, { word: "fidèle", base: "fidèle" }, { word: "à", base: "à" }, { word: "ses", ref: "fr-0138" }, { word: "principes", base: "principe" }] }
+  - id: "fr-2448"
+    target: "jaloux"
+    ipa: "ʒalu"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est jaloux de son frère.", ipa: "il ɛ ʒalu də sɔ̃ fʁɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "jaloux", base: "jaloux" }, { word: "de", base: "de" }, { word: "son", ref: "fr-0138" }, { word: "frère", ref: "fr-0169" }] }
+      - { target: "Elle devient jalouse facilement.", ipa: "ɛl dəvjɛ ʒaluz fasilmɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "devient", base: "devenir" }, { word: "jalouse", base: "jaloux" }, { word: "facilement", base: "facilement" }] }
+  - id: "fr-2449"
+    target: "sincère"
+    ipa: "sɛ̃sɛʁ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ses excuses sont sincères.", ipa: "se zɛkskyz sɔ̃ sɛ̃sɛʁ", bases: [{ word: "Ses", ref: "fr-0138" }, { word: "excuses", ref: "fr-2446" }, { word: "sont", ref: "fr-0021" }, { word: "sincères", base: "sincère" }] }
+      - { target: "C'est une réponse sincère.", ipa: "sɛ tyn ʁepɔ̃s sɛ̃sɛʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "réponse", ref: "fr-1594" }, { word: "sincère", base: "sincère" }] }
+  - id: "fr-2450"
+    target: "honnête"
+    ipa: "ɔnɛt"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est honnête avec ses amis.", ipa: "il ɛ ɔnɛt avɛk se zami", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "honnête", base: "honnête" }, { word: "avec", ref: "fr-0590" }, { word: "ses", ref: "fr-0138" }, { word: "amis", ref: "fr-0100" }] }
+      - { target: "Une réponse honnête fait du bien.", ipa: "yn ʁepɔ̃s ɔnɛt fɛ dy bjɛ̃", bases: [{ word: "Une", ref: "fr-0545" }, { word: "réponse", ref: "fr-1594" }, { word: "honnête", base: "honnête" }, { word: "fait", ref: "fr-0287" }, { word: "du", base: "de" }, { word: "bien", ref: "fr-0032" }] }
+  - id: "fr-2451"
+    target: "timide"
+    ipa: "timid"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le petit garçon est timide.", ipa: "lə pəti ɡaʁsɔ̃ ɛ timid", bases: [{ word: "Le", ref: "fr-0543" }, { word: "petit", ref: "fr-0411" }, { word: "garçon", ref: "fr-0181" }, { word: "est", ref: "fr-0021" }, { word: "timide", base: "timide" }] }
+      - { target: "Elle est timide avec les inconnus.", ipa: "ɛl ɛ timid avɛk lezɛ̃kɔny", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "timide", base: "timide" }, { word: "avec", ref: "fr-0590" }, { word: "les", ref: "fr-0543" }, { word: "inconnus", ref: "fr-2452" }] }
+  - id: "fr-2452"
+    target: "inconnu"
+    ipa: "ɛ̃kɔny"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Un inconnu me parle dans la rue.", ipa: "œ̃n ɛ̃kɔny mə paʁl dɑ̃ la ʁy", bases: [{ word: "Un", ref: "fr-0208" }, { word: "inconnu", base: "inconnu" }, { word: "me", base: "me" }, { word: "parle", ref: "fr-0023" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "rue", ref: "fr-0041" }] }
+      - { target: "Ne parle pas aux inconnus.", ipa: "nə paʁl pa o zɛ̃kɔny", bases: [{ word: "Ne", base: "ne" }, { word: "parle", ref: "fr-0023" }, { word: "pas", base: "pas" }, { word: "aux", base: "à" }, { word: "inconnus", base: "inconnu" }] }
+  - id: "fr-2453"
+    target: "bavarder"
+    ipa: "bavaʁde"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous bavardons pendant des heures.", ipa: "nu bavaʁdɔ̃ pɑ̃dɑ̃ de zœʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "bavardons", base: "bavarder" }, { word: "pendant", ref: "fr-0597" }, { word: "des", base: "de" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Elles bavardent devant la porte.", ipa: "ɛl bavaʁd dəvɑ̃ la pɔʁt", bases: [{ word: "Elles", ref: "fr-0131" }, { word: "bavardent", base: "bavarder" }, { word: "devant", ref: "fr-0466" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+  - id: "fr-2454"
+    target: "plaisanter"
+    ipa: "plɛzɑ̃te"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il aime plaisanter avec ses amis.", ipa: "il ɛm plɛzɑ̃te avɛk se zami", bases: [{ word: "Il", ref: "fr-0127" }, { word: "aime", ref: "fr-0263" }, { word: "plaisanter", base: "plaisanter" }, { word: "avec", ref: "fr-0590" }, { word: "ses", ref: "fr-0138" }, { word: "amis", ref: "fr-0100" }] }
+      - { target: "Ne plaisante pas, c'est sérieux.", ipa: "nə plɛzɑ̃t pa sɛ seʁjø", bases: [{ word: "Ne", base: "ne" }, { word: "plaisante", base: "plaisanter" }, { word: "pas", base: "pas" }, { word: "c'est", ref: "fr-0021" }, { word: "sérieux", base: "sérieux" }] }
+  - id: "fr-2455"
+    target: "pardonner"
+    ipa: "paʁdɔne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je te pardonne.", ipa: "ʒə tə paʁdɔn", bases: [{ word: "Je", ref: "fr-0126" }, { word: "te", base: "te" }, { word: "pardonne", base: "pardonner" }] }
+      - { target: "Elle pardonne facilement.", ipa: "ɛl paʁdɔn fasilmɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "pardonne", base: "pardonner" }, { word: "facilement", base: "facilement" }] }
+  - id: "fr-2456"
+    target: "s'excuser"
+    ipa: "sɛkskyze"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Excusez-moi pour le retard.", ipa: "ɛkskyzemwa puʁ lə ʁətaʁ", bases: [{ word: "Excusez-moi", base: "excuser" }, { word: "pour", ref: "fr-0591" }, { word: "le", ref: "fr-0543" }, { word: "retard", ref: "fr-0870" }] }
+      - { target: "Il s'excuse de son erreur.", ipa: "il sɛkskyz də sɔ̃ nɛʁœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "s'excuse", base: "excuser" }, { word: "de", base: "de" }, { word: "son", ref: "fr-0138" }, { word: "erreur", base: "erreur" }] }
+  - id: "fr-2457"
+    target: "se réconcilier"
+    ipa: "sə ʁekɔ̃silje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils se réconcilient enfin.", ipa: "il sə ʁekɔ̃silj ɑ̃fɛ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "se", base: "se" }, { word: "réconcilient", base: "réconcilier" }, { word: "enfin", ref: "fr-0353" }] }
+      - { target: "Nous nous réconcilions demain.", ipa: "nu nu ʁekɔ̃siljɔ̃ dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "réconcilions", base: "réconcilier" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2458"
+    target: "se disputer"
+    ipa: "sə dispyte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils se disputent souvent.", ipa: "il sə dispyt suvɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "se", base: "se" }, { word: "disputent", base: "disputer" }, { word: "souvent", ref: "fr-0326" }] }
+      - { target: "Ne vous disputez pas.", ipa: "nə vu dispyte pa", bases: [{ word: "Ne", base: "ne" }, { word: "vous", ref: "fr-0096" }, { word: "disputez", base: "disputer" }, { word: "pas", base: "pas" }] }
+  - id: "fr-2459"
+    target: "blesser"
+    ipa: "blese"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ses mots m'ont blessé.", ipa: "se mo mɔ̃ blese", bases: [{ word: "Ses", ref: "fr-0138" }, { word: "mots", ref: "fr-1620" }, { word: "m'ont", ref: "fr-0022" }, { word: "blessé", base: "blesser" }] }
+      - { target: "Ne blesse personne avec tes mots.", ipa: "nə blɛs pɛʁsɔn avɛk tɛ mo", bases: [{ word: "Ne", base: "ne" }, { word: "blesse", base: "blesser" }, { word: "personne", base: "personne" }, { word: "avec", ref: "fr-0590" }, { word: "tes", ref: "fr-0624" }, { word: "mots", ref: "fr-1620" }] }
+  - id: "fr-2460"
+    target: "compréhension"
+    ipa: "kɔ̃pʁeɑ̃sjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il montre de la compréhension.", ipa: "il mɔ̃tʁ də la kɔ̃pʁeɑ̃sjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "montre", ref: "fr-1120" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "compréhension", base: "compréhension" }] }
+      - { target: "La compréhension est importante.", ipa: "la kɔ̃pʁeɑ̃sjɔ̃ ɛ ɛ̃pɔʁtɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "compréhension", base: "compréhension" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+  - id: "fr-2461"
+    target: "rencontre"
+    ipa: "ʁɑ̃kɔ̃tʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une belle rencontre.", ipa: "sɛ tyn bɛl ʁɑ̃kɔ̃tʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "belle", ref: "fr-0412" }, { word: "rencontre", base: "rencontre" }] }
+      - { target: "Notre rencontre date de l'école.", ipa: "nɔtʁ ʁɑ̃kɔ̃tʁ dat də lekɔl", bases: [{ word: "Notre", ref: "fr-0139" }, { word: "rencontre", base: "rencontre" }, { word: "date", base: "dater" }, { word: "de", base: "de" }, { word: "l'école", ref: "fr-0964" }] }
+  - id: "fr-2462"
+    target: "rupture"
+    ipa: "ʁyptyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La rupture est douloureuse.", ipa: "la ʁyptyʁ ɛ dulune", bases: [{ word: "La", ref: "fr-0544" }, { word: "rupture", base: "rupture" }, { word: "est", ref: "fr-0021" }, { word: "douloureuse", base: "douloureux" }] }
+      - { target: "Après la rupture, il part.", ipa: "apʁɛ la ʁyptyʁ il paʁ", bases: [{ word: "Après", ref: "fr-0595" }, { word: "la", ref: "fr-0544" }, { word: "rupture", base: "rupture" }, { word: "il", ref: "fr-0127" }, { word: "part", ref: "fr-0304" }] }
+  - id: "fr-2463"
+    target: "mépris"
+    ipa: "mepʁi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il montre du mépris.", ipa: "il mɔ̃tʁ dy mepʁi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "montre", ref: "fr-1120" }, { word: "du", base: "de" }, { word: "mépris", base: "mépris" }] }
+      - { target: "Ce mépris blesse tout le monde.", ipa: "sə mepʁi blɛs tu lə mɔ̃d", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "mépris", base: "mépris" }, { word: "blesse", ref: "fr-2459" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "monde", base: "monde" }] }
+  - id: "fr-2464"
+    target: "solitude"
+    ipa: "sɔlityd"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La solitude est difficile.", ipa: "la sɔlityd ɛ difisil", bases: [{ word: "La", ref: "fr-0544" }, { word: "solitude", base: "solitude" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }] }
+      - { target: "Il vit dans la solitude.", ipa: "il vi dɑ̃ la sɔlityd", bases: [{ word: "Il", ref: "fr-0127" }, { word: "vit", ref: "fr-0338" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "solitude", base: "solitude" }] }
+  - id: "fr-2465"
+    target: "complicité"
+    ipa: "kɔ̃plisite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Leur complicité est évidente.", ipa: "lœʁ kɔ̃plisite ɛ evidɑ̃t", bases: [{ word: "Leur", ref: "fr-0142" }, { word: "complicité", base: "complicité" }, { word: "est", ref: "fr-0021" }, { word: "évidente", ref: "fr-1885" }] }
+      - { target: "Elles ont une grande complicité.", ipa: "ɛl ɔ̃ yn ɡʁɑ̃d kɔ̃plisite", bases: [{ word: "Elles", ref: "fr-0131" }, { word: "ont", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "grande", ref: "fr-0410" }, { word: "complicité", base: "complicité" }] }
+  - id: "fr-2466"
+    target: "bonne humeur"
+    ipa: "bɔn ymœʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est plein de bonne humeur.", ipa: "il ɛ plɛ̃ də bɔn ymœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }, { word: "de", base: "de" }, { word: "bonne", ref: "fr-0040" }, { word: "humeur", ref: "fr-1781" }] }
+      - { target: "La bonne humeur règne.", ipa: "la bɔn ymœʁ ʁɛɲ", bases: [{ word: "La", ref: "fr-0544" }, { word: "bonne", ref: "fr-0040" }, { word: "humeur", ref: "fr-1781" }, { word: "règne", ref: "fr-2320" }] }
+

@@ -1,0 +1,50 @@
+schema: 1
+id: "fr-en-housing-sentences"
+kind: "layer"
+core: "fr-housing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: housing"
+license: "CC-BY-SA-4.0"
+description: "Sentences about housing, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2498":
+    native: "The tenant pays the rent and the deposit."
+    confusables:
+      "proprietaire": { why: "The owner receives rent; the sentence names the tenant paying." }
+      "bail": { why: "A lease is the contract; the sentence names the payments." }
+  "fr-2499":
+    native: "The flat has a large kitchen and a balcony."
+    confusables:
+      "salon": { why: "A living room is another room; the sentence names the kitchen." }
+      "jardin": { why: "A garden is outside; the sentence names a balcony." }
+  "fr-2500":
+    native: "The block has a lift and a staircase."
+    confusables:
+      "etage": { why: "A floor is a level; the sentence names the lift and stairs." }
+      "grenier": { why: "An attic is at the top; the sentence names two ways to go up." }
+  "fr-2501":
+    native: "Putting the furniture away in the cellar is hard."
+    confusables:
+      "armoire": { why: "A wardrobe is a piece of furniture; the sentence names a cellar." }
+      "canape": { why: "A sofa is furniture; the sentence is about moving it." }
+  "fr-2502":
+    native: "The heating and the hot water are cut off."
+    confusables:
+      "voisinage": { why: "The neighbourhood is around the home; the sentence is about services." }
+      "plafond": { why: "A ceiling is part of a room; the sentence names utilities." }
+  "fr-2503":
+    native: "We sign the lease and move house in May."
+    bases:
+      "en": "in, by, as"
+    confusables:
+      "emmenager": { why: "To move in is what happens after; the sentence names moving house." }
+      "louer": { why: "To rent is the same idea; the sentence names signing a lease." }
+  "fr-2504":
+    native: "The flat viewing starts at noon."
+    bases:
+      "de": "of, from, some"
+      "à": "to, at"
+    confusables:
+      "porte": { why: "A door is part of the flat; the sentence is about a viewing." }
+      "fenetre": { why: "A window is part of the flat; the sentence is about a viewing." }

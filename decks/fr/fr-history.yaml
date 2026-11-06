@@ -1,0 +1,390 @@
+schema: 1
+id: "fr-history"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "history"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2288"
+    target: "passé"
+    ipa: "pase"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le passé est important.", ipa: "lə pase ɛ ɛ̃pɔʁtɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "passé", base: "passé" }, { word: "est", ref: "fr-0021" }, { word: "important", ref: "fr-0443" }] }
+      - { target: "Elle parle du passé.", ipa: "ɛl paʁl dy pase", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "parle", ref: "fr-0023" }, { word: "du", base: "de" }, { word: "passé", base: "passé" }] }
+  - id: "fr-2289"
+    target: "époque"
+    ipa: "epɔk"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'était une autre époque.", ipa: "sɛtɛ yn otʁ epɔk", bases: [{ word: "C'était", ref: "fr-0021" }, { word: "une", ref: "fr-0208" }, { word: "autre", base: "autre" }, { word: "époque", base: "époque" }] }
+      - { target: "À cette époque, il vivait à Lyon.", ipa: "a sɛt epɔk il vivɛ a ljɔ̃", bases: [{ word: "À", base: "à" }, { word: "cette", ref: "fr-0144" }, { word: "époque", base: "époque" }, { word: "il", ref: "fr-0127" }, { word: "vivait", base: "vivre" }, { word: "Lyon", base: "Lyon" }] }
+  - id: "fr-2290"
+    target: "roi"
+    ipa: "ʁwa"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le roi habite au château.", ipa: "lə ʁwa abit o ʃɑto", bases: [{ word: "Le", ref: "fr-0543" }, { word: "roi", base: "roi" }, { word: "habite", ref: "fr-0251" }, { word: "au", base: "à" }, { word: "château", ref: "fr-2295" }] }
+      - { target: "Ce roi a régné pendant trente ans.", ipa: "sə ʁwa ʁeɲe pɑ̃dɑ̃ tʁɑ̃t ɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "roi", base: "roi" }, { word: "a", ref: "fr-0022" }, { word: "régné", ref: "fr-2320" }, { word: "pendant", ref: "fr-0597" }, { word: "trente", ref: "fr-0702" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-2291"
+    target: "reine"
+    ipa: "ʁɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La reine visite la ville.", ipa: "la ʁɛn vizit la vil", bases: [{ word: "La", ref: "fr-0544" }, { word: "reine", base: "reine" }, { word: "visite", base: "visite" }, { word: "ville", ref: "fr-0244" }] }
+      - { target: "Cette reine était très puissante.", ipa: "sɛt ʁɛn etɛ tʁɛ pɥisɑ̃t", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "reine", base: "reine" }, { word: "était", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "puissante", base: "puissant" }] }
+  - id: "fr-2292"
+    target: "empire"
+    ipa: "ɑ̃piʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'empire est très grand.", ipa: "lɑ̃piʁ ɛ tʁɛ ɡʁɑ̃", bases: [{ word: "L'empire", base: "empire" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "grand", ref: "fr-0410" }] }
+      - { target: "Ce pays faisait partie de l'empire.", ipa: "sə pei fəsɛ paʁti də lɑ̃piʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pays", ref: "fr-0243" }, { word: "faisait", ref: "fr-0287" }, { word: "partie", base: "partie" }, { word: "de", base: "de" }, { word: "l'empire", base: "empire" }] }
+  - id: "fr-2293"
+    target: "révolution"
+    ipa: "ʁevɔlysjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La révolution a changé le pays.", ipa: "la ʁevɔlysjɔ̃ a ʃɑ̃ʒe lə pei", bases: [{ word: "La", ref: "fr-0544" }, { word: "révolution", base: "révolution" }, { word: "a", ref: "fr-0022" }, { word: "changé", ref: "fr-0526" }, { word: "le", ref: "fr-0543" }, { word: "pays", ref: "fr-0243" }] }
+      - { target: "Cette révolution a duré dix ans.", ipa: "sɛt ʁevɔlysjɔ̃ a dyʁe di ɑ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "révolution", base: "révolution" }, { word: "a", ref: "fr-0022" }, { word: "duré", ref: "fr-1131" }, { word: "dix", ref: "fr-0217" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-2294"
+    target: "monument"
+    ipa: "mɔnymɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce monument est très ancien.", ipa: "sə mɔnymɑ̃ ɛ tʁɛ ɑ̃sjɛ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "monument", base: "monument" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "ancien", ref: "fr-2296" }] }
+      - { target: "Le monument est ouvert au public.", ipa: "lə mɔnymɑ̃ ɛ uvɛʁ o pyblik", bases: [{ word: "Le", ref: "fr-0543" }, { word: "monument", base: "monument" }, { word: "est", ref: "fr-0021" }, { word: "ouvert", ref: "fr-0437" }, { word: "au", base: "à" }, { word: "public", ref: "fr-0982" }] }
+  - id: "fr-2295"
+    target: "château"
+    ipa: "ʃɑto"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le château est sur la colline.", ipa: "lə ʃɑto ɛ syʁ la kɔlin", bases: [{ word: "Le", ref: "fr-0543" }, { word: "château", base: "château" }, { word: "est", ref: "fr-0021" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "colline", base: "colline" }] }
+      - { target: "Nous visitons un vieux château.", ipa: "nu vizitɔ̃ œ̃ vjø ʃɑto", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "visitons", ref: "fr-1931" }, { word: "un", ref: "fr-0208" }, { word: "vieux", ref: "fr-0109" }, { word: "château", base: "château" }] }
+  - id: "fr-2296"
+    target: "ancien"
+    ipa: "ɑ̃sjɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une ancienne église.", ipa: "sɛt ynɑ̃sjɛn eɡliz", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0208" }, { word: "ancienne", base: "ancien" }, { word: "église", ref: "fr-0966" }] }
+      - { target: "Mon ancien professeur habite ici.", ipa: "mɔ̃n ɑ̃sjɛ̃ pʁɔfesœʁ abit isi", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "ancien", base: "ancien" }, { word: "professeur", ref: "fr-0105" }, { word: "habite", ref: "fr-0251" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-2297"
+    target: "médiéval"
+    ipa: "medjeval"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La ville est médiévale.", ipa: "la vil ɛ medjeval", bases: [{ word: "La", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }, { word: "est", ref: "fr-0021" }, { word: "médiévale", base: "médiéval" }] }
+      - { target: "Ce château est médiéval.", ipa: "sə ʃɑto ɛ medjeval", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "château", ref: "fr-2295" }, { word: "est", ref: "fr-0021" }, { word: "médiéval", base: "médiéval" }] }
+  - id: "fr-2298"
+    target: "colonial"
+    ipa: "kɔlɔnjal"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bâtiment date de l'époque coloniale.", ipa: "lə batimɑ̃ dat də lepɔk kɔlɔnjal", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bâtiment", base: "bâtiment" }, { word: "date", ref: "fr-0260" }, { word: "de", base: "de" }, { word: "l'époque", ref: "fr-2289" }, { word: "coloniale", base: "colonial" }] }
+      - { target: "Ce pays a un passé colonial.", ipa: "sə pei a œ̃ pase kɔlɔnjal", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pays", ref: "fr-0243" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "passé", ref: "fr-2288" }, { word: "colonial", base: "colonial" }] }
+  - id: "fr-2299"
+    target: "empereur"
+    ipa: "ɑ̃pʁœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'empereur arrive à Paris.", ipa: "lɑ̃pʁœʁ aʁiv a paʁi", bases: [{ word: "L'empereur", base: "empereur" }, { word: "arrive", ref: "fr-0305" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+      - { target: "Cet empereur a fait de grands travaux.", ipa: "sɛt ɑ̃pʁœʁ a fɛ də ɡʁɑ̃ tʁavo", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "empereur", base: "empereur" }, { word: "a", ref: "fr-0022" }, { word: "fait", ref: "fr-0046" }, { word: "de", base: "de" }, { word: "grands", ref: "fr-0410" }, { word: "travaux", ref: "fr-0255" }] }
+  - id: "fr-2300"
+    target: "dynastie"
+    ipa: "dinasti"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette dynastie a régné longtemps.", ipa: "sɛt dinasti a ʁeɲe lɔ̃tɑ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "dynastie", base: "dynastie" }, { word: "a", ref: "fr-0022" }, { word: "régné", ref: "fr-2320" }, { word: "longtemps", ref: "fr-0357" }] }
+      - { target: "La dynastie a changé au dix-huitième siècle.", ipa: "la dinasti a ʃɑ̃ʒe o dizɥitjɛm sjɛkl", bases: [{ word: "La", ref: "fr-0544" }, { word: "dynastie", base: "dynastie" }, { word: "a", ref: "fr-0022" }, { word: "changé", ref: "fr-0526" }, { word: "au", base: "à" }, { word: "dix-huitième", base: "dix-huitième" }, { word: "siècle", ref: "fr-1173" }] }
+  - id: "fr-2301"
+    target: "archéologie"
+    ipa: "aʁkeɔlɔʒi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle étudie l'archéologie.", ipa: "ɛl etydi laʁkeɔlɔʒi", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "étudie", ref: "fr-0253" }, { word: "l'archéologie", base: "archéologie" }] }
+      - { target: "L'archéologie révèle des trésors.", ipa: "laʁkeɔlɔʒi ʁevɛl de tʁezɔʁ", bases: [{ word: "L'archéologie", base: "archéologie" }, { word: "révèle", base: "révéler" }, { word: "des", ref: "fr-0546" }, { word: "trésors", base: "trésor" }] }
+  - id: "fr-2302"
+    target: "fouille"
+    ipa: "fuj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fouille commence demain.", ipa: "la fuj kɔmɑ̃s dəmɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "fouille", base: "fouille" }, { word: "commence", ref: "fr-0508" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Les fouilles montrent une vieille ville.", ipa: "le fuj mɔ̃tʁ yn vjɛj vil", bases: [{ word: "Les", ref: "fr-0543" }, { word: "fouilles", base: "fouille" }, { word: "montrent", base: "montrer" }, { word: "une", ref: "fr-0208" }, { word: "vieille", ref: "fr-0109" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-2303"
+    target: "vestige"
+    ipa: "vɛstiʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce vestige date du neuvième siècle.", ipa: "sə vɛstiʒ dat dy nœvjɛm sjɛkl", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "vestige", base: "vestige" }, { word: "date", ref: "fr-0260" }, { word: "du", base: "de" }, { word: "neuvième", base: "neuvième" }, { word: "siècle", ref: "fr-1173" }] }
+      - { target: "Il reste des vestiges du mur.", ipa: "il ʁɛst de vɛstiʒ dy myʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "reste", ref: "fr-0514" }, { word: "des", ref: "fr-0546" }, { word: "vestiges", base: "vestige" }, { word: "du", base: "de" }, { word: "mur", ref: "fr-1015" }] }
+  - id: "fr-2304"
+    target: "trace"
+    ipa: "tʁas"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "On voit une trace du passé.", ipa: "ɔ̃ vwa yn tʁas dy pase", bases: [{ word: "On", ref: "fr-0132" }, { word: "voit", ref: "fr-0289" }, { word: "une", ref: "fr-0208" }, { word: "trace", base: "trace" }, { word: "du", base: "de" }, { word: "passé", ref: "fr-2288" }] }
+      - { target: "La trace du roi est encore là.", ipa: "la tʁas dy ʁwa ɛ ɑ̃kɔʁ la", bases: [{ word: "La", ref: "fr-0544" }, { word: "trace", base: "trace" }, { word: "du", base: "de" }, { word: "roi", ref: "fr-2290" }, { word: "est", ref: "fr-0021" }, { word: "encore", ref: "fr-0332" }, { word: "là", ref: "fr-0030" }] }
+  - id: "fr-2305"
+    target: "ruine"
+    ipa: "ʁɥin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le château est en ruine.", ipa: "lə ʃɑto ɛ ɑ̃ ʁɥin", bases: [{ word: "Le", ref: "fr-0543" }, { word: "château", ref: "fr-2295" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "ruine", base: "ruine" }] }
+      - { target: "Nous visitons les ruines romaines.", ipa: "nu vizitɔ̃ le ʁɥin ʁɔmɛn", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "visitons", ref: "fr-1931" }, { word: "les", ref: "fr-0543" }, { word: "ruines", base: "ruine" }, { word: "romaines", base: "romain" }] }
+  - id: "fr-2306"
+    target: "découverte"
+    ipa: "dekuvɛʁt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une grande découverte.", ipa: "sɛt yn ɡʁɑ̃d dekuvɛʁt", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0208" }, { word: "grande", ref: "fr-0410" }, { word: "découverte", base: "découverte" }] }
+      - { target: "La découverte date de l'année dernière.", ipa: "la dekuvɛʁt dat də lane dɛʁnjɛʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "découverte", base: "découverte" }, { word: "date", ref: "fr-0260" }, { word: "de", base: "de" }, { word: "l'année", ref: "fr-1166" }, { word: "dernière", ref: "fr-0688" }] }
+  - id: "fr-2307"
+    target: "invasion"
+    ipa: "ɛ̃vazjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'invasion a changé la région.", ipa: "lɛ̃vazjɔ̃ a ʃɑ̃ʒe la ʁeʒjɔ̃", bases: [{ word: "L'invasion", base: "invasion" }, { word: "a", ref: "fr-0022" }, { word: "changé", ref: "fr-0526" }, { word: "la", ref: "fr-0544" }, { word: "région", base: "région" }] }
+      - { target: "Cette invasion dure longtemps.", ipa: "sɛt ɛ̃vazjɔ̃ dyʁ lɔ̃tɑ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "invasion", base: "invasion" }, { word: "dure", ref: "fr-1131" }, { word: "longtemps", ref: "fr-0357" }] }
+  - id: "fr-2308"
+    target: "traité"
+    ipa: "tʁete"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le traité est signé en mai.", ipa: "lə tʁete ɛ siɲe ɑ̃ mɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "traité", base: "traité" }, { word: "est", ref: "fr-0021" }, { word: "signé", ref: "fr-1987" }, { word: "en", base: "en" }, { word: "mai", ref: "fr-1156" }] }
+      - { target: "Ce traité change les frontières.", ipa: "sə tʁete ʃɑ̃ʒ le fʁɔ̃tjɛʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "traité", base: "traité" }, { word: "change", ref: "fr-0526" }, { word: "les", ref: "fr-0543" }, { word: "frontières", ref: "fr-1940" }] }
+  - id: "fr-2309"
+    target: "archive"
+    ipa: "aʁkiv"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les archives sont au sous-sol.", ipa: "lezaʁkiv sɔ̃ o susɔl", bases: [{ word: "Les", ref: "fr-0543" }, { word: "archives", base: "archive" }, { word: "sont", ref: "fr-0021" }, { word: "au", base: "à" }, { word: "sous-sol", base: "sous-sol" }] }
+      - { target: "Cette archive date de 1900.", ipa: "sɛt aʁkiv dat də mil nœf sɑ̃", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "archive", base: "archive" }, { word: "date", ref: "fr-0260" }, { word: "de", base: "de" }, { word: "1900", base: "1900" }] }
+  - id: "fr-2310"
+    target: "témoignage"
+    ipa: "temwaɲaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son témoignage est touchant.", ipa: "sɔ̃ temwaɲaʒ ɛ tuʃɑ̃", bases: [{ word: "Son", ref: "fr-0138" }, { word: "témoignage", base: "témoignage" }, { word: "est", ref: "fr-0021" }, { word: "touchant", base: "touchant" }] }
+      - { target: "Ce témoignage explique la guerre.", ipa: "sə temwaɲaʒ ɛksplik la ɡɛʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "témoignage", base: "témoignage" }, { word: "explique", base: "expliquer" }, { word: "la", ref: "fr-0544" }, { word: "guerre", ref: "fr-1824" }] }
+  - id: "fr-2311"
+    target: "évolution"
+    ipa: "evɔlysjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'évolution de la ville est rapide.", ipa: "levɔlysjɔ̃ də la vil ɛ ʁapid", bases: [{ word: "L'évolution", base: "évolution" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }, { word: "est", ref: "fr-0021" }, { word: "rapide", ref: "fr-0447" }] }
+      - { target: "Cette évolution prend des siècles.", ipa: "sɛt evɔlysjɔ̃ pʁɑ̃ de sjɛkl", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "évolution", base: "évolution" }, { word: "prend", ref: "fr-0288" }, { word: "des", ref: "fr-0546" }, { word: "siècles", ref: "fr-1173" }] }
+  - id: "fr-2312"
+    target: "progrès"
+    ipa: "pʁɔɡʁɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le progrès est lent.", ipa: "lə pʁɔɡʁɛ ɛ lɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "progrès", base: "progrès" }, { word: "est", ref: "fr-0021" }, { word: "lent", ref: "fr-0448" }] }
+      - { target: "Il fait des progrès en histoire.", ipa: "il fɛ de pʁɔɡʁɛ ɑ̃ istwaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0046" }, { word: "des", ref: "fr-0546" }, { word: "progrès", base: "progrès" }, { word: "en", base: "en" }, { word: "histoire", ref: "fr-1606" }] }
+  - id: "fr-2313"
+    target: "tradition"
+    ipa: "tʁadisjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une vieille tradition.", ipa: "sɛ tyn vjɛj tʁadisjɔ̃", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0208" }, { word: "vieille", ref: "fr-0109" }, { word: "tradition", base: "tradition" }] }
+      - { target: "Cette tradition continue aujourd'hui.", ipa: "sɛt tʁadisjɔ̃ kɔ̃tinɥ oʒuʁdɥi", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "tradition", base: "tradition" }, { word: "continue", ref: "fr-0897" }, { word: "aujourd'hui", ref: "fr-0079" }] }
+  - id: "fr-2314"
+    target: "coutume"
+    ipa: "kutym"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une coutume ancienne.", ipa: "sɛ tyn kutym ɑ̃sjɛn", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0208" }, { word: "coutume", base: "coutume" }, { word: "ancienne", ref: "fr-2296" }] }
+      - { target: "La coutume est de manger ensemble.", ipa: "la kutym ɛ də mɑ̃ʒe ɑ̃sɑ̃bl", bases: [{ word: "La", ref: "fr-0544" }, { word: "coutume", base: "coutume" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "manger", ref: "fr-0282" }, { word: "ensemble", ref: "fr-0333" }] }
+  - id: "fr-2315"
+    target: "guerrier"
+    ipa: "ɡɛʁje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le guerrier porte une épée.", ipa: "lə ɡɛʁje pɔʁt yn epe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "guerrier", base: "guerrier" }, { word: "porte", ref: "fr-0527" }, { word: "une", ref: "fr-0208" }, { word: "épée", base: "épée" }] }
+      - { target: "Ce guerrier est très célèbre.", ipa: "sə ɡɛʁje ɛ tʁɛ selɛbʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "guerrier", base: "guerrier" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "célèbre", ref: "fr-2275" }] }
+  - id: "fr-2316"
+    target: "bataille"
+    ipa: "bataj"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bataille dure toute la journée.", ipa: "la bataj dyʁ tut la ʒuʁne", bases: [{ word: "La", ref: "fr-0544" }, { word: "bataille", base: "bataille" }, { word: "dure", ref: "fr-1131" }, { word: "toute", ref: "fr-0372" }, { word: "journée", ref: "fr-1098" }] }
+      - { target: "Cette bataille change l'histoire.", ipa: "sɛt bataj ʃɑ̃ʒ listwaʁ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "bataille", base: "bataille" }, { word: "change", ref: "fr-0526" }, { word: "l'histoire", ref: "fr-1606" }] }
+  - id: "fr-2317"
+    target: "fondation"
+    ipa: "fɔ̃dasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La fondation de la ville date de 1200.", ipa: "la fɔ̃dasjɔ̃ də la vil dat də mil dø sɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "fondation", base: "fondation" }, { word: "de", base: "de" }, { word: "ville", ref: "fr-0244" }, { word: "date", ref: "fr-0260" }, { word: "1200", base: "1200" }] }
+      - { target: "La fondation a eu lieu en mai.", ipa: "la fɔ̃dasjɔ̃ a y ljø ɑ̃ mɛ", bases: [{ word: "La", ref: "fr-0544" }, { word: "fondation", base: "fondation" }, { word: "a", ref: "fr-0022" }, { word: "eu", ref: "fr-0022" }, { word: "lieu", base: "lieu" }, { word: "en", base: "en" }, { word: "mai", ref: "fr-1156" }] }
+  - id: "fr-2318"
+    target: "règne"
+    ipa: "ʁɛɲ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son règne dure vingt ans.", ipa: "sɔ̃ ʁɛɲ dyʁ vɛ̃ ɑ̃", bases: [{ word: "Son", ref: "fr-0138" }, { word: "règne", base: "règne" }, { word: "dure", ref: "fr-1131" }, { word: "vingt", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Pendant son règne, la ville grandit.", ipa: "pɑ̃dɑ̃ sɔ̃ ʁɛɲ la vil ɡʁɑ̃di", bases: [{ word: "Pendant", ref: "fr-0597" }, { word: "son", ref: "fr-0138" }, { word: "règne", base: "règne" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }, { word: "grandit", base: "grandir" }] }
+  - id: "fr-2319"
+    target: "couronne"
+    ipa: "kuʁɔn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La couronne est en or.", ipa: "la kuʁɔn ɛ ɑ̃ ɔʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "couronne", base: "couronne" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "or", base: "or" }] }
+      - { target: "Le roi porte une couronne.", ipa: "lə ʁwa pɔʁt yn kuʁɔn", bases: [{ word: "Le", ref: "fr-0543" }, { word: "roi", ref: "fr-2290" }, { word: "porte", ref: "fr-0527" }, { word: "une", ref: "fr-0208" }, { word: "couronne", base: "couronne" }] }
+  - id: "fr-2320"
+    target: "régner"
+    ipa: "ʁeɲe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le roi règne sur le pays.", ipa: "lə ʁwa ʁɛɲ syʁ lə pei", bases: [{ word: "Le", ref: "fr-0543" }, { word: "roi", ref: "fr-2290" }, { word: "règne", ref: "fr-2318" }, { word: "sur", ref: "fr-0469" }, { word: "pays", ref: "fr-0243" }] }
+      - { target: "Elle régnait pendant la guerre.", ipa: "ɛl ʁeɲɛ pɑ̃dɑ̃ la ɡɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "régnait", base: "régner" }, { word: "pendant", ref: "fr-0597" }, { word: "la", ref: "fr-0544" }, { word: "guerre", ref: "fr-1824" }] }
+  - id: "fr-2321"
+    target: "construire"
+    ipa: "kɔ̃stʁɥiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils construisent un château.", ipa: "il kɔ̃stʁɥiz œ̃ ʃɑto", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "construisent", base: "construire" }, { word: "un", ref: "fr-0208" }, { word: "château", ref: "fr-2295" }] }
+      - { target: "On a construit le pont au dix-septième siècle.", ipa: "ɔ̃ a kɔ̃stʁɥi lə pɔ̃ o dis sɛtjɛm sjɛkl", bases: [{ word: "On", ref: "fr-0132" }, { word: "a", ref: "fr-0022" }, { word: "construit", base: "construire" }, { word: "le", ref: "fr-0543" }, { word: "pont", ref: "fr-0900" }, { word: "au", base: "à" }, { word: "dix-septième", base: "dix-septième" }, { word: "siècle", ref: "fr-1173" }] }
+  - id: "fr-2322"
+    target: "conquérir"
+    ipa: "kɔ̃keʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le roi veut conquérir la région.", ipa: "lə ʁwa vø kɔ̃keʁiʁ la ʁeʒjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "roi", ref: "fr-2290" }, { word: "veut", ref: "fr-0311" }, { word: "conquérir", base: "conquérir" }, { word: "la", ref: "fr-0544" }, { word: "région", base: "région" }] }
+      - { target: "Ils ont conquis le pays.", ipa: "il ɔ̃ kɔ̃ki lə pei", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "ont", ref: "fr-0022" }, { word: "conquis", base: "conquérir" }, { word: "le", ref: "fr-0543" }, { word: "pays", ref: "fr-0243" }] }
+

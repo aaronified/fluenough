@@ -1,0 +1,317 @@
+schema: 1
+id: "fr-sports"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "sports"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2403"
+    target: "joueur"
+    ipa: "ʒwœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le joueur marque un but.", ipa: "lə ʒwœʁ maʁk œ̃ by", bases: [{ word: "Le", ref: "fr-0543" }, { word: "joueur", base: "joueur" }, { word: "marque", ref: "fr-2425" }, { word: "un", ref: "fr-0208" }, { word: "but", ref: "fr-2409" }] }
+      - { target: "Ce joueur court très vite.", ipa: "sə ʒwœʁ kuʁ tʁɛ vit", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "joueur", base: "joueur" }, { word: "court", ref: "fr-0307" }, { word: "très", ref: "fr-0031" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-2404"
+    target: "arbitre"
+    ipa: "aʁbitʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'arbitre siffle la fin.", ipa: "laʁbitʁ sifl la fɛ̃", bases: [{ word: "L'arbitre", base: "arbitre" }, { word: "siffle", base: "siffler" }, { word: "la", ref: "fr-0544" }, { word: "fin", ref: "fr-1110" }] }
+      - { target: "L'arbitre a donné un penalty.", ipa: "laʁbitʁ a dɔne œ̃ penalti", bases: [{ word: "L'arbitre", base: "arbitre" }, { word: "a", ref: "fr-0022" }, { word: "donné", ref: "fr-0302" }, { word: "un", ref: "fr-0208" }, { word: "penalty", ref: "fr-2413" }] }
+  - id: "fr-2405"
+    target: "entraîneur"
+    ipa: "ɑ̃tʁɛnœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'entraîneur parle aux joueurs.", ipa: "lɑ̃tʁɛnœʁ paʁl o ʒwœʁ", bases: [{ word: "L'entraîneur", base: "entraîneur" }, { word: "parle", ref: "fr-0023" }, { word: "aux", base: "à" }, { word: "joueurs", ref: "fr-2403" }] }
+      - { target: "Notre entraîneur est très strict.", ipa: "nɔtʁ ɑ̃tʁɛnœʁ ɛ tʁɛ stʁikt", bases: [{ word: "Notre", ref: "fr-0139" }, { word: "entraîneur", base: "entraîneur" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "strict", base: "strict" }] }
+  - id: "fr-2406"
+    target: "terrain"
+    ipa: "teʁɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le terrain est mouillé.", ipa: "lə teʁɛ̃ ɛ muje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "terrain", base: "terrain" }, { word: "est", ref: "fr-0021" }, { word: "mouillé", ref: "fr-1327" }] }
+      - { target: "Les enfants jouent sur le terrain.", ipa: "lezɑ̃fɑ̃ ʒu syʁ lə teʁɛ̃", bases: [{ word: "Les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "jouent", ref: "fr-0308" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "terrain", base: "terrain" }] }
+  - id: "fr-2407"
+    target: "gymnase"
+    ipa: "ʒimnaz"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gymnase est fermé le dimanche.", ipa: "lə ʒimnaz ɛ fɛʁme lə dimɑ̃ʃ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gymnase", base: "gymnase" }, { word: "est", ref: "fr-0021" }, { word: "fermé", ref: "fr-0438" }, { word: "dimanche", ref: "fr-1050" }] }
+      - { target: "Nous jouons au basket dans le gymnase.", ipa: "nu ʒuɔ̃ o baskɛt dɑ̃ lə ʒimnaz", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "jouons", ref: "fr-0308" }, { word: "au", base: "à" }, { word: "basket", ref: "fr-1670" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "gymnase", base: "gymnase" }] }
+  - id: "fr-2408"
+    target: "course"
+    ipa: "kuʁs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La course commence à midi.", ipa: "la kuʁs kɔmɑ̃s a midi", bases: [{ word: "La", ref: "fr-0544" }, { word: "course", base: "course" }, { word: "commence", ref: "fr-0508" }, { word: "à", base: "à" }, { word: "midi", ref: "fr-1036" }] }
+      - { target: "Elle gagne la course.", ipa: "ɛl ɡaɲ la kuʁs", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "gagne", ref: "fr-0670" }, { word: "la", ref: "fr-0544" }, { word: "course", base: "course" }] }
+  - id: "fr-2409"
+    target: "but"
+    ipa: "by"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il marque un but.", ipa: "il maʁk œ̃ by", bases: [{ word: "Il", ref: "fr-0127" }, { word: "marque", ref: "fr-2425" }, { word: "un", ref: "fr-0208" }, { word: "but", base: "but" }] }
+      - { target: "Mon but est de gagner.", ipa: "mɔ̃ by ɛ də ɡaɲe", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "but", base: "but" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "gagner", ref: "fr-0670" }] }
+  - id: "fr-2410"
+    target: "victoire"
+    ipa: "viktwaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une belle victoire.", ipa: "sɛ tyn bɛl viktwaʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "belle", ref: "fr-0412" }, { word: "victoire", base: "victoire" }] }
+      - { target: "La victoire est pour nous.", ipa: "la viktwaʁ ɛ puʁ nu", bases: [{ word: "La", ref: "fr-0544" }, { word: "victoire", base: "victoire" }, { word: "est", ref: "fr-0021" }, { word: "pour", ref: "fr-0591" }, { word: "nous", ref: "fr-0129" }] }
+  - id: "fr-2411"
+    target: "défaite"
+    ipa: "defɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La défaite est difficile.", ipa: "la defɛt ɛ difisil", bases: [{ word: "La", ref: "fr-0544" }, { word: "défaite", base: "défaite" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }] }
+      - { target: "Ils acceptent la défaite.", ipa: "il aksɛpt la defɛt", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "acceptent", ref: "fr-2007" }, { word: "la", ref: "fr-0544" }, { word: "défaite", base: "défaite" }] }
+  - id: "fr-2412"
+    target: "score"
+    ipa: "skɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le score est de deux à un.", ipa: "lə skɔʁ ɛ də dø a œ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "score", base: "score" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "deux", ref: "fr-0209" }, { word: "à", base: "à" }, { word: "un", ref: "fr-0208" }] }
+      - { target: "Quel est le score final ?", ipa: "kɛl ɛ lə skɔʁ final", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "score", base: "score" }, { word: "final", base: "final" }] }
+  - id: "fr-2413"
+    target: "penalty"
+    ipa: "penalti"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il tire le penalty.", ipa: "il tiʁ lə penalti", bases: [{ word: "Il", ref: "fr-0127" }, { word: "tire", base: "tirer" }, { word: "le", ref: "fr-0543" }, { word: "penalty", base: "penalty" }] }
+      - { target: "Le penalty est sifflé.", ipa: "lə penalti ɛ sifle", bases: [{ word: "Le", ref: "fr-0543" }, { word: "penalty", base: "penalty" }, { word: "est", ref: "fr-0021" }, { word: "sifflé", base: "siffler" }] }
+  - id: "fr-2414"
+    target: "course à pied"
+    ipa: "kuʁs a pje"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais de la course à pied.", ipa: "ʒə fɛ də la kuʁs a pje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "course", ref: "fr-2408" }, { word: "à", base: "à" }, { word: "pied", ref: "fr-0930" }] }
+      - { target: "La course à pied est saine.", ipa: "la kuʁs a pje ɛ sɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "course", ref: "fr-2408" }, { word: "à", base: "à" }, { word: "pied", ref: "fr-0930" }, { word: "est", ref: "fr-0021" }, { word: "saine", ref: "fr-1736" }] }
+  - id: "fr-2415"
+    target: "cyclisme"
+    ipa: "siklism"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cyclisme est très populaire.", ipa: "lə siklism ɛ tʁɛ pɔpyl ɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cyclisme", base: "cyclisme" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "populaire", base: "populaire" }] }
+      - { target: "Ils regardent le cyclisme à la télé.", ipa: "il ʁəɡaʁd lə siklism a la tele", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "regardent", ref: "fr-0293" }, { word: "le", ref: "fr-0543" }, { word: "cyclisme", base: "cyclisme" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "télé", base: "télé" }] }
+  - id: "fr-2416"
+    target: "raquette"
+    ipa: "ʁakɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma raquette est cassée.", ipa: "ma ʁakɛt ɛ kase", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "raquette", base: "raquette" }, { word: "est", ref: "fr-0021" }, { word: "cassée", base: "casser" }] }
+      - { target: "Il change de raquette.", ipa: "il ʃɑ̃ʒ də ʁakɛt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "change", ref: "fr-0526" }, { word: "de", base: "de" }, { word: "raquette", base: "raquette" }] }
+  - id: "fr-2417"
+    target: "marathon"
+    ipa: "maʁatɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il court le marathon.", ipa: "il kuʁ lə maʁatɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "court", ref: "fr-0307" }, { word: "le", ref: "fr-0543" }, { word: "marathon", base: "marathon" }] }
+      - { target: "Le marathon dure plusieurs heures.", ipa: "lə maʁatɔ̃ dyʁ plyzjœʁ œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "marathon", base: "marathon" }, { word: "dure", ref: "fr-1131" }, { word: "plusieurs", ref: "fr-0376" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-2418"
+    target: "compétition"
+    ipa: "kɔ̃petisjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La compétition commence demain.", ipa: "la kɔ̃petisjɔ̃ kɔmɑ̃s dəmɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "compétition", base: "compétition" }, { word: "commence", ref: "fr-0508" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Elle participe à une compétition.", ipa: "ɛl paʁtisip a yn kɔ̃petisjɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "participe", base: "participer" }, { word: "à", base: "à" }, { word: "une", ref: "fr-0545" }, { word: "compétition", base: "compétition" }] }
+  - id: "fr-2419"
+    target: "trophée"
+    ipa: "tʁɔfe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le trophée est en argent.", ipa: "lə tʁɔfe ɛ ɑ̃ aʁʒɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "trophée", base: "trophée" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "argent", ref: "fr-0751" }] }
+      - { target: "Ils gagnent un trophée.", ipa: "il ɡaɲ œ̃ tʁɔfe", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "gagnent", ref: "fr-0670" }, { word: "un", ref: "fr-0208" }, { word: "trophée", base: "trophée" }] }
+  - id: "fr-2420"
+    target: "maillot"
+    ipa: "majo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le maillot est bleu.", ipa: "lə majo ɛ blø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "maillot", base: "maillot" }, { word: "est", ref: "fr-0021" }, { word: "bleu", ref: "fr-1233" }] }
+      - { target: "Il porte le maillot de l'équipe.", ipa: "il pɔʁt lə majo dlekip", bases: [{ word: "Il", ref: "fr-0127" }, { word: "porte", ref: "fr-1003" }, { word: "le", ref: "fr-0543" }, { word: "maillot", base: "maillot" }, { word: "de", base: "de" }, { word: "l'équipe", ref: "fr-1680" }] }
+  - id: "fr-2421"
+    target: "chaussures"
+    ipa: "ʃosyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes chaussures sont neuves.", ipa: "me ʃosyʁ sɔ̃ nœv", bases: [{ word: "Mes", ref: "fr-0037" }, { word: "chaussures", base: "chaussures" }, { word: "sont", ref: "fr-0021" }, { word: "neuves", ref: "fr-0216" }] }
+      - { target: "Il met ses chaussures de course.", ipa: "il mɛ se ʃosyʁ də kuʁs", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "ses", ref: "fr-0138" }, { word: "chaussures", base: "chaussures" }, { word: "de", base: "de" }, { word: "course", ref: "fr-2408" }] }
+  - id: "fr-2422"
+    target: "vestiaire"
+    ipa: "vɛstjɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vestiaire est fermé.", ipa: "lə vɛstjɛʁ ɛ fɛʁme", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vestiaire", base: "vestiaire" }, { word: "est", ref: "fr-0021" }, { word: "fermé", ref: "fr-0438" }] }
+      - { target: "Les joueurs entrent au vestiaire.", ipa: "le ʒwœʁ ɑ̃tʁ o vɛstjɛʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "joueurs", ref: "fr-2403" }, { word: "entrent", ref: "fr-0515" }, { word: "au", base: "à" }, { word: "vestiaire", base: "vestiaire" }] }
+  - id: "fr-2423"
+    target: "supporter"
+    ipa: "sypɔʁtœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les supporters chantent.", ipa: "le sypɔʁtœʁ ʃɑ̃t", bases: [{ word: "Les", ref: "fr-0543" }, { word: "supporters", base: "supporter" }, { word: "chantent", ref: "fr-0522" }] }
+      - { target: "Mon frère est supporter de l'équipe.", ipa: "mɔ̃ fʁɛʁ ɛ sypɔʁtœʁ də lekip", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }, { word: "est", ref: "fr-0021" }, { word: "supporter", base: "supporter" }, { word: "de", base: "de" }, { word: "l'équipe", ref: "fr-1680" }] }
+  - id: "fr-2424"
+    target: "entraîner"
+    ipa: "ɑ̃tʁɛne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il entraîne l'équipe chaque semaine.", ipa: "il ɑ̃tʁɛn lekip ʃak səmɛn", bases: [{ word: "Il", ref: "fr-0127" }, { word: "entraîne", base: "entraîner" }, { word: "l'équipe", ref: "fr-1680" }, { word: "chaque", ref: "fr-0375" }, { word: "semaine", ref: "fr-0668" }] }
+      - { target: "Elle s'entraîne tous les jours.", ipa: "ɛl sɑ̃tʁɛn tu le ʒuʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "s'entraîne", base: "entraîner" }, { word: "tous", ref: "fr-0372" }, { word: "les", ref: "fr-0543" }, { word: "jours", ref: "fr-1032" }] }
+  - id: "fr-2425"
+    target: "marquer"
+    ipa: "maʁke"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il marque deux buts.", ipa: "il maʁk dø by", bases: [{ word: "Il", ref: "fr-0127" }, { word: "marque", base: "marquer" }, { word: "deux", ref: "fr-0209" }, { word: "buts", ref: "fr-2409" }] }
+      - { target: "Nous marquons un point.", ipa: "nu maʁkɔ̃ œ̃ pwɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "marquons", base: "marquer" }, { word: "un", ref: "fr-0208" }, { word: "point", base: "point" }] }
+  - id: "fr-2436"
+    target: "gardien"
+    ipa: "ɡaʁdjɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gardien arrête le tir.", ipa: "lə ɡaʁdjɛ̃ aʁɛt lə tiʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gardien", base: "gardien" }, { word: "arrête", base: "arrêter" }, { word: "tir", base: "tir" }] }
+      - { target: "Notre gardien est très bon.", ipa: "nɔtʁ ɡaʁdjɛ̃ ɛ tʁɛ bɔ̃", bases: [{ word: "Notre", ref: "fr-0139" }, { word: "gardien", base: "gardien" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bon", ref: "fr-0040" }] }
+  - id: "fr-2437"
+    target: "défenseur"
+    ipa: "defɑ̃sœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le défenseur coupe la passe.", ipa: "lə defɑ̃sœʁ kup la pas", bases: [{ word: "Le", ref: "fr-0543" }, { word: "défenseur", base: "défenseur" }, { word: "coupe", ref: "fr-1538" }, { word: "la", ref: "fr-0544" }, { word: "passe", base: "passe" }] }
+      - { target: "Ce défenseur est très grand.", ipa: "sə defɑ̃sœʁ ɛ tʁɛ ɡʁɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "défenseur", base: "défenseur" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "grand", ref: "fr-0410" }] }
+  - id: "fr-2438"
+    target: "attaquant"
+    ipa: "atakɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'attaquant marque encore.", ipa: "latakɑ̃ maʁk ɑ̃kɔʁ", bases: [{ word: "L'attaquant", base: "attaquant" }, { word: "marque", ref: "fr-2425" }, { word: "encore", ref: "fr-0332" }] }
+      - { target: "Cet attaquant court vite.", ipa: "sɛt atakɑ̃ kuʁ vit", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "attaquant", base: "attaquant" }, { word: "court", ref: "fr-0307" }, { word: "vite", ref: "fr-0338" }] }
+  - id: "fr-2439"
+    target: "saut"
+    ipa: "so"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son saut est très haut.", ipa: "sɔ̃ so ɛ tʁɛ o", bases: [{ word: "Son", ref: "fr-0138" }, { word: "saut", base: "saut" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "haut", ref: "fr-0423" }] }
+      - { target: "Elle fait un saut en longueur.", ipa: "ɛl fɛ œ̃ so ɑ̃ lɔ̃ɡœʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "saut", base: "saut" }, { word: "en", base: "en" }, { word: "longueur", base: "longueur" }] }
+  - id: "fr-2440"
+    target: "filet"
+    ipa: "filɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le ballon passe au-dessus du filet.", ipa: "lə balɔ̃ pas odsy dy filɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ballon", ref: "fr-1387" }, { word: "passe", base: "passe" }, { word: "au-dessus", base: "au-dessus" }, { word: "du", base: "de" }, { word: "filet", base: "filet" }] }
+      - { target: "Le filet est déchiré.", ipa: "lə filɛ ɛ deʃiʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "filet", base: "filet" }, { word: "est", ref: "fr-0021" }, { word: "déchiré", base: "déchirer" }] }
+

@@ -1,0 +1,321 @@
+schema: 1
+id: "fr-en-housing"
+kind: "layer"
+core: "fr-housing"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Housing"
+license: "CC-BY-SA-4.0"
+description: "Forty words for housing: renting and buying, the rooms and the building, the contract and the rent, and the verbs of moving in. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2476":
+    native: "housing, accommodation"
+    notes:
+      "n1": "Un logement is a place to live, such as a flat or house."
+    examples:
+      "Je cherche un logement.":
+        native: "I am looking for accommodation."
+        bases:
+          "logement": "housing, accommodation"
+      "Le logement est très cher.":
+        native: "Accommodation is very expensive."
+        bases:
+          "logement": "housing, accommodation"
+  "fr-2477":
+    native: "rent"
+    notes:
+      "n1": "Un loyer is the money paid each month to rent a home."
+    examples:
+      "Le loyer est de huit cents euros.":
+        native: "The rent is eight hundred euros."
+        bases:
+          "loyer": "rent"
+          "de": "of, from, some"
+      "Je paie mon loyer le premier.":
+        native: "I pay my rent on the first."
+        bases:
+          "loyer": "rent"
+  "fr-2478":
+    native: "tenant"
+    notes:
+      "n1": "Un locataire rents a home; it is used for both genders."
+    examples:
+      "Le locataire paie le loyer.":
+        native: "The tenant pays the rent."
+        bases:
+          "locataire": "tenant"
+      "Ma sœur est locataire.":
+        native: "My sister is a tenant."
+        bases:
+          "locataire": "tenant"
+  "fr-2479":
+    native: "owner, landlord"
+    notes:
+      "n1": "Un propriétaire owns a home; it is used for both genders."
+    examples:
+      "Le propriétaire répare la porte.":
+        native: "The landlord repairs the door."
+        bases:
+          "propriétaire": "owner, landlord"
+      "Elle est propriétaire de la maison.":
+        native: "She is the owner of the house."
+        bases:
+          "propriétaire": "owner, landlord"
+          "de": "of, from, some"
+  "fr-2480":
+    native: "lease"
+    notes:
+      "n1": "Un bail is the rental contract for a home."
+    examples:
+      "Le bail dure trois ans.":
+        native: "The lease lasts three years."
+        bases:
+          "bail": "lease"
+      "Nous signons le bail demain.":
+        native: "We sign the lease tomorrow."
+        bases:
+          "bail": "lease"
+  "fr-2481":
+    native: "deposit, guarantee"
+    notes:
+      "n1": "Une caution is a sum paid as a guarantee for a rental."
+    examples:
+      "La caution est de deux mois de loyer.":
+        native: "The deposit is two months’ rent."
+        bases:
+          "caution": "deposit, guarantee"
+          "de": "of, from, some"
+      "Je rends la caution à la fin.":
+        native: "I get the deposit back at the end."
+        bases:
+          "caution": "deposit, guarantee"
+          "à": "to, at"
+  "fr-2482":
+    native: "lift"
+    notes:
+      "n1": "Un ascenseur is a lift in a building."
+    examples:
+      "L'ascenseur est en panne.":
+        native: "The lift is out of order."
+        bases:
+          "L'ascenseur": "lift"
+          "en": "in, by, as"
+          "panne": "breakdown"
+      "Nous prenons l'ascenseur.":
+        native: "We take the lift."
+        bases:
+          "l'ascenseur": "lift"
+  "fr-2483":
+    native: "bathroom"
+    notes:
+      "n1": "La salle de bains is the room with the bath or shower."
+    examples:
+      "La salle de bains est petite.":
+        native: "The bathroom is small."
+        bases:
+          "de": "of, from, some"
+      "Je prends une douche dans la salle de bains.":
+        native: "I have a shower in the bathroom."
+        bases:
+          "de": "of, from, some"
+  "fr-2484":
+    native: "attic"
+    notes:
+      "n1": "Un grenier is the space under the roof of a house."
+    examples:
+      "Les vieux livres sont au grenier.":
+        native: "The old books are in the attic."
+        bases:
+          "au": "at, to the"
+          "grenier": "attic"
+      "Le grenier est plein de cartons.":
+        native: "The attic is full of boxes."
+        bases:
+          "grenier": "attic"
+          "de": "of, from, some"
+          "cartons": "boxes"
+  "fr-2485":
+    native: "cellar"
+    notes:
+      "n1": "Une cave is a cellar under a house, often for wine."
+    examples:
+      "La cave est froide.":
+        native: "The cellar is cold."
+        bases:
+          "cave": "cellar"
+      "Nous rangeons le vin dans la cave.":
+        native: "We store the wine in the cellar."
+        bases:
+          "cave": "cellar"
+  "fr-2486":
+    native: "piece of furniture"
+    notes:
+      "n1": "Un meuble is a piece of furniture such as a table or a bed."
+    examples:
+      "Ce meuble est très lourd.":
+        native: "This piece of furniture is very heavy."
+        bases:
+          "meuble": "piece of furniture"
+      "La chambre a trois meubles.":
+        native: "The bedroom has three pieces of furniture."
+        bases:
+          "meubles": "piece of furniture"
+  "fr-2487":
+    native: "wardrobe, cupboard"
+    notes:
+      "n1": "Une armoire is a large cupboard for clothes."
+    examples:
+      "L'armoire est pleine de vêtements.":
+        native: "The wardrobe is full of clothes."
+        bases:
+          "L'armoire": "wardrobe, cupboard"
+          "de": "of, from, some"
+      "Ranges les draps dans l'armoire.":
+        native: "Put the sheets away in the wardrobe."
+        bases:
+          "draps": "sheets"
+          "l'armoire": "wardrobe, cupboard"
+  "fr-2488":
+    native: "shelf"
+    notes:
+      "n1": "Une étagère is a shelf on the wall."
+    examples:
+      "L'étagère est en bois.":
+        native: "The shelf is made of wood."
+        bases:
+          "L'étagère": "shelf"
+          "en": "in, by, as"
+          "bois": "wood"
+      "Je mets les livres sur l'étagère.":
+        native: "I put the books on the shelf."
+        bases:
+          "l'étagère": "shelf"
+  "fr-2489":
+    native: "ceiling"
+    notes:
+      "n1": "Un plafond is the ceiling of a room."
+    examples:
+      "Le plafond est très haut.":
+        native: "The ceiling is very high."
+        bases:
+          "plafond": "ceiling"
+      "Il y a une tache au plafond.":
+        native: "There is a stain on the ceiling."
+        bases:
+          "y": "there"
+          "tache": "stain"
+          "au": "at, to the"
+          "plafond": "ceiling"
+  "fr-2490":
+    native: "heating"
+    notes:
+      "n1": "Le chauffage is the heating of a home."
+    examples:
+      "Le chauffage marche bien.":
+        native: "The heating works well."
+        bases:
+          "chauffage": "heating"
+      "Le chauffage coûte cher en hiver.":
+        native: "Heating costs a lot in winter."
+        bases:
+          "chauffage": "heating"
+          "en": "in, by, as"
+  "fr-2491":
+    native: "hot water"
+    notes:
+      "n1": "L’eau chaude is the hot water of a home."
+    examples:
+      "L'eau chaude est coupée.":
+        native: "The hot water is cut off."
+      "Il n'y a pas d'eau chaude.":
+        native: "There is no hot water."
+        bases:
+          "n'y": "not"
+          "pas": "not"
+          "d'eau": "water"
+  "fr-2492":
+    native: "neighbourhood"
+    notes:
+      "n1": "Le voisinage is the people and place around your home."
+    examples:
+      "Le voisinage est calme.":
+        native: "The neighbourhood is quiet."
+        bases:
+          "voisinage": "neighbourhood"
+      "Nous aimons le voisinage.":
+        native: "We like the neighbourhood."
+        bases:
+          "voisinage": "neighbourhood"
+  "fr-2493":
+    native: "viewing, visit"
+    notes:
+      "n1": "Une visite is a viewing of a flat, or a visit to people."
+    examples:
+      "La visite de l'appartement est demain.":
+        native: "The flat viewing is tomorrow."
+        bases:
+          "visite": "viewing, visit"
+          "de": "of, from, some"
+      "Nous faisons une visite au propriétaire.":
+        native: "We visit the owner."
+        bases:
+          "visite": "viewing, visit"
+          "au": "at, to the"
+  "fr-2494":
+    native: "to move house"
+    notes:
+      "n1": "Déménager is regular: to move house."
+    examples:
+      "Nous déménageons en mai.":
+        native: "We move house in May."
+        bases:
+          "déménageons": "to move house"
+          "en": "in, by, as"
+      "Il déménage dans une autre ville.":
+        native: "He moves to another town."
+        bases:
+          "déménage": "to move house"
+          "autre": "other"
+  "fr-2495":
+    native: "to move in"
+    notes:
+      "n1": "Emménager is regular: to move into a new home."
+    examples:
+      "Ils emménagent demain.":
+        native: "They move in tomorrow."
+        bases:
+          "emménagent": "to move in"
+      "Elle emménage dans le quartier.":
+        native: "She moves into the neighbourhood."
+        bases:
+          "emménage": "to move in"
+  "fr-2496":
+    native: "to rent"
+    notes:
+      "n1": "Louer is regular: to rent a home or to hire something."
+    examples:
+      "Nous louons un appartement.":
+        native: "We rent a flat."
+        bases:
+          "louons": "to rent"
+      "Il loue une maison à la campagne.":
+        native: "He rents a house in the country."
+        bases:
+          "loue": "to rent"
+          "à": "to, at"
+          "campagne": "countryside"
+  "fr-2497":
+    native: "to tidy, to put away"
+    notes:
+      "n1": "Ranger is regular: to put things in their place."
+    examples:
+      "Je range ma chambre.":
+        native: "I tidy my room."
+        bases:
+          "range": "to tidy, to put away"
+      "Rangez vos affaires, s'il vous plaît.":
+        native: "Put your things away, please."
+        bases:
+          "Rangez": "to tidy, to put away"
+          "affaires": "things"
+          "plaît": "pleases"

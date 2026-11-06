@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-government"
+name: "Reading: government"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about government. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-form-instructions"
+    title: "Instructions on an application form"
+    theme: "government"
+    sentences:
+      - text: "Demande de citoyenneté : remplissez toutes les rubriques."
+      - text: "Joignez une copie de votre permis ou de votre passeport."
+      - text: "La procédure prend environ six mois."
+      - text: "Le dossier est examiné par l’administration."
+    questions:
+      - id: "fr-2062"
+        prompt: { en: "What must the applicant fill in?" }
+        options:
+          - { en: "Only the first box" }
+          - { en: "All the boxes" }
+          - { en: "Nothing" }
+        answer: 2
+      - id: "fr-2063"
+        prompt: { en: "What can the applicant attach?" }
+        options:
+          - { en: "A copy of a licence or a passport" }
+          - { en: "A bill" }
+          - { en: "A photograph of a cat" }
+        answer: 1
+      - id: "fr-2064"
+        prompt: { en: "How long does the procedure take?" }
+        options:
+          - { en: "About six months" }
+          - { en: "One day" }
+          - { en: "Two years" }
+        answer: 1

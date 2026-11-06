@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-news"
+name: "Reading: news"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about news. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-headline-list"
+    title: "A list of newspaper headlines"
+    theme: "news"
+    sentences:
+      - text: "Élection : les résultats seront publiés demain."
+      - text: "Économie : la crise recule un peu."
+      - text: "Sport : un record dans la piscine de Lyon."
+      - text: "Météo : beau temps pour le week-end."
+    questions:
+      - id: "fr-1860"
+        prompt: { en: "When will the election results be published?" }
+        options:
+          - { en: "Today" }
+          - { en: "Tomorrow" }
+          - { en: "Next week" }
+        answer: 2
+      - id: "fr-1861"
+        prompt: { en: "What is happening with the crisis?" }
+        options:
+          - { en: "It is growing" }
+          - { en: "It is getting smaller" }
+          - { en: "It has ended" }
+        answer: 2
+      - id: "fr-1862"
+        prompt: { en: "What is the sport news?" }
+        options:
+          - { en: "A record in a swimming pool" }
+          - { en: "A football final" }
+          - { en: "A cycling race" }
+        answer: 1

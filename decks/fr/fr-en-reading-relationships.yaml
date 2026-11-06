@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-relationships"
+name: "Reading: relationships"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about relationships. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-thank-you-note"
+    title: "A thank-you note to a neighbour"
+    theme: "relationships"
+    sentences:
+      - text: "Cher voisin,"
+      - text: "Merci pour votre aide hier soir. Vous avez été très gentil avec nous."
+      - text: "Nous sommes désolés pour le bruit, et nous vous invitons à dîner dimanche."
+      - text: "Avec toute notre amitié, Claire et Paul."
+    questions:
+      - id: "fr-2473"
+        prompt: { en: "What did the neighbour do?" }
+        options:
+          - { en: "Helped the writers" }
+          - { en: "Moved away" }
+          - { en: "Made a complaint" }
+        answer: 1
+      - id: "fr-2474"
+        prompt: { en: "What do the writers invite the neighbour to?" }
+        options:
+          - { en: "Dinner on Sunday" }
+          - { en: "A football match" }
+          - { en: "A wedding" }
+        answer: 1
+      - id: "fr-2475"
+        prompt: { en: "How do the writers sign off?" }
+        options:
+          - { en: "With friendship" }
+          - { en: "With anger" }
+          - { en: "With an apology only" }
+        answer: 1

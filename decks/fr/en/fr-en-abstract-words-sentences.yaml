@@ -1,0 +1,53 @@
+schema: 1
+id: "fr-en-abstract-words-sentences"
+kind: "layer"
+core: "fr-abstract-words-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: abstract words"
+license: "CC-BY-SA-4.0"
+description: "Sentences about abstract words, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2704":
+    native: "The meaning of the truth is not clear."
+    bases:
+      "de": "of, from, some"
+      "pas": "not"
+      "clair": "clear"
+    confusables:
+      "mensonge": { why: "A lie is the opposite of truth; the sentence says the truth is not clear." }
+      "valeur": { why: "Value is not named; the sentence is about meaning and truth." }
+  "fr-2705":
+    native: "There is a big difference between reality and imagination."
+    bases:
+      "y": "there"
+    confusables:
+      "ressemblance": { why: "Resemblance is the opposite of difference; the sentence names difference." }
+      "incertitude": { why: "Uncertainty is not named; the sentence names reality and imagination." }
+  "fr-2706":
+    native: "Chance and luck decide the future."
+    bases:
+      "de": "of, from, some"
+    confusables:
+      "destin": { why: "Fate is close to chance; the sentence names both chance and luck." }
+      "possibilite": { why: "A possibility is a chance; the sentence names chance and luck." }
+  "fr-2707":
+    native: "It is a necessary principle for balance."
+    confusables:
+      "impossible": { why: "Impossible is the opposite of necessary in the sentence." }
+      "ideal": { why: "An ideal is a goal; the sentence names a principle." }
+  "fr-2708":
+    native: "Mess is useless, we need order."
+    bases:
+      "faut": "must"
+      "de": "of, from, some"
+    confusables:
+      "equilibre": { why: "Balance is not named; the sentence is about order and mess." }
+      "force": { why: "Strength is not named; the sentence is about order and mess." }
+  "fr-2709":
+    native: "The quality and value of this fault are very different."
+    bases:
+      "de": "of, from, some"
+    confusables:
+      "difference": { why: "Difference is named generally; the sentence names quality and value." }
+      "semblable": { why: "Similar is the opposite of different in the sentence." }

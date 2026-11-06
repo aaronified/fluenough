@@ -1,0 +1,396 @@
+schema: 1
+id: "fr-opinions"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "opinions"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1865"
+    target: "avis"
+    ipa: "avi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "À mon avis, c'est une bonne idée.", ipa: "a mɔ̃ n avi sɛ tyn bɔn ide", bases: [{ word: "À", base: "à" }, { word: "mon", ref: "fr-0037" }, { word: "avis", base: "avis" }, { word: "c'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "bonne", ref: "fr-0040" }, { word: "idée", ref: "fr-0683" }] }
+      - { target: "Donnez-moi votre avis.", ipa: "dɔne mwa vɔtʁ avi", bases: [{ word: "Donnez-moi", ref: "fr-0302" }, { word: "votre", ref: "fr-0140" }, { word: "avis", base: "avis" }] }
+  - id: "fr-1866"
+    target: "opinion"
+    ipa: "ɔpinjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Chacun a son opinion.", ipa: "ʃakœ̃ a sɔ̃ n ɔpinjɔ̃", bases: [{ word: "Chacun", ref: "fr-0395" }, { word: "a", ref: "fr-0022" }, { word: "son", ref: "fr-0138" }, { word: "opinion", base: "opinion" }] }
+      - { target: "Son opinion change souvent.", ipa: "sɔ̃ n ɔpinjɔ̃ ʃɑ̃ʒ suvɑ̃", bases: [{ word: "Son", ref: "fr-0138" }, { word: "opinion", base: "opinion" }, { word: "change", ref: "fr-0526" }, { word: "souvent", ref: "fr-0326" }] }
+  - id: "fr-1867"
+    target: "point de vue"
+    ipa: "pwɛ̃ də vy"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "De mon point de vue, c'est juste.", ipa: "də mɔ̃ pwɛ̃ də vy sɛ ʒyst", bases: [{ word: "De", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "point", base: "point" }, { word: "vue", base: "vue" }, { word: "c'est", ref: "fr-0021" }, { word: "juste", ref: "fr-1896" }] }
+      - { target: "Chacun a un point de vue différent.", ipa: "ʃakœ̃ a œ̃ pwɛ̃ də vy difeʁɑ̃", bases: [{ word: "Chacun", ref: "fr-0395" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "point", base: "point" }, { word: "de", base: "de" }, { word: "vue", base: "vue" }, { word: "différent", base: "différent" }] }
+  - id: "fr-1868"
+    target: "accord"
+    ipa: "akɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis d'accord avec toi.", ipa: "ʒə sɥi dakɔʁ avɛk twa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "d'accord", base: "accord" }, { word: "avec", ref: "fr-0590" }, { word: "toi", ref: "fr-0134" }] }
+      - { target: "Nous avons conclu un accord.", ipa: "nu zavɔ̃ kɔ̃kly œ̃ nakɔʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "conclu", base: "conclure" }, { word: "un", ref: "fr-0208" }, { word: "accord", base: "accord" }] }
+  - id: "fr-1869"
+    target: "désaccord"
+    ipa: "dezakɔʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il y a un désaccord entre eux.", ipa: "il i a œ̃ dezakɔʁ ɑ̃tʁ ø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "désaccord", base: "désaccord" }, { word: "entre", ref: "fr-0470" }, { word: "eux", ref: "fr-0136" }] }
+      - { target: "Leur désaccord dure depuis longtemps.", ipa: "lœʁ dezakɔʁ dyʁ dəpɥi lɔ̃tɑ̃", bases: [{ word: "Leur", ref: "fr-0142" }, { word: "désaccord", base: "désaccord" }, { word: "dure", ref: "fr-1131" }, { word: "depuis", base: "depuis" }, { word: "longtemps", ref: "fr-0357" }] }
+  - id: "fr-1870"
+    target: "argument"
+    ipa: "aʁɡymɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son argument est logique.", ipa: "sɔ̃ naʁɡymɑ̃ ɛ lɔʒik", bases: [{ word: "Son", ref: "fr-0138" }, { word: "argument", base: "argument" }, { word: "est", ref: "fr-0021" }, { word: "logique", ref: "fr-1883" }] }
+      - { target: "Je n'ai pas d'argument à donner.", ipa: "ʒə nɛ pa daʁɡymɑ̃ a dɔne", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'ai", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "d'argument", base: "argument" }, { word: "à", base: "à" }, { word: "donner", ref: "fr-0302" }] }
+  - id: "fr-1871"
+    target: "raison"
+    ipa: "ʁɛzɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu as raison, il faut partir.", ipa: "ty a ʁɛzɔ̃ il fo paʁtiʁ", bases: [{ word: "Tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "raison", base: "raison" }, { word: "il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "partir", ref: "fr-0304" }] }
+      - { target: "Quelle est la raison de ce choix ?", ipa: "kɛl ɛ la ʁɛzɔ̃ də sə ʃwa", bases: [{ word: "Quelle", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "la", ref: "fr-0544" }, { word: "raison", base: "raison" }, { word: "de", base: "de" }, { word: "ce", ref: "fr-0143" }, { word: "choix", base: "choix" }] }
+  - id: "fr-1872"
+    target: "doute"
+    ipa: "dut"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a des doutes sur le projet.", ipa: "il a de dut syʁ lə pʁɔʒɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "doutes", base: "doute" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "projet", ref: "fr-0682" }] }
+      - { target: "Sans doute, il viendra demain.", ipa: "sɑ̃ dut il vjɛ̃dʁa dəmɛ̃", bases: [{ word: "Sans", ref: "fr-0592" }, { word: "doute", base: "doute" }, { word: "il", ref: "fr-0127" }, { word: "viendra", ref: "fr-0285" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1873"
+    target: "approuver"
+    ipa: "apʁuve"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je n'approuve pas cette décision.", ipa: "ʒə napʁuv pa sɛt desizjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'approuve", base: "approuver" }, { word: "pas", base: "pas" }, { word: "cette", ref: "fr-0144" }, { word: "décision", base: "décision" }] }
+      - { target: "Le comité approuve le plan.", ipa: "lə kɔmite apʁuv lə plɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "comité", base: "comité" }, { word: "approuve", base: "approuver" }, { word: "plan", ref: "fr-0907" }] }
+  - id: "fr-1874"
+    target: "critiquer"
+    ipa: "kʁitike"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il critique le gouvernement.", ipa: "il kʁitik lə ɡuvɛʁnəmɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "critique", base: "critiquer" }, { word: "le", ref: "fr-0543" }, { word: "gouvernement", base: "gouvernement" }] }
+      - { target: "Ne critiquez pas les autres.", ipa: "nə kʁitike pa lezotʁ", bases: [{ word: "Ne", base: "ne" }, { word: "critiquez", base: "critiquer" }, { word: "pas", base: "pas" }, { word: "les", ref: "fr-0543" }, { word: "autres", base: "autre" }] }
+  - id: "fr-1875"
+    target: "discuter"
+    ipa: "diskyte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous discutons du projet.", ipa: "nu diskytɔ̃ dy pʁɔʒɛ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "discutons", base: "discuter" }, { word: "du", base: "de" }, { word: "projet", ref: "fr-0682" }] }
+      - { target: "Ils discutent toute la soirée.", ipa: "il diskyt tut la swaʁe", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "discutent", base: "discuter" }, { word: "toute", ref: "fr-0372" }, { word: "la", ref: "fr-0544" }, { word: "soirée", ref: "fr-1100" }] }
+  - id: "fr-1876"
+    target: "défendre"
+    ipa: "defɑ̃dʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle défend ses idées.", ipa: "ɛl defɑ̃ se zide", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "défend", base: "défendre" }, { word: "ses", ref: "fr-0138" }, { word: "idées", ref: "fr-0683" }] }
+      - { target: "Je défends le droit de parler.", ipa: "ʒə defɑ̃ lə dʁwa də paʁle", bases: [{ word: "Je", ref: "fr-0126" }, { word: "défends", base: "défendre" }, { word: "le", ref: "fr-0543" }, { word: "droit", ref: "fr-0894" }, { word: "de", base: "de" }, { word: "parler", ref: "fr-0023" }] }
+  - id: "fr-1877"
+    target: "contester"
+    ipa: "kɔ̃tɛste"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il conteste la décision du juge.", ipa: "il kɔ̃tɛst la desizjɔ̃ dy ʒyʒ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "conteste", base: "contester" }, { word: "la", ref: "fr-0544" }, { word: "décision", base: "décision" }, { word: "du", base: "de" }, { word: "juge", ref: "fr-1879" }] }
+      - { target: "On peut contester cette idée.", ipa: "ɔ̃ pø kɔ̃tɛste sɛt ide", bases: [{ word: "On", ref: "fr-0132" }, { word: "peut", ref: "fr-0500" }, { word: "contester", base: "contester" }, { word: "cette", ref: "fr-0144" }, { word: "idée", ref: "fr-0683" }] }
+  - id: "fr-1878"
+    target: "soutenir"
+    ipa: "sutniʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je soutiens ton projet.", ipa: "ʒə sutjɛ̃ tɔ̃ pʁɔʒɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "soutiens", base: "soutenir" }, { word: "ton", ref: "fr-0141" }, { word: "projet", ref: "fr-0682" }] }
+      - { target: "Ses amis le soutiennent.", ipa: "se zami lə sutjɛn", bases: [{ word: "Ses", ref: "fr-0138" }, { word: "amis", ref: "fr-0100" }, { word: "le", ref: "fr-0543" }, { word: "soutiennent", base: "soutenir" }] }
+  - id: "fr-1879"
+    target: "juger"
+    ipa: "ʒyʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je juge son travail très bon.", ipa: "ʒə ʒyʒ sɔ̃ tʁavaj tʁɛ bɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "juge", base: "juger" }, { word: "son", ref: "fr-0138" }, { word: "travail", ref: "fr-0255" }, { word: "très", ref: "fr-0031" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "Il ne faut pas juger les gens.", ipa: "il nə fo pa ʒyʒe le ʒɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "ne", base: "ne" }, { word: "faut", base: "falloir" }, { word: "pas", base: "pas" }, { word: "juger", base: "juger" }, { word: "les", ref: "fr-0543" }, { word: "gens", base: "gens" }] }
+  - id: "fr-1880"
+    target: "admettre"
+    ipa: "admɛtʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'admets mon erreur.", ipa: "ʒadmɛ mɔ̃ nɛʁœʁ", bases: [{ word: "J'admets", base: "admettre" }, { word: "mon", ref: "fr-0037" }, { word: "erreur", base: "erreur" }] }
+      - { target: "Il admet qu'il a tort.", ipa: "il admɛ kil a tɔʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "admet", base: "admettre" }, { word: "qu'il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "tort", base: "tort" }] }
+  - id: "fr-1881"
+    target: "refuser"
+    ipa: "ʁəfyze"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il refuse de changer d'avis.", ipa: "il ʁəfyz də ʃɑ̃ʒe davi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "refuse", base: "refuser" }, { word: "de", base: "de" }, { word: "changer", ref: "fr-0526" }, { word: "d'avis", ref: "fr-1865" }] }
+      - { target: "Je refuse cette idée.", ipa: "ʒə ʁəfyz sɛt ide", bases: [{ word: "Je", ref: "fr-0126" }, { word: "refuse", base: "refuser" }, { word: "cette", ref: "fr-0144" }, { word: "idée", ref: "fr-0683" }] }
+  - id: "fr-1882"
+    target: "injuste"
+    ipa: "ɛ̃ʒyst"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une règle injuste.", ipa: "sɛ tyn ʁɛɡl ɛ̃ʒyst", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "règle", ref: "fr-1365" }, { word: "injuste", base: "injuste" }] }
+      - { target: "La décision est injuste pour tous.", ipa: "la desizjɔ̃ ɛ ɛ̃ʒyst puʁ tus", bases: [{ word: "La", ref: "fr-0544" }, { word: "décision", base: "décision" }, { word: "est", ref: "fr-0021" }, { word: "injuste", base: "injuste" }, { word: "pour", ref: "fr-0591" }, { word: "tous", ref: "fr-0372" }] }
+  - id: "fr-1883"
+    target: "logique"
+    ipa: "lɔʒik"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ton raisonnement est logique.", ipa: "tɔ̃ ʁɛzɔnmɑ̃ ɛ lɔʒik", bases: [{ word: "Ton", ref: "fr-0141" }, { word: "raisonnement", base: "raisonnement" }, { word: "est", ref: "fr-0021" }, { word: "logique", base: "logique" }] }
+      - { target: "Ce n'est pas très logique.", ipa: "sə nɛ pa tʁɛ lɔʒik", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "n'est", ref: "fr-0021" }, { word: "pas", base: "pas" }, { word: "très", ref: "fr-0031" }, { word: "logique", base: "logique" }] }
+  - id: "fr-1884"
+    target: "discutable"
+    ipa: "diskytabl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son idée est discutable.", ipa: "sɔ̃ nide ɛ diskytabl", bases: [{ word: "Son", ref: "fr-0138" }, { word: "idée", ref: "fr-0683" }, { word: "est", ref: "fr-0021" }, { word: "discutable", base: "discutable" }] }
+      - { target: "Le résultat reste discutable.", ipa: "lə ʁezylta ʁɛst diskytabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "résultat", base: "résultat" }, { word: "reste", ref: "fr-0514" }, { word: "discutable", base: "discutable" }] }
+  - id: "fr-1885"
+    target: "évident"
+    ipa: "evidɑ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est évident pour tout le monde.", ipa: "sɛ tevidɑ̃ puʁ tu lə mɔ̃d", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "évident", base: "évident" }, { word: "pour", ref: "fr-0591" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "monde", base: "monde" }] }
+      - { target: "La réponse est évidente.", ipa: "la ʁepɔ̃s ɛ evidɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "réponse", ref: "fr-1594" }, { word: "est", ref: "fr-0021" }, { word: "évidente", base: "évident" }] }
+  - id: "fr-1886"
+    target: "possible"
+    ipa: "pɔsibl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce n'est pas possible.", ipa: "sə nɛ pa pɔsibl", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "n'est", ref: "fr-0021" }, { word: "pas", base: "pas" }, { word: "possible", base: "possible" }] }
+      - { target: "Une autre solution est possible.", ipa: "yn otʁ sɔlysjɔ̃ ɛ pɔsibl", bases: [{ word: "Une", ref: "fr-0545" }, { word: "autre", base: "autre" }, { word: "solution", base: "solution" }, { word: "est", ref: "fr-0021" }, { word: "possible", base: "possible" }] }
+  - id: "fr-1887"
+    target: "certain"
+    ipa: "sɛʁtɛ̃"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je suis certain de mon choix.", ipa: "ʒə sɥi sɛʁtɛ̃ də mɔ̃ ʃwa", bases: [{ word: "Je", ref: "fr-0126" }, { word: "suis", ref: "fr-0021" }, { word: "certain", base: "certain" }, { word: "de", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "choix", base: "choix" }] }
+      - { target: "C'est une idée certaine.", ipa: "sɛ tyn ide sɛʁtɛn", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "idée", ref: "fr-0683" }, { word: "certaine", base: "certain" }] }
+  - id: "fr-1888"
+    target: "raisonnable"
+    ipa: "ʁɛzɔnabl"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une demande raisonnable.", ipa: "sɛ tyn dəmɑ̃d ʁɛzɔnabl", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "demande", ref: "fr-0521" }, { word: "raisonnable", base: "raisonnable" }] }
+      - { target: "Il faut être raisonnable.", ipa: "il fo ɛtʁ ʁɛzɔnabl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "faut", base: "falloir" }, { word: "être", ref: "fr-0021" }, { word: "raisonnable", base: "raisonnable" }] }
+  - id: "fr-1889"
+    target: "débat"
+    ipa: "deba"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le débat est très animé.", ipa: "lə deba ɛ tʁɛ anime", bases: [{ word: "Le", ref: "fr-0543" }, { word: "débat", base: "débat" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "animé", base: "animé" }] }
+      - { target: "Ce débat dure depuis des mois.", ipa: "sə deba dyʁ dəpɥi de mwa", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "débat", base: "débat" }, { word: "dure", ref: "fr-1131" }, { word: "depuis", base: "depuis" }, { word: "des", ref: "fr-0546" }, { word: "mois", ref: "fr-1165" }] }
+  - id: "fr-1890"
+    target: "conviction"
+    ipa: "kɔ̃viksjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une forte conviction.", ipa: "il a yn fɔʁt kɔ̃viksjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "forte", ref: "fr-0425" }, { word: "conviction", base: "conviction" }] }
+      - { target: "Sa conviction est sincère.", ipa: "sa kɔ̃viksjɔ̃ ɛ sɛ̃sɛʁ", bases: [{ word: "Sa", ref: "fr-0138" }, { word: "conviction", base: "conviction" }, { word: "est", ref: "fr-0021" }, { word: "sincère", base: "sincère" }] }
+  - id: "fr-1891"
+    target: "préjugé"
+    ipa: "pʁeʒyʒe"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il combat les préjugés.", ipa: "il kɔ̃bat le pʁeʒyʒe", bases: [{ word: "Il", ref: "fr-0127" }, { word: "combat", base: "combattre" }, { word: "les", ref: "fr-0543" }, { word: "préjugés", base: "préjugé" }] }
+      - { target: "Ce préjugé est faux.", ipa: "sə pʁeʒyʒe ɛ fo", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "préjugé", base: "préjugé" }, { word: "est", ref: "fr-0021" }, { word: "faux", ref: "fr-1849" }] }
+  - id: "fr-1892"
+    target: "justice"
+    ipa: "ʒystis"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La justice doit être égale.", ipa: "la ʒystis dwa ɛtʁ eɡal", bases: [{ word: "La", ref: "fr-0544" }, { word: "justice", base: "justice" }, { word: "doit", ref: "fr-0501" }, { word: "être", ref: "fr-0021" }, { word: "égale", base: "égal" }] }
+      - { target: "Il attend la justice.", ipa: "il atɑ̃ la ʒystis", bases: [{ word: "Il", ref: "fr-0127" }, { word: "attend", ref: "fr-0303" }, { word: "la", ref: "fr-0544" }, { word: "justice", base: "justice" }] }
+  - id: "fr-1893"
+    target: "liberté"
+    ipa: "libɛʁte"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La liberté d'expression est importante.", ipa: "la libɛʁte dɛkspʁesjɔ̃ ɛ ɛ̃pɔʁtɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "liberté", base: "liberté" }, { word: "d'expression", base: "expression" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+      - { target: "Ils luttent pour la liberté.", ipa: "il lyt puʁ la libɛʁte", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "luttent", base: "lutter" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "liberté", base: "liberté" }] }
+  - id: "fr-1894"
+    target: "respect"
+    ipa: "ʁɛspɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il montre du respect aux autres.", ipa: "il mɔ̃tʁ dy ʁɛspɛ o zotʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "montre", ref: "fr-1120" }, { word: "du", base: "de" }, { word: "respect", base: "respect" }, { word: "aux", base: "à" }, { word: "autres", base: "autre" }] }
+      - { target: "Le respect des règles est important.", ipa: "lə ʁɛspɛ de ʁɛɡl ɛ ɛ̃pɔʁtɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "respect", base: "respect" }, { word: "des", ref: "fr-0546" }, { word: "règles", ref: "fr-1365" }, { word: "est", ref: "fr-0021" }, { word: "important", ref: "fr-0443" }] }
+  - id: "fr-1895"
+    target: "tolérance"
+    ipa: "tɔleʁɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La tolérance est une vertu.", ipa: "la tɔleʁɑ̃s ɛ yn vɛʁty", bases: [{ word: "La", ref: "fr-0544" }, { word: "tolérance", base: "tolérance" }, { word: "est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "vertu", base: "vertu" }] }
+      - { target: "Il pratique la tolérance.", ipa: "il pʁatik la tɔleʁɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "pratique", base: "pratiquer" }, { word: "la", ref: "fr-0544" }, { word: "tolérance", base: "tolérance" }] }
+  - id: "fr-1896"
+    target: "juste"
+    ipa: "ʒyst"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une décision juste.", ipa: "sɛ tyn desizjɔ̃ ʒyst", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "décision", base: "décision" }, { word: "juste", base: "juste" }] }
+      - { target: "Le prix est juste.", ipa: "lə pʁi ɛ ʒyst", bases: [{ word: "Le", ref: "fr-0543" }, { word: "prix", ref: "fr-0737" }, { word: "est", ref: "fr-0021" }, { word: "juste", base: "juste" }] }
+  - id: "fr-1897"
+    target: "probablement"
+    ipa: "pʁɔbabləmɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a probablement raison.", ipa: "il a pʁɔbabləmɑ̃ ʁɛzɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "probablement", base: "probablement" }, { word: "raison", ref: "fr-1871" }] }
+      - { target: "Elle viendra probablement demain.", ipa: "ɛl vjɛ̃dʁa pʁɔbabləmɑ̃ dəmɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "viendra", ref: "fr-0285" }, { word: "probablement", base: "probablement" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1898"
+    target: "peut-être"
+    ipa: "pøtɛtʁ"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Peut-être que tu as raison.", ipa: "pøtɛtʁ kə ty a ʁɛzɔ̃", bases: [{ word: "Peut-être", base: "peut-être" }, { word: "que", base: "que" }, { word: "tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "raison", ref: "fr-1871" }] }
+      - { target: "Peut-être demain, peut-être pas.", ipa: "pøtɛtʁ dəmɛ̃ pøtɛtʁ pa", bases: [{ word: "Peut-être", base: "peut-être" }, { word: "demain", ref: "fr-0078" }, { word: "pas", base: "pas" }] }
+  - id: "fr-1899"
+    target: "sûrement"
+    ipa: "syʁmɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce sera sûrement vrai.", ipa: "sə səʁa syʁmɑ̃ vʁɛ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "sera", ref: "fr-0021" }, { word: "sûrement", base: "sûrement" }, { word: "vrai", ref: "fr-1901" }] }
+      - { target: "Elle a sûrement raison.", ipa: "ɛl a syʁmɑ̃ ʁɛzɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "sûrement", base: "sûrement" }, { word: "raison", ref: "fr-1871" }] }
+  - id: "fr-1900"
+    target: "évidemment"
+    ipa: "evidamɑ̃"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Évidemment, tu as raison.", ipa: "evidamɑ̃ ty a ʁɛzɔ̃", bases: [{ word: "Évidemment", base: "évidemment" }, { word: "tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "raison", ref: "fr-1871" }] }
+      - { target: "Il vient évidemment ce soir.", ipa: "il vjɛ̃ evidamɑ̃ sə swaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "vient", ref: "fr-0285" }, { word: "évidemment", base: "évidemment" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-1901"
+    target: "vrai"
+    ipa: "vʁɛ"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est vrai, tu as raison.", ipa: "sɛ vʁɛ ty a ʁɛzɔ̃", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "vrai", base: "vrai" }, { word: "tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "raison", ref: "fr-1871" }] }
+      - { target: "C'est une vraie question.", ipa: "sɛ tyn vʁɛ kɛstjɔ̃", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "vraie", base: "vrai" }, { word: "question", ref: "fr-1593" }] }
+

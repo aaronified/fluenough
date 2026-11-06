@@ -1,0 +1,249 @@
+schema: 1
+id: "fr-housing"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "housing"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2476"
+    target: "logement"
+    ipa: "lɔʒmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je cherche un logement.", ipa: "ʒə ʃɛʁʃ œ̃ lɔʒmɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "cherche", ref: "fr-0300" }, { word: "un", ref: "fr-0208" }, { word: "logement", base: "logement" }] }
+      - { target: "Le logement est très cher.", ipa: "lə lɔʒmɑ̃ ɛ tʁɛ ʃɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "logement", base: "logement" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "cher", ref: "fr-0104" }] }
+  - id: "fr-2477"
+    target: "loyer"
+    ipa: "lwaje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le loyer est de huit cents euros.", ipa: "lə lwaje ɛ də ɥit sɑ̃ øʁo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "loyer", base: "loyer" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "huit", ref: "fr-0215" }, { word: "cents", ref: "fr-0709" }, { word: "euros", ref: "fr-1451" }] }
+      - { target: "Je paie mon loyer le premier.", ipa: "ʒə pe mɔ̃ lwaje lə pʁəmje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", ref: "fr-0310" }, { word: "mon", ref: "fr-0037" }, { word: "loyer", base: "loyer" }, { word: "le", ref: "fr-0543" }, { word: "premier", ref: "fr-0905" }] }
+  - id: "fr-2478"
+    target: "locataire"
+    ipa: "lɔkatɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le locataire paie le loyer.", ipa: "lə lɔkatɛʁ pe lə lwaje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "locataire", base: "locataire" }, { word: "paie", ref: "fr-0310" }, { word: "loyer", ref: "fr-2477" }] }
+      - { target: "Ma sœur est locataire.", ipa: "ma sœʁ ɛ lɔkatɛʁ", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "locataire", base: "locataire" }] }
+  - id: "fr-2479"
+    target: "propriétaire"
+    ipa: "pʁɔpʁijetɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le propriétaire répare la porte.", ipa: "lə pʁɔpʁijetɛʁ ʁepaʁ la pɔʁt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "propriétaire", base: "propriétaire" }, { word: "répare", ref: "fr-1128" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+      - { target: "Elle est propriétaire de la maison.", ipa: "ɛl ɛ pʁɔpʁijetɛʁ də la mɛzɔ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "propriétaire", base: "propriétaire" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }] }
+  - id: "fr-2480"
+    target: "bail"
+    ipa: "baj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le bail dure trois ans.", ipa: "lə baj dyʁ tʁwa ɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bail", base: "bail" }, { word: "dure", ref: "fr-1131" }, { word: "trois", ref: "fr-0210" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Nous signons le bail demain.", ipa: "nu siɲɔ̃ lə baj dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "signons", ref: "fr-1987" }, { word: "le", ref: "fr-0543" }, { word: "bail", base: "bail" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2481"
+    target: "caution"
+    ipa: "kosjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La caution est de deux mois de loyer.", ipa: "la kosjɔ̃ ɛ də dø mwa də lwaje", bases: [{ word: "La", ref: "fr-0544" }, { word: "caution", base: "caution" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "deux", ref: "fr-0209" }, { word: "mois", ref: "fr-1165" }, { word: "loyer", ref: "fr-2477" }] }
+      - { target: "Je rends la caution à la fin.", ipa: "ʒə ʁɑ̃ la kosjɔ̃ a la fɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rends", ref: "fr-1616" }, { word: "la", ref: "fr-0544" }, { word: "caution", base: "caution" }, { word: "à", base: "à" }, { word: "fin", ref: "fr-1110" }] }
+  - id: "fr-2482"
+    target: "ascenseur"
+    ipa: "asɑ̃sœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'ascenseur est en panne.", ipa: "lasɑ̃sœʁ ɛ ɑ̃ pan", bases: [{ word: "L'ascenseur", base: "ascenseur" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "panne", base: "panne" }] }
+      - { target: "Nous prenons l'ascenseur.", ipa: "nu pʁənɔ̃ lasɑ̃sœʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "prenons", ref: "fr-0288" }, { word: "l'ascenseur", base: "ascenseur" }] }
+  - id: "fr-2483"
+    target: "salle de bains"
+    ipa: "sal də bɛ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La salle de bains est petite.", ipa: "la sal də bɛ̃ ɛ pəti", bases: [{ word: "La", ref: "fr-0544" }, { word: "salle", ref: "fr-1014" }, { word: "de", base: "de" }, { word: "bains", ref: "fr-1107" }, { word: "est", ref: "fr-0021" }, { word: "petite", ref: "fr-0411" }] }
+      - { target: "Je prends une douche dans la salle de bains.", ipa: "ʒə pʁɑ̃ yn duʃ dɑ̃ la sal də bɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "douche", ref: "fr-1009" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "salle", ref: "fr-1014" }, { word: "de", base: "de" }, { word: "bains", ref: "fr-1107" }] }
+  - id: "fr-2484"
+    target: "grenier"
+    ipa: "ɡʁənje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les vieux livres sont au grenier.", ipa: "le vjø livʁ sɔ̃ o ɡʁənje", bases: [{ word: "Les", ref: "fr-0543" }, { word: "vieux", ref: "fr-0109" }, { word: "livres", ref: "fr-1363" }, { word: "sont", ref: "fr-0021" }, { word: "au", base: "à" }, { word: "grenier", base: "grenier" }] }
+      - { target: "Le grenier est plein de cartons.", ipa: "lə ɡʁənje ɛ plɛ̃ də kaʁtɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "grenier", base: "grenier" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }, { word: "de", base: "de" }, { word: "cartons", base: "carton" }] }
+  - id: "fr-2485"
+    target: "cave"
+    ipa: "kav"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La cave est froide.", ipa: "la kav ɛ fʁwad", bases: [{ word: "La", ref: "fr-0544" }, { word: "cave", base: "cave" }, { word: "est", ref: "fr-0021" }, { word: "froide", ref: "fr-0420" }] }
+      - { target: "Nous rangeons le vin dans la cave.", ipa: "nu ʁɑ̃ʒɔ̃ lə vɛ̃ dɑ̃ la kav", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "rangeons", ref: "fr-2497" }, { word: "le", ref: "fr-0543" }, { word: "vin", ref: "fr-0035" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "cave", base: "cave" }] }
+  - id: "fr-2486"
+    target: "meuble"
+    ipa: "mœbl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce meuble est très lourd.", ipa: "sə mœbl ɛ tʁɛ luʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "meuble", base: "meuble" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "lourd", ref: "fr-0442" }] }
+      - { target: "La chambre a trois meubles.", ipa: "la ʃɑ̃bʁ a tʁwa mœbl", bases: [{ word: "La", ref: "fr-0544" }, { word: "chambre", ref: "fr-0998" }, { word: "a", ref: "fr-0022" }, { word: "trois", ref: "fr-0210" }, { word: "meubles", base: "meuble" }] }
+  - id: "fr-2487"
+    target: "armoire"
+    ipa: "aʁmwaʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'armoire est pleine de vêtements.", ipa: "laʁmwaʁ ɛ plɛn də vɛtmɑ̃", bases: [{ word: "L'armoire", base: "armoire" }, { word: "est", ref: "fr-0021" }, { word: "pleine", ref: "fr-0439" }, { word: "de", base: "de" }, { word: "vêtements", ref: "fr-1224" }] }
+      - { target: "Ranges les draps dans l'armoire.", ipa: "ʁɑ̃ʒ le dʁa dɑ̃ laʁmwaʁ", bases: [{ word: "Ranges", ref: "fr-2497" }, { word: "les", ref: "fr-0543" }, { word: "draps", base: "drap" }, { word: "dans", ref: "fr-0049" }, { word: "l'armoire", base: "armoire" }] }
+  - id: "fr-2488"
+    target: "étagère"
+    ipa: "etaʒɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'étagère est en bois.", ipa: "letaʒɛʁ ɛ ɑ̃ bwa", bases: [{ word: "L'étagère", base: "étagère" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "bois", base: "bois" }] }
+      - { target: "Je mets les livres sur l'étagère.", ipa: "ʒə mɛ le livʁ syʁ letaʒɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "les", ref: "fr-0543" }, { word: "livres", ref: "fr-1363" }, { word: "sur", ref: "fr-0469" }, { word: "l'étagère", base: "étagère" }] }
+  - id: "fr-2489"
+    target: "plafond"
+    ipa: "plafɔ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le plafond est très haut.", ipa: "lə plafɔ̃ ɛ tʁɛ o", bases: [{ word: "Le", ref: "fr-0543" }, { word: "plafond", base: "plafond" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "haut", ref: "fr-0423" }] }
+      - { target: "Il y a une tache au plafond.", ipa: "il i a yn taʃ o plafɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "y", base: "y" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "tache", base: "tache" }, { word: "au", base: "à" }, { word: "plafond", base: "plafond" }] }
+  - id: "fr-2490"
+    target: "chauffage"
+    ipa: "ʃofaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chauffage marche bien.", ipa: "lə ʃofaʒ maʁʃ bjɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chauffage", base: "chauffage" }, { word: "marche", ref: "fr-0306" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Le chauffage coûte cher en hiver.", ipa: "lə ʃofaʒ kut ʃɛʁ ɑ̃ ivɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chauffage", base: "chauffage" }, { word: "coûte", ref: "fr-0752" }, { word: "cher", ref: "fr-0104" }, { word: "en", base: "en" }, { word: "hiver", ref: "fr-1172" }] }
+  - id: "fr-2491"
+    target: "eau chaude"
+    ipa: "o ʃod"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'eau chaude est coupée.", ipa: "lo ʃod ɛ kupe", bases: [{ word: "L'eau", ref: "fr-0024" }, { word: "chaude", ref: "fr-0419" }, { word: "est", ref: "fr-0021" }, { word: "coupée", ref: "fr-1538" }] }
+      - { target: "Il n'y a pas d'eau chaude.", ipa: "il ny a pa do ʃod", bases: [{ word: "Il", ref: "fr-0127" }, { word: "n'y", base: "ne" }, { word: "a", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "d'eau", base: "eau" }, { word: "chaude", ref: "fr-0419" }] }
+  - id: "fr-2492"
+    target: "voisinage"
+    ipa: "vwazinaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le voisinage est calme.", ipa: "lə vwazinaʒ ɛ kalm", bases: [{ word: "Le", ref: "fr-0543" }, { word: "voisinage", base: "voisinage" }, { word: "est", ref: "fr-0021" }, { word: "calme", ref: "fr-0433" }] }
+      - { target: "Nous aimons le voisinage.", ipa: "nu zɛmɔ̃ lə vwazinaʒ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "aimons", ref: "fr-0263" }, { word: "le", ref: "fr-0543" }, { word: "voisinage", base: "voisinage" }] }
+  - id: "fr-2493"
+    target: "visite"
+    ipa: "vizit"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La visite de l'appartement est demain.", ipa: "la vizit də lapaʁtəmɑ̃ ɛ dəmɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "visite", base: "visite" }, { word: "de", base: "de" }, { word: "l'appartement", ref: "fr-0997" }, { word: "est", ref: "fr-0021" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Nous faisons une visite au propriétaire.", ipa: "nu fəzɔ̃ yn vizit o pʁɔpʁijetɛʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "faisons", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "visite", base: "visite" }, { word: "au", base: "à" }, { word: "propriétaire", ref: "fr-2479" }] }
+  - id: "fr-2494"
+    target: "déménager"
+    ipa: "demenaʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous déménageons en mai.", ipa: "nu demenaʒɔ̃ ɑ̃ mɛ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "déménageons", base: "déménager" }, { word: "en", base: "en" }, { word: "mai", ref: "fr-1156" }] }
+      - { target: "Il déménage dans une autre ville.", ipa: "il demenaʒ dɑ̃ zyn otʁ vil", bases: [{ word: "Il", ref: "fr-0127" }, { word: "déménage", base: "déménager" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "autre", base: "autre" }, { word: "ville", ref: "fr-0244" }] }
+  - id: "fr-2495"
+    target: "emménager"
+    ipa: "ɑ̃menaʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ils emménagent demain.", ipa: "il ɑ̃menaʒ dəmɛ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "emménagent", base: "emménager" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Elle emménage dans le quartier.", ipa: "ɛl ɑ̃menaʒ dɑ̃ lə kaʁtje", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "emménage", base: "emménager" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "quartier", ref: "fr-0981" }] }
+  - id: "fr-2496"
+    target: "louer"
+    ipa: "lwe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous louons un appartement.", ipa: "nu lwɔ̃ œ̃n apaʁtəmɑ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "louons", base: "louer" }, { word: "un", ref: "fr-0208" }, { word: "appartement", ref: "fr-0997" }] }
+      - { target: "Il loue une maison à la campagne.", ipa: "il lu yn mɛzɔ̃ a la kɑ̃paɲ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "loue", base: "louer" }, { word: "une", ref: "fr-0545" }, { word: "maison", ref: "fr-0996" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "campagne", base: "campagne" }] }
+  - id: "fr-2497"
+    target: "ranger"
+    ipa: "ʁɑ̃ʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je range ma chambre.", ipa: "ʒə ʁɑ̃ʒ ma ʃɑ̃bʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "range", base: "ranger" }, { word: "ma", ref: "fr-0037" }, { word: "chambre", ref: "fr-0998" }] }
+      - { target: "Rangez vos affaires, s'il vous plaît.", ipa: "ʁɑ̃ʒe vo afɛʁ sil vu plɛ", bases: [{ word: "Rangez", base: "ranger" }, { word: "vos", ref: "fr-0140" }, { word: "affaires", base: "affaire" }, { word: "s'il", ref: "fr-0127" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+

@@ -1,0 +1,384 @@
+schema: 1
+id: "fr-en-money"
+kind: "layer"
+core: "fr-money"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Money"
+license: "CC-BY-SA-4.0"
+description: "Forty words for money: how we earn, spend, save and borrow it, the shops and the bank, and the verbs for paying and owing. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2713":
+    native: "cash"
+    notes:
+      "n1": "Le liquide is cash, money in notes and coins; the adjective means liquid."
+    examples:
+      "Je paie en liquide.":
+        native: "I pay in cash."
+        bases:
+          "en": "in, by, as"
+          "liquide": "cash"
+      "Vous acceptez le liquide ?":
+        native: "Do you accept cash?"
+        bases:
+          "liquide": "cash"
+  "fr-2714":
+    native: "cheque"
+    notes:
+      "n1": "Un chèque is a written order to pay money from a bank account."
+    examples:
+      "Je paie par chèque.":
+        native: "I pay by cheque."
+        bases:
+          "chèque": "cheque"
+      "Le chèque est signé.":
+        native: "The cheque is signed."
+        bases:
+          "chèque": "cheque"
+  "fr-2715":
+    native: "bank card"
+    notes:
+      "n1": "Une carte bancaire lets you pay or take out money."
+    examples:
+      "Ma carte bancaire est dans mon sac.":
+        native: "My bank card is in my bag."
+        bases:
+          "bancaire": "bank"
+      "Vous payez par carte bancaire ?":
+        native: "Are you paying by bank card?"
+        bases:
+          "bancaire": "bank"
+  "fr-2716":
+    native: "debt"
+    notes:
+      "n1": "Une dette is an amount of money owed to someone."
+    examples:
+      "Il a une dette de mille euros.":
+        native: "He has a debt of a thousand euros."
+        bases:
+          "dette": "debt"
+          "de": "of, from, some"
+      "Elle rembourse sa dette.":
+        native: "She pays back her debt."
+        bases:
+          "dette": "debt"
+  "fr-2717":
+    native: "savings"
+    notes:
+      "n1": "L’épargne is the money kept aside for later."
+    examples:
+      "Son épargne est importante.":
+        native: "His savings are important."
+        bases:
+          "épargne": "savings"
+      "Je mets de l'argent dans l'épargne.":
+        native: "I put some money into savings."
+        bases:
+          "de": "of, from, some"
+          "l'épargne": "savings"
+  "fr-2718":
+    native: "investment"
+    notes:
+      "n1": "Un placement is money put somewhere to earn more money."
+    examples:
+      "Ce placement rapporte beaucoup.":
+        native: "This investment earns a lot."
+        bases:
+          "placement": "investment"
+          "rapporte": "brings in"
+      "Il fait un bon placement.":
+        native: "He makes a good investment."
+        bases:
+          "placement": "investment"
+  "fr-2719":
+    native: "investment"
+    notes:
+      "n1": "Un investissement is money spent to build something for the future."
+    examples:
+      "L'investissement coûte cher.":
+        native: "The investment costs a lot."
+        bases:
+          "L'investissement": "investment"
+      "Ce projet demande un gros investissement.":
+        native: "This project needs a big investment."
+        bases:
+          "gros": "big"
+          "investissement": "investment"
+  "fr-2720":
+    native: "credit, loan"
+    notes:
+      "n1": "Un crédit is money lent to someone to pay back later."
+    examples:
+      "Il prend un crédit pour la voiture.":
+        native: "He takes out a loan for the car."
+        bases:
+          "crédit": "credit, loan"
+      "Le crédit coûte cher.":
+        native: "Credit costs a lot."
+        bases:
+          "crédit": "credit, loan"
+  "fr-2721":
+    native: "interest"
+    notes:
+      "n1": "Un intérêt is the money paid for borrowing, or the interest in something."
+    examples:
+      "Les intérêts sont élevés.":
+        native: "The interest rates are high."
+        bases:
+          "intérêts": "interest"
+          "élevés": "high"
+      "Il montre un grand intérêt pour la finance.":
+        native: "He shows a great interest in finance."
+        bases:
+          "intérêt": "interest"
+          "finance": "finance"
+  "fr-2722":
+    native: "cost"
+    notes:
+      "n1": "Le coût is the price of something, what it costs."
+    examples:
+      "Le coût de la vie augmente.":
+        native: "The cost of living is rising."
+        bases:
+          "coût": "cost"
+          "de": "of, from, some"
+          "augmente": "rises"
+      "Quel est le coût du billet ?":
+        native: "What is the cost of the ticket?"
+        bases:
+          "coût": "cost"
+          "du": "some, of the"
+  "fr-2723":
+    native: "expense"
+    notes:
+      "n1": "Une dépense is money spent on something."
+    examples:
+      "Cette dépense est nécessaire.":
+        native: "This expense is necessary."
+      "Nos dépenses augmentent.":
+        native: "Our expenses are rising."
+        bases:
+          "dépenses": "expense"
+          "augmentent": "rise"
+  "fr-2724":
+    native: "income"
+    notes:
+      "n1": "Un revenu is the money someone receives regularly."
+    examples:
+      "Son revenu est stable.":
+        native: "His income is stable."
+        bases:
+          "revenu": "income"
+          "stable": "stable"
+      "Le revenu baisse cette année.":
+        native: "Income falls this year."
+        bases:
+          "revenu": "income"
+          "baisse": "falls"
+  "fr-2725":
+    native: "gain, winnings"
+    notes:
+      "n1": "Un gain is money won or earned."
+    examples:
+      "Le gain est de cent euros.":
+        native: "The gain is one hundred euros."
+        bases:
+          "gain": "gain, winnings"
+          "de": "of, from, some"
+      "Il a fait un gros gain au jeu.":
+        native: "He made a big gain at the game."
+        bases:
+          "gros": "big"
+          "gain": "gain, winnings"
+          "au": "at, to the"
+  "fr-2726":
+    native: "loss"
+    notes:
+      "n1": "Une perte is money or something lost."
+    examples:
+      "La perte est importante.":
+        native: "The loss is important."
+        bases:
+          "perte": "loss"
+      "L'entreprise subit une perte.":
+        native: "The company suffers a loss."
+        bases:
+          "subit": "suffers"
+          "perte": "loss"
+  "fr-2727":
+    native: "loan, borrowing"
+    notes:
+      "n1": "Un emprunt is money borrowed, or the act of borrowing."
+    examples:
+      "Cet emprunt dure vingt ans.":
+        native: "This loan lasts twenty years."
+        bases:
+          "emprunt": "loan, borrowing"
+      "Ils ont fait un emprunt immobilier.":
+        native: "They took out a mortgage."
+        bases:
+          "emprunt": "loan, borrowing"
+          "immobilier": "property"
+  "fr-2728":
+    native: "payment"
+    notes:
+      "n1": "Un paiement is the act of paying money."
+    examples:
+      "Le paiement est accepté.":
+        native: "The payment is accepted."
+        bases:
+          "paiement": "payment"
+      "Faites le paiement à la caisse.":
+        native: "Make the payment at the till."
+        bases:
+          "paiement": "payment"
+          "à": "to, at"
+  "fr-2729":
+    native: "bank transfer"
+    notes:
+      "n1": "Un virement is money moved from one bank account to another."
+    examples:
+      "Je fais un virement demain.":
+        native: "I make a transfer tomorrow."
+        bases:
+          "virement": "bank transfer"
+      "Le virement est arrivé.":
+        native: "The transfer has arrived."
+        bases:
+          "virement": "bank transfer"
+  "fr-2730":
+    native: "expensive"
+    notes:
+      "n1": "Coûteux takes the feminine coûteuse."
+    examples:
+      "C'est un achat coûteux.":
+        native: "It is an expensive purchase."
+        bases:
+          "coûteux": "expensive"
+      "Ce voyage est coûteux.":
+        native: "This trip is expensive."
+        bases:
+          "coûteux": "expensive"
+  "fr-2731":
+    native: "thrifty"
+    notes:
+      "n1": "Économe takes the same form in both genders."
+    examples:
+      "Elle est très économe.":
+        native: "She is very thrifty."
+        bases:
+          "économe": "thrifty"
+      "Un achat économe est bien pensé.":
+        native: "A thrifty purchase is well thought out."
+        bases:
+          "économe": "thrifty"
+  "fr-2732":
+    native: "dollar"
+    notes:
+      "n1": "Le dollar is the currency of the United States and other countries."
+    examples:
+      "Ce livre coûte vingt dollars.":
+        native: "This book costs twenty dollars."
+        bases:
+          "dollars": "dollar"
+      "Le dollar monte aujourd'hui.":
+        native: "The dollar is rising today."
+        bases:
+          "dollar": "dollar"
+  "fr-2733":
+    native: "cent (coin)"
+    notes:
+      "n1": "Un centime is a hundredth of a euro."
+    examples:
+      "Il me reste dix centimes.":
+        native: "I have ten cents left."
+        bases:
+          "me": "me"
+          "centimes": "cent (coin)"
+      "Ce pain coûte cinquante centimes.":
+        native: "This bread costs fifty cents."
+        bases:
+          "centimes": "cent (coin)"
+  "fr-2734":
+    native: "purse"
+    notes:
+      "n1": "Un porte-monnaie holds coins and small notes."
+    examples:
+      "Mon porte-monnaie est vide.":
+        native: "My purse is empty."
+        bases:
+          "porte-monnaie": "purse"
+      "Elle sort son porte-monnaie.":
+        native: "She takes out her purse."
+        bases:
+          "porte-monnaie": "purse"
+  "fr-2784":
+    native: "coin, piece"
+    notes:
+      "n1": "Une pièce is a coin of money, or a piece or room."
+    examples:
+      "Cette pièce vaut un euro.":
+        native: "This coin is worth one euro."
+        bases:
+          "pièce": "coin, piece"
+          "vaut": "is worth"
+      "Il met une pièce dans la machine.":
+        native: "He puts a coin in the machine."
+        bases:
+          "pièce": "coin, piece"
+          "machine": "machine"
+  "fr-2785":
+    native: "balance (of an account)"
+    notes:
+      "n1": "Un solde is the amount of money in a bank account."
+    examples:
+      "Le solde de mon compte est bas.":
+        native: "The balance of my account is low."
+        bases:
+          "solde": "balance (of an account)"
+          "de": "of, from, some"
+      "Vérifiez votre solde.":
+        native: "Check your balance."
+        bases:
+          "solde": "balance (of an account)"
+  "fr-2786":
+    native: "banker"
+    notes:
+      "n1": "Un banquier works in a bank; the feminine is banquière."
+    examples:
+      "Le banquier parle du prêt.":
+        native: "The banker talks about the loan."
+        bases:
+          "banquier": "banker"
+          "du": "some, of the"
+      "Mon oncle est banquier.":
+        native: "My uncle is a banker."
+        bases:
+          "banquier": "banker"
+  "fr-2787":
+    native: "stock market, purse"
+    notes:
+      "n1": "La bourse is the stock market, or a small purse."
+    examples:
+      "La bourse monte aujourd'hui.":
+        native: "The stock market is rising today."
+        bases:
+          "bourse": "stock market, purse"
+      "Elle a une petite bourse en cuir.":
+        native: "She has a small leather purse."
+        bases:
+          "bourse": "stock market, purse"
+          "en": "in, by, as"
+  "fr-2788":
+    native: "credit card"
+    notes:
+      "n1": "Une carte de crédit lets you pay now and pay later."
+    examples:
+      "Je paie avec ma carte de crédit.":
+        native: "I pay with my credit card."
+        bases:
+          "de": "of, from, some"
+      "Cette carte de crédit a une limite.":
+        native: "This credit card has a limit."
+        bases:
+          "de": "of, from, some"

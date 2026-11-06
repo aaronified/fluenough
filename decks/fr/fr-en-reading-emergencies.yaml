@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-emergencies"
+name: "Reading: emergencies"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about emergencies. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-safety-notice"
+    title: "A safety notice in a building"
+    theme: "emergencies"
+    sentences:
+      - text: "En cas d’incendie, ne prenez pas l’ascenseur."
+      - text: "Sortez calmement par l’escalier le plus proche et rejoignez le point de rassemblement."
+      - text: "Appelez le 18 pour les pompiers, ou le 112 depuis un portable."
+      - text: "Ne revenez pas dans le bâtiment avant l’autorisation des secours."
+    questions:
+      - id: "fr-2534"
+        prompt: { en: "What should you not take in a fire?" }
+        options:
+          - { en: "The stairs" }
+          - { en: "The lift" }
+          - { en: "A bag" }
+        answer: 2
+      - id: "fr-2535"
+        prompt: { en: "Which number should you call for the firefighters?" }
+        options:
+          - { en: "18" }
+          - { en: "15" }
+          - { en: "17" }
+        answer: 1
+      - id: "fr-2536"
+        prompt: { en: "When can you go back into the building?" }
+        options:
+          - { en: "When the emergency services allow it" }
+          - { en: "After one hour" }
+          - { en: "Never" }
+        answer: 1

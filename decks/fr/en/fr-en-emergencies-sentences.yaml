@@ -1,0 +1,50 @@
+schema: 1
+id: "fr-en-emergencies-sentences"
+kind: "layer"
+core: "fr-emergencies-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: emergencies"
+license: "CC-BY-SA-4.0"
+description: "Sentences about emergencies, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2528":
+    native: "The firefighters put out the fire and the smoke."
+    confusables:
+      "alarme": { why: "An alarm sounds a warning; the sentence says the firefighters put out a fire." }
+      "inondation": { why: "A flood is water; the sentence is about fire." }
+  "fr-2529":
+    native: "Call the emergency services, there has been an accident."
+    confusables:
+      "police": { why: "The police may come, but the sentence says the emergency services." }
+      "ambulance": { why: "An ambulance is one service; the sentence names the general help." }
+  "fr-2530":
+    native: "The ambulance takes the injured man to hospital."
+    bases:
+      "à": "to, at"
+    confusables:
+      "secouriste": { why: "A first aider treats on site; the sentence says the ambulance takes him." }
+      "blessure": { why: "An injury is named as a state; the sentence is about transport." }
+  "fr-2531":
+    native: "The gendarme rescues a child from the smoke."
+    bases:
+      "enfant": "child"
+      "de": "of, from, some"
+    confusables:
+      "pompier": { why: "A firefighter is also a rescuer; the sentence names a gendarme." }
+      "secourir": { why: "To help is close; the sentence uses the verb sauver." }
+  "fr-2532":
+    native: "He has a fracture after his fall."
+    bases:
+      "chute": "fall"
+    confusables:
+      "brulure": { why: "A burn is a different injury; the sentence names a fracture." }
+      "malaise": { why: "Feeling faint is a sudden spell; the sentence says he has a fracture." }
+  "fr-2533":
+    native: "There is a gas leak, get out quickly."
+    bases:
+      "de": "of, from, some"
+      "gaz": "gas"
+    confusables:
+      "danger": { why: "Danger is named generally; the sentence names a leak and an order." }
+      "evacuer": { why: "To evacuate is the act; the sentence orders people out." }

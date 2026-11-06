@@ -1,0 +1,105 @@
+schema: 1
+id: "fr-law-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2563"
+    target: "Le juge condamne l'accusé à une peine de prison."
+    ipa: "lə ʒyʒ kɔ̃dan lakyze a yn pɛn də pʁizɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "juge", ref: "fr-1879" }
+      - { word: "condamne", ref: "fr-2559" }
+      - { word: "l'accusé", ref: "fr-2540" }
+      - { word: "à", base: "à" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "peine", ref: "fr-2546" }
+      - { word: "de", base: "de" }
+      - { word: "prison", ref: "fr-2547" }
+    confusables:
+      - { id: "acquitter", ref: "fr-2560", kind: "word" }
+      - { id: "amende", ref: "fr-2051", kind: "word" }
+  - id: "fr-2564"
+    target: "L'avocat présente une preuve au tribunal."
+    ipa: "lavɔka pʁezɑ̃t yn pʁœv o tʁibynal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'avocat", ref: "fr-2123" }
+      - { word: "présente", base: "présenter" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "preuve", ref: "fr-2553" }
+      - { word: "au", base: "à" }
+      - { word: "tribunal", ref: "fr-2046" }
+    confusables:
+      - { id: "dossier", ref: "fr-0665", kind: "word" }
+      - { id: "temoin", ref: "fr-1820", kind: "word" }
+  - id: "fr-2565"
+    target: "La victime porte plainte contre le voisin."
+    ipa: "la viktim pɔʁt plɛ̃t kɔ̃tʁ lə vwazɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0543" }
+      - { word: "victime", ref: "fr-2541" }
+      - { word: "porte", ref: "fr-1003" }
+      - { word: "plainte", ref: "fr-2539" }
+      - { word: "contre", ref: "fr-0471" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "voisin", ref: "fr-0101" }
+    confusables:
+      - { id: "crime", ref: "fr-2542", kind: "word" }
+      - { id: "delit", ref: "fr-2543", kind: "word" }
+  - id: "fr-2566"
+    target: "Ce contrat contient une clause illégale."
+    ipa: "sə kɔ̃tʁa kɔ̃tjɛ̃ yn kloz ilegal"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "contrat", ref: "fr-2549" }
+      - { word: "contient", base: "contenir" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "clause", ref: "fr-2550" }
+      - { word: "illégale", ref: "fr-2557" }
+    confusables:
+      - { id: "legal", ref: "fr-2556", kind: "word" }
+      - { id: "signature", ref: "fr-1991", kind: "word" }
+  - id: "fr-2567"
+    target: "Le jugement du tribunal est injuste."
+    ipa: "lə ʒyʒmɑ̃ dy tʁibynal ɛ ɛ̃ʒyst"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "jugement", ref: "fr-2545" }
+      - { word: "du", base: "de" }
+      - { word: "tribunal", ref: "fr-2046" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "injuste", ref: "fr-1882" }
+    confusables:
+      - { id: "juste", ref: "fr-1896", kind: "word" }
+      - { id: "appel", ref: "fr-2519", kind: "word" }
+  - id: "fr-2568"
+    target: "L'enquêteur interroge la victime et le témoin."
+    ipa: "lɑ̃kɛtœʁ ɛ̃tɛʁɔʒ la viktim e lə temwɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'enquêteur", ref: "fr-2552" }
+      - { word: "interroge", ref: "fr-2562" }
+      - { word: "la", ref: "fr-0543" }
+      - { word: "victime", ref: "fr-2541" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "témoin", ref: "fr-1820" }
+    confusables:
+      - { id: "juge", ref: "fr-2537", kind: "word" }
+      - { id: "accuse", ref: "fr-2540", kind: "word" }
+

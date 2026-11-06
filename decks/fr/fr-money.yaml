@@ -1,0 +1,306 @@
+schema: 1
+id: "fr-money"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "money"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2713"
+    target: "liquide"
+    ipa: "likid"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je paie en liquide.", ipa: "ʒə pe ɑ̃ likid", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", ref: "fr-0310" }, { word: "en", base: "en" }, { word: "liquide", base: "liquide" }] }
+      - { target: "Vous acceptez le liquide ?", ipa: "vuz aksɛpte lə likid", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "acceptez", ref: "fr-2007" }, { word: "le", ref: "fr-0543" }, { word: "liquide", base: "liquide" }] }
+  - id: "fr-2714"
+    target: "chèque"
+    ipa: "ʃɛk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je paie par chèque.", ipa: "ʒə pe paʁ ʃɛk", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", ref: "fr-0310" }, { word: "par", ref: "fr-0593" }, { word: "chèque", base: "chèque" }] }
+      - { target: "Le chèque est signé.", ipa: "lə ʃɛk ɛ siɲe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chèque", base: "chèque" }, { word: "est", ref: "fr-0021" }, { word: "signé", ref: "fr-1987" }] }
+  - id: "fr-2715"
+    target: "carte bancaire"
+    ipa: "kaʁt bɑ̃kɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma carte bancaire est dans mon sac.", ipa: "ma kaʁt bɑ̃kɛʁ ɛ dɑ̃ mɔ̃ sak", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "carte", ref: "fr-0824" }, { word: "bancaire", base: "bancaire" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "mon", ref: "fr-0037" }, { word: "sac", ref: "fr-0485" }] }
+      - { target: "Vous payez par carte bancaire ?", ipa: "vu pɛje paʁ kaʁt bɑ̃kɛʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "payez", ref: "fr-0310" }, { word: "par", ref: "fr-0593" }, { word: "carte", ref: "fr-0824" }, { word: "bancaire", base: "bancaire" }] }
+  - id: "fr-2716"
+    target: "dette"
+    ipa: "dɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a une dette de mille euros.", ipa: "il a yn dɛt də mil øʁo", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "dette", base: "dette" }, { word: "de", base: "de" }, { word: "mille", ref: "fr-0710" }, { word: "euros", ref: "fr-1451" }] }
+      - { target: "Elle rembourse sa dette.", ipa: "ɛl ʁɑ̃buʁs sa dɛt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "rembourse", ref: "fr-1441" }, { word: "sa", ref: "fr-0138" }, { word: "dette", base: "dette" }] }
+  - id: "fr-2717"
+    target: "épargne"
+    ipa: "epaʁɲ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son épargne est importante.", ipa: "sɔ̃n epaʁɲ ɛ ɛ̃pɔʁtɑ̃t", bases: [{ word: "Son", ref: "fr-0138" }, { word: "épargne", base: "épargne" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+      - { target: "Je mets de l'argent dans l'épargne.", ipa: "ʒə mɛ də laʁʒɑ̃ dɑ̃ lepaʁɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "mets", ref: "fr-0529" }, { word: "de", base: "de" }, { word: "l'argent", ref: "fr-0751" }, { word: "dans", ref: "fr-0049" }, { word: "l'épargne", base: "épargne" }] }
+  - id: "fr-2718"
+    target: "placement"
+    ipa: "plasmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce placement rapporte beaucoup.", ipa: "sə plasmɑ̃ ʁapɔʁt boku", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "placement", base: "placement" }, { word: "rapporte", base: "rapporter" }, { word: "beaucoup", ref: "fr-0034" }] }
+      - { target: "Il fait un bon placement.", ipa: "il fɛ œ̃ bɔ̃ plasmɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "placement", base: "placement" }] }
+  - id: "fr-2719"
+    target: "investissement"
+    ipa: "ɛ̃vestismɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'investissement coûte cher.", ipa: "lɛ̃vestismɑ̃ kut ʃɛʁ", bases: [{ word: "L'investissement", base: "investissement" }, { word: "coûte", ref: "fr-0752" }, { word: "cher", ref: "fr-0104" }] }
+      - { target: "Ce projet demande un gros investissement.", ipa: "sə pʁɔʒɛ dəmɑ̃d œ̃ ɡʁo ɛ̃vestismɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "projet", ref: "fr-0682" }, { word: "demande", ref: "fr-0521" }, { word: "un", ref: "fr-0208" }, { word: "gros", base: "gros" }, { word: "investissement", base: "investissement" }] }
+  - id: "fr-2720"
+    target: "crédit"
+    ipa: "kʁedi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il prend un crédit pour la voiture.", ipa: "il pʁɑ̃ œ̃ kʁedi puʁ la vwatyʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "prend", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "crédit", base: "crédit" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }] }
+      - { target: "Le crédit coûte cher.", ipa: "lə kʁedi kut ʃɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "crédit", base: "crédit" }, { word: "coûte", ref: "fr-0752" }, { word: "cher", ref: "fr-0104" }] }
+  - id: "fr-2721"
+    target: "intérêt"
+    ipa: "ɛ̃teʁɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les intérêts sont élevés.", ipa: "lezɛ̃teʁɛ sɔ̃ elve", bases: [{ word: "Les", ref: "fr-0543" }, { word: "intérêts", base: "intérêt" }, { word: "sont", ref: "fr-0021" }, { word: "élevés", base: "élevé" }] }
+      - { target: "Il montre un grand intérêt pour la finance.", ipa: "il mɔ̃tʁ œ̃ ɡʁɑ̃ tɛ̃teʁɛ puʁ la finɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "montre", ref: "fr-1120" }, { word: "un", ref: "fr-0208" }, { word: "grand", ref: "fr-0410" }, { word: "intérêt", base: "intérêt" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "finance", base: "finance" }] }
+  - id: "fr-2722"
+    target: "coût"
+    ipa: "ku"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le coût de la vie augmente.", ipa: "lə ku də la vi ogmɑ̃t", bases: [{ word: "Le", ref: "fr-0543" }, { word: "coût", base: "coût" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "vie", ref: "fr-0267" }, { word: "augmente", base: "augmenter" }] }
+      - { target: "Quel est le coût du billet ?", ipa: "kɛl ɛ lə ku dy bijɛ", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "coût", base: "coût" }, { word: "du", base: "de" }, { word: "billet", ref: "fr-0856" }] }
+  - id: "fr-2723"
+    target: "dépense"
+    ipa: "depɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette dépense est nécessaire.", ipa: "sɛt depɑ̃s ɛ nesesɛʁ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "dépense", ref: "fr-1455" }, { word: "est", ref: "fr-0021" }, { word: "nécessaire", ref: "fr-2696" }] }
+      - { target: "Nos dépenses augmentent.", ipa: "nɔ depɑ̃s ogmɑ̃t", bases: [{ word: "Nos", ref: "fr-0139" }, { word: "dépenses", base: "dépense" }, { word: "augmentent", base: "augmenter" }] }
+  - id: "fr-2724"
+    target: "revenu"
+    ipa: "ʁəvny"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Son revenu est stable.", ipa: "sɔ̃ ʁəvny ɛ stabl", bases: [{ word: "Son", ref: "fr-0138" }, { word: "revenu", base: "revenu" }, { word: "est", ref: "fr-0021" }, { word: "stable", base: "stable" }] }
+      - { target: "Le revenu baisse cette année.", ipa: "lə ʁəvny bɛs sɛt anɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "revenu", base: "revenu" }, { word: "baisse", base: "baisser" }, { word: "cette", ref: "fr-0144" }, { word: "année", ref: "fr-1166" }] }
+  - id: "fr-2725"
+    target: "gain"
+    ipa: "ɡɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gain est de cent euros.", ipa: "lə ɡɛ̃ ɛ də sɑ̃ øʁo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gain", base: "gain" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "cent", ref: "fr-0709" }, { word: "euros", ref: "fr-1451" }] }
+      - { target: "Il a fait un gros gain au jeu.", ipa: "il a fɛ œ̃ ɡʁo ɡɛ̃ o ʒø", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "gros", base: "gros" }, { word: "gain", base: "gain" }, { word: "au", base: "à" }, { word: "jeu", ref: "fr-1660" }] }
+  - id: "fr-2726"
+    target: "perte"
+    ipa: "pɛʁt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La perte est importante.", ipa: "la pɛʁt ɛ ɛ̃pɔʁtɑ̃t", bases: [{ word: "La", ref: "fr-0544" }, { word: "perte", base: "perte" }, { word: "est", ref: "fr-0021" }, { word: "importante", ref: "fr-0443" }] }
+      - { target: "L'entreprise subit une perte.", ipa: "lɑ̃tʁəpʁiz sybit yn pɛʁt", bases: [{ word: "L'entreprise", ref: "fr-0661" }, { word: "subit", base: "subir" }, { word: "une", ref: "fr-0545" }, { word: "perte", base: "perte" }] }
+  - id: "fr-2727"
+    target: "emprunt"
+    ipa: "ɑ̃pʁɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cet emprunt dure vingt ans.", ipa: "sɛt ɑ̃pʁɛ̃ dyʁ vɛ̃ ɑ̃", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "emprunt", base: "emprunt" }, { word: "dure", ref: "fr-1131" }, { word: "vingt", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Ils ont fait un emprunt immobilier.", ipa: "il ɔ̃ fɛ œ̃n ɑ̃pʁɛ̃ imɔbilje", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "ont", ref: "fr-0022" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "emprunt", base: "emprunt" }, { word: "immobilier", base: "immobilier" }] }
+  - id: "fr-2728"
+    target: "paiement"
+    ipa: "pɛmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le paiement est accepté.", ipa: "lə pɛmɑ̃ ɛ aksɛpte", bases: [{ word: "Le", ref: "fr-0543" }, { word: "paiement", base: "paiement" }, { word: "est", ref: "fr-0021" }, { word: "accepté", ref: "fr-2007" }] }
+      - { target: "Faites le paiement à la caisse.", ipa: "fɛt lə pɛmɑ̃ a la kɛs", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "le", ref: "fr-0543" }, { word: "paiement", base: "paiement" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "caisse", ref: "fr-0749" }] }
+  - id: "fr-2729"
+    target: "virement"
+    ipa: "viʁəmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais un virement demain.", ipa: "ʒə fɛ œ̃ viʁəmɑ̃ dəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "virement", base: "virement" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Le virement est arrivé.", ipa: "lə viʁəmɑ̃ ɛ aʁive", bases: [{ word: "Le", ref: "fr-0543" }, { word: "virement", base: "virement" }, { word: "est", ref: "fr-0021" }, { word: "arrivé", ref: "fr-0305" }] }
+  - id: "fr-2730"
+    target: "coûteux"
+    ipa: "kutø"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est un achat coûteux.", ipa: "sɛ tœ̃n aʃa kutø", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "achat", ref: "fr-1420" }, { word: "coûteux", base: "coûteux" }] }
+      - { target: "Ce voyage est coûteux.", ipa: "sə vwajaʒ ɛ kutø", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "voyage", ref: "fr-0867" }, { word: "est", ref: "fr-0021" }, { word: "coûteux", base: "coûteux" }] }
+  - id: "fr-2731"
+    target: "économe"
+    ipa: "ekɔnɔm"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle est très économe.", ipa: "ɛl ɛ tʁɛ ekɔnɔm", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "économe", base: "économe" }] }
+      - { target: "Un achat économe est bien pensé.", ipa: "œ̃n aʃa ekɔnɔm ɛ bjɛ̃ pɑ̃se", bases: [{ word: "Un", ref: "fr-0208" }, { word: "achat", ref: "fr-1420" }, { word: "économe", base: "économe" }, { word: "est", ref: "fr-0021" }, { word: "bien", ref: "fr-0032" }, { word: "pensé", ref: "fr-0510" }] }
+  - id: "fr-2732"
+    target: "dollar"
+    ipa: "dɔlaʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce livre coûte vingt dollars.", ipa: "sə livʁ kut vɛ̃ dɔlaʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "livre", ref: "fr-1363" }, { word: "coûte", ref: "fr-0752" }, { word: "vingt", ref: "fr-0227" }, { word: "dollars", base: "dollar" }] }
+      - { target: "Le dollar monte aujourd'hui.", ipa: "lə dɔlaʁ mɔ̃t oʒuʁdɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dollar", base: "dollar" }, { word: "monte", ref: "fr-0516" }, { word: "aujourd'hui", ref: "fr-0079" }] }
+  - id: "fr-2733"
+    target: "centime"
+    ipa: "sɑ̃tim"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il me reste dix centimes.", ipa: "il mə ʁɛst di sɑ̃tim", bases: [{ word: "Il", ref: "fr-0127" }, { word: "me", base: "me" }, { word: "reste", ref: "fr-0514" }, { word: "dix", ref: "fr-0217" }, { word: "centimes", base: "centime" }] }
+      - { target: "Ce pain coûte cinquante centimes.", ipa: "sə pɛ̃ kut sɛ̃kɑ̃t sɑ̃tim", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "pain", ref: "fr-0773" }, { word: "coûte", ref: "fr-0752" }, { word: "cinquante", ref: "fr-0704" }, { word: "centimes", base: "centime" }] }
+  - id: "fr-2734"
+    target: "porte-monnaie"
+    ipa: "pɔʁt mɔnɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon porte-monnaie est vide.", ipa: "mɔ̃ pɔʁt mɔnɛ ɛ vid", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "porte-monnaie", base: "porte-monnaie" }, { word: "est", ref: "fr-0021" }, { word: "vide", ref: "fr-0440" }] }
+      - { target: "Elle sort son porte-monnaie.", ipa: "ɛl sɔʁ sɔ̃ pɔʁt mɔnɛ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "sort", ref: "fr-1125" }, { word: "son", ref: "fr-0138" }, { word: "porte-monnaie", base: "porte-monnaie" }] }
+  - id: "fr-2784"
+    target: "pièce"
+    ipa: "pjɛs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette pièce vaut un euro.", ipa: "sɛt pjɛs valt œ̃ nøʁo", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "pièce", base: "pièce" }, { word: "vaut", base: "valoir" }, { word: "un", ref: "fr-0208" }, { word: "euro", ref: "fr-1451" }] }
+      - { target: "Il met une pièce dans la machine.", ipa: "il mɛ yn pjɛs dɑ̃ la maʃin", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "une", ref: "fr-0545" }, { word: "pièce", base: "pièce" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "machine", base: "machine" }] }
+  - id: "fr-2785"
+    target: "solde"
+    ipa: "sɔld"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le solde de mon compte est bas.", ipa: "lə sɔld də mɔ̃ kɔ̃t ɛ ba", bases: [{ word: "Le", ref: "fr-0543" }, { word: "solde", base: "solde" }, { word: "de", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "compte", ref: "fr-1974" }, { word: "est", ref: "fr-0021" }, { word: "bas", ref: "fr-0424" }] }
+      - { target: "Vérifiez votre solde.", ipa: "veʁifje vɔtʁ sɔld", bases: [{ word: "Vérifiez", ref: "fr-1835" }, { word: "votre", ref: "fr-0140" }, { word: "solde", base: "solde" }] }
+  - id: "fr-2786"
+    target: "banquier"
+    ipa: "bɑ̃kje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le banquier parle du prêt.", ipa: "lə bɑ̃kje paʁl dy pʁɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "banquier", base: "banquier" }, { word: "parle", ref: "fr-0023" }, { word: "du", base: "de" }, { word: "prêt", ref: "fr-0687" }] }
+      - { target: "Mon oncle est banquier.", ipa: "mɔ̃n ɔ̃kl ɛ bɑ̃kje", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "oncle", ref: "fr-0176" }, { word: "est", ref: "fr-0021" }, { word: "banquier", base: "banquier" }] }
+  - id: "fr-2787"
+    target: "bourse"
+    ipa: "buʁs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bourse monte aujourd'hui.", ipa: "la buʁs mɔ̃t oʒuʁdɥi", bases: [{ word: "La", ref: "fr-0544" }, { word: "bourse", base: "bourse" }, { word: "monte", ref: "fr-0516" }, { word: "aujourd'hui", ref: "fr-0079" }] }
+      - { target: "Elle a une petite bourse en cuir.", ipa: "ɛl a yn pəti buʁs ɑ̃ kɥiʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "petite", ref: "fr-0411" }, { word: "bourse", base: "bourse" }, { word: "en", base: "en" }, { word: "cuir", ref: "fr-1228" }] }
+  - id: "fr-2788"
+    target: "carte de crédit"
+    ipa: "kaʁt də kʁedi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je paie avec ma carte de crédit.", ipa: "ʒə pe avɛk ma kaʁt də kʁedi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", ref: "fr-0310" }, { word: "avec", ref: "fr-0590" }, { word: "ma", ref: "fr-0037" }, { word: "carte", ref: "fr-0824" }, { word: "de", base: "de" }, { word: "crédit", ref: "fr-2720" }] }
+      - { target: "Cette carte de crédit a une limite.", ipa: "sɛt kaʁt də kʁedi a yn limit", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "carte", ref: "fr-0824" }, { word: "de", base: "de" }, { word: "crédit", ref: "fr-2720" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "limite", ref: "fr-2675" }] }
+

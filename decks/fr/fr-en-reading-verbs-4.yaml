@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-verbs-4"
+name: "Reading: verbs 4"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about verbs 4. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-short-story"
+    title: "A short story with a turn"
+    theme: "verbs-4"
+    sentences:
+      - text: "Chaque soir, Marc rentre du travail et s’assoit sur le canapé."
+      - text: "Un soir, il trouve une lettre qui lui promet une grande somme d’argent."
+      - text: "Il rit, puis il réfléchit et décide de la lire deux fois."
+      - text: "Le lendemain, il découvre que la lettre était une blague de son frère."
+    questions:
+      - id: "fr-2796"
+        prompt: { en: "What does Marc find?" }
+        options:
+          - { en: "A letter with a promise of money" }
+          - { en: "A bike" }
+          - { en: "A key" }
+        answer: 1
+      - id: "fr-2797"
+        prompt: { en: "What does Marc decide to do?" }
+        options:
+          - { en: "Read the letter twice" }
+          - { en: "Throw it away" }
+          - { en: "Call the police" }
+        answer: 1
+      - id: "fr-2798"
+        prompt: { en: "What is the turn in the story?" }
+        options:
+          - { en: "The letter was a joke by his brother" }
+          - { en: "The money was real" }
+          - { en: "Marc is a thief" }
+        answer: 1

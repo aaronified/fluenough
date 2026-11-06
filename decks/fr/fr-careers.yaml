@@ -1,0 +1,370 @@
+schema: 1
+id: "fr-careers"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "careers"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2117"
+    target: "carrière"
+    ipa: "kaʁjɛʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle fait une belle carrière.", ipa: "ɛl fɛ yn bɛl kaʁjɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "belle", ref: "fr-0412" }, { word: "carrière", base: "carrière" }] }
+      - { target: "La carrière commence à vingt ans.", ipa: "la kaʁjɛʁ kɔmɑ̃s a vɛ̃ ɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "carrière", base: "carrière" }, { word: "commence", ref: "fr-0508" }, { word: "à", base: "à" }, { word: "vingt", ref: "fr-0227" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-2118"
+    target: "collègue"
+    ipa: "kɔlɛɡ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon collègue arrive à neuf heures.", ipa: "mɔ̃ kɔlɛɡ aʁiv a nœf œʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "collègue", base: "collègue" }, { word: "arrive", ref: "fr-0305" }, { word: "à", base: "à" }, { word: "neuf", ref: "fr-0216" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Ma collègue est très gentille.", ipa: "ma kɔlɛɡ ɛ tʁɛ ʒɑ̃tij", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "collègue", base: "collègue" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "gentille", ref: "fr-0434" }] }
+  - id: "fr-2119"
+    target: "candidat"
+    ipa: "kɑ̃dida"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le candidat arrive à l'heure.", ipa: "lə kɑ̃dida aʁiv a lœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "candidat", base: "candidat" }, { word: "arrive", ref: "fr-0305" }, { word: "à", base: "à" }, { word: "l'heure", ref: "fr-0074" }] }
+      - { target: "Il est le meilleur candidat.", ipa: "il ɛ lə mɛjœʁ kɑ̃dida", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "meilleur", ref: "fr-0040" }, { word: "candidat", base: "candidat" }] }
+  - id: "fr-2120"
+    target: "entretien"
+    ipa: "ɑ̃tʁətjɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai un entretien demain.", ipa: "ʒe œ̃ nɑ̃tʁətjɛ̃ dəmɛ̃", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "entretien", base: "entretien" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "L'entretien dure une heure.", ipa: "lɑ̃tʁətjɛ̃ dyʁ yn œʁ", bases: [{ word: "L'entretien", base: "entretien" }, { word: "dure", ref: "fr-1131" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+  - id: "fr-2121"
+    target: "stage"
+    ipa: "staʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle fait un stage dans une banque.", ipa: "ɛl fɛ œ̃ staʒ dɑ̃ zyn bɑ̃k", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "fait", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "stage", base: "stage" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "banque", ref: "fr-0965" }] }
+      - { target: "Le stage dure six mois.", ipa: "lə staʒ dyʁ sis mwa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "stage", base: "stage" }, { word: "dure", ref: "fr-1131" }, { word: "six", ref: "fr-0213" }, { word: "mois", ref: "fr-1165" }] }
+  - id: "fr-2122"
+    target: "ingénieur"
+    ipa: "ɛ̃ʒenjœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'ingénieur calcule la structure.", ipa: "lɛ̃ʒenjœʁ kalkyl la stʁyktyʁ", bases: [{ word: "L'ingénieur", base: "ingénieur" }, { word: "calcule", base: "calculer" }, { word: "la", ref: "fr-0544" }, { word: "structure", base: "structure" }] }
+      - { target: "Mon oncle est ingénieur.", ipa: "mɔ̃ ɔ̃kl ɛ ɛ̃ʒenjœʁ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "oncle", ref: "fr-0176" }, { word: "est", ref: "fr-0021" }, { word: "ingénieur", base: "ingénieur" }] }
+  - id: "fr-2123"
+    target: "avocat"
+    ipa: "avɔka"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'avocat parle au juge.", ipa: "lavɔka paʁl o ʒyʒ", bases: [{ word: "L'avocat", base: "avocat" }, { word: "parle", ref: "fr-0023" }, { word: "au", base: "à" }, { word: "juge", base: "juge" }] }
+      - { target: "Elle est avocate à Paris.", ipa: "ɛl ɛ avɔkat a paʁi", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "avocate", base: "avocat" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }
+  - id: "fr-2124"
+    target: "agriculteur"
+    ipa: "aɡʁikyltœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'agriculteur cultive le blé.", ipa: "laɡʁikyltœʁ kyltiv lə ble", bases: [{ word: "L'agriculteur", base: "agriculteur" }, { word: "cultive", base: "cultiver" }, { word: "le", ref: "fr-0543" }, { word: "blé", base: "blé" }] }
+      - { target: "Il est agriculteur depuis trente ans.", ipa: "il ɛ aɡʁikyltœʁ dəpɥi tʁɑ̃t ɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "agriculteur", base: "agriculteur" }, { word: "depuis", base: "depuis" }, { word: "trente", ref: "fr-0702" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-2125"
+    target: "postuler"
+    ipa: "pɔstyle"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je postule pour ce poste.", ipa: "ʒə pɔstyl puʁ sə pɔst", bases: [{ word: "Je", ref: "fr-0126" }, { word: "postule", base: "postuler" }, { word: "pour", ref: "fr-0591" }, { word: "ce", ref: "fr-0143" }, { word: "poste", ref: "fr-0679" }] }
+      - { target: "Vous pouvez postuler en ligne.", ipa: "vu puve pɔstyle ɑ̃ liɲ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "pouvez", ref: "fr-0500" }, { word: "postuler", base: "postuler" }, { word: "en", base: "en" }, { word: "ligne", ref: "fr-0864" }] }
+  - id: "fr-2126"
+    target: "embaucher"
+    ipa: "ɑ̃boʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'entreprise embauche dix personnes.", ipa: "lɑ̃tʁəpʁiz ɑ̃boʃ di pɛʁsɔn", bases: [{ word: "L'entreprise", ref: "fr-0661" }, { word: "embauche", base: "embaucher" }, { word: "dix", ref: "fr-0217" }, { word: "personnes", base: "personne" }] }
+      - { target: "Nous embauchons un nouvel employé.", ipa: "nu zɑ̃boʃɔ̃ œ̃ nuvɛl ɑ̃plwaje", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "embauchons", base: "embaucher" }, { word: "un", ref: "fr-0208" }, { word: "nouvel", ref: "fr-0413" }, { word: "employé", ref: "fr-0663" }] }
+  - id: "fr-2127"
+    target: "licencier"
+    ipa: "lisɑ̃sje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a été licencié en mars.", ipa: "il a ete lisɑ̃sje ɑ̃ maʁs", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "été", ref: "fr-0021" }, { word: "licencié", base: "licencier" }, { word: "en", base: "en" }, { word: "mars", ref: "fr-1154" }] }
+      - { target: "L'entreprise licencie deux cents personnes.", ipa: "lɑ̃tʁəpʁiz lisɑ̃s dø sɑ̃ pɛʁsɔn", bases: [{ word: "L'entreprise", ref: "fr-0661" }, { word: "licencie", base: "licencier" }, { word: "deux", ref: "fr-0209" }, { word: "cents", ref: "fr-0709" }, { word: "personnes", base: "personne" }] }
+  - id: "fr-2128"
+    target: "diriger"
+    ipa: "diʁiʒe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle dirige l'équipe.", ipa: "ɛl diʁiʒ lekip", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "dirige", base: "diriger" }, { word: "l'équipe", ref: "fr-1680" }] }
+      - { target: "Il dirige une petite entreprise.", ipa: "il diʁiʒ yn pətit ɑ̃tʁəpʁiz", bases: [{ word: "Il", ref: "fr-0127" }, { word: "dirige", base: "diriger" }, { word: "une", ref: "fr-0545" }, { word: "petite", ref: "fr-0411" }, { word: "entreprise", ref: "fr-0661" }] }
+  - id: "fr-2129"
+    target: "expérience"
+    ipa: "ɛkspeʁjɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a dix ans d'expérience.", ipa: "ɛl a di ɑ̃ dɛkspeʁjɑ̃s", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "dix", ref: "fr-0217" }, { word: "ans", ref: "fr-0259" }, { word: "d'expérience", base: "expérience" }] }
+      - { target: "Cette expérience est utile.", ipa: "sɛt ɛkspeʁjɑ̃s ɛ ytil", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "expérience", base: "expérience" }, { word: "est", ref: "fr-0021" }, { word: "utile", base: "utile" }] }
+  - id: "fr-2130"
+    target: "diplôme"
+    ipa: "diplom"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il a un diplôme d'ingénieur.", ipa: "il a œ̃ diplom dɛ̃ʒenjœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "diplôme", base: "diplôme" }, { word: "d'ingénieur", ref: "fr-2122" }] }
+      - { target: "Ce diplôme est reconnu partout.", ipa: "sə diplom ɛ ʁəkɔny paʁtu", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "diplôme", base: "diplôme" }, { word: "est", ref: "fr-0021" }, { word: "reconnu", base: "reconnaître" }, { word: "partout", ref: "fr-0356" }] }
+  - id: "fr-2131"
+    target: "compétence"
+    ipa: "kɔ̃petɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ses compétences sont reconnues.", ipa: "se kɔ̃petɑ̃s sɔ̃ ʁəkɔny", bases: [{ word: "Ses", ref: "fr-0138" }, { word: "compétences", base: "compétence" }, { word: "sont", ref: "fr-0021" }, { word: "reconnues", base: "reconnaître" }] }
+      - { target: "Cette compétence est très utile.", ipa: "sɛt kɔ̃petɑ̃s ɛ tʁɛ ytil", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "compétence", base: "compétence" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "utile", base: "utile" }] }
+  - id: "fr-2132"
+    target: "formation"
+    ipa: "fɔʁmasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La formation dure trois jours.", ipa: "la fɔʁmasjɔ̃ dyʁ tʁwa ʒuʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "formation", base: "formation" }, { word: "dure", ref: "fr-1131" }, { word: "trois", ref: "fr-0210" }, { word: "jours", ref: "fr-1032" }] }
+      - { target: "Il suit une formation d'informatique.", ipa: "il sɥi yn fɔʁmasjɔ̃ dɛ̃fɔʁmatik", bases: [{ word: "Il", ref: "fr-0127" }, { word: "suit", ref: "fr-0910" }, { word: "une", ref: "fr-0545" }, { word: "formation", base: "formation" }, { word: "d'informatique", base: "informatique" }] }
+  - id: "fr-2133"
+    target: "cadre"
+    ipa: "kɑdʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le cadre signe le contrat.", ipa: "lə kɑdʁ siɲ lə kɔ̃tʁa", bases: [{ word: "Le", ref: "fr-0543" }, { word: "cadre", base: "cadre" }, { word: "signe", ref: "fr-1987" }, { word: "contrat", base: "contrat" }] }
+      - { target: "Elle est cadre dans une banque.", ipa: "ɛl ɛ kɑdʁ dɑ̃ zyn bɑ̃k", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "cadre", base: "cadre" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "banque", ref: "fr-0965" }] }
+  - id: "fr-2134"
+    target: "démission"
+    ipa: "demisjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il donne sa démission.", ipa: "il dɔn sa demisjɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "donne", ref: "fr-0302" }, { word: "sa", ref: "fr-0138" }, { word: "démission", base: "démission" }] }
+      - { target: "Sa démission surprend tout le monde.", ipa: "sa demisjɔ̃ syʁpʁɑ̃ tu lə mɔ̃d", bases: [{ word: "Sa", ref: "fr-0138" }, { word: "démission", base: "démission" }, { word: "surprend", base: "surprendre" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "monde", base: "monde" }] }
+  - id: "fr-2135"
+    target: "chômage"
+    ipa: "ʃomaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chômage baisse un peu.", ipa: "lə ʃomaʒ bɛs œ̃ pø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chômage", base: "chômage" }, { word: "baisse", base: "baisser" }, { word: "un", ref: "fr-0208" }, { word: "peu", ref: "fr-0342" }] }
+      - { target: "Il est au chômage depuis mai.", ipa: "il ɛ o ʃomaʒ dəpɥi mɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "à" }, { word: "chômage", base: "chômage" }, { word: "depuis", base: "depuis" }, { word: "mai", ref: "fr-1156" }] }
+  - id: "fr-2136"
+    target: "syndicat"
+    ipa: "sɛ̃dika"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le syndicat défend les salariés.", ipa: "lə sɛ̃dika defɑ̃ le salaʁje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "syndicat", base: "syndicat" }, { word: "défend", ref: "fr-1876" }, { word: "les", ref: "fr-0543" }, { word: "salariés", ref: "fr-2142" }] }
+      - { target: "Elle adhère au syndicat.", ipa: "ɛl adɛʁ o sɛ̃dika", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "adhère", base: "adhérer" }, { word: "au", base: "à" }, { word: "syndicat", base: "syndicat" }] }
+  - id: "fr-2137"
+    target: "temps plein"
+    ipa: "tɑ̃ plɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle travaille à temps plein.", ipa: "ɛl tʁavaj a tɑ̃ plɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", ref: "fr-0252" }, { word: "à", base: "à" }, { word: "temps", ref: "fr-1040" }, { word: "plein", ref: "fr-0439" }] }
+      - { target: "Ce poste est à temps plein.", ipa: "sə pɔst ɛ a tɑ̃ plɛ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "poste", ref: "fr-0679" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "temps", ref: "fr-1040" }, { word: "plein", ref: "fr-0439" }] }
+  - id: "fr-2138"
+    target: "temps partiel"
+    ipa: "tɑ̃ paʁsjɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il travaille à temps partiel.", ipa: "il tʁavaj a tɑ̃ paʁsjɛl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", ref: "fr-0252" }, { word: "à", base: "à" }, { word: "temps", ref: "fr-1040" }, { word: "partiel", base: "partiel" }] }
+      - { target: "Le temps partiel convient à ma mère.", ipa: "lə tɑ̃ paʁsjɛl kɔ̃vjɛ̃ a ma mɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "temps", ref: "fr-1040" }, { word: "partiel", base: "partiel" }, { word: "convient", base: "convenir" }, { word: "à", base: "à" }, { word: "ma", ref: "fr-0037" }, { word: "mère", ref: "fr-0166" }] }
+  - id: "fr-2139"
+    target: "mission"
+    ipa: "misjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Sa mission est difficile.", ipa: "sa misjɔ̃ ɛ difisil", bases: [{ word: "Sa", ref: "fr-0138" }, { word: "mission", base: "mission" }, { word: "est", ref: "fr-0021" }, { word: "difficile", ref: "fr-0418" }] }
+      - { target: "Elle part en mission à Londres.", ipa: "ɛl paʁ ɑ̃ misjɔ̃ a lɔ̃dʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "part", ref: "fr-0304" }, { word: "en", base: "en" }, { word: "mission", base: "mission" }, { word: "à", base: "à" }, { word: "Londres", base: "Londres" }] }
+  - id: "fr-2141"
+    target: "objectif"
+    ipa: "ɔbʒɛktif"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Notre objectif est clair.", ipa: "nɔtʁ ɔbʒɛktif ɛ klɛʁ", bases: [{ word: "Notre", ref: "fr-0139" }, { word: "objectif", base: "objectif" }, { word: "est", ref: "fr-0021" }, { word: "clair", base: "clair" }] }
+      - { target: "Atteindre cet objectif prend du temps.", ipa: "atɛ̃dʁ sɛt ɔbʒɛktif pʁɑ̃ dy tɑ̃", bases: [{ word: "Atteindre", base: "atteindre" }, { word: "cet", ref: "fr-0143" }, { word: "objectif", base: "objectif" }, { word: "prend", ref: "fr-0288" }, { word: "du", base: "de" }, { word: "temps", ref: "fr-1040" }] }
+  - id: "fr-2142"
+    target: "salarié"
+    ipa: "salaʁje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le salarié prend sa pause.", ipa: "lə salaʁje pʁɑ̃ sa pozə", bases: [{ word: "Le", ref: "fr-0543" }, { word: "salarié", base: "salarié" }, { word: "prend", ref: "fr-0288" }, { word: "sa", ref: "fr-0138" }, { word: "pause", ref: "fr-0681" }] }
+      - { target: "Les salariés votent demain.", ipa: "le salaʁje vɔt dəmɛ̃", bases: [{ word: "Les", ref: "fr-0543" }, { word: "salariés", base: "salarié" }, { word: "votent", base: "voter" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2144"
+    target: "secrétaire"
+    ipa: "səkʁetɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La secrétaire prend des notes.", ipa: "la səkʁetɛʁ pʁɑ̃ de nɔt", bases: [{ word: "La", ref: "fr-0544" }, { word: "secrétaire", base: "secrétaire" }, { word: "prend", ref: "fr-0288" }, { word: "des", ref: "fr-0546" }, { word: "notes", ref: "fr-1591" }] }
+      - { target: "Le secrétaire organise la réunion.", ipa: "lə səkʁetɛʁ ɔʁɡanize la ʁeyni", bases: [{ word: "Le", ref: "fr-0543" }, { word: "secrétaire", base: "secrétaire" }, { word: "organise", ref: "fr-0671" }, { word: "la", ref: "fr-0544" }, { word: "réunion", ref: "fr-0664" }] }
+  - id: "fr-2145"
+    target: "architecte"
+    ipa: "aʁʃitɛkt"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'architecte dessine la maison.", ipa: "laʁʃitɛkt desin la mɛzɔ̃", bases: [{ word: "L'architecte", base: "architecte" }, { word: "dessine", ref: "fr-1651" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }] }
+      - { target: "Ma sœur est architecte.", ipa: "ma sœʁ ɛ aʁʃitɛkt", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "sœur", ref: "fr-0170" }, { word: "est", ref: "fr-0021" }, { word: "architecte", base: "architecte" }] }
+  - id: "fr-2146"
+    target: "retraite"
+    ipa: "ʁətʁɛt"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il part à la retraite en juin.", ipa: "il paʁ a la ʁətʁɛt ɑ̃ ʒɥɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "part", ref: "fr-0304" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "retraite", base: "retraite" }, { word: "en", base: "en" }, { word: "juin", ref: "fr-1157" }] }
+      - { target: "La retraite est payée chaque mois.", ipa: "la ʁətʁɛt ɛ pe ʃak mwa", bases: [{ word: "La", ref: "fr-0544" }, { word: "retraite", base: "retraite" }, { word: "est", ref: "fr-0021" }, { word: "payée", ref: "fr-0310" }, { word: "chaque", ref: "fr-0375" }, { word: "mois", ref: "fr-1165" }] }
+  - id: "fr-2148"
+    target: "gérant"
+    ipa: "ʒeʁɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le gérant ouvre le magasin.", ipa: "lə ʒeʁɑ̃ uvʁ lə magazɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "gérant", base: "gérant" }, { word: "ouvre", ref: "fr-0298" }, { word: "magasin", ref: "fr-0795" }] }
+      - { target: "La gérante parle au client.", ipa: "la ʒeʁɑ̃t paʁl o klijɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "gérante", base: "gérant" }, { word: "parle", ref: "fr-0023" }, { word: "au", base: "à" }, { word: "client", ref: "fr-0685" }] }
+  - id: "fr-2149"
+    target: "travailleur"
+    ipa: "tʁavajœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le travailleur est fatigué.", ipa: "lə tʁavajœʁ ɛ fatige", bases: [{ word: "Le", ref: "fr-0543" }, { word: "travailleur", base: "travailleur" }, { word: "est", ref: "fr-0021" }, { word: "fatigué", ref: "fr-0431" }] }
+      - { target: "C'est un bon travailleur.", ipa: "sɛ tœ̃ bɔ̃ tʁavajœʁ", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "bon", ref: "fr-0040" }, { word: "travailleur", base: "travailleur" }] }
+  - id: "fr-2159"
+    target: "tâche"
+    ipa: "tɑʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma tâche est de répondre aux mails.", ipa: "ma tɑʃ ɛ də ʁepɔ̃dʁ o mɛl", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "tâche", base: "tâche" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "répondre", ref: "fr-0504" }, { word: "aux", base: "à" }, { word: "mails", base: "mail" }] }
+      - { target: "Cette tâche prend une heure.", ipa: "sɛt tɑʃ pʁɑ̃ yn œʁ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "tâche", base: "tâche" }, { word: "prend", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+  - id: "fr-2160"
+    target: "candidature"
+    ipa: "kɑ̃didatyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma candidature est acceptée.", ipa: "ma kɑ̃didatyʁ ɛ aksɛpte", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "candidature", base: "candidature" }, { word: "est", ref: "fr-0021" }, { word: "acceptée", ref: "fr-2007" }] }
+      - { target: "Envoyez votre candidature demain.", ipa: "ɑ̃vwaje vɔtʁ kɑ̃didatyʁ dəmɛ̃", bases: [{ word: "Envoyez", ref: "fr-0672" }, { word: "votre", ref: "fr-0140" }, { word: "candidature", base: "candidature" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2161"
+    target: "recrutement"
+    ipa: "ʁəkʁytmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le recrutement commence en janvier.", ipa: "lə ʁəkʁytmɑ̃ kɔmɑ̃s ɑ̃ ʒɑ̃vje", bases: [{ word: "Le", ref: "fr-0543" }, { word: "recrutement", base: "recrutement" }, { word: "commence", ref: "fr-0508" }, { word: "en", base: "en" }, { word: "janvier", ref: "fr-1152" }] }
+      - { target: "Le recrutement est long.", ipa: "lə ʁəkʁytmɑ̃ ɛ lɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "recrutement", base: "recrutement" }, { word: "est", ref: "fr-0021" }, { word: "long", ref: "fr-0421" }] }
+

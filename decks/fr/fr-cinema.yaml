@@ -1,0 +1,372 @@
+schema: 1
+id: "fr-cinema"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "cinema"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2206"
+    target: "film"
+    ipa: "film"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce film est très long.", ipa: "sə film ɛ tʁɛ lɔ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "film", base: "film" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "long", ref: "fr-0421" }] }
+      - { target: "On regarde un film ce soir.", ipa: "ɔ̃ ʁəɡaʁd œ̃ film sə swaʁ", bases: [{ word: "On", ref: "fr-0132" }, { word: "regarde", ref: "fr-0293" }, { word: "un", ref: "fr-0208" }, { word: "film", base: "film" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
+  - id: "fr-2208"
+    target: "acteur"
+    ipa: "aktœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'acteur joue le rôle principal.", ipa: "laktœʁ ʒu lə ʁol pʁɛ̃sipal", bases: [{ word: "L'acteur", base: "acteur" }, { word: "joue", ref: "fr-0308" }, { word: "le", ref: "fr-0543" }, { word: "rôle", ref: "fr-2213" }, { word: "principal", base: "principal" }] }
+      - { target: "Cet acteur est très connu.", ipa: "sɛt aktœʁ ɛ tʁɛ kɔny", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "acteur", base: "acteur" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "connu", ref: "fr-0503" }] }
+  - id: "fr-2209"
+    target: "actrice"
+    ipa: "aktʁis"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'actrice pleure dans la scène.", ipa: "laktʁis plœʁ dɑ̃ la sɛn", bases: [{ word: "L'actrice", base: "actrice" }, { word: "pleure", ref: "fr-1774" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "scène", ref: "fr-2212" }] }
+      - { target: "Elle est actrice depuis dix ans.", ipa: "ɛl ɛ aktʁis dəpɥi dis ɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "actrice", base: "actrice" }, { word: "depuis", base: "depuis" }, { word: "dix", ref: "fr-0217" }, { word: "ans", ref: "fr-0259" }] }
+  - id: "fr-2210"
+    target: "réalisateur"
+    ipa: "ʁealizatœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le réalisateur explique la scène.", ipa: "lə ʁealizatœʁ ɛksplik la sɛn", bases: [{ word: "Le", ref: "fr-0543" }, { word: "réalisateur", base: "réalisateur" }, { word: "explique", base: "expliquer" }, { word: "la", ref: "fr-0544" }, { word: "scène", ref: "fr-2212" }] }
+      - { target: "Ce réalisateur a gagné un prix.", ipa: "sə ʁealizatœʁ a ɡaɲe œ̃ pʁi", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "réalisateur", base: "réalisateur" }, { word: "a", ref: "fr-0022" }, { word: "gagné", ref: "fr-0670" }, { word: "un", ref: "fr-0208" }, { word: "prix", ref: "fr-0737" }] }
+  - id: "fr-2211"
+    target: "scénario"
+    ipa: "senaʁjo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le scénario est très bon.", ipa: "lə senaʁjo ɛ tʁɛ bɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "scénario", base: "scénario" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bon", ref: "fr-0040" }] }
+      - { target: "J'écris un scénario.", ipa: "ʒekʁi œ̃ senaʁjo", bases: [{ word: "J'écris", ref: "fr-0291" }, { word: "un", ref: "fr-0208" }, { word: "scénario", base: "scénario" }] }
+  - id: "fr-2212"
+    target: "scène"
+    ipa: "sɛn"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Cette scène est très triste.", ipa: "sɛt sɛn ɛ tʁɛ tʁist", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "scène", base: "scène" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "triste", ref: "fr-0430" }] }
+      - { target: "La scène finale est belle.", ipa: "la sɛn final ɛ bɛl", bases: [{ word: "La", ref: "fr-0544" }, { word: "scène", base: "scène" }, { word: "finale", base: "final" }, { word: "est", ref: "fr-0021" }, { word: "belle", ref: "fr-0412" }] }
+  - id: "fr-2213"
+    target: "rôle"
+    ipa: "ʁol"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle a un petit rôle.", ipa: "ɛl a œ̃ pəti ʁol", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "petit", ref: "fr-0411" }, { word: "rôle", base: "rôle" }] }
+      - { target: "Quel est son rôle dans le film ?", ipa: "kɛl ɛ sɔ̃ ʁol dɑ̃ lə fil", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "son", ref: "fr-0138" }, { word: "rôle", base: "rôle" }, { word: "dans", ref: "fr-0049" }, { word: "le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }] }
+  - id: "fr-2214"
+    target: "séance"
+    ipa: "seɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La séance commence à vingt heures.", ipa: "la seɑ̃s kɔmɑ̃s a vɛ̃t œʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "séance", base: "séance" }, { word: "commence", ref: "fr-0508" }, { word: "à", base: "à" }, { word: "vingt", ref: "fr-0227" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Il reste une place pour la séance.", ipa: "il ʁɛst yn plas puʁ la seɑ̃s", bases: [{ word: "Il", ref: "fr-0127" }, { word: "reste", ref: "fr-0514" }, { word: "une", ref: "fr-0208" }, { word: "place", ref: "fr-0901" }, { word: "pour", ref: "fr-0591" }, { word: "la", ref: "fr-0544" }, { word: "séance", base: "séance" }] }
+  - id: "fr-2215"
+    target: "comédie"
+    ipa: "kɔmedi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'aime les comédies.", ipa: "ʒɛm le kɔmedi", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "les", ref: "fr-0543" }, { word: "comédies", base: "comédie" }] }
+      - { target: "Cette comédie est très drôle.", ipa: "sɛt kɔmedi ɛ tʁɛ dʁol", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "comédie", base: "comédie" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
+  - id: "fr-2216"
+    target: "drame"
+    ipa: "dʁam"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce drame est très triste.", ipa: "sə dʁam ɛ tʁɛ tʁist", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "drame", base: "drame" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "triste", ref: "fr-0430" }] }
+      - { target: "Le drame commence par une dispute.", ipa: "lə dʁam kɔmɑ̃s paʁ yn dispyt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "drame", base: "drame" }, { word: "commence", ref: "fr-0508" }, { word: "par", ref: "fr-0593" }, { word: "une", ref: "fr-0208" }, { word: "dispute", base: "dispute" }] }
+  - id: "fr-2217"
+    target: "documentaire"
+    ipa: "dɔkymɑ̃tɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le documentaire parle des oiseaux.", ipa: "lə dɔkymɑ̃tɛʁ paʁl dez wazo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "documentaire", base: "documentaire" }, { word: "parle", ref: "fr-0023" }, { word: "des", ref: "fr-0546" }, { word: "oiseaux", ref: "fr-1254" }] }
+      - { target: "J'aime les documentaires sur la nature.", ipa: "ʒɛm le dɔkymɑ̃tɛʁ syʁ la natyʁ", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "les", ref: "fr-0543" }, { word: "documentaires", base: "documentaire" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "nature", base: "nature" }] }
+  - id: "fr-2218"
+    target: "dessin animé"
+    ipa: "desɛ̃ animé"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les enfants regardent un dessin animé.", ipa: "lez ɑ̃fɑ̃ ʁəɡaʁd œ̃ desɛ̃ animé", bases: [{ word: "Les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "regardent", ref: "fr-0293" }, { word: "un", ref: "fr-0208" }, { word: "dessin", ref: "fr-1609" }, { word: "animé", base: "animé" }] }
+      - { target: "Ce dessin animé est très drôle.", ipa: "sə desɛ̃ animé ɛ tʁɛ dʁol", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "dessin", ref: "fr-1609" }, { word: "animé", base: "animé" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
+  - id: "fr-2219"
+    target: "suspense"
+    ipa: "syspɑ̃s"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le film a beaucoup de suspense.", ipa: "lə fil a boku də syspɑ̃s", bases: [{ word: "Le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }, { word: "a", ref: "fr-0022" }, { word: "beaucoup", ref: "fr-0034" }, { word: "de", base: "de" }, { word: "suspense", base: "suspense" }] }
+      - { target: "Quel suspense !", ipa: "kɛl syspɑ̃s", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "suspense", base: "suspense" }] }
+  - id: "fr-2220"
+    target: "bande-annonce"
+    ipa: "bɑ̃d anɔ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La bande-annonce est très bonne.", ipa: "la bɑ̃d anɔ̃s ɛ tʁɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "bande-annonce", base: "bande-annonce" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bonne", ref: "fr-0040" }] }
+      - { target: "Je regarde la bande-annonce en ligne.", ipa: "ʒə ʁəɡaʁd la bɑ̃d anɔ̃s ɑ̃ liɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", ref: "fr-0293" }, { word: "la", ref: "fr-0544" }, { word: "bande-annonce", base: "bande-annonce" }, { word: "en", base: "en" }, { word: "ligne", ref: "fr-0864" }] }
+  - id: "fr-2221"
+    target: "sous-titre"
+    ipa: "sutitʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le film a des sous-titres.", ipa: "lə fil a de sutitʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "sous-titres", base: "sous-titre" }] }
+      - { target: "Je lis les sous-titres en français.", ipa: "ʒə li le sutitʁ ɑ̃ fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "les", ref: "fr-0543" }, { word: "sous-titres", base: "sous-titre" }, { word: "en", base: "en" }, { word: "français", ref: "fr-0246" }] }
+  - id: "fr-2222"
+    target: "doublage"
+    ipa: "dublaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le doublage est très bien fait.", ipa: "lə dublaʒ ɛ tʁɛ bjɛ̃ fɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "doublage", base: "doublage" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bien", ref: "fr-0032" }, { word: "fait", ref: "fr-0287" }] }
+      - { target: "Je préfère le film en version originale.", ipa: "ʒə pʁefɛʁ lə fil ɑ̃ vɛʁsjɔ̃ ɔʁiʒinal", bases: [{ word: "Je", ref: "fr-0126" }, { word: "préfère", base: "préférer" }, { word: "le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }, { word: "en", base: "en" }, { word: "version", base: "version" }, { word: "originale", base: "original" }] }
+  - id: "fr-2223"
+    target: "affiche"
+    ipa: "afiʃ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'affiche du film est jolie.", ipa: "lafiʃ dy fil ɛ ʒɔli", bases: [{ word: "L'affiche", base: "affiche" }, { word: "du", base: "de" }, { word: "film", ref: "fr-2206" }, { word: "est", ref: "fr-0021" }, { word: "jolie", ref: "fr-0414" }] }
+      - { target: "Une affiche annonce la sortie.", ipa: "yn afiʃ anɔ̃s la sɔʁti", bases: [{ word: "Une", ref: "fr-0208" }, { word: "affiche", base: "affiche" }, { word: "annonce", ref: "fr-1830" }, { word: "la", ref: "fr-0544" }, { word: "sortie", ref: "fr-2227" }] }
+  - id: "fr-2224"
+    target: "spectateur"
+    ipa: "spɛktatœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le spectateur rit beaucoup.", ipa: "lə spɛktatœʁ ʁi boku", bases: [{ word: "Le", ref: "fr-0543" }, { word: "spectateur", base: "spectateur" }, { word: "rit", ref: "fr-1773" }, { word: "beaucoup", ref: "fr-0034" }] }
+      - { target: "Les spectateurs applaudissent à la fin.", ipa: "le spɛktatœʁ aplodis a la fɛ̃", bases: [{ word: "Les", ref: "fr-0543" }, { word: "spectateurs", base: "spectateur" }, { word: "applaudissent", ref: "fr-2235" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "fin", ref: "fr-1110" }] }
+  - id: "fr-2225"
+    target: "critique"
+    ipa: "kʁitik"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La critique est très positive.", ipa: "la kʁitik ɛ tʁɛ pozitiv", bases: [{ word: "La", ref: "fr-0544" }, { word: "critique", base: "critique" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "positive", base: "positif" }] }
+      - { target: "Lisez la critique du journal.", ipa: "lizez la kʁitik dy ʒuʁnal", bases: [{ word: "Lisez", ref: "fr-0290" }, { word: "la", ref: "fr-0544" }, { word: "critique", base: "critique" }, { word: "du", base: "de" }, { word: "journal", ref: "fr-1367" }] }
+  - id: "fr-2227"
+    target: "sortie"
+    ipa: "sɔʁti"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La sortie du film est en mai.", ipa: "la sɔʁti dy fil ɛ ɑ̃ mɛ", bases: [{ word: "La", ref: "fr-0544" }, { word: "sortie", base: "sortie" }, { word: "du", base: "de" }, { word: "film", ref: "fr-2206" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "mai", ref: "fr-1156" }] }
+      - { target: "Nous avons fait une sortie au cinéma.", ipa: "nu zavɔ̃ fɛ yn sɔʁti o sinema", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "avons", ref: "fr-0022" }, { word: "fait", ref: "fr-0287" }, { word: "une", ref: "fr-0208" }, { word: "sortie", base: "sortie" }, { word: "au", base: "à" }, { word: "cinéma", ref: "fr-0971" }] }
+  - id: "fr-2228"
+    target: "genre"
+    ipa: "ʒɑ̃ʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Quel genre de film aimes-tu ?", ipa: "kɛl ʒɑ̃ʁ də fil ɛm ty", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "genre", base: "genre" }, { word: "de", base: "de" }, { word: "film", ref: "fr-2206" }, { word: "aimes-tu", ref: "fr-0263" }] }
+      - { target: "C'est mon genre préféré.", ipa: "sɛ mɔ̃ ʒɑ̃ʁ pʁefeʁe", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "mon", ref: "fr-0037" }, { word: "genre", base: "genre" }, { word: "préféré", base: "préféré" }] }
+  - id: "fr-2230"
+    target: "projecteur"
+    ipa: "pʁɔʒɛktœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le projecteur est allumé.", ipa: "lə pʁɔʒɛktœʁ ɛ alyme", bases: [{ word: "Le", ref: "fr-0543" }, { word: "projecteur", base: "projecteur" }, { word: "est", ref: "fr-0021" }, { word: "allumé", ref: "fr-2080" }] }
+      - { target: "Le projecteur montre le film.", ipa: "lə pʁɔʒɛktœʁ mɔ̃tʁ lə fil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "projecteur", base: "projecteur" }, { word: "montre", base: "montrer" }, { word: "film", ref: "fr-2206" }] }
+  - id: "fr-2232"
+    target: "fauteuil"
+    ipa: "fotœj"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mon fauteuil est au milieu.", ipa: "mɔ̃ fotœj ɛ o miljø", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "fauteuil", base: "fauteuil" }, { word: "est", ref: "fr-0021" }, { word: "au", base: "à" }, { word: "milieu", ref: "fr-0475" }] }
+      - { target: "Ce fauteuil est confortable.", ipa: "sə fotœj ɛ kɔ̃fɔʁtabl", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "fauteuil", base: "fauteuil" }, { word: "est", ref: "fr-0021" }, { word: "confortable", base: "confortable" }] }
+  - id: "fr-2233"
+    target: "acteurs"
+    ipa: "aktœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les acteurs jouent très bien.", ipa: "lezaktœʁ ʒu tʁɛ bjɛ̃", bases: [{ word: "Les", ref: "fr-0543" }, { word: "acteurs", base: "acteurs" }, { word: "jouent", ref: "fr-0308" }, { word: "très", ref: "fr-0031" }, { word: "bien", ref: "fr-0032" }] }
+      - { target: "Ces acteurs sont connus.", ipa: "sɛ zaktœʁ sɔ̃ kɔny", bases: [{ word: "Ces", ref: "fr-0143" }, { word: "acteurs", base: "acteurs" }, { word: "sont", ref: "fr-0021" }, { word: "connus", base: "connu" }] }
+  - id: "fr-2234"
+    target: "apprécier"
+    ipa: "apʁesje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'apprécie ce film.", ipa: "ʒapʁesi sə fil", bases: [{ word: "J'apprécie", base: "apprécier" }, { word: "ce", ref: "fr-0143" }, { word: "film", ref: "fr-2206" }] }
+      - { target: "Elle apprécie la musique.", ipa: "ɛl apʁesi la myzik", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "apprécie", base: "apprécier" }, { word: "la", ref: "fr-0544" }, { word: "musique", ref: "fr-0266" }] }
+  - id: "fr-2235"
+    target: "applaudir"
+    ipa: "aplodiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le public applaudit à la fin.", ipa: "lə pyblik aplodi a la fɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "public", ref: "fr-0982" }, { word: "applaudit", base: "applaudir" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "fin", ref: "fr-1110" }] }
+      - { target: "Nous applaudissons le film.", ipa: "nu zaplodisɔ̃ lə fil", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "applaudissons", base: "applaudir" }, { word: "le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }] }
+  - id: "fr-2247"
+    target: "personnage"
+    ipa: "pɛʁsɔnaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le personnage principal est un médecin.", ipa: "lə pɛʁsɔnaʒ pʁɛ̃sipal ɛ œ̃ medsɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "personnage", base: "personnage" }, { word: "principal", base: "principal" }, { word: "est", ref: "fr-0021" }, { word: "un", ref: "fr-0208" }, { word: "médecin", ref: "fr-1073" }] }
+      - { target: "Ce personnage est très drôle.", ipa: "sə pɛʁsɔnaʒ ɛ tʁɛ dʁol", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "personnage", base: "personnage" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
+  - id: "fr-2248"
+    target: "intrigue"
+    ipa: "ɛ̃tʁiɡ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'intrigue est simple.", ipa: "lɛ̃tʁiɡ ɛ sɛ̃pl", bases: [{ word: "L'intrigue", base: "intrigue" }, { word: "est", ref: "fr-0021" }, { word: "simple", base: "simple" }] }
+      - { target: "Cette intrigue surprend tout le monde.", ipa: "sɛt ɛ̃tʁiɡ syʁpʁɑ̃ tu lə mɔ̃d", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "intrigue", base: "intrigue" }, { word: "surprend", base: "surprendre" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "monde", base: "monde" }] }
+  - id: "fr-2249"
+    target: "thriller"
+    ipa: "ʁilœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le thriller commence la nuit.", ipa: "lə ʁilœʁ kɔmɑ̃s la nɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "thriller", base: "thriller" }, { word: "commence", ref: "fr-0508" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }] }
+      - { target: "J'aime les thrillers.", ipa: "ʒɛm le ʁilœʁ", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "les", ref: "fr-0543" }, { word: "thrillers", base: "thriller" }] }
+  - id: "fr-2250"
+    target: "héros"
+    ipa: "ero"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le héros sauve la ville.", ipa: "lə ero sov la vil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "héros", base: "héros" }, { word: "sauve", base: "sauver" }, { word: "la", ref: "fr-0544" }, { word: "ville", ref: "fr-0244" }] }
+      - { target: "Ce héros est très courageux.", ipa: "sə ero ɛ tʁɛ kuʁaʒø", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "héros", base: "héros" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "courageux", base: "courageux" }] }
+  - id: "fr-2251"
+    target: "héroïne"
+    ipa: "eʁɔin"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'héroïne du film chante.", ipa: "leʁɔin dy fil ʃɑ̃t", bases: [{ word: "L'héroïne", base: "héroïne" }, { word: "du", base: "de" }, { word: "film", ref: "fr-2206" }, { word: "chante", ref: "fr-0522" }] }
+      - { target: "Cette héroïne est très forte.", ipa: "sɛt eʁɔin ɛ tʁɛ fɔʁt", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "héroïne", base: "héroïne" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "forte", ref: "fr-0425" }] }
+  - id: "fr-2252"
+    target: "méchant"
+    ipa: "meʃɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le méchant veut voler le trésor.", ipa: "lə meʃɑ̃ vø vɔle lə tʁezɔʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "méchant", base: "méchant" }, { word: "veut", ref: "fr-0311" }, { word: "voler", base: "voler" }, { word: "trésor", base: "trésor" }] }
+      - { target: "Ce méchant fait peur.", ipa: "sə meʃɑ̃ fɛ pœʁ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "méchant", base: "méchant" }, { word: "fait", ref: "fr-0287" }, { word: "peur", ref: "fr-1759" }] }
+  - id: "fr-2253"
+    target: "publicité"
+    ipa: "pyblisite"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La publicité passe avant le film.", ipa: "la pyblisite pas avɑ̃ lə fil", bases: [{ word: "La", ref: "fr-0544" }, { word: "publicité", base: "publicité" }, { word: "passe", ref: "fr-0519" }, { word: "avant", ref: "fr-0596" }, { word: "le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }] }
+      - { target: "Cette publicité est très drôle.", ipa: "sɛt pyblisite ɛ tʁɛ dʁol", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "publicité", base: "publicité" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
+

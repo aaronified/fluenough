@@ -1,0 +1,44 @@
+schema: 1
+id: "fr-en-government-sentences"
+kind: "layer"
+core: "fr-government-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: government"
+license: "CC-BY-SA-4.0"
+description: "Sentences about government, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2056":
+    native: "The MP votes for the law and the mayor applies the decree."
+    bases:
+      "vote": "votes"
+    confusables:
+      "ministere": { why: "A ministry issues decrees; the sentence is about the local mayor." }
+      "parlement": { why: "Parliament is named generally; the sentence names a single MP." }
+  "fr-2057":
+    native: "The citizens elect their mayor and their MP."
+    confusables:
+      "impot": { why: "A tax is paid to the state; the sentence is about voting." }
+      "election": { why: "An election is the event; the sentence names the people voting." }
+  "fr-2058":
+    native: "The administration asks for an authorisation and a document."
+    confusables:
+      "permis": { why: "A permit is a kind of authorisation; the sentence names two different things." }
+      "amende": { why: "A fine is a penalty; the sentence asks for paperwork." }
+  "fr-2059":
+    native: "The embassy forbids the visa without a procedure."
+    confusables:
+      "autoriser": { why: "To authorise is the opposite of forbidding in this sentence." }
+      "constitution": { why: "The constitution is not named in this sentence." }
+  "fr-2060":
+    native: "The budget reform is decided by the council."
+    bases:
+      "du": "some, of the"
+    confusables:
+      "loi": { why: "A law is passed by parliament; the sentence names a council decision." }
+      "decret": { why: "A decree is issued by government; the sentence says the council." }
+  "fr-2061":
+    native: "The court applies the penalty and the fine."
+    confusables:
+      "droit": { why: "A right is what a person is allowed; the sentence is about punishment." }
+      "regle": { why: "A rule is broken before the penalty; the sentence does not name a rule." }

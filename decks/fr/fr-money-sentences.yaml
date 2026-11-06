@@ -1,0 +1,108 @@
+schema: 1
+id: "fr-money-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2735"
+    target: "Je paie par carte bancaire ou en liquide."
+    ipa: "ʒə pe paʁ kaʁt bɑ̃kɛʁ u ɑ̃ likid"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "paie", ref: "fr-0310" }
+      - { word: "par", ref: "fr-0593" }
+      - { word: "carte", ref: "fr-0824" }
+      - { word: "bancaire", base: "bancaire" }
+      - { word: "ou", base: "ou" }
+      - { word: "en", base: "en" }
+      - { word: "liquide", ref: "fr-2713" }
+    confusables:
+      - { id: "cheque", ref: "fr-2714", kind: "word" }
+      - { id: "virement", ref: "fr-2729", kind: "word" }
+  - id: "fr-2736"
+    target: "Le caissier rend la monnaie à la cliente."
+    ipa: "lə kɛsje ʁɑ̃ la mɔnɛ a la klijɑ̃t"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "caissier", ref: "fr-1458" }
+      - { word: "rend", ref: "fr-1616" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "monnaie", ref: "fr-0750" }
+      - { word: "à", base: "à" }
+      - { word: "cliente", ref: "fr-0685" }
+    confusables:
+      - { id: "caisse", ref: "fr-0749", kind: "word" }
+      - { id: "reduction", ref: "fr-1423", kind: "word" }
+  - id: "fr-2737"
+    target: "Ce placement rapporte plus que le crédit."
+    ipa: "sə plasmɑ̃ ʁapɔʁt ply kə lə kʁedi"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "placement", ref: "fr-2718" }
+      - { word: "rapporte", base: "rapporter" }
+      - { word: "plus", ref: "fr-0345" }
+      - { word: "que", base: "que" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "crédit", ref: "fr-2720" }
+    confusables:
+      - { id: "interet", ref: "fr-2721", kind: "word" }
+      - { id: "gain", ref: "fr-2725", kind: "word" }
+  - id: "fr-2738"
+    target: "Elle économise et rembourse sa dette."
+    ipa: "ɛl ekɔnɔmiz e ʁɑ̃buʁs sa dɛt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Elle", ref: "fr-0128" }
+      - { word: "économise", ref: "fr-1456" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "rembourse", ref: "fr-1441" }
+      - { word: "sa", ref: "fr-0138" }
+      - { word: "dette", ref: "fr-2716" }
+    confusables:
+      - { id: "epargne", ref: "fr-2717", kind: "word" }
+      - { id: "emprunt", ref: "fr-2727", kind: "word" }
+  - id: "fr-2739"
+    target: "Les soldes font baisser le coût des vêtements."
+    ipa: "le sɔld fɔ bɛse lə ku de vɛtmɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0543" }
+      - { word: "soldes", ref: "fr-1421" }
+      - { word: "font", ref: "fr-0287" }
+      - { word: "baisser", base: "baisser" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "coût", ref: "fr-2722" }
+      - { word: "des", ref: "fr-0546" }
+      - { word: "vêtements", ref: "fr-1224" }
+    confusables:
+      - { id: "promotion", ref: "fr-1422", kind: "word" }
+      - { id: "depense", ref: "fr-2723", kind: "word" }
+  - id: "fr-2740"
+    target: "Ce projet demande un gros investissement et un prêt."
+    ipa: "sə pʁɔʒɛ dəmɑ̃d œ̃ ɡʁo ɛ̃vestismɑ̃ e œ̃ pʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "projet", ref: "fr-0682" }
+      - { word: "demande", ref: "fr-0521" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "gros", base: "gros" }
+      - { word: "investissement", ref: "fr-2719" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "prêt", ref: "fr-0687" }
+    confusables:
+      - { id: "dette", ref: "fr-2716", kind: "word" }
+      - { id: "revenu", ref: "fr-2724", kind: "word" }
+

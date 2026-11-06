@@ -1,0 +1,312 @@
+schema: 1
+id: "fr-verbs-5"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-5"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2610"
+    target: "quitter"
+    ipa: "kite"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je quitte la maison à sept heures.", ipa: "ʒə kit la mɛzɔ̃ a sɛt œʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "quitte", base: "quitter" }, { word: "la", ref: "fr-0544" }, { word: "maison", ref: "fr-0996" }, { word: "à", base: "à" }, { word: "sept", ref: "fr-0214" }, { word: "heures", ref: "fr-0074" }] }
+      - { target: "Il quitte son travail en mars.", ipa: "il kit sɔ̃ tʁavaj ɑ̃ maʁs", bases: [{ word: "Il", ref: "fr-0127" }, { word: "quitte", base: "quitter" }, { word: "son", ref: "fr-0138" }, { word: "travail", ref: "fr-0255" }, { word: "en", base: "en" }, { word: "mars", ref: "fr-1154" }] }
+  - id: "fr-2611"
+    target: "retourner"
+    ipa: "ʁətuʁne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous retournons à Paris demain.", ipa: "nu ʁətuʁnɔ̃ a paʁi dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "retournons", base: "retourner" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Elle retourne au travail.", ipa: "ɛl ʁətuʁn o tʁavaj", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "retourne", base: "retourner" }, { word: "au", base: "à" }, { word: "travail", ref: "fr-0255" }] }
+  - id: "fr-2612"
+    target: "revenir"
+    ipa: "ʁəvəniʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il revient dans une heure.", ipa: "il ʁəvjɛ̃ dɑ̃z yn œʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "revient", base: "revenir" }, { word: "dans", ref: "fr-0049" }, { word: "une", ref: "fr-0545" }, { word: "heure", ref: "fr-0074" }] }
+      - { target: "Elles sont revenues hier.", ipa: "ɛl sɔ̃ ʁəvny jɛʁ", bases: [{ word: "Elles", ref: "fr-0131" }, { word: "sont", ref: "fr-0021" }, { word: "revenues", ref: "fr-2724" }, { word: "hier", ref: "fr-1038" }] }
+  - id: "fr-2613"
+    target: "devenir"
+    ipa: "dəvniʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il devient professeur.", ipa: "il dəvjɛ̃ pʁɔfesœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "devient", base: "devenir" }, { word: "professeur", ref: "fr-0105" }] }
+      - { target: "Elle est devenue très forte.", ipa: "ɛl ɛ dəvny tʁɛ fɔʁt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "devenue", base: "devenir" }, { word: "très", ref: "fr-0031" }, { word: "forte", ref: "fr-0425" }] }
+  - id: "fr-2614"
+    target: "mener"
+    ipa: "məne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il mène les enfants à l'école.", ipa: "il mɛn lezɑ̃fɑ̃ a lekɔl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "mène", base: "mener" }, { word: "les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "à", base: "à" }, { word: "l'école", ref: "fr-0964" }] }
+      - { target: "Ce chemin mène au village.", ipa: "sə ʃəmɛ mɛn o vilaʒ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "chemin", ref: "fr-0893" }, { word: "mène", base: "mener" }, { word: "au", base: "à" }, { word: "village", base: "village" }] }
+  - id: "fr-2615"
+    target: "traduire"
+    ipa: "tʁadɥiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je traduis ce livre en anglais.", ipa: "ʒə tʁadɥi sə livʁ ɑ̃ ɑ̃ɡlɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "traduis", base: "traduire" }, { word: "ce", ref: "fr-0143" }, { word: "livre", ref: "fr-1363" }, { word: "en", base: "en" }, { word: "anglais", ref: "fr-0247" }] }
+      - { target: "Il traduit les lettres.", ipa: "il tʁadɥi le lɛtʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "traduit", base: "traduire" }, { word: "les", ref: "fr-0543" }, { word: "lettres", ref: "fr-1972" }] }
+  - id: "fr-2616"
+    target: "dire"
+    ipa: "diʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je dis la vérité.", ipa: "ʒə di la veʁite", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dis", base: "dire" }, { word: "la", ref: "fr-0544" }, { word: "vérité", ref: "fr-2660" }] }
+      - { target: "Qu'est-ce que tu dis ?", ipa: "kɛskə ty di", bases: [{ word: "Qu'est-ce", base: "que" }, { word: "que", base: "que" }, { word: "tu", ref: "fr-0095" }, { word: "dis", base: "dire" }] }
+  - id: "fr-2617"
+    target: "enseigner"
+    ipa: "ɑ̃seɲe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il enseigne l'histoire.", ipa: "il ɑ̃sɛɲ listwaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "enseigne", base: "enseigner" }, { word: "l'histoire", ref: "fr-1606" }] }
+      - { target: "Elle enseigne le piano aux enfants.", ipa: "ɛl ɑ̃sɛɲ lə pjano o zɑ̃fɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "enseigne", base: "enseigner" }, { word: "le", ref: "fr-0543" }, { word: "piano", ref: "fr-1644" }, { word: "aux", base: "à" }, { word: "enfants", base: "enfant" }] }
+  - id: "fr-2618"
+    target: "expliquer"
+    ipa: "ɛksplike"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Explique-moi ce mot.", ipa: "ɛksplik mwa sə mo", bases: [{ word: "Explique-moi", base: "expliquer" }, { word: "ce", ref: "fr-0143" }, { word: "mot", ref: "fr-1620" }] }
+      - { target: "Le professeur explique la règle.", ipa: "lə pʁɔfesœʁ ɛksplik la ʁɛɡl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "explique", base: "expliquer" }, { word: "la", ref: "fr-0544" }, { word: "règle", ref: "fr-1365" }] }
+  - id: "fr-2619"
+    target: "comparer"
+    ipa: "kɔ̃paʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je compare les deux prix.", ipa: "ʒə kɔ̃paʁ le dø pʁi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "compare", base: "comparer" }, { word: "les", ref: "fr-0543" }, { word: "deux", ref: "fr-0209" }, { word: "prix", ref: "fr-0737" }] }
+      - { target: "Il compare sa vie à la mienne.", ipa: "il kɔ̃paʁ sa vi a la mjɛn", bases: [{ word: "Il", ref: "fr-0127" }, { word: "compare", base: "comparer" }, { word: "sa", ref: "fr-0138" }, { word: "vie", ref: "fr-0267" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "mienne", base: "mien" }] }
+  - id: "fr-2620"
+    target: "décrire"
+    ipa: "dekʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle décrit la scène.", ipa: "ɛl dekʁi la sɛn", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "décrit", base: "décrire" }, { word: "la", ref: "fr-0544" }, { word: "scène", ref: "fr-2212" }] }
+      - { target: "Décrivez votre maison.", ipa: "dekʁive vɔtʁ mɛzɔ̃", bases: [{ word: "Décrivez", base: "décrire" }, { word: "votre", ref: "fr-0140" }, { word: "maison", ref: "fr-0996" }] }
+  - id: "fr-2621"
+    target: "proposer"
+    ipa: "pʁɔpoze"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je propose un café.", ipa: "ʒə pʁɔpoz œ̃ kafe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "propose", base: "proposer" }, { word: "un", ref: "fr-0208" }, { word: "café", ref: "fr-0793" }] }
+      - { target: "Elle propose de venir demain.", ipa: "ɛl pʁɔpoz də vənir dəmɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "propose", base: "proposer" }, { word: "de", base: "de" }, { word: "venir", ref: "fr-0285" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2622"
+    target: "arrêter"
+    ipa: "aʁɛte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Arrête de parler !", ipa: "aʁɛt də paʁle", bases: [{ word: "Arrête", base: "arrêter" }, { word: "de", base: "de" }, { word: "parler", ref: "fr-0023" }] }
+      - { target: "Le bus s'arrête ici.", ipa: "lə bys saʁɛt isi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "bus", ref: "fr-0854" }, { word: "s'arrête", base: "arrêter" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-2623"
+    target: "se souvenir"
+    ipa: "sə suvniʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je me souviens de ce jour.", ipa: "ʒə mə suvjɛ̃ də sə ʒuʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "me", base: "me" }, { word: "souviens", base: "se souvenir" }, { word: "de", base: "de" }, { word: "ce", ref: "fr-0143" }, { word: "jour", ref: "fr-1032" }] }
+      - { target: "Elle se souvient de tout.", ipa: "ɛl sə suvjɛ̃ də tu", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "se", base: "se" }, { word: "souvient", base: "se souvenir" }, { word: "de", base: "de" }, { word: "tout", ref: "fr-0372" }] }
+  - id: "fr-2624"
+    target: "deviner"
+    ipa: "devine"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Devine qui arrive !", ipa: "dəvin ki aʁiv", bases: [{ word: "Devine", base: "deviner" }, { word: "qui", ref: "fr-0065" }, { word: "arrive", ref: "fr-0305" }] }
+      - { target: "Je devine la réponse.", ipa: "ʒə dəvin la ʁepɔ̃s", bases: [{ word: "Je", ref: "fr-0126" }, { word: "devine", base: "deviner" }, { word: "la", ref: "fr-0544" }, { word: "réponse", ref: "fr-1594" }] }
+  - id: "fr-2625"
+    target: "ramasser"
+    ipa: "ʁamase"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je ramasse les feuilles.", ipa: "ʒə ʁamas le fœj", bases: [{ word: "Je", ref: "fr-0126" }, { word: "ramasse", base: "ramasser" }, { word: "les", ref: "fr-0543" }, { word: "feuilles", base: "feuille" }] }
+      - { target: "Ramassez vos affaires.", ipa: "ʁamase vo afɛʁ", bases: [{ word: "Ramassez", base: "ramasser" }, { word: "vos", ref: "fr-0140" }, { word: "affaires", base: "affaire" }] }
+  - id: "fr-2626"
+    target: "oser"
+    ipa: "oze"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il ose parler à la directrice.", ipa: "il oz paʁle a la diʁɛktʁis", bases: [{ word: "Il", ref: "fr-0127" }, { word: "ose", base: "oser" }, { word: "parler", ref: "fr-0023" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "directrice", base: "directrice" }] }
+      - { target: "Je n'ose pas demander.", ipa: "ʒə nɔz pa dəmɑ̃de", bases: [{ word: "Je", ref: "fr-0126" }, { word: "n'ose", base: "oser" }, { word: "pas", base: "pas" }, { word: "demander", ref: "fr-0521" }] }
+  - id: "fr-2627"
+    target: "avouer"
+    ipa: "avwe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il avoue son erreur.", ipa: "il avu sɔ̃n ɛʁœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "avoue", base: "avouer" }, { word: "son", ref: "fr-0138" }, { word: "erreur", base: "erreur" }] }
+      - { target: "Elle avoue la vérité.", ipa: "ɛl avu la veʁite", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "avoue", base: "avouer" }, { word: "la", ref: "fr-0544" }, { word: "vérité", ref: "fr-2660" }] }
+  - id: "fr-2628"
+    target: "s'approcher"
+    ipa: "sapʁɔʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il s'approche de la porte.", ipa: "il sapʁɔʃ də la pɔʁt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "s'approche", base: "s'approcher" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
+      - { target: "Approchez-vous.", ipa: "apʁɔʃevu", bases: [{ word: "Approchez-vous", base: "approcher" }] }
+  - id: "fr-2629"
+    target: "s'éloigner"
+    ipa: "selwaɲe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle s'éloigne de la mer.", ipa: "ɛl selwaɲ də la mɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "s'éloigne", base: "s'éloigner" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mer", ref: "fr-1939" }] }
+      - { target: "Ne vous éloignez pas.", ipa: "nə vu elwaɲe pa", bases: [{ word: "Ne", base: "ne" }, { word: "vous", ref: "fr-0096" }, { word: "éloignez", base: "éloigner" }, { word: "pas", base: "pas" }] }
+  - id: "fr-2630"
+    target: "réussite"
+    ipa: "ʁeysit"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "C'est une belle réussite.", ipa: "sɛ tyn bɛl ʁeysit", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "belle", ref: "fr-0412" }, { word: "réussite", base: "réussite" }] }
+      - { target: "Sa réussite est méritée.", ipa: "sa ʁeysit ɛ meʁite", bases: [{ word: "Sa", ref: "fr-0138" }, { word: "réussite", base: "réussite" }, { word: "est", ref: "fr-0021" }, { word: "méritée", base: "mérité" }] }
+  - id: "fr-2631"
+    target: "rencontrer"
+    ipa: "ʁɑ̃kɔ̃tʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je rencontre un ami.", ipa: "ʒə ʁɑ̃kɔ̃tʁ œ̃n ami", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rencontre", ref: "fr-2461" }, { word: "un", ref: "fr-0208" }, { word: "ami", ref: "fr-0100" }] }
+      - { target: "Nous rencontrons nos voisins.", ipa: "nu ʁɑ̃kɔ̃tʁɔ̃ noz vwazɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "rencontrons", base: "rencontrer" }, { word: "nos", ref: "fr-0139" }, { word: "voisins", ref: "fr-0101" }] }
+  - id: "fr-2651"
+    target: "remarquer"
+    ipa: "ʁəmaʁke"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ai remarqué ton nouveau manteau.", ipa: "ʒe ʁəmaʁke tɔ̃ nuvo mɑ̃to", bases: [{ word: "J'ai", ref: "fr-0022" }, { word: "remarqué", base: "remarquer" }, { word: "ton", ref: "fr-0141" }, { word: "nouveau", ref: "fr-0413" }, { word: "manteau", ref: "fr-1206" }] }
+      - { target: "Personne ne remarque rien.", ipa: "pɛʁsɔn nə ʁəmaʁk ʁjɛ̃", bases: [{ word: "Personne", base: "personne" }, { word: "ne", base: "ne" }, { word: "remarque", base: "remarquer" }, { word: "rien", ref: "fr-0373" }] }
+  - id: "fr-2652"
+    target: "observer"
+    ipa: "ɔpsɛʁve"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le scientifique observe les étoiles.", ipa: "lə sjɑ̃tifik ɔpsɛʁv lezetwal", bases: [{ word: "Le", ref: "fr-0543" }, { word: "scientifique", base: "scientifique" }, { word: "observe", base: "observer" }, { word: "les", ref: "fr-0543" }, { word: "étoiles", base: "étoile" }] }
+      - { target: "Nous observons les oiseaux.", ipa: "nu ɔpsɛʁvɔ̃ lezwazo", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "observons", base: "observer" }, { word: "les", ref: "fr-0543" }, { word: "oiseaux", ref: "fr-1254" }] }
+  - id: "fr-2653"
+    target: "examiner"
+    ipa: "ɛɡzamine"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le médecin examine le patient.", ipa: "lə medsɛ̃ ɛɡzamin lə pasjɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "médecin", ref: "fr-1073" }, { word: "examine", base: "examiner" }, { word: "patient", ref: "fr-1753" }] }
+      - { target: "Examinez la proposition.", ipa: "ɛɡzamine la pʁəpozisjɔ̃", bases: [{ word: "Examinez", base: "examiner" }, { word: "la", ref: "fr-0544" }, { word: "proposition", base: "proposition" }] }
+  - id: "fr-2654"
+    target: "compter"
+    ipa: "kɔ̃te"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il compte jusqu'à dix.", ipa: "il kɔ̃t ʒysk a di", bases: [{ word: "Il", ref: "fr-0127" }, { word: "compte", ref: "fr-1974" }, { word: "jusqu'à", base: "jusqu’à" }, { word: "dix", ref: "fr-0217" }] }
+      - { target: "Je compte partir demain.", ipa: "ʒə kɔ̃t paʁtiʁ dəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "compte", ref: "fr-1974" }, { word: "partir", ref: "fr-0304" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2655"
+    target: "calculer"
+    ipa: "kalkyle"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je calcule le prix total.", ipa: "ʒə kalkyl lə pʁi tɔtal", bases: [{ word: "Je", ref: "fr-0126" }, { word: "calcule", base: "calculer" }, { word: "le", ref: "fr-0543" }, { word: "prix", ref: "fr-0737" }, { word: "total", base: "total" }] }
+      - { target: "Calculez la distance.", ipa: "kalkyle la distɑ̃s", bases: [{ word: "Calculez", base: "calculer" }, { word: "la", ref: "fr-0544" }, { word: "distance", base: "distance" }] }
+  - id: "fr-2656"
+    target: "rassembler"
+    ipa: "ʁasɑ̃ble"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le maire rassemble les habitants.", ipa: "lə mɛʁ ʁasɑ̃bl lezabitɑ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "maire", ref: "fr-2024" }, { word: "rassemble", base: "rassembler" }, { word: "les", ref: "fr-0543" }, { word: "habitants", base: "habitant" }] }
+      - { target: "Nous rassemblons nos affaires.", ipa: "nu ʁasɑ̃blɔ̃ noz afɛʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "rassemblons", base: "rassembler" }, { word: "nos", ref: "fr-0139" }, { word: "affaires", base: "affaire" }] }
+  - id: "fr-2657"
+    target: "accueillir"
+    ipa: "akœjiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle accueille les visiteurs.", ipa: "ɛl akœj lezvizitœʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "accueille", base: "accueillir" }, { word: "les", ref: "fr-0543" }, { word: "visiteurs", base: "visiteur" }] }
+      - { target: "Nous accueillons nos amis.", ipa: "nu akœjɔ̃ noz ami", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "accueillons", base: "accueillir" }, { word: "nos", ref: "fr-0139" }, { word: "amis", ref: "fr-0100" }] }
+  - id: "fr-2658"
+    target: "élever"
+    ipa: "elve"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle élève deux enfants seule.", ipa: "ɛl elɛv dø ɑ̃fɑ̃ sœl", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "élève", ref: "fr-1588" }, { word: "deux", ref: "fr-0209" }, { word: "enfants", base: "enfant" }, { word: "seule", ref: "fr-0392" }] }
+      - { target: "Les fermiers élèvent des vaches.", ipa: "le fɛʁmje elɛv de vaʃ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "fermiers", base: "fermier" }, { word: "élèvent", base: "élever" }, { word: "des", ref: "fr-0546" }, { word: "vaches", ref: "fr-1256" }] }
+

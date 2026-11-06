@@ -1,0 +1,106 @@
+schema: 1
+id: "fr-arts-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2279"
+    target: "L'artiste peint un tableau pour l'exposition."
+    ipa: "laʁtist pɛ̃ œ̃ tablo puʁ lɛkspozisjɔ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'artiste", ref: "fr-2255" }
+      - { word: "peint", ref: "fr-1652" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "tableau", ref: "fr-1596" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "l'exposition", ref: "fr-2257" }
+    confusables:
+      - { id: "sculpture", ref: "fr-2256", kind: "word" }
+      - { id: "galerie", ref: "fr-2270", kind: "word" }
+  - id: "fr-2280"
+    target: "Le roman raconte la vie d'un écrivain."
+    ipa: "lə ʁɔmɑ̃ ʁakɔ̃t la vi dœ̃ ekʁivɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "roman", ref: "fr-1664" }
+      - { word: "raconte", ref: "fr-0525" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "vie", ref: "fr-0267" }
+      - { word: "d'un", base: "de" }
+      - { word: "écrivain", ref: "fr-2266" }
+    confusables:
+      - { id: "poeme", ref: "fr-1665", kind: "word" }
+      - { id: "auteur", ref: "fr-2265", kind: "word" }
+  - id: "fr-2281"
+    target: "Le théâtre présente un spectacle de danse."
+    ipa: "lə teɑtʁ pʁezɑ̃t œ̃ spɛktakl də dɑ̃s"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "théâtre", ref: "fr-0972" }
+      - { word: "présente", base: "présenter" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "spectacle", ref: "fr-2271" }
+      - { word: "de", base: "de" }
+      - { word: "danse", ref: "fr-0523" }
+    confusables:
+      - { id: "concert", ref: "fr-2263", kind: "word" }
+      - { id: "roman", ref: "fr-1664", kind: "word" }
+  - id: "fr-2282"
+    target: "Ce concert est célèbre pour sa musique classique."
+    ipa: "sə kɔ̃sɛʁ ɛ selɛbʁ puʁ sa myzik klasik"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Ce", ref: "fr-0143" }
+      - { word: "concert", ref: "fr-2263" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "célèbre", ref: "fr-2275" }
+      - { word: "pour", ref: "fr-0591" }
+      - { word: "sa", ref: "fr-0138" }
+      - { word: "musique", ref: "fr-0266" }
+      - { word: "classique", ref: "fr-2274" }
+    confusables:
+      - { id: "moderne", ref: "fr-2273", kind: "word" }
+      - { id: "original", ref: "fr-2272", kind: "word" }
+  - id: "fr-2283"
+    target: "Le musée expose une sculpture moderne."
+    ipa: "lə myze ɛkspoz yn skyltyʁ mɔdɛʁn"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "musée", ref: "fr-0077" }
+      - { word: "expose", ref: "fr-2260" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "sculpture", ref: "fr-2256" }
+      - { word: "moderne", ref: "fr-2273" }
+    confusables:
+      - { id: "peinture", ref: "fr-1653", kind: "word" }
+      - { id: "tableau", ref: "fr-1596", kind: "word" }
+  - id: "fr-2284"
+    target: "L'œuvre montre le talent et le style de l'artiste."
+    ipa: "lœvʁ mɔ̃tʁ lə talɑ̃ e lə stil dlaʁtist"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'œuvre", ref: "fr-2269" }
+      - { word: "montre", base: "montrer" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "talent", ref: "fr-2267" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "style", ref: "fr-2268" }
+      - { word: "de", base: "de" }
+      - { word: "l'artiste", ref: "fr-2255" }
+    confusables:
+      - { id: "inspirer", ref: "fr-2276", kind: "word" }
+      - { id: "esthetique", ref: "fr-2277", kind: "word" }
+

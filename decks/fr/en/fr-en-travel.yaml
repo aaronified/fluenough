@@ -1,0 +1,550 @@
+schema: 1
+id: "fr-en-travel"
+kind: "layer"
+core: "fr-travel"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Travel"
+license: "CC-BY-SA-4.0"
+description: "Forty words for travel: documents, the airport and the station, the places we go, and the words for a trip from start to end. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1912":
+    native: "passport"
+    notes:
+      "n1": "Un passeport is the travel document with your photo; the plural is passeports."
+    examples:
+      "Montrez votre passeport, s'il vous plaît.":
+        native: "Show your passport, please."
+        bases:
+          "Montrez": "show"
+          "passeport": "passport"
+          "plaît": "pleases"
+      "Mon passeport est dans ma valise.":
+        native: "My passport is in my suitcase."
+        bases:
+          "passeport": "passport"
+  "fr-1913":
+    native: "visa"
+    notes:
+      "n1": "Un visa is an official permission to enter a country."
+    examples:
+      "Il faut un visa pour entrer.":
+        native: "You need a visa to enter."
+        bases:
+          "faut": "must"
+          "visa": "visa"
+      "Le visa est valable trois mois.":
+        native: "The visa is valid for three months."
+        bases:
+          "visa": "visa"
+          "valable": "valid"
+  "fr-1914":
+    native: "customs"
+    notes:
+      "n1": "La douane is the customs office at a border or airport."
+    examples:
+      "Nous passons la douane.":
+        native: "We go through customs."
+        bases:
+          "douane": "customs"
+      "Il a une valise à la douane.":
+        native: "He has a suitcase at customs."
+        bases:
+          "à": "to, at"
+          "douane": "customs"
+  "fr-1915":
+    native: "departure"
+    notes:
+      "n1": "Le départ is the leaving of a train, plane or bus."
+    examples:
+      "Le départ est à huit heures.":
+        native: "The departure is at eight o’clock."
+        bases:
+          "départ": "departure"
+          "à": "to, at"
+      "Le train est en retard au départ.":
+        native: "The train is late at departure."
+        bases:
+          "en": "in, by, as"
+          "au": "at, to the"
+          "départ": "departure"
+  "fr-1916":
+    native: "arrival"
+    notes:
+      "n1": "L’arrivée is the arrival of a train, plane or person."
+    examples:
+      "L'arrivée du train est à midi.":
+        native: "The arrival of the train is at noon."
+        bases:
+          "L'arrivée": "arrival"
+          "du": "some, of the"
+          "à": "to, at"
+      "Nous attendons leur arrivée.":
+        native: "We are waiting for their arrival."
+        bases:
+          "arrivée": "arrival"
+  "fr-1917":
+    native: "cruise"
+    notes:
+      "n1": "Une croisière is a holiday trip by ship."
+    examples:
+      "Nous faisons une croisière.":
+        native: "We are going on a cruise."
+        bases:
+          "croisière": "cruise"
+      "La croisière dure une semaine.":
+        native: "The cruise lasts a week."
+        bases:
+          "croisière": "cruise"
+  "fr-1918":
+    native: "tour, circuit"
+    notes:
+      "n1": "Un circuit is an organised tour with several stops."
+    examples:
+      "Le circuit passe par trois villes.":
+        native: "The tour goes through three towns."
+        bases:
+          "circuit": "tour, circuit"
+      "Ce circuit dure dix jours.":
+        native: "This tour lasts ten days."
+        bases:
+          "circuit": "tour, circuit"
+  "fr-1919":
+    native: "inn, hostel"
+    notes:
+      "n1": "Une auberge is a small hotel or a youth hostel."
+    examples:
+      "L'auberge est au bord de la mer.":
+        native: "The inn is by the sea."
+        bases:
+          "L'auberge": "inn, hostel"
+          "au": "at, to the"
+          "bord": "edge"
+          "de": "of, from, some"
+      "Nous dormons dans une auberge.":
+        native: "We sleep in an inn."
+        bases:
+          "auberge": "inn, hostel"
+  "fr-1920":
+    native: "seat"
+    notes:
+      "n1": "Un siège is a seat on a train, bus or plane."
+    examples:
+      "Ce siège est libre ?":
+        native: "Is this seat free?"
+        bases:
+          "siège": "seat"
+      "Mon siège est près de la fenêtre.":
+        native: "My seat is near the window."
+        bases:
+          "siège": "seat"
+          "de": "of, from, some"
+  "fr-1921":
+    native: "itinerary, route"
+    notes:
+      "n1": "Un itinéraire is the planned route of a trip."
+    examples:
+      "Voici notre itinéraire.":
+        native: "Here is our itinerary."
+        bases:
+          "Voici": "here is"
+          "itinéraire": "itinerary, route"
+      "L'itinéraire passe par la côte.":
+        native: "The route goes along the coast."
+        bases:
+          "L'itinéraire": "itinerary, route"
+          "côte": "coast"
+  "fr-1922":
+    native: "excursion, day trip"
+    notes:
+      "n1": "Une excursion is a short trip, often for the day."
+    examples:
+      "Nous faisons une excursion demain.":
+        native: "We are going on an excursion tomorrow."
+        bases:
+          "excursion": "excursion, day trip"
+      "L'excursion coûte cher.":
+        native: "The excursion costs a lot."
+        bases:
+          "L'excursion": "excursion, day trip"
+  "fr-1923":
+    native: "stay"
+    notes:
+      "n1": "Un séjour is a stay in a place."
+    examples:
+      "Mon séjour dure deux semaines.":
+        native: "My stay lasts two weeks."
+        bases:
+          "séjour": "stay"
+      "Nous avons aimé notre séjour.":
+        native: "We liked our stay."
+        bases:
+          "séjour": "stay"
+  "fr-1924":
+    native: "tourist"
+    notes:
+      "n1": "Touriste is used for both genders."
+    examples:
+      "Le touriste prend une photo.":
+        native: "The tourist takes a photo."
+        bases:
+          "touriste": "tourist"
+      "Beaucoup de touristes visitent la ville.":
+        native: "Many tourists visit the town."
+        bases:
+          "de": "of, from, some"
+          "touristes": "tourist"
+  "fr-1925":
+    native: "guide"
+    notes:
+      "n1": "Un guide is a person who shows you a place, or a book about it."
+    examples:
+      "Le guide parle en français.":
+        native: "The guide speaks in French."
+        bases:
+          "guide": "guide"
+          "en": "in, by, as"
+      "J'achète un guide de la ville.":
+        native: "I buy a guide to the town."
+        bases:
+          "guide": "guide"
+          "de": "of, from, some"
+  "fr-1926":
+    native: "beach"
+    notes:
+      "n1": "Une plage is a sandy or pebbly shore by the sea."
+    examples:
+      "La plage est très belle.":
+        native: "The beach is very beautiful."
+        bases:
+          "plage": "beach"
+      "Nous allons à la plage.":
+        native: "We are going to the beach."
+        bases:
+          "à": "to, at"
+          "plage": "beach"
+  "fr-1927":
+    native: "mountain"
+    notes:
+      "n1": "Une montagne is a high mountain; the mountains are les montagnes."
+    examples:
+      "La montagne est couverte de neige.":
+        native: "The mountain is covered in snow."
+        bases:
+          "montagne": "mountain"
+          "de": "of, from, some"
+      "Nous partons à la montagne.":
+        native: "We are leaving for the mountains."
+        bases:
+          "à": "to, at"
+          "montagne": "mountain"
+  "fr-1928":
+    native: "to board"
+    notes:
+      "n1": "Embarquer is regular: to get on a plane or boat."
+    examples:
+      "Les passagers embarquent à onze heures.":
+        native: "The passengers board at eleven."
+        bases:
+          "embarquent": "to board"
+          "à": "to, at"
+      "Nous embarquons dans le bateau.":
+        native: "We board the boat."
+        bases:
+          "embarquons": "to board"
+          "bateau": "boat"
+  "fr-1929":
+    native: "to land"
+    notes:
+      "n1": "Atterrir is an -ir verb: the plane lands."
+    examples:
+      "L'avion atterrit à Paris.":
+        native: "The plane lands in Paris."
+        bases:
+          "atterrit": "to land"
+          "à": "to, at"
+          "Paris": "Paris"
+      "Nous atterrissons dans une heure.":
+        native: "We land in an hour."
+        bases:
+          "atterrissons": "to land"
+  "fr-1930":
+    native: "to take off"
+    notes:
+      "n1": "Décoller is regular: the plane takes off."
+    examples:
+      "L'avion décolle à sept heures.":
+        native: "The plane takes off at seven."
+        bases:
+          "décolle": "to take off"
+          "à": "to, at"
+      "Le vol décolle en retard.":
+        native: "The flight takes off late."
+        bases:
+          "décolle": "to take off"
+          "en": "in, by, as"
+  "fr-1931":
+    native: "to visit"
+    notes:
+      "n1": "Visiter is regular; visiter is used for places and museums, rendre visite for people."
+    examples:
+      "Nous visitons le musée demain.":
+        native: "We visit the museum tomorrow."
+        bases:
+          "visitons": "to visit"
+      "Je visite ma tante le week-end.":
+        native: "I visit my aunt at weekends."
+        bases:
+          "visite": "to visit"
+  "fr-1933":
+    native: "identity"
+    notes:
+      "n1": "La carte d’identité is the identity card."
+    examples:
+      "Montrez votre pièce d'identité.":
+        native: "Show your identity document."
+        bases:
+          "Montrez": "show"
+          "pièce": "document"
+          "d'identité": "identity"
+      "Son identité est vérifiée.":
+        native: "His identity is checked."
+        bases:
+          "identité": "identity"
+  "fr-1935":
+    native: "accommodation"
+    notes:
+      "n1": "L’hébergement is where you sleep on a trip."
+    examples:
+      "L'hébergement est inclus.":
+        native: "Accommodation is included."
+        bases:
+          "L'hébergement": "accommodation"
+          "inclus": "included"
+      "Nous cherchons un hébergement.":
+        native: "We are looking for accommodation."
+        bases:
+          "hébergement": "accommodation"
+  "fr-1937":
+    native: "souvenir, memory"
+    notes:
+      "n1": "Un souvenir is an object to keep from a trip, or a memory."
+    examples:
+      "J'achète un souvenir pour ma mère.":
+        native: "I buy a souvenir for my mother."
+        bases:
+          "souvenir": "souvenir, memory"
+      "C'est un bon souvenir.":
+        native: "It is a good memory."
+        bases:
+          "souvenir": "souvenir, memory"
+  "fr-1938":
+    native: "landscape"
+    notes:
+      "n1": "Un paysage is the view of a countryside or a place."
+    examples:
+      "Le paysage est magnifique.":
+        native: "The landscape is magnificent."
+        bases:
+          "paysage": "landscape"
+          "magnifique": "magnificent"
+      "Nous admirons le paysage.":
+        native: "We admire the landscape."
+        bases:
+          "admirons": "admire"
+          "paysage": "landscape"
+  "fr-1939":
+    native: "sea"
+    notes:
+      "n1": "La mer is the sea; the seaside is le bord de mer."
+    examples:
+      "La mer est calme aujourd'hui.":
+        native: "The sea is calm today."
+        bases:
+          "mer": "sea"
+          "aujourd'hui": "today"
+      "Nous nageons dans la mer.":
+        native: "We swim in the sea."
+        bases:
+          "mer": "sea"
+  "fr-1940":
+    native: "border"
+    notes:
+      "n1": "La frontière is the line between two countries."
+    examples:
+      "Nous passons la frontière ce soir.":
+        native: "We cross the border tonight."
+        bases:
+          "frontière": "border"
+      "La frontière est fermée.":
+        native: "The border is closed."
+        bases:
+          "frontière": "border"
+  "fr-1941":
+    native: "foreigner, abroad"
+    notes:
+      "n1": "Un étranger is a foreigner; à l’étranger is abroad."
+    examples:
+      "Il vit à l'étranger.":
+        native: "He lives abroad."
+        bases:
+          "vit": "lives"
+          "à": "to, at"
+          "l'étranger": "foreigner, abroad"
+      "Un étranger demande la route.":
+        native: "A foreigner asks the way."
+        bases:
+          "étranger": "foreigner, abroad"
+  "fr-1946":
+    native: "traveller"
+    notes:
+      "n1": "Un voyageur is a traveller; the feminine is une voyageuse."
+    examples:
+      "Le voyageur attend le train.":
+        native: "The traveller waits for the train."
+        bases:
+          "voyageur": "traveller"
+      "Ce voyageur a perdu son sac.":
+        native: "This traveller has lost his bag."
+        bases:
+          "voyageur": "traveller"
+  "fr-1948":
+    native: "stopover"
+    notes:
+      "n1": "Une escale is a short stop during a long journey."
+    examples:
+      "Le vol fait une escale à Dubaï.":
+        native: "The flight has a stopover in Dubai."
+        bases:
+          "escale": "stopover"
+          "à": "to, at"
+          "Dubaï": "Dubai"
+      "L'escale dure deux heures.":
+        native: "The stopover lasts two hours."
+        bases:
+          "L'escale": "stopover"
+  "fr-1959":
+    native: "boarding"
+    notes:
+      "n1": "L’embarquement is the act of getting on a plane or boat."
+    examples:
+      "L'embarquement commence à dix heures.":
+        native: "Boarding starts at ten."
+        bases:
+          "L'embarquement": "boarding"
+          "à": "to, at"
+      "Montrez votre carte d'embarquement.":
+        native: "Show your boarding pass."
+        bases:
+          "Montrez": "show"
+          "d'embarquement": "boarding"
+  "fr-1961":
+    native: "toll"
+    notes:
+      "n1": "Un péage is a place on a motorway where you pay to drive on."
+    examples:
+      "La route a un péage.":
+        native: "The road has a toll."
+        bases:
+          "péage": "toll"
+      "Le péage coûte cher.":
+        native: "The toll costs a lot."
+        bases:
+          "péage": "toll"
+  "fr-1963":
+    native: "left-luggage office"
+    notes:
+      "n1": "La consigne is the place where you leave bags for a while."
+    examples:
+      "La consigne ferme à minuit.":
+        native: "The left-luggage office closes at midnight."
+        bases:
+          "consigne": "left-luggage office"
+          "à": "to, at"
+      "Je laisse mon sac à la consigne.":
+        native: "I leave my bag at the left-luggage office."
+        bases:
+          "laisse": "leave"
+          "à": "to, at"
+          "consigne": "left-luggage office"
+  "fr-1964":
+    native: "tent"
+    notes:
+      "n1": "Une tente is a tent for camping."
+    examples:
+      "Nous dormons dans une tente.":
+        native: "We sleep in a tent."
+        bases:
+          "tente": "tent"
+      "La tente est très légère.":
+        native: "The tent is very light."
+        bases:
+          "tente": "tent"
+  "fr-1966":
+    native: "flight attendant"
+    notes:
+      "n1": "Une hôtesse de l’air is a female flight attendant."
+    examples:
+      "L'hôtesse annonce le départ.":
+        native: "The flight attendant announces the departure."
+        bases:
+          "L'hôtesse": "flight attendant"
+      "L'hôtesse aide les passagers.":
+        native: "The flight attendant helps the passengers."
+        bases:
+          "L'hôtesse": "flight attendant"
+  "fr-1967":
+    native: "backpack"
+    notes:
+      "n1": "Un sac à dos is a bag carried on the back."
+    examples:
+      "Mon sac à dos est léger.":
+        native: "My backpack is light."
+        bases:
+          "à": "to, at"
+      "Il met ses affaires dans son sac à dos.":
+        native: "He puts his things in his backpack."
+        bases:
+          "affaires": "things"
+          "à": "to, at"
+  "fr-1968":
+    native: "shuttle bus"
+    notes:
+      "n1": "Une navette is a bus or train that runs between two places often."
+    examples:
+      "La navette part toutes les dix minutes.":
+        native: "The shuttle leaves every ten minutes."
+        bases:
+          "navette": "shuttle bus"
+      "Nous prenons la navette pour l'aéroport.":
+        native: "We take the shuttle to the airport."
+        bases:
+          "navette": "shuttle bus"
+  "fr-1969":
+    native: "ferry"
+    notes:
+      "n1": "Un ferry carries cars and people across the sea."
+    examples:
+      "Le ferry traverse la mer.":
+        native: "The ferry crosses the sea."
+        bases:
+          "ferry": "ferry"
+      "Le ferry part à minuit.":
+        native: "The ferry leaves at midnight."
+        bases:
+          "ferry": "ferry"
+          "à": "to, at"
+  "fr-1970":
+    native: "barge"
+    notes:
+      "n1": "Une péniche is a flat boat for carrying goods or for a holiday on a river."
+    examples:
+      "Nous dormons sur une péniche.":
+        native: "We sleep on a barge."
+        bases:
+          "péniche": "barge"
+      "La péniche descend la rivière.":
+        native: "The barge goes down the river."
+        bases:
+          "péniche": "barge"
+          "rivière": "river"

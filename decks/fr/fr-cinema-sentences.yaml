@@ -1,0 +1,106 @@
+schema: 1
+id: "fr-cinema-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2238"
+    target: "Le réalisateur et l'acteur parlent du scénario."
+    ipa: "lə ʁealizatœʁ e laktœʁ paʁl dy senaʁjo"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "réalisateur", ref: "fr-2210" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "l'acteur", ref: "fr-2208" }
+      - { word: "parlent", ref: "fr-0023" }
+      - { word: "du", base: "de" }
+      - { word: "scénario", ref: "fr-2211" }
+    confusables:
+      - { id: "actrice", ref: "fr-2209", kind: "word" }
+      - { id: "critique", ref: "fr-2225", kind: "word" }
+  - id: "fr-2239"
+    target: "La comédie fait rire le public."
+    ipa: "la kɔmedi fɛ ʁiʁ lə pyblik"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "comédie", ref: "fr-2215" }
+      - { word: "fait", ref: "fr-0287" }
+      - { word: "rire", ref: "fr-1773" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "public", ref: "fr-0982" }
+    confusables:
+      - { id: "drame", ref: "fr-2216", kind: "word" }
+      - { id: "suspense", ref: "fr-2219", kind: "word" }
+  - id: "fr-2240"
+    target: "Le documentaire montre la nature et sa beauté."
+    ipa: "lə dɔkymɑ̃tɛʁ mɔ̃tʁ la natyʁ e sa bote"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "documentaire", ref: "fr-2217" }
+      - { word: "montre", base: "montrer" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "nature", base: "nature" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "sa", ref: "fr-0138" }
+      - { word: "beauté", base: "beauté" }
+    confusables:
+      - { id: "dessinanime", ref: "fr-2218", kind: "word" }
+      - { id: "musique", ref: "fr-0266", kind: "word" }
+  - id: "fr-2241"
+    target: "Le spectateur lit les sous-titres du film."
+    ipa: "lə spɛktatœʁ li le sutitʁ dy fil"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "spectateur", ref: "fr-2224" }
+      - { word: "lit", ref: "fr-1005" }
+      - { word: "les", ref: "fr-0543" }
+      - { word: "sous-titres", ref: "fr-2221" }
+      - { word: "du", base: "de" }
+      - { word: "film", ref: "fr-2206" }
+    confusables:
+      - { id: "doublage", ref: "fr-2222", kind: "word" }
+      - { id: "seance", ref: "fr-2214", kind: "word" }
+  - id: "fr-2242"
+    target: "La bande-annonce montre une scène du film."
+    ipa: "la bɑ̃d anɔ̃s mɔ̃tʁ yn sɛn dy fil"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "bande-annonce", ref: "fr-2220" }
+      - { word: "montre", base: "montrer" }
+      - { word: "une", ref: "fr-0208" }
+      - { word: "scène", ref: "fr-2212" }
+      - { word: "du", base: "de" }
+      - { word: "film", ref: "fr-2206" }
+    confusables:
+      - { id: "affiche", ref: "fr-2223", kind: "word" }
+      - { id: "scenario", ref: "fr-2211", kind: "word" }
+  - id: "fr-2243"
+    target: "Le prix de la séance est élevé."
+    ipa: "lə pʁi də la seɑ̃s ɛ elve"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "prix", ref: "fr-0737" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "séance", ref: "fr-2214" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "élevé", base: "élevé" }
+    confusables:
+      - { id: "billet", ref: "fr-0856", kind: "word" }
+      - { id: "sortie", ref: "fr-2227", kind: "word" }
+

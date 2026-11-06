@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-cinema"
+name: "Reading: cinema"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about cinema. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-film-review"
+    title: "A short film review"
+    theme: "cinema"
+    sentences:
+      - text: "Ce film est une comédie qui fait rire du début à la fin."
+      - text: "Les acteurs jouent très bien, surtout la jeune actrice du rôle principal."
+      - text: "Le scénario est un peu long, mais la musique est belle."
+      - text: "Je recommande ce film à tous les spectateurs."
+    questions:
+      - id: "fr-2244"
+        prompt: { en: "How does the reviewer describe the film?" }
+        options:
+          - { en: "As a drama" }
+          - { en: "As a comedy" }
+          - { en: "As a documentary" }
+        answer: 2
+      - id: "fr-2245"
+        prompt: { en: "What does the reviewer say about the script?" }
+        options:
+          - { en: "It is short" }
+          - { en: "It is a little long" }
+          - { en: "It is perfect" }
+        answer: 2
+      - id: "fr-2246"
+        prompt: { en: "Who does the reviewer recommend the film to?" }
+        options:
+          - { en: "Only children" }
+          - { en: "All viewers" }
+          - { en: "Nobody" }
+        answer: 2

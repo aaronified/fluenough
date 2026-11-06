@@ -1,0 +1,391 @@
+schema: 1
+id: "fr-verbs-4"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "verbs-4"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2572"
+    target: "échouer"
+    ipa: "eʃwe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il échoue à l'examen.", ipa: "il eʃu a lɛɡzamɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "échoue", base: "échouer" }, { word: "à", base: "à" }, { word: "l'examen", ref: "fr-1592" }] }
+      - { target: "Le projet échoue.", ipa: "lə pʁɔʒɛ eʃu", bases: [{ word: "Le", ref: "fr-0543" }, { word: "projet", ref: "fr-0682" }, { word: "échoue", base: "échouer" }] }
+  - id: "fr-2573"
+    target: "rappeler"
+    ipa: "ʁapəle"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Rappelle-moi demain.", ipa: "ʁapɛl mwa dəmɛ̃", bases: [{ word: "Rappelle-moi", base: "rappeler" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Ce film me rappelle mon enfance.", ipa: "sə fil mə ʁapɛl mɔ̃n ɑ̃fɑ̃s", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "film", ref: "fr-2206" }, { word: "me", base: "me" }, { word: "rappelle", base: "rappeler" }, { word: "mon", ref: "fr-0037" }, { word: "enfance", base: "enfance" }] }
+  - id: "fr-2574"
+    target: "mentir"
+    ipa: "mɑ̃tiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il ment à sa mère.", ipa: "il mɑ̃ a sa mɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "ment", base: "mentir" }, { word: "à", base: "à" }, { word: "sa", ref: "fr-0138" }, { word: "mère", ref: "fr-0166" }] }
+      - { target: "Tu ne mens pas ?", ipa: "ty nə mɑ̃ pa", bases: [{ word: "Tu", ref: "fr-0372" }, { word: "ne", base: "ne" }, { word: "mens", base: "mentir" }, { word: "pas", base: "pas" }] }
+  - id: "fr-2575"
+    target: "réfléchir"
+    ipa: "ʁefleʃiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je réfléchis à ta proposition.", ipa: "ʒə ʁefleʃi a ta pʁəpozisjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "réfléchis", base: "réfléchir" }, { word: "à", base: "à" }, { word: "ta", ref: "fr-0141" }, { word: "proposition", base: "proposition" }] }
+      - { target: "Réfléchissez avant de répondre.", ipa: "ʁefleʃise avɑ̃ də ʁepɔ̃dʁ", bases: [{ word: "Réfléchissez", base: "réfléchir" }, { word: "avant", ref: "fr-0596" }, { word: "de", base: "de" }, { word: "répondre", ref: "fr-0504" }] }
+  - id: "fr-2576"
+    target: "grandir"
+    ipa: "ɡʁɑ̃diʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les enfants grandissent vite.", ipa: "lezɑ̃fɑ̃ ɡʁɑ̃dis vit", bases: [{ word: "Les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "grandissent", base: "grandir" }, { word: "vite", ref: "fr-0338" }] }
+      - { target: "Le jardin a grandi cette année.", ipa: "lə ʒaʁdɛ̃ a ɡʁɑ̃di sɛt anɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jardin", ref: "fr-1000" }, { word: "a", ref: "fr-0022" }, { word: "grandi", base: "grandir" }, { word: "cette", ref: "fr-0144" }, { word: "année", ref: "fr-1166" }] }
+  - id: "fr-2577"
+    target: "vieillir"
+    ipa: "vjɛjiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Mes parents vieillissent.", ipa: "me paʁɑ̃ vjɛjis", bases: [{ word: "Mes", ref: "fr-0037" }, { word: "parents", ref: "fr-0173" }, { word: "vieillissent", base: "vieillir" }] }
+      - { target: "Il a vieilli depuis l'an dernier.", ipa: "il a vjɛji dəpɥi lɑ̃ dɛʁnje", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "vieilli", base: "vieillir" }, { word: "depuis", base: "depuis" }, { word: "l'an", ref: "fr-0259" }, { word: "dernier", ref: "fr-0688" }] }
+  - id: "fr-2578"
+    target: "obéir"
+    ipa: "ɔbeiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chien obéit au maître.", ipa: "lə ʃjɛ̃ ɔbei o mɛtʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chien", ref: "fr-1253" }, { word: "obéit", base: "obéir" }, { word: "au", base: "à" }, { word: "maître", base: "maître" }] }
+      - { target: "Les élèves obéissent au professeur.", ipa: "lezelɛv ɔbeis o pʁɔfesœʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "élèves", ref: "fr-1588" }, { word: "obéissent", base: "obéir" }, { word: "au", base: "à" }, { word: "professeur", ref: "fr-0105" }] }
+  - id: "fr-2579"
+    target: "punir"
+    ipa: "pyniʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le juge punit le voleur.", ipa: "lə ʒyʒ pyni lə vɔlœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "juge", ref: "fr-2537" }, { word: "punit", base: "punir" }, { word: "voleur", base: "voleur" }] }
+      - { target: "On ne doit pas punir les enfants.", ipa: "ɔ̃ nə dwa pa pyniʁ lezɑ̃fɑ̃", bases: [{ word: "On", ref: "fr-0132" }, { word: "ne", base: "ne" }, { word: "doit", ref: "fr-0501" }, { word: "pas", base: "pas" }, { word: "punir", base: "punir" }, { word: "les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }] }
+  - id: "fr-2580"
+    target: "prêter"
+    ipa: "pʁete"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu me prêtes ton stylo ?", ipa: "ty mə pʁɛt tɔ̃ stilo", bases: [{ word: "Tu", ref: "fr-0372" }, { word: "me", base: "me" }, { word: "prêtes", base: "prêter" }, { word: "ton", ref: "fr-0141" }, { word: "stylo", ref: "fr-1360" }] }
+      - { target: "Elle prête son vélo à son frère.", ipa: "ɛl pʁɛt sɔ̃ velo a sɔ̃ fʁɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "prête", base: "prêter" }, { word: "son", ref: "fr-0138" }, { word: "vélo", ref: "fr-0860" }, { word: "à", base: "à" }, { word: "frère", ref: "fr-0169" }] }
+  - id: "fr-2581"
+    target: "emprunter"
+    ipa: "ɑ̃pʁɛ̃te"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'emprunte un livre à la bibliothèque.", ipa: "ʒɑ̃pʁɛ̃t œ̃ livʁ a la bibljɔtɛk", bases: [{ word: "J'emprunte", base: "emprunter" }, { word: "un", ref: "fr-0208" }, { word: "livre", ref: "fr-1363" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0543" }, { word: "bibliothèque", ref: "fr-0967" }] }
+      - { target: "Il emprunte de l'argent à son père.", ipa: "il ɑ̃pʁɛ̃t də laʁʒɑ̃ a sɔ̃ pɛʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "emprunte", base: "emprunter" }, { word: "de", base: "de" }, { word: "l'argent", ref: "fr-0751" }, { word: "à", base: "à" }, { word: "son", ref: "fr-0138" }, { word: "père", ref: "fr-0165" }] }
+  - id: "fr-2582"
+    target: "convaincre"
+    ipa: "kɔ̃vɛ̃kʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il me convainc facilement.", ipa: "il mə kɔ̃vɛ̃k fasilmɑ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "me", base: "me" }, { word: "convainc", base: "convaincre" }, { word: "facilement", base: "facilement" }] }
+      - { target: "Nous les convainquons de venir.", ipa: "nu le kɔ̃vɛ̃kɔ̃ də vənir", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "les", ref: "fr-0543" }, { word: "convainquons", base: "convaincre" }, { word: "de", base: "de" }, { word: "venir", ref: "fr-0285" }] }
+  - id: "fr-2583"
+    target: "persuader"
+    ipa: "pɛʁsɥade"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle le persuade de rester.", ipa: "ɛl lə pɛʁsɥad də ʁɛste", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "le", ref: "fr-0543" }, { word: "persuade", base: "persuader" }, { word: "de", base: "de" }, { word: "rester", ref: "fr-0514" }] }
+      - { target: "Je te persuade facilement.", ipa: "ʒə tə pɛʁsɥad fasilmɑ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "te", base: "te" }, { word: "persuade", base: "persuader" }, { word: "facilement", base: "facilement" }] }
+  - id: "fr-2584"
+    target: "étonner"
+    ipa: "etɔne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ta réponse m'étonne.", ipa: "ta ʁepɔ̃s mɛtɔn", bases: [{ word: "Ta", ref: "fr-0141" }, { word: "réponse", ref: "fr-1594" }, { word: "m'étonne", base: "étonner" }] }
+      - { target: "Cela étonne tout le monde.", ipa: "səla etɔn tu lə mɔ̃d", bases: [{ word: "Cela", ref: "fr-0145" }, { word: "étonne", base: "étonner" }, { word: "tout", ref: "fr-0372" }, { word: "le", ref: "fr-0543" }, { word: "monde", base: "monde" }] }
+  - id: "fr-2585"
+    target: "ennuyer"
+    ipa: "ɑ̃nɥije"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce film m'ennuie.", ipa: "sə fil mɑ̃nɥi", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "film", ref: "fr-2206" }, { word: "m'ennuie", base: "ennuyer" }] }
+      - { target: "Elle s'ennuie pendant le cours.", ipa: "ɛl sɑ̃nɥi pɑ̃dɑ̃ lə kuʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "s'ennuie", base: "ennuyer" }, { word: "pendant", ref: "fr-0597" }, { word: "le", ref: "fr-0543" }, { word: "cours", ref: "fr-1610" }] }
+  - id: "fr-2586"
+    target: "plaire"
+    ipa: "plɛʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ce restaurant me plaît.", ipa: "sə ʁɛstɔʁɑ̃ mə plɛ", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "restaurant", ref: "fr-0970" }, { word: "me", base: "me" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Cette idée lui plaît beaucoup.", ipa: "sɛt ide lɥi plɛ boku", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "idée", ref: "fr-0683" }, { word: "lui", ref: "fr-0135" }, { word: "plaît", base: "plaire" }, { word: "beaucoup", ref: "fr-0034" }] }
+  - id: "fr-2587"
+    target: "disparaître"
+    ipa: "dispaʁɛtʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le soleil disparaît derrière la colline.", ipa: "lə sɔlɛj dispaʁɛ dəʁjɛʁ la kɔlin", bases: [{ word: "Le", ref: "fr-0543" }, { word: "soleil", ref: "fr-1303" }, { word: "disparaît", base: "disparaître" }, { word: "derrière", ref: "fr-0467" }, { word: "la", ref: "fr-0543" }, { word: "colline", base: "colline" }] }
+      - { target: "Les oiseaux disparaissent en hiver.", ipa: "lezwazo dispaʁɛs ɑ̃ ivɛʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "oiseaux", ref: "fr-1254" }, { word: "disparaissent", base: "disparaître" }, { word: "en", base: "en" }, { word: "hiver", ref: "fr-1172" }] }
+  - id: "fr-2588"
+    target: "apparaître"
+    ipa: "apaʁɛtʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Une étoile apparaît.", ipa: "yn etwal apaʁɛ", bases: [{ word: "Une", ref: "fr-0545" }, { word: "étoile", base: "étoile" }, { word: "apparaît", base: "apparaître" }] }
+      - { target: "Le problème apparaît demain.", ipa: "lə pʁɔblɛm apaʁɛ dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "problème", ref: "fr-0684" }, { word: "apparaît", base: "apparaître" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2589"
+    target: "naître"
+    ipa: "nɛtʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il est né en mai.", ipa: "il ɛ ne ɑ̃ mɛ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "né", base: "naître" }, { word: "en", base: "en" }, { word: "mai", ref: "fr-1156" }] }
+      - { target: "Elle naît dans un petit village.", ipa: "ɛl nɛ dɑ̃ zœ̃ pəti vilaʒ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "naît", base: "naître" }, { word: "dans", ref: "fr-0049" }, { word: "un", ref: "fr-0208" }, { word: "petit", ref: "fr-0411" }, { word: "village", base: "village" }] }
+  - id: "fr-2590"
+    target: "mourir"
+    ipa: "muʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le vieil homme est mort hier.", ipa: "lə vjɛj ɔm ɛ mɔʁ jɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "vieil", ref: "fr-0109" }, { word: "homme", ref: "fr-0182" }, { word: "est", ref: "fr-0021" }, { word: "mort", base: "mourir" }, { word: "hier", ref: "fr-1038" }] }
+      - { target: "Les fleurs meurent en hiver.", ipa: "le flœʁ mœʁ ɑ̃ ivɛʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "fleurs", base: "fleur" }, { word: "meurent", base: "mourir" }, { word: "en", base: "en" }, { word: "hiver", ref: "fr-1172" }] }
+  - id: "fr-2591"
+    target: "souffrir"
+    ipa: "sufʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il souffre de douleurs.", ipa: "il sufʁ də dulœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "souffre", base: "souffrir" }, { word: "de", base: "de" }, { word: "douleurs", ref: "fr-0946" }] }
+      - { target: "Nous souffrons de la chaleur.", ipa: "nu sufʁɔ̃ də la ʃalœʁ", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "souffrons", base: "souffrir" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0543" }, { word: "chaleur", ref: "fr-1342" }] }
+  - id: "fr-2592"
+    target: "ressembler"
+    ipa: "ʁəsɑ̃ble"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tu ressembles à ton père.", ipa: "ty ʁəsɑ̃bl a tɔ̃ pɛʁ", bases: [{ word: "Tu", ref: "fr-0372" }, { word: "ressembles", base: "ressembler" }, { word: "à", base: "à" }, { word: "ton", ref: "fr-0141" }, { word: "père", ref: "fr-0165" }] }
+      - { target: "Elle ressemble à sa mère.", ipa: "ɛl ʁəsɑ̃bl a sa mɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "ressemble", base: "ressembler" }, { word: "à", base: "à" }, { word: "sa", ref: "fr-0138" }, { word: "mère", ref: "fr-0166" }] }
+  - id: "fr-2593"
+    target: "rêver"
+    ipa: "ʁeve"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je rêve de voyager.", ipa: "ʒə ʁɛv də vwajaʒe", bases: [{ word: "Je", ref: "fr-0126" }, { word: "rêve", ref: "fr-1109" }, { word: "de", base: "de" }, { word: "voyager", ref: "fr-0868" }] }
+      - { target: "Il rêve souvent la nuit.", ipa: "il ʁɛv suvɑ̃ la nɥi", bases: [{ word: "Il", ref: "fr-0127" }, { word: "rêve", ref: "fr-1109" }, { word: "souvent", ref: "fr-0326" }, { word: "la", ref: "fr-0543" }, { word: "nuit", ref: "fr-1035" }] }
+  - id: "fr-2594"
+    target: "cacher"
+    ipa: "kaʃe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il cache la clé sous le pot.", ipa: "il kaʃ la kle su lə po", bases: [{ word: "Il", ref: "fr-0127" }, { word: "cache", base: "cacher" }, { word: "la", ref: "fr-0543" }, { word: "clé", ref: "fr-0484" }, { word: "sous", ref: "fr-0468" }, { word: "le", ref: "fr-0543" }, { word: "pot", base: "pot" }] }
+      - { target: "Elle se cache derrière la porte.", ipa: "ɛl sə kaʃ dəʁjɛʁ la pɔʁt", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "se", base: "se" }, { word: "cache", base: "cacher" }, { word: "derrière", ref: "fr-0467" }, { word: "la", ref: "fr-0543" }, { word: "porte", ref: "fr-1003" }] }
+  - id: "fr-2595"
+    target: "tirer"
+    ipa: "tiʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Tire la porte vers toi.", ipa: "tiʁ la pɔʁt vɛʁ twa", bases: [{ word: "Tire", base: "tirer" }, { word: "la", ref: "fr-0543" }, { word: "porte", ref: "fr-1003" }, { word: "vers", ref: "fr-0594" }, { word: "toi", ref: "fr-0134" }] }
+      - { target: "Il tire une photo du château.", ipa: "il tiʁ yn foto dy ʃɑto", bases: [{ word: "Il", ref: "fr-0127" }, { word: "tire", base: "tirer" }, { word: "une", ref: "fr-0545" }, { word: "photo", ref: "fr-1373" }, { word: "du", base: "de" }, { word: "château", ref: "fr-2295" }] }
+  - id: "fr-2596"
+    target: "pousser"
+    ipa: "puse"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il pousse la porte.", ipa: "il pus la pɔʁt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "pousse", base: "pousser" }, { word: "la", ref: "fr-0543" }, { word: "porte", ref: "fr-1003" }] }
+      - { target: "Les fleurs poussent au printemps.", ipa: "le flœʁ pus o pʁɛ̃tɑ̃", bases: [{ word: "Les", ref: "fr-0543" }, { word: "fleurs", base: "fleur" }, { word: "poussent", base: "pousser" }, { word: "au", base: "à" }, { word: "printemps", ref: "fr-1169" }] }
+  - id: "fr-2597"
+    target: "sauter"
+    ipa: "sote"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le chat saute sur la table.", ipa: "lə ʃa sot syʁ la tabl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "chat", ref: "fr-1252" }, { word: "saute", base: "sauter" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0543" }, { word: "table", ref: "fr-0486" }] }
+      - { target: "Sautez dans l'eau.", ipa: "sote dɑ̃ lo", bases: [{ word: "Sautez", base: "sauter" }, { word: "dans", ref: "fr-0049" }, { word: "l'eau", ref: "fr-0024" }] }
+  - id: "fr-2598"
+    target: "grimper"
+    ipa: "ɡʁɛ̃pe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Les enfants grimpent sur l'arbre.", ipa: "lezɑ̃fɑ̃ ɡʁɛ̃p syʁ laʁbʁ", bases: [{ word: "Les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "grimpent", base: "grimper" }, { word: "sur", ref: "fr-0469" }, { word: "l'arbre", ref: "fr-2170" }] }
+      - { target: "Nous grimpons la colline.", ipa: "nu ɡʁɛ̃pɔ̃ la kɔlin", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "grimpons", base: "grimper" }, { word: "la", ref: "fr-0543" }, { word: "colline", base: "colline" }] }
+  - id: "fr-2599"
+    target: "repasser"
+    ipa: "ʁəpase"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je repasse ma chemise.", ipa: "ʒə ʁəpas ma ʃəmiz", bases: [{ word: "Je", ref: "fr-0126" }, { word: "repasse", base: "repasser" }, { word: "ma", ref: "fr-0037" }, { word: "chemise", ref: "fr-1201" }] }
+      - { target: "Je repasse demain.", ipa: "ʒə ʁəpas dəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "repasse", base: "repasser" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2641"
+    target: "rougir"
+    ipa: "ʁuʒiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle rougit quand on la regarde.", ipa: "ɛl ʁuʒi kɑ̃ ɔ̃ la ʁəɡaʁd", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "rougit", base: "rougir" }, { word: "quand", ref: "fr-0068" }, { word: "on", ref: "fr-0132" }, { word: "la", ref: "fr-0543" }, { word: "regarde", ref: "fr-0293" }] }
+      - { target: "Il rougit de honte.", ipa: "il ʁuʒi də ɔ̃t", bases: [{ word: "Il", ref: "fr-0127" }, { word: "rougit", base: "rougir" }, { word: "de", base: "de" }, { word: "honte", ref: "fr-1770" }] }
+  - id: "fr-2642"
+    target: "tonner"
+    ipa: "tɔne"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il tonne au loin.", ipa: "il tɔn o lwɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "tonne", base: "tonner" }, { word: "au", base: "à" }, { word: "loin", ref: "fr-0465" }] }
+      - { target: "Le ciel tonne cette nuit.", ipa: "lə sjɛl tɔn sɛt nɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ciel", ref: "fr-1314" }, { word: "tonne", base: "tonner" }, { word: "cette", ref: "fr-0144" }, { word: "nuit", ref: "fr-1035" }] }
+  - id: "fr-2643"
+    target: "fumer"
+    ipa: "fyme"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il fume devant la gare.", ipa: "il fym dəvɑ̃ la ɡaʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "fume", base: "fumer" }, { word: "devant", ref: "fr-0466" }, { word: "la", ref: "fr-0543" }, { word: "gare", ref: "fr-0075" }] }
+      - { target: "Défense de fumer ici.", ipa: "defɑ̃s də fyme isi", bases: [{ word: "Défense", base: "défense" }, { word: "de", base: "de" }, { word: "fumer", base: "fumer" }, { word: "ici", ref: "fr-0029" }] }
+  - id: "fr-2644"
+    target: "lancer"
+    ipa: "lɑ̃se"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Il lance le ballon.", ipa: "il lɑ̃s lə balɔ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "lance", base: "lancer" }, { word: "le", ref: "fr-0543" }, { word: "ballon", ref: "fr-1387" }] }
+      - { target: "Lancez la balle !", ipa: "lɑ̃se la bal", bases: [{ word: "Lancez", base: "lancer" }, { word: "la", ref: "fr-0543" }, { word: "balle", base: "balle" }] }
+  - id: "fr-2645"
+    target: "attraper"
+    ipa: "atʁape"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'attrape le ballon.", ipa: "ʒatʁap lə balɔ̃", bases: [{ word: "J'attrape", base: "attraper" }, { word: "le", ref: "fr-0543" }, { word: "ballon", ref: "fr-1387" }] }
+      - { target: "Il a attrapé un rhume.", ipa: "il a atʁape œ̃ ʁym", bases: [{ word: "Il", ref: "fr-0127" }, { word: "a", ref: "fr-0022" }, { word: "attrapé", base: "attraper" }, { word: "un", ref: "fr-0208" }, { word: "rhume", ref: "fr-1704" }] }
+  - id: "fr-2646"
+    target: "éviter"
+    ipa: "evite"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'évite le centre-ville aux heures de pointe.", ipa: "ʒevit lə sɑ̃tʁəvil o zœʁ də pwɛ̃t", bases: [{ word: "J'évite", base: "éviter" }, { word: "le", ref: "fr-0543" }, { word: "centre-ville", base: "centre-ville" }, { word: "aux", base: "à" }, { word: "heures", ref: "fr-0074" }, { word: "de", base: "de" }, { word: "pointe", base: "pointe" }] }
+      - { target: "Il évite de parler.", ipa: "il evit də paʁle", bases: [{ word: "Il", ref: "fr-0127" }, { word: "évite", base: "éviter" }, { word: "de", base: "de" }, { word: "parler", ref: "fr-0023" }] }
+  - id: "fr-2647"
+    target: "remercier"
+    ipa: "ʁəmɛʁsje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je vous remercie beaucoup.", ipa: "ʒə vu ʁəmɛʁsi boku", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vous", ref: "fr-0096" }, { word: "remercie", base: "remercier" }, { word: "beaucoup", ref: "fr-0034" }] }
+      - { target: "Nous remercions nos amis.", ipa: "nu ʁəmɛʁsjɔ̃ noz ami", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "remercions", base: "remercier" }, { word: "nos", ref: "fr-0139" }, { word: "amis", ref: "fr-0100" }] }
+  - id: "fr-2648"
+    target: "féliciter"
+    ipa: "felisite"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je te félicite pour ton succès.", ipa: "ʒə tə felisit puʁ tɔ̃ syksɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "te", base: "te" }, { word: "félicite", base: "féliciter" }, { word: "pour", ref: "fr-0591" }, { word: "ton", ref: "fr-0141" }, { word: "succès", base: "succès" }] }
+      - { target: "Ils félicitent les gagnants.", ipa: "il felisit le ɡaɲɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "félicitent", base: "féliciter" }, { word: "les", ref: "fr-0543" }, { word: "gagnants", base: "gagnant" }] }
+  - id: "fr-2649"
+    target: "couvrir"
+    ipa: "kuvʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Couvre le plat, s'il te plaît.", ipa: "kuvʁ lə pla sil tə plɛ", bases: [{ word: "Couvre", base: "couvrir" }, { word: "le", ref: "fr-0543" }, { word: "plat", ref: "fr-0819" }, { word: "s'il", ref: "fr-0127" }, { word: "te", base: "te" }, { word: "plaît", ref: "fr-2586" }] }
+      - { target: "La neige couvre la montagne.", ipa: "la nɛʒ kuvʁ la mɔ̃taɲ", bases: [{ word: "La", ref: "fr-0543" }, { word: "neige", ref: "fr-1306" }, { word: "couvre", base: "couvrir" }, { word: "montagne", ref: "fr-1927" }] }
+  - id: "fr-2650"
+    target: "découvrir"
+    ipa: "dekuvʁiʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Elle découvre une nouvelle ville.", ipa: "ɛl dekuvʁ yn nuvɛl vil", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "découvre", base: "découvrir" }, { word: "une", ref: "fr-0545" }, { word: "nouvelle", ref: "fr-0413" }, { word: "ville", ref: "fr-0244" }] }
+      - { target: "Nous découvrons la vérité.", ipa: "nu dekuvʁɔ̃ la veʁite", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "découvrons", base: "découvrir" }, { word: "la", ref: "fr-0543" }, { word: "vérité", base: "vérité" }] }
+

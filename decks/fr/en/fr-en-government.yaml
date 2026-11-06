@@ -1,0 +1,503 @@
+schema: 1
+id: "fr-en-government"
+kind: "layer"
+core: "fr-government"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Government"
+license: "CC-BY-SA-4.0"
+description: "Forty words for government and public life: the state, laws and votes, the offices a citizen deals with, and the verbs of deciding and ruling. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2020":
+    native: "law"
+    notes:
+      "n1": "Une loi is a law passed by parliament."
+    examples:
+      "Cette loi protège les enfants.":
+        native: "This law protects children."
+        bases:
+          "loi": "law"
+          "protège": "protects"
+          "enfants": "children"
+      "La loi entre en vigueur demain.":
+        native: "The law comes into force tomorrow."
+        bases:
+          "loi": "law"
+          "en": "in, by, as"
+          "vigueur": "force"
+  "fr-2021":
+    native: "vote"
+    notes:
+      "n1": "Un vote is a choice made by voting."
+    examples:
+      "Le vote a lieu dimanche.":
+        native: "The vote takes place on Sunday."
+        bases:
+          "vote": "votes"
+          "lieu": "place"
+      "Ce vote est très serré.":
+        native: "This vote is very close."
+        bases:
+          "vote": "votes"
+          "serré": "tight"
+  "fr-2022":
+    native: "parliament"
+    notes:
+      "n1": "Le parlement is the body that makes laws."
+    examples:
+      "Le parlement discute du budget.":
+        native: "Parliament discusses the budget."
+        bases:
+          "parlement": "parliament"
+          "du": "some, of the"
+      "Elle travaille au parlement.":
+        native: "She works in parliament."
+        bases:
+          "au": "at, to the"
+          "parlement": "parliament"
+  "fr-2023":
+    native: "member of parliament"
+    notes:
+      "n1": "Un député is elected to parliament; the feminine is députée."
+    examples:
+      "Le député répond aux questions.":
+        native: "The member of parliament answers questions."
+        bases:
+          "député": "member of parliament"
+          "aux": "to the"
+      "Ce député veut une nouvelle loi.":
+        native: "This MP wants a new law."
+        bases:
+          "député": "member of parliament"
+          "nouvelle": "new"
+  "fr-2024":
+    native: "mayor"
+    notes:
+      "n1": "Un maire runs a town; it is used for both genders."
+    examples:
+      "Le maire inaugure le pont.":
+        native: "The mayor opens the bridge."
+        bases:
+          "maire": "mayor"
+          "inaugure": "opens"
+      "Le maire de Lille parle ce soir.":
+        native: "The mayor of Lille speaks tonight."
+        bases:
+          "maire": "mayor"
+          "de": "of, from, some"
+          "Lille": "Lille"
+  "fr-2025":
+    native: "tax"
+    notes:
+      "n1": "Un impôt is money paid to the state."
+    examples:
+      "Je paie mes impôts en mai.":
+        native: "I pay my taxes in May."
+        bases:
+          "impôts": "tax"
+          "en": "in, by, as"
+      "Cet impôt est très élevé.":
+        native: "This tax is very high."
+        bases:
+          "impôt": "tax"
+          "élevé": "high"
+  "fr-2026":
+    native: "citizen"
+    notes:
+      "n1": "Un citoyen is a member of a state; the feminine is une citoyenne."
+    examples:
+      "Chaque citoyen peut voter.":
+        native: "Every citizen can vote."
+        bases:
+          "citoyen": "citizen"
+          "voter": "vote"
+      "Le citoyen pose une question.":
+        native: "The citizen asks a question."
+        bases:
+          "citoyen": "citizen"
+  "fr-2027":
+    native: "decree"
+    notes:
+      "n1": "Un décret is an official order made by the government."
+    examples:
+      "Le décret est publié demain.":
+        native: "The decree is published tomorrow."
+        bases:
+          "décret": "decree"
+      "Ce décret change les règles.":
+        native: "This decree changes the rules."
+        bases:
+          "décret": "decree"
+  "fr-2028":
+    native: "administration, office"
+    notes:
+      "n1": "L’administration is the public offices of the state."
+    examples:
+      "L'administration demande un document.":
+        native: "The administration asks for a document."
+        bases:
+          "L'administration": "administration, office"
+      "Elle travaille dans une administration.":
+        native: "She works in an administration."
+        bases:
+          "administration": "administration, office"
+  "fr-2029":
+    native: "civil servant"
+    notes:
+      "n1": "Un fonctionnaire works for the state; it is used for both genders."
+    examples:
+      "Le fonctionnaire vous reçoit à dix heures.":
+        native: "The civil servant sees you at ten."
+        bases:
+          "fonctionnaire": "civil servant"
+          "à": "to, at"
+      "Ma sœur est fonctionnaire.":
+        native: "My sister is a civil servant."
+        bases:
+          "fonctionnaire": "civil servant"
+  "fr-2030":
+    native: "embassy"
+    notes:
+      "n1": "Une ambassade is the office of a country abroad."
+    examples:
+      "L'ambassade est en centre-ville.":
+        native: "The embassy is in the town centre."
+        bases:
+          "L'ambassade": "embassy"
+          "en": "in, by, as"
+          "centre-ville": "town centre"
+      "Je vais à l'ambassade pour mon visa.":
+        native: "I am going to the embassy for my visa."
+        bases:
+          "à": "to, at"
+          "l'ambassade": "embassy"
+  "fr-2031":
+    native: "to elect"
+    notes:
+      "n1": "Élire is irregular: the past participle is élu."
+    examples:
+      "Les habitants élisent leur maire.":
+        native: "The residents elect their mayor."
+        bases:
+          "habitants": "residents"
+          "élisent": "to elect"
+      "Nous élisons un nouveau député.":
+        native: "We elect a new MP."
+        bases:
+          "élisons": "to elect"
+  "fr-2032":
+    native: "to appoint, to name"
+    notes:
+      "n1": "Nommer is regular: nommer quelqu’un is to appoint someone to a post."
+    examples:
+      "Le président nomme un ministre.":
+        native: "The president appoints a minister."
+        bases:
+          "président": "president"
+          "nomme": "to appoint, to name"
+          "ministre": "minister"
+      "Ils nomment une commission.":
+        native: "They appoint a commission."
+        bases:
+          "nomment": "to appoint, to name"
+          "commission": "commission"
+  "fr-2033":
+    native: "to decide"
+    notes:
+      "n1": "Décider is regular: décider de is to decide to do something."
+    examples:
+      "Le conseil décide demain.":
+        native: "The council decides tomorrow."
+        bases:
+          "décide": "to decide"
+      "Je décide de voter.":
+        native: "I decide to vote."
+        bases:
+          "décide": "to decide"
+          "de": "of, from, some"
+          "voter": "vote"
+  "fr-2034":
+    native: "to apply, to enforce"
+    notes:
+      "n1": "Appliquer is regular: appliquer une loi is to enforce a law."
+    examples:
+      "La police applique la loi.":
+        native: "The police enforce the law."
+        bases:
+          "applique": "to apply, to enforce"
+      "Cette règle s'applique à tous.":
+        native: "This rule applies to everyone."
+        bases:
+          "s'applique": "to apply, to enforce"
+          "à": "to, at"
+  "fr-2035":
+    native: "to forbid"
+    notes:
+      "n1": "Interdire is an -ir verb like dire: interdire de is to forbid to do."
+    examples:
+      "La loi interdit la fumée ici.":
+        native: "The law forbids smoking here."
+        bases:
+          "interdit": "to forbid"
+          "fumée": "smoking"
+      "Il est interdit de stationner.":
+        native: "Parking is forbidden."
+        bases:
+          "interdit": "to forbid"
+          "de": "of, from, some"
+          "stationner": "park"
+  "fr-2036":
+    native: "to authorise"
+    notes:
+      "n1": "Autoriser is regular: autoriser quelqu’un à faire is to allow someone to do something."
+    examples:
+      "Le maire autorise le marché.":
+        native: "The mayor authorises the market."
+        bases:
+          "autorise": "to authorise"
+      "Cette carte autorise l'entrée.":
+        native: "This card allows entry."
+        bases:
+          "autorise": "to authorise"
+  "fr-2037":
+    native: "citizenship"
+    notes:
+      "n1": "La citoyenneté is the status of being a citizen."
+    examples:
+      "Il demande la citoyenneté.":
+        native: "He applies for citizenship."
+        bases:
+          "citoyenneté": "citizenship"
+      "La citoyenneté donne des droits.":
+        native: "Citizenship gives rights."
+        bases:
+          "citoyenneté": "citizenship"
+  "fr-2038":
+    native: "republic"
+    notes:
+      "n1": "La république is a state led by elected leaders."
+    examples:
+      "La république est une démocratie.":
+        native: "The republic is a democracy."
+        bases:
+          "république": "republic"
+      "Le drapeau de la république est bleu, blanc et rouge.":
+        native: "The flag of the republic is blue, white and red."
+        bases:
+          "drapeau": "flag"
+          "de": "of, from, some"
+          "république": "republic"
+          "blanc": "white"
+  "fr-2039":
+    native: "democracy"
+    notes:
+      "n1": "La démocratie is government by the people through elections."
+    examples:
+      "La démocratie protège la liberté.":
+        native: "Democracy protects freedom."
+        bases:
+          "démocratie": "democracy"
+          "protège": "protects"
+      "Le pays vit en démocratie.":
+        native: "The country lives in a democracy."
+        bases:
+          "vit": "lives"
+          "en": "in, by, as"
+          "démocratie": "democracy"
+  "fr-2040":
+    native: "constitution"
+    notes:
+      "n1": "La constitution is the basic law of a country."
+    examples:
+      "La constitution garantit les droits.":
+        native: "The constitution guarantees rights."
+        bases:
+          "constitution": "constitution"
+          "garantit": "guarantees"
+      "Cette loi respecte la constitution.":
+        native: "This law respects the constitution."
+        bases:
+          "respecte": "respects"
+          "constitution": "constitution"
+  "fr-2041":
+    native: "reform"
+    notes:
+      "n1": "Une réforme is a change made to improve a system."
+    examples:
+      "La réforme des retraites est débattue.":
+        native: "The pensions reform is debated."
+        bases:
+          "réforme": "reform"
+          "retraites": "pensions"
+          "débattue": "debated"
+      "Cette réforme est importante.":
+        native: "This reform is important."
+        bases:
+          "réforme": "reform"
+  "fr-2043":
+    native: "tax, duty"
+    notes:
+      "n1": "Une taxe is a sum paid to the state on goods or services."
+    examples:
+      "La taxe est ajoutée au prix.":
+        native: "The tax is added to the price."
+        bases:
+          "taxe": "tax, duty"
+          "au": "at, to the"
+      "Cette taxe touche tout le monde.":
+        native: "This tax affects everyone."
+        bases:
+          "taxe": "tax, duty"
+          "touche": "affects"
+          "monde": "world"
+  "fr-2044":
+    native: "ministry"
+    notes:
+      "n1": "Un ministère is a government department."
+    examples:
+      "Le ministère publie un rapport.":
+        native: "The ministry publishes a report."
+        bases:
+          "ministère": "ministry"
+          "rapport": "report"
+      "Elle travaille au ministère de la santé.":
+        native: "She works at the ministry of health."
+        bases:
+          "au": "at, to the"
+          "ministère": "ministry"
+          "de": "of, from, some"
+  "fr-2045":
+    native: "council, advice"
+    notes:
+      "n1": "Un conseil is a body that decides, or advice given to someone."
+    examples:
+      "Le conseil municipal se réunit lundi.":
+        native: "The town council meets on Monday."
+        bases:
+          "conseil": "council, advice"
+          "municipal": "municipal"
+          "se": "itself"
+          "réunit": "meets"
+      "Donnez-moi un conseil.":
+        native: "Give me some advice."
+        bases:
+          "conseil": "council, advice"
+  "fr-2046":
+    native: "court"
+    notes:
+      "n1": "Un tribunal is a place where judges decide cases."
+    examples:
+      "Le tribunal rend son jugement.":
+        native: "The court gives its judgement."
+        bases:
+          "tribunal": "court"
+          "jugement": "judgement"
+      "Le tribunal se trouve près de la mairie.":
+        native: "The court is near the town hall."
+        bases:
+          "tribunal": "court"
+          "se": "itself"
+          "de": "of, from, some"
+  "fr-2047":
+    native: "permit, licence"
+    notes:
+      "n1": "Un permis is an official permission, like a driving licence."
+    examples:
+      "Je passe mon permis de conduire.":
+        native: "I am taking my driving test."
+        bases:
+          "permis": "permit, licence"
+          "de": "of, from, some"
+      "Le permis de construire est accordé.":
+        native: "The building permit is granted."
+        bases:
+          "permis": "permit, licence"
+          "de": "of, from, some"
+          "construire": "build"
+          "accordé": "granted"
+  "fr-2048":
+    native: "authorisation"
+    notes:
+      "n1": "Une autorisation is official permission to do something."
+    examples:
+      "J'ai besoin d'une autorisation.":
+        native: "I need an authorisation."
+        bases:
+          "d'une": "of a"
+          "autorisation": "authorisation"
+      "L'autorisation est donnée par le maire.":
+        native: "The authorisation is given by the mayor."
+        bases:
+          "L'autorisation": "authorisation"
+  "fr-2049":
+    native: "procedure"
+    notes:
+      "n1": "Une procédure is the official way of doing something."
+    examples:
+      "La procédure dure longtemps.":
+        native: "The procedure takes a long time."
+        bases:
+          "procédure": "procedure"
+      "Suivez la procédure indiquée.":
+        native: "Follow the procedure given."
+        bases:
+          "procédure": "procedure"
+          "indiquée": "given"
+  "fr-2050":
+    native: "penalty, sanction"
+    notes:
+      "n1": "Une sanction is a punishment given for breaking a rule."
+    examples:
+      "La sanction est une amende.":
+        native: "The penalty is a fine."
+        bases:
+          "sanction": "penalty, sanction"
+      "Il reçoit une sanction.":
+        native: "He receives a penalty."
+        bases:
+          "sanction": "penalty, sanction"
+  "fr-2051":
+    native: "fine"
+    notes:
+      "n1": "Une amende is a sum paid as a penalty."
+    examples:
+      "L'amende est de cent euros.":
+        native: "The fine is one hundred euros."
+        bases:
+          "L'amende": "fine"
+          "de": "of, from, some"
+      "Il paie une amende pour stationnement.":
+        native: "He pays a parking fine."
+        bases:
+          "amende": "fine"
+          "stationnement": "parking"
+  "fr-2065":
+    native: "referendum"
+    notes:
+      "n1": "Un référendum asks all voters to decide one question."
+    examples:
+      "Le référendum aura lieu en juin.":
+        native: "The referendum will take place in June."
+        bases:
+          "référendum": "referendum"
+          "lieu": "place"
+          "en": "in, by, as"
+      "Un référendum sur la loi est prévu.":
+        native: "A referendum on the law is planned."
+        bases:
+          "référendum": "referendum"
+          "prévu": "planned"
+  "fr-2066":
+    native: "petition"
+    notes:
+      "n1": "Une pétition is a written request signed by many people."
+    examples:
+      "Une pétition circule dans le quartier.":
+        native: "A petition is going round the neighbourhood."
+        bases:
+          "pétition": "petition"
+          "circule": "circulates"
+      "Elle signe la pétition.":
+        native: "She signs the petition."
+        bases:
+          "pétition": "petition"

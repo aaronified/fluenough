@@ -1,0 +1,61 @@
+schema: 1
+id: "fr-en-opinions-sentences"
+kind: "layer"
+core: "fr-opinions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sentences: opinions"
+license: "CC-BY-SA-4.0"
+description: "Sentences about opinions, each with the words it is often mixed up with. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1902":
+    native: "I do not agree, I find your argument debatable."
+    bases:
+      "ne": "not"
+      "pas": "not"
+      "que": "that"
+    confusables:
+      "approuver": { why: "To approve is the opposite of disagreeing, and the sentence does the opposite." }
+      "evident": { why: "Obvious is the opposite of debatable in this sentence." }
+  "fr-1903":
+    native: "He refuses the idea because he judges it unfair."
+    bases:
+      "car": "because"
+    confusables:
+      "soutenir": { why: "To support is the opposite of refusing in this sentence." }
+      "juste": { why: "Fair is the opposite of unfair here." }
+  "fr-1904":
+    native: "Probably, the debate will continue."
+    confusables:
+      "certain": { why: "Certain is not the same as probably; the sentence is a guess." }
+      "surement": { why: "Surely expresses more certainty than the sentence." }
+  "fr-1905":
+    native: "She admits her mistake and defends her point of view."
+    bases:
+      "erreur": "mistake"
+      "point": "point"
+      "de": "of, from, some"
+      "vue": "view"
+    confusables:
+      "contester": { why: "To dispute is close to defend, but the sentence admits a mistake." }
+      "refuser": { why: "To refuse is not in the sentence." }
+  "fr-1906":
+    native: "This prejudice is false, and it is a real problem."
+    confusables:
+      "conviction": { why: "A conviction is a belief, and the sentence says it is false." }
+      "tolerance": { why: "Tolerance is the opposite of a prejudice." }
+  "fr-1907":
+    native: "They discuss freedom and respect."
+    bases:
+      "de": "of, from, some"
+      "du": "some, of the"
+    confusables:
+      "justice": { why: "Justice is named as a topic in other sentences, not in this one." }
+      "argument": { why: "An argument is a reason; the sentence names two topics." }
+  "fr-1908":
+    native: "My view is that it is a reasonable opinion."
+    bases:
+      "que": "that"
+    confusables:
+      "desaccord": { why: "A disagreement is the opposite of agreeing with the view." }
+      "doute": { why: "Doubt is not named in the sentence." }

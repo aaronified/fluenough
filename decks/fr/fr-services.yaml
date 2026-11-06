@@ -1,0 +1,412 @@
+schema: 1
+id: "fr-services"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+theme: "services"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1971"
+    target: "colis"
+    ipa: "kɔli"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'attends un colis demain.", ipa: "ʒatɑ̃ œ̃ kɔli dəmɛ̃", bases: [{ word: "J'attends", ref: "fr-0303" }, { word: "un", ref: "fr-0208" }, { word: "colis", base: "colis" }, { word: "demain", ref: "fr-0078" }] }
+      - { target: "Le colis est arrivé ce matin.", ipa: "lə kɔli ɛ aʁive sə matɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "colis", base: "colis" }, { word: "est", ref: "fr-0021" }, { word: "arrivé", ref: "fr-0305" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1972"
+    target: "lettre"
+    ipa: "lɛtʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'envoie une lettre à mon frère.", ipa: "ʒɑ̃vwa yn lɛtʁ a mɔ̃ fʁɛʁ", bases: [{ word: "J'envoie", ref: "fr-0672" }, { word: "une", ref: "fr-0545" }, { word: "lettre", base: "lettre" }, { word: "à", base: "à" }, { word: "mon", ref: "fr-0037" }, { word: "frère", ref: "fr-0169" }] }
+      - { target: "La lettre est dans la boîte.", ipa: "la lɛtʁ ɛ dɑ̃ la bwat", bases: [{ word: "La", ref: "fr-0544" }, { word: "lettre", base: "lettre" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "boîte", ref: "fr-0785" }] }
+  - id: "fr-1973"
+    target: "guichet"
+    ipa: "ɡiʃɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Allez au guichet numéro trois.", ipa: "ale o ɡiʃɛ nymeʁo tʁwa", bases: [{ word: "Allez", ref: "fr-0286" }, { word: "au", base: "à" }, { word: "guichet", base: "guichet" }, { word: "numéro", ref: "fr-1070" }, { word: "trois", ref: "fr-0210" }] }
+      - { target: "Le guichet ferme à seize heures.", ipa: "lə ɡiʃɛ fɛʁm a sɛz œʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "guichet", base: "guichet" }, { word: "ferme", ref: "fr-0299" }, { word: "à", base: "à" }, { word: "seize", ref: "fr-0223" }, { word: "heures", ref: "fr-0074" }] }
+  - id: "fr-1974"
+    target: "compte"
+    ipa: "kɔ̃t"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'ouvre un compte à la banque.", ipa: "ʒuvʁ œ̃ kɔ̃t a la bɑ̃k", bases: [{ word: "J'ouvre", ref: "fr-0298" }, { word: "un", ref: "fr-0208" }, { word: "compte", base: "compte" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "banque", ref: "fr-0965" }] }
+      - { target: "Votre compte est vérifié.", ipa: "vɔtʁ kɔ̃t ɛ veʁifje", bases: [{ word: "Votre", ref: "fr-0140" }, { word: "compte", base: "compte" }, { word: "est", ref: "fr-0021" }, { word: "vérifié", ref: "fr-1835" }] }
+  - id: "fr-1975"
+    target: "réparation"
+    ipa: "ʁepaʁasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La réparation prend trois jours.", ipa: "la ʁepaʁasjɔ̃ pʁɑ̃ tʁwa ʒuʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "réparation", base: "réparation" }, { word: "prend", ref: "fr-0288" }, { word: "trois", ref: "fr-0210" }, { word: "jours", ref: "fr-1032" }] }
+      - { target: "Cette réparation coûte cher.", ipa: "sɛt ʁepaʁasjɔ̃ kut ʃɛʁ", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "réparation", base: "réparation" }, { word: "coûte", ref: "fr-0752" }, { word: "cher", ref: "fr-0104" }] }
+  - id: "fr-1976"
+    target: "abonnement"
+    ipa: "abɔnmɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je prends un abonnement de téléphone.", ipa: "ʒə pʁɑ̃ œ̃ nabɔnmɑ̃ də telefɔn", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "un", ref: "fr-0208" }, { word: "abonnement", base: "abonnement" }, { word: "de", base: "de" }, { word: "téléphone", ref: "fr-0257" }] }
+      - { target: "L'abonnement coûte vingt euros par mois.", ipa: "labɔnmɑ̃ kut vɛ̃t øʁo paʁ mwa", bases: [{ word: "L'abonnement", base: "abonnement" }, { word: "coûte", ref: "fr-0752" }, { word: "vingt", ref: "fr-0227" }, { word: "euros", ref: "fr-1451" }, { word: "par", ref: "fr-0593" }, { word: "mois", ref: "fr-1165" }] }
+  - id: "fr-1977"
+    target: "assurance"
+    ipa: "asyʁɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma voiture a une assurance.", ipa: "ma vwatyʁ a yn asyʁɑ̃s", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "voiture", ref: "fr-0859" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "assurance", base: "assurance" }] }
+      - { target: "L'assurance paie la réparation.", ipa: "lasyʁɑ̃s pe la ʁepaʁasjɔ̃", bases: [{ word: "L'assurance", base: "assurance" }, { word: "paie", ref: "fr-0310" }, { word: "la", ref: "fr-0544" }, { word: "réparation", ref: "fr-1975" }] }
+  - id: "fr-1978"
+    target: "formulaire"
+    ipa: "fɔʁmylɛʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Remplissez ce formulaire, s'il vous plaît.", ipa: "ʁɑ̃plisez sə fɔʁmylɛʁ sil vu plɛ", bases: [{ word: "Remplissez", ref: "fr-1988" }, { word: "ce", ref: "fr-0143" }, { word: "formulaire", base: "formulaire" }, { word: "s'il", ref: "fr-0127" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Le formulaire est en double.", ipa: "lə fɔʁmylɛʁ ɛ ɑ̃ dubl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "formulaire", base: "formulaire" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "double", base: "double" }] }
+  - id: "fr-1979"
+    target: "document"
+    ipa: "dɔkymɑ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Voici le document demandé.", ipa: "vwasi lə dɔkymɑ̃ dəmɑ̃de", bases: [{ word: "Voici", base: "voici" }, { word: "le", ref: "fr-0543" }, { word: "document", base: "document" }, { word: "demandé", ref: "fr-0521" }] }
+      - { target: "Ce document est très important.", ipa: "sə dɔkymɑ̃ ɛ tʁɛ ɛ̃pɔʁtɑ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "document", base: "document" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "important", ref: "fr-0443" }] }
+  - id: "fr-1980"
+    target: "demande"
+    ipa: "dəmɑ̃d"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Ma demande est acceptée.", ipa: "ma dəmɑ̃d ɛ aksɛpte", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "demande", base: "demande" }, { word: "est", ref: "fr-0021" }, { word: "acceptée", base: "accepté" }] }
+      - { target: "Faites une demande par courriel.", ipa: "fɛt yn dəmɑ̃d paʁ kuʁjɛl", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "demande", base: "demande" }, { word: "par", ref: "fr-0593" }, { word: "courriel", ref: "fr-2018" }] }
+  - id: "fr-1981"
+    target: "nettoyage"
+    ipa: "nɛtwajaʒ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le nettoyage de la voiture est cher.", ipa: "lə nɛtwajaʒ də la vwatyʁ ɛ ʃɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "nettoyage", base: "nettoyage" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }, { word: "est", ref: "fr-0021" }, { word: "cher", ref: "fr-0104" }] }
+      - { target: "Ils font le nettoyage du bureau.", ipa: "il fɔ lə nɛtwajaʒ dy byʁo", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "font", ref: "fr-0287" }, { word: "le", ref: "fr-0543" }, { word: "nettoyage", base: "nettoyage" }, { word: "du", base: "de" }, { word: "bureau", ref: "fr-0660" }] }
+  - id: "fr-1982"
+    target: "coiffeur"
+    ipa: "kwafœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le coiffeur coupe mes cheveux.", ipa: "lə kwafœʁ kup me ʃəvø", bases: [{ word: "Le", ref: "fr-0543" }, { word: "coiffeur", base: "coiffeur" }, { word: "coupe", ref: "fr-1538" }, { word: "mes", ref: "fr-0037" }, { word: "cheveux", ref: "fr-0939" }] }
+      - { target: "Je vais chez le coiffeur demain.", ipa: "ʒə vɛ ʃe lə kwafœʁ dəmɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "chez", ref: "fr-0472" }, { word: "le", ref: "fr-0543" }, { word: "coiffeur", base: "coiffeur" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1983"
+    target: "plombier"
+    ipa: "plɔ̃bje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le plombier répare le robinet.", ipa: "lə plɔ̃bje ʁepaʁ lə ʁɔbinɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "plombier", base: "plombier" }, { word: "répare", ref: "fr-1128" }, { word: "robinet", base: "robinet" }] }
+      - { target: "Le plombier vient demain matin.", ipa: "lə plɔ̃bje vjɛ̃ dəmɛ̃ matɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "plombier", base: "plombier" }, { word: "vient", ref: "fr-0285" }, { word: "demain", ref: "fr-0078" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1984"
+    target: "électricien"
+    ipa: "elɛktʁisjɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'électricien vérifie la prise.", ipa: "lelɛktʁisjɛ̃ veʁifi la pʁiz", bases: [{ word: "L'électricien", base: "électricien" }, { word: "vérifie", ref: "fr-1835" }, { word: "la", ref: "fr-0544" }, { word: "prise", ref: "fr-1395" }] }
+      - { target: "Il appelle un électricien.", ipa: "il apɛl œ̃ nelɛktʁisjɛ̃", bases: [{ word: "Il", ref: "fr-0127" }, { word: "appelle", ref: "fr-1071" }, { word: "un", ref: "fr-0208" }, { word: "électricien", base: "électricien" }] }
+  - id: "fr-1985"
+    target: "mécanicien"
+    ipa: "mekanisjɛ̃"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le mécanicien regarde le moteur.", ipa: "lə mekanisjɛ̃ ʁəɡaʁd lə mɔtœʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "mécanicien", base: "mécanicien" }, { word: "regarde", ref: "fr-0293" }, { word: "moteur", base: "moteur" }] }
+      - { target: "La voiture est chez le mécanicien.", ipa: "la vwatyʁ ɛ ʃe lə mekanisjɛ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "voiture", ref: "fr-0859" }, { word: "est", ref: "fr-0021" }, { word: "chez", ref: "fr-0472" }, { word: "le", ref: "fr-0543" }, { word: "mécanicien", base: "mécanicien" }] }
+  - id: "fr-1986"
+    target: "recevoir"
+    ipa: "ʁəsəvwaʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je reçois un message.", ipa: "ʒə ʁəswa œ̃ mesaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "reçois", base: "recevoir" }, { word: "un", ref: "fr-0208" }, { word: "message", ref: "fr-1082" }] }
+      - { target: "Nous recevons le colis demain.", ipa: "nu ʁəsəvɔ̃ lə kɔli dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "recevons", base: "recevoir" }, { word: "le", ref: "fr-0543" }, { word: "colis", ref: "fr-1971" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-1987"
+    target: "signer"
+    ipa: "siɲe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Signez ici, s'il vous plaît.", ipa: "siɲe isi sil vu plɛ", bases: [{ word: "Signez", base: "signer" }, { word: "ici", ref: "fr-0029" }, { word: "s'il", ref: "fr-0127" }, { word: "vous", ref: "fr-0096" }, { word: "plaît", base: "plaire" }] }
+      - { target: "Il signe le contrat.", ipa: "il siɲ lə kɔ̃tʁa", bases: [{ word: "Il", ref: "fr-0127" }, { word: "signe", base: "signer" }, { word: "le", ref: "fr-0543" }, { word: "contrat", base: "contrat" }] }
+  - id: "fr-1988"
+    target: "remplir"
+    ipa: "ʁɑ̃pliʁ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je remplis le formulaire.", ipa: "ʒə ʁɑ̃pli lə fɔʁmylɛʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "remplis", base: "remplir" }, { word: "le", ref: "fr-0543" }, { word: "formulaire", ref: "fr-1978" }] }
+      - { target: "Remplissez la fiche.", ipa: "ʁɑ̃plise la fiʃ", bases: [{ word: "Remplissez", base: "remplir" }, { word: "la", ref: "fr-0544" }, { word: "fiche", base: "fiche" }] }
+  - id: "fr-1989"
+    target: "livrer"
+    ipa: "livʁe"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le magasin livre à domicile.", ipa: "lə magazɛ̃ livʁ a domisil", bases: [{ word: "Le", ref: "fr-0543" }, { word: "magasin", ref: "fr-0795" }, { word: "livre", ref: "fr-1363" }, { word: "à", base: "à" }, { word: "domicile", base: "domicile" }] }
+      - { target: "Nous livrons les colis le matin.", ipa: "nu livʁɔ̃ le kɔli lə matɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "livrons", base: "livrer" }, { word: "les", ref: "fr-0543" }, { word: "colis", ref: "fr-1971" }, { word: "le", ref: "fr-0543" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-1990"
+    target: "facture"
+    ipa: "faktyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La facture est trop élevée.", ipa: "la faktyʁ ɛ tʁo elve", bases: [{ word: "La", ref: "fr-0544" }, { word: "facture", base: "facture" }, { word: "est", ref: "fr-0021" }, { word: "trop", ref: "fr-0344" }, { word: "élevée", base: "élevé" }] }
+      - { target: "Je paie la facture par carte.", ipa: "ʒə pe la faktyʁ paʁ kaʁt", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", ref: "fr-0310" }, { word: "la", ref: "fr-0544" }, { word: "facture", base: "facture" }, { word: "par", ref: "fr-0593" }, { word: "carte", ref: "fr-0824" }] }
+  - id: "fr-1991"
+    target: "signature"
+    ipa: "siɲatyʁ"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Votre signature est nécessaire.", ipa: "vɔtʁ siɲatyʁ ɛ nesesɛʁ", bases: [{ word: "Votre", ref: "fr-0140" }, { word: "signature", base: "signature" }, { word: "est", ref: "fr-0021" }, { word: "nécessaire", base: "nécessaire" }] }
+      - { target: "La signature est en bas de la page.", ipa: "la siɲatyʁ ɛ ɑ̃ ba də la paʒ", bases: [{ word: "La", ref: "fr-0544" }, { word: "signature", base: "signature" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "bas", ref: "fr-0424" }, { word: "de", base: "de" }, { word: "page", ref: "fr-1619" }] }
+  - id: "fr-1992"
+    target: "délai"
+    ipa: "delɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le délai est de trente jours.", ipa: "lə delɛ ɛ də tʁɑ̃t ʒuʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "délai", base: "délai" }, { word: "est", ref: "fr-0021" }, { word: "de", base: "de" }, { word: "trente", ref: "fr-0702" }, { word: "jours", ref: "fr-1032" }] }
+      - { target: "Vous avez un délai d'une semaine.", ipa: "vuz ave œ̃ delɛ dynə səmɛn", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "avez", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "délai", base: "délai" }, { word: "d'une", base: "de" }, { word: "semaine", ref: "fr-0668" }] }
+  - id: "fr-1993"
+    target: "agence"
+    ipa: "aʒɑ̃s"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "L'agence est ouverte le samedi.", ipa: "laʒɑ̃s ɛ uvɛʁt lə samdi", bases: [{ word: "L'agence", base: "agence" }, { word: "est", ref: "fr-0021" }, { word: "ouverte", ref: "fr-0298" }, { word: "le", ref: "fr-0543" }, { word: "samedi", ref: "fr-1049" }] }
+      - { target: "Je vais à l'agence de voyages.", ipa: "ʒə vɛ a laʒɑ̃s də vwajaʒ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "vais", ref: "fr-0286" }, { word: "à", base: "à" }, { word: "l'agence", base: "agence" }, { word: "de", base: "de" }, { word: "voyages", ref: "fr-0867" }] }
+  - id: "fr-1994"
+    target: "conseiller"
+    ipa: "kɔ̃sɛje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le conseiller répond à mes questions.", ipa: "lə kɔ̃sɛje ʁepɔ̃ a me kɛstjɔ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "conseiller", base: "conseiller" }, { word: "répond", ref: "fr-0504" }, { word: "à", base: "à" }, { word: "mes", ref: "fr-0037" }, { word: "questions", ref: "fr-1593" }] }
+      - { target: "Parlez à votre conseiller.", ipa: "paʁle a vɔtʁ kɔ̃sɛje", bases: [{ word: "Parlez", ref: "fr-0023" }, { word: "à", base: "à" }, { word: "votre", ref: "fr-0140" }, { word: "conseiller", base: "conseiller" }] }
+  - id: "fr-1995"
+    target: "dépôt"
+    ipa: "depo"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le dépôt est remboursé à la fin.", ipa: "lə depo ɛ ʁɑ̃buʁse a la fɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "dépôt", base: "dépôt" }, { word: "est", ref: "fr-0021" }, { word: "remboursé", ref: "fr-1441" }, { word: "à", base: "à" }, { word: "la", ref: "fr-0544" }, { word: "fin", ref: "fr-1110" }] }
+      - { target: "Faites le dépôt à l'accueil.", ipa: "fɛt lə depo a lakœj", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "le", ref: "fr-0543" }, { word: "dépôt", base: "dépôt" }, { word: "à", base: "à" }, { word: "l'accueil", base: "accueil" }] }
+  - id: "fr-1996"
+    target: "retrait"
+    ipa: "ʁətʁɛ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais un retrait au distributeur.", ipa: "ʒə fɛ œ̃ ʁətʁɛ o distʁibytœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "un", ref: "fr-0208" }, { word: "retrait", base: "retrait" }, { word: "au", base: "à" }, { word: "distributeur", ref: "fr-2019" }] }
+      - { target: "Le retrait est limité à deux cents euros.", ipa: "lə ʁətʁɛ ɛ limite a dø sɑ̃ øʁo", bases: [{ word: "Le", ref: "fr-0543" }, { word: "retrait", base: "retrait" }, { word: "est", ref: "fr-0021" }, { word: "limité", base: "limiter" }, { word: "à", base: "à" }, { word: "deux", ref: "fr-0209" }, { word: "cents", ref: "fr-0709" }, { word: "euros", ref: "fr-1451" }] }
+  - id: "fr-1997"
+    target: "tarif"
+    ipa: "taʁif"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le tarif est affiché à l'entrée.", ipa: "lə taʁif ɛ afiʃe a lɑ̃tʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "tarif", base: "tarif" }, { word: "est", ref: "fr-0021" }, { word: "affiché", base: "afficher" }, { word: "à", base: "à" }, { word: "l'entrée", ref: "fr-0818" }] }
+      - { target: "Quel est le tarif de la visite ?", ipa: "kɛl ɛ lə taʁif də la vizit", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "est", ref: "fr-0021" }, { word: "le", ref: "fr-0543" }, { word: "tarif", base: "tarif" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "visite", base: "visite" }] }
+  - id: "fr-1999"
+    target: "pressing"
+    ipa: "pʁɛsiŋ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je porte mon manteau au pressing.", ipa: "ʒə pɔʁt mɔ̃ mɑ̃to o pʁɛsiŋ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "porte", ref: "fr-0527" }, { word: "mon", ref: "fr-0037" }, { word: "manteau", ref: "fr-1206" }, { word: "au", base: "à" }, { word: "pressing", base: "pressing" }] }
+      - { target: "Le pressing rend les vêtements demain.", ipa: "lə pʁɛsiŋ ʁɑ̃ le vɛtmɑ̃ dəmɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "pressing", base: "pressing" }, { word: "rend", ref: "fr-1616" }, { word: "les", ref: "fr-0543" }, { word: "vêtements", ref: "fr-1224" }, { word: "demain", ref: "fr-0078" }] }
+  - id: "fr-2000"
+    target: "serrurier"
+    ipa: "seʁyʁje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le serrurier ouvre la porte.", ipa: "lə seʁyʁje uvʁ la pɔʁt", bases: [{ word: "Le", ref: "fr-0543" }, { word: "serrurier", base: "serrurier" }, { word: "ouvre", ref: "fr-0298" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-0527" }] }
+      - { target: "J'appelle un serrurier, j'ai perdu la clé.", ipa: "ʒapɛl œ̃ seʁyʁje ʒe pɛʁdy la kle", bases: [{ word: "J'appelle", ref: "fr-1071" }, { word: "un", ref: "fr-0208" }, { word: "serrurier", base: "serrurier" }, { word: "j'ai", ref: "fr-0022" }, { word: "perdu", ref: "fr-0906" }, { word: "la", ref: "fr-0544" }, { word: "clé", ref: "fr-0484" }] }
+  - id: "fr-2001"
+    target: "jardinier"
+    ipa: "ʒaʁdinje"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le jardinier coupe la haie.", ipa: "lə ʒaʁdinje kup la ɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "jardinier", base: "jardinier" }, { word: "coupe", ref: "fr-1538" }, { word: "la", ref: "fr-0544" }, { word: "haie", base: "haie" }] }
+      - { target: "Notre jardinier vient le samedi.", ipa: "nɔtʁ ʒaʁdinje vjɛ̃ lə samdi", bases: [{ word: "Notre", ref: "fr-0139" }, { word: "jardinier", base: "jardinier" }, { word: "vient", ref: "fr-0285" }, { word: "le", ref: "fr-0543" }, { word: "samedi", ref: "fr-1049" }] }
+  - id: "fr-2003"
+    target: "réclamation"
+    ipa: "ʁeklamasjɔ̃"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Je fais une réclamation.", ipa: "ʒə fɛ yn ʁeklamasjɔ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "une", ref: "fr-0545" }, { word: "réclamation", base: "réclamation" }] }
+      - { target: "La réclamation est acceptée.", ipa: "la ʁeklamasjɔ̃ ɛ aksɛpte", bases: [{ word: "La", ref: "fr-0544" }, { word: "réclamation", base: "réclamation" }, { word: "est", ref: "fr-0021" }, { word: "acceptée", base: "accepté" }] }
+  - id: "fr-2004"
+    target: "garantie"
+    ipa: "ɡaʁɑ̃ti"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "La garantie dure deux ans.", ipa: "la ɡaʁɑ̃ti dyʁ dø ɑ̃", bases: [{ word: "La", ref: "fr-0544" }, { word: "garantie", base: "garantie" }, { word: "dure", ref: "fr-1131" }, { word: "deux", ref: "fr-0209" }, { word: "ans", ref: "fr-0259" }] }
+      - { target: "Cet appareil est sous garantie.", ipa: "sɛt apaʁɛj ɛ su ɡaʁɑ̃ti", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "appareil", base: "appareil" }, { word: "est", ref: "fr-0021" }, { word: "sous", ref: "fr-0468" }, { word: "garantie", base: "garantie" }] }
+  - id: "fr-2006"
+    target: "expédier"
+    ipa: "ɛkspedje"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Nous expédions le colis lundi.", ipa: "nu zɛkspedjɔ̃ lə kɔli lœ̃di", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "expédions", base: "expédier" }, { word: "le", ref: "fr-0543" }, { word: "colis", ref: "fr-1971" }, { word: "lundi", ref: "fr-1044" }] }
+      - { target: "Il expédie les commandes chaque jour.", ipa: "il ɛkspedi le kɔmɑ̃d ʃak ʒuʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "expédie", base: "expédier" }, { word: "les", ref: "fr-0543" }, { word: "commandes", base: "commande" }, { word: "chaque", ref: "fr-0375" }, { word: "jour", ref: "fr-1032" }] }
+  - id: "fr-2007"
+    target: "accepter"
+    ipa: "aksɛpte"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'accepte votre demande.", ipa: "ʒaksɛpt vɔtʁ dəmɑ̃d", bases: [{ word: "J'accepte", base: "accepter" }, { word: "votre", ref: "fr-0140" }, { word: "demande", ref: "fr-1980" }] }
+      - { target: "Elle accepte de signer.", ipa: "ɛl aksɛpt də siɲe", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "accepte", base: "accepter" }, { word: "de", base: "de" }, { word: "signer", ref: "fr-1987" }] }
+  - id: "fr-2017"
+    target: "facteur"
+    ipa: "faktœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le facteur apporte une lettre.", ipa: "lə faktœʁ apɔʁt yn lɛtʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "facteur", base: "facteur" }, { word: "apporte", base: "apporter" }, { word: "une", ref: "fr-0545" }, { word: "lettre", ref: "fr-1972" }] }
+      - { target: "Le facteur passe à midi.", ipa: "lə faktœʁ pas a midi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "facteur", base: "facteur" }, { word: "passe", ref: "fr-0519" }, { word: "à", base: "à" }, { word: "midi", ref: "fr-1036" }] }
+  - id: "fr-2018"
+    target: "courriel"
+    ipa: "kuʁjɛl"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "J'envoie un courriel au bureau.", ipa: "ʒɑ̃vwa œ̃ kuʁjɛl o byʁo", bases: [{ word: "J'envoie", ref: "fr-0672" }, { word: "un", ref: "fr-0208" }, { word: "courriel", base: "courriel" }, { word: "au", base: "à" }, { word: "bureau", ref: "fr-0660" }] }
+      - { target: "Le courriel est arrivé ce matin.", ipa: "lə kuʁjɛl ɛ aʁive sə matɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "courriel", base: "courriel" }, { word: "est", ref: "fr-0021" }, { word: "arrivé", ref: "fr-0305" }, { word: "ce", ref: "fr-0143" }, { word: "matin", ref: "fr-1033" }] }
+  - id: "fr-2019"
+    target: "distributeur"
+    ipa: "distʁibytœʁ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "note" }
+    bases: "self"
+    examples:
+      - { target: "Le distributeur est en panne.", ipa: "lə distʁibytœʁ ɛ ɑ̃ pan", bases: [{ word: "Le", ref: "fr-0543" }, { word: "distributeur", base: "distributeur" }, { word: "est", ref: "fr-0021" }, { word: "en", base: "en" }, { word: "panne", base: "panne" }] }
+      - { target: "Je retire de l'argent au distributeur.", ipa: "ʒə ʁətiʁ də laʁʒɑ̃ o distʁibytœʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "retire", base: "retirer" }, { word: "de", base: "de" }, { word: "l'argent", ref: "fr-0751" }, { word: "au", base: "à" }, { word: "distributeur", base: "distributeur" }] }
+

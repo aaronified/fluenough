@@ -1,0 +1,41 @@
+schema: 1
+id: "fr-en-reading-arts"
+name: "Reading: arts"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Short texts about arts. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-fr-exhibition-notice"
+    title: "A notice for an art exhibition"
+    theme: "arts"
+    sentences:
+      - text: "Exposition de peinture et de sculpture au musée de la ville."
+      - text: "Entrée libre le dimanche. Visite guidée le samedi à quinze heures."
+      - text: "Les œuvres sont présentées par des artistes de la région."
+      - text: "Ne pas toucher aux sculptures, merci."
+    questions:
+      - id: "fr-2285"
+        prompt: { en: "When is the entry free?" }
+        options:
+          - { en: "On Sunday" }
+          - { en: "On Saturday" }
+          - { en: "Every day" }
+        answer: 1
+      - id: "fr-2286"
+        prompt: { en: "What happens on Saturday at three?" }
+        options:
+          - { en: "A guided tour" }
+          - { en: "A concert" }
+          - { en: "A dance show" }
+        answer: 1
+      - id: "fr-2287"
+        prompt: { en: "What must visitors not do?" }
+        options:
+          - { en: "Buy a ticket" }
+          - { en: "Touch the sculptures" }
+          - { en: "Take photographs" }
+        answer: 2

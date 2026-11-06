@@ -1,0 +1,109 @@
+schema: 1
+id: "fr-emergencies-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-2528"
+    target: "Les pompiers éteignent l'incendie et la fumée."
+    ipa: "le pɔ̃pje etɛɲ lɛ̃sɑ̃di e la fyme"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Les", ref: "fr-0543" }
+      - { word: "pompiers", ref: "fr-1072" }
+      - { word: "éteignent", ref: "fr-2081" }
+      - { word: "l'incendie", ref: "fr-2510" }
+      - { word: "et", ref: "fr-0027" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "fumée", ref: "fr-2511" }
+    confusables:
+      - { id: "alarme", ref: "fr-2512", kind: "word" }
+      - { id: "inondation", ref: "fr-2189", kind: "word" }
+  - id: "fr-2529"
+    target: "Appelez les secours, il y a un accident."
+    ipa: "apəle le səkuʁ il i a œ̃ naksidɑ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Appelez", ref: "fr-1071" }
+      - { word: "les", ref: "fr-0543" }
+      - { word: "secours", ref: "fr-1069" }
+      - { word: "il", ref: "fr-0127" }
+      - { word: "y", ref: "fr-0022" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "accident", ref: "fr-1083" }
+    confusables:
+      - { id: "police", ref: "fr-1067", kind: "word" }
+      - { id: "ambulance", ref: "fr-2508", kind: "word" }
+  - id: "fr-2530"
+    target: "L'ambulance emmène le blessé à l'hôpital."
+    ipa: "lɑ̃bylɑ̃s ɑ̃mɛn lə blese a lɔpital"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "L'ambulance", ref: "fr-2508" }
+      - { word: "emmène", ref: "fr-1129" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "blessé", ref: "fr-1737" }
+      - { word: "à", base: "à" }
+      - { word: "l'hôpital", ref: "fr-0976" }
+    confusables:
+      - { id: "secouriste", ref: "fr-2517", kind: "word" }
+      - { id: "blessure", ref: "fr-2509", kind: "word" }
+  - id: "fr-2531"
+    target: "Le gendarme sauve un enfant de la fumée."
+    ipa: "lə ʒɑ̃daʁm sov œ̃n ɑ̃fɑ̃ də la fyme"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "gendarme", ref: "fr-2518" }
+      - { word: "sauve", ref: "fr-2522" }
+      - { word: "un", ref: "fr-0208" }
+      - { word: "enfant", base: "enfant" }
+      - { word: "de", base: "de" }
+      - { word: "la", ref: "fr-0544" }
+      - { word: "fumée", ref: "fr-2511" }
+    confusables:
+      - { id: "pompier", ref: "fr-1072", kind: "word" }
+      - { id: "secourir", ref: "fr-2523", kind: "word" }
+  - id: "fr-2532"
+    target: "Il a une fracture après sa chute."
+    ipa: "il a yn fʁaktyʁ apʁɛ sa ʃyt"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "fracture", ref: "fr-2515" }
+      - { word: "après", ref: "fr-0595" }
+      - { word: "sa", ref: "fr-0138" }
+      - { word: "chute", base: "chute" }
+    confusables:
+      - { id: "brulure", ref: "fr-2516", kind: "word" }
+      - { id: "malaise", ref: "fr-2513", kind: "word" }
+  - id: "fr-2533"
+    target: "Il y a une fuite de gaz, sortez vite."
+    ipa: "il i a yn fɥit də ɡaz sɔʁte vit"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Il", ref: "fr-0127" }
+      - { word: "y", ref: "fr-0022" }
+      - { word: "a", ref: "fr-0022" }
+      - { word: "une", ref: "fr-0545" }
+      - { word: "fuite", ref: "fr-2527" }
+      - { word: "de", base: "de" }
+      - { word: "gaz", base: "gaz" }
+      - { word: "sortez", ref: "fr-1125" }
+      - { word: "vite", ref: "fr-0338" }
+    confusables:
+      - { id: "danger", ref: "fr-1074", kind: "word" }
+      - { id: "evacuer", ref: "fr-2524", kind: "word" }
+

@@ -1,0 +1,453 @@
+schema: 1
+id: "fr-en-literature"
+kind: "layer"
+core: "fr-literature"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Literature"
+license: "CC-BY-SA-4.0"
+description: "Forty words for books and reading: the kinds of text, the parts of a book, the people who write and publish them, and the verbs of reading and writing. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-2744":
+    native: "account, narrative"
+    notes:
+      "n1": "Un récit is a spoken or written account of events."
+    examples:
+      "Ce récit est très émouvant.":
+        native: "This account is very moving."
+        bases:
+          "récit": "account, narrative"
+      "Elle raconte son récit de voyage.":
+        native: "She tells her travel account."
+        bases:
+          "récit": "account, narrative"
+          "de": "of, from, some"
+  "fr-2745":
+    native: "tale"
+    notes:
+      "n1": "Un conte is a short story, often for children, such as a fairy tale."
+    examples:
+      "Le conte commence par « il était une fois ».":
+        native: "The tale begins with once upon a time."
+        bases:
+          "conte": "tale"
+      "Elle lit un conte à ses enfants.":
+        native: "She reads a tale to her children."
+        bases:
+          "conte": "tale"
+          "à": "to, at"
+          "enfants": "children"
+  "fr-2746":
+    native: "fable"
+    notes:
+      "n1": "Une fable is a short story with a moral lesson, often about animals."
+    examples:
+      "La fable enseigne une leçon.":
+        native: "The fable teaches a lesson."
+        bases:
+          "fable": "fable"
+          "enseigne": "teaches"
+      "Cette fable parle d'un renard.":
+        native: "This fable is about a fox."
+        bases:
+          "fable": "fable"
+          "d'un": "of a"
+  "fr-2747":
+    native: "legend"
+    notes:
+      "n1": "Une légende is a traditional story, sometimes not true."
+    examples:
+      "C'est une vieille légende.":
+        native: "It is an old legend."
+        bases:
+          "légende": "legend"
+      "La légende raconte la fondation de la ville.":
+        native: "The legend tells of the founding of the town."
+        bases:
+          "légende": "legend"
+          "de": "of, from, some"
+  "fr-2748":
+    native: "chapter"
+    notes:
+      "n1": "Un chapitre is a part of a book."
+    examples:
+      "Le premier chapitre est court.":
+        native: "The first chapter is short."
+        bases:
+          "chapitre": "chapter"
+      "Nous lisons un chapitre par jour.":
+        native: "We read a chapter a day."
+        bases:
+          "chapitre": "chapter"
+  "fr-2749":
+    native: "text"
+    notes:
+      "n1": "Un texte is a piece of written words."
+    examples:
+      "Ce texte est difficile à lire.":
+        native: "This text is hard to read."
+        bases:
+          "texte": "text"
+          "à": "to, at"
+      "Lisez le texte à voix haute.":
+        native: "Read the text aloud."
+        bases:
+          "texte": "text"
+          "à": "to, at"
+          "voix": "voice"
+  "fr-2750":
+    native: "publisher"
+    notes:
+      "n1": "Un éditeur publishes books; the feminine is éditrice."
+    examples:
+      "L'éditeur accepte le manuscrit.":
+        native: "The publisher accepts the manuscript."
+        bases:
+          "L'éditeur": "publisher"
+          "manuscrit": "manuscript"
+      "Ce livre vient d'un petit éditeur.":
+        native: "This book comes from a small publisher."
+        bases:
+          "d'un": "of a"
+          "éditeur": "publisher"
+  "fr-2751":
+    native: "translator"
+    notes:
+      "n1": "Un traducteur translates texts; the feminine is traductrice."
+    examples:
+      "Le traducteur change le titre.":
+        native: "The translator changes the title."
+        bases:
+          "traducteur": "translator"
+      "Ma sœur est traductrice.":
+        native: "My sister is a translator."
+        bases:
+          "traductrice": "translator"
+  "fr-2752":
+    native: "theme"
+    notes:
+      "n1": "Un thème is the main subject of a book or text."
+    examples:
+      "Le thème du livre est l'amitié.":
+        native: "The theme of the book is friendship."
+        bases:
+          "thème": "theme"
+          "du": "some, of the"
+      "Ce thème revient souvent.":
+        native: "This theme comes up often."
+        bases:
+          "thème": "theme"
+          "revient": "comes back"
+  "fr-2753":
+    native: "symbol"
+    notes:
+      "n1": "Un symbole is a sign that stands for an idea."
+    examples:
+      "La colombe est un symbole de paix.":
+        native: "The dove is a symbol of peace."
+        bases:
+          "colombe": "dove"
+          "symbole": "symbol"
+          "de": "of, from, some"
+      "Le symbole est clair.":
+        native: "The symbol is clear."
+        bases:
+          "symbole": "symbol"
+          "clair": "clear"
+  "fr-2754":
+    native: "metaphor"
+    notes:
+      "n1": "Une métaphore is a figure of speech that compares without using comme."
+    examples:
+      "Cette métaphore est belle.":
+        native: "This metaphor is beautiful."
+        bases:
+          "métaphore": "metaphor"
+      "Il emploie une métaphore pour parler de la mer.":
+        native: "He uses a metaphor to talk about the sea."
+        bases:
+          "emploie": "uses"
+          "métaphore": "metaphor"
+          "de": "of, from, some"
+  "fr-2755":
+    native: "rhyme"
+    notes:
+      "n1": "Une rime is the same sound at the end of two lines of verse."
+    examples:
+      "Les deux vers ont la même rime.":
+        native: "The two lines have the same rhyme."
+        bases:
+          "même": "same"
+          "rime": "rhyme"
+      "Ce poème n'a pas de rime.":
+        native: "This poem has no rhyme."
+        bases:
+          "pas": "not"
+          "de": "of, from, some"
+          "rime": "rhyme"
+  "fr-2756":
+    native: "stanza"
+    notes:
+      "n1": "Une strophe is a group of lines in a poem."
+    examples:
+      "La première strophe est triste.":
+        native: "The first stanza is sad."
+        bases:
+          "strophe": "stanza"
+      "Chaque strophe a quatre vers.":
+        native: "Each stanza has four lines."
+        bases:
+          "strophe": "stanza"
+  "fr-2757":
+    native: "prose"
+    notes:
+      "n1": "La prose is writing that is not in verse."
+    examples:
+      "Ce roman est écrit en prose.":
+        native: "This novel is written in prose."
+        bases:
+          "en": "in, by, as"
+          "prose": "prose"
+      "La prose est plus libre que le vers.":
+        native: "Prose is freer than verse."
+        bases:
+          "prose": "prose"
+          "que": "that"
+  "fr-2758":
+    native: "poet"
+    notes:
+      "n1": "Un poète writes poems; it is used for both genders."
+    examples:
+      "Le poète lit ses vers.":
+        native: "The poet reads his poems."
+        bases:
+          "poète": "poet"
+      "Elle est poète depuis l'enfance.":
+        native: "She has been a poet since childhood."
+        bases:
+          "poète": "poet"
+          "depuis": "since"
+          "l'enfance": "childhood"
+  "fr-2759":
+    native: "playwright"
+    notes:
+      "n1": "Un dramaturge writes plays; it is used for both genders."
+    examples:
+      "Le dramaturge écrit une pièce.":
+        native: "The playwright writes a play."
+        bases:
+          "dramaturge": "playwright"
+      "Ce dramaturge est célèbre.":
+        native: "This playwright is famous."
+        bases:
+          "dramaturge": "playwright"
+  "fr-2760":
+    native: "tragedy"
+    notes:
+      "n1": "Une tragédie is a serious play with a sad ending."
+    examples:
+      "La tragédie finit mal.":
+        native: "The tragedy ends badly."
+        bases:
+          "tragédie": "tragedy"
+      "Nous lisons une tragédie de Racine.":
+        native: "We read a tragedy by Racine."
+        bases:
+          "tragédie": "tragedy"
+          "de": "of, from, some"
+          "Racine": "Racine"
+  "fr-2761":
+    native: "fiction"
+    notes:
+      "n1": "La fiction is invented stories, not facts."
+    examples:
+      "J'aime la fiction historique.":
+        native: "I like historical fiction."
+        bases:
+          "fiction": "fiction"
+          "historique": "historical"
+      "Ce livre est une fiction.":
+        native: "This book is a fiction."
+        bases:
+          "fiction": "fiction"
+  "fr-2762":
+    native: "biography"
+    notes:
+      "n1": "Une biographie is the story of a real person’s life."
+    examples:
+      "Cette biographie est passionnante.":
+        native: "This biography is fascinating."
+        bases:
+          "biographie": "biography"
+          "passionnante": "fascinating"
+      "Il lit la biographie d'un peintre.":
+        native: "He reads the biography of a painter."
+        bases:
+          "biographie": "biography"
+          "d'un": "of a"
+          "peintre": "painter"
+  "fr-2763":
+    native: "narrator"
+    notes:
+      "n1": "Un narrateur tells a story; the feminine is narratrice."
+    examples:
+      "Le narrateur raconte son enfance.":
+        native: "The narrator tells of his childhood."
+        bases:
+          "narrateur": "narrator"
+          "enfance": "childhood"
+      "Ce narrateur est très honnête.":
+        native: "This narrator is very honest."
+        bases:
+          "narrateur": "narrator"
+  "fr-2764":
+    native: "preface"
+    notes:
+      "n1": "Une préface is an introduction at the start of a book."
+    examples:
+      "La préface explique le livre.":
+        native: "The preface explains the book."
+        bases:
+          "préface": "preface"
+          "explique": "explains"
+      "Lisez la préface avant le roman.":
+        native: "Read the preface before the novel."
+        bases:
+          "préface": "preface"
+  "fr-2765":
+    native: "contents"
+    notes:
+      "n1": "Un sommaire is the list of chapters at the front of a book."
+    examples:
+      "Le sommaire est à la fin.":
+        native: "The contents are at the end."
+        bases:
+          "sommaire": "contents"
+          "à": "to, at"
+      "Regarde le sommaire du livre.":
+        native: "Look at the book’s contents."
+        bases:
+          "sommaire": "contents"
+          "du": "some, of the"
+  "fr-2766":
+    native: "sonnet"
+    notes:
+      "n1": "Un sonnet is a poem of fourteen lines."
+    examples:
+      "Ce sonnet est célèbre.":
+        native: "This sonnet is famous."
+        bases:
+          "sonnet": "sonnet"
+      "Le sonnet a quatorze vers.":
+        native: "The sonnet has fourteen lines."
+        bases:
+          "sonnet": "sonnet"
+  "fr-2767":
+    native: "to reread"
+    notes:
+      "n1": "Relire is like lire: to read again."
+    examples:
+      "Je relis le chapitre.":
+        native: "I reread the chapter."
+        bases:
+          "relis": "to reread"
+      "Elle relit toujours ses lettres.":
+        native: "She always rereads her letters."
+        bases:
+          "relit": "to reread"
+  "fr-2768":
+    native: "to summarise"
+    notes:
+      "n1": "Résumer is regular: to give the main points of something."
+    examples:
+      "Résume l'histoire en trois phrases.":
+        native: "Summarise the story in three sentences."
+        bases:
+          "Résume": "to summarise"
+          "en": "in, by, as"
+      "Je résume le livre pour toi.":
+        native: "I summarise the book for you."
+        bases:
+          "résume": "to summarise"
+  "fr-2769":
+    native: "to analyse"
+    notes:
+      "n1": "Analyser is regular: to examine a text or idea in detail."
+    examples:
+      "Nous analysons le poème.":
+        native: "We analyse the poem."
+        bases:
+          "analysons": "to analyse"
+      "Il analyse la phrase.":
+        native: "He analyses the sentence."
+        bases:
+          "analyse": "to analyse"
+  "fr-2770":
+    native: "to comment on"
+    notes:
+      "n1": "Commenter is regular: to explain or give opinions on a text."
+    examples:
+      "Le professeur commente le texte.":
+        native: "The teacher comments on the text."
+        bases:
+          "commente": "to comment on"
+      "Ils commentent le film.":
+        native: "They comment on the film."
+        bases:
+          "commentent": "to comment on"
+  "fr-2771":
+    native: "to quote"
+    notes:
+      "n1": "Citer is regular: to quote from a book or person."
+    examples:
+      "Il cite un poème de Hugo.":
+        native: "He quotes a poem by Hugo."
+        bases:
+          "cite": "to quote"
+          "de": "of, from, some"
+          "Hugo": "Hugo"
+      "Citez vos sources.":
+        native: "Quote your sources."
+        bases:
+          "Citez": "to quote"
+  "fr-2772":
+    native: "to invent"
+    notes:
+      "n1": "Inventer is regular: to make up a story or to invent a thing."
+    examples:
+      "Elle invente une histoire.":
+        native: "She makes up a story."
+        bases:
+          "invente": "to invent"
+      "Il invente un nouveau jeu.":
+        native: "He invents a new game."
+        bases:
+          "invente": "to invent"
+  "fr-2773":
+    native: "to imagine"
+    notes:
+      "n1": "Imaginer is regular: to picture something in the mind."
+    examples:
+      "J'imagine la scène.":
+        native: "I imagine the scene."
+        bases:
+          "J'imagine": "to imagine"
+      "Imaginez un monde sans livres.":
+        native: "Imagine a world without books."
+        bases:
+          "Imaginez": "to imagine"
+          "monde": "world"
+  "fr-2774":
+    native: "to draft, to write up"
+    notes:
+      "n1": "Rédiger is regular: to write a formal text."
+    examples:
+      "Elle rédige un rapport.":
+        native: "She writes up a report."
+        bases:
+          "rédige": "to draft, to write up"
+          "rapport": "report"
+      "Rédigez votre lettre.":
+        native: "Draft your letter."
+        bases:
+          "Rédigez": "to draft, to write up"

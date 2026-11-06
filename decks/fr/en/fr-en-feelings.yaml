@@ -1,0 +1,580 @@
+schema: 1
+id: "fr-en-feelings"
+kind: "layer"
+core: "fr-feelings"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Feelings"
+license: "CC-BY-SA-4.0"
+description: "Forty words for feelings: the joys and fears of everyday life, how we show them, and the verbs and nouns for them. Not yet checked by a French speaker: please report any mistake."
+
+cards:
+  "fr-1759":
+    native: "fear"
+    notes:
+      "n1": "Avoir peur de is to be afraid of something."
+    examples:
+      "J'ai peur du noir.":
+        native: "I am afraid of the dark."
+        bases:
+          "peur": "fear"
+          "du": "some, of the"
+      "La peur disparaît vite.":
+        native: "The fear disappears quickly."
+        bases:
+          "peur": "fear"
+          "disparaît": "disappears"
+  "fr-1760":
+    native: "joy"
+    notes:
+      "n1": "Une joie is a feeling of great happiness."
+    examples:
+      "Elle pleure de joie.":
+        native: "She is crying with joy."
+        bases:
+          "de": "of, from, some"
+          "joie": "joy"
+      "Quelle joie de vous voir !":
+        native: "What a joy to see you!"
+        bases:
+          "joie": "joy"
+          "de": "of, from, some"
+  "fr-1761":
+    native: "anger"
+    notes:
+      "n1": "Être en colère is to be angry; the adjective is fâché."
+    examples:
+      "Il est en colère contre moi.":
+        native: "He is angry with me."
+        bases:
+          "en": "in, by, as"
+          "colère": "anger"
+      "Sa colère disparaît vite.":
+        native: "His anger disappears quickly."
+        bases:
+          "colère": "anger"
+          "disparaît": "disappears"
+  "fr-1762":
+    native: "love"
+    notes:
+      "n1": "Amour is masculine in the singular and feminine in some plural uses."
+    examples:
+      "L'amour est important pour elle.":
+        native: "Love is important to her."
+        bases:
+          "L'amour": "love"
+      "Ils parlent d'amour toute la nuit.":
+        native: "They talk about love all night."
+        bases:
+          "d'amour": "love"
+  "fr-1763":
+    native: "boredom"
+    notes:
+      "n1": "Avoir un ennui is to have a problem; s’ennuyer is to be bored."
+    examples:
+      "Quel ennui ce film !":
+        native: "What a bore this film is!"
+        bases:
+          "ennui": "boredom"
+          "film": "film"
+      "L'ennui arrive le dimanche.":
+        native: "Boredom arrives on Sunday."
+        bases:
+          "L'ennui": "boredom"
+  "fr-1764":
+    native: "stress"
+    notes:
+      "n1": "Le stress is used in French as it is in English."
+    examples:
+      "Le travail donne du stress.":
+        native: "Work gives stress."
+        bases:
+          "du": "some, of the"
+          "stress": "stress"
+      "Elle a beaucoup de stress.":
+        native: "She has a lot of stress."
+        bases:
+          "de": "of, from, some"
+          "stress": "stress"
+  "fr-1765":
+    native: "worried"
+    notes:
+      "n1": "Inquiet takes the feminine inquiète."
+    examples:
+      "Je suis inquiet pour toi.":
+        native: "I am worried about you."
+        bases:
+          "inquiet": "worried"
+      "Ma mère est inquiète ce soir.":
+        native: "My mother is worried tonight."
+        bases:
+          "inquiète": "worried"
+  "fr-1766":
+    native: "anxious"
+    notes:
+      "n1": "Anxieux takes the feminine anxieuse."
+    examples:
+      "Il est anxieux avant l'examen.":
+        native: "He is anxious before the exam."
+        bases:
+          "anxieux": "anxious"
+      "Elle devient anxieuse quand elle conduit.":
+        native: "She becomes anxious when she drives."
+        bases:
+          "devient": "becomes"
+          "anxieuse": "anxious"
+  "fr-1767":
+    native: "nervous"
+    notes:
+      "n1": "Nerveux takes the feminine nerveuse."
+    examples:
+      "Je suis nerveux le jour du match.":
+        native: "I am nervous on the day of the match."
+        bases:
+          "nerveux": "nervous"
+          "du": "some, of the"
+      "Le chien est nerveux avec les enfants.":
+        native: "The dog is nervous with children."
+        bases:
+          "nerveux": "nervous"
+          "enfants": "children"
+  "fr-1768":
+    native: "surprised"
+    notes:
+      "n1": "Surpris takes the feminine surprise."
+    examples:
+      "Nous sommes surpris par la nouvelle.":
+        native: "We are surprised by the news."
+        bases:
+          "surpris": "surprised"
+          "nouvelle": "news"
+      "Elle était surprise de le voir.":
+        native: "She was surprised to see him."
+        bases:
+          "surprise": "surprised"
+          "de": "of, from, some"
+  "fr-1769":
+    native: "proud"
+    notes:
+      "n1": "Fier takes the feminine fière."
+    examples:
+      "Mes parents sont fiers de moi.":
+        native: "My parents are proud of me."
+        bases:
+          "fiers": "proud"
+          "de": "of, from, some"
+      "Elle est fière de son travail.":
+        native: "She is proud of her work."
+        bases:
+          "fière": "proud"
+          "de": "of, from, some"
+  "fr-1770":
+    native: "shame, embarrassment"
+    notes:
+      "n1": "Avoir honte is to be ashamed."
+    examples:
+      "Il a honte de son erreur.":
+        native: "He is ashamed of his mistake."
+        bases:
+          "honte": "shame, embarrassment"
+          "de": "of, from, some"
+          "erreur": "mistake"
+      "Quelle honte !":
+        native: "What a shame!"
+        bases:
+          "honte": "shame, embarrassment"
+  "fr-1771":
+    native: "hope"
+    notes:
+      "n1": "Avoir de l’espoir is to have hope."
+    examples:
+      "Elle garde l'espoir.":
+        native: "She keeps hope."
+        bases:
+          "garde": "keeps"
+          "l'espoir": "hope"
+      "Il n'a plus d'espoir.":
+        native: "He no longer has any hope."
+        bases:
+          "d'espoir": "hope"
+  "fr-1772":
+    native: "worry, concern"
+    notes:
+      "n1": "Se faire du souci is to worry."
+    examples:
+      "Ne te fais pas de souci.":
+        native: "Do not worry."
+        bases:
+          "Ne": "not"
+          "te": "you"
+          "pas": "not"
+          "de": "of, from, some"
+          "souci": "worry, concern"
+      "Ce problème est un gros souci.":
+        native: "This problem is a big worry."
+        bases:
+          "gros": "big"
+          "souci": "worry, concern"
+  "fr-1773":
+    native: "to laugh"
+    notes:
+      "n1": "Rire is irregular: je ris, nous rions."
+    examples:
+      "Nous rions beaucoup ensemble.":
+        native: "We laugh a lot together."
+        bases:
+          "rions": "to laugh"
+      "Il ne ment pas, il rit.":
+        native: "He is not lying, he is laughing."
+        bases:
+          "ne": "not"
+          "ment": "lies"
+          "pas": "not"
+          "rit": "to laugh"
+  "fr-1774":
+    native: "to cry"
+    notes:
+      "n1": "Pleurer is regular; it is about crying, not about a sad feeling alone."
+    examples:
+      "Le bébé pleure.":
+        native: "The baby is crying."
+        bases:
+          "pleure": "to cry"
+      "Elle a pleuré pendant le film.":
+        native: "She cried during the film."
+        bases:
+          "pleuré": "to cry"
+          "film": "film"
+  "fr-1775":
+    native: "to hate, to detest"
+    notes:
+      "n1": "Détester is regular; it is stronger than ne pas aimer."
+    examples:
+      "Je déteste attendre le bus.":
+        native: "I hate waiting for the bus."
+        bases:
+          "déteste": "to hate, to detest"
+      "Il déteste les araignées.":
+        native: "He hates spiders."
+        bases:
+          "déteste": "to hate, to detest"
+          "araignées": "spider"
+  "fr-1776":
+    native: "to fear"
+    notes:
+      "n1": "Craindre is irregular: je crains, nous craignons."
+    examples:
+      "Je crains le pire.":
+        native: "I fear the worst."
+        bases:
+          "crains": "to fear"
+          "pire": "worst"
+      "Elle craint l'hiver.":
+        native: "She fears winter."
+        bases:
+          "craint": "to fear"
+  "fr-1777":
+    native: "to reassure"
+    notes:
+      "n1": "Rassurer someone is to make them calm again."
+    examples:
+      "Ses mots m'ont rassuré.":
+        native: "His words reassured me."
+        bases:
+          "rassuré": "to reassure"
+      "Essayez de rassurer votre ami.":
+        native: "Try to reassure your friend."
+        bases:
+          "de": "of, from, some"
+          "rassurer": "to reassure"
+  "fr-1778":
+    native: "to hope"
+    notes:
+      "n1": "Espérer is regular; it has an accent on the first e."
+    examples:
+      "J'espère que tu vas bien.":
+        native: "I hope that you are well."
+        bases:
+          "J'espère": "to hope"
+          "que": "that"
+      "Nous espérons gagner.":
+        native: "We hope to win."
+        bases:
+          "espérons": "to hope"
+  "fr-1779":
+    native: "to feel, to experience"
+    notes:
+      "n1": "Ressentir is an -ir verb, close to sentir; it is about a feeling in the body or mind."
+    examples:
+      "Je ressens une grande fatigue.":
+        native: "I feel a great tiredness."
+        bases:
+          "ressens": "to feel, to experience"
+      "Elle ressent la joie de la fête.":
+        native: "She feels the joy of the party."
+        bases:
+          "ressent": "to feel, to experience"
+          "de": "of, from, some"
+  "fr-1780":
+    native: "emotion"
+    notes:
+      "n1": "Une émotion is a strong feeling."
+    examples:
+      "Il a une grande émotion.":
+        native: "He has a great emotion."
+        bases:
+          "émotion": "emotion"
+      "Cette musique donne beaucoup d'émotion.":
+        native: "This music gives a lot of emotion."
+        bases:
+          "d'émotion": "emotion"
+  "fr-1781":
+    native: "mood"
+    notes:
+      "n1": "Être de bonne humeur is to be in a good mood."
+    examples:
+      "Il est de bonne humeur ce matin.":
+        native: "He is in a good mood this morning."
+        bases:
+          "de": "of, from, some"
+          "humeur": "mood"
+      "Son humeur change souvent.":
+        native: "His mood changes often."
+        bases:
+          "humeur": "mood"
+  "fr-1782":
+    native: "smile"
+    notes:
+      "n1": "Sourire is also the verb to smile; the noun is masculine."
+    examples:
+      "Elle a un beau sourire.":
+        native: "She has a beautiful smile."
+        bases:
+          "sourire": "smile"
+      "Son sourire rend tout le monde heureux.":
+        native: "Her smile makes everyone happy."
+        bases:
+          "sourire": "smile"
+          "monde": "world"
+  "fr-1783":
+    native: "tear"
+    notes:
+      "n1": "Une larme is a tear from the eye."
+    examples:
+      "Une larme coule sur sa joue.":
+        native: "A tear runs down her cheek."
+        bases:
+          "larme": "tear"
+          "coule": "runs"
+      "Il a des larmes dans les yeux.":
+        native: "He has tears in his eyes."
+        bases:
+          "larmes": "tear"
+  "fr-1784":
+    native: "relief"
+    notes:
+      "n1": "Un soulagement is the feeling after a worry or pain has gone."
+    examples:
+      "Quel soulagement !":
+        native: "What a relief!"
+        bases:
+          "soulagement": "relief"
+      "Elle pousse un soupir de soulagement.":
+        native: "She sighs with relief."
+        bases:
+          "pousse": "lets out"
+          "soupir": "sigh"
+          "de": "of, from, some"
+          "soulagement": "relief"
+  "fr-1785":
+    native: "disappointment"
+    notes:
+      "n1": "Une déception is the feeling of being let down."
+    examples:
+      "C'est une grande déception.":
+        native: "It is a great disappointment."
+        bases:
+          "déception": "disappointment"
+      "Sa réponse a causé une déception.":
+        native: "His answer caused a disappointment."
+        bases:
+          "causé": "caused"
+          "déception": "disappointment"
+  "fr-1786":
+    native: "jealousy"
+    notes:
+      "n1": "La jalousie is the feeling of wanting what someone else has."
+    examples:
+      "La jalousie rend triste.":
+        native: "Jealousy makes you sad."
+        bases:
+          "jalousie": "jealousy"
+      "Il montre de la jalousie.":
+        native: "He shows jealousy."
+        bases:
+          "de": "of, from, some"
+          "jalousie": "jealousy"
+  "fr-1787":
+    native: "trust, confidence"
+    notes:
+      "n1": "Avoir confiance en quelqu’un is to trust someone."
+    examples:
+      "J'ai confiance en toi.":
+        native: "I trust you."
+        bases:
+          "confiance": "trust, confidence"
+          "en": "in, by, as"
+      "Elle a perdu confiance.":
+        native: "She has lost confidence."
+        bases:
+          "confiance": "trust, confidence"
+  "fr-1788":
+    native: "embarrassed"
+    notes:
+      "n1": "Gêné takes the feminine gênée."
+    examples:
+      "Je suis gêné de vous déranger.":
+        native: "I am embarrassed to disturb you."
+        bases:
+          "gêné": "embarrassed"
+          "de": "of, from, some"
+      "Elle est gênée par le bruit.":
+        native: "She is bothered by the noise."
+        bases:
+          "gênée": "embarrassed"
+  "fr-1789":
+    native: "in love"
+    notes:
+      "n1": "Amoureux takes the feminine amoureuse; être amoureux de is to be in love with."
+    examples:
+      "Ils sont amoureux depuis dix ans.":
+        native: "They have been in love for ten years."
+        bases:
+          "amoureux": "in love"
+          "depuis": "since"
+      "Elle est amoureuse de son voisin.":
+        native: "She is in love with her neighbour."
+        bases:
+          "amoureuse": "in love"
+          "de": "of, from, some"
+  "fr-1790":
+    native: "anguish, dread"
+    notes:
+      "n1": "Une angoisse is a strong fear or worry without a clear cause."
+    examples:
+      "Il ressent une angoisse terrible.":
+        native: "He feels a terrible anguish."
+        bases:
+          "angoisse": "anguish, dread"
+          "terrible": "terrible"
+      "Cette angoisse ne part pas.":
+        native: "This dread does not go away."
+        bases:
+          "angoisse": "anguish, dread"
+          "ne": "not"
+          "pas": "not"
+  "fr-1791":
+    native: "happiness"
+    notes:
+      "n1": "Le bonheur is the state of being happy."
+    examples:
+      "Le bonheur est simple.":
+        native: "Happiness is simple."
+        bases:
+          "bonheur": "happiness"
+          "simple": "simple"
+      "Ils vivent dans le bonheur.":
+        native: "They live in happiness."
+        bases:
+          "vivent": "live"
+          "bonheur": "happiness"
+  "fr-1792":
+    native: "sadness"
+    notes:
+      "n1": "La tristesse is the feeling of being sad."
+    examples:
+      "Il cache sa tristesse.":
+        native: "He hides his sadness."
+        bases:
+          "cache": "hides"
+          "tristesse": "sadness"
+      "La tristesse passe avec le temps.":
+        native: "Sadness passes with time."
+        bases:
+          "tristesse": "sadness"
+  "fr-1793":
+    native: "feeling, sentiment"
+    notes:
+      "n1": "Un sentiment is a feeling you have inside."
+    examples:
+      "J'ai un sentiment étrange.":
+        native: "I have a strange feeling."
+        bases:
+          "sentiment": "feeling, sentiment"
+          "étrange": "strange"
+      "Ce sentiment est fort.":
+        native: "This feeling is strong."
+        bases:
+          "sentiment": "feeling, sentiment"
+  "fr-1794":
+    native: "angry, cross"
+    notes:
+      "n1": "Fâché takes the feminine fâchée; être fâché contre is to be cross with."
+    examples:
+      "Il est fâché contre son frère.":
+        native: "He is cross with his brother."
+        bases:
+          "fâché": "angry, cross"
+      "Elle est fâchée à cause du retard.":
+        native: "She is cross because of the delay."
+        bases:
+          "fâchée": "angry, cross"
+          "à": "to, at"
+          "cause": "causes"
+          "du": "some, of the"
+  "fr-1795":
+    native: "astonished"
+    notes:
+      "n1": "Étonné takes the feminine étonnée."
+    examples:
+      "Je suis étonné de la nouvelle.":
+        native: "I am astonished by the news."
+        bases:
+          "étonné": "astonished"
+          "de": "of, from, some"
+          "nouvelle": "news"
+      "Elle est étonnée qu'il vienne.":
+        native: "She is astonished that he is coming."
+        bases:
+          "étonnée": "astonished"
+  "fr-1796":
+    native: "moved, touched"
+    notes:
+      "n1": "Ému takes the feminine émue."
+    examples:
+      "Il est ému par ce film.":
+        native: "He is moved by this film."
+        bases:
+          "ému": "moved, touched"
+          "film": "film"
+      "Elle est émue de vous revoir.":
+        native: "She is moved to see you again."
+        bases:
+          "émue": "moved, touched"
+          "de": "of, from, some"
+          "revoir": "see again"
+  "fr-1797":
+    native: "unhappy, displeased"
+    notes:
+      "n1": "Mécontent takes the feminine mécontente."
+    examples:
+      "Le client est mécontent du service.":
+        native: "The customer is unhappy with the service."
+        bases:
+          "mécontent": "unhappy, displeased"
+          "du": "some, of the"
+      "Elle reste mécontente du résultat.":
+        native: "She remains unhappy with the result."
+        bases:
+          "mécontente": "unhappy, displeased"
+          "du": "some, of the"
+          "résultat": "result"
