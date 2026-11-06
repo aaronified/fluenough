@@ -193,3 +193,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-3802 | relationships | Is ぎゃくに (on the contrary) right as an adverb card, or should it be taught with a note on its use in speech? | Haiku builder | 2026-11-06 |
 | ja-3853 | housing | Is ようま (the Western-style room, counted) a real word a learner needs, or should ようしつ stand alone? | Haiku builder | 2026-11-06 |
 | ja-3915 | emergencies | Is にがす (to let escape) right with its two senses, a bird let go and a thief let escape, or should the second be split? | Haiku builder | 2026-11-06 |
+| ja-3963 | law | Is きんじる (to forbid) right as a verb card, or does the course use きんし and the 'not allowed' phrasing instead? | Haiku builder | 2026-11-06 |

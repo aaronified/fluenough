@@ -780,7 +780,8 @@ units:
       - { id: "earthquake-drill", text: { "en": "Instructions in an earthquake drill" } }
     reading_passages:
       - { id: "evacuation-notice", text: { "en": "An evacuation notice in a building" } }
-  - planned: { id: "ja-law", theme: "law", words: 35 }
+  - decks: ["ja-law", "ja-law-sentences", "ja-reading-law", "*"]
+    words: 35
     listening_passages:
       - { id: "at-the-koban", text: { "en": "Reporting a lost wallet at a police box" } }
     reading_passages:
