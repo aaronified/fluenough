@@ -147,7 +147,7 @@ checked (#449). Each PR is merged as soon as its
 checks pass. The mail gets the Gmail label `fluenough-proposed` once its PR
 is merged or closed.
 
-Every branch, `review-bot/…`, starts afresh from `main`, finds the card by
+Every branch, `review-bot/…`, starts afresh from `decks-live`, finds the card by
 id across the language, writes only if the field still says what the
 proposer saw, rewrites the index and validates the language before it is
 pushed. Branches are named after their mail or proposals, so a rerun finds

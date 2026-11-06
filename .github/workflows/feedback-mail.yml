@@ -22,20 +22,22 @@ name: Feedback mail to issues
 # GitHub may still delay scheduled runs, by hours when it is busy; to file
 # a mail at once, run this workflow by hand from the Actions tab.
 #
-# Besides the schedule, it runs when CI finishes on one of the bot's branches,
-# to merge its PR at once, and when decks change on main, to apply what
-# was agreed.
+# The decks live on the decks-live branch (owner, 2026-11-06); main's decks/
+# is frozen. The bot reads decks-live, branches from it and opens its PRs
+# against it, where Deck CI ("Validate decks" and "Released app reads the
+# decks" gate the merge). This workflow stays on main, which holds the tools:
+# the bot lays them over its decks-live worktrees. A push to decks-live cannot
+# start a workflow file that lives on main, so besides the schedule it runs
+# when Deck CI finishes on one of the bot's branches, to merge its PR at
+# once, and on decks-live, to apply what was agreed after a deck merge.
 
 on:
   schedule:
     - cron: "7,22,37,52 * * * *"
   workflow_dispatch:
   workflow_run:
-    workflows: [CI]
+    workflows: [Deck CI]
     types: [completed]
-  push:
-    branches: [main]
-    paths: ["decks/**"]
 
 # One run at a time: two would file the same mail twice.
 concurrency:
@@ -53,17 +55,18 @@ jobs:
   file:
     name: File report mails as issues
     runs-on: ubuntu-latest
-    # After CI, only for the bot's own branches.
+    # After Deck CI, only for the bot's own branches and for decks-live.
     if: >-
       github.event_name != 'workflow_run' ||
-      startsWith(github.event.workflow_run.head_branch, 'review-bot/')
+      startsWith(github.event.workflow_run.head_branch, 'review-bot/') ||
+      github.event.workflow_run.head_branch == 'decks-live'
     env:
       HAS_BOT_APP: ${{ secrets.FLUENOUGH_BOT_APP_ID != '' && secrets.FLUENOUGH_BOT_PRIVATE_KEY != '' }}
     steps:
       - uses: actions/checkout@v7
         with:
-          # The bot fetches main and pushes with the App's token, never
-          # with this workflow's.
+          # Main: its tools run the bot. The bot fetches decks-live and
+          # pushes with the App's token, never with this workflow's.
           persist-credentials: false
       - uses: actions/setup-python@v7
         with:

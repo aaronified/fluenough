@@ -32,7 +32,7 @@ SECRET = "SECRET SUGGESTION TEXT"
 
 
 class FakeGit:
-    """`main` is a folder; a branch is a copy of it, kept when pushed."""
+    """`decks-live` is a folder (called main here); a branch is a copy of it, kept when pushed."""
 
     def __init__(self, tmp: Path) -> None:
         self.tmp = tmp
@@ -263,7 +263,7 @@ class ReadingReviews(unittest.TestCase):
         self.addCleanup(shutil.rmtree, tmp, True)
         git = rb.LocalGit(tmp, "ghs_SECRETTOKEN", tmp / "work")
         with self.assertRaises(RuntimeError) as caught:
-            git._git("fetch", "origin", "main", auth=True)
+            git._git("fetch", "origin", "decks-live", auth=True)
         self.assertNotIn("SECRETTOKEN", str(caught.exception))
         self.assertNotIn("basic", str(caught.exception))
         self.assertEqual(str(caught.exception), "git fetch failed (128)")
@@ -288,7 +288,7 @@ class ReadingReviews(unittest.TestCase):
 
 
 class Checks(unittest.TestCase):
-    """Only the checks `main` requires gate a merge."""
+    """Only the checks `decks-live` requires gate a merge."""
 
     @staticmethod
     def run_(name: str, status: str = "completed", conclusion: str | None = "success") -> dict:
@@ -303,9 +303,9 @@ class Checks(unittest.TestCase):
                          "passed")
         self.assertEqual(rb.required_state([]), "missing")
         self.assertEqual(rb.required_state([self.run_("Other")]), "missing")
-        self.assertEqual(rb.required_state(ok[:2]), "pending")
+        self.assertEqual(rb.required_state(ok[:1]), "pending")
         self.assertEqual(rb.required_state(
-            ok[:2] + [self.run_(rb.REQUIRED_CHECKS[2], "queued", None)]), "pending")
+            ok[:1] + [self.run_(rb.REQUIRED_CHECKS[1], "queued", None)]), "pending")
         self.assertEqual(rb.required_state(
             ok[:1] + [self.run_(rb.REQUIRED_CHECKS[1], conclusion="failure")]), "failed")
 

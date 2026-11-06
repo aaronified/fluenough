@@ -100,16 +100,16 @@ another review, may change it first.
   suggestion of the reviewer's own, which becomes a new proposal; the old
   one keeps waiting. A rejection does not block anything: the mail's
   issue lists the rejected proposals, for the owner.
-- **Every bot PR starts afresh.** A fresh branch from `main`; the card
+- **Every bot PR starts afresh.** A fresh branch from `decks-live` (`main` until 2026-11-06, when the decks moved to their own branch); the card
   found by id across the language (ids are permanent, so a card that
   moved is still found); the field written only if it still holds `now`;
   `decks/index.json` rebuilt by `tools/deck_index.py`; the validator run
   before anything is pushed. A proposal whose field has changed is closed
   as outdated, by a bot PR that removes it, never written. A branch that
-  falls behind `main` is rebuilt from `main` the same way, and a PR is
-  never merged unless its branch holds all of `main`, so a change the
+  falls behind `decks-live` is rebuilt from it the same way, and a PR is
+  never merged unless its branch holds all of `decks-live`, so a change the
   owner made meanwhile is never merged over. An agreement or outdated PR
-  that `main` no longer calls for is closed. Branch names come from the
+  that `decks-live` no longer calls for is closed. Branch names come from the
   mail, or from the proposals' ids and dates, so a rerun finds
   its own PR and never opens a second; a PR the owner closes is never
   reopened, while the same proposal made again on a later day is a new
