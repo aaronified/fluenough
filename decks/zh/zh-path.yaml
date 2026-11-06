@@ -429,7 +429,9 @@ units:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary working day" } }
     reading_passages:
       - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, wash, sleep" } }
-  - planned: { id: "zh-grammar-le-change", grammar: "le-change-of-state" }
+  - decks: ["zh-grammar-le-change-of-state", "zh-grammar-le-change-of-state-sentences"]
+    words: 0
+    grammar: ["le-change-of-state"]
     listening_passages:
       - { id: "it-is-raining-now", text: { "en": "Saying what has changed, with le at the end: it is raining now, I am not going any more" } }
     reading_passages:

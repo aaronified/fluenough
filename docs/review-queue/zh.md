@@ -91,3 +91,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | zh-4786 | zh-verbs-5 (ids zh-4774 to zh-4834) | The second example says 饭好了，大家快出来吃饭. Is 出来 with 吃饭 natural for calling people to a meal? | Haiku builder | 2026-11-06 |
 | zh-4819 | zh-verbs-5 (ids zh-4774 to zh-4834) | The first example, 我们等到明天再说, is glossed as 'let us wait until tomorrow to talk about it'. Is that the natural sense of 等到? | Haiku builder | 2026-11-06 |
 | zh-4823 | zh-verbs-5 (ids zh-4774 to zh-4834) | The second example says 他最近变好了很多. Is 变好了很多 natural, or should a different word be used? | Haiku builder | 2026-11-06 |
+| unit-level | zh-grammar-le-change-of-state | Is it right that a plain state takes 很 (hěn) (天很冷) and the change drops it (天冷了), and that 不 ... 了 (我不饿了) is the way to say no longer, never 没 ... 了? | Sonnet builder | 2026-11-06 |
+| unit-level | zh-grammar-le-change-of-state | The 想 row gives 我想喝水了 as a new want. Is it natural beside 我不想喝水了? | Sonnet builder | 2026-11-06 |
