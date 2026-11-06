@@ -1179,7 +1179,7 @@ class AppState extends ChangeNotifier {
       log.warning('Speech error: permission ${_errorCode(e)}');
       return;
     }
-    await startSpeech();
+    await startSpeech(quiet: true);
   }
 
   /// A speech or voice error's code for the app log: the engine's own, or
@@ -1203,7 +1203,10 @@ class AppState extends ChangeNotifier {
   /// Readies the recogniser and asks which languages it knows. Asks for the
   /// microphone permission if it has not been granted, so call it only when
   /// the learner switches speaking on.
-  Future<SpeechSetup> startSpeech() async {
+  ///
+  /// With [quiet], a browser with no recogniser (Firefox) is not logged as
+  /// an error: the launch check would log it on every visit.
+  Future<SpeechSetup> startSpeech({bool quiet = false}) async {
     var queues = _queueInputs();
     _speechChecking = true;
     queues = _notifyVoiceChange(queues);
@@ -1217,7 +1220,10 @@ class AppState extends ChangeNotifier {
           : await _speech.hasPermission()
           ? SpeechSetup.noRecogniser
           : SpeechSetup.refused;
-      if (setup != SpeechSetup.ready) {
+      if (setup != SpeechSetup.ready &&
+          !(quiet &&
+              _speech is OnlineOnlySpeech &&
+              setup == SpeechSetup.noRecogniser)) {
         log.warning('Speech error: start ${setup.name}');
       }
     } catch (e) {
@@ -1275,7 +1281,10 @@ class AppState extends ChangeNotifier {
     if (_speechReady != true) return SpeechStatus.off;
     final code = language.code;
     if (settings.speechUnsupported.contains(code)) return SpeechStatus.missing;
-    final listed = _speechLanguages.isEmpty || _speechLanguages.contains(code);
+    // A browser recognises online only: the learner is asked first.
+    final listed =
+        _speech is! OnlineOnlySpeech &&
+        (_speechLanguages.isEmpty || _speechLanguages.contains(code));
     if (listed && !settings.speechNotOnDevice.contains(code)) {
       return SpeechStatus.onDevice;
     }
@@ -1289,6 +1298,15 @@ class AppState extends ChangeNotifier {
     SpeechStatus.onDevice || SpeechStatus.online => true,
     _ => false,
   };
+
+  /// Whether a speaking question in [language] can be asked now, or asked
+  /// after the learner is asked to allow listening online: a browser's
+  /// recogniser, which only ever listens online. Find my level and placement
+  /// plan Say on it, and a refused ask leaves Say not tested.
+  bool canHearAfterAsking(LanguageInfo language) =>
+      canHear(language) ||
+      (_speech is OnlineOnlySpeech &&
+          speechStatus(language) == SpeechStatus.onlineOnly);
 
   /// Listens for [language]: on the device while it may be recognised
   /// there, otherwise online if the learner allowed it. What a listen finds

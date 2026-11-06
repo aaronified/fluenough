@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../core/sound/sound_check.dart';
+import '../../app/browser_words.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/hint.dart';
 import '../profiles/spoken_languages_picker.dart';
@@ -100,7 +101,7 @@ class _SoundCheckContentState extends State<SoundCheckContent> {
         SliverToBoxAdapter(
           child: QuestionHeading(
             title: l10n.onboardingSoundTitle,
-            body: l10n.onboardingSoundBody,
+            body: soundCheckBodyText(l10n),
           ),
         ),
         SliverPadding(
@@ -197,11 +198,11 @@ class _SoundCheckContentState extends State<SoundCheckContent> {
             text: speaks
                 ? l10n.onboardingSoundSpeakingOn
                 : result.noRecogniser
-                ? l10n.onboardingSoundNoRecogniser
+                ? soundCheckNoRecogniserText(l10n)
                 : switch (result.failure) {
                     // From the second refusal Android no longer asks.
                     RecordFailure.refused when result.refusals > 1 =>
-                      l10n.onboardingSoundRefusedForGood,
+                      soundCheckRefusedForGoodText(l10n),
                     RecordFailure.refused => l10n.onboardingSoundRefused,
                     RecordFailure.silent => l10n.onboardingSoundSilent,
                     _ => l10n.onboardingSoundNotRecorded,

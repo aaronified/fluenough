@@ -17,6 +17,7 @@ import '../drill/choice_tile.dart';
 import '../drill/rearrange_drill.dart' show rearrangeBoard;
 import '../drill/speaking_practice.dart' show unheardMessage;
 import 'placement_questions.dart' show PlacementFrame;
+import 'online_speech_ask.dart';
 
 /// One question of a Find my level run, drawn in the review's own frame
 /// ([PlacementFrame]) from a [GeneratedQuestion]: the options as the
@@ -276,7 +277,10 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
         _listening = false;
         _unheard = heard.failure ?? SpeechFailure.noMatch;
       });
-      widget.onListened(heard: false);
+      // Not being allowed yet is not a miss: the ask is shown instead.
+      if (_unheard != SpeechFailure.notOnDevice) {
+        widget.onListened(heard: false);
+      }
       return;
     }
     setState(() => _listening = false);
@@ -297,6 +301,7 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
   }
 
   List<Widget> _sayChildren(BuildContext context, AppLocalizations l10n) {
+    final english = _q.mode == PlacementAnswerMode.sayEnglish;
     final theme = Theme.of(context);
     return <Widget>[
       FilledButton.icon(
@@ -308,7 +313,16 @@ class _FindLevelQuestionViewState extends State<FindLevelQuestionView> {
           _listening ? l10n.placementSayListening : l10n.placementSayStart,
         ),
       ),
-      if (_unheard != null && !_listening)
+      if (_unheard == SpeechFailure.notOnDevice && !_listening)
+        Padding(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          child: OnlineSpeechAsk(
+            language: english ? widget.native : widget.language,
+            onAllowed: _listen,
+            onDeclined: widget.onGiveUpMicrophone,
+          ),
+        )
+      else if (_unheard != null && !_listening)
         Padding(
           padding: const EdgeInsets.symmetric(vertical: 12),
           child: Semantics(

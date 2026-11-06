@@ -441,6 +441,10 @@
   "@settingsSpeakingNoRecogniser": {
     "description": "SnackBar when Speaking is switched on but the phone cannot recognise speech."
   },
+  "settingsSpeakingNoRecogniserWeb": "This browser has no speech recogniser, so speaking stays off. Chrome, Edge and Safari have one.",
+  "@settingsSpeakingNoRecogniserWeb": {
+    "description": "SnackBar when Speaking is switched on in the web app but the browser has no speech recogniser (Firefox)."
+  },
   "settingsPausedUntil": "Paused until {time}",
   "@settingsPausedUntil": {
     "description": "Settings, under Listening or Speaking: paused by Can't listen now / Can't speak now.",
@@ -3345,9 +3349,17 @@
   "@drillUnheardPermission": {
     "description": "Speaking: the microphone permission was refused."
   },
+  "drillUnheardPermissionWeb": "Fluenough can’t use the microphone. Allow it for this site in your browser: tap the icon beside the address, then allow the microphone.",
+  "@drillUnheardPermissionWeb": {
+    "description": "Speaking in the web app: the browser’s microphone permission was refused."
+  },
   "drillUnheardNoRecogniser": "This phone has no speech recogniser for this.",
   "@drillUnheardNoRecogniser": {
     "description": "Speaking: the phone cannot recognise speech at all."
+  },
+  "drillUnheardNoRecogniserWeb": "This browser has no speech recogniser. Chrome, Edge and Safari have one.",
+  "@drillUnheardNoRecogniserWeb": {
+    "description": "Speaking in the web app: the browser cannot recognise speech at all (Firefox)."
   },
   "drillUnheardUnsupported": "Your phone can’t recognise {language}, even online.",
   "@drillUnheardUnsupported": {
@@ -3438,6 +3450,15 @@
       "language": {
         "type": "String",
         "example": "Hindi"
+      }
+    }
+  },
+  "drillOnlineAskWeb": "Your browser recognises speech online. Recognise {language} online? What you say would go to your browser’s speech service.",
+  "@drillOnlineAskWeb": {
+    "description": "Speaking in the web app: asks before sending audio to the browser’s speech service (Google in Chrome and Edge, Apple in Safari).",
+    "placeholders": {
+      "language": {
+        "type": "String"
       }
     }
   },
@@ -4681,6 +4702,10 @@
   "@onboardingSoundBody": {
     "description": "First launch, sound check: what it is for, and that the phone will ask for the microphone."
   },
+  "onboardingSoundBodyWeb": "Speaking drills listen to you, and listening drills read words aloud. Record two seconds and hear them back. Your browser will ask to let Fluenough use the microphone.",
+  "@onboardingSoundBodyWeb": {
+    "description": "First launch, sound check in the web app: what it is for, and that the browser will ask for the microphone."
+  },
   "onboardingSoundHint": "Tap the microphone, then say anything.",
   "@onboardingSoundHint": {
     "description": "First launch, sound check: under the microphone button, before recording."
@@ -4729,6 +4754,10 @@
   "@onboardingSoundRefusedForGood": {
     "description": "First launch, sound check: result after a second refusal, when Android no longer shows the permission dialog."
   },
+  "onboardingSoundRefusedForGoodWeb": "Speaking stays off: Fluenough still can’t use the microphone, and your browser won’t ask again. Allow it for this site in your browser, then try again.",
+  "@onboardingSoundRefusedForGoodWeb": {
+    "description": "First launch, sound check in the web app: the microphone was refused twice, so the browser no longer asks."
+  },
   "onboardingSoundSilent": "Speaking stays off: only silence was recorded. Is the microphone covered or muted?",
   "@onboardingSoundSilent": {
     "description": "First launch, sound check: result, the recording was silent."
@@ -4740,6 +4769,10 @@
   "onboardingSoundNoRecogniser": "Speaking stays off: the microphone works, but this phone has no speech recogniser.",
   "@onboardingSoundNoRecogniser": {
     "description": "First launch, sound check: result, recorded fine but there is no recogniser."
+  },
+  "onboardingSoundNoRecogniserWeb": "Speaking stays off: the microphone works, but this browser has no speech recogniser.",
+  "@onboardingSoundNoRecogniserWeb": {
+    "description": "First launch, sound check in the web app: result, recorded fine but the browser has no recogniser."
   },
   "onboardingSoundListeningOn": "Listening is on: your sound works.",
   "@onboardingSoundListeningOn": {
