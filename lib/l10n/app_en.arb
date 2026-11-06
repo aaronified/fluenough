@@ -14466,5 +14466,71 @@
   "languagesVerifyKnownSub": "Checks the skills you marked as known.",
   "@languagesVerifyKnownSub": {
     "description": "Under Verify what you know."
+  },
+  "languagesPopular": "Popular",
+  "@languagesPopular": {
+    "description": "The heading of the languages Add a language lists first: a hand-kept list, `popular` in assets/languages.yaml."
+  },
+  "languagesPopularNote": "Our most complete courses",
+  "@languagesPopularNote": {
+    "description": "The line under the Popular heading on Add a language."
+  },
+  "languagesAllLanguages": "All languages",
+  "@languagesAllLanguages": {
+    "description": "The heading of the full alphabetical list under Popular on Add a language."
+  },
+  "languagesVerifiedHeading": "Verified by native speakers",
+  "@languagesVerifiedHeading": {
+    "description": "The label of the row in a language's details that says how far native speakers have checked its course."
+  },
+  "languagesVerifiedKey": "Verified by native speakers:",
+  "@languagesVerifiedKey": {
+    "description": "The start of the key above Add a language's list: it names the three verification states that follow."
+  },
+  "languagesVerifiedShort": "Verified:",
+  "@languagesVerifiedShort": {
+    "description": "Starts the mark under a language's names on Add a language; the state's word follows it."
+  },
+  "languagesVerifiedNone": "Not at all",
+  "@languagesVerifiedNone": {
+    "description": "Verification state: no native speaker has checked the course."
+  },
+  "languagesVerifiedSome": "Somewhat",
+  "@languagesVerifiedSome": {
+    "description": "Verification state: native speakers have checked some of the course."
+  },
+  "languagesVerifiedFull": "Completely",
+  "@languagesVerifiedFull": {
+    "description": "Verification state: native speakers have checked all of the course."
+  },
+  "languagesVerifiedNoneDetail": "No native speaker has checked this course.",
+  "@languagesVerifiedNoneDetail": {
+    "description": "Under the verification state in a language's details: state Not at all."
+  },
+  "languagesVerifiedSomeDetail": "Native speakers have checked some of this course.",
+  "@languagesVerifiedSomeDetail": {
+    "description": "Under the verification state in a language's details: state Somewhat."
+  },
+  "languagesVerifiedFullDetail": "Native speakers have checked all of this course.",
+  "@languagesVerifiedFullDetail": {
+    "description": "Under the verification state in a language's details: state Completely."
+  },
+  "languagesNoDecksLabel": "No decks yet",
+  "@languagesNoDecksLabel": {
+    "description": "What a screen reader reads for the empty A1, A2, B1 line of a language with no decks."
+  },
+  "languagesFirstWordsLabel": "First words only",
+  "@languagesFirstWordsLabel": {
+    "description": "What a screen reader reads for the empty A1, A2, B1 line of a language that has a first-words deck and no path written yet."
+  },
+  "languagesVerifiedLabel": "Verified by native speakers: {state}",
+  "@languagesVerifiedLabel": {
+    "description": "What a screen reader reads for a language's verification mark; the state is the lowercase word of the state.",
+    "placeholders": {
+      "state": {
+        "type": "String",
+        "example": "somewhat"
+      }
+    }
   }
 }

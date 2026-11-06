@@ -31,6 +31,7 @@ import '../placement/find_level_flow.dart';
 import '../placement/skill_labels_line.dart';
 import 'language_views.dart';
 import 'skill_widgets.dart';
+import 'verification_mark.dart';
 
 /// Opens [view]'s skills sheet over [context]'s screen, as the Languages
 /// page does: [all] names the languages for placement, and a language whose
@@ -1648,6 +1649,8 @@ class _InfoDialog extends StatelessWidget {
               CourseLine(levels: progress.levels),
             ],
             const SizedBox(height: 8),
+            if (!view.language.isNotation)
+              VerificationRow(state: view.language.verification),
             if (!view.language.scriptOnly &&
                 !view.language.isSign &&
                 !view.language.isNotation)
