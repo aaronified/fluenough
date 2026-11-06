@@ -354,7 +354,8 @@ units:
       - { id: "please-wait", text: { "en": "Asking someone politely to wait, write and show" } }
     reading_passages:
       - { id: "request-signs", text: { "en": "Signs that ask: please take off your shoes, please line up" } }
-  - planned: { id: "ja-calendar", theme: "calendar", words: 40 }
+  - decks: ["ja-calendar", "ja-calendar-sentences", "ja-reading-calendar", "*"]
+    words: 40
     listening_passages:
       - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
     reading_passages:
