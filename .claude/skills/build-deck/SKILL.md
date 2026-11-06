@@ -214,6 +214,35 @@ Before you start:
    Do not run the validator locally: push and read CI's result, ignoring
    checks irrelevant to a deck. Say what you verified.
 
+## Validator lessons (2026-11-06)
+
+Checks every builder makes by reading before pushing. Each came from the zh
+decks that failed CI's validator (`decks/zh/zh-emergencies.yaml`, the zh
+money, society and reading decks). CI's log repeats each error in its
+`Errors:` section, so count each once.
+
+- **Example bases.** Every word of a target and of each example is a card
+  the course teaches, or has a `bases` entry in that same example. A word
+  with no card gets `{ word, base, reading }` written in full, its base the
+  word itself when it is not inflected (从, 在, 把 in the older zh units).
+  Give a word's base once per text; a repeated `word` is an error.
+- **Transliteration in prose.** Every non-Latin word in a note, a `why`, a
+  prompt or any other layer string is followed by its reading in
+  parentheses: 道德 (dàodé), and in a phrase the syllables spaced, 这 是 什么
+  (zhè shì shénme). A run of Chinese words with spaces between them counts
+  as one, so the reading follows the whole run. Copy each reading from the
+  card's core; never write it from memory. Core strings in the language's
+  own script need none.
+- **Reading answers are 1-based.** `answer: 1` is the first option; a
+  question without options is `true` or `false`.
+- **Passage ids start with the language and name the passage:** `zh-opinion-column`,
+  not `opinion-column`. They share one namespace with the questions' ids, so
+  no passage id is a card id.
+- **No identical spelling in `target_scripts`.** Omit `han_traditional` when
+  it equals the target, as valid cards do.
+- **Rules tables.** Every new noun, verb or adjective gets a row in every
+  rules table of its class (or is listed in its `except`).
+
 ## Grammar units
 
 A planned unit such as `{ id: "mr-grammar-imperatives", grammar: "imperatives" }`
