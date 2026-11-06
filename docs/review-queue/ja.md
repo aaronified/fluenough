@@ -126,3 +126,12 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2322 | ja-phone | Is でんわを かけます (to make a call) the natural phrase, or is でんわを します more usual in speech? | Haiku builder | 2026-11-06 |
 | ja-2334 | ja-phone | Is ビデオつうわ (bideo tsuuwa) the usual term for a video call, or is ビデオでんわ more common? | Haiku builder | 2026-11-06 |
 | unit-level | ja-phone | The example and sentence decks of ja-phone are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
+| ja-2387 | ja-journey | Is ひこうじょう (airfield) the natural everyday word for an airport, or is くうこう the usual word? | Haiku builder | 2026-11-06 |
+| ja-2377 | ja-journey | Is かくえきていしゃ the everyday word for a local train that stops at every station, or is ふつう more usual? | Haiku builder | 2026-11-06 |
+| ja-2396 | ja-journey | Are めんぜいてん (duty-free shop, as a base word in the examples) and めんぜいひん (duty-free goods) natural words? | Haiku builder | 2026-11-06 |
+| ja-2413 | ja-journey | Is にゅうこくしんさ (immigration check, a base word in the examples) the usual term at the border? | Haiku builder | 2026-11-06 |
+| ja-2414 | ja-journey | Is ふなびん (mail or cargo sent by ship) the natural word, or is another phrase used? | Haiku builder | 2026-11-06 |
+| ja-2415 | ja-journey | Is きゅうけいじょ the natural word for a rest area on an expressway, or is another word more usual? | Haiku builder | 2026-11-06 |
+| ja-2384 | ja-journey | Is ちこくしないでください (please do not be late) natural, or is another phrase more usual? | Haiku builder | 2026-11-06 |
+| unit-level | ja-journey (ja-2361 to ja-2415) | The path word count is 55: the 59 words of the plan minus the four flagged doubtful words (ていしゃ, のりこし, おうふく, かたみち). Is the count right? | Haiku builder | 2026-11-06 |
+| unit-level | ja-journey | The nine place nouns (airfield, inn, guesthouse, left-luggage office, bus stop, taxi rank, rest area, expressway, famous place) have へ, から and まで rows in ja-grammar-place-particles: are those forms natural? | Haiku builder | 2026-11-06 |
