@@ -26,3 +26,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-1464 | seasons | Is こうよう (the autumn colours of the trees) the natural word here, or should もみじ carry it? | Haiku builder | 2026-11-06 |
 | ja-1534 | clothes | Is いろ (colour, as a word of its own) right as a card, or should the colour names stand without it? | Haiku builder | 2026-11-06 |
 | ja-1536 | clothes | Is ぴったり (fitting exactly) right as a な-adjective in the rules table (ぴったりな)? | Haiku builder | 2026-11-06 |
+| ja-1587 | ja-animals | あり (ant) is also the stem of あります and ありません (there is, there is not): is it a clear card, or should the homograph be noted? | Haiku builder | 2026-11-06 |
+| ja-1592 | ja-animals | こうもり also means umbrella (こうもりがさ): should a homograph note say so? | Haiku builder | 2026-11-06 |
+| ja-1613 | ja-reading-animals | Is なきます the natural verb for a chicken crowing in the morning, or is another word used? | Haiku builder | 2026-11-06 |
