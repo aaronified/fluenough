@@ -1,0 +1,124 @@
+schema: 1
+id: "fr-daily-life-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+
+cards:
+  - id: "fr-1138"
+    target: "Je réveille le bébé le matin."
+    ipa: "ʒə ʁevɛj lə bebe lə matɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "réveille", ref: "fr-1123" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "bébé", ref: "fr-0180" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "matin", ref: "fr-1033" }
+    confusables:
+      - { id: "réveil", ref: "fr-1042", kind: "word" }
+      - { id: "déranger", ref: "fr-1126", kind: "word" }
+  - id: "fr-1139"
+    target: "Le petit-déjeuner est prêt."
+    ipa: "lə pətidʒøne ɛ pʁɛ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "petit-déjeuner", ref: "fr-1108" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "prêt", ref: "fr-0687" }
+    confusables:
+      - { id: "repas", ref: "fr-0813", kind: "word" }
+      - { id: "dîner", ref: "fr-0815", kind: "word" }
+  - id: "fr-1140"
+    target: "Je suis pressé ce matin."
+    ipa: "ʒə sɥi pʁese sə matɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "suis", ref: "fr-0021" }
+      - { word: "pressé", ref: "fr-1133" }
+      - { word: "ce", ref: "fr-0143" }
+      - { word: "matin", ref: "fr-1033" }
+    confusables:
+      - { id: "tranquille", ref: "fr-1134", kind: "word" }
+      - { id: "lent", ref: "fr-0448", kind: "word" }
+  - id: "fr-1141"
+    target: "La journée est longue, mais je dors bien."
+    ipa: "la ʒuʁne ɛ lɔ̃ɡ mɛ ʒə dɔʁ bjɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "journée", ref: "fr-1098" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "longue", ref: "fr-0421" }
+      - { word: "mais", ref: "fr-0028" }
+      - { word: "je", ref: "fr-0126" }
+      - { word: "dors", ref: "fr-0284" }
+      - { word: "bien", ref: "fr-0032" }
+    confusables:
+      - { id: "fatigue", ref: "fr-1106", kind: "word" }
+      - { id: "sommeil", ref: "fr-1103", kind: "word" }
+  - id: "fr-1142"
+    target: "Le bruit dérange le voisin."
+    ipa: "lə bʁɥi deʁɑ̃ʒ lə vwazɛ̃"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Le", ref: "fr-0543" }
+      - { word: "bruit", ref: "fr-1111" }
+      - { word: "dérange", ref: "fr-1126" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "voisin", ref: "fr-0101" }
+    confusables:
+      - { id: "silence", ref: "fr-1112", kind: "word" }
+      - { id: "tranquille", ref: "fr-1134", kind: "word" }
+  - id: "fr-1143"
+    target: "Je rentre chez moi le soir."
+    ipa: "ʒə ʁɑ̃tʁ ʃe mwa lə swaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Je", ref: "fr-0126" }
+      - { word: "rentre", ref: "fr-1124" }
+      - { word: "chez", ref: "fr-0472" }
+      - { word: "moi", ref: "fr-0133" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "soir", ref: "fr-1034" }
+    confusables:
+      - { id: "sortir", ref: "fr-1125", kind: "word" }
+      - { id: "emmener", ref: "fr-1129", kind: "word" }
+  - id: "fr-1144"
+    target: "Vous êtes fatigué."
+    ipa: "vu zɛt fatiɡe"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "Vous", ref: "fr-0096" }
+      - { word: "êtes", ref: "fr-0021" }
+      - { word: "fatigué", ref: "fr-0431" }
+    confusables:
+      - { id: "fatigue", ref: "fr-1106", kind: "word" }
+      - { id: "repos", ref: "fr-1105", kind: "word" }
+  - id: "fr-1145"
+    target: "La lumière est dans le couloir."
+    ipa: "la lymjɛʁ ɛ dɑ̃ lə kulwaʁ"
+    pos: "phrase"
+    tags: ["sentence"]
+    bases:
+      - { word: "La", ref: "fr-0544" }
+      - { word: "lumière", ref: "fr-1113" }
+      - { word: "est", ref: "fr-0021" }
+      - { word: "dans", ref: "fr-0049" }
+      - { word: "le", ref: "fr-0543" }
+      - { word: "couloir", ref: "fr-1115" }
+    confusables:
+      - { id: "fenêtre", ref: "fr-1004", kind: "word" }
+      - { id: "porte", ref: "fr-1003", kind: "word" }

@@ -337,7 +337,8 @@ units:
       - { id: "emergency-numbers", text: { "en": "A card of emergency numbers and what to say" } }
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences.
-  - planned: { id: "fr-daily-life", theme: "daily-life", words: 40 }
+  - decks: ["fr-daily-life", "fr-daily-life-sentences", "fr-reading-daily-life", "*"]
+    words: 40
     listening_passages:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary day" } }
     reading_passages:

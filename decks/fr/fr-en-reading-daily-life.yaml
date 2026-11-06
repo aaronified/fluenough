@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-daily-life"
+name: "Reading: daily life"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about an ordinary day: a timetable for the day and a note to a friend, with words such as réveil, petit-déjeuner, rendez-vous and tout de suite. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-daily-timetable"
+    title: "A timetable for a day: wake, eat, come home, rest"
+    theme: "daily-life"
+    sentences:
+      - text: "Le réveil sonne tôt."
+      - text: "Je prends le petit-déjeuner à sept heures."
+      - text: "Je rentre à la maison le soir."
+      - text: "Le soir, j'ai besoin de repos."
+    questions:
+      - id: "fr-1146"
+        prompt: { en: "When does the alarm ring?" }
+        options:
+          - { en: "Early" }
+          - { en: "Late" }
+          - { en: "At night" }
+        answer: 1
+      - id: "fr-1147"
+        prompt: { en: "Where does the speaker go in the evening?" }
+        options:
+          - { en: "To school" }
+          - { en: "Home" }
+          - { en: "To the office" }
+        answer: 2
+      - id: "fr-1148"
+        prompt: { en: "What does the speaker need in the evening?" }
+        options:
+          - { en: "Money" }
+          - { en: "Music" }
+          - { en: "Rest" }
+        answer: 3
+  - id: "fr-a-note-to-a-friend"
+    title: "A note to a friend"
+    theme: "daily-life"
+    sentences:
+      - text: "Je suis pressé ce matin."
+      - text: "J'ai un rendez-vous à dix heures."
+      - text: "Je rentre tout de suite."
+      - text: "Le couloir est long."
+    questions:
+      - id: "fr-1149"
+        prompt: { en: "What is the speaker's appointment?" }
+        options:
+          - { en: "A meeting at ten o'clock" }
+          - { en: "A visit at five" }
+          - { en: "A walk at noon" }
+        answer: 1
+      - id: "fr-1150"
+        prompt: { en: "When does the speaker come home?" }
+        options:
+          - { en: "Straight away" }
+          - { en: "Tomorrow" }
+          - { en: "Never" }
+        answer: 1
+      - id: "fr-1151"
+        prompt: { en: "Who is in a hurry?" }
+        options:
+          - { en: "The bus" }
+          - { en: "The speaker" }
+          - { en: "The neighbour" }
+        answer: 2
