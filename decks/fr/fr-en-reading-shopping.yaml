@@ -1,0 +1,71 @@
+schema: 1
+id: "fr-en-reading-shopping"
+name: "Reading: shopping"
+kind: "reading"
+language: { code: "fr", iso639_3: "fra", name: "French", script: "latin", tts: "fr-FR", icon: "Fr" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this deck"
+description: "Two short texts about shopping: a shop's price list with its offers, and a note about returning a jacket. Written for this deck; not yet checked by a French speaker: please report any mistake."
+tags: ["reading", "unreviewed"]
+passages:
+  - id: "fr-price-list"
+    title: "A shop's price list and its offers"
+    theme: "shopping"
+    sentences:
+      - text: "Liste des prix et des offres."
+      - text: "Pain : deux euros."
+      - text: "Fromage : cinq euros. Promotion sur le fromage : moins dix pour cent."
+      - text: "Boissons : gratuites le samedi."
+    questions:
+      - id: "fr-1470"
+        prompt: { en: "How much is the bread?" }
+        options:
+          - { en: "Two euros" }
+          - { en: "Five euros" }
+          - { en: "Ten euros" }
+        answer: 1
+      - id: "fr-1471"
+        prompt: { en: "What is ten per cent off?" }
+        options:
+          - { en: "The bread" }
+          - { en: "The cheese" }
+          - { en: "The drinks" }
+        answer: 2
+      - id: "fr-1472"
+        prompt: { en: "When are the drinks free?" }
+        options:
+          - { en: "On Saturday" }
+          - { en: "On Monday" }
+          - { en: "Never" }
+        answer: 1
+  - id: "fr-a-return-note"
+    title: "A note about a return"
+    theme: "shopping"
+    sentences:
+      - text: "Je veux échanger cette veste."
+      - text: "Elle est trop petite, je prends la taille au-dessus."
+      - text: "Garde le ticket de caisse, s'il te plaît."
+      - text: "Le magasin rembourse si le ticket est là."
+    questions:
+      - id: "fr-1473"
+        prompt: { en: "What does the writer want to do?" }
+        options:
+          - { en: "Exchange the jacket" }
+          - { en: "Buy a bag" }
+          - { en: "Pay in cash" }
+        answer: 1
+      - id: "fr-1474"
+        prompt: { en: "Why does the writer want a bigger size?" }
+        options:
+          - { en: "It is too small" }
+          - { en: "It is too big" }
+          - { en: "It is the wrong colour" }
+        answer: 1
+      - id: "fr-1475"
+        prompt: { en: "What must the writer keep?" }
+        options:
+          - { en: "The bag" }
+          - { en: "The receipt" }
+          - { en: "The card" }
+        answer: 2
