@@ -233,7 +233,7 @@ jobs:
             echo "main has no sample deck yet: nothing to check."
             exit 0
           fi
-          python3 tools/validate_decks.py test/fixtures/sample-decks/
+          python3 tools/validate_sample_decks.py
       - name: The real decks' index speaks the sample's format
         run: |
           if [ -f tools/check_sample_contract.py ] && [ -d test/fixtures/sample-decks ]; then
