@@ -127,7 +127,8 @@ units:
     reading_passages:
       - { id: "question-cards", text: { "en": "Cards with who, what, where and when" } }
   # ta-addressing joins this unit.
-  - planned: { id: "ta-pronouns", theme: "pronouns", words: 33 }
+  - decks: ["ta-pronouns", "*"]
+    words: 33
     listening_passages:
       - { id: "polite-or-not", text: { "en": "Speaking to a friend, an elder and a shopkeeper" } }
     reading_passages:

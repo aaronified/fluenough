@@ -1,0 +1,123 @@
+schema: 1
+id: "ta-en-pronouns"
+kind: "layer"
+core: "ta-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people words"
+description: "Ten more pronouns, from the ones already taught: you (informal), he, she, this person (polite), he or she (polite), it, this, we (with you), we (without you) and they. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0057":
+    native: "you (to a friend or child)"
+    notes:
+      n1: "Use நீ (nī) only with a friend, a child or someone younger. For an elder or a stranger use நீங்கள் (nīṅgaḷ)."
+    examples:
+      "நீ எங்கே போகிறாய்?":
+        native: "Where are you going?"
+        bases: { "நீ": "you", "எங்கே": "where", "போகிறாய்": "are going; from போ (pō), to go" }
+      "நீ நல்லவன்.":
+        native: "You are a good man."
+        bases: { "நீ": "you", "நல்லவன்": "good man; from நல்ல (nalla), good" }
+  "ta-0058":
+    native: "he"
+    notes:
+      n1: "The third person for a man. A woman is அவள் (avaḷ) and a respected person is அவர் (avar)."
+    examples:
+      "அவன் வருகிறான்.":
+        native: "He is coming."
+        bases: { "அவன்": "he", "வருகிறான்": "is coming; from வா (vā), to come" }
+      "அவன் ஒரு நண்பன்.":
+        native: "He is a friend."
+        bases: { "அவன்": "he", "ஒரு": "a, one", "நண்பன்": "male friend" }
+  "ta-0059":
+    native: "she"
+    notes:
+      n1: "The third person for a woman. A man is அவன் (avaṉ)."
+    examples:
+      "அவள் வீட்டில் இருக்கிறாள்.":
+        native: "She is at home."
+        bases: { "அவள்": "she", "வீட்டில்": "at home; from வீடு (vīṭu), house", "இருக்கிறாள்": "is; from இரு (iru), to be" }
+      "அவள் நல்லவள்.":
+        native: "She is a good woman."
+        bases: { "அவள்": "she", "நல்லவள்": "good woman; from நல்ல (nalla), good" }
+  "ta-0060":
+    native: "he or she (polite)"
+    notes:
+      n1: "The polite third person, for a man or a woman, and for an elder. Tamil uses it where English says 'he' or 'she' to someone you respect."
+    examples:
+      "அவர் யார்?":
+        native: "Who is he?"
+        bases: { "அவர்": "he or she (polite)", "யார்": "who" }
+      "அவர் வருகிறார்.":
+        native: "He is coming."
+        bases: { "அவர்": "he or she (polite)", "வருகிறார்": "is coming; from வா (vā), to come" }
+  "ta-0061":
+    native: "it; that"
+    notes:
+      n1: "The word for a thing, or for 'that'. For 'this', use இது (itu)."
+    examples:
+      "அது என்ன?":
+        native: "What is that?"
+        bases: { "அது": "that", "என்ன": "what" }
+      "அது நல்லது.":
+        native: "That is good."
+        bases: { "அது": "that", "நல்லது": "good" }
+  "ta-0062":
+    native: "this person (polite)"
+    notes:
+      n1: "Points to a person, politely. For a thing, use இது (itu), this."
+    examples:
+      "இவர் என் நண்பர்.":
+        native: "This person is my friend."
+        bases: { "இவர்": "this person (polite)", "என்": "my; from நான் (nāṉ), I", "நண்பர்": "friend" }
+      "இவர் வீட்டில் இருக்கிறார்.":
+        native: "This person is at home."
+        bases: { "இவர்": "this person (polite)", "வீட்டில்": "at home; from வீடு (vīṭu), house", "இருக்கிறார்": "is; from இரு (iru), to be" }
+  "ta-0063":
+    native: "we (including you)"
+    notes:
+      n1: "We, where the person spoken to is part of the group. For 'we' without the listener, use நாங்கள் (nāṅkaḷ)."
+    examples:
+      "நாம் போகலாம்.":
+        native: "Let's go."
+        bases: { "நாம்": "we, including you", "போகலாம்": "let's go; from போ (pō), to go" }
+      "நாம் நண்பர்கள்.":
+        native: "We are friends."
+        bases: { "நாம்": "we, including you", "நண்பர்கள்": "friends; from நண்பர் (naṇpar), friend" }
+  "ta-0064":
+    native: "we (without you)"
+    notes:
+      n1: "We, where the group does not include the person spoken to."
+    examples:
+      "நாங்கள் வருகிறோம்.":
+        native: "We are coming."
+        bases: { "நாங்கள்": "we, without you", "வருகிறோம்": "are coming; from வா (vā), to come" }
+      "நாங்கள் நண்பர்கள்.":
+        native: "We are friends."
+        bases: { "நாங்கள்": "we, without you", "நண்பர்கள்": "friends; from நண்பர் (naṇpar), friend" }
+  "ta-0065":
+    native: "they"
+    notes:
+      n1: "More than one person, or things. Tamil uses the same word for both."
+    examples:
+      "அவர்கள் வருகிறார்கள்.":
+        native: "They are coming."
+        bases: { "அவர்கள்": "they", "வருகிறார்கள்": "are coming; from வா (vā), to come" }
+      "அவர்கள் வீட்டில் இருக்கிறார்கள்.":
+        native: "They are at home."
+        bases: { "அவர்கள்": "they", "வீட்டில்": "at home; from வீடு (vīṭu), house", "இருக்கிறார்கள்": "are; from இரு (iru), to be" }
+  "ta-0066":
+    native: "this"
+    notes:
+      n1: "A thing that is near, or 'this' as a pronoun. For 'that', use அது (atu)."
+    examples:
+      "இது என் வீடு.":
+        native: "This is my house."
+        bases: { "இது": "this", "என்": "my; from நான் (nāṉ), I", "வீடு": "house" }
+      "இது நல்லது இல்லையா?":
+        native: "This is good, isn't it?"
+        bases: { "இது": "this", "நல்லது": "good", "இல்லையா": "isn't it" }
+  "ta-0067":
+    native: "Personal pronouns: nine words"
+    explanation: "I நான் (nāṉ), you நீங்கள் (nīṅgaḷ), you informal நீ (nī), he அவன் (avaṉ), she அவள் (avaḷ), he or she polite அவர் (avar), we with you நாம் (nām), we without you நாங்கள் (nāṅkaḷ), and they அவர்கள் (avargaḷ)."
