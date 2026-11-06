@@ -53,7 +53,7 @@ typedef _Result = ({
 
 /// A run to its end or [cap] answers, Keep going at each checkpoint; the
 /// placed level of each skill at the first checkpoint and at the end.
-_Result _drive(int seed, _Answerer answer, {int cap = 100}) {
+_Result _drive(int seed, _Answerer answer, {int cap = 400}) {
   var run = PlacementRun(_config(seed));
   final rng = math.Random(seed * 7919 + 13);
   Map<PlacementSkill, int> placed() => <PlacementSkill, int>{
@@ -115,27 +115,49 @@ void main() {
 
   group('S3 and S4: a learner who knows the first decks is placed in them', () {
     final levels = PlacementLevels(_decks).levels;
-    for (final (slip, exact) in <(double, double)>[
-      (0.05, 0.97),
-      (0.10, 0.95),
+    for (final (slip, exact, joint) in <(double, double, double)>[
+      (0.05, 0.97, 0.95),
+      (0.10, 0.95, 0.90),
     ]) {
       for (var c = 1; c <= levels.length; c++) {
         test('slip $slip, knows to deck ${levels[c - 1]} (class $c)', () {
           const runs = 1000;
-          var right = 0;
-          var nearOrRight = 0;
+          final right = <PlacementSkill, int>{};
+          final near = <PlacementSkill, int>{};
+          var all = 0;
           for (var seed = 0; seed < runs; seed++) {
             final r = _drive(seed + 1, _learner(levels[c - 1], slip));
-            // The class of the lowest placed skill.
-            final level = r.atEnd.values.fold<int>(1 << 30, math.min);
-            final placed = levels.indexOf(level) + 1;
-            if (placed == c) right++;
-            if (placed == c || placed == c - 1) nearOrRight++;
+            var every = true;
+            for (final e in r.atEnd.entries) {
+              final placed = levels.indexOf(e.value) + 1;
+              // At the first class, none or the first class is exact.
+              final ok = placed == c || (c == 1 && placed == 0);
+              if (ok) {
+                right[e.key] = (right[e.key] ?? 0) + 1;
+              } else {
+                every = false;
+              }
+              if (ok || placed == c - 1) {
+                near[e.key] = (near[e.key] ?? 0) + 1;
+              }
+            }
+            if (every) all++;
           }
-          expect(right / runs, greaterThanOrEqualTo(exact));
-          if (slip == 0.05) {
-            expect(nearOrRight / runs, greaterThanOrEqualTo(0.995));
+          for (final skill in right.keys.toSet().union(near.keys.toSet())) {
+            expect(
+              (right[skill] ?? 0) / runs,
+              greaterThanOrEqualTo(exact),
+              reason: '$skill exact',
+            );
+            if (slip == 0.05) {
+              expect(
+                (near[skill] ?? 0) / runs,
+                greaterThanOrEqualTo(0.995),
+                reason: '$skill within one below',
+              );
+            }
           }
+          expect(all / runs, greaterThanOrEqualTo(joint), reason: 'joint');
         }, timeout: _long);
       }
     }
