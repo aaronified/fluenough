@@ -905,11 +905,13 @@ units:
     reading_passages:
       - { id: "idiom-story", text: { "en": "The short old story behind an idiom" } }
       - { id: "idiom-in-use", text: { "en": "A friend uses idioms in everyday talk" } }
-  - planned: { id: "zh-abstract-words", theme: "abstract-words", words: 55 }
+  - decks: ["zh-abstract-words", "zh-abstract-words-sentences", "zh-reading-abstract-words", "*"]
+    words: 55
     listening_passages:
       - { id: "a-discussion", text: { "en": "A short discussion of an idea" } }
     reading_passages:
       - { id: "opinion-column", text: { "en": "A short opinion column" } }
+      - { id: "values-in-talk", text: { "en": "A short talk in class about what makes a good life" } }
   - planned: { id: "zh-characters-7", grammar: "script-characters-7", words: 0 }
     listening_passages:
       - { id: "characters-in-society", text: { "en": "Hearing the society words whose characters are taught: economy, culture, environment, problem" } }
