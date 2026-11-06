@@ -251,7 +251,7 @@ cards:
     bases: "self"
     examples:
       - { target: "La nature m'inspire.", ipa: "la natyʁ mɛ̃spiʁ", bases: [{ word: "La", ref: "fr-0544" }, { word: "nature", base: "nature" }, { word: "m'inspire", base: "inspirer" }] }
-      - { target: "Elle s'inspire de sa grand-mère.", ipa: "ɛl sɛ̃spiʁ də sa ɡʁɑ̃mɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "s'inspire", base: "inspirer" }, { word: "de", base: "de" }, { word: "sa", ref: "fr-0138" }, { word: "grand-mère", ref: "fr-0175" }] }
+      - { target: "Elle s'inspire de sa grand-mère.", ipa: "ɛl sɛ̃spiʁ də sa ɡʁɑ̃mɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "s'inspire", base: "inspirer" }, { word: "de", base: "de" }, { word: "sa", ref: "fr-0138" }, { word: "grand", ref: "fr-0410" }, { word: "mère", ref: "fr-0166" }] }
   - id: "fr-2277"
     target: "esthétique"
     ipa: "ɛstetik"
@@ -269,7 +269,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "mise", base: "mise" }, { word: "en", base: "en" }, { word: "scène", ref: "fr-2212" }]
     examples:
       - { target: "La mise en scène est originale.", ipa: "la miz ɑ̃ sɛn ɛ ɔʁiʒinal", bases: [{ word: "La", ref: "fr-0544" }, { word: "mise", base: "mise" }, { word: "en", base: "en" }, { word: "scène", ref: "fr-2212" }, { word: "est", ref: "fr-0021" }, { word: "originale", ref: "fr-2272" }] }
       - { target: "Il travaille sur la mise en scène.", ipa: "il tʁavaj syʁ la miz ɑ̃ sɛn", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", ref: "fr-0252" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "mise", base: "mise" }, { word: "en", base: "en" }, { word: "scène", ref: "fr-2212" }] }

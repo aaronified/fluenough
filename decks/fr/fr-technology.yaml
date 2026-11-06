@@ -252,7 +252,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "mise", base: "mise" }, { word: "à", base: "à" }, { word: "jour", ref: "fr-1032" }]
     examples:
       - { target: "La mise à jour est prête.", ipa: "la miz a ʒuʁ ɛ pʁɛt", bases: [{ word: "La", ref: "fr-0544" }, { word: "mise", base: "mise" }, { word: "à", base: "à" }, { word: "jour", ref: "fr-1032" }, { word: "est", ref: "fr-0021" }, { word: "prête", ref: "fr-0687" }] }
       - { target: "Faites la mise à jour ce soir.", ipa: "fɛt la miz a ʒuʁ sə swaʁ", bases: [{ word: "Faites", ref: "fr-0287" }, { word: "la", ref: "fr-0544" }, { word: "mise", base: "mise" }, { word: "à", base: "à" }, { word: "jour", ref: "fr-1032" }, { word: "ce", ref: "fr-0143" }, { word: "soir", ref: "fr-1034" }] }
@@ -287,7 +287,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "L'algorithme choisit les vidéos.", ipa: "lalɡoʁitm ʃwazi le vidéo", bases: [{ word: "L'algorithme", base: "algorithme" }, { word: "choisit", ref: "fr-0507" }, { word: "les", ref: "fr-0543" }, { word: "vidéos", ref: "fr-2097" }] }
+      - { target: "L'algorithme choisit les vidéos.", ipa: "lalɡoʁitm ʃwazi le video", bases: [{ word: "L'algorithme", base: "algorithme" }, { word: "choisit", ref: "fr-0507" }, { word: "les", ref: "fr-0543" }, { word: "vidéos", ref: "fr-2097" }] }
       - { target: "Cet algorithme est très simple.", ipa: "sɛt algoʁitm ɛ tʁɛ sɛ̃pl", bases: [{ word: "Cet", ref: "fr-0143" }, { word: "algorithme", base: "algorithme" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "simple", base: "simple" }] }
   - id: "fr-2094"
     target: "intelligence artificielle"
@@ -296,7 +296,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "intelligence", base: "intelligence" }, { word: "artificielle", base: "artificiel" }]
     examples:
       - { target: "L'intelligence artificielle progresse vite.", ipa: "lɛ̃tɛliʒɑ̃s aʁtifisjɛl pʁɔɡʁɛs vit", bases: [{ word: "L'intelligence", base: "intelligence" }, { word: "artificielle", base: "artificiel" }, { word: "progresse", base: "progresser" }, { word: "vite", ref: "fr-0338" }] }
       - { target: "Elle travaille sur l'intelligence artificielle.", ipa: "ɛl tʁavaj syʁ lɛ̃tɛliʒɑ̃s aʁtifisjɛl", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", ref: "fr-0252" }, { word: "sur", ref: "fr-0469" }, { word: "l'intelligence", base: "intelligence" }, { word: "artificielle", base: "artificiel" }] }
@@ -318,7 +318,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "disque", base: "disque" }, { word: "dur", ref: "fr-0449" }]
     examples:
       - { target: "Le disque dur est plein.", ipa: "lə disk dyʁ ɛ plɛ̃", bases: [{ word: "Le", ref: "fr-0543" }, { word: "disque", base: "disque" }, { word: "dur", ref: "fr-0449" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }] }
       - { target: "Je copie les photos sur le disque dur.", ipa: "ʒə kɔpi le foto syʁ lə disk dyʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "copie", ref: "fr-1612" }, { word: "les", ref: "fr-0543" }, { word: "photos", ref: "fr-1373" }, { word: "sur", ref: "fr-0469" }, { word: "le", ref: "fr-0543" }, { word: "disque", base: "disque" }, { word: "dur", ref: "fr-0449" }] }
@@ -362,7 +362,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "mot", ref: "fr-1620" }, { word: "de", base: "de" }, { word: "passe", ref: "fr-0519" }]
     examples:
       - { target: "Mon mot de passe est secret.", ipa: "mɔ̃ mo də pas ɛ səkʁɛ", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "mot", ref: "fr-1620" }, { word: "de", base: "de" }, { word: "passe", ref: "fr-0519" }, { word: "est", ref: "fr-0021" }, { word: "secret", base: "secret" }] }
       - { target: "Changez votre mot de passe.", ipa: "ʃɑ̃ʒe vɔtʁ mo də pas", bases: [{ word: "Changez", ref: "fr-0526" }, { word: "votre", ref: "fr-0140" }, { word: "mot", ref: "fr-1620" }, { word: "de", base: "de" }, { word: "passe", ref: "fr-0519" }] }

@@ -223,7 +223,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Nous visitons le musée demain.", ipa: "nu vizitɔ̃ lə myze dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "visitons", base: "visiter" }, { word: "le", ref: "fr-0543" }, { word: "musée", ref: "fr-0077" }, { word: "demain", ref: "fr-0078" }] }
-      - { target: "Je visite ma tante le week-end.", ipa: "ʒə vizit ma tɑ̃t lə wikɛnd", bases: [{ word: "Je", ref: "fr-0126" }, { word: "visite", base: "visiter" }, { word: "ma", ref: "fr-0037" }, { word: "tante", ref: "fr-0177" }, { word: "le", ref: "fr-0543" }, { word: "week-end", ref: "fr-1174" }] }
+      - { target: "Je visite ma tante le week-end.", ipa: "ʒə vizit ma tɑ̃t lə wikɛnd", bases: [{ word: "Je", ref: "fr-0126" }, { word: "visite", base: "visiter" }, { word: "ma", ref: "fr-0037" }, { word: "tante", ref: "fr-0177" }, { word: "le", ref: "fr-0543" }, { word: "week", ref: "fr-1174" }, { word: "end", ref: "fr-1174" }] }
   - id: "fr-1933"
     target: "identité"
     ipa: "idɑ̃tite"
@@ -385,7 +385,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "sac", ref: "fr-0485" }, { word: "à", base: "à" }, { word: "dos", ref: "fr-0932" }]
     examples:
       - { target: "Mon sac à dos est léger.", ipa: "mɔ̃ sak a do ɛ leʒe", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "sac", ref: "fr-0485" }, { word: "à", base: "à" }, { word: "dos", ref: "fr-0932" }, { word: "est", ref: "fr-0021" }, { word: "léger", ref: "fr-0441" }] }
       - { target: "Il met ses affaires dans son sac à dos.", ipa: "il mɛ sɛ zafɛʁ dɑ̃ sɔ̃ sak a do", bases: [{ word: "Il", ref: "fr-0127" }, { word: "met", ref: "fr-0529" }, { word: "ses", ref: "fr-0138" }, { word: "affaires", base: "affaire" }, { word: "dans", ref: "fr-0049" }, { word: "son", ref: "fr-0138" }, { word: "sac", ref: "fr-0485" }, { word: "à", base: "à" }, { word: "dos", ref: "fr-0932" }] }

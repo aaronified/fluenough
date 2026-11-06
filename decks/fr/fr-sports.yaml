@@ -136,7 +136,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "course", ref: "fr-2408" }, { word: "à", base: "à" }, { word: "pied", ref: "fr-0930" }]
     examples:
       - { target: "Je fais de la course à pied.", ipa: "ʒə fɛ də la kuʁs a pje", bases: [{ word: "Je", ref: "fr-0126" }, { word: "fais", ref: "fr-0287" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "course", ref: "fr-2408" }, { word: "à", base: "à" }, { word: "pied", ref: "fr-0930" }] }
       - { target: "La course à pied est saine.", ipa: "la kuʁs a pje ɛ sɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "course", ref: "fr-2408" }, { word: "à", base: "à" }, { word: "pied", ref: "fr-0930" }, { word: "est", ref: "fr-0021" }, { word: "saine", ref: "fr-1736" }] }
@@ -312,6 +312,6 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Le ballon passe au-dessus du filet.", ipa: "lə balɔ̃ pas odsy dy filɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ballon", ref: "fr-1387" }, { word: "passe", base: "passe" }, { word: "au-dessus", base: "au-dessus" }, { word: "du", base: "de" }, { word: "filet", base: "filet" }] }
+      - { target: "Le ballon passe au-dessus du filet.", ipa: "lə balɔ̃ pas odsy dy filɛ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "ballon", ref: "fr-1387" }, { word: "passe", base: "passe" }, { word: "au", base: "à" }, { word: "dessus", ref: "fr-0480" }, { word: "du", base: "de" }, { word: "filet", base: "filet" }] }
       - { target: "Le filet est déchiré.", ipa: "lə filɛ ɛ deʃiʁe", bases: [{ word: "Le", ref: "fr-0543" }, { word: "filet", base: "filet" }, { word: "est", ref: "fr-0021" }, { word: "déchiré", base: "déchirer" }] }
 

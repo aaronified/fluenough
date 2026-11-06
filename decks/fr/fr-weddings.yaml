@@ -81,7 +81,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "demoiselle", base: "demoiselle" }, { word: "d'honneur", base: "honneur" }]
     examples:
       - { target: "La demoiselle d'honneur porte un bouquet.", ipa: "la dəmwazɛl dɔnœʁ pɔʁt œ̃ bukɛ", bases: [{ word: "La", ref: "fr-0544" }, { word: "demoiselle", base: "demoiselle" }, { word: "d'honneur", base: "honneur" }, { word: "porte", ref: "fr-1003" }, { word: "un", ref: "fr-0208" }, { word: "bouquet", ref: "fr-2371" }] }
       - { target: "Ma cousine est demoiselle d'honneur.", ipa: "ma kuzin ɛ dəmwazɛl dɔnœʁ", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "cousine", ref: "fr-0179" }, { word: "est", ref: "fr-0021" }, { word: "demoiselle", base: "demoiselle" }, { word: "d'honneur", base: "honneur" }] }
@@ -133,7 +133,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Mon grand-père est veuf.", ipa: "mɔ̃ ɡʁɑ̃pɛʁ ɛ vœf", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "grand-père", ref: "fr-0174" }, { word: "est", ref: "fr-0021" }, { word: "veuf", base: "veuf" }] }
+      - { target: "Mon grand-père est veuf.", ipa: "mɔ̃ ɡʁɑ̃pɛʁ ɛ vœf", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "grand", ref: "fr-0410" }, { word: "père", ref: "fr-0165" }, { word: "est", ref: "fr-0021" }, { word: "veuf", base: "veuf" }] }
       - { target: "Elle est veuve depuis cinq ans.", ipa: "ɛl ɛ vœv dəpɥi sɛ̃k ɑ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "est", ref: "fr-0021" }, { word: "veuve", base: "veuve" }, { word: "depuis", base: "depuis" }, { word: "cinq", ref: "fr-0212" }, { word: "ans", ref: "fr-0259" }] }
   - id: "fr-2379"
     target: "lune de miel"
@@ -142,7 +142,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "lune", ref: "fr-2386" }, { word: "de", base: "de" }, { word: "miel", ref: "fr-1557" }]
     examples:
       - { target: "Ils partent en lune de miel.", ipa: "il paʁt ɑ̃ lyn də mjɛl", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "partent", ref: "fr-0304" }, { word: "en", base: "en" }, { word: "lune", ref: "fr-2386" }, { word: "de", base: "de" }, { word: "miel", ref: "fr-1557" }] }
       - { target: "La lune de miel dure une semaine.", ipa: "la lyn də mjɛl dyʁ yn səmɛn", bases: [{ word: "La", ref: "fr-0544" }, { word: "lune", ref: "fr-2386" }, { word: "de", base: "de" }, { word: "miel", ref: "fr-1557" }, { word: "dure", ref: "fr-1131" }, { word: "une", ref: "fr-0545" }, { word: "semaine", ref: "fr-0668" }] }
@@ -206,7 +206,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "fête", ref: "fr-1176" }, { word: "de", base: "de" }, { word: "famille", ref: "fr-0164" }]
     examples:
       - { target: "C'est une fête de famille.", ipa: "sɛ tyn fɛt də famij", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "fête", ref: "fr-1176" }, { word: "de", base: "de" }, { word: "famille", ref: "fr-0164" }] }
       - { target: "La fête de famille dure toute la journée.", ipa: "la fɛt də famij dyʁ tut la ʒuʁne", bases: [{ word: "La", ref: "fr-0544" }, { word: "fête", ref: "fr-1176" }, { word: "de", base: "de" }, { word: "famille", ref: "fr-0164" }, { word: "dure", ref: "fr-1131" }, { word: "toute", ref: "fr-0372" }, { word: "journée", ref: "fr-1098" }] }
@@ -294,7 +294,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "nuit", ref: "fr-1035" }, { word: "de", base: "de" }, { word: "noces", base: "noce" }]
     examples:
       - { target: "La nuit de noces est douce.", ipa: "la nɥi də nɔs ɛ dus", bases: [{ word: "La", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }, { word: "de", base: "de" }, { word: "noces", base: "noce" }, { word: "est", ref: "fr-0021" }, { word: "douce", ref: "fr-1337" }] }
       - { target: "Ils passent la nuit de noces à Paris.", ipa: "il pas la nɥi də nɔs a paʁi", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "passent", ref: "fr-0519" }, { word: "la", ref: "fr-0544" }, { word: "nuit", ref: "fr-1035" }, { word: "de", base: "de" }, { word: "noces", base: "noce" }, { word: "à", base: "à" }, { word: "Paris", base: "Paris" }] }

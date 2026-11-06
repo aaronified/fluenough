@@ -92,7 +92,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "salle", ref: "fr-1014" }, { word: "de", base: "de" }, { word: "bains", ref: "fr-1107" }]
     examples:
       - { target: "La salle de bains est petite.", ipa: "la sal də bɛ̃ ɛ pəti", bases: [{ word: "La", ref: "fr-0544" }, { word: "salle", ref: "fr-1014" }, { word: "de", base: "de" }, { word: "bains", ref: "fr-1107" }, { word: "est", ref: "fr-0021" }, { word: "petite", ref: "fr-0411" }] }
       - { target: "Je prends une douche dans la salle de bains.", ipa: "ʒə pʁɑ̃ yn duʃ dɑ̃ la sal də bɛ̃", bases: [{ word: "Je", ref: "fr-0126" }, { word: "prends", ref: "fr-0288" }, { word: "une", ref: "fr-0545" }, { word: "douche", ref: "fr-1009" }, { word: "dans", ref: "fr-0049" }, { word: "la", ref: "fr-0544" }, { word: "salle", ref: "fr-1014" }, { word: "de", base: "de" }, { word: "bains", ref: "fr-1107" }] }
@@ -180,7 +180,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "eau", base: "eau" }, { word: "chaude", ref: "fr-0419" }]
     examples:
       - { target: "L'eau chaude est coupée.", ipa: "lo ʃod ɛ kupe", bases: [{ word: "L'eau", ref: "fr-0024" }, { word: "chaude", ref: "fr-0419" }, { word: "est", ref: "fr-0021" }, { word: "coupée", ref: "fr-1538" }] }
       - { target: "Il n'y a pas d'eau chaude.", ipa: "il ny a pa do ʃod", bases: [{ word: "Il", ref: "fr-0127" }, { word: "n'y", base: "ne" }, { word: "a", ref: "fr-0022" }, { word: "pas", base: "pas" }, { word: "d'eau", base: "eau" }, { word: "chaude", ref: "fr-0419" }] }

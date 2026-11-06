@@ -18,7 +18,7 @@ cards:
     bases: "self"
     examples:
       - { target: "À mon avis, c'est une bonne idée.", ipa: "a mɔ̃ n avi sɛ tyn bɔn ide", bases: [{ word: "À", base: "à" }, { word: "mon", ref: "fr-0037" }, { word: "avis", base: "avis" }, { word: "c'est", ref: "fr-0021" }, { word: "une", ref: "fr-0545" }, { word: "bonne", ref: "fr-0040" }, { word: "idée", ref: "fr-0683" }] }
-      - { target: "Donnez-moi votre avis.", ipa: "dɔne mwa vɔtʁ avi", bases: [{ word: "Donnez-moi", ref: "fr-0302" }, { word: "votre", ref: "fr-0140" }, { word: "avis", base: "avis" }] }
+      - { target: "Donnez-moi votre avis.", ipa: "dɔne mwa vɔtʁ avi", bases: [{ word: "Donnez", ref: "fr-0302" }, { word: "moi", ref: "fr-0133" }, { word: "votre", ref: "fr-0140" }, { word: "avis", base: "avis" }] }
   - id: "fr-1866"
     target: "opinion"
     ipa: "ɔpinjɔ̃"
@@ -37,7 +37,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "point", base: "point" }, { word: "de", base: "de" }, { word: "vue", base: "vue" }]
     examples:
       - { target: "De mon point de vue, c'est juste.", ipa: "də mɔ̃ pwɛ̃ də vy sɛ ʒyst", bases: [{ word: "De", base: "de" }, { word: "mon", ref: "fr-0037" }, { word: "point", base: "point" }, { word: "vue", base: "vue" }, { word: "c'est", ref: "fr-0021" }, { word: "juste", ref: "fr-1896" }] }
       - { target: "Chacun a un point de vue différent.", ipa: "ʃakœ̃ a œ̃ pwɛ̃ də vy difeʁɑ̃", bases: [{ word: "Chacun", ref: "fr-0395" }, { word: "a", ref: "fr-0022" }, { word: "un", ref: "fr-0208" }, { word: "point", base: "point" }, { word: "de", base: "de" }, { word: "vue", base: "vue" }, { word: "différent", base: "différent" }] }
@@ -359,10 +359,10 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "peut", ref: "fr-0500" }, { word: "être", ref: "fr-0021" }]
     examples:
-      - { target: "Peut-être que tu as raison.", ipa: "pøtɛtʁ kə ty a ʁɛzɔ̃", bases: [{ word: "Peut-être", base: "peut-être" }, { word: "que", base: "que" }, { word: "tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "raison", ref: "fr-1871" }] }
-      - { target: "Peut-être demain, peut-être pas.", ipa: "pøtɛtʁ dəmɛ̃ pøtɛtʁ pa", bases: [{ word: "Peut-être", base: "peut-être" }, { word: "demain", ref: "fr-0078" }, { word: "pas", base: "pas" }] }
+      - { target: "Peut-être que tu as raison.", ipa: "pøtɛtʁ kə ty a ʁɛzɔ̃", bases: [{ word: "Peut", ref: "fr-0500" }, { word: "être", ref: "fr-0021" }, { word: "que", base: "que" }, { word: "tu", ref: "fr-0095" }, { word: "as", ref: "fr-0022" }, { word: "raison", ref: "fr-1871" }] }
+      - { target: "Peut-être demain, peut-être pas.", ipa: "pøtɛtʁ dəmɛ̃ pøtɛtʁ pa", bases: [{ word: "Peut", ref: "fr-0500" }, { word: "être", ref: "fr-0021" }, { word: "demain", ref: "fr-0078" }, { word: "pas", base: "pas" }] }
   - id: "fr-1899"
     target: "sûrement"
     ipa: "syʁmɑ̃"

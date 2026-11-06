@@ -169,7 +169,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "avocat", ref: "fr-2123" }, { word: "général", base: "général" }]
     examples:
       - { target: "L'avocat général demande une peine.", ipa: "lavɔka ʒeneʁal dəmɑ̃d yn pɛn", bases: [{ word: "L'avocat", ref: "fr-2123" }, { word: "général", base: "général" }, { word: "demande", ref: "fr-1980" }, { word: "une", ref: "fr-0545" }, { word: "peine", ref: "fr-2546" }] }
       - { target: "Il parle au nom de l'État.", ipa: "il paʁl o nɔ̃ də letat", bases: [{ word: "Il", ref: "fr-0127" }, { word: "parle", ref: "fr-0023" }, { word: "au", base: "à" }, { word: "nom", ref: "fr-0073" }, { word: "de", base: "de" }, { word: "l'État", base: "État" }] }
@@ -271,7 +271,7 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "porter", ref: "fr-0527" }, { word: "plainte", ref: "fr-2539" }]
     examples:
       - { target: "Je veux porter plainte.", ipa: "ʒə vø pɔʁte plɛ̃t", bases: [{ word: "Je", ref: "fr-0126" }, { word: "veux", ref: "fr-0311" }, { word: "porter", ref: "fr-0527" }, { word: "plainte", ref: "fr-2539" }] }
       - { target: "Elle a porté plainte hier.", ipa: "ɛl a pɔʁte plɛ̃t jɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "a", ref: "fr-0022" }, { word: "porté", ref: "fr-0527" }, { word: "plainte", ref: "fr-2539" }, { word: "hier", ref: "fr-1038" }] }

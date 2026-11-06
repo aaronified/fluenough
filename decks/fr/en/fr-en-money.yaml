@@ -39,6 +39,8 @@ cards:
     native: "bank card"
     notes:
       "n1": "Une carte bancaire lets you pay or take out money."
+    bases:
+      "bancaire": "bank"
     examples:
       "Ma carte bancaire est dans mon sac.":
         native: "My bank card is in my bag."
@@ -306,12 +308,8 @@ cards:
     examples:
       "Mon porte-monnaie est vide.":
         native: "My purse is empty."
-        bases:
-          "porte-monnaie": "purse"
       "Elle sort son porte-monnaie.":
         native: "She takes out her purse."
-        bases:
-          "porte-monnaie": "purse"
   "fr-2784":
     native: "coin, piece"
     notes:
@@ -373,6 +371,8 @@ cards:
     native: "credit card"
     notes:
       "n1": "Une carte de crédit lets you pay now and pay later."
+    bases:
+      "de": "of, from, some"
     examples:
       "Je paie avec ma carte de crédit.":
         native: "I pay with my credit card."

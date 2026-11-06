@@ -231,7 +231,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "temps", ref: "fr-1040" }, { word: "plein", ref: "fr-0439" }]
     examples:
       - { target: "Elle travaille à temps plein.", ipa: "ɛl tʁavaj a tɑ̃ plɛ̃", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "travaille", ref: "fr-0252" }, { word: "à", base: "à" }, { word: "temps", ref: "fr-1040" }, { word: "plein", ref: "fr-0439" }] }
       - { target: "Ce poste est à temps plein.", ipa: "sə pɔst ɛ a tɑ̃ plɛ̃", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "poste", ref: "fr-0679" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "temps", ref: "fr-1040" }, { word: "plein", ref: "fr-0439" }] }
@@ -242,7 +242,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "temps", ref: "fr-1040" }, { word: "partiel", base: "partiel" }]
     examples:
       - { target: "Il travaille à temps partiel.", ipa: "il tʁavaj a tɑ̃ paʁsjɛl", bases: [{ word: "Il", ref: "fr-0127" }, { word: "travaille", ref: "fr-0252" }, { word: "à", base: "à" }, { word: "temps", ref: "fr-1040" }, { word: "partiel", base: "partiel" }] }
       - { target: "Le temps partiel convient à ma mère.", ipa: "lə tɑ̃ paʁsjɛl kɔ̃vjɛ̃ a ma mɛʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "temps", ref: "fr-1040" }, { word: "partiel", base: "partiel" }, { word: "convient", base: "convenir" }, { word: "à", base: "à" }, { word: "ma", ref: "fr-0037" }, { word: "mère", ref: "fr-0166" }] }

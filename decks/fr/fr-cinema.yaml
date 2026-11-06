@@ -131,15 +131,15 @@ cards:
       - { target: "J'aime les documentaires sur la nature.", ipa: "ʒɛm le dɔkymɑ̃tɛʁ syʁ la natyʁ", bases: [{ word: "J'aime", ref: "fr-0263" }, { word: "les", ref: "fr-0543" }, { word: "documentaires", base: "documentaire" }, { word: "sur", ref: "fr-0469" }, { word: "la", ref: "fr-0544" }, { word: "nature", base: "nature" }] }
   - id: "fr-2218"
     target: "dessin animé"
-    ipa: "desɛ̃ animé"
+    ipa: "desɛ̃ anime"
     pos: "noun"
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "dessin", ref: "fr-1609" }, { word: "animé", base: "animé" }]
     examples:
-      - { target: "Les enfants regardent un dessin animé.", ipa: "lez ɑ̃fɑ̃ ʁəɡaʁd œ̃ desɛ̃ animé", bases: [{ word: "Les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "regardent", ref: "fr-0293" }, { word: "un", ref: "fr-0208" }, { word: "dessin", ref: "fr-1609" }, { word: "animé", base: "animé" }] }
-      - { target: "Ce dessin animé est très drôle.", ipa: "sə desɛ̃ animé ɛ tʁɛ dʁol", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "dessin", ref: "fr-1609" }, { word: "animé", base: "animé" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
+      - { target: "Les enfants regardent un dessin animé.", ipa: "lez ɑ̃fɑ̃ ʁəɡaʁd œ̃ desɛ̃ anime", bases: [{ word: "Les", ref: "fr-0543" }, { word: "enfants", base: "enfant" }, { word: "regardent", ref: "fr-0293" }, { word: "un", ref: "fr-0208" }, { word: "dessin", ref: "fr-1609" }, { word: "animé", base: "animé" }] }
+      - { target: "Ce dessin animé est très drôle.", ipa: "sə desɛ̃ anime ɛ tʁɛ dʁol", bases: [{ word: "Ce", ref: "fr-0143" }, { word: "dessin", ref: "fr-1609" }, { word: "animé", base: "animé" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "drôle", ref: "fr-0436" }] }
   - id: "fr-2219"
     target: "suspense"
     ipa: "syspɑ̃s"
@@ -158,10 +158,10 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "bande", base: "bande" }, { word: "annonce", ref: "fr-1830" }]
     examples:
-      - { target: "La bande-annonce est très bonne.", ipa: "la bɑ̃d anɔ̃s ɛ tʁɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "bande-annonce", base: "bande-annonce" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bonne", ref: "fr-0040" }] }
-      - { target: "Je regarde la bande-annonce en ligne.", ipa: "ʒə ʁəɡaʁd la bɑ̃d anɔ̃s ɑ̃ liɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", ref: "fr-0293" }, { word: "la", ref: "fr-0544" }, { word: "bande-annonce", base: "bande-annonce" }, { word: "en", base: "en" }, { word: "ligne", ref: "fr-0864" }] }
+      - { target: "La bande-annonce est très bonne.", ipa: "la bɑ̃d anɔ̃s ɛ tʁɛ bɔn", bases: [{ word: "La", ref: "fr-0544" }, { word: "bande", base: "bande" }, { word: "annonce", ref: "fr-1830" }, { word: "est", ref: "fr-0021" }, { word: "très", ref: "fr-0031" }, { word: "bonne", ref: "fr-0040" }] }
+      - { target: "Je regarde la bande-annonce en ligne.", ipa: "ʒə ʁəɡaʁd la bɑ̃d anɔ̃s ɑ̃ liɲ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "regarde", ref: "fr-0293" }, { word: "la", ref: "fr-0544" }, { word: "bande", base: "bande" }, { word: "annonce", ref: "fr-1830" }, { word: "en", base: "en" }, { word: "ligne", ref: "fr-0864" }] }
   - id: "fr-2221"
     target: "sous-titre"
     ipa: "sutitʁ"
@@ -169,10 +169,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "sous", ref: "fr-0468" }, { word: "titre", ref: "fr-1810" }]
     examples:
-      - { target: "Le film a des sous-titres.", ipa: "lə fil a de sutitʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "sous-titres", base: "sous-titre" }] }
-      - { target: "Je lis les sous-titres en français.", ipa: "ʒə li le sutitʁ ɑ̃ fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "les", ref: "fr-0543" }, { word: "sous-titres", base: "sous-titre" }, { word: "en", base: "en" }, { word: "français", ref: "fr-0246" }] }
+      - { target: "Le film a des sous-titres.", ipa: "lə fil a de sutitʁ", bases: [{ word: "Le", ref: "fr-0543" }, { word: "film", ref: "fr-2206" }, { word: "a", ref: "fr-0022" }, { word: "des", ref: "fr-0546" }, { word: "sous", ref: "fr-0468" }, { word: "titres", ref: "fr-1810" }] }
+      - { target: "Je lis les sous-titres en français.", ipa: "ʒə li le sutitʁ ɑ̃ fʁɑ̃sɛ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "lis", ref: "fr-0290" }, { word: "les", ref: "fr-0543" }, { word: "sous", ref: "fr-0468" }, { word: "titres", ref: "fr-1810" }, { word: "en", base: "en" }, { word: "français", ref: "fr-0246" }] }
   - id: "fr-2222"
     target: "doublage"
     ipa: "dublaʒ"
@@ -237,7 +237,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Quel genre de film aimes-tu ?", ipa: "kɛl ʒɑ̃ʁ də fil ɛm ty", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "genre", base: "genre" }, { word: "de", base: "de" }, { word: "film", ref: "fr-2206" }, { word: "aimes-tu", ref: "fr-0263" }] }
+      - { target: "Quel genre de film aimes-tu ?", ipa: "kɛl ʒɑ̃ʁ də fil ɛm ty", bases: [{ word: "Quel", ref: "fr-0072" }, { word: "genre", base: "genre" }, { word: "de", base: "de" }, { word: "film", ref: "fr-2206" }, { word: "aimes", ref: "fr-0263" }, { word: "tu", ref: "fr-0095" }] }
       - { target: "C'est mon genre préféré.", ipa: "sɛ mɔ̃ ʒɑ̃ʁ pʁefeʁe", bases: [{ word: "C'est", ref: "fr-0021" }, { word: "mon", ref: "fr-0037" }, { word: "genre", base: "genre" }, { word: "préféré", base: "préféré" }] }
   - id: "fr-2230"
     target: "projecteur"

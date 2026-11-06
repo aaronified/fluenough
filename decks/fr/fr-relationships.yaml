@@ -171,9 +171,9 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "s'excuser", base: "excuser" }]
     examples:
-      - { target: "Excusez-moi pour le retard.", ipa: "ɛkskyzemwa puʁ lə ʁətaʁ", bases: [{ word: "Excusez-moi", base: "excuser" }, { word: "pour", ref: "fr-0591" }, { word: "le", ref: "fr-0543" }, { word: "retard", ref: "fr-0870" }] }
+      - { target: "Excusez-moi pour le retard.", ipa: "ɛkskyzemwa puʁ lə ʁətaʁ", bases: [{ word: "Excusez", base: "excuser" }, { word: "moi", ref: "fr-0133" }, { word: "pour", ref: "fr-0591" }, { word: "le", ref: "fr-0543" }, { word: "retard", ref: "fr-0870" }] }
       - { target: "Il s'excuse de son erreur.", ipa: "il sɛkskyz də sɔ̃ nɛʁœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "s'excuse", base: "excuser" }, { word: "de", base: "de" }, { word: "son", ref: "fr-0138" }, { word: "erreur", base: "erreur" }] }
   - id: "fr-2457"
     target: "se réconcilier"
@@ -181,7 +181,7 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "se", base: "se" }, { word: "réconcilier", base: "réconcilier" }]
     examples:
       - { target: "Ils se réconcilient enfin.", ipa: "il sə ʁekɔ̃silj ɑ̃fɛ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "se", base: "se" }, { word: "réconcilient", base: "réconcilier" }, { word: "enfin", ref: "fr-0353" }] }
       - { target: "Nous nous réconcilions demain.", ipa: "nu nu ʁekɔ̃siljɔ̃ dəmɛ̃", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "réconcilions", base: "réconcilier" }, { word: "demain", ref: "fr-0078" }] }
@@ -191,7 +191,7 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "se", base: "se" }, { word: "disputer", base: "disputer" }]
     examples:
       - { target: "Ils se disputent souvent.", ipa: "il sə dispyt suvɑ̃", bases: [{ word: "Ils", ref: "fr-0130" }, { word: "se", base: "se" }, { word: "disputent", base: "disputer" }, { word: "souvent", ref: "fr-0326" }] }
       - { target: "Ne vous disputez pas.", ipa: "nə vu dispyte pa", bases: [{ word: "Ne", base: "ne" }, { word: "vous", ref: "fr-0096" }, { word: "disputez", base: "disputer" }, { word: "pas", base: "pas" }] }
@@ -278,7 +278,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "bonne", ref: "fr-0040" }, { word: "humeur", ref: "fr-1781" }]
     examples:
       - { target: "Il est plein de bonne humeur.", ipa: "il ɛ plɛ̃ də bɔn ymœʁ", bases: [{ word: "Il", ref: "fr-0127" }, { word: "est", ref: "fr-0021" }, { word: "plein", ref: "fr-0439" }, { word: "de", base: "de" }, { word: "bonne", ref: "fr-0040" }, { word: "humeur", ref: "fr-1781" }] }
       - { target: "La bonne humeur règne.", ipa: "la bɔn ymœʁ ʁɛɲ", bases: [{ word: "La", ref: "fr-0544" }, { word: "bonne", ref: "fr-0040" }, { word: "humeur", ref: "fr-1781" }, { word: "règne", ref: "fr-2320" }] }

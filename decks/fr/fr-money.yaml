@@ -37,7 +37,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "carte", ref: "fr-0824" }, { word: "bancaire", base: "bancaire" }]
     examples:
       - { target: "Ma carte bancaire est dans mon sac.", ipa: "ma kaʁt bɑ̃kɛʁ ɛ dɑ̃ mɔ̃ sak", bases: [{ word: "Ma", ref: "fr-0037" }, { word: "carte", ref: "fr-0824" }, { word: "bancaire", base: "bancaire" }, { word: "est", ref: "fr-0021" }, { word: "dans", ref: "fr-0049" }, { word: "mon", ref: "fr-0037" }, { word: "sac", ref: "fr-0485" }] }
       - { target: "Vous payez par carte bancaire ?", ipa: "vu pɛje paʁ kaʁt bɑ̃kɛʁ", bases: [{ word: "Vous", ref: "fr-0096" }, { word: "payez", ref: "fr-0310" }, { word: "par", ref: "fr-0593" }, { word: "carte", ref: "fr-0824" }, { word: "bancaire", base: "bancaire" }] }
@@ -244,10 +244,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "porte", ref: "fr-1003" }, { word: "monnaie", ref: "fr-0750" }]
     examples:
-      - { target: "Mon porte-monnaie est vide.", ipa: "mɔ̃ pɔʁt mɔnɛ ɛ vid", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "porte-monnaie", base: "porte-monnaie" }, { word: "est", ref: "fr-0021" }, { word: "vide", ref: "fr-0440" }] }
-      - { target: "Elle sort son porte-monnaie.", ipa: "ɛl sɔʁ sɔ̃ pɔʁt mɔnɛ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "sort", ref: "fr-1125" }, { word: "son", ref: "fr-0138" }, { word: "porte-monnaie", base: "porte-monnaie" }] }
+      - { target: "Mon porte-monnaie est vide.", ipa: "mɔ̃ pɔʁt mɔnɛ ɛ vid", bases: [{ word: "Mon", ref: "fr-0037" }, { word: "porte", ref: "fr-1003" }, { word: "monnaie", ref: "fr-0750" }, { word: "est", ref: "fr-0021" }, { word: "vide", ref: "fr-0440" }] }
+      - { target: "Elle sort son porte-monnaie.", ipa: "ɛl sɔʁ sɔ̃ pɔʁt mɔnɛ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "sort", ref: "fr-1125" }, { word: "son", ref: "fr-0138" }, { word: "porte", ref: "fr-1003" }, { word: "monnaie", ref: "fr-0750" }] }
   - id: "fr-2784"
     target: "pièce"
     ipa: "pjɛs"
@@ -299,7 +299,7 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "carte", ref: "fr-0824" }, { word: "de", base: "de" }, { word: "crédit", ref: "fr-2720" }]
     examples:
       - { target: "Je paie avec ma carte de crédit.", ipa: "ʒə pe avɛk ma kaʁt də kʁedi", bases: [{ word: "Je", ref: "fr-0126" }, { word: "paie", ref: "fr-0310" }, { word: "avec", ref: "fr-0590" }, { word: "ma", ref: "fr-0037" }, { word: "carte", ref: "fr-0824" }, { word: "de", base: "de" }, { word: "crédit", ref: "fr-2720" }] }
       - { target: "Cette carte de crédit a une limite.", ipa: "sɛt kaʁt də kʁedi a yn limit", bases: [{ word: "Cette", ref: "fr-0144" }, { word: "carte", ref: "fr-0824" }, { word: "de", base: "de" }, { word: "crédit", ref: "fr-2720" }, { word: "a", ref: "fr-0022" }, { word: "une", ref: "fr-0545" }, { word: "limite", ref: "fr-2675" }] }

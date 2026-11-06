@@ -77,7 +77,7 @@ cards:
     bases: "self"
     examples:
       - { target: "Je dis la vérité.", ipa: "ʒə di la veʁite", bases: [{ word: "Je", ref: "fr-0126" }, { word: "dis", base: "dire" }, { word: "la", ref: "fr-0544" }, { word: "vérité", ref: "fr-2660" }] }
-      - { target: "Qu'est-ce que tu dis ?", ipa: "kɛskə ty di", bases: [{ word: "Qu'est-ce", base: "que" }, { word: "que", base: "que" }, { word: "tu", ref: "fr-0095" }, { word: "dis", base: "dire" }] }
+      - { target: "Qu'est-ce que tu dis ?", ipa: "kɛskə ty di", bases: [{ word: "Qu'est", base: "que" }, { word: "ce", ref: "fr-0143" }, { word: "que", base: "que" }, { word: "tu", ref: "fr-0095" }, { word: "dis", base: "dire" }] }
   - id: "fr-2617"
     target: "enseigner"
     ipa: "ɑ̃seɲe"
@@ -96,7 +96,7 @@ cards:
       - { id: "n1", kind: "note" }
     bases: "self"
     examples:
-      - { target: "Explique-moi ce mot.", ipa: "ɛksplik mwa sə mo", bases: [{ word: "Explique-moi", base: "expliquer" }, { word: "ce", ref: "fr-0143" }, { word: "mot", ref: "fr-1620" }] }
+      - { target: "Explique-moi ce mot.", ipa: "ɛksplik mwa sə mo", bases: [{ word: "Explique", base: "expliquer" }, { word: "moi", ref: "fr-0133" }, { word: "ce", ref: "fr-0143" }, { word: "mot", ref: "fr-1620" }] }
       - { target: "Le professeur explique la règle.", ipa: "lə pʁɔfesœʁ ɛksplik la ʁɛɡl", bases: [{ word: "Le", ref: "fr-0543" }, { word: "professeur", ref: "fr-0105" }, { word: "explique", base: "expliquer" }, { word: "la", ref: "fr-0544" }, { word: "règle", ref: "fr-1365" }] }
   - id: "fr-2619"
     target: "comparer"
@@ -144,7 +144,7 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "se", base: "se" }, { word: "souvenir", ref: "fr-1937" }]
     examples:
       - { target: "Je me souviens de ce jour.", ipa: "ʒə mə suvjɛ̃ də sə ʒuʁ", bases: [{ word: "Je", ref: "fr-0126" }, { word: "me", base: "me" }, { word: "souviens", base: "se souvenir" }, { word: "de", base: "de" }, { word: "ce", ref: "fr-0143" }, { word: "jour", ref: "fr-1032" }] }
       - { target: "Elle se souvient de tout.", ipa: "ɛl sə suvjɛ̃ də tu", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "se", base: "se" }, { word: "souvient", base: "se souvenir" }, { word: "de", base: "de" }, { word: "tout", ref: "fr-0372" }] }
@@ -194,17 +194,17 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "s'approcher", base: "approcher" }]
     examples:
       - { target: "Il s'approche de la porte.", ipa: "il sapʁɔʃ də la pɔʁt", bases: [{ word: "Il", ref: "fr-0127" }, { word: "s'approche", base: "s'approcher" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "porte", ref: "fr-1003" }] }
-      - { target: "Approchez-vous.", ipa: "apʁɔʃevu", bases: [{ word: "Approchez-vous", base: "approcher" }] }
+      - { target: "Approchez-vous.", ipa: "apʁɔʃevu", bases: [{ word: "Approchez", base: "approcher" }, { word: "vous", ref: "fr-0096" }] }
   - id: "fr-2629"
     target: "s'éloigner"
     ipa: "selwaɲe"
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "s'éloigner", base: "éloigner" }]
     examples:
       - { target: "Elle s'éloigne de la mer.", ipa: "ɛl selwaɲ də la mɛʁ", bases: [{ word: "Elle", ref: "fr-0128" }, { word: "s'éloigne", base: "s'éloigner" }, { word: "de", base: "de" }, { word: "la", ref: "fr-0544" }, { word: "mer", ref: "fr-1939" }] }
       - { target: "Ne vous éloignez pas.", ipa: "nə vu elwaɲe pa", bases: [{ word: "Ne", base: "ne" }, { word: "vous", ref: "fr-0096" }, { word: "éloignez", base: "éloigner" }, { word: "pas", base: "pas" }] }

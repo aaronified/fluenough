@@ -162,6 +162,8 @@ cards:
     native: "cartoon"
     notes:
       "n1": "Un dessin animé is an animated film."
+    bases:
+      "animé": "animated"
     examples:
       "Les enfants regardent un dessin animé.":
         native: "The children watch a cartoon."
@@ -190,15 +192,17 @@ cards:
     native: "trailer"
     notes:
       "n1": "Une bande-annonce is a short preview of a film."
+    bases:
+      "bande": "band"
     examples:
       "La bande-annonce est très bonne.":
         native: "The trailer is very good."
         bases:
-          "bande-annonce": "trailer"
+          "bande": "band"
       "Je regarde la bande-annonce en ligne.":
         native: "I watch the trailer online."
         bases:
-          "bande-annonce": "trailer"
+          "bande": "band"
           "en": "in, by, as"
   "fr-2221":
     native: "subtitle"
@@ -207,12 +211,9 @@ cards:
     examples:
       "Le film a des sous-titres.":
         native: "The film has subtitles."
-        bases:
-          "sous-titres": "subtitle"
       "Je lis les sous-titres en français.":
         native: "I read the subtitles in French."
         bases:
-          "sous-titres": "subtitle"
           "en": "in, by, as"
   "fr-2222":
     native: "dubbing"

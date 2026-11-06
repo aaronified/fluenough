@@ -48,7 +48,7 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
-    bases: "self"
+    bases: [{ word: "feu", ref: "fr-0899" }, { word: "d'artifice", base: "artifice" }]
     examples:
       - { target: "Le feu d'artifice est à minuit.", ipa: "lə fø daʁtifis ɛ a minɥi", bases: [{ word: "Le", ref: "fr-0543" }, { word: "feu", ref: "fr-0899" }, { word: "d'artifice", base: "artifice" }, { word: "est", ref: "fr-0021" }, { word: "à", base: "à" }, { word: "minuit", ref: "fr-1037" }] }
       - { target: "Nous regardons le feu d'artifice.", ipa: "nu ʁəɡaʁdɔ̃ lə fø daʁtifis", bases: [{ word: "Nous", ref: "fr-0129" }, { word: "regardons", ref: "fr-0293" }, { word: "le", ref: "fr-0543" }, { word: "feu", ref: "fr-0899" }, { word: "d'artifice", base: "artifice" }] }
