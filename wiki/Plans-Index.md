@@ -10,6 +10,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [B1 Plans](Plan-B1-Plans): a B1 plan in every path
 - [Books Films Songs](Plan-Books-Films-Songs): books, films and songs you bring, with questions on them
 - [Deck Browser](Plan-Deck-Browser): reviewing decks in the app, sent by mail
+- [Decks Branch](Plan-Decks-Branch): decks in a branch of their own, audit and migration plan
 - [Explain Mistakes](Plan-Explain-Mistakes): explain the mistake on a wrong grammar answer
 - [Handwriting](Plan-Handwriting): handwriting the script, stroke by stroke
 - [Haptics](Plan-Haptics): haptic feedback, one vocabulary for the whole app
