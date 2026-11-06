@@ -1,0 +1,990 @@
+"schema": 1
+"id": "zh-directions"
+"part": "core"
+"kind": "vocab"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"license": "CC-BY-SA-4.0"
+"theme": "directions"
+"tags":
+- "beginner"
+- "unreviewed"
+"cards":
+- "id": "zh-1007"
+  "target": "左"
+  "words":
+  - "左"
+  "reading": "zuǒ"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "right"
+    "ref": "zh-1008"
+  "examples":
+  - "target": "左边是学校。"
+    "reading": "zuǒbiān shì xuéxiào."
+    "words":
+    - "左边"
+    - "是"
+    - "学校"
+  - "target": "往左拐。"
+    "reading": "wǎng zuǒ guǎi."
+    "words":
+    - "往"
+    - "左"
+    - "拐"
+    "bases":
+    - "word": "往"
+      "base": "往"
+      "reading": "wǎng"
+- "id": "zh-1008"
+  "target": "右"
+  "words":
+  - "右"
+  "reading": "yòu"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "left"
+    "ref": "zh-1007"
+  "examples":
+  - "target": "右边是我的家。"
+    "reading": "yòubiān shì wǒ de jiā."
+    "words":
+    - "右边"
+    - "是"
+    - "我"
+    - "的"
+    - "家"
+    "bases":
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+  - "target": "往右走。"
+    "reading": "wǎng yòu zǒu."
+    "words":
+    - "往"
+    - "右"
+    - "走"
+    "bases":
+    - "word": "往"
+      "base": "往"
+      "reading": "wǎng"
+- "id": "zh-1009"
+  "target": "前"
+  "words":
+  - "前"
+  "reading": "qián"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "前边有饭馆。"
+    "reading": "qiánbian yǒu fànguǎn."
+    "words":
+    - "前边"
+    - "有"
+    - "饭馆"
+    "bases":
+    - "word": "前边"
+      "base": "前边"
+      "reading": "qiánbian"
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "车在前面停了。"
+    "reading": "chē zài qiánmiàn tíng le."
+    "words":
+    - "车"
+    - "在"
+    - "前面"
+    - "停"
+    - "了"
+    "bases":
+    - "word": "停"
+      "base": "停"
+      "reading": "tíng"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1010"
+  "target": "后"
+  "target_scripts":
+    "han_traditional": "後"
+  "words":
+  - "后"
+  "reading": "hòu"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "front"
+    "ref": "zh-1009"
+  "examples":
+  - "target": "后边是厕所。"
+    "reading": "hòubian shì cèsuǒ."
+    "words":
+    - "后边"
+    - "是"
+    - "厕所"
+    "bases":
+    - "word": "后边"
+      "base": "后边"
+      "reading": "hòubian"
+    - "word": "厕所"
+      "ref": "zh-1165"
+  - "target": "我在后面走。"
+    "reading": "wǒ zài hòumiàn zǒu."
+    "words":
+    - "我"
+    - "在"
+    - "后面"
+    - "走"
+- "id": "zh-1011"
+  "target": "北"
+  "words":
+  - "北"
+  "reading": "běi"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "south"
+    "ref": "zh-1012"
+  "examples":
+  - "target": "北边很冷。"
+    "reading": "běibian hěn lěng."
+    "words":
+    - "北边"
+    - "很"
+    - "冷"
+    "bases":
+    - "word": "北边"
+      "base": "北边"
+      "reading": "běibian"
+  - "target": "火车往北走。"
+    "reading": "huǒchē wǎng běi zǒu."
+    "words":
+    - "火车"
+    - "往"
+    - "北"
+    - "走"
+    "bases":
+    - "word": "往"
+      "base": "往"
+      "reading": "wǎng"
+- "id": "zh-1012"
+  "target": "南"
+  "words":
+  - "南"
+  "reading": "nán"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "north"
+    "ref": "zh-1011"
+  "examples":
+  - "target": "南边很热。"
+    "reading": "nánbian hěn rè."
+    "words":
+    - "南边"
+    - "很"
+    - "热"
+    "bases":
+    - "word": "南边"
+      "base": "南边"
+      "reading": "nánbian"
+  - "target": "往南走。"
+    "reading": "wǎng nán zǒu."
+    "words":
+    - "往"
+    - "南"
+    - "走"
+    "bases":
+    - "word": "往"
+      "base": "往"
+      "reading": "wǎng"
+- "id": "zh-1013"
+  "target": "东"
+  "target_scripts":
+    "han_traditional": "東"
+  "words":
+  - "东"
+  "reading": "dōng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "东边是大海。"
+    "reading": "dōngbian shì dàhǎi."
+    "words":
+    - "东边"
+    - "是"
+    - "大海"
+    "bases":
+    - "word": "东边"
+      "base": "东边"
+      "reading": "dōngbian"
+    - "word": "大海"
+      "base": "大海"
+      "reading": "dàhǎi"
+  - "target": "往东走。"
+    "reading": "wǎng dōng zǒu."
+    "words":
+    - "往"
+    - "东"
+    - "走"
+    "bases":
+    - "word": "往"
+      "base": "往"
+      "reading": "wǎng"
+- "id": "zh-1014"
+  "target": "对面"
+  "target_scripts":
+    "han_traditional": "對面"
+  "words":
+  - "对面"
+  "reading": "duìmiàn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "银行在对面。"
+    "reading": "yínháng zài duìmiàn."
+    "words":
+    - "银行"
+    - "在"
+    - "对面"
+    "bases":
+    - "word": "银行"
+      "ref": "zh-1108"
+  - "target": "对面是公园。"
+    "reading": "duìmiàn shì gōngyuán."
+    "words":
+    - "对面"
+    - "是"
+    - "公园"
+    "bases":
+    - "word": "公园"
+      "ref": "zh-1110"
+- "id": "zh-1015"
+  "target": "附近"
+  "words":
+  - "附近"
+  "reading": "fùjìn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "附近有超市吗？"
+    "reading": "fùjìn yǒu chāoshì ma?"
+    "words":
+    - "附近"
+    - "有"
+    - "超市"
+    - "吗"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "学校附近很安静。"
+    "reading": "xuéxiào fùjìn hěn ānjìng."
+    "words":
+    - "学校"
+    - "附近"
+    - "很"
+    - "安静"
+- "id": "zh-1016"
+  "target": "拐"
+  "words":
+  - "拐"
+  "reading": "guǎi"
+  "pos": "verb"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "在路口拐。"
+    "reading": "zài lùkǒu guǎi."
+    "words":
+    - "在"
+    - "路口"
+    - "拐"
+  - "target": "拐了弯就到。"
+    "reading": "guǎi le wān jiù dào."
+    "words":
+    - "拐"
+    - "了"
+    - "弯"
+    - "就"
+    - "到"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+    - "word": "弯"
+      "base": "弯"
+      "reading": "wān"
+    - "word": "到"
+      "base": "到"
+      "reading": "dào"
+- "id": "zh-1017"
+  "target": "转"
+  "target_scripts":
+    "han_traditional": "轉"
+  "words":
+  - "转"
+  "reading": "zhuǎn"
+  "pos": "verb"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "向左转。"
+    "reading": "xiàng zuǒ zhuǎn."
+    "words":
+    - "向"
+    - "左"
+    - "转"
+    "bases":
+    - "word": "向"
+      "base": "向"
+      "reading": "xiàng"
+  - "target": "车转了弯。"
+    "reading": "chē zhuǎn le wān."
+    "words":
+    - "车"
+    - "转"
+    - "了"
+    - "弯"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+    - "word": "弯"
+      "base": "弯"
+      "reading": "wān"
+- "id": "zh-1018"
+  "target": "直"
+  "words":
+  - "直"
+  "reading": "zhí"
+  "pos": "adj"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "路很直。"
+    "reading": "lù hěn zhí."
+    "words":
+    - "路"
+    - "很"
+    - "直"
+  - "target": "一直走。"
+    "reading": "yìzhí zǒu."
+    "words":
+    - "一直"
+    - "走"
+- "id": "zh-1019"
+  "target": "过"
+  "target_scripts":
+    "han_traditional": "過"
+  "words":
+  - "过"
+  "reading": "guò"
+  "pos": "verb"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "过马路要小心。"
+    "reading": "guò mǎlù yào xiǎoxīn."
+    "words":
+    - "过"
+    - "马路"
+    - "要"
+    - "小心"
+    "bases":
+    - "word": "要"
+      "base": "要"
+      "reading": "yào"
+    - "word": "小心"
+      "ref": "zh-1239"
+  - "target": "过了桥就到了。"
+    "reading": "guò le qiáo jiù dào le."
+    "words":
+    - "过"
+    - "了"
+    - "桥"
+    - "就"
+    - "到"
+    - "了"
+    "bases":
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+    - "word": "到"
+      "base": "到"
+      "reading": "dào"
+- "id": "zh-1020"
+  "target": "马路"
+  "target_scripts":
+    "han_traditional": "馬路"
+  "words":
+  - "马路"
+  "reading": "mǎlù"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "马路很宽。"
+    "reading": "mǎlù hěn kuān."
+    "words":
+    - "马路"
+    - "很"
+    - "宽"
+    "bases":
+    - "word": "宽"
+      "base": "宽"
+      "reading": "kuān"
+  - "target": "马路上有车。"
+    "reading": "mǎlù shàng yǒu chē."
+    "words":
+    - "马路"
+    - "上"
+    - "有"
+    - "车"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+- "id": "zh-1021"
+  "target": "十字路口"
+  "words":
+  - "十字路口"
+  "reading": "shízìlùkǒu"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "十字路口有红绿灯。"
+    "reading": "shízìlùkǒu yǒu hónglǜdēng."
+    "words":
+    - "十字路口"
+    - "有"
+    - "红绿灯"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "在十字路口左转。"
+    "reading": "zài shízìlùkǒu zuǒ zhuǎn."
+    "words":
+    - "在"
+    - "十字路口"
+    - "左"
+    - "转"
+- "id": "zh-1022"
+  "target": "桥"
+  "target_scripts":
+    "han_traditional": "橋"
+  "words":
+  - "桥"
+  "reading": "qiáo"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "过桥以后右转。"
+    "reading": "guò qiáo yǐhòu yòu zhuǎn."
+    "words":
+    - "过"
+    - "桥"
+    - "以后"
+    - "右"
+    - "转"
+  - "target": "桥很长。"
+    "reading": "qiáo hěn cháng."
+    "words":
+    - "桥"
+    - "很"
+    - "长"
+- "id": "zh-1023"
+  "target": "楼"
+  "target_scripts":
+    "han_traditional": "樓"
+  "words":
+  - "楼"
+  "reading": "lóu"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "这栋楼很高。"
+    "reading": "zhè dòng lóu hěn gāo."
+    "words":
+    - "这"
+    - "栋"
+    - "楼"
+    - "很"
+    - "高"
+    "bases":
+    - "word": "栋"
+      "base": "栋"
+      "reading": "dòng"
+  - "target": "我住在三楼。"
+    "reading": "wǒ zhù zài sān lóu."
+    "words":
+    - "我"
+    - "住"
+    - "在"
+    - "三"
+    - "楼"
+- "id": "zh-1024"
+  "target": "层"
+  "target_scripts":
+    "han_traditional": "層"
+  "words":
+  - "层"
+  "reading": "céng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "饭馆在二层。"
+    "reading": "fànguǎn zài èr céng."
+    "words":
+    - "饭馆"
+    - "在"
+    - "二"
+    - "层"
+  - "target": "这层很安静。"
+    "reading": "zhè céng hěn ānjìng."
+    "words":
+    - "这"
+    - "层"
+    - "很"
+    - "安静"
+- "id": "zh-1025"
+  "target": "地下"
+  "words":
+  - "地下"
+  "reading": "dìxià"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "地下有地铁。"
+    "reading": "dìxià yǒu dìtiě."
+    "words":
+    - "地下"
+    - "有"
+    - "地铁"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "超市在地下。"
+    "reading": "chāoshì zài dìxià."
+    "words":
+    - "超市"
+    - "在"
+    - "地下"
+- "id": "zh-1026"
+  "target": "门口"
+  "target_scripts":
+    "han_traditional": "門口"
+  "words":
+  - "门口"
+  "reading": "ménkǒu"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "门口有车。"
+    "reading": "ménkǒu yǒu chē."
+    "words":
+    - "门口"
+    - "有"
+    - "车"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "在门口等我。"
+    "reading": "zài ménkǒu děng wǒ."
+    "words":
+    - "在"
+    - "门口"
+    - "等"
+    - "我"
+- "id": "zh-1027"
+  "target": "离"
+  "target_scripts":
+    "han_traditional": "離"
+  "words":
+  - "离"
+  "reading": "lí"
+  "pos": "verb"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "学校离这儿很远。"
+    "reading": "xuéxiào lí zhèr hěn yuǎn."
+    "words":
+    - "学校"
+    - "离"
+    - "这儿"
+    - "很"
+    - "远"
+  - "target": "银行离车站很近。"
+    "reading": "yínháng lí chēzhàn hěn jìn."
+    "words":
+    - "银行"
+    - "离"
+    - "车站"
+    - "很"
+    - "近"
+    "bases":
+    - "word": "银行"
+      "ref": "zh-1108"
+- "id": "zh-1028"
+  "target": "公里"
+  "words":
+  - "公里"
+  "reading": "gōnglǐ"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "两公里远。"
+    "reading": "liǎng gōnglǐ yuǎn."
+    "words":
+    - "两"
+    - "公里"
+    - "远"
+  - "target": "这条路很长，有十公里。"
+    "reading": "zhè tiáo lù hěn cháng, yǒu shí gōnglǐ."
+    "words":
+    - "这"
+    - "条"
+    - "路"
+    - "很"
+    - "长"
+    - "有"
+    - "十"
+    - "公里"
+    "bases":
+    - "word": "条"
+      "base": "条"
+      "reading": "tiáo"
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+- "id": "zh-1029"
+  "target": "一直"
+  "words":
+  - "一直"
+  "reading": "yìzhí"
+  "pos": "adv"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "一直走就到。"
+    "reading": "yìzhí zǒu jiù dào."
+    "words":
+    - "一直"
+    - "走"
+    - "就"
+    - "到"
+    "bases":
+    - "word": "到"
+      "base": "到"
+      "reading": "dào"
+  - "target": "他一直在学校。"
+    "reading": "tā yìzhí zài xuéxiào."
+    "words":
+    - "他"
+    - "一直"
+    - "在"
+    - "学校"
+- "id": "zh-1030"
+  "target": "这边"
+  "target_scripts":
+    "han_traditional": "這邊"
+  "words":
+  - "这边"
+  "reading": "zhèbiān"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "opposite"
+    "ref": "zh-1031"
+  "examples":
+  - "target": "这边是南。"
+    "reading": "zhèbiān shì nán."
+    "words":
+    - "这边"
+    - "是"
+    - "南"
+  - "target": "请到这边来。"
+    "reading": "qǐng dào zhèbiān lái."
+    "words":
+    - "请"
+    - "到"
+    - "这边"
+    - "来"
+    "bases":
+    - "word": "到"
+      "base": "到"
+      "reading": "dào"
+- "id": "zh-1031"
+  "target": "那边"
+  "target_scripts":
+    "han_traditional": "那邊"
+  "words":
+  - "那边"
+  "reading": "nàbiān"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "antonyms":
+  - "id": "opposite"
+    "ref": "zh-1030"
+  "examples":
+  - "target": "那边是银行。"
+    "reading": "nàbiān shì yínháng."
+    "words":
+    - "那边"
+    - "是"
+    - "银行"
+    "bases":
+    - "word": "银行"
+      "ref": "zh-1108"
+  - "target": "学校在那边。"
+    "reading": "xuéxiào zài nàbiān."
+    "words":
+    - "学校"
+    - "在"
+    - "那边"
+- "id": "zh-1032"
+  "target": "哪边"
+  "target_scripts":
+    "han_traditional": "哪邊"
+  "words":
+  - "哪边"
+  "reading": "nǎbiān"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "哪边是车站？"
+    "reading": "nǎbiān shì chēzhàn?"
+    "words":
+    - "哪边"
+    - "是"
+    - "车站"
+  - "target": "您去哪边？"
+    "reading": "nín qù nǎbiān?"
+    "words":
+    - "您"
+    - "去"
+    - "哪边"
+- "id": "zh-1033"
+  "target": "边"
+  "target_scripts":
+    "han_traditional": "邊"
+  "words":
+  - "边"
+  "reading": "biān"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "桌子边有椅子。"
+    "reading": "zhuōzi biān yǒu yǐzi."
+    "words":
+    - "桌子"
+    - "边"
+    - "有"
+    - "椅子"
+    "bases":
+    - "word": "有"
+      "base": "有"
+      "reading": "yǒu"
+  - "target": "河边很凉快。"
+    "reading": "hé biān hěn liángkuai."
+    "words":
+    - "河"
+    - "边"
+    - "很"
+    - "凉快"
+    "bases":
+    - "word": "河"
+      "ref": "zh-1139"
+    - "word": "凉快"
+      "ref": "zh-1416"
+- "id": "zh-1034"
+  "target": "路线"
+  "target_scripts":
+    "han_traditional": "路線"
+  "words":
+  - "路线"
+  "reading": "lùxiàn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "我们的路线很长。"
+    "reading": "wǒmen de lùxiàn hěn cháng."
+    "words":
+    - "我们"
+    - "的"
+    - "路线"
+    - "很"
+    - "长"
+    "bases":
+    - "word": "的"
+      "base": "的"
+      "reading": "de"
+  - "target": "请看路线图。"
+    "reading": "qǐng kàn lùxiàn tú."
+    "words":
+    - "请"
+    - "看"
+    - "路线"
+    - "图"
+    "bases":
+    - "word": "图"
+      "base": "图"
+      "reading": "tú"
+- "id": "zh-1035"
+  "target": "方向"
+  "words":
+  - "方向"
+  "reading": "fāngxiàng"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "方向不对。"
+    "reading": "fāngxiàng bú duì."
+    "words":
+    - "方向"
+    - "不"
+    - "对"
+  - "target": "你走错方向了。"
+    "reading": "nǐ zǒu cuò fāngxiàng le."
+    "words":
+    - "你"
+    - "走"
+    - "错"
+    - "方向"
+    - "了"
+    "bases":
+    - "word": "错"
+      "ref": "zh-1954"
+    - "word": "了"
+      "base": "了"
+      "reading": "le"
+- "id": "zh-1036"
+  "target": "中心"
+  "words":
+  - "中心"
+  "reading": "zhōngxīn"
+  "pos": "noun"
+  "notes":
+  - "id": "n1"
+    "kind": "note"
+  "bases": "self"
+  "examples":
+  - "target": "市中心很热闹。"
+    "reading": "shìzhōngxīn hěn rènao."
+    "words":
+    - "市中心"
+    - "很"
+    - "热闹"
+    "bases":
+    - "word": "市中心"
+      "base": "市中心"
+      "reading": "shìzhōngxīn"
+  - "target": "学校在城市的中心。"
+    "reading": "xuéxiào zài chéngshì de zhōngxīn."
+    "words":
+    - "学校"
+    - "在"
+    - "城市"
+    - "的"
+    - "中心"
+    "bases":
+    - "word": "城市"
+      "ref": "zh-1135"
+    - "word": "的"
+      "base": "的"
+      "reading": "de"

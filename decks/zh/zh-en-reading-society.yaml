@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-society"
+"name": "Chinese reading: society"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+    - "han_simplified"
+    - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "zh-survey-results"
+    "title": "Results of a survey"
+    "theme": "society"
+    "sentences":
+      - "text": "这次 调查 的 对象 是 城市 居民。"
+        "reading": "zhè cì diàochá de duìxiàng shì chéngshì jūmín."
+      - "text": "大部分 人 说， 工作 和 家庭 都 很 重要。"
+        "reading": "dàbùfen rén shuō, gōngzuò hé jiātíng dōu hěn zhòngyào."
+      - "text": "年轻人 中 有 更 多 的 人 参与 志愿 活动。"
+        "reading": "niánqīngrén zhōng yǒu gèng duō de rén cānyù zhìyuàn huódòng."
+      - "text": "调查 的 结果 显示， 老年人 的 比例 在 增长。"
+        "reading": "diàochá de jiéguǒ xiǎnshì, lǎoniánrén de bǐlì zài zēngzhǎng."
+    "questions":
+      - "id": "zh-4579"
+        "prompt":
+          "en": "Which word means 'survey' in the passage?"
+        "options":
+          - "en": "调查 (diàochá)"
+          - "en": "统计 (tǒngjì)"
+        "answer": 1
+      - "id": "zh-4580"
+        "prompt":
+          "en": "Which word means 'proportion'?"
+        "options":
+          - "en": "比例 (bǐlì)"
+          - "en": "差异 (chāyì)"
+        "answer": 1
+      - "id": "zh-4581"
+        "prompt":
+          "en": "The survey found that the share of older people is going up."
+        "answer": true
+  - "id": "zh-village-letter"
+    "title": "A letter from a village"
+    "theme": "society"
+    "sentences":
+      - "text": "我们 家 住在 一个 小 村庄 里。"
+        "reading": "wǒmen jiā zhùzài yí ge xiǎo cūnzhuāng lǐ."
+      - "text": "我 的 儿子 去 城里 工作 了。"
+        "reading": "wǒ de érzi qù chénglǐ gōngzuò le."
+      - "text": "城里 的 生活 很 方便， 但 房价 很 高。"
+        "reading": "chénglǐ de shēnghuó hěn fāngbiàn, dàn fángjià hěn gāo."
+      - "text": "我们 希望 他 能 在 城里 找到 好 的 机会。"
+        "reading": "wǒmen xīwàng tā néng zài chénglǐ zhǎodào hǎo de jīhuì."
+    "questions":
+      - "id": "zh-4582"
+        "prompt":
+          "en": "Which word means 'village'?"
+        "options":
+          - "en": "村庄 (cūnzhuāng)"
+          - "en": "城市 (chéngshì)"
+        "answer": 1
+      - "id": "zh-4583"
+        "prompt":
+          "en": "Which word means 'opportunity'?"
+        "options":
+          - "en": "机会 (jīhuì)"
+          - "en": "改革 (gǎigé)"
+        "answer": 1
+      - "id": "zh-4584"
+        "prompt":
+          "en": "The family's son has moved to the city for work."
+        "answer": true

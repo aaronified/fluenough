@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-travel"
+"name": "Chinese reading: travel"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-hotel-booking"
+  "title": "Hotel booking"
+  "theme": "travel"
+  "sentences":
+  - "text": "你好， 我 要 订 一 个 房间。"
+    "reading": "nǐhǎo, wǒ yào dìng yí ge fángjiān."
+  - "text": "房费 多少 钱？"
+    "reading": "fángfèi duōshao qián?"
+  - "text": "房间 很 安静， 而且 有 景色。"
+    "reading": "fángjiān hěn ānjìng, érqiě yǒu jǐngsè."
+  - "text": "请 给 我 一 张 地图。"
+    "reading": "qǐng gěi wǒ yì zhāng dìtú."
+  "questions":
+  - "id": "zh-3211"
+    "prompt":
+      "en": "房费 (fángfèi) means:"
+    "options":
+    - "en": "room charge"
+    - "en": "room number"
+    "answer": 1
+  - "id": "zh-3212"
+    "prompt":
+      "en": "The guest wants a room with a view."
+    "answer": true
+  - "id": "zh-3213"
+    "prompt":
+      "en": "订 (dìng) means:"
+    "options":
+    - "en": "to book"
+    - "en": "to cancel"
+    "answer": 1
+- "id": "zh-itinerary"
+  "title": "Itinerary"
+  "theme": "travel"
+  "sentences":
+  - "text": "第 一 天： 早上 去 植物园， 下午 去 美术馆。"
+    "reading": "dì yī tiān: zǎoshang qù zhíwùyuán, xiàwǔ qù měishùguǎn."
+  - "text": "第 二 天： 坐 火车 去 海岛。"
+    "reading": "dì èr tiān: zuò huǒchē qù hǎidǎo."
+  - "text": "第 三 天： 晚上 去 夜市。"
+    "reading": "dì sān tiān: wǎnshang qù yèshì."
+  - "text": "请 注意 安全。"
+    "reading": "qǐng zhùyì ānquán."
+  "questions":
+  - "id": "zh-3214"
+    "prompt":
+      "en": "美术馆 (měishùguǎn) means:"
+    "options":
+    - "en": "art gallery"
+    - "en": "museum of history"
+    "answer": 1
+  - "id": "zh-3215"
+    "prompt":
+      "en": "The itinerary goes to the island on the second day."
+    "answer": true
+  - "id": "zh-3216"
+    "prompt":
+      "en": "夜市 (yèshì) means:"
+    "options":
+    - "en": "night market"
+    - "en": "morning market"
+    "answer": 1

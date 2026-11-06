@@ -1,0 +1,29 @@
+"schema": 1
+"id": "zh-en-grammar-le-change-of-state"
+"kind": "layer"
+"core": "zh-grammar-le-change-of-state"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "了 (le) at the end: it has changed"
+"license": "CC-BY-SA-4.0"
+"description": "Sentence-final 了 (le) for a change of state, and 不 (bù) ... 了 (le) for no longer. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "了 (le) at the end: it has changed"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "state": "a plain description"
+    "change": "with 了 (le) at the end: it has become so now"
+    "no-longer": "with 不 (bù) before and 了 (le) at the end: it is no longer so"
+  "entries":
+    "leng": "cold (weather)"
+    "re": "hot (weather)"
+    "e": "hungry"
+    "ke": "thirsty"
+    "lei": "tired"
+    "xiang": "to want to"
+  "notes": "了 (le) at the end of a sentence says the situation has changed: 天冷了 (tiān lěng le), it has got cold, which it was not before. To say a state has stopped, put 不 (bù) before the word and 了 (le) at the end: 我不想喝水了 (wǒ bù xiǎng hē shuǐ le), I no longer want water. This is not the 了 (le) that comes straight after a verb to say an action is finished. For 'no longer', do not use 没 (méi): never 我没饿了 (wǒ méi è le). A plain description of a state takes 很 (hěn), as in 天很冷 (tiān hěn lěng); a change drops it: 天冷了 (tiān lěng le)."

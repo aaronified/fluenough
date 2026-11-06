@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-food-culture"
+"name": "Chinese reading: food culture"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+    - "han_simplified"
+    - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "zh-regional-cuisines"
+    "title": "A short article on regional cuisines"
+    "theme": "food-culture"
+    "sentences":
+      - "text": "中国 有 很多 菜系， 每 一 个 都 有 自己 的 特色。"
+        "reading": "Zhōngguó yǒu hěnduō càixì, měi yí ge dōu yǒu zìjǐ de tèsè."
+      - "text": "川菜 很 辣， 粤菜 比较 清淡。"
+        "reading": "chuāncài hěn là, yuècài bǐjiào qīngdàn."
+      - "text": "北方 人 常 吃 面食， 南方 人 常 吃 米饭。"
+        "reading": "běifāng rén cháng chī miànshí, nánfāng rén cháng chī mǐfàn."
+      - "text": "这些 菜系 的 做法 和 口味 都 不 一样。"
+        "reading": "zhèxiē càixì de zuòfǎ hé kǒuwèi dōu bù yíyàng."
+    "questions":
+      - "id": "zh-4707"
+        "prompt":
+          "en": "Which word means 'regional cuisine'?"
+        "options":
+          - "en": "菜系 (càixì)"
+          - "en": "饮食 (yǐnshí)"
+        "answer": 1
+      - "id": "zh-4708"
+        "prompt":
+          "en": "Which word means 'taste'?"
+        "options":
+          - "en": "口味 (kǒuwèi)"
+          - "en": "做法 (zuòfǎ)"
+        "answer": 1
+      - "id": "zh-4709"
+        "prompt":
+          "en": "Sichuan food is spicy."
+        "answer": true
+  - "id": "zh-tea-house-visit"
+    "title": "A morning at the teahouse"
+    "theme": "food-culture"
+    "sentences":
+      - "text": "周末 早上， 我 和 朋友 去 茶馆 饮茶。"
+        "reading": "zhōumò zǎoshang, wǒ hé péngyou qù cháguǎn yǐnchá."
+      - "text": "我们 点 了 几 样 点心， 有 春卷 和 包子。"
+        "reading": "wǒmen diǎn le jǐ yàng diǎnxin, yǒu chūnjuǎn hé bāozi."
+      - "text": "茶 很 香， 点心 也 很 好吃。"
+        "reading": "chá hěn xiāng, diǎnxin yě hěn hǎochī."
+      - "text": "我 觉得 这 家 茶馆 的 气氛 很 地道。"
+        "reading": "wǒ juéde zhè jiā cháguǎn de qìfēn hěn dìdao."
+    "questions":
+      - "id": "zh-4710"
+        "prompt":
+          "en": "Which word means 'teahouse'?"
+        "options":
+          - "en": "茶馆 (cháguǎn)"
+          - "en": "餐具 (cānjù)"
+        "answer": 1
+      - "id": "zh-4711"
+        "prompt":
+          "en": "Which word means 'snack'?"
+        "options":
+          - "en": "点心 (diǎnxin)"
+          - "en": "材料 (cáiliào)"
+        "answer": 1
+      - "id": "zh-4712"
+        "prompt":
+          "en": "They ate only sweet food at the teahouse."
+        "answer": false

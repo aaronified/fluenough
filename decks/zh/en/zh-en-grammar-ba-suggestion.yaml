@@ -1,0 +1,29 @@
+"schema": 1
+"id": "zh-en-grammar-ba-suggestion"
+"kind": "layer"
+"core": "zh-grammar-ba-suggestion"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "吧 (ba): let us, a suggestion"
+"license": "CC-BY-SA-4.0"
+"description": "Suggestions with 吧 (ba) at the end: let us go, shall we eat? 吧 (ba) makes a suggestion; 吗 (ma) makes a question. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "吧 (ba): let us, a suggestion"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "bare": "a plain statement"
+    "suggest": "a suggestion, with 吧 (ba)"
+    "question": "a question, with 吗 (ma)"
+  "entries":
+    "qu": "to go"
+    "chi": "to eat"
+    "he": "to drink"
+    "xiuxi": "to rest"
+    "zou": "to leave; to walk"
+    "xuexi": "to study"
+  "notes": "吧 (ba) at the end of a sentence makes a suggestion, a way of saying let us: 我们去学校吧 (wǒmen qù xuéxiào ba), let us go to school. It is said with a soft, neutral tone, so it has no tone mark. 吗 (ma) at the end makes a question, shall we go?: 我们去学校吗 (wǒmen qù xuéxiào ma). Do not use both at once."

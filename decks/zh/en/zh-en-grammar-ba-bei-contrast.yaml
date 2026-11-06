@@ -1,0 +1,26 @@
+"schema": 1
+"id": "zh-en-grammar-ba-bei-contrast"
+"kind": "layer"
+"core": "zh-grammar-ba-bei-contrast"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "把 (bǎ) and 被 (bèi): the same event from two sides"
+"license": "CC-BY-SA-4.0"
+"description": "把 (bǎ) and 被 (bèi) can describe the same event from two sides: 他把书拿走了 (he took the book away) and 书被他拿走了 (the book was taken away by him). Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "把 (bǎ) and 被 (bèi): the same event from two sides"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "ba": "把 (bǎ): the doer is the subject, the object comes before the verb"
+    "bei": "被 (bèi): the object is the subject, the doer comes after 被 (bèi)"
+    "neutral": "a neutral statement with no marker"
+  "entries":
+    "nazou": "to take away"
+    "guanshang2": "to close up"
+    "xiehao2": "to write well"
+  "notes": "把 (bǎ) and 被 (bèi) both move the object before the verb, but the viewpoint is different: 把 (bǎ) names the doer as the subject, 被 (bèi) names the object as the subject. Use 把 (bǎ) to say what someone did; use 被 (bèi) when the thing that was affected is the focus."

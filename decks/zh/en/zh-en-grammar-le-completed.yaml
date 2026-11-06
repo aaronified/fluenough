@@ -1,0 +1,31 @@
+"schema": 1
+"id": "zh-en-grammar-le-completed"
+"kind": "layer"
+"core": "zh-grammar-le-completed"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "了 (le): a finished action"
+"license": "CC-BY-SA-4.0"
+"description": "Finished actions with 了 (le) after the verb, and not done with 没 (méi): I bought a book, I did not buy one. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "了 (le): a finished action"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "bare": "a plain statement, no 了 (le)"
+    "done": "a finished action, with 了 (le)"
+    "not": "not done, with 没 (méi)"
+  "entries":
+    "chi": "to eat"
+    "mai": "to buy"
+    "he": "to drink"
+    "kan": "to read"
+    "xie": "to write"
+    "zuo": "to do; to make"
+    "qu": "to go"
+    "lai": "to come"
+  "notes": "了 (le) comes after the verb, and before its object: 我买了书 (wǒ mǎi le shū), I bought a book. To say an action was not done, put 没 (méi) before the verb and leave 了 (le) out: 我没买书 (wǒ méi mǎi shū), I did not buy a book. 了 (le) shows that an action is finished, not that it was in the past: 我昨天买了书 (wǒ zuótiān mǎi le shū) is the usual way to say it, with the time first. 没 (méi) is said with a second tone, so it is written méi."

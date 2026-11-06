@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-yi-jiu"
+"kind": "layer"
+"core": "zh-grammar-yi-jiu"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "一 (yī) ... 就 (jiù): as soon as, then"
+"license": "CC-BY-SA-4.0"
+"description": "一 (yī) ... 就 (jiù) says that the second action follows as soon as the first happens: 一下课 (yí xiàkè)我就走 (wǒ jiù zǒu), as soon as class ends I leave. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "一 (yī) ... 就 (jiù): as soon as, then"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of two actions"
+    "yi-jiu": "一 (yī) before the first action, then 就 (jiù) before the second"
+    "yi-jiu-not": "一 (yī) with a negated first action, then 就 (jiù)"
+  "entries":
+    "xiake": "class ends"
+    "dao": "to arrive"
+    "qichuang": "to get up"
+    "xiayu": "to rain"
+  "notes": "一 (yī) with a verb, then 就 (jiù), says the second action follows at once: 一下课 (yí xiàkè)我就走 (wǒ jiù zǒu), as soon as class ends I leave. 一 (yī) is put before the first verb, and 就 (jiù) before the second. Use 一 (yī) only when the two actions follow each other closely."

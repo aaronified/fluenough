@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-housing"
+"name": "Chinese reading: housing"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-renting-a-flat"
+  "title": "Renting a flat"
+  "theme": "housing"
+  "sentences":
+  - "text": "请问， 这 套 公寓 的 租金 是 多少？"
+    "reading": "qǐngwèn, zhè tào gōngyù de zūjīn shì duōshao?"
+  - "text": "房间 很 大， 有 一 个 阳台 和 厨房。"
+    "reading": "fángjiān hěn dà, yǒu yí ge yángtái hé chúfáng."
+  - "text": "押金 是 一 个 月 的 租金。"
+    "reading": "yājīn shì yí ge yuè de zūjīn."
+  - "text": "我 想 今天 看 房， 可以 吗？"
+    "reading": "wǒ xiǎng jīntiān kàn fáng, kěyǐ ma?"
+  "questions":
+  - "id": "zh-4130"
+    "prompt":
+      "en": "押金 (yājīn) means:"
+    "options":
+    - "en": "deposit"
+    - "en": "rent"
+    "answer": 1
+  - "id": "zh-4131"
+    "prompt":
+      "en": "The flat has a balcony and a kitchen."
+    "answer": true
+  - "id": "zh-4132"
+    "prompt":
+      "en": "阳台 (yángtái) means:"
+    "options":
+    - "en": "balcony"
+    - "en": "bathroom"
+    "answer": 1
+- "id": "zh-rental-terms"
+  "title": "Rental terms"
+  "theme": "housing"
+  "sentences":
+  - "text": "租期 为 一 年， 押金 为 两 个 月 租金。"
+    "reading": "zūqī wéi yì nián, yājīn wéi liǎng ge yuè zūjīn."
+  - "text": "水费 和 电费 由 租客 支付。"
+    "reading": "shuǐfèi hé diànfèi yóu zūkè zhīfù."
+  - "text": "退房 前 要 打扫 房间。"
+    "reading": "tuìfáng qián yào dǎsǎo fángjiān."
+  - "text": "未经 房东 同意， 不 得 转租。"
+    "reading": "wèijīng fángdōng tóngyì, bù dé zhuǎnzū."
+  "questions":
+  - "id": "zh-4133"
+    "prompt":
+      "en": "租期 (zūqī) means:"
+    "options":
+    - "en": "rental period"
+    - "en": "rent money"
+    "answer": 1
+  - "id": "zh-4134"
+    "prompt":
+      "en": "The terms say the tenant must pay the water and electricity bills."
+    "answer": true
+  - "id": "zh-4135"
+    "prompt":
+      "en": "转租 (zhuǎnzū) means:"
+    "options":
+    - "en": "to sublet"
+    - "en": "to renew"
+    "answer": 1

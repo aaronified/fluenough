@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-qilai"
+"kind": "layer"
+"core": "zh-grammar-qilai"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "看起来 (kàn qǐlai): it looks or seems"
+"license": "CC-BY-SA-4.0"
+"description": "起来 (qǐlai) after a verb or adjective gives a judgement from what can be seen: 这个看起来很好 (zhè ge kàn qǐlai hěn hǎo), this looks good. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "看起来 (kàn qǐlai): it looks or seems"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "seems": "a judgement made from looking, with 看起来 (kàn qǐlai) before it"
+    "seems-not": "the same judgement with 不 (bù) before the adjective"
+  "entries":
+    "hao": "good"
+    "lei": "tired"
+    "gui": "expensive"
+    "mang": "busy"
+  "notes": "起来 (qǐlai) after an adjective or a verb gives a judgement from what can be seen or heard: 这个看起来很好 (zhè ge kàn qǐlai hěn hǎo), this looks good. 看起来 (kàn qǐlai) is the usual form. Put 不 (bù) before the adjective to say it does not look so: 看起来不太好 (kàn qǐlai bú tài hǎo), it does not look very good. The judgement is a guess, not a fact."

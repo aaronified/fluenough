@@ -1,0 +1,28 @@
+"schema": 1
+"id": "zh-en-grammar-degree-complement"
+"kind": "layer"
+"core": "zh-grammar-degree-complement"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "得 (de): how well it is done"
+"license": "CC-BY-SA-4.0"
+"description": "How well or how fast something is done: the verb, then 得 (de), then the description, such as 很快 (hěn kuài). Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "得 (de): how well it is done"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "degree": "how it is done, with 得 (de)"
+    "not-degree": "how it is not done well, with 得 (de) and 不 (bù)"
+  "entries":
+    "pao": "to run"
+    "xie": "to write"
+    "zuo": "to do; to make"
+    "chi": "to eat"
+    "zou": "to walk"
+  "notes": "得 (de) goes after the verb, and then the description: 他跑得很快 (tā pǎo de hěn kuài), he runs very fast. The object goes before the verb, and the verb is said again if there is one: 他写字写得很好 (tā xiě zì xiě de hěn hǎo). To say it is not done well, put 不 (bù) before the description: 他写得不好 (tā xiě de bù hǎo). 不 (bù) is bú before a fourth tone, as in 不快 (bú kuài). 得 (de) is said in a neutral tone, so it has no tone mark."

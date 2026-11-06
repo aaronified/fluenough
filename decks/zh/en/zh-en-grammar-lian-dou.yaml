@@ -1,0 +1,27 @@
+"schema": 1
+"id": "zh-en-grammar-lian-dou"
+"kind": "layer"
+"core": "zh-grammar-lian-dou"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "连 (lián) ... 都 (dōu): even"
+"license": "CC-BY-SA-4.0"
+"description": "连 (lián) ... 都 (dōu) says even the smallest thing is included: 我连一个字都不认识 (wǒ lián yí ge zì dōu bú rènshi), I do not know even one character. The thing after 连 (lián) is the one that is surprising. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "连 (lián) ... 都 (dōu): even"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "lian": "连 (lián) before the smallest thing, then 都 (dōu) before the verb"
+    "lian-not": "连 (lián) before the thing, 都 (dōu) and 不 (bù) before the verb"
+  "entries":
+    "renshi": "to know"
+    "zhidao": "to know"
+    "chi": "to eat"
+    "shuo": "to say"
+  "notes": "连 (lián) puts the smallest or most surprising thing in front, and 都 (dōu) comes before the verb: 我连一个字都不认识 (wǒ lián yí ge zì dōu bú rènshi), I do not know even one character. The thing after 连 (lián) can be a person, a thing or a number. 也 (yě) can replace 都 (dōu) in the same way, as in 连他也来了 (lián tā yě lái le), even he came. Use 都 (dōu) with a negative, and do not put 不 (bù) before 连 (lián)."

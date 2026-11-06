@@ -1,0 +1,29 @@
+"schema": 1
+"id": "zh-en-grammar-de-relative-clause"
+"kind": "layer"
+"core": "zh-grammar-de-relative-clause"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "的 (de) after a clause: the thing that was done"
+"license": "CC-BY-SA-4.0"
+"description": "A clause before 的 (de) describes the noun that follows it: 我买的书 (wǒ mǎi de shū), the book that I bought. The clause is like a sentence with the noun left out at the end. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "的 (de) after a clause: the thing that was done"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement of the action"
+    "relative": "the clause before 的 (de), then the noun"
+    "predicate": "the noun with 的 (de) at the end, in a statement"
+  "entries":
+    "mai": "to buy"
+    "xie": "to write"
+    "zuo": "to make"
+    "renshi": "to know"
+    "qu": "to go"
+    "chi": "to eat"
+  "notes": "A clause before 的 (de) describes the noun after it: 我买的书 (wǒ mǎi de shū), the book I bought; 他写的信 (tā xiě de xìn), the letter he wrote. The verb keeps its normal form, and 了 (le) is dropped when the clause describes a noun. In a statement, the noun can be left at the end: 这是我买的书 (zhè shì wǒ mǎi de shū), this is the book I bought. Use 过 (guo) for have done before: 我去过的地方 (wǒ qù guo de dìfang), the places I have been to."

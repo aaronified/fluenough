@@ -1,0 +1,29 @@
+"schema": 1
+"id": "zh-en-grammar-result-complement"
+"kind": "layer"
+"core": "zh-grammar-result-complement"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "完 (wán), 懂 (dǒng), 到 (dào), 好 (hǎo): the result of an action"
+"license": "CC-BY-SA-4.0"
+"description": "The result of an action: a word after the verb, such as 完 (wán) for finished, 懂 (dǒng) for understood, 到 (dào) for reached, and 好 (hǎo) for done well. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "完 (wán), 懂 (dǒng), 到 (dào), 好 (hǎo): the result of an action"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "result": "the action ends with a result word after the verb"
+    "not-result": "the result is not reached, with 没 (méi) before the verb"
+  "entries":
+    "chi": "to eat"
+    "xie": "to write"
+    "ting": "to listen"
+    "kan": "to read; to look"
+    "zhao": "to look for"
+    "zuo": "to do; to make"
+  "notes": "A result word goes straight after the verb: 吃完 (chī wán), to finish eating; 听懂 (tīng dǒng), to understand by listening; 找到 (zhǎo dào), to find; 做好 (zuò hǎo), to make well. 我吃完饭 (wǒ chī wán fàn) says I finished the meal. To say the result was not reached, put 没 (méi) before the verb: 我没找到钥匙 (wǒ méi zhǎo dào yàoshi), I did not find the keys. 没 (méi) is said with a second tone. Do not add 了 (le) to this kind of sentence unless the action is done."

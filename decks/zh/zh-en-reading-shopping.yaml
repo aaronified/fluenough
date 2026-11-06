@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-shopping"
+"name": "Chinese reading: shopping"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-asking-the-price"
+  "title": "Asking the price"
+  "theme": "shopping"
+  "sentences":
+  - "text": "这 件 衣服 多少 钱？"
+    "reading": "zhè jiàn yīfu duōshao qián?"
+  - "text": "太 贵 了， 能 便宜 一点 吗？"
+    "reading": "tài guì le, néng piányi yìdiǎn ma?"
+  - "text": "可以， 八十 块。"
+    "reading": "kěyǐ, bāshí kuài."
+  - "text": "好 吧， 我 买 了。"
+    "reading": "hǎo ba, wǒ mǎi le."
+  "questions":
+  - "id": "zh-1767"
+    "prompt":
+      "en": "八十 块 (bāshí kuài) means:"
+    "options":
+    - "en": "eight yuan"
+    - "en": "eighty yuan"
+    "answer": 2
+  - "id": "zh-1768"
+    "prompt":
+      "en": "能 便宜 一点 吗 (néng piányi yìdiǎn ma) asks if the price can be lower."
+    "answer": true
+  - "id": "zh-1769"
+    "prompt":
+      "en": "我 买 了 (wǒ mǎi le) means:"
+    "options":
+    - "en": "I have bought it"
+    - "en": "I will not buy it"
+    "answer": 1
+- "id": "zh-receipt"
+  "title": "A receipt"
+  "theme": "shopping"
+  "sentences":
+  - "text": "收据 上 有 总价。"
+    "reading": "shōujù shàng yǒu zǒngjià."
+  - "text": "付款： 现金 或者 信用卡。"
+    "reading": "fùkuǎn: xiànjīn huòzhě xìnyòngkǎ."
+  - "text": "谢谢 光临！"
+    "reading": "xièxie guānglín!"
+  - "text": "欢迎 下次 再 来。"
+    "reading": "huānyíng xiàcì zài lái."
+  "questions":
+  - "id": "zh-1770"
+    "prompt":
+      "en": "收据 (shōujù) is:"
+    "options":
+    - "en": "a receipt"
+    - "en": "a price tag"
+    "answer": 1
+  - "id": "zh-1771"
+    "prompt":
+      "en": "The receipt says you can pay with 现金 (xiànjīn) or 信用卡 (xìnyòngkǎ)."
+    "answer": true
+  - "id": "zh-1772"
+    "prompt":
+      "en": "欢迎 下次 再 来 (huānyíng xiàcì zài lái) means:"
+    "options":
+    - "en": "please come again next time"
+    - "en": "please do not come back"
+    "answer": 1

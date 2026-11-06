@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-news"
+"name": "Chinese reading: news"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-radio-news"
+  "title": "Radio news"
+  "theme": "news"
+  "sentences":
+  - "text": "这里 是 广播 新闻。"
+    "reading": "zhèli shì guǎngbō xīnwén."
+  - "text": "今天 政府 公布 了 新 的 政策。"
+    "reading": "jīntiān zhèngfǔ gōngbù le xīn de zhèngcè."
+  - "text": "专家 说 经济 会 增长。"
+    "reading": "zhuānjiā shuō jīngjì huì zēngzhǎng."
+  - "text": "明天 我们 有 直播 节目。"
+    "reading": "míngtiān wǒmen yǒu zhíbō jiémù."
+  "questions":
+  - "id": "zh-3030"
+    "prompt":
+      "en": "广播 (guǎngbō) means:"
+    "options":
+    - "en": "radio broadcast"
+    - "en": "newspaper"
+    "answer": 1
+  - "id": "zh-3031"
+    "prompt":
+      "en": "The report says the economy will grow."
+    "answer": true
+  - "id": "zh-3032"
+    "prompt":
+      "en": "直播 (zhíbō) means:"
+    "options":
+    - "en": "recorded"
+    - "en": "live broadcast"
+    "answer": 2
+- "id": "zh-headline-list"
+  "title": "Headline list"
+  "theme": "news"
+  "sentences":
+  - "text": "头条： 选举 结果 公布。"
+    "reading": "tóutiáo: xuǎnjǔ jiéguǒ gōngbù."
+  - "text": "标题： 科技 创新 很 快。"
+    "reading": "biāotí: kējì chuàngxīn hěn kuài."
+  - "text": "记者 报道 了 一 起 事故。"
+    "reading": "jìzhě bàodào le yì qǐ shìgù."
+  - "text": "读者 很 关心 疫情。"
+    "reading": "dúzhě hěn guānxīn yìqíng."
+  "questions":
+  - "id": "zh-3033"
+    "prompt":
+      "en": "头条 (tóutiáo) means:"
+    "options":
+    - "en": "front-page story"
+    - "en": "editor"
+    "answer": 1
+  - "id": "zh-3034"
+    "prompt":
+      "en": "The list says the accident was small."
+    "answer": false
+  - "id": "zh-3035"
+    "prompt":
+      "en": "疫情 (yìqíng) means:"
+    "options":
+    - "en": "epidemic situation"
+    - "en": "election"
+    "answer": 1

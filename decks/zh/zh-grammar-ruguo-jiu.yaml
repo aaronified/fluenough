@@ -1,0 +1,69 @@
+"schema": 1
+"id": "zh-grammar-ruguo-jiu"
+"part": "core"
+"kind": "grammar"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"license": "CC-BY-SA-4.0"
+"tags":
+- "beginner"
+- "grammar"
+- "unreviewed"
+"pattern":
+  "slots":
+  - "plain"
+  - "if"
+  - "if-not"
+  "entries":
+  - "lemma": "下雨"
+    "key": "xiayu"
+    "reading": "xiàyǔ"
+    "forms":
+      "plain": "下雨我不去"
+      "if": "如果下雨，我就不去"
+      "if-not": "如果不下雨，我就去"
+    "readings":
+      "plain": "xiàyǔ wǒ bú qù"
+      "if": "rúguǒ xiàyǔ, wǒ jiù bú qù"
+      "if-not": "rúguǒ bú xiàyǔ, wǒ jiù qù"
+  - "lemma": "有时间"
+    "key": "youshijian"
+    "reading": "yǒu shíjiān"
+    "forms":
+      "plain": "有时间我去"
+      "if": "如果有时间，我就去"
+      "if-not": "如果没有时间，我就不去"
+    "readings":
+      "plain": "yǒu shíjiān wǒ qù"
+      "if": "rúguǒ yǒu shíjiān, wǒ jiù qù"
+      "if-not": "rúguǒ méiyǒu shíjiān, wǒ jiù bú qù"
+  - "lemma": "来"
+    "key": "lai"
+    "reading": "lái"
+    "forms":
+      "plain": "他来我就走"
+      "if": "如果他来，我就走"
+      "if-not": "如果他不来，我就留下"
+    "readings":
+      "plain": "tā lái wǒ jiù zǒu"
+      "if": "rúguǒ tā lái, wǒ jiù zǒu"
+      "if-not": "rúguǒ tā bù lái, wǒ jiù liúxià"
+  - "lemma": "及格"
+    "key": "jige"
+    "reading": "jígé"
+    "forms":
+      "plain": "考试及格我就高兴"
+      "if": "如果考试及格，我就高兴"
+      "if-not": "如果考试不及格，我就难过"
+    "readings":
+      "plain": "kǎoshì jígé wǒ jiù gāoxìng"
+      "if": "rúguǒ kǎoshì jígé, wǒ jiù gāoxìng"
+      "if-not": "rúguǒ kǎoshì bù jígé, wǒ jiù nánguò"

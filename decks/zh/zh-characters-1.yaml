@@ -1,4 +1,4 @@
-schema: 1
+"schema": 1
 "id": "zh-characters-1"
 "part": "core"
 "kind": "vocab"
@@ -28,7 +28,8 @@ schema: 1
   - "id": "n1"
     "kind": "note"
   "antonyms":
-  - { "id": "small", "ref": "zh-0244" }
+  - "id": "small"
+    "ref": "zh-0244"
   "bases": "self"
   "examples":
   - "target": "这很大吗？"
@@ -39,7 +40,9 @@ schema: 1
     - "大"
     - "吗"
     "bases":
-    - { "word": "这", "base": "这", "reading": "zhè" }
+    - "word": "这"
+      "base": "这"
+      "reading": "zhè"
   - "target": "房子很大。"
     "reading": "fángzi hěn dà."
     "words":
@@ -47,7 +50,8 @@ schema: 1
     - "很"
     - "大"
     "bases":
-    - { "word": "房子", "base": "房子", "reading": "fángzi" }
+    - "word": "房子"
+      "ref": "zh-1144"
 - "id": "zh-0244"
   "target": "小"
   "words":
@@ -58,7 +62,8 @@ schema: 1
   - "id": "n1"
     "kind": "note"
   "antonyms":
-  - { "id": "big", "ref": "zh-0243" }
+  - "id": "big"
+    "ref": "zh-0243"
   "bases": "self"
   "examples":
   - "target": "他很小。"
@@ -74,7 +79,9 @@ schema: 1
     - "很"
     - "小"
     "bases":
-    - { "word": "这", "base": "这", "reading": "zhè" }
+    - "word": "这"
+      "base": "这"
+      "reading": "zhè"
 - "id": "zh-0245"
   "target": "们"
   "words":
@@ -93,7 +100,8 @@ schema: 1
     - "很"
     - "好"
     "bases":
-    - { "word": "我们", "ref": "zh-0157" }
+    - "word": "我们"
+      "ref": "zh-0157"
   - "target": "你们很好吗？"
     "reading": "nǐmen hěn hǎo ma?"
     "words":
@@ -102,7 +110,8 @@ schema: 1
     - "好"
     - "吗"
     "bases":
-    - { "word": "你们", "ref": "zh-0158" }
+    - "word": "你们"
+      "ref": "zh-0158"
 - "id": "zh-0246"
   "target": "千"
   "words":
@@ -171,7 +180,9 @@ schema: 1
     - "很"
     - "大"
     "bases":
-    - { "word": "中国", "base": "中国", "reading": "zhōngguó" }
+    - "word": "中国"
+      "base": "中国"
+      "reading": "zhōngguó"
   - "target": "国很大吗？"
     "reading": "guó hěn dà ma?"
     "words":
@@ -197,7 +208,9 @@ schema: 1
     - "学"
     - "中文"
     "bases":
-    - { "word": "中文", "base": "中文", "reading": "Zhōngwén" }
+    - "word": "中文"
+      "base": "中文"
+      "reading": "Zhōngwén"
   - "target": "你学中文吗？"
     "reading": "nǐ xué Zhōngwén ma?"
     "words":
@@ -206,7 +219,9 @@ schema: 1
     - "中文"
     - "吗"
     "bases":
-    - { "word": "中文", "base": "中文", "reading": "Zhōngwén" }
+    - "word": "中文"
+      "base": "中文"
+      "reading": "Zhōngwén"
 - "id": "zh-0250"
   "target": "生"
   "words":
@@ -225,7 +240,9 @@ schema: 1
     - "是"
     - "学生"
     "bases":
-    - { "word": "学生", "base": "学生", "reading": "xuésheng" }
+    - "word": "学生"
+      "base": "学生"
+      "reading": "xuésheng"
   - "target": "学生很多。"
     "reading": "xuésheng hěn duō."
     "words":
@@ -233,7 +250,9 @@ schema: 1
     - "很"
     - "多"
     "bases":
-    - { "word": "学生", "base": "学生", "reading": "xuésheng" }
+    - "word": "学生"
+      "base": "学生"
+      "reading": "xuésheng"
 - "id": "zh-0251"
   "target": "师"
   "words":
@@ -252,7 +271,9 @@ schema: 1
     - "很"
     - "好"
     "bases":
-    - { "word": "老师", "base": "老师", "reading": "lǎoshī" }
+    - "word": "老师"
+      "base": "老师"
+      "reading": "lǎoshī"
   - "target": "他是老师吗？"
     "reading": "tā shì lǎoshī ma?"
     "words":
@@ -261,7 +282,9 @@ schema: 1
     - "老师"
     - "吗"
     "bases":
-    - { "word": "老师", "base": "老师", "reading": "lǎoshī" }
+    - "word": "老师"
+      "base": "老师"
+      "reading": "lǎoshī"
 - "id": "zh-0252"
   "target": "中"
   "words":
@@ -281,7 +304,9 @@ schema: 1
     - "中国人"
     - "吗"
     "bases":
-    - { "word": "中国人", "base": "中国人", "reading": "Zhōngguórén" }
+    - "word": "中国人"
+      "base": "中国人"
+      "reading": "Zhōngguórén"
   - "target": "中国人很多。"
     "reading": "Zhōngguórén hěn duō."
     "words":
@@ -289,4 +314,6 @@ schema: 1
     - "很"
     - "多"
     "bases":
-    - { "word": "中国人", "base": "中国人", "reading": "Zhōngguórén" }
+    - "word": "中国人"
+      "base": "中国人"
+      "reading": "Zhōngguórén"

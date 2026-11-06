@@ -1,0 +1,26 @@
+"schema": 1
+"id": "zh-en-grammar-direction-complement"
+"kind": "layer"
+"core": "zh-grammar-direction-complement"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "进 (jìn), 出 (chū), 下 (xià), 回 (huí): the direction of an action"
+"license": "CC-BY-SA-4.0"
+"description": "The direction an action goes: a word after the verb, such as 进 (jìn) into, 出 (chū) out, 下 (xià) down, or 回 (huí) back. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "进 (jìn), 出 (chū), 下 (xià), 回 (huí): the direction of an action"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "dir": "with a direction word after the verb"
+  "entries":
+    "zou": "to walk"
+    "pao": "to run"
+    "zuo": "to sit"
+    "hui": "to return"
+  "notes": "A direction word goes straight after the verb: 走进教室 (zǒujìn jiàoshì), walk into the classroom; 跑出教室 (pǎochū jiàoshì), run out of the classroom; 坐下 (zuòxià), sit down. The direction is the word that follows the verb, and the place comes after it. 进 (jìn) is into, 出 (chū) is out, 下 (xià) is down, and 回去 (huíqù) is back there."

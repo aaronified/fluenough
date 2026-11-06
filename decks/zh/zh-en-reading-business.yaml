@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-business"
+"name": "Chinese reading: business"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-a-business-call"
+  "title": "A business call"
+  "theme": "business"
+  "sentences":
+  - "text": "您好， 我 是 采购 部 的 王 经理。"
+    "reading": "nínhǎo, wǒ shì cǎigòu bù de wáng jīnglǐ."
+  - "text": "我们 想 订 一 批 货， 价格 可以 谈 吗？"
+    "reading": "wǒmen xiǎng dìng yì pī huò, jiàgé kěyǐ tán ma?"
+  - "text": "如果 量 大， 我们 可以 打 折。"
+    "reading": "rúguǒ liàng dà, wǒmen kěyǐ dǎzhé."
+  - "text": "请 把 合同 发 给 我 看 一下。"
+    "reading": "qǐng bǎ hétong fā gěi wǒ kàn yíxià."
+  "questions":
+  - "id": "zh-3532"
+    "prompt":
+      "en": "采购 (cǎigòu) means:"
+    "options":
+    - "en": "to purchase"
+    - "en": "to sell"
+    "answer": 1
+  - "id": "zh-3533"
+    "prompt":
+      "en": "The caller wants to talk about the price."
+    "answer": true
+  - "id": "zh-3534"
+    "prompt":
+      "en": "合同 (hétong) means:"
+    "options":
+    - "en": "contract"
+    - "en": "invoice"
+    "answer": 1
+- "id": "zh-business-email"
+  "title": "Business email"
+  "theme": "business"
+  "sentences":
+  - "text": "尊敬的 客户： 感谢 您 的 订单。"
+    "reading": "zūnjìng de kèhù: gǎnxiè nín de dìngdān."
+  - "text": "我们 会 尽快 发货， 预计 三 天 内 到 达。"
+    "reading": "wǒmen huì jǐnkuài fāhuò, yùjì sān tiān nèi dàodá."
+  - "text": "如有 问题， 请 及时 联系 我们。"
+    "reading": "rú yǒu wèntí, qǐng jíshí liánxì wǒmen."
+  - "text": "祝 您 生意 兴隆。"
+    "reading": "zhù nín shēngyi xīnglóng."
+  "questions":
+  - "id": "zh-3535"
+    "prompt":
+      "en": "订单 (dìngdān) means:"
+    "options":
+    - "en": "order"
+    - "en": "invoice"
+    "answer": 1
+  - "id": "zh-3536"
+    "prompt":
+      "en": "The email says the goods will arrive in ten days."
+    "answer": false
+  - "id": "zh-3537"
+    "prompt":
+      "en": "发货 (fāhuò) means:"
+    "options":
+    - "en": "to ship goods"
+    - "en": "to refund"
+    "answer": 1

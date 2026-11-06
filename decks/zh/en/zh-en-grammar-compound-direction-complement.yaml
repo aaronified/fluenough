@@ -1,0 +1,26 @@
+"schema": 1
+"id": "zh-en-grammar-compound-direction-complement"
+"kind": "layer"
+"core": "zh-grammar-compound-direction-complement"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "来 (lái) and 去 (qù) after a direction: towards or away"
+"license": "CC-BY-SA-4.0"
+"description": "A direction word and then 来 (lái) for towards the speaker, or 去 (qù) for away from the speaker. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "来 (lái) and 去 (qù) after a direction: towards or away"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "compound": "with 来 (lái) for towards the speaker, or 去 (qù) for away"
+  "entries":
+    "zou": "to walk"
+    "pao": "to run"
+    "na": "to take"
+    "hui": "to return"
+  "notes": "来 (lái) after the direction means towards the speaker, and 去 (qù) means away from the speaker: 我走进来 (wǒ zǒujìnlái), I walk in here; 他跑出去 (tā pǎochūqù), he runs out there. When there is an object, it goes between the direction and 来 (lái) or 去 (qù): 她拿出书来 (tā náchū shū lái), she takes the book out."

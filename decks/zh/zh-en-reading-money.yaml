@@ -1,0 +1,83 @@
+"schema": 1
+"id": "zh-en-reading-money"
+"name": "Chinese reading: money"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+    - "han_simplified"
+    - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+  - "beginner"
+  - "unreviewed"
+"passages":
+  - "id": "zh-bill-and-receipt"
+    "title": "A bill and a payment"
+    "theme": "money"
+    "sentences":
+      - "text": "这是 这个月 的 电费 账单。"
+        "reading": "zhè shì zhège yuè de diànfèi zhàngdān."
+      - "text": "一共 两百三十 块， 请 在 月底 以前 付款。"
+        "reading": "yígòng liǎngbǎi sānshí kuài, qǐng zài yuèdǐ yǐqián fùkuǎn."
+      - "text": "我 用 银行卡 付了 钱， 收据 在 这里。"
+        "reading": "wǒ yòng yínhángkǎ fùle qián, shōujù zài zhèlǐ."
+      - "text": "下个月 的 账单 会 更 便宜 吗？"
+        "reading": "xià ge yuè de zhàngdān huì gèng piányi ma?"
+    "questions":
+      - "id": "zh-4515"
+        "prompt":
+          "en": "How much is the bill in total?"
+        "options":
+          - "en": "两百三十块 (liǎngbǎi sānshí kuài)"
+          - "en": "三百二十块 (sānbǎi èrshí kuài)"
+        "answer": 1
+      - "id": "zh-4516"
+        "prompt":
+          "en": "Which word means 'bill'?"
+        "options":
+          - "en": "账单 (zhàngdān)"
+          - "en": "收据 (shōujù)"
+        "answer": 1
+      - "id": "zh-4517"
+        "prompt":
+          "en": "The writer paid with cash."
+        "answer": false
+  - "id": "zh-market-prices"
+    "title": "Prices at a market stall"
+    "theme": "money"
+    "sentences":
+      - "text": "这家 店 的 水果 很 贵， 苹果 一斤 十五 块。"
+        "reading": "zhè jiā diàn de shuǐguǒ hěn guì, píngguǒ yì jīn shíwǔ kuài."
+      - "text": "我 讲了 半天 价， 老板 最后 便宜 了 两 块。"
+        "reading": "wǒ jiǎngle bàntiān jià, lǎobǎn zuìhòu piányi le liǎng kuài."
+      - "text": "他 说 不 能 再 降 了， 因为 物价 涨 了。"
+        "reading": "tā shuō bù néng zài jiàng le, yīnwèi wùjià zhǎng le."
+      - "text": "我 只 买 了 一 斤， 付 了 现金。"
+        "reading": "wǒ zhǐ mǎi le yì jīn, fù le xiànjīn."
+    "questions":
+      - "id": "zh-4518"
+        "prompt":
+          "en": "Which word means 'cash'?"
+        "options":
+          - "en": "现金 (xiànjīn)"
+          - "en": "支票 (zhīpiào)"
+        "answer": 1
+      - "id": "zh-4519"
+        "prompt":
+          "en": "The shopkeeper lowered the price by two yuan."
+        "answer": true
+      - "id": "zh-4520"
+        "prompt":
+          "en": "The seller says prices have gone down."
+        "answer": false

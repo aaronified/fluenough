@@ -1,0 +1,26 @@
+"schema": 1
+"id": "zh-en-grammar-frequency-ci"
+"kind": "layer"
+"core": "zh-grammar-frequency-ci"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"name": "了 (le) with a count of times, 次 (cì): how many times"
+"license": "CC-BY-SA-4.0"
+"description": "How many times an action happened: the verb, then 了 (le), then a number with 次 (cì), such as 两次 (liǎng cì) twice. Not yet checked by a Mandarin speaker: please report any mistake."
+"tags":
+- "unreviewed"
+"pattern":
+  "name": "了 (le) with a count of times, 次 (cì): how many times"
+  "slot_name": "form"
+  "prompt": "{lemma} ({gloss}), {slot}"
+  "slots":
+    "plain": "a plain statement"
+    "times": "how many times, after the verb with 了 (le) and 次 (cì)"
+  "entries":
+    "qu": "to go"
+    "lai": "to come"
+    "kan": "to read"
+    "chi": "to eat"
+  "notes": "A count of times goes after the verb and 了 (le), with 次 (cì) after the number: 我去了两次北京 (wǒ qù le liǎng cì běijīng), I went to Beijing twice. Put 次 (cì) after the number, not before it: 两次 (liǎng cì), never 次两 (cì liǎng). The word for the thing done, if any, comes after the count."

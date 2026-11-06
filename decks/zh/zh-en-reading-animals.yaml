@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-animals"
+"name": "Chinese reading: animals"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-a-zoo-visit"
+  "title": "A zoo visit"
+  "theme": "animals"
+  "sentences":
+  - "text": "这 是 什么 动物？"
+    "reading": "zhè shì shénme dòngwù?"
+  - "text": "这 是 大象， 那 是 长颈鹿。"
+    "reading": "zhè shì dàxiàng, nà shì chángjǐnglù."
+  - "text": "一 只 熊猫， 两 只 猴子。"
+    "reading": "yì zhī xióngmāo, liǎng zhī hóuzi."
+  - "text": "它 吃 草 吗？"
+    "reading": "tā chī cǎo ma?"
+  "questions":
+  - "id": "zh-1561"
+    "prompt":
+      "en": "这 是 什么 动物 (zhè shì shénme dòngwù) asks:"
+    "options":
+    - "en": "where the zoo is"
+    - "en": "what animal this is"
+    "answer": 2
+  - "id": "zh-1562"
+    "prompt":
+      "en": "一只熊猫 (yì zhī xióngmāo) and 两只猴子 (liǎng zhī hóuzi) say there is one panda and two monkeys."
+    "answer": true
+  - "id": "zh-1563"
+    "prompt":
+      "en": "它 吃 草 吗 (tā chī cǎo ma) asks:"
+    "options":
+    - "en": "whether it eats grass"
+    - "en": "whether it can swim"
+    "answer": 1
+- "id": "zh-zoo-board"
+  "title": "A zoo board"
+  "theme": "animals"
+  "sentences":
+  - "text": "大象 吃 草。"
+    "reading": "dàxiàng chī cǎo."
+  - "text": "老虎 吃 肉。"
+    "reading": "lǎohǔ chī ròu."
+  - "text": "猴子 吃 香蕉。"
+    "reading": "hóuzi chī xiāngjiāo."
+  - "text": "请 不 要 喂 动物。"
+    "reading": "qǐng bú yào wèi dòngwù."
+  "questions":
+  - "id": "zh-1564"
+    "prompt":
+      "en": "大象 吃 草 (dàxiàng chī cǎo) means the elephant eats:"
+    "options":
+    - "en": "grass"
+    - "en": "meat"
+    "answer": 1
+  - "id": "zh-1565"
+    "prompt":
+      "en": "老虎 吃 肉 (lǎohǔ chī ròu) says the tiger eats meat."
+    "answer": true
+  - "id": "zh-1566"
+    "prompt":
+      "en": "请 不 要 喂 动物 (qǐng bú yào wèi dòngwù) means:"
+    "options":
+    - "en": "please do not feed the animals"
+    - "en": "please feed the animals"
+    "answer": 1

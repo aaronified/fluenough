@@ -1,0 +1,86 @@
+"schema": 1
+"id": "zh-en-reading-groceries"
+"name": "Chinese reading: groceries"
+"kind": "reading"
+"language":
+  "code": "zh"
+  "iso639_3": "cmn"
+  "name": "Mandarin Chinese"
+  "script": "han_simplified"
+  "scripts":
+  - "han_simplified"
+  - "han_traditional"
+  "tts": "zh-CN"
+  "icon": "中"
+"native":
+  "code": "en"
+  "iso639_3": "eng"
+  "name": "English"
+"license": "CC-BY-SA-4.0"
+"source": "Written for this course"
+"tags":
+- "beginner"
+- "unreviewed"
+"passages":
+- "id": "zh-shopping-list-aloud"
+  "title": "A shopping list"
+  "theme": "groceries"
+  "sentences":
+  - "text": "我们 去 超市 买 东西。"
+    "reading": "wǒmen qù chāoshì mǎi dōngxi."
+  - "text": "要 牛奶、面包、大米 和 鸡蛋。"
+    "reading": "yào niúnǎi, miànbāo, dàmǐ hé jīdàn."
+  - "text": "饼干 今天 打折。"
+    "reading": "bǐnggān jīntiān dǎzhé."
+  - "text": "糖 不 用 买 了。"
+    "reading": "táng bú yòng mǎi le."
+  "questions":
+  - "id": "zh-0870"
+    "prompt":
+      "en": "饼干 今天 打折 (bǐnggān jīntiān dǎzhé) means:"
+    "options":
+    - "en": "the biscuits are on sale today"
+    - "en": "the biscuits are free today"
+    "answer": 1
+  - "id": "zh-0871"
+    "prompt":
+      "en": "糖 不 用 买 了 (táng bú yòng mǎi le) says that the sugar does not need buying any more."
+    "answer": true
+  - "id": "zh-0872"
+    "prompt":
+      "en": "The list names 牛奶 (niúnǎi), 面包 (miànbāo), 大米 (dàmǐ) and 鸡蛋 (jīdàn):"
+    "options":
+    - "en": "milk, bread, rice and eggs"
+    - "en": "milk, bread, rice and meat"
+    "answer": 1
+- "id": "zh-shopping-list"
+  "title": "A handwritten shopping list"
+  "theme": "groceries"
+  "sentences":
+  - "text": "牛奶 两 瓶。"
+    "reading": "niúnǎi liǎng píng."
+  - "text": "面包 一 个。"
+    "reading": "miànbāo yí gè."
+  - "text": "糖 和 盐。"
+    "reading": "táng hé yán."
+  - "text": "饼干 打折。"
+    "reading": "bǐnggān dǎzhé."
+  "questions":
+  - "id": "zh-0873"
+    "prompt":
+      "en": "牛奶 两 瓶 (niúnǎi liǎng píng) means:"
+    "options":
+    - "en": "two bottles of milk"
+    - "en": "two cups of milk"
+    "answer": 1
+  - "id": "zh-0874"
+    "prompt":
+      "en": "糖 和 盐 (táng hé yán) on the list means the sugar and the salt."
+    "answer": true
+  - "id": "zh-0875"
+    "prompt":
+      "en": "饼干 打折 (bǐnggān dǎzhé) says the biscuits are:"
+    "options":
+    - "en": "on sale"
+    - "en": "sold out"
+    "answer": 1
