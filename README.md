@@ -157,7 +157,7 @@ below is written from `decks/index.json` each time the decks change.
 | Maithili | Indo-European | Indo-Aryan | Devanagari | in progress |
 | Malay | Austronesian | Malayo-Polynesian | Latin | in progress |
 | Malayalam | Dravidian | South | Malayalam | in progress |
-| Mandarin Chinese | Sino-Tibetan | Sinitic | Simplified Hanzi, Traditional Hanzi | in progress |
+| Mandarin Chinese | Sino-Tibetan | Sinitic | Simplified Hanzi, Traditional Hanzi | B1 |
 | Marathi | Indo-European | Indo-Aryan | Devanagari | B1 |
 | Middle English | Indo-European | Germanic | Latin | in progress |
 | Norwegian (Bokmål) | Indo-European | Germanic | Latin | in progress |
