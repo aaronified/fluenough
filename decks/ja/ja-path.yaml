@@ -701,7 +701,8 @@ units:
       - { id: "my-bike-was-stolen", text: { "en": "Telling the police your bike was stolen" } }
     reading_passages:
       - { id: "news-brief", text: { "en": "A short news item written in the passive" } }
-  - planned: { id: "ja-cinema", theme: "cinema", words: 50 }
+  - decks: ["ja-cinema", "ja-cinema-sentences", "ja-reading-cinema", "*"]
+    words: 50
     listening_passages:
       - { id: "after-the-film", text: { "en": "Friends talk about an animated film they saw" } }
     reading_passages:

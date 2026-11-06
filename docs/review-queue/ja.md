@@ -184,3 +184,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-3236 | business | Is りえき (profit) the word a learner needs, or should もうけ stand for it? | Haiku builder | 2026-11-06 |
 | ja-3307 | manners | Is ひじょうしき (unconventional) the natural word, or should 非常識 be given the sense of rude? | Haiku builder | 2026-11-06 |
 | ja-3382 | environment | Is ぼうさい (disaster prevention) the natural word, or should 防災 be shown with the more common 防災訓練? | Haiku builder | 2026-11-06 |
+| ja-3447 | cinema | Is ようが (a film recorded on disc) the natural word a learner needs, or should DVD stand? | Haiku builder | 2026-11-06 |
