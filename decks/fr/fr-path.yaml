@@ -353,7 +353,8 @@ units:
       - { id: "right-now", text: { "en": "Saying what people are doing right now on the phone: je suis en train de manger" } }
     reading_passages:
       - { id: "busy-messages", text: { "en": "Short messages saying what each person is in the middle of doing" } }
-  - planned: { id: "fr-calendar", theme: "calendar", words: 35 }
+  - decks: ["fr-calendar", "fr-calendar-sentences", "fr-reading-calendar", "*"]
+    words: 35
     listening_passages:
       - { id: "making-a-date", text: { "en": "Fixing a day and a time with a friend" } }
     reading_passages:
