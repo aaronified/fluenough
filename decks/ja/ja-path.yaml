@@ -487,7 +487,8 @@ units:
       - { id: "birthday-presents", text: { "en": "Saying who gave whom which birthday present" } }
     reading_passages:
       - { id: "thank-you-card", text: { "en": "A thank-you card for a present" } }
-  - planned: { id: "ja-illness", theme: "illness", words: 40 }
+  - decks: ["ja-illness", "ja-illness-sentences", "ja-reading-illness", "*"]
+    words: 40
     listening_passages:
       - { id: "a-cold-and-a-fever", text: { "en": "Telling a friend you have a cold and a fever" } }
     reading_passages:
