@@ -1,0 +1,59 @@
+schema: 1
+id: "ja-en-reading-verbs-3"
+name: "Japanese reading: verbs-3"
+kind: "reading"
+language: { code: "ja", iso639_3: "jpn", name: "Japanese", script: "kana", tts: "ja-JP" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+source: "Written for this course"
+tags: ["beginner", "unreviewed"]
+passages:
+  - id: "ja-verbs-3-1"
+    title: "Moving day"
+    sentences:
+      - { text: "わたしはまいにちがっこうにかよいます。", reading: "watashi wa mainichi gakkou ni kayoimasu." }
+      - { text: "ともだちはえきでわたしをむかえました。", reading: "tomodachi wa eki de watashi o mukaemashita." }
+      - { text: "あしたからはじまります。", reading: "ashita kara hajimarimasu." }
+      - { text: "わたしはともだちにあやまりました。", reading: "watashi wa tomodachi ni ayamarimashita." }
+    questions:
+      - id: "ja-2294"
+        prompt: { en: "Who met the writer at the station?" }
+        options:
+          - { en: "The friend" }
+          - { en: "The teacher" }
+          - { en: "The mother" }
+        answer: 1
+      - id: "ja-2295"
+        prompt: { en: "The writer goes to school every day." }
+        answer: true
+      - id: "ja-2296"
+        prompt: { en: "Which line says that the writer apologised?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 3
+  - id: "ja-verbs-3-2"
+    title: "Lost and found"
+    sentences:
+      - { text: "かぎがみつかりました。", reading: "kagi ga mitsukarimashita." }
+      - { text: "ねこはまだみつかりません。", reading: "neko wa mada mitsukarimasen." }
+      - { text: "ほんをいえにとどけてください。", reading: "hon o ie ni todokete kudasai." }
+      - { text: "ごはんはのこさないでください。", reading: "gohan wa nokosanaide kudasai." }
+    questions:
+      - id: "ja-2297"
+        prompt: { en: "Which line says the key was found?" }
+        options:
+          - { en: "The first line" }
+          - { en: "The second line" }
+        answer: 1
+      - id: "ja-2298"
+        prompt: { en: "The cat has been found." }
+        answer: false
+      - id: "ja-2299"
+        prompt: { en: "Which line asks someone to deliver a book?" }
+        options:
+          - { en: "The second line" }
+          - { en: "The third line" }
+          - { en: "The fourth line" }
+        answer: 2
