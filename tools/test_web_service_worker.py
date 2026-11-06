@@ -255,7 +255,9 @@ class BuiltOutputCheck(unittest.TestCase):
     def test_a_flutter_worker_that_caches_is_reported(self):
         with tempfile.TemporaryDirectory() as tmp:
             web = self.built(tmp)
-            (web / "flutter_service_worker.js").write_text("// stub: unregisters itself")
+            (web / "flutter_service_worker.js").write_text(
+                "self.registration.unregister(); self.addEventListener('install', () => {});"
+            )
             self.assertEqual(check_web_sw.check(web), [])
             (web / "flutter_service_worker.js").write_text("caches.open('x'); cache.addAll([])")
             self.assertIn("no longer a stub", " ".join(check_web_sw.check(web)))
