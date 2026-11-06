@@ -210,6 +210,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           ? l10n.languagesToastPhraseHear
           : l10n.languagesToastPhraseSpoken,
       state: _stateOf(next.spokenLevel),
+      mark: spokenMarkOf(
+        next.spokenLevel,
+        covered: next.spokenLevel.isKnow && _covers(),
+      ),
       toLearn: next.spokenLevel == SpokenLevel.learn,
     );
   }
@@ -232,6 +236,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           ? l10n.languagesToastPhraseRead(scriptName)
           : l10n.languagesToastPhraseScript(scriptName),
       state: _stateOf(next.scriptLevelOf(script)),
+      mark: scriptMarkOf(
+        next.scriptLevelOf(script),
+        covered: next.scriptLevelOf(script).isKnow && _covers(),
+      ),
       toLearn: next.scriptLevelOf(script) == ScriptLevel.learn,
     );
   }
@@ -249,6 +257,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       name: _view.name,
       skill: l10n.languagesToastPhraseGestures,
       state: level,
+      mark: markOf(level, covered: level == SkillState.know && _covers()),
       toLearn: level == SkillState.learn,
     );
   }
@@ -268,6 +277,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     required String name,
     required String skill,
     required SkillState state,
+    required SkillMark mark,
     required bool toLearn,
   }) async {
     final before = _skills;
@@ -293,6 +303,9 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           if (!keys.contains(e.key)) e.key: e.value,
       };
     });
+    // The pill has landed: the feel is the mark it now draws. A download
+    // cancelled above returns before this, and gives nothing.
+    _state.haptics.pill(mark);
     _toast(
       AppLocalizations.of(context)!
           .languagesToastSkill(name, skill, state.name),
@@ -564,6 +577,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     );
     typed.dispose();
     if (ok != true || !mounted) return;
+    _state.haptics.danger();
     var next = _skills;
     for (final key in _skills.held) {
       if (_skills.stateOf(key) == SkillState.learn) {

@@ -222,6 +222,25 @@ class AppearancePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
+              // Vibrate on touch (Plan-Haptics): its own block, live, and
+              // not drawn where the phone cannot vibrate.
+              if (state.haptics.available) ...<Widget>[
+                _Block(
+                  child: GroupedTile.toggle(
+                    leading: const Icon(Icons.vibration),
+                    title: l10n.appearanceHaptics,
+                    subtitleOn: l10n.appearanceHapticsOn,
+                    subtitleOff: l10n.appearanceHapticsOff,
+                    padding: const EdgeInsetsDirectional.symmetric(
+                      horizontal: 20,
+                      vertical: 16,
+                    ),
+                    value: settings.haptics,
+                    onChanged: (on) => settings.haptics = on,
+                  ),
+                ),
+                const SizedBox(height: 24),
+              ],
               // The language of the app's own words (owner, 2026-10-12): one
               // more row here, with no page of its own. Until #46 there is
               // only English, and no setting to hold another choice.

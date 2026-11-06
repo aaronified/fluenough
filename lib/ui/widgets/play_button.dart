@@ -93,6 +93,7 @@ class _PlayButtonState extends State<PlayButton> {
                   shape: const ExpressiveShapeBorder(ExpressiveShape.cookie),
                   clipBehavior: Clip.antiAlias,
                   child: InkWell(
+                    enableFeedback: false,
                     onTap: enabled ? _press : null,
                     onLongPress: longPress,
                     child: SizedBox.square(dimension: widget.size),

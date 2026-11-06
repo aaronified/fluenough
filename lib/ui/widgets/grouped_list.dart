@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
 import '../../app/features.dart';
 import '../card_text_scale.dart';
 import '../theme.dart';
@@ -303,30 +304,55 @@ class GroupedTile extends StatelessWidget {
 
     final toggle = _toggle;
     if (toggle != null) {
-      final change = toggle.onChanged;
+      final change = _felt(context, toggle.onChanged);
       return MergeSemantics(
         child: InkWell(
+          enableFeedback: false,
           onTap: change == null ? null : () => change(!toggle.value),
-          child: _row(context),
+          child: _row(context, change: change),
         ),
       );
     }
-    if (onTap != null) {
+    final open = onTap;
+    if (open != null) {
+      // The row's own haptic, after what it does (Plan-Haptics): a tap.
+      final haptics = AppScope.maybeRead(context)?.haptics;
       return MergeSemantics(
         child: Semantics(
           button: true,
           expanded: expanded,
-          child: InkWell(onTap: onTap, child: _row(context)),
+          child: InkWell(
+            enableFeedback: false,
+            onTap: () {
+              open();
+              haptics?.tap();
+            },
+            child: _row(context),
+          ),
         ),
       );
     }
     return _row(context, mergeText: true);
   }
 
+  /// A switch's [change], followed by the feel of the new value: pressed on,
+  /// a tap off. Taken after the change, so that the Vibrate on touch row
+  /// turning itself on is felt and turning itself off is not. The row and
+  /// its switch both go through it.
+  ValueChanged<bool>? _felt(BuildContext context, ValueChanged<bool>? change) {
+    if (change == null) return null;
+    final haptics = AppScope.maybeRead(context)?.haptics;
+    return (value) {
+      change(value);
+      haptics?.toggle(value);
+    };
+  }
+
   Widget _row(
     BuildContext context, {
     bool incoming = false,
     bool mergeText = false,
+    ValueChanged<bool>? change,
   }) {
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
@@ -367,10 +393,7 @@ class GroupedTile extends StatelessWidget {
 
     final toggle = _toggle;
     final Widget? end = toggle != null
-        ? Switch(
-            value: toggle.value,
-            onChanged: incoming ? null : toggle.onChanged,
-          )
+        ? Switch(value: toggle.value, onChanged: incoming ? null : change)
         : trailing;
 
     // With large text the text block is tall, and an icon centred on it

@@ -214,11 +214,20 @@ class _FluenoughAppState extends State<FluenoughApp>
 /// Caps the phone's text size at [AppSizes.maxTextScale] for everything
 /// under [MaterialApp]: every screen, sheet, dialog and the tab bar (#505).
 /// [MaterialApp.builder] for the app, and for the tests' harness.
-Widget capTextScale(BuildContext context, Widget? child) =>
-    MediaQuery.withClampedTextScaling(
-      maxScaleFactor: AppSizes.maxTextScale,
-      child: child ?? const SizedBox.shrink(),
-    );
+///
+/// Also tells the haptics whether a screen reader is on, which already
+/// vibrates for a touch (Plan-Haptics).
+Widget capTextScale(BuildContext context, Widget? child) {
+  AppScope.maybeRead(context)
+      ?.haptics
+      .screenReader = MediaQuery.accessibleNavigationOf(
+    context,
+  );
+  return MediaQuery.withClampedTextScaling(
+    maxScaleFactor: AppSizes.maxTextScale,
+    child: child ?? const SizedBox.shrink(),
+  );
+}
 
 /// The app once the first launch is done: [AppShell], or, while a language
 /// the learner learns has none of its first decks on the phone, the page
@@ -344,7 +353,11 @@ class AppShell extends StatelessWidget {
                 ),
                 bottomNavigationBar: NavigationBar(
                   selectedIndex: current.index,
-                  onDestinationSelected: (i) => tab.value = ShellTab.values[i],
+                  onDestinationSelected: (i) {
+                    final changed = tab.value.index != i;
+                    tab.value = ShellTab.values[i];
+                    if (changed) AppScope.read(context).haptics.select();
+                  },
                   destinations: <Widget>[
                     NavigationDestination(
                       icon: const Icon(Icons.home_outlined),

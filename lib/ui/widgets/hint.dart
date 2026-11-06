@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_scope.dart';
+
 /// A small hint that a long press (and, on web and desktop, a hover) shows
 /// over [child]: one word where one word is enough (#913). Wrap every
 /// tappable control that shows no text of its own in it, so a learner can
@@ -33,6 +35,10 @@ class Hint extends StatelessWidget {
     message: message,
     triggerMode: TooltipTriggerMode.longPress,
     excludeFromSemantics: excludeFromSemantics,
+    // Flutter's own long-press buzz is off (the theme says so) and the
+    // hint's own goes through the Vibrate on touch switch.
+    enableFeedback: false,
+    onTriggered: () => AppScope.maybeRead(context)?.haptics.longPress(),
     child: child,
   );
 }

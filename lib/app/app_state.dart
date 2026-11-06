@@ -7,6 +7,7 @@ import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
 import '../core/feedback/report.dart';
+import '../core/haptics/haptic.dart';
 import '../core/languages/language_skills.dart';
 import '../core/logs/log_entry.dart';
 import '../core/models/card.dart';
@@ -61,6 +62,7 @@ import 'deck_downloads.dart';
 import 'font_check.dart';
 import 'deck_import.dart';
 import 'features.dart';
+import 'haptics.dart';
 import 'language_choice.dart';
 import 'language_skills.dart';
 import 'links.dart';
@@ -198,6 +200,8 @@ class AppState extends ChangeNotifier {
     this.systemSettings = const NullSystemSettings(),
     WebInstall? webInstall,
     WallpaperSource wallpaperSource = const NullWallpaperSource(),
+    this._hapticEngine = const NullHapticEngine(),
+    this._hapticClock = DateTime.now,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     this.reports = const NullReportSender(),
     this._mailShare = const NullMailShare(),
@@ -353,6 +357,8 @@ class AppState extends ChangeNotifier {
     SystemSettings systemSettings = const NullSystemSettings(),
     WebInstall? webInstall,
     WallpaperSource wallpaperSource = const NullWallpaperSource(),
+    HapticEngine hapticEngine = const NullHapticEngine(),
+    DateTime Function()? hapticClock,
     ReminderScheduler reminderScheduler = const NullReminderScheduler(),
     ReportSender reports = const NullReportSender(),
     MailShare mailShare = const NullMailShare(),
@@ -393,6 +399,8 @@ class AppState extends ChangeNotifier {
       systemSettings: systemSettings,
       webInstall: webInstall,
       wallpaperSource: wallpaperSource,
+      hapticEngine: hapticEngine,
+      hapticClock: hapticClock ?? steppingClock(),
       reminderScheduler: reminderScheduler,
       reports: reports,
       mailShare: mailShare,
@@ -494,6 +502,18 @@ class AppState extends ChangeNotifier {
   /// The phone's wallpaper colour, for Wallpaper colours (Android 12 and
   /// later; nothing elsewhere).
   final WallpaperColours wallpaper;
+
+  final HapticEngine _hapticEngine;
+  final DateTime Function() _hapticClock;
+
+  /// Every haptic the app plays, by meaning, gated by the "Vibrate on touch"
+  /// setting (Plan-Haptics). Screens say what happened and never call
+  /// `HapticFeedback` themselves.
+  late final Haptics haptics = Haptics(
+    engine: _hapticEngine,
+    enabled: () => settings.haptics,
+    clock: _hapticClock,
+  );
 
   /// The wallpaper colour the themes are made from: set only while the
   /// learner has Wallpaper colours on and the phone gives one. Null means
