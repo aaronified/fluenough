@@ -178,3 +178,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ja-news | The example and sentence decks of ja-news are short and close to a template: are they natural Japanese? | Haiku builder | 2026-11-06 |
 | ja-2933 | travel | Is りょうがえ or こうかん the word a learner needs for changing money? | Haiku builder | 2026-11-06 |
 | ja-3007 | services | Is あずけいれ (a deposit into a bank account) the natural word, or should the bank's own term stand? | Haiku builder | 2026-11-06 |
+| ja-3063 | government | Is せいど (a system) the natural word here, or should せいど's sense be carried by きまり? | Haiku builder | 2026-11-06 |
