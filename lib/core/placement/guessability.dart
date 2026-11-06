@@ -81,3 +81,62 @@ bool leaksBySimilarity(GeneratedQuestion question) {
 /// its kind's own rate holds.
 double? guessRateOf(GeneratedQuestion question) =>
     leaksBySimilarity(question) ? leakingGuessRate : null;
+
+/// The shape of an option as a guesser sees it: a bracket, a dash label, and
+/// whether it is one word or several.
+String optionShape(String option) =>
+    '${option.contains('(')}|${option.contains(' — ')}|'
+    '${option.trim().split(RegExp(r'\s+')).length > 1}';
+
+/// Whether the options of [question] do not all have one shape.
+bool optionsDifferInShape(GeneratedQuestion question) =>
+    question.options.map(optionShape).toSet().length > 1;
+
+/// Whether the right option is the longest or the shortest by more than 30%
+/// of the median length.
+bool rightIsLengthOutlier(GeneratedQuestion question) {
+  final right = question.correctIndex;
+  if (right == null || question.options.length < 3) return false;
+  final lengths = <int>[for (final o in question.options) o.length];
+  final sorted = <int>[...lengths]..sort();
+  final median = sorted[sorted.length ~/ 2];
+  final mine = lengths[right];
+  final others = <int>[
+    for (final (i, n) in lengths.indexed)
+      if (i != right) n,
+  ];
+  final longest = others.every((n) => mine > n);
+  final shortest = others.every((n) => mine < n);
+  return (longest || shortest) && (mine - median).abs() > 0.3 * median;
+}
+
+/// Whether the prompt is a cognate of the right option's English: as letters
+/// they are alike by 0.5 or more (through the reading for another script).
+bool rightIsCognate(GeneratedQuestion question) {
+  final right = question.correctIndex;
+  if (right == null || right >= question.options.length) return false;
+  final texts = <String>[?question.promptText, ?question.promptReading];
+  return texts.any((t) => surfaceSimilarity(t, question.options[right]) >= 0.5);
+}
+
+/// Whether a pick has a cue that lets it be guessed by what it shows (plan
+/// section 13, point 4): its spelling, the shape or length of its options, a
+/// cognate. Such a question counts for nothing in the credit posterior.
+bool hasCue(GeneratedQuestion question) =>
+    question.mode == PlacementAnswerMode.pick &&
+    !question.optionsAreAudio &&
+    (leaksBySimilarity(question) ||
+        optionsDifferInShape(question) ||
+        rightIsLengthOutlier(question) ||
+        rightIsCognate(question));
+
+/// The base guess a question gives the credit posterior: null where its
+/// kind's own holds, 1 for a pick with a cue (no evidence), else `1/k`.
+double? creditBaseOf(GeneratedQuestion question) {
+  if (question.mode != PlacementAnswerMode.pick ||
+      question.options.length < 2) {
+    return null;
+  }
+  if (hasCue(question)) return 1;
+  return 1 / question.options.length;
+}

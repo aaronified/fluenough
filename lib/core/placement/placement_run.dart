@@ -127,26 +127,31 @@ class SkillAssurance {
     required this.leadingClass,
     required this.placedLevel,
     required this.questions,
-    this.lowerBound = false,
-  });
+    int? placedClass,
+  }) : placedClass = placedClass ?? leadingClass;
 
   final PlacementSkill skill;
 
-  /// Whether [placedLevel] is the conservative lower bound (the highest
-  /// level the evidence supports at 95%) rather than the most probable
-  /// level: true for a skill whose label is Not sure yet.
-  final bool lowerBound;
+  /// The class the skill is placed in (plan section 13, point 5): the highest
+  /// class the learner is at or above with probability `1 - 0.01 / C`, or 0.
+  /// What is shown and credited; never the most probable class.
+  final int placedClass;
+
+  /// Whether a higher class is more probable than the placed one: the result
+  /// reads "at least unit N".
+  bool get lowerBound => placedClass < leadingClass;
 
   /// The name shown to the learner.
   final AssuranceLabel label;
 
-  /// The probability of the leading class (0 when not tested).
+  /// The probability of the placed class, which names the label (0 when not
+  /// tested).
   final double mass;
 
-  /// The leading class (0 is `none`).
+  /// The most probable class (0 is `none`).
   final int leadingClass;
 
-  /// The last deck index known, or -1 for none: the placed level.
+  /// The last deck index known, or -1 for none: the level of [placedClass].
   final int placedLevel;
 
   /// How many answers were evidence for this skill.
@@ -196,9 +201,10 @@ class PlacementRun {
   /// don't know" is a wrong answer.
   final List<bool> results;
 
-  /// The guess rate a question was found to have when it gives its answer
-  /// away (guessability.dart), parallel to [results] (shorter or null where
-  /// the question was as hard to guess as its kind says).
+  /// The base guess of each question for the credit posterior, parallel to
+  /// [results] (shorter, or null, where the kind's own holds): `1/k` for a
+  /// pick of k options, 1 or more for a pick with a cue (guessability.dart),
+  /// which counts for nothing.
   final List<double?> guesses;
 
   /// How many checkpoints the learner has answered "Keep going" to.
@@ -583,7 +589,7 @@ class _Engine {
     for (final skill in PlacementSkill.values) {
       if (!track.contains(skill) || unavailableSkills.contains(skill)) continue;
       final mass = reporting[skill]!.topMass;
-      if (reachesTarget(mass)) continue;
+      if (_done(skill)) continue;
       if (mass < _leaveBelow) {
         track.remove(skill);
         continue;
@@ -603,7 +609,7 @@ class _Engine {
     for (final skill in _positioningOrder) {
       if (!config.tested.contains(skill) || track.contains(skill)) continue;
       if (unavailableSkills.contains(skill)) continue;
-      if (reachesTarget(reporting[skill]!.leadingMass)) continue;
+      if (_done(skill)) continue;
       return _issue(_probe(skill));
     }
 
@@ -651,8 +657,18 @@ class _Engine {
 
   _Spec _probe(PlacementSkill skill) {
     final state = _positioning.putIfAbsent(skill, _Positioning.new);
+    // While the most probable class holds 80% or more but the placed class is
+    // lower, the probe confirms it (plan section 13, point 7).
+    final credit = reporting[skill]!;
+    final lead = credit.leadingClass;
+    final confirm =
+        lead > 0 &&
+        credit.leadingMass >= kSureFrom &&
+        credit.placedClass() < lead;
     final deck = state.floorPending
         ? levels.levels.first
+        : confirm
+        ? levels.levelOf(lead)
         : askingDeck(asking[skill]!);
     final first = state.probes == 0;
     state.floorPending = false;
@@ -666,6 +682,15 @@ class _Engine {
       deck: deck,
       first: first,
     );
+  }
+
+  /// A skill is done when its placed class is its most probable class and
+  /// that class holds 95% or more (plan section 13, point 7).
+  bool _done(PlacementSkill skill) {
+    final posterior = reporting[skill]!;
+    final placed = posterior.placedClass();
+    return placed == posterior.leadingClass &&
+        reachesTarget(posterior.probabilities[placed]);
   }
 
   PlacementSkill? get _grammarSkill {
@@ -796,12 +821,11 @@ class _Engine {
       for (final skill in spec.skills) {
         final before = reporting[skill];
         if (before == null) continue;
-        reporting[skill] = before.update(
+        reporting[skill] = before.updateCredit(
           deck: spec.deck,
           kind: spec.kind,
           correct: correct,
-          missWeight: missWeight,
-          guess: guess,
+          base: guess,
         );
         evidence[skill] = (evidence[skill] ?? 0) + 1;
       }
@@ -819,7 +843,6 @@ class _Engine {
           kind: spec.kind,
           correct: correct,
           missWeight: missWeight,
-          guess: guess,
         );
       }
     }
@@ -921,7 +944,7 @@ class _Engine {
       return false;
     }
     final skill = spec.skills.first;
-    if (!reachesTarget(reporting[skill]!.leadingMass)) return false;
+    if (!_done(skill)) return false;
     _case = null;
     _forced.clear();
     return true;
@@ -1115,10 +1138,14 @@ class _Engine {
         );
         continue;
       }
-      var label = labelForMass(posterior.leadingMass);
+      // The placed class is the credit posterior's lower bound, never the
+      // mode (plan section 13): what is shown, credited and written.
+      final placed = posterior.placedClass();
+      final mass = posterior.probabilities[placed];
+      var label = labelForMass(mass);
       if (label == AssuranceLabel.verySure &&
           config.verifiedPossible &&
-          posterior.leadingClass == levels.topClass &&
+          placed == levels.topClass &&
           questions >= 3 &&
           _covered(skill) &&
           !closedSkills.contains(skill) &&
@@ -1126,23 +1153,14 @@ class _Engine {
           !unresolvedSkills.contains(skill)) {
         label = AssuranceLabel.verified;
       }
-      // Below "Fairly sure" the leading class is a guess among many: it is
-      // never shown or applied as a point estimate. The skill is placed at
-      // the highest level the evidence supports at the 95% target (or at
-      // the start when none is).
-      final bound = trustsPointEstimate(label)
-          ? null
-          : posterior.supportedLevel(kAssuranceTarget);
       out[skill] = SkillAssurance(
         skill: skill,
         label: label,
-        mass: posterior.leadingMass,
-        leadingClass: bound == null
-            ? posterior.leadingClass
-            : levels.levels.indexOf(bound) + 1,
-        placedLevel: bound ?? posterior.placedLevel,
+        mass: mass,
+        leadingClass: posterior.leadingClass,
+        placedClass: placed,
+        placedLevel: levels.levelOf(placed),
         questions: questions,
-        lowerBound: bound != null,
       );
     }
     return out;

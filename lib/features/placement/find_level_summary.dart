@@ -49,12 +49,14 @@ String _standing(
       found.skill == PlacementSkill.script ||
       found.skill == PlacementSkill.secondScript;
   if (isScript) {
-    return found.leadingClass == run.levels.topClass
+    return found.placedClass == run.levels.topClass
         ? l10n.findLevelStandScriptKnown(name, label)
         : l10n.findLevelStandScriptNot(name, label);
   }
   return found.placedLevel < 0
       ? l10n.findLevelStandStart(name, label)
+      : found.lowerBound
+      ? l10n.findLevelStandUnitAtLeast(name, found.placedUnit, label)
       : l10n.findLevelStandUnit(name, found.placedUnit, label);
 }
 
