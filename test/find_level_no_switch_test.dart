@@ -162,6 +162,47 @@ void main() {
       expect(find.text(l10n.languagesVerifyKnown), findsOneWidget);
     });
 
+    testWidgets('a language never placed shows no labels; a placed one shows '
+        'each skill\'s name and the Verified mark', (tester) async {
+      await _pumpSheet(tester, built: 3);
+      final l10n = l10nOf(tester);
+      expect(find.textContaining('${l10n.findLevelSkillHear}: '), findsNothing);
+
+      final settings =
+          SettingsNotifier(
+              spokenLanguages: const <String>['en'],
+              learningChosen: true,
+            )
+            ..setSkillLabels('es', <String, String>{
+              'hear': 'verified',
+              'say': 'notSureYet',
+              'read': 'sure',
+            })
+            ..setVerifiedSkills('es', <String>{'hear'});
+      await _pumpSheet(
+        tester,
+        built: 3,
+        state: AppState.test(settings: settings),
+      );
+      expect(
+        find.text('${l10n.findLevelSkillHear}: ${l10n.findLevelLabelVerified}'),
+        findsOneWidget,
+      );
+      expect(find.byIcon(Icons.verified), findsOneWidget);
+      expect(
+        find.text(
+          '${l10n.findLevelSkillSay}: ${l10n.findLevelLabelNotSureYet}',
+        ),
+        findsOneWidget,
+      );
+      expect(
+        find.text('${l10n.findLevelSkillRead}: ${l10n.findLevelLabelSure}'),
+        findsOneWidget,
+      );
+      // A percentage is never on the row.
+      expect(find.textContaining('%'), findsNothing);
+    });
+
     testWidgets('is not offered below A1', (tester) async {
       await _pumpSheet(tester, built: 0);
       expect(

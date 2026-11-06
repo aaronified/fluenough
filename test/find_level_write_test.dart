@@ -148,6 +148,8 @@ void main() {
       // Read was tested and not Verified; Say was not in the run.
       expect(state.settings.verifiedSkillsOf('hi'), <String>{'say'});
       expect(state.settings.placedDecks, isEmpty);
+      // Its label is kept for the sheet's row, and Say has none.
+      expect(state.settings.skillLabelsOf('hi').keys, <String>['read']);
     });
 
     test('never changes a skill\'s Leave, Know or Learn', () {

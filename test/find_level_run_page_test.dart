@@ -4,6 +4,8 @@
 // the app's null engines.
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/assurance_readout.dart';
+import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/placement_session.dart';
 import 'package:fluenough/features/placement/find_level_declaration.dart';
 import 'package:fluenough/features/placement/find_level_run_page.dart';
@@ -270,6 +272,73 @@ void main() {
       // Say and Script were not marked: they are not listed at all.
       expect(find.textContaining(l10n.findLevelSkillSay), findsNothing);
       expect(find.textContaining(l10n.findLevelSkillScript), findsNothing);
+    });
+
+    testWidgets('a low name is explained calmly, and the percentage waits in '
+        'a detail a tap opens', (tester) async {
+      final session = PlacementSession(findLevelConfig(), findLevelData());
+      while (!session.isDone) {
+        if (session.atCheckpoint) {
+          session.keepGoing();
+        } else {
+          session.answer(false);
+        }
+      }
+      final found = session.run.readout[PlacementSkill.read]!;
+      expect(found.label, isNot(AssuranceLabel.verified));
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        FindLevelSummary(run: session.run, onDone: () {}),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.textContaining('% sure'), findsNothing);
+      if (found.label == AssuranceLabel.notSureYet) {
+        expect(find.text(l10n.findLevelNoteNotSureYet), findsWidgets);
+      }
+      await _tap(
+        tester,
+        find.byKey(const ValueKey<String>('find-level-result-read')),
+      );
+      expect(find.textContaining('% sure'), findsOneWidget);
+      expect(find.text(l10n.findLevelLabelVerified), findsNothing);
+    });
+
+    testWidgets('a Verified skill is marked, and Say with no microphone says '
+        'it was not tested and why', (tester) async {
+      final session = PlacementSession(
+        findLevelConfig(
+          skills: const <PlacementSkill>{
+            PlacementSkill.read,
+            PlacementSkill.say,
+          },
+        ),
+        findLevelData(),
+      );
+      while (!session.isDone) {
+        if (session.atCheckpoint) {
+          session.keepGoing();
+        } else {
+          session.answer(true);
+        }
+      }
+      expect(
+        session.run.readout[PlacementSkill.read]!.label,
+        AssuranceLabel.verified,
+      );
+      usePhone(tester);
+      await pumpScreen(
+        tester,
+        FindLevelSummary(run: session.run, onDone: () {}),
+      );
+      final l10n = l10nOf(tester);
+      expect(find.byIcon(Icons.verified), findsOneWidget);
+      expect(find.text(l10n.findLevelNoteVerified), findsOneWidget);
+      expect(
+        find.text('${l10n.findLevelSkillSay}: not tested'),
+        findsOneWidget,
+      );
+      expect(find.text(l10n.findLevelNotTestedNoMic), findsOneWidget);
     });
   });
 }

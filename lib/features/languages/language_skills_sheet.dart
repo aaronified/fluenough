@@ -14,6 +14,7 @@ import '../../core/decks/language_catalog.dart';
 import '../../core/decks/script_fonts.dart';
 import '../../core/models/deck.dart' show LanguageInfo;
 import '../../core/placement/declaration_options.dart';
+import '../../core/placement/placement_questions.dart' show PlacementSkill;
 import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
@@ -26,6 +27,7 @@ import '../placement/course_line.dart';
 import '../placement/language_row.dart';
 import '../placement/placed_review_choice.dart';
 import '../placement/find_level_flow.dart';
+import '../placement/skill_labels_line.dart';
 import 'language_views.dart';
 import 'skill_widgets.dart';
 
@@ -765,6 +767,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                       SkillKey(SkillKind.hear),
                     ],
                     pill: _spokenPill(context),
+                    placed: const <PlacementSkill>[
+                      PlacementSkill.hear,
+                      PlacementSkill.say,
+                    ],
                   ),
                 ],
                 if (_scripts.isNotEmpty)
@@ -776,7 +782,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                       _scripts.length,
                     ),
                   ),
-                for (final script in _scripts)
+                for (final (index, script) in _scripts.indexed)
                   _skillRow(
                     context,
                     tile: _Tile(
@@ -788,6 +794,15 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                     title: l10n.scriptNameOr(script, _view.name),
                     keys: _skills.keysOfScript(script),
                     pill: _scriptPill(context, script),
+                    // The words (Read, Write) sit with the first script.
+                    placed: <PlacementSkill>[
+                      if (index == 0) ...<PlacementSkill>[
+                        PlacementSkill.read,
+                        PlacementSkill.write,
+                        PlacementSkill.script,
+                      ] else if (index == 1)
+                        PlacementSkill.secondScript,
+                    ],
                   ),
                 if (!_isDraft && _skills.anyLearn) _learningBlock(context),
               ],
@@ -890,10 +905,12 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
     required String title,
     required List<SkillKey> keys,
     required Widget pill,
+    List<PlacementSkill> placed = const <PlacementSkill>[],
   }) {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final placedLabels = placedLabelsOf(_state.settings, _code, placed);
     final subs = <String>[];
     final autoKeys = <SkillKey>[
       for (final k in keys)
@@ -949,6 +966,11 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
                   color: scheme.onSurfaceVariant,
                 ),
               ),
+            ),
+          if (placedLabels.isNotEmpty)
+            Padding(
+              padding: const EdgeInsetsDirectional.only(start: 48, top: 2),
+              child: SkillLabelsLine(labels: placedLabels),
             ),
         ],
       ),

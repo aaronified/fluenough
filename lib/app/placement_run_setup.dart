@@ -216,6 +216,13 @@ extension PlacementRunSetup on AppState {
       for (final MapEntry(:key, :value) in tested.entries)
         if (value.isVerified) key.name,
     });
+    // How sure each tested skill was, for the language's skill rows.
+    settings.setSkillLabels(code, <String, String>{
+      for (final MapEntry(:key, :value) in settings.skillLabelsOf(code).entries)
+        if (!tested.keys.any((skill) => skill.name == key)) key: value,
+      for (final MapEntry(:key, :value) in tested.entries)
+        key.name: value.label.name,
+    });
   }
 
   static const List<PlacementSkill> _wordSkills = <PlacementSkill>[

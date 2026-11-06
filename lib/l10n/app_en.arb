@@ -14208,6 +14208,58 @@
   "@findLevelSummaryTitle": {
     "description": "Find my level: the heading of the result."
   },
+  "findLevelSummaryIntro": "This is where we think you are. Tap a line to see how sure we are.",
+  "@findLevelSummaryIntro": {
+    "description": "Find my level: under the heading of the result."
+  },
+  "findLevelNoteNotSureYet": "A first guess. Low is fine: you can find your level again later.",
+  "@findLevelNoteNotSureYet": {
+    "description": "Find my level: said under a skill the check is not yet sure of (under 50%). Calm, never a fail."
+  },
+  "findLevelNoteFairlySure": "A fair guess. You can find your level again later to sharpen it.",
+  "@findLevelNoteFairlySure": {
+    "description": "Find my level: said under a skill the check is fairly sure of (50% to 79%)."
+  },
+  "findLevelNoteVerified": "You showed this across the whole course up to B1.",
+  "@findLevelNoteVerified": {
+    "description": "Find my level: said under a Verified skill."
+  },
+  "findLevelNotTestedNoMic": "No microphone was available, so this was not tested. Nothing is held against you.",
+  "@findLevelNotTestedNoMic": {
+    "description": "Find my level: why Say was not tested."
+  },
+  "findLevelNotTestedNotAsked": "We did not ask about this one, so it was not tested.",
+  "@findLevelNotTestedNotAsked": {
+    "description": "Find my level: why a skill was not tested, when no question could be asked about it."
+  },
+  "findLevelDetailPercent": "About {percent}% sure, from {count, plural, =1{1 answer} other{{count} answers}}.",
+  "@findLevelDetailPercent": {
+    "description": "Find my level: the detail of a skill's result, the only place a percentage is shown.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "85"
+      },
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "findLevelSheetLabel": "{skill}: {label}",
+  "@findLevelSheetLabel": {
+    "description": "Languages sheet: one skill and how sure its last level check was, under its row.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "label": {
+        "type": "String",
+        "example": "Sure"
+      }
+    }
+  },
   "findLevelResumeTitle": "Carry on where you left off?",
   "@findLevelResumeTitle": {
     "description": "Find my level: asked when a paused check is waiting."
