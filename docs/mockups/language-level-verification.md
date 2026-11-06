@@ -6,9 +6,21 @@ Phone 360 dp at 1.4x text (the app's cap, #505), `ColorScheme.fromSeed` of the f
 
 ## Screens
 
-- **A. Add a language** (`language_pick_list.dart`). Each row keeps its glyph, names, Added badge or "No course yet" and chevron, and gains two markers under its texts, indented to the names: the A1 A2 B1 Culture line (`CourseLine`, unchanged: 4 dp bars, labels under) and the verification mark. A short key above the list names the three verification states. Three views of one scrolling list; the list is the owner's screenshot (Bengali and Hindustani added, Assamese, Dogri "No course yet", Gujarati, Kashmiri, Konkani, Maithili, Marathi, Nepali, Odia).
+- **A. Add a language** (`language_pick_list.dart`), now with a Popular section and search (see "Owner feedback of 2026-11-06" below). Each row keeps its glyph, names, Added badge or "No course yet" and chevron, and gains two markers under its texts, indented to the names: the A1 A2 B1 Culture line (`CourseLine`, unchanged: 4 dp bars, labels under) and the verification mark. A short key above the list names the three verification states. Three views of one scrolling list; the list is the owner's screenshot (Bengali and Hindustani added, Assamese, Dogri "No course yet", Gujarati, Kashmiri, Konkani, Maithili, Marathi, Nepali, Odia).
 - **B. Languages, after selection** (`languages_page.dart`). Rows keep their skill chips and gain the verification mark under them. The line is not drawn here (the owner asked only for verification on this list); a tweak turns it on to compare. The existing chip key gains the three verification entries.
 - **C. States.** One language (Hindustani or Bengali) in all five levels and all three verification states, and the i dialog (`_InfoDialog`) with the long wording.
+
+## Owner feedback of 2026-11-06: Popular, search, defaults
+
+Quotes, 2026-11-06. First: "add a language page need to be sorted with full decks in a popular section at the top, then the full list below. and it needs to be searchable. otherwise the flags are fine". Then: "Popular section at the top: it holds the languages with full decks, meaning A1, A2 and B1 all built. The full list stays below it, grouped by language family as now. once there are a lot of languages there, keep only spanish, french, bengali, hindustani, kannada, and marathi there (sorted alphabetically)." Then: "better yet, do that right away. only french among these is not B1 yet". Then: "add japanese there as well", and "and chinese".
+
+**Defaults accepted.** The flags and the level line stay as drawn, and every other open question below (numbers 1 to 10 of the first round) is taken as "defaults accepted", except the ones about sorting and Popular, which are settled by the quotes above.
+
+**Popular (default, the owner's curated list).** The eight languages, alphabetical by the name the app shows: Bengali, French, Hindustani, Japanese, Kannada, Mandarin Chinese, Marathi, Spanish. Three of the eight are not Complete: French (A1 built), Japanese (`ja-b1` partial) and Mandarin Chinese (`zh-b1` partial). They show in Popular with their real level line (placeholder fills on the page: French A1 full; Japanese A1 full, A2 part; Chinese A1 full, A2 part, B1 a sliver), so Popular is a curated list, not a filter on level. When French, Japanese or Chinese reach B1 nothing changes. The owner's wording "Chinese" is drawn with the app's name for `zh`, "Mandarin Chinese" (`assets/languages.yaml`, own name 中文), which sorts after Kannada, not after Bengali. Proposal: the eight live in a hand-kept `popular: true` field on the language in `assets/languages.yaml`, so the list changes without a release. A tweak ("Popular holds") shows the earlier idea, every language that is Complete, for comparison; with the placeholder data it holds Assamese, Bengali, Hindustani, Kannada, Marathi, Spanish and Telugu (the IPA, Braille, English and Toki Pona rows are not in this list's data).
+
+**Full list.** Below Popular under an "All languages" heading, grouped by family as now (Indo-Aryan, Dravidian, Sinitic, Japonic, Romance on the page; the app's own family order applies), each language Added first then alphabetical. With two header levels the family names are drawn as small muted capitals, so "All languages" and "Popular" are the two main headings (the family headings were primary-coloured before); change if the owner prefers. Default: a language in Popular **also** appears in its family below (the full list is complete); a tweak ("Popular also in the full list") turns that off.
+
+**Search.** The field stays on top and covers both sections. With a query the sections collapse into one result list, Popular matches first (alphabetical), then the rest in family order, each language once, section and family headers hidden. No match shows a plain "No language matches". The search matches the language's name and its own name (the app also matches aliases; not drawn). Section A2 of the page draws the three states (empty, "ta" or "ben" by the example language, no result) and "Search query" in the top controls types a live query into section A.
 
 ## The verification mark
 
@@ -66,9 +78,18 @@ The empty track fails 3:1 in every seed, and it fails the same way in the app to
 
 **Semantics.** Each row reads names, then the line's label, then "Verified by native speakers: somewhat". Icons are excluded from the tree; nothing relies on colour (level: bar fill and labels, optionally the name; verification: the shape and the word).
 
+**Popular and search checks.** Run in Chromium at 1.4x and 1x, light and dark, Hindustani and Bengali, with a live query ("ta") and with Popular repeated in the full list on and off, with level names and the Languages level line on: no text, heading, result or "No language matches" line extends beyond its phone, and no list scrolls sideways. Contrast: the new texts reuse pairs already in the table (section headings primary on surface, family headings and the Popular sub-line onSurfaceVariant on surface, the typed query onSurface on surfaceContainerHigh at 7.6 to 16 : 1, "No language matches" onSurfaceVariant on surface); all pass, and the only failure is still the inherited empty track. Tap targets: result rows are the same rows, at least 120 dp high. Semantics: "Popular", "All languages" and each family are headings (levels 2, 2 and 3), so a screen reader can jump between them; the search field is labelled "Search languages"; "No language matches" is a status message announced when the results empty; with a query there are no headings to read.
+
 **Text in widgets.** On build, every string is an ARB token (rule 10): `languagesVerifiedLabel` ("Verified by native speakers: {state}"), the three state words, the key heading, the empty line's two labels, the two new level names.
 
 ## Open questions for the owner
+
+The questions of the first round (1 to 10 below) are accepted at their defaults by the owner's 2026-11-06 feedback ("otherwise the flags are fine"). What the Popular feedback leaves open:
+
+- **Where Popular's names live.** A hand-kept `popular: true` field in `assets/languages.yaml` (proposed), set by the owner. Nothing else needs deciding: French, Japanese and Chinese reaching B1 changes nothing.
+
+First round, defaults accepted:
+
 
 1. **Level names.** Line only (default), or the name as well? The page shows the name above the line. At 1.4x it cannot sit beside the line.
 2. **Does Alpha mean A1 being written or A1 filled?** The app's `CourseStage` is Alpha until A1 is written and Beta until B1 is; your list reads as A1, then A1 and A2, then all three. The page draws the app's rule by default and your reading under "Whole bars". Which should the new markers follow?
