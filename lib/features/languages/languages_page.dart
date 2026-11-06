@@ -10,6 +10,7 @@ import '../../core/languages/language_skills.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
 import '../../ui/theme.dart';
+import '../../ui/widgets/faded_row.dart';
 import '../../ui/widgets/hint.dart';
 import '../../ui/widgets/page_parts.dart';
 import '../../ui/widgets/report_button.dart';
@@ -236,11 +237,18 @@ class _LanguagesPageState extends State<LanguagesPage> {
         if (!h.$2.anyLearn) h,
     ];
     final downloads = state.deckDownloads;
+    Widget pad(Widget child) => Padding(
+      padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
+      child: child,
+    );
     return ListView(
-      padding: const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 24),
+      // No side padding on the list: the two pill rows run edge to edge
+      // with their own 16 dp start (so they start where the rows do, not at
+      // 32), and every other child pads its own sides.
+      padding: const EdgeInsetsDirectional.only(bottom: 24),
       children: <Widget>[
         if (learning.isNotEmpty && downloads != null)
-          DeckUpdateControls(downloads: downloads, names: _names(all)),
+          pad(DeckUpdateControls(downloads: downloads, names: _names(all))),
         const _Key(),
         _FilterRow(
           selected: filter,
@@ -248,58 +256,70 @@ class _LanguagesPageState extends State<LanguagesPage> {
           onChanged: (f) => setState(() => _filter = f),
         ),
         if (shown.isEmpty)
-          Padding(
-            padding: const EdgeInsetsDirectional.symmetric(vertical: 24),
-            child: Text(
-              l10n.languagesNoMatch,
-              textAlign: TextAlign.center,
-              style: theme.textTheme.bodyMedium,
+          pad(
+            Padding(
+              padding: const EdgeInsetsDirectional.symmetric(vertical: 24),
+              child: Text(
+                l10n.languagesNoMatch,
+                textAlign: TextAlign.center,
+                style: theme.textTheme.bodyMedium,
+              ),
             ),
           ),
         if (learning.isNotEmpty) ...<Widget>[
-          LanguageSection(text: l10n.languagesSectionLearning(learning.length)),
+          pad(
+            LanguageSection(
+              text: l10n.languagesSectionLearning(learning.length),
+            ),
+          ),
           for (final h in learning)
-            LanguageRow(
-              key: ValueKey<String>('language-${h.$1.code}'),
-              view: h.$1,
-              skills: h.$2,
-              onTap: () => _open(state, all, h.$1),
+            pad(
+              LanguageRow(
+                key: ValueKey<String>('language-${h.$1.code}'),
+                view: h.$1,
+                skills: h.$2,
+                onTap: () => _open(state, all, h.$1),
+              ),
             ),
         ],
         if (know.isNotEmpty) ...<Widget>[
-          LanguageSection(text: l10n.languagesSectionKnow(know.length)),
+          pad(LanguageSection(text: l10n.languagesSectionKnow(know.length))),
           for (final h in know)
-            LanguageRow(
-              key: ValueKey<String>('language-${h.$1.code}'),
-              view: h.$1,
-              skills: h.$2,
-              onTap: () => _open(state, all, h.$1),
+            pad(
+              LanguageRow(
+                key: ValueKey<String>('language-${h.$1.code}'),
+                view: h.$1,
+                skills: h.$2,
+                onTap: () => _open(state, all, h.$1),
+              ),
             ),
         ],
         const SizedBox(height: 8),
-        // hint-ok: shows text
-        InkWell(
-          key: const ValueKey<String>('languages-add-row'),
-          onTap: () => _add(state, all),
-          child: ConstrainedBox(
-            constraints: const BoxConstraints(minHeight: 56),
-            child: Row(
-              children: <Widget>[
-                CircleAvatar(
-                  radius: 18,
-                  backgroundColor: theme.colorScheme.primary,
-                  child: Icon(Icons.add, color: theme.colorScheme.onPrimary),
-                ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: Text(
-                    l10n.languagesAdd,
-                    style: theme.textTheme.bodyLarge!.copyWith(
-                      fontWeight: FontWeight.w600,
+        pad(
+          // hint-ok: shows text
+          InkWell(
+            key: const ValueKey<String>('languages-add-row'),
+            onTap: () => _add(state, all),
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(minHeight: 56),
+              child: Row(
+                children: <Widget>[
+                  CircleAvatar(
+                    radius: 18,
+                    backgroundColor: theme.colorScheme.primary,
+                    child: Icon(Icons.add, color: theme.colorScheme.onPrimary),
+                  ),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      l10n.languagesAdd,
+                      style: theme.textTheme.bodyLarge!.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
                     ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ),
@@ -376,7 +396,7 @@ class _Key extends StatelessWidget {
             ),
           ),
           const SizedBox(width: 4),
-          Flexible(child: Text(text, style: theme.textTheme.bodySmall)),
+          Text(text, style: theme.textTheme.bodySmall, softWrap: false),
         ],
       );
     }
@@ -386,9 +406,8 @@ class _Key extends StatelessWidget {
       label: l10n.languagesKeyLabel,
       child: Padding(
         padding: const EdgeInsetsDirectional.only(top: 8),
-        child: Wrap(
-          spacing: 12,
-          runSpacing: 4,
+        child: FadedScrollRow(
+          gap: 12,
           children: <Widget>[
             entry(SkillMark.know, l10n.languagesStateKnow),
             entry(
@@ -447,38 +466,22 @@ class _FilterRow extends StatelessWidget {
     return Semantics(
       container: true,
       label: l10n.languagesFilterLabel,
-      child: ShaderMask(
-        blendMode: BlendMode.dstIn,
-        shaderCallback: (rect) => const LinearGradient(
-          colors: <Color>[
-            Color(0x00000000),
-            Color(0xFF000000),
-            Color(0xFF000000),
-            Color(0x00000000),
-          ],
-          stops: <double>[0, 0.04, 0.96, 1],
-        ).createShader(rect),
-        child: SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          padding: const EdgeInsetsDirectional.symmetric(horizontal: 16),
-          child: Row(
-            children: <Widget>[
-              for (final f in LanguageFilter.values)
-                if (f != LanguageFilter.gesture || showGesture)
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(end: 8),
-                    child: FilterChip(
-                      key: ValueKey<String>('filter-${f.name}'),
-                      showCheckmark: false,
-                      avatar: Icon(icon(f), size: 18),
-                      label: Text(text(f)),
-                      selected: selected == f,
-                      onSelected: (_) => onChanged(selected == f ? null : f),
-                    ),
-                  ),
-            ],
-          ),
-        ),
+      child: FadedScrollRow(
+        children: <Widget>[
+          for (final f in LanguageFilter.values)
+            if (f != LanguageFilter.gesture || showGesture)
+              Padding(
+                padding: const EdgeInsetsDirectional.only(end: 8),
+                child: FilterChip(
+                  key: ValueKey<String>('filter-${f.name}'),
+                  showCheckmark: false,
+                  avatar: Icon(icon(f), size: 18),
+                  label: Text(text(f)),
+                  selected: selected == f,
+                  onSelected: (_) => onChanged(selected == f ? null : f),
+                ),
+              ),
+        ],
       ),
     );
   }

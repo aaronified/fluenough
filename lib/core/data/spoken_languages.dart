@@ -5,6 +5,24 @@ import '../decks/notation.dart';
 /// Where the languages a learner can name are listed.
 const String spokenLanguagesAsset = 'assets/languages.yaml';
 
+/// How far native speakers have checked a language's course, hand-set per
+/// language in `assets/languages.yaml` (`verification`): `none` (no native
+/// speaker has), `some` (some of the course) or `full` (all of it). Absent
+/// is [none].
+enum NativeVerification {
+  none,
+  some,
+  full;
+
+  /// The value `verification` takes in the list, which is the name.
+  static NativeVerification? parse(Object? value) {
+    for (final v in values) {
+      if (v.name == value) return v;
+    }
+    return null;
+  }
+}
+
 /// A language a learner can say they speak (#53).
 class SpokenLanguage {
   const SpokenLanguage({
@@ -23,6 +41,8 @@ class SpokenLanguage {
     this.dialect,
     this.scriptOnly = false,
     this.typed = true,
+    this.verification = NativeVerification.none,
+    this.popular = false,
   });
 
   /// The same code decks use for `native.code`, such as `bn`.
@@ -165,6 +185,14 @@ class SpokenLanguage {
   /// Whether it is a notation taught like a language, the IPA or English
   /// Braille (ADR-0041, ADR-0043): it has no dialect, voice or level to find.
   bool get isNotation => isNotationCode(code);
+
+  /// How far native speakers have checked its course (`verification`, set by
+  /// hand; every language starts at [NativeVerification.none]).
+  final NativeVerification verification;
+
+  /// Whether Add a language lists it first, under Popular (`popular: true`,
+  /// a hand-kept list, so it changes without a release).
+  final bool popular;
 
   /// Other names a search finds it by (`aliases`), such as "Urdu" for
   /// Hindustani (#623).
@@ -345,6 +373,24 @@ bool _unchecked(Object? item, int i) {
   return true;
 }
 
+/// An entry's `verification`: `none`, `some` or `full`; absent is `none`.
+NativeVerification _verification(Object? item, int i) {
+  final value = item is YamlMap ? item['verification'] : null;
+  if (value == null) return NativeVerification.none;
+  return NativeVerification.parse(value) ??
+      (throw FormatException('languages[$i]: verification is malformed'));
+}
+
+/// Whether an entry says `popular: true`; absent or `false` is not popular.
+bool _popular(Object? item, int i) {
+  final value = item is YamlMap ? item['popular'] : null;
+  if (value == null) return false;
+  if (value is! bool) {
+    throw FormatException('languages[$i]: popular is malformed');
+  }
+  return value;
+}
+
 final _code = RegExp(r'^[a-z]{2,3}$');
 final _iso = RegExp(r'^[a-z]{3}$');
 
@@ -407,6 +453,8 @@ List<SpokenLanguage> parseSpokenLanguages(String text) {
         dialect: _optional(item, 'dialect', i),
         scriptOnly: item['script_only'] == true,
         typed: item['typed'] != false,
+        verification: _verification(item, i),
+        popular: _popular(item, i),
       ),
     );
   }

@@ -379,7 +379,9 @@ void main() {
         state: await app(tester),
       );
       final text = l10n(tester);
-      final hi = find.byKey(const ValueKey<String>('add-hi'));
+      // Both are Popular, so near the top; the full list holds them again,
+      // further down, under their own keys.
+      final hi = find.byKey(const ValueKey<String>('add-popular-hi'));
       await tester.ensureVisible(hi);
       await tester.pumpAndSettle();
       expect(
@@ -395,7 +397,7 @@ void main() {
       );
       // A language with no requirement shows none.
       // The list builds rows lazily, so scroll down to Spanish first.
-      final es = find.byKey(const ValueKey<String>('add-es'));
+      final es = find.byKey(const ValueKey<String>('add-popular-es'));
       await tester.scrollUntilVisible(es, 200);
       await tester.pumpAndSettle();
       expect(
