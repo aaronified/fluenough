@@ -146,3 +146,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-2523 | ja-adjectives-2 | べつ is listed as a な-adjective (べつな in the rules table) but is used in the examples only as べつの before a noun: is the な form natural, or should the row go? | Haiku builder | 2026-11-06 |
 | ja-2539 | ja-adjectives-2 | けち (stingy) is written as a な-adjective with けちな in the examples: is けちな natural, or is it used more as a noun or a register-marked word? | Haiku builder | 2026-11-06 |
 | ja-2534 | ja-adjectives-2 | Is ふけつなみずはのめません (unclean water cannot be drunk) natural, or would a more everyday phrase be better? | Haiku builder | 2026-11-06 |
+| ja-2581 | ja-workplace | Is ホチキス (stapler, from the brand name) the everyday word for a stapler, or is another word more usual? | Haiku builder | 2026-11-06 |
+| ja-2598 | ja-workplace | Is こうじ (construction work) used alone in the examples, or is こうじ中 or a more specific word more natural? | Haiku builder | 2026-11-06 |
+| ja-2601 | ja-workplace | Is そのきかくはひきうけられません (I cannot take on that project) natural, or is another verb used for declining work? | Haiku builder | 2026-11-06 |

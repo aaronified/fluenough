@@ -560,7 +560,8 @@ units:
       - { id: "can-you-swim", text: { "en": "Saying what you can and cannot do: swim, read kanji, eat natto" } }
     reading_passages:
       - { id: "skills-form", text: { "en": "A form listing the skills of a part-time job applicant" } }
-  - planned: { id: "ja-workplace", theme: "workplace", words: 45 }
+  - decks: ["ja-workplace", "ja-workplace-sentences", "ja-reading-workplace", "*"]
+    words: 45
     listening_passages:
       - { id: "first-day-at-work", text: { "en": "A new colleague's first day at the office" } }
     reading_passages:
