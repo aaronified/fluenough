@@ -127,20 +127,31 @@ class SkillAssurance {
     required this.leadingClass,
     required this.placedLevel,
     required this.questions,
-  });
+    int? placedClass,
+  }) : placedClass = placedClass ?? leadingClass;
 
   final PlacementSkill skill;
+
+  /// The class the skill is placed in (plan section 13, point 5): the highest
+  /// class the learner is at or above with probability `1 - 0.01 / C`, or 0.
+  /// What is shown and credited; never the most probable class.
+  final int placedClass;
+
+  /// Whether a higher class is more probable than the placed one: the result
+  /// reads "at least unit N".
+  bool get lowerBound => placedClass < leadingClass;
 
   /// The name shown to the learner.
   final AssuranceLabel label;
 
-  /// The probability of the leading class (0 when not tested).
+  /// The probability of the placed class, which names the label (0 when not
+  /// tested).
   final double mass;
 
-  /// The leading class (0 is `none`).
+  /// The most probable class (0 is `none`).
   final int leadingClass;
 
-  /// The last deck index known, or -1 for none: the placed level.
+  /// The last deck index known, or -1 for none: the level of [placedClass].
   final int placedLevel;
 
   /// How many answers were evidence for this skill.
@@ -179,7 +190,11 @@ class PlacementRun {
     List<bool> results = const <bool>[],
     this.checkpointsKept = 0,
     List<PlacementUnavailable> unavailable = const <PlacementUnavailable>[],
+    List<double?> guesses = const <double?>[],
+    List<int?> itemDecks = const <int?>[],
   }) : results = List<bool>.unmodifiable(results),
+       guesses = List<double?>.unmodifiable(guesses),
+       itemDecks = List<int?>.unmodifiable(itemDecks),
        unavailableLog = List<PlacementUnavailable>.unmodifiable(unavailable);
 
   final PlacementRunConfig config;
@@ -187,6 +202,18 @@ class PlacementRun {
   /// Right (true) or wrong (false) for each question asked, in order. "I
   /// don't know" is a wrong answer.
   final List<bool> results;
+
+  /// The base guess of each question for the credit posterior, parallel to
+  /// [results] (shorter, or null, where the kind's own holds): `1/k` for a
+  /// pick of k options, 1 or more for a pick with a cue (guessability.dart),
+  /// which counts for nothing.
+  final List<double?> guesses;
+
+  /// The deck index of the card each question asked, parallel to [results]
+  /// (shorter, or null, where unknown). The credit posterior credits the
+  /// lower of this and the request's deck (a range that widened to an earlier
+  /// deck must not credit a deck the learner may not know).
+  final List<int?> itemDecks;
 
   /// How many checkpoints the learner has answered "Keep going" to.
   final int checkpointsKept;
@@ -196,7 +223,10 @@ class PlacementRun {
   /// answers and the same log always give the same run.
   final List<PlacementUnavailable> unavailableLog;
 
-  late final _Engine _engine = _Engine(config, results, unavailableLog);
+  _Engine? _owned;
+
+  _Engine get _engine =>
+      _owned ??= _Engine(config, results, unavailableLog, guesses, itemDecks);
 
   /// The question to ask now, or null when the run is done (or skipped).
   PlacementQuestionRequest? get next => _engine.pending?.request;
@@ -220,14 +250,27 @@ class PlacementRun {
       !isDone && asked > 0 && asked % 25 == 0 && checkpointsKept < asked ~/ 25;
 
   /// The state after [correct] was the answer to [next].
-  PlacementRun answer(bool correct) {
+  PlacementRun answer(bool correct, {double? guess, int? itemDeck}) {
     if (isDone) throw StateError('the run is done: there is no question');
-    return PlacementRun(
+    final engine = _engine;
+    _owned = null;
+    engine.feed(correct, guess, itemDeck);
+    return (PlacementRun(
       config,
       results: <bool>[...results, correct],
       checkpointsKept: checkpointsKept,
       unavailable: unavailableLog,
-    );
+      guesses: <double?>[
+        for (var i = 0; i < results.length; i++)
+          i < guesses.length ? guesses[i] : null,
+        guess,
+      ],
+      itemDecks: <int?>[
+        for (var i = 0; i < results.length; i++)
+          i < itemDecks.length ? itemDecks[i] : null,
+        itemDeck,
+      ],
+    )).._owned = engine;
   }
 
   /// The question builder cannot build [next] from this learner's data (a
@@ -253,6 +296,8 @@ class PlacementRun {
       config,
       results: results,
       checkpointsKept: checkpointsKept,
+      guesses: guesses,
+      itemDecks: itemDecks,
       unavailable: <PlacementUnavailable>[
         ...unavailableLog,
         PlacementUnavailable(
@@ -270,6 +315,8 @@ class PlacementRun {
     results: results,
     checkpointsKept: asked ~/ 25,
     unavailable: unavailableLog,
+    guesses: guesses,
+    itemDecks: itemDecks,
   );
 
   /// The assurance of every skill, as it stands: a skill the learner did not
@@ -414,6 +461,8 @@ class _Engine {
     this.config,
     List<bool> results,
     List<PlacementUnavailable> unavailable,
+    List<double?> guesses,
+    List<int?> itemDecks,
   ) : levels = PlacementLevels(config.deckCount) {
     final tested = config.tested;
     final skipped = config.declaration == PlacementDeclaration.beginner;
@@ -441,28 +490,42 @@ class _Engine {
     }
     if (skipped) return;
     pending = _choose();
-    var next = 0;
-    var asked = 0;
-    // The builder's "cannot build this" notes come between two answers: the
-    // ones logged after [asked] answers are applied before the next answer.
-    void drain() {
-      while (next < unavailable.length &&
-          unavailable[next].afterAnswers <= asked) {
-        final current = pending;
-        if (current == null) return;
-        _unavailable(current, unavailable[next].reason);
-        next++;
-      }
-    }
-
-    drain();
+    _log = unavailable;
+    _drain();
     for (final result in results) {
-      final current = pending;
-      if (current == null) break;
-      _apply(current, result);
-      asked++;
-      drain();
+      if (pending == null) break;
+      feed(
+        result,
+        _asked < guesses.length ? guesses[_asked] : null,
+        _asked < itemDecks.length ? itemDecks[_asked] : null,
+      );
     }
+  }
+
+  late final List<PlacementUnavailable> _log;
+  int _logNext = 0;
+  int _asked = 0;
+
+  /// The builder's "cannot build this" notes come between two answers: the
+  /// ones logged after [_asked] answers are applied before the next answer.
+  void _drain() {
+    while (_logNext < _log.length && _log[_logNext].afterAnswers <= _asked) {
+      final current = pending;
+      if (current == null) return;
+      _unavailable(current, _log[_logNext].reason);
+      _logNext++;
+    }
+  }
+
+  /// One more answer, applied to the engine as it stands (a run hands its
+  /// engine on to the run that answers it, so a run is not replayed from the
+  /// start at every answer).
+  void feed(bool result, double? guess, int? itemDeck) {
+    final current = pending;
+    if (current == null) return;
+    _apply(current, result, guess, itemDeck);
+    _asked++;
+    _drain();
   }
 
   static const double _leaveBelow = 0.20;
@@ -498,6 +561,32 @@ class _Engine {
 
   /// Skills left out of positioning and top-ups for the same reason.
   final Set<PlacementSkill> unavailableSkills = <PlacementSkill>{};
+
+  /// The bands whose pool ran out of questions, as `skill:class`.
+  final Set<String> exhausted = <String>{};
+
+  /// The class whose band holds [deck]: `(l_(k-1), l_k]`.
+  int _classOfDeck(int deck) {
+    final at = levels.levels.indexWhere((l) => l >= deck);
+    return (at < 0 ? levels.levels.length - 1 : at) + 1;
+  }
+
+  /// [deck], or the level of the nearest class whose band still has
+  /// questions for [skill] (the lower one first); null when none has.
+  int? _openLevel(PlacementSkill skill, int deck) {
+    final from = _classOfDeck(deck);
+    for (var d = 0; d < levels.levels.length; d++) {
+      for (final c in <int>[from - d, from + d]) {
+        if (c >= 1 &&
+            c <= levels.levels.length &&
+            !exhausted.contains('${skill.name}:$c')) {
+          return levels.levels[c - 1];
+        }
+      }
+    }
+    return null;
+  }
+
   final Set<PlacementSkill> closedSkills = <PlacementSkill>{};
   final Set<PlacementSkill> gapSkills = <PlacementSkill>{};
 
@@ -557,7 +646,7 @@ class _Engine {
     for (final skill in PlacementSkill.values) {
       if (!track.contains(skill) || unavailableSkills.contains(skill)) continue;
       final mass = reporting[skill]!.topMass;
-      if (reachesTarget(mass)) continue;
+      if (_done(skill)) continue;
       if (mass < _leaveBelow) {
         track.remove(skill);
         continue;
@@ -577,7 +666,7 @@ class _Engine {
     for (final skill in _positioningOrder) {
       if (!config.tested.contains(skill) || track.contains(skill)) continue;
       if (unavailableSkills.contains(skill)) continue;
-      if (reachesTarget(reporting[skill]!.leadingMass)) continue;
+      if (_done(skill)) continue;
       return _issue(_probe(skill));
     }
 
@@ -625,9 +714,20 @@ class _Engine {
 
   _Spec _probe(PlacementSkill skill) {
     final state = _positioning.putIfAbsent(skill, _Positioning.new);
-    final deck = state.floorPending
+    // While the most probable class holds 80% or more but the placed class is
+    // lower, the probe confirms it (plan section 13, point 7).
+    final credit = reporting[skill]!;
+    final lead = credit.leadingClass;
+    final confirm =
+        lead > 0 &&
+        credit.leadingMass >= kSureFrom &&
+        credit.placedClass() < lead;
+    final wanted = state.floorPending
         ? levels.levels.first
+        : confirm
+        ? levels.levelOf(lead)
         : askingDeck(asking[skill]!);
+    final deck = _openLevel(skill, wanted) ?? wanted;
     final first = state.probes == 0;
     state.floorPending = false;
     state.probes += 1;
@@ -640,6 +740,22 @@ class _Engine {
       deck: deck,
       first: first,
     );
+  }
+
+  /// A skill is done when its placed class is its most probable class and
+  /// that class holds 95% or more (plan section 13, point 7).
+  bool _done(PlacementSkill skill) {
+    final posterior = reporting[skill]!;
+    final placed = posterior.placedClass();
+    if (placed == posterior.leadingClass &&
+        reachesTarget(posterior.probabilities[placed])) {
+      return true;
+    }
+    // The bottom stop: the learner is almost surely at none or the first
+    // class (plan section 13, point 12).
+    return levels.levels.length >= 10 &&
+        posterior.leadingClass <= 1 &&
+        posterior.probabilities[0] + posterior.probabilities[1] >= 0.99;
   }
 
   PlacementSkill? get _grammarSkill {
@@ -704,8 +820,20 @@ class _Engine {
         break;
       case PlacementQuestionRole.topUp:
       case PlacementQuestionRole.probe:
-        unavailableSkills.addAll(spec.skills);
-        track.removeAll(spec.skills);
+        // An empty pool closes a band, not the skill (plan section 13,
+        // point 14): the skill leaves the expert track and is probed in the
+        // bands that still have questions; it is left out only when every
+        // class from its most probable one down is exhausted.
+        for (final skill in spec.skills) {
+          exhausted.add('${skill.name}:${_classOfDeck(spec.deck)}');
+          track.remove(skill);
+          final lead = reporting[skill]?.leadingClass ?? 0;
+          var open = false;
+          for (var c = math.max(1, lead); c >= 1; c--) {
+            if (!exhausted.contains('${skill.name}:$c')) open = true;
+          }
+          if (!open) unavailableSkills.add(skill);
+        }
         _forced.clear();
         _case = null;
       case PlacementQuestionRole.grammar:
@@ -761,7 +889,7 @@ class _Engine {
 
   // --- applying an answer ---------------------------------------------------
 
-  void _apply(_Pending current, bool correct) {
+  void _apply(_Pending current, bool correct, [double? guess, int? itemDeck]) {
     final spec = current.spec;
     answers.add(PlacementAnswer(current.request, correct));
 
@@ -770,11 +898,11 @@ class _Engine {
       for (final skill in spec.skills) {
         final before = reporting[skill];
         if (before == null) continue;
-        reporting[skill] = before.update(
-          deck: spec.deck,
+        reporting[skill] = before.updateCredit(
+          deck: itemDeck == null ? spec.deck : math.min(spec.deck, itemDeck),
           kind: spec.kind,
           correct: correct,
-          missWeight: missWeight,
+          base: guess,
         );
         evidence[skill] = (evidence[skill] ?? 0) + 1;
       }
@@ -893,7 +1021,7 @@ class _Engine {
       return false;
     }
     final skill = spec.skills.first;
-    if (!reachesTarget(reporting[skill]!.leadingMass)) return false;
+    if (!_done(skill)) return false;
     _case = null;
     _forced.clear();
     return true;
@@ -1087,10 +1215,14 @@ class _Engine {
         );
         continue;
       }
-      var label = labelForMass(posterior.leadingMass);
+      // The placed class is the credit posterior's lower bound, never the
+      // mode (plan section 13): what is shown, credited and written.
+      final placed = posterior.placedClass();
+      final mass = posterior.probabilities[placed];
+      var label = labelForMass(mass);
       if (label == AssuranceLabel.verySure &&
           config.verifiedPossible &&
-          posterior.leadingClass == levels.topClass &&
+          placed == levels.topClass &&
           questions >= 3 &&
           _covered(skill) &&
           !closedSkills.contains(skill) &&
@@ -1101,9 +1233,10 @@ class _Engine {
       out[skill] = SkillAssurance(
         skill: skill,
         label: label,
-        mass: posterior.leadingMass,
+        mass: mass,
         leadingClass: posterior.leadingClass,
-        placedLevel: posterior.placedLevel,
+        placedClass: placed,
+        placedLevel: levels.levelOf(placed),
         questions: questions,
       );
     }

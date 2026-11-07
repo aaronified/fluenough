@@ -1,5 +1,6 @@
 import 'assurance_model.dart';
 import 'generated_question.dart';
+import 'guessability.dart';
 import 'placement_data.dart';
 import 'placement_questions.dart';
 import 'placement_run.dart';
@@ -35,6 +36,7 @@ class PlacementSession {
     PlacementRunConfig config,
     this.data, {
     this.requireTrustedPairAudio = false,
+    this.questionSource,
   }) : _config = config {
     _run = PlacementRun(_config);
     _builder = _newBuilder();
@@ -78,9 +80,13 @@ class PlacementSession {
   final PlacementLanguageData data;
   final bool requireTrustedPairAudio;
 
+  /// Where the questions come from instead of the builder (a question bank,
+  /// for the replay harness); null builds them from [data].
+  final QuestionSource? questionSource;
+
   PlacementRunConfig _config;
   late PlacementRun _run;
-  late QuestionBuilder _builder;
+  late QuestionSource _builder;
   GeneratedQuestion? _question;
   bool _stuck = false;
 
@@ -98,13 +104,15 @@ class PlacementSession {
   final Map<PlacementVariant, GeneratedQuestion> _lastBase =
       <PlacementVariant, GeneratedQuestion>{};
 
-  QuestionBuilder _newBuilder() => QuestionBuilder(
-    data,
-    tested: _config.tested,
-    microphone: _config.microphone,
-    requireTrustedPairAudio: requireTrustedPairAudio,
-    seed: _config.seed,
-  );
+  QuestionSource _newBuilder() =>
+      questionSource ??
+      QuestionBuilder(
+        data,
+        tested: _config.tested,
+        microphone: _config.microphone,
+        requireTrustedPairAudio: requireTrustedPairAudio,
+        seed: _config.seed,
+      );
 
   PlacementRunConfig get config => _config;
   PlacementRun get run => _run;
@@ -139,7 +147,11 @@ class PlacementSession {
       throw StateError('there is no question to answer');
     }
     _events.add(correct ? 'a1' : 'a0');
-    _run = _run.answer(correct);
+    _run = _run.answer(
+      correct,
+      guess: creditBaseOf(_question!),
+      itemDeck: _question!.difficulty.deck,
+    );
     _advance();
   }
 
@@ -188,6 +200,8 @@ class PlacementSession {
         results: _run.results,
         checkpointsKept: _run.checkpointsKept,
         unavailable: _run.unavailableLog,
+        guesses: _run.guesses,
+        itemDecks: _run.itemDecks,
       );
       _builder = _newBuilder();
     }

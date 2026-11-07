@@ -10,8 +10,16 @@ import 'package:fluenough/core/placement/placement_run.dart';
 /// teaching grammar families, long sentences in decks 4 and 5, a few short
 /// ones in decks 3 and 4, eight words spelled in Devanagari in deck 1 and
 /// four pairs of words that differ by one swap.
-PlacementLanguageData findLevelData({Set<String> stable = const <String>{}}) {
+PlacementLanguageData findLevelData({
+  Set<String> stable = const <String>{},
+  int decks = 6,
+  int words = 10,
+}) {
   const letters = 'abcdefghij';
+  final big = decks != 6 || words != 10;
+  String wordOf(int i, int j) => big
+      ? 'x${i.toRadixString(36)}${j.toRadixString(36)}o'
+      : 'x${letters[i]}${letters[j]}o';
   const devanagari = <String>[
     'कमल',
     'नमक',
@@ -46,20 +54,18 @@ PlacementLanguageData findLevelData({Set<String> stable = const <String>{}}) {
     tags: <String>['t$deck'],
   );
 
-  final decks = <PlacementDeck>[];
+  final deckList = <PlacementDeck>[];
   final scriptCards = <Card>[];
-  for (var i = 0; i < 6; i++) {
+  for (var i = 0; i < decks; i++) {
     final cards = <Card>[
-      for (var j = 0; j < 10; j++)
+      for (var j = 0; j < words; j++)
         card(
           'w-$i-$j',
-          'x${letters[i]}${letters[j]}o',
+          wordOf(i, j),
           'thing $i-$j',
           i,
-          bases: i == 5 && j < 2
-              ? <CardBase>[
-                  CardBase(word: 'x${letters[i]}${letters[j]}o', base: 'stem'),
-                ]
+          bases: i == decks - 1 && j < 2
+              ? <CardBase>[CardBase(word: wordOf(i, j), base: 'stem')]
               : const <CardBase>[],
         ),
     ];
@@ -113,7 +119,7 @@ PlacementLanguageData findLevelData({Set<String> stable = const <String>{}}) {
         );
       }
     }
-    decks.add(
+    deckList.add(
       PlacementDeck(
         id: 'deck-$i',
         cards: cards,
@@ -123,7 +129,7 @@ PlacementLanguageData findLevelData({Set<String> stable = const <String>{}}) {
   }
   return PlacementLanguageData(
     language: 'xx',
-    decks: decks,
+    decks: deckList,
     scripts: <PlacementScriptData>[
       PlacementScriptData(
         script: 'devanagari',
@@ -148,13 +154,14 @@ PlacementLanguageData findLevelData({Set<String> stable = const <String>{}}) {
         ),
       ],
     ),
-    levelMarkDecks: const <int>[1, 3, 5],
+    levelMarkDecks: <int>[1, big ? 5 : 3, decks - 1],
     stableCardIds: stable,
   );
 }
 
 /// The run settings for [findLevelData]'s six decks.
 PlacementRunConfig findLevelConfig({
+  int decks = 6,
   Set<PlacementSkill> skills = const <PlacementSkill>{
     PlacementSkill.read,
     PlacementSkill.hear,
@@ -165,7 +172,7 @@ PlacementRunConfig findLevelConfig({
   bool verifiable = true,
   bool floorFirst = true,
 }) => PlacementRunConfig(
-  deckCount: 6,
+  deckCount: decks,
   skills: skills,
   declaration: declaration,
   microphone: microphone,
