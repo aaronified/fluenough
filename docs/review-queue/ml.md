@@ -13,3 +13,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ml-0043 | ml-about-me | എന്റെ (my): part of speech is 'other' in the deck; should it be a possessive pronoun? | Haiku builder | 2026-11-07 |
 | unit-level | ml-numbers-1-20 | Numbers 2 to 20 are each shown with ആളുകൾ (people) and with ഇത് (this is): is the count with ആളുകൾ natural for each number, or should a classifier be used? | Haiku builder | 2026-11-07 |
 | unit-level | ml-family | The family words are written in the citation form, with ഭാര്യ and ഭർത്താവ് as the main words. Are the forms right as a list, and is മുത്തശ്ശി for both sides of the family right? | Haiku builder | 2026-11-07 |
+| ml-0102 | ml-pronouns | അവന്റെ (his): the card is a possessive form of അവൻ; is 'other' the right part of speech? | Haiku builder | 2026-11-07 |
+| ml-0107 | ml-pronouns | എനിക്ക് (to me): the card is a dative of ഞാൻ, written as its own word; should it be a form or a separate pronoun? | Haiku builder | 2026-11-07 |
+| ml-0110 | ml-pronouns | സ്വയം (oneself): is 'pronoun' right, or should it be a noun? | Haiku builder | 2026-11-07 |
+| unit-level | ml-pronouns | The possessive and case forms (അവന്റെ, അവളുടെ, നിന്റെ, നമ്മുടെ, അവരുടെ, എനിക്ക്, നിനക്ക്, എന്നെ) are written as their own cards. Is the split right, or should the forms be grouped under the pronoun? | Haiku builder | 2026-11-07 |
