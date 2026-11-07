@@ -17,6 +17,28 @@ enum BrowserMicrophone {
   unknown,
 }
 
+/// Whether a browser, by its [userAgent], may run a recorder beside the
+/// recogniser (ADR-0054). Safari and every browser on iOS (all WebKit) give
+/// the recogniser `webkitSpeechRecognition` alone and abort it when a second
+/// reader takes the microphone, so there the recorder is skipped: a failed
+/// listen costs the learner more than a missing take, which "Hear yourself"
+/// records instead. Chrome and Edge (also `webkitSpeechRecognition`, but
+/// Chromium) and Firefox's `MediaRecorder` share the microphone.
+bool recorderBesideRecognition(String userAgent) {
+  final ua = userAgent.toLowerCase();
+  final ios =
+      ua.contains('iphone') || ua.contains('ipad') || ua.contains('ipod');
+  if (ios) return false;
+  final chromium =
+      ua.contains('chrome') ||
+      ua.contains('chromium') ||
+      ua.contains('crios') ||
+      ua.contains('edg/') ||
+      ua.contains('opr/') ||
+      ua.contains('android');
+  return !(ua.contains('safari') && !chromium);
+}
+
 /// One finished browser listen: its readings, best first, or the Web Speech
 /// API's error code (`no-speech`, `not-allowed`, `network` and so on).
 class BrowserHeard {

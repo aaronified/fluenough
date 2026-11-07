@@ -97,6 +97,18 @@ class _WebSpeechBrowser implements SpeechBrowser {
     }
   }
 
+  /// Whether the browser may record beside the recogniser (not Safari, not
+  /// iOS): see [recorderBesideRecognition].
+  static bool get _recorderAllowed {
+    try {
+      final navigator = globalContext.getProperty<JSObject?>('navigator'.toJS);
+      final agent = navigator?.getProperty<JSString?>('userAgent'.toJS)?.toDart;
+      return agent != null && recorderBesideRecognition(agent);
+    } on Object {
+      return false;
+    }
+  }
+
   @override
   BrowserSession recognise(String lang) {
     final done = Completer<BrowserHeard>();
@@ -149,7 +161,7 @@ class _WebSpeechBrowser implements SpeechBrowser {
         ..callMethod<JSAny?>('start'.toJS);
       // The recogniser has the microphone first; the recorder never delays
       // it and gives up quietly where the browser will not share.
-      unawaited(recorder.start());
+      if (_recorderAllowed) unawaited(recorder.start());
     } on Object catch (e) {
       finish(BrowserHeard.error('${e.runtimeType}'), keep: false);
     }
