@@ -43,6 +43,11 @@ const double kProvenTail = 0.0125;
 /// The guess rate the proof of a band is judged at.
 const double kProvenGuess = 0.30;
 
+/// The highest guess rate a clean item may have. An item guessed more often
+/// than this may still move the posterior, but it never counts toward the
+/// coverage gate or the proof of a band.
+const double kCleanGuessMax = 0.35;
+
 /// An item whose guess rate is this or more gives no evidence and is
 /// dropped (amendment: "drop items with guess >= 0.9").
 const double kUnusableGuess = 0.9;
@@ -98,6 +103,9 @@ enum IgnoredReason {
 
   /// Its weight was zero.
   zeroWeight,
+
+  /// The answer contradicted every hypothesis (a likelihood sum of zero).
+  degenerate,
 }
 
 /// How a skill's evidence reads on the result screen.
@@ -205,7 +213,6 @@ class SkillReadout {
     required this.coveragePassed,
     required this.provenClass,
     required this.cappedByProof,
-    required this.cappedByHear,
   });
 
   final PlacementSkill skill;
@@ -218,7 +225,7 @@ class SkillReadout {
   final int highClass;
 
   /// The class the learner starts at: the lower edge of the range, never
-  /// above the proven ceiling, and for Say never above Hear's start unless a
+  /// above the proven ceiling, and for Say `none` unless a
   /// recogniser scored it. 0 is `none`.
   final int startClass;
 
@@ -252,9 +259,6 @@ class SkillReadout {
 
   /// Whether the proof ceiling lowered the placement.
   final bool cappedByProof;
-
-  /// Whether Say was held at Hear's start for want of a recogniser.
-  final bool cappedByHear;
 
   /// Whether the range may be shown: the coverage gate passed and the skill
   /// was scored.
@@ -364,11 +368,18 @@ double _choose(int n, int k) {
 }
 
 class _Record {
-  const _Record(this.skill, this.band, this.correct, this.yesNoReal);
+  const _Record(
+    this.skill,
+    this.band,
+    this.correct,
+    this.yesNoReal,
+    this.guess,
+  );
   final PlacementSkill skill;
   final int band;
   final bool correct;
   final bool yesNoReal;
+  final double guess;
 }
 
 /// The joint posterior of one learner's skills, updated item by item.
@@ -552,16 +563,17 @@ class JointPlacement {
     for (final s in item.skills) {
       _touches[s] = _touches[s]! + 1;
     }
-    var repeated = false;
+    // A card is remembered only once an item on it gave evidence: a
+    // self-rated, unusable or otherwise ignored item must not block a later
+    // real item on the same card.
     final card = item.cardId;
-    if (card != null && !_cards.add(card)) repeated = true;
     IgnoredReason? reason;
     if (item.selfRated) {
       reason = IgnoredReason.selfRated;
       for (final s in item.skills) {
         _selfRated[s] = _selfRated[s]! + 1;
       }
-    } else if (repeated) {
+    } else if (card != null && _cards.contains(card)) {
       reason = IgnoredReason.repeatedCard;
     } else if (!item.usable) {
       reason = IgnoredReason.unusableGuess;
@@ -572,6 +584,15 @@ class JointPlacement {
       _ignored++;
       return reason;
     }
+    // The posterior is updated first, so an answer that contradicts every
+    // hypothesis changes nothing.
+    final bias = item.yesNo != YesNoRole.notYesNo;
+    if (bias) _expandBias();
+    if (!_apply(item, outcome)) {
+      _ignored++;
+      return IgnoredReason.degenerate;
+    }
+    if (card != null) _cards.add(card);
     for (final s in item.skills) {
       _used[s] = _used[s]! + 1;
       _recognised[s] = _recognised[s]! + 1;
@@ -581,18 +602,25 @@ class JointPlacement {
       _pseudowords++;
       if (said) _pseudoYes++;
     }
-    if (item.yesNo != YesNoRole.notYesNo) _expandBias();
-    _apply(item, outcome);
-    if (item.clean && item.yesNo != YesNoRole.pseudoword) {
+    // Real-word yes/no answers update the posterior at once, but they count
+    // toward coverage and proof only once [kMinPseudowords] pseudowords have
+    // been answered (see [_cleanRecords]). Items guessed more often than
+    // [kCleanGuessMax] may update the posterior but are never clean.
+    final cleanGuess = bias || item.guess <= kCleanGuessMax;
+    if (item.clean && cleanGuess && item.yesNo != YesNoRole.pseudoword) {
       final band = bandOfDeck(item.deck);
       for (final s in item.skills) {
-        _records.add(_Record(s, band, said, item.yesNo == YesNoRole.realWord));
+        _records.add(
+          _Record(s, band, said, item.yesNo == YesNoRole.realWord, item.guess),
+        );
       }
     }
     return null;
   }
 
-  void _apply(JointItem item, AnswerOutcome outcome) {
+  /// Multiplies the joint by the item's likelihood; false, with the joint
+  /// untouched, when the product would sum to zero.
+  bool _apply(JointItem item, AnswerOutcome outcome) {
     final exponent = math.min(1.0, item.weight) * temper;
     final count = skills.length;
     final index = <int>[for (final s in item.skills) skills.indexOf(s)];
@@ -638,26 +666,29 @@ class JointPlacement {
       k,
       (b) => math.pow(lik(false, b), exponent).toDouble(),
     );
+    bool allKnow(int cell) {
+      _digits(cell, digits);
+      for (final i in index) {
+        if (!knowsClass[digits[i]]) return false;
+      }
+      return true;
+    }
+
     var sum = 0.0;
     for (var cell = 0; cell < _cells; cell++) {
-      _digits(cell, digits);
-      var all = true;
-      for (final i in index) {
-        if (!knowsClass[digits[i]]) {
-          all = false;
-          break;
-        }
-      }
-      final table = all ? known : unknown;
+      final table = allKnow(cell) ? known : unknown;
       for (var b = 0; b < k; b++) {
-        final v = _weights[cell * k + b] * table[b];
-        _weights[cell * k + b] = v;
-        sum += v;
+        sum += _weights[cell * k + b] * table[b];
       }
     }
-    for (var i = 0; i < _weights.length; i++) {
-      _weights[i] /= sum;
+    if (!(sum > 0) || sum.isInfinite) return false;
+    for (var cell = 0; cell < _cells; cell++) {
+      final table = allKnow(cell) ? known : unknown;
+      for (var b = 0; b < k; b++) {
+        _weights[cell * k + b] = _weights[cell * k + b] * table[b] / sum;
+      }
     }
+    return true;
   }
 
   /// P(class) for one skill, summed over every other skill and the bias.
@@ -727,7 +758,11 @@ class JointPlacement {
     byBand.forEach((band, records) {
       if (records.length < kMinCleanItems) return;
       final right = records.where((r) => r.correct).length;
-      final guess = records.any((r) => r.yesNoReal) ? biasGuess : kProvenGuess;
+      // Judged at the real guess of the band's items, never below 0.30.
+      var guess = records.any((r) => r.yesNoReal) ? biasGuess : kProvenGuess;
+      for (final r in records) {
+        if (r.guess > guess) guess = r.guess;
+      }
       if (guess >= kUnusableGuess) return;
       if (binomialTail(right, records.length, guess) <= kProvenTail) {
         final c = classOfBand(band);
@@ -743,37 +778,32 @@ class JointPlacement {
     for (final skill in skills) {
       out[skill] = _skillReadout(skill);
     }
-    // Say is never placed from self-rating alone: without a recogniser it
-    // starts no higher than Hear does.
+    // Say is never placed from self-rating alone: without a recogniser-scored
+    // item it is unplaced (start `none`), whatever Hear shows.
     final say = out[PlacementSkill.say];
     if (say != null && (_recognised[PlacementSkill.say] ?? 0) == 0) {
-      final hear = out[PlacementSkill.hear];
-      final cap = hear == null ? 0 : hear.startClass;
-      if (say.startClass > cap) {
-        out[PlacementSkill.say] = _withStart(say, cap);
-      }
+      out[PlacementSkill.say] = _unplaced(say);
     }
     return JointReadout(Map<PlacementSkill, SkillReadout>.unmodifiable(out));
   }
 
-  SkillReadout _withStart(SkillReadout r, int startClass) {
+  SkillReadout _unplaced(SkillReadout r) {
     return SkillReadout(
       skill: r.skill,
       state: r.state,
-      lowClass: math.min(r.lowClass, startClass),
-      medianClass: math.min(r.medianClass, math.max(startClass, 0)),
-      highClass: r.highClass,
-      startClass: startClass,
-      startDeck: _startDeck(startClass),
+      lowClass: 0,
+      medianClass: 0,
+      highClass: 0,
+      startClass: 0,
+      startDeck: 0,
       rangeMass: r.rangeMass,
       nearMass: r.nearMass,
-      confidence: r.confidence,
+      confidence: PlacementConfidence.low,
       cleanItems: r.cleanItems,
       touches: r.touches,
-      coveragePassed: r.coveragePassed,
+      coveragePassed: false,
       provenClass: r.provenClass,
       cappedByProof: r.cappedByProof,
-      cappedByHear: true,
     );
   }
 
@@ -849,7 +879,6 @@ class JointPlacement {
       coveragePassed: clean >= kMinCleanItems,
       provenClass: proven,
       cappedByProof: capped,
-      cappedByHear: false,
     );
   }
 }

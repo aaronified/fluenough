@@ -345,7 +345,7 @@ void main() {
       expect(say.rangeShown, isFalse);
     });
 
-    test('Say starts no higher than Hear without a recogniser', () {
+    test('Say is unplaced without a recogniser, whatever Hear shows', () {
       final m = JointPlacement(levels: _levels(), skills: const [_hear, _say]);
       // Hear is proven low; Say is only ever rated "same".
       _askRight(m, _hear, 20, 4);
@@ -362,10 +362,10 @@ void main() {
         );
       }
       final r = m.readout();
-      expect(
-        r.skills[_say]!.startClass,
-        lessThanOrEqualTo(r.skills[_hear]!.startClass),
-      );
+      expect(r.skills[_hear]!.startClass, greaterThan(0));
+      expect(r.skills[_say]!.startClass, 0);
+      expect(r.skills[_say]!.startDeck, 0);
+      expect(r.skills[_say]!.highClass, 0);
     });
 
     test('a recogniser-scored Say is placed on its own evidence', () {
@@ -374,7 +374,6 @@ void main() {
       _askRight(m, _say, 70, 4);
       final r = m.readout();
       expect(r.skills[_say]!.state, EvidenceState.tested);
-      expect(r.skills[_say]!.cappedByHear, isFalse);
       expect(
         r.skills[_say]!.startClass,
         greaterThan(r.skills[_hear]!.startClass),
@@ -449,6 +448,89 @@ void main() {
 
       expect(run(0, 4).proven, isNotNull);
       expect(run(4, 6).proven, isNull);
+    });
+  });
+
+  group('items that are easy to guess', () {
+    test('4 of 4 on items guessed 55% of the time proves nothing', () {
+      final m = JointPlacement(levels: _levels(), skills: const [_read]);
+      for (var i = 0; i < 4; i++) {
+        m.observe(
+          _pick(_read, 70, card: 'g$i', guess: 0.55),
+          AnswerOutcome.right,
+        );
+      }
+      final read = m.readout().skills[_read]!;
+      expect(read.provenClass, isNull);
+      expect(read.cleanItems, 0);
+      expect(read.coveragePassed, isFalse);
+    });
+
+    test('4 of 4 on items guessed a quarter of the time does', () {
+      final m = JointPlacement(levels: _levels(), skills: const [_read]);
+      for (var i = 0; i < 4; i++) {
+        m.observe(_pick(_read, 70, card: 'g$i'), AnswerOutcome.right);
+      }
+      expect(m.readout().skills[_read]!.provenClass, isNotNull);
+    });
+
+    test('a high-guess item still moves the posterior', () {
+      final m = JointPlacement(levels: _levels(), skills: const [_read]);
+      final before = m.massKnowing(_read, 70);
+      m.observe(_pick(_read, 70, guess: 0.55), AnswerOutcome.right);
+      expect(m.massKnowing(_read, 70), greaterThan(before));
+      expect(m.cleanItemsOf(_read), 0);
+    });
+  });
+
+  group('cards and degenerate answers', () {
+    test('an ignored item does not block a later real item on its card', () {
+      final m = JointPlacement(levels: _levels(), skills: const [_read]);
+      expect(
+        m.observe(
+          _pick(_read, 70, card: 'c', guess: 0.95),
+          AnswerOutcome.right,
+        ),
+        IgnoredReason.unusableGuess,
+      );
+      expect(m.hasAsked('c'), isFalse);
+      expect(
+        m.observe(_pick(_read, 70, card: 'c'), AnswerOutcome.right),
+        isNull,
+      );
+      expect(m.hasAsked('c'), isTrue);
+      expect(m.cleanItemsOf(_read), 1);
+    });
+
+    test('a self-rated item does not block a later scored item', () {
+      final m = JointPlacement(levels: _levels(), skills: const [_say]);
+      m.observe(
+        const JointItem(
+          skills: {_say},
+          deck: 50,
+          slip: 0.1,
+          guess: 0.3,
+          selfRated: true,
+          cardId: 's',
+        ),
+        AnswerOutcome.right,
+      );
+      expect(
+        m.observe(_pick(_say, 50, card: 's'), AnswerOutcome.right),
+        isNull,
+      );
+    });
+
+    test('an answer no hypothesis allows changes nothing', () {
+      final m = JointPlacement(levels: _levels(), skills: const [_read]);
+      final before = m.marginal(_read);
+      // Slip 1 and guess 0: a right answer is impossible for every class.
+      final reason = m.observe(
+        const JointItem(skills: {_read}, deck: 70, slip: 1, guess: 0),
+        AnswerOutcome.right,
+      );
+      expect(reason, IgnoredReason.degenerate);
+      expect(m.marginal(_read), before);
     });
   });
 

@@ -211,15 +211,15 @@ Leaks by format (Spanish, items beyond unit 11; the design's guess rate in brack
 
 1. The guess rate is calibrated per format and cognate class from adversary replay with a 90% upper bound; items with a guess of 0.9 or more are dropped (they give no evidence). `GuessCalibration` in `lib/core/placement/joint_model.dart`.
 2. The declaration prior carries at most 70%; at least 30% is flat.
-3. **Proven level ceiling.** A skill is not placed above its highest band proven by 4 of 4 or 5 of 6 correct, non-leaky, non-cognate items (so at least four clean items per claimed band per skill, not three). A band is a tenth of the path. The rule is "the chance of a guesser at 0.30 doing as well is at most 1.25%".
-4. **Say is never placed from self-rating alone.** Self-rated Say items never enter the joint (weight 0, because the joint would otherwise lift Hear and Read through the skills-move-together prior); without a recogniser Say starts no higher than Hear does, is labelled "Self-rated", and does not count toward coverage or extend the run.
-5. Yes/no: at least eight pseudowords before real-word answers count as clean items; the yes-bias (false-alarm rate) is a joint latent, not a plug-in; and a band proven by yes/no answers is judged at the upper bound of the learner's own false-alarm rate.
+3. **Proven level ceiling.** A skill is not placed above its highest band proven by 4 of 4 or 5 of 6 correct, non-leaky, non-cognate items (so at least four clean items per claimed band per skill, not three). A band is a tenth of the path. The rule is "the chance of a guesser doing as well is at most 1.25%", judged at the larger of 0.30 and the highest guess rate of the band's items. An item guessed more than 35% of the time may still move the posterior but is never a clean item.
+4. **Say is never placed from self-rating alone.** Self-rated Say items never enter the joint (weight 0, because the joint would otherwise lift Hear and Read through the skills-move-together prior); without a recogniser-scored item Say is unplaced (start `none`, whatever Hear shows), is labelled "Self-rated", and does not count toward coverage or extend the run.
+5. Yes/no: real-word answers update the posterior at once, but only after at least eight pseudowords do they count as clean items or toward a proof; the yes-bias (false-alarm rate) is a joint latent, not a plug-in; and a band proven by yes/no answers is judged at the upper bound of the learner's own false-alarm rate.
 6. The likelihood is tempered (an exponent of 0.85, and a weight that falls by a fifth for each card, distractor or cue an item shares with earlier ones), and the range is shown only after the coverage gate passes (at least four clean items for the skill).
 
 ## Changes to the design this brings
 
 - **Confidence word.** The 80% range always has at least 80% of the mass by construction, so the confidence word is derived from P(true level within one tenth of the middle), not from the range's own mass: high at 80% or more, medium 60 to 79%, low below.
-- **Start.** The lower edge of the 80% range, never above the proven ceiling, and for Say never above Hear's start unless a recogniser scored it.
+- **Start.** The lower edge of the 80% range, never above the proven ceiling, and for Say `none` unless a recogniser scored it.
 - **Twenty parts.** Classes are twentieths of the path (`PlacementLevels(deckCount, maxParts: 20)`), so a tenth is two classes.
 - **Time.** The adversary showed that about 24 to 30 items are needed (four clean items per band per skill); the old gate of median 22 items is superseded. Do not loosen security to hit time.
 
@@ -233,7 +233,7 @@ Personas, per skill, 300 runs per cell, with flat, amateur and advanced declarat
 | COGNATE-ONLY | more than +1/10 too high in at most 2% |
 | TESTWISE-ONLY and RANDOM | more than +1/10 too high in at most 2% |
 | YES-SAYER (yes-rate 0.5 to 0.9) | p10 within T+1/10 in at least 97% |
-| SELF-RATER (Say always "same") | Say start at most Hear start +1/10 in at least 98% |
+| SELF-RATER (Say always "same") | Say start at most Hear start +1/10 in at least 98% (the model gives `none`, so this holds trivially; the gate guards the picker and UI) |
 | ANAGRAM-SOLVER | per-item accuracy at most guess + 0.07 |
 | MATCHER | per-pair accuracy at most 0.35 |
 | FAMILY-REPLAY | lift at most 5 points |
