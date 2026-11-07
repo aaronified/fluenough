@@ -5,7 +5,9 @@ import 'package:speech_to_text/speech_recognition_error.dart';
 import 'package:speech_to_text/speech_recognition_result.dart';
 import 'package:speech_to_text/speech_to_text.dart';
 
+import '../sound/sound_check.dart' show peakOfPcm16;
 import 'mic_capture.dart';
+import 'native_listen.dart';
 import 'speech_engine.dart';
 
 /// The operating system's speech recogniser, through the `speech_to_text`
@@ -17,12 +19,16 @@ import 'speech_engine.dart';
 /// callbacks into one result, with a deadline: a recogniser that never
 /// answers yields no match rather than a session that waits for ever.
 class SystemSpeechEngine implements SpeechEngine {
-  SystemSpeechEngine([SpeechToText? plugin, MicCapture? capture])
-    : _plugin = plugin ?? SpeechToText(),
-      // In a browser two readers of the microphone are not safe, and the
-      // web build uses `WebSpeechEngine`; a capture given here is ignored
-      // rather than started (the same constant as Flutter's `kIsWeb`).
-      _capture = _inBrowser ? null : capture;
+  SystemSpeechEngine([
+    SpeechToText? plugin,
+    MicCapture? capture,
+    NativeListener? native,
+  ]) : _plugin = plugin ?? SpeechToText(),
+       // In a browser two readers of the microphone are not safe, and the
+       // web build uses `WebSpeechEngine`; a capture given here is ignored
+       // rather than started (the same constant as Flutter's `kIsWeb`).
+       _capture = _inBrowser ? null : capture,
+       _native = _inBrowser ? null : native;
 
   static const bool _inBrowser = bool.fromEnvironment('dart.library.js_util');
 
@@ -36,6 +42,18 @@ class SystemSpeechEngine implements SpeechEngine {
   /// so that a phone that cannot share the microphone listens as before.
   final MicCapture? _capture;
   int _unmatchedWithCapture = 0;
+
+  /// The listen that owns the microphone and feeds the recogniser from it
+  /// (Android 13 and later, ADR-0054 option 2), so that the audio kept is
+  /// exactly what was recognised and no second reader of the microphone is
+  /// needed. Null where there is none. It is tried first; a phone, or a
+  /// recogniser, that cannot do it listens the plain way, as before, and is
+  /// not asked again after two listens in a row that failed on this side or
+  /// heard nothing.
+  final NativeListener? _native;
+  int _nativeTrouble = 0;
+  bool _nativeOpen() =>
+      _native != null && _nativeTrouble < _captureGivesUpAfter;
 
   /// After this many listens in a row that heard nothing while the capture
   /// ran, the capture is given up for good.
@@ -127,6 +145,10 @@ class SystemSpeechEngine implements SpeechEngine {
     } on SpeechError catch (e) {
       return SpeechHeard.failed(SpeechFailure.noRecogniser, code: e.code);
     }
+    if (_nativeOpen()) {
+      final heard = await _listenNative(bcp47, onDevice, listenFor);
+      if (heard != null) return heard;
+    }
     final capture = _capturing ? _capture : null;
     if (capture != null) await capture.finish();
     _listening?.complete(const SpeechHeard.failed(SpeechFailure.other));
@@ -180,8 +202,63 @@ class SystemSpeechEngine implements SpeechEngine {
     return SpeechHeard(heard.alternatives, ownAudio: audio);
   }
 
+  /// A listen through the native side, or null when the plain way should
+  /// listen instead.
+  Future<SpeechHeard?> _listenNative(
+    String bcp47,
+    bool onDevice,
+    Duration listenFor,
+  ) async {
+    final native = _native!;
+    try {
+      if (!await native.available) {
+        _nativeTrouble = _captureGivesUpAfter;
+        return null;
+      }
+      final result = await native
+          .listen(bcp47: bcp47, onDevice: onDevice, listenFor: listenFor)
+          .timeout(
+            listenFor + _grace + const Duration(seconds: 2),
+            onTimeout: () {
+              unawaited(native.cancel());
+              return const NativeListenResult(error: 'exception');
+            },
+          );
+      if (result.fallsBack) {
+        _nativeTrouble++;
+        return null;
+      }
+      final error = result.error;
+      if (error != null) {
+        final failure = failureOf(error, onDevice: onDevice);
+        _nativeTrouble = failure == SpeechFailure.noMatch
+            ? _nativeTrouble + 1
+            : 0;
+        return SpeechHeard.failed(failure, code: error);
+      }
+      if (result.alternatives.isEmpty) {
+        _nativeTrouble++;
+        return const SpeechHeard.failed(
+          SpeechFailure.noMatch,
+          code: 'empty-result',
+        );
+      }
+      _nativeTrouble = 0;
+      final audio = result.audio;
+      // A stream that is only silence was not the learner's voice (the phone
+      // shut the microphone to us): the drill records a second take instead.
+      final usable =
+          audio != null && peakOfPcm16(audio.pcm16) >= RecordMicCapture.silence;
+      return SpeechHeard(result.alternatives, ownAudio: usable ? audio : null);
+    } on Object {
+      _nativeTrouble++;
+      return null;
+    }
+  }
+
   @override
   Future<void> stop() async {
+    unawaited(_native?.cancel());
     try {
       await _plugin.stop();
     } catch (e) {

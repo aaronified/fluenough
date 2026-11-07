@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Say records your voice at the same moment it is recognised.** On the Say drill, "Your recording" said "No recording yet. Replay records one." until you tapped Replay, because the phone's recogniser takes the microphone and the app could not also record it. On Android 13 and later the app now captures the microphone itself and gives the recogniser that same stream, so the attempt that was graded is already there to replay and compare, with no second recording. In a browser, a recorder starts with the recogniser and stops with it. On older Android, or where the phone's recogniser does not take the stream, Say behaves as before (Replay records a take). Nothing is recorded when a listen is cancelled or fails, the take stays in memory only and is dropped when you leave the card. Refs #881.
+
 ## [0.9.3] - 2026-11-07
 
 ### Added
