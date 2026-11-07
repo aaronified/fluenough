@@ -49,6 +49,9 @@ cards:
     tags: ["dental-retroflex"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "डाल हवा में झूलती है।", "reading": "ḍāl havā mēm̐ jhūltī hai.", "ipa": "ɖaːl ɦəʋaː mẽː dʒʱuːlt̪iː ɦɛː", "bases": [{"word": "डाल", "base": "डाल", "reading": "ḍāl"}, {"word": "हवा", "ref": "hi-1257"}, {"word": "में", "ref": "hi-0274"}, {"word": "झूलती", "base": "झूलना", "reading": "jhūlnā"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - ref: "hi-0308"
     tags: ["vowel-length"]
     notes:
@@ -73,6 +76,10 @@ cards:
     tags: ["vowel-length"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "कीमत कम है।", "reading": "kīmat kam hai.", "ipa": "kiːmət̪ kəm ɦɛː", "bases": [{"word": "कम", "base": "कम", "reading": "kam"}, {"word": "है", "ref": "hi-0112"}]},
+      {"target": "थोड़ा कम कीजिए।", "reading": "thōṛā kam kījiē.", "ipa": "t̪ʰoːɽaː kəm kiːdʒɪeː", "bases": [{"word": "थोड़ा", "base": "थोड़ा", "reading": "thōṛā"}, {"word": "कीजिए", "base": "करना", "reading": "karnā"}]}
+    ]
   - ref: "hi-0194"
     tags: ["vowel-length"]
     notes:
@@ -109,6 +116,10 @@ cards:
     tags: ["gemination"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "यह रिश्ता पक्का है।", "reading": "yah riśtā pakkā hai.", "ipa": "jəɦ rɪʃt̪aː pəkkaː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "पक्का", "base": "पक्का", "reading": "pakkā"}, {"word": "है", "ref": "hi-0780"}]},
+      {"target": "सौदा पक्का हो गया।", "reading": "saudā pakkā hō gayā.", "ipa": "sɔːd̪aː pəkkaː ɦoː ɡəjaː", "bases": [{"word": "पक्का", "base": "पक्का", "reading": "pakkā"}, {"word": "हो", "ref": "hi-0780"}, {"word": "गया", "ref": "hi-0777"}]}
+    ]
   - id: "hi-0110"
     target: "बचा"
     target_scripts: { perso_arabic: "بچا" }
@@ -125,6 +136,10 @@ cards:
     tags: ["gemination"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "बच्चा भूखा है।", "reading": "baccā bhūkhā hai.", "ipa": "bətʃtʃaː bʱuːkʰaː ɦɛː", "bases": [{"word": "बच्चा", "base": "बच्चा", "reading": "baccā"}, {"word": "भूखा", "base": "भूखा", "reading": "bhūkhā"}, {"word": "है", "ref": "hi-0780"}]},
+      {"target": "बच्चा रोता है।", "reading": "baccā rōtā hai.", "ipa": "bətʃtʃaː roːt̪aː ɦɛː", "bases": [{"word": "बच्चा", "base": "बच्चा", "reading": "baccā"}, {"word": "रोता", "base": "रोना", "reading": "rōtā"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0112"
     target: "है"
     target_scripts: { perso_arabic: "ہے" }
@@ -133,6 +148,9 @@ cards:
     tags: ["nasal"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "गारंटी है।", "reading": "gāraṇṭī hai.", "ipa": "ɡaːrəɳʈiː ɦɛː", "bases": [{"word": "है", "base": "है", "reading": "hai"}]}
+    ]
   - id: "hi-0113"
     target: "हैं"
     target_scripts: { perso_arabic: "ہیں" }
@@ -141,6 +159,9 @@ cards:
     tags: ["nasal"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "कागज़ात कहाँ हैं?", "reading": "kāgzāt kahām̐ haim̐?", "ipa": "kaːɡzaːt̪ kəɦãː ɦɛ̃ː", "bases": [{"word": "कहाँ", "ref": "hi-0159"}, {"word": "हैं", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0114"
     target: "पढ़ना"
     target_scripts: { perso_arabic: "پڑھنا" }
@@ -149,6 +170,10 @@ cards:
     tags: ["aspiration"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "सबक़ पढ़ो।", "reading": "sabaq paṛhō.", "ipa": "səbəq pəɽʱoː", "bases": [{"word": "सबक़", "base": "सबक़", "reading": "sabaq"}, {"word": "पढ़ो", "base": "पढ़ना", "reading": "paṛhnā"}]},
+      {"target": "उसने खूब पढ़ा।", "reading": "usnē khūb paṛhā.", "ipa": "ʊsneː kʰuːb pəɽʱaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "पढ़ा", "base": "पढ़ना", "reading": "paṛhnā"}]}
+    ]
   - id: "hi-0115"
     target: "पड़ना"
     target_scripts: { perso_arabic: "پڑنا" }
@@ -157,3 +182,7 @@ cards:
     tags: ["aspiration"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "मुझे जाना पड़ेगा।", "reading": "mujhē jānā paṛēgā.", "ipa": "mʊdʒʱeː dʒaːnaː pəɽeːɡaː", "bases": [{"word": "मुझे", "base": "मैं", "reading": "maim̐"}, {"word": "जाना", "base": "जाना", "reading": "jānā"}, {"word": "पड़ेगा", "base": "पड़ना", "reading": "paṛnā"}]},
+      {"target": "आज ओवरटाइम करना पड़ेगा।", "reading": "āj ōvrṭāim karnā paṛēgā.", "ipa": "aːdʒ oːʋrʈaːɪm kərnaː pəɽeːɡaː", "bases": [{"word": "आज", "ref": "hi-0299"}, {"word": "करना", "ref": "hi-0779"}, {"word": "पड़ेगा", "base": "पड़ना", "reading": "paṛnā"}]}
+    ]
