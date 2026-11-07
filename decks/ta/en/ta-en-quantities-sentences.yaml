@@ -1,0 +1,18 @@
+schema: 1
+id: "ta-en-quantities-sentences"
+kind: "layer"
+core: "ta-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Amounts in sentences"
+description: "Sentences about how much and how many, with the amount words. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0321":
+    native: "Eat a lot."
+  "ta-0322":
+    native: "Only this is enough."
+  "ta-0323":
+    native: "Half is needed."
+    bases:
+      "வேண்டும்": "is needed"

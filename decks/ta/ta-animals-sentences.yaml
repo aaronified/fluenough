@@ -1,0 +1,26 @@
+schema: 1
+id: "ta-animals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0330"
+    target: "நாய் சாப்பிடுகிறது."
+    reading: "nāy cāppiṭukiṟatu."
+    ipa: "naːj saːpːiʈukiɾat̪u."
+    pos: "phrase"
+    bases: [{ word: "நாய்", ref: "ta-0296" }, { word: "சாப்பிடுகிறது", base: "சாப்பிடு", reading: "cāppiṭukiṟatu" }]
+  - id: "ta-0331"
+    target: "பாம்பு கீழே போகிறது."
+    reading: "pāmpu kīḻē pōkiṟatu."
+    ipa: "paːmpu kiːɻeː poːkiɾat̪u."
+    pos: "phrase"
+    bases: [{ word: "பாம்பு", ref: "ta-0303" }, { word: "கீழே", ref: "ta-0177" }, { word: "போகிறது", base: "போ", reading: "pōkiṟatu" }]
+  - id: "ta-0332"
+    target: "கோழி அருகில் இருக்கிறது."
+    reading: "kōḻi arukil irukkiṟatu."
+    ipa: "koːɻi arukil irukːiɾat̪u."
+    pos: "phrase"
+    bases: [{ word: "கோழி", ref: "ta-0305" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]

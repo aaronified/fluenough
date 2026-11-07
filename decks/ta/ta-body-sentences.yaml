@@ -1,0 +1,20 @@
+schema: 1
+id: "ta-body-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0310"
+    target: "அவன் கை கழுவுகிறான்."
+    reading: "avaṉ kai kaḻuvukiṟāṉ."
+    ipa: "aʋan kaj kaɻuʋukiɾaːn."
+    pos: "phrase"
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "கை", base: "கை", reading: "kai" }, { word: "கழுவுகிறான்", base: "கழுவு", reading: "kaḻuvukiṟāṉ" }]
+  - id: "ta-0311"
+    target: "அவள் முடி கருப்பு."
+    reading: "avaḷ muṭi karuppu."
+    ipa: "aʋaɭ muʈi karupːu."
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "முடி", ref: "ta-0256" }, { word: "கருப்பு", base: "கருப்பு", reading: "karuppu" }]

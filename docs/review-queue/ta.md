@@ -43,3 +43,4 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-0294 | ta-clothes | மஞ்சள் (mañcaḷ): the card gives yellow and turmeric as one card; should turmeric be a separate card? | Haiku builder | 2026-11-07 |
 | ta-0267 | ta-places | விடுதி (viṭuti): is 'hostel; guest house' the right gloss, and is the word common in speech? | Haiku builder | 2026-11-07 |
 | unit-level | ta-food to ta-animals | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked for these seven units? | Haiku builder | 2026-11-07 |
+| ta-0306 | ta-clothes | Set card (closed group): is the list of colour words right, with white and yellow as the five (no brown, orange or black)? | Haiku builder | 2026-11-07 |

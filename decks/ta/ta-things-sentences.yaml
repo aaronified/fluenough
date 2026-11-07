@@ -1,0 +1,26 @@
+schema: 1
+id: "ta-things-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0315"
+    target: "பேனா எங்கே?"
+    reading: "pēṉā eṅkē?"
+    ipa: "peːnaː eŋkeː?"
+    pos: "phrase"
+    bases: [{ word: "பேனா", ref: "ta-0268" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-0316"
+    target: "பென்சில் பேனா அருகில் இருக்கிறது."
+    reading: "pensil pēṉā arukil irukkiṟatu."
+    ipa: "pensil peːnaː arukil irukːiɾat̪u."
+    pos: "phrase"
+    bases: [{ word: "பென்சில்", ref: "ta-0269" }, { word: "பேனா", ref: "ta-0268" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+  - id: "ta-0317"
+    target: "அவள் குடை எடுக்கிறாள்."
+    reading: "avaḷ kuṭai eṭukkiṟāḷ."
+    ipa: "aʋaɭ kuʈaj eʈukːiɾaːɭ."
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "குடை", ref: "ta-0274" }, { word: "எடுக்கிறாள்", base: "எடு", reading: "eṭukkiṟāḷ" }]

@@ -1,0 +1,26 @@
+schema: 1
+id: "ta-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0312"
+    target: "குழந்தை பள்ளி போகிறது."
+    reading: "kuḻantai paḷḷi pōkiṟatu."
+    ipa: "kuɻant̪aj paɭːi poːkiɾat̪u."
+    pos: "phrase"
+    bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "பள்ளி", ref: "ta-0260" }, { word: "போகிறது", base: "போ", reading: "pōkiṟatu" }]
+  - id: "ta-0313"
+    target: "வங்கி அருகில் பூங்கா இருக்கிறது."
+    reading: "vaṅki arukil pūṅkā irukkiṟatu."
+    ipa: "ʋaŋki arukil puːŋkaː irukːiɾat̪u."
+    pos: "phrase"
+    bases: [{ word: "வங்கி", ref: "ta-0263" }, { word: "அருகில்", ref: "ta-0183" }, { word: "பூங்கா", ref: "ta-0266" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+  - id: "ta-0314"
+    target: "நாங்கள் நகரம் போகிறோம்."
+    reading: "nāṅkaḷ nakaram pōkiṟōm."
+    ipa: "naːŋkaɭ nakaram poːkiɾoːm."
+    pos: "phrase"
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "நகரம்", ref: "ta-0264" }, { word: "போகிறோம்", base: "போ", reading: "pōkiṟōm" }]
