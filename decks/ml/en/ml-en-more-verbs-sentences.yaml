@@ -1,0 +1,31 @@
+schema: 1
+id: "ml-en-more-verbs-sentences"
+kind: "layer"
+core: "ml-more-verbs-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Asking and giving in sentences"
+description: "Short sentences where someone asks, gives, brings or keeps something, and asks a person to do it. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0565":
+    native: "Give me the book."
+  "ml-0566":
+    native: "Keep the pen."
+  "ml-0567":
+    native: "Ask him."
+  "ml-0568":
+    native: "Call her."
+  "ml-0569":
+    native: "Open the box."
+  "ml-0570":
+    native: "Please sit down."
+  "ml-0571":
+    native: "Drink a glass of water."
+    bases:
+      "ഒരു": "a; one"
+      "ഗ്ലാസ്": "glass"
+  "ml-0572":
+    native: "Say this."
+    bases:
+      "ഇത്": "this"
