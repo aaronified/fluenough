@@ -483,7 +483,10 @@ void main() {
 
   group('the result lists each skill in play', () {
     testWidgets('as a unit and a name, in the plan\'s words', (tester) async {
-      final session = PlacementSession(findLevelConfig(), findLevelData());
+      final session = PlacementSession(
+        findLevelConfig(decks: 24),
+        findLevelData(decks: 24, words: 40),
+      );
       while (!session.isDone) {
         if (session.atCheckpoint) {
           session.keepGoing();
@@ -503,7 +506,7 @@ void main() {
         l10n.findLevelSkillWrite,
       ]) {
         expect(
-          find.textContaining('$name: unit 6 · '),
+          find.textContaining('$name: unit 24 · '),
           findsOneWidget,
           reason: name,
         );
@@ -547,12 +550,13 @@ void main() {
         'it was not tested and why', (tester) async {
       final session = PlacementSession(
         findLevelConfig(
+          decks: 24,
           skills: const <PlacementSkill>{
             PlacementSkill.read,
             PlacementSkill.say,
           },
         ),
-        findLevelData(),
+        findLevelData(decks: 24, words: 40),
       );
       while (!session.isDone) {
         if (session.atCheckpoint) {

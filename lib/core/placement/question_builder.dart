@@ -25,8 +25,17 @@ const int longSentenceWords = 8;
 /// A sentence this short or shorter is "short" for a split question.
 const int shortSentenceWords = 3;
 
+/// Where a run gets its questions: the builder, or a question bank.
+abstract interface class QuestionSource {
+  QuestionOutcome build(
+    PlacementQuestionRequest request, {
+    Set<String> asked,
+    GeneratedQuestion? failed,
+  });
+}
+
 /// Builds the questions of a run from one learner's [data].
-class QuestionBuilder {
+class QuestionBuilder implements QuestionSource {
   QuestionBuilder(
     this.data, {
     Set<PlacementSkill>? tested,
@@ -63,6 +72,7 @@ class QuestionBuilder {
   /// the questions that need its word, family or contrast are unavailable
   /// ([PlacementUnavailableReason.noOrigin]), never asked about some other
   /// item.
+  @override
   QuestionOutcome build(
     PlacementQuestionRequest request, {
     Set<String> asked = const <String>{},
@@ -181,6 +191,23 @@ class QuestionBuilder {
     ];
   }
 
+  /// The ranges of a request: a probe or a top-up draws from the band of its
+  /// class, `(l_(k-1), l_k]`, widening downward only inside it (plan section
+  /// 13, point 13); any other question as [_ranges] says.
+  List<List<int>> _rangesFor(_Ctx ctx) {
+    final role = ctx.request.role;
+    if (role != PlacementQuestionRole.probe &&
+        role != PlacementQuestionRole.topUp) {
+      return _ranges(ctx.request.deck);
+    }
+    final band = PlacementLevels(data.deckCount).bandOf(ctx.request.deck);
+    final at = ctx.request.deck.clamp(band.from, band.to);
+    return <List<int>>[
+      <int>[at],
+      <int>[for (var i = band.from; i <= at; i++) i],
+    ];
+  }
+
   bool _eligible(Card card, Set<String> asked) =>
       isAskable(card) &&
       !data.stableCardIds.contains(card.id) &&
@@ -229,6 +256,9 @@ class QuestionBuilder {
     int count = 3,
   }) {
     return (Card card, int deck) {
+      // Meanings are picked for a prompt in the language: the wrong ones
+      // must be as much like it, as letters, as the right one.
+      final lure = show == _meaningOf ? card.target : null;
       var wrong = _picker.distractorsFor(
         card,
         deck,
@@ -236,6 +266,7 @@ class QuestionBuilder {
         show: show,
         count: count,
         asked: ctx.asked,
+        lure: lure,
       );
       if (wrong.length < count) {
         wrong = _picker.distractorsFor(
@@ -246,6 +277,7 @@ class QuestionBuilder {
           count: count,
           asked: ctx.asked,
           relaxAsked: true,
+          lure: lure,
         );
       }
       return wrong.length < count ? null : wrong;
@@ -473,7 +505,7 @@ class QuestionBuilder {
     } else {
       item = _item(
         ctx,
-        _ranges(ctx.request.deck),
+        _rangesFor(ctx),
         keep: (c, d) =>
             isWordCard(c) &&
             (!short || c.target.runes.length <= 6) &&
@@ -1596,10 +1628,7 @@ class QuestionBuilder {
   QuestionOutcome _tilesWord(_Ctx ctx, {bool short = true}) {
     final item = _item(
       ctx,
-      _ranges(
-        ctx.request.deck,
-        around: ctx.request.role == PlacementQuestionRole.probe,
-      ),
+      _rangesFor(ctx),
       keep: (c, d) =>
           isWordCard(c) &&
           c.wordCount == 1 &&
@@ -1789,7 +1818,8 @@ class _Ctx {
   _Ctx(this.request, this.asked, this.failed, int seed)
     : random = seededRandom(
         seed,
-        '${request.number}:${request.variant.label}:${request.role.name}',
+        '${request.number}:${request.variant.label}:${request.role.name}:'
+        '${request.deck}:${request.shortlistPick}',
       );
 
   final PlacementQuestionRequest request;

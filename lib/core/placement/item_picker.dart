@@ -2,6 +2,7 @@ import 'dart:math' as math;
 
 import '../models/card.dart';
 import '../scheduling/distractors.dart';
+import 'guessability.dart';
 import 'placement_data.dart';
 
 // How an item of a question is chosen (wiki/Plan-Placement-V2.md, section
@@ -74,10 +75,14 @@ bool sameMeaning(Card a, Card b) {
   return lists(a, b) || lists(b, a);
 }
 
-/// A card that can be asked: a taught item, not a table's form, a letter, a
-/// digit or a practice-only card.
+/// A card that can be asked: a taught item, not a table's form (a rules
+/// table's cell, or a pattern's cell, whose prompt is "lemma (gloss) —
+/// person": a form to produce, not a word whose meaning is picked, and one
+/// whose options would leak the lemma), a letter, a digit or a
+/// practice-only card.
 bool isAskable(Card card) =>
     card.rule == null &&
+    !card.isGrammarCell &&
     !card.practiceOnly &&
     !card.isLetterOrDigit &&
     card.target.trim().isNotEmpty &&
@@ -145,6 +150,10 @@ class RankedItem {
   /// question with no pick).
   final List<Card> wrong;
 }
+
+/// How many times [count] candidates are gathered before the ones that look
+/// most like the answer are chosen among them.
+const int _luredPoolFactor = 10;
 
 /// The plan's weights of the hardness score (section 2.2, question 8i).
 const double depthWeight = 0.35;
@@ -243,6 +252,8 @@ class PlacementItemPicker {
     Set<String> asked = const <String>{},
     bool relaxAsked = false,
     Set<String> exclude = const <String>{},
+    String? lure,
+    bool matchShape = false,
   }) {
     final random = seededRandom(seed, answer.id);
     final shown = <String>{show(answer)};
@@ -263,8 +274,17 @@ class PlacementItemPicker {
         (relaxAsked || !asked.contains(c.id)) &&
         !sameMeaning(answer, c) &&
         !c.meanings.any((m) => blocked.contains(foldMeaning(m))) &&
-        !shown.contains(show(c));
+        !shown.contains(show(c)) &&
+        (!matchShape || optionShape(show(c)) == optionShape(show(answer)));
     final last = data.deckCount - 1;
+    // With a [lure] (the text the learner is shown as the prompt) the wrong
+    // options must look as much like it as the right one does: a pool of
+    // the best-ranked candidates is gathered, and the [count] whose letters
+    // resemble the prompt about as much as the answer's do are kept, so that
+    // no option gives itself away by being spelled like the prompt.
+    final pool = <Card>[];
+    final poolShown = <String>{};
+    final poolSize = count * _luredPoolFactor;
     for (var distance = 0; distance <= last; distance++) {
       final tier = <Card>[
         if (deck - distance >= 0) ...data.decks[deck - distance].cards,
@@ -275,13 +295,35 @@ class PlacementItemPicker {
       for (final group in rankDistractors(answer, tier)) {
         final shuffled = <Card>[...group]..shuffle(random);
         for (final c in shuffled) {
+          if (lure != null) {
+            if (pool.length >= poolSize) break;
+            if (!ok(c) || !poolShown.add(show(c))) continue;
+            pool.add(c);
+            continue;
+          }
           if (out.length >= count) return out;
           if (!ok(c)) continue;
           shown.add(show(c));
           out.add(c);
         }
       }
-      if (out.length >= count) return out;
+      if (lure != null) {
+        if (pool.length >= poolSize) break;
+      } else if (out.length >= count) {
+        return out;
+      }
+    }
+    if (lure == null) return out;
+    final target = surfaceSimilarity(lure, show(answer));
+    double gap(Card c) => (surfaceSimilarity(lure, show(c)) - target).abs();
+    final order = <int>[for (var i = 0; i < pool.length; i++) i]
+      ..sort((a, b) {
+        final c = gap(pool[a]).compareTo(gap(pool[b]));
+        return c != 0 ? c : a.compareTo(b);
+      });
+    for (final i in order) {
+      if (out.length >= count) break;
+      out.add(pool[i]);
     }
     return out;
   }

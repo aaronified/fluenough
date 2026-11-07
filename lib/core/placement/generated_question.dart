@@ -163,6 +163,7 @@ class GeneratedQuestion {
     this.tilesFallback,
     this.dialectRisk = false,
     this.meaningHint,
+    this.bankId,
   });
 
   /// The request it answers; its skills are the skills a right answer covers.
@@ -225,6 +226,10 @@ class GeneratedQuestion {
   final String? meaningHint;
 
   final ItemDifficulty difficulty;
+
+  /// The stable id of the question in a question bank (question_bank.dart);
+  /// null for a question the builder made on the spot.
+  final String? bankId;
 
   /// What the question uses, for the no-repeat set the next call is given
   /// (`asked`): the cards asked and offered, `family:<id>` for each word
