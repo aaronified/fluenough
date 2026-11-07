@@ -11615,6 +11615,74 @@
       }
     }
   },
+  "progressOfTaughtPlaced": "of {taught} taught (+{placed} placed)",
+  "@progressOfTaughtPlaced": {
+    "description": "Under a Progress tile's count when some of what the course credited from Find my level has not been answered yet: what it is out of, what is taught so far, and how many more are placed. May wrap to two lines.",
+    "placeholders": {
+      "taught": {
+        "type": "String",
+        "example": "540"
+      },
+      "placed": {
+        "type": "String",
+        "example": "90"
+      }
+    }
+  },
+  "progressWordsPlacedSemantics": "Words: {known} known of {taught} taught, and {placed} placed",
+  "@progressWordsPlacedSemantics": {
+    "description": "Screen-reader label of the Words tile when some words are placed: credited by Find my level and not answered yet.",
+    "placeholders": {
+      "known": {
+        "type": "String",
+        "example": "312"
+      },
+      "taught": {
+        "type": "String",
+        "example": "540"
+      },
+      "placed": {
+        "type": "String",
+        "example": "90"
+      }
+    }
+  },
+  "progressRulesPlacedSemantics": "Rules: {known} known of {taught} taught, and {placed} placed",
+  "@progressRulesPlacedSemantics": {
+    "description": "Screen-reader label of the Rules tile when some rules are placed: credited by Find my level and not answered yet.",
+    "placeholders": {
+      "known": {
+        "type": "String",
+        "example": "14"
+      },
+      "taught": {
+        "type": "String",
+        "example": "22"
+      },
+      "placed": {
+        "type": "String",
+        "example": "6"
+      }
+    }
+  },
+  "progressLevelPlaced": "Placed",
+  "@progressLevelPlaced": {
+    "description": "A small mark on the Level tile: the level was credited by Find my level and no unit of it has been answered yet."
+  },
+  "progressLevelPlacedSemantics": "Level {level}, placed, started {date}",
+  "@progressLevelPlacedSemantics": {
+    "description": "Screen-reader label of the Level tile when the level is only placed.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      },
+      "date": {
+        "type": "String",
+        "example": "3 Aug 2026"
+      }
+    }
+  },
   "progressWordsSemantics": "Words: {known} known of {taught} taught",
   "@progressWordsSemantics": {
     "description": "Screen-reader label of the Words tile.",

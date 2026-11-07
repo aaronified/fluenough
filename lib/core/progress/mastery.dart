@@ -234,6 +234,35 @@ Milestone? levelReached(
   return reached;
 }
 
+/// Whether the level [path] has reached is only PLACED: no unit of that
+/// milestone (the units after the previous milestone's end, up to its own)
+/// has a review the learner earned, that is, one that is not placement credit
+/// ([ReviewEvent.isPlaced]). The Level tile then carries a "Placed" mark
+/// until a review is earned there (owner, 2026-11-07). False before A1.
+bool levelPlaced(
+  CoursePath path,
+  Milestone? level,
+  Iterable<ReviewEvent> reviews,
+) {
+  if (level == null) return false;
+  final end = path.milestoneIndex(level);
+  if (end == null) return false;
+  var start = 0;
+  for (final milestone in Milestone.values) {
+    if (milestone == level) break;
+    final at = path.milestoneIndex(milestone);
+    if (at != null) start = at + 1;
+  }
+  final decks = <String>{
+    for (final unit in path.plan.skip(start).take(end - start + 1))
+      ...unit.decks,
+  };
+  for (final e in reviews.answered) {
+    if (decks.contains(e.deckId) && !e.isPlaced) return false;
+  }
+  return true;
+}
+
 /// The day of the first answer in [reviews], or null with none.
 DateTime? startedOn(Iterable<ReviewEvent> reviews) {
   DateTime? first;
