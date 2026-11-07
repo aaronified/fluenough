@@ -39,6 +39,7 @@ cards:
     pos: "other"
     modes: ["production", "listening", "speaking"]
     examples:
+      - {"target": "আজ ঈদ।", "reading": "āj id.", "ipa": "adʒ id̪", "bases": []}
       - { target: "পাখি", reading: "pākhi", ipa: "pakʰi" }
     notes:
       - { id: "n1", kind: "note", source: "Bhattacharya (2000), Bangla (Bengali), as cited by Wikipedia, Bengali phonology (CC BY-SA 4.0); this course's bn-romanisation file (not yet checked by a Bengali speaker); this course's bn-spelling deck (not yet checked by a Bengali speaker)" }
@@ -104,6 +105,9 @@ cards:
     modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Bengali (CC BY-SA 4.0)" }
+    "examples": [
+      {"target": "আমি দুঃখিত।", "reading": "āmi duḥkhit.", "ipa": "ami d̪uhkʰit̪", "bases": [{"word": "আমি", "ref": "bn-0833"}]}
+    ]
   - id: "bn-2089"
     target: "ঁ"
     reading: "m̐"
@@ -152,6 +156,10 @@ cards:
     modes: ["production", "listening", "speaking"]
     notes:
       - { id: "n1", kind: "note", source: "Wikipedia, Help:IPA/Bengali (CC BY-SA 4.0)" }
+    "examples": [
+      {"target": "উৎপাদন বাড়ছে।", "reading": "utpādon bāṛoche.", "ipa": "ut̪pad̪on baɽotʃʰe", "bases": [{"word": "বাড়ছে", "base": "বাড়া", "reading": "bāṛoche"}]},
+      {"target": "উৎসাহ দাও।", "reading": "utsāh dāo.", "ipa": "ut̪saɦ d̪ao", "bases": [{"word": "দাও", "ref": "bn-0888"}]}
+    ]
   - id: "bn-2094"
     target: "ফ"
     reading: "ph"

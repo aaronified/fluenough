@@ -17,6 +17,10 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ठंडी जलवायु पसंद है।", "reading": "ṭhaṇḍī jalvāyu pasand hai.", "ipa": "ʈʰəɳɖiː dʒəlʋaːjʊ pəsənd̪ ɦɛː", "bases": [{"word": "ठंडी", "ref": "hi-0911"}, {"word": "पसंद", "base": "पसंद", "reading": "pasand"}, {"word": "है", "ref": "hi-0780"}]},
+      {"target": "मुझे अंग्रेज़ी पसंद है।", "reading": "mujhē aṅgrēzī pasand hai.", "ipa": "mʊdʒʱeː əŋɡreːziː pəsənd̪ ɦɛː", "bases": [{"word": "मुझे", "base": "मैं", "reading": "maim̐"}, {"word": "अंग्रेज़ी", "base": "अंग्रेज़ी", "reading": "aṅgrēzī"}, {"word": "पसंद", "base": "पसंद", "reading": "pasand"}, {"word": "है", "ref": "hi-0112"}]}
+    ]
   - id: "hi-0470"
     target: "मुझे मिठाई पसंद है।"
     target_scripts: { perso_arabic: "مجھے مٹھائی پسند ہے۔" }
@@ -80,6 +84,10 @@ cards:
     ipa: "pjaːr"
     pos: "noun"
     gender: "m"
+    "examples": [
+      {"target": "जानवरों से प्यार करो।", "reading": "jānvrōm̐ sē pyār karō.", "ipa": "dʒaːnʋrõː seː pjaːr kəroː", "bases": [{"word": "जानवरों", "base": "जानवर", "reading": "jānvar"}, {"word": "से", "ref": "hi-0276"}, {"word": "प्यार", "base": "प्यार", "reading": "pyār"}, {"word": "करो", "ref": "hi-0779"}]},
+      {"target": "मैं तुमसे प्यार करता हूँ।", "reading": "maim̐ tumsē pyār kartā hūm̐.", "ipa": "mɛ̃ː t̪ʊmseː pjaːr kərt̪aː ɦũː", "bases": [{"word": "मैं", "base": "मैं", "reading": "maim̐"}, {"word": "तुमसे", "base": "तुम", "reading": "tum"}, {"word": "करता", "base": "करना", "reading": "karnā"}, {"word": "हूँ", "base": "होना", "reading": "hōnā"}]}
+    ]
   - id: "hi-0476"
     target: "मैं तुमसे प्यार करता हूँ।"
     target_scripts: { perso_arabic: "میں تم سے پیار کرتا ہوں۔" }
@@ -125,3 +133,6 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "गणित और विज्ञान मेरे पसंदीदा विषय हैं।", "reading": "gaṇit aur vigyān mērē pasandīdā viśay haim̐.", "ipa": "ɡəɳɪt̪ ɔːr ʋɪɡjaːn meːreː pəsənd̪iːd̪aː ʋɪʃəj ɦɛ̃ː", "bases": [{"word": "गणित", "ref": "hi-1578"}, {"word": "और", "ref": "hi-0337"}, {"word": "विज्ञान", "ref": "hi-1579"}, {"word": "मेरे", "base": "मेरा", "reading": "mērā"}, {"word": "पसंदीदा", "base": "पसंदीदा", "reading": "pasandīdā"}, {"word": "विषय", "base": "विषय", "reading": "viśay"}, {"word": "हैं", "ref": "hi-0113"}]}
+    ]

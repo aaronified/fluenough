@@ -35,6 +35,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "सौ रुपये का नोट है।", "reading": "sau rupyē kā nōṭ hai.", "ipa": "sɔː rʊpjeː kaː noːʈ ɦɛː", "bases": [{"word": "सौ", "ref": "hi-0225"}, {"word": "रुपये", "base": "रुपया", "reading": "rupayā"}, {"word": "का", "ref": "hi-0279"}, {"word": "है", "ref": "hi-0112"}]},
+      {"target": "आलू का भाव बीस रुपये है।", "reading": "ālū kā bhāv bīs rupyē hai.", "ipa": "aːluː kaː bʱaːʋ biːs rʊpjeː ɦɛː", "bases": [{"word": "आलू", "ref": "hi-0250"}, {"word": "का", "ref": "hi-0279"}, {"word": "बीस", "ref": "hi-0217"}, {"word": "रुपये", "base": "रुपया", "reading": "rupayā"}, {"word": "है", "ref": "hi-0112"}]}
+    ]
   - id: "hi-0234"
     target: "पैसे"
     target_scripts: { perso_arabic: "پیسے" }
@@ -45,6 +49,9 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "पैसे बचाओ।", "reading": "paisē bacāō.", "ipa": "pɛːseː bətʃaːoː", "bases": [{"word": "पैसे", "base": "पैसा", "reading": "paisā"}, {"word": "बचाओ", "base": "बचाना", "reading": "bacānā"}]}
+    ]
   - id: "hi-0235"
     target: "खुले पैसे"
     target_scripts: { perso_arabic: "کھلے پیسے" }
@@ -64,6 +71,9 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "मेरा पैकेज महँगा है।", "reading": "mērā paikēj maham̐gā hai.", "ipa": "meːraː pɛːkeːdʒ məɦə̃ɡaː ɦɛː", "bases": [{"word": "मेरा", "ref": "hi-0752"}, {"word": "महँगा", "base": "महँगा", "reading": "maham̐gā"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0237"
     target: "सस्ता"
     target_scripts: { perso_arabic: "سستا" }
@@ -72,6 +82,9 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "यह चीज़ सस्ती है।", "reading": "yah cīz sastī hai.", "ipa": "jəɦ tʃiːz səst̪iː ɦɛː", "bases": [{"word": "यह", "ref": "hi-0748"}, {"word": "सस्ती", "base": "सस्ता", "reading": "sastā"}, {"word": "है", "ref": "hi-0112"}]}
+    ]
   - id: "hi-0238"
     target: "थोड़ा कम कीजिए।"
     target_scripts: { perso_arabic: "تھوڑا کم کیجیے۔" }
@@ -91,6 +104,10 @@ cards:
     ipa: "d̪ʊkaːn"
     pos: "noun"
     gender: "f"
+    "examples": [
+      {"target": "दुकान खुली है।", "reading": "dukān khulī hai.", "ipa": "d̪ʊkaːn kʰʊliː ɦɛː", "bases": [{"word": "दुकान", "base": "दुकान", "reading": "dukān"}, {"word": "खुली", "base": "खुला", "reading": "khulā"}, {"word": "है", "ref": "hi-0112"}]},
+      {"target": "दुकान बंद है।", "reading": "dukān band hai.", "ipa": "d̪ʊkaːn bənd̪ ɦɛː", "bases": [{"word": "दुकान", "base": "दुकान", "reading": "dukān"}, {"word": "है", "ref": "hi-0112"}]}
+    ]
   - id: "hi-0240"
     target: "दीजिए"
     target_scripts: { perso_arabic: "دیجیے" }
@@ -100,6 +117,9 @@ cards:
     tags: ["polite"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "एक चाय दीजिए।", "reading": "ēk cāy dījiē.", "ipa": "eːk tʃaːj d̪iːdʒɪeː", "bases": []},
+    ]
   - id: "hi-0241"
     target: "किलो"
     target_scripts: { perso_arabic: "کلو" }
@@ -109,6 +129,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "किलो में तौलो।", "reading": "kilō mēm̐ taulō.", "ipa": "kɪloː mẽː t̪ɔːloː", "bases": [{"word": "किलो", "base": "किलो", "reading": "kilō"}, {"word": "में", "ref": "hi-0274"}, {"word": "तौलो", "base": "तौलना", "reading": "taulnā"}]},
+      {"target": "आधा किलो आलू काफ़ी है।", "reading": "ādhā kilō ālū kāfī hai.", "ipa": "aːd̪ʱaː kɪloː aːluː kaːfiː ɦɛː", "bases": [{"word": "आधा", "ref": "hi-0869"}, {"word": "किलो", "base": "किलो", "reading": "kilō"}, {"word": "आलू", "ref": "hi-0250"}, {"word": "काफ़ी", "ref": "hi-0870"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0242"
     target: "बस"
     target_scripts: { perso_arabic: "بس" }
@@ -119,3 +143,6 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "बस, अब और नहीं।", "reading": "bas, ab aur nahīm̐.", "ipa": "bəs əb ɔːr nəɦĩː", "bases": []},
+    ]

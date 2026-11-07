@@ -1,0 +1,150 @@
+schema: 1
+id: "ta-directions"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "directions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0230"
+    target: "வலது"
+    reading: "valatu"
+    ipa: "ʋalat̪u"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வலது பக்கம் போ."
+        reading: "valatu pakkam pō."
+        ipa: "ʋalat̪u pakkam poː"
+        bases: [{ word: "வலது", base: "வலது", reading: "valatu" }, { word: "பக்கம்", base: "பக்கம்", reading: "pakkam" }, { word: "போ", ref: "ta-0118" }]
+      - target: "இது வலது கை."
+        reading: "itu valatu kai."
+        ipa: "it̪u ʋalat̪u kai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வலது", base: "வலது", reading: "valatu" }, { word: "கை", base: "கை", reading: "kai" }]
+  - id: "ta-0231"
+    target: "இடது"
+    reading: "iṭatu"
+    ipa: "iʈat̪u"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இடது பக்கம் போ."
+        reading: "iṭatu pakkam pō."
+        ipa: "iʈat̪u pakkam poː"
+        bases: [{ word: "இடது", base: "இடது", reading: "iṭatu" }, { word: "பக்கம்", base: "பக்கம்", reading: "pakkam" }, { word: "போ", ref: "ta-0118" }]
+      - target: "இது இடது கை."
+        reading: "itu iṭatu kai."
+        ipa: "it̪u iʈat̪u kai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "இடது", base: "இடது", reading: "iṭatu" }, { word: "கை", base: "கை", reading: "kai" }]
+  - id: "ta-0232"
+    target: "நேராக"
+    reading: "nērāka"
+    ipa: "neːɾaːka"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நேராக போ."
+        reading: "nērāka pō."
+        ipa: "neːɾaːka poː"
+        bases: [{ word: "நேராக", base: "நேராக", reading: "nērāka" }, { word: "போ", ref: "ta-0118" }]
+      - target: "நேராக வா."
+        reading: "nērāka vā."
+        ipa: "neːɾaːka ʋaː"
+        bases: [{ word: "நேராக", base: "நேராக", reading: "nērāka" }, { word: "வா", ref: "ta-0010" }]
+  - id: "ta-0233"
+    target: "வடக்கு"
+    reading: "vaṭakku"
+    ipa: "ʋaʈakku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வடக்கு பக்கம் போ."
+        reading: "vaṭakku pakkam pō."
+        ipa: "ʋaʈakku pakkam poː"
+        bases: [{ word: "வடக்கு", base: "வடக்கு", reading: "vaṭakku" }, { word: "பக்கம்", base: "பக்கம்", reading: "pakkam" }, { word: "போ", ref: "ta-0118" }]
+      - target: "இது வடக்கு."
+        reading: "itu vaṭakku."
+        ipa: "it̪u ʋaʈakku"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வடக்கு", base: "வடக்கு", reading: "vaṭakku" }]
+  - id: "ta-0234"
+    target: "தெற்கு"
+    reading: "teṟku"
+    ipa: "t̪erku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தெற்கு பக்கம் போ."
+        reading: "teṟku pakkam pō."
+        ipa: "t̪erku pakkam poː"
+        bases: [{ word: "தெற்கு", base: "தெற்கு", reading: "teṟku" }, { word: "பக்கம்", base: "பக்கம்", reading: "pakkam" }, { word: "போ", ref: "ta-0118" }]
+      - target: "இது தெற்கு."
+        reading: "itu teṟku."
+        ipa: "it̪u t̪erku"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தெற்கு", base: "தெற்கு", reading: "teṟku" }]
+  - id: "ta-0235"
+    target: "கிழக்கு"
+    reading: "kiḻakku"
+    ipa: "kiɻakku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கிழக்கு பக்கம் போ."
+        reading: "kiḻakku pakkam pō."
+        ipa: "kiɻakku pakkam poː"
+        bases: [{ word: "கிழக்கு", base: "கிழக்கு", reading: "kiḻakku" }, { word: "பக்கம்", base: "பக்கம்", reading: "pakkam" }, { word: "போ", ref: "ta-0118" }]
+      - target: "இது கிழக்கு."
+        reading: "itu kiḻakku."
+        ipa: "it̪u kiɻakku"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கிழக்கு", base: "கிழக்கு", reading: "kiḻakku" }]
+  - id: "ta-0236"
+    target: "மேற்கு"
+    reading: "mēṟku"
+    ipa: "meːrku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மேற்கு பக்கம் போ."
+        reading: "mēṟku pakkam pō."
+        ipa: "meːrku pakkam poː"
+        bases: [{ word: "மேற்கு", base: "மேற்கு", reading: "mēṟku" }, { word: "பக்கம்", base: "பக்கம்", reading: "pakkam" }, { word: "போ", ref: "ta-0118" }]
+      - target: "இது மேற்கு."
+        reading: "itu mēṟku."
+        ipa: "it̪u meːrku"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மேற்கு", base: "மேற்கு", reading: "mēṟku" }]
+  - id: "ta-0237"
+    target: "தெரு"
+    reading: "teru"
+    ipa: "t̪eɾu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தெரு அருகில் இருக்கிறது."
+        reading: "teru arukil irukkiṟatu."
+        ipa: "t̪eɾu aɾukil iɾukkirat̪u"
+        bases: [{ word: "தெரு", base: "தெரு", reading: "teru" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இது பெரிய தெரு."
+        reading: "itu periya teru."
+        ipa: "it̪u peɾija t̪eɾu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0008" }, { word: "தெரு", base: "தெரு", reading: "teru" }]

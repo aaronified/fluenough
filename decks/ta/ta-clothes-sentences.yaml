@@ -1,0 +1,29 @@
+schema: 1
+id: "ta-clothes-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0324"
+    target: "அவள் சிவப்பு புடவை வாங்குகிறாள்."
+    reading: "avaḷ civappu puṭavai vāṅkukiṟāḷ."
+    ipa: "aʋaɭ siʋappu puʈaʋai ʋaːŋkukiraːɭ"
+    pos: "phrase"
+    bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "சிவப்பு", ref: "ta-0291" }, { word: "புடவை", ref: "ta-0286" }, { word: "வாங்குகிறாள்", base: "வாங்கு", reading: "vāṅku" }]
+  - id: "ta-0325"
+    target: "பச்சை சட்டை வேண்டும்."
+    reading: "paccai caṭṭai vēṇṭum."
+    ipa: "paʧʧai saʈʈai ʋeːɳʈum"
+    pos: "phrase"
+    bases: [{ word: "பச்சை", ref: "ta-0293" }, { word: "சட்டை", ref: "ta-0284" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+  - id: "ta-0326"
+    target: "இது வெள்ளை தொப்பி."
+    reading: "itu veḷḷai toppi."
+    ipa: "it̪u ʋeɭɭai t̪oppi"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "வெள்ளை", ref: "ta-0295" }, { word: "தொப்பி", ref: "ta-0289" }]
+  - id: "ta-0306"
+    kind: "set"
+    members: [{ ref: "ta-0291" }, { ref: "ta-0292" }, { ref: "ta-0293" }, { ref: "ta-0294" }, { ref: "ta-0295" }]

@@ -1,0 +1,153 @@
+schema: 1
+id: "ta-body"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "body"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0252"
+    target: "தலை"
+    reading: "talai"
+    ipa: "t̪alai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தலை வலிக்கிறது."
+        reading: "talai valikkiṟatu."
+        ipa: "t̪alai ʋalikkirat̪u"
+        bases: [{ word: "தலை", base: "தலை", reading: "talai" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+      - target: "தலை மேலே இருக்கிறது."
+        reading: "talai mēlē irukkiṟatu."
+        ipa: "t̪alai meːleː iɾukkirat̪u"
+        bases: [{ word: "தலை", base: "தலை", reading: "talai" }, { word: "மேலே", ref: "ta-0176" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0253"
+    target: "முகம்"
+    reading: "mukam"
+    ipa: "mukam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் முகம் அழகு."
+        reading: "avaḷ mukam aḻaku."
+        ipa: "aʋaɭ mukam aɻaku"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "முகம்", base: "முகம்", reading: "mukam" }, { word: "அழகு", base: "அழகு", reading: "aḻaku" }]
+      - target: "முகம் கழுவு."
+        reading: "mukam kaḻuvu."
+        ipa: "mukam kaɻuʋu"
+        bases: [{ word: "முகம்", base: "முகம்", reading: "mukam" }, { word: "கழுவு", ref: "ta-0190" }]
+  - id: "ta-0254"
+    target: "மூக்கு"
+    reading: "mūkku"
+    ipa: "muːkku"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மூக்கு வலிக்கிறது."
+        reading: "mūkku valikkiṟatu."
+        ipa: "muːkku ʋalikkirat̪u"
+        bases: [{ word: "மூக்கு", base: "மூக்கு", reading: "mūkku" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+      - target: "இது மூக்கு."
+        reading: "itu mūkku."
+        ipa: "it̪u muːkku"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மூக்கு", base: "மூக்கு", reading: "mūkku" }]
+  - id: "ta-0255"
+    target: "வயிறு"
+    reading: "vayiṟu"
+    ipa: "ʋajiru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வயிறு வலிக்கிறது."
+        reading: "vayiṟu valikkiṟatu."
+        ipa: "ʋajiru ʋalikkirat̪u"
+        bases: [{ word: "வயிறு", base: "வயிறு", reading: "vayiṟu" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+      - target: "வயிறு கீழே இருக்கிறது."
+        reading: "vayiṟu kīḻē irukkiṟatu."
+        ipa: "ʋajiru kiːɻeː iɾukkirat̪u"
+        bases: [{ word: "வயிறு", base: "வயிறு", reading: "vayiṟu" }, { word: "கீழே", ref: "ta-0177" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0256"
+    target: "முடி"
+    reading: "muṭi"
+    ipa: "muʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முடி கருப்பு."
+        reading: "muṭi karuppu."
+        ipa: "muʈi kaɾuppu"
+        bases: [{ word: "முடி", base: "முடி", reading: "muṭi" }, { word: "கருப்பு", base: "கருப்பு", reading: "karuppu" }]
+      - target: "முடி கழுவு."
+        reading: "muṭi kaḻuvu."
+        ipa: "muʈi kaɻuʋu"
+        bases: [{ word: "முடி", base: "முடி", reading: "muṭi" }, { word: "கழுவு", ref: "ta-0190" }]
+  - id: "ta-0257"
+    target: "விரல்"
+    reading: "viral"
+    ipa: "ʋiɾal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விரல் வலிக்கிறது."
+        reading: "viral valikkiṟatu."
+        ipa: "ʋiɾal ʋalikkirat̪u"
+        bases: [{ word: "விரல்", base: "விரல்", reading: "viral" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+      - target: "இது விரல்."
+        reading: "itu viral."
+        ipa: "it̪u ʋiɾal"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "விரல்", base: "விரல்", reading: "viral" }]
+  - id: "ta-0258"
+    target: "உடம்பு"
+    reading: "uṭampu"
+    ipa: "uʈampu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உடம்பு சூடாக இருக்கிறது."
+        reading: "uṭampu cūṭāka irukkiṟatu."
+        ipa: "uʈampu suːʈaːka iɾukkirat̪u"
+        bases: [{ word: "உடம்பு", base: "உடம்பு", reading: "uṭampu" }, { word: "சூடாக", base: "சூடு", reading: "cūṭu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "உடம்பு வலிக்கிறது."
+        reading: "uṭampu valikkiṟatu."
+        ipa: "uʈampu ʋalikkirat̪u"
+        bases: [{ word: "உடம்பு", base: "உடம்பு", reading: "uṭampu" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+  - id: "ta-0259"
+    target: "கழுத்து"
+    reading: "kaḻuttu"
+    ipa: "kaɻut̪t̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கழுத்து வலிக்கிறது."
+        reading: "kaḻuttu valikkiṟatu."
+        ipa: "kaɻut̪t̪u ʋalikkirat̪u"
+        bases: [{ word: "கழுத்து", base: "கழுத்து", reading: "kaḻuttu" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+      - target: "இது கழுத்து."
+        reading: "itu kaḻuttu."
+        ipa: "it̪u kaɻut̪t̪u"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கழுத்து", base: "கழுத்து", reading: "kaḻuttu" }]

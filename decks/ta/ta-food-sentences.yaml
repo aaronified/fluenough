@@ -1,0 +1,26 @@
+schema: 1
+id: "ta-food-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0307"
+    target: "நான் காபி குடிக்கிறேன்."
+    reading: "nāṉ kāpi kuṭikkiṟēṉ."
+    ipa: "naːn kaːpi kuʈikkireːn"
+    pos: "phrase"
+    bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காபி", ref: "ta-0245" }, { word: "குடிக்கிறேன்", base: "குடி", reading: "kuṭi" }]
+  - id: "ta-0308"
+    target: "நாங்கள் தோசை சாப்பிடுகிறோம்."
+    reading: "nāṅkaḷ tōcai cāppiṭukiṟōm."
+    ipa: "naːŋkaɭ t̪oːsai saːppiʈukiroːm"
+    pos: "phrase"
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "தோசை", ref: "ta-0248" }, { word: "சாப்பிடுகிறோம்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-0309"
+    target: "இது நல்ல சாம்பார்."
+    reading: "itu nalla cāmpār."
+    ipa: "it̪u nalla saːmpaːɾ"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", ref: "ta-0169" }, { word: "சாம்பார்", ref: "ta-0250" }]

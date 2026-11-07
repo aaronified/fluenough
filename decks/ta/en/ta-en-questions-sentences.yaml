@@ -1,0 +1,35 @@
+schema: 1
+id: "ta-en-questions-sentences"
+kind: "layer"
+core: "ta-questions-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Questions in sentences"
+description: "Five questions built with the question words and yes-or-no questions, to put in order. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0052":
+    native: "What is your name?"
+    confusables:
+      w1: { why: "யார் (yār) asks who, not what the name is." }
+      w2: { why: "எங்கே (eṅkē) asks where, not what." }
+  "ta-0053":
+    native: "Where is he?"
+    confusables:
+      w1: { why: "எப்போது (eppōtu) asks when, not where." }
+      w2: { why: "ஏன் (ēṉ) asks why, not where." }
+  "ta-0054":
+    native: "When will you come?"
+    confusables:
+      w1: { why: "எங்கே (eṅkē) asks where, not when." }
+      w2: { why: "ஏன் (ēṉ) asks why, not when." }
+  "ta-0055":
+    native: "Where is the shop?"
+    confusables:
+      w1: { why: "யார் (yār) asks who, not where." }
+      w2: { why: "என்ன (eṉṉa) asks what, not where." }
+  "ta-0056":
+    native: "Are you coming?"
+    confusables:
+      w1: { why: "ஏன் (ēṉ) asks why, and this question has no question word." }
+      w2: { why: "எப்போது (eppōtu) asks when, and this question has no question word." }

@@ -1,0 +1,91 @@
+schema: 1
+id: "ta-en-market"
+kind: "layer"
+core: "ta-market"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Market"
+description: "The market, prices, rupees, discounts, bags and weight. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0224":
+    native: "market"
+    notes:
+      n1: "A market where things are sold outdoors or in a hall."
+    examples:
+      "சந்தை பக்கத்தில் இருக்கிறது.":
+        native: "The market is nearby."
+        bases:
+          "சந்தை": "market"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நான் சந்தைக்குப் போகிறேன்.":
+        native: "I am going to the market."
+        bases:
+          "சந்தைக்குப்": "market"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-0225":
+    native: "price"
+    notes:
+      n1: "The price of a thing."
+    examples:
+      "விலை அதிகம்.":
+        native: "The price is high."
+        bases:
+          "விலை": "price"
+      "விலை குறைவு.":
+        native: "The price is low."
+        bases:
+          "விலை": "price"
+  "ta-0226":
+    native: "rupee"
+    notes:
+      n1: "The money of India and Sri Lanka, said after the number."
+    examples:
+      "அது இருபது ரூபாய்.":
+        native: "That is twenty rupees."
+        bases:
+          "ரூபாய்": "rupee"
+      "பத்து ரூபாய் போதும்.":
+        native: "Ten rupees is enough."
+        bases:
+          "ரூபாய்": "rupee"
+  "ta-0227":
+    native: "discount"
+    notes:
+      n1: "A reduction in the price."
+    examples:
+      "இன்று தள்ளுபடி இருக்கிறது.":
+        native: "There is a discount today."
+        bases:
+          "தள்ளுபடி": "discount"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "தள்ளுபடி அதிகம்.":
+        native: "The discount is big."
+        bases:
+          "தள்ளுபடி": "discount"
+  "ta-0228":
+    native: "bag"
+    notes:
+      n1: "A bag for carrying things."
+    examples:
+      "இது பை.":
+        native: "This is a bag."
+        bases:
+          "பை": "bag"
+      "பை மேலே வை.":
+        native: "Put the bag on top."
+        bases:
+          "பை": "bag"
+  "ta-0229":
+    native: "weight"
+    notes:
+      n1: "How heavy a thing is."
+    examples:
+      "எடை அதிகம்.":
+        native: "The weight is high."
+        bases:
+          "எடை": "weight"
+      "எடை குறைவு.":
+        native: "The weight is low."
+        bases:
+          "எடை": "weight"

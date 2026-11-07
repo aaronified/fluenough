@@ -1,0 +1,130 @@
+schema: 1
+id: "ta-en-quantities"
+kind: "layer"
+core: "ta-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "How much and how many"
+description: "Little and much, more and less, enough, half, all, only, each and very. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0158":
+    native: "a little"
+    notes:
+      n1: "Before a verb or a noun, for a small amount: கொஞ்சம் சாப்பிடு (koñcam cāppiṭu, eat a little); கொஞ்சம் தண்ணீர் (koñcam taṇṇīr, a little water)."
+    examples:
+      "கொஞ்சம் சாப்பிடு.":
+        native: "Eat a little."
+        bases:
+          "கொஞ்சம்": "a little"
+      "கொஞ்சம் தண்ணீர் குடி.":
+        native: "Drink a little water."
+        bases:
+          "கொஞ்சம்": "a little"
+  "ta-0159":
+    native: "much; more; too much"
+    notes:
+      n1: "For a larger amount: அதிகம் வாங்கு (atikam vāṅku, buy more). Said alone after இது (itu, this), it means too much."
+    examples:
+      "அதிகம் வாங்கு.":
+        native: "Buy more."
+        bases:
+          "அதிகம்": "much; more; too much"
+      "இது அதிகம்.":
+        native: "This is too much."
+        bases:
+          "அதிகம்": "much; more; too much"
+  "ta-0160":
+    native: "less; a small amount"
+    notes:
+      n1: "A smaller amount. Before a verb, the form is குறைவாக (kuṟaivāka): குறைவாக பேசு (kuṟaivāka pēcu, speak less)."
+    examples:
+      "இது குறைவு.":
+        native: "This is less."
+        bases:
+          "குறைவு": "less; a small amount"
+      "குறைவாக பேசு.":
+        native: "Speak less."
+        bases:
+          "குறைவாக": "less (adverb); from குறைவு (kuṟaivu), less; a small amount"
+  "ta-0161":
+    native: "enough"
+    notes:
+      n1: "Said when an amount is enough: இது போதும் (itu pōtum, this is enough). It is used after the thing that is enough."
+    examples:
+      "இது போதும்.":
+        native: "This is enough."
+        bases:
+          "போதும்": "enough"
+      "தண்ணீர் போதும்.":
+        native: "Water is enough."
+        bases:
+          "போதும்": "enough"
+  "ta-0162":
+    native: "half"
+    notes:
+      n1: "Half of something, said before a verb: பாதி சாப்பிடு (pāti cāppiṭu, eat half)."
+    examples:
+      "பாதி சாப்பிடு.":
+        native: "Eat half."
+        bases:
+          "பாதி": "half"
+      "இது பாதி.":
+        native: "This is half."
+        bases:
+          "பாதி": "half"
+  "ta-0163":
+    native: "all; everything"
+    notes:
+      n1: "All of a group or everything, with the person named before it: நாங்கள் எல்லாம் (nāṅkaḷ ellām, all of us)."
+    examples:
+      "எல்லாம் சாப்பிடு.":
+        native: "Eat everything."
+        bases:
+          "எல்லாம்": "all; everything"
+      "நாங்கள் எல்லாம் போகிறோம்.":
+        native: "We are all going."
+        bases:
+          "எல்லாம்": "all; everything"
+          "போகிறோம்": "are going; from போ (pō), to go"
+  "ta-0164":
+    native: "only"
+    notes:
+      n1: "Only, after the word it limits: இது மட்டும் (itu maṭṭum, only this); நான் மட்டும் (nāṉ maṭṭum, only I)."
+    examples:
+      "இது மட்டும்.":
+        native: "Only this."
+        bases:
+          "மட்டும்": "only"
+      "நான் மட்டும் வருகிறேன்.":
+        native: "Only I am coming."
+        bases:
+          "மட்டும்": "only"
+          "வருகிறேன்": "am coming; from வா (vā), come"
+  "ta-0165":
+    native: "each; every"
+    notes:
+      n1: "Before a noun: ஒவ்வொரு நாளும் (ovvoru nāḷum, every day). Alone, the person is ஒவ்வொருவர் (ovvoruvar)."
+    examples:
+      "ஒவ்வொரு நாளும் குடி.":
+        native: "Drink every day."
+        bases:
+          "ஒவ்வொரு": "each; every"
+          "நாளும்": "every day; from நாள் (nāḷ), day"
+      "ஒவ்வொருவரும் வாங்கு.":
+        native: "Everyone, buy."
+        bases:
+          "ஒவ்வொருவரும்": "everyone; from ஒவ்வொருவர் (ovvoruvar), each person"
+  "ta-0166":
+    native: "very; too"
+    notes:
+      n1: "A spoken word, more common in talk than in writing. It comes before the word it strengthens: ரொம்ப நல்லது (romba nallatu, very good)."
+    examples:
+      "இது ரொம்ப நல்லது.":
+        native: "This is very good."
+        bases:
+          "ரொம்ப": "very; too"
+      "இது ரொம்ப அதிகம்.":
+        native: "This is far too much."
+        bases:
+          "ரொம்ப": "very; too"

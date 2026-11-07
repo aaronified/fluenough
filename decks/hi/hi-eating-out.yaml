@@ -16,6 +16,9 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "खाना बनाओ।", "reading": "khānā banāō.", "ipa": "kʰaːnaː bənaːoː", "bases": [{"word": "खाना", "base": "खाना", "reading": "khānā"}, {"word": "बनाओ", "base": "बनाना", "reading": "banānā"}]}
+    ]
   - id: "hi-0333"
     target: "पानी"
     target_scripts: { perso_arabic: "پانی" }
@@ -24,6 +27,10 @@ cards:
     ipa: "paːniː"
     pos: "noun"
     gender: "m"
+    "examples": [
+      {"target": "थोड़ा पानी दीजिए।", "reading": "thōṛā pānī dījiē.", "ipa": "t̪ʰoːɽaː paːniː d̪iːdʒɪeː", "bases": [{"word": "थोड़ा", "base": "थोड़ा", "reading": "thōṛā"}]},
+      {"target": "पहले पानी उबालो।", "reading": "pahlē pānī ubālō.", "ipa": "pəɦleː paːniː ʊbaːloː", "bases": [{"word": "पहले", "ref": "hi-0823"}, {"word": "पानी", "base": "पानी", "reading": "pānī"}, {"word": "उबालो", "base": "उबालना", "reading": "ubālō"}]}
+    ]
   - id: "hi-0334"
     target: "चाय"
     target_scripts: { perso_arabic: "چائے" }
@@ -34,6 +41,9 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "आप चाय पिएँगे?", "reading": "āp cāy piēm̐gē?", "ipa": "aːp tʃaːj pɪẽːɡeː", "bases": [{"word": "पिएँगे", "ref": "hi-0602"}]}
+    ]
   - id: "hi-0335"
     target: "रोटी"
     target_scripts: { perso_arabic: "روٹی" }
@@ -42,6 +52,10 @@ cards:
     ipa: "roːʈiː"
     pos: "noun"
     gender: "f"
+    "examples": [
+      {"target": "रोटी पलटो।", "reading": "rōṭī palṭō.", "ipa": "roːʈiː pəlʈoː", "bases": [{"word": "रोटी", "base": "रोटी", "reading": "rōṭī"}, {"word": "पलटो", "base": "पलटना", "reading": "palṭnā"}]},
+      {"target": "रोटी बेलो।", "reading": "rōṭī bēlō.", "ipa": "roːʈiː beːloː", "bases": [{"word": "रोटी", "base": "रोटी", "reading": "rōṭī"}, {"word": "बेलो", "base": "बेलना", "reading": "bēlnā"}]}
+    ]
   - id: "hi-0336"
     target: "मुझे … चाहिए।"
     target_scripts: { perso_arabic: "مجھے … چاہیے۔" }
@@ -60,6 +74,9 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "रोटी और दाल।", "reading": "rōṭī aur dāl.", "ipa": "roːʈiː ɔːr d̪aːl", "bases": []},
+    ]
   - id: "hi-0338"
     target: "तीखा"
     target_scripts: { perso_arabic: "تیکھا" }
@@ -68,12 +85,19 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "अदरक तीखा है।", "reading": "adrak tīkhā hai.", "ipa": "əd̪rək t̪iːkʰaː ɦɛː", "bases": []},
+      {"target": "अचार तीखा है।", "reading": "acār tīkhā hai.", "ipa": "ətʃaːr t̪iːkʰaː ɦɛː", "bases": [{"word": "अचार", "base": "अचार", "reading": "acār"}, {"word": "तीखा", "base": "तीखा", "reading": "tīkhā"}, {"word": "है", "ref": "hi-0112"}]},
+    ]
   - id: "hi-0339"
     target: "मीठा"
     target_scripts: { perso_arabic: "میٹھا" }
     reading: "mīṭhā"
     ipa: "miːʈʰaː"
     pos: "adj"
+    "examples": [
+      {"target": "अंगूर मीठे हैं।", "reading": "aṅgūr mīṭhē haim̐.", "ipa": "əŋɡuːr miːʈʰeː ɦɛ̃ː", "bases": [{"word": "मीठे", "base": "मीठा", "reading": "mīṭhā"}, {"word": "हैं", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0340"
     target: "शाकाहारी"
     target_scripts: { perso_arabic: "شاکاہاری" }

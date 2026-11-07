@@ -9,22 +9,49 @@ description: "Today and tomorrow, telling the time, and the days of the week."
 cards:
   "hi-0299":
     native: "today"
+    "examples": {
+      "आज कढ़ी बनाओ।": {"native": "Make the curry today.", "bases": {"बनाओ": "to make", "आज": "today"}},
+      "आज चाँद दिखा।": {"native": "The moon was seen today.", "bases": {"दिखा": "to be seen", "आज": "today"}}
+    }
   "hi-0300":
     native: "tomorrow; yesterday"
     notes:
       "n1": "One word for both. The verb's tense says which: कल आऊँगा (kal āūm̐gā), I'll come tomorrow; कल आया (kal āyā), I came yesterday."
+    "examples": {
+      "अधिकारी कल मिलेंगे।": {"native": "The officer will meet tomorrow.", "bases": {"कल": "tomorrow; yesterday"}},
+      "भुगतान कल होगा।": {"native": "The payment will be tomorrow.", "bases": {"कल": "tomorrow; yesterday"}}
+    }
   "hi-0301":
     native: "now; right now"
+    "examples": {
+      "अभी वक़्त है।": {"native": "There is time now.", "bases": {"अभी": "now; right now"}},
+      "मैनेजर अभी आएगा।": {"native": "The manager will come now.", "bases": {"अभी": "now; right now"}}
+    }
   "hi-0302":
     native: "morning"
+    "examples": {
+      "रोज़ सुबह झाड़ो।": {"native": "Sweep every morning.", "bases": {"झाड़ो": "to sweep; to dust", "सुबह": "morning"}},
+      "सुबह जलेबी खाओ।": {"native": "Eat jalebi in the morning.", "bases": {"जलेबी": "jalebi", "खाओ": "to eat", "सुबह": "morning"}}
+    }
   "hi-0303":
     native: "evening"
+    "examples": {
+      "आज शाम हम मिलेंगे।": {"native": "We will meet this evening.", "bases": {"मिलेंगे": "to meet"}},
+      "समारोह शाम को होगा।": {"native": "The ceremony will be in the evening.", "bases": {"शाम": "evening"}}
+    }
   "hi-0304":
     native: "night"
+    "examples": {
+      "कल रात भूकंप आया।": {"native": "There was an earthquake last night.", "bases": {"रात": "night"}}
+    }
   "hi-0305":
     native: "o'clock; at … o'clock"
     notes:
       "n1": "चार बजे (cār bajē), at four o'clock. सुबह सात बजे (subah sāt bajē), at seven in the morning."
+    "examples": {
+      "कितने बजे हैं?": {"native": "What time is it?", "bases": {}},
+      "फ़ार्मेसी दस बजे खुलती है।": {"native": "The pharmacy opens at ten.", "bases": {"खुलती": "to open", "बजे": "o'clock; at … o'clock"}}
+    }
   "hi-0306":
     native: "half past; and a half"
     notes:
@@ -35,14 +62,25 @@ cards:
       "n1": "In speech, often टाइम क्या हुआ है? (taim kya hua hai?)"
   "hi-0308":
     native: "day"
+    "examples": {
+      "दिन जल्दी गुज़र गए।": {"native": "The days passed quickly.", "bases": {"गुज़र": "to pass", "दिन": "day"}},
+      "आज का दिन अच्छा है।": {"native": "Today is a good day.", "bases": {"अच्छा": "good", "दिन": "day"}}
+    }
   "hi-0309":
     native: "week"
     notes:
       "n1": "Formally सप्ताह (saptāh)."
+    "examples": {
+      "प्रोजेक्ट अगले हफ़्ते पूरा होगा।": {"native": "The project will be complete next week.", "bases": {"अगले": "next", "हफ़्ते": "week"}},
+      "हम हर हफ़्ते फ़िल्म देखते हैं।": {"native": "We watch a film every week.", "bases": {"हर": "every", "हफ़्ते": "week", "फ़िल्म": "film", "देखते": "to see"}}
+    }
   "hi-0310":
     native: "Monday"
     notes:
       "n1": "Each day ends in वार (vār, day) and is masculine. सोम (sōm) is the moon."
+    "examples": {
+      "संग्रहालय सोमवार को बंद रहता है।": {"native": "The museum is closed on Monday.", "bases": {"सोमवार": "Monday"}}
+    }
   "hi-0311":
     native: "Tuesday"
   "hi-0312":
@@ -59,3 +97,7 @@ cards:
     native: "Sunday"
     notes:
       "n1": "In everyday speech, often इतवार (itvār)."
+    "examples": {
+      "रविवार को गिरजा खुलता है।": {"native": "On Sunday the church opens.", "bases": {"खुलता": "to open", "रविवार": "Sunday"}},
+      "रविवार को पिकनिक पर जाएँगे।": {"native": "We will go on a picnic on Sunday.", "bases": {"पिकनिक": "picnic", "जाएँगे": "to go", "रविवार": "Sunday"}}
+    }

@@ -1,0 +1,195 @@
+schema: 1
+id: "ta-en-numbers-big"
+kind: "layer"
+core: "ta-numbers-big"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Tens and big numbers"
+description: "The tens from thirty to ninety, a hundred, two hundred, five hundred, a thousand, a lakh and a crore. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0202":
+    native: "thirty"
+    notes:
+      n1: "Thirty. Before a noun it is said the same way: முப்பது நாள் (muppatu nāḷ, thirty days)."
+    examples:
+      "அது முப்பது ரூபாய்.":
+        native: "That is thirty rupees."
+        bases:
+          "முப்பது": "thirty"
+      "முப்பது நாள்.":
+        native: "Thirty days."
+        bases:
+          "முப்பது": "thirty"
+          "நாள்": "day"
+  "ta-0203":
+    native: "forty"
+    notes:
+      n1: "Forty."
+    examples:
+      "அது நாற்பது ரூபாய்.":
+        native: "That is forty rupees."
+        bases:
+          "நாற்பது": "forty"
+      "நாற்பது நாள்.":
+        native: "Forty days."
+        bases:
+          "நாற்பது": "forty"
+          "நாள்": "day"
+  "ta-0204":
+    native: "fifty"
+    notes:
+      n1: "Fifty."
+    examples:
+      "அது ஐம்பது ரூபாய்.":
+        native: "That is fifty rupees."
+        bases:
+          "ஐம்பது": "fifty"
+      "ஐம்பது கிலோ.":
+        native: "Fifty kilos."
+        bases:
+          "ஐம்பது": "fifty"
+          "கிலோ": "kilogram"
+  "ta-0205":
+    native: "sixty"
+    notes:
+      n1: "Sixty."
+    examples:
+      "அது அறுபது ரூபாய்.":
+        native: "That is sixty rupees."
+        bases:
+          "அறுபது": "sixty"
+      "அறுபது நிமிடம்.":
+        native: "Sixty minutes."
+        bases:
+          "அறுபது": "sixty"
+          "நிமிடம்": "minute"
+  "ta-0206":
+    native: "seventy"
+    notes:
+      n1: "Seventy. For age, add வயது (vayatu, years of age)."
+    examples:
+      "அது எழுபது ரூபாய்.":
+        native: "That is seventy rupees."
+        bases:
+          "எழுபது": "seventy"
+      "எழுபது வயது.":
+        native: "Seventy years old."
+        bases:
+          "எழுபது": "seventy"
+          "வயது": "years of age"
+  "ta-0207":
+    native: "eighty"
+    notes:
+      n1: "Eighty."
+    examples:
+      "அது எண்பது ரூபாய்.":
+        native: "That is eighty rupees."
+        bases:
+          "எண்பது": "eighty"
+      "எண்பது கிலோ.":
+        native: "Eighty kilos."
+        bases:
+          "எண்பது": "eighty"
+          "கிலோ": "kilogram"
+  "ta-0208":
+    native: "ninety"
+    notes:
+      n1: "Ninety."
+    examples:
+      "அது தொண்ணூறு ரூபாய்.":
+        native: "That is ninety rupees."
+        bases:
+          "தொண்ணூறு": "ninety"
+      "தொண்ணூறு நாள்.":
+        native: "Ninety days."
+        bases:
+          "தொண்ணூறு": "ninety"
+          "நாள்": "day"
+  "ta-0209":
+    native: "a hundred"
+    notes:
+      n1: "One hundred."
+    examples:
+      "அது நூறு ரூபாய்.":
+        native: "That is a hundred rupees."
+        bases:
+          "நூறு": "a hundred"
+      "நூறு பேர்.":
+        native: "A hundred people."
+        bases:
+          "நூறு": "a hundred"
+          "பேர்": "people (counter)"
+  "ta-0210":
+    native: "two hundred"
+    notes:
+      n1: "Two hundred."
+    examples:
+      "அது இருநூறு ரூபாய்.":
+        native: "That is two hundred rupees."
+        bases:
+          "இருநூறு": "two hundred"
+      "இருநூறு நாள்.":
+        native: "Two hundred days."
+        bases:
+          "இருநூறு": "two hundred"
+          "நாள்": "day"
+  "ta-0211":
+    native: "five hundred"
+    notes:
+      n1: "Five hundred."
+    examples:
+      "அது ஐநூறு ரூபாய்.":
+        native: "That is five hundred rupees."
+        bases:
+          "ஐநூறு": "five hundred"
+      "ஐநூறு கிலோ.":
+        native: "Five hundred kilos."
+        bases:
+          "ஐநூறு": "five hundred"
+          "கிலோ": "kilogram"
+  "ta-0212":
+    native: "a thousand"
+    notes:
+      n1: "One thousand."
+    examples:
+      "அது ஆயிரம் ரூபாய்.":
+        native: "That is a thousand rupees."
+        bases:
+          "ஆயிரம்": "a thousand"
+      "ஆயிரம் நாள்.":
+        native: "A thousand days."
+        bases:
+          "ஆயிரம்": "a thousand"
+          "நாள்": "day"
+  "ta-0213":
+    native: "a lakh (one hundred thousand)"
+    notes:
+      n1: "A lakh, a hundred thousand. Used in South Asian counting."
+    examples:
+      "அது ஒரு லட்சம் ரூபாய்.":
+        native: "That is one lakh rupees."
+        bases:
+          "ஒரு": "one (before a noun)"
+          "லட்சம்": "a lakh (one hundred thousand)"
+      "ஒரு லட்சம் பேர்.":
+        native: "A lakh people."
+        bases:
+          "ஒரு": "one (before a noun)"
+          "லட்சம்": "a lakh (one hundred thousand)"
+          "பேர்": "people (counter)"
+  "ta-0214":
+    native: "a crore (ten million)"
+    notes:
+      n1: "A crore, ten million. Used in South Asian counting."
+    examples:
+      "அது ஒரு கோடி ரூபாய்.":
+        native: "That is one crore rupees."
+        bases:
+          "ஒரு": "one (before a noun)"
+          "கோடி": "a crore (ten million)"
+      "கோடி பேர்.":
+        native: "Ten million people."
+        bases:
+          "கோடி": "a crore (ten million)"
+          "பேர்": "people (counter)"

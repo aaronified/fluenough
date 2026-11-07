@@ -12,22 +12,37 @@ cards:
     bases:
       "el": "the"
       "hombre": "man"
+    "examples": {
+      "El hombre está herido.": {"native": "The man is injured.", "bases": {"El": "the", "herido": "injured", "hombre": "man"}},
+      "Es un hombre atractivo.": {"native": "He is an attractive man.", "bases": {"un": "a", "atractivo": "attractive", "hombre": "man"}}
+    }
   "es-0002":
     native: "the woman"
     bases:
       "la": "the"
       "mujer": "woman"
+    "examples": {
+      "Hay igualdad entre hombres y mujeres.": {"native": "There is equality between men and women.", "bases": {"Hay": "there is; there are", "igualdad": "equality", "mujeres": "woman"}}
+    }
   "es-0003":
     native: "the boy"
     alt_native: ["the child"]
     bases:
       "el": "the"
       "niño": "boy"
+    "examples": {
+      "El niño anda bien.": {"native": "The child walks well.", "bases": {"El": "the", "anda": "to walk", "niño": "boy"}},
+      "El niño es rubio.": {"native": "The child is blond.", "bases": {"El": "the", "rubio": "blond", "niño": "boy"}}
+    }
   "es-0004":
     native: "the girl"
     bases:
       "la": "the"
       "niña": "girl"
+    "examples": {
+      "La niña es encantadora.": {"native": "The girl is charming.", "bases": {"La": "the", "encantadora": "charming", "niña": "girl"}},
+      "La niña es flaca.": {"native": "The girl is thin.", "bases": {"La": "the", "flaca": "thin; skinny", "niña": "girl"}}
+    }
   "es-0005":
     native: "the friend"
     notes:
@@ -35,10 +50,15 @@ cards:
     bases:
       "el": "the"
       "amigo": "friend"
+    "examples": {
+      "Nosotros somos amigos.": {"native": "We are friends.", "bases": {"Nosotros": "we", "amigos": "friend"}},
+      "Confío en mi amigo.": {"native": "I trust my friend.", "bases": {"Confío": "to trust", "en": "in", "amigo": "friend"}}
+    }
   "es-0006":
     native: "the house"
     alt_native: ["the home"]
     examples:
+      "Alquilamos una casa.": {"native": "We rent a house.", "bases": {"Alquilamos": "rent", "una": "a", "casa": "house"}}
       "La casa es muy grande.":
         native: "The house is very big."
         bases:
@@ -53,46 +73,82 @@ cards:
     bases:
       "la": "the"
       "puerta": "door"
+    "examples": {
+      "Empujo la puerta.": {"native": "I push the door.", "bases": {"Empujo": "to push", "la": "the", "puerta": "door"}},
+      "Alguien llama a la puerta.": {"native": "Someone is knocking at the door.", "bases": {"llama": "knock", "a": "at", "la": "the", "puerta": "door"}}
+    }
   "es-0008":
     native: "the window"
     bases:
       "la": "the"
       "ventana": "window"
+    "examples": {
+      "Escaparon por la ventana.": {"native": "They escaped through the window.", "bases": {"Escaparon": "to escape", "por": "for", "la": "the", "ventana": "window"}},
+      "Gritan desde la ventana.": {"native": "They shout from the window.", "bases": {"Gritan": "to shout", "desde": "from", "la": "the", "ventana": "window"}}
+    }
   "es-0009":
     native: "the table"
     bases:
       "la": "the"
       "mesa": "table"
+    "examples": {
+      "Pongo la mesa.": {"native": "I set the table.", "bases": {"Pongo": "to put; to set; to turn on", "la": "the", "mesa": "table"}},
+      "La mesa es marrón.": {"native": "The table is brown.", "bases": {"La": "The", "marrón": "brown", "mesa": "table"}}
+    }
   "es-0010":
     native: "the chair"
     bases:
       "la": "the"
       "silla": "chair"
+    "examples": {
+      "La silla es incómoda.": {"native": "The chair is uncomfortable.", "bases": {"La": "the", "incómoda": "uncomfortable", "silla": "chair"}},
+      "La silla es de metal.": {"native": "The chair is made of metal.", "bases": {"La": "the", "de": "of", "metal": "metal", "silla": "chair"}}
+    }
   "es-0011":
     native: "the book"
     bases:
       "el": "the"
       "libro": "book"
+    "examples": {
+      "Pierdo el libro.": {"native": "I lose the book.", "bases": {"Pierdo": "lose", "el": "the", "libro": "book"}},
+      "Acabo el libro hoy.": {"native": "I finish the book today.", "bases": {"Acabo": "to finish; to end", "el": "the", "libro": "book"}}
+    }
   "es-0013":
     native: "the bread"
     bases:
       "el": "the"
       "pan": "bread"
+    "examples": {
+      "Comemos demasiado pan.": {"native": "We eat too much bread.", "bases": {"demasiado": "too much", "pan": "bread"}},
+      "Como pan cada día.": {"native": "I eat bread every day.", "bases": {"cada": "each", "pan": "bread"}}
+    }
   "es-0014":
     native: "the milk"
     bases:
       "la": "the"
       "leche": "milk"
+    "examples": {
+      "Bebo té con leche.": {"native": "I drink tea with milk.", "bases": {"té": "tea", "con": "with", "leche": "milk"}},
+      "Compro queso y leche.": {"native": "I buy cheese and milk.", "bases": {"queso": "cheese", "leche": "milk"}}
+    }
   "es-0016":
     native: "the city"
     bases:
       "la": "the"
       "ciudad": "city"
+    "examples": {
+      "Conquistan la ciudad.": {"native": "They conquer the city.", "bases": {"Conquistan": "to conquer", "la": "the", "ciudad": "city"}},
+      "La ciudad se transforma.": {"native": "The city is transformed.", "bases": {"La": "the", "se": "(reflexive) oneself", "transforma": "to transform", "ciudad": "city"}}
+    }
   "es-0018":
     native: "the country"
     bases:
       "el": "the"
       "país": "country"
+    "examples": {
+      "Es un país montañoso.": {"native": "It is a mountainous country.", "bases": {"un": "a", "montañoso": "mountainous", "país": "country"}},
+      "Es un país pobre.": {"native": "It is a poor country.", "bases": {"un": "a", "pobre": "poor", "país": "country"}}
+    }
   "es-0019":
     native: "the day"
     notes:
@@ -100,32 +156,75 @@ cards:
     bases:
       "el": "the"
       "día": "day"
+    "examples": {
+      "buenos días": {"native": "good morning", "bases": {"días": "day"}},
+      "Buenos días, profesora.": {"native": "Good morning, teacher.", "bases": {"profesora": "teacher", "días": "day"}}
+    }
   "es-0020":
     native: "the night"
     bases:
       "la": "the"
       "noche": "night"
+    "examples": {
+      "buenas noches": {"native": "good night", "bases": {"noches": "night"}},
+      "Empeora por la noche.": {"native": "It gets worse at night.", "bases": {"Empeora": "to get worse", "por": "for", "la": "the", "noche": "night"}}
+    }
   "es-0021":
     native: "the year"
     bases:
       "el": "the"
       "año": "year"
+    "examples": {
+      "Tengo veintidós años.": {"native": "I am twenty-two.", "bases": {"veintidós": "twenty-two", "años": "year"}},
+      "Tengo veintiún años.": {"native": "I am twenty-one.", "bases": {"veintiún": "twenty-one", "años": "year"}}
+    }
   "es-0025":
     native: "to do"
     alt_native: ["to make"]
+    "examples": {
+      "Hace calor tropical.": {"native": "It is tropically hot.", "bases": {"tropical": "tropical", "Hace": "to do"}},
+      "Hace mucho calor.": {"native": "It's very hot.", "bases": {"Hace": "it is", "mucho": "a lot", "calor": "heat"}}
+    }
   "es-0029":
     native: "to drink"
+    "examples": {
+      "Bebo cerveza.": {"native": "I drink beer.", "bases": {"cerveza": "beer", "Bebo": "to drink"}},
+      "Bebo vino.": {"native": "I drink wine.", "bases": {"vino": "wine", "Bebo": "to drink"}}
+    }
   "es-0030":
     native: "to live"
+    "examples": {
+      "Ella vive aquí.": {"native": "She lives here.", "bases": {"Ella": "she", "vive": "to live"}}
+    }
   "es-0031":
     native: "big"
     alt_native: ["large"]
+    "examples": {
+      "América es muy grande.": {"native": "The Americas are very large.", "bases": {"América": "the Americas", "grande": "big"}},
+      "El aeropuerto es grande.": {"native": "The airport is big.", "bases": {"El": "the", "aeropuerto": "airport", "grande": "big"}}
+    }
   "es-0032":
     native: "small"
     alt_native: ["little"]
+    "examples": {
+      "El baño es pequeño.": {"native": "The bathroom is small.", "bases": {"El": "the", "baño": "bathroom", "pequeño": "small"}},
+      "El dedo es pequeño.": {"native": "The finger is small.", "bases": {"El": "the", "dedo": "finger", "pequeño": "small"}}
+    }
   "es-0033":
     native: "good"
+    "examples": {
+      "buenas tardes": {"native": "good afternoon", "bases": {"tardes": "afternoon", "buenas": "good"}},
+      "Buenas tardes, profesora.": {"native": "Good afternoon, teacher.", "bases": {"tardes": "afternoon", "Buenas": "good"}}
+    }
   "es-0034":
     native: "bad"
+    "examples": {
+      "El aburrimiento es malo.": {"native": "Boredom is bad.", "bases": {"El": "the", "aburrimiento": "boredom", "malo": "bad"}},
+      "Los prejuicios son malos.": {"native": "Prejudices are bad.", "bases": {"Los": "the", "prejuicios": "prejudice", "malos": "bad"}}
+    }
   "es-0035":
     native: "new"
+    "examples": {
+      "Busco un empleo nuevo.": {"native": "I am looking for a new job.", "bases": {"un": "a", "empleo": "job; employment", "nuevo": "new"}},
+      "Compro una raqueta nueva.": {"native": "I buy a new racket.", "bases": {"una": "a", "raqueta": "racket", "nueva": "new"}}
+    }

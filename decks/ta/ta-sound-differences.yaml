@@ -1,0 +1,197 @@
+schema: 1
+id: "ta-sound-differences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "sound-differences"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0031"
+    target: "காது"
+    reading: "kātu"
+    ipa: "kaːt̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-forest", kind: "pair", ref: "ta-0032" }
+    bases: "self"
+    examples:
+      - target: "என் காது வலிக்கிறது."
+        reading: "eṉ kātu valikkiṟatu."
+        ipa: "en kaːt̪u ʋalikkirat̪u"
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "காது", base: "காது", reading: "kātu" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+      - target: "இது என் காது."
+        reading: "itu eṉ kātu."
+        ipa: "it̪u en kaːt̪u"
+        bases: [{ word: "இது", base: "இது", reading: "itu" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "காது", base: "காது", reading: "kātu" }]
+  - id: "ta-0032"
+    target: "காடு"
+    reading: "kāṭu"
+    ipa: "kaːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-ear", kind: "pair", ref: "ta-0031" }
+    bases: "self"
+    examples:
+      - target: "காட்டில் புலி இருக்கிறது."
+        reading: "kāṭṭil puli irukkiṟatu."
+        ipa: "kaːʈʈil puli iɾukkirat̪u"
+        bases: [{ word: "காட்டில்", base: "காடு", reading: "kāṭu" }, { word: "புலி", base: "புலி", reading: "puli" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இது பெரிய காடு."
+        reading: "itu periya kāṭu."
+        ipa: "it̪u peɾija kaːʈu"
+        bases: [{ word: "இது", base: "இது", reading: "itu" }, { word: "பெரிய", ref: "ta-0008" }, { word: "காடு", base: "காடு", reading: "kāṭu" }]
+  - id: "ta-0033"
+    target: "கல்"
+    reading: "kal"
+    ipa: "kal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-foot", kind: "pair", ref: "ta-0034" }
+    bases: "self"
+    examples:
+      - target: "இது ஒரு கல்."
+        reading: "itu oru kal."
+        ipa: "it̪u oɾu kal"
+        bases: [{ word: "இது", base: "இது", reading: "itu" }, { word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "கல்", base: "கல்", reading: "kal" }]
+      - target: "தரையில் கல் இருக்கிறது."
+        reading: "taraiyil kal irukkiṟatu."
+        ipa: "t̪aɾaijil kal iɾukkirat̪u"
+        bases: [{ word: "தரையில்", base: "தரை", reading: "tarai" }, { word: "கல்", base: "கல்", reading: "kal" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0034"
+    target: "கால்"
+    reading: "kāl"
+    ipa: "kaːl"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-stone", kind: "pair", ref: "ta-0033" }
+    bases: "self"
+    examples:
+      - target: "என் கால் வலிக்கிறது."
+        reading: "eṉ kāl valikkiṟatu."
+        ipa: "en kaːl ʋalikkirat̪u"
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "கால்", base: "கால்", reading: "kāl" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+      - target: "நாய்க்கு நான்கு கால்."
+        reading: "nāykku nāṉku kāl."
+        ipa: "naːjkku naːnku kaːl"
+        bases: [{ word: "நாய்க்கு", base: "நாய்", reading: "nāy" }, { word: "நான்கு", base: "நான்கு", reading: "nāṉku" }, { word: "கால்", base: "கால்", reading: "kāl" }]
+  - id: "ta-0035"
+    target: "பல்"
+    reading: "pal"
+    ipa: "pal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-milk", kind: "pair", ref: "ta-0036" }
+    bases: "self"
+    examples:
+      - target: "எனக்கு ஒரு பல் வலிக்கிறது."
+        reading: "eṉakku oru pal valikkiṟatu."
+        ipa: "enakku oɾu pal ʋalikkirat̪u"
+        bases: [{ word: "எனக்கு", base: "என்", reading: "eṉ" }, { word: "ஒரு", base: "ஒரு", reading: "oru" }, { word: "பல்", base: "பல்", reading: "pal" }, { word: "வலிக்கிறது", base: "வலி", reading: "vali" }]
+      - target: "பல் மருத்துவர் எங்கே?"
+        reading: "pal maruttuvar eṅkē?"
+        ipa: "pal maɾut̪t̪uʋaɾ eŋkeː"
+        bases: [{ word: "பல்", base: "பல்", reading: "pal" }, { word: "மருத்துவர்", base: "மருத்துவர்", reading: "maruttuvar" }, { word: "எங்கே", base: "எங்கே", reading: "eṅkē" }]
+  - id: "ta-0036"
+    target: "பால்"
+    reading: "pāl"
+    ipa: "paːl"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-tooth", kind: "pair", ref: "ta-0035" }
+    bases: "self"
+    examples:
+      - target: "எனக்குப் பால் வேண்டும்."
+        reading: "eṉakkup pāl vēṇṭum."
+        ipa: "enakkup paːl ʋeːɳʈum"
+        bases: [{ word: "எனக்குப்", base: "என்", reading: "eṉ" }, { word: "பால்", base: "பால்", reading: "pāl" }, { word: "வேண்டும்", base: "வேண்டு", reading: "vēṇṭu" }]
+      - target: "பால் சூடாக இருக்கிறது."
+        reading: "pāl cūṭāka irukkiṟatu."
+        ipa: "paːl suːʈaːka iɾukkirat̪u"
+        bases: [{ word: "பால்", base: "பால்", reading: "pāl" }, { word: "சூடாக", base: "சூடு", reading: "cūṭu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0037"
+    target: "ஏழு"
+    reading: "ēḻu"
+    ipa: "eːɻu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-rise", kind: "pair", ref: "ta-0038" }
+    bases: "self"
+    examples:
+      - target: "இன்று ஏழு மணி."
+        reading: "iṉṟu ēḻu maṇi."
+        ipa: "inru eːɻu maɳi"
+        bases: [{ word: "இன்று", base: "இன்று", reading: "iṉṟu" }, { word: "ஏழு", base: "ஏழு", reading: "ēḻu" }, { word: "மணி", base: "மணி", reading: "maṇi" }]
+      - target: "எனக்கு ஏழு வயது."
+        reading: "eṉakku ēḻu vayatu."
+        ipa: "enakku eːɻu ʋajat̪u"
+        bases: [{ word: "எனக்கு", base: "என்", reading: "eṉ" }, { word: "ஏழு", base: "ஏழு", reading: "ēḻu" }, { word: "வயது", base: "வயது", reading: "vayatu" }]
+  - id: "ta-0038"
+    target: "எழு"
+    reading: "eḻu"
+    ipa: "eɻu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-seven", kind: "pair", ref: "ta-0037" }
+    bases: "self"
+    examples:
+      - target: "நான் காலையில் எழுகிறேன்."
+        reading: "nāṉ kālaiyil eḻukiṟēṉ."
+        ipa: "naːn kaːlaijil eɻukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "எழுகிறேன்", base: "எழு", reading: "eḻu" }]
+      - target: "எழு, போகலாம்."
+        reading: "eḻu, pōkalām."
+        ipa: "eɻu poːkalaːm"
+        bases: [{ word: "எழு", base: "எழு", reading: "eḻu" }, { word: "போகலாம்", base: "போ", reading: "pō" }]
+  - id: "ta-0039"
+    target: "கறி"
+    reading: "kaṟi"
+    ipa: "kari"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-charcoal", kind: "pair", ref: "ta-0040" }
+    bases: "self"
+    examples:
+      - target: "இன்று கறி சமைக்கிறேன்."
+        reading: "iṉṟu kaṟi camaikkiṟēṉ."
+        ipa: "inru kari samaikkireːn"
+        bases: [{ word: "இன்று", base: "இன்று", reading: "iṉṟu" }, { word: "கறி", base: "கறி", reading: "kaṟi" }, { word: "சமைக்கிறேன்", base: "சமை", reading: "camai" }]
+      - target: "கறி நல்லது."
+        reading: "kaṟi nallatu."
+        ipa: "kari nallat̪u"
+        bases: [{ word: "கறி", base: "கறி", reading: "kaṟi" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0040"
+    target: "கரி"
+    reading: "kari"
+    ipa: "kaɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+      - { id: "pair-curry", kind: "pair", ref: "ta-0039" }
+    bases: "self"
+    examples:
+      - target: "அடுப்பில் கரி இருக்கிறது."
+        reading: "aṭuppil kari irukkiṟatu."
+        ipa: "aʈuppil kaɾi iɾukkirat̪u"
+        bases: [{ word: "அடுப்பில்", base: "அடுப்பு", reading: "aṭuppu" }, { word: "கரி", base: "கரி", reading: "kari" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "கரி சூடாக இருக்கிறது."
+        reading: "kari cūṭāka irukkiṟatu."
+        ipa: "kaɾi suːʈaːka iɾukkirat̪u"
+        bases: [{ word: "கரி", base: "கரி", reading: "kari" }, { word: "சூடாக", base: "சூடு", reading: "cūṭu" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]

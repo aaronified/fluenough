@@ -14,6 +14,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ চাকৰি ভাল।", reading: "mur sākori bhāl.", ipa: "mʊɹ sakoɹi bʱal", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ভাল", "ref": "as-2084"}] }
+      - { target: "তেওঁ চাকৰি পালে।", reading: "teum̐ sākori pāle.", ipa: "teʊ̃ sakoɹi pale", bases: [{"word": "পালে", "base": "পোৱা", "reading": "puwā"}] }
   - ref: "as-0120"
   - id: "as-0200"
     target: "অফিচ"
@@ -24,6 +27,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কেন্দ্ৰত অফিচ।", reading: "kendrôt ôphis.", ipa: "kendɹɔt ɔpʰis", bases: [{"word": "কেন্দ্ৰত", "base": "কেন্দ্ৰ", "reading": "kendr"}] }
+      - { target: "সৰকাৰী অফিচ ডাঙৰ।", reading: "xôrôkāri ôphis dāṅôr.", ipa: "sɔɹɔkaɹi ɔpʰis daŋɔɹ", bases: [] }
   - id: "as-0201"
     target: "শিক্ষক"
     picture: "🧑‍🏫"
@@ -33,6 +39,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তেওঁলোক শিক্ষক।", reading: "teum̐luk xikkhôk.", ipa: "teʊ̃lʊk xikkʰɔk", bases: [{"word": "শিক্ষক", "base": "শিক্ষক", "reading": "xikkhôk"}, {"word": "তেওঁলোক", "base": "তেওঁলোক", "reading": "teum̐luk"}] }
+      - { target: "প্ৰধান শিক্ষক", reading: "prôdhān xikkhôk", ipa: "pɹɔdʱan xikkʰɔk", bases: [{"word": "প্ৰধান", "base": "প্ৰধান", "reading": "prôdhān"}] }
   - id: "as-0202"
     target: "দোকানী"
     reading: "dukāni"
@@ -40,6 +49,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দোকানী চাউল বেচে।", reading: "dukāni sāul bese.", ipa: "dʊkani saul bese", bases: [{"word": "বেচে", "base": "বেচা", "reading": "besā"}] }
+      - { target: "দোকানী ফেৰত দিয়ে।", reading: "dukāni pherôt diye.", ipa: "dʊkani pʰeɹɔt dije", bases: [{"word": "দিয়ে", "ref": "as-2218"}] }
   - id: "as-0203"
     target: "ড্ৰাইভাৰ"
     reading: "drāibhār"
@@ -47,21 +59,33 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সি ড্ৰাইভাৰ।", reading: "si drāibhār.", ipa: "si dɹaibʱaɹ", bases: [{"word": "সি", "ref": "as-2180"}] }
+      - { target: "মোৰ ভাই ড্ৰাইভাৰ।", reading: "mur bhāi drāibhār.", ipa: "mʊɹ bʱai dɹaibʱaɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0204"
     target: "ইঞ্জিনিয়াৰ"
     reading: "inziniyār"
     ipa: "inzinijaɹ"
     pos: "noun"
+    examples:
+      - { target: "সি ইঞ্জিনিয়াৰ।", reading: "si inziniyār.", ipa: "si inzinijaɹ", bases: [{"word": "সি", "ref": "as-2180"}] }
+      - { target: "মোৰ ভাই ইঞ্জিনিয়াৰ।", reading: "mur bhāi inziniyār.", ipa: "mʊɹ bʱai inzinijaɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0205"
     target: "উকীল"
     reading: "ukil"
     ipa: "ukil"
     pos: "noun"
+    examples:
+      - { target: "সি উকীল।", reading: "si ukil.", ipa: "si ukil", bases: [{"word": "সি", "ref": "as-2180"}] }
+      - { target: "মোৰ ককা উকীল।", reading: "mur kôkā ukil.", ipa: "mʊɹ kɔka ukil", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0206"
     target: "নাৰ্চ"
     reading: "nārs"
     ipa: "naɹs"
     pos: "noun"
+    examples:
+      - { target: "মই নাৰ্চ।", reading: "moi nārs.", ipa: "moi naɹs", bases: [] }
+      - { target: "তাই নাৰ্চ।", reading: "tāi nārs.", ipa: "tai naɹs", bases: [{"word": "তাই", "ref": "as-2180"}] }
   - id: "as-0207"
     target: "খেতিয়ক"
     picture: "🧑‍🌾"
@@ -70,6 +94,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সি খেতিয়ক।", reading: "si khetiyôk.", ipa: "si kʰetijɔk", bases: [{"word": "সি", "ref": "as-2180"}] }
+      - { target: "মোৰ ককা খেতিয়ক।", reading: "mur kôkā khetiyôk.", ipa: "mʊɹ kɔka kʰetijɔk", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0208"
     target: "ৰান্ধনী"
     picture: "🧑‍🍳"
@@ -78,6 +105,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "তাই ৰান্ধনী।", reading: "tāi rāndhoni.", ipa: "tai ɹandʱoni", bases: [{"word": "তাই", "ref": "as-2180"}] }
+      - { target: "মোৰ আইতা ৰান্ধনী।", reading: "mur āitā rāndhoni.", ipa: "mʊɹ aita ɹandʱoni", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0209"
     target: "লেখক"
     reading: "lekhôk"
@@ -85,17 +115,26 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সি লেখক।", reading: "si lekhôk.", ipa: "si lekʰɔk", bases: [{"word": "সি", "ref": "as-2180"}] }
+      - { target: "মোৰ খুৰা লেখক।", reading: "mur khurā lekhôk.", ipa: "mʊɹ kʰuɹa lekʰɔk", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0210"
     target: "সাংবাদিক"
     reading: "xāṅbādik"
     ipa: "xaŋbadik"
     pos: "noun"
+    examples:
+      - { target: "সি সাংবাদিক।", reading: "si sāṅbādik.", ipa: "si saŋbadik", bases: [{"word": "সি", "ref": "as-2180"}] }
+      - { target: "সাংবাদিক খবৰ লিখিছে।", reading: "xāṅbādik khôbôr likhise.", ipa: "saŋbadik kʰɔbɔɹ likʰise", bases: [{"word": "লিখিছে", "ref": "as-2204"}] }
   - id: "as-0211"
     target: "ডাক্তৰ"
     picture: "🧑‍⚕"
     reading: "dāktôr"
     ipa: "daktɔɹ"
     pos: "noun"
+    examples:
+      - { target: "সি ডাক্তৰ।", reading: "si dāktôr.", ipa: "si daktɔɹ", bases: [{"word": "সি", "ref": "as-2180"}] }
+      - { target: "ডাক্তৰ আহিছে।", reading: "dāktôr āhise.", ipa: "daktɔɹ ahise", bases: [{"word": "আহিছে", "ref": "as-2201"}] }
   - id: "as-0212"
     target: "পুলিচ"
     picture: "👮"
@@ -104,6 +143,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো পুলিচ।", reading: "eitu pulis.", ipa: "eitʊ pulis", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "পুলিচ ইয়াত।", reading: "pulis iyāt.", ipa: "pulis ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
   - id: "as-0213"
     target: "ছাত্ৰ"
     picture: "🧑‍🎓"
@@ -112,6 +154,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ছাত্ৰ, ছাত্ৰী", reading: "sātrô, sātri", ipa: "satɹɔ satɹi", bases: [{"word": "ছাত্ৰী", "base": "ছাত্ৰ", "reading": "sātrô"}] }
+      - { target: "ছাত্ৰ উত্তৰ দিছে।", reading: "sātrô uttôr dise.", ipa: "satɹ uttɔɹ dise", bases: [{"word": "দিছে", "ref": "as-2218"}] }
   - id: "as-0214"
     target: "ছুটী"
     reading: "suti"
@@ -119,16 +164,25 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ ছুটী আছে।", reading: "mur suti āse.", ipa: "mʊɹ suti ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
+      - { target: "ছুটী লোৱা", reading: "suti luwā", ipa: "suti lʊwa", bases: [] }
   - id: "as-0215"
     target: "দৰমহা"
     reading: "dôrmôhā"
     ipa: "dɔɹmɔha"
     pos: "noun"
+    examples:
+      - { target: "মোৰ দৰমহা ভাল।", reading: "mur dôrômôhā bhāl.", ipa: "mʊɹ dɔɹɔmɔha bʱal", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ভাল", "ref": "as-2084"}] }
+      - { target: "মোক দৰমহা দিয়ক।", reading: "muk dôrômôhā diyôk.", ipa: "mʊk dɔɹɔmɔha dijɔk", bases: [{"word": "মোক", "ref": "as-2178"}, {"word": "দিয়ক", "ref": "as-2218"}] }
   - id: "as-0216"
     target: "বেপাৰ"
     reading: "bepār"
     ipa: "bepaɹ"
     pos: "noun"
+    examples:
+      - { target: "মোৰ বেপাৰ ভাল।", reading: "mur bepār bhāl.", ipa: "mʊɹ bepaɹ bʱal", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ভাল", "ref": "as-2084"}] }
+      - { target: "মোৰ বেপাৰ ইয়াত।", reading: "mur bepār iyāt.", ipa: "mʊɹ bepaɹ ijat", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ইয়াত", "ref": "as-0323"}] }
   - id: "as-0217"
     target: "চাহ বাগান"
     reading: "sāh bāgān"

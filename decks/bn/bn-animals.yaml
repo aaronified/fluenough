@@ -18,6 +18,10 @@ cards:
     notes:
       - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Cattle_in_religion_and_mythology" }
       - { id: "n2", kind: "usage", words: [{ word: "গোরু", reading: "goru" }] }
+    "examples": [
+      {"target": "খামারে গরু আছে।", "reading": "khāmāre goru āche.", "ipa": "kʰamare ɡoru atʃʰe", "bases": [{"word": "খামারে", "base": "খামার", "reading": "khāmāre"}, {"word": "গরু", "base": "গরু", "reading": "goru"}, {"word": "আছে", "base": "আছে", "reading": "āche"}]},
+      {"target": "গরু দুধ দেয়।", "reading": "goru dudh dey.", "ipa": "ɡoru d̪ud̪ʱ d̪ej", "bases": [{"word": "দেয়", "ref": "bn-0888"}]}
+    ]
   - id: "bn-1274"
     target: "মোষ"
     reading: "moś"
@@ -32,6 +36,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage" }
+    "examples": [
+      {"target": "ছেলেটা ছাগলকে ডাকে।", "reading": "cheleṭā chāgolke ḍāke.", "ipa": "tʃʰeleʈa tʃʰaɡolke ɖake", "bases": [{"word": "ছেলেটা", "ref": "bn-0426"}, {"word": "ছাগলকে", "base": "ছাগল", "reading": "chāgol"}, {"word": "ডাকে", "ref": "bn-0898"}]}
+    ]
   - id: "bn-1276"
     target: "ভেড়া"
     reading: "bheṛā"
@@ -46,6 +53,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "কুকুর", reading: "kukur" }] }
+    "examples": [
+      {"target": "কুকুরটাকে তাড়াল।", "reading": "kukuroṭāke tāṛāl.", "ipa": "kukuroʈake t̪aɽal", "bases": [{"word": "কুকুরটাকে", "base": "কুকুর", "reading": "kukur"}, {"word": "তাড়াল", "base": "তাড়ানো", "reading": "tāṛāl"}]},
+      {"target": "কুকুরটা রাস্তায় দৌড়ায়।", "reading": "kukurṭā rāstāy douṛāy.", "ipa": "kukurʈa rast̪aj d̪ouɽaj", "bases": [{"word": "কুকুরটা", "base": "কুকুর", "reading": "kukur"}, {"word": "রাস্তায়", "ref": "bn-0313"}, {"word": "দৌড়ায়", "ref": "bn-1115"}]}
+    ]
   - id: "bn-1278"
     target: "বিড়াল"
     reading: "biṛāl"
@@ -54,6 +65,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "বেড়াল", reading: "beṛāl" }] }
+    "examples": [
+      {"target": "বিড়ালটা দুধ খায়।", "reading": "biṛālṭā dudh khāy.", "ipa": "biɽalʈa d̪ud̪ʱ kʰaj", "bases": [{"word": "বিড়ালটা", "base": "বিড়াল", "reading": "biṛāl"}, {"word": "খায়", "ref": "bn-0876"}]},
+      {"target": "বিড়ালটা দুধ চাটল।", "reading": "biṛāloṭā dudh cāṭol.", "ipa": "biɽaloʈa d̪ud̪ʱ tʃaʈol", "bases": [{"word": "বিড়ালটা", "base": "বিড়াল", "reading": "biṛāl"}, {"word": "দুধ", "ref": "bn-0271"}, {"word": "চাটল", "base": "চাটা", "reading": "cāṭol"}]}
+    ]
   - id: "bn-1279"
     target: "ঘোড়া"
     reading: "ghoṛā"
@@ -61,6 +76,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage" }
+    "examples": [
+      {"target": "ঘোড়াগুলো মাঠে আছে।", "reading": "ghoṛāgulo māṭhe āche.", "ipa": "ɡʱoɽaɡulo maʈʰe atʃʰe", "bases": [{"word": "ঘোড়াগুলো", "base": "ঘোড়া", "reading": "ghoṛā"}, {"word": "মাঠে", "ref": "bn-1045"}, {"word": "আছে", "base": "আছে", "reading": "āche"}]}
+    ]
   - id: "bn-1280"
     target: "হাতি"
     reading: "hāti"
@@ -69,6 +87,9 @@ cards:
     picture: "🐘"
     notes:
       - { id: "n1", kind: "usage" }
+    "examples": [
+      {"target": "হাতিটা অনেক বড়।", "reading": "hātiṭā ônek bôṛo.", "ipa": "ɦat̪iʈa ɔnek bɔɽo", "bases": [{"word": "হাতিটা", "base": "হাতি", "reading": "hāti"}]}
+    ]
   - id: "bn-1281"
     target: "বাঘ"
     reading: "bāgh"
@@ -78,6 +99,10 @@ cards:
     notes:
       - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Bengal_tiger" }
       - { id: "pair", kind: "pair", ref: "bn-1328", words: [{ word: "বাঘ", reading: "bāgh" }, { word: "ভাগ", reading: "bhāg" }] }
+    "examples": [
+      {"target": "চিড়িয়াখানায় বাঘ আছে।", "reading": "ciṛiyākhānāy bāgh āche.", "ipa": "tʃiɽijakʰanaj baɡʱ atʃʰe", "bases": [{"word": "চিড়িয়াখানায়", "base": "চিড়িয়াখানা", "reading": "ciṛiyākhānāy"}, {"word": "বাঘ", "base": "বাঘ", "reading": "bāgh"}, {"word": "আছে", "base": "আছে", "reading": "āche"}]},
+      {"target": "বাঘ বিপন্ন প্রাণী।", "reading": "bāgh biponno prāni.", "ipa": "baɡʱ biponn prani", "bases": [{"word": "বাঘ", "base": "বাঘ", "reading": "bāgh"}, {"word": "প্রাণী", "ref": "bn-3419"}]}
+    ]
   - id: "bn-1282"
     target: "সিংহ"
     reading: "śiṅho"
@@ -100,6 +125,9 @@ cards:
     picture: "🐒"
     notes:
       - { id: "n1", kind: "usage" }
+    "examples": [
+      {"target": "বাঁদরটা গাছে ওঠে।", "reading": "bām̐dorṭā gāche oṭhe.", "ipa": "bãd̪orʈa ɡatʃʰe oʈʰe", "bases": [{"word": "বাঁদরটা", "base": "বাঁদর", "reading": "bām̐dor"}, {"word": "গাছে", "base": "গাছ", "reading": "gāch"}, {"word": "ওঠে", "ref": "bn-0885"}]}
+    ]
   - id: "bn-1285"
     target: "হরিণ"
     reading: "horin"
@@ -121,6 +149,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "culture", source: "https://en.wikipedia.org/wiki/Manasa" }
+    "examples": [
+      {"target": "ঝোপের পাশে সাপ।", "reading": "jhoper pāśe sāp.", "ipa": "dʒʱoper paʃe sap", "bases": [{"word": "ঝোপের", "base": "ঝোপ", "reading": "jhop"}]},
+      {"target": "আমি সাপকে ভয় পাই।", "reading": "āmi śāpke bhôy pāi.", "ipa": "ami ʃapke bʱɔj pai", "bases": [{"word": "সাপকে", "base": "সাপ", "reading": "śāp"}, {"word": "পাই", "ref": "bn-0891"}]}
+    ]
   - id: "bn-1288"
     target: "ইঁদুর"
     reading: "im̐dur"
@@ -136,6 +168,9 @@ cards:
     picture: "🐦"
     notes:
       - { id: "n1", kind: "usage" }
+    "examples": [
+      {"target": "জলাভূমিতে পাখি থাকে।", "reading": "jôlābhumite pākhi thāke.", "ipa": "dʒɔlabʱumit̪e pakʰi t̪ʰake", "bases": [{"word": "জলাভূমিতে", "base": "জলাভূমি", "reading": "jôlābhumite"}, {"word": "পাখি", "base": "পাখি", "reading": "pākhi"}, {"word": "থাকে", "ref": "bn-0875"}]}
+    ]
   - id: "bn-1290"
     target: "হাঁস"
     reading: "hām̐s"
@@ -143,6 +178,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage" }
+    "examples": [
+      {"target": "গ্রামে অনেক হাঁস আছে।", "reading": "grāme ônek hām̐s āche.", "ipa": "ɡrame ɔnek ɦãs atʃʰe", "bases": [{"word": "গ্রামে", "ref": "bn-1053"}, {"word": "আছে", "base": "আছে", "reading": "āche"}]}
+    ]
   - id: "bn-1291"
     target: "কাক"
     reading: "kāk"
@@ -158,6 +196,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ময়ূরটা খুব সুন্দর।", "reading": "moyurṭā khub śundor.", "ipa": "mojurʈa kʰub ʃund̪or", "bases": [{"word": "ময়ূরটা", "base": "ময়ূর", "reading": "moyur"}]}
+    ]
   - id: "bn-1293"
     target: "টিয়া"
     reading: "ṭiyā"
@@ -180,6 +221,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "মশারি", reading: "môśāri" }] }
+    "examples": [
+      {"target": "মশা কামড়ায়।", "reading": "môśā kāmoṛāy.", "ipa": "mɔʃa kamoɽaj", "bases": [{"word": "মশা", "base": "মশা", "reading": "môśā"}, {"word": "কামড়ায়", "base": "কামড়ানো", "reading": "kāmoṛāy"}]},
+      {"target": "ঘরে কোনো মশা নেই।", "reading": "ghôre kono môśā nei.", "ipa": "ɡʱɔre kono mɔʃa nei", "bases": [{"word": "ঘরে", "ref": "bn-0051"}, {"word": "নেই", "base": "নেই", "reading": "nei"}]}
+    ]
   - id: "bn-1296"
     target: "প্রজাপতি"
     reading: "prôjāpoti"

@@ -10,28 +10,59 @@ tags: ["beginner"]
 cards:
   "bn-0315":
     native: "today"
+    "examples": {
+      "আইনসভার বৈঠক আজ।": {"native": "The legislature meets today.", "bases": {"আইনসভার": "legislature", "বৈঠক": "meeting", "আজ": "today"}},
+      "আজ আকাশ ঝলমলে।": {"native": "The sky is bright today.", "bases": {}}
+    }
   "bn-0316":
     native: "tomorrow; yesterday"
     notes:
       "n1": "One word for both; the verb's tense says which. গতকাল (gôtokāl) is only yesterday, আগামীকাল (āgāmikāl) only tomorrow."
+    "examples": {
+      "প্রিমিয়ার কাল।": {"native": "The premiere is tomorrow.", "bases": {"কাল": "tomorrow; yesterday"}},
+      "কাল কল করবেন।": {"native": "Please call tomorrow. (respectful)", "bases": {}}
+    }
   "bn-0317":
     native: "now"
+    "examples": {
+      "আমি এখন শিক্ষানবিস।": {"native": "I am a trainee now.", "bases": {"এখন": "now"}},
+      "এখন কেমন লাগছে?": {"native": "How do you feel now?", "bases": {"কেমন": "how", "লাগছে": "feel", "এখন": "now"}}
+    }
   "bn-0318":
     native: "morning"
+    "examples": {
+      "শুভ সকাল!": {"native": "Good morning!", "bases": {"শুভ": "auspicious; good"}},
+      "আমার শিফট সকালে।": {"native": "My shift is in the morning.", "bases": {"সকালে": "morning"}}
+    }
   "bn-0319":
     native: "afternoon"
     notes:
       "n1": "Bengali divides the day finely: ভোর (bhor, dawn), সকাল (śôkāl), দুপুর (dupur, midday), বিকেল (bikel), সন্ধ্যা (evening), রাত (night). Also বিকাল (bikāl)."
+    "examples": {
+      "আজ বিকেলে ম্যাচ।": {"native": "The match is this afternoon.", "bases": {"বিকেলে": "afternoon"}},
+      "আজ বিকেলে আমি ফ্রি।": {"native": "I am free this afternoon.", "bases": {"আজ": "today", "বিকেলে": "in the afternoon"}}
+    }
   "bn-0320":
     native: "evening"
     notes:
       "n1": "Often said সন্ধে (śôndhe)."
+    "examples": {
+      "সন্ধ্যায় ঘরটা আলোকিত।": {"native": "In the evening the room is lit up.", "bases": {"সন্ধ্যায়": "in the evening"}},
+      "আমরা সন্ধ্যায় গন্তব্যে পৌঁছাব।": {"native": "We will reach the destination in the evening.", "bases": {"সন্ধ্যায়": "evening"}}
+    }
   "bn-0321":
     native: "night"
+    "examples": {
+      "তাঁবুতে রাত কাটালাম।": {"native": "We spent the night in the tent.", "bases": {"তাঁবুতে": "tent", "কাটালাম": "spent", "রাত": "night"}}
+    }
   "bn-0322":
     native: "o'clock (it strikes)"
     notes:
       "n1": "চারটে বাজে (cārṭe bāje), it's four o'clock. The number takes -টা (-ṭā): একটা (ekoṭā), পাঁচটা (pām̐coṭā), ছটা (chôṭā). Two, three and four are different: দুটো (duṭo), তিনটে (tinoṭe), চারটে (cāroṭe), and so is half past two, আড়াইটে (āṛāiṭe). Also with -টা (-ṭā) for every number: দুইটা (duiṭā), তিনটা (tinoṭā), চারটা বাজে (cāroṭā bāje)."
+    "examples": {
+      "প্রায় দশটা বাজে।": {"native": "It is almost ten o'clock.", "bases": {}},
+      "কটা বাজে?": {"native": "What time is it?", "bases": {}}
+    }
   "bn-0323":
     native: "half past; and a half"
     notes:
@@ -46,10 +77,18 @@ cards:
     native: "week"
     notes:
       "n1": "Also হপ্তা (hôptā), in everyday speech."
+    "examples": {
+      "আমি এক সপ্তাহের সফরে আছি।": {"native": "I am on a week's trip.", "bases": {"সপ্তাহের": "week", "সফরে": "trip; tour", "আছি": "to be; there is"}},
+      "গত সপ্তাহে": {"native": "last week", "bases": {"গত": "last; past", "সপ্তাহে": "week"}}
+    }
   "bn-0327":
     native: "Monday"
     notes:
       "n1": "Each day ends in বার (bār). Most names match Hindi's, but for Thursday Hindi usually says गुरुवार (guruvār) where Bengali says বৃহস্পতিবার (brihośpotibār)."
+    "examples": {
+      "জাদুঘরটা সোমবার বন্ধ।": {"native": "The museum is closed on Monday.", "bases": {"জাদুঘরটা": "museum", "সোমবার": "Monday"}},
+      "সে সোমবার অফিসে যোগ দেবে।": {"native": "She will join the office on Monday.", "bases": {"সোমবার": "Monday", "যোগ": "join"}}
+    }
   "bn-0328":
     native: "Tuesday"
   "bn-0329":
@@ -62,12 +101,23 @@ cards:
     native: "Friday"
   "bn-0332":
     native: "Saturday"
+    "examples": {
+      "আমরা শনিবার বাজারে কেনাকাটা করি।": {"native": "We go shopping at the market on Saturdays.", "bases": {}}
+    }
   "bn-0333":
     native: "Sunday"
   "bn-0645":
     native: "midday; early afternoon"
+    "examples": {
+      "দুপুরে এক ঘণ্টার বিরতি।": {"native": "A one-hour break at noon.", "bases": {"ঘণ্টার": "of an hour", "দুপুরে": "midday; early afternoon"}},
+      "দুপুরে বাড়িটা নির্জন থাকে।": {"native": "At noon the house is quiet.", "bases": {"দুপুরে": "midday; early afternoon"}}
+    }
   "bn-0646":
     native: "dawn; early morning"
+    "examples": {
+      "ভোরে ঘন কুয়াশা থাকে।": {"native": "There is thick fog at dawn.", "bases": {}},
+      "ভোরে ঘাসে শিশির পড়ে।": {"native": "Dew falls on the grass at dawn.", "bases": {}}
+    }
   "bn-0647":
     native: "a quarter past"
     notes:
@@ -82,6 +132,10 @@ cards:
       "n1": "-টায় (-ṭāy) is 'at' with a time: সাতটায় (sātoṭāy), at seven; দুটোয় (duṭoy), at two. Also কয়টায়? (koytay?)"
   "bn-0650":
     native: "yesterday"
+    "examples": {
+      "গতকাল ভূমিকম্প হয়েছে।": {"native": "There was an earthquake yesterday.", "bases": {"গতকাল": "yesterday"}},
+      "গতকাল একটা ঘটনা ঘটেছে।": {"native": "Yesterday an incident happened.", "bases": {"গতকাল": "yesterday", "ঘটেছে": "happened"}}
+    }
   "bn-0651":
     native: "tomorrow"
   "bn-0652":
@@ -98,6 +152,10 @@ cards:
     native: "hour"
     notes:
       "n1": "এক ঘণ্টা (ek ghônṭā), an hour; আধ ঘণ্টা (ādh ghônṭā), half an hour."
+    "examples": {
+      "জ্যামে দু ঘণ্টা লাগল।": {"native": "It took two hours in the jam.", "bases": {"জ্যামে": "traffic jam", "দু": "two"}},
+      "ট্রেনে দুই ঘণ্টা লাগে।": {"native": "It takes two hours by train.", "bases": {"লাগে": "takes (of time)", "ঘণ্টা": "hour"}}
+    }
   "bn-0656":
     native: "minute"
   "bn-1366":

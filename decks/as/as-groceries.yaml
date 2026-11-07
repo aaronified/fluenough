@@ -17,18 +17,27 @@ cards:
     bases:
       - { word: "শাক", base: "শাক", reading: "xāk" }
       - { word: "পাচলি", base: "পাচলি", reading: "pāsoli" }
+    examples:
+      - { target: "মই শাক-পাচলি কিনোঁ।", reading: "moi xāk-pāsoli kinum̐.", ipa: "moi xakpasoli kinʊ̃", bases: [{"word": "শাক", "ref": "as-2358"}, {"word": "পাচলি", "base": "পাচলি", "reading": "pāsoli"}, {"word": "কিনোঁ", "ref": "as-2210"}] }
+      - { target: "শাক-পাচলি ইয়াত।", reading: "xāk-pāsoli iyāt.", ipa: "xakpasoli ijat", bases: [{"word": "শাক", "ref": "as-2358"}, {"word": "পাচলি", "base": "পাচলি", "reading": "pāsoli"}, {"word": "ইয়াত", "ref": "as-0323"}] }
   - id: "as-0281"
     target: "আলু"
     picture: "🥔"
     reading: "ālu"
     ipa: "alu"
     pos: "noun"
+    examples:
+      - { target: "এইটো আলু।", reading: "eitu ālu.", ipa: "eitʊ alu", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "তেওঁ আলু ভজে।", reading: "teum̐ ālu bhôze.", ipa: "teʊ̃ alu bʱɔze", bases: [{"word": "আলু", "base": "আলু", "reading": "ālu"}, {"word": "ভজে", "base": "ভজা", "reading": "bhôzā"}, {"word": "তেওঁ", "base": "তেওঁ", "reading": "teum̐"}] }
   - id: "as-0282"
     target: "পিঁয়াজ"
     picture: "🧅"
     reading: "pim̐yāz"
     ipa: "pĩjaz"
     pos: "noun"
+    examples:
+      - { target: "মই পিঁয়াজ কটোঁ।", reading: "moi pim̐yāz kôtum̐.", ipa: "moi pĩjaz kɔtʊ̃", bases: [{"word": "পিঁয়াজ", "base": "পিঁয়াজ", "reading": "pim̐yāz"}, {"word": "কটোঁ", "base": "কটা", "reading": "kôtā"}, {"word": "মই", "base": "মই", "reading": "moi"}] }
+      - { target: "চুলাত তেল আৰু পিঁয়াজ ভজে।", reading: "sulāt tel āru pim̐yāz bhôze.", ipa: "sulat tel aɹu pĩjaz bʱɔze", bases: [{"word": "চুলাত", "ref": "as-2711"}, {"word": "ভজে", "ref": "as-2291"}] }
   - id: "as-0283"
     target: "বিলাহী"
     picture: "🍅"
@@ -37,6 +46,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো বিলাহী।", reading: "eitu bilāhi.", ipa: "eitʊ bilahi", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই বিলাহী কিনোঁ।", reading: "moi bilāhi kinum̐.", ipa: "moi bilahi kinʊ̃", bases: [{"word": "কিনোঁ", "ref": "as-2210"}] }
   - id: "as-0284"
     target: "জলকীয়া"
     picture: "🌶"
@@ -45,17 +57,26 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো জলকীয়া, বৰ জলা।", reading: "eitu zôlokiyā, bôr zôlā.", ipa: "eitʊ zɔlokija bɔɹ zɔla", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই জলকীয়া কিনোঁ।", reading: "moi zôlokiyā kinum̐.", ipa: "moi zɔlokija kinʊ̃", bases: [{"word": "কিনোঁ", "ref": "as-2210"}] }
   - id: "as-0285"
     target: "নহৰু"
     picture: "🧄"
     reading: "nôhoru"
     ipa: "nɔhoɹu"
     pos: "noun"
+    examples:
+      - { target: "এইটো নহৰু।", reading: "eitu nôhoru.", ipa: "eitʊ nɔhoɹu", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই নহৰু কিনোঁ।", reading: "moi nôhoru kinum̐.", ipa: "moi nɔhoɹu kinʊ̃", bases: [{"word": "কিনোঁ", "ref": "as-2210"}] }
   - id: "as-0286"
     target: "আদা"
     reading: "ādā"
     ipa: "ada"
     pos: "noun"
+    examples:
+      - { target: "এইটো আদা।", reading: "eitu ādā.", ipa: "eitʊ ada", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই আদা কিনোঁ।", reading: "moi ādā kinum̐.", ipa: "moi ada kinʊ̃", bases: [{"word": "কিনোঁ", "ref": "as-2210"}] }
   - id: "as-0287"
     target: "মাছ"
     picture: "🐟"
@@ -64,6 +85,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গোটা মাছ।", reading: "gutā mās.", ipa: "ɡʊta mas", bases: [] }
+      - { target: "পুখুৰীত মাছ আছে।", reading: "pukhurit mās āse.", ipa: "pukʰuɹit mas ase", bases: [{"word": "পুখুৰীত", "base": "পুখুৰী", "reading": "pukhuri"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0288"
     target: "মাংস"
     picture: "🍖"
@@ -72,6 +96,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই মাংস খাওঁ।", reading: "moi māṅs khāum̐.", ipa: "moi maŋs kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মাংসতকৈ মাছ ভাল।", reading: "māṅxôôtôkôi mās bhāl.", ipa: "maŋsɔtɔkɔi mas bʱal", bases: [{"word": "মাংসতকৈ", "base": "মাংস", "reading": "māṅxô"}] }
   - id: "as-0289"
     target: "মাটন"
     reading: "mātôn"
@@ -79,6 +106,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো মাটন।", reading: "eitu mātôn.", ipa: "eitʊ matɔn", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই মাটন খাওঁ।", reading: "moi mātôn khāum̐.", ipa: "moi matɔn kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
   - id: "as-0290"
     target: "কুকুৰা"
     picture: "🐔"
@@ -87,6 +117,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো কুকুৰা।", reading: "eitu kukurā.", ipa: "eitʊ kukuɹa", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই কুকুৰা খাওঁ।", reading: "moi kukurā khāum̐.", ipa: "moi kukuɹa kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
   - id: "as-0291"
     target: "কণী"
     picture: "🥚"
@@ -95,12 +128,18 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো কণী।", reading: "eitu koni.", ipa: "eitʊ koni", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই কণী খাওঁ।", reading: "moi koni khāum̐.", ipa: "moi koni kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
   - id: "as-0292"
     target: "গাখীৰ"
     picture: "🥛"
     reading: "gākhir"
     ipa: "ɡakʰiɹ"
     pos: "noun"
+    examples:
+      - { target: "গাখীৰ দোৱা", reading: "gākhir duwā", ipa: "ɡakʰiɹ dʊwa", bases: [{"word": "দোৱা", "base": "দোৱা", "reading": "duwā"}] }
+      - { target: "গাখীৰ বগা।", reading: "gākhir bôgā.", ipa: "ɡakʰiɹ bɔɡa", bases: [] }
   - id: "as-0293"
     target: "চাউল"
     reading: "sāul"
@@ -108,17 +147,26 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দোকানী চাউল বেচে।", reading: "dukāni sāul bese.", ipa: "dʊkani saul bese", bases: [{"word": "বেচে", "base": "বেচা", "reading": "besā"}] }
+      - { target: "পাঁচশ গ্ৰাম চাউল।", reading: "pām̐sôx grām sāul.", ipa: "pãsɔx ɡɹam saul", bases: [{"word": "চাউল", "base": "চাউল", "reading": "sāul"}] }
   - id: "as-0294"
     target: "দাইল"
     reading: "dāil"
     ipa: "dail"
     pos: "noun"
+    examples:
+      - { target: "এইটো দাইল।", reading: "eitu dāil.", ipa: "eitʊ dail", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই দাইল খাওঁ।", reading: "moi dāil khāum̐.", ipa: "moi dail kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
   - id: "as-0295"
     target: "নিমখ"
     picture: "🧂"
     reading: "nimôkh"
     ipa: "nimɔkʰ"
     pos: "noun"
+    examples:
+      - { target: "ইয়াত নিমখ আছে।", reading: "iyāt nimôkh āse.", ipa: "ijat nimɔkʰ ase", bases: [{"word": "ইয়াত", "ref": "as-0323"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
+      - { target: "নিমখ দিয়া", reading: "nimôkh diyā", ipa: "nimɔkʰ dija", bases: [] }
   - id: "as-0296"
     target: "তেল"
     reading: "tel"
@@ -126,6 +174,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কড়াত তেল।", reading: "kôrāt tel.", ipa: "kɔɹat tel", bases: [{"word": "কড়াত", "base": "কড়া", "reading": "kôrā"}] }
+      - { target: "চুলাত তেল আৰু পিঁয়াজ ভজে।", reading: "sulāt tel āru pim̐yāz bhôze.", ipa: "sulat tel aɹu pĩjaz bʱɔze", bases: [{"word": "চুলাত", "ref": "as-2711"}, {"word": "ভজে", "ref": "as-2291"}] }
   - id: "as-0297"
     target: "কল"
     picture: "🍌"
@@ -134,3 +185,6 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো কল।", reading: "eitu kôl.", ipa: "eitʊ kɔl", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "কলটো পকা।", reading: "kôlôtu pôkā.", ipa: "kɔlɔtʊ pɔka", bases: [{"word": "কলটো", "base": "কল", "reading": "kôl"}] }
