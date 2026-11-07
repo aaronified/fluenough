@@ -1,0 +1,153 @@
+schema: 1
+id: "ml-transport"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "transport"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0252"
+    target: "ബസ്"
+    reading: "bas"
+    ipa: "bas"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബസ് വരുന്നു"
+        reading: "bas varunnu."
+        ipa: "bas ʋəɾunnu"
+        bases: [{ word: "ബസ്", ref: "ml-0252" }, { word: "വരുന്നു", base: "വരിക", reading: "varika" }]
+      - target: "ബസ് എവിടെ?"
+        reading: "bas eviṭe?"
+        ipa: "bas eʋiʈe"
+        bases: [{ word: "ബസ്", ref: "ml-0252" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0253"
+    target: "ഓട്ടോ"
+    reading: "ōṭṭō"
+    ipa: "oːʈʈoː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഓട്ടോ വേണം."
+        reading: "ōṭṭō vēṇaṁ."
+        ipa: "oːʈʈoː ʋeːɳam"
+        bases: [{ word: "ഓട്ടോ", ref: "ml-0253" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ഓട്ടോ എത്ര?"
+        reading: "ōṭṭō etra?"
+        ipa: "oːʈʈoː et̪ɾa"
+        bases: [{ word: "ഓട്ടോ", ref: "ml-0253" }, { word: "എത്ര", ref: "ml-0038" }]
+  - id: "ml-0254"
+    target: "ട്രെയിൻ"
+    reading: "ṭrain"
+    ipa: "ʈɾain"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ട്രെയിൻ വരുന്നു"
+        reading: "ṭrain varunnu."
+        ipa: "ʈɾain ʋəɾunnu"
+        bases: [{ word: "ട്രെയിൻ", ref: "ml-0254" }, { word: "വരുന്നു", base: "വരിക", reading: "varika" }]
+      - target: "ട്രെയിൻ എപ്പോൾ?"
+        reading: "ṭrain eppōḷ?"
+        ipa: "ʈɾain eppoːɭ"
+        bases: [{ word: "ട്രെയിൻ", ref: "ml-0254" }, { word: "എപ്പോൾ", ref: "ml-0034" }]
+  - id: "ml-0255"
+    target: "വിമാനം"
+    reading: "vimānaṁ"
+    ipa: "ʋimaːnam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വിമാനം ഉയരുന്നു"
+        reading: "vimānaṁ uyarunnu."
+        ipa: "ʋimaːnam ujəɾunnu"
+        bases: [{ word: "വിമാനം", ref: "ml-0255" }, { word: "ഉയരുന്നു", base: "ഉയരുക", reading: "uyaruka" }]
+      - target: "വിമാനം എവിടെ?"
+        reading: "vimānaṁ eviṭe?"
+        ipa: "ʋimaːnam eʋiʈe"
+        bases: [{ word: "വിമാനം", ref: "ml-0255" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0256"
+    target: "ടാക്സി"
+    reading: "ṭāksi"
+    ipa: "ʈaːksi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ടാക്സി വേണം."
+        reading: "ṭāksi vēṇaṁ."
+        ipa: "ʈaːksi ʋeːɳam"
+        bases: [{ word: "ടാക്സി", ref: "ml-0256" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ടാക്സി ഇവിടെ."
+        reading: "ṭāksi iviṭe."
+        ipa: "ʈaːksi iʋiʈe"
+        bases: [{ word: "ടാക്സി", ref: "ml-0256" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0257"
+    target: "സൈക്കിൾ"
+    reading: "saikkiḷ"
+    ipa: "saikkiɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സൈക്കിൾ വീട്ടിൽ"
+        reading: "saikkiḷ vīṭṭil."
+        ipa: "saikkiɭ ʋiːʈʈil"
+        bases: [{ word: "സൈക്കിൾ", ref: "ml-0257" }, { word: "വീട്ടിൽ", ref: "ml-0009" }]
+      - target: "എന്റെ സൈക്കിൾ."
+        reading: "enṟe saikkiḷ."
+        ipa: "ent̪ɾe saikkiɭ"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "സൈക്കിൾ", ref: "ml-0257" }]
+  - id: "ml-0258"
+    target: "ബോട്ട്"
+    reading: "bōṭṭ"
+    ipa: "boːʈʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബോട്ട് വരുന്നു"
+        reading: "bōṭṭ varunnu."
+        ipa: "boːʈʈ ʋəɾunnu"
+        bases: [{ word: "ബോട്ട്", ref: "ml-0258" }, { word: "വരുന്നു", base: "വരിക", reading: "varika" }]
+      - target: "ബോട്ട് കായലിൽ"
+        reading: "bōṭṭ kāyalil."
+        ipa: "boːʈʈ kaːjəlil"
+        bases: [{ word: "ബോട്ട്", ref: "ml-0258" }, { word: "കായലിൽ", base: "കായൽ", reading: "kāyal" }]
+  - id: "ml-0259"
+    target: "സ്റ്റേഷൻ"
+    reading: "sṭēśaṉ"
+    ipa: "sʈeːʃan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സ്റ്റേഷൻ എവിടെ?"
+        reading: "sṭēśaṉ eviṭe?"
+        ipa: "sʈeːʃan eʋiʈe"
+        bases: [{ word: "സ്റ്റേഷൻ", ref: "ml-0259" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "സ്റ്റേഷൻ അകലെ."
+        reading: "sṭēśaṉ akale."
+        ipa: "sʈeːʃan əkəle"
+        bases: [{ word: "സ്റ്റേഷൻ", ref: "ml-0259" }, { word: "അകലെ", ref: "ml-0144" }]

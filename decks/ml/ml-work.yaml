@@ -1,0 +1,351 @@
+schema: 1
+id: "ml-work"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0185"
+    target: "ഓഫീസ്"
+    reading: "ōfīs"
+    ipa: "oːfiːs"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഓഫീസ് ഇവിടെ."
+        reading: "ōfīs iviṭe."
+        ipa: "oːfiːs iʋiʈe"
+        bases: [{ word: "ഓഫീസ്", ref: "ml-0185" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "ഞാൻ ഓഫീസിൽ പോകുന്നു"
+        reading: "ñāṉ ōfīsil pōkunnu."
+        ipa: "ɲaːn oːfiːsil poːkunnu"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ഓഫീസിൽ", ref: "ml-0185" }, { word: "പോകുന്നു", base: "പോകുക", reading: "pōkuka" }]
+  - id: "ml-0186"
+    target: "ആശുപത്രി"
+    reading: "āśupatri"
+    ipa: "aːʃupət̪ɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ആശുപത്രി എവിടെ?"
+        reading: "āśupatri eviṭe?"
+        ipa: "aːʃupət̪ɾi eʋiʈe"
+        bases: [{ word: "ആശുപത്രി", ref: "ml-0186" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "അമ്മ ആശുപത്രിയിൽ"
+        reading: "amma āśupatriyil."
+        ipa: "əmma aːʃupət̪ɾijil"
+        bases: [{ word: "അമ്മ", ref: "ml-0071" }, { word: "ആശുപത്രിയിൽ", ref: "ml-0186" }]
+  - id: "ml-0187"
+    target: "സ്കൂൾ"
+    reading: "skūḷ"
+    ipa: "skuːɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുട്ടി സ്കൂളിൽ പോകുന്നു"
+        reading: "kuṭṭi skūḷil pōkunnu."
+        ipa: "kuʈʈi skuːɭil poːkunnu"
+        bases: [{ word: "കുട്ടി", ref: "ml-0082" }, { word: "സ്കൂളിൽ", ref: "ml-0187" }, { word: "പോകുന്നു", base: "പോകുക", reading: "pōkuka" }]
+      - target: "സ്കൂൾ അകലെ"
+        reading: "skūḷ akale."
+        ipa: "skuːɭ əkəle"
+        bases: [{ word: "സ്കൂൾ", ref: "ml-0187" }, { word: "അകലെ", ref: "ml-0144" }]
+  - id: "ml-0188"
+    target: "അധ്യാപകൻ"
+    reading: "adhyāpakaṉ"
+    ipa: "ədʱjaːpəkan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ അച്ഛൻ അധ്യാപകൻ."
+        reading: "enṟe acchaṉ adhyāpakaṉ."
+        ipa: "ent̪ɾe ətʃtʃan ədʱjaːpəkan"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "അച്ഛൻ", ref: "ml-0070" }, { word: "അധ്യാപകൻ", ref: "ml-0188" }]
+      - target: "അധ്യാപകൻ ഇവിടെ."
+        reading: "adhyāpakaṉ iviṭe."
+        ipa: "ədʱjaːpəkan iʋiʈe"
+        bases: [{ word: "അധ്യാപകൻ", ref: "ml-0188" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0189"
+    target: "അധ്യാപിക"
+    reading: "adhyāpika"
+    ipa: "ədʱjaːpika"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ അമ്മ അധ്യാപിക."
+        reading: "enṟe amma adhyāpika."
+        ipa: "ent̪ɾe əmma ədʱjaːpika"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "അമ്മ", ref: "ml-0071" }, { word: "അധ്യാപിക", ref: "ml-0189" }]
+      - target: "അധ്യാപിക വരുന്നു"
+        reading: "adhyāpika varunnu."
+        ipa: "ədʱjaːpika ʋəɾunnu"
+        bases: [{ word: "അധ്യാപിക", ref: "ml-0189" }, { word: "വരുന്നു", base: "വരിക", reading: "varika" }]
+  - id: "ml-0190"
+    target: "ഡോക്ടർ"
+    reading: "ḍoktar"
+    ipa: "ɖokt̪aɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഡോക്ടർ ഇവിടെ."
+        reading: "ḍoktar iviṭe."
+        ipa: "ɖokt̪aɾ iʋiʈe"
+        bases: [{ word: "ഡോക്ടർ", ref: "ml-0190" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "എന്റെ ചേച്ചി ഡോക്ടർ."
+        reading: "enṟe cēcci ḍoktar."
+        ipa: "ent̪ɾe tʃeːtʃtʃi ɖokt̪aɾ"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "ചേച്ചി", ref: "ml-0075" }, { word: "ഡോക്ടർ", ref: "ml-0190" }]
+  - id: "ml-0191"
+    target: "നഴ്സ്"
+    reading: "naḻs"
+    ipa: "naɻs"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചേച്ചി നഴ്സ്."
+        reading: "cēcci naḻs."
+        ipa: "tʃeːtʃtʃi naɻs"
+        bases: [{ word: "ചേച്ചി", ref: "ml-0075" }, { word: "നഴ്സ്", ref: "ml-0191" }]
+      - target: "നഴ്സ് ആശുപത്രിയിൽ"
+        reading: "naḻs āśupatriyil."
+        ipa: "naɻs aːʃupət̪ɾijil"
+        bases: [{ word: "നഴ്സ്", ref: "ml-0191" }, { word: "ആശുപത്രിയിൽ", ref: "ml-0186" }]
+  - id: "ml-0192"
+    target: "കർഷകൻ"
+    reading: "karṣakaṉ"
+    ipa: "kəɾʂəkan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അച്ഛൻ കർഷകൻ."
+        reading: "acchaṉ karṣakaṉ."
+        ipa: "ətʃtʃan kəɾʂəkan"
+        bases: [{ word: "അച്ഛൻ", ref: "ml-0070" }, { word: "കർഷകൻ", ref: "ml-0192" }]
+      - target: "കർഷകൻ വയലിൽ"
+        reading: "karṣakaṉ vayalil."
+        ipa: "kəɾʂəkan ʋəjəlil"
+        bases: [{ word: "കർഷകൻ", ref: "ml-0192" }, { word: "വയലിൽ", base: "വയൽ", reading: "vayal" }]
+  - id: "ml-0193"
+    target: "പാചകക്കാരൻ"
+    reading: "pācakakkāraṉ"
+    ipa: "paːtʃəkəkkaːɾan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പാചകക്കാരൻ ഇവിടെ."
+        reading: "pācakakkāraṉ iviṭe."
+        ipa: "paːtʃəkəkkaːɾan iʋiʈe"
+        bases: [{ word: "പാചകക്കാരൻ", ref: "ml-0193" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "എന്റെ അമ്മാവൻ പാചകക്കാരൻ."
+        reading: "enṟe ammāvaṉ pācakakkāraṉ."
+        ipa: "ent̪ɾe əmmaːʋan paːtʃəkəkkaːɾan"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "അമ്മാവൻ", ref: "ml-0083" }, { word: "പാചകക്കാരൻ", ref: "ml-0193" }]
+  - id: "ml-0194"
+    target: "കച്ചവടക്കാരൻ"
+    reading: "kaccavaṭakkāraṉ"
+    ipa: "kətʃtʃəʋəʈəkkaːɾan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ ചേട്ടൻ കച്ചവടക്കാരൻ."
+        reading: "enṟe ceṭṭaṉ kaccavaṭakkāraṉ."
+        ipa: "ent̪ɾe tʃeʈʈan kətʃtʃəʋəʈəkkaːɾan"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "ചേട്ടൻ", ref: "ml-0074" }, { word: "കച്ചവടക്കാരൻ", ref: "ml-0194" }]
+      - target: "കച്ചവടക്കാരൻ കടയിൽ"
+        reading: "kaccavaṭakkāraṉ kaṭayil."
+        ipa: "kətʃtʃəʋəʈəkkaːɾan kəʈəjil"
+        bases: [{ word: "കച്ചവടക്കാരൻ", ref: "ml-0194" }, { word: "കടയിൽ", base: "കട", reading: "kaṭa" }]
+  - id: "ml-0195"
+    target: "മെക്കാനിക്ക്"
+    reading: "mekkānikk"
+    ipa: "mekkaːnikk"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മെക്കാനിക്ക് വണ്ടി നന്നാക്കുന്നു"
+        reading: "mekkānikk vaṇṭi nannākkunnu."
+        ipa: "mekkaːnikk ʋəɳʈi nənnaːkkunnu"
+        bases: [{ word: "മെക്കാനിക്ക്", ref: "ml-0195" }, { word: "വണ്ടി", base: "വണ്ടി", reading: "vaṇṭi" }, { word: "നന്നാക്കുന്നു", base: "നന്നാക്കുക", reading: "nannākkuka" }]
+      - target: "എന്റെ ചേട്ടൻ മെക്കാനിക്ക്."
+        reading: "enṟe ceṭṭaṉ mekkānikk."
+        ipa: "ent̪ɾe tʃeʈʈan mekkaːnikk"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "ചേട്ടൻ", ref: "ml-0074" }, { word: "മെക്കാനിക്ക്", ref: "ml-0195" }]
+  - id: "ml-0196"
+    target: "എഞ്ചിനീയർ"
+    reading: "enjinīyar"
+    ipa: "endʒiniːjaɾ"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "എന്റെ ചേച്ചി എഞ്ചിനീയർ."
+        reading: "enṟe cēcci enjinīyar."
+        ipa: "ent̪ɾe tʃeːtʃtʃi endʒiniːjaɾ"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "ചേച്ചി", ref: "ml-0075" }, { word: "എഞ്ചിനീയർ", ref: "ml-0196" }]
+      - target: "എഞ്ചിനീയർ ഓഫീസിൽ"
+        reading: "enjinīyar ōfīsil."
+        ipa: "endʒiniːjaɾ oːfiːsil"
+        bases: [{ word: "എഞ്ചിനീയർ", ref: "ml-0196" }, { word: "ഓഫീസിൽ", ref: "ml-0185" }]
+  - id: "ml-0197"
+    target: "പോലീസുകാരൻ"
+    reading: "pōlīsukkāraṉ"
+    ipa: "poːliːsukkaːɾan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പോലീസുകാരൻ ഇവിടെ."
+        reading: "pōlīsukkāraṉ iviṭe."
+        ipa: "poːliːsukkaːɾan iʋiʈe"
+        bases: [{ word: "പോലീസുകാരൻ", ref: "ml-0197" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "എന്റെ അനിയൻ പോലീസുകാരൻ."
+        reading: "enṟe aniyaṉ pōlīsukkāraṉ."
+        ipa: "ent̪ɾe ənijan poːliːsukkaːɾan"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "അനിയൻ", ref: "ml-0076" }, { word: "പോലീസുകാരൻ", ref: "ml-0197" }]
+  - id: "ml-0198"
+    target: "ബാങ്ക്"
+    reading: "bāṅk"
+    ipa: "baːŋk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബാങ്ക് എവിടെ?"
+        reading: "bāṅk eviṭe?"
+        ipa: "baːŋk eʋiʈe"
+        bases: [{ word: "ബാങ്ക്", ref: "ml-0198" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ഞാൻ ബാങ്കിൽ പോകുന്നു"
+        reading: "ñāṉ bāṅkil pōkunnu."
+        ipa: "ɲaːn baːŋkil poːkunnu"
+        bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ബാങ്കിൽ", ref: "ml-0198" }, { word: "പോകുന്നു", base: "പോകുക", reading: "pōkuka" }]
+  - id: "ml-0199"
+    target: "ഫാക്ടറി"
+    reading: "fāktari"
+    ipa: "faːkt̪əɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഫാക്ടറി ഇവിടെ."
+        reading: "fāktari iviṭe."
+        ipa: "faːkt̪əɾi iʋiʈe"
+        bases: [{ word: "ഫാക്ടറി", ref: "ml-0199" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "അച്ഛൻ ഫാക്ടറിയിൽ ജോലി ചെയ്യുന്നു"
+        reading: "acchaṉ fāktariyil jōli ceyyunnu."
+        ipa: "ətʃtʃan faːkt̪əɾijil dʒoːli tʃejjunnu"
+        bases: [{ word: "അച്ഛൻ", ref: "ml-0070" }, { word: "ഫാക്ടറിയിൽ", ref: "ml-0199" }, { word: "ജോലി", ref: "ml-0046" }, { word: "ചെയ്യുന്നു", base: "ചെയ്യുക", reading: "ceyyuka" }]
+  - id: "ml-0200"
+    target: "തൊഴിൽ"
+    reading: "toḻil"
+    ipa: "t̪oɻil"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നല്ല തൊഴിൽ."
+        reading: "nalla toḻil."
+        ipa: "nəlla t̪oɻil"
+        bases: [{ word: "നല്ല", ref: "ml-0006" }, { word: "തൊഴിൽ", ref: "ml-0200" }]
+      - target: "തൊഴിൽ ഇല്ല."
+        reading: "toḻil illa."
+        ipa: "t̪oɻil illa"
+        bases: [{ word: "തൊഴിൽ", ref: "ml-0200" }, { word: "ഇല്ല", ref: "ml-0002" }]
+  - id: "ml-0201"
+    target: "ശമ്പളം"
+    reading: "śampaḷaṁ"
+    ipa: "ʃəmpəɭam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ശമ്പളം നല്ലത്"
+        reading: "śampaḷaṁ nallat."
+        ipa: "ʃəmpəɭam nəllat̪"
+        bases: [{ word: "ശമ്പളം", ref: "ml-0201" }, { word: "നല്ലത്", ref: "ml-0006" }]
+      - target: "ശമ്പളം എത്ര?"
+        reading: "śampaḷaṁ etra?"
+        ipa: "ʃəmpəɭam et̪ɾa"
+        bases: [{ word: "ശമ്പളം", ref: "ml-0201" }, { word: "എത്ര", ref: "ml-0038" }]
+  - id: "ml-0202"
+    target: "വിദ്യാർത്ഥി"
+    reading: "vidyārthi"
+    ipa: "ʋid̪jaːɾt̪ʰi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചേട്ടൻ വിദ്യാർത്ഥി."
+        reading: "ceṭṭaṉ vidyārthi."
+        ipa: "tʃeʈʈan ʋid̪jaːɾt̪ʰi"
+        bases: [{ word: "ചേട്ടൻ", ref: "ml-0074" }, { word: "വിദ്യാർത്ഥി", ref: "ml-0202" }]
+      - target: "വിദ്യാർത്ഥി സ്കൂളിൽ"
+        reading: "vidyārthi skūḷil."
+        ipa: "ʋid̪jaːɾt̪ʰi skuːɭil"
+        bases: [{ word: "വിദ്യാർത്ഥി", ref: "ml-0202" }, { word: "സ്കൂളിൽ", ref: "ml-0187" }]
+  - id: "ml-0203"
+    target: "ജോലിക്കാരൻ"
+    reading: "jōlikkāraṉ"
+    ipa: "dʒoːlikkaːɾan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ജോലിക്കാരൻ വരുന്നു"
+        reading: "jōlikkāraṉ varunnu."
+        ipa: "dʒoːlikkaːɾan ʋəɾunnu"
+        bases: [{ word: "ജോലിക്കാരൻ", ref: "ml-0203" }, { word: "വരുന്നു", base: "വരിക", reading: "varika" }]
+      - target: "ജോലിക്കാരൻ ഓഫീസിൽ"
+        reading: "jōlikkāraṉ ōfīsil."
+        ipa: "dʒoːlikkaːɾan oːfiːsil"
+        bases: [{ word: "ജോലിക്കാരൻ", ref: "ml-0203" }, { word: "ഓഫീസിൽ", ref: "ml-0185" }]

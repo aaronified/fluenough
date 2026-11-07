@@ -216,12 +216,14 @@ units:
       - { id: "what-time", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "opening-hours", text: { "en": "A shop's opening hours" } }
-  - planned: { id: "ml-location", theme: "location", words: 14 }
+  - decks: ["ml-location", "*"]
+    words: 14
     listening_passages:
       - { id: "where-is-it", text: { "en": "Saying where things are in a room" } }
     reading_passages:
       - { id: "room-labels", text: { "en": "Labels: on, under, inside and near" } }
-  - planned: { id: "ml-more-verbs", theme: "more-verbs", words: 32 }
+  - decks: ["ml-more-verbs", "*"]
+    words: 32
     listening_passages:
       - { id: "helping-out", text: { "en": "Asking someone to bring, give and keep things" } }
     reading_passages:
@@ -261,12 +263,14 @@ units:
       - { id: "shop-labels", text: { "en": "Labels in a shop: this here, that there" } }
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "ml-work", theme: "work", words: 19 }
+  - decks: ["ml-work", "*"]
+    words: 19
     listening_passages:
       - { id: "what-do-you-do", text: { "en": "People say what work they do" } }
     reading_passages:
       - { id: "name-tags", text: { "en": "Name tags at a meeting: who is who and what they do" } }
-  - planned: { id: "ml-numbers-big", theme: "numbers-big", words: 13 }
+  - decks: ["ml-numbers-big", "*"]
+    words: 13
     listening_passages:
       - { id: "how-much-is-it", text: { "en": "Prices said aloud at a stall" } }
     reading_passages:
@@ -278,7 +282,8 @@ units:
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
   # ml-grammar-needs follows this unit.
-  - planned: { id: "ml-groceries", theme: "groceries", words: 16 }
+  - decks: ["ml-groceries", "*"]
+    words: 16
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
@@ -289,7 +294,8 @@ units:
     reading_passages:
       - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
   # ml-grammar-nouns follows this unit.
-  - planned: { id: "ml-market", theme: "market", words: 7 }
+  - decks: ["ml-market", "*"]
+    words: 7
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying fish and vegetables at a market" } }
     reading_passages:
@@ -317,7 +323,8 @@ units:
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
   # ml-grammar-continuous follows this unit.
-  - planned: { id: "ml-directions", theme: "directions", words: 12 }
+  - decks: ["ml-directions", "*"]
+    words: 12
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
@@ -327,7 +334,8 @@ units:
       - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
     reading_passages:
       - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
-  - planned: { id: "ml-transport", theme: "transport", words: 8 }
+  - decks: ["ml-transport", "*"]
+    words: 8
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
     reading_passages:
