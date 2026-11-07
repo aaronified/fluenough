@@ -134,3 +134,7 @@ and `ts`, to the millisecond, match; a leech action when those and its
   slots its older reviews in before the new ones.
 
 See also: [Contributing](Contributing) · [Home](Home)
+
+## Elapsed time and placement credit (2026-11-07)
+
+Elapsed time is stored in whole milliseconds (`elapsed_ms`). Placement credit is written with grade 5, 0 ms, no answer and, from schema 9, `asked: own`; Progress reads that shape as *placed*. A real answer is therefore recorded with at least 1 ms (`realElapsed`), so that a self-graded flip (grade 5, no typed answer) is never stored as credit. Rows written before that change, when such a flip was stored as 0 ms, cannot be told from credit and are read as credit, as they always were.

@@ -189,9 +189,9 @@ void main() {
   });
 
   group('a real answer is never credit-shaped', () {
-    test('a grade 5 with no time and no answer gets the smallest time; a '
+    test('a grade 5 with no time and no answer gets one millisecond; a '
         'time taken, an answer given or another grade is kept', () {
-      const one = Duration(microseconds: 1);
+      const one = Duration(milliseconds: 1);
       expect(realElapsed(grade: 5, elapsed: Duration.zero), one);
       expect(
         realElapsed(grade: 5, elapsed: Duration.zero, asked: Ask.own),
