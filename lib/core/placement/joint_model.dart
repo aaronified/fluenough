@@ -561,6 +561,9 @@ class JointPlacement {
   /// Takes one answer into the joint. Returns why it gave no evidence, or
   /// null when it did.
   IgnoredReason? observe(JointItem item, AnswerOutcome outcome) {
+    // Every cached read of the posterior is stale after an answer.
+    _knownCache.clear();
+    _marginalCache.clear();
     for (final s in item.skills) {
       if (!skills.contains(s)) {
         throw ArgumentError('$s is not in play ($skills)');
@@ -701,6 +704,18 @@ class JointPlacement {
   List<double> marginal(PlacementSkill skill) {
     final at = skills.indexOf(skill);
     if (at < 0) throw ArgumentError('$skill is not in play ($skills)');
+    final cached = _marginalCache[at];
+    if (cached != null) return List<double>.of(cached);
+    final computed = _marginal(at);
+    _marginalCache[at] = computed;
+    return List<double>.of(computed);
+  }
+
+  // Reads of the posterior that a picker repeats between two answers.
+  final Map<int, List<double>> _marginalCache = <int, List<double>>{};
+  final Map<int, double> _knownCache = <int, double>{};
+
+  List<double> _marginal(int at) {
     final out = List<double>.filled(_n, 0);
     final digits = List<int>.filled(skills.length, 0);
     for (var cell = 0; cell < _cells; cell++) {
@@ -727,6 +742,45 @@ class JointPlacement {
       }
     }
     return out;
+  }
+
+  /// P(every skill of [skills] knows [deck]'s level): what an item that
+  /// needs all of them is answered right by knowing. For one skill the same
+  /// as [massKnowing].
+  double probabilityKnown(Iterable<PlacementSkill> skills, int deck) {
+    final index = <int>[for (final s in skills) this.skills.indexOf(s)];
+    if (index.any((i) => i < 0)) {
+      throw ArgumentError('A skill is not in play ($skills)');
+    }
+    var mask = 0;
+    for (final i in index) {
+      mask |= 1 << i;
+    }
+    final key = deck * 64 + mask;
+    final hit = _knownCache[key];
+    if (hit != null) return hit;
+    return _knownCache[key] = _probabilityKnown(index, deck);
+  }
+
+  double _probabilityKnown(List<int> index, int deck) {
+    final knows = List<bool>.generate(_n, (c) => levels.knows(c, deck));
+    final digits = List<int>.filled(skills.length, 0);
+    var total = 0.0;
+    for (var cell = 0; cell < _cells; cell++) {
+      _digits(cell, digits);
+      var all = true;
+      for (final i in index) {
+        if (!knows[digits[i]]) {
+          all = false;
+          break;
+        }
+      }
+      if (!all) continue;
+      for (var b = 0; b < _k; b++) {
+        total += _weights[cell * _k + b];
+      }
+    }
+    return total;
   }
 
   /// P(the skill's class is at or above [deck]'s level).
