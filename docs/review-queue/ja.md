@@ -196,3 +196,19 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ja-3963 | law | Is きんじる (to forbid) right as a verb card, or does the course use きんし and the 'not allowed' phrasing instead? | Haiku builder | 2026-11-06 |
 | ja-4004 | onomatopoeia | Is ぺこぺこ (very hungry) right as a plain sentence card, or should the everyday word はらぺこ be taught instead? | Haiku builder | 2026-11-06 |
 | ja-4049 | verbs4 | Is おさめる (govern, pay, store) right as one card with its three senses, or should each sense be a card of its own? | Haiku builder | 2026-11-06 |
+| unit-level | ja-katakana, ja-hiragana-marks, ja-en-hiragana (letter decks) | The examples of the kana letter cards are the course's own weather template ("あしたは…です": "Tomorrow we will have sleet"). Grammatical, but is a reviewer happy with the template as letter practice, or should each letter get words a learner meets? | Haiku builder | 2026-11-07 |
+| unit-level | ja-katakana, ja-hiragana, ja-en-hiragana | Letter cards with no English layer entry (46 kana cards, e.g. ja-0001 あ, ja-0020 と): they have no English gloss in the layer, so their examples cannot be translated. A reviewer should say whether the layer is missing or the letters are taught without a gloss. | Haiku builder | 2026-11-07 |
+| ja-1253 | ja-kanji-1 | 日, 月, 火, 水, 木, 金, 土 each still have fewer than two examples: no course word carries them yet, so a word such as 日曜日 must be taught first. | Haiku builder | 2026-11-07 |
+| ja-0795 | ja-katakana | ヌ, ヘ, ヲ, ゼ, ヂ, ヅ still have fewer than two examples: no course word carries them. A reviewer could name a common loanword to use. | Haiku builder | 2026-11-07 |
+| ja-0287 | ja-hiragana-marks (ず) | "あしたはいなずまです。": a templated weather sentence ("Tomorrow we will have lightning"): keep as letter practice, or replace with a natural sentence? | Haiku builder | 2026-11-07 |
+| ja-0293 | ja-hiragana-marks (で) | "あしたはあらしです。" and "あしたはあられです。": templated weather sentences; a reviewer should say if they are acceptable for the letter. | Haiku builder | 2026-11-07 |
+| ja-0307 | ja-hiragana-marks (ょ) | "あしたはひょうです。": templated weather sentence ("Tomorrow we will have hail (ice pellets)"); keep or replace? | Haiku builder | 2026-11-07 |
+| ja-0291 | ja-hiragana-marks (ぢ) | "かみをちぢめました。": is ちぢめる (to shorten) for hair natural, or should the example be a clearer sentence? | Haiku builder | 2026-11-07 |
+| ja-0304 | ja-hiragana-marks (ぽ) | "ぎじゅつのしんぽをみます。": is the phrase 技術の進歩 natural as a learner example? | Haiku builder | 2026-11-07 |
+| ja-0835 | ja-katakana (ビ) | "ちちはビールをのみますか。": ちち as "my father" is a humble form; is "father" the right translation for a learner sentence? | Haiku builder | 2026-11-07 |
+| ja-0778 | ja-katakana (カ) | Broad IPA uses ɴ for ん before k in かばん: should it be ŋ or ɲ by the course's convention? | Haiku builder | 2026-11-07 |
+| ja-0818 | ja-katakana (ン) | Broad IPA uses ɴ for the moraic ん here: should it be ɲ, as the course's other ɲ entries? | Haiku builder | 2026-11-07 |
+| ja-0282 | ja-hiragana-marks (ぐ) | Two examples differ only by は/の ("あめのひに…" and "あめのひは…") and share a translation: is the second one needed? | Haiku builder | 2026-11-07 |
+| ja-0823 | ja-katakana (ゴ) | Two examples are near-identical ("…いれてください" and "…いれます"): should one go? | Haiku builder | 2026-11-07 |
+| ja-0804 | ja-katakana (ミ) | Two examples share a shape (しげんごみはゴミぶくろにいれます / しんぷがミサをします): check that both show ミ as the card's own letter. | Haiku builder | 2026-11-07 |
+| ja-0777 / ja-0828 | ja-katakana (オ, ゾ) | The sentence "オゾンのそうがうすくなりました。" is an example of both オ and ゾ: fine if both show their letter; a reviewer should confirm. | Haiku builder | 2026-11-07 |
