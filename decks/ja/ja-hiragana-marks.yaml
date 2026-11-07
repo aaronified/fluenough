@@ -55,7 +55,7 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     "examples": [
-      {"target": "あしたははげしいです。", "words": ["あした", "は", "はげしい", "です"], "reading": "ashita wa hageshii desu.", "ipa": "aɕita wa haɡeɕiː desɯ", "bases": [{"word": "は", "base": "は", "reading": "wa"}, {"word": "です", "base": "です", "reading": "desu"}]},
+      {"target": "げんきですか。", "words": ["げんき", "です", "か"], "reading": "genki desu ka.", "ipa": "ɡeɴki desɯ ka", "bases": []},
       {"target": "あずけいれはげんきんでできます。", "words": ["あずけいれ", "は", "げんきん", "で", "できます"], "reading": "azukeire wa genkin de dekimasu.", "ipa": "adzɯkeːɾe wa ɡeɴkiɴ de dekimasɯ", "bases": [{"word": "は", "base": "は", "reading": "wa"}, {"word": "げんきん", "base": "げんきん", "reading": "genkin"}, {"word": "で", "base": "で", "reading": "de"}, {"word": "できます", "base": "できる", "reading": "dekiru"}]}
     ]
   - id: "ja-0284"
@@ -95,7 +95,7 @@ cards:
     bases: "self"
     "examples": [
       {"target": "あしたはきゅうじつです。", "words": ["あした", "は", "きゅうじつ", "です"], "reading": "ashita wa kyuujitsu desu.", "ipa": "aɕita wa kjɯːdʑitsɯ desɯ", "bases": [{"word": "です", "base": "です", "reading": "desu"}]},
-      {"target": "あじさいがさいています。", "words": ["あじさい", "が", "さいています"], "reading": "ajisai ga saite imasu.", "ipa": "adʑisai ɡa saiteːmasɯ", "bases": [{"word": "さいています", "base": "さく", "reading": "saite imasu"}]}
+      {"target": "あじさいがさいています。", "words": ["あじさい", "が", "さいています"], "reading": "ajisai ga saite imasu.", "ipa": "adʑisai ɡa saite imasɯ", "bases": [{"word": "さいています", "base": "さく", "reading": "saite imasu"}]}
     ]
   - id: "ja-0287"
     target: "ず"
@@ -108,7 +108,7 @@ cards:
     bases: "self"
     "examples": [
       {"target": "あしたはいなずまです。", "words": ["あした", "は", "いなずま", "です"], "reading": "ashita wa inazuma desu.", "ipa": "aɕita wa inadzɯma desɯ", "bases": [{"word": "は", "base": "は", "reading": "wa"}, {"word": "です", "base": "です", "reading": "desu"}]},
-      {"target": "あしたはみずたまりです。", "words": ["あした", "は", "みずたまり", "です"], "reading": "ashita wa mizutamari desu.", "ipa": "aɕita wa midzɯtamaɾi desɯ", "bases": [{"word": "は", "base": "は", "reading": "wa"}, {"word": "です", "base": "です", "reading": "desu"}]}
+      {"target": "みずをください。", "words": ["みず", "を", "ください"], "reading": "mizu o kudasai.", "ipa": "midzɯ o kɯdasai", "bases": []}
     ]
   - id: "ja-0288"
     target: "ぜ"
@@ -198,7 +198,7 @@ cards:
       - { id: "n1", kind: "usage" }
     bases: "self"
     "examples": [
-      {"target": "あしたはしつどです。", "words": ["あした", "は", "しつど", "です"], "reading": "ashita wa shitsudo desu.", "ipa": "aɕita wa ɕitsɯdo desɯ", "bases": [{"word": "は", "base": "は", "reading": "wa"}, {"word": "です", "base": "です", "reading": "desu"}]},
+      {"target": "どこですか。", "words": ["どこ", "です", "か"], "reading": "doko desu ka.", "ipa": "doko desɯ ka", "bases": []},
       {"target": "あしたはひどいです。", "words": ["あした", "は", "ひどい", "です"], "reading": "ashita wa hidoi desu.", "ipa": "aɕita wa çidoi desɯ", "bases": [{"word": "は", "base": "は", "reading": "wa"}, {"word": "です", "base": "です", "reading": "desu"}]}
     ]
   - id: "ja-0295"
@@ -276,7 +276,7 @@ cards:
     bases: "self"
     "examples": [
       {"target": "あじはすっぱいです。", "words": ["あじ", "は", "すっぱい", "です"], "reading": "aji wa suppai desu.", "ipa": "adʑi wa sɯppai desɯ", "bases": [{"word": "は", "base": "は", "reading": "wa"}, {"word": "です", "base": "です", "reading": "desu"}]},
-      {"target": "あなたはいぬにぱんをあげますか。", "words": ["あなた", "は", "いぬ", "に", "ぱん", "を", "あげます", "か"], "reading": "anata wa inu ni pan o agemasu ka.", "ipa": "anata wa inɯ ni paɴ o aɡemasɯ ka", "bases": [{"word": "は", "base": "は", "reading": "wa"}, {"word": "に", "base": "に", "reading": "ni"}, {"word": "を", "base": "を", "reading": "o"}, {"word": "あげます", "base": "あげる", "reading": "ageru"}, {"word": "か", "base": "か", "reading": "ka"}]}
+      {"target": "ぱんやにいきます。", "words": ["ぱんや", "に", "いきます"], "reading": "pan'ya ni ikimasu.", "ipa": "paɴja ni ikimasɯ", "bases": []}
     ]
   - id: "ja-0301"
     target: "ぴ"
@@ -376,5 +376,5 @@ cards:
     bases: "self"
     "examples": [
       {"target": "あなたはかっこいいです。", "words": ["あなた", "は", "かっこいい", "です"], "reading": "anata wa kakkoii desu.", "ipa": "anata wa kakkoiː desɯ", "bases": [{"word": "あなた", "ref": "ja-0068"}, {"word": "は", "base": "は", "reading": "wa"}, {"word": "です", "base": "です", "reading": "desu"}]},
-      {"target": "あめがしとしとふっています。", "words": ["あめ", "が", "しとしと", "ふっています"], "reading": "ame ga shitoshito futteimasu.", "ipa": "ame ɡa ɕitoɕito ɸɯtteːmasɯ", "bases": [{"word": "あめ", "base": "あめ", "reading": "ame"}, {"word": "が", "base": "が", "reading": "ga"}, {"word": "ふっています", "base": "ふる", "reading": "furu"}]}
+      {"target": "あめがしとしとふっています。", "words": ["あめ", "が", "しとしと", "ふっています"], "reading": "ame ga shitoshito futteimasu.", "ipa": "ame ɡa ɕitoɕito ɸɯtte imasɯ", "bases": [{"word": "あめ", "base": "あめ", "reading": "ame"}, {"word": "が", "base": "が", "reading": "ga"}, {"word": "ふっています", "base": "ふる", "reading": "furu"}]}
     ]
