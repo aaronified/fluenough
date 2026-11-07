@@ -1,0 +1,72 @@
+{
+  "source": "The adversarial review of Placement V3 (wiki/Plan-Placement-V3.md, 'Adversarial review and required amendments'), 2026-11-07: a gamer that knows only the first 100 path words plus basic form rules and test-wise tricks, replayed over the V2 bank. Each number is the gamer's accuracy on an item BEYOND the words it knows, per item format and cognate class ('clean' = not a near-cognate). 'legacy' is the bank as the adversary found it; 'fixed' is what the amended generators must achieve (clean accuracy at most the design guess plus 0.05, which is inside the admission bound guess plus 0.07). Entries with 'weak' and 'strong' differ by the anagram solver; the Hindi strong solver was not measured, so it reuses the weak numbers.",
+  "formats": "F2 written word to meaning; F3 meaning to written word; F4 word tiles; F5 sentence pick; F6 cloze; F7 typed word; F8 tile sentence; F13 heard word pick; F15 minimal pair; F16 dictation; F17 heard sentence pick.",
+  "languages": {
+    "es": {
+      "deckCount": 171,
+      "cognateShare": 0.35,
+      "knownDeck": 11,
+      "yesToUnknownReal": 0.5,
+      "yesToPseudo": 0.45,
+      "legacy": {
+        "F2": {"clean": 0.30, "cognate": 0.97},
+        "F3": {"clean": 0.40, "cognate": 0.99},
+        "F4": {"weak": {"clean": 0.05, "cognate": 0.06}, "strong": {"clean": 0.25, "cognate": 0.55}},
+        "F5": {"clean": 0.75, "cognate": 0.95},
+        "F6": {"clean": 0.55, "cognate": 0.60},
+        "F7": {"clean": 0.02, "cognate": 0.23},
+        "F8": {"clean": 0.02, "cognate": 0.05},
+        "F13": {"clean": 0.30, "cognate": 0.74},
+        "F15": {"clean": 0.65, "cognate": 0.65},
+        "F16": {"clean": 0.02, "cognate": 0.05},
+        "F17": {"clean": 0.75, "cognate": 0.95}
+      },
+      "fixed": {
+        "F2": {"clean": 0.30, "cognate": 0.97},
+        "F3": {"clean": 0.30, "cognate": 0.99},
+        "F4": {"weak": {"clean": 0.08, "cognate": 0.06}, "strong": {"clean": 0.17, "cognate": 0.55}},
+        "F5": {"clean": 0.30, "cognate": 0.95},
+        "F6": {"clean": 0.30, "cognate": 0.60},
+        "F7": {"clean": 0.05, "cognate": 0.23},
+        "F8": {"clean": 0.07, "cognate": 0.09},
+        "F13": {"clean": 0.30, "cognate": 0.74},
+        "F15": {"clean": 0.55, "cognate": 0.65},
+        "F16": {"clean": 0.07, "cognate": 0.09},
+        "F17": {"clean": 0.30, "cognate": 0.95}
+      }
+    },
+    "hi": {
+      "deckCount": 139,
+      "cognateShare": 0.12,
+      "knownDeck": 9,
+      "yesToUnknownReal": 0.5,
+      "yesToPseudo": 0.45,
+      "legacy": {
+        "F2": {"clean": 0.31, "cognate": 0.99},
+        "F3": {"clean": 0.31, "cognate": 0.99},
+        "F4": {"weak": {"clean": 0.20, "cognate": 0.80}, "strong": {"clean": 0.20, "cognate": 0.80}},
+        "F5": {"clean": 0.55, "cognate": 0.80},
+        "F6": {"clean": 0.20, "cognate": 0.30},
+        "F7": {"clean": 0.01, "cognate": 0.20},
+        "F8": {"clean": 0.02, "cognate": 0.05},
+        "F13": {"clean": 0.30, "cognate": 0.70},
+        "F15": {"clean": 0.60, "cognate": 0.60},
+        "F16": {"clean": 0.02, "cognate": 0.05},
+        "F17": {"clean": 0.55, "cognate": 0.80}
+      },
+      "fixed": {
+        "F2": {"clean": 0.30, "cognate": 0.99},
+        "F3": {"clean": 0.30, "cognate": 0.99},
+        "F4": {"weak": {"clean": 0.12, "cognate": 0.80}, "strong": {"clean": 0.17, "cognate": 0.80}},
+        "F5": {"clean": 0.30, "cognate": 0.80},
+        "F6": {"clean": 0.30, "cognate": 0.30},
+        "F7": {"clean": 0.05, "cognate": 0.20},
+        "F8": {"clean": 0.07, "cognate": 0.09},
+        "F13": {"clean": 0.30, "cognate": 0.70},
+        "F15": {"clean": 0.55, "cognate": 0.60},
+        "F16": {"clean": 0.07, "cognate": 0.09},
+        "F17": {"clean": 0.30, "cognate": 0.80}
+      }
+    }
+  }
+}
