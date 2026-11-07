@@ -2,7 +2,6 @@ import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
 
-import '../core/scheduling/placement_withdrawal.dart' show hasCreditShape;
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/skill_fit.dart';
 import 'app_log.dart';

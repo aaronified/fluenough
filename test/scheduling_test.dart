@@ -17,7 +17,6 @@ import 'package:fluenough/core/data/card_state_repository.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/review_log.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/models/review_event.dart';
 import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/scheduling/ability.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
