@@ -48,7 +48,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.6.0
 
-8 approved open issues.
+7 approved open issues.
 
 **Bugs**
 
@@ -65,11 +65,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#506](https://github.com/aaronified/fluenough/issues/506) Deck format review: card data list, questions from card data, DECK-FORMAT as the one guide
 - [#630](https://github.com/aaronified/fluenough/issues/630) Telugu offensive-words deck (te-offensive), rated before it ships
 - [#631](https://github.com/aaronified/fluenough/issues/631) Offensive-words decks for the priority languages
-- [#861](https://github.com/aaronified/fluenough/issues/861) Delete a language's data from its sheet in Languages I'm learning, confirmed by typing its name
 
 ### 0.7.0
 
-14 approved open issues.
+13 approved open issues.
 
 **Enhancements**
 
@@ -88,7 +87,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#509](https://github.com/aaronified/fluenough/issues/509) Milestone exams: reading passages and questions at each B1 milestone, required to continue
 - [#523](https://github.com/aaronified/fluenough/issues/523) Card images: Wikimedia Commons and OpenMoji, shipped with decks
 - [#723](https://github.com/aaronified/fluenough/issues/723) Focused tracks: learn only one part of a course (a script, a grammar primer, verb forms, a theme)
-- [#724](https://github.com/aaronified/fluenough/issues/724) Situation cheatsheets on Today (hailing a cab, grocery shopping, …), with an inspect view
 - [#842](https://github.com/aaronified/fluenough/issues/842) Voices page: complete redesign, with a mockup
 
 ### 0.8.0
@@ -221,9 +219,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#301](https://github.com/aaronified/fluenough/issues/301) Language paths: a full Spanish course
 - [#302](https://github.com/aaronified/fluenough/issues/302) Language paths: what new scripts need
 - [#305](https://github.com/aaronified/fluenough/issues/305) Wiktionary IPA: compare and list disagreements
-- [#307](https://github.com/aaronified/fluenough/issues/307) Web: installable
-- [#308](https://github.com/aaronified/fluenough/issues/308) Web: the database on the web
-- [#309](https://github.com/aaronified/fluenough/issues/309) Web: fallbacks and persistent storage
 - [#310](https://github.com/aaronified/fluenough/issues/310) AI conversation: the learner's limits, and keeping the model within them
 - [#311](https://github.com/aaronified/fluenough/issues/311) AI conversation: scenarios, feedback and optional speech
 - [#312](https://github.com/aaronified/fluenough/issues/312) AI conversation: privacy, and tests with a fake model
