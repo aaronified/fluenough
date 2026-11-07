@@ -15,6 +15,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কোঠা অন্ধকাৰ।", reading: "kuthā ôndhôkār.", ipa: "kʊtʰa ɔndʱɔkaɹ", bases: [] }
+      - { target: "কোঠা শীতল।", reading: "kuthā xitôl.", ipa: "kʊtʰa xitɔl", bases: [] }
   - id: "as-0329"
     target: "পাকঘৰ"
     reading: "pākghôr"
@@ -45,12 +48,17 @@ cards:
     reading: "bāthrum"
     ipa: "batʰɹum"
     pos: "noun"
+    examples:
+      - { target: "বাথৰুম ক'ত?", reading: "bāthrum kot?", ipa: "batʰɹum kot", bases: [] }
   - id: "as-0333"
     target: "দুৱাৰ"
     picture: "🚪"
     reading: "duwār"
     ipa: "duwaɹ"
     pos: "noun"
+    examples:
+      - { target: "দুৱাৰ বন্ধ কৰা।", reading: "duwār bôndh kôrā.", ipa: "duwaɹ bɔndʱ kɔɹa", bases: [{"word": "বন্ধ", "base": "বন্ধ", "reading": "bôndh"}] }
+      - { target: "দুৱাৰত তালা আছে।", reading: "duwārôt tālā āse.", ipa: "duwaɹɔt tala ase", bases: [{"word": "দুৱাৰত", "base": "দুৱাৰ", "reading": "duwār"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0334"
     target: "খিৰিকী"
     picture: "🪟"
@@ -77,23 +85,34 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই চাবি বিচাৰোঁ।", reading: "moi sābi bisārum̐.", ipa: "moi sabi bisaɹʊ̃", bases: [{"word": "চাবি", "base": "চাবি", "reading": "sābi"}, {"word": "বিচাৰোঁ", "base": "বিচাৰা", "reading": "bisārā"}, {"word": "মই", "base": "মই", "reading": "moi"}] }
+      - { target: "মই চাবি হেৰালোঁ।", reading: "moi sābi herālum̐.", ipa: "moi sabi heɹalʊ̃", bases: [{"word": "হেৰালোঁ", "ref": "as-2921"}] }
   - id: "as-0338"
     target: "বিচনা"
     picture: "🛏"
     reading: "bisônā"
     ipa: "bisɔna"
     pos: "noun"
+    examples:
+      - { target: "বিচনা আৰামী।", reading: "bisônā ārāmi.", ipa: "bisɔna aɹami", bases: [] }
+      - { target: "বিচনা সাজা", reading: "bisônā sāzā", ipa: "bisɔna saza", bases: [] }
   - id: "as-0339"
     target: "চকী"
     picture: "🪑"
     reading: "soki"
     ipa: "soki"
     pos: "noun"
+    examples:
+      - { target: "চকী আৰামী।", reading: "soki ārāmi.", ipa: "soki aɹami", bases: [] }
+      - { target: "চকী তলত।", reading: "soki tôlôt.", ipa: "soki tɔlɔt", bases: [{"word": "চকী", "base": "চকী", "reading": "soki"}] }
   - id: "as-0340"
     target: "মেজ"
     reading: "mez"
     ipa: "mez"
     pos: "noun"
+    examples:
+      - { target: "মেজ চিকণ।", reading: "mez sikôn.", ipa: "mez sikɔn", bases: [] }
   - id: "as-0341"
     target: "পাংখা"
     reading: "pāṅkhā"
