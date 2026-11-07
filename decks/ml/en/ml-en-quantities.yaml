@@ -255,13 +255,10 @@ cards:
     examples:
       "ഇരട്ടി വില.":
         native: "Double the price."
-        bases:
-          "ഇരട്ടി": "double; twice"
-      "രണ്ട് ഇരട്ടി വേണം.":
-        native: "I need twice as much."
-        bases:
-          "ഇരട്ടി": "double; twice"
-          "വേണം": "need"
+        bases: {}
+      "ഈ വില ഇരട്ടിയാണ്.":
+        native: "This price is double."
+        bases: {"ഇരട്ടിയാണ്": "is double"}
   "ml-0472":
     native: "a lot; very much"
     notes:

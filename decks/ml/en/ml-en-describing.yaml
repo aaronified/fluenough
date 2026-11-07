@@ -193,13 +193,10 @@ cards:
     examples:
       "ഉയരമുള്ള മരം.":
         native: "A tall tree."
-        bases:
-          "ഉയരമുള്ള": "tall; high"
-          "മരം": "tree"
-      "അവൻ ഉയരമാണ്.":
+        bases: {"മരം": "tree"}
+      "അവൻ ഉയരമുള്ളവനാണ്.":
         native: "He is tall."
-        bases:
-          "ഉയരമാണ്": "is tall"
+        bases: {"ഉയരമുള്ളവനാണ്": "is tall"}
   "ml-0491":
     native: "wide"
     notes:
@@ -263,12 +260,10 @@ cards:
     examples:
       "സന്തോഷമുള്ള കുട്ടി.":
         native: "A happy child."
-        bases:
-          "സന്തോഷമുള്ള": "happy"
-      "അവൾ സന്തോഷമാണ്.":
+        bases: {}
+      "അവൾ സന്തോഷത്തിലാണ്.":
         native: "She is happy."
-        bases:
-          "സന്തോഷമാണ്": "is happy"
+        bases: {"സന്തോഷത്തിലാണ്": "is happy"}
   "ml-0496":
     native: "sad"
     notes:

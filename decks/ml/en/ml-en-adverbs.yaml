@@ -281,14 +281,10 @@ cards:
     examples:
       "പെട്ടെന്ന് മഴ വന്നു.":
         native: "Suddenly it rained."
-        bases:
-          "പെട്ടെന്ന്": "suddenly"
-          "മഴ": "rain"
-          "വന്നു": "came"
+        bases: {"മഴ": "rain", "വന്നു": "came"}
       "പെട്ടെന്ന് ഓടൂ.":
-        native: "Run suddenly."
-        bases:
-          "പെട്ടെന്ന്": "suddenly"
+        native: "Run quickly."
+        bases: {}
   "ml-0528":
     native: "about; roughly"
     notes:
