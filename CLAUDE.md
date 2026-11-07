@@ -95,6 +95,11 @@ contributor.
   does what"), no extra verification passes, and no new work unless the owner asks for it.
 - **Never stop anything** unless the owner explicitly asks (owner, 2026-10-23:
   "Never stop anything unless i explicitly ask to.").
+- **Do not stop for confirmation** (owner, 2026-11-07: "Go on with the
+  placement track. Do not stop for my confirmation in the future."). Decisions
+  the orchestrator can make with a sensible default are made and recorded; the
+  owner is told what was decided, not asked first. Questions stay only for
+  choices with no sensible default or that cannot be undone.
 
 ## Git, PRs and CI
 
@@ -177,6 +182,8 @@ will build the paths for every language that we want here. This is to be
 a repository of world's languages. The tower of babel, is to rise
 again."). The other courses' decks (#420) and the new courses'
 paths are no longer left to contributors.
+
+**Deck work paused for the placement rebuild** (owner, 2026-11-07: "Stop the deck work."): no deck agents run until the owner resumes deck work; open deck PRs (Malayalam #1062) stay drafts.
 
 **Deck priority** (owner, 2026-10-18). Decks are built in this order:
 1. Telugu, 2. Bengali, 3. Spanish, 4. Marathi, 5. Kannada, 6. Assamese,
