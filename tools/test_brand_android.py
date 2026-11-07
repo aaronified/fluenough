@@ -305,6 +305,47 @@ class ApplyTest(unittest.TestCase):
         self.assertEqual(self.kotlin().count("private fun wallpaperColour"), 1)
         self.assertEqual(self.kotlin().count("import android.os.Build"), 1)
 
+    def _say_can_listen_and_keep_the_voice_through_the_audio_source_extra(self) -> None:
+        # ADR-0054 option 2: one stream for the recogniser and the kept
+        # audio, on Android 13 and later; "unsupported" below it, once, in a
+        # new and an earlier activity. Checked by shape.
+        brand_android.apply(self.root)
+        k = self.kotlin()
+        for line in (
+            '"canListenWithAudio" -> result.success(canListenWithAudio())',
+            '"listenWithAudio" -> listenWithAudio(call, result)',
+            '"cancelListen" ->',
+        ):
+            self.assertIn(line, k)
+        body = k.split("private fun listenWithAudio", 1)[1]
+        body = body.split("\n    }\n", 1)[0]
+        self.assertIn("RecognizerIntent.EXTRA_AUDIO_SOURCE, source", body)
+        self.assertIn("EXTRA_AUDIO_SOURCE_SAMPLING_RATE", body)
+        self.assertIn("EXTRA_AUDIO_SOURCE_ENCODING", body)
+        self.assertIn("AudioRecord", body)
+        self.assertIn("ParcelFileDescriptor.createPipe()", body)
+        self.assertIn('"unsupported"', k)
+        self.assertIn("Build.VERSION.SDK_INT >= 33", k)
+        # The recogniser is destroyed, the recorder released, the pipe
+        # closed, and nothing is written to disk.
+        self.assertIn("recognizer.destroy()", body)
+        self.assertIn("recorder.release()", body)
+        self.assertIn("source.close()", body)
+        self.assertNotIn("FileOutputStream(File", body)
+        for name in (
+            "android.Manifest",
+            "android.media.AudioRecord",
+            "android.speech.RecognizerIntent",
+            "android.speech.SpeechRecognizer",
+            "android.os.ParcelFileDescriptor",
+        ):
+            self.assertEqual(k.count(f"import {name}\n"), 1, name)
+        self.activity.write_text(self.earlier_activity(), encoding="utf-8")
+        brand_android.apply(self.root)
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin().count("private fun listenWithAudio"), 1)
+        self.assertEqual(self.kotlin().count("import android.speech.SpeechRecognizer"), 1)
+
     def _the_installer_is_visible_and_not_gated_on_resolve_activity(self) -> None:
         # #487: on Android 11+ the package installer is hidden from
         # resolveActivity without this <queries> entry.
@@ -369,6 +410,7 @@ class ApplyTest(unittest.TestCase):
             self._the_files_are_lent_through_the_apps_own_provider,
             self._a_kept_update_reopens_the_installer_through_the_ota_provider,
             self._the_wallpaper_colour_is_read_on_android_12_and_later_only,
+            self._say_can_listen_and_keep_the_voice_through_the_audio_source_extra,
             self._the_installer_is_visible_and_not_gated_on_resolve_activity,
         )
         for case in cases:

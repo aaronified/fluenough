@@ -1,0 +1,334 @@
+// Say keeps the learner's voice at the moment it is recognised (ADR-0054):
+// on Android 13 and later the app owns the microphone and feeds the
+// recogniser from it; in a browser a recorder runs beside the recogniser.
+// Where neither can be done the engine listens as it always did, a cancelled
+// or failed listen keeps nothing, and silence is never offered as a take.
+import 'dart:typed_data';
+
+import 'package:fluenough/core/speech/mic_capture.dart';
+import 'package:fluenough/core/speech/native_listen.dart';
+import 'package:fluenough/core/speech/speech_engine.dart';
+import 'package:fluenough/core/speech/system_speech_engine.dart';
+import 'package:fluenough/core/speech/web_speech_browser.dart';
+import 'package:fluenough/core/speech/web_speech_engine.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_test/flutter_test.dart';
+import 'package:speech_to_text/speech_recognition_result.dart';
+import 'package:speech_to_text/speech_to_text.dart';
+
+/// 16-bit mono PCM of [count] samples at [level] (0 to 1).
+Uint8List _pcm(int count, double level) {
+  final bytes = ByteData(count * 2);
+  for (var i = 0; i < count; i++) {
+    bytes.setInt16(i * 2, (level * 32767).round(), Endian.little);
+  }
+  return bytes.buffer.asUint8List();
+}
+
+final OwnAudio _voice = OwnAudio(_pcm(16000, 0.4), sampleRate: 16000);
+
+/// The plugin's recogniser, scripted: what a plain (second-route) listen does.
+class _Plugin extends SpeechToText {
+  _Plugin() : super.withMethodChannel();
+
+  int listens = 0;
+  void Function(SpeechRecognitionResult)? onResult;
+
+  @override
+  Future<bool> get hasPermission async => true;
+
+  @override
+  Future<bool> initialize({
+    onError,
+    onStatus,
+    debugLogging = false,
+    Duration finalTimeout = SpeechToText.defaultFinalTimeout,
+    List<SpeechConfigOption>? options,
+  }) async => true;
+
+  @override
+  Future<void> listen({
+    onResult,
+    Duration? listenFor,
+    Duration? pauseFor,
+    String? localeId,
+    onSoundLevelChange,
+    cancelOnError = false,
+    partialResults = true,
+    onDevice = false,
+    ListenMode listenMode = ListenMode.confirmation,
+    sampleRate = 0,
+    SpeechListenOptions? listenOptions,
+  }) async {
+    listens++;
+    this.onResult = onResult;
+  }
+
+  @override
+  Future<void> cancel() async {}
+
+  @override
+  Future<void> stop() async {}
+}
+
+class _Capture implements MicCapture {
+  int starts = 0;
+
+  @override
+  Future<void> start() async => starts++;
+
+  @override
+  Future<OwnAudio?> finish() async => null;
+}
+
+NativeListenResult _heardNative({OwnAudio? audio, String text = 'నమస్తే'}) =>
+    NativeListenResult(
+      alternatives: <SpeechAlternative>[
+        SpeechAlternative(text, confidence: 0.9),
+      ],
+      pcm16: audio?.pcm16,
+      sampleRate: audio?.sampleRate ?? 16000,
+    );
+
+void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+
+  group('Android 13 and later: one stream for the recogniser and the take', () {
+    test(
+      'a listen gives the readings and the audio that was recognised',
+      () async {
+        final native = FixedNativeListener(
+          results: <NativeListenResult>[_heardNative(audio: _voice)],
+        );
+        final plugin = _Plugin();
+        final engine = SystemSpeechEngine(plugin, null, native);
+        final h = await engine.listen(bcp47: 'te-IN', onDevice: true);
+        expect(h.failed, isFalse);
+        expect(h.alternatives.single.text, 'నమస్తే');
+        expect(h.ownAudio, isNotNull);
+        expect(h.ownAudio!.pcm16, _voice.pcm16);
+        expect(h.ownAudio!.sampleRate, 16000);
+        expect(native.listens, 1);
+        expect(native.lastLanguage, 'te-IN');
+        expect(native.lastOnDevice, isTrue);
+        // The plugin never listened: one reader of the microphone.
+        expect(plugin.listens, 0);
+      },
+    );
+
+    test('silence is not offered as the learner\'s voice', () async {
+      final native = FixedNativeListener(
+        results: <NativeListenResult>[
+          _heardNative(audio: OwnAudio(_pcm(16000, 0), sampleRate: 16000)),
+        ],
+      );
+      final h = await SystemSpeechEngine(
+        _Plugin(),
+        null,
+        native,
+      ).listen(bcp47: 'te-IN', onDevice: true);
+      expect(h.failed, isFalse);
+      expect(
+        h.ownAudio,
+        isNull,
+        reason: 'the drill then records a second take',
+      );
+    });
+
+    test('a recogniser\'s own verdict is reported, with no take', () async {
+      final native = FixedNativeListener(
+        results: <NativeListenResult>[
+          NativeListenResult(error: 'error_network', pcm16: _voice.pcm16),
+          const NativeListenResult(error: 'error_language_unavailable'),
+          const NativeListenResult(error: 'error_permission'),
+        ],
+      );
+      final engine = SystemSpeechEngine(_Plugin(), null, native);
+      final network = await engine.listen(bcp47: 'te-IN', onDevice: false);
+      expect(network.failure, SpeechFailure.network);
+      expect(
+        network.ownAudio,
+        isNull,
+        reason: 'nothing kept on a failed listen',
+      );
+      final language = await engine.listen(bcp47: 'te-IN', onDevice: true);
+      expect(language.failure, SpeechFailure.notOnDevice);
+      final denied = await engine.listen(bcp47: 'te-IN', onDevice: true);
+      expect(denied.failure, SpeechFailure.permissionDenied);
+    });
+
+    test('a phone that cannot listen this way listens as before', () async {
+      final native = FixedNativeListener(isAvailable: false);
+      final plugin = _Plugin();
+      final capture = _Capture();
+      final engine = SystemSpeechEngine(plugin, capture, native);
+      final listening = engine.listen(bcp47: 'te-IN', onDevice: true);
+      await Future<void>.delayed(Duration.zero);
+      expect(plugin.listens, 1, reason: 'the plain route listened');
+      expect(native.listens, 0);
+      plugin.onResult!(
+        SpeechRecognitionResult(<SpeechRecognitionWords>[
+          const SpeechRecognitionWords('నమస్తే', null, 0.9),
+        ], ResultType.finalResult.value),
+      );
+      expect((await listening).alternatives.single.text, 'నమస్తే');
+      expect(capture.starts, 1, reason: 'the best-effort capture still runs');
+    });
+
+    test('a failure of the native side falls back to the plain route, and '
+        'two in a row stop it being tried', () async {
+      final native = FixedNativeListener(
+        results: <NativeListenResult>[
+          const NativeListenResult(error: 'unsupported'),
+        ],
+      );
+      final plugin = _Plugin();
+      final engine = SystemSpeechEngine(plugin, null, native);
+      for (var i = 0; i < 3; i++) {
+        final listening = engine.listen(bcp47: 'te-IN', onDevice: true);
+        await Future<void>.delayed(Duration.zero);
+        plugin.onResult!(
+          SpeechRecognitionResult(<SpeechRecognitionWords>[
+            const SpeechRecognitionWords('x', null, 0.9),
+          ], ResultType.finalResult.value),
+        );
+        await listening;
+      }
+      expect(plugin.listens, 3, reason: 'every listen was heard the plain way');
+      expect(native.listens, 2, reason: 'not asked a third time');
+    });
+
+    test('stop cancels the native listen', () async {
+      final native = FixedNativeListener();
+      await SystemSpeechEngine(_Plugin(), null, native).stop();
+      expect(native.cancels, 1);
+    });
+  });
+
+  group('what the channel answers', () {
+    test('is read as readings, scores and the audio', () {
+      final r = ChannelNativeListener.parse(<String, Object?>{
+        'texts': <Object?>['నమస్తే', '  ', 'నమస్కారం'],
+        'confidences': <Object?>[0.8, 0.0, -1.0],
+        'error': null,
+        'pcm': _voice.pcm16,
+        'sampleRate': 16000,
+      });
+      expect(r.error, isNull);
+      expect(r.alternatives.map((a) => a.text), <String>['నమస్తే', 'నమస్కారం']);
+      expect(r.alternatives.first.confidence, 0.8);
+      expect(r.alternatives.last.confidence, isNull, reason: '-1 is no score');
+      expect(r.audio!.pcm16, _voice.pcm16);
+    });
+
+    test('an error, or something else, is an error of this side', () {
+      expect(
+        ChannelNativeListener.parse(<String, Object?>{'error': 'unsupported'})
+            .fallsBack,
+        isTrue,
+      );
+      expect(ChannelNativeListener.parse('nonsense').fallsBack, isTrue);
+      expect(
+        ChannelNativeListener.parse(<String, Object?>{
+          'error': 'error_no_match',
+        }).fallsBack,
+        isFalse,
+      );
+    });
+
+    test(
+      'the channel is asked with the language, on-device and seconds',
+      () async {
+        final calls = <MethodCall>[];
+        const channel = MethodChannel('test/native-listen');
+        TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
+            .setMockMethodCallHandler(channel, (call) async {
+              calls.add(call);
+              return <String, Object?>{
+                'texts': <Object?>['hi'],
+                'confidences': <Object?>[0.5],
+                'pcm': _voice.pcm16,
+                'sampleRate': 16000,
+              };
+            });
+        addTearDown(
+          () => TestDefaultBinaryMessengerBinding
+              .instance
+              .defaultBinaryMessenger
+              .setMockMethodCallHandler(channel, null),
+        );
+        final r = await const ChannelNativeListener(channel: channel).listen(
+          bcp47: 'te-IN',
+          onDevice: true,
+          listenFor: const Duration(seconds: 6),
+        );
+        expect(r.alternatives.single.text, 'hi');
+        expect(calls.single.method, 'listenWithAudio');
+        expect(calls.single.arguments, <String, Object?>{
+          'language': 'te-IN',
+          'onDevice': true,
+          'seconds': 6,
+        });
+        // Not Android in the test VM: never available.
+        expect(
+          await const ChannelNativeListener(channel: channel).available,
+          isFalse,
+        );
+      },
+    );
+  });
+
+  group('the browser: a recorder beside the recogniser', () {
+    test('a listen gives the readings and the take', () async {
+      final browser = FixedSpeechBrowser(
+        heard: const BrowserHeard(<SpeechAlternative>[
+          SpeechAlternative('namaste'),
+        ]),
+        audio: _voice,
+      );
+      final engine = WebSpeechEngine(browser);
+      expect(await engine.start(), isTrue);
+      final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
+      expect(h.failed, isFalse);
+      expect(h.ownAudio, isNotNull);
+      expect(h.ownAudio!.pcm16, _voice.pcm16);
+    });
+
+    test('a failed listen keeps nothing', () async {
+      final browser = FixedSpeechBrowser(
+        heard: const BrowserHeard.error('no-speech'),
+        audio: _voice,
+      );
+      final engine = WebSpeechEngine(browser);
+      await engine.start();
+      final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
+      expect(h.failure, SpeechFailure.noMatch);
+      expect(h.ownAudio, isNull);
+    });
+
+    test('a browser that cannot record gives readings and no take', () async {
+      final engine = WebSpeechEngine(
+        FixedSpeechBrowser(
+          heard: const BrowserHeard(<SpeechAlternative>[
+            SpeechAlternative('namaste'),
+          ]),
+        ),
+      );
+      await engine.start();
+      final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
+      expect(h.failed, isFalse);
+      expect(h.ownAudio, isNull);
+    });
+
+    test('a reading with an error has no audio to keep', () {
+      expect(
+        const BrowserHeard.error('aborted').withAudio(_voice).ownAudio,
+        isNull,
+      );
+      expect(
+        const BrowserHeard(<SpeechAlternative>[]).withAudio(_voice).ownAudio,
+        _voice,
+      );
+    });
+  });
+}

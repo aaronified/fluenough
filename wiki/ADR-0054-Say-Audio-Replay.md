@@ -2,9 +2,11 @@
 
 Source of truth: this wiki page.
 
-- **Status:** Proposed (research done; nothing built, #881). The "Your recording" replay is drawn in the approved shared shell (#509, 2026-11-02); the audio itself waits on on-device recognition (#1004, aimed at 0.9.0), which would supply the bytes.
+- **Status:** Accepted, built in two routes (2026-11-07, owner: record at the same time as recognition). Option 2 is built for Android 13 and later and for browsers; the older best-effort capture of option 1 stays for the rest. Not yet verified on a device (see "What was built"). The "Your recording" replay is drawn in the approved shared shell (#509, 2026-11-02); the audio itself waits on on-device recognition (#1004, aimed at 0.9.0), which would supply the bytes.
 - **Update (2026-11-05):** option 1 is built as a best-effort capture (`MicCapture`, started after the recogniser, self-disabling after two listens that hear nothing), as the owner asked for the first attempt to be recorded with recognition. Option 2 stays the robust route if a device shows the two cannot share the microphone.
 - **Date:** 2026-11-02
+
+- **Update (2026-11-07):** the owner saw "No recording yet. Replay records one." on a Telugu card: the recording was made only when Replay was tapped, because the best-effort capture of option 1 cannot share the microphone on his phone. Built now, as the decision below says: option 2 on Android 13 and later, and a recorder beside the recogniser in a browser. See "What was built".
 
 ## Context
 
@@ -81,6 +83,13 @@ Option 2, behind the `SpeechEngine` seam, with option 3 as the fallback.
   (option 2 with a throwaway engine) and for iOS, before the engine is
   replaced. If the spike fails on a platform, that platform keeps option 3
   and this ADR is amended.
+
+## What was built (2026-11-07)
+
+- **Android 13 and later (API 33):** `MainActivity.listenWithAudio` (written by `tools/brand_android.py`, read by `lib/core/speech/native_listen.dart`) captures the microphone itself with `AudioRecord` (16 kHz mono PCM, in memory) and hands the recogniser the same stream through `RecognizerIntent.EXTRA_AUDIO_SOURCE` (a pipe), with the channel count, encoding and sampling rate extras, so there is one reader of the microphone and the audio kept is what was recognised. The recogniser's readings and the PCM come back together. `SystemSpeechEngine` tries it first; `unsupported`, an error of this side (`error_audio`, `error_client`, `error_busy`, an exception, a timeout), or silence in the stream make it listen the plain way, and two such listens in a row stop it being tried. A recogniser service that ignores the extra opens the microphone itself; if our capture then hears only silence, no take is offered and the drill records a second take as before. Cancelling (`stop`) ends the listen and still delivers what was heard; a failed listen keeps nothing; the stream is closed, the recorder released and the recogniser destroyed at the end; no file is written.
+- **Below Android 13:** unchanged: the best-effort capture of option 1 (started after the recogniser, self-disabling), else Replay records a take.
+- **Browsers:** a `MediaRecorder` on its own microphone stream starts beside `SpeechRecognition` and stops with it; the take is decoded to PCM in memory. A browser that will not share the microphone, cannot decode, or hears silence gives no take; an error or a cancel drops it unread.
+- **Not yet verified on a device.** The tests check the Dart side with fakes (the engine, the channel, the browser) and the Kotlin by shape; whether a given recogniser service takes `EXTRA_AUDIO_SOURCE` (the Google recogniser, an OEM one, the on-device pack) is the open question of "To test on a device" above, and the fallbacks make a phone that does not behave as it did.
 
 ## Privacy wording
 

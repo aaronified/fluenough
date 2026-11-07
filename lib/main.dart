@@ -32,6 +32,7 @@ import 'core/decks/deck_fetch.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
 import 'core/speech/mic_capture.dart';
+import 'core/speech/native_listen.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
@@ -105,7 +106,11 @@ Future<void> main() async {
     settings: storage.settings,
     tts: SystemTtsEngine(),
     clips: SystemClipPlayer(),
-    speech: SystemSpeechEngine(null, RecordMicCapture()),
+    speech: SystemSpeechEngine(
+      null,
+      RecordMicCapture(),
+      const ChannelNativeListener(),
+    ),
     volume: SystemVolumeMonitor(),
     soundCheck: SystemSoundCheck(),
     networkProbe: SystemNetworkProbe(),
