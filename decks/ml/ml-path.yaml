@@ -195,17 +195,20 @@ units:
       - { id: "what-i-do", text: { "en": "Someone lists what they do each day" } }
     reading_passages:
       - { id: "to-do-list", text: { "en": "A short to-do list" } }
-  - planned: { id: "ml-adverbs", theme: "adverbs", words: 50 }
+  - decks: ["ml-adverbs", "*"]
+    words: 25
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "ml-quantities", theme: "quantities", words: 30 }
+  - decks: ["ml-quantities", "*"]
+    words: 23
     listening_passages:
       - { id: "a-little-more", text: { "en": "Asking for a little more and a little less" } }
     reading_passages:
       - { id: "shopping-amounts", text: { "en": "A shopping list with amounts" } }
-  - planned: { id: "ml-describing", theme: "describing", words: 40 }
+  - decks: ["ml-describing", "*"]
+    words: 31
     listening_passages:
       - { id: "big-and-small", text: { "en": "Describing things: big, small, hot and cold" } }
     reading_passages:
@@ -355,13 +358,15 @@ units:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
     reading_passages:
       - { id: "map-labels", text: { "en": "Labels on a simple town map" } }
-  - planned: { id: "ml-things", theme: "things", words: 39 }
+  - decks: ["ml-things", "*"]
+    words: 30
     listening_passages:
       - { id: "packing-a-bag", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
   # ml-things-sentences and ml-more-verbs-sentences join this unit.
-  - planned: { id: "ml-home", theme: "home", words: 19 }
+  - decks: ["ml-home", "*"]
+    words: 17
     listening_passages:
       - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
@@ -384,13 +389,15 @@ units:
     reading_passages:
       - { id: "class-photo", text: { "en": "A caption under a class photo" } }
   # ml-clothes-sentences and ml-describing-sentences join this unit.
-  - planned: { id: "ml-clothes", theme: "clothes", words: 26 }
+  - decks: ["ml-clothes", "*"]
+    words: 24
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a shirt's colour and size in a shop" } }
     reading_passages:
       - { id: "shop-sign", text: { "en": "A clothes shop's sign with its offers" } }
   # ml-animals-sentences joins this unit.
-  - planned: { id: "ml-animals", theme: "animals", words: 30 }
+  - decks: ["ml-animals", "*"]
+    words: 27
     listening_passages:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:
