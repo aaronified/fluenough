@@ -3,6 +3,7 @@ import 'dart:typed_data';
 
 import '../data/log_jsonl.dart';
 import '../models/leech_action.dart';
+import '../scheduling/placement_withdrawal.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/skill_parameters.dart';
 import 'zip_files.dart';
@@ -139,6 +140,7 @@ class AppBackup {
     List<LoggedReview> reviews,
     List<LeechAction> leechActions,
     Map<SkillKey, FittedParameters> fitted,
+    List<PlacementWithdrawal> withdrawals,
   })
   _parsed = LogJsonl.decode(log);
 
@@ -148,6 +150,10 @@ class AppBackup {
   List<LeechAction> get leechActions => _parsed.leechActions;
 
   Map<SkillKey, FittedParameters> get fitted => _parsed.fitted;
+
+  /// The placement credit the learner took back, as the log says. A backup
+  /// from 0.9.1 or older has none.
+  List<PlacementWithdrawal> get withdrawals => _parsed.withdrawals;
 
   /// The backup as a file's bytes.
   Uint8List encode() {

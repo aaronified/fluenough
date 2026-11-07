@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **Placements made by earlier versions can be checked again.** If Find my level (0.9.0 or 0.9.1) placed you too far into a course, the language's sheet now says "Check your level again". It runs the same check on the skills it credited, then shows "Your level, before and now" with "Use the new level" and "Keep the old level"; nothing changes until you choose. Using the new level takes back only the credit placement wrote above it (words you have reviewed keep their reviews, and nothing is deleted from your history), and Keep the old level changes nothing but the choice. Backups carry the choice; a backup restored into an older version brings the credit back, flagged again. Refs #1063.
+
+### Changed
+
+- **Letters known from English no longer count as knowing the language.** A script you know from another language (Latin from English for Spanish, Devanagari from Hindi for Marathi) now counts for the script lessons and the script check only, so Find my level offers "Find my level" instead of "Verify what you know" for a course whose words you have not claimed. Nothing you set on the Languages page changes.
+
 ### Added
 
 - **Delete a language's data from its sheet.** In Languages I'm learning, the round red bin next to the sheet's bottom button (Delete data) opens a dialog where you tick what to delete: that language's reviews (all dates, or only a range of days, both included, such as a period when someone else tested the app), its placement (the course asks for placement again), its language settings and its deck data. Delete stays off until you type the language's name. A backup is kept first in Settings, Your data, Recent backups, and nothing is deleted if it cannot be kept; afterwards progress, streaks, hours and card schedules for that language are worked out again from the reviews that remain, and no other language is touched. Refs #861.

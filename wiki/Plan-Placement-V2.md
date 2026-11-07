@@ -771,3 +771,167 @@ Criteria, restated (values unchanged except as said; each change is argued from 
   - Wrong options still come from the same deck and the neighbouring decks on both sides, not only from the asked tenth or later (point 4). A learner may rule out a known option from a deck just below the item. This stays within the class-resolution guarantee of point 13 (never above the first class level at or above `T`), and S6 measured the ruling-out guesser under the floor.
   - Two unused helpers remain (`supportedLevel`, `trustsPointEstimate`).
   - Uncounted answers count toward the three-question precondition of Verified. This is harmless, because Verified also needs the top class to be the placed class.
+
+**16. Placements written by 0.9.0, and how to repair them (2026-11-07; design, not built).** The owner, on 0.9.1: "Spanish is now showing 'verify what you know'. It has already placed me almost at B1."
+
+- **What a 0.9.0 run wrote** (Stop here at a checkpoint, or the end; `lib/app/placement_run_setup.dart` `_writeOutcome` at v0.9.0):
+  - for each word skill tested, a review of grade 5, asked `Ask.own`, at one moment, for every card of every deck up to that skill's placed level, in that skill's drills (`creditPlacement`, `lib/app/placement_credit.dart`; a pair that already had a review is skipped);
+  - that moment, kept in `placed_at` per language (`Settings.addPlacedAt`, `settings.dart:787`);
+  - every deck up to the lowest placed word skill added to `placedDecks` (lessons skipped, words shown as learnt);
+  - the labels in `skill_labels` and the Verified marks.
+
+  The placed level was the most probable class (`placedLevel`), whatever its probability. A Read-only run at "unit 108 · Not sure yet" therefore credited and placed 107 decks.
+- **0.9.1 does not undo it.** A new run only adds: credit is skipped where a review exists, and `placedDecks` is a union (`placement_run_setup.dart:222`). Section 4.4's "ask before a lower placement drops credit" was approved (section 9, question 13) but never built (section 12, point 8).
+- **Why "Verify what you know" shows** (a separate fault, present without any placement):
+  - when a language is added, Read and Write in a script another language already knows are set to Know (`autoKnownFrom`, `lib/core/languages/language_skills.dart:459`; the draft, `language_skills_sheet.dart:164-168`): Spanish Read and Write are "Known from English";
+  - `placementSkillsOf` turns Read in Latin into the word skill Read (`skills_in_play.dart`; Latin is not a script of its own there);
+  - so the row offers to verify Spanish words the learner never claimed. Knowing the letters is not knowing the language.
+- **No version marker.** No placement records the model that made it. The evidence a phone has: `skill_labels` exist only from Find my level runs (0.9.0 or later), and `placed_at` holds the moment of the credit. 0.9.0 shipped 2026-11-06T20:08Z and 0.9.1 2026-11-07T04:49Z, so a Find my level credit before the 0.9.1 install is from the flawed model; the install moment itself is not stored.
+- **Repair (proposal):**
+  1. *Mark.* From the next release, every new run stores its model version with its moment (`placed_at` becomes moment plus model). At the first launch of that release, every Find my level credit with no model mark (all of 0.9.0's, and 0.9.1's, which cannot be told apart) is marked "unconfirmed". Nothing is removed. The language row reads "Check your level again" with the line "Your level was found by an older version. Check it again to keep it or correct it."
+  2. *Check again.* The guess-proof run, on the skills that were credited. At its end the learner sees both: "Before: Read unit 108. Now: Read at least unit 1 (Not sure yet)", with **Use the new level** and **Keep the old level**. Nothing changes until one is pressed. Keep clears the mark and keeps everything.
+  3. *Use the new level withdraws only placement's credit above the new level.* The review log is append-only (AGENTS.md rule 9), so nothing is deleted. A withdrawal is appended as an action (like a leech action), naming the language, the credit moment and the decks above the new level. When states are rebuilt from the log, a review that is that moment's placement credit (grade 5, `Ask.own`, that second, those decks) is skipped. Every real review stays, and a card with real reviews after the credit keeps its schedule from them. `placedDecks` loses the decks above the new lowest level; the labels and Verified marks are replaced by the new run's. Credit up to the new level is kept or added as usual.
+  4. *Script-known is not word-known.* A script skill known from another language counts for the script lessons and the script check only; it never puts Read or Write in a Find my level run. The row then reads Find my level, not Verify, for a learner who only knows the letters.
+- **Owner decisions needed.**
+  - (a) The Find my level rule "changes no skill" (owner, 2026-11-05; #1030) is about a skill's Learn, Know and Leave states, not credit. Withdrawing credit with the learner's confirmation is what section 4.4 already approved, so it does not conflict. The decision is only whether 4.4 applies to placements of earlier versions: **recommended yes, with the confirmation above**.
+  - (b) Point 4 changes what the Languages page's "Known from English" means for Find my level: **recommended yes**.
+  - (c) Whether 0.9.1 placements are marked as well: **recommended yes**, because they cannot be told apart from 0.9.0's, and a recheck costs one confirmation.
+- **What a learner can do in 0.9.1 today.** There is no undo. Deleting the language keeps the progress, and a new run cannot lower anything.
+  - **Restore a backup made before the 0.9.0 run** (Settings, Backup and restore). This is the only clean undo, and it loses everything since that backup.
+  - Otherwise **Languages, Spanish, Placed words: Keep reviewing.** The credited words come back like any other word, and each miss sends one back to learning. It corrects itself over weeks, not at once.
+  - Setting Read and Write to Learn on the Spanish sheet stops the Verify row, but keeps the credit.
+
+**Owner decisions (2026-11-07), on point 16.** The owner, after the findings: "Fix it, then release 0.9.2." The three recommendations are approved as written:
+- (a) Section 4.4 applies to placements made by earlier versions: credit above a new, lower level is withdrawn only after the learner confirms.
+- (b) Letters known from another language count for the script lessons and the script check only, never for Find my level's word skills. The row reads Find my level (or Fit my level), not Verify, for a learner who only knows the letters.
+- (c) Placements made by 0.9.1 are flagged as well.
+
+**17. Specification for 0.9.2: repairing earlier placements (implementation-ready, 2026-11-07).** Pure logic goes in `lib/core`, storage in `lib/app` and `lib/core/data`, screens in `lib/features`. Every time is UTC.
+
+*17.1 Data.*
+- **Model stamp (settings, new key `placed_by`).** A JSON map `{language: {"<second>": <model>}}`. `<second>` is the `placed_at` moment of a credit, and `<model>` is an int, `kPlacementModel = 2` for the guess-proof model of point 5. Every credit Find my level writes from 0.9.2 on stamps its moment. `placed_at` keeps its format (older apps parse it as a list of ints), and `placed_by` is ignored by older apps.
+- **Kept moments (settings, new key `placement_kept`).** `{language: [seconds]}`: the moments the learner chose to keep at a Check again.
+- **Cut-off.** `kPlacementCheckFrom = 1793995687`, the release of 0.9.0 (2026-11-06T20:08:07Z), when Find my level first shipped. Moments before it come from the older placement test and are not flagged.
+- **Unconfirmed is derived, never stored.** For a language, the unconfirmed moments are those in `placed_at` that are at or after the cut-off, not in `placed_by`, not in `placement_kept`, and not fully withdrawn (17.2). There is no settings migration and nothing to run once, so the rule is idempotent by construction. A restored backup without `placed_by` is flagged again, which is right: its credit is unconfirmed.
+- **Withdrawals (database, migration 11, new table `placement_withdrawals`, append-only).** It has the same `BEFORE UPDATE` and `BEFORE DELETE` triggers as `reviews` and `leech_actions`, and is emptied only by `replaceLog` (a restore) with them. Columns:
+  - `id`
+  - `ts` (EpochMs, when withdrawn)
+  - `language` (text)
+  - `credit_at` (int, the `placed_at` second)
+  - `modes` (text, comma-separated `DrillMode` names)
+  - `script` (text, nullable: the script of a script skill's credit; null for word skills)
+  - `deck_ids` (text, comma-separated, sorted)
+
+  The migration step is written like step 10: create the table only if it does not exist, so a step cut off part-way runs again. **Claim schema number 11 in an issue before writing it** (AGENTS.md rule 9; #861 may want a migration too, see 17.8).
+- **Backup and restore.** The log export (`LogJsonl`) gains a line `{"type":"withdrawal","at":…,"language":…,"credit_at":…,"modes":[…],"script":…,"decks":[…]}`, and `importLog` and `replaceAll` read it.
+  - Do not raise the log format's version: older apps skip unknown line types (`log_jsonl.dart`, the `default: continue` case). So a 0.9.2 backup restored into 0.9.1 or older loses its withdrawals, and the credit comes back, flagged again on the next 0.9.2. The restore screen says so when the backup's app version is newer than the app.
+  - The settings keys travel in the backup's settings as all keys do.
+  - A backup from 0.9.1 or older restored into 0.9.2 has no withdrawals and no stamps, so its placements are flagged.
+
+*17.2 Which reviews a withdrawal removes from the replay, and nothing else.*
+- **The matching rule.** A pure function `isWithdrawnCredit(LoggedReview r, List<PlacementWithdrawal> ws, String Function(String deckId) languageOf)` in `lib/core/scheduling/placement_withdrawal.dart`. It is true iff some `w` satisfies all of:
+  - `languageOf(r.deckId) == w.language`
+  - `r.at` is within `[w.creditAt s, w.creditAt s + 999 ms]`
+  - `r.at` is not after `w.at`
+  - `r.deckId` is in `w.deckIds`
+  - `r.key.mode` is in `w.modes`
+  - `r.script == w.script`
+  - `r.grade == 5`, `r.elapsed == 0`, `r.answerGiven == null`
+  - `r.asked` is `Ask.own` or null (credit written before schema 9 has none)
+
+  These are exactly the fields `creditPlacement` writes (`placement_credit.dart`); a real answer has an elapsed time or an answer, and the same second.
+- **Where it applies.** The filter runs before `replayReviews` (`lib/core/scheduling/replay.dart`) everywhere the log is replayed: memory, database and the snapshot build. The review stays in `reviews` and in the export. A pair whose only review was withdrawn has no state, as if never placed. A pair with real reviews after the credit replays from its first real review as a first review: its schedule is what those reviews alone give.
+- **The per-skill fits** (`fsrs_parameters`, ADR-0035) are parameters, not states. They stay, and the next fit of that language and skill (on the next review with "Adjust automatically" on, as now) reads the filtered log. Placement credit has no answer and does not enter a fit's answered reviews today; check that, and the filter keeps it so.
+- **The snapshot** (`replay_snapshots`, ADR-0051). `LogStamp` gains the withdrawals (count, last id and a sum of their times, as for leech actions), so a snapshot made before a withdrawal is never used after it. No snapshot format change.
+- **Implied reviews and script skills** (`implyReview`, `scriptReview`) are fed only the filtered reviews, so nothing a withdrawn credit implied survives.
+
+*17.3 What "Use the new level" writes, per tested skill S whose new placed level is `n` (deck index in path order, -1 for the start).*
+1. For each moment `t` of the language (every moment, flagged or not; credit of any version is withdrawn above a confirmed lower level, decision a): one withdrawal with `credit_at = t`, the decks above `n` that hold a credited pair of S at `t`, and the modes of S (`_modesOf`). For a script skill, its script decks and its script (Read: recognition; reads: recognition and production). Skip a withdrawal with no decks.
+2. Credit up to `n` for S as `_writeOutcome` writes it today, at a new moment `t2`, stamped `placed_by[language][t2] = 2`.
+3. `placedDecks`: the language's decks are replaced by those up to the new lowest placed word level and the scripts' placed decks, as a run writes them. Decks of other languages are untouched.
+4. `skill_labels` and `verified_skills`: replaced for the tested skills, as now.
+5. `placed_at` keeps every moment (history). A moment all of whose credit is withdrawn is not unconfirmed.
+6. A skill the run did not test (not in play, or Not tested) keeps all its credit.
+
+*If the check proves more* (`n` above the old level for every tested skill), step 1 writes nothing, and step 2 adds the credit between them. *If it proves the same,* only the stamp and the labels change. *If it proves less* for some skills, those skills get step 1 and the others get step 2.
+
+*"Keep the old level"* adds the flagged moments to `placement_kept` and writes nothing else: no credit from this run, no labels, no Verified marks. Nothing changes until one of the two is pressed. Back, or leaving the app, writes nothing and keeps the run paused as any run.
+
+*17.4 Before, per skill.* `creditedLevelOf(language, skill)` is the highest path index of a deck holding a credited pair of the skill's modes at an unconfirmed moment, after earlier withdrawals. It is computed from the log, never stored, with -1 for none.
+
+*17.5 Screens and strings (English; the other locales as usual).*
+- **Languages sheet, level row,** while the language has an unconfirmed moment. Title "Check your level again". Subtitle "An earlier version found this level. Check it to keep it or correct it." The tap runs Find my level on the skills that hold unconfirmed credit, plus the skills in play as today; there is no declaration change.
+- **At the end of that run,** before anything is written, the comparison screen:
+  - Title: "Your level, before and now"
+  - One line per tested skill: "{skill}: unit {before} → unit {now} · {label}". Use "from the start" for -1, and "at least unit {now}" while a higher class is more probable (point 6).
+  - Under the lines: "Nothing changes until you choose."
+  - When now is at least before in every skill, add "The check found at least what you had."
+  - Primary button "Use the new level"; secondary "Keep the old level".
+- **Snackbars:** "{language}: your new level is set. Words you have reviewed keep their reviews." / "{language}: your old level is kept."
+- A run on a language with no unconfirmed moment ends as today, with no comparison.
+
+*17.6 Letters known from another language (decision b).*
+- `selectFindLevelSkills` (`lib/core/placement/skills_in_play.dart`) takes `autoKnown: Set<SkillKey>`, the keys `autoKnownFrom` gives for the language's scripts and the learner's other languages, computed at run time and never stored.
+- A key in `autoKnown` whose state is Know counts as **Learn** for the word skills (Read, Write) and as **Know** for the script skill it maps to (Script or Second script). Latin is not a script skill, so Spanish Read and Write known from English are simply Learn.
+- `placementSkillsOf` is unchanged.
+- **No profile migration:** the stored Know stays (the sheet still says "Known from English" and the script lessons are still skipped), and only what Find my level reads changes.
+- Callers: `language_skills_sheet.dart` (the row) and `find_level_flow.dart` (the run) pass `autoKnownFrom(scripts: …, others: …)`.
+
+*17.7 Edge cases.*
+- **Several moments in one language:** each is matched and withdrawn on its own (17.3, step 1), and before is the highest over the unconfirmed ones.
+- **A card credited and then reviewed for real:** its real reviews schedule it after the withdrawal (17.2).
+- **A paused run:** runs saved by 0.9.0 or 0.9.1 are discarded by app version as today. A paused Check again resumes as any run and shows the comparison at its end.
+- **A restore:** see 17.1. Withdrawals referring to reviews the restore removed match nothing and are harmless.
+- **#861 deletes reviews in a date range:** a withdrawal whose credit was deleted matches nothing.
+- **The owner's profile:**
+  - Spanish has one moment `T1` after the cut-off (the 0.9.0 run), unstamped, so it is flagged.
+  - The Read credit is on decks 0 to 107 in recognition, reading and grammar understood, so before shows "Read: unit 108".
+  - With 17.6, Read and Write are Learn, so the row reads "Check your level again".
+  - The run (expected: Read from the start) then "Use the new level" give: one withdrawal (`es`, `T1`, decks 0 to 107, those three modes). `placedDecks` loses the 108 Spanish decks, and the Read label is replaced.
+  - Every card he reviewed for real keeps those reviews. His other credit, if any (Hear, Write), stays unless the run tested it.
+
+*17.8 Order with #861 (delete a language's data).*
+- Shared files: `lib/core/data/database.dart` (the migration number), `lib/core/data/log_jsonl.dart`, `lib/app/database_progress.dart` and `memory_progress.dart`, `lib/app/settings.dart` (`placed_at`, `placedDecks`, `skill_labels`, `verified_skills`, the new keys), `lib/app/placement_run_setup.dart`, `lib/features/languages/language_skills_sheet.dart` (the level row; #861's bin button sits next to Stop learning), `lib/app/backups.dart`, `lib/l10n/app_en.arb`.
+- Order: **this change first** (it blocks 0.9.2 and takes migration 11). #861 then rebases, takes 12 if it needs a table, and implements "delete its placement" as: a withdrawal of every moment, every deck, every mode and script of the language, then clearing `placed_at`, `placed_by`, `placement_kept`, the language's `placedDecks`, labels and Verified marks. #861's review deletion by date range stays its own logged exception (with the backup first).
+
+*17.9 Tests (behaviour, `lib/core` where possible; CI runs them).*
+1. **Replay equivalence.** For a log with credit at `T` on decks A, B, C in recognition, a real review of a B card two days later and one of a D card, plus a withdrawal (`T`, decks B and C, recognition): the replay with the withdrawal equals the replay of the log with those credit reviews removed. That covers states, events, script states and implied states, and is also checked in the snapshot path (encode, decode, compare).
+2. **Only credit matches.** Each of these is kept, not withdrawn:
+   - a grade-5 review in the same second with an answer or an elapsed time;
+   - the same card's review at another second;
+   - the same second in another language;
+   - a mode not in the withdrawal;
+   - a review after `w.at`.
+3. **A credited card later missed for real** has, after the withdrawal, exactly the state of a log holding only that miss.
+4. **Append-only.** An UPDATE or DELETE on `placement_withdrawals` throws. A restore empties it and writes the backup's.
+5. **The stamp.** Appending a withdrawal changes `LogStamp`, and a snapshot from before it is not used.
+6. **JSONL.** Export, then import, gives the same withdrawals. A line of an unknown type is still skipped by the decoder.
+7. **Unconfirmed moments.** `placed_at {es: [T0 < cut-off, T1 >= cut-off]}`, no `placed_by`: unconfirmed is {T1}. After Keep it is empty. A new stamped `T2` is never unconfirmed. Evaluating twice gives the same answer. A settings map restored without `placed_by` or `placement_kept` gives {T1} again.
+8. **The owner's case,** end to end in the app layer: credit Read decks 0 to 107 at `T1`; a run placing Read at the start; Use the new level. Then:
+   - no state for an uncredited, unreviewed card of decks 0 to 107 in recognition;
+   - a card with a real review keeps it;
+   - `placedDecks` has no Spanish deck;
+   - the Read label is the new one, and Verified for read is cleared;
+   - the row is no longer "Check your level again".
+9. **Keep the old level:** the log and the states are unchanged, and the row returns to Find or Fit my level.
+10. **The check proves more** (Read at unit 120 against 108): no withdrawal, and credit is added on decks 108 to 119 at a stamped moment.
+11. **An untested skill** (Hear credited, not in the run) keeps its credit.
+12. **`selectFindLevelSkills` with `autoKnown`:**
+    - Spanish with Read and Write in Latin known from English gives verifying false, with read and write among the learning skills.
+    - Marathi with Devanagari Read known from Hindi has the Script skill among those verified and word Read learning.
+    - A Read marked Know by the learner with no auto-known source still verifies.
+13. **Migration 11** run twice (cut off part-way) succeeds and leaves one table with its triggers. `reviews` is untouched.
+
+*17.10 As built for 0.9.2 (2026-11-07, `wip/placement-repair`, schema 11 claimed in #1063).* Built as specified. Where the code is:
+- `lib/core/scheduling/placement_withdrawal.dart`: `PlacementWithdrawal`, `isWithdrawnCredit`, `withoutWithdrawnCredit` (the filter, which also returns what it left out) and `withdrawalsAbove` (step 1 of 17.3). The filter runs in `openLog` (the isolate), `ReviewLog.replay` and `MemoryProgress._replace`, so memory, database and the snapshot build agree. The language of a deck is its id's first segment (`deckLanguage`), as everywhere in the log.
+- `lib/core/data`: `tables/placement_withdrawals.dart`, migration 11 (step written like step 8, and a step cut off after the table gives it its triggers), `PlacementWithdrawalsDao`, `LogStamp` (a `w<count>:<digest>` part), `SnapshotJob`/`OpenJob` (withdrawals), `LogJsonl` (`withdrawal` lines, tolerant, no version bump), and `AppDatabase.replaceLog` (a restore empties the table with the log and writes the backup's).
+- `lib/core/placement/placement_check.dart`: `kPlacementModel`, `kPlacementCheckFrom`, `unconfirmedMoments`. `lib/core/placement/skills_in_play.dart`: `selectFindLevelSkills(autoKnown:)`.
+- `lib/app`: `settings.dart` (`placed_by`, `placement_kept`), `placement_credit.dart` (every credit is stamped with model 2, the older placement test's too, so only 0.9.0 and 0.9.1 credit is flagged), `placement_recheck.dart` (`unconfirmedMomentsOf`, `creditedLevelsOf`, `keepOldLevel`, `autoKnownKeysOf`), `placement_run_setup.dart` (`writePlacementRun(recheck: true)`), `database_progress.dart` and `memory_progress.dart` (`withdrawCredit`, `withdrawals`, `withdrawnReviews`).
+- `lib/features`: the sheet's level row, `find_level_comparison.dart`, `find_level_run_page.dart` (`recheck`), `find_level_flow.dart`, and the restore sheet's note for a backup from a newer version.
+
+Decisions the build made where the spec was silent:
+- **Unconfirmed also needs credit left in the log.** A moment whose credit is all withdrawn (or deleted) is not unconfirmed; this is how "not fully withdrawn" is computed, from the replayed log, and the log is only read when `placed_at` holds a moment that could be flagged.
+- **Use the new level also keeps the moments that were flagged** (they join `placement_kept`). Without it, a partial withdrawal (new level above the start) would leave the older moment's remaining credit flagged for ever. A skill the run did not test keeps its credit, and is not asked again by the row.
+- **Export still holds the withdrawn reviews.** Memory keeps the reviews the filter left out (`withdrawnReviews`), read by the second each withdrawal names, so a backup or export is the whole log. A snapshot holds only the replayed events, so `DatabaseProgress` reads those few rows after opening.
+- **Script skills** in the comparison show the run's own line (known or not), not a unit before and now; their credit is withdrawn above the new standing as 17.3 says.
+- **Does placement credit enter a fit?** The spec says it does not; the code shows it does, as a rated first review (`SkillFit.histories` keeps every review except a walkthrough's view, and credit has no answer, so it counts as rated). Withdrawn credit does not enter any fit after the filter. Credit that has not been withdrawn is left as it was: changing what a fit reads is a change to every learner's fit, and is for its own pull request.

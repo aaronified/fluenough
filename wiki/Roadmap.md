@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.9.1**
 - **v0.9.0**
 - **v0.8.6**
 - **v0.8.5**
@@ -303,6 +304,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
+- [#1063](https://github.com/aaronified/fluenough/issues/1063) Database schema 11: placement_withdrawals (repair of placements made by 0.9.0, for 0.9.2)
 
 ## Plans
 

@@ -200,12 +200,15 @@ before you start.
 `reviews` is an **append-only log** — never update or delete a row in it. It is
 the only table whose loss is irreparable; everything else can be rebuilt from
 it. See [ADR-0005](https://github.com/aaronified/fluenough/wiki/ADR-0005-Scheduling). `leech_actions` is
-append-only in the same way.
+append-only in the same way, and so is `placement_withdrawals` (migration 11,
+placement credit the learner took back; the replay leaves out exactly the
+reviews a withdrawal names, and no review is ever touched).
 
 There are **two exceptions**, and only two. The first (owner, 2026-10-17:
-"Logged exception"): a restore from a backup that the learner has confirmed, after
-the app has kept a copy of what it replaces, empties `reviews` and
-`leech_actions` and writes the backup's in their place. It goes only
+"Logged exception"): a restore from a backup that the learner has confirmed,
+after the app has kept a copy of what it replaces, empties `reviews`,
+`leech_actions` and `placement_withdrawals` and writes the backup's in their
+place. It goes only
 through `AppDatabase.replaceLog`, in one transaction with the import, and
 appends a row to the append-only `restores` table saying when, from which
 backup, and where the kept copy is. Nothing else may call it.

@@ -143,6 +143,8 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, Set<String>> _collapsedLevels = const <String, Set<String>>{};
   Map<String, PlacedReview> _placedReview = const <String, PlacedReview>{};
   Map<String, Set<int>> _placedAt = const <String, Set<int>>{};
+  Map<String, Map<int, int>> _placedBy = const <String, Map<int, int>>{};
+  Map<String, Set<int>> _placementKept = const <String, Set<int>>{};
   Map<String, Set<String>> _verifiedSkills = const <String, Set<String>>{};
   Map<String, Map<String, String>> _skillLabels =
       const <String, Map<String, String>>{};
@@ -795,6 +797,42 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The moments of [language]'s credit that carry a model stamp
+  /// (`placed_by`): every credit Find my level writes from 0.9.2 on is
+  /// stamped with the model that made it, so it is never unconfirmed (wiki,
+  /// Plan-Placement-V2, point 17.1).
+  Set<int> placedByOf(String language) =>
+      (_placedBy[language] ?? const <int, int>{}).keys.toSet();
+
+  /// Stamps the credit of [language] made at [seconds] as made by [model]
+  /// (`kPlacementModel`). `placed_at` keeps its own format, and an older app
+  /// ignores this key.
+  void stampPlacedBy(String language, int seconds, int model) {
+    final was = _placedBy[language] ?? const <int, int>{};
+    if (was[seconds] == model) return;
+    _placedBy = Map<String, Map<int, int>>.unmodifiable(<String, Map<int, int>>{
+      ..._placedBy,
+      language: Map<int, int>.unmodifiable(<int, int>{...was, seconds: model}),
+    });
+    notifyListeners();
+  }
+
+  /// The moments of [language]'s credit the learner chose to keep at a Check
+  /// again (`placement_kept`).
+  Set<int> placementKeptOf(String language) =>
+      _placementKept[language] ?? const <int>{};
+
+  void keepPlacementMoments(String language, Iterable<int> seconds) {
+    final was = _placementKept[language] ?? const <int>{};
+    final next = <int>{...was, ...seconds};
+    if (next.length == was.length) return;
+    _placementKept = Map<String, Set<int>>.unmodifiable(<String, Set<int>>{
+      ..._placementKept,
+      language: Set<int>.unmodifiable(next),
+    });
+    notifyListeners();
+  }
+
   /// The skills of [language] that Find my level has verified, by their names
   /// in a run (`read`, `hear`, `say`, `write`, `script`, `secondScript`):
   /// the learner showed the whole course up to B1 in each (wiki,
@@ -1292,6 +1330,17 @@ class SettingsNotifier extends ChangeNotifier {
       for (final MapEntry(:key, :value) in _placedAt.entries)
         key: value.toList()..sort(),
     }),
+    'placed_by': jsonEncode(<String, Map<String, int>>{
+      for (final MapEntry(:key, :value) in _placedBy.entries)
+        key: <String, int>{
+          for (final MapEntry(key: second, value: model) in value.entries)
+            '$second': model,
+        },
+    }),
+    'placement_kept': jsonEncode(<String, List<int>>{
+      for (final MapEntry(:key, :value) in _placementKept.entries)
+        key: value.toList()..sort(),
+    }),
     'verified_skills': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _verifiedSkills.entries)
         key: value.toList()..sort(),
@@ -1630,6 +1679,26 @@ class SettingsNotifier extends ChangeNotifier {
         for (final seconds in value) {
           if (seconds is int) addPlacedAt(key, seconds);
         }
+      }
+    }
+    if (pick('placed_by', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        for (final MapEntry(key: second, value: model) in value.entries) {
+          final seconds = second is String ? int.tryParse(second) : null;
+          if (seconds != null && model is int) {
+            stampPlacedBy(key, seconds, model);
+          }
+        }
+      }
+    }
+    if (pick('placement_kept', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        keepPlacementMoments(key, <int>[
+          for (final seconds in value)
+            if (seconds is int) seconds,
+        ]);
       }
     }
     if (pick('verified_skills', _parseJsonMap) case final v?) {

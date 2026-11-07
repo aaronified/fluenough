@@ -1,5 +1,6 @@
 import '../core/models/card.dart';
 import '../core/models/drill_mode.dart';
+import '../core/placement/placement_check.dart';
 import '../core/scheduling/ask.dart';
 import 'app_state.dart';
 import 'placement.dart';
@@ -114,7 +115,11 @@ extension PlacementCredit on AppState {
     // The moment is kept, so that these reviews are known for the words
     // placement credited (#761), and the course's choice of how they are
     // reviewed applies to them alone.
-    settings.addPlacedAt(code, at.millisecondsSinceEpoch ~/ 1000);
+    final moment = at.millisecondsSinceEpoch ~/ 1000;
+    settings.addPlacedAt(code, moment);
+    // From 0.9.2 on every credit says which model made it, so that it is
+    // never taken for an earlier version's (wiki, Plan-Placement-V2, 17.1).
+    settings.stampPlacedBy(code, moment, kPlacementModel);
     return written;
   }
 }

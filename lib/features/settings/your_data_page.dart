@@ -250,6 +250,7 @@ class _BodyState extends State<_Body> {
         backup.reviews,
         backup.leechActions,
         fitted: backup.fitted,
+        withdrawals: backup.withdrawals,
       );
     } on FormatException catch (e) {
       state.log.warning('Review log not imported: not a backup');
