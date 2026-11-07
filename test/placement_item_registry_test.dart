@@ -290,9 +290,10 @@ void main() {
         for (final v in cx.vocab) {
           (byGloss[v.gloss] ??= <VocabWord>[]).add(v);
         }
-        final byDisplay = <String, VocabWord>{
-          for (final v in cx.vocab) v.display: v,
-        };
+        final byDisplay = <String, List<VocabWord>>{};
+        for (final v in cx.vocab) {
+          (byDisplay[v.display] ??= <VocabWord>[]).add(v);
+        }
         var withLure = 0;
         var oddWords = 0;
         final f2 = of('F2').toList();
@@ -325,15 +326,21 @@ void main() {
         expect(oddWords / f2.length, lessThanOrEqualTo(0.02));
         var loose = 0;
         for (final it in of('F3')) {
-          final card = byDisplay[it.options[it.correct]]!;
-          expect(card.gloss, it.prompt);
+          // Two cards may share a spelling (homographs): the right option is
+          // the one whose meaning is the prompt.
+          final card = byDisplay[it.options[it.correct]]!.firstWhere(
+            (v) => v.gloss == it.prompt,
+          );
+          expect(it.options.toSet().length, 4, reason: it.id);
           final shaped = <String>[
             for (final o in it.options)
               if (o != it.options[it.correct])
-                if (byDisplay[o] case final v?)
-                  if (v.pos == card.pos &&
-                      (v.units.length - card.units.length).abs() <= 2)
-                    o,
+                if ((byDisplay[o] ?? const <VocabWord>[]).any(
+                  (v) =>
+                      v.pos == card.pos &&
+                      (v.units.length - card.units.length).abs() <= 2,
+                ))
+                  o,
           ];
           // Two of the three wrong options match the shape; one may be the
           // look-alike lure.

@@ -370,6 +370,7 @@ class ItemGenerators {
       if (o.glossHead.isNotEmpty && o.glossHead == v.glossHead) return false;
       if (o.gloss.toLowerCase() == v.gloss.toLowerCase()) return false;
       if (o.lemma == v.lemma) return false;
+      if (o.display == v.display) return false;
       if (o.article != v.article && (o.article.isEmpty != v.article.isEmpty)) {
         return false;
       }
@@ -397,6 +398,7 @@ class ItemGenerators {
     for (final o in pool) {
       if (taken.contains(o.card.id) || o.card.id == v.card.id) continue;
       if (o.glossHead == v.glossHead || o.lemma == v.lemma) continue;
+      if (o.display == v.display) continue;
       final s = wordSimilarity(text(o), like, cx.data.language);
       if (s > bestScore) {
         best = o;
