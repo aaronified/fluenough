@@ -119,6 +119,7 @@ class FailingProgress extends MemoryProgress {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
     required RestoreRecord restore,
   }) => throw StateError('disk full');
 }

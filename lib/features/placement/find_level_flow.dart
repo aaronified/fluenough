@@ -5,6 +5,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_info.dart';
 import '../../app/app_state.dart';
 import '../../app/placement_plan.dart';
+import '../../app/placement_recheck.dart';
 import '../../app/placement_run_setup.dart';
 import '../../core/languages/language_skills.dart';
 import '../../core/placement/assurance_model.dart';
@@ -16,6 +17,7 @@ import '../../core/placement/saved_run.dart';
 import '../../core/placement/skills_in_play.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
+import 'find_level_comparison.dart';
 import 'find_level_declaration.dart';
 import 'find_level_run_page.dart';
 
@@ -36,6 +38,9 @@ FindLevelSkills findLevelSkillsOf(
   shape,
   verified: state.settings.verifiedSkillsOf(code),
   scripts: scripts ?? findLevelScriptNames(state, code),
+  // Letters known from another language are not words known (owner,
+  // 2026-11-07): worked out now, never stored.
+  autoKnown: state.autoKnownKeysOf(code, shape),
 );
 
 /// The names of [code]'s own scripts, in path order, as
@@ -85,6 +90,12 @@ Future<void> startFindLevel(
   final canSpeak =
       state.canHearAfterAsking(plan.language) &&
       state.canHearAfterAsking(plan.native);
+  // A Check again: the credit an earlier version wrote and the learner has not
+  // confirmed (point 17). The run is the same, and its end shows both levels.
+  final unconfirmed = state.unconfirmedMomentsOf(code).isNotEmpty;
+  final before = unconfirmed
+      ? state.creditedLevelsOf(code, plan)
+      : const <PlacementSkill, int>{};
   final deckSet = placementDeckSetKey(plan.data);
   int nowSeconds() => state.now().millisecondsSinceEpoch ~/ 1000;
 
@@ -157,11 +168,12 @@ Future<void> startFindLevel(
     seed = saved.seed;
     microphone = saved.microphone;
   } else {
-    if (pick.skills.isEmpty) {
+    final wanted = <PlacementSkill>{...pick.skills, ...before.keys};
+    if (wanted.isEmpty) {
       showAppSnackBar(context, l10n.findLevelNothingToCheck);
       return;
     }
-    inPlay = placementSkillsForDevice(pick.skills, voice: canPlay);
+    inPlay = placementSkillsForDevice(wanted, voice: canPlay);
     // Hear was the only skill and there is no voice: nothing can be checked,
     // so nothing is asked and nothing is written.
     if (inPlay.isEmpty) {
@@ -236,6 +248,7 @@ Future<void> startFindLevel(
   // The run that no longer fits this phone is replaced now that the new one
   // begins.
   if (droppedForDevice) settings.setPlacementRun(code, null);
+  String? toast;
   final done = await navigator.push<bool>(
     MaterialPageRoute<bool>(
       settings: const RouteSettings(name: '/find-level'),
@@ -250,10 +263,29 @@ Future<void> startFindLevel(
         // write that throws keeps the run to be carried on.
         onFinish: (finished) =>
             state.writePlacementRun(code, plan, finished.run, native: native),
+        recheck: unconfirmed
+            ? FindLevelRecheck(
+                before: before,
+                onUse: () {
+                  state.writePlacementRun(
+                    code,
+                    plan,
+                    session.run,
+                    native: native,
+                    recheck: true,
+                  );
+                  toast = l10n.findLevelToastNewSet(name);
+                },
+                onKeep: () {
+                  state.keepOldLevel(code);
+                  toast = l10n.findLevelToastOldKept(name);
+                },
+              )
+            : null,
       ),
     ),
   );
   if (done == true && context.mounted) {
-    showAppSnackBar(context, l10n.languagesToastLevel(name));
+    showAppSnackBar(context, toast ?? l10n.languagesToastLevel(name));
   }
 }

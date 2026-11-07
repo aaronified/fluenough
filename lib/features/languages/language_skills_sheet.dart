@@ -9,6 +9,7 @@ import '../../app/deck_downloads.dart';
 import '../../app/language_offer.dart';
 import '../../app/language_skills.dart';
 import '../../app/placement_plan.dart';
+import '../../app/placement_recheck.dart';
 import '../../core/data/spoken_languages.dart' show SpokenLanguage;
 import '../../core/decks/font_check.dart';
 import '../../core/decks/language_catalog.dart';
@@ -901,15 +902,22 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
       shape: _shape,
       scripts: _scriptsForLevel,
     ).verifying;
+    // A level an earlier version found, which the learner has not confirmed
+    // (wiki, Plan-Placement-V2, point 17.5).
+    final again = _state.unconfirmedMomentsOf(_code).isNotEmpty;
     return _LinkRow(
       key: const ValueKey<String>('languages-level'),
       icon: Icons.flag_outlined,
-      title: verifying
+      title: again
+          ? l10n.languagesCheckAgain
+          : verifying
           ? l10n.languagesVerifyKnown
           : found
           ? l10n.languagesFitMyLevel
           : l10n.languagesFindLevel,
-      subtitle: verifying
+      subtitle: again
+          ? l10n.languagesCheckAgainSub
+          : verifying
           ? l10n.languagesVerifyKnownSub
           : found
           ? l10n.languagesLevelFoundSub

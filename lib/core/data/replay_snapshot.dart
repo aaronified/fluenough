@@ -6,6 +6,7 @@ import '../models/leech_action.dart';
 import '../models/review_event.dart';
 import '../scheduling/ask.dart';
 import '../scheduling/fsrs.dart';
+import '../scheduling/placement_withdrawal.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/skill_parameters.dart';
 
@@ -547,8 +548,28 @@ class LogStamp {
     required int sumElapsed,
     required Iterable<LeechAction> leechActions,
     required Map<SkillKey, FittedParameters> fitted,
+    Iterable<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
   }) {
     final actions = leechActions.toList();
+    // The withdrawals change what the replay gives without changing a row of
+    // `reviews`, so a snapshot made before one is never good after it.
+    final taken = withdrawals.toList();
+    final takenText = StringBuffer();
+    for (final w in taken) {
+      takenText
+        ..write(w.at.microsecondsSinceEpoch)
+        ..write(',')
+        ..write(w.language)
+        ..write(',')
+        ..write(w.creditAt)
+        ..write(',')
+        ..write(w.modeNames.join('+'))
+        ..write(',')
+        ..write(w.script ?? '')
+        ..write(',')
+        ..write(w.sortedDeckIds.join('+'))
+        ..write(';');
+    }
     final buffer = StringBuffer();
     for (final a in actions) {
       buffer
@@ -569,6 +590,7 @@ class LogStamp {
           '$sumElapsed',
       'l${actions.length}:${_digest(buffer.toString())}',
       'f${fitted.length}:${_fittedDigest(fitted)}',
+      'w${taken.length}:${_digest(takenText.toString())}',
     ];
     return LogStamp._(parts.join('|'), reviews);
   }
