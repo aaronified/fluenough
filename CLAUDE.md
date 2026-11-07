@@ -21,7 +21,7 @@ ones that matter most; read the section before acting on one.
 - **No tags:** never create or push git tags; only the owner tags releases ([Tags](#tags-owner-2026-10-12)).
 - **Off limits:** `homelab-stacks` is never cloned, modified or pushed to ([Repositories off limits](#repositories-off-limits-owner-2026-10-12)).
 - **Releases:** the owner runs the Release workflow; each PR adds its own CHANGELOG line; deck content stays out of a release ([Releases and milestones](#releases-and-milestones)).
-- **Top priorities after the placement release** (owner, 2026-11-07): 1. private decks, 2. on-device voice recognition, after placement V3 and its bugfix release, before other new feature work ([Releases and milestones](#releases-and-milestones)).
+- **Top priorities after the placement release** (owner, 2026-11-07): 1. private decks, 2. on-device voice recognition, both recorded for later; the session that ships the placement bugfix release stops there, and no agent starts them without a new owner instruction ([Releases and milestones](#releases-and-milestones)).
 - **Deck work:** the language lists, priorities and what is in scope this week, and the order after the placement fix, are in one place; deck PRs are large, and `tools/deck_index.py` is never run locally ([Content and decks](#content-and-decks)).
 - **Decks live on `decks-live`** (owner, 2026-11-06): deck PRs target it; its index and review queue are regenerated there; `decks/themes.yaml` is edited only on main ([Content and decks](#content-and-decks)).
 - **Card ids are permanent**, YAML scalars are quoted, and `lib/core` has no Flutter imports ([AGENTS.md](AGENTS.md)).
@@ -166,7 +166,7 @@ contributor.
   it (#484). Tidy issues and plans after work lands, and close issues when done. Tag new issues to a
   milestone only as the owner says.
 - **Current milestone** (owner, 2026-11-06: "We are now working on 0.9.0"). Milestone 0.9.0 exists, and new work is recorded against it.
-- **Top priorities after the placement release** (owner, 2026-11-07: "After the release these will be the top priorities: 1. Private decks 2. On device voice recognition"). Once the placement rebuild (V3) and its bugfix release are out, work on, in this order: 1. Private decks (private custom language courses; issue #1017, wiki Plan-Private-Languages / Plan-Profiles pages), 2. On-device voice recognition (offline recogniser, issue #1004, wiki Plan-Speech-Offline-Alert, ADR-0054 notes). These come before any other new feature work; deck content work stays paused until the owner resumes it.
+- **Top priorities after the placement release** (owner, 2026-11-07: "After the release these will be the top priorities: 1. Private decks 2. On device voice recognition"; "Do not build them. You will stop at the release."). After the placement rebuild (V3) and its bugfix release, these two are the next items, in this order: 1. Private decks (private custom language courses; issue #1017, wiki Plan-Private-Languages / Plan-Profiles pages), 2. On-device voice recognition (offline recogniser, issue #1004, wiki Plan-Speech-Offline-Alert, ADR-0054 notes). The session that ships the placement bugfix release stops there. No agent builds either item without a new instruction from the owner, and deck content work stays paused until the owner resumes it.
 
 ## Content and decks
 
