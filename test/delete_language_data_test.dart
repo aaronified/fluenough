@@ -14,7 +14,6 @@ import 'package:fluenough/app/database_progress.dart';
 import 'package:fluenough/app/language_data_deletion.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/core/data/database.dart';
-import 'package:fluenough/core/data/review_erasure.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/placed_review.dart';
@@ -98,7 +97,7 @@ void main() {
         throwsA(anything),
       );
       await expectLater(
-        db.customStatement("UPDATE reviews SET grade = 1"),
+        db.customStatement('UPDATE reviews SET grade = 1'),
         throwsA(anything),
       );
     });
@@ -405,8 +404,8 @@ void main() {
 
 Future<void> tapKey(WidgetTester tester, String key) async {
   final finder = find.byKey(ValueKey<String>(key));
-  await tester.ensureVisible(finder);
-  await tester.pump();
+  await Scrollable.ensureVisible(tester.element(finder), alignment: 0.5);
+  await tester.pumpAndSettle();
   await tester.tap(finder);
 }
 
