@@ -1,0 +1,267 @@
+schema: 1
+id: "ml-en-work"
+kind: "layer"
+core: "ml-work"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Work"
+description: "Jobs and workplaces: office, hospital, school, teacher, doctor, nurse, farmer, cook, trader, mechanic, engineer, policeman, bank, factory, work, salary, student and worker. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0185":
+    native: "office"
+    notes:
+      n1: "office"
+    examples:
+      "ഓഫീസ് ഇവിടെ.":
+        native: "The office is here."
+        bases:
+          "ഓഫീസ്": "office"
+      "ഞാൻ ഓഫീസിൽ പോകുന്നു":
+        native: "I go to the office."
+        bases:
+          "ഓഫീസിൽ": "office"
+          "പോകുന്നു": "go"
+  "ml-0186":
+    native: "hospital"
+    notes:
+      n1: "hospital"
+    examples:
+      "ആശുപത്രി എവിടെ?":
+        native: "Where is the hospital?"
+        bases:
+          "ആശുപത്രി": "hospital"
+      "അമ്മ ആശുപത്രിയിൽ":
+        native: "Mother is at the hospital."
+        bases:
+          "ആശുപത്രിയിൽ": "hospital"
+  "ml-0187":
+    native: "school"
+    notes:
+      n1: "school"
+    examples:
+      "കുട്ടി സ്കൂളിൽ പോകുന്നു":
+        native: "The child goes to school."
+        bases:
+          "സ്കൂളിൽ": "school"
+          "പോകുന്നു": "goes"
+      "സ്കൂൾ അകലെ":
+        native: "The school is far."
+        bases:
+          "സ്കൂൾ": "school"
+  "ml-0188":
+    native: "teacher (man)"
+    notes:
+      n1: "teacher (man)"
+    examples:
+      "എന്റെ അച്ഛൻ അധ്യാപകൻ.":
+        native: "My father is a teacher."
+        bases:
+          "അധ്യാപകൻ": "teacher (man)"
+      "അധ്യാപകൻ ഇവിടെ.":
+        native: "The teacher is here."
+        bases:
+          "അധ്യാപകൻ": "teacher (man)"
+  "ml-0189":
+    native: "teacher (woman)"
+    notes:
+      n1: "teacher (woman)"
+    examples:
+      "എന്റെ അമ്മ അധ്യാപിക.":
+        native: "My mother is a teacher."
+        bases:
+          "അധ്യാപിക": "teacher (woman)"
+      "അധ്യാപിക വരുന്നു":
+        native: "The teacher is coming."
+        bases:
+          "അധ്യാപിക": "teacher (woman)"
+          "വരുന്നു": "is coming"
+  "ml-0190":
+    native: "doctor"
+    notes:
+      n1: "doctor"
+    examples:
+      "ഡോക്ടർ ഇവിടെ.":
+        native: "The doctor is here."
+        bases:
+          "ഡോക്ടർ": "doctor"
+      "എന്റെ ചേച്ചി ഡോക്ടർ.":
+        native: "My older sister is a doctor."
+        bases:
+          "ഡോക്ടർ": "doctor"
+  "ml-0191":
+    native: "nurse"
+    notes:
+      n1: "nurse"
+    examples:
+      "ചേച്ചി നഴ്സ്.":
+        native: "My older sister is a nurse."
+        bases:
+          "നഴ്സ്": "nurse"
+      "നഴ്സ് ആശുപത്രിയിൽ":
+        native: "The nurse is at the hospital."
+        bases:
+          "നഴ്സ്": "nurse"
+  "ml-0192":
+    native: "farmer"
+    notes:
+      n1: "farmer"
+    examples:
+      "അച്ഛൻ കർഷകൻ.":
+        native: "Father is a farmer."
+        bases:
+          "കർഷകൻ": "farmer"
+      "കർഷകൻ വയലിൽ":
+        native: "The farmer is in the field."
+        bases:
+          "കർഷകൻ": "farmer"
+          "വയലിൽ": "in the field"
+  "ml-0193":
+    native: "cook (man)"
+    notes:
+      n1: "cook (man)"
+    examples:
+      "പാചകക്കാരൻ ഇവിടെ.":
+        native: "The cook is here."
+        bases:
+          "പാചകക്കാരൻ": "cook (man)"
+      "എന്റെ അമ്മാവൻ പാചകക്കാരൻ.":
+        native: "My uncle is a cook."
+        bases:
+          "പാചകക്കാരൻ": "cook (man)"
+  "ml-0194":
+    native: "trader; shopkeeper (man)"
+    notes:
+      n1: "trader; shopkeeper (man)"
+    examples:
+      "എന്റെ ചേട്ടൻ കച്ചവടക്കാരൻ.":
+        native: "My older brother is a trader."
+        bases:
+          "കച്ചവടക്കാരൻ": "trader; shopkeeper (man)"
+      "കച്ചവടക്കാരൻ കടയിൽ":
+        native: "The trader is in the shop."
+        bases:
+          "കച്ചവടക്കാരൻ": "trader; shopkeeper (man)"
+          "കടയിൽ": "in the shop"
+  "ml-0195":
+    native: "mechanic"
+    notes:
+      n1: "mechanic"
+    examples:
+      "മെക്കാനിക്ക് വണ്ടി നന്നാക്കുന്നു":
+        native: "The mechanic repairs the vehicle."
+        bases:
+          "മെക്കാനിക്ക്": "mechanic"
+          "വണ്ടി": "vehicle"
+          "നന്നാക്കുന്നു": "repairs"
+      "എന്റെ ചേട്ടൻ മെക്കാനിക്ക്.":
+        native: "My older brother is a mechanic."
+        bases:
+          "മെക്കാനിക്ക്": "mechanic"
+  "ml-0196":
+    native: "engineer"
+    notes:
+      n1: "engineer"
+    examples:
+      "എന്റെ ചേച്ചി എഞ്ചിനീയർ.":
+        native: "My older sister is an engineer."
+        bases:
+          "എഞ്ചിനീയർ": "engineer"
+      "എഞ്ചിനീയർ ഓഫീസിൽ":
+        native: "The engineer is at the office."
+        bases:
+          "എഞ്ചിനീയർ": "engineer"
+  "ml-0197":
+    native: "policeman"
+    notes:
+      n1: "policeman"
+    examples:
+      "പോലീസുകാരൻ ഇവിടെ.":
+        native: "The policeman is here."
+        bases:
+          "പോലീസുകാരൻ": "policeman"
+      "എന്റെ അനിയൻ പോലീസുകാരൻ.":
+        native: "My younger brother is a policeman."
+        bases:
+          "പോലീസുകാരൻ": "policeman"
+  "ml-0198":
+    native: "bank"
+    notes:
+      n1: "bank"
+    examples:
+      "ബാങ്ക് എവിടെ?":
+        native: "Where is the bank?"
+        bases:
+          "ബാങ്ക്": "bank"
+      "ഞാൻ ബാങ്കിൽ പോകുന്നു":
+        native: "I go to the bank."
+        bases:
+          "ബാങ്കിൽ": "bank"
+          "പോകുന്നു": "go"
+  "ml-0199":
+    native: "factory"
+    notes:
+      n1: "factory"
+    examples:
+      "ഫാക്ടറി ഇവിടെ.":
+        native: "The factory is here."
+        bases:
+          "ഫാക്ടറി": "factory"
+      "അച്ഛൻ ഫാക്ടറിയിൽ ജോലി ചെയ്യുന്നു":
+        native: "Father works at the factory."
+        bases:
+          "ഫാക്ടറിയിൽ": "factory"
+          "ചെയ്യുന്നു": "works"
+  "ml-0200":
+    native: "work; employment"
+    notes:
+      n1: "work; employment"
+    examples:
+      "നല്ല തൊഴിൽ.":
+        native: "A good job."
+        bases:
+          "തൊഴിൽ": "work; employment"
+      "തൊഴിൽ ഇല്ല.":
+        native: "There is no work."
+        bases:
+          "തൊഴിൽ": "work; employment"
+  "ml-0201":
+    native: "salary; pay"
+    notes:
+      n1: "salary; pay"
+    examples:
+      "ശമ്പളം നല്ലത്":
+        native: "The salary is good."
+        bases:
+          "ശമ്പളം": "salary; pay"
+      "ശമ്പളം എത്ര?":
+        native: "How much is the salary?"
+        bases:
+          "ശമ്പളം": "salary; pay"
+  "ml-0202":
+    native: "student"
+    notes:
+      n1: "student"
+    examples:
+      "ചേട്ടൻ വിദ്യാർത്ഥി.":
+        native: "My older brother is a student."
+        bases:
+          "വിദ്യാർത്ഥി": "student"
+      "വിദ്യാർത്ഥി സ്കൂളിൽ":
+        native: "The student is at school."
+        bases:
+          "വിദ്യാർത്ഥി": "student"
+  "ml-0203":
+    native: "worker (man)"
+    notes:
+      n1: "worker (man)"
+    examples:
+      "ജോലിക്കാരൻ വരുന്നു":
+        native: "The worker is coming."
+        bases:
+          "ജോലിക്കാരൻ": "worker (man)"
+          "വരുന്നു": "is coming"
+      "ജോലിക്കാരൻ ഓഫീസിൽ":
+        native: "The worker is at the office."
+        bases:
+          "ജോലിക്കാരൻ": "worker (man)"

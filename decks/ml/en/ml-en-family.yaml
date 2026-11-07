@@ -1,0 +1,253 @@
+schema: 1
+id: "ml-en-family"
+kind: "layer"
+core: "ml-family"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Family"
+description: "Family members, from parents and children to brothers, sisters, uncles and aunts. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0069":
+    native: "family"
+    notes:
+      n1: "The whole family, as a household or as a group of relatives."
+    examples:
+      "എന്റെ കുടുംബം.":
+        native: "My family."
+        bases:
+          "കുടുംബം": "family"
+      "ഇത് എന്റെ കുടുംബം.":
+        native: "This is my family."
+        bases:
+          "ഇത്": "this"
+          "കുടുംബം": "family"
+  "ml-0070":
+    native: "father"
+    notes:
+      n1: "A father, as the male parent."
+    examples:
+      "ഇത് അച്ഛൻ.":
+        native: "This is my father."
+        bases:
+          "ഇത്": "this"
+          "അച്ഛൻ": "father"
+      "എന്റെ അച്ഛൻ ഡോക്ടർ.":
+        native: "My father is a doctor."
+        bases:
+          "അച്ഛൻ": "father"
+          "ഡോക്ടർ": "doctor"
+  "ml-0071":
+    native: "mother"
+    notes:
+      n1: "A mother, as the female parent."
+    examples:
+      "ഇത് അമ്മ.":
+        native: "This is my mother."
+        bases:
+          "ഇത്": "this"
+          "അമ്മ": "mother"
+      "എന്റെ അമ്മ വീട്ടിൽ.":
+        native: "My mother is at home."
+        bases:
+          "അമ്മ": "mother"
+  "ml-0072":
+    native: "son"
+    notes:
+      n1: "A son, a male child of the parent."
+    examples:
+      "എന്റെ മകൻ.":
+        native: "My son."
+        bases:
+          "മകൻ": "son"
+      "മകൻ ഇവിടെ.":
+        native: "The son is here."
+        bases:
+          "മകൻ": "son"
+  "ml-0073":
+    native: "daughter"
+    notes:
+      n1: "A daughter, a female child of the parent."
+    examples:
+      "എന്റെ മകൾ.":
+        native: "My daughter."
+        bases:
+          "മകൾ": "daughter"
+      "മകൾ എവിടെ?":
+        native: "Where is the daughter?"
+        bases:
+          "മകൾ": "daughter"
+  "ml-0074":
+    native: "older brother"
+    notes:
+      n1: "An older brother. A younger brother is a different word."
+    examples:
+      "എന്റെ ചേട്ടൻ.":
+        native: "My older brother."
+        bases:
+          "ചേട്ടൻ": "older brother"
+      "ചേട്ടൻ വരുന്നു.":
+        native: "My older brother is coming."
+        bases:
+          "ചേട്ടൻ": "older brother"
+          "വരുന്നു": "is coming"
+  "ml-0075":
+    native: "older sister"
+    notes:
+      n1: "An older sister. A younger sister is a different word."
+    examples:
+      "എന്റെ ചേച്ചി.":
+        native: "My older sister."
+        bases:
+          "ചേച്ചി": "older sister"
+      "ചേച്ചി വീട്ടിൽ.":
+        native: "My older sister is at home."
+        bases:
+          "ചേച്ചി": "older sister"
+  "ml-0076":
+    native: "younger brother"
+    notes:
+      n1: "A younger brother."
+    examples:
+      "എന്റെ അനിയൻ.":
+        native: "My younger brother."
+        bases:
+          "അനിയൻ": "younger brother"
+      "അനിയൻ ഇവിടെ.":
+        native: "My younger brother is here."
+        bases:
+          "അനിയൻ": "younger brother"
+  "ml-0077":
+    native: "younger sister"
+    notes:
+      n1: "A younger sister."
+    examples:
+      "എന്റെ അനിയത്തി.":
+        native: "My younger sister."
+        bases:
+          "അനിയത്തി": "younger sister"
+      "അനിയത്തി എവിടെ?":
+        native: "Where is my younger sister?"
+        bases:
+          "അനിയത്തി": "younger sister"
+  "ml-0078":
+    native: "grandfather"
+    notes:
+      n1: "A grandfather, on either side of the family."
+    examples:
+      "എന്റെ മുത്തച്ഛൻ.":
+        native: "My grandfather."
+        bases:
+          "മുത്തച്ഛൻ": "grandfather"
+      "മുത്തച്ഛൻ ഇവിടെ.":
+        native: "Grandfather is here."
+        bases:
+          "മുത്തച്ഛൻ": "grandfather"
+  "ml-0079":
+    native: "grandmother"
+    notes:
+      n1: "A grandmother, on either side of the family."
+    examples:
+      "എന്റെ മുത്തശ്ശി.":
+        native: "My grandmother."
+        bases:
+          "മുത്തശ്ശി": "grandmother"
+      "മുത്തശ്ശി വീട്ടിൽ.":
+        native: "Grandmother is at home."
+        bases:
+          "മുത്തശ്ശി": "grandmother"
+  "ml-0080":
+    native: "husband"
+    notes:
+      n1: "A husband, as the word for a married man."
+    examples:
+      "എന്റെ ഭർത്താവ് ഡോക്ടർ.":
+        native: "My husband is a doctor."
+        bases:
+          "ഭർത്താവ്": "husband"
+          "ഡോക്ടർ": "doctor"
+      "ഭർത്താവ് എവിടെ?":
+        native: "Where is the husband?"
+        bases:
+          "ഭർത്താവ്": "husband"
+  "ml-0081":
+    native: "wife"
+    notes:
+      n1: "A wife, as the word for a married woman."
+    examples:
+      "എന്റെ ഭാര്യ ഇവിടെ.":
+        native: "My wife is here."
+        bases:
+          "ഭാര്യ": "wife"
+      "ഭാര്യ എവിടെ?":
+        native: "Where is the wife?"
+        bases:
+          "ഭാര്യ": "wife"
+  "ml-0082":
+    native: "child"
+    notes:
+      n1: "A child, a young person. It is grouped as neuter here; a reviewer may choose a different class."
+    examples:
+      "കുട്ടി ഇവിടെ.":
+        native: "The child is here."
+        bases:
+          "കുട്ടി": "child"
+      "ഇത് ആരുടെ കുട്ടി?":
+        native: "Whose child is this?"
+        bases:
+          "ഇത്": "this"
+          "കുട്ടി": "child"
+  "ml-0083":
+    native: "maternal uncle"
+    notes:
+      n1: "A mother's brother, or an uncle by marriage."
+    examples:
+      "എന്റെ അമ്മാവൻ.":
+        native: "My uncle."
+        bases:
+          "അമ്മാവൻ": "uncle"
+      "അമ്മാവൻ വീട്ടിൽ.":
+        native: "My uncle is at home."
+        bases:
+          "അമ്മാവൻ": "uncle"
+  "ml-0084":
+    native: "aunt"
+    notes:
+      n1: "An aunt, a parent's sister or an uncle's wife."
+    examples:
+      "എന്റെ അമ്മായി.":
+        native: "My aunt."
+        bases:
+          "അമ്മായി": "aunt"
+      "അമ്മായി എവിടെ?":
+        native: "Where is my aunt?"
+        bases:
+          "അമ്മായി": "aunt"
+  "ml-0085":
+    native: "brother"
+    notes:
+      n1: "A brother, without saying whether he is older or younger."
+    examples:
+      "എന്റെ സഹോദരൻ.":
+        native: "My brother."
+        bases:
+          "സഹോദരൻ": "brother"
+      "സഹോദരൻ വരുന്നു.":
+        native: "My brother is coming."
+        bases:
+          "സഹോദരൻ": "brother"
+          "വരുന്നു": "is coming"
+  "ml-0086":
+    native: "sister"
+    notes:
+      n1: "A sister, without saying whether she is older or younger."
+    examples:
+      "എന്റെ സഹോദരി.":
+        native: "My sister."
+        bases:
+          "സഹോദരി": "sister"
+      "സഹോദരി വരുന്നു.":
+        native: "My sister is coming."
+        bases:
+          "സഹോദരി": "sister"
+          "വരുന്നു": "is coming"

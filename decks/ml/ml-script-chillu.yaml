@@ -1,0 +1,72 @@
+schema: 1
+id: "ml-script-chillu"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "ml-0649"
+    target: "ൽ"
+    reading: "l"
+    ipa: "l"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഈ വിരൽ വേദനിക്കുന്നു."
+        reading: "ī viral vēdanikkunnu."
+        ipa: "iː ʋiɾal ʋeːd̪ənikkunnu"
+        bases: [{ word: "ഈ", ref: "ml-0584" }, { word: "വിരൽ", ref: "ml-0318" }, { word: "വേദനിക്കുന്നു", base: "വേദനിക്കുന്നു", reading: "vēdanikkunnu" }]
+      - target: "കാൽ കഴുകൂ."
+        reading: "kāl kaḻukū."
+        ipa: "kaːl kəɻukuː"
+        bases: [{ word: "കാൽ", ref: "ml-0323" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0650"
+    target: "ൾ"
+    reading: "ḷ"
+    ipa: "ɭ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "പഴങ്ങൾ വേണം."
+        reading: "paḻaṅṅaḷ vēṇaṁ."
+        ipa: "pəɻəŋŋaɭ ʋeːɳam"
+        bases: [{ word: "പഴങ്ങൾ", ref: "ml-0239" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "കുട്ടികൾ ഇവിടെ."
+        reading: "kuṭṭikaḷ iviṭe."
+        ipa: "kuʈʈikaɭ iʋiʈe"
+        bases: [{ word: "കുട്ടികൾ", ref: "ml-0082" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0651"
+    target: "ൻ"
+    reading: "ṉ"
+    ipa: "n"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "അവൻ ഇവിടെ."
+        reading: "avaṉ iviṭe."
+        ipa: "əʋan iʋiʈe"
+        bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "ചേട്ടൻ വരുന്നു."
+        reading: "cēṭṭaṉ varunnu."
+        ipa: "tʃeːʈʈan ʋəɾunnu"
+        bases: [{ word: "ചേട്ടൻ", ref: "ml-0074" }, { word: "വരുന്നു", base: "വരുന്നു", reading: "varunnu" }]
+  - id: "ml-0652"
+    target: "ർ"
+    reading: "r"
+    ipa: "ɾ"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഡോക്ടർക്ക് രക്തം വേണം."
+        reading: "ḍōkṭarkk raktaṁ vēṇaṁ."
+        ipa: "ɖoːkʈaɾkk ɾəkt̪am ʋeːɳam"
+        bases: [{ word: "ഡോക്ടർക്ക്", ref: "ml-0190" }, { word: "രക്തം", ref: "ml-0328" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "എഞ്ചിനീയർ ഇവിടെ."
+        reading: "eñcinīyar iviṭe."
+        ipa: "eɲtʃiniːjaɾ iʋiʈe"
+        bases: [{ word: "എഞ്ചിനീയർ", ref: "ml-0196" }, { word: "ഇവിടെ", ref: "ml-0048" }]

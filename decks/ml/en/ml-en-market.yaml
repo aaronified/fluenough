@@ -1,0 +1,107 @@
+schema: 1
+id: "ml-en-market"
+kind: "layer"
+core: "ml-market"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Market"
+description: "At a market: fish, vegetables, meat, price, weight, the market itself and fruit. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0233":
+    native: "fish"
+    notes:
+      n1: "fish"
+    examples:
+      "മീൻ വേണം.":
+        native: "I need fish."
+        bases:
+          "മീൻ": "fish"
+          "വേണം": "need"
+      "മീൻ എവിടെ?":
+        native: "Where is the fish?"
+        bases:
+          "മീൻ": "fish"
+  "ml-0234":
+    native: "vegetables"
+    notes:
+      n1: "vegetables"
+    examples:
+      "പച്ചക്കറി ചന്തയിൽ":
+        native: "The vegetables are at the market."
+        bases:
+          "പച്ചക്കറി": "vegetables"
+      "പച്ചക്കറി വേണം.":
+        native: "I need vegetables."
+        bases:
+          "പച്ചക്കറി": "vegetables"
+          "വേണം": "need"
+  "ml-0235":
+    native: "meat"
+    notes:
+      n1: "meat"
+    examples:
+      "ഇറച്ചി വേണം.":
+        native: "I need meat."
+        bases:
+          "ഇറച്ചി": "meat"
+          "വേണം": "need"
+      "ഇറച്ചിക്ക് എത്ര വില?":
+        native: "How much is the meat?"
+        bases:
+          "ഇറച്ചിക്ക്": "meat"
+  "ml-0236":
+    native: "price; cost"
+    notes:
+      n1: "price; cost"
+    examples:
+      "വില എത്ര?":
+        native: "What is the price?"
+        bases:
+          "വില": "price; cost"
+      "വില കൂടുതൽ.":
+        native: "The price is high."
+        bases:
+          "വില": "price; cost"
+          "കൂടുതൽ": "high; more"
+  "ml-0237":
+    native: "weight"
+    notes:
+      n1: "weight"
+    examples:
+      "തൂക്കം എത്ര?":
+        native: "What is the weight?"
+        bases:
+          "തൂക്കം": "weight"
+      "തൂക്കം കുറവ്.":
+        native: "The weight is less."
+        bases:
+          "തൂക്കം": "weight"
+          "കുറവ്": "less"
+  "ml-0238":
+    native: "market"
+    notes:
+      n1: "market"
+    examples:
+      "ചന്ത എവിടെ?":
+        native: "Where is the market?"
+        bases:
+          "ചന്ത": "market"
+      "ചന്ത അകലെ.":
+        native: "The market is far."
+        bases:
+          "ചന്ത": "market"
+  "ml-0239":
+    native: "fruits"
+    notes:
+      n1: "fruits"
+    examples:
+      "പഴങ്ങൾ വേണം.":
+        native: "I need fruits."
+        bases:
+          "പഴങ്ങൾ": "fruits"
+          "വേണം": "need"
+      "പഴങ്ങൾ എവിടെ?":
+        native: "Where are the fruits?"
+        bases:
+          "പഴങ്ങൾ": "fruits"

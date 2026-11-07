@@ -1,0 +1,142 @@
+schema: 1
+id: "ml-en-script-vowels"
+kind: "layer"
+core: "ml-script-vowels"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam vowels"
+description: "The independent vowels as they are written at the start of a word: short and long a, i, u, the e and o pairs, ai and au. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed", "script"]
+cards:
+  "ml-0581":
+    native: "a, short (the vowel every consonant carries)"
+    notes:
+      n1: "The u of \"but\", a short vowel. Every consonant carries it unless a sign changes it."
+    examples:
+      "അമ്മ വരൂ.":
+        native: "Mother, come."
+        bases: {}
+      "അച്ഛൻ ഇവിടെ ഉണ്ട്.":
+        native: "Father is here."
+        bases: {"ഉണ്ട്": "is here"}
+  "ml-0582":
+    native: "ā, long"
+    notes:
+      n1: "The a of \"father\", held about twice as long as അ (a)."
+    examples:
+      "ആന വലിയതാണ്":
+        native: "The elephant is big."
+        bases: {}
+      "ആട് ഇവിടെ.":
+        native: "The goat is here."
+        bases: {}
+  "ml-0583":
+    native: "i, short"
+    notes:
+      n1: "The i of \"sit\", a short vowel."
+    examples:
+      "ഇവിടെ ഇരിക്കൂ.":
+        native: "Sit here."
+        bases: {}
+      "ഇല്ല, നന്ദി.":
+        native: "No, thank you."
+        bases: {}
+  "ml-0584":
+    native: "ī, long"
+    notes:
+      n1: "The ee of \"see\", held longer than ഇ (i)."
+    examples:
+      "ഈച്ച ഇവിടെ.":
+        native: "The fly is here."
+        bases: {}
+      "ഈ വാച്ച് നല്ലതാണ്.":
+        native: "This watch is good."
+        bases: {"ഈ": "this", "നല്ലതാണ്": "is good"}
+  "ml-0585":
+    native: "u, short"
+    notes:
+      n1: "The u of \"put\", a short vowel."
+    examples:
+      "ഉള്ളി വേണം.":
+        native: "I need onion."
+        bases: {"വേണം": "need"}
+      "ഉറക്കം വേണം.":
+        native: "I need sleep."
+        bases: {"വേണം": "need"}
+  "ml-0586":
+    native: "ū, long"
+    notes:
+      n1: "The oo of \"food\", held longer than ഉ (u)."
+    examples:
+      "ഊണ് വേണോ?":
+        native: "Do you want lunch?"
+        bases: {"വേണോ": "do you want"}
+      "ഊണ് കഴിക്കൂ.":
+        native: "Eat your lunch."
+        bases: {}
+  "ml-0587":
+    native: "e, short"
+    notes:
+      n1: "The e of \"bed\", a short vowel."
+    examples:
+      "എന്റെ ബാഗ് എവിടെ?":
+        native: "Where is my bag?"
+        bases: {}
+      "എലി അടുക്കളയിൽ":
+        native: "The rat is in the kitchen."
+        bases: {}
+  "ml-0588":
+    native: "ē, long"
+    notes:
+      n1: "The ay of \"day\" without the glide, held longer than എ (e)."
+    examples:
+      "ഏത് നിറം?":
+        native: "Which colour?"
+        bases: {}
+      "ഏഴ് മണി.":
+        native: "Seven o'clock."
+        bases: {}
+  "ml-0589":
+    native: "ai"
+    notes:
+      n1: "The i of \"like\", a diphthong: two vowel sounds together."
+    examples:
+      "ഐസ്ക്രീം എത്ര?":
+        native: "How much is the ice cream?"
+        bases: {}
+      "ഐസ്ക്രീം വേണം.":
+        native: "I need ice cream."
+        bases: {"വേണം": "need"}
+  "ml-0590":
+    native: "o, short"
+    notes:
+      n1: "The o of \"hot\", a short vowel."
+    examples:
+      "ഒന്ന് മതി.":
+        native: "One is enough."
+        bases: {}
+      "ഒട്ടകം വലിയതാണ്":
+        native: "The camel is big."
+        bases: {}
+  "ml-0591":
+    native: "ō, long"
+    notes:
+      n1: "The o of \"go\", held longer than ഒ (o)."
+    examples:
+      "ഓഫീസ് എവിടെ?":
+        native: "Where is the office?"
+        bases: {}
+      "ഓറഞ്ച് എടുക്കൂ.":
+        native: "Take an orange."
+        bases: {}
+  "ml-0592":
+    native: "au"
+    notes:
+      n1: "The ow of \"now\", a diphthong."
+    examples:
+      "ഔഷധം ഇവിടെ ഉണ്ട്.":
+        native: "There is medicine here."
+        bases: {"ഔഷധം": "medicine", "ഉണ്ട്": "there is"}
+      "ഔഷധം കഴിക്കൂ.":
+        native: "Take the medicine."
+        bases: {"ഔഷധം": "medicine"}

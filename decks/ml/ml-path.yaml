@@ -124,7 +124,12 @@ regions:
     name: { "en": "Lakshadweep" }
 # The decks that need the alphabet: empty until the script decks are
 # written (see above).
-alphabet: []
+alphabet:
+  - "ml-script-vowels"
+  - "ml-script-consonants"
+  - "ml-script-vowel-signs"
+  - "ml-script-chillu"
+  - "ml-script-conjuncts"
 units:
   # 1. The phrasebook, taught whole from the first lesson. ml-first-words
   # joins this unit.
@@ -133,28 +138,29 @@ units:
   - decks: ["ml-phrasebook", "ml-first-words", "*"]
     words: 10
   # 2. The first word units.
-  - planned: { id: "ml-sound-differences", grammar: "sound-differences", words: 12 }
-    listening_passages:
-      - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
-    reading_passages:
-      - { id: "sound-pairs-list", text: { "en": "A list of word pairs with their readings" } }
-  - planned: { id: "ml-questions", theme: "questions", words: 11 }
+  - decks: ["ml-sound-differences"]
+    words: 8
+  - decks: ["ml-questions", "*"]
+    words: 11
     listening_passages:
       - { id: "yes-or-no", text: { "en": "Short questions answered with yes and no" } }
     reading_passages:
       - { id: "question-cards", text: { "en": "Cards with who, what, where and when" } }
   # ml-addressing joins this unit.
-  - planned: { id: "ml-pronouns", theme: "pronouns", words: 33 }
+  - decks: ["ml-pronouns", "ml-pronouns-sentences", "*"]
+    words: 16
     listening_passages:
       - { id: "polite-or-not", text: { "en": "Speaking to a friend, an elder and a shopkeeper" } }
     reading_passages:
       - { id: "who-is-who", text: { "en": "A short list of people and how to address them" } }
-  - planned: { id: "ml-family", theme: "family", words: 25 }
+  - decks: ["ml-family", "*"]
+    words: 18
     listening_passages:
       - { id: "family-photo", text: { "en": "Someone names the people in a family photo" } }
     reading_passages:
       - { id: "family-tree", text: { "en": "A family tree with its labels" } }
-  - planned: { id: "ml-numbers-1-20", theme: "numbers-1-20", words: 20 }
+  - decks: ["ml-numbers-1-20", "*"]
+    words: 19
     listening_passages:
       - { id: "phone-number", text: { "en": "Someone reads out a phone number" } }
     reading_passages:
@@ -162,59 +168,54 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it). ml-script-consonants and ml-script-reading join
   # the first; ml-script-chillu joins the second.
-  - planned: { id: "ml-script-vowels", grammar: "script-letters", words: 0 }
-    listening_passages:
-      - { id: "letter-names", text: { "en": "The vowels and consonants said in order" } }
-    reading_passages:
-      - { id: "first-signs", text: { "en": "Short words on shop signs, letter by letter" } }
-  - planned: { id: "ml-script-vowel-signs", grammar: ["script-vowel-signs", "script-chillu"], words: 0 }
-    listening_passages:
-      - { id: "syllable-rows", text: { "en": "One consonant with each vowel sign, said in a row" } }
-    reading_passages:
-      - { id: "name-boards", text: { "en": "Name boards with chillu letters and the chandrakkala" } }
-  - planned: { id: "ml-script-conjuncts", grammar: "script-conjuncts", words: 0 }
-    listening_passages:
-      - { id: "double-letters", text: { "en": "Words with double consonants and joined letters, said slowly" } }
-    reading_passages:
-      - { id: "old-and-new-letters", text: { "en": "The same words in the traditional and the reformed script" } }
+  - ["ml-script-vowels", "ml-script-consonants"]
+  - ["ml-script-vowel-signs", "ml-script-chillu", "ml-script-conjuncts"]
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "ml-about-me", theme: "about-me", words: 7 }
+  - decks: ["ml-about-me", "*"]
+    words: 7
     listening_passages:
       - { id: "introducing-myself", text: { "en": "Someone says their name, home town and work" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A short profile card" } }
-  - planned: { id: "ml-verbs", theme: "everyday-verbs", words: 33 }
+  - decks: ["ml-verbs", "ml-verbs-sentences", "*"]
+    words: 15
     listening_passages:
       - { id: "what-i-do", text: { "en": "Someone lists what they do each day" } }
     reading_passages:
       - { id: "to-do-list", text: { "en": "A short to-do list" } }
-  - planned: { id: "ml-adverbs", theme: "adverbs", words: 50 }
+  - decks: ["ml-adverbs", "*"]
+    words: 25
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "ml-quantities", theme: "quantities", words: 30 }
+  - decks: ["ml-quantities", "ml-quantities-sentences", "*"]
+    words: 23
     listening_passages:
       - { id: "a-little-more", text: { "en": "Asking for a little more and a little less" } }
     reading_passages:
       - { id: "shopping-amounts", text: { "en": "A shopping list with amounts" } }
-  - planned: { id: "ml-describing", theme: "describing", words: 40 }
+  - decks: ["ml-describing", "ml-describing-sentences", "*"]
+    words: 31
     listening_passages:
       - { id: "big-and-small", text: { "en": "Describing things: big, small, hot and cold" } }
     reading_passages:
       - { id: "for-sale-note", text: { "en": "A note describing something for sale" } }
-  - planned: { id: "ml-time", theme: "time", words: 18 }
+  - decks: ["ml-time", "*"]
+    words: 12
     listening_passages:
       - { id: "what-time", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "opening-hours", text: { "en": "A shop's opening hours" } }
-  - planned: { id: "ml-location", theme: "location", words: 14 }
+  - decks: ["ml-location", "*"]
+    words: 14
     listening_passages:
       - { id: "where-is-it", text: { "en": "Saying where things are in a room" } }
     reading_passages:
       - { id: "room-labels", text: { "en": "Labels: on, under, inside and near" } }
-  - planned: { id: "ml-more-verbs", theme: "more-verbs", words: 32 }
+  - decks: ["ml-more-verbs", "*"]
+    words: 32
     listening_passages:
       - { id: "helping-out", text: { "en": "Asking someone to bring, give and keep things" } }
     reading_passages:
@@ -237,52 +238,49 @@ units:
       - { id: "whose-is-it", text: { "en": "Asking whose things are whose" } }
     reading_passages:
       - { id: "we-and-you", text: { "en": "A message to a group: we, all of us, and you" } }
-  - planned: { id: "ml-grammar-be", grammar: ["be", "have"], words: 0 }
-    listening_passages:
-      - { id: "who-and-where", text: { "en": "Saying who someone is, where they are, and what they have" } }
-    reading_passages:
-      - { id: "is-there", text: { "en": "A note: what there is at home and what there is not" } }
-  - planned: { id: "ml-grammar-verb-present", grammar: "present", words: 0 }
-    listening_passages:
-      - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
-    reading_passages:
-      - { id: "note-on-the-fridge", text: { "en": "A short note: what to eat and drink" } }
-  - planned: { id: "ml-grammar-demonstratives", grammar: "demonstratives", words: 0 }
-    listening_passages:
-      - { id: "this-one-that-one", text: { "en": "Pointing at things: this one, that one, which one" } }
-    reading_passages:
-      - { id: "shop-labels", text: { "en": "Labels in a shop: this here, that there" } }
+  - decks: ["ml-grammar-be", "ml-grammar-have"]
+    words: 0
+    grammar: ["be", "have"]
+  - decks: ["ml-grammar-present"]
+    words: 0
+    grammar: ["present"]
+  - decks: ["ml-grammar-demonstratives"]
+    words: 0
+    grammar: ["demonstratives"]
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "ml-work", theme: "work", words: 19 }
+  - decks: ["ml-work", "*"]
+    words: 19
     listening_passages:
       - { id: "what-do-you-do", text: { "en": "People say what work they do" } }
     reading_passages:
       - { id: "name-tags", text: { "en": "Name tags at a meeting: who is who and what they do" } }
-  - planned: { id: "ml-numbers-big", theme: "numbers-big", words: 13 }
+  - decks: ["ml-numbers-big", "*"]
+    words: 13
     listening_passages:
       - { id: "how-much-is-it", text: { "en": "Prices said aloud at a stall" } }
     reading_passages:
       - { id: "bill", text: { "en": "A shop bill with its total" } }
   # ml-food-sentences joins this unit.
-  - planned: { id: "ml-food", theme: "food", words: 64 }
+  - decks: ["ml-food", "ml-food-sentences", "*"]
+    words: 47
     listening_passages:
       - { id: "at-the-tea-shop", text: { "en": "Ordering tea and a snack at a tea shop" } }
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
   # ml-grammar-needs follows this unit.
-  - planned: { id: "ml-groceries", theme: "groceries", words: 16 }
+  - decks: ["ml-groceries", "*"]
+    words: 16
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
       - { id: "grocery-list", text: { "en": "A grocery list" } }
-  - planned: { id: "ml-grammar-needs", grammar: "needs" }
-    listening_passages:
-      - { id: "needs-heard", text: { "en": "A short exchange that uses needs, after the groceries unit" } }
-    reading_passages:
-      - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
+  - decks: ["ml-grammar-needs"]
+    words: 0
+    grammar: ["needs"]
   # ml-grammar-nouns follows this unit.
-  - planned: { id: "ml-market", theme: "market", words: 7 }
+  - decks: ["ml-market", "*"]
+    words: 7
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying fish and vegetables at a market" } }
     reading_passages:
@@ -297,11 +295,9 @@ units:
       - { id: "asking-the-way", text: { "en": "Asking a stranger short questions" } }
     reading_passages:
       - { id: "a-form-to-fill", text: { "en": "A short form: name, age and where you live" } }
-  - planned: { id: "ml-grammar-likes", grammar: "likes", words: 2 }
-    listening_passages:
-      - { id: "what-do-you-like", text: { "en": "Friends say what they like and do not like" } }
-    reading_passages:
-      - { id: "likes-poll", text: { "en": "A poll of favourite foods" } }
+  - decks: ["ml-grammar-likes"]
+    words: 2
+    grammar: ["likes"]
   # ml-pronouns-sentences, ml-verbs-sentences and ml-noun-forms-sentences
   # join this unit.
   - planned: { id: "ml-grammar-sentences", grammar: "sentences", words: 0 }
@@ -310,40 +306,44 @@ units:
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
   # ml-grammar-continuous follows this unit.
-  - planned: { id: "ml-directions", theme: "directions", words: 12 }
+  - decks: ["ml-directions", "*"]
+    words: 12
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
-  - planned: { id: "ml-grammar-continuous", grammar: "continuous" }
-    listening_passages:
-      - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
-    reading_passages:
-      - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
-  - planned: { id: "ml-transport", theme: "transport", words: 8 }
+  - decks: ["ml-grammar-continuous"]
+    words: 0
+    grammar: ["continuous"]
+  - decks: ["ml-transport", "*"]
+    words: 8
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
     reading_passages:
       - { id: "bus-board", text: { "en": "The destination board on a bus" } }
   # ml-body-sentences joins this unit.
-  - planned: { id: "ml-body", theme: "body", words: 28 }
+  - decks: ["ml-body", "ml-body-sentences", "*"]
+    words: 30
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
     reading_passages:
       - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
   # ml-places-sentences joins this unit.
-  - planned: { id: "ml-places", theme: "places", words: 42 }
+  - decks: ["ml-places", "ml-places-sentences", "*"]
+    words: 19
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
     reading_passages:
       - { id: "map-labels", text: { "en": "Labels on a simple town map" } }
-  - planned: { id: "ml-things", theme: "things", words: 39 }
+  - decks: ["ml-things", "*"]
+    words: 30
     listening_passages:
       - { id: "packing-a-bag", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
   # ml-things-sentences and ml-more-verbs-sentences join this unit.
-  - planned: { id: "ml-home", theme: "home", words: 19 }
+  - decks: ["ml-home", "ml-things-sentences", "ml-more-verbs-sentences", "ml-noun-forms-sentences", "*"]
+    words: 17
     listening_passages:
       - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
@@ -366,22 +366,22 @@ units:
     reading_passages:
       - { id: "class-photo", text: { "en": "A caption under a class photo" } }
   # ml-clothes-sentences and ml-describing-sentences join this unit.
-  - planned: { id: "ml-clothes", theme: "clothes", words: 26 }
+  - decks: ["ml-clothes", "ml-clothes-sentences", "*"]
+    words: 24
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a shirt's colour and size in a shop" } }
     reading_passages:
       - { id: "shop-sign", text: { "en": "A clothes shop's sign with its offers" } }
   # ml-animals-sentences joins this unit.
-  - planned: { id: "ml-animals", theme: "animals", words: 30 }
+  - decks: ["ml-animals", "ml-animals-sentences", "*"]
+    words: 27
     listening_passages:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "ml-grammar-future", grammar: "future", words: 0 }
-    listening_passages:
-      - { id: "tomorrows-plans", text: { "en": "Friends say what they will do tomorrow" } }
-    reading_passages:
-      - { id: "weekend-plan", text: { "en": "A plan for the weekend" } }
+  - decks: ["ml-grammar-future"]
+    words: 0
+    grammar: ["future"]
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences. ml-grammar-negative follows the first unit.

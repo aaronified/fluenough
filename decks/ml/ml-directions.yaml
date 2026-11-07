@@ -1,0 +1,221 @@
+schema: 1
+id: "ml-directions"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "directions"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0240"
+    target: "ഇടത്"
+    reading: "iṭat"
+    ipa: "iʈat̪"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഇടത്തേക്ക് തിരിയൂ."
+        reading: "iṭattēkk tiriyū."
+        ipa: "iʈət̪t̪eːkk t̪iɾijuː"
+        bases: [{ word: "ഇടത്തേക്ക്", base: "ഇടത്", reading: "iṭat" }, { word: "തിരിയൂ", ref: "ml-0250" }]
+      - target: "വീട് ഇടത്ത്."
+        reading: "vīṭ iṭatt."
+        ipa: "ʋiːʈ iʈat̪t̪"
+        bases: [{ word: "വീട്", ref: "ml-0009" }, { word: "ഇടത്ത്", base: "ഇടത്ത്", reading: "iṭatt" }]
+  - id: "ml-0241"
+    target: "വലത്"
+    reading: "valat"
+    ipa: "ʋəlat̪"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വലത്തേക്ക് തിരിയൂ."
+        reading: "valattēkk tiriyū."
+        ipa: "ʋələt̪t̪eːkk t̪iɾijuː"
+        bases: [{ word: "വലത്തേക്ക്", base: "വലത്", reading: "valat" }, { word: "തിരിയൂ", ref: "ml-0250" }]
+      - target: "കട വലത്ത്."
+        reading: "kaṭa valatt."
+        ipa: "kəʈa ʋəlat̪t̪"
+        bases: [{ word: "കട", base: "കട", reading: "kaṭa" }, { word: "വലത്ത്", base: "വലത്ത്", reading: "valatt" }]
+  - id: "ml-0242"
+    target: "നേരെ"
+    reading: "nēre"
+    ipa: "neːɾe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നേരെ പോകൂ."
+        reading: "nēre pōkū."
+        ipa: "neːɾe poːkuː"
+        bases: [{ word: "നേരെ", base: "നേരെ", reading: "nēre" }, { word: "പോകൂ", ref: "ml-0112" }]
+      - target: "പാലം നേരെ."
+        reading: "pālaṁ nēre."
+        ipa: "paːlam neːɾe"
+        bases: [{ word: "പാലം", ref: "ml-0251" }, { word: "നേരെ", base: "നേരെ", reading: "nēre" }]
+  - id: "ml-0243"
+    target: "വഴി"
+    reading: "vaḻi"
+    ipa: "ʋəɻi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഏത് വഴി?"
+        reading: "ēt vaḻi?"
+        ipa: "eːt̪ ʋəɻi"
+        bases: [{ word: "ഏത്", ref: "ml-0037" }, { word: "വഴി", base: "വഴി", reading: "vaḻi" }]
+      - target: "വഴി അറിയില്ല"
+        reading: "vaḻi aṟiyilla"
+        ipa: "ʋəɻi əɾijilla"
+        bases: [{ word: "വഴി", base: "വഴി", reading: "vaḻi" }, { word: "അറിയില്ല", base: "അറിയുക", reading: "aṟiyuka" }]
+  - id: "ml-0244"
+    target: "റോഡ്"
+    reading: "ṟōḍ"
+    ipa: "ɾoːɖ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "റോഡ് എവിടെ?"
+        reading: "ṟōḍ eviṭe?"
+        ipa: "ɾoːɖ eʋiʈe"
+        bases: [{ word: "റോഡ്", base: "റോഡ്", reading: "ṟōḍ" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "റോഡ് തിരക്ക്."
+        reading: "ṟōḍ tirakk."
+        ipa: "ɾoːɖ t̪iɾakk"
+        bases: [{ word: "റോഡ്", base: "റോഡ്", reading: "ṟōḍ" }, { word: "തിരക്ക്", base: "തിരക്ക്", reading: "tirakk" }]
+  - id: "ml-0245"
+    target: "കിഴക്ക്"
+    reading: "kiḻakk"
+    ipa: "kiɻakk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സൂര്യൻ കിഴക്ക്."
+        reading: "sūryaṉ kiḻakk."
+        ipa: "suːɾjan kiɻakk"
+        bases: [{ word: "സൂര്യൻ", base: "സൂര്യൻ", reading: "sūryaṉ" }, { word: "കിഴക്ക്", base: "കിഴക്ക്", reading: "kiḻakk" }]
+      - target: "കിഴക്ക് പോകൂ."
+        reading: "kiḻakk pōkū."
+        ipa: "kiɻakk poːkuː"
+        bases: [{ word: "കിഴക്ക്", base: "കിഴക്ക്", reading: "kiḻakk" }, { word: "പോകൂ", ref: "ml-0112" }]
+  - id: "ml-0246"
+    target: "പടിഞ്ഞാറ്"
+    reading: "paṭiññāṟ"
+    ipa: "pəʈiɲɲaːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സൂര്യൻ പടിഞ്ഞാറ്."
+        reading: "sūryaṉ paṭiññāṟ."
+        ipa: "suːɾjan pəʈiɲɲaːɾ"
+        bases: [{ word: "സൂര്യൻ", base: "സൂര്യൻ", reading: "sūryaṉ" }, { word: "പടിഞ്ഞാറ്", base: "പടിഞ്ഞാറ്", reading: "paṭiññāṟ" }]
+      - target: "പടിഞ്ഞാറ് പോകൂ."
+        reading: "paṭiññāṟ pōkū."
+        ipa: "pəʈiɲɲaːɾ poːkuː"
+        bases: [{ word: "പടിഞ്ഞാറ്", base: "പടിഞ്ഞാറ്", reading: "paṭiññāṟ" }, { word: "പോകൂ", ref: "ml-0112" }]
+  - id: "ml-0247"
+    target: "വടക്ക്"
+    reading: "vaṭakk"
+    ipa: "ʋəʈakk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വടക്ക് പോകൂ."
+        reading: "vaṭakk pōkū."
+        ipa: "ʋəʈakk poːkuː"
+        bases: [{ word: "വടക്ക്", base: "വടക്ക്", reading: "vaṭakk" }, { word: "പോകൂ", ref: "ml-0112" }]
+      - target: "ഇവിടെ നിന്ന് വടക്ക്."
+        reading: "iviṭe ninn vaṭakk."
+        ipa: "iʋiʈe ninn ʋəʈakk"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "നിന്ന്", base: "നിന്ന്", reading: "ninn" }, { word: "വടക്ക്", base: "വടക്ക്", reading: "vaṭakk" }]
+  - id: "ml-0248"
+    target: "തെക്ക്"
+    reading: "tekk"
+    ipa: "t̪ekk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "തെക്ക് പോകൂ."
+        reading: "tekk pōkū."
+        ipa: "t̪ekk poːkuː"
+        bases: [{ word: "തെക്ക്", base: "തെക്ക്", reading: "tekk" }, { word: "പോകൂ", ref: "ml-0112" }]
+      - target: "വീട് തെക്ക്."
+        reading: "vīṭ tekk."
+        ipa: "ʋiːʈ t̪ekk"
+        bases: [{ word: "വീട്", ref: "ml-0009" }, { word: "തെക്ക്", base: "തെക്ക്", reading: "tekk" }]
+  - id: "ml-0249"
+    target: "മൂല"
+    reading: "mūla"
+    ipa: "muːla"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "റോഡിന്റെ മൂല."
+        reading: "ṟōḍinṟe mūla."
+        ipa: "ɾoːɖint̪ɾe muːla"
+        bases: [{ word: "റോഡിന്റെ", ref: "ml-0244" }, { word: "മൂല", base: "മൂല", reading: "mūla" }]
+      - target: "മൂലയിൽ നിൽക്കൂ."
+        reading: "mūlayil nilkkū."
+        ipa: "muːləjil nilkkuː"
+        bases: [{ word: "മൂലയിൽ", base: "മൂല", reading: "mūla" }, { word: "നിൽക്കൂ", ref: "ml-0116" }]
+  - id: "ml-0250"
+    target: "തിരിയൂ"
+    reading: "tiriyū"
+    ipa: "t̪iɾijuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "തിരിയൂ", base: "തിരിയുക", reading: "tiriyuka" }]
+    examples:
+      - target: "ഇടത്തേക്ക് തിരിയൂ."
+        reading: "iṭattēkk tiriyū."
+        ipa: "iʈət̪t̪eːkk t̪iɾijuː"
+        bases: [{ word: "ഇടത്തേക്ക്", ref: "ml-0240" }, { word: "തിരിയൂ", base: "തിരിയുക", reading: "tiriyuka" }]
+      - target: "ഇവിടെ തിരിയൂ."
+        reading: "iviṭe tiriyū."
+        ipa: "iʋiʈe t̪iɾijuː"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "തിരിയൂ", base: "തിരിയുക", reading: "tiriyuka" }]
+  - id: "ml-0251"
+    target: "പാലം"
+    reading: "pālaṁ"
+    ipa: "paːlam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പാലം നേരെ."
+        reading: "pālaṁ nēre."
+        ipa: "paːlam neːɾe"
+        bases: [{ word: "പാലം", base: "പാലം", reading: "pālaṁ" }, { word: "നേരെ", ref: "ml-0242" }]
+      - target: "പാലം കടക്കൂ"
+        reading: "pālaṁ kaṭakkū"
+        ipa: "paːlam kəʈəkkuː"
+        bases: [{ word: "പാലം", base: "പാലം", reading: "pālaṁ" }, { word: "കടക്കൂ", base: "കടക്കുക", reading: "kaṭakkuka" }]

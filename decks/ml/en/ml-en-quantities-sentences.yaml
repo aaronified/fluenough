@@ -1,0 +1,39 @@
+schema: 1
+id: "ml-en-quantities-sentences"
+kind: "layer"
+core: "ml-quantities-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Amounts in sentences"
+description: "Short sentences about how much and how many: a kilo, two litres, a dozen, half, the rest and what is full. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0676":
+    native: "I need plenty of water."
+    bases:
+      "വേണം": "need"
+  "ml-0677":
+    native: "How much is a kilo of tomatoes?"
+    bases:
+      "ഒരു": "a; one"
+  "ml-0678":
+    native: "Do you want two litres of milk?"
+    bases:
+      "വേണോ": "do you want"
+  "ml-0679":
+    native: "Half is enough."
+  "ml-0680":
+    native: "I do not want the rest."
+    bases:
+      "വേണ്ട": "not needed"
+  "ml-0681":
+    native: "The bottle is full."
+    bases:
+      "നിറഞ്ഞു": "became full"
+  "ml-0682":
+    native: "I need a dozen eggs."
+    bases:
+      "ഒരു": "a; one"
+      "വേണം": "need"
+  "ml-0683":
+    native: "There is no need."

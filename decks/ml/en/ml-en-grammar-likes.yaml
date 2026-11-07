@@ -1,0 +1,18 @@
+schema: 1
+id: "ml-en-grammar-likes"
+kind: "layer"
+core: "ml-grammar-likes"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam \"like\": with a dative subject"
+description: "Liking is said with the dative of the one who likes and the word ഇഷ്ടം (iṣṭaṁ, liking): എനിക്ക് (enikk) ഇഷ്ടമാണ് (iṣṭamāṇ), I like it. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+pattern:
+  name: "Liking: the one who likes is in the dative"
+  slot_name: "form"
+  slots:
+    "statement": "a statement"
+    "negative": "a negative"
+    "question": "a question"
+  entries:
+    "ishtam": "like; liking"

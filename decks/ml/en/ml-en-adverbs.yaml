@@ -1,0 +1,362 @@
+schema: 1
+id: "ml-en-adverbs"
+kind: "layer"
+core: "ml-adverbs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Adverbs"
+description: "How often, how well and when: sometimes, always, never, often, very, only, still, already, again, together, alone, well, badly, quickly, slowly, every day, first, then, soon, suddenly, about, usually, not at all, really and so. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0508":
+    native: "sometimes; now and then"
+    notes:
+      n1: "sometimes; now and then"
+    examples:
+      "ഇടയ്ക്ക് ചായ കുടിക്കും":
+        native: "I drink tea sometimes."
+        bases:
+          "ഇടയ്ക്ക്": "sometimes; now and then"
+      "ഇടയ്ക്ക് മഴയുണ്ട്.":
+        native: "It rains now and then."
+        bases:
+          "ഇടയ്ക്ക്": "sometimes; now and then"
+          "മഴയുണ്ട്": "it rains"
+  "ml-0509":
+    native: "always"
+    notes:
+      n1: "always"
+    examples:
+      "അവൻ എപ്പോഴും ജോലി ചെയ്യും":
+        native: "He always works."
+        bases:
+          "എപ്പോഴും": "always"
+      "ഞാൻ എപ്പോഴും ഇവിടെ.":
+        native: "I am always here."
+        bases:
+          "എപ്പോഴും": "always"
+  "ml-0510":
+    native: "never"
+    notes:
+      n1: "never"
+    examples:
+      "ഒരിക്കലും വൈകരുത്.":
+        native: "Never be late."
+        bases:
+          "ഒരിക്കലും": "never"
+          "വൈകരുത്": "must not be late"
+      "ഞാൻ ഒരിക്കലും മറക്കില്ല":
+        native: "I will never forget."
+        bases:
+          "ഒരിക്കലും": "never"
+  "ml-0511":
+    native: "often"
+    notes:
+      n1: "often"
+    examples:
+      "പലപ്പോഴും വെള്ളം കുടിക്കൂ.":
+        native: "Drink water often."
+        bases:
+          "പലപ്പോഴും": "often"
+      "അവർ പലപ്പോഴും വരും.":
+        native: "They often come."
+        bases:
+          "അവർ": "they"
+          "പലപ്പോഴും": "often"
+          "വരും": "come"
+  "ml-0512":
+    native: "very"
+    notes:
+      n1: "very"
+    examples:
+      "വളരെ നല്ലതാണ്.":
+        native: "It is very good."
+        bases:
+          "വളരെ": "very"
+          "നല്ലതാണ്": "is good"
+      "വളരെ ചൂടാണ്.":
+        native: "It is very hot."
+        bases:
+          "വളരെ": "very"
+          "ചൂടാണ്": "is hot"
+  "ml-0513":
+    native: "only"
+    notes:
+      n1: "only"
+    examples:
+      "ഒരു ചായ മാത്രം.":
+        native: "Only one tea."
+        bases:
+          "ഒരു": "a; one"
+          "മാത്രം": "only"
+      "ഇവിടെ മാത്രം.":
+        native: "Here only."
+        bases:
+          "മാത്രം": "only"
+  "ml-0514":
+    native: "still"
+    notes:
+      n1: "still"
+    examples:
+      "അവൻ ഇപ്പോഴും ഉറങ്ങുന്നു":
+        native: "He is still sleeping."
+        bases:
+          "ഇപ്പോഴും": "still"
+      "ഞാൻ ഇപ്പോഴും പഠിക്കുന്നു":
+        native: "I am still studying."
+        bases:
+          "ഇപ്പോഴും": "still"
+  "ml-0515":
+    native: "already"
+    notes:
+      n1: "already"
+    examples:
+      "ഞാൻ ഇതിനകം കഴിച്ചു.":
+        native: "I have already eaten."
+        bases:
+          "ഇതിനകം": "already"
+          "കഴിച്ചു": "ate"
+      "ഇതിനകം മഴ പെയ്തു.":
+        native: "It has already rained."
+        bases:
+          "ഇതിനകം": "already"
+          "മഴ": "rain"
+          "പെയ്തു": "rained"
+  "ml-0516":
+    native: "again"
+    notes:
+      n1: "again"
+    examples:
+      "വീണ്ടും പറയൂ.":
+        native: "Say it again."
+        bases:
+          "വീണ്ടും": "again"
+      "വീണ്ടും വരൂ.":
+        native: "Come again."
+        bases:
+          "വീണ്ടും": "again"
+  "ml-0517":
+    native: "together"
+    notes:
+      n1: "together"
+    examples:
+      "നമുക്ക് ഒരുമിച്ച് പോകാം":
+        native: "Let us go together."
+        bases:
+          "നമുക്ക്": "us"
+          "ഒരുമിച്ച്": "together"
+      "ഞങ്ങൾ ഒരുമിച്ച് കഴിക്കുന്നു":
+        native: "We eat together."
+        bases:
+          "ഒരുമിച്ച്": "together"
+  "ml-0518":
+    native: "alone; by oneself"
+    notes:
+      n1: "alone; by oneself"
+    examples:
+      "അവൻ ഒറ്റയ്ക്ക് വരും.":
+        native: "He will come alone."
+        bases:
+          "ഒറ്റയ്ക്ക്": "alone; by oneself"
+          "വരും": "will come"
+      "ഞാൻ ഒറ്റയ്ക്ക് താമസിക്കുന്നു.":
+        native: "I live alone."
+        bases:
+          "ഒറ്റയ്ക്ക്": "alone; by oneself"
+          "താമസിക്കുന്നു": "live"
+  "ml-0519":
+    native: "well"
+    notes:
+      n1: "well"
+    examples:
+      "നീ നന്നായി പാടുന്നു.":
+        native: "You sing well."
+        bases:
+          "നന്നായി": "well"
+          "പാടുന്നു": "sing"
+      "നന്നായി കേൾക്കൂ.":
+        native: "Listen well."
+        bases:
+          "നന്നായി": "well"
+  "ml-0520":
+    native: "badly"
+    notes:
+      n1: "badly"
+    examples:
+      "അവൻ മോശമായി പാടുന്നു.":
+        native: "He sings badly."
+        bases:
+          "മോശമായി": "badly"
+          "പാടുന്നു": "sings"
+      "ഞാൻ മോശമായി ഉറങ്ങി.":
+        native: "I slept badly."
+        bases:
+          "മോശമായി": "badly"
+          "ഉറങ്ങി": "slept"
+  "ml-0521":
+    native: "quickly; soon"
+    notes:
+      n1: "quickly; soon"
+    examples:
+      "വേഗം വരൂ.":
+        native: "Come quickly."
+        bases:
+          "വേഗം": "quickly; soon"
+      "വേഗം പോകൂ.":
+        native: "Go quickly."
+        bases:
+          "വേഗം": "quickly; soon"
+  "ml-0522":
+    native: "slowly; carefully"
+    notes:
+      n1: "slowly; carefully"
+    examples:
+      "സാവധാനം സംസാരിക്കൂ.":
+        native: "Speak slowly."
+        bases:
+          "സാവധാനം": "slowly; carefully"
+          "സംസാരിക്കൂ": "speak"
+      "സാവധാനം നടക്കൂ.":
+        native: "Walk slowly."
+        bases:
+          "സാവധാനം": "slowly; carefully"
+  "ml-0523":
+    native: "every day"
+    notes:
+      n1: "every day"
+    examples:
+      "ഞാൻ എന്നും ചായ കുടിക്കും":
+        native: "I drink tea every day."
+        bases:
+          "എന്നും": "every day"
+      "അവൾ എന്നും ഇവിടെ വരും.":
+        native: "She comes here every day."
+        bases:
+          "എന്നും": "every day"
+          "വരും": "comes"
+  "ml-0524":
+    native: "first; at first"
+    notes:
+      n1: "first; at first"
+    examples:
+      "ആദ്യം ചായ കുടിക്കൂ.":
+        native: "Drink the tea first."
+        bases:
+          "ആദ്യം": "first; at first"
+      "ആദ്യം വെള്ളം, പിന്നെ ഭക്ഷണം.":
+        native: "First water, then food."
+        bases:
+          "ആദ്യം": "first; at first"
+  "ml-0525":
+    native: "then; after that"
+    notes:
+      n1: "then; after that"
+    examples:
+      "ആദ്യം വെള്ളം, പിന്നെ ഭക്ഷണം.":
+        native: "First water, then food."
+        bases:
+          "പിന്നെ": "then; after that"
+      "പിന്നെ പോകാം":
+        native: "Let us go then."
+        bases:
+          "പിന്നെ": "then; after that"
+  "ml-0526":
+    native: "soon; at once"
+    notes:
+      n1: "soon; at once"
+    examples:
+      "ഉടനെ വരൂ.":
+        native: "Come soon."
+        bases:
+          "ഉടനെ": "soon; at once"
+      "ഞാൻ ഉടനെ തിരിച്ചുവരും.":
+        native: "I will come back soon."
+        bases:
+          "ഉടനെ": "soon; at once"
+          "തിരിച്ചുവരും": "will come back"
+  "ml-0527":
+    native: "suddenly"
+    notes:
+      n1: "suddenly"
+    examples:
+      "പെട്ടെന്ന് മഴ വന്നു.":
+        native: "Suddenly it rained."
+        bases: {"മഴ": "rain", "വന്നു": "came"}
+      "പെട്ടെന്ന് ഓടൂ.":
+        native: "Run quickly."
+        bases: {}
+  "ml-0528":
+    native: "about; roughly"
+    notes:
+      n1: "about; roughly"
+    examples:
+      "ഏകദേശം പത്ത് മണി.":
+        native: "About ten o'clock."
+        bases:
+          "ഏകദേശം": "about; roughly"
+      "ഏകദേശം എത്ര?":
+        native: "About how much?"
+        bases:
+          "ഏകദേശം": "about; roughly"
+  "ml-0529":
+    native: "usually; mostly"
+    notes:
+      n1: "usually; mostly"
+    examples:
+      "മിക്കവാറും ഞാൻ വീട്ടിൽ":
+        native: "I am mostly at home."
+        bases:
+          "മിക്കവാറും": "usually; mostly"
+      "അവർ മിക്കവാറും വരും.":
+        native: "They usually come."
+        bases:
+          "അവർ": "they"
+          "മിക്കവാറും": "usually; mostly"
+          "വരും": "come"
+  "ml-0530":
+    native: "not at all"
+    notes:
+      n1: "not at all"
+    examples:
+      "എനിക്ക് തീരെ ഇഷ്ടമല്ല.":
+        native: "I do not like it at all."
+        bases:
+          "തീരെ": "not at all"
+          "ഇഷ്ടമല്ല": "do not like"
+      "തീരെ വേണ്ട.":
+        native: "Not at all needed."
+        bases:
+          "തീരെ": "not at all"
+          "വേണ്ട": "not needed"
+  "ml-0531":
+    native: "really; truly"
+    notes:
+      n1: "really; truly"
+    examples:
+      "ഇത് ശരിക്കും നല്ലതാണ്.":
+        native: "This is really good."
+        bases:
+          "ഇത്": "this"
+          "ശരിക്കും": "really; truly"
+          "നല്ലതാണ്": "is good"
+      "ശരിക്കും?":
+        native: "Really?"
+        bases:
+          "ശരിക്കും": "really; truly"
+  "ml-0532":
+    native: "so; therefore"
+    notes:
+      n1: "so; therefore"
+    examples:
+      "മഴയുണ്ട്, അതുകൊണ്ട് കുട വേണം.":
+        native: "It is raining, so I need an umbrella."
+        bases:
+          "മഴയുണ്ട്": "it is raining"
+          "അതുകൊണ്ട്": "so; therefore"
+          "വേണം": "need"
+      "ഞാൻ ക്ഷീണിച്ചു, അതുകൊണ്ട് ഉറങ്ങും.":
+        native: "I am tired, so I will sleep."
+        bases:
+          "ക്ഷീണിച്ചു": "am tired"
+          "അതുകൊണ്ട്": "so; therefore"
+          "ഉറങ്ങും": "will sleep"

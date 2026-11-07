@@ -1,0 +1,56 @@
+schema: 1
+id: "ml-pronouns-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0700"
+    target: "ഞാൻ ഇവിടെ."
+    reading: "ñāṉ iviṭe."
+    ipa: "ɲaːn iʋiʈe"
+    pos: "phrase"
+    bases: [{ word: "ഞാൻ", ref: "ml-0003" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0701"
+    target: "നീ എവിടെ പോകുന്നു?"
+    reading: "nī eviṭe pōkunnu?"
+    ipa: "niː eʋiʈe poːkunnu"
+    pos: "phrase"
+    bases: [{ word: "നീ", ref: "ml-0095" }, { word: "എവിടെ", ref: "ml-0033" }, { word: "പോകുന്നു", base: "പോകുന്നു", reading: "pōkunnu" }]
+  - id: "ml-0702"
+    target: "അവൻ നല്ലവനാണ്."
+    reading: "avaṉ nallavanāṇ."
+    ipa: "əʋan nəlləʋənaːɳ"
+    pos: "phrase"
+    bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "നല്ലവനാണ്", base: "നല്ലവനാണ്", reading: "nallavanāṇ" }]
+  - id: "ml-0703"
+    target: "അവൾ ഇവിടെ ഉണ്ട്."
+    reading: "avaḷ iviṭe uṇṭ."
+    ipa: "əʋaɭ iʋiʈe uɳʈ"
+    pos: "phrase"
+    bases: [{ word: "അവൾ", ref: "ml-0098" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-0704"
+    target: "നിങ്ങൾ എവിടെ നിന്നാണ്?"
+    reading: "niṅṅaḷ eviṭe ninnāṇ?"
+    ipa: "niŋŋaɭ eʋiʈe ninnaːɳ"
+    pos: "phrase"
+    bases: [{ word: "നിങ്ങൾ", ref: "ml-0004" }, { word: "എവിടെ", ref: "ml-0033" }, { word: "നിന്നാണ്", base: "നിന്നാണ്", reading: "ninnāṇ" }]
+  - id: "ml-0705"
+    target: "ഞങ്ങൾ വരുന്നു."
+    reading: "ñaṅṅaḷ varunnu."
+    ipa: "ɲəŋŋaɭ ʋəɾunnu"
+    pos: "phrase"
+    bases: [{ word: "ഞങ്ങൾ", ref: "ml-0100" }, { word: "വരുന്നു", base: "വരുന്നു", reading: "varunnu" }]
+  - id: "ml-0706"
+    target: "എന്റെ പേര് ഇതാണ്."
+    reading: "enṟe pēr itāṇ."
+    ipa: "ent̪ɾe peːɾ it̪aːɳ"
+    pos: "phrase"
+    bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "പേര്", ref: "ml-0042" }, { word: "ഇതാണ്", base: "ഇതാണ്", reading: "itāṇ" }]
+  - id: "ml-0707"
+    target: "നമ്മൾ ഒരുമിച്ച് പോകാം"
+    reading: "nammaḷ orumicc pōkāṁ"
+    ipa: "nəmmaɭ oɾumitʃtʃ poːkaːm"
+    pos: "phrase"
+    bases: [{ word: "നമ്മൾ", ref: "ml-0101" }, { word: "ഒരുമിച്ച്", ref: "ml-0517" }, { word: "പോകാം", ref: "ml-0112" }]

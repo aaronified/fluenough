@@ -1,0 +1,20 @@
+schema: 1
+id: "ml-en-grammar-future"
+kind: "layer"
+core: "ml-grammar-future"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam future tense"
+description: "The future tense of the same few common verbs, with the negative. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+pattern:
+  name: "The future tense: one form for every person"
+  slot_name: "form"
+  slots:
+    "statement": "a statement"
+    "negative": "a negative"
+  entries:
+    "poka": "to go"
+    "kazhikka": "to eat"
+    "varika": "to come"
+    "kudikka": "to drink"
