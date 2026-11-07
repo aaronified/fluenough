@@ -448,6 +448,29 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     _scheduleSnapshot();
   }
 
+  /// Deletes the reviews [erasure] selects (#861): after every write queued
+  /// so far, in the database ([ReviewLog.eraseReviews], which rebuilds the
+  /// state cache and drops the language's fits), then memory is read again
+  /// from the database, so log, cache and memory agree. A failure leaves
+  /// both as they were.
+  @override
+  Future<int> eraseReviews(ReviewErasure erasure) async {
+    if (_readFailed) return _memory.eraseReviews(erasure);
+    await _writes;
+    final removed = await _log.eraseReviews(erasure);
+    if (removed == 0 && !erasure.placement) return 0;
+    final taken = await _log.withdrawals();
+    _memory.replaceWith(
+      await _log.events(),
+      await _log.leechActions(),
+      fitted: await _log.fitted(),
+      withdrawals: taken,
+      withdrawn: await _log.withdrawnReviews(taken),
+    );
+    _scheduleSnapshot();
+    return removed;
+  }
+
   /// Runs [task] after every write queued so far. Keeping the snapshot is a
   /// cache: if it fails, nothing is reported to the learner and the next
   /// launch replays the log, so the failure is only printed.

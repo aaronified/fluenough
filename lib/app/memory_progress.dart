@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/data/log_jsonl.dart';
 import '../core/data/replay_isolate.dart';
+import '../core/data/review_erasure.dart';
 import '../core/data/restore_record.dart';
 import '../core/models/drill_mode.dart';
 import '../core/models/leech_action.dart';
@@ -17,10 +18,11 @@ import '../core/scheduling/skill_map.dart';
 import '../core/scheduling/skill_parameters.dart';
 
 export '../core/data/restore_record.dart' show RestoreRecord;
+export '../core/data/review_erasure.dart' show ReviewErasure;
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
 export '../core/scheduling/placement_withdrawal.dart'
-    show PlacementWithdrawal, isWithdrawnCredit;
+    show PlacementWithdrawal, hasCreditShape, isWithdrawnCredit;
 export '../core/progress/progress_index.dart';
 export '../core/scheduling/skill_parameters.dart'
     show FittedParameters, SkillKey, SkillParameters, skillOf;
@@ -164,6 +166,16 @@ abstract interface class ProgressStore implements Listenable {
     List<PlacementWithdrawal> withdrawals,
     required RestoreRecord restore,
   });
+
+  /// Deletes the reviews [erasure] selects from one language (#861), the
+  /// second exception to the log being append-only (AGENTS.md rule 9), and
+  /// rebuilds every state from the log that remains. The language's fitted
+  /// parameters are dropped, since they were learned from reviews that are
+  /// gone; another language's reviews and fits are never touched. Returns
+  /// how many reviews went. For a deletion the learner confirmed, after a
+  /// backup was kept. A store that cannot delete from its log throws and
+  /// keeps what it had.
+  Future<int> eraseReviews(ReviewErasure erasure);
 }
 
 /// Progress held in memory: an FSRS state per `(card, mode)` and the
@@ -491,6 +503,43 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
       ..addAll(withdrawalsInTimeOrder(withdrawals));
     _withdrawn.clear();
     _replace(inTimeOrder(reviews), actionsInTimeOrder(leechActions));
+  }
+
+  @override
+  Future<int> eraseReviews(ReviewErasure erasure) async {
+    // The credit a withdrawal took back is still in the log: it can be
+    // erased with the placement, so it is read with the rest.
+    final all = <LoggedReview>[..._log.map(logged), ..._withdrawn];
+    final keep = <LoggedReview>[
+      for (final r in all)
+        if (!erasure.matches(
+          r.key.cardId,
+          r.at,
+          creditShape: hasCreditShape(r),
+        ))
+          r,
+    ];
+    final removed = all.length - keep.length;
+    final taken = erasure.placement
+        ? _withdrawals.where((w) => w.language == erasure.language).length
+        : 0;
+    if (removed == 0 && taken == 0) return 0;
+    final pairs = <ProgressKey>{for (final r in keep) r.key};
+    _parameters = SkillParameters(
+      fitted: <SkillKey, FittedParameters>{
+        for (final MapEntry(:key, :value) in _parameters.fitted.entries)
+          if (key.language != erasure.language) key: value,
+      },
+    );
+    if (taken > 0) {
+      _withdrawals.removeWhere((w) => w.language == erasure.language);
+    }
+    _withdrawn.clear();
+    _replace(inTimeOrder(keep), <LeechAction>[
+      for (final a in _leechActions)
+        if (!erasure.isOfLanguage(a.key.cardId) || pairs.contains(a.key)) a,
+    ]);
+    return removed;
   }
 
   /// Everything replaced by [events], [leechActions] and the [fitted]
