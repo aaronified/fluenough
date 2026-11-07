@@ -219,7 +219,7 @@ class SkillReadout {
   final EvidenceState state;
 
   /// The classes of the lower edge, the middle and the upper edge of the
-  /// 80% range (after the proof ceiling and the Say cap).
+  /// 80% range of the posterior (not lowered by the proof ceiling).
   final int lowClass;
   final int medianClass;
   final int highClass;
@@ -298,11 +298,11 @@ class GuessCalibration {
     'F4:cognate': 0.80,
     'F4decoys:clean': 0.30,
     'F4decoys:cognate': 0.80,
-    'F5:legacy': 0.95,
+    'F5legacy:clean': 0.95,
     'F5:clean': 0.35,
     'F5:cognate': 0.90,
-    'F6:hint': 0.60,
-    'F6:endings': 0.99,
+    'F6hint:clean': 0.60,
+    'F6endings:clean': 0.99,
     'F6:clean': 0.35,
     'F7:clean': 0.05,
     'F7:cognate': 0.55,
@@ -313,7 +313,10 @@ class GuessCalibration {
     'F13:cognate': 0.85,
     'F15:clean': 0.70,
     'F16:clean': 0.09,
-    'S2:legacy': 0.98,
+    'F17:clean': 0.35,
+    'F17:cognate': 0.90,
+    'F6:cognate': 0.90,
+    'S2legacy:clean': 0.98,
   });
 
   /// The 90% upper bound of the guess rate by `format:class`.
@@ -739,6 +742,20 @@ class JointPlacement {
         r,
   ];
 
+  /// The clean scored items of [skill] in [band] (a tenth of the path), and
+  /// how many of them were answered right: what a picker needs to decide
+  /// whether the band is proven, failed or still open.
+  ({int clean, int right}) bandRecord(PlacementSkill skill, int band) {
+    var clean = 0;
+    var right = 0;
+    for (final r in _cleanRecords(skill)) {
+      if (r.band != band) continue;
+      clean++;
+      if (r.correct) right++;
+    }
+    return (clean: clean, right: right);
+  }
+
   /// The highest class a band of [skill] has proven, or null: a band is
   /// proven by at least [kMinCleanItems] clean items of it of which so many
   /// are right that a guesser at [kProvenGuess] would do as well at most
@@ -848,10 +865,10 @@ class JointPlacement {
     }
     final proven = provenClass(skill);
     final ceiling = proven ?? 0;
-    final capped = lo > ceiling || med > ceiling || hi > ceiling;
-    final cappedLo = math.min(lo, ceiling);
-    final cappedMed = math.min(med, ceiling);
-    final cappedHi = math.min(hi, ceiling);
+    // The range is the posterior's own; only the START is held at the
+    // ceiling, so the range stays an honest statement of what is likely.
+    final capped = lo > ceiling;
+    final start = math.min(lo, ceiling);
     final clean = cleanItemsOf(skill);
     final recognised = (_recognised[skill] ?? 0) > 0;
     final state = recognised
@@ -862,11 +879,11 @@ class JointPlacement {
     return SkillReadout(
       skill: skill,
       state: state,
-      lowClass: cappedLo,
-      medianClass: cappedMed,
-      highClass: cappedHi,
-      startClass: cappedLo,
-      startDeck: _startDeck(cappedLo),
+      lowClass: lo,
+      medianClass: med,
+      highClass: hi,
+      startClass: start,
+      startDeck: _startDeck(start),
       rangeMass: rangeMass,
       nearMass: near,
       confidence: near >= 0.8

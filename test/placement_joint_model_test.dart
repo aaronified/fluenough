@@ -249,7 +249,7 @@ void main() {
       final read = m.readout().skills[_read]!;
       expect(read.provenClass, isNotNull);
       expect(read.startClass, lessThanOrEqualTo(read.provenClass!));
-      expect(read.highClass, lessThanOrEqualTo(read.provenClass!));
+      expect(read.highClass, greaterThan(read.provenClass!));
       expect(read.cappedByProof, isTrue);
     });
 
@@ -541,7 +541,7 @@ void main() {
       expect(cal.usable('F2', false, 0.25), isTrue);
       expect(cal.guessFor('F2', false, 0.25), 0.35);
       expect(cal.usable('S2', false, 0.5), isTrue);
-      expect(cal.usable('S2:legacy', true, 0.5), isTrue);
+      expect(cal.usable('S2legacy', false, 0.5), isFalse);
       expect(cal.guessFor('unknown', false, 0.25), 0.25);
     });
 
