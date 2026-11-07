@@ -89,12 +89,14 @@ class ProgressMastery {
   static WordCounts _words(List<MasteryPart> parts) {
     var mastered = 0;
     var taught = 0;
+    var placed = 0;
     for (final p in parts) {
       final counts = wordCounts(p.log, parametersOf: p.parametersOf);
       mastered += counts.mastered;
       taught += counts.taught;
+      placed += counts.placed;
     }
-    return (mastered: mastered, taught: taught);
+    return (mastered: mastered, taught: taught, placed: placed);
   }
 
   static Mastery _combine(List<MasteryPart> parts, DateTime? asOf) =>

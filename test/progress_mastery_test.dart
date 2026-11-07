@@ -692,6 +692,8 @@ void main() {
               rulesTaught: 22,
               sentencesOpen: 86,
               sentencesTotal: 210,
+              wordsPlaced: 0,
+              rulesPlaced: 0,
             ),
             level: Milestone.a2,
             started: DateTime(2026, 8, 3),

@@ -79,6 +79,23 @@ class ReviewEvent {
   /// (accuracy, lapses, the FSRS fit, study time, streaks, mastery).
   bool get isView => asked == Ask.teach;
 
+  /// Whether this row has the shape of what placement credit writes
+  /// (`creditPlacement`): grade 5, no time taken, no answer given, asked its
+  /// own way (or not recorded). A real answer has an elapsed time or an
+  /// answer given. The same test as `hasCreditShape` on a logged review.
+  bool get hasCreditShape =>
+      grade == 5 &&
+      elapsed == Duration.zero &&
+      answerGiven == null &&
+      (asked == null || asked == Ask.own);
+
+  /// Whether this review is a pair's PLACED state: placement credit that is
+  /// the pair's first review. A pair whose last review is placed has been
+  /// credited by placement and not yet answered by the learner; Progress
+  /// shows it as placed, never as earned (owner, 2026-11-07). The log it is
+  /// read from has withdrawn credit left out already.
+  bool get isPlaced => before == null && hasCreditShape;
+
   /// Whether this review counts as remembered: not Again.
   bool get passed => grade >= Fsrs.passingGrade;
 
