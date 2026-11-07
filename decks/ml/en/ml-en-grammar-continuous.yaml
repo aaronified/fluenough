@@ -1,0 +1,20 @@
+schema: 1
+id: "ml-en-grammar-continuous"
+kind: "layer"
+core: "ml-grammar-continuous"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam action going on"
+description: "The verb for something in progress: the past stem of the verb with കൊണ്ടിരിക്കുന്നു (koṇṭirikkunnu, is going on). Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+pattern:
+  name: "Something in progress"
+  slot_name: "form"
+  slots:
+  "statement": "a statement"
+  "negative": "a negative"
+  entries:
+    "poka": "to go"
+    "kazhikka": "to eat"
+    "varika": "to come"
+    "kudikka": "to drink"

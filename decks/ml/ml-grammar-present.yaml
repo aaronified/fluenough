@@ -1,0 +1,46 @@
+schema: 1
+id: "ml-grammar-present"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "negative"]
+  entries:
+    - lemma: "പോകുക"
+      key: "poka"
+      reading: "pōkuka"
+      forms:
+        "statement": "പോകുന്നു"
+        "negative": "പോകുന്നില്ല"
+      readings:
+        "statement": "pōkunnu"
+        "negative": "pōkunnilla"
+    - lemma: "കഴിക്കുക"
+      key: "kazhikka"
+      reading: "kaḻikkuka"
+      forms:
+        "statement": "കഴിക്കുന്നു"
+        "negative": "കഴിക്കുന്നില്ല"
+      readings:
+        "statement": "kaḻikkunnu"
+        "negative": "kaḻikkunnilla"
+    - lemma: "വരിക"
+      key: "varika"
+      reading: "varika"
+      forms:
+        "statement": "വരുന്നു"
+        "negative": "വരുന്നില്ല"
+      readings:
+        "statement": "varunnu"
+        "negative": "varunnilla"
+    - lemma: "കുടിക്കുക"
+      key: "kudikka"
+      reading: "kuṭikkuka"
+      forms:
+        "statement": "കുടിക്കുന്നു"
+        "negative": "കുടിക്കുന്നില്ല"
+      readings:
+        "statement": "kuṭikkunnu"
+        "negative": "kuṭikkunnilla"

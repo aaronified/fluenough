@@ -170,11 +170,6 @@ units:
   # the first; ml-script-chillu joins the second.
   - ["ml-script-vowels", "ml-script-consonants"]
   - ["ml-script-vowel-signs", "ml-script-chillu", "ml-script-conjuncts"]
-  - planned: { id: "ml-script-conjuncts", grammar: "script-conjuncts", words: 0 }
-    listening_passages:
-      - { id: "double-letters", text: { "en": "Words with double consonants and joined letters, said slowly" } }
-    reading_passages:
-      - { id: "old-and-new-letters", text: { "en": "The same words in the traditional and the reformed script" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
   - decks: ["ml-about-me", "*"]
@@ -243,21 +238,15 @@ units:
       - { id: "whose-is-it", text: { "en": "Asking whose things are whose" } }
     reading_passages:
       - { id: "we-and-you", text: { "en": "A message to a group: we, all of us, and you" } }
-  - planned: { id: "ml-grammar-be", grammar: ["be", "have"], words: 0 }
-    listening_passages:
-      - { id: "who-and-where", text: { "en": "Saying who someone is, where they are, and what they have" } }
-    reading_passages:
-      - { id: "is-there", text: { "en": "A note: what there is at home and what there is not" } }
-  - planned: { id: "ml-grammar-verb-present", grammar: "present", words: 0 }
-    listening_passages:
-      - { id: "morning-at-home", text: { "en": "A family member says what she does every morning" } }
-    reading_passages:
-      - { id: "note-on-the-fridge", text: { "en": "A short note: what to eat and drink" } }
-  - planned: { id: "ml-grammar-demonstratives", grammar: "demonstratives", words: 0 }
-    listening_passages:
-      - { id: "this-one-that-one", text: { "en": "Pointing at things: this one, that one, which one" } }
-    reading_passages:
-      - { id: "shop-labels", text: { "en": "Labels in a shop: this here, that there" } }
+  - decks: ["ml-grammar-be", "ml-grammar-have"]
+    words: 0
+    grammar: ["be", "have"]
+  - decks: ["ml-grammar-present"]
+    words: 0
+    grammar: ["present"]
+  - decks: ["ml-grammar-demonstratives"]
+    words: 0
+    grammar: ["demonstratives"]
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
   - decks: ["ml-work", "*"]
@@ -286,11 +275,9 @@ units:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
       - { id: "grocery-list", text: { "en": "A grocery list" } }
-  - planned: { id: "ml-grammar-needs", grammar: "needs" }
-    listening_passages:
-      - { id: "needs-heard", text: { "en": "A short exchange that uses needs, after the groceries unit" } }
-    reading_passages:
-      - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
+  - decks: ["ml-grammar-needs"]
+    words: 0
+    grammar: ["needs"]
   # ml-grammar-nouns follows this unit.
   - decks: ["ml-market", "*"]
     words: 7
@@ -308,11 +295,9 @@ units:
       - { id: "asking-the-way", text: { "en": "Asking a stranger short questions" } }
     reading_passages:
       - { id: "a-form-to-fill", text: { "en": "A short form: name, age and where you live" } }
-  - planned: { id: "ml-grammar-likes", grammar: "likes", words: 2 }
-    listening_passages:
-      - { id: "what-do-you-like", text: { "en": "Friends say what they like and do not like" } }
-    reading_passages:
-      - { id: "likes-poll", text: { "en": "A poll of favourite foods" } }
+  - decks: ["ml-grammar-likes"]
+    words: 2
+    grammar: ["likes"]
   # ml-pronouns-sentences, ml-verbs-sentences and ml-noun-forms-sentences
   # join this unit.
   - planned: { id: "ml-grammar-sentences", grammar: "sentences", words: 0 }
@@ -327,11 +312,9 @@ units:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
       - { id: "street-signs", text: { "en": "Street signs and an arrow board" } }
-  - planned: { id: "ml-grammar-continuous", grammar: "continuous" }
-    listening_passages:
-      - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
-    reading_passages:
-      - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
+  - decks: ["ml-grammar-continuous"]
+    words: 0
+    grammar: ["continuous"]
   - decks: ["ml-transport", "*"]
     words: 8
     listening_passages:
@@ -396,11 +379,9 @@ units:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:
       - { id: "zoo-board", text: { "en": "A zoo board with each animal and what it eats" } }
-  - planned: { id: "ml-grammar-future", grammar: "future", words: 0 }
-    listening_passages:
-      - { id: "tomorrows-plans", text: { "en": "Friends say what they will do tomorrow" } }
-    reading_passages:
-      - { id: "weekend-plan", text: { "en": "A plan for the weekend" } }
+  - decks: ["ml-grammar-future"]
+    words: 0
+    grammar: ["future"]
     milestone: "A1"
   # A2: the themes and grammar of the CEFR's A2, each its words, its rules,
   # then its sentences. ml-grammar-negative follows the first unit.
