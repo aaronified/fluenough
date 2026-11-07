@@ -210,7 +210,8 @@ units:
       - { id: "big-and-small", text: { "en": "Describing things: big, small, hot and cold" } }
     reading_passages:
       - { id: "for-sale-note", text: { "en": "A note describing something for sale" } }
-  - planned: { id: "ml-time", theme: "time", words: 18 }
+  - decks: ["ml-time", "*"]
+    words: 12
     listening_passages:
       - { id: "what-time", text: { "en": "Asking and telling the time" } }
     reading_passages:
