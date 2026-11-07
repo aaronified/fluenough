@@ -1,6 +1,6 @@
 # Plan: build entire languages as private decks (Your decks)
 
-> **Priority 1 after the placement release** (owner, 2026-11-07).
+> **Priority 1 after the placement release** (owner, 2026-11-07). Recorded for later, not built in the session that stops at the placement bugfix release ("Do not build them. You will stop at the release."); no agent starts it without a new owner instruction.
 
 Source of truth: this wiki page.
 
