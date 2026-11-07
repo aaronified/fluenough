@@ -1,0 +1,351 @@
+schema: 1
+id: "ml-places"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0337"
+    target: "ഹോട്ടൽ"
+    reading: "hōṭṭal"
+    ipa: "hoːʈʈal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഹോട്ടൽ എവിടെ?"
+        reading: "hōṭṭal eviṭe?"
+        ipa: "hoːʈʈal eʋiʈe"
+        bases: [{ word: "ഹോട്ടൽ", base: "ഹോട്ടൽ", reading: "hōṭṭal" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ഹോട്ടൽ അകലെ."
+        reading: "hōṭṭal akale."
+        ipa: "hoːʈʈal əkəle"
+        bases: [{ word: "ഹോട്ടൽ", base: "ഹോട്ടൽ", reading: "hōṭṭal" }, { word: "അകലെ", ref: "ml-0144" }]
+  - id: "ml-0338"
+    target: "കട"
+    reading: "kaṭa"
+    ipa: "kəʈa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കട എവിടെ?"
+        reading: "kaṭa eviṭe?"
+        ipa: "kəʈa eʋiʈe"
+        bases: [{ word: "കട", base: "കട", reading: "kaṭa" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "കട അടുത്ത്."
+        reading: "kaṭa aṭutt."
+        ipa: "kəʈa əʈut̪t̪"
+        bases: [{ word: "കട", base: "കട", reading: "kaṭa" }, { word: "അടുത്ത്", ref: "ml-0143" }]
+  - id: "ml-0339"
+    target: "ചായക്കട"
+    reading: "cāyakkaṭa"
+    ipa: "tʃaːjəkkəʈa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ചായക്കട ഇവിടെ ഉണ്ട്."
+        reading: "cāyakkaṭa iviṭe uṇṭ."
+        ipa: "tʃaːjəkkəʈa iʋiʈe uɳʈ"
+        bases: [{ word: "ചായക്കട", base: "ചായക്കട", reading: "cāyakkaṭa" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "ചായക്കടയിൽ പോകാം"
+        reading: "cāyakkaṭayil pōkāṁ."
+        ipa: "tʃaːjəkkəʈəjil poːkaːm"
+        bases: [{ word: "ചായക്കടയിൽ", base: "ചായക്കട", reading: "cāyakkaṭa" }, { word: "പോകാം", ref: "ml-0112" }]
+  - id: "ml-0340"
+    target: "ക്ഷേത്രം"
+    reading: "kṣēṭraṁ"
+    ipa: "kʂeːʈɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ക്ഷേത്രം എവിടെ?"
+        reading: "kṣēṭraṁ eviṭe?"
+        ipa: "kʂeːʈɾam eʋiʈe"
+        bases: [{ word: "ക്ഷേത്രം", base: "ക്ഷേത്രം", reading: "kṣēṭraṁ" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ക്ഷേത്രം അടുത്താണ്."
+        reading: "kṣēṭraṁ aṭuttāṇ."
+        ipa: "kʂeːʈɾam əʈut̪t̪aːɳ"
+        bases: [{ word: "ക്ഷേത്രം", base: "ക്ഷേത്രം", reading: "kṣēṭraṁ" }, { word: "അടുത്താണ്", base: "അടുത്താണ്", reading: "aṭuttāṇ" }]
+  - id: "ml-0341"
+    target: "പള്ളി"
+    reading: "paḷḷi"
+    ipa: "pəɭɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പള്ളി എവിടെ?"
+        reading: "paḷḷi eviṭe?"
+        ipa: "pəɭɭi eʋiʈe"
+        bases: [{ word: "പള്ളി", base: "പള്ളി", reading: "paḷḷi" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പള്ളി ഇവിടെ നിന്ന് അകലെയാണ്"
+        reading: "paḷḷi iviṭe ninn akaleyāṇ."
+        ipa: "pəɭɭi iʋiʈe ninn əkəlejaːɳ"
+        bases: [{ word: "പള്ളി", base: "പള്ളി", reading: "paḷḷi" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "നിന്ന്", base: "നിന്ന്", reading: "ninn" }, { word: "അകലെയാണ്", ref: "ml-0144" }]
+  - id: "ml-0342"
+    target: "പാർക്ക്"
+    reading: "pārkk"
+    ipa: "paːɾkk"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പാർക്ക് എവിടെ?"
+        reading: "pārkk eviṭe?"
+        ipa: "paːɾkk eʋiʈe"
+        bases: [{ word: "പാർക്ക്", base: "പാർക്ക്", reading: "pārkk" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "കുട്ടികൾ പാർക്കിൽ കളിക്കുന്നു."
+        reading: "kuṭṭikaḷ pārkkil kaḷikkunnu."
+        ipa: "kuʈʈikaɭ paːɾkkil kəɭikkunnu"
+        bases: [{ word: "കുട്ടികൾ", ref: "ml-0082" }, { word: "പാർക്കിൽ", base: "പാർക്ക്", reading: "pārkk" }, { word: "കളിക്കുന്നു", base: "കളിക്കുന്നു", reading: "kaḷikkunnu" }]
+  - id: "ml-0343"
+    target: "ലൈബ്രറി"
+    reading: "laibrari"
+    ipa: "laibɾəɾi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ലൈബ്രറി അടുത്ത്."
+        reading: "laibrari aṭutt."
+        ipa: "laibɾəɾi əʈut̪t̪"
+        bases: [{ word: "ലൈബ്രറി", base: "ലൈബ്രറി", reading: "laibrari" }, { word: "അടുത്ത്", ref: "ml-0143" }]
+      - target: "ലൈബ്രറി എവിടെ?"
+        reading: "laibrari eviṭe?"
+        ipa: "laibɾəɾi eʋiʈe"
+        bases: [{ word: "ലൈബ്രറി", base: "ലൈബ്രറി", reading: "laibrari" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0344"
+    target: "പോസ്റ്റ് ഓഫീസ്"
+    reading: "pōsṭ ōfīs"
+    ipa: "poːsʈ oːfiːs"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പോസ്റ്റ് ഓഫീസ് എവിടെ?"
+        reading: "pōsṭ ōfīs eviṭe?"
+        ipa: "poːsʈ oːfiːs eʋiʈe"
+        bases: [{ word: "പോസ്റ്റ്", base: "പോസ്റ്റ്", reading: "pōsṭ" }, { word: "ഓഫീസ്", ref: "ml-0185" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പോസ്റ്റ് ഓഫീസ് അകലെ."
+        reading: "pōsṭ ōfīs akale."
+        ipa: "poːsʈ oːfiːs əkəle"
+        bases: [{ word: "പോസ്റ്റ്", base: "പോസ്റ്റ്", reading: "pōsṭ" }, { word: "ഓഫീസ്", ref: "ml-0185" }, { word: "അകലെ", ref: "ml-0144" }]
+  - id: "ml-0345"
+    target: "പെട്രോൾ പമ്പ്"
+    reading: "peṭrōḷ pamp"
+    ipa: "peʈɾoːɭ pamp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പെട്രോൾ പമ്പ് എവിടെ?"
+        reading: "peṭrōḷ pamp eviṭe?"
+        ipa: "peʈɾoːɭ pamp eʋiʈe"
+        bases: [{ word: "പെട്രോൾ", base: "പെട്രോൾ", reading: "peṭrōḷ" }, { word: "പമ്പ്", base: "പമ്പ്", reading: "pamp" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പെട്രോൾ പമ്പ് റോഡിന്റെ മൂലയിൽ"
+        reading: "peṭrōḷ pamp rōḍinṟe mūlayil."
+        ipa: "peʈɾoːɭ pamp ɾoːɖint̪ɾe muːləjil"
+        bases: [{ word: "പെട്രോൾ", base: "പെട്രോൾ", reading: "peṭrōḷ" }, { word: "പമ്പ്", base: "പമ്പ്", reading: "pamp" }, { word: "റോഡിന്റെ", ref: "ml-0244" }, { word: "മൂലയിൽ", ref: "ml-0249" }]
+  - id: "ml-0346"
+    target: "ബീച്ച്"
+    reading: "bīc"
+    ipa: "biːtʃ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബീച്ച് അകലെ."
+        reading: "bīc akale."
+        ipa: "biːtʃ əkəle"
+        bases: [{ word: "ബീച്ച്", base: "ബീച്ച്", reading: "bīc" }, { word: "അകലെ", ref: "ml-0144" }]
+      - target: "ബീച്ച് എവിടെ?"
+        reading: "bīc eviṭe?"
+        ipa: "biːtʃ eʋiʈe"
+        bases: [{ word: "ബീച്ച്", base: "ബീച്ച്", reading: "bīc" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0347"
+    target: "പുഴ"
+    reading: "puḻa"
+    ipa: "puɻa"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പുഴ വലിയതാണ്"
+        reading: "puḻa valiyatāṇ."
+        ipa: "puɻa ʋəlijət̪aːɳ"
+        bases: [{ word: "പുഴ", base: "പുഴ", reading: "puḻa" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+      - target: "പുഴ എവിടെ?"
+        reading: "puḻa eviṭe?"
+        ipa: "puɻa eʋiʈe"
+        bases: [{ word: "പുഴ", base: "പുഴ", reading: "puḻa" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0348"
+    target: "കുന്ന്"
+    reading: "kunn"
+    ipa: "kunn"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കുന്ന് ഉയരമാണ്."
+        reading: "kunn uyaramāṇ."
+        ipa: "kunn ujəɾəmaːɳ"
+        bases: [{ word: "കുന്ന്", base: "കുന്ന്", reading: "kunn" }, { word: "ഉയരമാണ്", base: "ഉയരമാണ്", reading: "uyaramāṇ" }]
+      - target: "കുന്ന് എവിടെ?"
+        reading: "kunn eviṭe?"
+        ipa: "kunn eʋiʈe"
+        bases: [{ word: "കുന്ന്", base: "കുന്ന്", reading: "kunn" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0349"
+    target: "കാട്"
+    reading: "kāṭ"
+    ipa: "kaːʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കാട് അകലെ."
+        reading: "kāṭ akale."
+        ipa: "kaːʈ əkəle"
+        bases: [{ word: "കാട്", base: "കാട്", reading: "kāṭ" }, { word: "അകലെ", ref: "ml-0144" }]
+      - target: "കാട്ടിൽ പോകരുത്."
+        reading: "kāṭṭil pōkaruttŭ."
+        ipa: "kaːʈʈil poːkəɾut̪t̪u"
+        bases: [{ word: "കാട്ടിൽ", base: "കാട്", reading: "kāṭ" }, { word: "പോകരുത്", base: "പോകരുത്", reading: "pōkaruttŭ" }]
+  - id: "ml-0350"
+    target: "നഗരം"
+    reading: "nagaraṁ"
+    ipa: "nəɡəɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "നഗരം വലിയതാണ്"
+        reading: "nagaraṁ valiyatāṇ."
+        ipa: "nəɡəɾam ʋəlijət̪aːɳ"
+        bases: [{ word: "നഗരം", base: "നഗരം", reading: "nagaraṁ" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+      - target: "നഗരത്തിൽ എത്ര ആളുകൾ?"
+        reading: "nagarattil etra āḷukaḷ?"
+        ipa: "nəɡəɾət̪t̪il et̪ɾa aːɭukaɭ"
+        bases: [{ word: "നഗരത്തിൽ", base: "നഗരം", reading: "nagaraṁ" }, { word: "എത്ര", ref: "ml-0038" }, { word: "ആളുകൾ", base: "ആളുകൾ", reading: "āḷukaḷ" }]
+  - id: "ml-0351"
+    target: "ഗ്രാമം"
+    reading: "grāmaṁ"
+    ipa: "ɡɾaːmam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ഗ്രാമം ചെറുതാണ്."
+        reading: "grāmaṁ ceṟutāṇ."
+        ipa: "ɡɾaːmam tʃeɾut̪aːɳ"
+        bases: [{ word: "ഗ്രാമം", base: "ഗ്രാമം", reading: "grāmaṁ" }, { word: "ചെറുതാണ്", base: "ചെറുതാണ്", reading: "ceṟutāṇ" }]
+      - target: "ഗ്രാമം എവിടെ?"
+        reading: "grāmaṁ eviṭe?"
+        ipa: "ɡɾaːmam eʋiʈe"
+        bases: [{ word: "ഗ്രാമം", base: "ഗ്രാമം", reading: "grāmaṁ" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0352"
+    target: "പട്ടണം"
+    reading: "paṭṭaṇaṁ"
+    ipa: "pəʈʈəɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പട്ടണം അടുത്ത്."
+        reading: "paṭṭaṇaṁ aṭutt."
+        ipa: "pəʈʈəɳam əʈut̪t̪"
+        bases: [{ word: "പട്ടണം", base: "പട്ടണം", reading: "paṭṭaṇaṁ" }, { word: "അടുത്ത്", ref: "ml-0143" }]
+      - target: "പട്ടണത്തിലേക്ക് എങ്ങനെ പോകാം"
+        reading: "paṭṭaṇattilēkk eṅṅane pōkāṁ?"
+        ipa: "pəʈʈəɳət̪t̪ileːkk eŋŋəne poːkaːm"
+        bases: [{ word: "പട്ടണത്തിലേക്ക്", base: "പട്ടണം", reading: "paṭṭaṇaṁ" }, { word: "എങ്ങനെ", ref: "ml-0036" }, { word: "പോകാം", ref: "ml-0112" }]
+  - id: "ml-0353"
+    target: "തെരുവ്"
+    reading: "teruv"
+    ipa: "t̪eɾuʋ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "തെരുവ് വീതിയാണ്."
+        reading: "teruv vītiyāṇ."
+        ipa: "t̪eɾuʋ ʋiːt̪ijaːɳ"
+        bases: [{ word: "തെരുവ്", base: "തെരുവ്", reading: "teruv" }, { word: "വീതിയാണ്", base: "വീതിയാണ്", reading: "vītiyāṇ" }]
+      - target: "തെരുവ് എവിടെ?"
+        reading: "teruv eviṭe?"
+        ipa: "t̪eɾuʋ eʋiʈe"
+        bases: [{ word: "തെരുവ്", base: "തെരുവ്", reading: "teruv" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0354"
+    target: "ബസ് സ്റ്റോപ്പ്"
+    reading: "bas sṭōpp"
+    ipa: "bas sʈoːpp"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ബസ് സ്റ്റോപ്പ് എവിടെ?"
+        reading: "bas sṭōpp eviṭe?"
+        ipa: "bas sʈoːpp eʋiʈe"
+        bases: [{ word: "ബസ്", ref: "ml-0252" }, { word: "സ്റ്റോപ്പ്", base: "സ്റ്റോപ്പ്", reading: "sṭōpp" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ബസ് സ്റ്റോപ്പ് അകലെ."
+        reading: "bas sṭōpp akale."
+        ipa: "bas sʈoːpp əkəle"
+        bases: [{ word: "ബസ്", ref: "ml-0252" }, { word: "സ്റ്റോപ്പ്", base: "സ്റ്റോപ്പ്", reading: "sṭōpp" }, { word: "അകലെ", ref: "ml-0144" }]
+  - id: "ml-0355"
+    target: "കളിസ്ഥലം"
+    reading: "kaḷisthalaṁ"
+    ipa: "kəɭist̪ʰəlam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കളിസ്ഥലം അടുത്താണ്."
+        reading: "kaḷisthalaṁ aṭuttāṇ."
+        ipa: "kəɭist̪ʰəlam əʈut̪t̪aːɳ"
+        bases: [{ word: "കളിസ്ഥലം", base: "കളിസ്ഥലം", reading: "kaḷisthalaṁ" }, { word: "അടുത്താണ്", base: "അടുത്താണ്", reading: "aṭuttāṇ" }]
+      - target: "കുട്ടി കളിസ്ഥലത്ത് കളിക്കുന്നു."
+        reading: "kuṭṭi kaḷisthalattŭ kaḷikkunnu."
+        ipa: "kuʈʈi kəɭist̪ʰələt̪t̪u kəɭikkunnu"
+        bases: [{ word: "കുട്ടി", ref: "ml-0082" }, { word: "കളിസ്ഥലത്ത്", base: "കളിസ്ഥലം", reading: "kaḷisthalaṁ" }, { word: "കളിക്കുന്നു", base: "കളിക്കുന്നു", reading: "kaḷikkunnu" }]
