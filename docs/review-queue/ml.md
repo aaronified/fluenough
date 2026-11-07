@@ -95,5 +95,5 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ml-0457 | ml-animals | Example 2 may be off the word (its sentence does not show the card's own sense). Please check. | Haiku builder | 2026-11-07 |
 | ml-0458 | ml-animals | Example 2 may be off the word (its sentence does not show the card's own sense). Please check. | Haiku builder | 2026-11-07 |
 | ml-0084 | ml-family | അമ്മായി (aunt): is it the right gloss, and the right gender? | Haiku builder | 2026-11-07 |
-| ml-0673 | ml-sound-differences | This pair was vellaṁ (വെല്ലം) with the word ശർക്കര (sharkkara) as its common name, not the word jaggery in general. Is വെല്ലം the right partner? | Haiku builder | 2026-11-07 |
+| ml-0673 | ml-sound-differences | വെല്ലം (jaggery, the word ശർക്കര is the common name): is വെല്ലം the right partner for വെള്ളം in the lateral pair, or should the pair use ശർക്കര? | Haiku builder | 2026-11-07 |
 | unit-level | ml-noun-forms-sentences, ml-sound-differences | The noun-forms sentence deck uses plain nouns; its plural forms wait for the grammar units not built. The sound-differences deck has six words in four pairs (twelve planned); the retroflex t and d pairs are still to find. | Haiku builder | 2026-11-07 |
