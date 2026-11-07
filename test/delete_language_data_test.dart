@@ -233,6 +233,60 @@ void main() {
       },
     );
 
+    test('placement with a withdrawal: reviews leave credit and its '
+        'withdrawal alone; placement takes both, and a real answer in the '
+        'same second stays', () async {
+      final placed = _at(5, 9);
+      final second = placed.millisecondsSinceEpoch ~/ 1000;
+      for (final answers in <bool>[true, false]) {
+        final (:db, :progress) = await _open();
+        _answer(progress, 'te', 1, placed, grade: 5);
+        progress.record(
+          deckId: 'te-en-words',
+          cardId: 'te-1002',
+          mode: DrillMode.recognition,
+          grade: 5,
+          now: placed,
+          elapsed: const Duration(seconds: 3),
+        );
+        _answer(progress, 'te', 3, _at(6));
+        progress.withdrawCredit(
+          PlacementWithdrawal(
+            at: _at(7),
+            language: 'te',
+            creditAt: second,
+            modes: <DrillMode>[DrillMode.recognition],
+            script: null,
+            deckIds: <String>['te-en-words'],
+          ),
+        );
+        await progress.flush();
+        await progress.eraseReviews(
+          ReviewErasure(
+            language: 'te',
+            answers: answers,
+            placement: !answers,
+            placedAtSeconds: <int>{second},
+          ),
+        );
+        final left = await _cards(db);
+        final taken = await db.placementWithdrawalsDao.all();
+        if (answers) {
+          expect(left, <String>['te-1001'], reason: 'only the credit stays');
+          expect(taken, hasLength(1));
+        } else {
+          expect(left, unorderedEquals(<String>['te-1002', 'te-1003']));
+          expect(taken, isEmpty);
+          expect(progress.withdrawals, isEmpty);
+          expect(progress.withdrawnReviews, isEmpty);
+        }
+        await expectLater(
+          db.customStatement('DELETE FROM placement_withdrawals'),
+          throwsA(anything),
+        );
+      }
+    });
+
     test('memory progress deletes the same way', () async {
       final progress = MemoryProgress();
       _answer(progress, 'te', 1, _at(1));

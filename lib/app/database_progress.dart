@@ -458,11 +458,14 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     if (_readFailed) return _memory.eraseReviews(erasure);
     await _writes;
     final removed = await _log.eraseReviews(erasure);
-    if (removed == 0) return 0;
+    if (removed == 0 && !erasure.placement) return 0;
+    final taken = await _log.withdrawals();
     _memory.replaceWith(
       await _log.events(),
       await _log.leechActions(),
       fitted: await _log.fitted(),
+      withdrawals: taken,
+      withdrawn: await _log.withdrawnReviews(taken),
     );
     _scheduleSnapshot();
     return removed;

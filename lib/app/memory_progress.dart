@@ -22,7 +22,7 @@ export '../core/data/review_erasure.dart' show ReviewErasure;
 export '../core/models/leech_action.dart';
 export '../core/models/review_event.dart';
 export '../core/scheduling/placement_withdrawal.dart'
-    show PlacementWithdrawal, isWithdrawnCredit;
+    show PlacementWithdrawal, hasCreditShape, isWithdrawnCredit;
 export '../core/progress/progress_index.dart';
 export '../core/scheduling/skill_parameters.dart'
     show FittedParameters, SkillKey, SkillParameters, skillOf;
@@ -507,13 +507,23 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
 
   @override
   Future<int> eraseReviews(ReviewErasure erasure) async {
-    final all = _log.map(logged).toList();
+    // The credit a withdrawal took back is still in the log: it can be
+    // erased with the placement, so it is read with the rest.
+    final all = <LoggedReview>[..._log.map(logged), ..._withdrawn];
     final keep = <LoggedReview>[
       for (final r in all)
-        if (!erasure.matches(r.key.cardId, r.at)) r,
+        if (!erasure.matches(
+          r.key.cardId,
+          r.at,
+          creditShape: hasCreditShape(r),
+        ))
+          r,
     ];
     final removed = all.length - keep.length;
-    if (removed == 0) return 0;
+    final taken = erasure.placement
+        ? _withdrawals.where((w) => w.language == erasure.language).length
+        : 0;
+    if (removed == 0 && taken == 0) return 0;
     final pairs = <ProgressKey>{for (final r in keep) r.key};
     _parameters = SkillParameters(
       fitted: <SkillKey, FittedParameters>{
@@ -521,7 +531,11 @@ class MemoryProgress extends ChangeNotifier implements ProgressStore {
           if (key.language != erasure.language) key: value,
       },
     );
-    _replace(keep, <LeechAction>[
+    if (taken > 0) {
+      _withdrawals.removeWhere((w) => w.language == erasure.language);
+    }
+    _withdrawn.clear();
+    _replace(inTimeOrder(keep), <LeechAction>[
       for (final a in _leechActions)
         if (!erasure.isOfLanguage(a.key.cardId) || pairs.contains(a.key)) a,
     ]);

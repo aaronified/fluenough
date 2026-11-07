@@ -530,10 +530,13 @@ class ReviewLog {
   ///   longer the log's.
   ///
   /// Returns how many reviews went; nothing changes when none matched.
+  /// Withdrawals of placement credit are removed only with the credit they
+  /// name, when the placement is erased; real answers are never touched by
+  /// that.
   /// Only for a deletion the learner confirmed, after a backup was kept.
   Future<int> eraseReviews(ReviewErasure erasure) => _db.transaction(() async {
-    final removed = await _db.eraseReviews(erasure);
-    if (removed == 0) return 0;
+    final (:reviews, :withdrawals) = await _db.eraseReviews(erasure);
+    if (reviews == 0 && withdrawals == 0) return 0;
     await (_db.delete(
       _db.fsrsParameters,
     )..where((p) => p.language.equals(erasure.language))).go();
@@ -544,7 +547,7 @@ class ReviewLog {
     );
     await _rebuild(parameters);
     await _db.replaySnapshotsDao.clear();
-    return removed;
+    return reviews;
   });
 
   Future<void> _append(ReviewEvent event) => _db.reviewsDao.append(

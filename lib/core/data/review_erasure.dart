@@ -48,8 +48,12 @@ class ReviewErasure {
   /// Whether [cardId] is of [language].
   bool isOfLanguage(String cardId) => Abilities.languageOf(cardId) == language;
 
-  /// Whether a review of [cardId] given at [at] is one placement wrote.
-  bool isPlacement(String cardId, DateTime at) =>
+  /// Whether a review of [cardId] given at [at] is one placement wrote: in
+  /// a second placement wrote its credit, and with the shape of credit
+  /// ([creditShape]: Easy, no time taken, no answer given). A real answer
+  /// in the same second is not placement's and is never taken with it.
+  bool isPlacement(String cardId, DateTime at, {bool creditShape = true}) =>
+      creditShape &&
       isOfLanguage(cardId) &&
       placedAtSeconds.contains(at.millisecondsSinceEpoch ~/ 1000);
 
@@ -65,9 +69,9 @@ class ReviewErasure {
   }
 
   /// Whether the review of [cardId] given at [at] is deleted.
-  bool matches(String cardId, DateTime at) {
+  bool matches(String cardId, DateTime at, {bool creditShape = true}) {
     if (!isOfLanguage(cardId)) return false;
-    if (isPlacement(cardId, at)) return placement;
+    if (isPlacement(cardId, at, creditShape: creditShape)) return placement;
     return answers && inRange(at);
   }
 

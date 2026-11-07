@@ -895,11 +895,13 @@ class SettingsNotifier extends ChangeNotifier {
   }
 
   /// Forgets what placement found for [language] (#861): the moments it
-  /// credited words, the skills it verified and their labels, a paused run,
+  /// credited words and their model stamps and kept moments, the skills it verified and their labels, a paused run,
   /// and the decks it marked placed. The course then asks for placement
   /// again ([placedAtOf] is empty). Other languages are not touched.
   void clearPlacement(String language) {
     _placedAt = _without(_placedAt, language);
+    _placedBy = _without(_placedBy, language);
+    _placementKept = _without(_placementKept, language);
     _verifiedSkills = _without(_verifiedSkills, language);
     _skillLabels = _without(_skillLabels, language);
     _placementRuns = _without(_placementRuns, language);
