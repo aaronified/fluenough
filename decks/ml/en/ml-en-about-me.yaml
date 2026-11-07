@@ -16,9 +16,12 @@ cards:
       "എന്റെ പേര് രവി.":
         native: "My name is Ravi."
         bases:
+          "പേര്": "name"
           "രവി": "Ravi"
       "പേര് എന്ത്?":
         native: "What is the name?"
+        bases:
+          "പേര്": "name"
   "ml-0043":
     native: "my"
     notes:
@@ -37,8 +40,12 @@ cards:
     examples:
       "എന്റെ വയസ്സ് ഇരുപത്.":
         native: "My age is twenty."
+        bases:
+          "വയസ്സ്": "age"
       "നിങ്ങളുടെ വയസ്സ് എത്ര?":
         native: "How old are you?"
+        bases:
+          "വയസ്സ്": "age"
   "ml-0045":
     native: "home country; home town"
     notes:
@@ -47,9 +54,12 @@ cards:
       "എന്റെ നാട് കേരളം.":
         native: "My home is Kerala."
         bases:
+          "നാട്": "home country"
           "കേരളം": "Kerala"
       "നാട് എവിടെ?":
         native: "Where is your home?"
+        bases:
+          "നാട്": "home country"
   "ml-0046":
     native: "job; work"
     notes:
@@ -58,9 +68,12 @@ cards:
       "എന്റെ ജോലി ഡോക്ടർ.":
         native: "My job is doctor."
         bases:
+          "ജോലി": "job"
           "ഡോക്ടർ": "doctor"
       "നിങ്ങളുടെ ജോലി എന്ത്?":
         native: "What is your job?"
+        bases:
+          "ജോലി": "job"
   "ml-0047":
     native: "place"
     notes:
@@ -70,10 +83,12 @@ cards:
         native: "This is a good place."
         bases:
           "ഇത്": "this"
+          "സ്ഥലം": "place"
       "ഇത് ഏത് സ്ഥലം?":
         native: "Which place is this?"
         bases:
           "ഇത്": "this"
+          "സ്ഥലം": "place"
   "ml-0048":
     native: "here"
     notes:
@@ -81,7 +96,10 @@ cards:
     examples:
       "ഞാൻ ഇവിടെ.":
         native: "I am here."
+        bases:
+          "ഇവിടെ": "here"
       "ഇവിടെ വെള്ളം ഉണ്ട്.":
         native: "There is water here."
         bases:
+          "ഇവിടെ": "here"
           "ഉണ്ട്": "is"
