@@ -1,0 +1,56 @@
+schema: 1
+id: "ml-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0692"
+    target: "പുതിയ പുസ്തകം എവിടെ?"
+    reading: "putiya pustakaṁ eviṭe?"
+    ipa: "put̪ija pust̪əkam eʋiʈe"
+    pos: "phrase"
+    bases: [{ word: "പുതിയ", ref: "ml-0477" }, { word: "പുസ്തകം", ref: "ml-0356" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0693"
+    target: "ഈ ഭക്ഷണം ചൂടുള്ളതാണ്/ചൂടുള്ള."
+    reading: "ī bhakṣaṇaṁ cūṭuḷḷatāṇ/cūṭuḷḷa."
+    ipa: "iː bʱəkʂəɳam tʃuːʈuɭɭət̪aːɳtʃuːʈuɭɭa"
+    pos: "phrase"
+    bases: [{ word: "ഈ", ref: "ml-0584" }, { word: "ഭക്ഷണം", ref: "ml-0260" }, { word: "ചൂടുള്ളതാണ്", ref: "ml-0479" }]
+  - id: "ml-0694"
+    target: "തണുത്ത വെള്ളം വേണോ?"
+    reading: "taṇutta veḷḷaṁ vēṇō?"
+    ipa: "t̪əɳut̪t̪a ʋeɭɭam ʋeːɳoː"
+    pos: "phrase"
+    bases: [{ word: "തണുത്ത", ref: "ml-0480" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+  - id: "ml-0695"
+    target: "വൃത്തിയുള്ള മുറി ഇവിടെ."
+    reading: "vṛttiyuḷḷa muṟi iviṭe."
+    ipa: "ʋɾɯt̪t̪ijuɭɭa muɾi iʋiʈe"
+    pos: "phrase"
+    bases: [{ word: "വൃത്തിയുള്ള", ref: "ml-0481" }, { word: "മുറി", ref: "ml-0387" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0696"
+    target: "വേഗത്തിലുള്ള ബസ് എവിടെ?"
+    reading: "vēgattiluḷḷa bas eviṭe?"
+    ipa: "ʋeːɡət̪t̪iluɭɭa bas eʋiʈe"
+    pos: "phrase"
+    bases: [{ word: "വേഗത്തിലുള്ള", ref: "ml-0483" }, { word: "ബസ്", ref: "ml-0252" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0697"
+    target: "ഭാരമുള്ള ബാഗ് ഇവിടെ."
+    reading: "bhāramuḷḷa bāg iviṭe."
+    ipa: "bʱaːɾəmuɭɭa baːɡ iʋiʈe"
+    pos: "phrase"
+    bases: [{ word: "ഭാരമുള്ള", ref: "ml-0487" }, { word: "ബാഗ്", ref: "ml-0361" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0698"
+    target: "അവൻ സന്തോഷമാണ്."
+    reading: "avaṉ santōṣamāṇ."
+    ipa: "əʋan sənt̪oːʂəmaːɳ"
+    pos: "phrase"
+    bases: [{ word: "അവൻ", ref: "ml-0097" }, { word: "സന്തോഷമാണ്", base: "സന്തോഷമാണ്", reading: "santōṣamāṇ" }]
+  - id: "ml-0699"
+    target: "എനിക്ക് വിശക്കുന്നു."
+    reading: "enikk viśakkunnu."
+    ipa: "enikk ʋiʃəkkunnu"
+    pos: "phrase"
+    bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "വിശക്കുന്നു", base: "വിശക്കുന്നു", reading: "viśakkunnu" }]
