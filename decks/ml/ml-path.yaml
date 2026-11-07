@@ -276,7 +276,8 @@ units:
     reading_passages:
       - { id: "bill", text: { "en": "A shop bill with its total" } }
   # ml-food-sentences joins this unit.
-  - planned: { id: "ml-food", theme: "food", words: 64 }
+  - decks: ["ml-food", "*"]
+    words: 47
     listening_passages:
       - { id: "at-the-tea-shop", text: { "en": "Ordering tea and a snack at a tea shop" } }
     reading_passages:
@@ -341,13 +342,15 @@ units:
     reading_passages:
       - { id: "bus-board", text: { "en": "The destination board on a bus" } }
   # ml-body-sentences joins this unit.
-  - planned: { id: "ml-body", theme: "body", words: 28 }
+  - decks: ["ml-body", "*"]
+    words: 30
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
     reading_passages:
       - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
   # ml-places-sentences joins this unit.
-  - planned: { id: "ml-places", theme: "places", words: 42 }
+  - decks: ["ml-places", "*"]
+    words: 19
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
     reading_passages:
