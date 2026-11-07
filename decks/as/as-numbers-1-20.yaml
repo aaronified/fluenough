@@ -14,6 +14,9 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "অধ্যায় এক।", reading: "ôdhyāy ek.", ipa: "ɔdʱjaj ek", bases: [] }
+      - { target: "এক ঘন্টা।", reading: "ek ghôntā.", ipa: "ek ɡʱɔnta", bases: [] }
   - id: "as-0223"
     target: "দুই"
     reading: "dui"
@@ -22,11 +25,17 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "দুজন মানুহ", reading: "duzôn mānuh", ipa: "duzɔn manuh", bases: [{"word": "দুজন", "base": "দুই", "reading": "dui"}, {"word": "মানুহ", "base": "মানুহ", "reading": "mānuh"}] }
+      - { target: "মোৰ দুজন ভাইটি আছে।", reading: "mur duzôn bhāiti āse.", ipa: "mʊɹ duzɔn bʱaiti ase", bases: [{"word": "মোৰ", "base": "মই", "reading": "moi"}, {"word": "দুজন", "base": "দুই", "reading": "dui"}, {"word": "আছে", "base": "আছ", "reading": "āsô"}] }
   - id: "as-0224"
     target: "তিনি"
     reading: "tini"
     ipa: "tini"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স তিনি বছৰ।", reading: "mur bôyôs tini bôsôr.", ipa: "mʊɹ bɔjɔs tini bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "তিনিখন কিতাপ", reading: "tinikhôn kitāp", ipa: "tinikʰɔn kitap", bases: [{"word": "তিনিখন", "base": "তিনি", "reading": "tini"}, {"word": "কিতাপ", "base": "কিতাপ", "reading": "kitāp"}] }
   - ref: "as-0118"
   - ref: "as-0125"
   - id: "as-0225"
@@ -34,12 +43,18 @@ cards:
     reading: "sôy"
     ipa: "sɔj"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স ছয় বছৰ।", reading: "mur bôyôs sôy bôsôr.", ipa: "mʊɹ bɔjɔs sɔj bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ ছয় টকা আছে।", reading: "mur sôy tôkā āse.", ipa: "mʊɹ sɔj tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - ref: "as-0114"
   - id: "as-0226"
     target: "আঠ"
     reading: "āth"
     ipa: "atʰ"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স আঠ বছৰ।", reading: "mur bôyôs āth bôsôr.", ipa: "mʊɹ bɔjɔs atʰ bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ আঠ টকা আছে।", reading: "mur āth tôkā āse.", ipa: "mʊɹ atʰ tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0227"
     target: "ন"
     reading: "nô"
@@ -47,16 +62,25 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ বয়স ন বছৰ।", reading: "mur bôyôs nô bôsôr.", ipa: "mʊɹ bɔjɔs nɔ bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ ন টকা আছে।", reading: "mur nô tôkā āse.", ipa: "mʊɹ nɔ tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0228"
     target: "দহ"
     reading: "dôh"
     ipa: "dɔh"
     pos: "other"
+    examples:
+      - { target: "দহ কিলোমিটাৰ দূৰ।", reading: "dôh kilumitār dur.", ipa: "dɔh kilʊmitaɹ duɹ", bases: [] }
+      - { target: "প্ৰায় দহ বাজিল।", reading: "prāy dôh bāzil.", ipa: "pɹaj dɔh bazil", bases: [{"word": "বাজিল", "base": "বাজা", "reading": "bāzā"}] }
   - id: "as-0229"
     target: "এঘাৰ"
     reading: "eghār"
     ipa: "eɡʱaɹ"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স এঘাৰ বছৰ।", reading: "mur bôyôs eghār bôsôr.", ipa: "mʊɹ bɔjɔs eɡʱaɹ bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মই ৰাতি এঘাৰ বজাত শুবলৈ যাওঁ।", reading: "moi rāti eghār bôzāt xubôlôi zāum̐.", ipa: "moi ɹati eɡʱaɹ bɔzat xubɔlɔi zaʊ̃", bases: [{"word": "মই", "base": "মই", "reading": "moi"}, {"word": "বজাত", "ref": "as-0358"}, {"word": "শুবলৈ", "ref": "as-0379"}, {"word": "যাওঁ", "base": "যোৱা", "reading": "zuwā"}] }
   - id: "as-0230"
     target: "বাৰ"
     reading: "bār"
@@ -64,36 +88,57 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ বয়স বাৰ বছৰ।", reading: "mur bôyôs bār bôsôr.", ipa: "mʊɹ bɔjɔs baɹ bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ বাৰ টকা আছে।", reading: "mur bār tôkā āse.", ipa: "mʊɹ baɹ tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0231"
     target: "তেৰ"
     reading: "ter"
     ipa: "teɹ"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স তেৰ বছৰ।", reading: "mur bôyôs ter bôsôr.", ipa: "mʊɹ bɔjɔs teɹ bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ তেৰ টকা আছে।", reading: "mur ter tôkā āse.", ipa: "mʊɹ teɹ tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0232"
     target: "চৈধ্য"
     reading: "sôidhyô"
     ipa: "sɔidʱjɔ"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স চৈধ্য বছৰ।", reading: "mur bôyôs sôidhy bôsôr.", ipa: "mʊɹ bɔjɔs sɔidʱj bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ চৈধ্য টকা আছে।", reading: "mur sôidhy tôkā āse.", ipa: "mʊɹ sɔidʱj tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0233"
     target: "পোন্ধৰ"
     reading: "pundhôr"
     ipa: "pʊndʱɔɹ"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স পোন্ধৰ বছৰ।", reading: "mur bôyôs pundhôr bôsôr.", ipa: "mʊɹ bɔjɔs pʊndʱɔɹ bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ পোন্ধৰ টকা আছে।", reading: "mur pundhôr tôkā āse.", ipa: "mʊɹ pʊndʱɔɹ tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0234"
     target: "ষোল্ল"
     reading: "xullô"
     ipa: "xʊllɔ"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স ষোল্ল বছৰ।", reading: "mur bôyôs xull bôsôr.", ipa: "mʊɹ bɔjɔs xʊll bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ ষোল্ল টকা আছে।", reading: "mur xull tôkā āse.", ipa: "mʊɹ xʊll tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0235"
     target: "সোতৰ"
     reading: "xutôr"
     ipa: "xʊtɔɹ"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স সোতৰ বছৰ।", reading: "mur bôyôs sutôr bôsôr.", ipa: "mʊɹ bɔjɔs sʊtɔɹ bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ সোতৰ টকা আছে।", reading: "mur sutôr tôkā āse.", ipa: "mʊɹ sʊtɔɹ tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0236"
     target: "ওঠৰ"
     reading: "uthôr"
     ipa: "ʊtʰɔɹ"
     pos: "other"
+    examples:
+      - { target: "মোৰ বয়স ওঠৰ বছৰ।", reading: "mur bôyôs uthôr bôsôr.", ipa: "mʊɹ bɔjɔs ʊtʰɔɹ bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ ওঠৰ টকা আছে।", reading: "mur uthôr tôkā āse.", ipa: "mʊɹ ʊtʰɔɹ tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0237"
     target: "ঊনৈশ"
     reading: "unôix"
@@ -101,6 +146,9 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ বয়স ঊনৈশ বছৰ।", reading: "mur bôyôs unôix bôsôr.", ipa: "mʊɹ bɔjɔs unɔix bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ ঊনৈশ টকা আছে।", reading: "mur unôix tôkā āse.", ipa: "mʊɹ unɔix tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0238"
     target: "বিশ"
     reading: "bix"
@@ -108,3 +156,6 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ বয়স বিশ বছৰ।", reading: "mur bôyôs bix bôsôr.", ipa: "mʊɹ bɔjɔs bix bɔsɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ বিশ টকা আছে।", reading: "mur bix tôkā āse.", ipa: "mʊɹ bix tɔka ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "টকা", "ref": "as-0269"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }

@@ -15,6 +15,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাছ ছাড়িল।", reading: "bās sāril.", ipa: "bas saɹil", bases: [{"word": "ছাড়িল", "base": "ছাড়া", "reading": "sārā"}] }
+      - { target: "বাছ ৰখে।", reading: "bās rôkhe.", ipa: "bas ɹɔkʰe", bases: [{"word": "বাছ", "base": "বাছ", "reading": "bās"}, {"word": "ৰখে", "base": "ৰখা", "reading": "rôkhā"}] }
   - id: "as-0299"
     target: "অটো"
     picture: "🛺"
@@ -23,17 +26,26 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো অটো।", reading: "eitu ôtu.", ipa: "eitʊ ɔtʊ", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই অটোত যাওঁ।", reading: "moi ôtut zāum̐.", ipa: "moi ɔtʊt zaʊ̃", bases: [{"word": "অটোত", "base": "অটো", "reading": "ôtu"}, {"word": "যাওঁ", "ref": "as-2200"}] }
   - id: "as-0300"
     target: "টেক্সি"
     picture: "🚕"
     reading: "teksi"
     ipa: "teksi"
     pos: "noun"
+    examples:
+      - { target: "এইটো টেক্সি।", reading: "eitu teksi.", ipa: "eitʊ teksi", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই টেক্সিত যাওঁ।", reading: "moi teksit zāum̐.", ipa: "moi teksit zaʊ̃", bases: [{"word": "টেক্সিত", "base": "টেক্সি", "reading": "teksi"}, {"word": "যাওঁ", "ref": "as-2200"}] }
   - id: "as-0301"
     target: "ৰিক্সা"
     reading: "riksā"
     ipa: "ɹiksa"
     pos: "noun"
+    examples:
+      - { target: "এইটো ৰিক্সা।", reading: "eitu riksā.", ipa: "eitʊ ɹiksa", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই ৰিক্সাত যাওঁ।", reading: "moi riksāt zāum̐.", ipa: "moi ɹiksat zaʊ̃", bases: [{"word": "ৰিক্সাত", "base": "ৰিক্সা", "reading": "riksā"}, {"word": "যাওঁ", "ref": "as-2200"}] }
   - id: "as-0302"
     target: "ভাড়া"
     reading: "bhārā"
@@ -41,6 +53,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভাড়া দিয়া", reading: "bhārā diyā", ipa: "bʱaɹa dija", bases: [] }
+      - { target: "ভাড়া লোৱা", reading: "bhārā luwā", ipa: "bʱaɹa lʊwa", bases: [] }
   - id: "as-0303"
     target: "মিটাৰ অন কৰক।"
     reading: "mitār ôn kôrôk."
@@ -91,12 +106,18 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ষ্টেচন ইয়াত।", reading: "xtesôn iyāt.", ipa: "xtesɔn ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "ষ্টেচনলৈ যাব লাগে।", reading: "stesônôlôi zābô lāge.", ipa: "stesɔnɔlɔi zabɔ laɡe", bases: [{"word": "ষ্টেচনলৈ", "base": "ষ্টেচন", "reading": "stesôn"}, {"word": "যাব", "base": "যোৱা", "reading": "zuwā"}] }
   - id: "as-0308"
     target: "টিকট"
     picture: "🎫"
     reading: "tikôt"
     ipa: "tikɔt"
     pos: "noun"
+    examples:
+      - { target: "মোৰ টিকট ইয়াত।", reading: "mur tikôt iyāt.", ipa: "mʊɹ tikɔt ijat", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "টিকটৰ দাম", reading: "tikôtôr dām", ipa: "tikɔtɔɹ dam", bases: [{"word": "টিকটৰ", "base": "টিকট", "reading": "tikôt"}] }
   - id: "as-0309"
     target: "ছিট"
     picture: "💺"
@@ -105,6 +126,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ছিট ইয়াত।", reading: "sit iyāt.", ipa: "sit ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "মই ছিটত বহোঁ।", reading: "moi sitôt bôhum̐.", ipa: "moi sitɔt bɔhʊ̃", bases: [{"word": "ছিটত", "base": "ছিট", "reading": "sit"}, {"word": "বহোঁ", "ref": "as-2208"}] }
   - id: "as-0310"
     target: "ভিৰ"
     reading: "bhir"
@@ -112,6 +136,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ইয়াত সামান্য ভিৰ আছে।", reading: "iyāt sāmāny bhir āse.", ipa: "ijat samanj bʱiɹ ase", bases: [{"word": "ইয়াত", "ref": "as-0323"}, {"word": "ভিৰ", "base": "ভিৰ", "reading": "bhir"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
+      - { target: "আমি যাওঁতে বজাৰত ভিৰ আছিল।", reading: "āmi zāum̐te bôzārôt bhir āsil.", ipa: "ami zaʊ̃te bɔzaɹɔt bʱiɹ asil", bases: [{"word": "যাওঁতে", "ref": "as-2200"}, {"word": "বজাৰত", "ref": "as-0266"}, {"word": "আছিল", "base": "আছ", "reading": "ās"}] }
   - id: "as-0311"
     target: "খালী"
     reading: "khāli"
@@ -119,6 +146,9 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এটিএম খালী।", reading: "etiem khāli.", ipa: "etiem kʰali", bases: [] }
+      - { target: "খালী কৰা", reading: "khāli kôrā", ipa: "kʰali kɔɹa", bases: [] }
   - id: "as-0312"
     target: "ব'লক"
     reading: "bolôk"
@@ -127,6 +157,9 @@ cards:
     tags: ["polite"]
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ব'লক, যাওঁ।", reading: "bolôk, zāum̐.", ipa: "bolɔk zaʊ̃", bases: [{"word": "ব'লক", "base": "ব'লক", "reading": "bolôk"}, {"word": "যাওঁ", "ref": "as-2200"}] }
+      - { target: "ব'লক ঘৰলৈ যাওঁ।", reading: "bolôk ghôrôlôi zāum̐.", ipa: "bolɔk ɡʱɔɹɔlɔi zaʊ̃", bases: [{"word": "ঘৰলৈ", "ref": "as-0052"}, {"word": "যাওঁ", "ref": "as-2200"}] }
   - id: "as-0313"
     target: "নাও"
     picture: "🛶"
@@ -135,3 +168,6 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো নাও।", reading: "eitu nāu.", ipa: "eitʊ naʊ", bases: [{"word": "এইটো", "ref": "as-2193"}] }
+      - { target: "মই নাওত যাওঁ।", reading: "moi nāut zāum̐.", ipa: "moi naʊt zaʊ̃", bases: [{"word": "নাওত", "base": "নাও", "reading": "nāu"}, {"word": "যাওঁ", "ref": "as-2200"}] }
