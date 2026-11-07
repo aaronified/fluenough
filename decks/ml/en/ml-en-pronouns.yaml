@@ -1,0 +1,207 @@
+schema: 1
+id: "ml-en-pronouns"
+kind: "layer"
+core: "ml-pronouns"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Pronouns and people words"
+description: "You, he, she, it, we and their forms: his, her, your, our, their, to me, to you, me and oneself. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0095":
+    native: "you (informal)"
+    notes:
+      n1: "The word for you when speaking to a friend, a child or someone younger. Use the polite form with elders and strangers."
+    examples:
+      "നീ എവിടെ?":
+        native: "Where are you?"
+        bases:
+          "നീ": "you"
+      "നീ വരൂ.":
+        native: "Come, you."
+        bases:
+          "നീ": "you"
+  "ml-0096":
+    native: "you (polite)"
+    notes:
+      n1: "The polite word for you, used with elders, strangers and people of rank."
+    examples:
+      "താങ്കൾ ആര്?":
+        native: "Who are you?"
+        bases:
+          "താങ്കൾ": "you (polite)"
+      "താങ്കൾ വീട്ടിൽ ഉണ്ടോ?":
+        native: "Are you at home?"
+        bases:
+          "താങ്കൾ": "you (polite)"
+          "ഉണ്ടോ": "is there"
+  "ml-0097":
+    native: "he"
+    notes:
+      n1: "The word for a man or a boy, as he or him."
+    examples:
+      "അവൻ ആര്?":
+        native: "Who is he?"
+        bases:
+          "അവൻ": "he"
+      "അവൻ ഇവിടെ.":
+        native: "He is here."
+        bases:
+          "അവൻ": "he"
+  "ml-0098":
+    native: "she"
+    notes:
+      n1: "The word for a woman or a girl, as she or her."
+    examples:
+      "അവൾ ആര്?":
+        native: "Who is she?"
+        bases:
+          "അവൾ": "she"
+      "അവൾ എവിടെ?":
+        native: "Where is she?"
+        bases:
+          "അവൾ": "she"
+  "ml-0099":
+    native: "it"
+    notes:
+      n1: "The word for a thing or an animal, as it."
+    examples:
+      "അത് എന്ത്?":
+        native: "What is it?"
+        bases:
+          "അത്": "it"
+      "അത് വെള്ളം.":
+        native: "It is water."
+        bases:
+          "അത്": "it"
+  "ml-0100":
+    native: "we (not including you)"
+    notes:
+      n1: "We, when the listener is not part of the group. Use the other word when the listener is included."
+    examples:
+      "ഞങ്ങൾ ഇവിടെ.":
+        native: "We are here."
+        bases:
+          "ഞങ്ങൾ": "we"
+      "ഞങ്ങൾ എവിടെ?":
+        native: "Where are we?"
+        bases:
+          "ഞങ്ങൾ": "we"
+  "ml-0101":
+    native: "we (including you)"
+    notes:
+      n1: "We, when the listener is part of the group."
+    examples:
+      "നമ്മൾ പോകാം.":
+        native: "Let's go."
+        bases:
+          "നമ്മൾ": "we"
+          "പോകാം": "can go"
+      "നമ്മൾ ഇവിടെ.":
+        native: "We are here."
+        bases:
+          "നമ്മൾ": "we"
+  "ml-0102":
+    native: "his"
+    notes:
+      n1: "His, as in his house. It comes before the thing that is owned."
+    examples:
+      "അവന്റെ വീട്.":
+        native: "His house."
+      "അവന്റെ പേര് എന്ത്?":
+        native: "What is his name?"
+  "ml-0103":
+    native: "her"
+    notes:
+      n1: "Her, as in her house."
+    examples:
+      "അവളുടെ വീട്.":
+        native: "Her house."
+      "അവളുടെ പേര് എന്ത്?":
+        native: "What is her name?"
+  "ml-0104":
+    native: "your (informal)"
+    notes:
+      n1: "Your, when speaking to a friend or a child."
+    examples:
+      "നിന്റെ വീട് എവിടെ?":
+        native: "Where is your house?"
+      "നിന്റെ പേര് എന്ത്?":
+        native: "What is your name?"
+  "ml-0105":
+    native: "our (including you)"
+    notes:
+      n1: "Our, when the listener is part of the group."
+    examples:
+      "നമ്മുടെ വീട്.":
+        native: "Our house."
+      "നമ്മുടെ ജോലി എന്ത്?":
+        native: "What is our job?"
+  "ml-0106":
+    native: "their"
+    notes:
+      n1: "Their, as in the house of other people."
+    examples:
+      "അവരുടെ വീട് എവിടെ?":
+        native: "Where is their house?"
+        bases:
+          "അവരുടെ": "their"
+      "അവരുടെ പേര് എന്ത്?":
+        native: "What is their name?"
+        bases:
+          "അവരുടെ": "their"
+  "ml-0107":
+    native: "to me"
+    notes:
+      n1: "To me, as in it is needed by me. It takes the case ending for to."
+    examples:
+      "എനിക്ക് വെള്ളം വേണം.":
+        native: "I need water."
+        bases:
+          "വേണം": "need"
+      "എനിക്ക് സമയം ഇല്ല.":
+        native: "I have no time."
+        bases:
+          "സമയം": "time"
+  "ml-0108":
+    native: "to you (informal)"
+    notes:
+      n1: "To you, when speaking to a friend or a child, as in do you have."
+    examples:
+      "നിനക്ക് സമയം ഉണ്ടോ?":
+        native: "Do you have time?"
+        bases:
+          "സമയം": "time"
+          "ഉണ്ടോ": "have"
+      "നിനക്ക് വെള്ളം ഇല്ലേ?":
+        native: "Don't you have water?"
+  "ml-0109":
+    native: "me (object)"
+    notes:
+      n1: "Me, when I am the one who is called or seen. It takes the case ending for to."
+    examples:
+      "എന്നെ വിളിക്കൂ.":
+        native: "Call me."
+        bases:
+          "വിളിക്കൂ": "call"
+      "അവൻ എന്നെ വിളിക്കുന്നു.":
+        native: "He calls me."
+        bases:
+          "വിളിക്കുന്നു": "calls"
+  "ml-0110":
+    native: "oneself"
+    notes:
+      n1: "Oneself, as in I do it myself."
+    examples:
+      "ഞാൻ സ്വയം.":
+        native: "I myself."
+        bases:
+          "സ്വയം": "oneself"
+      "അവൻ സ്വയം ചെയ്യുന്നു.":
+        native: "He does it himself."
+        bases:
+          "സ്വയം": "oneself"
+          "ചെയ്യുന്നു": "does"
+  "ml-0111":
+    native: "Personal pronouns"
+    explanation: "The personal pronouns: I, you (informal and polite), he, she, it, we (with and without you). The set is shown before its members."
