@@ -85,9 +85,11 @@ void main() {
             greaterThanOrEqualTo(0.98),
             reason: declarationName(d),
           );
-          // And it is labelled, not counted: the model never scored it.
+          // And it is never counted: the model never scored it.
           for (final r in results) {
-            expect(r.skills[_say]!.state, EvidenceState.selfRated);
+            // Rated by the learner or not asked at all when the time ran out:
+            // never scored.
+            expect(r.skills[_say]!.state, isNot(EvidenceState.tested));
             expect(r.skills[_say]!.clean, 0);
             expect(r.skills[_say]!.rangeShown, isFalse);
           }
