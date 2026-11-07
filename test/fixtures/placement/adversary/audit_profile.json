@@ -1,0 +1,350 @@
+{
+ "source": "tool/placement_audit.dart over the decks of the repository; the leak rate of a clean item of a format is the best solver's expected accuracy (item_audit.dart). Regenerate when the decks change a lot.",
+ "languages": {
+  "es": {
+   "decks": 171,
+   "wordCards": 2026,
+   "sentenceCards": 477,
+   "wordTileDecoys": 2,
+   "excluded": [
+    "S2:clean",
+    "S2:cognate"
+   ],
+   "items": {
+    "F2": 1282,
+    "F13": 1282,
+    "F3": 1280,
+    "F7": 1285,
+    "F18": 1285,
+    "F1": 1345,
+    "F14": 1345,
+    "F8": 429,
+    "F16": 429,
+    "F5": 190,
+    "F17": 189,
+    "F6": 152,
+    "F6g": 10,
+    "F9": 145,
+    "F4": 846
+   },
+   "classes": {
+    "F13:clean": {
+     "n": 321,
+     "accuracy": 0.25,
+     "bound": 0.32,
+     "solver": "chance",
+     "passes": true
+    },
+    "F14:clean": {
+     "n": 322,
+     "accuracy": 0.5862,
+     "bound": 0.6,
+     "solver": "pseudoword-detector",
+     "passes": true
+    },
+    "F16:clean": {
+     "n": 342,
+     "accuracy": 0.0088,
+     "bound": 0.12,
+     "solver": "bigram-solver",
+     "passes": true
+    },
+    "F16:cognate": {
+     "n": 87,
+     "accuracy": 0.023,
+     "bound": 0.12,
+     "solver": "bigram-solver",
+     "passes": true
+    },
+    "F17:clean": {
+     "n": 160,
+     "accuracy": 0.3052,
+     "bound": 0.32,
+     "solver": "combined",
+     "passes": true
+    },
+    "F17:cognate": {
+     "n": 29,
+     "accuracy": 0.3017,
+     "bound": 0.32,
+     "solver": "similarity",
+     "passes": true
+    },
+    "F18:clean": {
+     "n": 322,
+     "accuracy": 0.0031,
+     "bound": 0.1,
+     "solver": "spelling-rules",
+     "passes": true
+    },
+    "F1:clean": {
+     "n": 322,
+     "accuracy": 0.5862,
+     "bound": 0.6,
+     "solver": "pseudoword-detector",
+     "passes": true
+    },
+    "F2:clean": {
+     "n": 321,
+     "accuracy": 0.25,
+     "bound": 0.32,
+     "solver": "chance",
+     "passes": true
+    },
+    "F3:clean": {
+     "n": 320,
+     "accuracy": 0.2969,
+     "bound": 0.32,
+     "solver": "known-words",
+     "passes": true
+    },
+    "F4:clean": {
+     "n": 282,
+     "accuracy": 0.0603,
+     "bound": 0.17,
+     "solver": "anagram-solver",
+     "passes": true
+    },
+    "F5:clean": {
+     "n": 161,
+     "accuracy": 0.2997,
+     "bound": 0.32,
+     "solver": "combined",
+     "passes": true
+    },
+    "F5:cognate": {
+     "n": 29,
+     "accuracy": 0.3075,
+     "bound": 0.32,
+     "solver": "similarity",
+     "passes": true
+    },
+    "F6:clean": {
+     "n": 123,
+     "accuracy": 0.2642,
+     "bound": 0.32,
+     "solver": "shortest",
+     "passes": true
+    },
+    "F6:cognate": {
+     "n": 29,
+     "accuracy": 0.3132,
+     "bound": 0.32,
+     "solver": "shortest",
+     "passes": true
+    },
+    "F6g:clean": {
+     "n": 10,
+     "accuracy": 0.5,
+     "bound": 0.57,
+     "solver": "chance",
+     "passes": true
+    },
+    "F7:clean": {
+     "n": 322,
+     "accuracy": 0.0031,
+     "bound": 0.1,
+     "solver": "spelling-rules",
+     "passes": true
+    },
+    "F8:clean": {
+     "n": 342,
+     "accuracy": 0.0058,
+     "bound": 0.12,
+     "solver": "bigram-solver",
+     "passes": true
+    },
+    "F8:cognate": {
+     "n": 87,
+     "accuracy": 0.0115,
+     "bound": 0.12,
+     "solver": "bigram-solver",
+     "passes": true
+    },
+    "F9:clean": {
+     "n": 145,
+     "accuracy": 0.2948,
+     "bound": 0.35,
+     "solver": "matcher",
+     "passes": true
+    },
+    "S2:clean": {
+     "n": 346,
+     "accuracy": 0.6113,
+     "bound": 0.57,
+     "solver": "suffix-bigram",
+     "passes": false
+    },
+    "S2:cognate": {
+     "n": 87,
+     "accuracy": 0.7069,
+     "bound": 0.57,
+     "solver": "suffix-bigram",
+     "passes": false
+    }
+   }
+  },
+  "hi": {
+   "decks": 139,
+   "wordCards": 1927,
+   "sentenceCards": 220,
+   "wordTileDecoys": 2,
+   "excluded": [
+    "F6:clean",
+    "F6:cognate",
+    "S2:clean",
+    "S2:cognate"
+   ],
+   "items": {
+    "F2": 1654,
+    "F13": 1654,
+    "F3": 1654,
+    "F7": 1659,
+    "F18": 1659,
+    "F1": 1714,
+    "F14": 1719,
+    "F8": 203,
+    "F16": 203,
+    "F5": 26,
+    "F17": 26,
+    "F9": 193,
+    "F4": 361
+   },
+   "classes": {
+    "F13:clean": {
+     "n": 331,
+     "accuracy": 0.25,
+     "bound": 0.32,
+     "solver": "chance",
+     "passes": true
+    },
+    "F14:clean": {
+     "n": 332,
+     "accuracy": 0.537,
+     "bound": 0.6,
+     "solver": "pseudoword-detector",
+     "passes": true
+    },
+    "F16:clean": {
+     "n": 165,
+     "accuracy": 0.0182,
+     "bound": 0.12,
+     "solver": "bigram-solver",
+     "passes": true
+    },
+    "F16:cognate": {
+     "n": 38,
+     "accuracy": 0.0263,
+     "bound": 0.12,
+     "solver": "bigram-solver",
+     "passes": true
+    },
+    "F17:clean": {
+     "n": 26,
+     "accuracy": 0.3141,
+     "bound": 0.32,
+     "solver": "shortest",
+     "passes": true
+    },
+    "F18:clean": {
+     "n": 332,
+     "accuracy": 0.003,
+     "bound": 0.1,
+     "solver": "spelling-rules",
+     "passes": true
+    },
+    "F1:clean": {
+     "n": 332,
+     "accuracy": 0.537,
+     "bound": 0.6,
+     "solver": "pseudoword-detector",
+     "passes": true
+    },
+    "F2:clean": {
+     "n": 331,
+     "accuracy": 0.25,
+     "bound": 0.32,
+     "solver": "chance",
+     "passes": true
+    },
+    "F3:clean": {
+     "n": 331,
+     "accuracy": 0.2953,
+     "bound": 0.32,
+     "solver": "known-words",
+     "passes": true
+    },
+    "F4:clean": {
+     "n": 361,
+     "accuracy": 0.0499,
+     "bound": 0.17,
+     "solver": "anagram-solver",
+     "passes": true
+    },
+    "F5:clean": {
+     "n": 26,
+     "accuracy": 0.3045,
+     "bound": 0.32,
+     "solver": "combined",
+     "passes": true
+    },
+    "F6:clean": {
+     "n": 26,
+     "accuracy": 0.3462,
+     "bound": 0.32,
+     "solver": "shortest",
+     "passes": false
+    },
+    "F6:cognate": {
+     "n": 3,
+     "accuracy": 0.4444,
+     "bound": 0.32,
+     "solver": "shortest",
+     "passes": false
+    },
+    "F7:clean": {
+     "n": 332,
+     "accuracy": 0.003,
+     "bound": 0.1,
+     "solver": "spelling-rules",
+     "passes": true
+    },
+    "F8:clean": {
+     "n": 165,
+     "accuracy": 0.0182,
+     "bound": 0.12,
+     "solver": "bigram-solver",
+     "passes": true
+    },
+    "F8:cognate": {
+     "n": 38,
+     "accuracy": 0.0,
+     "bound": 0.12,
+     "solver": "chance",
+     "passes": true
+    },
+    "F9:clean": {
+     "n": 193,
+     "accuracy": 0.2267,
+     "bound": 0.35,
+     "solver": "matcher",
+     "passes": true
+    },
+    "S2:clean": {
+     "n": 165,
+     "accuracy": 0.6394,
+     "bound": 0.57,
+     "solver": "suffix-bigram",
+     "passes": false
+    },
+    "S2:cognate": {
+     "n": 38,
+     "accuracy": 0.7763,
+     "bound": 0.57,
+     "solver": "suffix-bigram",
+     "passes": false
+    }
+   }
+  }
+ }
+}

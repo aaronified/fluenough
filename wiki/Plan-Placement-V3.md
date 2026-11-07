@@ -245,7 +245,8 @@ Also: every adversary with an "advanced" or "expert" declaration meets the same 
 
 1. Joint posterior and readout (`lib/core/placement/joint_model.dart`, tests in `test/placement_joint_model_test.dart`): built. It holds the prior mix, noisy-AND update, yes-bias latent, calibration, tempering, proven ceiling, Say rule and the readout.
 2. Replay harness and personas (`test/support/placement_v3_harness.dart`, fixture `test/fixtures/placement/adversary/leak_profile.json`, tests `test/placement_v3_gamers_test.dart`, `placement_v3_adversaries_test.dart`, `placement_v3_honest_test.dart`, `placement_v3_pending_gates_test.dart`): built. The harness runs any picker over a simulated bank (a stand-in for the item registry) with persona answer models (the adversary's measured leak rates, honest learners, yes-sayer, self-rater, cheater control). A stand-in picker (`BaselinePicker`) proves one band per skill with four clean items, climbs while the proof ceiling holds the start down, and stops at the caps. Enforced now: TOP100+RULES (weak and strong, Spanish and Hindi, legacy and fixed bank), COGNATE-ONLY, TESTWISE-ONLY, RANDOM, YES-SAYER, SELF-RATER, no honest learner more than 2/10 above the truth, four clean items per skill in every run, Read and Write fully placed without audio or a mic, no card asked twice.
-3. Item registry and generators with the fixes above, 4. picker, rotation and caps, 5. drill-down, 6. UI and result screen, 7. migration and retiring the V2 run policy, 8. real-learner re-fit hooks: next, one pull request each.
+3. Item registry and generators with the fixes above (`lib/core/placement/item_registry.dart`, `item_generators.dart`, `item_audit.dart`, `item_bank.dart`, `cognate_score.dart`; tests `test/placement_item_registry_test.dart`; tool `tool/placement_audit.dart`; fixture `test/fixtures/placement/adversary/audit_profile.json`): built. See "The item registry and its audit" below. The ANAGRAM-SOLVER, MATCHER, FAMILY-REPLAY and admission-audit gates are enabled and enforced.
+4. picker, rotation and caps, 5. drill-down, 6. UI and result screen, 7. migration and retiring the V2 run policy, 8. real-learner re-fit hooks: next, one pull request each.
 
 ## Pending gates
 
@@ -258,7 +259,6 @@ These gates need a later build step and are listed, with the file that will sign
 | `honest-confidence` | 80% range holds the truth in 75 to 88% | `picker` | The stand-in gives 65 to 100%; re-fit at step 8 |
 | `ear-only-placed-high-on-hear` | Ear-only placed high on Hear | `picker`, `drilldown` | The stand-in proves one band for all skills |
 | `drill-down-identifies-the-failing-skill` | Drill-down finds the failing skill in 4 items | `drilldown` | No drill-down yet |
-| `anagram-solver-per-item`, `matcher-per-pair`, `family-replay-lift`, `admission-audit` | ANAGRAM-SOLVER, MATCHER, FAMILY-REPLAY lift, admission audit | `registry` | They judge real generated items |
 | `script-gate` | Script-literate-only with the script passed | `script_gate` | No script gate yet |
 
 ### Open for step 8: a held-out gamer
@@ -268,3 +268,30 @@ The adversary's leak rates are measured by one gamer on one bank, and the genera
 ### What the gates check, and the controls
 
 The adversary gates are per skill (Read, Hear and Write each must pass), in every declaration and device variant. They have controls that show they can fail (Spanish): V3 as it was before the review (no calibration, no proof ceiling, a picker that asks every format and lets cognates in) is over by 1/10 in 24% of runs; calibration and the ceiling are each load-bearing in the setting where the other layers are removed; a gamer 0.45 better than measured fails in Spanish and Hindi. The model defends in layers, so removing one protection while the others stand still passes (measured: 0 to 3%).
+
+## The item registry and its audit (step 3)
+
+Everything is generated from a language's decks (`PlacementLanguageData`), with no per-language content: the cognate rules are a generic sound fold plus a small table of suffix correspondences per language (`cognateSuffixRules`), and a Hindi word is compared by its reading (its transliteration), which is how loanwords such as `skūl` are found. About 36% of the Spanish and 13% of the Hindi word cards are near-cognates (threshold 0.58); they never appear in a word-level format, and matching uses 0.45.
+
+**The fixes, as built.** Word picks (F2, F13, F3) have two distractors of the same part of speech, article and length (and, in English options, the same word count and nearly the same length) near the item on the path, and one look-alike lure (a word that resembles the prompt). Sentence picks (F5, F17) change one noun, verb or adjective of the right translation for a word of the same part of speech and length. Word tiles (F4) carry decoy units (two, chosen by the audit; a syllable unit in an Indic script) and the audit's strong anagram solver stays under guess plus 0.07. Tile sentences (F8, F16) carry two decoy words. The word-order pair (S2) keeps its end marks fixed and swaps two adjacent words, choosing the swap that looks most natural by word pairs and endings. Cloze (F6) has no English hint; its options share the blank's ending and differ in stem. Nouns whose ending does not predict their gender become gender items (`F6g`, Spanish only: a course needs articles for both genders). Yes/no pseudowords are as typical of the language's letter patterns as a held-out real word. A matching screen (F9) has four words of one part of speech, near each other on the path. A card is never asked twice in a run (`ItemBank.available`: no item may share a card or a lemma with one already asked, drill-down included).
+
+**The admission audit** attacks each class (a format and its cognate class) with solvers that never see the key, as expected accuracy: longest and shortest option, similarity to the prompt, a gamer that knows the first 100 words, an anagram solver (a letter-pattern model of the whole course without the target word), spelling rules, a greedy matcher, a pseudoword detector (a model trained on half the words, scored by AUC on the other half), bigram and suffix solvers for word order, and chance. A class whose best solver beats the guess plus 0.07 (0.32 for a four-option pick) is left out of the bank. Measured on the real decks (class accuracy against the bound):
+
+| Class | Spanish | Hindi | Bound |
+|---|---|---|---|
+| F2, F13 word to meaning | 0.250 (chance) | 0.250 | 0.32 |
+| F3 meaning to word | 0.297 | 0.295 | 0.32 |
+| F5, F17 sentence picks | 0.300, 0.305 | 0.305, 0.314 (26 items) | 0.32 |
+| F4 word tiles | 0.060 (2 decoys) | 0.050 | 0.17 |
+| F7, F18 typed or said | 0.003 | 0.003 | 0.10 |
+| F8, F16 tile sentences | 0.006, 0.009 | 0.018 | 0.12 |
+| F6 cloze | 0.264 | 0.346, excluded (26 items) | 0.32 |
+| F9 matching, per pair | 0.295 | 0.227 | 0.35 |
+| F1, F14 yes/no | 0.586 (AUC) | 0.537 | 0.60 |
+| S2 word order | 0.611, excluded | 0.639, excluded | 0.57 |
+
+Controls in the tests: word tiles without decoys fail the audit in Spanish (0.333); a pick whose answer is the longest option and a matching of look-alike pairs fail it; a run that ignores the never-twice rule gives a replay gamer a lift above 0.4, and one that keeps it gives none.
+
+**What the audit does not show.** The solvers are mine, and three generators choose against solvers of the same kind (S2 by word and ending pairs, F9 and the pseudowords by typicality), so those classes are measured partly against the cue they were built to defeat. S2 stays out of the bank because a held-out cue (trigrams of word endings) still reads the order at 0.61 and 0.64; it needs a swap that endings cannot reveal (step 8's held-out gamer). Hindi has few sentence items (26 for F5 and F17) and no cloze that passes, so its sentence classes are weakly measured. Formats not generated here: F10 to F12 (script decks), F15 (minimal pairs: the V2 builder, which needs the sounds file and audio trust), F19 and F20 (screens of step 6).
+
+**Harness.** The "fixed bank" leak rates of `leak_profile.json` were an assumption (about 0.30 for a clean pick); the harness now uses what the audit measured for each format it generates (`audit_profile.json`, floored at the design guess): 0.25 to 0.31 for picks, 0.10 for word tiles, 0.05 for tile sentences and 0.03 for typing, so most clean rates are a little lower than assumed and F3 (0.297) and F17 and F5 (about 0.30) are the same. Cognate items keep the old figures (they are not generated). The legacy tables are the adversary's own measurements and are untouched. Regenerate the fixture with `dart run tool/placement_audit.dart` when the decks change a lot; a test compares it with a fresh audit within 0.08.
