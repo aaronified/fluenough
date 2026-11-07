@@ -12986,9 +12986,9 @@
       }
     }
   },
-  "languagesDeleteData": "Delete data now",
+  "languagesDeleteData": "Delete data",
   "@languagesDeleteData": {
-    "description": "Screen reader label of the bin on the sheet, which removes a language's decks and progress at once."
+    "description": "Screen reader label of the red bin on a language's sheet, which opens the dialog that deletes its data."
   },
   "languagesUpdateIcon": "Check for deck updates",
   "@languagesUpdateIcon": {
@@ -13112,9 +13112,9 @@
   "@languagesDownloadGo": {
     "description": "Download dialog's action."
   },
-  "languagesDeleteTitle": "Delete {language} data now?",
+  "languagesDeleteTitle": "Delete {language} data?",
   "@languagesDeleteTitle": {
-    "description": "Title of the dialog that removes a language's decks and progress at once.",
+    "description": "Title of the dialog that deletes some of a language's data.",
     "placeholders": {
       "language": {
         "type": "String",
@@ -13122,15 +13122,9 @@
       }
     }
   },
-  "languagesDeleteBody": "Removes the decks for {language} at once, instead of at the next app open. What you are learning stops; what you already know stays. Your progress stays in the review log and comes back with the decks.",
+  "languagesDeleteBody": "Tick what to delete. Nothing of any other language is touched. A backup of everything is kept first, and you can restore it from Settings, Your data.",
   "@languagesDeleteBody": {
-    "description": "Body of the delete dialog.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "Hindustani"
-      }
-    }
+    "description": "Body of the delete dialog."
   },
   "languagesDeleteType": "Type {language} to confirm",
   "@languagesDeleteType": {
@@ -13139,6 +13133,132 @@
       "language": {
         "type": "String",
         "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteReviews": "Reviews",
+  "@languagesDeleteReviews": {
+    "description": "Tick box of the delete dialog: the language's reviews."
+  },
+  "languagesDeleteReviewsSub": "Your answers in {language}. Progress, streaks, hours and when words are due are worked out again from what is left.",
+  "@languagesDeleteReviewsSub": {
+    "description": "Explains what deleting the reviews does.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteAllDates": "All dates",
+  "@languagesDeleteAllDates": {
+    "description": "Choice in the delete dialog: delete the reviews of every day."
+  },
+  "languagesDeleteSomeDates": "Only these days",
+  "@languagesDeleteSomeDates": {
+    "description": "Choice in the delete dialog: delete the reviews of a range of days, such as when someone else tested the app."
+  },
+  "languagesDeleteFrom": "From {date}",
+  "@languagesDeleteFrom": {
+    "description": "Button that picks the first day of the reviews to delete. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 3"
+      }
+    }
+  },
+  "languagesDeleteTo": "To {date}",
+  "@languagesDeleteTo": {
+    "description": "Button that picks the last day of the reviews to delete, which is included. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 5"
+      }
+    }
+  },
+  "languagesDeleteFromLabel": "First day to delete, {date}",
+  "@languagesDeleteFromLabel": {
+    "description": "Screen reader label of the From button. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 3"
+      }
+    }
+  },
+  "languagesDeleteToLabel": "Last day to delete, {date}",
+  "@languagesDeleteToLabel": {
+    "description": "Screen reader label of the To button. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 5"
+      }
+    }
+  },
+  "languagesDeleteRangeOrder": "The first day cannot come after the last.",
+  "@languagesDeleteRangeOrder": {
+    "description": "Shown when the From day is after the To day."
+  },
+  "languagesDeletePlacement": "Placement",
+  "@languagesDeletePlacement": {
+    "description": "Tick box of the delete dialog: what placement found."
+  },
+  "languagesDeletePlacementSub": "The words placement credited and what it found. {language} asks for placement again.",
+  "@languagesDeletePlacementSub": {
+    "description": "Explains what deleting the placement does.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteSettings": "Language settings",
+  "@languagesDeleteSettings": {
+    "description": "Tick box of the delete dialog: the language's own settings."
+  },
+  "languagesDeleteSettingsSub": "Minutes a day, scripts and fonts chosen, how credited words are reviewed, and the study time kept for {language}.",
+  "@languagesDeleteSettingsSub": {
+    "description": "Explains what deleting the language settings does.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteDecks": "Deck data",
+  "@languagesDeleteDecks": {
+    "description": "Tick box of the delete dialog: the decks on the phone."
+  },
+  "languagesDeleteDecksSub": "The decks of {language} on this phone, now. What you are learning stops; what you already know stays. They download again when you need them.",
+  "@languagesDeleteDecksSub": {
+    "description": "Explains what deleting the deck data does.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindustani"
+      }
+    }
+  },
+  "languagesDeleteBackupNote": "A backup is kept first, in Settings, Your data, Recent backups.",
+  "@languagesDeleteBackupNote": {
+    "description": "Line of the delete dialog about the backup made before deleting."
+  },
+  "languagesDeleteFailed": "Nothing was deleted: the backup could not be kept.",
+  "@languagesDeleteFailed": {
+    "description": "Toast when the backup made before deleting failed, so nothing was deleted."
+  },
+  "settingsBackupBeforeDelete": "Before deleting data, {date}",
+  "@settingsBackupBeforeDelete": {
+    "description": "A backup in Recent backups: the copy made before a language's data was deleted. date is a short date.",
+    "placeholders": {
+      "date": {
+        "type": "String",
+        "example": "Nov 7"
       }
     }
   },
@@ -13316,9 +13436,9 @@
       }
     }
   },
-  "languagesToastDeleted": "{language} data deleted",
+  "languagesToastDeleted": "{language} data deleted. A backup was kept in Settings, Your data.",
   "@languagesToastDeleted": {
-    "description": "Toast after delete data now.",
+    "description": "Toast after the chosen data of a language was deleted.",
     "placeholders": {
       "language": {
         "type": "String",

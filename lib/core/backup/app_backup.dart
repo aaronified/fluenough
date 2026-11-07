@@ -20,6 +20,10 @@ enum BackupKind {
 
   /// A file the learner restored from, kept as it was read.
   file,
+
+  /// The copy made before a language's data was deleted from its sheet
+  /// (#861). An older app reads it as made by the learner.
+  delete,
 }
 
 /// A backup file is from a newer Fluenough than this one: nothing is read

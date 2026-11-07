@@ -4,6 +4,7 @@ import 'package:flutter/foundation.dart';
 
 import '../core/data/database.dart';
 import '../core/data/replay_isolate.dart';
+import '../core/data/review_erasure.dart';
 import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/ask.dart';
@@ -400,6 +401,26 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       fitted: await _log.fitted(),
     );
     _scheduleSnapshot();
+  }
+
+  /// Deletes the reviews [erasure] selects (#861): after every write queued
+  /// so far, in the database ([ReviewLog.eraseReviews], which rebuilds the
+  /// state cache and drops the language's fits), then memory is read again
+  /// from the database, so log, cache and memory agree. A failure leaves
+  /// both as they were.
+  @override
+  Future<int> eraseReviews(ReviewErasure erasure) async {
+    if (_readFailed) return _memory.eraseReviews(erasure);
+    await _writes;
+    final removed = await _log.eraseReviews(erasure);
+    if (removed == 0) return 0;
+    _memory.replaceWith(
+      await _log.events(),
+      await _log.leechActions(),
+      fitted: await _log.fitted(),
+    );
+    _scheduleSnapshot();
+    return removed;
   }
 
   /// Runs [task] after every write queued so far. Keeping the snapshot is a

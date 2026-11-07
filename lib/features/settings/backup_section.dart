@@ -55,6 +55,7 @@ class BackupSection extends StatefulWidget {
             : l10n.settingsBackupBeforeUpdate(backup.info.forVersion!, date),
       BackupKind.restore => l10n.settingsBackupBeforeRestore(date),
       BackupKind.file => l10n.settingsBackupFromFile(date),
+      BackupKind.delete => l10n.settingsBackupBeforeDelete(date),
     };
   }
 
