@@ -4,10 +4,11 @@
 // asked by a picker, over a deterministic simulated item bank.
 //
 // The bank, the item formats and the guess rates here are STAND-INS for the
-// item registry of build step 3, and [BaselinePicker] is a stand-in for the
-// picker of step 4. The harness takes any [SimPicker], so the real one is
-// plugged in unchanged when it lands. Gates that need the real registry or
-// picker are listed in test/placement_v3_pending_gates_test.dart.
+// item registry of build step 3. The real picker of step 4 ([V3Picker]) is
+// plugged in by [V3SimPicker] over the admitted formats; [BaselinePicker]
+// stays as the control of the mutation tests (a leaky picker the gates must
+// catch). Gates that need later steps are listed in
+// test/placement_v3_pending_gates_test.dart.
 //
 // Pure Dart (no Flutter), deterministic: a run is a function of its seed.
 import 'dart:convert';
@@ -17,6 +18,7 @@ import 'dart:math' as math;
 import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
+import 'package:fluenough/core/placement/v3_picker.dart';
 
 const String kLeakProfilePath =
     'test/fixtures/placement/adversary/leak_profile.json';
@@ -892,6 +894,135 @@ class BaselinePicker implements SimPicker {
     final card = _pickCard(s, band, true);
     if (card == null) return null;
     return SimItem(card, kFormats['F18']!, selfRated: selfRated);
+  }
+}
+
+/// The formats the item bank admits (the audit's survivors of build step 3:
+/// F2/F13/F3, F4, F7/F18, F8/F16, F9 and F1/F14 where admitted); the stand-in
+/// bank carries them as [kFormats] entries.
+const List<String> kAdmittedFormats = <String>[
+  'F2',
+  'F3',
+  'F13',
+  'F4',
+  'F7',
+  'F8',
+  'F16',
+  'F18',
+  'F1',
+];
+
+/// The real picker ([V3Picker]) over the stand-in bank, restricted to the
+/// admitted formats: the harness's candidate pool is every card in every
+/// admitted format, with the calibrated guess of the run.
+class V3SimPicker implements SimPicker {
+  V3SimPicker({
+    this.yesNoBlock = false,
+    this.config,
+    this.formats = kAdmittedFormats,
+  });
+
+  final bool yesNoBlock;
+  final PickerConfig? config;
+  final List<String> formats;
+
+  V3Picker? _picker;
+
+  /// The pools, built once per bank, calibration and profile: a pool does not
+  /// change between runs (the picker never changes it), only the generator
+  /// and the model do.
+  static final Map<String, CandidatePool> _pools = <String, CandidatePool>{};
+
+  /// The picker of the run in progress (for the soft-stop signal).
+  V3Picker? get picker => _picker;
+
+  @override
+  String get name => 'v3';
+
+  CandidatePool _pool(RunState s) {
+    final key =
+        '${identityHashCode(s.bank)}|${identityHashCode(s.calibration)}|'
+        '${s.fixedGuess}|${s.profile.name}|${formats.join(',')}|$yesNoBlock';
+    return _pools[key] ??= _buildPool(s);
+  }
+
+  CandidatePool _buildPool(RunState s) {
+    final candidates = <PickerCandidate>[];
+    for (final code in formats) {
+      final spec = kFormats[code]!;
+      for (final card in s.bank.cards) {
+        final item = SimItem(card, spec, yesNo: code == 'F1');
+        final guess = code == 'F1' ? 0.0 : calibratedGuess(s, item);
+        candidates.add(
+          PickerCandidate(
+            id: item.id,
+            format: code,
+            deck: card.deck,
+            skills: spec.skills,
+            seconds: spec.seconds,
+            slip: spec.slip,
+            guess: guess,
+            conflictKeys: <String>{card.id},
+            clean: !card.cognate && guess <= kCleanGuessMax,
+            needsAudio:
+                spec.skills.contains(PlacementSkill.hear) ||
+                spec.skills.contains(PlacementSkill.say),
+            needsMic: spec.skills.contains(PlacementSkill.say),
+            yesNo: code == 'F1',
+            payload: item,
+          ),
+        );
+      }
+    }
+    if (yesNoBlock) {
+      for (var i = 0; i < 12; i++) {
+        final item = SimItem(
+          SimCard('pw$i', 0, false),
+          kFormats['F1']!,
+          pseudo: true,
+          yesNo: true,
+        );
+        candidates.add(
+          PickerCandidate(
+            id: item.id,
+            format: 'F1',
+            deck: 0,
+            skills: const <PlacementSkill>{PlacementSkill.read},
+            seconds: 3,
+            slip: 0.1,
+            guess: 0,
+            conflictKeys: <String>{'pw$i'},
+            pseudo: true,
+            yesNo: true,
+            payload: item,
+          ),
+        );
+      }
+    }
+    return CandidatePool(candidates, s.bank.levels);
+  }
+
+  V3Picker _build(RunState s) => V3Picker(
+    pool: _pool(s),
+    model: s.model,
+    rng: s.rng,
+    config:
+        config ??
+        PickerConfig(
+          audio: s.variant.audio,
+          mic: s.variant.mic,
+          recogniser: s.variant.recogniser,
+          yesNoBlock: yesNoBlock,
+        ),
+  );
+
+  @override
+  SimItem? next(RunState s) {
+    final p = _picker ??= _build(s);
+    final c = p.next();
+    if (c == null) return null;
+    final item = c.payload! as SimItem;
+    return c.selfRated ? SimItem(item.card, item.spec, selfRated: true) : item;
   }
 }
 

@@ -9,11 +9,12 @@
 // real picker or registry) and its entry is deleted from [_pending]. Every
 // file under lib/core/placement/ is matched against the patterns, so a
 // prerequisite cannot land unnoticed; the later pull requests must use the
-// file names of the plan's build progress (v3_picker,
-// v3_drilldown, script_gate) or adjust the patterns.
+// file names of the plan's build progress (v3_drilldown, script_gate) or
+// adjust the patterns.
 import 'dart:io';
 import 'dart:math' as math;
 
+import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -21,7 +22,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/placement_v3_harness.dart';
 
 class _PendingGate {
-  const _PendingGate(this.id, this.gate, this.reason, this.patterns, this.step);
+  const _PendingGate(
+    this.id,
+    this.gate,
+    this.reason,
+    this.patterns,
+    this.step, {
+    this.prerequisite,
+  });
 
   final String id;
 
@@ -37,61 +45,86 @@ class _PendingGate {
 
   /// The build step that lands the prerequisite.
   final String step;
+
+  /// A prerequisite that is not a file name: what the format inventory must
+  /// come to hold (judged on [kFormatInventory]). Either this or a matching
+  /// file means the prerequisite has landed.
+  final bool Function(Iterable<FormatInfo> inventory)? prerequisite;
 }
 
+/// Whether the inventory has a generated Write item cheap enough to prove
+/// the top bands: at most 6 s, slip at most 0.10, guess at most 0.10 (the
+/// item class build step 4b must add; see the experts gate).
+bool hasCheapWriteItem(Iterable<FormatInfo> inventory) => inventory.any(
+  (f) =>
+      f.generated &&
+      f.skills.contains(PlacementSkill.write) &&
+      f.seconds <= 6 &&
+      f.slip <= 0.10 &&
+      f.guess <= 0.10,
+);
+
 // The file-name patterns of the prerequisites, broad on purpose: any file
-// under lib/core/placement/ (any depth) whose name has the word.
-final List<RegExp> _picker = <RegExp>[
-  // The V2 picker, item_picker.dart, is not the V3 one.
-  RegExp(r'^(?!item_picker\.dart$).*picker'),
-];
+// under lib/core/placement/ (any depth) whose name has the word. The picker
+// (v3_picker.dart) landed in build step 4 and enabled its gates; what is left
+// waits for the later steps' files.
+final List<RegExp> _formats4b = <RegExp>[RegExp(r'4b')];
+final List<RegExp> _refit = <RegExp>[RegExp(r're_?fit')];
 final List<RegExp> _drillDown = <RegExp>[RegExp(r'drill_?down')];
 final List<RegExp> _scriptGate = <RegExp>[RegExp(r'script_?gate')];
 
 final List<_PendingGate> _pending = <_PendingGate>[
   _PendingGate(
-    'time-and-items',
-    'Median at most 28 items and 200 s, 95th percentile at most 40 items and '
-        '300 s, for every honest persona.',
-    'The length of a run is decided by the picker and its stop rules. The '
-        'stand-in picker of the harness measured 22 to 30 items and 216 to 301 '
-        's medians (95th percentile 30 to 32 items, about 305 s), over the '
-        'gate. The time table (tiles 15 s, typing 12 s) makes Write the '
-        'costly skill. Not loosened: security needs four clean items a band.',
-    _picker,
-    'step 4 (picker, rotation, caps)',
-  ),
-  _PendingGate(
     'experts-natives-within-a-tenth',
     'Honest experts and natives are within 1/10 of the truth in at least '
         '85% of runs.',
-    'It needs a picker that climbs to the top band cheaply. The stand-in '
-        'places them safely but low (within 1/10 in 0 to 60% of runs) because '
-        'its proof stages run out of the 300 s.',
-    _picker,
-    'step 4 (picker, rotation, caps)',
+    'The real picker (build step 4) meets the time gate, and with it places '
+        'experts and natives safely but low: within 1/10 in 52 to 57% of '
+        'runs under a flat declaration, 71 to 76% under an advanced one and '
+        '3 to 4% under an amateur one (Spanish and Hindi). Placing them '
+        'higher needs proof stages at the top bands (four clean items each, '
+        'three skills): measured, a looser stop rule that climbs one more '
+        'stage reaches 74 to 90% but costs 250 to 300 s. What is missing is '
+        'a cheap item for Write: the admitted Write evidence is typing (F7, '
+        '12 s, slip 0.15) or tiles (F4, 15 s) or the mixed F8 and F16 '
+        '(15 s), so a Write proof costs 50 to 60 s a stage. A Write item of '
+        'at most 6 s with a slip of at most 0.10 and a guess of at most 0.10 '
+        '(PR 4b), or a stop rule that is not held down by a low declaration '
+        '(PR 8, re-fit), would meet it. Not loosened.',
+    _formats4b,
+    'step 4b (cheap Write items) and step 8 (re-fit)',
+    prerequisite: hasCheapWriteItem,
   ),
   _PendingGate(
     'honest-confidence',
     'The 80% credible range contains the truth in 75 to 88% of runs for '
         'every persona.',
-    'The stand-in picker gives 65 to 100% depending on the cell (too '
-        'wide for mid learners, too narrow for natives under a low '
-        'declaration). The posterior\'s calibration is a joint property of '
-        'the picker\'s stopping and the likelihood temper, re-fitted from '
-        'replay then.',
-    _picker,
-    'step 4 (picker) and step 8 (re-fit)',
+    'The real picker gives 85 to 100% for beginners, amateurs and advanced '
+        'learners (too wide), 78 to 96% for experts and natives (too wide '
+        'in most cells, too narrow for natives under an amateur '
+        'declaration), and 70 to 92% for ear-only learners (too narrow '
+        'under an amateur declaration). The posterior\'s calibration is a '
+        'joint property of the picker\'s stopping and the likelihood temper, '
+        're-fitted from replay at step 8, with the temper and the '
+        'declaration weight, not by the picker alone.',
+    _refit,
+    'step 8 (re-fit)',
   ),
   _PendingGate(
     'ear-only-placed-high-on-hear',
     'An ear-only learner is placed high on Hear and Say and low on Read and '
         'Write.',
-    'The stand-in proves one band for all skills, so Read and Write failing '
-        'holds Hear down. The low half (Read and Write at the start) is '
-        'enforced now. Needs a per-skill drill-down.',
-    [..._picker, ..._drillDown],
-    'step 4 and step 5 (picker, drill-down)',
+    'The low half (Read and Write at the start) is enforced. The high half '
+        'is not met: the picker proves Hear, but the joint prior (a learner '
+        'is usually at one level in every skill) holds the lower edge of Hear '
+        'down: Hear starts at its proven band or lower, within 1/10 of the '
+        'truth in 0 to 8% of runs. The picker asks more clean items of the '
+        'proven band when the prior still holds Hear at the start (it moved '
+        'the median start from 1 to about 6 of 20 classes), but placing Hear '
+        'at its level needs the drill-down of step 5, which finds the one '
+        'skill that stands apart and spends its items there.',
+    _drillDown,
+    'step 5 (drill-down)',
   ),
   _PendingGate(
     'drill-down-identifies-the-failing-skill',
@@ -126,6 +159,8 @@ void main() {
           for (final f in files)
             for (final p in gate.patterns)
               if (p.hasMatch(f)) f,
+          if (gate.prerequisite?.call(kFormatInventory) ?? false)
+            'the format inventory',
         ];
         expect(
           landed,
@@ -155,16 +190,54 @@ void main() {
       }
     });
 
-    test('the patterns match what they are meant to and not the V2 picker', () {
-      expect(_picker.single.hasMatch('v3_picker.dart'), isTrue);
-      expect(_picker.single.hasMatch('item_picker.dart'), isFalse);
-      expect(_picker.single.hasMatch('picker_v3.dart'), isTrue);
+    test('the cheap-Write prerequisite is judged on the inventory', () {
+      expect(hasCheapWriteItem(kFormatInventory), isFalse);
+      const cheap = FormatInfo(
+        'F99',
+        'cheap write',
+        {PlacementSkill.write},
+        0.05,
+        0.05,
+        5,
+      );
+      expect(hasCheapWriteItem([...kFormatInventory, cheap]), isTrue);
+      const slow = FormatInfo(
+        'F98',
+        'slow write',
+        {PlacementSkill.write},
+        0.05,
+        0.05,
+        12,
+      );
+      expect(hasCheapWriteItem([...kFormatInventory, slow]), isFalse);
+      const notBuilt = FormatInfo(
+        'F97',
+        'not generated',
+        {PlacementSkill.write},
+        0.05,
+        0.05,
+        5,
+        generated: false,
+      );
+      expect(hasCheapWriteItem([...kFormatInventory, notBuilt]), isFalse);
+    });
+
+    test('the patterns match what they are meant to', () {
+      expect(_formats4b.single.hasMatch('item_generators_4b.dart'), isTrue);
+      expect(_refit.single.hasMatch('v3_refit.dart'), isTrue);
+      expect(_refit.single.hasMatch('v3_re_fit.dart'), isTrue);
       expect(_drillDown.single.hasMatch('v3_drill_down.dart'), isTrue);
       expect(_drillDown.single.hasMatch('drilldown.dart'), isTrue);
       expect(_scriptGate.single.hasMatch('script_gate.dart'), isTrue);
-      // None matches a file that exists today: the gates are pending.
+      // None matches a file that exists today: the gates are pending. The
+      // picker (v3_picker.dart) has landed and its gates are enforced.
       for (final f in files) {
-        for (final p in [..._picker, ..._drillDown, ..._scriptGate]) {
+        for (final p in [
+          ..._formats4b,
+          ..._refit,
+          ..._drillDown,
+          ..._scriptGate,
+        ]) {
           expect(p.hasMatch(f), isFalse, reason: f);
         }
       }
@@ -186,7 +259,7 @@ void main() {
             PlacementSkill.write: 7,
           },
         ),
-        picker: BaselinePicker(),
+        picker: V3SimPicker(),
         declaration: null,
         variant: Variant.full,
         seed: seed,

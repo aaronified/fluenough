@@ -39,7 +39,7 @@ void main() {
             final results = runCell(
               bank: bank,
               persona: Persona('yes-sayer', truth: truth(0), yesRate: rate),
-              picker: () => BaselinePicker(yesNoBlock: true),
+              picker: () => V3SimPicker(yesNoBlock: true),
               declaration: d,
               variant: Variant.full,
               runs: 100,
@@ -82,7 +82,7 @@ void main() {
               truth: truth(3, say: true),
               selfRatesSame: true,
             ),
-            picker: BaselinePicker.new,
+            picker: V3SimPicker.new,
             declaration: d,
             variant: Variant.full,
             runs: 100,
@@ -113,7 +113,7 @@ void main() {
         final withSay = runCell(
           bank: bank,
           persona: Persona('a', truth: truth(3), selfRatesSame: true),
-          picker: BaselinePicker.new,
+          picker: V3SimPicker.new,
           declaration: null,
           variant: Variant.full,
           runs: 40,
@@ -121,7 +121,7 @@ void main() {
         final noMic = runCell(
           bank: bank,
           persona: Persona('a', truth: truth(3), selfRatesSame: true),
-          picker: BaselinePicker.new,
+          picker: V3SimPicker.new,
           declaration: null,
           variant: Variant.noMic,
           runs: 40,
@@ -139,7 +139,7 @@ void main() {
           final results = runCell(
             bank: bank,
             persona: Persona('a', truth: truth(5)),
-            picker: BaselinePicker.new,
+            picker: V3SimPicker.new,
             declaration: d,
             variant: Variant.full,
             runs: 60,
@@ -154,7 +154,7 @@ void main() {
           final results = runCell(
             bank: bank,
             persona: Persona('a', truth: truth(5)),
-            picker: BaselinePicker.new,
+            picker: V3SimPicker.new,
             declaration: d,
             variant: Variant.noAudio,
             runs: 60,
@@ -177,7 +177,7 @@ void main() {
           final results = runCell(
             bank: bank,
             persona: Persona('a', truth: truth(5)),
-            picker: BaselinePicker.new,
+            picker: V3SimPicker.new,
             declaration: null,
             variant: Variant.noMic,
             runs: 40,
