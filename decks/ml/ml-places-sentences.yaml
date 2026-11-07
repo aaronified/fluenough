@@ -1,0 +1,56 @@
+schema: 1
+id: "ml-places-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0549"
+    target: "ആശുപത്രി എവിടെ?"
+    reading: "āśupatri eviṭe?"
+    ipa: "aːʃupət̪ɾi eʋiʈe"
+    pos: "phrase"
+    bases: [{ word: "ആശുപത്രി", ref: "ml-0186" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0550"
+    target: "ബാങ്ക് ഇവിടെ അടുത്താണ്."
+    reading: "bāṅk iviṭe aṭuttāṇ."
+    ipa: "baːŋk iʋiʈe əʈut̪t̪aːɳ"
+    pos: "phrase"
+    bases: [{ word: "ബാങ്ക്", ref: "ml-0198" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "അടുത്താണ്", base: "അടുത്താണ്", reading: "aṭuttāṇ" }]
+  - id: "ml-0551"
+    target: "സ്കൂൾ റോഡിന്റെ/റോഡ് മൂലയിൽ/മൂല."
+    reading: "skūḷ ṟōḍinṟe/ṟōḍ mūlayil/mūla."
+    ipa: "skuːɭ ɾoːɖint̪ɾeɾoːɖ muːləjilmuːla"
+    pos: "phrase"
+    bases: [{ word: "സ്കൂൾ", ref: "ml-0187" }, { word: "റോഡിന്റെ", ref: "ml-0244" }, { word: "മൂലയിൽ", ref: "ml-0249" }]
+  - id: "ml-0552"
+    target: "ഹോട്ടൽ വലത്."
+    reading: "hōṭṭal valat."
+    ipa: "hoːʈʈal ʋəlat̪"
+    pos: "phrase"
+    bases: [{ word: "ഹോട്ടൽ", ref: "ml-0337" }, { word: "വലത്", ref: "ml-0241" }]
+  - id: "ml-0553"
+    target: "ചായക്കട എവിടെ? നേരെ പോകൂ."
+    reading: "cāyakkaṭa eviṭe? nēre pōkū."
+    ipa: "tʃaːjəkkəʈa eʋiʈe neːɾe poːkuː"
+    pos: "phrase"
+    bases: [{ word: "ചായക്കട", ref: "ml-0339" }, { word: "എവിടെ", ref: "ml-0033" }, { word: "നേരെ", ref: "ml-0242" }, { word: "പോകൂ", ref: "ml-0112" }]
+  - id: "ml-0554"
+    target: "പാർക്ക് ഇവിടെ ഉണ്ടോ?"
+    reading: "pārkk iviṭe uṇṭō?"
+    ipa: "paːɾkk iʋiʈe uɳʈoː"
+    pos: "phrase"
+    bases: [{ word: "പാർക്ക്", ref: "ml-0342" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+  - id: "ml-0555"
+    target: "ബസ് സ്റ്റോപ്പ് മുന്നിൽ."
+    reading: "bas sṭōpp munnil."
+    ipa: "bas sʈoːpp munnil"
+    pos: "phrase"
+    bases: [{ word: "ബസ്", ref: "ml-0252" }, { word: "സ്റ്റോപ്പ്", base: "സ്റ്റോപ്പ്", reading: "sṭōpp" }, { word: "മുന്നിൽ", ref: "ml-0145" }]
+  - id: "ml-0556"
+    target: "ക്ഷേത്രം അകലെയാണോ/അകലെ?"
+    reading: "kṣētraṁ akaleyāṇō/akale?"
+    ipa: "kʂeːt̪ɾam əkəlejaːɳoːəkəle"
+    pos: "phrase"
+    bases: [{ word: "ക്ഷേത്രം", ref: "ml-0340" }, { word: "അകലെയാണോ", ref: "ml-0144" }]

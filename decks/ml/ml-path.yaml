@@ -279,7 +279,7 @@ units:
     reading_passages:
       - { id: "bill", text: { "en": "A shop bill with its total" } }
   # ml-food-sentences joins this unit.
-  - decks: ["ml-food", "*"]
+  - decks: ["ml-food", "ml-food-sentences", "*"]
     words: 47
     listening_passages:
       - { id: "at-the-tea-shop", text: { "en": "Ordering tea and a snack at a tea shop" } }
@@ -345,14 +345,14 @@ units:
     reading_passages:
       - { id: "bus-board", text: { "en": "The destination board on a bus" } }
   # ml-body-sentences joins this unit.
-  - decks: ["ml-body", "*"]
+  - decks: ["ml-body", "ml-body-sentences", "*"]
     words: 30
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
     reading_passages:
       - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
   # ml-places-sentences joins this unit.
-  - decks: ["ml-places", "*"]
+  - decks: ["ml-places", "ml-places-sentences", "*"]
     words: 19
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
@@ -365,7 +365,7 @@ units:
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
   # ml-things-sentences and ml-more-verbs-sentences join this unit.
-  - decks: ["ml-home", "*"]
+  - decks: ["ml-home", "ml-things-sentences", "ml-more-verbs-sentences", "*"]
     words: 17
     listening_passages:
       - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
@@ -396,7 +396,7 @@ units:
     reading_passages:
       - { id: "shop-sign", text: { "en": "A clothes shop's sign with its offers" } }
   # ml-animals-sentences joins this unit.
-  - decks: ["ml-animals", "*"]
+  - decks: ["ml-animals", "ml-animals-sentences", "*"]
     words: 27
     listening_passages:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }

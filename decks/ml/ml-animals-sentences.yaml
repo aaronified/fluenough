@@ -1,0 +1,56 @@
+schema: 1
+id: "ml-animals-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0573"
+    target: "പൂച്ച എവിടെ?"
+    reading: "pūcca eviṭe?"
+    ipa: "puːtʃtʃa eʋiʈe"
+    pos: "phrase"
+    bases: [{ word: "പൂച്ച", ref: "ml-0429" }, { word: "എവിടെ", ref: "ml-0033" }]
+  - id: "ml-0574"
+    target: "പശുവിന്/പശു പുല്ല് വേണം."
+    reading: "paśuvin/paśu pull vēṇaṁ."
+    ipa: "pəʃuʋinpəʃu pull ʋeːɳam"
+    pos: "phrase"
+    bases: [{ word: "പശുവിന്", ref: "ml-0427" }, { word: "പുല്ല്", base: "പുല്ല്", reading: "pull" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0575"
+    target: "നായ വീട്ടിൽ/വീട് ഉണ്ട്."
+    reading: "nāya vīṭṭil/vīṭ uṇṭ."
+    ipa: "naːja ʋiːʈʈilʋiːʈ uɳʈ"
+    pos: "phrase"
+    bases: [{ word: "നായ", ref: "ml-0428" }, { word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-0576"
+    target: "കോഴി മുറ്റത്ത്/മുറ്റം."
+    reading: "kōḻi muṟṟatt/muṟṟaṁ."
+    ipa: "koːɻi muttət̪t̪muttam"
+    pos: "phrase"
+    bases: [{ word: "കോഴി", ref: "ml-0433" }, { word: "മുറ്റത്ത്", ref: "ml-0398" }]
+  - id: "ml-0577"
+    target: "പാമ്പ് അപകടമാണ്."
+    reading: "pāmp apakaṭamāṇ."
+    ipa: "paːmp əpəkəʈəmaːɳ"
+    pos: "phrase"
+    bases: [{ word: "പാമ്പ്", ref: "ml-0434" }, { word: "അപകടമാണ്", base: "അപകടമാണ്", reading: "apakaṭamāṇ" }]
+  - id: "ml-0578"
+    target: "കടുവ കാട്ടിൽ/കാട് ഉണ്ടോ?"
+    reading: "kaṭuva kāṭṭil/kāṭ uṇṭō?"
+    ipa: "kəʈuʋa kaːʈʈilkaːʈ uɳʈoː"
+    pos: "phrase"
+    bases: [{ word: "കടുവ", ref: "ml-0437" }, { word: "കാട്ടിൽ", ref: "ml-0349" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+  - id: "ml-0579"
+    target: "ആന വെള്ളത്തിൽ/വെള്ളം."
+    reading: "āna veḷḷattil/veḷḷaṁ."
+    ipa: "aːna ʋeɭɭət̪t̪ilʋeɭɭam"
+    pos: "phrase"
+    bases: [{ word: "ആന", ref: "ml-0436" }, { word: "വെള്ളത്തിൽ", ref: "ml-0005" }]
+  - id: "ml-0580"
+    target: "എനിക്ക് പൂച്ച ഇഷ്ടമാണ്."
+    reading: "enikk pūcca iṣṭamāṇ."
+    ipa: "enikk puːtʃtʃa iʂʈəmaːɳ"
+    pos: "phrase"
+    bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "പൂച്ച", ref: "ml-0429" }, { word: "ഇഷ്ടമാണ്", base: "ഇഷ്ടമാണ്", reading: "iṣṭamāṇ" }]

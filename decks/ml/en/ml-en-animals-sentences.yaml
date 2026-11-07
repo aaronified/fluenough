@@ -1,0 +1,35 @@
+schema: 1
+id: "ml-en-animals-sentences"
+kind: "layer"
+core: "ml-animals-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Animals in sentences"
+description: "Short sentences about where a cat, a dog, a hen and a snake are, and what they need. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0573":
+    native: "Where is the cat?"
+  "ml-0574":
+    native: "The cow needs grass."
+    bases:
+      "പുല്ല്": "grass"
+      "വേണം": "needs"
+  "ml-0575":
+    native: "The dog is at home."
+    bases:
+      "ഉണ്ട്": "is"
+  "ml-0576":
+    native: "The hen is in the yard."
+  "ml-0577":
+    native: "The snake is dangerous."
+    bases:
+      "അപകടമാണ്": "is dangerous"
+  "ml-0578":
+    native: "Is there a tiger in the forest?"
+  "ml-0579":
+    native: "The elephant is in the water."
+  "ml-0580":
+    native: "I like cats."
+    bases:
+      "ഇഷ്ടമാണ്": "like"

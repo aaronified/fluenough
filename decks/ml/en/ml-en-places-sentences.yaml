@@ -1,0 +1,30 @@
+schema: 1
+id: "ml-en-places-sentences"
+kind: "layer"
+core: "ml-places-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Places in sentences"
+description: "Short sentences about where a hospital, a bank, a park and a bus stop are, and how to get there. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0549":
+    native: "Where is the hospital?"
+  "ml-0550":
+    native: "The bank is near here."
+    bases:
+      "അടുത്താണ്": "is near"
+  "ml-0551":
+    native: "The school is at the corner of the road."
+  "ml-0552":
+    native: "The restaurant is on the right."
+  "ml-0553":
+    native: "Where is the tea shop? Go straight on."
+  "ml-0554":
+    native: "Is there a park here?"
+  "ml-0555":
+    native: "The bus stop is in front."
+    bases:
+      "സ്റ്റോപ്പ്": "stop"
+  "ml-0556":
+    native: "Is the temple far?"
