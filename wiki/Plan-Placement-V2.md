@@ -2,6 +2,8 @@
 
 Source of truth: this wiki page.
 
+Note (owner, 2026-11-07): the run policy, item order, stopping rules and result screen are superseded by [Plan-Placement-V3](Plan-Placement-V3). The guess-proof credit model, the slip/guess table and the personas remain the base.
+
 Retired on 2026-11-04: fully built and merged. See [Plans Retired](Plans-Retired) for its status and the pull requests that built it.
 The full text is in git history: `git show 98be3004:wiki/Plan-Placement-V2.md`.
 

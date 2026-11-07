@@ -1,0 +1,166 @@
+# Plan: placement V3, find my level
+
+Source of truth: this wiki page.
+
+Status: approved by the owner on 2026-11-07 ("Ok, do it."). The owner's
+decisions are recorded below as the accepted recommended defaults of the
+design that follows. The design text is unchanged from the proposal.
+
+## Owner decisions (2026-11-07)
+
+Accepted as the recommended defaults:
+
+1. Time cap: 5 minutes, with a keep-going button.
+2. Say without a recogniser: half weight, labelled "Self-rated".
+3. Start position: the lower edge of the credible range.
+4. Old "Verified" marks: shown as "Earlier check (not verified)".
+5. Cognates: near-cognates are excluded from yes/no, meaning-pick and
+   heard-word items; they are half-weighted elsewhere.
+6. Typing items are used; tiles are used where there is no keyboard.
+7. "Verified" is removed from placement.
+
+Requirements from the owner:
+
+- Measure all skills together, and each skill in isolation.
+- The test must not depend on Hear or Say.
+- Mix the skills first, then drill into the skill that fails.
+- Use every item format (multiple choice, cloze, one-word typing, matching, and the others in the inventory below).
+- Hear and Say are tested, but they are never the only evidence for a skill.
+- Re-check the design with an adversarial agent that tries to ace the test using only the first 100 words and basic suffix and form rules. Result pending; it will be added to this page.
+
+---
+
+# Find my level, V3: a mixed-then-isolating placement design
+
+Status: proposal for the owner. Read-only inputs: the three research files, wiki/Plan-Placement-V2.md, lib/core/placement/*. Tags: **EVIDENCE** (research file and its level; nearly all levels are "abstract/snippet", research-2 could read no full text) and **INFERENCE** (my reasoning, to be tested by the validation plan). Note: the harness, personas and bank files named in the brief (test/fixtures/placement, tool/placement_bank.dart) are not on this checkout; V2's numbers came from a scratch Python script. Part (g) therefore builds the harness, reusing V2's persona idea.
+
+## 0. Why V2/0.9.3 failed, in one paragraph
+Skills ran one after another (Hear first) with no per-skill cap, one question kind was asked (heard word to English pick), Hear's 95% target was never reached, and the readout showed P(none) as "sure". V3 keeps V2's posterior maths but changes who asks what: skills are interleaved, every skill has a cap and a guaranteed minimum, and the readout reports a range.
+
+## (a) Measurement model
+
+**Latents.** One position per skill, p_Read, p_Hear, p_Say, p_Write, each over the same classes as V2 (`none`, then up to ten tenths of the A1 to B1 path; I propose 20 classes so a range is narrower than a tenth; V2's `PlacementLevels` already takes `parts`). Plus a **script gate** per script (none / letters partly / all letters), a separate small latent, as V2 had a Script skill.
+
+**Joint, not four separate chains.** Hold the joint over the skills in play (at most 12^4 cells, cheap on a phone). The prior is a mixture: 70% "skills move together" (mass near the diagonal) and 30% "independent". This is what lets a mixed item inform several skills and still lets an ear-only or script-literate-only learner be found. INFERENCE (V2 treated skills as independent chains).
+
+**Item likelihood.** Each item has a difficulty d (path unit of its word, sentence or letter), a set R of required skills, a slip s and guess g. A learner passes if every skill in R knows level d (noisy AND): P(right) = g + (1 - g - s) x Π_{k in R} P(p_k >= d). A right answer raises every skill in R; a wrong answer is *explained* by the joint posterior (which skill is probably short), not split evenly. V2's `PlacementQuestionKind` slip/guess table is reused as the starting values. INFERENCE for the conjunctive form; Staehr 2008 and Milton et al. 2010 (research 1, finding 4; research 2 rows 16, 17: secondary) support treating Read, Hear, Write as separable, with orthographic vocabulary tracking Read/Write and aural vocabulary tracking Hear, Say.
+
+**What one answer updates** (the "requires" column of section b): tile sentence from English = Write+Read-of-tiles (the tiles are shown, so a light Read); reading-comprehension pick = Read; dictation tiles = Hear+Write; yes/no real vs pseudoword (written) = Read recognition; heard yes/no = Hear recognition; letter-to-sound = Script gate. Isolating items require exactly one skill.
+
+## (b) Item inventory (every format)
+
+Generated from decks: word cards (unit order, frequency rank), sentence decks with translations, letter/script decks, `<lang>-sounds.yaml` minimal pairs (V2 section 8 notes they are sparse), on-device TTS. Difficulty d = unit index of the card (INFERENCE; Settles et al. 2020, research 1 finding 1, makes difficulty-from-features the DET approach, abstract level). Guess and slip values below are starting priors, to be fitted from replay and later opt-in logs.
+
+| # | Format | Requires | Audio/mic | Guess / slip | Leak risks | Generation |
+|---|---|---|---|---|---|---|
+| F1 | Written yes/no, real word vs matched pseudoword (about 25% pseudo) | Read | none | g from the learner's own false-alarm rate (floor 0.1), s 0.10 | cognates say "yes"; pseudoword must be a non-word | pseudoword by swapping letters within a deck word, kept by a n-gram check of the deck's own words |
+| F2 | Written word, pick English meaning (4) | Read | none | .25 / .05 | cognates, odd one out by length or script | distractors: same-unit words of the same part of speech |
+| F3 | Meaning (English), pick the written word (4) | Read, light Write | none | .25 / .05 | spelling cues | same distractor rule, one letter apart for later units |
+| F4 | Meaning, build the word from letter tiles (short words) | Write | none | .10 / .05 | tile set hints | tiles = letters plus 2 decoys |
+| F5 | Sentence in the language: pick its meaning (4) | Read | none | .25 / .10 | cognates, topic guessing | sentence deck, distractors from other sentences of the same unit band |
+| F6 | Cloze by choice: blank in a sentence, pick the form (4) | Read, grammar | none | .25 / .10 | answer-by-agreement cues | blank one word of a sentence-deck line, distractors are other forms of that word |
+| F7 | Cloze by typing / one-word typed answer (script keyboard or latin spelling) | Write | none | .03 / .15 (typing slips are real, accept near-misses by edit distance 1 for latin, shown as half credit) | none | same as F6, hint-free |
+| F8 | Tile assembly: English meaning to a sentence in the language | Write, Read | none | .05 / .10 | tiles leak word order | tiles from sentence-deck line, decoys from the same unit |
+| F9 | Matching: 4 word-meaning pairs on one screen | Read | none | per pair about .25 falling as pairs resolve; scored as 4 weak items | elimination makes it guessable | words of one unit band |
+| F10 | Matching: letter-sound (pairs, sound by TTS or romanisation) | Script (audio optional) | optional | .25 | | letters deck |
+| F11 | Matching: word-picture where the deck has a picture, else word-meaning | Read | none | .25 | | |
+| F12 | Letter-to-sound: pick the romanisation/IPA of a letter or syllable | Script | none | .25 / .03 | Latin-script languages are trivial (gate says so) | letters deck |
+| F13 | Heard word, pick meaning (4) | Hear | TTS | .25 / .05 | poor TTS | word card |
+| F14 | Heard yes/no: real word vs pseudoword | Hear recognition | TTS | like F1 | | pseudoword spoken by TTS: skip if TTS cannot say it |
+| F15 | Minimal pair: which of two was said | Hear | TTS | .50 / .05 | weak per item | sounds file, only where present |
+| F16 | Dictation: hear a sentence, build it with tiles | Hear, Write | TTS | .05 / .10 | | sentence deck |
+| F17 | Heard sentence, pick meaning | Hear | TTS | .25 / .10 | | sentence deck |
+| F18 | Say: shown the meaning, say the word. **With a recogniser**: scored. **Without**: record, play back the model audio, self-rate "same / close / no" | Say | mic | recogniser .03 / .15; self-rated: g .30 / s .10, and counted as at most half an item | self-rating is generous | word card |
+| F19 | Say-then-check: say it aloud (not scored), then pick which of 3 audios was what you meant to say | Say (recognition of own target) | TTS | .33 | | word card |
+| F20 | Say, sentence: read the written sentence aloud, self-rate | Say, Read | mic | as F18 | | sentence deck |
+
+Say is never the only evidence for any skill and a skill is never **placed** by self-rating alone: Say's range always carries the label "self-rated" unless a recogniser scored it (INFERENCE; V2 already decided no offline speech scoring; Kostromitina and Plonsky 2022, research 2 row 27, support elicited imitation as a proxy, snippet level, but it needs scoring we lack).
+
+**Without audio/mic.** F1 to F12 cover Read, Write and Script fully; Hear and Say become "not tested". With TTS but no mic: F13 to F17, F19.
+
+## (c) Adaptive policy
+
+**Phase 0: the declaration (V2, kept).** The four-answer question seeds the prior location and widens it; never evidence (V2 section 1). Add one yes/no per skill "Can you hear or say it? Do you read this script?" that only sets which items are *eligible*, never the result. Script-less languages (Latin) skip the gate. Script gate: 3 to 4 letter items (F10/F12) when the script is non-Latin. Gate result = a prior shift: a no-script learner has p_Read, p_Write capped to 'none' until the gate is passed; she is still asked F4-type items in latin transliteration if the deck has it, so Read/Write are not left blank (INFERENCE).
+
+**Phase 1: mixed rotation (about 14 to 18 items).**
+1. The schedule rotates through the skills in play so every skill is *required by* at least 3 items in the first 12. A mixed item counts toward every skill it requires; the schedule picks the cheapest mix: F8 (Write+Read), F16 (Hear+Write), F5/F6 (Read), F13/F17 (Hear), F1/F14 (recognition), F18 (Say).
+2. Formats are rotated: no more than 2 consecutive of the same format, so cloze, matching, tiles, typing, yes/no and MCQ all appear. A matching screen counts as one slot (four weak items).
+3. Next item = the candidate with the greatest **expected information gain** on the joint posterior (mutual information between the answer and the position classes of the required skills), per second of expected time (a table: yes/no 3 s, MCQ 6 s, matching 15 s, tiles 15 s, typing 12 s, Say 10 s), with a **coverage floor**: any skill with fewer than 3 items, or whose items so far are all one format, is forced next (so "one skill never starves another"; V2's `item_picker.dart` already has a picker to extend). The first item of each skill is at the prior median (the middle of the declared range), then moves by information gain.
+4. Ceiling controls: the first items are mixed because they are cheap per skill (research: DET and Linguaskill mix item types per skill, research 3 rows DET and Linguaskill; snippet-primary, not fetched).
+
+**Phase 2: the isolating drill-down.** Trigger, per mixed item:
+- a wrong answer on an item with |R| >= 2, or a right answer that conflicts hard with the posterior (a skill's marginal probability for the item's level < 0.2 yet it was answered right, i.e. a likely lucky guess), or
+- a skill whose posterior after Phase 1 has an 80% interval wider than 6 classes of 20, or whose evidence is contradictory (two items at the same level, one right, one wrong, none isolating).
+Then: for each implicated skill (those in R whose marginal puts the failure there with probability >= 0.25 after the update) ask 2 isolating items at that item's level, from the single-skill formats of that skill, chosen by information gain: Read: F2 then F5; Write: F7/F4 then F3; Hear: F13 then F15/F17; Say: F19 then F18; Script: F12. This is V2's "a miss gets two checks: slip forgiven, both wrong closes the case" (kept; the checks are ordinary items and the posterior does the forgiving), but the checks are **split by skill** (the owner's "split the skills"): the first isolating item goes to the skill most likely to have failed. Stop rule for a drill-down: stop when the failing skill is identified with posterior mass >= 0.8, or after 4 isolating items for that trigger, or when the skill hits its cap. A drill-down updates exactly like any item (isolating = |R| = 1, the plain Bayesian update; the joint then has no ambiguity left). Each trigger is processed at most once per skill-level.
+
+**Caps and stopping.**
+- Per skill: at most 14 items touching it (mixed items count to every skill), at most 10 in Phase 2; minimum 3.
+- Global: at most 40 items and 300 s (hard); soft stop at about 22 items.
+- A skill stops when its 80% interval spans at most 2 classes of 20 (about 1 tenth), or the per-skill cap, or the global cap. A stop on cap is reported as "low confidence", never hidden. The overall run stops when every skill in play has stopped. V2's per-skill "95% assurance, run until reached" is **retired**: it is why 0.9.3 went on and on (and 95% of a 12-class posterior on a single item type is not reachable at slip .05).
+- "I don't know" is a first-class button, counted as wrong with guess 0 (it does not carry a guess), shortening runs (research 1 recommends it; INFERENCE).
+- Time: the research supports about 3.5 to 5 min only for yes/no recognition with 60 items (LexTALE: 60 items, about 3.5 min; Lemhofer & Broersma 2012, research 2 row 31, abstract; Puig-Mayenco 2023 warns it is a weak stand-alone placement). Everything else (DET about 1 hour; Linguaskill 60 to 85 min; ALEKS up to 30 questions, research 3) is far longer than we can afford, so **3 to 5 minutes for 4 skills is an INFERENCE** and the validation plan's time budget below tests it. VST/Beglar 2010 found 5 items per band adequate for reliability (research 2 row 2), which is a reason to expect 3 to 6 items per skill give a coarse (one-tenth wide) position, not a fine one.
+
+**A skill that cannot be tested** (no TTS for Hear, no mic for Say, no audio at all): it is dropped from the skills in play before the run, the run is not longer, and the result says "Not tested: Hear (no audio on this device)". A skill that is tested only by proxy (Say by self-rating) says "Self-rated". Read and Write never depend on either.
+
+## (d) Guessing, cognates, script
+
+- Pseudowords catch yes-saying. EVIDENCE: Huibregtse et al. 2002 (research 2 row 8; secondary), Zhang, Liu & Ai 2020: false alarms on matched pseudowords track real-word guessing at r over .80 (row 13; abstract). Mochida & Harrington 2006: the raw hit rate predicts about as well as any correction formula (row 9; snippet). So: use pseudowords as an **estimate of the learner's yes-bias** that sets g for F1/F14, not a complicated correction formula (INFERENCE from those two). A false-alarm rate above 0.35 triggers a "please answer honestly" nudge and widens the interval.
+- Format-specific guess floors (F2 g=.25, F9 lower) follow V2's `guessability`-style floors (V2 section 4.2: defaults "chosen by feel"; INFERENCE) and are re-fitted from replay.
+- Cognates inflate scores. EVIDENCE: Allen 2019 and Ferre & Brysbaert 2017 (research 2 row 34, abstract: non-cognate words have the highest discrimination; research 3: Allen 2019, snippet). Choice: items whose word looks like an English or a declared-known-language word (edit similarity on the romanisation above a threshold, or flagged in the decks) are *excluded* from F1, F2, F13 and weighted by 0.5 elsewhere (INFERENCE). Cognate-advantaged learners are found by the drop in accuracy once cognates are excluded: so the first two items of Read and Hear are kept non-cognate.
+- Script: separate gate (letters), as V2 (EVIDENCE for separability: Milton et al.: orthographic vocab and aural vocab correlate .22 to .68 across sources, secondary; heritage learners' listening and writing barely correlate, Zyzik/Avant, research 2 row 51, snippet; INFERENCE for the exact gate). A learner who knows the script but not the words passes the gate and gets p_Read at 'none' honestly. An ear-only/heritage learner gets high p_Hear, p_Say and low p_Read, p_Write, through the mixture prior's independent component.
+- Vocabulary-only tests top out at low-intermediate (Lam, research 3: snippet; Harrington & Carey 2009 also), so F5/F6/F8/F16 (sentence-level) are deliberately in the Phase 1 rotation, not only words.
+
+## (e) Result screen
+
+Per skill (Read, Hear, Say, Write, and Script where it exists) one row:
+- **Start at unit 14**, with "likely between 11 and 17" (the 80% credible interval from the joint marginal, rounded to units), and a confidence word derived from **P(true level within the shown range)**, (high >= 0.8, medium 0.6 to 0.8, low below), **never P(none)**. The number shown, if any, is that probability, labelled "how sure we are of the range".
+- Tested items: "6 questions", tested vs **Not tested** (reason) vs **Self-rated** (Say).
+- A one-line reason ("You read sentences well but spell words from sound slowly").
+- The start unit recommended per skill is the **10th percentile** (lower edge of the 80% interval, minus nothing): INFERENCE following research 1's "start one to two below the estimate"; the learner may move it up. It feeds the existing per-skill `placedDeckIds`, so a skill starts where its own position is, as V2 does.
+- Override: edit any skill's start; the placement remains a seed, reviews keep refining (research 1: Elo/BKT-style updates, INFERENCE).
+- The word **Verified** is removed from the placement result (see f).
+
+## (f) Keep, change, delete, migration, build plan
+
+**Keep:** `assurance_model.dart` levels and the Bayesian update (extend to joint), `PlacementQuestionKind` slip/guess table (extend by the formats above), `placement_data.dart`, `saved_run.dart` (pause and resume), `declaration_options.dart` (prior seed only), `question_outcome.dart`, the generators of `question_builder.dart` (F2, F3, F5, F8, F13 to F16 mostly exist) and the Languages-sheet skill rows. V2's rule "a run never changes a Learn, Know or Leave state" and "only the dialect taught".
+
+**Change:** `placement_run.dart` (strictly sequential Hear to Read to Say to Write becomes the rotation and drill-down state machine), `item_picker.dart` (information gain per second, coverage floor, format rotation), `skills_in_play.dart` (adds availability: TTS/mic/script), `assurance_readout.dart` (credible interval and range probability instead of the lowest-class mass), `placement_session.dart` and `lib/features/placement/find_level_*` (screens for cloze, matching, typing, yes/no, self-rating).
+
+**Delete or retire:** the expert track and the seven mastery topics as an *ordering* (some become item families only), "closed case" and 95% assurance as a stop and as Verified, the 25-question checkpoint (replaced by the caps; a "keep going" button may extend the global cap once), the "Verified" mark from placement, `extraScriptQuestion`, the heard-word-only builder path as the default. Item hardness scoring and the unbuilt "no-repeat" rule (V2 'not modelled yet') are built in step 3.
+
+**Migration / withdrawal.** Placements from 0.9.0 to 0.9.3 stay as they are in the learner's data (never silently changed), but: (1) the Verified marks they carried are shown as "Earlier check (not verified)" and not counted anywhere; (2) any skill whose old run had fewer than 3 items, or whose confidence was shown as P(none), is marked "unconfirmed"; (3) on the Languages sheet an optional "Re-check (about 3 minutes)" offers V3, once per language; (4) if the learner has real reviews on the skill, the reviews win over any placement. Needs a data-version bump in `saved_run.dart`; I did not read the storage code, so the exact fields are to be confirmed in step 1.
+
+**Build plan (small PRs, each with CI):**
+1. Joint model and readout (`lib/core`), unit tests, no UI; the credible interval.
+2. Persona replay harness (pure Dart, deterministic), personas, pass/fail gates as tests in CI.
+3. Item registry: formats F1 to F20 with requires, slip, guess, time cost, cognate and pseudoword generators.
+4. Picker: information gain, coverage floor, rotation, caps.
+5. Phase 2 drill-down and stop rules.
+6. UI: new formats (cloze, matching, typing, yes/no, self-rate), availability handling.
+7. Result screen and migration.
+8. Real-learner study (opt-in logging) and re-fit of slip/guess.
+
+## (g) Validation
+
+Personas, each simulated with per-skill true positions and the slip/guess of the table, over 3 languages (one Latin-script, one non-Latin script, one with weak TTS), 500 runs each: beginner, amateur, advanced, expert, native, script-literate-only (script yes, words none), ear-only (Hear, Say high; Read, Write none), cognate-advantaged (cognate items answered right regardless of position), plus no-audio and no-mic variants.
+
+**Pass gates (CI):**
+- Questions: median <= 22, 95th percentile <= 40 (global cap).
+- Seconds (simulated from the time table): median <= 180, 95th percentile <= 300.
+- Coverage: 100% of skills in play get >= 3 items that require them, in 100% of runs; Read and Write 100% placed in the no-audio variant; no skill uses more than 14 items.
+- Misplacement: placed start within one tenth (2 classes of 20) of the true start for at least 85% of runs; start more than 2 tenths **above** the truth in at most 3% (overplacement is worse than underplacement); never above the true position by more than 3 tenths in 99%.
+- Honest confidence: the shown 80% range contains the true position in 75% to 88% of runs, for every persona; and high-confidence rows are right (within one tenth) in at least 90% of those cases.
+- Specific: script-literate-only gets Read/Write at 'none' to the first units with the script passed; ear-only is placed high on Hear/Say and low on Read/Write; cognate-advantaged is not placed more than one tenth above the truth.
+- Drill-down: for a persona with exactly one failing skill, the right skill is identified in at least 90% of runs within 4 isolating items.
+
+**Real-learner check:** about 30 opt-in learners (include heritage and script-literate-only), run V3, then compare with each skill's first 2 to 4 weeks of review accuracy: target rank correlation >= 0.6 per skill, with the owner reading the failures. Until this is done the numbers above are a model's, and the result screen says "estimate".
+
+## (h) Decisions only the owner can make
+
+1. **Time cap.** 5 min hard (my proposal) vs 3 min vs "a Keep going button". Main downside of shorter: wider ranges and lower-confidence labels for Hear and Say.
+2. **Say without a recogniser.** Self-rating counted at half weight and labelled (my proposal), vs not counted at all (Say always "not tested"), vs counted fully. Downside: self-rating overplaces generous learners, but excluding it leaves Say with no placement.
+3. **Start position: lower edge of the range** (proposal) vs the median. Downside of the lower edge: an expert re-does a few easy units; of the median: a weaker learner meets units that are too hard.
+4. **Fate of old Verified marks.** Keep as "earlier check" (proposal), vs remove, vs keep until a re-check. Downside of removing: learners lose an earned mark.
+5. **Cognate policy.** Exclude near-cognate items (proposal) vs count them half vs ask the learner's known languages. Downside of excluding: fewer usable items for related-language courses (Spanish, French) and extra data work.
+6. **Typing items.** Include typing in non-Latin script (F7) when the keyboard is missing (needs tiles instead), vs tiles only. Downside of tiles: easier, so Write is overestimated.
+7. **Whether 95% Verified stays at all**, under the model's honest range, or is replaced by the range display only (proposal).
