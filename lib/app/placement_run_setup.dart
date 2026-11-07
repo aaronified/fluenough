@@ -146,10 +146,10 @@ extension PlacementRunSetup on AppState {
   /// read; and each skill's Verified mark is set to what the run found for
   /// the skills it tested, and left alone for the others.
   ///
-  /// It only ever adds credit (a run that places a skill lower than an
-  /// earlier one leaves the earlier credit, which the plan's section 4.4
-  /// would ask about first; not built). It never changes a skill's Leave,
-  /// Know or Learn.
+  /// A run only ever adds credit: one that places a skill lower than an
+  /// earlier one leaves the earlier credit, unless the learner confirmed
+  /// taking it back ([recheck], below; section 4.4). It never changes a
+  /// skill's Leave, Know or Learn.
   ///
   /// The code's paused run is dropped last, once all of this is written: a
   /// write that throws leaves the run to be carried on.

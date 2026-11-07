@@ -17,8 +17,8 @@ class PlacementWithdrawal {
     required Iterable<DrillMode> modes,
     required this.script,
     required Iterable<String> deckIds,
-  }) : modes = Set<DrillMode>.unmodifiable(modes),
-       deckIds = Set<String>.unmodifiable(deckIds);
+  }) : modes = Set<DrillMode>.of(modes),
+       deckIds = Set<String>.of(deckIds);
 
   /// When it was withdrawn.
   final DateTime at;
