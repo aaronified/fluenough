@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.1] - 2026-11-07
+
 ### Changed
 
 - **Find my level: questions are harder to guess, and a weak result is never shown as your level.** A word's wrong meanings now look as much like the word, in letters, as the right one does; verb-table cells ("dormir (to sleep) — yo") are no longer asked as words; and a question whose options give the answer away counts for nothing. What a skill is placed at is now the highest unit the answers prove with 99% confidence, never the most likely unit: the result and the checkpoint read "Read: at least unit N" while a higher unit is more likely, and "from the start" when nothing is proven yet, and Stop here places exactly there. A run asks more questions to prove a level (a learner who answers by guessing is placed at the start). Verified still needs 95% and a path complete to B1.
