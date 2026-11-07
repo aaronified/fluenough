@@ -16,6 +16,10 @@ cards:
     bases:
       - { word: "el", base: "el" }
       - { word: "hombre", base: "hombre" }
+    "examples": [
+      {"target": "El hombre está herido.", "ipa": "el ˈombɾe esˈta eˈɾido", "bases": [{"word": "El", "base": "el"}, {"word": "hombre", "base": "el hombre"}, {"word": "está", "ref": "es-0023"}, {"word": "herido", "base": "herido"}]},
+      {"target": "Es un hombre atractivo.", "ipa": "es un ˈombɾe atɾakˈtibo", "bases": [{"word": "Es", "ref": "es-0022"}, {"word": "un", "base": "un"}, {"word": "hombre", "base": "el hombre"}, {"word": "atractivo", "base": "atractivo"}]}
+    ]
   - id: "es-0002"
     target: "la mujer"
     picture: "👩"
@@ -26,6 +30,9 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "mujer", base: "mujer" }
+    "examples": [
+      {"target": "Hay igualdad entre hombres y mujeres.", "ipa": "aj iɡwalˈdad ˈentɾe ˈombɾes i muˈxeɾes", "bases": [{"word": "Hay", "base": "haber"}, {"word": "igualdad", "base": "igualdad"}, {"word": "entre", "ref": "es-0719"}, {"word": "hombres", "ref": "es-0001"}, {"word": "y", "ref": "es-0048"}, {"word": "mujeres", "base": "la mujer"}]}
+    ]
   - id: "es-0003"
     target: "el niño"
     picture: "👦"
@@ -36,6 +43,10 @@ cards:
     bases:
       - { word: "el", base: "el" }
       - { word: "niño", base: "niño" }
+    "examples": [
+      {"target": "El niño anda bien.", "ipa": "el ˈniɲo ˈanda bjen", "bases": [{"word": "El", "base": "el"}, {"word": "niño", "base": "el niño"}, {"word": "anda", "base": "andar"}, {"word": "bien", "ref": "es-0326"}]},
+      {"target": "El niño es rubio.", "ipa": "el ˈniɲo es ˈrubjo", "bases": [{"word": "El", "base": "el"}, {"word": "niño", "base": "el niño"}, {"word": "es", "ref": "es-0022"}, {"word": "rubio", "base": "rubio"}]}
+    ]
   - id: "es-0004"
     target: "la niña"
     picture: "👧"
@@ -46,6 +57,10 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "niña", base: "niña" }
+    "examples": [
+      {"target": "La niña es encantadora.", "ipa": "la ˈniɲa es enkantaˈdoɾa", "bases": [{"word": "La", "base": "la"}, {"word": "niña", "base": "la niña"}, {"word": "es", "ref": "es-0022"}, {"word": "encantadora", "base": "encantador"}]},
+      {"target": "La niña es flaca.", "ipa": "la ˈniɲa es ˈflaka", "bases": [{"word": "La", "base": "la"}, {"word": "niña", "base": "la niña"}, {"word": "es", "ref": "es-0022"}, {"word": "flaca", "base": "flaco"}]}
+    ]
   - id: "es-0005"
     target: "el amigo"
     ipa: "el aˈmiɡo"
@@ -59,6 +74,10 @@ cards:
     bases:
       - { word: "el", base: "el" }
       - { word: "amigo", base: "amigo" }
+    "examples": [
+      {"target": "Nosotros somos amigos.", "ipa": "noˈsotɾos ˈsomos aˈmiɡos", "bases": [{"word": "Nosotros", "base": "nosotros"}, {"word": "somos", "ref": "es-0022"}, {"word": "amigos", "base": "el amigo"}]},
+      {"target": "Confío en mi amigo.", "ipa": "konˈfio en mi aˈmiɡo", "bases": [{"word": "Confío", "base": "confiar"}, {"word": "en", "base": "en"}, {"word": "mi", "ref": "es-0129"}, {"word": "amigo", "base": "el amigo"}]}
+    ]
   - id: "es-0006"
     target: "la casa"
     ipa: "la ˈkasa"
@@ -66,6 +85,7 @@ cards:
     gender: "f"
     tags: ["home"]
     examples:
+      - {"target": "Alquilamos una casa.", "ipa": "alkiˈlamos ˈuna ˈkasa", "bases": [{"word": "Alquilamos", "base": "alquilar"}, {"word": "una", "base": "una"}, {"word": "casa", "base": "la casa"}]}
       - { target: "La casa es muy grande.", ipa: "la ˈkasa es mwi ˈɡɾande", bases: [{ word: "La", base: "la" }, { word: "casa", base: "casa" }, { word: "es", ref: "es-0022" }, { word: "muy", base: "muy" }] }
     bases:
       - { word: "la", base: "la" }
@@ -82,6 +102,10 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "puerta", base: "puerta" }
+    "examples": [
+      {"target": "Empujo la puerta.", "ipa": "emˈpuxo la ˈpweɾta", "bases": [{"word": "Empujo", "base": "empujar"}, {"word": "la", "base": "la"}, {"word": "puerta", "base": "la puerta"}]},
+      {"target": "Alguien llama a la puerta.", "ipa": "ˈalɡjen ˈʝama a la ˈpweɾta", "bases": [{"word": "Alguien", "ref": "es-0132"}, {"word": "llama", "base": "llamar"}, {"word": "a", "base": "a"}, {"word": "la", "base": "la"}, {"word": "puerta", "base": "la puerta"}]}
+    ]
   - id: "es-0008"
     target: "la ventana"
     picture: "🪟"
@@ -94,6 +118,10 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "ventana", base: "ventana" }
+    "examples": [
+      {"target": "Escaparon por la ventana.", "ipa": "eskaˈpaɾon poɾ la benˈtana", "bases": [{"word": "Escaparon", "base": "escapar"}, {"word": "por", "base": "por"}, {"word": "la", "base": "la"}, {"word": "ventana", "base": "la ventana"}]},
+      {"target": "Gritan desde la ventana.", "ipa": "ˈɡɾitan ˈdesde la benˈtana", "bases": [{"word": "Gritan", "base": "gritar"}, {"word": "desde", "base": "desde"}, {"word": "la", "base": "la"}, {"word": "ventana", "base": "la ventana"}]}
+    ]
   - id: "es-0009"
     target: "la mesa"
     ipa: "la ˈmesa"
@@ -103,6 +131,10 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "mesa", base: "mesa" }
+    "examples": [
+      {"target": "Pongo la mesa.", "ipa": "ˈponɡo la ˈmesa", "bases": [{"word": "Pongo", "base": "poner"}, {"word": "la", "base": "la"}, {"word": "mesa", "base": "la mesa"}]},
+      {"target": "La mesa es marrón.", "ipa": "la ˈmesa es maˈron", "bases": [{"word": "La", "base": "la"}, {"word": "mesa", "base": "la mesa"}, {"word": "es", "ref": "es-0022"}, {"word": "marrón", "base": "marrón"}]}
+    ]
   - id: "es-0010"
     target: "la silla"
     picture: "🪑"
@@ -113,6 +145,10 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "silla", base: "silla" }
+    "examples": [
+      {"target": "La silla es incómoda.", "ipa": "la ˈsiʝa es inˈkomoda", "bases": [{"word": "La", "base": "la"}, {"word": "silla", "base": "la silla"}, {"word": "es", "ref": "es-0022"}, {"word": "incómoda", "base": "incómodo"}]},
+      {"target": "La silla es de metal.", "ipa": "la ˈsiʝa es de meˈtal", "bases": [{"word": "La", "base": "la"}, {"word": "silla", "base": "la silla"}, {"word": "es", "ref": "es-0022"}, {"word": "de", "base": "de"}, {"word": "metal", "base": "metal"}]}
+    ]
   - id: "es-0011"
     target: "el libro"
     picture: "📖"
@@ -125,6 +161,10 @@ cards:
     bases:
       - { word: "el", base: "el" }
       - { word: "libro", base: "libro" }
+    "examples": [
+      {"target": "Pierdo el libro.", "ipa": "ˈpjeɾdo el ˈlibɾo", "bases": [{"word": "Pierdo", "base": "perder"}, {"word": "el", "base": "el"}, {"word": "libro", "base": "el libro"}]},
+      {"target": "Acabo el libro hoy.", "ipa": "aˈkabo el ˈlibɾo oj", "bases": [{"word": "Acabo", "base": "acabar"}, {"word": "el", "base": "el"}, {"word": "libro", "base": "el libro"}, {"word": "hoy", "ref": "es-0331"}]}
+    ]
   - id: "es-0013"
     target: "el pan"
     picture: "🍞"
@@ -135,6 +175,10 @@ cards:
     bases:
       - { word: "el", base: "el" }
       - { word: "pan", base: "pan" }
+    "examples": [
+      {"target": "Comemos demasiado pan.", "ipa": "koˈmemos demaˈsjado pan", "bases": [{"word": "Comemos", "ref": "es-0028"}, {"word": "demasiado", "base": "demasiado"}, {"word": "pan", "base": "el pan"}]},
+      {"target": "Como pan cada día.", "ipa": "ˈkomo pan ˈkada ˈdia", "bases": [{"word": "Como", "ref": "es-0028"}, {"word": "pan", "base": "el pan"}, {"word": "cada", "base": "cada"}, {"word": "día", "ref": "es-0019"}]}
+    ]
   - id: "es-0014"
     target: "la leche"
     picture: "🥛"
@@ -145,6 +189,10 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "leche", base: "leche" }
+    "examples": [
+      {"target": "Bebo té con leche.", "ipa": "ˈbebo te kon ˈletʃe", "bases": [{"word": "Bebo", "ref": "es-0029"}, {"word": "té", "base": "té"}, {"word": "con", "base": "con"}, {"word": "leche", "base": "la leche"}]},
+      {"target": "Compro queso y leche.", "ipa": "ˈkompɾo ˈkeso i ˈletʃe", "bases": [{"word": "Compro", "ref": "es-0280"}, {"word": "queso", "base": "queso"}, {"word": "y", "ref": "es-0048"}, {"word": "leche", "base": "la leche"}]}
+    ]
   - id: "es-0016"
     target: "la ciudad"
     ipa: "la θjuˈdad"
@@ -156,6 +204,10 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "ciudad", base: "ciudad" }
+    "examples": [
+      {"target": "Conquistan la ciudad.", "ipa": "konˈkistan la θjuˈdad", "bases": [{"word": "Conquistan", "base": "conquistar"}, {"word": "la", "base": "la"}, {"word": "ciudad", "base": "la ciudad"}]},
+      {"target": "La ciudad se transforma.", "ipa": "la θjuˈdad se tɾansˈfoɾma", "bases": [{"word": "La", "base": "la"}, {"word": "ciudad", "base": "la ciudad"}, {"word": "se", "base": "se"}, {"word": "transforma", "base": "transformar"}]}
+    ]
   - id: "es-0018"
     target: "el país"
     ipa: "el paˈis"
@@ -165,6 +217,10 @@ cards:
     bases:
       - { word: "el", base: "el" }
       - { word: "país", base: "país" }
+    "examples": [
+      {"target": "Es un país montañoso.", "ipa": "es un paˈis montaˈɲoso", "bases": [{"word": "Es", "ref": "es-0022"}, {"word": "un", "base": "un"}, {"word": "país", "base": "el país"}, {"word": "montañoso", "base": "montañoso"}]},
+      {"target": "Es un país pobre.", "ipa": "es un paˈis ˈpobɾe", "bases": [{"word": "Es", "ref": "es-0022"}, {"word": "un", "base": "un"}, {"word": "país", "base": "el país"}, {"word": "pobre", "base": "pobre"}]}
+    ]
   - id: "es-0019"
     target: "el día"
     ipa: "el ˈdia"
@@ -178,6 +234,10 @@ cards:
     bases:
       - { word: "el", base: "el" }
       - { word: "día", base: "día" }
+    "examples": [
+      {"target": "buenos días", "ipa": "ˈbwenos ˈdias", "bases": [{"word": "buenos", "ref": "es-0033"}, {"word": "días", "base": "el día"}]},
+      {"target": "Buenos días, profesora.", "ipa": "ˈbwenos ˈdias pɾofeˈsoɾa", "bases": [{"word": "Buenos", "ref": "es-0033"}, {"word": "días", "base": "el día"}, {"word": "profesora", "base": "profesora"}]}
+    ]
   - id: "es-0020"
     target: "la noche"
     ipa: "la ˈnotʃe"
@@ -187,6 +247,10 @@ cards:
     bases:
       - { word: "la", base: "la" }
       - { word: "noche", base: "noche" }
+    "examples": [
+      {"target": "buenas noches", "ipa": "ˈbwenas ˈnotʃes", "bases": [{"word": "buenas", "ref": "es-0033"}, {"word": "noches", "base": "la noche"}]},
+      {"target": "Empeora por la noche.", "ipa": "empeˈoɾa poɾ la ˈnotʃe", "bases": [{"word": "Empeora", "base": "empeorar"}, {"word": "por", "base": "por"}, {"word": "la", "base": "la"}, {"word": "noche", "base": "la noche"}]}
+    ]
   - id: "es-0021"
     target: "el año"
     ipa: "el ˈaɲo"
@@ -196,6 +260,10 @@ cards:
     bases:
       - { word: "el", base: "el" }
       - { word: "año", base: "año" }
+    "examples": [
+      {"target": "Tengo veintidós años.", "ipa": "ˈtenɡo bejntiˈdos ˈaɲos", "bases": [{"word": "Tengo", "ref": "es-0024"}, {"word": "veintidós", "base": "veintidós"}, {"word": "años", "base": "el año"}]},
+      {"target": "Tengo veintiún años.", "ipa": "ˈtenɡo bejnˈtjun ˈaɲos", "bases": [{"word": "Tengo", "ref": "es-0024"}, {"word": "veintiún", "base": "veintiuno"}, {"word": "años", "base": "el año"}]}
+    ]
   - id: "es-0025"
     target: "hacer"
     ipa: "aˈθeɾ"
@@ -203,6 +271,10 @@ cards:
     phonetic_source: "wiktionary"
     pos: "verb"
     tags: ["verb", "irregular"]
+    "examples": [
+      {"target": "Hace calor tropical.", "ipa": "ˈaθe kaˈloɾ tɾopiˈkal", "bases": [{"word": "Hace", "base": "hacer"}, {"word": "calor", "ref": "es-1120"}, {"word": "tropical", "base": "tropical"}]},
+      {"target": "Hace mucho calor.", "ipa": "ˈaθe ˈmutʃo kaˈloɾ", "bases": [{"word": "Hace", "base": "hacer"}, {"word": "mucho", "base": "mucho"}, {"word": "calor", "base": "calor"}]}
+    ]
   - id: "es-0029"
     target: "beber"
     ipa: "beˈbeɾ"
@@ -210,6 +282,10 @@ cards:
     phonetic_source: "wiktionary"
     pos: "verb"
     tags: ["verb", "regular-er"]
+    "examples": [
+      {"target": "Bebo cerveza.", "ipa": "ˈbebo θeɾˈbeθa", "bases": [{"word": "Bebo", "base": "beber"}, {"word": "cerveza", "base": "cerveza"}]},
+      {"target": "Bebo vino.", "ipa": "ˈbebo ˈbino", "bases": [{"word": "Bebo", "base": "beber"}, {"word": "vino", "base": "vino"}]}
+    ]
   - id: "es-0030"
     target: "vivir"
     ipa: "biˈbiɾ"
@@ -217,6 +293,9 @@ cards:
     phonetic_source: "wiktionary"
     pos: "verb"
     tags: ["verb", "regular-ir"]
+    "examples": [
+      {"target": "Ella vive aquí.", "ipa": "ˈeʝa ˈbibe aˈki", "bases": [{"word": "Ella", "base": "ella"}, {"word": "vive", "base": "vivir"}, {"word": "aquí", "ref": "es-0051"}]}
+    ]
   - id: "es-0031"
     target: "grande"
     ipa: "ˈɡɾande"
@@ -224,6 +303,10 @@ cards:
     phonetic_source: "wiktionary"
     pos: "adj"
     tags: ["adjective"]
+    "examples": [
+      {"target": "América es muy grande.", "ipa": "aˈmeɾika es mwi ˈɡɾande", "bases": [{"word": "América", "base": "América"}, {"word": "es", "ref": "es-0022"}, {"word": "muy", "ref": "es-0330"}, {"word": "grande", "base": "grande"}]},
+      {"target": "El aeropuerto es grande.", "ipa": "el aeɾoˈpweɾto es ˈɡɾande", "bases": [{"word": "El", "base": "el"}, {"word": "aeropuerto", "base": "aeropuerto"}, {"word": "es", "ref": "es-0022"}, {"word": "grande", "base": "grande"}]}
+    ]
   - id: "es-0032"
     target: "pequeño"
     ipa: "peˈkeɲo"
@@ -231,6 +314,10 @@ cards:
     phonetic_source: "wiktionary"
     pos: "adj"
     tags: ["adjective"]
+    "examples": [
+      {"target": "El baño es pequeño.", "ipa": "el ˈbaɲo es peˈkeɲo", "bases": [{"word": "El", "base": "el"}, {"word": "baño", "base": "baño"}, {"word": "es", "ref": "es-0022"}, {"word": "pequeño", "base": "pequeño"}]},
+      {"target": "El dedo es pequeño.", "ipa": "el ˈdedo es peˈkeɲo", "bases": [{"word": "El", "base": "el"}, {"word": "dedo", "base": "dedo"}, {"word": "es", "ref": "es-0022"}, {"word": "pequeño", "base": "pequeño"}]}
+    ]
   - id: "es-0033"
     target: "bueno"
     ipa: "ˈbweno"
@@ -238,6 +325,10 @@ cards:
     phonetic_source: "wiktionary"
     pos: "adj"
     tags: ["adjective"]
+    "examples": [
+      {"target": "buenas tardes", "ipa": "ˈbwenas ˈtaɾdes", "bases": [{"word": "buenas", "base": "bueno"}, {"word": "tardes", "base": "tarde"}]},
+      {"target": "Buenas tardes, profesora.", "ipa": "ˈbwenas ˈtaɾdes pɾofeˈsoɾa", "bases": [{"word": "Buenas", "base": "bueno"}, {"word": "tardes", "base": "tarde"}, {"word": "profesora", "ref": "es-0094"}]}
+    ]
   - id: "es-0034"
     target: "malo"
     ipa: "ˈmalo"
@@ -245,6 +336,10 @@ cards:
     phonetic_source: "wiktionary"
     pos: "adj"
     tags: ["adjective"]
+    "examples": [
+      {"target": "El aburrimiento es malo.", "ipa": "el aburiˈmjento es ˈmalo", "bases": [{"word": "El", "base": "el"}, {"word": "aburrimiento", "base": "aburrimiento"}, {"word": "es", "ref": "es-0022"}, {"word": "malo", "base": "malo"}]},
+      {"target": "Los prejuicios son malos.", "ipa": "los pɾeˈxwiθjos son ˈmalos", "bases": [{"word": "Los", "base": "los"}, {"word": "prejuicios", "base": "prejuicio"}, {"word": "son", "ref": "es-0022"}, {"word": "malos", "base": "malo"}]}
+    ]
   - id: "es-0035"
     target: "nuevo"
     ipa: "ˈnwebo"
@@ -252,3 +347,7 @@ cards:
     phonetic_source: "wiktionary"
     pos: "adj"
     tags: ["adjective"]
+    "examples": [
+      {"target": "Busco un empleo nuevo.", "ipa": "ˈbusko un emˈpleo ˈnwebo", "bases": [{"word": "Busco", "ref": "es-0289"}, {"word": "un", "base": "un"}, {"word": "empleo", "base": "empleo"}, {"word": "nuevo", "base": "nuevo"}]},
+      {"target": "Compro una raqueta nueva.", "ipa": "ˈkompɾo ˈuna raˈketa ˈnweba", "bases": [{"word": "Compro", "ref": "es-0280"}, {"word": "una", "base": "una"}, {"word": "raqueta", "base": "raqueta"}, {"word": "nueva", "base": "nuevo"}]}
+    ]
