@@ -332,6 +332,15 @@ class ApplyTest(unittest.TestCase):
         self.assertIn("recorder.release()", body)
         self.assertIn("source.close()", body)
         self.assertNotIn("FileOutputStream(File", body)
+        # An abandoned listen lets go of the microphone at once; finish never
+        # waits for the recorder thread on the main thread.
+        self.assertIn("override fun onPause()", k)
+        self.assertIn("override fun onDestroy()", k)
+        self.assertEqual(k.count("sayAbort?.invoke()"), 3)
+        self.assertNotIn(".join(", body)
+        self.assertIn('"aborted"', body)
+        # A writer that never started leaves nothing open.
+        self.assertIn("sink.close()", body)
         for name in (
             "android.Manifest",
             "android.media.AudioRecord",
