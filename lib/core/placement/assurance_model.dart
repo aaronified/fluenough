@@ -93,9 +93,12 @@ class PlacementLevels {
   /// levels are merged: the classes are `none` and the distinct levels. A
   /// path of 11 decks or more has ten distinct tenths, as the plan says; one
   /// deck has `none` and one level; two have `none`, 0 and 1.
-  factory PlacementLevels(int deckCount) {
+  ///
+  /// [maxParts] is how many parts the path is cut into at most: 10 for the
+  /// V2 model (the default), 20 for the joint model of V3.
+  factory PlacementLevels(int deckCount, {int maxParts = 10}) {
     final decks = deckCount < 1 ? 1 : deckCount;
-    final parts = math.min(10, decks);
+    final parts = math.min(maxParts < 1 ? 1 : maxParts, decks);
     final span = decks - 1;
     final levels = <int>[];
     for (var k = 0; k <= parts; k++) {

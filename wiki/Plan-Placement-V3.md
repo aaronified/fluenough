@@ -26,7 +26,7 @@ Requirements from the owner:
 - Mix the skills first, then drill into the skill that fails.
 - Use every item format (multiple choice, cloze, one-word typing, matching, and the others in the inventory below).
 - Hear and Say are tested, but they are never the only evidence for a skill.
-- Re-check the design with an adversarial agent that tries to ace the test using only the first 100 words and basic suffix and form rules. Result pending; it will be added to this page.
+- Re-check the design with an adversarial agent that tries to ace the test using only the first 100 words and basic suffix and form rules. Done 2026-11-07: V3 as written was found gameable; the result and the required amendments are in "Adversarial review and required amendments" at the end of this page, and they are mandatory.
 
 ---
 
@@ -164,3 +164,84 @@ Personas, each simulated with per-skill true positions and the slip/guess of the
 5. **Cognate policy.** Exclude near-cognate items (proposal) vs count them half vs ask the learner's known languages. Downside of excluding: fewer usable items for related-language courses (Spanish, French) and extra data work.
 6. **Typing items.** Include typing in non-Latin script (F7) when the keyboard is missing (needs tiles instead), vs tiles only. Downside of tiles: easier, so Write is overestimated.
 7. **Whether 95% Verified stays at all**, under the model's honest range, or is replaced by the range display only (proposal).
+
+
+---
+
+# Adversarial review and required amendments (2026-11-07)
+
+An adversarial agent tried to ace V3 using only the first 100 words of the path, top-100 function words, regular suffix and form rules, and test-wise tricks, never reading the answer key. Its scripts and raw results are kept by the orchestrator in the session scratch folder (`adv/`); the full numbers are summarised here.
+
+**Verdict: V3 as written is gameable.** Its own cognate rule removes most of the problem under a flat prior, but it still fails its own gates. A random answerer that declares "advanced" is also placed more than 1/10 too high in about 5% of runs, so the stopping rule and the prior are weak, not only the item formats.
+
+## What was found
+
+Start more than +1/10 / +2/10 of the path too high, Spanish, per skill, strong anagram solver, 300 runs per cell (A = V3 literal, D1 = A plus the design's cognate exclusion, X1 = D1 plus calibrated guess rates, two decoy letters on word tiles and a 30% flat prior):
+
+| Scenario | Read | Hear | Write |
+|---|---|---|---|
+| A, flat | 27 / 21% | 17 / 13% | 14 / 9% |
+| A, amateur declared | 39 / 21% | 31 / 11% | 39 / 19% |
+| A, advanced declared | 77 / 74% | 70 / 68% | 70 / 68% |
+| D1, advanced declared | 37 / 35% | 35 / 32% | 38 / 37% |
+| X1, flat or amateur or advanced | 0 to 1% | 0 to 1% | 0 to 1% |
+
+- Hindi (weak solver): A flat 9/6%, A advanced about 38/34%, X1 2% or less.
+- **Say**, always self-rated "same": start more than 1/10 too high in 86% of runs (Hindi 74%), and adding Say pushes runs to a median of 39 items. X1 does not fix it.
+- Cognate-only (knows no words) is over by 1/10 in 28% of runs flat and 58% advanced under A; 3% and 15% under D1; 0% and 2% under X1.
+- A random answerer declaring "advanced" is over by 1/10 in 6% (Read) and 5% (Write) of runs under A.
+- Asking the same card twice in a drill-down makes Hear worse (35% over by 1/10 against 11%).
+- Honest experts and natives are placed at 154 to 163 of 170 (Spanish) in 8 to 10 items under every scenario: the fixes cost no sensitivity.
+- The 80% range contained the truth in 59 to 73% of runs under A flat, and 18 to 27% under A advanced (the gate is 75 to 88%).
+
+Leaks by format (Spanish, items beyond unit 11; the design's guess rate in brackets): word-to-meaning pick F2/F13 57 to 60% Read, 47 to 50% Hear (.25), and 97% / 74% on cognates; meaning-to-word pick F3 60%, 99% on cognates; word tiles F4 36% with a strong solver (.10) because the bank's tiles are exact letters, 20% with two decoys; typed words F7 23% exact and 51% within edit distance 1 on cognates; sentence picks F5/F17 77 to 86% (Hindi 52 to 60%), because the distractors are topic-unrelated, and "longest option" is right 60% of the time; cloze F6 57% with the English hint, 98% from endings alone for a conjugation cloze, 87% for article gender from the noun ending; the word-order pair 98% (end marks left mid-sentence); matching F9 72% per pair and 54% for all four pairs (chance 4%); yes/no F1 plug-in false-alarm estimate fails for a yes-sayer in 49 to 73% of runs, but 12 to 16% when it is a joint latent; a write item on a card lifts a later pick on the same card from 40% to 66% (family leak). Held: tile-sentence ordering (exact success about 0%), pseudoword discrimination by phonotactics (AUC .53 to .57), the cognate exclusion (5 to 8 times fewer over-placements under a flat prior), the lower-edge start under a flat prior.
+
+## Required amendments (mandatory)
+
+**Item generation**
+
+1. A cognate score at bank build (respelling plus similarity; for Hindi, by transliterating loanwords). Near-cognates are excluded from all word-level formats (yes/no, meaning picks, written-word picks, typed words, matching, tiles, and the first item of each skill). Sentence items are weighted 0.5, or require at least two non-cognate content words.
+2. Word tiles need at least two plausible decoy letters, or syllable tiles. Admission test: a strong anagram solver's success is at most the guess rate plus 0.07.
+3. Word-order pair: end marks stay fixed; one constituent is swapped.
+4. Word-pick distractors: same part of speech and surface shape, with one cognate lure or false friend. Sentence-pick distractors: one-word contrasts of the correct translation, matched in length and cognate load.
+5. Cloze: no English translation hint; options agree in person, number and gender and differ in stem or lexical choice, so endings cannot decide; exception nouns (la mano, el mapa, la flor) are included as gender items.
+6. A card is never asked twice in a run, drill-down included.
+
+**Estimator**
+
+1. The guess rate is calibrated per format and cognate class from adversary replay with a 90% upper bound; items with a guess of 0.9 or more are dropped (they give no evidence). `GuessCalibration` in `lib/core/placement/joint_model.dart`.
+2. The declaration prior carries at most 70%; at least 30% is flat.
+3. **Proven level ceiling.** A skill is not placed above its highest band proven by 4 of 4 or 5 of 6 correct, non-leaky, non-cognate items (so at least four clean items per claimed band per skill, not three). A band is a tenth of the path. The rule is "the chance of a guesser doing as well is at most 1.25%", judged at the larger of 0.30 and the highest guess rate of the band's items. An item guessed more than 35% of the time may still move the posterior but is never a clean item.
+4. **Say is never placed from self-rating alone.** Self-rated Say items never enter the joint (weight 0, because the joint would otherwise lift Hear and Read through the skills-move-together prior); without a recogniser-scored item Say is unplaced (start `none`, whatever Hear shows), is labelled "Self-rated", and does not count toward coverage or extend the run.
+5. Yes/no: real-word answers update the posterior at once, but only after at least eight pseudowords do they count as clean items or toward a proof; the yes-bias (false-alarm rate) is a joint latent, not a plug-in; and a band proven by yes/no answers is judged at the upper bound of the learner's own false-alarm rate.
+6. The likelihood is tempered (an exponent of 0.85, and a weight that falls by a fifth for each card, distractor or cue an item shares with earlier ones), and the range is shown only after the coverage gate passes (at least four clean items for the skill).
+
+## Changes to the design this brings
+
+- **Confidence word.** The 80% range always has at least 80% of the mass by construction, so the confidence word is derived from P(true level within one tenth of the middle), not from the range's own mass: high at 80% or more, medium 60 to 79%, low below.
+- **Start.** The lower edge of the 80% range, never above the proven ceiling, and for Say `none` unless a recogniser scored it.
+- **Twenty parts.** Classes are twentieths of the path (`PlacementLevels(deckCount, maxParts: 20)`), so a tenth is two classes.
+- **Time.** The adversary showed that about 24 to 30 items are needed (four clean items per band per skill); the old gate of median 22 items is superseded. Do not loosen security to hit time.
+
+## Revised validation gates (replace section (g)'s gates; these run in CI)
+
+Personas, per skill, 300 runs per cell, with flat, amateur and advanced declarations, in Spanish and Hindi:
+
+| Persona | Gate |
+|---|---|
+| TOP100+RULES (weak and strong solver) | start more than +1/10 too high in at most 3% of runs, more than +2/10 in at most 1% |
+| COGNATE-ONLY | more than +1/10 too high in at most 2% |
+| TESTWISE-ONLY and RANDOM | more than +1/10 too high in at most 2% |
+| YES-SAYER (yes-rate 0.5 to 0.9) | p10 within T+1/10 in at least 97% |
+| SELF-RATER (Say always "same") | Say start at most Hear start +1/10 in at least 98% (the model gives `none`, so this holds trivially; the gate guards the picker and UI) |
+| ANAGRAM-SOLVER | per-item accuracy at most guess + 0.07 |
+| MATCHER | per-pair accuracy at most 0.35 |
+| FAMILY-REPLAY | lift at most 5 points |
+| Honest: beginner, amateur, advanced, expert, native, script-literate-only, ear-only, cognate-advantaged, with and without audio and mic | experts and natives within 1/10 of the truth in at least 85% of runs |
+
+Also: every adversary with an "advanced" or "expert" declaration meets the same gates; the 80% credible range contains the truth in 75 to 88% of runs; every skill in play gets at least four clean items in 100% of runs; Read and Write are fully placed in the no-audio and no-mic variant; every item class passes an admission audit (adversary accuracy at most the design guess plus 0.07, 0.32 for a four-option pick, else the item is excluded). **Time and length: median at most 28 items and 200 s, 95th percentile at most 40 items and 300 s.**
+
+## Build progress
+
+1. Joint posterior and readout (`lib/core/placement/joint_model.dart`, tests in `test/placement_joint_model_test.dart`): built. It holds the prior mix, noisy-AND update, yes-bias latent, calibration, tempering, proven ceiling, Say rule and the readout.
+2. Harness and personas, 3. item registry and generators with the fixes above, 4. picker, rotation and caps, 5. drill-down, 6. UI and result screen, 7. migration and retiring the V2 run policy, 8. real-learner re-fit hooks: next, one pull request each.
