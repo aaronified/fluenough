@@ -1,0 +1,426 @@
+schema: 1
+id: "ml-en-things"
+kind: "layer"
+core: "ml-things"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Things"
+description: "Everyday things: a book, a pen and a pencil, a table and a chair, a bag, a key, a phone, a watch, glasses, an umbrella, a bottle, a cup, a plate, a spoon, a box, a cloth, a mirror, a bed, a door, a window, a television, a fan, a light, paper, a comb, a brush, a knife and a pot. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0356":
+    native: "book"
+    notes:
+      n1: "book"
+    examples:
+      "ഈ പുസ്തകം എന്റേതാണ്.":
+        native: "This book is mine."
+        bases:
+          "ഈ": "this"
+          "പുസ്തകം": "book"
+          "എന്റേതാണ്": "is mine"
+      "പുസ്തകം മേശയുടെ മുകളിൽ.":
+        native: "The book is on the table."
+        bases:
+          "പുസ്തകം": "book"
+  "ml-0357":
+    native: "pen"
+    notes:
+      n1: "pen"
+    examples:
+      "പേന എടുക്കൂ.":
+        native: "Take a pen."
+        bases:
+          "പേന": "pen"
+      "ഈ പേന നല്ലതാണ്.":
+        native: "This pen is good."
+        bases:
+          "ഈ": "this"
+          "പേന": "pen"
+          "നല്ലതാണ്": "is good"
+  "ml-0358":
+    native: "pencil"
+    notes:
+      n1: "pencil"
+    examples:
+      "പെൻസിൽ ഇവിടെ ഉണ്ട്.":
+        native: "There is a pencil here."
+        bases:
+          "പെൻസിൽ": "pencil"
+          "ഉണ്ട്": "there is"
+      "എഴുതാൻ പെൻസിൽ വേണം.":
+        native: "I need a pencil to write."
+        bases:
+          "പെൻസിൽ": "pencil"
+          "വേണം": "need"
+  "ml-0359":
+    native: "table"
+    notes:
+      n1: "table"
+    examples:
+      "മേശ വലിയതാണ്":
+        native: "The table is big."
+        bases:
+          "മേശ": "table"
+      "മേശയുടെ താഴെ.":
+        native: "Under the table."
+        bases:
+          "മേശയുടെ": "the table"
+  "ml-0360":
+    native: "chair"
+    notes:
+      n1: "chair"
+    examples:
+      "കസേരയിൽ ഇരിക്കൂ.":
+        native: "Sit on the chair."
+        bases:
+          "കസേരയിൽ": "chair"
+      "ഈ കസേര ചെറുതാണ്.":
+        native: "This chair is small."
+        bases:
+          "ഈ": "this"
+          "കസേര": "chair"
+          "ചെറുതാണ്": "is small"
+  "ml-0361":
+    native: "bag"
+    notes:
+      n1: "bag"
+    examples:
+      "ബാഗ് എവിടെ?":
+        native: "Where is the bag?"
+        bases:
+          "ബാഗ്": "bag"
+      "ബാഗ് കൊണ്ടുവരൂ.":
+        native: "Bring the bag."
+        bases:
+          "ബാഗ്": "bag"
+  "ml-0362":
+    native: "key"
+    notes:
+      n1: "key"
+    examples:
+      "താക്കോൽ എവിടെ?":
+        native: "Where is the key?"
+        bases:
+          "താക്കോൽ": "key"
+      "താക്കോൽ എടുക്കൂ.":
+        native: "Take the key."
+        bases:
+          "താക്കോൽ": "key"
+  "ml-0363":
+    native: "phone"
+    notes:
+      n1: "phone"
+    examples:
+      "ഫോൺ ഇവിടെ ഉണ്ടോ?":
+        native: "Is the phone here?"
+        bases:
+          "ഫോൺ": "phone"
+      "എന്റെ ഫോൺ കാണുന്നില്ല.":
+        native: "I cannot find my phone."
+        bases:
+          "ഫോൺ": "phone"
+          "കാണുന്നില്ല": "is not found"
+  "ml-0364":
+    native: "watch"
+    notes:
+      n1: "watch"
+    examples:
+      "വാച്ച് എത്ര മണി?":
+        native: "What time is it by the watch?"
+        bases:
+          "വാച്ച്": "watch"
+      "വാച്ച് നല്ലതാണ്.":
+        native: "The watch is good."
+        bases:
+          "വാച്ച്": "watch"
+          "നല്ലതാണ്": "is good"
+  "ml-0365":
+    native: "glasses; spectacles"
+    notes:
+      n1: "glasses; spectacles"
+    examples:
+      "കണ്ണട വെക്കൂ.":
+        native: "Put on your glasses."
+        bases:
+          "കണ്ണട": "glasses; spectacles"
+          "വെക്കൂ": "put on"
+      "കണ്ണട എവിടെ?":
+        native: "Where are the glasses?"
+        bases:
+          "കണ്ണട": "glasses; spectacles"
+  "ml-0366":
+    native: "umbrella"
+    notes:
+      n1: "umbrella"
+    examples:
+      "കുട എടുക്കൂ.":
+        native: "Take an umbrella."
+        bases:
+          "കുട": "umbrella"
+      "മഴയുണ്ട്, കുട വേണം.":
+        native: "It is raining, I need an umbrella."
+        bases:
+          "മഴയുണ്ട്": "it is raining"
+          "കുട": "umbrella"
+          "വേണം": "need"
+  "ml-0367":
+    native: "bottle"
+    notes:
+      n1: "bottle"
+    examples:
+      "കുപ്പി ഇവിടെ ഉണ്ട്.":
+        native: "There is a bottle here."
+        bases:
+          "കുപ്പി": "bottle"
+          "ഉണ്ട്": "there is"
+      "കുപ്പി കഴുകൂ.":
+        native: "Wash the bottle."
+        bases:
+          "കുപ്പി": "bottle"
+  "ml-0368":
+    native: "cup"
+    notes:
+      n1: "cup"
+    examples:
+      "ഒരു കപ്പ് ചായ.":
+        native: "A cup of tea."
+        bases:
+          "ഒരു": "a; one"
+          "കപ്പ്": "cup"
+      "കപ്പ് ഇവിടെ.":
+        native: "The cup is here."
+        bases:
+          "കപ്പ്": "cup"
+  "ml-0369":
+    native: "plate"
+    notes:
+      n1: "plate"
+    examples:
+      "പ്ലേറ്റ് കഴുകൂ.":
+        native: "Wash the plate."
+        bases:
+          "പ്ലേറ്റ്": "plate"
+      "പ്ലേറ്റ് മേശയിൽ":
+        native: "The plate is on the table."
+        bases:
+          "പ്ലേറ്റ്": "plate"
+  "ml-0370":
+    native: "spoon"
+    notes:
+      n1: "spoon"
+    examples:
+      "സ്പൂൺ എടുക്കൂ.":
+        native: "Take a spoon."
+        bases:
+          "സ്പൂൺ": "spoon"
+      "എനിക്ക് സ്പൂൺ വേണം.":
+        native: "I need a spoon."
+        bases:
+          "സ്പൂൺ": "spoon"
+          "വേണം": "need"
+  "ml-0371":
+    native: "box"
+    notes:
+      n1: "box"
+    examples:
+      "പെട്ടി എവിടെ?":
+        native: "Where is the box?"
+        bases:
+          "പെട്ടി": "box"
+      "പെട്ടിയുടെ അകത്ത്.":
+        native: "Inside the box."
+        bases:
+          "പെട്ടിയുടെ": "box"
+  "ml-0372":
+    native: "cloth"
+    notes:
+      n1: "cloth"
+    examples:
+      "തുണി കഴുകൂ.":
+        native: "Wash the cloth."
+        bases:
+          "തുണി": "cloth"
+      "ഈ തുണി നല്ലതാണ്.":
+        native: "This cloth is good."
+        bases:
+          "ഈ": "this"
+          "തുണി": "cloth"
+          "നല്ലതാണ്": "is good"
+  "ml-0373":
+    native: "mirror"
+    notes:
+      n1: "mirror"
+    examples:
+      "കണ്ണാടി എവിടെ?":
+        native: "Where is the mirror?"
+        bases:
+          "കണ്ണാടി": "mirror"
+      "കണ്ണാടിയിൽ നോക്കൂ.":
+        native: "Look in the mirror."
+        bases:
+          "കണ്ണാടിയിൽ": "mirror"
+  "ml-0374":
+    native: "bed"
+    notes:
+      n1: "bed"
+    examples:
+      "കിടക്ക വലിയതാണ്":
+        native: "The bed is big."
+        bases:
+          "കിടക്ക": "bed"
+      "കിടക്കയിൽ കിടക്കൂ.":
+        native: "Lie down on the bed."
+        bases:
+          "കിടക്കയിൽ": "bed"
+  "ml-0375":
+    native: "door"
+    notes:
+      n1: "door"
+    examples:
+      "വാതിൽ തുറക്കൂ.":
+        native: "Open the door."
+        bases:
+          "വാതിൽ": "door"
+      "വാതിൽ അടയ്ക്കൂ.":
+        native: "Close the door."
+        bases:
+          "വാതിൽ": "door"
+  "ml-0376":
+    native: "window"
+    notes:
+      n1: "window"
+    examples:
+      "ജനൽ തുറക്കൂ.":
+        native: "Open the window."
+        bases:
+          "ജനൽ": "window"
+      "ജനൽ അടയ്ക്കൂ.":
+        native: "Close the window."
+        bases:
+          "ജനൽ": "window"
+  "ml-0377":
+    native: "television"
+    notes:
+      n1: "television"
+    examples:
+      "ടിവി കാണൂ.":
+        native: "Watch television."
+        bases:
+          "ടിവി": "television"
+      "ടിവി ഓഫ് ചെയ്യൂ.":
+        native: "Switch off the television."
+        bases:
+          "ടിവി": "television"
+          "ഓഫ്": "off"
+  "ml-0378":
+    native: "fan"
+    notes:
+      n1: "fan"
+    examples:
+      "ഫാൻ ഓൺ ചെയ്യൂ.":
+        native: "Switch on the fan."
+        bases:
+          "ഫാൻ": "fan"
+          "ഓൺ": "on"
+      "ഫാൻ വേണോ?":
+        native: "Do you want the fan?"
+        bases:
+          "ഫാൻ": "fan"
+          "വേണോ": "do you want"
+  "ml-0379":
+    native: "light; lamp"
+    notes:
+      n1: "light; lamp"
+    examples:
+      "ലൈറ്റ് ഓഫ് ചെയ്യൂ.":
+        native: "Switch off the light."
+        bases:
+          "ലൈറ്റ്": "light; lamp"
+          "ഓഫ്": "off"
+      "ലൈറ്റ് എവിടെ?":
+        native: "Where is the light?"
+        bases:
+          "ലൈറ്റ്": "light; lamp"
+  "ml-0380":
+    native: "paper"
+    notes:
+      n1: "paper"
+    examples:
+      "പേപ്പർ ഇവിടെ.":
+        native: "The paper is here."
+        bases:
+          "പേപ്പർ": "paper"
+      "പേപ്പറിൽ എഴുതൂ.":
+        native: "Write on the paper."
+        bases:
+          "പേപ്പറിൽ": "paper"
+  "ml-0381":
+    native: "comb"
+    notes:
+      n1: "comb"
+    examples:
+      "ചീപ്പ് എടുക്കൂ.":
+        native: "Take the comb."
+        bases:
+          "ചീപ്പ്": "comb"
+      "ചീപ്പ് വേണം.":
+        native: "I need a comb."
+        bases:
+          "ചീപ്പ്": "comb"
+          "വേണം": "need"
+  "ml-0382":
+    native: "brush"
+    notes:
+      n1: "brush"
+    examples:
+      "പല്ല് തേക്കാൻ ബ്രഷ് വേണം.":
+        native: "I need a brush to brush my teeth."
+        bases:
+          "തേക്കാൻ": "to brush"
+          "ബ്രഷ്": "brush"
+          "വേണം": "need"
+      "ബ്രഷ് എവിടെ?":
+        native: "Where is the brush?"
+        bases:
+          "ബ്രഷ്": "brush"
+  "ml-0383":
+    native: "knife"
+    notes:
+      n1: "knife"
+    examples:
+      "കത്തി കൊണ്ടുവരൂ.":
+        native: "Bring a knife."
+        bases:
+          "കത്തി": "knife"
+      "കത്തി സൂക്ഷിക്കൂ.":
+        native: "Be careful with the knife."
+        bases:
+          "കത്തി": "knife"
+  "ml-0384":
+    native: "pot"
+    notes:
+      n1: "pot"
+    examples:
+      "ചട്ടി ഇവിടെ.":
+        native: "The pot is here."
+        bases:
+          "ചട്ടി": "pot"
+      "ചട്ടി കഴുകൂ.":
+        native: "Wash the pot."
+        bases:
+          "ചട്ടി": "pot"
+  "ml-0385":
+    native: "thing; object"
+    notes:
+      n1: "thing; object"
+    examples:
+      "ഈ സാധനം എന്ത്?":
+        native: "What is this thing?"
+        bases:
+          "ഈ": "this"
+          "സാധനം": "thing; object"
+      "സാധനം എവിടെ?":
+        native: "Where is the thing?"
+        bases:
+          "സാധനം": "thing; object"

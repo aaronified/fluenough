@@ -1,0 +1,252 @@
+schema: 1
+id: "ml-en-home"
+kind: "layer"
+core: "ml-home"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Home"
+description: "Rooms and parts of a house: the kitchen, a room, the bathroom, the floor, a wall, the roof, the stove, a fridge, a sink, a broom, a dustbin, a sofa, the yard, a garden, a gate, a compound wall and a shelf. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0386":
+    native: "kitchen"
+    notes:
+      n1: "kitchen"
+    examples:
+      "അടുക്കള എവിടെ?":
+        native: "Where is the kitchen?"
+        bases:
+          "അടുക്കള": "kitchen"
+      "അടുക്കളയിൽ പോകൂ.":
+        native: "Go to the kitchen."
+        bases:
+          "അടുക്കളയിൽ": "kitchen"
+  "ml-0387":
+    native: "room"
+    notes:
+      n1: "room"
+    examples:
+      "ഈ മുറി വലിയതാണ്":
+        native: "This room is big."
+        bases:
+          "ഈ": "this"
+          "മുറി": "room"
+      "മുറിയിൽ ആരുണ്ട്":
+        native: "Who is in the room?"
+        bases:
+          "മുറിയിൽ": "room"
+  "ml-0388":
+    native: "bathroom"
+    notes:
+      n1: "bathroom"
+    examples:
+      "കുളിമുറി എവിടെ?":
+        native: "Where is the bathroom?"
+        bases:
+          "കുളിമുറി": "bathroom"
+      "കുളിമുറിയിൽ വെള്ളമുണ്ട്":
+        native: "There is water in the bathroom."
+        bases:
+          "കുളിമുറിയിൽ": "bathroom"
+  "ml-0389":
+    native: "floor; ground"
+    notes:
+      n1: "floor; ground"
+    examples:
+      "നിലം വൃത്തിയാക്കൂ.":
+        native: "Clean the floor."
+        bases:
+          "നിലം": "floor; ground"
+          "വൃത്തിയാക്കൂ": "clean"
+      "നിലത്ത് ഇരിക്കൂ.":
+        native: "Sit on the floor."
+        bases:
+          "നിലത്ത്": "floor; ground"
+  "ml-0390":
+    native: "wall (inside)"
+    notes:
+      n1: "wall (inside)"
+    examples:
+      "ചുമരിൽ ഒരു ക്ലോക്ക് ഉണ്ട്.":
+        native: "There is a clock on the wall."
+        bases:
+          "ചുമരിൽ": "wall (inside)"
+          "ഒരു": "a; one"
+          "ക്ലോക്ക്": "clock"
+          "ഉണ്ട്": "there is"
+      "ചുമർ വെളുത്തതാണ്.":
+        native: "The wall is white."
+        bases:
+          "ചുമർ": "wall (inside)"
+          "വെളുത്തതാണ്": "is white"
+  "ml-0391":
+    native: "roof"
+    notes:
+      n1: "roof"
+    examples:
+      "മേൽക്കൂര വലിയതാണ്":
+        native: "The roof is big."
+        bases:
+          "മേൽക്കൂര": "roof"
+      "മേൽക്കൂര ചോരുന്നു.":
+        native: "The roof leaks."
+        bases:
+          "മേൽക്കൂര": "roof"
+          "ചോരുന്നു": "leaks"
+  "ml-0392":
+    native: "stove; hearth"
+    notes:
+      n1: "stove; hearth"
+    examples:
+      "അടുപ്പ് ചൂടാണ്.":
+        native: "The stove is hot."
+        bases:
+          "അടുപ്പ്": "stove; hearth"
+          "ചൂടാണ്": "is hot"
+      "അടുപ്പിൽ ചട്ടി വെക്കൂ.":
+        native: "Put the pot on the stove."
+        bases:
+          "അടുപ്പിൽ": "stove; hearth"
+          "വെക്കൂ": "put"
+  "ml-0393":
+    native: "fridge"
+    notes:
+      n1: "fridge"
+    examples:
+      "ഫ്രിഡ്ജിൽ പാൽ ഉണ്ട്.":
+        native: "There is milk in the fridge."
+        bases:
+          "ഫ്രിഡ്ജിൽ": "fridge"
+          "ഉണ്ട്": "there is"
+      "ഫ്രിഡ്ജ് തണുപ്പാണ്.":
+        native: "The fridge is cold."
+        bases:
+          "ഫ്രിഡ്ജ്": "fridge"
+          "തണുപ്പാണ്": "is cold"
+  "ml-0394":
+    native: "sink"
+    notes:
+      n1: "sink"
+    examples:
+      "സിങ്ക് വൃത്തിയാണ്.":
+        native: "The sink is clean."
+        bases:
+          "സിങ്ക്": "sink"
+          "വൃത്തിയാണ്": "is clean"
+      "പാത്രം സിങ്കിൽ വെക്കൂ.":
+        native: "Put the vessel in the sink."
+        bases:
+          "പാത്രം": "vessel; dish"
+          "സിങ്കിൽ": "sink"
+          "വെക്കൂ": "put"
+  "ml-0395":
+    native: "broom"
+    notes:
+      n1: "broom"
+    examples:
+      "ചൂല് എടുക്കൂ.":
+        native: "Take the broom."
+        bases:
+          "ചൂല്": "broom"
+      "ചൂല് എവിടെ?":
+        native: "Where is the broom?"
+        bases:
+          "ചൂല്": "broom"
+  "ml-0396":
+    native: "dustbin; rubbish bin"
+    notes:
+      n1: "dustbin; rubbish bin"
+    examples:
+      "ചവറ്റുകുട്ട എവിടെ?":
+        native: "Where is the dustbin?"
+        bases:
+          "ചവറ്റുകുട്ട": "dustbin; rubbish bin"
+      "ചവറ് ചവറ്റുകുട്ടയിൽ ഇടൂ.":
+        native: "Put the rubbish in the dustbin."
+        bases:
+          "ചവറ്": "rubbish"
+          "ചവറ്റുകുട്ടയിൽ": "dustbin; rubbish bin"
+          "ഇടൂ": "put"
+  "ml-0397":
+    native: "sofa"
+    notes:
+      n1: "sofa"
+    examples:
+      "സോഫയിൽ ഇരിക്കൂ.":
+        native: "Sit on the sofa."
+        bases:
+          "സോഫയിൽ": "sofa"
+      "സോഫ വലിയതാണ്":
+        native: "The sofa is big."
+        bases:
+          "സോഫ": "sofa"
+  "ml-0398":
+    native: "yard; courtyard"
+    notes:
+      n1: "yard; courtyard"
+    examples:
+      "മുറ്റത്ത് കുട്ടികൾ കളിക്കുന്നു.":
+        native: "The children are playing in the yard."
+        bases:
+          "മുറ്റത്ത്": "yard; courtyard"
+          "കളിക്കുന്നു": "play"
+      "മുറ്റം വൃത്തിയാണ്.":
+        native: "The yard is clean."
+        bases:
+          "മുറ്റം": "yard; courtyard"
+          "വൃത്തിയാണ്": "is clean"
+  "ml-0399":
+    native: "garden; plantation"
+    notes:
+      n1: "garden; plantation"
+    examples:
+      "തോട്ടത്തിൽ പഴം ഉണ്ട്.":
+        native: "There is fruit in the garden."
+        bases:
+          "തോട്ടത്തിൽ": "garden; plantation"
+          "ഉണ്ട്": "there is"
+      "തോട്ടം വലിയതാണ്":
+        native: "The garden is big."
+        bases:
+          "തോട്ടം": "garden; plantation"
+  "ml-0400":
+    native: "gate"
+    notes:
+      n1: "gate"
+    examples:
+      "ഗേറ്റ് തുറക്കൂ.":
+        native: "Open the gate."
+        bases:
+          "ഗേറ്റ്": "gate"
+      "ഗേറ്റ് അടയ്ക്കൂ.":
+        native: "Close the gate."
+        bases:
+          "ഗേറ്റ്": "gate"
+  "ml-0401":
+    native: "compound wall; fence"
+    notes:
+      n1: "compound wall; fence"
+    examples:
+      "മതിൽ ഉയരമാണ്.":
+        native: "The wall is high."
+        bases:
+          "മതിൽ": "compound wall; fence"
+          "ഉയരമാണ്": "is high"
+      "മതിൽ വൃത്തിയാക്കൂ.":
+        native: "Clean the wall."
+        bases:
+          "മതിൽ": "compound wall; fence"
+          "വൃത്തിയാക്കൂ": "clean"
+  "ml-0402":
+    native: "shelf"
+    notes:
+      n1: "shelf"
+    examples:
+      "ഷെൽഫിൽ പുസ്തകം":
+        native: "A book on the shelf."
+        bases:
+          "ഷെൽഫിൽ": "shelf"
+      "ഷെൽഫ് എവിടെ?":
+        native: "Where is the shelf?"
+        bases:
+          "ഷെൽഫ്": "shelf"

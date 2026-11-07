@@ -1,0 +1,334 @@
+schema: 1
+id: "ml-en-quantities"
+kind: "layer"
+core: "ml-quantities"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Quantities"
+description: "How much and how many: plenty, more, enough, all, some, none, half, whole, full, empty, the rest, a kilo, a litre, a gram, a dozen, a pair, a packet, a count, double, a lot, a little and a need. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0454":
+    native: "plenty; many; much"
+    notes:
+      n1: "plenty; many; much"
+    examples:
+      "വെള്ളം ധാരാളം വേണം.":
+        native: "I need plenty of water."
+        bases:
+          "ധാരാളം": "plenty; many; much"
+          "വേണം": "need"
+      "ആളുകൾ ധാരാളം.":
+        native: "There are many people."
+        bases:
+          "ആളുകൾ": "people"
+          "ധാരാളം": "plenty; many; much"
+  "ml-0455":
+    native: "more; most"
+    notes:
+      n1: "more; most"
+    examples:
+      "വില കൂടുതൽ.":
+        native: "The price is higher."
+        bases:
+          "കൂടുതൽ": "more; most"
+      "കൂടുതൽ വേണോ?":
+        native: "Do you want more?"
+        bases:
+          "കൂടുതൽ": "more; most"
+          "വേണോ": "do you want"
+  "ml-0456":
+    native: "enough"
+    notes:
+      n1: "enough"
+    examples:
+      "ഇത് മതി.":
+        native: "This is enough."
+        bases:
+          "ഇത്": "this"
+          "മതി": "enough"
+      "ഒന്ന് മതി.":
+        native: "One is enough."
+        bases:
+          "മതി": "enough"
+  "ml-0457":
+    native: "all; everything"
+    notes:
+      n1: "all; everything"
+    examples:
+      "എല്ലാം വേണം.":
+        native: "I need everything."
+        bases:
+          "എല്ലാം": "all; everything"
+          "വേണം": "need"
+      "എല്ലാവരും വരൂ.":
+        native: "Everyone, come."
+        bases:
+          "എല്ലാവരും": "everyone"
+  "ml-0458":
+    native: "some"
+    notes:
+      n1: "some"
+    examples:
+      "ചിലത് വേണം.":
+        native: "I need some."
+        bases:
+          "ചിലത്": "some"
+          "വേണം": "need"
+      "ചിലർ വരും.":
+        native: "Some people will come."
+        bases:
+          "ചിലർ": "some people"
+          "വരും": "will come"
+  "ml-0459":
+    native: "nothing; none"
+    notes:
+      n1: "nothing; none"
+    examples:
+      "ഇവിടെ ഒന്നുമില്ല.":
+        native: "There is nothing here."
+        bases:
+          "ഒന്നുമില്ല": "nothing; none"
+      "എനിക്ക് ഒന്നുമില്ല.":
+        native: "I have nothing."
+        bases:
+          "ഒന്നുമില്ല": "nothing; none"
+  "ml-0460":
+    native: "half"
+    notes:
+      n1: "half"
+    examples:
+      "ഒരു പകുതി വേണം.":
+        native: "I need one half."
+        bases:
+          "ഒരു": "a; one"
+          "പകുതി": "half"
+          "വേണം": "need"
+      "പഴത്തിന്റെ പകുതി.":
+        native: "Half of the fruit."
+        bases:
+          "പകുതി": "half"
+  "ml-0461":
+    native: "whole; full; entire"
+    notes:
+      n1: "whole; full; entire"
+    examples:
+      "മുഴുവൻ ചിക്കൻ.":
+        native: "The whole chicken."
+        bases:
+          "മുഴുവൻ": "whole; full; entire"
+      "മുഴുവൻ വീട്.":
+        native: "The whole house."
+        bases:
+          "മുഴുവൻ": "whole; full; entire"
+  "ml-0462":
+    native: "full"
+    notes:
+      n1: "full"
+    examples:
+      "കുപ്പി നിറഞ്ഞു.":
+        native: "The bottle is full."
+        bases:
+          "നിറഞ്ഞു": "became full"
+      "നിറഞ്ഞ ബാഗ്.":
+        native: "A full bag."
+        bases:
+          "നിറഞ്ഞ": "full"
+  "ml-0463":
+    native: "empty"
+    notes:
+      n1: "empty"
+    examples:
+      "ഒഴിഞ്ഞ കുപ്പി.":
+        native: "An empty bottle."
+        bases:
+          "ഒഴിഞ്ഞ": "empty"
+      "കുപ്പി ഒഴിഞ്ഞു.":
+        native: "The bottle is empty."
+        bases:
+          "ഒഴിഞ്ഞു": "became empty"
+  "ml-0464":
+    native: "kilo; kilogram"
+    notes:
+      n1: "kilo; kilogram"
+    examples:
+      "ഒരു കിലോ തക്കാളി.":
+        native: "A kilo of tomatoes."
+        bases:
+          "ഒരു": "a; one"
+          "കിലോ": "kilo; kilogram"
+      "കിലോ എത്ര?":
+        native: "How much is a kilo?"
+        bases:
+          "കിലോ": "kilo; kilogram"
+  "ml-0465":
+    native: "litre"
+    notes:
+      n1: "litre"
+    examples:
+      "രണ്ട് ലിറ്റർ പാൽ.":
+        native: "Two litres of milk."
+        bases:
+          "ലിറ്റർ": "litre"
+      "ഒരു ലിറ്റർ വെള്ളം.":
+        native: "A litre of water."
+        bases:
+          "ഒരു": "a; one"
+          "ലിറ്റർ": "litre"
+  "ml-0466":
+    native: "gram"
+    notes:
+      n1: "gram"
+    examples:
+      "ഒരു ഗ്രാം മഞ്ഞൾ.":
+        native: "A gram of turmeric."
+        bases:
+          "ഒരു": "a; one"
+          "ഗ്രാം": "gram"
+      "നൂറ് ഗ്രാം വേണം.":
+        native: "I need a hundred grams."
+        bases:
+          "ഗ്രാം": "gram"
+          "വേണം": "need"
+  "ml-0467":
+    native: "dozen"
+    notes:
+      n1: "dozen"
+    examples:
+      "ഒരു ഡസൻ മുട്ട.":
+        native: "A dozen eggs."
+        bases:
+          "ഒരു": "a; one"
+          "ഡസൻ": "dozen"
+      "ഒരു ഡസൻ വാഴപ്പഴം വേണം.":
+        native: "I need a dozen bananas."
+        bases:
+          "ഒരു": "a; one"
+          "ഡസൻ": "dozen"
+          "വേണം": "need"
+  "ml-0468":
+    native: "pair"
+    notes:
+      n1: "pair"
+    examples:
+      "ഒരു ജോഡി ചെരിപ്പ്.":
+        native: "A pair of sandals."
+        bases:
+          "ഒരു": "a; one"
+          "ജോഡി": "pair"
+      "രണ്ട് ജോഡി സോക്സ് വേണം.":
+        native: "I need two pairs of socks."
+        bases:
+          "ജോഡി": "pair"
+          "വേണം": "need"
+  "ml-0469":
+    native: "packet"
+    notes:
+      n1: "packet"
+    examples:
+      "ഒരു പാക്കറ്റ് ബിസ്കറ്റ്.":
+        native: "A packet of biscuits."
+        bases:
+          "ഒരു": "a; one"
+          "പാക്കറ്റ്": "packet"
+      "പാക്കറ്റ് തുറക്കൂ.":
+        native: "Open the packet."
+        bases:
+          "പാക്കറ്റ്": "packet"
+  "ml-0470":
+    native: "number; count"
+    notes:
+      n1: "number; count"
+    examples:
+      "എത്ര എണ്ണം?":
+        native: "How many?"
+        bases:
+          "എണ്ണം": "number; count"
+      "എണ്ണം കൂടുതലാണ്":
+        native: "The number is high."
+        bases:
+          "എണ്ണം": "number; count"
+  "ml-0471":
+    native: "double; twice"
+    notes:
+      n1: "double; twice"
+    examples:
+      "ഇരട്ടി വില.":
+        native: "Double the price."
+        bases:
+          "ഇരട്ടി": "double; twice"
+      "രണ്ട് ഇരട്ടി വേണം.":
+        native: "I need twice as much."
+        bases:
+          "ഇരട്ടി": "double; twice"
+          "വേണം": "need"
+  "ml-0472":
+    native: "a lot; very much"
+    notes:
+      n1: "a lot; very much"
+    examples:
+      "ഒരുപാട് ആളുകൾ.":
+        native: "A lot of people."
+        bases:
+          "ഒരുപാട്": "a lot; very much"
+          "ആളുകൾ": "people"
+      "ഒരുപാട് വേണ്ട.":
+        native: "Not a lot, please."
+        bases:
+          "ഒരുപാട്": "a lot; very much"
+          "വേണ്ട": "not needed"
+  "ml-0473":
+    native: "a little"
+    notes:
+      n1: "a little"
+    examples:
+      "അല്പം വെള്ളം.":
+        native: "A little water."
+        bases:
+          "അല്പം": "a little"
+      "അല്പം ഉപ്പ് വേണം.":
+        native: "I need a little salt."
+        bases:
+          "അല്പം": "a little"
+          "വേണം": "need"
+  "ml-0474":
+    native: "need; necessity"
+    notes:
+      n1: "need; necessity"
+    examples:
+      "ആവശ്യം ഉണ്ടോ?":
+        native: "Is there a need?"
+        bases:
+          "ആവശ്യം": "need; necessity"
+      "ഇതിന് ആവശ്യമില്ല":
+        native: "This is not needed."
+        bases:
+          "ഇതിന്": "for this"
+          "ആവശ്യമില്ല": "is not needed"
+  "ml-0475":
+    native: "full of; a lot of"
+    notes:
+      n1: "full of; a lot of"
+    examples:
+      "പെട്ടി നിറയെ പുസ്തകം.":
+        native: "A box full of books."
+        bases:
+          "നിറയെ": "full of; a lot of"
+      "ബാഗ് നിറയെ തുണി.":
+        native: "A bag full of cloth."
+        bases:
+          "നിറയെ": "full of; a lot of"
+  "ml-0476":
+    native: "the rest; remainder"
+    notes:
+      n1: "the rest; remainder"
+    examples:
+      "ബാക്കി എവിടെ?":
+        native: "Where is the rest?"
+        bases:
+          "ബാക്കി": "the rest; remainder"
+      "ബാക്കി വേണ്ട.":
+        native: "I do not want the rest."
+        bases:
+          "ബാക്കി": "the rest; remainder"
+          "വേണ്ട": "not needed"

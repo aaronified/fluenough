@@ -1,0 +1,353 @@
+schema: 1
+id: "ml-en-clothes"
+kind: "layer"
+core: "ml-clothes"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Clothes"
+description: "Clothes and their colours: clothes in general, a shirt, trousers, shoes, sandals, socks, a cap, a saree, a mundu, a blouse, a long shirt, a skirt, a jacket, a coat, a sweater, colour, size, and the colours red, blue, green, white, black and yellow. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0403":
+    native: "clothes"
+    notes:
+      n1: "clothes"
+    examples:
+      "വസ്ത്രം വൃത്തിയാണ്.":
+        native: "The clothes are clean."
+        bases:
+          "വസ്ത്രം": "clothes"
+          "വൃത്തിയാണ്": "are clean"
+      "വസ്ത്രം എവിടെ?":
+        native: "Where are the clothes?"
+        bases:
+          "വസ്ത്രം": "clothes"
+  "ml-0404":
+    native: "dress; garment"
+    notes:
+      n1: "dress; garment"
+    examples:
+      "ഈ ഉടുപ്പ് നല്ലതാണ്.":
+        native: "This dress is good."
+        bases:
+          "ഈ": "this"
+          "ഉടുപ്പ്": "dress; garment"
+          "നല്ലതാണ്": "is good"
+      "ഉടുപ്പ് എത്ര?":
+        native: "How much is the dress?"
+        bases:
+          "ഉടുപ്പ്": "dress; garment"
+  "ml-0405":
+    native: "shirt"
+    notes:
+      n1: "shirt"
+    examples:
+      "ഷർട്ട് വേണം.":
+        native: "I need a shirt."
+        bases:
+          "ഷർട്ട്": "shirt"
+          "വേണം": "need"
+      "നീല ഷർട്ട് നല്ലതാണ്.":
+        native: "The blue shirt is good."
+        bases:
+          "ഷർട്ട്": "shirt"
+          "നല്ലതാണ്": "is good"
+  "ml-0406":
+    native: "trousers; pants"
+    notes:
+      n1: "trousers; pants"
+    examples:
+      "പാന്റ്സ് എവിടെ?":
+        native: "Where are the trousers?"
+        bases:
+          "പാന്റ്സ്": "trousers; pants"
+      "പാന്റ്സ് ചെറുതാണ്.":
+        native: "The trousers are small."
+        bases:
+          "പാന്റ്സ്": "trousers; pants"
+          "ചെറുതാണ്": "are small"
+  "ml-0407":
+    native: "shoes"
+    notes:
+      n1: "shoes"
+    examples:
+      "ഷൂസ് എടുക്കൂ.":
+        native: "Take the shoes."
+        bases:
+          "ഷൂസ്": "shoes"
+      "ഷൂസ് വേണോ?":
+        native: "Do you want shoes?"
+        bases:
+          "ഷൂസ്": "shoes"
+          "വേണോ": "do you want"
+  "ml-0408":
+    native: "sandals; slippers"
+    notes:
+      n1: "sandals; slippers"
+    examples:
+      "ചെരിപ്പ് ഇവിടെ.":
+        native: "The sandals are here."
+        bases:
+          "ചെരിപ്പ്": "sandals; slippers"
+      "ചെരിപ്പ് ഇടൂ.":
+        native: "Put on your sandals."
+        bases:
+          "ചെരിപ്പ്": "sandals; slippers"
+          "ഇടൂ": "put on"
+  "ml-0409":
+    native: "socks"
+    notes:
+      n1: "socks"
+    examples:
+      "സോക്സ് കഴുകൂ.":
+        native: "Wash the socks."
+        bases:
+          "സോക്സ്": "socks"
+      "സോക്സ് എവിടെ?":
+        native: "Where are the socks?"
+        bases:
+          "സോക്സ്": "socks"
+  "ml-0410":
+    native: "cap; hat"
+    notes:
+      n1: "cap; hat"
+    examples:
+      "തൊപ്പി വെക്കൂ.":
+        native: "Put on the cap."
+        bases:
+          "തൊപ്പി": "cap; hat"
+          "വെക്കൂ": "put on"
+      "തൊപ്പി എവിടെ?":
+        native: "Where is the cap?"
+        bases:
+          "തൊപ്പി": "cap; hat"
+  "ml-0411":
+    native: "saree"
+    notes:
+      n1: "saree"
+    examples:
+      "സാരി മനോഹരമാണ്.":
+        native: "The saree is beautiful."
+        bases:
+          "സാരി": "saree"
+          "മനോഹരമാണ്": "is beautiful"
+      "സാരി എത്ര?":
+        native: "How much is the saree?"
+        bases:
+          "സാരി": "saree"
+  "ml-0412":
+    native: "mundu; dhoti"
+    notes:
+      n1: "mundu; dhoti"
+    examples:
+      "അച്ഛന് മുണ്ട് വേണം.":
+        native: "Father needs a mundu."
+        bases:
+          "മുണ്ട്": "mundu; dhoti"
+          "വേണം": "needs"
+      "മുണ്ട് വെളുത്തതാണ്.":
+        native: "The mundu is white."
+        bases:
+          "മുണ്ട്": "mundu; dhoti"
+          "വെളുത്തതാണ്": "is white"
+  "ml-0413":
+    native: "blouse"
+    notes:
+      n1: "blouse"
+    examples:
+      "ബ്ലൗസ് വലിയതാണ്":
+        native: "The blouse is big."
+        bases:
+          "ബ്ലൗസ്": "blouse"
+      "ബ്ലൗസ് എവിടെ?":
+        native: "Where is the blouse?"
+        bases:
+          "ബ്ലൗസ്": "blouse"
+  "ml-0414":
+    native: "long shirt; top"
+    notes:
+      n1: "long shirt; top"
+    examples:
+      "കുപ്പായം ചെറിയതാണ്.":
+        native: "The shirt is small."
+        bases:
+          "കുപ്പായം": "long shirt; top"
+          "ചെറിയതാണ്": "is small"
+      "ഈ കുപ്പായം നല്ലതാണ്.":
+        native: "This shirt is good."
+        bases:
+          "ഈ": "this"
+          "കുപ്പായം": "long shirt; top"
+          "നല്ലതാണ്": "is good"
+  "ml-0415":
+    native: "skirt"
+    notes:
+      n1: "skirt"
+    examples:
+      "പാവാട നീളമാണ്.":
+        native: "The skirt is long."
+        bases:
+          "പാവാട": "skirt"
+          "നീളമാണ്": "is long"
+      "പാവാട ഇവിടെ.":
+        native: "The skirt is here."
+        bases:
+          "പാവാട": "skirt"
+  "ml-0416":
+    native: "jacket"
+    notes:
+      n1: "jacket"
+    examples:
+      "ജാക്കറ്റ് വേണോ?":
+        native: "Do you want a jacket?"
+        bases:
+          "ജാക്കറ്റ്": "jacket"
+          "വേണോ": "do you want"
+      "ജാക്കറ്റ് ചൂടാണ്.":
+        native: "The jacket is warm."
+        bases:
+          "ജാക്കറ്റ്": "jacket"
+          "ചൂടാണ്": "is warm"
+  "ml-0417":
+    native: "coat"
+    notes:
+      n1: "coat"
+    examples:
+      "കോട്ട് എടുക്കൂ.":
+        native: "Take the coat."
+        bases:
+          "കോട്ട്": "coat"
+      "തണുപ്പുണ്ട്, കോട്ട് വേണം.":
+        native: "It is cold, I need a coat."
+        bases:
+          "തണുപ്പുണ്ട്": "it is cold"
+          "കോട്ട്": "coat"
+          "വേണം": "need"
+  "ml-0418":
+    native: "sweater"
+    notes:
+      n1: "sweater"
+    examples:
+      "സ്വെറ്റർ വേണം.":
+        native: "I need a sweater."
+        bases:
+          "സ്വെറ്റർ": "sweater"
+          "വേണം": "need"
+      "സ്വെറ്റർ ഇടൂ.":
+        native: "Put on the sweater."
+        bases:
+          "സ്വെറ്റർ": "sweater"
+          "ഇടൂ": "put on"
+  "ml-0419":
+    native: "colour"
+    notes:
+      n1: "colour"
+    examples:
+      "ഏത് നിറം?":
+        native: "Which colour?"
+        bases:
+          "നിറം": "colour"
+      "ഈ നിറം നല്ലതാണ്.":
+        native: "This colour is good."
+        bases:
+          "ഈ": "this"
+          "നിറം": "colour"
+          "നല്ലതാണ്": "is good"
+  "ml-0420":
+    native: "red"
+    notes:
+      n1: "red"
+    examples:
+      "ചുവന്ന ഷർട്ട്.":
+        native: "A red shirt."
+        bases:
+          "ചുവന്ന": "red"
+      "ചുവപ്പ് എനിക്ക് ഇഷ്ടമാണ്.":
+        native: "I like red."
+        bases:
+          "ചുവപ്പ്": "red"
+          "ഇഷ്ടമാണ്": "like"
+  "ml-0421":
+    native: "blue"
+    notes:
+      n1: "blue"
+    examples:
+      "നീല സാരി.":
+        native: "A blue saree."
+        bases:
+          "നീല": "blue"
+      "നീല നിറം ഇഷ്ടമാണോ?":
+        native: "Do you like the colour blue?"
+        bases:
+          "നീല": "blue"
+          "ഇഷ്ടമാണോ": "do you like"
+  "ml-0422":
+    native: "green"
+    notes:
+      n1: "green"
+    examples:
+      "പച്ച മുണ്ട്.":
+        native: "A green mundu."
+        bases:
+          "പച്ച": "green"
+      "പച്ച നിറം നല്ലതാണ്.":
+        native: "Green is a good colour."
+        bases:
+          "പച്ച": "green"
+          "നല്ലതാണ്": "is good"
+  "ml-0423":
+    native: "white"
+    notes:
+      n1: "white"
+    examples:
+      "വെള്ള ഷർട്ട് വേണം.":
+        native: "I need a white shirt."
+        bases:
+          "വെള്ള": "white"
+          "വേണം": "need"
+      "വെള്ള ചുമർ.":
+        native: "A white wall."
+        bases:
+          "വെള്ള": "white"
+  "ml-0424":
+    native: "black"
+    notes:
+      n1: "black"
+    examples:
+      "കറുപ്പ് ഇഷ്ടമാണോ?":
+        native: "Do you like black?"
+        bases:
+          "കറുപ്പ്": "black"
+          "ഇഷ്ടമാണോ": "do you like"
+      "കറുത്ത ചെരിപ്പ്.":
+        native: "Black sandals."
+        bases:
+          "കറുത്ത": "black"
+  "ml-0425":
+    native: "yellow"
+    notes:
+      n1: "yellow"
+    examples:
+      "മഞ്ഞ ജാക്കറ്റ്.":
+        native: "A yellow jacket."
+        bases:
+          "മഞ്ഞ": "yellow"
+      "മഞ്ഞ നല്ലതാണ്.":
+        native: "Yellow is good."
+        bases:
+          "മഞ്ഞ": "yellow"
+          "നല്ലതാണ്": "is good"
+  "ml-0426":
+    native: "size"
+    notes:
+      n1: "size"
+    examples:
+      "വലുപ്പം എത്ര?":
+        native: "What size?"
+        bases:
+          "വലുപ്പം": "size"
+      "വലുപ്പം ചെറുതാണോ?":
+        native: "Is the size small?"
+        bases:
+          "വലുപ്പം": "size"
+          "ചെറുതാണോ": "is ... small"
