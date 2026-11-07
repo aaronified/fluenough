@@ -14,7 +14,7 @@ Every live plan in the wiki, one line each. Each plan has its own wiki page. Fin
 - [Fsrs Recent Fit](Plan-Fsrs-Recent-Fit): a recent fit for FSRS, with the window chosen from the learner's own reviews
 - [Explain Mistakes](Plan-Explain-Mistakes): explain the mistake on a wrong grammar answer
 - [Handwriting](Plan-Handwriting): handwriting the script, stroke by stroke
-- [Haptics](Plan-Haptics): haptic feedback, one vocabulary for the whole app
+- [Haptics](Plan-Haptics): haptic feedback, one vocabulary for the whole app (built in 0.9.0)
 - [Import Text](Plan-Import-Text): import any text, and make cards from its words
 - [In App Readings](Plan-In-App-Readings): readings made in the app, for sentences the learner adds
 - [Ipa Revamp And Language Phonology](Plan-Ipa-Revamp-And-Language-Phonology): the IPA course revamp, and a phonology deck for every language

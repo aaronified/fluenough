@@ -4,11 +4,10 @@ Source of truth: this wiki page.
 
 Written 2026-10-26, for **0.7.0** (owner, 2026-10-23: "This week is 0.6.x, next week is 0.7.x"). Builds on [Plan-Question-Engine](Plan-Question-Engine), whose approvals stand and are not repeated here; also [ADR-0022](ADR-0022-Romanised-Answers), [ADR-0034](ADR-0034-Hear-Say-Write), [ADR-0035](ADR-0035-Fsrs-Fitted-Per-Skill), [ADR-0039](ADR-0039-Questions-Derived-From-Card-Data), [Plan-Word-Order-Tiles](Plan-Word-Order-Tiles), [Plan-Sentence-Building](Plan-Sentence-Building), [Plan-Placement-V2](Plan-Placement-V2) and [Plan-B1-Plans](Plan-B1-Plans).
 
-**Status:** the owner's decisions below are recorded. Everything marked **Proposed** or "(mine)" is the plan author's and not decided. No issues are filed yet.
+**Status:** the owner's decisions below are recorded. Everything marked **Proposed** or "(mine)" is the plan author's and not decided. The exam part is tracked by #509 (milestone 0.7.0); no issue is filed for the tiles steps (2 to 9).
 
 **Update 2026-11-04.** Phase 0 is built, tracked by #509: one shared shell for teach and question screens (#1003, 2026-11-02), then placement, the reading passages and the picture and reading answers in it (#1005), then Learn and Relearn (#1006), all in 0.8.2 (owner, 2026-11-02, on the approved mockup: "The shell is fine. All of it."). Only the exam variant of the shell is not built: it waits on the exam screen of #509, whose mockup follows. The letter and word tiles that replace script typing (steps 2 to 9) are not built, so typed script answers stay for now; whether to retire them first is an open owner question in the description of #1006.
 
-**Update 2026-11-04.** Phase 0 is built, tracked by #509: one shared shell for teach and question screens (#1003, 2026-11-02), then placement, the reading passages and the picture and reading answers in it (#1005), then Learn and Relearn (#1006), all in 0.8.2 (owner, 2026-11-02, on the approved mockup: "The shell is fine. All of it."). Only the exam variant of the shell is not built: it waits on the exam screen of #509, whose mockup follows. The letter and word tiles that replace script typing (steps 2 to 9) are not built, so typed script answers stay for now; whether to retire them first is an open owner question in the description of #1006.
 
 ## What the owner asked
 
