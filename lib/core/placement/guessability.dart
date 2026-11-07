@@ -61,7 +61,7 @@ const double leakingGuessRate = 0.5;
 /// Whether the right option of [question] is, alone, clearly the most like
 /// the prompt.
 bool leaksBySimilarity(GeneratedQuestion question) {
-  final prompt = question.promptText;
+  final prompt = _promptSeenOrHeard(question);
   final right = question.correctIndex;
   if (question.mode != PlacementAnswerMode.pick ||
       prompt == null ||
@@ -77,6 +77,12 @@ bool leaksBySimilarity(GeneratedQuestion question) {
   return surfaceSimilarity(prompt, question.options[right]) - best >=
       leakMargin;
 }
+
+/// The prompt as a learner meets it: the text shown, or, for a heard prompt,
+/// the text that is played (a listener hears a cognate as well as a reader
+/// sees one).
+String? _promptSeenOrHeard(GeneratedQuestion question) =>
+    question.promptText ?? question.audio?.text;
 
 /// The guess rate to give [question] in the assurance model, or null where
 /// its kind's own rate holds.
@@ -116,7 +122,11 @@ bool rightIsLengthOutlier(GeneratedQuestion question) {
 bool rightIsCognate(GeneratedQuestion question) {
   final right = question.correctIndex;
   if (right == null || right >= question.options.length) return false;
-  final texts = <String>[?question.promptText, ?question.promptReading];
+  final texts = <String>[
+    ?question.promptText,
+    ?question.promptReading,
+    ?question.audio?.text,
+  ];
   return texts.any((t) => surfaceSimilarity(t, question.options[right]) >= 0.5);
 }
 

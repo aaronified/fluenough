@@ -254,19 +254,6 @@ class PlacementPosterior {
     return best;
   }
 
-  /// The highest level (a deck index) the evidence supports at [confidence]:
-  /// the highest level whose [massAtOrAbove] reaches it, or -1 when even the
-  /// first deck is not that sure. A conservative lower bound, not a point
-  /// estimate: used to place a skill whose leading class is too weak to be
-  /// trusted (below "Fairly sure").
-  int supportedLevel(double confidence) {
-    var best = -1;
-    for (final level in levels.levels) {
-      if (massAtOrAbove(level) >= confidence - 1e-9) best = level;
-    }
-    return best;
-  }
-
   /// The probability of the leading class: the assurance of the placement.
   double get leadingMass => probabilities[leadingClass];
 

@@ -49,9 +49,3 @@ AssuranceLabel labelForMass(double mass) {
   if (mass >= kFairlySureFrom - _edge) return AssuranceLabel.fairlySure;
   return AssuranceLabel.notSureYet;
 }
-
-/// Whether a placement named by [label] may be shown and applied as a point
-/// estimate: "Fairly sure" or above. Below that (Not sure yet) the evidence
-/// only supports a lower bound.
-bool trustsPointEstimate(AssuranceLabel label) =>
-    label != AssuranceLabel.notSureYet;

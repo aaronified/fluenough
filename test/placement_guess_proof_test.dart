@@ -108,6 +108,55 @@ void main() {
     }
   });
 
+  group('a heard cognate is not evidence', () {
+    test('a heard pick whose card is a cognate of its English gets base 1', () {
+      GeneratedQuestion heard(String text, List<String> options) =>
+          GeneratedQuestion(
+            request: const PlacementQuestionRequest(
+              number: 1,
+              role: PlacementQuestionRole.base,
+              topic: PlacementTopic.complexWords,
+              variant: PlacementVariant.w2,
+              kind: PlacementQuestionKind.pickOne,
+              skills: const <PlacementSkill>[PlacementSkill.hear],
+              deck: 0,
+              percentile: 0,
+              shortlistPick: 0,
+            ),
+            prompt: PlacementPromptKind.heardWord,
+            mode: PlacementAnswerMode.pick,
+            difficulty: const ItemDifficulty(
+              deck: 0,
+              depth: 0,
+              form: 0,
+              closeness: 0,
+              score: 0,
+            ),
+            itemIds: const <String>{},
+            audio: PlacementAudio(text: text, language: 'es'),
+            options: options,
+            correctIndex: 0,
+          );
+      // "importante" is heard, "important" is the right meaning: a listener
+      // who knows English picks it.
+      final cognate = heard('importante', <String>[
+        'important',
+        'window',
+        'river',
+        'cheese',
+      ]);
+      expect(creditBaseOf(cognate), 1);
+      // The same shape of question with no resemblance counts.
+      final plain = heard('pan', <String>[
+        'bread',
+        'window',
+        'river',
+        'cheese',
+      ]);
+      expect(creditBaseOf(plain), lessThan(1));
+    });
+  });
+
   group('pattern cells are never questions', () {
     test('a table of "lemma (gloss) — person" cells is never asked', () {
       final cells = <Card>[
