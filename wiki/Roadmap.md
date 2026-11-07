@@ -334,6 +334,7 @@ A plan with no tracking issue is flagged.
 - [a listening tier in context](https://github.com/aaronified/fluenough/wiki/Plan-Listening-In-Context) (Written 2026-10-05), tracks #230
 - [offensive words, their level, and warnings on words like them](https://github.com/aaronified/fluenough/wiki/Plan-Offensive-Words) (Written 2026-10-09), tracks #96, #97
 - [placement, script first, then a three-skill check](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V2), **no tracking issue**
+- [placement V3, find my level](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V3), **no tracking issue**
 - [build entire languages as private decks (Your decks)](https://github.com/aaronified/fluenough/wiki/Plan-Private-Languages) (Written 2026-11-04), tracks #1017
 - [profiles, a PIN lock, and parental supervision](https://github.com/aaronified/fluenough/wiki/Plan-Profiles) (Written 2026-10-10), tracks #97, #204
 - [progress screen revamp — mastery across all skills](https://github.com/aaronified/fluenough/wiki/Plan-Progress-Revamp), **no tracking issue**
