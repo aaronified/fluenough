@@ -729,6 +729,34 @@ class JointPlacement {
     return out;
   }
 
+  /// P(every skill of [skills] knows [deck]'s level): what an item that
+  /// needs all of them is answered right by knowing. For one skill the same
+  /// as [massKnowing].
+  double probabilityKnown(Iterable<PlacementSkill> skills, int deck) {
+    final index = <int>[for (final s in skills) this.skills.indexOf(s)];
+    if (index.any((i) => i < 0)) {
+      throw ArgumentError('A skill is not in play ($skills)');
+    }
+    final knows = List<bool>.generate(_n, (c) => levels.knows(c, deck));
+    final digits = List<int>.filled(this.skills.length, 0);
+    var total = 0.0;
+    for (var cell = 0; cell < _cells; cell++) {
+      _digits(cell, digits);
+      var all = true;
+      for (final i in index) {
+        if (!knows[digits[i]]) {
+          all = false;
+          break;
+        }
+      }
+      if (!all) continue;
+      for (var b = 0; b < _k; b++) {
+        total += _weights[cell * _k + b];
+      }
+    }
+    return total;
+  }
+
   /// P(the skill's class is at or above [deck]'s level).
   double massKnowing(PlacementSkill skill, int deck) {
     final m = marginal(skill);

@@ -1,0 +1,608 @@
+import 'dart:math' as math;
+
+import 'assurance_model.dart';
+import 'item_bank.dart';
+import 'item_registry.dart';
+import 'joint_model.dart';
+import 'placement_questions.dart';
+
+// The item picker of "Find my level" V3 (wiki/Plan-Placement-V3.md, section
+// (c) and the amendments): which item to ask next, from the items of the
+// bank that passed the admission audit.
+//
+// For each skill in play it LOCATES the learner (two items by bisection over
+// the tenths of the path), then PROVES a band (four clean items of one band,
+// 4 of 4 or 5 of 6) at the located level, goes down a band when two answers
+// of it are wrong, and climbs while the proven band holds the start down.
+// The item of a step is the one with the most information per second among
+// the admitted formats of the skill in focus, an item that also needs another
+// skill counting for it too, with no more than two of one format in a row.
+// A skill with fewer than four clean items is never left (the coverage floor).
+// Hear and Say are asked only when the device can play and record; Say
+// without a recogniser is rated by the learner a few times and is never
+// evidence. Caps: 40 items and 300 s overall, 14 touches a skill; a soft stop
+// signal at 22 items (the UI offers to stop, or to keep going once).
+//
+// Pure Dart, deterministic for a seeded generator.
+
+/// One askable item, as the picker sees it. The bank's items are turned into
+/// these by the caller ([deck] and [skills] are the item's difficulty and
+/// what a right answer is evidence for).
+class PickerCandidate {
+  const PickerCandidate({
+    required this.id,
+    required this.format,
+    required this.deck,
+    required this.skills,
+    required this.seconds,
+    required this.slip,
+    required this.guess,
+    required this.conflictKeys,
+    this.clean = true,
+    this.needsAudio = false,
+    this.needsMic = false,
+    this.pseudo = false,
+    this.yesNo = false,
+    this.selfRated = false,
+    this.payload,
+  });
+
+  final String id;
+
+  /// The format code (`F2`...).
+  final String format;
+
+  /// The deck index the item is asked at.
+  final int deck;
+
+  final Set<PlacementSkill> skills;
+
+  /// The time it takes, in seconds (the plan's table).
+  final double seconds;
+
+  /// The slip and the calibrated guess of the item.
+  final double slip;
+  final double guess;
+
+  /// The keys no two asked items may share: a card, a lemma.
+  final Set<String> conflictKeys;
+
+  /// Whether the item can count toward coverage and proof.
+  final bool clean;
+
+  final bool needsAudio;
+  final bool needsMic;
+
+  /// A yes/no pseudoword, and a yes/no item (real or pseudo).
+  final bool pseudo;
+  final bool yesNo;
+
+  /// Whether the learner rates their own answer (Say without a recogniser).
+  final bool selfRated;
+
+  /// What the caller needs to turn the candidate back into its item.
+  final Object? payload;
+
+  /// The candidate of a bank item, its guess calibrated by [calibration].
+  /// The real item travels in [payload].
+  factory PickerCandidate.fromItem(
+    RegItem item, {
+    GuessCalibration calibration = GuessCalibration.seed,
+  }) {
+    final info = item.info;
+    final cognate = item.cognateClass == 'cognate';
+    final yes = item.format == 'F1' || item.format == 'F14';
+    final guess = yes
+        ? 0.0
+        : calibration.guessFor(item.format, cognate, info.guess);
+    return PickerCandidate(
+      id: item.id,
+      format: item.format,
+      deck: item.deck,
+      skills: info.skills,
+      seconds: info.seconds,
+      slip: info.slip,
+      guess: guess,
+      conflictKeys: item.conflictKeys,
+      clean: !cognate && guess <= kCleanGuessMax,
+      needsAudio: info.needsAudio,
+      needsMic: info.needsMic,
+      pseudo: item.pseudo,
+      yesNo: yes,
+      payload: item,
+    );
+  }
+
+  /// The candidates of every admitted item of [bank].
+  static List<PickerCandidate> fromBank(
+    ItemBank bank, {
+    GuessCalibration calibration = GuessCalibration.seed,
+  }) => <PickerCandidate>[
+    for (final i in bank.items)
+      PickerCandidate.fromItem(i, calibration: calibration),
+  ];
+
+  PickerCandidate asSelfRated() => PickerCandidate(
+    id: id,
+    format: format,
+    deck: deck,
+    skills: skills,
+    seconds: seconds,
+    slip: slip,
+    guess: guess,
+    conflictKeys: conflictKeys,
+    clean: false,
+    needsAudio: needsAudio,
+    needsMic: needsMic,
+    selfRated: true,
+    payload: payload,
+  );
+}
+
+/// The candidates, indexed by format and band (a tenth of the path).
+class CandidatePool {
+  CandidatePool(Iterable<PickerCandidate> candidates, this.levels) {
+    for (final c in candidates) {
+      if (c.pseudo) {
+        pseudo.add(c);
+        continue;
+      }
+      final band = bandOfDeck(levels, c.deck);
+      ((_byFormat[c.format] ??= <int, List<PickerCandidate>>{})[band] ??=
+              <PickerCandidate>[])
+          .add(c);
+    }
+  }
+
+  final PlacementLevels levels;
+
+  /// The yes/no pseudowords, in the order given.
+  final List<PickerCandidate> pseudo = <PickerCandidate>[];
+
+  final Map<String, Map<int, List<PickerCandidate>>> _byFormat =
+      <String, Map<int, List<PickerCandidate>>>{};
+
+  /// The format codes the pool has.
+  Iterable<String> get formats => _byFormat.keys;
+
+  /// The candidates of [format] in [band].
+  List<PickerCandidate> of(String format, int band) =>
+      _byFormat[format]?[band] ?? const <PickerCandidate>[];
+
+  /// The band (0 to 10) a deck falls in: the same rule as the joint model's.
+  static int bandOfDeck(PlacementLevels levels, int deck) {
+    var c = 1;
+    while (c < levels.topClass && levels.levelOf(c) < deck) {
+      c++;
+    }
+    return levels.parts == 0 ? 10 : ((c - 1) * 10 / levels.parts).ceil();
+  }
+}
+
+/// What the picker may do, and the caps of a run.
+class PickerConfig {
+  const PickerConfig({
+    this.audio = true,
+    this.mic = true,
+    this.recogniser = false,
+    this.yesNoBlock = false,
+    this.sayItems = 1,
+    this.maxItems = 40,
+    this.maxSeconds = 300,
+    this.skillCap = 14,
+    this.softStopItems = 22,
+    this.locateItems = 2,
+  });
+
+  /// Text to speech works: Hear can be tested.
+  final bool audio;
+
+  /// A microphone exists: Say can be rated.
+  final bool mic;
+
+  /// A recogniser scores Say.
+  final bool recogniser;
+
+  /// Whether Read opens with yes/no items (eight pseudowords, six words).
+  final bool yesNoBlock;
+
+  /// How many self-rated Say items are asked when no recogniser scores Say.
+  final int sayItems;
+
+  final int maxItems;
+  final double maxSeconds;
+  final int skillCap;
+
+  /// The item count at which the UI is told it may stop (it can keep going
+  /// to the caps).
+  final int softStopItems;
+
+  /// The items a skill is located with before a band is proved.
+  final int locateItems;
+}
+
+class _SkillState {
+  int? proving;
+  bool finished = false;
+  int located = 0;
+}
+
+/// The picker of a run over [pool], reading [model].
+class V3Picker {
+  V3Picker({
+    required this.pool,
+    required this.model,
+    required this.rng,
+    this.config = const PickerConfig(),
+  });
+
+  final CandidatePool pool;
+  final JointPlacement model;
+  final math.Random rng;
+  final PickerConfig config;
+
+  final Map<PlacementSkill, _SkillState> _state =
+      <PlacementSkill, _SkillState>{};
+  final Set<String> _keys = <String>{};
+  final List<PickerCandidate> asked = <PickerCandidate>[];
+  double seconds = 0;
+  int _pseudoAsked = 0;
+  int _yesNoWords = 0;
+  int _selfRated = 0;
+
+  /// How many items were asked.
+  int get items => asked.length;
+
+  /// Whether the run has reached the soft stop: the UI may offer to stop
+  /// (and to keep going, once).
+  bool get softStop => items >= config.softStopItems;
+
+  /// Whether the run reached a hard cap.
+  bool get atCap => items >= config.maxItems || seconds >= config.maxSeconds;
+
+  _SkillState _of(PlacementSkill skill) =>
+      _state.putIfAbsent(skill, _SkillState.new);
+
+  /// The skills the picker tests: those of the model, without Say when no
+  /// recogniser scores it (Say is then only rated, never evidence), and
+  /// without Hear and Say when there is no audio.
+  List<PlacementSkill> get _tested => <PlacementSkill>[
+    for (final s in model.skills)
+      if (!(s == PlacementSkill.say && !config.recogniser) &&
+          !(s == PlacementSkill.hear && !config.audio))
+        s,
+  ];
+
+  /// The next item, or null when the run is over (every tested skill done,
+  /// or a cap reached).
+  PickerCandidate? next() {
+    if (atCap) return null;
+    if (config.yesNoBlock) {
+      final block = _yesNoNext();
+      if (block != null) return _take(block);
+    }
+    final open =
+        <PlacementSkill>[
+          for (final s in _tested)
+            if (!_isDone(s)) s,
+        ]..sort((a, b) {
+          final c = model.touchesOf(a).compareTo(model.touchesOf(b));
+          return c != 0 ? c : a.index.compareTo(b.index);
+        });
+    for (final skill in open) {
+      final c = _choose(skill);
+      if (c != null) return _take(c);
+      _of(skill).finished = true;
+    }
+    // Say without a recogniser is rated by the learner a few times, never
+    // evidence and never extending the run.
+    if (config.audio &&
+        config.mic &&
+        !config.recogniser &&
+        _selfRated < config.sayItems) {
+      final c = _selfRatedSay();
+      if (c != null) {
+        _selfRated++;
+        return _take(c);
+      }
+    }
+    return null;
+  }
+
+  PickerCandidate? _take(PickerCandidate c) {
+    // An item that would end after the time cap is not asked.
+    if (seconds + c.seconds > config.maxSeconds) return null;
+    asked.add(c);
+    _keys.addAll(c.conflictKeys);
+    seconds += c.seconds;
+    if (c.pseudo) _pseudoAsked++;
+    if (c.yesNo && !c.pseudo) _yesNoWords++;
+    for (final s in c.skills) {
+      if (!c.selfRated && !c.pseudo && _state.containsKey(s)) {
+        // located counts items asked in the locating phase
+      }
+    }
+    return c;
+  }
+
+  // ------------------------------------------------------------------ bands
+
+  int _bandOfClass(int c) => c <= 1 ? 0 : model.levels.tenthOf(c).ceil();
+
+  int _quantileBand(PlacementSkill skill, double p) {
+    final m = model.marginal(skill);
+    var run = 0.0;
+    var c = 0;
+    while (c < m.length - 1 && run + m[c] < p) {
+      run += m[c];
+      c++;
+    }
+    return _bandOfClass(c);
+  }
+
+  int _quantileClass(PlacementSkill skill, double p) {
+    final m = model.marginal(skill);
+    var run = 0.0;
+    var c = 0;
+    while (c < m.length - 1 && run + m[c] < p) {
+      run += m[c];
+      c++;
+    }
+    return c;
+  }
+
+  /// The highest band [skill] has a right clean answer in, and the lowest
+  /// band it has a wrong one in (or null).
+  ({int? right, int? wrong}) _answers(PlacementSkill skill) {
+    int? right;
+    int? wrong;
+    for (var b = 0; b <= 10; b++) {
+      final r = model.bandRecord(skill, b);
+      if (r.clean == 0) continue;
+      if (r.right > 0) right = b;
+      if (r.clean - r.right > 0 && wrong == null) wrong = b;
+    }
+    return (right: right, wrong: wrong);
+  }
+
+  bool _isDone(PlacementSkill skill) {
+    final st = _of(skill);
+    if (st.finished || model.touchesOf(skill) >= config.skillCap) return true;
+    // Nothing to prove: four clean items are in and the posterior sits at
+    // the start of the path.
+    if (_atStart(skill)) {
+      st.finished = true;
+      return true;
+    }
+    final band = st.proving;
+    if (band == null) return false;
+    final proven = model.provenClass(skill);
+    if (proven == null || proven < model.classOfBand(band)) return false;
+    // Proven, but the joint prior (a learner is often at one level in every
+    // skill) still holds the skill down to the start: more clean items of
+    // the proven band show that the skill really stands apart from the
+    // others (an ear-only learner).
+    if (band >= 3 &&
+        _quantileClass(skill, 0.1) <= 1 &&
+        model.bandRecord(skill, band).clean < 8) {
+      return false;
+    }
+    // Proven: climb while the proven band holds the start down, that is,
+    // while the lower edge of the posterior is above the ceiling.
+    if (band < 10 && _quantileClass(skill, 0.1) > proven + _tenth) {
+      st.proving = math.max(band + 1, _quantileBand(skill, 0.5));
+      return false;
+    }
+    return true;
+  }
+
+  /// The classes in a tenth of the path.
+  int get _tenth => math.max(1, model.levels.parts ~/ 10);
+
+  /// Whether the learner is at the start of the path for [skill]: at least
+  /// four clean items are in and nine tenths of the posterior lie on the
+  /// first class.
+  bool _atStart(PlacementSkill skill) {
+    if (model.cleanItemsOf(skill) < kMinCleanItems) return false;
+    final m = model.marginal(skill);
+    return m.length > 1 && m[0] + m[1] >= 0.9;
+  }
+
+  /// The band the next item of [skill] is asked in.
+  int _band(PlacementSkill skill) {
+    final st = _of(skill);
+    if (st.proving == null) {
+      final located = model.touchesOf(skill);
+      if (located < (skill == _tested.first ? config.locateItems : 1)) {
+        // Bisection over the tenths: between the highest band answered right
+        // and the one below the lowest answered wrong.
+        final a = _answers(skill);
+        if (a.right == null && a.wrong == null) {
+          return _quantileBand(skill, 0.5);
+        }
+        final lo = a.right ?? 0;
+        final hi = a.wrong == null ? 10 : math.max(lo, a.wrong! - 1);
+        // Up fast from a right answer, halving from a wrong one.
+        final step = a.wrong == null ? ((10 - lo) * 0.6).ceil() : null;
+        return (step == null ? (lo + hi + 1) ~/ 2 : lo + step).clamp(0, 10);
+      }
+      final a = _answers(skill);
+      final lo = a.right ?? 0;
+      final hi = a.wrong == null ? 10 : math.max(0, a.wrong! - 1);
+      st.proving = lo > 0
+          ? math.max(lo, math.min(hi, _quantileBand(skill, 0.35)))
+          : math.min(hi, _quantileBand(skill, 0.25));
+    }
+    // Skills one band apart prove the same band, so that a mixed item (an
+    // item of two skills) is a clean item of both.
+    for (final other in _tested) {
+      if (other == skill) continue;
+      final ob = _state[other]?.proving;
+      if (ob == null || _isDoneQuiet(other)) continue;
+      if ((ob - st.proving!).abs() == 1) {
+        st.proving = math.max(ob, st.proving!);
+        _of(other).proving = st.proving;
+      }
+    }
+    var band = st.proving!;
+    // A band where two answers are wrong cannot be proven: the one below is.
+    while (band > 0) {
+      final r = model.bandRecord(skill, band);
+      final failed = r.clean - r.right;
+      // Two wrong answers, or one wrong answer while the posterior already
+      // sits lower: the band is left for the lower quarter of the posterior
+      // (never more than one band up from a step down).
+      if (failed >= 2 || (failed >= 1 && _quantileBand(skill, 0.5) < band)) {
+        band = math.max(0, math.min(band - 1, _quantileBand(skill, 0.4)));
+      } else {
+        break;
+      }
+    }
+    if (band == 0) {
+      final r = model.bandRecord(skill, 0);
+      if (r.clean >= kMinCleanItems && r.clean - r.right >= 2) {
+        st.finished = true;
+      }
+    }
+    st.proving = band;
+    return band;
+  }
+
+  // ------------------------------------------------------------------ items
+
+  bool _free(PickerCandidate c) =>
+      c.conflictKeys.every((k) => !_keys.contains(k));
+
+  int _formatRun(String format) {
+    var n = 0;
+    for (var i = asked.length - 1; i >= 0 && asked[i].format == format; i--) {
+      n++;
+    }
+    return n;
+  }
+
+  bool _available(PickerCandidate c) {
+    if (c.needsAudio && !config.audio) return false;
+    if (c.needsMic && !config.mic) return false;
+    if (!c.clean || c.guess > kCleanGuessMax || c.guess >= kUnusableGuess) {
+      return false;
+    }
+    return true;
+  }
+
+  /// Up to [n] free candidates of [format] near [band], the closest band
+  /// first.
+  List<PickerCandidate> _near(String format, int band, int n) {
+    final out = <PickerCandidate>[];
+    for (var spread = 0; spread <= 3 && out.length < n; spread++) {
+      for (final b in <int>{band - spread, band + spread}) {
+        if (b < 0 || b > 10) continue;
+        final list = pool.of(format, b);
+        if (list.isEmpty) continue;
+        for (var tries = 0; tries < 24 && out.length < n; tries++) {
+          final c = list[rng.nextInt(list.length)];
+          if (_free(c) && _available(c) && !out.contains(c)) out.add(c);
+        }
+      }
+    }
+    return out;
+  }
+
+  static double _entropy(double p) {
+    if (p <= 0 || p >= 1) return 0;
+    return -(p * math.log(p) + (1 - p) * math.log(1 - p)) / math.ln2;
+  }
+
+  /// The information an answer to [c] gives about whether the learner knows
+  /// it (mutual information, in bits).
+  double _information(PickerCandidate c) {
+    final q = model.probabilityKnown(c.skills, c.deck);
+    final right = q * (1 - c.slip) + (1 - q) * c.guess;
+    return _entropy(right) -
+        q * _entropy(1 - c.slip) -
+        (1 - q) * _entropy(c.guess);
+  }
+
+  PickerCandidate? _choose(PlacementSkill skill) {
+    final band = _band(skill);
+    if (_isDone(skill)) return null;
+    PickerCandidate? best;
+    var bestScore = double.negativeInfinity;
+    for (final format in pool.formats) {
+      if (_formatRun(format) >= 2) continue;
+      for (final c in _near(format, band, 3)) {
+        if (!c.skills.contains(skill)) continue;
+        if (c.pseudo || c.yesNo) continue;
+        // The coverage and the proof of the other skills it needs are worth
+        // something too: a mixed item is one item for two skills.
+        var bonus = 0.0;
+        var skip = false;
+        for (final t in c.skills) {
+          if (t == skill || !model.skills.contains(t)) continue;
+          // An item another skill of the learner probably fails says little
+          // about this one.
+          if (model.probabilityKnown(<PlacementSkill>[t], c.deck) < 0.4) {
+            skip = true;
+            break;
+          }
+        }
+        if (skip) continue;
+        for (final t in c.skills) {
+          if (t == skill || !_tested.contains(t)) continue;
+          final p = _state[t]?.proving;
+          if (p != null && !_isDoneQuiet(t) && PickerBandOf.of(pool, c) == p) {
+            bonus += 0.3;
+          }
+        }
+        final score = (_information(c) + 0.2 + bonus) / c.seconds;
+        if (score > bestScore) {
+          bestScore = score;
+          best = c;
+        }
+      }
+    }
+    return best;
+  }
+
+  bool _isDoneQuiet(PlacementSkill skill) {
+    final st = _state[skill];
+    if (st == null) return false;
+    if (st.finished) return true;
+    final band = st.proving;
+    if (band == null) return false;
+    final proven = model.provenClass(skill);
+    return proven != null && proven >= model.classOfBand(band);
+  }
+
+  PickerCandidate? _selfRatedSay() {
+    for (final format in pool.formats) {
+      for (final c in _near(format, 5, 6)) {
+        if (c.skills.length == 1 && c.skills.contains(PlacementSkill.say)) {
+          return c.asSelfRated();
+        }
+      }
+    }
+    return null;
+  }
+
+  PickerCandidate? _yesNoNext() {
+    if (_pseudoAsked < kMinPseudowords && _pseudoAsked < pool.pseudo.length) {
+      return pool.pseudo[_pseudoAsked];
+    }
+    if (_yesNoWords < 6) {
+      final band = _band(PlacementSkill.read);
+      for (final format in const <String>['F1']) {
+        for (final c in _near(format, band, 6)) {
+          if (c.yesNo) return c;
+        }
+      }
+    }
+    return null;
+  }
+}
+
+/// The band of a candidate in a pool.
+class PickerBandOf {
+  static int of(CandidatePool pool, PickerCandidate c) =>
+      CandidatePool.bandOfDeck(pool.levels, c.deck);
+}

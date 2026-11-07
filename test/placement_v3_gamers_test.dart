@@ -4,7 +4,7 @@
 // amateur, advanced) and per device variant (audio and mic, no mic, no
 // audio), in Spanish and Hindi, on the bank as the adversary found it
 // ("legacy") and as the amended generators must make it ("fixed"), through the
-// joint model of lib/core and the stand-in picker of the harness.
+// joint model of lib/core and the real picker (v3_picker.dart) over the admitted formats (the mutation controls keep the stand-in).
 //
 // Gates are PER SKILL: the share of runs over by more than 1/10 (2 classes)
 // is computed for Read, Hear and Write separately and every skill must pass,
@@ -55,7 +55,7 @@ _Worst _measure(
   SimBank bank,
   Persona persona, {
   List<Variant> variants = const <Variant>[Variant.full],
-  SimPicker Function() picker = BaselinePicker.new,
+  SimPicker Function() picker = V3SimPicker.new,
   Mutation mutation = const Mutation(),
   int runs = _runs,
 }) {
@@ -210,7 +210,7 @@ void main() {
             final results = runCell(
               bank: bank,
               persona: Persona('cheater', truth: none, cheater: true),
-              picker: BaselinePicker.new,
+              picker: V3SimPicker.new,
               declaration: d,
               variant: Variant.full,
               runs: 30,

@@ -246,7 +246,28 @@ Also: every adversary with an "advanced" or "expert" declaration meets the same 
 1. Joint posterior and readout (`lib/core/placement/joint_model.dart`, tests in `test/placement_joint_model_test.dart`): built. It holds the prior mix, noisy-AND update, yes-bias latent, calibration, tempering, proven ceiling, Say rule and the readout.
 2. Replay harness and personas (`test/support/placement_v3_harness.dart`, fixture `test/fixtures/placement/adversary/leak_profile.json`, tests `test/placement_v3_gamers_test.dart`, `placement_v3_adversaries_test.dart`, `placement_v3_honest_test.dart`, `placement_v3_pending_gates_test.dart`): built. The harness runs any picker over a simulated bank (a stand-in for the item registry) with persona answer models (the adversary's measured leak rates, honest learners, yes-sayer, self-rater, cheater control). A stand-in picker (`BaselinePicker`) proves one band per skill with four clean items, climbs while the proof ceiling holds the start down, and stops at the caps. Enforced now: TOP100+RULES (weak and strong, Spanish and Hindi, legacy and fixed bank), COGNATE-ONLY, TESTWISE-ONLY, RANDOM, YES-SAYER, SELF-RATER, no honest learner more than 2/10 above the truth, four clean items per skill in every run, Read and Write fully placed without audio or a mic, no card asked twice.
 3. Item registry and generators with the fixes above (`lib/core/placement/item_registry.dart`, `item_generators.dart`, `item_audit.dart`, `item_bank.dart`, `cognate_score.dart`; tests `test/placement_item_registry_test.dart`; tool `tool/placement_audit.dart`; fixture `test/fixtures/placement/adversary/audit_profile.json`): built. See "The item registry and its audit" below. The ANAGRAM-SOLVER, MATCHER, FAMILY-REPLAY and admission-audit gates are enabled and enforced.
-4. picker, rotation and caps, 5. drill-down, 6. UI and result screen, 7. migration and retiring the V2 run policy, 8. real-learner re-fit hooks: next, one pull request each.
+4. The picker (`lib/core/placement/v3_picker.dart`; tests `test/placement_v3_picker_test.dart`, `test/placement_v3_picker_bank_test.dart`): built. See "The picker" below. It replaces the stand-in `BaselinePicker` in the TOP100+RULES, COGNATE-ONLY, TESTWISE-ONLY, RANDOM, YES-SAYER, SELF-RATER and honest gates (the mutation controls keep the stand-in, as controls). The time and items gate is enabled and enforced. Three gates stay pending with measured reasons (below): experts and natives within 1/10, honest confidence, ear-only placed high on Hear.
+4b. Restore excluded formats (new generators that pass the confidence-aware audit), above all a cheap Write item: next.
+5. drill-down, 6. UI and result screen, 7. migration and retiring the V2 run policy, 8. real-learner re-fit hooks: next, one pull request each.
+
+## The picker
+
+`V3Picker` (pure Dart, deterministic for a seeded generator) chooses the next item from the candidates of the admitted bank (`PickerCandidate.fromBank`; the audit decides what is admitted, the picker never asks anything else).
+
+- **Rotation.** The skill with the fewest touches goes next. The skills in play are Read, Hear and Write, and Say only when a recogniser scores it. Hear and Say items are asked only when the device can play audio and record; Hear and Say are never the only evidence for another skill.
+- **Locate, prove, climb.** The first skill is located by two items (a gallop up from a right answer, a halving from a wrong one), the others by one (the joint posterior already knows something). Then a band is proven by four clean items (4 of 4 or 5 of 6). A band with two wrong answers (or one while the posterior already sits lower) is left for the 40th percentile band. A proven band is climbed from while the posterior's 10th percentile lies more than 1/10 above the proven ceiling. A skill at the start of the path (four clean items, 90% of the posterior on the first two classes) stops at once. When the joint prior still holds a proven skill down to the start, more clean items of the proven band are asked (an ear-only learner).
+- **Item choice.** Among the admitted formats, the candidates near the band that have the most mutual information per second: (information + 0.2 + 0.3 for each other skill the item also proves) / seconds. An item whose other skill the learner probably fails (under 40% known at that deck) is not chosen for this skill. No more than two items of one format in a row. A card or lemma family is never asked twice (the bank's conflict keys).
+- **Coverage floor.** A skill in play is never left with fewer than four clean items; the picker's tests and the honest gates check it in every run.
+- **Say.** Without a recogniser Say is rated by the learner (one item, a self-rated candidate that is not clean and is never evidence).
+- **Caps and the soft stop.** 40 items, 300 s (an item that would end after 300 s is not asked), 14 touches a skill. `softStop` becomes true at 22 items: the UI offers to stop there and lets the learner keep going to the caps.
+- **Yes/no block.** When enabled, Read opens with the eight pseudowords and six real words.
+
+Measured over the simulated banks (Spanish and Hindi, three declarations, three devices, 100 runs a cell): medians 112 to 199 s and 13 to 22 items, 95th percentiles 157 to 288 s and 19 to 31 items; no honest learner is placed more than 2/10 above the truth (at most 3%).
+
+### What the admitted formats cannot do
+
+The experts and natives gate (within 1/10 in 85%) and the time gate pull against each other with the formats that pass the audit. A top-band proof costs four clean items per skill, and Write has no cheap evidence: typing is 12 s with a slip of 0.15, tiles 15 s, and the mixed Read+Write and Hear+Write items 15 s. With the stop rule that meets the time gate, experts are within 1/10 in 62 to 65% (flat declaration), 75 to 82% (advanced) and 2 to 3% (amateur declaration, where the prior holds the lower edge down). A stop rule that climbs further reaches 74 to 90% but takes 250 to 300 s. Step 4b needs a Write item of at most 6 s with a slip of at most 0.10 and a guess of at most 0.10 that passes the audit; step 8 re-fits the prior and the declaration weight. Placing is still safe: no honest learner is placed more than 2/10 above the truth.
+
 
 ## Pending gates
 
@@ -254,10 +275,9 @@ These gates need a later build step and are listed, with the file that will sign
 
 | Id | Gate | Prerequisite file (any depth under `lib/core/placement/`) | Why it waits |
 |---|---|---|---|
-| `time-and-items` | Median at most 28 items and 200 s, 95th percentile at most 40 items and 300 s | name has `picker` (not `item_picker`) | The stand-in picker measures 22 to 30 items and 216 to 301 s medians |
-| `experts-natives-within-a-tenth` | Experts and natives within 1/10 in at least 85% | `picker` | The stand-in places them safely but low |
-| `honest-confidence` | 80% range holds the truth in 75 to 88% | `picker` | The stand-in gives 65 to 100%; re-fit at step 8 |
-| `ear-only-placed-high-on-hear` | Ear-only placed high on Hear | `picker`, `drilldown` | The stand-in proves one band for all skills |
+| `experts-natives-within-a-tenth` | Experts and natives within 1/10 in at least 85% | a file name with `4b` | The real picker places them safely but low (62 to 65% flat, 75 to 82% advanced, 2 to 3% amateur declaration); needs a cheap Write item (PR 4b) and the re-fit |
+| `honest-confidence` | 80% range holds the truth in 75 to 88% | `refit` | The real picker gives 70 to 100% (too wide for most, too narrow for ear-only and natives under an amateur declaration); re-fit at step 8 |
+| `ear-only-placed-high-on-hear` | Ear-only placed high on Hear | `drilldown` | The joint prior holds Hear's lower edge down; needs the drill-down |
 | `drill-down-identifies-the-failing-skill` | Drill-down finds the failing skill in 4 items | `drilldown` | No drill-down yet |
 | `script-gate` | Script-literate-only with the script passed | `script_gate` | No script gate yet |
 

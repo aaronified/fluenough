@@ -3,7 +3,7 @@
 // script-literate-only, ear-only and cognate-advantaged, with and without
 // audio and a microphone, under flat, amateur and advanced declarations, in
 // Spanish and Hindi, 100 runs per cell, through the joint model and the
-// stand-in picker of the harness.
+// real picker (lib/core/placement/v3_picker.dart) over the admitted formats.
 //
 // Enforced here (they are properties of the estimator and its caps): honest
 // learners are never placed more than 2/10 above the truth (at most 3%);
@@ -13,10 +13,10 @@
 // are fully placed without audio or a microphone; no card is asked twice;
 // the run is bounded by the plan's caps.
 //
-// NOT enforced here, because they depend on the real picker (build step 4):
-// the item and time medians, experts and natives within 1/10, the honest
-// confidence of the 80% range, ear-only placed high on Hear. They are listed
-// in placement_v3_pending_gates_test.dart, which fails when the picker lands.
+// Also enforced: the item and time gates (median at most 28 items and 200 s,
+// 95th percentile at most 40 items and 300 s). NOT enforced here: experts and
+// natives within 1/10 and the honest confidence of the 80% range; they are
+// listed, with the measured numbers, in placement_v3_pending_gates_test.dart.
 @Timeout(Duration(minutes: 20))
 library;
 
@@ -83,7 +83,7 @@ void main() {
                 results: runCell(
                   bank: bank,
                   persona: persona,
-                  picker: BaselinePicker.new,
+                  picker: V3SimPicker.new,
                   declaration: d,
                   variant: variant,
                   runs: _runs,
@@ -174,12 +174,51 @@ void main() {
         }
       });
 
+      test('time and items: median 28 items and 200 s, p95 40 and 300 s', () {
+        // Per persona and device: the three declarations are inputs of the
+        // same persona, so their runs are pooled.
+        for (final variant in <Variant>[
+          Variant.full,
+          Variant.noAudio,
+          Variant.noMic,
+        ]) {
+          for (final name in cells.map((c) => c.name).toSet()) {
+            final runs = <RunResult>[
+              for (final c in cells)
+                if (c.name == name && c.variant == variant) ...c.results,
+            ];
+            final items = runs.map((r) => r.items).toList();
+            final secs = runs.map((r) => r.seconds).toList();
+            final reason = '$name ${variant.label}';
+            expect(
+              percentile(items, 0.5),
+              lessThanOrEqualTo(28),
+              reason: reason,
+            );
+            expect(
+              percentile(secs, 0.5),
+              lessThanOrEqualTo(200),
+              reason: reason,
+            );
+            expect(
+              percentile(items, 0.95),
+              lessThanOrEqualTo(40),
+              reason: reason,
+            );
+            expect(
+              percentile(secs, 0.95),
+              lessThanOrEqualTo(300),
+              reason: reason,
+            );
+          }
+        }
+      });
+
       test('a run is bounded by the plan caps and repeats no card', () {
         for (final c in cells) {
           for (final r in c.results) {
-            expect(r.items, lessThanOrEqualTo(BaselinePicker.kMaxItems));
-            // The last item may end after the 300 s line, never by much.
-            expect(r.seconds, lessThanOrEqualTo(300 + 15));
+            expect(r.items, lessThanOrEqualTo(40));
+            expect(r.seconds, lessThanOrEqualTo(300));
             expect(r.repeatedCard, isFalse);
           }
         }
@@ -187,7 +226,7 @@ void main() {
 
       test('the baseline numbers are reported for the pending gates', () {
         // Printed so a later picker's author sees what to beat; asserted only
-        // loosely (a regression guard of the stand-in, not a gate).
+        // loosely (the numbers behind the pending gates, not a gate).
         for (final c in cells) {
           if (c.variant != Variant.full) continue;
           final items = c.results.map((r) => r.items).toList();
