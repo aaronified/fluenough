@@ -752,3 +752,22 @@ Criteria, restated (values unchanged except as said; each change is argued from 
 - **Learners who know N units are placed near N: met in the model** (S3/S4, point 12) and for Spanish experts and both natives. **Not met for the Hindi expert** (93 to 98% per skill, some at unit 0), because of the logic flaw above.
 - **Expert completeness can wait for 0.9.2 only if bank-only.** It is not bank-only: fix 1 and 2 are needed before 0.9.1. Fix 3 is sampling and may follow. After the fix the replay must show the Hindi expert at the top class in at least 95% of runs per skill, and never below the class under the top except where every band from the top down to that class has run out.
 - **Required CI green:** checks were still running at 2717526a when this was written.
+
+**15. Conformance review of the code as built (2026-11-07, `wip/placement-guess-proof` at d33eb1d0, PR #1059).** CI is green (the Sonnet's report, f44087d3): S1 passes, all 22 S3/S4 tests pass, Spanish expert at the top class 100/100/97% (Read/Hear/Write), Hindi expert 100% on all three, natives 100%, no beginner or amateur above his true deck, and S6 at most 0.31 against the floor.
+
+- **Conforms.**
+  - The credit posterior: floors, slips, full-weight misses, and a question with base 1 left out.
+  - The placed class at `1 - alpha/C`.
+  - The readout, the checkpoint lines and Stop here all show and write the placed class, with "at least" while a higher class is more probable.
+  - The script standing and the deck credit use the placed class.
+  - Pairs and audio options carry no evidence.
+  - The shape rule of point 13.
+  - The credited deck is the lower of the request's and the item's.
+  - The done rule, the confirm probe, and the bottom stop (paths of 10 levels or more).
+  - An empty pool closes a band, not a skill.
+  - Runs saved by 0.9.0 are discarded, because a saved run is keyed by app version, so they are never replayed against the new questions.
+- **Deviation, blocking, sent to the Sonnet.** A heard prompt has no text: `_heard` in `question_builder.dart` gives none when Hear is tested, so the spelling and cognate flags never fire on heard picks. A heard cognate would then count at the 0.35 floor, against point 4(d). Fix: check the heard text (the audio's text, or the card's reading) the same way. 0.9.1 waits for it.
+- **Deviations, not blocking (0.9.2).**
+  - Wrong options still come from the same deck and the neighbouring decks on both sides, not only from the asked tenth or later (point 4). A learner may rule out a known option from a deck just below the item. This stays within the class-resolution guarantee of point 13 (never above the first class level at or above `T`), and S6 measured the ruling-out guesser under the floor.
+  - Two unused helpers remain (`supportedLevel`, `trustsPointEstimate`).
+  - Uncounted answers count toward the three-question precondition of Verified. This is harmless, because Verified also needs the top class to be the placed class.
