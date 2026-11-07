@@ -179,16 +179,19 @@ class SimBank {
 
 /// The data of one language of the leak profile fixture.
 class LeakLanguage {
-  LeakLanguage(this.code, Map<String, Object?> json)
-    : deckCount = json['deckCount']! as int,
-      cognateShare = (json['cognateShare']! as num).toDouble(),
-      knownDeck = json['knownDeck']! as int,
-      yesToUnknownReal = (json['yesToUnknownReal']! as num).toDouble(),
-      yesToPseudo = (json['yesToPseudo']! as num).toDouble(),
-      _tables = <BankProfile, Map<String, Object?>>{
-        BankProfile.legacy: json['legacy']! as Map<String, Object?>,
-        BankProfile.fixed: json['fixed']! as Map<String, Object?>,
-      };
+  LeakLanguage(
+    this.code,
+    Map<String, Object?> json, {
+    this.audit = const <String, double>{},
+  }) : deckCount = json['deckCount']! as int,
+       cognateShare = (json['cognateShare']! as num).toDouble(),
+       knownDeck = json['knownDeck']! as int,
+       yesToUnknownReal = (json['yesToUnknownReal']! as num).toDouble(),
+       yesToPseudo = (json['yesToPseudo']! as num).toDouble(),
+       _tables = <BankProfile, Map<String, Object?>>{
+         BankProfile.legacy: json['legacy']! as Map<String, Object?>,
+         BankProfile.fixed: json['fixed']! as Map<String, Object?>,
+       };
 
   final String code;
   final int deckCount;
@@ -198,16 +201,55 @@ class LeakLanguage {
   final double yesToPseudo;
   final Map<BankProfile, Map<String, Object?>> _tables;
 
+  /// What the admission audit of the real item bank measured for a clean
+  /// item of each format (test/fixtures/placement/adversary/audit_profile.json
+  /// from tool/placement_audit.dart): the best solver's expected accuracy.
+  /// It replaces the "fixed" table's assumed rate for those formats.
+  final Map<String, double> audit;
+
   SimBank bank() => SimBank(code, deckCount, cognateShare);
 
   /// The gamer's accuracy beyond its words on format [code].
   double rate(String code, bool cognate, BankProfile profile, bool strong) {
+    final measured = audit[code];
+    if (profile == BankProfile.fixed && !cognate && measured != null) {
+      // A gamer is never worse than guessing: the design guess is the floor.
+      final floor = kFormats[code]?.guess ?? 0;
+      final value = math.max(measured, floor);
+      if (code != 'F4' || strong) return value;
+    }
     var entry = _tables[profile]![code]! as Map<String, Object?>;
     if (entry.containsKey('weak')) {
       entry = entry[strong ? 'strong' : 'weak']! as Map<String, Object?>;
     }
     return (entry[cognate ? 'cognate' : 'clean']! as num).toDouble();
   }
+}
+
+const String kAuditProfilePath =
+    'test/fixtures/placement/adversary/audit_profile.json';
+
+/// The audit's clean-item accuracy per format and language.
+Map<String, Map<String, double>> _auditRates() {
+  final file = File(kAuditProfilePath);
+  if (!file.existsSync()) return const <String, Map<String, double>>{};
+  final json = jsonDecode(file.readAsStringSync())! as Map<String, Object?>;
+  final langs = json['languages']! as Map<String, Object?>;
+  final out = <String, Map<String, double>>{};
+  for (final e in langs.entries) {
+    final classes =
+        (e.value! as Map<String, Object?>)['classes']! as Map<String, Object?>;
+    final rates = <String, double>{};
+    for (final c in classes.entries) {
+      if (!c.key.endsWith(':clean')) continue;
+      final entry = c.value! as Map<String, Object?>;
+      if (entry['passes'] != true) continue;
+      rates[c.key.substring(0, c.key.length - ':clean'.length)] =
+          (entry['accuracy']! as num).toDouble();
+    }
+    out[e.key] = rates;
+  }
+  return out;
 }
 
 Map<String, LeakLanguage>? _leakCache;
@@ -219,9 +261,14 @@ Map<String, LeakLanguage> leakLanguages() {
         jsonDecode(File(kLeakProfilePath).readAsStringSync())!
             as Map<String, Object?>;
     final langs = json['languages']! as Map<String, Object?>;
+    final audit = _auditRates();
     return <String, LeakLanguage>{
       for (final e in langs.entries)
-        e.key: LeakLanguage(e.key, e.value! as Map<String, Object?>),
+        e.key: LeakLanguage(
+          e.key,
+          e.value! as Map<String, Object?>,
+          audit: audit[e.key] ?? const <String, double>{},
+        ),
     };
   }();
 }

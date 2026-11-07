@@ -9,7 +9,7 @@
 // real picker or registry) and its entry is deleted from [_pending]. Every
 // file under lib/core/placement/ is matched against the patterns, so a
 // prerequisite cannot land unnoticed; the later pull requests must use the
-// file names of the plan's build progress (v3_picker, item_registry,
+// file names of the plan's build progress (v3_picker,
 // v3_drilldown, script_gate) or adjust the patterns.
 import 'dart:io';
 import 'dart:math' as math;
@@ -45,7 +45,6 @@ final List<RegExp> _picker = <RegExp>[
   // The V2 picker, item_picker.dart, is not the V3 one.
   RegExp(r'^(?!item_picker\.dart$).*picker'),
 ];
-final List<RegExp> _registry = <RegExp>[RegExp(r'registry')];
 final List<RegExp> _drillDown = <RegExp>[RegExp(r'drill_?down')];
 final List<RegExp> _scriptGate = <RegExp>[RegExp(r'script_?gate')];
 
@@ -101,43 +100,6 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'There is no drill-down yet.',
     _drillDown,
     'step 5 (drill-down)',
-  ),
-  _PendingGate(
-    'anagram-solver-per-item',
-    'ANAGRAM-SOLVER: per-item accuracy at most the guess rate plus 0.07 on '
-        'word tiles.',
-    'It is a property of the generated tiles (two decoy letters or syllable '
-        'tiles), and the harness bank has no real tiles. The leak rates are '
-        'fixtures of the adversary\'s measurements.',
-    _registry,
-    'step 3 (item registry and generators)',
-  ),
-  _PendingGate(
-    'matcher-per-pair',
-    'MATCHER: per-pair accuracy at most 0.35 on matching items.',
-    'Matching (F9) is not in the stand-in bank; its accuracy depends on the '
-        'part-of-speech partition of real words.',
-    _registry,
-    'step 3 (item registry and generators)',
-  ),
-  _PendingGate(
-    'family-replay-lift',
-    'FAMILY-REPLAY: a solved item on a card lifts a later item on the same '
-        'card by at most 5 points.',
-    'The lift is a property of real generated items on one card. The never-'
-        'ask-a-card-twice half is enforced now (the model refuses a repeated '
-        'card; the harness checks every run).',
-    _registry,
-    'step 3 (item registry and generators)',
-  ),
-  _PendingGate(
-    'admission-audit',
-    'Every item class passes an admission audit: adversary accuracy at most '
-        'the design guess plus 0.07 (0.32 for a four-option pick), else the '
-        'item is excluded.',
-    'It audits the real generated items.',
-    _registry,
-    'step 3 (item registry and generators)',
   ),
   _PendingGate(
     'script-gate',
@@ -197,13 +159,12 @@ void main() {
       expect(_picker.single.hasMatch('v3_picker.dart'), isTrue);
       expect(_picker.single.hasMatch('item_picker.dart'), isFalse);
       expect(_picker.single.hasMatch('picker_v3.dart'), isTrue);
-      expect(_registry.single.hasMatch('item_registry.dart'), isTrue);
       expect(_drillDown.single.hasMatch('v3_drill_down.dart'), isTrue);
       expect(_drillDown.single.hasMatch('drilldown.dart'), isTrue);
       expect(_scriptGate.single.hasMatch('script_gate.dart'), isTrue);
       // None matches a file that exists today: the gates are pending.
       for (final f in files) {
-        for (final p in [..._picker, ..._registry, ..._drillDown]) {
+        for (final p in [..._picker, ..._drillDown, ..._scriptGate]) {
           expect(p.hasMatch(f), isFalse, reason: f);
         }
       }
