@@ -2,6 +2,7 @@ import 'package:drift/drift.dart';
 
 import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
+import '../scheduling/placement_withdrawal.dart';
 import 'database.dart';
 import 'restore_record.dart';
 import 'tables/card_states.dart';
@@ -9,6 +10,7 @@ import 'tables/cards.dart';
 import 'tables/decks.dart';
 import 'tables/fsrs_parameters.dart';
 import 'tables/leech_actions.dart';
+import 'tables/placement_withdrawals.dart';
 import 'tables/replay_snapshots.dart';
 import 'tables/restores.dart';
 import 'tables/reviews.dart';
@@ -98,6 +100,20 @@ class ReviewsDao extends DatabaseAccessor<AppDatabase> with _$ReviewsDaoMixin {
             ..where((r) => r.id.isBiggerThanValue(after))
             ..orderBy([(r) => OrderingTerm.asc(r.id)])
             ..limit(limit))
+          .get();
+
+  /// The grade-5 reviews written between [fromMs] and [toMs] (whole
+  /// milliseconds since the epoch, both included): what a withdrawal's
+  /// credit second can hold, for an export that still carries the reviews
+  /// the replay leaves out.
+  Future<List<ReviewRow>> gradedFiveBetween(int fromMs, int toMs) =>
+      (select(reviews)
+            ..where(
+              (r) => CustomExpression<bool>(
+                'grade = 5 AND ts >= $fromMs AND ts <= $toMs',
+              ),
+            )
+            ..orderBy([(r) => OrderingTerm.asc(r.id)]))
           .get();
 }
 
@@ -238,4 +254,46 @@ class ReplaySnapshotsDao extends DatabaseAccessor<AppDatabase>
 
   /// Forgets the snapshot.
   Future<void> clear() => delete(replaySnapshots).go();
+}
+
+/// The placement credit the learner took back. Append-only, like the review
+/// log: it can add a withdrawal and read them, and nothing else; the schema
+/// refuses the rest.
+@DriftAccessor(tables: [PlacementWithdrawals])
+class PlacementWithdrawalsDao extends DatabaseAccessor<AppDatabase>
+    with _$PlacementWithdrawalsDaoMixin {
+  PlacementWithdrawalsDao(super.attachedDatabase);
+
+  /// Appends [w].
+  Future<void> append(PlacementWithdrawal w) =>
+      into(placementWithdrawals).insert(
+        PlacementWithdrawalsCompanion.insert(
+          ts: w.at,
+          language: w.language,
+          creditAt: w.creditAt,
+          modes: w.modeNames.join(','),
+          script: Value(w.script),
+          deckIds: w.sortedDeckIds.join(','),
+        ),
+      );
+
+  /// Every withdrawal, in the order it was appended.
+  Future<List<PlacementWithdrawal>> all() async => <PlacementWithdrawal>[
+    for (final row in await (select(
+      placementWithdrawals,
+    )..orderBy([(w) => OrderingTerm.asc(w.id)])).get())
+      PlacementWithdrawal(
+        at: row.ts,
+        language: row.language,
+        creditAt: row.creditAt,
+        modes: <DrillMode>[
+          for (final name in row.modes.split(',')) ?DrillMode.tryParse(name),
+        ],
+        script: row.script,
+        deckIds: <String>[
+          for (final id in row.deckIds.split(','))
+            if (id.isNotEmpty) id,
+        ],
+      ),
+  ];
 }

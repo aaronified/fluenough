@@ -20,6 +20,7 @@ whatever the scheduler becomes.
 {"type":"review","ts":"2026-09-28T13:34:05.678Z","deck":"hi-en-market","card":"hi-0231","mode":"production","grade":4,"elapsed_ms":3120,"answer":"बाज़ार"}
 {"type":"review","ts":"2026-09-29T02:10:00.000Z","deck":"hi-en-market","card":"hi-0231","mode":"recognition","grade":3,"elapsed_ms":2400}
 {"type":"leech","ts":"2026-10-02T11:00:00.000Z","card":"hi-0231","mode":"production","kind":"setAside"}
+{"type":"withdrawal","at":"2026-11-08T09:00:00.000Z","language":"es","credit_at":1794052800,"modes":["grammarUnderstood","reading","recognition"],"script":null,"decks":["es-en-core-100"]}
 {"type":"parameters","ts":"2026-10-03T08:15:00.000Z","language":"hi","mode":"production","w":[0.212,1.2931,2.3065,8.2956,6.4133,0.8334,3.0194,0.001,1.8722,0.1666,0.796,1.4835,0.0614,0.2629,1.6483,0.6014,1.8729,0.5425,0.0912,0.0658,0.1542],"reviews":1480,"loss_before":0.3412,"loss_after":0.3297}
 ```
 
@@ -60,6 +61,33 @@ One per action taken on a leech, oldest first: a row of `leech_actions`.
 | `ts`, `card`, `mode` | yes | As for a review. An action is on the pair, in whichever deck; a `deck` from an older file is ignored. |
 | `kind` | yes | `reset`, `undoReset`, `setAside` or `bringBack`. |
 
+## `withdrawal` lines
+
+One per withdrawal of placement credit, oldest first: a row of
+`placement_withdrawals` (0.9.2; [Plan-Placement-V2](Plan-Placement-V2), point
+17). The learner took back the credit one moment of Find my level wrote, so
+the replay leaves out exactly the reviews it names and nothing else. The
+reviews themselves stay in the file: the log is append-only.
+
+| Field | Required | Notes |
+|---|---|---|
+| `type` | yes | `withdrawal`. |
+| `at` | yes | When it was withdrawn. |
+| `language` | yes | The language whose credit it is, by code. |
+| `credit_at` | yes | The credit's moment, the whole second the credit was written in. |
+| `modes` | yes | The drills of the credit, by name. |
+| `script` | no | The script of a script skill's credit; null for the word skills'. |
+| `decks` | yes | The decks whose credit it takes back. |
+
+A review is the credit a withdrawal names only when its language, its second,
+a deck of `decks`, a mode of `modes` and its `script` all match, it is not
+after `at`, and it has the shape of credit: grade 5, no elapsed time, no
+answer, asked `own` (or not recorded). A real answer in the same second has
+an elapsed time or an answer, so it is never matched. The format's version is
+not raised: an older app skips the line, so a 0.9.2 backup restored into 0.9.1
+or older loses its withdrawals and the credit comes back, flagged again by the
+next 0.9.2. A line that does not read is skipped, never a failed restore.
+
 ## `parameters` lines
 
 One per language and skill that has been fitted (Settings → Adjust to me,
@@ -99,7 +127,7 @@ already hold, and each `parameters` line unless the profile has a later fit
 of that language and skill, then rebuilds every scheduling state from the
 whole log in time order. A review is the same review when its card, mode
 and `ts`, to the millisecond, match; a leech action when those and its
-`kind` match. So:
+`kind` match; a withdrawal when every field of it matches. So:
 
 - importing the same file twice adds nothing the second time;
 - a backup from an old phone, imported on a new one that has been used since,

@@ -163,6 +163,7 @@ class Backups extends ChangeNotifier {
       backup.reviews,
       backup.leechActions,
       fitted: backup.fitted,
+      withdrawals: backup.withdrawals,
       restore: RestoreRecord(
         at: _clock(),
         backupCreatedAt: backup.createdAt,

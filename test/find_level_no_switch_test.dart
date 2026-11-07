@@ -102,6 +102,7 @@ Future<AppState> _pumpSheet(
   required int built,
   DeckDownloads? downloads,
   AppState? state,
+  LanguageSkills? initial,
 }) async {
   final s =
       state ??
@@ -119,9 +120,9 @@ Future<AppState> _pumpSheet(
     Scaffold(
       body: LanguageSkillsSheet(
         view: LanguageView(_es, _course(built)),
-        initial: LanguageSkills(<SkillKey, SkillState>{
-          _readLatin: SkillState.know,
-        }),
+        initial:
+            initial ??
+            LanguageSkills(<SkillKey, SkillState>{_readLatin: SkillState.know}),
       ),
     ),
     state: s,
@@ -162,9 +163,25 @@ void main() {
 
   group('the Find my level row', () {
     testWidgets('known skills are verified first', (tester) async {
-      await _pumpSheet(tester, built: 3);
+      await _pumpSheet(
+        tester,
+        built: 3,
+        initial: LanguageSkills(<SkillKey, SkillState>{
+          const SkillKey(SkillKind.hear): SkillState.know,
+        }),
+      );
       final l10n = l10nOf(tester);
       expect(find.text(l10n.languagesVerifyKnown), findsOneWidget);
+    });
+
+    testWidgets('letters known from English are not words known: Spanish '
+        'with Read in Latin known offers Find my level, not Verify', (
+      tester,
+    ) async {
+      await _pumpSheet(tester, built: 3);
+      final l10n = l10nOf(tester);
+      expect(find.text(l10n.languagesVerifyKnown), findsNothing);
+      expect(find.text(l10n.languagesFindLevel), findsOneWidget);
     });
 
     testWidgets('a language never placed shows no labels; a placed one shows '
