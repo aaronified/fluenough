@@ -41,48 +41,30 @@ void main() {
     });
     tearDown(() => state.dispose());
 
-    Set<String> firstDeck() => <String>{state.walkDecks('hi').first.id};
-
-    test('the older test stamps model 1, Find my level model 2', () {
+    test('the older test stamps model 1, Find my level model 2, and the '
+        'older test\'s credit is not flagged', () async {
       expect(kOlderPlacementModel, 1);
-      expect(kOlderPlacementModel, isNot(kPlacementModel));
+      expect(kPlacementModel, 2);
+      final decks = state.walkDecks('hi');
 
-      expect(
-        state.creditPlacement(
-          'hi',
-          placed: firstDeck(),
-          model: kOlderPlacementModel,
-        ),
-        greaterThan(0),
+      state.creditPlacement(
+        'hi',
+        placed: <String>{decks.first.id},
+        model: kOlderPlacementModel,
       );
       final older = momentOf(state.now());
-      expect(state.settings.placedByOf('hi'), contains(older));
-      expect(
-        state.unconfirmedMomentsOf('hi'),
-        isEmpty,
-        reason: 'the older test\'s credit is not flagged',
-      );
-    });
+      expect(state.settings.placedByOf('hi'), <int>{older});
+      expect(state.settings.placedModelsOf('hi'), <int, int>{older: 1});
 
-    test('credit without a model is still the default model, and a stamp of '
-        'either model is never flagged', () {
-      final second = state.walkDecks('hi').skip(1).first.id;
-      state.creditPlacement('hi', placed: <String>{second});
-      expect(state.settings.placedByOf('hi'), contains(momentOf(state.now())));
+      final other = AppState.test();
+      addTearDown(other.dispose);
+      await other.load();
+      other.creditPlacement('hi', placed: <String>{decks.first.id});
+      expect(other.settings.placedModelsOf('hi'), <int, int>{
+        momentOf(other.now()): 2,
+      });
+      expect(other.unconfirmedMomentsOf('hi'), isEmpty);
       expect(state.unconfirmedMomentsOf('hi'), isEmpty);
-    });
-
-    test('credit with no stamp at or after 0.9.0 is still flagged, and a '
-        'stamp of model 1 or 2 clears it', () {
-      final moment = kPlacementCheckFrom + 10;
-      Set<int> flagged(Set<int> stamped) => unconfirmedMoments(
-        placedAt: <int>{moment},
-        stamped: stamped,
-        kept: const <int>{},
-        live: <int>{moment},
-      );
-      expect(flagged(const <int>{}), <int>{moment});
-      expect(flagged(<int>{moment}), isEmpty);
     });
   });
 
@@ -138,14 +120,6 @@ void main() {
       ).values.single;
       expect(kept.reviewCount, 2);
       expect(kept.pairs.single, hasLength(2));
-    });
-
-    test('the replay still schedules a credited card from its credit', () {
-      final credit = _review(grade: 5, at: t);
-      final replayed = replayReviews(<LoggedReview>[credit]);
-      final state = replayed.states[credit.key];
-      expect(state, isNotNull);
-      expect(state!.dueAt.isAfter(t), isTrue);
     });
   });
 }

@@ -2,6 +2,7 @@ import 'dart:isolate';
 
 import 'package:flutter/foundation.dart';
 
+import '../core/scheduling/placement_withdrawal.dart' show hasCreditShape;
 import '../core/scheduling/replay.dart';
 import '../core/scheduling/skill_fit.dart';
 import 'app_log.dart';
@@ -154,6 +155,10 @@ class FsrsTuner extends ChangeNotifier {
   void afterReview(ReviewEvent event) {
     // A walkthrough's view of a card is no answer to fit from (#694).
     if (event.isView) return;
+    // Placement credit is no answer either (wiki, Plan-Placement-V2, 17.10):
+    // not counted, so that a big placement does not look like growth. The
+    // next answer counts the log again, as `_countedAt` no longer matches.
+    if (hasCreditShape(logged(event))) return;
     // The skills this answer counts in full for: its own, and in a script
     // deck the script skill too (#556), each with its own count and fit.
     // A part of a review elsewhere (#653) is not fitted.
@@ -172,6 +177,7 @@ class FsrsTuner extends ChangeNotifier {
     } else {
       _counts.clear();
       for (final e in log) {
+        if (hasCreditShape(logged(e))) continue;
         final k = skillOf(e.key);
         _counts[k] = (_counts[k] ?? 0) + 1;
       }

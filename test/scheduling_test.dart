@@ -17,6 +17,8 @@ import 'package:fluenough/core/data/card_state_repository.dart';
 import 'package:fluenough/core/data/database.dart';
 import 'package:fluenough/core/data/review_log.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
+import 'package:fluenough/core/models/review_event.dart';
+import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/scheduling/ability.dart';
 import 'package:fluenough/core/scheduling/fsrs.dart';
 import 'package:fluenough/core/scheduling/fsrs_fit.dart';
@@ -797,6 +799,68 @@ void main() {
             (grade: e.grade, at: e.at, rated: e.answerGiven == null),
       ], parameters: values);
       expect(after.stability, replayed!.stability);
+    });
+
+    test('placement credit does not count towards a refit; a real answer '
+        'does', () async {
+      final p = _progressOf(
+        inTimeOrder(simulate(language: 'hi', start: start, until: now)),
+      );
+      final runner = _Recording();
+      final tuner = FsrsTuner(
+        progress: p,
+        clock: () => now,
+        runner: runner.call,
+      );
+      await tuner.adjustAll();
+      final fitted = p.parameters.fitted[hiWrite]!;
+      expect(runner.jobs, hasLength(1));
+
+      // Placement credits as many words as the fit has answers: with credit
+      // counted, the skill would at once look 100% grown.
+      late ReviewEvent last;
+      for (var i = 0; i < fitted.reviewCount; i++) {
+        last = p.record(
+          deckId: 'hi-en-market',
+          cardId: 'hi-9${i.toString().padLeft(3, '0')}',
+          mode: write,
+          grade: 5,
+          now: now,
+          asked: Ask.own,
+        );
+        tuner.afterReview(last);
+      }
+      p.record(
+        deckId: 'hi-en-market',
+        cardId: 'hi-0001',
+        mode: write,
+        grade: 4,
+        now: now,
+        elapsed: const Duration(seconds: 3),
+        answerGiven: 'typed',
+        asked: Ask.own,
+      );
+      tuner.afterReview(p.log.last);
+      await Future<void>.delayed(Duration.zero);
+      expect(runner.jobs, hasLength(1), reason: 'credit is not growth');
+
+      // Real answers up to 10% more do.
+      final more = (fitted.reviewCount / 10).ceil();
+      for (var i = 0; i < more; i++) {
+        p.record(
+          deckId: 'hi-en-market',
+          cardId: 'hi-0001',
+          mode: write,
+          grade: 4,
+          now: now.add(Duration(minutes: i + 1)),
+          elapsed: const Duration(seconds: 3),
+          answerGiven: 'typed',
+          asked: Ask.own,
+        );
+        tuner.afterReview(p.log.last);
+      }
+      await Future<void>.delayed(Duration.zero);
+      expect(runner.jobs, hasLength(2), reason: 'real answers are growth');
     });
 
     test('with too little anywhere, it waits', () async {
