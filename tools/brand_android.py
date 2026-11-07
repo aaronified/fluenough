@@ -501,7 +501,24 @@ LISTEN_MEMBERS = """    // Written by tools/brand_android.py: Say's listen that 
     // "texts", "confidences", "error" (null, or the recogniser's code such as
     // error_no_match, or "unsupported" below Android 13), "pcm" and
     // "sampleRate". Never throws; no file is written.
+    //
+    // One listen at a time: a new one first aborts any that is still running
+    // (sayAbort), so that two never read the microphone. An abandoned listen
+    // (the app is paused or destroyed) is aborted at once, so the recogniser
+    // and the recorder let go of the microphone and the phone's microphone
+    // indicator goes off; the answer is "aborted".
     private var sayStop: (() -> Unit)? = null
+    private var sayAbort: (() -> Unit)? = null
+
+    override fun onPause() {
+        sayAbort?.invoke()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        sayAbort?.invoke()
+        super.onDestroy()
+    }
 
     private fun canListenWithAudio(): Boolean =
         Build.VERSION.SDK_INT >= 33 && SpeechRecognizer.isRecognitionAvailable(this)
@@ -534,6 +551,7 @@ LISTEN_MEMBERS = """    // Written by tools/brand_android.py: Say's listen that 
             result.success(mapOf("error" to "error_permission"))
             return
         }
+        sayAbort?.invoke()
         val language = call.argument<String>("language") ?: "en-US"
         val onDevice = call.argument<Boolean>("onDevice") ?: false
         val seconds = call.argument<Int>("seconds") ?: 8
@@ -604,7 +622,10 @@ LISTEN_MEMBERS = """    // Written by tools/brand_android.py: Say's listen that 
                 // The recogniser stopped reading, or the recorder failed:
                 // what was kept is still delivered.
             } finally {
+                // The thread lets go of the microphone itself, so that
+                // finish never waits for it on the main thread.
                 try { recorder.stop() } catch (e: Exception) {}
+                try { recorder.release() } catch (e: Exception) {}
                 try { out.close() } catch (e: Exception) {}
             }
         }
@@ -615,9 +636,8 @@ LISTEN_MEMBERS = """    // Written by tools/brand_android.py: Say's listen that 
             running.set(false)
             handler.removeCallbacksAndMessages(null)
             sayStop = null
+            sayAbort = null
             try { recognizer.destroy() } catch (e: Exception) {}
-            try { writer.join(500) } catch (e: InterruptedException) {}
-            try { recorder.release() } catch (e: Exception) {}
             try { source.close() } catch (e: java.io.IOException) {}
             val pcm = synchronized(kept) { kept.toByteArray() }
             val answer = HashMap<String, Any?>()
@@ -662,8 +682,20 @@ LISTEN_MEMBERS = """    // Written by tools/brand_android.py: Say's listen that 
         sayStop = {
             try { recognizer.stopListening() } catch (e: Exception) {}
         }
+        sayAbort = {
+            try { recognizer.cancel() } catch (e: Exception) {}
+            finish(emptyList(), null, "aborted")
+        }
         try {
             writer.start()
+        } catch (e: Exception) {
+            // The thread never ran, so nothing else will release these.
+            try { sink.close() } catch (x: java.io.IOException) {}
+            try { recorder.release() } catch (x: Exception) {}
+            finish(emptyList(), null, "error_client")
+            return
+        }
+        try {
             recognizer.startListening(intent)
         } catch (e: Exception) {
             finish(emptyList(), null, "error_client")

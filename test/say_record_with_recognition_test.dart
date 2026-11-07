@@ -198,10 +198,124 @@ void main() {
       expect(native.listens, 2, reason: 'not asked a third time');
     });
 
+    test(
+      'nothing recognised from a silent stream is listened to again the '
+      'plain way in the same attempt, and the native route is dropped',
+      () async {
+        final silent = OwnAudio(_pcm(16000, 0), sampleRate: 16000);
+        for (final first in <NativeListenResult>[
+          NativeListenResult(error: 'error_no_match', pcm16: silent.pcm16),
+          NativeListenResult(
+            error: 'error_speech_timeout',
+            pcm16: silent.pcm16,
+          ),
+          const NativeListenResult(error: 'error_no_match'),
+          NativeListenResult(pcm16: silent.pcm16),
+        ]) {
+          final native = FixedNativeListener(
+            results: <NativeListenResult>[first],
+          );
+          final plugin = _Plugin();
+          final engine = SystemSpeechEngine(plugin, null, native);
+          final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
+          await Future<void>.delayed(Duration.zero);
+          // The same attempt reached the plain route: no no-match was shown.
+          expect(native.listens, 1, reason: '${first.error}');
+          expect(plugin.listens, 1, reason: '${first.error}');
+          plugin.onResult!(
+            SpeechRecognitionResult(<SpeechRecognitionWords>[
+              const SpeechRecognitionWords('నమస్తే', null, 0.9),
+            ], ResultType.finalResult.value),
+          );
+          final h = await attempt;
+          expect(h.failed, isFalse);
+          expect(h.alternatives.single.text, 'నమస్తే');
+          // Not tried again this session.
+          final again = engine.listen(bcp47: 'te-IN', onDevice: true);
+          await Future<void>.delayed(Duration.zero);
+          expect(native.listens, 1);
+          expect(plugin.listens, 2);
+          plugin.onResult!(
+            SpeechRecognitionResult(<SpeechRecognitionWords>[
+              const SpeechRecognitionWords('x', null, 0.9),
+            ], ResultType.finalResult.value),
+          );
+          await again;
+        }
+      },
+    );
+
+    test('no match with a voice in the stream is the learner\'s, not the '
+        'phone\'s: reported, and the native route stays', () async {
+      final native = FixedNativeListener(
+        results: <NativeListenResult>[
+          NativeListenResult(error: 'error_no_match', pcm16: _voice.pcm16),
+        ],
+      );
+      final plugin = _Plugin();
+      final engine = SystemSpeechEngine(plugin, null, native);
+      for (var i = 0; i < 3; i++) {
+        final h = await engine.listen(bcp47: 'te-IN', onDevice: true);
+        expect(h.failure, SpeechFailure.noMatch);
+        expect(h.ownAudio, isNull);
+      }
+      expect(native.listens, 3);
+      expect(plugin.listens, 0);
+    });
+
+    test('an aborted listen (the app was paused) is a failure, never a '
+        'listen again in the background', () async {
+      final native = FixedNativeListener(
+        results: <NativeListenResult>[
+          const NativeListenResult(error: 'aborted'),
+        ],
+      );
+      final plugin = _Plugin();
+      final h = await SystemSpeechEngine(
+        plugin,
+        null,
+        native,
+      ).listen(bcp47: 'te-IN', onDevice: true);
+      expect(h.failed, isTrue);
+      expect(h.failure, SpeechFailure.other);
+      expect(plugin.listens, 0);
+    });
+
     test('stop cancels the native listen', () async {
       final native = FixedNativeListener();
       await SystemSpeechEngine(_Plugin(), null, native).stop();
       expect(native.cancels, 1);
+    });
+  });
+
+  group('which browsers record beside the recogniser', () {
+    test('not Safari and not any browser on iOS, where it would abort the '
+        'recogniser', () {
+      const safari =
+          'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/605.1.15 '
+          '(KHTML, like Gecko) Version/17.4 Safari/605.1.15';
+      const iphoneSafari =
+          'Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 '
+          '(KHTML, like Gecko) Version/17.4 Mobile/15E148 Safari/604.1';
+      const iphoneChrome =
+          'Mozilla/5.0 (iPhone; CPU iPhone OS 17_4 like Mac OS X) AppleWebKit/605.1.15 '
+          '(KHTML, like Gecko) CriOS/124.0 Mobile/15E148 Safari/604.1';
+      const chrome =
+          'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 '
+          '(KHTML, like Gecko) Chrome/124.0 Safari/537.36';
+      const edge = '$chrome Edg/124.0';
+      const androidChrome =
+          'Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 '
+          '(KHTML, like Gecko) Chrome/124.0 Mobile Safari/537.36';
+      const firefox =
+          'Mozilla/5.0 (X11; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0';
+      expect(recorderBesideRecognition(safari), isFalse);
+      expect(recorderBesideRecognition(iphoneSafari), isFalse);
+      expect(recorderBesideRecognition(iphoneChrome), isFalse);
+      expect(recorderBesideRecognition(chrome), isTrue);
+      expect(recorderBesideRecognition(edge), isTrue);
+      expect(recorderBesideRecognition(androidChrome), isTrue);
+      expect(recorderBesideRecognition(firefox), isTrue);
     });
   });
 
