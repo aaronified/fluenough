@@ -146,7 +146,10 @@ PlacementLanguageData sampleLanguageData(Catalog catalog, String code) {
 /// decks, shortlist picks and seeds.
 List<GeneratedQuestion> generateQuestions(PlacementLanguageData data) {
   final out = <GeneratedQuestion>[];
-  for (var seed = 0; seed < 60; seed++) {
+  // About 1,500 builds: a build costs up to 55 ms, so a larger deck needs
+  // fewer seeds.
+  final seeds = math.max(2, (1500 / (data.deckCount * 10)).ceil());
+  for (var seed = 0; seed < seeds; seed++) {
     final builder = QuestionBuilder(data, seed: seed);
     for (var deck = 0; deck < data.deckCount; deck++) {
       for (var pick = 0; pick < 5; pick++) {
