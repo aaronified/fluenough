@@ -16,11 +16,29 @@ import '../models/card.dart';
 /// near-cognates, as the adversary found.
 const double kCognateThreshold = 0.58;
 
-const String _foldFrom =
-    'àáâãäåāăąçćčďḍèéêëēěęìíîïīıñṇṅńòóôõöōőøřṛśšṣşťṭùúûüūůýÿźžżṁṃḥłß';
-const String _foldTo =
-    'aaaaaaaaacccddeeeeeeeiiiiiinnnnooooooooorrsssstt'
-    'uuuuuuyyzzzmmhls';
+const Map<String, String> _foldGroups = <String, String>{
+  'a': 'àáâãäåāăą',
+  'c': 'çćč',
+  'd': 'ďḍ',
+  'e': 'èéêëēěę',
+  'i': 'ìíîïīı',
+  'n': 'ñṇṅń',
+  'o': 'òóôõöōőø',
+  'r': 'řṛ',
+  's': 'śšṣşß',
+  't': 'ťṭ',
+  'u': 'ùúûüūů',
+  'y': 'ýÿ',
+  'z': 'źžż',
+  'm': 'ṁṃ',
+  'h': 'ḥ',
+  'l': 'ł',
+};
+
+final Map<int, String> _fold = <int, String>{
+  for (final e in _foldGroups.entries)
+    for (final r in e.value.runes) r: e.key,
+};
 
 /// [text] lower-cased with accents, macrons and dots under letters removed,
 /// and combining marks dropped: `śāla` becomes `sala`, `m̐` becomes `m`.
@@ -28,13 +46,7 @@ String foldAccents(String text) {
   final out = StringBuffer();
   for (final r in text.toLowerCase().runes) {
     if (r >= 0x300 && r <= 0x36f) continue;
-    final ch = String.fromCharCode(r);
-    final at = _foldFrom.indexOf(ch);
-    if (at >= 0 && at < _foldTo.length) {
-      out.write(_foldTo[at]);
-    } else {
-      out.write(ch);
-    }
+    out.write(_fold[r] ?? String.fromCharCode(r));
   }
   return out.toString();
 }

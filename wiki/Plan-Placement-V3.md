@@ -280,18 +280,18 @@ Everything is generated from a language's decks (`PlacementLanguageData`), with 
 | Class | Spanish | Hindi | Bound |
 |---|---|---|---|
 | F2, F13 word to meaning | 0.250 (chance) | 0.250 | 0.32 |
-| F3 meaning to word | 0.297 | 0.295 | 0.32 |
-| F5, F17 sentence picks | 0.300, 0.305 | 0.305, 0.314 (26 items) | 0.32 |
-| F4 word tiles | 0.060 (2 decoys) | 0.050 | 0.17 |
-| F7, F18 typed or said | 0.003 | 0.003 | 0.10 |
-| F8, F16 tile sentences | 0.006, 0.009 | 0.018 | 0.12 |
-| F6 cloze | 0.264 | 0.346, excluded (26 items) | 0.32 |
-| F9 matching, per pair | 0.295 | 0.227 | 0.35 |
-| F1, F14 yes/no | 0.586 (AUC) | 0.537 | 0.60 |
-| S2 word order | 0.611, excluded | 0.639, excluded | 0.57 |
+| F3 meaning to word | 0.297 | 0.290 | 0.32 |
+| F5, F17 sentence picks | 0.300, 0.305 | 0.295, 0.276 (26 items) | 0.32 |
+| F4 word tiles | 0.060 (2 decoys) | 0.023 | 0.17 |
+| F7, F18 typed or said | 0.003 | 0.009 | 0.10 |
+| F8, F16 tile sentences | 0.006, 0.009 | 0.037, 0.012 | 0.12 |
+| F6 cloze | 0.264 | 0.314 (22 items) | 0.32 |
+| F9 matching, per pair | 0.295 | 0.284 | 0.35 |
+| F1, F14 yes/no | 0.586 (AUC) | 0.552 | 0.60 |
+| S2 word order | 0.611, excluded | 0.637, excluded | 0.57 |
 
 Controls in the tests: word tiles without decoys fail the audit in Spanish (0.333); a pick whose answer is the longest option and a matching of look-alike pairs fail it; a run that ignores the never-twice rule gives a replay gamer a lift above 0.4, and one that keeps it gives none.
 
-**What the audit does not show.** The solvers are mine, and three generators choose against solvers of the same kind (S2 by word and ending pairs, F9 and the pseudowords by typicality), so those classes are measured partly against the cue they were built to defeat. S2 stays out of the bank because a held-out cue (trigrams of word endings) still reads the order at 0.61 and 0.64; it needs a swap that endings cannot reveal (step 8's held-out gamer). Hindi has few sentence items (26 for F5 and F17) and no cloze that passes, so its sentence classes are weakly measured. Formats not generated here: F10 to F12 (script decks), F15 (minimal pairs: the V2 builder, which needs the sounds file and audio trust), F19 and F20 (screens of step 6).
+**What the audit does not show.** The solvers are mine, and three generators choose against solvers of the same kind (S2 by word and ending pairs, F9 and the pseudowords by typicality), so those classes are measured partly against the cue they were built to defeat. S2 stays out of the bank because a held-out cue (trigrams of word endings) still reads the order at 0.61 and 0.64; it needs a swap that endings cannot reveal (step 8's held-out gamer). Hindi has few sentence items (26 for F5 and F17, 22 cloze) so its sentence classes are weakly measured; a small class can fail or pass by chance. Formats not generated here: F10 to F12 (script decks), F15 (minimal pairs: the V2 builder, which needs the sounds file and audio trust), F19 and F20 (screens of step 6).
 
 **Harness.** The "fixed bank" leak rates of `leak_profile.json` were an assumption (about 0.30 for a clean pick); the harness now uses what the audit measured for each format it generates (`audit_profile.json`, floored at the design guess): 0.25 to 0.31 for picks, 0.10 for word tiles, 0.05 for tile sentences and 0.03 for typing, so most clean rates are a little lower than assumed and F3 (0.297) and F17 and F5 (about 0.30) are the same. Cognate items keep the old figures (they are not generated). The legacy tables are the adversary's own measurements and are untouched. Regenerate the fixture with `dart run tool/placement_audit.dart` when the decks change a lot; a test compares it with a fresh audit within 0.08.

@@ -184,9 +184,12 @@ class GenContext {
       if (e.value >= 12) articles.add(e.key);
     }
     final genderVotes = <String, Map<String, int>>{};
+    final seenCards = <String>{};
     for (final (di, deck) in data.decks.indexed) {
       for (final c in deck.cards) {
         if (c.rule != null || c.isGrammarCell || c.isLetterOrDigit) continue;
+        // A card listed in two decks counts once, at its first deck.
+        if (!seenCards.add(c.id)) continue;
         if (c.native.trim().isEmpty || c.practiceOnly) continue;
         final tokens = targetWords(c.target);
         if (_isWordCard(c)) {
