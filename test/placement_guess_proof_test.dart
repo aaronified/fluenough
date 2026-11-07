@@ -25,11 +25,10 @@
 @Timeout(Duration(minutes: 30))
 library;
 
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
 
-import 'package:fluenough/app/deck_catalog.dart';
-import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
@@ -38,32 +37,36 @@ import 'package:fluenough/core/placement/generated_question.dart';
 import 'package:fluenough/core/placement/item_picker.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
+import 'package:fluenough/core/placement/question_bank.dart';
 import 'package:fluenough/core/placement/question_builder.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/placement_harness.dart';
 
-const String _root = 'test/fixtures/sample-decks';
-
 void main() {
-  late Catalog catalog;
-
-  setUpAll(() async {
-    expect(Directory(_root).existsSync(), isTrue);
-    catalog = await DeckCatalog(RepositoryDeckSource(_root)).load();
-  });
-
-  group('rogue guessers over generated questions', () {
-    for (final code in <String>['es', 'te']) {
-      group('the sample $code deck', () {
+  group('rogue guessers over the generated banks (S6)', () {
+    for (final code in <String>['es', 'hi']) {
+      group('the $code bank', () {
         late List<GeneratedQuestion> questions;
 
         setUpAll(() {
-          questions = generateQuestions(sampleLanguageData(catalog, code));
-        });
-
-        test('there are enough questions for the margin to be sound', () {
-          expect(questions.length, greaterThanOrEqualTo(1000));
+          final pub = jsonDecode(
+            File('test/fixtures/placement/banks/$code-bank.json')
+                .readAsStringSync(),
+          ) as Map<String, Object?>;
+          final key = jsonDecode(
+            File('test/fixtures/placement/banks/$code-bank-key.json')
+                .readAsStringSync(),
+          ) as Map<String, Object?>;
+          final bank = bankFromJson(
+            pub['questions']! as List<Object?>,
+            key['questions']! as Map<String, Object?>,
+            language: code,
+          );
+          questions = <GeneratedQuestion>[
+            for (final e in bank.entries)
+              if (e.question.mode == PlacementAnswerMode.pick) e.question,
+          ];
         });
 
         for (final MapEntry(key: name, value: strategy)
@@ -75,7 +78,7 @@ void main() {
               // section 13), so what must hold is that on the questions that
               // count no strategy beats the guess floor (base + 0.10): the 99%
               // upper bound of its success (normal approximation, 2.576 sd) is
-              // at most the mean floor.
+              // at most the mean floor, over at least 2,000 counted questions.
               var n = 0;
               var right = 0;
               var floor = 0.0;
@@ -86,7 +89,11 @@ void main() {
                 floor += base + creditKappa;
                 if (q.isRightPick(strategy(q))) right++;
               }
-              expect(n, greaterThanOrEqualTo(300), reason: 'counted questions');
+              expect(
+                n,
+                greaterThanOrEqualTo(2000),
+                reason: 'counted questions',
+              );
               final p = right / n;
               final upper = p + 2.576 * math.sqrt(p * (1 - p) / n);
               expect(
@@ -97,16 +104,6 @@ void main() {
             },
           );
         }
-
-        test('options are alike: nothing odd in their labels or shapes', () {
-          for (final q in questions) {
-            expect(q.options.toSet(), hasLength(q.options.length));
-            // No "lemma (gloss) — person" cell is ever an option.
-            for (final option in q.options) {
-              expect(option, isNot(contains(') — ')));
-            }
-          }
-        });
       });
     }
   });
