@@ -34,6 +34,11 @@ extension PlacementCredit on AppState {
   /// my level credits each skill up to its own placed level); the script
   /// decks follow [standings] whatever [only] says.
   ///
+  /// The credit is stamped with [model]: [kPlacementModel] for Find my level,
+  /// [kOlderPlacementModel] for the older placement test (wiki,
+  /// Plan-Placement-V2, 17.1), so that only the 0.9.0 and 0.9.1 credit, which
+  /// has no stamp, is ever flagged.
+  ///
   /// The course's `PlacedReview` choice decides whether these reviews are
   /// ever asked for again.
   ///
@@ -47,6 +52,7 @@ extension PlacementCredit on AppState {
     Map<String, ScriptStanding> standings = const <String, ScriptStanding>{},
     String? native,
     Set<DrillMode>? only,
+    int model = kPlacementModel,
   }) {
     final wanted = <String, List<_Credit>>{};
     void want(Card card, String deckId, DrillMode mode, String? script) {
@@ -119,7 +125,7 @@ extension PlacementCredit on AppState {
     settings.addPlacedAt(code, moment);
     // From 0.9.2 on every credit says which model made it, so that it is
     // never taken for an earlier version's (wiki, Plan-Placement-V2, 17.1).
-    settings.stampPlacedBy(code, moment, kPlacementModel);
+    settings.stampPlacedBy(code, moment, model);
     return written;
   }
 }
