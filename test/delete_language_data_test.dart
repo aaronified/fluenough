@@ -360,7 +360,7 @@ void main() {
       await open(tester);
       expect(enabled(tester), isFalse);
 
-      await tester.tap(find.byKey(const ValueKey<String>('delete-reviews')));
+      await tapKey(tester, 'delete-reviews');
       await tester.pump();
       expect(enabled(tester), isFalse, reason: 'no name yet');
 
@@ -379,7 +379,7 @@ void main() {
       await tester.pump();
       expect(enabled(tester), isTrue);
 
-      await tester.tap(find.byKey(const ValueKey<String>('delete-reviews')));
+      await tapKey(tester, 'delete-reviews');
       await tester.pump();
       expect(enabled(tester), isFalse, reason: 'nothing ticked');
     });
@@ -387,9 +387,9 @@ void main() {
     testWidgets('a range with the first day after the last says so and '
         'cannot be deleted', (tester) async {
       await open(tester);
-      await tester.tap(find.byKey(const ValueKey<String>('delete-reviews')));
+      await tapKey(tester, 'delete-reviews');
       await tester.pump();
-      await tester.tap(find.byKey(const ValueKey<String>('delete-some-dates')));
+      await tapKey(tester, 'delete-some-dates');
       await tester.pump();
       expect(find.byKey(const ValueKey<String>('delete-from')), findsOneWidget);
       expect(find.byKey(const ValueKey<String>('delete-to')), findsOneWidget);
@@ -401,6 +401,13 @@ void main() {
       expect(enabled(tester), isTrue, reason: 'today to today');
     });
   });
+}
+
+Future<void> tapKey(WidgetTester tester, String key) async {
+  final finder = find.byKey(ValueKey<String>(key));
+  await tester.ensureVisible(finder);
+  await tester.pump();
+  await tester.tap(finder);
 }
 
 class _FailingStore extends MemoryBackupStore {

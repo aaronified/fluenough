@@ -4,7 +4,6 @@ import 'package:flutter/foundation.dart';
 
 import '../core/data/database.dart';
 import '../core/data/replay_isolate.dart';
-import '../core/data/review_erasure.dart';
 import '../core/data/review_log.dart';
 import '../core/models/drill_mode.dart';
 import '../core/scheduling/ask.dart';
