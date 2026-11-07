@@ -623,6 +623,7 @@ class ItemGenerators {
       for (final o in shapes) {
         if (distractors.length >= 3) break;
         if (taken.contains(o.card.id)) continue;
+        if (distractors.any((d) => d.display == o.display)) continue;
         distractors.add(o);
         taken.add(o.card.id);
       }

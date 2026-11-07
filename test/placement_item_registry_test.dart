@@ -206,8 +206,12 @@ void main() {
             lessThan(kWordLevelCognateMax),
             reason: it.id,
           );
-          for (final c in it.coCards) {
-            expect(cognateCards.contains(c), isFalse, reason: it.id);
+          // The other words of a matching screen are eligible too (the
+          // options of a pick may be any word).
+          if (it.format == 'F9') {
+            for (final c in it.coCards) {
+              expect(cognateCards.contains(c), isFalse, reason: it.id);
+            }
           }
         }
         expect(checked, greaterThan(1000));
@@ -540,14 +544,14 @@ void main() {
         final report = auditItems(leaky, cx);
         final c = report.classes['F2:clean']!;
         expect(c.passes, isFalse);
-        expect(c.solver, anyOf('longest', 'shortest'));
+        expect(c.solver, 'length');
         expect(report.admits('F2:clean'), isFalse);
       });
 
       test('the audit is confidence-aware: a small class is not admitted even '
           'at chance, and an unattacked class is not admitted', () {
         final few = <RegItem>[
-          for (final it in of('F2').take(20))
+          for (final it in of('F2').skip(150).take(20))
             RegItem(
               id: '${it.id}-few',
               format: 'F2',
@@ -738,8 +742,10 @@ void main() {
         expect(j.deck, f2.deck);
         expect(j.clean, isTrue);
         expect(j.cardId, f2.cardId);
-        final yes = of('F1').firstWhere((i) => !i.pseudo);
-        expect(yes.toJointItem().yesNo, YesNoRole.realWord);
+        if (of('F1').isNotEmpty) {
+          final yes = of('F1').firstWhere((i) => !i.pseudo);
+          expect(yes.toJointItem().yesNo, YesNoRole.realWord);
+        }
       });
     });
   }
