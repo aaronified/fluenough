@@ -109,3 +109,22 @@ extension ReviewEventAnswers on Iterable<ReviewEvent> {
   /// a card ([ReviewEvent.isView]).
   Iterable<ReviewEvent> get answered => where((event) => !event.isView);
 }
+
+/// The elapsed time to record for a REAL answer: [elapsed], unless the answer
+/// would have the shape of placement credit ([ReviewEvent.hasCreditShape]:
+/// grade 5, no time taken, no answer given, asked its own way or not
+/// recorded), when it is the smallest time, one microsecond. Only
+/// `creditPlacement` writes that shape; a real answer is never mistaken for
+/// placement (Progress counts it as placed, and the log can withdraw it).
+Duration realElapsed({
+  required int grade,
+  required Duration elapsed,
+  String? answerGiven,
+  Ask? asked,
+}) =>
+    grade == 5 &&
+        elapsed == Duration.zero &&
+        answerGiven == null &&
+        (asked == null || asked == Ask.own)
+    ? const Duration(microseconds: 1)
+    : elapsed;

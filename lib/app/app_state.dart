@@ -3914,17 +3914,14 @@ class AppState extends ChangeNotifier {
     Ask? asked,
   }) {
     _recordingLanguage = deckById(item.card.deckId)?.language.code;
-    // A grade 5 with no time taken and no answer given has the shape of
-    // placement credit ([ReviewEvent.hasCreditShape]), which Progress reads
-    // as PLACED and the log withdraws. A real answer is never written that
-    // way: whoever calls this with no elapsed time and no answer gets the
-    // smallest elapsed time, so that only `creditPlacement` writes credit.
-    if (grade == 5 &&
-        elapsed == Duration.zero &&
-        answerGiven == null &&
-        (asked == null || asked == Ask.own)) {
-      elapsed = const Duration(microseconds: 1);
-    }
+    // A real answer is never written in the shape of placement credit
+    // (grade 5, no time, no answer): see [realElapsed].
+    elapsed = realElapsed(
+      grade: grade,
+      elapsed: elapsed,
+      answerGiven: answerGiven,
+      asked: asked,
+    );
     final ReviewEvent event;
     try {
       event = _record(item, grade, elapsed, answerGiven, script, asked);

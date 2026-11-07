@@ -5,10 +5,8 @@
 // "Placed" until a unit of its milestone has an earned review; the tiles say
 // "+M placed"; and a real answer is never written in the shape of credit.
 import 'package:fluenough/app/app_state.dart';
-import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/placement_run_setup.dart';
-import 'package:fluenough/app/session.dart';
 import 'package:fluenough/core/data/course_path.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
@@ -191,44 +189,41 @@ void main() {
   });
 
   group('a real answer is never credit-shaped', () {
-    test(
-      'AppState.record gives a grade 5 with no time the smallest time',
-      () async {
-        final state = AppState.test(
-          decks: MemoryDeckSource(<String, String>{
-            'decks/es/es-en-tiny.yaml': '''
-schema: 1
-id: es-en-tiny
-name: "Tiny"
-language: { code: es, iso639_3: spa, name: Spanish, script: latin }
-native: { code: en, iso639_3: eng, name: English }
-license: CC0-1.0
-cards:
-  - { id: es-en-tiny-0001, target: "hola", native: "hello" }
-  - { id: es-en-tiny-0002, target: "adiós", native: "goodbye" }
-''',
-          }),
-        );
-        addTearDown(state.dispose);
-        await state.load();
-        final item = state
-            .buildSession(DrillRequest.deck('es-en-tiny'))
-            .items
-            .first;
-        final event = state.record(item, 5);
-        expect(event.hasCreditShape, isFalse);
-        expect(event.isPlaced, isFalse);
-        expect(event.elapsed, const Duration(microseconds: 1));
-        // A time that was taken is kept as it was.
-        final other = state.record(
-          item,
-          5,
-          elapsed: const Duration(seconds: 3),
-        );
-        expect(other.elapsed, const Duration(seconds: 3));
-        expect(other.isPlaced, isFalse);
-      },
-    );
+    test('a grade 5 with no time and no answer gets the smallest time; a '
+        'time taken, an answer given or another grade is kept', () {
+      const one = Duration(microseconds: 1);
+      expect(realElapsed(grade: 5, elapsed: Duration.zero), one);
+      expect(
+        realElapsed(grade: 5, elapsed: Duration.zero, asked: Ask.own),
+        one,
+      );
+      expect(
+        realElapsed(grade: 5, elapsed: const Duration(seconds: 3)),
+        const Duration(seconds: 3),
+      );
+      expect(
+        realElapsed(grade: 5, elapsed: Duration.zero, answerGiven: 'x'),
+        Duration.zero,
+      );
+      expect(realElapsed(grade: 4, elapsed: Duration.zero), Duration.zero);
+      expect(
+        realElapsed(grade: 5, elapsed: Duration.zero, asked: Ask.chooseWord),
+        Duration.zero,
+        reason: 'another way of asking is not the credit shape',
+      );
+      // Written so, a real answer is not placed.
+      final p = MemoryProgress();
+      final e = p.record(
+        deckId: 'xx-words',
+        cardId: 'a',
+        mode: DrillMode.recognition,
+        grade: 5,
+        now: DateTime(2026, 9, 1),
+        elapsed: realElapsed(grade: 5, elapsed: Duration.zero),
+      );
+      expect(e.isPlaced, isFalse);
+      expect(e.hasCreditShape, isFalse);
+    });
 
     test('placement credit is still written in that shape', () async {
       final p = MemoryProgress();
