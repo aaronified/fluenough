@@ -13,6 +13,10 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "అతను మంచి ఆటగాడు.", "reading": "atanu mañci āṭagāḍu.", "ipa": "at̪anu maɲtʃi aːʈaɡaːɖu", "bases": []},
+      {"target": "అది మంచి ఆలోచన!", "reading": "adi mañci ālōcana!", "ipa": "ad̪i maɲtʃi aːloːtʃana", "bases": []}
+    ]
   - id: "te-0501"
     target: "చెడ్డ"
     reading: "ceḍḍa"
@@ -23,27 +27,46 @@ cards:
     reading: "pedda"
     ipa: "ped̪d̪a"
     pos: "adj"
+    "examples": [
+      {"target": "ఆటస్థలం పెద్దది.", "reading": "āṭasthalaṁ peddadi.", "ipa": "aːʈast̪ʰalam ped̪d̪ad̪i", "bases": [{"word": "పెద్దది", "base": "పెద్ద", "reading": "pedda"}]},
+      {"target": "ఇది అన్నిటికంటే పెద్దది.", "reading": "idi anniṭikaṇṭē peddadi.", "ipa": "id̪i an̪n̪it̪ikaɳʈeː ped̪d̪ad̪i", "bases": [{"word": "పెద్దది", "base": "పెద్ద", "reading": "pedda"}]}
+    ]
   - id: "te-0503"
     target: "చిన్న"
     reading: "cinna"
     ipa: "tʃinna"
     pos: "adj"
+    "examples": [
+      {"target": "అతను ఆమె కంటే చిన్నవాడు.", "reading": "atanu āme kaṇṭē cinnavāḍu.", "ipa": "at̪anu aːme kaɳʈeː tʃinːaʋaːɖu", "bases": [{"word": "చిన్నవాడు", "base": "చిన్న", "reading": "cinna"}]},
+      {"target": "ఆ పడవ చాలా చిన్నది.", "reading": "ā paḍava cālā cinnadi.", "ipa": "aː paɖaʋa tʃaːlaː tʃinːad̪i", "bases": [{"word": "చిన్నది", "base": "చిన్న", "reading": "cinna"}]}
+    ]
   - id: "te-0504"
     target: "కొత్త"
     reading: "kotta"
     ipa: "kot̪t̪a"
     pos: "adj"
+    "examples": [
+      {"target": "ఇది కొత్త యుగం.", "reading": "idi kotta yugaṁ.", "ipa": "id̪i kot̪t̪a juɡam", "bases": [{"word": "ఇది", "base": "ఇది", "reading": "idi"}, {"word": "కొత్త", "base": "కొత్త", "reading": "kotta"}]},
+      {"target": "ఈ పెన్ను కొత్తది.", "reading": "ī pennu kottadi.", "ipa": "iː pennu kot̪t̪ad̪i", "bases": [{"word": "కొత్తది", "base": "కొత్త", "reading": "kotta"}]}
+    ]
   - ref: "te-0112"
   - id: "te-0505"
     target: "వేడి"
     reading: "vēḍi"
     ipa: "ʋeːɖi"
     pos: "adj"
+    "examples": [
+      {"target": "మరీ వేడిగా ఉంది.", "reading": "marī vēḍigā undi.", "ipa": "mariː ʋeːɖiɡaː und̪i", "bases": [{"word": "వేడిగా", "base": "వేడి", "reading": "vēḍi"}, {"word": "ఉంది", "base": "ఉండడం", "reading": "uṇḍaḍam"}]},
+      {"target": "ఇవాళ చాలా వేడిగా ఉంది.", "reading": "ivāḷa cālā vēḍigā uṁdi.", "ipa": "iʋaːɭa t͡ʃaːlaː ʋeːɖiɡaː und̪i", "bases": [{"word": "వేడిగా", "base": "వేడి", "reading": "vēḍi"}, {"word": "ఉంది", "base": "ఉండు", "reading": "uṇḍu"}, {"word": "ఇవాళ", "base": "ఇవాళ", "reading": "ivāḷa"}, {"word": "చాలా", "base": "చాలా", "reading": "cālā"}]}
+    ]
   - id: "te-0506"
     target: "చల్లని"
     reading: "callani"
     ipa: "tʃallani"
     pos: "adj"
+    "examples": [
+      {"target": "కిటికీ నుంచి చల్లని గాలి వస్తోంది.", "reading": "kiṭikī nuṁci callani gāli vastōṁdi.", "ipa": "kiʈiki nunt͡ʃi t͡ʃalːani ɡaːli ʋast̪oːnd̪i", "bases": [{"word": "వస్తోంది", "base": "వచ్చు", "reading": "vaccu"}, {"word": "కిటికీ", "base": "కిటికీ", "reading": "kiṭikī"}, {"word": "నుంచి", "base": "నుంచి", "reading": "nuṁci"}]}
+    ]
   - id: "te-0507"
     target: "అందమైన"
     reading: "andamaina"
@@ -51,11 +74,17 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ఆలయంలో అందమైన శిల్పాలు ఉన్నాయి.", "reading": "ālayaṁlō andamaina śilpālu unnāyi.", "ipa": "aːlajamloː and̪amaina ʃilpaːlu unnaːji", "bases": [{"word": "ఆలయంలో", "base": "ఆలయం", "reading": "ālayaṁ"}, {"word": "అందమైన", "base": "అందం", "reading": "andaṁ"}, {"word": "శిల్పాలు", "base": "శిల్పం", "reading": "śilpaṁ"}, {"word": "ఉన్నాయి", "base": "ఉండడం", "reading": "uṇḍaḍaṁ"}]}
+    ]
   - id: "te-0508"
     target: "శుభ్రమైన"
     reading: "śubhramaina"
     ipa: "ʃubʱramaina"
     pos: "adj"
+    "examples": [
+      {"target": "గాయానికి శుభ్రమైన బ్యాండేజ్ కట్టండి.", "reading": "gāyāniki śubhramaina byāṇḍēj kaṭṭaṇḍi.", "ipa": "ɡaːjaːniki ʃubʱramaina bjaːɳɖeːdʒ kaʈʈaɳɖi", "bases": [{"word": "గాయానికి", "base": "గాయం", "reading": "gāyāniki"}, {"word": "శుభ్రమైన", "base": "శుభ్రం", "reading": "śubhramaina"}, {"word": "బ్యాండేజ్", "base": "బ్యాండేజ్", "reading": "byāṇḍēj"}, {"word": "కట్టండి", "base": "కట్టడం", "reading": "kaṭṭaṇḍi"}]}
+    ]
   - id: "te-0509"
     target: "ఇది మంచి పుస్తకం."
     reading: "idi mañci pustakaṁ."
