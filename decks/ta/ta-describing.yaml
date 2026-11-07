@@ -1,0 +1,162 @@
+schema: 1
+id: "ta-describing"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "describing"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0167"
+    target: "பெரிய"
+    reading: "periya"
+    ipa: "perija"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பெரிய வீடு."
+        reading: "itu periya vīṭu."
+        ipa: "it̪u perija ʋiːʈu."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", base: "பெரிய", reading: "periya" }, { word: "வீடு", ref: "ta-0009" }]
+      - target: "அது பெரிய காடு."
+        reading: "atu periya kāṭu."
+        ipa: "at̪u perija kaːʈu."
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "பெரிய", base: "பெரிய", reading: "periya" }, { word: "காடு", ref: "ta-0032" }]
+  - id: "ta-0168"
+    target: "சின்ன"
+    reading: "ciṉṉa"
+    ipa: "sinːa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சின்ன வீடு."
+        reading: "itu ciṉṉa vīṭu."
+        ipa: "it̪u sinːa ʋiːʈu."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சின்ன", base: "சின்ன", reading: "ciṉṉa" }, { word: "வீடு", ref: "ta-0009" }]
+      - target: "அவள் சின்ன குழந்தை."
+        reading: "avaḷ ciṉṉa kuḻantai."
+        ipa: "aʋaɭ sinːa kuɻant̪aj."
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "சின்ன", base: "சின்ன", reading: "ciṉṉa" }, { word: "குழந்தை", ref: "ta-0084" }]
+  - id: "ta-0169"
+    target: "நல்ல"
+    reading: "nalla"
+    ipa: "nalːa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நல்ல பால்."
+        reading: "itu nalla pāl."
+        ipa: "it̪u nalːa paːl."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நல்ல", base: "நல்ல", reading: "nalla" }, { word: "பால்", ref: "ta-0036" }]
+      - target: "அவர் நல்ல நண்பன்."
+        reading: "avar nalla naṇpaṉ."
+        ipa: "aʋar nalːa naɳpan."
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "நல்ல", base: "நல்ல", reading: "nalla" }, { word: "நண்பன்", ref: "ta-0113" }]
+  - id: "ta-0170"
+    target: "கெட்ட"
+    reading: "keṭṭa"
+    ipa: "keʈːa"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது கெட்ட கறி."
+        reading: "itu keṭṭa kaṟi."
+        ipa: "it̪u keʈːa kaɾi."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கெட்ட", base: "கெட்ட", reading: "keṭṭa" }, { word: "கறி", ref: "ta-0039" }]
+      - target: "அது கெட்ட பெயர்."
+        reading: "atu keṭṭa peyar."
+        ipa: "at̪u keʈːa pejar."
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "கெட்ட", base: "கெட்ட", reading: "keṭṭa" }, { word: "பெயர்", ref: "ta-0110" }]
+  - id: "ta-0171"
+    target: "புதிய"
+    reading: "putiya"
+    ipa: "put̪ija"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது புதிய வீடு."
+        reading: "itu putiya vīṭu."
+        ipa: "it̪u put̪ija ʋiːʈu."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புதிய", base: "புதிய", reading: "putiya" }, { word: "வீடு", ref: "ta-0009" }]
+      - target: "அவள் புதிய நண்பி."
+        reading: "avaḷ putiya naṇpi."
+        ipa: "aʋaɭ put̪ija naɳpi."
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "புதிய", base: "புதிய", reading: "putiya" }, { word: "நண்பி", ref: "ta-0114" }]
+  - id: "ta-0172"
+    target: "பழைய"
+    reading: "paḻaiya"
+    ipa: "paɻajja"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அது பழைய பால்."
+        reading: "atu paḻaiya pāl."
+        ipa: "at̪u paɻajja paːl."
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "பழைய", base: "பழைய", reading: "paḻaiya" }, { word: "பால்", ref: "ta-0036" }]
+      - target: "அவன் பழைய நண்பன்."
+        reading: "avaṉ paḻaiya naṇpaṉ."
+        ipa: "aʋan paɻajja naɳpan."
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "பழைய", base: "பழைய", reading: "paḻaiya" }, { word: "நண்பன்", ref: "ta-0113" }]
+  - id: "ta-0173"
+    target: "சூடான"
+    reading: "cūṭāṉa"
+    ipa: "suːʈaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சூடான கறி."
+        reading: "itu cūṭāṉa kaṟi."
+        ipa: "it̪u suːʈaːna kaɾi."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சூடான", base: "சூடான", reading: "cūṭāṉa" }, { word: "கறி", ref: "ta-0039" }]
+      - target: "இது சூடான பால்."
+        reading: "itu cūṭāṉa pāl."
+        ipa: "it̪u suːʈaːna paːl."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சூடான", base: "சூடான", reading: "cūṭāṉa" }, { word: "பால்", ref: "ta-0036" }]
+  - id: "ta-0174"
+    target: "குளிரான"
+    reading: "kuḷirāṉa"
+    ipa: "kuɭiraːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது குளிரான காற்று."
+        reading: "itu kuḷirāṉa kāṟṟu."
+        ipa: "it̪u kuɭiraːna kaːɾːu."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "குளிரான", base: "குளிரான", reading: "kuḷirāṉa" }, { word: "காற்று", base: "காற்று", reading: "kāṟṟu" }]
+      - target: "இன்று குளிரான மாலை."
+        reading: "iṉṟu kuḷirāṉa mālai."
+        ipa: "inɾu kuɭiraːna maːlaj."
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "குளிரான", base: "குளிரான", reading: "kuḷirāṉa" }, { word: "மாலை", ref: "ta-0153" }]
+  - id: "ta-0175"
+    target: "அழகான"
+    reading: "aḻakāṉa"
+    ipa: "aɻakaːna"
+    pos: "adj"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் அழகான மகன்."
+        reading: "avar aḻakāṉa makaṉ."
+        ipa: "aʋar aɻakaːna makan."
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "அழகான", base: "அழகான", reading: "aḻakāṉa" }, { word: "மகன்", ref: "ta-0078" }]
+      - target: "அவள் அழகான குழந்தை."
+        reading: "avaḷ aḻakāṉa kuḻantai."
+        ipa: "aʋaɭ aɻakaːna kuɻant̪aj."
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "அழகான", base: "அழகான", reading: "aḻakāṉa" }, { word: "குழந்தை", ref: "ta-0084" }]

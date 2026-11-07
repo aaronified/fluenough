@@ -25,3 +25,11 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-0107 | ta-numbers-1-20 | Set card (closed group): is the list of members right? | Haiku builder | 2026-11-05 or 2026-11-06 |
 | ta-0157 | ta-time | Set card (closed group): is the list of members right? | Haiku builder | 2026-11-05 or 2026-11-06 |
 | course-wide | all ta decks | Every Tamil reading and broad IPA is hand-written (no Tamil table in tools/transcribe.py): does each one need a check? | Haiku builder | 2026-11-05 or 2026-11-06 |
+| ta-0166 | ta-quantities | ரொம்ப (romba, very): is it natural in written or only spoken Tamil, and is it the right word for 'very' before an adjective? | Haiku builder | 2026-11-07 |
+| ta-0160 | ta-quantities | குறைவு (kuṟaivu, less): part of speech is 'other' in the deck; should it be noun or adjective? | Haiku builder | 2026-11-07 |
+| ta-0162 | ta-quantities | பாதி (pāti, half): gender n is set; is that right for a quantity used before a verb? | Haiku builder | 2026-11-07 |
+| unit-level | ta-quantities | The broad IPA was made from each reading by a simple rule that does not write voicing (k, t, p between vowels). Can it be checked? | Haiku builder | 2026-11-07 |
+| unit-level | ta-describing | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked? | Haiku builder | 2026-11-07 |
+| unit-level | ta-location | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked? | Haiku builder | 2026-11-07 |
+| unit-level | ta-more-verbs | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked? | Haiku builder | 2026-11-07 |
+| unit-level | ta-describing | The adjectives are shown as 'adj' with their pre-noun form (பெரிய for பெரு); is that the right way to teach them, or should the dictionary form be the card? | Haiku builder | 2026-11-07 |

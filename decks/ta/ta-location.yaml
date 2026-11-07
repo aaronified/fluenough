@@ -1,0 +1,145 @@
+schema: 1
+id: "ta-location"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "location"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0176"
+    target: "மேலே"
+    reading: "mēlē"
+    ipa: "meːleː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது மேலே இருக்கிறது."
+        reading: "itu mēlē irukkiṟatu."
+        ipa: "it̪u meːleː irukːiɾat̪u."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மேலே", base: "மேலே", reading: "mēlē" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+      - target: "நான் மேலே போகிறேன்."
+        reading: "nāṉ mēlē pōkiṟēṉ."
+        ipa: "naːn meːleː poːkiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மேலே", base: "மேலே", reading: "mēlē" }, { word: "போகிறேன்", base: "போ", reading: "pōkiṟēṉ" }]
+  - id: "ta-0177"
+    target: "கீழே"
+    reading: "kīḻē"
+    ipa: "kiːɻeː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது கீழே இருக்கிறது."
+        reading: "itu kīḻē irukkiṟatu."
+        ipa: "it̪u kiːɻeː irukːiɾat̪u."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கீழே", base: "கீழே", reading: "kīḻē" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+      - target: "அவர் கீழே போகிறார்."
+        reading: "avar kīḻē pōkiṟār."
+        ipa: "aʋar kiːɻeː poːkiɾaːr."
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "கீழே", base: "கீழே", reading: "kīḻē" }, { word: "போகிறார்", base: "போ", reading: "pōkiṟār" }]
+  - id: "ta-0178"
+    target: "உள்ளே"
+    reading: "uḷḷē"
+    ipa: "uɭːeː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் உள்ளே இருக்கிறாள்."
+        reading: "avaḷ uḷḷē irukkiṟāḷ."
+        ipa: "aʋaɭ uɭːeː irukːiɾaːɭ."
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "உள்ளே", base: "உள்ளே", reading: "uḷḷē" }, { word: "இருக்கிறாள்", base: "இரு", reading: "irukkiṟāḷ" }]
+      - target: "நான் உள்ளே வருகிறேன்."
+        reading: "nāṉ uḷḷē varukiṟēṉ."
+        ipa: "naːn uɭːeː ʋarukiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "உள்ளே", base: "உள்ளே", reading: "uḷḷē" }, { word: "வருகிறேன்", base: "வா", reading: "varukiṟēṉ" }]
+  - id: "ta-0179"
+    target: "வெளியே"
+    reading: "veḷiyē"
+    ipa: "ʋeɭijeː"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாங்கள் வெளியே போகிறோம்."
+        reading: "nāṅkaḷ veḷiyē pōkiṟōm."
+        ipa: "naːŋkaɭ ʋeɭijeː poːkiɾoːm."
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "வெளியே", base: "வெளியே", reading: "veḷiyē" }, { word: "போகிறோம்", base: "போ", reading: "pōkiṟōm" }]
+      - target: "அவன் வெளியே இருக்கிறான்."
+        reading: "avaṉ veḷiyē irukkiṟāṉ."
+        ipa: "aʋan ʋeɭijeː irukːiɾaːn."
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "வெளியே", base: "வெளியே", reading: "veḷiyē" }, { word: "இருக்கிறான்", base: "இரு", reading: "irukkiṟāṉ" }]
+  - id: "ta-0180"
+    target: "முன்னால்"
+    reading: "muṉṉāl"
+    ipa: "munːaːl"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் முன்னால் நிற்கிறேன்."
+        reading: "nāṉ muṉṉāl niṟkiṟēṉ."
+        ipa: "naːn munːaːl niɾkiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "முன்னால்", base: "முன்னால்", reading: "muṉṉāl" }, { word: "நிற்கிறேன்", base: "நில்", reading: "niṟkiṟēṉ" }]
+      - target: "அவர் முன்னால் இருக்கிறார்."
+        reading: "avar muṉṉāl irukkiṟār."
+        ipa: "aʋar munːaːl irukːiɾaːr."
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "முன்னால்", base: "முன்னால்", reading: "muṉṉāl" }, { word: "இருக்கிறார்", base: "இரு", reading: "irukkiṟār" }]
+  - id: "ta-0181"
+    target: "பின்னால்"
+    reading: "piṉṉāl"
+    ipa: "pinːaːl"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் பின்னால் இருக்கிறாள்."
+        reading: "avaḷ piṉṉāl irukkiṟāḷ."
+        ipa: "aʋaɭ pinːaːl irukːiɾaːɭ."
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "பின்னால்", base: "பின்னால்", reading: "piṉṉāl" }, { word: "இருக்கிறாள்", base: "இரு", reading: "irukkiṟāḷ" }]
+      - target: "குழந்தை பின்னால் வருகிறது."
+        reading: "kuḻantai piṉṉāl varukiṟatu."
+        ipa: "kuɻant̪aj pinːaːl ʋarukiɾat̪u."
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "பின்னால்", base: "பின்னால்", reading: "piṉṉāl" }, { word: "வருகிறது", base: "வா", reading: "varukiṟatu" }]
+  - id: "ta-0182"
+    target: "பக்கத்தில்"
+    reading: "pakkattil"
+    ipa: "pakːat̪ːil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கடை பக்கத்தில் இருக்கிறது."
+        reading: "kaṭai pakkattil irukkiṟatu."
+        ipa: "kaʈaj pakːat̪ːil irukːiɾat̪u."
+        bases: [{ word: "கடை", base: "கடை", reading: "kaṭai" }, { word: "பக்கத்தில்", base: "பக்கத்தில்", reading: "pakkattil" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+      - target: "நான் பக்கத்தில் நிற்கிறேன்."
+        reading: "nāṉ pakkattil niṟkiṟēṉ."
+        ipa: "naːn pakːat̪ːil niɾkiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பக்கத்தில்", base: "பக்கத்தில்", reading: "pakkattil" }, { word: "நிற்கிறேன்", base: "நில்", reading: "niṟkiṟēṉ" }]
+  - id: "ta-0183"
+    target: "அருகில்"
+    reading: "arukil"
+    ipa: "arukil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வீடு அருகில் இருக்கிறது."
+        reading: "vīṭu arukil irukkiṟatu."
+        ipa: "ʋiːʈu arukil irukːiɾat̪u."
+        bases: [{ word: "வீடு", ref: "ta-0009" }, { word: "அருகில்", base: "அருகில்", reading: "arukil" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+      - target: "நீ அருகில் வா."
+        reading: "nī arukil vā."
+        ipa: "niː arukil ʋaː."
+        bases: [{ word: "நீ", ref: "ta-0057" }, { word: "அருகில்", base: "அருகில்", reading: "arukil" }, { word: "வா", ref: "ta-0010" }]

@@ -1,0 +1,163 @@
+schema: 1
+id: "ta-quantities"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "quantities"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0158"
+    target: "கொஞ்சம்"
+    reading: "koñcam"
+    ipa: "koɲsam"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கொஞ்சம் சாப்பிடு."
+        reading: "koñcam cāppiṭu."
+        ipa: "koɲsam saːpːiʈu."
+        bases: [{ word: "கொஞ்சம்", base: "கொஞ்சம்", reading: "koñcam" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+      - target: "கொஞ்சம் தண்ணீர் குடி."
+        reading: "koñcam taṇṇīr kuṭi."
+        ipa: "koɲsam t̪aɳːiːr kuʈi."
+        bases: [{ word: "கொஞ்சம்", base: "கொஞ்சம்", reading: "koñcam" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "குடி", ref: "ta-0120" }]
+  - id: "ta-0159"
+    target: "அதிகம்"
+    reading: "atikam"
+    ipa: "at̪ikam"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அதிகம் வாங்கு."
+        reading: "atikam vāṅku."
+        ipa: "at̪ikam ʋaːŋku."
+        bases: [{ word: "அதிகம்", base: "அதிகம்", reading: "atikam" }, { word: "வாங்கு", ref: "ta-0129" }]
+      - target: "இது அதிகம்."
+        reading: "itu atikam."
+        ipa: "it̪u at̪ikam."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "அதிகம்", base: "அதிகம்", reading: "atikam" }]
+  - id: "ta-0160"
+    target: "குறைவு"
+    reading: "kuṟaivu"
+    ipa: "kuɾajʋu"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது குறைவு."
+        reading: "itu kuṟaivu."
+        ipa: "it̪u kuɾajʋu."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "குறைவு", base: "குறைவு", reading: "kuṟaivu" }]
+      - target: "குறைவாக பேசு."
+        reading: "kuṟaivāka pēcu."
+        ipa: "kuɾajʋaːka peːsu."
+        bases: [{ word: "குறைவாக", base: "குறைவு", reading: "kuṟaivāka" }, { word: "பேசு", ref: "ta-0123" }]
+  - id: "ta-0161"
+    target: "போதும்"
+    reading: "pōtum"
+    ipa: "poːt̪um"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது போதும்."
+        reading: "itu pōtum."
+        ipa: "it̪u poːt̪um."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "போதும்", base: "போதும்", reading: "pōtum" }]
+      - target: "தண்ணீர் போதும்."
+        reading: "taṇṇīr pōtum."
+        ipa: "t̪aɳːiːr poːt̪um."
+        bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "போதும்", base: "போதும்", reading: "pōtum" }]
+  - id: "ta-0162"
+    target: "பாதி"
+    reading: "pāti"
+    ipa: "paːt̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பாதி சாப்பிடு."
+        reading: "pāti cāppiṭu."
+        ipa: "paːt̪i saːpːiʈu."
+        bases: [{ word: "பாதி", base: "பாதி", reading: "pāti" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+      - target: "இது பாதி."
+        reading: "itu pāti."
+        ipa: "it̪u paːt̪i."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பாதி", base: "பாதி", reading: "pāti" }]
+  - id: "ta-0163"
+    target: "எல்லாம்"
+    reading: "ellām"
+    ipa: "elːaːm"
+    pos: "pronoun"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எல்லாம் சாப்பிடு."
+        reading: "ellām cāppiṭu."
+        ipa: "elːaːm saːpːiʈu."
+        bases: [{ word: "எல்லாம்", base: "எல்லாம்", reading: "ellām" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+      - target: "நாங்கள் எல்லாம் போகிறோம்."
+        reading: "nāṅkaḷ ellām pōkiṟōm."
+        ipa: "naːŋkaɭ elːaːm poːkiɾoːm."
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "எல்லாம்", base: "எல்லாம்", reading: "ellām" }, { word: "போகிறோம்", base: "போ", reading: "pōkiṟōm" }]
+  - id: "ta-0164"
+    target: "மட்டும்"
+    reading: "maṭṭum"
+    ipa: "maʈːum"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது மட்டும்."
+        reading: "itu maṭṭum."
+        ipa: "it̪u maʈːum."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மட்டும்", base: "மட்டும்", reading: "maṭṭum" }]
+      - target: "நான் மட்டும் வருகிறேன்."
+        reading: "nāṉ maṭṭum varukiṟēṉ."
+        ipa: "naːn maʈːum ʋarukiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மட்டும்", base: "மட்டும்", reading: "maṭṭum" }, { word: "வருகிறேன்", base: "வா", reading: "varukiṟēṉ" }]
+  - id: "ta-0165"
+    target: "ஒவ்வொரு"
+    reading: "ovvoru"
+    ipa: "oʋːoru"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஒவ்வொரு நாளும் குடி."
+        reading: "ovvoru nāḷum kuṭi."
+        ipa: "oʋːoru naːɭum kuʈi."
+        bases: [{ word: "ஒவ்வொரு", base: "ஒவ்வொரு", reading: "ovvoru" }, { word: "நாளும்", base: "நாள்", reading: "nāḷum" }, { word: "குடி", ref: "ta-0120" }]
+      - target: "ஒவ்வொருவரும் வாங்கு."
+        reading: "ovvoruvarum vāṅku."
+        ipa: "oʋːoruʋarum ʋaːŋku."
+        bases: [{ word: "ஒவ்வொருவரும்", base: "ஒவ்வொருவர்", reading: "ovvoruvarum" }, { word: "வாங்கு", ref: "ta-0129" }]
+  - id: "ta-0166"
+    target: "ரொம்ப"
+    reading: "romba"
+    ipa: "romba"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது ரொம்ப நல்லது."
+        reading: "itu romba nallatu."
+        ipa: "it̪u romba nalːat̪u."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ரொம்ப", base: "ரொம்ப", reading: "romba" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "இது ரொம்ப அதிகம்."
+        reading: "itu romba atikam."
+        ipa: "it̪u romba at̪ikam."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ரொம்ப", base: "ரொம்ப", reading: "romba" }, { word: "அதிகம்", ref: "ta-0159" }]
