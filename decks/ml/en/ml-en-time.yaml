@@ -42,12 +42,10 @@ cards:
     examples:
       "ഇന്നലെ വെള്ളം ഇല്ല.":
         native: "There was no water yesterday."
-        bases:
-          "ഇന്നലെ": "yesterday"
-      "ഇന്നലെ ഇല്ല.":
-        native: "Not yesterday."
-        bases:
-          "ഇന്നലെ": "yesterday"
+        bases: {}
+      "ഇന്നലെ ഞാൻ ഇവിടെ ഉണ്ടായിരുന്നു.":
+        native: "I was here yesterday."
+        bases: {"ഉണ്ടായിരുന്നു": "was"}
   "ml-0130":
     native: "in the morning"
     notes:

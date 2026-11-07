@@ -77,3 +77,23 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ml-grammar-be, ml-grammar-have, ml-grammar-present, ml-grammar-future, ml-grammar-likes, ml-grammar-needs, ml-grammar-demonstratives, ml-grammar-continuous | Grammar decks (kind grammar) with a few chosen lemmas each: ആണ്, ഉണ്ട്, four common verbs in the present and the future, ഇഷ്ടം, വേണം, ഇത് and അത്, and the continuous. Readings from tools/transcribe.py. Please check every form, the negatives (അല്ല, ഇല്ല, ഇല്ല, വേണ്ട, ഇഷ്ടമല്ല) and the continuous forms (പോയിക്കൊണ്ടിരിക്കുന്നു and the rest). | Haiku builder | 2026-11-07 |
 | unit-level | ml-grammar-noun-forms, ml-grammar-pronouns, ml-grammar-questions, ml-grammar-postpositions, ml-grammar-gender-number, ml-grammar-nouns, ml-grammar-conjunctions, ml-grammar-differences, ml-grammar-sentences | Not built: these units need a Malayalam morphology generator for their forms (case endings, plurals, oblique stems and sandhi). Open item for a later Sonnet task: a rules table over every noun, verb and adjective the course teaches is the target, and it is not written by hand. | Haiku builder | 2026-11-07 |
 | unit-level | ml-quantities-sentences, ml-clothes-sentences, ml-describing-sentences, ml-pronouns-sentences, ml-verbs-sentences, ml-noun-forms-sentences | Six sentence decks that depend on grammar units not built yet (their units are listed as not built above). Phrase cards with refs to word cards; readings and IPA from tools/transcribe.py. No confusables yet. Please check each sentence. | Haiku builder | 2026-11-07 |
+| ml-0626 | ml-script-consonants | റ is a trilled r; ര is a tapped r. Its IPA is ɾ for both in the tool's output. Should റ carry a trill mark, and is the note's description of the trill right? | Haiku builder | 2026-11-07 |
+| ml-0599 | ml-script-consonants | ഛ: the note calls it aspirated ch; do the two example sentences show the aspiration? | Haiku builder | 2026-11-07 |
+| ml-0019 | ml-phrasebook (published) | ശൗചാലയം is written with ച്ച; the reading and IPA show cc. Is the IPA right, and should the published card change? | Haiku builder | 2026-11-07 |
+| ml-0190 | ml-work | ഡോക്ടർ genders: the card is masculine, but the course has female doctor examples. Is the gender right? | Haiku builder | 2026-11-07 |
+| ml-0196 | ml-work | എഞ്ചിനീയർ: the gender is masculine; is the card neutral, or does a woman engineer use the same word? | Haiku builder | 2026-11-07 |
+| ml-0191 | ml-work | നഴ്സ്: the gender is feminine. Is the card neutral, or masculine for a male nurse? | Haiku builder | 2026-11-07 |
+| ml-0197 | ml-work | A doubled ക in the reading: is the doubling right for this word? | Haiku builder | 2026-11-07 |
+| ml-0185 | ml-location, ml-places | ഓഫീസ് is read ōfīs; is it ōphīs in the usual pronunciation? | Haiku builder | 2026-11-07 |
+| ml-0259 | ml-transport | സ്റ്റേഷൻ: the reading uses ś; is the sound ṣ (retroflex) instead? | Haiku builder | 2026-11-07 |
+| ml-0553 | ml-places-sentences | An example sentence that may be unnatural. Please check it is natural Malayalam. | Haiku builder | 2026-11-07 |
+| ml-0706 | ml-sentences (dependent) | An example sentence that may be unnatural. Please check it. | Haiku builder | 2026-11-07 |
+| ml-0308 | ml-body | An example sentence that may be unnatural. Please check it. | Haiku builder | 2026-11-07 |
+| ml-0246 | ml-directions | An example sentence or gloss that may be doubtful. Please check it. | Haiku builder | 2026-11-07 |
+| ml-0616 | ml-script-consonants | An example sentence that may be doubtful. Please check it. | Haiku builder | 2026-11-07 |
+| ml-0035 | ml-questions | An example sentence or gloss that may be doubtful. Please check it. | Haiku builder | 2026-11-07 |
+| ml-0457 | ml-animals | Example 2 may be off the word (its sentence does not show the card's own sense). Please check. | Haiku builder | 2026-11-07 |
+| ml-0458 | ml-animals | Example 2 may be off the word (its sentence does not show the card's own sense). Please check. | Haiku builder | 2026-11-07 |
+| ml-0084 | ml-family | അമ്മായി (aunt): is it the right gloss, and the right gender? | Haiku builder | 2026-11-07 |
+| ml-0673 | ml-sound-differences | This pair was vellaṁ (വെല്ലം) with the word ശർക്കര (sharkkara) as its common name, not the word jaggery in general. Is വെല്ലം the right partner? | Haiku builder | 2026-11-07 |
+| unit-level | ml-noun-forms-sentences, ml-sound-differences | The noun-forms sentence deck uses plain nouns; its plural forms wait for the grammar units not built. The sound-differences deck has six words in four pairs (twelve planned); the retroflex t and d pairs are still to find. | Haiku builder | 2026-11-07 |

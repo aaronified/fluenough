@@ -9,21 +9,21 @@ tags: ["beginner", "unreviewed"]
 cards:
   - id: "ml-0127"
     target: "ഇന്ന്"
-    reading: "innə"
-    ipa: "innə"
+    reading: "inn"
+    ipa: "inn"
     pos: "adv"
     notes:
       - { id: "n1", kind: "usage" }
     bases: "self"
     examples:
       - target: "ഇന്ന് വരൂ."
-        reading: "innə varū."
-        ipa: "innə ʋəɾuː"
-        bases: [{ word: "ഇന്ന്", base: "ഇന്ന്", reading: "innə" }, { word: "വരൂ", ref: "ml-0010" }]
+        reading: "inn varū."
+        ipa: "inn ʋəɾuː"
+        bases: [{ word: "ഇന്ന്", base: "ഇന്ന്", reading: "inn" }, { word: "വരൂ", ref: "ml-0010" }]
       - target: "ഇന്ന് ഇവിടെ."
-        reading: "innə iviṭe."
-        ipa: "innə iʋiʈe"
-        bases: [{ word: "ഇന്ന്", base: "ഇന്ന്", reading: "innə" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+        reading: "inn iviṭe."
+        ipa: "inn iʋiʈe"
+        bases: [{ word: "ഇന്ന്", base: "ഇന്ന്", reading: "inn" }, { word: "ഇവിടെ", ref: "ml-0048" }]
   - id: "ml-0128"
     target: "നാളെ"
     reading: "nāḷe"
@@ -53,11 +53,11 @@ cards:
       - target: "ഇന്നലെ വെള്ളം ഇല്ല."
         reading: "innale veḷḷaṁ illa."
         ipa: "innəle ʋeɭɭam illa"
-        bases: [{ word: "ഇന്നലെ", base: "ഇന്നലെ", reading: "innale" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "ഇല്ല", ref: "ml-0002" }]
-      - target: "ഇന്നലെ ഇല്ല."
-        reading: "innale illa."
-        ipa: "innəle illa"
-        bases: [{ word: "ഇന്നലെ", base: "ഇന്നലെ", reading: "innale" }, { word: "ഇല്ല", ref: "ml-0002" }]
+        bases: [{ word: "ഇന്നലെ", ref: "ml-0129" }, { word: "വെള്ളം", ref: "ml-0005" }, { word: "ഇല്ല", ref: "ml-0002" }]
+      - target: "ഇന്നലെ ഞാൻ ഇവിടെ ഉണ്ടായിരുന്നു."
+        reading: "innale ñāṉ iviṭe uṇṭāyirunnu."
+        ipa: "innəle ɲaːn iʋiʈe uɳʈaːjiɾunnu"
+        bases: [{ word: "ഇന്നലെ", ref: "ml-0129" }, { word: "ഞാൻ", ref: "ml-0003" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ടായിരുന്നു", base: "ഉണ്ടായിരുന്നു", reading: "uṇṭāyirunnu" }]
   - id: "ml-0130"
     target: "രാവിലെ"
     reading: "rāvile"
@@ -126,8 +126,8 @@ cards:
         ipa: "ɾaːt̪ɾi uɾəŋŋuː"
         bases: [{ word: "രാത്രി", base: "രാത്രി", reading: "rātri" }, { word: "ഉറങ്ങൂ", ref: "ml-0121" }]
       - target: "ഇന്ന് രാത്രി."
-        reading: "innə rātri."
-        ipa: "innə ɾaːt̪ɾi"
+        reading: "inn rātri."
+        ipa: "inn ɾaːt̪ɾi"
         bases: [{ word: "ഇന്ന്", ref: "ml-0127" }, { word: "രാത്രി", base: "രാത്രി", reading: "rātri" }]
   - id: "ml-0134"
     target: "ഇപ്പോൾ"
@@ -167,7 +167,7 @@ cards:
   - id: "ml-0136"
     target: "മിനിറ്റ്"
     reading: "miniṟṟ"
-    ipa: "miniɾɾ"
+    ipa: "minitt"
     pos: "noun"
     gender: "n"
     notes:
@@ -176,11 +176,11 @@ cards:
     examples:
       - target: "ഒരു മിനിറ്റ്."
         reading: "oru miniṟṟ."
-        ipa: "oɾu miniɾɾ"
+        ipa: "oɾu minitt"
         bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "മിനിറ്റ്", base: "മിനിറ്റ്", reading: "miniṟṟ" }]
       - target: "രണ്ട് മിനിറ്റ്."
         reading: "raṇṭ miniṟṟ."
-        ipa: "ɾaɳʈ miniɾɾ"
+        ipa: "ɾaɳʈ minitt"
         bases: [{ word: "രണ്ട്", ref: "ml-0049" }, { word: "മിനിറ്റ്", base: "മിനിറ്റ്", reading: "miniṟṟ" }]
   - id: "ml-0137"
     target: "സമയം"

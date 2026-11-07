@@ -329,13 +329,10 @@ cards:
     examples:
       "തേനീച്ച കുത്തുന്നു.":
         native: "The bee stings."
-        bases:
-          "തേനീച്ച": "bee"
-          "കുത്തുന്നു": "stings"
-      "തേൻ മധുരമാണ്":
-        native: "Honey is sweet."
-        bases:
-          "തേൻ": "honey"
+        bases: {"കുത്തുന്നു": "stings"}
+      "തേനീച്ച ചെറുതാണ്.":
+        native: "The bee is small."
+        bases: {"ചെറുതാണ്": "is small"}
   "ml-0450":
     native: "tortoise"
     notes:
