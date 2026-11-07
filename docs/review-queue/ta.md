@@ -33,3 +33,9 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | unit-level | ta-location | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked? | Haiku builder | 2026-11-07 |
 | unit-level | ta-more-verbs | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked? | Haiku builder | 2026-11-07 |
 | unit-level | ta-describing | The adjectives are shown as 'adj' with their pre-noun form (பெரிய for பெரு); is that the right way to teach them, or should the dictionary form be the card? | Haiku builder | 2026-11-07 |
+| ta-0198 | ta-work | ஆசிரியர் (āciriyar, teacher): gender m is set; can a teacher be either m or f, and should the word be honorific-only? | Haiku builder | 2026-11-07 |
+| ta-0199 | ta-work | மருத்துவர் (maruttuvar, doctor): gender m is set; is that right for a doctor of either sex? | Haiku builder | 2026-11-07 |
+| ta-0201 | ta-work | தொழிலாளி (tolilāḷi, worker): gender m is set; is that right for a worker of either sex? | Haiku builder | 2026-11-07 |
+| ta-0233 | ta-directions | வடக்கு, தெற்கு, கிழக்கு, மேற்கு are glossed with பக்கம் for the direction phrase; are the bare compass words right as nouns? | Haiku builder | 2026-11-07 |
+| unit-level | ta-work to ta-transport | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked for these six units? | Haiku builder | 2026-11-07 |
+| unit-level | ta-numbers-big | Lakh and crore are written as one word with a noun after them: is the counting and the register right for Tamil? | Haiku builder | 2026-11-07 |

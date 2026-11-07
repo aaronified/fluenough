@@ -1,0 +1,189 @@
+schema: 1
+id: "ta-work"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "work"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0192"
+    target: "வேலை"
+    reading: "vēlai"
+    ipa: "ʋeːlaj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் வேலை செய்கிறேன்."
+        reading: "nāṉ vēlai ceykiṟēṉ."
+        ipa: "naːn ʋeːlaj sejkiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வேலை", base: "வேலை", reading: "vēlai" }, { word: "செய்கிறேன்", base: "செய்", reading: "ceykiṟēṉ" }]
+      - target: "இன்று வேலை இல்லை."
+        reading: "iṉṟu vēlai illai."
+        ipa: "inɾu ʋeːlaj ilːaj."
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "வேலை", base: "வேலை", reading: "vēlai" }, { word: "இல்லை", ref: "ta-0002" }]
+  - id: "ta-0193"
+    target: "அலுவலகம்"
+    reading: "aluvalakam"
+    ipa: "aluʋalakam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் அலுவலகம் போகிறேன்."
+        reading: "nāṉ aluvalakam pōkiṟēṉ."
+        ipa: "naːn aluʋalakam poːkiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அலுவலகம்", base: "அலுவலகம்", reading: "aluvalakam" }, { word: "போகிறேன்", base: "போ", reading: "pōkiṟēṉ" }]
+      - target: "அலுவலகம் அருகில் இருக்கிறது."
+        reading: "aluvalakam arukil irukkiṟatu."
+        ipa: "aluʋalakam arukil irukːiɾat̪u."
+        bases: [{ word: "அலுவலகம்", base: "அலுவலகம்", reading: "aluvalakam" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+  - id: "ta-0194"
+    target: "சம்பளம்"
+    reading: "campaḷam"
+    ipa: "sampaɭam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சம்பளம் போதும்."
+        reading: "campaḷam pōtum."
+        ipa: "sampaɭam poːt̪um."
+        bases: [{ word: "சம்பளம்", base: "சம்பளம்", reading: "campaḷam" }, { word: "போதும்", ref: "ta-0161" }]
+      - target: "இது பெரிய சம்பளம்."
+        reading: "itu periya campaḷam."
+        ipa: "it̪u perija sampaɭam."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0008" }, { word: "சம்பளம்", base: "சம்பளம்", reading: "campaḷam" }]
+  - id: "ta-0195"
+    target: "கூட்டம்"
+    reading: "kūṭṭam"
+    ipa: "kuːʈːam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று கூட்டம் இருக்கிறது."
+        reading: "iṉṟu kūṭṭam irukkiṟatu."
+        ipa: "inɾu kuːʈːam irukːiɾat̪u."
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "கூட்டம்", base: "கூட்டம்", reading: "kūṭṭam" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+      - target: "கூட்டம் நாளை."
+        reading: "kūṭṭam nāḷai."
+        ipa: "kuːʈːam naːɭaj."
+        bases: [{ word: "கூட்டம்", base: "கூட்டம்", reading: "kūṭṭam" }, { word: "நாளை", ref: "ta-0133" }]
+  - id: "ta-0196"
+    target: "கணினி"
+    reading: "kaṇiṉi"
+    ipa: "kaɳini"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது கணினி."
+        reading: "itu kaṇiṉi."
+        ipa: "it̪u kaɳini."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கணினி", base: "கணினி", reading: "kaṇiṉi" }]
+      - target: "நான் கணினி வாங்குகிறேன்."
+        reading: "nāṉ kaṇiṉi vāṅkukiṟēṉ."
+        ipa: "naːn kaɳini ʋaːŋkukiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கணினி", base: "கணினி", reading: "kaṇiṉi" }, { word: "வாங்குகிறேன்", base: "வாங்கு", reading: "vāṅkukiṟēṉ" }]
+  - id: "ta-0197"
+    target: "பணம்"
+    reading: "paṇam"
+    ipa: "paɳam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பணம் இல்லை."
+        reading: "paṇam illai."
+        ipa: "paɳam ilːaj."
+        bases: [{ word: "பணம்", base: "பணம்", reading: "paṇam" }, { word: "இல்லை", ref: "ta-0002" }]
+      - target: "பணம் வேண்டும்."
+        reading: "paṇam vēṇṭum."
+        ipa: "paɳam ʋeːɳʈum."
+        bases: [{ word: "பணம்", base: "பணம்", reading: "paṇam" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+  - id: "ta-0198"
+    target: "ஆசிரியர்"
+    reading: "āciriyar"
+    ipa: "aːsirijar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் ஆசிரியர்."
+        reading: "avar āciriyar."
+        ipa: "aʋar aːsirijar."
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "ஆசிரியர்", base: "ஆசிரியர்", reading: "āciriyar" }]
+      - target: "ஆசிரியர் வருகிறார்."
+        reading: "āciriyar varukiṟār."
+        ipa: "aːsirijar ʋarukiɾaːr."
+        bases: [{ word: "ஆசிரியர்", base: "ஆசிரியர்", reading: "āciriyar" }, { word: "வருகிறார்", base: "வா", reading: "varukiṟār" }]
+  - id: "ta-0199"
+    target: "மருத்துவர்"
+    reading: "maruttuvar"
+    ipa: "marut̪ːuʋar"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவர் மருத்துவர்."
+        reading: "avar maruttuvar."
+        ipa: "aʋar marut̪ːuʋar."
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "மருத்துவர்", base: "மருத்துவர்", reading: "maruttuvar" }]
+      - target: "மருத்துவர் அருகில் இருக்கிறார்."
+        reading: "maruttuvar arukil irukkiṟār."
+        ipa: "marut̪ːuʋar arukil irukːiɾaːr."
+        bases: [{ word: "மருத்துவர்", base: "மருத்துவர்", reading: "maruttuvar" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறார்", base: "இரு", reading: "irukkiṟār" }]
+  - id: "ta-0200"
+    target: "ஓய்வு"
+    reading: "ōyvu"
+    ipa: "oːjʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று ஓய்வு."
+        reading: "iṉṟu ōyvu."
+        ipa: "inɾu oːjʋu."
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "ஓய்வு", base: "ஓய்வு", reading: "ōyvu" }]
+      - target: "கொஞ்சம் ஓய்வு வேண்டும்."
+        reading: "koñcam ōyvu vēṇṭum."
+        ipa: "koɲsam oːjʋu ʋeːɳʈum."
+        bases: [{ word: "கொஞ்சம்", ref: "ta-0158" }, { word: "ஓய்வு", base: "ஓய்வு", reading: "ōyvu" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+  - id: "ta-0201"
+    target: "தொழிலாளி"
+    reading: "tolilāḷi"
+    ipa: "t̪olilaːɭi"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவன் தொழிலாளி."
+        reading: "avaṉ tolilāḷi."
+        ipa: "aʋan t̪olilaːɭi."
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "தொழிலாளி", base: "தொழிலாளி", reading: "tolilāḷi" }]
+      - target: "தொழிலாளி வேலை செய்கிறான்."
+        reading: "tolilāḷi vēlai ceykiṟāṉ."
+        ipa: "t̪olilaːɭi ʋeːlaj sejkiɾaːn."
+        bases: [{ word: "தொழிலாளி", base: "தொழிலாளி", reading: "tolilāḷi" }, { word: "வேலை", ref: "ta-0192" }, { word: "செய்கிறான்", base: "செய்", reading: "ceykiṟāṉ" }]

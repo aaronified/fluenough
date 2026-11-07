@@ -1,0 +1,117 @@
+schema: 1
+id: "ta-market"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "market"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0224"
+    target: "சந்தை"
+    reading: "cantai"
+    ipa: "sant̪aj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சந்தை பக்கத்தில் இருக்கிறது."
+        reading: "cantai pakkattil irukkiṟatu."
+        ipa: "sant̪aj pakːat̪ːil irukːiɾat̪u."
+        bases: [{ word: "சந்தை", base: "சந்தை", reading: "cantai" }, { word: "பக்கத்தில்", ref: "ta-0182" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+      - target: "நான் சந்தை போகிறேன்."
+        reading: "nāṉ cantai pōkiṟēṉ."
+        ipa: "naːn sant̪aj poːkiɾeːn."
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சந்தை", base: "சந்தை", reading: "cantai" }, { word: "போகிறேன்", base: "போ", reading: "pōkiṟēṉ" }]
+  - id: "ta-0225"
+    target: "விலை"
+    reading: "vilai"
+    ipa: "ʋilaj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விலை அதிகம்."
+        reading: "vilai atikam."
+        ipa: "ʋilaj at̪ikam."
+        bases: [{ word: "விலை", base: "விலை", reading: "vilai" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "விலை குறைவு."
+        reading: "vilai kuṟaivu."
+        ipa: "ʋilaj kuɾajʋu."
+        bases: [{ word: "விலை", base: "விலை", reading: "vilai" }, { word: "குறைவு", ref: "ta-0160" }]
+  - id: "ta-0226"
+    target: "ரூபாய்"
+    reading: "rūpāy"
+    ipa: "ruːpaːj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அது இருபது ரூபாய்."
+        reading: "atu irupatu rūpāy."
+        ipa: "at̪u irupat̪u ruːpaːj."
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "இருபது", ref: "ta-0106" }, { word: "ரூபாய்", base: "ரூபாய்", reading: "rūpāy" }]
+      - target: "பத்து ரூபாய் போதும்."
+        reading: "pattu rūpāy pōtum."
+        ipa: "pat̪ːu ruːpaːj poːt̪um."
+        bases: [{ word: "பத்து", ref: "ta-0096" }, { word: "ரூபாய்", base: "ரூபாய்", reading: "rūpāy" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-0227"
+    target: "தள்ளுபடி"
+    reading: "taḷḷupaṭi"
+    ipa: "t̪aɭːupaʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று தள்ளுபடி இருக்கிறது."
+        reading: "iṉṟu taḷḷupaṭi irukkiṟatu."
+        ipa: "inɾu t̪aɭːupaʈi irukːiɾat̪u."
+        bases: [{ word: "இன்று", ref: "ta-0144" }, { word: "தள்ளுபடி", base: "தள்ளுபடி", reading: "taḷḷupaṭi" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+      - target: "தள்ளுபடி அதிகம்."
+        reading: "taḷḷupaṭi atikam."
+        ipa: "t̪aɭːupaʈi at̪ikam."
+        bases: [{ word: "தள்ளுபடி", base: "தள்ளுபடி", reading: "taḷḷupaṭi" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-0228"
+    target: "பை"
+    reading: "pai"
+    ipa: "paj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பை."
+        reading: "itu pai."
+        ipa: "it̪u paj."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பை", base: "பை", reading: "pai" }]
+      - target: "பை மேலே வை."
+        reading: "pai mēlē vai."
+        ipa: "paj meːleː ʋaj."
+        bases: [{ word: "பை", base: "பை", reading: "pai" }, { word: "மேலே", ref: "ta-0176" }, { word: "வை", ref: "ta-0185" }]
+  - id: "ta-0229"
+    target: "எடை"
+    reading: "eṭai"
+    ipa: "eʈaj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எடை அதிகம்."
+        reading: "eṭai atikam."
+        ipa: "eʈaj at̪ikam."
+        bases: [{ word: "எடை", base: "எடை", reading: "eṭai" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "எடை குறைவு."
+        reading: "eṭai kuṟaivu."
+        ipa: "eʈaj kuɾajʋu."
+        bases: [{ word: "எடை", base: "எடை", reading: "eṭai" }, { word: "குறைவு", ref: "ta-0160" }]

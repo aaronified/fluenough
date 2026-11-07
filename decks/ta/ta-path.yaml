@@ -243,12 +243,14 @@ units:
       - { id: "shop-labels", text: { "en": "Labels in a shop: this here, that there" } }
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "ta-work", theme: "work", words: 19 }
+  - decks: ["ta-work", "*"]
+    words: 10
     listening_passages:
       - { id: "what-do-you-do", text: { "en": "People say what work they do" } }
     reading_passages:
       - { id: "name-tags", text: { "en": "Name tags at a meeting: who is who and what they do" } }
-  - planned: { id: "ta-numbers-big", theme: "numbers-big", words: 13 }
+  - decks: ["ta-numbers-big", "*"]
+    words: 13
     listening_passages:
       - { id: "how-much-is-it", text: { "en": "Prices said aloud at a stall" } }
     reading_passages:
@@ -260,7 +262,8 @@ units:
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
   # ta-grammar-needs follows this unit.
-  - planned: { id: "ta-groceries", theme: "groceries", words: 16 }
+  - decks: ["ta-groceries", "*"]
+    words: 9
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
@@ -271,7 +274,8 @@ units:
     reading_passages:
       - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
   # ta-grammar-nouns follows this unit.
-  - planned: { id: "ta-market", theme: "market", words: 7 }
+  - decks: ["ta-market", "*"]
+    words: 6
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
     reading_passages:
@@ -299,7 +303,8 @@ units:
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
   # ta-grammar-continuous follows this unit.
-  - planned: { id: "ta-directions", theme: "directions", words: 12 }
+  - decks: ["ta-directions", "*"]
+    words: 8
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
@@ -309,7 +314,8 @@ units:
       - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
     reading_passages:
       - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
-  - planned: { id: "ta-transport", theme: "transport", words: 8 }
+  - decks: ["ta-transport", "*"]
+    words: 6
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
     reading_passages:
