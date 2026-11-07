@@ -1,0 +1,26 @@
+schema: 1
+id: "ta-quantities-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0321"
+    target: "நிறைய சாப்பிடு."
+    reading: "niṟaiya cāppiṭu."
+    ipa: "niraija saːppiʈu"
+    pos: "phrase"
+    bases: [{ word: "நிறைய", ref: "ta-0141" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+  - id: "ta-0322"
+    target: "இது மட்டும் போதும்."
+    reading: "itu maṭṭum pōtum."
+    ipa: "it̪u maʈʈum poːt̪um"
+    pos: "phrase"
+    bases: [{ word: "இது", ref: "ta-0066" }, { word: "மட்டும்", ref: "ta-0164" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-0323"
+    target: "பாதி வேண்டும்."
+    reading: "pāti vēṇṭum."
+    ipa: "paːt̪i ʋeːɳʈum"
+    pos: "phrase"
+    bases: [{ word: "பாதி", ref: "ta-0162" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]

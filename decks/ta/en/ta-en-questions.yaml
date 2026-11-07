@@ -1,0 +1,165 @@
+schema: 1
+id: ta-en-questions
+kind: layer
+core: ta-questions
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Yes, no and questions
+description: 'Nine question words: who, what, where, when, how, why, which, how many and how much, each standing where its answer will stand; and ''isn''t it?'', asked at the end of a statement. Not yet checked by a Tamil speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  ta-0041:
+    native: who
+    notes:
+      n1: Asks about a person. The answer takes the place of யார் (yār), who, in the sentence.
+    examples:
+      இவர் யார்?:
+        native: Who is this person?
+        bases:
+          இவர்: this person (polite)
+          யார்: who
+      அது யார்?:
+        native: Who is that?
+        bases:
+          அது: that
+          யார்: who
+  ta-0042:
+    native: what
+    notes:
+      n1: Asks about a thing or an action. Tamil puts the question word where the answer goes, with no change to the verb.
+    examples:
+      இது என்ன?:
+        native: What is this?
+        bases:
+          இது: this
+          என்ன: what
+      உனக்கு என்ன வேண்டும்?:
+        native: What do you want?
+        bases:
+          உனக்கு: to you; from நீ (nī), you
+          என்ன: what
+          வேண்டும்: want; from வேண்டு (vēṇṭu), to want
+  ta-0043:
+    native: where
+    notes:
+      n1: Asks about a place. Said on its own, or after the thing you ask about.
+    examples:
+      வீடு எங்கே?:
+        native: Where is the house?
+        bases:
+          எங்கே: where
+      நீங்கள் எங்கே போகிறீர்கள்?:
+        native: Where are you going?
+        bases:
+          எங்கே: where
+          போகிறீர்கள்: are going; from போ (pō), to go
+  ta-0044:
+    native: when
+    notes:
+      n1: Asks about a time. It is used like எங்கே (eṅkē), where, in the same place in the sentence.
+    examples:
+      நீங்கள் எப்போது வருகிறீர்கள்?:
+        native: When are you coming?
+        bases:
+          எப்போது: when
+          வருகிறீர்கள்: are coming; from வா (vā), to come
+      கூட்டம் எப்போது?:
+        native: When is the meeting?
+        bases:
+          கூட்டம்: meeting
+          எப்போது: when
+  ta-0045:
+    native: how
+    notes:
+      n1: Asks about the way or the state of something. நீங்கள் எப்படி இருக்கிறீர்கள் (nīṅkaḷ eppaṭi irukkiṟīrkaḷ)? is the polite way to ask how someone is.
+    examples:
+      இது எப்படி?:
+        native: How is this?
+        bases:
+          இது: this
+          எப்படி: how
+      நீங்கள் எப்படி இருக்கிறீர்கள்?:
+        native: How are you?
+        bases:
+          எப்படி: how
+          இருக்கிறீர்கள்: are; from இரு (iru), to be
+  ta-0046:
+    native: why
+    notes:
+      n1: Asks for the reason. The answer usually ends with a reason word, so the question stays short.
+    examples:
+      நீங்கள் ஏன் வருகிறீர்கள்?:
+        native: Why are you coming?
+        bases:
+          ஏன்: why
+          வருகிறீர்கள்: are coming; from வா (vā), to come
+      ஏன் தாமதம்?:
+        native: Why the delay?
+        bases:
+          ஏன்: why
+          தாமதம்: delay
+  ta-0047:
+    native: which
+    notes:
+      n1: Asks which one of a set. Used before a noun or on its own.
+    examples:
+      எது உங்கள் வீடு?:
+        native: Which is your house?
+        bases:
+          எது: which
+          உங்கள்: your (polite)
+      எது நல்லது?:
+        native: Which is good?
+        bases:
+          எது: which
+  ta-0048:
+    native: how many
+    notes:
+      n1: Asks for a number of things or people. It comes before the thing counted.
+    examples:
+      எத்தனை பேர்?:
+        native: How many people?
+        bases:
+          எத்தனை: how many
+          பேர்: people
+      எத்தனை மணி?:
+        native: What time is it?
+        bases:
+          எத்தனை: how many
+          மணி: hour; o'clock
+  ta-0049:
+    native: how much
+    notes:
+      n1: Asks for an amount or a price, or for how long. Asks about a quantity, not a count.
+    examples:
+      தண்ணீர் எவ்வளவு?:
+        native: How much is the water?
+        bases:
+          எவ்வளவு: how much
+      எவ்வளவு நேரம்?:
+        native: How long?
+        bases:
+          எவ்வளவு: how much
+          நேரம்: time; length of time
+  ta-0050:
+    native: isn't it?; is it not?
+    notes:
+      n1: A tag added to a statement to ask for agreement. It is said with a rising voice.
+    examples:
+      இது நல்லது இல்லையா?:
+        native: This is good, isn't it?
+        bases:
+          இது: this
+          இல்லையா: isn't it; from இல்லை (illai), no
+      நீங்கள் வருகிறீர்கள் இல்லையா?:
+        native: You are coming, aren't you?
+        bases:
+          வருகிறீர்கள்: are coming; from வா (vā), to come
+          இல்லையா: isn't it; from இல்லை (illai), no
+  ta-0051:
+    native: 'Question words: nine words'
+    explanation: Who யார் (yār), what என்ன (eṉṉa), where எங்கே (eṅkē), when எப்போது (eppōtu), how எப்படி (eppaṭi), why ஏன் (ēṉ), which எது (etu), how many எத்தனை (ettaṉai) and how much எவ்வளவு (evvaḷavu).

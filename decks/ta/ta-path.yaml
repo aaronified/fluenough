@@ -114,28 +114,33 @@ units:
   - decks: ["ta-phrasebook", "ta-first-words", "*"]
     words: 10
   # 2. The first word units.
-  - planned: { id: "ta-sound-differences", grammar: "sound-differences", words: 10 }
+  - decks: ["ta-sound-differences", "*"]
+    words: 10
     listening_passages:
       - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
     reading_passages:
       - { id: "sound-pairs-list", text: { "en": "A list of word pairs with their readings" } }
-  - planned: { id: "ta-questions", theme: "questions", words: 11 }
+  - decks: ["ta-questions", "ta-questions-sentences", "*"]
+    words: 11
     listening_passages:
       - { id: "yes-or-no", text: { "en": "Short questions answered with yes and no" } }
     reading_passages:
       - { id: "question-cards", text: { "en": "Cards with who, what, where and when" } }
   # ta-addressing joins this unit.
-  - planned: { id: "ta-pronouns", theme: "pronouns", words: 33 }
+  - decks: ["ta-pronouns", "ta-pronouns-sentences", "*"]
+    words: 11
     listening_passages:
       - { id: "polite-or-not", text: { "en": "Speaking to a friend, an elder and a shopkeeper" } }
     reading_passages:
       - { id: "who-is-who", text: { "en": "A short list of people and how to address them" } }
-  - planned: { id: "ta-family", theme: "family", words: 25 }
+  - decks: ["ta-family", "ta-family-sentences", "*"]
+    words: 14
     listening_passages:
       - { id: "family-photo", text: { "en": "Someone names the people in a family photo" } }
     reading_passages:
       - { id: "family-tree", text: { "en": "A family tree with its labels" } }
-  - planned: { id: "ta-numbers-1-20", theme: "numbers-1-20", words: 20 }
+  - decks: ["ta-numbers-1-20", "ta-numbers-sentences", "*"]
+    words: 19
     listening_passages:
       - { id: "phone-number", text: { "en": "Someone reads out a phone number" } }
     reading_passages:
@@ -155,42 +160,50 @@ units:
       - { id: "name-boards", text: { "en": "Name boards with borrowed sounds and dead consonants" } }
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
-  - planned: { id: "ta-about-me", theme: "about-me", words: 7 }
+  - decks: ["ta-about-me", "ta-about-me-sentences", "*"]
+    words: 6
     listening_passages:
       - { id: "introducing-myself", text: { "en": "Someone says their name, home town and work" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A short profile card" } }
-  - planned: { id: "ta-verbs", theme: "everyday-verbs", words: 33 }
+  - decks: ["ta-verbs", "ta-verbs-sentences", "*"]
+    words: 12
     listening_passages:
       - { id: "what-i-do", text: { "en": "Someone lists what they do each day" } }
     reading_passages:
       - { id: "to-do-list", text: { "en": "A short to-do list" } }
-  - planned: { id: "ta-adverbs", theme: "adverbs", words: 50 }
+  - decks: ["ta-adverbs", "ta-adverbs-sentences", "*"]
+    words: 10
     listening_passages:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - planned: { id: "ta-quantities", theme: "quantities", words: 30 }
+  - decks: ["ta-quantities", "ta-quantities-sentences", "*"]
+    words: 9
     listening_passages:
       - { id: "a-little-more", text: { "en": "Asking for a little more and a little less" } }
     reading_passages:
       - { id: "shopping-amounts", text: { "en": "A shopping list with amounts" } }
-  - planned: { id: "ta-describing", theme: "describing", words: 40 }
+  - decks: ["ta-describing", "ta-describing-sentences", "*"]
+    words: 9
     listening_passages:
       - { id: "big-and-small", text: { "en": "Describing things: big, small, hot and cold" } }
     reading_passages:
       - { id: "for-sale-note", text: { "en": "A note describing something for sale" } }
-  - planned: { id: "ta-time", theme: "time", words: 18 }
+  - decks: ["ta-time", "*"]
+    words: 14
     listening_passages:
       - { id: "what-time", text: { "en": "Asking and telling the time" } }
     reading_passages:
       - { id: "opening-hours", text: { "en": "A shop's opening hours" } }
-  - planned: { id: "ta-location", theme: "location", words: 14 }
+  - decks: ["ta-location", "*"]
+    words: 8
     listening_passages:
       - { id: "where-is-it", text: { "en": "Saying where things are in a room" } }
     reading_passages:
       - { id: "room-labels", text: { "en": "Labels: on, under, inside and near" } }
-  - planned: { id: "ta-more-verbs", theme: "more-verbs", words: 32 }
+  - decks: ["ta-more-verbs", "ta-more-verbs-sentences", "*"]
+    words: 8
     listening_passages:
       - { id: "helping-out", text: { "en": "Asking someone to bring, give and keep things" } }
     reading_passages:
@@ -230,24 +243,28 @@ units:
       - { id: "shop-labels", text: { "en": "Labels in a shop: this here, that there" } }
   # 6. Sentences, each after its words and rules; then the other A1
   # themes, each its words, its rules, then its sentences.
-  - planned: { id: "ta-work", theme: "work", words: 19 }
+  - decks: ["ta-work", "*"]
+    words: 10
     listening_passages:
       - { id: "what-do-you-do", text: { "en": "People say what work they do" } }
     reading_passages:
       - { id: "name-tags", text: { "en": "Name tags at a meeting: who is who and what they do" } }
-  - planned: { id: "ta-numbers-big", theme: "numbers-big", words: 13 }
+  - decks: ["ta-numbers-big", "*"]
+    words: 13
     listening_passages:
       - { id: "how-much-is-it", text: { "en": "Prices said aloud at a stall" } }
     reading_passages:
       - { id: "bill", text: { "en": "A shop bill with its total" } }
   # ta-food-sentences joins this unit.
-  - planned: { id: "ta-food", theme: "food", words: 64 }
+  - decks: ["ta-food", "ta-food-sentences", "*"]
+    words: 8
     listening_passages:
       - { id: "at-the-tiffin-stall", text: { "en": "Ordering breakfast at a tiffin stall" } }
     reading_passages:
       - { id: "menu-board", text: { "en": "A menu board with dishes and prices" } }
   # ta-grammar-needs follows this unit.
-  - planned: { id: "ta-groceries", theme: "groceries", words: 16 }
+  - decks: ["ta-groceries", "*"]
+    words: 9
     listening_passages:
       - { id: "what-we-need", text: { "en": "Two people say what they need from the shop" } }
     reading_passages:
@@ -258,7 +275,8 @@ units:
     reading_passages:
       - { id: "needs-read", text: { "en": "A short text that uses needs, after the groceries unit" } }
   # ta-grammar-nouns follows this unit.
-  - planned: { id: "ta-market", theme: "market", words: 7 }
+  - decks: ["ta-market", "*"]
+    words: 6
     listening_passages:
       - { id: "at-the-market", text: { "en": "Buying vegetables at a market" } }
     reading_passages:
@@ -286,7 +304,8 @@ units:
     reading_passages:
       - { id: "a-short-diary", text: { "en": "A few lines about a day: who did what, and where" } }
   # ta-grammar-continuous follows this unit.
-  - planned: { id: "ta-directions", theme: "directions", words: 12 }
+  - decks: ["ta-directions", "*"]
+    words: 8
     listening_passages:
       - { id: "turn-left", text: { "en": "Directions to a temple: left, right and straight on" } }
     reading_passages:
@@ -296,30 +315,35 @@ units:
       - { id: "continuous-heard", text: { "en": "A short exchange that uses continuous, after the directions unit" } }
     reading_passages:
       - { id: "continuous-read", text: { "en": "A short text that uses continuous, after the directions unit" } }
-  - planned: { id: "ta-transport", theme: "transport", words: 8 }
+  - decks: ["ta-transport", "*"]
+    words: 6
     listening_passages:
       - { id: "auto-fare", text: { "en": "Agreeing a fare with an auto driver" } }
     reading_passages:
       - { id: "bus-board", text: { "en": "The destination board on a bus" } }
   # ta-body-sentences joins this unit.
-  - planned: { id: "ta-body", theme: "body", words: 28 }
+  - decks: ["ta-body", "ta-body-sentences", "*"]
+    words: 8
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
     reading_passages:
       - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
   # ta-places-sentences joins this unit.
-  - planned: { id: "ta-places", theme: "places", words: 42 }
+  - decks: ["ta-places", "ta-places-sentences", "*"]
+    words: 8
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
     reading_passages:
       - { id: "map-labels", text: { "en": "Labels on a simple town map" } }
-  - planned: { id: "ta-things", theme: "things", words: 39 }
+  - decks: ["ta-things", "ta-things-sentences", "*"]
+    words: 8
     listening_passages:
       - { id: "packing-a-bag", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
   # ta-things-sentences and ta-more-verbs-sentences join this unit.
-  - planned: { id: "ta-home", theme: "home", words: 19 }
+  - decks: ["ta-home", "*"]
+    words: 8
     listening_passages:
       - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
@@ -342,13 +366,15 @@ units:
     reading_passages:
       - { id: "class-photo", text: { "en": "A caption under a class photo" } }
   # ta-clothes-sentences and ta-describing-sentences join this unit.
-  - planned: { id: "ta-clothes", theme: "clothes", words: 26 }
+  - decks: ["ta-clothes", "ta-clothes-sentences", "*"]
+    words: 12
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a shirt's colour and size in a shop" } }
     reading_passages:
       - { id: "shop-sign", text: { "en": "A clothes shop's sign with its offers" } }
   # ta-animals-sentences joins this unit.
-  - planned: { id: "ta-animals", theme: "animals", words: 30 }
+  - decks: ["ta-animals", "ta-animals-sentences", "*"]
+    words: 10
     listening_passages:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:

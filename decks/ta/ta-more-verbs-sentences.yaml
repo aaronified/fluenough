@@ -1,0 +1,26 @@
+schema: 1
+id: "ta-more-verbs-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0318"
+    target: "அவன் கதவை மூடுகிறான்."
+    reading: "avaṉ katavai mūṭukiṟāṉ."
+    ipa: "aʋan kat̪aʋai muːʈukiraːn"
+    pos: "phrase"
+    bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "கதவை", base: "கதவு", reading: "katavu" }, { word: "மூடுகிறான்", base: "மூடு", reading: "mūṭu" }]
+  - id: "ta-0319"
+    target: "நாங்கள் விளையாடுகிறோம்."
+    reading: "nāṅkaḷ viḷaiyāṭukiṟōm."
+    ipa: "naːŋkaɭ ʋiɭaijaːʈukiroːm"
+    pos: "phrase"
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "விளையாடுகிறோம்", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+  - id: "ta-0320"
+    target: "அவர் தண்ணீர் எடுக்கிறார்."
+    reading: "avar taṇṇīr eṭukkiṟār."
+    ipa: "aʋaɾ t̪aɳɳiːɾ eʈukkiraːɾ"
+    pos: "phrase"
+    bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "எடுக்கிறார்", base: "எடு", reading: "eṭu" }]

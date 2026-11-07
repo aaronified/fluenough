@@ -1,0 +1,153 @@
+schema: 1
+id: "ta-food"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "food"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0244"
+    target: "சாப்பாடு"
+    reading: "cāppāṭu"
+    ipa: "saːppaːʈu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாப்பாடு தயார்."
+        reading: "cāppāṭu tayār."
+        ipa: "saːppaːʈu t̪ajaːɾ"
+        bases: [{ word: "சாப்பாடு", base: "சாப்பாடு", reading: "cāppāṭu" }, { word: "தயார்", base: "தயார்", reading: "tayār" }]
+      - target: "சாப்பாடு நல்லது."
+        reading: "cāppāṭu nallatu."
+        ipa: "saːppaːʈu nallat̪u"
+        bases: [{ word: "சாப்பாடு", base: "சாப்பாடு", reading: "cāppāṭu" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0245"
+    target: "காபி"
+    reading: "kāpi"
+    ipa: "kaːpi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காபி குடி."
+        reading: "kāpi kuṭi."
+        ipa: "kaːpi kuʈi"
+        bases: [{ word: "காபி", base: "காபி", reading: "kāpi" }, { word: "குடி", ref: "ta-0120" }]
+      - target: "காபி வேண்டும்."
+        reading: "kāpi vēṇṭum."
+        ipa: "kaːpi ʋeːɳʈum"
+        bases: [{ word: "காபி", base: "காபி", reading: "kāpi" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+  - id: "ta-0246"
+    target: "தேநீர்"
+    reading: "tēnīr"
+    ipa: "t̪eːniːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தேநீர் குடி."
+        reading: "tēnīr kuṭi."
+        ipa: "t̪eːniːɾ kuʈi"
+        bases: [{ word: "தேநீர்", base: "தேநீர்", reading: "tēnīr" }, { word: "குடி", ref: "ta-0120" }]
+      - target: "இது தேநீர்."
+        reading: "itu tēnīr."
+        ipa: "it̪u t̪eːniːɾ"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தேநீர்", base: "தேநீர்", reading: "tēnīr" }]
+  - id: "ta-0247"
+    target: "சாதம்"
+    reading: "cātam"
+    ipa: "saːt̪am"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாதம் சாப்பிடு."
+        reading: "cātam cāppiṭu."
+        ipa: "saːt̪am saːppiʈu"
+        bases: [{ word: "சாதம்", base: "சாதம்", reading: "cātam" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+      - target: "சாதம் போதும்."
+        reading: "cātam pōtum."
+        ipa: "saːt̪am poːt̪um"
+        bases: [{ word: "சாதம்", base: "சாதம்", reading: "cātam" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-0248"
+    target: "தோசை"
+    reading: "tōcai"
+    ipa: "t̪oːsai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தோசை சாப்பிடு."
+        reading: "tōcai cāppiṭu."
+        ipa: "t̪oːsai saːppiʈu"
+        bases: [{ word: "தோசை", base: "தோசை", reading: "tōcai" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+      - target: "இது தோசை."
+        reading: "itu tōcai."
+        ipa: "it̪u t̪oːsai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தோசை", base: "தோசை", reading: "tōcai" }]
+  - id: "ta-0249"
+    target: "இட்லி"
+    reading: "iṭli"
+    ipa: "iʈli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இட்லி சாப்பிடு."
+        reading: "iṭli cāppiṭu."
+        ipa: "iʈli saːppiʈu"
+        bases: [{ word: "இட்லி", base: "இட்லி", reading: "iṭli" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+      - target: "இட்லி நல்லது."
+        reading: "iṭli nallatu."
+        ipa: "iʈli nallat̪u"
+        bases: [{ word: "இட்லி", base: "இட்லி", reading: "iṭli" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0250"
+    target: "சாம்பார்"
+    reading: "cāmpār"
+    ipa: "saːmpaːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாம்பார் கொஞ்சம் கொடு."
+        reading: "cāmpār koñcam koṭu."
+        ipa: "saːmpaːɾ koɲʧam koʈu"
+        bases: [{ word: "சாம்பார்", base: "சாம்பார்", reading: "cāmpār" }, { word: "கொஞ்சம்", ref: "ta-0158" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "சாம்பார் அதிகம்."
+        reading: "cāmpār atikam."
+        ipa: "saːmpaːɾ at̪ikam"
+        bases: [{ word: "சாம்பார்", base: "சாம்பார்", reading: "cāmpār" }, { word: "அதிகம்", ref: "ta-0159" }]
+  - id: "ta-0251"
+    target: "ரசம்"
+    reading: "racam"
+    ipa: "ɾasam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ரசம் குடி."
+        reading: "racam kuṭi."
+        ipa: "ɾasam kuʈi"
+        bases: [{ word: "ரசம்", base: "ரசம்", reading: "racam" }, { word: "குடி", ref: "ta-0120" }]
+      - target: "இது ரசம்."
+        reading: "itu racam."
+        ipa: "it̪u ɾasam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "ரசம்", base: "ரசம்", reading: "racam" }]

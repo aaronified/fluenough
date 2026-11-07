@@ -1,0 +1,96 @@
+schema: 1
+id: "ta-en-transport"
+kind: "layer"
+core: "ta-transport"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Bus, auto, cab"
+description: "The bus, the auto rickshaw, the taxi, the train, the bicycle and the car. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0238":
+    native: "bus"
+    notes:
+      n1: "A bus. By bus is பேருந்தில் (pēruntil)."
+    examples:
+      "பேருந்து வருகிறது.":
+        native: "The bus is coming."
+        bases:
+          "பேருந்து": "bus"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "நான் பேருந்தில் போகிறேன்.":
+        native: "I am going by bus."
+        bases:
+          "பேருந்தில்": "by bus; from பேருந்து (pēruntu), bus"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-0239":
+    native: "auto rickshaw"
+    notes:
+      n1: "A three-wheeled auto rickshaw."
+    examples:
+      "ஆட்டோ அருகில் இருக்கிறது.":
+        native: "The auto is near."
+        bases:
+          "ஆட்டோ": "auto rickshaw"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது ஆட்டோ.":
+        native: "This is an auto."
+        bases:
+          "ஆட்டோ": "auto rickshaw"
+  "ta-0240":
+    native: "taxi"
+    notes:
+      n1: "A taxi or a cab."
+    examples:
+      "டாக்சி வருகிறது.":
+        native: "The taxi is coming."
+        bases:
+          "டாக்சி": "taxi"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "இது டாக்சி.":
+        native: "This is a taxi."
+        bases:
+          "டாக்சி": "taxi"
+  "ta-0241":
+    native: "train"
+    notes:
+      n1: "A train."
+    examples:
+      "ரயில் நாளை வருகிறது.":
+        native: "The train is coming tomorrow."
+        bases:
+          "ரயில்": "train"
+          "வருகிறது": "is coming; from வா (vā), come"
+      "இது ரயில்.":
+        native: "This is a train."
+        bases:
+          "ரயில்": "train"
+  "ta-0242":
+    native: "bicycle"
+    notes:
+      n1: "A bicycle. To ride one is ஓட்டு (ōṭṭu)."
+    examples:
+      "நான் சைக்கிள் ஓட்டுகிறேன்.":
+        native: "I ride a bicycle."
+        bases:
+          "சைக்கிள்": "bicycle"
+          "ஓட்டுகிறேன்": "I ride (drive); from ஓட்டு (ōṭṭu), to ride; to drive"
+      "இது சைக்கிள்.":
+        native: "This is a bicycle."
+        bases:
+          "சைக்கிள்": "bicycle"
+  "ta-0243":
+    native: "car"
+    notes:
+      n1: "A car. By car is காரில் (kāril)."
+    examples:
+      "கார் அருகில் இருக்கிறது.":
+        native: "The car is near."
+        bases:
+          "கார்": "car"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நான் காரில் போகிறேன்.":
+        native: "I am going by car."
+        bases:
+          "காரில்": "by car; from கார் (kār), car"
+          "போகிறேன்": "am going; from போ (pō), to go"

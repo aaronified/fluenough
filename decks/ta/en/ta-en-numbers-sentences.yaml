@@ -1,0 +1,16 @@
+schema: 1
+id: "ta-en-numbers-sentences"
+kind: "layer"
+core: "ta-numbers-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Numbers in sentences"
+description: "Two sentences with the numbers and the words they count. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0108":
+    native: "It is ten o'clock."
+    bases: { "மணி": "hour; o'clock" }
+  "ta-0109":
+    native: "We are three people."
+    bases: { "பேர்": "people; names" }

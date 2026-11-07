@@ -1,0 +1,20 @@
+schema: 1
+id: "ta-numbers-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0108"
+    target: "மணி பத்து."
+    reading: "maṇi pattu."
+    ipa: "maɳi pat̪t̪u"
+    pos: "phrase"
+    bases: [{ word: "மணி", base: "மணி", reading: "maṇi" }, { word: "பத்து", ref: "ta-0096" }]
+  - id: "ta-0109"
+    target: "நாங்கள் மூன்று பேர்."
+    reading: "nāṅkaḷ mūṉṟu pēr."
+    ipa: "naːŋkaɭ muːnru peːɾ"
+    pos: "phrase"
+    bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "மூன்று", ref: "ta-0090" }, { word: "பேர்", base: "பேர்", reading: "pēr" }]

@@ -1,0 +1,145 @@
+schema: 1
+id: "ta-more-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "more-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0184"
+    target: "எடு"
+    reading: "eṭu"
+    ipa: "eʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புத்தகத்தை எடு."
+        reading: "puttakattai eṭu."
+        ipa: "put̪t̪akat̪t̪ai eʈu"
+        bases: [{ word: "புத்தகத்தை", base: "புத்தகம்", reading: "puttakam" }, { word: "எடு", base: "எடு", reading: "eṭu" }]
+      - target: "இதை எடு."
+        reading: "itai eṭu."
+        ipa: "it̪ai eʈu"
+        bases: [{ word: "இதை", base: "இது", reading: "itu" }, { word: "எடு", base: "எடு", reading: "eṭu" }]
+  - id: "ta-0185"
+    target: "வை"
+    reading: "vai"
+    ipa: "ʋai"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இதை இங்கே வை."
+        reading: "itai iṅkē vai."
+        ipa: "it̪ai iŋkeː ʋai"
+        bases: [{ word: "இதை", base: "இது", reading: "itu" }, { word: "இங்கே", ref: "ta-0112" }, { word: "வை", base: "வை", reading: "vai" }]
+      - target: "தண்ணீர் மேலே வை."
+        reading: "taṇṇīr mēlē vai."
+        ipa: "t̪aɳɳiːɾ meːleː ʋai"
+        bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "மேலே", ref: "ta-0176" }, { word: "வை", base: "வை", reading: "vai" }]
+  - id: "ta-0186"
+    target: "திற"
+    reading: "tiṟa"
+    ipa: "t̪ira"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கதவை திற."
+        reading: "katavai tiṟa."
+        ipa: "kat̪aʋai t̪ira"
+        bases: [{ word: "கதவை", base: "கதவு", reading: "katavu" }, { word: "திற", base: "திற", reading: "tiṟa" }]
+      - target: "வாயை திற."
+        reading: "vāyai tiṟa."
+        ipa: "ʋaːjai t̪ira"
+        bases: [{ word: "வாயை", base: "வாய்", reading: "vāy" }, { word: "திற", base: "திற", reading: "tiṟa" }]
+  - id: "ta-0187"
+    target: "மூடு"
+    reading: "mūṭu"
+    ipa: "muːʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கதவை மூடு."
+        reading: "katavai mūṭu."
+        ipa: "kat̪aʋai muːʈu"
+        bases: [{ word: "கதவை", base: "கதவு", reading: "katavu" }, { word: "மூடு", base: "மூடு", reading: "mūṭu" }]
+      - target: "கண்ணை மூடு."
+        reading: "kaṇṇai mūṭu."
+        ipa: "kaɳɳai muːʈu"
+        bases: [{ word: "கண்ணை", base: "கண்", reading: "kaṇ" }, { word: "மூடு", base: "மூடு", reading: "mūṭu" }]
+  - id: "ta-0188"
+    target: "உட்கார்"
+    reading: "uṭkār"
+    ipa: "uʈkaːɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே உட்கார்."
+        reading: "iṅkē uṭkār."
+        ipa: "iŋkeː uʈkaːɾ"
+        bases: [{ word: "இங்கே", ref: "ta-0112" }, { word: "உட்கார்", base: "உட்கார்", reading: "uṭkār" }]
+      - target: "நீ உள்ளே உட்கார்."
+        reading: "nī uḷḷē uṭkār."
+        ipa: "niː uɭɭeː uʈkaːɾ"
+        bases: [{ word: "நீ", ref: "ta-0057" }, { word: "உள்ளே", ref: "ta-0178" }, { word: "உட்கார்", base: "உட்கார்", reading: "uṭkār" }]
+  - id: "ta-0189"
+    target: "நில்"
+    reading: "nil"
+    ipa: "nil"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அங்கே நில்."
+        reading: "aṅkē nil."
+        ipa: "aŋkeː nil"
+        bases: [{ word: "அங்கே", base: "அங்கே", reading: "aṅkē" }, { word: "நில்", base: "நில்", reading: "nil" }]
+      - target: "பக்கத்தில் நில்."
+        reading: "pakkattil nil."
+        ipa: "pakkat̪t̪il nil"
+        bases: [{ word: "பக்கத்தில்", ref: "ta-0182" }, { word: "நில்", base: "நில்", reading: "nil" }]
+  - id: "ta-0190"
+    target: "கழுவு"
+    reading: "kaḻuvu"
+    ipa: "kaɻuʋu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கை கழுவு."
+        reading: "kai kaḻuvu."
+        ipa: "kai kaɻuʋu"
+        bases: [{ word: "கை", base: "கை", reading: "kai" }, { word: "கழுவு", base: "கழுவு", reading: "kaḻuvu" }]
+      - target: "பாத்திரத்தை கழுவு."
+        reading: "pāttirattai kaḻuvu."
+        ipa: "paːt̪t̪iɾat̪t̪ai kaɻuʋu"
+        bases: [{ word: "பாத்திரத்தை", base: "பாத்திரம்", reading: "pāttiram" }, { word: "கழுவு", base: "கழுவு", reading: "kaḻuvu" }]
+  - id: "ta-0191"
+    target: "விளையாடு"
+    reading: "viḷaiyāṭu"
+    ipa: "ʋiɭaijaːʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குழந்தை விளையாடுகிறது."
+        reading: "kuḻantai viḷaiyāṭukiṟatu."
+        ipa: "kuɻant̪ai ʋiɭaijaːʈukirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "விளையாடுகிறது", base: "விளையாடு", reading: "viḷaiyāṭu" }]
+      - target: "நீ விளையாடு."
+        reading: "nī viḷaiyāṭu."
+        ipa: "niː ʋiɭaijaːʈu"
+        bases: [{ word: "நீ", ref: "ta-0057" }, { word: "விளையாடு", base: "விளையாடு", reading: "viḷaiyāṭu" }]

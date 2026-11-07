@@ -1,0 +1,146 @@
+schema: 1
+id: ta-en-adverbs
+kind: layer
+core: ta-adverbs
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: 'Adverbs: how often, how well, when'
+description: 'Ten adverbs of time, frequency and degree: now, tomorrow, yesterday, always, sometimes, very, also, still, again and many. Not yet checked by a Tamil speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  ta-0132:
+    native: now
+    notes:
+      n1: The present moment. Put it at the start of the sentence, before the verb.
+    examples:
+      இப்போது போகிறேன்.:
+        native: I am going now.
+        bases:
+          போகிறேன்: am going; from போ (pō), to go
+      இப்போது என்ன நேரம்?:
+        native: What time is it now?
+        bases:
+          நேரம்: time
+  ta-0133:
+    native: tomorrow
+    notes:
+      n1: The day after today. The past word is நேற்று (nēṟṟu), yesterday.
+    examples:
+      நாளை வருகிறேன்.:
+        native: I am coming tomorrow.
+        bases:
+          வருகிறேன்: am coming; from வா (vā), to come
+      நாளை நாங்கள் போகலாம்.:
+        native: We can go tomorrow.
+        bases:
+          போகலாம்: can go; from போ (pō), to go
+  ta-0134:
+    native: yesterday
+    notes:
+      n1: The day before today. The future word is நாளை (nāḷai), tomorrow.
+    examples:
+      நேற்று நான் வீட்டில் இருந்தேன்.:
+        native: Yesterday I was at home.
+        bases:
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருந்தேன்: was; from இரு (iru), to be
+      நேற்று வந்தீர்களா?:
+        native: Did you come yesterday?
+        bases:
+          வந்தீர்களா: did you come; from வா (vā), to come
+  ta-0135:
+    native: always
+    notes:
+      n1: Every time. It comes before the verb.
+    examples:
+      நான் எப்போதும் காலையில் எழுகிறேன்.:
+        native: I always get up in the morning.
+        bases:
+          காலையில்: in the morning; from காலை (kālai), morning
+          எழுகிறேன்: get up; from எழு (eḻu), to get up
+      அவர் எப்போதும் வீட்டில் இருக்கிறார்.:
+        native: He is always at home.
+        bases:
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறார்: is; from இரு (iru), to be
+  ta-0136:
+    native: sometimes
+    notes:
+      n1: Now and then. Said at the start of the sentence.
+    bases:
+      சில: some
+      சமயம்: time, occasion
+    examples:
+      சில சமயம் கறி சாப்பிடுகிறேன்.:
+        native: Sometimes I eat curry.
+        bases:
+          சில: some
+          சமயம்: time, occasion
+          சாப்பிடுகிறேன்: eat; from சாப்பிடு (cāppiṭu), to eat
+      சில சமயம் அவன் வருகிறான்.:
+        native: Sometimes he comes.
+        bases:
+          சில: some
+          சமயம்: time, occasion
+          வருகிறான்: comes; from வா (vā), to come
+  ta-0137:
+    native: very
+    notes:
+      n1: 'Before an adjective or an adverb. Before a noun with an adjective, it comes first: மிகவும் பெரிய வீடு (mikavum periya vīṭu), a very big house.'
+    examples:
+      இது மிகவும் நல்லது.:
+        native: This is very good.
+      மிகவும் பெரிய வீடு.:
+        native: A very big house.
+  ta-0138:
+    native: also; even
+    notes:
+      n1: 'Adds the word before it: ''me too'' or ''even me''.'
+    examples:
+      நான் கூட வருகிறேன்.:
+        native: I am coming too.
+        bases:
+          வருகிறேன்: am coming; from வா (vā), to come
+      அவள் கூட நண்பி.:
+        native: She is a friend too.
+  ta-0139:
+    native: still; yet
+    notes:
+      n1: Used with a negative to mean 'not yet', and on its own to mean 'still'.
+    examples:
+      இன்னும் சாப்பிடவில்லை.:
+        native: I have not eaten yet.
+        bases:
+          சாப்பிடவில்லை: have not eaten; from சாப்பிடு (cāppiṭu), to eat
+      இன்னும் நேரம் இருக்கிறது.:
+        native: There is still time.
+        bases:
+          நேரம்: time
+          இருக்கிறது: is; from இரு (iru), to be
+  ta-0140:
+    native: again
+    notes:
+      n1: Once more. Often used with a request, as in மீண்டும் சொல்லுங்கள் (mīṇṭum colluṅkaḷ), say it again.
+    examples:
+      மீண்டும் வா.:
+        native: Come again.
+      மீண்டும் பார்க்கலாம்.:
+        native: We can see each other again.
+        bases:
+          பார்க்கலாம்: can see; from பார் (pār), to see
+  ta-0141:
+    native: many; a lot
+    notes:
+      n1: A great number or amount. Before the noun it counts.
+    examples:
+      நிறைய தண்ணீர் குடி.:
+        native: Drink a lot of water.
+      நிறைய பேர் இருக்கிறார்கள்.:
+        native: There are many people.
+        bases:
+          பேர்: people; names
+          இருக்கிறார்கள்: are; from இரு (iru), to be
