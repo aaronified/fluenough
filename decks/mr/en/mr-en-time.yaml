@@ -9,48 +9,94 @@ description: "Today and tomorrow, the parts of the day, telling the time, and th
 cards:
   "mr-0474":
     native: "today"
+    "examples": {
+      "आज खरेदीला जाऊ.": {"native": "Let's go shopping today.", "bases": {"खरेदीला": "shopping, a purchase"}},
+      "आज गृहपाठ आहे.": {"native": "There is homework today.", "bases": {"आहे": "to be"}}
+    }
   "mr-0475":
     native: "tomorrow"
     notes:
       "n1": "Unlike Hindi, which says कल (kal) for both, Marathi has a word of its own for each: उद्या (udyā) tomorrow, काल (kāl) yesterday."
+    "examples": {
+      "उद्या सहलीला जाऊ.": {"native": "Let's go on an outing tomorrow.", "bases": {"सहलीला": "outing, excursion"}},
+      "कदाचित उद्या येईल.": {"native": "Perhaps he will come tomorrow.", "bases": {}}
+    }
   "mr-0119":
     notes:
       "n1": "Only 'yesterday'. The day before yesterday is परवा (parvā), which is also the day after tomorrow."
+    "examples": {
+      "काल काय घडलं?": {"native": "What happened yesterday?", "bases": {"घडलं": "to happen"}},
+      "काल रात्री भूकंप झाला.": {"native": "There was an earthquake last night.", "bases": {"झाला": "to become"}}
+    }
   "mr-0476":
     native: "now"
     notes:
       "n1": "आत्ता (āttā), right now."
+    "examples": {
+      "आता मी बरा आहे.": {"native": "Now I am fine.", "bases": {"मी": "I", "आहे": "to be"}},
+      "पाहुणे आता घरी जातात.": {"native": "The guests now go home.", "bases": {"पाहुणे": "guests", "आता": "now", "घरी": "home", "जातात": "go"}}
+    }
   "mr-0477":
     native: "morning"
     notes:
       "n1": "सकाळी (sakāḷi), in the morning: सकाळी सात वाजता (sakāḷi sāt vājtā), at seven in the morning."
+    "examples": {
+      "बँक सकाळी उघडते.": {"native": "The bank opens in the morning.", "bases": {"सकाळी": "morning", "उघडते": "to open"}},
+      "मंडई सकाळी भरते.": {"native": "The market fills up in the morning.", "bases": {"सकाळी": "morning", "भरते": "to fill"}}
+    }
   "mr-0478":
     native: "afternoon; midday"
     notes:
       "n1": "दुपारी (dupāri), in the afternoon. Many shops close for a while after lunch."
+    "examples": {
+      "दुपारी सरी पडल्या.": {"native": "Showers fell in the afternoon.", "bases": {"दुपारी": "afternoon; midday"}}
+    }
   "mr-0479":
     native: "evening"
     notes:
       "n1": "संध्याकाळी (sandhyākāḷi), in the evening."
+    "examples": {
+      "संध्याकाळी बाल्कनीत बसतो.": {"native": "In the evening I sit on the balcony.", "bases": {"बसतो": "to sit", "बाल्कनीत": "balcony", "संध्याकाळी": "evening"}},
+      "ती रोज संध्याकाळी खेळते.": {"native": "She plays every evening.", "bases": {"संध्याकाळी": "evening", "खेळते": "to play"}}
+    }
   "mr-0480":
     native: "night"
     notes:
       "n1": "रात्री (rātri), at night."
+    "examples": {
+      "तंबूत रात्र काढली.": {"native": "We spent the night in the tent.", "bases": {"तंबूत": "tent", "काढली": "to spend (time)", "रात्र": "night"}},
+      "भयपट रात्री पाहिला.": {"native": "I watched a horror film at night.", "bases": {"रात्री": "night"}}
+    }
   "mr-0122":
     notes:
       "n1": "Time, and a time: आता वेळ नाही (ātā veḷ nāhi), there's no time now; जेवणाची वेळ (jevṇāci veḷ), mealtime."
+    "examples": {
+      "थोडा वेळ थांबा.": {"native": "Wait a little while.", "bases": {"थोडा": "a little", "थांबा": "to wait"}},
+      "रेल्वे वेळेवर येते.": {"native": "The train comes on time.", "bases": {"वेळेवर": "on time", "येते": "to come"}}
+    }
   "mr-0481":
     native: "at … o'clock"
     notes:
       "n1": "After the number: चार वाजता (cār vājtā), at four o'clock. 'It's four o'clock' is चार वाजले (cār vājle), 'four have struck'."
+    "examples": {
+      "तो सहसा सात वाजता उठतो.": {"native": "He usually gets up at seven.", "bases": {}},
+      "मतदान सकाळी सात वाजता सुरू होतं.": {"native": "Voting starts at seven in the morning.", "bases": {"वाजता": "at", "सुरू": "starts", "होतं": "to be"}}
+    }
   "mr-0482":
     native: "hour"
     notes:
       "n1": "दोन तास (don tās), two hours. A lesson at school is a तास (tās) too."
+    "examples": {
+      "रात्री आठ तास झोप घ्या.": {"native": "Sleep eight hours at night.", "bases": {}}
+    }
   "mr-0483":
     native: "minute"
     notes:
       "n1": "पाच मिनिटे (pāc miniṭe), five minutes. एक मिनिट (ek miniṭ)!, just a minute!"
+    "examples": {
+      "शेवटच्या मिनिटाला गोल झाला.": {"native": "A goal was scored in the last minute.", "bases": {"शेवटच्या": "last", "झाला": "to become", "मिनिटाला": "minute"}},
+      "मधली सुट्टी दहा मिनिटांची आहे.": {"native": "The break is ten minutes long.", "bases": {"आहे": "to be", "मधली": "middle", "मिनिटांची": "minute"}}
+    }
   "mr-0484":
     native: "half past four; 4½"
     notes:
@@ -59,6 +105,10 @@ cards:
     native: "day"
     notes:
       "n1": "दिवसा (divsā), by day. दर दिवशी (dar divśi), every day."
+    "examples": {
+      "आम्ही दोन दिवस राहिलो.": {"native": "We stayed for two days.", "bases": {"राहिलो": "to live, to stay"}},
+      "ईदच्या दिवशी सगळे भेटतात.": {"native": "On Eid day everyone meets.", "bases": {"भेटतात": "to meet", "ईदच्या": "Eid", "दिवशी": "day"}}
+    }
   "mr-0486":
     native: "week"
     notes:
@@ -79,5 +129,12 @@ cards:
     native: "Friday"
   "mr-0492":
     native: "Saturday"
+    "examples": {
+      "शनिवारी डोंगरात भटकंती करतो.": {"native": "On Saturday I go trekking in the hills.", "bases": {"शनिवारी": "Saturday"}}
+    }
   "mr-0493":
     native: "Sunday"
+    "examples": {
+      "क्लब रविवारी भरतो.": {"native": "The club meets on Sunday.", "bases": {"रविवारी": "on Sunday"}},
+      "रविवारी चर्चमध्ये जातात.": {"native": "They go to church on Sunday.", "bases": {"रविवारी": "on Sunday", "चर्चमध्ये": "to church", "जातात": "to go"}}
+    }
