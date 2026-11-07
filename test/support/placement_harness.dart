@@ -148,7 +148,10 @@ List<GeneratedQuestion> generateQuestions(PlacementLanguageData data) {
   final out = <GeneratedQuestion>[];
   // About 1,500 builds: a build costs up to 55 ms, so a larger deck needs
   // fewer seeds.
-  final seeds = math.max(2, (1500 / (data.deckCount * 10)).ceil());
+  final seeds = math.min(
+    100,
+    math.max(2, (2400 / (data.deckCount * 10)).ceil()),
+  );
   for (var seed = 0; seed < seeds; seed++) {
     final builder = QuestionBuilder(data, seed: seed);
     for (var deck = 0; deck < data.deckCount; deck++) {

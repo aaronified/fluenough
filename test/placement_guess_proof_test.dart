@@ -7,7 +7,7 @@
 // reads lib/core only; the sample decks (test/fixtures/sample-decks) are
 // loaded through the catalog, as sample_decks_test.dart does.
 //
-// The maths of the margins. A strategy that has no information about the
+// The maths. A strategy that has no information about the
 // right option is a Bernoulli trial with p = 1/k (k options) on every
 // question, so over n questions its accuracy has standard deviation
 // sqrt(p (1 - p) / n). For k = 4 and n >= 1000 that is at most 0.0137; the
@@ -26,12 +26,14 @@
 library;
 
 import 'dart:io';
+import 'dart:math' as math;
 
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/repository_decks.dart';
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/guessability.dart';
 import 'package:fluenough/core/placement/generated_question.dart';
 import 'package:fluenough/core/placement/item_picker.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
@@ -42,12 +44,6 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/placement_harness.dart';
 
 const String _root = 'test/fixtures/sample-decks';
-
-/// Chance of a four-option pick.
-const double _chance = 0.25;
-
-/// Five standard deviations of a Bernoulli(0.25) at n = 1000.
-const double _margin = 0.07;
 
 void main() {
   late Catalog catalog;
@@ -72,18 +68,34 @@ void main() {
 
         for (final MapEntry(key: name, value: strategy)
             in optionStrategies.entries) {
-          test('"$name" stays within chance (1/4 +- $_margin)', () {
-            var right = 0;
-            for (final q in questions) {
-              if (q.isRightPick(strategy(q))) right++;
-            }
-            final accuracy = right / questions.length;
-            expect(
-              accuracy,
-              closeTo(_chance, _margin),
-              reason: '$name got $right of ${questions.length}',
-            );
-          });
+          test(
+            '"$name": on counted questions its 99% bound is under the floor',
+            () {
+              // Questions with a cue are left out of the credit posterior (plan
+              // section 13), so what must hold is that on the questions that
+              // count no strategy beats the guess floor (base + 0.10): the 99%
+              // upper bound of its success (normal approximation, 2.576 sd) is
+              // at most the mean floor.
+              var n = 0;
+              var right = 0;
+              var floor = 0.0;
+              for (final q in questions) {
+                final base = creditBaseOf(q);
+                if (base == null || base >= 1) continue;
+                n++;
+                floor += base + creditKappa;
+                if (q.isRightPick(strategy(q))) right++;
+              }
+              expect(n, greaterThanOrEqualTo(300), reason: 'counted questions');
+              final p = right / n;
+              final upper = p + 2.576 * math.sqrt(p * (1 - p) / n);
+              expect(
+                upper,
+                lessThanOrEqualTo(floor / n),
+                reason: '$name got $right of $n counted',
+              );
+            },
+          );
         }
 
         test('options are alike: nothing odd in their labels or shapes', () {
