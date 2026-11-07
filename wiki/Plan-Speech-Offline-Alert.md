@@ -1,5 +1,7 @@
 # Plan: say when speech can't be recognised offline
 
+> **Priority 2 after the placement release** (owner, 2026-11-07): on-device voice recognition (#1004) follows private decks.
+
 Source of truth: this wiki page.
 
 
