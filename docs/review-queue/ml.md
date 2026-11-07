@@ -21,3 +21,6 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ml-0116 | ml-verbs | നിൽക്കൂ (stand): the meaning is stand, but the card also means wait where you are; is that right, or should it be a separate card? | Haiku builder | 2026-11-07 |
 | ml-0117 | ml-verbs | കാണൂ (look at, see): is 'look at' or 'see' the better gloss in the card's first meaning? | Haiku builder | 2026-11-07 |
 | unit-level | ml-verbs | The imperative forms (-ൂ endings) and their readings are written by the builder from the common command form, not from a rule file. Please check the forms and the broad IPA of all fifteen. | Haiku builder | 2026-11-07 |
+| ml-0131 | ml-time | ഉച്ച (noon): the card is a noun, so gender n is given; is 'n' right for a time of day? | Haiku builder | 2026-11-07 |
+| ml-0136 | ml-time | മിനിറ്റ് (minute): the reading uses a double trill-like letter (ṟṟ); is that the right spelling for the word's sound? | Haiku builder | 2026-11-07 |
+| unit-level | ml-time | The time words are written in the citation form (ഇന്ന്, നാളെ, ഇന്നലെ, ഇപ്പോൾ, സമയം) with readings and broad IPA written by the builder. Please check all twelve. | Haiku builder | 2026-11-07 |
