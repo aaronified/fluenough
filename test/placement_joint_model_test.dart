@@ -543,6 +543,11 @@ void main() {
       expect(cal.usable('S2', false, 0.5), isTrue);
       expect(cal.usable('S2legacy', false, 0.5), isFalse);
       expect(cal.guessFor('unknown', false, 0.25), 0.25);
+      // The legacy formats are reachable by their own names.
+      expect(cal.guessFor('F6endings', false, 0.25), 0.99);
+      expect(cal.usable('F6endings', false, 0.25), isFalse);
+      expect(cal.usable('F5legacy', true, 0.25), isFalse);
+      expect(cal.guessFor('F6hint', true, 0.25), 0.75);
     });
 
     test('the calibrated guess never falls below the design base', () {

@@ -259,6 +259,7 @@ class Persona {
     this.cognateOnly = false,
     this.random = false,
     this.cheater = false,
+    this.leakBump = 0,
     this.yesRate,
     this.selfRatesSame = false,
     this.honestSelfRating = false,
@@ -288,6 +289,10 @@ class Persona {
 
   /// A learner that knows nothing and answers only cognates by the leak.
   final bool cognateOnly;
+
+  /// Added to every leak rate (beyond-knowledge accuracy), to test how much
+  /// more a gamer could do than the adversary measured.
+  final double leakBump;
 
   /// A control for the gates themselves: answers every question right, so a
   /// gate that cannot see it is blind.
@@ -361,7 +366,11 @@ class Persona {
       }
       return yes(
         rng.nextDouble() <
-            language!.rate(key, item.card.cognate, profile, strongSolver),
+            math.min(
+              1.0,
+              language!.rate(key, item.card.cognate, profile, strongSolver) +
+                  leakBump,
+            ),
       );
     }
     if (cognateOnly) {
@@ -369,12 +378,38 @@ class Persona {
       if (item.card.cognate) {
         return yes(
           rng.nextDouble() <
-              language!.rate(item.spec.code, true, profile, strongSolver),
+              math.min(
+                1.0,
+                language!.rate(item.spec.code, true, profile, strongSolver) +
+                    leakBump,
+              ),
         );
       }
     }
     return yes(rng.nextDouble() < item.spec.guess);
   }
+}
+
+/// A deliberate weakening of the model, to prove the gates can fail: a gate
+/// that still passes with the protection removed is blind.
+class Mutation {
+  const Mutation({
+    this.calibration = GuessCalibration.seed,
+    this.fixedGuess,
+    this.noCeiling = false,
+    this.label = 'as built',
+  });
+
+  /// The guess calibration the model is given.
+  final GuessCalibration calibration;
+
+  /// Every item is given this guess rate instead of the calibrated one.
+  final double? fixedGuess;
+
+  /// The start is the posterior's lower edge, with no proven-level ceiling.
+  final bool noCeiling;
+
+  final String label;
 }
 
 /// Everything a picker may look at.
@@ -386,6 +421,7 @@ class RunState {
     required this.rng,
     required this.calibration,
     required this.profile,
+    this.fixedGuess,
   });
 
   final JointPlacement model;
@@ -394,6 +430,7 @@ class RunState {
   final math.Random rng;
   final GuessCalibration calibration;
   final BankProfile profile;
+  final double? fixedGuess;
 
   final List<SimItem> asked = <SimItem>[];
   final Set<String> askedCards = <String>{};
@@ -420,11 +457,13 @@ abstract class SimPicker {
 }
 
 /// The calibrated guess of an item in a bank profile.
-double calibratedGuess(RunState s, SimItem item) => s.calibration.guessFor(
-  formatKey(item.spec.code, s.profile),
-  item.card.cognate,
-  item.spec.guess,
-);
+double calibratedGuess(RunState s, SimItem item) =>
+    s.fixedGuess ??
+    s.calibration.guessFor(
+      formatKey(item.spec.code, s.profile),
+      item.card.cognate,
+      item.spec.guess,
+    );
 
 /// A stand-in for the item registry: the model's view of [item].
 JointItem toJointItem(RunState s, SimItem item) {
@@ -473,6 +512,10 @@ class SkillResult {
 
   /// How many classes the start is above the truth.
   int get over => start - truth;
+
+  /// How many classes the lower edge of the range (the p10) is above the
+  /// truth.
+  int get lowOver => low - truth;
 }
 
 class RunResult {
@@ -503,7 +546,7 @@ RunResult runOnce({
   required PlacementDeclaration? declaration,
   required Variant variant,
   required int seed,
-  GuessCalibration calibration = GuessCalibration.seed,
+  Mutation mutation = const Mutation(),
   bool sayInJoint = false,
 }) {
   final rng = math.Random(seed * 100003 + 17);
@@ -517,8 +560,9 @@ RunResult runOnce({
     bank: bank,
     variant: variant,
     rng: rng,
-    calibration: calibration,
+    calibration: mutation.calibration,
     profile: persona.profile,
+    fixedGuess: mutation.fixedGuess,
   );
   var repeated = false;
   while (true) {
@@ -546,7 +590,7 @@ RunResult runOnce({
     results[e.key] = SkillResult(
       skill: e.key,
       truth: persona.truthOf(e.key),
-      start: r.startClass,
+      start: mutation.noCeiling ? r.lowClass : r.startClass,
       low: r.lowClass,
       high: r.highClass,
       median: r.medianClass,
@@ -572,7 +616,15 @@ RunResult runOnce({
 /// word-level formats, a card is never asked twice, and it stops at the
 /// plan's caps (40 items, 300 s, 14 touches a skill).
 class BaselinePicker implements SimPicker {
-  BaselinePicker({this.yesNoBlock = false, this.sayItems = 2});
+  BaselinePicker({
+    this.yesNoBlock = false,
+    this.sayItems = 2,
+    this.naive = false,
+  });
+
+  /// A control: asks every format, leaky or not, and lets near-cognates into
+  /// word-level formats, as V3 did before the adversarial review.
+  final bool naive;
 
   /// Whether Read opens with a yes/no block (8 pseudowords and 6 words).
   final bool yesNoBlock;
@@ -774,8 +826,14 @@ class BaselinePicker implements SimPicker {
       // A format guessed more than a clean item may be is not asked: it
       // cannot count toward coverage or proof.
       final probe = SimItem(const SimCard('probe', 0, false), spec);
-      if (calibratedGuess(s, probe) > kCleanGuessMax) continue;
-      final card = _pickCard(s, band, spec.wordLevel);
+      if (!naive && calibratedGuess(s, probe) > kCleanGuessMax) continue;
+      // A cognate sentence item is asked only when the model would use it: at
+      // a calibrated guess of 0.9 or more it gives no evidence.
+      final allowCognate =
+          !spec.wordLevel &&
+          s.fixedGuess == null &&
+          s.calibration.usable(formatKey(code, s.profile), true, spec.guess);
+      final card = _pickCard(s, band, naive ? false : !allowCognate);
       if (card == null) continue;
       return SimItem(card, spec);
     }
@@ -819,6 +877,7 @@ List<RunResult> runCell({
   required int runs,
   bool sayInJoint = false,
   int seedBase = 0,
+  Mutation mutation = const Mutation(),
 }) => <RunResult>[
   for (var seed = 1; seed <= runs; seed++)
     runOnce(
@@ -829,6 +888,7 @@ List<RunResult> runCell({
       variant: variant,
       seed: seedBase + seed,
       sayInJoint: sayInJoint,
+      mutation: mutation,
     ),
 ];
 

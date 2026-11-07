@@ -39,6 +39,16 @@ class _PendingGate {
   final String step;
 }
 
+// The file-name patterns of the prerequisites, broad on purpose: any file
+// under lib/core/placement/ (any depth) whose name has the word.
+final List<RegExp> _picker = <RegExp>[
+  // The V2 picker, item_picker.dart, is not the V3 one.
+  RegExp(r'^(?!item_picker\.dart$).*picker'),
+];
+final List<RegExp> _registry = <RegExp>[RegExp(r'registry')];
+final List<RegExp> _drillDown = <RegExp>[RegExp(r'drill_?down')];
+final List<RegExp> _scriptGate = <RegExp>[RegExp(r'script_?gate')];
+
 final List<_PendingGate> _pending = <_PendingGate>[
   _PendingGate(
     'time-and-items',
@@ -49,7 +59,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
         's medians (95th percentile 30 to 32 items, about 305 s), over the '
         'gate. The time table (tiles 15 s, typing 12 s) makes Write the '
         'costly skill. Not loosened: security needs four clean items a band.',
-    [RegExp(r'^v3_picker')],
+    _picker,
     'step 4 (picker, rotation, caps)',
   ),
   _PendingGate(
@@ -59,7 +69,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'It needs a picker that climbs to the top band cheaply. The stand-in '
         'places them safely but low (within 1/10 in 0 to 60% of runs) because '
         'its proof stages run out of the 300 s.',
-    [RegExp(r'^v3_picker')],
+    _picker,
     'step 4 (picker, rotation, caps)',
   ),
   _PendingGate(
@@ -71,7 +81,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
         'declaration). The posterior\'s calibration is a joint property of '
         'the picker\'s stopping and the likelihood temper, re-fitted from '
         'replay then.',
-    [RegExp(r'^v3_picker')],
+    _picker,
     'step 4 (picker) and step 8 (re-fit)',
   ),
   _PendingGate(
@@ -81,7 +91,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'The stand-in proves one band for all skills, so Read and Write failing '
         'holds Hear down. The low half (Read and Write at the start) is '
         'enforced now. Needs a per-skill drill-down.',
-    [RegExp(r'^v3_picker'), RegExp(r'drilldown')],
+    [..._picker, ..._drillDown],
     'step 4 and step 5 (picker, drill-down)',
   ),
   _PendingGate(
@@ -89,7 +99,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'For a persona with exactly one failing skill, the right skill is '
         'identified in at least 90% of runs within 4 isolating items.',
     'There is no drill-down yet.',
-    [RegExp(r'drilldown')],
+    _drillDown,
     'step 5 (drill-down)',
   ),
   _PendingGate(
@@ -99,7 +109,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'It is a property of the generated tiles (two decoy letters or syllable '
         'tiles), and the harness bank has no real tiles. The leak rates are '
         'fixtures of the adversary\'s measurements.',
-    [RegExp(r'^item_registry')],
+    _registry,
     'step 3 (item registry and generators)',
   ),
   _PendingGate(
@@ -107,7 +117,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'MATCHER: per-pair accuracy at most 0.35 on matching items.',
     'Matching (F9) is not in the stand-in bank; its accuracy depends on the '
         'part-of-speech partition of real words.',
-    [RegExp(r'^item_registry')],
+    _registry,
     'step 3 (item registry and generators)',
   ),
   _PendingGate(
@@ -117,7 +127,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'The lift is a property of real generated items on one card. The never-'
         'ask-a-card-twice half is enforced now (the model refuses a repeated '
         'card; the harness checks every run).',
-    [RegExp(r'^item_registry')],
+    _registry,
     'step 3 (item registry and generators)',
   ),
   _PendingGate(
@@ -126,7 +136,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
         'the design guess plus 0.07 (0.32 for a four-option pick), else the '
         'item is excluded.',
     'It audits the real generated items.',
-    [RegExp(r'^item_registry')],
+    _registry,
     'step 3 (item registry and generators)',
   ),
   _PendingGate(
@@ -135,7 +145,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
         'script passed.',
     'The script gate is a separate latent that does not exist yet. The '
         'words half (no word skill placed) is enforced now.',
-    [RegExp(r'^script_gate')],
+    _scriptGate,
     'a later step (script gate)',
   ),
 ];
@@ -143,7 +153,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
 void main() {
   group('pending gates', () {
     final files = Directory('lib/core/placement')
-        .listSync()
+        .listSync(recursive: true)
         .whereType<File>()
         .map((f) => f.uri.pathSegments.last)
         .toList();
@@ -173,8 +183,30 @@ void main() {
     test('every pending gate is named in the plan', () {
       final plan = File('wiki/Plan-Placement-V3.md').readAsStringSync();
       expect(plan, contains('Revised validation gates'));
-      // The plan lists the pending gates under its build progress.
       expect(plan, contains('Pending gates'));
+      for (final gate in _pending) {
+        expect(
+          plan,
+          contains('`${gate.id}`'),
+          reason: 'the plan\'s Pending gates table must name `${gate.id}`',
+        );
+      }
+    });
+
+    test('the patterns match what they are meant to and not the V2 picker', () {
+      expect(_picker.single.hasMatch('v3_picker.dart'), isTrue);
+      expect(_picker.single.hasMatch('item_picker.dart'), isFalse);
+      expect(_picker.single.hasMatch('picker_v3.dart'), isTrue);
+      expect(_registry.single.hasMatch('item_registry.dart'), isTrue);
+      expect(_drillDown.single.hasMatch('v3_drill_down.dart'), isTrue);
+      expect(_drillDown.single.hasMatch('drilldown.dart'), isTrue);
+      expect(_scriptGate.single.hasMatch('script_gate.dart'), isTrue);
+      // None matches a file that exists today: the gates are pending.
+      for (final f in files) {
+        for (final p in [..._picker, ..._registry, ..._drillDown]) {
+          expect(p.hasMatch(f), isFalse, reason: f);
+        }
+      }
     });
   });
 

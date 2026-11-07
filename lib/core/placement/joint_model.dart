@@ -299,9 +299,11 @@ class GuessCalibration {
     'F4decoys:clean': 0.30,
     'F4decoys:cognate': 0.80,
     'F5legacy:clean': 0.95,
+    'F5legacy:cognate': 0.95,
     'F5:clean': 0.35,
     'F5:cognate': 0.90,
     'F6hint:clean': 0.60,
+    'F6hint:cognate': 0.75,
     'F6endings:clean': 0.99,
     'F6:clean': 0.35,
     'F7:clean': 0.05,
@@ -317,6 +319,7 @@ class GuessCalibration {
     'F17:cognate': 0.90,
     'F6:cognate': 0.90,
     'S2legacy:clean': 0.98,
+    'S2legacy:cognate': 0.98,
   });
 
   /// The 90% upper bound of the guess rate by `format:class`.

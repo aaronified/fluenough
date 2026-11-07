@@ -44,13 +44,26 @@ void main() {
               variant: Variant.full,
               runs: 100,
             );
-            final all = results.expand((r) => r.skills.values);
-            // p10 within T + 1/10 in at least 97% of results.
-            expect(
-              share(all, (SkillResult x) => x.over <= 2),
-              greaterThanOrEqualTo(0.97),
-              reason: 'yes-rate $rate, ${declarationName(d)}',
-            );
+            // Per skill: the p10 (the lower edge of the range) is within
+            // T + 1/10 in at least 97% of runs.
+            for (final skill in results.first.skills.keys) {
+              expect(
+                share(
+                  results.map((r) => r.skills[skill]!),
+                  (SkillResult x) => x.lowOver <= 2,
+                ),
+                greaterThanOrEqualTo(0.97),
+                reason: '${skill.name}, yes-rate $rate, ${declarationName(d)}',
+              );
+              // And so is the start.
+              expect(
+                share(
+                  results.map((r) => r.skills[skill]!),
+                  (SkillResult x) => x.over <= 2,
+                ),
+                greaterThanOrEqualTo(0.97),
+              );
+            }
             // The run asked the eight pseudowords the model needs.
             expect(
               share(results, (RunResult r) => r.items >= kMinPseudowords),
@@ -72,7 +85,7 @@ void main() {
             picker: BaselinePicker.new,
             declaration: d,
             variant: Variant.full,
-            runs: 20,
+            runs: 100,
             sayInJoint: true,
           );
           // Say starts at most 1/10 above Hear in at least 98% of runs.
