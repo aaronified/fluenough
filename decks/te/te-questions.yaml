@@ -21,6 +21,10 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "అది నిజం కాదు.", "reading": "adi nijaṁ kādu.", "ipa": "ad̪i nidʒam kaːd̪u.", "bases": []},
+      {"target": "ఇది నీళ్ళు కాదు.", "reading": "idi nīḷḷu kādu.", "ipa": "id̪i niːɭɭu kaːd̪u", "bases": [{"word": "ఇది", "ref": "te-0600"}]}
+    ]
   - id: "te-0159"
     target: "లేదు"
     reading: "lēdu"
@@ -28,6 +32,9 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ఇక్కడ సిగ్నల్ లేదు.", "reading": "ikkaḍa signal lēdu.", "ipa": "ikkaɖa siɡnal leːd̪u", "bases": [{"word": "సిగ్నల్", "base": "సిగ్నల్", "reading": "signal"}, {"word": "ఇక్కడ", "base": "ఇక్కడ", "reading": "ikkaḍa"}, {"word": "లేదు", "base": "లేదు", "reading": "lēdu"}]}
+    ]
   - id: "te-0160"
     target: "ఏమిటి"
     reading: "ēmiṭi"
@@ -41,6 +48,9 @@ cards:
     reading: "evaru"
     ipa: "eʋaru"
     pos: "other"
+    "examples": [
+      {"target": "మీరు ఎవరు?", "reading": "mīru evaru?", "ipa": "miːru eʋaru", "bases": []}
+    ]
   - id: "te-0162"
     target: "ఎక్కడ"
     reading: "ekkaḍa"
@@ -51,16 +61,28 @@ cards:
     reading: "eppuḍu"
     ipa: "eppuɖu"
     pos: "other"
+    "examples": [
+      {"target": "ఇక్కడికి ఎప్పుడు వచ్చావు?", "reading": "ikkaḍiki eppuḍu vaccāvu?", "ipa": "ikkaɖiki eppuɖu ʋatʃtʃaːʋu", "bases": [{"word": "వచ్చావు", "base": "రావడం", "reading": "rāvaḍam"}]},
+      {"target": "ఓడ ఎప్పుడు బయలుదేరుతుంది?", "reading": "ōḍa eppuḍu bayaludērutundi?", "ipa": "oːɖa eppɖu bajalud̪eːruʈund̪i", "bases": [{"word": "బయలుదేరుతుంది", "ref": "te-2301"}]}
+    ]
   - id: "te-0164"
     target: "ఎందుకు"
     reading: "enduku"
     ipa: "end̪uku"
     pos: "other"
+    "examples": [
+      {"target": "అతను ఎందుకు అరుస్తాడు?", "reading": "atanu enduku arustāḍu?", "ipa": "at̪anu end̪uku arust̪aːɖu", "bases": [{"word": "అరుస్తాడు", "base": "అరవడం", "reading": "aravaḍam"}]},
+      {"target": "అదనపు చార్జీ ఎందుకు?", "reading": "adanapu cārjī enduku?", "ipa": "adanapu tʃaːrdʒiː end̪ukuː", "bases": [{"word": "అదనపు", "base": "అదనం", "reading": "adanaṁ"}]}
+    ]
   - id: "te-0165"
     target: "ఎలా"
     reading: "elā"
     ipa: "elaː"
     pos: "other"
+    "examples": [
+      {"target": "ఎలా ఉంది?", "reading": "elā undi?", "ipa": "elaː und̪i", "bases": [{"word": "ఉంది", "ref": "te-0633"}]},
+      {"target": "ఎలా చెల్లించాలి?", "reading": "elā celliñcāli?", "ipa": "elaː tʃelliɲtʃaːli", "bases": [{"word": "చెల్లించాలి", "ref": "te-1401"}]}
+    ]
   - id: "te-0166"
     target: "ఎంత"
     reading: "enta"
@@ -68,11 +90,17 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "చలాన్ ఎంత?", "reading": "calān enta?", "ipa": "tʃalaːn ent̪a", "bases": []}
+    ]
   - id: "te-0167"
     target: "ఏది"
     reading: "ēdi"
     ipa: "eːd̪i"
     pos: "other"
+    "examples": [
+      {"target": "ఆమెకు ఇష్టమైన పాట ఏది?", "reading": "āmeku iṣṭamaina pāṭa ēdi?", "ipa": "aːmeku iʂʈamaina paːʈa eːd̪i", "bases": [{"word": "ఇష్టమైన", "base": "ఇష్టం", "reading": "iṣṭaṁ"}, {"word": "ఆమెకు", "ref": "te-0596"}]}
+    ]
   - id: "te-0168"
     target: "నిజమా?"
     reading: "nijamā?"

@@ -22,6 +22,10 @@ cards:
     picture: "💧"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "నీళ్ళు తాగండి.", "reading": "nīḷḷu tāgaṇḍi.", "ipa": "niːɭɭu t̪aːɡaɳɖi", "bases": [{"word": "నీళ్ళు", "base": "నీళ్ళు", "reading": "nīḷḷu"}, {"word": "తాగండి", "ref": "te-0625"}]},
+      {"target": "నీళ్ళు తాగు.", "reading": "nīḷḷu tāgu.", "ipa": "niːɭɭu t̪aːɡu", "bases": [{"word": "నీళ్ళు", "base": "నీళ్ళు", "reading": "nīḷḷu"}, {"word": "తాగు", "ref": "te-0625"}]}
+    ]
   - id: "te-0342"
     target: "టీ"
     reading: "ṭī"
@@ -30,17 +34,27 @@ cards:
     picture: "🍵"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "టీ తాగు.", "reading": "ṭī tāgu.", "ipa": "ʈiː t̪aːɡu", "bases": [{"word": "టీ", "base": "టీ", "reading": "ṭī"}, {"word": "తాగు", "ref": "te-0625"}]}
+    ]
   - id: "te-0343"
     target: "కాఫీ"
     reading: "kāfī"
     ipa: "kaːfiː"
     pos: "noun"
+    "examples": [
+      {"target": "మీరు కాఫీ తాగుతారా?", "reading": "mīru kāfī tāgutārā?", "ipa": "miːru kaːfiː t̪aːɡut̪aːraː", "bases": [{"word": "తాగుతారా", "ref": "te-0625"}]}
+    ]
   - id: "te-0344"
     target: "అన్నం"
     reading: "annaṁ"
     ipa: "annam"
     pos: "noun"
     picture: "🍚"
+    "examples": [
+      {"target": "నేను అన్నం ఉడికిస్తాను.", "reading": "nēnu annaṁ uḍikistānu.", "ipa": "neːnu annam uɖikistaːnu", "bases": [{"word": "ఉడికిస్తాను", "base": "ఉడికించడం", "reading": "uḍikiñcaḍam"}]},
+      {"target": "పళ్ళెంలో అన్నం ఉంది.", "reading": "paḷḷemlō annaṁ undi.", "ipa": "paɭɭemloː annam und̪i", "bases": [{"word": "పళ్ళెంలో", "ref": "te-0707"}, {"word": "ఉంది", "ref": "te-0633"}]}
+    ]
   - id: "te-0345"
     target: "నాకు … కావాలి."
     reading: "nāku... kāvāli."
@@ -57,6 +71,9 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ఇంకా కొంచెం కావాలా?", "reading": "iṅkā koñceṁ kāvālā?", "ipa": "iŋkaː koɲtʃem kaːʋaːlaː", "bases": [{"word": "కావాలా", "ref": "te-0460"}]}
+    ]
   - id: "te-0347"
     target: "కారం"
     reading: "kāraṁ"
@@ -69,6 +86,9 @@ cards:
     reading: "tīpi"
     ipa: "t̪iːpi"
     pos: "adj"
+    "examples": [
+      {"target": "ఈ పండు తీపిగా ఉంది.", "reading": "ī paṇḍu tīpigā undi.", "ipa": "iː paɳɖu t̪iːpiɡaː und̪i", "bases": [{"word": "తీపిగా", "base": "తీపి", "reading": "tīpi"}, {"word": "ఉంది", "ref": "te-0633"}]}
+    ]
   - id: "te-0349"
     target: "శాకాహారం"
     reading: "śākāhāraṁ"
