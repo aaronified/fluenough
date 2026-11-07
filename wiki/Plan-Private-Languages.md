@@ -1,5 +1,7 @@
 # Plan: build entire languages as private decks (Your decks)
 
+> **Priority 1 after the placement release** (owner, 2026-11-07).
+
 Source of truth: this wiki page.
 
 
