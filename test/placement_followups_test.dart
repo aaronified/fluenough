@@ -3,6 +3,7 @@
 // placement credit never enters a fit.
 import 'package:fluenough/app/app_state.dart';
 import 'package:fluenough/app/placement_credit.dart';
+import 'package:fluenough/app/placement_plan.dart';
 import 'package:fluenough/app/placement_recheck.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/placement/placement_check.dart';
