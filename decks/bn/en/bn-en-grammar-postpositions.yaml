@@ -12,6 +12,10 @@ cards:
     native: "at home; in the house"
     notes:
       "n1": "-এ (-e), -তে (-te) or -য় (-yô) is 'in, at': ঘরে (ghôre), in the room; বাড়িতে (bāṛite), at home; কলকাতায় (kôlokātāy) (-য় (-yô) after আ (ā))."
+    "examples": {
+      "বাড়িতে ডেলিভারি দেন?": {"native": "Do you deliver to the house?", "bases": {}},
+      "বাড়িতে পূজা হচ্ছে।": {"native": "A puja is being held at home.", "bases": {}}
+    }
   "bn-0292":
     native: "Ram's house"
     notes:
@@ -28,30 +32,56 @@ cards:
     native: "from"
     notes:
       "n1": "দিল্লি থেকে (dilli theke), from Delhi. কাল থেকে (kāl theke), since yesterday or from tomorrow: কাল (kāl) is both, and the verb's tense tells you which."
+    "examples": {
+      "কোথা থেকে": {"native": "from where", "bases": {}}
+    }
   "bn-0295":
     native: "with (using); by way of"
     notes:
       "n1": "হাত দিয়ে (hāt diye), with the hand. এই রাস্তা দিয়ে (ei rāstā diye), along this road."
+    "examples": {
+      "দড়ি দিয়ে বাঁধো।": {"native": "Tie it with a rope. (familiar)", "bases": {"দিয়ে": "with (using); by way of"}},
+      "মনোযোগ দিয়ে পড়ো।": {"native": "Read with attention. (familiar)", "bases": {"দিয়ে": "with (using); by way of"}}
+    }
   "bn-0296":
     native: "with (together with)"
     notes:
       "n1": "The noun before it takes -এর (-er): রামের সঙ্গে (rāmer śôṅge), with Ram; আমার সঙ্গে (āmār śôṅge), with me. Also সাথে (śāthe)."
+    "examples": {
+      "ছবির সঙ্গে মেলাও।": {"native": "Match it with the picture. (familiar)", "bases": {"মেলাও": "to match", "সঙ্গে": "with (together with)"}},
+      "সহপাঠীদের সঙ্গে খেলি।": {"native": "I play with my classmates.", "bases": {"সহপাঠীদের": "classmate", "সঙ্গে": "with (together with)"}}
+    }
   "bn-0297":
     native: "for"
     notes:
       "n1": "আপনার জন্য (āponār jonno), for you."
+    "examples": {
+      "অধিকারের জন্য লড়াই।": {"native": "A fight for rights.", "bases": {"অধিকারের": "right", "জন্য": "for", "লড়াই": "fight"}},
+      "অভিযানের জন্য প্রস্তুত।": {"native": "Ready for the expedition.", "bases": {"অভিযানের": "expedition", "জন্য": "for", "প্রস্তুত": "ready"}}
+    }
   "bn-0309":
     native: "near; (to have on you)"
     notes:
       "n1": "স্টেশনের কাছে (sṭeśoner kāche), near the station. আমার কাছে টাকা আছে (āmār kāche ṭākā āche), I have money on me."
+    "examples": {
+      "চট্টগ্রাম সমুদ্রের কাছে।": {"native": "Chittagong is near the sea.", "bases": {"কাছে": "near"}},
+      "স্কুল বাড়ির কাছে।": {"native": "The school is near the house.", "bases": {"কাছে": "near; (to have on you)"}}
+    }
   "bn-0298":
     native: "after"
     notes:
       "n1": "খাওয়ার পরে (khāoyār pôre) or খাওয়ার পর (khāoyār pôr), after eating."
+    "examples": {
+      "খাওয়ার পরে": {"native": "after eating", "bases": {"পরে": "after"}},
+      "পরের স্টপে নামব।": {"native": "I will get off at the next stop.", "bases": {"পরের": "next; later", "স্টপে": "stop (bus or train)"}}
+    }
   "bn-0299":
     native: "before"
     notes:
       "n1": "খাওয়ার আগে (khāoyār āge), before eating."
+    "examples": {
+      "খাওয়ার আগে": {"native": "before eating", "bases": {"আগে": "before"}}
+    }
   "bn-0300":
     native: "on; above"
     notes:
@@ -64,14 +94,25 @@ cards:
     native: "inside"
     notes:
       "n1": "বাক্সের ভিতরে (bākser bhitore), inside the box. In speech often ভেতরে (bhetore)."
+    "examples": {
+      "ভেতরে ঢোকো।": {"native": "Come in. (familiar)", "bases": {"ঢোকো": "go in (familiar)", "ভেতরে": "inside"}}
+    }
   "bn-0586":
     native: "outside"
     notes:
       "n1": "বাড়ির বাইরে (bāṛir bāire), outside the house."
+    "examples": {
+      "আবর্জনাগুলো বাইরে ফেলো।": {"native": "Throw the rubbish outside. (familiar)", "bases": {"আবর্জনাগুলো": "the rubbish (plural)"}},
+      "খেয়ে বাইরে যাও।": {"native": "Eat and then go out. (familiar)", "bases": {}}
+    }
   "bn-0587":
     native: "in; within; among"
     notes:
       "n1": "এক ঘণ্টার মধ্যে (ek ghônṭār moddhe), within an hour."
+    "examples": {
+      "আমাদের মধ্যে মতভেদ আছে।": {"native": "There is a difference of opinion between us.", "bases": {"মধ্যে": "between", "আছে": "there is"}},
+      "ওদের মধ্যে তর্ক হচ্ছে।": {"native": "There is an argument between them.", "bases": {"ওদের": "of them", "মধ্যে": "between"}}
+    }
   "bn-0588":
     native: "than"
     notes:
@@ -80,10 +121,18 @@ cards:
     native: "except; without"
     notes:
       "n1": "The word before it takes no ending: চিনি ছাড়া (cini chāṛā), without sugar."
+    "examples": {
+      "অহংকার ছাড়ো।": {"native": "Leave your arrogance. (familiar)", "bases": {"ছাড়ো": "except; without"}},
+      "ট্রেনটা কখন ছাড়বে?": {"native": "When will the train leave?", "bases": {"ছাড়বে": "to leave; to depart"}}
+    }
   "bn-0590":
     native: "about (a topic); bringing along"
     notes:
       "n1": "কী নিয়ে (ki niye)? About what? A person before it takes -কে (-ke): ওকে নিয়ে এসো (oke niye eso), bring him along."
+    "examples": {
+      "অর্থনীতি নিয়ে পড়ছি।": {"native": "I am studying economics.", "bases": {"নিয়ে": "about (a topic); bringing along"}},
+      "আগ্রহ নিয়ে পড়ো।": {"native": "Read with interest. (familiar)", "bases": {"নিয়ে": "with", "পড়ো": "read"}}
+    }
   "bn-0591":
     native: "until; as far as"
     notes:

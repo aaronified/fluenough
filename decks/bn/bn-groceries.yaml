@@ -13,18 +13,29 @@ cards:
     ipa: "ʃɔbdʒi"
     alt_target: ["সব্জি"]
     pos: "noun"
+    "examples": [
+      {"target": "সবজি বিক্রি করো।", "reading": "sôboji bikri kôro.", "ipa": "sɔbodʒi bikri kɔro", "bases": [{"word": "সবজি", "base": "সবজি", "reading": "śôbji"}, {"word": "বিক্রি", "ref": "bn-1688"}, {"word": "করো", "ref": "bn-0102"}]}
+    ]
   - id: "bn-0261"
     target: "আলু"
     reading: "ālu"
     ipa: "alu"
     pos: "noun"
     picture: "🥔"
+    "examples": [
+      {"target": "আলু সেদ্ধ করুন।", "reading": "ālu śeddho korun.", "ipa": "alu sed̪d̪ʱo korun", "bases": [{"word": "করুন", "ref": "bn-0102"}]},
+      {"target": "আলুর খোসা ছাড়ান।", "reading": "ālur khosā chāṛān.", "ipa": "alur kʰosa tʃʰaɽan", "bases": [{"word": "আলুর", "base": "আলু", "reading": "ālu"}, {"word": "ছাড়ান", "base": "ছাড়ানো", "reading": "chāṛāno", "ipa": "tʃʰaɽano"}]}
+    ]
   - id: "bn-0262"
     target: "পেঁয়াজ"
     reading: "pem̐yāj"
     ipa: "pẽjadʒ"
     pos: "noun"
     picture: "🧅"
+    "examples": [
+      {"target": "পেঁয়াজ কুচি করুন।", "reading": "pem̐yāj kuci korun.", "ipa": "pẽjadʒ kutʃi korun", "bases": [{"word": "করুন", "ref": "bn-0102"}]},
+      {"target": "পেঁয়াজ কুচিয়ে নিন।", "reading": "pem̐yāj kuciye nin.", "ipa": "pẽjadʒ kutʃije nin", "bases": [{"word": "কুচিয়ে", "base": "কুচানো", "reading": "kucāno", "ipa": "kutʃano"}, {"word": "নিন", "ref": "bn-0889"}]}
+    ]
   - id: "bn-0263"
     target: "টমেটো"
     reading: "ṭômeṭo"
@@ -40,12 +51,19 @@ cards:
     picture: "🌶"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "মুড়ির সঙ্গে কাঁচা লঙ্কা।", "reading": "muṛir sôṅge kām̐cā lôṅkā.", "ipa": "muɽir sɔŋɡe kãtʃa lɔŋka", "bases": [{"word": "মুড়ির", "base": "মুড়ি", "reading": "muṛi", "ipa": "muɽi"}, {"word": "সঙ্গে", "ref": "bn-0296"}, {"word": "কাঁচা", "ref": "bn-0988"}]},
+      {"target": "কাঁচা লঙ্কা কুচানো হয়েছে।", "reading": "kām̐cā lôṅkā kucāno hôyeche.", "ipa": "kãtʃa lɔŋka kutʃano ɦɔjetʃʰe", "bases": [{"word": "কাঁচা", "ref": "bn-0988"}, {"word": "হয়েছে", "ref": "bn-0874"}]}
+    ]
   - id: "bn-0265"
     target: "রসুন"
     reading: "rośun"
     ipa: "roʃun"
     pos: "noun"
     picture: "🧄"
+    "examples": [
+      {"target": "রসুন কোটো।", "reading": "rôsun koṭo.", "ipa": "rosun koʈo", "bases": [{"word": "কোটো", "base": "কোটা", "reading": "koṭā", "ipa": "koʈa"}]}
+    ]
   - id: "bn-0266"
     target: "মাছ"
     reading: "māch"
@@ -54,6 +72,9 @@ cards:
     picture: "🐟"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "মাছটা কত?", "reading": "māchṭā kôto?", "ipa": "matʃʰʈa kɔt̪o", "bases": [{"word": "মাছটা", "base": "মাছ", "reading": "māch"}]}
+    ]
   - id: "bn-0267"
     target: "মাংস"
     reading: "māṅśo"
@@ -63,6 +84,10 @@ cards:
     picture: "🍖"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "পাঁঠার মাংস", "reading": "pām̐ṭhār māṅśo", "ipa": "pãʈʰar maŋʃo", "bases": [{"word": "পাঁঠার", "base": "পাঁঠা", "reading": "pām̐ṭhā"}]},
+      {"target": "আমি মাংস খাই না।", "reading": "āmi māṅśo khāi nā.", "ipa": "ami maŋʃo kʰai na", "bases": [{"word": "খাই", "ref": "bn-0876"}]}
+    ]
   - id: "bn-0268"
     target: "পাঁঠার মাংস"
     reading: "pām̐ṭhār māṅśo"
@@ -81,6 +106,9 @@ cards:
     picture: "🐔"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ফার্মে অনেক মুরগি আছে।", "reading": "phārme ônek murogi āche.", "ipa": "pʰarme ɔnek muroɡi atʃʰe", "bases": [{"word": "ফার্মে", "base": "ফার্ম", "reading": "phārme"}, {"word": "অনেক", "ref": "bn-0550"}, {"word": "মুরগি", "base": "মুরগি", "reading": "murgi"}, {"word": "আছে", "base": "আছে", "reading": "āche"}]}
+    ]
   - id: "bn-0270"
     target: "ডিম"
     reading: "ḍim"
@@ -89,12 +117,18 @@ cards:
     picture: "🥚"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ডিম সেদ্ধ হয়েছে।", "reading": "dim śeddho hôyeche.", "ipa": "ɖim sed̪d̪ʱo ɦɔjetʃʰe", "bases": [{"word": "হয়েছে", "ref": "bn-0874"}]}
+    ]
   - id: "bn-0271"
     target: "দুধ"
     reading: "dudh"
     ipa: "d̪ud̪ʱ"
     pos: "noun"
     picture: "🥛"
+    "examples": [
+      {"target": "দুধ ফুটে গেছে।", "reading": "dudh phuṭe geche.", "ipa": "d̪ud̪ʱ pʰuʈe ɡetʃʰe", "bases": [{"word": "ফুটে", "base": "ফোটা", "reading": "phoṭā", "ipa": "pʰoʈa"}, {"word": "গেছে", "ref": "bn-0873"}]}
+    ]
   - id: "bn-0272"
     target: "চাল"
     reading: "cāl"
@@ -102,11 +136,18 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "চাল ভাপানো হয়েছে।", "reading": "cāl bhāpāno hôyeche.", "ipa": "tʃal bʱapano ɦɔjetʃʰe", "bases": [{"word": "চাল", "base": "চাল", "reading": "cāl"}, {"word": "হয়েছে", "ref": "bn-0874"}]},
+      {"target": "জলে ভেজানো চাল।", "reading": "jôle bhejāno cāl.", "ipa": "dʒɔle bʱedʒano tʃal", "bases": [{"word": "জলে", "ref": "bn-0350"}, {"word": "চাল", "base": "চাল", "reading": "cāl"}]}
+    ]
   - id: "bn-0273"
     target: "ডাল"
     reading: "ḍāl"
     ipa: "ɖal"
     pos: "noun"
+    "examples": [
+      {"target": "ডালটা ছাঁকা হয়েছে।", "reading": "ḍālṭā chām̐kā hôyeche.", "ipa": "ɖalʈa tʃʰãka ɦɔjetʃʰe", "bases": [{"word": "ডালটা", "base": "ডাল", "reading": "ḍāl"}, {"word": "হয়েছে", "ref": "bn-0874"}]}
+    ]
   - id: "bn-0561"
     target: "কলা"
     reading: "kôlā"
@@ -115,12 +156,18 @@ cards:
     picture: "🍌"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "কয়েকটা কলা দিন।", "reading": "kôyekṭā kôlā din.", "ipa": "kɔjekʈa kɔla d̪in", "bases": [{"word": "কয়েকটা", "ref": "bn-1312"}, {"word": "দিন", "ref": "bn-0888"}]}
+    ]
   - id: "bn-0562"
     target: "আম"
     reading: "ām"
     ipa: "am"
     pos: "noun"
     picture: "🥭"
+    "examples": [
+      {"target": "আম খাওয়ার মৌসুম এসেছে।", "reading": "ām khāoyār mousum eseche.", "ipa": "am kʰaojar mousum esetʃʰe", "bases": [{"word": "খাওয়ার", "ref": "bn-0876"}, {"word": "এসেছে", "ref": "bn-0872"}]}
+    ]
   - id: "bn-0563"
     target: "পেঁপে"
     reading: "pem̐pe"
@@ -152,18 +199,32 @@ cards:
     picture: "🧂"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "সামান্য নুন দিন।", "reading": "śāmānno nun din.", "ipa": "ʃamanno nun d̪in", "bases": [{"word": "দিন", "ref": "bn-0888"}]},
+      {"target": "স্বাদমতো নুন দিন।", "reading": "śādomoto nun din.", "ipa": "sad̪omot̪o nun d̪in", "bases": [{"word": "দিন", "ref": "bn-0888"}]}
+    ]
   - id: "bn-0056"
     target: "ফল"
     reading: "phôl"
     ipa: "pʰɔl"
     pos: "noun"
+    "examples": [
+      {"target": "অনুসন্ধানের ফল কী?", "reading": "ônusondhāner phôl ki?", "ipa": "ɔnusond̪ʱaner pʰɔl ki", "bases": [{"word": "অনুসন্ধানের", "base": "অনুসন্ধান", "reading": "ônusondhāner"}, {"word": "ফল", "base": "ফল", "reading": "phôl"}, {"word": "কী", "base": "কী", "reading": "ki"}]}
+    ]
   - id: "bn-0569"
     target: "তেল"
     reading: "tel"
     ipa: "t̪el"
     pos: "noun"
+    "examples": [
+      {"target": "তেলে ফোড়ন দিন।", "reading": "tele phoṛon din.", "ipa": "t̪ele pʰoɽon d̪in", "bases": [{"word": "তেলে", "base": "তেল", "reading": "tel"}, {"word": "দিন", "ref": "bn-0888"}]},
+      {"target": "সরষের তেল আনুন।", "reading": "sôrośer tel ānun.", "ipa": "sɔroser t̪el anun", "bases": [{"word": "সরষের", "base": "সরষে", "reading": "sôrośe", "ipa": "sɔrose"}, {"word": "তেল", "base": "তেল", "reading": "tel"}, {"word": "আনুন", "ref": "bn-0893"}]}
+    ]
   - id: "bn-0570"
     target: "চিনি"
     reading: "cini"
     ipa: "tʃini"
     pos: "noun"
+    "examples": [
+      {"target": "আমি তাকে চিনি।", "reading": "āmi tāke cini.", "ipa": "ami t̪ake tʃini", "bases": [{"word": "আমি", "ref": "bn-0833"}, {"word": "তাকে", "ref": "bn-0839"}, {"word": "চিনি", "base": "চেনা", "reading": "cini"}]}
+    ]

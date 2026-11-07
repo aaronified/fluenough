@@ -12,6 +12,10 @@ cards:
     reading: "śāhājjo"
     ipa: "ʃaɦadʒdʒo"
     pos: "noun"
+    "examples": [
+      {"target": "সাহায্য করুন!", "reading": "śāhājjo korun!", "ipa": "ʃaɦadʒdʒo korun", "bases": [{"word": "করুন", "ref": "bn-0102"}]},
+      {"target": "অভাবী মানুষকে সাহায্য করো।", "reading": "ôbhābi mānuśoke sāhājj kôro.", "ipa": "ɔbʱabi manuʃoke saɦadʒdʒ kɔro", "bases": [{"word": "মানুষকে", "base": "মানুষ", "reading": "mānuśoke"}, {"word": "সাহায্য", "base": "সাহায্য", "reading": "śāhājjo"}, {"word": "করো", "ref": "bn-0102"}]}
+    ]
   - id: "bn-0372"
     target: "সাহায্য করুন!"
     reading: "śāhājjo korun!"
@@ -42,12 +46,19 @@ cards:
     ipa: "ɖakt̪ar"
     pos: "noun"
     picture: "🧑‍⚕"
+    "examples": [
+      {"target": "ডাক্তার দেখানো", "reading": "ḍāktār dekhāno", "ipa": "ɖakt̪ar d̪ekʰano", "bases": [{"word": "ডাক্তার", "base": "ডাক্তার", "reading": "ḍāktār"}, {"word": "দেখানো", "base": "দেখানো", "reading": "dekhāno", "ipa": "d̪ekʰano"}]}
+    ]
   - id: "bn-0377"
     target: "হাসপাতাল"
     reading: "hāśpātāl"
     ipa: "ɦaʃpat̪al"
     pos: "noun"
     picture: "🏥"
+    "examples": [
+      {"target": "অ্যাম্বুলেন্সে হাসপাতালে যাও।", "reading": "êāmbulense hāsopātāle jāo.", "ipa": "ɔdʒambulense ɦasopat̪ale dʒao", "bases": [{"word": "অ্যাম্বুলেন্সে", "base": "অ্যাম্বুলেন্স", "reading": "êāmbulense"}, {"word": "হাসপাতালে", "base": "হাসপাতাল", "reading": "hāśpātāl"}, {"word": "যাও", "ref": "bn-0873"}]},
+      {"target": "হাসপাতালে কে আছেন?", "reading": "hāśpātāle ke āchen?", "ipa": "ɦaʃpat̪ale ke atʃʰen", "bases": [{"word": "হাসপাতালে", "base": "হাসপাতাল", "reading": "hāśpātāl"}, {"word": "কে", "base": "কে", "reading": "ke", "ipa": "ke"}, {"word": "আছেন", "base": "আছেন", "reading": "āchen", "ipa": "atʃʰen"}]}
+    ]
   - id: "bn-0378"
     target: "ওষুধ"
     reading: "ośudh"
@@ -56,6 +67,9 @@ cards:
     picture: "💊"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ওষুধ খাওয়া", "reading": "ośudh khāoā", "ipa": "oʃud̪ʱ kʰaoa", "bases": []}
+    ]
   - id: "bn-0379"
     target: "ব্যথা"
     reading: "bêthā"
@@ -107,45 +121,72 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "আমার জ্বর।", "reading": "āmār jôr.", "ipa": "amar dʒɔr", "bases": [{"word": "আমার", "ref": "bn-0833"}]},
+      {"target": "জ্বর হওয়া", "reading": "jôr hoā", "ipa": "dʒɔr ɦoa", "bases": []}
+    ]
   - id: "bn-0728"
     target: "মাথা"
     reading: "māthā"
     ipa: "mat̪ʰa"
     pos: "noun"
+    "examples": [
+      {"target": "আমার মাথায় ব্যথা।", "reading": "āmār māthāy bêthā.", "ipa": "amar mat̪ʰaj bæt̪ʰa", "bases": [{"word": "আমার", "ref": "bn-0833"}, {"word": "মাথায়", "base": "মাথা", "reading": "māthā"}]}
+    ]
   - id: "bn-0729"
     target: "পেট"
     reading: "peṭ"
     ipa: "peʈ"
     pos: "noun"
+    "examples": [
+      {"target": "আমার পেটে ব্যথা।", "reading": "āmār peṭe bêthā.", "ipa": "amar peʈe bæt̪ʰa", "bases": [{"word": "আমার", "ref": "bn-0833"}, {"word": "পেটে", "base": "পেট", "reading": "peṭ"}]},
+      {"target": "বাবার পেট খারাপ।", "reading": "bābār peṭ khārāp.", "ipa": "babar peʈ kʰarap", "bases": [{"word": "বাবার", "ref": "bn-0423"}, {"word": "পেট", "base": "পেট", "reading": "peṭ"}, {"word": "খারাপ", "ref": "bn-0618"}]}
+    ]
   - id: "bn-0730"
     target: "হাত"
     reading: "hāt"
     ipa: "ɦat̪"
     pos: "noun"
     picture: "✋"
+    "examples": [
+      {"target": "হাত ঘষল।", "reading": "hāt ghôśol.", "ipa": "ɦat̪ ɡʱɔʃol", "bases": [{"word": "হাত", "base": "হাত", "reading": "hāt"}, {"word": "ঘষল", "base": "ঘষা", "reading": "ghôśol"}]}
+    ]
   - id: "bn-0731"
     target: "পা"
     reading: "pā"
     ipa: "pa"
     pos: "noun"
     picture: "🦵"
+    "examples": [
+      {"target": "পায়ের পেশিতে ব্যথা।", "reading": "pāyer peśite bêthā.", "ipa": "pajer peʃit̪e bæt̪ʰa", "bases": [{"word": "পায়ের", "base": "পা", "reading": "pā"}, {"word": "পেশিতে", "base": "পেশি", "reading": "peśite"}, {"word": "ব্যথা", "ref": "bn-0379"}]}
+    ]
   - id: "bn-0732"
     target: "চোখ"
     reading: "cokh"
     ipa: "tʃokʰ"
     pos: "noun"
     picture: "👁"
+    "examples": [
+      {"target": "প্রতিমার চোখ খুব সুন্দর।", "reading": "protimār cokh khub śundor.", "ipa": "prot̪imar tʃokʰ kʰub ʃund̪or", "bases": [{"word": "প্রতিমার", "base": "প্রতিমা", "reading": "protimā", "ipa": "prot̪ima"}]},
+      {"target": "সে চোখের জল ঝরাল।", "reading": "se cokher jôl jhôrāl.", "ipa": "se tʃokʰer dʒɔl dʒʱɔral", "bases": [{"word": "সে", "ref": "bn-0839"}, {"word": "চোখের", "base": "চোখ", "reading": "cokh"}, {"word": "জল", "ref": "bn-0350"}, {"word": "ঝরাল", "base": "ঝরানো", "reading": "jhôrāl"}]}
+    ]
   - id: "bn-0733"
     target: "দাঁত"
     reading: "dām̐t"
     ipa: "d̪ãt̪"
     pos: "noun"
     picture: "🦷"
+    "examples": [
+      {"target": "দাঁত মাজা", "reading": "dām̐t mājā", "ipa": "d̪ãt̪ madʒa", "bases": [{"word": "মাজা", "base": "মাজা", "reading": "mājā"}]}
+    ]
   - id: "bn-0734"
     target: "গলা"
     reading: "gôlā"
     ipa: "ɡɔla"
     pos: "noun"
+    "examples": [
+      {"target": "মাথায় ব্যথা আর গলা ব্যথা।", "reading": "māthāy bêthā ār gôlā bêthā.", "ipa": "mat̪ʰaj bæt̪ʰa ar ɡɔla bæt̪ʰa", "bases": [{"word": "মাথায়", "ref": "bn-0728"}, {"word": "ব্যথা", "ref": "bn-0379"}, {"word": "আর", "ref": "bn-0361"}, {"word": "গলা", "base": "গলা", "reading": "gôlā"}]}
+    ]
   - id: "bn-0735"
     target: "আমার পেট ব্যথা করছে।"
     reading: "āmār peṭ bêthā kôrche."

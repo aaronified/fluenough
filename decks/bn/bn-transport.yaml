@@ -13,6 +13,10 @@ cards:
     ipa: "bas"
     pos: "noun"
     picture: "🚌"
+    "examples": [
+      {"target": "আমি বাসে উঠলাম।", "reading": "āmi bāse uṭholām.", "ipa": "ami base uʈʰolam", "bases": [{"word": "বাসে", "base": "বাস", "reading": "bās"}, {"word": "উঠলাম", "ref": "bn-0885"}]},
+      {"target": "চালক বাসটা থামালেন।", "reading": "cālok bāsoṭā thāmālen.", "ipa": "tʃalok basoʈa t̪ʰamalen", "bases": [{"word": "বাসটা", "base": "বাস", "reading": "bās"}, {"word": "থামালেন", "base": "থামানো", "reading": "thāmāno"}]}
+    ]
   - id: "bn-0281"
     target: "অটো"
     reading: "ôṭo"
@@ -28,6 +32,10 @@ cards:
     ipa: "ʈæksi"
     pos: "noun"
     picture: "🚕"
+    "examples": [
+      {"target": "ট্যাক্সি নাও।", "reading": "ṭêksi nāo.", "ipa": "ʈæksi nao", "bases": [{"word": "নাও", "ref": "bn-0889"}]},
+      {"target": "ট্যাক্সি নিই?", "reading": "ṭêksi nii?", "ipa": "ʈæksi nii", "bases": [{"word": "নিই", "ref": "bn-0889"}]}
+    ]
   - id: "bn-0283"
     target: "ভাড়া"
     reading: "bhāṛā"
@@ -35,6 +43,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "বাড়িওয়ালাকে ভাড়াটা দিলাম।", "reading": "bāṛioyālāke bhāṛāṭā dilām.", "ipa": "baɽiojalake bʱaɽaʈa d̪ilam", "bases": [{"word": "বাড়িওয়ালাকে", "base": "বাড়িওয়ালা", "reading": "bāṛioyālāke"}, {"word": "ভাড়াটা", "base": "ভাড়া", "reading": "bhāṛā"}, {"word": "দিলাম", "ref": "bn-0888"}]},
+      {"target": "বাড়িওয়ালা ঘরটা ভাড়া দেয়।", "reading": "bāṛioyālā ghôroṭā bhāṛā dey.", "ipa": "baɽiojala ɡʱɔroʈa bʱaɽa d̪ej", "bases": [{"word": "ঘরটা", "ref": "bn-0051"}, {"word": "ভাড়া", "base": "ভাড়া", "reading": "bhāṛā"}, {"word": "দেয়", "ref": "bn-0888"}]}
+    ]
   - id: "bn-0284"
     target: "মিটারে চলুন।"
     reading: "miṭāre colun."
@@ -77,12 +89,20 @@ cards:
     ipa: "sʈeʃon"
     pos: "noun"
     picture: "🚉"
+    "examples": [
+      {"target": "স্টেশনে যাব।", "reading": "sṭeśone jābo.", "ipa": "sʈeʃone dʒabo", "bases": [{"word": "স্টেশনে", "base": "স্টেশন", "reading": "sṭeśon"}, {"word": "যাব", "ref": "bn-0873"}]},
+      {"target": "আগেভাগে স্টেশনে যাও।", "reading": "āgebhāge sṭeśone jāo.", "ipa": "aɡebʱaɡe sʈeʃone dʒao", "bases": [{"word": "আগেভাগে", "ref": "bn-3096"}, {"word": "স্টেশনে", "base": "স্টেশন", "reading": "sṭeśon"}, {"word": "যাও", "ref": "bn-0873"}]}
+    ]
   - id: "bn-0289"
     target: "টিকিট"
     reading: "ṭikiṭ"
     ipa: "ʈikiʈ"
     pos: "noun"
     picture: "🎫"
+    "examples": [
+      {"target": "জাদুঘরের টিকিট কত?", "reading": "jādughorer ṭikiṭ kôt?", "ipa": "dʒad̪uɡʱorer ʈikiʈ kɔt̪", "bases": [{"word": "জাদুঘরের", "ref": "bn-3070"}, {"word": "টিকিট", "base": "টিকিট", "reading": "ṭikiṭ"}, {"word": "কত", "ref": "bn-0167"}]},
+      {"target": "প্রদর্শনের টিকিট কোথায়?", "reading": "prôdorśoner ṭikiṭ kothāy?", "ipa": "prɔd̪orʃoner ʈikiʈ kot̪ʰaj", "bases": [{"word": "প্রদর্শনের", "base": "প্রদর্শন", "reading": "prôdorśoner"}, {"word": "টিকিট", "base": "টিকিট", "reading": "ṭikiṭ"}, {"word": "কোথায়", "ref": "bn-0163"}]}
+    ]
   - id: "bn-0290"
     target: "সিট"
     reading: "siṭ"
@@ -95,9 +115,16 @@ cards:
     ipa: "tʃolun"
     pos: "verb"
     tags: ["polite"]
+    "examples": [
+      {"target": "মিটারে চলুন।", "reading": "miṭāre colun.", "ipa": "miʈare tʃolun", "bases": [{"word": "মিটারে", "base": "মিটার", "reading": "miṭār"}]}
+    ]
   - id: "bn-0584"
     target: "রিকশা"
     reading: "rikśā"
     ipa: "rikʃa"
     alt_target: ["রিক্সা"]
     pos: "noun"
+    "examples": [
+      {"target": "রিকশা নিচ্ছি।", "reading": "rikośā nicchi.", "ipa": "rikoʃa nitʃtʃʰi", "bases": [{"word": "নিচ্ছি", "ref": "bn-0889"}]},
+      {"target": "একটা রিকশা নিন।", "reading": "ekoṭā rikośā nin.", "ipa": "ekoʈa rikoʃa nin", "bases": [{"word": "একটা", "ref": "bn-0202"}, {"word": "নিন", "ref": "bn-0889"}]}
+    ]

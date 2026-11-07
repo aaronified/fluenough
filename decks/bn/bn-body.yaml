@@ -16,6 +16,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "মুখ ধোয়া", reading: "mukh dhoyā" }, { word: "মুখ খোলা", reading: "mukh kholā" }] }
+    "examples": [
+      {"target": "মুখ ধোয়া", "reading": "mukh dhoyā", "ipa": "mukʰ d̪ʱoja", "bases": [{"word": "মুখ", "base": "মুখ", "reading": "mukh"}, {"word": "ধোয়া", "ref": "bn-1100"}]},
+      {"target": "মুখ পোঁছো।", "reading": "mukh pom̐cho.", "ipa": "mukʰ põtʃʰo", "bases": [{"word": "মুখ", "base": "মুখ", "reading": "mukh"}, {"word": "পোঁছো", "base": "পোঁছা", "reading": "pom̐cho"}]}
+    ]
   - id: "bn-1003"
     target: "নাক"
     reading: "nāk"
@@ -30,6 +34,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "কর্ণ", reading: "kôrno" }] }
+    "examples": [
+      {"target": "হেডফোন কানে লাগাও।", "reading": "heḍophon kāne lāgāo.", "ipa": "ɦeɖopʰon kane laɡao", "bases": [{"word": "কানে", "base": "কান", "reading": "kān"}, {"word": "লাগাও", "base": "লাগানো", "reading": "lāgāo"}]},
+      {"target": "বাজনার শব্দে কান ভরে গেল।", "reading": "bājonār śôbde kān bhôre gel.", "ipa": "badʒonar ʃɔbd̪e kan bʱɔre ɡel", "bases": [{"word": "বাজনার", "ref": "bn-3772"}, {"word": "শব্দে", "ref": "bn-3413"}, {"word": "কান", "base": "কান", "reading": "kān"}, {"word": "ভরে", "ref": "bn-1229"}, {"word": "গেল", "ref": "bn-0873"}]}
+    ]
   - id: "bn-1005"
     target: "চুল"
     reading: "cul"
@@ -37,6 +45,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "চুল কাটা", reading: "cul kāṭā" }, { word: "লোম", reading: "lom" }] }
+    "examples": [
+      {"target": "আমি চুল ছাঁটি।", "reading": "āmi cul chām̐ṭi.", "ipa": "ami tʃul tʃʰãʈi", "bases": [{"word": "আমি", "ref": "bn-0833"}, {"word": "চুল", "base": "চুল", "reading": "cul"}, {"word": "ছাঁটি", "base": "ছাঁটা", "reading": "chām̐ṭi"}]},
+      {"target": "ওর চুল কোঁকড়া।", "reading": "or cul kom̐koṛā.", "ipa": "or tʃul kõkoɽa", "bases": [{"word": "ওর", "base": "ও", "reading": "or"}]}
+    ]
   - id: "bn-1006"
     target: "ঠোঁট"
     reading: "ṭhom̐ṭ"
@@ -51,6 +63,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "জিহ্বা", reading: "jihhā" }] }
+    "examples": [
+      {"target": "ডাক্তার আমার জিভ দেখেন।", "reading": "ḍāktār āmār jibh dekhen.", "ipa": "ɖakt̪ar amar dʒibʱ d̪ekʰen", "bases": [{"word": "আমার", "ref": "bn-0833"}, {"word": "দেখেন", "ref": "bn-0877"}]}
+    ]
   - id: "bn-1008"
     target: "গাল"
     reading: "gāl"
@@ -60,6 +75,10 @@ cards:
     notes:
       - { id: "pair", kind: "pair", ref: "bn-0104", words: [{ word: "খাল", reading: "khāl" }, { word: "গাল", reading: "gāl" }] }
       - { id: "n2", kind: "usage", words: [{ word: "গাল দেওয়া", reading: "gāl deoā" }] }
+    "examples": [
+      {"target": "তোমার গালটা গোলগাল।", "reading": "tomār gālṭā golgāl.", "ipa": "t̪omar ɡalʈa ɡolɡal", "bases": [{"word": "তোমার", "ref": "bn-0835"}, {"word": "গালটা", "base": "গাল", "reading": "gāl"}]},
+      {"target": "তার গালে একটা দাগ আছে।", "reading": "tār gāle ekṭā dāg āche.", "ipa": "t̪ar ɡale ekʈa d̪aɡ atʃʰe", "bases": [{"word": "তার", "ref": "bn-0839"}, {"word": "গালে", "base": "গাল", "reading": "gāl"}, {"word": "একটা", "ref": "bn-0202"}, {"word": "আছে", "base": "থাকা", "reading": "āche"}]}
+    ]
   - id: "bn-1009"
     target: "কপাল"
     reading: "kôpāl"
@@ -67,6 +86,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage" }
+    "examples": [
+      {"target": "কপালে চন্দনের টিপ।", "reading": "kôpāle côndoner ṭip.", "ipa": "kɔpale tʃɔnd̪oner ʈip", "bases": [{"word": "কপালে", "base": "কপাল", "reading": "kôpāl"}, {"word": "টিপ", "base": "টিপ", "reading": "ṭip"}, {"word": "চন্দনের", "base": "চন্দন", "reading": "côndoner"}]}
+    ]
   - id: "bn-1010"
     target: "ভুরু"
     reading: "bhuru"
@@ -90,6 +112,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note", words: [{ word: "স্কন্ধ", reading: "skôndho" }] }
+    "examples": [
+      {"target": "তার কাঁধ চওড়া।", "reading": "tār kām̐dh coṛā.", "ipa": "t̪ar kãd̪ʱ tʃoɽa", "bases": [{"word": "তার", "ref": "bn-0839"}]}
+    ]
   - id: "bn-1013"
     target: "পিঠ"
     reading: "piṭh"
@@ -97,6 +122,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "পিঠে", reading: "piṭhe" }] }
+    "examples": [
+      {"target": "আমার পিঠে ব্যথা।", "reading": "āmār piṭhe bêthā.", "ipa": "amar piʈʰe bæt̪ʰa", "bases": [{"word": "আমার", "ref": "bn-0833"}, {"word": "পিঠে", "base": "পিঠ", "reading": "piṭh"}]}
+    ]
   - id: "bn-1014"
     target: "বুক"
     reading: "buk"
@@ -104,6 +132,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage" }
+    "examples": [
+      {"target": "কষ্টে বুক চাপা পড়ল।", "reading": "kôśṭe buk cāpā pôṛol.", "ipa": "kɔʃʈe buk tʃapa pɔɽol", "bases": [{"word": "কষ্টে", "ref": "bn-1783"}, {"word": "বুক", "base": "বুক", "reading": "buk"}, {"word": "পড়ল", "ref": "bn-0119"}]},
+      {"target": "আমি একটা কম্বল বুক করেছি।", "reading": "āmi ekoṭā kômbol buk kôrechi.", "ipa": "ami ekoʈa kɔmbol buk kɔretʃʰi", "bases": [{"word": "আমি", "ref": "bn-0833"}, {"word": "একটা", "ref": "bn-0202"}, {"word": "কম্বল", "ref": "bn-3065"}, {"word": "বুক", "base": "বুক", "reading": "buk"}, {"word": "করেছি", "ref": "bn-0102"}]}
+    ]
   - id: "bn-1015"
     target: "কনুই"
     reading: "konui"
@@ -126,6 +158,10 @@ cards:
     warning: "pair"
     notes:
       - { id: "pair", kind: "pair", ref: "bn-0939", words: [{ word: "আঙুল", reading: "āṅul" }, { word: "আঙুর", reading: "āṅur" }] }
+    "examples": [
+      {"target": "আঙুল চেটো না।", "reading": "āṅul ceṭo nā.", "ipa": "aŋul tʃeʈo na", "bases": [{"word": "আঙুল", "base": "আঙুল", "reading": "āṅul"}, {"word": "চেটো", "base": "চাটা", "reading": "ceṭo"}, {"word": "না", "ref": "bn-0160"}]},
+      {"target": "কাচে আঙুলের দাগ।", "reading": "kāce āṅuler dāg.", "ipa": "katʃe aŋuler d̪aɡ", "bases": [{"word": "কাচে", "base": "কাচ", "reading": "kāce"}, {"word": "আঙুলের", "base": "আঙুল", "reading": "āṅuler"}, {"word": "দাগ", "base": "দাগ", "reading": "dāg"}]}
+    ]
   - ref: "bn-0058"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "নখ কাটা", reading: "nôkh kāṭā" }] }
@@ -136,6 +172,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "হাঁটু গেড়ে বসা", reading: "hām̐ṭu geṛe bôśā" }] }
+    "examples": [
+      {"target": "আমার হাঁটুতে ব্যথা।", "reading": "āmār hām̐ṭute bêthā.", "ipa": "amar ɦãʈut̪e bæt̪ʰa", "bases": [{"word": "আমার", "ref": "bn-0833"}, {"word": "হাঁটুতে", "base": "হাঁটু", "reading": "hām̐ṭu"}]}
+    ]
   - id: "bn-1020"
     target: "গোড়ালি"
     reading: "goṛāli"
@@ -152,6 +191,9 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "কাঁটা", reading: "kām̐ṭā" }, { word: "হাড়", reading: "hāṛ" }] }
       - { id: "pair", kind: "pair", ref: "bn-1202", words: [{ word: "হাড়", reading: "hāṛ" }, { word: "হার", reading: "hār" }] }
+    "examples": [
+      {"target": "এক্স-রেতে হাড় ভাঙা নেই।", "reading": "eks-rete hāṛ bhāṅā nei.", "ipa": "eksret̪e ɦaɽ bʱaŋa nei", "bases": [{"word": "এক্স", "base": "এক্স", "reading": "eks", "ipa": "eks"}, {"word": "রেতে", "base": "রে", "reading": "re", "ipa": "re"}, {"word": "হাড়", "base": "হাড়", "reading": "hāṛ", "ipa": "ɦaɽ"}, {"word": "ভাঙা", "base": "ভাঙা", "reading": "bhāṅā", "ipa": "bʱaŋa"}, {"word": "নেই", "base": "নেই", "reading": "nei", "ipa": "nei"}]}
+    ]
   - id: "bn-1022"
     target: "রক্ত"
     reading: "rôkto"
@@ -159,6 +201,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "রক্ত দেওয়া", reading: "rôkto deoā" }] }
+    "examples": [
+      {"target": "রক্ত পরীক্ষা", "reading": "rôkto pôrikkhā", "ipa": "rɔkt̪o pɔrikkʰa", "bases": []},
+      {"target": "আপনার রক্ত পরীক্ষা হয়েছে?", "reading": "āpnār rôkto pôrikkhā hôyeche?", "ipa": "apnar rɔkt̪o pɔrikkʰa ɦɔjetʃʰe", "bases": [{"word": "আপনার", "ref": "bn-0138"}, {"word": "রক্ত", "base": "রক্ত", "reading": "rôkto"}, {"word": "পরীক্ষা", "ref": "bn-1776"}, {"word": "হয়েছে", "ref": "bn-0874"}]}
+    ]
   - id: "bn-1023"
     target: "চামড়া"
     reading: "cāmṛā"
@@ -173,6 +219,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "শরীর খারাপ", reading: "śorir khārāp" }] }
+    "examples": [
+      {"target": "আমার শরীর খারাপ।", "reading": "āmār śorir khārāp.", "ipa": "amar ʃorir kʰarap", "bases": [{"word": "আমার", "ref": "bn-0833"}, {"word": "শরীর", "base": "শরীর", "reading": "śorir"}]},
+      {"target": "ওর শরীর ভারী।", "reading": "or śorir bhāri.", "ipa": "or ʃorir bʱari", "bases": [{"word": "ওর", "base": "ও", "reading": "or"}]}
+    ]
   - id: "bn-1025"
     target: "দাড়ি"
     reading: "dāṛi"
@@ -180,6 +230,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "দাড়ি কামানো", reading: "dāṛi kāmāno" }, { word: "গোঁফ", reading: "gom̐ph" }] }
+    "examples": [
+      {"target": "দাড়িটা ঘন।", "reading": "dāṛiṭā ghôn.", "ipa": "d̪aɽiʈa ɡʱɔn", "bases": [{"word": "দাড়িটা", "base": "দাড়ি", "reading": "dāṛi"}]},
+      {"target": "আমি সকালে দাড়ি কামাই।", "reading": "āmi śôkāle dāṛi kāmāi.", "ipa": "ami ʃɔkale d̪aɽi kamai", "bases": [{"word": "আমি", "ref": "bn-0833"}, {"word": "সকালে", "ref": "bn-1545"}, {"word": "দাড়ি", "base": "দাড়ি", "reading": "dāṛi"}, {"word": "কামাই", "base": "কামানো", "reading": "kāmāi"}]}
+    ]
   - ref: "bn-0728"
   - ref: "bn-0729"
   - ref: "bn-0730"

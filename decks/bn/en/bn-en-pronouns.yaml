@@ -13,16 +13,28 @@ cards:
     wiktionary: true
     notes:
       "n1": "It is the same for a man and a woman. The verb's ending already says who is acting, so {1} is often left out in speech."
+    "examples": {
+      "আমি খাটো।": {"native": "I am short.", "bases": {}},
+      "আমি ছাত্র।": {"native": "I am a student.", "bases": {"আমি": "I"}}
+    }
   "bn-0834":
     native: "we"
     wiktionary: true
     notes:
       "n1": "The verb after {1} has the same form as after {2}: {3}, {4}. Bengali has no separate 'we' that leaves the listener out."
+    "examples": {
+      "আমরা আনন্দিত।": {"native": "We are delighted.", "bases": {"আমরা": "we"}},
+      "আমাদের বাঁচাও।": {"native": "Save us. (familiar)", "bases": {"বাঁচাও": "to save", "আমাদের": "we"}}
+    }
   "bn-0835":
     native: "you (familiar)"
     wiktionary: true
     notes:
       "n1": "For friends, family and people of your age or younger. To a stranger or an elder use {1}; the verb changes with each."
+    "examples": {
+      "তুমিই সেরা।": {"native": "You are the best.", "bases": {"সেরা": "best", "তুমিই": "you (familiar)"}},
+      "তোমাকে অভিনন্দন।": {"native": "Congratulations to you. (familiar)", "bases": {"তোমাকে": "you (familiar)"}}
+    }
   "bn-0836":
     native: "you, more than one (familiar)"
     wiktionary: true
@@ -33,11 +45,18 @@ cards:
     wiktionary: true
     notes:
       "n1": "Only for a very close friend, a child or a younger brother or sister. To anyone else it is rude. The verb takes a different ending after it: {1}."
+    "examples": {
+      "তুই কী করিস?": {"native": "What do you do? (intimate)", "bases": {}}
+    }
   "bn-0838":
     native: "you, more than one (respectful)"
     wiktionary: true
     notes:
       "n1": "It takes the same verb as {1}: {2}, {3}."
+    "examples": {
+      "আপনারা কেমন আছেন?": {"native": "How are you all? (respectful)", "bases": {"আছেন": "to be; there is"}},
+      "আপনারা বলুন, আমি শুনছি।": {"native": "Please say it, I am listening. (respectful)", "bases": {"আপনারা": "you, more than one (respectful)"}}
+    }
   "bn-0839":
     native: "he; she; that person"
     wiktionary: true
@@ -48,11 +67,19 @@ cards:
     wiktionary: true
     notes:
       "pair": "Not {1}, the respectful 'they': {2} has no nasal sound."
+    "examples": {
+      "তারা কারা?": {"native": "Who are they?", "bases": {}},
+      "তাদের সংসার সুখের।": {"native": "Their married life is happy.", "bases": {"সুখের": "happy", "তাদের": "they"}}
+    }
   "bn-0841":
     native: "he; she (respectful)"
     wiktionary: true
     notes:
       "n1": "For a person you respect who is not there: a teacher, an elder, a stranger. The verb takes the polite ending: {1}."
+    "examples": {
+      "তিনি অভিজ্ঞ শিক্ষক।": {"native": "He is an experienced teacher.", "bases": {"তিনি": "he (formal)", "শিক্ষক": "teacher"}},
+      "তিনি আত্মজীবনী লিখেছেন।": {"native": "He has written an autobiography.", "bases": {"তিনি": "he; she (respectful)"}}
+    }
   "bn-0842":
     native: "they (respectful)"
     wiktionary: true
@@ -63,6 +90,9 @@ cards:
     wiktionary: true
     notes:
       "n1": "{1} points to someone close by and {2} to someone further off. The plurals are {3} and {4}."
+    "examples": {
+      "অতিথিরা এসেছেন।": {"native": "The guests have come.", "bases": {}}
+    }
   "bn-0844":
     native: "that person (there)"
     wiktionary: true
@@ -73,11 +103,17 @@ cards:
     wiktionary: true
     notes:
       "pair": "Only the first vowel differs: {1} is the respectful 'this person' and {2} the respectful 'that person'."
+    "examples": {
+      "ইনি আমার দাদা।": {"native": "This is my elder brother. (respectful)", "bases": {}}
+    }
   "bn-0846":
     native: "that person (there, respectful)"
     wiktionary: true
     notes:
       "pair": "Only the first vowel differs: {1} is the respectful 'that person' and {2} the respectful 'this person'."
+    "examples": {
+      "উনি খুব বয়স্ক।": {"native": "He is very elderly. (respectful)", "bases": {}}
+    }
   "bn-0847":
     native: "these people"
     wiktionary: true
@@ -88,41 +124,71 @@ cards:
     wiktionary: true
     notes:
       "pair": "Only the first vowel differs: {1} are the people over there and {2} the people here."
+    "examples": {
+      "ওরা আমাদের বন্ধু।": {"native": "Those are our friends.", "bases": {}},
+      "ওরা বন্ধুর সঙ্গে আসে।": {"native": "They come with a friend.", "bases": {}}
+    }
   "bn-0849":
     native: "this"
     wiktionary: true
     notes:
       "pair": "Only the first vowel differs: {1} is this, near you, and {2} is that, over there."
+    "examples": {
+      "এটা অন্যায্য।": {"native": "This is unfair.", "bases": {"এটা": "this"}},
+      "এটা কী?": {"native": "What is this?", "bases": {"এটা": "this"}}
+    }
   "bn-0850":
     native: "that (over there)"
     wiktionary: true
     notes:
       "pair": "Only the first vowel differs: {1} is that, over there, and {2} is this, near you."
+    "examples": {
+      "ওটা কার?": {"native": "Whose is that?", "bases": {}},
+      "ওটা একটা গুজব।": {"native": "That is a rumour.", "bases": {"ওটা": "that"}}
+    }
   "bn-0851":
     native: "that; it"
     wiktionary: true
     notes:
       "n1": "Bengali has no word that is only 'it'. {1} is 'that', and it is also what you say for a thing you have just mentioned. The ending {2} is the informal one; {3} is formal."
+    "examples": {
+      "সেটা আমার না।": {"native": "That isn't mine.", "bases": {}},
+      "সূত্র বলছে, সেটা সত্যি।": {"native": "The source says that it is true.", "bases": {"বলছে": "says", "সেটা": "that", "সত্যি": "true"}}
+    }
   "bn-0852":
     native: "these"
     wiktionary: true
     notes:
       "n1": "The plural of things: {1} becomes {2}. The ending {3} makes the plural for things; for people the ending is {4}."
+    "examples": {
+      "এগুলো কী?": {"native": "What are these?", "bases": {}}
+    }
   "bn-0853":
     native: "those"
     wiktionary: true
     notes:
       "n1": "The plural of {1}, that. For people the plural is {2}."
+    "examples": {
+      "ওগুলো কার?": {"native": "Whose are those?", "bases": {}}
+    }
   "bn-0854":
     native: "everyone"
     wiktionary: true
     notes:
       "n1": "From {1}, 'all', with {2}. It takes the verb of {3}: {4}, everyone goes."
+    "examples": {
+      "সবাই উত্তীর্ণ।": {"native": "Everyone has passed.", "bases": {"সবাই": "everyone"}},
+      "সবাই কোথায়?": {"native": "Where is everybody?", "bases": {}}
+    }
   "bn-0855":
     native: "oneself; myself, yourself, himself …"
     wiktionary: true
     notes:
       "n1": "It adds 'by myself' or 'in person': {1}, I myself. Its possessive {2} means 'one's own'."
+    "examples": {
+      "নিজের যত্ন নাও।": {"native": "Take care of yourself. (familiar)", "bases": {"নিজের": "oneself; myself, yourself, himself …"}},
+      "নিজের স্বার্থ দেখো।": {"native": "Look after your own interest. (familiar)", "bases": {"নিজের": "oneself; myself, yourself, himself …"}}
+    }
   "bn-1363":
     native: "I, we, you, he, she, they"
     explanation: "The personal pronouns. Bengali has three words for you, from the most intimate to the most respectful, and a respectful word for he, she and they."
