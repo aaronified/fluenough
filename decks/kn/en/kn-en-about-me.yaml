@@ -9,6 +9,9 @@ description: "Your name, where you are from, where you live, and the people arou
 cards:
   "kn-0196":
     native: "name"
+    "examples": {
+      "ನನ್ನ ಹೆಸರು ರವಿ.": {"native": "My name is Ravi.", "bases": {"ಹೆಸರು": "name", "ರವಿ": "Ravi"}}
+    }
   "kn-0199":
     native: "I'm from England."
     notes:
@@ -29,19 +32,38 @@ cards:
     native: "home; house"
     notes:
       "n1": "ಮನೆಗೆ (manege), home, to the house; ಮನೆಯಲ್ಲಿ (maneyalli), at home."
+    "examples": {
+      "ಇಕ್ಕಟ್ಟು ಮನೆ.": {"native": "A cramped house.", "bases": {}},
+      "ಮನೆ ಶಾಂತ.": {"native": "The house is quiet.", "bases": {}}
+    }
   "kn-0202":
     native: "family"
     notes:
       "n1": "Also ಮನೆಯವರು (maneyavaru), 'the people of the house'."
   "kn-0203":
     native: "work; a job"
+    "examples": {
+      "ಉತ್ತಮ ಕೆಲಸ.": {"native": "Excellent work.", "bases": {}},
+      "ಕೆಲಸ ಆಯಿತು.": {"native": "The work is done.", "bases": {"ಕೆಲಸ": "work", "ಆಯಿತು": "done"}}
+    }
   "kn-0204":
     native: "town; home town"
     notes:
       "n1": "ನಿಮ್ಮ ಊರು ಯಾವುದು? (nimma uru yavudu?), where are you from? Asked of almost everyone."
+    "examples": {
+      "ಅವರು ಊರು ತಲುಪಿದರು.": {"native": "They reached the town.", "bases": {"ತಲುಪಿದರು": "reached"}},
+      "ಈ ಊರು ಪ್ರೇಕ್ಷಣೀಯ.": {"native": "This town is scenic.", "bases": {}}
+    }
   "kn-0205":
     native: "country"
+    "examples": {
+      "ದೇಶಕ್ಕೆ ಸ್ವಾತಂತ್ರ್ಯ ಸಿಕ್ಕಿತು.": {"native": "The country got independence.", "bases": {"ಸಿಕ್ಕಿತು": "got", "ದೇಶಕ್ಕೆ": "country"}},
+      "ಪ್ರಪಂಚದಲ್ಲಿ ಎಷ್ಟು ದೇಶ?": {"native": "How many countries are there in the world?", "bases": {"ಪ್ರಪಂಚದಲ್ಲಿ": "in the world"}}
+    }
   "kn-0206":
     native: "language"
     notes:
       "n1": "ಕನ್ನಡ ಭಾಷೆ (kannaḍa bhāṣe), the Kannada language."
+    "examples": {
+      "ಭಾರತದಲ್ಲಿ ಹಲವು ಭಾಷೆ ಇದೆ.": {"native": "There are many languages in India.", "bases": {"ಭಾರತದಲ್ಲಿ": "in India", "ಇದೆ": "there are"}}
+    }

@@ -9,10 +9,18 @@ description: "Vegetables, fish, meat, eggs and the staples. Not yet checked by a
 cards:
   "kn-0314":
     native: "vegetables"
+    "examples": {
+      "ತರಕಾರಿ ಅಗ್ಗ.": {"native": "The vegetables are cheap.", "bases": {}},
+      "ಹಸಿ ತರಕಾರಿ.": {"native": "Raw vegetables.", "bases": {}}
+    }
   "kn-0315":
     native: "potato"
   "kn-0316":
     native: "onion"
+    "examples": {
+      "ಈರುಳ್ಳಿ ತುರಿ.": {"native": "Grate the onion.", "bases": {}},
+      "ಈರುಳ್ಳಿ ತುರಿದೆ.": {"native": "I grated the onion.", "bases": {"ತುರಿದೆ": "grated"}}
+    }
   "kn-0317":
     native: "tomato"
     notes:
@@ -27,6 +35,10 @@ cards:
       "n1": "'White onion': ಬೆಳ್ (white) + ಉಳ್ಳಿ (uḷḷi)."
   "kn-0320":
     native: "fish"
+    "examples": {
+      "ಅವಳು ಮೀನು ಹುರಿಯುತ್ತಾಳೆ.": {"native": "She fries fish.", "bases": {"ಮೀನು": "fish", "ಹುರಿಯುತ್ತಾಳೆ": "to fry", "ಅವಳು": "she"}},
+      "ಕೊಳದಲ್ಲಿ ಮೀನು ಇದೆ.": {"native": "There are fish in the pond.", "bases": {"ಕೊಳದಲ್ಲಿ": "in the pond", "ಮೀನು": "fish", "ಇದೆ": "to be"}}
+    }
   "kn-0321":
     native: "mutton (sheep or goat meat)"
     notes:
@@ -38,6 +50,9 @@ cards:
     native: "chicken; hen"
   "kn-0323":
     native: "egg"
+    "examples": {
+      "ನನಗೆ ಒಂದು ಡಜನ್ ಮೊಟ್ಟೆ ಬೇಕು.": {"native": "I need a dozen eggs.", "bases": {"ನನಗೆ": "to me", "ಒಂದು": "one", "ಮೊಟ್ಟೆ": "egg", "ಬೇಕು": "to need"}}
+    }
   "kn-0120":
     notes:
       "n1": "Plain l. Compare ಹಾಳು (hāḷu), ruined, with the curled-back l."
@@ -45,15 +60,29 @@ cards:
     native: "rice (uncooked)"
     notes:
       "n1": "Cooked rice is ಅನ್ನ (anna)."
+    "examples": {
+      "ಅಕ್ಕಿ ಅಕ್ಷತೆ ಆಯಿತು.": {"native": "The rice became blessing rice.", "bases": {}},
+      "ಅಕ್ಕಿಯನ್ನು ನೀರಿನಲ್ಲಿ ನೆನೆಸುತ್ತಾಳೆ.": {"native": "She soaks the rice in water.", "bases": {"ಅಕ್ಕಿಯನ್ನು": "the rice", "ನೀರಿನಲ್ಲಿ": "in water", "ನೆನೆಸುತ್ತಾಳೆ": "to soak"}}
+    }
   "kn-0325":
     native: "lentils; dal"
     notes:
       "n1": "Long e, curled-back l. Compare ಬೆಲೆ (bele), price, with a short e and a plain l."
+    "examples": {
+      "ಬೇಳೆ ರಾತ್ರಿ ನೆನೆಸು.": {"native": "Soak the lentils at night.", "bases": {"ಬೇಳೆ": "lentils", "ರಾತ್ರಿ": "night"}}
+    }
   "kn-0326":
     native: "curd; yogurt"
     notes:
       "n1": "A meal in Karnataka ends with rice and curd: ಮೊಸರನ್ನ (mosaranna)."
+    "examples": {
+      "ಮೊಸರು ಹುಳಿ ಇದೆ.": {"native": "The curd is sour.", "bases": {"ಮೊಸರು": "curd", "ಇದೆ": "to be"}},
+      "ಅವಳು ಮೊಸರು ಅನ್ನ ಕಲಸುತ್ತಾಳೆ.": {"native": "She mixes curd and rice.", "bases": {"ಮೊಸರು": "curd", "ಅನ್ನ": "rice", "ಕಲಸುತ್ತಾಳೆ": "to mix", "ಅವಳು": "she"}}
+    }
   "kn-0327":
     native: "banana"
     notes:
       "n1": "ಹಣ್ಣು (haṇṇu) is fruit."
+    "examples": {
+      "ಡಜನ್ ಬಾಳೆಹಣ್ಣು ತೆಗೆದುಕೊಳ್ಳಿ.": {"native": "Take a dozen bananas.", "bases": {"ಬಾಳೆಹಣ್ಣು": "banana", "ತೆಗೆದುಕೊಳ್ಳಿ": "to take"}}
+    }
