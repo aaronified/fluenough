@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.2] - 2026-11-07
+
 ### Fixed
 
 - **Placements made by earlier versions can be checked again.** If Find my level (0.9.0 or 0.9.1) placed you too far into a course, the language's sheet now says "Check your level again". It runs the same check on the skills it credited, then shows "Your level, before and now" with "Use the new level" and "Keep the old level"; nothing changes until you choose. Using the new level takes back only the credit placement wrote above it (words you have reviewed keep their reviews, and nothing is deleted from your history), and Keep the old level changes nothing but the choice. Backups carry the choice; a backup restored into an older version brings the credit back, flagged again. Refs #1063.
