@@ -535,8 +535,8 @@ class ReviewLog {
   /// that.
   /// Only for a deletion the learner confirmed, after a backup was kept.
   Future<int> eraseReviews(ReviewErasure erasure) => _db.transaction(() async {
-    final (:reviews, :withdrawals) = await _db.eraseReviews(erasure);
-    if (reviews == 0 && withdrawals == 0) return 0;
+    final erased = await _db.eraseReviews(erasure);
+    if (erased.reviews == 0 && erased.withdrawals == 0) return 0;
     await (_db.delete(
       _db.fsrsParameters,
     )..where((p) => p.language.equals(erasure.language))).go();
@@ -547,7 +547,7 @@ class ReviewLog {
     );
     await _rebuild(parameters);
     await _db.replaySnapshotsDao.clear();
-    return reviews;
+    return erased.reviews;
   });
 
   Future<void> _append(ReviewEvent event) => _db.reviewsDao.append(
