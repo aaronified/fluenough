@@ -4,6 +4,7 @@
 
     python3 tools/transcribe.py hi "कितना" kitna      # reading and IPA
     python3 tools/transcribe.py es "la casa"          # IPA
+    python3 tools/transcribe.py ml "ഞാൻ വരുന്നു"       # reading and IPA
 
 ISO 15919 writes letters, not sounds: कितना is `kitanā` letter for letter.
 The decks write the word as it is said, in ISO 15919's letters: `kitnā`.
@@ -32,7 +33,7 @@ from dataclasses import dataclass, field
 # The Indic blocks share one layout: a letter's offset from its block's
 # start is the same in each script (ISCII order).
 BLOCKS = {"hi": 0x0900, "mr": 0x0900, "bn": 0x0980, "as": 0x0980,
-          "gu": 0x0A80, "te": 0x0C00, "kn": 0x0C80}
+          "gu": 0x0A80, "te": 0x0C00, "kn": 0x0C80, "ml": 0x0D00}
 
 # Offsets of the independent vowels, and the vowel signs, to a vowel name.
 VOWELS = {0x05: "a", 0x06: "aa", 0x07: "i", 0x08: "ii", 0x09: "u", 0x0A: "uu",
@@ -65,6 +66,9 @@ COMPOSED = {0x0958: "q", 0x0959: "k͟h", 0x095A: "ġ", 0x095B: "z", 0x095C: "ṛ
             0x0A5E: "f",
             0x0CDE: "ḻ"}   # Kannada ೞ
 KHANDA_TA = 0x09CE        # Bengali ৎ: a t with no vowel
+# Malayalam's chillu letters, a consonant with no vowel, by offset: ൺ ൻ ർ ൽ
+# ൾ ൿ. ൻ is written ṉ, as the decks write it, where ന is n.
+CHILLU = {0x7A: "ṇ", 0x7B: "ṉ", 0x7C: "r", 0x7D: "l", 0x7E: "ḷ", 0x7F: "k"}
 VIRAMA, NUKTA_SIGN, ANUSVARA, CANDRABINDU, VISARGA, AVAGRAHA = (
     0x4D, 0x3C, 0x02, 0x01, 0x03, 0x3D)
 TELUGU_ARDHA = 0x0C01     # ఁ, the half nasal: also CANDRABINDU's offset
@@ -149,6 +153,11 @@ def parse(text: str, lang: str) -> list[Unit]:
                     units.append(Unit("VIR"))
                 continue
             i = _vowel_after(chars, i, off, units, lang)
+            continue
+        if lang == "ml" and o in CHILLU:
+            units.append(Unit("C", CHILLU[o]))
+            units.append(Unit("VIR"))
+            i += 1
             continue
         if cp == KHANDA_TA:
             units.append(Unit("C", "t"))
@@ -287,6 +296,13 @@ VOWEL_TABLES = {
            "co": ("ô", "ɔ")},
     "te": _VOWELS_TE,
     "kn": _VOWELS_TE,
+    # Malayalam: ഋ is said ru. The inherent a is said [ə] unless it is the
+    # word's last vowel (malayalam() below).
+    "ml": {"a": ("a", "ə"), "aa": ("ā", "aː"), "i": ("i", "i"),
+           "ii": ("ī", "iː"), "u": ("u", "u"), "uu": ("ū", "uː"),
+           "r": ("ṛ", "ɾɯ"), "rr": ("ṝ", "ɾɯː"), "se": ("e", "e"),
+           "e": ("ē", "eː"), "ai": ("ai", "ai"), "so": ("o", "o"),
+           "o": ("ō", "oː"), "au": ("au", "au")},
 }
 
 # How each consonant is written and said, where a language departs from the
@@ -319,6 +335,8 @@ CONSONANT_TABLES: dict[str, dict[str, tuple[str, str]]] = {
            "w": ("w", "w")},
     "te": {"ṟ": ("r", "r"), "h": ("h", "h")},
     "kn": {"ṟ": ("r", "r"), "ḻ": ("ḷ", "ɭ"), "h": ("h", "h")},
+    # Malayalam's ര and റ are both a tap; ḻ (ഴ) is kept apart from ḷ (ള).
+    "ml": {"r": ("r", "ɾ"), "ṟ": ("ṟ", "ɾ"), "h": ("h", "h")},
 }
 
 
@@ -641,6 +659,8 @@ def transcribe(text: str, lang: str, hint: str | None = None
         return mandarin(text, hint)
     if lang == "tok":
         return toki_pona(text)
+    if lang == "ml":
+        return malayalam(text, hint)
     if (lang, text) in WORDS:
         reading, ipa = WORDS[(lang, text)]
         return Transcription(reading, ipa, True)
@@ -1294,6 +1314,115 @@ def toki_pona(text: str) -> Transcription:
         vowels = sum(c in "aeiou" for c in w)
         out.append(("ˈ" if vowels > 1 else "") + w)
     return Transcription(text, " ".join(out), True)
+
+
+# --- Malayalam ---------------------------------------------------------------
+
+# Malayalam is written as it is said, so it is read from its letters with no
+# hint (the hint is ignored). The decks' conventions, from the Malayalam
+# decks and their review queue:
+#  - a geminate (ക്ക, ത്ത, ന്ന) is written and said doubled: kk, tt, nn;
+#    a vowel is long (ː) where it is written long, and a consonant never is;
+#  - the inherent vowel is written a and said [ə], except when it is the
+#    word's last vowel, which is [a]; the vowel-less ് ending a word
+#    (samvruthokaram) is not written or said;
+#  - ṇ is [ɳ], ṟ and r are the tap [ɾ], ḻ is [ɻ], ḷ is [ɭ], ന is n and the
+#    chillu ൻ is ṉ, also [n]; ം is ṁ, said [m];
+#  - ന്റ is nṟ, said [nt̪ɾ]; റ്റ is ṟṟ, said [tt]; after സ് (സ്റ്റ, as
+#    in English st) it is ṭ, said [ʈ].
+ML_VOWEL_SIGNS = {"S", "V", "I"}
+
+
+def malayalam(text: str, hint: str | None = None) -> Transcription:
+    """[text]'s reading and broad IPA, by Malayalam's letters. The narrow
+    IPA (the `phonetic` field) is not made here: tools/derive_phonetic.py
+    writes it from the broad IPA by the language's rules file. The one
+    thing the letters do not say is whether ഫ is [pʰ] or [f], as it is in
+    words from English: a hint that has an f for it makes it f."""
+    units = parse(text, "ml")
+    words: list[list[Unit]] = [[]]
+    for u in units:
+        if u.kind == "SP":
+            words.append([])
+        else:
+            words[-1].append(u)
+    hints = (hint or "").lower().split()
+    if len(hints) != len(words):
+        hints = [""] * len(words)
+    out_iso: list[str] = []
+    out_ipa: list[str] = []
+    for word, typed in zip(words, hints):
+        if "f" in typed:
+            for u in word:
+                if u.kind == "C" and u.letter == "ph":
+                    u.fixed = ("f", "f", ["f"])
+        iso, ipa = _malayalam_word(word)
+        out_iso.append(iso)
+        if ipa:
+            out_ipa.append(ipa)
+    reading = _tidy(" ".join(out_iso))
+    return Transcription(
+        reading, unicodedata.normalize("NFC", " ".join(out_ipa)), True)
+
+
+def _malayalam_word(units: list[Unit]) -> tuple[str, str]:
+    # The word's last vowel keeps its [a]; earlier inherent vowels are [ə].
+    last = max((k for k, u in enumerate(units) if u.kind in ML_VOWEL_SIGNS),
+               default=-1)
+    iso: list[str] = []
+    ipa: list[str] = []
+    skip_next = False
+    for k, u in enumerate(units):
+        if skip_next:
+            skip_next = False
+            continue
+        nxt = units[k + 1] if k + 1 < len(units) else None
+        prev = units[k - 1] if k > 0 else None
+        if u.kind == "C":
+            i_iso, i_ipa = (u.fixed[0], u.fixed[1]) if u.fixed else \
+                consonant(u.letter, "ml")
+            joined = nxt is not None and nxt.kind == "C"
+            if joined and nxt.letter == u.letter and u.letter.endswith("h"):
+                # ഖ്ഖ, a held kh, is said kkh.
+                i_iso, i_ipa = i_iso[:-1], i_ipa.rstrip("ʰʱ")
+            if joined and u.letter == "ṟ" and nxt.letter == "ṟ":
+                if prev is not None and prev.kind == "C" and \
+                        prev.letter == "s":
+                    # സ്റ്റ: st, as in station.
+                    iso.append("ṭ")
+                    ipa.append("ʈ")
+                    skip_next = True
+                    continue
+                i_ipa = "t"
+            elif u.letter == "ṟ" and prev is not None and \
+                    prev.kind == "C" and prev.letter == "ṟ":
+                i_ipa = "t"
+            elif u.letter == "ch" and prev is not None and \
+                    prev.kind == "C" and prev.letter == "c":
+                # ച്ഛ (acchan) is said as a held ച, with no breath.
+                i_ipa = "tʃ"
+            elif u.letter == "ṟ" and prev is not None and \
+                    prev.kind == "C" and prev.letter == "n":
+                # ന്റ: a stop and a tap after the n.
+                i_ipa = "t̪ɾ"
+            iso.append(i_iso)
+            ipa.append(i_ipa)
+        elif u.kind in ("V", "S", "I"):
+            letter = "a" if u.kind == "I" else u.letter
+            i_iso, i_ipa = VOWEL_TABLES["ml"][letter]
+            if letter == "a" and k == last:
+                i_ipa = "a"
+            iso.append(i_iso)
+            ipa.append(i_ipa)
+        elif u.kind == "N":
+            iso.append("ṁ")
+            ipa.append("m")
+        elif u.kind == "H":
+            iso.append("ḥ")
+            ipa.append("h")
+        elif u.kind == "P":
+            iso.append(u.letter if u.letter not in "'\"" else "'")
+    return "".join(iso), "".join(ipa)
 
 
 def main(argv: list[str]) -> int:

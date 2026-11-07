@@ -121,5 +121,225 @@ class NewLanguagesTest(unittest.TestCase):
                          "mi ˈmoku o ˈkama")
 
 
+class MalayalamTest(unittest.TestCase):
+    """Malayalam (ml), read from its letters the way the decks write it
+    (decks/ml, and the review queue's notes on its conventions)."""
+
+    # Words and phrases of the Malayalam decks, with the card's own reading
+    # and broad IPA: the transcriber gives both back exactly.
+    WORDS = (
+        ('ഇപ്പോഴും', 'ippōḻuṁ', 'ippoːɻum'),
+        ('ശരിക്കും', 'śarikkuṁ', 'ʃəɾikkum'),
+        ('തീരെ', 'tīre', 't̪iːɾe'),
+        ('ഏകദേശം', 'ēkadēśaṁ', 'eːkəd̪eːʃam'),
+        ('കാക്ക', 'kākka', 'kaːkka'),
+        ('കുതിര', 'kutira', 'kut̪iɾa'),
+        ('പൂച്ച', 'pūcca', 'puːtʃtʃa'),
+        ('കൈ', 'kai', 'kai'),
+        ('മുഖം', 'mukhaṁ', 'mukʰam'),
+        ('എല്ല്', 'ell', 'ell'),
+        ('നഖം', 'nakhaṁ', 'nəkʰam'),
+        ('തൊലി', 'toli', 't̪oli'),
+        ('മരുന്ന്', 'marunn', 'məɾunn'),
+        ('തോൾ', 'tōḷ', 't̪oːɭ'),
+        ('തല', 'tala', 't̪əla'),
+        ('ബ്ലൗസ്', 'blaus', 'blaus'),
+        ('മഞ്ഞ', 'mañña', 'məɲɲa'),
+        ('വിലകുറഞ്ഞ', 'vilakuṟañña', 'ʋiləkuɾəɲɲa'),
+        ('ഇടുങ്ങിയ', 'iṭuṅṅiya', 'iʈuŋŋija'),
+        ('വൃത്തിയുള്ള', 'vṛttiyuḷḷa', 'ʋɾɯt̪t̪ijuɭɭa'),
+        ('വേഗത്തിലുള്ള', 'vēgattiluḷḷa', 'ʋeːɡət̪t̪iluɭɭa'),
+        ('പ്രകാശമുള്ള', 'prakāśamuḷḷa', 'pɾəkaːʃəmuɭɭa'),
+        ('ചൂടുള്ള', 'cūṭuḷḷa', 'tʃuːʈuɭɭa'),
+        ('വീതിയുള്ള', 'vītiyuḷḷa', 'ʋiːt̪ijuɭɭa'),
+        ('മൂല', 'mūla', 'muːla'),
+        ('മകൾ', 'makaḷ', 'məkaɭ'),
+        ('മകൻ', 'makaṉ', 'məkan'),
+        ('ഭാര്യ', 'bhārya', 'bʱaːɾja'),
+        ('നല്ല', 'nalla', 'nəlla'),
+        ('ഭക്ഷണം', 'bhakṣaṇaṁ', 'bʱəkʂəɳam'),
+        ('വെളുത്തുള്ളി', 'veḷuttuḷḷi', 'ʋeɭut̪t̪uɭɭi'),
+        ('ഇഡ്ഡലി', 'iḍḍali', 'iɖɖəli'),
+        ('ബിരിയാണി', 'biriyāṇi', 'biɾijaːɳi'),
+        ('മോര്', 'mōr', 'moːɾ'),
+        ('മസാല', 'masāla', 'məsaːla'),
+        ('ചോറ്', 'cōṟ', 'tʃoːɾ'),
+        ('അരി', 'ari', 'əɾi'),
+        ('സോഫ', 'sōpha', 'soːpʰa'),
+        ('കോണിൽ', 'kōṇil', 'koːɳil'),
+        ('മുകളിൽ', 'mukaḷil', 'mukəɭil'),
+        ('അടുത്ത്', 'aṭutt', 'əʈut̪t̪'),
+        ('ഇറച്ചി', 'iṟacci', 'iɾətʃtʃi'),
+        ('പഴങ്ങൾ', 'paḻaṅṅaḷ', 'pəɻəŋŋaɭ'),
+        ('ഉണ്ടാക്കൂ', 'uṇṭākkū', 'uɳʈaːkkuː'),
+        ('പഠിക്കൂ', 'paṭhikkū', 'pəʈʰikkuː'),
+        ('കാണിക്കൂ', 'kāṇikkū', 'kaːɳikkuː'),
+        ('പറയൂ', 'paṟayū', 'pəɾəjuː'),
+        ('പതിനേഴ്', 'patinēḻ', 'pət̪ineːɻ'),
+        ('പന്ത്രണ്ട്', 'pantraṇṭ', 'pənt̪ɾaɳʈ'),
+        ('ലക്ഷം', 'lakṣaṁ', 'ləkʂam'),
+        ('എൺപത്', 'eṇpat', 'eɳpat̪'),
+        ('തൊണ്ണൂറ്', 'toṇṇūṟ', 't̪oɳɳuːɾ'),
+        ('മുപ്പത്', 'muppat', 'muppat̪'),
+        ('ഇരുനൂറ്', 'irunūṟ', 'iɾunuːɾ'),
+        ('നമസ്കാരം', 'namaskāraṁ', 'nəməskaːɾam'),
+        ('ശരി', 'śari', 'ʃəɾi'),
+        ('പാർക്ക്', 'pārkk', 'paːɾkk'),
+        ('കളിസ്ഥലം', 'kaḷisthalaṁ', 'kəɭist̪ʰəlam'),
+        ('ഹോട്ടൽ', 'hōṭṭal', 'hoːʈʈal'),
+        ('അവന്റെ', 'avanṟe', 'əʋənt̪ɾe'),
+        ('പകുതി', 'pakuti', 'pəkut̪i'),
+        ('എന്ത്', 'ent', 'ent̪'),
+        ('ഉണ്ടോ', 'uṇṭō', 'uɳʈoː'),
+        ('നല്ലതാണോ?', 'nallatāṇō?', 'nəllət̪aːɳoː'),
+        ('ജനൽ', 'janal', 'dʒənal'),
+        ('കണ്ണാടി', 'kaṇṇāṭi', 'kəɳɳaːʈi'),
+        ('തരൂ', 'tarū', 't̪əɾuː'),
+    )
+    SENTENCES = (
+        ('ഈ മാങ്ങ പുളിയാണ്.', 'ī māṅṅa puḷiyāṇ.', 'iː maːŋŋa puɭijaːɳ'),
+        ('നിങ്ങളുടെ വീട് വലുതാണ്.', 'niṅṅaḷuṭe vīṭ valutāṇ.', 'niŋŋəɭuʈe ʋiːʈ ʋəlut̪aːɳ'),
+        ('നാവ് വേദനിക്കുന്നു.', 'nāv vēdanikkunnu.', 'naːʋ ʋeːd̪ənikkunnu'),
+        ('ഒരുപാട് ആളുകൾ.', 'orupāṭ āḷukaḷ.', 'oɾupaːʈ aːɭukaɭ'),
+        ('നിനക്ക് അച്ചാർ ഇഷ്ടമാണോ?', 'ninakk accār iṣṭamāṇō?', 'ninakk ətʃtʃaːɾ iʂʈəmaːɳoː'),
+        ('പട്ടണം അടുത്ത്.', 'paṭṭaṇaṁ aṭutt.', 'pəʈʈəɳam əʈut̪t̪'),
+        ('ആയിരം രൂപ.', 'āyiraṁ rūpa.', 'aːjiɾam ɾuːpa'),
+        ('അടുപ്പിൽ ചട്ടി വെക്കൂ.', 'aṭuppil caṭṭi vekkū.', 'əʈuppil tʃəʈʈi ʋekkuː'),
+        ('നാല് ആളുകൾ.', 'nāl āḷukaḷ.', 'naːl aːɭukaɭ'),
+        ('ആപ്പിൾ ഒന്ന്.', 'āppiḷ onn.', 'aːppiɭ onn'),
+        ('ബാഗ് കൊണ്ടുവരൂ.', 'bāg koṇṭuvarū.', 'baːɡ koɳʈuʋəɾuː'),
+        ('എന്റെ ചെവി വേദനിക്കുന്നു.', 'enṟe cevi vēdanikkunnu.', 'ent̪ɾe tʃeʋi ʋeːd̪ənikkunnu'),
+        ('ചെരിപ്പ് ഇവിടെ.', 'ceripp iviṭe.', 'tʃeɾipp iʋiʈe'),
+        ('ചായക്കട ഇവിടെ ഉണ്ട്.', 'cāyakkaṭa iviṭe uṇṭ.', 'tʃaːjəkkəʈa iʋiʈe uɳʈ'),
+        ('ജോലി തുടങ്ങൂ.', 'jōli tuṭaṅṅū.', 'dʒoːli t̪uʈəŋŋuː'),
+        ('എളുപ്പമുള്ള ചോദ്യം.', 'eḷuppamuḷḷa cōdyaṁ.', 'eɭuppəmuɭɭa tʃoːd̪jam'),
+        ('അടുപ്പ് ചൂടാണ്.', 'aṭupp cūṭāṇ.', 'əʈupp tʃuːʈaːɳ'),
+        ('വൃത്തികെട്ട കൈ.', 'vṛttikeṭṭa kai.', 'ʋɾɯt̪t̪ikeʈʈa kai'),
+    )
+
+    def test_deck_words_are_read_as_the_decks_write_them(self) -> None:
+        for word, reading, ipa in self.WORDS:
+            with self.subTest(word):
+                t = transcribe(word, "ml")
+                self.assertEqual((t.reading, t.ipa), (reading, ipa))
+
+    def test_deck_sentences_are_read_as_the_decks_write_them(self) -> None:
+        for text, reading, ipa in self.SENTENCES:
+            with self.subTest(text):
+                t = transcribe(text, "ml")
+                self.assertEqual(
+                    (t.reading, t.ipa), (reading, ipa.rstrip(".")))
+
+    def check(self, word, reading, ipa, hint=None):
+        t = transcribe(word, "ml", hint)
+        self.assertEqual((t.reading, t.ipa), (reading, ipa))
+
+    def test_a_geminate_is_written_and_said_doubled(self) -> None:
+        self.check("ഇക്ക", "ikka", "ikka")
+        self.check("അമ്മ", "amma", "əmma")
+        self.check("മഞ്ഞ", "mañña", "məɲɲa")
+        self.check("ഭക്ഷണം", "bhakṣaṇaṁ", "bʱəkʂəɳam")
+
+    def test_long_vowels_take_a_length_mark_and_consonants_never(self) -> None:
+        self.check("പാല്", "pāl", "paːl")
+        self.check("പല", "pala", "pəla")
+        self.check("തൂക്കം", "tūkkaṁ", "t̪uːkkam")
+        self.check("ഏത്", "ēt", "eːt̪")
+        self.check("എന്ത്", "ent", "ent̪")
+
+    def test_the_inherent_a_is_a_schwa_unless_it_is_the_last_vowel(
+            self) -> None:
+        # അവൻ: the first a is [ə], the a of വ is the last vowel, [a].
+        self.check("അവൻ", "avaṉ", "əʋan")
+        self.check("അത്", "at", "at̪")
+        self.check("ഇല്ല", "illa", "illa")
+        self.check("കടല", "kaṭala", "kəʈəla")
+
+    def test_the_vowel_less_virama_ending_a_word_is_not_said(self) -> None:
+        self.check("ഇത്", "it", "it̪")
+        self.check("കുറച്ച്", "kuṟacc", "kuɾatʃtʃ")
+        self.check("വീട്", "vīṭ", "ʋiːʈ")
+
+    def test_chillu_letters_are_a_consonant_with_no_vowel(self) -> None:
+        self.check("ഞാൻ", "ñāṉ", "ɲaːn")
+        self.check("വിരൽ", "viral", "ʋiɾal")
+        self.check("വെള്ളം", "veḷḷaṁ", "ʋeɭɭam")
+        self.check("തോൾ", "tōḷ", "t̪oːɭ")
+        self.check("കണ്", "kaṇ", "kaɳ")
+        self.check("പാർക്ക്", "pārkk", "paːɾkk")
+
+    def test_na_is_n_and_the_chillu_na_is_n_with_a_line(self) -> None:
+        self.check("എനിക്ക്", "enikk", "enikk")
+        self.check("മകൻ", "makaṉ", "məkan")
+
+    def test_the_two_r_letters_are_both_a_tap(self) -> None:
+        self.check("അരി", "ari", "əɾi")
+        self.check("ചോറ്", "cōṟ", "tʃoːɾ")
+        self.check("ചോർ", "cōr", "tʃoːɾ")
+
+    def test_the_retroflex_and_the_lateral_letters_are_told_apart(
+            self) -> None:
+        self.check("മുഴു", "muḻu", "muɻu")
+        self.check("മുളു", "muḷu", "muɭu")
+        self.check("മുലു", "mulu", "mulu")
+        self.check("കണ", "kaṇa", "kəɳa")
+        self.check("കന", "kana", "kəna")
+
+    def test_nta_is_n_and_a_stop_and_a_tap(self) -> None:
+        self.check("എന്റെ", "enṟe", "ent̪ɾe")
+        self.check("നിന്റെ", "ninṟe", "nint̪ɾe")
+        self.check("പന്ത്", "pant", "pant̪")
+
+    def test_tta_is_a_held_alveolar_stop_and_stta_is_st(self) -> None:
+        self.check("മുറ്റം", "muṟṟaṁ", "muttam")
+        self.check("ഒറ്റ", "oṟṟa", "otta")
+        self.check("സ്റ്റേഷൻ", "sṭēṣaṉ", "sʈeːʂan")
+        self.check("പോസ്റ്റ്", "pōsṭ", "poːsʈ")
+
+    def test_cchha_is_said_as_a_held_ca_with_no_breath(self) -> None:
+        self.check("അച്ഛൻ", "acchaṉ", "ətʃtʃan")
+        self.check("ഖ", "kha", "kʰa")
+
+    def test_aspirates_are_breathy_and_a_held_one_is_said_doubled(
+            self) -> None:
+        self.check("പഠിക്കൂ", "paṭhikkū", "pəʈʰikkuː")
+        self.check("ധനം", "dhanaṁ", "d̪ʱənam")
+        self.check("ഭാര്യ", "bhārya", "bʱaːɾja")
+        self.check("ഇക്ഖ", "ikkha", "ikkʰa")
+        self.check("വിദ്യാർത്ഥി", "vidyārtthi", "ʋid̪jaːɾt̪t̪ʰi")
+
+    def test_a_hint_with_an_f_makes_pha_an_f(self) -> None:
+        self.check("ഓഫീസ്", "ōphīs", "oːpʰiːs")
+        self.check("ഓഫീസ്", "ōfīs", "oːfiːs", "ofis")
+        self.check("ഫാൻ ഓഫീസ്", "phāṉ ōfīs", "pʰaːn oːfiːs", "phan ofis")
+        # A hint that does not pair with the words changes nothing.
+        self.check("ഫാൻ ഓഫീസ്", "phāṉ ōphīs", "pʰaːn oːpʰiːs", "fan")
+
+    def test_the_anusvara_is_m_and_the_visarga_is_h(self) -> None:
+        self.check("സിംഹം", "siṁhaṁ", "simham")
+        self.check("ദുഃഖം", "duḥkhaṁ", "d̪uhkʰam")
+
+    def test_the_vowel_signs_and_independent_vowels(self) -> None:
+        self.check("ഐസ്", "ais", "ais")
+        self.check("ഔഷധം", "auṣadhaṁ", "auʂəd̪ʱam")
+        self.check("കൈ", "kai", "kai")
+        self.check("ബ്ലൗസ്", "blaus", "blaus")
+        self.check("വൃത്തി", "vṛtti", "ʋɾɯt̪t̪i")
+        self.check("ഒരു", "oru", "oɾu")
+        self.check("ഓരോ", "ōrō", "oːɾoː")
+        self.check("എഴുതൂ", "eḻutū", "eɻut̪uː")
+
+    def test_punctuation_is_kept_in_the_reading_and_not_in_the_ipa(
+            self) -> None:
+        self.check("എന്ത്?", "ent?", "ent̪")
+        self.check("അതെ, ഞാൻ.", "ate, ñāṉ.", "ət̪e ɲaːn")
+
+    def test_a_word_in_malayalam_script_is_all_the_transcriber_needs(
+            self) -> None:
+        t = transcribe("ഞാൻ വരുന്നു", "ml")
+        self.assertTrue(t.fitted)
+        self.assertEqual(t.ipa, "ɲaːn ʋəɾunnu")
+
+
 if __name__ == "__main__":
     unittest.main()
