@@ -1,0 +1,153 @@
+schema: 1
+id: "ta-home"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "home"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0276"
+    target: "அறை"
+    reading: "aṟai"
+    ipa: "arai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பெரிய அறை."
+        reading: "itu periya aṟai."
+        ipa: "it̪u peɾija arai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0008" }, { word: "அறை", base: "அறை", reading: "aṟai" }]
+      - target: "நான் அறை உள்ளே போகிறேன்."
+        reading: "nāṉ aṟai uḷḷē pōkiṟēṉ."
+        ipa: "naːn arai uɭɭeː poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "அறை", base: "அறை", reading: "aṟai" }, { word: "உள்ளே", ref: "ta-0178" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-0277"
+    target: "சமையலறை"
+    reading: "camaiyalaṟai"
+    ipa: "samaijalarai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சமையலறை."
+        reading: "itu camaiyalaṟai."
+        ipa: "it̪u samaijalarai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சமையலறை", base: "சமையலறை", reading: "camaiyalaṟai" }]
+      - target: "நான் சமையலறைக்குப் போகிறேன்."
+        reading: "nāṉ camaiyalaṟaikkup pōkiṟēṉ."
+        ipa: "naːn samaijalaraikkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சமையலறைக்குப்", base: "சமையலறை", reading: "camaiyalaṟai" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-0278"
+    target: "படுக்கை"
+    reading: "paṭukkai"
+    ipa: "paʈukkai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது படுக்கை."
+        reading: "itu paṭukkai."
+        ipa: "it̪u paʈukkai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "படுக்கை", base: "படுக்கை", reading: "paṭukkai" }]
+      - target: "படுக்கை வேண்டும்."
+        reading: "paṭukkai vēṇṭum."
+        ipa: "paʈukkai ʋeːɳʈum"
+        bases: [{ word: "படுக்கை", base: "படுக்கை", reading: "paṭukkai" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+  - id: "ta-0279"
+    target: "ஜன்னல்"
+    reading: "jaṉṉal"
+    ipa: "dʒannal"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஜன்னல் திற."
+        reading: "jaṉṉal tiṟa."
+        ipa: "dʒannal t̪ira"
+        bases: [{ word: "ஜன்னல்", base: "ஜன்னல்", reading: "jaṉṉal" }, { word: "திற", ref: "ta-0186" }]
+      - target: "ஜன்னல் மூடு."
+        reading: "jaṉṉal mūṭu."
+        ipa: "dʒannal muːʈu"
+        bases: [{ word: "ஜன்னல்", base: "ஜன்னல்", reading: "jaṉṉal" }, { word: "மூடு", ref: "ta-0187" }]
+  - id: "ta-0280"
+    target: "மேசை"
+    reading: "mēcai"
+    ipa: "meːsai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புத்தகம் மேசை மேலே இருக்கிறது."
+        reading: "puttakam mēcai mēlē irukkiṟatu."
+        ipa: "put̪t̪akam meːsai meːleː iɾukkirat̪u"
+        bases: [{ word: "புத்தகம்", base: "புத்தகம்", reading: "puttakam" }, { word: "மேசை", base: "மேசை", reading: "mēcai" }, { word: "மேலே", ref: "ta-0176" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இது மேசை."
+        reading: "itu mēcai."
+        ipa: "it̪u meːsai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மேசை", base: "மேசை", reading: "mēcai" }]
+  - id: "ta-0281"
+    target: "நாற்காலி"
+    reading: "nāṟkāli"
+    ipa: "naːrkaːli"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாற்காலி அருகில் இருக்கிறது."
+        reading: "nāṟkāli arukil irukkiṟatu."
+        ipa: "naːrkaːli aɾukil iɾukkirat̪u"
+        bases: [{ word: "நாற்காலி", base: "நாற்காலி", reading: "nāṟkāli" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "நாற்காலி மேலே உட்கார்."
+        reading: "nāṟkāli mēlē uṭkār."
+        ipa: "naːrkaːli meːleː uʈkaːɾ"
+        bases: [{ word: "நாற்காலி", base: "நாற்காலி", reading: "nāṟkāli" }, { word: "மேலே", ref: "ta-0176" }, { word: "உட்கார்", ref: "ta-0188" }]
+  - id: "ta-0282"
+    target: "தோட்டம்"
+    reading: "tōṭṭam"
+    ipa: "t̪oːʈʈam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பெரிய தோட்டம்."
+        reading: "itu periya tōṭṭam."
+        ipa: "it̪u peɾija t̪oːʈʈam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0008" }, { word: "தோட்டம்", base: "தோட்டம்", reading: "tōṭṭam" }]
+      - target: "நான் தோட்டத்துக்குப் போகிறேன்."
+        reading: "nāṉ tōṭṭattukkup pōkiṟēṉ."
+        ipa: "naːn t̪oːʈʈat̪t̪ukkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தோட்டத்துக்குப்", base: "தோட்டம்", reading: "tōṭṭam" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-0283"
+    target: "கழிவறை"
+    reading: "kaḻivaṟai"
+    ipa: "kaɻiʋarai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கழிவறை எங்கே?"
+        reading: "kaḻivaṟai eṅkē?"
+        ipa: "kaɻiʋarai eŋkeː"
+        bases: [{ word: "கழிவறை", base: "கழிவறை", reading: "kaḻivaṟai" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "இது கழிவறை."
+        reading: "itu kaḻivaṟai."
+        ipa: "it̪u kaɻiʋarai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கழிவறை", base: "கழிவறை", reading: "kaḻivaṟai" }]

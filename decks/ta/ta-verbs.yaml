@@ -1,0 +1,213 @@
+schema: 1
+id: "ta-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0118"
+    target: "போ"
+    reading: "pō"
+    ipa: "poː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் வீட்டுக்குப் போகிறேன்."
+        reading: "nāṉ vīṭṭukkup pōkiṟēṉ."
+        ipa: "naːn ʋiːʈʈukkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வீட்டுக்குப்", base: "வீடு", reading: "vīṭu" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+      - target: "நாம் போகலாம்."
+        reading: "nām pōkalām."
+        ipa: "naːm poːkalaːm"
+        bases: [{ word: "நாம்", ref: "ta-0063" }, { word: "போகலாம்", base: "போ", reading: "pō" }]
+  - id: "ta-0119"
+    target: "சாப்பிடு"
+    reading: "cāppiṭu"
+    ipa: "saːppiʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் சாப்பிடுகிறேன்."
+        reading: "nāṉ cāppiṭukiṟēṉ."
+        ipa: "naːn saːppiʈukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "சாப்பிடுகிறேன்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+      - target: "சாப்பிடலாம்."
+        reading: "cāppiṭalām."
+        ipa: "saːppiʈalaːm"
+        bases: [{ word: "சாப்பிடலாம்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-0120"
+    target: "குடி"
+    reading: "kuṭi"
+    ipa: "kuʈi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "தண்ணீர் குடி."
+        reading: "taṇṇīr kuṭi."
+        ipa: "t̪aɳɳiːɾ kuʈi"
+        bases: [{ word: "தண்ணீர்", ref: "ta-0005" }, { word: "குடி", base: "குடி", reading: "kuṭi" }]
+      - target: "நான் தண்ணீர் குடிக்கிறேன்."
+        reading: "nāṉ taṇṇīr kuṭikkiṟēṉ."
+        ipa: "naːn t̪aɳɳiːɾ kuʈikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தண்ணீர்", ref: "ta-0005" }, { word: "குடிக்கிறேன்", base: "குடி", reading: "kuṭi" }]
+  - id: "ta-0121"
+    target: "பார்"
+    reading: "pār"
+    ipa: "paːɾ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பார்!"
+        reading: "pār!"
+        ipa: "paːɾ"
+        bases: [{ word: "பார்", base: "பார்", reading: "pār" }]
+      - target: "அவர் பார்க்கிறார்."
+        reading: "avar pārkkiṟār."
+        ipa: "aʋaɾ paːɾkkiraːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "பார்க்கிறார்", base: "பார்", reading: "pār" }]
+  - id: "ta-0122"
+    target: "கேள்"
+    reading: "kēḷ"
+    ipa: "keːɭ"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "கேள்!"
+        reading: "kēḷ!"
+        ipa: "keːɭ"
+        bases: [{ word: "கேள்", base: "கேள்", reading: "kēḷ" }]
+      - target: "நான் கேட்கிறேன்."
+        reading: "nāṉ kēṭkiṟēṉ."
+        ipa: "naːn keːʈkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "கேட்கிறேன்", base: "கேள்", reading: "kēḷ" }]
+  - id: "ta-0123"
+    target: "பேசு"
+    reading: "pēcu"
+    ipa: "peːsu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் தமிழ் பேசுகிறேன்."
+        reading: "nāṉ tamiḻ pēcukiṟēṉ."
+        ipa: "naːn t̪amiɻ peːsukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தமிழ்", base: "தமிழ்", reading: "tamiḻ" }, { word: "பேசுகிறேன்", base: "பேசு", reading: "pēcu" }]
+      - target: "நீங்கள் தமிழ் பேசுகிறீர்களா?"
+        reading: "nīṅkaḷ tamiḻ pēcukiṟīrkaḷā?"
+        ipa: "niːŋkaɭ t̪amiɻ peːsukiriːɾkaɭaː"
+        bases: [{ word: "நீங்கள்", ref: "ta-0004" }, { word: "தமிழ்", base: "தமிழ்", reading: "tamiḻ" }, { word: "பேசுகிறீர்களா", base: "பேசு", reading: "pēcu" }]
+  - id: "ta-0124"
+    target: "எழுது"
+    reading: "eḻutu"
+    ipa: "eɻut̪u"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் எழுதுகிறேன்."
+        reading: "nāṉ eḻutukiṟēṉ."
+        ipa: "naːn eɻut̪ukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "எழுதுகிறேன்", base: "எழுது", reading: "eḻutu" }]
+      - target: "எழுது!"
+        reading: "eḻutu!"
+        ipa: "eɻut̪u"
+        bases: [{ word: "எழுது", base: "எழுது", reading: "eḻutu" }]
+  - id: "ta-0125"
+    target: "கொடு"
+    reading: "koṭu"
+    ipa: "koʈu"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இதைக் கொடு."
+        reading: "itaik koṭu."
+        ipa: "it̪aik koʈu"
+        bases: [{ word: "இதைக்", base: "இது", reading: "itu" }, { word: "கொடு", base: "கொடு", reading: "koṭu" }]
+      - target: "அவர் எனக்குப் பால் கொடுக்கிறார்."
+        reading: "avar eṉakkup pāl koṭukkiṟār."
+        ipa: "aʋaɾ enakkup paːl koʈukkiraːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "எனக்குப்", base: "என்", reading: "eṉ" }, { word: "பால்", ref: "ta-0036" }, { word: "கொடுக்கிறார்", base: "கொடு", reading: "koṭu" }]
+  - id: "ta-0126"
+    target: "தூங்கு"
+    reading: "tūṅku"
+    ipa: "t̪uːŋku"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் இரவில் தூங்குகிறேன்."
+        reading: "nāṉ iravil tūṅkukiṟēṉ."
+        ipa: "naːn iɾaʋil t̪uːŋkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இரவில்", base: "இரவு", reading: "iravu" }, { word: "தூங்குகிறேன்", base: "தூங்கு", reading: "tūṅku" }]
+      - target: "குழந்தை தூங்குகிறது."
+        reading: "kuḻantai tūṅkukiṟatu."
+        ipa: "kuɻant̪ai t̪uːŋkukirat̪u"
+        bases: [{ word: "குழந்தை", ref: "ta-0084" }, { word: "தூங்குகிறது", base: "தூங்கு", reading: "tūṅku" }]
+  - id: "ta-0127"
+    target: "செய்"
+    reading: "cey"
+    ipa: "sej"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என்ன செய்கிறீர்கள்?"
+        reading: "eṉṉa ceykiṟīrkaḷ?"
+        ipa: "enna sejkiriːɾkaɭ"
+        bases: [{ word: "என்ன", ref: "ta-0042" }, { word: "செய்கிறீர்கள்", base: "செய்", reading: "cey" }]
+      - target: "நான் வேலை செய்கிறேன்."
+        reading: "nāṉ vēlai ceykiṟēṉ."
+        ipa: "naːn ʋeːlai sejkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "வேலை", base: "வேலை", reading: "vēlai" }, { word: "செய்கிறேன்", base: "செய்", reading: "cey" }]
+  - id: "ta-0128"
+    target: "சமை"
+    reading: "camai"
+    ipa: "samai"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அம்மா சமைக்கிறார்."
+        reading: "ammā camaikkiṟār."
+        ipa: "ammaː samaikkiraːɾ"
+        bases: [{ word: "அம்மா", ref: "ta-0072" }, { word: "சமைக்கிறார்", base: "சமை", reading: "camai" }]
+      - target: "இன்று கறி சமைக்கிறேன்."
+        reading: "iṉṟu kaṟi camaikkiṟēṉ."
+        ipa: "inru kari samaikkireːn"
+        bases: [{ word: "இன்று", base: "இன்று", reading: "iṉṟu" }, { word: "கறி", ref: "ta-0039" }, { word: "சமைக்கிறேன்", base: "சமை", reading: "camai" }]
+  - id: "ta-0129"
+    target: "வாங்கு"
+    reading: "vāṅku"
+    ipa: "ʋaːŋku"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் பால் வாங்குகிறேன்."
+        reading: "nāṉ pāl vāṅkukiṟēṉ."
+        ipa: "naːn paːl ʋaːŋkukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பால்", ref: "ta-0036" }, { word: "வாங்குகிறேன்", base: "வாங்கு", reading: "vāṅku" }]
+      - target: "வாங்கு, போகலாம்."
+        reading: "vāṅku, pōkalām."
+        ipa: "ʋaːŋku poːkalaːm"
+        bases: [{ word: "வாங்கு", base: "வாங்கு", reading: "vāṅku" }, { word: "போகலாம்", base: "போ", reading: "pō" }]

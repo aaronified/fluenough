@@ -1,0 +1,245 @@
+schema: 1
+id: "ta-time"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "time"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0144"
+    target: "இன்று"
+    reading: "iṉṟu"
+    ipa: "inru"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இன்று வெள்ளி."
+        reading: "iṉṟu veḷḷi."
+        ipa: "inru ʋeɭɭi"
+        bases: [{ word: "இன்று", base: "இன்று", reading: "iṉṟu" }, { word: "வெள்ளி", ref: "ta-0149" }]
+      - target: "இன்று நான் வீட்டில் இருக்கிறேன்."
+        reading: "iṉṟu nāṉ vīṭṭil irukkiṟēṉ."
+        ipa: "inru naːn ʋiːʈʈil iɾukkireːn"
+        bases: [{ word: "இன்று", base: "இன்று", reading: "iṉṟu" }, { word: "நான்", ref: "ta-0003" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }]
+  - id: "ta-0145"
+    target: "திங்கள்"
+    reading: "tiṅkaḷ"
+    ipa: "t̪iŋkaɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "திங்கள் வருகிறேன்."
+        reading: "tiṅkaḷ varukiṟēṉ."
+        ipa: "t̪iŋkaɭ ʋaɾukireːn"
+        bases: [{ word: "திங்கள்", base: "திங்கள்", reading: "tiṅkaḷ" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+      - target: "திங்கள் கடை திறக்கும்."
+        reading: "tiṅkaḷ kaṭai tiṟakkum."
+        ipa: "t̪iŋkaɭ kaʈai t̪irakkum"
+        bases: [{ word: "திங்கள்", base: "திங்கள்", reading: "tiṅkaḷ" }, { word: "கடை", base: "கடை", reading: "kaṭai" }, { word: "திறக்கும்", base: "திற", reading: "tiṟa" }]
+  - id: "ta-0146"
+    target: "செவ்வாய்"
+    reading: "cevvāy"
+    ipa: "seʋʋaːj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நாளை செவ்வாய்."
+        reading: "nāḷai cevvāy."
+        ipa: "naːɭai seʋʋaːj"
+        bases: [{ word: "நாளை", ref: "ta-0133" }, { word: "செவ்வாய்", base: "செவ்வாய்", reading: "cevvāy" }]
+      - target: "செவ்வாய் நான் போகிறேன்."
+        reading: "cevvāy nāṉ pōkiṟēṉ."
+        ipa: "seʋʋaːj naːn poːkireːn"
+        bases: [{ word: "செவ்வாய்", base: "செவ்வாய்", reading: "cevvāy" }, { word: "நான்", ref: "ta-0003" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-0147"
+    target: "புதன்"
+    reading: "putaṉ"
+    ipa: "put̪an"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "புதன் கிழமை வருகிறேன்."
+        reading: "putaṉ kiḻamai varukiṟēṉ."
+        ipa: "put̪an kiɻamai ʋaɾukireːn"
+        bases: [{ word: "புதன்", base: "புதன்", reading: "putaṉ" }, { word: "கிழமை", base: "கிழமை", reading: "kiḻamai" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+      - target: "புதன் நல்லது."
+        reading: "putaṉ nallatu."
+        ipa: "put̪an nallat̪u"
+        bases: [{ word: "புதன்", base: "புதன்", reading: "putaṉ" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0148"
+    target: "வியாழன்"
+    reading: "viyāḻaṉ"
+    ipa: "ʋijaːɻan"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வியாழன் வீட்டில் இருக்கிறேன்."
+        reading: "viyāḻaṉ vīṭṭil irukkiṟēṉ."
+        ipa: "ʋijaːɻan ʋiːʈʈil iɾukkireːn"
+        bases: [{ word: "வியாழன்", base: "வியாழன்", reading: "viyāḻaṉ" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }]
+      - target: "வியாழன் நாங்கள் போகலாம்."
+        reading: "viyāḻaṉ nāṅkaḷ pōkalām."
+        ipa: "ʋijaːɻan naːŋkaɭ poːkalaːm"
+        bases: [{ word: "வியாழன்", base: "வியாழன்", reading: "viyāḻaṉ" }, { word: "நாங்கள்", ref: "ta-0064" }, { word: "போகலாம்", base: "போ", reading: "pō" }]
+  - id: "ta-0149"
+    target: "வெள்ளி"
+    reading: "veḷḷi"
+    ipa: "ʋeɭɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வெள்ளி விடுமுறை."
+        reading: "veḷḷi viṭumuṟai."
+        ipa: "ʋeɭɭi ʋiʈumurai"
+        bases: [{ word: "வெள்ளி", base: "வெள்ளி", reading: "veḷḷi" }, { word: "விடுமுறை", base: "விடுமுறை", reading: "viṭumuṟai" }]
+      - target: "வெள்ளி நான் வருகிறேன்."
+        reading: "veḷḷi nāṉ varukiṟēṉ."
+        ipa: "ʋeɭɭi naːn ʋaɾukireːn"
+        bases: [{ word: "வெள்ளி", base: "வெள்ளி", reading: "veḷḷi" }, { word: "நான்", ref: "ta-0003" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+  - id: "ta-0150"
+    target: "சனி"
+    reading: "caṉi"
+    ipa: "sani"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சனி கடை திறக்கும்."
+        reading: "caṉi kaṭai tiṟakkum."
+        ipa: "sani kaʈai t̪irakkum"
+        bases: [{ word: "சனி", base: "சனி", reading: "caṉi" }, { word: "கடை", base: "கடை", reading: "kaṭai" }, { word: "திறக்கும்", base: "திற", reading: "tiṟa" }]
+      - target: "சனி நாங்கள் சாப்பிடுகிறோம்."
+        reading: "caṉi nāṅkaḷ cāppiṭukiṟōm."
+        ipa: "sani naːŋkaɭ saːppiʈukiroːm"
+        bases: [{ word: "சனி", base: "சனி", reading: "caṉi" }, { word: "நாங்கள்", ref: "ta-0064" }, { word: "சாப்பிடுகிறோம்", base: "சாப்பிடு", reading: "cāppiṭu" }]
+  - id: "ta-0151"
+    target: "ஞாயிறு"
+    reading: "ñāyiṟu"
+    ipa: "ɲaːjiru"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "ஞாயிறு விடுமுறை."
+        reading: "ñāyiṟu viṭumuṟai."
+        ipa: "ɲaːjiru ʋiʈumurai"
+        bases: [{ word: "ஞாயிறு", base: "ஞாயிறு", reading: "ñāyiṟu" }, { word: "விடுமுறை", base: "விடுமுறை", reading: "viṭumuṟai" }]
+      - target: "ஞாயிறு அவன் வீட்டில் இருக்கிறான்."
+        reading: "ñāyiṟu avaṉ vīṭṭil irukkiṟāṉ."
+        ipa: "ɲaːjiru aʋan ʋiːʈʈil iɾukkiraːn"
+        bases: [{ word: "ஞாயிறு", base: "ஞாயிறு", reading: "ñāyiṟu" }, { word: "அவன்", ref: "ta-0058" }, { word: "வீட்டில்", base: "வீடு", reading: "vīṭu" }, { word: "இருக்கிறான்", base: "இரு", reading: "iru" }]
+  - id: "ta-0152"
+    target: "காலை"
+    reading: "kālai"
+    ipa: "kaːlai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காலை வணக்கம்."
+        reading: "kālai vaṇakkam."
+        ipa: "kaːlai ʋaɳakkam"
+        bases: [{ word: "காலை", base: "காலை", reading: "kālai" }, { word: "வணக்கம்", ref: "ta-0011" }]
+      - target: "நான் காலையில் எழுகிறேன்."
+        reading: "nāṉ kālaiyil eḻukiṟēṉ."
+        ipa: "naːn kaːlaijil eɻukireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "காலையில்", base: "காலை", reading: "kālai" }, { word: "எழுகிறேன்", base: "எழு", reading: "eḻu" }]
+  - id: "ta-0153"
+    target: "மாலை"
+    reading: "mālai"
+    ipa: "maːlai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மாலை வருகிறேன்."
+        reading: "mālai varukiṟēṉ."
+        ipa: "maːlai ʋaɾukireːn"
+        bases: [{ word: "மாலை", base: "மாலை", reading: "mālai" }, { word: "வருகிறேன்", base: "வா", reading: "vā" }]
+      - target: "மாலை நல்லது."
+        reading: "mālai nallatu."
+        ipa: "maːlai nallat̪u"
+        bases: [{ word: "மாலை", base: "மாலை", reading: "mālai" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0154"
+    target: "இரவு"
+    reading: "iravu"
+    ipa: "iɾaʋu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இரவு நல்லது."
+        reading: "iravu nallatu."
+        ipa: "iɾaʋu nallat̪u"
+        bases: [{ word: "இரவு", base: "இரவு", reading: "iravu" }, { word: "நல்லது", ref: "ta-0006" }]
+      - target: "இரவில் தூங்குகிறேன்."
+        reading: "iravil tūṅkukiṟēṉ."
+        ipa: "iɾaʋil t̪uːŋkukireːn"
+        bases: [{ word: "இரவில்", base: "இரவு", reading: "iravu" }, { word: "தூங்குகிறேன்", base: "தூங்கு", reading: "tūṅku" }]
+  - id: "ta-0155"
+    target: "நேரம்"
+    reading: "nēram"
+    ipa: "neːɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என்ன நேரம்?"
+        reading: "eṉṉa nēram?"
+        ipa: "enna neːɾam"
+        bases: [{ word: "என்ன", ref: "ta-0042" }, { word: "நேரம்", base: "நேரம்", reading: "nēram" }]
+      - target: "நிறைய நேரம் இருக்கிறது."
+        reading: "niṟaiya nēram irukkiṟatu."
+        ipa: "niraija neːɾam iɾukkirat̪u"
+        bases: [{ word: "நிறைய", ref: "ta-0141" }, { word: "நேரம்", base: "நேரம்", reading: "nēram" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0156"
+    target: "மணி"
+    reading: "maṇi"
+    ipa: "maɳi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இப்போது மூன்று மணி."
+        reading: "ippōtu mūṉṟu maṇi."
+        ipa: "ippoːt̪u muːnru maɳi"
+        bases: [{ word: "இப்போது", ref: "ta-0132" }, { word: "மூன்று", ref: "ta-0090" }, { word: "மணி", base: "மணி", reading: "maṇi" }]
+      - target: "மணி எத்தனை?"
+        reading: "maṇi ettaṉai?"
+        ipa: "maɳi et̪t̪anai"
+        bases: [{ word: "மணி", base: "மணி", reading: "maṇi" }, { word: "எத்தனை", ref: "ta-0048" }]
+  - id: "ta-0157"
+    kind: "set"
+    members: [{ ref: "ta-0145" }, { ref: "ta-0146" }, { ref: "ta-0147" }, { ref: "ta-0148" }, { ref: "ta-0149" }, { ref: "ta-0150" }, { ref: "ta-0151" }]

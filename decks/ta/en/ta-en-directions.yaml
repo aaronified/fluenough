@@ -1,0 +1,123 @@
+schema: 1
+id: "ta-en-directions"
+kind: "layer"
+core: "ta-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+description: "Left and right, straight on, the four directions and the street. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0230":
+    native: "right (side)"
+    notes:
+      n1: "The right side. Before a noun: வலது கை (valatu kai, right hand); with பக்கம் (pakkam, side) it means the right side."
+    examples:
+      "வலது பக்கம் போ.":
+        native: "Go right."
+        bases:
+          "வலது": "right (side)"
+          "பக்கம்": "side"
+      "இது வலது கை.":
+        native: "This is the right hand."
+        bases:
+          "வலது": "right (side)"
+          "கை": "hand"
+  "ta-0231":
+    native: "left (side)"
+    notes:
+      n1: "The left side. Before a noun: இடது கை (iṭatu kai, left hand)."
+    examples:
+      "இடது பக்கம் போ.":
+        native: "Go left."
+        bases:
+          "இடது": "left (side)"
+          "பக்கம்": "side"
+      "இது இடது கை.":
+        native: "This is the left hand."
+        bases:
+          "இடது": "left (side)"
+          "கை": "hand"
+  "ta-0232":
+    native: "straight"
+    notes:
+      n1: "Straight on, in the same direction."
+    examples:
+      "நேராக போ.":
+        native: "Go straight."
+        bases:
+          "நேராக": "straight"
+      "நேராக வா.":
+        native: "Come straight."
+        bases:
+          "நேராக": "straight"
+  "ta-0233":
+    native: "north"
+    notes:
+      n1: "The north. With பக்கம் (pakkam, side) it means northward."
+    examples:
+      "வடக்கு பக்கம் போ.":
+        native: "Go north."
+        bases:
+          "வடக்கு": "north"
+          "பக்கம்": "side"
+      "இது வடக்கு.":
+        native: "This is north."
+        bases:
+          "வடக்கு": "north"
+  "ta-0234":
+    native: "south"
+    notes:
+      n1: "The south. With பக்கம் (pakkam, side) it means southward."
+    examples:
+      "தெற்கு பக்கம் போ.":
+        native: "Go south."
+        bases:
+          "தெற்கு": "south"
+          "பக்கம்": "side"
+      "இது தெற்கு.":
+        native: "This is south."
+        bases:
+          "தெற்கு": "south"
+  "ta-0235":
+    native: "east"
+    notes:
+      n1: "The east. With பக்கம் (pakkam, side) it means eastward."
+    examples:
+      "கிழக்கு பக்கம் போ.":
+        native: "Go east."
+        bases:
+          "கிழக்கு": "east"
+          "பக்கம்": "side"
+      "இது கிழக்கு.":
+        native: "This is east."
+        bases:
+          "கிழக்கு": "east"
+  "ta-0236":
+    native: "west"
+    notes:
+      n1: "The west. With பக்கம் (pakkam, side) it means westward."
+    examples:
+      "மேற்கு பக்கம் போ.":
+        native: "Go west."
+        bases:
+          "மேற்கு": "west"
+          "பக்கம்": "side"
+      "இது மேற்கு.":
+        native: "This is west."
+        bases:
+          "மேற்கு": "west"
+  "ta-0237":
+    native: "street"
+    notes:
+      n1: "A street in a town or village."
+    examples:
+      "தெரு அருகில் இருக்கிறது.":
+        native: "The street is near."
+        bases:
+          "தெரு": "street"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது பெரிய தெரு.":
+        native: "This is a big street."
+        bases:
+          "தெரு": "street"

@@ -1,0 +1,115 @@
+schema: 1
+id: "ta-about-me"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "about-me"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0110"
+    target: "பெயர்"
+    reading: "peyar"
+    ipa: "pejaɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் பெயர் அமுதா."
+        reading: "eṉ peyar amutā."
+        ipa: "en pejaɾ amut̪aː"
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "பெயர்", base: "பெயர்", reading: "peyar" }, { word: "அமுதா", base: "அமுதா", reading: "amutā" }]
+      - target: "உங்கள் பெயர் என்ன?"
+        reading: "uṅkaḷ peyar eṉṉa?"
+        ipa: "uŋkaɭ pejaɾ enna"
+        bases: [{ word: "உங்கள்", base: "உங்கள்", reading: "uṅkaḷ" }, { word: "பெயர்", base: "பெயர்", reading: "peyar" }, { word: "என்ன", ref: "ta-0042" }]
+  - id: "ta-0111"
+    target: "ஊர்"
+    reading: "ūr"
+    ipa: "uːɾ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "என் ஊர் சென்னை."
+        reading: "eṉ ūr ceṉṉai."
+        ipa: "en uːɾ sennai"
+        bases: [{ word: "என்", base: "என்", reading: "eṉ" }, { word: "ஊர்", base: "ஊர்", reading: "ūr" }, { word: "சென்னை", base: "சென்னை", reading: "ceṉṉai" }]
+      - target: "உங்கள் ஊர் எது?"
+        reading: "uṅkaḷ ūr etu?"
+        ipa: "uŋkaɭ uːɾ et̪u"
+        bases: [{ word: "உங்கள்", base: "உங்கள்", reading: "uṅkaḷ" }, { word: "ஊர்", base: "ஊர்", reading: "ūr" }, { word: "எது", ref: "ta-0047" }]
+  - id: "ta-0112"
+    target: "இங்கே"
+    reading: "iṅkē"
+    ipa: "iŋkeː"
+    pos: "other"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இங்கே வா."
+        reading: "iṅkē vā."
+        ipa: "iŋkeː ʋaː"
+        bases: [{ word: "இங்கே", base: "இங்கே", reading: "iṅkē" }, { word: "வா", ref: "ta-0010" }]
+      - target: "நான் இங்கே இருக்கிறேன்."
+        reading: "nāṉ iṅkē irukkiṟēṉ."
+        ipa: "naːn iŋkeː iɾukkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "இங்கே", base: "இங்கே", reading: "iṅkē" }, { word: "இருக்கிறேன்", base: "இரு", reading: "iru" }]
+  - id: "ta-0113"
+    target: "நண்பன்"
+    reading: "naṇpaṉ"
+    ipa: "naɳpan"
+    pos: "noun"
+    gender: "m"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவன் என் நண்பன்."
+        reading: "avaṉ eṉ naṇpaṉ."
+        ipa: "aʋan en naɳpan"
+        bases: [{ word: "அவன்", ref: "ta-0058" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "நண்பன்", base: "நண்பன்", reading: "naṇpaṉ" }]
+      - target: "நண்பன் எங்கே?"
+        reading: "naṇpaṉ eṅkē?"
+        ipa: "naɳpan eŋkeː"
+        bases: [{ word: "நண்பன்", base: "நண்பன்", reading: "naṇpaṉ" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-0114"
+    target: "நண்பி"
+    reading: "naṇpi"
+    ipa: "naɳpi"
+    pos: "noun"
+    gender: "f"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அவள் என் நண்பி."
+        reading: "avaḷ eṉ naṇpi."
+        ipa: "aʋaɭ en naɳpi"
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "என்", base: "என்", reading: "eṉ" }, { word: "நண்பி", base: "நண்பி", reading: "naṇpi" }]
+      - target: "நண்பி வருகிறாள்."
+        reading: "naṇpi varukiṟāḷ."
+        ipa: "naɳpi ʋaɾukiraːɭ"
+        bases: [{ word: "நண்பி", base: "நண்பி", reading: "naṇpi" }, { word: "வருகிறாள்", base: "வா", reading: "vā" }]
+  - id: "ta-0115"
+    target: "படி"
+    reading: "paṭi"
+    ipa: "paʈi"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் தமிழ் படிக்கிறேன்."
+        reading: "nāṉ tamiḻ paṭikkiṟēṉ."
+        ipa: "naːn t̪amiɻ paʈikkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "தமிழ்", base: "தமிழ்", reading: "tamiḻ" }, { word: "படிக்கிறேன்", base: "படி", reading: "paṭi" }]
+      - target: "அவர் ஆங்கிலம் படிக்கிறார்."
+        reading: "avar āṅkilam paṭikkiṟār."
+        ipa: "aʋaɾ aːŋkilam paʈikkiraːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "ஆங்கிலம்", base: "ஆங்கிலம்", reading: "āṅkilam" }, { word: "படிக்கிறார்", base: "படி", reading: "paṭi" }]

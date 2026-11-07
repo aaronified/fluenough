@@ -1,0 +1,130 @@
+schema: 1
+id: "ta-en-location"
+kind: "layer"
+core: "ta-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Where things are"
+description: "Above and below, inside and outside, in front, behind, beside and near. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0176":
+    native: "above; up"
+    notes:
+      n1: "Above or up, said with இருக்கிறது (irukkiṟatu, is) for 'is above'; with போ (pō, to go) for going up."
+    examples:
+      "இது மேலே இருக்கிறது.":
+        native: "This is above."
+        bases:
+          "மேலே": "above; up"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நான் மேலே போகிறேன்.":
+        native: "I am going up."
+        bases:
+          "மேலே": "above; up"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-0177":
+    native: "below; down"
+    notes:
+      n1: "Below or down, the opposite of மேலே (mēlē, above)."
+    examples:
+      "இது கீழே இருக்கிறது.":
+        native: "This is below."
+        bases:
+          "கீழே": "below; down"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "அவர் கீழே போகிறார்.":
+        native: "He is going down."
+        bases:
+          "கீழே": "below; down"
+          "போகிறார்": "is going; from போ (pō), to go"
+  "ta-0178":
+    native: "inside; in"
+    notes:
+      n1: "Inside, or into a place: உள்ளே வா (uḷḷē vā, come in). The opposite is வெளியே (veḷiyē, outside)."
+    examples:
+      "அவள் உள்ளே இருக்கிறாள்.":
+        native: "She is inside."
+        bases:
+          "உள்ளே": "inside; in"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+      "நான் உள்ளே வருகிறேன்.":
+        native: "I am coming in."
+        bases:
+          "உள்ளே": "inside; in"
+          "வருகிறேன்": "am coming; from வா (vā), come"
+  "ta-0179":
+    native: "outside; out"
+    notes:
+      n1: "Outside, or out of a place. The opposite is உள்ளே (uḷḷē, inside)."
+    examples:
+      "நாங்கள் வெளியே போகிறோம்.":
+        native: "We are going out."
+        bases:
+          "வெளியே": "outside; out"
+          "போகிறோம்": "are going; from போ (pō), to go"
+      "அவன் வெளியே இருக்கிறான்.":
+        native: "He is outside."
+        bases:
+          "வெளியே": "outside; out"
+          "இருக்கிறான்": "is; from இரு (iru), to be"
+  "ta-0180":
+    native: "in front"
+    notes:
+      n1: "In front of a person or thing."
+    examples:
+      "நான் முன்னால் நிற்கிறேன்.":
+        native: "I am standing in front."
+        bases:
+          "முன்னால்": "in front"
+          "நிற்கிறேன்": "am standing; from நில் (nil), to stand; to stop"
+      "அவர் முன்னால் இருக்கிறார்.":
+        native: "He is in front."
+        bases:
+          "முன்னால்": "in front"
+          "இருக்கிறார்": "is; from இரு (iru), to be"
+  "ta-0181":
+    native: "behind"
+    notes:
+      n1: "Behind a person or thing. The opposite is முன்னால் (muṉṉāl, in front)."
+    examples:
+      "அவள் பின்னால் இருக்கிறாள்.":
+        native: "She is behind."
+        bases:
+          "பின்னால்": "behind"
+          "இருக்கிறாள்": "is; from இரு (iru), to be"
+      "குழந்தை பின்னால் வருகிறது.":
+        native: "The child is coming behind."
+        bases:
+          "பின்னால்": "behind"
+          "வருகிறது": "is coming; from வா (vā), come"
+  "ta-0182":
+    native: "beside; next to"
+    notes:
+      n1: "Beside a place or thing, after its name: கடை பக்கத்தில் (kaṭai pakkattil, beside the shop)."
+    examples:
+      "கடை பக்கத்தில் இருக்கிறது.":
+        native: "The shop is beside it."
+        bases:
+          "கடை": "shop"
+          "பக்கத்தில்": "beside; next to"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நான் பக்கத்தில் நிற்கிறேன்.":
+        native: "I am standing beside it."
+        bases:
+          "பக்கத்தில்": "beside; next to"
+          "நிற்கிறேன்": "am standing; from நில் (nil), to stand; to stop"
+  "ta-0183":
+    native: "near"
+    notes:
+      n1: "Near a place or person, after its name: வீடு அருகில் (vīṭu arukil, near the house)."
+    examples:
+      "வீடு அருகில் இருக்கிறது.":
+        native: "The house is near."
+        bases:
+          "அருகில்": "near"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நீ அருகில் வா.":
+        native: "Come near."
+        bases:
+          "அருகில்": "near"

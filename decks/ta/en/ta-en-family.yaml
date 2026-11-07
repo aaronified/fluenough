@@ -1,0 +1,203 @@
+schema: 1
+id: ta-en-family
+kind: layer
+core: ta-family
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Family
+description: 'Fourteen words for family: mother, father, elder and younger sisters and brothers, son, daughter, husband, wife, grandmother, grandfather, child and family. Not yet checked by a Tamil speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  ta-0072:
+    native: mother
+    notes:
+      n1: Said for your own mother, and for any woman of that age you are close to.
+    examples:
+      அம்மா வருகிறார்.:
+        native: Mother is coming.
+        bases:
+          வருகிறார்: is coming; from வா (vā), to come
+      என் அம்மா வீட்டில் இருக்கிறார்.:
+        native: My mother is at home.
+        bases:
+          என்: my; from நான் (nāṉ), I
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறார்: is; from இரு (iru), to be
+  ta-0073:
+    native: father
+    notes:
+      n1: Said for your own father, and for an older man you are close to.
+    examples:
+      அப்பா எங்கே?:
+        native: Where is Father?
+      என் அப்பா நல்லவர்.:
+        native: My father is a good man.
+        bases:
+          என்: my; from நான் (nāṉ), I
+          நல்லவர்: good man (polite); from நல்ல (nalla), good
+  ta-0074:
+    native: elder sister
+    notes:
+      n1: An older sister. Tamil has one word for an older sister and one for a younger sister, so the age is always clear.
+    examples:
+      அக்கா வருகிறாள்.:
+        native: Elder sister is coming.
+        bases:
+          வருகிறாள்: is coming; from வா (vā), to come
+      இது என் அக்கா.:
+        native: This is my elder sister.
+        bases:
+          என்: my; from நான் (nāṉ), I
+  ta-0075:
+    native: elder brother
+    notes:
+      n1: An older brother. A younger brother is தம்பி (tampi).
+    examples:
+      அண்ணன் வீட்டில் இருக்கிறார்.:
+        native: Elder brother is at home.
+        bases:
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறார்: is; from இரு (iru), to be
+      என் அண்ணன் நல்லவன்.:
+        native: My elder brother is a good man.
+        bases:
+          என்: my; from நான் (nāṉ), I
+          நல்லவன்: good man; from நல்ல (nalla), good
+  ta-0076:
+    native: younger sister
+    notes:
+      n1: A younger sister. An older sister is அக்கா (akkā).
+    examples:
+      தங்கை படிக்கிறாள்.:
+        native: Younger sister is studying.
+        bases:
+          படிக்கிறாள்: is studying; from படி (paṭi), to study
+      என் தங்கை எங்கே?:
+        native: Where is my younger sister?
+        bases:
+          என்: my; from நான் (nāṉ), I
+  ta-0077:
+    native: younger brother
+    notes:
+      n1: A younger brother. An older brother is அண்ணன் (aṇṇaṉ).
+    examples:
+      தம்பி வருகிறான்.:
+        native: Younger brother is coming.
+        bases:
+          வருகிறான்: is coming; from வா (vā), to come
+      தம்பிக்கு பால் வேண்டும்.:
+        native: Younger brother wants milk.
+        bases:
+          தம்பிக்கு: to younger brother; from தம்பி (tampi)
+          வேண்டும்: wants; from வேண்டு (vēṇṭu), to want
+  ta-0078:
+    native: son
+    notes:
+      n1: A male child of a parent.
+    examples:
+      என் மகன் வீட்டில் இருக்கிறான்.:
+        native: My son is at home.
+        bases:
+          என்: my; from நான் (nāṉ), I
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறான்: is; from இரு (iru), to be
+      மகன் நல்லவன்.:
+        native: The son is a good man.
+        bases:
+          நல்லவன்: good man; from நல்ல (nalla), good
+  ta-0079:
+    native: daughter
+    notes:
+      n1: A female child of a parent. Its partner in the family is மகன் (makaṉ), son.
+    examples:
+      என் மகள் படிக்கிறாள்.:
+        native: My daughter is studying.
+        bases:
+          என்: my; from நான் (nāṉ), I
+          படிக்கிறாள்: is studying; from படி (paṭi), to study
+      மகள் எங்கே?:
+        native: Where is the daughter?
+  ta-0080:
+    native: husband
+    notes:
+      n1: A married man's husband, said with respect.
+    examples:
+      என் கணவர் வருகிறார்.:
+        native: My husband is coming.
+        bases:
+          என்: my; from நான் (nāṉ), I
+          வருகிறார்: is coming; from வா (vā), to come
+      கணவர் வீட்டில் இருக்கிறார்.:
+        native: The husband is at home.
+        bases:
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறார்: is; from இரு (iru), to be
+  ta-0081:
+    native: wife
+    notes:
+      n1: A married woman's wife.
+    examples:
+      என் மனைவி வருகிறாள்.:
+        native: My wife is coming.
+        bases:
+          என்: my; from நான் (nāṉ), I
+          வருகிறாள்: is coming; from வா (vā), to come
+      மனைவி எங்கே?:
+        native: Where is the wife?
+  ta-0082:
+    native: grandmother
+    notes:
+      n1: Your father's or mother's mother. Used for any old woman you respect.
+    examples:
+      பாட்டி வீட்டில் இருக்கிறார்.:
+        native: Grandmother is at home.
+        bases:
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறார்: is; from இரு (iru), to be
+      பாட்டிக்கு தண்ணீர் வேண்டும்.:
+        native: Grandmother wants water.
+        bases:
+          பாட்டிக்கு: to grandmother; from பாட்டி (pāṭṭi)
+          வேண்டும்: wants; from வேண்டு (vēṇṭu), to want
+  ta-0083:
+    native: grandfather
+    notes:
+      n1: Your father's or mother's father. Used for any old man you respect.
+    examples:
+      தாத்தா நடக்கிறார்.:
+        native: Grandfather is walking.
+        bases:
+          நடக்கிறார்: is walking; from நட (naṭa), to walk
+      தாத்தா எங்கே?:
+        native: Where is Grandfather?
+  ta-0084:
+    native: child
+    notes:
+      n1: A young child, a baby or a child of any age. Tamil uses the same word for a boy and a girl.
+    examples:
+      குழந்தை தூங்குகிறது.:
+        native: The child is sleeping.
+        bases:
+          தூங்குகிறது: is sleeping; from தூங்கு (tūṅku), to sleep
+      குழந்தை பால் குடிக்கிறது.:
+        native: The child is drinking milk.
+        bases:
+          குடிக்கிறது: is drinking; from குடி (kuṭi), to drink
+  ta-0085:
+    native: family
+    notes:
+      n1: A family, or a household. Used for the people in one home.
+    examples:
+      என் குடும்பம் பெரியது.:
+        native: My family is big.
+        bases:
+          என்: my; from நான் (nāṉ), I
+          பெரியது: big; from பெரிய (periya), big
+      என் குடும்பம் எங்கே?:
+        native: Where is my family?
+        bases:
+          என்: my; from நான் (nāṉ), I

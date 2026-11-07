@@ -1,0 +1,171 @@
+schema: 1
+id: "ta-groceries"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "groceries"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0215"
+    target: "அரிசி"
+    reading: "arici"
+    ipa: "aɾisi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அரிசி வாங்கு."
+        reading: "arici vāṅku."
+        ipa: "aɾisi ʋaːŋku"
+        bases: [{ word: "அரிசி", base: "அரிசி", reading: "arici" }, { word: "வாங்கு", ref: "ta-0129" }]
+      - target: "அரிசி போதும்."
+        reading: "arici pōtum."
+        ipa: "aɾisi poːt̪um"
+        bases: [{ word: "அரிசி", base: "அரிசி", reading: "arici" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-0216"
+    target: "பருப்பு"
+    reading: "paruppu"
+    ipa: "paɾuppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பருப்பு வாங்கு."
+        reading: "paruppu vāṅku."
+        ipa: "paɾuppu ʋaːŋku"
+        bases: [{ word: "பருப்பு", base: "பருப்பு", reading: "paruppu" }, { word: "வாங்கு", ref: "ta-0129" }]
+      - target: "இது பருப்பு."
+        reading: "itu paruppu."
+        ipa: "it̪u paɾuppu"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பருப்பு", base: "பருப்பு", reading: "paruppu" }]
+  - id: "ta-0217"
+    target: "எண்ணெய்"
+    reading: "eṇṇey"
+    ipa: "eɳɳej"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "எண்ணெய் கொஞ்சம் கொடு."
+        reading: "eṇṇey koñcam koṭu."
+        ipa: "eɳɳej koɲʧam koʈu"
+        bases: [{ word: "எண்ணெய்", base: "எண்ணெய்", reading: "eṇṇey" }, { word: "கொஞ்சம்", ref: "ta-0158" }, { word: "கொடு", ref: "ta-0125" }]
+      - target: "எண்ணெய் போதும்."
+        reading: "eṇṇey pōtum."
+        ipa: "eɳɳej poːt̪um"
+        bases: [{ word: "எண்ணெய்", base: "எண்ணெய்", reading: "eṇṇey" }, { word: "போதும்", ref: "ta-0161" }]
+  - id: "ta-0218"
+    target: "சர்க்கரை"
+    reading: "carkkarai"
+    ipa: "saɾkkaɾai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சர்க்கரை வாங்கு."
+        reading: "carkkarai vāṅku."
+        ipa: "saɾkkaɾai ʋaːŋku"
+        bases: [{ word: "சர்க்கரை", base: "சர்க்கரை", reading: "carkkarai" }, { word: "வாங்கு", ref: "ta-0129" }]
+      - target: "இது சர்க்கரை."
+        reading: "itu carkkarai."
+        ipa: "it̪u saɾkkaɾai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சர்க்கரை", base: "சர்க்கரை", reading: "carkkarai" }]
+  - id: "ta-0219"
+    target: "உப்பு"
+    reading: "uppu"
+    ipa: "uppu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "உப்பு அதிகம்."
+        reading: "uppu atikam."
+        ipa: "uppu at̪ikam"
+        bases: [{ word: "உப்பு", base: "உப்பு", reading: "uppu" }, { word: "அதிகம்", ref: "ta-0159" }]
+      - target: "கொஞ்சம் உப்பு வை."
+        reading: "koñcam uppu vai."
+        ipa: "koɲʧam uppu ʋai"
+        bases: [{ word: "கொஞ்சம்", ref: "ta-0158" }, { word: "உப்பு", base: "உப்பு", reading: "uppu" }, { word: "வை", ref: "ta-0185" }]
+  - id: "ta-0220"
+    target: "முட்டை"
+    reading: "muṭṭai"
+    ipa: "muʈʈai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "முட்டை வாங்கு."
+        reading: "muṭṭai vāṅku."
+        ipa: "muʈʈai ʋaːŋku"
+        bases: [{ word: "முட்டை", base: "முட்டை", reading: "muṭṭai" }, { word: "வாங்கு", ref: "ta-0129" }]
+      - target: "இது முட்டை."
+        reading: "itu muṭṭai."
+        ipa: "it̪u muʈʈai"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "முட்டை", base: "முட்டை", reading: "muṭṭai" }]
+  - id: "ta-0221"
+    target: "காய்கறி"
+    reading: "kāykaṟi"
+    ipa: "kaːjkari"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "காய்கறி வாங்கு."
+        reading: "kāykaṟi vāṅku."
+        ipa: "kaːjkari ʋaːŋku"
+        bases: [{ word: "காய்கறி", base: "காய்கறி", reading: "kāykaṟi" }, { word: "வாங்கு", ref: "ta-0129" }]
+      - target: "காய்கறி மேலே இருக்கிறது."
+        reading: "kāykaṟi mēlē irukkiṟatu."
+        ipa: "kaːjkari meːleː iɾukkirat̪u"
+        bases: [{ word: "காய்கறி", base: "காய்கறி", reading: "kāykaṟi" }, { word: "மேலே", ref: "ta-0176" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0222"
+    target: "பழம்"
+    reading: "paḻam"
+    ipa: "paɻam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பழம் சாப்பிடு."
+        reading: "paḻam cāppiṭu."
+        ipa: "paɻam saːppiʈu"
+        bases: [{ word: "பழம்", base: "பழம்", reading: "paḻam" }, { word: "சாப்பிடு", ref: "ta-0119" }]
+      - target: "இது பழம்."
+        reading: "itu paḻam."
+        ipa: "it̪u paɻam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பழம்", base: "பழம்", reading: "paḻam" }]
+  - id: "ta-0223"
+    target: "இறைச்சி"
+    reading: "iṟaicci"
+    ipa: "iraiʧʧi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இறைச்சி வாங்கு."
+        reading: "iṟaicci vāṅku."
+        ipa: "iraiʧʧi ʋaːŋku"
+        bases: [{ word: "இறைச்சி", base: "இறைச்சி", reading: "iṟaicci" }, { word: "வாங்கு", ref: "ta-0129" }]
+      - target: "இது இறைச்சி."
+        reading: "itu iṟaicci."
+        ipa: "it̪u iraiʧʧi"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "இறைச்சி", base: "இறைச்சி", reading: "iṟaicci" }]

@@ -1,0 +1,179 @@
+schema: 1
+id: ta-en-time
+kind: layer
+core: ta-time
+native:
+  code: en
+  iso639_3: eng
+  name: English
+name: Time and days
+description: 'Today, the seven days of the week, morning, evening, night, time and the hour on a clock. Not yet checked by a Tamil speaker: please report any mistake.'
+license: CC-BY-SA-4.0
+tags:
+- unreviewed
+cards:
+  ta-0144:
+    native: today
+    notes:
+      n1: The day you are in. Tomorrow is நாளை (nāḷai) and yesterday is நேற்று (nēṟṟu).
+    examples:
+      இன்று வெள்ளி.:
+        native: Today is Friday.
+      இன்று நான் வீட்டில் இருக்கிறேன்.:
+        native: I am at home today.
+        bases:
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறேன்: am; from இரு (iru), to be
+  ta-0145:
+    native: Monday
+    notes:
+      n1: The first day of the week. The days are named in the set card.
+    examples:
+      திங்கள் வருகிறேன்.:
+        native: I am coming on Monday.
+        bases:
+          திங்கள்: Monday
+          வருகிறேன்: am coming; from வா (vā), to come
+      திங்கள் கடை திறக்கும்.:
+        native: The shop opens on Monday.
+        bases:
+          கடை: shop
+          திறக்கும்: will open; from திற (tiṟa), to open
+  ta-0146:
+    native: Tuesday
+    notes:
+      n1: The second day of the week, after திங்கள் (tiṅkaḷ), Monday.
+    examples:
+      நாளை செவ்வாய்.:
+        native: Tomorrow is Tuesday.
+      செவ்வாய் நான் போகிறேன்.:
+        native: I am going on Tuesday.
+        bases:
+          போகிறேன்: am going; from போ (pō), to go
+  ta-0147:
+    native: Wednesday
+    notes:
+      n1: The third day of the week. கிழமை (kiḻamai) means 'day of the week', so புதன் கிழமை (putaṉ kiḻamai) is 'Wednesday' in full.
+    examples:
+      புதன் கிழமை வருகிறேன்.:
+        native: I am coming on Wednesday.
+        bases:
+          புதன்: Wednesday
+          கிழமை: day of the week
+          வருகிறேன்: am coming; from வா (vā), to come
+      புதன் நல்லது.:
+        native: Wednesday is good.
+  ta-0148:
+    native: Thursday
+    notes:
+      n1: The fourth day of the week.
+    examples:
+      வியாழன் வீட்டில் இருக்கிறேன்.:
+        native: I am at home on Thursday.
+        bases:
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறேன்: am; from இரு (iru), to be
+      வியாழன் நாங்கள் போகலாம்.:
+        native: We can go on Thursday.
+        bases:
+          போகலாம்: can go; from போ (pō), to go
+  ta-0149:
+    native: Friday
+    notes:
+      n1: The fifth day of the week. A day off is விடுமுறை (viṭumuṟai), holiday.
+    examples:
+      வெள்ளி விடுமுறை.:
+        native: Friday is a holiday.
+        bases:
+          விடுமுறை: holiday; day off
+      வெள்ளி நான் வருகிறேன்.:
+        native: I am coming on Friday.
+        bases:
+          வருகிறேன்: am coming; from வா (vā), to come
+  ta-0150:
+    native: Saturday
+    notes:
+      n1: The sixth day of the week.
+    examples:
+      சனி கடை திறக்கும்.:
+        native: The shop opens on Saturday.
+        bases:
+          கடை: shop
+          திறக்கும்: will open; from திற (tiṟa), to open
+      சனி நாங்கள் சாப்பிடுகிறோம்.:
+        native: We are eating on Saturday.
+        bases:
+          சாப்பிடுகிறோம்: are eating; from சாப்பிடு (cāppiṭu), to eat
+  ta-0151:
+    native: Sunday
+    notes:
+      n1: The seventh day of the week, the day off for many people.
+    examples:
+      ஞாயிறு விடுமுறை.:
+        native: Sunday is a holiday.
+        bases:
+          விடுமுறை: holiday; day off
+      ஞாயிறு அவன் வீட்டில் இருக்கிறான்.:
+        native: He is at home on Sunday.
+        bases:
+          வீட்டில்: at home; from வீடு (vīṭu), house
+          இருக்கிறான்: is; from இரு (iru), to be
+  ta-0152:
+    native: morning
+    notes:
+      n1: Early in the day. Good morning is காலை வணக்கம் (kālai vaṇakkam).
+    examples:
+      காலை வணக்கம்.:
+        native: Good morning.
+      நான் காலையில் எழுகிறேன்.:
+        native: I get up in the morning.
+        bases:
+          காலையில்: in the morning; from காலை (kālai), morning
+          எழுகிறேன்: get up; from எழு (eḻu), to get up
+  ta-0153:
+    native: evening
+    notes:
+      n1: The time after the afternoon, before night.
+    examples:
+      மாலை வருகிறேன்.:
+        native: I am coming in the evening.
+        bases:
+          வருகிறேன்: am coming; from வா (vā), to come
+      மாலை நல்லது.:
+        native: The evening is good.
+  ta-0154:
+    native: night
+    notes:
+      n1: 'The hours of darkness. For ''at night'', add -இல் (-il) to the word: இரவில் (iravil).'
+    examples:
+      இரவு நல்லது.:
+        native: The night is good.
+      இரவில் தூங்குகிறேன்.:
+        native: I sleep at night.
+        bases:
+          இரவில்: at night; from இரவு (iravu), night
+          தூங்குகிறேன்: sleep; from தூங்கு (tūṅku), to sleep
+  ta-0155:
+    native: time
+    notes:
+      n1: Time in general, or the length of a period. The clock's hour is மணி (maṇi).
+    examples:
+      என்ன நேரம்?:
+        native: What is the time?
+      நிறைய நேரம் இருக்கிறது.:
+        native: There is a lot of time.
+        bases:
+          நேரம்: time
+          இருக்கிறது: is; from இரு (iru), to be
+  ta-0156:
+    native: hour; o'clock
+    notes:
+      n1: The hour on the clock, as in இரண்டு மணி (iraṇṭu maṇi), two o'clock.
+    examples:
+      இப்போது மூன்று மணி.:
+        native: It is three o'clock now.
+      மணி எத்தனை?:
+        native: What time is it?
+  ta-0157:
+    native: 'Days of the week: seven words'
+    explanation: Monday திங்கள் (tiṅkaḷ), Tuesday செவ்வாய் (cevvāy), Wednesday புதன் (putaṉ), Thursday வியாழன் (viyāḻaṉ), Friday வெள்ளி (veḷḷi), Saturday சனி (caṉi) and Sunday ஞாயிறு (ñāyiṟu).

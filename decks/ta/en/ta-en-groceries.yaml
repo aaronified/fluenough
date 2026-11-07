@@ -1,0 +1,128 @@
+schema: 1
+id: "ta-en-groceries"
+kind: "layer"
+core: "ta-groceries"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Groceries"
+description: "Rice, lentils, oil, sugar, salt, eggs, vegetables, fruit and meat from the shop. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0215":
+    native: "rice"
+    notes:
+      n1: "Uncooked rice, bought in measures."
+    examples:
+      "அரிசி வாங்கு.":
+        native: "Buy rice."
+        bases:
+          "அரிசி": "rice"
+      "அரிசி போதும்.":
+        native: "Rice is enough."
+        bases:
+          "அரிசி": "rice"
+  "ta-0216":
+    native: "lentils; dal"
+    notes:
+      n1: "Lentils, used in curries."
+    examples:
+      "பருப்பு வாங்கு.":
+        native: "Buy lentils."
+        bases:
+          "பருப்பு": "lentils; dal"
+      "இது பருப்பு.":
+        native: "This is lentils."
+        bases:
+          "பருப்பு": "lentils; dal"
+  "ta-0217":
+    native: "oil"
+    notes:
+      n1: "Cooking oil."
+    examples:
+      "எண்ணெய் கொஞ்சம் கொடு.":
+        native: "Give a little oil."
+        bases:
+          "எண்ணெய்": "oil"
+      "எண்ணெய் போதும்.":
+        native: "Oil is enough."
+        bases:
+          "எண்ணெய்": "oil"
+  "ta-0218":
+    native: "sugar"
+    notes:
+      n1: "Sugar, for tea and sweets."
+    examples:
+      "சர்க்கரை வாங்கு.":
+        native: "Buy sugar."
+        bases:
+          "சர்க்கரை": "sugar"
+      "இது சர்க்கரை.":
+        native: "This is sugar."
+        bases:
+          "சர்க்கரை": "sugar"
+  "ta-0219":
+    native: "salt"
+    notes:
+      n1: "Salt, for food."
+    examples:
+      "உப்பு அதிகம்.":
+        native: "There is too much salt."
+        bases:
+          "உப்பு": "salt"
+      "கொஞ்சம் உப்பு வை.":
+        native: "Put a little salt."
+        bases:
+          "உப்பு": "salt"
+  "ta-0220":
+    native: "egg"
+    notes:
+      n1: "An egg."
+    examples:
+      "முட்டை வாங்கு.":
+        native: "Buy eggs."
+        bases:
+          "முட்டை": "egg"
+      "இது முட்டை.":
+        native: "This is an egg."
+        bases:
+          "முட்டை": "egg"
+  "ta-0221":
+    native: "vegetables"
+    notes:
+      n1: "Vegetables, sold in a market or a shop."
+    examples:
+      "காய்கறி வாங்கு.":
+        native: "Buy vegetables."
+        bases:
+          "காய்கறி": "vegetables"
+      "காய்கறி மேலே இருக்கிறது.":
+        native: "The vegetables are on top."
+        bases:
+          "காய்கறி": "vegetables"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+  "ta-0222":
+    native: "fruit"
+    notes:
+      n1: "A piece of fruit, or fruit in general."
+    examples:
+      "பழம் சாப்பிடு.":
+        native: "Eat fruit."
+        bases:
+          "பழம்": "fruit"
+      "இது பழம்.":
+        native: "This is fruit."
+        bases:
+          "பழம்": "fruit"
+  "ta-0223":
+    native: "meat"
+    notes:
+      n1: "Meat, sold by a butcher."
+    examples:
+      "இறைச்சி வாங்கு.":
+        native: "Buy meat."
+        bases:
+          "இறைச்சி": "meat"
+      "இது இறைச்சி.":
+        native: "This is meat."
+        bases:
+          "இறைச்சி": "meat"
