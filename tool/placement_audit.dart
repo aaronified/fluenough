@@ -43,6 +43,7 @@ Future<void> main(List<String> args) async {
       classes[key] = <String, Object?>{
         'n': c.n,
         'accuracy': double.parse(c.accuracy.toStringAsFixed(4)),
+        'upper': double.parse(c.upper.toStringAsFixed(4)),
         'bound': double.parse(c.bound.toStringAsFixed(4)),
         'solver': c.solver,
         'passes': c.passes,

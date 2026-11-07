@@ -153,8 +153,8 @@ void main() {
         expect(cx.vocab.length, greaterThan(500));
         expect(cx.sentences.length, greaterThan(100));
         final counts = bank.countsByFormat;
+        // The formats that pass the audit in both courses.
         for (final code in <String>[
-          'F1',
           'F2',
           'F3',
           'F4',
@@ -162,26 +162,38 @@ void main() {
           'F8',
           'F9',
           'F13',
-          'F14',
           'F16',
           'F18',
         ]) {
           expect(counts[code] ?? 0, greaterThan(20), reason: '$language $code');
         }
-        // Sentence formats need a course with enough sentences.
-        // (A small class may fail the audit by chance, so only the larger
-        // Spanish course is asserted.)
+        // Yes/no needs words of four units or more to build pseudowords from
+        // (a Devanagari word is few units), and the audit shows whether they
+        // pass; Spanish does.
         if (language == 'es') {
-          for (final code in <String>['F5', 'F17', 'F6']) {
-            expect(counts[code] ?? 0, greaterThan(0), reason: code);
+          for (final code in <String>['F1', 'F14']) {
+            expect(counts[code] ?? 0, greaterThan(20), reason: code);
           }
         }
+        // Every skill has at least two admitted formats that need no audio
+        // for Read and Write (and Hear has two that need it).
+        bool has(String code) => (counts[code] ?? 0) > 0;
+        expect(
+          <String>['F2', 'F3', 'F9', 'F8'].where(has).length,
+          greaterThanOrEqualTo(3),
+        );
+        expect(
+          <String>['F4', 'F7', 'F8'].where(has).length,
+          greaterThanOrEqualTo(3),
+        );
+        expect(<String>['F13', 'F16'].where(has).length, 2);
+        expect(has('F18'), isTrue);
       });
 
       test('keeps near-cognates out of every word-level format', () {
         final cognateCards = <String>{
           for (final v in cx.vocab)
-            if (v.cognate) v.card.id,
+            if (v.leaky) v.card.id,
         };
         expect(cognateCards, isNotEmpty);
         var checked = 0;
@@ -189,7 +201,11 @@ void main() {
           if (it.pseudo || !it.info.wordLevel) continue;
           checked++;
           expect(cognateCards.contains(it.cardId), isFalse, reason: it.id);
-          expect(it.cognateScore, lessThan(kCognateThreshold), reason: it.id);
+          expect(
+            it.cognateScore,
+            lessThan(kWordLevelCognateMax),
+            reason: it.id,
+          );
           for (final c in it.coCards) {
             expect(cognateCards.contains(c), isFalse, reason: it.id);
           }
@@ -322,7 +338,7 @@ void main() {
             oddWords++;
           }
         }
-        expect(withLure / f2.length, greaterThan(0.2));
+        expect(withLure / f2.length, greaterThan(0.05));
         expect(oddWords / f2.length, lessThanOrEqualTo(0.02));
         var loose = 0;
         for (final it in of('F3')) {
@@ -417,15 +433,14 @@ void main() {
         }
       });
 
-      test('asks the article of exception nouns, where the course has '
-          'articles for both genders', () {
-        final items = of('F6g').toList();
+      test('asks the article of nouns, half of them exceptions to their '
+          'ending, where the course has articles for both genders', () {
+        final items = ItemGenerators(cx).genderExceptions();
         if (cx.genderArticle.isEmpty) {
           expect(items, isEmpty);
           return;
         }
         expect(items, isNotEmpty);
-        // The ending of each noun does not predict its gender.
         final votes = <String, Map<String, int>>{};
         for (final v in cx.vocab) {
           final g = v.card.gender;
@@ -433,22 +448,30 @@ void main() {
           (votes[v.units.last] ??= <String, int>{})[g!] =
               ((votes[v.units.last] ?? const <String, int>{})[g] ?? 0) + 1;
         }
+        var exceptions = 0;
         for (final it in items) {
           final v = cx.vocab.firstWhere((x) => x.card.id == it.cardId);
           final g = v.card.gender!;
           final v2 = votes[v.units.last]!;
           final other = g == 'm' ? 'f' : 'm';
-          expect(v2[other] ?? 0, greaterThan(v2[g] ?? 0), reason: it.id);
+          if (it.genderException) {
+            exceptions++;
+            expect(v2[other] ?? 0, greaterThan(v2[g] ?? 0), reason: it.id);
+          } else {
+            expect(v2[g] ?? 0, greaterThan(v2[other] ?? 0), reason: it.id);
+          }
           expect(it.options[it.correct], cx.genderArticle[g]);
           expect(it.options.length, 2);
         }
+        // Half exceptions, half rule-followers: always agreeing with the
+        // ending, or always contradicting it, gets half.
+        expect(exceptions * 2, items.length);
       });
 
       test('builds at least eight pseudowords that are not words', () {
-        final pseudo = bank.items
-            .where((i) => i.pseudo && i.format == 'F1')
-            .toList();
-        expect(pseudo.length, greaterThanOrEqualTo(kMinPseudowords));
+        final pseudo = ItemGenerators(cx).pseudowords('F1');
+        // Enough of them for the audit's confidence bound to mean something.
+        expect(pseudo.length, greaterThanOrEqualTo(200));
         final words = <String>{for (final v in cx.vocab) v.word.toLowerCase()};
         for (final p in pseudo) {
           expect(
@@ -521,11 +544,107 @@ void main() {
         expect(report.admits('F2:clean'), isFalse);
       });
 
+      test('the audit is confidence-aware: a small class is not admitted even '
+          'at chance, and an unattacked class is not admitted', () {
+        final few = <RegItem>[
+          for (final it in of('F2').take(20))
+            RegItem(
+              id: '${it.id}-few',
+              format: 'F2',
+              cardId: it.cardId,
+              deck: it.deck,
+              prompt: it.prompt,
+              promptRoman: it.promptRoman,
+              options: it.options,
+              optionsRoman: it.optionsRoman,
+              correct: it.correct,
+            ),
+        ];
+        final report = auditItems(few, cx);
+        final c = report.classes['F2:clean']!;
+        expect(c.upper, greaterThan(c.bound));
+        expect(c.passes, isFalse);
+        expect(report.admits('F3:clean'), isFalse);
+        for (final k in bank.audit.classes.values) {
+          if (k.passes) expect(k.upper, lessThanOrEqualTo(k.bound + 1e-9));
+        }
+        expect(wilsonUpper(0.25, 320), lessThan(0.32));
+        expect(wilsonUpper(0.25, 26), greaterThan(0.32));
+        expect(aucUpper(0.5, 850, 400), lessThan(0.55));
+        expect(aucUpper(0.5, 20, 20), greaterThan(0.6));
+      });
+
+      test('the audit reads a cue either way: an answer that is always the '
+          'shortest option fails (inverted orientation)', () {
+        final leaky = <RegItem>[
+          for (final it in of('F2').take(160))
+            RegItem(
+              id: '${it.id}-short',
+              format: 'F2',
+              cardId: it.cardId,
+              deck: it.deck,
+              prompt: it.prompt,
+              promptRoman: it.promptRoman,
+              options: <String>['a', 'bbbb', 'cccccc', 'dddddddd'],
+              optionsRoman: <String>['a', 'bbbb', 'cccccc', 'dddddddd'],
+              correct: 0,
+            ),
+        ];
+        final c = auditItems(leaky, cx).classes['F2:clean']!;
+        expect(c.passes, isFalse);
+        expect(c.solver, 'length-inverted');
+      });
+
+      test('a look-alike lure that is always wrong is audited: dropping the '
+          'most similar option beats chance', () {
+        final items = <RegItem>[];
+        for (final v in cx.vocab.where((v) => !v.leaky && !v.early).take(300)) {
+          final lure = cx.vocab.firstWhere(
+            (o) =>
+                o.card.id != v.card.id &&
+                wordSimilarity(v.roman, o.gloss, language) >= 0.35 &&
+                wordSimilarity(v.roman, o.gloss, language) >
+                    wordSimilarity(v.roman, v.gloss, language) + 0.05,
+            orElse: () => v,
+          );
+          if (lure.card.id == v.card.id) continue;
+          final others = cx.vocab
+              .where(
+                (o) =>
+                    o.card.id != v.card.id &&
+                    o.card.id != lure.card.id &&
+                    !o.early &&
+                    wordSimilarity(v.roman, o.gloss, language) < 0.2,
+              )
+              .take(2)
+              .map((o) => o.gloss)
+              .toList();
+          if (others.length < 2) continue;
+          final opts = <String>[v.gloss, lure.gloss, ...others];
+          items.add(
+            RegItem(
+              id: '${v.card.id}-lure',
+              format: 'F2',
+              cardId: v.card.id,
+              deck: v.deck,
+              prompt: v.display,
+              promptRoman: v.roman,
+              options: opts,
+              optionsRoman: opts,
+              correct: 0,
+            ),
+          );
+        }
+        if (items.length < 40) return;
+        final c = auditItems(items, cx).classes['F2:clean']!;
+        expect(c.accuracy, greaterThan(0.3));
+      });
+
       test(
         'matching: a matcher gets at most 0.35 of the pairs (MATCHER gate)',
         () {
           final c = bank.audit.classes['F9:clean']!;
-          expect(c.solver, 'matcher');
+          expect(c.solver, startsWith('matcher'));
           expect(c.accuracy, lessThanOrEqualTo(0.35));
           expect(c.passes, isTrue);
           for (final it in of('F9')) {
@@ -637,15 +756,22 @@ void main() {
         final entry = languages[language]! as Map<String, Object?>;
         final classes = entry['classes']! as Map<String, Object?>;
         expect(entry['wordTileDecoys'], bank.decoys, reason: language);
+        // The same classes pass and the same are excluded.
+        expect(
+          (entry['excluded']! as List).cast<String>(),
+          bank.excluded,
+          reason: '$language excluded classes',
+        );
         for (final c in classes.entries) {
           final now = bank.audit.classes[c.key];
-          if (now == null) continue;
-          final then = (c.value! as Map<String, Object?>)['accuracy']! as num;
-          // The decks grow; a large drift means the fixture is stale:
+          expect(now, isNotNull, reason: '$language ${c.key}');
+          final e = c.value! as Map<String, Object?>;
+          expect(now!.passes, e['passes'], reason: '$language ${c.key}');
+          // The decks grow; a drift above 0.02 means the fixture is stale:
           // regenerate it with tool/placement_audit.dart.
           expect(
             now.accuracy,
-            closeTo(then.toDouble(), 0.08),
+            closeTo((e['accuracy']! as num).toDouble(), 0.02),
             reason: '$language ${c.key}',
           );
         }
@@ -661,7 +787,7 @@ void main() {
           ((fixture['languages']! as Map<String, Object?>)['es']!
                   as Map<String, Object?>)['classes']!
               as Map<String, Object?>;
-      for (final code in <String>['F2', 'F3', 'F5', 'F13', 'F17']) {
+      for (final code in <String>['F2', 'F3', 'F13']) {
         final acc =
             ((classes['$code:clean']! as Map<String, Object?>)['accuracy']!
                     as num)
@@ -674,6 +800,8 @@ void main() {
         // A cognate is not generated: the old figure stands.
         expect(es.rate(code, true, BankProfile.fixed, true), greaterThan(0.5));
       }
+      // A class the audit excludes (sentence picks) keeps the old figure.
+      expect(es.rate('F5', false, BankProfile.fixed, true), 0.30);
       // The legacy bank is the adversary's own measurement, untouched.
       expect(es.rate('F5', false, BankProfile.legacy, true), 0.75);
     });

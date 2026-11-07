@@ -7,23 +7,30 @@ import 'item_registry.dart';
 // The admission audit of "Find my level" V3 (wiki/Plan-Placement-V3.md,
 // "Adversarial review and required amendments", validation): every item class
 // (a format and its cognate class) is attacked by solvers that never see the
-// answer key, and a class whose best solver beats the design guess plus 0.07
-// (0.32 for a four-option pick) is excluded from the bank.
+// answer key, and a class is admitted only if the UPPER confidence bound of
+// its best solver's accuracy is within the design guess plus 0.07 (0.32 for a
+// four-option pick). A class with too few items to show that is not admitted:
+// never loosen a bound, exclude the class.
 //
-// The solvers are the leaks the adversary found, written as expected-accuracy
-// functions (a tie among n options is worth 1/n), so the audit is exact and
-// deterministic:
-//  - longest and shortest option;
-//  - similarity: the option that looks most like the prompt (a cognate cue);
-//  - known words: a gamer that knows the first 100 words of the path and uses
-//    them to eliminate options or to confirm one;
-//  - an anagram solver for tiles (a strong one: it knows the whole course's
-//    letter patterns except the target word itself);
+// Every solver is tried in both orientations (it picks the option it scores
+// highest, or lowest), because a cue that is always wrong is as good as one
+// that is always right. The solvers are the leaks the adversary found, as
+// expected-accuracy functions (a tie among n options is worth 1/n), so the
+// audit is deterministic:
+//  - option length;
+//  - similarity of an option to the prompt (a cognate cue), and eliminating
+//    the most similar option (a look-alike lure is always wrong);
+//  - known words: a gamer that knows the first 100 words of the path;
+//  - context: a word-pair model of the course's sentences (without the item's
+//    own sentence) for a cloze, and the same on word endings;
+//  - an anagram solver for tiles that knows the course's letter patterns
+//    except the target word itself (a truncated search counts as solved);
+//  - a beam-search order solver for sentence tiles (word and ending pairs);
 //  - spelling rules for typed and said words;
-//  - a matcher for matching screens;
-//  - a pseudoword detector for yes/no;
-//  - a bigram solver for word order;
-//  - the ending rule for gender;
+//  - a matcher (and an anti-matcher) for matching screens;
+//  - pseudoword detectors for yes/no (letter-pattern typicality, nearest-word
+//    distance, length, edges, unit pairs), each leaving the word out;
+//  - the ending rule for gender (and its opposite);
 //  - chance.
 //
 // Pure Dart.
@@ -34,12 +41,37 @@ const int kAuditKnownWords = 100;
 /// The most items of one class the audit attacks (a deterministic stride).
 const int kAuditSample = 400;
 
+/// The one-sided confidence the upper bound is taken at (z for 95%).
+const double kAuditZ = 1.645;
+
+/// The upper confidence bound of a rate seen as [p] in [n] trials (Wilson).
+double wilsonUpper(double p, int n, {double z = kAuditZ}) {
+  if (n <= 0) return 1;
+  final z2 = z * z;
+  final centre = p + z2 / (2 * n);
+  final spread = z * math.sqrt(p * (1 - p) / n + z2 / (4 * n * n));
+  return math.min(1.0, (centre + spread) / (1 + z2 / n));
+}
+
+/// The upper confidence bound of an AUC of [a] with [n1] positives and [n2]
+/// negatives (Hanley and McNeil's standard error).
+double aucUpper(double a, int n1, int n2, {double z = kAuditZ}) {
+  if (n1 < 2 || n2 < 2) return 1;
+  final q1 = a / (2 - a);
+  final q2 = 2 * a * a / (1 + a);
+  final variance =
+      (a * (1 - a) + (n1 - 1) * (q1 - a * a) + (n2 - 1) * (q2 - a * a)) /
+      (n1 * n2);
+  return math.min(1.0, a + z * math.sqrt(math.max(0, variance)));
+}
+
 /// What the audit found for one class of items.
 class AuditClass {
   const AuditClass({
     required this.key,
     required this.n,
     required this.accuracy,
+    required this.upper,
     required this.bound,
     required this.solver,
   });
@@ -53,13 +85,17 @@ class AuditClass {
   /// The best solver's expected accuracy.
   final double accuracy;
 
+  /// The upper confidence bound of that accuracy.
+  final double upper;
+
   /// The admission bound of the class.
   final double bound;
 
   /// The solver that did best.
   final String solver;
 
-  bool get passes => accuracy <= bound + 1e-9;
+  /// Whether the class is admitted: the UPPER bound is within the bound.
+  bool get passes => upper <= bound + 1e-9;
 }
 
 /// The audit of a bank.
@@ -68,9 +104,9 @@ class AuditReport {
 
   final Map<String, AuditClass> classes;
 
-  /// Whether items of [key] are admitted: a class that was not attacked (too
-  /// few items) is admitted only when its format is not leak-prone.
-  bool admits(String key) => classes[key]?.passes ?? true;
+  /// Whether items of [key] are admitted. A class that was not attacked is
+  /// not admitted.
+  bool admits(String key) => classes[key]?.passes ?? false;
 
   /// The classes that failed.
   List<AuditClass> get failed => <AuditClass>[
@@ -79,19 +115,22 @@ class AuditReport {
   ];
 }
 
-double _expected(Iterable<double> scores, int correct) {
-  final list = scores.toList();
-  if (list.isEmpty) return 0;
-  final best = list.reduce(math.max);
-  var ties = 0;
-  for (final s in list) {
-    if ((s - best).abs() < 1e-9) ties++;
+({double high, double low}) _expectedBoth(List<double> scores, int correct) {
+  if (scores.isEmpty) return (high: 0, low: 0);
+  double pick(bool highest) {
+    final best = highest ? scores.reduce(math.max) : scores.reduce(math.min);
+    var ties = 0;
+    for (final s in scores) {
+      if ((s - best).abs() < 1e-9) ties++;
+    }
+    return (scores[correct] - best).abs() < 1e-9 ? 1 / ties : 0;
   }
-  return (list[correct] - best).abs() < 1e-9 ? 1 / ties : 0;
+
+  return (high: pick(true), low: pick(false));
 }
 
-/// The unit-trigram language model of a course's words, built once, with the
-/// ability to leave one word out.
+/// The unit-pattern model of a course's words, built once, with the ability
+/// to leave one word out.
 class _UnitModel {
   _UnitModel(Iterable<VocabWord> words) {
     for (final w in words) {
@@ -99,21 +138,47 @@ class _UnitModel {
     }
   }
 
-  final Map<String, int> counts = <String, int>{};
+  final Map<String, int> tri = <String, int>{};
+  final Map<String, int> bi = <String, int>{};
+  final Map<String, int> edge = <String, int>{};
 
   void _add(List<String> units, int by) {
     final u = <String>['^', ...units, r'$'];
     for (var i = 0; i + 2 < u.length; i++) {
       final k = u.sublist(i, i + 3).join('|');
-      counts[k] = (counts[k] ?? 0) + by;
+      tri[k] = (tri[k] ?? 0) + by;
     }
+    for (var i = 0; i + 1 < u.length; i++) {
+      final k = u.sublist(i, i + 2).join('|');
+      bi[k] = (bi[k] ?? 0) + by;
+    }
+    final e = '${units.first}|${units.last}';
+    edge[e] = (edge[e] ?? 0) + by;
   }
 
   void remove(List<String> units) => _add(units, -1);
   void restore(List<String> units) => _add(units, 1);
 
-  int count(String a, String b, String c) => counts['$a|$b|$c'] ?? 0;
+  int count(String a, String b, String c) => tri['$a|$b|$c'] ?? 0;
 
+  double _mean(List<String> u, Map<String, int> counts, int n) {
+    var total = 0.0;
+    var k = 0;
+    for (var i = 0; i + n <= u.length; i++) {
+      total += math.log(
+        1 + math.max(0, counts[u.sublist(i, i + n).join('|')] ?? 0),
+      );
+      k++;
+    }
+    return k == 0 ? 0 : total / k;
+  }
+
+  double triScore(List<String> units) =>
+      _mean(<String>['^', ...units, r'$'], tri, 3);
+  double biScore(List<String> units) =>
+      _mean(<String>['^', ...units, r'$'], bi, 2);
+  double edgeScore(List<String> units) =>
+      math.log(1 + math.max(0, edge['${units.first}|${units.last}'] ?? 0));
   double score(List<String> units) {
     final u = <String>['^', ...units, r'$'];
     var s = 0.0;
@@ -124,20 +189,71 @@ class _UnitModel {
   }
 }
 
+/// The n-gram keys of [tokens], padded with `^` at the start and `$` at the
+/// end.
+List<String> _grams(List<String> tokens, int n) {
+  final t = <String>[for (var i = 0; i < n - 1; i++) '^', ...tokens, r'$'];
+  return <String>[
+    for (var i = 0; i + n <= t.length; i++) t.sublist(i, i + n).join('|'),
+  ];
+}
+
+Map<String, int> _countGrams(
+  Iterable<List<String>> sentences,
+  int n,
+  String Function(String) map,
+) {
+  final counts = <String, int>{};
+  for (final s in sentences) {
+    for (final k in _grams(<String>[for (final w in s) map(w)], n)) {
+      counts[k] = (counts[k] ?? 0) + 1;
+    }
+  }
+  return counts;
+}
+
+/// The log-likelihood of [tokens] under [counts] without the item's own
+/// sentence ([own], the grams of the true sentence, counted once there).
+double _ngramScore(
+  List<String> tokens,
+  int n,
+  Map<String, int> counts,
+  Map<String, int> own,
+  String Function(String) map,
+) {
+  var s = 0.0;
+  for (final k in _grams(<String>[for (final w in tokens) map(w)], n)) {
+    s += math.log(1 + math.max(0, (counts[k] ?? 0) - (own[k] ?? 0)));
+  }
+  return s;
+}
+
+Map<String, int> _ownGrams(
+  List<String> tokens,
+  int n,
+  String Function(String) map,
+) {
+  final own = <String, int>{};
+  for (final k in _grams(<String>[for (final w in tokens) map(w)], n)) {
+    own[k] = (own[k] ?? 0) + 1;
+  }
+  return own;
+}
+
+String _lower(String w) => w.toLowerCase();
+
+String _suffixOf(String word) {
+  final u = tileUnits(word.toLowerCase());
+  return u.length < 2 ? word.toLowerCase() : u.sublist(u.length - 2).join();
+}
+
 /// Runs the audit on [items] (all formats of a bank) with [cx].
 AuditReport auditItems(List<RegItem> items, GenContext cx) {
   final model = _UnitModel(cx.vocab);
-  final known = cx.vocab.toList()
-    ..sort(
-      (a, b) => a.deck != b.deck
-          ? a.deck.compareTo(b.deck)
-          : a.card.id.compareTo(b.card.id),
-    );
-  final knownCards = known.take(kAuditKnownWords).toList();
-  final knownIds = <String>{for (final v in knownCards) v.card.id};
+  final knownCards = cx.early;
+  final knownIds = cx.earlyIds;
   final knownText = <String, Set<String>>{};
   for (final v in knownCards) {
-    // target word (roman, lower) -> its English words
     knownText[v.roman.toLowerCase()] = <String>{
       v.glossHead,
       ...glossWords(v.gloss),
@@ -153,129 +269,170 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     },
   }..remove('');
 
+  final sentenceWords = <List<String>>[
+    for (final s in cx.sentences) <String>[for (final w in s.words) w],
+  ];
+  final wordGrams2 = _countGrams(sentenceWords, 2, _lower);
+  final suffixGrams2 = _countGrams(sentenceWords, 2, _suffixOf);
+  final suffixGrams3 = _countGrams(sentenceWords, 3, _suffixOf);
+
   final byClass = <String, List<RegItem>>{};
   for (final it in items) {
     if (it.pseudo) continue;
+    // Items on the gamer's own first 100 words test what it knows: leaks are
+    // measured beyond them.
+    if (knownIds.contains(it.cardId)) {
+      continue;
+    }
     (byClass[it.auditClass] ??= <RegItem>[]).add(it);
   }
   final pseudo = <RegItem>[
     for (final it in items)
       if (it.pseudo && it.format == 'F1') it,
   ];
-  final bigrams = _bigrams(cx);
-  final suffixBigrams = _suffixBigrams(cx);
-  final suffixTrigrams = _suffixTrigrams(cx);
   final out = <String, AuditClass>{};
   for (final e in byClass.entries) {
     final all = e.value;
-    final stride = math.max(1, (all.length / kAuditSample).ceil());
+    // Yes/no is audited on every real word: the AUC's confidence bound
+    // needs as many as there are.
+    final yesNo = all.first.format == 'F1' || all.first.format == 'F14';
+    final stride = yesNo ? 1 : math.max(1, (all.length / kAuditSample).ceil());
     final sample = <RegItem>[
       for (var i = 0; i < all.length; i += stride) all[i],
     ];
     final fmt = sample.first.format;
     final info = sample.first.info;
     final solvers = <String, double>{};
-    void add(String name, double total) =>
-        solvers[name] = total / sample.length;
+    var trials = sample.length;
+    double? auc;
+    var aucN1 = 0;
+    var aucN2 = 0;
+
+    void both(String name, double high, double low) {
+      solvers[name] = (solvers[name] ?? 0) + high;
+      solvers['$name-inverted'] = (solvers['$name-inverted'] ?? 0) + low;
+    }
+
     switch (fmt) {
       case 'F2' || 'F13' || 'F3' || 'F5' || 'F17' || 'F6' || 'S2' || 'F6g':
-        solvers['chance'] = 1 / sample.first.options.length;
-        var st = 0.0,
-            sb = 0.0,
-            longest = 0.0,
-            shortest = 0.0,
-            sim = 0.0,
-            kn = 0.0,
-            comb = 0.0,
-            rule = 0.0,
-            bi = 0.0;
+        final nOptions = sample.first.options.length;
+        solvers['chance'] = sample.length / nOptions;
         for (final it in sample) {
-          final lens = [for (final o in it.options) o.length.toDouble()];
-          longest += _expected(lens, it.correct);
-          shortest += _expected([for (final l in lens) -l], it.correct);
-          if (fmt == 'S2') {
-            bi += _expected(<double>[
-              for (final o in it.options) _bigramScore(o, bigrams, it.cardId),
-            ], it.correct);
-            sb += _expected(<double>[
-              for (final o in it.options)
-                _suffixBigramScore(o, suffixBigrams, it.cardId, cx),
-            ], it.correct);
-            st += _expected(<double>[
-              for (final o in it.options)
-                _suffixTrigramScore(o, suffixTrigrams, it.cardId),
-            ], it.correct);
-          }
-          if (fmt == 'F6g') {
-            rule += _expected(<double>[
-              for (final o in it.options) _endingRule(o, it, cx),
-            ], it.correct);
-          }
+          final lens = <double>[
+            for (final o in it.options) o.length.toDouble(),
+          ];
+          final l = _expectedBoth(lens, it.correct);
+          both('length', l.high, l.low);
           if (fmt == 'F2' || fmt == 'F13' || fmt == 'F5' || fmt == 'F17') {
             final promptWords = targetWords(it.promptRoman ?? it.prompt);
-            final simScores = <double>[
+            final sim = <double>[
               for (final o in it.options)
                 _maxSim(promptWords, glossWords(o), cx.data.language),
             ];
-            sim += _expected(simScores, it.correct);
-            final knownScores = <double>[
+            final s = _expectedBoth(sim, it.correct);
+            both('similarity', s.high, s.low);
+            both('eliminate-similar', _eliminate(sim, it.correct), 0);
+            final known = <double>[
               for (final o in it.options)
                 _knownScore(promptWords, o, knownText, it, knownIds),
             ];
-            kn += _expected(knownScores, it.correct);
-            comb += _expected(<double>[
-              for (var i = 0; i < knownScores.length; i++)
-                knownScores[i] + 0.01 * simScores[i],
+            final k = _expectedBoth(known, it.correct);
+            both('known-words', k.high, k.low);
+            final comb = _expectedBoth(<double>[
+              for (var i = 0; i < known.length; i++) known[i] + 0.01 * sim[i],
             ], it.correct);
+            both('known+similarity', comb.high, comb.low);
           } else if (fmt == 'F3') {
             final eng = glossWords(it.prompt);
-            final simScores = <double>[
+            final sim = <double>[
               for (final o in it.optionsRoman)
                 _maxSim(targetWords(o), eng, cx.data.language),
             ];
-            sim += _expected(simScores, it.correct);
-            final knownScores = <double>[
+            final s = _expectedBoth(sim, it.correct);
+            both('similarity', s.high, s.low);
+            both('eliminate-similar', _eliminate(sim, it.correct), 0);
+            final known = <double>[
               for (final o in it.optionsRoman)
-                (knownText.containsKey(o.toLowerCase()) &&
-                        knownText[o.toLowerCase()]!.any(eng.contains)
+                knownText[o.toLowerCase()]?.any(eng.contains) == true
                     ? 1.0
-                    : 0.0),
+                    : 0.0,
             ];
-            kn += _expected(knownScores, it.correct);
-            comb += _expected(<double>[
-              for (var i = 0; i < knownScores.length; i++)
-                knownScores[i] + 0.01 * simScores[i],
+            final k = _expectedBoth(known, it.correct);
+            both('known-words', k.high, k.low);
+            final comb = _expectedBoth(<double>[
+              for (var i = 0; i < known.length; i++) known[i] + 0.01 * sim[i],
             ], it.correct);
+            both('known+similarity', comb.high, comb.low);
           } else if (fmt == 'F6') {
-            // Eliminate options that are known words of other cards: a known
-            // word near the blank is no more likely than another.
             final scores = <double>[
               for (final o in it.options)
                 knownGloss.contains(o.toLowerCase()) ? 1.0 : 0.0,
             ];
-            kn += _expected(scores, it.correct);
+            final k = _expectedBoth(scores, it.correct);
+            both('known-words', k.high, k.low);
+            // The context solvers: the sentence with each option filled in,
+            // scored by the course's word pairs and ending pairs without
+            // this sentence.
+            final parts = it.prompt.split('___');
+            List<String> fill(String o) => <String>[
+              ...targetWords(parts.first),
+              o,
+              ...targetWords(parts.last),
+            ].map((w) => w.toLowerCase()).toList();
+            final truth = fill(it.options[it.correct]);
+            final own2 = _ownGrams(truth, 2, _lower);
+            final ownS2 = _ownGrams(truth, 2, _suffixOf);
+            final ownS3 = _ownGrams(truth, 3, _suffixOf);
+            final c2 = _expectedBoth(<double>[
+              for (final o in it.options)
+                _ngramScore(fill(o), 2, wordGrams2, own2, _lower),
+            ], it.correct);
+            both('context-word-pairs', c2.high, c2.low);
+            final cs2 = _expectedBoth(<double>[
+              for (final o in it.options)
+                _ngramScore(fill(o), 2, suffixGrams2, ownS2, _suffixOf),
+            ], it.correct);
+            both('context-ending-pairs', cs2.high, cs2.low);
+            final cs3 = _expectedBoth(<double>[
+              for (final o in it.options)
+                _ngramScore(fill(o), 3, suffixGrams3, ownS3, _suffixOf),
+            ], it.correct);
+            both('context-ending-triples', cs3.high, cs3.low);
+          } else if (fmt == 'S2') {
+            final truth = targetWords(it.options[it.correct]);
+            List<String> words(String o) =>
+                targetWords(o).map((w) => w.toLowerCase()).toList();
+            final own2 = _ownGrams(truth.map(_lower).toList(), 2, _lower);
+            final ownS2 = _ownGrams(truth.map(_lower).toList(), 2, _suffixOf);
+            final ownS3 = _ownGrams(truth.map(_lower).toList(), 3, _suffixOf);
+            final b = _expectedBoth(<double>[
+              for (final o in it.options)
+                _ngramScore(words(o), 2, wordGrams2, own2, _lower),
+            ], it.correct);
+            both('word-pairs', b.high, b.low);
+            final s2 = _expectedBoth(<double>[
+              for (final o in it.options)
+                _ngramScore(words(o), 2, suffixGrams2, ownS2, _suffixOf),
+            ], it.correct);
+            both('ending-pairs', s2.high, s2.low);
+            final s3 = _expectedBoth(<double>[
+              for (final o in it.options)
+                _ngramScore(words(o), 3, suffixGrams3, ownS3, _suffixOf),
+            ], it.correct);
+            both('ending-triples', s3.high, s3.low);
+          } else if (fmt == 'F6g') {
+            final r = _expectedBoth(<double>[
+              for (final o in it.options) _endingRule(o, it, cx),
+            ], it.correct);
+            both('ending-rule', r.high, r.low);
           }
         }
-        add('longest', longest);
-        add('shortest', shortest);
-        if (fmt == 'S2') {
-          add('bigram', bi);
-          add('suffix-bigram', sb);
-          add('suffix-trigram', st);
-        }
-        if (fmt == 'F6g') add('ending-rule', rule);
-        if (fmt != 'S2' && fmt != 'F6g' && fmt != 'F6') {
-          add('similarity', sim);
-          add('known-words', kn);
-          add('combined', comb);
-        }
-        if (fmt == 'F6') add('known-words', kn);
       case 'F4':
         var total = 0.0;
         for (final it in sample) {
-          total += _anagram(it, model, cx);
+          total += _anagram(it, model);
         }
-        add('anagram-solver', total);
+        solvers['anagram-solver'] = total;
       case 'F7' || 'F18':
         var total = 0.0;
         for (final it in sample) {
@@ -283,47 +440,72 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
           final target = latinLetters(
             it.answerTiles.isEmpty ? '' : it.answerTiles.first,
           );
-          final guesses = _spellings(head, cx.data.language);
+          final guesses = _spellings(head);
           if (target.isNotEmpty && guesses.contains(target)) total += 1;
         }
-        add('spelling-rules', total);
+        solvers['spelling-rules'] = total;
       case 'F9':
-        var total = 0.0;
+        var good = 0.0;
+        var anti = 0.0;
         var pairs = 0;
         final rng = math.Random(7);
         for (final it in sample) {
-          total += _matcher(it, cx.data.language, rng);
+          good += _matcher(it, cx.data.language, rng, anti: false);
+          anti += _matcher(it, cx.data.language, rng, anti: true);
           pairs += it.pairs.length;
         }
-        solvers['matcher'] = pairs == 0 ? 0 : total / pairs;
+        trials = pairs;
+        solvers['matcher'] = good;
+        solvers['matcher-inverted'] = anti;
       case 'F1' || 'F14':
-        solvers['pseudoword-detector'] = _yesNo(sample, pseudo, cx);
+        final r = _yesNo(sample, pseudo, cx, model);
+        auc = r.$1;
+        solvers[r.$2] = r.$1;
+        aucN1 = r.$3;
+        aucN2 = r.$4;
       case 'F8' || 'F16':
-        // The tiles of a sentence: an order solver with the bigram model
-        // succeeds only if it reproduces the whole sentence.
         var total = 0.0;
         for (final it in sample) {
-          total += _sentenceTiles(it, bigrams);
+          total += _sentenceTiles(it, wordGrams2, suffixGrams2);
         }
-        add('bigram-solver', total);
+        solvers['order-beam-solver'] = total;
     }
     var bestName = 'chance';
     var best = 0.0;
     for (final s in solvers.entries) {
-      if (s.value > best) {
-        best = s.value;
+      // Totals are summed over items (or pairs); an AUC is already a rate.
+      final rate = auc != null ? s.value : s.value / trials;
+      if (rate > best) {
+        best = rate;
         bestName = s.key;
       }
     }
     out[e.key] = AuditClass(
       key: e.key,
-      n: sample.length,
+      n: auc != null ? aucN1 : sample.length,
       accuracy: best,
+      upper: auc != null
+          ? aucUpper(best, aucN1, aucN2)
+          : wilsonUpper(best, trials),
       bound: _bound(fmt, info),
       solver: bestName,
     );
   }
   return AuditReport(out);
+}
+
+/// Expected accuracy of a solver that drops the most similar option when it
+/// looks like the prompt (similarity 0.3 or more) and picks among the rest.
+double _eliminate(List<double> sim, int correct) {
+  final best = sim.reduce(math.max);
+  if (best < 0.3) return 1 / sim.length;
+  final top = <int>[
+    for (var i = 0; i < sim.length; i++)
+      if ((sim[i] - best).abs() < 1e-9) i,
+  ];
+  if (top.length != 1) return 1 / sim.length;
+  if (top.first == correct) return 0;
+  return 1 / (sim.length - 1);
 }
 
 double _bound(String fmt, FormatInfo info) {
@@ -374,112 +556,10 @@ double _knownScore(
   return s;
 }
 
-Map<String, int> _bigrams(GenContext cx) {
-  final counts = <String, int>{};
-  for (final s in cx.sentences) {
-    final w = <String>[
-      '^',
-      ...[for (final x in s.words) x.toLowerCase()],
-      r'$',
-    ];
-    for (var i = 0; i + 1 < w.length; i++) {
-      final k = '${w[i]}|${w[i + 1]}';
-      counts[k] = (counts[k] ?? 0) + 1;
-    }
-  }
-  return counts;
-}
-
-double _bigramScore(String option, Map<String, int> counts, String cardId) {
-  final w = <String>[
-    '^',
-    ...targetWords(option).map((x) => x.toLowerCase()),
-    r'$',
-  ];
-  var s = 0.0;
-  for (var i = 0; i + 1 < w.length; i++) {
-    // The sentence itself is in the counts once: leave it out.
-    final c = (counts['${w[i]}|${w[i + 1]}'] ?? 0);
-    s += math.log(1 + math.max(0, c - 1));
-  }
-  return s;
-}
-
-Map<String, int> _suffixTrigrams(GenContext cx) {
-  final counts = <String, int>{};
-  for (final s in cx.sentences) {
-    final w = <String>[
-      '^',
-      '^',
-      ...[for (final x in s.words) _suffixOf(x)],
-      r'$',
-    ];
-    for (var i = 0; i + 2 < w.length; i++) {
-      final k = '${w[i]}|${w[i + 1]}|${w[i + 2]}';
-      counts[k] = (counts[k] ?? 0) + 1;
-    }
-  }
-  return counts;
-}
-
-/// A held-out cue: trigrams of endings, which the generator's own choice of
-/// swap (words and endings, as bigrams) did not use.
-double _suffixTrigramScore(
-  String option,
-  Map<String, int> counts,
-  String cardId,
-) {
-  final w = <String>['^', '^', ...targetWords(option).map(_suffixOf), r'$'];
-  var s = 0.0;
-  for (var i = 0; i + 2 < w.length; i++) {
-    s += math.log(
-      1 + math.max(0, (counts['${w[i]}|${w[i + 1]}|${w[i + 2]}'] ?? 0) - 1),
-    );
-  }
-  return s;
-}
-
-String _suffixOf(String word) {
-  final u = tileUnits(word.toLowerCase());
-  return u.length < 2 ? word.toLowerCase() : u.sublist(u.length - 2).join();
-}
-
-Map<String, int> _suffixBigrams(GenContext cx) {
-  final counts = <String, int>{};
-  for (final s in cx.sentences) {
-    final w = <String>[
-      '^',
-      ...[for (final x in s.words) _suffixOf(x)],
-      r'$',
-    ];
-    for (var i = 0; i + 1 < w.length; i++) {
-      final k = '${w[i]}|${w[i + 1]}';
-      counts[k] = (counts[k] ?? 0) + 1;
-    }
-  }
-  return counts;
-}
-
-/// A solver that sees only the endings of words (their agreement and word
-/// class), not the words: a different cue from the generator's own.
-double _suffixBigramScore(
-  String option,
-  Map<String, int> counts,
-  String cardId,
-  GenContext cx,
-) {
-  final w = <String>['^', ...targetWords(option).map(_suffixOf), r'$'];
-  var s = 0.0;
-  for (var i = 0; i + 1 < w.length; i++) {
-    s += math.log(1 + math.max(0, (counts['${w[i]}|${w[i + 1]}'] ?? 0) - 1));
-  }
-  return s;
-}
-
 double _endingRule(String article, RegItem it, GenContext cx) {
   // The rule-follower's answer: the article of the gender the noun's ending
-  // usually has. On an exception that is the wrong one; the item stores the
-  // right article, so the rule scores 1 for the article it would pick.
+  // usually has. The item stores the right article; the rule scores 1 for the
+  // article it would pick.
   final m = cx.genderArticle['m'];
   final word = it.prompt.replaceFirst('___ ', '');
   final units = tileUnits(word);
@@ -495,7 +575,7 @@ double _endingRule(String article, RegItem it, GenContext cx) {
   return (article == m) == guessMasculine ? 1.0 : 0.0;
 }
 
-Set<String> _spellings(String head, String language) {
+Set<String> _spellings(String head) {
   final out = <String>{head};
   for (final base in <String>{
     head,
@@ -523,11 +603,13 @@ Set<String> _spellings(String head, String language) {
   return out;
 }
 
-double _anagram(RegItem it, _UnitModel model, GenContext cx) {
+/// The anagram solver: the most plausible word that can be built from the
+/// tiles under the course's letter patterns without the target word. A search
+/// cut short counts as solved (the conservative reading).
+double _anagram(RegItem it, _UnitModel model) {
   final answer = it.answerTiles;
   final n = answer.length;
   final tiles = it.tiles;
-  // Leave the target word out of the model: the solver does not know it.
   model.remove(answer);
   var bestScore = double.negativeInfinity;
   var ties = 0;
@@ -535,12 +617,16 @@ double _anagram(RegItem it, _UnitModel model, GenContext cx) {
   final used = List<bool>.filled(tiles.length, false);
   final path = <String>[];
   var visited = 0;
+  var truncated = false;
   const maxVisits = 400000;
   void dfs() {
-    if (visited++ > maxVisits) return;
+    if (truncated) return;
+    if (visited++ > maxVisits) {
+      truncated = true;
+      return;
+    }
     final p = path.length;
     if (p == n) {
-      // The word must be able to end where it does.
       if (n >= 2 && model.count(path[n - 2], path[n - 1], r'$') <= 0) return;
       final s = model.score(path);
       final isTarget = _same(path, answer);
@@ -557,7 +643,6 @@ double _anagram(RegItem it, _UnitModel model, GenContext cx) {
     final tried = <String>{};
     for (var i = 0; i < tiles.length; i++) {
       if (used[i] || !tried.add(tiles[i])) continue;
-      // A prefix whose last trigram occurs in no word is not a word.
       if (p >= 1) {
         final a = p >= 2 ? path[p - 2] : '^';
         if (model.count(a, path[p - 1], tiles[i]) <= 0) continue;
@@ -572,6 +657,7 @@ double _anagram(RegItem it, _UnitModel model, GenContext cx) {
 
   dfs();
   model.restore(answer);
+  if (truncated) return 1;
   if (!targetFound || ties == 0) return 0;
   return 1 / ties;
 }
@@ -584,18 +670,23 @@ bool _same(List<String> a, List<String> b) {
   return true;
 }
 
-double _matcher(RegItem it, String language, math.Random rng) {
+double _matcher(
+  RegItem it,
+  String language,
+  math.Random rng, {
+  required bool anti,
+}) {
   final prompts = [for (final p in it.pairs) p.$1];
   final meanings = [for (final p in it.pairs) p.$2];
   final sims = <(double, int, int)>[];
   for (var i = 0; i < prompts.length; i++) {
     for (var j = 0; j < meanings.length; j++) {
-      sims.add((
-        _maxSim(targetWords(prompts[i]), glossWords(meanings[j]), language) +
-            rng.nextDouble() * 1e-6,
-        i,
-        j,
-      ));
+      final s = _maxSim(
+        targetWords(prompts[i]),
+        glossWords(meanings[j]),
+        language,
+      );
+      sims.add(((anti ? -s : s) + rng.nextDouble() * 1e-6, i, j));
     }
   }
   sims.sort((a, b) => b.$1.compareTo(a.$1));
@@ -611,76 +702,122 @@ double _matcher(RegItem it, String language, math.Random rng) {
   return right.toDouble();
 }
 
-double _yesNo(List<RegItem> real, List<RegItem> pseudo, GenContext cx) {
-  // A detector trained on one half of the words, scoring the real words of
-  // the other half and the pseudowords made from them: no word is scored by
-  // a model that has seen it.
-  final model = _UnitModel(cx.vocab.where((v) => !cx.heldOut(v)));
-  final heldOutIds = <String>{
-    for (final v in cx.vocab)
-      if (cx.heldOut(v)) v.card.id,
-  };
-  // The words a pseudoword can be compared with: held out, and of the
-  // lengths the pseudowords are made in.
+/// The best pseudoword detector: (oriented AUC, its name, real count,
+/// pseudo count). Real words are scored without themselves, pseudowords
+/// without the word they were made from.
+(double, String, int, int) _yesNo(
+  List<RegItem> real,
+  List<RegItem> pseudo,
+  GenContext cx,
+  _UnitModel model,
+) {
+  final byId = <String, VocabWord>{for (final v in cx.vocab) v.card.id: v};
   final reals = <RegItem>[
     for (final r in real)
-      if (heldOutIds.contains(r.cardId) &&
-          tileUnits(r.prompt).length >= 4 &&
-          tileUnits(r.prompt).length <= 8)
-        r,
+      if (byId.containsKey(r.cardId)) r,
   ];
-  if (reals.isEmpty || pseudo.isEmpty) return 0.5;
-  final scored = <(double, bool)>[];
-  for (final it in reals) {
-    final units = tileUnits(it.prompt);
-    scored.add((model.score(units) / units.length, true));
-  }
-  for (final it in pseudo) {
-    final units = tileUnits(it.prompt);
-    scored.add((model.score(units) / units.length, false));
-  }
-  // The area under the ROC curve of the typicality score: the chance that a
-  // random real word scores above a random pseudoword (ties count half). An
-  // adversary may read the cue either way: the better orientation counts.
-  var wins = 0.0;
-  var pairs = 0;
-  for (final (a, aReal) in scored) {
-    if (!aReal) continue;
-    for (final (b, bReal) in scored) {
-      if (bReal) continue;
-      pairs++;
-      wins += a > b ? 1 : (a == b ? 0.5 : 0);
+  if (reals.length < 2 || pseudo.length < 2) return (1, 'too-few', 0, 0);
+  // (cue name -> scores of real, scores of pseudo)
+  final cues = <String, (List<double>, List<double>)>{
+    for (final n in <String>[
+      'letter-patterns',
+      'unit-pairs',
+      'edges',
+      'nearest-word',
+      'length',
+    ])
+      n: (<double>[], <double>[]),
+  };
+  void score(List<String> units, String? leaveOutId, bool isReal) {
+    final left = leaveOutId == null ? null : byId[leaveOutId]!.units;
+    if (left != null) model.remove(left);
+    final vals = <String, double>{
+      'letter-patterns': model.triScore(units),
+      'unit-pairs': model.biScore(units),
+      'edges': model.edgeScore(units),
+      'length': units.length.toDouble(),
+    };
+    if (left != null) model.restore(left);
+    for (final e in vals.entries) {
+      (isReal ? cues[e.key]!.$1 : cues[e.key]!.$2).add(e.value);
     }
+    // The nearest other word: for a real word the nearest word that is not
+    // itself, for a pseudoword the nearest word of the course.
+    final d = isReal
+        ? cx.nearestOther(byId[leaveOutId!]!)
+        : cx.nearestToPseudo(units);
+    (isReal ? cues['nearest-word']!.$1 : cues['nearest-word']!.$2).add(
+      -d.toDouble(),
+    );
   }
-  final auc = pairs == 0 ? 0.5 : wins / pairs;
-  return math.max(auc, 1 - auc);
-}
 
-double _sentenceTiles(RegItem it, Map<String, int> bigrams) {
-  // Greedy bigram solver over the tiles, a stand-in for a strong solver that
-  // knows the whole course's sentences except this one: it succeeds when its
-  // greedy order is the sentence.
-  final own = <String, int>{};
-  final w = <String>['^', ...it.answerTiles];
-  for (var i = 0; i + 1 < w.length; i++) {
-    own['${w[i]}|${w[i + 1]}'] = (own['${w[i]}|${w[i + 1]}'] ?? 0) + 1;
+  for (final r in reals) {
+    score(tileUnits(r.prompt), r.cardId, true);
   }
-  final remaining = List<String>.of(it.tiles);
-  final order = <String>[];
-  var prev = '^';
-  while (order.length < it.answerTiles.length && remaining.isNotEmpty) {
-    var best = -1;
-    var bestScore = -1.0;
-    for (var i = 0; i < remaining.length; i++) {
-      final k = '$prev|${remaining[i]}';
-      final c = ((bigrams[k] ?? 0) - (own[k] ?? 0)).toDouble();
-      if (c > bestScore) {
-        bestScore = c;
-        best = i;
+  for (final p in pseudo) {
+    score(
+      tileUnits(p.prompt),
+      p.coCards.isEmpty ? null : p.coCards.first,
+      false,
+    );
+  }
+  var best = 0.5;
+  var bestName = 'chance';
+  for (final e in cues.entries) {
+    var wins = 0.0;
+    for (final a in e.value.$1) {
+      for (final b in e.value.$2) {
+        wins += a > b ? 1 : (a == b ? 0.5 : 0);
       }
     }
-    prev = remaining.removeAt(best);
-    order.add(prev);
+    final auc = wins / (e.value.$1.length * e.value.$2.length);
+    final oriented = math.max(auc, 1 - auc);
+    if (oriented > best) {
+      best = oriented;
+      bestName = auc >= 0.5 ? e.key : '${e.key}-inverted';
+    }
   }
-  return _same(order, it.answerTiles) ? 1 : 0;
+  return (best, bestName, reals.length, pseudo.length);
+}
+
+/// A beam-search order solver over sentence tiles, scoring word pairs and
+/// ending pairs of the course without this sentence; it succeeds when its best
+/// order is the sentence.
+double _sentenceTiles(
+  RegItem it,
+  Map<String, int> wordPairs,
+  Map<String, int> endingPairs,
+) {
+  final own = _ownGrams(it.answerTiles, 2, _lower);
+  final ownE = _ownGrams(it.answerTiles, 2, _suffixOf);
+  double step(String prev, String next) {
+    final w = '$prev|$next';
+    final e = '${prev == '^' ? '^' : _suffixOf(prev)}|${_suffixOf(next)}';
+    return math.log(1 + math.max(0, (wordPairs[w] ?? 0) - (own[w] ?? 0))) +
+        0.5 * math.log(1 + math.max(0, (endingPairs[e] ?? 0) - (ownE[e] ?? 0)));
+  }
+
+  const width = 12;
+  var beam = <(List<String>, List<String>, double)>[
+    (<String>[], List<String>.of(it.tiles), 0),
+  ];
+  for (var k = 0; k < it.answerTiles.length; k++) {
+    final next = <(List<String>, List<String>, double)>[];
+    for (final (order, rest, score) in beam) {
+      final prev = order.isEmpty ? '^' : order.last;
+      final tried = <String>{};
+      for (var i = 0; i < rest.length; i++) {
+        if (!tried.add(rest[i])) continue;
+        final r = List<String>.of(rest)..removeAt(i);
+        next.add((<String>[...order, rest[i]], r, score + step(prev, rest[i])));
+      }
+    }
+    next.sort((a, b) => b.$3.compareTo(a.$3));
+    beam = next.take(width).toList();
+  }
+  if (beam.isEmpty) return 0;
+  final bestScore = beam.first.$3;
+  final top = beam.where((b) => (b.$3 - bestScore).abs() < 1e-9).toList();
+  final hit = top.any((b) => _same(b.$1, it.answerTiles));
+  return hit ? 1 / top.length : 0;
 }

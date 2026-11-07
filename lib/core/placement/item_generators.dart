@@ -22,6 +22,12 @@ import 'placement_data.dart';
 // Everything is derived from a [PlacementLanguageData]; there is no
 // per-language content. Pure Dart, deterministic for a seed.
 
+/// The cognate score from which a word is left out of word-level formats.
+const double kWordLevelCognateMax = 0.45;
+
+/// The share of word-pick items that carry a look-alike lure.
+const double kLureRate = 0.15;
+
 final RegExp _marks = RegExp(r'^[^\p{L}\p{M}]+|[^\p{L}\p{M}]+$', unicode: true);
 final RegExp _mark = RegExp(r'\p{M}', unicode: true);
 
@@ -89,6 +95,13 @@ class VocabWord {
 
   bool get cognate => cognateScore >= kCognateThreshold;
 
+  /// Too much like its meaning for a word-level format: a partial cognate
+  /// (0.45 or more) leaks to a similarity cue even below the cognate line.
+  bool get leaky => cognateScore >= kWordLevelCognateMax;
+
+  /// Set by the context: one of the course's first 100 words.
+  bool early = false;
+
   /// The last two units: what a form's ending is made of.
   String get suffix =>
       units.length < 2 ? word : units.sublist(units.length - 2).join();
@@ -126,6 +139,29 @@ class SentenceInfo {
   String get text => '$leadingMark${words.join(' ')}$trailingMark';
 }
 
+/// The edit distance of two unit lists, stopping at [limit] (the result is
+/// [limit] when it is that or more).
+int unitDistance(List<String> a, List<String> b, int limit) {
+  if ((a.length - b.length).abs() >= limit) return limit;
+  var prev = List<int>.generate(b.length + 1, (i) => i);
+  for (var i = 1; i <= a.length; i++) {
+    final cur = List<int>.filled(b.length + 1, 0);
+    cur[0] = i;
+    var rowMin = cur[0];
+    for (var j = 1; j <= b.length; j++) {
+      final cost = a[i - 1] == b[j - 1] ? 0 : 1;
+      cur[j] = math.min(
+        math.min(cur[j - 1] + 1, prev[j] + 1),
+        prev[j - 1] + cost,
+      );
+      if (cur[j] < rowMin) rowMin = cur[j];
+    }
+    if (rowMin >= limit) return limit;
+    prev = cur;
+  }
+  return math.min(prev[b.length], limit);
+}
+
 String _stripMarks(String t) => t.replaceAll(_marks, '');
 
 /// The language's items' common ground: the word and sentence cards read from
@@ -135,6 +171,9 @@ class GenContext {
     : scorer = CognateScorer(data.language),
       rng = math.Random(seed) {
     _read();
+    for (final v in early) {
+      v.early = true;
+    }
   }
 
   final PlacementLanguageData data;
@@ -158,6 +197,39 @@ class GenContext {
   final Map<String, String> genderArticle = <String, String>{};
 
   int get deckCount => data.deckCount;
+
+  /// The first 100 word cards of the course (by deck): the words a gamer
+  /// that has done only the opening is assumed to know. Distractors avoid
+  /// them (for an item that is not one of them), so a known word cannot be
+  /// eliminated from the options.
+  late final List<VocabWord> early = vocab.take(100).toList();
+  late final Set<String> earlyIds = <String>{for (final v in early) v.card.id};
+  late final Set<String> earlyGlossHeads = <String>{
+    for (final v in early) ...<String>{v.glossHead, ...glossWords(v.gloss)},
+  }..remove('');
+
+  /// How far [v]'s word is from the nearest other word of the course, in
+  /// units (4 means four or more).
+  int nearestOther(VocabWord v) =>
+      _nearest[v.card.id] ??= _nearestDistance(v.units, exclude: v.card.id);
+  final Map<String, int> _nearest = <String, int>{};
+
+  /// The distance from [units] to the nearest word of the course other than
+  /// [exclude], up to 4.
+  int _nearestDistance(List<String> units, {String? exclude}) {
+    var best = 4;
+    for (final w in vocab) {
+      if (w.card.id == exclude) continue;
+      if ((w.units.length - units.length).abs() >= best) continue;
+      final d = unitDistance(units, w.units, best);
+      if (d < best) best = d;
+      if (best == 0) break;
+    }
+    return best;
+  }
+
+  /// The nearest-word distance of a made-up word (a pseudoword).
+  int nearestToPseudo(List<String> units) => _nearestDistance(units);
 
   static const Set<String> _wordPos = <String>{
     'noun',
@@ -323,6 +395,14 @@ class GenContext {
         lemmas.add(foldAccents(l));
       }
     }
+    // A card with no listed bases still has its word forms.
+    if (c.bases.isEmpty) {
+      for (final w in words) {
+        if (latinLetters(w).length >= 4 || !_isLatin(w)) {
+          lemmas.add(foldAccents(w));
+        }
+      }
+    }
     if (eng.isEmpty) return;
     sentences.add(
       SentenceInfo(
@@ -371,6 +451,7 @@ class ItemGenerators {
       if (o.gloss.toLowerCase() == v.gloss.toLowerCase()) return false;
       if (o.lemma == v.lemma) return false;
       if (o.display == v.display) return false;
+      if (!v.early && o.early) return false;
       if (o.article != v.article && (o.article.isEmpty != v.article.isEmpty)) {
         return false;
       }
@@ -399,6 +480,7 @@ class ItemGenerators {
       if (taken.contains(o.card.id) || o.card.id == v.card.id) continue;
       if (o.glossHead == v.glossHead || o.lemma == v.lemma) continue;
       if (o.display == v.display) continue;
+      if (!v.early && o.early) continue;
       final s = wordSimilarity(text(o), like, cx.data.language);
       if (s > bestScore) {
         best = o;
@@ -415,7 +497,10 @@ class ItemGenerators {
     int words(String g) => g.trim().split(RegExp(r'\s+')).length;
     int rank(VocabWord o) {
       final sameWords = words(o.gloss) == words(v.gloss) ? 0 : 1;
-      return sameWords * 100 + (o.gloss.length - v.gloss.length).abs();
+      final sameEnd = o.units.last == v.units.last ? 0 : 1;
+      return sameWords * 100 +
+          (o.gloss.length - v.gloss.length).abs() * 2 +
+          sameEnd;
     }
 
     final index = <VocabWord, int>{
@@ -429,20 +514,51 @@ class ItemGenerators {
     return list;
   }
 
+  /// The first 24 of [candidates] reordered so that those whose resemblance
+  /// to the prompt ([sim]) is closest to the right answer's ([own]), and
+  /// whose English meaning is closest in length to [v]'s, come first: no
+  /// option stands out as the one that looks like the prompt or is longer.
+  List<VocabWord> _matchAffinity(
+    VocabWord v,
+    List<VocabWord> candidates,
+    double Function(VocabWord) sim,
+    double own,
+  ) {
+    double cost(VocabWord o) =>
+        (sim(o) - own).abs() * 8 +
+        (o.gloss.length - v.gloss.length).abs() * 0.5 +
+        (o.units.last == v.units.last ? 0 : 0.3);
+    final head = candidates.take(24).toList()
+      ..sort((a, b) => cost(a).compareTo(cost(b)));
+    return <VocabWord>[...head, ...candidates.skip(24)];
+  }
+
   /// Written word to meaning (F2), heard word to meaning (F13).
   List<RegItem> wordToMeaning(String format) {
     final out = <RegItem>[];
     for (final v in cx.vocab) {
-      if (v.cognate || v.gloss.isEmpty) continue;
-      final shapes = _byGlossLength(v, _shapeMatches(v));
+      if (v.leaky || v.gloss.isEmpty) continue;
+      String english(VocabWord o) =>
+          o.glossHead.isEmpty ? o.gloss : o.glossHead;
+      final shapes = _matchAffinity(
+        v,
+        _byGlossLength(v, _shapeMatches(v)),
+        (o) => wordSimilarity(v.roman, english(o), cx.data.language),
+        wordSimilarity(v.roman, english(v), cx.data.language),
+      );
       final taken = <String>{};
       final distractors = <VocabWord>[];
-      final lure = _lure(
-        v,
-        v.roman,
-        (o) => o.glossHead.isEmpty ? o.gloss : o.glossHead,
-        taken,
-      );
+      // A look-alike lure in a minority of items only: an option that
+      // resembles the prompt is always wrong, so a solver that drops the
+      // most similar option would gain on a bank where every item has one.
+      final lure = cx.rng.nextDouble() < kLureRate
+          ? _lure(
+              v,
+              v.roman,
+              (o) => o.glossHead.isEmpty ? o.gloss : o.glossHead,
+              taken,
+            )
+          : null;
       if (lure != null) {
         distractors.add(lure);
         taken.add(lure.card.id);
@@ -476,6 +592,7 @@ class ItemGenerators {
           correct: opts.indexOf(v.gloss),
           cognateScore: v.cognateScore,
           lemmas: <String>{v.lemma},
+          coCards: <String>{for (final d in distractors) d.card.id},
         ),
       );
     }
@@ -486,12 +603,19 @@ class ItemGenerators {
   List<RegItem> meaningToWord() {
     final out = <RegItem>[];
     for (final v in cx.vocab) {
-      if (v.cognate || v.gloss.isEmpty) continue;
-      final shapes = _shapeMatches(v);
+      if (v.leaky || v.gloss.isEmpty) continue;
+      final like = v.glossHead.isEmpty ? v.gloss : v.glossHead;
+      final shapes = _matchAffinity(
+        v,
+        _shapeMatches(v),
+        (o) => wordSimilarity(o.roman, like, cx.data.language),
+        wordSimilarity(v.roman, like, cx.data.language),
+      );
       final taken = <String>{};
       final distractors = <VocabWord>[];
-      final like = v.glossHead.isEmpty ? v.gloss : v.glossHead;
-      final lure = _lure(v, like, (o) => o.roman, taken);
+      final lure = cx.rng.nextDouble() < kLureRate
+          ? _lure(v, like, (o) => o.roman, taken)
+          : null;
       if (lure != null) {
         distractors.add(lure);
         taken.add(lure.card.id);
@@ -517,6 +641,7 @@ class ItemGenerators {
           correct: opts.indexOf(v),
           cognateScore: v.cognateScore,
           lemmas: <String>{v.lemma},
+          coCards: <String>{for (final d in distractors) d.card.id},
         ),
       );
     }
@@ -527,7 +652,7 @@ class ItemGenerators {
   List<RegItem> wordTiles(int decoys) {
     final out = <RegItem>[];
     for (final v in cx.vocab) {
-      if (v.cognate || v.gloss.isEmpty) continue;
+      if (v.leaky || v.gloss.isEmpty) continue;
       if (v.units.length < 4 || v.units.length > 7) continue;
       final used = <String>{...v.units};
       final candidates = <String>[];
@@ -563,7 +688,7 @@ class ItemGenerators {
   List<RegItem> typedOrSaid(String format) {
     final out = <RegItem>[];
     for (final v in cx.vocab) {
-      if (v.cognate || v.gloss.isEmpty) continue;
+      if (v.leaky || v.gloss.isEmpty) continue;
       final accepted = <String>{
         v.word,
         for (final a in v.card.altTarget) ...targetWords(a),
@@ -590,96 +715,162 @@ class ItemGenerators {
   /// pseudowords the registry builds.
   List<RegItem> yesNoReal(String format) => <RegItem>[
     for (final v in cx.vocab)
-      if (!v.cognate && v.gloss.isNotEmpty)
+      if (!v.leaky &&
+          v.gloss.isNotEmpty &&
+          v.units.length >= 4 &&
+          v.units.length <= 8)
         RegItem(
           id: _key(v.card.id, format),
           format: format,
           cardId: v.card.id,
           deck: v.deck,
-          prompt: v.display,
+          // The bare word, as a pseudoword is shown: no article.
+          prompt: v.word,
           promptRoman: v.roman,
           cognateScore: v.cognateScore,
           lemmas: <String>{v.lemma},
         ),
   ];
 
-  /// Pseudowords: words of the language's own letter patterns that are not
-  /// words. Every unit trigram of a pseudoword occurs in a real word.
-  List<RegItem> pseudowords(String format, {int count = 60}) {
+  /// Pseudowords: made-up words the audit's pattern detectors cannot tell
+  /// from real ones. Each is made from a real word by one to three changes
+  /// (two units swapped, or one replaced), and is accepted only if it is as
+  /// typical of the language's letter patterns as a real word drawn at random
+  /// (each scored without the word it came from, as a learner who has not
+  /// seen that word would) and as far from the nearest other word as that
+  /// real word is.
+  List<RegItem> pseudowords(String format, {int count = 400}) {
     final real = <String>{for (final v in cx.vocab) v.word.toLowerCase()};
-    final counts = <String, int>{};
-    String tri(List<String> u, int i) => u.sublist(i, i + 3).join('|');
-    // The pattern model is trained on one half of the words and the
-    // pseudowords are made from the other half.
-    for (final v in cx.vocab) {
-      if (cx.heldOut(v)) continue;
-      final u = <String>['^', ...v.units, r'$'];
-      for (var i = 0; i + 2 < u.length; i++) {
-        counts[tri(u, i)] = (counts[tri(u, i)] ?? 0) + 1;
-      }
-    }
-    // How typical a word's letter patterns are: the mean log count of its
-    // unit trigrams. A pseudoword must look as typical as a held-out real
-    // word does, and no more: one made only of common patterns would be
-    // easier to tell from a word than a word is from another.
-    double typical(List<String> units) {
+    final tri = <String, int>{};
+    final bi = <String, int>{};
+    final edge = <String, int>{};
+    void add(List<String> units, int by) {
       final u = <String>['^', ...units, r'$'];
-      var total = 0.0;
-      var n = 0;
       for (var i = 0; i + 2 < u.length; i++) {
-        total += math.log(1 + (counts[tri(u, i)] ?? 0));
-        n++;
+        final k = u.sublist(i, i + 3).join('|');
+        tri[k] = (tri[k] ?? 0) + by;
       }
-      return n == 0 ? 0 : total / n;
+      for (var i = 0; i + 1 < u.length; i++) {
+        final k = u.sublist(i, i + 2).join('|');
+        bi[k] = (bi[k] ?? 0) + by;
+      }
+      final e = '${units.first}|${units.last}';
+      edge[e] = (edge[e] ?? 0) + by;
+    }
+
+    for (final v in cx.vocab) {
+      add(v.units, 1);
+    }
+    double mean(List<String> u, int n, Map<String, int> counts) {
+      var total = 0.0;
+      var k = 0;
+      for (var i = 0; i + n <= u.length; i++) {
+        total += math.log(
+          1 + math.max(0, counts[u.sublist(i, i + n).join('|')] ?? 0),
+        );
+        k++;
+      }
+      return k == 0 ? 0 : total / k;
+    }
+
+    // How typical a word is of the language's letter patterns, three ways,
+    // leaving out the word it came from.
+    List<double> typical(List<String> units, List<String> leaveOut) {
+      add(leaveOut, -1);
+      final padded = <String>['^', ...units, r'$'];
+      final out = <double>[
+        mean(padded, 3, tri),
+        mean(padded, 2, bi),
+        math.log(1 + math.max(0, edge['${units.first}|${units.last}'] ?? 0)),
+      ];
+      add(leaveOut, 1);
+      return out;
     }
 
     final single = cx.vocab
         .where(
-          (v) => cx.heldOut(v) && v.units.length >= 4 && v.units.length <= 8,
+          (v) =>
+              !v.leaky &&
+              v.gloss.isNotEmpty &&
+              v.units.length >= 4 &&
+              v.units.length <= 8,
         )
         .toList();
-    if (single.isEmpty) return <RegItem>[];
-    final realScores = <double>[for (final v in single) typical(v.units)]
-      ..sort();
-    // Each pseudoword is made to be as typical as a real word drawn at
-    // random: the scores of the pseudowords follow those of the words, so
-    // typicality alone says nothing.
-    final spread = realScores.last - realScores.first;
-    final tolerance = spread / 25;
+    if (single.isEmpty) {
+      return <RegItem>[];
+    }
+    final realTypical = <List<double>>[
+      for (final v in single) typical(v.units, v.units),
+    ];
+    final realNear = <int>[for (final v in single) cx.nearestOther(v)];
+    final tolerance = <double>[
+      for (var k = 0; k < 3; k++)
+        (realTypical.map((t) => t[k]).reduce(math.max) -
+                realTypical.map((t) => t[k]).reduce(math.min)) /
+            20,
+    ];
+    final byLength = <int, List<VocabWord>>{};
+    for (final v in single) {
+      (byLength[v.units.length] ??= <VocabWord>[]).add(v);
+    }
     final out = <RegItem>[];
     final seen = <String>{};
-    var attempts = 0;
-    var wanted = realScores[cx.rng.nextInt(realScores.length)];
-    while (out.length < count && attempts < count * 600) {
-      attempts++;
-      final v = single[cx.rng.nextInt(single.length)];
-      final w = cx.vocab[cx.rng.nextInt(cx.vocab.length)];
-      final u = List<String>.of(v.units);
-      final i = 1 + cx.rng.nextInt(u.length - 2);
-      if (cx.rng.nextBool() && i + 1 < u.length - 1) {
-        final t = u[i];
-        u[i] = u[i + 1];
-        u[i + 1] = t;
-      } else {
-        u[i] = w.units[math.min(i, w.units.length - 1)];
+    // One real word to imitate at a time, tried up to 600 times: a pseudoword
+    // that is hard to match is dropped, not matched to an easier word, so the
+    // pseudowords keep the real words' lengths.
+    var wants = 0;
+    while (out.length < count && wants < count * 6) {
+      wants++;
+      final want = cx.rng.nextInt(single.length);
+      final sources = byLength[single[want].units.length]!;
+      for (var tries = 0; tries < 600; tries++) {
+        final v = sources[cx.rng.nextInt(sources.length)];
+        final w = cx.vocab[cx.rng.nextInt(cx.vocab.length)];
+        final u = List<String>.of(v.units);
+        final changes = 1 + cx.rng.nextInt(3);
+        for (var c = 0; c < changes; c++) {
+          final i = 1 + cx.rng.nextInt(u.length - 2);
+          if (cx.rng.nextBool() && i + 1 < u.length - 1) {
+            final t = u[i];
+            u[i] = u[i + 1];
+            u[i + 1] = t;
+          } else {
+            u[i] = w.units[math.min(i, w.units.length - 1)];
+          }
+        }
+        final text = u.join();
+        if (real.contains(text.toLowerCase()) || seen.contains(text)) {
+          continue;
+        }
+        final t = typical(u, v.units);
+        var close = true;
+        for (var k = 0; k < 3; k++) {
+          if ((t[k] - realTypical[want][k]).abs() > tolerance[k]) {
+            close = false;
+          }
+        }
+        if (!close) {
+          continue;
+        }
+        if (math.min(cx.nearestToPseudo(u), 3) != math.min(realNear[want], 3)) {
+          continue;
+        }
+        seen.add(text);
+        out.add(
+          RegItem(
+            id: 'pw${out.length}:$format',
+            format: format,
+            cardId: 'pw${out.length}',
+            deck: 0,
+            prompt: text,
+            promptRoman: text,
+            pseudo: true,
+            isReal: false,
+            coCards: <String>{v.card.id},
+          ),
+        );
+        break;
       }
-      final text = u.join();
-      if (real.contains(text.toLowerCase()) || !seen.add(text)) continue;
-      final score = typical(u);
-      if ((score - wanted).abs() > tolerance) continue;
-      wanted = realScores[cx.rng.nextInt(realScores.length)];
-      out.add(
-        RegItem(
-          id: 'pw${out.length}:$format',
-          format: format,
-          cardId: 'pw${out.length}',
-          deck: 0,
-          prompt: text,
-          promptRoman: text,
-          pseudo: true,
-          isReal: false,
-        ),
-      );
     }
     return out;
   }
@@ -857,6 +1048,8 @@ class ItemGenerators {
         final token = m[0]!;
         final heads = cx.byHead[token.toLowerCase()];
         if (heads == null || token.length < 3) continue;
+        // A word the gamer's first 100 words give away stays in every option.
+        if (cx.earlyGlossHeads.contains(token.toLowerCase())) continue;
         final pos = heads.first.pos;
         if (pos != 'noun' && pos != 'verb' && pos != 'adj') continue;
         final a0 = affinity(token);
@@ -867,6 +1060,7 @@ class ItemGenerators {
           if (h.isEmpty || h == token.toLowerCase()) continue;
           if ((h.length - token.length).abs() > 2) continue;
           if (english.toLowerCase().contains(h)) continue;
+          if (cx.earlyGlossHeads.contains(h)) continue;
           cands.add(((affinity(h) - a0).abs(), h));
         }
         if (cands.isEmpty) continue;
@@ -909,6 +1103,17 @@ class ItemGenerators {
   /// stem, so only the meaning of the sentence decides.
   List<RegItem> cloze() {
     final out = <RegItem>[];
+    // Word pairs of the course: a distractor is the more plausible in its
+    // place the more often it stands next to the neighbours of the blank, so
+    // among words of the right ending and length the most plausible are
+    // used, and a context cue does not pick the answer.
+    final pairs = <String, int>{};
+    for (final s in cx.sentences) {
+      final w = <String>['^', for (final x in s.words) x.toLowerCase(), r'$'];
+      for (var i = 0; i + 1 < w.length; i++) {
+        pairs['${w[i]}|${w[i + 1]}'] = (pairs['${w[i]}|${w[i + 1]}'] ?? 0) + 1;
+      }
+    }
     final pool = <(SentenceInfo, int, String)>[];
     for (final s in cx.sentences) {
       for (var i = 0; i < s.words.length; i++) {
@@ -955,8 +1160,18 @@ class ItemGenerators {
           found.add(((u.length - tu.length).abs(), w));
         }
       }
+      final prev = i == 0 ? '^' : s.words[i - 1].toLowerCase();
+      final next = i + 1 >= s.words.length
+          ? r'$'
+          : s.words[i + 1].toLowerCase();
+      double fit(String w) =>
+          math.log(1 + (pairs['$prev|$w'] ?? 0)) +
+          math.log(1 + (pairs['$w|$next'] ?? 0));
       final shuffledFound = cx.shuffled(found);
-      shuffledFound.sort((x, y) => x.$1.compareTo(y.$1));
+      shuffledFound.sort((x, y) {
+        final byLength = x.$1.compareTo(y.$1);
+        return byLength != 0 ? byLength : fit(y.$2).compareTo(fit(x.$2));
+      });
       final options = <String>[
         target,
         for (final f in shuffledFound.take(3)) f.$2,
@@ -1012,19 +1227,24 @@ class ItemGenerators {
         if (total >= 15 && n * 100 >= total * 85) dominant[e.key] = g;
       }
     }
-    final out = <RegItem>[];
+    // Exceptions, and as many nouns that follow their ending's rule: a solver
+    // that always picks the article the ending suggests, or always the
+    // opposite, then gets half of them.
+    final exceptions = <RegItem>[];
+    final regular = <RegItem>[];
     for (final v in cx.vocab) {
       final g = v.card.gender;
       if (v.pos != 'noun' || v.article.isEmpty || (g != 'm' && g != 'f')) {
         continue;
       }
       final dom = dominant[v.units.last];
-      if (dom == null || dom == g) continue;
-      if (v.cognate) continue;
+      if (dom == null || v.leaky) {
+        continue;
+      }
       final right = g == 'm' ? m : f;
       final wrong = g == 'm' ? f : m;
       final opts = cx.shuffled(<String>[right, wrong]);
-      out.add(
+      (dom == g ? regular : exceptions).add(
         RegItem(
           id: _key(v.card.id, 'F6g'),
           format: 'F6g',
@@ -1035,11 +1255,15 @@ class ItemGenerators {
           optionsRoman: opts,
           correct: opts.indexOf(right),
           cognateScore: v.cognateScore,
-          genderException: true,
+          genderException: dom != g,
           lemmas: <String>{v.lemma},
         ),
       );
     }
+    final out = <RegItem>[
+      ...exceptions,
+      ...cx.shuffled(regular).take(exceptions.length),
+    ];
     return out;
   }
 
@@ -1050,7 +1274,7 @@ class ItemGenerators {
     final used = <String>{};
     // Matching is stricter than the other word formats: a word that merely
     // looks a little like its meaning (0.45) is left out too.
-    bool eligible(VocabWord v) => v.cognateScore < 0.45 && v.gloss.isNotEmpty;
+    bool eligible(VocabWord v) => !v.leaky && v.gloss.isNotEmpty;
     final seeds = cx.vocab.where(eligible).toList();
     for (var n = 0; n < seeds.length; n += perCard) {
       final v = seeds[n];
