@@ -747,6 +747,8 @@ void main() {
     const guards = <String>[
       'leech_actions_no_delete',
       'leech_actions_no_update',
+      'placement_withdrawals_no_delete',
+      'placement_withdrawals_no_update',
       'restores_no_delete',
       'restores_no_update',
       'reviews_no_delete',

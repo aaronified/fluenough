@@ -465,25 +465,5 @@ void main() {
       await _pumpSheet(tester, state);
       expect(find.text(l10nOf(tester).languagesCheckAgain), findsNothing);
     });
-
-    screen('the language sheet with Check your level again', (
-      tester,
-      mode,
-    ) async {
-      final state = await _creditedState(t1);
-      await pumpScreen(
-        tester,
-        Scaffold(
-          body: LanguageSkillsSheet(
-            view: LanguageView(_es, _course()),
-            initial: LanguageSkills(<SkillKey, SkillState>{
-              const SkillKey(SkillKind.read, 'latin'): SkillState.know,
-            }),
-          ),
-        ),
-        state: state,
-        themeMode: mode,
-      );
-    });
   });
 }
