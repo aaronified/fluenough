@@ -1,0 +1,264 @@
+schema: 1
+id: "ml-verbs"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "everyday-verbs"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0112"
+    target: "പോകൂ"
+    reading: "pōkū"
+    ipa: "poːkuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "പോകൂ", base: "പോകുക", reading: "pōkuka" }]
+    examples:
+      - target: "ഇവിടെ പോകൂ."
+        reading: "iviṭe pōkū."
+        ipa: "iʋiʈe poːkuː"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "പോകൂ", base: "പോകുക", reading: "pōkuka" }]
+      - target: "വീട്ടിൽ പോകൂ."
+        reading: "vīṭṭil pōkū."
+        ipa: "ʋiːʈːil poːkuː"
+        bases: [{ word: "വീട്ടിൽ", ref: "ml-0009" }, { word: "പോകൂ", base: "പോകുക", reading: "pōkuka" }]
+  - id: "ml-0113"
+    target: "കഴിക്കൂ"
+    reading: "kaḻikkū"
+    ipa: "kaɻikːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "കഴിക്കൂ", base: "കഴിക്കുക", reading: "kaḻikkuka" }]
+    examples:
+      - target: "ചോറ് കഴിക്കൂ."
+        reading: "cōṟ kaḻikkū."
+        ipa: "tʃoːɾ kaɻikːuː"
+        bases: [{ word: "ചോറ്", base: "ചോറ്", reading: "cōṟ" }, { word: "കഴിക്കൂ", base: "കഴിക്കുക", reading: "kaḻikkuka" }]
+      - target: "ഇത് കഴിക്കൂ."
+        reading: "it kaḻikkū."
+        ipa: "it kaɻikːuː"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "കഴിക്കൂ", base: "കഴിക്കുക", reading: "kaḻikkuka" }]
+  - id: "ml-0114"
+    target: "കുടിക്കൂ"
+    reading: "kuṭikkū"
+    ipa: "kuʈikːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "കുടിക്കൂ", base: "കുടിക്കുക", reading: "kuṭikkuka" }]
+    examples:
+      - target: "വെള്ളം കുടിക്കൂ."
+        reading: "veḷḷaṁ kuṭikkū."
+        ipa: "ʋeɭːam kuʈikːuː"
+        bases: [{ word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കൂ", base: "കുടിക്കുക", reading: "kuṭikkuka" }]
+      - target: "ചായ കുടിക്കൂ."
+        reading: "cāya kuṭikkū."
+        ipa: "tʃaːjə kuʈikːuː"
+        bases: [{ word: "ചായ", base: "ചായ", reading: "cāya" }, { word: "കുടിക്കൂ", base: "കുടിക്കുക", reading: "kuṭikkuka" }]
+  - id: "ml-0115"
+    target: "ഇരിക്കൂ"
+    reading: "irikkū"
+    ipa: "iɾikːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "ഇരിക്കൂ", base: "ഇരിക്കുക", reading: "irikkuka" }]
+    examples:
+      - target: "ഇവിടെ ഇരിക്കൂ."
+        reading: "iviṭe irikkū."
+        ipa: "iʋiʈe iɾikːuː"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഇരിക്കൂ", base: "ഇരിക്കുക", reading: "irikkuka" }]
+      - target: "ഇരിക്കൂ, ദയവായി."
+        reading: "irikkū, dayavāyi."
+        ipa: "iɾikːuː dəjəʋaːji"
+        bases: [{ word: "ഇരിക്കൂ", base: "ഇരിക്കുക", reading: "irikkuka" }, { word: "ദയവായി", ref: "ml-0017" }]
+  - id: "ml-0116"
+    target: "നിൽക്കൂ"
+    reading: "nilkkū"
+    ipa: "nilːkːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "നിൽക്കൂ", base: "നിൽക്കുക", reading: "nilkkuka" }]
+    examples:
+      - target: "ഇവിടെ നിൽക്കൂ."
+        reading: "iviṭe nilkkū."
+        ipa: "iʋiʈe nilːkːuː"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "നിൽക്കൂ", base: "നിൽക്കുക", reading: "nilkkuka" }]
+      - target: "അവിടെ നിൽക്കൂ."
+        reading: "aviṭe nilkkū."
+        ipa: "əʋiʈe nilːkːuː"
+        bases: [{ word: "അവിടെ", base: "അവിടെ", reading: "aviṭe" }, { word: "നിൽക്കൂ", base: "നിൽക്കുക", reading: "nilkkuka" }]
+  - id: "ml-0117"
+    target: "കാണൂ"
+    reading: "kāṇū"
+    ipa: "kaːɳuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "കാണൂ", base: "കാണുക", reading: "kāṇuka" }]
+    examples:
+      - target: "അത് കാണൂ."
+        reading: "at kāṇū."
+        ipa: "ət̪ kaːɳuː"
+        bases: [{ word: "അത്", ref: "ml-0099" }, { word: "കാണൂ", base: "കാണുക", reading: "kāṇuka" }]
+      - target: "എന്നെ കാണൂ."
+        reading: "enne kāṇū."
+        ipa: "enːe kaːɳuː"
+        bases: [{ word: "എന്നെ", ref: "ml-0109" }, { word: "കാണൂ", base: "കാണുക", reading: "kāṇuka" }]
+  - id: "ml-0118"
+    target: "കേൾക്കൂ"
+    reading: "kēḷkkū"
+    ipa: "keːɭkːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "കേൾക്കൂ", base: "കേൾക്കുക", reading: "kēḷkkuka" }]
+    examples:
+      - target: "ദയവായി കേൾക്കൂ."
+        reading: "dayavāyi kēḷkkū."
+        ipa: "dəjəʋaːji keːɭkːuː"
+        bases: [{ word: "ദയവായി", ref: "ml-0017" }, { word: "കേൾക്കൂ", base: "കേൾക്കുക", reading: "kēḷkkuka" }]
+      - target: "നീ കേൾക്കൂ."
+        reading: "nī kēḷkkū."
+        ipa: "niː keːɭkːuː"
+        bases: [{ word: "നീ", ref: "ml-0095" }, { word: "കേൾക്കൂ", base: "കേൾക്കുക", reading: "kēḷkkuka" }]
+  - id: "ml-0119"
+    target: "എഴുതൂ"
+    reading: "eḻutū"
+    ipa: "eɻutuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "എഴുതൂ", base: "എഴുതുക", reading: "eḻutuka" }]
+    examples:
+      - target: "ഇവിടെ എഴുതൂ."
+        reading: "iviṭe eḻutū."
+        ipa: "iʋiʈe eɻutuː"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "എഴുതൂ", base: "എഴുതുക", reading: "eḻutuka" }]
+      - target: "പേര് എഴുതൂ."
+        reading: "pēr eḻutū."
+        ipa: "peːr eɻutuː"
+        bases: [{ word: "പേര്", ref: "ml-0042" }, { word: "എഴുതൂ", base: "എഴുതുക", reading: "eḻutuka" }]
+  - id: "ml-0120"
+    target: "വായിക്കൂ"
+    reading: "vāyikkū"
+    ipa: "ʋaːjikːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "വായിക്കൂ", base: "വായിക്കുക", reading: "vāyikkuka" }]
+    examples:
+      - target: "അത് വായിക്കൂ."
+        reading: "at vāyikkū."
+        ipa: "ət̪ ʋaːjikːuː"
+        bases: [{ word: "അത്", ref: "ml-0099" }, { word: "വായിക്കൂ", base: "വായിക്കുക", reading: "vāyikkuka" }]
+      - target: "വീണ്ടും വായിക്കൂ."
+        reading: "vīṇṭuṁ vāyikkū."
+        ipa: "ʋiːɳɖum ʋaːjikːuː"
+        bases: [{ word: "വീണ്ടും", base: "വീണ്ടും", reading: "vīṇṭuṁ" }, { word: "വായിക്കൂ", base: "വായിക്കുക", reading: "vāyikkuka" }]
+  - id: "ml-0121"
+    target: "ഉറങ്ങൂ"
+    reading: "uṟaṅṅū"
+    ipa: "uɾəŋːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "ഉറങ്ങൂ", base: "ഉറങ്ങുക", reading: "uṟaṅṅuka" }]
+    examples:
+      - target: "ഇപ്പോൾ ഉറങ്ങൂ."
+        reading: "ippōḷ uṟaṅṅū."
+        ipa: "ipːoːɭ uɾəŋːuː"
+        bases: [{ word: "ഇപ്പോൾ", base: "ഇപ്പോൾ", reading: "ippōḷ" }, { word: "ഉറങ്ങൂ", base: "ഉറങ്ങുക", reading: "uṟaṅṅuka" }]
+      - target: "നീ ഉറങ്ങൂ."
+        reading: "nī uṟaṅṅū."
+        ipa: "niː uɾəŋːuː"
+        bases: [{ word: "നീ", ref: "ml-0095" }, { word: "ഉറങ്ങൂ", base: "ഉറങ്ങുക", reading: "uṟaṅṅuka" }]
+  - id: "ml-0122"
+    target: "എടുക്കൂ"
+    reading: "eṭukkū"
+    ipa: "eʈukːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "എടുക്കൂ", base: "എടുക്കുക", reading: "eṭukkuka" }]
+    examples:
+      - target: "വെള്ളം എടുക്കൂ."
+        reading: "veḷḷaṁ eṭukkū."
+        ipa: "ʋeɭːam eʈukːuː"
+        bases: [{ word: "വെള്ളം", ref: "ml-0005" }, { word: "എടുക്കൂ", base: "എടുക്കുക", reading: "eṭukkuka" }]
+      - target: "അത് എടുക്കൂ."
+        reading: "at eṭukkū."
+        ipa: "ət̪ eʈukːuː"
+        bases: [{ word: "അത്", ref: "ml-0099" }, { word: "എടുക്കൂ", base: "എടുക്കുക", reading: "eṭukkuka" }]
+  - id: "ml-0123"
+    target: "തരൂ"
+    reading: "tarū"
+    ipa: "t̪aɾuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "തരൂ", base: "തരിക", reading: "tarika" }]
+    examples:
+      - target: "വെള്ളം തരൂ."
+        reading: "veḷḷaṁ tarū."
+        ipa: "ʋeɭːam t̪aɾuː"
+        bases: [{ word: "വെള്ളം", ref: "ml-0005" }, { word: "തരൂ", base: "തരിക", reading: "tarika" }]
+      - target: "എനിക്ക് തരൂ."
+        reading: "enikku tarū."
+        ipa: "enikːu t̪aɾuː"
+        bases: [{ word: "എനിക്ക്", ref: "ml-0107" }, { word: "തരൂ", base: "തരിക", reading: "tarika" }]
+  - id: "ml-0124"
+    target: "നോക്കൂ"
+    reading: "nōkkū"
+    ipa: "noːkːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "നോക്കൂ", base: "നോക്കുക", reading: "nōkkuka" }]
+    examples:
+      - target: "ഇവിടെ നോക്കൂ."
+        reading: "iviṭe nōkkū."
+        ipa: "iʋiʈe noːkːuː"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "നോക്കൂ", base: "നോക്കുക", reading: "nōkkuka" }]
+      - target: "എന്നെ നോക്കൂ."
+        reading: "enne nōkkū."
+        ipa: "enːe noːkːuː"
+        bases: [{ word: "എന്നെ", ref: "ml-0109" }, { word: "നോക്കൂ", base: "നോക്കുക", reading: "nōkkuka" }]
+  - id: "ml-0125"
+    target: "തുറക്കൂ"
+    reading: "tuṟakkū"
+    ipa: "t̪uɾəkːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "തുറക്കൂ", base: "തുറക്കുക", reading: "tuṟakkuka" }]
+    examples:
+      - target: "വാതിൽ തുറക്കൂ."
+        reading: "ʋātil tuṟakkū."
+        ipa: "ʋaːt̪il t̪uɾəkːuː"
+        bases: [{ word: "വാതിൽ", base: "വാതിൽ", reading: "vāṭil" }, { word: "തുറക്കൂ", base: "തുറക്കുക", reading: "tuṟakkuka" }]
+      - target: "ജനൽ തുറക്കൂ."
+        reading: "janal tuṟakkū."
+        ipa: "d͡ʒənəl t̪uɾəkːuː"
+        bases: [{ word: "ജനൽ", base: "ജനൽ", reading: "janal" }, { word: "തുറക്കൂ", base: "തുറക്കുക", reading: "tuṟakkuka" }]
+  - id: "ml-0126"
+    target: "വാങ്ങൂ"
+    reading: "vāṅṅū"
+    ipa: "ʋaːŋːuː"
+    pos: "verb"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: [{ word: "വാങ്ങൂ", base: "വാങ്ങുക", reading: "vāṅṅuka" }]
+    examples:
+      - target: "ഒരു ചായ വാങ്ങൂ."
+        reading: "oru cāya vāṅṅū."
+        ipa: "orə tʃaːjə ʋaːŋːuː"
+        bases: [{ word: "ഒരു", base: "ഒരു", reading: "oru" }, { word: "ചായ", base: "ചായ", reading: "cāya" }, { word: "വാങ്ങൂ", base: "വാങ്ങുക", reading: "vāṅṅuka" }]
+      - target: "ഇത് വാങ്ങൂ."
+        reading: "it vāṅṅū."
+        ipa: "it ʋaːŋːuː"
+        bases: [{ word: "ഇത്", base: "ഇത്", reading: "it" }, { word: "വാങ്ങൂ", base: "വാങ്ങുക", reading: "vāṅṅuka" }]

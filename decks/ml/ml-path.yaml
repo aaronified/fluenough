@@ -189,7 +189,8 @@ units:
       - { id: "introducing-myself", text: { "en": "Someone says their name, home town and work" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A short profile card" } }
-  - planned: { id: "ml-verbs", theme: "everyday-verbs", words: 33 }
+  - decks: ["ml-verbs", "*"]
+    words: 15
     listening_passages:
       - { id: "what-i-do", text: { "en": "Someone lists what they do each day" } }
     reading_passages:
