@@ -5,6 +5,14 @@
 /// credit written from 0.9.2 on is stamped with (`placed_by`).
 const int kPlacementModel = 2;
 
+/// The model of the older placement test (onboarding and the language
+/// picker), which every credit it writes from 0.9.3 on is stamped with. It is
+/// a stamp like any other, so it is never unconfirmed; it only says which
+/// test made the credit. A moment stamped before 0.9.3 keeps the model it
+/// has (the older test's credit of 0.9.2 carries [kPlacementModel]), and any
+/// stamp, whatever its number, means the credit is not flagged.
+const int kOlderPlacementModel = 1;
+
 /// The release of 0.9.0 (2026-11-06T20:08:07Z), when Find my level first
 /// shipped. A credit before it comes from the older placement test and is not
 /// flagged.

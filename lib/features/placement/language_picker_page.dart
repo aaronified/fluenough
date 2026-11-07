@@ -15,6 +15,7 @@ import '../../core/data/spoken_languages.dart';
 import '../../core/decks/deck_index.dart' show decksBeforeReady;
 import '../../core/decks/language_catalog.dart';
 import '../../core/decks/notation.dart';
+import '../../core/placement/placement_check.dart' show kOlderPlacementModel;
 import '../../core/scheduling/placed_review.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/script_name.dart';
@@ -601,6 +602,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
               standings:
                   found.scripts[code] ?? const <String, ScriptStanding>{},
               native: native,
+              model: kOlderPlacementModel,
             );
             settings.setPlacedReview(
               code,
@@ -844,6 +846,7 @@ class _LanguagePickerPageState extends State<LanguagePickerPage> {
         placed: value,
         standings: standings[key] ?? const <String, ScriptStanding>{},
         native: state.courseNative(key),
+        model: kOlderPlacementModel,
       );
       settings.setPlacedReview(key, review[key] ?? PlacedReview.fallback);
     }

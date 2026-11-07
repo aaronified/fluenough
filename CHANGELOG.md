@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- **The older placement test's credit is no longer treated like a Find my level credit.** Credit written by the placement test at setup or in the language picker is now stamped as its own kind, so it is never offered "Check your level again"; only credit written by Find my level in 0.9.0 and 0.9.1 is. Credit already stored keeps its meaning. Refs #1063.
+
+### Changed
+
+- **Placement credit no longer teaches "Adjust to me".** Words placement counted as known are no longer read as your first answers when the app fits its schedule to you, and they no longer count towards the 10% of new answers that trigger a refit. They are still scheduled as before, and your own answers are read as always. Refs #1063.
+
 ## [0.9.2] - 2026-11-07
 
 ### Fixed

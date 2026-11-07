@@ -4,6 +4,7 @@ import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/placement.dart' show ScriptStanding;
 import '../../app/placement_credit.dart';
+import '../../core/placement/placement_check.dart' show kOlderPlacementModel;
 import '../../core/scheduling/placed_review.dart';
 import 'placement_page.dart';
 
@@ -88,6 +89,7 @@ void saveLanguagePlacement(AppState state, PlacementFound found) {
       placed: placed,
       standings: found.scripts[code] ?? const <String, ScriptStanding>{},
       native: state.courseNative(code),
+      model: kOlderPlacementModel,
     );
     settings.setPlacedReview(code, found.review[code] ?? PlacedReview.fallback);
   }

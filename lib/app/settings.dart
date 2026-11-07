@@ -804,6 +804,11 @@ class SettingsNotifier extends ChangeNotifier {
   Set<int> placedByOf(String language) =>
       (_placedBy[language] ?? const <int, int>{}).keys.toSet();
 
+  /// The model of each stamped moment of [language]'s credit
+  /// (`kPlacementModel`, `kOlderPlacementModel`).
+  Map<int, int> placedModelsOf(String language) =>
+      _placedBy[language] ?? const <int, int>{};
+
   /// Stamps the credit of [language] made at [seconds] as made by [model]
   /// (`kPlacementModel`). `placed_at` keeps its own format, and an older app
   /// ignores this key.
