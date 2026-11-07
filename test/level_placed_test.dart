@@ -205,6 +205,7 @@ native: { code: en, iso639_3: eng, name: English }
 license: CC0-1.0
 cards:
   - { id: es-en-tiny-0001, target: "hola", native: "hello" }
+  - { id: es-en-tiny-0002, target: "adiós", native: "goodbye" }
 ''',
           }),
         );
