@@ -224,7 +224,7 @@ void main() {
           expect(plugin.listens, 1, reason: '${first.error}');
           plugin.onResult!(
             SpeechRecognitionResult(<SpeechRecognitionWords>[
-              SpeechRecognitionWords('నమస్తే', null, 0.9),
+              const SpeechRecognitionWords('నమస్తే', null, 0.9),
             ], ResultType.finalResult.value),
           );
           final h = await attempt;
@@ -237,7 +237,7 @@ void main() {
           expect(plugin.listens, 2);
           plugin.onResult!(
             SpeechRecognitionResult(<SpeechRecognitionWords>[
-              SpeechRecognitionWords('x', null, 0.9),
+              const SpeechRecognitionWords('x', null, 0.9),
             ], ResultType.finalResult.value),
           );
           await again;
