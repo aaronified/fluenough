@@ -60,8 +60,7 @@ class _DeleteLanguageDataDialogState extends State<DeleteLanguageDataDialog> {
 
   bool get _anything => _reviews || _placement || _settings || _decks;
 
-  bool get _canDelete =>
-      _typed.text == widget.name && _anything && _rangeOk;
+  bool get _canDelete => _typed.text == widget.name && _anything && _rangeOk;
 
   Future<void> _pick({required bool first}) async {
     final picked = await showDatePicker(

@@ -102,41 +102,50 @@ void main() {
       );
     });
 
-    test('a prefix of another code is not the language: only te- cards go', () async {
-      final (:db, :progress) = await _open();
-      _answer(progress, 'te', 1, _at(1));
-      _answer(progress, 'tel', 1, _at(1));
-      _answer(progress, 'tet', 1, _at(1));
-      await progress.flush();
-      await progress.eraseReviews(
-        const ReviewErasure(language: 'te', answers: true),
-      );
-      expect(await _cards(db), unorderedEquals(<String>['tel-1001', 'tet-1001']));
-    });
+    test(
+      'a prefix of another code is not the language: only te- cards go',
+      () async {
+        final (:db, :progress) = await _open();
+        _answer(progress, 'te', 1, _at(1));
+        _answer(progress, 'tel', 1, _at(1));
+        _answer(progress, 'tet', 1, _at(1));
+        await progress.flush();
+        await progress.eraseReviews(
+          const ReviewErasure(language: 'te', answers: true),
+        );
+        expect(
+          await _cards(db),
+          unorderedEquals(<String>['tel-1001', 'tet-1001']),
+        );
+      },
+    );
 
-    test('a range of days is inclusive on both ends, by the local day', () async {
-      final (:db, :progress) = await _open();
-      _answer(progress, 'te', 1, _at(1, 0, 0, 0)); // first moment of day 1
-      _answer(progress, 'te', 2, _at(2, 23, 59, 59)); // last moment of day 2
-      _answer(progress, 'te', 3, _at(3, 0, 0, 0)); // first moment of day 3
-      _answer(progress, 'te', 4, DateTime(2026, 10, 20, 12));
-      await progress.flush();
+    test(
+      'a range of days is inclusive on both ends, by the local day',
+      () async {
+        final (:db, :progress) = await _open();
+        _answer(progress, 'te', 1, _at(1, 0, 0, 0)); // first moment of day 1
+        _answer(progress, 'te', 2, _at(2, 23, 59, 59)); // last moment of day 2
+        _answer(progress, 'te', 3, _at(3, 0, 0, 0)); // first moment of day 3
+        _answer(progress, 'te', 4, DateTime(2026, 10, 20, 12));
+        await progress.flush();
 
-      final removed = await progress.eraseReviews(
-        ReviewErasure(
-          language: 'te',
-          answers: true,
-          from: DateTime(2026, 11, 1),
-          to: DateTime(2026, 11, 2),
-        ),
-      );
+        final removed = await progress.eraseReviews(
+          ReviewErasure(
+            language: 'te',
+            answers: true,
+            from: DateTime(2026, 11, 1),
+            to: DateTime(2026, 11, 2),
+          ),
+        );
 
-      expect(removed, 2);
-      expect(
-        await _cards(db),
-        unorderedEquals(<String>['te-1003', 'te-1004']),
-      );
-    });
+        expect(removed, 2);
+        expect(
+          await _cards(db),
+          unorderedEquals(<String>['te-1003', 'te-1004']),
+        );
+      },
+    );
 
     test('placement is not a review: deleting reviews leaves its credit, '
         'deleting placement takes only it', () async {
@@ -146,8 +155,13 @@ void main() {
       ]) {
         final (:db, :progress) = await _open();
         final placed = _at(5, 9);
-        _answer(progress, 'te', 1, _at(5, 9, 0, 0).add(const Duration(milliseconds: 300)),
-            grade: 5);
+        _answer(
+          progress,
+          'te',
+          1,
+          _at(5, 9, 0, 0).add(const Duration(milliseconds: 300)),
+          grade: 5,
+        );
         _answer(progress, 'te', 2000 - 1000, _at(6));
         await progress.flush();
         final erased = await progress.eraseReviews(
@@ -163,52 +177,61 @@ void main() {
       }
     });
 
-    test('fits of the language go with its reviews; other languages keep theirs, '
-        'and states match a fresh replay of what is left', () async {
-      final (:db, :progress) = await _open();
-      for (var i = 0; i < 4; i++) {
-        _answer(progress, 'te', i, _at(1 + i), grade: i.isEven ? 4 : 2);
-        _answer(progress, 'hi', i, _at(1 + i), grade: 3);
-      }
-      final fit = FittedParameters(
-        values: <double>[for (final w in Fsrs.w) w * 1.01],
-        fittedAt: _at(5),
-        reviewCount: 4,
-        lossBefore: 0.7,
-        lossAfter: 0.6,
-      );
-      await progress.putFitted((language: 'te', mode: DrillMode.recognition), fit);
-      await progress.putFitted((language: 'hi', mode: DrillMode.recognition), fit);
-      await progress.flush();
-
-      await progress.eraseReviews(
-        ReviewErasure(
+    test(
+      'fits of the language go with its reviews; other languages keep theirs, '
+      'and states match a fresh replay of what is left',
+      () async {
+        final (:db, :progress) = await _open();
+        for (var i = 0; i < 4; i++) {
+          _answer(progress, 'te', i, _at(1 + i), grade: i.isEven ? 4 : 2);
+          _answer(progress, 'hi', i, _at(1 + i), grade: 3);
+        }
+        final fit = FittedParameters(
+          values: <double>[for (final w in Fsrs.w) w * 1.01],
+          fittedAt: _at(5),
+          reviewCount: 4,
+          lossBefore: 0.7,
+          lossAfter: 0.6,
+        );
+        await progress.putFitted((
           language: 'te',
-          answers: true,
-          from: _at(3),
-          to: _at(4),
-        ),
-      );
+          mode: DrillMode.recognition,
+        ), fit);
+        await progress.putFitted((
+          language: 'hi',
+          mode: DrillMode.recognition,
+        ), fit);
+        await progress.flush();
 
-      final fits = await db.fsrsParametersDao.all();
-      expect(fits.map((f) => f.language), <String>['hi']);
-      // A fresh app on the same database reads the same progress as memory.
-      final again = await DatabaseProgress.open(db);
-      addTearDown(again.dispose);
-      expect(_byValue(again), _byValue(progress));
-      expect(again.log.length, progress.log.length);
-      // And the cache table agrees with it.
-      expect(
-        {
-          for (final s in await db.cardStatesDao.all())
-            '${s.cardId}|${s.mode.name}': s.repetitions,
-        },
-        {
-          for (final e in progress.states.entries)
-            '${e.key.cardId}|${e.key.mode.name}': e.value.repetitions,
-        },
-      );
-    });
+        await progress.eraseReviews(
+          ReviewErasure(
+            language: 'te',
+            answers: true,
+            from: _at(3),
+            to: _at(4),
+          ),
+        );
+
+        final fits = await db.fsrsParametersDao.all();
+        expect(fits.map((f) => f.language), <String>['hi']);
+        // A fresh app on the same database reads the same progress as memory.
+        final again = await DatabaseProgress.open(db);
+        addTearDown(again.dispose);
+        expect(_byValue(again), _byValue(progress));
+        expect(again.log.length, progress.log.length);
+        // And the cache table agrees with it.
+        expect(
+          {
+            for (final s in await db.cardStatesDao.all())
+              '${s.cardId}|${s.mode.name}': s.repetitions,
+          },
+          {
+            for (final e in progress.states.entries)
+              '${e.key.cardId}|${e.key.mode.name}': e.value.repetitions,
+          },
+        );
+      },
+    );
 
     test('memory progress deletes the same way', () async {
       final progress = MemoryProgress();
@@ -239,31 +262,36 @@ void main() {
       return (state: state, store: store, files: files);
     }
 
-    test('a backup is kept first, holds what was deleted, and restores it',
-        () async {
-      final (:db, :progress) = await _open();
-      _answer(progress, 'te', 1, _at(1));
-      _answer(progress, 'hi', 1, _at(1));
-      await progress.flush();
-      final (:state, :store, :files) = app(progress);
-      final before = progress.exportJsonl();
+    test(
+      'a backup is kept first, holds what was deleted, and restores it',
+      () async {
+        final (:db, :progress) = await _open();
+        _answer(progress, 'te', 1, _at(1));
+        _answer(progress, 'hi', 1, _at(1));
+        await progress.flush();
+        final (:state, :store, :files) = app(progress);
+        final before = progress.exportJsonl();
 
-      final removed = await state.deleteLanguageData(
-        'te',
-        const LanguageDataChoice(reviews: true),
-      );
+        final removed = await state.deleteLanguageData(
+          'te',
+          const LanguageDataChoice(reviews: true),
+        );
 
-      expect(removed, 1);
-      final kept = await store.list();
-      expect(kept.map((b) => b.kind), <BackupKind>[BackupKind.delete]);
-      final backup = await state.backups.read(kept.single);
-      expect(backup.log, before);
-      expect(progress.log.map((e) => e.cardId), <String>['hi-1001']);
+        expect(removed, 1);
+        final kept = await store.list();
+        expect(kept.map((b) => b.kind), <BackupKind>[BackupKind.delete]);
+        final backup = await state.backups.read(kept.single);
+        expect(backup.log, before);
+        expect(progress.log.map((e) => e.cardId), <String>['hi-1001']);
 
-      await state.backups.restore(backup, fromFile: false);
-      expect(progress.log.map((e) => e.cardId), unorderedEquals(<String>['te-1001', 'hi-1001']));
-      expect(await _cards(db), hasLength(2));
-    });
+        await state.backups.restore(backup, fromFile: false);
+        expect(
+          progress.log.map((e) => e.cardId),
+          unorderedEquals(<String>['te-1001', 'hi-1001']),
+        );
+        expect(await _cards(db), hasLength(2));
+      },
+    );
 
     test('nothing is deleted when the backup cannot be kept', () async {
       final progress = MemoryProgress();
@@ -318,23 +346,31 @@ void main() {
       expect(settings.dailyMinutesFor('hi'), 30);
     });
 
-    test('study time of the deleted days goes, other days and languages stay',
-        () async {
-      final progress = MemoryProgress();
-      final (:state, :store, :files) = app(progress);
-      final settings = state.settings;
-      for (final code in <String>['te', 'hi']) {
-        settings.addTeachTime(code, _at(1), const Duration(minutes: 1));
-        settings.addTeachTime(code, _at(5), const Duration(minutes: 1));
-      }
-      await state.deleteLanguageData(
-        'te',
-        LanguageDataChoice(reviews: true, from: _at(1), to: _at(2)),
-      );
-      expect(settings.teachTimeOn(_at(1), language: 'te'), Duration.zero);
-      expect(settings.teachTimeOn(_at(5), language: 'te'), isNot(Duration.zero));
-      expect(settings.teachTimeOn(_at(1), language: 'hi'), isNot(Duration.zero));
-    });
+    test(
+      'study time of the deleted days goes, other days and languages stay',
+      () async {
+        final progress = MemoryProgress();
+        final (:state, :store, :files) = app(progress);
+        final settings = state.settings;
+        for (final code in <String>['te', 'hi']) {
+          settings.addTeachTime(code, _at(1), const Duration(minutes: 1));
+          settings.addTeachTime(code, _at(5), const Duration(minutes: 1));
+        }
+        await state.deleteLanguageData(
+          'te',
+          LanguageDataChoice(reviews: true, from: _at(1), to: _at(2)),
+        );
+        expect(settings.teachTimeOn(_at(1), language: 'te'), Duration.zero);
+        expect(
+          settings.teachTimeOn(_at(5), language: 'te'),
+          isNot(Duration.zero),
+        );
+        expect(
+          settings.teachTimeOn(_at(1), language: 'hi'),
+          isNot(Duration.zero),
+        );
+      },
+    );
   });
 
   group('the dialog', () {
@@ -342,15 +378,28 @@ void main() {
       usePhone(tester);
       await pumpScreen(
         tester,
-        Scaffold(
-          body: DeleteLanguageDataDialog(name: 'Telugu', today: _now),
+        Builder(
+          builder: (context) => Scaffold(
+            body: TextButton(
+              onPressed: () => showDeleteLanguageDataDialog(
+                context,
+                name: 'Telugu',
+                today: _now,
+              ),
+              child: const Text('open'),
+            ),
+          ),
         ),
       );
+      await tester.tap(find.text('open'));
+      await tester.pumpAndSettle();
     }
 
     bool enabled(WidgetTester tester) =>
         tester
-            .widget<TextButton>(find.byKey(const ValueKey<String>('delete-confirm')))
+            .widget<TextButton>(
+              find.byKey(const ValueKey<String>('delete-confirm')),
+            )
             .onPressed !=
         null;
 
@@ -363,7 +412,12 @@ void main() {
       await tester.pump();
       expect(enabled(tester), isFalse, reason: 'no name yet');
 
-      for (final wrong in <String>['telugu', 'Telug', 'Telugu ', 'Hindustani']) {
+      for (final wrong in <String>[
+        'telugu',
+        'Telug',
+        'Telugu ',
+        'Hindustani',
+      ]) {
         await tester.enterText(
           find.byKey(const ValueKey<String>('delete-name')),
           wrong,
