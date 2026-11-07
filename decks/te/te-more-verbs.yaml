@@ -17,6 +17,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "పాడతాను", reading: "pāḍatānu" }, { word: "పాడండి", reading: "pāḍaṇḍi" }] }
       - { id: "n2", kind: "behaviour", words: [{ word: "-డ-", reading: "-ḍa-" }, { word: "-ుతుంది", reading: "-utundi" }, { word: "పాడతాను", reading: "pāḍatānu" }, { word: "పాడుతుంది", reading: "pāḍutundi" }] }
+    "examples": [
+      {"target": "పిల్లలు పాట పాడతారు.", "reading": "pillalu pāṭa pāḍatāru.", "ipa": "pillalu paːʈa paːɖat̪aːru", "bases": [{"word": "పాడతారు", "base": "పాడడం", "reading": "pāḍaḍaṁ"}]},
+      {"target": "ఆమె జానపద పాటలు పాడుతుంది.", "reading": "āme jānapada pāṭalu pāḍutundi.", "ipa": "aːme dʒaːnapad̪a paːʈalu paːɖut̪und̪i", "bases": [{"word": "పాటలు", "base": "పాట", "reading": "pāṭa"}, {"word": "పాడుతుంది", "base": "పాడడం", "reading": "pāḍaḍaṁ"}]}
+    ]
   - id: "te-0822"
     target: "నవ్వడం"
     reading: "navvaḍaṁ"
@@ -24,6 +28,10 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "నవ్వుతాను", reading: "navvutānu" }, { word: "నవ్వండి", reading: "navvaṇḍi" }] }
+    "examples": [
+      {"target": "అమ్మ కన్నీళ్లు తుడుచుకుని నవ్వింది.", "reading": "amma kannīḷlu tuḍucukuni navvindi.", "ipa": "amma kanniːɭlu t̪uɖutʃukuni naʋʋind̪i", "bases": [{"word": "తుడుచుకుని", "base": "తుడుచుకోవడం", "reading": "tuḍucukōvaḍam"}, {"word": "నవ్వింది", "base": "నవ్వడం", "reading": "navvaḍam"}]},
+      {"target": "ఆమె ఎల్లప్పుడూ నవ్వుతూ ఉంటుంది.", "reading": "āme ellappuḍū navvutū uṇṭundi.", "ipa": "aːme ellappuɖuː naʋʋut̪uː uɳʈund̪i", "bases": [{"word": "నవ్వుతూ", "base": "నవ్వడం", "reading": "navvaḍam"}, {"word": "ఉంటుంది", "base": "ఉండడం", "reading": "uṇḍaḍam"}]}
+    ]
   - id: "te-0823"
     target: "ఏడవడం"
     reading: "ēḍavaḍaṁ"
@@ -40,6 +48,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "కడుగుతాను", reading: "kaḍugutānu" }, { word: "కడగండి", reading: "kaḍagaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "గిన్నెలు కడగడం", reading: "ginnelu kaḍagaḍaṁ" }, { word: "స్నానం చేయడం", reading: "snānaṁ cēyaḍaṁ" }] }
+    "examples": [
+      {"target": "చెంబు కడగండి.", "reading": "cembu kaḍagaṇḍi.", "ipa": "tʃembu kaɖaɡaɳɖi", "bases": [{"word": "కడగండి", "base": "కడగడం", "reading": "kaḍagaḍam"}]},
+      {"target": "నేను గిన్నెలు కడుగుతాను.", "reading": "nēnu ginnelu kaḍugutānu.", "ipa": "neːnu ɡinnelu kaɖuɡut̪aːnu", "bases": [{"word": "గిన్నెలు", "ref": "te-0708"}, {"word": "కడుగుతాను", "base": "కడగడం", "reading": "kaḍagaḍaṁ"}]}
+    ]
   - id: "te-0825"
     target: "తెరవడం"
     reading: "teravaḍaṁ"
@@ -48,6 +60,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "తెరుస్తాను", reading: "terustānu" }, { word: "తెరవండి", reading: "teravaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "మూయడం", reading: "mūyaḍaṁ" }] }
+    "examples": [
+      {"target": "గేటు ఎప్పుడు తెరుస్తారు?", "reading": "gēṭu eppuḍu terustāru?", "ipa": "geːʈu eppɖu ʈerust̪aːru", "bases": [{"word": "తెరుస్తారు", "base": "తెరవడం", "reading": "teravaḍaṁ"}]},
+      {"target": "నా అకౌంట్ తెరిచాను.", "reading": "nā akauṇṭ tericānu.", "ipa": "naː akaunʈ t̪erit͡ʃaːnu", "bases": [{"word": "తెరిచాను", "base": "తెరవడం", "reading": "teravaḍaṁ"}, {"word": "నా", "ref": "te-0593"}]}
+    ]
   - id: "te-0826"
     target: "మూయడం"
     reading: "mūyaḍaṁ"
@@ -56,6 +72,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "మూస్తాను", reading: "mūstānu" }, { word: "మూయండి", reading: "mūyaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "తెరవడం", reading: "teravaḍaṁ" }] }
+    "examples": [
+      {"target": "ఆమె తలుపు మెల్లగా మూసింది.", "reading": "āme talupu mellagā mūsindi.", "ipa": "aːme t̪alupu mellaɡaː muːsind̪i", "bases": [{"word": "మూసింది", "base": "మూయడం", "reading": "mūyaḍam"}]},
+      {"target": "ఆమె వెళ్ళినప్పుడు తలుపు మూసింది.", "reading": "āme veḷḷinappuḍu talupu mūsindi.", "ipa": "aːme ʋeɭɭinappuɖu t̪aluːpu muːsind̪i", "bases": [{"word": "ఆమె", "ref": "te-0596"}, {"word": "వెళ్ళినప్పుడు", "ref": "te-0622"}, {"word": "తలుపు", "ref": "te-0425"}, {"word": "మూసింది", "base": "మూయడం", "reading": "mūyaḍaṁ"}]}
+    ]
   - id: "te-0827"
     target: "ఎక్కడం"
     reading: "ekkaḍaṁ"
@@ -64,6 +84,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ఎక్కుతాను", reading: "ekkutānu" }, { word: "ఎక్కండి", reading: "ekkaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "బస్సు ఎక్కడం", reading: "bassu ekkaḍaṁ" }, { word: "దిగడం", reading: "digaḍaṁ" }] }
+    "examples": [
+      {"target": "బస్సు ఎక్కండి.", "reading": "bassu ekkaṇḍi.", "ipa": "bassu ekkaɳɖi", "bases": [{"word": "ఎక్కండి", "base": "ఎక్కడం", "reading": "ekkaḍaṁ"}]},
+      {"target": "ఏ రైలు ఎక్కాలి?", "reading": "ē railu ekkāli?", "ipa": "eː railu ekkaːli", "bases": [{"word": "ఎక్కాలి", "base": "ఎక్కడం", "reading": "ekkaḍaṁ"}]}
+    ]
   - id: "te-0828"
     target: "దిగడం"
     reading: "digaḍaṁ"
@@ -72,6 +96,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "దిగుతాను", reading: "digutānu" }, { word: "దిగండి", reading: "digaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "ఎక్కడం", reading: "ekkaḍaṁ" }] }
+    "examples": [
+      {"target": "ఇక్కడ దిగండి.", "reading": "ikkaḍa digaṇḍi.", "ipa": "ikkaɖa d̪iɡaɳɖi", "bases": [{"word": "దిగండి", "base": "దిగడం", "reading": "digaḍaṁ"}]},
+      {"target": "ఓవర్‌బ్రిడ్జ్ ఎక్కండి, తర్వాత కిందకి దిగండి.", "reading": "ōvarbriḍj ekkaṇḍi, tarvāta kindaki digaṇḍi.", "ipa": "oːʋarbridʒ ekkaɳɖi t̪arʋaːt̪aː kindaki d̪igaɳɖi", "bases": [{"word": "ఎక్కండి", "ref": "te-0827"}, {"word": "దిగండి", "base": "దిగడం", "reading": "digaḍaṁ"}, {"word": "కిందకి", "ref": "te-0799"}]}
+    ]
   - id: "te-0829"
     target: "పట్టుకోవడం"
     reading: "paṭṭukōvaḍaṁ"
@@ -79,6 +107,10 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "పట్టుకుంటాను", reading: "paṭṭukuṇṭānu" }, { word: "పట్టుకోండి", reading: "paṭṭukōṇḍi" }] }
+    "examples": [
+      {"target": "అతను ట్రోఫీని చేతిలో పట్టుకున్నాడు.", "reading": "atanu ṭrōphīni cētilō paṭṭukunnāḍu.", "ipa": "at̪anu ʈroːpʰiːni tʃeːt̪iloː paʈʈukunnaːɖu", "bases": [{"word": "ట్రోఫీని", "base": "ట్రోఫీ", "reading": "ṭrōphī"}, {"word": "చేతిలో", "base": "చేయి", "reading": "cēyi"}, {"word": "పట్టుకున్నాడు", "base": "పట్టుకోవడం", "reading": "paṭṭukōvaḍaṁ"}]},
+      {"target": "ఆ యోధుడు ఖడ్గం పట్టుకున్నాడు.", "reading": "ā yōdhuḍu khaḍgaṁ paṭṭukunnāḍu.", "ipa": "aː joːd̪ʱuɖu kʰaɖɡam paʈʈukunnaːɖu", "bases": [{"word": "ఆ", "base": "ఆ", "reading": "ā"}, {"word": "పట్టుకున్నాడు", "base": "పట్టుకోవడం", "reading": "paṭṭukōvaḍaṁ"}]}
+    ]
   - id: "te-0830"
     target: "పెట్టడం"
     reading: "peṭṭaḍaṁ"
@@ -88,6 +120,10 @@ cards:
       - { id: "n1", kind: "behaviour", words: [{ word: "పెడతాను", reading: "peḍatānu" }, { word: "పెట్టండి", reading: "peṭṭaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "అన్నం పెట్టడం", reading: "annaṁ peṭṭaḍaṁ" }] }
       - { id: "n3", kind: "behaviour", words: [{ word: "-ట్-", reading: "-ṭ-" }, { word: "-త-", reading: "-ta-" }, { word: "పెట్టడం", reading: "peṭṭaḍaṁ" }, { word: "పెడతాను", reading: "peḍatānu" }] }
+    "examples": [
+      {"target": "ఖర్చు పెట్టడం", "reading": "kharcu peṭṭaḍaṁ", "ipa": "kʰartʃu peʈʈaɖam", "bases": [{"word": "ఖర్చు", "base": "ఖర్చు", "reading": "kharcu"}, {"word": "పెట్టడం", "base": "పెట్టడం", "reading": "peṭṭaḍaṁ"}]},
+      {"target": "మొదలు పెట్టడం", "reading": "modalu peṭṭaḍaṁ", "ipa": "mod̪alu peʈʈaɖam", "bases": [{"word": "మొదలు", "base": "మొదలు", "reading": "modalu"}, {"word": "పెట్టడం", "base": "పెట్టడం", "reading": "peṭṭaḍaṁ"}]}
+    ]
   - id: "te-0831"
     target: "ఉంచడం"
     reading: "uñcaḍaṁ"
@@ -95,6 +131,10 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ఉంచుతాను", reading: "uñcutānu" }, { word: "ఉంచండి", reading: "uñcaṇḍi" }] }
+    "examples": [
+      {"target": "పిల్లలకు ప్రమాదకరమైన వస్తువులను దూరంగా ఉంచండి.", "reading": "pillalaku pramādakaramaina vastuvulanu dūraṅgā uñcaṇḍi.", "ipa": "pillalaku pramaːd̪akaramaina ʋast̪uʋulanu d̪uːraŋɡaː uɲtʃaɳɖi", "bases": [{"word": "పిల్లలకు", "base": "పిల్లవాడు", "reading": "pillavāḍu"}, {"word": "ప్రమాదకరమైన", "base": "ప్రమాదకరం", "reading": "pramādakaraṁ"}, {"word": "వస్తువులను", "base": "వస్తువు", "reading": "vastuvu"}, {"word": "దూరంగా", "base": "దూరం", "reading": "dūraṁ"}, {"word": "ఉంచండి", "base": "ఉంచడం", "reading": "uñcaḍaṁ"}]},
+      {"target": "మీ భద్రత కోసం తలుపు మూసి ఉంచండి.", "reading": "mī bhadrata kōsaṁ talupu mūsi uñcaṇḍi.", "ipa": "miː bʱad̪rat̪a koːsam t̪alupu muːsi uɲtʃaɳɖi", "bases": [{"word": "మీ", "base": "మీరు", "reading": "mīru"}, {"word": "కోసం", "base": "కోసం", "reading": "kōsaṁ"}, {"word": "తలుపు", "base": "తలుపు", "reading": "talupu"}, {"word": "మూసి", "base": "మూసివేయడం", "reading": "mūsivēyaḍaṁ"}, {"word": "ఉంచండి", "base": "ఉంచడం", "reading": "uñcaḍaṁ"}]}
+    ]
   - id: "te-0832"
     target: "నేర్పడం"
     reading: "nērpaḍaṁ"
@@ -103,6 +143,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "నేర్పుతాను", reading: "nērputānu" }, { word: "నేర్పండి", reading: "nērpaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "నేర్చుకోవడం", reading: "nērcukōvaḍaṁ" }] }
+    "examples": [
+      {"target": "నాకు చదరంగం నేర్పుతావా?", "reading": "nāku cadaraṅgaṁ nērputāvā?", "ipa": "naːku tʃad̪araŋɡam neːrput̪aːʋaː", "bases": [{"word": "నాకు", "base": "నేను", "reading": "nēnu"}, {"word": "నేర్పుతావా", "base": "నేర్పడం", "reading": "nērpaḍaṁ"}]},
+      {"target": "పాఠశాలలో చిత్రలేఖనం నేర్పిస్తారు.", "reading": "pāṭhaśālalō citralēkhanaṁ nērpistāru.", "ipa": "paːʈʰaʃaːlaloː tʃit̪raleːkʰanam neːrpist̪aːru", "bases": [{"word": "పాఠశాలలో", "base": "పాఠశాల", "reading": "pāṭhaśāla"}, {"word": "నేర్పిస్తారు", "base": "నేర్పడం", "reading": "nērpaḍaṁ"}]}
+    ]
   - id: "te-0833"
     target: "మర్చిపోవడం"
     reading: "marcipōvaḍaṁ"
@@ -111,6 +155,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "మర్చిపోతాను", reading: "marcipōtānu" }, { word: "మర్చిపోండి", reading: "marcipōṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "మరిచిపోవడం", reading: "maricipōvaḍaṁ" }] }
+    "examples": [
+      {"target": "పాస్‌వర్డ్ మర్చిపోయాను.", "reading": "pāsvarḍ marcipōyānu.", "ipa": "paːsʋarɖ martʃipoːjaːnu", "bases": [{"word": "పాస్‌వర్డ్", "base": "పాస్‌వర్డ్", "reading": "pāsvarḍ"}, {"word": "మర్చిపోయాను", "base": "మర్చిపోవడం", "reading": "marcipōvaḍam"}]},
+      {"target": "యూజర్‌నేమ్ మర్చిపోయాను.", "reading": "yūjarnēm marcipōyānu.", "ipa": "juːdʒarneːm mart͡ʃipoːjaːnu", "bases": [{"word": "మర్చిపోయాను", "base": "మర్చిపోవడం", "reading": "marcipōvaḍaṁ"}]}
+    ]
   - id: "te-0834"
     target: "ఆలోచించడం"
     reading: "ālōciñcaḍaṁ"
@@ -119,6 +167,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ఆలోచిస్తాను", reading: "ālōcistānu" }, { word: "ఆలోచించండి", reading: "ālōciñcaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "ఆలోచన", reading: "ālōcana" }] }
+    "examples": [
+      {"target": "విమర్శించే ముందు అందరూ ఆలోచించాలి.", "reading": "vimarśiñcē mundu andarū ālōciñcāli.", "ipa": "ʋimarʃiɲtʃeː mund̪u and̪aruː aːloːtʃiɲtʃaːli.", "bases": [{"word": "విమర్శించే", "base": "విమర్శించడం", "reading": "vimarśiñcaḍaṁ"}, {"word": "అందరూ", "base": "అందరు", "reading": "andaru"}, {"word": "ఆలోచించాలి", "base": "ఆలోచించడం", "reading": "ālōciñcaḍaṁ"}]},
+      {"target": "పిల్లల భవిష్యత్తు గురించి తల్లిదండ్రులు ఆలోచిస్తారు.", "reading": "pillala bhaviṣyattu guriñci tallidaṇḍrulu ālōcistāru.", "ipa": "pillala bʱaʋiʂjat̪t̪u ɡuriɲtʃi t̪allid̪aɳɖrulu aːloːtʃist̪aːru.", "bases": [{"word": "పిల్లల", "base": "పిల్ల", "reading": "pilla"}, {"word": "ఆలోచిస్తారు", "base": "ఆలోచించడం", "reading": "ālōciñcaḍam"}, {"word": "గురించి", "base": "గురించి", "reading": "guriñci"}]}
+    ]
   - id: "te-0835"
     target: "వెతకడం"
     reading: "vetakaḍaṁ"
@@ -127,6 +179,9 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "వెతుకుతాను", reading: "vetukutānu" }, { word: "వెతకండి", reading: "vetakaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "వెదకడం", reading: "vedakaḍaṁ" }] }
+    "examples": [
+      {"target": "నేను తాళం చెవి వెతుకుతాను.", "reading": "nēnu tāḷaṁ cevi vetukutānu.", "ipa": "neːnu t̪aːɭam tʃeʋi ʋet̪ukut̪aːnu", "bases": [{"word": "తాళం", "ref": "te-0876"}, {"word": "చెవి", "ref": "te-0733"}, {"word": "వెతుకుతాను", "base": "వెతకడం", "reading": "vetakaḍaṁ"}]}
+    ]
   - id: "te-0836"
     target: "తీయడం"
     reading: "tīyaḍaṁ"
@@ -135,6 +190,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "తీస్తాను", reading: "tīstānu" }, { word: "తీయండి", reading: "tīyaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "ఫోటో తీయడం", reading: "fōṭō tīyaḍaṁ" }] }
+    "examples": [
+      {"target": "ఫోటోలు తీయకండి.", "reading": "fōṭōlu tīyakaṇḍi.", "ipa": "foːʈoːlu t̪iːjakaɳɖi", "bases": [{"word": "ఫోటోలు", "ref": "te-0895"}, {"word": "తీయకండి", "base": "తీయడం", "reading": "tīyaḍaṁ"}]},
+      {"target": "ఇక్కడ ఫోటోలు తీయకూడదు.", "reading": "ikkaḍa fōṭōlu tīyakūḍadu.", "ipa": "ikkaɖa foːʈoːlu t̪iːjakuːɖad̪u", "bases": [{"word": "ఫోటోలు", "ref": "te-0895"}, {"word": "తీయకూడదు", "base": "తీయడం", "reading": "tīyaḍaṁ"}]}
+    ]
   - id: "te-0837"
     target: "వేయడం"
     reading: "vēyaḍaṁ"
@@ -143,6 +202,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "వేస్తాను", reading: "vēstānu" }, { word: "వేయండి", reading: "vēyaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "మీటర్ వేయండి", reading: "mīṭar vēyaṇḍi" }] }
+    "examples": [
+      {"target": "ఏసీ వేయండి.", "reading": "ēsī vēyaṇḍi.", "ipa": "eːsiː ʋeːjaɳɖi", "bases": [{"word": "వేయండి", "base": "వేయడం", "reading": "vēyaḍaṁ"}]},
+      {"target": "తూకం వేయండి.", "reading": "tūkaṁ vēyaṇḍi.", "ipa": "t̪uːkam ʋeːjaɳɖi", "bases": [{"word": "వేయండి", "base": "వేయడం", "reading": "vēyaḍaṁ"}]}
+    ]
   - id: "te-0838"
     target: "కొట్టడం"
     reading: "koṭṭaḍaṁ"
@@ -152,6 +215,10 @@ cards:
       - { id: "n1", kind: "behaviour", words: [{ word: "కొడతాను", reading: "koḍatānu" }, { word: "కొట్టండి", reading: "koṭṭaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "గంట కొట్టడం", reading: "gaṇṭa koṭṭaḍaṁ" }] }
       - { id: "n3", kind: "behaviour", words: [{ word: "-ట్-", reading: "-ṭ-" }, { word: "-త-", reading: "-ta-" }, { word: "కొట్టడం", reading: "koṭṭaḍaṁ" }, { word: "కొడతాను", reading: "koḍatānu" }] }
+    "examples": [
+      {"target": "బోర్ కొడుతోంది", "reading": "bōr koḍutōndi", "ipa": "boːr koɖut̪oːnd̪i", "bases": [{"word": "బోర్", "base": "బోర్", "reading": "bōr"}, {"word": "కొడుతోంది", "base": "కొట్టడం", "reading": "koṭṭaḍaṁ"}]},
+      {"target": "ఎవరో హారన్ కొట్టారు.", "reading": "evarō hāran koṭṭāru.", "ipa": "eʋaroː haːran koʈʈaːru", "bases": [{"word": "ఎవరో", "ref": "te-0161"}, {"word": "కొట్టారు", "base": "కొట్టడం", "reading": "koṭṭaḍaṁ"}]}
+    ]
   - id: "te-0839"
     target: "పడడం"
     reading: "paḍaḍaṁ"
@@ -160,6 +227,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "పడతాను", reading: "paḍatānu" }, { word: "పడండి", reading: "paḍaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "ఎంత సేపు పడుతుంది", reading: "enta sēpu paḍutundi" }] }
+    "examples": [
+      {"target": "టెన్షన్ పడకు", "reading": "ṭenṣan paḍaku", "ipa": "ʈenʂan paɖaku", "bases": [{"word": "టెన్షన్", "base": "టెన్షన్", "reading": "ṭenṣan"}, {"word": "పడకు", "base": "పడడం", "reading": "paḍaḍam"}]},
+      {"target": "ఎంత సేపు పడుతుంది?", "reading": "enta sēpu paḍutundi?", "ipa": "ent̪a seːpu paɖut̪und̪i", "bases": [{"word": "సేపు", "base": "సేపు", "reading": "sēpu"}, {"word": "పడుతుంది", "base": "పడడం", "reading": "paḍaḍaṁ"}]}
+    ]
   - id: "te-0840"
     target: "ఆపడం"
     reading: "āpaḍaṁ"
@@ -168,6 +239,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ఆపుతాను", reading: "āputānu" }, { word: "ఆపండి", reading: "āpaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "ఆగడం", reading: "āgaḍaṁ" }] }
+    "examples": [
+      {"target": "ఇక్కడ ఆపండి.", "reading": "ikkaḍa āpaṇḍi.", "ipa": "ikkaɖa aːpaɳɖi", "bases": [{"word": "ఆపండి", "base": "ఆపడం", "reading": "āpaḍaṁ"}]},
+      {"target": "రక్తస్రావం ఆపడానికి ఈ గుడ్డను వాడండి.", "reading": "raktasrāvaṁ āpaḍāniki ī guḍḍanu vāḍaṇḍi.", "ipa": "rakt̪asraːʋam aːpaɖaːniki iː ɡuɖɖanu ʋaːɖaɳɖi", "bases": [{"word": "ఆపడానికి", "base": "ఆపడం", "reading": "āpaḍaṁ"}, {"word": "ఈ", "base": "ఈ", "reading": "ī"}, {"word": "గుడ్డను", "base": "గుడ్డ", "reading": "guḍḍa"}, {"word": "వాడండి", "base": "వాడడం", "reading": "vāḍaḍaṁ"}]}
+    ]
   - id: "te-0841"
     target: "తిరగడం"
     reading: "tiragaḍaṁ"
@@ -176,6 +251,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "తిరుగుతాను", reading: "tirugutānu" }, { word: "తిరగండి", reading: "tiragaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "ఊరు తిరగడం", reading: "ūru tiragaḍaṁ" }] }
+    "examples": [
+      {"target": "సైకిల్ చక్రం తిరుగుతోంది.", "reading": "saikil cakraṁ tirugutōndi.", "ipa": "saikil tʃakram t̪iruɡut̪oːnd̪i", "bases": [{"word": "తిరుగుతోంది", "base": "తిరగడం", "reading": "tiragaḍaṁ"}]},
+      {"target": "వరుడి ఊరేగింపు ఊరంతా తిరిగింది.", "reading": "varuḍi ūrēgimpu ūrantā tirigindi.", "ipa": "ʋaruɖi uːreːɡimpu uːrant̪aː t̪iriɡind̪i", "bases": [{"word": "వరుడి", "base": "వరుడు", "reading": "varuḍu"}, {"word": "ఊరంతా", "base": "ఊరు", "reading": "ūru"}, {"word": "తిరిగింది", "base": "తిరగడం", "reading": "tiragaḍam"}]}
+    ]
   - id: "te-0842"
     target: "చూపించడం"
     reading: "cūpiñcaḍaṁ"
@@ -184,6 +263,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "చూపిస్తాను", reading: "cūpistānu" }, { word: "చూపించండి", reading: "cūpiñcaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "చూడడం", reading: "cūḍaḍaṁ" }] }
+    "examples": [
+      {"target": "పత్రాలు చూపించండి.", "reading": "patrālu cūpiñcaṇḍi.", "ipa": "pat̪raːlu tʃuːpiɲtʃaɳɖi", "bases": [{"word": "పత్రాలు", "ref": "te-2909"}, {"word": "చూపించండి", "base": "చూపించడం", "reading": "cūpiñcaḍaṁ"}]},
+      {"target": "పీఎన్ఆర్ చూపించండి.", "reading": "pīenār cūpiñcaṇḍi.", "ipa": "piːenaːr tʃuːpiɲtʃaɳɖi", "bases": [{"word": "చూపించండి", "base": "చూపించడం", "reading": "cūpiñcaḍaṁ"}]}
+    ]
   - id: "te-0843"
     target: "పరిగెత్తడం"
     reading: "parigettaḍaṁ"
@@ -191,6 +274,9 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "పరిగెత్తుతాను", reading: "parigettutānu" }, { word: "పరిగెత్తండి", reading: "parigettaṇḍi" }] }
+    "examples": [
+      {"target": "నేను వేగంగా పరిగెత్తగలను.", "reading": "nēnu vēgaṅgā parigettagalanu.", "ipa": "neːnu ʋeːɡaŋɡaː pariɡet̪t̪aɡalanu", "bases": [{"word": "పరిగెత్తగలను", "base": "పరిగెత్తడం", "reading": "parigettaḍaṁ"}]}
+    ]
   - id: "te-0844"
     target: "నమ్మడం"
     reading: "nammaḍaṁ"
@@ -199,6 +285,9 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "నమ్ముతాను", reading: "nammutānu" }, { word: "నమ్మండి", reading: "nammaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "నమ్మకం", reading: "nammakaṁ" }] }
+    "examples": [
+      {"target": "నిజంగా నమ్మలేకపోతున్నాను.", "reading": "nijaṅgā nammalēkapōtunnānu.", "ipa": "nidʒaŋɡaː nammaleːkapoːt̪unnaːnu", "bases": [{"word": "నమ్మలేకపోతున్నాను", "base": "నమ్మడం", "reading": "nammaḍam"}]}
+    ]
   - id: "te-0845"
     target: "ఎగరడం"
     reading: "egaraḍaṁ"
@@ -236,6 +325,9 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "పిలుస్తాను", reading: "pilustānu" }, { word: "పిలవండి", reading: "pilavaṇḍi" }] }
       - { id: "n2", kind: "usage", words: [{ word: "భోజనానికి పిలవడం", reading: "bhōjanāniki pilavaḍaṁ" }] }
+    "examples": [
+      {"target": "గుండెపోటు వచ్చినప్పుడు వెంటనే అంబులెన్స్ పిలవండి.", "reading": "guṇḍepōṭu vaccinappuḍu veṇṭanē ambulens pilavaṇḍi.", "ipa": "ɡuɳɖepoːʈu ʋatʃtʃinappuɖu ʋeɳʈaneː ambulens pilaʋaɳɖi", "bases": [{"word": "వచ్చినప్పుడు", "base": "రావడం", "reading": "rāvaḍaṁ"}, {"word": "వెంటనే", "base": "వెంటనే", "reading": "veṇṭanē"}, {"word": "అంబులెన్స్", "base": "అంబులెన్స్", "reading": "ambulens"}, {"word": "పిలవండి", "base": "పిలవడం", "reading": "pilavaḍaṁ"}]}
+    ]
   - id: "te-0850"
     target: "కలపడం"
     reading: "kalapaḍaṁ"
@@ -243,6 +335,9 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "కలుపుతాను", reading: "kaluputānu" }, { word: "కలపండి", reading: "kalapaṇḍi" }] }
+    "examples": [
+      {"target": "వివాహం రెండు కుటుంబాలను కలుపుతుంది.", "reading": "vivāhaṁ reṇḍu kuṭumbālanu kaluputundi.", "ipa": "ʋiʋaːham reɳɖu kuʈumbaːlanu kaluput̪und̪i", "bases": [{"word": "కుటుంబాలను", "base": "కుటుంబం", "reading": "kuṭumbam"}, {"word": "కలుపుతుంది", "base": "కలపడం", "reading": "kalapaḍam"}]}
+    ]
   - id: "te-0851"
     target: "నింపడం"
     reading: "nimpaḍaṁ"
@@ -250,6 +345,10 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "నింపుతాను", reading: "nimputānu" }, { word: "నింపండి", reading: "nimpaṇḍi" }] }
+    "examples": [
+      {"target": "ఈ ఫారం నింపడం తప్పనిసరి.", "reading": "ī phāraṁ nimpaḍaṁ tappanisari.", "ipa": "iː pʰaːram nimpaɖam t̪appanisari.", "bases": []},
+      {"target": "మీ టికెట్ రద్దుచేయాలంటే ఈ ఫారం నింపండి.", "reading": "mī ṭikeṭ radducēyālaṁṭē ī phāraṁ nimpaṇḍi.", "ipa": "miː ʈikeʈ rad̪d̪utʃeːjaːlaɳʈeː iː pʰaːram nimpaɳɖi", "bases": [{"word": "మీ", "base": "మీరు", "reading": "mī"}, {"word": "టికెట్", "base": "టికెట్", "reading": "ṭikeṭ"}, {"word": "రద్దుచేయాలంటే", "base": "రద్దుచేయడం", "reading": "radducēyālaṁṭē"}, {"word": "ఈ", "base": "ఈ", "reading": "ī"}, {"word": "ఫారం", "base": "ఫారం", "reading": "phāraṁ"}, {"word": "నింపండి", "base": "నింపడం", "reading": "nimpaṇḍi"}]}
+    ]
   - id: "te-0852"
     target: "తుడవడం"
     reading: "tuḍavaḍaṁ"
@@ -257,3 +356,7 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "తుడుస్తాను", reading: "tuḍustānu" }, { word: "తుడవండి", reading: "tuḍavaṇḍi" }] }
+    "examples": [
+      {"target": "గోడ తుడవండి.", "reading": "gōḍa tuḍavaṇḍi.", "ipa": "ɡoːɖa tuɖaʋaɳɖi", "bases": [{"word": "తుడవండి", "base": "తుడవడం", "reading": "tuḍavaḍam"}]},
+      {"target": "రబ్బరుతో పొరపాటు తుడిచాను.", "reading": "rabbarutō porapāṭu tuḍicānu.", "ipa": "rabbarut̪oː porapaːʈu t̪uɖitʃaːnu", "bases": [{"word": "రబ్బరుతో", "base": "రబ్బరు", "reading": "rabbaru"}, {"word": "తుడిచాను", "base": "తుడవడం", "reading": "tuḍavaḍam"}, {"word": "పొరపాటు", "base": "పొరపాటు", "reading": "porapāṭu"}]}
+    ]

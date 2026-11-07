@@ -16,6 +16,9 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "నేను", reading: "nēnu" }, { word: "తింటాను", reading: "tiṇṭānu" }] }
+    "examples": [
+      {"target": "నాకు అర్థమైంది.", "reading": "nāku arthamaindi.", "ipa": "naːku art̪ʰamaind̪i", "bases": [{"word": "నాకు", "base": "నేను", "reading": "nēnu"}, {"word": "అర్థమైంది", "base": "అర్థం", "reading": "artham"}]}
+    ]
   - id: "te-0594"
     target: "నువ్వు"
     reading: "nuvvu"
@@ -24,6 +27,9 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "మీరు", reading: "mīru" }, { word: "నీవు", reading: "nīvu" }] }
+    "examples": [
+      {"target": "నీ నంబర్ ఏంటి?", "reading": "nī nambar ēṇṭi?", "ipa": "niː nambar eːɳʈi", "bases": [{"word": "నంబర్", "base": "నంబర్", "reading": "nambar"}, {"word": "నీ", "base": "నువ్వు", "reading": "nuvvu"}, {"word": "ఏంటి", "base": "ఏమిటి", "reading": "ēmiṭi"}]}
+    ]
   - ref: "te-0136"
   - id: "te-0595"
     target: "అతను"
@@ -33,6 +39,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ఆయన", reading: "āyana" }] }
+    "examples": [
+      {"target": "అతను అందగాడు.", "reading": "atanu andagāḍu.", "ipa": "at̪anu and̪aɡaːɖu", "bases": []},
+      {"target": "అతను వచ్చాడు.", "reading": "atanu vaccāḍu.", "ipa": "at̪anu ʋatʃtʃaːɖu", "bases": [{"word": "అతను", "base": "అతను", "reading": "atanu"}, {"word": "వచ్చాడు", "ref": "te-0623"}]}
+    ]
   - id: "te-0596"
     target: "ఆమె"
     reading: "āme"
@@ -40,6 +50,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ఆవిడ", reading: "āviḍa" }] }
+    "examples": [
+      {"target": "ఆమె అందగత్తె.", "reading": "āme andagatte.", "ipa": "aːme and̪aɡat̪t̪e", "bases": []},
+      {"target": "ఆమె బక్కచిక్కింది.", "reading": "āme bakkacikkindi.", "ipa": "aːme bakkatʃikkind̪i", "bases": [{"word": "బక్కచిక్కింది", "base": "బక్కచిక్కిన", "reading": "bakkacikkina"}]}
+    ]
   - id: "te-0597"
     target: "ఆయన"
     reading: "āyana"
@@ -47,6 +61,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ఆయన వచ్చారు", reading: "āyana vaccāru" }] }
+    "examples": [
+      {"target": "ఆయన ఎవరు?", "reading": "āyana evaru?", "ipa": "aːjana eʋaru", "bases": [{"word": "ఆయన", "base": "ఆయన", "reading": "āyana"}]},
+      {"target": "ఆయన ఇప్పటికే వెళ్ళిపోయాడు.", "reading": "āyana ippaṭikē veḷḷipōyāḍu.", "ipa": "aːjana ippaʈikeː ʋeɭɭipoːjaːɖu", "bases": []}
+    ]
   - id: "te-0598"
     target: "ఆవిడ"
     reading: "āviḍa"
@@ -65,6 +83,10 @@ cards:
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "అది", reading: "adi" }] }
       - { id: "pair", kind: "pair", ref: "te-0600", words: [{ word: "అది", reading: "adi" }, { word: "ఇది", reading: "idi" }] }
+    "examples": [
+      {"target": "అది వచ్చింది.", "reading": "adi vaccindi.", "ipa": "ad̪i ʋatʃtʃind̪i", "bases": [{"word": "అది", "base": "అది", "reading": "adi"}, {"word": "వచ్చింది", "ref": "te-0623"}]},
+      {"target": "అది అతని బలహీనత.", "reading": "adi atani balahīnata.", "ipa": "ad̪i at̪ani balahiːnat̪a", "bases": [{"word": "అతని", "base": "అతడు", "reading": "ataḍu"}]}
+    ]
   - id: "te-0600"
     target: "ఇది"
     reading: "idi"
@@ -74,6 +96,10 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "ఇది ఏమిటి", reading: "idi ēmiṭi" }] }
       - { id: "pair", kind: "pair", ref: "te-0599", words: [{ word: "ఇది", reading: "idi" }, { word: "అది", reading: "adi" }] }
+    "examples": [
+      {"target": "ఇది ఏమిటి?", "reading": "idi ēmiṭi?", "ipa": "id̪i eːmiʈi", "bases": [{"word": "ఇది", "base": "ఇది", "reading": "idi"}]},
+      {"target": "ఇది తిను.", "reading": "idi tinu.", "ipa": "id̪i t̪inu", "bases": [{"word": "ఇది", "base": "ఇది", "reading": "idi"}, {"word": "తిను", "ref": "te-0624"}]}
+    ]
   - id: "te-0601"
     target: "వాళ్ళు"
     reading: "vāḷḷu"
@@ -83,6 +109,10 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "వారు", reading: "vāru" }] }
       - { id: "pair", kind: "pair", ref: "te-0602", words: [{ word: "వాళ్ళు", reading: "vāḷḷu" }, { word: "వీళ్ళు", reading: "vīḷḷu" }] }
+    "examples": [
+      {"target": "వాళ్ళు వచ్చారు.", "reading": "vāḷḷu vaccāru.", "ipa": "ʋaːɭɭu ʋatʃtʃaːru", "bases": [{"word": "వాళ్ళు", "base": "వాళ్ళు", "reading": "vāḷḷu"}, {"word": "వచ్చారు", "ref": "te-0623"}]},
+      {"target": "వాళ్ళు ఇల్లు కడతారు.", "reading": "vāḷḷu illu kaḍatāru.", "ipa": "ʋaːɭɭu illu kaɖat̪aːru", "bases": [{"word": "కడతారు", "base": "కట్టడం", "reading": "kaṭṭaḍam"}]}
+    ]
   - id: "te-0602"
     target: "వీళ్ళు"
     reading: "vīḷḷu"
@@ -92,6 +122,9 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "వాళ్ళు", reading: "vāḷḷu" }] }
       - { id: "pair", kind: "pair", ref: "te-0601", words: [{ word: "వీళ్ళు", reading: "vīḷḷu" }, { word: "వాళ్ళు", reading: "vāḷḷu" }] }
+    "examples": [
+      {"target": "వీళ్ళు మా పిల్లలు.", "reading": "vīḷḷu mā pillalu.", "ipa": "ʋiːɭɭu maː pillalu", "bases": [{"word": "మా", "ref": "te-0128"}]}
+    ]
   - id: "te-0603"
     target: "వారు"
     reading: "vāru"
@@ -108,6 +141,9 @@ cards:
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "అవి పుస్తకాలు", reading: "avi pustakālu" }] }
       - { id: "pair", kind: "pair", ref: "te-0605", words: [{ word: "అవి", reading: "avi" }, { word: "ఇవి", reading: "ivi" }] }
+    "examples": [
+      {"target": "అవి ఎవరి కుర్చీలు?", "reading": "avi evari kurcīlu?", "ipa": "aʋi eʋari kurtʃiːlu", "bases": [{"word": "కుర్చీలు", "ref": "te-0431"}]}
+    ]
   - id: "te-0605"
     target: "ఇవి"
     reading: "ivi"
@@ -117,6 +153,9 @@ cards:
     notes:
       - { id: "n1", kind: "usage" }
       - { id: "pair", kind: "pair", ref: "te-0604", words: [{ word: "ఇవి", reading: "ivi" }, { word: "అవి", reading: "avi" }] }
+    "examples": [
+      {"target": "ఇవి ఒకే పుస్తకాలు.", "reading": "ivi oke pustakālu.", "ipa": "iʋi oke pust̪aːkaːlu", "bases": [{"word": "పుస్తకాలు", "ref": "te-0865"}]}
+    ]
   - id: "te-0606"
     target: "అందరూ"
     reading: "andarū"
@@ -124,6 +163,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "అందరూ వచ్చారు", reading: "andarū vaccāru" }] }
+    "examples": [
+      {"target": "అందరూ క్షేమంగా బయటపడతారు.", "reading": "andarū kṣēmaṅgā bayaṭapaḍatāru.", "ipa": "and̪aruː kʂeːmaŋɡaː bajaʈapaɖat̪aːru", "bases": [{"word": "బయటపడతారు", "base": "బయటపడడం", "reading": "bayaṭapaḍaḍaṁ"}, {"word": "క్షేమంగా", "base": "క్షేమం", "reading": "kṣēmaṁ"}]},
+      {"target": "పెళ్ళికి అందరూ వచ్చారు.", "reading": "peḷḷiki andarū vaccāru.", "ipa": "peɭɭiki and̪aruː ʋatʃtʃaːru", "bases": [{"word": "పెళ్ళికి", "base": "పెళ్ళి", "reading": "peḷḷi"}, {"word": "వచ్చారు", "base": "రావడం", "reading": "rāvaḍam"}]}
+    ]
   - id: "te-0607"
     target: "ఈ"
     reading: "ī"
@@ -131,6 +174,10 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ఈ", reading: "ī" }, { word: "ఈ ఇల్లు", reading: "ī illu" }] }
+    "examples": [
+      {"target": "ఈ ఉంగరం వెండిది.", "reading": "ī uṅgaraṁ veṇḍidi.", "ipa": "iː uŋɡaram ʋeɳɖid̪i", "bases": [{"word": "వెండిది", "base": "వెండి", "reading": "veṇḍi"}]},
+      {"target": "ఈ ఎంట్రన్స్ మూసేశారు.", "reading": "ī eṇṭrans mūsēśāru.", "ipa": "iː eɳʈrans muːseːʃaːru", "bases": [{"word": "మూసేశారు", "base": "మూసివేయడం", "reading": "mūsivēyaḍaṁ"}]}
+    ]
   - id: "te-0608"
     target: "ఆ"
     reading: "ā"
@@ -145,6 +192,10 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ఏ ఇల్లు", reading: "ē illu" }, { word: "ఏది", reading: "ēdi" }] }
+    "examples": [
+      {"target": "ఏ ప్లాట్‌ఫామ్?", "reading": "ē plāṭphām?", "ipa": "eː pl̪aːʈpʰaːm", "bases": [{"word": "ప్లాట్‌ఫామ్", "ref": "te-2501"}]},
+      {"target": "ఏంటి సంగతి?", "reading": "ēṇṭi saṅgati?", "ipa": "eːɳʈi saŋɡat̪i", "bases": [{"word": "సంగతి", "base": "సంగతి", "reading": "saṅgati"}]}
+    ]
   - id: "te-0610"
     target: "ఎవరి"
     reading: "evari"
@@ -152,6 +203,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "నా", reading: "nā" }, { word: "నీ", reading: "nī" }, { word: "ఎవరి ఇల్లు", reading: "evari illu" }] }
+    "examples": [
+      {"target": "అది ఎవరి ఇల్లు?", "reading": "adi evari illu?", "ipa": "ad̪i eʋari illu", "bases": []},
+      {"target": "ఈ అడవి సంరక్షణ ఎవరి బాధ్యత?", "reading": "ī aḍavi samrakṣaṇa evari bādhyata?", "ipa": "iː aɖaʋi samrakʂaɳa eʋari baːd̪ʱjat̪a", "bases": []}
+    ]
   - id: "te-0611"
     target: "ఎవరైనా"
     reading: "evarainā"
@@ -159,6 +214,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ఎవరు", reading: "evaru" }, { word: "ఎవరైనా వచ్చారా", reading: "evarainā vaccārā" }] }
+    "examples": [
+      {"target": "ఈ సీటులో ఎవరైనా ఉన్నారా?", "reading": "ī sīṭulō evarainā unnārā?", "ipa": "iː siːʈuloː eʋarainaː unnaːraː", "bases": [{"word": "సీటులో", "ref": "te-0281"}, {"word": "ఉన్నారా", "ref": "te-0633"}]},
+      {"target": "ఎవరైనా ఆపదలో ఉంటే ఫోన్ చేయండి.", "reading": "evarainā āpadalō uṇṭē phōn cēyaṇḍi.", "ipa": "eʋarainaː aːpad̪aloː uɳʈeː pʰoːn tʃeːjaɳɖi", "bases": [{"word": "ఎవరైనా", "base": "ఎవరైనా", "reading": "evarainā"}, {"word": "ఆపదలో", "base": "ఆపద", "reading": "āpada"}, {"word": "ఉంటే", "base": "ఉండడం", "reading": "uṇḍaḍaṁ"}, {"word": "ఫోన్", "base": "ఫోన్", "reading": "phōn"}, {"word": "చేయండి", "base": "చేయడం", "reading": "cēyaḍaṁ"}]}
+    ]
 
   - "id": "te-6503"
     "kind": "set"

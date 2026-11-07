@@ -11,6 +11,10 @@ cards:
   "te-0360":
     native: "help"
     alt_native: ["assistance"]
+    "examples": {
+      "సహాయం చేయండి!": {"native": "Please help!", "bases": {}},
+      "సహాయం చేయడం": {"native": "to help", "bases": {}}
+    }
   "te-0361":
     native: "Please help!"
     alt_native: ["Please help me!", "Help, please!"]
@@ -25,11 +29,23 @@ cards:
     alt_native: ["the police"]
     notes:
       "n1": "The emergency number in India is 112."
+    "examples": {
+      "పోలీసులకు ఫోన్ చేయండి!": {"native": "Call the police!", "bases": {"పోలీసులకు": "police", "ఫోన్": "phone", "చేయండి": "to do; to make"}},
+      "పోలీసులు నేరస్థుడిని పట్టుకున్నారు.": {"native": "The police caught the criminal.", "bases": {}}
+    }
   "te-0365":
     native: "doctor"
     alt_native: ["physician"]
+    "examples": {
+      "డాక్టర్ రోగిని పరీక్షిస్తాడు.": {"native": "The doctor checks the patient.", "bases": {}},
+      "నేను డాక్టర్‌ని చూడాలి.": {"native": "I need to see a doctor.", "bases": {"డాక్టర్‌ని": "doctor"}}
+    }
   "te-0366":
     native: "hospital"
+    "examples": {
+      "ఆసుపత్రి బస్టాండ్ దగ్గర ఉంది.": {"native": "The hospital is near the bus stand.", "bases": {}},
+      "ఈ బీమాలో ఆసుపత్రి ఖర్చు కూడా ఉంది.": {"native": "This insurance also covers hospital costs.", "bases": {}}
+    }
   "te-0367":
     native: "medicine"
     alt_native: ["medication", "medicines"]
@@ -38,6 +54,10 @@ cards:
     alt_native: ["ache"]
     notes:
       "n1": "తలనొప్పి (talanoppi), headache."
+    "examples": {
+      "ఇక్కడ నొప్పిగా ఉంది.": {"native": "It hurts here.", "bases": {"నొప్పిగా": "pain"}},
+      "ఈ నొప్పిని నేను ఇంకా భరించలేను.": {"native": "I can't bear this pain any more.", "bases": {}}
+    }
   "te-0369":
     native: "I'm lost."
     alt_native: ["I have lost my way."]
