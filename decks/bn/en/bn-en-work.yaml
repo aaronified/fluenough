@@ -12,16 +12,32 @@ cards:
     native: "job (employment)"
     notes:
       "n1": "আমি চাকরি করি (āmi cākri kori), I have a job. কাজ (kāj) is work of any kind."
+    "examples": {
+      "অস্থায়ীভাবে চাকরি পেয়েছি।": {"native": "I have got a temporary job.", "bases": {"চাকরি": "job (employment)"}},
+      "আমি একটা চাকরি খুঁজছি।": {"native": "I am looking for a job.", "bases": {"খুঁজছি": "looking", "চাকরি": "job (employment)"}}
+    }
   "bn-0450":
     native: "office"
+    "examples": {
+      "এটা সরকারি অফিস।": {"native": "This is a government office.", "bases": {"অফিস": "office"}},
+      "পৌরসভার অফিস কোথায়?": {"native": "Where is the municipality office?", "bases": {"পৌরসভার": "municipality", "অফিস": "office"}}
+    }
   "bn-0451":
     native: "teacher"
     notes:
       "n1": "A woman teacher is শিক্ষিকা (śikkhikā). A few job words have a feminine like this; most, like ডাক্তার (ḍāktār), do not."
+    "examples": {
+      "আমি একজন শিক্ষক।": {"native": "I'm a teacher.", "bases": {}},
+      "ইতিহাসের শিক্ষক ভালো।": {"native": "The history teacher is good.", "bases": {"ইতিহাসের": "history", "শিক্ষক": "teacher"}}
+    }
   "bn-0452":
     native: "shopkeeper"
     notes:
       "n1": "দোকান (dokān), shop, and -দার (-dār), the one who has it."
+    "examples": {
+      "দোকানদার টাকা ফেরাল।": {"native": "The shopkeeper gave the change back.", "bases": {"ফেরাল": "to return", "দোকানদার": "shopkeeper"}},
+      "দোকানদার আমাকে ধার দিয়েছে।": {"native": "The shopkeeper has given me credit.", "bases": {}}
+    }
   "bn-0453":
     native: "driver"
     notes:
@@ -32,6 +48,9 @@ cards:
     native: "lawyer"
     notes:
       "n1": "The formal word is আইনজীবী (āinjibi)."
+    "examples": {
+      "বিবাদী উকিল নিলেন।": {"native": "The defendant hired a lawyer.", "bases": {"উকিল": "lawyer"}}
+    }
   "bn-0456":
     native: "nurse"
   "bn-0457":
@@ -44,12 +63,19 @@ cards:
     native: "farmer"
     notes:
       "n1": "In everyday speech also চাষি (cāśi)."
+    "examples": {
+      "কৃষকের শ্রমে ধান হয়।": {"native": "Rice grows through the farmer's labour.", "bases": {"শ্রমে": "labour", "কৃষকের": "farmer"}}
+    }
   "bn-0460":
     native: "cook"
   "bn-0461":
     native: "writer"
     notes:
       "n1": "From লেখা (lekhā), to write."
+    "examples": {
+      "হাস্যরসের লেখক তিনি।": {"native": "He is a writer of humour.", "bases": {"হাস্যরসের": "humour", "লেখক": "writer"}},
+      "লেখকের পাণ্ডুলিপি হারিয়ে গেল।": {"native": "The writer's manuscript was lost.", "bases": {"লেখকের": "writer"}}
+    }
   "bn-0462":
     native: "journalist"
     notes:
@@ -58,6 +84,10 @@ cards:
     native: "day off; holiday; leave"
     notes:
       "n1": "আজ আমার ছুটি (āj āmār chuṭi), I'm off today."
+    "examples": {
+      "আমরা ছুটি কাটালাম।": {"native": "We spent the holiday.", "bases": {"কাটালাম": "to spend (time)", "ছুটি": "day off; holiday; leave"}},
+      "ছুটিতে ভ্রমণে যাব।": {"native": "I will go travelling on holiday.", "bases": {"ভ্রমণে": "travel; a trip", "ছুটিতে": "day off; holiday; leave"}}
+    }
   "bn-0464":
     native: "What do you do (for a living)?"
     notes:
@@ -78,13 +108,29 @@ cards:
       "n1": "উনি (uni) is a respectful he or she for someone over there; ইনি (ini) for someone right here. No 'is'."
   "bn-0375":
     native: "police; police officer"
+    "examples": {
+      "পুলিশ সতর্ক আছে।": {"native": "The police are alert.", "bases": {"আছে": "are", "পুলিশ": "police; police officer"}},
+      "আমি পুলিশে অভিযোগ করলাম।": {"native": "I made a complaint to the police.", "bases": {"পুলিশে": "police; police officer"}}
+    }
   "bn-0470":
     native: "student"
     notes:
       "n1": "A woman student is ছাত্রী (chātri)."
+    "examples": {
+      "অনেক ছাত্র অনুপস্থিত।": {"native": "Many students are absent.", "bases": {"ছাত্র": "student"}},
+      "ক্লাসরুমে অনেক ছাত্র।": {"native": "There are many students in the classroom.", "bases": {"ক্লাসরুমে": "classroom", "ছাত্র": "student"}}
+    }
   "bn-0471":
     native: "business"
+    "examples": {
+      "ব্যবসার মূলধন কম।": {"native": "The business's capital is small.", "bases": {"ব্যবসার": "business"}},
+      "এই ব্যবসায় ভালো লাভ হলো।": {"native": "This business made good profit.", "bases": {"এই": "this", "ব্যবসায়": "business"}}
+    }
   "bn-0472":
     native: "salary; pay"
     notes:
       "n1": "Also মাইনে (māine), in everyday speech."
+    "examples": {
+      "মাসিক বেতন কত?": {"native": "What is the monthly salary? (familiar)", "bases": {"বেতন": "salary; pay"}},
+      "সে বেতন বাড়ানোর দাবি করল।": {"native": "She demanded a pay rise.", "bases": {"বাড়ানোর": "raising", "দাবি": "claim", "বেতন": "salary; pay"}}
+    }

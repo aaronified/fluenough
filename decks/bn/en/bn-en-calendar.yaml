@@ -12,18 +12,33 @@ cards:
     native: "month"
     notes:
       "n1": "The Gregorian months are used for almost everything. Bengal's own calendar matters mostly for festivals and পয়লা বৈশাখ (pôylā boiśākh), also পহেলা বৈশাখ (pôhelā boiśākh), the new year on 14 or 15 April."
+    "examples": {
+      "প্রকল্পটা দুই মাসের।": {"native": "The project lasts two months.", "bases": {"প্রকল্পটা": "project", "দুই": "two", "মাসের": "of a month"}},
+      "মাসের আয় কত?": {"native": "What is the monthly income?", "bases": {"মাসের": "monthly", "আয়": "income"}}
+    }
   "bn-0335":
     native: "year"
     notes:
       "n1": "Years before 2000 are read in hundreds: 1950 is উনিশশো পঞ্চাশ (uniśśo pôncāś), also written উনিশশ পঞ্চাশ (uniśoś pôncāś). From 2000, in thousands: 2020 is দু হাজার কুড়ি (du hājār kuṛi), also দুই হাজার বিশ (dui hājār biś)."
+    "examples": {
+      "আমার পাঁচ বছরের অভিজ্ঞতা।": {"native": "I have five years of experience.", "bases": {"পাঁচ": "five", "বছরের": "year"}},
+      "এ বছর ফলন ভালো।": {"native": "This year the yield is good.", "bases": {"এ": "this", "বছর": "year"}}
+    }
   "bn-0336":
     native: "date"
     notes:
       "n1": "আজ কত তারিখ (āj kôto tārikh)? What's the date today?"
+    "examples": {
+      "দলিলে তারিখ লেখা আছে।": {"native": "The date is written in the document.", "bases": {"দলিলে": "document", "আছে": "is", "তারিখ": "date"}},
+      "শিলালিপিতে কোনো তারিখ নেই।": {"native": "There is no date on the inscription.", "bases": {"নেই": "there is no", "তারিখ": "date"}}
+    }
   "bn-0337":
     native: "January"
   "bn-0338":
     native: "February"
+    "examples": {
+      "একুশে ফেব্রুয়ারি": {"native": "21 February (Language Martyrs' Day)", "bases": {}}
+    }
   "bn-0339":
     native: "March"
   "bn-0340":
@@ -46,10 +61,17 @@ cards:
     native: "December"
   "bn-0698":
     native: "first"
+    "examples": {
+      "আমরাই প্রথম এসেছি।": {"native": "We ourselves came first.", "bases": {"প্রথম": "first"}},
+      "প্রথম সংস্করণটা দুর্লভ।": {"native": "The first edition is rare.", "bases": {"দুর্লভ": "rare", "সংস্করণটা": "edition", "প্রথম": "first"}}
+    }
   "bn-0699":
     native: "second"
     notes:
       "n1": "The ব (bô) under দ (dô) is not said."
+    "examples": {
+      "দ্বিতীয় অর্ধে দল গোল করেছে।": {"native": "The team has scored a goal in the second half.", "bases": {"অর্ধে": "in the half", "দ্বিতীয়": "second"}}
+    }
   "bn-0700":
     native: "third"
   "bn-0701":
@@ -78,6 +100,9 @@ cards:
     native: "the rainy season"
   "bn-0709":
     native: "winter"
+    "examples": {
+      "সরস্বতী পূজা শীতকালে হয়।": {"native": "Saraswati Puja is held in winter.", "bases": {"শীতকালে": "winter"}}
+    }
   "bn-0710":
     native: "spring"
   "bn-1367":

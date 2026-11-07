@@ -19,6 +19,10 @@ cards:
     reading: "dām"
     ipa: "d̪am"
     pos: "noun"
+    "examples": [
+      {"target": "কত দাম?", "reading": "kôto dām?", "ipa": "kɔt̪o d̪am", "bases": []},
+      {"target": "এই দাম যুক্তিসঙ্গত।", "reading": "ei dām juktisoṅgot.", "ipa": "ei d̪am dʒukt̪isoŋɡot̪", "bases": [{"word": "এই", "base": "এই", "reading": "ei"}, {"word": "দাম", "base": "দাম", "reading": "dām"}]}
+    ]
   - id: "bn-0245"
     target: "টাকা"
     reading: "ṭākā"
@@ -26,6 +30,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "অনলাইনে টাকা পাঠাও।", "reading": "ônolāine ṭākā pāṭhāo.", "ipa": "ɔnolaine ʈaka paʈʰao", "bases": [{"word": "টাকা", "base": "টাকা", "reading": "ṭākā"}, {"word": "পাঠাও", "ref": "bn-1108"}]}
+    ]
   - id: "bn-0246"
     target: "খুচরো"
     reading: "khucro"
@@ -33,6 +40,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "খুচরো আছে?", "reading": "khucro āche?", "ipa": "kʰutʃro atʃʰe", "bases": [{"word": "আছে", "ref": "bn-0875"}]},
+      {"target": "দোকানি খুচরো টাকা বদলে দিলেন।", "reading": "dokāni khucro ṭākā bôdle dilen.", "ipa": "d̪okani kʰutʃro ʈaka bɔd̪le d̪ilen", "bases": [{"word": "বদলে", "base": "বদলানো", "reading": "bôdlāno", "ipa": "bɔd̪lano"}, {"word": "দিলেন", "ref": "bn-0888"}]}
+    ]
   - id: "bn-0247"
     target: "দামি"
     reading: "dāmi"
@@ -40,11 +51,19 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "চিত্রটি খুব দামি।", "reading": "citroṭi khub dāmi.", "ipa": "tʃit̪roʈi kʰub d̪ami", "bases": [{"word": "খুব", "ref": "bn-0641"}, {"word": "দামি", "base": "দামি", "reading": "dāmi"}, {"word": "চিত্রটি", "base": "চিত্র", "reading": "citroṭi"}]},
+      {"target": "বেনারসিটা খুব দামি।", "reading": "benārosiṭā khub dāmi.", "ipa": "benarosiʈa kʰub d̪ami", "bases": [{"word": "বেনারসিটা", "base": "বেনারসি", "reading": "benārosiṭā"}, {"word": "খুব", "ref": "bn-0641"}, {"word": "দামি", "base": "দামি", "reading": "dāmi"}]}
+    ]
   - id: "bn-0248"
     target: "সস্তা"
     reading: "śôstā"
     ipa: "ʃɔst̪a"
     pos: "adj"
+    "examples": [
+      {"target": "হোস্টেলটা সস্তা।", "reading": "hosṭeloṭā sôstā.", "ipa": "ɦosʈeloʈa sɔst̪a", "bases": [{"word": "হোস্টেলটা", "base": "হোস্টেল", "reading": "hosṭeloṭā"}, {"word": "সস্তা", "base": "সস্তা", "reading": "śôstā"}]},
+      {"target": "ভর্তুকিতে সস্তা হলো।", "reading": "bhortukite sôstā hôlo.", "ipa": "bʱort̪ukit̪e sɔst̪a ɦɔlo", "bases": [{"word": "ভর্তুকিতে", "base": "ভর্তুকি", "reading": "bhortukite"}, {"word": "সস্তা", "base": "সস্তা", "reading": "śôstā"}, {"word": "হলো", "ref": "bn-0874"}]}
+    ]
   - id: "bn-0249"
     target: "একটু কম করুন।"
     reading: "ekṭu kôm korun."
@@ -60,6 +79,10 @@ cards:
     reading: "dokān"
     ipa: "d̪okan"
     pos: "noun"
+    "examples": [
+      {"target": "দোকান বন্ধ।", "reading": "dokān bôndho.", "ipa": "d̪okan bɔnd̪ʱo", "bases": []},
+      {"target": "খদ্দের দোকানে ঢুকল।", "reading": "khôdder dokāne ḍhukol.", "ipa": "kʰɔd̪d̪er d̪okane ɖʱukol", "bases": [{"word": "দোকানে", "base": "দোকান", "reading": "dokān"}, {"word": "ঢুকল", "base": "ঢোকা", "reading": "ḍhokā", "ipa": "ɖʱoka"}]}
+    ]
   - id: "bn-0251"
     target: "দিন"
     reading: "din"
@@ -76,6 +99,10 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "প্রতি কিলো কত?", "reading": "proti kilo kôto?", "ipa": "prot̪i kilo kɔt̪o", "bases": []},
+      {"target": "আমি এক কিলো আলু কিনি।", "reading": "āmi ek kilo ālu kini.", "ipa": "ami ek kilo alu kini", "bases": [{"word": "কিনি", "ref": "bn-0890"}]}
+    ]
   - id: "bn-0253"
     target: "আর কিছু না।"
     reading: "ār kichu nā."
@@ -123,11 +150,19 @@ cards:
     reading: "kichu"
     ipa: "kitʃʰu"
     pos: "other"
+    "examples": [
+      {"target": "বাকি আছে কিছু।", "reading": "bāki āche kichu.", "ipa": "baki atʃʰe kitʃʰu", "bases": [{"word": "আছে", "base": "আছে", "reading": "āche"}, {"word": "কিছু", "base": "কিছু", "reading": "kichu"}]},
+      {"target": "আগাম কিছু টাকা দিলাম।", "reading": "āgām kichu ṭākā dilām.", "ipa": "aɡam kitʃʰu ʈaka d̪ilam", "bases": [{"word": "কিছু", "base": "কিছু", "reading": "kichu"}, {"word": "টাকা", "ref": "bn-0245"}, {"word": "দিলাম", "ref": "bn-0888"}]}
+    ]
   - id: "bn-0550"
     target: "অনেক"
     reading: "ônek"
     ipa: "ɔnek"
     pos: "other"
+    "examples": [
+      {"target": "অনেক শুভেচ্ছা!", "reading": "ônek śubhecchā!", "ipa": "ɔnek ʃubʱetʃtʃʰa", "bases": []},
+      {"target": "প্রার্থী অনেক।", "reading": "prārthi ônek.", "ipa": "prart̪ʰi ɔnek", "bases": [{"word": "অনেক", "base": "অনেক", "reading": "ônek"}]}
+    ]
   - id: "bn-0551"
     target: "একটু"
     reading: "ekṭu"
@@ -135,16 +170,28 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "আপনি একটু বসুন।", "reading": "āponi ekoṭu bosun.", "ipa": "aponi ekoʈu bosun", "bases": [{"word": "আপনি", "ref": "bn-0138"}, {"word": "একটু", "base": "একটু", "reading": "ekṭu"}, {"word": "বসুন", "ref": "bn-0884"}]},
+      {"target": "আমি একটু নার্ভাস।", "reading": "āmi ekoṭu nārbhās.", "ipa": "ami ekoʈu narbʱas", "bases": [{"word": "আমি", "ref": "bn-0833"}, {"word": "একটু", "base": "একটু", "reading": "ekṭu"}]}
+    ]
   - id: "bn-0552"
     target: "সব"
     reading: "śôb"
     ipa: "ʃɔb"
     pos: "other"
+    "examples": [
+      {"target": "টাকাই সব নয়।", "reading": "ṭākāi sôb nôy.", "ipa": "ʈakai sɔb nɔj", "bases": [{"word": "টাকাই", "ref": "bn-0245"}, {"word": "সব", "base": "সব", "reading": "śôb"}, {"word": "নয়", "ref": "bn-0210"}]},
+      {"target": "সব কাপড় ভেজা।", "reading": "śôb kāpoṛ bhejā.", "ipa": "ʃɔb kapoɽ bʱedʒa", "bases": []}
+    ]
   - id: "bn-0553"
     target: "শুধু"
     reading: "śudhu"
     ipa: "ʃud̪ʱu"
     pos: "other"
+    "examples": [
+      {"target": "আমি শুধু দেখছি।", "reading": "āmi śudhu dekhchi.", "ipa": "ami ʃud̪ʱu d̪ekʰtʃʰi", "bases": [{"word": "আমি", "ref": "bn-0833"}, {"word": "দেখছি", "ref": "bn-0877"}]},
+      {"target": "দোকানি কার্ডে নেয় না, শুধু নগদ নেয়।", "reading": "dokāni kārḍe ney nā, śudhu nôgod ney.", "ipa": "d̪okani karɖe nej na ʃud̪ʱu nɔɡod̪ nej", "bases": [{"word": "কার্ডে", "ref": "bn-1710"}, {"word": "নেয়", "ref": "bn-0889"}]}
+    ]
   - id: "bn-0554"
     target: "যথেষ্ট"
     reading: "jôtheśṭo"
@@ -157,8 +204,16 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "তাপ বেশি।", "reading": "tāp beśi.", "ipa": "t̪ap beʃi", "bases": [{"word": "বেশি", "base": "বেশি", "reading": "beśi"}]},
+      {"target": "ব্যয় বেশি।", "reading": "bêy beśi.", "ipa": "bæj beʃi", "bases": [{"word": "বেশি", "base": "বেশি", "reading": "beśi"}]}
+    ]
   - id: "bn-0556"
     target: "কম"
     reading: "kôm"
     ipa: "kɔm"
     pos: "other"
+    "examples": [
+      {"target": "ভলিউম কম।", "reading": "bholium kôm.", "ipa": "bʱolium kɔm", "bases": []},
+      {"target": "আমার ব্যালেন্স কম।", "reading": "āmār bêlens kôm.", "ipa": "amar bælens kɔm", "bases": [{"word": "আমার", "ref": "bn-0833"}, {"word": "কম", "base": "কম", "reading": "kôm"}]}
+    ]
