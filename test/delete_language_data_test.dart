@@ -280,10 +280,15 @@ void main() {
           expect(progress.withdrawals, isEmpty);
           expect(progress.withdrawnReviews, isEmpty);
         }
-        await expectLater(
-          db.customStatement('DELETE FROM placement_withdrawals'),
-          throwsA(anything),
-        );
+        // The guard is back in both cases (a trigger fires per row, so an
+        // empty table cannot show it: ask for the trigger itself).
+        final guards = await db
+            .customSelect(
+              "SELECT name FROM sqlite_master WHERE type = 'trigger' "
+              "AND name LIKE 'placement_withdrawals_no_%'",
+            )
+            .get();
+        expect(guards, hasLength(2));
       }
     });
 
@@ -486,7 +491,11 @@ void main() {
       await tester.pump();
       expect(enabled(tester), isTrue);
 
-      await tapKey(tester, 'delete-reviews');
+      tester
+          .widget<CheckboxListTile>(
+            find.byKey(const ValueKey<String>('delete-reviews')),
+          )
+          .onChanged!(false);
       await tester.pump();
       expect(enabled(tester), isFalse, reason: 'nothing ticked');
     });
