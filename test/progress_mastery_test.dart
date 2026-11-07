@@ -176,7 +176,7 @@ void main() {
         _answer(progress, card, 4, const Duration(days: 1));
       }
       _answer(progress, 'b', 4, Duration.zero, mode: DrillMode.production);
-      expect(wordCounts(progress.log), (mastered: 1, taught: 2));
+      expect(wordCounts(progress.log), (mastered: 1, taught: 2, placed: 0));
     });
   });
 
