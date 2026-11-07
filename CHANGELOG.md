@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.3] - 2026-11-07
+
 ### Fixed
 
 - **The older placement test's credit is no longer treated like a Find my level credit.** Credit written by the placement test at setup or in the language picker is now stamped as its own kind, so it is never offered "Check your level again"; only credit written by Find my level in 0.9.0 and 0.9.1 is. Credit already stored keeps its meaning. Refs #1063.
