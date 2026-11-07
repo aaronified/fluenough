@@ -6,6 +6,7 @@ import 'package:intl/intl.dart';
 import '../../app/app_scope.dart';
 import '../../app/app_state.dart';
 import '../../app/deck_downloads.dart';
+import '../../app/language_data_deletion.dart';
 import '../../app/language_offer.dart';
 import '../../app/language_skills.dart';
 import '../../app/placement_plan.dart';
@@ -30,6 +31,7 @@ import '../placement/language_row.dart';
 import '../placement/placed_review_choice.dart';
 import '../placement/find_level_flow.dart';
 import '../placement/skill_labels_line.dart';
+import 'delete_language_data_dialog.dart';
 import 'language_views.dart';
 import 'skill_widgets.dart';
 import 'verification_mark.dart';
@@ -534,68 +536,39 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
 
   Future<void> _delete() async {
     final l10n = AppLocalizations.of(context)!;
-    final typed = TextEditingController();
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (context) => StatefulBuilder(
-        builder: (context, setLocal) => AlertDialog(
-          title: Text(l10n.languagesDeleteTitle(_view.name)),
-          content: SingleChildScrollView(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                Text(l10n.languagesDeleteBody(_view.name)),
-                const SizedBox(height: 12),
-                TextField(
-                  controller: typed,
-                  autocorrect: false,
-                  decoration: InputDecoration(
-                    labelText: l10n.languagesDeleteType(_view.name),
-                    border: const OutlineInputBorder(),
-                  ),
-                  onChanged: (_) => setLocal(() {}),
-                ),
-              ],
-            ),
-          ),
-          actions: <Widget>[
-            TextButton(
-              onPressed: () => Navigator.of(context).pop(false),
-              child: Text(l10n.commonCancel),
-            ),
-            TextButton(
-              onPressed: typed.text == _view.name
-                  ? () => Navigator.of(context).pop(true)
-                  : null,
-              style: TextButton.styleFrom(
-                foregroundColor: Theme.of(context).colorScheme.error,
-              ),
-              child: Text(l10n.commonDelete),
-            ),
-          ],
-        ),
-      ),
+    final choice = await showDeleteLanguageDataDialog(
+      context,
+      name: _view.name,
+      today: _state.now(),
     );
-    typed.dispose();
-    if (ok != true || !mounted) return;
-    var next = _skills;
-    for (final key in _skills.held) {
-      if (_skills.stateOf(key) == SkillState.learn) {
-        next = next.withState(key, SkillState.leave);
-      }
-    }
-    _state.applySkills(_view.language, next);
+    if (choice == null || !mounted) return;
     try {
-      await _state.deckDownloads?.remove(_code);
+      // The backup is kept first, inside: if it fails nothing has changed.
+      await _state.deleteLanguageData(_code, choice.data);
     } on Object {
       _state.haptics.error();
-      rethrow;
+      if (mounted) _toast(l10n.languagesDeleteFailed);
+      return;
+    }
+    var next = _skills;
+    if (choice.decks) {
+      for (final key in _skills.held) {
+        if (_skills.stateOf(key) == SkillState.learn) {
+          next = next.withState(key, SkillState.leave);
+        }
+      }
+      _state.applySkills(_view.language, next);
+      try {
+        await _state.deckDownloads?.remove(_code);
+      } on Object {
+        _state.haptics.error();
+        rethrow;
+      }
     }
     _state.haptics.danger();
     if (!mounted) return;
     _toast(l10n.languagesToastDeleted(_view.name));
-    if (next.isAllLeave) {
+    if (choice.decks && next.isAllLeave) {
       widget.onPooled?.call(_skills);
       Navigator.of(context).pop();
     } else {
@@ -856,7 +829,7 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
             padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 12),
             child: Row(
               children: <Widget>[
-                if (!_isDraft && hasDecks)
+                if (!_isDraft && (hasDecks || _skills.anyLearn))
                   LabelledIconButton(
                     label: l10n.languagesDeleteData,
                     hint: l10n.hintDelete,

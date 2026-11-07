@@ -42,7 +42,7 @@ takes its default. A file or key the app does not know is ignored.
 | `appVersion` | The app version that made it. |
 | `schemaVersion` | The database schema then. Informational only: every part is read by its own format, never as table rows, so a backup survives migrations. |
 | `createdAt` | ISO 8601, in UTC. |
-| `kind` | What made it: `you` (Back up now), `update` (an app update began to download), `restore` (the copy of what a restore replaced), `file` (a file restored from, kept as it was read). Unknown reads as `you`. |
+| `kind` | What made it: `you` (Back up now), `update` (an app update began to download), `restore` (the copy of what a restore replaced), `file` (a file restored from, kept as it was read), `delete` (the copy made before a language's data was deleted from its sheet, #861). Unknown reads as `you`. |
 | `forVersion` | For an `update` backup, the version being downloaded. |
 | `reviews` | How many reviews `log.jsonl` holds, so Recent backups can say without reading the log. |
 | `parts` | The other files in the zip. |

@@ -4,6 +4,7 @@ import '../models/drill_mode.dart';
 import '../models/leech_action.dart';
 import 'daos.dart';
 import 'restore_record.dart';
+import 'review_erasure.dart';
 import 'tables/card_states.dart';
 import 'tables/cards.dart';
 import 'tables/converters.dart';
@@ -278,6 +279,109 @@ class AppDatabase extends _$AppDatabase {
         );
         return result;
       });
+
+  /// The second exception to `reviews` being append-only (AGENTS.md rule 9;
+  /// owner, 2026-11-07, #861): the learner deleted some of one language's
+  /// reviews from its sheet in Languages I'm learning, after the app kept a
+  /// backup of everything. Removes the reviews [erasure] selects and the
+  /// language's leech actions whose pair has no review left (an action on a
+  /// pair with no history means nothing), in one transaction, and returns
+  /// how many reviews went. With the placement chosen, the language's
+  /// `placement_withdrawals` go too: they only name credit that is gone.
+  /// With only the answers chosen, the withdrawals stay with the credit. A review of another language is never touched.
+  ///
+  /// Each table's delete trigger is dropped only for this `DELETE` and
+  /// created again at once, as [replaceLog] does, so the guard is back
+  /// whatever happens next, and a failure rolls everything back, the
+  /// triggers included. Nothing but a confirmed deletion calls this.
+  Future<({int reviews, int withdrawals})> eraseReviews(
+    ReviewErasure erasure,
+  ) => transaction(() async {
+    final code = erasure.language;
+    final of = [
+      Variable<String>(code),
+      Variable<int>(code.length + 1),
+      Variable<String>('$code-'),
+    ];
+    const ofLanguage = 'card_id = ? OR substr(card_id, 1, ?) = ?';
+    final rows = await customSelect(
+      'SELECT id, card_id, ts, grade, elapsed_ms, answer_given, asked '
+      'FROM reviews WHERE $ofLanguage',
+      variables: of,
+      readsFrom: {reviews},
+    ).get();
+    final ids = <int>[
+      for (final row in rows)
+        if (erasure.matches(
+          row.read<String>('card_id'),
+          DateTime.fromMillisecondsSinceEpoch(row.read<int>('ts')),
+          creditShape:
+              row.read<int>('grade') == 5 &&
+              row.read<int>('elapsed_ms') == 0 &&
+              row.readNullable<String>('answer_given') == null &&
+              (row.readNullable<String>('asked') ?? 'own') == 'own',
+        ))
+          row.read<int>('id'),
+    ];
+    // Placement's credit goes with its withdrawals, which only name it.
+    final taken = erasure.placement
+        ? <int>[
+            for (final row in await customSelect(
+              'SELECT id FROM placement_withdrawals WHERE language = ?',
+              variables: [Variable<String>(code)],
+              readsFrom: {placementWithdrawals},
+            ).get())
+              row.read<int>('id'),
+          ]
+        : <int>[];
+    if (ids.isEmpty && taken.isEmpty) return (reviews: 0, withdrawals: 0);
+    if (taken.isNotEmpty) await _deleteRows(placementWithdrawals, taken);
+    if (ids.isNotEmpty) await _deleteRows(reviews, ids);
+    final kept = <String>{
+      for (final row in await customSelect(
+        'SELECT DISTINCT card_id, mode FROM reviews WHERE $ofLanguage',
+        variables: of,
+        readsFrom: {reviews},
+      ).get())
+        '${row.read<String>('card_id')}|${row.read<String>('mode')}',
+    };
+    final orphaned = <int>[
+      for (final row in await customSelect(
+        'SELECT id, card_id, mode FROM leech_actions WHERE $ofLanguage',
+        variables: of,
+        readsFrom: {leechActions},
+      ).get())
+        if (!kept.contains(
+          '${row.read<String>('card_id')}|${row.read<String>('mode')}',
+        ))
+          row.read<int>('id'),
+    ];
+    if (orphaned.isNotEmpty) await _deleteRows(leechActions, orphaned);
+    return (reviews: ids.length, withdrawals: taken.length);
+  });
+
+  /// Deletes the rows of the append-only [table] with these [ids], 400 at a
+  /// time, with the table's delete guard lifted for the statements and put
+  /// back at once.
+  Future<void> _deleteRows(
+    TableInfo<Table, Object?> table,
+    List<int> ids,
+  ) async {
+    final name = table.actualTableName;
+    await customStatement('DROP TRIGGER ${name}_no_delete');
+    for (var i = 0; i < ids.length; i += 400) {
+      final end = i + 400 > ids.length ? ids.length : i + 400;
+      final chunk = ids.sublist(i, end);
+      await customUpdate(
+        'DELETE FROM $name WHERE id IN '
+        '(${List.filled(chunk.length, '?').join(',')})',
+        variables: [for (final id in chunk) Variable<int>(id)],
+        updates: {table},
+        updateKind: UpdateKind.delete,
+      );
+    }
+    await _guard(name, 'DELETE');
+  }
 
   Future<int> _reviewCount() async => (await customSelect(
     'SELECT COUNT(*) AS n FROM reviews',

@@ -13,6 +13,11 @@ The wiki is the source of truth for documentation: https://github.com/aaronified
   Bengali, light and dark, 1.4x. Open choices are tweak controls and are
   listed in `today-chain.md`, with the self-check.
 
+- `languages-learning.html`: the bin on a language's sheet and the dialog that
+  deletes its data (#861, owner, 2026-10-26, 2026-11-07), with a range of days
+  and per-item ticks. Notes and self-check in `languages-learning.md`. Built
+  for 0.9.2 ahead of approval; it awaits the owner's approval in review.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
@@ -58,7 +63,7 @@ name them. They are in git at 19d200b
   built in #528 and removed once built (owner, 2026-10-16: "Remove when
   built"). It is in git history:
   `git show 25522ea:docs/mockups/language-bar.html`.
-- `languages-learning.html`: Languages I'm learning (#626), built and
+- `languages-learning.html` (first version): Languages I'm learning (#626), built and
   removed once built (owner, 2026-10-16: "Remove when built"). It is in git
   history: `git show 4e094b9:docs/mockups/languages-learning.html`.
 - `languages-you-know.html`: Languages you know, with the bottom-sheet

@@ -14,6 +14,7 @@ import 'database.dart';
 import 'replay_isolate.dart';
 import 'replay_snapshot.dart';
 import 'restore_record.dart';
+import 'review_erasure.dart';
 
 /// The review log, and the scheduling state it drives, in the database
 /// (docs/DESIGN.md, "The review cycle"; ADR-0005).
@@ -511,6 +512,42 @@ class ReviewLog {
       await _append(event);
     }
     await _rebuild(parameters);
+  });
+
+  /// Deletes the reviews [erasure] selects (#861), through
+  /// [AppDatabase.eraseReviews], the second exception to the log being
+  /// append-only (AGENTS.md rule 9), and brings what is derived from the log
+  /// in line, in one transaction:
+  ///
+  /// - the language's fitted FSRS parameters are dropped when any review went:
+  ///   a fit was learned from the reviews as they were and cannot be worked
+  ///   out again from fewer, so the skill is scheduled by the defaults (or
+  ///   another language's baseline) until the tuner fits it again;
+  /// - `card_states` is rebuilt from the log that remains, so each pair is
+  ///   what replaying the remaining reviews gives, for every language (the
+  ///   baseline fit of another language may have moved);
+  /// - the kept snapshot of the replay is forgotten, since its stamp is no
+  ///   longer the log's.
+  ///
+  /// Returns how many reviews went; nothing changes when none matched.
+  /// Withdrawals of placement credit are removed only with the credit they
+  /// name, when the placement is erased; real answers are never touched by
+  /// that.
+  /// Only for a deletion the learner confirmed, after a backup was kept.
+  Future<int> eraseReviews(ReviewErasure erasure) => _db.transaction(() async {
+    final erased = await _db.eraseReviews(erasure);
+    if (erased.reviews == 0 && erased.withdrawals == 0) return 0;
+    await (_db.delete(
+      _db.fsrsParameters,
+    )..where((p) => p.language.equals(erasure.language))).go();
+    final remaining = await reviews();
+    final parameters = SkillParameters(
+      fitted: await fitted(),
+      lastStudied: SkillParameters.lastStudiedIn(remaining.map(_studied)),
+    );
+    await _rebuild(parameters);
+    await _db.replaySnapshotsDao.clear();
+    return erased.reviews;
   });
 
   Future<void> _append(ReviewEvent event) => _db.reviewsDao.append(

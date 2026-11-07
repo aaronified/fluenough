@@ -10,6 +10,7 @@ import '../core/review/deck_review.dart';
 import '../core/review/question_log.dart';
 import '../core/review/rater_code.dart';
 import '../core/review/review_pairs.dart';
+import '../core/scheduling/ability.dart' show Abilities;
 import '../core/scheduling/placed_review.dart';
 import '../core/scheduling/daily_budget.dart';
 import '../core/scheduling/study_hours.dart';
@@ -892,6 +893,82 @@ class SettingsNotifier extends ChangeNotifier {
     _placementRuns = Map<String, String>.unmodifiable(next);
     notifyListeners();
   }
+
+  /// Forgets what placement found for [language] (#861): the moments it
+  /// credited words and their model stamps and kept moments, the skills it verified and their labels, a paused run,
+  /// and the decks it marked placed. The course then asks for placement
+  /// again ([placedAtOf] is empty). Other languages are not touched.
+  void clearPlacement(String language) {
+    _placedAt = _without(_placedAt, language);
+    _placedBy = _without(_placedBy, language);
+    _placementKept = _without(_placementKept, language);
+    _verifiedSkills = _without(_verifiedSkills, language);
+    _skillLabels = _without(_skillLabels, language);
+    _placementRuns = _without(_placementRuns, language);
+    _placedDecks = Set<String>.unmodifiable(<String>{
+      for (final id in _placedDecks)
+        if (Abilities.languageOf(id) != language) id,
+    });
+    notifyListeners();
+  }
+
+  /// Puts [language]'s own settings back to what a language not yet set up
+  /// has (#861): minutes a day, the scripts chosen, how credited words are
+  /// reviewed, folded levels, facts shown, its voice. Which skills are
+  /// learned, known or left is not a setting here and stays.
+  void clearLanguageSettings(String language) {
+    _dailyMinutes = _without(_dailyMinutes, language);
+    _dailyExtra = _without(_dailyExtra, language);
+    _scriptsLearned = _without(_scriptsLearned, language);
+    _collapsedLevels = _without(_collapsedLevels, language);
+    _placedReview = _without(_placedReview, language);
+    _voices = _without(_voices, language);
+    _noAlphabet = Set<String>.unmodifiable(<String>{
+      for (final code in _noAlphabet)
+        if (code != language) code,
+    });
+    _factsShown = Map<String, DateTime>.unmodifiable(<String, DateTime>{
+      for (final MapEntry(:key, :value) in _factsShown.entries)
+        if (!key.startsWith('$language/')) key: value,
+    });
+    notifyListeners();
+  }
+
+  /// Forgets the study time kept beside the review log for [language] on
+  /// the days from [from] to [to], both included (all days when null), and
+  /// the day of its last lesson when that falls in them (#861). The log's
+  /// own hours go with its reviews.
+  void clearStudyTime(String language, {DateTime? from, DateTime? to}) {
+    final first = from == null ? null : _dayKey(from);
+    final last = to == null ? null : _dayKey(to);
+    bool inside(String day) =>
+        (first == null || day.compareTo(first) >= 0) &&
+        (last == null || day.compareTo(last) <= 0);
+    Map<String, Map<String, V>> trimmed<V>(Map<String, Map<String, V>> all) {
+      final days = all[language];
+      if (days == null) return all;
+      final kept = <String, V>{
+        for (final MapEntry(:key, :value) in days.entries)
+          if (!inside(key)) key: value,
+      };
+      final next = <String, Map<String, V>>{...all};
+      kept.isEmpty ? next.remove(language) : next[language] = kept;
+      return Map<String, Map<String, V>>.unmodifiable(next);
+    }
+
+    _teachTime = trimmed(_teachTime);
+    _clockTime = trimmed(_clockTime);
+    final lesson = _lessonsDone[language];
+    if (lesson != null && inside(_dayKey(lesson))) {
+      _lessonsDone = _without(_lessonsDone, language);
+    }
+    notifyListeners();
+  }
+
+  static Map<String, V> _without<V>(Map<String, V> map, String key) =>
+      map.containsKey(key)
+      ? Map<String, V>.unmodifiable(<String, V>{...map}..remove(key))
+      : map;
 
   /// Whether the reviewer unfolded [language] on Waiting for review (#471).
   /// Folded by default; what is unfolded is remembered.

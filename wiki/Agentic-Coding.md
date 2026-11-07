@@ -201,14 +201,24 @@ the only table whose loss is irreparable; everything else can be rebuilt from
 it. See [ADR-0005](ADR-0005-Scheduling). `leech_actions` is
 append-only in the same way.
 
-There is **one exception**, and only one (owner, 2026-10-17: "Logged
-exception"): a restore from a backup that the learner has confirmed, after
+There are **two exceptions**, and only two. The first (owner, 2026-10-17:
+"Logged exception"): a restore from a backup that the learner has confirmed, after
 the app has kept a copy of what it replaces, empties `reviews` and
 `leech_actions` and writes the backup's in their place. It goes only
 through `AppDatabase.replaceLog`, in one transaction with the import, and
 appends a row to the append-only `restores` table saying when, from which
-backup, and where the kept copy is. Nothing else may call it, and no other
-code path may delete from or update these tables.
+backup, and where the kept copy is. Nothing else may call it.
+
+The second (owner, 2026-10-26, 2026-11-07, #861): the learner deleted some of
+one language's reviews from its sheet in Languages I'm learning, confirmed by
+typing the language's name, after the app kept a backup of everything
+(`BackupKind.delete`). It goes only through `AppDatabase.eraseReviews`
+(`ReviewLog.eraseReviews`), in one transaction with the rebuild of the
+language's card states and the drop of its fitted parameters; it removes only
+that language's reviews selected by a `ReviewErasure` (answers, optionally
+within a range of local days, and placement's credit) and the language's
+leech actions left with no review. No other code path may delete from or
+update these tables.
 
 ### 10. No user-visible string is a literal in a widget.
 
