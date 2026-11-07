@@ -31,6 +31,7 @@ cards:
     ipa: "kali"
     pos: "adv"
     examples:
+      - { target: "আজি কালিতকৈ গৰম।", reading: "āzi kālitôkôi gôrôm.", ipa: "azi kalitɔkɔi ɡɔɹɔm", bases: [{"word": "কালিতকৈ", "base": "কালি", "reading": "kāli"}] }
       - { target: "বল কালি।", reading: "bôl kāli.", ipa: "bɔl kali", bases: [] }
   - id: "as-0353"
     target: "এতিয়া"
@@ -47,12 +48,16 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ৰাতিপুৱা ভাল।", reading: "rātipuwā bhāl.", ipa: "ɹatipuwa bʱal", bases: [{"word": "ভাল", "ref": "as-2084"}] }
+      - { target: "ৰাতিপুৱা মই জলপান খাওঁ।", reading: "rātipuwā moi zôlôpān khāum̐.", ipa: "ɹatipuwa moi zɔlɔpan kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
   - id: "as-0355"
     target: "দুপৰীয়া"
     reading: "duporiyā"
     ipa: "dupoɹija"
     pos: "noun"
     examples:
+      - { target: "দুপৰীয়াৰ ভাত", reading: "duporiyār bhāt", ipa: "dupoɹijaɹ bʱat", bases: [{"word": "দুপৰীয়াৰ", "base": "দুপৰীয়া", "reading": "duporiyā"}] }
       - { target: "দুপৰীয়া তাপ বহুত।", reading: "duporiyā tāp bohut.", ipa: "dupoɹija tap bohut", bases: [] }
   - id: "as-0356"
     target: "গধূলি"
@@ -61,6 +66,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "গধূলি ভাল।", reading: "godhuli bhāl.", ipa: "ɡodʱuli bʱal", bases: [{"word": "ভাল", "ref": "as-2084"}] }
+      - { target: "গধূলি মই ঘৰত।", reading: "godhuli moi ghôrôt.", ipa: "ɡodʱuli moi ɡʱɔɹɔt", bases: [] }
   - id: "as-0357"
     target: "ৰাতি"
     reading: "rāti"
@@ -76,6 +84,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কিমান বাজিছে?", reading: "kimān bāzise?", ipa: "kiman bazise", bases: [{"word": "বাজিছে", "base": "বজা", "reading": "bôzā"}] }
+      - { target: "মই সদায় সাত বজাত উঠোঁ।", reading: "moi xôdāi xāt bôzāt uthum̐.", ipa: "moi xɔdai xat bɔzat utʰʊ̃", bases: [{"word": "মই", "base": "মই", "reading": "moi"}, {"word": "বজাত", "base": "বজা", "reading": "bôzā"}, {"word": "উঠোঁ", "ref": "as-0370"}] }
   - id: "as-0359"
     target: "সাৰে চাৰি"
     reading: "xāre sāri"
@@ -107,6 +118,9 @@ cards:
     reading: "xôptāh"
     ipa: "xɔptah"
     pos: "noun"
+    examples:
+      - { target: "এটা সপ্তাহ।", reading: "etā sôptāh.", ipa: "eta sɔptah", bases: [{"word": "এটা", "ref": "as-2258"}] }
+      - { target: "মই প্ৰতি সপ্তাহে ফুটবল খেলোঁ।", reading: "moi proti xôptāhe phutôbôl khelum̐.", ipa: "moi pɹoti sɔptahe pʰutɔbɔl kʰelʊ̃", bases: [{"word": "প্ৰতি", "base": "প্ৰতি", "reading": "proti"}, {"word": "সপ্তাহে", "base": "সপ্তাহ", "reading": "xôptāh"}, {"word": "খেলোঁ", "ref": "as-2213"}] }
   - id: "as-0363"
     target: "সোমবাৰ"
     reading: "xumbār"
@@ -114,31 +128,49 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আজি সোমবাৰ।", reading: "āzi sumôbār.", ipa: "azi sʊmɔbaɹ", bases: [{"word": "আজি", "ref": "as-0350"}] }
+      - { target: "সোমবাৰ এটা দিন।", reading: "sumôbār etā din.", ipa: "sʊmɔbaɹ eta din", bases: [{"word": "এটা", "ref": "as-2258"}, {"word": "দিন", "ref": "as-0361"}] }
   - id: "as-0364"
     target: "মঙলবাৰ"
     reading: "môṅôlbār"
     ipa: "mɔŋɔlbaɹ"
     pos: "noun"
+    examples:
+      - { target: "আজি মঙলবাৰ।", reading: "āzi môṅôlôbār.", ipa: "azi mɔŋɔlɔbaɹ", bases: [{"word": "আজি", "ref": "as-0350"}] }
+      - { target: "মঙলবাৰ এটা দিন।", reading: "môṅôlôbār etā din.", ipa: "mɔŋɔlɔbaɹ eta din", bases: [{"word": "এটা", "ref": "as-2258"}, {"word": "দিন", "ref": "as-0361"}] }
   - id: "as-0365"
     target: "বুধবাৰ"
     reading: "budhbār"
     ipa: "budʱbaɹ"
     pos: "noun"
+    examples:
+      - { target: "আজি বুধবাৰ।", reading: "āzi budhôbār.", ipa: "azi budʱɔbaɹ", bases: [{"word": "আজি", "ref": "as-0350"}] }
+      - { target: "বুধবাৰ এটা দিন।", reading: "budhôbār etā din.", ipa: "budʱɔbaɹ eta din", bases: [{"word": "এটা", "ref": "as-2258"}, {"word": "দিন", "ref": "as-0361"}] }
   - id: "as-0366"
     target: "বৃহস্পতিবাৰ"
     reading: "brihôspotibār"
     ipa: "brihɔspotibaɹ"
     pos: "noun"
+    examples:
+      - { target: "আজি বৃহস্পতিবাৰ।", reading: "āzi brihôspotibār.", ipa: "azi brihɔspotibaɹ", bases: [{"word": "আজি", "ref": "as-0350"}] }
+      - { target: "বৃহস্পতিবাৰ এটা দিন।", reading: "brihôspotibār etā din.", ipa: "brihɔspotibaɹ eta din", bases: [{"word": "এটা", "ref": "as-2258"}, {"word": "দিন", "ref": "as-0361"}] }
   - id: "as-0367"
     target: "শুক্ৰবাৰ"
     reading: "xukrôbār"
     ipa: "xukɹɔbaɹ"
     pos: "noun"
+    examples:
+      - { target: "আজি শুক্ৰবাৰ।", reading: "āzi xukrôbār.", ipa: "azi xukɹɔbaɹ", bases: [{"word": "আজি", "ref": "as-0350"}] }
+      - { target: "শুক্ৰবাৰ এটা দিন।", reading: "xukrôbār etā din.", ipa: "xukɹɔbaɹ eta din", bases: [{"word": "এটা", "ref": "as-2258"}, {"word": "দিন", "ref": "as-0361"}] }
   - id: "as-0368"
     target: "শনিবাৰ"
     reading: "xonibār"
     ipa: "xonibaɹ"
     pos: "noun"
+    examples:
+      - { target: "আজি শনিবাৰ।", reading: "āzi xonibār.", ipa: "azi xonibaɹ", bases: [{"word": "আজি", "ref": "as-0350"}] }
+      - { target: "শনিবাৰ এটা দিন।", reading: "xonibār etā din.", ipa: "xonibaɹ eta din", bases: [{"word": "এটা", "ref": "as-2258"}, {"word": "দিন", "ref": "as-0361"}] }
   - id: "as-0369"
     target: "দেওবাৰ"
     reading: "deubār"
@@ -146,3 +178,6 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আজি দেওবাৰ।", reading: "āzi deubār.", ipa: "azi deʊbaɹ", bases: [{"word": "আজি", "ref": "as-0350"}] }
+      - { target: "দেওবাৰ এটা দিন।", reading: "deubār etā din.", ipa: "deʊbaɹ eta din", bases: [{"word": "এটা", "ref": "as-2258"}, {"word": "দিন", "ref": "as-0361"}] }

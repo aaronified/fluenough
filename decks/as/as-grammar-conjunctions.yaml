@@ -22,6 +22,7 @@ cards:
     ipa: "kintu"
     pos: "other"
     examples:
+      - { target: "ভাল, কিন্তু ডাঙৰ।", reading: "bhāl, kintu dāṅôr.", ipa: "bʱal kintu daŋɔɹ", bases: [{"word": "ভাল", "ref": "as-2084"}, {"word": "কিন্তু", "base": "কিন্তু", "reading": "kintu"}] }
       - { target: "এইটো সস্তা, কিন্তু ভাল।", reading: "eitu xôstā, kintu bhāl.", ipa: "eitʊ sɔsta kintu bʱal", bases: [] }
   - id: "as-2128"
     target: "নাইবা"
@@ -30,6 +31,9 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চাহ নাইবা পানী।", reading: "sāh nāibā pāni.", ipa: "sah naiba pani", bases: [{"word": "চাহ", "ref": "as-0409"}, {"word": "নাইবা", "base": "নাইবা", "reading": "nāibā"}] }
+      - { target: "এইটো ভাল নাইবা ডাঙৰ?", reading: "eitu bhāl nāibā dāṅôr?", ipa: "eitʊ bʱal naiba daŋɔɹ", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "ভাল", "ref": "as-2084"}, {"word": "নাইবা", "base": "নাইবা", "reading": "nāibā"}] }
   - id: "as-2129"
     target: "নে"
     reading: "ne"
@@ -48,12 +52,16 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
+      - { target: "মই খাওঁ কিয়নো ভোক লাগিছে।", reading: "moi khāum̐ kiyônu bhuk lāgise.", ipa: "moi kʰaʊ̃ kijɔnʊ bʱʊk laɡise", bases: [{"word": "খাওঁ", "ref": "as-0109"}, {"word": "ভোক", "base": "ভোক", "reading": "bhuk"}, {"word": "লাগিছে", "base": "লগা", "reading": "lôgā"}] }
       - { target: "তাই দুখিত, কিয়নো বৰষুণ।", reading: "tāi dukhit, kiyônu bôroxun.", ipa: "tai dukʰit kijɔnʊ bɔɹoxun", bases: [{"word": "তাই", "ref": "as-2180"}] }
   - id: "as-2131"
     target: "সেইবাবে"
     reading: "xeibābe"
     ipa: "xeibabe"
     pos: "other"
+    examples:
+      - { target: "এইটো ভাল, সেইবাবে মই খাওঁ।", reading: "eitu bhāl, seibābe moi khāum̐.", ipa: "eitʊ bʱal seibabe moi kʰaʊ̃", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "ভাল", "ref": "as-2084"}, {"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "সি ডাঙৰ, সেইবাবে ভাল।", reading: "si dāṅôr, seibābe bhāl.", ipa: "si daŋɔɹ seibabe bʱal", bases: [{"word": "সি", "ref": "as-2180"}, {"word": "ভাল", "ref": "as-2084"}] }
   - id: "as-2132"
     target: "বুলি"
     reading: "buli"
@@ -88,12 +96,16 @@ cards:
     ipa: "zodiʊ"
     pos: "other"
     examples:
+      - { target: "যদিও ডাঙৰ, এইটো ভাল।", reading: "zodiu dāṅôr, eitu bhāl.", ipa: "zodiʊ daŋɔɹ eitʊ bʱal", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "ভাল", "ref": "as-2084"}] }
       - { target: "যদিও বেয়া, তথাপি খাওঁ।", reading: "zodiu beyā, tôthāpi khāum̐.", ipa: "zodiʊ beja tɔtʰapi kʰaʊ̃", bases: [{"word": "তথাপি", "base": "তথাপি", "reading": "tôthāpi"}, {"word": "খাওঁ", "ref": "as-0109"}] }
   - id: "as-2136"
     target: "নহ'লে"
     reading: "nôhole"
     ipa: "nɔhole"
     pos: "other"
+    examples:
+      - { target: "খাওক, নহ'লে ঠাণ্ডা হ'ব।", reading: "khāuk, nôhole thāndā hob.", ipa: "kʰaʊk nɔhole tʰanda hob", bases: [{"word": "খাওক", "ref": "as-0109"}, {"word": "নহ'লে", "base": "নহ'লে", "reading": "nôhole"}, {"word": "হ'ব", "base": "হ'ব", "reading": "hob"}] }
+      - { target: "যাওক, নহ'লে দেৰি হ'ব।", reading: "zāuk, nôhole deri hob.", ipa: "zaʊk nɔhole deɹi hob", bases: [{"word": "যাওক", "ref": "as-2200"}, {"word": "নহ'লে", "base": "নহ'লে", "reading": "nôhole"}, {"word": "হ'ব", "base": "হ'ব", "reading": "hob"}] }
   - id: "as-2137"
     target: "মইও"
     reading: "moiu"
@@ -102,4 +114,5 @@ cards:
     notes:
       - { id: "n1", kind: "note" }
     examples:
+      - { target: "মইও যাওঁ।", reading: "moiu zāum̐.", ipa: "moiʊ zaʊ̃", bases: [{"word": "মইও", "ref": "as-2178"}, {"word": "যাওঁ", "ref": "as-2200"}] }
       - { target: "যদি তেওঁ গ'লে, তেন্তে মইও যাম।", reading: "zodi teum̐ gole, tente moiu zām.", ipa: "zodi teʊ̃ ɡole tente moiʊ zam", bases: [{"word": "গ'লে", "ref": "as-2200"}, {"word": "যাম", "ref": "as-2200"}] }

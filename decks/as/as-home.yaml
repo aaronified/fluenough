@@ -25,6 +25,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো মোৰ পাকঘৰ।", reading: "eitu mur pākôghôr.", ipa: "eitʊ mʊɹ pakɔɡʱɔɹ", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ পাকঘৰ ডাঙৰ।", reading: "mur pākôghôr dāṅôr.", ipa: "mʊɹ pakɔɡʱɔɹ daŋɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0330"
     target: "শোৱনি কোঠা"
     reading: "xuwoni kuthā"
@@ -49,6 +52,7 @@ cards:
     ipa: "batʰɹum"
     pos: "noun"
     examples:
+      - { target: "বাথৰুম ইয়াত।", reading: "bāthorum iyāt.", ipa: "batʰoɹum ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
       - { target: "বাথৰুম ক'ত?", reading: "bāthrum kot?", ipa: "batʰɹum kot", bases: [] }
   - id: "as-0333"
     target: "দুৱাৰ"
@@ -65,11 +69,17 @@ cards:
     reading: "khiriki"
     ipa: "kʰiɹiki"
     pos: "noun"
+    examples:
+      - { target: "খিৰিকীত পৰ্দা।", reading: "khirikit pôrdā.", ipa: "kʰiɹikit pɔɹda", bases: [{"word": "খিৰিকীত", "base": "খিৰিকী", "reading": "khiriki"}] }
+      - { target: "খিৰিকীত পৰ্দা নাই।", reading: "khirikit pôrdā nāi.", ipa: "kʰiɹikit pɔɹda nai", bases: [{"word": "খিৰিকীত", "base": "খিৰিকী", "reading": "khiriki"}, {"word": "নাই", "ref": "as-0142"}] }
   - id: "as-0335"
     target: "চিৰি"
     reading: "siri"
     ipa: "siɹi"
     pos: "noun"
+    examples:
+      - { target: "চিৰি ইয়াত।", reading: "siri iyāt.", ipa: "siɹi ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "সি চিৰিৰে নামে।", reading: "si sirire nāme.", ipa: "si siɹiɹe name", bases: [{"word": "চিৰিৰে", "base": "চিৰি", "reading": "siri"}, {"word": "নামে", "base": "নমা", "reading": "nômā"}] }
   - id: "as-0336"
     target: "মহলা"
     reading: "môhôlā"
@@ -77,6 +87,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমাৰ ঘৰ প্ৰথম মহলাত।", reading: "āmār ghôr prôthôm môhôlāt.", ipa: "amaɹ ɡʱɔɹ pɹɔtʰɔm mɔhɔlat", bases: [{"word": "প্ৰথম", "base": "প্ৰথম", "reading": "prôthôm"}, {"word": "মহলাত", "base": "মহলা", "reading": "môhôlā"}] }
+      - { target: "মই তৃতীয় মহলালৈ যাওঁ।", reading: "moi tritiy môhôlālôi zāum̐.", ipa: "moi tritij mɔhɔlalɔi zaʊ̃", bases: [{"word": "তৃতীয়", "base": "তৃতীয়", "reading": "tritiy"}, {"word": "মহলালৈ", "base": "মহলা", "reading": "môhôlā"}, {"word": "যাওঁ", "ref": "as-2200"}] }
   - id: "as-0337"
     target: "চাবি"
     picture: "🔑"
@@ -112,12 +125,16 @@ cards:
     ipa: "mez"
     pos: "noun"
     examples:
+      - { target: "মেজৰ ওপৰত", reading: "mezôr upôrôt", ipa: "mezɔɹ ʊpɔɹɔt", bases: [{"word": "মেজৰ", "base": "মেজ", "reading": "mez"}, {"word": "ওপৰত", "base": "ওপৰ", "reading": "upôr"}] }
       - { target: "মেজ চিকণ।", reading: "mez sikôn.", ipa: "mez sikɔn", bases: [] }
   - id: "as-0341"
     target: "পাংখা"
     reading: "pāṅkhā"
     ipa: "paŋkʰa"
     pos: "noun"
+    examples:
+      - { target: "পাংখা ইয়াত।", reading: "pāṅkhā iyāt.", ipa: "paŋkʰa ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "পাংখা ভাল।", reading: "pāṅkhā bhāl.", ipa: "paŋkʰa bʱal", bases: [{"word": "ভাল", "ref": "as-2084"}] }
   - id: "as-0342"
     target: "লাইট"
     reading: "lāit"
@@ -125,6 +142,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "লাইট ইয়াত।", reading: "lāit iyāt.", ipa: "lait ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "লাইট ডাঙৰ।", reading: "lāit dāṅôr.", ipa: "lait daŋɔɹ", bases: [] }
   - id: "as-0343"
     target: "চুবুৰীয়া"
     reading: "suburiyā"
@@ -132,6 +152,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এইটো মোৰ চুবুৰীয়া।", reading: "eitu mur suburiyā.", ipa: "eitʊ mʊɹ subuɹija", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "চুবুৰীয়াক সন্মান কৰা।", reading: "suburiyāk xônmān kôrā.", ipa: "subuɹijak sɔnman kɔɹa", bases: [{"word": "চুবুৰীয়াক", "base": "চুবুৰীয়া", "reading": "suburiyā"}] }
   - ref: "as-0302"
     notes:
       - { id: "n1", kind: "note" }
@@ -140,6 +163,9 @@ cards:
     reading: "phlet"
     ipa: "pʰlet"
     pos: "noun"
+    examples:
+      - { target: "মোৰ ফ্লেট ডাঙৰ।", reading: "mur phlet dāṅôr.", ipa: "mʊɹ pʰlet daŋɔɹ", bases: [{"word": "মোৰ", "ref": "as-2187"}] }
+      - { target: "মোৰ ফ্লেট ইয়াত।", reading: "mur phlet iyāt.", ipa: "mʊɹ pʰlet ijat", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ইয়াত", "ref": "as-0323"}] }
   - id: "as-0345"
     target: "চোতাল"
     reading: "sutāl"
@@ -147,6 +173,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চোতাল ডাঙৰ।", reading: "sutāl dāṅôr.", ipa: "sʊtal daŋɔɹ", bases: [] }
+      - { target: "মই চোতালত আছোঁ।", reading: "moi sutālôt āsum̐.", ipa: "moi sʊtalɔt asʊ̃", bases: [{"word": "চোতালত", "base": "চোতাল", "reading": "sutāl"}, {"word": "আছোঁ", "base": "আছ", "reading": "ās"}] }
   - id: "as-0346"
     target: "পদূলি"
     reading: "poduli"
@@ -154,6 +183,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পদূলি ইয়াত।", reading: "poduli iyāt.", ipa: "poduli ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "পদূলিটো ডাঙৰ।", reading: "podulitu dāṅôr.", ipa: "podulitʊ daŋɔɹ", bases: [{"word": "পদূলিটো", "base": "পদূলি", "reading": "poduli"}] }
   - id: "as-0347"
     target: "তামোল-পাণ"
     reading: "tāmul-pān"
@@ -164,6 +196,9 @@ cards:
     bases:
       - { word: "তামোল", base: "তামোল", reading: "tāmul" }
       - { word: "পাণ", base: "পাণ", reading: "pān" }
+    examples:
+      - { target: "তামোল-পাণ ইয়াত।", reading: "tāmul-pān iyāt.", ipa: "tamʊlpan ijat", bases: [{"word": "তামোল", "base": "তামোল", "reading": "tāmul"}, {"word": "পাণ", "base": "পাণ", "reading": "pān"}, {"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "এইটো তামোল-পাণ।", reading: "eitu tāmul-pān.", ipa: "eitʊ tamʊlpan", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "তামোল", "base": "তামোল", "reading": "tāmul"}, {"word": "পাণ", "base": "পাণ", "reading": "pān"}] }
   - id: "as-0348"
     target: "ঘৰৰ সন্মুখত এখন পাৰ্ক আছে।"
     reading: "ghôrôr xonmukhôt ekhôn pārk āse."

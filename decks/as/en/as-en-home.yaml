@@ -18,6 +18,9 @@ cards:
     native: "kitchen"
     notes:
       "n1": "Literally 'cooking house'. In a village home the kitchen is often a building of its own."
+    examples:
+      "এইটো মোৰ পাকঘৰ।": { native: "This is my kitchen.", bases: {  } }
+      "মোৰ পাকঘৰ ডাঙৰ।": { native: "My kitchen is big.", bases: {  } }
   "as-0330":
     native: "bedroom"
     notes:
@@ -31,6 +34,7 @@ cards:
   "as-0332":
     native: "bathroom; toilet"
     examples:
+      "বাথৰুম ইয়াত।": { native: "The bathroom is here.", bases: {  } }
       "বাথৰুম ক'ত?": { native: "Where is the toilet?", bases: {  } }
   "as-0333":
     native: "door"
@@ -39,12 +43,21 @@ cards:
       "দুৱাৰত তালা আছে।": { native: "There is a lock on the door.", bases: { "দুৱাৰত": "door", "আছে": "be; have" } }
   "as-0334":
     native: "window"
+    examples:
+      "খিৰিকীত পৰ্দা।": { native: "A curtain at the window.", bases: { "খিৰিকীত": "window" } }
+      "খিৰিকীত পৰ্দা নাই।": { native: "There is no curtain on the window.", bases: { "খিৰিকীত": "window" } }
   "as-0335":
     native: "stairs"
+    examples:
+      "চিৰি ইয়াত।": { native: "The stairs are here.", bases: {  } }
+      "সি চিৰিৰে নামে।": { native: "He comes down the stairs.", bases: { "নামে": "to get down; to descend", "চিৰিৰে": "stairs" } }
   "as-0336":
     native: "floor; storey"
     notes:
       "n1": "দুমহলা ঘৰ (dumôhôlā ghôr), a two-storey house."
+    examples:
+      "আমাৰ ঘৰ প্ৰথম মহলাত।": { native: "Our house is on the first floor.", bases: { "প্ৰথম": "one; the first", "মহলাত": "floor; storey" } }
+      "মই তৃতীয় মহলালৈ যাওঁ।": { native: "I go to the third floor.", bases: { "তৃতীয়": "three; the third", "মহলালৈ": "floor; storey" } }
   "as-0337":
     native: "key"
     notes:
@@ -65,31 +78,50 @@ cards:
   "as-0340":
     native: "table"
     examples:
+      "মেজৰ ওপৰত": { native: "on the table", bases: { "ওপৰত": "top; above", "মেজৰ": "table" } }
       "মেজ চিকণ।": { native: "The table is smooth.", bases: {  } }
   "as-0341":
     native: "fan"
+    examples:
+      "পাংখা ইয়াত।": { native: "The fan is here.", bases: {  } }
+      "পাংখা ভাল।": { native: "The fan is good.", bases: {  } }
   "as-0342":
     native: "light"
     notes:
       "n1": "লাইটটো জ্বলাই দিয়ক (lāittu zôlāi diyôk), please switch on the light."
+    examples:
+      "লাইট ইয়াত।": { native: "The light is here.", bases: {  } }
+      "লাইট ডাঙৰ।": { native: "The light is big.", bases: {  } }
   "as-0343":
     native: "neighbour"
     notes:
       "n1": "From চুবুৰি (suburi), a neighbourhood of a town or a village."
+    examples:
+      "এইটো মোৰ চুবুৰীয়া।": { native: "This is my neighbour.", bases: {  } }
+      "চুবুৰীয়াক সন্মান কৰা।": { native: "Respect the neighbour.", bases: { "চুবুৰীয়াক": "neighbour" } }
   "as-0302":
     native: "rent"
     notes:
       "n1": "In this deck: rent. ভাড়াঘৰ (bhārāghôr), a rented house."
   "as-0344":
     native: "flat; apartment"
+    examples:
+      "মোৰ ফ্লেট ডাঙৰ।": { native: "My flat is big.", bases: {  } }
+      "মোৰ ফ্লেট ইয়াত।": { native: "My flat is here.", bases: {  } }
   "as-0345":
     native: "courtyard; the yard in front of a house"
     notes:
       "n1": "Swept clean every morning in a village home; Bihu is danced in it."
+    examples:
+      "চোতাল ডাঙৰ।": { native: "The courtyard is big.", bases: {  } }
+      "মই চোতালত আছোঁ।": { native: "I am in the courtyard.", bases: { "চোতালত": "courtyard; the yard in front of a house", "আছোঁ": "to be; to have" } }
   "as-0346":
     native: "the gateway; the path from the road to a house"
     notes:
       "n1": "Guests are welcomed and seen off at the পদূলি (poduli)."
+    examples:
+      "পদূলি ইয়াত।": { native: "The gate is here.", bases: {  } }
+      "পদূলিটো ডাঙৰ।": { native: "The gate is big.", bases: { "পদূলিটো": "the gateway; the path from the road to a house" } }
   "as-0347":
     native: "betel nut and betel leaf (offered to guests)"
     notes:
@@ -97,6 +129,9 @@ cards:
     bases:
       "তামোল": "betel nut"
       "পাণ": "betel leaf"
+    examples:
+      "তামোল-পাণ ইয়াত।": { native: "The betel is here.", bases: { "তামোল": "betel nut", "পাণ": "betel leaf" } }
+      "এইটো তামোল-পাণ।": { native: "This is betel nut and leaf.", bases: { "তামোল": "betel nut", "পাণ": "betel leaf" } }
   "as-0348":
     native: "There's a park in front of the house."
     notes:
