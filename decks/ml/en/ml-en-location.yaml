@@ -1,0 +1,188 @@
+schema: 1
+id: "ml-en-location"
+kind: "layer"
+core: "ml-location"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Location"
+description: "Where things are: on top, under, inside, outside, near, far, in front, behind, between, beside, there, in a corner, in the middle and opposite. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0139":
+    native: "on top; above"
+    notes:
+      n1: "The place above something. With a noun in the genitive it means on it: മേശയുടെ (meśayuṭe) മുകളിൽ (mukaḷil), on the table."
+    examples:
+      "മേശയുടെ മുകളിൽ.":
+        native: "On the table."
+        bases:
+          "മേശയുടെ": "the table's"
+      "പുസ്തകം മുകളിൽ.":
+        native: "The book is on top."
+        bases:
+          "പുസ്തകം": "book"
+  "ml-0140":
+    native: "under; below; down"
+    notes:
+      n1: "The place below something, as in under the chair."
+    examples:
+      "കസേരയുടെ താഴെ.":
+        native: "Under the chair."
+        bases:
+          "കസേരയുടെ": "the chair's"
+      "പുസ്തകം മേശയുടെ താഴെ.":
+        native: "The book is under the table."
+        bases:
+          "പുസ്തകം": "book"
+          "മേശയുടെ": "the table's"
+  "ml-0141":
+    native: "inside"
+    notes:
+      n1: "Inside a place. The genitive comes before it, as in പെട്ടിയുടെ (peṭṭiyuṭe) അകത്ത് (akatt), inside the box."
+    examples:
+      "പെട്ടിയുടെ അകത്ത്.":
+        native: "Inside the box."
+        bases:
+          "പെട്ടിയുടെ": "the box's"
+      "വീടിന്റെ അകത്ത്.":
+        native: "Inside the house."
+  "ml-0142":
+    native: "outside"
+    notes:
+      n1: "Outside a place, the opposite of inside."
+    examples:
+      "വീടിന്റെ പുറത്ത്.":
+        native: "Outside the house."
+      "പുറത്ത് പോകാം":
+        native: "Let's go outside."
+        bases:
+          "പോകാം": "go"
+  "ml-0143":
+    native: "near; next to"
+    notes:
+      n1: "Close to a place, with no gap between them."
+    examples:
+      "സ്കൂളിന്റെ അടുത്ത്.":
+        native: "Near the school."
+        bases:
+          "സ്കൂളിന്റെ": "the school's"
+      "വീടിന്റെ അടുത്ത് കട.":
+        native: "A shop near the house."
+        bases:
+          "കട": "shop"
+  "ml-0144":
+    native: "far; far away"
+    notes:
+      n1: "A long way off. The opposite of അടുത്ത് (aṭutt), near."
+    examples:
+      "കടൽ അകലെ.":
+        native: "The sea is far."
+        bases:
+          "കടൽ": "sea"
+      "സ്കൂൾ അകലെ.":
+        native: "The school is far away."
+        bases:
+          "സ്കൂൾ": "school"
+  "ml-0145":
+    native: "in front"
+    notes:
+      n1: "In front of something. The opposite is പിന്നിൽ (pinnil), behind."
+    examples:
+      "വീടിന്റെ മുന്നിൽ.":
+        native: "In front of the house."
+      "വണ്ടി മുന്നിൽ.":
+        native: "The vehicle is in front."
+        bases:
+          "വണ്ടി": "vehicle"
+  "ml-0146":
+    native: "behind"
+    notes:
+      n1: "At the back of something."
+    examples:
+      "വീടിന്റെ പിന്നിൽ.":
+        native: "Behind the house."
+      "പൂച്ച കസേരയുടെ പിന്നിൽ.":
+        native: "The cat is behind the chair."
+        bases:
+          "പൂച്ച": "cat"
+          "കസേരയുടെ": "the chair's"
+  "ml-0147":
+    native: "between; among"
+    notes:
+      n1: "Between two things, or among several."
+    examples:
+      "രണ്ട് വീടുകളുടെ ഇടയിൽ കട.":
+        native: "A shop between two houses."
+        bases:
+          "വീടുകളുടെ": "the houses'"
+          "കട": "shop"
+      "പേന പുസ്തകങ്ങൾക്ക് ഇടയിൽ.":
+        native: "The pen is among the books."
+        bases:
+          "പേന": "pen"
+          "പുസ്തകങ്ങൾക്ക്": "among the books"
+  "ml-0148":
+    native: "at the side; beside"
+    notes:
+      n1: "Beside something, on one of its sides."
+    examples:
+      "മേശയുടെ വശത്ത്.":
+        native: "At the side of the table."
+        bases:
+          "മേശയുടെ": "the table's"
+      "കസേര മേശയുടെ വശത്ത്.":
+        native: "The chair is beside the table."
+        bases:
+          "കസേര": "chair"
+          "മേശയുടെ": "the table's"
+  "ml-0149":
+    native: "there"
+    notes:
+      n1: "That place, away from the speaker. The pair of ഇവിടെ (iviṭe), here."
+    examples:
+      "അവിടെ പോകൂ.":
+        native: "Go there."
+      "പുസ്തകം അവിടെ.":
+        native: "The book is there."
+        bases:
+          "പുസ്തകം": "book"
+  "ml-0150":
+    native: "in the corner"
+    notes:
+      n1: "In the angle where two walls meet."
+    examples:
+      "മുറിയുടെ കോണിൽ.":
+        native: "In the corner of the room."
+        bases:
+          "മുറിയുടെ": "the room's"
+      "കസേര മുറിയുടെ കോണിൽ.":
+        native: "The chair is in the corner of the room."
+        bases:
+          "കസേര": "chair"
+          "മുറിയുടെ": "the room's"
+  "ml-0151":
+    native: "in the middle"
+    notes:
+      n1: "At the centre of a place."
+    examples:
+      "മുറിയുടെ നടുവിൽ.":
+        native: "In the middle of the room."
+        bases:
+          "മുറിയുടെ": "the room's"
+      "മേശ മുറിയുടെ നടുവിൽ.":
+        native: "The table is in the middle of the room."
+        bases:
+          "മേശ": "table"
+          "മുറിയുടെ": "the room's"
+  "ml-0152":
+    native: "opposite"
+    notes:
+      n1: "On the other side of the road or the space, facing something."
+    examples:
+      "വീടിന് എതിരെ.":
+        native: "Opposite the house."
+      "പള്ളിക്ക് എതിരെ കട.":
+        native: "A shop opposite the church."
+        bases:
+          "പള്ളിക്ക്": "the church"
+          "കട": "shop"

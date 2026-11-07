@@ -1,0 +1,247 @@
+schema: 1
+id: "ml-location"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+theme: "location"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ml-0139"
+    target: "മുകളിൽ"
+    reading: "mukaḷil"
+    ipa: "mukəɭil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മേശയുടെ മുകളിൽ."
+        reading: "meśayuṭe mukaḷil."
+        ipa: "meʃəjuʈe mukəɭil"
+        bases: [{ word: "മേശയുടെ", base: "മേശയുടെ", reading: "meśayuṭe" }, { word: "മുകളിൽ", ref: "ml-0139" }]
+      - target: "പുസ്തകം മുകളിൽ."
+        reading: "pustakaṁ mukaḷil."
+        ipa: "pust̪əkam mukəɭil"
+        bases: [{ word: "പുസ്തകം", base: "പുസ്തകം", reading: "pustakaṁ" }, { word: "മുകളിൽ", ref: "ml-0139" }]
+  - id: "ml-0140"
+    target: "താഴെ"
+    reading: "tāḻe"
+    ipa: "t̪aːɻe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കസേരയുടെ താഴെ."
+        reading: "kasērayuṭe tāḻe."
+        ipa: "kəseːɾəjuʈe t̪aːɻe"
+        bases: [{ word: "കസേരയുടെ", base: "കസേരയുടെ", reading: "kasērayuṭe" }, { word: "താഴെ", ref: "ml-0140" }]
+      - target: "പുസ്തകം മേശയുടെ താഴെ."
+        reading: "pustakaṁ meśayuṭe tāḻe."
+        ipa: "pust̪əkam meʃəjuʈe t̪aːɻe"
+        bases: [{ word: "പുസ്തകം", base: "പുസ്തകം", reading: "pustakaṁ" }, { word: "മേശയുടെ", base: "മേശയുടെ", reading: "meśayuṭe" }, { word: "താഴെ", ref: "ml-0140" }]
+  - id: "ml-0141"
+    target: "അകത്ത്"
+    reading: "akatt"
+    ipa: "əkat̪t̪"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "പെട്ടിയുടെ അകത്ത്."
+        reading: "peṭṭiyuṭe akatt."
+        ipa: "peʈʈijuʈe əkat̪t̪"
+        bases: [{ word: "പെട്ടിയുടെ", base: "പെട്ടിയുടെ", reading: "peṭṭiyuṭe" }, { word: "അകത്ത്", ref: "ml-0141" }]
+      - target: "വീടിന്റെ അകത്ത്."
+        reading: "vīṭinṟe akatt."
+        ipa: "ʋiːʈint̪ɾe əkat̪t̪"
+        bases: [{ word: "വീടിന്റെ", ref: "ml-0009" }, { word: "അകത്ത്", ref: "ml-0141" }]
+  - id: "ml-0142"
+    target: "പുറത്ത്"
+    reading: "puṟatt"
+    ipa: "puɾat̪t̪"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വീടിന്റെ പുറത്ത്."
+        reading: "vīṭinṟe puṟatt."
+        ipa: "ʋiːʈint̪ɾe puɾat̪t̪"
+        bases: [{ word: "വീടിന്റെ", ref: "ml-0009" }, { word: "പുറത്ത്", ref: "ml-0142" }]
+      - target: "പുറത്ത് പോകാം"
+        reading: "puṟatt pōkāṁ."
+        ipa: "puɾat̪t̪ poːkaːm"
+        bases: [{ word: "പുറത്ത്", ref: "ml-0142" }, { word: "പോകാം", base: "പോകുക", reading: "pōkuka" }]
+  - id: "ml-0143"
+    target: "അടുത്ത്"
+    reading: "aṭutt"
+    ipa: "əʈut̪t̪"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "സ്കൂളിന്റെ അടുത്ത്."
+        reading: "skūḷinṟe aṭutt."
+        ipa: "skuːɭint̪ɾe əʈut̪t̪"
+        bases: [{ word: "സ്കൂളിന്റെ", base: "സ്കൂളിന്റെ", reading: "skūḷinṟe" }, { word: "അടുത്ത്", ref: "ml-0143" }]
+      - target: "വീടിന്റെ അടുത്ത് കട."
+        reading: "vīṭinṟe aṭutt kaṭa."
+        ipa: "ʋiːʈint̪ɾe əʈut̪t̪ kəʈa"
+        bases: [{ word: "വീടിന്റെ", ref: "ml-0009" }, { word: "അടുത്ത്", ref: "ml-0143" }, { word: "കട", base: "കട", reading: "kaṭa" }]
+  - id: "ml-0144"
+    target: "അകലെ"
+    reading: "akale"
+    ipa: "əkəle"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "കടൽ അകലെ."
+        reading: "kaṭal akale."
+        ipa: "kəʈal əkəle"
+        bases: [{ word: "കടൽ", base: "കടൽ", reading: "kaṭal" }, { word: "അകലെ", ref: "ml-0144" }]
+      - target: "സ്കൂൾ അകലെ."
+        reading: "skūḷ akale."
+        ipa: "skuːɭ əkəle"
+        bases: [{ word: "സ്കൂൾ", base: "സ്കൂൾ", reading: "skūḷ" }, { word: "അകലെ", ref: "ml-0144" }]
+  - id: "ml-0145"
+    target: "മുന്നിൽ"
+    reading: "munnil"
+    ipa: "munnil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വീടിന്റെ മുന്നിൽ."
+        reading: "vīṭinṟe munnil."
+        ipa: "ʋiːʈint̪ɾe munnil"
+        bases: [{ word: "വീടിന്റെ", ref: "ml-0009" }, { word: "മുന്നിൽ", ref: "ml-0145" }]
+      - target: "വണ്ടി മുന്നിൽ."
+        reading: "vaṇṭi munnil."
+        ipa: "ʋəɳʈi munnil"
+        bases: [{ word: "വണ്ടി", base: "വണ്ടി", reading: "vaṇṭi" }, { word: "മുന്നിൽ", ref: "ml-0145" }]
+  - id: "ml-0146"
+    target: "പിന്നിൽ"
+    reading: "pinnil"
+    ipa: "pinnil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വീടിന്റെ പിന്നിൽ."
+        reading: "vīṭinṟe pinnil."
+        ipa: "ʋiːʈint̪ɾe pinnil"
+        bases: [{ word: "വീടിന്റെ", ref: "ml-0009" }, { word: "പിന്നിൽ", ref: "ml-0146" }]
+      - target: "പൂച്ച കസേരയുടെ പിന്നിൽ."
+        reading: "pūccha kasērayuṭe pinnil."
+        ipa: "puːtʃtʃa kəseːɾəjuʈe pinnil"
+        bases: [{ word: "പൂച്ച", base: "പൂച്ച", reading: "pūccha" }, { word: "കസേരയുടെ", base: "കസേരയുടെ", reading: "kasērayuṭe" }, { word: "പിന്നിൽ", ref: "ml-0146" }]
+  - id: "ml-0147"
+    target: "ഇടയിൽ"
+    reading: "iṭayil"
+    ipa: "iʈəjil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "രണ്ട് വീടുകളുടെ ഇടയിൽ കട."
+        reading: "raṇṭŭ vīṭukaḷuṭe iṭayil kaṭa."
+        ipa: "ɾəɳʈu ʋiːʈukəɭuʈe iʈəjil kəʈa"
+        bases: [{ word: "രണ്ട്", ref: "ml-0049" }, { word: "വീടുകളുടെ", base: "വീടുകളുടെ", reading: "vīṭukaḷuṭe" }, { word: "ഇടയിൽ", ref: "ml-0147" }, { word: "കട", base: "കട", reading: "kaṭa" }]
+      - target: "പേന പുസ്തകങ്ങൾക്ക് ഇടയിൽ."
+        reading: "pēna pustakaṅṅaḷkk iṭayil."
+        ipa: "peːna pust̪əkəŋŋaɭkk iʈəjil"
+        bases: [{ word: "പേന", base: "പേന", reading: "pēna" }, { word: "പുസ്തകങ്ങൾക്ക്", base: "പുസ്തകം", reading: "pustakaṁ" }, { word: "ഇടയിൽ", ref: "ml-0147" }]
+  - id: "ml-0148"
+    target: "വശത്ത്"
+    reading: "vaśatt"
+    ipa: "ʋəʃat̪t̪"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മേശയുടെ വശത്ത്."
+        reading: "meśayuṭe vaśatt."
+        ipa: "meʃəjuʈe ʋəʃat̪t̪"
+        bases: [{ word: "മേശയുടെ", base: "മേശയുടെ", reading: "meśayuṭe" }, { word: "വശത്ത്", ref: "ml-0148" }]
+      - target: "കസേര മേശയുടെ വശത്ത്."
+        reading: "kasēra meśayuṭe vaśatt."
+        ipa: "kəseːɾa meʃəjuʈe ʋəʃat̪t̪"
+        bases: [{ word: "കസേര", base: "കസേര", reading: "kasēra" }, { word: "മേശയുടെ", base: "മേശയുടെ", reading: "meśayuṭe" }, { word: "വശത്ത്", ref: "ml-0148" }]
+  - id: "ml-0149"
+    target: "അവിടെ"
+    reading: "aviṭe"
+    ipa: "əʋiʈe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "അവിടെ പോകൂ."
+        reading: "aviṭe pōkū."
+        ipa: "əʋiʈe poːkuː"
+        bases: [{ word: "അവിടെ", ref: "ml-0149" }, { word: "പോകൂ", ref: "ml-0112" }]
+      - target: "പുസ്തകം അവിടെ."
+        reading: "pustakaṁ aviṭe."
+        ipa: "pust̪əkam əʋiʈe"
+        bases: [{ word: "പുസ്തകം", base: "പുസ്തകം", reading: "pustakaṁ" }, { word: "അവിടെ", ref: "ml-0149" }]
+  - id: "ml-0150"
+    target: "കോണിൽ"
+    reading: "kōṇil"
+    ipa: "koːɳil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മുറിയുടെ കോണിൽ."
+        reading: "muṟiyuṭe kōṇil."
+        ipa: "muɾijuʈe koːɳil"
+        bases: [{ word: "മുറിയുടെ", base: "മുറിയുടെ", reading: "muṟiyuṭe" }, { word: "കോണിൽ", ref: "ml-0150" }]
+      - target: "കസേര മുറിയുടെ കോണിൽ."
+        reading: "kasēra muṟiyuṭe kōṇil."
+        ipa: "kəseːɾa muɾijuʈe koːɳil"
+        bases: [{ word: "കസേര", base: "കസേര", reading: "kasēra" }, { word: "മുറിയുടെ", base: "മുറിയുടെ", reading: "muṟiyuṭe" }, { word: "കോണിൽ", ref: "ml-0150" }]
+  - id: "ml-0151"
+    target: "നടുവിൽ"
+    reading: "naṭuvil"
+    ipa: "nəʈuʋil"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "മുറിയുടെ നടുവിൽ."
+        reading: "muṟiyuṭe naṭuvil."
+        ipa: "muɾijuʈe nəʈuʋil"
+        bases: [{ word: "മുറിയുടെ", base: "മുറിയുടെ", reading: "muṟiyuṭe" }, { word: "നടുവിൽ", ref: "ml-0151" }]
+      - target: "മേശ മുറിയുടെ നടുവിൽ."
+        reading: "meśa muṟiyuṭe naṭuvil."
+        ipa: "meʃa muɾijuʈe nəʈuʋil"
+        bases: [{ word: "മേശ", base: "മേശ", reading: "meśa" }, { word: "മുറിയുടെ", base: "മുറിയുടെ", reading: "muṟiyuṭe" }, { word: "നടുവിൽ", ref: "ml-0151" }]
+  - id: "ml-0152"
+    target: "എതിരെ"
+    reading: "etire"
+    ipa: "et̪iɾe"
+    pos: "adv"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "വീടിന് എതിരെ."
+        reading: "vīṭin etire."
+        ipa: "ʋiːʈin et̪iɾe"
+        bases: [{ word: "വീടിന്", ref: "ml-0009" }, { word: "എതിരെ", ref: "ml-0152" }]
+      - target: "പള്ളിക്ക് എതിരെ കട."
+        reading: "paḷḷikk etire kaṭa."
+        ipa: "pəɭɭikk et̪iɾe kəʈa"
+        bases: [{ word: "പള്ളിക്ക്", base: "പള്ളി", reading: "paḷḷi" }, { word: "എതിരെ", ref: "ml-0152" }, { word: "കട", base: "കട", reading: "kaṭa" }]

@@ -1,0 +1,139 @@
+schema: 1
+id: "ml-en-directions"
+kind: "layer"
+core: "ml-directions"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Directions"
+description: "Left, right, straight on, the way, the road, the four directions, a corner, a bridge, and the verb turn. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0240":
+    native: "left"
+    notes:
+      n1: "The left side. Turn left is ഇടത്തേക്ക് തിരിയൂ (iṭattēkk tiriyū)."
+    examples:
+      "ഇടത്തേക്ക് തിരിയൂ.":
+        native: "Turn left."
+      "വീട് ഇടത്ത്.":
+        native: "The house is on the left."
+        bases:
+          "ഇടത്ത്": "on the left"
+  "ml-0241":
+    native: "right"
+    notes:
+      n1: "The right side. Turn right is വലത്തേക്ക് തിരിയൂ (valattēkk tiriyū)."
+    examples:
+      "വലത്തേക്ക് തിരിയൂ.":
+        native: "Turn right."
+      "കട വലത്ത്.":
+        native: "The shop is on the right."
+        bases:
+          "കട": "shop"
+          "വലത്ത്": "on the right"
+  "ml-0242":
+    native: "straight on"
+    notes:
+      n1: "straight on"
+    examples:
+      "നേരെ പോകൂ.":
+        native: "Go straight on."
+      "പാലം നേരെ.":
+        native: "The bridge is straight ahead."
+  "ml-0243":
+    native: "way; road; route"
+    notes:
+      n1: "way; road; route"
+    examples:
+      "ഏത് വഴി?":
+        native: "Which way?"
+      "വഴി അറിയില്ല":
+        native: "I do not know the way."
+        bases:
+          "അറിയില്ല": "do not know"
+  "ml-0244":
+    native: "road"
+    notes:
+      n1: "road"
+    examples:
+      "റോഡ് എവിടെ?":
+        native: "Where is the road?"
+      "റോഡ് തിരക്ക്.":
+        native: "The road is crowded."
+        bases:
+          "തിരക്ക്": "crowd"
+  "ml-0245":
+    native: "east"
+    notes:
+      n1: "east"
+    examples:
+      "സൂര്യൻ കിഴക്ക്.":
+        native: "The sun is in the east."
+        bases:
+          "സൂര്യൻ": "the sun"
+      "കിഴക്ക് പോകൂ.":
+        native: "Go east."
+  "ml-0246":
+    native: "west"
+    notes:
+      n1: "west"
+    examples:
+      "സൂര്യൻ പടിഞ്ഞാറ്.":
+        native: "The sun sets in the west."
+        bases:
+          "സൂര്യൻ": "the sun"
+      "പടിഞ്ഞാറ് പോകൂ.":
+        native: "Go west."
+  "ml-0247":
+    native: "north"
+    notes:
+      n1: "north"
+    examples:
+      "വടക്ക് പോകൂ.":
+        native: "Go north."
+      "ഇവിടെ നിന്ന് വടക്ക്.":
+        native: "North of here."
+        bases:
+          "നിന്ന്": "from"
+  "ml-0248":
+    native: "south"
+    notes:
+      n1: "south"
+    examples:
+      "തെക്ക് പോകൂ.":
+        native: "Go south."
+      "വീട് തെക്ക്.":
+        native: "The house is to the south."
+  "ml-0249":
+    native: "corner"
+    notes:
+      n1: "corner"
+    examples:
+      "റോഡിന്റെ മൂല.":
+        native: "The corner of the road."
+      "മൂലയിൽ നിൽക്കൂ.":
+        native: "Stand at the corner."
+  "ml-0250":
+    native: "turn!"
+    notes:
+      n1: "turn!"
+    examples:
+      "ഇടത്തേക്ക് തിരിയൂ.":
+        native: "Turn left."
+        bases:
+          "തിരിയൂ": "turn!"
+      "ഇവിടെ തിരിയൂ.":
+        native: "Turn here."
+        bases:
+          "തിരിയൂ": "turn!"
+  "ml-0251":
+    native: "bridge"
+    notes:
+      n1: "bridge"
+    examples:
+      "പാലം നേരെ.":
+        native: "The bridge is straight ahead."
+      "പാലം കടക്കൂ":
+        native: "Cross the bridge."
+        bases:
+          "കടക്കൂ": "cross!"
