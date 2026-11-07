@@ -15,6 +15,8 @@ cards:
     examples:
       "ഇടത്തേക്ക് തിരിയൂ.":
         native: "Turn left."
+        bases:
+          "ഇടത്തേക്ക്": "left"
       "വീട് ഇടത്ത്.":
         native: "The house is on the left."
         bases:
@@ -26,6 +28,8 @@ cards:
     examples:
       "വലത്തേക്ക് തിരിയൂ.":
         native: "Turn right."
+        bases:
+          "വലത്തേക്ക്": "right"
       "കട വലത്ത്.":
         native: "The shop is on the right."
         bases:
@@ -38,8 +42,12 @@ cards:
     examples:
       "നേരെ പോകൂ.":
         native: "Go straight on."
+        bases:
+          "നേരെ": "straight on"
       "പാലം നേരെ.":
         native: "The bridge is straight ahead."
+        bases:
+          "നേരെ": "straight on"
   "ml-0243":
     native: "way; road; route"
     notes:
@@ -47,9 +55,12 @@ cards:
     examples:
       "ഏത് വഴി?":
         native: "Which way?"
+        bases:
+          "വഴി": "way; road; route"
       "വഴി അറിയില്ല":
         native: "I do not know the way."
         bases:
+          "വഴി": "way; road; route"
           "അറിയില്ല": "do not know"
   "ml-0244":
     native: "road"
@@ -58,9 +69,12 @@ cards:
     examples:
       "റോഡ് എവിടെ?":
         native: "Where is the road?"
+        bases:
+          "റോഡ്": "road"
       "റോഡ് തിരക്ക്.":
         native: "The road is crowded."
         bases:
+          "റോഡ്": "road"
           "തിരക്ക്": "crowd"
   "ml-0245":
     native: "east"
@@ -71,8 +85,11 @@ cards:
         native: "The sun is in the east."
         bases:
           "സൂര്യൻ": "the sun"
+          "കിഴക്ക്": "east"
       "കിഴക്ക് പോകൂ.":
         native: "Go east."
+        bases:
+          "കിഴക്ക്": "east"
   "ml-0246":
     native: "west"
     notes:
@@ -82,8 +99,11 @@ cards:
         native: "The sun sets in the west."
         bases:
           "സൂര്യൻ": "the sun"
+          "പടിഞ്ഞാറ്": "west"
       "പടിഞ്ഞാറ് പോകൂ.":
         native: "Go west."
+        bases:
+          "പടിഞ്ഞാറ്": "west"
   "ml-0247":
     native: "north"
     notes:
@@ -91,10 +111,13 @@ cards:
     examples:
       "വടക്ക് പോകൂ.":
         native: "Go north."
+        bases:
+          "വടക്ക്": "north"
       "ഇവിടെ നിന്ന് വടക്ക്.":
         native: "North of here."
         bases:
           "നിന്ന്": "from"
+          "വടക്ക്": "north"
   "ml-0248":
     native: "south"
     notes:
@@ -102,8 +125,12 @@ cards:
     examples:
       "തെക്ക് പോകൂ.":
         native: "Go south."
+        bases:
+          "തെക്ക്": "south"
       "വീട് തെക്ക്.":
         native: "The house is to the south."
+        bases:
+          "തെക്ക്": "south"
   "ml-0249":
     native: "corner"
     notes:
@@ -111,8 +138,12 @@ cards:
     examples:
       "റോഡിന്റെ മൂല.":
         native: "The corner of the road."
+        bases:
+          "മൂല": "corner"
       "മൂലയിൽ നിൽക്കൂ.":
         native: "Stand at the corner."
+        bases:
+          "മൂലയിൽ": "corner"
   "ml-0250":
     native: "turn!"
     notes:
@@ -133,7 +164,10 @@ cards:
     examples:
       "പാലം നേരെ.":
         native: "The bridge is straight ahead."
+        bases:
+          "പാലം": "bridge"
       "പാലം കടക്കൂ":
         native: "Cross the bridge."
         bases:
+          "പാലം": "bridge"
           "കടക്കൂ": "cross!"
