@@ -1,0 +1,184 @@
+schema: 1
+id: "ml-script-vowel-signs"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "ml-0638"
+    target: "കാ"
+    reading: "kā"
+    ipa: "kaː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കാപ്പി എവിടെ?"
+        reading: "kāppi eviṭe?"
+        ipa: "kaːppi eʋiʈe"
+        bases: [{ word: "കാപ്പി", ref: "ml-0271" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "കാൽ കഴുകൂ."
+        reading: "kāl kaḻukū."
+        ipa: "kaːl kəɻukuː"
+        bases: [{ word: "കാൽ", ref: "ml-0323" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0639"
+    target: "കി"
+    reading: "ki"
+    ipa: "ki"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കിടക്കൂ."
+        reading: "kiṭakkū."
+        ipa: "kiʈəkkuː"
+        bases: [{ word: "കിടക്കൂ", ref: "ml-0167" }]
+      - target: "കിടക്ക വലിയതാണ്/വലിയ."
+        reading: "kiṭakka valiyatāṇ/valiya."
+        ipa: "kiʈəkka ʋəlijət̪aːɳʋəlija"
+        bases: [{ word: "കിടക്ക", ref: "ml-0374" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+  - id: "ml-0640"
+    target: "ചീ"
+    reading: "cī"
+    ipa: "tʃiː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ചീപ്പ് വേണം."
+        reading: "cīpp vēṇaṁ."
+        ipa: "tʃiːpp ʋeːɳam"
+        bases: [{ word: "ചീപ്പ്", ref: "ml-0381" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ചീര എവിടെ വാങ്ങാം/വാങ്ങൂ?"
+        reading: "cīra eviṭe vāṅṅāṁ/vāṅṅū?"
+        ipa: "tʃiːɾa eʋiʈe ʋaːŋŋaːmʋaːŋŋuː"
+        bases: [{ word: "ചീര", ref: "ml-0281" }, { word: "എവിടെ", ref: "ml-0033" }, { word: "വാങ്ങാം", ref: "ml-0126" }]
+  - id: "ml-0641"
+    target: "കു"
+    reading: "ku"
+    ipa: "ku"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കുട എടുക്കൂ."
+        reading: "kuṭa eṭukkū."
+        ipa: "kuʈa eʈukkuː"
+        bases: [{ word: "കുട", ref: "ml-0366" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+      - target: "കുപ്പി കഴുകൂ."
+        reading: "kuppi kaḻukū."
+        ipa: "kuppi kəɻukuː"
+        bases: [{ word: "കുപ്പി", ref: "ml-0367" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0642"
+    target: "കൂ"
+    reading: "kū"
+    ipa: "kuː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കൂടുതൽ വേണോ?"
+        reading: "kūṭutal vēṇō?"
+        ipa: "kuːʈut̪al ʋeːɳoː"
+        bases: [{ word: "കൂടുതൽ", ref: "ml-0455" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+      - target: "കൂടുതൽ കഴിക്കൂ."
+        reading: "kūṭutal kaḻikkū."
+        ipa: "kuːʈut̪al kəɻikkuː"
+        bases: [{ word: "കൂടുതൽ", ref: "ml-0455" }, { word: "കഴിക്കൂ", ref: "ml-0113" }]
+  - id: "ml-0643"
+    target: "കെ"
+    reading: "ke"
+    ipa: "ke"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "വൃത്തികെട്ട കൈ."
+        reading: "vṛttikeṭṭa kai."
+        ipa: "ʋɾɯt̪t̪ikeʈʈa kai"
+        bases: [{ word: "വൃത്തികെട്ട", ref: "ml-0482" }, { word: "കൈ", ref: "ml-0317" }]
+      - target: "കെട്ട പഴം."
+        reading: "keṭṭa paḻaṁ."
+        ipa: "keʈʈa pəɻam"
+        bases: [{ word: "കെട്ട", base: "കെട്ട", reading: "keṭṭa" }, { word: "പഴം", ref: "ml-0225" }]
+  - id: "ml-0644"
+    target: "കേ"
+    reading: "kē"
+    ipa: "keː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കേൾക്കൂ."
+        reading: "kēḷkkū."
+        ipa: "keːɭkkuː"
+        bases: [{ word: "കേൾക്കൂ", ref: "ml-0118" }]
+      - target: "നന്നായി കേൾക്കൂ."
+        reading: "nannāyi kēḷkkū."
+        ipa: "nənnaːji keːɭkkuː"
+        bases: [{ word: "നന്നായി", ref: "ml-0519" }, { word: "കേൾക്കൂ", ref: "ml-0118" }]
+  - id: "ml-0645"
+    target: "കൈ"
+    reading: "kai"
+    ipa: "kai"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കൈ കഴുകൂ."
+        reading: "kai kaḻukū."
+        ipa: "kai kəɻukuː"
+        bases: [{ word: "കൈ", ref: "ml-0317" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+      - target: "എന്റെ കൈ വേദനിക്കുന്നു."
+        reading: "enṟe kai vēdanikkunnu."
+        ipa: "ent̪ɾe kai ʋeːd̪ənikkunnu"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "കൈ", ref: "ml-0317" }, { word: "വേദനിക്കുന്നു", base: "വേദനിക്കുന്നു", reading: "vēdanikkunnu" }]
+  - id: "ml-0646"
+    target: "കൊ"
+    reading: "ko"
+    ipa: "ko"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കൊണ്ടുവരൂ."
+        reading: "koṇṭuvarū."
+        ipa: "koɳʈuʋəɾuː"
+        bases: [{ word: "കൊണ്ടുവരൂ", ref: "ml-0153" }]
+      - target: "കൊതുക് കടിക്കുന്നു."
+        reading: "kotuk kaṭikkunnu."
+        ipa: "kot̪uk kəʈikkunnu"
+        bases: [{ word: "കൊതുക്", ref: "ml-0442" }, { word: "കടിക്കുന്നു", base: "കടിക്കുന്നു", reading: "kaṭikkunnu" }]
+  - id: "ml-0647"
+    target: "കോ"
+    reading: "kō"
+    ipa: "koː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കോഴി മുട്ടയിടുന്നു."
+        reading: "kōḻi muṭṭayiṭunnu."
+        ipa: "koːɻi muʈʈəjiʈunnu"
+        bases: [{ word: "കോഴി", ref: "ml-0433" }, { word: "മുട്ടയിടുന്നു", base: "മുട്ടയിടുന്നു", reading: "muṭṭayiṭunnu" }]
+      - target: "കോഴി ഇവിടെ."
+        reading: "kōḻi iviṭe."
+        ipa: "koːɻi iʋiʈe"
+        bases: [{ word: "കോഴി", ref: "ml-0433" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0648"
+    target: "കൗ"
+    reading: "kau"
+    ipa: "kau"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "കൗതുകം ഉണ്ട്."
+        reading: "kautukaṁ uṇṭ."
+        ipa: "kaut̪ukam uɳʈ"
+        bases: [{ word: "കൗതുകം", base: "കൗതുകം", reading: "kautukaṁ" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "കൗതുകം വേണ്ട."
+        reading: "kautukaṁ vēṇṭa."
+        ipa: "kaut̪ukam ʋeːɳʈa"
+        bases: [{ word: "കൗതുകം", base: "കൗതുകം", reading: "kautukaṁ" }, { word: "വേണ്ട", base: "വേണ്ട", reading: "vēṇṭa" }]

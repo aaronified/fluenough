@@ -1,0 +1,200 @@
+schema: 1
+id: "ml-script-vowels"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "ml-0581"
+    target: "അ"
+    reading: "a"
+    ipa: "a"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "അമ്മ വരൂ."
+        reading: "amma varū."
+        ipa: "əmma ʋəɾuː"
+        bases: [{ word: "അമ്മ", ref: "ml-0071" }, { word: "വരൂ", ref: "ml-0010" }]
+      - target: "അച്ഛൻ ഇവിടെ ഉണ്ട്."
+        reading: "acchaṉ iviṭe uṇṭ."
+        ipa: "ətʃtʃan iʋiʈe uɳʈ"
+        bases: [{ word: "അച്ഛൻ", ref: "ml-0070" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+  - id: "ml-0582"
+    target: "ആ"
+    reading: "ā"
+    ipa: "aː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ആന വലിയതാണ്/വലിയ."
+        reading: "āna valiyatāṇ/valiya."
+        ipa: "aːna ʋəlijət̪aːɳʋəlija"
+        bases: [{ word: "ആന", ref: "ml-0436" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+      - target: "ആട് ഇവിടെ."
+        reading: "āṭ iviṭe."
+        ipa: "aːʈ iʋiʈe"
+        bases: [{ word: "ആട്", ref: "ml-0432" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0583"
+    target: "ഇ"
+    reading: "i"
+    ipa: "i"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഇവിടെ ഇരിക്കൂ."
+        reading: "iviṭe irikkū."
+        ipa: "iʋiʈe iɾikkuː"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഇരിക്കൂ", ref: "ml-0115" }]
+      - target: "ഇല്ല, നന്ദി."
+        reading: "illa, nandi."
+        ipa: "illa nənd̪i"
+        bases: [{ word: "ഇല്ല", ref: "ml-0002" }, { word: "നന്ദി", ref: "ml-0013" }]
+  - id: "ml-0584"
+    target: "ഈ"
+    reading: "ī"
+    ipa: "iː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഈച്ച ഇവിടെ."
+        reading: "īcca iviṭe."
+        ipa: "iːtʃtʃa iʋiʈe"
+        bases: [{ word: "ഈച്ച", ref: "ml-0441" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+      - target: "ഈ വാച്ച് നല്ലതാണ്."
+        reading: "ī vācc nallatāṇ."
+        ipa: "iː ʋaːtʃtʃ nəllət̪aːɳ"
+        bases: [{ word: "ഈ", base: "ഈ", reading: "ī" }, { word: "വാച്ച്", ref: "ml-0364" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0585"
+    target: "ഉ"
+    reading: "u"
+    ipa: "u"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഉള്ളി വേണം."
+        reading: "uḷḷi vēṇaṁ."
+        ipa: "uɭɭi ʋeːɳam"
+        bases: [{ word: "ഉള്ളി", ref: "ml-0229" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "ഉറക്കം വേണം."
+        reading: "uṟakkaṁ vēṇaṁ."
+        ipa: "uɾəkkam ʋeːɳam"
+        bases: [{ word: "ഉറക്കം", ref: "ml-0335" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0586"
+    target: "ഊ"
+    reading: "ū"
+    ipa: "uː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഊണ് വേണോ?"
+        reading: "ūṇ vēṇō?"
+        ipa: "uːɳ ʋeːɳoː"
+        bases: [{ word: "ഊണ്", ref: "ml-0306" }, { word: "വേണോ", base: "വേണോ", reading: "vēṇō" }]
+      - target: "ഊണ് കഴിക്കൂ."
+        reading: "ūṇ kaḻikkū."
+        ipa: "uːɳ kəɻikkuː"
+        bases: [{ word: "ഊണ്", ref: "ml-0306" }, { word: "കഴിക്കൂ", ref: "ml-0113" }]
+  - id: "ml-0587"
+    target: "എ"
+    reading: "e"
+    ipa: "e"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "എന്റെ ബാഗ് എവിടെ?"
+        reading: "enṟe bāg eviṭe?"
+        ipa: "ent̪ɾe baːɡ eʋiʈe"
+        bases: [{ word: "എന്റെ", ref: "ml-0043" }, { word: "ബാഗ്", ref: "ml-0361" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "എലി അടുക്കളയിൽ/അടുക്കള."
+        reading: "eli aṭukkaḷayil/aṭukkaḷa."
+        ipa: "eli əʈukkəɭəjiləʈukkəɭa"
+        bases: [{ word: "എലി", ref: "ml-0445" }, { word: "അടുക്കളയിൽ", ref: "ml-0386" }]
+  - id: "ml-0588"
+    target: "ഏ"
+    reading: "ē"
+    ipa: "eː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഏത് നിറം?"
+        reading: "ēt niṟaṁ?"
+        ipa: "eːt̪ niɾam"
+        bases: [{ word: "ഏത്", ref: "ml-0037" }, { word: "നിറം", ref: "ml-0419" }]
+      - target: "ഏഴ് മണി."
+        reading: "ēḻ maṇi."
+        ipa: "eːɻ məɳi"
+        bases: [{ word: "ഏഴ്", ref: "ml-0054" }, { word: "മണി", ref: "ml-0135" }]
+  - id: "ml-0589"
+    target: "ഐ"
+    reading: "ai"
+    ipa: "ai"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഐസ്ക്രീം എത്ര?"
+        reading: "aiskrīṁ etra?"
+        ipa: "aiskɾiːm et̪ɾa"
+        bases: [{ word: "ഐസ്ക്രീം", ref: "ml-0276" }, { word: "എത്ര", ref: "ml-0038" }]
+      - target: "ഐസ്ക്രീം വേണം."
+        reading: "aiskrīṁ vēṇaṁ."
+        ipa: "aiskɾiːm ʋeːɳam"
+        bases: [{ word: "ഐസ്ക്രീം", ref: "ml-0276" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0590"
+    target: "ഒ"
+    reading: "o"
+    ipa: "o"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഒന്ന് മതി."
+        reading: "onn mati."
+        ipa: "onn mət̪i"
+        bases: [{ word: "ഒന്ന്", ref: "ml-0007" }, { word: "മതി", ref: "ml-0456" }]
+      - target: "ഒട്ടകം വലിയതാണ്/വലിയ."
+        reading: "oṭṭakaṁ valiyatāṇ/valiya."
+        ipa: "oʈʈəkam ʋəlijət̪aːɳʋəlija"
+        bases: [{ word: "ഒട്ടകം", ref: "ml-0448" }, { word: "വലിയതാണ്", ref: "ml-0008" }]
+  - id: "ml-0591"
+    target: "ഓ"
+    reading: "ō"
+    ipa: "oː"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഓഫീസ് എവിടെ?"
+        reading: "ōphīs eviṭe?"
+        ipa: "oːpʰiːs eʋiʈe"
+        bases: [{ word: "ഓഫീസ്", ref: "ml-0185" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ഓറഞ്ച് എടുക്കൂ."
+        reading: "ōṟañc eṭukkū."
+        ipa: "oːɾaɲtʃ eʈukkuː"
+        bases: [{ word: "ഓറഞ്ച്", ref: "ml-0289" }, { word: "എടുക്കൂ", ref: "ml-0122" }]
+  - id: "ml-0592"
+    target: "ഔ"
+    reading: "au"
+    ipa: "au"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഔഷധം ഇവിടെ ഉണ്ട്."
+        reading: "auṣadhaṁ iviṭe uṇṭ."
+        ipa: "auʂəd̪ʱam iʋiʈe uɳʈ"
+        bases: [{ word: "ഔഷധം", base: "ഔഷധം", reading: "auṣadhaṁ" }, { word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ട്", base: "ഉണ്ട്", reading: "uṇṭ" }]
+      - target: "ഔഷധം കഴിക്കൂ."
+        reading: "auṣadhaṁ kaḻikkū."
+        ipa: "auʂəd̪ʱam kəɻikkuː"
+        bases: [{ word: "ഔഷധം", base: "ഔഷധം", reading: "auṣadhaṁ" }, { word: "കഴിക്കൂ", ref: "ml-0113" }]

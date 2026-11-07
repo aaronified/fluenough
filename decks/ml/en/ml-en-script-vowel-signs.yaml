@@ -1,0 +1,131 @@
+schema: 1
+id: "ml-en-script-vowel-signs"
+kind: "layer"
+core: "ml-script-vowel-signs"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam vowel signs"
+description: "The vowel signs written after a consonant: each one changes the vowel the consonant carries, as in കാ, കി, കു and കൊ. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed", "script"]
+cards:
+  "ml-0638":
+    native: "kā: ക with the sign ാ, a long a"
+    notes:
+      n1: "The sign ാ adds a long a after ക. Written after the consonant, not on its own."
+    examples:
+      "കാപ്പി എവിടെ?":
+        native: "Where is the coffee?"
+        bases: {}
+      "കാൽ കഴുകൂ.":
+        native: "Wash your feet."
+        bases: {}
+  "ml-0639":
+    native: "ki: ക with the sign ി, a short i"
+    notes:
+      n1: "The sign ി adds a short i after ക, written before the consonant in the script but said after it."
+    examples:
+      "കിടക്കൂ.":
+        native: "Lie down."
+        bases: {}
+      "കിടക്ക വലിയതാണ്/വലിയ.":
+        native: "The bed is big."
+        bases: {}
+  "ml-0640":
+    native: "cī: ച with the sign ീ, a long i"
+    notes:
+      n1: "The sign ീ makes the i long. ചീപ്പ് (cīpp, comb) and ചീര (cīra, spinach) show it."
+    examples:
+      "ചീപ്പ് വേണം.":
+        native: "I need a comb."
+        bases: {"വേണം": "need"}
+      "ചീര എവിടെ വാങ്ങാം/വാങ്ങൂ?":
+        native: "Where can I buy spinach?"
+        bases: {}
+  "ml-0641":
+    native: "ku: ക with the sign ു, a short u"
+    notes:
+      n1: "The sign ു adds a short u after ക."
+    examples:
+      "കുട എടുക്കൂ.":
+        native: "Take an umbrella."
+        bases: {}
+      "കുപ്പി കഴുകൂ.":
+        native: "Wash the bottle."
+        bases: {}
+  "ml-0642":
+    native: "kū: ക with the sign ൂ, a long u"
+    notes:
+      n1: "The sign ൂ makes the u long. It is the sign of the imperatives in -ൂ."
+    examples:
+      "കൂടുതൽ വേണോ?":
+        native: "Do you want more?"
+        bases: {"വേണോ": "do you want"}
+      "കൂടുതൽ കഴിക്കൂ.":
+        native: "Eat more."
+        bases: {}
+  "ml-0643":
+    native: "ke: ക with the sign െ, a short e"
+    notes:
+      n1: "The sign െ makes the vowel e before the consonant in the script."
+    examples:
+      "വൃത്തികെട്ട കൈ.":
+        native: "A dirty hand."
+        bases: {}
+      "കെട്ട പഴം.":
+        native: "A bad fruit."
+        bases: {"കെട്ട": "bad"}
+  "ml-0644":
+    native: "kē: ക with the sign േ, a long e"
+    notes:
+      n1: "The sign േ makes the e long."
+    examples:
+      "കേൾക്കൂ.":
+        native: "Listen."
+        bases: {}
+      "നന്നായി കേൾക്കൂ.":
+        native: "Listen well."
+        bases: {}
+  "ml-0645":
+    native: "kai: ക with the sign ൈ, ai"
+    notes:
+      n1: "The sign ൈ makes the vowel ai after ക."
+    examples:
+      "കൈ കഴുകൂ.":
+        native: "Wash your hands."
+        bases: {}
+      "എന്റെ കൈ വേദനിക്കുന്നു.":
+        native: "My arm hurts."
+        bases: {"വേദനിക്കുന്നു": "hurts"}
+  "ml-0646":
+    native: "ko: ക with the sign ൊ, a short o"
+    notes:
+      n1: "The sign ൊ makes the o after ക, written before the consonant but said after it."
+    examples:
+      "കൊണ്ടുവരൂ.":
+        native: "Bring it."
+        bases: {}
+      "കൊതുക് കടിക്കുന്നു.":
+        native: "The mosquito bites."
+        bases: {"കടിക്കുന്നു": "bites"}
+  "ml-0647":
+    native: "kō: ക with the sign ോ, a long o"
+    notes:
+      n1: "The sign ോ makes the o long."
+    examples:
+      "കോഴി മുട്ടയിടുന്നു.":
+        native: "The hen lays eggs."
+        bases: {"മുട്ടയിടുന്നു": "lays eggs"}
+      "കോഴി ഇവിടെ.":
+        native: "The hen is here."
+        bases: {}
+  "ml-0648":
+    native: "kau: ക with the sign ൗ, au"
+    notes:
+      n1: "The sign ൗ makes the vowel au after ക, as in കൗതുകം (kautukaṁ, curiosity)."
+    examples:
+      "കൗതുകം ഉണ്ട്.":
+        native: "There is curiosity."
+        bases: {"കൗതുകം": "curiosity", "ഉണ്ട്": "there is"}
+      "കൗതുകം വേണ്ട.":
+        native: "No curiosity, please."
+        bases: {"കൗതുകം": "curiosity", "വേണ്ട": "not needed"}
