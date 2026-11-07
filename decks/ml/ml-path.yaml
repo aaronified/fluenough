@@ -147,7 +147,7 @@ units:
     reading_passages:
       - { id: "question-cards", text: { "en": "Cards with who, what, where and when" } }
   # ml-addressing joins this unit.
-  - decks: ["ml-pronouns", "*"]
+  - decks: ["ml-pronouns", "ml-pronouns-sentences", "*"]
     words: 16
     listening_passages:
       - { id: "polite-or-not", text: { "en": "Speaking to a friend, an elder and a shopkeeper" } }
@@ -178,7 +178,7 @@ units:
       - { id: "introducing-myself", text: { "en": "Someone says their name, home town and work" } }
     reading_passages:
       - { id: "profile-card", text: { "en": "A short profile card" } }
-  - decks: ["ml-verbs", "*"]
+  - decks: ["ml-verbs", "ml-verbs-sentences", "*"]
     words: 15
     listening_passages:
       - { id: "what-i-do", text: { "en": "Someone lists what they do each day" } }
@@ -190,13 +190,13 @@ units:
       - { id: "how-often", text: { "en": "Saying how often and how well things are done" } }
     reading_passages:
       - { id: "habit-survey", text: { "en": "A short survey about everyday habits" } }
-  - decks: ["ml-quantities", "*"]
+  - decks: ["ml-quantities", "ml-quantities-sentences", "*"]
     words: 23
     listening_passages:
       - { id: "a-little-more", text: { "en": "Asking for a little more and a little less" } }
     reading_passages:
       - { id: "shopping-amounts", text: { "en": "A shopping list with amounts" } }
-  - decks: ["ml-describing", "*"]
+  - decks: ["ml-describing", "ml-describing-sentences", "*"]
     words: 31
     listening_passages:
       - { id: "big-and-small", text: { "en": "Describing things: big, small, hot and cold" } }
@@ -342,7 +342,7 @@ units:
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
   # ml-things-sentences and ml-more-verbs-sentences join this unit.
-  - decks: ["ml-home", "ml-things-sentences", "ml-more-verbs-sentences", "*"]
+  - decks: ["ml-home", "ml-things-sentences", "ml-more-verbs-sentences", "ml-noun-forms-sentences", "*"]
     words: 17
     listening_passages:
       - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
@@ -366,7 +366,7 @@ units:
     reading_passages:
       - { id: "class-photo", text: { "en": "A caption under a class photo" } }
   # ml-clothes-sentences and ml-describing-sentences join this unit.
-  - decks: ["ml-clothes", "*"]
+  - decks: ["ml-clothes", "ml-clothes-sentences", "*"]
     words: 24
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a shirt's colour and size in a shop" } }
