@@ -5,9 +5,7 @@ Source of truth: this wiki page.
 
 Written 2026-10-05.
 
-See also (2026-11-04): on-device Telugu speech recognition (#1004, aimed at 0.9.0, opt-in) would recognise offline for Telugu without the system recogniser; the alert here still applies to every language it does not cover.
-
-See also (2026-11-04): on-device Telugu speech recognition (#1004, aimed at 0.9.0, opt-in) would recognise offline for Telugu without the system recogniser; the alert here still applies to every language it does not cover.
+See also (2026-11-04): on-device Telugu speech recognition (#1004, aimed at 0.9.0, opt-in) would recognise offline for Telugu without the system recogniser; the alert here still applies to every language it does not cover. (Update 2026-11-07: #1004 is not built; there is no on-device recogniser in the code yet, and the alert and the Today line planned here are not in the code either (tracker #233); what exists is the ask before audio goes online, `lib/features/placement/online_speech_ask.dart`, and the Voices page's "Only online" row.)
 
 ## What the owner asked
 

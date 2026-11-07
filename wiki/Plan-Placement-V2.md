@@ -10,6 +10,8 @@ The full text is in git history: `git show 98be3004:wiki/Plan-Placement-V2.md`.
 
 ## Find my level: verify, then fit, and how a run samples questions (plan, owner, 2026-11-05)
 
+Update 2026-11-07: shipped. Steps 1 to 5 are in the released app: Find my level in 0.9.0 (CHANGELOG 0.9.0: it asks how well you know the language, then checks you, and shows how sure it is), made harder to guess in 0.9.1, made safe to repeat for earlier placements in 0.9.2 ("Check your level again", letters known from English no longer count as knowing the language), and its credit kept apart from the older placement test's in 0.9.3. The `feat/...` branch names below are historical. This section is a record, not open work; the sections it numbers (4.x to 12) are the design as built, and the CHANGELOG and the code win where they differ.
+
 Status: plan agreed by the owner 2026-11-05. Step 1 (the pure model in `lib/core/placement/`, PR #1032, merged 2026-11-05) is built and not wired into any screen; steps 2 to 5 are built (step 5, the confidence display, in `feat/placement-confidence-display`). The build order is below, and the step 1 note follows it. The owner's answers of 2026-11-05 are in section 9 (answered table); the questions still open are there too. The numbers of sections 4.5 to 7 come from a model and a simulation written for this plan (a Python script of about 150 lines, kept in the session scratch folder), **not run in CI**; the implementation's tests must reproduce them (section 5.3).
 
 **Proposed build order**
