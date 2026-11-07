@@ -244,4 +244,27 @@ Also: every adversary with an "advanced" or "expert" declaration meets the same 
 ## Build progress
 
 1. Joint posterior and readout (`lib/core/placement/joint_model.dart`, tests in `test/placement_joint_model_test.dart`): built. It holds the prior mix, noisy-AND update, yes-bias latent, calibration, tempering, proven ceiling, Say rule and the readout.
-2. Harness and personas, 3. item registry and generators with the fixes above, 4. picker, rotation and caps, 5. drill-down, 6. UI and result screen, 7. migration and retiring the V2 run policy, 8. real-learner re-fit hooks: next, one pull request each.
+2. Replay harness and personas (`test/support/placement_v3_harness.dart`, fixture `test/fixtures/placement/adversary/leak_profile.json`, tests `test/placement_v3_gamers_test.dart`, `placement_v3_adversaries_test.dart`, `placement_v3_honest_test.dart`, `placement_v3_pending_gates_test.dart`): built. The harness runs any picker over a simulated bank (a stand-in for the item registry) with persona answer models (the adversary's measured leak rates, honest learners, yes-sayer, self-rater, cheater control). A stand-in picker (`BaselinePicker`) proves one band per skill with four clean items, climbs while the proof ceiling holds the start down, and stops at the caps. Enforced now: TOP100+RULES (weak and strong, Spanish and Hindi, legacy and fixed bank), COGNATE-ONLY, TESTWISE-ONLY, RANDOM, YES-SAYER, SELF-RATER, no honest learner more than 2/10 above the truth, four clean items per skill in every run, Read and Write fully placed without audio or a mic, no card asked twice.
+3. Item registry and generators with the fixes above, 4. picker, rotation and caps, 5. drill-down, 6. UI and result screen, 7. migration and retiring the V2 run policy, 8. real-learner re-fit hooks: next, one pull request each.
+
+## Pending gates
+
+These gates need a later build step and are listed, with the file that will signal their prerequisite, in `test/placement_v3_pending_gates_test.dart`. When the file lands, that test fails until the gate is enabled and its entry deleted.
+
+| Id | Gate | Prerequisite file (any depth under `lib/core/placement/`) | Why it waits |
+|---|---|---|---|
+| `time-and-items` | Median at most 28 items and 200 s, 95th percentile at most 40 items and 300 s | name has `picker` (not `item_picker`) | The stand-in picker measures 22 to 30 items and 216 to 301 s medians |
+| `experts-natives-within-a-tenth` | Experts and natives within 1/10 in at least 85% | `picker` | The stand-in places them safely but low |
+| `honest-confidence` | 80% range holds the truth in 75 to 88% | `picker` | The stand-in gives 65 to 100%; re-fit at step 8 |
+| `ear-only-placed-high-on-hear` | Ear-only placed high on Hear | `picker`, `drilldown` | The stand-in proves one band for all skills |
+| `drill-down-identifies-the-failing-skill` | Drill-down finds the failing skill in 4 items | `drilldown` | No drill-down yet |
+| `anagram-solver-per-item`, `matcher-per-pair`, `family-replay-lift`, `admission-audit` | ANAGRAM-SOLVER, MATCHER, FAMILY-REPLAY lift, admission audit | `registry` | They judge real generated items |
+| `script-gate` | Script-literate-only with the script passed | `script_gate` | No script gate yet |
+
+### Open for step 8: a held-out gamer
+
+The adversary's leak rates are measured by one gamer on one bank, and the generators' fixes were calibrated against the same gamer, so the "fixed" bank's numbers are circular. Step 8 needs a held-out gamer: a different bank split; leaks correlated within a card family; leaks that depend on how many items the gamer has already seen (exposure); other languages; and per-run uncertainty in each leak rate. Until then the harness shows the model survives a gamer up to 0.07 better than measured (and fails at 0.45 better), not that the measured rates are the worst case.
+
+### What the gates check, and the controls
+
+The adversary gates are per skill (Read, Hear and Write each must pass), in every declaration and device variant. They have controls that show they can fail (Spanish): V3 as it was before the review (no calibration, no proof ceiling, a picker that asks every format and lets cognates in) is over by 1/10 in 24% of runs; calibration and the ceiling are each load-bearing in the setting where the other layers are removed; a gamer 0.45 better than measured fails in Spanish and Hindi. The model defends in layers, so removing one protection while the others stand still passes (measured: 0 to 3%).

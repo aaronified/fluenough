@@ -249,7 +249,7 @@ void main() {
       final read = m.readout().skills[_read]!;
       expect(read.provenClass, isNotNull);
       expect(read.startClass, lessThanOrEqualTo(read.provenClass!));
-      expect(read.highClass, lessThanOrEqualTo(read.provenClass!));
+      expect(read.highClass, greaterThan(read.provenClass!));
       expect(read.cappedByProof, isTrue);
     });
 
@@ -541,8 +541,13 @@ void main() {
       expect(cal.usable('F2', false, 0.25), isTrue);
       expect(cal.guessFor('F2', false, 0.25), 0.35);
       expect(cal.usable('S2', false, 0.5), isTrue);
-      expect(cal.usable('S2:legacy', true, 0.5), isTrue);
+      expect(cal.usable('S2legacy', false, 0.5), isFalse);
       expect(cal.guessFor('unknown', false, 0.25), 0.25);
+      // The legacy formats are reachable by their own names.
+      expect(cal.guessFor('F6endings', false, 0.25), 0.99);
+      expect(cal.usable('F6endings', false, 0.25), isFalse);
+      expect(cal.usable('F5legacy', true, 0.25), isFalse);
+      expect(cal.guessFor('F6hint', true, 0.25), 0.75);
     });
 
     test('the calibrated guess never falls below the design base', () {
