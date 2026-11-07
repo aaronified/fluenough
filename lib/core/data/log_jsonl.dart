@@ -6,13 +6,15 @@ import '../models/review_event.dart';
 import '../scheduling/ask.dart';
 import '../scheduling/fsrs.dart';
 import '../scheduling/fsrs_fit.dart';
+import '../scheduling/placement_withdrawal.dart';
 import '../scheduling/replay.dart';
 import '../scheduling/skill_parameters.dart';
 
 /// The review log as JSON Lines, the backup format (#20; docs/LOG-FORMAT.md).
 ///
 /// One JSON object per line: a header, then every review and every leech
-/// action, oldest first, then FSRS's parameters fitted to the learner.
+/// action, oldest first, then the placement credit the learner took back,
+/// then FSRS's parameters fitted to the learner.
 /// Plain text, so a backup outlives this app. Of scheduling state only the
 /// fitted parameters are written, since they cannot be worked out again
 /// from the log; an import rebuilds every other state from it.
@@ -26,6 +28,7 @@ abstract final class LogJsonl {
     Iterable<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    Iterable<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
   }) {
     final lines = <String>[
       jsonEncode(<String, Object>{'format': format, 'version': version}),
@@ -49,6 +52,18 @@ abstract final class LogJsonl {
           'card': a.key.cardId,
           'mode': a.key.mode.name,
           'kind': a.kind.name,
+        }),
+      // A line of a type an older app does not know, which skips it: no
+      // version bump (wiki, Plan-Placement-V2, point 17.1).
+      for (final w in withdrawals)
+        jsonEncode(<String, Object?>{
+          'type': 'withdrawal',
+          'at': w.at.toUtc().toIso8601String(),
+          'language': w.language,
+          'credit_at': w.creditAt,
+          'modes': w.modeNames,
+          'script': w.script,
+          'decks': w.sortedDeckIds,
         }),
       for (final MapEntry(:key, :value) in _sorted(fitted))
         jsonEncode(<String, Object?>{
@@ -74,9 +89,11 @@ abstract final class LogJsonl {
     List<LoggedReview> reviews,
     List<LeechAction> leechActions,
     Map<SkillKey, FittedParameters> fitted,
+    List<PlacementWithdrawal> withdrawals,
   })
   decode(String text) {
     final reviews = <LoggedReview>[];
+    final taken = <PlacementWithdrawal>[];
     final actions = <LeechAction>[];
     final fitted = <SkillKey, FittedParameters>{};
     var sawHeader = false;
@@ -126,6 +143,11 @@ abstract final class LogJsonl {
               kind: kind,
             ),
           );
+        case 'withdrawal':
+          // Tolerant: a withdrawal that does not read is skipped, and the
+          // credit it named stays (and is flagged again), never a failed
+          // restore.
+          if (_withdrawal(decoded) case final w?) taken.add(w);
         case 'parameters':
           final (key, value) = _fitted(decoded, n);
           final before = fitted[key];
@@ -137,7 +159,44 @@ abstract final class LogJsonl {
       }
     }
     if (!sawHeader) throw const FormatException('not a Fluenough review log');
-    return (reviews: reviews, leechActions: actions, fitted: fitted);
+    return (
+      reviews: reviews,
+      leechActions: actions,
+      fitted: fitted,
+      withdrawals: taken,
+    );
+  }
+
+  /// The withdrawal [o] holds, or null when it is not one.
+  static PlacementWithdrawal? _withdrawal(Map<String, Object?> o) {
+    final at = o['at'] is String ? DateTime.tryParse(o['at']! as String) : null;
+    final language = o['language'];
+    final creditAt = o['credit_at'];
+    final modes = o['modes'];
+    final decks = o['decks'];
+    final script = o['script'];
+    if (at == null ||
+        language is! String ||
+        language.isEmpty ||
+        creditAt is! int ||
+        modes is! List ||
+        decks is! List ||
+        (script != null && script is! String)) {
+      return null;
+    }
+    return PlacementWithdrawal(
+      at: at.toLocal(),
+      language: language,
+      creditAt: creditAt,
+      modes: <DrillMode>[
+        for (final m in modes) ?(m is String ? DrillMode.tryParse(m) : null),
+      ],
+      script: script as String?,
+      deckIds: <String>[
+        for (final d in decks)
+          if (d is String && d.isNotEmpty) d,
+      ],
+    );
   }
 
   /// [fitted] in a stable order: by language, then mode.

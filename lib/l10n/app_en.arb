@@ -14485,6 +14485,108 @@
   "@languagesVerifyKnownSub": {
     "description": "Under Verify what you know."
   },
+  "languagesCheckAgain": "Check your level again",
+  "@languagesCheckAgain": {
+    "description": "Languages page, a language's row, for a level an earlier version found and the learner has not confirmed: runs Find my level on the skills that were credited, then compares."
+  },
+  "languagesCheckAgainSub": "An earlier version found this level. Check it to keep it or correct it.",
+  "@languagesCheckAgainSub": {
+    "description": "Under Check your level again."
+  },
+  "findLevelCompareTitle": "Your level, before and now",
+  "@findLevelCompareTitle": {
+    "description": "Check your level again: the heading of the screen that shows the level an earlier version found beside the one the new check found."
+  },
+  "findLevelCompareLine": "{skill}: {before} → {now} · {label}",
+  "@findLevelCompareLine": {
+    "description": "Check your level again: one skill, its level before and its level now. {before} and {now} are the next three strings.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "before": {
+        "type": "String",
+        "example": "unit 108"
+      },
+      "now": {
+        "type": "String",
+        "example": "from the start"
+      },
+      "label": {
+        "type": "String",
+        "example": "Not sure yet"
+      }
+    }
+  },
+  "findLevelCompareUnit": "unit {unit}",
+  "@findLevelCompareUnit": {
+    "description": "Check your level again: a level as a unit.",
+    "placeholders": {
+      "unit": {
+        "type": "int",
+        "example": "108"
+      }
+    }
+  },
+  "findLevelCompareStart": "from the start",
+  "@findLevelCompareStart": {
+    "description": "Check your level again: a level at the very start of the course."
+  },
+  "findLevelCompareAtLeast": "at least unit {unit}",
+  "@findLevelCompareAtLeast": {
+    "description": "Check your level again: the new level while a higher unit is more probable but not yet proven.",
+    "placeholders": {
+      "unit": {
+        "type": "int",
+        "example": "108"
+      }
+    }
+  },
+  "findLevelCompareNothingBefore": "nothing credited",
+  "@findLevelCompareNothingBefore": {
+    "description": "Check your level again: the level before, for a skill that had no credit."
+  },
+  "findLevelCompareNothingChanges": "Nothing changes until you choose.",
+  "@findLevelCompareNothingChanges": {
+    "description": "Check your level again: under the lines."
+  },
+  "findLevelCompareAtLeastWhatYouHad": "The check found at least what you had.",
+  "@findLevelCompareAtLeastWhatYouHad": {
+    "description": "Check your level again: said when the new level is at least the old one in every skill."
+  },
+  "findLevelUseNew": "Use the new level",
+  "@findLevelUseNew": {
+    "description": "Check your level again: the main button. Takes back the credit above the new level and credits up to it."
+  },
+  "findLevelKeepOld": "Keep the old level",
+  "@findLevelKeepOld": {
+    "description": "Check your level again: the second button. Keeps the level an earlier version found and writes nothing else."
+  },
+  "findLevelToastNewSet": "{language}: your new level is set. Words you have reviewed keep their reviews.",
+  "@findLevelToastNewSet": {
+    "description": "Toast after Use the new level.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "findLevelToastOldKept": "{language}: your old level is kept.",
+  "@findLevelToastOldKept": {
+    "description": "Toast after Keep the old level.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "settingsRestoreNewerNote": "This backup is from a newer version. A level you corrected there with Check your level again comes back as it was here, and is flagged again until you check it.",
+  "@settingsRestoreNewerNote": {
+    "description": "Restore sheet, when the backup was made by a newer app than this one: what an older app does not know about is lost, such as levels the learner corrected."
+  },
   "languagesPopular": "Popular",
   "@languagesPopular": {
     "description": "The heading of the languages Add a language lists first: a hand-kept list, `popular` in assets/languages.yaml."

@@ -387,7 +387,7 @@ void main() {
         expect(backup.settings, a.state.settings.toStored());
         expect(backup.settings['rater_code'], 'FL-7K3M-Q9TD-6');
         expect(backup.appVersion, isNotEmpty);
-        expect(backup.schemaVersion, 10);
+        expect(backup.schemaVersion, 11);
         final back = AppBackup.decode(backup.encode());
         expect(back.settings, a.state.settings.toStored());
         expect(back.reviews.single.key.cardId, 'hi-0231');
@@ -747,6 +747,8 @@ void main() {
     const guards = <String>[
       'leech_actions_no_delete',
       'leech_actions_no_update',
+      'placement_withdrawals_no_delete',
+      'placement_withdrawals_no_update',
       'restores_no_delete',
       'restores_no_update',
       'reviews_no_delete',

@@ -6,6 +6,7 @@ import '../../core/placement/placement_session.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/snack.dart';
+import 'find_level_comparison.dart';
 import 'find_level_question.dart';
 import 'find_level_summary.dart';
 import 'placement_questions.dart' show PlacementShell;
@@ -33,6 +34,7 @@ class FindLevelRunPage extends StatefulWidget {
     required this.onProgress,
     required this.onFinish,
     this.cardOf,
+    this.recheck,
   });
 
   final PlacementSession session;
@@ -53,6 +55,11 @@ class FindLevelRunPage extends StatefulWidget {
   final ValueChanged<PlacementSession> onFinish;
 
   final Card? Function(String id)? cardOf;
+
+  /// A Check again (wiki/Plan-Placement-V2.md, point 17.5): the run's end
+  /// writes nothing and shows "Your level, before and now" with its two
+  /// choices, in place of [onFinish] and the summary.
+  final FindLevelRecheck? recheck;
 
   @override
   State<FindLevelRunPage> createState() => _FindLevelRunPageState();
@@ -79,6 +86,14 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
 
   void _finish() {
     if (_finished) return;
+    if (widget.recheck != null) {
+      // Nothing is written until the learner chooses on the comparison.
+      setState(() {
+        _failed = false;
+        _finished = true;
+      });
+      return;
+    }
     // The outcome is written before the summary shows: if the write throws
     // the run is still there to be carried on.
     try {
@@ -92,6 +107,22 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
       _failed = false;
       _finished = true;
     });
+  }
+
+  /// Use the new level, or Keep the old one: the choice is written, and the
+  /// run is done. A write that throws says so and keeps the comparison.
+  void _choose(VoidCallback write) {
+    try {
+      write();
+    } on Object catch (error, stack) {
+      debugPrint('Find my level: writing the choice failed: $error\n$stack');
+      showAppSnackBar(
+        context,
+        AppLocalizations.of(context)!.findLevelFinishFailed,
+      );
+      return;
+    }
+    Navigator.of(context).pop(true);
   }
 
   void _answer(bool right) {
@@ -135,6 +166,23 @@ class _FindLevelRunPageState extends State<FindLevelRunPage> {
   @override
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
+    final recheck = widget.recheck;
+    if (_finished && recheck != null) {
+      return PopScope(
+        canPop: false,
+        onPopInvokedWithResult: (didPop, _) {
+          if (!didPop) _pause();
+        },
+        child: FindLevelComparison(
+          run: _session.run,
+          recheck: FindLevelRecheck(
+            before: recheck.before,
+            onUse: () => _choose(recheck.onUse),
+            onKeep: () => _choose(recheck.onKeep),
+          ),
+        ),
+      );
+    }
     if (_finished) {
       return FindLevelSummary(
         run: _session.run,

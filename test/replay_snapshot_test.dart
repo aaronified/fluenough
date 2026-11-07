@@ -568,7 +568,7 @@ void main() {
       ]) {
         await expectLater(upgraded.customStatement(sql), throwsA(anything));
       }
-      expect(AppDatabase.currentSchemaVersion, 10);
+      expect(AppDatabase.currentSchemaVersion, 11);
 
       final stages = <String>[];
       final progress = await DatabaseProgress.open(

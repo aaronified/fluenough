@@ -160,7 +160,16 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       // after it; a failure costs only that launch's replay.
       _snapshotTask(() => log.putSnapshot(stamp, bytes, app: _app));
     }
-    final memory = MemoryProgress.opened(opened, fitted: fitted);
+    // The reviews the withdrawals leave out of the replay are read apart, a
+    // second at a time, for an export; nothing at all without a withdrawal.
+    final withdrawn = opened.withdrawals.isEmpty
+        ? const <LoggedReview>[]
+        : await log.withdrawnReviews(opened.withdrawals);
+    final memory = MemoryProgress.opened(
+      opened,
+      fitted: fitted,
+      withdrawn: withdrawn,
+    );
     final discarded = _memory;
     discarded.removeListener(notifyListeners);
     _memory = memory..addListener(notifyListeners);
@@ -245,6 +254,27 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     );
     _scheduleSnapshot();
     await _writes;
+  }
+
+  @override
+  List<PlacementWithdrawal> get withdrawals => _memory.withdrawals;
+
+  @override
+  List<LoggedReview> get withdrawnReviews => _memory.withdrawnReviews;
+
+  /// Memory changes at once, and the withdrawal is written to the database
+  /// in the order of every write before it, with `card_states` rebuilt from
+  /// the log without the credit it takes back. No review is touched.
+  @override
+  void withdrawCredit(PlacementWithdrawal w) {
+    assert(_isReady, 'withdrawCredit before ready');
+    _memory.withdrawCredit(w);
+    final parameters = _memory.parameters;
+    _write(
+      () => _log.withdraw(w, parameters: parameters),
+      'while saving a placement withdrawal',
+    );
+    _scheduleSnapshot();
   }
 
   @override
@@ -347,20 +377,30 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
   }) async {
     if (_readFailed) {
-      return _memory.importLog(reviews, leechActions, fitted: fitted);
+      return _memory.importLog(
+        reviews,
+        leechActions,
+        fitted: fitted,
+        withdrawals: withdrawals,
+      );
     }
     await _writes;
     final imported = await _log.importAll(
       reviews,
       leechActions,
       fitted: fitted,
+      withdrawals: withdrawals,
     );
+    final taken = await _log.withdrawals();
     _memory.replaceWith(
       await _log.events(),
       await _log.leechActions(),
       fitted: imported.fitted,
+      withdrawals: taken,
+      withdrawn: await _log.withdrawnReviews(taken),
     );
     _scheduleSnapshot();
     return imported.added;
@@ -377,6 +417,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
     List<LeechAction> leechActions, {
     Map<SkillKey, FittedParameters> fitted =
         const <SkillKey, FittedParameters>{},
+    List<PlacementWithdrawal> withdrawals = const <PlacementWithdrawal>[],
     required RestoreRecord restore,
   }) async {
     if (_readFailed) {
@@ -384,6 +425,7 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
         reviews,
         leechActions,
         fitted: fitted,
+        withdrawals: withdrawals,
         restore: restore,
       );
     }
@@ -392,12 +434,16 @@ class DatabaseProgress extends ChangeNotifier implements ProgressStore {
       reviews,
       leechActions,
       fitted: fitted,
+      withdrawals: withdrawals,
       restore: restore,
     );
+    final taken = await _log.withdrawals();
     _memory.replaceWith(
       await _log.events(),
       await _log.leechActions(),
       fitted: await _log.fitted(),
+      withdrawals: taken,
+      withdrawn: await _log.withdrawnReviews(taken),
     );
     _scheduleSnapshot();
   }
