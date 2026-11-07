@@ -10,16 +10,28 @@ tags: ["beginner"]
 cards:
   "bn-0280":
     native: "bus"
+    "examples": {
+      "আমি বাসে উঠলাম।": {"native": "I got onto the bus.", "bases": {"বাসে": "bus"}},
+      "চালক বাসটা থামালেন।": {"native": "The driver stopped the bus. (respectful)", "bases": {"থামালেন": "to stop (a vehicle)", "বাসটা": "bus"}}
+    }
   "bn-0281":
     native: "auto-rickshaw"
     notes:
       "n1": "In Kolkata many autos run fixed routes, like a shared bus. Also সিএনজি (sienji), named after the gas it runs on."
   "bn-0282":
     native: "taxi"
+    "examples": {
+      "ট্যাক্সি নাও।": {"native": "Take a taxi. (familiar)", "bases": {}},
+      "ট্যাক্সি নিই?": {"native": "Shall I take a taxi?", "bases": {}}
+    }
   "bn-0283":
     native: "fare; rent"
     notes:
       "n1": "ভাড়া কত (bhāṛā kôto)? What's the fare?"
+    "examples": {
+      "বাড়িওয়ালাকে ভাড়াটা দিলাম।": {"native": "I gave the rent to the landlord.", "bases": {"বাড়িওয়ালাকে": "landlord", "ভাড়াটা": "fare; rent"}},
+      "বাড়িওয়ালা ঘরটা ভাড়া দেয়।": {"native": "The landlord rents out the room.", "bases": {"ভাড়া": "fare; rent"}}
+    }
   "bn-0284":
     native: "Please go by the meter."
     notes:
@@ -39,11 +51,26 @@ cards:
     native: "Stop here, please."
   "bn-0288":
     native: "station"
+    "examples": {
+      "স্টেশনে যাব।": {"native": "I want to go to the station.", "bases": {"স্টেশনে": "station"}},
+      "আগেভাগে স্টেশনে যাও।": {"native": "Go to the station early. (familiar)", "bases": {"স্টেশনে": "station"}}
+    }
   "bn-0289":
     native: "ticket"
+    "examples": {
+      "জাদুঘরের টিকিট কত?": {"native": "How much is the museum ticket?", "bases": {"টিকিট": "ticket"}},
+      "প্রদর্শনের টিকিট কোথায়?": {"native": "Where are the tickets for the showing?", "bases": {"প্রদর্শনের": "showing", "টিকিট": "ticket"}}
+    }
   "bn-0290":
     native: "seat"
   "bn-0291":
     native: "let's go; please go"
+    "examples": {
+      "মিটারে চলুন।": {"native": "Please go by the meter.", "bases": {"মিটারে": "meter (a taxi's)"}}
+    }
   "bn-0584":
     native: "rickshaw"
+    "examples": {
+      "রিকশা নিচ্ছি।": {"native": "I am taking a rickshaw.", "bases": {}},
+      "একটা রিকশা নিন।": {"native": "Take a rickshaw. (respectful)", "bases": {}}
+    }
