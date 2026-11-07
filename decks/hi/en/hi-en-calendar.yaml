@@ -11,14 +11,25 @@ cards:
     native: "month"
     notes:
       "n1": "The Gregorian months are used for almost everything; the Hindu calendar's months matter mainly for festivals."
+    "examples": {
+      "अगले महीने चुनाव है।": {"native": "There is an election next month.", "bases": {"अगले": "next", "महीने": "month"}},
+      "अगला सत्र अगले महीने है।": {"native": "The next session is next month.", "bases": {"अगला": "next", "अगले": "next", "महीने": "month"}}
+    }
   "hi-0318":
     native: "year"
     notes:
       "n1": "Years before 2000 are read in hundreds: 1950 is उन्नीस सौ पचास (unnīs sau pacās), 'nineteen hundred fifty'. From 2000, in thousands: 2020 is दो हज़ार बीस (dō hazār bīs)."
+    "examples": {
+      "नया साल मुबारक!": {"native": "Happy New Year!", "bases": {"साल": "year"}},
+      "इस साल सूखा है।": {"native": "There is a drought this year.", "bases": {"साल": "year"}}
+    }
   "hi-0319":
     native: "date"
     notes:
       "n1": "आज कौन-सी तारीख़ है (āj kaun-sī tārīk͟h hai)? What's the date today?"
+    "examples": {
+      "चुनाव आयोग ने तारीख़ बताई।": {"native": "The election commission gave the date.", "bases": {"ने": "by", "तारीख़": "date"}}
+    }
   "hi-0320":
     native: "January"
     notes:
@@ -29,12 +40,18 @@ cards:
     native: "March"
   "hi-0323":
     native: "April"
+    "examples": {
+      "फ़सल की कटाई अप्रैल में होती है।": {"native": "The harvest of the crop is in April.", "bases": {"फ़सल": "crop", "अप्रैल": "April"}}
+    }
   "hi-0324":
     native: "May"
   "hi-0325":
     native: "June"
   "hi-0326":
     native: "July"
+    "examples": {
+      "बुवाई का समय जुलाई है।": {"native": "The time for sowing is July.", "bases": {"जुलाई": "July"}}
+    }
   "hi-0327":
     native: "August"
   "hi-0328":
