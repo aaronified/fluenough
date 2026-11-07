@@ -3,6 +3,10 @@
 Source of truth: this wiki page.
 
 
+## Awaiting approval
+
+- `today-chain.html`: the Today chain's screens still to build (owner, 2026-10-23): the decks page's Learn only... chooser for every course (#723) and the conversation screen (#722). Situation cheatsheets (#724, built in 0.7.0), Today with one button and the minutes-a-day setting are built, so their screens are removed. Open choices are tweak controls, listed in `docs/mockups/today-chain.md` with the self-check.
+
 ## Current and approved
 
 Each is the spec for its screen. Don't rewrite one without the owner's
@@ -48,7 +52,8 @@ name them. They are in git at 19d200b
   built in #528 and removed once built (owner, 2026-10-16: "Remove when
   built"). It is in git history:
   `git show 25522ea:docs/mockups/language-bar.html`.
-- `languages-learning.html`: Languages I'm learning (#626), built and
+- `languages-learning.html` (second version): the delete-a-language's-data bin and dialog (#861), built in 0.9.3 (PR #1064) and removed once built (2026-11-07, pull request #1078); in git at `7c7a5fcb`.
+- `languages-learning.html` (first version): Languages I'm learning (#626), built and
   removed once built (owner, 2026-10-16: "Remove when built"). It is in git
   history: `git show 4e094b9:docs/mockups/languages-learning.html`.
 - `languages-you-know.html`: Languages you know, with the bottom-sheet
