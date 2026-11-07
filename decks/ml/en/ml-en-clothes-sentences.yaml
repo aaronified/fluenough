@@ -1,0 +1,38 @@
+schema: 1
+id: "ml-en-clothes-sentences"
+kind: "layer"
+core: "ml-clothes-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Clothes in sentences"
+description: "Short sentences about a blue shirt, trousers, a white saree, sandals and a coat, and their colours and sizes. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0684":
+    native: "Where is the blue shirt?"
+  "ml-0685":
+    native: "These trousers are small."
+    bases:
+      "ചെറുതാണ്": "are small"
+  "ml-0686":
+    native: "I need a white saree."
+    bases:
+      "വേണം": "need"
+  "ml-0687":
+    native: "Put on your sandals."
+    bases:
+      "ഇടൂ": "put on"
+  "ml-0688":
+    native: "Do you like black?"
+    bases:
+      "ഇഷ്ടമാണോ": "do you like"
+  "ml-0689":
+    native: "It is cold, take a coat."
+    bases:
+      "തണുപ്പുണ്ട്": "it is cold"
+  "ml-0690":
+    native: "The yellow jacket is good."
+    bases:
+      "നല്ലതാണ്": "is good"
+  "ml-0691":
+    native: "What size is it?"

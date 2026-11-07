@@ -1,0 +1,22 @@
+schema: 1
+id: "ml-en-noun-forms-sentences"
+kind: "layer"
+core: "ml-noun-forms-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Nouns in sentences"
+description: "Short sentences with table, book, child, house and a place, with their positions. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0716":
+    native: "The table is big."
+  "ml-0717":
+    native: "The book is on the table."
+  "ml-0718":
+    native: "The child is coming."
+    bases:
+      "വരുന്നു": "is coming"
+  "ml-0719":
+    native: "The children are here."
+  "ml-0720":
+    native: "The house is far."

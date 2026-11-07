@@ -1,0 +1,32 @@
+schema: 1
+id: "ml-en-describing-sentences"
+kind: "layer"
+core: "ml-describing-sentences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Describing in sentences"
+description: "Short sentences that describe a new book, hot food, a clean room, a heavy bag and a person who is happy. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0692":
+    native: "Where is the new book?"
+  "ml-0693":
+    native: "This food is hot."
+  "ml-0694":
+    native: "Do you want cold water?"
+    bases:
+      "വേണോ": "do you want"
+  "ml-0695":
+    native: "A clean room is here."
+  "ml-0696":
+    native: "Where is the fast bus?"
+  "ml-0697":
+    native: "The heavy bag is here."
+  "ml-0698":
+    native: "He is happy."
+    bases:
+      "സന്തോഷമാണ്": "is happy"
+  "ml-0699":
+    native: "I am hungry."
+    bases:
+      "വിശക്കുന്നു": "am hungry"
