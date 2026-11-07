@@ -1,0 +1,394 @@
+{
+ "source": "tool/placement_audit.dart over the decks of the repository; the leak rate of a clean item of a format is the best solver's expected accuracy (item_audit.dart). Regenerate when the decks change a lot.",
+ "languages": {
+  "es": {
+   "decks": 171,
+   "wordCards": 2026,
+   "sentenceCards": 477,
+   "wordTileDecoys": 2,
+   "excluded": [
+    "F17:clean",
+    "F17:cognate",
+    "F5:clean",
+    "F5:cognate",
+    "F6:clean",
+    "F6:cognate",
+    "F6g:clean",
+    "S2:clean",
+    "S2:cognate"
+   ],
+   "items": {
+    "F2": 1151,
+    "F13": 1151,
+    "F3": 1152,
+    "F7": 1162,
+    "F18": 1162,
+    "F1": 1319,
+    "F14": 1319,
+    "F8": 429,
+    "F16": 429,
+    "F9": 146,
+    "F4": 767
+   },
+   "classes": {
+    "F13:clean": {
+     "n": 356,
+     "accuracy": 0.2561,
+     "upper": 0.2959,
+     "bound": 0.32,
+     "solver": "eliminate-similar",
+     "passes": true
+    },
+    "F14:clean": {
+     "n": 849,
+     "accuracy": 0.5651,
+     "upper": 0.5931,
+     "bound": 0.6,
+     "solver": "letter-patterns",
+     "passes": true
+    },
+    "F16:clean": {
+     "n": 342,
+     "accuracy": 0.0068,
+     "upper": 0.019,
+     "bound": 0.12,
+     "solver": "order-beam-solver",
+     "passes": true
+    },
+    "F16:cognate": {
+     "n": 87,
+     "accuracy": 0.0115,
+     "upper": 0.0499,
+     "bound": 0.12,
+     "solver": "order-beam-solver",
+     "passes": true
+    },
+    "F17:clean": {
+     "n": 140,
+     "accuracy": 0.2923,
+     "upper": 0.359,
+     "bound": 0.32,
+     "solver": "similarity",
+     "passes": false
+    },
+    "F17:cognate": {
+     "n": 29,
+     "accuracy": 0.3046,
+     "upper": 0.4568,
+     "bound": 0.32,
+     "solver": "similarity",
+     "passes": false
+    },
+    "F18:clean": {
+     "n": 358,
+     "accuracy": 0.0084,
+     "upper": 0.0208,
+     "bound": 0.1,
+     "solver": "spelling-rules",
+     "passes": true
+    },
+    "F1:clean": {
+     "n": 849,
+     "accuracy": 0.5651,
+     "upper": 0.5931,
+     "bound": 0.6,
+     "solver": "letter-patterns",
+     "passes": true
+    },
+    "F2:clean": {
+     "n": 356,
+     "accuracy": 0.257,
+     "upper": 0.2969,
+     "bound": 0.32,
+     "solver": "eliminate-similar",
+     "passes": true
+    },
+    "F3:clean": {
+     "n": 356,
+     "accuracy": 0.2631,
+     "upper": 0.3032,
+     "bound": 0.32,
+     "solver": "eliminate-similar",
+     "passes": true
+    },
+    "F4:clean": {
+     "n": 351,
+     "accuracy": 0.0541,
+     "upper": 0.0776,
+     "bound": 0.17,
+     "solver": "anagram-solver",
+     "passes": true
+    },
+    "F5:clean": {
+     "n": 140,
+     "accuracy": 0.2786,
+     "upper": 0.3446,
+     "bound": 0.32,
+     "solver": "similarity",
+     "passes": false
+    },
+    "F5:cognate": {
+     "n": 29,
+     "accuracy": 0.3017,
+     "upper": 0.4538,
+     "bound": 0.32,
+     "solver": "similarity",
+     "passes": false
+    },
+    "F6:clean": {
+     "n": 125,
+     "accuracy": 0.4387,
+     "upper": 0.5122,
+     "bound": 0.32,
+     "solver": "context-word-pairs",
+     "passes": false
+    },
+    "F6:cognate": {
+     "n": 27,
+     "accuracy": 0.4167,
+     "upper": 0.5732,
+     "bound": 0.32,
+     "solver": "context-ending-triples",
+     "passes": false
+    },
+    "F6g:clean": {
+     "n": 17,
+     "accuracy": 0.5294,
+     "upper": 0.7104,
+     "bound": 0.57,
+     "solver": "ending-rule-inverted",
+     "passes": false
+    },
+    "F7:clean": {
+     "n": 358,
+     "accuracy": 0.0084,
+     "upper": 0.0208,
+     "bound": 0.1,
+     "solver": "spelling-rules",
+     "passes": true
+    },
+    "F8:clean": {
+     "n": 342,
+     "accuracy": 0.0205,
+     "upper": 0.0373,
+     "bound": 0.12,
+     "solver": "order-beam-solver",
+     "passes": true
+    },
+    "F8:cognate": {
+     "n": 87,
+     "accuracy": 0.046,
+     "upper": 0.0985,
+     "bound": 0.12,
+     "solver": "order-beam-solver",
+     "passes": true
+    },
+    "F9:clean": {
+     "n": 134,
+     "accuracy": 0.306,
+     "upper": 0.3396,
+     "bound": 0.35,
+     "solver": "matcher",
+     "passes": true
+    },
+    "S2:clean": {
+     "n": 346,
+     "accuracy": 0.578,
+     "upper": 0.6209,
+     "bound": 0.57,
+     "solver": "word-pairs",
+     "passes": false
+    },
+    "S2:cognate": {
+     "n": 87,
+     "accuracy": 0.6264,
+     "upper": 0.7067,
+     "bound": 0.57,
+     "solver": "ending-pairs",
+     "passes": false
+    }
+   }
+  },
+  "hi": {
+   "decks": 139,
+   "wordCards": 1872,
+   "sentenceCards": 219,
+   "wordTileDecoys": 2,
+   "excluded": [
+    "F14:clean",
+    "F17:clean",
+    "F1:clean",
+    "F5:clean",
+    "F6:clean",
+    "F6:cognate",
+    "S2:clean",
+    "S2:cognate"
+   ],
+   "items": {
+    "F2": 1516,
+    "F13": 1516,
+    "F3": 1516,
+    "F7": 1521,
+    "F18": 1521,
+    "F8": 202,
+    "F16": 202,
+    "F9": 190,
+    "F4": 333
+   },
+   "classes": {
+    "F13:clean": {
+     "n": 356,
+     "accuracy": 0.2617,
+     "upper": 0.3017,
+     "bound": 0.32,
+     "solver": "length",
+     "passes": true
+    },
+    "F14:clean": {
+     "n": 326,
+     "accuracy": 0.6062,
+     "upper": 0.6409,
+     "bound": 0.6,
+     "solver": "letter-patterns",
+     "passes": false
+    },
+    "F16:clean": {
+     "n": 164,
+     "accuracy": 0.0117,
+     "upper": 0.0354,
+     "bound": 0.12,
+     "solver": "order-beam-solver",
+     "passes": true
+    },
+    "F16:cognate": {
+     "n": 38,
+     "accuracy": 0.0099,
+     "upper": 0.0839,
+     "bound": 0.12,
+     "solver": "order-beam-solver",
+     "passes": true
+    },
+    "F17:clean": {
+     "n": 17,
+     "accuracy": 0.2941,
+     "upper": 0.4936,
+     "bound": 0.32,
+     "solver": "length-inverted",
+     "passes": false
+    },
+    "F18:clean": {
+     "n": 356,
+     "accuracy": 0.0084,
+     "upper": 0.0209,
+     "bound": 0.1,
+     "solver": "spelling-rules",
+     "passes": true
+    },
+    "F1:clean": {
+     "n": 326,
+     "accuracy": 0.6062,
+     "upper": 0.6409,
+     "bound": 0.6,
+     "solver": "letter-patterns",
+     "passes": false
+    },
+    "F2:clean": {
+     "n": 356,
+     "accuracy": 0.2645,
+     "upper": 0.3046,
+     "bound": 0.32,
+     "solver": "length",
+     "passes": true
+    },
+    "F3:clean": {
+     "n": 356,
+     "accuracy": 0.2603,
+     "upper": 0.3003,
+     "bound": 0.32,
+     "solver": "eliminate-similar",
+     "passes": true
+    },
+    "F4:clean": {
+     "n": 326,
+     "accuracy": 0.0245,
+     "upper": 0.043,
+     "bound": 0.17,
+     "solver": "anagram-solver",
+     "passes": true
+    },
+    "F5:clean": {
+     "n": 17,
+     "accuracy": 0.3922,
+     "upper": 0.5885,
+     "bound": 0.32,
+     "solver": "length-inverted",
+     "passes": false
+    },
+    "F6:clean": {
+     "n": 19,
+     "accuracy": 0.2982,
+     "upper": 0.4869,
+     "bound": 0.32,
+     "solver": "length-inverted",
+     "passes": false
+    },
+    "F6:cognate": {
+     "n": 3,
+     "accuracy": 0.3611,
+     "upper": 0.7642,
+     "bound": 0.32,
+     "solver": "context-word-pairs-inverted",
+     "passes": false
+    },
+    "F7:clean": {
+     "n": 356,
+     "accuracy": 0.0084,
+     "upper": 0.0209,
+     "bound": 0.1,
+     "solver": "spelling-rules",
+     "passes": true
+    },
+    "F8:clean": {
+     "n": 164,
+     "accuracy": 0.0205,
+     "upper": 0.0479,
+     "bound": 0.12,
+     "solver": "order-beam-solver",
+     "passes": true
+    },
+    "F8:cognate": {
+     "n": 38,
+     "accuracy": 0.0044,
+     "upper": 0.0744,
+     "bound": 0.12,
+     "solver": "order-beam-solver",
+     "passes": true
+    },
+    "F9:clean": {
+     "n": 178,
+     "accuracy": 0.25,
+     "upper": 0.2776,
+     "bound": 0.35,
+     "solver": "matcher",
+     "passes": true
+    },
+    "S2:clean": {
+     "n": 164,
+     "accuracy": 0.5335,
+     "upper": 0.5966,
+     "bound": 0.57,
+     "solver": "ending-triples",
+     "passes": false
+    },
+    "S2:cognate": {
+     "n": 38,
+     "accuracy": 0.7237,
+     "upper": 0.8251,
+     "bound": 0.57,
+     "solver": "ending-pairs",
+     "passes": false
+    }
+   }
+  }
+ }
+}
