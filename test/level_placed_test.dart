@@ -5,6 +5,7 @@
 // "Placed" until a unit of its milestone has an earned review; the tiles say
 // "+M placed"; and a real answer is never written in the shape of credit.
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
 import 'package:fluenough/app/placement_run_setup.dart';
 import 'package:fluenough/app/session.dart';
@@ -193,11 +194,24 @@ void main() {
     test(
       'AppState.record gives a grade 5 with no time the smallest time',
       () async {
-        final state = AppState.test();
+        final state = AppState.test(
+          decks: MemoryDeckSource(<String, String>{
+            'decks/es/es-en-tiny.yaml': '''
+schema: 1
+id: es-en-tiny
+name: "Tiny"
+language: { code: es, iso639_3: spa, name: Spanish, script: latin }
+native: { code: en, iso639_3: eng, name: English }
+license: CC0-1.0
+cards:
+  - { id: es-en-tiny-0001, target: "hola", native: "hello" }
+''',
+          }),
+        );
         addTearDown(state.dispose);
         await state.load();
         final item = state
-            .buildSession(DrillRequest.deck(state.decks.first.id))
+            .buildSession(DrillRequest.deck('es-en-tiny'))
             .items
             .first;
         final event = state.record(item, 5);
@@ -402,7 +416,6 @@ void main() {
       tester,
     ) async {
       final handle = tester.ensureSemantics();
-      addTearDown(handle.dispose);
       await pumpTiles(tester, counts: counts, levelPlaced: true);
       expect(find.text('of 540 taught (+90 placed)'), findsOneWidget);
       expect(find.text('of 22 taught (+6 placed)'), findsOneWidget);
@@ -416,6 +429,7 @@ void main() {
         find.bySemanticsLabel(RegExp('Level A2, placed, started')),
         findsOneWidget,
       );
+      handle.dispose();
     });
 
     testWidgets('with nothing placed they read as before', (tester) async {
