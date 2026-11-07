@@ -256,7 +256,8 @@ units:
     reading_passages:
       - { id: "bill", text: { "en": "A shop bill with its total" } }
   # ta-food-sentences joins this unit.
-  - planned: { id: "ta-food", theme: "food", words: 64 }
+  - decks: ["ta-food", "*"]
+    words: 8
     listening_passages:
       - { id: "at-the-tiffin-stall", text: { "en": "Ordering breakfast at a tiffin stall" } }
     reading_passages:
@@ -321,24 +322,28 @@ units:
     reading_passages:
       - { id: "bus-board", text: { "en": "The destination board on a bus" } }
   # ta-body-sentences joins this unit.
-  - planned: { id: "ta-body", theme: "body", words: 28 }
+  - decks: ["ta-body", "*"]
+    words: 8
     listening_passages:
       - { id: "where-it-hurts", text: { "en": "Pointing to where it hurts" } }
     reading_passages:
       - { id: "exercise-poster", text: { "en": "A poster of simple exercises" } }
   # ta-places-sentences joins this unit.
-  - planned: { id: "ta-places", theme: "places", words: 42 }
+  - decks: ["ta-places", "*"]
+    words: 8
     listening_passages:
       - { id: "town-walk", text: { "en": "A guide names the places on a short walk through town" } }
     reading_passages:
       - { id: "map-labels", text: { "en": "Labels on a simple town map" } }
-  - planned: { id: "ta-things", theme: "things", words: 39 }
+  - decks: ["ta-things", "*"]
+    words: 8
     listening_passages:
       - { id: "packing-a-bag", text: { "en": "Two people pack a bag for a trip" } }
     reading_passages:
       - { id: "lost-property-list", text: { "en": "A lost-property list at a bus station" } }
   # ta-things-sentences and ta-more-verbs-sentences join this unit.
-  - planned: { id: "ta-home", theme: "home", words: 19 }
+  - decks: ["ta-home", "*"]
+    words: 8
     listening_passages:
       - { id: "kitchen-instructions", text: { "en": "Someone tells a helper what to do in the kitchen" } }
     reading_passages:
@@ -361,13 +366,15 @@ units:
     reading_passages:
       - { id: "class-photo", text: { "en": "A caption under a class photo" } }
   # ta-clothes-sentences and ta-describing-sentences join this unit.
-  - planned: { id: "ta-clothes", theme: "clothes", words: 26 }
+  - decks: ["ta-clothes", "*"]
+    words: 12
     listening_passages:
       - { id: "choosing-a-shirt", text: { "en": "Choosing a shirt's colour and size in a shop" } }
     reading_passages:
       - { id: "shop-sign", text: { "en": "A clothes shop's sign with its offers" } }
   # ta-animals-sentences joins this unit.
-  - planned: { id: "ta-animals", theme: "animals", words: 30 }
+  - decks: ["ta-animals", "*"]
+    words: 10
     listening_passages:
       - { id: "animals-on-the-farm", text: { "en": "A child names the animals on a farm" } }
     reading_passages:

@@ -1,0 +1,121 @@
+schema: 1
+id: "ta-en-home"
+kind: "layer"
+core: "ta-home"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Home and neighbourhood"
+description: "Rooms, the kitchen, the bathroom, the bed, the window, the table, the chair and the garden. Not yet checked by a Tamil speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ta-0276":
+    native: "room"
+    notes:
+      n1: "A room in a house."
+    examples:
+      "இது பெரிய அறை.":
+        native: "This is a big room."
+        bases:
+          "அறை": "room"
+      "நான் அறை உள்ளே போகிறேன்.":
+        native: "I am going into the room."
+        bases:
+          "அறை": "room"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-0277":
+    native: "kitchen"
+    notes:
+      n1: "The room where food is cooked."
+    examples:
+      "இது சமையலறை.":
+        native: "This is the kitchen."
+        bases:
+          "சமையலறை": "kitchen"
+      "நான் சமையலறை போகிறேன்.":
+        native: "I am going to the kitchen."
+        bases:
+          "சமையலறை": "kitchen"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-0278":
+    native: "bed"
+    notes:
+      n1: "A bed to sleep on."
+    examples:
+      "இது படுக்கை.":
+        native: "This is a bed."
+        bases:
+          "படுக்கை": "bed"
+      "படுக்கை வேண்டும்.":
+        native: "A bed is needed."
+        bases:
+          "படுக்கை": "bed"
+          "வேண்டும்": "is needed"
+  "ta-0279":
+    native: "window"
+    notes:
+      n1: "A window in a wall."
+    examples:
+      "ஜன்னல் திற.":
+        native: "Open the window."
+        bases:
+          "ஜன்னல்": "window"
+      "ஜன்னல் மூடு.":
+        native: "Close the window."
+        bases:
+          "ஜன்னல்": "window"
+  "ta-0280":
+    native: "table; desk"
+    notes:
+      n1: "A table to put things on, or a desk."
+    examples:
+      "புத்தகம் மேசை மேலே இருக்கிறது.":
+        native: "The book is on the table."
+        bases:
+          "புத்தகம்": "book"
+          "மேசை": "table; desk"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "இது மேசை.":
+        native: "This is a table."
+        bases:
+          "மேசை": "table; desk"
+  "ta-0281":
+    native: "chair"
+    notes:
+      n1: "A chair to sit on."
+    examples:
+      "நாற்காலி அருகில் இருக்கிறது.":
+        native: "The chair is near."
+        bases:
+          "நாற்காலி": "chair"
+          "இருக்கிறது": "is; from இரு (iru), to be"
+      "நாற்காலி மேலே உட்கார்.":
+        native: "Sit on the chair."
+        bases:
+          "நாற்காலி": "chair"
+  "ta-0282":
+    native: "garden"
+    notes:
+      n1: "A garden at home or on a farm."
+    examples:
+      "இது பெரிய தோட்டம்.":
+        native: "This is a big garden."
+        bases:
+          "தோட்டம்": "garden"
+      "நான் தோட்டம் போகிறேன்.":
+        native: "I am going to the garden."
+        bases:
+          "தோட்டம்": "garden"
+          "போகிறேன்": "am going; from போ (pō), to go"
+  "ta-0283":
+    native: "toilet; bathroom"
+    notes:
+      n1: "A toilet, or a bathroom with a toilet."
+    examples:
+      "கழிவறை எங்கே?":
+        native: "Where is the toilet?"
+        bases:
+          "கழிவறை": "toilet; bathroom"
+      "இது கழிவறை.":
+        native: "This is the toilet."
+        bases:
+          "கழிவறை": "toilet; bathroom"

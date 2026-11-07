@@ -1,0 +1,225 @@
+schema: 1
+id: "ta-clothes"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "clothes"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0284"
+    target: "சட்டை"
+    reading: "caṭṭai"
+    ipa: "saʈːaj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சட்டை."
+        reading: "itu caṭṭai."
+        ipa: "it̪u saʈːaj."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சட்டை", base: "சட்டை", reading: "caṭṭai" }]
+      - target: "அது பெரிய சட்டை."
+        reading: "atu periya caṭṭai."
+        ipa: "at̪u perija saʈːaj."
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "பெரிய", ref: "ta-0008" }, { word: "சட்டை", base: "சட்டை", reading: "caṭṭai" }]
+  - id: "ta-0285"
+    target: "பேண்ட்"
+    reading: "pēṇṭ"
+    ipa: "peːɳʈ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பேண்ட்."
+        reading: "itu pēṇṭ."
+        ipa: "it̪u peːɳʈ."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பேண்ட்", base: "பேண்ட்", reading: "pēṇṭ" }]
+      - target: "அது பழைய பேண்ட்."
+        reading: "atu paḻaiya pēṇṭ."
+        ipa: "at̪u paɻajja peːɳʈ."
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "பழைய", ref: "ta-0172" }, { word: "பேண்ட்", base: "பேண்ட்", reading: "pēṇṭ" }]
+  - id: "ta-0286"
+    target: "புடவை"
+    reading: "puṭavai"
+    ipa: "puʈaʋaj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது புடவை."
+        reading: "itu puṭavai."
+        ipa: "it̪u puʈaʋaj."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "புடவை", base: "புடவை", reading: "puṭavai" }]
+      - target: "அவள் புடவை அழகு."
+        reading: "avaḷ puṭavai aḻaku."
+        ipa: "aʋaɭ puʈaʋaj aɻaku."
+        bases: [{ word: "அவள்", ref: "ta-0059" }, { word: "புடவை", base: "புடவை", reading: "puṭavai" }, { word: "அழகு", base: "அழகு", reading: "aḻaku" }]
+  - id: "ta-0287"
+    target: "வேட்டி"
+    reading: "vēṭṭi"
+    ipa: "ʋeːʈːi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது வேட்டி."
+        reading: "itu vēṭṭi."
+        ipa: "it̪u ʋeːʈːi."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வேட்டி", base: "வேட்டி", reading: "vēṭṭi" }]
+      - target: "அவர் வெள்ளை வேட்டி."
+        reading: "avar veḷḷai vēṭṭi."
+        ipa: "aʋar ʋeɭːaj ʋeːʈːi."
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "வெள்ளை", ref: "ta-0295" }, { word: "வேட்டி", base: "வேட்டி", reading: "vēṭṭi" }]
+  - id: "ta-0288"
+    target: "செருப்பு"
+    reading: "ceruppu"
+    ipa: "serupːu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது செருப்பு."
+        reading: "itu ceruppu."
+        ipa: "it̪u serupːu."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "செருப்பு", base: "செருப்பு", reading: "ceruppu" }]
+      - target: "செருப்பு எங்கே?"
+        reading: "ceruppu eṅkē?"
+        ipa: "serupːu eŋkeː?"
+        bases: [{ word: "செருப்பு", base: "செருப்பு", reading: "ceruppu" }, { word: "எங்கே", ref: "ta-0043" }]
+  - id: "ta-0289"
+    target: "தொப்பி"
+    reading: "toppi"
+    ipa: "t̪opːi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது தொப்பி."
+        reading: "itu toppi."
+        ipa: "it̪u t̪opːi."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "தொப்பி", base: "தொப்பி", reading: "toppi" }]
+      - target: "தொப்பி மேலே இருக்கிறது."
+        reading: "toppi mēlē irukkiṟatu."
+        ipa: "t̪opːi meːleː irukːiɾat̪u."
+        bases: [{ word: "தொப்பி", base: "தொப்பி", reading: "toppi" }, { word: "மேலே", ref: "ta-0176" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+  - id: "ta-0290"
+    target: "நிறம்"
+    reading: "niṟam"
+    ipa: "niɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது என்ன நிறம்?"
+        reading: "itu eṉṉa niṟam?"
+        ipa: "it̪u enːa niɾam?"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "என்ன", ref: "ta-0042" }, { word: "நிறம்", base: "நிறம்", reading: "niṟam" }]
+      - target: "நிறம் நல்லது."
+        reading: "niṟam nallatu."
+        ipa: "niɾam nalːat̪u."
+        bases: [{ word: "நிறம்", base: "நிறம்", reading: "niṟam" }, { word: "நல்லது", ref: "ta-0006" }]
+  - id: "ta-0291"
+    target: "சிவப்பு"
+    reading: "civappu"
+    ipa: "siʋapːu"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சிவப்பு."
+        reading: "itu civappu."
+        ipa: "it̪u siʋapːu."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சிவப்பு", base: "சிவப்பு", reading: "civappu" }]
+      - target: "அது சிவப்பு சட்டை."
+        reading: "atu civappu caṭṭai."
+        ipa: "at̪u siʋapːu saʈːaj."
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "சிவப்பு", base: "சிவப்பு", reading: "civappu" }, { word: "சட்டை", ref: "ta-0284" }]
+  - id: "ta-0292"
+    target: "நீலம்"
+    reading: "nīlam"
+    ipa: "niːlam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது நீலம்."
+        reading: "itu nīlam."
+        ipa: "it̪u niːlam."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நீலம்", base: "நீலம்", reading: "nīlam" }]
+      - target: "இது நீலம் நிறம்."
+        reading: "itu nīlam niṟam."
+        ipa: "it̪u niːlam niɾam."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "நீலம்", base: "நீலம்", reading: "nīlam" }, { word: "நிறம்", ref: "ta-0290" }]
+  - id: "ta-0293"
+    target: "பச்சை"
+    reading: "paccai"
+    ipa: "pasːaj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பச்சை."
+        reading: "itu paccai."
+        ipa: "it̪u pasːaj."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பச்சை", base: "பச்சை", reading: "paccai" }]
+      - target: "இது பச்சை நிறம்."
+        reading: "itu paccai niṟam."
+        ipa: "it̪u pasːaj niɾam."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பச்சை", base: "பச்சை", reading: "paccai" }, { word: "நிறம்", ref: "ta-0290" }]
+  - id: "ta-0294"
+    target: "மஞ்சள்"
+    reading: "mañcaḷ"
+    ipa: "maɲsaɭ"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது மஞ்சள்."
+        reading: "itu mañcaḷ."
+        ipa: "it̪u maɲsaɭ."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மஞ்சள்", base: "மஞ்சள்", reading: "mañcaḷ" }]
+      - target: "இது மஞ்சள் நிறம்."
+        reading: "itu mañcaḷ niṟam."
+        ipa: "it̪u maɲsaɭ niɾam."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "மஞ்சள்", base: "மஞ்சள்", reading: "mañcaḷ" }, { word: "நிறம்", ref: "ta-0290" }]
+  - id: "ta-0295"
+    target: "வெள்ளை"
+    reading: "veḷḷai"
+    ipa: "ʋeɭːaj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது வெள்ளை."
+        reading: "itu veḷḷai."
+        ipa: "it̪u ʋeɭːaj."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வெள்ளை", base: "வெள்ளை", reading: "veḷḷai" }]
+      - target: "வெள்ளை சட்டை வேண்டும்."
+        reading: "veḷḷai caṭṭai vēṇṭum."
+        ipa: "ʋeɭːaj saʈːaj ʋeːɳʈum."
+        bases: [{ word: "வெள்ளை", base: "வெள்ளை", reading: "veḷḷai" }, { word: "சட்டை", ref: "ta-0284" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]

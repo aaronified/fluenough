@@ -39,3 +39,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ta-0233 | ta-directions | வடக்கு, தெற்கு, கிழக்கு, மேற்கு are glossed with பக்கம் for the direction phrase; are the bare compass words right as nouns? | Haiku builder | 2026-11-07 |
 | unit-level | ta-work to ta-transport | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked for these six units? | Haiku builder | 2026-11-07 |
 | unit-level | ta-numbers-big | Lakh and crore are written as one word with a noun after them: is the counting and the register right for Tamil? | Haiku builder | 2026-11-07 |
+| ta-0285 | ta-clothes | பேண்ட் (pēṇṭ, trousers): is this the usual spelling for the loan word, or is there a Tamil word for trousers? | Haiku builder | 2026-11-07 |
+| ta-0294 | ta-clothes | மஞ்சள் (mañcaḷ): the card gives yellow and turmeric as one card; should turmeric be a separate card? | Haiku builder | 2026-11-07 |
+| ta-0267 | ta-places | விடுதி (viṭuti): is 'hostel; guest house' the right gloss, and is the word common in speech? | Haiku builder | 2026-11-07 |
+| unit-level | ta-food to ta-animals | The broad IPA was made from each reading by a simple rule that does not write voicing. Can it be checked for these seven units? | Haiku builder | 2026-11-07 |

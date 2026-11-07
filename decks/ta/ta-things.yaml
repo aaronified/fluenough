@@ -1,0 +1,153 @@
+schema: 1
+id: "ta-things"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "things"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0268"
+    target: "பேனா"
+    reading: "pēṉā"
+    ipa: "peːnaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பேனா."
+        reading: "itu pēṉā."
+        ipa: "it̪u peːnaː."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பேனா", base: "பேனா", reading: "pēṉā" }]
+      - target: "பேனா மேலே வை."
+        reading: "pēṉā mēlē vai."
+        ipa: "peːnaː meːleː ʋaj."
+        bases: [{ word: "பேனா", base: "பேனா", reading: "pēṉā" }, { word: "மேலே", ref: "ta-0176" }, { word: "வை", ref: "ta-0185" }]
+  - id: "ta-0269"
+    target: "பென்சில்"
+    reading: "pensil"
+    ipa: "pensil"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பென்சில்."
+        reading: "itu pensil."
+        ipa: "it̪u pensil."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பென்சில்", base: "பென்சில்", reading: "pensil" }]
+      - target: "பென்சில் எடு."
+        reading: "pensil eṭu."
+        ipa: "pensil eʈu."
+        bases: [{ word: "பென்சில்", base: "பென்சில்", reading: "pensil" }, { word: "எடு", ref: "ta-0184" }]
+  - id: "ta-0270"
+    target: "கடிகாரம்"
+    reading: "kaṭikāram"
+    ipa: "kaʈikaːram"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது கடிகாரம்."
+        reading: "itu kaṭikāram."
+        ipa: "it̪u kaʈikaːram."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கடிகாரம்", base: "கடிகாரம்", reading: "kaṭikāram" }]
+      - target: "கடிகாரம் மேலே இருக்கிறது."
+        reading: "kaṭikāram mēlē irukkiṟatu."
+        ipa: "kaʈikaːram meːleː irukːiɾat̪u."
+        bases: [{ word: "கடிகாரம்", base: "கடிகாரம்", reading: "kaṭikāram" }, { word: "மேலே", ref: "ta-0176" }, { word: "இருக்கிறது", base: "இரு", reading: "irukkiṟatu" }]
+  - id: "ta-0271"
+    target: "கண்ணாடி"
+    reading: "kaṇṇāṭi"
+    ipa: "kaɳːaːʈi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது கண்ணாடி."
+        reading: "itu kaṇṇāṭi."
+        ipa: "it̪u kaɳːaːʈi."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "கண்ணாடி", base: "கண்ணாடி", reading: "kaṇṇāṭi" }]
+      - target: "அது பெரிய கண்ணாடி."
+        reading: "atu periya kaṇṇāṭi."
+        ipa: "at̪u perija kaɳːaːʈi."
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "பெரிய", ref: "ta-0008" }, { word: "கண்ணாடி", base: "கண்ணாடி", reading: "kaṇṇāṭi" }]
+  - id: "ta-0272"
+    target: "துணி"
+    reading: "tuṇi"
+    ipa: "t̪uɳi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது துணி."
+        reading: "itu tuṇi."
+        ipa: "it̪u t̪uɳi."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "துணி", base: "துணி", reading: "tuṇi" }]
+      - target: "துணி வேண்டும்."
+        reading: "tuṇi vēṇṭum."
+        ipa: "t̪uɳi ʋeːɳʈum."
+        bases: [{ word: "துணி", base: "துணி", reading: "tuṇi" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+  - id: "ta-0273"
+    target: "சாவி"
+    reading: "cāvi"
+    ipa: "saːʋi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "சாவி எங்கே?"
+        reading: "cāvi eṅkē?"
+        ipa: "saːʋi eŋkeː?"
+        bases: [{ word: "சாவி", base: "சாவி", reading: "cāvi" }, { word: "எங்கே", ref: "ta-0043" }]
+      - target: "இது சாவி."
+        reading: "itu cāvi."
+        ipa: "it̪u saːʋi."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சாவி", base: "சாவி", reading: "cāvi" }]
+  - id: "ta-0274"
+    target: "குடை"
+    reading: "kuṭai"
+    ipa: "kuʈaj"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "குடை வேண்டும்."
+        reading: "kuṭai vēṇṭum."
+        ipa: "kuʈaj ʋeːɳʈum."
+        bases: [{ word: "குடை", base: "குடை", reading: "kuṭai" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]
+      - target: "இது குடை."
+        reading: "itu kuṭai."
+        ipa: "it̪u kuʈaj."
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "குடை", base: "குடை", reading: "kuṭai" }]
+  - id: "ta-0275"
+    target: "பந்து"
+    reading: "pantu"
+    ipa: "pant̪u"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பந்து எடு."
+        reading: "pantu eṭu."
+        ipa: "pant̪u eʈu."
+        bases: [{ word: "பந்து", base: "பந்து", reading: "pantu" }, { word: "எடு", ref: "ta-0184" }]
+      - target: "நீ பந்து விளையாடு."
+        reading: "nī pantu viḷaiyāṭu."
+        ipa: "niː pant̪u ʋiɭajjaːʈu."
+        bases: [{ word: "நீ", ref: "ta-0057" }, { word: "பந்து", base: "பந்து", reading: "pantu" }, { word: "விளையாடு", ref: "ta-0191" }]
