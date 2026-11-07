@@ -17,3 +17,7 @@ Questions for a bilingual reviewer. See [README](README.md). Rows are removed wh
 | ml-0107 | ml-pronouns | എനിക്ക് (to me): the card is a dative of ഞാൻ, written as its own word; should it be a form or a separate pronoun? | Haiku builder | 2026-11-07 |
 | ml-0110 | ml-pronouns | സ്വയം (oneself): is 'pronoun' right, or should it be a noun? | Haiku builder | 2026-11-07 |
 | unit-level | ml-pronouns | The possessive and case forms (അവന്റെ, അവളുടെ, നിന്റെ, നമ്മുടെ, അവരുടെ, എനിക്ക്, നിനക്ക്, എന്നെ) are written as their own cards. Is the split right, or should the forms be grouped under the pronoun? | Haiku builder | 2026-11-07 |
+| ml-0112 | ml-verbs | The verbs are written as imperatives (the command form) with their dictionary form as the base. Is the imperative the right form for the first verb cards, or should the dictionary form be the target? | Haiku builder | 2026-11-07 |
+| ml-0116 | ml-verbs | நிൽക്കൂ (stand): the meaning is stand, but the card also means wait where you are; is that right, or should it be a separate card? | Haiku builder | 2026-11-07 |
+| ml-0117 | ml-verbs | കാണൂ (look at, see): is 'look at' or 'see' the better gloss in the card's first meaning? | Haiku builder | 2026-11-07 |
+| unit-level | ml-verbs | The imperative forms (-ൂ endings) and their readings are written by the builder from the common command form, not from a rule file. Please check the forms and the broad IPA of all fifteen. | Haiku builder | 2026-11-07 |
