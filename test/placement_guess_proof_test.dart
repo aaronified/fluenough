@@ -118,7 +118,7 @@ void main() {
               topic: PlacementTopic.complexWords,
               variant: PlacementVariant.w2,
               kind: PlacementQuestionKind.pickOne,
-              skills: const <PlacementSkill>[PlacementSkill.hear],
+              skills: <PlacementSkill>[PlacementSkill.hear],
               deck: 0,
               percentile: 0,
               shortlistPick: 0,
