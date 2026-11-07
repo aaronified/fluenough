@@ -58,7 +58,13 @@ in CI, in the release workflow and on a first checkout. It
   download (#487). A MainActivity without it is brought up to date;
 - gives the same channel wallpaperColour, the system's primary accent colour
   on Android 12 and later, from which Settings' Wallpaper colours builds the
-  app's colours. A MainActivity without it is brought up to date.
+  app's colours. A MainActivity without it is brought up to date;
+- gives the same channel listenWithAudio, Say's listen that captures the
+  microphone itself and feeds the recogniser from the same stream
+  (RecognizerIntent.EXTRA_AUDIO_SOURCE, Android 13 and later), so the
+  learner's voice is kept at the moment it is recognised (ADR-0054, option 2).
+  Below Android 13 it answers "unsupported" and the app listens the plain way.
+  A MainActivity without it is brought up to date.
 
 - sets up flutter_local_notifications, which shows the daily reminder (#90).
   The reminder is scheduled inexactly, so there is no exact-alarm
@@ -221,11 +227,23 @@ ACTIVITY_CLASS = re.compile(r"class\s+MainActivity\s*:\s*FlutterActivity\(\)")
 IMPORT = re.compile(r"^import\s+\S+[ \t]*$", re.M)
 PACKAGE = re.compile(r"^package\s+\S+[ \t]*$", re.M)
 KOTLIN_IMPORTS = (
+    "android.Manifest",
     "android.content.ActivityNotFoundException",
     "android.content.Intent",
+    "android.content.pm.PackageManager",
+    "android.media.AudioFormat",
+    "android.media.AudioRecord",
+    "android.media.MediaRecorder",
     "android.net.Uri",
     "android.os.Build",
+    "android.os.Bundle",
+    "android.os.Handler",
+    "android.os.Looper",
+    "android.os.ParcelFileDescriptor",
     "android.provider.Settings",
+    "android.speech.RecognitionListener",
+    "android.speech.RecognizerIntent",
+    "android.speech.SpeechRecognizer",
     "android.speech.tts.TextToSpeech",
     "androidx.core.content.FileProvider",
     "io.flutter.embedding.android.FlutterActivity",
@@ -458,9 +476,227 @@ def wallpaper(text: str) -> str:
     return text.replace(SHARE_MEMBERS_BEFORE, WALLPAPER_MEMBERS + SHARE_MEMBERS_BEFORE)
 
 
+# What [listen] adds to the channel: listenWithAudio, Say's listen that owns
+# the microphone and feeds the recogniser from it, so that the learner's voice
+# is kept at the moment it is recognised (ADR-0054, option 2). Android 13
+# (API 33) lets an app give the recogniser audio it captures itself
+# (RecognizerIntent.EXTRA_AUDIO_SOURCE); below that, or where the recogniser
+# service does not take it, the Dart side listens the plain way.
+LISTEN_METHOD = '"listenWithAudio" ->'
+LISTEN_DISPATCH = (
+    '                    "canListenWithAudio" -> result.success(canListenWithAudio())\n'
+    '                    "listenWithAudio" -> listenWithAudio(call, result)\n'
+    '                    "cancelListen" -> {\n'
+    "                        sayStop?.invoke()\n"
+    "                        result.success(null)\n"
+    "                    }\n"
+)
+LISTEN_MEMBERS = """    // Written by tools/brand_android.py: Say's listen that keeps the learner's
+    // voice (ADR-0054, option 2), read by lib/core/speech/native_listen.dart.
+    // The app captures the microphone itself (16 kHz mono PCM, in memory only)
+    // and gives the recogniser the same stream through
+    // RecognizerIntent.EXTRA_AUDIO_SOURCE (Android 13 and later), so there is
+    // one reader of the microphone and the audio kept is what was recognised.
+    // Takes "language" (BCP-47), "onDevice" and "seconds"; answers a map with
+    // "texts", "confidences", "error" (null, or the recogniser's code such as
+    // error_no_match, or "unsupported" below Android 13), "pcm" and
+    // "sampleRate". Never throws; no file is written.
+    private var sayStop: (() -> Unit)? = null
+
+    private fun canListenWithAudio(): Boolean =
+        Build.VERSION.SDK_INT >= 33 && SpeechRecognizer.isRecognitionAvailable(this)
+
+    private fun sayError(code: Int): String =
+        when (code) {
+            SpeechRecognizer.ERROR_NETWORK_TIMEOUT -> "error_network_timeout"
+            SpeechRecognizer.ERROR_NETWORK -> "error_network"
+            SpeechRecognizer.ERROR_AUDIO -> "error_audio"
+            SpeechRecognizer.ERROR_SERVER -> "error_server"
+            SpeechRecognizer.ERROR_CLIENT -> "error_client"
+            SpeechRecognizer.ERROR_SPEECH_TIMEOUT -> "error_speech_timeout"
+            SpeechRecognizer.ERROR_NO_MATCH -> "error_no_match"
+            SpeechRecognizer.ERROR_RECOGNIZER_BUSY -> "error_busy"
+            SpeechRecognizer.ERROR_INSUFFICIENT_PERMISSIONS -> "error_permission"
+            SpeechRecognizer.ERROR_TOO_MANY_REQUESTS -> "error_busy"
+            SpeechRecognizer.ERROR_SERVER_DISCONNECTED -> "error_server_disconnected"
+            SpeechRecognizer.ERROR_LANGUAGE_NOT_SUPPORTED -> "error_language_not_supported"
+            SpeechRecognizer.ERROR_LANGUAGE_UNAVAILABLE -> "error_language_unavailable"
+            else -> "error_$code"
+        }
+
+    @android.annotation.SuppressLint("NewApi", "MissingPermission")
+    private fun listenWithAudio(call: MethodCall, result: MethodChannel.Result) {
+        if (!canListenWithAudio()) {
+            result.success(mapOf("error" to "unsupported"))
+            return
+        }
+        if (checkSelfPermission(Manifest.permission.RECORD_AUDIO) != PackageManager.PERMISSION_GRANTED) {
+            result.success(mapOf("error" to "error_permission"))
+            return
+        }
+        val language = call.argument<String>("language") ?: "en-US"
+        val onDevice = call.argument<Boolean>("onDevice") ?: false
+        val seconds = call.argument<Int>("seconds") ?: 8
+        val rate = 16000
+        val minimum = AudioRecord.getMinBufferSize(
+            rate, AudioFormat.CHANNEL_IN_MONO, AudioFormat.ENCODING_PCM_16BIT
+        )
+        if (minimum <= 0) {
+            result.success(mapOf("error" to "error_audio"))
+            return
+        }
+        val recorder = try {
+            AudioRecord(
+                MediaRecorder.AudioSource.VOICE_RECOGNITION,
+                rate,
+                AudioFormat.CHANNEL_IN_MONO,
+                AudioFormat.ENCODING_PCM_16BIT,
+                minimum * 4
+            )
+        } catch (e: Exception) {
+            null
+        }
+        if (recorder == null || recorder.state != AudioRecord.STATE_INITIALIZED) {
+            recorder?.release()
+            result.success(mapOf("error" to "error_audio"))
+            return
+        }
+        val pipe = try {
+            ParcelFileDescriptor.createPipe()
+        } catch (e: java.io.IOException) {
+            null
+        }
+        if (pipe == null) {
+            recorder.release()
+            result.success(mapOf("error" to "error_audio"))
+            return
+        }
+        val source = pipe[0]
+        val sink = pipe[1]
+        val kept = java.io.ByteArrayOutputStream()
+        val handler = Handler(Looper.getMainLooper())
+        val recognizer =
+            if (onDevice && SpeechRecognizer.isOnDeviceRecognitionAvailable(this)) {
+                SpeechRecognizer.createOnDeviceSpeechRecognizer(this)
+            } else {
+                SpeechRecognizer.createSpeechRecognizer(this)
+            }
+        val running = java.util.concurrent.atomic.AtomicBoolean(true)
+        var done = false
+
+        // The microphone is read on its own thread: the bytes go to the
+        // recogniser through the pipe and are kept here. The pipe is closed
+        // after the listening time, which ends the recogniser's input.
+        val writer = Thread {
+            val out = ParcelFileDescriptor.AutoCloseOutputStream(sink)
+            val buffer = ByteArray(minimum)
+            val end = System.currentTimeMillis() + seconds * 1000L
+            try {
+                recorder.startRecording()
+                while (running.get() && System.currentTimeMillis() < end) {
+                    val n = recorder.read(buffer, 0, buffer.size)
+                    if (n < 0) break
+                    if (n == 0) continue
+                    synchronized(kept) { kept.write(buffer, 0, n) }
+                    out.write(buffer, 0, n)
+                }
+            } catch (e: Exception) {
+                // The recogniser stopped reading, or the recorder failed:
+                // what was kept is still delivered.
+            } finally {
+                try { recorder.stop() } catch (e: Exception) {}
+                try { out.close() } catch (e: Exception) {}
+            }
+        }
+
+        fun finish(texts: List<String>, confidences: FloatArray?, error: String?) {
+            if (done) return
+            done = true
+            running.set(false)
+            handler.removeCallbacksAndMessages(null)
+            sayStop = null
+            try { recognizer.destroy() } catch (e: Exception) {}
+            try { writer.join(500) } catch (e: InterruptedException) {}
+            try { recorder.release() } catch (e: Exception) {}
+            try { source.close() } catch (e: java.io.IOException) {}
+            val pcm = synchronized(kept) { kept.toByteArray() }
+            val answer = HashMap<String, Any?>()
+            answer["texts"] = texts
+            answer["confidences"] = confidences?.map { it.toDouble() } ?: emptyList<Double>()
+            answer["error"] = error
+            answer["pcm"] = pcm
+            answer["sampleRate"] = rate
+            result.success(answer)
+        }
+
+        recognizer.setRecognitionListener(object : RecognitionListener {
+            override fun onReadyForSpeech(params: Bundle?) {}
+            override fun onBeginningOfSpeech() {}
+            override fun onRmsChanged(rmsdB: Float) {}
+            override fun onBufferReceived(buffer: ByteArray?) {}
+            override fun onEndOfSpeech() {}
+            override fun onPartialResults(partialResults: Bundle?) {}
+            override fun onEvent(eventType: Int, params: Bundle?) {}
+            override fun onError(error: Int) {
+                finish(emptyList(), null, sayError(error))
+            }
+            override fun onResults(results: Bundle?) {
+                val texts =
+                    results?.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION)
+                        ?: arrayListOf<String>()
+                val scores = results?.getFloatArray(SpeechRecognizer.CONFIDENCE_SCORES)
+                finish(texts, scores, if (texts.isEmpty()) "error_no_match" else null)
+            }
+        })
+
+        val intent = Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH)
+            .putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL, RecognizerIntent.LANGUAGE_MODEL_FREE_FORM)
+            .putExtra(RecognizerIntent.EXTRA_LANGUAGE, language)
+            .putExtra(RecognizerIntent.EXTRA_MAX_RESULTS, 5)
+            .putExtra(RecognizerIntent.EXTRA_PREFER_OFFLINE, onDevice)
+            .putExtra(RecognizerIntent.EXTRA_PARTIAL_RESULTS, false)
+            .putExtra(RecognizerIntent.EXTRA_AUDIO_SOURCE, source)
+            .putExtra(RecognizerIntent.EXTRA_AUDIO_SOURCE_CHANNEL_COUNT, 1)
+            .putExtra(RecognizerIntent.EXTRA_AUDIO_SOURCE_ENCODING, AudioFormat.ENCODING_PCM_16BIT)
+            .putExtra(RecognizerIntent.EXTRA_AUDIO_SOURCE_SAMPLING_RATE, rate)
+        sayStop = {
+            try { recognizer.stopListening() } catch (e: Exception) {}
+        }
+        try {
+            writer.start()
+            recognizer.startListening(intent)
+        } catch (e: Exception) {
+            finish(emptyList(), null, "error_client")
+            return
+        }
+        // A recogniser that never answers: give up after the time plus a grace.
+        handler.postDelayed({ finish(emptyList(), null, "error_speech_timeout") }, (seconds + 3) * 1000L)
+    }
+
+"""
+
+
+def listen(text: str) -> str:
+    """[text], MainActivity.kt or the members written into it, with
+    listenWithAudio added to the app.fluenough/system channel, unless it has
+    it. Fails if the channel is not in the shape this wrote."""
+    if LISTEN_METHOD in text:
+        return text
+    if (
+        text.count(WALLPAPER_DISPATCH) != 1
+        or text.count(SHARE_MEMBERS_BEFORE) != 1
+    ):
+        raise BrandError(
+            f"{ACTIVITY} has the {CHANNEL} channel, but not as this writes "
+            "it; add listenWithAudio to it by hand, or run flutter create again"
+        )
+    text = text.replace(WALLPAPER_DISPATCH, WALLPAPER_DISPATCH + LISTEN_DISPATCH)
+    return text.replace(SHARE_MEMBERS_BEFORE, LISTEN_MEMBERS + SHARE_MEMBERS_BEFORE)
+
+
 # What goes in MainActivity: the channel, with openVoiceSettings, shareFiles,
-# installApk and wallpaperColour.
-CHANNEL_MEMBERS = wallpaper(install(share(VOICE_MEMBERS)))
+# installApk, wallpaperColour and listenWithAudio.
+CHANNEL_MEMBERS = listen(wallpaper(install(share(VOICE_MEMBERS))))
 
 # The version ota_update 7.1.0's own build uses.
 DESUGAR_LIBS = "com.android.tools:desugar_jdk_libs:2.1.4"
@@ -556,7 +792,7 @@ def channel(text: str) -> str:
     else in the file is kept. One with the channel from before shareFiles
     gets shareFiles."""
     if CHANNEL in text:
-        shared = wallpaper(install(share(text)))
+        shared = listen(wallpaper(install(share(text))))
         return text if shared == text else imported(shared)
     if len(ACTIVITY_CLASS.findall(text)) != 1:
         raise BrandError(

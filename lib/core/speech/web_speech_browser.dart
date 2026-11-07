@@ -20,13 +20,24 @@ enum BrowserMicrophone {
 /// One finished browser listen: its readings, best first, or the Web Speech
 /// API's error code (`no-speech`, `not-allowed`, `network` and so on).
 class BrowserHeard {
-  const BrowserHeard(this.alternatives) : error = null;
+  const BrowserHeard(this.alternatives, {this.ownAudio}) : error = null;
 
   const BrowserHeard.error(String this.error)
-    : alternatives = const <SpeechAlternative>[];
+    : alternatives = const <SpeechAlternative>[],
+      ownAudio = null;
 
   final List<SpeechAlternative> alternatives;
   final String? error;
+
+  /// The learner's voice as the browser's recorder kept it while the
+  /// recogniser listened (a `MediaRecorder` on the microphone), decoded to
+  /// PCM; null when the browser could not record beside the recogniser, or
+  /// the listen was cancelled or failed. In memory only (ADR-0054).
+  final OwnAudio? ownAudio;
+
+  /// This reading with [audio] kept.
+  BrowserHeard withAudio(OwnAudio? audio) =>
+      error != null ? this : BrowserHeard(alternatives, ownAudio: audio);
 }
 
 /// One listen under way: its [result], and [cancel] to end it early.
@@ -72,6 +83,7 @@ class FixedSpeechBrowser implements SpeechBrowser {
     this.heard = const BrowserHeard(<SpeechAlternative>[]),
     this.never = false,
     this.noDevice = false,
+    this.audio,
   });
 
   @override
@@ -90,6 +102,11 @@ class FixedSpeechBrowser implements SpeechBrowser {
 
   /// A device with no microphone: [askMicrophone] throws.
   final bool noDevice;
+
+  /// The audio the browser's recorder kept for each listen that hears
+  /// something, or null for a browser that cannot record beside the
+  /// recogniser.
+  final OwnAudio? audio;
 
   /// How often the microphone was asked for, listens begun, and cancels.
   int asked = 0;
@@ -112,7 +129,9 @@ class FixedSpeechBrowser implements SpeechBrowser {
   BrowserSession recognise(String lang) {
     listens.add(lang);
     return BrowserSession(
-      never ? Completer<BrowserHeard>().future : Future.value(heard),
+      never
+          ? Completer<BrowserHeard>().future
+          : Future.value(heard.withAudio(audio)),
       () => cancels++,
     );
   }

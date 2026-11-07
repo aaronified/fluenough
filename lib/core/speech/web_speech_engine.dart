@@ -20,10 +20,12 @@ import 'web_speech_browser.dart';
 /// [SpeechFailure.notOnDevice] at once, and the app asks the learner whether
 /// to listen online, as it does for a language an Android phone lacks.
 ///
-/// It keeps no audio of the take ([SpeechHeard.ownAudio] is null): the
-/// record-while-recognising capture of ADR-0054 is not used in a browser,
-/// where two readers of the microphone are not safe in every browser, and
-/// "Hear yourself" records a second take instead.
+/// The browser's recorder (`MediaRecorder`) starts with the recogniser and
+/// stops with it, and the take is kept in memory as
+/// [SpeechHeard.ownAudio] (ADR-0054), so that "Your recording" is there
+/// after every attempt. A browser that cannot record beside the recogniser
+/// gives none, and "Hear yourself" records a second take instead; a
+/// cancelled or failed listen keeps nothing.
 class WebSpeechEngine implements OnlineOnlySpeech {
   WebSpeechEngine([SpeechBrowser? browser])
     : _browser = browser ?? openSpeechBrowser();
@@ -140,7 +142,7 @@ class WebSpeechEngine implements OnlineOnlySpeech {
         code: 'empty-result',
       );
     }
-    return SpeechHeard(readings);
+    return SpeechHeard(readings, ownAudio: heard.ownAudio);
   }
 
   /// The Web Speech API's error codes, as the reasons the app tells apart.
