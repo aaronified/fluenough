@@ -15,6 +15,10 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "मैं रोज़ सुबह उठता हूँ।", "reading": "maim̐ rōz subah uṭhtā hūm̐.", "ipa": "mɛ̃ː roːz sʊbəɦ ʊʈʰt̪aː ɦũː", "bases": [{"word": "उठता", "base": "उठना", "reading": "uṭhnā"}, {"word": "हूँ", "ref": "hi-0780"}]},
+      {"target": "मैं रोज़ सात बजे उठता हूँ।", "reading": "maim̐ rōz sāt bajē uṭhtā hūm̐.", "ipa": "mɛ̃ː roːz saːt̪ bədʒeː ʊʈʰt̪aː ɦũː", "bases": [{"word": "मैं", "base": "मैं", "reading": "maim̐"}, {"word": "उठता", "base": "उठना", "reading": "uṭhnā"}, {"word": "हूँ", "base": "होना", "reading": "hōnā"}]}
+    ]
   - id: "hi-0442"
     target: "नहाना"
     target_scripts: { perso_arabic: "نہانا" }
@@ -86,6 +90,9 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "सो जाना", "reading": "sō jānā", "ipa": "soː dʒaːnaː", "bases": [{"word": "सो", "base": "सोना", "reading": "sōnā"}, {"word": "जाना", "base": "जाना", "reading": "jānā"}]}
+    ]
   - id: "hi-0451"
     target: "रोज़"
     target_scripts: { perso_arabic: "روز" }
@@ -93,6 +100,9 @@ cards:
     ipa: "roːz"
     alt_target: ["रोज", "हर दिन"]
     pos: "adv"
+    "examples": [
+      {"target": "कचरा रोज़ निकालो।", "reading": "kacrā rōz nikālō.", "ipa": "kətʃraː roːz nɪkaːloː", "bases": [{"word": "रोज़", "base": "रोज़", "reading": "rōz"}, {"word": "निकालो", "base": "निकालना", "reading": "nikālnā"}]}
+    ]
   - id: "hi-0452"
     target: "कभी-कभी"
     target_scripts: { perso_arabic: "کبھی کبھی" }
@@ -108,6 +118,9 @@ cards:
     reading: "hamēśā"
     ipa: "ɦəmeːʃaː"
     pos: "adv"
+    "examples": [
+      {"target": "वह हमेशा सही बोलता है।", "reading": "vah hamēśā sahī bōltā hai.", "ipa": "ʋəɦ ɦəmeːʃaː səɦiː boːlt̪aː ɦɛː", "bases": [{"word": "बोलता", "base": "बोलना", "reading": "bōlnā"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0454"
     target: "आम तौर पर"
     target_scripts: { perso_arabic: "عام طور پر" }

@@ -21,6 +21,9 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সোঁফালে যাওক।", reading: "sum̐phāle zāuk.", ipa: "sʊ̃pʰale zaʊk", bases: [{"word": "সোঁফালে", "base": "সোঁফাল", "reading": "sum̐phāl"}, {"word": "যাওক", "ref": "as-2200"}] }
+      - { target: "এইটো মোৰ সোঁ হাত।", reading: "eitu mur sum̐ hāt.", ipa: "eitʊ mʊɹ sʊ̃ hat", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0316"
     target: "বাওঁ"
     reading: "bāum̐"
@@ -28,6 +31,9 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাওঁফালে যাওক।", reading: "bāum̐phāle zāuk.", ipa: "baʊ̃pʰale zaʊk", bases: [{"word": "বাওঁফালে", "base": "বাওঁফাল", "reading": "bāum̐phāl"}, {"word": "যাওক", "ref": "as-2200"}] }
+      - { target: "এইটো মোৰ বাওঁ হাত।", reading: "eitu mur bāum̐ hāt.", ipa: "eitʊ mʊɹ baʊ̃ hat", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "মোৰ", "ref": "as-2187"}] }
   - id: "as-0317"
     target: "পোনে পোনে"
     reading: "pune pune"
@@ -43,6 +49,9 @@ cards:
     tags: ["polite"]
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাওঁফালে ঘূৰক।", reading: "bāum̐phāle ghurôk.", ipa: "baʊ̃pʰale ɡʱuɹɔk", bases: [{"word": "বাওঁফালে", "base": "বাওঁফাল", "reading": "bāum̐phāl"}] }
+      - { target: "সোঁফালে ঘূৰক।", reading: "sum̐phāle ghurôk.", ipa: "sʊ̃pʰale ɡʱuɹɔk", bases: [{"word": "সোঁফালে", "base": "সোঁফাল", "reading": "sum̐phāl"}] }
   - id: "as-0319"
     target: "আগত"
     reading: "āgôt"
@@ -50,6 +59,9 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ঘৰৰ আগত।", reading: "ghôrôr āgôt.", ipa: "ɡʱɔɹɔɹ aɡɔt", bases: [{"word": "ঘৰৰ", "ref": "as-0052"}] }
+      - { target: "ভাত খোৱাৰ আগতে", reading: "bhāt khuwār āgôte", ipa: "bʱat kʰʊwaɹ aɡɔte", bases: [{"word": "খোৱাৰ", "ref": "as-0109"}, {"word": "আগতে", "base": "আগত", "reading": "āgôt"}] }
   - id: "as-0320"
     target: "পাছফালে"
     reading: "pāsphāle"
@@ -57,6 +69,9 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ঘৰৰ পাছফালে।", reading: "ghôrôr pāsôphāle.", ipa: "ɡʱɔɹɔɹ pasɔpʰale", bases: [{"word": "ঘৰৰ", "ref": "as-0052"}] }
+      - { target: "পাছফালে যাওক।", reading: "pāsôphāle zāuk.", ipa: "pasɔpʰale zaʊk", bases: [{"word": "যাওক", "ref": "as-2200"}] }
   - id: "as-0321"
     target: "ওচৰত"
     reading: "usôrôt"
@@ -64,6 +79,9 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মোৰ ঘৰ ওচৰত।", reading: "mur ghôr usôrôt.", ipa: "mʊɹ ɡʱɔɹ ʊsɔɹɔt", bases: [{"word": "ঘৰ", "base": "ঘৰ", "reading": "ghôr"}, {"word": "ওচৰত", "base": "ওচৰত", "reading": "usôrôt"}, {"word": "মোৰ", "base": "মোৰ", "reading": "mur"}] }
+      - { target: "নদীৰ ওচৰত", reading: "nodir usôrôt", ipa: "nodiɹ ʊsɔɹɔt", bases: [{"word": "নদীৰ", "base": "নদী", "reading": "nodi"}] }
   - id: "as-0322"
     target: "দূৰ"
     reading: "dur"
@@ -71,16 +89,25 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "সীমা দূৰ।", reading: "simā dur.", ipa: "sima duɹ", bases: [] }
+      - { target: "দহ কিলোমিটাৰ দূৰ।", reading: "dôh kilumitār dur.", ipa: "dɔh kilʊmitaɹ duɹ", bases: [] }
   - id: "as-0323"
     target: "ইয়াত"
     reading: "iyāt"
     ipa: "ijat"
     pos: "adv"
+    examples:
+      - { target: "আপোনাৰ কিতাপ ইয়াত।", reading: "āpunār kitāp iyāt.", ipa: "apʊnaɹ kitap ijat", bases: [{"word": "কিতাপ", "base": "কিতাপ", "reading": "kitāp"}, {"word": "ইয়াত", "base": "ইয়াত", "reading": "iyāt"}, {"word": "আপোনাৰ", "base": "আপোনাৰ", "reading": "āpunār"}] }
+      - { target: "ইয়াত সুবিধা।", reading: "iyāt xubidhā.", ipa: "ijat subidʱa", bases: [] }
   - id: "as-0324"
     target: "তাত"
     reading: "tāt"
     ipa: "tat"
     pos: "adv"
+    examples:
+      - { target: "তাত মোৰ কিতাপ আছে।", reading: "tāt mur kitāp āse.", ipa: "tat mʊɹ kitap ase", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
+      - { target: "তাত এটা দোকান আছে।", reading: "tāt etā dukān āse.", ipa: "tat eta dʊkan ase", bases: [{"word": "এটা", "ref": "as-2258"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
   - id: "as-0325"
     target: "বাট"
     reading: "bāt"
@@ -88,6 +115,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "বাটত ধূলি বহুত।", reading: "bātôt dhuli bohut.", ipa: "batɔt dʱuli bohut", bases: [{"word": "বাটত", "base": "বাট", "reading": "bāt"}] }
+      - { target: "বাট দীঘল।", reading: "bāt dighôl.", ipa: "bat diɡʱɔl", bases: [] }
   - id: "as-0326"
     target: "আলি"
     reading: "āli"
@@ -95,6 +125,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ইয়াত এটা আলি আছে।", reading: "iyāt etā āli āse.", ipa: "ijat eta ali ase", bases: [{"word": "ইয়াত", "ref": "as-0323"}, {"word": "এটা", "ref": "as-2258"}, {"word": "আছে", "base": "আছ", "reading": "ās"}] }
+      - { target: "আমাৰ আলিটো বৰ শান্ত।", reading: "āmār ālitu bôr xāntô.", ipa: "amaɹ alitʊ bɔɹ xantɔ", bases: [{"word": "আমাৰ", "base": "আমি", "reading": "āmi"}, {"word": "আলিটো", "base": "আলি", "reading": "āli"}, {"word": "শান্ত", "base": "শান্ত", "reading": "xāntô"}] }
   - id: "as-0327"
     target: "চাৰিআলি"
     reading: "sāriāli"
@@ -102,3 +135,6 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চাৰিআলি ইয়াত।", reading: "sāriāli iyāt.", ipa: "saɹiali ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "চাৰিআলিত বাওঁফালে ঘূৰক।", reading: "sāriālit bāum̐phāle ghurôk.", ipa: "saɹialit baʊ̃pʰale ɡʱuɹɔk", bases: [{"word": "চাৰিআলিত", "base": "চাৰিআলি", "reading": "sāriāli"}, {"word": "বাওঁফালে", "base": "বাওঁফাল", "reading": "bāum̐phāl"}] }

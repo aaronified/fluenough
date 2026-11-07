@@ -15,6 +15,10 @@ cards:
     gender: "n"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "मी नाव विसरलो.", "reading": "mi nāv visrlo.", "ipa": "mi naʋ ʋisrlo", "bases": [{"word": "विसरलो", "base": "विसरणे", "reading": "visrṇe"}]},
+      {"target": "तुमचे नाव काय आहे?", "reading": "tumce nāv kāy āhe?", "ipa": "t̪umtʃe naʋ kaj aɦe", "bases": [{"word": "तुमचे", "base": "तुमचा", "reading": "tumcā"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]}
+    ]
   - id: "mr-0206"
     target: "मी इंग्लंडचा आहे."
     reading: "mi iṅglaṇḍcā āhe."
@@ -45,6 +49,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "देशासाठी बलिदान दिलं.", "reading": "deśāsāṭhi balidān dilam̐.", "ipa": "d̪eʃasaʈʰi bəlid̪an d̪ilə̃", "bases": [{"word": "देशासाठी", "base": "देश", "reading": "deś"}, {"word": "दिलं", "ref": "mr-0721"}]},
+      {"target": "भारत लोकशाही देश आहे.", "reading": "bhārat lokśāhi deś āhe.", "ipa": "bʱarət̪ lokʃaɦi d̪eʃ aɦe", "bases": [{"word": "आहे", "base": "असणे", "reading": "asṇe"}, {"word": "भारत", "base": "भारत", "reading": "bhārat"}]}
+    ]
   - id: "mr-0209"
     target: "गाव"
     reading: "gāv"
@@ -53,6 +61,10 @@ cards:
     gender: "n"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "आमदार गावात आले.", "reading": "āmdār gāvāt āle.", "ipa": "amd̪ar ɡaʋat̪ ale", "bases": [{"word": "गावात", "base": "गाव", "reading": "gāv"}, {"word": "आले", "ref": "mr-0711"}]},
+      {"target": "बातमी गावभर पसरली.", "reading": "bātmi gāvbhar pasrli.", "ipa": "bat̪mi ɡaʋbʱər pəsrli", "bases": [{"word": "गावभर", "base": "गाव", "reading": "gāv"}, {"word": "पसरली", "base": "पसरणे", "reading": "pasrṇe"}]}
+    ]
   - ref: "mr-0058"
     notes:
       - { id: "n1", kind: "note" }
@@ -62,6 +74,10 @@ cards:
     ipa: "ʋəj"
     pos: "noun"
     gender: "n"
+    "examples": [
+      {"target": "कलेला वय नसतं.", "reading": "kalelā vay nastam̐.", "ipa": "kəlela ʋəj nəst̪ə̃", "bases": [{"word": "कलेला", "base": "कला", "reading": "kalā"}, {"word": "वय", "base": "वय", "reading": "vay"}, {"word": "नसतं", "base": "नसणे", "reading": "nasṇe"}]},
+      {"target": "तुमचे वय किती आहे?", "reading": "tumce vay kiti āhe?", "ipa": "t̪umtʃe ʋəj kit̪i aɦe", "bases": [{"word": "तुमचे", "base": "तुमचा", "reading": "tumcā"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]}
+    ]
   - id: "mr-0211"
     target: "तुमचे वय किती आहे?"
     reading: "tumce vay kiti āhe?"
@@ -80,18 +96,29 @@ cards:
     gender: "n"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "लग्न करणे", "reading": "lagna karṇe", "ipa": "ləɡnə kərɳe", "bases": [{"word": "करणे", "base": "करणे", "reading": "karṇe"}]},
+      {"target": "कुणाशी लग्न ठरलं?", "reading": "kuṇāśi lagn ṭharlam̐?", "ipa": "kuɳaʃi ləɡn ʈʰərlə̃", "bases": [{"word": "कुणाशी", "ref": "mr-0683"}, {"word": "ठरलं", "base": "ठरणे", "reading": "ṭharṇe"}]}
+    ]
   - id: "mr-0213"
     target: "मित्र"
     reading: "mitra"
     ipa: "mit̪rə"
     pos: "noun"
     gender: "m"
+    "examples": [
+      {"target": "एकटेपणा घालवायला मित्रांना भेटतो.", "reading": "ekṭepṇā ghālvāylā mitrānnā bheṭto.", "ipa": "ekʈepɳa ɡʱalʋajla mit̪ranna bʱeʈt̪o", "bases": [{"word": "घालवायला", "base": "घालवणे", "reading": "ghālvṇe"}, {"word": "मित्रांना", "base": "मित्र", "reading": "mitra"}, {"word": "भेटतो", "base": "भेटणे", "reading": "bheṭṇe"}]},
+      {"target": "तू माझा मित्र आहेस.", "reading": "tu mājhā mitra āhes.", "ipa": "t̪u madzʱa mit̪r aɦes", "bases": [{"word": "माझा", "base": "मी", "reading": "mājhā"}, {"word": "आहेस", "base": "असणे", "reading": "āhes"}]}
+    ]
   - id: "mr-0214"
     target: "मैत्रीण"
     reading: "maitriṇ"
     ipa: "məit̪riɳ"
     pos: "noun"
     gender: "f"
+    "examples": [
+      {"target": "ही माझी मैत्रीण आहे.", "reading": "hi mājhi maitriṇ āhe.", "ipa": "ɦi madʒʱi məit̪riɳ aɦe", "bases": [{"word": "माझी", "base": "मी", "reading": "mājhi"}, {"word": "आहे", "base": "असणे", "reading": "āhe"}]}
+    ]
   - id: "mr-0215"
     target: "भाषा"
     reading: "bhāṣā"
@@ -100,6 +127,9 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "देशी भाषा शिका.", "reading": "deśi bhāṣā śikā.", "ipa": "d̪eʃi bʱaʂa ʃika", "bases": [{"word": "भाषा", "base": "भाषा", "reading": "bhāṣā"}, {"word": "शिका", "ref": "mr-0717"}]}
+    ]
   - id: "mr-0216"
     target: "मी इंग्रजी बोलतो."
     reading: "mi iṅgraji bolto."

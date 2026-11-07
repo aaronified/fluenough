@@ -1,0 +1,26 @@
+schema: 1
+id: "ta-describing-sentences"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0327"
+    target: "பெரிய நாய் அருகில் இருக்கிறது."
+    reading: "periya nāy arukil irukkiṟatu."
+    ipa: "peɾija naːj aɾukil iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "பெரிய", ref: "ta-0008" }, { word: "நாய்", ref: "ta-0296" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0328"
+    target: "சின்ன பூனை மேலே இருக்கிறது."
+    reading: "ciṉṉa pūṉai mēlē irukkiṟatu."
+    ipa: "sinna puːnai meːleː iɾukkirat̪u"
+    pos: "phrase"
+    bases: [{ word: "சின்ன", ref: "ta-0168" }, { word: "பூனை", ref: "ta-0297" }, { word: "மேலே", ref: "ta-0176" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0329"
+    target: "புதிய கணினி வேண்டும்."
+    reading: "putiya kaṇiṉi vēṇṭum."
+    ipa: "put̪ija kaɳini ʋeːɳʈum"
+    pos: "phrase"
+    bases: [{ word: "புதிய", ref: "ta-0171" }, { word: "கணினி", ref: "ta-0196" }, { word: "வேண்டும்", base: "வேண்டும்", reading: "vēṇṭum" }]

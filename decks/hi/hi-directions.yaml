@@ -37,6 +37,10 @@ cards:
     reading: "sīdhē"
     ipa: "siːd̪ʱeː"
     pos: "adv"
+    "examples": [
+      {"target": "सीधे घर जाओ।", "reading": "sīdhē ghar jāō.", "ipa": "siːd̪ʱeː ɡʱər dʒaːoː", "bases": [{"word": "जाओ", "base": "जाना", "reading": "jānā"}]},
+      {"target": "वह सीधे बाज़ार गया।", "reading": "vah sīdhē bāzār gayā.", "ipa": "ʋəɦ siːd̪ʱeː baːzaːr ɡəjaː", "bases": [{"word": "बाज़ार", "base": "बाज़ार", "reading": "bāzār"}, {"word": "गया", "base": "जाना", "reading": "jānā"}]}
+    ]
   - id: "hi-0290"
     target: "मुड़िए"
     target_scripts: { perso_arabic: "مڑیے" }
@@ -50,12 +54,18 @@ cards:
     reading: "āgē"
     ipa: "aːɡeː"
     pos: "adv"
+    "examples": [
+      {"target": "आगे बढ़ाओ।", "reading": "āgē baṛhāō.", "ipa": "aːɡeː bəɽʱaːoː", "bases": [{"word": "आगे", "base": "आगे", "reading": "āgē"}, {"word": "बढ़ाओ", "base": "बढ़ाना", "reading": "baṛhānā"}]}
+    ]
   - id: "hi-0292"
     target: "पीछे"
     target_scripts: { perso_arabic: "پیچھے" }
     reading: "pīchē"
     ipa: "piːtʃʰeː"
     pos: "adv"
+    "examples": [
+      {"target": "हर कहावत के पीछे एक अनुभव होता है।", "reading": "har kahāvat kē pīchē ēk anubhav hōtā hai.", "ipa": "ɦər kəɦaːʋət̪ keː piːtʃʰeː eːk ənʊbʱəʋ ɦoːt̪aː ɦɛː", "bases": [{"word": "हर", "base": "हर", "reading": "har"}, {"word": "कहावत", "base": "कहावत", "reading": "kahāvat"}, {"word": "के", "ref": "hi-0279"}, {"word": "पीछे", "base": "पीछे", "reading": "pīchē"}, {"word": "एक", "ref": "hi-0198"}, {"word": "अनुभव", "ref": "hi-2023"}, {"word": "होता", "ref": "hi-0780"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0293"
     target: "पास"
     target_scripts: { perso_arabic: "پاس" }
@@ -72,6 +82,10 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "एयरपोर्ट दूर है।", "reading": "ēyrpōrṭ dūr hai.", "ipa": "eːjrpoːrʈ d̪uːr ɦɛː", "bases": [{"word": "दूर", "base": "दूर", "reading": "dūr"}, {"word": "है", "ref": "hi-0780"}]},
+      {"target": "बुराई से दूर रहो।", "reading": "burāī sē dūr rahō.", "ipa": "bʊraːiː seː d̪uːr rəɦoː", "bases": [{"word": "से", "ref": "hi-0276"}, {"word": "दूर", "base": "दूर", "reading": "dūr"}, {"word": "रहो", "ref": "hi-0791"}]}
+    ]
   - id: "hi-0295"
     target: "यहाँ"
     target_scripts: { perso_arabic: "یہاں" }
@@ -79,6 +93,10 @@ cards:
     ipa: "jəɦãː"
     alt_target: ["यहां"]
     pos: "adv"
+    "examples": [
+      {"target": "यहाँ बैठिए।", "reading": "yahām̐ baiṭhiē.", "ipa": "jəɦãː bɛːʈʰɪeː", "bases": [{"word": "बैठिए", "base": "बैठना", "reading": "baiṭhnā"}]},
+      {"target": "यहाँ रोकिए।", "reading": "yahām̐ rōkiē.", "ipa": "jəɦãː roːkɪeː", "bases": [{"word": "रोकिए", "base": "रोकना", "reading": "rōknā"}]}
+    ]
   - id: "hi-0296"
     target: "वहाँ"
     target_scripts: { perso_arabic: "وہاں" }
@@ -86,6 +104,10 @@ cards:
     ipa: "ʋəɦãː"
     alt_target: ["वहां"]
     pos: "adv"
+    "examples": [
+      {"target": "हमारा संवाददाता वहाँ है।", "reading": "hamārā saṁvāddātā vahām̐ hai.", "ipa": "ɦəmaːraː sə̃ʋaːd̪d̪aːt̪aː ʋəɦãː ɦɛː", "bases": [{"word": "हमारा", "ref": "hi-0756"}, {"word": "वहाँ", "base": "वहाँ", "reading": "vahām̐"}, {"word": "है", "ref": "hi-0780"}]},
+      {"target": "मैं कई बार वहाँ गया हूँ।", "reading": "maim̐ kaī bār vahām̐ gayā hūm̐.", "ipa": "mɛ̃ː kəiː baːr ʋəɦãː ɡəjaː ɦũː", "bases": [{"word": "कई", "base": "कई", "reading": "kaī"}, {"word": "बार", "base": "बार", "reading": "bār"}, {"word": "गया", "base": "जाना", "reading": "jānā"}, {"word": "हूँ", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0297"
     target: "रास्ता"
     target_scripts: { perso_arabic: "راستہ" }
@@ -95,6 +117,9 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "उसने मुझसे रास्ता पूछा।", "reading": "usnē mujhsē rāstā pūchā.", "ipa": "ʊsneː mʊdʒʱseː raːst̪aː puːtʃʰaː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "मुझसे", "ref": "hi-0745"}, {"word": "पूछा", "ref": "hi-0799"}]}
+    ]
   - id: "hi-0298"
     target: "सड़क"
     target_scripts: { perso_arabic: "سڑک" }
@@ -104,3 +129,6 @@ cards:
     phonetic_source: "wiktionary"
     pos: "noun"
     gender: "f"
+    "examples": [
+      {"target": "लंबी सड़क है।", "reading": "lambī saṛak hai.", "ipa": "ləmbiː səɽək ɦɛː", "bases": [{"word": "लंबी", "base": "लंबा", "reading": "lambā"}, {"word": "सड़क", "base": "सड़क", "reading": "saṛak"}, {"word": "है", "ref": "hi-0780"}]}
+    ]

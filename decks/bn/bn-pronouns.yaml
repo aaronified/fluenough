@@ -16,6 +16,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "আমি", reading: "āmi" }] }
+    "examples": [
+      {"target": "আমি খাটো।", "reading": "āmi khāṭo.", "ipa": "ami kʰaʈo", "bases": []},
+      {"target": "আমি ছাত্র।", "reading": "āmi chātro.", "ipa": "ami tʃʰat̪ro", "bases": [{"word": "আমি", "base": "আমি", "reading": "āmi"}]}
+    ]
   - id: "bn-0834"
     target: "আমরা"
     reading: "āmrā"
@@ -23,6 +27,9 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "আমরা", reading: "āmrā" }, { word: "আমি", reading: "āmi" }, { word: "আমি যাই", reading: "āmi jāi" }, { word: "আমরা যাই", reading: "āmrā jāi" }] }
+    "examples": [
+      {"target": "আমরা আনন্দিত।", "reading": "āmorā ānondit.", "ipa": "amora anond̪it̪", "bases": [{"word": "আমরা", "base": "আমরা", "reading": "āmrā"}]}
+    ]
   - id: "bn-0835"
     target: "তুমি"
     reading: "tumi"
@@ -30,6 +37,9 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "আপনি", reading: "āpni" }] }
+    "examples": [
+      {"target": "তুমিই সেরা।", "reading": "tumii serā.", "ipa": "t̪umii sera", "bases": [{"word": "তুমিই", "base": "তুমি", "reading": "tumi"}, {"word": "সেরা", "base": "সেরা", "reading": "serā"}]}
+    ]
   - id: "bn-0836"
     target: "তোমরা"
     reading: "tomrā"
@@ -44,6 +54,9 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "তুই যাস", reading: "tui jāś" }] }
+    "examples": [
+      {"target": "তুই কী করিস?", "reading": "tui ki koriś?", "ipa": "t̪ui ki koriʃ", "bases": [{"word": "করিস", "ref": "bn-0102"}]}
+    ]
   - id: "bn-0838"
     target: "আপনারা"
     reading: "āpnārā"
@@ -51,6 +64,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "আপনি", reading: "āpni" }, { word: "আপনি যান", reading: "āpni jān" }, { word: "আপনারা যান", reading: "āpnārā jān" }] }
+    "examples": [
+      {"target": "আপনারা কেমন আছেন?", "reading": "āpnārā kemon āchen?", "ipa": "apnara kemon atʃʰen", "bases": [{"word": "আছেন", "base": "আছে", "reading": "āche"}]},
+      {"target": "আপনারা বলুন, আমি শুনছি।", "reading": "āponārā bolun, āmi śunochi.", "ipa": "aponara bolun ami ʃunotʃʰi", "bases": [{"word": "আপনারা", "base": "আপনারা", "reading": "āpnārā"}, {"word": "বলুন", "ref": "bn-0879"}, {"word": "আমি", "ref": "bn-0833"}, {"word": "শুনছি", "ref": "bn-0878"}]}
+    ]
   - id: "bn-0839"
     target: "সে"
     reading: "śe"
@@ -66,6 +83,9 @@ cards:
     warning: "pair"
     notes:
       - { id: "pair", kind: "pair", ref: "bn-0842", words: [{ word: "তাঁরা", reading: "tām̐rā" }, { word: "তারা", reading: "tārā" }] }
+    "examples": [
+      {"target": "তারা কারা?", "reading": "tārā kārā?", "ipa": "t̪ara kara", "bases": []}
+    ]
   - id: "bn-0841"
     target: "তিনি"
     reading: "tini"
@@ -73,6 +93,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "তিনি যান", reading: "tini jān" }] }
+    "examples": [
+      {"target": "তিনি অভিজ্ঞ শিক্ষক।", "reading": "tini ôbhiggo śikkhok.", "ipa": "t̪ini ɔbʱiɡɡ ʃikkʰok", "bases": [{"word": "তিনি", "base": "তিনি", "reading": "tini"}, {"word": "শিক্ষক", "base": "শিক্ষক", "reading": "śikkhok"}]},
+      {"target": "তিনি আত্মজীবনী লিখেছেন।", "reading": "tini ātmojiboni likhechen.", "ipa": "t̪ini at̪modʒiboni likʰetʃʰen", "bases": [{"word": "তিনি", "base": "তিনি", "reading": "tini"}, {"word": "লিখেছেন", "ref": "bn-0880"}]}
+    ]
   - id: "bn-0842"
     target: "তাঁরা"
     reading: "tām̐rā"
@@ -88,6 +112,8 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "এ", reading: "e" }, { word: "ও", reading: "o" }, { word: "এরা", reading: "erā" }, { word: "ওরা", reading: "orā" }] }
+    "examples": [
+    ]
   - id: "bn-0844"
     target: "ও"
     reading: "o"
@@ -103,6 +129,9 @@ cards:
     warning: "pair"
     notes:
       - { id: "pair", kind: "pair", ref: "bn-0846", words: [{ word: "ইনি", reading: "ini" }, { word: "উনি", reading: "uni" }] }
+    "examples": [
+      {"target": "ইনি আমার দাদা।", "reading": "ini āmār dādā.", "ipa": "ini amar d̪ad̪a", "bases": [{"word": "আমার", "ref": "bn-0833"}]}
+    ]
   - id: "bn-0846"
     target: "উনি"
     reading: "uni"
@@ -111,6 +140,9 @@ cards:
     warning: "pair"
     notes:
       - { id: "pair", kind: "pair", ref: "bn-0845", words: [{ word: "উনি", reading: "uni" }, { word: "ইনি", reading: "ini" }] }
+    "examples": [
+      {"target": "উনি খুব বয়স্ক।", "reading": "uni khub bôyośko.", "ipa": "uni kʰub bɔjoʃko", "bases": []}
+    ]
   - id: "bn-0847"
     target: "এরা"
     reading: "erā"
@@ -127,6 +159,10 @@ cards:
     warning: "pair"
     notes:
       - { id: "pair", kind: "pair", ref: "bn-0847", words: [{ word: "ওরা", reading: "orā" }, { word: "এরা", reading: "erā" }] }
+    "examples": [
+      {"target": "ওরা আমাদের বন্ধু।", "reading": "orā āmāder bondhu.", "ipa": "ora amad̪er bond̪ʱu", "bases": [{"word": "আমাদের", "ref": "bn-0834"}]},
+      {"target": "ওরা বন্ধুর সঙ্গে আসে।", "reading": "orā bondhur śôṅge āśe.", "ipa": "ora bond̪ʱur ʃɔŋɡe aʃe", "bases": [{"word": "বন্ধুর", "ref": "bn-0189"}, {"word": "আসে", "ref": "bn-0872"}]}
+    ]
   - id: "bn-0849"
     target: "এটা"
     reading: "eṭā"
@@ -136,6 +172,10 @@ cards:
     warning: "pair"
     notes:
       - { id: "pair", kind: "pair", ref: "bn-0850", words: [{ word: "এটা", reading: "eṭā" }, { word: "ওটা", reading: "oṭā" }] }
+    "examples": [
+      {"target": "এটা অন্যায্য।", "reading": "eṭā ônnājjo.", "ipa": "eʈa ɔnnadʒdʒ", "bases": [{"word": "এটা", "base": "এটা", "reading": "eṭā"}]},
+      {"target": "এটা কী?", "reading": "eṭā ki?", "ipa": "eʈa ki", "bases": [{"word": "এটা", "base": "এটা", "reading": "eṭā"}]}
+    ]
   - id: "bn-0850"
     target: "ওটা"
     reading: "oṭā"
@@ -145,6 +185,10 @@ cards:
     warning: "pair"
     notes:
       - { id: "pair", kind: "pair", ref: "bn-0849", words: [{ word: "ওটা", reading: "oṭā" }, { word: "এটা", reading: "eṭā" }] }
+    "examples": [
+      {"target": "ওটা কার?", "reading": "oṭā kār?", "ipa": "oʈa kar", "bases": []},
+      {"target": "ওটা একটা গুজব।", "reading": "oṭā ekoṭā gujob.", "ipa": "oʈa ekoʈa ɡudʒob", "bases": [{"word": "ওটা", "base": "ওটা", "reading": "oṭā"}, {"word": "একটা", "ref": "bn-0202"}]}
+    ]
   - id: "bn-0851"
     target: "সেটা"
     reading: "śeṭā"
@@ -153,6 +197,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "সেটা", reading: "śeṭā" }, { word: "-টা", reading: "-ṭā" }, { word: "-টি", reading: "-ṭi" }] }
+    "examples": [
+      {"target": "সেটা আমার না।", "reading": "śeṭā āmār nā.", "ipa": "ʃeʈa amar na", "bases": [{"word": "আমার", "ref": "bn-0833"}]},
+      {"target": "সূত্র বলছে, সেটা সত্যি।", "reading": "sutro bôloche, seṭā sotti.", "ipa": "sut̪r bɔlotʃʰe seʈa sot̪t̪i", "bases": [{"word": "বলছে", "base": "বলা", "reading": "bôloche"}, {"word": "সেটা", "base": "সেটা", "reading": "seṭā"}, {"word": "সত্যি", "base": "সত্যি", "reading": "sotti"}]}
+    ]
   - id: "bn-0852"
     target: "এগুলো"
     reading: "egulo"
@@ -161,6 +209,9 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "এটা", reading: "eṭā" }, { word: "এগুলো", reading: "egulo" }, { word: "-গুলো", reading: "-gulo" }, { word: "-রা", reading: "-rā" }] }
+    "examples": [
+      {"target": "এগুলো কী?", "reading": "egulo ki?", "ipa": "eɡulo ki", "bases": []}
+    ]
   - id: "bn-0853"
     target: "ওগুলো"
     reading: "ogulo"
@@ -169,6 +220,9 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "behaviour", words: [{ word: "ওটা", reading: "oṭā" }, { word: "ওরা", reading: "orā" }] }
+    "examples": [
+      {"target": "ওগুলো কার?", "reading": "ogulo kār?", "ipa": "oɡulo kar", "bases": []}
+    ]
   - id: "bn-0854"
     target: "সবাই"
     reading: "śôbāi"
@@ -176,6 +230,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "সব", reading: "śôb" }, { word: "-ই", reading: "-i" }, { word: "সে", reading: "śe" }, { word: "সবাই যায়", reading: "śôbāi jāy" }] }
+    "examples": [
+      {"target": "সবাই উত্তীর্ণ।", "reading": "sobāi uttirṇo.", "ipa": "sɔbai ut̪t̪irno", "bases": [{"word": "সবাই", "base": "সবাই", "reading": "śôbāi"}]},
+      {"target": "সবাই কোথায়?", "reading": "śôbāi kothāy?", "ipa": "ʃɔbai kot̪ʰaj", "bases": []}
+    ]
   - id: "bn-0855"
     target: "নিজে"
     reading: "nije"
@@ -183,6 +241,10 @@ cards:
     pos: "pronoun"
     notes:
       - { id: "n1", kind: "usage", words: [{ word: "আমি নিজে", reading: "āmi nije" }, { word: "নিজের", reading: "nijer" }] }
+    "examples": [
+      {"target": "নিজের যত্ন নাও।", "reading": "nijer jôtno nāo.", "ipa": "nidʒer dʒɔt̪n nao", "bases": [{"word": "নিজের", "base": "নিজে", "reading": "nije"}, {"word": "নাও", "ref": "bn-0889"}]},
+      {"target": "নিজের স্বার্থ দেখো।", "reading": "nijer sārtho dekho.", "ipa": "nidʒer sart̪ʰ d̪ekʰo", "bases": [{"word": "নিজের", "base": "নিজে", "reading": "nije"}, {"word": "দেখো", "ref": "bn-0877"}]}
+    ]
   - ref: "bn-0138"
   - id: "bn-1363"
     kind: "set"

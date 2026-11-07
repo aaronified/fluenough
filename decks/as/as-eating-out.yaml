@@ -14,6 +14,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আহাৰ ইয়াত।", reading: "āhār iyāt.", ipa: "ahaɹ ijat", bases: [{"word": "ইয়াত", "ref": "as-0323"}] }
+      - { target: "আহাৰ আগতে ফোন কৰিবা।", reading: "āhār āgôte phon koribā.", ipa: "ahaɹ aɡɔte pʰʊn koɹiba", bases: [{"word": "কৰিবা", "ref": "as-2202"}] }
   - ref: "as-0111"
     notes:
       - { id: "n1", kind: "note" }
@@ -25,6 +28,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "জুইত পানী।", reading: "zuit pāni.", ipa: "zuit pani", bases: [{"word": "জুইত", "base": "জুই", "reading": "zui"}] }
+      - { target: "পানী আনা", reading: "pāni ānā", ipa: "pani ana", bases: [] }
   - id: "as-0409"
     target: "চাহ"
     picture: "🍵"
@@ -33,11 +39,17 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "চাহ খাবনে?", reading: "sāh khābône?", ipa: "sah kʰabɔne", bases: [{"word": "খাবনে", "ref": "as-0109"}] }
+      - { target: "চাহ নোন।", reading: "sāh nun.", ipa: "sah nʊn", bases: [{"word": "চাহ", "base": "চাহ", "reading": "sāh"}] }
   - id: "as-0410"
     target: "কফি"
     reading: "kophi"
     ipa: "kopʰi"
     pos: "noun"
+    examples:
+      - { target: "মই কফি ভাল নাপাওঁ।", reading: "moi kophi bhāl nāpāum̐.", ipa: "moi kopʰi bʱal napaʊ̃", bases: [{"word": "মই", "base": "মই", "reading": "moi"}, {"word": "নাপাওঁ", "base": "পোৱা", "reading": "puwā"}] }
+      - { target: "চাহতকৈ কফি বেছি ভাল নহয়।", reading: "sāhôtôkôi kophi besi bhāl nôhôy.", ipa: "sahɔtɔkɔi kopʰi besi bʱal nɔhɔj", bases: [{"word": "চাহতকৈ", "ref": "as-0409"}] }
   - id: "as-0411"
     target: "মোক … লাগে।"
     reading: "muk... lāge."
@@ -54,6 +66,9 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আৰু একো নালাগে।", reading: "āru eku nālāge.", ipa: "aɹu ekʊ nalaɡe", bases: [{"word": "একো", "base": "একো", "reading": "eku"}] }
+      - { target: "পুৰুষ আৰু মহিলা।", reading: "purux āru mohilā.", ipa: "puɹux aɹu mohila", bases: [] }
   - id: "as-0413"
     target: "জলা"
     reading: "zôlā"
@@ -61,11 +76,17 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "এই আচাৰ বৰ জলা।", reading: "ei āsār bôr zôlā.", ipa: "ei asaɹ bɔɹ zɔla", bases: [{"word": "এই", "base": "এই", "reading": "ei"}, {"word": "আচাৰ", "base": "আচাৰ", "reading": "āsār"}] }
+      - { target: "মোৰ ভাত জলা।", reading: "mur bhāt zôlā.", ipa: "mʊɹ bʱat zɔla", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ভাত", "ref": "as-0111"}] }
   - id: "as-0414"
     target: "মিঠা"
     reading: "mithā"
     ipa: "mitʰa"
     pos: "adj"
+    examples:
+      - { target: "আঙুৰ মিঠা।", reading: "āṅur mithā.", ipa: "aŋuɹ mitʰa", bases: [] }
+      - { target: "আনাৰস মিঠা।", reading: "ānārôs mithā.", ipa: "anaɹɔs mitʰa", bases: [] }
   - id: "as-0415"
     target: "টেঙা"
     reading: "teṅā"
@@ -73,6 +94,9 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "কমলা টেঙা।", reading: "kômôlā teṅā.", ipa: "kɔmɔla teŋa", bases: [] }
+      - { target: "টমেটো টেঙা।", reading: "tômetu teṅā.", ipa: "tɔmetʊ teŋa", bases: [] }
   - id: "as-0416"
     target: "পিঠা"
     reading: "pithā"
@@ -80,6 +104,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "পিঠা নোন।", reading: "pithā nun.", ipa: "pitʰa nʊn", bases: [{"word": "পিঠা", "base": "পিঠা", "reading": "pithā"}] }
+      - { target: "পিঠাটো নৰম।", reading: "pithātu nôrôm.", ipa: "pitʰatʊ nɔɹɔm", bases: [{"word": "পিঠাটো", "base": "পিঠা", "reading": "pithā"}] }
   - id: "as-0417"
     target: "নিৰামিষ"
     reading: "nirāmix"
@@ -87,6 +114,9 @@ cards:
     pos: "adj"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই নিৰামিষ খাওঁ।", reading: "moi nirāmix khāum̐.", ipa: "moi niɹamix kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "এইটো নিৰামিষ ভাত।", reading: "eitu nirāmix bhāt.", ipa: "eitʊ niɹamix bʱat", bases: [{"word": "এইটো", "ref": "as-2193"}, {"word": "ভাত", "ref": "as-0111"}] }
   - id: "as-0418"
     target: "বিলটো দিয়ক।"
     reading: "biltu diyôk."

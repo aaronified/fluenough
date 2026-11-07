@@ -14,6 +14,9 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "ভাপ উঠিছে।", reading: "bhāp uthise.", ipa: "bʱap utʰise", bases: [{"word": "উঠিছে", "base": "উঠা", "reading": "uthā"}] }
+      - { target: "খং উঠা", reading: "khôṅ uthā", ipa: "kʰɔŋ utʰa", bases: [{"word": "খং", "base": "খং", "reading": "khôṅ"}] }
   - id: "as-0371"
     target: "গা ধোৱা"
     reading: "gā dhuwā"
@@ -41,6 +44,9 @@ cards:
     pos: "noun"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই ৰাতিপুৱা জলপান খাওঁ।", reading: "moi rātipuwā zôlôpān khāum̐.", ipa: "moi ɹatipuwa zɔlɔpan kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মোৰ জলপান ভাল।", reading: "mur zôlôpān bhāl.", ipa: "mʊɹ zɔlɔpan bʱal", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ভাল", "ref": "as-2084"}] }
   - id: "as-0374"
     target: "দুপৰীয়াৰ ভাত"
     reading: "duporiyār bhāt"
@@ -80,6 +86,8 @@ cards:
     reading: "rôndhā"
     ipa: "ɹɔndʱa"
     pos: "verb"
+    examples:
+      - { target: "মই ৰন্ধা ভাল পাওঁ।", reading: "moi rôndhā bhāl pāum̐.", ipa: "moi ɹɔndʱa bʱal paʊ̃", bases: [{"word": "ভাল", "ref": "as-2084"}, {"word": "পাওঁ", "base": "পোৱা", "reading": "puwā"}] }
   - id: "as-0379"
     target: "শোৱা"
     reading: "xuwā"
@@ -87,16 +95,25 @@ cards:
     pos: "verb"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "শোৱনি কোঠা", reading: "xuwoni kuthā", ipa: "xʊwoni kʊtʰa", bases: [{"word": "শোৱনি", "base": "শোৱা", "reading": "xuwā"}] }
+      - { target: "জ্বৰত শুই থকা।", reading: "zôrôt xui thôkā.", ipa: "zɔɹɔt xui tʰɔka", bases: [{"word": "জ্বৰত", "base": "জ্বৰ", "reading": "zôr"}, {"word": "শুই", "base": "শোৱা", "reading": "xuwā"}] }
   - id: "as-0380"
     target: "সদায়"
     reading: "xôdāi"
     ipa: "xɔdai"
     pos: "adv"
+    examples:
+      - { target: "মই সদায় ৰাতিপুৱা জলপান খাওঁ।", reading: "moi sôdāy rātipuwā zôlôpān khāum̐.", ipa: "moi sɔdaj ɹatipuwa zɔlɔpan kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মই সদায় সাত বজাত উঠোঁ।", reading: "moi xôdāi xāt bôzāt uthum̐.", ipa: "moi xɔdai xat bɔzat utʰʊ̃", bases: [{"word": "মই", "base": "মই", "reading": "moi"}, {"word": "বজাত", "ref": "as-0358"}, {"word": "উঠোঁ", "ref": "as-0370"}] }
   - id: "as-0381"
     target: "প্ৰতিদিনে"
     reading: "protidine"
     ipa: "pɹotidine"
     pos: "adv"
+    examples:
+      - { target: "মই প্ৰতিদিনে জলপান খাওঁ।", reading: "moi protidine zôlôpān khāum̐.", ipa: "moi pɹotidine zɔlɔpan kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "প্ৰতিদিনে হাঁটা ভাল।", reading: "protidine hām̐tā bhāl.", ipa: "pɹotidine hãta bʱal", bases: [] }
   - id: "as-0382"
     target: "কেতিয়াবা"
     reading: "ketiyābā"
@@ -104,11 +121,17 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "মই কেতিয়াবা ৰান্ধোঁ।", reading: "moi ketiyābā rāndhum̐.", ipa: "moi ketijaba ɹandʱʊ̃", bases: [{"word": "ৰান্ধোঁ", "ref": "as-0378"}] }
+      - { target: "কেতিয়াবা আহিবা।", reading: "ketiyābā āhibā.", ipa: "ketijaba ahiba", bases: [{"word": "আহিবা", "ref": "as-2201"}] }
   - id: "as-0383"
     target: "সাধাৰণতে"
     reading: "xādhārônôte"
     ipa: "xadʱaɹɔnɔte"
     pos: "adv"
+    examples:
+      - { target: "মই সাধাৰণতে ৰাতিপুৱা জলপান খাওঁ।", reading: "moi sādhārônôte rātipuwā zôlôpān khāum̐.", ipa: "moi sadʱaɹɔnɔte ɹatipuwa zɔlɔpan kʰaʊ̃", bases: [{"word": "খাওঁ", "ref": "as-0109"}] }
+      - { target: "মোৰ পৰিয়াল সাধাৰণতে ইয়াত থাকে।", reading: "mur poriyāl sādhārônôte iyāt thāke.", ipa: "mʊɹ poɹijal sadʱaɹɔnɔte ijat tʰake", bases: [{"word": "মোৰ", "ref": "as-2187"}, {"word": "ইয়াত", "ref": "as-0323"}, {"word": "থাকে", "base": "থাকা", "reading": "thākā"}] }
   - id: "as-0384"
     target: "একেলগে"
     reading: "ekelôge"
@@ -116,6 +139,9 @@ cards:
     pos: "adv"
     notes:
       - { id: "n1", kind: "note" }
+    examples:
+      - { target: "আমি একেলগে যাওঁ।", reading: "āmi ekelôge zāum̐.", ipa: "ami ekelɔɡe zaʊ̃", bases: [{"word": "যাওঁ", "ref": "as-2200"}] }
+      - { target: "আমি একেলগে কাম সমাপ্ত কৰিলোঁ।", reading: "āmi ekelôge kām xômāpt korilum̐.", ipa: "ami ekelɔɡe kam sɔmapt koɹilʊ̃", bases: [{"word": "কৰিলোঁ", "ref": "as-2202"}] }
   - id: "as-0385"
     target: "তাৰ পাছত"
     reading: "tār pāsôt"

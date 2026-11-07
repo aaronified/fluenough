@@ -1,0 +1,153 @@
+schema: 1
+id: "ta-places"
+part: "core"
+kind: "vocab"
+language: { code: "ta", iso639_3: "tam", name: "Tamil", script: "tamil", tts: "ta-IN", icon: "த" }
+license: "CC-BY-SA-4.0"
+theme: "places"
+tags: ["beginner", "unreviewed"]
+cards:
+  - id: "ta-0260"
+    target: "பள்ளி"
+    reading: "paḷḷi"
+    ipa: "paɭɭi"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "நான் பள்ளிக்குப் போகிறேன்."
+        reading: "nāṉ paḷḷikkup pōkiṟēṉ."
+        ipa: "naːn paɭɭikkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பள்ளிக்குப்", base: "பள்ளி", reading: "paḷḷi" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+      - target: "பள்ளி அருகில் இருக்கிறது."
+        reading: "paḷḷi arukil irukkiṟatu."
+        ipa: "paɭɭi aɾukil iɾukkirat̪u"
+        bases: [{ word: "பள்ளி", base: "பள்ளி", reading: "paḷḷi" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+  - id: "ta-0261"
+    target: "மருத்துவமனை"
+    reading: "maruttuvamaṉai"
+    ipa: "maɾut̪t̪uʋamanai"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "மருத்துவமனை அருகில் இருக்கிறது."
+        reading: "maruttuvamaṉai arukil irukkiṟatu."
+        ipa: "maɾut̪t̪uʋamanai aɾukil iɾukkirat̪u"
+        bases: [{ word: "மருத்துவமனை", base: "மருத்துவமனை", reading: "maruttuvamaṉai" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "நான் மருத்துவமனைக்குப் போகிறேன்."
+        reading: "nāṉ maruttuvamaṉaikkup pōkiṟēṉ."
+        ipa: "naːn maɾut̪t̪uʋamanaikkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "மருத்துவமனைக்குப்", base: "மருத்துவமனை", reading: "maruttuvamaṉai" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-0262"
+    target: "கோயில்"
+    reading: "kōyil"
+    ipa: "koːjil"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "அது பெரிய கோயில்."
+        reading: "atu periya kōyil."
+        ipa: "at̪u peɾija koːjil"
+        bases: [{ word: "அது", ref: "ta-0061" }, { word: "பெரிய", ref: "ta-0008" }, { word: "கோயில்", base: "கோயில்", reading: "kōyil" }]
+      - target: "நாங்கள் கோயிலுக்குப் போகிறோம்."
+        reading: "nāṅkaḷ kōyilukkup pōkiṟōm."
+        ipa: "naːŋkaɭ koːjilukkup poːkiroːm"
+        bases: [{ word: "நாங்கள்", ref: "ta-0064" }, { word: "கோயிலுக்குப்", base: "கோயில்", reading: "kōyil" }, { word: "போகிறோம்", base: "போ", reading: "pō" }]
+  - id: "ta-0263"
+    target: "வங்கி"
+    reading: "vaṅki"
+    ipa: "ʋaŋki"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "வங்கி அருகில் இருக்கிறது."
+        reading: "vaṅki arukil irukkiṟatu."
+        ipa: "ʋaŋki aɾukil iɾukkirat̪u"
+        bases: [{ word: "வங்கி", base: "வங்கி", reading: "vaṅki" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "இது வங்கி."
+        reading: "itu vaṅki."
+        ipa: "it̪u ʋaŋki"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "வங்கி", base: "வங்கி", reading: "vaṅki" }]
+  - id: "ta-0264"
+    target: "நகரம்"
+    reading: "nakaram"
+    ipa: "nakaɾam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது பெரிய நகரம்."
+        reading: "itu periya nakaram."
+        ipa: "it̪u peɾija nakaɾam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "பெரிய", ref: "ta-0008" }, { word: "நகரம்", base: "நகரம்", reading: "nakaram" }]
+      - target: "நான் நகரத்துக்குப் போகிறேன்."
+        reading: "nāṉ nakarattukkup pōkiṟēṉ."
+        ipa: "naːn nakaɾat̪t̪ukkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "நகரத்துக்குப்", base: "நகரம்", reading: "nakaram" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-0265"
+    target: "கிராமம்"
+    reading: "kirāmam"
+    ipa: "kiɾaːmam"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "இது சின்ன கிராமம்."
+        reading: "itu ciṉṉa kirāmam."
+        ipa: "it̪u sinna kiɾaːmam"
+        bases: [{ word: "இது", ref: "ta-0066" }, { word: "சின்ன", ref: "ta-0168" }, { word: "கிராமம்", base: "கிராமம்", reading: "kirāmam" }]
+      - target: "அவர் கிராமத்துக்குப் போகிறார்."
+        reading: "avar kirāmattukkup pōkiṟār."
+        ipa: "aʋaɾ kiɾaːmat̪t̪ukkup poːkiraːɾ"
+        bases: [{ word: "அவர்", ref: "ta-0060" }, { word: "கிராமத்துக்குப்", base: "கிராமம்", reading: "kirāmam" }, { word: "போகிறார்", base: "போ", reading: "pō" }]
+  - id: "ta-0266"
+    target: "பூங்கா"
+    reading: "pūṅkā"
+    ipa: "puːŋkaː"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "பூங்கா அருகில் இருக்கிறது."
+        reading: "pūṅkā arukil irukkiṟatu."
+        ipa: "puːŋkaː aɾukil iɾukkirat̪u"
+        bases: [{ word: "பூங்கா", base: "பூங்கா", reading: "pūṅkā" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "நான் பூங்காவுக்குப் போகிறேன்."
+        reading: "nāṉ pūṅkāvukkup pōkiṟēṉ."
+        ipa: "naːn puːŋkaːʋukkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "பூங்காவுக்குப்", base: "பூங்கா", reading: "pūṅkā" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]
+  - id: "ta-0267"
+    target: "விடுதி"
+    reading: "viṭuti"
+    ipa: "ʋiʈut̪i"
+    pos: "noun"
+    gender: "n"
+    notes:
+      - { id: "n1", kind: "usage" }
+    bases: "self"
+    examples:
+      - target: "விடுதி அருகில் இருக்கிறது."
+        reading: "viṭuti arukil irukkiṟatu."
+        ipa: "ʋiʈut̪i aɾukil iɾukkirat̪u"
+        bases: [{ word: "விடுதி", base: "விடுதி", reading: "viṭuti" }, { word: "அருகில்", ref: "ta-0183" }, { word: "இருக்கிறது", base: "இரு", reading: "iru" }]
+      - target: "நான் விடுதிக்குப் போகிறேன்."
+        reading: "nāṉ viṭutikkup pōkiṟēṉ."
+        ipa: "naːn ʋiʈut̪ikkup poːkireːn"
+        bases: [{ word: "நான்", ref: "ta-0003" }, { word: "விடுதிக்குப்", base: "விடுதி", reading: "viṭuti" }, { word: "போகிறேன்", base: "போ", reading: "pō" }]

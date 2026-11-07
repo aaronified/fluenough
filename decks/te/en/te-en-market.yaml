@@ -16,6 +16,9 @@ cards:
   "te-0240":
     native: "price"
     alt_native: ["cost"]
+    "examples": {
+      "అమ్మకందారులు ధర తగ్గించడానికి ఒప్పుకున్నారు.": {"native": "The sellers agreed to lower the price.", "bases": {}}
+    }
   "te-0241":
     native: "rupee"
     alt_native: ["rupees"]
@@ -23,11 +26,18 @@ cards:
       "n1": "More than one: రూపాయలు (rūpāyalu). వంద రూపాయలు (vanda rūpāyalu), a hundred rupees."
   "te-0242":
     native: "money"
+    "examples": {
+      "పర్సులో డబ్బులు ఉన్నాయి.": {"native": "There is money in the purse.", "bases": {"డబ్బులు": "money"}},
+      "నా దగ్గర డబ్బులు లేవు.": {"native": "I don't have any money on me.", "bases": {}}
+    }
   "te-0243":
     native: "change; small notes and coins"
     alt_native: ["loose change"]
     notes:
       "n1": "చిల్లర ఉందా (cillara undā)? Do you have change?"
+    "examples": {
+      "చిల్లర ఉందా?": {"native": "Do you have change?", "bases": {}}
+    }
   "te-0244":
     native: "That's too much!"
     alt_native: ["That is too expensive!"]
@@ -45,15 +55,26 @@ cards:
     alt_native: ["store"]
     notes:
       "n1": "In speech also షాపు (ṣāpu)."
+    "examples": {
+      "అతను దుకాణం నడుపుతాడు.": {"native": "He runs a shop.", "bases": {}}
+    }
   "te-0247":
     native: "please give (me)"
     notes:
       "n1": "ఒక కిలో ఇవ్వండి (oka kilō ivvaṇḍi), a kilo, please."
+    "examples": {
+      "ఆర్డర్ ఇవ్వండి.": {"native": "Please place the order.", "bases": {}},
+      "తాజావి ఇవ్వండి.": {"native": "Please give me the fresh ones.", "bases": {}}
+    }
   "te-0248":
     native: "kilo"
     alt_native: ["kilogram"]
     notes:
       "n1": "అర కిలో (ara kilō), half a kilo."
+    "examples": {
+      "కిలో ఎంత?": {"native": "How much per kilo?", "bases": {}},
+      "బ్యాగ్ బరువు ఇరవై కిలోలు.": {"native": "The bag weighs twenty kilos.", "bases": {"కిలోలు": "kilo"}}
+    }
   "te-0249":
     native: "Nothing else."
     alt_native: ["Nothing more."]

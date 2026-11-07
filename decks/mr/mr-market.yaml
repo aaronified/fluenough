@@ -24,6 +24,10 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "टॅग वर किंमत आहे.", "reading": "ṭêg var kimmat āhe.", "ipa": "ʈæɡ ʋər kimmət̪ aɦe", "bases": [{"word": "वर", "ref": "mr-0740"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]},
+      {"target": "दागिन्यांची किंमत जास्त आहे.", "reading": "dāginyāñci kimmat jāst āhe.", "ipa": "d̪aɡinjaɲtʃi kimmət̪ dzast̪ aɦe", "bases": [{"word": "दागिन्यांची", "base": "दागिना", "reading": "dāginā"}, {"word": "किंमत", "base": "किंमत", "reading": "kimmat"}, {"word": "जास्त", "base": "जास्त", "reading": "jāst"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]}
+    ]
   - id: "mr-0371"
     target: "रुपया"
     reading: "rupayā"
@@ -41,6 +45,9 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "पैसे मोजा.", "reading": "paise mojā.", "ipa": "pəise modza", "bases": [{"word": "मोजा", "base": "मोजणे", "reading": "mojṇe"}]}
+    ]
   - id: "mr-0373"
     target: "सुटे पैसे"
     reading: "suṭe paise"
@@ -78,6 +85,10 @@ cards:
     ipa: "d̪ukan"
     pos: "noun"
     gender: "n"
+    "examples": [
+      {"target": "ग्राहक दुकानात आले.", "reading": "grāhak dukānāt āle.", "ipa": "ɡraɦək d̪ukanat̪ ale", "bases": [{"word": "दुकानात", "base": "दुकान", "reading": "dukān"}, {"word": "आले", "ref": "mr-0711"}]},
+      {"target": "दुकान सकाळी उघडते.", "reading": "dukān sakāḷi ughḍte.", "ipa": "d̪ukan səkaɭi uɡʱɖt̪e", "bases": [{"word": "सकाळी", "base": "सकाळ", "reading": "sakāḷ"}, {"word": "उघडते", "base": "उघडणे", "reading": "ughḍṇe"}]}
+    ]
   - id: "mr-0377"
     target: "द्या"
     reading: "dyā"
@@ -86,6 +97,9 @@ cards:
     tags: ["polite"]
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "इडलीबरोबर चटणी द्या.", "reading": "iḍlibrobar caṭṇi dyā.", "ipa": "iɖlibrobər tsəʈɳi d̪ja", "bases": [{"word": "इडलीबरोबर", "base": "इडली", "reading": "iḍli"}, {"word": "द्या", "base": "देणे", "reading": "deṇe"}]}
+    ]
   - id: "mr-0378"
     target: "किलो"
     reading: "kilo"
@@ -94,6 +108,10 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "मला अर्धा किलो तांदूळ हवा आहे.", "reading": "malā ardhā kilo tānduḷ havā āhe.", "ipa": "məla ərd̪ʱa kilo t̪and̪uɭ ɦəʋa aɦe", "bases": [{"word": "मला", "base": "मी", "reading": "mi"}, {"word": "हवा", "ref": "mr-0411"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]},
+      {"target": "मला पाव किलो साखर हवी आहे.", "reading": "malā pāv kilo sākhar havi āhe.", "ipa": "məla paʋ kilo sakʰər ɦəʋi aɦe", "bases": [{"word": "मला", "base": "मी", "reading": "mi"}, {"word": "हवी", "ref": "mr-0411"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]}
+    ]
   - id: "mr-0379"
     target: "आणखी काही नको."
     reading: "āṇkhi kāhi nako."
@@ -109,11 +127,19 @@ cards:
     reading: "svasta"
     ipa: "sʋəst̪ə"
     pos: "adj"
+    "examples": [
+      {"target": "इंटरनेट स्वस्त आहे.", "reading": "iṇṭarneṭ svast āhe.", "ipa": "iɳʈərneʈ sʋəst̪ aɦe", "bases": [{"word": "आहे", "base": "असणे", "reading": "asṇe"}]},
+      {"target": "वांगी स्वस्त आहेत.", "reading": "vāṅgi svast āhet.", "ipa": "ʋaŋɡi sʋəst̪ aɦet̪", "bases": [{"word": "स्वस्त", "base": "स्वस्त", "reading": "svasta"}, {"word": "आहेत", "base": "असणे", "reading": "asṇe"}]}
+    ]
   - id: "mr-0381"
     target: "महाग"
     reading: "mahāg"
     ipa: "məɦaɡ"
     pos: "adj"
+    "examples": [
+      {"target": "खूप महाग आहे!", "reading": "khup mahāg āhe!", "ipa": "kʰup məɦaɡ aɦe", "bases": [{"word": "खूप", "base": "खूप", "reading": "khup"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]},
+      {"target": "हा ड्रेस महाग आहे.", "reading": "hā ḍres mahāg āhe.", "ipa": "ɦa ɖres məɦaɡ aɦe", "bases": [{"word": "महाग", "base": "महाग", "reading": "mahāg"}, {"word": "आहे", "base": "असणे", "reading": "asṇe"}]}
+    ]
   - id: "mr-0382"
     target: "पिशवी"
     picture: "🛍"
@@ -123,6 +149,10 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "तो पिशवी उचलतो.", "reading": "to piśvi uclto.", "ipa": "t̪o piʃʋi utslt̪o", "bases": [{"word": "उचलतो", "base": "उचलणे", "reading": "uclṇe"}]},
+      {"target": "तो पिशवी भरतो.", "reading": "to piśvi bharto.", "ipa": "t̪o piʃʋi bʱərt̪o", "bases": [{"word": "भरतो", "base": "भरणे", "reading": "bharṇe"}]}
+    ]
   - id: "mr-0383"
     target: "बाजार"
     reading: "bājār"
@@ -131,3 +161,6 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ती बाजारात जाते.", "reading": "ti bājārāt jāte.", "ipa": "t̪i badzarat̪ dzat̪e", "bases": [{"word": "बाजारात", "base": "बाजार", "reading": "bājār"}, {"word": "जाते", "base": "जाणे", "reading": "jāṇe"}]}
+    ]

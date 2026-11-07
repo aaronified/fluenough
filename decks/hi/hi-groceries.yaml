@@ -19,6 +19,10 @@ cards:
     gender: "f"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "सब्ज़ी का ठेला", "reading": "sabzī kā ṭhēlā", "ipa": "səbziː kaː ʈʰeːlaː", "bases": [{"word": "सब्ज़ी", "base": "सब्ज़ी", "reading": "sabzī"}, {"word": "का", "ref": "hi-0279"}]},
+      {"target": "सब्ज़ी गाढ़ी है।", "reading": "sabzī gāṛhī hai.", "ipa": "səbziː ɡaːɽʱiː ɦɛː", "bases": [{"word": "सब्ज़ी", "base": "सब्ज़ी", "reading": "sabzī"}, {"word": "गाढ़ी", "base": "गाढ़ा", "reading": "gāṛhā"}, {"word": "है", "ref": "hi-0112"}]}
+    ]
   - id: "hi-0250"
     target: "आलू"
     target_scripts: { perso_arabic: "آلو" }
@@ -27,6 +31,9 @@ cards:
     ipa: "aːluː"
     pos: "noun"
     gender: "m"
+    "examples": [
+      {"target": "आलू छीलकर पकाओ।", "reading": "ālū chīlkar pakāō.", "ipa": "aːluː tʃʰiːlkər pəkaːoː", "bases": [{"word": "आलू", "base": "आलू", "reading": "ālū"}, {"word": "छीलकर", "base": "छीलकर", "reading": "chīlkar"}, {"word": "पकाओ", "base": "पकाना", "reading": "pakānā"}]}
+    ]
   - id: "hi-0251"
     target: "प्याज़"
     target_scripts: { perso_arabic: "پیاز" }
@@ -36,6 +43,10 @@ cards:
     alt_target: ["प्याज"]
     pos: "noun"
     gender: "m"
+    "examples": [
+      {"target": "प्याज़ भूनो।", "reading": "pyāz bhūnō.", "ipa": "pjaːz bʱuːnoː", "bases": [{"word": "प्याज़", "base": "प्याज़", "reading": "pyāz"}, {"word": "भूनो", "base": "भूनना", "reading": "bhūnnā"}]},
+      {"target": "प्याज़ और टमाटर काटो।", "reading": "pyāz aur ṭamāṭar kāṭō.", "ipa": "pjaːz ɔːr ʈəmaːʈər kaːʈoː", "bases": [{"word": "प्याज़", "base": "प्याज़", "reading": "pyāz"}, {"word": "और", "ref": "hi-0337"}, {"word": "टमाटर", "ref": "hi-0252"}, {"word": "काटो", "base": "काटना", "reading": "kāṭō"}]}
+    ]
   - id: "hi-0252"
     target: "टमाटर"
     target_scripts: { perso_arabic: "ٹماٹر" }
@@ -44,6 +55,9 @@ cards:
     ipa: "ʈəmaːʈər"
     pos: "noun"
     gender: "m"
+    "examples": [
+      {"target": "प्याज़ और टमाटर काटो।", "reading": "pyāz aur ṭamāṭar kāṭō.", "ipa": "pjaːz ɔːr ʈəmaːʈər kaːʈoː", "bases": [{"word": "प्याज़", "ref": "hi-0251"}, {"word": "और", "ref": "hi-0337"}, {"word": "टमाटर", "base": "टमाटर", "reading": "ṭamāṭar"}, {"word": "काटो", "base": "काटना", "reading": "kāṭō"}]}
+    ]
   - id: "hi-0253"
     target: "मिर्च"
     target_scripts: { perso_arabic: "مرچ" }
@@ -74,6 +88,9 @@ cards:
     phonetic_source: "wiktionary"
     pos: "noun"
     gender: "f"
+    "examples": [
+      {"target": "तालाब में मछली है।", "reading": "tālāb mēm̐ machlī hai.", "ipa": "t̪aːlaːb mẽː mətʃʰliː ɦɛː", "bases": [{"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0256"
     target: "मटन"
     target_scripts: { perso_arabic: "مٹن" }
@@ -103,6 +120,9 @@ cards:
     gender: "m"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "ताज़े अंडे लीजिए।", "reading": "tāzē aṇḍē lījiē.", "ipa": "t̪aːzeː əɳɖeː liːdʒɪeː", "bases": [{"word": "ताज़े", "base": "ताज़ा", "reading": "tāzā"}, {"word": "अंडे", "base": "अंडा", "reading": "aṇḍā"}, {"word": "लीजिए", "ref": "hi-0786"}]}
+    ]
   - id: "hi-0259"
     target: "दूध"
     target_scripts: { perso_arabic: "دودھ" }
@@ -111,6 +131,9 @@ cards:
     ipa: "d̪uːd̪ʱ"
     pos: "noun"
     gender: "m"
+    "examples": [
+      {"target": "उबला दूध पियो।", "reading": "ublā dūdh piyō.", "ipa": "ʊblaː d̪uːd̪ʱ pɪjoː", "bases": [{"word": "उबला", "base": "उबला", "reading": "ublā"}, {"word": "दूध", "base": "दूध", "reading": "dūdh"}, {"word": "पियो", "base": "पीना", "reading": "pīnā"}]}
+    ]
   - id: "hi-0260"
     target: "चावल"
     target_scripts: { perso_arabic: "چاول" }
@@ -125,3 +148,7 @@ cards:
     ipa: "d̪aːl"
     pos: "noun"
     gender: "f"
+    "examples": [
+      {"target": "उसने दाल पकाई।", "reading": "usnē dāl pakāī.", "ipa": "ʊsneː d̪aːl pəkaːiː", "bases": [{"word": "उसने", "ref": "hi-0749"}, {"word": "दाल", "base": "दाल", "reading": "dāl"}, {"word": "पकाई", "base": "पकाना", "reading": "pakāī"}]},
+      {"target": "दाल चखकर बताओ।", "reading": "dāl cakhkar batāō.", "ipa": "d̪aːl tʃəkʰkər bət̪aːoː", "bases": [{"word": "दाल", "base": "दाल", "reading": "dāl"}, {"word": "चखकर", "base": "चखना", "reading": "cakhnā"}, {"word": "बताओ", "ref": "hi-0796"}]}
+    ]
