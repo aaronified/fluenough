@@ -1,0 +1,21 @@
+schema: 1
+id: "ml-grammar-needs"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "negative", "question"]
+  entries:
+    - lemma: "വേണം"
+      key: "venam"
+      reading: "vēṇaṁ"
+      forms:
+        "statement": "വേണം"
+        "negative": "വേണ്ട"
+        "question": "വേണോ"
+      readings:
+        "statement": "vēṇaṁ"
+        "negative": "vēṇṭa"
+        "question": "vēṇō"

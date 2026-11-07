@@ -1,0 +1,21 @@
+schema: 1
+id: "ml-grammar-be"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "negative", "question"]
+  entries:
+    - lemma: "ആണ്"
+      key: "aanu"
+      reading: "āṇ"
+      forms:
+        "statement": "ആണ്"
+        "negative": "അല്ല"
+        "question": "ആണോ"
+      readings:
+        "statement": "āṇ"
+        "negative": "alla"
+        "question": "āṇō"

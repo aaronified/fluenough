@@ -1,0 +1,19 @@
+schema: 1
+id: "ml-en-grammar-demonstratives"
+kind: "layer"
+core: "ml-grammar-demonstratives"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam this and that"
+description: "This and that: ഇത് and അത് alone, before a noun, and in the plural. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+pattern:
+  name: "This and that: alone, before a noun, and plural"
+  slot_name: "form"
+  slots:
+  "alone": "alone, as a pronoun"
+  "before-noun": "before a noun"
+  "plural": "plural"
+  entries:
+    "ith": "this"
+    "ath": "that"

@@ -1,0 +1,46 @@
+schema: 1
+id: "ml-grammar-future"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["statement", "negative"]
+  entries:
+    - lemma: "പോകുക"
+      key: "poka"
+      reading: "pōkuka"
+      forms:
+        "statement": "പോകും"
+        "negative": "പോകില്ല"
+      readings:
+        "statement": "pōkuṁ"
+        "negative": "pōkilla"
+    - lemma: "കഴിക്കുക"
+      key: "kazhikka"
+      reading: "kaḻikkuka"
+      forms:
+        "statement": "കഴിക്കും"
+        "negative": "കഴിക്കില്ല"
+      readings:
+        "statement": "kaḻikkuṁ"
+        "negative": "kaḻikkilla"
+    - lemma: "വരിക"
+      key: "varika"
+      reading: "varika"
+      forms:
+        "statement": "വരും"
+        "negative": "വരില്ല"
+      readings:
+        "statement": "varuṁ"
+        "negative": "varilla"
+    - lemma: "കുടിക്കുക"
+      key: "kudikka"
+      reading: "kuṭikkuka"
+      forms:
+        "statement": "കുടിക്കും"
+        "negative": "കുടിക്കില്ല"
+      readings:
+        "statement": "kuṭikkuṁ"
+        "negative": "kuṭikkilla"

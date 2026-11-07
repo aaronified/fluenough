@@ -1,0 +1,32 @@
+schema: 1
+id: "ml-grammar-demonstratives"
+part: "core"
+kind: "grammar"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["grammar", "unreviewed"]
+pattern:
+  slots: ["alone", "before-noun", "plural"]
+  entries:
+    - lemma: "ഇത്"
+      key: "ith"
+      reading: "it"
+      forms:
+        "alone": "ഇത്"
+        "before-noun": "ഈ"
+        "plural": "ഇവ"
+      readings:
+        "alone": "it"
+        "before-noun": "ī"
+        "plural": "iva"
+    - lemma: "അത്"
+      key: "ath"
+      reading: "at"
+      forms:
+        "alone": "അത്"
+        "before-noun": "ആ"
+        "plural": "അവ"
+      readings:
+        "alone": "at"
+        "before-noun": "ā"
+        "plural": "ava"
