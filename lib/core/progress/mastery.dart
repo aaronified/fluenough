@@ -40,27 +40,45 @@ typedef ParametersOf = List<double> Function(DrillMode mode);
 List<double> _defaults(DrillMode mode) => Fsrs.w;
 
 /// What a skill has, and what B1 asks of it.
+///
+/// A pair is EARNED when the learner answered it, and PLACED when placement
+/// credited it and the learner has not answered it since (its last review is
+/// placement credit, [ReviewEvent.isPlaced]). Placed pairs are counted apart:
+/// never as known and never as taught, so the outline stays earned-only; the
+/// star draws them as a hatched layer under the solid fill (owner,
+/// 2026-11-07). A placed pair the learner then answers is earned from that
+/// answer on, known or not (a lapsed one is taught and not known).
 class SkillScore {
   const SkillScore({
     required this.known,
     required this.taught,
     required this.total,
+    this.placed = 0,
   });
 
-  /// Pairs known in the skill.
+  /// Pairs known in the skill, by the learner's own answers.
   final int known;
 
-  /// Pairs of the skill answered at least once.
+  /// Pairs of the skill the learner answered at least once (placed pairs
+  /// not answered since are not here).
   final int taught;
 
-  /// The pairs the whole B1 plan holds for the skill. Never below [taught].
+  /// Pairs placement credited that the learner has not answered since.
+  final int placed;
+
+  /// The pairs the whole B1 plan holds for the skill. Never below [taught]
+  /// plus [placed].
   final int total;
 
-  /// Known ÷ B1 total, 0 to 1: the star's fill.
+  /// Known ÷ B1 total, 0 to 1: the star's solid fill.
   double get fill => total == 0 ? 0 : known / total;
 
+  /// (Known + placed) ÷ B1 total, 0 to 1: the star's hatched layer, which
+  /// reaches as far as placement and earning together.
+  double get placedFill => total == 0 ? 0 : (known + placed) / total;
+
   /// Known ÷ taught, 0 to 1, or null where nothing is taught yet: the
-  /// star's outline, drawn at the centre.
+  /// star's outline, drawn at the centre. Earned only.
   double? get outline => taught == 0 ? null : known / taught;
 }
 
@@ -115,8 +133,13 @@ Mastery masteryAt(
 
   final known = <MasterySkill, int>{};
   final taught = <MasterySkill, int>{};
+  final placed = <MasterySkill, int>{};
   for (final e in last.values) {
     final skill = masterySkillOf(e.mode)!;
+    if (e.isPlaced) {
+      placed[skill] = (placed[skill] ?? 0) + 1;
+      continue;
+    }
     taught[skill] = (taught[skill] ?? 0) + 1;
     if (leavesKnown(e, parameters: parametersOf(e.mode))) {
       known[skill] = (known[skill] ?? 0) + 1;
@@ -127,7 +150,11 @@ Mastery masteryAt(
       skill: SkillScore(
         known: known[skill] ?? 0,
         taught: taught[skill] ?? 0,
-        total: _max(totals[skill] ?? 0, taught[skill] ?? 0),
+        placed: placed[skill] ?? 0,
+        total: _max(
+          totals[skill] ?? 0,
+          (taught[skill] ?? 0) + (placed[skill] ?? 0),
+        ),
       ),
   });
 }
@@ -140,16 +167,20 @@ Mastery sumMastery(Iterable<Mastery> all) => Mastery(<MasterySkill, SkillScore>{
     skill: SkillScore(
       known: all.fold(0, (n, m) => n + m[skill].known),
       taught: all.fold(0, (n, m) => n + m[skill].taught),
+      placed: all.fold(0, (n, m) => n + m[skill].placed),
       total: all.fold(0, (n, m) => n + m[skill].total),
     ),
 });
 
-/// The words counted on Progress: [mastered] of the words [taught].
-typedef WordCounts = ({int mastered, int taught});
+/// The words counted on Progress: [mastered] of the words [taught], and the
+/// words only [placed] (credited by placement, not answered since).
+typedef WordCounts = ({int mastered, int taught, int placed});
 
-/// Words taught are the distinct cards answered in a word skill (read,
-/// write, hear or say); one is mastered when every one of those skills it
-/// has been answered in leaves it known.
+/// Words taught are the distinct cards the learner answered in a word skill
+/// (read, write, hear or say); one is mastered when every one of those skills
+/// it has been answered in leaves it known. A card whose every word-skill
+/// pair is still placement credit is placed, not taught; a pair of a taught
+/// card that is still placement credit is left out of its standing.
 WordCounts wordCounts(
   Iterable<ReviewEvent> reviews, {
   ParametersOf parametersOf = _defaults,
@@ -165,7 +196,12 @@ WordCounts wordCounts(
     last['${e.cardId}|${e.mode.name}'] = e;
   }
   final cards = <String, bool>{};
+  final placed = <String>{};
   for (final e in last.values) {
+    if (e.isPlaced) {
+      placed.add(e.cardId);
+      continue;
+    }
     cards[e.cardId] =
         (cards[e.cardId] ?? true) &&
         leavesKnown(e, parameters: parametersOf(e.mode));
@@ -173,6 +209,7 @@ WordCounts wordCounts(
   return (
     mastered: cards.values.where((known) => known).length,
     taught: cards.length,
+    placed: placed.where((id) => !cards.containsKey(id)).length,
   );
 }
 

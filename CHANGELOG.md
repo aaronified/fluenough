@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- **Placed words are counted apart from the ones you answered.** Words, forms and letters that Find my level credited and you have not answered since are now "placed": the Words and Rules counts of taught no longer include them, the star's outline (known of taught) is earned only, and placed words no longer hold back new lessons or count as in progress. They are not known, so sentences that wait for them stay closed. The star's hatched placed layer and "+N placed" on the tiles are drawn with the new placement screens. Credit you took back is not placed. Refs #1063.
+
 ### Fixed
 
 - **Say records your voice at the same moment it is recognised.** On the Say drill, "Your recording" said "No recording yet. Replay records one." until you tapped Replay, because the phone's recogniser takes the microphone and the app could not also record it. On Android 13 and later the app now captures the microphone itself and gives the recogniser that same stream, so the attempt that was graded is already there to replay and compare, with no second recording. In a browser, a recorder starts with the recogniser and stops with it. If the phone's recogniser cannot share the microphone and hears nothing, the same attempt is listened to again the plain way instead of showing "no match". On older Android, or where the phone's recogniser does not take the stream, Say behaves as before (Replay records a take). Nothing is recorded when a listen is cancelled or fails, the take stays in memory only and is dropped when you leave the card. Refs #881.
