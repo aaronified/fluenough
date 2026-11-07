@@ -5,6 +5,10 @@
 // Spanish and Hindi, 100 runs per cell, through the joint model and the
 // real picker (lib/core/placement/v3_picker.dart) over the admitted formats.
 //
+// The suite of one language; the test files placement_v3_honest_es_test.dart
+// and placement_v3_honest_hi_test.dart run it (two files, so the CI shards
+// can balance them).
+//
 // Enforced here (they are properties of the estimator and its caps): honest
 // learners are never placed more than 2/10 above the truth (at most 3%);
 // beginners and script-only learners start at the beginning; a
@@ -17,14 +21,12 @@
 // 95th percentile at most 40 items and 300 s). NOT enforced here: experts and
 // natives within 1/10 and the honest confidence of the 80% range; they are
 // listed, with the measured numbers, in placement_v3_pending_gates_test.dart.
-@Timeout(Duration(minutes: 20))
-library;
 
 import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'support/placement_v3_harness.dart';
+import 'placement_v3_harness.dart';
 
 const _read = PlacementSkill.read;
 const _hear = PlacementSkill.hear;
@@ -39,8 +41,8 @@ typedef _Cell = ({
   List<RunResult> results,
 });
 
-void main() {
-  for (final code in <String>['es', 'hi']) {
+void honestSuite(String code) {
+  {
     group(code, () {
       late SimBank bank;
       late PlacementLevels levels;
@@ -175,42 +177,27 @@ void main() {
       });
 
       test('time and items: median 28 items and 200 s, p95 40 and 300 s', () {
-        // Per persona and device: the three declarations are inputs of the
-        // same persona, so their runs are pooled.
-        for (final variant in <Variant>[
-          Variant.full,
-          Variant.noAudio,
-          Variant.noMic,
-        ]) {
-          for (final name in cells.map((c) => c.name).toSet()) {
-            final runs = <RunResult>[
-              for (final c in cells)
-                if (c.name == name && c.variant == variant) ...c.results,
-            ];
-            final items = runs.map((r) => r.items).toList();
-            final secs = runs.map((r) => r.seconds).toList();
-            final reason = '$name ${variant.label}';
-            expect(
-              percentile(items, 0.5),
-              lessThanOrEqualTo(28),
-              reason: reason,
-            );
-            expect(
-              percentile(secs, 0.5),
-              lessThanOrEqualTo(200),
-              reason: reason,
-            );
-            expect(
-              percentile(items, 0.95),
-              lessThanOrEqualTo(40),
-              reason: reason,
-            );
-            expect(
-              percentile(secs, 0.95),
-              lessThanOrEqualTo(300),
-              reason: reason,
-            );
-          }
+        // Per cell: persona x device x declaration. The 95th percentile
+        // caps (40 items, 300 s) are true by construction (the picker stops
+        // at them and never asks an item that would end after 300 s), so
+        // the medians are the real gates.
+        for (final c in cells) {
+          final items = c.results.map((r) => r.items).toList();
+          final secs = c.results.map((r) => r.seconds).toList();
+          final reason =
+              '${c.name} ${c.variant.label} ${declarationName(c.declaration)}';
+          expect(percentile(items, 0.5), lessThanOrEqualTo(28), reason: reason);
+          expect(percentile(secs, 0.5), lessThanOrEqualTo(200), reason: reason);
+          expect(
+            percentile(items, 0.95),
+            lessThanOrEqualTo(40),
+            reason: reason,
+          );
+          expect(
+            percentile(secs, 0.95),
+            lessThanOrEqualTo(300),
+            reason: reason,
+          );
         }
       });
 

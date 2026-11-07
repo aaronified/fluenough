@@ -23,6 +23,14 @@ import 'placement_questions.dart';
 // evidence. Caps: 40 items and 300 s overall, 14 touches a skill; a soft stop
 // signal at 22 items (the UI offers to stop, or to keep going once).
 //
+// The two-in-a-row format rule holds for every item the picker chooses; the
+// yes/no block, a fixed opening of 14 yes/no items in one format, is the one
+// exception (it is not chosen item by item). When nothing else can be asked
+// the rule is relaxed rather than ending a skill short, and a skill is
+// finished only when it has no askable candidate at all. A run says why it
+// ended ([EndReason]): a run that ends before every tested skill has four
+// clean items says [EndReason.coverageShort] and names the skills.
+//
 // Pure Dart, deterministic for a seeded generator.
 
 /// One askable item, as the picker sees it. The bank's items are turned into
@@ -187,6 +195,7 @@ class PickerConfig {
     this.recogniser = false,
     this.yesNoBlock = false,
     this.sayItems = 1,
+    this.sayRatingUntilSeconds = 180,
     this.maxItems = 40,
     this.maxSeconds = 300,
     this.skillCap = 14,
@@ -209,6 +218,10 @@ class PickerConfig {
   /// How many self-rated Say items are asked when no recogniser scores Say.
   final int sayItems;
 
+  /// The rating of Say is optional (never evidence): it is left out when the
+  /// run is already longer than this, to keep the median run short.
+  final double sayRatingUntilSeconds;
+
   final int maxItems;
   final double maxSeconds;
   final int skillCap;
@@ -219,6 +232,26 @@ class PickerConfig {
 
   /// The items a skill is located with before a band is proved.
   final int locateItems;
+}
+
+/// Why a run ended.
+enum EndReason {
+  /// Every tested skill is proven, placed at the start or finished.
+  complete,
+
+  /// The item cap was reached.
+  itemCap,
+
+  /// The time cap was reached, or no item that still fits in the time left
+  /// could be found.
+  timeCap,
+
+  /// A skill ran out of askable items (the admitted bank has no more).
+  exhausted,
+
+  /// The run ended before every tested skill had four clean items (see
+  /// [V3Picker.shortSkills]); [V3Picker.endCause] says why it ended.
+  coverageShort,
 }
 
 class _SkillState {
@@ -257,6 +290,21 @@ class V3Picker {
   /// (and to keep going, once).
   bool get softStop => items >= config.softStopItems;
 
+  EndReason? _endReason;
+  EndReason? _endCause;
+  List<PlacementSkill> _short = const <PlacementSkill>[];
+
+  /// Why the run ended (null while it goes on). [EndReason.coverageShort]
+  /// wins over the others: a run that ends before every tested skill has
+  /// four clean items says so.
+  EndReason? get endReason => _endReason;
+
+  /// The underlying cause when [endReason] is [EndReason.coverageShort].
+  EndReason? get endCause => _endCause;
+
+  /// The tested skills with fewer than four clean items at the end.
+  List<PlacementSkill> get shortSkills => _short;
+
   /// Whether the run reached a hard cap.
   bool get atCap => items >= config.maxItems || seconds >= config.maxSeconds;
 
@@ -276,7 +324,9 @@ class V3Picker {
   /// The next item, or null when the run is over (every tested skill done,
   /// or a cap reached).
   PickerCandidate? next() {
-    if (atCap) return null;
+    if (_endReason != null) return null;
+    if (items >= config.maxItems) return _end(EndReason.itemCap);
+    if (seconds >= config.maxSeconds) return _end(EndReason.timeCap);
     if (config.yesNoBlock) {
       final block = _yesNoNext();
       if (block != null) return _take(block);
@@ -289,39 +339,81 @@ class V3Picker {
           final c = model.touchesOf(a).compareTo(model.touchesOf(b));
           return c != 0 ? c : a.index.compareTo(b.index);
         });
-    for (final skill in open) {
-      final c = _choose(skill);
-      if (c != null) return _take(c);
-      _of(skill).finished = true;
+    // First the rules as they are; then, when nothing else is askable, the
+    // format-run rule and the "another skill probably fails" rule are
+    // relaxed and the bank is searched in full. A skill is finished only when
+    // it has no candidate at all.
+    for (final relaxed in const <int>[0, 1, 2]) {
+      for (final skill in open) {
+        if (_of(skill).finished) continue;
+        final c = _choose(skill, relaxed: relaxed);
+        if (c != null) return _take(c);
+      }
     }
+    var exhausted = false;
+    var noFit = false;
+    for (final skill in open) {
+      if (_of(skill).finished || _isDone(skill)) continue;
+      if (_hasAny(skill, anySeconds: true)) {
+        noFit = true;
+      } else {
+        _of(skill).finished = true;
+        exhausted = true;
+      }
+    }
+    if (noFit) return _end(EndReason.timeCap);
     // Say without a recogniser is rated by the learner a few times, never
     // evidence and never extending the run.
     if (config.audio &&
         config.mic &&
         !config.recogniser &&
-        _selfRated < config.sayItems) {
+        _selfRated < config.sayItems &&
+        seconds <= config.sayRatingUntilSeconds) {
       final c = _selfRatedSay();
       if (c != null) {
         _selfRated++;
-        return _take(c);
+        final taken = _take(c);
+        if (taken != null) return taken;
       }
     }
+    return _end(exhausted ? EndReason.exhausted : EndReason.complete);
+  }
+
+  PickerCandidate? _end(EndReason cause) {
+    _short = <PlacementSkill>[
+      for (final s in _tested)
+        if (model.cleanItemsOf(s) < kMinCleanItems) s,
+    ];
+    _endCause = cause;
+    _endReason = _short.isEmpty ? cause : EndReason.coverageShort;
     return null;
   }
 
+  /// Whether [skill] has any free, askable candidate in the whole pool (only
+  /// those that fit the time left unless [anySeconds]).
+  bool _hasAny(PlacementSkill skill, {bool anySeconds = false}) {
+    final left = config.maxSeconds - seconds;
+    for (final format in pool.formats) {
+      for (var b = 0; b <= 10; b++) {
+        for (final c in pool.of(format, b)) {
+          if (!c.skills.contains(skill) || c.pseudo || c.yesNo) continue;
+          if (!anySeconds && c.seconds > left) continue;
+          if (_free(c) && _available(c)) return true;
+        }
+      }
+    }
+    return false;
+  }
+
   PickerCandidate? _take(PickerCandidate c) {
-    // An item that would end after the time cap is not asked.
+    // The choosers only offer items that fit the time left; this is the
+    // last guard.
     if (seconds + c.seconds > config.maxSeconds) return null;
     asked.add(c);
     _keys.addAll(c.conflictKeys);
     seconds += c.seconds;
     if (c.pseudo) _pseudoAsked++;
     if (c.yesNo && !c.pseudo) _yesNoWords++;
-    for (final s in c.skills) {
-      if (!c.selfRated && !c.pseudo && _state.containsKey(s)) {
-        // located counts items asked in the locating phase
-      }
-    }
     return c;
   }
 
@@ -413,24 +505,29 @@ class V3Picker {
     final st = _of(skill);
     if (st.proving == null) {
       final located = model.touchesOf(skill);
-      if (located < (skill == _tested.first ? config.locateItems : 1)) {
+      if (located < config.locateItems) {
         // Bisection over the tenths: between the highest band answered right
         // and the one below the lowest answered wrong.
         final a = _answers(skill);
         if (a.right == null && a.wrong == null) {
-          return _quantileBand(skill, 0.5);
+          return _quantileBand(skill, 0.35);
         }
         final lo = a.right ?? 0;
         final hi = a.wrong == null ? 10 : math.max(lo, a.wrong! - 1);
         // Up fast from a right answer, halving from a wrong one.
-        final step = a.wrong == null ? ((10 - lo) * 0.6).ceil() : null;
-        return (step == null ? (lo + hi + 1) ~/ 2 : lo + step).clamp(0, 10);
+        final step = a.wrong == null ? ((10 - lo) * 0.35).ceil() : null;
+        return (step == null ? (lo + hi + 1) ~/ 2 : lo + step).clamp(0, 9);
       }
       final a = _answers(skill);
       final lo = a.right ?? 0;
       final hi = a.wrong == null ? 10 : math.max(0, a.wrong! - 1);
+      // One lucky right answer high up does not set the band to prove: it is
+      // never above what the posterior's 60th percentile supports.
       st.proving = lo > 0
-          ? math.max(lo, math.min(hi, _quantileBand(skill, 0.35)))
+          ? math.min(
+              math.max(lo, math.min(hi, _quantileBand(skill, 0.35))),
+              math.max(_quantileBand(skill, 0.6), math.min(lo, 3)),
+            )
           : math.min(hi, _quantileBand(skill, 0.25));
     }
     // Skills one band apart prove the same band, so that a mixed item (an
@@ -492,16 +589,39 @@ class V3Picker {
 
   /// Up to [n] free candidates of [format] near [band], the closest band
   /// first.
-  List<PickerCandidate> _near(String format, int band, int n) {
+  List<PickerCandidate> _near(
+    String format,
+    int band,
+    int n, {
+    PlacementSkill? skill,
+    double? budget,
+    bool exhaustive = false,
+  }) {
     final out = <PickerCandidate>[];
-    for (var spread = 0; spread <= 3 && out.length < n; spread++) {
+    bool ok(PickerCandidate c) =>
+        (skill == null || c.skills.contains(skill)) &&
+        (budget == null || c.seconds <= budget) &&
+        _free(c) &&
+        _available(c) &&
+        !out.contains(c);
+    final widest = exhaustive ? 10 : 3;
+    for (var spread = 0; spread <= widest && out.length < n; spread++) {
       for (final b in <int>{band - spread, band + spread}) {
         if (b < 0 || b > 10) continue;
         final list = pool.of(format, b);
         if (list.isEmpty) continue;
-        for (var tries = 0; tries < 24 && out.length < n; tries++) {
-          final c = list[rng.nextInt(list.length)];
-          if (_free(c) && _available(c) && !out.contains(c)) out.add(c);
+        if (exhaustive) {
+          // The whole band, from a random start: nothing free is missed.
+          final start = rng.nextInt(list.length);
+          for (var i = 0; i < list.length && out.length < n; i++) {
+            final c = list[(start + i) % list.length];
+            if (ok(c)) out.add(c);
+          }
+        } else {
+          for (var tries = 0; tries < 24 && out.length < n; tries++) {
+            final c = list[rng.nextInt(list.length)];
+            if (ok(c)) out.add(c);
+          }
         }
       }
     }
@@ -523,16 +643,29 @@ class V3Picker {
         (1 - q) * _entropy(c.guess);
   }
 
-  PickerCandidate? _choose(PlacementSkill skill) {
+  /// [relaxed]: 0 the rules as they are; 1 the "another skill probably
+  /// fails" rule lifted and the bank searched in full; 2 the format-run rule
+  /// lifted too.
+  PickerCandidate? _choose(PlacementSkill skill, {int relaxed = 0}) {
     final band = _band(skill);
     if (_isDone(skill)) return null;
+    final budget = config.maxSeconds - seconds;
     PickerCandidate? best;
     var bestScore = double.negativeInfinity;
     for (final format in pool.formats) {
-      if (_formatRun(format) >= 2) continue;
-      for (final c in _near(format, band, 3)) {
+      if (relaxed < 2 && _formatRun(format) >= 2) continue;
+      final near = _near(
+        format,
+        band,
+        3,
+        skill: relaxed > 0 ? skill : null,
+        budget: budget,
+        exhaustive: relaxed > 0,
+      );
+      for (final c in near) {
         if (!c.skills.contains(skill)) continue;
         if (c.pseudo || c.yesNo) continue;
+        if (c.seconds > budget) continue;
         // The coverage and the proof of the other skills it needs are worth
         // something too: a mixed item is one item for two skills.
         var bonus = 0.0;
@@ -541,7 +674,8 @@ class V3Picker {
           if (t == skill || !model.skills.contains(t)) continue;
           // An item another skill of the learner probably fails says little
           // about this one.
-          if (model.probabilityKnown(<PlacementSkill>[t], c.deck) < 0.4) {
+          if (relaxed == 0 &&
+              model.probabilityKnown(<PlacementSkill>[t], c.deck) < 0.4) {
             skip = true;
             break;
           }
@@ -551,6 +685,11 @@ class V3Picker {
           if (t == skill || !_tested.contains(t)) continue;
           final p = _state[t]?.proving;
           if (p != null && !_isDoneQuiet(t) && PickerBandOf.of(pool, c) == p) {
+            bonus += 0.3;
+          } else if (p == null &&
+              model.touchesOf(t) < config.locateItems &&
+              _near_(c, band)) {
+            // An item that also locates the other skill.
             bonus += 0.3;
           }
         }
@@ -563,6 +702,10 @@ class V3Picker {
     }
     return best;
   }
+
+  /// Whether [c] lies within one band of [band].
+  bool _near_(PickerCandidate c, int band) =>
+      (PickerBandOf.of(pool, c) - band).abs() <= 1;
 
   bool _isDoneQuiet(PlacementSkill skill) {
     final st = _state[skill];

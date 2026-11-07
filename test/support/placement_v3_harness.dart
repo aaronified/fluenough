@@ -927,7 +927,11 @@ class V3SimPicker implements SimPicker {
   final List<String> formats;
 
   V3Picker? _picker;
-  final Map<String, SimItem> _items = <String, SimItem>{};
+
+  /// The pools, built once per bank, calibration and profile: a pool does not
+  /// change between runs (the picker never changes it), only the generator
+  /// and the model do.
+  static final Map<String, CandidatePool> _pools = <String, CandidatePool>{};
 
   /// The picker of the run in progress (for the soft-stop signal).
   V3Picker? get picker => _picker;
@@ -935,13 +939,19 @@ class V3SimPicker implements SimPicker {
   @override
   String get name => 'v3';
 
-  V3Picker _build(RunState s) {
+  CandidatePool _pool(RunState s) {
+    final key =
+        '${identityHashCode(s.bank)}|${identityHashCode(s.calibration)}|'
+        '${s.fixedGuess}|${s.profile.name}|${formats.join(',')}|$yesNoBlock';
+    return _pools[key] ??= _buildPool(s);
+  }
+
+  CandidatePool _buildPool(RunState s) {
     final candidates = <PickerCandidate>[];
     for (final code in formats) {
       final spec = kFormats[code]!;
       for (final card in s.bank.cards) {
         final item = SimItem(card, spec, yesNo: code == 'F1');
-        _items[item.id] = item;
         final guess = code == 'F1' ? 0.0 : calibratedGuess(s, item);
         candidates.add(
           PickerCandidate(
@@ -972,7 +982,6 @@ class V3SimPicker implements SimPicker {
           pseudo: true,
           yesNo: true,
         );
-        _items[item.id] = item;
         candidates.add(
           PickerCandidate(
             id: item.id,
@@ -990,20 +999,22 @@ class V3SimPicker implements SimPicker {
         );
       }
     }
-    return V3Picker(
-      pool: CandidatePool(candidates, s.bank.levels),
-      model: s.model,
-      rng: s.rng,
-      config:
-          config ??
-          PickerConfig(
-            audio: s.variant.audio,
-            mic: s.variant.mic,
-            recogniser: s.variant.recogniser,
-            yesNoBlock: yesNoBlock,
-          ),
-    );
+    return CandidatePool(candidates, s.bank.levels);
   }
+
+  V3Picker _build(RunState s) => V3Picker(
+    pool: _pool(s),
+    model: s.model,
+    rng: s.rng,
+    config:
+        config ??
+        PickerConfig(
+          audio: s.variant.audio,
+          mic: s.variant.mic,
+          recogniser: s.variant.recogniser,
+          yesNoBlock: yesNoBlock,
+        ),
+  );
 
   @override
   SimItem? next(RunState s) {

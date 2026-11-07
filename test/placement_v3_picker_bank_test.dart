@@ -44,9 +44,10 @@ void main() {
 
       ({V3Picker picker, JointPlacement model, int truth}) play(
         double tenth,
-        int seed,
-      ) {
-        final truth = classAtTenth(levels, tenth);
+        int seed, {
+        Set<String>? formats,
+      }) {
+        final truth = tenth <= 0 ? 0 : classAtTenth(levels, tenth);
         final rng = math.Random(seed);
         final model = JointPlacement(
           levels: levels,
@@ -57,7 +58,15 @@ void main() {
           ],
         );
         final picker = V3Picker(
-          pool: CandidatePool(candidates, levels),
+          pool: CandidatePool(
+            formats == null
+                ? candidates
+                : <PickerCandidate>[
+                    for (final c in candidates)
+                      if (formats.contains(c.format)) c,
+                  ],
+            levels,
+          ),
           model: model,
           rng: rng,
         );
@@ -82,7 +91,7 @@ void main() {
       test('asks only admitted items, once each, inside the caps', () {
         final admitted = <String>{for (final i in bank.items) i.id};
         for (var seed = 1; seed <= 10; seed++) {
-          for (final tenth in <double>[2, 5, 8]) {
+          for (final tenth in <double>[0, 2, 5, 8, 10]) {
             final r = play(tenth, seed);
             final keys = <String>[
               for (final c in r.picker.asked) ...c.conflictKeys,
@@ -99,7 +108,7 @@ void main() {
 
       test('gives every skill four clean items and does not place high', () {
         for (var seed = 1; seed <= 10; seed++) {
-          for (final tenth in <double>[2, 5, 8]) {
+          for (final tenth in <double>[0, 2, 5, 8, 10]) {
             final r = play(tenth, seed);
             final readout = r.model.readout();
             for (final e in readout.skills.entries) {
@@ -114,6 +123,60 @@ void main() {
                 lessThanOrEqualTo(4),
                 reason: '${e.key.name} at $tenth, seed $seed',
               );
+            }
+          }
+        }
+      });
+
+      test('a sparse bank never leaves a skill short silently', () {
+        // One or two admitted formats for a skill: the floor of four clean
+        // items holds, or the run says it is coverage-short and names the
+        // skill (and a skill with no format at all is always named).
+        const sets = <Set<String>>[
+          {'F2'},
+          {'F2', 'F13'},
+          {'F8', 'F13'},
+          {'F2', 'F7'},
+          {'F16', 'F2'},
+        ];
+        for (final formats in sets) {
+          final supplied = <PlacementSkill>{
+            for (final c in candidates)
+              if (formats.contains(c.format)) ...c.skills,
+          };
+          for (final tenth in <double>[0, 2, 5, 8, 10]) {
+            for (var seed = 1; seed <= 3; seed++) {
+              final r = play(tenth, seed, formats: formats);
+              final reason = '$formats at $tenth, seed $seed';
+              expect(r.picker.endReason, isNotNull, reason: reason);
+              final short = r.picker.shortSkills;
+              for (final skill in <PlacementSkill>[
+                PlacementSkill.read,
+                PlacementSkill.hear,
+                PlacementSkill.write,
+              ]) {
+                final clean = r.model.cleanItemsOf(skill);
+                if (clean < 4) {
+                  expect(short, contains(skill), reason: '$skill $reason');
+                  expect(
+                    r.picker.endReason,
+                    EndReason.coverageShort,
+                    reason: '$skill $reason',
+                  );
+                }
+                if (!supplied.contains(skill)) {
+                  expect(short, contains(skill), reason: '$skill $reason');
+                } else if (clean < 4) {
+                  // A skill with items is short only because a cap ended
+                  // the run, never by giving up.
+                  expect(
+                    r.picker.endCause,
+                    anyOf(EndReason.itemCap, EndReason.timeCap),
+                    reason: '$skill $reason',
+                  );
+                }
+              }
+              expect(r.picker.seconds, lessThanOrEqualTo(300));
             }
           }
         }

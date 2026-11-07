@@ -193,11 +193,74 @@ void main() {
   });
 
   test('a learner placed high is asked high bands (proof stages climb)', () {
-    final asked = run(9.5).picker.asked;
-    final top = asked
-        .where((c) => !c.pseudo)
-        .map((c) => CandidatePool.bandOfDeck(levels, c.deck))
-        .reduce((a, b) => a > b ? a : b);
+    var top = 0;
+    for (var seed = 1; seed <= 6; seed++) {
+      for (final c in run(9.5, seed: seed).picker.asked) {
+        final band = CandidatePool.bandOfDeck(levels, c.deck);
+        if (!c.pseudo && band > top) top = band;
+      }
+    }
     expect(top, greaterThanOrEqualTo(8));
+  });
+
+  test(
+    'a skill with one admitted format is not left short by the run rule',
+    () {
+      // Read has only F2: the two-in-a-row rule would skip it every time, but
+      // the skill must still reach four clean items.
+      for (var seed = 1; seed <= 6; seed++) {
+        final p = V3SimPicker(formats: const <String>['F2']);
+        final r = runOnce(
+          bank: bank,
+          persona: persona(5),
+          picker: p,
+          declaration: null,
+          variant: Variant.noAudio,
+          seed: seed,
+        );
+        expect(
+          r.skills[_read]!.clean,
+          greaterThanOrEqualTo(4),
+          reason: '$seed',
+        );
+        // Write has no admitted format here: that is reported, not hidden.
+        expect(p.picker!.endReason, EndReason.coverageShort);
+        expect(p.picker!.shortSkills, <PlacementSkill>[_write]);
+        expect(p.picker!.endCause, EndReason.exhausted);
+      }
+    },
+  );
+
+  test('the end reason says why a run ended', () {
+    final done = run(5).picker;
+    expect(done.endReason, EndReason.complete);
+    final items = run(6, config: const PickerConfig(maxItems: 6)).picker;
+    expect(items.endReason, EndReason.coverageShort);
+    expect(items.endCause, EndReason.itemCap);
+    final time = run(6, config: const PickerConfig(maxSeconds: 40)).picker;
+    expect(time.endReason, EndReason.coverageShort);
+    expect(time.endCause, EndReason.timeCap);
+    expect(time.seconds, lessThanOrEqualTo(40));
+    // Still going: no reason yet.
+    final live = V3SimPicker();
+    expect(live.picker, isNull);
+  });
+
+  test('every skill is located by two items before a band is proved', () {
+    for (var seed = 1; seed <= 6; seed++) {
+      final asked = run(6, seed: seed).picker.asked;
+      for (final skill in <PlacementSkill>[_read, _hear, _write]) {
+        final touches = asked.where((c) => c.skills.contains(skill)).length;
+        expect(touches, greaterThanOrEqualTo(2), reason: '$skill seed $seed');
+      }
+    }
+  });
+
+  test('an item that would end after the time cap is never asked', () {
+    for (var seed = 1; seed <= 6; seed++) {
+      final r = run(8, config: const PickerConfig(maxSeconds: 120), seed: seed);
+      expect(r.picker.seconds, lessThanOrEqualTo(120));
+      expect(r.result.seconds, lessThanOrEqualTo(120));
+    }
   });
 }

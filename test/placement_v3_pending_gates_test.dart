@@ -14,6 +14,7 @@
 import 'dart:io';
 import 'dart:math' as math;
 
+import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -21,7 +22,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/placement_v3_harness.dart';
 
 class _PendingGate {
-  const _PendingGate(this.id, this.gate, this.reason, this.patterns, this.step);
+  const _PendingGate(
+    this.id,
+    this.gate,
+    this.reason,
+    this.patterns,
+    this.step, {
+    this.prerequisite,
+  });
 
   final String id;
 
@@ -37,7 +45,24 @@ class _PendingGate {
 
   /// The build step that lands the prerequisite.
   final String step;
+
+  /// A prerequisite that is not a file name: what the format inventory must
+  /// come to hold (judged on [kFormatInventory]). Either this or a matching
+  /// file means the prerequisite has landed.
+  final bool Function(Iterable<FormatInfo> inventory)? prerequisite;
 }
+
+/// Whether the inventory has a generated Write item cheap enough to prove
+/// the top bands: at most 6 s, slip at most 0.10, guess at most 0.10 (the
+/// item class build step 4b must add; see the experts gate).
+bool hasCheapWriteItem(Iterable<FormatInfo> inventory) => inventory.any(
+  (f) =>
+      f.generated &&
+      f.skills.contains(PlacementSkill.write) &&
+      f.seconds <= 6 &&
+      f.slip <= 0.10 &&
+      f.guess <= 0.10,
+);
 
 // The file-name patterns of the prerequisites, broad on purpose: any file
 // under lib/core/placement/ (any depth) whose name has the word. The picker
@@ -54,9 +79,9 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'Honest experts and natives are within 1/10 of the truth in at least '
         '85% of runs.',
     'The real picker (build step 4) meets the time gate, and with it places '
-        'experts and natives safely but low: within 1/10 in 62 to 65% of '
-        'runs under a flat declaration, 75 to 82% under an advanced one and '
-        '2 to 3% under an amateur one (Spanish and Hindi). Placing them '
+        'experts and natives safely but low: within 1/10 in 52 to 57% of '
+        'runs under a flat declaration, 71 to 76% under an advanced one and '
+        '3 to 4% under an amateur one (Spanish and Hindi). Placing them '
         'higher needs proof stages at the top bands (four clean items each, '
         'three skills): measured, a looser stop rule that climbs one more '
         'stage reaches 74 to 90% but costs 250 to 300 s. What is missing is '
@@ -68,6 +93,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
         '(PR 8, re-fit), would meet it. Not loosened.',
     _formats4b,
     'step 4b (cheap Write items) and step 8 (re-fit)',
+    prerequisite: hasCheapWriteItem,
   ),
   _PendingGate(
     'honest-confidence',
@@ -133,6 +159,8 @@ void main() {
           for (final f in files)
             for (final p in gate.patterns)
               if (p.hasMatch(f)) f,
+          if (gate.prerequisite?.call(kFormatInventory) ?? false)
+            'the format inventory',
         ];
         expect(
           landed,
@@ -160,6 +188,38 @@ void main() {
           reason: 'the plan\'s Pending gates table must name `${gate.id}`',
         );
       }
+    });
+
+    test('the cheap-Write prerequisite is judged on the inventory', () {
+      expect(hasCheapWriteItem(kFormatInventory), isFalse);
+      const cheap = FormatInfo(
+        'F99',
+        'cheap write',
+        {PlacementSkill.write},
+        0.05,
+        0.05,
+        5,
+      );
+      expect(hasCheapWriteItem([...kFormatInventory, cheap]), isTrue);
+      const slow = FormatInfo(
+        'F98',
+        'slow write',
+        {PlacementSkill.write},
+        0.05,
+        0.05,
+        12,
+      );
+      expect(hasCheapWriteItem([...kFormatInventory, slow]), isFalse);
+      const notBuilt = FormatInfo(
+        'F97',
+        'not generated',
+        {PlacementSkill.write},
+        0.05,
+        0.05,
+        5,
+        generated: false,
+      );
+      expect(hasCheapWriteItem([...kFormatInventory, notBuilt]), isFalse);
     });
 
     test('the patterns match what they are meant to', () {
