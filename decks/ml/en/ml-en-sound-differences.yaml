@@ -1,0 +1,88 @@
+schema: 1
+id: "ml-en-sound-differences"
+kind: "layer"
+core: "ml-sound-differences"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Sounds to tell apart"
+description: "Pairs of everyday words that differ in one sound: a single or double ṭ, a retroflex or a dental n, the two l's, and a short or long a. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed"]
+cards:
+  "ml-0670":
+    native: "block (of wood or stone)"
+    notes:
+      n1: "block (of wood or stone)"
+      n2: "Gemination: കട (kaṭa), \"shop\", has one ṭ; കട്ട (kaṭṭa), \"block\", has a doubled ṭṭ, held longer."
+    examples:
+      "കട്ട ഇവിടെ.":
+        native: "The block is here."
+        bases: {}
+      "കട്ട കൊണ്ടുവരൂ.":
+        native: "Bring a block."
+        bases: {}
+  "ml-0671":
+    native: "smell"
+    notes:
+      n1: "smell"
+      n2: "A retroflex n: മണം (maṇaṁ), \"smell\", has the n said with the tongue curled back; മനം (manaṁ), \"mind\", has it at the teeth."
+    examples:
+      "മണം നല്ലതാണ്.":
+        native: "The smell is good."
+        bases: {"നല്ലതാണ്": "is good"}
+      "ഈ മണം എന്ത്?":
+        native: "What is this smell?"
+        bases: {}
+  "ml-0672":
+    native: "mind; heart"
+    notes:
+      n1: "mind; heart"
+      n2: "A dental n: മനം (manaṁ), \"mind\", has the n at the teeth; മണം (maṇaṁ), \"smell\", has it curled back."
+    examples:
+      "മനം സന്തോഷമാണ്.":
+        native: "The mind is happy."
+        bases: {"സന്തോഷമാണ്": "is happy"}
+      "മനം ശാന്തമാണ്.":
+        native: "The mind is calm."
+        bases: {"ശാന്തമാണ്": "is calm"}
+  "ml-0673":
+    native: "jaggery"
+    notes:
+      n1: "jaggery"
+      n2: "The plain l: വെല്ലം (vellaṁ), \"jaggery\", has the l at the front of the mouth; വെള്ളം (veḷḷaṁ), \"water\", has ḷ curled back."
+    examples:
+      "വെല്ലം മധുരമാണ്/മധുരം.":
+        native: "Jaggery is sweet."
+        bases: {}
+      "വെല്ലം വേണോ?":
+        native: "Do you want jaggery?"
+        bases: {"വേണോ": "do you want"}
+  "ml-0674":
+    native: "art"
+    notes:
+      n1: "art"
+      n2: "Vowel length: കാല (kāla), \"time\", holds the a twice as long as കല (kala), \"art\"."
+    examples:
+      "കല നല്ലതാണ്.":
+        native: "Art is good."
+        bases: {"നല്ലതാണ്": "is good"}
+      "നിനക്ക് കല ഇഷ്ടമാണോ?":
+        native: "Do you like art?"
+        bases: {"ഇഷ്ടമാണോ": "do you like"}
+  "ml-0675":
+    native: "time; season"
+    notes:
+      n1: "time; season"
+      n2: "Vowel length: കാല (kāla), \"time\", has the long a where കല (kala), \"art\", has the short a."
+    examples:
+      "ഏത് കാലമാണ്?":
+        native: "What season is it?"
+        bases: {"കാലമാണ്": "is a season"}
+      "കാല സമയം ഏത്?":
+        native: "What is the time?"
+        bases: {}
+  "ml-0338":
+    notes:
+      n1: "Gemination: കട (kaṭa), \"shop\", has one ṭ; കട്ട (kaṭṭa), \"block\", has a doubled ṭṭ, held longer."
+  "ml-0005":
+    notes:
+      n1: "The plain l: വെല്ലം (vellaṁ), \"jaggery\", has the l at the front of the mouth; വെള്ളം (veḷḷaṁ), \"water\", has ḷ curled back."

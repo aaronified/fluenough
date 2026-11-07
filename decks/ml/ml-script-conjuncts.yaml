@@ -1,0 +1,184 @@
+schema: 1
+id: "ml-script-conjuncts"
+part: "core"
+kind: "vocab"
+language: { code: "ml", iso639_3: "mal", name: "Malayalam", script: "malayalam", tts: "ml-IN", icon: "മ" }
+license: "CC-BY-SA-4.0"
+tags: ["beginner", "unreviewed", "script"]
+cards:
+  - id: "ml-0653"
+    target: "ക്ക"
+    reading: "kka"
+    ipa: "kka"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "പച്ചക്കറി ചന്തയിൽ/ചന്ത."
+        reading: "paccakkaṟi cantayil/canta."
+        ipa: "pətʃtʃəkkəɾi tʃənt̪əjiltʃənt̪a"
+        bases: [{ word: "പച്ചക്കറി", ref: "ml-0234" }, { word: "ചന്തയിൽ", ref: "ml-0238" }]
+      - target: "പച്ചക്കറി വേണം."
+        reading: "paccakkaṟi vēṇaṁ."
+        ipa: "pətʃtʃəkkəɾi ʋeːɳam"
+        bases: [{ word: "പച്ചക്കറി", ref: "ml-0234" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+  - id: "ml-0654"
+    target: "ന്റ"
+    reading: "nṟa"
+    ipa: "nt̪ɾa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "അവന്റെ പുസ്തകം എവിടെ?"
+        reading: "avanṟe pustakaṁ eviṭe?"
+        ipa: "əʋənt̪ɾe pust̪əkam eʋiʈe"
+        bases: [{ word: "അവന്റെ", ref: "ml-0102" }, { word: "പുസ്തകം", ref: "ml-0356" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "അവന്റെ ചേട്ടൻ ഇവിടെ."
+        reading: "avanṟe cēṭṭaṉ iviṭe."
+        ipa: "əʋənt̪ɾe tʃeːʈʈan iʋiʈe"
+        bases: [{ word: "അവന്റെ", ref: "ml-0102" }, { word: "ചേട്ടൻ", ref: "ml-0074" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0655"
+    target: "ക്ഷ"
+    reading: "kṣa"
+    ipa: "kʂa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ക്ഷേത്രം എവിടെ?"
+        reading: "kṣētraṁ eviṭe?"
+        ipa: "kʂeːt̪ɾam eʋiʈe"
+        bases: [{ word: "ക്ഷേത്രം", ref: "ml-0340" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ക്ഷീണിച്ച കുട്ടി."
+        reading: "kṣīṇicca kuṭṭi."
+        ipa: "kʂiːɳitʃtʃa kuʈʈi"
+        bases: [{ word: "ക്ഷീണിച്ച", ref: "ml-0497" }, { word: "കുട്ടി", ref: "ml-0082" }]
+  - id: "ml-0656"
+    target: "ത്ത"
+    reading: "tta"
+    ipa: "t̪t̪a"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "പത്ത് വേണം."
+        reading: "patt vēṇaṁ."
+        ipa: "pat̪t̪ ʋeːɳam"
+        bases: [{ word: "പത്ത്", ref: "ml-0057" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "പത്ത് മണി."
+        reading: "patt maṇi."
+        ipa: "pat̪t̪ məɳi"
+        bases: [{ word: "പത്ത്", ref: "ml-0057" }, { word: "മണി", ref: "ml-0135" }]
+  - id: "ml-0657"
+    target: "ങ്ങ"
+    reading: "ṅṅa"
+    ipa: "ŋŋa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "പഴങ്ങൾ എവിടെ?"
+        reading: "paḻaṅṅaḷ eviṭe?"
+        ipa: "pəɻəŋŋaɭ eʋiʈe"
+        bases: [{ word: "പഴങ്ങൾ", ref: "ml-0239" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പഴങ്ങൾ കഴുകൂ."
+        reading: "paḻaṅṅaḷ kaḻukū."
+        ipa: "pəɻəŋŋaɭ kəɻukuː"
+        bases: [{ word: "പഴങ്ങൾ", ref: "ml-0239" }, { word: "കഴുകൂ", ref: "ml-0162" }]
+  - id: "ml-0658"
+    target: "ന്ന"
+    reading: "nna"
+    ipa: "nna"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഇന്നലെ വരൂ."
+        reading: "innale varū."
+        ipa: "innəle ʋəɾuː"
+        bases: [{ word: "ഇന്നലെ", ref: "ml-0129" }, { word: "വരൂ", ref: "ml-0010" }]
+      - target: "ഇന്നലെ വന്നു."
+        reading: "innale vannu."
+        ipa: "innəle ʋənnu"
+        bases: [{ word: "ഇന്നലെ", ref: "ml-0129" }, { word: "വന്നു", base: "വന്നു", reading: "vannu" }]
+  - id: "ml-0659"
+    target: "ള്ള"
+    reading: "ḷḷa"
+    ipa: "ɭɭa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "വെള്ളം വേണം."
+        reading: "veḷḷaṁ vēṇaṁ."
+        ipa: "ʋeɭɭam ʋeːɳam"
+        bases: [{ word: "വെള്ളം", ref: "ml-0005" }, { word: "വേണം", base: "വേണം", reading: "vēṇaṁ" }]
+      - target: "വെള്ളം കുടിക്കൂ."
+        reading: "veḷḷaṁ kuṭikkū."
+        ipa: "ʋeɭɭam kuʈikkuː"
+        bases: [{ word: "വെള്ളം", ref: "ml-0005" }, { word: "കുടിക്കൂ", ref: "ml-0114" }]
+  - id: "ml-0660"
+    target: "ച്ച"
+    reading: "cca"
+    ipa: "tʃtʃa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "പൂച്ച എവിടെ?"
+        reading: "pūcca eviṭe?"
+        ipa: "puːtʃtʃa eʋiʈe"
+        bases: [{ word: "പൂച്ച", ref: "ml-0429" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "പച്ച നിറം നല്ലതാണ്."
+        reading: "pacca niṟaṁ nallatāṇ."
+        ipa: "pətʃtʃa niɾam nəllət̪aːɳ"
+        bases: [{ word: "പച്ച", ref: "ml-0422" }, { word: "നിറം", ref: "ml-0419" }, { word: "നല്ലതാണ്", base: "നല്ലതാണ്", reading: "nallatāṇ" }]
+  - id: "ml-0661"
+    target: "ണ്ട"
+    reading: "ṇṭa"
+    ipa: "ɳʈa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ഇവിടെ ഉണ്ടോ?"
+        reading: "iviṭe uṇṭō?"
+        ipa: "iʋiʈe uɳʈoː"
+        bases: [{ word: "ഇവിടെ", ref: "ml-0048" }, { word: "ഉണ്ടോ", ref: "ml-0040" }]
+      - target: "ഉണ്ടോ ഇവിടെ?"
+        reading: "uṇṭō iviṭe?"
+        ipa: "uɳʈoː iʋiʈe"
+        bases: [{ word: "ഉണ്ടോ", ref: "ml-0040" }, { word: "ഇവിടെ", ref: "ml-0048" }]
+  - id: "ml-0662"
+    target: "ന്ത"
+    reading: "nta"
+    ipa: "nt̪a"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "ചന്ത എവിടെ?"
+        reading: "canta eviṭe?"
+        ipa: "tʃənt̪a eʋiʈe"
+        bases: [{ word: "ചന്ത", ref: "ml-0238" }, { word: "എവിടെ", ref: "ml-0033" }]
+      - target: "ചന്ത അകലെ."
+        reading: "canta akale."
+        ipa: "tʃənt̪a əkəle"
+        bases: [{ word: "ചന്ത", ref: "ml-0238" }, { word: "അകലെ", ref: "ml-0144" }]
+  - id: "ml-0663"
+    target: "മ്പ"
+    reading: "mpa"
+    ipa: "mpa"
+    pos: "letter"
+    notes:
+      - { id: "n1", kind: "note" }
+    examples:
+      - target: "പാമ്പ് അപകടമാണ്."
+        reading: "pāmp apakaṭamāṇ."
+        ipa: "paːmp əpəkəʈəmaːɳ"
+        bases: [{ word: "പാമ്പ്", ref: "ml-0434" }, { word: "അപകടമാണ്", base: "അപകടമാണ്", reading: "apakaṭamāṇ" }]
+      - target: "പാമ്പ് കാട്ടിൽ/കാട്."
+        reading: "pāmp kāṭṭil/kāṭ."
+        ipa: "paːmp kaːʈʈilkaːʈ"
+        bases: [{ word: "പാമ്പ്", ref: "ml-0434" }, { word: "കാട്ടിൽ", ref: "ml-0349" }]

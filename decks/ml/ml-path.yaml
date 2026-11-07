@@ -124,7 +124,12 @@ regions:
     name: { "en": "Lakshadweep" }
 # The decks that need the alphabet: empty until the script decks are
 # written (see above).
-alphabet: []
+alphabet:
+  - "ml-script-vowels"
+  - "ml-script-consonants"
+  - "ml-script-vowel-signs"
+  - "ml-script-chillu"
+  - "ml-script-conjuncts"
 units:
   # 1. The phrasebook, taught whole from the first lesson. ml-first-words
   # joins this unit.
@@ -133,11 +138,8 @@ units:
   - decks: ["ml-phrasebook", "ml-first-words", "*"]
     words: 10
   # 2. The first word units.
-  - planned: { id: "ml-sound-differences", grammar: "sound-differences", words: 12 }
-    listening_passages:
-      - { id: "sound-pairs", text: { "en": "Pairs of words that differ in one sound, said slowly" } }
-    reading_passages:
-      - { id: "sound-pairs-list", text: { "en": "A list of word pairs with their readings" } }
+  - decks: ["ml-sound-differences"]
+    words: 8
   - decks: ["ml-questions", "*"]
     words: 11
     listening_passages:
@@ -166,16 +168,8 @@ units:
   # 3. The script, after the first six units (#554: skipped by a learner
   # who already reads it). ml-script-consonants and ml-script-reading join
   # the first; ml-script-chillu joins the second.
-  - planned: { id: "ml-script-vowels", grammar: "script-letters", words: 0 }
-    listening_passages:
-      - { id: "letter-names", text: { "en": "The vowels and consonants said in order" } }
-    reading_passages:
-      - { id: "first-signs", text: { "en": "Short words on shop signs, letter by letter" } }
-  - planned: { id: "ml-script-vowel-signs", grammar: ["script-vowel-signs", "script-chillu"], words: 0 }
-    listening_passages:
-      - { id: "syllable-rows", text: { "en": "One consonant with each vowel sign, said in a row" } }
-    reading_passages:
-      - { id: "name-boards", text: { "en": "Name boards with chillu letters and the chandrakkala" } }
+  - ["ml-script-vowels", "ml-script-consonants"]
+  - ["ml-script-vowel-signs", "ml-script-chillu", "ml-script-conjuncts"]
   - planned: { id: "ml-script-conjuncts", grammar: "script-conjuncts", words: 0 }
     listening_passages:
       - { id: "double-letters", text: { "en": "Words with double consonants and joined letters, said slowly" } }

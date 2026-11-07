@@ -1,0 +1,384 @@
+schema: 1
+id: "ml-en-script-consonants"
+kind: "layer"
+core: "ml-script-consonants"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam consonants"
+description: "The consonants of the Malayalam script with their common sounds, and the ones a learner from English often confuses, such as ഴ, ള and ല. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed", "script"]
+cards:
+  "ml-0593":
+    native: "ka"
+    notes:
+      n1: "The k of \"skin\", without a breath."
+    examples:
+      "കറി നല്ലതാണ്.":
+        native: "The curry is good."
+        bases: {"നല്ലതാണ്": "is good"}
+      "കുട എടുക്കൂ.":
+        native: "Take an umbrella."
+        bases: {}
+  "ml-0594":
+    native: "kha, k with a breath"
+    notes:
+      n1: "The k of \"kite\", with a breath after it."
+    examples:
+      "മുഖം കഴുകൂ.":
+        native: "Wash your face."
+        bases: {}
+      "ദുഃഖമുള്ള മുഖം.":
+        native: "A sad face."
+        bases: {}
+  "ml-0595":
+    native: "ga"
+    notes:
+      n1: "The g of \"go\", without a breath."
+    examples:
+      "ഗേറ്റ് തുറക്കൂ.":
+        native: "Open the gate."
+        bases: {}
+      "ഗ്രാം വേണം.":
+        native: "I need a gram."
+        bases: {"വേണം": "need"}
+  "ml-0596":
+    native: "gha, g with a breath"
+    notes:
+      n1: "The g of \"gap\", with a breath after it."
+    examples:
+      "ഘടികാരം ഇവിടെ.":
+        native: "The clock is here."
+        bases: {"ഘടികാരം": "clock"}
+      "ഘടികാരം ചുമരിൽ/ചുമർ.":
+        native: "The clock is on the wall."
+        bases: {"ഘടികാരം": "clock"}
+  "ml-0597":
+    native: "nga, the ng of \"sing\""
+    notes:
+      n1: "The ng of \"sing\". It is not written at the start of a word."
+    examples:
+      "കുരങ്ങ് ചാടുന്നു.":
+        native: "The monkey jumps."
+        bases: {"ചാടുന്നു": "jumps"}
+      "മാങ്ങ മധുരമാണ്/മധുരം.":
+        native: "The mango is sweet."
+        bases: {}
+  "ml-0598":
+    native: "ca, as in \"church\" without a breath"
+    notes:
+      n1: "The ch of \"church\" without a breath."
+    examples:
+      "ചായ ചൂടാണ്.":
+        native: "The tea is hot."
+        bases: {"ചൂടാണ്": "is hot"}
+      "ചെവി വേദനിക്കുന്നു.":
+        native: "My ear hurts."
+        bases: {"വേദനിക്കുന്നു": "hurts"}
+  "ml-0599":
+    native: "cha, ch with a breath"
+    notes:
+      n1: "The ch of \"chat\", with a breath after it."
+    examples:
+      "അച്ഛൻ വരുന്നു.":
+        native: "Father is coming."
+        bases: {"വരുന്നു": "is coming"}
+      "മുത്തച്ഛൻ ഇവിടെ.":
+        native: "Grandfather is here."
+        bases: {}
+  "ml-0600":
+    native: "ja, as in \"jump\""
+    notes:
+      n1: "The j of \"jump\", without a breath."
+    examples:
+      "ജോലി ഉണ്ടോ?":
+        native: "Is there work?"
+        bases: {}
+      "ജീരകം വേണോ?":
+        native: "Do you want cumin?"
+        bases: {"വേണോ": "do you want"}
+  "ml-0601":
+    native: "ña, the ny of \"canyon\""
+    notes:
+      n1: "The ny of \"canyon\". Written with a tongue touch on the palate."
+    examples:
+      "ഞാൻ ഇവിടെ.":
+        native: "I am here."
+        bases: {}
+      "നെഞ്ച് വേദനിക്കുന്നു.":
+        native: "My chest hurts."
+        bases: {"വേദനിക്കുന്നു": "hurts"}
+  "ml-0602":
+    native: "ṭa, t with the tongue curled back"
+    notes:
+      n1: "A t said with the tip of the tongue curled back. Not the English t."
+    examples:
+      "നാട് ചെറുതാണ്.":
+        native: "The country is small."
+        bases: {"ചെറുതാണ്": "is small"}
+      "വീട് വലിയതാണ്/വലിയ.":
+        native: "The house is big."
+        bases: {}
+  "ml-0603":
+    native: "ṭha, ṭ with a breath"
+    notes:
+      n1: "The th of \"hot\" said with the tongue curled back, and a breath after it."
+    examples:
+      "ഇവിടെ പഠിക്കൂ.":
+        native: "Study here."
+        bases: {}
+      "നന്നായി പഠിക്കൂ.":
+        native: "Study well."
+        bases: {}
+  "ml-0604":
+    native: "ḍa, d with the tongue curled back"
+    notes:
+      n1: "A d said with the tongue curled back."
+    examples:
+      "ഡോക്ടർ ഇവിടെ.":
+        native: "The doctor is here."
+        bases: {}
+      "ഡസൻ മുട്ട വേണം.":
+        native: "I need a dozen eggs."
+        bases: {"വേണം": "need"}
+  "ml-0605":
+    native: "ṇa, n with the tongue curled back"
+    notes:
+      n1: "An n said with the tongue curled back, as in the name Krishna."
+    examples:
+      "കണ്ണ് വേദനിക്കുന്നു.":
+        native: "My eye hurts."
+        bases: {"വേദനിക്കുന്നു": "hurts"}
+      "മുണ്ട് വെളുത്തതാണ്.":
+        native: "The mundu is white."
+        bases: {"വെളുത്തതാണ്": "is white"}
+  "ml-0606":
+    native: "ta, t with the tongue at the teeth"
+    notes:
+      n1: "A t said with the tongue against the teeth, not the English t."
+    examples:
+      "താക്കോൽ എവിടെ?":
+        native: "Where is the key?"
+        bases: {}
+      "തീരെ വേണ്ട.":
+        native: "Not at all needed."
+        bases: {"വേണ്ട": "not needed"}
+  "ml-0607":
+    native: "tha, t with a breath"
+    notes:
+      n1: "The th of \"thin\", with a breath after it."
+    examples:
+      "സ്ഥലം എവിടെ?":
+        native: "Where is the place?"
+        bases: {}
+      "കളിസ്ഥലം അടുത്താണ്.":
+        native: "The playground is near."
+        bases: {"അടുത്താണ്": "is near"}
+  "ml-0608":
+    native: "da, d with the tongue at the teeth"
+    notes:
+      n1: "A d said with the tongue against the teeth."
+    examples:
+      "ആദ്യം വെള്ളം.":
+        native: "Water first."
+        bases: {}
+      "ദാഹം ഉണ്ടോ?":
+        native: "Are you thirsty?"
+        bases: {}
+  "ml-0609":
+    native: "dha, d with a breath"
+    notes:
+      n1: "The dh of \"dhal\", with a breath after it."
+    examples:
+      "ധാരാളം ആളുകൾ.":
+        native: "Many people."
+        bases: {"ആളുകൾ": "people"}
+      "മധുരം വേണം.":
+        native: "I need sweetness."
+        bases: {"വേണം": "need"}
+  "ml-0610":
+    native: "na, n with the tongue at the teeth"
+    notes:
+      n1: "An n said with the tongue against the teeth."
+    examples:
+      "എന്റെ നാട്.":
+        native: "My home town."
+        bases: {}
+      "നന്നായി കേൾക്കൂ.":
+        native: "Listen well."
+        bases: {}
+  "ml-0611":
+    native: "pa"
+    notes:
+      n1: "The p of \"spin\", without a breath."
+    examples:
+      "പേര് എന്ത്?":
+        native: "What is the name?"
+        bases: {}
+      "പലപ്പോഴും വരൂ.":
+        native: "Come often."
+        bases: {}
+  "ml-0612":
+    native: "pha, f"
+    notes:
+      n1: "The f of \"fan\", as in English loanwords."
+    examples:
+      "ഫോൺ ഇവിടെ ഉണ്ടോ?":
+        native: "Is the phone here?"
+        bases: {}
+      "ഫാൻ വേണോ?":
+        native: "Do you want the fan?"
+        bases: {"വേണോ": "do you want"}
+  "ml-0613":
+    native: "ba"
+    notes:
+      n1: "The b of \"bat\", without a breath."
+    examples:
+      "ബസ് വന്നു.":
+        native: "The bus came."
+        bases: {"വന്നു": "came"}
+      "ബിസ്കറ്റ് വേണം.":
+        native: "I need a biscuit."
+        bases: {"വേണം": "need"}
+  "ml-0614":
+    native: "bha, b with a breath"
+    notes:
+      n1: "The bh of \"abhor\", with a breath after it."
+    examples:
+      "ഭക്ഷണം ഇവിടെ.":
+        native: "The food is here."
+        bases: {}
+      "ഭാര്യ ഇവിടെ.":
+        native: "The wife is here."
+        bases: {}
+  "ml-0615":
+    native: "ma"
+    notes:
+      n1: "The m of \"man\"."
+    examples:
+      "മാത്രം വേണം.":
+        native: "I need only."
+        bases: {"വേണം": "need"}
+      "മുയൽ ഓടുന്നു.":
+        native: "The rabbit runs."
+        bases: {"ഓടുന്നു": "runs"}
+  "ml-0616":
+    native: "ya"
+    notes:
+      n1: "The y of \"yes\"."
+    examples:
+      "വയസ്സ് എത്ര?":
+        native: "How old is he?"
+        bases: {}
+      "ഇടയ്ക്ക് വരൂ.":
+        native: "Come sometimes."
+        bases: {}
+  "ml-0617":
+    native: "ra, a tapped r"
+    notes:
+      n1: "A quick tapped r, as in Spanish pero."
+    examples:
+      "രണ്ട് വേണം.":
+        native: "I need two."
+        bases: {"വേണം": "need"}
+      "പേര് എന്ത്?":
+        native: "What is the name?"
+        bases: {}
+  "ml-0618":
+    native: "la"
+    notes:
+      n1: "The l of \"lamp\"."
+    examples:
+      "എലി ഇവിടെ.":
+        native: "The rat is here."
+        bases: {}
+      "ചിലന്തി ചുമരിൽ/ചുമർ.":
+        native: "The spider is on the wall."
+        bases: {}
+  "ml-0619":
+    native: "va"
+    notes:
+      n1: "The v of \"very\", as a w sound between two vowels."
+    examples:
+      "വരൂ.":
+        native: "Come."
+        bases: {}
+      "വെള്ളം കുടിക്കൂ.":
+        native: "Drink water."
+        bases: {}
+  "ml-0620":
+    native: "śa, sh"
+    notes:
+      n1: "The sh of \"ship\"."
+    examples:
+      "ശ്വാസം എടുക്കൂ.":
+        native: "Breathe in."
+        bases: {}
+      "പശു ഇവിടെ.":
+        native: "The cow is here."
+        bases: {}
+  "ml-0621":
+    native: "ṣa, sh with the tongue curled back"
+    notes:
+      n1: "The sh of \"ship\" said with the tongue curled back."
+    examples:
+      "ഷർട്ട് വേണം.":
+        native: "I need a shirt."
+        bases: {"വേണം": "need"}
+      "ഷൂസ് എടുക്കൂ.":
+        native: "Take the shoes."
+        bases: {}
+  "ml-0622":
+    native: "sa, s"
+    notes:
+      n1: "The s of \"sun\"."
+    examples:
+      "സിംഹം വലിയതാണ്/വലിയ.":
+        native: "The lion is big."
+        bases: {}
+      "സാധനം എവിടെ?":
+        native: "Where is the thing?"
+        bases: {}
+  "ml-0623":
+    native: "ha"
+    notes:
+      n1: "The h of \"hat\"."
+    examples:
+      "ഹോട്ടൽ എവിടെ?":
+        native: "Where is the restaurant?"
+        bases: {}
+      "സഹോദരൻ ഇവിടെ.":
+        native: "The brother is here."
+        bases: {}
+  "ml-0624":
+    native: "ḷa, l with the tongue curled back"
+    notes:
+      n1: "An l said with the tongue curled back, unlike ല."
+    examples:
+      "വെള്ളം കുടിക്കൂ.":
+        native: "Drink water."
+        bases: {}
+      "കിളി ചെറുതാണ്.":
+        native: "The bird is small."
+        bases: {"ചെറുതാണ്": "is small"}
+  "ml-0625":
+    native: "ḻa, zh"
+    notes:
+      n1: "A sound between l and r, said with the tongue curled back. Unlike ള and ല."
+    examples:
+      "കോഴി മുറ്റത്ത്/മുറ്റം.":
+        native: "The hen is in the yard."
+        bases: {}
+      "പഴം വേണം.":
+        native: "I need a banana."
+        bases: {"വേണം": "need"}
+  "ml-0626":
+    native: "ṟa, a trilled r"
+    notes:
+      n1: "A trilled r, rolled with the tongue. Unlike ര, a tapped r."
+    examples:
+      "റോഡ് ഇവിടെ.":
+        native: "The road is here."
+        bases: {}
+      "പുറം വേദനിക്കുന്നു.":
+        native: "My back hurts."
+        bases: {"വേദനിക്കുന്നു": "hurts"}

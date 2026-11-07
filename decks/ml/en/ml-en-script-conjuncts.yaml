@@ -1,0 +1,131 @@
+schema: 1
+id: "ml-en-script-conjuncts"
+kind: "layer"
+core: "ml-script-conjuncts"
+native: { code: "en", iso639_3: "eng", name: "English" }
+name: "Malayalam conjuncts"
+description: "The joined letters: two consonants with no vowel between them, written as one shape, as in പച്ചക്കറി, അവന്റെ, ക്ഷേത്രം and പത്ത്. Not yet checked by a Malayalam speaker: please report any mistake."
+license: "CC-BY-SA-4.0"
+tags: ["unreviewed", "script"]
+cards:
+  "ml-0653":
+    native: "kka, a doubled k"
+    notes:
+      n1: "Two k sounds: the first has no vowel and the second carries one. പച്ചക്കറി (paccakkaṟi, vegetables) has ക്ക."
+    examples:
+      "പച്ചക്കറി ചന്തയിൽ/ചന്ത.":
+        native: "The vegetables are at the market."
+        bases: {}
+      "പച്ചക്കറി വേണം.":
+        native: "I need vegetables."
+        bases: {"വേണം": "need"}
+  "ml-0654":
+    native: "nṟa"
+    notes:
+      n1: "A joined n and r, said nṟa. അവന്റെ (avanṟe, his) has ന്റ."
+    examples:
+      "അവന്റെ പുസ്തകം എവിടെ?":
+        native: "Where is his book?"
+        bases: {}
+      "അവന്റെ ചേട്ടൻ ഇവിടെ.":
+        native: "His older brother is here."
+        bases: {}
+  "ml-0655":
+    native: "kṣa, a joined k and s"
+    notes:
+      n1: "A joined k and s, said kṣa. ക്ഷേത്രം (kṣētraṁ, temple) starts with it."
+    examples:
+      "ക്ഷേത്രം എവിടെ?":
+        native: "Where is the temple?"
+        bases: {}
+      "ക്ഷീണിച്ച കുട്ടി.":
+        native: "A tired child."
+        bases: {}
+  "ml-0656":
+    native: "tta, a doubled t"
+    notes:
+      n1: "A doubled t. പത്ത് (patt, ten) has ത്ത."
+    examples:
+      "പത്ത് വേണം.":
+        native: "I need ten."
+        bases: {"വേണം": "need"}
+      "പത്ത് മണി.":
+        native: "Ten o'clock."
+        bases: {}
+  "ml-0657":
+    native: "ṅṅa, a doubled ng"
+    notes:
+      n1: "A doubled ng. പഴങ്ങൾ (paḻaṅṅaḷ, fruits) has ങ്ങ."
+    examples:
+      "പഴങ്ങൾ എവിടെ?":
+        native: "Where are the fruits?"
+        bases: {}
+      "പഴങ്ങൾ കഴുകൂ.":
+        native: "Wash the fruits."
+        bases: {}
+  "ml-0658":
+    native: "nna, a doubled n"
+    notes:
+      n1: "A doubled n. എന്നും (ennuṁ, every day) has ന്ന only in its written form; ഇന്നലെ (innale, yesterday) shows it."
+    examples:
+      "ഇന്നലെ വരൂ.":
+        native: "Come yesterday."
+        bases: {}
+      "ഇന്നലെ വന്നു.":
+        native: "Came yesterday."
+        bases: {"വന്നു": "came"}
+  "ml-0659":
+    native: "ḷḷa, a doubled ḷ"
+    notes:
+      n1: "A doubled ḷ, as in വെള്ളം (veḷḷaṁ, water)."
+    examples:
+      "വെള്ളം വേണം.":
+        native: "I need water."
+        bases: {"വേണം": "need"}
+      "വെള്ളം കുടിക്കൂ.":
+        native: "Drink water."
+        bases: {}
+  "ml-0660":
+    native: "cca, a doubled c"
+    notes:
+      n1: "A doubled c, as in പൂച്ച (pūcca, cat) and പച്ച (pacca, green)."
+    examples:
+      "പൂച്ച എവിടെ?":
+        native: "Where is the cat?"
+        bases: {}
+      "പച്ച നിറം നല്ലതാണ്.":
+        native: "Green is a good colour."
+        bases: {"നല്ലതാണ്": "is good"}
+  "ml-0661":
+    native: "ṇṭa"
+    notes:
+      n1: "A joined ṇ and t. ഉണ്ടോ (uṇṭō, is there) has ണ്ട."
+    examples:
+      "ഇവിടെ ഉണ്ടോ?":
+        native: "Is there one here?"
+        bases: {}
+      "ഉണ്ടോ ഇവിടെ?":
+        native: "Is there one here?"
+        bases: {}
+  "ml-0662":
+    native: "nta"
+    notes:
+      n1: "A joined n and t, as in ചന്ത (canta, market)."
+    examples:
+      "ചന്ത എവിടെ?":
+        native: "Where is the market?"
+        bases: {}
+      "ചന്ത അകലെ.":
+        native: "The market is far."
+        bases: {}
+  "ml-0663":
+    native: "mpa"
+    notes:
+      n1: "A joined m and p, as in പാമ്പ് (pāmpŭ, snake)."
+    examples:
+      "പാമ്പ് അപകടമാണ്.":
+        native: "The snake is dangerous."
+        bases: {"അപകടമാണ്": "is dangerous"}
+      "പാമ്പ് കാട്ടിൽ/കാട്.":
+        native: "The snake is in the forest."
+        bases: {}
