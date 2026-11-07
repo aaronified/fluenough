@@ -26,6 +26,9 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "कोई नहीं जानता।", "reading": "kōī nahīm̐ jāntā.", "ipa": "koːiː nəɦĩː dʒaːnt̪aː", "bases": [{"word": "जानता", "base": "जानना", "reading": "jānnā"}]}
+    ]
   - id: "hi-0157"
     target: "क्या"
     target_scripts: { perso_arabic: "کیا" }
@@ -34,6 +37,10 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "अब क्या?", "reading": "ab kyā?", "ipa": "əb kjaː", "bases": [{"word": "अब", "base": "अब", "reading": "ab"}, {"word": "क्या", "base": "क्या", "reading": "kyā"}]},
+      {"target": "आपने क्या कहा?", "reading": "āpnē kyā kahā?", "ipa": "aːpneː kjaː kəɦaː", "bases": [{"word": "आपने", "ref": "hi-0134"}, {"word": "कहा", "base": "कहना", "reading": "kahnā"}]}
+    ]
   - id: "hi-0158"
     target: "कौन"
     target_scripts: { perso_arabic: "کون" }
@@ -42,6 +49,9 @@ cards:
     phonetic: "[kɔ̃ːn]"
     phonetic_source: "wiktionary"
     pos: "other"
+    "examples": [
+      {"target": "वह कौन है?", "reading": "vah kaun hai?", "ipa": "ʋəɦ kɔːn ɦɛː", "bases": [{"word": "वह", "base": "वह", "reading": "vah"}]}
+    ]
   - id: "hi-0159"
     target: "कहाँ"
     target_scripts: { perso_arabic: "کہاں" }
@@ -49,6 +59,9 @@ cards:
     ipa: "kəɦãː"
     alt_target: ["कहां"]
     pos: "other"
+    "examples": [
+      {"target": "एटीएम कहाँ है?", "reading": "ēṭīēm kahām̐ hai?", "ipa": "eːʈiːeːm kəɦãː ɦɛː", "bases": [{"word": "कहाँ", "base": "कहाँ", "reading": "kahām̐"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0160"
     target: "कब"
     target_scripts: { perso_arabic: "کب" }
@@ -57,18 +70,28 @@ cards:
     phonetic: "[kɐb]"
     phonetic_source: "wiktionary"
     pos: "other"
+    "examples": [
+      {"target": "आप कब आएँगे?", "reading": "āp kab āēm̐gē?", "ipa": "aːp kəb aːẽːɡeː", "bases": [{"word": "आएँगे", "base": "आना", "reading": "ānā"}]}
+    ]
   - id: "hi-0161"
     target: "क्यों"
     target_scripts: { perso_arabic: "کیوں" }
     reading: "kyōm̐"
     ipa: "kjõː"
     pos: "other"
+    "examples": [
+      {"target": "इतना परेशान क्यों हो?", "reading": "itnā parēśān kyōm̐ hō?", "ipa": "ɪt̪naː pəreːʃaːn kjõː ɦoː", "bases": [{"word": "इतना", "base": "इतना", "reading": "itnā"}, {"word": "क्यों", "base": "क्यों", "reading": "kyōm̐"}, {"word": "हो", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0162"
     target: "कैसे"
     target_scripts: { perso_arabic: "کیسے" }
     reading: "kaisē"
     ipa: "kɛːseː"
     pos: "other"
+    "examples": [
+      {"target": "आप कैसे आए?", "reading": "āp kaisē āē?", "ipa": "aːp kɛːseː aːeː", "bases": [{"word": "आए", "base": "आना", "reading": "ānā"}]},
+      {"target": "आप कैसे हैं?", "reading": "āp kaisē haim̐?", "ipa": "aːp kɛːseː ɦɛ̃ː", "bases": []}
+    ]
   - id: "hi-0163"
     target: "कितना"
     target_scripts: { perso_arabic: "کتنا" }
@@ -77,6 +100,10 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "कद कितना है?", "reading": "kad kitnā hai?", "ipa": "kəd̪ kɪt̪naː ɦɛː", "bases": [{"word": "कितना", "base": "कितना", "reading": "kitnā"}, {"word": "है", "ref": "hi-0112"}]},
+      {"target": "कितनी देर लगेगी?", "reading": "kitnī dēr lagēgī?", "ipa": "kɪt̪niː d̪eːr ləɡeːɡiː", "bases": [{"word": "कितनी", "base": "कितना", "reading": "kitnā"}, {"word": "देर", "base": "देर", "reading": "dēr"}, {"word": "लगेगी", "base": "लगना", "reading": "lagnā"}]}
+    ]
   - id: "hi-0164"
     target: "कौन-सा"
     target_scripts: { perso_arabic: "کون سا" }

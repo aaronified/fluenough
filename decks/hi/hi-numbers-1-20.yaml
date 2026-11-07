@@ -15,12 +15,18 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "एक लड़का आया।", "reading": "ēk laṛkā āyā.", "ipa": "eːk ləɽkaː aːjaː", "bases": [{"word": "लड़का", "base": "लड़का", "reading": "laṛkā"}, {"word": "आया", "base": "आना", "reading": "ānā"}]}
+    ]
   - id: "hi-0199"
     target: "दो"
     target_scripts: { perso_arabic: "دو" }
     reading: "dō"
     ipa: "d̪oː"
     pos: "other"
+    "examples": [
+      {"target": "मेरे दो बच्चे हैं।", "reading": "mērē dō baccē haim̐.", "ipa": "meːreː d̪oː bətʃtʃeː ɦɛ̃ː", "bases": [{"word": "मेरे", "ref": "hi-0752"}]},
+    ]
   - id: "hi-0200"
     target: "तीन"
     target_scripts: { perso_arabic: "تین" }
@@ -29,12 +35,18 @@ cards:
     phonetic: "[t̪ĩːn]"
     phonetic_source: "wiktionary"
     pos: "other"
+    "examples": [
+      {"target": "तीन नंबर प्लेटफ़ॉर्म पर जाओ।", "reading": "tīn nambar plēṭfôrm par jāō.", "ipa": "t̪iːn nəmbər pleːʈfɔrm pər dʒaːoː", "bases": [{"word": "तीन", "base": "तीन", "reading": "tīn"}, {"word": "नंबर", "ref": "hi-1585"}, {"word": "पर", "ref": "hi-0275"}, {"word": "जाओ", "ref": "hi-0777"}]}
+    ]
   - id: "hi-0201"
     target: "चार"
     target_scripts: { perso_arabic: "چار" }
     reading: "cār"
     ipa: "tʃaːr"
     pos: "other"
+    "examples": [
+      {"target": "रोशनी चारों ओर फैलती है।", "reading": "rōśnī cārōm̐ ōr phailtī hai.", "ipa": "roːʃniː tʃaːrõː oːr pʰɛːlt̪iː ɦɛː", "bases": [{"word": "रोशनी", "ref": "hi-1312"}, {"word": "चारों", "base": "चार", "reading": "cār"}, {"word": "ओर", "base": "ओर", "reading": "ōr"}, {"word": "फैलती", "base": "फैलना", "reading": "phailnā"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0202"
     target: "पाँच"
     target_scripts: { perso_arabic: "پانچ" }
@@ -42,6 +54,10 @@ cards:
     ipa: "pãːtʃ"
     alt_target: ["पांच"]
     pos: "other"
+    "examples": [
+      {"target": "कुल रकम पाँच सौ है।", "reading": "kul rakam pām̐c sau hai.", "ipa": "kʊl rəkəm pãːtʃ sɔː ɦɛː", "bases": [{"word": "कुल", "base": "कुल", "reading": "kul"}, {"word": "पाँच", "base": "पाँच", "reading": "pām̐c"}, {"word": "सौ", "ref": "hi-0225"}, {"word": "है", "ref": "hi-0112"}]},
+      {"target": "पाँच सौ ग्राम पनीर दीजिए।", "reading": "pām̐c sau grām panīr dījiē.", "ipa": "pãːtʃ sɔː ɡraːm pəniːr d̪iːdʒɪeː", "bases": [{"word": "पाँच", "base": "पाँच", "reading": "pām̐c"}, {"word": "सौ", "ref": "hi-0225"}, {"word": "पनीर", "base": "पनीर", "reading": "panīr"}, {"word": "दीजिए", "ref": "hi-0785"}]}
+    ]
   - id: "hi-0203"
     target: "छह"
     target_scripts: { perso_arabic: "چھ" }
@@ -53,12 +69,18 @@ cards:
     pos: "other"
     notes:
       - { id: "n1", kind: "note" }
+    "examples": [
+      {"target": "सुबह मुझे छह बजे जगाना।", "reading": "subah mujhē chah bajē jagānā.", "ipa": "sʊbəɦ mʊdʒʱeː tʃʰəɦ bədʒeː dʒəɡaːnaː", "bases": [{"word": "सुबह", "ref": "hi-0302"}, {"word": "मुझे", "ref": "hi-0745"}, {"word": "छह", "base": "छह", "reading": "chah"}, {"word": "बजे", "ref": "hi-0305"}, {"word": "जगाना", "base": "जगाना", "reading": "jagānā"}]}
+    ]
   - id: "hi-0204"
     target: "सात"
     target_scripts: { perso_arabic: "سات" }
     reading: "sāt"
     ipa: "saːt̪"
     pos: "other"
+    "examples": [
+      {"target": "अलार्म सात बजे है।", "reading": "alārm sāt bajē hai.", "ipa": "əlaːrm saːt̪ bədʒeː ɦɛː", "bases": [{"word": "सात", "base": "सात", "reading": "sāt"}, {"word": "बजे", "ref": "hi-0305"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0205"
     target: "आठ"
     target_scripts: { perso_arabic: "آٹھ" }
@@ -71,6 +93,9 @@ cards:
     reading: "nau"
     ipa: "nɔː"
     pos: "other"
+    "examples": [
+      {"target": "कार्यालय सुबह नौ बजे खुलता है।", "reading": "kāryālay subah nau bajē khultā hai.", "ipa": "kaːrjaːləj sʊbəɦ nɔː bədʒeː kʰʊlt̪aː ɦɛː", "bases": [{"word": "सुबह", "ref": "hi-0302"}, {"word": "नौ", "base": "नौ", "reading": "nau"}, {"word": "बजे", "ref": "hi-0305"}, {"word": "खुलता", "base": "खुलना", "reading": "khulnā"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0207"
     target: "दस"
     target_scripts: { perso_arabic: "دس" }
@@ -79,18 +104,28 @@ cards:
     phonetic: "[d̪ɐs]"
     phonetic_source: "wiktionary"
     pos: "other"
+    "examples": [
+      {"target": "ट्रेन दस बजे है।", "reading": "ṭrēn das bajē hai.", "ipa": "ʈreːn d̪əs bədʒeː ɦɛː", "bases": [{"word": "दस", "base": "दस", "reading": "das"}, {"word": "बजे", "ref": "hi-0305"}, {"word": "है", "ref": "hi-0780"}]}
+    ]
   - id: "hi-0208"
     target: "ग्यारह"
     target_scripts: { perso_arabic: "گیارہ" }
     reading: "gyārah"
     ipa: "ɡjaːrəɦ"
     pos: "other"
+    "examples": [
+      {"target": "मैं रात ग्यारह बजे सोता हूँ।", "reading": "maim̐ rāt gyārah bajē sōtā hūm̐.", "ipa": "mɛ̃ː raːt̪ ɡjaːrəɦ bədʒeː soːt̪aː ɦũː", "bases": [{"word": "मैं", "base": "मैं", "reading": "maim̐"}, {"word": "सोता", "ref": "hi-0450"}, {"word": "हूँ", "base": "होना", "reading": "hōnā"}]}
+    ]
   - id: "hi-0209"
     target: "बारह"
     target_scripts: { perso_arabic: "بارہ" }
     reading: "bārah"
     ipa: "baːrəɦ"
     pos: "other"
+    "examples": [
+      {"target": "टीम में बारह खिलाड़ी हैं।", "reading": "ṭīm mēm̐ bārah khilāṛī haim̐.", "ipa": "ʈiːm mẽː baːrəɦ kʰɪlaːɽiː ɦɛ̃ː", "bases": [{"word": "टीम", "base": "टीम", "reading": "ṭīm"}, {"word": "में", "ref": "hi-0274"}, {"word": "बारह", "base": "बारह", "reading": "bārah"}, {"word": "खिलाड़ी", "ref": "hi-1679"}, {"word": "हैं", "ref": "hi-0113"}]},
+      {"target": "दिल्ली में बारह डिग्री है।", "reading": "dillī mēm̐ bārah ḍigrī hai.", "ipa": "d̪ɪlliː mẽː baːrəɦ ɖɪɡriː ɦɛː", "bases": [{"word": "दिल्ली", "base": "दिल्ली", "reading": "dillī"}, {"word": "में", "ref": "hi-0274"}, {"word": "बारह", "base": "बारह", "reading": "bārah"}, {"word": "है", "ref": "hi-0112"}]}
+    ]
   - id: "hi-0210"
     target: "तेरह"
     target_scripts: { perso_arabic: "تیرہ" }
@@ -152,3 +187,6 @@ cards:
     reading: "bīs"
     ipa: "biːs"
     pos: "other"
+    "examples": [
+      {"target": "आज तापमान बीस डिग्री है।", "reading": "āj tāpmān bīs ḍigrī hai.", "ipa": "aːdʒ t̪aːpmaːn biːs ɖɪɡriː ɦɛː", "bases": [{"word": "आज", "ref": "hi-0299"}, {"word": "बीस", "base": "बीस", "reading": "bīs"}, {"word": "डिग्री", "ref": "hi-1279"}, {"word": "है", "ref": "hi-0112"}]}
+    ]
