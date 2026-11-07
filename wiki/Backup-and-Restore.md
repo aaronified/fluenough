@@ -27,6 +27,10 @@ After a restore, your decks download again.
 
 If the file is not a Fluenough backup, or is damaged, nothing changes. If it was made by a newer Fluenough, update the app first, then restore it.
 
+## Delete a language's data
+
+The bin on a language's sheet in Languages I'm learning deletes some of that language's data (reviews, optionally within a range of days; placement; language settings; deck data). It keeps a backup first, named Before deleting data in Recent backups, which restores like any other (#861).
+
 ## Export the review log
 
 Settings > Your data also has Export review log. It saves every answer as a JSONL file. See [Log format](Log-Format).
