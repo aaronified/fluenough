@@ -178,6 +178,7 @@ class _StatsBody extends StatelessWidget {
         ProgressTiles(
           counts: counts,
           level: mastery.level,
+          levelPlaced: mastery.levelPlaced,
           started: mastery.started,
           allLanguages: language == null,
         ),

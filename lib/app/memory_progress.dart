@@ -86,6 +86,12 @@ abstract interface class ProgressStore implements Listenable {
   /// and returns it. Call it the moment the answer is given. [script] is
   /// the learned script the card was shown or the answer typed in, null for
   /// transliteration, and [asked] how it was asked (#653).
+  ///
+  /// Careful with the defaults: a grade 5 with no [elapsed] time and no
+  /// [answerGiven] has the shape of placement credit
+  /// (`ReviewEvent.hasCreditShape`), which Progress counts as placed and the
+  /// log can withdraw. Only `creditPlacement` writes that; a real answer
+  /// passes the time it took (`AppState.record` makes sure of it).
   ReviewEvent record({
     required String deckId,
     required String cardId,

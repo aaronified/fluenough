@@ -3901,6 +3901,10 @@ class AppState extends ChangeNotifier {
   /// [script] is the script the learner learns that the card was shown, or
   /// the answer typed, in, null for transliteration, and [asked] how it was
   /// asked: what the script skills are worked out from (#653).
+  ///
+  /// A grade 5 with no [elapsed] time and no [answerGiven] has the shape of
+  /// placement credit (`ReviewEvent.hasCreditShape`); this never writes it
+  /// for a real answer (see below), and `creditPlacement` alone writes it.
   ReviewEvent record(
     SessionItem item,
     int grade, {
@@ -3910,6 +3914,14 @@ class AppState extends ChangeNotifier {
     Ask? asked,
   }) {
     _recordingLanguage = deckById(item.card.deckId)?.language.code;
+    // A real answer is never written in the shape of placement credit
+    // (grade 5, no time, no answer): see [realElapsed].
+    elapsed = realElapsed(
+      grade: grade,
+      elapsed: elapsed,
+      answerGiven: answerGiven,
+      asked: asked,
+    );
     final ReviewEvent event;
     try {
       event = _record(item, grade, elapsed, answerGiven, script, asked);

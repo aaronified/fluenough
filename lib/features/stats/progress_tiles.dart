@@ -17,12 +17,17 @@ class ProgressTiles extends StatelessWidget {
     required this.level,
     required this.started,
     required this.allLanguages,
+    this.levelPlaced = false,
   });
 
   final UnlockCounts counts;
 
   /// The level the course has reached, or null before A1.
   final Milestone? level;
+
+  /// Whether [level] is only placed: no unit of its milestone has an earned
+  /// review, so the Level tile carries a "Placed" mark.
+  final bool levelPlaced;
 
   /// The day of the first answer.
   final DateTime? started;
@@ -52,13 +57,22 @@ class ProgressTiles extends StatelessWidget {
                   title: l10n.progressWordsTitle,
                   figure: count.format(counts.wordsKnown),
                   known: l10n.progressKnown,
-                  outOf: l10n.progressOfTaught(
-                    count.format(counts.wordsTaught),
-                  ),
-                  semantics: l10n.progressWordsSemantics(
-                    count.format(counts.wordsKnown),
-                    count.format(counts.wordsTaught),
-                  ),
+                  outOf: counts.wordsPlaced > 0
+                      ? l10n.progressOfTaughtPlaced(
+                          count.format(counts.wordsTaught),
+                          count.format(counts.wordsPlaced),
+                        )
+                      : l10n.progressOfTaught(count.format(counts.wordsTaught)),
+                  semantics: counts.wordsPlaced > 0
+                      ? l10n.progressWordsPlacedSemantics(
+                          count.format(counts.wordsKnown),
+                          count.format(counts.wordsTaught),
+                          count.format(counts.wordsPlaced),
+                        )
+                      : l10n.progressWordsSemantics(
+                          count.format(counts.wordsKnown),
+                          count.format(counts.wordsTaught),
+                        ),
                 ),
               ),
               Expanded(
@@ -69,19 +83,33 @@ class ProgressTiles extends StatelessWidget {
                   title: l10n.progressRulesTitle,
                   figure: count.format(counts.rulesKnown),
                   known: l10n.progressKnown,
-                  outOf: l10n.progressOfTaught(
-                    count.format(counts.rulesTaught),
-                  ),
-                  semantics: l10n.progressRulesSemantics(
-                    count.format(counts.rulesKnown),
-                    count.format(counts.rulesTaught),
-                  ),
+                  outOf: counts.rulesPlaced > 0
+                      ? l10n.progressOfTaughtPlaced(
+                          count.format(counts.rulesTaught),
+                          count.format(counts.rulesPlaced),
+                        )
+                      : l10n.progressOfTaught(count.format(counts.rulesTaught)),
+                  semantics: counts.rulesPlaced > 0
+                      ? l10n.progressRulesPlacedSemantics(
+                          count.format(counts.rulesKnown),
+                          count.format(counts.rulesTaught),
+                          count.format(counts.rulesPlaced),
+                        )
+                      : l10n.progressRulesSemantics(
+                          count.format(counts.rulesKnown),
+                          count.format(counts.rulesTaught),
+                        ),
                 ),
               ),
             ],
           ),
         ),
-        LevelTile(level: level, started: started, allLanguages: allLanguages),
+        LevelTile(
+          level: level,
+          started: started,
+          allLanguages: allLanguages,
+          placed: levelPlaced,
+        ),
       ],
     );
   }
@@ -223,9 +251,13 @@ class LevelTile extends StatelessWidget {
     required this.level,
     required this.started,
     required this.allLanguages,
+    this.placed = false,
   });
 
   final Milestone? level;
+
+  /// Whether the level is only placed: no unit of it has an earned review.
+  final bool placed;
   final DateTime? started;
   final bool allLanguages;
 
@@ -265,6 +297,8 @@ class LevelTile extends StatelessWidget {
       label = l10n.progressStartedSemantics(date);
     } else if (shown == null) {
       label = l10n.progressLevelNoneSemantics(date);
+    } else if (placed) {
+      label = l10n.progressLevelPlacedSemantics(levelName(l10n, shown), date);
     } else {
       label = l10n.progressLevelSemantics(levelName(l10n, shown), date);
     }
@@ -337,6 +371,16 @@ class LevelTile extends StatelessWidget {
                     overflow: TextOverflow.ellipsis,
                     style: theme.textTheme.labelLarge!.copyWith(color: soft),
                   ),
+                  if (!allLanguages && placed && shown != null)
+                    Text(
+                      l10n.progressLevelPlaced,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: theme.textTheme.labelMedium!.copyWith(
+                        color: soft,
+                        fontStyle: FontStyle.italic,
+                      ),
+                    ),
                   if (!allLanguages && started != null)
                     fit(
                       Text(

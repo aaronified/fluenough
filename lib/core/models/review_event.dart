@@ -109,3 +109,33 @@ extension ReviewEventAnswers on Iterable<ReviewEvent> {
   /// a card ([ReviewEvent.isView]).
   Iterable<ReviewEvent> get answered => where((event) => !event.isView);
 }
+
+/// The smallest elapsed time a real answer is recorded with: one whole
+/// millisecond, because the log stores elapsed time in whole milliseconds
+/// (the database column, the JSONL backup and the replay snapshot all do), so
+/// anything shorter would be stored as 0 and read back as credit.
+const Duration kRealAnswerMinimum = Duration(milliseconds: 1);
+
+/// The elapsed time to record for a REAL answer: [elapsed], unless the answer
+/// would have the shape of placement credit ([ReviewEvent.hasCreditShape]:
+/// grade 5, no time taken, no answer given, asked its own way or not
+/// recorded), when it is [kRealAnswerMinimum]. Only `creditPlacement` writes
+/// that shape (0 ms); a real answer is never mistaken for placement
+/// (Progress counts it as placed, and the log can withdraw it).
+///
+/// Rows written BEFORE this existed cannot be told apart: a real grade 5 with
+/// no time and no answer (a self-graded flip) was stored as 0 ms, exactly as
+/// credit is. They are not reinterpreted: they read as credit, as they always
+/// have.
+Duration realElapsed({
+  required int grade,
+  required Duration elapsed,
+  String? answerGiven,
+  Ask? asked,
+}) =>
+    grade == 5 &&
+        elapsed == Duration.zero &&
+        answerGiven == null &&
+        (asked == null || asked == Ask.own)
+    ? kRealAnswerMinimum
+    : elapsed;

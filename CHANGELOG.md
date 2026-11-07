@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- **Placed words are counted apart from the ones you answered.** Words, forms and letters that Find my level credited and you have not answered since are now "placed": the Words and Rules counts of taught no longer include them, the star's outline (known of taught) is earned only, and placed words no longer hold back new lessons or count as in progress. They are not known, so sentences that wait for them stay closed. The star's hatched placed layer and "+N placed" on the tiles are drawn with the new placement screens. Credit you took back is not placed. Refs #1063.
+- **Placed words are counted apart from the ones you answered.** Words, forms and letters that Find my level credited and you have not answered since are now "placed": the Words and Rules counts of taught no longer include them, the star's outline (known of taught) is earned only, and placed words no longer hold back new lessons or count as in progress. They are not known, so sentences that wait for them stay closed. The Words and Rules tiles now say "of 540 taught (+90 placed)", and the Level tile carries a "Placed" mark until a unit of that level has a review you answered yourself; the star's hatched placed layer is drawn with the new placement screens. A right answer is never recorded in the shape of placement credit, so an Easy answer can no longer be mistaken for placement. Credit you took back is not placed. Refs #1063.
 
 ### Fixed
 

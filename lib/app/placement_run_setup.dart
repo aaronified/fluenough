@@ -3,6 +3,9 @@ import '../core/models/card.dart';
 import '../core/models/deck.dart' show LanguageInfo;
 import '../core/models/drill_mode.dart';
 import '../core/placement/assurance_readout.dart';
+import '../core/placement/placed_outcome.dart';
+import '../core/placement/joint_model.dart' show JointReadout;
+import '../core/placement/assurance_model.dart' show PlacementLevels;
 import '../core/placement/placement_data.dart';
 import '../core/placement/placement_questions.dart';
 import '../core/placement/placement_run.dart';
@@ -165,9 +168,60 @@ extension PlacementRunSetup on AppState {
     PlacementRun run, {
     String? native,
     bool recheck = false,
+  }) => writePlacementReadout(
+    code,
+    plan,
+    run.readout,
+    topClass: run.levels.topClass,
+    covered: run.config.skills,
+    native: native,
+    recheck: recheck,
+  );
+
+  /// The same write for a V3 readout (wiki/Plan-Placement-V3.md): each
+  /// scored skill is credited up to its lower edge, never above the level
+  /// its items proved; a skill that was not tested or only self-rated (Say
+  /// without a recogniser) writes nothing and is left out of the lowest
+  /// level, so that it never pulls the course's placed decks down.
+  void writePlacementJoint(
+    String code,
+    PlacementRunPlan plan,
+    JointReadout readout,
+    PlacementLevels levels, {
+    String? native,
+    bool recheck = false,
+  }) => writePlacementReadout(
+    code,
+    plan,
+    assurancesFromJoint(readout, levels),
+    topClass: levels.topClass,
+    covered: readout.skills.keys,
+    native: native,
+    recheck: recheck,
+  );
+
+  /// What a run found, written to the learner's data: [writePlacementRun]'s
+  /// and [writePlacementJoint]'s common part. [covered] are the skills the
+  /// run covered, whose stored labels it replaces.
+  void writePlacementReadout(
+    String code,
+    PlacementRunPlan plan,
+    Map<PlacementSkill, SkillAssurance> readout, {
+    required int topClass,
+    required Iterable<PlacementSkill> covered,
+    String? native,
+    bool recheck = false,
   }) {
     final flagged = recheck ? unconfirmedMomentsOf(code) : const <int>{};
-    _writeOutcome(code, plan, run, native: native, recheck: recheck);
+    _writeOutcome(
+      code,
+      plan,
+      readout,
+      topClass: topClass,
+      covered: covered,
+      native: native,
+      recheck: recheck,
+    );
     if (flagged.isNotEmpty) settings.keepPlacementMoments(code, flagged);
     settings.setPlacementRun(code, null);
   }
@@ -175,22 +229,26 @@ extension PlacementRunSetup on AppState {
   void _writeOutcome(
     String code,
     PlacementRunPlan plan,
-    PlacementRun run, {
+    Map<PlacementSkill, SkillAssurance> readout, {
+    required int topClass,
+    required Iterable<PlacementSkill> covered,
     String? native,
     bool recheck = false,
   }) {
-    final readout = run.readout;
     final tested = <PlacementSkill, SkillAssurance>{
       for (final MapEntry(:key, :value) in readout.entries)
         if (value.label != AssuranceLabel.notTested) key: value,
     };
-    _writeSkillLabels(code, run, tested);
+    _writeSkillLabels(code, covered, tested);
     if (tested.isEmpty) return;
     Set<String> idsUpTo(int level) => <String>{
       for (final entry in plan.decks.take(level + 1)) entry.id,
     };
-    if (recheck) withdrawAboveNewLevel(code, plan, tested, run.levels.topClass);
+    if (recheck) withdrawAboveNewLevel(code, plan, tested, topClass);
 
+    // The lowest level over the word skills that were TESTED: a skill that
+    // was not tested, or only self-rated (Say without a recogniser), is not
+    // in [tested] and never pulls the course's placed decks down.
     int? lowest;
     for (final skill in _wordSkills) {
       final found = tested[skill];
@@ -217,7 +275,7 @@ extension PlacementRunSetup on AppState {
       final found = tested[skill];
       if (found == null || i >= plan.scripts.length) continue;
       final script = plan.scripts[i];
-      final standing = found.placedClass == run.levels.topClass
+      final standing = found.placedClass == topClass
           ? ScriptStanding.reads
           : ScriptStanding.newTo;
       standings[script.script] = standing;
@@ -270,10 +328,9 @@ extension PlacementRunSetup on AppState {
   /// with: they stay until the next run covers the skill.
   void _writeSkillLabels(
     String code,
-    PlacementRun run,
+    Iterable<PlacementSkill> covered,
     Map<PlacementSkill, SkillAssurance> tested,
   ) {
-    final covered = run.config.skills;
     settings.setSkillLabels(code, <String, String>{
       for (final MapEntry(:key, :value) in settings.skillLabelsOf(code).entries)
         if (!covered.any((skill) => skill.name == key)) key: value,
