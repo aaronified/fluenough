@@ -74,16 +74,18 @@ void main() {
           final c = picker.next();
           if (c == null) break;
           // A self-rated Say is only recorded, never evidence.
-          if (c.selfRated) continue;
+          if (c.selfRated) {
+            picker.record(c, AnswerOutcome.right);
+            continue;
+          }
           final item = c.payload! as RegItem;
           final known = levels.knows(truth, c.deck);
           final right = known
               ? rng.nextDouble() >= c.slip
               : rng.nextDouble() < c.guess;
-          model.observe(
-            item.toJointItem(),
-            right ? AnswerOutcome.right : AnswerOutcome.wrong,
-          );
+          final outcome = right ? AnswerOutcome.right : AnswerOutcome.wrong;
+          model.observe(item.toJointItem(), outcome);
+          picker.record(c, outcome);
         }
         return (picker: picker, model: model, truth: truth);
       }
