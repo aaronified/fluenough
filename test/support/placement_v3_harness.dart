@@ -104,6 +104,8 @@ const Map<String, FormatSpec> kFormats = <String, FormatSpec>{
   'F5': FormatSpec('F5', {_r}, 0.10, 0.25, 8, wordLevel: false),
   'F6': FormatSpec('F6', {_r}, 0.10, 0.25, 8, wordLevel: false),
   'F7': FormatSpec('F7', {_w}, 0.15, 0.03, 12),
+  // Build step 4b: type the one unit left out of a word (a cheap Write item).
+  'F21': FormatSpec('F21', {_w}, 0.08, 0.10, 6),
   'F8': FormatSpec('F8', {_w, _r}, 0.10, 0.05, 15, wordLevel: false),
   'F13': FormatSpec('F13', {_h}, 0.05, 0.25, 6),
   'F15': FormatSpec('F15', {_h}, 0.05, 0.50, 6),
@@ -220,7 +222,13 @@ class LeakLanguage {
       final value = math.max(measured, floor);
       if (code != 'F4' || strong) return value;
     }
-    var entry = _tables[profile]![code]! as Map<String, Object?>;
+    final raw = _tables[profile]![code];
+    if (raw == null) {
+      // A format that did not exist in the table's bank (the cheap Write item
+      // of step 4b): the audit's measure, never below the design guess.
+      return math.max(measured ?? 0, kFormats[code]?.guess ?? 0);
+    }
+    var entry = raw as Map<String, Object?>;
     if (entry.containsKey('weak')) {
       entry = entry[strong ? 'strong' : 'weak']! as Map<String, Object?>;
     }
@@ -904,8 +912,11 @@ const List<String> kAdmittedFormats = <String>[
   'F2',
   'F3',
   'F13',
+  'F5',
+  'F17',
   'F4',
   'F7',
+  'F21',
   'F8',
   'F16',
   'F18',

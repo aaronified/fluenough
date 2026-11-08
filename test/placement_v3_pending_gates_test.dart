@@ -22,14 +22,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/placement_v3_harness.dart';
 
 class _PendingGate {
-  const _PendingGate(
-    this.id,
-    this.gate,
-    this.reason,
-    this.patterns,
-    this.step, {
-    this.prerequisite,
-  });
+  const _PendingGate(this.id, this.gate, this.reason, this.patterns, this.step);
 
   final String id;
 
@@ -45,16 +38,11 @@ class _PendingGate {
 
   /// The build step that lands the prerequisite.
   final String step;
-
-  /// A prerequisite that is not a file name: what the format inventory must
-  /// come to hold (judged on [kFormatInventory]). Either this or a matching
-  /// file means the prerequisite has landed.
-  final bool Function(Iterable<FormatInfo> inventory)? prerequisite;
 }
 
 /// Whether the inventory has a generated Write item cheap enough to prove
 /// the top bands: at most 6 s, slip at most 0.10, guess at most 0.10 (the
-/// item class build step 4b must add; see the experts gate).
+/// item class build step 4b added, F21; see the experts gate).
 bool hasCheapWriteItem(Iterable<FormatInfo> inventory) => inventory.any(
   (f) =>
       f.generated &&
@@ -68,7 +56,6 @@ bool hasCheapWriteItem(Iterable<FormatInfo> inventory) => inventory.any(
 // under lib/core/placement/ (any depth) whose name has the word. The picker
 // (v3_picker.dart) landed in build step 4 and enabled its gates; what is left
 // waits for the later steps' files.
-final List<RegExp> _formats4b = <RegExp>[RegExp(r'4b')];
 final List<RegExp> _refit = <RegExp>[RegExp(r're_?fit')];
 final List<RegExp> _drillDown = <RegExp>[RegExp(r'drill_?down')];
 final List<RegExp> _scriptGate = <RegExp>[RegExp(r'script_?gate')];
@@ -78,22 +65,21 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'experts-natives-within-a-tenth',
     'Honest experts and natives are within 1/10 of the truth in at least '
         '85% of runs.',
-    'The real picker (build step 4) meets the time gate, and with it places '
-        'experts and natives safely but low: within 1/10 in 52 to 57% of '
-        'runs under a flat declaration, 71 to 76% under an advanced one and '
-        '3 to 4% under an amateur one (Spanish and Hindi). Placing them '
-        'higher needs proof stages at the top bands (four clean items each, '
-        'three skills): measured, a looser stop rule that climbs one more '
-        'stage reaches 74 to 90% but costs 250 to 300 s. What is missing is '
-        'a cheap item for Write: the admitted Write evidence is typing (F7, '
-        '12 s, slip 0.15) or tiles (F4, 15 s) or the mixed F8 and F16 '
-        '(15 s), so a Write proof costs 50 to 60 s a stage. A Write item of '
-        'at most 6 s with a slip of at most 0.10 and a guess of at most 0.10 '
-        '(PR 4b), or a stop rule that is not held down by a low declaration '
-        '(PR 8, re-fit), would meet it. Not loosened.',
-    _formats4b,
-    'step 4b (cheap Write items) and step 8 (re-fit)',
-    prerequisite: hasCheapWriteItem,
+    'Build step 4b added the cheap Write item (gap spelling, F21: 6 s, slip '
+        '0.08, guess 0.10, passes the audit at 0.01 against a bound of 0.17) '
+        'and a Write proof stage now costs about 24 s, not 50 to 60. With '
+        'the picker tuned to the per-cell time gate (every cell median at '
+        'most 178 s) experts and natives are within 1/10 in 68 to 70% of '
+        'runs under a flat declaration, 84% under an advanced one and 18 to '
+        '20% under an amateur one (Spanish; Hindi within 2 points). A '
+        'looser stop rule reaches 72 to 80% flat and 70% amateur but takes '
+        '225 to 230 s in the amateur-declared expert cell. What holds the '
+        'rest back is no longer the item cost: the declaration prior of an '
+        'expert who declared amateur holds the lower edge of the posterior '
+        'down, and only more proof stages move it. The prior and the '
+        'declaration weight are re-fitted at step 8. Not loosened.',
+    _refit,
+    'step 8 (re-fit of the prior and the declaration weight)',
   ),
   _PendingGate(
     'honest-confidence',
@@ -159,8 +145,6 @@ void main() {
           for (final f in files)
             for (final p in gate.patterns)
               if (p.hasMatch(f)) f,
-          if (gate.prerequisite?.call(kFormatInventory) ?? false)
-            'the format inventory',
         ];
         expect(
           landed,
@@ -191,7 +175,13 @@ void main() {
     });
 
     test('the cheap-Write prerequisite is judged on the inventory', () {
-      expect(hasCheapWriteItem(kFormatInventory), isFalse);
+      final withoutF21 = <FormatInfo>[
+        for (final f in kFormatInventory)
+          if (f.code != 'F21') f,
+      ];
+      // Build step 4b added one (F21), and only that one.
+      expect(hasCheapWriteItem(kFormatInventory), isTrue);
+      expect(hasCheapWriteItem(withoutF21), isFalse);
       const cheap = FormatInfo(
         'F99',
         'cheap write',
@@ -200,7 +190,7 @@ void main() {
         0.05,
         5,
       );
-      expect(hasCheapWriteItem([...kFormatInventory, cheap]), isTrue);
+      expect(hasCheapWriteItem([...withoutF21, cheap]), isTrue);
       const slow = FormatInfo(
         'F98',
         'slow write',
@@ -209,7 +199,7 @@ void main() {
         0.05,
         12,
       );
-      expect(hasCheapWriteItem([...kFormatInventory, slow]), isFalse);
+      expect(hasCheapWriteItem([...withoutF21, slow]), isFalse);
       const notBuilt = FormatInfo(
         'F97',
         'not generated',
@@ -219,11 +209,10 @@ void main() {
         5,
         generated: false,
       );
-      expect(hasCheapWriteItem([...kFormatInventory, notBuilt]), isFalse);
+      expect(hasCheapWriteItem([...withoutF21, notBuilt]), isFalse);
     });
 
     test('the patterns match what they are meant to', () {
-      expect(_formats4b.single.hasMatch('item_generators_4b.dart'), isTrue);
       expect(_refit.single.hasMatch('v3_refit.dart'), isTrue);
       expect(_refit.single.hasMatch('v3_re_fit.dart'), isTrue);
       expect(_drillDown.single.hasMatch('v3_drill_down.dart'), isTrue);
@@ -232,12 +221,7 @@ void main() {
       // None matches a file that exists today: the gates are pending. The
       // picker (v3_picker.dart) has landed and its gates are enforced.
       for (final f in files) {
-        for (final p in [
-          ..._formats4b,
-          ..._refit,
-          ..._drillDown,
-          ..._scriptGate,
-        ]) {
+        for (final p in [..._refit, ..._drillDown, ..._scriptGate]) {
           expect(p.hasMatch(f), isFalse, reason: f);
         }
       }

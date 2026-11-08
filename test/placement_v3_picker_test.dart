@@ -96,6 +96,7 @@ void main() {
       expect(c.selfRated, isTrue);
       expect(c.clean, isFalse);
     }
+    expect(say.length, lessThanOrEqualTo(const PickerConfig().sayItems));
     // No Say item is among the clean ones of any word skill, and Say is not
     // placed.
     expect(r.result.skills.containsKey(_say), isFalse);

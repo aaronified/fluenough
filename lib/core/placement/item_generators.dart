@@ -2,7 +2,10 @@ import 'dart:math' as math;
 
 import '../models/card.dart';
 import 'cognate_score.dart';
+import 'item_audit.dart' show matcherRight;
 import 'item_registry.dart';
+import 'item_solvers.dart';
+import 'unit_model.dart';
 import 'placement_data.dart';
 
 // The item generators of "Find my level" V3, with the item-generation fixes of
@@ -167,7 +170,7 @@ String _stripMarks(String t) => t.replaceAll(_marks, '');
 /// The language's items' common ground: the word and sentence cards read from
 /// the data, with their cognate scores.
 class GenContext {
-  GenContext(this.data, {int seed = 1})
+  GenContext(this.data, {this.seed = 1})
     : scorer = CognateScorer(data.language),
       rng = math.Random(seed) {
     _read();
@@ -179,6 +182,13 @@ class GenContext {
   final PlacementLanguageData data;
   final CognateScorer scorer;
   final math.Random rng;
+  final int seed;
+
+  /// A generator of its own for [name] (so a generator's draws do not depend
+  /// on what ran before it).
+  math.Random stream(String name) => math.Random(
+    seed * 1000003 + name.codeUnits.fold<int>(0, (a, b) => a * 31 + b),
+  );
 
   final List<VocabWord> vocab = <VocabWord>[];
 
@@ -685,6 +695,70 @@ class ItemGenerators {
     return out;
   }
 
+  /// Gap spelling (F21): the English meaning and the word with one unit left
+  /// out, the learner types the unit. The gap is the position where none of
+  /// the audit's gap-filling cues (letter patterns, unit triples and pairs,
+  /// edges, unit frequency) picks the right unit, so the course's spelling
+  /// patterns do not fill it, and knowing the word does. A word with no such
+  /// position gets no item.
+  List<RegItem> gapTyping() {
+    final words = <VocabWord>[
+      for (final v in cx.vocab)
+        if (!v.leaky &&
+            v.gloss.isNotEmpty &&
+            v.units.length >= 4 &&
+            v.units.length <= 9)
+          v,
+    ];
+    final model = UnitModel(<List<String>>[for (final v in cx.vocab) v.units]);
+    final alphabet = <String>[
+      for (final e in model.uni.entries)
+        if (e.value >= 2) e.key,
+    ]..sort();
+    final out = <RegItem>[];
+    for (final v in words) {
+      model.remove(v.units);
+      var bestGap = -1;
+      var bestSpread = -1;
+      for (var gap = 0; gap < v.units.length; gap++) {
+        // A unit that is a bare mark or punctuation is never the gap.
+        if (latinLetters(v.units[gap]).isEmpty &&
+            !RegExp(r'\p{L}', unicode: true).hasMatch(v.units[gap])) {
+          continue;
+        }
+        final abc = alphabet.contains(v.units[gap])
+            ? alphabet
+            : <String>[...alphabet, v.units[gap]];
+        final r = model.gapSolvers(v.units, gap, abc);
+        if (r.accuracy.any((a) => a > 0.04)) continue;
+        // The gap the cues miss by the widest margin.
+        final spread = r.beaten.reduce(math.min);
+        if (spread > bestSpread) {
+          bestSpread = spread;
+          bestGap = gap;
+        }
+      }
+      model.restore(v.units);
+      if (bestGap < 0) continue;
+      out.add(
+        RegItem(
+          id: _key(v.card.id, 'F21'),
+          format: 'F21',
+          cardId: v.card.id,
+          deck: v.deck,
+          prompt: v.gloss,
+          promptRoman: v.gloss,
+          answerTiles: v.units,
+          accepted: <String>[v.units[bestGap]],
+          gapIndex: bestGap,
+          cognateScore: v.cognateScore,
+          lemmas: <String>{v.lemma},
+        ),
+      );
+    }
+    return out;
+  }
+
   /// English meaning, type the word (F7), and the same to say (F18).
   List<RegItem> typedOrSaid(String format) {
     final out = <RegItem>[];
@@ -741,6 +815,7 @@ class ItemGenerators {
   /// seen that word would) and as far from the nearest other word as that
   /// real word is.
   List<RegItem> pseudowords(String format, {int count = 400}) {
+    final rng = cx.stream('pseudo');
     final real = <String>{for (final v in cx.vocab) v.word.toLowerCase()};
     final tri = <String, int>{};
     final bi = <String, int>{};
@@ -822,16 +897,16 @@ class ItemGenerators {
     var wants = 0;
     while (out.length < count && wants < count * 6) {
       wants++;
-      final want = cx.rng.nextInt(single.length);
+      final want = rng.nextInt(single.length);
       final sources = byLength[single[want].units.length]!;
       for (var tries = 0; tries < 600; tries++) {
-        final v = sources[cx.rng.nextInt(sources.length)];
-        final w = cx.vocab[cx.rng.nextInt(cx.vocab.length)];
+        final v = sources[rng.nextInt(sources.length)];
+        final w = cx.vocab[rng.nextInt(cx.vocab.length)];
         final u = List<String>.of(v.units);
-        final changes = 1 + cx.rng.nextInt(3);
+        final changes = 1 + rng.nextInt(3);
         for (var c = 0; c < changes; c++) {
-          final i = 1 + cx.rng.nextInt(u.length - 2);
-          if (cx.rng.nextBool() && i + 1 < u.length - 1) {
+          final i = 1 + rng.nextInt(u.length - 2);
+          if (rng.nextBool() && i + 1 < u.length - 1) {
             final t = u[i];
             u[i] = u[i + 1];
             u[i + 1] = t;
@@ -958,40 +1033,65 @@ class ItemGenerators {
       return total;
     }
 
+    final dirs = <(bool, List<int>)>[];
+    final cues = ContextCues(<List<String>>[
+      for (final s in cx.sentences) s.words,
+    ]);
+    final balances = <bool, DirectionBalance>{
+      true: DirectionBalance(ContextCues.names.length),
+      false: DirectionBalance(ContextCues.names.length),
+    };
     for (final s in cx.sentences) {
-      if (s.inner || s.words.length < 3) continue;
+      if (s.inner || s.words.length < 2) continue;
+      final balance = balances[s.nonCognateContent >= 2]!;
       final lower = [for (final w in s.words) w];
-      final at = <int>[
-        for (var i = 0; i + 1 < lower.length; i++)
-          if (lower[i].toLowerCase() != lower[i + 1].toLowerCase()) i,
+      // Two words of the sentence swapped: neighbours first, then words up to
+      // three places apart.
+      final at = <(int, int)>[
+        for (var gap = 1; gap <= 3; gap++)
+          for (var i = 0; i + gap < lower.length; i++)
+            if (lower[i].toLowerCase() != lower[i + gap].toLowerCase())
+              (i, i + gap),
       ];
       if (at.isEmpty) continue;
-      var i = at.first;
-      var bestScore = double.negativeInfinity;
-      for (final k in at) {
-        final trial = List<String>.of(lower);
-        final tmp = trial[k];
-        trial[k] = trial[k + 1];
-        trial[k + 1] = tmp;
-        final score = plausibility(trial);
-        if (score > bestScore) {
-          bestScore = score;
-          i = k;
+      final good = '${s.leadingMark}${lower.join(' ')}${s.trailingMark}';
+      final goodWords = targetWords(good);
+      final goodScores = cues.scores(goodWords, goodWords);
+      // The swaps whose wrong order the course's word and ending pairs rate
+      // like the right one (or in the direction the class is short of), the
+      // most natural-looking first.
+      final tries = <(double, String, List<int>)>[];
+      for (final (k, m) in at) {
+        final swapped = List<String>.of(lower);
+        final tmp = swapped[k];
+        swapped[k] = swapped[m];
+        swapped[m] = tmp;
+        // Capitalisation stays with the position, as the end marks do.
+        if (k == 0) {
+          swapped[0] = _capitalLike(swapped[0], lower[0]);
+          swapped[m] = _capitalLike(swapped[m], lower[m]);
+        }
+        final bad = '${s.leadingMark}${swapped.join(' ')}${s.trailingMark}';
+        if (bad == good) continue;
+        final badScores = cues.scores(targetWords(bad), goodWords);
+        tries.add((
+          plausibility(swapped),
+          bad,
+          DirectionBalance.directions(goodScores, badScores),
+        ));
+      }
+      tries.sort((x, y) => y.$1.compareTo(x.$1));
+      (double, String, List<int>)? pick;
+      for (final t in tries) {
+        if (balance.allows(t.$3)) {
+          pick = t;
+          break;
         }
       }
-      final swapped = List<String>.of(lower);
-      final t = swapped[i];
-      swapped[i] = swapped[i + 1];
-      swapped[i + 1] = t;
-      // Capitalisation stays with the position, as the end marks do.
-      if (i == 0) {
-        swapped[0] = _capitalLike(swapped[0], lower[0]);
-        swapped[1] = _capitalLike(swapped[1], lower[1]);
-      }
-      final good = '${s.leadingMark}${lower.join(' ')}${s.trailingMark}';
-      final bad = '${s.leadingMark}${swapped.join(' ')}${s.trailingMark}';
-      if (good == bad) continue;
-      final opts = cx.shuffled(<String>[good, bad]);
+      if (pick == null) continue;
+      balance.record(pick.$3);
+      dirs.add((s.nonCognateContent >= 2, pick.$3));
+      final opts = cx.shuffled(<String>[good, pick.$2]);
       out.add(
         RegItem(
           id: _key(s.card.id, 'S2'),
@@ -1010,6 +1110,47 @@ class ItemGenerators {
         ),
       );
     }
+    // Exact balance per class: while a cue still favours one direction, the
+    // last item that leans that way is dropped.
+    for (final clean in <bool>[true, false]) {
+      final keep = <int>[
+        for (var i = 0; i < out.length; i++)
+          if (dirs[i].$1 == clean) i,
+      ];
+      var changed = true;
+      while (changed) {
+        changed = false;
+        for (var c = 0; c < ContextCues.names.length && !changed; c++) {
+          final h = keep.where((i) => dirs[i].$2[c] == 1).toList();
+          final l = keep.where((i) => dirs[i].$2[c] == -1).toList();
+          if (h.length > l.length) {
+            keep.remove(h.last);
+            changed = true;
+          } else if (l.length > h.length) {
+            keep.remove(l.last);
+            changed = true;
+          }
+        }
+      }
+      final drop = <int>{
+        for (var i = 0; i < out.length; i++)
+          if (dirs[i].$1 == clean && !keep.contains(i)) i,
+      };
+      final kept = <RegItem>[
+        for (var i = 0; i < out.length; i++)
+          if (!drop.contains(i)) out[i],
+      ];
+      final keptDirs = <(bool, List<int>)>[
+        for (var i = 0; i < out.length; i++)
+          if (!drop.contains(i)) dirs[i],
+      ];
+      out
+        ..clear()
+        ..addAll(kept);
+      dirs
+        ..clear()
+        ..addAll(keptDirs);
+    }
     return out;
   }
 
@@ -1022,62 +1163,94 @@ class ItemGenerators {
   }
 
   /// Sentence picks: a written sentence (F5) or a heard one (F17), pick its
-  /// English meaning. The wrong options change one word of the right
-  /// translation for a word of the same part of speech and a similar length
-  /// and a similar resemblance to the sentence's own words.
+  /// English meaning. The wrong options are the translations of OTHER
+  /// sentences of the course (a one-word contrast of the right translation
+  /// would make the right option the centre of the four, and a gamer finds
+  /// the centre), chosen so that no cue of the audit separates the right
+  /// option: it is neither the longest nor the shortest, neither the most nor
+  /// the least like the prompt's words, no option has more of the first
+  /// words' English than another, and it is not the centre of the options.
+  /// A sentence for which no such three exist gets no item.
   List<RegItem> sentencePicks(String format) {
     final out = <RegItem>[];
-    for (final s in cx.sentences) {
+    final patterns = <(bool, int, int)>[];
+    final lang = cx.data.language;
+    final known = buildKnownText(cx.early);
+    final all = cx.sentences;
+    final rng = cx.stream('picks');
+    final simBalances = <bool, PatternBalance>{
+      true: PatternBalance(),
+      false: PatternBalance(),
+    };
+    final lengthBalances = <bool, PatternBalance>{
+      true: PatternBalance(),
+      false: PatternBalance(),
+    };
+    for (final s in all) {
+      final clean = s.nonCognateContent >= 2;
+      final simBalance = simBalances[clean]!;
+      final lengthBalance = lengthBalances[clean]!;
       final english = s.english;
-      final romans =
-          (s.card.reading == null ? s.words : targetWords(s.card.reading!))
-              .where((w) => latinLetters(w).length >= 4)
-              .toList();
-      double affinity(String token) {
-        var best = 0.0;
-        for (final w in romans) {
-          best = math.max(best, wordSimilarity(w, token, cx.data.language));
-        }
-        return best;
+      final prompt = targetWords(s.card.reading ?? s.text);
+      double sim(String o) => maxSimilarity(prompt, glossWords(o), lang);
+      final k0 = knownWordScore(prompt, english, known);
+      final mine = optionWords(english);
+      final pool = <(String, double)>[];
+      final order = List<SentenceInfo>.of(all)..shuffle(rng);
+      for (final o in order) {
+        if (pool.length >= 120) break;
+        if (o.card.id == s.card.id) continue;
+        final e = o.english;
+        if (e.toLowerCase() == english.toLowerCase()) continue;
+        final overlap = mine.intersection(optionWords(e)).length;
+        if (overlap > math.max(1, mine.length ~/ 2)) continue;
+        if ((e.length - english.length).abs() > 30) continue;
+        if (knownWordScore(prompt, e, known) != k0) continue;
+        pool.add((e, sim(e)));
       }
-
-      final matches = RegExp(r"[A-Za-z']+").allMatches(english).toList();
-      final variants = <String>[];
-      final order = cx.shuffled(matches);
-      for (final m in order) {
-        if (variants.length >= 3) break;
-        final token = m[0]!;
-        final heads = cx.byHead[token.toLowerCase()];
-        if (heads == null || token.length < 3) continue;
-        // A word the gamer's first 100 words give away stays in every option.
-        if (cx.earlyGlossHeads.contains(token.toLowerCase())) continue;
-        final pos = heads.first.pos;
-        if (pos != 'noun' && pos != 'verb' && pos != 'adj') continue;
-        final a0 = affinity(token);
-        final cands = <(double, String)>[];
-        final pool = cx.shuffled(cx.byPos[pos] ?? const <VocabWord>[]).take(60);
-        for (final o in pool) {
-          final h = o.glossHead;
-          if (h.isEmpty || h == token.toLowerCase()) continue;
-          if ((h.length - token.length).abs() > 2) continue;
-          if (english.toLowerCase().contains(h)) continue;
-          if (cx.earlyGlossHeads.contains(h)) continue;
-          cands.add(((affinity(h) - a0).abs(), h));
+      if (pool.length < 3) continue;
+      final sm0 = sim(english);
+      List<String>? chosen;
+      int? simPattern;
+      int? lengthPattern;
+      final wantSim = simBalance.order();
+      final wantLength = lengthBalance.order();
+      // The pattern the class is most behind on first; then any pattern that
+      // keeps the proportions (within one item). The proportions are kept per
+      // class (a sentence with cognates is audited apart).
+      for (var round = 0; round < 2 && chosen == null; round++) {
+        for (var t = 0; t < 900 && chosen == null; t++) {
+          final pick = <int>{};
+          while (pick.length < 3) {
+            pick.add(rng.nextInt(pool.length));
+          }
+          final opts = <String>[english, for (final i in pick) pool[i].$1];
+          final sims = <double>[sm0, for (final i in pick) pool[i].$2];
+          final lens = <double>[for (final o in opts) o.length.toDouble()];
+          final sp = rankPattern(sims);
+          final lp = rankPattern(lens);
+          if (sp < 0 || lp < 0) continue;
+          if (round == 0) {
+            if (sp != wantSim.first || lp != wantLength.first) continue;
+          } else if (!simBalance.allows(sp) || !lengthBalance.allows(lp)) {
+            continue;
+          }
+          // The centre of the options must not give the right one away.
+          final centre = centrality(opts);
+          if (expectedBoth(centre, 0).high > 0.25 + 1e-9 ||
+              expectedBoth(centre, 0).low > 0.25 + 1e-9) {
+            continue;
+          }
+          chosen = opts;
+          simPattern = sp;
+          lengthPattern = lp;
         }
-        if (cands.isEmpty) continue;
-        cands.sort(
-          (x, y) => x.$1 != y.$1 ? x.$1.compareTo(y.$1) : x.$2.compareTo(y.$2),
-        );
-        final top = cands.take(4).toList();
-        final h = top[cx.rng.nextInt(top.length)].$2;
-        final cased = token[0] != token[0].toLowerCase()
-            ? h[0].toUpperCase() + h.substring(1)
-            : h;
-        final v = english.replaceRange(m.start, m.end, cased);
-        if (v != english && !variants.contains(v)) variants.add(v);
       }
-      if (variants.length < 3) continue;
-      final opts = cx.shuffled(<String>[english, ...variants]);
+      if (chosen == null) continue;
+      simBalance.record(simPattern!);
+      lengthBalance.record(lengthPattern!);
+      patterns.add((clean, simPattern, lengthPattern));
+      final opts = List<String>.of(chosen)..shuffle(rng);
       out.add(
         RegItem(
           id: _key(s.card.id, format),
@@ -1096,6 +1269,50 @@ class ItemGenerators {
         ),
       );
     }
+    // Trim each class to exact proportions (a quarter of the right options
+    // highest, a quarter lowest, in similarity and in length), so a solver
+    // that takes the highest or the lowest gets a quarter and no more.
+    for (final clean in <bool>[true, false]) {
+      final keep = <int>[
+        for (var i = 0; i < out.length; i++)
+          if (patterns[i].$1 == clean) i,
+      ];
+      var changed = true;
+      while (changed && keep.isNotEmpty) {
+        changed = false;
+        final n = keep.length;
+        for (var which = 0; which < 2 && !changed; which++) {
+          for (var pat = 0; pat < 2 && !changed; pat++) {
+            final over = <int>[
+              for (final i in keep)
+                if ((which == 0 ? patterns[i].$2 : patterns[i].$3) == pat) i,
+            ];
+            if (over.length * 4 > n) {
+              keep.remove(over.last);
+              changed = true;
+            }
+          }
+        }
+      }
+      final drop = <int>{
+        for (var i = 0; i < out.length; i++)
+          if (patterns[i].$1 == clean && !keep.contains(i)) i,
+      };
+      final kept = <RegItem>[
+        for (var i = 0; i < out.length; i++)
+          if (!drop.contains(i)) out[i],
+      ];
+      final keptPatterns = <(bool, int, int)>[
+        for (var i = 0; i < out.length; i++)
+          if (!drop.contains(i)) patterns[i],
+      ];
+      out
+        ..clear()
+        ..addAll(kept);
+      patterns
+        ..clear()
+        ..addAll(keptPatterns);
+    }
     return out;
   }
 
@@ -1104,6 +1321,18 @@ class ItemGenerators {
   /// stem, so only the meaning of the sentence decides.
   List<RegItem> cloze() {
     final out = <RegItem>[];
+    final rng = cx.stream('cloze');
+    final cues = ContextCues(<List<String>>[
+      for (final x in cx.sentences) x.words,
+    ]);
+    final knownGloss = <String>{
+      for (final v in cx.early) ...<String>{
+        v.gloss.toLowerCase(),
+        v.glossHead,
+        v.word.toLowerCase(),
+        v.roman.toLowerCase(),
+      },
+    }..remove('');
     // Word pairs of the course: a distractor is the more plausible in its
     // place the more often it stands next to the neighbours of the blank, so
     // among words of the right ending and length the most plausible are
@@ -1135,7 +1364,7 @@ class ItemGenerators {
           if (tileUnits(s.words[i]).length >= 3) i,
       ];
       if (idx.isEmpty) continue;
-      final i = idx[cx.rng.nextInt(idx.length)];
+      final i = idx[rng.nextInt(idx.length)];
       final target = s.words[i].toLowerCase();
       final tu = tileUnits(target);
       // The ending is the last two units (the last one for a short word).
@@ -1168,20 +1397,46 @@ class ItemGenerators {
       double fit(String w) =>
           math.log(1 + (pairs['$prev|$w'] ?? 0)) +
           math.log(1 + (pairs['$w|$next'] ?? 0));
-      final shuffledFound = cx.shuffled(found);
+      final shuffledFound = List<(int, String)>.of(found)..shuffle(rng);
       shuffledFound.sort((x, y) {
         final byLength = x.$1.compareTo(y.$1);
         return byLength != 0 ? byLength : fit(y.$2).compareTo(fit(x.$2));
       });
-      final options = <String>[
-        target,
-        for (final f in shuffledFound.take(3)) f.$2,
+      // The options must give no cue to the audit's solvers: the course's
+      // word pairs and ending pairs and triples rate no option above or
+      // below the right one, no option is longer, and no option is a word
+      // the gamer's first words contain more than the others.
+      final prefix = <String>[for (var k = 0; k < i; k++) s.words[k]];
+      final suffixWords = <String>[
+        for (var k = i + 1; k < s.words.length; k++) s.words[k],
       ];
-      if (options.length < 4) continue;
+      List<String> filled(String o) => <String>[...prefix, o, ...suffixWords];
+      final truthFill = filled(target);
+      List<double> cuesOf(String o) => <double>[
+        ...cues.scores(filled(o), truthFill),
+        o.length.toDouble(),
+        knownGloss.contains(o.toLowerCase()) ? 1.0 : 0.0,
+      ];
+      // Distractors the solvers score exactly as the right word, in every
+      // cue: then the four options tie and a solver has a quarter.
+      final targetCues = cuesOf(target);
+      final pool = <String>[];
+      for (final f in shuffledFound.take(80)) {
+        final c = cuesOf(f.$2);
+        var same = true;
+        for (var k = 0; k < c.length && same; k++) {
+          if ((c[k] - targetCues[k]).abs() > 1e-9) same = false;
+        }
+        if (same) pool.add(f.$2);
+        if (pool.length >= 6) break;
+      }
+      if (pool.length < 3) continue;
+      pool.shuffle(rng);
+      final options = <String>[target, ...pool.take(3)];
       final blanked = <String>[
         for (var k = 0; k < s.words.length; k++) k == i ? '___' : s.words[k],
       ];
-      final opts = cx.shuffled(options);
+      final opts = List<String>.of(options)..shuffle(rng);
       out.add(
         RegItem(
           id: _key(s.card.id, 'F6'),
@@ -1273,6 +1528,7 @@ class ItemGenerators {
   List<RegItem> matching({int perCard = 8}) {
     final out = <RegItem>[];
     final used = <String>{};
+    final rng = cx.stream('matching');
     // Matching is stricter than the other word formats: a word that merely
     // looks a little like its meaning (0.45) is left out too.
     bool eligible(VocabWord v) => !v.leaky && v.gloss.isNotEmpty;
@@ -1283,34 +1539,49 @@ class ItemGenerators {
           .near(v)
           .where((o) => eligible(o) && !used.contains(o.card.id))
           .toList();
-      final chosen = <VocabWord>[v];
-      for (final o in cx.shuffled(others)) {
-        if (chosen.length >= 4) break;
-        if (chosen.any(
-          (c) =>
-              c.gloss.toLowerCase() == o.gloss.toLowerCase() ||
-              c.lemma == o.lemma,
-        )) {
-          continue;
+      // Several screens are drawn; the one the audit's matcher (and its
+      // opposite) does worst on is used, so that the look of the words says
+      // nothing of their meanings.
+      RegItem? best;
+      var bestScore = double.infinity;
+      for (var draw = 0; draw < 6; draw++) {
+        final chosen = <VocabWord>[v];
+        for (final o in List<VocabWord>.of(others)..shuffle(rng)) {
+          if (chosen.length >= 4) break;
+          if (chosen.any(
+            (c) =>
+                c.gloss.toLowerCase() == o.gloss.toLowerCase() ||
+                c.lemma == o.lemma,
+          )) {
+            continue;
+          }
+          chosen.add(o);
         }
-        chosen.add(o);
-      }
-      if (chosen.length < 4) continue;
-      used.addAll(chosen.map((c) => c.card.id));
-      out.add(
-        RegItem(
+        if (chosen.length < 4) break;
+        final item = RegItem(
           id: _key(v.card.id, 'F9'),
           format: 'F9',
           cardId: v.card.id,
           deck: chosen.map((c) => c.deck).reduce(math.max),
           prompt: chosen.map((c) => c.display).join(' | '),
           pairs: <(String, String)>[for (final c in chosen) (c.roman, c.gloss)],
-          options: cx.shuffled(chosen.map((c) => c.gloss)),
+          options: List<String>.of(chosen.map((c) => c.gloss))..shuffle(rng),
           cognateScore: chosen.map((c) => c.cognateScore).reduce(math.max),
           lemmas: <String>{for (final c in chosen) c.lemma},
           coCards: <String>{for (final c in chosen) c.card.id},
-        ),
-      );
+        );
+        final probe = math.Random(7);
+        final score =
+            matcherRight(item, cx.data.language, probe, anti: false) +
+            matcherRight(item, cx.data.language, probe, anti: true);
+        if (score < bestScore) {
+          bestScore = score;
+          best = item;
+        }
+      }
+      if (best == null) continue;
+      used.addAll(best.coCards);
+      out.add(best);
     }
     return out;
   }

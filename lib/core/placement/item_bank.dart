@@ -51,6 +51,7 @@ class ItemBank {
       ...g.wordToMeaning('F13'),
       ...g.meaningToWord(),
       ...g.typedOrSaid('F7'),
+      ...g.gapTyping(),
       ...g.typedOrSaid('F18'),
       ...g.yesNoReal('F1'),
       ...g.yesNoReal('F14'),

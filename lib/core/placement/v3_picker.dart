@@ -196,6 +196,9 @@ class PickerConfig {
     this.yesNoBlock = false,
     this.sayItems = 1,
     this.sayRatingUntilSeconds = 180,
+    this.mixedBonus = 0.3,
+    this.climbQuantile = 0.12,
+    this.climbTolerance = 0.0,
     this.maxItems = 40,
     this.maxSeconds = 300,
     this.skillCap = 14,
@@ -221,6 +224,14 @@ class PickerConfig {
   /// The rating of Say is optional (never evidence): it is left out when the
   /// run is already longer than this, to keep the median run short.
   final double sayRatingUntilSeconds;
+
+  /// A proven band is climbed from while this quantile of the posterior lies
+  /// more than [climbTolerance] tenths above the proven ceiling.
+  /// What an item that also proves another skill's band is worth, in bits.
+  final double mixedBonus;
+
+  final double climbQuantile;
+  final double climbTolerance;
 
   final int maxItems;
   final double maxSeconds;
@@ -481,7 +492,9 @@ class V3Picker {
     }
     // Proven: climb while the proven band holds the start down, that is,
     // while the lower edge of the posterior is above the ceiling.
-    if (band < 10 && _quantileClass(skill, 0.1) > proven + _tenth) {
+    if (band < 10 &&
+        _quantileClass(skill, config.climbQuantile) >
+            proven + (config.climbTolerance * _tenth).round()) {
       st.proving = math.max(band + 1, _quantileBand(skill, 0.5));
       return false;
     }
@@ -685,12 +698,12 @@ class V3Picker {
           if (t == skill || !_tested.contains(t)) continue;
           final p = _state[t]?.proving;
           if (p != null && !_isDoneQuiet(t) && PickerBandOf.of(pool, c) == p) {
-            bonus += 0.3;
+            bonus += config.mixedBonus;
           } else if (p == null &&
               model.touchesOf(t) < config.locateItems &&
               _near_(c, band)) {
             // An item that also locates the other skill.
-            bonus += 0.3;
+            bonus += config.mixedBonus;
           }
         }
         final score = (_information(c) + 0.2 + bonus) / c.seconds;

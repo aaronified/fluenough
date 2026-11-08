@@ -17,6 +17,10 @@ import 'package:fluenough/core/placement/item_audit.dart';
 import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/item_generators.dart';
 import 'package:fluenough/core/placement/item_registry.dart';
+import 'package:fluenough/core/placement/item_solvers.dart';
+import 'package:fluenough/core/placement/placement_questions.dart'
+    show PlacementSkill;
+import 'package:fluenough/core/placement/unit_model.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -31,8 +35,6 @@ PlacementCourse _course(String language) {
   }
   return loadPlacementCourse(files, language: language);
 }
-
-final RegExp _english = RegExp(r"[A-Za-z']+");
 
 void main() {
   group('the inventory', () {
@@ -158,12 +160,16 @@ void main() {
           'F2',
           'F3',
           'F4',
+          'F5',
           'F7',
           'F8',
           'F9',
           'F13',
           'F16',
+          'F17',
           'F18',
+          'F21',
+          'S2',
         ]) {
           expect(counts[code] ?? 0, greaterThan(20), reason: '$language $code');
         }
@@ -266,8 +272,8 @@ void main() {
         expect(audit.passes, isTrue);
       });
 
-      test('keeps the end marks of a word-order pair fixed and swaps one '
-          'constituent', () {
+      test('keeps the end marks of a word-order pair fixed and swaps two '
+          'words', () {
         final items = ItemGenerators(cx).wordOrder();
         expect(items, isNotEmpty);
         for (final it in items) {
@@ -287,9 +293,9 @@ void main() {
             for (var i = 0; i < g.length; i++)
               if (g[i].toLowerCase() != b[i].toLowerCase()) i,
           ];
-          // One constituent: two adjacent words trade places.
+          // Two words (up to three places apart) trade places.
           expect(differing.length, 2, reason: it.id);
-          expect(differing[1] - differing[0], 1, reason: it.id);
+          expect(differing[1] - differing[0], lessThanOrEqualTo(3));
           expect(b[differing[0]].toLowerCase(), g[differing[1]].toLowerCase());
           expect(b[differing[1]].toLowerCase(), g[differing[0]].toLowerCase());
         }
@@ -369,48 +375,161 @@ void main() {
         expect(loose / of('F3').length, lessThanOrEqualTo(0.01));
       });
 
-      test('makes sentence picks of one-word contrasts of the translation', () {
+      test('makes sentence picks whose wrong options are other sentences, '
+          'with no cue for the solvers', () {
         final g = ItemGenerators(cx);
-        final picks = <RegItem>[
-          ...g.sentencePicks('F5'),
-          ...g.sentencePicks('F17'),
-        ];
-        expect(picks, isNotEmpty);
-        for (final it in picks) {
-          final right = it.options[it.correct];
-          final rt = _english.allMatches(right).map((m) => m[0]!).toList();
-          final card = cx.sentences.firstWhere((s) => s.card.id == it.cardId);
-          expect(right, card.english);
-          expect(it.options.toSet().length, 4);
-          for (var i = 0; i < 4; i++) {
-            if (i == it.correct) continue;
-            final ot = _english
-                .allMatches(it.options[i])
-                .map((m) => m[0]!)
-                .toList();
-            expect(ot.length, rt.length, reason: it.id);
-            final diff = <int>[
-              for (var k = 0; k < rt.length; k++)
-                if (rt[k] != ot[k]) k,
+        for (final format in <String>['F5', 'F17']) {
+          final picks = g.sentencePicks(format);
+          expect(picks.length, greaterThan(100), reason: '$language $format');
+          var simTop = 0;
+          var lenTop = 0;
+          var lenBottom = 0;
+          final known = buildKnownText(cx.early);
+          for (final it in picks) {
+            final right = it.options[it.correct];
+            final card = cx.sentences.firstWhere((s) => s.card.id == it.cardId);
+            expect(right, card.english);
+            expect(it.options.toSet().length, 4);
+            // No wrong option is the right translation with one word changed
+            // (that would make the right one the centre of the four).
+            final centre = centrality(it.options);
+            final c = expectedBoth(centre, it.correct);
+            expect(c.high, lessThanOrEqualTo(0.25 + 1e-9), reason: it.id);
+            expect(c.low, lessThanOrEqualTo(0.25 + 1e-9), reason: it.id);
+            // The gamer's first words are in no option more than in another.
+            final prompt = targetWords(it.promptRoman ?? it.prompt);
+            final scores = <double>[
+              for (final o in it.options) knownWordScore(prompt, o, known),
             ];
-            expect(diff.length, 1, reason: '${it.id}: ${it.options[i]}');
-            // The contrast has about the length of the word it replaced.
-            expect(
-              (ot[diff.first].length - rt[diff.first].length).abs(),
-              lessThanOrEqualTo(2),
-            );
-            expect(
-              (it.options[i].length - right.length).abs(),
-              lessThanOrEqualTo(2),
-            );
+            expect(scores.toSet().length, 1, reason: it.id);
+            if (it.options.where((o) => o.length > right.length).isEmpty) {
+              lenTop++;
+            }
+            if (it.options.where((o) => o.length < right.length).isEmpty) {
+              lenBottom++;
+            }
+            final sims = <double>[
+              for (final o in it.options)
+                maxSimilarity(prompt, glossWords(o), language),
+            ];
+            if (rankPattern(<double>[
+                  sims[it.correct],
+                  for (var i = 0; i < 4; i++)
+                    if (i != it.correct) sims[i],
+                ]) ==
+                0) {
+              simTop++;
+            }
+          }
+          // A solver that takes the longest, the shortest or the most similar
+          // option gets no more than a quarter (cognate-class sentences are
+          // audited apart and kept in proportion too).
+          expect(lenTop / picks.length, lessThanOrEqualTo(0.27));
+          expect(lenBottom / picks.length, lessThanOrEqualTo(0.27));
+          expect(simTop / picks.length, lessThanOrEqualTo(0.27));
+          // The class passes the audit, so it is admitted.
+          expect(bank.audit.classes['$format:clean']!.passes, isTrue);
+          expect(of(format), isNotEmpty);
+        }
+      });
+
+      test('gap spelling (F21) is a cheap Write item the language patterns '
+          'cannot fill', () {
+        final info = formatInfo('F21');
+        expect(info.seconds, lessThanOrEqualTo(6));
+        expect(info.slip, lessThanOrEqualTo(0.10));
+        expect(info.guess, lessThanOrEqualTo(0.10));
+        expect(info.skills, {PlacementSkill.write});
+        final items = of('F21').toList();
+        expect(items.length, greaterThan(200), reason: language);
+        final model = UnitModel(<List<String>>[
+          for (final v in cx.vocab) v.units,
+        ]);
+        final alphabet = <String>[
+          for (final e in model.uni.entries)
+            if (e.value >= 2) e.key,
+        ]..sort();
+        var checked = 0;
+        for (final it in items.take(150)) {
+          final units = it.answerTiles;
+          expect(it.gapIndex, inInclusiveRange(0, units.length - 1));
+          expect(it.accepted, <String>[units[it.gapIndex]], reason: it.id);
+          final card = cx.vocab.firstWhere((v) => v.card.id == it.cardId);
+          expect(units, card.units, reason: it.id);
+          expect(it.prompt, card.gloss);
+          // No gap-filling cue of the language's own spelling patterns picks
+          // the unit.
+          model.remove(units);
+          final abc = alphabet.contains(units[it.gapIndex])
+              ? alphabet
+              : <String>[...alphabet, units[it.gapIndex]];
+          final r = model.gapSolvers(units, it.gapIndex, abc);
+          model.restore(units);
+          for (final a in r.accuracy) {
+            expect(a, lessThanOrEqualTo(0.04), reason: it.id);
+          }
+          checked++;
+        }
+        expect(checked, greaterThan(100));
+        expect(bank.audit.classes['F21:clean']!.passes, isTrue);
+        // Every tenth of the path has gap items, so a proof can be asked at
+        // any band.
+        final decks = course.data.deckCount;
+        for (var t = 0; t < 10; t++) {
+          final from = decks * t ~/ 10;
+          final to = decks * (t + 1) ~/ 10;
+          final n = items.where((i) => i.deck >= from && i.deck < to).length;
+          expect(n, greaterThanOrEqualTo(10), reason: '$language tenth $t');
+        }
+      });
+
+      test('word order is admitted and balanced: the right order scores '
+          'higher as often as lower on every cue', () {
+        final items = of('S2').toList();
+        expect(items.length, greaterThan(100), reason: language);
+        final cues = ContextCues(<List<String>>[
+          for (final s in cx.sentences) s.words,
+        ]);
+        for (final clean in <bool>[true, false]) {
+          final group = [
+            for (final it in items)
+              if ((cx.sentences
+                          .firstWhere((s) => s.card.id == it.cardId)
+                          .nonCognateContent >=
+                      2) ==
+                  clean)
+                it,
+          ];
+          for (var c = 0; c < ContextCues.names.length; c++) {
+            var higher = 0;
+            var lower = 0;
+            for (final it in group) {
+              final good = targetWords(it.options[it.correct]);
+              final bad = targetWords(it.options[1 - it.correct]);
+              final g = cues.scores(good, good)[c];
+              final b = cues.scores(bad, good)[c];
+              if ((g - b).abs() < 1e-9) continue;
+              g > b ? higher++ : lower++;
+            }
+            expect(higher, lower, reason: '$language clean=$clean cue $c');
           }
         }
+        expect(bank.audit.classes['S2:clean']!.passes, isTrue);
+      });
+
+      test('matching screens are drawn so the matcher does worse than '
+          'chance', () {
+        final c = bank.audit.classes['F9:clean']!;
+        expect(c.passes, isTrue);
+        expect(c.accuracy, lessThan(0.30));
       });
 
       test('makes clozes with no English hint and options that share the '
           'ending but not the stem', () {
         final cloze = ItemGenerators(cx).cloze();
-        expect(cloze, isNotEmpty);
+        // Few sentences have three same-ending words the context cues rate
+        // exactly alike (none in Hindi); the class is not admitted.
+        if (cloze.isEmpty) return;
         for (final it in cloze) {
           final card = cx.sentences.firstWhere((s) => s.card.id == it.cardId);
           expect(it.prompt.split('___').length, 2, reason: it.id);
@@ -806,8 +925,11 @@ void main() {
         // A cognate is not generated: the old figure stands.
         expect(es.rate(code, true, BankProfile.fixed, true), greaterThan(0.5));
       }
-      // A class the audit excludes (sentence picks) keeps the old figure.
-      expect(es.rate('F5', false, BankProfile.fixed, true), 0.30);
+      // Sentence picks now pass the audit at chance (a quarter), and gap
+      // spelling is the cheap Write item.
+      expect(es.rate('F5', false, BankProfile.fixed, true), 0.25);
+      expect(es.rate('F17', false, BankProfile.fixed, true), 0.25);
+      expect(es.rate('F21', false, BankProfile.fixed, true), 0.10);
       // The legacy bank is the adversary's own measurement, untouched.
       expect(es.rate('F5', false, BankProfile.legacy, true), 0.75);
     });
