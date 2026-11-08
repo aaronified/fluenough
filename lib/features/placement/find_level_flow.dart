@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart' hide Card;
@@ -11,15 +12,15 @@ import '../../core/languages/language_skills.dart';
 import '../../core/placement/assurance_model.dart';
 import '../../core/placement/declaration_options.dart';
 import '../../core/placement/placement_questions.dart';
-import '../../core/placement/placement_run.dart';
-import '../../core/placement/placement_session.dart';
-import '../../core/placement/saved_run.dart';
+import '../../core/placement/saved_run.dart' show placementDeckSetKey;
+import '../../core/placement/saved_v3_run.dart';
+import '../../core/placement/v3_session.dart';
 import '../../core/placement/skills_in_play.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
 import 'find_level_comparison.dart';
 import 'find_level_declaration.dart';
-import 'find_level_run_page.dart';
+import 'v3_run_page.dart';
 
 /// What a tap of Find my level checks and what it is called, for a language
 /// whose skills are [skills] (see [selectFindLevelSkills]).
@@ -100,11 +101,11 @@ Future<void> startFindLevel(
   int nowSeconds() => state.now().millisecondsSinceEpoch ~/ 1000;
 
   // A run paused within the last 7 days, on the same decks and app version.
-  SavedPlacementRun? saved;
+  SavedV3Run? saved;
   var droppedForDevice = false;
   if (settings.placementRunOf(code) case final json?) {
     try {
-      saved = SavedPlacementRun.fromJson(jsonDecode(json));
+      saved = SavedV3Run.fromJson(jsonDecode(json));
     } on FormatException {
       saved = null;
     }
@@ -116,7 +117,7 @@ Future<void> startFindLevel(
         )) {
       settings.setPlacementRun(code, null);
       saved = null;
-    } else if (!saved.fitsDevice(voice: canPlay, microphone: canSpeak)) {
+    } else if (!saved.fitsDevice(audio: canPlay, recogniser: canSpeak)) {
       // A voice or recogniser the run was begun with is gone: its answers
       // would replay onto other questions, so the next one is asked as a new
       // run. The learner is told, and the saved run is deleted only when the
@@ -134,7 +135,7 @@ Future<void> startFindLevel(
         content: Text(
           l10n.findLevelResumeBody(
             name,
-            saved!.events.where((e) => e.startsWith('a')).length,
+            saved!.events.where((e) => e != 'k' && e != 'm').length,
           ),
         ),
         actions: <Widget>[
@@ -158,15 +159,19 @@ Future<void> startFindLevel(
     saved = null;
   }
 
-  final PlacementDeclaration declaration;
+  final PlacementDeclaration? declaration;
   final Set<PlacementSkill> inPlay;
   final int seed;
-  final bool microphone;
+  final bool audio;
+  final bool recogniser;
+  final V3ScriptStart scriptStart;
   if (saved != null) {
     declaration = saved.declaration;
     inPlay = saved.skills;
     seed = saved.seed;
-    microphone = saved.microphone;
+    audio = saved.audio;
+    recogniser = saved.recogniser;
+    scriptStart = saved.scriptStart;
   } else {
     final wanted = <PlacementSkill>{...pick.skills, ...before.keys};
     if (wanted.isEmpty) {
@@ -199,44 +204,54 @@ Future<void> startFindLevel(
     }
     declaration = answer;
     seed = nowSeconds() & 0x7fffffff;
-    microphone = canSpeak;
+    audio = canPlay;
+    recogniser = canSpeak;
+    scriptStart = V3ScriptStart.ask;
   }
 
-  final downloads = state.deckDownloads;
-  final config = PlacementRunConfig(
-    deckCount: plan.data.deckCount,
-    skills: inPlay,
-    declaration: declaration,
-    seed: seed,
-    // Verified needs the path complete to B1 and every deck on the phone.
-    pathCompleteToB1: built >= builtB1,
-    allDecksDownloaded:
-        downloads == null ||
-        (!downloads.isDownloading(code) &&
-            downloads.missing(code, settings.spokenLanguages).isEmpty),
-    microphone: microphone,
-    grammarUnitDecks: <int>[
-      for (final (i, deck) in plan.data.decks.indexed)
-        if (deck.isGrammar) i,
-    ],
-    // Taken by the owner, 2026-11-05 (section 6.2).
-    extraScriptQuestion: true,
+  // The questions are made from the decks, which takes a few seconds the
+  // first time: the learner is told, and nothing else can be touched.
+  final items = await _withPreparing(
+    context,
+    l10n.findLevelPreparing,
+    () => state.placementItems(plan),
   );
-  final session = PlacementSession.replay(
-    config,
-    plan.data,
-    saved?.events ?? const <String>[],
-  );
+  if (!context.mounted) return;
 
-  void save(PlacementSession now) => settings.setPlacementRun(
+  var restarts = 0;
+  V3Run newRun({
+    Iterable<String> events = const <String>[],
+    V3ScriptStart start = V3ScriptStart.ask,
+    int? runSeed,
+  }) => V3Run.replay(
+    data: plan.data,
+    skills: inPlay,
+    audio: audio,
+    recogniser: recogniser,
+    seed: runSeed ?? seed,
+    declaration: declaration,
+    scriptStart: start,
+    items: items,
+    events: events,
+  );
+  var current = newRun(
+    events: saved?.events ?? const <String>[],
+    start: scriptStart,
+  );
+  var currentStart = scriptStart;
+  var currentSeed = seed;
+
+  void save(V3Run now) => settings.setPlacementRun(
     code,
     jsonEncode(
-      SavedPlacementRun(
+      SavedV3Run(
         language: code,
         declaration: declaration,
         skills: inPlay,
-        seed: seed,
-        microphone: microphone,
+        seed: currentSeed,
+        audio: audio,
+        recogniser: recogniser,
+        scriptStart: currentStart,
         deckSet: deckSet,
         appVersion: AppInfo.version,
         savedAt: nowSeconds(),
@@ -252,30 +267,40 @@ Future<void> startFindLevel(
   final done = await navigator.push<bool>(
     MaterialPageRoute<bool>(
       settings: const RouteSettings(name: '/find-level'),
-      builder: (_) => FindLevelRunPage(
-        session: session,
+      builder: (_) => V3RunPage(
+        run: current,
         languageName: name,
         language: plan.language,
         native: plan.native,
         cardOf: plan.data.cardById,
+        // A new run: "I do read it" skips the script check, "Check the
+        // letters again" asks it again.
+        restart: (start) {
+          restarts++;
+          currentStart = start;
+          currentSeed = (seed + restarts * 7919) & 0x7fffffff;
+          current = newRun(start: start, runSeed: currentSeed);
+          return current;
+        },
         onProgress: save,
-        // The outcome is written, and the paused run dropped once it is: a
-        // write that throws keeps the run to be carried on.
-        onFinish: (finished) =>
-            state.writePlacementRun(code, plan, finished.run, native: native),
+        // The outcome is written when Done is pressed, and the paused run
+        // dropped once it is: a write that throws keeps the run to be
+        // carried on.
+        onFinish: (result, overrides) {
+          state.writePlacementV3(
+            code,
+            plan,
+            result,
+            overrides: overrides,
+            native: native,
+            recheck: unconfirmed,
+          );
+          if (unconfirmed) toast = l10n.findLevelToastNewSet(name);
+        },
         recheck: unconfirmed
             ? FindLevelRecheck(
                 before: before,
-                onUse: () {
-                  state.writePlacementRun(
-                    code,
-                    plan,
-                    session.run,
-                    native: native,
-                    recheck: true,
-                  );
-                  toast = l10n.findLevelToastNewSet(name);
-                },
+                onUse: () {},
                 onKeep: () {
                   state.keepOldLevel(code);
                   toast = l10n.findLevelToastOldKept(name);
@@ -287,5 +312,37 @@ Future<void> startFindLevel(
   );
   if (done == true && context.mounted) {
     showAppSnackBar(context, toast ?? l10n.languagesToastLevel(name));
+  }
+}
+
+/// Runs [work] behind a dialog that says [message], and returns its result.
+Future<T> _withPreparing<T>(
+  BuildContext context,
+  String message,
+  Future<T> Function() work,
+) async {
+  final navigator = Navigator.of(context, rootNavigator: true);
+  unawaited(
+    showDialog<void>(
+      context: context,
+      barrierDismissible: false,
+      builder: (context) => PopScope(
+        canPop: false,
+        child: AlertDialog(
+          content: Row(
+            children: <Widget>[
+              const CircularProgressIndicator(),
+              const SizedBox(width: 20),
+              Expanded(child: Text(message)),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
+  try {
+    return await work();
+  } finally {
+    if (navigator.canPop()) navigator.pop();
   }
 }

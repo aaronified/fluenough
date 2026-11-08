@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart' show compute, visibleForTesting;
+
 import '../core/data/course_path.dart' show Milestone, PlanUnit;
 import '../core/models/card.dart';
 import '../core/models/deck.dart' show LanguageInfo;
@@ -6,6 +8,10 @@ import '../core/placement/assurance_readout.dart';
 import '../core/placement/placed_outcome.dart';
 import '../core/placement/joint_model.dart' show JointReadout;
 import '../core/placement/assurance_model.dart' show PlacementLevels;
+import '../core/placement/item_bank.dart';
+import '../core/placement/item_registry.dart' show RegItem;
+import '../core/placement/saved_run.dart' show placementDeckSetKey;
+import '../core/placement/v3_result.dart';
 import '../core/placement/placement_data.dart';
 import '../core/placement/placement_questions.dart';
 import '../core/placement/placement_run.dart';
@@ -52,6 +58,18 @@ class PlacementRunPlan {
   /// said back in.
   final LanguageInfo native;
 }
+
+/// The admitted items of V3 runs, built once per language and deck set (the
+/// bank takes seconds, so it is built off the main isolate and kept).
+final Map<String, List<RegItem>> _itemCache = <String, List<RegItem>>{};
+
+List<RegItem> _buildItems(PlacementLanguageData data) =>
+    ItemBank.build(data).items;
+
+/// Replaces the builder in tests, which cannot wait for an isolate.
+@visibleForTesting
+Future<List<RegItem>> Function(PlacementLanguageData data)?
+placementItemsBuilderOverride;
 
 /// Find my level's reading of a course, and the write at the end of a run.
 extension PlacementRunSetup on AppState {
@@ -177,6 +195,51 @@ extension PlacementRunSetup on AppState {
     native: native,
     recheck: recheck,
   );
+
+  /// The V3 run's admitted items for [plan] (built off the main isolate, and
+  /// kept for the next run of the same decks).
+  Future<List<RegItem>> placementItems(PlacementRunPlan plan) async {
+    final key = '${plan.data.language}:${placementDeckSetKey(plan.data)}';
+    final kept = _itemCache[key];
+    if (kept != null) return kept;
+    final build = placementItemsBuilderOverride;
+    final List<RegItem> items;
+    if (build != null) {
+      items = await build(plan.data);
+    } else {
+      try {
+        items = await compute(_buildItems, plan.data);
+      } on Object {
+        // Whatever an isolate cannot carry, the main one can: slower, and
+        // still right.
+        return _itemCache[key] = _buildItems(plan.data);
+      }
+    }
+    return _itemCache[key] = items;
+  }
+
+  /// The write of a V3 run's result (build step 7): each placed skill up to
+  /// its start, never above what its items proved, with the learner's changes
+  /// ([overrides], a class per skill); a skill left out writes nothing.
+  void writePlacementV3(
+    String code,
+    PlacementRunPlan plan,
+    V3Result result, {
+    Map<PlacementSkill, int> overrides = const <PlacementSkill, int>{},
+    String? native,
+    bool recheck = false,
+  }) {
+    final assurances = result.assurances(overrides: overrides);
+    writePlacementReadout(
+      code,
+      plan,
+      assurances,
+      topClass: result.levels.topClass,
+      covered: assurances.keys,
+      native: native,
+      recheck: recheck,
+    );
+  }
 
   /// The same write for a V3 readout (wiki/Plan-Placement-V3.md): each
   /// scored skill is credited up to its lower edge, never above the level
