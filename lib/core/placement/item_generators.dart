@@ -452,6 +452,12 @@ class ItemGenerators {
 
   static String _key(String cardId, String fmt) => '$cardId:$fmt';
 
+  /// A shuffled copy of [list] drawn from [r]: every generator draws from a
+  /// stream of its own ([GenContext.stream]), so an item never depends on
+  /// which other generators ran, or in what order.
+  static List<T> _shuffle<T>(math.Random r, Iterable<T> list) =>
+      List<T>.of(list)..shuffle(r);
+
   /// Distractor words of [v]: the same part of speech and surface shape
   /// (the article it takes, a similar length, the same last unit), near it on
   /// the path, with one lure when [lure] finds a look-alike.
@@ -482,10 +488,11 @@ class ItemGenerators {
     String like,
     String Function(VocabWord) text,
     Set<String> taken,
+    math.Random r,
   ) {
     VocabWord? best;
     var bestScore = 0.3;
-    final pool = cx.shuffled(cx.near(v, span: cx.deckCount)).take(150);
+    final pool = _shuffle(r, cx.near(v, span: cx.deckCount)).take(150);
     for (final o in pool) {
       if (taken.contains(o.card.id) || o.card.id == v.card.id) continue;
       if (o.glossHead == v.glossHead || o.lemma == v.lemma) continue;
@@ -562,6 +569,7 @@ class ItemGenerators {
 
   /// Written word to meaning (F2), heard word to meaning (F13).
   List<RegItem> wordToMeaning(String format) {
+    final r = cx.stream('w2m:$format');
     final out = <RegItem>[];
     for (final v in cx.vocab) {
       if (v.leaky || v.gloss.isEmpty) continue;
@@ -578,12 +586,13 @@ class ItemGenerators {
       // A look-alike lure in a minority of items only: an option that
       // resembles the prompt is always wrong, so a solver that drops the
       // most similar option would gain on a bank where every item has one.
-      final lure = cx.rng.nextDouble() < kLureRate
+      final lure = r.nextDouble() < kLureRate
           ? _lure(
               v,
               v.roman,
               (o) => o.glossHead.isEmpty ? o.gloss : o.glossHead,
               taken,
+              r,
             )
           : null;
       if (lure != null) {
@@ -602,7 +611,7 @@ class ItemGenerators {
         taken.add(o.card.id);
       }
       if (distractors.length < 3) continue;
-      final opts = cx.shuffled(<String>[
+      final opts = _shuffle(r, <String>[
         v.gloss,
         ...distractors.map((d) => d.gloss),
       ]);
@@ -628,6 +637,7 @@ class ItemGenerators {
 
   /// English meaning to the written word (F3).
   List<RegItem> meaningToWord() {
+    final r = cx.stream('m2w');
     final out = <RegItem>[];
     for (final v in cx.vocab) {
       if (v.leaky || v.gloss.isEmpty) continue;
@@ -640,8 +650,8 @@ class ItemGenerators {
       );
       final taken = <String>{};
       final distractors = <VocabWord>[];
-      final lure = cx.rng.nextDouble() < kLureRate
-          ? _lure(v, like, (o) => o.roman, taken)
+      final lure = r.nextDouble() < kLureRate
+          ? _lure(v, like, (o) => o.roman, taken, r)
           : null;
       if (lure != null) {
         distractors.add(lure);
@@ -655,7 +665,7 @@ class ItemGenerators {
         taken.add(o.card.id);
       }
       if (distractors.length < 3) continue;
-      final opts = cx.shuffled(<VocabWord>[v, ...distractors]);
+      final opts = _shuffle(r, <VocabWord>[v, ...distractors]);
       out.add(
         RegItem(
           id: _key(v.card.id, 'F3'),
@@ -678,6 +688,7 @@ class ItemGenerators {
 
   /// Word tiles (F4) with [decoys] extra units, from words of 4 to 7 units.
   List<RegItem> wordTiles(int decoys) {
+    final r = cx.stream('tiles:$decoys');
     final out = <RegItem>[];
     for (final v in cx.vocab) {
       if (v.leaky || v.gloss.isEmpty) continue;
@@ -691,7 +702,7 @@ class ItemGenerators {
         if (candidates.length >= decoys + 3) break;
       }
       if (candidates.length < decoys) continue;
-      final picked = cx.shuffled(candidates).take(decoys).toList();
+      final picked = _shuffle(r, candidates).take(decoys).toList();
       out.add(
         RegItem(
           id: _key(v.card.id, 'F4'),
@@ -700,7 +711,7 @@ class ItemGenerators {
           deck: v.deck,
           prompt: v.gloss,
           promptRoman: v.gloss,
-          tiles: cx.shuffled(<String>[...v.units, ...picked]),
+          tiles: _shuffle(r, <String>[...v.units, ...picked]),
           answerTiles: v.units,
           accepted: <String>[v.word],
           cognateScore: v.cognateScore,
@@ -865,7 +876,15 @@ class ItemGenerators {
     // The letter patterns are counted under integer keys (a unit is an id), so
     // that scoring a candidate builds no strings.
     final ids = <String, int>{'^': 0, r'$': 1};
-    int id(String unit) => ids.putIfAbsent(unit, () => ids.length);
+    var radix = 0;
+    int id(String unit) {
+      final n = ids.putIfAbsent(unit, () => ids.length);
+      // A unit first seen after the radix was fixed would make two patterns
+      // share a key.
+      assert(radix == 0 || n < radix, 'the unit $unit was not in the course');
+      return n;
+    }
+
     // Every unit of the course and of the words a pseudoword may borrow from
     // is known before counting, so the radix is fixed.
     for (final v in cx.vocab) {
@@ -873,7 +892,7 @@ class ItemGenerators {
         id(u);
       }
     }
-    final radix = ids.length + 1;
+    radix = ids.length + 1;
     final tri = <int, int>{};
     final bi = <int, int>{};
     final edge = <int, int>{};
@@ -1015,6 +1034,7 @@ class ItemGenerators {
   /// (F16). Two decoy tokens from other sentences near it; the end marks stay
   /// where they are.
   List<RegItem> sentenceTiles(String format) {
+    final r = cx.stream('stiles:$format');
     final out = <RegItem>[];
     for (final s in cx.sentences) {
       if (s.inner || s.words.length > 9) continue;
@@ -1023,7 +1043,7 @@ class ItemGenerators {
       final pool = cx.sentences.where(
         (o) => o.card.id != s.card.id && (o.deck - s.deck).abs() <= 6,
       );
-      for (final o in cx.shuffled(pool)) {
+      for (final o in _shuffle(r, pool)) {
         for (final w in o.words) {
           final l = w.toLowerCase();
           if (!lower.contains(l) && !decoys.contains(l)) {
@@ -1040,7 +1060,7 @@ class ItemGenerators {
           cardId: s.card.id,
           deck: s.deck,
           prompt: format == 'F8' ? s.english : s.text,
-          tiles: cx.shuffled(<String>[...lower, ...decoys.take(2)]),
+          tiles: _shuffle(r, <String>[...lower, ...decoys.take(2)]),
           answerTiles: lower,
           leadingMark: s.leadingMark,
           trailingMark: s.trailingMark,
@@ -1060,6 +1080,7 @@ class ItemGenerators {
   /// swaps the one whose word pairs occur most often elsewhere in the course
   /// is used, so the wrong order is the most natural-looking one.
   List<RegItem> wordOrder() {
+    final r = cx.stream('S2');
     final out = <RegItem>[];
     final counts = <String, int>{};
     for (final s in cx.sentences) {
@@ -1162,7 +1183,7 @@ class ItemGenerators {
       if (pick == null) continue;
       balance.record(pick.$3);
       dirs.add((s.nonCognateContent >= 2, pick.$3));
-      final opts = cx.shuffled(<String>[good, pick.$2]);
+      final opts = _shuffle(r, <String>[good, pick.$2]);
       out.add(
         RegItem(
           id: _key(s.card.id, 'S2'),
@@ -1568,6 +1589,7 @@ class ItemGenerators {
   /// exception such as `la mano`), pick its article. Only where the course
   /// shows nouns with articles for both genders.
   List<RegItem> genderExceptions() {
+    final r = cx.stream('gender');
     final m = cx.genderArticle['m'];
     final f = cx.genderArticle['f'];
     if (m == null || f == null) return <RegItem>[];
@@ -1606,7 +1628,7 @@ class ItemGenerators {
       }
       final right = g == 'm' ? m : f;
       final wrong = g == 'm' ? f : m;
-      final opts = cx.shuffled(<String>[right, wrong]);
+      final opts = _shuffle(r, <String>[right, wrong]);
       (dom == g ? regular : exceptions).add(
         RegItem(
           id: _key(v.card.id, 'F6g'),
@@ -1625,7 +1647,7 @@ class ItemGenerators {
     }
     final out = <RegItem>[
       ...exceptions,
-      ...cx.shuffled(regular).take(exceptions.length),
+      ..._shuffle(r, regular).take(exceptions.length),
     ];
     return out;
   }

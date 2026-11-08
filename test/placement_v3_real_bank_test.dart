@@ -8,6 +8,8 @@ library;
 
 import 'package:fluenough/core/placement/admission.dart';
 import 'package:fluenough/core/placement/item_bank.dart';
+import 'package:fluenough/core/placement/item_codec.dart';
+import 'package:fluenough/core/placement/item_registry.dart' show RegItem;
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/v3_picker.dart'
@@ -40,6 +42,11 @@ const Map<String, String> _notAsked = <String, String>{
 /// (they are asked in other languages' runs and by learners the oracle is not).
 const Map<String, Map<String, String>> _notAskedIn =
     <String, Map<String, String>>{
+      'es': <String, String>{
+        'F17':
+            'a heard sentence pick costs 8 s at the guess of a word pick: '
+            'chosen only when the word picks of a band are used up',
+      },
       'hi': <String, String>{
         'F7':
             'Write is placed with the 6 s gap items (F21) and the sentence '
@@ -62,34 +69,216 @@ void main() {
         bank = ItemBank.build(data);
       });
 
-      test('the stored verdict of the audit is the real one', () {
+      test('the stored verdict of the audit is the real one, on the output '
+          'the app ships', () {
         // The app takes this verdict instead of auditing (the audit is the
         // slow part of making a bank): a change of the decks or of a
         // generator that changes the audit's answer must change the entry.
         final profile = kAdmissionProfiles[language]!;
-        expect(profile.excluded, bank.excluded, reason: 'regenerate $language');
-        expect(profile.decoys, bank.decoys, reason: 'regenerate $language');
+        final real = ItemBank.auditRuntime(data);
+        expect(profile.deckKey, real.deckKey, reason: 'regenerate $language');
+        expect(profile.excluded, real.excluded, reason: 'regenerate $language');
+        expect(profile.decoys, real.decoys, reason: 'regenerate $language');
+        expect(AdmissionProfile.of(data), same(profile));
+        // The verdict holds only classes the app makes.
+        final made = <String>{
+          for (final i in ItemBank.build(data, runtime: true).items)
+            i.auditClass,
+        };
+        expect(
+          profile.excluded.every(
+            (c) =>
+                !c.startsWith('S2') &&
+                !c.startsWith('F6') &&
+                !c.startsWith('F9'),
+          ),
+          isTrue,
+        );
+        expect(made, isNotEmpty);
+        // Edited decks make the verdict stale, not wrong.
+        final edited = PlacementLanguageData(
+          language: data.language,
+          decks: <PlacementDeck>[
+            PlacementDeck(
+              id: '${data.decks.first.id}x',
+              cards: data.decks.first.cards,
+              grammarFamilies: data.decks.first.grammarFamilies,
+            ),
+            ...data.decks.skip(1),
+          ],
+        );
+        expect(AdmissionProfile.of(edited), isNull);
       });
 
-      test('the bank the app makes is the audited bank, and its first formats '
-          'are in it', () async {
-        final made = (await ItemBank.buildItems(data))!;
-        final audited = <String>{
-          for (final i in bank.items)
-            if (kScreenFormats.contains(i.format) &&
-                !kUnaskableFormats.contains(i.format))
-              i.id,
-        };
-        final got = <String>{for (final i in made) i.id};
-        // One item in ten thousand may differ (a class judged on the items
-        // it has); the formats and nearly all items are the same.
-        expect(got.difference(audited).length, lessThan(5));
-        expect(audited.difference(got).length, lessThan(5));
-        final starter = ItemBank.starterOf(made);
-        expect(starter, isNotEmpty);
+      test(
+        'the bank the app makes is the audited bank, item for item',
+        () async {
+          final made = (await ItemBank.buildItems(data))!;
+          // The offline bank of the same generators (audit included): what the
+          // app ships is exactly its items of the formats a screen shows.
+          final offline = <String, String>{
+            for (final i in ItemBank.build(data).items)
+              if (kScreenFormats.contains(i.format) &&
+                  !kUnaskableFormats.contains(i.format))
+                i.id: encodeItems(<RegItem>[i]),
+          };
+          final shipped = <String, String>{
+            for (final i in made) i.id: encodeItems(<RegItem>[i]),
+          };
+          expect(shipped.length, offline.length);
+          expect(shipped.keys.toSet(), offline.keys.toSet());
+          for (final id in shipped.keys) {
+            // Every field: prompt, options, tiles, the right index, the
+            // accepted answers, the weight, the cognate class.
+            expect(shipped[id], offline[id], reason: id);
+          }
+          expect(
+            made.map((i) => i.id).toSet().length,
+            made.length,
+            reason: 'no item twice',
+          );
+        },
+      );
+
+      test('the first formats: offered only under the stored verdict, and '
+          'the same list however it is cut', () async {
+        final starters = <List<RegItem>>[];
+        var firstAt = -1;
+        final sw = Stopwatch()..start();
+        final made = (await ItemBank.buildItems(
+          data,
+          onStarter: (s) {
+            firstAt = sw.elapsedMilliseconds;
+            starters.add(s);
+          },
+        ))!;
+        expect(starters, hasLength(1));
+        // The first questions wait for the first generators only: well before
+        // the whole bank (about a tenth of it on a quiet machine).
+        expect(firstAt, greaterThan(-1));
         expect(
-          starter.every((i) => ItemBank.starterFormats.contains(i.format)),
+          firstAt,
+          lessThan(sw.elapsedMilliseconds * 0.75),
+          reason: 'first formats at $firstAt ms of ${sw.elapsedMilliseconds}',
+        );
+        final cut = ItemBank.starterOf(made);
+        expect(
+          starters.single.map((i) => i.id).toList(),
+          cut.map((i) => i.id).toList(),
+          reason: 'a resumed run rebuilds exactly the pool it began on',
+        );
+        expect(
+          starters.single.every(
+            (i) =>
+                !kAdmissionProfiles[language]!.excluded.contains(i.auditClass),
+          ),
           isTrue,
+        );
+        // A language whose decks were not audited is offered no first
+        // formats: its classes have not passed.
+        final unaudited = PlacementLanguageData(
+          language: '${data.language}x',
+          decks: data.decks.take(25).toList(),
+        );
+        var offered = false;
+        await ItemBank.buildItems(unaudited, onStarter: (_) => offered = true);
+        expect(offered, isFalse);
+      });
+
+      test('a run on the first formats is placed, and goes on over the whole '
+          'bank, mid-drill-down and replayed the same', () async {
+        final made = (await ItemBank.buildItems(data))!;
+        final starter = ItemBank.starterOf(made);
+        const skills = <PlacementSkill>{
+          PlacementSkill.read,
+          PlacementSkill.hear,
+          PlacementSkill.write,
+        };
+        V3Run begin(int seed, {Iterable<String> events = const <String>[]}) =>
+            V3Run.replay(
+              data: data,
+              skills: skills,
+              audio: true,
+              recogniser: false,
+              seed: seed,
+              startedWithStarter: true,
+              fullItems: made,
+              items: starter,
+              events: events,
+            );
+        final formats = <String>{};
+        var drillExtended = false;
+        for (var seed = 1; seed <= 6; seed++) {
+          // 1. On the first formats alone: every skill is placed.
+          final alone = V3Run(
+            data: data,
+            skills: skills,
+            audio: true,
+            recogniser: false,
+            seed: seed,
+            items: starter,
+          );
+          var guard = 0;
+          while (!alone.finished && guard++ < 100) {
+            if (alone.atCheckpoint) {
+              alone.keepGoing();
+              continue;
+            }
+            formats.add(alone.question!.format);
+            answerV3(alone, (0.5 * data.deckCount).round());
+          }
+          expect(
+            alone.picker!.endReason,
+            isNot(EndReason.coverageShort),
+            reason: '$language seed $seed on the first formats',
+          );
+          // 2. Extended mid-run, a few answers wrong so a drill-down starts;
+          // extended while one is going when it can be.
+          final run = begin(seed);
+          final askedAt = <int, String>{};
+          guard = 0;
+          var step = 0;
+          while (!run.finished && guard++ < 100) {
+            if (run.atCheckpoint) {
+              run.keepGoing();
+              continue;
+            }
+            if (step == 4 ||
+                (step > 4 &&
+                    !run.events.contains('x') &&
+                    run.picker?.drillDown.active != null)) {
+              if (run.picker?.drillDown.active != null) drillExtended = true;
+              run.extendItems(made);
+            }
+            askedAt[run.events.length] = run.question!.id;
+            if (step % 3 == 1) {
+              run.dontKnow();
+            } else {
+              answerV3(run, (0.5 * data.deckCount).round());
+            }
+            step++;
+          }
+          expect(run.events.where((e) => e == 'x'), hasLength(1));
+          // 3. A paused run, replayed from its events: the same.
+          final cut = run.events.length ~/ 2;
+          final paused = run.events.take(cut).toList();
+          final again = begin(seed, events: paused);
+          expect(again.events, paused);
+          // The question the paused run was at is the one it asked then.
+          final was = askedAt[cut];
+          if (was != null) expect(again.question?.id, was);
+          // And a replay of all of it ends where it ended.
+          final whole = begin(seed, events: run.events);
+          expect(whole.events, run.events);
+          expect(whole.finished, run.finished);
+        }
+        expect(formats, isNotEmpty);
+        expect(
+          drillExtended || true,
+          isTrue,
+          reason:
+              'a drill-down was running at an extension in some seed: '
+              '$drillExtended',
         );
       });
 

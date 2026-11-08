@@ -52,11 +52,15 @@ class ItemBank {
 
   /// Builds the bank for [data]: every generator, and the admission audit of
   /// every class (the offline audit's build: tools and tests).
-  static ItemBank build(PlacementLanguageData data, {int seed = 1}) {
+  static ItemBank build(
+    PlacementLanguageData data, {
+    int seed = 1,
+    bool runtime = false,
+  }) {
     final cx = GenContext(data, seed: seed);
     final g = ItemGenerators(cx);
     final all = <RegItem>[];
-    for (final step in _steps(g)) {
+    for (final step in _steps(g, runtime: runtime)) {
       all.addAll(step.make());
     }
     return _finish(data, cx, g, all);
@@ -79,26 +83,19 @@ class ItemBank {
     void Function(List<RegItem> starter)? onStarter,
     bool Function()? cancelled,
   }) async {
-    final cx = GenContext(data, seed: seed);
-    final g = ItemGenerators(cx);
-    final steps = _steps(g, runtime: true).toList();
-    final total = steps.length + 1;
-    final all = <RegItem>[];
-    var starterSent = false;
-    for (var i = 0; i < steps.length; i++) {
-      if (cancelled?.call() ?? false) return null;
-      all.addAll(steps[i].make());
-      onProgress?.call((i + 1) / total);
-      if (!starterSent && i + 1 < steps.length && !steps[i + 1].starter) {
-        starterSent = true;
-        onStarter?.call(starterOf(all));
-      }
-      await pause?.call();
-    }
-    if (cancelled?.call() ?? false) return null;
-    final profile = kAdmissionProfiles[data.language];
+    final made = await _generateRuntime(
+      data,
+      seed: seed,
+      pause: pause,
+      onProgress: onProgress,
+      onStarter: onStarter,
+      cancelled: cancelled,
+    );
+    if (made == null) return null;
+    final (cx, g, all, profile) = made;
     if (profile != null) {
-      // The audit's verdict for this language is known: no audit now.
+      // The audit's verdict for this course, on these decks, is known: no
+      // audit now.
       final tiles = profile.decoys > 0
           ? g.wordTiles(profile.decoys)
           : const <RegItem>[];
@@ -111,6 +108,59 @@ class ItemBank {
     final bank = _finish(data, cx, g, all);
     onProgress?.call(1);
     return bank.items;
+  }
+
+  /// The audit of what the app makes: the same generators as [buildItems], the
+  /// audit run on their output, and its verdict (the classes excluded and the
+  /// decoys of the word tiles). This is the verdict `admission.dart` stores.
+  static AdmissionProfile auditRuntime(
+    PlacementLanguageData data, {
+    int seed = 1,
+  }) {
+    final bank = build(data, seed: seed, runtime: true);
+    return AdmissionProfile(
+      deckKey: admissionKey(data),
+      excluded: bank.excluded,
+      decoys: bank.decoys,
+    );
+  }
+
+  /// The generators of the app's build, run in steps. Null when cancelled;
+  /// the stored verdict that applies to [data] (null when there is none, or
+  /// it was made on other decks) comes with them. The starter is offered only
+  /// under such a verdict, and only the classes it admits.
+  static Future<(GenContext, ItemGenerators, List<RegItem>, AdmissionProfile?)?>
+  _generateRuntime(
+    PlacementLanguageData data, {
+    required int seed,
+    Future<void> Function()? pause,
+    void Function(double progress)? onProgress,
+    void Function(List<RegItem> starter)? onStarter,
+    bool Function()? cancelled,
+  }) async {
+    final cx = GenContext(data, seed: seed);
+    final g = ItemGenerators(cx);
+    final steps = _steps(g, runtime: true).toList();
+    final profile = AdmissionProfile.of(data);
+    final total = steps.length + 1;
+    final all = <RegItem>[];
+    var starterSent = false;
+    for (var i = 0; i < steps.length; i++) {
+      if (cancelled?.call() ?? false) return null;
+      all.addAll(steps[i].make());
+      onProgress?.call((i + 1) / total);
+      if (!starterSent && i + 1 < steps.length && !steps[i + 1].starter) {
+        starterSent = true;
+        // A run may begin on the first formats only where the audit has
+        // already passed their classes, on these decks.
+        if (profile != null) {
+          onStarter?.call(starterOf(all, profile));
+        }
+      }
+      await pause?.call();
+    }
+    if (cancelled?.call() ?? false) return null;
+    return (cx, g, all, profile);
   }
 
   /// The same bank as [build], built in steps with a [pause] between them,
@@ -157,9 +207,19 @@ class ItemBank {
   /// What a run can begin with out of [items] (a whole bank, or what the
   /// first generators made): the clean items of the starter formats, in the
   /// bank's order.
-  static List<RegItem> starterOf(Iterable<RegItem> items) => <RegItem>[
+  ///
+  /// With a [profile], only the classes it admits (the starter of a run is
+  /// then the same list whether it is cut from what the generators made or
+  /// from the admitted bank).
+  static List<RegItem> starterOf(
+    Iterable<RegItem> items, [
+    AdmissionProfile? profile,
+  ]) => <RegItem>[
     for (final it in items)
-      if (starterFormats.contains(it.format) && it.cognateClass == 'clean') it,
+      if (starterFormats.contains(it.format) &&
+          it.cognateClass == 'clean' &&
+          (profile == null || profile.admits(it.auditClass)))
+        it,
   ];
 
   /// The generators, in the order the bank lists their items. With [runtime],

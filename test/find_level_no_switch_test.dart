@@ -19,6 +19,7 @@ import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/decks/language_catalog.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/saved_run.dart'
     show placementDeckSetKey;
 import 'package:fluenough/core/placement/placement_questions.dart';
@@ -375,6 +376,87 @@ void main() {
       await tester.pumpAndSettle();
       expect(find.byType(FindLevelDeclarationPage), findsOneWidget);
       expect(state.settings.placementRunOf('es'), isNull);
+    });
+
+    for (final starter in <bool>[false, true]) {
+      testWidgets('a paused run waits for the whole bank, whether it began on '
+          'the first formats ($starter) or on all of it', (tester) async {
+        final gate = Completer<void>();
+        final state = AppState.test(
+          bankRunner: (data, onProgress, cancelled, onStarter) async {
+            // The first formats are ready; the rest is not.
+            onStarter(ItemBank.starterOf(smallV3Bank()));
+            await gate.future;
+            return smallV3Bank();
+          },
+          settings: SettingsNotifier(
+            spokenLanguages: const <String>['en'],
+            learningChosen: true,
+          ),
+        );
+        await _pumpSheet(tester, built: 3, state: state);
+        final l10n = l10nOf(tester);
+        final plan = state.placementRunPlan(
+          'es',
+          native: state.courseNative('es'),
+        )!;
+        state.settings.setPlacementRun(
+          'es',
+          jsonEncode(
+            SavedV3Run(
+              language: 'es',
+              declaration: PlacementDeclaration.expert,
+              skills: const <PlacementSkill>{PlacementSkill.read},
+              seed: 1,
+              audio: false,
+              recogniser: false,
+              scriptStart: V3ScriptStart.skip,
+              starter: starter,
+              deckSet: placementDeckSetKey(plan.data),
+              appVersion: AppInfo.version,
+              savedAt: state.now().millisecondsSinceEpoch ~/ 1000,
+              events: const <String>['w'],
+            ).toJson(),
+          ),
+        );
+        await _tapLevel(tester);
+        await tester.tap(find.text(l10n.findLevelResumeGo));
+        await tester.pump();
+        await tester.pump();
+        // Not the run: the screen that waits for the whole bank.
+        expect(find.byType(V3RunPage), findsNothing);
+        expect(
+          find.byKey(const ValueKey<String>('find-level-preparing-progress')),
+          findsOneWidget,
+        );
+        gate.complete();
+        await tester.pumpAndSettle();
+        expect(find.byType(V3RunPage), findsOneWidget);
+      });
+    }
+
+    testWidgets('a new run begins on the first formats when the whole bank is '
+        'not ready', (tester) async {
+      final gate = Completer<void>();
+      final state = AppState.test(
+        bankRunner: (data, onProgress, cancelled, onStarter) async {
+          onStarter(ItemBank.starterOf(smallV3Bank()));
+          await gate.future;
+          return smallV3Bank();
+        },
+        settings: SettingsNotifier(
+          spokenLanguages: const <String>['en'],
+          learningChosen: true,
+        ),
+      );
+      await _pumpSheet(tester, built: 3, state: state);
+      await _tapLevel(tester);
+      await tester.tap(find.byKey(const ValueKey<String>('find-level-expert')));
+      await tester.pumpAndSettle();
+      expect(find.byType(V3RunPage), findsOneWidget);
+      gate.complete();
+      await tester.pumpAndSettle();
+      expect(find.byType(V3RunPage), findsOneWidget);
     });
 
     testWidgets('a paused run this phone can no longer ask is said so, and '

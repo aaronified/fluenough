@@ -217,20 +217,21 @@ Future<void> startFindLevel(
   // The questions are made from the decks, once per language and deck set,
   // in the background (it was started when Find my level opened, while the
   // learner answered the declaration): normally they are ready and kept.
-  // A run that began on the first formats only (a paused one that did) is
-  // replayed on the same, then on the whole bank at the same place: it needs
-  // the whole bank to rebuild the starter list.
+  // A paused run is replayed on exactly the pool it began on: the whole
+  // bank, or the first formats' items cut from it (the same list, whichever
+  // way it is cut). It therefore waits for the whole bank. A new run begins on
+  // the first formats when the whole bank is not ready (the audit's verdict
+  // for the course is stored, so those items are audited), and takes the rest
+  // when it arrives.
   var job = bank;
-  var items = saved?.starter == true ? job.items : job.startable;
+  var items = saved != null ? job.items : job.startable;
   if (items == null) {
     items = await navigator.push<List<RegItem>>(
       MaterialPageRoute<List<RegItem>>(
         settings: const RouteSettings(name: '/find-level-preparing'),
         builder: (_) => FindLevelPreparingPage(
           job: job,
-          // A paused run that began on the first formats waits for the whole
-          // bank; a new run begins as soon as the first formats are ready.
-          waitForAll: saved?.starter == true,
+          waitForAll: saved != null,
           retry: () => job = state.placementBanks.jobFor(plan.data),
         ),
       ),
@@ -240,15 +241,20 @@ Future<void> startFindLevel(
   }
 
   var ready = items;
+  final resumed = saved != null;
   final resumedStarter = saved?.starter == true;
   var restarts = 0;
   V3Run newRun({
     Iterable<String> events = const <String>[],
     V3ScriptStart start = V3ScriptStart.ask,
     int? runSeed,
-    bool replayStarter = false,
   }) {
     final whole = job.items;
+    // A resumed run is what it was saved as; a new one begins on the whole
+    // bank if it is there, else on what is ready.
+    final onStarter = resumed && events.isNotEmpty
+        ? resumedStarter
+        : whole == null;
     return V3Run.replay(
       data: plan.data,
       skills: inPlay,
@@ -257,10 +263,10 @@ Future<void> startFindLevel(
       seed: runSeed ?? seed,
       declaration: declaration,
       scriptStart: start,
-      items: replayStarter && whole != null
-          ? ItemBank.starterOf(whole)
+      items: onStarter
+          ? (whole != null ? ItemBank.starterOf(whole) : ready)
           : (whole ?? ready),
-      startedWithStarter: replayStarter || (whole == null),
+      startedWithStarter: onStarter,
       fullItems: whole,
       events: events,
     );
@@ -269,7 +275,6 @@ Future<void> startFindLevel(
   var current = newRun(
     events: saved?.events ?? const <String>[],
     start: scriptStart,
-    replayStarter: resumedStarter,
   );
   // The rest of the bank arrives while the run goes on: the run takes it.
   unawaited(
