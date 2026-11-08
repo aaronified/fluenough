@@ -14974,5 +14974,19 @@
     "placeholders": {
       "unit": {"type": "int", "example": "3"}
     }
+  },
+  "settingsSharePlacement": "Share placement data",
+  "@settingsSharePlacement": {
+    "description": "Your data: saves the placement records, for the maintainers, where the learner picks."
+  },
+  "settingsSharePlacementDesc": "{count, plural, =1{1 placement} other{{count} placements}} · no words, answers or audio",
+  "@settingsSharePlacementDesc": {
+    "description": "Your data: what the placement file holds.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
   }
 }

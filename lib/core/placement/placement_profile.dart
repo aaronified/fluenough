@@ -341,6 +341,13 @@ class PlacementProfiles {
     }
   }
 
+  /// Whether [language]'s profile was fitted from collected outcomes (its
+  /// entry says so under `fitted`). A language that is not fitted runs on the
+  /// default, which places low and never high: the lower edge of the range,
+  /// capped by what the items proved.
+  bool isFitted(String language) =>
+      !killSwitch && _languages[language]?['fitted'] is Map;
+
   /// The profile for a run in [language] at [band]: the built-in default when
   /// the kill switch is on.
   PlacementProfile resolve(String language, PlacementBand band) {

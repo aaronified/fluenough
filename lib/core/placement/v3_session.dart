@@ -235,6 +235,7 @@ class V3Run {
   /// recorded with the placement).
   final PlacementProfile profile;
   bool _extended = false;
+  final Map<String, int> _formatCounts = <String, int>{};
   final PlacementLevels levels;
   final math.Random rng;
 
@@ -312,6 +313,19 @@ class V3Run {
       CandidatePool(PickerCandidate.fromItems(items, profile: profile), levels),
     );
   }
+
+  /// The items asked by format (the gate's included): what the outcome log
+  /// keeps of the run.
+  Map<String, int> get itemsByFormat =>
+      Map<String, int>.unmodifiable(_formatCounts);
+
+  /// The answers given, from the events.
+  int get rightAnswers => events.where((e) => e == 'r').length;
+  int get wrongAnswers => events.where((e) => e == 'w').length;
+  int get dontKnowAnswers => events.where((e) => e == 'd').length;
+
+  /// The drill-down cases the run opened.
+  int get drillCases => _picker?.drillDown.cases.length ?? 0;
 
   /// Whether the learner gave the microphone up.
   bool get microphoneGivenUp => _micGivenUp;
@@ -493,6 +507,8 @@ class V3Run {
 
   void _applyGate(bool right) {
     _skipsInARow = 0;
+    final gateFormat = _question!.gateItem!.format;
+    _formatCounts[gateFormat] = (_formatCounts[gateFormat] ?? 0) + 1;
     final g = _question!.gateItem!;
     events.add(right ? 'r' : 'w');
     _gate.record(right: right);
@@ -505,6 +521,8 @@ class V3Run {
 
   void _apply(AnswerOutcome outcome) {
     _skipsInARow = 0;
+    final askedFormat = _candidate!.format;
+    _formatCounts[askedFormat] = (_formatCounts[askedFormat] ?? 0) + 1;
     final c = _candidate!;
     events.add(switch (outcome) {
       AnswerOutcome.right => 'r',
