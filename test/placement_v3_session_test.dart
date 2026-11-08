@@ -362,6 +362,25 @@ void main() {
       expect(fresh(1000 + 8 * 86400), isFalse);
       expect(fresh(1000, deckSet: 'other'), isFalse);
       expect(fresh(1000, version: '1.0.1'), isFalse);
+      // A run is carried on under the profile it began with only.
+      expect(
+        run.isFresh(
+          nowSeconds: 1000,
+          deckSet: '4-abc',
+          appVersion: '1.0.0',
+          profile: run.profile + 1,
+        ),
+        isFalse,
+      );
+      expect(
+        run.isFresh(
+          nowSeconds: 1000,
+          deckSet: '4-abc',
+          appVersion: '1.0.0',
+          profile: run.profile,
+        ),
+        isTrue,
+      );
       expect(run.fitsDevice(audio: false, recogniser: false), isFalse);
       expect(run.fitsDevice(audio: true, recogniser: false), isTrue);
     });

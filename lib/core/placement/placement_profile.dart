@@ -9,6 +9,24 @@ import 'dart:convert';
 // switch puts the built-in default back for everyone. The version of the
 // profile a placement was made with is recorded with it.
 //
+// The ranges are ONE-SIDED and PER LANGUAGE: a file may move a value only in the direction that
+// makes a placement more careful than the built-in default (more evidence
+// needed, slower to trust, a lower start), never the other way, and only as far
+// as the gates have been run (`test/placement_v3_edge_*_test.dart` run the
+// gamer, adversary and honest gates, the per-cell time gate included, under
+// [PlacementProfile.safestEdge], every value at its limit at once; each limit
+// was first found by running the honest gates with that value alone: a
+// guess raise on the pick formats, a slip of 1.5, a time of 1.25 and a climb
+// quantile of 0.15 all broke the time gate and are not allowed). A value
+// that would make placement bolder than the default is brought back to the
+// default. A language is given the edge its gates were run at
+// ([kGatedEdges]); a language with no entry may not move any value from the
+// default at all. Hindustani has none: its honest per-cell time gate has no
+// headroom (its median is at the gate's 28 items), and every perturbation tried
+// (a slip of 1.2, a standing-apart count of 16, a guess raise on the cheap
+// formats, the model edges alone) took a cell to 29. Widening means running the
+// gates at the new edge first.
+//
 // Pure Dart.
 
 /// The level bands a profile may differ by.
@@ -33,6 +51,39 @@ class PlacementProfile {
 
   /// The built-in default: the constants the gates were measured with.
   static const PlacementProfile defaults = PlacementProfile();
+
+  /// Every value at its limit at once, in the safer direction (the gates are
+  /// run under this).
+  static const PlacementProfile safestEdge = PlacementProfile(
+    version: 2,
+    declarationWeight: 0,
+    togetherShare: 0.5,
+    temper: 0.7,
+    guessScale: <String, double>{
+      'F7': 1.25,
+      'F8': 1.25,
+      'F16': 1.25,
+      'F18': 1.25,
+      'F21': 1.25,
+    },
+    slipScale: <String, double>{
+      'F1': 1.2,
+      'F2': 1.2,
+      'F3': 1.2,
+      'F4': 1.2,
+      'F5': 1.2,
+      'F7': 1.2,
+      'F8': 1.2,
+      'F13': 1.2,
+      'F14': 1.2,
+      'F16': 1.2,
+      'F17': 1.2,
+      'F18': 1.2,
+      'F21': 1.2,
+    },
+    standApartItems: 16,
+    mixedBonus: 0.25,
+  );
 
   /// The version of the file this came from (1 is the built-in default).
   final int version;
@@ -67,8 +118,9 @@ class PlacementProfile {
   final double cognateThreshold;
 
   /// Whether word tiles with decoys use the calibration of `F4decoys` (0.30,
-  /// clean) in place of that of `F4` (0.45, never clean). Off by default: the
-  /// tiles are then admitted by the audit and never asked.
+  /// clean) in place of that of `F4` (0.45, never clean). Off, and not
+  /// switched on by a file (see above): the tiles are admitted by the audit and
+  /// never asked.
   final bool f4DecoyKey;
 
   static double _clamp(double v, double lo, double hi) => v.isNaN
@@ -79,7 +131,24 @@ class PlacementProfile {
       ? hi
       : v;
 
-  static Map<String, double> _scales(Object? raw, double lo, double hi) {
+  /// How far a format's guess rate may be raised: only where the calibrated
+  /// guess stays clean (at most 0.35) at the limit. The pick formats are
+  /// calibrated at 0.35 already, so any raise would make them unclean, and the
+  /// honest runs then need far more time (measured: 291 s against 200 s).
+  static const Map<String, double> guessLimit = <String, double>{
+    'F7': 1.25,
+    'F8': 1.25,
+    'F16': 1.25,
+    'F18': 1.25,
+    'F21': 1.25,
+  };
+
+  static Map<String, double> _scales(
+    Object? raw,
+    double lo,
+    double hi, {
+    Map<String, double>? perFormat,
+  }) {
     if (raw is! Map) return const <String, double>{};
     final out = <String, double>{};
     for (final e in raw.entries) {
@@ -88,7 +157,11 @@ class PlacementProfile {
       if (k is String &&
           RegExp(r'^[A-Za-z0-9]{2,6}$').hasMatch(k) &&
           v is num) {
-        out[k] = _clamp(v.toDouble(), lo, hi);
+        out[k] = _clamp(
+          v.toDouble(),
+          lo,
+          perFormat?[k] ?? (perFormat == null ? hi : lo),
+        );
       }
     }
     return Map<String, double>.unmodifiable(out);
@@ -106,36 +179,92 @@ class PlacementProfile {
     final standApart = json['standApartItems'];
     return PlacementProfile(
       version: v is int && v >= 1 ? v : version,
+      // A lower weight leans less on what the learner says of themselves.
       declarationWeight: num_('declarationWeight', declarationWeight, 0, 0.7),
-      togetherShare: num_('togetherShare', togetherShare, 0.3, 0.9),
-      temper: num_('temper', temper, 0.6, 1.0),
+      // Less sharing of evidence between skills, and a softer likelihood.
+      togetherShare: num_('togetherShare', togetherShare, 0.5, 0.7),
+      temper: num_('temper', temper, 0.7, 0.85),
       guessScale: json.containsKey('guessScale')
           ? <String, double>{
               ...guessScale,
-              ..._scales(json['guessScale'], 0.8, 1.5),
+              ..._scales(json['guessScale'], 1, 1.25, perFormat: guessLimit),
             }
           : guessScale,
       slipScale: json.containsKey('slipScale')
           ? <String, double>{
               ...slipScale,
-              ..._scales(json['slipScale'], 0.5, 2.0),
+              ..._scales(json['slipScale'], 1, 1.2),
             }
           : slipScale,
       secondsScale: json.containsKey('secondsScale')
           ? <String, double>{
               ...secondsScale,
-              ..._scales(json['secondsScale'], 0.5, 2.0),
+              ..._scales(json['secondsScale'], 1, 1),
             }
           : secondsScale,
-      climbQuantile: num_('climbQuantile', climbQuantile, 0.05, 0.3),
+      // More items for a skill that stands apart, a smaller reward for an item
+      // that proves two skills. A later climb (a higher quantile) is held at the
+      // default: at 0.15 the median honest run needs 29 items against the gate's
+      // 28 (measured).
+      climbQuantile: num_('climbQuantile', climbQuantile, 0.12, 0.12),
       standApartItems: standApart is int
-          ? standApart.clamp(4, 20)
+          ? standApart.clamp(14, 16)
           : standApartItems,
-      mixedBonus: num_('mixedBonus', mixedBonus, 0, 0.6),
-      cognateThreshold: num_('cognateThreshold', cognateThreshold, 0.4, 0.8),
-      f4DecoyKey: json['f4DecoyKey'] is bool
-          ? json['f4DecoyKey'] as bool
-          : f4DecoyKey,
+      mixedBonus: num_('mixedBonus', mixedBonus, 0.25, 0.3),
+      // A lower line would call more words near-cognates, but it is part of the
+      // bank and not read at run start: held at the default until it is.
+      cognateThreshold: num_('cognateThreshold', cognateThreshold, 0.58, 0.58),
+      // Never on from a file: it adds clean items nobody has gated. The field
+      // stays so that the gate runs can switch it on in code.
+      f4DecoyKey: f4DecoyKey,
+    );
+  }
+
+  /// This profile held between the default and [edge]: each value may move
+  /// from the default toward the edge's, and no further.
+  PlacementProfile within(PlacementProfile edge) {
+    double hold(double v, double def, double e) =>
+        _clamp(v, def < e ? def : e, def < e ? e : def);
+    Map<String, double> scales(Map<String, double> v, Map<String, double> e) =>
+        <String, double>{
+          for (final k in v.keys)
+            // A multiplier held at 1 is no multiplier.
+            if (hold(v[k]!, 1, e[k] ?? 1) != 1) k: hold(v[k]!, 1, e[k] ?? 1),
+        };
+
+    return PlacementProfile(
+      version: version,
+      declarationWeight: hold(
+        declarationWeight,
+        defaults.declarationWeight,
+        edge.declarationWeight,
+      ),
+      togetherShare: hold(
+        togetherShare,
+        defaults.togetherShare,
+        edge.togetherShare,
+      ),
+      temper: hold(temper, defaults.temper, edge.temper),
+      guessScale: scales(guessScale, edge.guessScale),
+      slipScale: scales(slipScale, edge.slipScale),
+      secondsScale: scales(secondsScale, edge.secondsScale),
+      climbQuantile: hold(
+        climbQuantile,
+        defaults.climbQuantile,
+        edge.climbQuantile,
+      ),
+      standApartItems: hold(
+        standApartItems.toDouble(),
+        defaults.standApartItems.toDouble(),
+        edge.standApartItems.toDouble(),
+      ).round(),
+      mixedBonus: hold(mixedBonus, defaults.mixedBonus, edge.mixedBonus),
+      cognateThreshold: hold(
+        cognateThreshold,
+        defaults.cognateThreshold,
+        edge.cognateThreshold,
+      ),
+      f4DecoyKey: f4DecoyKey && edge.f4DecoyKey,
     );
   }
 
@@ -216,6 +345,13 @@ class PlacementProfiles {
   /// the kill switch is on.
   PlacementProfile resolve(String language, PlacementBand band) {
     if (killSwitch) return PlacementProfile.defaults;
+    return _resolve(
+      language,
+      band,
+    ).within(kGatedEdges[language] ?? PlacementProfile.defaults);
+  }
+
+  PlacementProfile _resolve(String language, PlacementBand band) {
     var profile = _default;
     final lang = _languages[language];
     if (lang != null) {
@@ -228,3 +364,11 @@ class PlacementProfiles {
     return profile;
   }
 }
+
+/// The edge each language's gates were run at, by language code: how far a
+/// profile may move its values from the default. A language with no entry may
+/// not move any. Spanish's is the edge of every honest, gamer and adversary
+/// gate, the per-cell time gate included (`PlacementProfile.safestEdge`).
+const Map<String, PlacementProfile> kGatedEdges = <String, PlacementProfile>{
+  'es': PlacementProfile.safestEdge,
+};

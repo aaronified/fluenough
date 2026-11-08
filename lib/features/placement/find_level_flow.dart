@@ -82,6 +82,13 @@ Future<void> startFindLevel(
   }
   // The question bank is made in the background from here on.
   final bank = state.placementBanks.jobFor(plan.data);
+  // The calibration profile of this language and level, as the file has it
+  // (the built-in default when it does not, or the kill switch is on).
+  final profile = (await loadPlacementProfiles()).resolve(
+    code,
+    bandOfBuilt(built),
+  );
+  if (!context.mounted) return;
   final settings = state.settings;
   final pick = findLevelSkillsOf(
     state,
@@ -120,6 +127,7 @@ Future<void> startFindLevel(
           nowSeconds: nowSeconds(),
           deckSet: deckSet,
           appVersion: AppInfo.version,
+          profile: profile.version,
         )) {
       settings.setPlacementRun(code, null);
       saved = null;
@@ -247,8 +255,6 @@ Future<void> startFindLevel(
   // The calibration profile of this language and level, as the file has it
   // (the built-in default when it does not, or the kill switch is on): a
   // resumed run reads the version it began with.
-  final profiles = await loadPlacementProfiles();
-  final profile = profiles.resolve(code, bandOfBuilt(built));
   var restarts = 0;
   V3Run newRun({
     Iterable<String> events = const <String>[],

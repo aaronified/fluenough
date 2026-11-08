@@ -441,23 +441,29 @@ Find my level V3 has constants that the gates could not fix without real learner
 }
 ```
 
-A value of a language overrides the default, and one of a band (`A1`, `A2`, `B1`: the levels the course is built to) overrides the language's. Anything left out is the default's. The values, each **clamped** to the range the gates were run over (a value outside it is brought inside, never rejected; a value of the wrong kind is ignored):
+A value of a language overrides the default, and one of a band (`A1`, `A2`, `B1`: the levels the course is built to) overrides the language's. Anything left out is the default's.
 
-| Key | Default | Range | What it is |
+**The ranges are one-sided, per language, and only as wide as the gates have been run.** A file may move a value only in the direction that makes placement more careful than the built-in default; a value that would make it bolder is brought back to the default, and one past the edge is held at the edge. A language may move a value only as far as `kGatedEdges` says for it. **Spanish** has an edge (the table below: each value was found by running the honest gates, the per-cell time gate included, with that value alone, then every edge together under `PlacementProfile.safestEdge` in the gamer, adversary and honest suites, `test/placement_v3_edge_*_test.dart`). **Hindustani has none, and neither does any other language: a file may not move any value from the default for them.** Hindustani's honest time gate has no headroom (its median is at the gate's 28 items): a slip of 1.2, a standing-apart count of 16, a guess raise on the cheap formats and the model edges (declaration weight 0, together share 0.5, temper 0.7) each took a cell to 29 items. The table is Spanish's:
+
+| Key | Default | May be | Why that far |
 |---|---|---|---|
-| `version` | 1 | 1 and up | recorded with every placement and every paused run |
-| `declarationWeight` | 0.7 | 0 to 0.7 | the share of the prior that is the learner's declaration |
-| `togetherShare` | 0.7 | 0.3 to 0.9 | the share of the prior in which the skills move together |
-| `temper` | 0.85 | 0.6 to 1 | the exponent every likelihood is raised to |
-| `guessScale`, `slipScale`, `secondsScale` | none (1) | 0.8 to 1.5, 0.5 to 2, 0.5 to 2 | multipliers by format code (`F2`...) on the guess rate, the slip and the time |
-| `climbQuantile` | 0.12 | 0.05 to 0.3 | the quantile a proven band is climbed from |
-| `standApartItems` | 14 | 4 to 20 | the clean items of a proven band for a skill that stands apart |
-| `mixedBonus` | 0.3 | 0 to 0.6 | what an item that proves another skill's band is worth, in bits |
-| `cognateThreshold` | 0.58 | 0.4 to 0.8 | the near-cognate line; it is part of the bank, so it takes effect with the next bank build (not read at run start) |
-| `f4DecoyKey` | false | true or false | word tiles with decoys use the calibration of `F4decoys` (0.30, clean) instead of `F4` (0.45, never clean) |
+| `version` | 1 | 1 and up | recorded with every placement and every paused run; a paused run is resumed only under the version it began with; changing a profile's values needs a higher version (a test compares the shipped file with `test/fixtures/placement/profile_snapshot.json`) |
+| `declarationWeight` | 0.7 | 0 to 0.7 | leans less on the declaration |
+| `togetherShare` | 0.7 | 0.5 to 0.7 | shares less evidence between skills |
+| `temper` | 0.85 | 0.7 to 0.85 | softer likelihood |
+| `guessScale` | none (1) | F7, F8, F16, F18, F21 up to 1.25; every other format 1 | the pick formats are calibrated at the clean limit (0.35): any raise makes them unclean and the honest median run reaches 291 s against 200 s |
+| `slipScale` | none (1) | 1 to 1.2 | 1.5 took the median to 29 items against 28 |
+| `secondsScale` | none (1) | 1 only | at 1.25 the median reaches the 300 s cap and two gates fail |
+| `climbQuantile` | 0.12 | 0.12 only | 0.15 took the median to 29 items |
+| `standApartItems` | 14 | 14 to 16 | 18 and 0.2 climb together failed; 16 passed |
+| `mixedBonus` | 0.3 | 0.25 to 0.3 | a smaller reward for mixed items; 0.2 with the others failed, 0.25 passed |
+| `cognateThreshold` | 0.58 | 0.58 only | part of the bank, not read at run start |
+| `f4DecoyKey` | false | never from a file | adds clean items nobody has gated; code only |
 
-**Kill switch.** `"killSwitch": true` makes every run use the built-in default, whatever the file says; a missing, malformed or unreadable file does the same. **Version.** The profile's `version` is stored with each placement (`placement_profile` in the settings) and each paused run (`profile`), so a placement can be told from the constants that made it. **Roll back** by setting the language's entry to the earlier values with a higher `version`, or by the kill switch; nothing in the learner's data has to change.
+Widening a range means running the edge suites at the new edge first; the time gate has about 2 s of headroom, so most widening will need a faster picker or a different gate first. In the gated-run values `mixedBonus` and `standApartItems` are offsets from the default (a default profile gives exactly the values of step 6).
 
-**Not decided here.** F4 tiles with decoys are audited at 0.05 to 0.07 and calibrated at 0.45 under the format key, which keeps them out (never clean); turning `f4DecoyKey` on makes them clean at 0.30 and changes which items the picker chooses (they cost 15 s), so it is off until a language's time gate has been measured with it. F3 (meaning to word) is calibrated at 0.45 and stays out for the same reason. Another valid word order of a sentence is accepted by F8 and F16 when the course itself shows it (another sentence made of the same words in another order); a free-order language with only one attested order still grades the other as a miss, which understates the learner (safe).
+**Where profiles come from.** Only from the asset bundled in the app: there is no network path and no deck-download path, so a new profile ships with an app update, and so does the kill switch. **Kill switch.** `"killSwitch": true` makes every run use the built-in default, whatever the file says; a missing, malformed or unreadable file does the same. **Version.** The profile's `version` is stored with each placement (`placement_profile` in the settings) and each paused run (`profile`), so a placement can be told from the constants that made it. **Roll back** by setting the language's entry to the earlier values with a higher `version`, or by the kill switch; nothing in the learner's data has to change.
+
+**Not decided here.** F4 tiles with decoys are audited at 0.05 to 0.07 and calibrated at 0.45 under the format key, which keeps them out (never clean); `f4DecoyKey` would make them clean at 0.30 and change which items the picker chooses (they cost 15 s), so a file cannot switch it on until the gates have been run with it. F3 (meaning to word) is calibrated at 0.45 and stays out for the same reason. Another valid word order of a sentence is accepted by F8 and F16 only when the course gives that order to a sentence with the same translation, or the language is listed in `kFreeOrderLanguages` (empty until a native reviewer flags one: the same words in another order can reverse who does what, `dog bites man` and `man bites dog`); otherwise the other order is graded as a miss, which understates the learner (safe).
 
 **Collecting data and re-fitting** (the local outcome log, the opt-in export and `tool/placement_refit.dart`) are the next part (PR 8b); until then a profile is written by hand from what a maintainer measures, and every change should be checked against the gates (`test/placement_v3_*`) with the profile applied.

@@ -280,6 +280,12 @@ class PickerConfig {
     this.locateItems = 2,
   });
 
+  /// With a [profile], the proof-stage values are the profile's. After a gate
+  /// the script-run values are OFFSETS from the default: `mixedBonus` is
+  /// `kScriptRunMixedBonus` plus the profile's difference from 0.3, and
+  /// `standApartItems` is `kScriptRunStandApartItems` plus its difference from
+  /// 14, so a default profile gives exactly the values measured in step 6.
+  ///
   /// The configuration of a run whose script gate has asked [gateItems]
   /// items in [gateSeconds] seconds (none when the language has no gate): the
   /// caps of the whole run less what the gate used, and, after a gate, the

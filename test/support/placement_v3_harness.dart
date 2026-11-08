@@ -17,6 +17,7 @@ import 'dart:math' as math;
 
 import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
+import 'package:fluenough/core/placement/placement_profile.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/script_gate.dart';
 import 'package:fluenough/core/placement/v3_picker.dart';
@@ -535,11 +536,14 @@ abstract class SimPicker {
 /// The calibrated guess of an item in a bank profile.
 double calibratedGuess(RunState s, SimItem item) =>
     s.fixedGuess ??
-    s.calibration.guessFor(
-      formatKey(item.spec.code, s.profile),
-      item.card.cognate,
-      item.spec.guess,
-    );
+    s.calibration
+        .scaled(kHarnessProfile.guessScale)
+        .guessFor(
+          item.spec.code,
+          item.card.cognate,
+          item.spec.guess,
+          key: formatKey(item.spec.code, s.profile),
+        );
 
 /// A stand-in for the item registry: the model's view of [item].
 JointItem toJointItem(RunState s, SimItem item) {
@@ -551,7 +555,7 @@ JointItem toJointItem(RunState s, SimItem item) {
   return JointItem(
     skills: item.spec.skills,
     deck: item.card.deck,
-    slip: item.spec.slip,
+    slip: item.spec.slip * (kHarnessProfile.slipScale[item.spec.code] ?? 1),
     guess: item.yesNo ? 0 : guess,
     // A sentence item with a cognate counts half.
     weight: !item.spec.wordLevel && cognate ? 0.5 : 1,
@@ -659,6 +663,9 @@ RunResult runOnce({
     levels: bank.levels,
     skills: gate == null ? base : gate.skillsInPlay(base),
     declaration: declaration,
+    declarationWeight: kHarnessProfile.declarationWeight,
+    temper: kHarnessProfile.temper,
+    togetherShare: kHarnessProfile.togetherShare,
   );
   final state = RunState(
     model: model,
@@ -688,7 +695,8 @@ RunResult runOnce({
     if (!item.pseudo) state.askedCards.add(cardKey);
     if (item.pseudo) state.pseudoAsked++;
     if (item.selfRated) state.selfRatedAsked++;
-    state.seconds += item.spec.seconds;
+    state.seconds +=
+        item.spec.seconds * (kHarnessProfile.secondsScale[item.spec.code] ?? 1);
     if (state.items + gateItems > 80) break;
   }
   final readout = model.readout();
@@ -1027,8 +1035,8 @@ class V3SimPicker implements SimPicker {
             format: code,
             deck: card.deck,
             skills: spec.skills,
-            seconds: spec.seconds,
-            slip: spec.slip,
+            seconds: spec.seconds * (kHarnessProfile.secondsScale[code] ?? 1),
+            slip: spec.slip * (kHarnessProfile.slipScale[code] ?? 1),
             guess: guess,
             conflictKeys: <String>{card.id},
             clean: !card.cognate && guess <= kCleanGuessMax,
@@ -1083,6 +1091,7 @@ class V3SimPicker implements SimPicker {
           yesNoBlock: yesNoBlock,
           gateItems: s.gateItems,
           gateSeconds: s.seconds,
+          profile: kHarnessProfile,
         ),
   );
 
@@ -1152,6 +1161,15 @@ double percentile(List<num> values, double p) {
 /// The first seed of every cell (the CI runs the gamer and adversary gates
 /// again from other seeds, see the `_b` and `_c` test files).
 int kSeedBase = 0;
+
+/// The calibration profile the harness runs under (the built-in default; the
+/// edge test files set [kSafeEdgeProfile]).
+PlacementProfile kHarnessProfile = PlacementProfile.defaults;
+
+/// The profile at every safe edge of the clamps at once: the values a file
+/// may take that are furthest from the default in the safer direction. The
+/// gates are run under it (`test/placement_v3_edge_*_test.dart`).
+PlacementProfile get kSafeEdgeProfile => PlacementProfile.safestEdge;
 
 List<RunResult> runCell({
   required SimBank bank,

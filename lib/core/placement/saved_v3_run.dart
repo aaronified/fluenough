@@ -52,11 +52,17 @@ class SavedV3Run {
   /// a run is resumed on the same constants it began with.
   final int profile;
 
+  /// Whether the run can still be carried on: the same decks, app version and
+  /// calibration profile version (its answers were taken under the constants
+  /// of that version, and a replay under others would ask other questions),
+  /// and within [savedRunLife].
   bool isFresh({
     required int nowSeconds,
     required String deckSet,
     required String appVersion,
+    int? profile,
   }) =>
+      (profile == null || this.profile == profile) &&
       this.deckSet == deckSet &&
       this.appVersion == appVersion &&
       nowSeconds >= savedAt &&
