@@ -6,6 +6,7 @@ import '../core/placement/assurance_readout.dart';
 import '../core/placement/placed_outcome.dart';
 import '../core/placement/joint_model.dart' show JointReadout;
 import '../core/placement/assurance_model.dart' show PlacementLevels;
+import '../core/placement/v3_result.dart';
 import '../core/placement/placement_data.dart';
 import '../core/placement/placement_questions.dart';
 import '../core/placement/placement_run.dart';
@@ -177,6 +178,32 @@ extension PlacementRunSetup on AppState {
     native: native,
     recheck: recheck,
   );
+
+  /// The write of a V3 run's result (build step 7): each placed skill up to
+  /// its start, never above what its items proved, with the learner's changes
+  /// ([overrides], a class per skill); a skill left out writes nothing.
+  void writePlacementV3(
+    String code,
+    PlacementRunPlan plan,
+    V3Result result, {
+    Map<PlacementSkill, int> overrides = const <PlacementSkill, int>{},
+    String? native,
+    bool recheck = false,
+  }) {
+    final assurances = result.assurances(
+      overrides: overrides,
+      scripts: plan.scripts.length,
+    );
+    writePlacementReadout(
+      code,
+      plan,
+      assurances,
+      topClass: result.levels.topClass,
+      covered: assurances.keys,
+      native: native,
+      recheck: recheck,
+    );
+  }
 
   /// The same write for a V3 readout (wiki/Plan-Placement-V3.md): each
   /// scored skill is credited up to its lower edge, never above the level

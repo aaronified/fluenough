@@ -14840,5 +14840,280 @@
         "example": "somewhat"
       }
     }
+  },
+  "findLevelScriptWhichLetter": "Which letter makes this sound?",
+  "@findLevelScriptWhichLetter": {
+    "description": "V3 script check, heard: pick the letter."
+  },
+  "findLevelScriptWhichSound": "What sound does this letter make?",
+  "@findLevelScriptWhichSound": {
+    "description": "V3 script check, shown: pick the reading."
+  },
+  "findLevelRateSay": "Say the word in {language}",
+  "@findLevelRateSay": {
+    "description": "V3 Say without a recogniser: the heading.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Hindi"
+      }
+    }
+  },
+  "findLevelRateSayBody": "Say it aloud, then tell us how it went. This is not scored.",
+  "@findLevelRateSayBody": {
+    "description": "V3 self-rated Say: the instruction."
+  },
+  "findLevelSaidWell": "I said it",
+  "@findLevelSaidWell": {
+    "description": "V3 self-rated Say: the learner said the word."
+  },
+  "findLevelSaidNot": "Not yet",
+  "@findLevelSaidNot": {
+    "description": "V3 self-rated Say: the learner could not say the word."
+  },
+  "findLevelTypeWord": "Type the word in {language}",
+  "@findLevelTypeWord": {
+    "description": "V3 typing question: the heading.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      }
+    }
+  },
+  "findLevelFillGap": "Type the missing letters",
+  "@findLevelFillGap": {
+    "description": "V3 gap-spelling question: the heading."
+  },
+  "findLevelGapHint": "Missing letters",
+  "@findLevelGapHint": {
+    "description": "V3 gap-spelling field hint."
+  },
+  "findLevelTypeHint": "Type here",
+  "@findLevelTypeHint": {
+    "description": "V3 typing field hint."
+  },
+  "findLevelYesNo": "Do you know this word?",
+  "@findLevelYesNo": {
+    "description": "V3 yes/no question: the heading."
+  },
+  "findLevelHeardYesNo": "Do you know the word you heard?",
+  "@findLevelHeardYesNo": {
+    "description": "V3 heard yes/no question: the heading."
+  },
+  "findLevelYes": "Yes, I know it",
+  "@findLevelYes": {
+    "description": "V3 yes/no: yes."
+  },
+  "findLevelNo": "No",
+  "@findLevelNo": {
+    "description": "V3 yes/no: no."
+  },
+  "findLevelSoftStopTitle": "Enough for a first answer",
+  "@findLevelSoftStopTitle": {
+    "description": "V3 run: the heading of the pause at about 22 questions."
+  },
+  "findLevelSoftStopBody": "You can see where you start now, or keep going for a sharper answer. The check never takes more than five minutes.",
+  "@findLevelSoftStopBody": {
+    "description": "V3 run: what the learner is asked to choose at the pause."
+  },
+  "findLevelSeeResult": "See my result",
+  "@findLevelSeeResult": {
+    "description": "V3 run, the pause: ends the check."
+  },
+  "findLevelResultTitle": "Where you start",
+  "@findLevelResultTitle": {
+    "description": "V3 result: heading."
+  },
+  "findLevelResultIntro": "Each line is where we would start you, with the range we are 80% sure of. Starting a little low costs you a few easy lessons; starting too high would cost you more.",
+  "@findLevelResultIntro": {
+    "description": "V3 result: intro."
+  },
+  "findLevelResultStart": "{skill}: start at unit {unit}",
+  "@findLevelResultStart": {
+    "description": "V3 result: a placed skill.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      },
+      "unit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "findLevelResultStartBeginning": "{skill}: start from the beginning",
+  "@findLevelResultStartBeginning": {
+    "description": "V3 result: a skill placed at the beginning.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      }
+    }
+  },
+  "findLevelResultRange": "Likely between unit {low} and unit {high}",
+  "@findLevelResultRange": {
+    "description": "V3 result: the 80% range.",
+    "placeholders": {
+      "low": {
+        "type": "int",
+        "example": "11"
+      },
+      "high": {
+        "type": "int",
+        "example": "17"
+      }
+    }
+  },
+  "findLevelResultRangeOne": "Likely unit {unit}",
+  "@findLevelResultRangeOne": {
+    "description": "V3 result: a range of one unit.",
+    "placeholders": {
+      "unit": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "findLevelResultRangeBeginning": "Likely from the beginning to unit {high}",
+  "@findLevelResultRangeBeginning": {
+    "description": "V3 result: a range that starts at the beginning.",
+    "placeholders": {
+      "high": {
+        "type": "int",
+        "example": "5"
+      }
+    }
+  },
+
+  "findLevelResultSelfRated": "{skill}: self-rated, not placed",
+  "@findLevelResultSelfRated": {
+    "description": "V3 result: Say without a recogniser.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Say"
+      }
+    }
+  },
+  "findLevelResultSelfRatedBody": "Nothing here can hear you, so Say is not placed. You can still practise it from the beginning.",
+  "@findLevelResultSelfRatedBody": {
+    "description": "V3 result: why Say is not placed."
+  },
+  "findLevelResultNotTested": "{skill}: not tested ({reason})",
+  "@findLevelResultNotTested": {
+    "description": "V3 result: a skill left out.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Hear"
+      },
+      "reason": {
+        "type": "String",
+        "example": "no sound"
+      }
+    }
+  },
+  "findLevelReasonNoSound": "no sound on this phone",
+  "@findLevelReasonNoSound": {
+    "description": "V3 result: why Hear was not tested."
+  },
+  "findLevelReasonNoMic": "no microphone available",
+  "@findLevelReasonNoMic": {
+    "description": "V3 result: why Say was not tested."
+  },
+  "findLevelReasonNotEnough": "not enough answers",
+  "@findLevelReasonNotEnough": {
+    "description": "V3 result: why a skill was not placed."
+  },
+  "findLevelResultNeedsScript": "{skill}: needs the script first",
+  "@findLevelResultNeedsScript": {
+    "description": "V3 result: Read or Write while the letters are not known.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      }
+    }
+  },
+  "findLevelResultNeedsScriptBody": "Your answers show the letters of this script are not familiar yet, so reading and writing cannot be placed. Learn the letters first. Until then these start from the beginning.",
+  "@findLevelResultNeedsScriptBody": {
+    "description": "V3 result: the why."
+  },
+  "findLevelIReadIt": "I do read it: check again",
+  "@findLevelIReadIt": {
+    "description": "V3 result: the learner says they read the script."
+  },
+  "findLevelCheckLetters": "Check the letters again",
+  "@findLevelCheckLetters": {
+    "description": "V3 result: ask the letters again."
+  },
+  "findLevelScriptPartly": "You know some of the letters, so Read and Write were asked as if you read the script. If a line looks low, check again.",
+  "@findLevelScriptPartly": {
+    "description": "V3 result: note for a partly known script."
+  },
+  "findLevelChange": "Change",
+  "@findLevelChange": {
+    "description": "V3 result: the learner changes a start."
+  },
+  "findLevelChangeTitle": "Start {skill} at unit",
+  "@findLevelChangeTitle": {
+    "description": "V3 result: heading of the change dialog.",
+    "placeholders": {
+      "skill": {
+        "type": "String",
+        "example": "Read"
+      }
+    }
+  },
+  "findLevelChangeUse": "Use this",
+  "@findLevelChangeUse": {
+    "description": "V3 result: confirms the change."
+  },
+  "findLevelChangeLess": "One unit earlier",
+  "@findLevelChangeLess": {
+    "description": "V3 result: stepper down."
+  },
+  "findLevelChangeMore": "One unit later",
+  "@findLevelChangeMore": {
+    "description": "V3 result: stepper up."
+  },
+  "findLevelPreparing": "Getting your questions ready…",
+  "@findLevelPreparing": {
+    "description": "Find my level: shown while the questions are made from the decks."
+  },
+  "findLevelPreparingPercent": "Getting your questions ready, {percent} percent",
+  "@findLevelPreparingPercent": {
+    "description": "Find my level: what a screen reader says while the questions are made.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "findLevelPreparingFailed": "The questions could not be made just now. Nothing was changed.",
+  "@findLevelPreparingFailed": {
+    "description": "Find my level: the questions could not be made; Retry follows."
+  },
+  "findLevelPreparingBody": "This happens once for each language. You can leave: it keeps going, and next time it is ready.",
+  "@findLevelPreparingBody": {
+    "description": "Find my level: why the learner waits, and that they may leave."
+  },
+  "findLevelCarryOnNoSound": "Carry on without sound",
+  "@findLevelCarryOnNoSound": {
+    "description": "Find my level: after the sound failed twice in a row, leaves Hear and Say out."
+  },
+  "findLevelChangeUnit": "Unit {unit}",
+  "@findLevelChangeUnit": {
+    "description": "Find my level result: what a screen reader says of the unit a learner is changing a start to.",
+    "placeholders": {
+      "unit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
   }
 }

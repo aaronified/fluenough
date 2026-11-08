@@ -46,26 +46,73 @@ class ItemBank {
   static ItemBank build(PlacementLanguageData data, {int seed = 1}) {
     final cx = GenContext(data, seed: seed);
     final g = ItemGenerators(cx);
-    final all = <RegItem>[
-      ...g.wordToMeaning('F2'),
-      ...g.wordToMeaning('F13'),
-      ...g.meaningToWord(),
-      ...g.typedOrSaid('F7'),
-      ...g.gapTyping(),
-      ...g.typedOrSaid('F18'),
-      ...g.yesNoReal('F1'),
-      ...g.yesNoReal('F14'),
-      ...g.pseudowords('F1'),
-      ...g.pseudowords('F14'),
-      ...g.sentenceTiles('F8'),
-      ...g.sentenceTiles('F16'),
-      ...g.wordOrder(),
-      ...g.sentencePicks('F5'),
-      ...g.sentencePicks('F17'),
-      ...g.cloze(),
-      ...g.genderExceptions(),
-      ...g.matching(),
-    ];
+    final all = <RegItem>[];
+    for (final step in _steps(g)) {
+      all.addAll(step());
+    }
+    return _finish(data, cx, g, all);
+  }
+
+  /// The same bank, built in steps with a [pause] between them (so that a
+  /// caller on a thread it must not hold, the browser's, can let the screen
+  /// draw), reporting [onProgress] (0 to 1) after each, and stopping with null
+  /// when [cancelled] says so. The items are those of [build].
+  static Future<ItemBank?> buildAsync(
+    PlacementLanguageData data, {
+    int seed = 1,
+    Future<void> Function()? pause,
+    void Function(double progress)? onProgress,
+    bool Function()? cancelled,
+  }) async {
+    final cx = GenContext(data, seed: seed);
+    final g = ItemGenerators(cx);
+    final steps = _steps(g).toList();
+    // The word tiles and the audit weigh as one step.
+    final total = steps.length + 1;
+    final all = <RegItem>[];
+    for (var i = 0; i < steps.length; i++) {
+      if (cancelled?.call() ?? false) return null;
+      all.addAll(steps[i]());
+      onProgress?.call((i + 1) / total);
+      await pause?.call();
+    }
+    if (cancelled?.call() ?? false) return null;
+    onProgress?.call(steps.length / total);
+    await pause?.call();
+    final bank = _finish(data, cx, g, all);
+    onProgress?.call(1);
+    return bank;
+  }
+
+  /// Every generator, in the order the bank lists their items.
+  static Iterable<List<RegItem> Function()> _steps(ItemGenerators g) =>
+      <List<RegItem> Function()>[
+        () => g.wordToMeaning('F2'),
+        () => g.wordToMeaning('F13'),
+        g.meaningToWord,
+        () => g.typedOrSaid('F7'),
+        g.gapTyping,
+        () => g.typedOrSaid('F18'),
+        () => g.yesNoReal('F1'),
+        () => g.yesNoReal('F14'),
+        () => g.pseudowords('F1'),
+        () => g.pseudowords('F14'),
+        () => g.sentenceTiles('F8'),
+        () => g.sentenceTiles('F16'),
+        g.wordOrder,
+        () => g.sentencePicks('F5'),
+        () => g.sentencePicks('F17'),
+        g.cloze,
+        g.genderExceptions,
+        g.matching,
+      ];
+
+  static ItemBank _finish(
+    PlacementLanguageData data,
+    GenContext cx,
+    ItemGenerators g,
+    List<RegItem> all,
+  ) {
     final excluded = <String>[];
     // Word tiles: the fewest decoys at which the strong anagram solver stays
     // within the admission bound.

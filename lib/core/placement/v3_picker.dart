@@ -37,6 +37,20 @@ import 'placement_questions.dart';
 /// The bonus for a mixed item in a run that began with the script gate.
 const double kScriptRunMixedBonus = 0.4;
 
+/// The values a run that began with a script gate uses in place of the
+/// defaults of [PickerConfig] (build step 6 measured them on the Devanagari
+/// cells only; a run with no gate keeps the defaults, which the other cells
+/// were measured with): the optional Say rating is left out once the run
+/// holds this many items, and a skill that stands apart from the others is
+/// probed with this many clean items of a proven band.
+const int kScriptRunSayRatingUntilItems = 24;
+const int kScriptRunStandApartItems = 8;
+
+/// The caps of a whole run (the script gate's items and time included).
+const int kRunMaxItems = 40;
+const double kRunMaxSeconds = 300;
+const int kRunSoftStopItems = 22;
+
 /// Formats the bank admits but the picker must not ask yet: S2 (word order)
 /// needs a grammaticality check for languages whose word order is free, and
 /// F9 (matching) a screen. A candidate of these formats is refused by the
@@ -135,8 +149,15 @@ class PickerCandidate {
   static List<PickerCandidate> fromBank(
     ItemBank bank, {
     GuessCalibration calibration = GuessCalibration.seed,
+  }) => fromItems(bank.items, calibration: calibration);
+
+  /// The candidates of admitted [items] (a bank's, or the same list built
+  /// elsewhere and handed over).
+  static List<PickerCandidate> fromItems(
+    Iterable<RegItem> items, {
+    GuessCalibration calibration = GuessCalibration.seed,
   }) => <PickerCandidate>[
-    for (final i in bank.items)
+    for (final i in items)
       if (!kUnaskableFormats.contains(i.format))
         PickerCandidate.fromItem(i, calibration: calibration),
   ];
@@ -211,14 +232,14 @@ class PickerConfig {
     this.yesNoBlock = false,
     this.sayItems = 1,
     this.sayRatingUntilSeconds = 180,
-    this.sayRatingUntilItems = 24,
+    this.sayRatingUntilItems = 40,
     this.mixedBonus = 0.3,
     this.climbQuantile = 0.12,
     this.climbTolerance = 0.0,
     this.strictRecord = true,
     this.mixedOpening = 2,
     this.mixedQuantile = 0.5,
-    this.standApartItems = 8,
+    this.standApartItems = 14,
     this.drill = const DrillConfig(),
     this.maxItems = 40,
     this.maxSeconds = 300,
@@ -226,6 +247,33 @@ class PickerConfig {
     this.softStopItems = 22,
     this.locateItems = 2,
   });
+
+  /// The configuration of a run whose script gate has asked [gateItems]
+  /// items in [gateSeconds] seconds (none when the language has no gate): the
+  /// caps of the whole run less what the gate used, and, after a gate, the
+  /// values the gate's cells were measured with.
+  factory PickerConfig.forRun({
+    required bool audio,
+    required bool mic,
+    required bool recogniser,
+    int gateItems = 0,
+    double gateSeconds = 0,
+    bool yesNoBlock = false,
+  }) {
+    final gated = gateItems > 0;
+    return PickerConfig(
+      audio: audio,
+      mic: mic,
+      recogniser: recogniser,
+      yesNoBlock: yesNoBlock,
+      mixedBonus: gated ? kScriptRunMixedBonus : 0.3,
+      sayRatingUntilItems: gated ? kScriptRunSayRatingUntilItems : 40,
+      standApartItems: gated ? kScriptRunStandApartItems : 14,
+      maxSeconds: kRunMaxSeconds - gateSeconds,
+      maxItems: kRunMaxItems - gateItems,
+      softStopItems: kRunSoftStopItems - gateItems,
+    );
+  }
 
   /// Text to speech works: Hear can be tested.
   final bool audio;
@@ -294,6 +342,32 @@ class PickerConfig {
 
   /// The items a skill is located with before a band is proved.
   final int locateItems;
+
+  /// This configuration with the device's abilities changed (the learner gave
+  /// the microphone up, or the voice failed).
+  PickerConfig withDevice({bool? audio, bool? mic, bool? recogniser}) =>
+      PickerConfig(
+        audio: audio ?? this.audio,
+        mic: mic ?? this.mic,
+        recogniser: recogniser ?? this.recogniser,
+        yesNoBlock: yesNoBlock,
+        sayItems: sayItems,
+        sayRatingUntilSeconds: sayRatingUntilSeconds,
+        sayRatingUntilItems: sayRatingUntilItems,
+        mixedBonus: mixedBonus,
+        climbQuantile: climbQuantile,
+        climbTolerance: climbTolerance,
+        strictRecord: strictRecord,
+        mixedOpening: mixedOpening,
+        mixedQuantile: mixedQuantile,
+        standApartItems: standApartItems,
+        drill: drill,
+        maxItems: maxItems,
+        maxSeconds: maxSeconds,
+        skillCap: skillCap,
+        softStopItems: softStopItems,
+        locateItems: locateItems,
+      );
 }
 
 /// Why a run ended.
@@ -334,7 +408,9 @@ class V3Picker {
   final CandidatePool pool;
   final JointPlacement model;
   final math.Random rng;
-  final PickerConfig config;
+
+  /// What the picker may do. It changes only through [giveUpMicrophone].
+  PickerConfig config;
 
   final Map<PlacementSkill, _SkillState> _state =
       <PlacementSkill, _SkillState>{};
@@ -567,6 +643,27 @@ class V3Picker {
       seconds: seconds,
       testable: _tested,
     );
+  }
+
+  /// The learner cannot speak now: Say is no longer asked or rated (what it
+  /// already holds stays), and the run goes on with the other skills.
+  void giveUpMicrophone() {
+    config = config.withDevice(mic: false, recogniser: false);
+  }
+
+  /// The sound cannot be played on this phone: Hear and Say are no longer
+  /// asked (what they already hold stays).
+  void dropAudio() {
+    config = config.withDevice(audio: false, mic: false, recogniser: false);
+  }
+
+  /// [c] could not be shown (its sound would not play): it gives no evidence
+  /// and nothing for the drill-down to read; it still counts as asked, so
+  /// its card is never asked again and the caps hold.
+  void skip(PickerCandidate c) {
+    if (identical(_unrecorded, c)) _unrecorded = null;
+    if (_isolating.remove(c.id)) drillDown.abandon();
+    _pre.remove(c.id);
   }
 
   /// A mixed item for the opening: two or more tested skills, at the middle

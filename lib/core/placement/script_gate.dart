@@ -231,6 +231,12 @@ class ScriptGate {
     _llr += right ? kScriptRightLlr : kScriptWrongLlr;
   }
 
+  /// The item [next] returned could not be shown: it is left out, and counts
+  /// for nothing either way.
+  void skip() {
+    _pending = null;
+  }
+
   /// What the gate found. Before it is over, what it would say now.
   ScriptGateResult get result {
     if (skipped) {

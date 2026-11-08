@@ -1076,15 +1076,13 @@ class V3SimPicker implements SimPicker {
     rng: s.rng,
     config:
         config ??
-        PickerConfig(
+        PickerConfig.forRun(
           audio: s.variant.audio,
           mic: s.variant.mic,
           recogniser: s.variant.recogniser,
           yesNoBlock: yesNoBlock,
-          mixedBonus: s.gateItems > 0 ? kScriptRunMixedBonus : 0.3,
-          maxSeconds: 300 - s.seconds,
-          maxItems: 40 - s.gateItems,
-          softStopItems: 22 - s.gateItems,
+          gateItems: s.gateItems,
+          gateSeconds: s.seconds,
         ),
   );
 
