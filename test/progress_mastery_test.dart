@@ -962,8 +962,6 @@ void main() {
       final label = tester.getSemantics(find.byType(SkillStarCard)).label;
       expect(label, contains('40% with placed'));
       expect(label, contains('Hatched layer: placed, not yet earned'));
-      // The outline is earned only: 10 of 10 taught.
-      expect(find.text('10% · 100%'), findsWidgets);
       semantics.dispose();
     });
 

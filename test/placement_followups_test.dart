@@ -41,7 +41,7 @@ void main() {
     });
     tearDown(() => state.dispose());
 
-    test('the older test stamps model 1, Find my level model 2, and the '
+    test('the older test stamps model 1, Find my level model 3, and the '
         'older test\'s credit is not flagged', () async {
       expect(kOlderPlacementModel, 1);
       expect(kPlacementModel, 3);
@@ -61,7 +61,7 @@ void main() {
       await other.load();
       other.creditPlacement('hi', placed: <String>{decks.first.id});
       expect(other.settings.placedModelsOf('hi'), <int, int>{
-        momentOf(other.now()): 2,
+        momentOf(other.now()): kPlacementModel,
       });
       expect(other.unconfirmedMomentsOf('hi'), isEmpty);
       expect(state.unconfirmedMomentsOf('hi'), isEmpty);
