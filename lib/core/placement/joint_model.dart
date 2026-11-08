@@ -783,6 +783,46 @@ class JointPlacement {
     return total;
   }
 
+  /// P(exactly [failing] of [skills] does not know [deck]'s level while every
+  /// other one of [skills] does): the chance that one skill is the one that
+  /// failed an item which needs all of them.
+  double probabilityFailingOnly(
+    Iterable<PlacementSkill> skills,
+    PlacementSkill failing,
+    int deck,
+  ) {
+    final index = <int>[for (final s in skills) this.skills.indexOf(s)];
+    final f = this.skills.indexOf(failing);
+    if (index.any((i) => i < 0) || f < 0 || !index.contains(f)) {
+      throw ArgumentError('A skill is not in play ($skills, $failing)');
+    }
+    var mask = 0;
+    for (final i in index) {
+      mask |= 1 << i;
+    }
+    final key = 1000000 + (deck * 64 + mask) * 8 + f;
+    final hit = _knownCache[key];
+    if (hit != null) return hit;
+    final knows = List<bool>.generate(_n, (c) => levels.knows(c, deck));
+    final digits = List<int>.filled(this.skills.length, 0);
+    var total = 0.0;
+    for (var cell = 0; cell < _cells; cell++) {
+      _digits(cell, digits);
+      var ok = true;
+      for (final i in index) {
+        if (knows[digits[i]] == (i == f)) {
+          ok = false;
+          break;
+        }
+      }
+      if (!ok) continue;
+      for (var b = 0; b < _k; b++) {
+        total += _weights[cell * _k + b];
+      }
+    }
+    return _knownCache[key] = total;
+  }
+
   /// P(the skill's class is at or above [deck]'s level).
   double massKnowing(PlacementSkill skill, int deck) {
     final m = marginal(skill);
