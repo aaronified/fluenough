@@ -957,7 +957,7 @@ void main() {
       await pumpStar(tester, mastery: withPlaced());
       expect(find.byKey(const ValueKey<String>('star-legend')), findsOneWidget);
       // (10 + 30) of 100 in every skill: the hexagon's 40% x 40%.
-      expect(find.text('Placed 16%'), findsOneWidget);
+      expect(find.text('Placed and earned 16%'), findsOneWidget);
       expectLabelsInside(tester);
       final label = tester.getSemantics(find.byType(SkillStarCard)).label;
       expect(label, contains('40% with placed'));

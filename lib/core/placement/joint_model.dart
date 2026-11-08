@@ -283,7 +283,18 @@ class JointReadout {
 /// class, with a 90% upper bound, and drop items with a guess of 0.9 or
 /// more).
 class GuessCalibration {
-  const GuessCalibration(this.upperBounds);
+  const GuessCalibration(
+    this.upperBounds, {
+    this.scale = const <String, double>{},
+  });
+
+  /// This calibration with a format's guess multiplied (a calibration
+  /// profile's `guessScale`); an empty map is this one.
+  GuessCalibration scaled(Map<String, double> scale) =>
+      scale.isEmpty ? this : GuessCalibration(upperBounds, scale: scale);
+
+  /// Multipliers of the guess by format code, applied after the bound.
+  final Map<String, double> scale;
 
   /// The seed table, from the adversary's replay of the V2 bank (the report
   /// in the plan's amendments). Provisional: the item registry and the real
@@ -327,9 +338,12 @@ class GuessCalibration {
 
   /// The guess to use for [format] and [cognate] when the design's base is
   /// [base]: the base, raised to the measured bound, never lowered.
-  double guessFor(String format, bool cognate, double base) {
-    final bound = upperBounds['$format:${cognate ? 'cognate' : 'clean'}'];
-    return bound == null ? base : math.max(base, bound);
+  double guessFor(String format, bool cognate, double base, {String? key}) {
+    final bound =
+        upperBounds['${key ?? format}:${cognate ? 'cognate' : 'clean'}'];
+    final g = bound == null ? base : math.max(base, bound);
+    final m = scale[format];
+    return m == null ? g : math.min(0.99, g * m);
   }
 
   /// Whether an item of [format] and [cognate] is worth asking at all.
@@ -398,6 +412,7 @@ class JointPlacement {
     PlacementDeclaration? declaration,
     double declarationWeight = kMaxDeclarationWeight,
     this.temper = kTemper,
+    this.togetherShare = kTogetherShare,
   }) : skills = List<PlacementSkill>.unmodifiable(
          (skills.toSet().toList()..sort((a, b) => a.index - b.index)),
        ),
@@ -435,6 +450,9 @@ class JointPlacement {
 
   /// The exponent every item's likelihood is raised to.
   final double temper;
+
+  /// The share of the prior in which the skills move together.
+  final double togetherShare;
 
   late final int _n;
   late final int _cells;
@@ -510,7 +528,7 @@ class JointPlacement {
         independent *= marginal[digits[i]];
       }
       final value =
-          kTogetherShare * together + (1 - kTogetherShare) * independent;
+          togetherShare * together + (1 - togetherShare) * independent;
       _weights[cell] = value;
       sum += value;
     }

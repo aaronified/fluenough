@@ -9,7 +9,7 @@ import 'item_registry.dart';
 // built again.
 
 /// The version of the stored form. Part of a stored bank's key.
-const int kItemSchema = 2;
+const int kItemSchema = 3;
 
 /// [items] as one JSON text.
 String encodeItems(List<RegItem> items) => jsonEncode(<String, Object?>{
@@ -45,6 +45,7 @@ Map<String, Object?> _encode(RegItem i) => <String, Object?>{
   if (i.correct != 0) 'k': i.correct,
   if (i.tiles.isNotEmpty) 't': i.tiles,
   if (i.answerTiles.isNotEmpty) 'at': i.answerTiles,
+  if (i.alternatives.isNotEmpty) 'alt': i.alternatives,
   if (i.accepted.isNotEmpty) 'a': i.accepted,
   if (i.leadingMark.isNotEmpty) 'lm': i.leadingMark,
   if (i.trailingMark.isNotEmpty) 'tm': i.trailingMark,
@@ -80,6 +81,9 @@ RegItem _decode(Map<String, dynamic> m) => RegItem(
   correct: (m['k'] as int?) ?? 0,
   tiles: _strings(m['t']),
   answerTiles: _strings(m['at']),
+  alternatives: <List<String>>[
+    for (final a in (m['alt'] as List?) ?? const <Object?>[]) _strings(a),
+  ],
   accepted: _strings(m['a']),
   leadingMark: (m['lm'] as String?) ?? '',
   trailingMark: (m['tm'] as String?) ?? '',

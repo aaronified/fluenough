@@ -27,6 +27,7 @@ class SavedV3Run {
     required this.events,
     this.declaration,
     this.starter = false,
+    this.profile = 1,
   });
 
   final String language;
@@ -47,11 +48,21 @@ class SavedV3Run {
   /// Whether the run began with the first formats' items only.
   final bool starter;
 
+  /// The version of the calibration profile the run read its constants from:
+  /// a run is resumed on the same constants it began with.
+  final int profile;
+
+  /// Whether the run can still be carried on: the same decks, app version and
+  /// calibration profile version (its answers were taken under the constants
+  /// of that version, and a replay under others would ask other questions),
+  /// and within [savedRunLife].
   bool isFresh({
     required int nowSeconds,
     required String deckSet,
     required String appVersion,
+    int? profile,
   }) =>
+      (profile == null || this.profile == profile) &&
       this.deckSet == deckSet &&
       this.appVersion == appVersion &&
       nowSeconds >= savedAt &&
@@ -75,6 +86,7 @@ class SavedV3Run {
     'saved_at': savedAt,
     'events': events,
     'starter': starter,
+    'profile': profile,
   };
 
   /// The run [json] holds, or null for anything that is not one (a V2 run
@@ -121,6 +133,9 @@ class SavedV3Run {
           if (e is String && known.contains(e)) e,
       ],
       starter: json['starter'] == true,
+      profile: json['profile'] is int && (json['profile'] as int) > 0
+          ? json['profile'] as int
+          : 1,
     );
   }
 }

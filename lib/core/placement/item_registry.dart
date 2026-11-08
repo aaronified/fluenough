@@ -351,6 +351,7 @@ class RegItem {
     this.correct = 0,
     this.tiles = const <String>[],
     this.answerTiles = const <String>[],
+    this.alternatives = const <List<String>>[],
     this.accepted = const <String>[],
     this.leadingMark = '',
     this.trailingMark = '',
@@ -395,6 +396,11 @@ class RegItem {
   /// The tiles shown (shuffled) and the right order, for tile formats.
   final List<String> tiles;
   final List<String> answerTiles;
+
+  /// Other word orders of a sentence that are as right as [answerTiles]: the
+  /// orders the course itself gives to the same words in another sentence
+  /// (a language with a free word order has several).
+  final List<List<String>> alternatives;
 
   /// The accepted typed or said answers.
   final List<String> accepted;
@@ -455,6 +461,7 @@ class RegItem {
     correct: correct,
     tiles: tiles,
     answerTiles: answerTiles,
+    alternatives: alternatives,
     accepted: accepted,
     leadingMark: leadingMark,
     trailingMark: trailingMark,
@@ -499,12 +506,14 @@ class RegItem {
   JointItem toJointItem({
     GuessCalibration calibration = GuessCalibration.seed,
     String? formatKey,
+    double slipScale = 1,
   }) {
     final cognate = cognateClass == 'cognate';
     final guess = calibration.guessFor(
-      formatKey ?? format,
+      format,
       cognate,
       info.guess,
+      key: formatKey,
     );
     if (pseudo) {
       return JointItem.pseudoword(skills: info.skills, cardId: cardId);
@@ -513,7 +522,7 @@ class RegItem {
     return JointItem(
       skills: info.skills,
       deck: deck,
-      slip: info.slip,
+      slip: info.slip * slipScale,
       guess: yes ? 0 : guess,
       weight: weight,
       clean: !cognate && guess <= kCleanGuessMax,

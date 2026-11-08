@@ -240,9 +240,9 @@ extension PlacementRunSetup on AppState {
     recheck: recheck,
   );
 
-  /// What a run found, written to the learner's data: [writePlacementRun]'s
-  /// and [writePlacementJoint]'s common part. [covered] are the skills the
-  /// run covered, whose stored labels it replaces.
+  /// What a run found, written to the learner's data: [writePlacementV3]'s and
+  /// [writePlacementJoint]'s common part. [covered] are the skills the run
+  /// covered, whose stored labels it replaces.
   void writePlacementReadout(
     String code,
     PlacementRunPlan plan,

@@ -142,6 +142,48 @@ class SentenceInfo {
   String get text => '$leadingMark${words.join(' ')}$trailingMark';
 }
 
+/// The languages whose word order is free enough that the same words in
+/// another order, anywhere in the course, mean the same sentence. Empty until a
+/// native reviewer has flagged a language: a language is only listed here when
+/// no reordering of a sentence's words reverses who does what (a language with
+/// case marks on every noun). Everywhere else another order is accepted only
+/// when the course gives it to a sentence with the same translation.
+const Set<String> kFreeOrderLanguages = <String>{};
+
+String _meaning(String english) => english
+    .toLowerCase()
+    .replaceAll(RegExp(r'[^a-z0-9 ]'), ' ')
+    .split(RegExp(r'\s+'))
+    .where((w) => w.isNotEmpty)
+    .join(' ');
+
+/// The other word orders that are as right as [s]'s own: the orders another
+/// sentence of the course gives to the same words, but only when that sentence
+/// carries the same meaning (the same English), or when the language is listed
+/// free-order. The same words in another order are not enough: `dog bites man`
+/// and `man bites dog` are made of the same words and say opposite things.
+List<List<String>> alternativeOrders(
+  SentenceInfo s,
+  Iterable<SentenceInfo> all, {
+  bool freeOrder = false,
+}) {
+  final mine = <String>[for (final w in s.words) w.toLowerCase()];
+  final key = (List<String>.of(mine)..sort()).join(' ');
+  final meaning = _meaning(s.english);
+  final out = <List<String>>[];
+  for (final o in all) {
+    if (identical(o, s) || o.card.id == s.card.id) continue;
+    final w = <String>[for (final x in o.words) x.toLowerCase()];
+    if ((List<String>.of(w)..sort()).join(' ') != key) continue;
+    if (w.join(' ') == mine.join(' ')) continue;
+    if (!freeOrder && (meaning.isEmpty || _meaning(o.english) != meaning)) {
+      continue;
+    }
+    if (!out.any((x) => x.join(' ') == w.join(' '))) out.add(w);
+  }
+  return out;
+}
+
 /// The edit distance of two unit lists, stopping at [limit] (the result is
 /// [limit] when it is that or more).
 int unitDistance(List<String> a, List<String> b, int limit) {
@@ -1035,6 +1077,7 @@ class ItemGenerators {
   /// where they are.
   List<RegItem> sentenceTiles(String format) {
     final r = cx.stream('stiles:$format');
+    final freeOrder = kFreeOrderLanguages.contains(cx.data.language);
     final out = <RegItem>[];
     for (final s in cx.sentences) {
       if (s.inner || s.words.length > 9) continue;
@@ -1062,6 +1105,11 @@ class ItemGenerators {
           prompt: format == 'F8' ? s.english : s.text,
           tiles: _shuffle(r, <String>[...lower, ...decoys.take(2)]),
           answerTiles: lower,
+          alternatives: alternativeOrders(
+            s,
+            cx.sentences,
+            freeOrder: freeOrder,
+          ),
           leadingMark: s.leadingMark,
           trailingMark: s.trailingMark,
           cognateScore: s.cognateScore,
