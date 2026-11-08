@@ -144,6 +144,7 @@ class V3Run {
     required this.seed,
     this.declaration,
     this.scriptStart = V3ScriptStart.ask,
+    this.yesNoBlock = false,
     required List<RegItem> items,
   }) : wanted = Set<PlacementSkill>.unmodifiable(skills),
        levels = PlacementLevels(data.deckCount, maxParts: 20),
@@ -174,6 +175,7 @@ class V3Run {
     required Iterable<String> events,
     PlacementDeclaration? declaration,
     V3ScriptStart scriptStart = V3ScriptStart.ask,
+    bool yesNoBlock = false,
     required List<RegItem> items,
   }) {
     final run = V3Run(
@@ -184,6 +186,7 @@ class V3Run {
       seed: seed,
       declaration: declaration,
       scriptStart: scriptStart,
+      yesNoBlock: yesNoBlock,
       items: items,
     );
     for (final e in events) {
@@ -202,6 +205,10 @@ class V3Run {
   final int seed;
   final PlacementDeclaration? declaration;
   final V3ScriptStart scriptStart;
+
+  /// Whether Read opens with a block of yes/no items (the picker's
+  /// `yesNoBlock`; off in the app until the re-fit decides it).
+  final bool yesNoBlock;
   final PlacementLevels levels;
   final math.Random rng;
 
@@ -496,6 +503,7 @@ class V3Run {
         audio: audio,
         mic: recogniser || audio,
         recogniser: recogniser && audio,
+        yesNoBlock: yesNoBlock,
         gateItems: _gateItems,
         gateSeconds: _gateSeconds,
       ),

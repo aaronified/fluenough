@@ -8,8 +8,10 @@ import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/script_gate.dart';
+import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/v3_result.dart';
 import 'package:fluenough/core/placement/v3_session.dart';
+import 'package:fluenough/features/placement/v3_question_view.dart';
 import 'package:fluenough/features/placement/v3_result_page.dart';
 import 'package:fluenough/features/placement/v3_run_page.dart';
 import 'package:flutter/material.dart';
@@ -31,6 +33,27 @@ const LanguageInfo _native = LanguageInfo(
   name: 'English',
 );
 
+final RegItem _tilesItem = RegItem(
+  id: 't:F8',
+  format: 'F8',
+  cardId: 't',
+  deck: 0,
+  prompt: 'a sentence',
+  tiles: <String>['mo', 'ba', 'ku', 'zi', 'le'],
+  answerTiles: <String>['ba', 'mo', 'ku'],
+);
+
+/// A run that only remembers the tiles it was given.
+class _TilesRun implements V3Run {
+  List<int>? placed;
+
+  @override
+  void answerTiles(List<int> placed) => this.placed = placed;
+
+  @override
+  dynamic noSuchMethod(Invocation invocation) => super.noSuchMethod(invocation);
+}
+
 V3Run _run({
   int seed = 3,
   Set<PlacementSkill> skills = const <PlacementSkill>{
@@ -38,6 +61,7 @@ V3Run _run({
     PlacementSkill.write,
   },
   Set<String>? formats,
+  bool yesNoBlock = false,
 }) => V3Run(
   data: findLevelData(),
   skills: skills,
@@ -45,6 +69,7 @@ V3Run _run({
   recogniser: false,
   seed: seed,
   scriptStart: V3ScriptStart.skip,
+  yesNoBlock: yesNoBlock,
   items: smallV3Bank(formats: formats),
 );
 
@@ -191,7 +216,11 @@ void main() {
 
       testWidgets('yes and no, with "I don\'t know" a miss that hides no '
           'guess', (tester) async {
-        final run = _run(seed: 2, formats: <String>{'F1'});
+        final run = _run(
+          seed: 2,
+          formats: <String>{'F1', 'F2'},
+          yesNoBlock: true,
+        );
         _advanceTo(run, V3Mode.yesNo);
         await _open(
           tester,
@@ -208,25 +237,39 @@ void main() {
         }
       });
 
-      testWidgets('tiles are placed in order and checked', (tester) async {
-        final run = _run(seed: 4, formats: <String>{'F4'});
-        _advanceTo(run, V3Mode.tiles);
-        await _open(
+      testWidgets('tiles are placed in order, decoys left, and checked', (
+        tester,
+      ) async {
+        final run = _TilesRun();
+        usePhone(tester, textScale: scale);
+        await pumpScreen(
           tester,
-          () => _page(run),
-          <Object?>[],
-          textScale: scale,
           themeMode: mode,
+          Scaffold(
+            body: V3QuestionView(
+              question: V3Run.questionOf(_tilesItem),
+              number: 1,
+              language: _language,
+              native: _native,
+              run: run,
+              onChanged: () {},
+              onListened: ({required heard}) {},
+            ),
+          ),
         );
         expect(
           tester.widget<FilledButton>(_key('find-level-check')).onPressed,
           isNull,
         );
-        for (final t in run.question!.item!.answerTiles) {
+        for (final t in _tilesItem.answerTiles) {
           await _tap(tester, find.text(t).first);
         }
         await _tap(tester, _key('find-level-check'));
-        expect(run.events.last, 'r');
+        final shown = _tilesItem.tiles;
+        expect(
+          <String>[for (final i in run.placed!) shown[i]],
+          <String>['ba', 'mo', 'ku'],
+        );
       });
     });
   }
@@ -347,6 +390,16 @@ void main() {
           textScale: scale,
           themeMode: mode,
         );
+        await tester.scrollUntilVisible(
+          find.text('Hear: not tested (no sound on this phone)'),
+          200,
+          scrollable: find.byType(Scrollable).first,
+        );
+        await tester.scrollUntilVisible(
+          find.text('Read: start at unit 14'),
+          -200,
+          scrollable: find.byType(Scrollable).first,
+        );
         expect(find.text('Read: start at unit 14'), findsOneWidget);
         expect(find.text('Likely between unit 11 and unit 17'), findsOneWidget);
         expect(find.text('Fairly sure'), findsOneWidget);
@@ -413,7 +466,6 @@ void main() {
           onRestart: restarts.add,
         ),
         <Object?>[],
-        textScale: 1.4,
       );
       expect(
         find.text('Read: needs the script first', skipOffstage: false),
