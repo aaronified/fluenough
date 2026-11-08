@@ -80,10 +80,9 @@ void main() {
           final right = known
               ? rng.nextDouble() >= c.slip
               : rng.nextDouble() < c.guess;
-          model.observe(
-            item.toJointItem(),
-            right ? AnswerOutcome.right : AnswerOutcome.wrong,
-          );
+          final outcome = right ? AnswerOutcome.right : AnswerOutcome.wrong;
+          model.observe(item.toJointItem(), outcome);
+          picker.record(c, outcome);
         }
         return (picker: picker, model: model, truth: truth);
       }

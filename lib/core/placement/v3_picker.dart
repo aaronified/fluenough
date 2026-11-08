@@ -1,6 +1,7 @@
 import 'dart:math' as math;
 
 import 'assurance_model.dart';
+import 'drill_down.dart';
 import 'item_bank.dart';
 import 'item_registry.dart';
 import 'joint_model.dart';
@@ -207,9 +208,14 @@ class PickerConfig {
     this.yesNoBlock = false,
     this.sayItems = 1,
     this.sayRatingUntilSeconds = 180,
+    this.sayRatingUntilItems = 40,
     this.mixedBonus = 0.3,
     this.climbQuantile = 0.12,
     this.climbTolerance = 0.0,
+    this.mixedOpening = 2,
+    this.mixedQuantile = 0.5,
+    this.standApartItems = 14,
+    this.drill = const DrillConfig(),
     this.maxItems = 40,
     this.maxSeconds = 300,
     this.skillCap = 14,
@@ -236,6 +242,9 @@ class PickerConfig {
   /// run is already longer than this, to keep the median run short.
   final double sayRatingUntilSeconds;
 
+  /// ... and when it already has this many items.
+  final int sayRatingUntilItems;
+
   /// A proven band is climbed from while this quantile of the posterior lies
   /// more than [climbTolerance] tenths above the proven ceiling.
   /// What an item that also proves another skill's band is worth, in bits.
@@ -243,6 +252,22 @@ class PickerConfig {
 
   final double climbQuantile;
   final double climbTolerance;
+
+  /// The clean items of a proven band asked while the joint prior still
+  /// holds the skill's lower edge more than 6 classes under it (a skill that
+  /// stands apart from the others, an ear-only learner).
+  final int standApartItems;
+
+  /// How many mixed items (an item of two skills: tiles of Read and Write,
+  /// dictation of Hear and Write) open the run, at the middle of the
+  /// posterior: cheap per skill, and the drill-down tells apart a miss.
+  final int mixedOpening;
+
+  /// The quantile of the posterior the opening mixed items are asked at.
+  final double mixedQuantile;
+
+  /// The isolating drill-down ([DrillConfig.enabled] turns it off).
+  final DrillConfig drill;
 
   final int maxItems;
   final double maxSeconds;
@@ -305,6 +330,17 @@ class V3Picker {
   int _yesNoWords = 0;
   int _selfRated = 0;
 
+  /// The drill-down of the run: its cases say which skill failed what.
+  late final DrillDown drillDown = DrillDown(model, config: config.drill);
+
+  // What the posterior thought before each item asked, and which items were
+  // isolating items of a drill-down.
+  final Map<String, ({Map<PlacementSkill, double> known, double all})> _pre =
+      <String, ({Map<PlacementSkill, double> known, double all})>{};
+  final Set<String> _isolating = <String>{};
+  final Set<PlacementSkill> _intervalChecked = <PlacementSkill>{};
+  int _mixedAsked = 0;
+
   /// How many items were asked.
   int get items => asked.length;
 
@@ -353,6 +389,49 @@ class V3Picker {
       final block = _yesNoNext();
       if (block != null) return _take(block);
     }
+    if (config.drill.enabled) {
+      // A skill about to be finished with a wide or contradictory interval
+      // is drilled.
+      // (the widest interval first).
+      final ready =
+          <PlacementSkill>[
+            for (final s in _tested)
+              if (!_intervalChecked.contains(s) && _isDone(s)) s,
+          ]..sort((a, b) {
+            int width(PlacementSkill k) {
+              final (lo, hi) = drillDown.interval(k);
+              return hi - lo;
+            }
+
+            return width(b).compareTo(width(a));
+          });
+      for (final s in ready) {
+        _intervalChecked.add(s);
+        drillDown.checkInterval(s, seconds: seconds);
+      }
+      // The drill-down in progress gives the next item.
+      while (true) {
+        final skill = drillDown.next();
+        if (skill == null) break;
+        final c = _chooseIsolating(skill, drillDown.active!);
+        if (c != null) {
+          _isolating.add(c.id);
+          final taken = _take(c);
+          if (taken == null) _isolating.remove(c.id);
+          return taken;
+        }
+        drillDown.noCandidate(skill);
+      }
+    }
+    if (_mixedAsked < config.mixedOpening && asked.length < 4) {
+      final c = _chooseMixed();
+      if (c != null) {
+        _mixedAsked++;
+        final taken = _take(c);
+        if (taken != null) return taken;
+      }
+      _mixedAsked = config.mixedOpening;
+    }
     final open =
         <PlacementSkill>[
           for (final s in _tested)
@@ -390,7 +469,8 @@ class V3Picker {
         config.mic &&
         !config.recogniser &&
         _selfRated < config.sayItems &&
-        seconds <= config.sayRatingUntilSeconds) {
+        seconds <= config.sayRatingUntilSeconds &&
+        items < config.sayRatingUntilItems) {
       final c = _selfRatedSay();
       if (c != null) {
         _selfRated++;
@@ -427,11 +507,129 @@ class V3Picker {
     return false;
   }
 
+  /// The answer to [c], the item `next` returned, has been taken into the
+  /// model: the drill-down reads it. The caller must call this after every
+  /// item it observes (a self-rated item gives nothing to read).
+  void record(PickerCandidate c, AnswerOutcome outcome) {
+    if (!config.drill.enabled || c.selfRated || c.pseudo || c.yesNo) return;
+    final right = outcome == AnswerOutcome.right;
+    if (_isolating.remove(c.id)) {
+      if (c.skills.length == 1) {
+        drillDown.onIsolating(
+          c.skills.first,
+          right: right,
+          slip: c.slip,
+          guess: c.guess,
+        );
+      }
+      return;
+    }
+    final pre = _pre[c.id];
+    if (pre == null) return;
+    drillDown.onAnswer(
+      itemSkills: c.skills.toList(),
+      deck: c.deck,
+      band: CandidatePool.bandOfDeck(pool.levels, c.deck),
+      right: right,
+      preKnown: pre.known,
+      preAll: pre.all,
+      seconds: seconds,
+      testable: _tested,
+    );
+  }
+
+  /// A mixed item for the opening: two or more tested skills, at the middle
+  /// of the posterior of its first skill, the most information per second,
+  /// and not of a format already used for a mixed item.
+  PickerCandidate? _chooseMixed() {
+    final budget = config.maxSeconds - seconds;
+    final used = <String>{
+      for (final a in asked)
+        if (a.skills.length >= 2) a.format,
+    };
+    PickerCandidate? best;
+    var bestScore = double.negativeInfinity;
+    for (final format in pool.formats) {
+      if (used.contains(format)) continue;
+      for (final skill in _tested) {
+        final band = _quantileBand(skill, config.mixedQuantile);
+        for (final cand in _near(
+          format,
+          band,
+          3,
+          skill: skill,
+          budget: budget,
+        )) {
+          if (cand.skills.length < 2 ||
+              !cand.skills.every(_tested.contains) ||
+              cand.pseudo ||
+              cand.yesNo) {
+            continue;
+          }
+          final score = (_information(cand) + 0.2) / cand.seconds;
+          if (score > bestScore) {
+            bestScore = score;
+            best = cand;
+          }
+        }
+      }
+    }
+    return best;
+  }
+
+  /// The isolating item for [skill] at the level of the drill-down in
+  /// progress: a single-skill item of the admitted formats, near that level,
+  /// the most information per second.
+  PickerCandidate? _chooseIsolating(PlacementSkill skill, DrillCase c) {
+    final band = CandidatePool.bandOfDeck(pool.levels, c.deck);
+    final budget = config.maxSeconds - seconds;
+    for (final exhaustive in const <bool>[false, true]) {
+      PickerCandidate? best;
+      var bestScore = double.negativeInfinity;
+      for (final format in pool.formats) {
+        if (!exhaustive && _formatRun(format) >= 2) continue;
+        final near = _near(
+          format,
+          band,
+          10,
+          skill: skill,
+          budget: budget,
+          exhaustive: exhaustive,
+        );
+        for (final cand in near) {
+          if (cand.skills.length != 1 || !cand.skills.contains(skill)) continue;
+          if (cand.pseudo || cand.yesNo || cand.seconds > budget) continue;
+          // At the level of the item that was missed: the nearest deck.
+          final far = (cand.deck - c.deck).abs();
+          final score = (_information(cand) + 0.2) / cand.seconds - 0.01 * far;
+          if (score > bestScore) {
+            bestScore = score;
+            best = cand;
+          }
+        }
+      }
+      if (best != null) return best;
+    }
+    return null;
+  }
+
   PickerCandidate? _take(PickerCandidate c) {
     // The choosers only offer items that fit the time left; this is the
     // last guard.
     if (seconds + c.seconds > config.maxSeconds) return null;
     asked.add(c);
+    if (config.drill.enabled) {
+      _pre[c.id] = (
+        known: <PlacementSkill, double>{
+          for (final k in c.skills)
+            if (model.skills.contains(k))
+              k: model.probabilityKnown(<PlacementSkill>[k], c.deck),
+        },
+        all: c.skills.every(model.skills.contains)
+            ? model.probabilityKnown(c.skills, c.deck)
+            : 1.0,
+      );
+    }
     _keys.addAll(c.conflictKeys);
     seconds += c.seconds;
     if (c.pseudo) _pseudoAsked++;
@@ -497,15 +695,18 @@ class V3Picker {
     // the proven band show that the skill really stands apart from the
     // others (an ear-only learner).
     if (band >= 3 &&
-        _quantileClass(skill, 0.1) <= 1 &&
-        model.bandRecord(skill, band).clean < 8) {
+        _quantileClass(skill, 0.1) + 6 <= proven &&
+        model.bandRecord(skill, band).clean < config.standApartItems) {
       return false;
     }
     // Proven: climb while the proven band holds the start down, that is,
     // while the lower edge of the posterior is above the ceiling.
+    // The same when the middle of the posterior is two tenths above the
+    // ceiling (the lower edge is held down by the joint prior).
     if (band < 10 &&
-        _quantileClass(skill, config.climbQuantile) >
-            proven + (config.climbTolerance * _tenth).round()) {
+        (_quantileClass(skill, config.climbQuantile) >
+                proven + (config.climbTolerance * _tenth).round() ||
+            _quantileClass(skill, 0.5) > proven + 2 * _tenth)) {
       st.proving = math.max(band + 1, _quantileBand(skill, 0.5));
       return false;
     }

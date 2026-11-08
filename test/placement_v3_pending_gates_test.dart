@@ -74,7 +74,6 @@ bool hasCheapWriteItem(Iterable<FormatInfo> inventory) => inventory.any(
 // (v3_picker.dart) landed in build step 4 and enabled its gates; what is left
 // waits for the later steps' files.
 final List<RegExp> _refit = <RegExp>[RegExp(r're_?fit')];
-final List<RegExp> _drillDown = <RegExp>[RegExp(r'drill_?down')];
 final List<RegExp> _scriptGate = <RegExp>[RegExp(r'script_?gate')];
 
 final List<_PendingGate> _pending = <_PendingGate>[
@@ -119,25 +118,20 @@ final List<_PendingGate> _pending = <_PendingGate>[
     'ear-only-placed-high-on-hear',
     'An ear-only learner is placed high on Hear and Say and low on Read and '
         'Write.',
-    'The low half (Read and Write at the start) is enforced. The high half '
-        'is not met: the picker proves Hear, but the joint prior (a learner '
-        'is usually at one level in every skill) holds the lower edge of Hear '
-        'down: Hear starts at its proven band or lower, within 1/10 of the '
-        'truth in 0 to 8% of runs. The picker asks more clean items of the '
-        'proven band when the prior still holds Hear at the start (it moved '
-        'the median start from 1 to about 6 of 20 classes), but placing Hear '
-        'at its level needs the drill-down of step 5, which finds the one '
-        'skill that stands apart and spends its items there.',
-    _drillDown,
-    'step 5 (drill-down)',
-  ),
-  _PendingGate(
-    'drill-down-identifies-the-failing-skill',
-    'For a persona with exactly one failing skill, the right skill is '
-        'identified in at least 90% of runs within 4 isolating items.',
-    'There is no drill-down yet.',
-    _drillDown,
-    'step 5 (drill-down)',
+    'The low half (Read and Write at the start) is enforced. Build step 5 '
+        'added the drill-down and, with it, more Hear items when the joint '
+        'prior still holds Hear\'s lower edge down and a climb when the middle '
+        'of the posterior is two tenths above the proven band. Hear is now '
+        'placed within 2/10 below the truth in 49 to 63% of runs (it was 0 to '
+        '8%) and within 1/10 in 18 to 54%. What is left is the prior: a '
+        'learner is usually at one level in every skill, so with Read and '
+        'Write at the start the posterior keeps part of its mass on Hear at '
+        'the start until many Hear items are right (13 or more), and under an '
+        'amateur declaration more still. The prior mix and the declaration '
+        'weight are re-fitted at step 8.',
+    _refit,
+    'step 8 (re-fit of the prior)',
+    landedWhen: _modelRefitted,
   ),
   _PendingGate(
     'script-gate',
@@ -243,13 +237,11 @@ void main() {
     test('the patterns match what they are meant to', () {
       expect(_refit.single.hasMatch('v3_refit.dart'), isTrue);
       expect(_refit.single.hasMatch('v3_re_fit.dart'), isTrue);
-      expect(_drillDown.single.hasMatch('v3_drill_down.dart'), isTrue);
-      expect(_drillDown.single.hasMatch('drilldown.dart'), isTrue);
       expect(_scriptGate.single.hasMatch('script_gate.dart'), isTrue);
       // None matches a file that exists today: the gates are pending. The
       // picker (v3_picker.dart) has landed and its gates are enforced.
       for (final f in files) {
-        for (final p in [..._refit, ..._drillDown, ..._scriptGate]) {
+        for (final p in [..._refit, ..._scriptGate]) {
           expect(p.hasMatch(f), isFalse, reason: f);
         }
       }

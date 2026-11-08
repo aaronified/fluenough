@@ -492,6 +492,9 @@ class RunState {
   final List<SimItem> asked = <SimItem>[];
   final Set<String> askedCards = <String>{};
   double seconds = 0;
+
+  /// How the last item asked was answered (null before the first).
+  AnswerOutcome? lastOutcome;
   int pseudoAsked = 0;
   int selfRatedAsked = 0;
 
@@ -633,6 +636,7 @@ RunResult runOnce({
     if (!(item.selfRated && !model.skills.contains(PlacementSkill.say))) {
       model.observe(toJointItem(state, item), outcome);
     }
+    state.lastOutcome = outcome;
     state.asked.add(item);
     if (!item.pseudo) state.askedCards.add(cardKey);
     if (item.pseudo) state.pseudoAsked++;
@@ -1027,10 +1031,19 @@ class V3SimPicker implements SimPicker {
         ),
   );
 
+  PickerCandidate? _last;
+
   @override
   SimItem? next(RunState s) {
     final p = _picker ??= _build(s);
+    // The answer to the last item goes to the picker (its drill-down reads
+    // it).
+    final last = _last;
+    if (last != null && s.lastOutcome != null) {
+      p.record(last, s.lastOutcome!);
+    }
     final c = p.next();
+    _last = c;
     if (c == null) return null;
     final item = c.payload! as SimItem;
     return c.selfRated ? SimItem(item.card, item.spec, selfRated: true) : item;
