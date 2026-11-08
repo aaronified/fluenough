@@ -1,9 +1,22 @@
 // Which placements are unconfirmed, and what a recheck changes (wiki,
 // Plan-Placement-V2, point 17). Pure: no Flutter, no storage.
 
-/// The guess-proof model of point 5 of the plan, which every Find my level
-/// credit written from 0.9.2 on is stamped with (`placed_by`).
-const int kPlacementModel = 2;
+/// The model of Find my level V3 (wiki/Plan-Placement-V3.md), which every
+/// credit it writes is stamped with (`placed_by`). The credit of the guess-
+/// proof model of 0.9.2 (model 2, with its 95% stop and its P(none) readout)
+/// and the unstamped credit of 0.9.0 and 0.9.1 are older than it: they are
+/// unconfirmed until the learner checks again or keeps them
+/// ([isConfirmedModel]).
+const int kPlacementModel = 3;
+
+/// The model of Find my level before V3 (0.9.2 and later): thin evidence and
+/// a readout the plan no longer stands behind.
+const int kV2PlacementModel = 2;
+
+/// Whether credit stamped with [model] is confirmed: V3's own, and the older
+/// placement test's (which is a different test, never flagged).
+bool isConfirmedModel(int model) =>
+    model == kOlderPlacementModel || model >= kPlacementModel;
 
 /// The model of the older placement test (onboarding and the language
 /// picker), which every credit it writes from 0.9.3 on is stamped with. It is

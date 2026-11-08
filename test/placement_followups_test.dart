@@ -44,7 +44,7 @@ void main() {
     test('the older test stamps model 1, Find my level model 2, and the '
         'older test\'s credit is not flagged', () async {
       expect(kOlderPlacementModel, 1);
-      expect(kPlacementModel, 2);
+      expect(kPlacementModel, 3);
       final decks = state.walkDecks('hi');
 
       state.creditPlacement(

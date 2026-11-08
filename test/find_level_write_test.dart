@@ -13,10 +13,11 @@ import 'package:fluenough/core/models/drill_mode.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/assurance_readout.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
-import 'package:fluenough/core/placement/placement_run.dart';
-import 'package:fluenough/core/placement/placement_session.dart';
+import 'package:fluenough/core/placement/v3_result.dart';
 import 'package:fluenough/features/placement/skill_labels_line.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'support/v3_write.dart';
 
 void main() {
   late AppState state;
@@ -29,29 +30,8 @@ void main() {
   });
   tearDown(() => state.dispose());
 
-  PlacementSession finishedRun(Set<PlacementSkill> skills, bool right) {
-    final session = PlacementSession(
-      PlacementRunConfig(
-        deckCount: plan.data.deckCount,
-        skills: skills,
-        declaration: PlacementDeclaration.expert,
-        pathCompleteToB1: true,
-        allDecksDownloaded: true,
-        microphone: false,
-      ),
-      plan.data,
-    );
-    var guard = 0;
-    while (!session.isDone && guard++ < 200) {
-      if (session.atCheckpoint) {
-        session.keepGoing();
-      } else {
-        session.answer(right);
-      }
-    }
-    expect(session.isDone, isTrue);
-    return session;
-  }
+  FinishedV3 finishedRun(Set<PlacementSkill> skills, bool right) =>
+      FinishedV3(plan, skills, right);
 
   group('the course a run reads', () {
     test('is the word decks up to the unit marked B1, in path order', () {
@@ -86,8 +66,8 @@ void main() {
         PlacementSkill.read,
         PlacementSkill.write,
       }, true);
-      final readout = session.run.readout;
-      state.writePlacementRun('hi', plan, session.run);
+      final readout = session.readout;
+      session.write(state, 'hi', plan);
 
       final modes = <PlacementSkill, DrillMode>{
         PlacementSkill.read: DrillMode.recognition,
@@ -145,7 +125,7 @@ void main() {
         'test keeps its mark', () {
       state.settings.setVerifiedSkills('hi', <String>{'say'});
       final session = finishedRun(<PlacementSkill>{PlacementSkill.read}, false);
-      state.writePlacementRun('hi', plan, session.run);
+      session.write(state, 'hi', plan);
       // Read was tested and not Verified; Say was not in the run.
       expect(state.settings.verifiedSkillsOf('hi'), <String>{'say'});
       expect(state.settings.placedDecks, isEmpty);
@@ -165,9 +145,9 @@ void main() {
         PlacementSkill.read,
         PlacementSkill.say,
       }, true);
-      final readout = session.run.readout;
+      final readout = session.readout;
       expect(readout[PlacementSkill.say]!.label, AssuranceLabel.notTested);
-      state.writePlacementRun('hi', plan, session.run);
+      session.write(state, 'hi', plan);
       expect(state.settings.skillLabelsOf('hi'), <String, String>{
         'read': readout[PlacementSkill.read]!.label.name,
         'script': 'sure',
@@ -178,18 +158,16 @@ void main() {
         'covered', () {
       state.settings.setSkillLabels('hi', <String, String>{'say': 'sure'});
       final session = finishedRun(<PlacementSkill>{PlacementSkill.say}, true);
-      state.writePlacementRun('hi', plan, session.run);
+      session.write(state, 'hi', plan);
       expect(state.settings.skillLabelsOf('hi'), isEmpty);
     });
 
     test('credit an earlier run gave survives a later run that places the '
         'skill lower', () {
       final first = plan.decks.first;
-      state.writePlacementRun(
-        'hi',
-        plan,
-        finishedRun(<PlacementSkill>{PlacementSkill.read}, true).run,
-      );
+      finishedRun(<PlacementSkill>{
+        PlacementSkill.read,
+      }, true).write(state, 'hi', plan);
       bool credited() => first.cards.any(
         (c) => state.progress.stateOf(c.id, DrillMode.recognition) != null,
       );
@@ -201,11 +179,9 @@ void main() {
       };
 
       // Not one right answer: Read is now placed at the beginning.
-      state.writePlacementRun(
-        'hi',
-        plan,
-        finishedRun(<PlacementSkill>{PlacementSkill.read}, false).run,
-      );
+      finishedRun(<PlacementSkill>{
+        PlacementSkill.read,
+      }, false).write(state, 'hi', plan);
       expect(credited(), isTrue);
       expect(state.settings.placedDecks, contains(first.id));
       for (final c in first.cards) {
@@ -222,14 +198,10 @@ void main() {
       state.settings.setLearnsAlphabet('hi', false);
       final review = state.settings.placedReviewOf('hi');
       final skipped = state.scriptLessonsSkipped('hi', native: 'en');
-      state.writePlacementRun(
-        'hi',
-        plan,
-        finishedRun(<PlacementSkill>{
-          PlacementSkill.read,
-          PlacementSkill.write,
-        }, true).run,
-      );
+      finishedRun(<PlacementSkill>{
+        PlacementSkill.read,
+        PlacementSkill.write,
+      }, true).write(state, 'hi', plan);
       expect(state.settings.learnsAlphabet('hi'), isFalse);
       expect(state.settings.placedReviewOf('hi'), review);
       expect(state.scriptLessonsSkipped('hi', native: 'en'), skipped);
@@ -242,32 +214,23 @@ void main() {
     test('never changes a skill\'s Leave, Know or Learn', () {
       final before = state.settings.languageSkillsOf('hi');
       final session = finishedRun(<PlacementSkill>{PlacementSkill.read}, true);
-      state.writePlacementRun('hi', plan, session.run);
+      session.write(state, 'hi', plan);
       expect(state.settings.languageSkillsOf('hi'), before);
     });
   });
 
   group('the paused run', () {
-    PlacementRunConfig config() => PlacementRunConfig(
-      deckCount: plan.data.deckCount,
-      skills: const <PlacementSkill>{PlacementSkill.read},
-      declaration: PlacementDeclaration.expert,
-      pathCompleteToB1: true,
-      allDecksDownloaded: true,
-      microphone: false,
-    );
-
     test('is dropped once the outcome is written', () {
       state.settings.setPlacementRun('hi', '{"events":[]}');
       final session = finishedRun(<PlacementSkill>{PlacementSkill.read}, true);
-      state.writePlacementRun('hi', plan, session.run);
+      session.write(state, 'hi', plan);
       expect(state.settings.placementRunOf('hi'), isNull);
     });
 
     test('is kept when the write throws', () {
       state.settings.setPlacementRun('hi', '{"events":[]}');
       expect(
-        () => state.writePlacementRun('hi', plan, _BrokenRun(config())),
+        () => state.writePlacementV3('hi', plan, _BrokenResult()),
         throwsStateError,
       );
       expect(state.settings.placementRunOf('hi'), '{"events":[]}');
@@ -397,11 +360,22 @@ void main() {
   });
 }
 
-/// A run whose outcome cannot be read, as a write that fails part-way.
-class _BrokenRun extends PlacementRun {
-  _BrokenRun(super.config);
+/// A result whose outcome cannot be read, as a write that fails part-way.
+class _BrokenResult extends V3Result {
+  _BrokenResult()
+    : super(
+        skills: const <V3SkillResult>[],
+        levels: PlacementLevels(10, maxParts: 20),
+        readout: null,
+        script: null,
+        items: 0,
+        seconds: 0,
+        endReason: null,
+      );
 
   @override
-  Map<PlacementSkill, SkillAssurance> get readout =>
-      throw StateError('the outcome cannot be read');
+  Map<PlacementSkill, SkillAssurance> assurances({
+    Map<PlacementSkill, int> overrides = const <PlacementSkill, int>{},
+    int scripts = 0,
+  }) => throw StateError('the outcome cannot be read');
 }
