@@ -9,10 +9,11 @@ import '../core/placement/assurance_model.dart' show PlacementLevels;
 import '../core/placement/v3_result.dart';
 import '../core/placement/placement_data.dart';
 import '../core/placement/placement_questions.dart';
-import '../core/placement/placement_run.dart';
 import '../core/scheduling/placement_withdrawal.dart';
 import '../core/scheduling/replay.dart' show LoggedReview, logged;
+import '../core/placement/joint_model.dart' show PlacementConfidence;
 import 'app_state.dart';
+import 'settings.dart' show PlacementRange;
 import 'deck_catalog.dart';
 import 'placement.dart';
 import 'placement_credit.dart';
@@ -163,22 +164,6 @@ extension PlacementRunSetup on AppState {
   /// every moment of the language, and the language's placed decks are
   /// replaced rather than added to; the moments that were unconfirmed are
   /// then confirmed. Every real review stays.
-  void writePlacementRun(
-    String code,
-    PlacementRunPlan plan,
-    PlacementRun run, {
-    String? native,
-    bool recheck = false,
-  }) => writePlacementReadout(
-    code,
-    plan,
-    run.readout,
-    topClass: run.levels.topClass,
-    covered: run.config.skills,
-    native: native,
-    recheck: recheck,
-  );
-
   /// The write of a V3 run's result (build step 7): each placed skill up to
   /// its start, never above what its items proved, with the learner's changes
   /// ([overrides], a class per skill); a skill left out writes nothing.
@@ -203,6 +188,34 @@ extension PlacementRunSetup on AppState {
       native: native,
       recheck: recheck,
     );
+    // Where each placed skill starts, with its range and confidence word.
+    // A skill this run did not place loses its old range (as it loses its
+    // old label); one the run did not cover keeps it.
+    final ranges = <String, PlacementRange>{
+      for (final MapEntry(:key, :value)
+          in settings.placementRangesOf(code).entries)
+        if (!assurances.keys.any((skill) => skill.name == key)) key: value,
+    };
+    for (final s in result.skills) {
+      if (!s.placed) continue;
+      final changed = overrides[s.skill];
+      final unit = changed == null
+          ? s.startUnit
+          : (changed == 0 ? 0 : result.levels.levelOf(changed) + 1);
+      ranges[s.skill.name] = PlacementRange(
+        start: unit,
+        low: changed == null ? s.lowUnit : unit,
+        high: changed == null ? s.highUnit : unit,
+        label: changed != null
+            ? AssuranceLabel.sure.name
+            : switch (s.confidence) {
+                PlacementConfidence.high => AssuranceLabel.sure.name,
+                PlacementConfidence.medium => AssuranceLabel.fairlySure.name,
+                _ => AssuranceLabel.notSureYet.name,
+              },
+      );
+    }
+    settings.setPlacementRanges(code, ranges);
   }
 
   /// The same write for a V3 readout (wiki/Plan-Placement-V3.md): each

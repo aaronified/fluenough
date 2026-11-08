@@ -946,6 +946,43 @@ void main() {
       expect(tester.binding.transientCallbackCount, 0);
     });
 
+    Mastery withPlaced() => Mastery(<MasterySkill, SkillScore>{
+      for (final skill in MasterySkill.values)
+        skill: const SkillScore(known: 10, taught: 10, placed: 30, total: 100),
+    });
+
+    testWidgets('placed pairs are a hatched layer with a legend, and the '
+        'star says so', (tester) async {
+      final semantics = tester.ensureSemantics();
+      await pumpStar(tester, mastery: withPlaced());
+      expect(find.byKey(const ValueKey<String>('star-legend')), findsOneWidget);
+      // (10 + 30) of 100 in every skill: the hexagon's 40% x 40%.
+      expect(find.text('Placed 16%'), findsOneWidget);
+      expectLabelsInside(tester);
+      final label = tester.getSemantics(find.byType(SkillStarCard)).label;
+      expect(label, contains('40% with placed'));
+      expect(label, contains('Hatched layer: placed, not yet earned'));
+      semantics.dispose();
+    });
+
+    testWidgets('no legend while nothing is placed', (tester) async {
+      await pumpStar(tester, mastery: full(10));
+      expect(find.byKey(const ValueKey<String>('star-legend')), findsNothing);
+    });
+
+    testWidgets('the placed star holds at 1.4x in right-to-'
+        'left text, drawn at once under reduced motion', (tester) async {
+      await pumpStar(
+        tester,
+        mastery: withPlaced(),
+        direction: TextDirection.rtl,
+        reducedMotion: true,
+      );
+      expectLabelsInside(tester);
+      expect(tester.binding.transientCallbackCount, 0);
+      expect(tester.takeException(), isNull);
+    });
+
     testWidgets('nothing is written under the star', (tester) async {
       await pumpStar(tester, mastery: full(10));
       final star = tester.getRect(find.byKey(const ValueKey<String>('star')));

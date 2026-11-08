@@ -12,11 +12,18 @@ import 'placement_run_setup.dart';
 /// `writePlacementRun` with `recheck`.
 extension PlacementRecheck on AppState {
   /// The moments of [code]'s credit an earlier version found and the learner
-  /// has not confirmed: at or after 0.9.0, with no model stamp, not kept, and
+  /// has not confirmed: at or after 0.9.0, with no model stamp or the stamp of
+  /// the model before V3, not kept, and
   /// with credit still in the log. Worked out each time, never stored.
   Set<int> unconfirmedMomentsOf(String code) {
     final placed = settings.placedAtOf(code);
-    final stamped = settings.placedByOf(code);
+    // Credit of V3 is confirmed; that of the guess-proof model of 0.9.2 and
+    // the unstamped credit of 0.9.0 and 0.9.1 are not (thin evidence).
+    final stamped = <int>{
+      for (final MapEntry(:key, :value)
+          in settings.placedModelsOf(code).entries)
+        if (isConfirmedModel(value)) key,
+    };
     final kept = settings.placementKeptOf(code);
     // Most profiles have none: their log is never looked at.
     final candidates = flaggableMoments(

@@ -20,7 +20,7 @@ import '../../core/placement/v3_session.dart';
 import '../../core/placement/skills_in_play.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
-import 'find_level_comparison.dart';
+import 'find_level_labels.dart';
 import 'find_level_declaration.dart';
 import 'find_level_preparing.dart';
 import 'v3_run_page.dart';

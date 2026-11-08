@@ -192,7 +192,9 @@ void main() {
     });
 
     testWidgets('a language never placed shows no labels; a placed one shows '
-        'each skill\'s name and the Verified mark', (tester) async {
+        'each skill\'s name and an earlier Verified mark as an earlier check', (
+      tester,
+    ) async {
       await _pumpSheet(tester, built: 3);
       final l10n = l10nOf(tester);
       expect(find.textContaining('${l10n.findLevelSkillHear}: '), findsNothing);
@@ -217,7 +219,8 @@ void main() {
         find.text('${l10n.findLevelSkillHear}: ${l10n.findLevelLabelVerified}'),
         findsOneWidget,
       );
-      expect(find.byIcon(Icons.verified), findsOneWidget);
+      // An earlier version's mark is not a claim: no tick.
+      expect(find.byIcon(Icons.verified), findsNothing);
       expect(
         find.text(
           '${l10n.findLevelSkillSay}: ${l10n.findLevelLabelNotSureYet}',
