@@ -1035,6 +1035,15 @@ class ItemGenerators {
   /// where they are.
   List<RegItem> sentenceTiles(String format) {
     final r = cx.stream('stiles:$format');
+    // Sentences by the words they are made of, whatever the order: another
+    // sentence of the course that uses the same words in another order shows
+    // that order is right too.
+    final byWords = <String, List<List<String>>>{};
+    for (final x in cx.sentences) {
+      final w = <String>[for (final t in x.words) t.toLowerCase()];
+      (byWords[(List<String>.of(w)..sort()).join(' ')] ??= <List<String>>[])
+          .add(w);
+    }
     final out = <RegItem>[];
     for (final s in cx.sentences) {
       if (s.inner || s.words.length > 9) continue;
@@ -1062,6 +1071,12 @@ class ItemGenerators {
           prompt: format == 'F8' ? s.english : s.text,
           tiles: _shuffle(r, <String>[...lower, ...decoys.take(2)]),
           answerTiles: lower,
+          alternatives: <List<String>>[
+            for (final other
+                in byWords[(List<String>.of(lower)..sort()).join(' ')] ??
+                    const <List<String>>[])
+              if (other.join(' ') != lower.join(' ')) other,
+          ],
           leadingMark: s.leadingMark,
           trailingMark: s.trailingMark,
           cognateScore: s.cognateScore,

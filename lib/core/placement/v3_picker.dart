@@ -5,6 +5,7 @@ import 'drill_down.dart';
 import 'item_bank.dart';
 import 'item_registry.dart';
 import 'joint_model.dart';
+import 'placement_profile.dart';
 import 'placement_questions.dart';
 
 // The item picker of "Find my level" V3 (wiki/Plan-Placement-V3.md, section
@@ -139,20 +140,30 @@ class PickerCandidate {
   factory PickerCandidate.fromItem(
     RegItem item, {
     GuessCalibration calibration = GuessCalibration.seed,
+    PlacementProfile profile = PlacementProfile.defaults,
   }) {
     final info = item.info;
     final cognate = item.cognateClass == 'cognate';
     final yes = item.format == 'F1' || item.format == 'F14';
+    final cal = calibration.scaled(profile.guessScale);
     final guess = yes
         ? 0.0
-        : calibration.guessFor(item.format, cognate, info.guess);
+        : cal.guessFor(
+            item.format,
+            cognate,
+            info.guess,
+            key:
+                profile.f4DecoyKey && item.format == 'F4' && item.decoyCount > 0
+                ? 'F4decoys'
+                : null,
+          );
     return PickerCandidate(
       id: item.id,
       format: item.format,
       deck: item.deck,
       skills: info.skills,
-      seconds: info.seconds,
-      slip: info.slip,
+      seconds: info.seconds * (profile.secondsScale[item.format] ?? 1),
+      slip: info.slip * (profile.slipScale[item.format] ?? 1),
       guess: guess,
       conflictKeys: item.conflictKeys,
       clean: !cognate && guess <= kCleanGuessMax,
@@ -175,11 +186,12 @@ class PickerCandidate {
   static List<PickerCandidate> fromItems(
     Iterable<RegItem> items, {
     GuessCalibration calibration = GuessCalibration.seed,
+    PlacementProfile profile = PlacementProfile.defaults,
   }) => <PickerCandidate>[
     for (final i in items)
       if (kScreenFormats.contains(i.format) &&
           !kUnaskableFormats.contains(i.format))
-        PickerCandidate.fromItem(i, calibration: calibration),
+        PickerCandidate.fromItem(i, calibration: calibration, profile: profile),
   ];
 
   PickerCandidate asSelfRated() => PickerCandidate(
@@ -279,6 +291,7 @@ class PickerConfig {
     int gateItems = 0,
     double gateSeconds = 0,
     bool yesNoBlock = false,
+    PlacementProfile profile = PlacementProfile.defaults,
   }) {
     final gated = gateItems > 0;
     return PickerConfig(
@@ -286,9 +299,14 @@ class PickerConfig {
       mic: mic,
       recogniser: recogniser,
       yesNoBlock: yesNoBlock,
-      mixedBonus: gated ? kScriptRunMixedBonus : 0.3,
+      mixedBonus: gated
+          ? kScriptRunMixedBonus + (profile.mixedBonus - 0.3)
+          : profile.mixedBonus,
+      climbQuantile: profile.climbQuantile,
       sayRatingUntilItems: gated ? kScriptRunSayRatingUntilItems : 40,
-      standApartItems: gated ? kScriptRunStandApartItems : 14,
+      standApartItems: gated
+          ? kScriptRunStandApartItems + (profile.standApartItems - 14)
+          : profile.standApartItems,
       maxSeconds: kRunMaxSeconds - gateSeconds,
       maxItems: kRunMaxItems - gateItems,
       softStopItems: kRunSoftStopItems - gateItems,

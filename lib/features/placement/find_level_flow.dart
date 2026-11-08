@@ -6,6 +6,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_info.dart';
 import '../../app/app_state.dart';
 import '../../app/placement_plan.dart';
+import '../../app/placement_profiles.dart';
 import '../../app/placement_recheck.dart';
 import '../../app/placement_run_setup.dart';
 import '../../core/languages/language_skills.dart';
@@ -243,6 +244,11 @@ Future<void> startFindLevel(
   var ready = items;
   final resumed = saved != null;
   final resumedStarter = saved?.starter == true;
+  // The calibration profile of this language and level, as the file has it
+  // (the built-in default when it does not, or the kill switch is on): a
+  // resumed run reads the version it began with.
+  final profiles = await loadPlacementProfiles();
+  final profile = profiles.resolve(code, bandOfBuilt(built));
   var restarts = 0;
   V3Run newRun({
     Iterable<String> events = const <String>[],
@@ -268,6 +274,7 @@ Future<void> startFindLevel(
           : (whole ?? ready),
       startedWithStarter: onStarter,
       fullItems: whole,
+      profile: profile,
       events: events,
     );
   }
@@ -298,6 +305,7 @@ Future<void> startFindLevel(
         recogniser: recogniser,
         scriptStart: currentStart,
         starter: now.startedWithStarter,
+        profile: profile.version,
         deckSet: deckSet,
         appVersion: AppInfo.version,
         savedAt: nowSeconds(),
@@ -342,6 +350,7 @@ Future<void> startFindLevel(
             toast = l10n.findLevelToastOldKept(name);
             return;
           }
+          state.settings.setPlacementProfile(code, profile.version);
           state.writePlacementV3(
             code,
             plan,

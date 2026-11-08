@@ -27,6 +27,7 @@ class SavedV3Run {
     required this.events,
     this.declaration,
     this.starter = false,
+    this.profile = 1,
   });
 
   final String language;
@@ -46,6 +47,10 @@ class SavedV3Run {
 
   /// Whether the run began with the first formats' items only.
   final bool starter;
+
+  /// The version of the calibration profile the run read its constants from:
+  /// a run is resumed on the same constants it began with.
+  final int profile;
 
   bool isFresh({
     required int nowSeconds,
@@ -75,6 +80,7 @@ class SavedV3Run {
     'saved_at': savedAt,
     'events': events,
     'starter': starter,
+    'profile': profile,
   };
 
   /// The run [json] holds, or null for anything that is not one (a V2 run
@@ -121,6 +127,9 @@ class SavedV3Run {
           if (e is String && known.contains(e)) e,
       ],
       starter: json['starter'] == true,
+      profile: json['profile'] is int && (json['profile'] as int) > 0
+          ? json['profile'] as int
+          : 1,
     );
   }
 }

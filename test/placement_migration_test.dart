@@ -2,7 +2,13 @@
 // unstamped credit are unconfirmed (a check again is offered), an earlier
 // version's Verified mark reads as an earlier check, the per-skill range is
 // kept and read back tolerantly, and the Languages sheet line shows it.
+import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/placement_credit.dart';
+import 'package:fluenough/app/placement_plan.dart';
+import 'package:fluenough/app/placement_recheck.dart';
 import 'package:fluenough/app/settings.dart';
+import 'package:fluenough/core/scheduling/placement_withdrawal.dart'
+    show momentOf;
 import 'package:fluenough/core/placement/assurance_readout.dart';
 import 'package:fluenough/core/placement/placement_check.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
@@ -43,6 +49,40 @@ void main() {
         live: settings.placedAtOf('es'),
       );
       expect(flagged, <int>{t, t + 2});
+    });
+  });
+
+  group('the real app state with a real log', () {
+    test('credit of the model before V3 is unconfirmed, V3\'s is not, and '
+        'keeping the old level confirms it', () async {
+      final state = AppState.test(now: DateTime.utc(2026, 11, 10, 12));
+      addTearDown(state.dispose);
+      await state.load();
+      final decks = state.walkDecks('hi');
+      // Credit as the model before V3 wrote it: real reviews in the log
+      // with the stamp 2.
+      state.creditPlacement(
+        'hi',
+        placed: <String>{decks.first.id},
+        model: kV2PlacementModel,
+      );
+      final moment = momentOf(state.now());
+      expect(state.settings.placedModelsOf('hi'), <int, int>{
+        moment: kV2PlacementModel,
+      });
+      expect(state.unconfirmedMomentsOf('hi'), <int>{moment});
+      state.keepOldLevel('hi');
+      expect(state.unconfirmedMomentsOf('hi'), isEmpty);
+
+      // The same credit as V3 writes it is confirmed from the start.
+      final other = AppState.test(now: DateTime.utc(2026, 11, 11, 12));
+      addTearDown(other.dispose);
+      await other.load();
+      other.creditPlacement(
+        'hi',
+        placed: <String>{other.walkDecks('hi').first.id},
+      );
+      expect(other.unconfirmedMomentsOf('hi'), isEmpty);
     });
   });
 

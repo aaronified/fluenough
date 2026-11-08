@@ -121,13 +121,18 @@ AnswerOutcome gradeTiles(RegItem item, List<int> placed) {
         ? AnswerOutcome.right
         : AnswerOutcome.wrong;
   }
-  if (given.length != item.answerTiles.length) return AnswerOutcome.wrong;
-  for (var i = 0; i < given.length; i++) {
-    if (answerKey(given[i]) != answerKey(item.answerTiles[i])) {
-      return AnswerOutcome.wrong;
+  bool sameOrder(List<String> right) {
+    if (given.length != right.length) return false;
+    for (var i = 0; i < given.length; i++) {
+      if (answerKey(given[i]) != answerKey(right[i])) return false;
     }
+    return true;
   }
-  return AnswerOutcome.right;
+
+  // The sentence's own order, or another the course gives the same words.
+  return sameOrder(item.answerTiles) || item.alternatives.any(sameOrder)
+      ? AnswerOutcome.right
+      : AnswerOutcome.wrong;
 }
 
 /// The outcome of "yes, I know this word" ([yes]) on a yes/no item: yes is

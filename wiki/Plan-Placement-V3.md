@@ -252,12 +252,11 @@ Also: every adversary with an "advanced" or "expert" declaration meets the same 
 6. The script gate (`lib/core/placement/script_gate.dart`; tests `test/placement_v3_script_test.dart`): built. See "Step 6" below. The script-gate pending gate is enabled and enforced.
 7a. The run and the result screen (`lib/core/placement/v3_session.dart`, `v3_grading.dart`, `v3_result.dart`, `saved_v3_run.dart`; screens `lib/features/placement/v3_run_page.dart`, `v3_question_view.dart`, `v3_result_page.dart`; wiring in `find_level_flow.dart` and `lib/app/placement_run_setup.dart`; tests `test/placement_v3_session_test.dart`, `test/find_level_v3_test.dart`): built. See "Step 7a" below.
 7b. The star, the migration and the retirement of V2 (`lib/features/stats/skill_star.dart`, `lib/core/placement/placement_check.dart`, `lib/app/settings.dart`; mockup `docs/mockups/progress-placement.html`; tests `test/progress_mastery_test.dart`, `test/placement_migration_test.dart`): built. See "Step 7b" below.
-Next, one pull request each: PR 7c (the bank's build speed) and PR 8 (the real-learner re-fit hooks; the "step 8" of the pending gates).
+8a. The calibration profile (`lib/core/placement/placement_profile.dart`, `assets/placement_profiles.json`, `lib/app/placement_profiles.dart`; tests `test/placement_profile_test.dart`): built, with another valid word order for F8/F16 and the F4 decoy switch. See "Adapting placement to a language".
+Next: PR 8b (the outcome log joined with real reviews, the bounded corrections, the opt-in export, `tool/placement_refit.dart` and the held-out gamer scaffolding).
 
 **Carry-forward notes** (small non-blocking review notes, folded into the next PR and cleared as they are done): the five of step 5 were done in step 6; the two of step 6 (the script-run values apply only after a gate; "partly" is never modelled) were done in step 7a, as were the review blockers of #1090 (the question bank, the real-bank test) and, in the same PR, the script-deck credit, the offer to drop sound after two failures in a row, the stepper override to unit 0 and the truthful re-check toast, the live-region announcements, and `matchesAccepted` no longer dropping a word of the answer. Open:
-- From #1091: (a) the 0.9.2 window's older-test model-2 credit is flagged "Check again" now although the comment in `placement_check.dart` says an older-test stamp is never flagged (model 2 was also the stamp of Find my level; the two cannot be told apart): document it there; (b) test `AppState.unconfirmedMomentsOf` with a real log; (c) the legend's "Placed N%" is earned plus placed: say so; (d) stale comments (`settings.dart` placed_by, `saved_run.dart`, `placement_run_setup.dart`).
-- F8 and F16 accept one word order. In a language with a free word order (Hindustani, Bengali...) another valid order is graded as a miss, which only understates the learner (safe), but the tile items of those languages should carry the other valid orders (from the course's sentences) before the re-fit.
-- F3 (meaning to word) and F4 (word tiles) are admitted by the audit but never asked: see "The question bank" below. The re-fit decides their calibration.
+- F3 (meaning to word) and F4 (word tiles) are admitted by the audit but never asked (calibrated guess 0.45): the decoy calibration for F4 is a profile switch, off by default (see "Adapting placement to a language"); F3 stays as it is until the re-fit.
 - (7b done: see "Step 7b".)
 
 ## Step 7a
@@ -422,3 +421,43 @@ The picker's format set is now F2, F3, F13, F5, F17, F4, F7, F21, F8, F16, F18, 
 Accepted as the recommended defaults: a hatched placed layer under the solid fill; the outline earned-only; the level shown with a "Placed" mark before any earned review; a lapsed placed pair drops out of the placed layer into taught-not-known; the Words tile reads "N known of T taught (+M placed)"; unconfirmed 0.9.0 and 0.9.1 credit is treated like other placed credit on Progress and marked only on the Languages sheet; Progress shows only the lower-edge point; whether credit was set in stone or reviewed as usual does not matter for what Progress shows. The rules are in [Progress-and-Stats](Progress-and-Stats). The progress core is built (step A); the level and the placed mark (B) and the drawing (with step 7) follow.
 
 The level PR (B) is built: `assurancesFromJoint` (lib/core/placement/placed_outcome.dart) carries a V3 readout to the placement write, `AppState.writePlacementJoint` writes it (each scored skill by its lower edge, never above the proven ceiling; Say self-rated and any skill not tested write nothing and never pull the placed decks down), the Level tile carries a "Placed" mark until a unit of its milestone has an earned review (`levelPlaced`), and the Words and Rules tiles read "+M placed". A script deck's credit is a placed script pair (placement placed the script); a word credit has no script and feeds none. `AppState.record` never writes a real answer in the shape of credit (`realElapsed`: a real grade 5 with no time and no answer is recorded with one whole millisecond, because every store keeps elapsed time in whole milliseconds, so credit stays 0 ms and a real flip stays 1 ms through the database, the JSONL backup and the replay snapshot). Rows stored before this, when a self-graded flip was stored as 0 ms, cannot be told from credit and are not reinterpreted. A skill proven below A1 (placed class `none`, placed level -1) writes no credit of its own and makes the course's shared placed decks start from the first deck, as V2 did, so that no skill is denied a lesson it still needs; the other skills are still credited each by its own level.
+
+
+## Adapting placement to a language
+
+Find my level V3 has constants that the gates could not fix without real learners: how much the learner's declaration counts, how much the skills move together, how hard the model tempers its evidence, how guessable and slippery each format is, how long it takes, and how the proof stage climbs. They are not in the code of the run: a run reads them from a **calibration profile** by language and level band, with the built-in default being exactly the constants the gates were measured with.
+
+**The file.** `assets/placement_profiles.json` (`schema` 1):
+
+```json
+{
+  "schema": 1,
+  "killSwitch": false,
+  "default": { "version": 1 },
+  "languages": {
+    "hi": { "version": 2, "temper": 0.8, "guessScale": { "F2": 1.1 },
+            "bands": { "A1": { "declarationWeight": 0.5 } } }
+  }
+}
+```
+
+A value of a language overrides the default, and one of a band (`A1`, `A2`, `B1`: the levels the course is built to) overrides the language's. Anything left out is the default's. The values, each **clamped** to the range the gates were run over (a value outside it is brought inside, never rejected; a value of the wrong kind is ignored):
+
+| Key | Default | Range | What it is |
+|---|---|---|---|
+| `version` | 1 | 1 and up | recorded with every placement and every paused run |
+| `declarationWeight` | 0.7 | 0 to 0.7 | the share of the prior that is the learner's declaration |
+| `togetherShare` | 0.7 | 0.3 to 0.9 | the share of the prior in which the skills move together |
+| `temper` | 0.85 | 0.6 to 1 | the exponent every likelihood is raised to |
+| `guessScale`, `slipScale`, `secondsScale` | none (1) | 0.8 to 1.5, 0.5 to 2, 0.5 to 2 | multipliers by format code (`F2`...) on the guess rate, the slip and the time |
+| `climbQuantile` | 0.12 | 0.05 to 0.3 | the quantile a proven band is climbed from |
+| `standApartItems` | 14 | 4 to 20 | the clean items of a proven band for a skill that stands apart |
+| `mixedBonus` | 0.3 | 0 to 0.6 | what an item that proves another skill's band is worth, in bits |
+| `cognateThreshold` | 0.58 | 0.4 to 0.8 | the near-cognate line; it is part of the bank, so it takes effect with the next bank build (not read at run start) |
+| `f4DecoyKey` | false | true or false | word tiles with decoys use the calibration of `F4decoys` (0.30, clean) instead of `F4` (0.45, never clean) |
+
+**Kill switch.** `"killSwitch": true` makes every run use the built-in default, whatever the file says; a missing, malformed or unreadable file does the same. **Version.** The profile's `version` is stored with each placement (`placement_profile` in the settings) and each paused run (`profile`), so a placement can be told from the constants that made it. **Roll back** by setting the language's entry to the earlier values with a higher `version`, or by the kill switch; nothing in the learner's data has to change.
+
+**Not decided here.** F4 tiles with decoys are audited at 0.05 to 0.07 and calibrated at 0.45 under the format key, which keeps them out (never clean); turning `f4DecoyKey` on makes them clean at 0.30 and changes which items the picker chooses (they cost 15 s), so it is off until a language's time gate has been measured with it. F3 (meaning to word) is calibrated at 0.45 and stays out for the same reason. Another valid word order of a sentence is accepted by F8 and F16 when the course itself shows it (another sentence made of the same words in another order); a free-order language with only one attested order still grades the other as a miss, which understates the learner (safe).
+
+**Collecting data and re-fitting** (the local outcome log, the opt-in export and `tool/placement_refit.dart`) are the next part (PR 8b); until then a profile is written by hand from what a maintainer measures, and every change should be checked against the gates (`test/placement_v3_*`) with the profile applied.
