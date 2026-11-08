@@ -34,6 +34,9 @@ import 'placement_questions.dart';
 //
 // Pure Dart, deterministic for a seeded generator.
 
+/// The bonus for a mixed item in a run that began with the script gate.
+const double kScriptRunMixedBonus = 0.4;
+
 /// Formats the bank admits but the picker must not ask yet: S2 (word order)
 /// needs a grammaticality check for languages whose word order is free, and
 /// F9 (matching) a screen. A candidate of these formats is refused by the
@@ -208,14 +211,14 @@ class PickerConfig {
     this.yesNoBlock = false,
     this.sayItems = 1,
     this.sayRatingUntilSeconds = 180,
-    this.sayRatingUntilItems = 40,
+    this.sayRatingUntilItems = 24,
     this.mixedBonus = 0.3,
     this.climbQuantile = 0.12,
     this.climbTolerance = 0.0,
     this.strictRecord = true,
     this.mixedOpening = 2,
     this.mixedQuantile = 0.5,
-    this.standApartItems = 14,
+    this.standApartItems = 12,
     this.drill = const DrillConfig(),
     this.maxItems = 40,
     this.maxSeconds = 300,
@@ -243,12 +246,17 @@ class PickerConfig {
   /// run is already longer than this, to keep the median run short.
   final double sayRatingUntilSeconds;
 
-  /// ... and when it already has this many items.
+  /// ... and when it already has this many items (the rating is optional
+  /// and never evidence, and it counts as an item against the 28 of the
+  /// median gate).
   final int sayRatingUntilItems;
 
   /// A proven band is climbed from while this quantile of the posterior lies
   /// more than [climbTolerance] tenths above the proven ceiling.
-  /// What an item that also proves another skill's band is worth, in bits.
+  /// What an item that also proves another skill's band is worth, in bits
+  /// (0.3; a run in a non-Latin script uses 0.4, [kScriptRunMixedBonus]: the
+  /// gate's items count against the median gate of 28 and mixed items save
+  /// items at a cost in seconds the cells can spare).
   final double mixedBonus;
 
   final double climbQuantile;
@@ -528,7 +536,9 @@ class V3Picker {
   }
 
   /// The answer to [c], the item `next` returned, has been taken into the
-  /// model: the drill-down reads it. The caller must call this after every
+  /// model (a `dontKnow` on an isolating item is read as an ordinary wrong
+  /// answer, with the item's guess: the evidence is understated, which is
+  /// safe): the drill-down reads it. The caller must call this after every
   /// item it observes (a self-rated item gives nothing to read).
   void record(PickerCandidate c, AnswerOutcome outcome) {
     if (identical(_unrecorded, c)) _unrecorded = null;
@@ -827,6 +837,13 @@ class V3Picker {
 
   bool _available(PickerCandidate c) {
     if (kUnaskableFormats.contains(c.format)) return false;
+    // An item of a skill that is not in play (Read and Write when the script
+    // gate found the script unreadable) is never asked.
+    if (!c.skills.every(
+      (k) => k == PlacementSkill.say || model.skills.contains(k),
+    )) {
+      return false;
+    }
     if (c.needsAudio && !config.audio) return false;
     if (c.needsMic && !config.mic) return false;
     if (!c.clean || c.guess > kCleanGuessMax || c.guess >= kUnusableGuess) {

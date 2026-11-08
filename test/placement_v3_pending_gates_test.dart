@@ -74,7 +74,6 @@ bool hasCheapWriteItem(Iterable<FormatInfo> inventory) => inventory.any(
 // (v3_picker.dart) landed in build step 4 and enabled its gates; what is left
 // waits for the later steps' files.
 final List<RegExp> _refit = <RegExp>[RegExp(r're_?fit')];
-final List<RegExp> _scriptGate = <RegExp>[RegExp(r'script_?gate')];
 
 final List<_PendingGate> _pending = <_PendingGate>[
   _PendingGate(
@@ -132,15 +131,6 @@ final List<_PendingGate> _pending = <_PendingGate>[
     _refit,
     'step 8 (re-fit of the prior)',
     landedWhen: _modelRefitted,
-  ),
-  _PendingGate(
-    'script-gate',
-    'Script-literate-only learners get Read and Write at `none` with the '
-        'script passed.',
-    'The script gate is a separate latent that does not exist yet. The '
-        'words half (no word skill placed) is enforced now.',
-    _scriptGate,
-    'a later step (script gate)',
   ),
 ];
 
@@ -237,11 +227,10 @@ void main() {
     test('the patterns match what they are meant to', () {
       expect(_refit.single.hasMatch('v3_refit.dart'), isTrue);
       expect(_refit.single.hasMatch('v3_re_fit.dart'), isTrue);
-      expect(_scriptGate.single.hasMatch('script_gate.dart'), isTrue);
       // None matches a file that exists today: the gates are pending. The
       // picker (v3_picker.dart) has landed and its gates are enforced.
       for (final f in files) {
-        for (final p in [..._refit, ..._scriptGate]) {
+        for (final p in [..._refit]) {
           expect(p.hasMatch(f), isFalse, reason: f);
         }
       }
