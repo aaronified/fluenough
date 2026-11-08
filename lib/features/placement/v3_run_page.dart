@@ -8,7 +8,7 @@ import '../../core/placement/v3_session.dart';
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
 import '../../ui/widgets/snack.dart';
-import 'find_level_comparison.dart' show FindLevelRecheck;
+import 'find_level_labels.dart' show FindLevelRecheck;
 import 'placement_questions.dart' show PlacementShell;
 import 'v3_question_view.dart';
 import 'v3_result_page.dart';

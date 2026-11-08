@@ -7,8 +7,8 @@ import '../../core/placement/v3_result.dart';
 import '../../core/placement/v3_session.dart' show V3ScriptStart, V3Why;
 import '../../l10n/app_localizations.dart';
 import '../../ui/theme.dart';
-import 'find_level_comparison.dart' show FindLevelRecheck;
-import 'find_level_summary.dart' show findLevelSkillName;
+import 'find_level_labels.dart' show FindLevelRecheck;
+import 'find_level_labels.dart' show findLevelSkillName;
 
 /// The word for a confidence (how likely the true level is within a tenth of
 /// the middle of the range): never a probability of "none" and never

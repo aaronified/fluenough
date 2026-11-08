@@ -2,7 +2,6 @@ import 'assurance_model.dart';
 import 'assurance_readout.dart';
 import 'joint_model.dart';
 import 'placed_outcome.dart';
-import 'placement_run.dart' show SkillAssurance;
 import 'placement_questions.dart' show PlacementSkill;
 import 'script_gate.dart';
 import 'v3_picker.dart' show EndReason;

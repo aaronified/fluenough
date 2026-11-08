@@ -1,9 +1,6 @@
 import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/models/sound_contrasts.dart';
-import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
-import 'package:fluenough/core/placement/placement_questions.dart';
-import 'package:fluenough/core/placement/placement_run.dart';
 
 /// A small course for the Find my level run (the same shape as the question
 /// builder's own fixture): six word decks in path order, decks 3 to 5
@@ -158,26 +155,3 @@ PlacementLanguageData findLevelData({
     stableCardIds: stable,
   );
 }
-
-/// The run settings for [findLevelData]'s six decks.
-PlacementRunConfig findLevelConfig({
-  int decks = 6,
-  Set<PlacementSkill> skills = const <PlacementSkill>{
-    PlacementSkill.read,
-    PlacementSkill.hear,
-    PlacementSkill.write,
-  },
-  PlacementDeclaration declaration = PlacementDeclaration.expert,
-  bool microphone = false,
-  bool verifiable = true,
-  bool floorFirst = true,
-}) => PlacementRunConfig(
-  deckCount: decks,
-  skills: skills,
-  declaration: declaration,
-  microphone: microphone,
-  floorFirst: floorFirst,
-  pathCompleteToB1: verifiable,
-  allDecksDownloaded: verifiable,
-  grammarUnitDecks: const <int>[3, 4, 5],
-);

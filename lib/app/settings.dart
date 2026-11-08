@@ -148,6 +148,8 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, Set<String>> _verifiedSkills = const <String, Set<String>>{};
   Map<String, Map<String, String>> _skillLabels =
       const <String, Map<String, String>>{};
+  Map<String, Map<String, PlacementRange>> _placementRanges =
+      const <String, Map<String, PlacementRange>>{};
   Map<String, String> _placementRuns = const <String, String>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
@@ -854,6 +856,29 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, String> skillLabelsOf(String language) =>
       _skillLabels[language] ?? const <String, String>{};
 
+  /// Where the last Find my level run put each skill it placed in [language],
+  /// by the skill's name in a run: the start unit, the 80% range and the
+  /// confidence word. Empty until a V3 run has been done (an older run left
+  /// only [skillLabelsOf]).
+  Map<String, PlacementRange> placementRangesOf(String language) =>
+      _placementRanges[language] ?? const <String, PlacementRange>{};
+
+  /// Sets [language]'s placement ranges to [ranges].
+  void setPlacementRanges(String language, Map<String, PlacementRange> ranges) {
+    final was = _placementRanges[language] ?? const <String, PlacementRange>{};
+    if (mapEquals(was, ranges)) return;
+    final next = <String, Map<String, PlacementRange>>{..._placementRanges};
+    if (ranges.isEmpty) {
+      next.remove(language);
+    } else {
+      next[language] = Map<String, PlacementRange>.unmodifiable(ranges);
+    }
+    _placementRanges = Map<String, Map<String, PlacementRange>>.unmodifiable(
+      next,
+    );
+    notifyListeners();
+  }
+
   /// Sets [language]'s skill labels to [labels].
   void setSkillLabels(String language, Map<String, String> labels) {
     final was = _skillLabels[language] ?? const <String, String>{};
@@ -909,6 +934,7 @@ class SettingsNotifier extends ChangeNotifier {
     _placementKept = _without(_placementKept, language);
     _verifiedSkills = _without(_verifiedSkills, language);
     _skillLabels = _without(_skillLabels, language);
+    _placementRanges = _without(_placementRanges, language);
     _placementRuns = _without(_placementRuns, language);
     _placedDecks = Set<String>.unmodifiable(<String>{
       for (final id in _placedDecks)
@@ -1353,6 +1379,13 @@ class SettingsNotifier extends ChangeNotifier {
         key: value.toList()..sort(),
     }),
     'skill_labels': jsonEncode(_skillLabels),
+    'skill_ranges': jsonEncode(<String, Map<String, Object?>>{
+      for (final MapEntry(:key, :value) in _placementRanges.entries)
+        key: <String, Object?>{
+          for (final MapEntry(key: skill, value: range) in value.entries)
+            skill: range.toJson(),
+        },
+    }),
     'placement_runs': jsonEncode(_placementRuns),
     'collapsed_levels': jsonEncode(<String, List<String>>{
       for (final MapEntry(:key, :value) in _collapsedLevels.entries)
@@ -1730,6 +1763,23 @@ class SettingsNotifier extends ChangeNotifier {
         });
       }
     }
+    // Read tolerantly: anything that is not a range is skipped, and a
+    // settings map without the key (an older backup) has no ranges.
+    if (pick('skill_ranges', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! Map) continue;
+        final ranges = <String, PlacementRange>{};
+        for (final MapEntry(key: name, value: raw) in value.entries) {
+          final range = PlacementRange.fromJson(raw);
+          if (name is String &&
+              RegExp(r'^[a-zA-Z]+$').hasMatch(name) &&
+              range != null) {
+            ranges[name] = range;
+          }
+        }
+        setPlacementRanges(key, ranges);
+      }
+    }
     if (pick('placement_runs', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is String) {
@@ -1904,4 +1954,59 @@ class SettingsNotifier extends ChangeNotifier {
     assign(next);
     notifyListeners();
   }
+}
+
+/// Where a Find my level run put one skill: the start unit, the unit range
+/// it is 80% sure of, and its confidence word (the name of an
+/// `AssuranceLabel`).
+class PlacementRange {
+  const PlacementRange({
+    required this.start,
+    required this.low,
+    required this.high,
+    required this.label,
+  });
+
+  final int start;
+  final int low;
+  final int high;
+  final String label;
+
+  /// The range [json] holds, or null for anything that is not one.
+  static PlacementRange? fromJson(Object? json) {
+    if (json is! Map) return null;
+    final start = json['start'];
+    final low = json['low'];
+    final high = json['high'];
+    final label = json['label'];
+    if (start is! int ||
+        low is! int ||
+        high is! int ||
+        label is! String ||
+        !RegExp(r'^[a-zA-Z]+$').hasMatch(label) ||
+        start < 0 ||
+        low < 0 ||
+        high < low) {
+      return null;
+    }
+    return PlacementRange(start: start, low: low, high: high, label: label);
+  }
+
+  Map<String, Object?> toJson() => <String, Object?>{
+    'start': start,
+    'low': low,
+    'high': high,
+    'label': label,
+  };
+
+  @override
+  bool operator ==(Object other) =>
+      other is PlacementRange &&
+      other.start == start &&
+      other.low == low &&
+      other.high == high &&
+      other.label == label;
+
+  @override
+  int get hashCode => Object.hash(start, low, high, label);
 }

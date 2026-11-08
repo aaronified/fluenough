@@ -1,7 +1,6 @@
 import 'assurance_readout.dart';
 import 'assurance_model.dart';
 import 'joint_model.dart';
-import 'placement_run.dart';
 import 'placement_questions.dart';
 
 // What a V3 readout writes to a learner's data (wiki/Plan-Placement-V3.md):

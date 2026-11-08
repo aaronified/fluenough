@@ -35,6 +35,10 @@ approval.
 
 None at the moment.
 
+## Built without waiting (owner, 2026-11-07)
+
+- `progress-placement.html` (with `progress-placement.md`): the Progress star's hatched placed layer and legend, the Languages sheet's unit and range lines, and the Find my level result (#1063, Plan-Placement-V3). Remove it once the owner has seen it built.
+
 ## Deleted (owner, 2026-10-12)
 
 These were fully built, so their mockups were deleted. Code comments still
