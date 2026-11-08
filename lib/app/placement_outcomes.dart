@@ -17,6 +17,14 @@ import 'placement_run_setup.dart';
 /// How many of a skill's first real reviews after a placement the join reads.
 const int kJoinReviews = 60;
 
+/// Whether [refreshPlacementSignals] may also move a language's correction.
+/// Off: it records the signals and never changes the carefulness, so the
+/// profile of a run is always the file's. Turning it on needs a fix first
+/// (wiki/Plan-Placement-V3.md, "Step 8b"): step only on new decided signals
+/// since the last step, and tally only outcomes made at the current
+/// correction, or the same evidence is applied again on every run.
+const bool kAutoCorrectPlacement = false;
+
 extension PlacementOutcomes on AppState {
   /// Records the placement [run] ended with, as [result] states it and the
   /// learner's changes left it, under [profile].
@@ -81,12 +89,17 @@ extension PlacementOutcomes on AppState {
         if (skillValue == null) continue;
         final modes = placementModesOf(skillValue);
         final samples = <ReviewSample>[];
+        final seen = <String>{};
         for (final e in progress.log) {
           if (samples.length >= kJoinReviews) break;
           if (e.isPlaced || !modes.contains(e.mode)) continue;
-          if (e.at.toUtc().millisecondsSinceEpoch ~/ 86400000 < o.day) continue;
+          if (e.at.toUtc().millisecondsSinceEpoch ~/ 86400000 <= o.day) {
+            continue;
+          }
           final at = deckIndex[e.deckId];
           if (at == null) continue;
+          // The first review of a pair only (the log is in order).
+          if (!seen.add('${e.deckId}|${e.cardId}|${e.mode.name}')) continue;
           samples.add(
             ReviewSample(
               skill: name,
@@ -112,6 +125,7 @@ extension PlacementOutcomes on AppState {
     } else {
       settings.setPlacementOutcomes(code, next);
     }
+    if (!kAutoCorrectPlacement) return;
     final current = settings.placementCorrectionOf(code);
     final proposed = correctedCarefulness(
       tally: tally,

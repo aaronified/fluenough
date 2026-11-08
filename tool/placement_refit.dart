@@ -20,6 +20,17 @@ import 'dart:io';
 import 'package:fluenough/core/placement/outcome_log.dart';
 import 'package:fluenough/core/placement/profile_fitting.dart';
 
+/// The export files at [path]: every `*.json` under a folder, or the one file.
+List<File> exportFiles(String path) {
+  if (FileSystemEntity.isDirectorySync(path)) {
+    return <File>[
+      for (final e in Directory(path).listSync(recursive: true))
+        if (e is File && e.path.endsWith('.json')) e,
+    ];
+  }
+  return <File>[File(path)];
+}
+
 Future<void> main(List<String> args) async {
   final options = <String, String>{};
   final flags = <String>{};
@@ -43,14 +54,10 @@ Future<void> main(List<String> args) async {
   final rules = RefitRules(
     minOutcomes: int.tryParse(options['min'] ?? '') ?? 200,
   );
-  final files = <File>[
-    if (FileSystemEntity.isDirectorySync(exports))
-      for (final e in Directory(exports).listSync(recursive: true))
-        if (e is File && e.path.endsWith('.json')) e else File(exports),
-  ];
-  final outcomes = <PlacementOutcome>[
+  final files = exportFiles(exports);
+  final outcomes = dedupeOutcomes(<PlacementOutcome>[
     for (final f in files) ...importOutcomes(f.readAsStringSync()),
-  ];
+  ]);
   stdout.writeln('${files.length} files, ${outcomes.length} placements');
   final asset = File(assetPath).readAsStringSync();
   final languages =

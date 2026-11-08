@@ -178,3 +178,13 @@ String applyRefit(String assetText, Iterable<RefitResult> results) {
   json['languages'] = languages;
   return '${const JsonEncoder.withIndent('  ').convert(json)}\n';
 }
+
+/// [outcomes] without repeats: the same language, day and profile version
+/// counted once, so a learner who shares twice is not counted twice.
+List<PlacementOutcome> dedupeOutcomes(Iterable<PlacementOutcome> outcomes) {
+  final seen = <String>{};
+  return <PlacementOutcome>[
+    for (final o in outcomes)
+      if (seen.add('${o.language}|${o.day}|${o.profileVersion}')) o,
+  ];
+}

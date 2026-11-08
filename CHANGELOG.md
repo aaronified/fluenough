@@ -7,14 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- **Find my level records how placements compare with your later reviews, so a maintainer can re-fit.** After a placement, the first reviews of the words it credited are compared with where it started you, on your phone; nothing changes automatically. Settings, Your data, "Share placement data" writes the per-skill records (start, range, how sure, profile version; no answers or words) to a file you choose to send. Refs #1063.
+
 ### Changed
 
 - **Find my level accepts another correct word order.** When you build a sentence from tiles, an order the course itself gives to a sentence with the same translation is right too, so a sentence the course words two ways is no longer marked wrong for the other way. The constants Find my level reads (how much your declaration counts, how guessable each question is, how long it takes) now come from a profile per language and level that can be changed without a new version, and each placement records which one it used. Refs #1063.
 
 - **Find my level's questions are ready in seconds.** Making a language's questions from its decks took about 40 seconds on a computer and minutes on a phone. It now takes about 5 seconds on a computer, and the first questions are ready in under a second there (about 2 to 3 seconds on a phone), so a first Find my level starts at once and the rest of the questions follow while you answer. Refs #1063.
 - **The star shows what placement credited, hatched, and the Languages sheet shows where each skill starts.** Under the star's solid fill, a hatched layer reaches as far as the words placement credited and you have not answered yourself, with a legend ("Placed and earned 31%"); the outline still counts only what you earned, and a real answer to a placed word makes it earned. Under each skill on a language's sheet, the last check reads like "Read: unit 14, likely 11 to 17 · Fairly sure". A level found by the earlier check (the one that stopped at 95%) or by the first versions is now offered again with "Check again" (about three minutes), and a skill an earlier version marked Verified reads "Earlier check (not verified)". Refs #1063.
-
-- **Find my level can learn from how placement turned out, on your phone, and you can share it.** After a placement, the first reviews of the words it credited are compared with where it started you; a start that proved too high is nudged one step more careful next time (a language the checks have not covered is never moved), and nothing leaves the phone. Settings, Your data, "Share placement data" writes the per-skill records (start, range, how sure, profile version; no answers or words) to a file you choose to send. Refs #1063.
 
 - **Find my level asks questions that cannot be guessed, and says where you start with a range.** The check now spends at most five minutes (about 22 questions, with "Keep going" or "See my result" at that point): word and sentence picks, building a word or a sentence from tiles, typing a word or the letters missing from it, saying a word (scored when your phone can listen), and "do you know this word?" with "I don't know". Each skill ends with a start unit and the range we are 80% sure of ("start at unit 14, likely between unit 11 and unit 17") and a word for how sure we are (Sure, Fairly sure, Not sure yet), never "Verified" or a chance of "none". You start at the low edge of the range, never above what your answers proved, and you can change any start. Say with nothing to hear you is "self-rated, not placed", Hear without a voice and Say without a microphone are "not tested", and Read and Write wait for the script when the letter check shows you do not read it yet, with a way to say "I do read it" and check again. A paused check from an earlier version is dropped, not misread. The questions are made once for each language, in the background from the moment you open Find my level, and kept on the phone; if you reach the first question before they are ready you see how far along they are, and you can leave and come back. After the sound fails twice in a row you are offered to carry on without it, and passing the letter check places the script's decks as read. Refs #1063.
 
@@ -243,7 +245,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Opening the app is faster after the first launch: the decks' YAML is kept as one compact JSON file and read again only for a deck file that changed, so a cold start no longer parses every downloaded deck's YAML (#875, ADR-0048). Nothing a learner sees changes but the wait.
 - Corners are consistent across the app: one radius scale (4, 8, 12, 16, 24, 32, 40 and a stadium for shapes that follow their size) with a token for each role, every hand-written radius in the interface is now a token, and the theme's buttons, chips, text fields, dialogs, bottom sheets, snack bars, cards and list tiles take their shape from the same tokens (#878). Corners move by 2 to 4 px at most.
 
-
 ### Fixed
 
 - An app update whose install was cancelled is no longer downloaded again (#487): the row says "{version} is downloaded" with Install, which opens Android's installer on the kept file with no download and no second backup, and Delete download. The kept file is reused only if its size (and the release's SHA-256, when GitHub gives one) still matches; otherwise it is deleted and downloaded again. The junk cleanup still deletes it after a day with nothing waiting on it.
@@ -263,7 +264,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `wiki/Roadmap.md` is now generated by `tools/generate_roadmap.py` and the Roadmap workflow, from the GitHub releases, milestones, approved issues and the plans (#484).
 - When the speaking drill fails for want of a network, the app now says why: it asks `raw.githubusercontent.com` and `connectivitycheck.gstatic.com` once, with no body, cookies or headers of ours, and tells offline, GitHub blocked, Google unreachable and a failed recognition service apart.
 
-
 ### Fixed
 
 - The deck validator no longer asks for a transliteration beside the Greek-script letters (β, θ, χ) that IPA uses in a card's `phonetic` field.
@@ -271,7 +271,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Reports mailed from the app are filed as issues within about 15 minutes, not hours (GitHub may still delay scheduled runs; the workflow can be run by hand), and the public issue no longer carries the sender's mail address or signature.
 
 ## [0.6.7] - 2026-10-26
-
 
 ### Fixed
 
@@ -295,7 +294,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The app runs in a browser, at https://aaronified.github.io/fluenough/ once Pages is on: progress stays in the browser, and decks download on each visit (wiki: Plan-Web-Pwa).
 - In the browser the app is drawn phone-shaped and centred, not across the whole window.
 
-
 ### Fixed
 
 - The app's text looked wide, with large gaps between words, on phones whose system answers the request for Roboto with another font: Roboto is now bundled and used for all interface text.
@@ -313,20 +311,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - A language's sheet names the scripts being learnt in one line, such as "Devanagari (1/2)", above the Change scripts button, and no longer has a button for each script (#859).
 
-
 ### Fixed
 
 - Set in stone did not stop reviews of words you had already reviewed before placing their deck: a placed deck now follows the course's placed-review choice for every card in it, whatever its history (#860).
 
 ## [0.6.4] - 2026-10-26
 
-
 ### Fixed
 
 - The app froze for about a second after answers and taps: hidden tabs no longer rebuild, and sessions, progress and themes are kept per language and worked out once per change, so one language's answer leaves the others alone, even with dozens of languages and years of reviews.
 
 ## [0.6.3] - 2026-10-25
-
 
 ### Fixed
 
@@ -383,7 +378,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The word-order drill lays its tiles out in the deck's direction: an Urdu sentence is built from the right in an English app. Where the interface quotes right-to-left deck text, as in "Answer: …", the quote is isolated from the words around it (#619). Checking an Urdu deck on a device, and the interface itself laid out right to left, are not done.
 - With Adult content off (the default), a deck of offensive words and any rude card (tagged or registered `offensive`) are hidden everywhere: not listed, not taught in lessons, and not in Today, reviews or practice; they come back when Adult content is turned on. The warning on a word that sounds like a rude one still shows, without the rude word (#628).
 
-
 ### Fixed
 
 - The deck validator reads an apostrophe inside an Assamese word in a note, as in ক'লা or ম'হ, as part of the word, so one reading beside it is enough; a quote around a word still ends it.
@@ -422,7 +416,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Words you know come up a few at a time (#680). A word is known when FSRS gave it an 85% or better chance of being remembered at its last review. When a deck's known words come due, Today asks two of them a day, the ones you reviewed longest ago; once they are right, the deck's other due known words wait for another day, so each has its turn within a few days and none is left out. If one is wrong, three to five more are asked, and if those go wrong too, all of the deck's due known words come up.
 - A finished deck's Revise now records its answers and moves the schedule, like quick revision; only number practice is unrecorded (#499, ADR-0033).
 
-
 ### Fixed
 
 - Perso-Arabic letters, such as the three dots of پ, no longer overlap the reading under them in the word sheet and sit centred in their rows: a script that runs right to left (Hindustani's Perso-Arabic as well as Urdu) gets the tall line height with its extra space shared evenly above and below, wherever it is drawn (#762).
@@ -447,7 +440,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - The language bar scrolls with momentum (#682): a drag or fling across its width passes at least five languages, each highlighted with a light tick as it goes by, and it settles on the nearest one, switching the screen once, at the end. A short flick still moves one, and it stops at the ends.
 - Find my level is shorter and checks each script (#481). It asks "Do you read Devanagari?" for each of a course's scripts, saying so when you read it through a language you know; No starts its script decks from the first letters with no questions, and Yes asks up to five questions, from a letter to a word read aloud, with one more try at each. Then it walks the word decks one question each, skipping ahead and jumping to the end while you know them, says where you start and why, and lets you try again from there.
 - Find my level credits what it found (#677). A script you read is credited Read and Write on Progress; one it stopped part-way in is credited Read for its letters and joined letters only. The cards of the decks it placed are recorded as Easy answers today, as if mastered, so they come up rarely. A card you have already reviewed keeps its own.
-
 
 ### Fixed
 
@@ -476,7 +468,6 @@ The app's database moves to version 9: each answer now records the script it was
 - A long drag or a hard fling on the language bar passes several languages (#647).
 - The IPA course is tagged Complete once its path is written, instead of Alpha: it has no CEFR levels to measure it by (#658).
 
-
 ### Fixed
 
 - A deck download no longer stops at the first dropped connection: a file that fails as offline is tried again up to three more times, after 1, 3 and 9 seconds, and a course's files share one connection. Files also download in parallel, six at a time shared fairly between the languages downloading together, instead of one after another. The log names the cause, such as SocketException.
@@ -493,7 +484,6 @@ The app's database moves to version 9: each answer now records the script it was
 - **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - Hindi and Urdu are one course, Hindustani (#623): the `hi` course and its card ids stay, and it is named Hindustani wherever the app shows a language. Languages I know offers its two scripts, Devanagari and Perso-Arabic, as it does for Punjabi; knowing Hindustani never hides it from Languages I'm learning, so you can learn it for a script you don't read.
 - Languages I know asks about a language's script in that language's own script, with the English under it, for every language that has the sentences, checked by a speaker or not (#621). Those not yet checked have a bug icon to report a mistake.
-
 
 ### Fixed
 
@@ -519,7 +509,6 @@ The app's database moves to version 8 (a log of restores). A backup made by 0.5.
 - Every course's path is rebuilt (#562): a phrasebook, the first words, the script after the first units, a core of about 200 common words, then rules, then sentences.
 - Scripts have their own names (#551, #559): Eastern Nagari, not "Bengali script", and a language can have several. Languages I know asks whether you read a script in that script (#552, #563) and names the language it is about (#553, #560); Languages I'm learning has a switch to learn each language's script, by its name (#555, #561). A script you read for one language counts for every language written in it, and a short test skips the script lessons (#554).
 - The language bar's selection follows your swipe, with rounded glyphs and a one-line label (#550).
-
 
 ### Fixed
 
@@ -547,7 +536,6 @@ The decks on GitHub are now split further, their script guides and sounds files 
 - A deck's page, a unit's page and Inspect have no language switcher, as each belongs to one deck (#526).
 - Lesson and review cards fit the screen without scrolling (#482).
 - The review bot writes Wiktionary's IPA in each deck's own style, Hindi first (#479).
-
 
 ### Fixed
 
@@ -645,7 +633,6 @@ The decks on GitHub are now split further, their script guides and sounds files 
 - **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - While you type an answer in a language's own script, the "No keyboard? Try HeliBoard." line hides too, giving the card more room; it comes back when the keyboard closes (#185).
 
-
 ### Fixed
 
 - Speaking cards no longer stop listening 3 seconds after you tap the microphone, whatever you are saying. They listen for up to 8 seconds, and stop once you stop talking. Being cut off mid-word, or before you had begun, gave "Didn't catch that" (#193).
@@ -669,7 +656,6 @@ The decks on GitHub are now split further, their script guides and sounds files 
 - Each language's chip shows the first letter of its own name, so they no longer all show न, ন or న: हि Hindi, বা Bengali, తె Telugu, and so on (#179).
 
 ## [0.3.1] - 2026-10-04
-
 
 ### Fixed
 
@@ -703,7 +689,6 @@ The decks on GitHub are now split further, their script guides and sounds files 
 - The keyboard tip under a typed answer is now one line: "No Hindi keyboard? Try HeliBoard." (#158).
 - Telugu and Kannada answers accept `f` for `ph` (#172).
 
-
 ### Fixed
 
 - The colour swatches in Appearance were invisible except for the one chosen (#161).
@@ -728,7 +713,6 @@ The decks on GitHub are now split further, their script guides and sounds files 
 
 - **Decks now come from a branch of their own.** The app downloads decks from the repository's `decks-live` branch instead of `main`, so a deck can be fixed or added without an app release and an app change never waits on a deck check. Update to this version to keep getting new and corrected decks: an older app keeps the decks it already has (the copy on `main` is frozen) and shows no error. Nothing changes in what you see or in your progress.
 - A word's id now names only its language, not the deck or course it's taught in, so the same word taught in two decks shares one schedule; progress recorded by 0.1.0 does not carry over to 0.2.0 (#145).
-
 
 ### Fixed
 

@@ -2,12 +2,15 @@
 // reviews, the bounded corrections, the export, and the re-fit with simulated
 // learners.
 import 'dart:convert';
+import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:fluenough/core/placement/outcome_log.dart';
 import 'package:fluenough/core/placement/placement_profile.dart';
 import 'package:fluenough/core/placement/profile_fitting.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import '../tool/placement_refit.dart';
 
 const SkillOutcome _read = SkillOutcome(
   start: 14,
@@ -297,6 +300,39 @@ void main() {
         refitLanguage('hi', const <PlacementOutcome>[], current: 0),
       ]);
       expect(PlacementProfiles.parse(held).isFitted('hi'), isFalse);
+    });
+  });
+
+  group('the tool and the exports', () {
+    test('a folder lists its json files only, a file is itself', () {
+      final dir = Directory.systemTemp.createTempSync('refit_exports');
+      try {
+        File('${dir.path}/a.json').writeAsStringSync('{}');
+        File('${dir.path}/b.txt').writeAsStringSync('x');
+        Directory('${dir.path}/sub').createSync();
+        File('${dir.path}/sub/c.json').writeAsStringSync('{}');
+        final names = exportFiles(
+          dir.path,
+        ).map((f) => f.path.split('/').last).toList()..sort();
+        expect(names, <String>['a.json', 'c.json']);
+        expect(
+          exportFiles('${dir.path}/a.json').single.path,
+          endsWith('a.json'),
+        );
+      } finally {
+        dir.deleteSync(recursive: true);
+      }
+    });
+
+    test('a repeated export is counted once', () {
+      PlacementOutcome o(int day, int v) => PlacementOutcome(
+        language: 'es',
+        day: day,
+        profileVersion: v,
+        band: 'A1',
+        skills: const <String, SkillOutcome>{'read': _read},
+      );
+      expect(dedupeOutcomes([o(1, 1), o(1, 1), o(2, 1), o(1, 2)]).length, 3);
     });
   });
 }
