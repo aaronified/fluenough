@@ -110,30 +110,28 @@ void main() {
       });
 
       test('self-rated Say items do not extend the run', () {
-        final withSay = runCell(
-          bank: bank,
-          persona: Persona('a', truth: truth(3), selfRatesSame: true),
-          picker: V3SimPicker.new,
-          declaration: null,
-          variant: Variant.full,
-          runs: 40,
-        );
-        final noMic = runCell(
-          bank: bank,
-          persona: Persona('a', truth: truth(3), selfRatesSame: true),
-          picker: V3SimPicker.new,
-          declaration: null,
-          variant: Variant.noMic,
-          runs: 40,
-        );
-        // The same Read, Hear and Write items: only the Say rating is extra
-        // (one item; the two runs draw different items, so their medians of
-        // 40 runs can differ by one more by chance; the picker's own test
-        // counts the rated items of a run).
-        final extra =
-            percentile(withSay.map((r) => r.items).toList(), 0.5) -
-            percentile(noMic.map((r) => r.items).toList(), 0.5);
-        expect(extra, lessThanOrEqualTo(3));
+        // Per run: at most two rated items, never scored, and never asked
+        // once the run is long (the rating is optional).
+        for (var seed = 1; seed <= 40; seed++) {
+          final p = V3SimPicker();
+          final r = runOnce(
+            bank: bank,
+            persona: Persona('a', truth: truth(3), selfRatesSame: true),
+            picker: p,
+            declaration: null,
+            variant: Variant.full,
+            seed: kSeedBase + seed,
+          );
+          final rated = p.picker!.asked.where((c) => c.selfRated).toList();
+          expect(rated.length, lessThanOrEqualTo(2), reason: 'seed $seed');
+          expect(r.skills.containsKey(_say), isFalse, reason: 'seed $seed');
+          if (rated.isNotEmpty) {
+            final before =
+                p.picker!.seconds -
+                rated.fold<double>(0, (a, c) => a + c.seconds);
+            expect(before, lessThanOrEqualTo(180), reason: 'seed $seed');
+          }
+        }
       });
 
       test('no run asks the same card twice (family replay)', () {
