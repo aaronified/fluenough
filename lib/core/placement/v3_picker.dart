@@ -218,7 +218,7 @@ class PickerConfig {
     this.strictRecord = true,
     this.mixedOpening = 2,
     this.mixedQuantile = 0.5,
-    this.standApartItems = 12,
+    this.standApartItems = 8,
     this.drill = const DrillConfig(),
     this.maxItems = 40,
     this.maxSeconds = 300,
