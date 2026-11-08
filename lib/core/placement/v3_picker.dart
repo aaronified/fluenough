@@ -212,6 +212,7 @@ class PickerConfig {
     this.mixedBonus = 0.3,
     this.climbQuantile = 0.12,
     this.climbTolerance = 0.0,
+    this.strictRecord = true,
     this.mixedOpening = 2,
     this.mixedQuantile = 0.5,
     this.standApartItems = 14,
@@ -262,6 +263,12 @@ class PickerConfig {
   /// dictation of Hear and Write) open the run, at the middle of the
   /// posterior: cheap per skill, and the drill-down tells apart a miss.
   final int mixedOpening;
+
+  /// Whether an item whose answer was not reported through
+  /// [V3Picker.record] is an error (an assert in a debug run). When it is
+  /// not, or in a release build, the drill-down is abandoned instead and the
+  /// run goes on without it.
+  final bool strictRecord;
 
   /// The quantile of the posterior the opening mixed items are asked at.
   final double mixedQuantile;
@@ -340,6 +347,7 @@ class V3Picker {
   final Set<String> _isolating = <String>{};
   final Set<PlacementSkill> _intervalChecked = <PlacementSkill>{};
   int _mixedAsked = 0;
+  PickerCandidate? _unrecorded;
 
   /// How many items were asked.
   int get items => asked.length;
@@ -388,6 +396,18 @@ class V3Picker {
     if (config.yesNoBlock) {
       final block = _yesNoNext();
       if (block != null) return _take(block);
+    }
+    if (_unrecorded != null) {
+      assert(
+        !config.strictRecord,
+        'The answer to ${_unrecorded!.id} was not reported: call record() '
+        'after every item observed.',
+      );
+      // Release: the drill-down reads answers, so it is given up and the run
+      // goes on with the rotation.
+      _isolating.clear();
+      drillDown.abandon();
+      _unrecorded = null;
     }
     if (config.drill.enabled) {
       // A skill about to be finished with a wide or contradictory interval
@@ -511,6 +531,7 @@ class V3Picker {
   /// model: the drill-down reads it. The caller must call this after every
   /// item it observes (a self-rated item gives nothing to read).
   void record(PickerCandidate c, AnswerOutcome outcome) {
+    if (identical(_unrecorded, c)) _unrecorded = null;
     if (!config.drill.enabled || c.selfRated || c.pseudo || c.yesNo) return;
     final right = outcome == AnswerOutcome.right;
     if (_isolating.remove(c.id)) {
@@ -618,6 +639,7 @@ class V3Picker {
     // last guard.
     if (seconds + c.seconds > config.maxSeconds) return null;
     asked.add(c);
+    _unrecorded = c;
     if (config.drill.enabled) {
       _pre[c.id] = (
         known: <PlacementSkill, double>{

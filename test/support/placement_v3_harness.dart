@@ -933,11 +933,16 @@ const List<String> kAdmittedFormats = <String>[
 class V3SimPicker implements SimPicker {
   V3SimPicker({
     this.yesNoBlock = false,
+    this.reportAnswers = true,
     this.config,
     this.formats = kAdmittedFormats,
   });
 
   final bool yesNoBlock;
+
+  /// Whether each answer is reported to the picker ([V3Picker.record]); off
+  /// to test a caller that forgets.
+  final bool reportAnswers;
   final PickerConfig? config;
   final List<String> formats;
 
@@ -1039,7 +1044,7 @@ class V3SimPicker implements SimPicker {
     // The answer to the last item goes to the picker (its drill-down reads
     // it).
     final last = _last;
-    if (last != null && s.lastOutcome != null) {
+    if (reportAnswers && last != null && s.lastOutcome != null) {
       p.record(last, s.lastOutcome!);
     }
     final c = p.next();

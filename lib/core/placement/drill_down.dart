@@ -42,6 +42,10 @@ enum DrillEnd {
   /// Four isolating items were asked.
   budget,
 
+  /// The caller did not report an answer ([V3Picker.record]), so the
+  /// drill-down was abandoned and no other starts.
+  unrecorded,
+
   /// No isolating item was left for the skills implicated.
   exhausted,
 }
@@ -176,8 +180,22 @@ class DrillDown {
 
   String _key(PlacementSkill s, int band) => '${s.name}@$band';
 
+  bool _abandoned = false;
+
+  /// Whether the drill-down was abandoned (an answer was never reported).
+  bool get abandoned => _abandoned;
+
+  /// The caller stopped reporting answers: the case in progress ends as
+  /// [DrillEnd.unrecorded] and no other starts.
+  void abandon() {
+    _abandoned = true;
+    final c = active;
+    if (c != null) _close(c, DrillEnd.unrecorded);
+  }
+
   bool _canStart(double seconds) =>
       config.enabled &&
+      !_abandoned &&
       active == null &&
       cases.length < config.maxCases &&
       seconds < config.stopAfterSeconds;

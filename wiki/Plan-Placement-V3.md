@@ -251,7 +251,12 @@ Also: every adversary with an "advanced" or "expert" declaration meets the same 
 5. The isolating drill-down (`lib/core/placement/drill_down.dart`, integrated in `v3_picker.dart`; tests `test/placement_v3_drilldown_test.dart`): built. See "Step 5" below. The drill-down gate is enabled and enforced; ear-only placed high on Hear stays pending with new numbers.
 6. UI and result screen, 7. migration and retiring the V2 run policy, 8. real-learner re-fit hooks: next, one pull request each.
 
-**Carry-forward notes** (small non-blocking review notes, folded into the next PR and cleared as they are done): none open.
+**Carry-forward notes** (small non-blocking review notes, folded into the next PR and cleared as they are done):
+1. The Say test overrides `sayRatingUntilSeconds: 1000`, which hides a production change (the optional self-rated Say item is skipped after 180 s): document it where the Say rule is stated, and remove or fix `sayRatingUntilItems` (40 equals `maxItems`, so it never bites).
+2. `record()` treats `dontKnow` on an isolating item as an ordinary wrong answer (it is not read as a guess): the evidence is understated, which is safe; document it in the drill-down section.
+3. The fallback verdict of a case that ends on budget (the likeliest skill at 0.4 or more and 0.1 ahead) is lenient: tighten it or document the rate of wrong verdicts it adds.
+4. The time headroom is thin (worst cell 190 s and 27 items against 200 s and 28): re-measure in PR 6 and PR 7 after every change to the picker, the formats or the screens.
+5. Two lucky right answers clear a skill in a case's own log-odds with a chance of about 11% per skill (F21 guess 0.10, F2 0.25): document it with the verdict rules.
 
 ## The picker
 
@@ -292,7 +297,7 @@ The adversary gates are per skill (Read, Hear and Write each must pass), in ever
 
 ## Step 5: the isolating drill-down
 
-`DrillDown` (pure Dart) decides when a drill-down starts, whom it asks and when it stops; `V3Picker` chooses the item (single-skill items of the admitted formats only, the nearest deck to the level of the item that was missed, the most information per second, never a card twice) and reads every answer through `record(candidate, outcome)`, which the caller must call after each item it observes (the harness does it through `RunState.lastOutcome`). Read and Write are isolated with no audio at all (F2, F3, F5; F21, F4, F7); Hear by F13 and F17 (F16 is Hear and Write, so it is not isolating); Say only with a recogniser (F18).
+`DrillDown` (pure Dart) decides when a drill-down starts, whom it asks and when it stops; `V3Picker` chooses the item (single-skill items of the admitted formats only, the nearest deck to the level of the item that was missed, the most information per second, never a card twice) and reads every answer through `record(candidate, outcome)`, which the caller must call after each item it observes (the harness does it through `RunState.lastOutcome`). A caller that forgets is an error in a debug run (`PickerConfig.strictRecord`); otherwise the picker abandons the drill-down at the next item (`DrillEnd.unrecorded`, no other starts) and the run goes on with the rotation. Read and Write are isolated with no audio at all (F2, F3, F5; F21, F4, F7); Hear by F13 and F17 (F16 is Hear and Write, so it is not isolating); Say only with a recogniser (F18).
 
 - **Triggers**, each at most once per skill and band, at most 2 drill-downs a run and none after 150 s: a wrong answer on an item of two skills or more (the skills whose chance of having failed the level is now 0.25 or more are implicated); a right answer a skill had under 0.2 of knowing (a likely lucky guess); a skill about to be finished whose 80% interval is wider than 8 classes (the plan says 6; 8 keeps the amateur-declared cells inside the time gate) or whose evidence contradicts itself (a band with a right and a wrong clean answer).
 - **The opening.** Two mixed items (Read and Write tiles F8, Hear and Write dictation F16) open the run at the middle of the posterior, one per pair, so that the drill-down has a miss to read; the picker's own bonus for mixed items stays 0.3.

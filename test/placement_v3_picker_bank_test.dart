@@ -74,7 +74,10 @@ void main() {
           final c = picker.next();
           if (c == null) break;
           // A self-rated Say is only recorded, never evidence.
-          if (c.selfRated) continue;
+          if (c.selfRated) {
+            picker.record(c, AnswerOutcome.right);
+            continue;
+          }
           final item = c.payload! as RegItem;
           final known = levels.knows(truth, c.deck);
           final right = known

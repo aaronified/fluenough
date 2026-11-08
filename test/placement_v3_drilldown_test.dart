@@ -276,6 +276,55 @@ void main() {
       expect(p.drillDown.cases, isEmpty);
     });
 
+    test('a caller that forgets record() is an error in a debug run', () {
+      final p = V3SimPicker(reportAnswers: false);
+      expect(
+        () => runOnce(
+          bank: bank,
+          persona: Persona('p', truth: truth(9, 9, 2)),
+          picker: p,
+          declaration: null,
+          variant: Variant.full,
+          seed: 1,
+        ),
+        throwsA(isA<AssertionError>()),
+      );
+    });
+
+    test('a caller that forgets record() still gets a sensible run: the '
+        'drill-down is abandoned, the caps hold and no card repeats', () {
+      for (var seed = 1; seed <= 20; seed++) {
+        final p = V3SimPicker(
+          reportAnswers: false,
+          config: const PickerConfig(strictRecord: false),
+        );
+        final r = runOnce(
+          bank: bank,
+          persona: Persona('p', truth: truth(9, 9, 2)),
+          picker: p,
+          declaration: null,
+          variant: Variant.full,
+          seed: seed,
+        );
+        final picker = p.picker!;
+        expect(r.items, lessThanOrEqualTo(40), reason: 'seed $seed');
+        expect(r.seconds, lessThanOrEqualTo(300), reason: 'seed $seed');
+        expect(r.repeatedCard, isFalse, reason: 'seed $seed');
+        expect(picker.endReason, isNotNull, reason: 'seed $seed');
+        expect(picker.drillDown.abandoned, isTrue, reason: 'seed $seed');
+        expect(picker.drillDown.active, isNull, reason: 'seed $seed');
+        // Every drill-down there was ended as unrecorded, and none was
+        // served the same skill over and over.
+        for (final k in picker.drillDown.cases) {
+          expect(k.end, DrillEnd.unrecorded, reason: 'seed $seed');
+          expect(k.isolating, 0, reason: 'seed $seed');
+        }
+        expect(picker.drillDown.cases.length, lessThanOrEqualTo(2));
+        final isolatingAsked = picker.asked.length;
+        expect(isolatingAsked, greaterThan(3));
+      }
+    });
+
     test('the drill-down stays inside the caps', () {
       for (var seed = 1; seed <= 40; seed++) {
         final r = run(truth(9, 9, 2), seed: seed);
