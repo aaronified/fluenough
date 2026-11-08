@@ -150,6 +150,7 @@ class SettingsNotifier extends ChangeNotifier {
       const <String, Map<String, String>>{};
   Map<String, Map<String, PlacementRange>> _placementRanges =
       const <String, Map<String, PlacementRange>>{};
+  Map<String, int> _placementProfiles = const <String, int>{};
   Map<String, String> _placementRuns = const <String, String>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
@@ -801,8 +802,9 @@ class SettingsNotifier extends ChangeNotifier {
 
   /// The moments of [language]'s credit that carry a model stamp
   /// (`placed_by`): every credit Find my level writes from 0.9.2 on is
-  /// stamped with the model that made it, so it is never unconfirmed (wiki,
-  /// Plan-Placement-V2, point 17.1).
+  /// stamped with the model that made it. Whether a stamp confirms the credit
+  /// is `isConfirmedModel` (V3's and the older test's do; the model before V3
+  /// does not), not the mere presence of a stamp.
   Set<int> placedByOf(String language) =>
       (_placedBy[language] ?? const <int, int>{}).keys.toSet();
 
@@ -879,6 +881,22 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The version of the calibration profile ([PlacementProfile.version]) the
+  /// last Find my level of [language] was made with, or null before one (and
+  /// for a placement of an earlier version of the app): kept so that a
+  /// placement can be told from the constants that made it.
+  int? placementProfileOf(String language) => _placementProfiles[language];
+
+  /// Records that [language]'s placement was made with profile [version].
+  void setPlacementProfile(String language, int version) {
+    if (_placementProfiles[language] == version) return;
+    _placementProfiles = Map<String, int>.unmodifiable(<String, int>{
+      ..._placementProfiles,
+      language: version,
+    });
+    notifyListeners();
+  }
+
   /// Sets [language]'s skill labels to [labels].
   void setSkillLabels(String language, Map<String, String> labels) {
     final was = _skillLabels[language] ?? const <String, String>{};
@@ -935,6 +953,7 @@ class SettingsNotifier extends ChangeNotifier {
     _verifiedSkills = _without(_verifiedSkills, language);
     _skillLabels = _without(_skillLabels, language);
     _placementRanges = _without(_placementRanges, language);
+    _placementProfiles = _without(_placementProfiles, language);
     _placementRuns = _without(_placementRuns, language);
     _placedDecks = Set<String>.unmodifiable(<String>{
       for (final id in _placedDecks)
@@ -1379,6 +1398,7 @@ class SettingsNotifier extends ChangeNotifier {
         key: value.toList()..sort(),
     }),
     'skill_labels': jsonEncode(_skillLabels),
+    'placement_profile': jsonEncode(_placementProfiles),
     'skill_ranges': jsonEncode(<String, Map<String, Object?>>{
       for (final MapEntry(:key, :value) in _placementRanges.entries)
         key: <String, Object?>{
@@ -1778,6 +1798,15 @@ class SettingsNotifier extends ChangeNotifier {
           }
         }
         setPlacementRanges(key, ranges);
+      }
+    }
+    if (pick('placement_profile', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) &&
+            value is int &&
+            value > 0) {
+          setPlacementProfile(key, value);
+        }
       }
     }
     if (pick('placement_runs', _parseJsonMap) case final v?) {

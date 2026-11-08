@@ -1,11 +1,11 @@
 import 'placement_data.dart';
 
-// A paused "Find my level" run (wiki/Plan-Placement-V2.md, section 5.5 and
-// row n of section 6): "the run is saved after every answer; resumed within
-// 7 days with the same deck set and app version, else discarded with no
-// answer carried; nothing is written until the run ends or the learner
-// stops". The run's state is its answers, so what is saved is the settings of
-// the run and the events of its session (`PlacementSession.events`).
+// A paused "Find my level" run (wiki/Plan-Placement-V3.md): the run is saved
+// after every answer and resumed within 7 days with the same deck set and app
+// version, else discarded with no answer carried; nothing is written until the
+// run ends or the learner stops. The run's state is its events
+// (`V3Run.events`), saved by `SavedV3Run`; this file holds what it shares with
+// it, the life of a paused run and the key of the decks it was asked from.
 
 /// How long a paused run waits to be resumed.
 const Duration savedRunLife = Duration(days: 7);

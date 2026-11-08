@@ -6,6 +6,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_info.dart';
 import '../../app/app_state.dart';
 import '../../app/placement_plan.dart';
+import '../../app/placement_profiles.dart';
 import '../../app/placement_recheck.dart';
 import '../../app/placement_run_setup.dart';
 import '../../core/languages/language_skills.dart';
@@ -81,6 +82,13 @@ Future<void> startFindLevel(
   }
   // The question bank is made in the background from here on.
   final bank = state.placementBanks.jobFor(plan.data);
+  // The calibration profile of this language and level, as the file has it
+  // (the built-in default when it does not, or the kill switch is on).
+  final profile = (await loadPlacementProfiles()).resolve(
+    code,
+    bandOfBuilt(built),
+  );
+  if (!context.mounted) return;
   final settings = state.settings;
   final pick = findLevelSkillsOf(
     state,
@@ -119,6 +127,7 @@ Future<void> startFindLevel(
           nowSeconds: nowSeconds(),
           deckSet: deckSet,
           appVersion: AppInfo.version,
+          profile: profile.version,
         )) {
       settings.setPlacementRun(code, null);
       saved = null;
@@ -243,6 +252,9 @@ Future<void> startFindLevel(
   var ready = items;
   final resumed = saved != null;
   final resumedStarter = saved?.starter == true;
+  // The calibration profile of this language and level, as the file has it
+  // (the built-in default when it does not, or the kill switch is on): a
+  // resumed run reads the version it began with.
   var restarts = 0;
   V3Run newRun({
     Iterable<String> events = const <String>[],
@@ -268,6 +280,7 @@ Future<void> startFindLevel(
           : (whole ?? ready),
       startedWithStarter: onStarter,
       fullItems: whole,
+      profile: profile,
       events: events,
     );
   }
@@ -298,6 +311,7 @@ Future<void> startFindLevel(
         recogniser: recogniser,
         scriptStart: currentStart,
         starter: now.startedWithStarter,
+        profile: profile.version,
         deckSet: deckSet,
         appVersion: AppInfo.version,
         savedAt: nowSeconds(),
@@ -342,6 +356,7 @@ Future<void> startFindLevel(
             toast = l10n.findLevelToastOldKept(name);
             return;
           }
+          state.settings.setPlacementProfile(code, profile.version);
           state.writePlacementV3(
             code,
             plan,

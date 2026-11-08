@@ -22,8 +22,12 @@ bool isConfirmedModel(int model) =>
 /// picker), which every credit it writes from 0.9.3 on is stamped with. It is
 /// a stamp like any other, so it is never unconfirmed; it only says which
 /// test made the credit. A moment stamped before 0.9.3 keeps the model it
-/// has (the older test's credit of 0.9.2 carries [kPlacementModel]), and any
-/// stamp, whatever its number, means the credit is not flagged.
+/// has: the older test's credit of the 0.9.2 window carries the stamp 2, which
+/// is also the stamp of Find my level before V3, and the two cannot be told
+/// apart. Such a moment is therefore offered "Check again" like the credit of
+/// the guess-proof model (a harmless offer: Keep the old level confirms it).
+/// Credit stamped with this constant (1) or with [kPlacementModel] or later is
+/// never flagged.
 const int kOlderPlacementModel = 1;
 
 /// The release of 0.9.0 (2026-11-06T20:08:07Z), when Find my level first

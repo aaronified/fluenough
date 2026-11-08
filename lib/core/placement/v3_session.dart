@@ -3,6 +3,7 @@ import 'dart:math' as math;
 import 'assurance_model.dart';
 import 'item_registry.dart';
 import 'joint_model.dart';
+import 'placement_profile.dart';
 import 'placement_data.dart';
 import 'placement_questions.dart' show PlacementSkill;
 import 'script_gate.dart';
@@ -151,6 +152,7 @@ class V3Run {
     this.yesNoBlock = false,
     this.startedWithStarter = false,
     this.fullItems,
+    this.profile = PlacementProfile.defaults,
     required List<RegItem> items,
   }) : wanted = Set<PlacementSkill>.unmodifiable(skills),
        levels = PlacementLevels(data.deckCount, maxParts: 20),
@@ -184,6 +186,7 @@ class V3Run {
     bool yesNoBlock = false,
     bool startedWithStarter = false,
     List<RegItem>? fullItems,
+    PlacementProfile profile = PlacementProfile.defaults,
     required List<RegItem> items,
   }) {
     final run = V3Run(
@@ -197,6 +200,7 @@ class V3Run {
       yesNoBlock: yesNoBlock,
       startedWithStarter: startedWithStarter,
       fullItems: fullItems,
+      profile: profile,
       items: items,
     );
     for (final e in events) {
@@ -226,6 +230,10 @@ class V3Run {
   /// same at the same place, from [fullItems].
   final bool startedWithStarter;
   final List<RegItem>? fullItems;
+
+  /// The calibration profile this run reads its constants from (the version is
+  /// recorded with the placement).
+  final PlacementProfile profile;
   bool _extended = false;
   final PlacementLevels levels;
   final math.Random rng;
@@ -301,7 +309,7 @@ class V3Run {
     }
     _items = items;
     _picker?.replacePool(
-      CandidatePool(PickerCandidate.fromItems(items), levels),
+      CandidatePool(PickerCandidate.fromItems(items, profile: profile), levels),
     );
   }
 
@@ -507,7 +515,17 @@ class V3Run {
     // A self-rated Say outside the joint is only recorded: never evidence.
     final model = _model!;
     if (!(c.selfRated && !model.skills.contains(PlacementSkill.say))) {
-      model.observe(item.toJointItem(), outcome);
+      model.observe(
+        item.toJointItem(
+          calibration: GuessCalibration.seed.scaled(profile.guessScale),
+          formatKey:
+              profile.f4DecoyKey && item.format == 'F4' && item.decoyCount > 0
+              ? 'F4decoys'
+              : null,
+          slipScale: profile.slipScale[item.format] ?? 1,
+        ),
+        outcome,
+      );
     }
     _picker!.record(c, outcome);
     _seconds += c.seconds;
@@ -562,9 +580,15 @@ class V3Run {
       levels: levels,
       skills: skills,
       declaration: declaration,
+      declarationWeight: profile.declarationWeight,
+      temper: profile.temper,
+      togetherShare: profile.togetherShare,
     );
     _model = model;
-    final pool = CandidatePool(PickerCandidate.fromItems(_items), levels);
+    final pool = CandidatePool(
+      PickerCandidate.fromItems(_items, profile: profile),
+      levels,
+    );
     _picker = V3Picker(
       pool: pool,
       model: model,
@@ -574,6 +598,7 @@ class V3Run {
         mic: recogniser || audio,
         recogniser: recogniser && audio,
         yesNoBlock: yesNoBlock,
+        profile: profile,
         gateItems: _gateItems,
         gateSeconds: _gateSeconds,
       ),
