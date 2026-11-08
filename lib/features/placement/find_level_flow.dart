@@ -6,6 +6,7 @@ import 'package:flutter/material.dart' hide Card;
 import '../../app/app_info.dart';
 import '../../app/app_state.dart';
 import '../../app/placement_plan.dart';
+import '../../app/placement_outcomes.dart';
 import '../../app/placement_profiles.dart';
 import '../../app/placement_recheck.dart';
 import '../../app/placement_run_setup.dart';
@@ -84,7 +85,7 @@ Future<void> startFindLevel(
   final bank = state.placementBanks.jobFor(plan.data);
   // The calibration profile of this language and level, as the file has it
   // (the built-in default when it does not, or the kill switch is on).
-  final profile = (await loadPlacementProfiles()).resolve(
+  final fileProfile = (await loadPlacementProfiles()).resolve(
     code,
     bandOfBuilt(built),
   );
@@ -127,7 +128,7 @@ Future<void> startFindLevel(
           nowSeconds: nowSeconds(),
           deckSet: deckSet,
           appVersion: AppInfo.version,
-          profile: profile.version,
+          profile: fileProfile.version,
         )) {
       settings.setPlacementRun(code, null);
       saved = null;
@@ -173,6 +174,12 @@ Future<void> startFindLevel(
     saved = null;
   }
 
+  // The learner's own reviews since earlier placements are joined with them
+  // (a new run only: a resumed run keeps the constants it began with), and the
+  // profile is moved one bounded step further toward the language's edge when
+  // the evidence is enough.
+  if (saved == null) state.refreshPlacementSignals(code, plan);
+  final profile = state.correctedPlacementProfile(code, fileProfile);
   final PlacementDeclaration? declaration;
   final Set<PlacementSkill> inPlay;
   final int seed;
@@ -356,6 +363,13 @@ Future<void> startFindLevel(
             toast = l10n.findLevelToastOldKept(name);
             return;
           }
+          state.logPlacementOutcome(
+            code,
+            current,
+            result,
+            profile,
+            bandOfBuilt(built),
+          );
           state.settings.setPlacementProfile(code, profile.version);
           state.writePlacementV3(
             code,
