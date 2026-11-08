@@ -16,9 +16,13 @@ class FindLevelPreparingPage extends StatefulWidget {
     super.key,
     required this.job,
     required this.retry,
+    this.waitForAll = false,
   });
 
   final PlacementBankJob job;
+
+  /// Whether to wait for the whole bank, not only the first formats.
+  final bool waitForAll;
 
   /// A new job, after a failure.
   final PlacementBankJob Function() retry;
@@ -39,7 +43,7 @@ class _FindLevelPreparingPageState extends State<FindLevelPreparingPage> {
 
   void _wait() {
     final job = _job;
-    job.result.then<void>(
+    (widget.waitForAll ? job.result : job.first).then<void>(
       (List<RegItem> items) {
         if (mounted && identical(job, _job)) Navigator.of(context).pop(items);
       },

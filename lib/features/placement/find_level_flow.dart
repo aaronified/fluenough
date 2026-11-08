@@ -12,6 +12,7 @@ import '../../core/languages/language_skills.dart';
 import '../../core/placement/assurance_model.dart';
 import '../../core/placement/declaration_options.dart';
 import '../../core/placement/placement_questions.dart';
+import '../../core/placement/item_bank.dart' show ItemBank;
 import '../../core/placement/item_registry.dart' show RegItem;
 import '../../core/placement/saved_run.dart' show placementDeckSetKey;
 import '../../core/placement/saved_v3_run.dart';
@@ -216,14 +217,21 @@ Future<void> startFindLevel(
   // The questions are made from the decks, once per language and deck set,
   // in the background (it was started when Find my level opened, while the
   // learner answered the declaration): normally they are ready and kept.
+  // A paused run is replayed on exactly the pool it began on: the whole
+  // bank, or the first formats' items cut from it (the same list, whichever
+  // way it is cut). It therefore waits for the whole bank. A new run begins on
+  // the first formats when the whole bank is not ready (the audit's verdict
+  // for the course is stored, so those items are audited), and takes the rest
+  // when it arrives.
   var job = bank;
-  var items = job.items;
+  var items = saved != null ? job.items : job.startable;
   if (items == null) {
     items = await navigator.push<List<RegItem>>(
       MaterialPageRoute<List<RegItem>>(
         settings: const RouteSettings(name: '/find-level-preparing'),
         builder: (_) => FindLevelPreparingPage(
           job: job,
+          waitForAll: saved != null,
           retry: () => job = state.placementBanks.jobFor(plan.data),
         ),
       ),
@@ -232,26 +240,48 @@ Future<void> startFindLevel(
     if (items == null || !context.mounted) return;
   }
 
-  final ready = items;
+  var ready = items;
+  final resumed = saved != null;
+  final resumedStarter = saved?.starter == true;
   var restarts = 0;
   V3Run newRun({
     Iterable<String> events = const <String>[],
     V3ScriptStart start = V3ScriptStart.ask,
     int? runSeed,
-  }) => V3Run.replay(
-    data: plan.data,
-    skills: inPlay,
-    audio: audio,
-    recogniser: recogniser,
-    seed: runSeed ?? seed,
-    declaration: declaration,
-    scriptStart: start,
-    items: ready,
-    events: events,
-  );
+  }) {
+    final whole = job.items;
+    // A resumed run is what it was saved as; a new one begins on the whole
+    // bank if it is there, else on what is ready.
+    final onStarter = resumed && events.isNotEmpty
+        ? resumedStarter
+        : whole == null;
+    return V3Run.replay(
+      data: plan.data,
+      skills: inPlay,
+      audio: audio,
+      recogniser: recogniser,
+      seed: runSeed ?? seed,
+      declaration: declaration,
+      scriptStart: start,
+      items: onStarter
+          ? (whole != null ? ItemBank.starterOf(whole) : ready)
+          : (whole ?? ready),
+      startedWithStarter: onStarter,
+      fullItems: whole,
+      events: events,
+    );
+  }
+
   var current = newRun(
     events: saved?.events ?? const <String>[],
     start: scriptStart,
+  );
+  // The rest of the bank arrives while the run goes on: the run takes it.
+  unawaited(
+    job.result.then<void>((all) {
+      ready = all;
+      current.extendItems(all);
+    }, onError: (Object _) {}),
   );
   var currentStart = scriptStart;
   var currentSeed = seed;
@@ -267,6 +297,7 @@ Future<void> startFindLevel(
         audio: audio,
         recogniser: recogniser,
         scriptStart: currentStart,
+        starter: now.startedWithStarter,
         deckSet: deckSet,
         appVersion: AppInfo.version,
         savedAt: nowSeconds(),

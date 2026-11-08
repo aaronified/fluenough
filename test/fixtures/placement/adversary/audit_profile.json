@@ -15,8 +15,8 @@
    ],
    "items": {
     "F2": 1151,
-    "F13": 1151,
-    "F3": 1152,
+    "F13": 1152,
+    "F3": 1151,
     "F7": 1162,
     "F21": 371,
     "F18": 1162,
@@ -33,22 +33,22 @@
    "classes": {
     "F13:clean": {
      "n": 356,
-     "accuracy": 0.2561,
-     "upper": 0.2959,
+     "accuracy": 0.2575,
+     "upper": 0.2973,
      "bound": 0.32,
      "solver": "eliminate-similar",
      "solvers": {
       "chance": 0.25,
-      "length": 0.2282,
-      "length-inverted": 0.2231,
-      "similarity": 0.2491,
-      "similarity-inverted": 0.2317,
-      "eliminate-similar": 0.2561,
+      "length": 0.2273,
+      "length-inverted": 0.2254,
+      "similarity": 0.2509,
+      "similarity-inverted": 0.2299,
+      "eliminate-similar": 0.2575,
       "eliminate-similar-inverted": 0.0,
       "known-words": 0.25,
       "known-words-inverted": 0.25,
-      "known+similarity": 0.2491,
-      "known+similarity-inverted": 0.2317
+      "known+similarity": 0.2509,
+      "known+similarity-inverted": 0.2299
      },
      "passes": true
     },
@@ -65,12 +65,12 @@
     },
     "F16:clean": {
      "n": 342,
-     "accuracy": 0.0102,
-     "upper": 0.0238,
+     "accuracy": 0.0229,
+     "upper": 0.0404,
      "bound": 0.12,
      "solver": "order-beam-solver",
      "solvers": {
-      "order-beam-solver": 0.0102
+      "order-beam-solver": 0.0229
      },
      "passes": true
     },
@@ -203,54 +203,54 @@
     },
     "F2:clean": {
      "n": 356,
-     "accuracy": 0.257,
-     "upper": 0.2969,
+     "accuracy": 0.2563,
+     "upper": 0.2961,
      "bound": 0.32,
      "solver": "eliminate-similar",
      "solvers": {
       "chance": 0.25,
-      "length": 0.2324,
-      "length-inverted": 0.2203,
-      "similarity": 0.2406,
-      "similarity-inverted": 0.2261,
-      "eliminate-similar": 0.257,
+      "length": 0.2285,
+      "length-inverted": 0.2261,
+      "similarity": 0.2488,
+      "similarity-inverted": 0.2324,
+      "eliminate-similar": 0.2563,
       "eliminate-similar-inverted": 0.0,
       "known-words": 0.25,
       "known-words-inverted": 0.25,
-      "known+similarity": 0.2406,
-      "known+similarity-inverted": 0.2261
+      "known+similarity": 0.2488,
+      "known+similarity-inverted": 0.2324
      },
      "passes": true
     },
     "F3:clean": {
      "n": 356,
-     "accuracy": 0.2631,
-     "upper": 0.3032,
+     "accuracy": 0.2605,
+     "upper": 0.3005,
      "bound": 0.32,
      "solver": "eliminate-similar",
      "solvers": {
       "chance": 0.25,
-      "length": 0.2163,
-      "length-inverted": 0.2238,
-      "similarity": 0.2069,
-      "similarity-inverted": 0.2004,
-      "eliminate-similar": 0.2631,
+      "length": 0.2228,
+      "length-inverted": 0.2369,
+      "similarity": 0.2301,
+      "similarity-inverted": 0.21,
+      "eliminate-similar": 0.2605,
       "eliminate-similar-inverted": 0.0,
       "known-words": 0.25,
       "known-words-inverted": 0.25,
-      "known+similarity": 0.2069,
-      "known+similarity-inverted": 0.2004
+      "known+similarity": 0.2301,
+      "known+similarity-inverted": 0.21
      },
      "passes": true
     },
     "F4:clean": {
      "n": 351,
-     "accuracy": 0.0484,
-     "upper": 0.071,
+     "accuracy": 0.0684,
+     "upper": 0.094,
      "bound": 0.17,
      "solver": "anagram-solver",
      "solvers": {
-      "anagram-solver": 0.0484
+      "anagram-solver": 0.0684
      },
      "passes": true
     },
@@ -355,23 +355,23 @@
     },
     "F8:clean": {
      "n": 342,
-     "accuracy": 0.0117,
-     "upper": 0.0258,
+     "accuracy": 0.0156,
+     "upper": 0.031,
      "bound": 0.12,
      "solver": "order-beam-solver",
      "solvers": {
-      "order-beam-solver": 0.0117
+      "order-beam-solver": 0.0156
      },
      "passes": true
     },
     "F8:cognate": {
      "n": 87,
-     "accuracy": 0.0345,
-     "upper": 0.0832,
+     "accuracy": 0.0115,
+     "upper": 0.0499,
      "bound": 0.12,
      "solver": "order-beam-solver",
      "solvers": {
-      "order-beam-solver": 0.0345
+      "order-beam-solver": 0.0115
      },
      "passes": true
     },
@@ -463,22 +463,22 @@
    "classes": {
     "F13:clean": {
      "n": 356,
-     "accuracy": 0.2617,
-     "upper": 0.3017,
+     "accuracy": 0.2591,
+     "upper": 0.299,
      "bound": 0.32,
      "solver": "length",
      "solvers": {
       "chance": 0.25,
-      "length": 0.2617,
-      "length-inverted": 0.2158,
-      "similarity": 0.2439,
-      "similarity-inverted": 0.2102,
-      "eliminate-similar": 0.2566,
+      "length": 0.2591,
+      "length-inverted": 0.2147,
+      "similarity": 0.2411,
+      "similarity-inverted": 0.2196,
+      "eliminate-similar": 0.2589,
       "eliminate-similar-inverted": 0.0,
       "known-words": 0.25,
       "known-words-inverted": 0.25,
-      "known+similarity": 0.2439,
-      "known+similarity-inverted": 0.2102
+      "known+similarity": 0.2411,
+      "known+similarity-inverted": 0.2196
      },
      "passes": true
     },
@@ -495,23 +495,23 @@
     },
     "F16:clean": {
      "n": 164,
-     "accuracy": 0.0142,
-     "upper": 0.0391,
+     "accuracy": 0.0243,
+     "upper": 0.053,
      "bound": 0.12,
      "solver": "order-beam-solver",
      "solvers": {
-      "order-beam-solver": 0.0142
+      "order-beam-solver": 0.0243
      },
      "passes": true
     },
     "F16:cognate": {
      "n": 38,
-     "accuracy": 0.0228,
-     "upper": 0.1044,
+     "accuracy": 0.0161,
+     "upper": 0.0939,
      "bound": 0.12,
      "solver": "order-beam-solver",
      "solvers": {
-      "order-beam-solver": 0.0228
+      "order-beam-solver": 0.0161
      },
      "passes": true
     },
@@ -633,54 +633,54 @@
     },
     "F2:clean": {
      "n": 356,
-     "accuracy": 0.2645,
-     "upper": 0.3046,
+     "accuracy": 0.2596,
+     "upper": 0.2995,
      "bound": 0.32,
-     "solver": "length",
+     "solver": "eliminate-similar",
      "solvers": {
       "chance": 0.25,
-      "length": 0.2645,
-      "length-inverted": 0.2102,
-      "similarity": 0.2381,
-      "similarity-inverted": 0.2123,
-      "eliminate-similar": 0.2605,
+      "length": 0.2566,
+      "length-inverted": 0.2149,
+      "similarity": 0.2378,
+      "similarity-inverted": 0.2154,
+      "eliminate-similar": 0.2596,
       "eliminate-similar-inverted": 0.0,
       "known-words": 0.25,
       "known-words-inverted": 0.25,
-      "known+similarity": 0.2381,
-      "known+similarity-inverted": 0.2123
+      "known+similarity": 0.2378,
+      "known+similarity-inverted": 0.2154
      },
      "passes": true
     },
     "F3:clean": {
      "n": 356,
-     "accuracy": 0.2603,
-     "upper": 0.3003,
+     "accuracy": 0.258,
+     "upper": 0.2978,
      "bound": 0.32,
      "solver": "eliminate-similar",
      "solvers": {
       "chance": 0.25,
-      "length": 0.224,
-      "length-inverted": 0.2479,
-      "similarity": 0.2292,
-      "similarity-inverted": 0.2278,
-      "eliminate-similar": 0.2603,
+      "length": 0.2301,
+      "length-inverted": 0.2423,
+      "similarity": 0.2437,
+      "similarity-inverted": 0.2259,
+      "eliminate-similar": 0.258,
       "eliminate-similar-inverted": 0.0,
       "known-words": 0.25,
       "known-words-inverted": 0.25,
-      "known+similarity": 0.2292,
-      "known+similarity-inverted": 0.2278
+      "known+similarity": 0.2437,
+      "known+similarity-inverted": 0.2259
      },
      "passes": true
     },
     "F4:clean": {
      "n": 326,
-     "accuracy": 0.0199,
-     "upper": 0.0372,
+     "accuracy": 0.0215,
+     "upper": 0.0391,
      "bound": 0.17,
      "solver": "anagram-solver",
      "solvers": {
-      "anagram-solver": 0.0199
+      "anagram-solver": 0.0215
      },
      "passes": true
     },
@@ -760,12 +760,12 @@
     },
     "F8:cognate": {
      "n": 38,
-     "accuracy": 0.0221,
-     "upper": 0.1034,
+     "accuracy": 0.0148,
+     "upper": 0.0918,
      "bound": 0.12,
      "solver": "order-beam-solver",
      "solvers": {
-      "order-beam-solver": 0.0221
+      "order-beam-solver": 0.0148
      },
      "passes": true
     },
