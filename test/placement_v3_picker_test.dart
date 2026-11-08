@@ -89,7 +89,15 @@ void main() {
   });
 
   test('without a recogniser Say is only self-rated and never evidence', () {
-    final r = run(7, config: const PickerConfig(sayRatingUntilSeconds: 1000));
+    // The optional rating is skipped in a long run (after 180 s or 24 items);
+    // this test asks for it in any run.
+    final r = run(
+      7,
+      config: const PickerConfig(
+        sayRatingUntilSeconds: 1000,
+        sayRatingUntilItems: 1000,
+      ),
+    );
     final say = r.picker.asked.where((c) => c.skills.contains(_say)).toList();
     expect(say, isNotEmpty, reason: 'the learner rates Say a little');
     for (final c in say) {

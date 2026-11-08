@@ -18,7 +18,9 @@ import 'dart:math' as math;
 import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
+import 'package:fluenough/core/placement/script_gate.dart';
 import 'package:fluenough/core/placement/v3_picker.dart';
+import 'package:yaml/yaml.dart';
 
 const String kLeakProfilePath =
     'test/fixtures/placement/adversary/leak_profile.json';
@@ -322,6 +324,7 @@ class Persona {
     this.honestSelfRating = false,
     this.falseAlarm = 0.08,
     this.profile = BankProfile.fixed,
+    this.script = ScriptLevel.all,
   });
 
   final String name;
@@ -372,6 +375,16 @@ class Persona {
   final double falseAlarm;
 
   final BankProfile profile;
+
+  /// What the learner knows of the language's script (the gate's items).
+  final ScriptLevel script;
+
+  /// The learner's answer to an item of the script gate.
+  bool answerScript(math.Random rng) {
+    if (cheater) return true;
+    final p = random ? 0.25 : kScriptRight[script]!;
+    return rng.nextDouble() < p;
+  }
 
   int truthOf(PlacementSkill skill) => truth[skill] ?? 0;
 
@@ -498,6 +511,9 @@ class RunState {
   int pseudoAsked = 0;
   int selfRatedAsked = 0;
 
+  /// The items and seconds the script gate took before the picker began.
+  int gateItems = 0;
+
   int get items => asked.length;
 
   int formatRun(String code) {
@@ -585,7 +601,11 @@ class RunResult {
     required this.seconds,
     required this.repeatedCard,
     required this.tenth,
+    this.script,
   });
+
+  /// What the script gate decided (null when the run had none).
+  final ScriptGateResult? script;
 
   final Map<PlacementSkill, SkillResult> skills;
   final int items;
@@ -608,11 +628,36 @@ RunResult runOnce({
   required int seed,
   Mutation mutation = const Mutation(),
   bool sayInJoint = false,
+  List<ScriptLetter>? scriptLetters,
 }) {
   final rng = math.Random(seed * 100003 + 17);
+  // The script gate, for a language in a non-Latin script: a few letter
+  // items before the picker, which decide whether Read and Write are tested.
+  ScriptGateResult? gate;
+  var gateSeconds = 0.0;
+  var gateItems = 0;
+  if (scriptLetters != null) {
+    // The learner answers "do you read this script?" truthfully (a gamer
+    // says yes).
+    final g = ScriptGate(
+      scriptLetters,
+      rng: rng,
+      audio: variant.audio,
+      declaredReads: persona.script != ScriptLevel.none,
+    );
+    while (true) {
+      final item = g.next();
+      if (item == null) break;
+      g.record(right: persona.answerScript(rng));
+      gateSeconds += item.seconds;
+      gateItems++;
+    }
+    gate = g.result;
+  }
+  final base = variant.skills(sayInJoint: sayInJoint);
   final model = JointPlacement(
     levels: bank.levels,
-    skills: variant.skills(sayInJoint: sayInJoint),
+    skills: gate == null ? base : gate.skillsInPlay(base),
     declaration: declaration,
   );
   final state = RunState(
@@ -624,6 +669,8 @@ RunResult runOnce({
     profile: persona.profile,
     fixedGuess: mutation.fixedGuess,
   );
+  state.seconds = gateSeconds;
+  state.gateItems = gateItems;
   var repeated = false;
   while (true) {
     final item = picker.next(state);
@@ -642,7 +689,7 @@ RunResult runOnce({
     if (item.pseudo) state.pseudoAsked++;
     if (item.selfRated) state.selfRatedAsked++;
     state.seconds += item.spec.seconds;
-    if (state.items > 80) break;
+    if (state.items + gateItems > 80) break;
   }
   final readout = model.readout();
   final results = <PlacementSkill, SkillResult>{};
@@ -662,10 +709,11 @@ RunResult runOnce({
   }
   return RunResult(
     skills: results,
-    items: state.items,
+    items: state.items + gateItems,
     seconds: state.seconds,
     repeatedCard: repeated,
     tenth: math.max(1, bank.levels.parts ~/ 10),
+    script: gate,
   );
 }
 
@@ -1033,6 +1081,10 @@ class V3SimPicker implements SimPicker {
           mic: s.variant.mic,
           recogniser: s.variant.recogniser,
           yesNoBlock: yesNoBlock,
+          mixedBonus: s.gateItems > 0 ? kScriptRunMixedBonus : 0.3,
+          maxSeconds: 300 - s.seconds,
+          maxItems: 40 - s.gateItems,
+          softStopItems: 22 - s.gateItems,
         ),
   );
 
@@ -1053,6 +1105,30 @@ class V3SimPicker implements SimPicker {
     final item = c.payload! as SimItem;
     return c.selfRated ? SimItem(item.card, item.spec, selfRated: true) : item;
   }
+}
+
+/// The letters of the Hindustani script decks (consonants and vowels as plain
+/// letters; vowel signs and conjuncts as joined forms), as the script gate
+/// reads them.
+List<ScriptLetter> devanagariLetters() {
+  List<ScriptLetter> read(String name, {required bool joined}) {
+    final doc = loadYaml(File('decks/hi/$name.yaml').readAsStringSync());
+    return <ScriptLetter>[
+      for (final c in (doc as YamlMap)['cards'] as YamlList)
+        ScriptLetter(
+          (c as YamlMap)['target'] as String,
+          c['reading'] as String,
+          joined: joined,
+        ),
+    ];
+  }
+
+  return <ScriptLetter>[
+    ...read('hi-script-vowels', joined: false),
+    ...read('hi-script-consonants', joined: false),
+    ...read('hi-script-vowel-signs', joined: true),
+    ...read('hi-script-conjuncts', joined: true),
+  ];
 }
 
 /// The share of [values] for which [test] holds.
@@ -1089,6 +1165,7 @@ List<RunResult> runCell({
   bool sayInJoint = false,
   int? seedBase,
   Mutation mutation = const Mutation(),
+  List<ScriptLetter>? scriptLetters,
 }) => <RunResult>[
   for (var seed = 1; seed <= runs; seed++)
     runOnce(
@@ -1100,6 +1177,7 @@ List<RunResult> runCell({
       seed: (seedBase ?? kSeedBase) + seed,
       sayInJoint: sayInJoint,
       mutation: mutation,
+      scriptLetters: scriptLetters,
     ),
 ];
 
