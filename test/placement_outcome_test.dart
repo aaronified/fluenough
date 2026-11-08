@@ -6,7 +6,7 @@ import 'dart:math' as math;
 
 import 'package:fluenough/core/placement/outcome_log.dart';
 import 'package:fluenough/core/placement/placement_profile.dart';
-import 'package:fluenough/core/placement/profile_refit.dart';
+import 'package:fluenough/core/placement/profile_fitting.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 const SkillOutcome _read = SkillOutcome(

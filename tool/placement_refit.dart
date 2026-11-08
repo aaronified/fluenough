@@ -18,7 +18,7 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:fluenough/core/placement/outcome_log.dart';
-import 'package:fluenough/core/placement/profile_refit.dart';
+import 'package:fluenough/core/placement/profile_fitting.dart';
 
 Future<void> main(List<String> args) async {
   final options = <String, String>{};
