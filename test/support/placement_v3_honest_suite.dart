@@ -225,6 +225,7 @@ void honestSuite(String code) {
             '${percentile(items, 0.5)}/${percentile(items, 0.95)}, seconds '
             '${percentile(secs, 0.5)}/${percentile(secs, 0.95)}, within 1/10 '
             '${share(all, (SkillResult x) => x.over.abs() <= 2).toStringAsFixed(2)}, '
+            'over 2/10 ${share(all, (SkillResult x) => x.over > 4).toStringAsFixed(3)}, '
             'range holds the truth '
             '${share(all, (SkillResult x) => x.low <= x.truth && x.truth <= x.high).toStringAsFixed(2)}',
           );
