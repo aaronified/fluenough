@@ -16,8 +16,8 @@
 class AdmissionProfile {
   const AdmissionProfile({required this.excluded, required this.decoys});
 
-  /// The classes (`format:class`) that failed the audit, sorted, as
-  /// `ItemBank.excluded` lists them.
+  /// The classes (`format:class`) that failed the audit, in the order
+  /// `ItemBank.excluded` lists them (sorted as text: `F14` before `F1:`).
   final List<String> excluded;
 
   /// The decoy units of the word tiles (0 when none passed).
@@ -41,9 +41,9 @@ const Map<String, AdmissionProfile> kAdmissionProfiles =
       ),
       'hi': AdmissionProfile(
         excluded: <String>[
-          'F1:clean',
           'F14:clean',
           'F17:cognate',
+          'F1:clean',
           'F5:cognate',
           'S2:clean',
           'S2:cognate',

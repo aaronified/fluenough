@@ -301,12 +301,9 @@ void main() {
     test('the starter is the clean items of the first formats', () {
       final all = smallV3Bank();
       final starter = ItemBank.starterOf(all);
-      expect(starter.map((i) => i.format).toSet(), <String>{
-        'F2',
-        'F13',
-        'F7',
-        'F8',
-      });
+      // The small bank's sentences have no content-word count, so they are
+      // not clean: the starter holds the word formats.
+      expect(starter.map((i) => i.format).toSet(), <String>{'F2', 'F13', 'F7'});
       expect(starter.length, lessThan(all.length));
     });
   });
