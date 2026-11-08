@@ -11,6 +11,7 @@
 // prerequisite cannot land unnoticed; the later pull requests must use the
 // file names of the plan's build progress (v3_drilldown, script_gate) or
 // adjust the patterns.
+import 'dart:convert';
 import 'dart:io';
 import 'dart:math' as math;
 
@@ -54,8 +55,23 @@ class _PendingGate {
 /// Whether the model's fitted numbers have moved from the values of build
 /// step 4b (the prior mix, the declaration weight, the likelihood temper): a
 /// re-fit has landed. The two gates that wait for the re-fit fail loudly then.
-bool _modelRefitted() =>
-    kMaxDeclarationWeight != 0.7 || kTogetherShare != 0.7 || kTemper != 0.85;
+///
+/// A re-fit that `tool/placement_refit.dart` writes lands as a `fitted` entry
+/// of a language in `assets/placement_profiles.json`; that also counts. Until
+/// one is shipped the fallback stands: placed low, never high.
+bool _modelRefitted() {
+  if (kMaxDeclarationWeight != 0.7 ||
+      kTogetherShare != 0.7 ||
+      kTemper != 0.85) {
+    return true;
+  }
+  final asset = jsonDecode(
+    File('assets/placement_profiles.json').readAsStringSync(),
+  );
+  final languages = asset is Map ? asset['languages'] : null;
+  return languages is Map &&
+      languages.values.any((l) => l is Map && l['fitted'] is Map);
+}
 
 /// Whether the inventory has a generated Write item cheap enough to prove
 /// the top bands: at most 6 s, slip at most 0.10, guess at most 0.10 (the

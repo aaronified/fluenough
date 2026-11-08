@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../app/app_info.dart';
 import '../../app/app_scope.dart';
+import '../../app/placement_outcomes.dart';
 import '../../app/app_state.dart';
 import '../../app/features.dart';
 import '../../app/memory_progress.dart';
@@ -114,6 +116,16 @@ class _BodyState extends State<_Body> {
             padding: _tallRow,
             onTap: () => _export(context, state),
           ),
+          if (state.settings.allPlacementOutcomes.isNotEmpty)
+            GroupedTile(
+              leading: const Icon(Icons.share_outlined),
+              title: l10n.settingsSharePlacement,
+              subtitle: l10n.settingsSharePlacementDesc(
+                state.settings.allPlacementOutcomes.length,
+              ),
+              padding: _tallRow,
+              onTap: () => _sharePlacement(context, state),
+            ),
           GroupedTile(
             leading: const Icon(Icons.file_upload_outlined),
             title: l10n.settingsImport,
@@ -225,6 +237,34 @@ class _BodyState extends State<_Body> {
     }
     if (!saved) return;
     state.log.event('Review log exported');
+    if (context.mounted) showAppSnackBar(context, l10n.settingsExported(name));
+  }
+
+  /// Saves the placement outcome records (no words, answers or audio) as
+  /// `fluenough-placement-data.json`, where the learner picks: nothing leaves
+  /// the phone unless they send the file.
+  static Future<void> _sharePlacement(
+    BuildContext context,
+    AppState state,
+  ) async {
+    final l10n = AppLocalizations.of(context)!;
+    final text = state.placementExport(AppInfo.version);
+    if (text == null) return;
+    const name = 'fluenough-placement-data.json';
+    final bool saved;
+    try {
+      saved = await state.logFiles.save(
+        name,
+        text,
+        mimeType: 'application/json',
+      );
+    } on Exception catch (e) {
+      state.log.warning('Placement data not exported: ${e.runtimeType}');
+      if (context.mounted) showAppSnackBar(context, l10n.settingsExportFailed);
+      return;
+    }
+    if (!saved) return;
+    state.log.event('Placement data exported');
     if (context.mounted) showAppSnackBar(context, l10n.settingsExported(name));
   }
 

@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart' show ThemeMode, TimeOfDay;
 import 'package:flutter/foundation.dart';
 
+import '../core/placement/outcome_log.dart';
 import '../core/data/spoken_languages.dart';
 import '../core/decks/font_check.dart';
 import '../core/languages/language_skills.dart';
@@ -151,6 +152,9 @@ class SettingsNotifier extends ChangeNotifier {
   Map<String, Map<String, PlacementRange>> _placementRanges =
       const <String, Map<String, PlacementRange>>{};
   Map<String, int> _placementProfiles = const <String, int>{};
+  Map<String, List<PlacementOutcome>> _placementOutcomes =
+      const <String, List<PlacementOutcome>>{};
+  Map<String, double> _placementCorrection = const <String, double>{};
   Map<String, String> _placementRuns = const <String, String>{};
   Set<String> _waitingOpen = const <String>{};
   Map<Skill, DateTime> _pausedUntil = const <Skill, DateTime>{};
@@ -897,6 +901,52 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// The outcome records of [language]'s placements (the last
+  /// [kMaxOutcomes]), oldest first: what the corrections and the opt-in export
+  /// read. Local only.
+  List<PlacementOutcome> placementOutcomesOf(String language) =>
+      _placementOutcomes[language] ?? const <PlacementOutcome>[];
+
+  /// Every language's outcome records.
+  Iterable<PlacementOutcome> get allPlacementOutcomes =>
+      _placementOutcomes.values.expand((o) => o);
+
+  /// Replaces [language]'s outcome records with [outcomes] (the last
+  /// [kMaxOutcomes] are kept).
+  void setPlacementOutcomes(String language, List<PlacementOutcome> outcomes) {
+    final kept = outcomes.length > kMaxOutcomes
+        ? outcomes.sublist(outcomes.length - kMaxOutcomes)
+        : outcomes;
+    final next = <String, List<PlacementOutcome>>{..._placementOutcomes};
+    if (kept.isEmpty) {
+      next.remove(language);
+    } else {
+      next[language] = List<PlacementOutcome>.unmodifiable(kept);
+    }
+    _placementOutcomes = Map<String, List<PlacementOutcome>>.unmodifiable(next);
+    notifyListeners();
+  }
+
+  /// How far [language]'s profile has been moved by the learner's own
+  /// reviews, from the default (0) toward the language's gated edge (1).
+  /// Applied only after enough evidence, reversible by lowering it, never
+  /// shown. 0 when there is none.
+  double placementCorrectionOf(String language) =>
+      _placementCorrection[language] ?? 0;
+
+  void setPlacementCorrection(String language, double carefulness) {
+    final c = carefulness.clamp(0.0, 1.0);
+    if (placementCorrectionOf(language) == c) return;
+    final next = <String, double>{..._placementCorrection};
+    if (c == 0) {
+      next.remove(language);
+    } else {
+      next[language] = c;
+    }
+    _placementCorrection = Map<String, double>.unmodifiable(next);
+    notifyListeners();
+  }
+
   /// Sets [language]'s skill labels to [labels].
   void setSkillLabels(String language, Map<String, String> labels) {
     final was = _skillLabels[language] ?? const <String, String>{};
@@ -954,6 +1004,8 @@ class SettingsNotifier extends ChangeNotifier {
     _skillLabels = _without(_skillLabels, language);
     _placementRanges = _without(_placementRanges, language);
     _placementProfiles = _without(_placementProfiles, language);
+    _placementOutcomes = _without(_placementOutcomes, language);
+    _placementCorrection = _without(_placementCorrection, language);
     _placementRuns = _without(_placementRuns, language);
     _placedDecks = Set<String>.unmodifiable(<String>{
       for (final id in _placedDecks)
@@ -1399,6 +1451,11 @@ class SettingsNotifier extends ChangeNotifier {
     }),
     'skill_labels': jsonEncode(_skillLabels),
     'placement_profile': jsonEncode(_placementProfiles),
+    'placement_outcomes': jsonEncode(<String, Object?>{
+      for (final e in _placementOutcomes.entries)
+        e.key: <Object?>[for (final o in e.value) o.toJson()],
+    }),
+    'placement_correction': jsonEncode(_placementCorrection),
     'skill_ranges': jsonEncode(<String, Map<String, Object?>>{
       for (final MapEntry(:key, :value) in _placementRanges.entries)
         key: <String, Object?>{
@@ -1809,6 +1866,22 @@ class SettingsNotifier extends ChangeNotifier {
         }
       }
     }
+    // Read tolerantly: a record that is not one is skipped.
+    if (pick('placement_outcomes', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (!RegExp(r'^[a-z]{2,3}$').hasMatch(key) || value is! List) continue;
+        setPlacementOutcomes(key, <PlacementOutcome>[
+          for (final o in value) ?PlacementOutcome.fromJson(o),
+        ]);
+      }
+    }
+    if (pick('placement_correction', _parseJsonMap) case final v?) {
+      for (final MapEntry(:key, :value) in v.entries) {
+        if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is num) {
+          setPlacementCorrection(key, value.toDouble());
+        }
+      }
+    }
     if (pick('placement_runs', _parseJsonMap) case final v?) {
       for (final MapEntry(:key, :value) in v.entries) {
         if (RegExp(r'^[a-z]{2,3}$').hasMatch(key) && value is String) {
@@ -1984,6 +2057,9 @@ class SettingsNotifier extends ChangeNotifier {
     notifyListeners();
   }
 }
+
+/// How many placements' outcome records a language keeps.
+const int kMaxOutcomes = 20;
 
 /// Where a Find my level run put one skill: the start unit, the unit range
 /// it is 80% sure of, and its confidence word (the name of an
