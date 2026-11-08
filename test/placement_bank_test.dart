@@ -3,10 +3,12 @@
 // copy dropped when the decks change or it is damaged, a failure that can be
 // retried, and the real isolate path (over a fixture too small to give
 // items: the path is what is tested).
+import 'dart:async';
 import 'dart:convert';
 import 'dart:typed_data';
 
 import 'package:fluenough/app/placement_bank.dart';
+import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/item_codec.dart';
 import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
@@ -25,6 +27,7 @@ class _Runner {
     PlacementLanguageData data,
     void Function(double) onProgress,
     bool Function() cancelled,
+    void Function(List<RegItem>) onStarter,
   ) async {
     calls++;
     onProgress(0.5);
@@ -164,7 +167,7 @@ void main() {
 
     test('a cancelled build is dropped and starts again on request', () async {
       final banks = PlacementBanks(
-        runner: (data, onProgress, cancelled) async {
+        runner: (data, onProgress, cancelled, onStarter) async {
           await Future<void>.delayed(const Duration(milliseconds: 20));
           return cancelled() ? null : smallV3Bank();
         },
@@ -173,6 +176,40 @@ void main() {
       final job = banks.jobFor(data)..cancel();
       await expectLater(job.result, throwsStateError);
       expect(await banks.jobFor(data).result, isNotEmpty);
+    });
+  });
+
+  group('the first formats', () {
+    test('a run can begin on them while the rest is made', () async {
+      final gate = Completer<void>();
+      final banks = PlacementBanks(
+        runner: (data, onProgress, cancelled, onStarter) async {
+          onStarter(ItemBank.starterOf(smallV3Bank()));
+          await gate.future;
+          return smallV3Bank();
+        },
+      );
+      final job = banks.jobFor(findLevelData());
+      final first = await job.first;
+      expect(first, isNotEmpty);
+      expect(job.items, isNull);
+      expect(job.startable, same(first));
+      gate.complete();
+      final all = await job.result;
+      expect(all.length, greaterThan(first.length));
+      expect(job.startable, same(all));
+    });
+
+    test('a kept bank is ready at once', () async {
+      final store = MemoryBlobStore();
+      final data = findLevelData();
+      await PlacementBanks(
+        store: store,
+        runner: (d, p, c, s) async => smallV3Bank(),
+      ).jobFor(data).result;
+      await Future<void>.delayed(Duration.zero);
+      final job = PlacementBanks(store: store).jobFor(data);
+      expect((await job.first).length, (await job.result).length);
     });
   });
 
@@ -191,15 +228,19 @@ void main() {
       expect(seen, orderedEquals(<double>[...seen]..sort()));
     });
 
-    test('the build in steps on this thread in steps, as the browser does, runs to the end', () async {
-      final progress = <double>[];
-      final stepped = await runBankInSteps(
-        findLevelData(),
-        progress.add,
-        () => false,
-      );
-      expect(stepped, isEmpty);
-      expect(progress.last, 1);
-    });
+    test(
+      'the build in steps on this thread, as the browser does, runs to the end',
+      () async {
+        final progress = <double>[];
+        final stepped = await runBankInSteps(
+          findLevelData(),
+          progress.add,
+          () => false,
+          (_) {},
+        );
+        expect(stepped, isEmpty);
+        expect(progress.last, 1);
+      },
+    );
   });
 }

@@ -179,7 +179,7 @@ double knownWordScore(
   String option,
   Map<String, Set<String>> knownText,
 ) {
-  final eng = glossWords(option).toSet();
+  final eng = _glossSets.putIfAbsent(option, () => glossWords(option).toSet());
   var s = 0.0;
   for (final w in promptWords) {
     final en = knownText[w.toLowerCase()];
@@ -189,10 +189,18 @@ double knownWordScore(
   return s;
 }
 
+final Map<String, Set<String>> _glossSets = <String, Set<String>>{};
+
 /// The words of an English option, lowercased, as a set.
-Set<String> optionWords(String option) => <String>{
-  for (final m in RegExp(r"[A-Za-z']+").allMatches(option.toLowerCase())) m[0]!,
-};
+Set<String> optionWords(String option) => _optionWordsCache.putIfAbsent(
+  option,
+  () => <String>{
+    for (final m in _wordPattern.allMatches(option.toLowerCase())) m[0]!,
+  },
+);
+
+final RegExp _wordPattern = RegExp(r"[A-Za-z']+");
+final Map<String, Set<String>> _optionWordsCache = <String, Set<String>>{};
 
 /// For each option, minus its summed word-set distance to the others: the
 /// "centre of the options" cue (an option that is the one-word contrast of

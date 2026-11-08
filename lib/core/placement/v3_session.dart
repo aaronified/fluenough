@@ -149,6 +149,8 @@ class V3Run {
     this.declaration,
     this.scriptStart = V3ScriptStart.ask,
     this.yesNoBlock = false,
+    this.startedWithStarter = false,
+    this.fullItems,
     required List<RegItem> items,
   }) : wanted = Set<PlacementSkill>.unmodifiable(skills),
        levels = PlacementLevels(data.deckCount, maxParts: 20),
@@ -180,6 +182,8 @@ class V3Run {
     PlacementDeclaration? declaration,
     V3ScriptStart scriptStart = V3ScriptStart.ask,
     bool yesNoBlock = false,
+    bool startedWithStarter = false,
+    List<RegItem>? fullItems,
     required List<RegItem> items,
   }) {
     final run = V3Run(
@@ -191,6 +195,8 @@ class V3Run {
       declaration: declaration,
       scriptStart: scriptStart,
       yesNoBlock: yesNoBlock,
+      startedWithStarter: startedWithStarter,
+      fullItems: fullItems,
       items: items,
     );
     for (final e in events) {
@@ -213,10 +219,18 @@ class V3Run {
   /// Whether Read opens with a block of yes/no items (the picker's
   /// `yesNoBlock`; off in the app until the re-fit decides it).
   final bool yesNoBlock;
+
+  /// Whether the run began with the first formats' items only (the rest of the
+  /// bank was still being made). It then changes to the whole bank once, at
+  /// the event `x` ([extendItems]); a run replayed from its events does the
+  /// same at the same place, from [fullItems].
+  final bool startedWithStarter;
+  final List<RegItem>? fullItems;
+  bool _extended = false;
   final PlacementLevels levels;
   final math.Random rng;
 
-  late final List<RegItem> _items;
+  late List<RegItem> _items;
   late final ScriptGate _gate;
   JointPlacement? _model;
   V3Picker? _picker;
@@ -277,6 +291,19 @@ class V3Run {
 
   JointPlacement? get model => _model;
   V3Picker? get picker => _picker;
+
+  /// The rest of the bank is ready (the run began with the clean items of its
+  /// first formats): the picker may ask from all of it from now on.
+  void extendItems(List<RegItem> items) {
+    if (startedWithStarter && !_extended) {
+      _extended = true;
+      events.add('x');
+    }
+    _items = items;
+    _picker?.replacePool(
+      CandidatePool(PickerCandidate.fromItems(items), levels),
+    );
+  }
 
   /// Whether the learner gave the microphone up.
   bool get microphoneGivenUp => _micGivenUp;
@@ -439,6 +466,8 @@ class V3Run {
         giveUpMicrophone();
       case 'a':
         dropAudio();
+      case 'x':
+        if (fullItems != null) extendItems(fullItems!);
       case 'k':
         keepGoing();
     }

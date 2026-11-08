@@ -1,3 +1,4 @@
+import 'admission.dart';
 import 'item_audit.dart';
 import 'item_generators.dart';
 import 'item_registry.dart';
@@ -12,6 +13,13 @@ import 'placement_data.dart';
 
 /// The most decoy units a word tile item may carry.
 const int kMaxDecoys = 4;
+
+class _Step {
+  _Step(this.make, {this.starter = false});
+
+  final List<RegItem> Function() make;
+  final bool starter;
+}
 
 /// A language's admitted items and what the audit found.
 class ItemBank {
@@ -42,21 +50,72 @@ class ItemBank {
   /// The generator context (cards, scores), for the audit and the tests.
   final GenContext context;
 
-  /// Builds the bank for [data].
+  /// Builds the bank for [data]: every generator, and the admission audit of
+  /// every class (the offline audit's build: tools and tests).
   static ItemBank build(PlacementLanguageData data, {int seed = 1}) {
     final cx = GenContext(data, seed: seed);
     final g = ItemGenerators(cx);
     final all = <RegItem>[];
     for (final step in _steps(g)) {
-      all.addAll(step());
+      all.addAll(step.make());
     }
     return _finish(data, cx, g, all);
   }
 
-  /// The same bank, built in steps with a [pause] between them (so that a
-  /// caller on a thread it must not hold, the browser's, can let the screen
-  /// draw), reporting [onProgress] (0 to 1) after each, and stopping with null
-  /// when [cancelled] says so. The items are those of [build].
+  /// The items a run asks, built in steps (the app's build): the generators
+  /// of the formats a screen can show, the cheap and most asked first. After
+  /// the [starter] steps the clean items of the formats they made are handed
+  /// to [onStarter] (a run can begin with them; the audit has passed these
+  /// classes for the course languages, and a cognate class is left to the full
+  /// bank); the rest follows, then the admission audit of the classes made,
+  /// and the full list is returned. A [pause] between steps lets a thread
+  /// that must not be held draw; [onProgress] says how far it is (0 to 1);
+  /// [cancelled] stops it with null.
+  static Future<List<RegItem>?> buildItems(
+    PlacementLanguageData data, {
+    int seed = 1,
+    Future<void> Function()? pause,
+    void Function(double progress)? onProgress,
+    void Function(List<RegItem> starter)? onStarter,
+    bool Function()? cancelled,
+  }) async {
+    final cx = GenContext(data, seed: seed);
+    final g = ItemGenerators(cx);
+    final steps = _steps(g, runtime: true).toList();
+    final total = steps.length + 1;
+    final all = <RegItem>[];
+    var starterSent = false;
+    for (var i = 0; i < steps.length; i++) {
+      if (cancelled?.call() ?? false) return null;
+      all.addAll(steps[i].make());
+      onProgress?.call((i + 1) / total);
+      if (!starterSent && i + 1 < steps.length && !steps[i + 1].starter) {
+        starterSent = true;
+        onStarter?.call(starterOf(all));
+      }
+      await pause?.call();
+    }
+    if (cancelled?.call() ?? false) return null;
+    final profile = kAdmissionProfiles[data.language];
+    if (profile != null) {
+      // The audit's verdict for this language is known: no audit now.
+      final tiles = profile.decoys > 0
+          ? g.wordTiles(profile.decoys)
+          : const <RegItem>[];
+      onProgress?.call(1);
+      return List<RegItem>.unmodifiable(<RegItem>[
+        for (final it in <RegItem>[...all, ...tiles])
+          if (profile.admits(it.auditClass)) it,
+      ]);
+    }
+    final bank = _finish(data, cx, g, all);
+    onProgress?.call(1);
+    return bank.items;
+  }
+
+  /// The same bank as [build], built in steps with a [pause] between them,
+  /// reporting [onProgress] (0 to 1) after each, and stopping with null when
+  /// [cancelled] says so.
   static Future<ItemBank?> buildAsync(
     PlacementLanguageData data, {
     int seed = 1,
@@ -72,7 +131,7 @@ class ItemBank {
     final all = <RegItem>[];
     for (var i = 0; i < steps.length; i++) {
       if (cancelled?.call() ?? false) return null;
-      all.addAll(steps[i]());
+      all.addAll(steps[i].make());
       onProgress?.call((i + 1) / total);
       await pause?.call();
     }
@@ -84,28 +143,86 @@ class ItemBank {
     return bank;
   }
 
-  /// Every generator, in the order the bank lists their items.
-  static Iterable<List<RegItem> Function()> _steps(ItemGenerators g) =>
-      <List<RegItem> Function()>[
-        () => g.wordToMeaning('F2'),
-        () => g.wordToMeaning('F13'),
-        g.meaningToWord,
-        () => g.typedOrSaid('F7'),
-        g.gapTyping,
-        () => g.typedOrSaid('F18'),
-        () => g.yesNoReal('F1'),
-        () => g.yesNoReal('F14'),
-        () => g.pseudowords('F1'),
-        () => g.pseudowords('F14'),
-        () => g.sentenceTiles('F8'),
-        () => g.sentenceTiles('F16'),
-        g.wordOrder,
-        () => g.sentencePicks('F5'),
-        () => g.sentencePicks('F17'),
-        g.cloze,
-        g.genderExceptions,
-        g.matching,
+  /// The formats a run may begin with ([starterOf]): the cheap generators,
+  /// which make the most asked items.
+  static const Set<String> starterFormats = <String>{
+    'F2',
+    'F13',
+    'F7',
+    'F18',
+    'F8',
+    'F16',
+  };
+
+  /// What a run can begin with out of [items] (a whole bank, or what the
+  /// first generators made): the clean items of the starter formats, in the
+  /// bank's order.
+  static List<RegItem> starterOf(Iterable<RegItem> items) => <RegItem>[
+    for (final it in items)
+      if (starterFormats.contains(it.format) && it.cognateClass == 'clean') it,
+  ];
+
+  /// The generators, in the order the bank lists their items. With [runtime],
+  /// only the formats a screen can show, the starter formats first; the items
+  /// the picker never asks (word order, matching, cloze, gender) are not made.
+  /// A generator that makes one item for two formats (the pseudowords, the
+  /// sentence picks) runs once.
+  static Iterable<_Step> _steps(ItemGenerators g, {bool runtime = false}) {
+    List<RegItem>? pseudo;
+    List<RegItem>? picks;
+    List<RegItem> pseudoOf(String format) {
+      pseudo ??= g.pseudowords('F1');
+      return format == 'F1'
+          ? pseudo!
+          : <RegItem>[for (final i in pseudo!) i.withFormat(format)];
+    }
+
+    List<RegItem> picksOf(String format) {
+      picks ??= g.sentencePicks('F5');
+      return format == 'F5'
+          ? picks!
+          : <RegItem>[for (final i in picks!) i.withFormat(format)];
+    }
+
+    if (runtime) {
+      return <_Step>[
+        _Step(() => g.wordToMeaning('F2'), starter: true),
+        _Step(() => g.wordToMeaning('F13'), starter: true),
+        _Step(() => g.typedOrSaid('F7'), starter: true),
+        _Step(() => g.typedOrSaid('F18'), starter: true),
+        _Step(() => g.sentenceTiles('F8'), starter: true),
+        _Step(() => g.sentenceTiles('F16'), starter: true),
+        _Step(g.gapTyping),
+        _Step(g.meaningToWord),
+        _Step(() => g.yesNoReal('F1')),
+        _Step(() => g.yesNoReal('F14')),
+        _Step(() => pseudoOf('F1')),
+        _Step(() => pseudoOf('F14')),
+        _Step(() => picksOf('F5')),
+        _Step(() => picksOf('F17')),
       ];
+    }
+    return <_Step>[
+      _Step(() => g.wordToMeaning('F2')),
+      _Step(() => g.wordToMeaning('F13')),
+      _Step(g.meaningToWord),
+      _Step(() => g.typedOrSaid('F7')),
+      _Step(g.gapTyping),
+      _Step(() => g.typedOrSaid('F18')),
+      _Step(() => g.yesNoReal('F1')),
+      _Step(() => g.yesNoReal('F14')),
+      _Step(() => pseudoOf('F1')),
+      _Step(() => pseudoOf('F14')),
+      _Step(() => g.sentenceTiles('F8')),
+      _Step(() => g.sentenceTiles('F16')),
+      _Step(g.wordOrder),
+      _Step(() => picksOf('F5')),
+      _Step(() => picksOf('F17')),
+      _Step(g.cloze),
+      _Step(g.genderExceptions),
+      _Step(g.matching),
+    ];
+  }
 
   static ItemBank _finish(
     PlacementLanguageData data,

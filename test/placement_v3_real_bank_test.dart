@@ -6,11 +6,12 @@
 @Timeout(Duration(minutes: 15))
 library;
 
+import 'package:fluenough/core/placement/admission.dart';
 import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/v3_picker.dart'
-    show EndReason, kUnaskableFormats;
+    show EndReason, kScreenFormats, kUnaskableFormats;
 import 'package:fluenough/core/placement/v3_session.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -59,6 +60,37 @@ void main() {
       setUpAll(() {
         data = language == 'hi' ? hindustaniWithScript() : loadData(language);
         bank = ItemBank.build(data);
+      });
+
+      test('the stored verdict of the audit is the real one', () {
+        // The app takes this verdict instead of auditing (the audit is the
+        // slow part of making a bank): a change of the decks or of a
+        // generator that changes the audit's answer must change the entry.
+        final profile = kAdmissionProfiles[language]!;
+        expect(profile.excluded, bank.excluded, reason: 'regenerate $language');
+        expect(profile.decoys, bank.decoys, reason: 'regenerate $language');
+      });
+
+      test('the bank the app makes is the audited bank, and its first formats '
+          'are in it', () async {
+        final made = (await ItemBank.buildItems(data))!;
+        final audited = <String>{
+          for (final i in bank.items)
+            if (kScreenFormats.contains(i.format) &&
+                !kUnaskableFormats.contains(i.format))
+              i.id,
+        };
+        final got = <String>{for (final i in made) i.id};
+        // One item in ten thousand may differ (a class judged on the items
+        // it has); the formats and nearly all items are the same.
+        expect(got.difference(audited).length, lessThan(5));
+        expect(audited.difference(got).length, lessThan(5));
+        final starter = ItemBank.starterOf(made);
+        expect(starter, isNotEmpty);
+        expect(
+          starter.every((i) => ItemBank.starterFormats.contains(i.format)),
+          isTrue,
+        );
       });
 
       test('places every skill and asks every admitted format', () {

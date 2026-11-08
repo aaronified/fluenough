@@ -113,7 +113,7 @@ Future<AppState> _pumpSheet(
       AppState.test(
         // The bank takes seconds and an isolate: the screens are given a
         // small one.
-        bankRunner: (_, _, _) async => smallV3Bank(),
+        bankRunner: (_, _, _, _) async => smallV3Bank(),
         deckDownloads: downloads,
         settings: SettingsNotifier(
           spokenLanguages: const <String>['en'],

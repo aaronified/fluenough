@@ -504,25 +504,33 @@ class ItemGenerators {
   /// number of words and nearly the same length as [v]'s come first: no
   /// option is the odd one out by length.
   List<VocabWord> _byGlossLength(VocabWord v, List<VocabWord> candidates) {
-    int words(String g) => g.trim().split(RegExp(r'\s+')).length;
+    final vWords = _wordCount(v.gloss);
     int rank(VocabWord o) {
-      final sameWords = words(o.gloss) == words(v.gloss) ? 0 : 1;
+      final sameWords = _wordCount(o.gloss) == vWords ? 0 : 1;
       final sameEnd = o.units.last == v.units.last ? 0 : 1;
       return sameWords * 100 +
           (o.gloss.length - v.gloss.length).abs() * 2 +
           sameEnd;
     }
 
-    final index = <VocabWord, int>{
-      for (var i = 0; i < candidates.length; i++) candidates[i]: i,
-    };
-    final list = List<VocabWord>.of(candidates);
-    list.sort((a, b) {
-      final r = rank(a).compareTo(rank(b));
-      return r != 0 ? r : index[a]!.compareTo(index[b]!);
-    });
-    return list;
+    // Each candidate is ranked once, and the sort is stable on the order it
+    // came in (the rank, then the index).
+    final ranked =
+        <(int, int, VocabWord)>[
+          for (var i = 0; i < candidates.length; i++)
+            (rank(candidates[i]), i, candidates[i]),
+        ]..sort(
+          (a, b) => a.$1 != b.$1 ? a.$1.compareTo(b.$1) : a.$2.compareTo(b.$2),
+        );
+    return <VocabWord>[for (final r in ranked) r.$3];
   }
+
+  static final RegExp _spaces = RegExp(r'\s+');
+  final Map<String, int> _wordCounts = <String, int>{};
+
+  /// How many words [gloss] has (counted once per gloss).
+  int _wordCount(String gloss) =>
+      _wordCounts.putIfAbsent(gloss, () => gloss.trim().split(_spaces).length);
 
   /// The first 24 of [candidates] reordered so that those whose resemblance
   /// to the prompt ([sim]) is closest to the right answer's ([own]), and
@@ -538,8 +546,17 @@ class ItemGenerators {
         (sim(o) - own).abs() * 8 +
         (o.gloss.length - v.gloss.length).abs() * 0.5 +
         (o.units.last == v.units.last ? 0 : 0.3);
-    final head = candidates.take(24).toList()
-      ..sort((a, b) => cost(a).compareTo(cost(b)));
+    // Each of the first 24 is costed once (the cost is a similarity), and
+    // the sort keeps the order they came in for equal costs.
+    final first = candidates.take(24).toList();
+    final costed =
+        <(double, int, VocabWord)>[
+          for (var i = 0; i < first.length; i++) (cost(first[i]), i, first[i]),
+        ]..sort((a, b) {
+          final c = a.$1.compareTo(b.$1);
+          return c != 0 ? c : a.$2.compareTo(b.$2);
+        });
+    final head = <VocabWord>[for (final c in costed) c.$3];
     return <VocabWord>[...head, ...candidates.skip(24)];
   }
 
@@ -845,33 +862,46 @@ class ItemGenerators {
   List<RegItem> pseudowords(String format, {int count = 400}) {
     final rng = cx.stream('pseudo');
     final real = <String>{for (final v in cx.vocab) v.word.toLowerCase()};
-    final tri = <String, int>{};
-    final bi = <String, int>{};
-    final edge = <String, int>{};
+    // The letter patterns are counted under integer keys (a unit is an id), so
+    // that scoring a candidate builds no strings.
+    final ids = <String, int>{'^': 0, r'$': 1};
+    int id(String unit) => ids.putIfAbsent(unit, () => ids.length);
+    // Every unit of the course and of the words a pseudoword may borrow from
+    // is known before counting, so the radix is fixed.
+    for (final v in cx.vocab) {
+      for (final u in v.units) {
+        id(u);
+      }
+    }
+    final radix = ids.length + 1;
+    final tri = <int, int>{};
+    final bi = <int, int>{};
+    final edge = <int, int>{};
     void add(List<String> units, int by) {
-      final u = <String>['^', ...units, r'$'];
+      final u = <int>[0, for (final x in units) id(x), 1];
       for (var i = 0; i + 2 < u.length; i++) {
-        final k = u.sublist(i, i + 3).join('|');
+        final k = (u[i] * radix + u[i + 1]) * radix + u[i + 2];
         tri[k] = (tri[k] ?? 0) + by;
       }
       for (var i = 0; i + 1 < u.length; i++) {
-        final k = u.sublist(i, i + 2).join('|');
+        final k = u[i] * radix + u[i + 1];
         bi[k] = (bi[k] ?? 0) + by;
       }
-      final e = '${units.first}|${units.last}';
+      final e = id(units.first) * radix + id(units.last);
       edge[e] = (edge[e] ?? 0) + by;
     }
 
     for (final v in cx.vocab) {
       add(v.units, 1);
     }
-    double mean(List<String> u, int n, Map<String, int> counts) {
+    double mean(List<int> u, int n, Map<int, int> counts) {
       var total = 0.0;
       var k = 0;
       for (var i = 0; i + n <= u.length; i++) {
-        total += math.log(
-          1 + math.max(0, counts[u.sublist(i, i + n).join('|')] ?? 0),
-        );
+        final key = n == 3
+            ? (u[i] * radix + u[i + 1]) * radix + u[i + 2]
+            : u[i] * radix + u[i + 1];
+        total += math.log(1 + math.max(0, counts[key] ?? 0));
         k++;
       }
       return k == 0 ? 0 : total / k;
@@ -881,11 +911,13 @@ class ItemGenerators {
     // leaving out the word it came from.
     List<double> typical(List<String> units, List<String> leaveOut) {
       add(leaveOut, -1);
-      final padded = <String>['^', ...units, r'$'];
+      final padded = <int>[0, for (final x in units) id(x), 1];
       final out = <double>[
         mean(padded, 3, tri),
         mean(padded, 2, bi),
-        math.log(1 + math.max(0, edge['${units.first}|${units.last}'] ?? 0)),
+        math.log(
+          1 + math.max(0, edge[id(units.first) * radix + id(units.last)] ?? 0),
+        ),
       ];
       add(leaveOut, 1);
       return out;
@@ -1218,12 +1250,22 @@ class ItemGenerators {
     final all = cx.sentences;
     final rng = cx.stream('picks');
     final lmModel = CharLm(<String>[for (final x in all) x.english]);
-    double heldOut(String o) {
+    // What a sentence scores without itself, and the words of an English
+    // option, do not depend on the sentence they are an option of: each is
+    // worked out once.
+    final heldOutOf = <String, double>{};
+    double heldOut(String o) => heldOutOf.putIfAbsent(o, () {
       lmModel.add(o, -1);
       final v = lmModel.score(o);
       lmModel.add(o, 1);
       return v;
-    }
+    });
+    final optionWordsOf = <String, Set<String>>{};
+    Set<String> optionWordsCached(String e) =>
+        optionWordsOf.putIfAbsent(e, () => optionWords(e));
+    final glossWordsOf = <String, List<String>>{};
+    List<String> glossWordsCached(String o) =>
+        glossWordsOf.putIfAbsent(o, () => glossWords(o));
 
     final simBalances = <bool, PatternBalance>{
       true: PatternBalance(),
@@ -1244,9 +1286,9 @@ class ItemGenerators {
       final lmBalance = lmBalances[clean]!;
       final english = s.english;
       final prompt = targetWords(s.card.reading ?? s.text);
-      double sim(String o) => maxSimilarity(prompt, glossWords(o), lang);
+      double sim(String o) => maxSimilarity(prompt, glossWordsCached(o), lang);
       final k0 = knownWordScore(prompt, english, known);
-      final mine = optionWords(english);
+      final mine = optionWordsCached(english);
       final pool = <(String, double, double)>[];
       final order = List<SentenceInfo>.of(all)..shuffle(rng);
       for (final o in order) {
@@ -1254,7 +1296,7 @@ class ItemGenerators {
         if (o.card.id == s.card.id) continue;
         final e = o.english;
         if (e.toLowerCase() == english.toLowerCase()) continue;
-        final overlap = mine.intersection(optionWords(e)).length;
+        final overlap = mine.intersection(optionWordsCached(e)).length;
         if (overlap > math.max(1, mine.length ~/ 2)) continue;
         if ((e.length - english.length).abs() > 30) continue;
         if (knownWordScore(prompt, e, known) != k0) continue;

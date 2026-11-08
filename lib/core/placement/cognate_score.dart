@@ -54,7 +54,12 @@ String foldAccents(String text) {
 /// The letters a to z of [text] after [foldAccents]; everything else (spaces,
 /// marks, other scripts) is dropped.
 String latinLetters(String text) =>
-    foldAccents(text).replaceAll(RegExp('[^a-z]'), '');
+    foldAccents(text).replaceAll(_notLetter, '');
+
+final RegExp _notLetter = RegExp('[^a-z]');
+final RegExp _softC = RegExp('c(?=[eiy])');
+final RegExp _doubled = RegExp(r'(.)\1+');
+final RegExp _vowels = RegExp('[aeiou]');
 
 /// Suffix correspondences from a language's spelling to English, applied
 /// before the fold (`ción` to `tion`): the regular patterns that make
@@ -110,17 +115,17 @@ const Map<String, List<(String, String)>> cognateSuffixRules =
 String soundForm(String letters) {
   var s = letters;
   s = s.replaceAll('ph', 'f').replaceAll('qu', 'k').replaceAll('ck', 'k');
-  s = s.replaceAllMapped(RegExp('c(?=[eiy])'), (_) => 's');
+  s = s.replaceAllMapped(_softC, (_) => 's');
   s = s.replaceAll('c', 'k').replaceAll('q', 'k');
   s = s.replaceAll('z', 's').replaceAll('x', 'ks');
   s = s.replaceAll('w', 'v').replaceAll('y', 'i').replaceAll('j', 'i');
   s = s.replaceAll('h', '');
-  s = s.replaceAllMapped(RegExp(r'(.)\1+'), (m) => m[1]!);
+  s = s.replaceAllMapped(_doubled, (m) => m[1]!);
   return s;
 }
 
 /// [letters] with every vowel dropped (the consonant skeleton).
-String skeleton(String letters) => letters.replaceAll(RegExp('[aeiou]'), '');
+String skeleton(String letters) => letters.replaceAll(_vowels, '');
 
 /// The Levenshtein distance of [a] and [b].
 int editDistance(String a, String b) {
@@ -173,34 +178,77 @@ List<String> respellings(String letters, String language) {
 /// How much [word] of [language] looks like the English [english] (both as
 /// letters): the best similarity of their sound forms, or of their consonant
 /// skeletons for words of four letters or more, over the respellings.
-double wordSimilarity(String word, String english, String language) {
-  final w = latinLetters(word);
-  final e = latinLetters(english);
-  if (w.length < 3 || e.length < 3) return 0;
-  final eSound = soundForm(e);
-  final eSkel = skeleton(eSound);
+double wordSimilarity(String word, String english, String language) =>
+    _pairCache.putIfAbsent(
+      '$language|$word|$english',
+      () => _wordSimilarity(word, english, language),
+    );
+
+final Map<String, double> _pairCache = <String, double>{};
+
+double _wordSimilarity(String word, String english, String language) {
+  final w = _wordForms(word, language);
+  final e = _englishForms(english);
+  if (w == null || e == null) return 0;
   var best = 0.0;
-  for (final r in respellings(w, language)) {
-    final rSound = soundForm(r);
-    best = math.max(best, _similarity(rSound, eSound));
-    if (rSound.length >= 4 && eSound.length >= 4) {
-      final rs = skeleton(rSound);
-      if (rs.length >= 3 && eSkel.length >= 3) {
-        best = math.max(best, 0.95 * _similarity(rs, eSkel));
-      }
+  for (final r in w) {
+    best = math.max(best, _similarity(r.sound, e.sound));
+    if (r.skeleton != null && e.skeleton != null) {
+      best = math.max(best, 0.95 * _similarity(r.skeleton!, e.skeleton!));
     }
   }
   return best;
 }
 
+/// A respelling's sound form, and its consonant skeleton when both it and the
+/// skeleton are long enough to compare.
+class _Forms {
+  const _Forms(this.sound, this.skeleton);
+
+  final String sound;
+  final String? skeleton;
+}
+
+// A bank compares the same few thousand words again and again; the folds are
+// pure, so each word's forms are made once (the regular expressions are
+// compiled once as well).
+final Map<String, List<_Forms>?> _wordFormsCache = <String, List<_Forms>?>{};
+final Map<String, _Forms?> _englishFormsCache = <String, _Forms?>{};
+
+List<_Forms>? _wordForms(String word, String language) =>
+    _wordFormsCache.putIfAbsent('$language|$word', () {
+      final w = latinLetters(word);
+      if (w.length < 3) return null;
+      return <_Forms>[
+        for (final r in respellings(w, language))
+          () {
+            final sound = soundForm(r);
+            final skel = sound.length >= 4 ? skeleton(sound) : null;
+            return _Forms(
+              sound,
+              skel != null && skel.length >= 3 ? skel : null,
+            );
+          }(),
+      ];
+    });
+
+_Forms? _englishForms(String english) =>
+    _englishFormsCache.putIfAbsent(english, () {
+      final e = latinLetters(english);
+      if (e.length < 3) return null;
+      final sound = soundForm(e);
+      final skel = sound.length >= 4 ? skeleton(sound) : null;
+      return _Forms(sound, skel != null && skel.length >= 3 ? skel : null);
+    });
+
 /// The English words of a card's meaning: every word of every alternative
 /// meaning (`to eat; to have lunch` gives eat, have, lunch), without the
 /// parenthesised glosses, and without the function words `to`, `a`, `an` and
 /// `the`.
-List<String> glossWords(String native) {
-  final plain = native.replaceAll(RegExp(r'\([^)]*\)'), ' ');
+List<String> glossWords(String native) => _glossCache.putIfAbsent(native, () {
+  final plain = native.replaceAll(_parenthesised, ' ');
   final out = <String>[];
-  for (final w in plain.split(RegExp(r'[^A-Za-z]+'))) {
+  for (final w in plain.split(_nonLetters)) {
     final lower = w.toLowerCase();
     if (lower.length < 3) continue;
     if (const <String>{'the', 'and', 'for', 'you', 'your'}.contains(lower)) {
@@ -208,8 +256,12 @@ List<String> glossWords(String native) {
     }
     out.add(lower);
   }
-  return out;
-}
+  return List<String>.unmodifiable(out);
+});
+
+final RegExp _parenthesised = RegExp(r'\([^)]*\)');
+final RegExp _nonLetters = RegExp(r'[^A-Za-z]+');
+final Map<String, List<String>> _glossCache = <String, List<String>>{};
 
 /// The first alternative of a meaning, as a short answer option: `to eat`
 /// from `to eat; to have lunch (formal)`, and `a heap` from

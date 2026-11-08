@@ -438,6 +438,39 @@ class RegItem {
   /// Other cards the item uses (the rest of a matching screen).
   final Set<String> coCards;
 
+  /// The same item as another format's (the generators that make one item for
+  /// two formats, a written and a heard sentence, a written and a heard
+  /// pseudoword, share the work): [id] has its format suffix changed too.
+  RegItem withFormat(String newFormat) => RegItem(
+    id: id.endsWith(':$format')
+        ? '${id.substring(0, id.length - format.length)}$newFormat'
+        : id,
+    format: newFormat,
+    cardId: cardId,
+    deck: deck,
+    prompt: prompt,
+    promptRoman: promptRoman,
+    options: options,
+    optionsRoman: optionsRoman,
+    correct: correct,
+    tiles: tiles,
+    answerTiles: answerTiles,
+    accepted: accepted,
+    leadingMark: leadingMark,
+    trailingMark: trailingMark,
+    pairs: pairs,
+    cognateScore: cognateScore,
+    nonCognateContent: nonCognateContent,
+    weight: weight,
+    pseudo: pseudo,
+    isReal: isReal,
+    genderException: genderException,
+    decoyCount: decoyCount,
+    gapIndex: gapIndex,
+    lemmas: lemmas,
+    coCards: coCards,
+  );
+
   FormatInfo get info => formatInfo(format);
 
   /// The cognate class of the item: `cognate` for a word near-cognate or a

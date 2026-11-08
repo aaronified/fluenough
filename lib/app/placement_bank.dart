@@ -20,12 +20,15 @@ import 'blob_store.dart';
 // frozen screen: the build reports its progress, can be left, and reports
 // its failure.
 
-/// Makes the items of [data], reporting progress (0 to 1) and stopping early,
-/// with null, when [cancelled] says so. Throws if it cannot.
+/// Makes the items of [data], reporting progress (0 to 1), handing the clean
+/// items of the first formats to [onStarter] as soon as they exist (a run can
+/// begin with them), and stopping early, with null, when [cancelled] says so.
+/// Throws if it cannot.
 typedef BankRunner = Future<List<RegItem>?> Function(
   PlacementLanguageData data,
   void Function(double progress) onProgress,
   bool Function() cancelled,
+  void Function(List<RegItem> starter) onStarter,
 );
 
 /// One build (or read) of a language's bank.
@@ -40,6 +43,7 @@ class PlacementBankJob {
   final ValueNotifier<double> progress = ValueNotifier<double>(0);
 
   final Completer<List<RegItem>> _done = Completer<List<RegItem>>();
+  final Completer<List<RegItem>> _first = Completer<List<RegItem>>();
   List<RegItem>? _items;
   Object? _error;
   bool _cancelled = false;
@@ -49,6 +53,15 @@ class PlacementBankJob {
 
   /// The items if they are ready, else null.
   List<RegItem>? get items => _items;
+
+  /// The items a run can begin with: the clean items of the first formats
+  /// while the rest is still being made, then the whole bank.
+  Future<List<RegItem>> get first => _first.future;
+
+  List<RegItem>? _starter;
+
+  /// What a run can begin with now (the whole bank once it is made), or null.
+  List<RegItem>? get startable => _items ?? _starter;
 
   /// Why the build failed, or null.
   Object? get error => _error;
@@ -62,11 +75,18 @@ class PlacementBankJob {
     _fail(StateError('cancelled'));
   }
 
+  void _starterReady(List<RegItem> items) {
+    if (_done.isCompleted || _first.isCompleted) return;
+    _starter = items;
+    _first.complete(items);
+  }
+
   void _succeed(List<RegItem> items) {
     if (_done.isCompleted) return;
     _items = items;
     progress.value = 1;
     _done.complete(items);
+    if (!_first.isCompleted) _first.complete(items);
   }
 
   void _fail(Object error) {
@@ -75,6 +95,10 @@ class PlacementBankJob {
     // Nobody may be listening: a failure is read from [error].
     _done.future.ignore();
     _done.completeError(error);
+    if (!_first.isCompleted) {
+      _first.future.ignore();
+      _first.completeError(error);
+    }
   }
 }
 
@@ -114,6 +138,7 @@ class PlacementBanks {
     try {
       final stored = await _read(job.key);
       if (stored != null) {
+        job._starterReady(stored);
         job._succeed(stored);
         return;
       }
@@ -121,6 +146,7 @@ class PlacementBanks {
         data,
         (p) => job.progress.value = p,
         () => job._cancelled,
+        job._starterReady,
       );
       if (items == null || job._cancelled) {
         job._fail(StateError('cancelled'));
@@ -180,16 +206,17 @@ Future<List<RegItem>?> runBankInBackground(
   PlacementLanguageData data,
   void Function(double progress) onProgress,
   bool Function() cancelled,
+  void Function(List<RegItem> starter) onStarter,
 ) async {
   if (!kIsWeb) {
     try {
-      return await _inIsolate(data, onProgress, cancelled);
+      return await _inIsolate(data, onProgress, cancelled, onStarter);
     } on Object {
       if (cancelled()) return null;
       // Whatever an isolate cannot carry, this thread can, in steps.
     }
   }
-  return runBankInSteps(data, onProgress, cancelled);
+  return runBankInSteps(data, onProgress, cancelled, onStarter);
 }
 
 /// The build in steps on this thread, a pause between them so that the
@@ -198,20 +225,20 @@ Future<List<RegItem>?> runBankInSteps(
   PlacementLanguageData data,
   void Function(double progress) onProgress,
   bool Function() cancelled,
-) async {
-  final bank = await ItemBank.buildAsync(
-    data,
-    pause: () => Future<void>.delayed(Duration.zero),
-    onProgress: onProgress,
-    cancelled: cancelled,
-  );
-  return bank?.items;
-}
+  void Function(List<RegItem> starter) onStarter,
+) => ItemBank.buildItems(
+  data,
+  pause: () => Future<void>.delayed(Duration.zero),
+  onProgress: onProgress,
+  onStarter: onStarter,
+  cancelled: cancelled,
+);
 
 Future<List<RegItem>?> _inIsolate(
   PlacementLanguageData data,
   void Function(double progress) onProgress,
   bool Function() cancelled,
+  void Function(List<RegItem> starter) onStarter,
 ) async {
   final port = ReceivePort();
   final result = Completer<List<RegItem>?>();
@@ -232,8 +259,11 @@ Future<List<RegItem>?> _inIsolate(
     if (result.isCompleted) return;
     if (message is double) {
       onProgress(message);
+    } else if (message is String && message.startsWith('S')) {
+      final starter = decodeItems(message.substring(1));
+      if (starter != null) onStarter(starter);
     } else if (message is String) {
-      result.complete(decodeItems(message));
+      result.complete(decodeItems(message.substring(1)));
     } else if (message is List) {
       result.completeError(StateError('the bank build failed: $message'));
     } else if (message == null) {
@@ -256,10 +286,11 @@ Future<List<RegItem>?> _inIsolate(
 Future<void> _bankEntry(List<Object> args) async {
   final out = args[0] as SendPort;
   final data = args[1] as PlacementLanguageData;
-  final bank = await ItemBank.buildAsync(
+  final items = await ItemBank.buildItems(
     data,
     pause: () => Future<void>.delayed(Duration.zero),
     onProgress: out.send,
+    onStarter: (starter) => out.send('S${encodeItems(starter)}'),
   );
-  out.send(encodeItems(bank!.items));
+  out.send('F${encodeItems(items!)}');
 }
