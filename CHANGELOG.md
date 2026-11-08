@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.9.4] - 2026-11-08
+
 ### Added
 
 - **Find my level records how placements compare with your later reviews, so a maintainer can re-fit.** After a placement, the first reviews of the words it credited are compared with where it started you, on your phone; nothing changes automatically. Settings, Your data, "Share placement data" writes the per-skill records (start, range, how sure, profile version; no answers or words) to a file you choose to send. Refs #1063.
