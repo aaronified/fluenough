@@ -89,6 +89,9 @@ void honestSuite(String code) {
                   declaration: d,
                   variant: variant,
                   runs: _runs,
+                  // Hindustani is written in Devanagari: the script gate runs
+                  // first (every honest persona here reads it).
+                  scriptLetters: code == 'hi' ? devanagariLetters() : null,
                 ),
               ));
             }
