@@ -401,6 +401,15 @@ class _V3QuestionViewState extends State<V3QuestionView> {
           style: AppButtonStyles.tall(context),
           child: Text(l10n.findLevelSkipQuestion),
         ),
+        // The sound failed again and again: Hear and Say are left out, and
+        // the run goes on with the rest.
+        if (_run.offerNoSound)
+          OutlinedButton(
+            key: const ValueKey<String>('find-level-no-sound'),
+            onPressed: () => _done(_run.dropAudio),
+            style: AppButtonStyles.tall(context),
+            child: Text(l10n.findLevelCarryOnNoSound),
+          ),
       ],
       children: <Widget>[
         Semantics(

@@ -4,12 +4,10 @@
 @Timeout(Duration(minutes: 10))
 library;
 
-import 'dart:io';
-
-import 'package:fluenough/core/data/placement_course.dart';
-import 'package:fluenough/core/models/card.dart';
 import 'package:fluenough/core/placement/assurance_model.dart'
-    show PlacementDeclaration;
+    show PlacementDeclaration, PlacementLevels;
+import 'package:fluenough/core/placement/assurance_readout.dart'
+    show AssuranceLabel;
 import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
@@ -23,17 +21,10 @@ import 'package:fluenough/core/placement/v3_picker.dart'
 import 'package:fluenough/core/placement/v3_result.dart';
 import 'package:fluenough/core/placement/v3_session.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:yaml/yaml.dart';
 
-PlacementLanguageData _data(String language) {
-  final files = <String, String>{};
-  for (final e in Directory('decks/$language').listSync(recursive: true)) {
-    if (e is File && e.path.endsWith('.yaml')) {
-      files[e.path.substring('decks/'.length)] = e.readAsStringSync();
-    }
-  }
-  return loadPlacementCourse(files, language: language).data;
-}
+import 'support/find_level_fixture.dart';
+import 'support/v3_oracle.dart';
+import 'support/v3_small_bank.dart';
 
 RegItem _typed(String format, List<String> accepted, {List<String>? units}) =>
     RegItem(
@@ -46,87 +37,6 @@ RegItem _typed(String format, List<String> accepted, {List<String>? units}) =>
       answerTiles: units ?? const <String>[],
       gapIndex: format == 'F21' ? 1 : -1,
     );
-
-/// A learner who knows every item up to deck [known] and answers right on
-/// those, wrong on the others.
-void _answer(V3Run run, int known, {bool readsScript = true}) {
-  final q = run.question!;
-  final gate = q.gateItem;
-  if (gate != null) {
-    return readsScript
-        ? run.answerPick(gate.correct)
-        : run.answerPick((gate.correct + 1) % 4);
-  }
-  final item = q.item!;
-  final right = item.deck <= known;
-  switch (q.mode) {
-    case V3Mode.pick:
-      run.answerPick(
-        right ? item.correct : (item.correct + 1) % item.options.length,
-      );
-    case V3Mode.tiles:
-      final order = <int>[];
-      final used = <int>{};
-      for (final t in item.answerTiles) {
-        final i = List<int>.generate(
-          item.tiles.length,
-          (i) => i,
-        ).firstWhere((i) => !used.contains(i) && item.tiles[i] == t);
-        used.add(i);
-        order.add(i);
-      }
-      run.answerTiles(right ? order : order.reversed.toList());
-    case V3Mode.type:
-      run.answerTyped(right ? item.accepted.first : 'qqq');
-    case V3Mode.gap:
-      run.answerTyped(right ? item.accepted.first : 'qqq');
-    case V3Mode.yesNo:
-      run.answerYesNo(yes: !item.pseudo && right);
-    case V3Mode.say:
-      run.answerSaid(right ? <String>[item.accepted.first] : <String>['qqq']);
-    case V3Mode.rateSay:
-      run.answerRated(good: right);
-  }
-}
-
-/// The Hindustani data with its Devanagari letters, as the app gives them
-/// ([PlacementScriptData] is read from the script decks by the app).
-PlacementLanguageData _hindustani() {
-  final base = _data('hi');
-  List<Card> read(String name) {
-    final doc = loadYaml(File('decks/hi/$name.yaml').readAsStringSync());
-    return <Card>[
-      for (final (i, c) in ((doc as YamlMap)['cards'] as YamlList).indexed)
-        Card(
-          id: '$name-$i',
-          deckId: name,
-          target: (c as YamlMap)['target'] as String,
-          native: '',
-          reading: c['reading'] as String?,
-        ),
-    ];
-  }
-
-  return PlacementLanguageData(
-    language: base.language,
-    decks: base.decks,
-    sounds: base.sounds,
-    levelMarkDecks: base.levelMarkDecks,
-    scripts: <PlacementScriptData>[
-      PlacementScriptData(
-        script: 'devanagari',
-        letters: <Card>[
-          ...read('hi-script-vowels'),
-          ...read('hi-script-consonants'),
-        ],
-        joined: <Card>[
-          ...read('hi-script-vowel-signs'),
-          ...read('hi-script-conjuncts'),
-        ],
-      ),
-    ],
-  );
-}
 
 void main() {
   group('grading', () {
@@ -162,6 +72,16 @@ void main() {
       expect(gradeTyped(item, '  El Nino ').name, 'right');
       expect(gradeTyped(item, 'niño').name, 'right');
       expect(gradeTyped(item, 'nina').name, 'wrong');
+    });
+
+    test('only a short article is forgiven, never a word of the answer', () {
+      final item = _typed('F7', <String>['buenos días']);
+      expect(gradeTyped(item, 'días').name, 'wrong');
+      expect(gradeTyped(item, 'buenos').name, 'wrong');
+      expect(gradeTyped(item, 'buenos dias').name, 'right');
+      final bare = _typed('F7', <String>['lunes']);
+      expect(gradeTyped(bare, 'el lunes').name, 'right');
+      expect(gradeTyped(bare, 'domingo lunes').name, 'wrong');
     });
 
     test('a whole word typed in a gap item is right as well', () {
@@ -205,6 +125,138 @@ void main() {
       expect(gated.maxItems, 37);
       expect(gated.maxSeconds, 286);
       expect(gated.softStopItems, 19);
+    });
+  });
+
+  group('a sound that will not play', () {
+    test('offers to carry on without it after two in a row, and does', () {
+      final run = V3Run(
+        data: findLevelData(),
+        skills: const <PlacementSkill>{
+          PlacementSkill.read,
+          PlacementSkill.hear,
+        },
+        audio: true,
+        recogniser: false,
+        seed: 3,
+        scriptStart: V3ScriptStart.skip,
+        items: smallV3Bank(formats: <String>{'F13', 'F2'}),
+      );
+      var skips = 0;
+      for (var i = 0; i < 100 && !run.finished; i++) {
+        if (run.atCheckpoint) run.keepGoing();
+        if (run.question!.isHeard) {
+          run.skipUnplayable();
+          skips++;
+          // One failure is not yet an offer; the second in a row is.
+          expect(run.offerNoSound, skips >= 2);
+          if (run.offerNoSound) break;
+        } else {
+          run.dontKnow();
+          skips = 0;
+        }
+      }
+      expect(run.offerNoSound, isTrue);
+      expect(skips, 2);
+      var guard = 0;
+      run.dropAudio();
+      expect(run.audioDropped, isTrue);
+      var heardAfter = 0;
+      while (!run.finished && guard++ < 200) {
+        if (run.atCheckpoint) run.keepGoing();
+        if (run.question!.isHeard) heardAfter++;
+        run.dontKnow();
+      }
+      expect(heardAfter, 0);
+      expect(
+        V3Result.of(run).of(PlacementSkill.hear)!.status,
+        V3Status.notTested,
+      );
+      // And it is the same run when replayed.
+      final again = V3Run.replay(
+        data: findLevelData(),
+        skills: run.wanted,
+        audio: true,
+        recogniser: false,
+        seed: 3,
+        scriptStart: V3ScriptStart.skip,
+        items: smallV3Bank(formats: <String>{'F13', 'F2'}),
+        events: run.events,
+      );
+      expect(again.events, run.events);
+      expect(again.audioDropped, isTrue);
+    });
+  });
+
+  group('the script credit', () {
+    V3Result result(ScriptLevel level, {bool skipped = false}) => V3Result(
+      skills: const <V3SkillResult>[],
+      levels: PlacementLevels(30, maxParts: 20),
+      readout: null,
+      script: ScriptGateResult(
+        level: level,
+        items: 3,
+        skipped: skipped,
+        posterior: const <ScriptLevel, double>{},
+      ),
+      items: 3,
+      seconds: 10,
+      endReason: null,
+    );
+
+    test('a learner who passes the letters is credited as reading', () {
+      final a = result(ScriptLevel.all).assurances(scripts: 2);
+      expect(
+        a[PlacementSkill.script]!.placedClass,
+        a[PlacementSkill.script]!.leadingClass,
+      );
+      expect(
+        a[PlacementSkill.script]!.placedClass,
+        PlacementLevels(30, maxParts: 20).topClass,
+      );
+      expect(a.containsKey(PlacementSkill.secondScript), isTrue);
+      expect(
+        result(ScriptLevel.all)
+            .assurances(scripts: 1)
+            .containsKey(PlacementSkill.secondScript),
+        isFalse,
+      );
+    });
+
+    test('one who fails them is recorded as new to the script', () {
+      final a = result(ScriptLevel.none).assurances(scripts: 1);
+      expect(a[PlacementSkill.script]!.placedClass, 0);
+    });
+
+    test('a skipped or in-between check writes nothing about the script', () {
+      expect(result(ScriptLevel.partly).assurances(scripts: 1), isEmpty);
+      expect(
+        result(ScriptLevel.all, skipped: true).assurances(scripts: 1),
+        isEmpty,
+      );
+      expect(result(ScriptLevel.all).assurances(), isEmpty);
+    });
+
+    test('a start changed to the very beginning is still a placement', () {
+      final a =
+          V3Result(
+            skills: const <V3SkillResult>[
+              V3SkillResult(
+                skill: PlacementSkill.read,
+                status: V3Status.placed,
+              ),
+            ],
+            levels: PlacementLevels(30, maxParts: 20),
+            readout: null,
+            script: null,
+            items: 1,
+            seconds: 1,
+            endReason: null,
+          ).assurances(
+            overrides: const <PlacementSkill, int>{PlacementSkill.read: 0},
+          );
+      expect(a[PlacementSkill.read]!.label, isNot(AssuranceLabel.notTested));
+      expect(a[PlacementSkill.read]!.placedLevel, -1);
     });
   });
 
@@ -270,7 +322,7 @@ void main() {
     late PlacementLanguageData data;
     late ItemBank bank;
     setUpAll(() {
-      data = _data('es');
+      data = loadData('es');
       bank = ItemBank.build(data);
     });
 
@@ -298,7 +350,7 @@ void main() {
           continue;
         }
         formats.add(run.question!.format);
-        _answer(run, 40);
+        answerV3(run, 40);
       }
       expect(run.finished, isTrue);
       expect(run.answered, lessThanOrEqualTo(40));
@@ -318,7 +370,7 @@ void main() {
           run.stop();
           continue;
         }
-        _answer(run, -1);
+        answerV3(run, -1);
       }
       final read = V3Result.of(run).of(PlacementSkill.read)!;
       expect(read.startUnit, lessThanOrEqualTo(4));
@@ -331,7 +383,7 @@ void main() {
         if (i == 4) {
           run.dontKnow();
         } else {
-          _answer(run, 15);
+          answerV3(run, 15);
         }
       }
       final again = V3Run.replay(
@@ -351,7 +403,7 @@ void main() {
     test('an unplayable question is left out, never a miss', () {
       final run = begin(seed: 5);
       while (run.question!.audio == null) {
-        _answer(run, 15);
+        answerV3(run, 15);
       }
       final before = run.model!.readout().skills[PlacementSkill.hear];
       final touches = run.model!.touchesOf(PlacementSkill.hear);
@@ -378,7 +430,7 @@ void main() {
         if (run.question!.mode == V3Mode.say) {
           run.giveUpMicrophone();
         } else {
-          _answer(run, 20);
+          answerV3(run, 20);
         }
       }
       expect(run.finished, isTrue);
@@ -390,7 +442,7 @@ void main() {
     late PlacementLanguageData data;
     late ItemBank bank;
     setUpAll(() {
-      data = _hindustani();
+      data = hindustaniWithScript();
       bank = ItemBank.build(data);
     });
 
@@ -417,7 +469,7 @@ void main() {
           run.stop();
           continue;
         }
-        _answer(run, 40, readsScript: false);
+        answerV3(run, 40, readsScript: false);
       }
       final result = V3Result.of(run);
       expect(result.script!.level, ScriptLevel.none);
@@ -436,7 +488,7 @@ void main() {
           run.stop();
           continue;
         }
-        _answer(run, 40);
+        answerV3(run, 40);
       }
       expect(V3Result.of(run).of(PlacementSkill.read)!.placed, isTrue);
     });

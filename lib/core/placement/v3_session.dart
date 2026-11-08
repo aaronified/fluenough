@@ -134,6 +134,10 @@ enum V3ScriptStart {
   skip,
 }
 
+/// How many questions in a row whose sound would not play offer the learner
+/// to carry on without sound.
+const int kSkipsBeforeOfferingNoSound = 2;
+
 /// A run of the V3 placement.
 class V3Run {
   V3Run({
@@ -230,6 +234,8 @@ class V3Run {
   bool _keptGoing = false;
   bool _checkpoint = false;
   bool _micGivenUp = false;
+  bool _audioDropped = false;
+  int _skipsInARow = 0;
   int _answered = 0;
   double _seconds = 0;
   int _gateItems = 0;
@@ -274,6 +280,14 @@ class V3Run {
 
   /// Whether the learner gave the microphone up.
   bool get microphoneGivenUp => _micGivenUp;
+
+  /// Whether the learner carried on without sound.
+  bool get audioDropped => _audioDropped;
+
+  /// Whether the sound failed [kSkipsBeforeOfferingNoSound] times in a row
+  /// and the learner may be offered to carry on without it.
+  bool get offerNoSound =>
+      !_audioDropped && audio && _skipsInARow >= kSkipsBeforeOfferingNoSound;
 
   /// The skills the model reads (empty before the gate ends).
   List<PlacementSkill> get skillsInPlay =>
@@ -340,6 +354,7 @@ class V3Run {
     final q = _question;
     if (q == null || _checkpoint) return;
     events.add('u');
+    _skipsInARow++;
     if (q.gateItem != null) {
       // A gate item that cannot be played counts for nothing.
       _gate.skip();
@@ -365,6 +380,28 @@ class V3Run {
     if (q.item != null && _candidate != null) {
       _picker!.skip(_candidate!);
       _seconds += _candidate!.seconds;
+      _answered++;
+      _advance();
+    }
+  }
+
+  /// "Carry on without sound": Hear and Say are no longer asked, and the
+  /// question is left out.
+  void dropAudio() {
+    final q = _question;
+    if (q == null || _checkpoint || _finished || _audioDropped) return;
+    _audioDropped = true;
+    _skipsInARow = 0;
+    _picker?.dropAudio();
+    events.add('a');
+    if (q.item != null && _candidate != null) {
+      _picker!.skip(_candidate!);
+      _seconds += _candidate!.seconds;
+      _answered++;
+      _advance();
+    } else if (q.gateItem != null) {
+      _gate.skip();
+      _gateItems++;
       _answered++;
       _advance();
     }
@@ -400,6 +437,8 @@ class V3Run {
         skipUnplayable();
       case 'm':
         giveUpMicrophone();
+      case 'a':
+        dropAudio();
       case 'k':
         keepGoing();
     }
@@ -416,6 +455,7 @@ class V3Run {
   }
 
   void _applyGate(bool right) {
+    _skipsInARow = 0;
     final g = _question!.gateItem!;
     events.add(right ? 'r' : 'w');
     _gate.record(right: right);
@@ -427,6 +467,7 @@ class V3Run {
   }
 
   void _apply(AnswerOutcome outcome) {
+    _skipsInARow = 0;
     final c = _candidate!;
     events.add(switch (outcome) {
       AnswerOutcome.right => 'r',

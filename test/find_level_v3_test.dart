@@ -3,6 +3,9 @@
 // 1.4x text in light and dark, with their semantics. The questions come from
 // a small hand-made bank; the voice and the recogniser are the app's null
 // engines.
+import 'dart:async';
+
+import 'package:fluenough/app/placement_bank.dart';
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
@@ -11,6 +14,7 @@ import 'package:fluenough/core/placement/script_gate.dart';
 import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/v3_result.dart';
 import 'package:fluenough/core/placement/v3_session.dart';
+import 'package:fluenough/features/placement/find_level_preparing.dart';
 import 'package:fluenough/features/placement/v3_question_view.dart';
 import 'package:fluenough/features/placement/v3_result_page.dart';
 import 'package:fluenough/features/placement/v3_run_page.dart';
@@ -494,6 +498,105 @@ void main() {
       // The tiny bank asks Read and Write with the script skipped: the
       // re-check buttons are only for a script that blocks them.
       expect(_key('find-level-i-read-it'), findsNothing);
+    });
+  });
+
+  group('the preparing page', () {
+    testWidgets('shows the real progress and opens the run when it is ready', (
+      tester,
+    ) async {
+      final gate = Completer<void>();
+      void Function(double)? report;
+      final banks = PlacementBanks(
+        runner: (data, onProgress, cancelled) async {
+          report = onProgress;
+          await gate.future;
+          return smallV3Bank();
+        },
+      );
+      final popped = <Object?>[];
+      final semantics = tester.ensureSemantics();
+      await _open(
+        tester,
+        () => FindLevelPreparingPage(
+          job: banks.jobFor(findLevelData()),
+          retry: () => banks.jobFor(findLevelData()),
+        ),
+        popped,
+        textScale: 1.4,
+      );
+      await tester.pump();
+      report!(0.4);
+      await tester.pump();
+      expect(find.text('40%'), findsOneWidget);
+      expect(
+        tester
+            .widget<LinearProgressIndicator>(
+              _key('find-level-preparing-progress'),
+            )
+            .value,
+        0.4,
+      );
+      expect(
+        find.bySemanticsLabel('Getting your questions ready, 40 percent'),
+        findsOneWidget,
+      );
+      gate.complete();
+      await tester.pumpAndSettle();
+      expect(popped.single, isNotEmpty);
+      semantics.dispose();
+    });
+
+    testWidgets('Cancel leaves with nothing and the build goes on', (
+      tester,
+    ) async {
+      final gate = Completer<void>();
+      var done = false;
+      final banks = PlacementBanks(
+        runner: (data, onProgress, cancelled) async {
+          await gate.future;
+          done = true;
+          return smallV3Bank();
+        },
+      );
+      final popped = <Object?>[];
+      await _open(
+        tester,
+        () => FindLevelPreparingPage(
+          job: banks.jobFor(findLevelData()),
+          retry: () => banks.jobFor(findLevelData()),
+        ),
+        popped,
+      );
+      await _tap(tester, _key('find-level-preparing-cancel'));
+      expect(popped, <Object?>[null]);
+      gate.complete();
+      await tester.pump();
+      expect(done, isTrue);
+    });
+
+    testWidgets('a failure says so and Retry tries again', (tester) async {
+      var calls = 0;
+      final banks = PlacementBanks(
+        runner: (data, onProgress, cancelled) async {
+          calls++;
+          if (calls == 1) throw StateError('boom');
+          return smallV3Bank();
+        },
+      );
+      final popped = <Object?>[];
+      await _open(
+        tester,
+        () => FindLevelPreparingPage(
+          job: banks.jobFor(findLevelData()),
+          retry: () => banks.jobFor(findLevelData()),
+        ),
+        popped,
+      );
+      expect(_key('find-level-preparing-failed'), findsOneWidget);
+      await _tap(tester, _key('find-level-preparing-retry'));
+      expect(popped.single, isNotEmpty);
+      expect(calls, 2);
     });
   });
 }

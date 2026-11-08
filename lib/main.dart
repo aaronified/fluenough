@@ -37,6 +37,7 @@ import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
+import 'app/file_blob_store.dart';
 import 'core/updates/apk_install.dart';
 import 'core/updates/github_release_check.dart';
 import 'core/updates/github_release_notes.dart';
@@ -95,6 +96,8 @@ Future<void> main() async {
         runner: runJobInIsolate,
       ),
     ),
+    // The Find my level question banks, made once per language and deck set.
+    bankStore: FileBlobStore(Directory('${files.path}/placement-banks')),
     deckDownloads: DeckDownloads(
       fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
       files: downloaded,

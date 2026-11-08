@@ -96,7 +96,7 @@ class SavedV3Run {
         events is! List) {
       return null;
     }
-    const known = <String>{'r', 'w', 'd', 'u', 'm', 'k'};
+    const known = <String>{'r', 'w', 'd', 'u', 'm', 'a', 'k'};
     final names = PlacementSkill.values.asNameMap();
     return SavedV3Run(
       language: language,

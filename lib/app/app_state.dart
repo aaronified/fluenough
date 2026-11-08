@@ -6,6 +6,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/scheduler.dart';
 
 import '../core/data/course_path.dart';
+import '../core/placement/item_registry.dart' show RegItem;
+import 'blob_store.dart';
+import 'placement_bank.dart';
 import '../core/feedback/report.dart';
 import '../core/haptics/haptic.dart';
 import '../core/languages/language_skills.dart';
@@ -214,6 +217,8 @@ class AppState extends ChangeNotifier {
     this._paceRunner = paceInIsolate,
     this._progressRunner = progressInIsolate,
     this.deckDownloads,
+    BlobStore? bankStore,
+    BankRunner? bankRunner,
     this._synonymLoader,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
@@ -231,6 +236,7 @@ class AppState extends ChangeNotifier {
        _ownsSettings = settings == null,
        log = log ?? AppLog(),
        _ownsLog = log == null,
+       placementBanks = PlacementBanks(store: bankStore, runner: bankRunner),
        _profiles = List<Profile>.of(profiles),
        _currentProfileId = currentProfileId ?? profiles.first.id {
     // What is pending follows progress, settings and this state's own
@@ -371,6 +377,8 @@ class AppState extends ChangeNotifier {
     PaceRunner paceRunner = paceInPlace,
     ProgressRunner progressRunner = progressInPlace,
     DeckDownloads? deckDownloads,
+    BlobStore? bankStore,
+    BankRunner? bankRunner,
     SettingsNotifier? settings,
     VolumeMonitor? volume,
     List<Profile> profiles = const <Profile>[Profile.defaultProfile],
@@ -413,6 +421,10 @@ class AppState extends ChangeNotifier {
       paceRunner: paceRunner,
       progressRunner: progressRunner,
       deckDownloads: deckDownloads,
+      bankStore: bankStore,
+      // A test's bank is never built unless the test says how: the real
+      // build is an isolate and a long wait.
+      bankRunner: bankRunner ?? (_, _, _) => Completer<List<RegItem>?>().future,
       settings: settings,
       volume: volume,
       profiles: profiles,
@@ -549,6 +561,9 @@ class AppState extends ChangeNotifier {
   /// The app's own log (#162): errors, warnings and key events, which
   /// Settings shows and a report attaches if the reporter agrees.
   final AppLog log;
+
+  /// The Find my level question banks, made in the background and kept.
+  final PlacementBanks placementBanks;
   final bool _ownsLog;
 
   /// Settings' "Check for updates", the check at launch, and installing

@@ -28,6 +28,18 @@ List<RegItem> smallV3Bank({Set<String>? formats}) {
       );
       out.add(
         RegItem(
+          id: '$id:F13',
+          format: 'F13',
+          cardId: 'h-$id',
+          deck: d,
+          prompt: word,
+          options: options,
+          correct: 0,
+          lemmas: <String>{'lh$id'},
+        ),
+      );
+      out.add(
+        RegItem(
           id: '$id:F3',
           format: 'F3',
           cardId: 'p-$id',

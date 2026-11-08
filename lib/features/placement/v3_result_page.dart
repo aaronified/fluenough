@@ -124,10 +124,17 @@ class _V3ResultPageState extends State<V3ResultPage> {
               ),
               SizedBox(
                 width: 72,
-                child: Text(
-                  '$unit',
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.headlineMedium,
+                // Said again at each step.
+                child: Semantics(
+                  liveRegion: true,
+                  label: l10n.findLevelChangeUnit(unit),
+                  child: ExcludeSemantics(
+                    child: Text(
+                      '$unit',
+                      textAlign: TextAlign.center,
+                      style: Theme.of(context).textTheme.headlineMedium,
+                    ),
+                  ),
                 ),
               ),
               IconButton(

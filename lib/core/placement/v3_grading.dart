@@ -47,28 +47,33 @@ bool _keeps(int rune) {
   return true;
 }
 
-/// Whether [typed] is one of [accepted] after normalisation. An accepted
-/// answer written with its article (`el lunes`) is also met by the bare word,
-/// and the other way round.
+/// Whether [typed] is one of [accepted] after normalisation. A short article
+/// (one word of at most four letters, the first) may be there on one side and
+/// not the other (`el lunes` for `lunes`, `niño` for `el niño`); no other word
+/// is ever dropped, so a part of a phrase is not the
+/// phrase (`días` is not `buenos días`).
 bool matchesAccepted(String typed, Iterable<String> accepted) {
   final given = answerKey(typed);
   if (given.isEmpty) return false;
-  final withoutFirst = _withoutFirstWord(typed);
+  final words = typed.trim().split(RegExp(r'\s+'));
   for (final a in accepted) {
     final key = answerKey(a);
     if (key.isEmpty) continue;
     if (given == key) return true;
-    if (withoutFirst != null && answerKey(withoutFirst) == key) return true;
-    final bare = _withoutFirstWord(a);
-    if (bare != null && answerKey(bare) == given) return true;
+    final acceptedParts = a.trim().split(RegExp(r'\s+'));
+    // A short article in front of one side and not the other.
+    if (words.length == acceptedParts.length + 1 &&
+        words.first.runes.length <= 4 &&
+        answerKey(words.skip(1).join(' ')) == key) {
+      return true;
+    }
+    if (acceptedParts.length == words.length + 1 &&
+        acceptedParts.first.runes.length <= 4 &&
+        answerKey(acceptedParts.skip(1).join(' ')) == given) {
+      return true;
+    }
   }
   return false;
-}
-
-String? _withoutFirstWord(String text) {
-  final parts = text.trim().split(RegExp(r'\s+'));
-  if (parts.length < 2) return null;
-  return parts.sublist(1).join(' ');
 }
 
 /// The outcome of a typed answer to an F7 item (the word) or an F21 item (the

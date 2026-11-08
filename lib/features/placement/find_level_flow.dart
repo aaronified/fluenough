@@ -12,6 +12,7 @@ import '../../core/languages/language_skills.dart';
 import '../../core/placement/assurance_model.dart';
 import '../../core/placement/declaration_options.dart';
 import '../../core/placement/placement_questions.dart';
+import '../../core/placement/item_registry.dart' show RegItem;
 import '../../core/placement/saved_run.dart' show placementDeckSetKey;
 import '../../core/placement/saved_v3_run.dart';
 import '../../core/placement/v3_session.dart';
@@ -20,6 +21,7 @@ import '../../l10n/app_localizations.dart';
 import '../../ui/widgets/snack.dart';
 import 'find_level_comparison.dart';
 import 'find_level_declaration.dart';
+import 'find_level_preparing.dart';
 import 'v3_run_page.dart';
 
 /// What a tap of Find my level checks and what it is called, for a language
@@ -76,6 +78,8 @@ Future<void> startFindLevel(
     showAppSnackBar(context, l10n.findLevelNoCourse(name));
     return;
   }
+  // The question bank is made in the background from here on.
+  final bank = state.placementBanks.jobFor(plan.data);
   final settings = state.settings;
   final pick = findLevelSkillsOf(
     state,
@@ -209,15 +213,26 @@ Future<void> startFindLevel(
     scriptStart = V3ScriptStart.ask;
   }
 
-  // The questions are made from the decks, which takes a few seconds the
-  // first time: the learner is told, and nothing else can be touched.
-  final items = await _withPreparing(
-    context,
-    l10n.findLevelPreparing,
-    () => state.placementItems(plan),
-  );
-  if (!context.mounted) return;
+  // The questions are made from the decks, once per language and deck set,
+  // in the background (it was started when Find my level opened, while the
+  // learner answered the declaration): normally they are ready and kept.
+  var job = bank;
+  var items = job.items;
+  if (items == null) {
+    items = await navigator.push<List<RegItem>>(
+      MaterialPageRoute<List<RegItem>>(
+        settings: const RouteSettings(name: '/find-level-preparing'),
+        builder: (_) => FindLevelPreparingPage(
+          job: job,
+          retry: () => job = state.placementBanks.jobFor(plan.data),
+        ),
+      ),
+    );
+    // Back or Cancel: nothing is asked or written; the build goes on.
+    if (items == null || !context.mounted) return;
+  }
 
+  final ready = items;
   var restarts = 0;
   V3Run newRun({
     Iterable<String> events = const <String>[],
@@ -231,7 +246,7 @@ Future<void> startFindLevel(
     seed: runSeed ?? seed,
     declaration: declaration,
     scriptStart: start,
-    items: items,
+    items: ready,
     events: events,
   );
   var current = newRun(
@@ -287,6 +302,15 @@ Future<void> startFindLevel(
         // dropped once it is: a write that throws keeps the run to be
         // carried on.
         onFinish: (result, overrides) {
+          // A re-check that placed nothing has nothing to put in place of
+          // the old level: it is kept, and the toast says so.
+          final placedAny =
+              result.skills.any((s) => s.placed) || overrides.isNotEmpty;
+          if (unconfirmed && !placedAny) {
+            state.keepOldLevel(code);
+            toast = l10n.findLevelToastOldKept(name);
+            return;
+          }
           state.writePlacementV3(
             code,
             plan,
@@ -312,37 +336,5 @@ Future<void> startFindLevel(
   );
   if (done == true && context.mounted) {
     showAppSnackBar(context, toast ?? l10n.languagesToastLevel(name));
-  }
-}
-
-/// Runs [work] behind a dialog that says [message], and returns its result.
-Future<T> _withPreparing<T>(
-  BuildContext context,
-  String message,
-  Future<T> Function() work,
-) async {
-  final navigator = Navigator.of(context, rootNavigator: true);
-  unawaited(
-    showDialog<void>(
-      context: context,
-      barrierDismissible: false,
-      builder: (context) => PopScope(
-        canPop: false,
-        child: AlertDialog(
-          content: Row(
-            children: <Widget>[
-              const CircularProgressIndicator(),
-              const SizedBox(width: 20),
-              Expanded(child: Text(message)),
-            ],
-          ),
-        ),
-      ),
-    ),
-  );
-  try {
-    return await work();
-  } finally {
-    if (navigator.canPop()) navigator.pop();
   }
 }

@@ -15083,5 +15083,37 @@
   "findLevelPreparing": "Getting your questions ready…",
   "@findLevelPreparing": {
     "description": "Find my level: shown while the questions are made from the decks."
+  },
+  "findLevelPreparingPercent": "Getting your questions ready, {percent} percent",
+  "@findLevelPreparingPercent": {
+    "description": "Find my level: what a screen reader says while the questions are made.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "findLevelPreparingFailed": "The questions could not be made just now. Nothing was changed.",
+  "@findLevelPreparingFailed": {
+    "description": "Find my level: the questions could not be made; Retry follows."
+  },
+  "findLevelPreparingBody": "This happens once for each language. You can leave: it keeps going, and next time it is ready.",
+  "@findLevelPreparingBody": {
+    "description": "Find my level: why the learner waits, and that they may leave."
+  },
+  "findLevelCarryOnNoSound": "Carry on without sound",
+  "@findLevelCarryOnNoSound": {
+    "description": "Find my level: after the sound failed twice in a row, leaves Hear and Say out."
+  },
+  "findLevelChangeUnit": "Unit {unit}",
+  "@findLevelChangeUnit": {
+    "description": "Find my level result: what a screen reader says of the unit a learner is changing a start to.",
+    "placeholders": {
+      "unit": {
+        "type": "int",
+        "example": "14"
+      }
+    }
   }
 }

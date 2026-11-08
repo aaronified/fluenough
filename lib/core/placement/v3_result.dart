@@ -106,6 +106,7 @@ class V3Result {
   /// per skill) replacing a skill's start.
   Map<PlacementSkill, SkillAssurance> assurances({
     Map<PlacementSkill, int> overrides = const <PlacementSkill, int>{},
+    int scripts = 0,
   }) {
     final out = <PlacementSkill, SkillAssurance>{
       if (readout != null) ...assurancesFromJoint(readout!, levels),
@@ -122,12 +123,44 @@ class V3Result {
         );
       }
     }
+    // The script: a learner who passed the letter check ("all") is credited
+    // as reading the course's scripts (their decks are placed); one who
+    // failed it is recorded as new to them. A check that was skipped, or
+    // that ended in between ("partly"), says nothing and writes nothing.
+    final gate = script;
+    if (gate != null && !gate.skipped && scripts > 0) {
+      final top = levels.topClass;
+      final cls = switch (gate.level) {
+        ScriptLevel.all => top,
+        ScriptLevel.none => 0,
+        ScriptLevel.partly => null,
+      };
+      if (cls != null) {
+        for (final (i, skill) in const <PlacementSkill>[
+          PlacementSkill.script,
+          PlacementSkill.secondScript,
+        ].indexed) {
+          if (i >= scripts) break;
+          out[skill] = SkillAssurance(
+            skill: skill,
+            label: AssuranceLabel.sure,
+            mass: 1,
+            leadingClass: cls,
+            placedClass: cls,
+            placedLevel: cls == 0 ? -1 : levels.levelOf(cls),
+            questions: gate.items,
+          );
+        }
+      }
+    }
     for (final e in overrides.entries) {
       final c = e.value.clamp(0, levels.topClass);
       final was = out[e.key];
       out[e.key] = SkillAssurance(
         skill: e.key,
-        label: c == 0 ? AssuranceLabel.notTested : AssuranceLabel.sure,
+        // A start at the very beginning is a placement too (it takes back any
+        // credit above it on a re-check).
+        label: AssuranceLabel.sure,
         mass: was?.mass ?? 0,
         leadingClass: c,
         placedClass: c,
@@ -179,17 +212,17 @@ class V3Result {
         out.add(
           V3SkillResult(
             skill: skill,
-            status: run.audio && !run.microphoneGivenUp
+            status: run.audio && !run.audioDropped && !run.microphoneGivenUp
                 ? V3Status.selfRated
                 : V3Status.notTested,
-            why: run.audio && !run.microphoneGivenUp
+            why: run.audio && !run.audioDropped && !run.microphoneGivenUp
                 ? V3Why.selfRated
                 : V3Why.noDevice,
           ),
         );
         continue;
       }
-      if (skill == PlacementSkill.hear && !run.audio) {
+      if (skill == PlacementSkill.hear && (!run.audio || run.audioDropped)) {
         out.add(
           const V3SkillResult(
             skill: PlacementSkill.hear,

@@ -651,6 +651,12 @@ class V3Picker {
     config = config.withDevice(mic: false, recogniser: false);
   }
 
+  /// The sound cannot be played on this phone: Hear and Say are no longer
+  /// asked (what they already hold stays).
+  void dropAudio() {
+    config = config.withDevice(audio: false, mic: false, recogniser: false);
+  }
+
   /// [c] could not be shown (its sound would not play): it gives no evidence
   /// and nothing for the drill-down to read; it still counts as asked, so
   /// its card is never asked again and the caps hold.

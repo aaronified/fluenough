@@ -111,6 +111,9 @@ Future<AppState> _pumpSheet(
   final s =
       state ??
       AppState.test(
+        // The bank takes seconds and an isolate: the screens are given a
+        // small one.
+        bankRunner: (_, _, _) async => smallV3Bank(),
         deckDownloads: downloads,
         settings: SettingsNotifier(
           spokenLanguages: const <String>['en'],
@@ -301,13 +304,6 @@ void main() {
   });
 
   group('the run', () {
-    setUp(() {
-      // The bank takes seconds and an isolate: the screens are given a small
-      // one.
-      placementItemsBuilderOverride = (_) async => smallV3Bank();
-    });
-    tearDown(() => placementItemsBuilderOverride = null);
-
     testWidgets('an answer starts it; leaving pauses it, and it is offered '
         'back', (tester) async {
       final state = await _pumpSheet(tester, built: 3);
