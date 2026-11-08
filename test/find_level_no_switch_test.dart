@@ -19,18 +19,22 @@ import 'package:fluenough/core/data/spoken_languages.dart';
 import 'package:fluenough/core/decks/language_catalog.dart';
 import 'package:fluenough/core/languages/language_skills.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/saved_run.dart'
+    show placementDeckSetKey;
 import 'package:fluenough/core/placement/placement_questions.dart';
-import 'package:fluenough/core/placement/saved_run.dart';
+import 'package:fluenough/core/placement/saved_v3_run.dart';
+import 'package:fluenough/core/placement/v3_session.dart' show V3ScriptStart;
 import 'package:fluenough/features/languages/language_skills_sheet.dart';
 import 'package:fluenough/features/languages/language_views.dart';
 import 'package:fluenough/features/placement/find_level_declaration.dart';
-import 'package:fluenough/features/placement/find_level_run_page.dart';
+import 'package:fluenough/features/placement/v3_run_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/deck_remote.dart';
 import 'support/harness.dart';
 import 'support/picker.dart';
+import 'support/v3_small_bank.dart';
 
 /// Holds no decks until [download] is called, which waits on [gate].
 class _LateDecks extends DeckDownloads {
@@ -261,7 +265,7 @@ void main() {
       await tester.pageBack();
       await tester.pumpAndSettle();
       expect(find.byType(FindLevelDeclarationPage), findsNothing);
-      expect(find.byType(FindLevelRunPage), findsNothing);
+      expect(find.byType(V3RunPage), findsNothing);
       expect(state.settings.placedDecks, isEmpty);
       expect(state.settings.placementRunOf('es'), isNull);
       expect(state.settings.verifiedSkillsOf('es'), isEmpty);
@@ -278,7 +282,7 @@ void main() {
         find.byKey(const ValueKey<String>('find-level-beginner')),
       );
       await tester.pumpAndSettle();
-      expect(find.byType(FindLevelRunPage), findsNothing);
+      expect(find.byType(V3RunPage), findsNothing);
       expect(
         find.text(l10nOf(tester).findLevelBeginnerToast('Spanish')),
         findsOneWidget,
@@ -297,6 +301,13 @@ void main() {
   });
 
   group('the run', () {
+    setUp(() {
+      // The bank takes seconds and an isolate: the screens are given a small
+      // one.
+      placementItemsBuilderOverride = (_) async => smallV3Bank();
+    });
+    tearDown(() => placementItemsBuilderOverride = null);
+
     testWidgets('an answer starts it; leaving pauses it, and it is offered '
         'back', (tester) async {
       final state = await _pumpSheet(tester, built: 3);
@@ -304,7 +315,7 @@ void main() {
       await _tapLevel(tester);
       await tester.tap(find.byKey(const ValueKey<String>('find-level-expert')));
       await tester.pumpAndSettle();
-      expect(find.byType(FindLevelRunPage), findsOneWidget);
+      expect(find.byType(V3RunPage), findsOneWidget);
       expect(find.text(l10n.placementQuestionNumber(1)), findsOneWidget);
 
       // Closing before any answer keeps nothing.
@@ -325,10 +336,10 @@ void main() {
       final saved = jsonDecode(
         state.settings.placementRunOf('es')!,
       ) as Map<String, Object?>;
-      expect(saved['events'], <Object?>['a0']);
+      expect(saved['events'], <Object?>['d']);
       await tester.tap(find.byTooltip(l10n.drillEndSession));
       await tester.pumpAndSettle();
-      expect(find.byType(FindLevelRunPage), findsNothing);
+      expect(find.byType(V3RunPage), findsNothing);
       expect(state.settings.placedDecks, isEmpty);
       expect(state.settings.verifiedSkillsOf('es'), isEmpty);
 
@@ -375,18 +386,20 @@ void main() {
         'es',
         native: state.courseNative('es'),
       )!;
-      // Begun with a microphone, which this phone does not have.
+      // Begun with a recogniser, which this phone does not have.
       final paused = jsonEncode(
-        SavedPlacementRun(
+        SavedV3Run(
           language: 'es',
           declaration: PlacementDeclaration.expert,
           skills: const <PlacementSkill>{PlacementSkill.read},
           seed: 1,
-          microphone: true,
+          audio: false,
+          recogniser: true,
+          scriptStart: V3ScriptStart.ask,
           deckSet: placementDeckSetKey(plan.data),
           appVersion: AppInfo.version,
           savedAt: state.now().millisecondsSinceEpoch ~/ 1000,
-          events: const <String>['a0'],
+          events: const <String>['w'],
         ).toJson(),
       );
       state.settings.setPlacementRun('es', paused);
@@ -405,7 +418,7 @@ void main() {
       await _tapLevel(tester);
       await tester.tap(find.byKey(const ValueKey<String>('find-level-expert')));
       await tester.pumpAndSettle();
-      expect(find.byType(FindLevelRunPage), findsOneWidget);
+      expect(find.byType(V3RunPage), findsOneWidget);
       expect(state.settings.placementRunOf('es'), isNull);
     });
   });

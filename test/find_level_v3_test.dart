@@ -5,7 +5,6 @@
 // engines.
 import 'package:fluenough/core/models/deck.dart';
 import 'package:fluenough/core/placement/assurance_model.dart';
-import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/script_gate.dart';
@@ -18,6 +17,7 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'support/find_level_fixture.dart';
 import 'support/harness.dart';
+import 'support/v3_small_bank.dart';
 
 const LanguageInfo _language = LanguageInfo(
   code: 'xx',
@@ -31,102 +31,13 @@ const LanguageInfo _native = LanguageInfo(
   name: 'English',
 );
 
-/// A small bank over the fixture's six decks: per deck two picks of each
-/// direction, a typed word, a word built from tiles, a gap, a yes/no.
-List<RegItem> _items() {
-  final out = <RegItem>[];
-  for (var d = 0; d < 6; d++) {
-    for (var j = 0; j < 4; j++) {
-      final id = 'w-$d-$j';
-      final word = 'x${'abcdef'[d]}${'abcdefghij'[j]}o';
-      final options = <String>[
-        'thing $d-$j',
-        'other ${d}0$j',
-        'else ${d}1$j',
-        'more ${d}2$j',
-      ];
-      out.add(
-        RegItem(
-          id: '$id:F2',
-          format: 'F2',
-          cardId: id,
-          deck: d,
-          prompt: word,
-          options: options,
-          correct: 0,
-          lemmas: <String>{'l$id'},
-        ),
-      );
-      out.add(
-        RegItem(
-          id: '$id:F3',
-          format: 'F3',
-          cardId: 'p-$id',
-          deck: d,
-          prompt: 'thing $d-$j',
-          options: <String>[word, 'yabo', 'yaco', 'yado'],
-          correct: 0,
-          lemmas: <String>{'lp$id'},
-        ),
-      );
-      out.add(
-        RegItem(
-          id: '$id:F7',
-          format: 'F7',
-          cardId: 't-$id',
-          deck: d,
-          prompt: 'thing $d-$j',
-          accepted: <String>[word],
-          lemmas: <String>{'lt$id'},
-        ),
-      );
-      out.add(
-        RegItem(
-          id: '$id:F4',
-          format: 'F4',
-          cardId: 'b-$id',
-          deck: d,
-          prompt: 'thing $d-$j',
-          tiles: <String>['o', 'x', 'q', word.substring(1, 3)],
-          answerTiles: <String>['x', word.substring(1, 3), 'o'],
-          accepted: <String>[word],
-          lemmas: <String>{'lb$id'},
-        ),
-      );
-      out.add(
-        RegItem(
-          id: '$id:F21',
-          format: 'F21',
-          cardId: 'g-$id',
-          deck: d,
-          prompt: 'thing $d-$j',
-          answerTiles: <String>['x', 'a', 'b', 'o'],
-          accepted: <String>['a'],
-          gapIndex: 1,
-          lemmas: <String>{'lg$id'},
-        ),
-      );
-      out.add(
-        RegItem(
-          id: '$id:F1',
-          format: 'F1',
-          cardId: 'y-$id',
-          deck: d,
-          prompt: word,
-          lemmas: <String>{'ly$id'},
-        ),
-      );
-    }
-  }
-  return out;
-}
-
 V3Run _run({
   int seed = 3,
   Set<PlacementSkill> skills = const <PlacementSkill>{
     PlacementSkill.read,
     PlacementSkill.write,
   },
+  Set<String>? formats,
 }) => V3Run(
   data: findLevelData(),
   skills: skills,
@@ -134,7 +45,7 @@ V3Run _run({
   recogniser: false,
   seed: seed,
   scriptStart: V3ScriptStart.skip,
-  items: _items(),
+  items: smallV3Bank(formats: formats),
 );
 
 /// Answers by the API until the question is of [mode].
@@ -198,6 +109,13 @@ V3RunPage _page(
 );
 
 Future<void> _tap(WidgetTester tester, Finder finder) async {
+  if (finder.evaluate().isEmpty) {
+    await tester.scrollUntilVisible(
+      finder,
+      200,
+      scrollable: find.byType(Scrollable).first,
+    );
+  }
   await tester.ensureVisible(finder);
   await tester.tap(finder);
   await tester.pumpAndSettle();
@@ -233,7 +151,7 @@ void main() {
       testWidgets('a typed word is checked, "I don\'t know" is a miss', (
         tester,
       ) async {
-        final run = _run(seed: 5);
+        final run = _run(seed: 5, formats: <String>{'F7'});
         _advanceTo(run, V3Mode.type);
         await _open(
           tester,
@@ -273,7 +191,7 @@ void main() {
 
       testWidgets('yes and no, with "I don\'t know" a miss that hides no '
           'guess', (tester) async {
-        final run = _run(seed: 2);
+        final run = _run(seed: 2, formats: <String>{'F1'});
         _advanceTo(run, V3Mode.yesNo);
         await _open(
           tester,
@@ -291,7 +209,7 @@ void main() {
       });
 
       testWidgets('tiles are placed in order and checked', (tester) async {
-        final run = _run(seed: 4);
+        final run = _run(seed: 4, formats: <String>{'F4'});
         _advanceTo(run, V3Mode.tiles);
         await _open(
           tester,
@@ -432,9 +350,15 @@ void main() {
         expect(find.text('Read: start at unit 14'), findsOneWidget);
         expect(find.text('Likely between unit 11 and unit 17'), findsOneWidget);
         expect(find.text('Fairly sure'), findsOneWidget);
-        expect(find.text('Say: self-rated, not placed'), findsOneWidget);
         expect(
-          find.text('Hear: not tested (no sound on this phone)'),
+          find.text('Say: self-rated, not placed', skipOffstage: false),
+          findsOneWidget,
+        );
+        expect(
+          find.text(
+            'Hear: not tested (no sound on this phone)',
+            skipOffstage: false,
+          ),
           findsOneWidget,
         );
         // Never a percentage of "none" or Verified.
@@ -491,8 +415,14 @@ void main() {
         <Object?>[],
         textScale: 1.4,
       );
-      expect(find.text('Read: needs the script first'), findsOneWidget);
-      expect(find.textContaining('letters of this script'), findsWidgets);
+      expect(
+        find.text('Read: needs the script first', skipOffstage: false),
+        findsOneWidget,
+      );
+      expect(
+        find.textContaining('letters of this script', skipOffstage: false),
+        findsWidgets,
+      );
       await _tap(tester, _key('find-level-i-read-it'));
       await _tap(tester, _key('find-level-check-letters'));
       expect(restarts, <V3ScriptStart>[V3ScriptStart.skip, V3ScriptStart.ask]);
