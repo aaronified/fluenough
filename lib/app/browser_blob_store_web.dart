@@ -8,10 +8,10 @@ import 'blob_store.dart';
 /// 6): one database with one object store, every value a byte array.
 ///
 /// Only the browser compiles this file; see `browser_blob_store.dart`.
-Future<BlobStore?> openBrowserBlobStore() async {
+Future<BlobStore?> openBrowserBlobStore({String name = _databaseName}) async {
   try {
     if (_indexedDb == null) return null;
-    final store = _IndexedDbStore();
+    final store = _IndexedDbStore(name);
     // Some browsers never answer when storage is denied: give up and keep
     // the decks in memory rather than hold the app at its start.
     await store._handle().timeout(_openTimeout);
@@ -24,8 +24,8 @@ Future<BlobStore?> openBrowserBlobStore() async {
 /// Opens the database. [onClosed] is called when the browser closes it
 /// (another tab upgrading it, or the browser freeing it), after which the
 /// handle is useless.
-Future<_Database> _openDatabase(void Function() onClosed) async {
-  final request = _indexedDb!.open(_databaseName, 1);
+Future<_Database> _openDatabase(String name, void Function() onClosed) async {
+  final request = _indexedDb!.open(name, 1);
   request.onupgradeneeded = ((JSObject _) {
     (request.result! as _Database).createObjectStore(_storeName);
   }).toJS;
@@ -135,12 +135,15 @@ Future<void> _commit(_Database database, void Function(_ObjectStore) body) {
 }
 
 class _IndexedDbStore implements BlobStore {
+  _IndexedDbStore(this._name);
+
+  final String _name;
   _Database? _database;
 
   /// The open database, opened again if the browser closed it since: one
   /// transient closure does not end the storage for the visit.
   Future<_Database> _handle() async =>
-      _database ??= await _openDatabase(() => _database = null);
+      _database ??= await _openDatabase(_name, () => _database = null);
 
   Future<_ObjectStore> _readOnly() async => (await _handle())
       .transaction(_storeName, 'readonly')
