@@ -46,6 +46,10 @@ Future<void> main(List<String> args) async {
         'upper': double.parse(c.upper.toStringAsFixed(4)),
         'bound': double.parse(c.bound.toStringAsFixed(4)),
         'solver': c.solver,
+        'solvers': <String, Object?>{
+          for (final e in c.solvers.entries)
+            e.key: double.parse(e.value.toStringAsFixed(4)),
+        },
         'passes': c.passes,
       };
     }

@@ -92,6 +92,10 @@ _Worst _measure(
       }
     }
   }
+  // ignore: avoid_print
+  print(
+    'gamer ${persona.name} ${persona.profile.name} seeds from $kSeedBase: $worst',
+  );
   return worst;
 }
 

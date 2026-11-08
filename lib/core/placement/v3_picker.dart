@@ -33,6 +33,12 @@ import 'placement_questions.dart';
 //
 // Pure Dart, deterministic for a seeded generator.
 
+/// Formats the bank admits but the picker must not ask yet: S2 (word order)
+/// needs a grammaticality check for languages whose word order is free, and
+/// F9 (matching) a screen. A candidate of these formats is refused by the
+/// pool, and never chosen.
+const Set<String> kUnaskableFormats = <String>{'S2', 'F9'};
+
 /// One askable item, as the picker sees it. The bank's items are turned into
 /// these by the caller ([deck] and [skills] are the item's difficulty and
 /// what a right answer is evidence for).
@@ -127,7 +133,8 @@ class PickerCandidate {
     GuessCalibration calibration = GuessCalibration.seed,
   }) => <PickerCandidate>[
     for (final i in bank.items)
-      PickerCandidate.fromItem(i, calibration: calibration),
+      if (!kUnaskableFormats.contains(i.format))
+        PickerCandidate.fromItem(i, calibration: calibration),
   ];
 
   PickerCandidate asSelfRated() => PickerCandidate(
@@ -151,6 +158,10 @@ class PickerCandidate {
 class CandidatePool {
   CandidatePool(Iterable<PickerCandidate> candidates, this.levels) {
     for (final c in candidates) {
+      assert(
+        !kUnaskableFormats.contains(c.format),
+        '${c.format} is not askable by the picker yet',
+      );
       if (c.pseudo) {
         pseudo.add(c);
         continue;
@@ -196,6 +207,9 @@ class PickerConfig {
     this.yesNoBlock = false,
     this.sayItems = 1,
     this.sayRatingUntilSeconds = 180,
+    this.mixedBonus = 0.3,
+    this.climbQuantile = 0.12,
+    this.climbTolerance = 0.0,
     this.maxItems = 40,
     this.maxSeconds = 300,
     this.skillCap = 14,
@@ -221,6 +235,14 @@ class PickerConfig {
   /// The rating of Say is optional (never evidence): it is left out when the
   /// run is already longer than this, to keep the median run short.
   final double sayRatingUntilSeconds;
+
+  /// A proven band is climbed from while this quantile of the posterior lies
+  /// more than [climbTolerance] tenths above the proven ceiling.
+  /// What an item that also proves another skill's band is worth, in bits.
+  final double mixedBonus;
+
+  final double climbQuantile;
+  final double climbTolerance;
 
   final int maxItems;
   final double maxSeconds;
@@ -481,7 +503,9 @@ class V3Picker {
     }
     // Proven: climb while the proven band holds the start down, that is,
     // while the lower edge of the posterior is above the ceiling.
-    if (band < 10 && _quantileClass(skill, 0.1) > proven + _tenth) {
+    if (band < 10 &&
+        _quantileClass(skill, config.climbQuantile) >
+            proven + (config.climbTolerance * _tenth).round()) {
       st.proving = math.max(band + 1, _quantileBand(skill, 0.5));
       return false;
     }
@@ -579,6 +603,7 @@ class V3Picker {
   }
 
   bool _available(PickerCandidate c) {
+    if (kUnaskableFormats.contains(c.format)) return false;
     if (c.needsAudio && !config.audio) return false;
     if (c.needsMic && !config.mic) return false;
     if (!c.clean || c.guess > kCleanGuessMax || c.guess >= kUnusableGuess) {
@@ -685,12 +710,12 @@ class V3Picker {
           if (t == skill || !_tested.contains(t)) continue;
           final p = _state[t]?.proving;
           if (p != null && !_isDoneQuiet(t) && PickerBandOf.of(pool, c) == p) {
-            bonus += 0.3;
+            bonus += config.mixedBonus;
           } else if (p == null &&
               model.touchesOf(t) < config.locateItems &&
               _near_(c, band)) {
             // An item that also locates the other skill.
-            bonus += 0.3;
+            bonus += config.mixedBonus;
           }
         }
         final score = (_information(c) + 0.2 + bonus) / c.seconds;

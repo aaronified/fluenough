@@ -96,6 +96,7 @@ void main() {
       expect(c.selfRated, isTrue);
       expect(c.clean, isFalse);
     }
+    expect(say.length, lessThanOrEqualTo(const PickerConfig().sayItems));
     // No Say item is among the clean ones of any word skill, and Say is not
     // placed.
     expect(r.result.skills.containsKey(_say), isFalse);
@@ -262,5 +263,27 @@ void main() {
       expect(r.picker.seconds, lessThanOrEqualTo(120));
       expect(r.result.seconds, lessThanOrEqualTo(120));
     }
+  });
+
+  test('S2 and F9 are not askable by the picker yet', () {
+    for (final format in kUnaskableFormats) {
+      final c = PickerCandidate(
+        id: 'x:$format',
+        format: format,
+        deck: 5,
+        skills: const <PlacementSkill>{PlacementSkill.read},
+        seconds: 6,
+        slip: 0.1,
+        guess: 0.1,
+        conflictKeys: const <String>{'x'},
+      );
+      // The pool refuses them (an assert in a debug run, which tests are).
+      expect(
+        () => CandidatePool(<PickerCandidate>[c], levels),
+        throwsA(isA<AssertionError>()),
+        reason: format,
+      );
+    }
+    expect(kUnaskableFormats, containsAll(<String>['S2', 'F9']));
   });
 }

@@ -72,7 +72,8 @@ const _say = PlacementSkill.say;
 const _write = PlacementSkill.write;
 const _script = PlacementSkill.script;
 
-/// The inventory of the plan, F1 to F20, plus the word-order pair `S2`.
+/// The inventory of the plan, F1 to F20, the word-order pair `S2`, and the
+/// cheap Write item `F21` of build step 4b.
 const List<FormatInfo> kFormatInventory = <FormatInfo>[
   FormatInfo(
     'F1',
@@ -154,6 +155,17 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     0.03,
     12,
     leakRisk: 'a spelling-rule guess from an English cognate',
+  ),
+  FormatInfo(
+    'F21',
+    'English meaning and the word with one unit left out, type the unit',
+    {_write},
+    0.08,
+    0.10,
+    6,
+    leakRisk:
+        'the letter patterns of the language fill the gap; chosen so that '
+        'none of them does',
   ),
   FormatInfo(
     'F8',
@@ -350,6 +362,7 @@ class RegItem {
     this.isReal = true,
     this.genderException = false,
     this.decoyCount = 0,
+    this.gapIndex = -1,
     this.lemmas = const <String>{},
     this.coCards = const <String>{},
   });
@@ -414,6 +427,10 @@ class RegItem {
 
   /// How many decoy tiles a word tile item carries.
   final int decoyCount;
+
+  /// For a gap-spelling item (F21): the index of the unit left out of
+  /// [answerTiles] (the word's units); [accepted] holds the unit to type.
+  final int gapIndex;
 
   /// The base lemmas of the item's content words, for the family rule.
   final Set<String> lemmas;
