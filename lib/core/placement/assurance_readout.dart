@@ -1,3 +1,5 @@
+import 'placement_questions.dart' show PlacementSkill;
+
 // What a learner is shown per skill (wiki/Plan-Placement-V2.md, section 4.3):
 // a name for the assurance, never a score out of 100.
 
@@ -48,4 +50,50 @@ AssuranceLabel labelForMass(double mass) {
   if (mass >= kSureFrom - _edge) return AssuranceLabel.sure;
   if (mass >= kFairlySureFrom - _edge) return AssuranceLabel.fairlySure;
   return AssuranceLabel.notSureYet;
+}
+
+/// What the run knows about one skill (section 4.3 and 5.5).
+class SkillAssurance {
+  const SkillAssurance({
+    required this.skill,
+    required this.label,
+    required this.mass,
+    required this.leadingClass,
+    required this.placedLevel,
+    required this.questions,
+    int? placedClass,
+  }) : placedClass = placedClass ?? leadingClass;
+
+  final PlacementSkill skill;
+
+  /// The class the skill is placed in (plan section 13, point 5): the highest
+  /// class the learner is at or above with probability `1 - 0.01 / C`, or 0.
+  /// What is shown and credited; never the most probable class.
+  final int placedClass;
+
+  /// Whether a higher class is more probable than the placed one: the result
+  /// reads "at least unit N".
+  bool get lowerBound => placedClass < leadingClass;
+
+  /// The name shown to the learner.
+  final AssuranceLabel label;
+
+  /// The probability of the placed class, which names the label (0 when not
+  /// tested).
+  final double mass;
+
+  /// The most probable class (0 is `none`).
+  final int leadingClass;
+
+  /// The last deck index known, or -1 for none: the level of [placedClass].
+  final int placedLevel;
+
+  /// How many answers were evidence for this skill.
+  final int questions;
+
+  /// "Positioned at unit N": the learner knows units up to N and learns from
+  /// N + 1; 0 for none.
+  int get placedUnit => placedLevel + 1;
+
+  bool get isVerified => label == AssuranceLabel.verified;
 }

@@ -1010,7 +1010,10 @@ class _LanguageSkillsSheetState extends State<LanguageSkillsSheet> {
           if (placedLabels.isNotEmpty)
             Padding(
               padding: const EdgeInsetsDirectional.only(start: 48, top: 2),
-              child: SkillLabelsLine(labels: placedLabels),
+              child: SkillLabelsLine(
+                labels: placedLabels,
+                ranges: _state.settings.placementRangesOf(_code),
+              ),
             ),
         ],
       ),

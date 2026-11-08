@@ -29,15 +29,26 @@ class SkillStarCard extends StatelessWidget {
     final l10n = AppLocalizations.of(context)!;
     final theme = Theme.of(context);
     final scheme = theme.colorScheme;
+    final hasPlaced = mastery.hasPlaced;
     final details = <String>[
       for (final skill in kStarSkills)
-        l10n.progressStarSkill(
-          masterySkillLabel(l10n, skill),
-          mastery[skill].fill,
-          mastery[skill].outline == null
-              ? l10n.progressNothingTaught
-              : l10n.commonPercent(mastery[skill].outline!),
-        ),
+        mastery[skill].placed > 0
+            ? l10n.progressStarSkillPlaced(
+                masterySkillLabel(l10n, skill),
+                mastery[skill].fill,
+                mastery[skill].outline == null
+                    ? l10n.progressNothingTaught
+                    : l10n.commonPercent(mastery[skill].outline!),
+                mastery[skill].placedFill,
+              )
+            : l10n.progressStarSkill(
+                masterySkillLabel(l10n, skill),
+                mastery[skill].fill,
+                mastery[skill].outline == null
+                    ? l10n.progressNothingTaught
+                    : l10n.commonPercent(mastery[skill].outline!),
+              ),
+      if (hasPlaced) l10n.progressStarLegendSemantics(mastery.placedOverall),
     ].join(l10n.commonListSeparator);
     return Semantics(
       container: true,
@@ -87,6 +98,7 @@ class SkillStarCard extends StatelessWidget {
                 ),
                 const SizedBox(height: 8),
                 _Star(mastery: mastery),
+                if (hasPlaced) _PlacedLegend(mastery: mastery),
               ],
             ),
           ),
@@ -270,6 +282,9 @@ class _Star extends StatelessWidget {
                       fill: <double>[
                         for (final s in kStarSkills) mastery[s].fill,
                       ],
+                      placed: <double>[
+                        for (final s in kStarSkills) mastery[s].placedFill,
+                      ],
                       outline: <double>[
                         for (final s in kStarSkills) mastery[s].outline ?? 0,
                       ],
@@ -280,6 +295,7 @@ class _Star extends StatelessWidget {
                       shape: star,
                       grid: scheme.outlineVariant,
                       fillColour: scheme.primary.withValues(alpha: 0.38),
+                      placedColour: starPlacedColour(theme.brightness),
                       outlineColour: starOutlineColour(theme.brightness),
                       markerFill: scheme.surface,
                     ),
@@ -331,17 +347,21 @@ class _StarShape {
 class _StarPainter extends CustomPainter {
   const _StarPainter({
     required this.fill,
+    required this.placed,
     required this.outline,
     required this.taught,
     required this.grow,
     required this.shape,
     required this.grid,
     required this.fillColour,
+    required this.placedColour,
     required this.outlineColour,
     required this.markerFill,
   });
 
   final List<double> fill;
+  final List<double> placed;
+  final Color placedColour;
   final List<double> outline;
   final List<bool> taught;
   final double grow;
@@ -378,6 +398,11 @@ class _StarPainter extends CustomPainter {
     for (var i = 0; i < 6; i++) {
       canvas.drawLine(shape.center, _at(i, 1), line);
     }
+    // Placed, not yet earned: hatched, under the solid fill, no edge.
+    if (<bool>[for (var i = 0; i < placed.length; i++) placed[i] > fill[i]]
+        .contains(true)) {
+      drawPlacedHatch(canvas, _shape(placed, grow), placedColour);
+    }
     // The fill has no edge: a fill only.
     canvas.drawPath(_shape(fill, grow), Paint()..color = fillColour);
     canvas.drawPath(
@@ -408,7 +433,99 @@ class _StarPainter extends CustomPainter {
       old.grow != grow ||
       old.shape != shape ||
       old.fill != fill ||
+      old.placed != placed ||
+      old.placedColour != placedColour ||
       old.outline != outline ||
       old.fillColour != fillColour ||
       old.outlineColour != outlineColour;
+}
+
+/// The colour of the star's hatched placed layer: not the outline's blue, so
+/// that placed is never read as earned, and at least 3:1 on the card in both
+/// themes (the hatch is a graphic, WCAG 1.4.11).
+Color starPlacedColour(Brightness brightness) => brightness == Brightness.dark
+    ? const Color(0xFFE0A458)
+    : const Color(0xFF8A5A00);
+
+/// Draws diagonal lines clipped to [area]: the hatch of a placed layer.
+void drawPlacedHatch(Canvas canvas, Path area, Color colour) {
+  final box = area.getBounds();
+  canvas.save();
+  canvas.clipPath(area);
+  final paint = Paint()
+    ..color = colour
+    ..style = PaintingStyle.stroke
+    ..strokeWidth = 1.5;
+  const gap = 6.0;
+  for (var x = box.left - box.height; x < box.right; x += gap) {
+    canvas.drawLine(
+      Offset(x, box.bottom),
+      Offset(x + box.height, box.top),
+      paint,
+    );
+  }
+  canvas.restore();
+}
+
+/// The legend under the star while anything is placed: a hatched swatch and
+/// "Placed X%", the share the star would show with placement and earning
+/// together.
+class _PlacedLegend extends StatelessWidget {
+  const _PlacedLegend({required this.mastery});
+
+  final Mastery mastery;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final theme = Theme.of(context);
+    final colour = starPlacedColour(theme.brightness);
+    return Padding(
+      key: const ValueKey<String>('star-legend'),
+      padding: const EdgeInsets.only(top: 8),
+      // The star's own label already says it: no second announcement.
+      child: ExcludeSemantics(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            CustomPaint(
+              size: const Size(20, 14),
+              painter: _SwatchPainter(colour),
+            ),
+            const SizedBox(width: 8),
+            Flexible(
+              child: Text(
+                l10n.progressStarLegend(mastery.placedOverall),
+                style: theme.textTheme.bodySmall!.copyWith(
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _SwatchPainter extends CustomPainter {
+  const _SwatchPainter(this.colour);
+
+  final Color colour;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final area = Path()..addRect(Offset.zero & size);
+    drawPlacedHatch(canvas, area, colour);
+    canvas.drawRect(
+      Offset.zero & size,
+      Paint()
+        ..color = colour
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = 1,
+    );
+  }
+
+  @override
+  bool shouldRepaint(_SwatchPainter old) => old.colour != colour;
 }

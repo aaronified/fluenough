@@ -95,11 +95,20 @@ class Mastery {
 
   /// Overall mastery, 0 to 1: the share of the star's hexagon the filled
   /// shape covers.
-  double get overall {
+  double get overall => _area((s) => s.fill);
+
+  /// The same share with placed pairs counted too: what the hatched layer
+  /// covers.
+  double get placedOverall => _area((s) => s.placedFill);
+
+  /// Whether any skill holds a placed pair (the star draws its legend).
+  bool get hasPlaced => scores.values.any((s) => s.placed > 0);
+
+  double _area(double Function(SkillScore) of) {
     const skills = MasterySkill.values;
     var sum = 0.0;
     for (var i = 0; i < skills.length; i++) {
-      sum += this[skills[i]].fill * this[skills[(i + 1) % skills.length]].fill;
+      sum += of(this[skills[i]]) * of(this[skills[(i + 1) % skills.length]]);
     }
     return sum / skills.length;
   }

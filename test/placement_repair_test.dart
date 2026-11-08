@@ -16,15 +16,14 @@ import 'package:fluenough/core/data/log_jsonl.dart';
 import 'package:fluenough/core/data/replay_isolate.dart';
 import 'package:fluenough/core/data/review_log.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
-import 'package:fluenough/core/placement/assurance_model.dart';
 import 'package:fluenough/core/placement/placement_check.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
-import 'package:fluenough/core/placement/placement_run.dart';
-import 'package:fluenough/core/placement/placement_session.dart';
 import 'package:fluenough/core/scheduling/ask.dart';
 import 'package:fluenough/core/scheduling/placement_withdrawal.dart';
 import 'package:fluenough/core/scheduling/replay.dart';
 import 'package:flutter_test/flutter_test.dart';
+
+import 'support/v3_write.dart';
 
 /// The credit's moment: a whole second with 250 ms in it.
 final DateTime _t = DateTime.utc(2026, 11, 7, 12, 0, 0, 250);
@@ -394,29 +393,8 @@ void main() {
         };
     }
 
-    PlacementSession finished(Set<PlacementSkill> skills, bool right) {
-      final session = PlacementSession(
-        PlacementRunConfig(
-          deckCount: plan.data.deckCount,
-          skills: skills,
-          declaration: PlacementDeclaration.expert,
-          pathCompleteToB1: true,
-          allDecksDownloaded: true,
-          microphone: false,
-        ),
-        plan.data,
-      );
-      var guard = 0;
-      while (!session.isDone && guard++ < 400) {
-        if (session.atCheckpoint) {
-          session.keepGoing();
-        } else {
-          session.answer(right);
-        }
-      }
-      expect(session.isDone, isTrue);
-      return session;
-    }
+    FinishedV3 finished(Set<PlacementSkill> skills, bool right) =>
+        FinishedV3(plan, skills, right);
 
     const readModes = <DrillMode>{
       DrillMode.recognition,
@@ -460,9 +438,9 @@ void main() {
       );
       final total = state.progress.log.length;
 
-      final run = finished(<PlacementSkill>{PlacementSkill.read}, false).run;
+      final run = finished(<PlacementSkill>{PlacementSkill.read}, false);
       expect(run.readout[PlacementSkill.read]!.placedLevel, -1);
-      state.writePlacementRun('es', plan, run, recheck: true);
+      run.write(state, 'es', plan, recheck: true);
 
       // No state for a credited, never reviewed card of the credited decks.
       for (final deck in plan.decks.take(credited)) {
@@ -545,10 +523,10 @@ void main() {
     test('a check that proves more withdraws nothing and adds credit between '
         'the levels at a stamped moment', () {
       credit090(readModes, decks: 1);
-      final run = finished(<PlacementSkill>{PlacementSkill.read}, true).run;
+      final run = finished(<PlacementSkill>{PlacementSkill.read}, true);
       final found = run.readout[PlacementSkill.read]!;
       expect(found.placedLevel, greaterThan(0));
-      state.writePlacementRun('es', plan, run, recheck: true);
+      run.write(state, 'es', plan, recheck: true);
 
       expect(state.progress.withdrawals, isEmpty);
       final at = momentOf(state.now());
@@ -568,8 +546,8 @@ void main() {
     test('a skill the run did not test keeps its credit', () {
       credit090(readModes);
       credit090(const <DrillMode>{DrillMode.listening}, decks: 3);
-      final run = finished(<PlacementSkill>{PlacementSkill.read}, false).run;
-      state.writePlacementRun('es', plan, run, recheck: true);
+      final run = finished(<PlacementSkill>{PlacementSkill.read}, false);
+      run.write(state, 'es', plan, recheck: true);
 
       final hear = <bool>[
         for (final deck in plan.decks.take(3))
@@ -588,8 +566,8 @@ void main() {
 
     test('a new run\'s credit is stamped with the model, so it is never '
         'flagged', () {
-      final run = finished(<PlacementSkill>{PlacementSkill.read}, true).run;
-      state.writePlacementRun('es', plan, run);
+      final run = finished(<PlacementSkill>{PlacementSkill.read}, true);
+      run.write(state, 'es', plan);
       final moment = momentOf(state.now());
       expect(state.settings.placedAtOf('es'), contains(moment));
       expect(state.settings.placedByOf('es'), contains(moment));
@@ -599,8 +577,8 @@ void main() {
     test('placement credit never enters a fit through a withdrawal: the '
         'withdrawn reviews are not in the log the fits read', () {
       credit090(readModes);
-      final run = finished(<PlacementSkill>{PlacementSkill.read}, false).run;
-      state.writePlacementRun('es', plan, run, recheck: true);
+      final run = finished(<PlacementSkill>{PlacementSkill.read}, false);
+      run.write(state, 'es', plan, recheck: true);
       expect(
         state.progress.skillLog.where((e) => e.at == t1),
         isEmpty,
@@ -620,7 +598,7 @@ void main() {
   });
 
   test('the placement model and the cut-off are the ones of the plan', () {
-    expect(kPlacementModel, 2);
+    expect(kPlacementModel, 3);
     expect(kPlacementCheckFrom, 1793995687);
     expect(
       DateTime.fromMillisecondsSinceEpoch(

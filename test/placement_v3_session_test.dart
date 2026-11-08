@@ -12,7 +12,6 @@ import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/item_registry.dart';
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
-import 'package:fluenough/core/placement/saved_run.dart';
 import 'package:fluenough/core/placement/saved_v3_run.dart';
 import 'package:fluenough/core/placement/script_gate.dart';
 import 'package:fluenough/core/placement/v3_grading.dart';
@@ -283,8 +282,8 @@ void main() {
       expect(again.skills, saved().skills);
     });
 
-    test('is never misread as a V2 run, nor a V2 run as it', () {
-      expect(SavedPlacementRun.fromJson(saved().toJson()), isNull);
+    test('is never misread from a paused run of the earlier version', () {
+      // A paused run of the earlier version (no version key) is not read.
       expect(
         SavedV3Run.fromJson(<String, Object?>{
           'language': 'es',

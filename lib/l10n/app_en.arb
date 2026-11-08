@@ -14319,33 +14319,9 @@
       }
     }
   },
-  "findLevelSayMeaning": "Say what this means in {language}",
-  "@findLevelSayMeaning": {
-    "description": "Find my level: a sentence written in the script, to be said back in the learner’s own language. {language} is that language.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "English"
-      }
-    }
-  },
-  "findLevelListenSayMeaning": "Listen, then say what it means in {language}",
-  "@findLevelListenSayMeaning": {
-    "description": "Find my level: a sentence played aloud, to be said back in the learner’s own language. {language} is that language.",
-    "placeholders": {
-      "language": {
-        "type": "String",
-        "example": "English"
-      }
-    }
-  },
   "findLevelWordMeaning": "What does this word mean?",
   "@findLevelWordMeaning": {
     "description": "Find my level: a word to choose the meaning of."
-  },
-  "findLevelPickBlank": "Which form fits the blank?",
-  "@findLevelPickBlank": {
-    "description": "Find my level: a sentence with one word form blanked out, to choose from."
   },
   "findLevelWhichSentence": "Which sentence is right?",
   "@findLevelWhichSentence": {
@@ -14385,27 +14361,9 @@
   "@findLevelPaused": {
     "description": "Toast after the learner leaves Find my level part-way."
   },
-  "findLevelCheckpointTitle": "{count} questions answered",
-  "@findLevelCheckpointTitle": {
-    "description": "Find my level, every 25 questions: the heading of the pause.",
-    "placeholders": {
-      "count": {
-        "type": "int",
-        "example": "25"
-      }
-    }
-  },
-  "findLevelCheckpointBody": "This is where you stand now. If you think you are better than this, keep going. Or stop here and we will place you at these levels.",
-  "@findLevelCheckpointBody": {
-    "description": "Find my level, every 25 questions: what the learner is asked to choose."
-  },
   "findLevelKeepGoing": "Keep going",
   "@findLevelKeepGoing": {
     "description": "Find my level checkpoint: carries on with more questions."
-  },
-  "findLevelStopHere": "Stop here",
-  "@findLevelStopHere": {
-    "description": "Find my level checkpoint: ends the check and places the learner at the levels shown."
   },
   "findLevelSkillRead": "Read",
   "@findLevelSkillRead": {
@@ -14447,143 +14405,13 @@
   "@findLevelLabelVerySure": {
     "description": "Find my level: how sure the check is, 95% or more."
   },
-  "findLevelLabelVerified": "Verified",
+  "findLevelLabelVerified": "Earlier check (not verified)",
   "@findLevelLabelVerified": {
-    "description": "Find my level: the learner showed the whole course up to B1 in this skill."
-  },
-  "findLevelStandUnit": "{skill}: unit {unit} · {label}",
-  "@findLevelStandUnit": {
-    "description": "Find my level: where one skill is placed. {unit} is the unit the learner knows up to.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "unit": {
-        "type": "int",
-        "example": "40"
-      },
-      "label": {
-        "type": "String",
-        "example": "Very sure"
-      }
-    }
-  },
-  "findLevelStandUnitAtLeast": "{skill}: at least unit {unit} · {label}",
-  "@findLevelStandUnitAtLeast": {
-    "description": "Find my level: where one skill is placed when a higher unit is more likely but not yet proven. {unit} is the unit the answers prove the learner knows up to.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "unit": {
-        "type": "int",
-        "example": "40"
-      },
-      "label": {
-        "type": "String",
-        "example": "Not sure yet"
-      }
-    }
-  },
-  "findLevelStandStart": "{skill}: from the beginning · {label}",
-  "@findLevelStandStart": {
-    "description": "Find my level: a skill placed at the very start.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "label": {
-        "type": "String",
-        "example": "Very sure"
-      }
-    }
-  },
-  "findLevelStandScriptKnown": "{skill}: known · {label}",
-  "@findLevelStandScriptKnown": {
-    "description": "Find my level: the script is read.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "label": {
-        "type": "String",
-        "example": "Very sure"
-      }
-    }
-  },
-  "findLevelStandScriptNot": "{skill}: not yet · {label}",
-  "@findLevelStandScriptNot": {
-    "description": "Find my level: the script is not read yet.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      },
-      "label": {
-        "type": "String",
-        "example": "Very sure"
-      }
-    }
-  },
-  "findLevelStandNotTested": "{skill}: not tested",
-  "@findLevelStandNotTested": {
-    "description": "Find my level: a skill that was not asked.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Hear"
-      }
-    }
-  },
-  "findLevelSummaryTitle": "Where you start",
-  "@findLevelSummaryTitle": {
-    "description": "Find my level: the heading of the result."
-  },
-  "findLevelSummaryIntro": "This is where we think you are. Tap a line to see how sure we are.",
-  "@findLevelSummaryIntro": {
-    "description": "Find my level: under the heading of the result."
+    "description": "Find my level: a skill an earlier version marked Verified. The mark is not kept as a claim: the check before V3 stopped at 95% on thin evidence, so it is shown as an earlier check until the skill is checked again."
   },
   "findLevelNoteNotSureYet": "Not enough evidence yet, so this is the lowest place your answers support. Keep going to sharpen it, or find your level again later.",
   "@findLevelNoteNotSureYet": {
     "description": "Find my level: said under a skill the check is not yet sure of (under 50%). Calm, never a fail."
-  },
-  "findLevelNoteFairlySure": "A fair guess. You can find your level again later to sharpen it.",
-  "@findLevelNoteFairlySure": {
-    "description": "Find my level: said under a skill the check is fairly sure of (50% to 79%)."
-  },
-  "findLevelNoteVerified": "You showed this across the whole course up to B1.",
-  "@findLevelNoteVerified": {
-    "description": "Find my level: said under a Verified skill."
-  },
-  "findLevelNotTestedNoMic": "The microphone was not available or was given up, so this was not tested. Nothing is held against you.",
-  "@findLevelNotTestedNoMic": {
-    "description": "Find my level: why Say was not tested (no microphone from the start, or the learner gave it up)."
-  },
-  "findLevelNotTestedUnavailable": "A question for this one could not be played or shown, so it was not tested. Nothing is held against you.",
-  "@findLevelNotTestedUnavailable": {
-    "description": "Find my level: why a skill was not tested, when its questions could not be built, such as a sound that would not play."
-  },
-  "findLevelNotTestedNotAsked": "We did not ask about this one, so it was not tested.",
-  "@findLevelNotTestedNotAsked": {
-    "description": "Find my level: why a skill was not tested, when no question could be asked about it."
-  },
-  "findLevelDetailPercent": "About {percent}% sure, from {count, plural, =1{1 answer} other{{count} answers}}.",
-  "@findLevelDetailPercent": {
-    "description": "Find my level: the detail of a skill's result, the only place a percentage is shown.",
-    "placeholders": {
-      "percent": {
-        "type": "int",
-        "example": "85"
-      },
-      "count": {
-        "type": "int",
-        "example": "9"
-      }
-    }
   },
   "findLevelSheetLabel": "{skill}: {label}",
   "@findLevelSheetLabel": {
@@ -14681,10 +14509,6 @@
   "@languagesCheckAgainSub": {
     "description": "Under Check your level again."
   },
-  "findLevelCompareTitle": "Your level, before and now",
-  "@findLevelCompareTitle": {
-    "description": "Check your level again: the heading of the screen that shows the level an earlier version found beside the one the new check found."
-  },
   "findLevelCompareLine": "{skill}: {before} → {now} · {label}",
   "@findLevelCompareLine": {
     "description": "Check your level again: one skill, its level before and its level now. {before} and {now} are the next three strings.",
@@ -14720,28 +14544,6 @@
   "findLevelCompareStart": "from the start",
   "@findLevelCompareStart": {
     "description": "Check your level again: a level at the very start of the course."
-  },
-  "findLevelCompareAtLeast": "at least unit {unit}",
-  "@findLevelCompareAtLeast": {
-    "description": "Check your level again: the new level while a higher unit is more probable but not yet proven.",
-    "placeholders": {
-      "unit": {
-        "type": "int",
-        "example": "108"
-      }
-    }
-  },
-  "findLevelCompareNothingBefore": "nothing credited",
-  "@findLevelCompareNothingBefore": {
-    "description": "Check your level again: the level before, for a skill that had no credit."
-  },
-  "findLevelCompareNothingChanges": "Nothing changes until you choose.",
-  "@findLevelCompareNothingChanges": {
-    "description": "Check your level again: under the lines."
-  },
-  "findLevelCompareAtLeastWhatYouHad": "The check found at least what you had.",
-  "@findLevelCompareAtLeastWhatYouHad": {
-    "description": "Check your level again: said when the new level is at least the old one in every skill."
   },
   "findLevelUseNew": "Use the new level",
   "@findLevelUseNew": {
@@ -15114,6 +14916,63 @@
         "type": "int",
         "example": "14"
       }
+    }
+  },
+  "progressStarLegend": "Placed {percent}",
+  "@progressStarLegend": {
+    "description": "Under the star, beside a hatched swatch: the share of the star that placement and earning together cover (the hatched layer reaches as far).",
+    "placeholders": {
+      "percent": {
+        "type": "double",
+        "example": "0.40",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "progressStarLegendSemantics": "Hatched layer: placed, not yet earned, {percent} with earned",
+  "@progressStarLegendSemantics": {
+    "description": "In the star's screen-reader label: what the hatched layer is.",
+    "placeholders": {
+      "percent": {
+        "type": "double",
+        "example": "0.40",
+        "format": "percentPattern"
+      }
+    }
+  },
+  "progressStarSkillPlaced": "{skill} {fill}, {outline}, {placed} with placed",
+  "@progressStarSkillPlaced": {
+    "description": "One skill's values in the star's screen-reader label when placement credit is held: known of the B1 total, known of what is taught, and with placed pairs counted.",
+    "placeholders": {
+      "skill": {"type": "String", "example": "Read"},
+      "fill": {"type": "double", "example": "0.34", "format": "percentPattern"},
+      "outline": {"type": "String", "example": "57%"},
+      "placed": {"type": "double", "example": "0.60", "format": "percentPattern"}
+    }
+  },
+  "findLevelSheetRange": "{skill}: unit {unit}, {range} · {label}",
+  "@findLevelSheetRange": {
+    "description": "Languages sheet, under a skill's row: where the last check started the skill, the range it is sure of, and how sure.",
+    "placeholders": {
+      "skill": {"type": "String", "example": "Read"},
+      "unit": {"type": "int", "example": "14"},
+      "range": {"type": "String", "example": "likely 11 to 17"},
+      "label": {"type": "String", "example": "Fairly sure"}
+    }
+  },
+  "findLevelSheetRangeBetween": "likely {low} to {high}",
+  "@findLevelSheetRangeBetween": {
+    "description": "Languages sheet: the unit range a check is 80% sure of.",
+    "placeholders": {
+      "low": {"type": "int", "example": "11"},
+      "high": {"type": "int", "example": "17"}
+    }
+  },
+  "findLevelSheetRangeOne": "likely unit {unit}",
+  "@findLevelSheetRangeOne": {
+    "description": "Languages sheet: a range of one unit.",
+    "placeholders": {
+      "unit": {"type": "int", "example": "3"}
     }
   }
 }

@@ -4,7 +4,13 @@ import '../../app/settings.dart';
 import '../../core/placement/assurance_readout.dart';
 import '../../core/placement/placement_questions.dart';
 import '../../l10n/app_localizations.dart';
-import 'find_level_summary.dart';
+import 'find_level_labels.dart';
+
+/// "likely 11 to 17" for a stored range.
+String findLevelResultRangeShort(AppLocalizations l10n, PlacementRange r) =>
+    r.high <= r.low
+    ? l10n.findLevelSheetRangeOne(r.low)
+    : l10n.findLevelSheetRangeBetween(r.low, r.high);
 
 /// How sure the last Find my level run was of each of [skills] in [language],
 /// from the settings: its stored name, or Verified when the skill carries
@@ -38,12 +44,43 @@ Map<PlacementSkill, AssuranceLabel> placedLabelsOf(
 }
 
 /// The small line under a skill row of the Languages sheet: "Hear: Sure ·
-/// Say: Very sure", with a quiet mark before a Verified skill. Nothing at
+/// Say: Fairly sure", or with the V3 range "Read: unit 14, likely 11 to 17 ·
+/// Fairly sure"; an earlier version's Verified mark reads "Earlier check (not
+/// verified)". Nothing at
 /// all when [labels] is empty.
 class SkillLabelsLine extends StatelessWidget {
-  const SkillLabelsLine({super.key, required this.labels});
+  const SkillLabelsLine({
+    super.key,
+    required this.labels,
+    this.ranges = const <String, PlacementRange>{},
+  });
 
   final Map<PlacementSkill, AssuranceLabel> labels;
+
+  /// Where the last V3 run started each skill, by the skill's name: shown
+  /// as "Read: unit 14, likely 11 to 17 · Fairly sure" in place of the bare
+  /// name.
+  final Map<String, PlacementRange> ranges;
+
+  String _line(
+    AppLocalizations l10n,
+    PlacementSkill skill,
+    AssuranceLabel label,
+  ) {
+    final range = ranges[skill.name];
+    final name = findLevelSkillName(l10n, skill);
+    // An earlier version's Verified mark is never shown with a range: it
+    // says only that there was an earlier check.
+    if (range == null || label == AssuranceLabel.verified) {
+      return l10n.findLevelSheetLabel(name, findLevelLabelName(l10n, label));
+    }
+    return l10n.findLevelSheetRange(
+      name,
+      range.start,
+      findLevelResultRangeShort(l10n, range),
+      findLevelLabelName(l10n, label),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -62,19 +99,7 @@ class SkillLabelsLine extends StatelessWidget {
           Row(
             mainAxisSize: MainAxisSize.min,
             children: <Widget>[
-              if (value == AssuranceLabel.verified) ...<Widget>[
-                Icon(Icons.verified, size: 14, color: scheme.primary),
-                const SizedBox(width: 4),
-              ],
-              Flexible(
-                child: Text(
-                  l10n.findLevelSheetLabel(
-                    findLevelSkillName(l10n, key),
-                    findLevelLabelName(l10n, value),
-                  ),
-                  style: style,
-                ),
-              ),
+              Flexible(child: Text(_line(l10n, key, value), style: style)),
             ],
           ),
       ],
