@@ -57,6 +57,25 @@ const int kRunSoftStopItems = 22;
 /// pool, and never chosen.
 const Set<String> kUnaskableFormats = <String>{'S2', 'F9'};
 
+/// The formats the screens of a run can show. An item of another format (a
+/// cloze, a gender item) is never offered to the picker, whatever the audit
+/// admitted: the screen has none for it.
+const Set<String> kScreenFormats = <String>{
+  'F1',
+  'F2',
+  'F3',
+  'F4',
+  'F5',
+  'F7',
+  'F8',
+  'F13',
+  'F14',
+  'F16',
+  'F17',
+  'F18',
+  'F21',
+};
+
 /// One askable item, as the picker sees it. The bank's items are turned into
 /// these by the caller ([deck] and [skills] are the item's difficulty and
 /// what a right answer is evidence for).
@@ -158,7 +177,8 @@ class PickerCandidate {
     GuessCalibration calibration = GuessCalibration.seed,
   }) => <PickerCandidate>[
     for (final i in items)
-      if (!kUnaskableFormats.contains(i.format))
+      if (kScreenFormats.contains(i.format) &&
+          !kUnaskableFormats.contains(i.format))
         PickerCandidate.fromItem(i, calibration: calibration),
   ];
 
@@ -405,7 +425,9 @@ class V3Picker {
     this.config = const PickerConfig(),
   });
 
-  final CandidatePool pool;
+  /// The candidates; replaced by a fuller pool when more of the bank is
+  /// ready ([replacePool]).
+  CandidatePool pool;
   final JointPlacement model;
   final math.Random rng;
 
@@ -644,6 +666,11 @@ class V3Picker {
       testable: _tested,
     );
   }
+
+  /// A fuller pool of the same bank (the rest of it was made while the run
+  /// went on). What was asked stays asked: a card is never asked twice, and
+  /// the drill-down's items are found by id.
+  void replacePool(CandidatePool next) => pool = next;
 
   /// The learner cannot speak now: Say is no longer asked or rated (what it
   /// already holds stays), and the run goes on with the other skills.

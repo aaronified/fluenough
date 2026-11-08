@@ -65,6 +65,13 @@ Future<void> main(List<String> args) async {
     stdout.writeln(
       '$language: ${bank.items.length} items, excluded ${bank.excluded}',
     );
+    // The verdict on what the app makes, as `admission.dart` stores it.
+    final shipped = ItemBank.auditRuntime(course.data);
+    stdout.writeln(
+      "  '$language': AdmissionProfile(deckKey: '${shipped.deckKey}', "
+      'excluded: <String>[${shipped.excluded.map((c) => "'$c'").join(', ')}], '
+      'decoys: ${shipped.decoys}),',
+    );
   }
   const encoder = JsonEncoder.withIndent(' ');
   File(out).writeAsStringSync(

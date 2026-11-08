@@ -259,6 +259,54 @@ void main() {
     });
   });
 
+  group('a run begun on the first formats only', () {
+    V3Run begin({List<RegItem>? full, Iterable<String> events = const []}) {
+      final items = smallV3Bank();
+      return V3Run.replay(
+        data: findLevelData(),
+        skills: const <PlacementSkill>{
+          PlacementSkill.read,
+          PlacementSkill.write,
+        },
+        audio: false,
+        recogniser: false,
+        seed: 6,
+        scriptStart: V3ScriptStart.skip,
+        startedWithStarter: true,
+        fullItems: full ?? items,
+        items: ItemBank.starterOf(items),
+        events: events,
+      );
+    }
+
+    test('changes to the whole bank once, and a replay does the same at the '
+        'same place', () {
+      final run = begin();
+      for (var i = 0; i < 3; i++) {
+        run.dontKnow();
+      }
+      run.extendItems(smallV3Bank());
+      run.extendItems(smallV3Bank());
+      for (var i = 0; i < 3 && !run.finished; i++) {
+        run.dontKnow();
+      }
+      expect(run.events.where((e) => e == 'x'), hasLength(1));
+      expect(run.events.indexOf('x'), 3);
+      final again = begin(events: run.events);
+      expect(again.events, run.events);
+      expect(again.question?.id, run.question?.id);
+    });
+
+    test('the starter is the clean items of the first formats', () {
+      final all = smallV3Bank();
+      final starter = ItemBank.starterOf(all);
+      // The small bank's sentences have no content-word count, so they are
+      // not clean: the starter holds the word formats.
+      expect(starter.map((i) => i.format).toSet(), <String>{'F2', 'F13', 'F7'});
+      expect(starter.length, lessThan(all.length));
+    });
+  });
+
   group('a paused run', () {
     SavedV3Run saved() => const SavedV3Run(
       language: 'es',
@@ -268,6 +316,7 @@ void main() {
       audio: true,
       recogniser: false,
       scriptStart: V3ScriptStart.skip,
+      starter: true,
       deckSet: '4-abc',
       appVersion: '1.0.0',
       savedAt: 1000,
@@ -278,6 +327,7 @@ void main() {
       final again = SavedV3Run.fromJson(saved().toJson())!;
       expect(again.events, <String>['r', 'w', 'd', 'k']);
       expect(again.scriptStart, V3ScriptStart.skip);
+      expect(again.starter, isTrue);
       expect(again.declaration, PlacementDeclaration.amateur);
       expect(again.skills, saved().skills);
     });

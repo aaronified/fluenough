@@ -26,6 +26,7 @@ class SavedV3Run {
     required this.savedAt,
     required this.events,
     this.declaration,
+    this.starter = false,
   });
 
   final String language;
@@ -42,6 +43,9 @@ class SavedV3Run {
   final String appVersion;
   final int savedAt;
   final List<String> events;
+
+  /// Whether the run began with the first formats' items only.
+  final bool starter;
 
   bool isFresh({
     required int nowSeconds,
@@ -70,6 +74,7 @@ class SavedV3Run {
     'app_version': appVersion,
     'saved_at': savedAt,
     'events': events,
+    'starter': starter,
   };
 
   /// The run [json] holds, or null for anything that is not one (a V2 run
@@ -96,7 +101,7 @@ class SavedV3Run {
         events is! List) {
       return null;
     }
-    const known = <String>{'r', 'w', 'd', 'u', 'm', 'a', 'k'};
+    const known = <String>{'r', 'w', 'd', 'u', 'm', 'a', 'k', 'x'};
     final names = PlacementSkill.values.asNameMap();
     return SavedV3Run(
       language: language,
@@ -115,6 +120,7 @@ class SavedV3Run {
         for (final e in events)
           if (e is String && known.contains(e)) e,
       ],
+      starter: json['starter'] == true,
     );
   }
 }

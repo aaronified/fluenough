@@ -424,7 +424,8 @@ class AppState extends ChangeNotifier {
       bankStore: bankStore,
       // A test's bank is never built unless the test says how: the real
       // build is an isolate and a long wait.
-      bankRunner: bankRunner ?? (_, _, _) => Completer<List<RegItem>?>().future,
+      bankRunner:
+          bankRunner ?? (_, _, _, _) => Completer<List<RegItem>?>().future,
       settings: settings,
       volume: volume,
       profiles: profiles,

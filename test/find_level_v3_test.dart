@@ -508,7 +508,7 @@ void main() {
       final gate = Completer<void>();
       void Function(double)? report;
       final banks = PlacementBanks(
-        runner: (data, onProgress, cancelled) async {
+        runner: (data, onProgress, cancelled, onStarter) async {
           report = onProgress;
           await gate.future;
           return smallV3Bank();
@@ -553,7 +553,7 @@ void main() {
       final gate = Completer<void>();
       var done = false;
       final banks = PlacementBanks(
-        runner: (data, onProgress, cancelled) async {
+        runner: (data, onProgress, cancelled, onStarter) async {
           await gate.future;
           done = true;
           return smallV3Bank();
@@ -578,7 +578,7 @@ void main() {
     testWidgets('a failure says so and Retry tries again', (tester) async {
       var calls = 0;
       final banks = PlacementBanks(
-        runner: (data, onProgress, cancelled) async {
+        runner: (data, onProgress, cancelled, onStarter) async {
           calls++;
           if (calls == 1) throw StateError('boom');
           return smallV3Bank();
