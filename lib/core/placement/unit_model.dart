@@ -73,17 +73,21 @@ class UnitModel {
     'unit-frequency',
   ];
 
-  /// How well each cue picks the unit at [gap] of [units] from [alphabet]:
-  /// per cue, the expected accuracy (a tie among n fills is worth 1/n) and
-  /// how many fills beat the right one. The word itself must have been left
-  /// out of the model ([remove]) by the caller.
-  ({List<double> accuracy, List<int> beaten}) gapSolvers(
+  /// How well each gap-filling solver does on the unit at [gap] of [units]
+  /// among [alphabet]: for each cue, the solver that takes the highest
+  /// scoring fill, the lowest, and the second, third and fourth highest (one
+  /// that has learned that the right unit is never the top pick). The value
+  /// is the expected accuracy (a tie among n fills is worth 1/n). Also, per
+  /// cue, where the right unit stands as a fraction of the alphabet (0 the
+  /// highest, 1 the lowest). The word must have been left out of the model
+  /// ([remove]) by the caller.
+  ({Map<String, double> accuracy, List<double> position}) gapSolvers(
     List<String> units,
     int gap,
     List<String> alphabet,
   ) {
-    final accuracy = <double>[];
-    final beaten = <int>[];
+    final accuracy = <String, double>{};
+    final position = <double>[];
     double score(int cue, List<String> u) => switch (cue) {
       0 => this.score(u),
       1 => triScore(u),
@@ -96,6 +100,7 @@ class UnitModel {
       final right = score(cue, units);
       var better = 0;
       var ties = 0;
+      var worse = 0;
       for (final a in alphabet) {
         if (a == units[gap]) continue;
         filled[gap] = a;
@@ -104,12 +109,46 @@ class UnitModel {
           better++;
         } else if ((v - right).abs() <= 1e-9) {
           ties++;
+        } else {
+          worse++;
         }
       }
       filled[gap] = units[gap];
-      accuracy.add(better == 0 ? 1 / (ties + 1) : 0);
-      beaten.add(better);
+      final name = gapCues[cue];
+      final share = 1 / (ties + 1);
+      // The right unit holds the places better+1 .. better+ties+1 from the
+      // top.
+      double at(int k) => (k > better && k <= better + ties + 1) ? share : 0;
+      accuracy[name] = at(1);
+      accuracy['$name-lowest'] = worse == 0 ? share : 0;
+      for (var k = 2; k <= 4; k++) {
+        accuracy['$name-rank$k'] = at(k);
+      }
+      final n = better + ties + worse;
+      position.add(n == 0 ? 0.5 : (better + ties / 2) / n);
     }
-    return (accuracy: accuracy, beaten: beaten);
+    return (accuracy: accuracy, position: position);
+  }
+
+  /// For each fill of [alphabet] at [gap] of [units], the five cues' scores
+  /// (in [gapCues] order). The word must have been left out of the model.
+  List<List<double>> gapFeatures(
+    List<String> units,
+    int gap,
+    List<String> alphabet,
+  ) {
+    final filled = List<String>.of(units);
+    final out = <List<double>>[];
+    for (final a in alphabet) {
+      filled[gap] = a;
+      out.add(<double>[
+        score(filled),
+        triScore(filled),
+        biScore(filled),
+        edgeScore(filled),
+        math.log(1 + math.max(0, uni[a] ?? 0)),
+      ]);
+    }
+    return out;
   }
 }

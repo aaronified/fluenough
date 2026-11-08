@@ -715,11 +715,24 @@ class ItemGenerators {
       for (final e in model.uni.entries)
         if (e.value >= 2) e.key,
     ]..sort();
+    final tokens = <String, int>{};
+    for (final s in cx.sentences) {
+      for (final w in s.words) {
+        tokens[w.toLowerCase()] = (tokens[w.toLowerCase()] ?? 0) + 1;
+      }
+    }
+    final lm = CharLm(<String>[
+      for (final v in cx.vocab) v.units.join(),
+      for (final s in cx.sentences)
+        for (final w in s.words) w,
+    ]);
     final out = <RegItem>[];
     for (final v in words) {
       model.remove(v.units);
+      final copies = 1 + (tokens[v.word.toLowerCase()] ?? 0);
+      lm.add(v.word, -copies);
       var bestGap = -1;
-      var bestSpread = -1;
+      var bestSpread = -1.0;
       for (var gap = 0; gap < v.units.length; gap++) {
         // A unit that is a bare mark or punctuation is never the gap.
         if (latinLetters(v.units[gap]).isEmpty &&
@@ -730,15 +743,30 @@ class ItemGenerators {
             ? alphabet
             : <String>[...alphabet, v.units[gap]];
         final r = model.gapSolvers(v.units, gap, abc);
-        if (r.accuracy.any((a) => a > 0.04)) continue;
-        // The gap the cues miss by the widest margin.
-        final spread = r.beaten.reduce(math.min);
-        if (spread > bestSpread) {
+        // The character model of the course's words, held out of the audit's
+        // first cues, is a cue of its own here.
+        final filled = List<String>.of(v.units);
+        final lmScores = <double>[];
+        for (final a in abc) {
+          filled[gap] = a;
+          lmScores.add(lm.score(filled.join()));
+        }
+        final lmr = rankSolvers('char-lm', lmScores, abc.indexOf(v.units[gap]));
+        if (lmr.accuracy.values.any((a) => a > 0.04)) continue;
+        // No solver of any kind (highest, lowest, second to fourth highest,
+        // in any cue) picks the unit.
+        if (r.accuracy.values.any((a) => a > 0.04)) continue;
+        // The gap whose right unit stands nearest the middle of every cue's
+        // ranking, not at an end: a rare unit would be the one a solver
+        // that types the rarest unit picks.
+        final spread = r.position.map((p) => (p - 0.5).abs()).reduce(math.max);
+        if (bestSpread < 0 || spread < bestSpread) {
           bestSpread = spread;
           bestGap = gap;
         }
       }
       model.restore(v.units);
+      lm.add(v.word, copies);
       if (bestGap < 0) continue;
       out.add(
         RegItem(
@@ -1034,9 +1062,10 @@ class ItemGenerators {
     }
 
     final dirs = <(bool, List<int>)>[];
-    final cues = ContextCues(<List<String>>[
-      for (final s in cx.sentences) s.words,
-    ]);
+    final cues = ContextCues(
+      <List<String>>[for (final s in cx.sentences) s.words],
+      texts: <String>[for (final s in cx.sentences) s.text],
+    );
     final balances = <bool, DirectionBalance>{
       true: DirectionBalance(ContextCues.names.length),
       false: DirectionBalance(ContextCues.names.length),
@@ -1056,7 +1085,12 @@ class ItemGenerators {
       if (at.isEmpty) continue;
       final good = '${s.leadingMark}${lower.join(' ')}${s.trailingMark}';
       final goodWords = targetWords(good);
-      final goodScores = cues.scores(goodWords, goodWords);
+      final goodScores = cues.scores(
+        goodWords,
+        goodWords,
+        text: good,
+        truthText: good,
+      );
       // The swaps whose wrong order the course's word and ending pairs rate
       // like the right one (or in the direction the class is short of), the
       // most natural-looking first.
@@ -1073,7 +1107,12 @@ class ItemGenerators {
         }
         final bad = '${s.leadingMark}${swapped.join(' ')}${s.trailingMark}';
         if (bad == good) continue;
-        final badScores = cues.scores(targetWords(bad), goodWords);
+        final badScores = cues.scores(
+          targetWords(bad),
+          goodWords,
+          text: bad,
+          truthText: good,
+        );
         tries.add((
           plausibility(swapped),
           bad,
@@ -1173,11 +1212,19 @@ class ItemGenerators {
   /// A sentence for which no such three exist gets no item.
   List<RegItem> sentencePicks(String format) {
     final out = <RegItem>[];
-    final patterns = <(bool, int, int)>[];
+    final patterns = <(bool, int, int, int)>[];
     final lang = cx.data.language;
     final known = buildKnownText(cx.early);
     final all = cx.sentences;
     final rng = cx.stream('picks');
+    final lmModel = CharLm(<String>[for (final x in all) x.english]);
+    double heldOut(String o) {
+      lmModel.add(o, -1);
+      final v = lmModel.score(o);
+      lmModel.add(o, 1);
+      return v;
+    }
+
     final simBalances = <bool, PatternBalance>{
       true: PatternBalance(),
       false: PatternBalance(),
@@ -1186,16 +1233,21 @@ class ItemGenerators {
       true: PatternBalance(),
       false: PatternBalance(),
     };
+    final lmBalances = <bool, PatternBalance>{
+      true: PatternBalance(),
+      false: PatternBalance(),
+    };
     for (final s in all) {
       final clean = s.nonCognateContent >= 2;
       final simBalance = simBalances[clean]!;
       final lengthBalance = lengthBalances[clean]!;
+      final lmBalance = lmBalances[clean]!;
       final english = s.english;
       final prompt = targetWords(s.card.reading ?? s.text);
       double sim(String o) => maxSimilarity(prompt, glossWords(o), lang);
       final k0 = knownWordScore(prompt, english, known);
       final mine = optionWords(english);
-      final pool = <(String, double)>[];
+      final pool = <(String, double, double)>[];
       final order = List<SentenceInfo>.of(all)..shuffle(rng);
       for (final o in order) {
         if (pool.length >= 120) break;
@@ -1206,13 +1258,15 @@ class ItemGenerators {
         if (overlap > math.max(1, mine.length ~/ 2)) continue;
         if ((e.length - english.length).abs() > 30) continue;
         if (knownWordScore(prompt, e, known) != k0) continue;
-        pool.add((e, sim(e)));
+        pool.add((e, sim(e), heldOut(e)));
       }
       if (pool.length < 3) continue;
       final sm0 = sim(english);
+      final lm0 = heldOut(english);
       List<String>? chosen;
       int? simPattern;
       int? lengthPattern;
+      int? lmPattern;
       final wantSim = simBalance.order();
       final wantLength = lengthBalance.order();
       // The pattern the class is most behind on first; then any pattern that
@@ -1227,9 +1281,12 @@ class ItemGenerators {
           final opts = <String>[english, for (final i in pick) pool[i].$1];
           final sims = <double>[sm0, for (final i in pick) pool[i].$2];
           final lens = <double>[for (final o in opts) o.length.toDouble()];
+          final lms = <double>[lm0, for (final i in pick) pool[i].$3];
           final sp = rankPattern(sims);
           final lp = rankPattern(lens);
-          if (sp < 0 || lp < 0) continue;
+          final mp = rankPattern(lms);
+          if (sp < 0 || lp < 0 || mp < 0) continue;
+          if (!lmBalance.allows(mp)) continue;
           if (round == 0) {
             if (sp != wantSim.first || lp != wantLength.first) continue;
           } else if (!simBalance.allows(sp) || !lengthBalance.allows(lp)) {
@@ -1244,12 +1301,14 @@ class ItemGenerators {
           chosen = opts;
           simPattern = sp;
           lengthPattern = lp;
+          lmPattern = mp;
         }
       }
       if (chosen == null) continue;
       simBalance.record(simPattern!);
       lengthBalance.record(lengthPattern!);
-      patterns.add((clean, simPattern, lengthPattern));
+      lmBalance.record(lmPattern!);
+      patterns.add((clean, simPattern, lengthPattern, lmPattern));
       final opts = List<String>.of(chosen)..shuffle(rng);
       out.add(
         RegItem(
@@ -1281,11 +1340,17 @@ class ItemGenerators {
       while (changed && keep.isNotEmpty) {
         changed = false;
         final n = keep.length;
-        for (var which = 0; which < 2 && !changed; which++) {
+        for (var which = 0; which < 3 && !changed; which++) {
           for (var pat = 0; pat < 2 && !changed; pat++) {
             final over = <int>[
               for (final i in keep)
-                if ((which == 0 ? patterns[i].$2 : patterns[i].$3) == pat) i,
+                if ((which == 0
+                        ? patterns[i].$2
+                        : which == 1
+                        ? patterns[i].$3
+                        : patterns[i].$4) ==
+                    pat)
+                  i,
             ];
             if (over.length * 4 > n) {
               keep.remove(over.last);
@@ -1302,7 +1367,7 @@ class ItemGenerators {
         for (var i = 0; i < out.length; i++)
           if (!drop.contains(i)) out[i],
       ];
-      final keptPatterns = <(bool, int, int)>[
+      final keptPatterns = <(bool, int, int, int)>[
         for (var i = 0; i < out.length; i++)
           if (!drop.contains(i)) patterns[i],
       ];

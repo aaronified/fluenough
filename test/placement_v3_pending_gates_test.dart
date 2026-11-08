@@ -22,7 +22,14 @@ import 'package:flutter_test/flutter_test.dart';
 import 'support/placement_v3_harness.dart';
 
 class _PendingGate {
-  const _PendingGate(this.id, this.gate, this.reason, this.patterns, this.step);
+  const _PendingGate(
+    this.id,
+    this.gate,
+    this.reason,
+    this.patterns,
+    this.step, {
+    this.landedWhen,
+  });
 
   final String id;
 
@@ -38,7 +45,17 @@ class _PendingGate {
 
   /// The build step that lands the prerequisite.
   final String step;
+
+  /// A second key, not a file name: whether the change itself has been made
+  /// (a constant of the model moved).
+  final bool Function()? landedWhen;
 }
+
+/// Whether the model's fitted numbers have moved from the values of build
+/// step 4b (the prior mix, the declaration weight, the likelihood temper): a
+/// re-fit has landed. The two gates that wait for the re-fit fail loudly then.
+bool _modelRefitted() =>
+    kMaxDeclarationWeight != 0.7 || kTogetherShare != 0.7 || kTemper != 0.85;
 
 /// Whether the inventory has a generated Write item cheap enough to prove
 /// the top bands: at most 6 s, slip at most 0.10, guess at most 0.10 (the
@@ -80,6 +97,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
         'declaration weight are re-fitted at step 8. Not loosened.',
     _refit,
     'step 8 (re-fit of the prior and the declaration weight)',
+    landedWhen: _modelRefitted,
   ),
   _PendingGate(
     'honest-confidence',
@@ -95,6 +113,7 @@ final List<_PendingGate> _pending = <_PendingGate>[
         'declaration weight, not by the picker alone.',
     _refit,
     'step 8 (re-fit)',
+    landedWhen: _modelRefitted,
   ),
   _PendingGate(
     'ear-only-placed-high-on-hear',
@@ -145,6 +164,7 @@ void main() {
           for (final f in files)
             for (final p in gate.patterns)
               if (p.hasMatch(f)) f,
+          if (gate.landedWhen?.call() ?? false) 'a fitted constant moved',
         ];
         expect(
           landed,
@@ -172,6 +192,14 @@ void main() {
           reason: 'the plan\'s Pending gates table must name `${gate.id}`',
         );
       }
+    });
+
+    test('the re-fit key reads the model constants', () {
+      // Today's values: not re-fitted. Changing one flips the key.
+      expect(_modelRefitted(), isFalse);
+      expect(kMaxDeclarationWeight, 0.7);
+      expect(kTogetherShare, 0.7);
+      expect(kTemper, 0.85);
     });
 
     test('the cheap-Write prerequisite is judged on the inventory', () {

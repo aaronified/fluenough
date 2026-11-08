@@ -1057,6 +1057,10 @@ double percentile(List<num> values, double p) {
 }
 
 /// Runs [persona] [runs] times (seeds 1 to [runs]) in one cell.
+/// The first seed of every cell (the CI runs the gamer and adversary gates
+/// again from other seeds, see the `_b` and `_c` test files).
+int kSeedBase = 0;
+
 List<RunResult> runCell({
   required SimBank bank,
   required Persona persona,
@@ -1065,7 +1069,7 @@ List<RunResult> runCell({
   required Variant variant,
   required int runs,
   bool sayInJoint = false,
-  int seedBase = 0,
+  int? seedBase,
   Mutation mutation = const Mutation(),
 }) => <RunResult>[
   for (var seed = 1; seed <= runs; seed++)
@@ -1075,7 +1079,7 @@ List<RunResult> runCell({
       picker: picker(),
       declaration: declaration,
       variant: variant,
-      seed: seedBase + seed,
+      seed: (seedBase ?? kSeedBase) + seed,
       sayInJoint: sayInJoint,
       mutation: mutation,
     ),

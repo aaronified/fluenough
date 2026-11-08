@@ -150,6 +150,24 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
   final suffixGrams2 = countGrams(sentenceWords, 2, suffixOf);
   final suffixGrams3 = countGrams(sentenceWords, 3, suffixOf);
 
+  // Held-out solver families: character n-gram models of the course's text
+  // (each item's own text left out), and a classifier fitted on one half of a
+  // class and tested on the other.
+  final englishLm = CharLm(<String>[for (final s in cx.sentences) s.english]);
+  final sentenceLm = CharLm(<String>[for (final s in cx.sentences) s.text]);
+  final wordLm = CharLm(<String>[
+    for (final v in cx.vocab) v.units.join(),
+    for (final s in cx.sentences)
+      for (final w in s.words) w,
+  ]);
+  final tokenCount = <String, int>{};
+  for (final s in cx.sentences) {
+    for (final w in s.words) {
+      final k = w.toLowerCase();
+      tokenCount[k] = (tokenCount[k] ?? 0) + 1;
+    }
+  }
+
   final byClass = <String, List<RegItem>>{};
   for (final it in items) {
     if (it.pseudo) continue;
@@ -187,6 +205,8 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
       solvers['$name-inverted'] = (solvers['$name-inverted'] ?? 0) + low;
     }
 
+    final rows = <List<List<double>>>[];
+    final rowCorrect = <int>[];
     switch (fmt) {
       case 'F2' || 'F13' || 'F3' || 'F5' || 'F17' || 'F6' || 'S2' || 'F6g':
         final nOptions = sample.first.options.length;
@@ -217,8 +237,26 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
             ], it.correct);
             both('known+similarity', comb.high, comb.low);
             if (fmt == 'F5' || fmt == 'F17') {
-              final c = expectedBoth(centrality(it.options), it.correct);
+              final centre = centrality(it.options);
+              final c = expectedBoth(centre, it.correct);
               both('centre-of-options', c.high, c.low);
+              // Held out: how typical of the course's English each option
+              // is, each leaving itself out.
+              final lm = <double>[
+                for (final o in it.options) _heldOut(englishLm, o),
+              ];
+              final l = expectedBoth(lm, it.correct);
+              both('english-char-lm', l.high, l.low);
+              final zl = zWithin(lens);
+              final zs = zWithin(sim);
+              final zc = zWithin(centre);
+              final zm = zWithin(lm);
+              final zk = zWithin(known);
+              rows.add(<List<double>>[
+                for (var i = 0; i < it.options.length; i++)
+                  <double>[zl[i], zs[i], zc[i], zm[i], zk[i]],
+              ]);
+              rowCorrect.add(it.correct);
             }
           } else if (fmt == 'F3') {
             final eng = glossWords(it.prompt);
@@ -298,12 +336,43 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
                 ngramScore(words(o), 3, suffixGrams3, ownS3, suffixOf),
             ], it.correct);
             both('ending-triples', s3.high, s3.low);
+            sentenceLm.add(it.options[it.correct], -1);
+            final lm = <double>[
+              for (final o in it.options) sentenceLm.score(o),
+            ];
+            sentenceLm.add(it.options[it.correct], 1);
+            final l = expectedBoth(lm, it.correct);
+            both('sentence-char-lm', l.high, l.low);
+            final cuesOf = <List<double>>[
+              for (final o in it.options)
+                <double>[
+                  ngramScore(words(o), 2, wordGrams2, own2, lowerWord),
+                  ngramScore(words(o), 2, suffixGrams2, ownS2, suffixOf),
+                  ngramScore(words(o), 3, suffixGrams3, ownS3, suffixOf),
+                  lm[it.options.indexOf(o)],
+                ],
+            ];
+            final z = <List<double>>[
+              for (var i = 0; i < it.options.length; i++) <double>[],
+            ];
+            for (var c = 0; c < 4; c++) {
+              final zc = zWithin(<double>[for (final o in cuesOf) o[c]]);
+              for (var i = 0; i < z.length; i++) {
+                z[i].add(zc[i]);
+              }
+            }
+            rows.add(z);
+            rowCorrect.add(it.correct);
           } else if (fmt == 'F6g') {
             final r = expectedBoth(<double>[
               for (final o in it.options) _endingRule(o, it, cx),
             ], it.correct);
             both('ending-rule', r.high, r.low);
           }
+        }
+        if (rows.isNotEmpty) {
+          solvers['feature-classifier'] =
+              crossFitAccuracy(rows, rowCorrect) * sample.length;
         }
       case 'F4':
         var total = 0.0;
@@ -329,7 +398,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
           for (final e in model.uni.entries)
             if (e.value >= 2) e.key,
         ]..sort();
-        final cueTotals = List<double>.filled(UnitModel.gapCues.length, 0);
+        final totals = <String, double>{};
         var rules = 0.0;
         for (final it in sample) {
           final units = it.answerTiles;
@@ -339,8 +408,8 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
               : <String>[...alphabet, units[it.gapIndex]];
           final r = model.gapSolvers(units, it.gapIndex, abc);
           model.restore(units);
-          for (var c = 0; c < cueTotals.length; c++) {
-            cueTotals[c] += r.accuracy[c];
+          for (final e in r.accuracy.entries) {
+            totals[e.key] = (totals[e.key] ?? 0) + e.value;
           }
           final head = latinLetters(it.prompt.split(' ').last);
           final target = latinLetters(units.join());
@@ -348,9 +417,69 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
             rules += 1;
           }
         }
-        for (var c = 0; c < cueTotals.length; c++) {
-          solvers[UnitModel.gapCues[c]] = cueTotals[c];
+        // Held out: a character n-gram model of the course's words and
+        // sentence words without the target word, and a classifier fitted on
+        // one half of the items and tested on the other.
+        final lmTotals = <String, double>{};
+        final frows = <List<List<double>>>[];
+        final fcorrect = <int>[];
+        for (final it in sample) {
+          final units = it.answerTiles;
+          final word = units.join();
+          final copies = 1 + (tokenCount[word.toLowerCase()] ?? 0);
+          final abc = alphabet.contains(units[it.gapIndex])
+              ? alphabet
+              : <String>[...alphabet, units[it.gapIndex]];
+          model.remove(units);
+          wordLm.add(word, -copies);
+          final lmScores = <double>[];
+          final filled = List<String>.of(units);
+          for (final a in abc) {
+            filled[it.gapIndex] = a;
+            lmScores.add(wordLm.score(filled.join()));
+          }
+          wordLm.add(word, copies);
+          final feats = model.gapFeatures(units, it.gapIndex, abc);
+          model.restore(units);
+          final right = abc.indexOf(units[it.gapIndex]);
+          var better = 0;
+          var ties = 0;
+          var worse = 0;
+          for (var k = 0; k < lmScores.length; k++) {
+            if (k == right) continue;
+            if (lmScores[k] > lmScores[right] + 1e-9) {
+              better++;
+            } else if ((lmScores[k] - lmScores[right]).abs() <= 1e-9) {
+              ties++;
+            } else {
+              worse++;
+            }
+          }
+          final share = 1 / (ties + 1);
+          double at(int k) =>
+              (k > better && k <= better + ties + 1) ? share : 0;
+          lmTotals['char-lm'] = (lmTotals['char-lm'] ?? 0) + at(1);
+          lmTotals['char-lm-lowest'] =
+              (lmTotals['char-lm-lowest'] ?? 0) + (worse == 0 ? share : 0);
+          for (var k = 2; k <= 4; k++) {
+            lmTotals['char-lm-rank$k'] =
+                (lmTotals['char-lm-rank$k'] ?? 0) + at(k);
+          }
+          final cols = <List<double>>[
+            for (var c = 0; c < 5; c++)
+              zWithin(<double>[for (final f in feats) f[c]]),
+            zWithin(lmScores),
+          ];
+          frows.add(<List<double>>[
+            for (var k = 0; k < abc.length; k++)
+              <double>[for (final c in cols) c[k]],
+          ]);
+          fcorrect.add(right);
         }
+        solvers.addAll(totals);
+        solvers.addAll(lmTotals);
+        solvers['feature-classifier'] =
+            crossFitAccuracy(frows, fcorrect) * sample.length;
         solvers['spelling-rules'] = rules;
       case 'F9':
         var good = 0.0;
@@ -404,6 +533,14 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     );
   }
   return AuditReport(out);
+}
+
+/// The held-out score of [option]: [lm] without [option] itself.
+double _heldOut(CharLm lm, String option) {
+  lm.add(option, -1);
+  final s = lm.score(option);
+  lm.add(option, 1);
+  return s;
 }
 
 /// Expected accuracy of a solver that drops the most similar option when it

@@ -33,6 +33,12 @@ import 'placement_questions.dart';
 //
 // Pure Dart, deterministic for a seeded generator.
 
+/// Formats the bank admits but the picker must not ask yet: S2 (word order)
+/// needs a grammaticality check for languages whose word order is free, and
+/// F9 (matching) a screen. A candidate of these formats is refused by the
+/// pool, and never chosen.
+const Set<String> kUnaskableFormats = <String>{'S2', 'F9'};
+
 /// One askable item, as the picker sees it. The bank's items are turned into
 /// these by the caller ([deck] and [skills] are the item's difficulty and
 /// what a right answer is evidence for).
@@ -127,7 +133,8 @@ class PickerCandidate {
     GuessCalibration calibration = GuessCalibration.seed,
   }) => <PickerCandidate>[
     for (final i in bank.items)
-      PickerCandidate.fromItem(i, calibration: calibration),
+      if (!kUnaskableFormats.contains(i.format))
+        PickerCandidate.fromItem(i, calibration: calibration),
   ];
 
   PickerCandidate asSelfRated() => PickerCandidate(
@@ -151,6 +158,10 @@ class PickerCandidate {
 class CandidatePool {
   CandidatePool(Iterable<PickerCandidate> candidates, this.levels) {
     for (final c in candidates) {
+      assert(
+        !kUnaskableFormats.contains(c.format),
+        '${c.format} is not askable by the picker yet',
+      );
       if (c.pseudo) {
         pseudo.add(c);
         continue;
@@ -592,6 +603,7 @@ class V3Picker {
   }
 
   bool _available(PickerCandidate c) {
+    if (kUnaskableFormats.contains(c.format)) return false;
     if (c.needsAudio && !config.audio) return false;
     if (c.needsMic && !config.mic) return false;
     if (!c.clean || c.guess > kCleanGuessMax || c.guess >= kUnusableGuess) {

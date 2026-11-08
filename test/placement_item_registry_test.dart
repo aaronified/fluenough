@@ -169,7 +169,6 @@ void main() {
           'F17',
           'F18',
           'F21',
-          'S2',
         ]) {
           expect(counts[code] ?? 0, greaterThan(20), reason: '$language $code');
         }
@@ -194,6 +193,9 @@ void main() {
         );
         expect(<String>['F13', 'F16'].where(has).length, 2);
         expect(has('F18'), isTrue);
+        // Word order passes the held-out solvers in Spanish only (Hindi has
+        // 139 usable sentences, too few once they are balanced).
+        expect(has('S2'), language == 'es');
       });
 
       test('keeps near-cognates out of every word-level format', () {
@@ -465,8 +467,12 @@ void main() {
               : <String>[...alphabet, units[it.gapIndex]];
           final r = model.gapSolvers(units, it.gapIndex, abc);
           model.restore(units);
-          for (final a in r.accuracy) {
-            expect(a, lessThanOrEqualTo(0.04), reason: it.id);
+          for (final e in r.accuracy.entries) {
+            expect(
+              e.value,
+              lessThanOrEqualTo(0.04),
+              reason: '${it.id} ${e.key}',
+            );
           }
           checked++;
         }
@@ -486,10 +492,16 @@ void main() {
       test('word order is admitted and balanced: the right order scores '
           'higher as often as lower on every cue', () {
         final items = of('S2').toList();
+        if (language == 'hi') {
+          expect(items, isEmpty);
+          expect(bank.excluded, contains('S2:clean'));
+          return;
+        }
         expect(items.length, greaterThan(100), reason: language);
-        final cues = ContextCues(<List<String>>[
-          for (final s in cx.sentences) s.words,
-        ]);
+        final cues = ContextCues(
+          <List<String>>[for (final s in cx.sentences) s.words],
+          texts: <String>[for (final s in cx.sentences) s.text],
+        );
         for (final clean in <bool>[true, false]) {
           final group = [
             for (final it in items)
@@ -506,8 +518,10 @@ void main() {
             for (final it in group) {
               final good = targetWords(it.options[it.correct]);
               final bad = targetWords(it.options[1 - it.correct]);
-              final g = cues.scores(good, good)[c];
-              final b = cues.scores(bad, good)[c];
+              final gt = it.options[it.correct];
+              final bt = it.options[1 - it.correct];
+              final g = cues.scores(good, good, text: gt, truthText: gt)[c];
+              final b = cues.scores(bad, good, text: bt, truthText: gt)[c];
               if ((g - b).abs() < 1e-9) continue;
               g > b ? higher++ : lower++;
             }
@@ -516,6 +530,49 @@ void main() {
         }
         expect(bank.audit.classes['S2:clean']!.passes, isTrue);
       });
+
+      test(
+        'the held-out solvers are in the audit of F21, S2 and the picks',
+        () {
+          List<String> names(String key) =>
+              bank.audit.classes[key]?.solvers.keys.toList() ?? <String>[];
+          expect(
+            names('F21:clean'),
+            containsAll(<String>[
+              'char-lm',
+              'char-lm-lowest',
+              'char-lm-rank2',
+              'edges-lowest',
+              'unit-frequency-lowest',
+              'letter-patterns-rank3',
+              'feature-classifier',
+            ]),
+          );
+          expect(
+            names('F5:clean'),
+            containsAll(<String>[
+              'english-char-lm',
+              'english-char-lm-inverted',
+              'feature-classifier',
+            ]),
+          );
+          if (language == 'es') {
+            expect(
+              names('S2:clean'),
+              containsAll(<String>['sentence-char-lm', 'feature-classifier']),
+            );
+          }
+          // Every solver of an admitted class is within the bound.
+          for (final key in <String>['F21:clean', 'F5:clean', 'F17:clean']) {
+            final c = bank.audit.classes[key]!;
+            expect(c.passes, isTrue, reason: key);
+            expect(
+              c.solvers['feature-classifier']!,
+              lessThanOrEqualTo(c.bound),
+            );
+          }
+        },
+      );
 
       test('matching screens are drawn so the matcher does worse than '
           'chance', () {
@@ -868,6 +925,29 @@ void main() {
       });
     });
   }
+
+  group('the gap solvers', () {
+    test('catch a gap that is always the rarest unit (control)', () {
+      // A tiny course in which every word has a common letter pair, and the
+      // gap is always the only rare letter: the solver that types the rarest
+      // unit, or the lowest scoring one, wins.
+      final words = <List<String>>[
+        for (var i = 0; i < 30; i++) <String>['c', 'a', 's', 'a'],
+        for (var i = 0; i < 30; i++) <String>['m', 'e', 's', 'a'],
+        for (var i = 0; i < 30; i++) <String>['o', 's', 'o'],
+        <String>['a', 'ñ', 'o'],
+      ];
+      final model = UnitModel(words);
+      final alphabet = <String>['a', 'c', 'e', 'm', 'o', 's', 'ñ'];
+      model.remove(<String>['a', 'ñ', 'o']);
+      final r = model.gapSolvers(<String>['a', 'ñ', 'o'], 1, alphabet);
+      model.restore(<String>['a', 'ñ', 'o']);
+      expect(r.accuracy['unit-frequency-lowest'], greaterThan(0.9));
+      expect(r.accuracy['unit-frequency'], lessThan(0.1));
+      // The old audit, which looked only at the highest, would have passed it.
+      expect(r.position[4], greaterThan(0.9));
+    });
+  });
 
   group('the audit profile of the harness', () {
     test('the fixture matches what the audit measures now', () {

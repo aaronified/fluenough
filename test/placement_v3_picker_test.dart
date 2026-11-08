@@ -264,4 +264,26 @@ void main() {
       expect(r.result.seconds, lessThanOrEqualTo(120));
     }
   });
+
+  test('S2 and F9 are not askable by the picker yet', () {
+    for (final format in kUnaskableFormats) {
+      final c = PickerCandidate(
+        id: 'x:$format',
+        format: format,
+        deck: 5,
+        skills: const <PlacementSkill>{PlacementSkill.read},
+        seconds: 6,
+        slip: 0.1,
+        guess: 0.1,
+        conflictKeys: const <String>{'x'},
+      );
+      // The pool refuses them (an assert in a debug run, which tests are).
+      expect(
+        () => CandidatePool(<PickerCandidate>[c], levels),
+        throwsA(isA<AssertionError>()),
+        reason: format,
+      );
+    }
+    expect(kUnaskableFormats, containsAll(<String>['S2', 'F9']));
+  });
 }

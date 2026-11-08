@@ -86,33 +86,50 @@ String suffixOf(String word) {
 /// The context cues of a course's sentences: word pairs and ending pairs and
 /// triples, each scored without the item's own sentence.
 class ContextCues {
-  ContextCues(Iterable<List<String>> sentences) {
+  ContextCues(Iterable<List<String>> sentences, {Iterable<String>? texts}) {
     final all = <List<String>>[for (final s in sentences) s];
     _word2 = countGrams(all, 2, lowerWord);
     _suffix2 = countGrams(all, 2, suffixOf);
     _suffix3 = countGrams(all, 3, suffixOf);
+    _lm = CharLm(texts ?? <String>[for (final s in all) s.join(' ')]);
   }
 
   late final Map<String, int> _word2;
   late final Map<String, int> _suffix2;
   late final Map<String, int> _suffix3;
+  late final CharLm _lm;
 
   /// The names of the cues, in the order [scores] gives them.
   static const List<String> names = <String>[
     'word-pairs',
     'ending-pairs',
     'ending-triples',
+    'sentence-char-lm',
   ];
 
-  /// The three cues' scores of [words], with the grams of [truth] (the true
-  /// sentence) counted once less.
-  List<double> scores(List<String> words, List<String> truth) {
+  /// The cues' scores of [words] (written as [text]), with the grams of
+  /// [truth] (the true sentence, written as [truthText]) counted once less.
+  /// The character model is left out when no text is given (its score is then
+  /// 0 for every option).
+  List<double> scores(
+    List<String> words,
+    List<String> truth, {
+    String? text,
+    String? truthText,
+  }) {
     final t = <String>[for (final w in truth) w.toLowerCase()];
     final w = <String>[for (final x in words) x.toLowerCase()];
+    var lm = 0.0;
+    if (text != null && truthText != null) {
+      _lm.add(truthText, -1);
+      lm = _lm.score(text);
+      _lm.add(truthText, 1);
+    }
     return <double>[
       ngramScore(w, 2, _word2, ownGrams(t, 2, lowerWord), lowerWord),
       ngramScore(w, 2, _suffix2, ownGrams(t, 2, suffixOf), suffixOf),
       ngramScore(w, 3, _suffix3, ownGrams(t, 3, suffixOf), suffixOf),
+      lm,
     ];
   }
 }
@@ -316,4 +333,165 @@ List<int> balancedKeep(List<List<int>> patterns) {
     }
   }
   return keep;
+}
+
+// ---------------------------------------------------------------------------
+// Held-out solver families (not used to build any item): a character n-gram
+// language model of the course's text, and a small classifier trained on
+// item features on one half of a class and tested on the other.
+
+/// A character n-gram language model of some texts. A text can be held out
+/// by subtracting its own grams ([own]), so the model never saw it.
+class CharLm {
+  CharLm(Iterable<String> texts, {this.order = 4}) {
+    for (final t in texts) {
+      add(t, 1);
+    }
+  }
+
+  final int order;
+  final Map<String, int> _grams = <String, int>{};
+  final Map<String, int> _context = <String, int>{};
+  static const double _smooth = 0.05;
+  static const double _alphabet = 80;
+
+  List<String> _keys(String text) {
+    final padded = '${'^' * (order - 1)}${text.toLowerCase()}\$';
+    return <String>[
+      for (var i = 0; i + order <= padded.length; i++)
+        padded.substring(i, i + order),
+    ];
+  }
+
+  /// Counts [text] [by] times (negative to leave it out).
+  void add(String text, int by) {
+    for (final k in _keys(text)) {
+      _grams[k] = (_grams[k] ?? 0) + by;
+      final c = k.substring(0, order - 1);
+      _context[c] = (_context[c] ?? 0) + by;
+    }
+  }
+
+  /// The log-likelihood per character of [text].
+  double score(String text) {
+    final keys = _keys(text);
+    var s = 0.0;
+    for (final k in keys) {
+      final c = math.max(0, _grams[k] ?? 0);
+      final x = math.max(0, _context[k.substring(0, order - 1)] ?? 0);
+      s += math.log((c + _smooth) / (x + _smooth * _alphabet));
+    }
+    return keys.isEmpty ? 0 : s / keys.length;
+  }
+}
+
+/// A logistic regression (a handful of batch gradient steps, L2).
+class LogReg {
+  LogReg(this.size) : _w = List<double>.filled(size + 1, 0);
+
+  final int size;
+  final List<double> _w;
+
+  double _z(List<double> x) {
+    var z = _w[size];
+    for (var i = 0; i < size; i++) {
+      z += _w[i] * x[i];
+    }
+    return z;
+  }
+
+  /// The model's score of [x] (higher means more likely the right one).
+  double score(List<double> x) => _z(x);
+
+  void fit(List<List<double>> xs, List<int> ys, {int steps = 60}) {
+    if (xs.isEmpty) return;
+    for (var step = 0; step < steps; step++) {
+      final grad = List<double>.filled(size + 1, 0);
+      for (var n = 0; n < xs.length; n++) {
+        final p = 1 / (1 + math.exp(-_z(xs[n]).clamp(-30, 30)));
+        final e = p - ys[n];
+        for (var i = 0; i < size; i++) {
+          grad[i] += e * xs[n][i];
+        }
+        grad[size] += e;
+      }
+      for (var i = 0; i <= size; i++) {
+        _w[i] -= 0.5 * (grad[i] / xs.length + (i < size ? 0.01 * _w[i] : 0));
+      }
+    }
+  }
+}
+
+/// The expected accuracy of a classifier that picks the option of an item
+/// with the highest score, fitted on the items of the other half of the
+/// class: the items are split by parity, each half is tested by a model that
+/// never saw it. [features] has, per item, one feature vector per option;
+/// [correct] is the index of the right option.
+double crossFitAccuracy(List<List<List<double>>> features, List<int> correct) {
+  final n = features.length;
+  if (n < 4) return 1;
+  final width = features.first.first.length;
+  var total = 0.0;
+  for (var half = 0; half < 2; half++) {
+    final xs = <List<double>>[];
+    final ys = <int>[];
+    for (var i = 0; i < n; i++) {
+      if (i % 2 == half) continue;
+      for (var o = 0; o < features[i].length; o++) {
+        xs.add(features[i][o]);
+        ys.add(o == correct[i] ? 1 : 0);
+      }
+    }
+    final model = LogReg(width)..fit(xs, ys);
+    for (var i = 0; i < n; i++) {
+      if (i % 2 != half) continue;
+      final scores = <double>[for (final f in features[i]) model.score(f)];
+      total += expectedBoth(scores, correct[i]).high;
+    }
+  }
+  return total / n;
+}
+
+/// [values] standardised within the item (mean 0, spread 1).
+List<double> zWithin(List<double> values) {
+  final mean = values.fold<double>(0, (a, b) => a + b) / values.length;
+  var v = 0.0;
+  for (final x in values) {
+    v += (x - mean) * (x - mean);
+  }
+  final sd = math.sqrt(v / values.length);
+  return <double>[for (final x in values) sd < 1e-9 ? 0 : (x - mean) / sd];
+}
+
+/// The gap-filling style solvers on one scored list of fills: the highest,
+/// the lowest, and the second to fourth highest scoring ([right] is the index
+/// of the right fill), as expected accuracies named after [name], and where
+/// the right fill stands (0 the highest, 1 the lowest).
+({Map<String, double> accuracy, double position}) rankSolvers(
+  String name,
+  List<double> scores,
+  int right,
+) {
+  var better = 0;
+  var ties = 0;
+  var worse = 0;
+  for (var k = 0; k < scores.length; k++) {
+    if (k == right) continue;
+    if (scores[k] > scores[right] + 1e-9) {
+      better++;
+    } else if ((scores[k] - scores[right]).abs() <= 1e-9) {
+      ties++;
+    } else {
+      worse++;
+    }
+  }
+  final share = 1 / (ties + 1);
+  double at(int k) => (k > better && k <= better + ties + 1) ? share : 0;
+  final out = <String, double>{
+    name: at(1),
+    '$name-lowest': worse == 0 ? share : 0,
+    for (var k = 2; k <= 4; k++) '$name-rank$k': at(k),
+  };
+  final n = better + ties + worse;
+  return (accuracy: out, position: n == 0 ? 0.5 : (better + ties / 2) / n);
 }
