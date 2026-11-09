@@ -100,12 +100,14 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-10 approved open issues.
+12 approved open issues.
 
 **Bugs**
 
 - [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
 - [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
+- [#1101](https://github.com/aaronified/fluenough/issues/1101) Say: recording at recognition is untested on a real device
+- [#1102](https://github.com/aaronified/fluenough/issues/1102) Web smoke test fails intermittently (network failures)
 
 **Enhancements**
 
