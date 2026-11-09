@@ -304,6 +304,10 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
 - [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
 - [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
+- [#1097](https://github.com/aaronified/fluenough/issues/1097) Placement: drop the "See your results" screen and simplify the result card
+- [#1098](https://github.com/aaronified/fluenough/issues/1098) Placement: more cloze questions (single and multiple letters)
+- [#1099](https://github.com/aaronified/fluenough/issues/1099) Placement: sentence fill-in-the-blank with same-word-class options
+- [#1100](https://github.com/aaronified/fluenough/issues/1100) Placement: make the questions much tougher
 
 ## Plans
 
