@@ -49,11 +49,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.6.0
 
-7 approved open issues.
-
-**Bugs**
-
-- [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
+6 approved open issues.
 
 **Enhancements**
 
@@ -100,15 +96,20 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.9.0
 
-1 approved open issue.
-
-**Other**
-
-- [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
+0 approved open issues.
 
 ### 0.10.0
 
-6 approved open issues.
+10 approved open issues.
+
+**Bugs**
+
+- [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
+- [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
+
+**Enhancements**
+
+- [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
 
 **Other**
 
@@ -118,6 +119,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1099](https://github.com/aaronified/fluenough/issues/1099) Placement: sentence fill-in-the-blank with same-word-class options
 - [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
 - [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
+- [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
 
 ### 1 · Skill model + FSRS
 
@@ -156,7 +158,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Approved, not scheduled
 
-- [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
 - [#169](https://github.com/aaronified/fluenough/issues/169) Lessons that start from songs and films learners already know
 - [#170](https://github.com/aaronified/fluenough/issues/170) Bengali: start the course with Ekla Chalo Re
 - [#411](https://github.com/aaronified/fluenough/issues/411) Shareable progress image or summary, built from the review log
@@ -172,7 +173,6 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#614](https://github.com/aaronified/fluenough/issues/614) A second reading field on cards: transliteration and normalised or vocalised form
 - [#681](https://github.com/aaronified/fluenough/issues/681) Language bar: a dot on languages with something to do, and a full-height IPA glyph
 - [#881](https://github.com/aaronified/fluenough/issues/881) Speaking: "Hear yourself" replays the answer the learner spoke, not a new recording
-- [#1004](https://github.com/aaronified/fluenough/issues/1004) On-device Telugu speech recognition (IndicConformer, int8, opt-in) for 0.9.0
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
