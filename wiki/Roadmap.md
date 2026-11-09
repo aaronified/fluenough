@@ -302,6 +302,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#924](https://github.com/aaronified/fluenough/issues/924) Typed meaning answers: accept equivalent words (synonym dictionary) and unseparated alternatives
 - [#952](https://github.com/aaronified/fluenough/issues/952) Skill switches: matching and choosing switches (remainder of #243)
 - [#959](https://github.com/aaronified/fluenough/issues/959) Paths and starter decks (first words and phrases) for every planned language
+- [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
+- [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
 
 ## Plans
 
