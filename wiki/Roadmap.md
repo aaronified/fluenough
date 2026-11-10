@@ -100,7 +100,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-12 approved open issues.
+15 approved open issues.
 
 **Bugs**
 
@@ -108,6 +108,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
 - [#1101](https://github.com/aaronified/fluenough/issues/1101) Say: recording at recognition is untested on a real device
 - [#1102](https://github.com/aaronified/fluenough/issues/1102) Web smoke test fails intermittently (network failures)
+- [#1104](https://github.com/aaronified/fluenough/issues/1104) Today: Script skill tile shows for Telugu although script learning is off
 
 **Enhancements**
 
@@ -122,6 +123,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
 - [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
 - [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
+- [#1105](https://github.com/aaronified/fluenough/issues/1105) Placement: remove 'what you heard' questions; always ask the meaning, with tougher non-guessable items
+- [#1106](https://github.com/aaronified/fluenough/issues/1106) Placement: reverse direction questions (English spoken, learner answers in the target language)
 
 ### 1 · Skill model + FSRS
 
