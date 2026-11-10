@@ -112,6 +112,8 @@ const Map<String, FormatSpec> kFormats = <String, FormatSpec>{
   'F21': FormatSpec('F21', {_w}, 0.08, 0.10, 6),
   'F8': FormatSpec('F8', {_w, _r}, 0.10, 0.05, 15, wordLevel: false),
   // The reverse of F8 (English spoken): the same item, asked with sound.
+  // F13's items asked for Hear alone, to isolate Hear in a drill-down.
+  'F26': FormatSpec('F26', {_h}, 0.05, 0.25, 6),
   'F24': FormatSpec('F24', {_w, _r}, 0.10, 0.05, 15, wordLevel: false),
   'F13': FormatSpec('F13', {_h, _r}, 0.05, 0.25, 6),
   'F15': FormatSpec('F15', {_h}, 0.05, 0.50, 6),
@@ -982,6 +984,7 @@ const List<String> kAdmittedFormats = <String>[
   'F21',
   'F8',
   'F24',
+  'F26',
   'F18',
   'F1',
 ];

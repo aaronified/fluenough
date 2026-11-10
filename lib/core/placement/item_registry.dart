@@ -323,6 +323,17 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     leakRisk: 'end marks left in the wrong place; bigram plausibility',
   ),
   FormatInfo(
+    'F26',
+    'Heard word, pick its English meaning, crediting Hear only (F13 alone)',
+    {_hear},
+    0.05,
+    0.25,
+    6,
+    options: 4,
+    needsAudio: true,
+    leakRisk: 'cognates heard; poor text to speech',
+  ),
+  FormatInfo(
     'F22',
     'English spoken and shown, pick the written word (reverse of F3)',
     {_read},
@@ -374,8 +385,13 @@ const Map<String, String> kSpokenFormats = <String, String>{
   'F25': 'F21',
 };
 
-/// The format whose items [format] asks (itself, unless it is a reverse one).
-String baseFormat(String format) => kSpokenFormats[format] ?? format;
+/// F26 is F13's items asked for Hear alone: F13 credits Hear and Read, so the
+/// drill-down isolates Hear with F26 (a mixed item cannot isolate).
+const Map<String, String> kHearOnlyFormats = <String, String>{'F26': 'F13'};
+
+/// The format whose items [format] asks (itself, unless it is a twin).
+String baseFormat(String format) =>
+    kSpokenFormats[format] ?? kHearOnlyFormats[format] ?? format;
 
 /// Whether [format] speaks its English meaning.
 bool isSpokenEnglish(String format) => kSpokenFormats.containsKey(format);

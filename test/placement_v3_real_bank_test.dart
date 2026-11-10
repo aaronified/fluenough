@@ -60,6 +60,7 @@ _notAskedIn = <String, Map<String, String>>{
     'F5':
         'a sentence pick costs 8 s at the guess of a word pick: chosen '
         'only when the word picks of a band are used up',
+    'F17': 'the same, heard',
   },
 };
 

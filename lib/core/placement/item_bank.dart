@@ -251,6 +251,7 @@ class ItemBank {
       final base = baseFormat(format);
       final items = made[base] ??= switch (base) {
         'F3' => g.meaningToWord(),
+        'F13' => g.wordToMeaning('F13'),
         'F7' => g.typedOrSaid('F7'),
         'F8' => g.sentenceTiles('F8'),
         _ => g.gapTyping(),
@@ -263,7 +264,8 @@ class ItemBank {
     if (runtime) {
       return <_Step>[
         _Step(() => g.wordToMeaning('F2'), starter: true),
-        _Step(() => g.wordToMeaning('F13'), starter: true),
+        _Step(() => reverseOf('F13'), starter: true),
+        _Step(() => reverseOf('F26')),
         _Step(() => reverseOf('F7'), starter: true),
         _Step(() => g.typedOrSaid('F18'), starter: true),
         _Step(() => reverseOf('F8'), starter: true),
@@ -283,7 +285,8 @@ class ItemBank {
     }
     return <_Step>[
       _Step(() => g.wordToMeaning('F2')),
-      _Step(() => g.wordToMeaning('F13')),
+      _Step(() => reverseOf('F13')),
+      _Step(() => reverseOf('F26')),
       _Step(() => reverseOf('F3')),
       _Step(() => reverseOf('F22')),
       _Step(() => reverseOf('F7')),
