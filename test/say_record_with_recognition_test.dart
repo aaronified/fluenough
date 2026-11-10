@@ -135,26 +135,33 @@ void main() {
       );
     });
 
-    test('a recogniser\'s own verdict is reported, with no take', () async {
-      final native = FixedNativeListener(
-        results: <NativeListenResult>[
-          NativeListenResult(error: 'error_network', pcm16: _voice.pcm16),
-          const NativeListenResult(error: 'error_language_unavailable'),
-          const NativeListenResult(error: 'error_permission'),
-        ],
-      );
-      final engine = SystemSpeechEngine(_Plugin(), null, native);
-      final network = await engine.listen(bcp47: 'te-IN', onDevice: false);
-      expect(network.failure, SpeechFailure.network);
-      expect(
-        network.ownAudio,
-        isNull,
-        reason: 'nothing kept on a failed listen',
-      );
-      final language = await engine.listen(bcp47: 'te-IN', onDevice: true);
-      expect(language.failure, SpeechFailure.notOnDevice);
-      final denied = await engine.listen(bcp47: 'te-IN', onDevice: true);
-      expect(denied.failure, SpeechFailure.permissionDenied);
+    test('a failure of the piped listen is not final: the same attempt '
+        'listens again the plain way and that verdict is reported', () async {
+      for (final error in <String>[
+        'error_network',
+        'error_language_unavailable',
+        'error_permission',
+      ]) {
+        final native = FixedNativeListener(
+          results: <NativeListenResult>[
+            NativeListenResult(error: error, pcm16: _voice.pcm16),
+          ],
+        );
+        final plugin = _Plugin();
+        final engine = SystemSpeechEngine(plugin, null, native);
+        final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
+        await Future<void>.delayed(Duration.zero);
+        expect(native.listens, 1, reason: error);
+        expect(plugin.listens, 1, reason: '$error: plain attempt ran');
+        plugin.onResult!(
+          SpeechRecognitionResult(<SpeechRecognitionWords>[
+            const SpeechRecognitionWords('నమస్తే', null, 0.9),
+          ], ResultType.finalResult.value),
+        );
+        final h = await attempt;
+        expect(h.failed, isFalse, reason: error);
+        expect(h.alternatives.single.text, 'నమస్తే');
+      }
     });
 
     test('a phone that cannot listen this way listens as before', () async {
@@ -198,55 +205,80 @@ void main() {
       expect(native.listens, 2, reason: 'not asked a third time');
     });
 
+    test('nothing recognised from a silent stream is listened to again the '
+        'plain way in the same attempt', () async {
+      final silent = OwnAudio(_pcm(16000, 0), sampleRate: 16000);
+      for (final first in <NativeListenResult>[
+        NativeListenResult(error: 'error_no_match', pcm16: silent.pcm16),
+        NativeListenResult(error: 'error_speech_timeout', pcm16: silent.pcm16),
+        const NativeListenResult(error: 'error_no_match'),
+        NativeListenResult(pcm16: silent.pcm16),
+      ]) {
+        final native = FixedNativeListener(
+          results: <NativeListenResult>[first],
+        );
+        final plugin = _Plugin();
+        final engine = SystemSpeechEngine(plugin, null, native);
+        final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
+        await Future<void>.delayed(Duration.zero);
+        // The same attempt reached the plain route: no no-match was shown.
+        expect(native.listens, 1, reason: '${first.error}');
+        expect(plugin.listens, 1, reason: '${first.error}');
+        plugin.onResult!(
+          SpeechRecognitionResult(<SpeechRecognitionWords>[
+            const SpeechRecognitionWords('నమస్తే', null, 0.9),
+          ], ResultType.finalResult.value),
+        );
+        final h = await attempt;
+        expect(h.failed, isFalse);
+        expect(h.alternatives.single.text, 'నమస్తే');
+        // Tried once more (one failure does not drop it), and again the
+        // plain way in the same attempt.
+        final again = engine.listen(bcp47: 'te-IN', onDevice: true);
+        await Future<void>.delayed(Duration.zero);
+        expect(native.listens, 2);
+        expect(plugin.listens, 2);
+        plugin.onResult!(
+          SpeechRecognitionResult(<SpeechRecognitionWords>[
+            const SpeechRecognitionWords('x', null, 0.9),
+          ], ResultType.finalResult.value),
+        );
+        await again;
+      }
+    });
+
     test(
-      'nothing recognised from a silent stream is listened to again the '
-      'plain way in the same attempt, and the native route is dropped',
+      'no match from the piped listen, even with a voice in the stream, '
+      'is not final: the plain attempt runs in the same attempt (#1107)',
       () async {
-        final silent = OwnAudio(_pcm(16000, 0), sampleRate: 16000);
-        for (final first in <NativeListenResult>[
-          NativeListenResult(error: 'error_no_match', pcm16: silent.pcm16),
-          NativeListenResult(
-            error: 'error_speech_timeout',
-            pcm16: silent.pcm16,
-          ),
-          const NativeListenResult(error: 'error_no_match'),
-          NativeListenResult(pcm16: silent.pcm16),
-        ]) {
-          final native = FixedNativeListener(
-            results: <NativeListenResult>[first],
-          );
-          final plugin = _Plugin();
-          final engine = SystemSpeechEngine(plugin, null, native);
-          final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
-          await Future<void>.delayed(Duration.zero);
-          // The same attempt reached the plain route: no no-match was shown.
-          expect(native.listens, 1, reason: '${first.error}');
-          expect(plugin.listens, 1, reason: '${first.error}');
-          plugin.onResult!(
-            SpeechRecognitionResult(<SpeechRecognitionWords>[
-              const SpeechRecognitionWords('నమస్తే', null, 0.9),
-            ], ResultType.finalResult.value),
-          );
-          final h = await attempt;
-          expect(h.failed, isFalse);
-          expect(h.alternatives.single.text, 'నమస్తే');
-          // Not tried again this session.
-          final again = engine.listen(bcp47: 'te-IN', onDevice: true);
-          await Future<void>.delayed(Duration.zero);
-          expect(native.listens, 1);
-          expect(plugin.listens, 2);
-          plugin.onResult!(
-            SpeechRecognitionResult(<SpeechRecognitionWords>[
-              const SpeechRecognitionWords('x', null, 0.9),
-            ], ResultType.finalResult.value),
-          );
-          await again;
-        }
+        final native = FixedNativeListener(
+          results: <NativeListenResult>[
+            NativeListenResult(error: 'error_no_match', pcm16: _voice.pcm16),
+          ],
+        );
+        final plugin = _Plugin();
+        final engine = SystemSpeechEngine(plugin, null, native);
+        final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
+        await Future<void>.delayed(Duration.zero);
+        expect(native.listens, 1);
+        expect(
+          plugin.listens,
+          1,
+          reason: 'no no-match shown before the fallback',
+        );
+        plugin.onResult!(
+          SpeechRecognitionResult(<SpeechRecognitionWords>[
+            const SpeechRecognitionWords('నమస్తే', null, 0.9),
+          ], ResultType.finalResult.value),
+        );
+        final h = await attempt;
+        expect(h.failed, isFalse);
+        expect(h.alternatives.single.text, 'నమస్తే');
       },
     );
 
-    test('no match with a voice in the stream is the learner\'s, not the '
-        'phone\'s: reported, and the native route stays', () async {
+    test('the plain attempt\'s own no match is what the learner sees, and two '
+        'piped failures in a row drop the piped route', () async {
       final native = FixedNativeListener(
         results: <NativeListenResult>[
           NativeListenResult(error: 'error_no_match', pcm16: _voice.pcm16),
@@ -255,12 +287,19 @@ void main() {
       final plugin = _Plugin();
       final engine = SystemSpeechEngine(plugin, null, native);
       for (var i = 0; i < 3; i++) {
-        final h = await engine.listen(bcp47: 'te-IN', onDevice: true);
+        final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
+        await Future<void>.delayed(Duration.zero);
+        expect(plugin.listens, i + 1);
+        plugin.onResult!(
+          SpeechRecognitionResult(
+            <SpeechRecognitionWords>[],
+            ResultType.finalResult.value,
+          ),
+        );
+        final h = await attempt;
         expect(h.failure, SpeechFailure.noMatch);
-        expect(h.ownAudio, isNull);
       }
-      expect(native.listens, 3);
-      expect(plugin.listens, 0);
+      expect(native.listens, 2, reason: 'not asked a third time');
     });
 
     test('an aborted listen (the app was paused) is a failure, never a '
