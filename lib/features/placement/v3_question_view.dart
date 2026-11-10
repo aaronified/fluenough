@@ -155,6 +155,7 @@ class _V3QuestionViewState extends State<V3QuestionView> {
           'F3' => l10n.placementQuestion,
           'F5' => l10n.findLevelWhichSentence,
           'F17' => l10n.findLevelWhichSentenceSounds,
+          'F26' => l10n.findLevelFillGap,
           _ => l10n.findLevelWordMeaning,
         };
     }
@@ -178,12 +179,12 @@ class _V3QuestionViewState extends State<V3QuestionView> {
               ),
       );
     }
-    if (_q.mode == V3Mode.gap) {
+    if (_q.mode == V3Mode.gap || _q.gapBefore.isNotEmpty) {
       column.add(
         Padding(
           padding: const EdgeInsets.only(top: 12),
           child: TargetText.hero(
-            '${_q.gapBefore}＿${_q.gapAfter}',
+            '${_q.gapBefore}${'＿' * _q.gapBlanks}${_q.gapAfter}',
             language: widget.language,
           ),
         ),

@@ -39,6 +39,23 @@ PlacementCourse _course(String language) {
 }
 
 void main() {
+  test('a course with no part of speech makes no sentence fill-in', () {
+    final files = <String, String>{};
+    for (final e in Directory('decks/es').listSync(recursive: true)) {
+      if (e is File && e.path.endsWith('.yaml')) {
+        files[e.path.substring('decks/'.length)] = e
+            .readAsStringSync()
+            .replaceAll(
+              RegExp(r'pos: "(noun|verb|adj|adv|pronoun)"'),
+              'pos: "other"',
+            );
+      }
+    }
+    final cx = ItemBank.build(loadPlacementCourse(files, language: 'es').data)
+        .context;
+    expect(ItemGenerators(cx).sentenceFill(), isEmpty);
+  });
+
   group('the inventory', () {
     test('lists F1 to F20 with what each needs and leaks', () {
       for (var n = 1; n <= 20; n++) {
@@ -491,7 +508,11 @@ void main() {
         for (final it in items.take(150)) {
           final units = it.answerTiles;
           expect(it.gapIndex, inInclusiveRange(0, units.length - 1));
-          expect(it.accepted, <String>[units[it.gapIndex]], reason: it.id);
+          expect(it.gapLength, inInclusiveRange(1, 3), reason: it.id);
+          expect(it.gapIndex + it.gapLength, lessThanOrEqualTo(units.length));
+          expect(it.accepted, <String>[
+            units.sublist(it.gapIndex, it.gapIndex + it.gapLength).join(),
+          ], reason: it.id);
           final card = cx.vocab.firstWhere((v) => v.card.id == it.cardId);
           expect(units, card.units, reason: it.id);
           expect(it.prompt, card.gloss);
@@ -522,6 +543,59 @@ void main() {
           final to = decks * (t + 1) ~/ 10;
           final n = items.where((i) => i.deck >= from && i.deck < to).length;
           expect(n, greaterThanOrEqualTo(10), reason: '$language tenth $t');
+        }
+      });
+
+      test('gap spelling leaves out one, two or three units, mostly more '
+          'than one', () {
+        final items = of('F21').toList();
+        final counts = <int, int>{};
+        for (final it in items) {
+          counts[it.gapLength] = (counts[it.gapLength] ?? 0) + 1;
+        }
+        expect(
+          counts.keys.toSet(),
+          containsAll(<int>[1, 2]),
+          reason: '$counts',
+        );
+        final multi = items.where((i) => i.gapLength > 1).length;
+        expect(multi / items.length, greaterThan(0.1), reason: '$counts');
+        // Typing the units or the whole word is right.
+        final it = items.firstWhere((i) => i.gapLength > 1);
+        expect(gradeTyped(it, it.accepted.first), AnswerOutcome.right);
+        expect(gradeTyped(it, it.answerTiles.join()), AnswerOutcome.right);
+        expect(gradeTyped(it, 'zzz'), AnswerOutcome.wrong);
+      });
+
+      test('sentence fill-in (F26) has options of one word class and one '
+          'that fits the English', () {
+        final items = ItemGenerators(cx).sentenceFill();
+        if (language == 'es') expect(items.length, greaterThan(10));
+        final classes = <String, Set<String>>{};
+        for (final v in cx.vocab) {
+          (classes[v.word.toLowerCase()] ??= <String>{}).add(v.pos);
+        }
+        for (final it in items) {
+          expect(it.options.length, 4);
+          expect(it.options.toSet().length, 4);
+          expect(it.prompt.split('___').length, 2, reason: it.id);
+          final cls = <Set<String>>[
+            for (final o in it.options) classes[o.toLowerCase()] ?? <String>{},
+          ];
+          for (final c in cls) {
+            expect(c.length, 1, reason: '${it.id}: a class is known');
+            expect(c.first, isNot('other'), reason: it.id);
+            expect(c.first, cls.first.first, reason: '${it.id}: one class');
+          }
+          // The English holds the right word's meaning and none of the
+          // others'.
+          final eng = glossWords(it.promptRoman!).toSet();
+          for (var i = 0; i < 4; i++) {
+            final fits = cx.vocab
+                .where((v) => v.word.toLowerCase() == it.options[i])
+                .any((v) => glossWords(v.gloss).any(eng.contains));
+            expect(fits, i == it.correct, reason: '${it.id} option $i');
+          }
         }
       });
 

@@ -10,9 +10,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Find my level asks the reverse too: the English is spoken and shown, and you choose, type or arrange the answer in the language (#1106).
+- Find my level asks gap spelling with two or three letters left out as well as one, for most words (#1098).
+- Find my level asks a sentence fill-in: the English sentence, the sentence with a blank, and four words of the same word class; languages without part-of-speech data are left out of it (#1099).
 
 ### Changed
 
+- Find my level asks harder questions: more typed letters and same-class sentence fill-ins in place of easy picks, with no threshold loosened (#1100).
 - **Find my level shows its result card at once, and the result is simpler.** The "See my result" pause is gone: the card shows when the check ends (with Keep going on it while a sharper answer is possible). Each skill has a level name (Beginner, Amateur, Fluent or Expert) and the part of the whole language path it covers, drawn as a bar. Refs #1097.
 
 - Find my level no longer asks "what you heard" (arrange what was said); Hear questions always ask the meaning (#1105).
