@@ -11,7 +11,7 @@ Flutter imports — protect against mistakes that pass every test.
 The sections below hold every rule with its owner quote and date. These are the
 ones that matter most; read the section before acting on one.
 
-- **Model by job:** Sonnet codes, reviews and writes skills and ADRs; Haiku builds decks, makes routine doc edits and fan-outs; Opus only when the owner asks ([Which model does what](#which-model-does-what-owner-2026-10-22)).
+- **Model by job:** Sonnet does complex coding, reviews and writes skills and ADRs; Haiku does simple, fully specified coding tasks (it never improvises: it reports issues and the architect re-specifies), builds decks, makes routine doc edits and fan-outs; Opus only when the owner asks ([Which model does what](#which-model-does-what-owner-2026-10-22)).
 - **Agent limits:** one Haiku deck builder, one Sonnet coder, and an extra Sonnet only for reviews while a review runs; at most three agents, never more than two Sonnet; the main session only orchestrates ([Which model does what](#which-model-does-what-owner-2026-10-22)).
 - **Reviews:** one Sonnet review per pull request; bug fixes only for decks and reviews ([Agents and models](#agents-and-models)).
 - **Docs straight to main:** a change to Markdown docs only is pushed to main with no PR and no CI check ([Git, PRs and CI](#git-prs-and-ci)).
@@ -58,13 +58,22 @@ itself. Pick the model by the job:
 
 | Job | Model |
 |---|---|
-| All coding, small or multi-file, and bug fixes | Sonnet |
+| Simple, straightforward coding jobs (small, isolated, fully specified tasks) | Haiku |
+| Complex coding, multi-file changes and bug fixes | Sonnet |
 | UI mockups | Sonnet |
 | Building decks | Haiku |
 | Reviews (one per PR, decks included) | Sonnet |
 | Routine doc updates, CHANGELOG lines, find-and-replace | Haiku |
 | Skills, ADRs, audits, keeping several docs consistent | Sonnet |
 | Fan-outs and large reads | Haiku |
+
+**Architect and Haiku coders** (owner, 2026-11-10: "For simple straight forward coding jobs, use haiku subagents. You are the Lead Mobile Architect. You will generate the system architecture, write the core state management, and break down UI features into small, isolated tasks for Haiku subagents to code. And ask the haiku agents to never improvise and rather report issues, which you will solve and message them with the altered params. You will break down complex problems to byte size stuff for haikus to deal with."):
+
+- The main session acts as the Lead Mobile Architect: it designs the architecture and the core state management (through Sonnet agents where the work is complex) and breaks every feature, especially UI features, into small, isolated, byte-sized tasks.
+- Simple, straightforward coding jobs go to Haiku subagents. Each Haiku task is fully specified: files to touch, exact behaviour, the expected inputs and outputs, and what not to touch.
+- Haiku agents never improvise. If anything is unclear, missing, or does not match the task, they stop and report the issue. The main session solves it and messages the Haiku agent with the altered parameters.
+- Complex problems are broken down until each piece is a byte-sized task a Haiku can do. Whatever stays complex (core state management, multi-file design, bug diagnosis) goes to Sonnet.
+- The existing limits still apply (at most three agents at once, one review per pull request, tests only in CI).
 
 At most **three agents run at the same time, and never more than two
 Sonnet** (owner, 2026-10-22; kept by 2026-11-06).
