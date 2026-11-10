@@ -2241,6 +2241,7 @@ class AppState extends ChangeNotifier {
             for (final entry in this.decks)
               if (ids.contains(entry.id)) entry,
           ];
+    final scope = request.script;
     final tags = request.tags;
     List<Card> tagged(Iterable<Card> cards) => <Card>[
       for (final card in cards)
@@ -2249,10 +2250,13 @@ class AppState extends ChangeNotifier {
     // The script decks' Recognition and Write are the Script tile's, apart
     // from the word skills' (owner, 2026-10-24).
     final split = ScriptSplit(progress.skills.scriptDecks);
-    final scope = request.script;
+    // A script not learned has no Script tile and nothing to practise (#1104).
     final cards = split.cardsFor(
       scope,
-      tagged(<Card>[for (final entry in decks) ...entry.cards]),
+      tagged(<Card>[
+        for (final entry in decks)
+          if (scope != ScriptScope.only || !leavesOut(entry)) ...entry.cards,
+      ]),
     );
 
     // A named skill is drilled even if switched off in Settings, as the

@@ -48,6 +48,10 @@ Future<AppState> twoScriptsDue({bool speaking = false}) async {
       spokenLanguages: const <String>['en'],
       learningLanguages: const <String>['hi'],
       learningChosen: true,
+      // Both scripts are learned, so neither script deck is left out (#623).
+      scriptsLearned: const <String, Set<String>>{
+        'hi': <String>{'devanagari', 'perso_arabic'},
+      },
       enabledSkills: <Skill>{
         ...Skill.values.where((s) => s.onByDefault),
         if (speaking) Skill.speaking,
@@ -122,6 +126,16 @@ void main() {
         script.length,
         reason: 'what the tile starts is what it counts',
       );
+    });
+
+    test('with script learning off there is no Script tile, and the script '
+        'decks are not practised (#1104)', () async {
+      final state = await twoScriptsDue();
+      expect(TodayNumbers.of(state).script, isNotNull);
+      state.settings.setLearnsAlphabet('hi', false);
+
+      expect(TodayNumbers.of(state).script, isNull);
+      expect(state.buildSession(const DrillRequest.script()).length, 0);
     });
 
     test('a learner with no script deck has no Script tile', () async {

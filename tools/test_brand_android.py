@@ -320,7 +320,9 @@ class ApplyTest(unittest.TestCase):
         body = k.split("private fun listenWithAudio", 1)[1]
         body = body.split("\n    }\n", 1)[0]
         self.assertIn("RecognizerIntent.EXTRA_AUDIO_SOURCE, source", body)
-        self.assertIn("EXTRA_AUDIO_SOURCE_SAMPLING_RATE", body)
+        self.assertIn("EXTRA_AUDIO_SOURCE_SAMPLING_RATE, rate", body)
+        self.assertIn("EXTRA_AUDIO_SOURCE_CHANNEL_COUNT, 1", body)
+        self.assertIn("EXTRA_AUDIO_SOURCE_ENCODING, AudioFormat.ENCODING_PCM_16BIT", body)
         self.assertIn("EXTRA_AUDIO_SOURCE_ENCODING", body)
         self.assertIn("AudioRecord", body)
         self.assertIn("ParcelFileDescriptor.createPipe()", body)
