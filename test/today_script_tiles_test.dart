@@ -48,6 +48,10 @@ Future<AppState> twoScriptsDue({bool speaking = false}) async {
       spokenLanguages: const <String>['en'],
       learningLanguages: const <String>['hi'],
       learningChosen: true,
+      // Both scripts are learned, so neither script deck is left out (#623).
+      scriptsLearned: const <String, Set<String>>{
+        'hi': <String>{'devanagari', 'perso_arabic'},
+      },
       enabledSkills: <Skill>{
         ...Skill.values.where((s) => s.onByDefault),
         if (speaking) Skill.speaking,
