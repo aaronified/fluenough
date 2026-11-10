@@ -309,23 +309,6 @@ void main() {
       expect(popped, <Object?>[true]);
     });
 
-    testWidgets('the soft stop offers the result or more questions', (
-      tester,
-    ) async {
-      final stops = <String>[];
-      usePhone(tester, textScale: 1.4);
-      await pumpScreen(
-        tester,
-        V3SoftStop(
-          onKeepGoing: () => stops.add('keep'),
-          onStop: () => stops.add('stop'),
-        ),
-      );
-      await _tap(tester, _key('find-level-keep-going'));
-      await _tap(tester, _key('find-level-see-result'));
-      expect(stops, <String>['keep', 'stop']);
-    });
-
     testWidgets('a run at its soft stop pauses before the next question', (
       tester,
     ) async {
@@ -336,7 +319,8 @@ void main() {
       }
       if (!run.atCheckpoint) return; // the small bank ended first
       await _open(tester, () => _page(run), <Object?>[]);
-      expect(_key('find-level-see-result'), findsOneWidget);
+      // The result card shows at once, with Keep going on it.
+      expect(_key('find-level-result-read'), findsOneWidget);
       await _tap(tester, _key('find-level-keep-going'));
       expect(run.atCheckpoint, isFalse);
     });
@@ -344,6 +328,27 @@ void main() {
 
   group('the result', () {
     final levels = PlacementLevels(30, maxParts: 20);
+    test('a placed skill has a level name and a percent range of the path', () {
+      const read = V3SkillResult(
+        skill: PlacementSkill.read,
+        status: V3Status.placed,
+        startUnit: 14,
+        lowUnit: 11,
+        highUnit: 17,
+        startClass: 9,
+        rangeShown: true,
+      );
+      final range = read.percentRange(30);
+      expect((range.low, range.high), (37, 57));
+      expect(range.level, V3LevelName.fluent);
+      expect(v3LevelNameOf(0), V3LevelName.beginner);
+      expect(v3LevelNameOf(19.9), V3LevelName.beginner);
+      expect(v3LevelNameOf(20), V3LevelName.amateur);
+      expect(v3LevelNameOf(45), V3LevelName.fluent);
+      expect(v3LevelNameOf(75), V3LevelName.expert);
+      expect(v3LevelNameOf(100), V3LevelName.expert);
+    });
+
     V3Result result({List<V3SkillResult>? skills, ScriptGateResult? script}) =>
         V3Result(
           skills:
@@ -382,7 +387,7 @@ void main() {
       ('light at 1x', ThemeMode.light, 1.0),
       ('dark at 1.4x', ThemeMode.dark, 1.4),
     ]) {
-      testWidgets('says the unit, the range and the confidence word, $label', (
+      testWidgets('says the level name and the percent of the path, $label', (
         tester,
       ) async {
         final semantics = tester.ensureSemantics();
@@ -394,19 +399,12 @@ void main() {
           textScale: scale,
           themeMode: mode,
         );
-        await tester.scrollUntilVisible(
-          find.text('Hear: not tested (no sound on this phone)'),
-          200,
-          scrollable: find.byType(Scrollable).first,
-        );
-        await tester.scrollUntilVisible(
-          find.text('Read: start at unit 14'),
-          -200,
-          scrollable: find.byType(Scrollable).first,
-        );
-        expect(find.text('Read: start at unit 14'), findsOneWidget);
-        expect(find.text('Likely between unit 11 and unit 17'), findsOneWidget);
-        expect(find.text('Fairly sure'), findsOneWidget);
+        expect(find.text('Read'), findsOneWidget);
+        expect(find.text('Fluent'), findsOneWidget);
+        expect(find.text('37% to 57% of the path'), findsOneWidget);
+        // No deck range and no confidence wording.
+        expect(find.textContaining('Likely between'), findsNothing);
+        expect(find.text('Fairly sure'), findsNothing);
         expect(
           find.text('Say: self-rated, not placed', skipOffstage: false),
           findsOneWidget,
@@ -418,12 +416,10 @@ void main() {
           ),
           findsOneWidget,
         );
-        // Never a percentage of "none" or Verified.
         expect(find.textContaining('Verified'), findsNothing);
         final label = tester.getSemantics(_key('find-level-result-read')).label;
-        expect(label, contains('Read: start at unit 14'));
-        expect(label, contains('Likely between unit 11 and unit 17'));
-        expect(label, contains('Fairly sure'));
+        expect(label, contains('Fluent'));
+        expect(label, contains('37% to 57% of the path'));
         semantics.dispose();
       });
     }

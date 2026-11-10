@@ -63,6 +63,44 @@ class V3SkillResult {
   final bool rangeShown;
 
   bool get placed => status == V3Status.placed;
+
+  /// The 80% range as percents of a path of [totalUnits] units; the start
+  /// alone when the range may not be shown.
+  V3PercentRange percentRange(int totalUnits) {
+    int pct(int unit) =>
+        totalUnits <= 0 ? 0 : (unit * 100 / totalUnits).round().clamp(0, 100);
+    return rangeShown
+        ? V3PercentRange(pct(lowUnit), pct(highUnit))
+        : V3PercentRange(pct(startUnit), pct(startUnit));
+  }
+}
+
+/// The level names of a placed skill, by how much of the whole language path
+/// it covers (wiki/Plan-Placement-V3.md, "The result card").
+enum V3LevelName { beginner, amateur, fluent, expert }
+
+/// Where each level name begins, in percent of the path: Amateur from 20,
+/// Fluent from 45, Expert from 75.
+const List<int> v3LevelCutoffs = <int>[20, 45, 75];
+
+/// The level name of a skill whose range is [percent] of the path (its middle).
+V3LevelName v3LevelNameOf(double percent) {
+  var i = 0;
+  for (final cut in v3LevelCutoffs) {
+    if (percent >= cut) i++;
+  }
+  return V3LevelName.values[i];
+}
+
+/// A placed skill's range as whole percents of the path ([low] to [high]).
+class V3PercentRange {
+  const V3PercentRange(this.low, this.high);
+
+  final int low;
+  final int high;
+
+  /// The level name, from the middle of the range.
+  V3LevelName get level => v3LevelNameOf((low + high) / 2);
 }
 
 /// A whole run's result.
@@ -98,6 +136,9 @@ class V3Result {
   }
 
   /// Whether Read and Write were left out because the script cannot be read.
+  /// How many units the whole path has (the last level's unit).
+  int get totalUnits => levels.levelOf(levels.topClass) + 1;
+
   bool get needsScript => skills.any((s) => s.status == V3Status.needsScript);
 
   /// What the placement write reads: [assurancesFromJoint] with the skills

@@ -14409,10 +14409,6 @@
   "@findLevelLabelVerified": {
     "description": "Find my level: a skill an earlier version marked Verified. The mark is not kept as a claim: the check before V3 stopped at 95% on thin evidence, so it is shown as an earlier check until the skill is checked again."
   },
-  "findLevelNoteNotSureYet": "Not enough evidence yet, so this is the lowest place your answers support. Keep going to sharpen it, or find your level again later.",
-  "@findLevelNoteNotSureYet": {
-    "description": "Find my level: said under a skill the check is not yet sure of (under 50%). Calm, never a fail."
-  },
   "findLevelSheetLabel": "{skill}: {label}",
   "@findLevelSheetLabel": {
     "description": "Languages sheet: one skill and how sure its last level check was, under its row.",
@@ -14711,85 +14707,41 @@
   "@findLevelNo": {
     "description": "V3 yes/no: no."
   },
-  "findLevelSoftStopTitle": "Enough for a first answer",
-  "@findLevelSoftStopTitle": {
-    "description": "V3 run: the heading of the pause at about 22 questions."
+  "findLevelLevelBeginner": "Beginner",
+  "@findLevelLevelBeginner": {
+    "description": "Result card: the level name of a skill that covers under 20% of the path."
   },
-  "findLevelSoftStopBody": "You can see where you start now, or keep going for a sharper answer. The check never takes more than five minutes.",
-  "@findLevelSoftStopBody": {
-    "description": "V3 run: what the learner is asked to choose at the pause."
+  "findLevelLevelAmateur": "Amateur",
+  "@findLevelLevelAmateur": {
+    "description": "Result card: the level name from 20% of the path."
   },
-  "findLevelSeeResult": "See my result",
-  "@findLevelSeeResult": {
-    "description": "V3 run, the pause: ends the check."
+  "findLevelLevelFluent": "Fluent",
+  "@findLevelLevelFluent": {
+    "description": "Result card: the level name from 45% of the path."
+  },
+  "findLevelLevelExpert": "Expert",
+  "@findLevelLevelExpert": {
+    "description": "Result card: the level name from 75% of the path."
+  },
+  "findLevelPercentRange": "{low}% to {high}% of the path",
+  "@findLevelPercentRange": {
+    "description": "Result card: the range of the whole language path a skill covers, drawn as a bar.",
+    "placeholders": {
+      "low": {"type": "int", "example": "30"},
+      "high": {"type": "int", "example": "45"}
+    }
+  },
+  "findLevelPercentOne": "{percent}% of the path",
+  "@findLevelPercentOne": {
+    "description": "Result card: a skill whose range is one point.",
+    "placeholders": {
+      "percent": {"type": "int", "example": "30"}
+    }
   },
   "findLevelResultTitle": "Where you start",
   "@findLevelResultTitle": {
     "description": "V3 result: heading."
   },
-  "findLevelResultIntro": "Each line is where we would start you, with the range we are 80% sure of. Starting a little low costs you a few easy lessons; starting too high would cost you more.",
-  "@findLevelResultIntro": {
-    "description": "V3 result: intro."
-  },
-  "findLevelResultStart": "{skill}: start at unit {unit}",
-  "@findLevelResultStart": {
-    "description": "V3 result: a placed skill.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Read"
-      },
-      "unit": {
-        "type": "int",
-        "example": "14"
-      }
-    }
-  },
-  "findLevelResultStartBeginning": "{skill}: start from the beginning",
-  "@findLevelResultStartBeginning": {
-    "description": "V3 result: a skill placed at the beginning.",
-    "placeholders": {
-      "skill": {
-        "type": "String",
-        "example": "Read"
-      }
-    }
-  },
-  "findLevelResultRange": "Likely between unit {low} and unit {high}",
-  "@findLevelResultRange": {
-    "description": "V3 result: the 80% range.",
-    "placeholders": {
-      "low": {
-        "type": "int",
-        "example": "11"
-      },
-      "high": {
-        "type": "int",
-        "example": "17"
-      }
-    }
-  },
-  "findLevelResultRangeOne": "Likely unit {unit}",
-  "@findLevelResultRangeOne": {
-    "description": "V3 result: a range of one unit.",
-    "placeholders": {
-      "unit": {
-        "type": "int",
-        "example": "3"
-      }
-    }
-  },
-  "findLevelResultRangeBeginning": "Likely from the beginning to unit {high}",
-  "@findLevelResultRangeBeginning": {
-    "description": "V3 result: a range that starts at the beginning.",
-    "placeholders": {
-      "high": {
-        "type": "int",
-        "example": "5"
-      }
-    }
-  },
-
   "findLevelResultSelfRated": "{skill}: self-rated, not placed",
   "@findLevelResultSelfRated": {
     "description": "V3 result: Say without a recogniser.",

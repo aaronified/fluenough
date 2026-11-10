@@ -110,6 +110,21 @@ Then: for each implicated skill (those in R whose marginal puts the failure ther
 - Script: separate gate (letters), as V2 (EVIDENCE for separability: Milton et al.: orthographic vocab and aural vocab correlate .22 to .68 across sources, secondary; heritage learners' listening and writing barely correlate, Zyzik/Avant, research 2 row 51, snippet; INFERENCE for the exact gate). A learner who knows the script but not the words passes the gate and gets p_Read at 'none' honestly. An ear-only/heritage learner gets high p_Hear, p_Say and low p_Read, p_Write, through the mixture prior's independent component.
 - Vocabulary-only tests top out at low-intermediate (Lam, research 3: snippet; Harrington & Carey 2009 also), so F5/F6/F8/F16 (sentence-level) are deliberately in the Phase 1 rotation, not only words.
 
+## The result card (owner, 2026-11-09, #1097)
+
+The "See my result" pause is gone: the result card shows when the run ends, and at the soft stop (about 22 questions) it carries **Keep going** for a sharper answer; Done ends the run with what it holds. Check again and "I do read it" sit on the card too, when Read and Write wait for the script. Per skill the card shows only a **level name** and the **range of the whole language path** the run is 80% sure of, drawn as a bar (the span of the interval; a point shows as a small mark): no deck-range text and no confidence wording. The progress star and level widgets keep their placed layer and mark.
+
+The path is the whole language path (its units, `V3Result.totalUnits`); the range is the interval's low and high unit as a whole percent of it. The level name comes from the middle of the range:
+
+| Level | Middle of the range |
+|---|---|
+| Beginner | under 20% |
+| Amateur | 20% to under 45% |
+| Fluent | 45% to under 75% |
+| Expert | 75% and over |
+
+The cut-offs are `v3LevelCutoffs` in `lib/core/placement/v3_result.dart`. The (e) section below is the earlier design.
+
 ## (e) Result screen
 
 Per skill (Read, Hear, Say, Write, and Script where it exists) one row:
