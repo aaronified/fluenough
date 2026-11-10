@@ -536,6 +536,11 @@ void main() {
 
   group('calibration', () {
     test('a cognate is unusable in a word format, a clean word is not', () {
+      const twin = GuessCalibration(<String, double>{}, scale: {'F7': 1.25});
+      expect(
+        twin.guessFor('F23', false, 0.15),
+        twin.guessFor('F7', false, 0.15),
+      );
       const cal = GuessCalibration.seed;
       expect(cal.usable('F2', true, 0.25), isFalse);
       expect(cal.usable('F2', false, 0.25), isTrue);

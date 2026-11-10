@@ -540,7 +540,7 @@ class V3Run {
               profile.f4DecoyKey && item.format == 'F4' && item.decoyCount > 0
               ? 'F4decoys'
               : null,
-          slipScale: profile.slipScale[item.format] ?? 1,
+          slipScale: profile.slipScale[baseFormat(item.format)] ?? 1,
         ),
         outcome,
       );

@@ -86,6 +86,14 @@ void main() {
         isNull,
       );
     });
+
+    test('a bank of the old schema, or an item of a removed format, is out', () {
+      expect(decodeItems('{"schema": 3, "items": []}'), isNull);
+      const gone =
+          '{"id": "c1:F16", "f": "F16", "c": "c1", "d": 1, "p": "x"}';
+      final text = '{"schema": $kItemSchema, "items": [$gone]}';
+      expect(decodeItems(text), isEmpty);
+    });
   });
 
   group('the banks of an app', () {

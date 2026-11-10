@@ -342,7 +342,7 @@ class GuessCalibration {
     final bound =
         upperBounds['${key ?? baseFormat(format)}:${cognate ? 'cognate' : 'clean'}'];
     final g = bound == null ? base : math.max(base, bound);
-    final m = scale[format];
+    final m = scale[baseFormat(format)];
     return m == null ? g : math.min(0.99, g * m);
   }
 
