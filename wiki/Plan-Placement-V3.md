@@ -68,7 +68,7 @@ Generated from decks: word cards (unit order, frequency rank), sentence decks wi
 | F13 | Heard word, pick meaning (4) | Hear | TTS | .25 / .05 | poor TTS | word card |
 | F14 | Heard yes/no: real word vs pseudoword | Hear recognition | TTS | like F1 | | pseudoword spoken by TTS: skip if TTS cannot say it |
 | F15 | Minimal pair: which of two was said | Hear | TTS | .50 / .05 | weak per item | sounds file, only where present |
-| F16 | Dictation: hear a sentence, build it with tiles | Hear, Write | TTS | .05 / .10 | | sentence deck |
+| F16 | Removed (#1105): dictation, hear a sentence and build it, asks what was said, not the meaning | | | | | |
 | F17 | Heard sentence, pick meaning | Hear | TTS | .25 / .10 | | sentence deck |
 | F18 | Say: shown the meaning, say the word. **With a recogniser**: scored. **Without**: record, play back the model audio, self-rate "same / close / no" | Say | mic | recogniser .03 / .15; self-rated: g .30 / s .10, and counted as at most half an item | self-rating is generous | word card |
 | F19 | Say-then-check: say it aloud (not scored), then pick which of 3 audios was what you meant to say | Say (recognition of own target) | TTS | .33 | | word card |
@@ -496,3 +496,10 @@ Widening a range means running the edge suites at the new edge first; the time g
 ## Release-ready pending list
 
 Three gates stay pending: `experts-natives-within-a-tenth`, `honest-confidence` and `ear-only-placed-high-on-hear`. They need a re-fit on real learners' exports, and none exists. The **safe fallback** is the one shipped: with no fitted profile every run uses the default, which places low and never high (no honest learner is placed more than 2/10 above the truth; experts and natives are within 1/10 in 68 to 70% of runs flat, 84% advanced, 18 to 20% under an amateur declaration; the ranges are too wide for most and too narrow for ear-only and natives under an amateur declaration). A learner placed too low can change any start. The pending-gates test fails the day a fitted profile ships in the asset, so the gates cannot be forgotten.
+
+## Meaning only, and the reverse direction (#1105, #1106; owner, 2026-11-10)
+
+- **No "what you heard".** F16 (dictation) is removed from the registry, generators, picker, bank and audit. Hear and Say items always ask the meaning: F13 and F17 (hear the language, give the meaning), F18 (say it from the English).
+- **Reverse formats.** The English meaning is spoken by the phone's English voice (always available, so no `needsAudio`) and shown, and the learner answers in the language: F22 picks the written word (items of F3), F23 types it (F7), F24 builds a sentence from tiles (F8), F25 types the unit left out of a word (F21). They are the same items as the formats they reverse, so the audit, the calibration (`baseFormat`) and the grading are those of the base format. A card is never asked in both (shared conflict keys).
+- **Skills credited.** Spoken English is not Hear of the language, so none credits Hear: F22 Read; F23 and F25 Write; F24 Write and Read (as F8).
+- **Reviews.** Not in this change: the review shell has no spoken-English prompt on its choice, typing and tile formats yet; follow-up under #1096.

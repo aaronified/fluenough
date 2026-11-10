@@ -2,6 +2,7 @@ import 'dart:math' as math;
 import 'dart:typed_data';
 
 import 'assurance_model.dart';
+import 'item_registry.dart';
 import 'placement_questions.dart';
 
 // The joint measurement model of "Find my level" V3
@@ -325,7 +326,6 @@ class GuessCalibration {
     'F13:clean': 0.35,
     'F13:cognate': 0.85,
     'F15:clean': 0.70,
-    'F16:clean': 0.09,
     'F17:clean': 0.35,
     'F17:cognate': 0.90,
     'F6:cognate': 0.90,
@@ -340,9 +340,9 @@ class GuessCalibration {
   /// [base]: the base, raised to the measured bound, never lowered.
   double guessFor(String format, bool cognate, double base, {String? key}) {
     final bound =
-        upperBounds['${key ?? format}:${cognate ? 'cognate' : 'clean'}'];
+        upperBounds['${key ?? baseFormat(format)}:${cognate ? 'cognate' : 'clean'}'];
     final g = bound == null ? base : math.max(base, bound);
-    final m = scale[format];
+    final m = scale[baseFormat(format)];
     return m == null ? g : math.min(0.99, g * m);
   }
 

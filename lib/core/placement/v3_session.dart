@@ -540,7 +540,7 @@ class V3Run {
               profile.f4DecoyKey && item.format == 'F4' && item.decoyCount > 0
               ? 'F4decoys'
               : null,
-          slipScale: profile.slipScale[item.format] ?? 1,
+          slipScale: profile.slipScale[baseFormat(item.format)] ?? 1,
         ),
         outcome,
       );
@@ -645,7 +645,9 @@ class V3Run {
   /// The screen's view of a bank [item]. A self-rated Say is asked as
   /// [V3Mode.rateSay].
   static V3Question questionOf(RegItem item, {bool selfRated = false}) {
-    switch (item.format) {
+    // A reverse format (English spoken) is drawn as the format it reverses;
+    // the screen speaks the English it shows.
+    switch (baseFormat(item.format)) {
       case 'F2':
         return V3Question(
           id: item.id,
@@ -710,17 +712,6 @@ class V3Run {
           format: item.format,
           mode: V3Mode.tiles,
           shown: item.prompt,
-          tiles: item.tiles,
-          leadingMark: item.leadingMark,
-          trailingMark: item.trailingMark,
-          item: item,
-        );
-      case 'F16':
-        return V3Question(
-          id: item.id,
-          format: item.format,
-          mode: V3Mode.tiles,
-          audio: item.prompt,
           tiles: item.tiles,
           leadingMark: item.leadingMark,
           trailingMark: item.trailingMark,

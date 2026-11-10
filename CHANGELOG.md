@@ -7,9 +7,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Find my level asks the reverse too: the English is spoken and shown, and you choose, type or arrange the answer in the language (#1106).
+
 ### Changed
 
 - **Find my level shows its result card at once, and the result is simpler.** The "See my result" pause is gone: the card shows when the check ends (with Keep going on it while a sharper answer is possible). Each skill has a level name (Beginner, Amateur, Fluent or Expert) and the part of the whole language path it covers, drawn as a bar. Refs #1097.
+
+- Find my level no longer asks "what you heard" (arrange what was said); Hear questions always ask the meaning (#1105).
+
+### Fixed
+
+- Today no longer shows a Script tile, or counts and practises script decks, for a language whose script learning is switched off (#1104).
+- **Say no longer answers "no match" to every attempt (0.9.4 regression).** Since 0.9.4 Say fed the speech recogniser the app's own microphone stream, and on some phones (Telugu, Android) the recogniser answered no match to that stream every time, and the app showed it as final. A no match, or any other failure, of that listen is no longer final: the same attempt listens again the plain way, as in 0.9.3, and that result is the one you see. Fixes #1107.
 
 ## [0.9.4] - 2026-11-08
 

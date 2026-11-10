@@ -506,7 +506,8 @@ itself. Pick the model by the job:
 
 | Job | Model |
 |---|---|
-| All coding, small or multi-file, and bug fixes | Sonnet |
+| Simple, straightforward coding jobs (small, isolated, fully specified tasks) | Haiku |
+| Complex coding, multi-file changes and bug fixes | Sonnet |
 | UI mockups | Sonnet |
 | Building decks | Haiku |
 | Reviews (one per PR, decks included) | Sonnet |

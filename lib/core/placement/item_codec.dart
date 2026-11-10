@@ -9,7 +9,7 @@ import 'item_registry.dart';
 // built again.
 
 /// The version of the stored form. Part of a stored bank's key.
-const int kItemSchema = 3;
+const int kItemSchema = 4;
 
 /// [items] as one JSON text.
 String encodeItems(List<RegItem> items) => jsonEncode(<String, Object?>{
@@ -26,7 +26,9 @@ List<RegItem>? decodeItems(String text) {
     final items = json['items'];
     if (items is! List) return null;
     return List<RegItem>.unmodifiable(<RegItem>[
-      for (final i in items) _decode(i as Map<String, dynamic>),
+      for (final i in items)
+        if (kFormatInventory.any((f) => f.code == (i as Map)['f']))
+          _decode(i as Map<String, dynamic>),
     ]);
   } on Object {
     return null;

@@ -192,7 +192,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     final sample = <RegItem>[
       for (var i = 0; i < all.length; i += stride) all[i],
     ];
-    final fmt = sample.first.format;
+    final fmt = baseFormat(sample.first.format);
     final info = sample.first.info;
     final solvers = <String, double>{};
     var trials = sample.length;
@@ -500,7 +500,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
         solvers[r.$2] = r.$1;
         aucN1 = r.$3;
         aucN2 = r.$4;
-      case 'F8' || 'F16':
+      case 'F8':
         var total = 0.0;
         for (final it in sample) {
           total += _sentenceTiles(it, wordGrams2, suffixGrams2);
@@ -567,7 +567,7 @@ double _bound(String fmt, FormatInfo info) {
       return 0.57;
     case 'F4':
       return 0.10 + 0.07;
-    case 'F8' || 'F16':
+    case 'F8':
       return 0.05 + 0.07;
     default:
       return info.admissionBound;

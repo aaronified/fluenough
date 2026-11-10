@@ -23,7 +23,6 @@
     "F1": 1319,
     "F14": 1319,
     "F8": 429,
-    "F16": 429,
     "S2": 194,
     "F5": 216,
     "F17": 216,
@@ -60,28 +59,6 @@
      "solver": "letter-patterns",
      "solvers": {
       "letter-patterns": 0.5682
-     },
-     "passes": true
-    },
-    "F16:clean": {
-     "n": 342,
-     "accuracy": 0.0229,
-     "upper": 0.0404,
-     "bound": 0.12,
-     "solver": "order-beam-solver",
-     "solvers": {
-      "order-beam-solver": 0.0229
-     },
-     "passes": true
-    },
-    "F16:cognate": {
-     "n": 87,
-     "accuracy": 0.023,
-     "upper": 0.0671,
-     "bound": 0.12,
-     "solver": "order-beam-solver",
-     "solvers": {
-      "order-beam-solver": 0.023
      },
      "passes": true
     },
@@ -454,7 +431,6 @@
     "F21": 238,
     "F18": 1521,
     "F8": 202,
-    "F16": 202,
     "F5": 125,
     "F17": 125,
     "F9": 190,
@@ -492,28 +468,6 @@
       "letter-patterns": 0.6021
      },
      "passes": false
-    },
-    "F16:clean": {
-     "n": 164,
-     "accuracy": 0.0243,
-     "upper": 0.053,
-     "bound": 0.12,
-     "solver": "order-beam-solver",
-     "solvers": {
-      "order-beam-solver": 0.0243
-     },
-     "passes": true
-    },
-    "F16:cognate": {
-     "n": 38,
-     "accuracy": 0.0161,
-     "upper": 0.0939,
-     "bound": 0.12,
-     "solver": "order-beam-solver",
-     "solvers": {
-      "order-beam-solver": 0.0161
-     },
-     "passes": true
     },
     "F17:clean": {
      "n": 125,

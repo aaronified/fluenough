@@ -21,6 +21,8 @@ import 'package:fluenough/core/placement/item_solvers.dart';
 import 'package:fluenough/core/placement/placement_questions.dart'
     show PlacementSkill;
 import 'package:fluenough/core/placement/unit_model.dart';
+import 'package:fluenough/core/placement/v3_grading.dart';
+import 'package:fluenough/core/placement/v3_session.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -50,7 +52,7 @@ void main() {
         }
       }
       // Audio and a microphone are what the plan says.
-      for (final code in <String>['F13', 'F14', 'F15', 'F16', 'F17']) {
+      for (final code in <String>['F13', 'F14', 'F15', 'F17']) {
         expect(formatInfo(code).needsAudio, isTrue, reason: code);
         expect(formatInfo(code).needsMic, isFalse, reason: code);
       }
@@ -165,9 +167,12 @@ void main() {
           'F8',
           'F9',
           'F13',
-          'F16',
           'F17',
           'F18',
+          'F22',
+          'F23',
+          'F24',
+          'F25',
           'F21',
         ]) {
           expect(counts[code] ?? 0, greaterThan(20), reason: '$language $code');
@@ -191,11 +196,41 @@ void main() {
           <String>['F4', 'F7', 'F8'].where(has).length,
           greaterThanOrEqualTo(3),
         );
-        expect(<String>['F13', 'F16'].where(has).length, 2);
+        expect(<String>['F13', 'F17'].where(has).length, 2);
         expect(has('F18'), isTrue);
         // Word order passes the held-out solvers in Spanish only (Hindi has
         // 139 usable sentences, too few once they are balanced).
         expect(has('S2'), language == 'es');
+      });
+
+      test('has no heard transcription, and reverse formats', () {
+        expect(kFormatInventory.any((f) => f.code == 'F16'), isFalse);
+        expect(of('F16'), isEmpty);
+        // Tiles: the English is spoken (and shown), the answer is the sentence.
+        final tiles = of('F24').first;
+        final q = V3Session.questionOf(tiles);
+        expect(q.mode, V3Mode.tiles);
+        expect(q.audio, isNull);
+        expect(q.shown, tiles.prompt);
+        expect(isSpokenEnglish(q.format), isTrue);
+        final placed = <int>[];
+        for (final a in tiles.answerTiles) {
+          placed.add(
+            List<int>.generate(tiles.tiles.length, (i) => i).firstWhere(
+              (i) => tiles.tiles[i] == a && !placed.contains(i),
+            ),
+          );
+        }
+        expect(gradeTiles(tiles, placed), AnswerOutcome.right);
+        expect(gradeTiles(tiles, placed.sublist(1)), AnswerOutcome.wrong);
+        // Typed word and a pick grade as the formats they reverse.
+        final typed = of('F23').first;
+        expect(gradeTyped(typed, typed.accepted.first), AnswerOutcome.right);
+        expect(gradeTyped(typed, 'qqqq'), AnswerOutcome.wrong);
+        final pick = of('F22').first;
+        expect(V3Session.questionOf(pick).optionsAreTarget, isTrue);
+        expect(pick.options, hasLength(4));
+        expect(pick.info.skills, <PlacementSkill>{PlacementSkill.read});
       });
 
       test('keeps near-cognates out of every word-level format', () {

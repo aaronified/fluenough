@@ -1072,8 +1072,7 @@ class ItemGenerators {
     return out;
   }
 
-  /// Sentence tiles: English to a built sentence (F8), a heard sentence built
-  /// (F16). Two decoy tokens from other sentences near it; the end marks stay
+  /// Sentence tiles: English to a built sentence (F8). Two decoy tokens from other sentences near it; the end marks stay
   /// where they are.
   List<RegItem> sentenceTiles(String format) {
     final r = cx.stream('stiles:$format');
@@ -1102,7 +1101,7 @@ class ItemGenerators {
           format: format,
           cardId: s.card.id,
           deck: s.deck,
-          prompt: format == 'F8' ? s.english : s.text,
+          prompt: s.english,
           tiles: _shuffle(r, <String>[...lower, ...decoys.take(2)]),
           answerTiles: lower,
           alternatives: alternativeOrders(

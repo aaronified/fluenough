@@ -71,7 +71,10 @@ const Set<String> kScreenFormats = <String>{
   'F8',
   'F13',
   'F14',
-  'F16',
+  'F22',
+  'F23',
+  'F24',
+  'F25',
   'F17',
   'F18',
   'F21',
@@ -162,8 +165,8 @@ class PickerCandidate {
       format: item.format,
       deck: item.deck,
       skills: info.skills,
-      seconds: info.seconds * (profile.secondsScale[item.format] ?? 1),
-      slip: info.slip * (profile.slipScale[item.format] ?? 1),
+      seconds: info.seconds * (profile.secondsScale[baseFormat(item.format)] ?? 1),
+      slip: info.slip * (profile.slipScale[baseFormat(item.format)] ?? 1),
       guess: guess,
       conflictKeys: item.conflictKeys,
       clean: !cognate && guess <= kCleanGuessMax,
@@ -359,8 +362,7 @@ class PickerConfig {
   /// stands apart from the others, an ear-only learner).
   final int standApartItems;
 
-  /// How many mixed items (an item of two skills: tiles of Read and Write,
-  /// dictation of Hear and Write) open the run, at the middle of the
+  /// How many mixed items (an item of two skills: tiles of Read and Write) open the run, at the middle of the
   /// posterior: cheap per skill, and the drill-down tells apart a miss.
   final int mixedOpening;
 

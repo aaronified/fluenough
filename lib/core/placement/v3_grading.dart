@@ -79,7 +79,7 @@ bool matchesAccepted(String typed, Iterable<String> accepted) {
 /// The outcome of a typed answer to an F7 item (the word) or an F21 item (the
 /// unit left out of it; the whole word typed is right as well).
 AnswerOutcome gradeTyped(RegItem item, String typed) {
-  if (item.format == 'F21') {
+  if (baseFormat(item.format) == 'F21') {
     if (matchesAccepted(typed, item.accepted)) return AnswerOutcome.right;
     // The whole word typed.
     final whole = item.answerTiles.join();
