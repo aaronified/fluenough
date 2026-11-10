@@ -135,10 +135,10 @@ class V3Result {
     return null;
   }
 
-  /// Whether Read and Write were left out because the script cannot be read.
   /// How many units the whole path has (the last level's unit).
   int get totalUnits => levels.levelOf(levels.topClass) + 1;
 
+  /// Whether Read and Write were left out because the script cannot be read.
   bool get needsScript => skills.any((s) => s.status == V3Status.needsScript);
 
   /// What the placement write reads: [assurancesFromJoint] with the skills
