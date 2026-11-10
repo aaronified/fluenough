@@ -347,7 +347,15 @@ void main() {
         lv = b.levels;
       });
 
-      for (final weak in _all) {
+      // A drill-down starts from a mixed item (two skills). Hear has none
+      // since dictation went (#1105): Hear is only ever asked alone.
+      for (final weak in _all.where(
+        (s) => kAdmittedFormats.any(
+          (f) =>
+              kFormats[f]!.skills.length >= 2 &&
+              kFormats[f]!.skills.contains(s),
+        ),
+      )) {
         for (final strong in <double>[7, 9]) {
           test('names $weak within 4 isolating items in at least 90% of the '
               'runs it started in (others at $strong tenths)', () {

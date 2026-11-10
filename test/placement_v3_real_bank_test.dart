@@ -9,7 +9,8 @@ library;
 import 'package:fluenough/core/placement/admission.dart';
 import 'package:fluenough/core/placement/item_bank.dart';
 import 'package:fluenough/core/placement/item_codec.dart';
-import 'package:fluenough/core/placement/item_registry.dart' show RegItem;
+import 'package:fluenough/core/placement/item_registry.dart'
+    show RegItem, baseFormat;
 import 'package:fluenough/core/placement/placement_data.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
 import 'package:fluenough/core/placement/v3_picker.dart'
@@ -343,7 +344,7 @@ void main() {
           final admitted = <String>{
             for (final i in bank.items)
               if (i.info.skills.contains(skill) &&
-                  !_notAsked.containsKey(i.format))
+                  !_notAsked.containsKey(baseFormat(i.format)))
                 i.format,
           };
           expect(admitted, isNotEmpty, reason: '$language $skill');
@@ -359,9 +360,11 @@ void main() {
         final missing = admitted
             .where(
               (f) =>
-                  !asked.contains(f) &&
-                  !_notAsked.containsKey(f) &&
-                  !here.containsKey(f),
+                  // A reverse format is its base's items asked with sound:
+                  // either stands for the other.
+                  !asked.any((a) => baseFormat(a) == baseFormat(f)) &&
+                  !_notAsked.containsKey(baseFormat(f)) &&
+                  !here.containsKey(baseFormat(f)),
             )
             .toList();
         expect(
