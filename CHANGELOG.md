@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 
 - Today no longer shows a Script tile, or counts and practises script decks, for a language whose script learning is switched off (#1104).
+- **Say no longer answers "no match" to every attempt (0.9.4 regression).** Since 0.9.4 Say fed the speech recogniser the app's own microphone stream, and on some phones (Telugu, Android) the recogniser answered no match to that stream every time, and the app showed it as final. A no match, or any other failure, of that listen is no longer final: the same attempt listens again the plain way, as in 0.9.3, and that result is the one you see. Fixes #1107.
 
 ## [0.9.4] - 2026-11-08
 
