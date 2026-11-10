@@ -74,6 +74,7 @@ itself. Pick the model by the job:
 - Haiku agents never improvise. If anything is unclear, missing, or does not match the task, they stop and report the issue. The main session solves it and messages the Haiku agent with the altered parameters.
 - Complex problems are broken down until each piece is a byte-sized task a Haiku can do. Whatever stays complex (core state management, multi-file design, bug diagnosis) goes to Sonnet.
 - The existing limits still apply (at most three agents at once, one review per pull request, tests only in CI).
+- **Haiku code is guarded and logged** (owner, 2026-11-10: "All haiku codes must be in try catch type loops and report to app logs for all issues."): every piece of code a Haiku agent writes wraps its work in try/catch (or the language's equivalent error guard, including around loops over items so one failure does not stop the rest) and reports every caught issue to the app log (the app's existing logger, never a silent catch and never only a print). A guarded failure is also reported back to the main session in the agent's report, never swallowed. Haiku does not invent a new logger: if the call to use is unclear, it stops and reports.
 
 At most **three agents run at the same time, and never more than two
 Sonnet** (owner, 2026-10-22; kept by 2026-11-06).
