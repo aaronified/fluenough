@@ -208,7 +208,7 @@ void main() {
         expect(of('F16'), isEmpty);
         // Tiles: the English is spoken (and shown), the answer is the sentence.
         final tiles = of('F24').first;
-        final q = V3Session.questionOf(tiles);
+        final q = V3Run.questionOf(tiles);
         expect(q.mode, V3Mode.tiles);
         expect(q.audio, isNull);
         expect(q.shown, tiles.prompt);
@@ -228,7 +228,7 @@ void main() {
         expect(gradeTyped(typed, typed.accepted.first), AnswerOutcome.right);
         expect(gradeTyped(typed, 'qqqq'), AnswerOutcome.wrong);
         final pick = of('F22').first;
-        expect(V3Session.questionOf(pick).optionsAreTarget, isTrue);
+        expect(V3Run.questionOf(pick).optionsAreTarget, isTrue);
         expect(pick.options, hasLength(4));
         expect(pick.info.skills, <PlacementSkill>{PlacementSkill.read});
       });
