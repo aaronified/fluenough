@@ -16,6 +16,7 @@ import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:fluenough/core/placement/assurance_model.dart';
+import 'package:fluenough/core/placement/item_registry.dart' show baseFormat;
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_profile.dart';
 import 'package:fluenough/core/placement/placement_questions.dart';
@@ -219,6 +220,7 @@ class LeakLanguage {
 
   /// The gamer's accuracy beyond its words on format [code].
   double rate(String code, bool cognate, BankProfile profile, bool strong) {
+    code = baseFormat(code); // a reverse format leaks as its base
     final measured = audit[code];
     if (profile == BankProfile.fixed && !cognate && measured != null) {
       // A gamer is never worse than guessing: the design guess is the floor.

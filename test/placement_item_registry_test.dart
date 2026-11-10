@@ -42,6 +42,7 @@ void main() {
   group('the inventory', () {
     test('lists F1 to F20 with what each needs and leaks', () {
       for (var n = 1; n <= 20; n++) {
+        if (n == 16) continue; // F16 (dictation) was removed (#1105)
         final f = formatInfo('F$n');
         expect(f.skills, isNotEmpty, reason: f.code);
         expect(f.slip, inInclusiveRange(0, 0.2), reason: f.code);

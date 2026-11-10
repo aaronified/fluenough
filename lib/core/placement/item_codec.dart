@@ -27,7 +27,8 @@ List<RegItem>? decodeItems(String text) {
     if (items is! List) return null;
     return List<RegItem>.unmodifiable(<RegItem>[
       for (final i in items)
-        if (kFormatInventory.any((f) => f.code == (i as Map)['f']))
+        if ((i as Map)['f'] is! String ||
+            kFormatInventory.any((f) => f.code == i['f']))
           _decode(i as Map<String, dynamic>),
     ]);
   } on Object {
