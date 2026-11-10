@@ -113,7 +113,7 @@ const Map<String, FormatSpec> kFormats = <String, FormatSpec>{
   'F8': FormatSpec('F8', {_w, _r}, 0.10, 0.05, 15, wordLevel: false),
   // The reverse of F8 (English spoken): the same item, asked with sound.
   'F24': FormatSpec('F24', {_w, _r}, 0.10, 0.05, 15, wordLevel: false),
-  'F13': FormatSpec('F13', {_h}, 0.05, 0.25, 6),
+  'F13': FormatSpec('F13', {_h, _r}, 0.05, 0.25, 6),
   'F15': FormatSpec('F15', {_h}, 0.05, 0.50, 6),
   'F17': FormatSpec('F17', {_h}, 0.10, 0.25, 8, wordLevel: false),
   'F18': FormatSpec('F18', {_s}, 0.15, 0.03, 10),

@@ -224,7 +224,10 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
   FormatInfo(
     'F13',
     'Heard word, pick its English meaning',
-    {_hear},
+    // Hear and Read together (a mixed item, so a miss can start a
+    // drill-down that isolates Hear with F17, #1105): knowing the word heard
+    // is also knowing the word.
+    {_hear, _read},
     0.05,
     0.25,
     6,
