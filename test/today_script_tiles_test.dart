@@ -124,6 +124,16 @@ void main() {
       );
     });
 
+    test('with script learning off there is no Script tile, and the script '
+        'decks are not practised (#1104)', () async {
+      final state = await twoScriptsDue();
+      expect(TodayNumbers.of(state).script, isNotNull);
+      state.settings.setLearnsAlphabet('hi', false);
+
+      expect(TodayNumbers.of(state).script, isNull);
+      expect(state.buildSession(const DrillRequest.script()).length, 0);
+    });
+
     test('a learner with no script deck has no Script tile', () async {
       final course = twoScriptCourse();
       final state = AppState.test(

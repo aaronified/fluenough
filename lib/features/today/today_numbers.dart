@@ -208,7 +208,9 @@ class TodayNumbers {
                 state.features.isAvailable(skill.feature)))
           skill: state.skillTile(skill).length,
     };
-    final hasScript = decks.any((d) => split.scriptDecks.contains(d.id));
+    final hasScript = decks.any(
+      (d) => split.scriptDecks.contains(d.id) && !state.leavesOut(d),
+    );
     final scriptDue = hasScript
         ? state.buildSession(const DrillRequest.script()).length
         : 0;

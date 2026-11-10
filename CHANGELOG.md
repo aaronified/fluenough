@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Today no longer shows a Script tile, or counts and practises script decks, for a language whose script learning is switched off (#1104).
+
 ## [0.9.4] - 2026-11-08
 
 ### Added
