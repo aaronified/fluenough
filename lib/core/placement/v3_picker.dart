@@ -727,12 +727,14 @@ class V3Picker {
     final budget = config.maxSeconds - seconds;
     final used = <String>{
       for (final a in asked)
-        if (a.skills.length >= 2) a.format,
+        if (a.skills.length >= 2) baseFormat(a.format),
     };
     PickerCandidate? best;
     var bestScore = double.negativeInfinity;
     for (final format in pool.formats) {
-      if (used.contains(format)) continue;
+      // A reverse format is its base's item with sound: not a second mixed
+      // opener of the same kind.
+      if (used.contains(baseFormat(format))) continue;
       for (final skill in _tested) {
         final band = _quantileBand(skill, config.mixedQuantile);
         for (final cand in _near(
