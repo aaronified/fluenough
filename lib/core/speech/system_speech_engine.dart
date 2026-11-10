@@ -228,35 +228,31 @@ class SystemSpeechEngine implements SpeechEngine {
         _nativeTrouble++;
         return null;
       }
+      final error = result.error;
+      // An aborted listen (the app was paused) is final: listening again
+      // would reopen the microphone in the background.
+      if (error == 'aborted') {
+        return SpeechHeard.failed(
+          failureOf('aborted', onDevice: onDevice),
+          code: 'aborted',
+        );
+      }
+      // Any other failure, and above all a no-match, of the piped listen is
+      // not final (#1107). Since 0.9.4 the recogniser is fed through
+      // RecognizerIntent.EXTRA_AUDIO_SOURCE, and some recognisers (Google's,
+      // for te-IN) take that stream and answer no match to every attempt
+      // even though the stream holds a voice. The piped listen is the
+      // best-effort one: the same attempt listens again the plain way (the
+      // recogniser's own microphone, as in 0.9.3), whose verdict is the one
+      // the learner sees. Two such listens in a row and the piped route is
+      // not tried again this session.
+      if (error != null || result.alternatives.isEmpty) {
+        _nativeTrouble++;
+        return null;
+      }
       final audio = result.audio;
       final voiced =
           audio != null && peakOfPcm16(audio.pcm16) >= RecordMicCapture.silence;
-      final error = result.error;
-      final nothingHeard = error == null
-          ? result.alternatives.isEmpty
-          : failureOf(error, onDevice: onDevice) == SpeechFailure.noMatch;
-      if (nothingHeard && !voiced) {
-        // Nothing recognised AND a silent stream: the phone shut the
-        // microphone to our capture (or the recogniser ignored the stream),
-        // so the recogniser had no voice to hear. Do not tell the learner
-        // "no match" for that: listen again the plain way in this very
-        // attempt, and do not try the native route again this session.
-        _nativeTrouble = _captureGivesUpAfter;
-        return null;
-      }
-      if (error != null) {
-        final failure = failureOf(error, onDevice: onDevice);
-        // A listen that heard a voice and still found no match is the
-        // learner's, not the phone's: not trouble.
-        _nativeTrouble = 0;
-        return SpeechHeard.failed(failure, code: error);
-      }
-      if (result.alternatives.isEmpty) {
-        return const SpeechHeard.failed(
-          SpeechFailure.noMatch,
-          code: 'empty-result',
-        );
-      }
       _nativeTrouble = 0;
       // A stream that is only silence was not the learner's voice (the phone
       // shut the microphone to us): the drill records a second take instead.
