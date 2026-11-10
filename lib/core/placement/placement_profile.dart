@@ -62,7 +62,6 @@ class PlacementProfile {
     guessScale: <String, double>{
       'F7': 1.25,
       'F8': 1.25,
-      'F16': 1.25,
       'F18': 1.25,
       'F21': 1.25,
     },
@@ -76,7 +75,6 @@ class PlacementProfile {
       'F8': 1.2,
       'F13': 1.2,
       'F14': 1.2,
-      'F16': 1.2,
       'F17': 1.2,
       'F18': 1.2,
       'F21': 1.2,
@@ -138,7 +136,6 @@ class PlacementProfile {
   static const Map<String, double> guessLimit = <String, double>{
     'F7': 1.25,
     'F8': 1.25,
-    'F16': 1.25,
     'F18': 1.25,
     'F21': 1.25,
   };

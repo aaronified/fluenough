@@ -258,17 +258,6 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
         'with the audio screens of step 6',
   ),
   FormatInfo(
-    'F16',
-    'Dictation: hear a sentence, build it from tiles',
-    {_hear, _write},
-    0.10,
-    0.05,
-    15,
-    wordLevel: false,
-    needsAudio: true,
-    leakRisk: 'decoy elimination',
-  ),
-  FormatInfo(
     'F17',
     'Heard sentence, pick its English meaning',
     {_hear},
@@ -330,7 +319,63 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     options: 2,
     leakRisk: 'end marks left in the wrong place; bigram plausibility',
   ),
+  FormatInfo(
+    'F22',
+    'English spoken and shown, pick the written word (reverse of F3)',
+    {_read},
+    0.05,
+    0.25,
+    6,
+    options: 4,
+    leakRisk: 'cognates; spelling cues',
+  ),
+  FormatInfo(
+    'F23',
+    'English spoken and shown, type the word (reverse of F7)',
+    {_write},
+    0.15,
+    0.03,
+    12,
+    leakRisk: 'a spelling-rule guess from an English cognate',
+  ),
+  FormatInfo(
+    'F24',
+    'English sentence spoken and shown, build it from tiles (reverse of F8)',
+    {_write, _read},
+    0.10,
+    0.05,
+    15,
+    wordLevel: false,
+    leakRisk: 'word order from the English; decoy elimination',
+  ),
+  FormatInfo(
+    'F25',
+    'English spoken and shown, and the word with one unit left out, type '
+    'the unit (reverse of F21)',
+    {_write},
+    0.08,
+    0.10,
+    6,
+    leakRisk: 'the letter patterns of the language fill the gap',
+  ),
 ];
+
+/// The reverse formats: the English meaning is spoken by the phone's English
+/// voice (always there) and shown, and the learner answers in the language.
+/// Each asks the items of the format it maps to, with sound, so the audit and
+/// the calibration treat it as that format ([baseFormat]).
+const Map<String, String> kSpokenFormats = <String, String>{
+  'F22': 'F3',
+  'F23': 'F7',
+  'F24': 'F8',
+  'F25': 'F21',
+};
+
+/// The format whose items [format] asks (itself, unless it is a reverse one).
+String baseFormat(String format) => kSpokenFormats[format] ?? format;
+
+/// Whether [format] speaks its English meaning.
+bool isSpokenEnglish(String format) => kSpokenFormats.containsKey(format);
 
 /// The inventory entry for [code].
 FormatInfo formatInfo(String code) =>

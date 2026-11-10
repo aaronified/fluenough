@@ -112,7 +112,6 @@ const Map<String, FormatSpec> kFormats = <String, FormatSpec>{
   'F8': FormatSpec('F8', {_w, _r}, 0.10, 0.05, 15, wordLevel: false),
   'F13': FormatSpec('F13', {_h}, 0.05, 0.25, 6),
   'F15': FormatSpec('F15', {_h}, 0.05, 0.50, 6),
-  'F16': FormatSpec('F16', {_h, _w}, 0.10, 0.05, 15, wordLevel: false),
   'F17': FormatSpec('F17', {_h}, 0.10, 0.25, 8, wordLevel: false),
   'F18': FormatSpec('F18', {_s}, 0.15, 0.03, 10),
   'F1': FormatSpec('F1', {_r}, 0.10, 0.0, 3),
@@ -764,8 +763,8 @@ class BaselinePicker implements SimPicker {
   static const Map<PlacementSkill, List<String>> _formats =
       <PlacementSkill, List<String>>{
         PlacementSkill.read: <String>['F2', 'F8', 'F5', 'F3', 'F6'],
-        PlacementSkill.hear: <String>['F13', 'F16', 'F17', 'F15'],
-        PlacementSkill.write: <String>['F8', 'F16', 'F7', 'F4'],
+        PlacementSkill.hear: <String>['F13', 'F17', 'F15'],
+        PlacementSkill.write: <String>['F8', 'F7', 'F4'],
         PlacementSkill.say: <String>['F18'],
       };
 
@@ -966,7 +965,7 @@ class BaselinePicker implements SimPicker {
 }
 
 /// The formats the item bank admits (the audit's survivors of build step 3:
-/// F2/F13/F3, F4, F7/F18, F8/F16, F9 and F1/F14 where admitted); the stand-in
+/// F2/F13/F3, F4, F7/F18, F8, F9 and F1/F14 where admitted); the stand-in
 /// bank carries them as [kFormats] entries.
 const List<String> kAdmittedFormats = <String>[
   'F2',
@@ -978,7 +977,6 @@ const List<String> kAdmittedFormats = <String>[
   'F7',
   'F21',
   'F8',
-  'F16',
   'F18',
   'F1',
 ];

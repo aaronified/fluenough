@@ -6,6 +6,8 @@ import '../../app/app_scope.dart';
 import '../../core/models/card.dart';
 import '../../core/models/deck.dart';
 import '../../core/models/drill_mode.dart';
+import '../../core/placement/item_registry.dart'
+    show baseFormat, isSpokenEnglish;
 import '../../core/placement/v3_session.dart';
 import '../../core/speech/speech_engine.dart';
 import '../../l10n/app_localizations.dart';
@@ -75,7 +77,7 @@ class _V3QuestionViewState extends State<V3QuestionView> {
   void initState() {
     super.initState();
     // A heard question plays as it appears; the Play button plays it again.
-    if (_q.audio != null) {
+    if (_spokenText != null) {
       WidgetsBinding.instance.addPostFrameCallback((_) => unawaited(_play()));
     }
   }
@@ -86,19 +88,28 @@ class _V3QuestionViewState extends State<V3QuestionView> {
     super.dispose();
   }
 
+  /// What the phone says: the target text of a heard question, or the
+  /// English meaning of a reverse one (in the learner's own language).
+  String? get _spokenText =>
+      isSpokenEnglish(_q.format) ? _q.shown : _q.audio;
+
   Future<void> _play() async {
     if (!mounted) return;
-    final text = _q.audio;
+    final text = _spokenText;
     if (text == null) return;
     final state = AppScope.read(context);
     final cardId = _q.item?.cardId;
     final card = cardId == null ? null : widget.cardOf?.call(cardId);
     // A word is played from its card's recording where it has one; a
     // sentence, a letter or a pseudoword by the voice.
-    final useCard = card != null && _q.format != 'F14';
+    final useCard =
+        card != null && _q.format != 'F14' && !isSpokenEnglish(_q.format);
     final failed = await (useCard
         ? state.speakCard(card, widget.language)
-        : state.speak(text, widget.language));
+        : state.speak(
+            text,
+            isSpokenEnglish(_q.format) ? widget.native : widget.language,
+          ));
     if (!mounted) return;
     if (failed != null || _audioFailed) {
       setState(() => _audioFailed = failed != null);
@@ -137,12 +148,11 @@ class _V3QuestionViewState extends State<V3QuestionView> {
       case V3Mode.yesNo:
         return _q.isHeard ? l10n.findLevelHeardYesNo : l10n.findLevelYesNo;
       case V3Mode.tiles:
-        if (_q.isHeard) return l10n.findLevelBuildFromAudio;
-        return _q.format == 'F4'
+        return baseFormat(_q.format) == 'F4'
             ? l10n.findLevelBuildWord
             : l10n.findLevelBuildFromMeaning;
       case V3Mode.pick:
-        return switch (_q.format) {
+        return switch (baseFormat(_q.format)) {
           'F3' => l10n.placementQuestion,
           'F5' => l10n.findLevelWhichSentence,
           'F17' => l10n.findLevelWhichSentenceSounds,
@@ -180,7 +190,7 @@ class _V3QuestionViewState extends State<V3QuestionView> {
         ),
       );
     }
-    if (_q.audio != null) {
+    if (_spokenText != null) {
       column.add(
         Padding(
           padding: EdgeInsets.only(top: column.isEmpty ? 0 : 12),

@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Find my level asks the reverse too: the English is spoken and shown, and you choose, type or arrange the answer in the language (#1106).
+
+### Changed
+
+- Find my level no longer asks "what you heard" (arrange what was said); Hear questions always ask the meaning (#1105).
+
 ## [0.9.4] - 2026-11-08
 
 ### Added
