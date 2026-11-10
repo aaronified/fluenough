@@ -216,9 +216,10 @@ void main() {
         final placed = <int>[];
         for (final a in tiles.answerTiles) {
           placed.add(
-            List<int>.generate(tiles.tiles.length, (i) => i).firstWhere(
-              (i) => tiles.tiles[i] == a && !placed.contains(i),
-            ),
+            List<int>.generate(
+              tiles.tiles.length,
+              (i) => i,
+            ).firstWhere((i) => tiles.tiles[i] == a && !placed.contains(i)),
           );
         }
         expect(gradeTiles(tiles, placed), AnswerOutcome.right);

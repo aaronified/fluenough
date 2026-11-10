@@ -351,7 +351,7 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
   FormatInfo(
     'F25',
     'English spoken and shown, and the word with one unit left out, type '
-    'the unit (reverse of F21)',
+        'the unit (reverse of F21)',
     {_write},
     0.08,
     0.10,

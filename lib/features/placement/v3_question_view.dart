@@ -90,8 +90,7 @@ class _V3QuestionViewState extends State<V3QuestionView> {
 
   /// What the phone says: the target text of a heard question, or the
   /// English meaning of a reverse one (in the learner's own language).
-  String? get _spokenText =>
-      isSpokenEnglish(_q.format) ? _q.shown : _q.audio;
+  String? get _spokenText => isSpokenEnglish(_q.format) ? _q.shown : _q.audio;
 
   Future<void> _play() async {
     if (!mounted) return;

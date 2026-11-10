@@ -165,7 +165,8 @@ class PickerCandidate {
       format: item.format,
       deck: item.deck,
       skills: info.skills,
-      seconds: info.seconds * (profile.secondsScale[baseFormat(item.format)] ?? 1),
+      seconds:
+          info.seconds * (profile.secondsScale[baseFormat(item.format)] ?? 1),
       slip: info.slip * (profile.slipScale[baseFormat(item.format)] ?? 1),
       guess: guess,
       conflictKeys: item.conflictKeys,
