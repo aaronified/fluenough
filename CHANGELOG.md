@@ -7,11 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- CI: test shard weights refreshed so the 8 shards finish together.
+- CI: the heavy placement suites run only when placement changes and nightly (#1004 owner request). `test/heavy_tests.json` lists them; `tools/test_shard.py --exclude-heavy` leaves them out before the 8 shards are balanced.
+
+### Fixed
+
+- Say works again: recording no longer runs at the same time as online recognition; #1107. The recogniser has the microphone alone, as before 0.9.4, and Hear yourself records a take after the attempt.
+- CI: the web smoke test no longer fails when the runner cannot reach the apt mirror (#1102).
+
 ### Added
 
+- On-device listener: Kotlin ONNX Runtime channel and Dart runtime interface (#1004).
 - tools/asr: Telugu on-device listener reference tools (#1004).
 - tools/asr: Wiktionary Telugu audio accuracy test (#1004).
 - .github/workflows/asr-export.yml: manual workflow that exports one language's on-device listener pack on a GitHub runner (#1004).
+- On-device listener: end-of-speech detector and PCM recorder (#1004).
+- On-device listener: pure-Dart CTC head and decoder (#1004).
 - On-device listener: pure-Dart log-mel front end (#1004).
 
 ## [0.9.5] - 2026-11-10

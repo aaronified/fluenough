@@ -12,7 +12,7 @@ The sections below hold every rule with its owner quote and date. These are the
 ones that matter most; read the section before acting on one.
 
 - **Model by job:** Sonnet does complex coding, reviews and writes skills and ADRs; Haiku does simple, fully specified coding tasks (it never improvises: it reports issues and the architect re-specifies), builds decks, makes routine doc edits and fan-outs; Opus only when the owner asks ([Which model does what](#which-model-does-what-owner-2026-10-22)).
-- **Agent limits:** one Haiku deck builder, one Sonnet coder, and an extra Sonnet only for reviews while a review runs; at most three agents, never more than two Sonnet; the main session only orchestrates ([Which model does what](#which-model-does-what-owner-2026-10-22)).
+- **Agent limits:** one Haiku deck builder, one Sonnet coder, and an extra Sonnet only for reviews while a review runs; at most two agents at once, even if both are Haiku; the main session only orchestrates ([Which model does what](#which-model-does-what-owner-2026-10-22)).
 - **Reviews:** one Sonnet review per pull request; bug fixes only for decks and reviews ([Agents and models](#agents-and-models)).
 - **Docs straight to main:** a change to Markdown docs only is pushed to main with no PR and no CI check ([Git, PRs and CI](#git-prs-and-ci)).
 - **PRs for everything else:** code, decks, `decks/index.json` and the CHANGELOG go through a pull request, with CI green and one review ([Git, PRs and CI](#git-prs-and-ci)).
@@ -73,11 +73,14 @@ itself. Pick the model by the job:
 - Simple, straightforward coding jobs go to Haiku subagents. Each Haiku task is fully specified: files to touch, exact behaviour, the expected inputs and outputs, and what not to touch.
 - Haiku agents never improvise. If anything is unclear, missing, or does not match the task, they stop and report the issue. The main session solves it and messages the Haiku agent with the altered parameters.
 - Complex problems are broken down until each piece is a byte-sized task a Haiku can do. Whatever stays complex (core state management, multi-file design, bug diagnosis) goes to Sonnet.
-- The existing limits still apply (at most three agents at once, one review per pull request, tests only in CI).
+- The existing limits still apply (at most two agents at once, one review per pull request, tests only in CI).
 - **Haiku code is guarded and logged** (owner, 2026-11-10: "All haiku codes must be in try catch type loops and report to app logs for all issues."): every piece of code a Haiku agent writes wraps its work in try/catch (or the language's equivalent error guard, including around loops over items so one failure does not stop the rest) and reports every caught issue to the app log (the app's existing logger, never a silent catch and never only a print). A guarded failure is also reported back to the main session in the agent's report, never swallowed. Haiku does not invent a new logger: if the call to use is unclear, it stops and reports.
 
-At most **three agents run at the same time, and never more than two
-Sonnet** (owner, 2026-10-22; kept by 2026-11-06).
+At most **two agents run at the same time, even if both are Haiku** (owner,
+2026-11-11: "Then at max two agents, even if both are haikus"). This replaces the
+earlier limit of three agents with never more than two Sonnet (owner,
+2026-10-22; kept by 2026-11-06), which is kept in
+[Owner-Decisions-History](wiki/Owner-Decisions-History.md).
 
 **Slots** (owner, 2026-11-06: "only one haiku deck builder. and one sonnet
 coder. an extra sonnet will pop up from time to time to review the decks or

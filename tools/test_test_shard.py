@@ -111,6 +111,62 @@ class Command(unittest.TestCase):
             self.assertEqual(r.returncode, 2, idx)
 
 
+class ExcludeHeavy(unittest.TestCase):
+    NAMES = [f"test/t{i}_test.dart" for i in range(10)]
+
+    def root(self):
+        root = tree(self.NAMES, {"default": 3, "files": {"test/t0_test.dart": 40}})
+        (root / "test" / "heavy_tests.json").write_text(
+            json.dumps({"heavy": ["test/t0_test.dart", "test/t1_test.dart"]})
+        )
+        return root
+
+    def collect(self, root, *extra):
+        got: list[str] = []
+        for i in range(3):
+            r = run("--total-shards", "3", "--shard-index", str(i), "--root", str(root), *extra)
+            self.assertEqual(r.returncode, 0, r.stderr)
+            got += r.stdout.split()
+        return got
+
+    def test_default_keeps_the_heavy_files(self):
+        self.assertEqual(sorted(self.collect(self.root())), sorted(self.NAMES))
+
+    def test_the_flag_leaves_them_out_and_keeps_the_rest(self):
+        got = self.collect(self.root(), "--exclude-heavy")
+        self.assertEqual(sorted(got), sorted(self.NAMES[2:]))
+
+    def test_the_flag_without_a_heavy_file_changes_nothing(self):
+        root = tree(self.NAMES)
+        self.assertEqual(sorted(self.collect(root, "--exclude-heavy")), sorted(self.NAMES))
+
+    def test_heavy_files_are_dropped_before_balancing(self):
+        # t0 weighs 40; without it the other eight (3 each) split 9/9/6.
+        root = self.root()
+        r = run("--total-shards", "3", "--plan", "--exclude-heavy", "--root", str(root))
+        self.assertEqual(r.returncode, 0, r.stderr)
+        self.assertEqual(r.stdout.count("weight 9"), 2, r.stdout)
+        self.assertEqual(r.stdout.count("weight 6"), 1, r.stdout)
+
+
+class CommittedHeavy(unittest.TestCase):
+    def setUp(self):
+        self.files = ts.discover(REPO)
+        self.weights, self.default = ts.load_weights(ts.WEIGHTS)
+        self.heavy = ts.load_heavy(ts.HEAVY)
+
+    def test_there_are_heavy_files_and_all_exist(self):
+        self.assertTrue(self.heavy)
+        self.assertEqual(sorted(self.heavy - set(self.files)), [])
+
+    def test_the_light_files_still_balance_on_eight_shards(self):
+        light = [f for f in self.files if f not in self.heavy]
+        shards = ts.assign(light, self.weights, self.default, 8)
+        loads = [sum(self.weights.get(f, self.default) for f in s) for s in shards]
+        self.assertTrue(all(shards), "an empty shard")
+        self.assertLessEqual(max(loads), 1.15 * sum(loads) / 8)
+
+
 class CommittedWeights(unittest.TestCase):
     """The real test/shard_weights.json against the real test/ folder."""
 
