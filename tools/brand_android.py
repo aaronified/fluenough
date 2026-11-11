@@ -937,14 +937,13 @@ class AsrChannel {
             )
             val lengthInput = lengthName
             if (lengthInput != null) {
-                val length = ByteBuffer.allocateDirect(8).order(ByteOrder.nativeOrder())
                 if (lengthType == OnnxJavaType.INT32) {
-                    val ints = length.asIntBuffer()
+                    val ints = ByteBuffer.allocateDirect(4).order(ByteOrder.nativeOrder()).asIntBuffer()
                     ints.put(frames)
                     ints.rewind()
                     inputs[lengthInput] = OnnxTensor.createTensor(environment, ints, longArrayOf(1))
                 } else {
-                    val longs = length.asLongBuffer()
+                    val longs = ByteBuffer.allocateDirect(8).order(ByteOrder.nativeOrder()).asLongBuffer()
                     longs.put(frames.toLong())
                     longs.rewind()
                     inputs[lengthInput] = OnnxTensor.createTensor(environment, longs, longArrayOf(1))
@@ -986,10 +985,14 @@ class AsrChannel {
     private class AsrFailure(val code: String, message: String) : Exception(message)
 
     companion object {
+        // One per process, with its one thread and session: Flutter may
+        // recreate the engine (and call register again), which must not
+        // leave an earlier session and thread behind.
+        private val shared = AsrChannel()
+
         // Called from MainActivity.configureFlutterEngine.
         fun register(messenger: BinaryMessenger) {
-            val channel = AsrChannel()
-            MethodChannel(messenger, "app.fluenough/asr").setMethodCallHandler(channel::handle)
+            MethodChannel(messenger, "app.fluenough/asr").setMethodCallHandler(shared::handle)
         }
     }
 }

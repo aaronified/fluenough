@@ -393,6 +393,13 @@ class ApplyTest(unittest.TestCase):
         self.assertIn("catch (e: OutOfMemoryError)", channel)
         self.assertIn("ByteOrder.LITTLE_ENDIAN", channel)
         self.assertIn("tensor.close()", channel)
+        # An int32 length is a buffer of one int, not two.
+        self.assertIn("allocateDirect(4).order(ByteOrder.nativeOrder()).asIntBuffer()", channel)
+        self.assertIn("allocateDirect(8).order(ByteOrder.nativeOrder()).asLongBuffer()", channel)
+        # One process-wide channel, so a recreated engine leaks nothing.
+        self.assertEqual(channel.count("AsrChannel()"), 1)
+        self.assertIn("private val shared = AsrChannel()", channel)
+        self.assertIn("setMethodCallHandler(shared::handle)", channel)
         self.assertIn("opened?.close()", channel)
         files = (
             self.gradle,
@@ -405,7 +412,9 @@ class ApplyTest(unittest.TestCase):
         brand_android.apply(self.root)
         brand_android.apply(self.root)
         self.assertEqual(self.kotlin().count(register), 1)
-        self.assertEqual(self.kotlin(), once[1])
+        upgraded = self.kotlin()
+        brand_android.apply(self.root)
+        self.assertEqual(self.kotlin(), upgraded)
         self.assertEqual(self.gradle.read_text(encoding="utf-8"), once[0])
         self.assertEqual(files[2].read_text(encoding="utf-8"), once[2])
         self.assertEqual(files[3].read_text(encoding="utf-8"), once[3])
