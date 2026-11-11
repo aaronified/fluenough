@@ -64,7 +64,15 @@ in CI, in the release workflow and on a first checkout. It
   (RecognizerIntent.EXTRA_AUDIO_SOURCE, Android 13 and later), so the
   learner's voice is kept at the moment it is recognised (ADR-0054, option 2).
   Below Android 13 it answers "unsupported" and the app listens the plain way.
-  A MainActivity without it is brought up to date.
+  A MainActivity without it is brought up to date;
+- adds the on-device listener's runtime (#1004): the onnxruntime-android
+  dependency, pinned, to android/app/build.gradle.kts (with minSdk at
+  least 24, which that library's manifest declares); a keep rule for
+  ai.onnxruntime in android/app/proguard-rules.pro, which ORT's native code
+  needs after shrinking; AsrChannel.kt beside MainActivity, the platform
+  channel app.fluenough/asr (load, run, close) that lib/app/
+  channel_asr_runtime.dart calls; and the one line in MainActivity that
+  registers it. Each only if it is not there already;
 
 - sets up flutter_local_notifications, which shows the daily reminder (#90).
   The reminder is scheduled inexactly, so there is no exact-alarm
@@ -726,9 +734,288 @@ def listen(text: str) -> str:
     return text.replace(SHARE_MEMBERS_BEFORE, LISTEN_MEMBERS + SHARE_MEMBERS_BEFORE)
 
 
+
+# The on-device listener's runtime (#1004, wiki Plan-Speech-Offline-Alert):
+# ONNX Runtime for Android, pinned to a release checked on Maven Central
+# (its AAR declares minSdkVersion 24 and ships its own consumer proguard
+# rules, which keep only the telemetry classes).
+ORT_VERSION = "1.31.1"
+ORT_LIB = f"com.microsoft.onnxruntime:onnxruntime-android:{ORT_VERSION}"
+ORT_MIN_SDK = 24
+PROGUARD_RULES = Path("android/app/proguard-rules.pro")
+PROGUARD_KEEP = "-keep class ai.onnxruntime.** { *; }"
+ASR_CHANNEL = "app.fluenough/asr"
+ASR_FILE = Path("android/app/src/main/kotlin/app/fluenough/AsrChannel.kt")
+ASR_REGISTER = "AsrChannel.register(flutterEngine.dartExecutor.binaryMessenger)"
+ASR_REGISTER_AFTER = "        super.configureFlutterEngine(flutterEngine)\n"
+ASR_KOTLIN = """package app.fluenough
+
+import ai.onnxruntime.OnnxJavaType
+import ai.onnxruntime.OnnxTensor
+import ai.onnxruntime.OrtEnvironment
+import ai.onnxruntime.OrtSession
+import ai.onnxruntime.TensorInfo
+import android.os.Handler
+import android.os.Looper
+import io.flutter.plugin.common.BinaryMessenger
+import io.flutter.plugin.common.MethodCall
+import io.flutter.plugin.common.MethodChannel
+import java.io.File
+import java.nio.ByteBuffer
+import java.nio.ByteOrder
+import java.util.concurrent.Executors
+
+// Written by tools/brand_android.py: the on-device listener's runtime (#1004),
+// called by lib/app/channel_asr_runtime.dart on the channel app.fluenough/asr.
+// One ONNX Runtime session at a time, for the speech model's encoder:
+//   load(path, threads)           opens the model file; closes any earlier one
+//   run(features, frames)         features: float32 little-endian bytes of
+//                                 [1, bins, frames]; answers a map with
+//                                 "data" (float32 little-endian bytes of the
+//                                 first output) and "dims" (its shape)
+//   close()                       releases the session
+// Input and output names come from the session's metadata, not from the
+// code: the float input is the features, an integer input is their length,
+// and the first float output of rank 3 is the answer. Everything runs on one
+// background thread, in order, so a run never meets a close; answers are
+// posted to the main thread. Failures answer a PlatformException with the
+// code no_model, load_failed, run_failed or out_of_memory; nothing throws
+// out of here.
+class AsrChannel {
+    private val executor = Executors.newSingleThreadExecutor { task ->
+        Thread(task, "fluenough-asr").apply { isDaemon = true }
+    }
+    private val main = Handler(Looper.getMainLooper())
+    private var env: OrtEnvironment? = null
+    private var session: OrtSession? = null
+    private var featuresName: String? = null
+    private var lengthName: String? = null
+    private var lengthType: OnnxJavaType? = null
+    private var outputName: String? = null
+
+    fun handle(call: MethodCall, result: MethodChannel.Result) {
+        when (call.method) {
+            "load" -> {
+                val path = call.argument<String>("path")
+                val threads = call.argument<Int>("threads") ?: 0
+                background(result) { load(path, threads) }
+            }
+            "run" -> {
+                val features = call.argument<ByteArray>("features")
+                val frames = call.argument<Int>("frames") ?: 0
+                background(result) { run(features, frames) }
+            }
+            "close" -> background(result) { close() }
+            else -> result.notImplemented()
+        }
+    }
+
+    // Runs work on the background thread and answers on the main thread.
+    // An error is a code and a message, never an exception.
+    private fun background(result: MethodChannel.Result, work: () -> Any?) {
+        try {
+            executor.execute {
+                var value: Any? = null
+                var code: String? = null
+                var message: String? = null
+                try {
+                    value = work()
+                } catch (e: AsrFailure) {
+                    code = e.code
+                    message = e.message
+                } catch (e: OutOfMemoryError) {
+                    code = "out_of_memory"
+                    message = "out of memory: ${e.message}"
+                } catch (e: Throwable) {
+                    code = "run_failed"
+                    message = "${e.javaClass.simpleName}: ${e.message}"
+                }
+                main.post {
+                    try {
+                        if (code == null) result.success(value) else result.error(code, message, null)
+                    } catch (e: Throwable) {
+                        // The reply channel is gone (the engine detached).
+                    }
+                }
+            }
+        } catch (e: Throwable) {
+            result.error("run_failed", "the listener's thread did not start: ${e.message}", null)
+        }
+    }
+
+    private fun load(path: String?, threads: Int): Any? {
+        closeSession()
+        if (path.isNullOrEmpty() || !File(path).isFile) {
+            throw AsrFailure("load_failed", "no model file at $path")
+        }
+        try {
+            val environment = OrtEnvironment.getEnvironment()
+            val options = OrtSession.SessionOptions()
+            try {
+                if (threads > 0) options.setIntraOpNumThreads(threads)
+                val opened = environment.createSession(path, options)
+                try {
+                    describe(opened)
+                } catch (e: Throwable) {
+                    opened.close()
+                    throw e
+                }
+                env = environment
+                session = opened
+            } finally {
+                options.close()
+            }
+        } catch (e: AsrFailure) {
+            throw e
+        } catch (e: OutOfMemoryError) {
+            throw AsrFailure("out_of_memory", "out of memory loading $path: ${e.message}")
+        } catch (e: Throwable) {
+            throw AsrFailure("load_failed", "${e.javaClass.simpleName}: ${e.message}")
+        }
+        return null
+    }
+
+    // Reads the names from the session's metadata.
+    private fun describe(opened: OrtSession) {
+        var features: String? = null
+        var length: String? = null
+        var lengthKind: OnnxJavaType? = null
+        for ((name, node) in opened.inputInfo) {
+            val info = node.info as? TensorInfo ?: continue
+            when (info.type) {
+                OnnxJavaType.FLOAT -> if (features == null) features = name
+                OnnxJavaType.INT64, OnnxJavaType.INT32 -> if (length == null) {
+                    length = name
+                    lengthKind = info.type
+                }
+                else -> {}
+            }
+        }
+        var output: String? = null
+        for ((name, node) in opened.outputInfo) {
+            val info = node.info as? TensorInfo ?: continue
+            if (info.type == OnnxJavaType.FLOAT && info.shape.size == 3) {
+                output = name
+                break
+            }
+        }
+        if (output == null) output = opened.outputNames.firstOrNull()
+        if (features == null || output == null) {
+            throw AsrFailure(
+                "load_failed",
+                "the model has no float input or no output: inputs ${opened.inputNames}, outputs ${opened.outputNames}"
+            )
+        }
+        featuresName = features
+        lengthName = length
+        lengthType = lengthKind
+        outputName = output
+    }
+
+    private fun run(bytes: ByteArray?, frames: Int): Any? {
+        val opened = session
+        val environment = env
+        val input = featuresName
+        val output = outputName
+        if (opened == null || environment == null || input == null || output == null) {
+            throw AsrFailure("no_model", "no model is loaded")
+        }
+        if (bytes == null || frames <= 0 || bytes.size % 4 != 0 || (bytes.size / 4) % frames != 0) {
+            throw AsrFailure(
+                "run_failed",
+                "features are ${bytes?.size} bytes, which do not make whole rows of $frames frames"
+            )
+        }
+        val bins = (bytes.size / 4) / frames
+        val direct = ByteBuffer.allocateDirect(bytes.size).order(ByteOrder.LITTLE_ENDIAN)
+        direct.put(bytes)
+        direct.rewind()
+        val inputs = HashMap<String, OnnxTensor>()
+        try {
+            inputs[input] = OnnxTensor.createTensor(
+                environment, direct.asFloatBuffer(), longArrayOf(1, bins.toLong(), frames.toLong())
+            )
+            val lengthInput = lengthName
+            if (lengthInput != null) {
+                val length = ByteBuffer.allocateDirect(8).order(ByteOrder.nativeOrder())
+                if (lengthType == OnnxJavaType.INT32) {
+                    val ints = length.asIntBuffer()
+                    ints.put(frames)
+                    ints.rewind()
+                    inputs[lengthInput] = OnnxTensor.createTensor(environment, ints, longArrayOf(1))
+                } else {
+                    val longs = length.asLongBuffer()
+                    longs.put(frames.toLong())
+                    longs.rewind()
+                    inputs[lengthInput] = OnnxTensor.createTensor(environment, longs, longArrayOf(1))
+                }
+            }
+            opened.run(inputs, setOf(output)).use { outputs ->
+                val tensor = outputs.get(output).orElse(null) as? OnnxTensor
+                    ?: throw AsrFailure("run_failed", "output $output is not a tensor")
+                val shape = tensor.info.shape
+                val floats = tensor.floatBuffer
+                val data = ByteBuffer.allocate(floats.remaining() * 4).order(ByteOrder.LITTLE_ENDIAN)
+                data.asFloatBuffer().put(floats)
+                return mapOf("data" to data.array(), "dims" to shape.map { it.toInt() })
+            }
+        } finally {
+            for (tensor in inputs.values) tensor.close()
+        }
+    }
+
+    private fun close(): Any? {
+        closeSession()
+        return null
+    }
+
+    private fun closeSession() {
+        val opened = session
+        session = null
+        featuresName = null
+        lengthName = null
+        lengthType = null
+        outputName = null
+        try {
+            opened?.close()
+        } catch (e: Throwable) {
+            // Closing is best effort; a failed close leaves nothing to use.
+        }
+    }
+
+    private class AsrFailure(val code: String, message: String) : Exception(message)
+
+    companion object {
+        // Called from MainActivity.configureFlutterEngine.
+        fun register(messenger: BinaryMessenger) {
+            val channel = AsrChannel()
+            MethodChannel(messenger, "app.fluenough/asr").setMethodCallHandler(channel::handle)
+        }
+    }
+}
+"""
+
+
+def asr(text: str) -> str:
+    """[text], MainActivity.kt or the members written into it, with the
+    line that registers AsrChannel, unless it has it. Fails if there is no
+    configureFlutterEngine of the shape this wrote."""
+    if ASR_REGISTER in text:
+        return text
+    if text.count(ASR_REGISTER_AFTER) != 1:
+        raise BrandError(
+            f"{ACTIVITY} has the {CHANNEL} channel, but not as this writes "
+            f"it; register {ASR_CHANNEL} in it by hand, or run flutter create again"
+        )
+    return text.replace(
+        ASR_REGISTER_AFTER, ASR_REGISTER_AFTER + f"        {ASR_REGISTER}\n"
+    )
+
+
 # What goes in MainActivity: the channel, with openVoiceSettings, shareFiles,
-# installApk, wallpaperColour and listenWithAudio.
-CHANNEL_MEMBERS = listen(wallpaper(install(share(VOICE_MEMBERS))))
+# installApk, wallpaperColour and listenWithAudio, and the
+# registering of the app.fluenough/asr channel.
+CHANNEL_MEMBERS = asr(listen(wallpaper(install(share(VOICE_MEMBERS)))))
 
 # The version ota_update 7.1.0's own build uses.
 DESUGAR_LIBS = "com.android.tools:desugar_jdk_libs:2.1.4"
@@ -815,7 +1102,49 @@ def desugar(text: str) -> str:
             text.rstrip("\n")
             + f'\n\ndependencies {{\n    coreLibraryDesugaring("{DESUGAR_LIBS}")\n}}\n'
         )
+    if ORT_LIB not in text:
+        text = (
+            text.rstrip("\n")
+            + f'\n\ndependencies {{\n    implementation("{ORT_LIB}")\n}}\n'
+        )
     return text
+
+
+def min_sdk(text: str) -> str:
+    """[text], the app's build.gradle.kts, with minSdk at least
+    ORT_MIN_SDK, which onnxruntime-android needs: Flutter's own default is
+    kept as the floor when it is higher. Left alone if it is already raised
+    or is not in a shape this knows (the build would then say so)."""
+    if f"maxOf(flutter.minSdkVersion, {ORT_MIN_SDK})" in text:
+        return text
+    changed = re.sub(
+        r"(minSdk(?:Version)?\s*=\s*)flutter\.minSdkVersion\b",
+        lambda m: f"{m.group(1)}maxOf(flutter.minSdkVersion, {ORT_MIN_SDK})",
+        text,
+        count=1,
+    )
+    if changed != text:
+        return changed
+    return re.sub(
+        r"(minSdk(?:Version)?\s*=\s*)(\d+)\b",
+        lambda m: m.group(0)
+        if int(m.group(2)) >= ORT_MIN_SDK
+        else f"{m.group(1)}{ORT_MIN_SDK}",
+        text,
+        count=1,
+    )
+
+
+def proguard(text: str) -> str:
+    """[text], android/app/proguard-rules.pro, with the keep rule for ONNX
+    Runtime, unless it has it."""
+    if PROGUARD_KEEP in text:
+        return text
+    head = text.rstrip("\n")
+    return (head + "\n\n" if head else "") + (
+        "# Written by tools/brand_android.py: ONNX Runtime's native code finds\n"
+        "# its Java classes by name.\n" + PROGUARD_KEEP + "\n"
+    )
 
 
 def channel(text: str) -> str:
@@ -824,7 +1153,7 @@ def channel(text: str) -> str:
     else in the file is kept. One with the channel from before shareFiles
     gets shareFiles."""
     if CHANNEL in text:
-        shared = listen(wallpaper(install(share(text))))
+        shared = asr(listen(wallpaper(install(share(text)))))
         return text if shared == text else imported(shared)
     if len(ACTIVITY_CLASS.findall(text)) != 1:
         raise BrandError(
@@ -1000,7 +1329,13 @@ def apply(root: Path) -> str:
     (root / SHARE_PATHS).write_text(SHARE_PATHS_XML, encoding="utf-8")
     (root / SHARE_PROVIDER_FILE).write_text(SHARE_PROVIDER_KOTLIN, encoding="utf-8")
     manifest.write_text(declared, encoding="utf-8")
-    gradle.write_text(desugar(build), encoding="utf-8")
+    gradle.write_text(min_sdk(desugar(build)), encoding="utf-8")
+    rules = root / PROGUARD_RULES
+    rules.write_text(
+        proguard(rules.read_text(encoding="utf-8") if rules.is_file() else ""),
+        encoding="utf-8",
+    )
+    (root / ASR_FILE).write_text(ASR_KOTLIN, encoding="utf-8")
     if channelled != kotlin:
         activity.write_text(channelled, encoding="utf-8")
     return name
@@ -1013,7 +1348,7 @@ def main() -> int:
         print(f"brand_android: {e}", file=sys.stderr)
         return 1
     print(f"Brand applied to {RES}; launcher label {name!r}; microphone, "
-          "internet, notifications and their receivers, speech recogniser, text-to-speech settings, https and upi links and "
+          "internet, notifications and their receivers, speech recogniser, text-to-speech settings, on-device listener runtime, https and upi links and "
           "mail apps declared; ota_update set up; MainActivity's channel and "
           "ShareFileProvider written.")
     return 0
