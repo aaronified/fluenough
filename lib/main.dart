@@ -31,13 +31,18 @@ import 'core/haptics/system_haptic_engine.dart';
 import 'core/decks/deck_fetch.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
+import 'core/speech/asr/on_device_speech_engine.dart';
+import 'core/speech/asr/preferred_speech_engine.dart';
 import 'core/speech/mic_capture.dart';
+import 'core/speech/record_pcm_recorder.dart';
 import 'core/speech/native_listen.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
 import 'app/file_blob_store.dart';
+import 'app/channel_asr_runtime.dart';
+import 'app/file_asr_pack_locator.dart';
 import 'core/updates/apk_install.dart';
 import 'core/updates/github_release_check.dart';
 import 'core/updates/github_release_notes.dart';
@@ -79,6 +84,10 @@ Future<void> main() async {
   } catch (e) {
     log.warning('Reminder error: start failed: $e');
   }
+  final asrPacks = FileAsrPackLocator(
+    Directory('${files.path}/asr'),
+    log: log.warning,
+  );
   final state = AppState(
     catalog: DeckCatalog(
       DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
@@ -109,10 +118,23 @@ Future<void> main() async {
     settings: storage.settings,
     tts: SystemTtsEngine(),
     clips: SystemClipPlayer(),
-    speech: SystemSpeechEngine(
-      null,
-      RecordMicCapture(),
-      const ChannelNativeListener(),
+    speech: PreferOnDeviceSpeechEngine(
+      // The AI listener, used only for a language whose pack is installed
+      // in files/asr/<code>/ (#1004). The online path stays the system
+      // recogniser's, as before.
+      aiListener: OnDeviceSpeechEngine(
+        packs: asrPacks,
+        recorder: RecordPcmRecorder(log: log.warning),
+        runtime: ChannelAsrRuntime(log: log.warning),
+        log: log.event,
+      ),
+      system: SystemSpeechEngine(
+        null,
+        RecordMicCapture(),
+        const ChannelNativeListener(),
+      ),
+      packs: asrPacks,
+      log: log.warning,
     ),
     volume: SystemVolumeMonitor(),
     soundCheck: SystemSoundCheck(),

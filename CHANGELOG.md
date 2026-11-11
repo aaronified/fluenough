@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- On-device listener: engine and preferred-engine wiring (#1004).
 - On-device listener: Kotlin ONNX Runtime channel and Dart runtime interface (#1004).
 - tools/asr: Telugu on-device listener reference tools (#1004).
 - On-device listener: end-of-speech detector and PCM recorder (#1004).

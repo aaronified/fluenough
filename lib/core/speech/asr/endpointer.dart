@@ -3,7 +3,8 @@
 /// Takes little-endian int16 mono PCM in chunks of any size (an odd byte is
 /// carried to the next chunk) and cuts it into 20 ms frames. A frame is loud
 /// when its RMS, as a fraction of full scale, reaches [threshold]. Speech
-/// starts at the first loud frame. The listen is done when speech has been
+/// starts at the [startFrames]th loud frame in a row, so that a click or a
+/// tap, one or two frames long, does not start the take. The listen is done when speech has been
 /// followed by [quietFor] seconds without a loud frame, when [maxSeconds] of
 /// audio has been fed, or when [neverSpeechSeconds] have passed with no speech.
 ///
@@ -20,6 +21,9 @@ const double _fullScale = 32768.0;
 /// Default RMS threshold, as a fraction of full scale (about -40 dBFS).
 const double defaultEndpointThreshold = 0.01;
 
+/// Default number of loud frames in a row (20 ms each) before speech starts.
+const int defaultEndpointStartFrames = 3;
+
 /// Detects when a learner has finished speaking, from PCM chunks.
 class Endpointer {
   /// [maxSeconds] and [neverSpeechSeconds] have no defaults: the caller
@@ -32,6 +36,7 @@ class Endpointer {
     required double neverSpeechSeconds,
     this.quietFor = 1.0,
     this.threshold = defaultEndpointThreshold,
+    this.startFrames = defaultEndpointStartFrames,
     this.log,
   }) : _frameSamples = (sampleRate * _frameSeconds).round(),
        _maxSamples = (maxSeconds * sampleRate).round(),
@@ -56,6 +61,13 @@ class Endpointer {
     if (threshold < 0) {
       throw ArgumentError.value(threshold, 'threshold', 'must not be negative');
     }
+    if (startFrames < 1) {
+      throw ArgumentError.value(
+        startFrames,
+        'startFrames',
+        'must be at least 1',
+      );
+    }
   }
 
   /// Silence, in seconds, that ends the take once speech has started.
@@ -63,6 +75,9 @@ class Endpointer {
 
   /// RMS level, as a fraction of full scale, that counts as speech.
   final double threshold;
+
+  /// Loud frames in a row that start the speech.
+  final int startFrames;
 
   /// Receives every caught error. Null when nobody is listening.
   final void Function(String)? log;
@@ -76,6 +91,7 @@ class Endpointer {
   int _frameFill = 0;
   double _frameSumSquares = 0;
   int _quietSamples = 0;
+  int _loudRun = 0;
   bool _speechStarted = false;
   bool _done = false;
   int? _pendingByte;
@@ -118,10 +134,12 @@ class Endpointer {
       _frameFill = 0;
       _frameSumSquares = 0;
       if (rms >= threshold) {
-        _speechStarted = true;
-        _quietSamples = 0;
-      } else if (_speechStarted) {
-        _quietSamples += _frameSamples;
+        _loudRun++;
+        if (_loudRun >= startFrames) _speechStarted = true;
+        if (_speechStarted) _quietSamples = 0;
+      } else {
+        _loudRun = 0;
+        if (_speechStarted) _quietSamples += _frameSamples;
       }
     }
     if (_speechStarted && _quietSamples >= _quietSamplesNeeded) {

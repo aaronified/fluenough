@@ -147,5 +147,36 @@ void main() {
       expect(endpointer.speechStarted, isFalse);
       expect(endpointer.done, isTrue);
     });
+
+    test('a click shorter than three frames does not start the speech', () {
+      final endpointer = Endpointer(
+        _rate,
+        maxSeconds: 8,
+        neverSpeechSeconds: 5,
+      );
+      endpointer.feed(_loud(40));
+      expect(endpointer.speechStarted, isFalse);
+      endpointer.feed(_silence(100));
+      endpointer.feed(_loud(40));
+      expect(
+        endpointer.speechStarted,
+        isFalse,
+        reason: 'two loud frames twice, never three in a row',
+      );
+      endpointer.feed(_loud(60));
+      expect(endpointer.speechStarted, isTrue);
+    });
+
+    test('startFrames must be at least one', () {
+      expect(
+        () => Endpointer(
+          _rate,
+          maxSeconds: 8,
+          neverSpeechSeconds: 5,
+          startFrames: 0,
+        ),
+        throwsArgumentError,
+      );
+    });
   });
 }
