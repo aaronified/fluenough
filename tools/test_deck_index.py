@@ -332,8 +332,15 @@ class DeckIndex(unittest.TestCase):
     def _one_file_to_a_line(self) -> None:
         self.index()
         text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
-        lines = [line for line in text.splitlines() if '"sha256"' in line]
+        # A language's files are indented under it; the shared files
+        # (decks/themes.yaml) have a line of their own, one level up.
+        lines = [line for line in text.splitlines()
+                 if '"sha256"' in line and line.startswith("        ")]
         self.assertEqual(len(lines), 2)
+        shared = [line for line in text.splitlines()
+                  if '"sha256"' in line and line.startswith("    {")]
+        self.assertEqual(len(shared), 1)
+        self.assertIn("decks/themes.yaml", shared[0])
 
     def _check_says_whether_it_is_current(self) -> None:
         self.assertEqual(self.run_tool("--check").returncode, 1)
