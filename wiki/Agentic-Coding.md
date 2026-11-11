@@ -514,8 +514,8 @@ itself. Pick the model by the job:
 | Docs and audits | Sonnet |
 | Fan-outs and large reads | Haiku |
 
-At most **three agents run at the same time, and never more than two
-Sonnet** (owner, 2026-10-22). This replaces the earlier Opus rules
+At most **two agents run at the same time, even if both are Haiku** (owner,
+2026-11-11). This replaces the earlier Opus rules
 (2026-10-09, 2026-10-12, 2026-10-16, 2026-10-17).
 
 **Opus only when the owner explicitly asks**, reviews included (owner,

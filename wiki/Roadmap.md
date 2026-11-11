@@ -101,15 +101,13 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-15 approved open issues.
+13 approved open issues.
 
 **Bugs**
 
 - [#850](https://github.com/aaronified/fluenough/issues/850) App is sluggish: about 1 s before every interaction responds
 - [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
 - [#1101](https://github.com/aaronified/fluenough/issues/1101) Say: recording at recognition is untested on a real device
-- [#1102](https://github.com/aaronified/fluenough/issues/1102) Web smoke test fails intermittently (network failures)
-- [#1107](https://github.com/aaronified/fluenough/issues/1107) Regression: Say fails with error_no_match (te-IN) since 0.9.4
 
 **Enhancements**
 
@@ -351,7 +349,7 @@ A plan with no tracking issue is flagged.
 - [offensive words, their level, and warnings on words like them](https://github.com/aaronified/fluenough/wiki/Plan-Offensive-Words) (Written 2026-10-09), tracks #96, #97
 - [placement, script first, then a three-skill check](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V2), **no tracking issue**
 - [placement V3, find my level](https://github.com/aaronified/fluenough/wiki/Plan-Placement-V3), **no tracking issue**
-- [build entire languages as private decks (Your decks)](https://github.com/aaronified/fluenough/wiki/Plan-Private-Languages) (Written 2026-11-04), tracks #1017
+- [build entire languages as private decks (Your decks)](https://github.com/aaronified/fluenough/wiki/Plan-Private-Languages), tracks #1017
 - [profiles, a PIN lock, and parental supervision](https://github.com/aaronified/fluenough/wiki/Plan-Profiles) (Written 2026-10-10), tracks #97, #204
 - [progress screen revamp — mastery across all skills](https://github.com/aaronified/fluenough/wiki/Plan-Progress-Revamp), **no tracking issue**
 - [the question engine, derived from card data](https://github.com/aaronified/fluenough/wiki/Plan-Question-Engine) (Written 2026-10-13), **no tracking issue**
