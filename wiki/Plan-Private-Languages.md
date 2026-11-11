@@ -1,373 +1,210 @@
 # Plan: build entire languages as private decks (Your decks)
 
-> **Priority 1 after the placement release** (owner, 2026-11-07). Recorded for later, not built in the session that stops at the placement bugfix release ("Do not build them. You will stop at the release."); no agent starts it without a new owner instruction.
+> **Build ordered** (owner, 2026-11-11): the "user language decks" part is to be built now, after the placement release. This page was revised on 2026-11-11 to the owner's answers of 2026-11-06 (issue #1017). Earlier text that these answers replace is kept in the issue's history.
 
 Source of truth: this wiki page.
 
-
-Written 2026-11-04. Tracker: #1017. Builds on #495 (Your decks) and #475
-(Add deck moved into Settings). Nothing here is built.
+Tracker: #1017 (milestone 0.9.0). Builds on #495 (Your decks, set aside 2026-11-04) and #475 (closed).
 
 ## What the owner asked
 
 > I need a way to build entire languages as private decks. This will be through the existing your decks entry in settings. Create a plan for this. (owner, 2026-11-04)
 
+## Decisions already made (owner, 2026-11-06, #1017 comments)
+
+| Topic | Decision |
+|---|---|
+| Package file | One zip renamed `.fnzip`. No gzip or 7zip. |
+| New or existing language | A private deck set is either a **new language** or an **update of an existing one**. For an existing language an updated **path file** is required; the units named in it come from the existing decks or from the upload. The path file carries a **"privately modified" marker**, shown in the app wherever the course or path is shown (a small tag). |
+| Ids | Every private serial starts with **`fnpd-<iso lang_code>`**. With no ISO code, a `qaa` to `qtz` code that is aligned with the app's own `q` series. Serials never collide with built-in ids. |
+| Download to modify | The private decks page lets the learner **download the decks of any existing language** to modify. |
+| Core and layer | Allowed (the repository's own shape), as zips are used anyway. |
+| Sharing | File to file, offline. Nothing to build. No "Send it to us", no AI helper. |
+| No voice or recogniser | Hide the speaking and sound drills for that language. |
+| Licence | `CC-BY-SA-4.0` on private decks, as the repository. |
+| Fonts | Check font packages for malicious code; **if that cannot be airtight, remove the feature** (phone fonts only). Also: a per-language font upload on the Languages page (switch in the info-dot screen), under the same rule. |
+| Audio and images | Not now (pictures come first in curated decks). |
+| Limits | **10 MB per language, measured on the `.fnzip` itself** (fonts count inside it; one font at most 2 MB). No limit on the total number of languages; **at most 3 private languages active** at a time; a fourth asks the learner to deactivate one. Unpacked ceiling 30 MB with a compression-ratio check; per file 2 MB; 20,000 cards. |
+| Mockup | A fresh one, to be drawn (`docs/mockups/README.md`). |
+
 ## Goal and non-goals
 
-**Goal.** A learner can bring a whole language the app does not teach, as a
-private package, through Settings, Your decks, and use it like any course:
-path, Today, reviews, drills, search. It lives only in the app's data and
-in backups.
+**Goal.** A learner brings a whole language, or a modified path of one the app teaches, as a private package through Settings, Your decks, and uses it like any course: path, Today, reviews, placement, drills, search. It lives only on the phone and in backups.
 
-**Non-goals.**
+**Non-goals.** Uploading or publishing (no "Send it to us", no host). Authoring inside the app. Anything under `decks/`, `decks/index.json` or the released-app check. A deck schema change (`schema: 1` stays). Any change to a built-in card id. A new dependency.
 
-- Uploading, publishing or sharing through us. "Send it to us" stays #495's
-  optional step, after the deck is added.
-- Making the content. The app validates and fixes; authoring is outside
-  the app (a text editor, a spreadsheet, an AI tool the learner uses).
-- Anything for the repository's languages. Private content never enters
-  `decks/`, `decks/index.json` or the released-app check.
-- Changing the deck schema (still `schema: 1`), or card ids already
-  built. AGENTS.md says an agent must not decide either alone.
-- A new dependency. The zip reader and writer already exist
-  (`lib/core/backup/zip_files.dart`), and so does the YAML reader.
+## 1. What exists today
 
-## What exists today
+| Piece | Where | Supports | Missing for a whole private language |
+|---|---|---|---|
+| Added decks store | `lib/app/added_decks.dart` (`DeckStore`, `FileDeckStore`, `MemoryDeckStore`); prefix `added/` | One `<deck id>.yaml` per deck in app storage, read as a `DeckSource` by `DeckCatalog` and marked `bundled: false` | Flat, single files only; no folders, manifest, path, facts or layers; no package id, revision, limits or active flag |
+| Catalog | `lib/app/deck_catalog.dart` (`DeckCatalog._load`, `Catalog.parseAll`, `isAdded`) | Pure `parseAll(files)` gives decks plus a `broken` list; isolate parse; SHA-256 snapshot (ADR-0048) | `parseAll` treats every `added/` path as a single-file deck (`isCore`, `isLayer`, `isGuide` are all `!isAdded`), so a language with cores, layers and a path cannot be added today |
+| Import check | `lib/app/deck_import.dart` (`checkAddedDeck`), `lib/features/decks/import_page.dart` | Parses one file with `DeckParser`; refuses a bundled deck id or a card id another deck has | One file only; no archive, no findings list beyond the parser's, no id-prefix rule |
+| Your decks page | `lib/features/settings/your_decks_page.dart`, `lib/app/features.dart` (`deckTemplates`, `deckSend` incoming) | Upload, list grouped by language, Remove | Language groups, export, update, activate or deactivate, download-to-modify |
+| Zip | `lib/core/backup/zip_files.dart` | Reads stored and deflated, refuses encryption, zip64 and bad names; writes **stored only**; `maxEntryBytes` 256 MB | Per-package limits, compression-ratio guard, duplicate-name and traversal checks to confirm, a deflate writer |
+| Backup | `lib/core/backup/app_backup.dart`, [Backup-Format](Backup-Format) | Parts listed in the manifest, unknown parts ignored | "A backup never holds deck files"; no `own-decks` part |
+| Paths | `lib/core/data/course_path.dart`, ADR-0020 wildcards | `*` places decks a path does not list; a path is per language, shared by natives | A private path that **replaces** the built-in one for an existing language, and a marker |
+| Languages | `assets/languages.yaml`, `lib/core/decks/language_catalog.dart`, `lib/features/languages/*` (`LanguageView`), `lib/core/models/deck.dart` (`LanguageInfo`) | A language not in the asset is read from a deck's `language` block | About 12 screens read `languages.yaml` directly (picker, spoken languages, facts, placement); none merges a private language in |
+| Validator | `tools/validate_decks.py`, Dart `DeckParser` | The id pattern `^[a-z0-9]+(-[a-z0-9]+)*$`; core ids must start with the language | No `fnpd-` rule or custom mode; core-id rule assumes `<lang>-` |
+| Fonts | ADR-0042, `lib/core/decks/script_fonts.dart`, `lib/app/font_check.dart` | Noto per script, phone fallback, a sample-drawing check | Nothing for private scripts beyond the fallback |
+| Reviews | `lib/core/data/review_log.dart`, drift `reviews` | Append-only, keyed by a plain card id string, no foreign key to decks | Nothing needed: ids that never change keep progress |
+| Placement, Today, drills | `lib/app/placement*.dart`, `daily_plan.dart`, `language_skills.dart` | Work from the catalog's courses | Audit of what each needs of a language (voice, recogniser, facts, numbers, a card minimum) |
 
-| Piece | Where | State |
+Read of the code on 2026-11-11: the main blocker is that the catalog treats everything under `added/` as a single-file deck. Everything else is addition.
+
+## 2. Architecture
+
+### 2.1 The package: `.fnzip`
+
+A zip whose layout is the repository's own, so the app's existing readers parse it unchanged:
+
+```
+manifest.yaml                  required: format, package, revision, min_app, language block, licence
+<code>-path.yaml               required when modifying an existing language; optional for a new one
+<code>/<deck>.yaml             cores, as decks/<lang>/
+<code>/<native>/<deck>.yaml    layers
+<code>/<code>-facts.yaml, -sounds, -romanisation, ...   optional, same formats
+themes.yaml                    optional own themes (official theme ids also allowed)
+```
+
+`manifest.yaml`: `format: fluenough-private`, `package: fnpd-<code>` (one package per language code), `revision` (integer, rising, never reused), `kind: new-language | modified-language`, `language:` (code, iso639_3, name, own name, script, scripts, tts, rtl), `min_app`, `license: CC-BY-SA-4.0` (fixed), `based_on` (the course revision, for a modified language). No fonts, audio or images in v1.
+
+### 2.2 Id namespace
+
+| Thing | Rule | Notes |
 |---|---|---|
-| Your decks page: Upload a deck (opens the import page), Get a template (`Feature.deckTemplates`, incoming), list grouped by language then native, Open, Send it to us (`Feature.deckSend`, incoming), Remove | `lib/features/settings/your_decks_page.dart`, `lib/app/features.dart` | Upload and Remove built; the rest incoming |
-| Import page and check | `lib/features/decks/import_page.dart`, `lib/app/deck_import.dart` (`checkAddedDeck`) | Parses one file with `DeckParser`; refuses a bundled deck id and a card id another deck has; shows file, line, message. No fixes, no warnings list |
-| Storage | `lib/app/added_decks.dart` (`DeckStore`, `FileDeckStore`) | One `<deck id>.yaml` per deck, read under the `added/` prefix, marked not bundled (ADR-0020). Ids are kept as written; the user series of #495 is not built |
-| Template | `assets/deck-template.yaml` | Hindi from English, `hi-my-NNNN` ids; to be replaced by #495 |
-| Paths | ADR-0020 wildcards | An added deck goes at the bottom of its theme's unit, else the end of the course's path |
-| Backup | [Backup-Format](Backup-Format) | "A backup never holds deck files". Private decks have no place in it yet |
-| Catalog load | `lib/app/deck_catalog.dart` | `DeckSource`s read as one; parse on an isolate; snapshot by SHA-256 (ADR-0048) |
-| Language list | `assets/languages.yaml`, `lib/features/languages/add_language_page.dart`, `LanguageInfo` in `lib/core/models/deck.dart` | The picker lists the official languages; a language is otherwise read from a deck's `language` block |
-| Validator | `tools/validate_decks.py` (about 7,200 lines, 187 functions, per-file and cross-file checks) | Python only. The app's `DeckParser` (`lib/core/data/deck_parser.dart`, about 3,400 lines) is a separate reader |
-| Fonts | ADR-0042, `lib/core/decks/script_fonts.dart` | Noto fonts per script, downloaded with a course, listed in the index. Unknown scripts are accepted with a warning (ADR-0009) and fall back to the phone's font |
+| Package id | `fnpd-<code>` | One package per language code on a phone |
+| Deck id | `fnpd-<code>-<slug>` (a layer: the core id plus its native, as the repository does) | Matches the existing id pattern; the `<lang>-` core rule becomes `fnpd-<code>-` for private files |
+| Card id | `fnpd-<code>-<NNNN or slug>` | **Written by the author, prefix enforced**; the app does not renumber (replaces #495's app-assigned `user-` series) |
+| Code | ISO 639-1, else 639-3, else `qaa` to `qtz` | `q` codes are never official, so no later clash. A same-code package is an Update, never a merge |
+| Rule | A file whose ids lack the prefix is an **error** | Built-in ids are therefore unreachable by a private file |
 
-Decisions already recorded in #495 (owner, 2026-10-12) that this plan keeps:
-a custom deck is **one file** with no core and layer split; the app assigns
-every deck id (`user-<target>-<native>-NNNN`) and card id
-(`<target>-user-NNNNNN`) from a series course decks never use, the counter
-stored and never reused; two-letter ISO 639-1 codes where one exists; the
-same file again is recognised by content (Replace keeps progress on
-unchanged cards, or Keep both); "Send it to us" only after the deck is in
-Your decks; the Settings mockup (`docs/mockups/settings.html`, #496) is
-the approved spec. On 2026-11-04 the owner set #495 aside ("remove blocked
-and keep it aside"), so stage 2 below is where its core gets built.
+**Permanence.** An id the author wrote is theirs and never changes; the app checks that none repeats inside the package and that the prefix holds. The app keeps a **retired list** per package (ids that vanished in an update) and blocks a later revision that gives a retired id to a different card. That is the whole key map: no counter, no renumbering, no database change (AGENTS.md rule 9).
 
-## What "an entire language as a private deck" means
+**Modifying an existing language.** The download-to-modify export (the course's decks are already on the phone) writes a `.fnzip` of the course's files with every id rewritten to `fnpd-<code>-...` and a `replaces: <built-in id>` field on each changed card. Open (question 1): a new id does not carry the built-in card's progress. Proposed: an **unchanged** card stays in the unit by a `ref:` to its built-in id (the catalog supports `ref`), so its history stays; an **edited** card gets a new `fnpd-` id and `replaces` hides the original in this learner's path only. The private path file lists the units; a unit may name built-in decks (`te-home`) or the package's own.
 
-A language today is spread over a few hundred files. For scale, from
-`decks/index.json`: Bengali is 464 files, 5.2 MB, 173 path units; Spanish
-441 files, 3.4 MB. A private language is the same set, in the shape #495
-chose: **single-file decks**, with the native text inside each deck.
+### 2.3 On-device storage
 
-| Part | Official course | Private language package | Needed? |
-|---|---|---|---|
-| Manifest: package id, revision, name, format, `min_app` | none (the index does it) | `manifest.yaml` | Required |
-| Language entry: code, ISO 639-3, names, scripts, `tts`, `rtl`, icon, family | `assets/languages.yaml` plus every deck's `language` block | One `language` block in the manifest, copied into each deck on import | Required |
-| Decks: vocab, grammar, reading, sets, phrasebook | core in `decks/<lang>/`, layer in `decks/<lang>/<native>/` | One file per deck, one native each; several natives allowed as separate decks | At least one deck |
-| Path and the B1 plan | `<lang>-path.yaml` | Optional `path.yaml`; without it the decks are a list in file order | Optional |
-| Themes | `decks/themes.yaml` | The official ids, or own themes in the package | Optional |
-| Facts | `<lang>-facts.yaml` (30 or more) | Optional, no minimum | Optional |
-| Readings and romanisation | `<lang>-romanisation.yaml`, a `reading` on each card | The `reading` on each card; a romanisation file is optional | Readings required for non-Latin scripts (a warning, not an error) |
-| Sounds, script guides, numbers, situations, resources | `<lang>-sounds.yaml` and the others | Optional, same format | Optional |
-| Fonts | `decks/fonts/<script>/` (ADR-0042) | The phone's font, an official Noto font where the script has one, or a font in the package (open question 9) | Optional |
-| Audio and images | per card `audio`, `image` | Optional, small files only (open question 11) | Optional |
-| Version | the index and `min_app` (ADR-0052) | `format`, `revision`, `min_app` in the manifest | Required |
+```
+<app support>/private/index.json         packages: id, revision, active, kind, sha256, size, imported_at, retired ids
+<app support>/private/<package id>/...   unpacked files, written under names the app picks
+<app support>/private/staging/           one import in progress; deleted on cancel or after commit
+```
 
-Stage 1 includes an audit of what each feature needs of a language beyond
-its decks (Today, placement, number drills, search, question engine, the
-sound check), so each missing optional part degrades quietly and none
-crashes. That audit is not done here.
+A new `PrivateStore` (an interface like `DeckStore`, with memory and file implementations). The catalog reads each **active** package as a `DeckSource` under the prefix `private/<package id>/`, `bundled: false`, with a new `private` flag on `DeckEntry`. Inactive packages are not read at all (launch time). Files never go to `downloaded/`, `added/`, `decks/index.json` or the update check. Commit is atomic: unpack to staging, validate, rename the directory, then write `index.json`.
 
-## The user journey
+### 2.4 Import and validation
 
-1. **Settings, Your decks.** Rows: Upload a deck (as now), Get a template
-   (standalone deck or full language, as #495 says), and the list. A
-   private language shows as a group in the list.
-2. **Get a template.** Saved to Downloads through the system file dialog
-   (`DeckFiles.save`). "Full language" is a starter package: manifest,
-   one example deck per kind, an example path, and a short `README` that
-   says the app numbers the cards. A guide page in the wiki says how to
-   fill it, by hand or with an AI tool.
-3. **Author outside the app.** The learner edits files on a computer or
-   phone.
-4. **Upload.** The system picker takes a `.yaml` (one deck, as now) or a
-   package (a zip, see open question 1).
-5. **The fix-up review screen** (#495, extended). It lists findings:
-   file, line, card id, field, the problem. Errors block. Warnings do not.
-   A minor problem has a fix button ("Add quotes", "Use 'bn'", "Add the
-   missing reading later"), or the field can be edited in place. "Add to my
-   decks" is enabled when no errors remain. The learner sees the counts
-   first: decks, cards, files skipped.
-6. **Use it.** The language appears in Languages and in the picker as
-   "Yours". It has a path, Today lessons, reviews, drills and search, like
-   any course.
-7. **Update or replace.** Upload the package again. The app recognises it
-   by its package id (or by content, as #495 says), shows what changed (new,
-   changed and removed cards), and replaces it. Progress on the cards that
-   stay is kept.
-8. **Export.** Settings, Your decks, a language, Export: writes the package
-   as it is now, with the assigned ids as keys, so a re-import on another
-   phone matches.
-9. **Delete.** Remove asks first, in the error colour. The files go; the
-   review history stays and returns if the same package is added again
-   (as ADR-0020 does for added decks).
-10. **Share privately, file to file.** The exported package is a file the
-    learner sends however they like. Nothing is uploaded by the app.
+Reuse the app's own readers; do not write a second parser. Staging means `Catalog.parseAll` over the package files (with the built-in files too when `kind` is modified); its `broken` list is level 1.
 
-## Data model and storage
-
-- **A separate namespace.** Private decks live under their own directory
-  in app storage, beside `added/` (which stays for single decks), never in
-  `downloaded/`. The catalog reads them as another `DeckSource` marked
-  private, so no official deck or index entry can overwrite one.
-- **Ids, as #495 decided.** The app gives each deck `user-<code>-<native>-NNNN`
-  and each card `<code>-user-NNNNNN`. Course decks never use these, and the
-  validator will refuse them under `decks/`.
-- **Language code collision.** The package's language code must not be one
-  in `assets/languages.yaml`, official or planned. A real ISO code the app
-  does not list is allowed (two letters where one exists, else three). A
-  language with no ISO code takes a private-use code, `qaa` to `qtz`, the
-  way English Braille uses `qbe`. A clash with an official language is
-  refused with a plain message, unless the owner allows private decks inside
-  official languages (open question 2). Two private languages cannot share
-  a code on one phone; the second is offered Replace or Rename.
-- **Card-id permanence on re-import.** The one thing that must hold:
-  once an id is assigned it is never reused or changed. The app keeps a map
-  `package id + author key -> card id` and the next-number counter, in
-  its own file, so no database migration is needed (AGENTS.md rule 9). On
-  update, each card in the file is matched in order by author key, then by
-  its target and native text. A match keeps its id. A new card takes the
-  next number. A card gone from the file is retired: its id is never
-  reused, as for a repository card. **This goes beyond #495**, which says
-  the file's own ids are replaced; the plan keeps them as keys so that an
-  author can edit a word and keep the learner's progress (open question 6).
-- **Reviews.** `reviews` stays append-only and keyed by card id, unchanged.
-  Removal and retirement leave history, as ADR-0020 says.
-- **Backup.** Add a part to the backup zip: `own-decks.json` (package ids,
-  key map, counters) and `own-decks/` (the package files). The format
-  version stays 1, because a part the app does not know is ignored; the cost
-  is that an older app restoring such a file silently drops private
-  decks, so the manifest lists the part and the restore screen of the new
-  app names the languages it holds. [Backup-Format](Backup-Format) must change its line "A
-  backup never holds deck files" to "except the learner's own decks".
-  The backup writes entries stored, not compressed, so a 5 MB language adds
-  about 5 MB; compress this part (the reader already accepts deflated
-  entries) or leave it, an open choice for stage 3.
-- **Not shared, not indexed.** A private deck is not in `decks/index.json`,
-  not in the deck update check, not in the reviewer's mail, not in an
-  in-app report, and not in a log export except as card ids. Stage 2 checks
-  each of those paths.
-
-## Validation: one rule set, four levels
-
-The released app and the Python validator are two readers. The in-app
-check cannot copy 7,200 lines of Python, and need not: a private deck must
-be **readable by the app**, not meet the repository's content rules.
-
-| Level | What it checks | Where it runs | Blocks? |
-|---|---|---|---|
-| 0 Safe to open | Size, UTF-8, archive entry names and sizes, file types, YAML depth, no aliases | New Dart code | Error |
-| 1 Readable | The same `DeckParser`, path, themes and facts parsers the app uses to play a deck | Existing Dart | Error |
-| 2 Consistent | Language code rules, scripts, every path unit names a deck, refs exist, no card twice, readings on cards of non-Latin scripts | New Dart, over the parsed objects | Error or warning |
-| 3 Quality | A subset of the validator's checks that help a learner: quoted YAML scalars, script in prose with its reading, stem notes, wrong script letters | Dart port, one rule at a time | Warning |
-| 4 Repository grade | The whole `tools/validate_decks.py` | CI, when a sent deck is split and added | Not in the app |
-
-**What must be identical.** Level 1 is the released app's own reader, so a
-deck that passes it is valid for the released app by construction; no
-second parser may exist. Levels 2 and 3 must give the same finding as the
-Python tool for the same input.
-
-**Keeping the rules in one place.** Three options:
-
-| Option | Meaning | Main downside |
+| Level | Check | Blocks |
 |---|---|---|
-| A. Shared fixtures (recommended) | Python stays the source of truth. Each Dart rule has a rule id and a fixture folder of input plus expected finding, run by both tools in CI | Two code bases still; a rule can drift until a fixture catches it |
-| B. Generate | Write rules as data (a JSON table) that both tools read | Most rules are code, not data; a big rewrite of the validator |
-| C. Dart runs the Python | Not possible on a phone without a runtime | Rules out offline use |
+| 0 Safe | Archive at most 10 MB; entry names (no absolute path, `..`, backslash, drive, duplicates, symlinks, encryption, zip64); per file 2 MB; unpacked 30 MB; compression ratio; 1,000 files; `.yaml` and `.json` only; UTF-8; YAML depth 32, no aliases or custom tags | Error |
+| 1 Readable | `parseAll` on the staged files: every deck, path, theme and facts file parses | Error |
+| 2 Consistent | Manifest valid; every id has the prefix and is unique; language code rules; every path unit names a deck that exists (package or built-in); at most 20,000 cards; readings on cards of non-Latin scripts (warning); `min_app` | Error or warning |
+| 3 Quality | A small Dart subset of the validator's learner-useful checks (quoted scalars, stem notes), one rule per fixture; the Python tool gets a `--private` mode that runs the same fixtures | Warning |
 
-Stage 5 follows option A and ports only the rules a learner benefits
-from. The validator's "custom deck" mode that Deck-Format already calls for
-("Adding your own deck") is built with it: it accepts the user id series
-and refuses them under `decks/`.
+The full `tools/validate_decks.py` stays CI-only. Shared rule fixtures keep Dart and Python in step.
 
-## Scripts, fonts and speech for languages the app does not know
+### 2.5 Registering the language
 
-| Need | What the package gives | What the app does | Gap |
-|---|---|---|---|
-| Script | `script` and `scripts` in the language block, any lowercase name | Accepts unknown names with a warning (ADR-0009); every script but Latin, Cyrillic and Greek expects a `reading` | None |
-| Right to left | `rtl: true` | `LanguageInfo.rightToLeft` and the existing drawing rules | Scripts not in `rtlScripts` need `rtl` set |
-| Font | Nothing, or a font file | Official Noto font where ADR-0042 has one; else the phone's font | An unknown script may draw as boxes; warn on import by drawing a sample (the existing `font_check`) |
-| Speech out | `tts` tag | System TTS (ADR-0002) | The phone may lack the voice |
-| Speech in | none | System recogniser | May lack the language |
-| Romanisation | `reading` per card, optional romanisation file | Typed-reading answers (ADR-0022) | The scheme is the author's own; the app calls it "reading", never ISO 15919 |
-| IPA | `ipa` per card | As for official cards | Narrow `phonetic` is written by repository tools only |
-| Kanji-like second scripts | `scripts`, `target_scripts` (ADR-0053) | As official | None |
+A `PrivateLanguages` service turns each active manifest into a `LanguageInfo` and a `SpokenLanguage`, merged into one **language directory** that the Languages page, the pickers, facts and placement read instead of loading `assets/languages.yaml` directly (about 12 call sites). Shown as "Yours" with a tag. At import and on activation the app checks voice, recogniser and a font sample; a language lacking a voice or recogniser hides its speaking and sound drills (decision 5); boxes in the sample give a warning and the phone-font fallback.
 
-The import checks the voice, the recogniser and a font sample and shows
-what the language will lack (no sound, no speaking drill) before it is
-added. Drills that need a missing capability are hidden for it, or say why they
-cannot run (compare [Plan Speech Offline Alert](Plan-Speech-Offline-Alert)).
+Path and units: a new language's path is used as is; without one, the decks are one unit in file order. A modified language's private path **replaces** the built-in path for that code while the package is active (a private `LanguagePath` wins over the bundled one), and carries `privately_modified: true`, shown as a tag on the course, path and Today. Wildcards (ADR-0020) still work. Placement for a private language builds from its path; the audit of `placement_bank.dart` finds its minimum card count.
 
-## Limits (proposed; stage 2 sets them from measurements)
+### 2.6 FSRS and reviews
 
-| Limit | Proposed | Why |
+Unchanged: `reviews` is keyed by card id, append-only. Remove, deactivate and update never touch it. Re-adding the package, or a later revision that keeps ids, picks the progress up. A card dropped by an update keeps its history and its retired id.
+
+### 2.7 Backup, export, delete
+
+| Action | Behaviour |
+|---|---|
+| Backup | New parts `own-decks.json` (index) and `own-decks/<package>.fnzip` (as imported, deflated); format `version` stays 1, manifest `parts` names it, the restore screen names the private languages it holds; the Backup-Format line "never holds deck files" becomes "except the learner's own packages". Needs a deflate writer; three packages are at most 30 MB |
+| Export | Writes the package's current `.fnzip` through the system file dialog; the same file re-imports on another phone |
+| Update | A newer `.fnzip` with the same package id; summary (new, changed, removed cards, retired ids) before commit; a lower revision needs a confirm |
+| Remove | Asks first, error colour; deletes files and index entry; review history stays for good (ADR-0020) |
+| Deactivate | Keeps files, drops the package from the catalog; needed for the 3-active cap |
+
+### 2.8 Privacy
+
+Private files are not in `decks/index.json`, the update check, reviewer mail, in-app reports or log exports (ids only; the `fnpd-` prefix shows that private cards exist, which is acceptable); no network call mentions a package. `deckSend` is retired (decision 3). A test fails if any outbound path reads the private store.
+
+### 2.9 Fonts (decision 9)
+
+Assessment: a font is an untrusted binary decoded by the platform text engine; the app cannot make a check "airtight" without vetting that engine's parser. Per the owner's rule, **v1 has no fonts in packages and no font upload**: phone fonts, the official Noto set (ADR-0042) and the sample check. The per-language font picker offers only installed or official fonts. Owner to confirm (question 2).
+
+### 2.10 When the language later gains a built-in course
+
+A `q` code never clashes. A real ISO code later added to `languages.yaml`: the package is flagged **shadowed** on the next launch; both courses stay; a one-time notice asks which to use (default: the private course stays active, tagged). Ids never collide by construction, so no progress is lost either way; nothing merges automatically.
+
+### 2.11 Limits
+
+10 MB `.fnzip`; 30 MB unpacked; ratio guard; 2 MB per file; 1,000 files; 20,000 cards; depth 32; 3 active languages (a fourth asks which to deactivate); no cap on installed packages (disk use is shown on the page). Import runs on an isolate with progress. Measure a 5 MB language on a low-end phone before fixing the numbers (ADR-0047).
+
+## 3. Byte-sized tasks, in dependency order
+
+H = Haiku-suitable; S = Sonnet only. One pull request each; CI only (no local test runs). Never touch: `decks/`, the drift schema (no migration), built-in ids, `assets/languages.yaml`.
+
+**Slice 1: import one tiny private language folder and see its first unit (tasks 1 to 6).**
+
+| # | Task | Files | Behaviour and tests | Not touch | Model |
+|---|---|---|---|---|---|
+| 1 | Tiny fixture language | `test/fixtures/private/qaa-tiny/` (manifest, path, core, `en` layer, 2 units, 6 cards, ids `fnpd-qaa-0001`...) | Parses with `DeckParser`; every later test uses it | `decks/` | H |
+| 2 | Id rules | new `lib/core/private/private_ids.dart` (pure Dart) | `hasPrivatePrefix(id, code)`, `packageCode(id)`; table tests: accepts `fnpd-qaa-0001`, refuses `qaa-0001`, `fnpd-QAA`, empty | all else | H |
+| 3 | Manifest model | new `lib/core/private/private_manifest.dart` | `PrivateManifest.parse(text)` returns fields or a `FormatException` naming the field; tests: valid, missing package, package differs from `fnpd-<code>`, bad `q` code, wrong licence | deck parser | S |
+| 4 | Catalog reads `private/` | `lib/app/deck_catalog.dart`: `private/` paths take the bundled route for core, layer, guide and path (not the `isAdded` route), `DeckEntry.private = true`, `bundled = false`; an id without the prefix goes to `broken` | `parseAll` over the fixture gives its decks and path; a built-in-shaped id is a `BrokenDeck` | `added/` behaviour | S |
+| 5 | `PrivateStore` | new `lib/app/private_store.dart`; `DeckCatalog(privateStore:)` | `list`/`read` active packages only; atomic `install(packageId, files)`; memory and file versions; test with the fixture | `added_decks.dart` | S |
+| 6 | Dev import and first unit | `lib/app/private_import.dart` (staging, level 1), a widget test | Install the fixture, load the catalog, the course route for `qaa` shows unit 1 and its cards; `LanguageInfo` from the manifest registered minimally | UI beyond a debug entry | S |
+
+**Reading the package (no UI).**
+
+| # | Task | Files | Behaviour and tests | Model |
+|---|---|---|---|---|
+| 7 | Safe zip reading | `zip_files.dart` `decode(bytes, limits:)`, new `ZipLimits` | Refuses absolute, `..`, backslash, drive, duplicate, symlink, ratio over 100, unpacked over 30 MB, over 1,000 files; hand-built zips | S |
+| 8 | Language directory merge | new `lib/core/decks/language_directory.dart`; swap direct `languages.yaml` reads in the Languages, picker, spoken-languages, facts, review-languages and onboarding files | Directory returns assets plus active private ("Yours"); existing tests unchanged; one `qaa` test | S for the directory, H for the mechanical call-site swaps |
+| 9 | Level 0 and 2 checks | new `lib/core/private/private_check.dart` | Findings (`severity`, `file`, `line`, token, params) per rule of 2.4; a fixture per rule | S |
+| 10 | `.fnzip` to staging | `private_import.dart` | Bytes to files, manifest, levels 0 to 2, counts; refuses over 10 MB and a lower revision of the same package | S |
+| 11 | Private path replaces built-in | `deck_catalog.dart` `_coursePaths`; `CoursePath.privatelyModified` | A modified `te` path wins while active, marker true; inactive falls back | S |
+| 12 | Retired ids | `private_store.dart`, `private_check.dart` | An update that drops an id records it; a later revision reusing it for another card is an error | S |
+
+**Learner-facing.**
+
+| # | Task | Files | Behaviour | Model |
+|---|---|---|---|---|
+| 13 | Active cap and activate or deactivate | `private_store.dart`, `private_import.dart` | A fourth install returns `NeedsDeactivation`; tests | S |
+| 14 | Capability check | new `lib/app/private_capabilities.dart`, `language_skills.dart` | Voice, recogniser, font sample at import and activation; speaking and sound drills hidden for the language | S |
+| 15 | Strings and the "privately modified" tag | `lib/l10n/app_en.arb`, course, path and Today headers | A small tag; no literal strings (`tools/check_ui_strings.py`) | H after 11 |
+| 16 | Your decks: package groups | `your_decks_page.dart` | Per language: size, revision, Activate, Update, Export, Remove; **needs the fresh mockup** | S |
+| 17 | Import review screen | `lib/features/decks/` | Findings (file, line, card, field), counts, Add disabled while errors; severity as a word; 48 dp; 1.4x text; **needs mockup** | S |
+| 18 | Update summary | same | New, changed, removed, retired | S |
+| 19 | Export and download-to-modify | new `private_export.dart` | Fixture round trip is stable; a built-in course export rewrites ids to `fnpd-`, adds `replaces` and `ref`s, marks the path | S |
+| 20 | Backup part and restore | `app_backup.dart`, `zip_files.dart` (deflate writer), Backup-Format | Round trip; an old reader ignores the part | S (the wiki line: H) |
+| 21 | Template, starter package, wiki guide | assets, `Feature.deckTemplates` on, a wiki page "Private language package" | The starter imports clean | H |
+| 22 | Validator `--private` mode | `tools/validate_decks.py` and its tests | Accepts `fnpd-` ids, refuses them under `decks/`, shares the fixtures with Dart | S |
+| 23 | Retire `deckSend` and #495 leftovers | `features.dart`, `your_decks_page.dart`, Deck-Format "Adding your own deck" | Row gone; section rewritten to this plan | H |
+| 24 | Measure limits | a note in this page | A 5 MB package within the ADR-0047 budget; numbers adjusted | S |
+
+Order: 1, 2, 3, 4, 5, 6 (slice 1); 7, 8, 9, 10; 11, 12; 13, 14; 15; mockup; 16 to 19; 20; 21, 22; 23, 24.
+
+## 4. Risks and open questions
+
+| # | Risk or question | Proposed default |
 |---|---|---|
-| Package size | 30 MB | The largest official course is 5.2 MB; audio is the reason for room |
-| One file | 2 MB | A catalog parse reads one file at a time |
-| Files per package | 1,000 | Bengali is 464 |
-| Cards per language | 20,000 | Memory; the card index and Fts5 search (ADR-0049) |
-| Private languages | 5 | Catalog load time on every launch |
-| YAML depth | 32 | Stack safety |
+| 1 | **Progress when a learner edits a built-in card.** A new `fnpd-` id is a new card, so FSRS state does not carry. | Unchanged cards stay by `ref`; edited ones get a new id plus `replaces`. Owner to confirm, or allow "inherit history from <id>" |
+| 2 | **Fonts and the per-language font upload.** A font cannot be vetted airtight. | No fonts in packages; picker limited to installed and official fonts; confirm dropping the upload |
+| 3 | Authors write ids themselves (differs from #495's app-assigned series). | Prefix enforced, app never renumbers; confirm |
+| 4 | One package per language code; a second package for `te` replaces the first. | Yes |
+| 5 | A modified private path replaces the built-in one for that language. | Yes, tagged; built-in one tap away |
+| 6 | A real ISO code later becomes official. | "Shadowed" notice, private stays (2.10) |
+| 7 | Launch time with three 10 MB languages; placement needs enough cards. | Measure (task 24); inactive packages are not read |
+| 8 | Backup grows by up to 30 MB. | Deflate this part |
+| 9 | Does `DeckParser` also require `<lang>-` on core ids? | Audit before task 4; allow `fnpd-<code>-` in both |
+| 10 | Download-to-modify needs the language downloaded. | Offer only downloaded languages |
+| 11 | Scope grows into an editor. | Stays at import, fix and use |
 
-Import runs on an isolate, as the catalog does (#875), with progress. The
-catalog snapshot (ADR-0048) is keyed by file SHA-256, so a private
-language costs a full parse once, then loads from the snapshot. The
-performance budget of ADR-0047 applies: stage 2 measures a 5 MB language on
-a low-end phone before the limits are fixed.
+## Staged issues
 
-## Security
-
-Packages are untrusted input.
-
-- **YAML.** Dart's `yaml` package only builds data. Refuse aliases, custom
-  tags and any depth beyond the limit. No file is ever run.
-- **Archives.** Read in memory. Refuse an entry name that is absolute,
-  has `..`, a backslash or a drive letter, a duplicate name, a symlink,
-  encryption or zip64 (the backup reader refuses the last two). Check the
-  declared size against the bytes read, and the total against the limit,
-  before parsing (a zip bomb). Never write a file under the name the
-  archive gives: the app picks its own names.
-- **Allowed types.** `.yaml`, `.json`, and later fonts and audio by
-  extension and by content. Anything else is skipped and listed.
-- **Binary files** (fonts, audio, images) are the riskiest parts, decoded by
-  the engine. They are a later stage and may be left out (open
-  questions 9 and 11).
-- **Privacy.** Nothing about private content leaves the phone: see
-  "Not shared, not indexed".
-
-## Screens needing a mockup (`docs/mockups/README.md`; none are drawn here)
-
-1. Your decks, with private languages as groups, and Get a template with its
-   two choices (extends the approved Settings mockup).
-2. The review screen with findings, fixes, in-place editing and counts
-   (the #495 screen, widened to a package).
-3. The language page for a private language: what it has and lacks (sound,
-   speaking, font), Update, Export, Remove.
-4. The update summary: new, changed and removed cards.
-5. A "language you bring" entry in Add a language, if the owner wants one
-   (open question 2).
-
-Each is built to the approved spec only.
-
-## Accessibility and l10n
-
-- Findings are text with a severity word, never colour alone. Order on
-  screen is the order a screen reader reads: file, then card, then field.
-- Every control is 48dp or more and works at 1.4x text (the app's cap).
-  Fix buttons have clear labels. Icon-only buttons have one-word tooltips.
-- Remove and other destructive actions are in the error colour and ask
-  first.
-- No user-visible string is a literal (AGENTS.md rule 10). Findings are
-  tokens with placeholders: "Card {id}: '{field}' is missing". The deck's
-  own text is not translated. Package keywords are not interface text.
-- The review screen uses directional paddings and isolates quoted deck text
-  so right-to-left words do not reorder the sentence around them.
-
-## Testing strategy
-
-Tests check behaviour and run only in CI (AGENTS.md). Few, and
-meaningful:
-
-- **Fixtures.** A tiny package of an invented language in a Latin, a
-  right-to-left and an Indic-like script, and a broken variant of each
-  finding: bad code, missing reading, unquoted scalar, traversal entry,
-  duplicate name, oversize file, alias.
-- **Shared rule fixtures** run by both `tools/` and Dart (option A).
-- **Round trip.** Import, export, import on a fresh phone: the same
-  cards, the same ids, the same path. A property test over generated
-  packages.
-- **Permanence.** Import, review, edit a word, update: its progress stays;
-  retire a card and add one: the id is not reused; restore a backup:
-  counters and keys survive.
-- **Backup.** A backup with private decks restores them; an older reader
-  ignores the part.
-- **Performance.** A 5 MB package imports within budget and loads from the
-  snapshot.
-
-## Staged pull requests
-
-Sizes: S under 200 changed lines, M up to 600, L up to 1,500. One concern
-per pull request; docs go straight to main.
-
-| # | Stage | Size | Blocked by |
-|---|---|---|---|
-| 0 | Owner answers the open questions below | n/a | none |
-| 1 | Decision record, wiki format page "Private language package", validator custom mode spec, audit of what features need of a language (docs only) | M | 0 |
-| 2 | Private store: separate directory, user id series, key map and counter, replace by key, retire; catalog source; limits measured | L | 1 |
-| 3 | Backup part `own-decks` and restore, with Backup-Format change | M | 2 |
-| 4 | Package reader: manifest, archive and folder safety, staging in memory | M | 1 |
-| 5 | Validation engine in Dart: findings, levels 0 to 3, shared fixtures; validator custom mode in Python | L | 4 |
-| 6 | Language entry, scripts, `rtl`, font sample and capability check (voice, recogniser) | M | 2 |
-| 7 | Review screen: findings, fixes, in-place edit, update summary (needs mockup) | L | 5, 6 |
-| 8 | Templates and starter package, the guide page (wiki), `Feature.deckTemplates` on | M | 1, 4 |
-| 9 | Export, update, replace, remove for a language; Your decks list groups (needs mockup) | M | 2, 7 |
-| 10 | Optional: fonts and audio in a package | M | 4, open questions 9 and 11 |
-| 11 | Optional: "Send it to us" for a language (#495's own part) | M | 9, #495 |
-
-Stages 4 and 8 can start with 2. Stage 7 is the first the learner sees.
-
-**Risks.**
-
-- Two readers drift (mitigated by shared fixtures, and by Level 1 being
-  the app's own parser).
-- A parse of 5 MB on a low-end phone is slow (measured in stage 2, then
-  the snapshot and isolate).
-- Private-use language codes may clash with official ones later: the
-  official `languages.yaml` wins and a private language is offered Rename.
-  The risk is small and handled at import.
-- Scope: this can grow into a content editor. The plan stays at import,
-  fix and use.
-
-## Milestone
-
-0.8.0 exists, and its only issue is Handwriting. **0.9.0 does not exist
-yet.** Suggest: the docs stage (1) with 0.8.0; the build (2 to 9) in a new
-0.9.0, which the owner creates. The milestone's description holds the order
-(CLAUDE.md). This is the owner's call; no milestone is set on the
-issues until he says.
-
-## Dependencies
-
-- #495 is the base: stage 2 builds its custom-deck core. It is set aside
-  (owner, 2026-11-04), so the owner decides whether it is built first,
-  folded into this plan, or built as stage 2 here (question 13).
-- #475 is closed; the Add deck row is already in Settings.
-- Nothing else blocks it. Record each child issue's "blocked by" link and
-  the `blocked` label as the table says (CLAUDE.md).
-
-## Open questions for the owner
-
-| # | Question | Options | Main downside |
-|---|---|---|---|
-| 1 | Package form | (a) one zip, `.fnlang`, like the backup; (b) a folder the learner picks; (c) many single files picked one by one | (a) needs a zip tool for authors; (b) system pickers on phones handle folders badly; (c) cannot carry a path or manifest |
-| 2 | Can private languages add decks to an official language, or only bring new ones? | (a) new languages only; (b) both, kept apart | (b) doubles the id and path rules and the "which course is this" question |
-| 3 | Sharing between users | (a) file to file only; (b) also a link; (c) via "Send it to us" | (b) needs a host and moderation; (c) turns private content public and needs the licence below |
-| 4 | Built-in AI authoring helper | (a) none, a prompt guide on the wiki; (b) a Copy prompt button; (c) an in-app AI call | (c) needs the network and an account, against "offline"; (b) can tempt wrong content |
-| 5 | A language with no voice or no speech recognition | (a) hide speaking and sound drills for it; (b) let the package carry audio; (c) refuse it | (a) a thinner course; (b) large files and a binary stage |
-| 6 | Card keys on update | (a) the author gives a `key` per card; the app maps it to its id (this plan); (b) as #495: replace all ids, match by content | (a) beyond #495's words, one more field; (b) an edited word loses its progress |
-| 7 | Core and layer for a private language | (a) single-file decks only, as #495 chose; (b) allow core and layers for authors who want them | (b) a second code path for the parser and the review screen |
-| 8 | Language codes | (a) ISO two letters, three where none, `qaa` to `qtz` for no ISO code; (b) the learner types anything | (b) clashes with official codes later |
-| 9 | Fonts in a package | (a) never, phone font or Noto only; (b) allowed, one font up to 2 MB | (a) some scripts draw as boxes; (b) an untrusted binary and a licence to check |
-| 10 | Licence field of a private deck | (a) any SPDX id or `private`; (b) `CC-BY-SA-4.0` as in the repository (ADR-0040) | (a) a sent deck needs its licence cleared first; (b) forces a licence on private work |
-| 11 | Audio and images in a package | (a) not now; (b) small clips and pictures, with limits | (b) larger packages and binary decoding risk |
-| 12 | The numbers: 30 MB, 2 MB a file, 20,000 cards, 5 languages | accept, or change | Too low blocks a real language; too high risks memory on a low-end phone |
-| 13 | #495 | (a) build it as stage 2 here; (b) build it alone first, then this plan; (c) fold it into this plan | (b) the full-language work waits; (c) #495's mockup spec must be re-read |
-| 14 | Milestone | (a) 0.8.0; (b) a new 0.9.0 | (a) crowds 0.8.0; (b) the owner creates it and sets its order |
+The staged children in #1017 (stages 0 to 11) are superseded by tasks 1 to 24 above. Each child issue records its `blocked by` links and the `blocked` label (CLAUDE.md).
 
 See also: [Plans-Index](Plans-Index) · [Deck-Format](Deck-Format) · [Backup-Format](Backup-Format) · [ADR-0020](ADR-0020-Added-Decks) · [ADR-0042](ADR-0042-Script-Fonts-Download-Per-Course) · [ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index) · [Roadmap](Roadmap) · [Home](Home)
