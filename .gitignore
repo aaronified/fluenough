@@ -67,3 +67,10 @@ venv/
 
 # Python-tool downloads (tools/import_phonetic.py)
 /.cache/
+
+# On-device listener tools (tools/asr): model files are never committed
+*.nemo
+*.onnx
+*.onnx.data
+tools/asr/head_*.f32
+tools/asr/_work/
