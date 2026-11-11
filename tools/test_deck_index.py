@@ -532,6 +532,34 @@ class DeckIndex(unittest.TestCase):
                     fresh.doCleanups()
 
 
+    # Deck-owned data (owner, 2026-11-11): the shared files are listed apart.
+
+    def test_the_shared_themes_file_is_listed_apart_from_the_languages(self) -> None:
+        index = self.index()
+        data = (self.tmp / "decks" / "themes.yaml").read_bytes()
+        self.assertEqual(index["bundled"], ["decks/themes.yaml"])
+        self.assertEqual(len(index["shared"]), 1)
+        themes = index["shared"][0]
+        self.assertEqual(themes["path"], "decks/themes.yaml")
+        self.assertEqual(themes["size"], len(data))
+        self.assertEqual(themes["sha256"], hashlib.sha256(data).hexdigest())
+        self.assertEqual(themes["kind"], "themes")
+        self.assertEqual(themes["schema"], 1)
+        self.assertNotIn("min_app", themes)
+        for language in index["languages"]:
+            self.assertNotIn("decks/themes.yaml", [f["path"] for f in language["files"]])
+        text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
+        line = next(l for l in text.splitlines() if "decks/themes.yaml" in l and "sha256" in l)
+        self.assertIn('"kind": "themes"', line)
+
+    def test_a_shared_file_can_be_given_a_min_app(self) -> None:
+        self.min_app({"files": {"decks/themes.yaml": "0.9.0"}})
+        self.assertEqual(self.index()["shared"][0]["min_app"], "0.9.0")
+
+    def test_without_a_themes_file_there_is_no_shared_key(self) -> None:
+        (self.tmp / "decks" / "themes.yaml").unlink()
+        self.assertNotIn("shared", self.index())
+
     # min_app (ADR-0052): the oldest app that can read a language or a file.
 
     def min_app(self, data: object) -> None:

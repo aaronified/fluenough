@@ -1,6 +1,7 @@
 import 'dart:convert';
 
 import 'app_version.dart';
+import 'shared_data.dart';
 
 /// The newest index format this app reads. An index of a later version
 /// asks for an app update instead (ADR-0037).
@@ -597,12 +598,21 @@ class DeckIndex {
   const DeckIndex({
     this.version = supportedIndexVersion,
     this.languages = const <IndexLanguage>[],
+    this.shared = const <SharedFile>[],
+    this.sharedProblems = const <String>[],
   });
 
   /// The index's format. Later than [supportedIndexVersion], the app cannot
   /// read it: [parse] refuses it with [IndexTooNewException].
   final int version;
   final List<IndexLanguage> languages;
+
+  /// The deck-owned files the app can read from the downloads, such as the
+  /// theme list (owner, 2026-11-11). Empty for an index that lists none.
+  final List<SharedFile> shared;
+
+  /// Why entries of the index's `shared` list were left out, for the log.
+  final List<String> sharedProblems;
 
   IndexLanguage? language(String code) {
     for (final language in languages) {
@@ -650,7 +660,13 @@ class DeckIndex {
         throw FormatException('${language.code} is listed twice');
       }
     }
-    return DeckIndex(version: version, languages: languages);
+    final shared = parseSharedFiles(json['shared'], appVersion: appVersion);
+    return DeckIndex(
+      version: version,
+      languages: languages,
+      shared: shared.files,
+      sharedProblems: shared.problems,
+    );
   }
 }
 

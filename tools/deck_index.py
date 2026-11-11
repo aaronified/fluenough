@@ -221,6 +221,15 @@ HIDDEN: set[str] = set()
 # the theme list. The spoken languages live in assets/, not here.
 BUNDLED = {"decks/themes.yaml"}
 
+# Deck-owned data (owner, 2026-11-11): files that are entirely about the decks
+# and change with them, that belong to no one language. The index lists them
+# apart, under `shared`, and an app that knows the key downloads them with the
+# decks update, checks them, and reads them in place of its bundled copy.
+# An older app ignores the key and keeps using its bundled copy (BUNDLED).
+# Add a path here only after the app can read it from the downloads
+# (lib/core/decks/shared_data.dart names the kinds it can).
+SHARED = ("decks/themes.yaml",)
+
 # The fonts the app downloads with a course (ADR-0042): for each script that
 # phones often draw wrongly or lack, one OFL-licensed Noto font in
 # `decks/fonts/<script>/`, with its OFL.txt. The Noto CJK fonts (simplified
@@ -518,6 +527,16 @@ def build(reports: list[vd.Report] | None = None,
     own_scripts = _own_scripts()
     min_languages, min_files = load_min_app()
     listed_files: set[str] = set()
+    shared = []
+    for rel in SHARED:
+        shared_path = ROOT / rel
+        if not shared_path.is_file():
+            continue
+        shared_entry = _file_entry(shared_path, None)
+        if rel in min_files:
+            shared_entry["min_app"] = min_files[rel]
+        shared.append(shared_entry)
+        listed_files.add(rel)
     out = []
     for d in langs:
         code = d.name
@@ -622,12 +641,15 @@ def build(reports: list[vd.Report] | None = None,
             print(f"warning: {warning}", file=sys.stderr)
     if problems:
         raise MinAppError("; ".join(problems))
-    return {
+    index = {
         "version": INDEX_VERSION,
         "schema": vd.SCHEMA,
         "bundled": sorted(BUNDLED),
-        "languages": out,
     }
+    if shared:
+        index["shared"] = shared
+    index["languages"] = out
+    return index
 
 
 def render(index: dict) -> str:
@@ -641,6 +663,12 @@ def render(index: dict) -> str:
     lines.append(f'  "version": {index["version"]},')
     lines.append(f'  "schema": {index["schema"]},')
     lines.append(f'  "bundled": {dump(index["bundled"])},')
+    shared = index.get("shared", [])
+    if shared:
+        lines.append('  "shared": [')
+        for j, f in enumerate(shared):
+            lines.append(f"    {dump(f)}{',' if j < len(shared) - 1 else ''}")
+        lines.append("  ],")
     lines.append('  "languages": [')
     for i, language in enumerate(index["languages"]):
         lines.append("    {")
