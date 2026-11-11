@@ -1122,50 +1122,6 @@ class ItemGenerators {
     return out;
   }
 
-  /// Heard sentence, arrange its English meaning from tiles (F27): the
-  /// sentence is spoken in the language, the learner builds the English (two
-  /// decoy words from other sentences' English). It asks the meaning, never
-  /// what was said. Only the course's own English is right.
-  List<RegItem> sentenceMeaningTiles() {
-    final r = cx.stream('stiles:F27');
-    final out = <RegItem>[];
-    for (final s in cx.sentences) {
-      if (s.inner) continue;
-      final words = _meaning(s.english).split(' ');
-      if (words.length < 3 || words.length > 9) continue;
-      final decoys = <String>[];
-      final pool = cx.sentences.where(
-        (o) => o.card.id != s.card.id && (o.deck - s.deck).abs() <= 6,
-      );
-      for (final o in _shuffle(r, pool)) {
-        for (final w in _meaning(o.english).split(' ')) {
-          if (w.isNotEmpty && !words.contains(w) && !decoys.contains(w)) {
-            decoys.add(w);
-          }
-        }
-        if (decoys.length >= 6) break;
-      }
-      if (decoys.length < 2) continue;
-      out.add(
-        RegItem(
-          id: _key(s.card.id, 'F27'),
-          format: 'F27',
-          cardId: s.card.id,
-          deck: s.deck,
-          prompt: s.text,
-          tiles: _shuffle(r, <String>[...words, ...decoys.take(2)]),
-          answerTiles: words,
-          cognateScore: s.cognateScore,
-          nonCognateContent: s.nonCognateContent,
-          weight: s.nonCognateContent >= 2 ? 1 : 0.5,
-          decoyCount: 2,
-          lemmas: s.lemmas,
-        ),
-      );
-    }
-    return out;
-  }
-
   /// Word order (S2): the sentence and itself with one constituent (an
   /// adjacent pair of words) swapped; the end marks stay put. Of the possible
   /// swaps the one whose word pairs occur most often elsewhere in the course

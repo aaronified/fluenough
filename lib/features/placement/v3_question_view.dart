@@ -247,11 +247,8 @@ class _V3QuestionViewState extends State<V3QuestionView> {
     context,
     tiles: _q.tiles,
     placed: _placed,
-    // The English tiles of F27 are in Latin letters.
-    language: _q.format == 'F27' ? null : widget.language,
-    direction: widget.language.rtl && _q.format != 'F27'
-        ? TextDirection.rtl
-        : TextDirection.ltr,
+    language: widget.language,
+    direction: widget.language.rtl ? TextDirection.rtl : TextDirection.ltr,
     answered: false,
     onPlace: (i) => setState(() {
       if (!_placed.contains(i)) _placed.add(i);

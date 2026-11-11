@@ -202,7 +202,6 @@ class ItemBank {
     'F18',
     'F8',
     'F24',
-    'F27',
   };
 
   /// What a run can begin with out of [items] (a whole bank, or what the
@@ -266,12 +265,11 @@ class ItemBank {
       return <_Step>[
         _Step(() => g.wordToMeaning('F2'), starter: true),
         _Step(() => reverseOf('F13'), starter: true),
+        _Step(() => reverseOf('F26')),
         _Step(() => reverseOf('F7'), starter: true),
         _Step(() => g.typedOrSaid('F18'), starter: true),
         _Step(() => reverseOf('F8'), starter: true),
         _Step(() => reverseOf('F24'), starter: true),
-        _Step(g.sentenceMeaningTiles, starter: true),
-        _Step(() => reverseOf('F26')),
         _Step(() => reverseOf('F23')),
         _Step(() => reverseOf('F21')),
         _Step(() => reverseOf('F25')),
@@ -302,7 +300,6 @@ class ItemBank {
       _Step(() => pseudoOf('F14')),
       _Step(() => reverseOf('F8')),
       _Step(() => reverseOf('F24')),
-      _Step(g.sentenceMeaningTiles),
       _Step(g.wordOrder),
       _Step(() => picksOf('F5')),
       _Step(() => picksOf('F17')),
