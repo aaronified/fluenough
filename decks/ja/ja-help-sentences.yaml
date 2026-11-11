@@ -85,6 +85,7 @@ cards:
     ipa: "meɴkjoɕoː o misete kɯdasai"
     pos: "phrase"
     bases:
+      - { word: "ください", base: "ください", reading: "kudasai" }
       - { word: "を", base: "を", reading: "o" }
       - { word: "みせて", base: "みせる", reading: "misete" }
     confusables:
@@ -103,6 +104,7 @@ cards:
     ipa: "koko de tomatte kɯdasai"
     pos: "phrase"
     bases:
+      - { word: "ください", base: "ください", reading: "kudasai" }
       - { word: "で", base: "で", reading: "de" }
       - { word: "とまって", base: "とまる", reading: "tomatte" }
     confusables:
@@ -115,21 +117,21 @@ cards:
         reading: "massugu"
         kind: "word"
   - id: "ja-4126"
-    target: "いはんをしましたか。"
-    words: ["いはん", "を", "しました", "か"]
-    reading: "ihan o shimashita ka."
-    ipa: "ihaɴ o ɕimaɕita ka"
+    target: "どこへいきますか。"
+    words: ["どこ", "へ", "いきます", "か"]
+    reading: "doko e ikimasu ka."
+    ipa: "doko e ikimasɯ ka"
     pos: "phrase"
     bases:
-      - { word: "を", base: "を", reading: "o" }
-      - { word: "しました", base: "する", reading: "shimashita" }
+      - { word: "へ", base: "へ", reading: "e" }
+      - { word: "いきます", base: "いく", reading: "iku" }
       - { word: "か", base: "か", reading: "ka" }
     confusables:
       - id: "w1"
-        word: "ちゅうい"
-        reading: "chuui"
+        word: "えき"
+        reading: "eki"
         kind: "word"
       - id: "w2"
-        word: "きけん"
-        reading: "kiken"
+        word: "くるま"
+        reading: "kuruma"
         kind: "word"
