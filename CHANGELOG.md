@@ -7,10 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- CI: test shard weights refreshed so the 8 shards finish together.
+
 ### Fixed
 
 - Say works again: recording no longer runs at the same time as online recognition; #1107. The recogniser has the microphone alone, as before 0.9.4, and Hear yourself records a take after the attempt.
 - CI: the web smoke test no longer fails when the runner cannot reach the apt mirror (#1102).
+
 ### Added
 
 - tools/asr: Telugu on-device listener reference tools (#1004).
