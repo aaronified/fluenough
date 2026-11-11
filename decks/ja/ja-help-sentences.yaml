@@ -78,3 +78,58 @@ cards:
         word: "いぬ"
         reading: "inu"
         kind: "word"
+  - id: "ja-4124"
+    target: "めんきょしょうをみせてください。"
+    words: ["めんきょしょう", "を", "みせて", "ください"]
+    reading: "menkyoshou o misete kudasai."
+    ipa: "meɴkjoɕoː o misete kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "みせて", base: "みせる", reading: "misete" }
+    confusables:
+      - id: "w1"
+        word: "パスポート"
+        reading: "pasupooto"
+        kind: "word"
+      - id: "w2"
+        word: "きっぷ"
+        reading: "kippu"
+        kind: "word"
+  - id: "ja-4125"
+    target: "ここでとまってください。"
+    words: ["ここ", "で", "とまって", "ください"]
+    reading: "koko de tomatte kudasai."
+    ipa: "koko de tomatte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "とまって", base: "とまる", reading: "tomatte" }
+    confusables:
+      - id: "w1"
+        word: "ゆっくり"
+        reading: "yukkuri"
+        kind: "word"
+      - id: "w2"
+        word: "まっすぐ"
+        reading: "massugu"
+        kind: "word"
+  - id: "ja-4126"
+    target: "いはんをしましたか。"
+    words: ["いはん", "を", "しました", "か"]
+    reading: "ihan o shimashita ka."
+    ipa: "ihaɴ o ɕimaɕita ka"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "しました", base: "する", reading: "shimashita" }
+      - { word: "か", base: "か", reading: "ka" }
+    confusables:
+      - id: "w1"
+        word: "ちゅうい"
+        reading: "chuui"
+        kind: "word"
+      - id: "w2"
+        word: "きけん"
+        reading: "kiken"
+        kind: "word"
