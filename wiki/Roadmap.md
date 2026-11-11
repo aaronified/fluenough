@@ -115,15 +115,15 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 **Other**
 
-- [#1097](https://github.com/aaronified/fluenough/issues/1097) Placement: drop the "See your results" screen and simplify the result card
+- [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
 - [#1100](https://github.com/aaronified/fluenough/issues/1100) Placement: make the questions much tougher
+- [#1106](https://github.com/aaronified/fluenough/issues/1106) Placement: reverse direction questions (English spoken, learner answers in the target language)
+- [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
+- [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
+- [#1097](https://github.com/aaronified/fluenough/issues/1097) Placement: drop the "See your results" screen and simplify the result card
 - [#1098](https://github.com/aaronified/fluenough/issues/1098) Placement: more cloze questions (single and multiple letters)
 - [#1099](https://github.com/aaronified/fluenough/issues/1099) Placement: sentence fill-in-the-blank with same-word-class options
-- [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
-- [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
-- [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
 - [#1105](https://github.com/aaronified/fluenough/issues/1105) Placement: remove 'what you heard' questions; always ask the meaning, with tougher non-guessable items
-- [#1106](https://github.com/aaronified/fluenough/issues/1106) Placement: reverse direction questions (English spoken, learner answers in the target language)
 
 ### 1 · Skill model + FSRS
 
@@ -331,6 +331,7 @@ A plan with no tracking issue is flagged.
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
+- [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**
 - [decks in a branch of their own](https://github.com/aaronified/fluenough/wiki/Plan-Decks-Branch), **no tracking issue**
 - [explain the mistake on a wrong grammar answer](https://github.com/aaronified/fluenough/wiki/Plan-Explain-Mistakes) (Written 2026-10-05), tracks #225
 - [a recent fit for FSRS, with the window chosen from the learner's own reviews](https://github.com/aaronified/fluenough/wiki/Plan-Fsrs-Recent-Fit), **no tracking issue**

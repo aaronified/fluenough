@@ -22,6 +22,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - On-device listener: Kotlin ONNX Runtime channel and Dart runtime interface (#1004).
 - tools/asr: Telugu on-device listener reference tools (#1004).
+- tools/asr: Wiktionary Telugu audio accuracy test (#1004).
+- .github/workflows/asr-export.yml: manual workflow that exports one language's on-device listener pack on a GitHub runner (#1004).
 - On-device listener: end-of-speech detector and PCM recorder (#1004).
 - On-device listener: pure-Dart CTC head and decoder (#1004).
 - On-device listener: pure-Dart log-mel front end (#1004).
