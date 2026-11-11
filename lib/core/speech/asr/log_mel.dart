@@ -6,6 +6,8 @@
 /// pre-emphasis 0.97, 80 slaney mel bins, log(power + 2^-24), then per-feature
 /// mean and std normalisation over time (std with ddof 1, plus 1e-5).
 /// The golden frames are in test/fixtures/asr/golden_mel.json.
+library;
+
 import 'dart:math' as math;
 import 'dart:typed_data';
 

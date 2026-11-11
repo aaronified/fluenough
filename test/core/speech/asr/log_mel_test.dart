@@ -20,7 +20,7 @@ void main() {
       expect(frames.length, golden['frames']);
       expect(frames.first.length, golden['melBins']);
       final indexes = (golden['frameIndexes'] as List).cast<int>();
-      final values = (golden['values'] as List).cast<List>();
+      final values = (golden['values'] as List).cast<List<Object?>>();
       for (var k = 0; k < indexes.length; k++) {
         final frame = frames[indexes[k]];
         final expected = values[k];
