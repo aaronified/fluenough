@@ -18,6 +18,10 @@ on:
         description: Also keep encoder.fp32.onnx (for the int8 versus fp32 comparison)
         type: boolean
         default: true
+      audio_limit:
+        description: How many Wikimedia Commons word recordings to score (0 skips the accuracy test)
+        required: true
+        default: "40"
 
 permissions:
   contents: read
@@ -28,6 +32,7 @@ jobs:
     timeout-minutes: 90
     env:
       LANG_CODE: ${{ inputs.lang }}
+      AUDIO_LIMIT: ${{ inputs.audio_limit }}
       NEMO_URL: ${{ inputs.nemo_url }}
       # AI4Bharat/NeMo branch nemo-v2, resolved with `git ls-remote` on 2026-11-11.
       NEMO_SHA: 8dce88cf8e94963e2033c3137f7b9993b51db88a
@@ -43,6 +48,9 @@ jobs:
           if [ "${#LANG_CODE}" -lt 2 ] || [ "${#LANG_CODE}" -gt 3 ]; then
             echo "lang must match ^[a-z]{2,3}$"; exit 1
           fi
+          case "$AUDIO_LIMIT" in
+            *[!0-9]*|"") echo "audio_limit must be a number"; exit 1 ;;
+          esac
           case "$NEMO_URL" in
             https://objectstore.e2enetworks.net/*) ;;
             *) echo "nemo_url must start with https://objectstore.e2enetworks.net/"; exit 1 ;;
@@ -156,6 +164,47 @@ jobs:
             python3 -I tools/asr/transcribe.py "out/$LANG_CODE" work/synthetic.wav --encoder fp32
           fi
 
+      # Accuracy test set: Telugu word recordings from Wikimedia Commons (CC BY-SA). They go
+      # only to the artifact, never to the repository. Needs ffmpeg and about a minute of
+      # paced API requests (tools/asr/fetch_wiktionary_audio.py follows the API etiquette).
+      - name: Fetch Wikimedia Commons recordings
+        id: audio
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        run: |
+          if [ "$AUDIO_LIMIT" = "0" ] || [ ! -f "out/$LANG_CODE/encoder.int8.onnx" ]; then
+            echo "skipping the accuracy test (audio_limit 0 or no int8 encoder)"; exit 0
+          fi
+          sudo apt-get install -y ffmpeg
+          mkdir -p eval
+          python3 -I tools/asr/fetch_wiktionary_audio.py "eval/audio" --limit "$AUDIO_LIMIT"
+
+      - name: Score the pack on the recordings
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        run: |
+          if [ ! -f "eval/audio/manifest.json" ] || [ ! -f "out/$LANG_CODE/encoder.int8.onnx" ]; then
+            echo "no recordings or no int8 encoder: nothing to score" | tee -a "$GITHUB_STEP_SUMMARY"; exit 0
+          fi
+          python3 -I tools/asr/eval_wer.py eval/audio --pack "out/$LANG_CODE" | tee eval/results.txt
+          python3 -I - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import re
+          lines = open("eval/results.txt", encoding="utf-8").read().splitlines()
+          print("## Accuracy on Wikimedia Commons recordings")
+          for l in lines:
+              if re.match(r"^(int8|fp32): WER", l):
+                  print("- " + l)
+          rows = []
+          for l in lines:
+              p = l.split("\t")
+              if len(p) == 5 and p[0] == "int8":
+                  m = re.search(r"(\d+)/(\d+)$", p[4])
+                  rows.append((int(m.group(1)) if m else 0, p[2][5:], p[3][5:]))
+          print(f"\nFiles scored (int8): {len(rows)}\n")
+          print("Worst 10 words (int8), expected vs heard:\n")
+          print("| expected | heard |\n|---|---|")
+          for _, ref, hyp in sorted(rows, key=lambda r: -r[0])[:10]:
+              print(f"| {ref} | {hyp} |")
+          PY
+
       - name: Print pack sizes and the int8 versus fp32 numbers
         if: ${{ always() && steps.validate.outcome == 'success' }}
         run: |
@@ -173,5 +222,13 @@ jobs:
         with:
           name: asr-pack-${{ inputs.lang }}
           path: out/
+          retention-days: 14
+          if-no-files-found: warn
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        with:
+          name: asr-eval-${{ inputs.lang }}
+          path: eval/
           retention-days: 14
           if-no-files-found: warn
