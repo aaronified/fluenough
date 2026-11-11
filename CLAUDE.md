@@ -23,7 +23,7 @@ ones that matter most; read the section before acting on one.
 - **Releases:** the owner runs the Release workflow; each PR adds its own CHANGELOG line; deck content stays out of a release ([Releases and milestones](#releases-and-milestones)).
 - **Top priorities after the placement release** (owner, 2026-11-07): 1. private decks, 2. on-device voice recognition, both recorded for later; the session that ships the placement bugfix release stops there, and no agent starts them without a new owner instruction ([Releases and milestones](#releases-and-milestones)).
 - **Deck work:** the language lists, priorities and what is in scope this week, and the order after the placement fix, are in one place; deck PRs are large, and `tools/deck_index.py` is never run locally ([Content and decks](#content-and-decks)).
-- **Decks live on `decks-live`** (owner, 2026-11-06): deck PRs target it; its index and review queue are regenerated there; `decks/themes.yaml` is edited only on main ([Content and decks](#content-and-decks)).
+- **Decks live on `decks-live`** (owner, 2026-11-06): deck PRs target it; its index and review queue are regenerated there; deck-owned data (`decks/themes.yaml` and any file entirely about decks) lives there too and reaches apps with the decks ([Content and decks](#content-and-decks), [Plan-Deck-Owned-Data](wiki/Plan-Deck-Owned-Data.md)).
 - **Card ids are permanent**, YAML scalars are quoted, and `lib/core` has no Flutter imports ([AGENTS.md](AGENTS.md)).
 - **Mockups and text size:** build the approved spec exactly, at 1.4x text only; a `direct-code` issue has every decision made ([Mockups, issues and dependencies](#mockups-issues-and-dependencies)).
 - **Never stop anything** unless the owner explicitly asks ([Agents and models](#agents-and-models)).
@@ -245,9 +245,17 @@ adjectives, verbs) are full tables covering every word, as Bengali's are
 - **Decks live on `decks-live`** (owner, 2026-11-06). Decks live on the
   permanent branch `decks-live`, and the apps download decks from it (PR
   #1052 merged). Deck PRs target `decks-live`. `main`'s `decks/` is frozen,
-  kept only for old apps. `decks-next` is retired. `decks/themes.yaml` is
-  bundled in the app, so it is edited only on main. Deck content never needs
-  a release.
+  kept only for old apps. `decks-next` is retired. **Deck-owned data**
+  (owner, 2026-11-11: "Move themes to decks-live. And not just themes,
+  anything that is entirely about decks and will change with the decks."):
+  `decks/themes.yaml`, and any file entirely about decks that changes with
+  them, lives on `decks-live`, is listed in its index under `shared`, and is
+  downloaded by the app with the decks. It is edited there, with the decks;
+  main's copy of `decks/themes.yaml` is only the app's bundled fallback (an
+  offline first start, an app too old to download it) and is never edited for
+  a new theme. This replaces "edited only on main" of 2026-11-06. Deck
+  content never needs a release. The audit and the rules are in
+  [Plan-Deck-Owned-Data](wiki/Plan-Deck-Owned-Data.md).
 - **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
   `decks-live` by its workflow after each merge (`.github/workflows/deck-index.yml`,
   PR #719). The review queue (`decks/review-queue.json`) is regenerated there

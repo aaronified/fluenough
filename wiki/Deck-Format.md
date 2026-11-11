@@ -3034,8 +3034,16 @@ downloads is listed in `decks/index.json`:
   has one: `path`, `size`, `sha256`, `schema` and `kind`, `"resources"`. It
   is listed apart from `files`, so that an app too old to read it passes it
   by, and the language's `size` does not count it. The app fetches it alone.
-- **`bundled`**: `decks/themes.yaml`, which ships inside the app and is
-  not downloaded.
+- **`bundled`**: `decks/themes.yaml`, the copy that ships inside the app, for
+  an app that does not know `shared` (kept for old apps).
+- **`shared`**: the deck-owned files that belong to no one language and
+  change with the decks (owner, 2026-11-11), today `decks/themes.yaml`: each
+  `path`, `size`, `sha256`, `content_sha256`, `schema`, `kind` and, when
+  `decks/min_app.json` gates it, `min_app`. The app downloads them with the
+  decks update, checks size, hash, schema, `min_app` and that it parses, keeps
+  them on the phone and reads them before its bundled copy (the fallback for an
+  offline first start). `SHARED` in `tools/deck_index.py` names them
+  ([Plan-Deck-Owned-Data](Plan-Deck-Owned-Data)).
 
 **You do not write the index.** A workflow (`deck-index.yml`) runs
 `python3 tools/deck_index.py` on decks-live after each merge that touches `decks/`

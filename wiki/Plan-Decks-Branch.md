@@ -22,7 +22,7 @@ So: main keeps its decks, frozen (old apps keep reading them); the branch is cre
 **Open items (2026-11-06):**
 - **Release.** The owner runs the Release workflow from main. Until an app with the new base is out, phones keep the decks they have; old apps keep main's frozen `decks/`.
 - **Review bot retarget.** In progress: `feedback-mail.yml` and `tools/review_bot.py` still aim at main (step 6). Bot branches still start from main until it lands.
-- **Bundled `themes.yaml`.** `decks/themes.yaml` is bundled in the app, so it is edited only on main, never on `decks-live`.
+- **Bundled `themes.yaml`.** Replaced 2026-11-11: `decks/themes.yaml` is deck-owned data, edited on `decks-live` and downloaded by the app with the decks; main's copy is only the bundled fallback. See [Plan-Deck-Owned-Data](Plan-Deck-Owned-Data).
 - **About 85 tests still on frozen decks.** They still read main's `decks/` and move to the sample or to `decks-live` (see Audit 1).
 - **Rebase open deck branches** (`fr-b1`, `ja-b1`, `ta-a1`, `bn-b1-3`, `hi-b1-3`, `hi-b1-4`, `te-*`) onto `decks-live` with `git rebase --onto decks-live main <branch>`, then move each open PR's base to `decks-live`.
 
