@@ -29,6 +29,7 @@ The head and the encoder-tensor hashes are read from the `.nemo` **without torch
 | `export_pack.py` | `.nemo` to pack (below) |
 | `loadmodel.py`, `export_onnx.py`, `quantize.py` | the encoder-only ONNX export and int8 quantisation (spike scripts, generalised) |
 | `transcribe.py`, `eval_wer.py` | reference transcriber and the WER/CER scorer |
+| `fetch_wiktionary_audio.py` | downloads about 40 Telugu word recordings from Wikimedia Commons (paced, one request at a time, User-Agent, `maxlag`, backoff, request cap) into `name.wav` + `name.txt` pairs and `manifest.json` (author and licence per file); the accuracy test set, so nobody has to record words |
 | `golden.py` | writes `test/fixtures/asr/golden_mel.json` and `golden_ctc.json` for the Dart tests |
 | `bench.py`, `parity.py`, `check_features.py` | speed, parity against NeMo, front-end check |
 | `test_asr_tools.py` | unit tests (CI only): head-slice index on a toy tensor, the `.nemo` reader on a hand-made checkpoint, CTC, golden files, pipeline with a fake encoder |
@@ -71,3 +72,15 @@ the CTC layer, the decoder and the joint differ; only the preprocessor matches).
 head per language" does not hold for these checkpoints: each language needs its own
 encoder (about 135 MB int8). Only the log-mel front end is common. The 22-language
 HF repository model may differ; it is gated and not used here.
+
+## Accuracy test set from Wikimedia Commons
+
+`fetch_wiktionary_audio.py <folder> --limit 40` makes the folder `eval_wer.py` scores. The
+recordings are CC BY-SA (credit in `manifest.json`): **never commit them**; the
+`asr-export` workflow only puts them in its `asr-eval-<lang>` artifact and prints WER, CER
+and the ten worst words in the job summary. Files whose title has no Telugu-script word are
+skipped and logged. The default categories (`Category:Telugu pronunciation`,
+`Category:Lingua Libre pronunciation-tel`) and the title patterns (`Te-<word>.ogg`,
+`LL-Q8097 (tel)-<speaker>-<word>.wav`) are from memory, not yet confirmed against the API
+(the session's IP was rate limited); the first run logs what each category returns, and
+`--category` overrides them. Needs `ffmpeg`.
