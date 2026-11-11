@@ -64,3 +64,77 @@ cards:
     confusables:
       - { id: "w1", word: "ジュース", reading: "juusu", kind: "word" }
       - { id: "w2", word: "おちゃ", reading: "ocha", kind: "word" }
+  - id: "ja-4139"
+    target: "おかゆをたべます。"
+    words: ["おかゆ", "を", "たべます"]
+    reading: "okayu o tabemasu."
+    ipa: "okajɯ o tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", base: "たべる", reading: "taberu" }
+    confusables:
+      - id: "w1"
+        word: "すし"
+        reading: "sushi"
+        kind: "word"
+      - id: "w2"
+        word: "ごはん"
+        reading: "gohan"
+        kind: "word"
+  - id: "ja-4140"
+    target: "ごはんはおいしいです。"
+    words: ["ごはん", "は", "おいしい", "です"]
+    reading: "gohan wa oishii desu."
+    ipa: "ɡohaɴ wa oiɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おいしい", base: "おいしい", reading: "oishii" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "すし"
+        reading: "sushi"
+        kind: "word"
+      - id: "w2"
+        word: "うどん"
+        reading: "udon"
+        kind: "word"
+  - id: "ja-4141"
+    target: "すしをたべます。"
+    words: ["すし", "を", "たべます"]
+    reading: "sushi o tabemasu."
+    ipa: "sɯɕi o tabemasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "たべます", base: "たべる", reading: "taberu" }
+    confusables:
+      - id: "w1"
+        word: "おかゆ"
+        reading: "okayu"
+        kind: "word"
+      - id: "w2"
+        word: "うどん"
+        reading: "udon"
+        kind: "word"
+  - id: "ja-4142"
+    target: "うどんはおいしいです。"
+    words: ["うどん", "は", "おいしい", "です"]
+    reading: "udon wa oishii desu."
+    ipa: "ɯdoɴ wa oiɕiː desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "おいしい", base: "おいしい", reading: "oishii" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "すし"
+        reading: "sushi"
+        kind: "word"
+      - id: "w2"
+        word: "ごはん"
+        reading: "gohan"
+        kind: "word"

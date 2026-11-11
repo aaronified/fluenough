@@ -65,3 +65,79 @@ cards:
     confusables:
       - { id: "w1", word: "しお", reading: "shio", kind: "word" }
       - { id: "w2", word: "みそ", reading: "miso", kind: "word" }
+  - id: "ja-4151"
+    target: "やおやはとおいです。"
+    words: ["やおや", "は", "とおい", "です"]
+    reading: "yaoya wa tooi desu."
+    ipa: "jaoja wa toːi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "とおい", base: "とおい", reading: "tooi" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "いちば"
+        reading: "ichiba"
+        kind: "word"
+      - id: "w2"
+        word: "こうえん"
+        reading: "kouen"
+        kind: "word"
+  - id: "ja-4152"
+    target: "いちばはちかいです。"
+    words: ["いちば", "は", "ちかい", "です"]
+    reading: "ichiba wa chikai desu."
+    ipa: "itɕiba wa tɕikai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ちかい", base: "ちかい", reading: "chikai" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "やおや"
+        reading: "yaoya"
+        kind: "word"
+      - id: "w2"
+        word: "こうえん"
+        reading: "kouen"
+        kind: "word"
+  - id: "ja-4153"
+    target: "やさいはやすいです。"
+    words: ["やさい", "は", "やすい", "です"]
+    reading: "yasai wa yasui desu."
+    ipa: "jasai wa jasɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "やすい", base: "やすい", reading: "yasui" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "うどん"
+        reading: "udon"
+        kind: "word"
+      - id: "w2"
+        word: "ごみ"
+        reading: "gomi"
+        kind: "word"
+  - id: "ja-4154"
+    target: "ここでやさいをかいます。"
+    words: ["ここ", "で", "やさい", "を", "かいます"]
+    reading: "koko de yasai o kaimasu."
+    ipa: "koko de jasai o kaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいます", base: "かう", reading: "kau" }
+    confusables:
+      - id: "w1"
+        word: "いちば"
+        reading: "ichiba"
+        kind: "word"
+      - id: "w2"
+        word: "やおや"
+        reading: "yaoya"
+        kind: "word"
