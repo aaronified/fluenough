@@ -6,6 +6,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ## Released
 
+- **v0.9.5**
 - **v0.9.4**
 - **v0.9.3**
 - **v0.9.2**
@@ -100,7 +101,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-14 approved open issues.
+15 approved open issues.
 
 **Bugs**
 
@@ -108,6 +109,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1012](https://github.com/aaronified/fluenough/issues/1012) Check the web app (PWA): installability, offline, and core flows
 - [#1101](https://github.com/aaronified/fluenough/issues/1101) Say: recording at recognition is untested on a real device
 - [#1102](https://github.com/aaronified/fluenough/issues/1102) Web smoke test fails intermittently (network failures)
+- [#1107](https://github.com/aaronified/fluenough/issues/1107) Regression: Say fails with error_no_match (te-IN) since 0.9.4
 
 **Enhancements**
 
