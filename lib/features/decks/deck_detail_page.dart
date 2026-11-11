@@ -172,7 +172,7 @@ class _DeckDetailPageState extends State<DeckDetailPage> {
         return Scaffold(
           appBar: AppBar(
             actions: <Widget>[
-              if (!entry.bundled)
+              if (!entry.bundled && !entry.private)
                 IconButton(
                   tooltip: l10n.deckRemove,
                   icon: const Icon(Icons.delete_outline),

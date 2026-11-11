@@ -1,4 +1,5 @@
 import '../models/drill_mode.dart';
+import '../private/private_ids.dart';
 import 'ask.dart';
 import 'replay.dart';
 
@@ -69,8 +70,9 @@ List<PlacementWithdrawal> withdrawalsInTimeOrder(
 }
 
 /// The language a deck id names: the code before its first dash, which is
-/// how a card's language is read from its deck everywhere in the log.
-String deckLanguage(String deckId) => deckId.split('-').first;
+/// how a card's language is read from its deck everywhere in the log; for a
+/// private package's deck (`fnpd-<code>-...`, #1017) the code after `fnpd-`.
+String deckLanguage(String deckId) => languageOfId(deckId);
 
 /// Whether [r] has the shape of what placement credit writes
 /// (`creditPlacement`): grade 5, no time taken, no answer, asked its own way

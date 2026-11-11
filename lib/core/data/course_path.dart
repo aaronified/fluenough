@@ -1,5 +1,6 @@
 import 'package:yaml/yaml.dart';
 
+import '../private/private_ids.dart';
 import 'deck_parser.dart';
 import 'yaml_tree.dart';
 
@@ -55,8 +56,11 @@ class LanguagePath with _B1Plan {
 
   /// The deck a learner from [native] is taught for [coreId]: `te-home`
   /// from `en` is `te-en-home`.
-  String deckFor(String native, String coreId) =>
-      '$language-$native-${coreId.substring(language.length + 1)}';
+  String deckFor(String native, String coreId) {
+    // A private core id starts `fnpd-<language>-` (#1017).
+    final prefix = idLanguagePrefix(coreId, language);
+    return '$prefix-$native-${coreId.substring(prefix.length + 1)}';
+  }
 
   /// The path as a learner from [native] is taught it: each core id
   /// becomes the course's deck for it, kept where [exists] says the
@@ -479,10 +483,13 @@ LanguagePath parseLanguagePath(String text, {String source = 'path.yaml'}) {
       root.nodes['id'] ?? root,
     );
   }
-  bool isCoreId(Object? value) =>
-      value is String &&
-      value.startsWith('$language-') &&
-      _name.hasMatch(value.substring(language.length + 1));
+  bool isCoreId(Object? value) {
+    if (value is! String) return false;
+    final prefix = idLanguagePrefix(value, language);
+    return value.startsWith('$prefix-') &&
+        _name.hasMatch(value.substring(prefix.length + 1));
+  }
+
   String notCoreId(Object? value) =>
       '"$value" is not a core id of $language: $language- and a name, such '
       'as $language-home';

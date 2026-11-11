@@ -84,7 +84,9 @@ DeckCheck checkAddedDeck(
       owner.putIfAbsent(card.id, () => entry);
     }
   }
-  if (same != null && same.bundled) return DeckIdBundled(deck.id);
+  if (same != null && (same.bundled || same.private)) {
+    return DeckIdBundled(deck.id);
+  }
   final cards = deck.kind == DeckKind.grammar
       ? expandPattern(deck)
       : deck.cards;

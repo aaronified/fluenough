@@ -2,6 +2,7 @@ import '../models/card.dart';
 import '../models/deck.dart';
 import '../models/drill_mode.dart';
 import '../models/rule.dart';
+import '../private/private_ids.dart';
 
 /// A merged rules deck's table as cards: one per filled cell whose word is
 /// taught in the deck's native language and whose rule the deck's layer
@@ -90,9 +91,10 @@ const String _meaning = '{meaning}';
 /// id is the merged deck's without its native language, so a cell is one
 /// card whichever language it is learned from (ADR-0018).
 String ruleCellId(Deck deck, RuleRow row, int slotIndex) {
-  final course = '${deck.language.code}-${deck.native.code}-';
+  final stem = idLanguagePrefix(deck.id, deck.language.code);
+  final course = '$stem-${deck.native.code}-';
   final core = deck.id.startsWith(course)
-      ? '${deck.language.code}-${deck.id.substring(course.length)}'
+      ? '$stem-${deck.id.substring(course.length)}'
       : deck.id;
   return '$core-${row.idPart}-$slotIndex';
 }

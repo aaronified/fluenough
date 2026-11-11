@@ -20,6 +20,8 @@ import 'app/links.dart';
 import 'app/mail_share.dart';
 import 'app/ota_installer.dart';
 import 'app/plugin_reminder_scheduler.dart';
+import 'app/private_import.dart';
+import 'app/private_store.dart';
 import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/reminder_scheduler.dart';
@@ -79,10 +81,26 @@ Future<void> main() async {
   } catch (e) {
     log.warning('Reminder error: start failed: $e');
   }
+  // Private language packages (#1017), kept apart from every other deck.
+  final privateStore = FilePrivateStore(
+    Directory('${files.path}/private'),
+    log: log,
+  );
+  if (kDebugMode) {
+    // The dev import path: every folder of private-dev/ is a package.
+    await importDevPackages(
+      Directory('${files.path}/private-dev'),
+      store: privateStore,
+      appVersion: AppInfo.version,
+      log: log,
+    );
+  }
   final state = AppState(
     catalog: DeckCatalog(
       DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
       added: FileDeckStore(Directory('${files.path}/decks')),
+      privateStore: privateStore,
+      log: log,
       parser: parseInIsolate,
       // The decks' YAML, kept as JSON between launches and read again
       // only for a file whose SHA-256 changed (#875, ADR-0048).

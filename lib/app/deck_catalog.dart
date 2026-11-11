@@ -24,13 +24,17 @@ import '../core/data/rule_expander.dart';
 import '../core/data/themes.dart';
 import '../core/data/yaml_tree.dart';
 import '../core/decks/sha256.dart';
+import '../core/logs/log_entry.dart';
 import '../core/decks/adult_gate.dart';
 import '../core/models/fact.dart';
 import '../core/models/situation.dart';
 import '../core/models/card.dart';
 import '../core/models/deck.dart';
 import '../core/models/number_rules.dart';
+import '../core/private/private_ids.dart';
 import 'added_decks.dart';
+import 'app_log.dart';
+import 'private_store.dart';
 
 /// Where deck files come from: their paths, and each one's text.
 ///
@@ -136,6 +140,7 @@ final class DeckEntry extends CatalogEntry {
     required String path,
     required this.deck,
     this.bundled = true,
+    this.private = false,
   }) : super(path);
 
   final Deck deck;
@@ -143,6 +148,10 @@ final class DeckEntry extends CatalogEntry {
   /// Whether the deck is one of the app's own, bundled or downloaded from
   /// the repository (#210), rather than added by the learner from a file.
   final bool bundled;
+
+  /// Whether the deck is part of a private language package (#1017), read
+  /// from under [privateDeckPrefix]. Such a deck is never [bundled].
+  final bool private;
 
   String get id => deck.id;
 
@@ -535,12 +544,21 @@ class DeckCatalog {
     this.added,
     this.parser = parseInPlace,
     this.snapshots,
+    this.privateStore,
+    this.log,
   });
 
   final DeckSource source;
 
   /// Where decks a learner adds are kept (#22), or null where none can be.
   final DeckStore? added;
+
+  /// Where the private language packages are kept (#1017), or null where
+  /// none can be. Only its active packages are read.
+  final PrivateStore? privateStore;
+
+  /// Where a private file that cannot be read is told, if anywhere.
+  final AppLog? log;
 
   /// How the files are parsed: in place by default, which is what tests and
   /// the web build want; the app passes [parseInIsolate], so that reading
@@ -570,6 +588,22 @@ class DeckCatalog {
     if (added != null) {
       for (final path in await added.list()) {
         files[path] = await added.read(path);
+      }
+    }
+    final privateStore = this.privateStore;
+    if (privateStore != null) {
+      try {
+        for (final path in await privateStore.list()) {
+          try {
+            files[path] = await privateStore.read(path);
+          } on Object catch (e, stack) {
+            // A file that cannot be read is left out, and told: the rest of
+            // the catalog still loads.
+            log?.error(describeError('A private deck file', e, stack));
+          }
+        }
+      } on Object catch (e, stack) {
+        log?.error(describeError('The private decks', e, stack));
       }
     }
     final snapshots = this.snapshots;
@@ -638,11 +672,18 @@ class DeckCatalog {
     // Added decks after the bundled ones: a bundled deck keeps its id, and
     // the card a ref finds, when an added deck has them too.
     bool isAdded(String path) => path.startsWith(addedDeckPrefix);
+    // Private packages (#1017) come after the bundled decks and before the
+    // single files a learner added.
+    int rank(String path) => isAdded(path)
+        ? 2
+        : path.startsWith(privateDeckPrefix)
+        ? 1
+        : 0;
     final paths = files.keys.toList()
-      ..sort(
-        (a, b) =>
-            isAdded(a) != isAdded(b) ? (isAdded(a) ? 1 : -1) : a.compareTo(b),
-      );
+      ..sort((a, b) {
+        final byRank = rank(a).compareTo(rank(b));
+        return byRank != 0 ? byRank : a.compareTo(b);
+      });
     final headers = <String, ({String? kind, String? part, String? core})>{
       for (final path in paths) path: _headerOf(files[path]!),
     };
@@ -667,10 +708,12 @@ class DeckCatalog {
     final brokenCores = <String>{};
     for (final path in paths.where(isCore)) {
       try {
-        cores[path] = DeckParser.parseCore(
+        final core = DeckParser.parseCore(
           files[path]!,
           source: path.split('/').last,
         );
+        _requirePrivateIds(path, core.id, const <Card>[]);
+        cores[path] = core;
       } on DeckParseException catch (e) {
         broken.add(BrokenDeck(path: path, error: e));
         brokenCores.add(path);
@@ -833,6 +876,7 @@ class DeckCatalog {
         deck = isLayer(path)
             ? _merged(path, text, files, cores, brokenCores)
             : DeckParser.parse(text, source: path.split('/').last);
+        _requirePrivateIds(path, deck.id, deck.cards);
       } on DeckParseException catch (e) {
         broken.add(BrokenDeck(path: path, error: e));
         continue;
@@ -860,7 +904,10 @@ class DeckCatalog {
         DeckEntry(
           path: path,
           deck: deck,
-          bundled: !path.startsWith(addedDeckPrefix),
+          bundled:
+              !path.startsWith(addedDeckPrefix) &&
+              !path.startsWith(privateDeckPrefix),
+          private: path.startsWith(privateDeckPrefix),
         ),
       );
     }
@@ -879,6 +926,44 @@ class DeckCatalog {
       romanisations: romanisations,
       scriptGuides: scriptGuides,
     );
+  }
+
+  /// Refuses a deck of a private package (a file under [privateDeckPrefix])
+  /// whose id, or one of whose own cards' ids, does not start with the
+  /// package's `fnpd-<code>-` (#1017), so that a private file can never
+  /// reach a built-in id. A file elsewhere is not checked.
+  static void _requirePrivateIds(
+    String path,
+    String deckId,
+    Iterable<Card> cards,
+  ) {
+    if (!path.startsWith(privateDeckPrefix)) return;
+    final source = path.split('/').last;
+    final folder = path.substring(privateDeckPrefix.length).split('/').first;
+    final code = packageCode('$folder-x');
+    if (code == null || folder != packageIdFor(code)) {
+      throw DeckParseException(
+        'a private package folder is named fnpd- and the language code, such '
+        'as fnpd-qaa, got "$folder"',
+        source: source,
+      );
+    }
+    if (!hasPrivatePrefix(deckId, code)) {
+      throw DeckParseException(
+        'deck id "$deckId" must start with ${packageIdFor(code)}-: every id '
+        'of a private package does',
+        source: source,
+      );
+    }
+    for (final card in cards) {
+      if (!hasPrivatePrefix(card.id, code)) {
+        throw DeckParseException(
+          'card id "${card.id}" must start with ${packageIdFor(code)}-: every '
+          'id of a private package does',
+          source: source,
+        );
+      }
+    }
   }
 
   /// The layer at [path], whose text is [text], merged with its core: the

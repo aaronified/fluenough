@@ -23,7 +23,7 @@ class YourDecksPage extends StatelessWidget {
   /// The decks the learner added, in the order they were found.
   static List<DeckEntry> ownDecks(Iterable<DeckEntry> decks) => <DeckEntry>[
     for (final entry in decks)
-      if (!entry.bundled) entry,
+      if (!entry.bundled && !entry.private) entry,
   ];
 
   @override
