@@ -1,6 +1,6 @@
 name: Main's tools
 description: >-
-  Lays main's tools/, assets/ and sample deck over the checkout, so that the
+  Lays main's tools/, assets/, test/ and sample deck over the checkout, so that the
   decks-live branch is always held to main's current validator and index tool
   (the app's contract). Run right after actions/checkout.
 runs:
@@ -10,7 +10,10 @@ runs:
       run: |
         set -e
         git fetch --quiet --no-tags origin main
-        git checkout FETCH_HEAD -- tools assets
+        # test/ too: main's tools tests read main's test/ (shard weights and
+        # test/heavy_tests.json against the real test files), so tools/ and
+        # test/ must come from the same commit.
+        git checkout FETCH_HEAD -- tools assets test
         if git cat-file -e FETCH_HEAD:test/fixtures/sample-decks 2>/dev/null; then
           git checkout FETCH_HEAD -- test/fixtures/sample-decks
         fi
