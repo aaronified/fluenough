@@ -162,6 +162,8 @@ void main() {
       final listening = SystemSpeechEngine(
         android,
         capture,
+        null,
+        true,
       ).listen(bcp47: 'hi-IN', onDevice: true);
       await tester.pump();
       play();
@@ -184,6 +186,24 @@ void main() {
       expect(capture.calls.last, 'finish');
     });
 
+    testWidgets('with the switch off (default) no capture runs (#1107)', (
+      tester,
+    ) async {
+      final android = _Android();
+      final capture = _Capture(audio);
+      final listening = SystemSpeechEngine(
+        android,
+        capture,
+      ).listen(bcp47: 'hi-IN', onDevice: true);
+      await tester.pump();
+      android.result!(_said('नमस्ते', isFinal: true));
+      await tester.pump(const Duration(seconds: 15));
+      final h = await listening;
+      expect(h.alternatives.single.text, 'नमस्ते');
+      expect(h.ownAudio, isNull);
+      expect(capture.calls, isEmpty);
+    });
+
     testWidgets('a capture that kept nothing leaves the listen as it was', (
       tester,
     ) async {
@@ -200,7 +220,7 @@ void main() {
     ) async {
       final android = _Android();
       final capture = _Capture(audio);
-      final engine = SystemSpeechEngine(android, capture);
+      final engine = SystemSpeechEngine(android, capture, null, true);
       for (var i = 0; i < 3; i++) {
         final listening = engine.listen(bcp47: 'hi-IN', onDevice: true);
         await tester.pump();

@@ -269,6 +269,18 @@ async function main() {
 
     await step('a reload opens the app on Today: progress and settings are kept', async () => {
       await openApp();
+      // The decks come from GitHub's decks-live branch, which changes under
+      // the test: if the launch finds a deck update (a modal dialog that
+      // hides the tab bar), the learner's answer is "Not now". What is
+      // tested is the kept progress, not which decks are live.
+      const end = Date.now() + 60000;
+      while (Date.now() < end && !(await has('Today')) && !(await has('Deck updates'))) {
+        await page.waitForTimeout(250);
+      }
+      if (await has('Deck updates')) {
+        console.log('  a deck update was offered on the launch: answered "Not now"');
+        await press('Not now', ['button']);
+      }
       await waitFor('Today', 'the tab bar after a reload', 60000);
       if (await has('Get started')) throw new Error('first launch again after a reload');
     });

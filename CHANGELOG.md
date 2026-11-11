@@ -7,10 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Say works again: recording no longer runs at the same time as online recognition; #1107. The recogniser has the microphone alone, as before 0.9.4, and Hear yourself records a take after the attempt.
 ### Added
 
 - tools/asr: Telugu on-device listener reference tools (#1004).
 - On-device listener: end-of-speech detector and PCM recorder (#1004).
+- On-device listener: pure-Dart CTC head and decoder (#1004).
 - On-device listener: pure-Dart log-mel front end (#1004).
 
 ## [0.9.5] - 2026-11-10

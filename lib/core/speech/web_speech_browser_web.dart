@@ -110,7 +110,7 @@ class _WebSpeechBrowser implements SpeechBrowser {
   }
 
   @override
-  BrowserSession recognise(String lang) {
+  BrowserSession recognise(String lang, {bool record = false}) {
     final done = Completer<BrowserHeard>();
     // The recorder starts with the recogniser and stops with it. A listen
     // that ends in an error, or is cancelled, keeps nothing.
@@ -161,7 +161,7 @@ class _WebSpeechBrowser implements SpeechBrowser {
         ..callMethod<JSAny?>('start'.toJS);
       // The recogniser has the microphone first; the recorder never delays
       // it and gives up quietly where the browser will not share.
-      if (_recorderAllowed) unawaited(recorder.start());
+      if (record && _recorderAllowed) unawaited(recorder.start());
     } on Object catch (e) {
       finish(BrowserHeard.error('${e.runtimeType}'), keep: false);
     }

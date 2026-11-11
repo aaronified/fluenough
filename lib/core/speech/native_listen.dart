@@ -12,7 +12,8 @@ import 'speech_engine.dart';
 // audio it captures itself (RecognizerIntent.EXTRA_AUDIO_SOURCE), so one
 // stream serves both. The platform side is in MainActivity, which
 // tools/brand_android.py writes; below Android 13, or where the recogniser
-// ignores the extra, the engine falls back as it always did.
+// ignores the extra, the engine falls back as it always did. Off by default
+// (#1107): `SystemSpeechEngine.recordWhileRecognising` must be on to use it.
 
 /// What one native listen gave: readings, or an error code, and the audio it
 /// captured while it listened.
