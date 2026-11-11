@@ -495,7 +495,7 @@ void main() {
         ]),
         audio: _voice,
       );
-      final engine = WebSpeechEngine(browser);
+      final engine = WebSpeechEngine(browser, true);
       expect(await engine.start(), isTrue);
       final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
       expect(h.failed, isFalse);
@@ -508,7 +508,7 @@ void main() {
         heard: const BrowserHeard.error('no-speech'),
         audio: _voice,
       );
-      final engine = WebSpeechEngine(browser);
+      final engine = WebSpeechEngine(browser, true);
       await engine.start();
       final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
       expect(h.failure, SpeechFailure.noMatch);
@@ -522,6 +522,7 @@ void main() {
             SpeechAlternative('namaste'),
           ]),
         ),
+        true,
       );
       await engine.start();
       final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
