@@ -100,13 +100,25 @@ jobs:
                       "datasets", "IPython")
 
 
+          class _StubMeta(type):
+              # Every attribute of a stub class is another stub class, so nested names such as
+              # DistributedFusedAdam.ParameterFragment resolve at any depth.
+              def __getattr__(cls, name):
+                  if name.startswith("__"):
+                      raise AttributeError(name)
+                  return _StubMeta(name, (), {})
+
+              def __getitem__(cls, item):
+                  return cls
+
+
           class _Any(types.ModuleType):
               __path__ = []
 
               def __getattr__(self, name):
                   if name.startswith("__"):
                       raise AttributeError(name)
-                  return type(name, (), {})
+                  return _StubMeta(name, (), {})
 
 
           class _Finder(importlib.abc.MetaPathFinder, importlib.abc.Loader):
