@@ -27,6 +27,18 @@ Tracker: #1017 (milestone 0.9.0). Builds on #495 (Your decks, set aside 2026-11-
 | Limits | **10 MB per language, measured on the `.fnzip` itself** (fonts count inside it; one font at most 2 MB). No limit on the total number of languages; **at most 3 private languages active** at a time; a fourth asks the learner to deactivate one. Unpacked ceiling 30 MB with a compression-ratio check; per file 2 MB; 20,000 cards. |
 | Mockup | A fresh one, to be drawn (`docs/mockups/README.md`). |
 
+## Open questions answered (orchestrator, 2026-11-11)
+
+The owner said not to stop for confirmation (CLAUDE.md, 2026-11-07), so the orchestrator took these defaults for the open questions of section 4. They stand until the owner says otherwise.
+
+| # | Question | Decision |
+|---|---|---|
+| 1 | Progress when a built-in card is edited | An unchanged built-in card stays in the private unit by `ref`; an edited card gets a new `fnpd-` id plus `replaces` |
+| 2 | Fonts, audio, images in packages | None in v1: phone fonts and the official Noto set only |
+| 3 | Who writes card ids | The author, with the enforced prefix `fnpd-<code>-`; the app never renumbers (replaces #495's app-numbered series) |
+| 4 | Packages per language, and the path | One package per language code; a modified private path replaces the built-in path while the package is active |
+| 5 | A code later becoming official | The package is flagged "shadowed" (2.10) |
+
 ## Goal and non-goals
 
 **Goal.** A learner brings a whole language, or a modified path of one the app teaches, as a private package through Settings, Your decks, and uses it like any course: path, Today, reviews, placement, drills, search. It lives only on the phone and in backups.
