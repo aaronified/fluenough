@@ -113,6 +113,9 @@ Future<void> main() async {
       null,
       RecordMicCapture(),
       const ChannelNativeListener(),
+      // recordWhileRecognising: off, no recording while the online recogniser
+      // listens (#1107).
+      false,
     ),
     volume: SystemVolumeMonitor(),
     soundCheck: SystemSoundCheck(),
