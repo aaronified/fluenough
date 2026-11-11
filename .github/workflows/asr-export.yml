@@ -116,6 +116,8 @@ jobs:
               __path__ = []
 
               def __getattr__(self, name):
+                  if name == "__version__":
+                      return "0.0.0"
                   if name.startswith("__"):
                       raise AttributeError(name)
                   return _StubMeta(name, (), {})
