@@ -1,9 +1,125 @@
 # Plan: say when speech can't be recognised offline
 
-> **Priority 2 after the placement release** (owner, 2026-11-07): on-device voice recognition (#1004) follows private decks. Recorded for later, not built in the session that stops at the placement bugfix release ("Do not build them. You will stop at the release."); no agent starts it without a new owner instruction.
+> **Update (owner, 2026-11-11):** the 2026-11-07 hold is lifted. Build the on-device AI listener with AI4Bharat's IndicConformer, for all the languages it covers, starting with Telugu (`te-IN`). It becomes the primary Say listener once it works; the system recogniser stays as the fallback (#1004; the system recogniser fails on the owner's phone with `error_no_match` on every Say since 0.9.4, #1107). The plan is in Part 1; the older "alert when the phone cannot recognise a language offline" plan is kept in Part 2.
 
 Source of truth: this wiki page.
 
+# Part 1: the on-device AI listener (#1004), plan of 2026-11-11
+
+Research and design only; nothing is built. Sources were read on 2026-11-11; what could not be checked is marked **Unverified**.
+
+## 1. Feasibility
+
+| Question | Finding | Source |
+|---|---|---|
+| Model | AI4Bharat IndicConformer, a Conformer-based **hybrid CTC + RNNT** model, 22 Indian languages in one model ("IndicConformer-600M-Multi", 600M parameters). One shared encoder; each language owns only a slice of the output head. | [HF model card](https://huggingface.co/ai4bharat/indic-conformer-600m-multilingual) |
+| Licence | Weights **MIT** (card: "released under the MIT license"; HF metadata `license: mit`). onnxruntime and onnxruntime-android: MIT. Training data IndicVoices: CC-BY-4.0, credit it. MIT permits bundling and downloading with the notice kept. Not verified: the licences of every training corpus. | [card](https://huggingface.co/ai4bharat/indic-conformer-600m-multilingual), [AI4Bharat/IndicConformerASR](https://github.com/AI4Bharat/IndicConformerASR) |
+| Languages (22) | as, bn, brx, doi, gu, hi, kn, kok, ks, mai, ml, mni, mr, ne, or, pa, sa, sat, sd, ta, **te**, ur | card |
+| HF copy | Gated (`gated: auto`). The card text is public but the files return **401** to an anonymous client (checked on `assets/vocab.json`). Its ONNX export is also unsuited: 2.5 GB fp32 in about 400 external-weight files. So the app cannot download from Hugging Face. | HF API tree and `curl`, 2026-11-11 |
+| Source we use | The per-language `.nemo` checkpoints, no login: `https://objectstore.e2enetworks.net/indicconformer/models/indicconformer_stt_<code>_hybrid_rnnt_large.nemo`. Checked: HTTP 200, 523,192,320 bytes for `te`. | `curl -I` |
+| Newer model | The card now says Indic-Transcribe (`bodhan-ai/indic-transcribe-core`) has "better transcription quality" and is recommended. Its licence is `other` (Indic Open Model License, gated form asking for the use case), so it is **not** MIT and is not used here. | [card](https://huggingface.co/bodhan-ai/indic-transcribe-core) |
+| Input | 16 kHz mono. Log-mel front end (spike; our numpy port matches NeMo to 5e-5): 25 ms Hann window, 10 ms hop, n_fft 512, 80 slaney mels, preemphasis 0.97, `log(x + 2^-24)`, per-feature mean/std normalisation over the utterance. | #1004 comment, 2026-11-02 |
+| Decoding | CTC greedy is enough for a word or short phrase. RNNT is more accurate but needs a greedy loop with prediction and joint networks (HF `rnnt_decoder.onnx` is 40.7 MB fp32, plus per-language joint nets): later. Vocab: 22 x 256 SentencePiece pieces plus a blank, so Telugu is a 257-way slice. HF's `ctc_decoder.onnx` is 23,095,918 bytes, which equals 5633 x 1024 x 4: consistent. | spike; HF tree |
+| Size | Telugu CTC path: fp32 482 MB, **int8 dynamic 137.6 MB** (measured). Because the encoder is shared, **one shared encoder pack (about 135 MB) plus a tiny per-language head (about 1 MB)** makes the second and later languages almost free. | spike |
+| Speed and RAM | Measured on a desktop CPU, 4 threads, synthetic audio, features included: fp32 0.04 to 0.05 s per audio second, 1.06 GB peak; int8 0.07 to 0.08 s per audio second, 0.75 GB peak. A mid-range Android phone is **Unverified**; a guess is 3 to 5 times slower (a 3 s answer in 1 to 2 s) and 0.75 GB peak RAM, the main risk on 3 to 4 GB phones. | spike |
+| Accuracy | **Unverified.** No WER or CER for fp32 or int8: FLEURS audio is behind `us.aws.cdn.hf.co`, which the session proxy answers with 403 (re-checked 2026-11-11). int8 versus fp32 argmax agreement on synthetic noise was 92.7 %, which says nothing about WER. The vowel-length check (#1001) is also not done. | |
+| Network from the session | `huggingface.co` card and API: reachable (200). HF file CDN: 403. `objectstore.e2enetworks.net`, `pub.dev`, Maven Central: reachable. No big file was downloaded. | `curl -sI` |
+| Our languages covered | Yes: te, bn, mr, kn, as, hi, ta, ml, sat, sa, ur (the Urdu script of Hindustani). **No:** es, fr, zh, ja, ko, it, de, ru, pl, el, af, fa, ps, nl, uk, id, en. "All languages" needs a second model family later (risk 3); the code must not assume IndicConformer only. | card |
+
+## 2. Runtime choice
+
+| Option | For | Against |
+|---|---|---|
+| **A. Kotlin platform channel on `onnxruntime-android` (recommended)** | The project already generates its Kotlin in `tools/brand_android.py` (a native listen channel exists there). One Maven line, `com.microsoft.onnxruntime:onnxruntime-android` (latest on Maven Central is 1.31.1); no new Dart dependency, no iOS or web baggage. Inference runs off the UI thread. Only floats cross the channel (80 x frames x 4 bytes, about 250 KB for 8 s). | `brand_android.py` must also add the Gradle dependency (it already edits `android/app/build.gradle.kts` for desugaring) and a `proguard-rules.pro` rule `-keep class ai.onnxruntime.** { *; }`. Android only; iOS later needs its own. |
+| B. `flutter_onnxruntime` 1.9.0 (2026-10-06) | Dart API, no Kotlin. Android minSdk 21, bundles ORT 1.28.0. | Pulls in `path_provider`, `web`, `flutter_web_plugins`; iOS needs 16 and static linkage; we cannot choose the ORT version; larger surface to audit. |
+| C. `onnxruntime` (gtbluesky, FFI) 1.4.1 | Dart API. | Old, not kept in step with ORT. |
+
+**Decision: A.** The repo rule is built-ins first and few dependencies, and the Kotlin is already generated and tested (`tools/test_brand_android.py`). Impact: ORT's own minSdk (**Unverified**: read the AAR's `AndroidManifest.xml` in task 5; plugin B declares 21, recent ORT AARs may need 24), and an APK increase of roughly 15 to 20 MB per ABI (**Unverified**). Keep the Dart side behind an `AsrRuntime` interface so B or an iOS runtime can replace it without touching the engine.
+
+## 3. Architecture
+
+```
+lib/core/speech/asr/              pure Dart, no Flutter imports
+  asr_runtime.dart        interface AsrRuntime { load(modelPath, threads); run(feats, frames) -> encoder output; close() } + FakeAsrRuntime
+  log_mel.dart            int16 PCM -> [frames x 80], own radix-2 FFT (n_fft 512), no dependency
+  ctc_head.dart           per-language head: weights [vocab x D] + bias; apply -> ids + mean confidence
+  ctc_decode.dart         collapse repeats, drop blank (last index), join SentencePiece pieces
+  endpointer.dart         energy end-of-speech detector over PCM chunks
+  pcm_recorder.dart       interface for a PCM stream
+  asr_pack.dart           AsrManifest, AsrPackStatus, AsrPackStore (interface)
+  on_device_speech_engine.dart   OnDeviceSpeechEngine implements SpeechEngine
+  preferred_speech_engine.dart   PreferOnDeviceSpeechEngine(onDevice, system)
+lib/app/                          may import Flutter and dart:io
+  channel_asr_runtime.dart        MethodChannel 'app.fluenough/asr' to the Kotlin side
+  asr_pack_downloader.dart        HTTP download, Range resume, sha256, delete
+  file_asr_pack_store.dart        files dir layout
+```
+
+- **Pack layout**, under the app files dir `asr/<packVersion>/`: `encoder.int8.onnx` (shared), `head_<code>.f32` (little-endian float32: `[vocab x D]` weights, then bias) and `head_<code>.json` (`pieces`, `blank`, `dim`). A language is installed when the shared encoder and its head are present and their sha256 match the manifest.
+- **Manifest** `asr-manifest.json` beside the assets: `{packVersion, files: [{name, bytes, sha256, url, kind: encoder|head, language}]}`. The app reads it first and shows the sizes. Hosting: GitHub release assets of a `models` release (a file may be up to 2 GiB). It needs a tag, so **the owner creates the `models` release** (CLAUDE.md: no agent tags).
+- **The head stays outside the ONNX graph.** The encoder is the only ORT session. The head (a 1x1 conv, about 1024 x 257) is a matrix multiply in Dart: about 26 M multiply-adds for 100 frames, trivial. Adding a language is then a 1 MB file with no new graph, and it is unit-testable in pure Dart. **Unverified:** that all 22 per-language `.nemo` files carry the same encoder as Telugu's (the spike's "same 22-language model" and HF's `language_masks.json` point that way); task 1 compares the encoder tensor hashes.
+- **Listening.** `OnDeviceSpeechEngine.listen`: a `PcmRecorder` (interface; implemented with the existing `record` package, `startStream` pcm16 16 kHz mono as `RecordMicCapture` does) gives a stream; the `Endpointer` stops after speech began and about 1.0 s of quiet, or at `listenFor` (default 8 s); then `log_mel`, the runtime's `run`, the head and the CTC decode. It returns `SpeechHeard([SpeechAlternative(text, confidence: meanMaxProb)], ownAudio: OwnAudio(pcm))`, so **"Your recording" replay (ADR-0054, #881) works from the same take, with no second recorder**.
+- **Failures** never throw out and every one goes to the app log with code, language, durations and pack version. No pack: `SpeechFailure.notOnDevice`, code `asr_no_pack`. Model fails to load or run: `SpeechFailure.other`, code `asr_runtime_error` (falls back). Empty transcript: `noMatch`, code `asr_empty` (no fallback: second-guessing a silent take with the system recogniser is what is broken today). Microphone refused: `permissionDenied`.
+- **Engine order.** `PreferOnDeviceSpeechEngine`: `languages()` is the installed on-device languages plus the system's. `listen(bcp47)`: if a pack for the primary subtag is installed and the AI listener is on, use it; on `asr_runtime_error` only, fall back to the system engine; otherwise the system engine as today. For an installed language the app never asks about going online. `lib/main.dart` wraps `SystemSpeechEngine`; the web build keeps `WebSpeechEngine`. `AppState.speechStatus` already treats a language in `languages()` as on-device, so drill logic does not change.
+- **Settings.** The Speaking part of each language card on the Voices page gets an "AI listener" row: "Not installed, 138 MB" with **Install**, progress with **Cancel**, then "Installed" with **Remove**; later languages say "adds 1 MB, uses the shared model". A switch "Use the AI listener first" (on once installed). A mockup per `docs/mockups/README.md` comes first; the owner said not to stop for confirmation, so the orchestrator picks the default and records it. Strings go through l10n (`tools/check_ui_strings.py`).
+- **Offline.** After install it needs no network. Install needs one.
+- **Tests (CI only).** Pure Dart: `log_mel` against a golden vector (first frames of a deterministic synthetic signal from the python reference in `tools/asr/`, tolerance 1e-3); `ctc_head` and `ctc_decode` on a tiny fixture (3 pieces, 6 frames, with repeats and blanks); `endpointer` on synthetic PCM; manifest parsing; checksum failure; the engine with `FakeAsrRuntime` and a fake `PcmRecorder` (success, empty, runtime error falls back, no pack); `tools/test_brand_android.py` string checks for the Kotlin.
+
+## 4. Tasks, in dependency order
+
+Haiku-suitable = **H**, Sonnet only = **S**. One PR each (CI is the only test run), no change outside the named files, `lib/core` stays Flutter-free. Model exports run by hand in a session, not in CI.
+
+**Slice 1: prove Telugu before any UI.**
+
+| # | Task | Files | Behaviour and tests | Who |
+|---|---|---|---|---|
+| 1 | Move the spike into a harness; split the pack. | `tools/asr/` (from branch `wip/asr-spike-telugu`: `np_features.py`, `loadmodel.py`, `export_onnx.py`, `quantize.py`, `bench.py`, `parity.py`), new `tools/asr/export_pack.py`, `tools/asr/README.md` | `export_pack.py <nemo> <out>` writes `encoder.int8.onnx` (encoder only: features `[1,80,T]` and length in, `[1,D,T']` out) and `head_<code>.f32` and `.json`. Hashes the encoder tensors of two languages' `.nemo` and reports whether equal. No model files committed. Python unit test of the head-slice index on a toy tensor. | S |
+| 2 | Python reference transcriber and scorer: **the accuracy gate**. | `tools/asr/transcribe.py`, `eval_wer.py`, `golden.py`, `test/fixtures/asr/golden_mel.json`, `golden_ctc.json` | `transcribe.py <pack> <wav>` prints Telugu text using onnxruntime, numpy features, the head file and greedy CTC: the exact algorithm Dart ports. `eval_wer.py <folder of wav+txt>` prints WER and CER, int8 versus fp32. `golden.py` writes the two fixtures. The owner records about 20 Telugu words and runs it before any UI is built. | `transcribe.py` S; the others H |
+| 3 | Pure-Dart front end. | `lib/core/speech/asr/log_mel.dart`, `test/core/speech/asr/log_mel_test.dart` | `List<Float32List> logMel(Uint8List pcm16le)`, constants as above, own radix-2 FFT, normalisation epsilon as in `np_features.py`. Test against `golden_mel.json`; empty and shorter than one window. | H (spec: `np_features.py`) |
+| 4 | Pure-Dart head and CTC decode. | `lib/core/speech/asr/ctc_head.dart`, `ctc_decode.dart`, tests | `CtcHead.fromBytes(f32, json)`; `apply(encoderOut)` gives ids and `meanConfidence`; `decode(ids, pieces, blank)` collapses and joins (`▁` to space). Tests on `golden_ctc.json`, repeated ids, blank-separated repeats, empty. | H |
+
+**Slice 2: the app runs it.**
+
+| # | Task | Files | Behaviour and tests | Who |
+|---|---|---|---|---|
+| 5 | Kotlin ORT channel. | `tools/brand_android.py`, `tools/test_brand_android.py` | Gradle `implementation` line (version pinned), proguard rule, `AsrChannel` in the generated Kotlin: `load(path, threads)` (one OrtSession from file), `run(featuresBytes, frames)` on a background thread returning bytes and dims, `close()`. Reports the AAR's minSdk and raises the project's only if needed. Idempotent like the existing steps; tests assert strings and idempotence. | S |
+| 6 | Runtime interface and client. | `lib/core/speech/asr/asr_runtime.dart`, `lib/app/channel_asr_runtime.dart`, tests | Interface and `FakeAsrRuntime` (H). Channel client mapping `PlatformException` to `AsrError(code)`, tested with a mock `MethodChannel` (S). | H and S |
+| 7 | Endpointer and recorder. | `lib/core/speech/asr/endpointer.dart`, `pcm_recorder.dart`, `lib/core/speech/record_pcm_recorder.dart`, tests | `Endpointer(sampleRate, quietFor 1.0 s, maxLength)`: feed chunks, reports `speechStarted` and `done`; tests on silence, burst then silence, never-speech timeout. | H |
+| 8 | `OnDeviceSpeechEngine`. | `lib/core/speech/asr/on_device_speech_engine.dart`, `asr_pack.dart`, tests | Listening and failures as in section 3; returns `ownAudio`; every outcome calls an injected `void Function(String)` logger. Tests with fakes: success text and audio, empty, runtime error code, no pack, permission refused, stop during listen. | S |
+| 9 | `PreferOnDeviceSpeechEngine` and wiring. | `lib/core/speech/asr/preferred_speech_engine.dart`, `lib/main.dart`, tests | Order and fallback as above. Tests: installed pack uses on-device only; runtime error falls back once; no pack uses system; `start()` and `hasPermission()` delegate. | S |
+
+**Slice 3: packs and settings.**
+
+| # | Task | Files | Behaviour | Who |
+|---|---|---|---|---|
+| 10 | Pack store and downloader. | `lib/app/file_asr_pack_store.dart`, `asr_pack_downloader.dart`, `pubspec.yaml` (add `crypto`, dart.dev, for sha256), tests with a local `HttpServer` | Fetch manifest; download to `*.part` with `Range` resume; verify sha256; rename; delete a language; free-space check; cancel; progress stream; failures to the app log. | S |
+| 11 | Manifest publisher. | `tools/asr/publish_manifest.py` | From a pack dir, writes `asr-manifest.json` (sizes, sha256, release URLs). The owner creates the `models` release and uploads. | H |
+| 12 | Voices page row and mockup. | `docs/mockups/ai-listener.html` and `.md`, `lib/features/settings/voices_page.dart`, `lib/l10n/*`, `AppState` pack getters and install and remove calls | States: not installed, downloading, installed, failed; the shared-model note; the switch; 1.4x text; Telugu and Bengali examples. Widget tests for each state and the calls, with a fake store. | S |
+| 13 | Licences and credit. | the licences screen data (`grep -rn "licen" lib/features/settings`) | Add onnxruntime (MIT), AI4Bharat IndicConformer (MIT), IndicVoices (CC-BY-4.0). | H |
+| 14 | All other heads. | `tools/asr/languages.json` (our code to AI4Bharat code), a test that every code in it is in `assets/languages.yaml` | Mapping te, bn, hi, ur, mr, kn, as, ta, ml, sat, sa, pa, gu, or, ne and the rest; `hi` uses `ur` for a learner who chose the Perso-Arabic script. Export the heads (S, by hand); mapping and test (H). | H and S |
+
+**Slice 4: verify.**
+
+| # | Task | Behaviour | Who |
+|---|---|---|---|
+| 15 | On-device timing. | The engine logs load, mel and encoder times, audio length and real-time factor of every listen to the app log; the owner pastes them in #1004. Decide int8 versus fp32 or static quantisation from slice 1's WER and this RTF. | H |
+| 16 | Docs. | CHANGELOG line in each PR; an ADR "On-device AI listener" once task 2 shows accuracy. | H |
+
+## 5. Risks and open questions for the owner
+
+1. **Accuracy is unmeasured**, int8 and short versus long vowels especially. Slice 1 measures it before any UI. Set the bar (for example WER under 25 % on 20 words you record).
+2. **Size and RAM:** about 138 MB download and 0.75 GB peak RAM (desktop numbers). A 3 GB phone may kill the app. Mitigation: load on first listen, release after 60 s idle.
+3. **"All languages":** IndicConformer covers 22 Indian languages only. es, fr, zh, ja, ko, it, de, ru, pl, el, af, fa, ps, nl, uk and id need another model family (Whisper-class or sherpa-onnx). Which first? The code takes a per-language model spec, so it is additive.
+4. **Hosting needs a `models` release tag** from the owner; the assets are our own int8 conversion of MIT weights (MIT allows redistribution).
+5. **Indic-Transcribe** (newer, better per its card) has a gated non-MIT licence: consider it?
+6. **RNNT** later if CTC int8 is not good enough.
+7. **Fallback rule:** an empty AI transcript is a no-match and is not retried with the system recogniser. Change it if you want the second opinion.
+8. **#1107** (system recogniser `error_no_match`) stays a separate bug; this replaces that path for covered languages, it does not fix it.
+9. **Unverified:** ORT minSdk and APK growth, phone RTF and RAM, all `.nemo` files sharing one encoder, other training-data licences.
+
+---
+
+# Part 2: the alert when speech cannot be recognised offline (2026-10-05)
 
 Written 2026-10-05.
 
