@@ -134,6 +134,13 @@ jobs:
 
           class _Fallback(importlib.abc.MetaPathFinder, importlib.abc.Loader):
               def find_spec(self, fullname, path, target=None):
+                  # Stub only for imports made from the NeMo fork checkout. Anything else
+                  # gets the normal ImportError, so the standard library is never stubbed.
+                  f = sys._getframe(1)
+                  while f is not None and f.f_code.co_filename.startswith('<frozen importlib'):
+                      f = f.f_back
+                  if f is None or 'nemo-src' not in f.f_code.co_filename:
+                      return None
                   if fullname.split(".")[0] in REAL:
                       return None
                   print(f"autostub: stubbed {fullname}", file=sys.stderr)
@@ -170,6 +177,7 @@ jobs:
       - name: Smoke-test the pipeline on a synthetic wav
         if: ${{ always() && steps.validate.outcome == 'success' }}
         run: |
+          mkdir -p work
           python3 - <<'PY'
           import numpy as np, wave
           rng = np.random.default_rng(0)
