@@ -97,7 +97,7 @@ jobs:
 
           PREFIXES = ("pyannote", "g2p_en", "texterrors", "kaldi_python_io", "kaldiio",
                       "pyloudnorm", "sox", "wandb", "ipywidgets", "pydub", "wget",
-                      "datasets")
+                      "datasets", "IPython")
 
 
           class _Any(types.ModuleType):
@@ -122,6 +122,31 @@ jobs:
 
 
           sys.meta_path.append(_Finder())
+
+          # Last resort: any top-level module that nothing else resolved is stubbed, so the
+          # next unused import needs no workflow run. Real dependencies are never stubbed, so
+          # a genuinely missing one still fails loudly.
+          REAL = {"torch", "numpy", "onnx", "onnxruntime", "onnxscript", "omegaconf", "hydra",
+                  "sentencepiece", "lightning", "pytorch_lightning", "transformers",
+                  "huggingface_hub", "yaml", "scipy", "librosa", "lhotse", "webdataset",
+                  "pandas", "tqdm", "packaging", "typing_extensions", "nemo"}
+
+
+          class _Fallback(importlib.abc.MetaPathFinder, importlib.abc.Loader):
+              def find_spec(self, fullname, path, target=None):
+                  if fullname.split(".")[0] in REAL:
+                      return None
+                  print(f"autostub: stubbed {fullname}", file=sys.stderr)
+                  return importlib.machinery.ModuleSpec(fullname, self, is_package=True)
+
+              def create_module(self, spec):
+                  return _Any(spec.name)
+
+              def exec_module(self, module):
+                  pass
+
+
+          sys.meta_path.append(_Fallback())
           PY
           # Fail early, with the real error, if the fork cannot be imported.
           PYTHONPATH="$ASR_STUBS:$ASR_NEMO_SRC" python3 -c \
