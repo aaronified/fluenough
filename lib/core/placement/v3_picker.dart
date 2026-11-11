@@ -75,7 +75,6 @@ const Set<String> kScreenFormats = <String>{
   'F23',
   'F24',
   'F25',
-  'F26',
   'F17',
   'F18',
   'F21',
