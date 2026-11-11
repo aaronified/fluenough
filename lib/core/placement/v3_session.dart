@@ -717,6 +717,15 @@ class V3Run {
           trailingMark: item.trailingMark,
           item: item,
         );
+      case 'F27':
+        return V3Question(
+          id: item.id,
+          format: item.format,
+          mode: V3Mode.tiles,
+          audio: item.prompt,
+          tiles: item.tiles,
+          item: item,
+        );
       case 'F7':
         return V3Question(
           id: item.id,

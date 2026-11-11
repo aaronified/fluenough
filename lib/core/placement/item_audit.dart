@@ -500,7 +500,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
         solvers[r.$2] = r.$1;
         aucN1 = r.$3;
         aucN2 = r.$4;
-      case 'F8':
+      case 'F8' || 'F27':
         var total = 0.0;
         for (final it in sample) {
           total += _sentenceTiles(it, wordGrams2, suffixGrams2);
@@ -567,7 +567,7 @@ double _bound(String fmt, FormatInfo info) {
       return 0.57;
     case 'F4':
       return 0.10 + 0.07;
-    case 'F8':
+    case 'F8' || 'F27':
       return 0.05 + 0.07;
     default:
       return info.admissionBound;

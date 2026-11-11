@@ -321,6 +321,7 @@ class GuessCalibration {
     'F7:clean': 0.05,
     'F7:cognate': 0.55,
     'F8:clean': 0.09,
+    'F27:clean': 0.09,
     'F9:clean': 0.55,
     'F9:cognate': 0.85,
     'F13:clean': 0.35,

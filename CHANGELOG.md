@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Find my level has a new Hear question: hear a sentence in the language and arrange its English meaning from tiles (#1105).
 - In Find my level, hearing a word and picking its meaning now counts for Reading as well as Hearing (#1105).
 - **Find my level shows its result card at once, and the result is simpler.** The "See my result" pause is gone: the card shows when the check ends (with Keep going on it while a sharper answer is possible). Each skill has a level name (Beginner, Amateur, Fluent or Expert) and the part of the whole language path it covers, drawn as a bar. Refs #1097.
 

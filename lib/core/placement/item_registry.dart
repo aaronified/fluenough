@@ -334,6 +334,17 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     leakRisk: 'cognates heard; poor text to speech',
   ),
   FormatInfo(
+    'F27',
+    'Heard sentence, arrange its English meaning from tiles',
+    {_hear},
+    0.10,
+    0.05,
+    15,
+    wordLevel: false,
+    needsAudio: true,
+    leakRisk: 'English word order and decoy elimination',
+  ),
+  FormatInfo(
     'F22',
     'English spoken and shown, pick the written word (reverse of F3)',
     {_read},
