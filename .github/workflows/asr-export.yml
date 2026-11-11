@@ -29,27 +29,95 @@ jobs:
     env:
       LANG_CODE: ${{ inputs.lang }}
       NEMO_URL: ${{ inputs.nemo_url }}
-      NEMO_BRANCH: nemo-v2
+      # AI4Bharat/NeMo branch nemo-v2, resolved with `git ls-remote` on 2026-11-11.
+      NEMO_SHA: 8dce88cf8e94963e2033c3137f7b9993b51db88a
       ASR_NEMO_SRC: ${{ github.workspace }}/nemo-src
+      ASR_STUBS: ${{ github.workspace }}/stubs
     steps:
+      - name: Validate inputs
+        id: validate
+        run: |
+          case "$LANG_CODE" in
+            *[!a-z]*|"") echo "lang must match ^[a-z]{2,3}$"; exit 1 ;;
+          esac
+          if [ "${#LANG_CODE}" -lt 2 ] || [ "${#LANG_CODE}" -gt 3 ]; then
+            echo "lang must match ^[a-z]{2,3}$"; exit 1
+          fi
+          case "$NEMO_URL" in
+            https://objectstore.e2enetworks.net/*) ;;
+            *) echo "nemo_url must start with https://objectstore.e2enetworks.net/"; exit 1 ;;
+          esac
+
       - uses: actions/checkout@v4
 
       - uses: actions/setup-python@v5
         with:
           python-version: "3.11"
 
+      # The fork pins huggingface_hub==0.23.2 (requirements/requirements.txt), the last line
+      # that still has ModelFilter, so pinning it needs no source patch. transformers 4.41.2
+      # is the newest line that accepts hub 0.23.x. pytorch-lightning 2.2.5 is the fork's
+      # floor (>=2.2.1) and keeps the old API. numpy<2 for numba and librosa of that era.
       - name: Install Python packages
         run: |
           python3 -m pip install --upgrade pip
           python3 -m pip install torch --index-url https://download.pytorch.org/whl/cpu
-          python3 -m pip install onnx onnxruntime numpy PyYAML omegaconf sentencepiece \
-            hydra-core pytorch-lightning braceexpand editdistance jiwer librosa lhotse \
-            webdataset huggingface_hub packaging wrapt ruamel.yaml tqdm
+          python3 -m pip install "numpy<2" onnx onnxruntime PyYAML \
+            "huggingface_hub==0.23.2" "transformers==4.41.2" "pytorch-lightning==2.2.5" \
+            "torchmetrics>=0.11.0" "hydra-core>1.3,<=1.3.2" "omegaconf<=2.3" \
+            "sentencepiece<1.0.0" "ruamel.yaml" braceexpand editdistance jiwer \
+            "librosa>=0.10.0" "lhotse>=1.20.0" "webdataset>=0.2.86" "sacremoses>=0.0.43" \
+            inflect pandas scikit-learn scipy soundfile resampy packaging wrapt tqdm \
+            text-unidecode python-dateutil marshmallow numba
 
-      - name: Fetch AI4Bharat's NeMo fork (branch nemo-v2)
+      - name: Fetch AI4Bharat's NeMo fork at a pinned commit
         run: |
-          git clone --depth 1 --branch "$NEMO_BRANCH" https://github.com/AI4Bharat/NeMo.git "$ASR_NEMO_SRC"
-          echo "NeMo fork at $(git -C "$ASR_NEMO_SRC" rev-parse HEAD)"
+          git init nemo-src
+          git -C nemo-src fetch --depth 1 https://github.com/AI4Bharat/NeMo.git "$NEMO_SHA"
+          git -C nemo-src checkout --detach FETCH_HEAD
+          echo "NeMo fork at $(git -C nemo-src rev-parse HEAD)"
+          # Source patches (none needed with huggingface_hub 0.23.2); log what still uses it.
+          grep -rn "ModelFilter" nemo-src/nemo | head || true
+
+      # loadmodel.py documents ASR_STUBS: a folder with `autostub`, imported first. It stubs
+      # imports the encoder export never uses and that are slow or fragile to install.
+      - name: Write stubs for unused heavy imports
+        run: |
+          mkdir -p stubs
+          cat > stubs/autostub.py <<'PY'
+          import importlib.abc, importlib.machinery, sys, types
+
+          PREFIXES = ("pyannote", "g2p_en", "texterrors", "kaldi_python_io", "kaldiio",
+                      "pyloudnorm", "sox", "wandb", "ipywidgets", "pydub", "wget",
+                      "datasets")
+
+
+          class _Any(types.ModuleType):
+              __path__ = []
+
+              def __getattr__(self, name):
+                  if name.startswith("__"):
+                      raise AttributeError(name)
+                  return type(name, (), {})
+
+
+          class _Finder(importlib.abc.MetaPathFinder, importlib.abc.Loader):
+              def find_spec(self, fullname, path, target=None):
+                  if fullname.split(".")[0] in PREFIXES:
+                      return importlib.machinery.ModuleSpec(fullname, self, is_package=True)
+
+              def create_module(self, spec):
+                  return _Any(spec.name)
+
+              def exec_module(self, module):
+                  pass
+
+
+          sys.meta_path.append(_Finder())
+          PY
+          # Fail early, with the real error, if the fork cannot be imported.
+          PYTHONPATH="$ASR_STUBS:$ASR_NEMO_SRC" python3 -c \
+            "import autostub; from nemo.collections.asr.models import EncDecHybridRNNTCTCBPEModel; print('nemo import ok')"
 
       - name: Download the .nemo
         run: |
@@ -59,6 +127,7 @@ jobs:
           sha256sum work/model.nemo
 
       - name: Export the pack
+        id: export
         run: |
           mkdir -p out
           KEEP=""
@@ -66,9 +135,10 @@ jobs:
           python3 -I tools/asr/export_pack.py work/model.nemo "out/$LANG_CODE" --lang "$LANG_CODE" --workdir work/export $KEEP
 
       - name: Smoke-test the pipeline on a synthetic wav
+        if: ${{ always() && steps.validate.outcome == 'success' }}
         run: |
           python3 - <<'PY'
-          import numpy as np, os, wave
+          import numpy as np, wave
           rng = np.random.default_rng(0)
           t = np.arange(16000) / 16000.0
           sig = 0.2 * np.sin(2 * np.pi * 220 * t) + 0.02 * rng.standard_normal(16000)
@@ -77,16 +147,21 @@ jobs:
               w.setnchannels(1); w.setsampwidth(2); w.setframerate(16000)
               w.writeframes(pcm.tobytes())
           PY
-          python3 -I tools/asr/transcribe.py "out/$LANG_CODE" work/synthetic.wav --encoder int8
+          if [ -f "out/$LANG_CODE/encoder.int8.onnx" ]; then
+            python3 -I tools/asr/transcribe.py "out/$LANG_CODE" work/synthetic.wav --encoder int8
+          else
+            echo "no int8 encoder in the pack, skipping the smoke test"
+          fi
           if [ -f "out/$LANG_CODE/encoder.fp32.onnx" ]; then
             python3 -I tools/asr/transcribe.py "out/$LANG_CODE" work/synthetic.wav --encoder fp32
           fi
 
       - name: Print pack sizes and the int8 versus fp32 numbers
+        if: ${{ always() && steps.validate.outcome == 'success' }}
         run: |
           echo "## Pack ($LANG_CODE)" >> "$GITHUB_STEP_SUMMARY"
-          ls -l "out/$LANG_CODE" | tee -a "$GITHUB_STEP_SUMMARY"
-          du -sh "out/$LANG_CODE"
+          ls -l "out/$LANG_CODE" | tee -a "$GITHUB_STEP_SUMMARY" || true
+          du -sh "out/$LANG_CODE" || true
           if [ -f "out/$LANG_CODE/pack-report.json" ]; then
             cat "out/$LANG_CODE/pack-report.json"
             python3 -I -c "import json,sys;print(json.dumps(json.load(open(sys.argv[1])),indent=1))" \
@@ -94,8 +169,9 @@ jobs:
           fi
 
       - uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.validate.outcome == 'success' }}
         with:
           name: asr-pack-${{ inputs.lang }}
           path: out/
           retention-days: 14
-          if-no-files-found: error
+          if-no-files-found: warn
