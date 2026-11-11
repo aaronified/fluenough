@@ -6,6 +6,7 @@ Source of truth: this wiki page.
 - **Update (2026-11-05):** option 1 is built as a best-effort capture (`MicCapture`, started after the recogniser, self-disabling after two listens that hear nothing), as the owner asked for the first attempt to be recorded with recognition. Option 2 stays the robust route if a device shows the two cannot share the microphone.
 - **Date:** 2026-11-02
 
+- **Update (2026-11-11, #1107, owner):** recording at the same time as the online recogniser is turned off by default: `SystemSpeechEngine` and `WebSpeechEngine` take a `recordWhileRecognising` option (default false). With it off the recogniser has the microphone alone (no `EXTRA_AUDIO_SOURCE` pipe, no second recorder, no `MediaRecorder` beside it), the listen keeps no audio and "Hear yourself" records a second take after the attempt. The code of both routes stays behind the switch for the on-device listener, which will record and recognise from one capture of its own. The sections below describe the routes as built; they run only with the switch on.
 - **Update (2026-11-07):** the owner saw "No recording yet. Replay records one." on a Telugu card: the recording was made only when Replay was tapped, because the best-effort capture of option 1 cannot share the microphone on his phone. Built now, as the decision below says: option 2 on Android 13 and later, and a recorder beside the recogniser in a browser. See "What was built".
 
 ## Context
