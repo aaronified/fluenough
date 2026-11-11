@@ -34,13 +34,13 @@ void main() {
   final dim = golden['dim'] as int;
   final vocab = golden['vocab'] as int;
   final blank = golden['blank'] as int;
-  final pieces = (golden['pieces'] as List).cast<String>();
-  final weights = (golden['weights'] as List).cast<num>();
-  final bias = (golden['bias'] as List).cast<num>();
+  final pieces = (golden['pieces'] as List<Object?>).cast<String>();
+  final weights = (golden['weights'] as List<Object?>).cast<num>();
+  final bias = (golden['bias'] as List<Object?>).cast<num>();
   final encoderOut = [
-    for (final row in golden['encoderOutput'] as List)
+    for (final row in golden['encoderOutput'] as List<Object?>)
       Float32List.fromList([
-        for (final x in row as List) (x as num).toDouble(),
+        for (final x in row as List<Object?>) (x as num).toDouble(),
       ]),
   ];
   final validFrames = golden['validFrames'] as int;
@@ -55,10 +55,10 @@ void main() {
     test('logits match the Python head within 1e-4', () {
       final head = loadGolden();
       final logits = head.logits(encoderOut, length: validFrames);
-      final want = golden['logits'] as List;
+      final want = golden['logits'] as List<Object?>;
       expect(logits.length, want.length);
       for (var t = 0; t < want.length; t++) {
-        final row = (want[t] as List).cast<num>();
+        final row = (want[t] as List<Object?>).cast<num>();
         expect(logits[t].length, vocab);
         for (var v = 0; v < vocab; v++) {
           expect(
@@ -75,7 +75,7 @@ void main() {
       () {
         final head = loadGolden();
         final result = head.apply(encoderOut, length: validFrames);
-        expect(result.ids, (golden['ids'] as List).cast<int>());
+        expect(result.ids, (golden['ids'] as List<Object?>).cast<int>());
         expect(
           result.meanConfidence,
           closeTo((golden['meanConfidence'] as num).toDouble(), 1e-4),
@@ -87,10 +87,14 @@ void main() {
 
     test('decode cases from the golden file', () {
       final head = loadGolden();
-      for (final c in golden['decodeCases'] as List) {
+      for (final c in golden['decodeCases'] as List<Object?>) {
         final m = c as Map<String, dynamic>;
         expect(
-          decode((m['ids'] as List).cast<int>(), head.pieces, head.blank),
+          decode(
+            (m['ids'] as List<Object?>).cast<int>(),
+            head.pieces,
+            head.blank,
+          ),
           m['text'],
           reason: 'ids ${m['ids']}',
         );
