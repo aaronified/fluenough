@@ -81,8 +81,11 @@ flutter:
   # Builds AppLocalizations from lib/l10n/*.arb on `flutter pub get`.
   generate: true
   # The decks are not bundled: the app downloads them from the repository's
-  # decks-live branch, by decks/index.json (#210, ADR-0037). Only the theme list
-  # and the spoken languages ship inside the app.
+  # decks-live branch, by decks/index.json (#210, ADR-0037). The theme list
+  # ships inside the app only as the fallback for an offline first start: the
+  # current one is downloaded with the decks (deck-owned data, owner,
+  # 2026-11-11), and so are the other files the index lists under `shared`.
+  # The spoken languages ship inside the app.
   assets:
     # The release notes' source, read at the first launch after an update for
     # the "What's new" sheet (#944); the release workflow dates its section

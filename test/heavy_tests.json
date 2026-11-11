@@ -1,0 +1,18 @@
+{
+  "_comment": "Heavy test files (placement suites, ~60% of CI time). tools/test_shard.py --exclude-heavy leaves them out; CI passes it unless placement changed, on the nightly schedule, or a manual run (see 'Which parts changed' in .github/workflows/ci.yml). Keep it to files that only placement code can break.",
+  "heavy": [
+    "test/placement_v3_adversaries_b_test.dart",
+    "test/placement_v3_adversaries_c_test.dart",
+    "test/placement_v3_adversaries_test.dart",
+    "test/placement_v3_drilldown_test.dart",
+    "test/placement_v3_edge_adversaries_test.dart",
+    "test/placement_v3_edge_gamers_test.dart",
+    "test/placement_v3_edge_honest_es_test.dart",
+    "test/placement_v3_gamers_b_test.dart",
+    "test/placement_v3_gamers_c_test.dart",
+    "test/placement_v3_gamers_test.dart",
+    "test/placement_v3_honest_es_test.dart",
+    "test/placement_v3_honest_hi_test.dart",
+    "test/placement_v3_real_bank_test.dart"
+  ]
+}

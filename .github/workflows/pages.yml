@@ -114,7 +114,8 @@ jobs:
         if: steps.diff.outputs.run == 'true'
         run: |
           npm install --no-save --no-audit --no-fund --prefix "$RUNNER_TEMP/pw" playwright@1.56.1
-          node "$RUNNER_TEMP/pw/node_modules/playwright/cli.js" install --with-deps chromium
+          node "$RUNNER_TEMP/pw/node_modules/playwright/cli.js" install chromium
+          sudo timeout 120 node "$RUNNER_TEMP/pw/node_modules/playwright/cli.js" install-deps chromium || echo "install-deps skipped (apt mirror unreachable); continuing"
       - name: Smoke test
         if: steps.diff.outputs.run == 'true'
         run: >

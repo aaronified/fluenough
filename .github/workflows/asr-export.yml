@@ -1,0 +1,259 @@
+name: ASR pack export
+
+# Manual only (#1004). Exports one IndicConformer language to an on-device pack and uploads
+# it as a workflow artifact. Needs no secrets and publishes nothing; the sandbox cannot do
+# this export (no torch, NeMo fork blocked), a GitHub runner can.
+on:
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: AI4Bharat language code (te, bn, hi, ...)
+        required: true
+        default: te
+      nemo_url:
+        description: URL of the language's .nemo checkpoint
+        required: true
+        default: https://objectstore.e2enetworks.net/indicconformer/models/indicconformer_stt_te_hybrid_rnnt_large.nemo
+      keep_fp32:
+        description: Also keep encoder.fp32.onnx (for the int8 versus fp32 comparison)
+        type: boolean
+        default: true
+      audio_limit:
+        description: How many Wikimedia Commons word recordings to score (0 skips the accuracy test)
+        required: true
+        default: "40"
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      LANG_CODE: ${{ inputs.lang }}
+      AUDIO_LIMIT: ${{ inputs.audio_limit }}
+      NEMO_URL: ${{ inputs.nemo_url }}
+      # AI4Bharat/NeMo branch nemo-v2, resolved with `git ls-remote` on 2026-11-11.
+      NEMO_SHA: 8dce88cf8e94963e2033c3137f7b9993b51db88a
+      ASR_NEMO_SRC: ${{ github.workspace }}/nemo-src
+      ASR_STUBS: ${{ github.workspace }}/stubs
+    steps:
+      - name: Validate inputs
+        id: validate
+        run: |
+          case "$LANG_CODE" in
+            *[!a-z]*|"") echo "lang must match ^[a-z]{2,3}$"; exit 1 ;;
+          esac
+          if [ "${#LANG_CODE}" -lt 2 ] || [ "${#LANG_CODE}" -gt 3 ]; then
+            echo "lang must match ^[a-z]{2,3}$"; exit 1
+          fi
+          case "$AUDIO_LIMIT" in
+            *[!0-9]*|"") echo "audio_limit must be a number"; exit 1 ;;
+          esac
+          case "$NEMO_URL" in
+            https://objectstore.e2enetworks.net/*) ;;
+            *) echo "nemo_url must start with https://objectstore.e2enetworks.net/"; exit 1 ;;
+          esac
+
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      # The fork pins huggingface_hub==0.23.2 (requirements/requirements.txt), the last line
+      # that still has ModelFilter, so pinning it needs no source patch. transformers 4.41.2
+      # is the newest line that accepts hub 0.23.x. pytorch-lightning 2.2.5 is the fork's
+      # floor (>=2.2.1) and keeps the old API. numpy<2 for numba and librosa of that era.
+      - name: Install Python packages
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python3 -m pip install "numpy<2" onnx onnxruntime PyYAML \
+            "huggingface_hub==0.23.2" "transformers==4.41.2" "pytorch-lightning==2.2.5" \
+            "torchmetrics>=0.11.0" "hydra-core>1.3,<=1.3.2" "omegaconf<=2.3" \
+            "sentencepiece<1.0.0" "ruamel.yaml" braceexpand editdistance jiwer \
+            "librosa>=0.10.0" "lhotse>=1.20.0" "webdataset>=0.2.86" "sacremoses>=0.0.43" \
+            inflect pandas scikit-learn scipy soundfile resampy packaging wrapt tqdm \
+            text-unidecode python-dateutil marshmallow numba
+
+      - name: Fetch AI4Bharat's NeMo fork at a pinned commit
+        run: |
+          git init nemo-src
+          git -C nemo-src fetch --depth 1 https://github.com/AI4Bharat/NeMo.git "$NEMO_SHA"
+          git -C nemo-src checkout --detach FETCH_HEAD
+          echo "NeMo fork at $(git -C nemo-src rev-parse HEAD)"
+          # Source patches (none needed with huggingface_hub 0.23.2); log what still uses it.
+          grep -rn "ModelFilter" nemo-src/nemo | head || true
+
+      # loadmodel.py documents ASR_STUBS: a folder with `autostub`, imported first. It stubs
+      # imports the encoder export never uses and that are slow or fragile to install.
+      - name: Write stubs for unused heavy imports
+        run: |
+          mkdir -p stubs
+          cat > stubs/autostub.py <<'PY'
+          import importlib.abc, importlib.machinery, sys, types
+
+          PREFIXES = ("pyannote", "g2p_en", "texterrors", "kaldi_python_io", "kaldiio",
+                      "pyloudnorm", "sox", "wandb", "ipywidgets", "pydub", "wget",
+                      "datasets", "IPython")
+
+
+          class _Any(types.ModuleType):
+              __path__ = []
+
+              def __getattr__(self, name):
+                  if name.startswith("__"):
+                      raise AttributeError(name)
+                  return type(name, (), {})
+
+
+          class _Finder(importlib.abc.MetaPathFinder, importlib.abc.Loader):
+              def find_spec(self, fullname, path, target=None):
+                  if fullname.split(".")[0] in PREFIXES:
+                      return importlib.machinery.ModuleSpec(fullname, self, is_package=True)
+
+              def create_module(self, spec):
+                  return _Any(spec.name)
+
+              def exec_module(self, module):
+                  pass
+
+
+          sys.meta_path.append(_Finder())
+
+          # Last resort: any top-level module that nothing else resolved is stubbed, so the
+          # next unused import needs no workflow run. Real dependencies are never stubbed, so
+          # a genuinely missing one still fails loudly.
+          REAL = {"torch", "numpy", "onnx", "onnxruntime", "onnxscript", "omegaconf", "hydra",
+                  "sentencepiece", "lightning", "pytorch_lightning", "transformers",
+                  "huggingface_hub", "yaml", "scipy", "librosa", "lhotse", "webdataset",
+                  "pandas", "tqdm", "packaging", "typing_extensions", "nemo"}
+
+
+          class _Fallback(importlib.abc.MetaPathFinder, importlib.abc.Loader):
+              def find_spec(self, fullname, path, target=None):
+                  if fullname.split(".")[0] in REAL:
+                      return None
+                  print(f"autostub: stubbed {fullname}", file=sys.stderr)
+                  return importlib.machinery.ModuleSpec(fullname, self, is_package=True)
+
+              def create_module(self, spec):
+                  return _Any(spec.name)
+
+              def exec_module(self, module):
+                  pass
+
+
+          sys.meta_path.append(_Fallback())
+          PY
+          # Fail early, with the real error, if the fork cannot be imported.
+          PYTHONPATH="$ASR_STUBS:$ASR_NEMO_SRC" python3 -c \
+            "import autostub; from nemo.collections.asr.models import EncDecHybridRNNTCTCBPEModel; print('nemo import ok')"
+
+      - name: Download the .nemo
+        run: |
+          mkdir -p work
+          curl -fSL --retry 5 --retry-all-errors -o work/model.nemo "$NEMO_URL"
+          ls -l work/model.nemo
+          sha256sum work/model.nemo
+
+      - name: Export the pack
+        id: export
+        run: |
+          mkdir -p out
+          KEEP=""
+          if [ "${{ inputs.keep_fp32 }}" = "true" ]; then KEEP="--keep-fp32"; fi
+          python3 -I tools/asr/export_pack.py work/model.nemo "out/$LANG_CODE" --lang "$LANG_CODE" --workdir work/export $KEEP
+
+      - name: Smoke-test the pipeline on a synthetic wav
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        run: |
+          python3 - <<'PY'
+          import numpy as np, wave
+          rng = np.random.default_rng(0)
+          t = np.arange(16000) / 16000.0
+          sig = 0.2 * np.sin(2 * np.pi * 220 * t) + 0.02 * rng.standard_normal(16000)
+          pcm = (np.clip(sig, -1, 1) * 32767).astype("<i2")
+          with wave.open("work/synthetic.wav", "wb") as w:
+              w.setnchannels(1); w.setsampwidth(2); w.setframerate(16000)
+              w.writeframes(pcm.tobytes())
+          PY
+          if [ -f "out/$LANG_CODE/encoder.int8.onnx" ]; then
+            python3 -I tools/asr/transcribe.py "out/$LANG_CODE" work/synthetic.wav --encoder int8
+          else
+            echo "no int8 encoder in the pack, skipping the smoke test"
+          fi
+          if [ -f "out/$LANG_CODE/encoder.fp32.onnx" ]; then
+            python3 -I tools/asr/transcribe.py "out/$LANG_CODE" work/synthetic.wav --encoder fp32
+          fi
+
+      # Accuracy test set: Telugu word recordings from Wikimedia Commons (CC BY-SA). They go
+      # only to the artifact, never to the repository. Needs ffmpeg and about a minute of
+      # paced API requests (tools/asr/fetch_wiktionary_audio.py follows the API etiquette).
+      - name: Fetch Wikimedia Commons recordings
+        id: audio
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        run: |
+          if [ "$AUDIO_LIMIT" = "0" ] || [ ! -f "out/$LANG_CODE/encoder.int8.onnx" ]; then
+            echo "skipping the accuracy test (audio_limit 0 or no int8 encoder)"; exit 0
+          fi
+          sudo apt-get install -y ffmpeg
+          mkdir -p eval
+          python3 -I tools/asr/fetch_wiktionary_audio.py "eval/audio" --limit "$AUDIO_LIMIT"
+
+      - name: Score the pack on the recordings
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        run: |
+          if [ ! -f "eval/audio/manifest.json" ] || [ ! -f "out/$LANG_CODE/encoder.int8.onnx" ]; then
+            echo "no recordings or no int8 encoder: nothing to score" | tee -a "$GITHUB_STEP_SUMMARY"; exit 0
+          fi
+          python3 -I tools/asr/eval_wer.py eval/audio --pack "out/$LANG_CODE" | tee eval/results.txt
+          python3 -I - <<'PY' >> "$GITHUB_STEP_SUMMARY"
+          import re
+          lines = open("eval/results.txt", encoding="utf-8").read().splitlines()
+          print("## Accuracy on Wikimedia Commons recordings")
+          for l in lines:
+              if re.match(r"^(int8|fp32): WER", l):
+                  print("- " + l)
+          rows = []
+          for l in lines:
+              p = l.split("\t")
+              if len(p) == 5 and p[0] == "int8":
+                  m = re.search(r"(\d+)/(\d+)$", p[4])
+                  rows.append((int(m.group(1)) if m else 0, p[2][5:], p[3][5:]))
+          print(f"\nFiles scored (int8): {len(rows)}\n")
+          print("Worst 10 words (int8), expected vs heard:\n")
+          print("| expected | heard |\n|---|---|")
+          for _, ref, hyp in sorted(rows, key=lambda r: -r[0])[:10]:
+              print(f"| {ref} | {hyp} |")
+          PY
+
+      - name: Print pack sizes and the int8 versus fp32 numbers
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        run: |
+          echo "## Pack ($LANG_CODE)" >> "$GITHUB_STEP_SUMMARY"
+          ls -l "out/$LANG_CODE" | tee -a "$GITHUB_STEP_SUMMARY" || true
+          du -sh "out/$LANG_CODE" || true
+          if [ -f "out/$LANG_CODE/pack-report.json" ]; then
+            cat "out/$LANG_CODE/pack-report.json"
+            python3 -I -c "import json,sys;print(json.dumps(json.load(open(sys.argv[1])),indent=1))" \
+              "out/$LANG_CODE/pack-report.json" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        with:
+          name: asr-pack-${{ inputs.lang }}
+          path: out/
+          retention-days: 14
+          if-no-files-found: warn
+
+      - uses: actions/upload-artifact@v4
+        if: ${{ always() && steps.validate.outcome == 'success' }}
+        with:
+          name: asr-eval-${{ inputs.lang }}
+          path: eval/
+          retention-days: 14
+          if-no-files-found: warn

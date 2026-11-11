@@ -24,6 +24,7 @@ import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
+import 'app/shared_deck_source.dart';
 import 'app/startup_marks.dart';
 import 'app/system_settings.dart';
 import 'app/wallpaper_colours.dart';
@@ -76,6 +77,12 @@ Future<void> main() async {
   // The decks, downloaded from GitHub into the app's own storage (#210,
   // ADR-0037); only the theme list is bundled.
   final downloaded = FileDownloadedDecks(Directory('${files.path}/downloaded'));
+  final deckDownloads = DeckDownloads(
+    fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
+    files: downloaded,
+    clock: DateTime.now,
+    log: log,
+  );
   // The daily reminder's notifications (#90). Without them the reminder's
   // switch stays off.
   ReminderScheduler reminderScheduler = const NullReminderScheduler();
@@ -90,7 +97,14 @@ Future<void> main() async {
   );
   final state = AppState(
     catalog: DeckCatalog(
-      DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
+      // Deck-owned data (the theme list) downloaded from decks-live comes
+      // first; the copy bundled in the app is the fallback (owner,
+      // 2026-11-11).
+      DeckSources(<DeckSource>[
+        SharedDeckSource(() => deckDownloads.sharedTexts),
+        AssetDeckSource(),
+        downloaded,
+      ]),
       added: FileDeckStore(Directory('${files.path}/decks')),
       parser: parseInIsolate,
       // The decks' YAML, kept as JSON between launches and read again
@@ -107,12 +121,7 @@ Future<void> main() async {
     ),
     // The Find my level question banks, made once per language and deck set.
     bankStore: FileBlobStore(Directory('${files.path}/placement-banks')),
-    deckDownloads: DeckDownloads(
-      fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
-      files: downloaded,
-      clock: DateTime.now,
-      log: log,
-    ),
+    deckDownloads: deckDownloads,
     progress: storage.progress,
     synonymLoader: loadSynonymSets,
     settings: storage.settings,
@@ -132,6 +141,9 @@ Future<void> main() async {
         null,
         RecordMicCapture(),
         const ChannelNativeListener(),
+        // recordWhileRecognising: off, no recording while the online recogniser
+        // listens (#1107).
+        false,
       ),
       packs: asrPacks,
       log: log.warning,
