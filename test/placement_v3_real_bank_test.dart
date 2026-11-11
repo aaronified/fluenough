@@ -48,9 +48,6 @@ _notAskedIn = <String, Map<String, String>>{
         'Write is placed with the 6 s gap items (F21, F25) and the sentence '
         'tiles; typing a whole word costs 12 s and gives no more '
         'information per second',
-    'F17':
-        'a heard sentence pick costs 8 s at the guess of a word pick: '
-        'chosen only when the word picks of a band are used up',
   },
   'hi': <String, String>{
     'F7':
