@@ -93,6 +93,60 @@ NativeListenResult _heardNative({OwnAudio? audio, String text = 'నమస్త
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
+  group('recording at the same time is off by default (#1107)', () {
+    test('the plain listen runs and neither the piped listen nor the capture '
+        'starts', () async {
+      final native = FixedNativeListener(
+        results: <NativeListenResult>[_heardNative(audio: _voice)],
+      );
+      final plugin = _Plugin();
+      final capture = _Capture();
+      final engine = SystemSpeechEngine(plugin, capture, native);
+      expect(engine.recordWhileRecognising, isFalse);
+      final attempt = engine.listen(bcp47: 'te-IN', onDevice: false);
+      await Future<void>.delayed(Duration.zero);
+      expect(plugin.listens, 1);
+      expect(native.listens, 0, reason: 'no EXTRA_AUDIO_SOURCE route');
+      expect(capture.starts, 0, reason: 'no second recorder');
+      plugin.onResult!(
+        SpeechRecognitionResult(<SpeechRecognitionWords>[
+          const SpeechRecognitionWords('నమస్తే', null, 0.9),
+        ], ResultType.finalResult.value),
+      );
+      final h = await attempt;
+      expect(h.alternatives.single.text, 'నమస్తే');
+      expect(h.ownAudio, isNull, reason: 'Hear yourself records a take');
+    });
+
+    test('the browser is not asked to record beside the recogniser', () async {
+      final browser = FixedSpeechBrowser(
+        heard: const BrowserHeard(<SpeechAlternative>[
+          SpeechAlternative('namaste'),
+        ]),
+        audio: _voice,
+      );
+      final h = await WebSpeechEngine(browser)
+          .listen(bcp47: 'hi-IN', onDevice: false);
+      expect(browser.recordings, <bool>[false]);
+      expect(h.ownAudio, isNull);
+    });
+
+    test('with the switch on the browser records beside it', () async {
+      final browser = FixedSpeechBrowser(
+        heard: const BrowserHeard(<SpeechAlternative>[
+          SpeechAlternative('namaste'),
+        ]),
+        audio: _voice,
+      );
+      final h = await WebSpeechEngine(
+        browser,
+        true,
+      ).listen(bcp47: 'hi-IN', onDevice: false);
+      expect(browser.recordings, <bool>[true]);
+      expect(h.ownAudio, isNotNull);
+    });
+  });
+
   group('Android 13 and later: one stream for the recogniser and the take', () {
     test(
       'a listen gives the readings and the audio that was recognised',
@@ -101,7 +155,7 @@ void main() {
           results: <NativeListenResult>[_heardNative(audio: _voice)],
         );
         final plugin = _Plugin();
-        final engine = SystemSpeechEngine(plugin, null, native);
+        final engine = SystemSpeechEngine(plugin, null, native, true);
         final h = await engine.listen(bcp47: 'te-IN', onDevice: true);
         expect(h.failed, isFalse);
         expect(h.alternatives.single.text, 'నమస్తే');
@@ -126,6 +180,7 @@ void main() {
         _Plugin(),
         null,
         native,
+        true,
       ).listen(bcp47: 'te-IN', onDevice: true);
       expect(h.failed, isFalse);
       expect(
@@ -148,7 +203,7 @@ void main() {
           ],
         );
         final plugin = _Plugin();
-        final engine = SystemSpeechEngine(plugin, null, native);
+        final engine = SystemSpeechEngine(plugin, null, native, true);
         final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
         await Future<void>.delayed(Duration.zero);
         expect(native.listens, 1, reason: error);
@@ -168,7 +223,7 @@ void main() {
       final native = FixedNativeListener(isAvailable: false);
       final plugin = _Plugin();
       final capture = _Capture();
-      final engine = SystemSpeechEngine(plugin, capture, native);
+      final engine = SystemSpeechEngine(plugin, capture, native, true);
       final listening = engine.listen(bcp47: 'te-IN', onDevice: true);
       await Future<void>.delayed(Duration.zero);
       expect(plugin.listens, 1, reason: 'the plain route listened');
@@ -190,7 +245,7 @@ void main() {
         ],
       );
       final plugin = _Plugin();
-      final engine = SystemSpeechEngine(plugin, null, native);
+      final engine = SystemSpeechEngine(plugin, null, native, true);
       for (var i = 0; i < 3; i++) {
         final listening = engine.listen(bcp47: 'te-IN', onDevice: true);
         await Future<void>.delayed(Duration.zero);
@@ -218,7 +273,7 @@ void main() {
           results: <NativeListenResult>[first],
         );
         final plugin = _Plugin();
-        final engine = SystemSpeechEngine(plugin, null, native);
+        final engine = SystemSpeechEngine(plugin, null, native, true);
         final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
         await Future<void>.delayed(Duration.zero);
         // The same attempt reached the plain route: no no-match was shown.
@@ -257,7 +312,7 @@ void main() {
           ],
         );
         final plugin = _Plugin();
-        final engine = SystemSpeechEngine(plugin, null, native);
+        final engine = SystemSpeechEngine(plugin, null, native, true);
         final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
         await Future<void>.delayed(Duration.zero);
         expect(native.listens, 1);
@@ -285,7 +340,7 @@ void main() {
         ],
       );
       final plugin = _Plugin();
-      final engine = SystemSpeechEngine(plugin, null, native);
+      final engine = SystemSpeechEngine(plugin, null, native, true);
       for (var i = 0; i < 3; i++) {
         final attempt = engine.listen(bcp47: 'te-IN', onDevice: true);
         await Future<void>.delayed(Duration.zero);
@@ -314,6 +369,7 @@ void main() {
         plugin,
         null,
         native,
+        true,
       ).listen(bcp47: 'te-IN', onDevice: true);
       expect(h.failed, isTrue);
       expect(h.failure, SpeechFailure.other);
@@ -322,7 +378,7 @@ void main() {
 
     test('stop cancels the native listen', () async {
       final native = FixedNativeListener();
-      await SystemSpeechEngine(_Plugin(), null, native).stop();
+      await SystemSpeechEngine(_Plugin(), null, native, true).stop();
       expect(native.cancels, 1);
     });
   });
@@ -439,7 +495,7 @@ void main() {
         ]),
         audio: _voice,
       );
-      final engine = WebSpeechEngine(browser);
+      final engine = WebSpeechEngine(browser, true);
       expect(await engine.start(), isTrue);
       final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
       expect(h.failed, isFalse);
@@ -452,7 +508,7 @@ void main() {
         heard: const BrowserHeard.error('no-speech'),
         audio: _voice,
       );
-      final engine = WebSpeechEngine(browser);
+      final engine = WebSpeechEngine(browser, true);
       await engine.start();
       final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
       expect(h.failure, SpeechFailure.noMatch);
@@ -466,6 +522,7 @@ void main() {
             SpeechAlternative('namaste'),
           ]),
         ),
+        true,
       );
       await engine.start();
       final h = await engine.listen(bcp47: 'hi-IN', onDevice: false);
