@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - tools/asr: Telugu on-device listener reference tools (#1004).
+- On-device listener: end-of-speech detector and PCM recorder (#1004).
 - On-device listener: pure-Dart CTC head and decoder (#1004).
 - On-device listener: pure-Dart log-mel front end (#1004).
 
