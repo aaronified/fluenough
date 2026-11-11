@@ -13,17 +13,29 @@ final RegExp _codePattern = RegExp(r'^[a-z]{2,3}$');
 /// official language, so no built-in course can clash with them later.
 final RegExp _localUseCode = RegExp(r'^q[a-t][a-z]$');
 
+/// The codes in `qaa` to `qtz` that the app's own languages already use
+/// (assets/languages.yaml): a package may not take them. A test keeps this
+/// list equal to the q-codes of that file.
+const Set<String> builtInPrivateUseCodes = <String>{
+  'qap',
+  'qbe',
+  'qdo',
+  'qgh',
+  'qgk',
+  'qhv',
+  'qya',
+};
+
 /// Whether [id] starts with `fnpd-`.
 bool isPrivateId(String id) => id.startsWith(privateIdMarker);
 
 /// Whether [code] is a code a package may use: two or three lowercase
 /// letters, and when it is three letters starting with `q`, one of `qaa` to
-/// `qtz`.
+/// `qtz` that no built-in language uses.
 bool isPrivateCode(String code) {
   if (!_codePattern.hasMatch(code)) return false;
-  return !code.startsWith('q') ||
-      code.length != 3 ||
-      _localUseCode.hasMatch(code);
+  if (!code.startsWith('q') || code.length != 3) return true;
+  return _localUseCode.hasMatch(code) && !builtInPrivateUseCodes.contains(code);
 }
 
 /// The package id for language [code]: `fnpd-qaa`.

@@ -64,7 +64,8 @@ List<String> _catalogPaths(String id, Iterable<String> files) => <String>[
 
 /// Whether [id] is a name this store keeps a package under: letters, digits
 /// and hyphens, so it can never name a place outside its own folder.
-bool _isPackageId(String id) => _packageIdPattern.hasMatch(id);
+bool _isPackageId(String id) =>
+    id != 'staging' && _packageIdPattern.hasMatch(id);
 
 final RegExp _packageIdPattern = RegExp(r'^[a-z0-9]+(?:-[a-z0-9]+)*$');
 
@@ -89,11 +90,39 @@ class FilePrivateStore implements PrivateStore {
   Directory get _staging => Directory('${root.path}/staging');
   Directory _folder(String id) => Directory('${root.path}/$id');
 
+  Future<void>? _recovered;
+
+  /// Once per launch, before anything else: a crash between moving a package
+  /// aside and moving its new files in leaves `staging/<id>.old` and no
+  /// `<id>`. Puts the old package back, then clears staging.
+  Future<void> _recover() async {
+    try {
+      if (!await _staging.exists()) return;
+      await for (final entity in _staging.list()) {
+        if (entity is! Directory || !entity.path.endsWith('.old')) continue;
+        final name = entity.uri.pathSegments
+            .where((s) => s.isNotEmpty)
+            .last
+            .replaceFirst(RegExp(r'\.old$'), '');
+        if (!_isPackageId(name)) continue;
+        final target = _folder(name);
+        if (!await target.exists()) {
+          await entity.rename(target.path);
+          _log?.warning('Private decks: restored a package after a crash');
+        }
+      }
+      await _staging.delete(recursive: true);
+    } on Object catch (e, stack) {
+      _fail('could not recover after a crash', e, stack);
+    }
+  }
+
   void _fail(String what, Object error, StackTrace stack) =>
       _log?.error(describeError('Private decks: $what', error, stack));
 
   @override
   Future<List<PrivatePackage>> packages() async {
+    await (_recovered ??= _recover());
     try {
       if (!await _index.exists()) return const <PrivatePackage>[];
       final json = jsonDecode(await _index.readAsString());
@@ -185,7 +214,7 @@ class FilePrivateStore implements PrivateStore {
         return false;
       }
     }
-    final packagesBefore = await packages();
+    final packagesBefore = await packages(); // recovers first
     final fresh = Directory('${_staging.path}/$id');
     final old = Directory('${_staging.path}/$id.old');
     var movedOld = false;

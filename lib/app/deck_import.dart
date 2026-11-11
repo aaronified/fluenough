@@ -6,6 +6,7 @@ import 'package:file_picker/file_picker.dart';
 import '../core/data/deck_parser.dart';
 import '../core/data/pattern_expander.dart';
 import '../core/models/deck.dart';
+import '../core/private/private_ids.dart';
 import 'deck_catalog.dart';
 
 /// What adding a deck file would do (#22): add it, replace a deck added
@@ -72,6 +73,14 @@ DeckCheck checkAddedDeck(
     deck = DeckParser.parse(text, source: fileName);
   } on DeckParseException catch (e) {
     return DeckUnreadable(e);
+  }
+  if (isPrivateId(deck.id) || deck.cards.any((c) => isPrivateId(c.id))) {
+    return DeckUnreadable(
+      DeckParseException(
+        'ids starting fnpd- belong to private packages only',
+        source: fileName,
+      ),
+    );
   }
   DeckEntry? same;
   final owner = <String, DeckEntry>{};

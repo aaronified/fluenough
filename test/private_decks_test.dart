@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:fluenough/app/deck_catalog.dart';
+import 'package:fluenough/app/deck_import.dart';
 import 'package:fluenough/app/private_import.dart';
 import 'package:fluenough/app/private_store.dart';
 import 'package:fluenough/core/private/private_ids.dart';
@@ -45,6 +46,18 @@ void main() {
       expect(isPrivateCode('qua'), isFalse);
       expect(isPrivateCode('te'), isTrue);
       expect(isPrivateCode('QAA'), isFalse);
+    });
+
+    test('a code a built-in language uses is not private', () {
+      final yaml = File('assets/languages.yaml').readAsStringSync();
+      final used = RegExp(r'code: "(q[a-z]{2})"')
+          .allMatches(yaml)
+          .map((m) => m[1]!)
+          .toSet();
+      expect(used, isNotEmpty);
+      for (final code in used) {
+        expect(isPrivateCode(code), isFalse, reason: code);
+      }
     });
   });
 
@@ -166,6 +179,78 @@ void main() {
     );
   });
 
+  group('private decks keep their mark and their place', () {
+    String deck(String id, String cards) =>
+        '''
+schema: 1
+id: "$id"
+name: "Lines"
+language: { code: "qaa", iso639_3: "qaa", name: "Tiny", script: "latin" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+cards:
+$cards''';
+
+    test('a deck that lists a card by ref is still private', () {
+      final catalog = Catalog.parseAll(<String, String>{
+        'private/fnpd-qaa/qaa/fnpd-qaa-words.yaml': deck(
+          'fnpd-qaa-words',
+          '  - { id: "fnpd-qaa-0001", target: "kolu", native: "house" }\n',
+        ),
+        'private/fnpd-qaa/qaa/fnpd-qaa-lines.yaml': deck(
+          'fnpd-qaa-lines',
+          '  - { id: "fnpd-qaa-0002", target: "mira", native: "door" }\n'
+              '  - { ref: "fnpd-qaa-0001" }\n',
+        ),
+      });
+      expect(catalog.broken, isEmpty);
+      final lines = catalog.byId('fnpd-qaa-lines')!;
+      expect(lines.cards, hasLength(2));
+      expect(lines.private, isTrue);
+      expect(lines.bundled, isFalse);
+    });
+
+    test(
+      'a private path of another language does not take over its course',
+      () async {
+        final files = <String, String>{
+          for (final e in (await _tiny()).entries)
+            e.key: e.key == 'qaa-path.yaml'
+                ? e.value
+                      .replaceAll('language: "qaa"', 'language: "te"')
+                      .replaceAll('id: "qaa-path"', 'id: "te-path"')
+                      .replaceAll('fnpd-qaa-', 'te-')
+                : e.value,
+        };
+        final result = await importPrivatePackage(
+          files,
+          store: MemoryPrivateStore(),
+          appVersion: '0.9.0',
+        );
+        expect(result.installed, isFalse);
+        expect(result.problems.join(' '), contains('is for qaa'));
+      },
+    );
+
+    test('a private id cannot be added or downloaded outside a package', () {
+      const text = '''
+schema: 1
+id: "fnpd-qaa-x"
+name: "X"
+language: { code: "qaa", iso639_3: "qaa", name: "Tiny", script: "latin" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+cards:
+  - { id: "fnpd-qaa-0001", target: "kolu", native: "house" }
+''';
+      expect(
+        checkAddedDeck(text, fileName: 'x.yaml', decks: const <DeckEntry>[]),
+        isA<DeckUnreadable>(),
+      );
+      expect(DeckCatalog.checkFile('decks/qaa/x.yaml', text), isNotNull);
+    });
+  });
+
   group('the file store', () {
     late Directory dir;
     setUp(() => dir = Directory.systemTemp.createTempSync('fnpd-store'));
@@ -222,5 +307,38 @@ void main() {
         expect(File('${dir.path}/escape.yaml').existsSync(), isFalse);
       },
     );
+
+    test(
+      'puts a package back after a crash while it was moved aside',
+      () async {
+        final store = FilePrivateStore(dir);
+        await store.install(
+          'fnpd-qaa',
+          await _tiny(),
+          revision: 1,
+          kind: 'new-language',
+        );
+        // The crash: the package was moved to staging, the new one not yet in.
+        Directory('${dir.path}/staging').createSync();
+        Directory('${dir.path}/fnpd-qaa')
+            .renameSync('${dir.path}/staging/fnpd-qaa.old');
+        final restarted = FilePrivateStore(dir);
+        expect(await restarted.list(), isNotEmpty);
+        expect(Directory('${dir.path}/staging').existsSync(), isFalse);
+      },
+    );
+
+    test('keeps no package under the name staging', () async {
+      final store = FilePrivateStore(dir);
+      expect(
+        await store.install(
+          'staging',
+          await _tiny(),
+          revision: 1,
+          kind: 'new-language',
+        ),
+        isFalse,
+      );
+    });
   });
 }
