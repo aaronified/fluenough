@@ -8,9 +8,38 @@ const String ctcUnkPiece = '<unk>';
 const String ctcSpaceMark = '▁';
 
 // Python's str.split() with no argument splits on str.isspace() characters.
-final RegExp _whitespace = RegExp(
-  "[\\s\\x1c-\\x1f\\x85\\xa0\\u1680\\u2000-\\u200a\\u2028\\u2029\\u202f\\u205f\\u3000]+",
-);
+bool _isSpace(int c) =>
+    (c >= 0x09 && c <= 0x0d) ||
+    (c >= 0x1c && c <= 0x20) ||
+    c == 0x85 ||
+    c == 0xa0 ||
+    c == 0x1680 ||
+    (c >= 0x2000 && c <= 0x200a) ||
+    c == 0x2028 ||
+    c == 0x2029 ||
+    c == 0x202f ||
+    c == 0x205f ||
+    c == 0x3000;
+
+/// Splits [s] on runs of whitespace (see [_isSpace]), dropping empty words.
+List<String> _splitWords(String s) {
+  final words = <String>[];
+  final cur = StringBuffer();
+  for (final c in s.runes) {
+    if (_isSpace(c)) {
+      if (cur.isNotEmpty) {
+        words.add(cur.toString());
+        cur.clear();
+      }
+    } else {
+      cur.write(String.fromCharCode(c));
+    }
+  }
+  if (cur.isNotEmpty) {
+    words.add(cur.toString());
+  }
+  return words;
+}
 
 /// Collapses repeated ids, drops blanks and `<unk>`, joins the pieces, turns the
 /// word-start mark into a space, and collapses and trims the spaces.
@@ -44,12 +73,7 @@ String decode(
         'ctc decode dropped $outOfRange id(s) outside the ${pieces.length} pieces',
       );
     }
-    return buf
-        .toString()
-        .replaceAll(ctcSpaceMark, ' ')
-        .split(_whitespace)
-        .where((w) => w.isNotEmpty)
-        .join(' ');
+    return _splitWords(buf.toString().replaceAll(ctcSpaceMark, ' ')).join(' ');
   } catch (e, st) {
     log?.call('ctc decode failed: $e\n$st');
     rethrow;
