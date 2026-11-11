@@ -11,9 +11,9 @@ import 'asr/pcm_recorder.dart';
 /// Every error is reported to [log] and never thrown out of the stream: a
 /// failed start ends the stream empty, and a failed stop is only logged.
 class RecordPcmRecorder implements PcmRecorder {
-  RecordPcmRecorder({void Function(String)? log}) : _log = log;
+  RecordPcmRecorder({this.log});
 
-  final void Function(String)? _log;
+  final void Function(String)? log;
   AudioRecorder? _recorder;
 
   AudioRecorder _ensureRecorder() => _recorder ??= AudioRecorder();
@@ -23,7 +23,7 @@ class RecordPcmRecorder implements PcmRecorder {
     try {
       return await _ensureRecorder().hasPermission();
     } catch (e, st) {
-      _log?.call('RecordPcmRecorder: permission check failed: $e\n$st');
+      log?.call('RecordPcmRecorder: permission check failed: $e\n$st');
       return false;
     }
   }
@@ -39,13 +39,13 @@ class RecordPcmRecorder implements PcmRecorder {
           numChannels: 1,
         ),
       );
-      return Stream<Uint8List>.fromFuture(started)
-          .asyncExpand<Uint8List>((pcm) => pcm)
+      return Stream<Stream<Uint8List>>.fromFuture(started)
+          .asyncExpand<Uint8List>((Stream<Uint8List> pcm) => pcm)
           .handleError((Object e, StackTrace st) {
-            _log?.call('RecordPcmRecorder: stream failed: $e\n$st');
+            log?.call('RecordPcmRecorder: stream failed: $e\n$st');
           });
     } catch (e, st) {
-      _log?.call('RecordPcmRecorder: start failed: $e\n$st');
+      log?.call('RecordPcmRecorder: start failed: $e\n$st');
       return const Stream<Uint8List>.empty();
     }
   }
@@ -58,12 +58,12 @@ class RecordPcmRecorder implements PcmRecorder {
     try {
       await recorder.stop();
     } catch (e, st) {
-      _log?.call('RecordPcmRecorder: stop failed: $e\n$st');
+      log?.call('RecordPcmRecorder: stop failed: $e\n$st');
     }
     try {
       await recorder.dispose();
     } catch (e, st) {
-      _log?.call('RecordPcmRecorder: dispose failed: $e\n$st');
+      log?.call('RecordPcmRecorder: dispose failed: $e\n$st');
     }
   }
 }
