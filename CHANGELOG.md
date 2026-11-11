@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Deck-owned data (the theme list first) now lives on decks-live and updates with the decks, so a new theme needs no app release (owner request). The copy bundled in the app is the fallback for an offline first start and an app that cannot read the new file.
 - CI: test shard weights refreshed so the 8 shards finish together.
 - CI: the heavy placement suites run only when placement changes and nightly (#1004 owner request). `test/heavy_tests.json` lists them; `tools/test_shard.py --exclude-heavy` leaves them out before the 8 shards are balanced.
 
