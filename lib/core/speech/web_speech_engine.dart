@@ -20,15 +20,20 @@ import 'web_speech_browser.dart';
 /// [SpeechFailure.notOnDevice] at once, and the app asks the learner whether
 /// to listen online, as it does for a language an Android phone lacks.
 ///
-/// The browser's recorder (`MediaRecorder`) starts with the recogniser and
-/// stops with it, and the take is kept in memory as
-/// [SpeechHeard.ownAudio] (ADR-0054), so that "Your recording" is there
-/// after every attempt. A browser that cannot record beside the recogniser
-/// gives none, and "Hear yourself" records a second take instead; a
+/// By default no recorder runs beside the recogniser (#1107): it keeps no
+/// audio ([SpeechHeard.ownAudio] is null) and "Hear yourself" records a
+/// second take instead. With [recordWhileRecognising] on, the browser's
+/// recorder (`MediaRecorder`) starts with the recogniser and stops with it,
+/// and the take is kept in memory as [SpeechHeard.ownAudio] (ADR-0054); a
+/// browser that cannot record beside the recogniser gives none, and a
 /// cancelled or failed listen keeps nothing.
 class WebSpeechEngine implements OnlineOnlySpeech {
-  WebSpeechEngine([SpeechBrowser? browser])
+  WebSpeechEngine([SpeechBrowser? browser, this.recordWhileRecognising = false])
     : _browser = browser ?? openSpeechBrowser();
+
+  /// Whether the browser's recorder runs while the recogniser listens. Off
+  /// by default (#1107); the one switch for the web path.
+  final bool recordWhileRecognising;
 
   final SpeechBrowser _browser;
 
@@ -93,7 +98,7 @@ class WebSpeechEngine implements OnlineOnlySpeech {
           code: 'error_permission',
         );
       }
-      final session = _browser.recognise(bcp47);
+      final session = _browser.recognise(bcp47, record: recordWhileRecognising);
       final heard = await session.result.timeout(
         listenFor + _grace,
         onTimeout: () {

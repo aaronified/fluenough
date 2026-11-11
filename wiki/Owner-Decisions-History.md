@@ -36,6 +36,10 @@ overhaul with its onboarding) goes in 0.7.0.
 Each entry gives the sentence that stood in `CLAUDE.md`, then the earlier
 rule it replaced, as it was written (from the file's git history).
 
+### The agent limit (owner, 2026-10-22)
+
+2026-10-22 limit: at most three agents at once, never more than two Sonnet; replaced 2026-11-11 by: at most two agents at once, even if both are Haiku.
+
 ### The agent slot split (owner, 2026-10-22, 2026-10-23)
 
 Replaced by the 2026-11-06 rule in `CLAUDE.md`, under "Which model does what":

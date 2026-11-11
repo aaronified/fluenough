@@ -24,6 +24,7 @@ import 'app/profile.dart';
 import 'app/profile_storage.dart';
 import 'app/reminder_scheduler.dart';
 import 'app/report_mail.dart';
+import 'app/shared_deck_source.dart';
 import 'app/startup_marks.dart';
 import 'app/system_settings.dart';
 import 'app/wallpaper_colours.dart';
@@ -31,13 +32,18 @@ import 'core/haptics/system_haptic_engine.dart';
 import 'core/decks/deck_fetch.dart';
 import 'core/network/network_probe.dart';
 import 'core/sound/system_sound_check.dart';
+import 'core/speech/asr/on_device_speech_engine.dart';
+import 'core/speech/asr/preferred_speech_engine.dart';
 import 'core/speech/mic_capture.dart';
+import 'core/speech/record_pcm_recorder.dart';
 import 'core/speech/native_listen.dart';
 import 'core/speech/system_speech_engine.dart';
 import 'core/tts/system_clip_player.dart';
 import 'core/tts/system_tts_engine.dart';
 import 'core/tts/volume_monitor.dart';
 import 'app/file_blob_store.dart';
+import 'app/channel_asr_runtime.dart';
+import 'app/file_asr_pack_locator.dart';
 import 'core/updates/apk_install.dart';
 import 'core/updates/github_release_check.dart';
 import 'core/updates/github_release_notes.dart';
@@ -71,6 +77,12 @@ Future<void> main() async {
   // The decks, downloaded from GitHub into the app's own storage (#210,
   // ADR-0037); only the theme list is bundled.
   final downloaded = FileDownloadedDecks(Directory('${files.path}/downloaded'));
+  final deckDownloads = DeckDownloads(
+    fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
+    files: downloaded,
+    clock: DateTime.now,
+    log: log,
+  );
   // The daily reminder's notifications (#90). Without them the reminder's
   // switch stays off.
   ReminderScheduler reminderScheduler = const NullReminderScheduler();
@@ -79,9 +91,20 @@ Future<void> main() async {
   } catch (e) {
     log.warning('Reminder error: start failed: $e');
   }
+  final asrPacks = FileAsrPackLocator(
+    Directory('${files.path}/asr'),
+    log: log.warning,
+  );
   final state = AppState(
     catalog: DeckCatalog(
-      DeckSources(<DeckSource>[AssetDeckSource(), downloaded]),
+      // Deck-owned data (the theme list) downloaded from decks-live comes
+      // first; the copy bundled in the app is the fallback (owner,
+      // 2026-11-11).
+      DeckSources(<DeckSource>[
+        SharedDeckSource(() => deckDownloads.sharedTexts),
+        AssetDeckSource(),
+        downloaded,
+      ]),
       added: FileDeckStore(Directory('${files.path}/decks')),
       parser: parseInIsolate,
       // The decks' YAML, kept as JSON between launches and read again
@@ -98,21 +121,32 @@ Future<void> main() async {
     ),
     // The Find my level question banks, made once per language and deck set.
     bankStore: FileBlobStore(Directory('${files.path}/placement-banks')),
-    deckDownloads: DeckDownloads(
-      fetcher: GitHubDeckFetcher(userAgent: 'fluenough/${AppInfo.version}'),
-      files: downloaded,
-      clock: DateTime.now,
-      log: log,
-    ),
+    deckDownloads: deckDownloads,
     progress: storage.progress,
     synonymLoader: loadSynonymSets,
     settings: storage.settings,
     tts: SystemTtsEngine(),
     clips: SystemClipPlayer(),
-    speech: SystemSpeechEngine(
-      null,
-      RecordMicCapture(),
-      const ChannelNativeListener(),
+    speech: PreferOnDeviceSpeechEngine(
+      // The AI listener, used only for a language whose pack is installed
+      // in files/asr/<code>/ (#1004). The online path stays the system
+      // recogniser's, as before.
+      aiListener: OnDeviceSpeechEngine(
+        packs: asrPacks,
+        recorder: RecordPcmRecorder(log: log.warning),
+        runtime: ChannelAsrRuntime(log: log.warning),
+        log: log.event,
+      ),
+      system: SystemSpeechEngine(
+        null,
+        RecordMicCapture(),
+        const ChannelNativeListener(),
+        // recordWhileRecognising: off, no recording while the online recogniser
+        // listens (#1107).
+        false,
+      ),
+      packs: asrPacks,
+      log: log.warning,
     ),
     volume: SystemVolumeMonitor(),
     soundCheck: SystemSoundCheck(),

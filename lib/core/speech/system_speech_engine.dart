@@ -23,12 +23,25 @@ class SystemSpeechEngine implements SpeechEngine {
     SpeechToText? plugin,
     MicCapture? capture,
     NativeListener? native,
+    this.recordWhileRecognising = false,
   ]) : _plugin = plugin ?? SpeechToText(),
        // In a browser two readers of the microphone are not safe, and the
        // web build uses `WebSpeechEngine`; a capture given here is ignored
        // rather than started (the same constant as Flutter's `kIsWeb`).
-       _capture = _inBrowser ? null : capture,
-       _native = _inBrowser ? null : native;
+       // Nor is one used unless [recordWhileRecognising] is on (#1107).
+       _capture = _inBrowser || !recordWhileRecognising ? null : capture,
+       _native = _inBrowser || !recordWhileRecognising ? null : native;
+
+  /// THE switch for recording at the same time as the online recogniser
+  /// listens (#1107). Off (the default, and what 0.9.3 did for a listen with
+  /// no capture of our own): the plugin's plain listen is the only reader of
+  /// the microphone, no capture runs and the recogniser is not fed through
+  /// `RecognizerIntent.EXTRA_AUDIO_SOURCE`, so [SpeechHeard.ownAudio] is
+  /// null and "Hear yourself" records a second take after the attempt. On:
+  /// the [MicCapture] and the [NativeListener] given to the constructor are
+  /// used, kept for the on-device listener that will record and recognise
+  /// from one capture of its own.
+  final bool recordWhileRecognising;
 
   static const bool _inBrowser = bool.fromEnvironment('dart.library.js_util');
 

@@ -12,7 +12,7 @@ The sections below hold every rule with its owner quote and date. These are the
 ones that matter most; read the section before acting on one.
 
 - **Model by job:** Sonnet does complex coding, reviews and writes skills and ADRs; Haiku does simple, fully specified coding tasks (it never improvises: it reports issues and the architect re-specifies), builds decks, makes routine doc edits and fan-outs; Opus only when the owner asks ([Which model does what](#which-model-does-what-owner-2026-10-22)).
-- **Agent limits:** one Haiku deck builder, one Sonnet coder, and an extra Sonnet only for reviews while a review runs; at most three agents, never more than two Sonnet; the main session only orchestrates ([Which model does what](#which-model-does-what-owner-2026-10-22)).
+- **Agent limits:** one Haiku deck builder, one Sonnet coder, and an extra Sonnet only for reviews while a review runs; at most two agents at once, even if both are Haiku; the main session only orchestrates ([Which model does what](#which-model-does-what-owner-2026-10-22)).
 - **Reviews:** one Sonnet review per pull request; bug fixes only for decks and reviews ([Agents and models](#agents-and-models)).
 - **Docs straight to main:** a change to Markdown docs only is pushed to main with no PR and no CI check ([Git, PRs and CI](#git-prs-and-ci)).
 - **PRs for everything else:** code, decks, `decks/index.json` and the CHANGELOG go through a pull request, with CI green and one review ([Git, PRs and CI](#git-prs-and-ci)).
@@ -23,7 +23,7 @@ ones that matter most; read the section before acting on one.
 - **Releases:** the owner runs the Release workflow; each PR adds its own CHANGELOG line; deck content stays out of a release ([Releases and milestones](#releases-and-milestones)).
 - **Top priorities after the placement release** (owner, 2026-11-07): 1. private decks, 2. on-device voice recognition, both recorded for later; the session that ships the placement bugfix release stops there, and no agent starts them without a new owner instruction ([Releases and milestones](#releases-and-milestones)).
 - **Deck work:** the language lists, priorities and what is in scope this week, and the order after the placement fix, are in one place; deck PRs are large, and `tools/deck_index.py` is never run locally ([Content and decks](#content-and-decks)).
-- **Decks live on `decks-live`** (owner, 2026-11-06): deck PRs target it; its index and review queue are regenerated there; `decks/themes.yaml` is edited only on main ([Content and decks](#content-and-decks)).
+- **Decks live on `decks-live`** (owner, 2026-11-06): deck PRs target it; its index and review queue are regenerated there; deck-owned data (`decks/themes.yaml` and any file entirely about decks) lives there too and reaches apps with the decks ([Content and decks](#content-and-decks), [Plan-Deck-Owned-Data](wiki/Plan-Deck-Owned-Data.md)).
 - **Card ids are permanent**, YAML scalars are quoted, and `lib/core` has no Flutter imports ([AGENTS.md](AGENTS.md)).
 - **Mockups and text size:** build the approved spec exactly, at 1.4x text only; a `direct-code` issue has every decision made ([Mockups, issues and dependencies](#mockups-issues-and-dependencies)).
 - **Never stop anything** unless the owner explicitly asks ([Agents and models](#agents-and-models)).
@@ -73,11 +73,14 @@ itself. Pick the model by the job:
 - Simple, straightforward coding jobs go to Haiku subagents. Each Haiku task is fully specified: files to touch, exact behaviour, the expected inputs and outputs, and what not to touch.
 - Haiku agents never improvise. If anything is unclear, missing, or does not match the task, they stop and report the issue. The main session solves it and messages the Haiku agent with the altered parameters.
 - Complex problems are broken down until each piece is a byte-sized task a Haiku can do. Whatever stays complex (core state management, multi-file design, bug diagnosis) goes to Sonnet.
-- The existing limits still apply (at most three agents at once, one review per pull request, tests only in CI).
+- The existing limits still apply (at most two agents at once, one review per pull request, tests only in CI).
 - **Haiku code is guarded and logged** (owner, 2026-11-10: "All haiku codes must be in try catch type loops and report to app logs for all issues."): every piece of code a Haiku agent writes wraps its work in try/catch (or the language's equivalent error guard, including around loops over items so one failure does not stop the rest) and reports every caught issue to the app log (the app's existing logger, never a silent catch and never only a print). A guarded failure is also reported back to the main session in the agent's report, never swallowed. Haiku does not invent a new logger: if the call to use is unclear, it stops and reports.
 
-At most **three agents run at the same time, and never more than two
-Sonnet** (owner, 2026-10-22; kept by 2026-11-06).
+At most **two agents run at the same time, even if both are Haiku** (owner,
+2026-11-11: "Then at max two agents, even if both are haikus"). This replaces the
+earlier limit of three agents with never more than two Sonnet (owner,
+2026-10-22; kept by 2026-11-06), which is kept in
+[Owner-Decisions-History](wiki/Owner-Decisions-History.md).
 
 **Slots** (owner, 2026-11-06: "only one haiku deck builder. and one sonnet
 coder. an extra sonnet will pop up from time to time to review the decks or
@@ -242,9 +245,17 @@ adjectives, verbs) are full tables covering every word, as Bengali's are
 - **Decks live on `decks-live`** (owner, 2026-11-06). Decks live on the
   permanent branch `decks-live`, and the apps download decks from it (PR
   #1052 merged). Deck PRs target `decks-live`. `main`'s `decks/` is frozen,
-  kept only for old apps. `decks-next` is retired. `decks/themes.yaml` is
-  bundled in the app, so it is edited only on main. Deck content never needs
-  a release.
+  kept only for old apps. `decks-next` is retired. **Deck-owned data**
+  (owner, 2026-11-11: "Move themes to decks-live. And not just themes,
+  anything that is entirely about decks and will change with the decks."):
+  `decks/themes.yaml`, and any file entirely about decks that changes with
+  them, lives on `decks-live`, is listed in its index under `shared`, and is
+  downloaded by the app with the decks. It is edited there, with the decks;
+  main's copy of `decks/themes.yaml` is only the app's bundled fallback (an
+  offline first start, an app too old to download it) and is never edited for
+  a new theme. This replaces "edited only on main" of 2026-11-06. Deck
+  content never needs a release. The audit and the rules are in
+  [Plan-Deck-Owned-Data](wiki/Plan-Deck-Owned-Data.md).
 - **Deck index** (owner, 2026-10-23). `decks/index.json` is regenerated on
   `decks-live` by its workflow after each merge (`.github/workflows/deck-index.yml`,
   PR #719). The review queue (`decks/review-queue.json`) is regenerated there

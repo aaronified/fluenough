@@ -10,14 +10,30 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Find my level asks the reverse too: the English is spoken and shown, and you choose, type or arrange the answer in the language (#1106).
+- On-device listener: engine and preferred-engine wiring (#1004).
+- On-device listener: Kotlin ONNX Runtime channel and Dart runtime interface (#1004).
+- tools/asr: Telugu on-device listener reference tools (#1004).
+- tools/asr: Wiktionary Telugu audio accuracy test (#1004).
+- .github/workflows/asr-export.yml: manual workflow that exports one language's on-device listener pack on a GitHub runner (#1004).
+- On-device listener: end-of-speech detector and PCM recorder (#1004).
+- On-device listener: pure-Dart CTC head and decoder (#1004).
+- On-device listener: pure-Dart log-mel front end (#1004).
 
 ### Changed
 
 - Find my level has a new Hear question: hear a sentence in the language and arrange its English meaning from tiles (#1105).
 - In Find my level, hearing a word and picking its meaning now counts for Reading as well as Hearing (#1105).
 - **Find my level shows its result card at once, and the result is simpler.** The "See my result" pause is gone: the card shows when the check ends (with Keep going on it while a sharper answer is possible). Each skill has a level name (Beginner, Amateur, Fluent or Expert) and the part of the whole language path it covers, drawn as a bar. Refs #1097.
-
 - Find my level no longer asks "what you heard" (arrange what was said); Hear questions always ask the meaning (#1105).
+- Deck-owned data (the theme list first) now lives on decks-live and updates with the decks, so a new theme needs no app release (owner request). The copy bundled in the app is the fallback for an offline first start and an app that cannot read the new file.
+- CI: test shard weights refreshed so the 8 shards finish together.
+- CI: the heavy placement suites run only when placement changes and nightly (#1004 owner request). `test/heavy_tests.json` lists them; `tools/test_shard.py --exclude-heavy` leaves them out before the 8 shards are balanced.
+
+### Fixed
+
+- Say works again: recording no longer runs at the same time as online recognition; #1107. The recogniser has the microphone alone, as before 0.9.4, and Hear yourself records a take after the attempt.
+- CI: the web smoke test no longer fails when the runner cannot reach the apt mirror (#1102).
+
 ## [0.9.5] - 2026-11-10
 
 ### Fixed

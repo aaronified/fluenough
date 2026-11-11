@@ -86,8 +86,9 @@ abstract interface class SpeechBrowser {
   Future<bool> askMicrophone();
 
   /// Listens once for one utterance in [lang] and reports its readings.
-  /// Never throws: a failure is in the [BrowserHeard].
-  BrowserSession recognise(String lang);
+  /// Never throws: a failure is in the [BrowserHeard]. A recorder runs
+  /// beside the recogniser only when [record] is true (default off, #1107).
+  BrowserSession recognise(String lang, {bool record = false});
 
   /// Ends the listen under way and keeps what was heard.
   void stop();
@@ -133,6 +134,9 @@ class FixedSpeechBrowser implements SpeechBrowser {
   /// How often the microphone was asked for, listens begun, and cancels.
   int asked = 0;
   final List<String> listens = <String>[];
+
+  /// Whether each listen was asked to record beside the recogniser.
+  final List<bool> recordings = <bool>[];
   int cancels = 0;
   int stops = 0;
 
@@ -148,12 +152,13 @@ class FixedSpeechBrowser implements SpeechBrowser {
   }
 
   @override
-  BrowserSession recognise(String lang) {
+  BrowserSession recognise(String lang, {bool record = false}) {
     listens.add(lang);
+    recordings.add(record);
     return BrowserSession(
       never
           ? Completer<BrowserHeard>().future
-          : Future.value(heard.withAudio(audio)),
+          : Future.value(heard.withAudio(record ? audio : null)),
       () => cancels++,
     );
   }
