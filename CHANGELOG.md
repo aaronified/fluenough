@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - tools/asr: Telugu on-device listener reference tools (#1004).
+- .github/workflows/asr-export.yml: manual workflow that exports one language's on-device listener pack on a GitHub runner (#1004).
 
 ## [0.9.5] - 2026-11-10
 

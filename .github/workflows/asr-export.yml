@@ -1,0 +1,101 @@
+name: ASR pack export
+
+# Manual only (#1004). Exports one IndicConformer language to an on-device pack and uploads
+# it as a workflow artifact. Needs no secrets and publishes nothing; the sandbox cannot do
+# this export (no torch, NeMo fork blocked), a GitHub runner can.
+on:
+  workflow_dispatch:
+    inputs:
+      lang:
+        description: AI4Bharat language code (te, bn, hi, ...)
+        required: true
+        default: te
+      nemo_url:
+        description: URL of the language's .nemo checkpoint
+        required: true
+        default: https://objectstore.e2enetworks.net/indicconformer/models/indicconformer_stt_te_hybrid_rnnt_large.nemo
+      keep_fp32:
+        description: Also keep encoder.fp32.onnx (for the int8 versus fp32 comparison)
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      LANG_CODE: ${{ inputs.lang }}
+      NEMO_URL: ${{ inputs.nemo_url }}
+      NEMO_BRANCH: nemo-v2
+      ASR_NEMO_SRC: ${{ github.workspace }}/nemo-src
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install Python packages
+        run: |
+          python3 -m pip install --upgrade pip
+          python3 -m pip install torch --index-url https://download.pytorch.org/whl/cpu
+          python3 -m pip install onnx onnxruntime numpy PyYAML omegaconf sentencepiece \
+            hydra-core pytorch-lightning braceexpand editdistance jiwer librosa lhotse \
+            webdataset huggingface_hub packaging wrapt ruamel.yaml tqdm
+
+      - name: Fetch AI4Bharat's NeMo fork (branch nemo-v2)
+        run: |
+          git clone --depth 1 --branch "$NEMO_BRANCH" https://github.com/AI4Bharat/NeMo.git "$ASR_NEMO_SRC"
+          echo "NeMo fork at $(git -C "$ASR_NEMO_SRC" rev-parse HEAD)"
+
+      - name: Download the .nemo
+        run: |
+          mkdir -p work
+          curl -fSL --retry 5 --retry-all-errors -o work/model.nemo "$NEMO_URL"
+          ls -l work/model.nemo
+          sha256sum work/model.nemo
+
+      - name: Export the pack
+        run: |
+          mkdir -p out
+          KEEP=""
+          if [ "${{ inputs.keep_fp32 }}" = "true" ]; then KEEP="--keep-fp32"; fi
+          python3 -I tools/asr/export_pack.py work/model.nemo "out/$LANG_CODE" --lang "$LANG_CODE" --workdir work/export $KEEP
+
+      - name: Smoke-test the pipeline on a synthetic wav
+        run: |
+          python3 - <<'PY'
+          import numpy as np, os, wave
+          rng = np.random.default_rng(0)
+          t = np.arange(16000) / 16000.0
+          sig = 0.2 * np.sin(2 * np.pi * 220 * t) + 0.02 * rng.standard_normal(16000)
+          pcm = (np.clip(sig, -1, 1) * 32767).astype("<i2")
+          with wave.open("work/synthetic.wav", "wb") as w:
+              w.setnchannels(1); w.setsampwidth(2); w.setframerate(16000)
+              w.writeframes(pcm.tobytes())
+          PY
+          python3 -I tools/asr/transcribe.py "out/$LANG_CODE" work/synthetic.wav --encoder int8
+          if [ -f "out/$LANG_CODE/encoder.fp32.onnx" ]; then
+            python3 -I tools/asr/transcribe.py "out/$LANG_CODE" work/synthetic.wav --encoder fp32
+          fi
+
+      - name: Print pack sizes and the int8 versus fp32 numbers
+        run: |
+          echo "## Pack ($LANG_CODE)" >> "$GITHUB_STEP_SUMMARY"
+          ls -l "out/$LANG_CODE" | tee -a "$GITHUB_STEP_SUMMARY"
+          du -sh "out/$LANG_CODE"
+          if [ -f "out/$LANG_CODE/pack-report.json" ]; then
+            cat "out/$LANG_CODE/pack-report.json"
+            python3 -I -c "import json,sys;print(json.dumps(json.load(open(sys.argv[1])),indent=1))" \
+              "out/$LANG_CODE/pack-report.json" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: actions/upload-artifact@v4
+        with:
+          name: asr-pack-${{ inputs.lang }}
+          path: out/
+          retention-days: 14
+          if-no-files-found: error
