@@ -9,6 +9,7 @@ import '../../app/topics.dart';
 import '../../app/unlocks.dart';
 import '../../core/data/sections.dart' show nameIn;
 import '../../core/decks/topic_resolver.dart';
+import '../../core/logs/log_entry.dart' show describeError;
 import '../../core/models/level.dart';
 import '../../core/progress/recent_answers.dart' show MasteryLevel;
 import '../../core/search/search_items.dart';
@@ -38,19 +39,27 @@ Widget? itemResultRow(
   ItemResult result,
 ) {
   final state = AppScope.of(context);
-  switch (result.row.type) {
-    case SearchItemType.situation:
-      return _situationRow(context, state, index, result);
-    case SearchItemType.deck:
-      return _DeckResultRow(index: index, result: result);
-    case SearchItemType.topic:
-      return _topicRow(context, state, index, result);
-    case SearchItemType.concept:
-      return _conceptRow(context, state, index, result);
-    case SearchItemType.unit:
-      return _unitRow(context, state, index, result);
-    case SearchItemType.card:
-      return _cultureRow(context, state, index, result);
+  try {
+    switch (result.row.type) {
+      case SearchItemType.situation:
+        return _situationRow(context, state, index, result);
+      case SearchItemType.deck:
+        return _DeckResultRow(index: index, result: result);
+      case SearchItemType.topic:
+        return _topicRow(context, state, index, result);
+      case SearchItemType.concept:
+        return _conceptRow(context, state, index, result);
+      case SearchItemType.unit:
+        return _unitRow(context, state, index, result);
+      case SearchItemType.card:
+        return _cultureRow(context, state, index, result);
+    }
+  } on Object catch (error, stack) {
+    // One row that cannot be drawn costs itself, not the results.
+    state.log.error(
+      describeError('Search row ${result.row.key} failed', error, stack),
+    );
+    return null;
   }
 }
 
