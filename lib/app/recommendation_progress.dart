@@ -6,6 +6,8 @@ import '../core/models/completed_work.dart';
 import '../core/models/reading.dart' show ReadingQuestion;
 import '../core/models/recommendation.dart';
 import 'app_log.dart';
+import 'database_progress.dart';
+import 'memory_progress.dart' show ProgressStore;
 
 /// Where the completed marks are kept (wiki Plan-Deck-Kinds-And-Topics.md,
 /// D13, T25): learner state in the progress database, never in a deck.
@@ -74,6 +76,14 @@ class DatabaseRecommendationMarkStore implements RecommendationMarkStore {
   Future<int> addMissing(Iterable<CompletedWork> works) =>
       _dao.addMissing(works);
 }
+
+/// The store for a profile's marks: its database's `recommendation_marks`
+/// table when [progress] is kept in one, else memory (a profile whose database
+/// could not be opened, a test).
+RecommendationMarkStore markStoreFor(ProgressStore progress) =>
+    progress is DatabaseProgress
+    ? DatabaseRecommendationMarkStore(progress.recommendationMarksDao)
+    : MemoryRecommendationMarkStore();
 
 /// The recommended works a learner completed: the marks the homepage lists,
 /// and the gate on their questions, which are asked only on a completed work
@@ -159,6 +169,25 @@ class RecommendationProgress extends ChangeNotifier {
     } on Object catch (e) {
       _log?.warning('Completed works could not be imported: $e');
       return 0;
+    }
+  }
+
+  /// Makes the marks those of a backup that is restored: a work marked here
+  /// and not in [works] is un-marked, one in [works] and not here is added
+  /// (the restore replaces what the learner has). Never throws: what fails is
+  /// logged and the marks stay as they were.
+  Future<void> replaceMarks(Iterable<CompletedWork> works) async {
+    try {
+      final keep = <String>{for (final w in works) w.recommendationId};
+      for (final id in _marks.keys.toList()) {
+        if (keep.contains(id)) continue;
+        await _store.unmark(id);
+        _marks.remove(id);
+      }
+      await importMarks(works);
+      notifyListeners();
+    } on Object catch (e) {
+      _log?.warning('Completed works could not be restored: $e');
     }
   }
 
