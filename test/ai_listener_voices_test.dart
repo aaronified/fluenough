@@ -123,7 +123,8 @@ void main() {
           totalBytes: 137000000,
         ),
       );
-      await tester.pump();
+      // The change reaches the page through a stream, so let it deliver.
+      await tester.pumpAndSettle();
       expect(
         find.text(
           l10n.voicesAiDownloading(

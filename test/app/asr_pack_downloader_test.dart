@@ -177,6 +177,8 @@ void main() {
     final seen = <AsrInstallState>[];
     final sub = downloader.changes.listen((c) => seen.add(c.state));
     await downloader.install('te');
+    // The stream delivers asynchronously; let the last change arrive.
+    await Future<void>.delayed(Duration.zero);
     await sub.cancel();
 
     expect(downloader.stateOf('te').phase, AsrInstallPhase.installed);
