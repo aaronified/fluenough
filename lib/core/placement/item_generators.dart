@@ -883,13 +883,15 @@ class ItemGenerators {
       // unit stands (a rare unit would be the one a solver that types the
       // rarest unit picks), or -1 when a cue picks it or it is no letter.
       final spreads = <double>[];
+      final letters = <bool>[];
       for (var gap = 0; gap < v.units.length; gap++) {
         spreads.add(-1);
         // A unit that is a bare mark or punctuation is never the gap.
-        if (latinLetters(v.units[gap]).isEmpty &&
-            !RegExp(r'\p{L}', unicode: true).hasMatch(v.units[gap])) {
-          continue;
-        }
+        final isLetter =
+            latinLetters(v.units[gap]).isNotEmpty ||
+            RegExp(r'\p{L}', unicode: true).hasMatch(v.units[gap]);
+        letters.add(isLetter);
+        if (!isLetter) continue;
         final abc = alphabet.contains(v.units[gap])
             ? alphabet
             : <String>[...alphabet, v.units[gap]];
@@ -913,8 +915,10 @@ class ItemGenerators {
       lm.add(v.word, copies);
       // The number of units left out: two or three for most words (the audit
       // judges the first of them with the others shown, the easier problem
-      // for a solver), one where no run of that length is missed by every
-      // cue. The run with the least spread is the gap.
+      // for a solver), one where no run of that length starts at a unit
+      // missed by every cue. Only the first unit of a run is judged (the
+      // others are shown to the audit's solvers, so they only have to be
+      // letters). The run with the least spread is the gap.
       var want = 1;
       if (rng.nextDouble() < kMultiGapShare) {
         want = v.units.length >= 7 && rng.nextBool() ? 3 : 2;
@@ -924,9 +928,9 @@ class ItemGenerators {
       for (var n = want; n >= 1 && bestGap < 0; n--) {
         var bestSpread = -1.0;
         for (var gap = 0; gap + n <= v.units.length; gap++) {
-          final run = spreads.sublist(gap, gap + n);
-          if (run.any((x) => x < 0)) continue;
-          final spread = run.reduce(math.max);
+          if (spreads[gap] < 0) continue;
+          if (letters.sublist(gap, gap + n).any((x) => !x)) continue;
+          final spread = spreads[gap];
           if (bestSpread < 0 || spread < bestSpread) {
             bestSpread = spread;
             bestGap = gap;
