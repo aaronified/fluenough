@@ -26,6 +26,7 @@ import 'number_practice_tile.dart';
 import 'path_model.dart';
 import 'path_view.dart';
 import 'script_offers.dart';
+import 'search_tabs.dart';
 import 'skipped_script_section.dart';
 import 'unit_search.dart';
 
@@ -225,6 +226,8 @@ class _DecksPageState extends State<DecksPage> {
     } else {
       _debounce = Timer(const Duration(milliseconds: 150), () {
         if (!mounted) return;
+        // A search that has settled is one to find again from the empty bar.
+        SearchSession.of(AppScope.read(context)).remember(_search.text);
         setState(() => _applied = _search.text);
       });
     }
@@ -598,6 +601,11 @@ class _DecksPageState extends State<DecksPage> {
                         children: <Widget>[
                           _searchBar(l10n, state, language?.name),
                           ?menu,
+                          if (outcome == null &&
+                              _focus.hasFocus &&
+                              _chips.isEmpty &&
+                              _search.text.trim().isEmpty)
+                            SearchStartHints(onSearch: _setText),
                           if (outcome != null) ...<Widget>[
                             if (outcome.foreign case final script?)
                               ScriptOffers(
@@ -647,13 +655,26 @@ class _DecksPageState extends State<DecksPage> {
                       ),
                     ),
                     if (outcome != null)
-                      SearchResultsSliver(
-                        outcome: outcome,
-                        query: _search.text,
-                        onKind: _narrowTo,
-                        onRemoveKind: () =>
-                            setState(() => _chips.remove(SearchToken.kind)),
-                      ),
+                      // Plain text is searched by type, in tabs (#1140); a
+                      // kind:, status: or theme: chip narrows the one list.
+                      if (code != null &&
+                          outcome.chips.isEmpty &&
+                          outcome.foreign == null &&
+                          outcome.parsed.text.isNotEmpty)
+                        TypedSearchResults(
+                          outcome: outcome,
+                          query: _search.text,
+                          language: code,
+                          onSearch: _setText,
+                        )
+                      else
+                        SearchResultsSliver(
+                          outcome: outcome,
+                          query: _search.text,
+                          onKind: _narrowTo,
+                          onRemoveKind: () =>
+                              setState(() => _chips.remove(SearchToken.kind)),
+                        ),
                     if (!searching && view != null) ...<Widget>[
                       SliverIgnorePointer(
                         ignoring: scrim,
