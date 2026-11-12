@@ -328,9 +328,22 @@ class GuessCalibration {
     'F15:clean': 0.70,
     'F17:clean': 0.35,
     'F17:cognate': 0.90,
+    // The six-option look-alike word picks: the best solver's upper bound of
+    // the audit stays under 0.20 (a sixth by chance), and the admission bound
+    // is 0.25; a gamer 0.07 better than measured (the margin gate) answers
+    // them at 0.25, so the model hedges at 0.27.
+    'F26:clean': 0.27,
+    'F26:cognate': 0.85,
+    'F27:clean': 0.27,
+    'F27:cognate': 0.97,
+    // The heard-sentence pick as the adversary found it, before its options
+    // were made to look alike (length band, shared structure): the right
+    // option was found 75% of the time by shape. Never asked.
+    'F17legacy:clean': 0.95,
+    'F17legacy:cognate': 0.95,
     'F6:cognate': 0.90,
-    'F26:clean': 0.35,
-    'F26:cognate': 0.90,
+    'F28:clean': 0.35,
+    'F28:cognate': 0.90,
     'S2legacy:clean': 0.98,
     'S2legacy:cognate': 0.98,
   });

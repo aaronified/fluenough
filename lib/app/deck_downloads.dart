@@ -8,6 +8,7 @@ import '../core/decks/deck_fetch.dart';
 import '../core/decks/deck_index.dart';
 import '../core/decks/language_resources.dart';
 import '../core/decks/sha256.dart';
+import '../core/decks/shared_data.dart';
 import '../core/review/review_queue.dart';
 import 'app_info.dart';
 import 'app_log.dart';
@@ -275,6 +276,102 @@ class DeckDownloads extends ChangeNotifier {
   }
 
   // ---------------------------------------------------------------------------
+  // Deck-owned data (owner, 2026-11-11)
+
+  /// The deck-owned files on the phone, by path (`decks/themes.yaml`): each
+  /// was downloaded, matched the index's hash and passed [checkSharedText]
+  /// before it was kept, and is checked again when read from the phone.
+  final Map<String, String> _shared = <String, String>{};
+
+  /// The text of each deck-owned file on the phone. A file not here is
+  /// read from the app's own bundled copy, which is also what an offline
+  /// first start and an old app use.
+  Map<String, String> get sharedTexts =>
+      Map<String, String>.unmodifiable(_shared);
+
+  /// Reads the deck-owned files kept on the phone. A kept file this app
+  /// cannot read, as after an update that changed what it reads, is left
+  /// out and logged: the bundled copy is used. Never throws, never reaches
+  /// the network.
+  Future<void> _openShared() async {
+    for (final path in sharedKinds.keys) {
+      try {
+        final text = await files.readNote(sharedNoteName(path));
+        if (text == null) continue;
+        final problem = checkSharedText(path, text);
+        if (problem != null) {
+          _log?.warning(
+            'Deck-owned file kept on the phone is not used, the bundled copy '
+            'is: $problem',
+          );
+          continue;
+        }
+        _shared[path] = text;
+      } on Object catch (e) {
+        _log?.warning('Deck-owned file $path could not be read: $e');
+      }
+    }
+  }
+
+  /// Brings the deck-owned files up to the index just read: each one the
+  /// index lists, that this app can read, whose hash is not the one on the
+  /// phone, is downloaded, checked against its size and hash, read as the
+  /// app reads it, and only then kept. A file that fails any step is left
+  /// out and logged; what was on the phone stays, and so does the bundled
+  /// copy. Calls [onFilesChanged] when a file changed. Never throws.
+  Future<void> _refreshShared() async {
+    final index = _index;
+    if (index == null) return;
+    var changed = false;
+    try {
+      for (final problem in index.sharedProblems) {
+        _log?.warning('Deck index: $problem');
+      }
+      for (final file in index.shared) {
+        try {
+          final why = file.unusableReason;
+          if (why != null) {
+            _log?.warning('Deck-owned file not downloaded: $why');
+            continue;
+          }
+          final kept = _shared[file.path];
+          if (kept != null && sha256Hex(utf8.encode(kept)) == file.sha256) {
+            continue;
+          }
+          final fetched = await _fetchChecked(
+            IndexFile(path: file.path, size: file.size, sha256: file.sha256),
+          );
+          final bytes = fetched.bytes;
+          if (bytes == null) continue;
+          final text = utf8.decode(bytes);
+          final problem = checkSharedText(file.path, text);
+          if (problem != null) {
+            _log?.warning(
+              'Deck-owned file ${file.path} downloaded but not used: $problem',
+            );
+            continue;
+          }
+          await files.writeNote(sharedNoteName(file.path), text);
+          _shared[file.path] = text;
+          changed = true;
+          _log?.event('Deck-owned file updated: ${file.path}');
+        } on Object catch (e) {
+          _log?.warning('Deck-owned file ${file.path} failed: $e');
+        }
+      }
+    } on Object catch (e) {
+      _log?.warning('Deck-owned files failed: $e');
+    }
+    if (changed) {
+      try {
+        await _filesChanged();
+      } on Object catch (e) {
+        _log?.warning('Deck-owned files: the catalog could not be read: $e');
+      }
+    }
+  }
+
+  // ---------------------------------------------------------------------------
   // The index
 
   /// The last index read, or null if none ever was.
@@ -357,6 +454,7 @@ class DeckDownloads extends ChangeNotifier {
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read what is kept: $e');
     }
+    await _openShared();
     try {
       final queue = await files.readNote(_queueNote);
       if (queue != null) _reviewQueue = ReviewQueue.parse(queue);
@@ -444,6 +542,7 @@ class DeckDownloads extends ChangeNotifier {
     await _saveState();
     _log?.event('Deck index read: ${index.languages.length} languages');
     _notify();
+    await _refreshShared();
     return true;
   }
 

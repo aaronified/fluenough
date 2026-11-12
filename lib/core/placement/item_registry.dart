@@ -62,7 +62,7 @@ class FormatInfo {
   final String notGeneratedBecause;
 
   /// The admission bound of the audit: the design guess plus 0.07 (0.32 for
-  /// a four-option pick).
+  /// a four-option pick, 0.25 for the six-option look-alike pick).
   double get admissionBound => options == 4 ? 0.32 : guess + 0.07;
 }
 
@@ -138,7 +138,7 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     leakRisk: 'endings that agree with the sentence; an English hint',
   ),
   FormatInfo(
-    'F26',
+    'F28',
     'English sentence and the target sentence with a blank, pick the word '
         'of the same class',
     {_read},
@@ -238,7 +238,10 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
   FormatInfo(
     'F13',
     'Heard word, pick its English meaning',
-    {_hear},
+    // Hear and Read together (a mixed item, so a miss can start a
+    // drill-down that isolates Hear with F17, #1105): knowing the word heard
+    // is also knowing the word.
+    {_hear, _read},
     0.05,
     0.25,
     6,
@@ -332,6 +335,31 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     wordLevel: false,
     options: 2,
     leakRisk: 'end marks left in the wrong place; bigram plausibility',
+  ),
+  FormatInfo(
+    'F26',
+    'Heard word, pick its meaning among six look-alike options',
+    {_hear},
+    0.03,
+    0.18,
+    7,
+    options: 6,
+    needsAudio: true,
+    leakRisk:
+        'cognates heard; the one option unlike the others by length or '
+        'word class (the options are made alike)',
+  ),
+  FormatInfo(
+    'F27',
+    'Written word, pick its meaning among six look-alike options',
+    {_read},
+    0.03,
+    0.18,
+    7,
+    options: 6,
+    leakRisk:
+        'cognates; the one option unlike the others by length or word '
+        'class (the options are made alike)',
   ),
   FormatInfo(
     'F22',

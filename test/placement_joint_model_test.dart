@@ -552,6 +552,10 @@ void main() {
       expect(cal.guessFor('F6endings', false, 0.25), 0.99);
       expect(cal.usable('F6endings', false, 0.25), isFalse);
       expect(cal.usable('F5legacy', true, 0.25), isFalse);
+      // The heard-sentence pick as the adversary found it (options told apart
+      // by shape) is never asked; the one with look-alike options is.
+      expect(cal.usable('F17legacy', false, 0.25), isFalse);
+      expect(cal.usable('F17', false, 0.25), isTrue);
       expect(cal.guessFor('F6hint', true, 0.25), 0.75);
     });
 

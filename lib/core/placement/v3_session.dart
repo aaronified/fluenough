@@ -652,7 +652,7 @@ class V3Run {
     // A reverse format (English spoken) is drawn as the format it reverses;
     // the screen speaks the English it shows.
     switch (baseFormat(item.format)) {
-      case 'F2':
+      case 'F2' || 'F27':
         return V3Question(
           id: item.id,
           format: item.format,
@@ -662,7 +662,7 @@ class V3Run {
           options: item.options,
           item: item,
         );
-      case 'F13':
+      case 'F13' || 'F26':
         return V3Question(
           id: item.id,
           format: item.format,
@@ -742,7 +742,7 @@ class V3Run {
           gapBlanks: item.gapLength,
           item: item,
         );
-      case 'F26':
+      case 'F28':
         // The English sentence, the target sentence with its blank, and
         // options of one word class.
         final parts = item.prompt.split('___');

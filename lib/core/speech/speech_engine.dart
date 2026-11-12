@@ -3,8 +3,11 @@ import 'dart:typed_data';
 /// The learner's own voice as one listen kept it: 16-bit little-endian mono
 /// PCM and its sample rate. An engine that cannot keep the audio of a listen
 /// gives none ([SpeechHeard.ownAudio] is null). `speech_to_text` exposes no
-/// audio, so `SystemSpeechEngine` keeps it with a `MicCapture` reading the
-/// microphone beside the recogniser, where the phone allows (ADR-0054).
+/// audio, so `SystemSpeechEngine` can keep it with a `MicCapture` reading the
+/// microphone beside the recogniser, but only when its `recordWhileRecognising`
+/// switch is on, which it is not by default (#1107, ADR-0054): the online
+/// recogniser then has the microphone alone and "Hear yourself" records a
+/// second take.
 class OwnAudio {
   const OwnAudio(this.pcm16, {required this.sampleRate});
 

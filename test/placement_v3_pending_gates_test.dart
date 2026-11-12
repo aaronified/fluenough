@@ -205,7 +205,8 @@ void main() {
     test('the cheap-Write prerequisite is judged on the inventory', () {
       final withoutF21 = <FormatInfo>[
         for (final f in kFormatInventory)
-          if (f.code != 'F21') f,
+          // F25 is F21 asked with sound: a cheap Write item too.
+          if (f.code != 'F21' && f.code != 'F25') f,
       ];
       // Build step 4b added one (F21), and only that one.
       expect(hasCheapWriteItem(kFormatInventory), isTrue);

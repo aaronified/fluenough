@@ -9,6 +9,7 @@ import '../../app/features.dart';
 import '../../app/skill.dart';
 import '../../app/system_settings.dart';
 import '../../core/models/deck.dart';
+import '../../core/speech/asr/asr_pack_installer.dart';
 import '../../core/tts/tts_engine.dart';
 import '../../core/tts/voice_apps.dart';
 import '../../app/browser_words.dart';
@@ -18,6 +19,7 @@ import '../../ui/widgets/grouped_list.dart';
 import '../../ui/widgets/report_button.dart';
 import '../../ui/widgets/snack.dart';
 import '../../ui/widgets/system_bar.dart';
+import '../downloads/download_text.dart' show formatSize;
 import '../decks/word_sheet.dart' show isRude;
 import 'settings_controls.dart';
 import 'speech_test_sheet.dart';
@@ -304,7 +306,9 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
         language.code,
         for (final block in blocks) block.ttsTag.split('-').first,
       };
-      return LanguageVoiceCard(
+      final offersAi = state.asrLanguages.contains(language.code);
+      if (offersAi) state.askAsrSize(language.code);
+      Widget build(AiListener? ai) => LanguageVoiceCard(
         language: language,
         glyph: _glyphOf(state, language),
         voiceStatus: _rechecking
@@ -343,6 +347,19 @@ class _VoicesPageState extends State<VoicesPage> with WidgetsBindingObserver {
         onAllowOnline: (on) =>
             state.settings.allowOnlineSpeech(language.code, on),
         onOpenStore: _openStore,
+        aiListener: ai,
+        onAiInstall: () => unawaited(state.installAsrPack(language.code)),
+        onAiCancel: () => state.cancelAsrPack(language.code),
+        onAiRemove: () => unawaited(state.removeAsrPack(language.code)),
+      );
+      if (!offersAi) return build(null);
+      // The AI listener's progress rebuilds only this card.
+      return ValueListenableBuilder<int>(
+        valueListenable: state.asrChanges,
+        builder: (context, _, _) => build((
+          state: state.asrState(language.code),
+          size: state.asrSize(language.code),
+        )),
       );
     }
 
@@ -494,6 +511,10 @@ class _FoldHeader extends StatelessWidget {
 /// the tag of the voice that says its cards instead, or null.
 typedef CourseVoice = ({String tag, VoiceStatus status, String? backup});
 
+/// The on-device AI listener of a language: its state and download size, or
+/// null while the manifest has not said (#1004).
+typedef AiListener = ({AsrInstallState state, int? size});
+
 /// One language's card on the Voices page: hearing it and speaking it.
 class LanguageVoiceCard extends StatelessWidget {
   const LanguageVoiceCard({
@@ -514,6 +535,10 @@ class LanguageVoiceCard extends StatelessWidget {
     required this.onSwitchOnSpeaking,
     required this.onAllowOnline,
     required this.onOpenStore,
+    this.aiListener,
+    this.onAiInstall = _noAction,
+    this.onAiCancel = _noAction,
+    this.onAiRemove = _noAction,
     this.otherTags = const <CourseVoice>[],
     this.otherVoices = const <TtsVoice>[],
     this.backup,
@@ -573,6 +598,17 @@ class LanguageVoiceCard extends StatelessWidget {
 
   /// Opens a voice app's store link.
   final ValueChanged<String> onOpenStore;
+
+  /// Where the on-device AI listener stands for this language, or null where
+  /// none is offered (#1004).
+  final AiListener? aiListener;
+
+  /// Downloads, stops or deletes the AI listener.
+  final VoidCallback onAiInstall;
+  final VoidCallback onAiCancel;
+  final VoidCallback onAiRemove;
+
+  static void _noAction() {}
 
   @override
   Widget build(BuildContext context) {
@@ -642,6 +678,16 @@ class LanguageVoiceCard extends StatelessWidget {
             Divider(height: 1, color: scheme.outlineVariant),
             const SizedBox(height: 12),
             ..._speaking(context, status),
+            if (aiListener case final ai?) ...<Widget>[
+              const SizedBox(height: 12),
+              _AiListenerRow(
+                language: language,
+                ai: ai,
+                onInstall: onAiInstall,
+                onCancel: onAiCancel,
+                onRemove: onAiRemove,
+              ),
+            ],
           ],
         ],
       ),
@@ -852,6 +898,129 @@ class LanguageVoiceCard extends StatelessWidget {
           ],
         ),
     ];
+  }
+}
+
+/// The AI listener row under Speaking: not installed (with its size and
+/// Install), downloading (progress and Cancel), installed (Remove) or failed
+/// (the reason and Try again). Native buttons, so they are read and tapped as
+/// buttons (#1004).
+class _AiListenerRow extends StatelessWidget {
+  const _AiListenerRow({
+    required this.language,
+    required this.ai,
+    required this.onInstall,
+    required this.onCancel,
+    required this.onRemove,
+  });
+
+  final LanguageInfo language;
+  final AiListener ai;
+  final VoidCallback onInstall;
+  final VoidCallback onCancel;
+  final VoidCallback onRemove;
+
+  @override
+  Widget build(BuildContext context) {
+    final l10n = AppLocalizations.of(context)!;
+    final state = ai.state;
+    final size = ai.size;
+    final downloading = state.phase == AsrInstallPhase.downloading;
+    final String line = switch (state.phase) {
+      AsrInstallPhase.notInstalled =>
+        size == null
+            ? l10n.voicesAiNotInstalledNoSize
+            : l10n.voicesAiNotInstalled(formatSize(l10n, size)),
+      AsrInstallPhase.downloading =>
+        state.totalBytes > 0
+            ? l10n.voicesAiDownloading(
+                formatSize(l10n, state.receivedBytes),
+                formatSize(l10n, state.totalBytes),
+              )
+            : l10n.voicesChecking,
+      AsrInstallPhase.installed => l10n.voicesAiInstalled,
+      AsrInstallPhase.failed => switch (state.failure) {
+        AsrInstallFailure.network => l10n.voicesAiFailedNetwork,
+        AsrInstallFailure.space => l10n.voicesAiFailedSpace,
+        AsrInstallFailure.checksum => l10n.voicesAiFailedChecksum,
+        _ => l10n.voicesAiFailedOther,
+      },
+    };
+    final installLabel = l10n.voicesAiInstallLabel(language.name);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: <Widget>[
+        _Part(
+          icon: state.phase == AsrInstallPhase.failed
+              ? Icons.error_outline
+              : Icons.auto_awesome_outlined,
+          title: l10n.voicesAiTitle,
+          line: line,
+        ),
+        if (downloading) ...<Widget>[
+          const SizedBox(height: 8),
+          Semantics(
+            label: l10n.voicesAiProgressLabel(language.name, state.percent),
+            child: ExcludeSemantics(
+              child: LinearProgressIndicator(
+                value: state.totalBytes > 0
+                    ? state.receivedBytes / state.totalBytes
+                    : null,
+              ),
+            ),
+          ),
+        ],
+        _Actions(
+          children: <Widget>[
+            switch (state.phase) {
+              AsrInstallPhase.downloading => Semantics(
+                button: true,
+                label: l10n.voicesAiCancelLabel(language.name),
+                excludeSemantics: true,
+                onTap: onCancel,
+                child: OutlinedButton(
+                  style: AppButtonStyles.compact(context),
+                  onPressed: onCancel,
+                  child: Text(l10n.voicesAiCancel),
+                ),
+              ),
+              AsrInstallPhase.installed => Semantics(
+                button: true,
+                label: l10n.voicesAiRemoveLabel(language.name),
+                excludeSemantics: true,
+                onTap: onRemove,
+                child: OutlinedButton(
+                  style: AppButtonStyles.compact(context),
+                  onPressed: onRemove,
+                  child: Text(l10n.voicesAiRemove),
+                ),
+              ),
+              _ => Semantics(
+                button: true,
+                label: installLabel,
+                excludeSemantics: true,
+                onTap: onInstall,
+                child: FilledButton.tonalIcon(
+                  style: AppButtonStyles.compact(context),
+                  onPressed: onInstall,
+                  icon: Icon(
+                    state.phase == AsrInstallPhase.failed
+                        ? Icons.refresh
+                        : Icons.download_outlined,
+                    size: 18,
+                  ),
+                  label: Text(
+                    state.phase == AsrInstallPhase.failed
+                        ? l10n.voicesAiRetry
+                        : l10n.voicesAiInstall,
+                  ),
+                ),
+              ),
+            },
+          ],
+        ),
+      ],
+    );
   }
 }
 

@@ -48,8 +48,9 @@ specification.
 
 **The app downloads these files; it does not bundle them** (#210, ADR-0037).
 `index.json` lists every language with its files, each with its size and
-SHA-256, and the app reads it from `decks-live` on GitHub. Only `themes.yaml`
-ships inside the app. After a merge touching `decks/`, a workflow writes the
+SHA-256, and the app reads it from `decks-live` on GitHub. `themes.yaml` is
+edited here on decks-live and downloads with the decks (its copy on main is only
+the app's bundled fallback; [Plan-Deck-Owned-Data](Plan-Deck-Owned-Data)). After a merge touching `decks/`, a workflow writes the
 index again on decks-live; do not run `tools/deck_index.py` or commit the index.
 Validating a single deck or one language directory only checks what you
 pointed it at. A language listed in `HIDDEN` in `tools/deck_index.py` is left out of the

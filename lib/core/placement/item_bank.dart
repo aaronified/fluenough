@@ -230,6 +230,7 @@ class ItemBank {
   static Iterable<_Step> _steps(ItemGenerators g, {bool runtime = false}) {
     List<RegItem>? pseudo;
     List<RegItem>? picks;
+    List<RegItem>? looks;
     List<RegItem> pseudoOf(String format) {
       pseudo ??= g.pseudowords('F1');
       return format == 'F1'
@@ -242,6 +243,15 @@ class ItemBank {
       return format == 'F5'
           ? picks!
           : <RegItem>[for (final i in picks!) i.withFormat(format)];
+    }
+
+    // The look-alike word picks, written (F27) and heard (F26): one item
+    // each, made once.
+    List<RegItem> lookOf(String format) {
+      looks ??= g.lookAlikePicks('F27');
+      return format == 'F27'
+          ? looks!
+          : <RegItem>[for (final i in looks!) i.withFormat(format)];
     }
 
     // A format's items, or those of the format it reverses (the English
@@ -268,6 +278,9 @@ class ItemBank {
         _Step(() => g.typedOrSaid('F18'), starter: true),
         _Step(() => reverseOf('F8'), starter: true),
         _Step(() => reverseOf('F24'), starter: true),
+        _Step(() => lookOf('F27')),
+        _Step(() => lookOf('F26')),
+        _Step(() => reverseOf('F23')),
         _Step(() => reverseOf('F21')),
         _Step(() => reverseOf('F25')),
         _Step(() => reverseOf('F3')),
@@ -284,6 +297,8 @@ class ItemBank {
     return <_Step>[
       _Step(() => g.wordToMeaning('F2')),
       _Step(() => g.wordToMeaning('F13')),
+      _Step(() => lookOf('F27')),
+      _Step(() => lookOf('F26')),
       _Step(() => reverseOf('F3')),
       _Step(() => reverseOf('F22')),
       _Step(() => reverseOf('F7')),

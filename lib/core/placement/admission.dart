@@ -85,8 +85,10 @@ const Map<String, AdmissionProfile> kAdmissionProfiles =
         deckKey: '139-84ae5a22',
         excluded: <String>[
           'F14:clean',
+          'F17:clean',
           'F17:cognate',
           'F1:clean',
+          'F5:clean',
           'F5:cognate',
         ],
         decoys: 2,

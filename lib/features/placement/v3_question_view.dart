@@ -155,7 +155,7 @@ class _V3QuestionViewState extends State<V3QuestionView> {
           'F3' => l10n.placementQuestion,
           'F5' => l10n.findLevelWhichSentence,
           'F17' => l10n.findLevelWhichSentenceSounds,
-          'F26' => l10n.findLevelFillGap,
+          'F28' => l10n.findLevelFillGap,
           _ => l10n.findLevelWordMeaning,
         };
     }

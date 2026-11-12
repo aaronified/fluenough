@@ -210,11 +210,13 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
     switch (fmt) {
       case 'F2' ||
           'F13' ||
+          'F26' ||
+          'F27' ||
           'F3' ||
           'F5' ||
           'F17' ||
           'F6' ||
-          'F26' ||
+          'F28' ||
           'S2' ||
           'F6g':
         final nOptions = sample.first.options.length;
@@ -225,7 +227,12 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
           ];
           final l = expectedBoth(lens, it.correct);
           both('length', l.high, l.low);
-          if (fmt == 'F2' || fmt == 'F13' || fmt == 'F5' || fmt == 'F17') {
+          if (fmt == 'F2' ||
+              fmt == 'F13' ||
+              fmt == 'F26' ||
+              fmt == 'F27' ||
+              fmt == 'F5' ||
+              fmt == 'F17') {
             final promptWords = targetWords(it.promptRoman ?? it.prompt);
             final sim = <double>[
               for (final o in it.options)
@@ -287,7 +294,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
               for (var i = 0; i < known.length; i++) known[i] + 0.01 * sim[i],
             ], it.correct);
             both('known+similarity', comb.high, comb.low);
-          } else if (fmt == 'F6' || fmt == 'F26') {
+          } else if (fmt == 'F6' || fmt == 'F28') {
             final scores = <double>[
               for (final o in it.options)
                 knownGloss.contains(o.toLowerCase()) ? 1.0 : 0.0,
@@ -322,7 +329,7 @@ AuditReport auditItems(List<RegItem> items, GenContext cx) {
                 ngramScore(fill(o), 3, suffixGrams3, ownS3, suffixOf),
             ], it.correct);
             both('context-ending-triples', cs3.high, cs3.low);
-            if (fmt == 'F26') {
+            if (fmt == 'F28') {
               // The options of one word class: a solver that picks the one
               // option whose class stands alone (it has a chance share where
               // all share a class).

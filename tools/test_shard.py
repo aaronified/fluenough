@@ -5,6 +5,12 @@ Usage:
     python3 tools/test_shard.py --total-shards 8 --shard-index 3
     flutter test $(python3 tools/test_shard.py --total-shards 8 --shard-index 3)
     python3 tools/test_shard.py --total-shards 8 --plan      # every shard, with its weight
+    python3 tools/test_shard.py --total-shards 8 --shard-index 3 --exclude-heavy
+
+`--exclude-heavy` leaves out the files listed in test/heavy_tests.json (the
+placement suites) BEFORE balancing, so the shards re-balance on what remains.
+CI passes it unless placement changed (see "Which parts changed" in ci.yml).
+Without it the behaviour is unchanged.
 
 `--shard-index` counts from 0, as `flutter test` does. Prints one test file
 per line. Exit status: 0 on success, 1 if the shard would be empty (an empty
@@ -37,6 +43,7 @@ from pathlib import Path
 
 REPO = Path(__file__).resolve().parent.parent
 WEIGHTS = REPO / "test" / "shard_weights.json"
+HEAVY = REPO / "test" / "heavy_tests.json"
 FALLBACK_DEFAULT = 8
 
 
@@ -53,6 +60,13 @@ def load_weights(path: Path) -> tuple[dict[str, float], float]:
         return {}, FALLBACK_DEFAULT
     data = json.loads(path.read_text(encoding="utf-8"))
     return dict(data.get("files", {})), data.get("default", FALLBACK_DEFAULT)
+
+
+def load_heavy(path: Path) -> set[str]:
+    """The heavy test files; a missing file means none."""
+    if not path.exists():
+        return set()
+    return set(json.loads(path.read_text(encoding="utf-8")).get("heavy", []))
 
 
 def assign(
@@ -80,6 +94,11 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--total-shards", type=int, required=True)
     ap.add_argument("--shard-index", type=int, help="0-based")
     ap.add_argument("--plan", action="store_true", help="print every shard and its weight")
+    ap.add_argument(
+        "--exclude-heavy",
+        action="store_true",
+        help="leave out the files in test/heavy_tests.json before balancing",
+    )
     ap.add_argument("--root", type=Path, default=REPO, help=argparse.SUPPRESS)
     args = ap.parse_args(argv)
 
@@ -90,6 +109,9 @@ def main(argv: list[str] | None = None) -> int:
         ap.error("--shard-index must be 0..total-shards-1 (or use --plan)")
 
     files = discover(args.root)
+    if args.exclude_heavy:
+        heavy = load_heavy(args.root / "test" / "heavy_tests.json")
+        files = [f for f in files if f not in heavy]
     weights, default = load_weights(args.root / "test" / "shard_weights.json")
     shards = assign(files, weights, default, total)
 

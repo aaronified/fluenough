@@ -3,7 +3,7 @@ description: >-
   Language-agnostic drilling for basic language skills: recognition,
   production, listening and grammar, scheduled by spaced repetition.
 publish_to: none
-version: 0.9.4+40
+version: 0.9.5+41
 
 # Verified against Flutter 3.47.1 / Dart 3.13.1 (stable, 2026-08-19).
 environment:
@@ -28,6 +28,9 @@ dependencies:
   # database. drift already depends on it, so the version is left to drift's.
   sqlite3: any
   http: ^1.6.0
+  # SHA-256 of the on-device listener's downloaded files (#1004, ADR-0054
+  # notes): a pack is renamed into place only when it matches the manifest.
+  crypto: ^3.0.6
 
   # Text to speech. Wraps android.speech.tts and AVSpeechSynthesizer.
   flutter_tts: ^4.2.5
@@ -81,8 +84,11 @@ flutter:
   # Builds AppLocalizations from lib/l10n/*.arb on `flutter pub get`.
   generate: true
   # The decks are not bundled: the app downloads them from the repository's
-  # decks-live branch, by decks/index.json (#210, ADR-0037). Only the theme list
-  # and the spoken languages ship inside the app.
+  # decks-live branch, by decks/index.json (#210, ADR-0037). The theme list
+  # ships inside the app only as the fallback for an offline first start: the
+  # current one is downloaded with the decks (deck-owned data, owner,
+  # 2026-11-11), and so are the other files the index lists under `shared`.
+  # The spoken languages ship inside the app.
   assets:
     # The release notes' source, read at the first launch after an update for
     # the "What's new" sheet (#944); the release workflow dates its section

@@ -104,7 +104,7 @@ void main() {
     });
 
     test('each trigger is processed once per skill and band, a drill-down '
-        'asks at most 4 isolating items, and a run has at most 3', () {
+        'asks at most 4 isolating items, and a run has one', () {
       final m = model();
       final d = DrillDown(m);
       DrillCase? start(int deck, int band, String id) {
@@ -139,12 +139,30 @@ void main() {
       expect(first.closed, isTrue);
       // The same skills at the same band do not start another.
       expect(start(61, 4, 'b'), isNull);
-      // Another band does, up to two in all.
-      expect(start(100, 6, 'c'), isNotNull);
-      d.active?.end = DrillEnd.budget;
-      d.active = null;
-      expect(start(130, 8, 'd'), isNull);
-      expect(d.cases.length, 2);
+      // A run has one drill-down (DrillConfig.maxCases): another band does
+      // not start a second.
+      expect(start(100, 6, 'c'), isNull);
+      expect(d.cases.length, 1);
+      // A configuration that allows two starts the second on another band.
+      final two = DrillDown(m, config: const DrillConfig(maxCases: 2));
+      DrillCase? startTwo(int deck, int band, String id) => two.onAnswer(
+        itemSkills: [_read, _write],
+        deck: deck,
+        band: band,
+        right: false,
+        preKnown: {_read: 0.5, _write: 0.5},
+        preAll: 0.3,
+        seconds: 10,
+        testable: _all,
+      );
+      expect(startTwo(60, 4, 'e'), isNotNull);
+      two.active?.end = DrillEnd.budget;
+      two.active = null;
+      expect(startTwo(100, 6, 'f'), isNotNull);
+      two.active?.end = DrillEnd.budget;
+      two.active = null;
+      expect(startTwo(130, 8, 'g'), isNull);
+      expect(two.cases.length, 2);
     });
 
     test('no drill-down starts late in the run, or when it is turned off', () {
@@ -357,6 +375,7 @@ void main() {
             };
             var withCase = 0;
             var ok = 0;
+            final report = StringBuffer();
             for (var seed = 1; seed <= 100; seed++) {
               final p = V3SimPicker();
               runOnce(
@@ -382,10 +401,20 @@ void main() {
                         : k.verdict == null),
               );
               if (good) ok++;
+              if (!good) {
+                for (final k in cases) {
+                  report.writeln(
+                    'seed $seed ${k.trigger.name} ${k.skills.map((e) => e.name)} '
+                    'deck ${k.deck} end ${k.end?.name} verdict '
+                    '${k.verdict?.name} trail ${k.trail} '
+                    'failAtEnd ${k.failAtEnd.map((a, b) => MapEntry(a.name, b.toStringAsFixed(2)))}',
+                  );
+                }
+              }
             }
             // It started in nearly every run (a mixed item opens each one).
-            expect(withCase, greaterThanOrEqualTo(90));
-            expect(ok / withCase, greaterThanOrEqualTo(0.9));
+            expect(withCase, greaterThanOrEqualTo(90), reason: '$report');
+            expect(ok / withCase, greaterThanOrEqualTo(0.9), reason: '$report');
           });
         }
       }
