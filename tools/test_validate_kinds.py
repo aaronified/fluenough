@@ -228,7 +228,7 @@ class GenreCards(KindsCase):
 class Paths(KindsCase):
     def test_a_path_may_name_a_visible_genre_deck(self) -> None:
         self.assertValid()
-        self.assertIn("zz-culture-ejemplo", self.data(PATH)["units"][1])
+        self.assertIn("zz-culture-ejemplo", self.data(PATH)["units"][1]["decks"])
 
     def test_a_path_may_not_name_a_hidden_deck(self) -> None:
         self.edit(PATH, lambda d: d["units"].append(["zz-medicine-registro"]))
