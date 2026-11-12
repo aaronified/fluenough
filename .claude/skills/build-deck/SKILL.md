@@ -106,6 +106,7 @@ Before you start:
      target and example gives its `words` in order ("Base words"):
      `["我", "听不懂"]`, Japanese particles as words of their own.
    - The meaning of a card never changes between layers or edits.
+   - A new situation teaches only words and phrases that are very widely used in that situation, not over-translated: one natural phrase per idea, the common register, short glosses, a handful per scene, professional situations included ("What new situations teach" in the Deck-Format wiki page).
    - Tag the files `"unreviewed"`; a culture note needs a `source`
      ([docs/REVIEWING.md](../../../docs/REVIEWING.md) is how a speaker clears it).
    - Every word card gets at least one typed note ("Notes").

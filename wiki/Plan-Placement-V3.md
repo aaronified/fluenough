@@ -522,3 +522,7 @@ Three gates stay pending: `experts-natives-within-a-tenth`, `honest-confidence` 
 - **Legacy calibration.** The heard-sentence pick of the legacy bank, whose right option shape gave away 75% of the time, is calibrated as leaky (`F17legacy`, as `F5legacy`) and never asked; the gamer gates' legacy cells use it.
 - **Grammar, "pick the wrong one".** A list of example sentences of which exactly one is wrong. Built for reviews only (`wrongOneItem`, `lib/core/scheduling/wrong_one.dart`) and made only from wrong examples a deck provides; no deck carries any yet, so nothing offers it. Not yet a placement format: it needs its audit solvers, its screen and an admission verdict.
 - **Reviews.** The wrong options of a choice question come from the cards that look most like the right one (`rankLookAlikes`): one length band, word family, word class, shared tags, nearest spelling.
+
+## Owner-approved tolerance on the margin gate (2026-11-12)
+
+The margin test in test/placement_v3_gamers_test.dart (a gamer 0.05 to 0.07 better than measured, the admission bound, still passes) allows over2 <= 0.02 (two of 100 seeds) at bump 0.07 only; every other limit is unchanged (0.01 at bump 0.05, over1 <= 0.03). Owner decision, 2026-11-12, after three calibration rounds left the es seed-2000 legacy-bank cell at 0.02. The F28 sentence fill-in (#1099) is excluded by the audit in es and hi, so it is never asked (issue #1132).
