@@ -973,15 +973,17 @@ class DeckDownloads extends ChangeNotifier {
           if (entry == null) return DeckDownloadFailure.notOffered;
           if (entry.appTooOld) return DeckDownloadFailure.appTooOld;
           final natives = entry.nativesFor(spoken);
+          // A deck is fetched whole or not at all: if any of its files needs
+          // a newer app, none is downloaded.
+          final needed = entry.hiddenAppNeeded(deckKey, natives);
+          if (needed != null) {
+            _log?.warning(
+              'Hidden deck $deckKey needs app $needed, not downloaded',
+            );
+            return DeckDownloadFailure.appTooOld;
+          }
           final wanted = entry.hiddenFilesFor(deckKey, natives);
           if (wanted.isEmpty) {
-            if (entry.hiddenAppNeeded(deckKey, natives) != null) {
-              _log?.warning(
-                'Hidden deck $deckKey needs app '
-                '${entry.hiddenAppNeeded(deckKey, natives)}, not downloaded',
-              );
-              return DeckDownloadFailure.appTooOld;
-            }
             _log?.warning('Hidden deck $deckKey is not offered for $language');
             return DeckDownloadFailure.notOffered;
           }

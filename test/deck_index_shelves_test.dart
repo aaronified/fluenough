@@ -283,7 +283,18 @@ void main() {
       expect(DeckIndex.parse(broken).problems, hasLength(1));
     });
 
-    test('a level that is no level is left out, not refused', () {
+    test('a level or hidden that is malformed fails closed', () {
+      final odd = _edited(everything, (zz) {
+        (zz['shelves']! as List<Object?>).first! as Map<String, Object?>
+          ..['level'] = 'b1'
+          ..['hidden'] = 'yes';
+      });
+      final first = _zz(odd).shelves.first;
+      expect(first.level, Level.c2);
+      expect(first.hidden, isTrue);
+    });
+
+    test('a level that is no level is read as C2, not refused', () {
       final odd = _edited(everything, (zz) {
         (zz['shelves']! as List<Object?>).first! as Map<String, Object?>
           ..['level'] = 'Z9'
@@ -291,7 +302,7 @@ void main() {
           ..['weave'] = 'maybe';
       });
       final first = _zz(odd).shelves.first;
-      expect(first.level, isNull);
+      expect(first.level, Level.c2);
       expect(first.cards, 0);
       expect(first.weave, isFalse);
     });
@@ -437,6 +448,23 @@ void main() {
         expect(await phone.manifest(), isEmpty);
       },
     );
+
+    test('fetches no file when only its layer needs a newer app', () async {
+      remote.index = _edited(indexFor(_files(only: _decks)), (zz) {
+        for (final entry in zz['shelves']! as List<Object?>) {
+          final map = entry! as Map<String, Object?>;
+          if (map['path'] == _medicineLayer) map['min_app'] = '0.9.6';
+        }
+      });
+      final d = downloads(appVersion: '0.9.5');
+      expect(
+        await d.fetchHidden('zz', 'zz-medicine-registro', <String>['en']),
+        DeckDownloadFailure.appTooOld,
+      );
+      expect(remote.asked, isNot(contains(_medicineCore)));
+      expect(await phone.manifest(), isEmpty);
+      expect(d.hiddenDecksOnPhone('zz'), isEmpty);
+    });
 
     test('waits for the app its min_app names, and fetches nothing', () async {
       remote.index = _edited(indexFor(_files(only: _decks)), (zz) {

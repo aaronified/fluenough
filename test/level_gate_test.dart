@@ -154,6 +154,21 @@ void main() {
       },
     );
 
+    test('leaves out a reading deck whose passages are all above', () {
+      final text = _reading()['decks/zz/zz-en-lectura.yaml']!
+          .replaceFirst('level: "A1"\npassages', 'passages')
+          .replaceFirst('    level: "A1"\n', '    level: "B1"\n');
+      final reading = DeckCatalog.parseAll(<String, String>{
+        ...kindsCourse(),
+        'decks/zz/zz-en-lectura.yaml': text,
+      });
+      expect(_ids(reading.decks), contains('zz-en-lectura'));
+      expect(
+        _ids(reading.forLevels((_) => Level.a1).decks),
+        isNot(contains('zz-en-lectura')),
+      );
+    });
+
     test('leaves out a deck with nothing left for the learner', () {
       final files = <String, String>{
         ...kindsDeck('zz', 'later', <KindsCard>[
