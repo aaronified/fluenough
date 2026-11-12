@@ -125,6 +125,12 @@ Common to every kind.
 | `description` | no | One or two sentences. |
 | `tags` | no | Deck-level tags, e.g. `[beginner, core]`. The tag `unreviewed` marks a deck no native speaker has checked: the app says so on the deck's screen. `reviewed` marks one a speaker has checked; a deck is one or the other, never both. A file with a [culture note](#notes) must carry one of them. A deck of offensive words is tagged `offensive`; until native speakers have rated its words it is seen by the Offensive words review alone, and once rated it gains the tag `rated` and follows the adult gate (#630); `rated` on a deck not tagged `offensive` is an error. |
 | `theme` | no | On a vocab deck: the theme it teaches, by its id in [`decks/themes.yaml`](#themes). |
+| `genre` | no | `culture`, `proverbs`, `multiword` or `professional`: what a deck is about beyond the path ([Deck kinds](#deck-kinds-levels-hidden-decks-sources-creators-and-topics)). On a core or a single file, never a layer. Not `kind`: that is the file's structure. |
+| `level` | on a genre deck | `A1` to `C2`: the lowest level the deck suits. |
+| `hidden` | no (`true` on `professional`) | Left out of the Decks tab, Today and the path; found by search. |
+| `professional` | on `professional` | A profession id from `decks/sections.yaml`. |
+| `section` | no | Where the Decks tab lists it; defaults to its genre's section. |
+| `weave` | no | Whether the courses weave its items in; defaults to its genre's. |
 
 ### `language`
 
@@ -3684,6 +3690,93 @@ fact carries its own text in every language it is written in. It has
   `source` for anything a reader could doubt.
 - **The YAML quoting rule applies**, to keys too: Norwegian's code is `no`, so
   write it `"no":`.
+
+---
+
+## Deck kinds, levels, hidden decks, sources, creators and topics
+
+Culture, proverb, multi-word-verb and professional decks arrive as data on
+`decks-live`; the design and the reasons are in
+[Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics). The question types
+stay the fixed set of #107: a genre only narrows which a card may carry.
+
+**Header.** `genre`, `level`, `hidden`, `professional`, `section` and `weave`
+(table above), all on the core or single file and never on a layer.
+
+| `genre` | Header `kind` | A card may carry `modes` | Also required |
+|---|---|---|---|
+| `culture` | `vocab` (`pos: phrase`), `reading` | `recognition`, `listening` (a reading deck's questions take `reading`); never `production` or `grammar` | `level`, a `source` block and a `creator` on every card |
+| `proverbs` | `vocab` | `recognition`, `listening` | `level`, a `source` block and a `register` on every card |
+| `multiword` | `vocab`, `grammar` | `recognition`, `production`, `listening`, `grammar` on a pattern's cells | `level`, a `usage` note on every card |
+| `professional` | `vocab`, `reading` | `recognition`, `production`, `listening` | `professional`, `hidden: true`, `level`; one deck is one situation of one profession in one language |
+
+**Levels.** `A1 < A2 < B1 < B2 < C1 < C2`. A deck's `level` is the lowest it
+suits; a card's `level` (optional) may not be lower. A learner's level in a
+language is the level of the furthest path unit they have reached (a unit's
+level is the first milestone at or after it). An item above it is never
+drilled or shown as content; decks, topics and situations above it are listed
+in search marked with their level; culture and proverb cards above it are not
+indexed for that learner.
+
+**Hidden decks.** `hidden: true` keeps a deck out of the Decks tab, Today, the
+path (the `"*"` wildcard skips it; a path may not name it), placement and
+completeness counts. It is listed by search from the index (`shelves`) and
+downloaded when the learner adds it.
+
+**A card's `source`** (culture and proverb decks require it on every card):
+
+```yaml
+source:
+  author: "Gurajada Apparao"      # or "anonymous"
+  work: "Kanyasulkam"             # proverbs: `collection:`
+  date: 1892                      # a year, "1892-1909" or "c. 1750"
+  edition: "Visalandhra, 1962"    # edition or url
+  url: "https://example.org/..."
+  basis: "public-domain"          # public-domain | licensed | quotation | oral-tradition
+  author_died: 1915               # public-domain
+  jurisdiction: "IN"              # ISO 3166-1 alpha-2
+  licence: "CC-BY-4.0"            # licensed (SPDX) or quotation (the note)
+  licence_url: "https://..."      # licensed
+  rights_checked: "2026-11-12"
+```
+
+The validator requires `date`, `basis`, `jurisdiction`, `rights_checked`,
+`author`, `work` or `collection`, and `edition` or `url`; checks the
+public-domain floor; limits `quotation` to 25 words and 5 cards a deck; and
+allows `oral-tradition` for proverbs and folk items only.
+
+**Creators.** A culture card names its creator, `creator: "te-gurajada"`. A
+creator appears once, in `decks/creators/<code>.yaml` (`kind: creators`), a
+deck-owned file listed in the index `shared` list: `id`, `name` per language
+(`text`, `reading`, `ipa`), `born`, `died` (or `living: true`), `era` (an id of
+the file's own `eras`, named in the language's tradition), `region`, `bio` per
+UI language (and optionally `bio_target` by level), an optional `image`
+(`file`, `credit`, `author`, `licence`, `licence_url`, `source_url`,
+`retrieved`; a licence that allows copying, never NC or ND; absent means a
+placeholder), `legacy` (`text` per UI language and one to six `items`, each a
+`kind`, `text` and a `source`, which is required), and `related`. Dates must be
+sane (born before died, no later than this year, an era that contains them).
+A creator or legacy claim without a source, or an image without its credit and
+licence, fails the validator. The timeline is derived from creators' dates, eras
+and works' `source.date`, ending at the present year.
+
+**Topics.** `decks/<code>/<code>-topics.yaml`, `kind: topics`, one per
+language: `topics` with `id` (`<code>-<slug>`, permanent), `name` and `summary`
+per UI language (`en` required), `term`, `level`, `kind` (display only) and
+what it covers, any of `decks` (core ids), `units`, `cards`, `grammar` (path
+concept ids), `situations` (sheet ids) and `topics`. It holds no card text.
+
+**Sections file.** `decks/sections.yaml`, `kind: sections`, deck-owned (index
+`shared`): `sections`, `genres` (each with its `section`, `search_kind` and
+`weave`), `professions` and `search_kinds` (`id`, `name`, `row`, `order`). A
+new profession or search kind that reuses a row template is a row here, no code.
+
+**In the index.** Genre decks, hidden ones included, are listed per language
+under `shelves` (a `files` entry plus `genre`, `level`, `hidden`,
+`professional`, `section`, `weave`, `title` and `cards`) and never in `files`;
+the topics file under `topics`; creators and `sections.yaml` under `shared`,
+creator images under `shared_media`. Each carries `min_app`, written by the
+tool.
 
 ---
 
