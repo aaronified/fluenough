@@ -238,6 +238,9 @@ void main() {
       );
       final app = _state(kindsCourse(), progress: progress);
       await app.load();
+      // The language bar shows the first language (yy) by default, and
+      // profileDecks follows it, so show zz as a learner of it would.
+      app.showLanguage('zz');
       final due = app
           .buildSession(const DrillRequest.today(language: 'zz'))
           .due
