@@ -69,7 +69,28 @@ class DrillConfig {
     this.identify = 0.8,
     this.wideClasses = 9,
     this.stopAfterSeconds = 150,
+    this.allFailedPerSkill = 1,
+    this.fallbackTop = 0.4,
+    this.fallbackGap = 0.1,
+    this.adaptive = false,
+    this.singleMax = 4,
   });
+
+  /// Isolating items each implicated skill needs before the case may end as
+  /// [DrillEnd.allFailed] (a first wrong answer may be a slip).
+  final int allFailedPerSkill;
+
+  /// What the verdict of a case that ended on budget needs: the likeliest
+  /// skill at least this likely to have failed, and this far ahead.
+  final double fallbackTop;
+  final double fallbackGap;
+
+  /// Whether the items beyond one per skill go to the skill the answers leave
+  /// the most undecided, up to [maxIsolating] less one for each other skill.
+  final bool adaptive;
+
+  /// The most isolating items of a case with one implicated skill.
+  final int singleMax;
 
   final bool enabled;
 
@@ -107,7 +128,14 @@ class DrillConfig {
 
 /// One drill-down.
 class DrillCase {
-  DrillCase(this.trigger, this.skills, this.deck);
+  DrillCase(
+    this.trigger,
+    this.skills,
+    this.deck, {
+    this.config = const DrillConfig(),
+  });
+
+  final DrillConfig config;
 
   final DrillTrigger trigger;
 
@@ -162,7 +190,9 @@ class DrillCase {
         next = e.value;
       }
     }
-    return top >= 0.4 && top - next >= 0.1 ? best : null;
+    return top >= config.fallbackTop && top - next >= config.fallbackGap
+        ? best
+        : null;
   }
 
   /// The isolating items asked.
@@ -238,7 +268,7 @@ class DrillDown {
       _done.add(_key(s, band));
     }
     fresh.sort((a, b) => _fail(b, deck).compareTo(_fail(a, deck)));
-    final c = DrillCase(t, fresh, deck);
+    final c = DrillCase(t, fresh, deck, config: config);
     for (final k in fresh) {
       c.logOdds[k] = _priorLogOdds(preKnown[k]);
     }
@@ -387,7 +417,9 @@ class DrillDown {
       for (final s in c.skills)
         if ((c.asked[s] ?? 0) <
                 (c.skills.length == 1
-                    ? config.maxIsolating
+                    ? config.singleMax
+                    : config.adaptive
+                    ? config.maxIsolating - (c.skills.length - 1)
                     : config.perSkill) &&
             !c.spent.contains(s))
           s,
@@ -455,7 +487,11 @@ class DrillDown {
       _close(c, DrillEnd.identified);
     } else if (c.skills.length > 1 &&
         c.isolating >= 3 &&
-        c.skills.every((s) => (c.asked[s] ?? 0) >= 1 && _failOf(c, s) >= 0.9)) {
+        c.skills.every(
+          (s) =>
+              (c.asked[s] ?? 0) >= config.allFailedPerSkill &&
+              _failOf(c, s) >= 0.9,
+        )) {
       _close(c, DrillEnd.allFailed);
     } else if (c.isolating >= config.maxIsolating) {
       _close(c, DrillEnd.budget);
