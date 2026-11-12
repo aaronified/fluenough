@@ -60,8 +60,10 @@ import 'card_sets.dart';
 import 'unlocks.dart';
 import 'daily_plan.dart';
 import '../core/decks/ipa_course.dart';
+import '../core/decks/levels.dart';
 import '../core/decks/script_fonts.dart';
 import 'deck_catalog.dart';
+import 'learner_levels.dart';
 import 'deck_downloads.dart';
 import 'font_check.dart';
 import 'deck_import.dart';
@@ -814,17 +816,87 @@ class AppState extends ChangeNotifier {
   /// decks and the word sheet read one list (#628).
   Catalog get _view {
     final adult = settings.adultContent;
+    var moved = false;
     if (!identical(_adultOf, _catalog) || _adultOn != adult) {
       _adultOf = _catalog;
       _adultOn = adult;
       _adultScoped = _catalog.forAdult(adult: adult);
+      moved = true;
     }
-    return _adultScoped;
+    // A learner's level moves only when they start a card or placement passes
+    // a unit: the number of cards with a schedule and the set of placed decks
+    // say so without reading either again.
+    final started = progress.states.length;
+    final placed = settings.placedDecks;
+    if (moved || started != _startedSeen || !identical(placed, _placedSeen)) {
+      _startedSeen = started;
+      _placedSeen = placed;
+      _levelScoped = _gatedByLevel(_adultScoped);
+    }
+    return _levelScoped;
   }
 
   Catalog? _adultOf;
   bool _adultOn = false;
   Catalog _adultScoped = Catalog.empty;
+
+  /// [_adultScoped] with what is above the learner's level in each language
+  /// left out (D2 of the deck-kinds plan): worked out again after progress,
+  /// placement or the decks change, and the same catalog while no language's
+  /// level moved. It fails closed: if the levels cannot be worked out, no
+  /// levelled item is offered, and the failure goes to the log.
+  Catalog _gatedByLevel(Catalog scoped) {
+    try {
+      if (!identical(_levelsOf, _catalog)) {
+        final made = LearnerLevels(_catalog);
+        _levelsOf = _catalog;
+        _learnerLevels = made;
+        _levels = const <String, Level?>{};
+        _levelBase = null;
+      }
+      final levels = _learnerLevels!.levels(
+        studied: <String>[for (final key in progress.states.keys) key.cardId],
+        placedDecks: settings.placedDecks,
+      );
+      if (identical(_levelBase, scoped) && sameLevels(levels, _levels)) {
+        return _levelScoped;
+      }
+      _levels = levels;
+      _levelBase = scoped;
+      return scoped.forLevels((language) => levels[language]);
+    } on Object catch (error, stack) {
+      log.error(describeError('Learner levels failed', error, stack));
+      _levelBase = null;
+      _levelsOf = null;
+      _levels = const <String, Level?>{};
+      return scoped.forLevels((_) => null);
+    }
+  }
+
+  Catalog _levelScoped = Catalog.empty;
+  int _startedSeen = -1;
+  Set<String>? _placedSeen;
+  Catalog? _levelsOf;
+  Catalog? _levelBase;
+  LearnerLevels? _learnerLevels;
+  Map<String, Level?> _levels = const <String, Level?>{};
+
+  /// The level the learner has reached in [language] (D2): the level of the
+  /// furthest unit of its path they have studied or been placed past, or null
+  /// where its path has no levels. What a level-marked result is compared with.
+  Level? levelIn(String language) {
+    _view;
+    return _levels[language];
+  }
+
+  /// The hidden decks a learner added from a search result, which are on the
+  /// phone (D3): the only decks outside [decks] that Today's reviews and a
+  /// deck's own page read. Never in the Decks tab's lists, the path,
+  /// placement or the counts.
+  List<DeckEntry> get addedHiddenDecks => _view.hidden;
+
+  /// [decks] and the hidden decks a learner added: what a session may drill.
+  List<DeckEntry> get drillDecks => <DeckEntry>[...decks, ...addedHiddenDecks];
 
   /// Every deck file that did not parse, for the "couldn't read" rows.
   List<BrokenDeck> get brokenDecks => _catalog.broken;
@@ -969,7 +1041,8 @@ class AppState extends ChangeNotifier {
     final profile = currentProfile;
     final shown = onlyShown ? shownLanguage : null;
     final mine = <DeckEntry>[
-      for (final entry in decks)
+      // The hidden decks a learner added join Today's reviews (D3).
+      for (final entry in drillDecks)
         if (profile.learns(entry.language.code) &&
             LanguageChoice.shows(shown, entry.language.code))
           entry,
@@ -1092,8 +1165,25 @@ class AppState extends ChangeNotifier {
     _status = CatalogStatus.ready;
     _loadError = null;
     _mapSkills();
+    _logKindProblems();
     notifyListeners();
     await refreshVoices();
+  }
+
+  /// Reports to the log what in the decks' kind fields, and in the sections
+  /// file, could not be read and was left out (deck-kinds plan, T10, T11):
+  /// each costs only itself, and none is swallowed.
+  void _logKindProblems() {
+    try {
+      for (final problem in _catalog.kindProblems) {
+        log.warning('Deck kind field: $problem');
+      }
+      for (final problem in _catalog.sections.problems) {
+        log.warning('Sections file: $problem');
+      }
+    } on Object catch (error, stack) {
+      log.error(describeError('Deck kind problems failed', error, stack));
+    }
   }
 
   // ---------------------------------------------------------------------------
@@ -1290,6 +1380,7 @@ class AppState extends ChangeNotifier {
       _status = CatalogStatus.ready;
       _mapSkills();
       log.event('Decks loaded: ${decks.length}');
+      _logKindProblems();
       unawaited(_afterLaunch());
     } catch (error, stack) {
       _loadError = error;
@@ -2316,7 +2407,7 @@ class AppState extends ChangeNotifier {
               if (language == null || entry.language.code == language) entry,
           ]
         : <DeckEntry>[
-            for (final entry in this.decks)
+            for (final entry in drillDecks)
               if (ids.contains(entry.id)) entry,
           ];
     final scope = request.script;
@@ -2365,7 +2456,7 @@ class AppState extends ChangeNotifier {
     final voiced = derived<Map<String, bool>>(
       ('voiced', strict),
       () => <String, bool>{
-        for (final entry in this.decks)
+        for (final entry in drillDecks)
           entry.id:
               (strict
                   ? canSpeak(entry.language)
@@ -2376,7 +2467,7 @@ class AppState extends ChangeNotifier {
     final heard = derived<Map<String, bool>>(
       ('heard', strict),
       () => <String, bool>{
-        for (final entry in this.decks)
+        for (final entry in drillDecks)
           entry.id:
               (strict
                   ? canHear(entry.language)

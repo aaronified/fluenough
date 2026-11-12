@@ -324,9 +324,6 @@ class DeckDownloads extends ChangeNotifier {
     if (index == null) return;
     var changed = false;
     try {
-      for (final problem in index.sharedProblems) {
-        _log?.warning('Deck index: $problem');
-      }
       for (final file in index.shared) {
         try {
           final why = file.unusableReason;
@@ -448,8 +445,12 @@ class DeckDownloads extends ChangeNotifier {
       _fontsOnPhone = await files.fontManifest();
       final text = await files.readNote(_indexNote);
       if (text != null) {
-        _index = DeckIndex.parse(text, appVersion: appVersion);
+        final index = DeckIndex.parse(text, appVersion: appVersion);
+        _index = index;
         _indexStatus = IndexStatus.ready;
+        for (final problem in index.problems) {
+          _log?.warning('Deck index kept on the phone: $problem');
+        }
       }
     } on Object catch (e) {
       _log?.warning('Deck downloads: could not read what is kept: $e');
@@ -541,6 +542,9 @@ class DeckDownloads extends ChangeNotifier {
     }
     await _saveState();
     _log?.event('Deck index read: ${index.languages.length} languages');
+    for (final problem in index.problems) {
+      _log?.warning('Deck index: $problem');
+    }
     _notify();
     await _refreshShared();
     return true;
@@ -924,6 +928,121 @@ class DeckDownloads extends ChangeNotifier {
       if (!languagesOnPhone.contains(language)) continue;
       await _rest(language, spoken);
     }
+  }
+
+  // ---------------------------------------------------------------------------
+  // Hidden decks (deck-kinds plan, D3, T12)
+
+  /// The hidden decks of [language] that are on the phone, by deck key
+  /// ([IndexShelf.deckKey]): those a learner added. A hidden deck is on the
+  /// phone only because it was added, so this is the set the Decks tab lists
+  /// under "Added from search".
+  Set<String> hiddenDecksOnPhone(String language) {
+    final entry = _index?.language(language);
+    if (entry == null) return const <String>{};
+    return <String>{
+      for (final shelf in entry.shelves)
+        if (shelf.hidden && _onPhone.containsKey(shelf.file.path))
+          shelf.deckKey,
+    };
+  }
+
+  /// Whether the hidden deck [deckKey] of [language] is on the phone.
+  bool hasHiddenDeck(String language, String deckKey) =>
+      hiddenDecksOnPhone(language).contains(deckKey);
+
+  /// Downloads the hidden deck [deckKey] of [language] for a learner who
+  /// speaks [spoken]: "Add to my courses" on a search result. Its core and
+  /// the layers taught from their languages are fetched, each checked against
+  /// the index's hash and read as the app reads it, and kept together; a
+  /// deck on the phone already is not fetched again. Returns null once it is
+  /// on the phone, else why not: [DeckDownloadFailure.appTooOld] when its
+  /// files need a newer app (`min_app`), [DeckDownloadFailure.notOffered]
+  /// when the index lists no hidden deck by that key. Never throws.
+  Future<DeckDownloadFailure?> fetchHidden(
+    String language,
+    String deckKey,
+    List<String> spoken,
+  ) {
+    return _job(
+      language,
+      () => _againIfStale(language, () async {
+        try {
+          if (!await ensureIndex()) return _indexFailure;
+          final entry = _index!.language(language);
+          if (entry == null) return DeckDownloadFailure.notOffered;
+          if (entry.appTooOld) return DeckDownloadFailure.appTooOld;
+          final natives = entry.nativesFor(spoken);
+          // A deck is fetched whole or not at all: if any of its files needs
+          // a newer app, none is downloaded.
+          final needed = entry.hiddenAppNeeded(deckKey, natives);
+          if (needed != null) {
+            _log?.warning(
+              'Hidden deck $deckKey needs app $needed, not downloaded',
+            );
+            return DeckDownloadFailure.appTooOld;
+          }
+          final wanted = entry.hiddenFilesFor(deckKey, natives);
+          if (wanted.isEmpty) {
+            _log?.warning('Hidden deck $deckKey is not offered for $language');
+            return DeckDownloadFailure.notOffered;
+          }
+          final failure = await _fetchAndKeep(language, wanted, groups: false);
+          if (failure == null) {
+            _log?.event('Hidden deck added from search: $deckKey');
+          }
+          return failure;
+        } on Object catch (e, stack) {
+          _log?.error('Hidden deck $deckKey could not be fetched: $e\n$stack');
+          return DeckDownloadFailure.storage;
+        }
+      }),
+    );
+  }
+
+  /// Takes the hidden deck [deckKey] of [language] off the phone again. Only a
+  /// hidden deck the index lists is ever removed, never a visible one's files.
+  /// The learner's progress, which is in the review log, stays. Never throws.
+  Future<void> removeHidden(String language, String deckKey) async {
+    try {
+      final entry = _index?.language(language);
+      if (entry == null) {
+        _log?.warning('Hidden deck $deckKey not removed: no index is known');
+        return;
+      }
+      final paths = <String>[
+        for (final shelf in entry.shelves)
+          if (shelf.hidden &&
+              shelf.deckKey == deckKey &&
+              _onPhone.containsKey(shelf.file.path))
+            shelf.file.path,
+      ];
+      if (paths.isEmpty) return;
+      await _writing(() async {
+        await files.putAll(const <IndexFile, List<int>>{}, remove: paths);
+        _onPhone = await files.manifest();
+      });
+      _log?.event('Hidden deck removed from the phone: $deckKey');
+      _notify();
+      await _filesChanged();
+    } on Object catch (e, stack) {
+      _log?.error('Hidden deck $deckKey could not be removed: $e\n$stack');
+    }
+  }
+
+  /// The files [entry] wants on the phone for [natives]: those that download
+  /// with the language, and the files of each hidden deck a learner added, so
+  /// that an added deck is updated with the rest.
+  List<IndexFile> _wantedFiles(IndexLanguage entry, Iterable<String> natives) {
+    final keys = <String>{
+      for (final shelf in entry.shelves)
+        if (shelf.hidden && _onPhone.containsKey(shelf.file.path))
+          shelf.deckKey,
+    };
+    return <IndexFile>[
+      ...entry.filesFor(natives),
+      for (final key in keys) ...entry.hiddenFilesFor(key, natives),
+    ];
   }
 
   /// Runs [body] as [language]'s one job: a second call while it runs
@@ -1372,7 +1491,7 @@ class DeckDownloads extends ChangeNotifier {
       if (entry == null) continue;
       final changes = changesFor(
         language,
-        entry.filesFor(entry.nativesFor(spoken)),
+        _wantedFiles(entry, entry.nativesFor(spoken)),
         _onPhone,
         reviewer: _reviewer,
         fonts: entry.fonts,

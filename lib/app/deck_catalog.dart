@@ -14,6 +14,7 @@ import '../core/data/situations_parser.dart';
 import '../core/data/guide_layers.dart';
 import '../core/data/script_guide_parser.dart';
 import '../core/data/romanisation_parser.dart';
+import '../core/data/sections.dart';
 import '../core/data/sounds_parser.dart';
 import '../core/models/script_guide.dart';
 import '../core/models/romanisation.dart';
@@ -25,6 +26,7 @@ import '../core/data/themes.dart';
 import '../core/data/yaml_tree.dart';
 import '../core/decks/sha256.dart';
 import '../core/decks/adult_gate.dart';
+import '../core/decks/levels.dart';
 import '../core/models/fact.dart';
 import '../core/models/situation.dart';
 import '../core/models/card.dart';
@@ -198,7 +200,9 @@ class Catalog {
   Catalog({
     required List<DeckEntry> decks,
     required List<BrokenDeck> broken,
+    List<DeckEntry> hidden = const <DeckEntry>[],
     List<DeckTheme> themes = const <DeckTheme>[],
+    this.sections = DeckSections.empty,
     Map<String, FactsFile> facts = const <String, FactsFile>{},
     Map<String, SituationsFile> situations = const <String, SituationsFile>{},
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
@@ -208,6 +212,7 @@ class Catalog {
     Map<String, Romanisation> romanisations = const <String, Romanisation>{},
     Map<String, ScriptGuide> scriptGuides = const <String, ScriptGuide>{},
   }) : decks = List<DeckEntry>.unmodifiable(decks),
+       hidden = List<DeckEntry>.unmodifiable(hidden),
        broken = List<BrokenDeck>.unmodifiable(broken),
        themes = List<DeckTheme>.unmodifiable(themes),
        facts = Map<String, FactsFile>.unmodifiable(facts),
@@ -267,46 +272,106 @@ class Catalog {
   /// catalog when nothing is left out, so that every screen reads one list.
   Catalog forAdult({required bool adult}) {
     var changed = false;
-    final shown = <DeckEntry>[];
-    for (final entry in decks) {
-      final deck = deckForAdult(entry.deck, adult: adult);
-      if (identical(deck, entry.deck)) {
-        shown.add(entry);
-        continue;
+    List<DeckEntry> scoped(List<DeckEntry> entries) {
+      final shown = <DeckEntry>[];
+      for (final entry in entries) {
+        final deck = deckForAdult(entry.deck, adult: adult);
+        if (identical(deck, entry.deck)) {
+          shown.add(entry);
+          continue;
+        }
+        changed = true;
+        if (deck != null) {
+          shown.add(
+            DeckEntry(path: entry.path, deck: deck, bundled: entry.bundled),
+          );
+        }
       }
-      changed = true;
-      if (deck != null) {
-        shown.add(
-          DeckEntry(path: entry.path, deck: deck, bundled: entry.bundled),
-        );
-      }
+      return shown;
     }
+
+    final shown = scoped(decks);
+    final shownHidden = scoped(hidden);
     if (!changed) return this;
-    return Catalog(
-      decks: shown,
-      broken: broken,
-      themes: themes,
-      facts: facts,
-      situations: situations,
-      numberRules: numberRules,
-      paths: paths,
-      languagePaths: languagePaths,
-      sounds: sounds,
-      romanisations: romanisations,
-      scriptGuides: scriptGuides,
-    );
+    return _with(decks: shown, hidden: shownHidden);
   }
+
+  /// This catalog as a learner at the levels [levelOf] gives has it (D2 of the
+  /// deck-kinds plan, [LevelGate]): a deck above the learner's level in its
+  /// language is gone, and so is every card and passage above it in the decks
+  /// that stay. [levelOf] gives a language's level by its code, null for a
+  /// language with no levels, in which no levelled item is offered. The same
+  /// catalog when nothing is above the level, so that every screen reads one
+  /// list.
+  Catalog forLevels(Level? Function(String language) levelOf) {
+    var changed = false;
+    List<DeckEntry> scoped(List<DeckEntry> entries) {
+      final shown = <DeckEntry>[];
+      for (final entry in entries) {
+        final deck = entry.deck.forLevel(levelOf(entry.language.code));
+        if (identical(deck, entry.deck)) {
+          shown.add(entry);
+          continue;
+        }
+        changed = true;
+        if (deck != null) {
+          shown.add(
+            DeckEntry(path: entry.path, deck: deck, bundled: entry.bundled),
+          );
+        }
+      }
+      return shown;
+    }
+
+    final shown = scoped(decks);
+    final shownHidden = scoped(hidden);
+    if (!changed) return this;
+    return _with(decks: shown, hidden: shownHidden);
+  }
+
+  /// This catalog with other [decks] and [hidden], all else the same.
+  Catalog _with({
+    required List<DeckEntry> decks,
+    required List<DeckEntry> hidden,
+  }) => Catalog(
+    decks: decks,
+    broken: broken,
+    hidden: hidden,
+    themes: themes,
+    sections: sections,
+    facts: facts,
+    situations: situations,
+    numberRules: numberRules,
+    paths: paths,
+    languagePaths: languagePaths,
+    sounds: sounds,
+    romanisations: romanisations,
+    scriptGuides: scriptGuides,
+  );
 
   /// In file order, which groups them by language directory, except that a
   /// course's decks come in teaching order, so that its new cards do too:
   /// its path's order, or without a path, its theme decks in the order of
-  /// [themes] and then the rest.
+  /// [themes] and then the rest. Never a hidden deck: those are in [hidden]
+  /// (deck-kinds plan, D3), so that the Decks tab, Today, the path,
+  /// placement and the counts, which all read this list, never see one.
   final List<DeckEntry> decks;
+
+  /// The hidden decks on the phone (`hidden: true`): those a learner added
+  /// from a search result, since a hidden deck is downloaded only then. Kept
+  /// apart from [decks]; read only by what a learner chose to add: Today's
+  /// reviews, the deck's own page and the "Added from search" group.
+  final List<DeckEntry> hidden;
 
   final List<BrokenDeck> broken;
 
   /// The shared theme path, from `decks/themes.yaml` (ADR-0010).
   final List<DeckTheme> themes;
+
+  /// The Decks tab's sections, the deck genres, the professions and the
+  /// search kinds, from `decks/sections.yaml` (deck-kinds plan, D8): the file
+  /// downloaded with the decks, else the copy bundled in the app, else none.
+  final DeckSections sections;
 
   /// The theme with [id], or null if the path has none.
   DeckTheme? themeById(String? id) {
@@ -320,12 +385,23 @@ class Catalog {
   CoursePath? pathOf(DeckEntry entry) =>
       paths['${entry.language.code}/${entry.deck.native.code}'];
 
+  /// The deck with [id], one a learner added from a search included.
   DeckEntry? byId(String id) {
     for (final entry in decks) {
       if (entry.id == id) return entry;
     }
+    for (final entry in hidden) {
+      if (entry.id == id) return entry;
+    }
     return null;
   }
+
+  /// What in the decks' kind fields could not be read and was left out, one
+  /// line each with its deck, for the log (hidden decks too).
+  List<String> get kindProblems => <String>[
+    for (final entry in <DeckEntry>[...decks, ...hidden])
+      for (final problem in entry.deck.kindProblems) '${entry.id}: $problem',
+  ];
 
   /// Every target language the decks teach, one per BCP-47 code, in the
   /// order the decks list them.
@@ -627,6 +703,7 @@ class DeckCatalog {
     final decks = <DeckEntry>[];
     final broken = <BrokenDeck>[];
     var themes = const <DeckTheme>[];
+    var sections = DeckSections.empty;
     final facts = <String, FactsFile>{};
     final situations = <String, SituationsFile>{};
     final numberRules = <String, NumberRules>{};
@@ -828,6 +905,17 @@ class DeckCatalog {
         }
         continue;
       }
+      // A language's topics file (D6) holds no deck. Its reader is a later
+      // task: until then it is passed by, never shown as a broken deck.
+      if (kind == 'topics') continue;
+      if (kind == 'sections') {
+        try {
+          sections = parseSections(text, source: path.split('/').last);
+        } on DeckParseException catch (e) {
+          broken.add(BrokenDeck(path: path, error: e));
+        }
+        continue;
+      }
       Deck deck;
       try {
         deck = isLayer(path)
@@ -864,12 +952,24 @@ class DeckCatalog {
         ),
       );
     }
-    final resolved = _withRules(_withRefs(decks));
+    final everything = _withRules(_withRefs(decks));
+    // A hidden deck is kept out of the path and of every list a learner is
+    // given (D3): it is in [Catalog.hidden] when it is on the phone.
+    final resolved = <DeckEntry>[
+      for (final entry in everything)
+        if (!entry.deck.hidden) entry,
+    ];
+    final added = <DeckEntry>[
+      for (final entry in everything)
+        if (entry.deck.hidden) entry,
+    ];
     final placed = _placed(_coursePaths(languagePaths, resolved), resolved);
     return Catalog(
       decks: _inTeachingOrder(resolved, themes, placed),
+      hidden: added,
       broken: broken,
       themes: themes,
+      sections: sections,
       facts: facts,
       situations: situations,
       numberRules: numberRules,
@@ -979,8 +1079,11 @@ class DeckCatalog {
       for (final MapEntry(key: course, value: path) in paths.entries)
         course: path.placing(<({String id, String? theme})>[
           for (final e in decks)
+            // A deck with a genre is not a path deck (D7): the wildcard does
+            // not take it, and a path places it only by naming it.
             if ('${e.language.code}/${e.deck.native.code}' == course &&
-                path.unitOf(e.id) == null)
+                path.unitOf(e.id) == null &&
+                e.deck.genre == null)
               (id: e.id, theme: e.deck.theme),
         ], (id) => themeOf[id]),
     };
@@ -1156,6 +1259,11 @@ class DeckCatalog {
               : parseScriptGuide(text, source: source);
         case 'themes':
           parseThemes(text, source: source);
+        case 'sections':
+          parseSections(text, source: source);
+        case 'topics':
+          // Read by a later task; no deck to check.
+          break;
         default:
           header.part == 'core'
               ? DeckParser.parseCore(text, source: source)

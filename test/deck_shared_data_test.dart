@@ -353,6 +353,98 @@ void main() {
       expect(await themeIds(const <String, String>{}), <String>['first-words']);
     });
   });
+
+  group('the sections file downloads with the decks', () {
+    const sections = '''
+schema: 1
+kind: "sections"
+sections:
+  - { id: "path", name: { en: "Course" }, listed: true }
+genres:
+  - { id: "later", name: { en: "Later" }, section: "path", search_kind: "cards", weave: false }
+search_kinds:
+  - { id: "cards", name: { en: "Words" }, row: "card", order: 1 }
+''';
+
+    Map<String, Object?> entry(String text, {String? minApp}) {
+      final bytes = utf8.encode(text);
+      return <String, Object?>{
+        'path': 'decks/sections.yaml',
+        'size': bytes.length,
+        'sha256': sha256Hex(bytes),
+        'schema': 1,
+        'kind': 'sections',
+        'min_app': ?minApp,
+      };
+    }
+
+    late FakeDeckRemote remote;
+    late MemoryDownloadedDecks phone;
+    late AppLog log;
+
+    DeckDownloads downloads({String appVersion = '0.9.6'}) => DeckDownloads(
+      fetcher: remote,
+      files: phone,
+      clock: () => DateTime(2026, 11, 12),
+      log: log,
+      appVersion: appVersion,
+    );
+
+    setUp(() {
+      remote = FakeDeckRemote(<String, String>{
+        'decks/themes.yaml': _live,
+        'decks/sections.yaml': sections,
+      })..index = _index(<Object?>[_entry(_live), entry(sections)]);
+      phone = MemoryDownloadedDecks();
+      log = AppLog(clock: () => DateTime.utc(2026, 11, 12));
+    });
+
+    test('is listed, downloaded, checked and kept beside the themes', () async {
+      final found = parseSharedFiles(<Object?>[entry(sections)]);
+      expect(found.files.single.kind, 'sections');
+      expect(found.files.single.unusableReason, isNull);
+      final d = downloads();
+      expect(await d.refreshIndex(), isTrue);
+      expect(d.sharedTexts['decks/sections.yaml'], sections);
+      expect(d.sharedTexts['decks/themes.yaml'], _live);
+      expect(phone.notes['shared-sections.yaml'], sections);
+    });
+
+    test('is read from the phone again with no network', () async {
+      await downloads().refreshIndex();
+      remote.failAll = FetchFailure.offline;
+      final again = downloads();
+      await again.open();
+      expect(again.sharedTexts['decks/sections.yaml'], sections);
+    });
+
+    test('a file the app cannot read is not kept, and is logged', () async {
+      const broken = 'schema: 1\nkind: "themes"\n';
+      remote
+        ..files['decks/sections.yaml'] = broken
+        ..index = _index(<Object?>[entry(broken)]);
+      final d = downloads();
+      await d.refreshIndex();
+      expect(d.sharedTexts.containsKey('decks/sections.yaml'), isFalse);
+      expect(
+        log.entries.any(
+          (e) => e.level == LogLevel.warning && e.message.contains('not used'),
+        ),
+        isTrue,
+      );
+    });
+
+    test(
+      'waits for the app its min_app names, the bundled copy staying',
+      () async {
+        remote.index = _index(<Object?>[entry(sections, minApp: '0.9.6')]);
+        final d = downloads(appVersion: '0.9.5');
+        await d.refreshIndex();
+        expect(d.sharedTexts, isEmpty);
+        expect(remote.asked, isNot(contains('decks/sections.yaml')));
+      },
+    );
+  });
 }
 
 /// Notes that cannot be written: a full phone.

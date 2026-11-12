@@ -1,4 +1,6 @@
+import 'level.dart';
 import 'card.dart';
+import 'card_source.dart';
 import 'drill_mode.dart';
 
 /// One sentence of a passage, as the deck gives it (#98, ADR-0019).
@@ -133,6 +135,10 @@ class Passage {
     this.source,
     this.theme,
     this.glossary = const <GlossEntry>[],
+    this.level,
+    this.creators = const <String>[],
+    this.sourceBlock,
+    this.legacy,
   });
 
   /// Permanent, like a card id.
@@ -154,6 +160,20 @@ class Passage {
   /// The words in it a learner of today's language may not know, in the
   /// order the deck gives them. Often empty.
   final List<GlossEntry> glossary;
+
+  /// The lowest level the passage suits (`level`): its questions are never
+  /// given to a learner below it. Null: the deck's level applies.
+  final Level? level;
+
+  /// The ids of the creators of the work it quotes (`creator`).
+  final List<String> creators;
+
+  /// Where the passage comes from when its `source` is a mapping (a culture
+  /// passage); [source] is the text a plain `source` gives, and is null then.
+  final CardSource? sourceBlock;
+
+  /// The passage's `legacy` mapping, read tolerantly and not shown yet.
+  final Map<String, Object?>? legacy;
 }
 
 /// A reading question as a card, so that it is scheduled, recorded and
@@ -175,6 +195,11 @@ class QuestionCard extends Card {
          target: passage.sentences.first.text,
          reading: passage.sentences.first.reading,
          native: question.prompt['en'] ?? question.prompt.values.first,
+         // A question is as levelled and as cited as its passage.
+         level: passage.level,
+         creators: passage.creators,
+         sourceBlock: passage.sourceBlock,
+         legacy: passage.legacy,
        );
 
   final Passage passage;

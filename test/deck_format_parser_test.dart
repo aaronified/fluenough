@@ -260,12 +260,14 @@ cards:
         );
 
         {
-          final yaml = vocab(extra: 'level: beginner\n');
+          // `level` is a deck kind field now (deck_kinds.dart): read, never
+          // refused. Any other key is still unknown.
+          final yaml = vocab(extra: 'difficulty: beginner\n');
           expect(
             () => parse(yaml),
             throwsParseError(
-              line: lineOf(yaml, 'level'),
-              mentions: ['unknown field', '"level"'],
+              line: lineOf(yaml, 'difficulty'),
+              mentions: ['unknown field', '"difficulty"'],
             ),
           );
         }

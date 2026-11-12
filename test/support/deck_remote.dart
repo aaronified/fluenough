@@ -85,6 +85,8 @@ String indexFor(Map<String, String> files, {int version = 1}) {
   final alphabets = <String>{};
   final media = <String, List<Map<String, Object?>>>{};
   final resources = <String, List<Map<String, Object?>>>{};
+  final shelves = <String, List<Map<String, Object?>>>{};
+  final topics = <String, List<Map<String, Object?>>>{};
   for (final path in files.keys.toList()..sort()) {
     final parts = path.split('/');
     if (parts.length < 3 || parts[0] != 'decks') continue;
@@ -163,7 +165,7 @@ String indexFor(Map<String, String> files, {int version = 1}) {
         alphabets.add(code);
       }
     }
-    (languages[code] ??= <Map<String, Object?>>[]).add(<String, Object?>{
+    final entry = <String, Object?>{
       'path': path,
       'size': bytes.length,
       'sha256': sha256Hex(bytes),
@@ -173,7 +175,49 @@ String indexFor(Map<String, String> files, {int version = 1}) {
       'native': ?native,
       'deck': ?deck,
       if (core) 'part': 'core',
-    });
+    };
+    // A language's topics file is listed under `topics`, apart from `files`
+    // (tools/deck_index.py).
+    if (kind == 'topics') {
+      languages.putIfAbsent(code, () => <Map<String, Object?>>[]);
+      (topics[code] ??= <Map<String, Object?>>[]).add(entry);
+      continue;
+    }
+    // A deck with a `genre` (a layer takes its core's) is listed under
+    // `shelves`, apart from `files`, with what search needs before it has the
+    // file.
+    var kindsHeader = header;
+    if (kind == 'layer' && deck != null) {
+      final coreYaml = switch (files['decks/$code/$deck.yaml']) {
+        final String coreText => loadYaml(coreText),
+        _ => null,
+      };
+      if (coreYaml is YamlMap) kindsHeader = coreYaml;
+    }
+    if (kindsHeader['genre'] is String) {
+      languages.putIfAbsent(code, () => <Map<String, Object?>>[]);
+      final members = header['cards'] ?? header['passages'];
+      (shelves[code] ??= <Map<String, Object?>>[]).add(<String, Object?>{
+        ...entry,
+        'genre': kindsHeader['genre'],
+        'hidden': kindsHeader['hidden'] == true,
+        'level': ?kindsHeader['level'],
+        'professional': ?kindsHeader['professional'],
+        'section':
+            kindsHeader['section'] ??
+            (kindsHeader['genre'] == 'professional'
+                ? 'professional'
+                : 'beyond-basics'),
+        'weave': kindsHeader['weave'] ?? kindsHeader['genre'] != 'professional',
+        'title': ?header['name'],
+        'cards': members is YamlList || members is YamlMap
+            ? (members as dynamic).length
+            : 0,
+        'core': deck ?? id,
+      });
+      continue;
+    }
+    (languages[code] ??= <Map<String, Object?>>[]).add(entry);
   }
   return jsonEncode(<String, Object?>{
     'version': version,
@@ -191,6 +235,8 @@ String indexFor(Map<String, String> files, {int version = 1}) {
           'script_decks': alphabets.contains(code),
           'path': paths[code] ?? const <String>[],
           'files': languages[code],
+          'shelves': ?shelves[code],
+          'topics': ?topics[code],
           'media': ?media[code],
           'resources': ?resources[code],
         },
