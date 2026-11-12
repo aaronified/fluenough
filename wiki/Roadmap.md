@@ -102,7 +102,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 
 ### 0.10.0
 
-10 approved open issues.
+7 approved open issues.
 
 **Bugs**
 
@@ -117,11 +117,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 **Other**
 
 - [#1095](https://github.com/aaronified/fluenough/issues/1095) Review shell: Again / Hard / Okay / Easy self-rating buttons
-- [#1100](https://github.com/aaronified/fluenough/issues/1100) Placement: make the questions much tougher
 - [#1017](https://github.com/aaronified/fluenough/issues/1017) Plan: build entire languages as private decks (Your decks)
 - [#1096](https://github.com/aaronified/fluenough/issues/1096) Reviews: use the new placement question types
-- [#1098](https://github.com/aaronified/fluenough/issues/1098) Placement: more cloze questions (single and multiple letters)
-- [#1099](https://github.com/aaronified/fluenough/issues/1099) Placement: sentence fill-in-the-blank with same-word-class options
 
 ### 1 · Skill model + FSRS
 

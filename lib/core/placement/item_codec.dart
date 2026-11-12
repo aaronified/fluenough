@@ -9,7 +9,7 @@ import 'item_registry.dart';
 // built again.
 
 /// The version of the stored form. Part of a stored bank's key.
-const int kItemSchema = 6;
+const int kItemSchema = 7;
 
 /// [items] as one JSON text.
 String encodeItems(List<RegItem> items) => jsonEncode(<String, Object?>{
