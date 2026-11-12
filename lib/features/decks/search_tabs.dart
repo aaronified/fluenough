@@ -302,9 +302,7 @@ class _TypedSearchResultsState extends State<TypedSearchResults> {
             ),
           SliverToBoxAdapter(
             child: _TabStrip(
-              key: ValueKey<String>(
-                '${tabs.map((t) => t.kind).join(',')}|$selected',
-              ),
+              key: ValueKey<String>(tabs.map((t) => t.kind).join(',')),
               tabs: tabs,
               selected: selected!,
               onSelect: (kind) {
@@ -476,6 +474,13 @@ class _TabStripState extends State<_TabStrip>
   void initState() {
     super.initState();
     _controller.addListener(_changed);
+  }
+
+  @override
+  void didUpdateWidget(_TabStrip old) {
+    super.didUpdateWidget(old);
+    final at = widget.tabs.indexWhere((t) => t.kind == widget.selected);
+    if (at >= 0 && at != _controller.index) _controller.index = at;
   }
 
   void _changed() {

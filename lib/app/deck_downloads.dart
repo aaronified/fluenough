@@ -1315,9 +1315,8 @@ class DeckDownloads extends ChangeNotifier {
   Future<Uint8List?> creatorImage(String path) {
     final kept = _creatorImages[path];
     if (kept != null) return Future<Uint8List?>.value(kept);
-    return _creatorImageJobs[path] ??= _loadCreatorImage(path).whenComplete(
-      () => _creatorImageJobs.remove(path),
-    );
+    return _creatorImageJobs[path] ??= _loadCreatorImage(path)
+        .whenComplete(() => _creatorImageJobs.remove(path));
   }
 
   Future<Uint8List?> _loadCreatorImage(String path) async {
@@ -1336,7 +1335,8 @@ class DeckDownloads extends ChangeNotifier {
         final text = await files.readNote(note);
         if (text != null) {
           final bytes = base64Decode(text);
-          if (bytes.length == listed.size && sha256Hex(bytes) == listed.sha256) {
+          if (bytes.length == listed.size &&
+              sha256Hex(bytes) == listed.sha256) {
             return _creatorImages[path] = Uint8List.fromList(bytes);
           }
         }

@@ -81,7 +81,7 @@ class _TopicPageState extends State<TopicPage> {
             : EmptyState(icon: Icons.sell_outlined, title: l10n.topicNotFound),
       );
     }
-    final info = state.languageByCode(request.language);
+    final info = _languageInfo(state, request.language);
     return ListenableBuilder(
       listenable: Listenable.merge(<Listenable>[
         state.progress,
@@ -89,6 +89,15 @@ class _TopicPageState extends State<TopicPage> {
       ]),
       builder: (context, _) => _build(context, state, topics, resolved, info),
     );
+  }
+
+  static LanguageInfo? _languageInfo(AppState state, String code) {
+    final found = state.languageByCode(code);
+    if (found != null) return found;
+    for (final language in state.languages) {
+      if (language.code == code) return language;
+    }
+    return null;
   }
 
   List<String> _spoken(BuildContext context, AppState state) => <String>[
@@ -170,14 +179,17 @@ class _TopicPageState extends State<TopicPage> {
                   header: true,
                   child: Text(name, style: theme.textTheme.headlineMedium),
                 ),
-                if (topic.term != null && info != null) ...<Widget>[
+                if (topic.term != null) ...<Widget>[
                   const SizedBox(height: 6),
-                  TargetText(
-                    topic.term!.text,
-                    language: info,
-                    fontSize: 20,
-                    textAlign: TextAlign.start,
-                  ),
+                  if (info == null)
+                    Text(topic.term!.text, style: theme.textTheme.titleLarge)
+                  else
+                    TargetText(
+                      topic.term!.text,
+                      language: info,
+                      fontSize: 20,
+                      textAlign: TextAlign.start,
+                    ),
                   if (topic.term!.reading != null)
                     Text(
                       topic.term!.reading!,
