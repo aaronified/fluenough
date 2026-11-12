@@ -563,7 +563,6 @@ def _shelf_entry(entry: dict, rep: vd.Report, path: Path, genres: dict) -> dict:
     card count the app searches by before it has the file."""
     raw = vd._load_raw_view(path)
     raw = raw if isinstance(raw, dict) else {}
-    core = raw if raw.get("kind") != "layer" else {}
     genre = genres.get(rep.genre, {})
     shelf = dict(entry)
     shelf["genre"] = rep.genre
@@ -573,7 +572,7 @@ def _shelf_entry(entry: dict, rep: vd.Report, path: Path, genres: dict) -> dict:
     if rep.professional is not None:
         shelf["professional"] = rep.professional
     shelf["section"] = rep.section or genre.get("section") or "path"
-    weave = core.get("weave") if isinstance(core.get("weave"), bool) else None
+    weave = rep.weave
     if weave is None:
         weave = genre.get("weave") if isinstance(genre.get("weave"), bool) else False
     shelf["weave"] = weave

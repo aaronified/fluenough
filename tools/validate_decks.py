@@ -861,6 +861,7 @@ class Report:
     hidden: bool = False
     professional: str | None = None
     section: str | None = None
+    weave: bool | None = None
     reviewed: bool = False
     # The creators a card or passage names: (ids, where, source author, the
     # first year of its source date).
@@ -4234,6 +4235,10 @@ def validate_layer(r: Report, raw: dict, path: Path) -> None:
     r.genre = core.get("genre") if core.get("genre") in GENRES else None
     r.hidden = core.get("hidden") is True
     r.level = core.get("level") if core.get("level") in LEVELS else None
+    r.weave = core["weave"] if isinstance(core.get("weave"), bool) else None
+    for key in ("professional", "section"):
+        if _is_str(core.get(key)) and ID_RE.fullmatch(core[key]):
+            setattr(r, key, core[key])
     code = _lang_code(core.get("language"))
     lc = code or "xx"
     script = _script_of(core.get("language"))
@@ -7551,6 +7556,7 @@ def check_kind_header(r: Report, raw: dict, kind: str | None) -> None:
         if key in raw and not isinstance(raw[key], bool):
             r.error(key, f"must be true or false, unquoted, got {raw[key]!r}")
     r.hidden = raw.get("hidden") is True
+    r.weave = raw["weave"] if isinstance(raw.get("weave"), bool) else None
     for key in ("professional", "section", "pattern_family"):
         if key in raw and not (_is_str(raw[key]) and ID_RE.fullmatch(raw[key])):
             r.error(key, f"must match [a-z0-9-]+, got {raw[key]!r}")

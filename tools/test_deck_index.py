@@ -19,6 +19,8 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import yaml
+
 REPO = Path(__file__).resolve().parent.parent
 
 
@@ -809,6 +811,229 @@ class HiddenLanguages(unittest.TestCase):
         dirs = {p.name for p in (REPO / "decks").iterdir()
                 if p.is_dir() and p.name != "fonts"}
         self.assertEqual(dirs - self.SHIPPED - self.hidden, set())
+
+
+KINDS_FIXTURE = REPO / "test" / "fixtures" / "deck-kinds" / "decks"
+
+
+class DeckKindsIndex(unittest.TestCase):
+    """The index of the deck kinds (wiki/Plan-Deck-Kinds-And-Topics.md, D9):
+    `shelves`, `topics`, the `shared` patterns, `shared_media` and the
+    automatic `min_app`, over test/fixtures/deck-kinds."""
+
+    def setUp(self) -> None:
+        self.tmp = Path(tempfile.mkdtemp())
+        self.addCleanup(shutil.rmtree, self.tmp, True)
+        (self.tmp / "tools").mkdir()
+        for name in ("validate_decks.py", "deck_index.py", "rater_codes.py",
+                     "offensive_alikes.py", "pick_warning.py"):
+            shutil.copy(TOOLS / name, self.tmp / "tools" / name)
+        (self.tmp / "assets").mkdir()
+        (self.tmp / "assets" / "languages.yaml").write_text(
+            'schema: 1\nkind: languages\nlanguages:\n'
+            '  - { code: zz, iso639_3: zzz, name: "Testlang", own_name: "Testlang" }\n',
+            encoding="utf-8")
+        shutil.copytree(KINDS_FIXTURE, self.tmp / "decks")
+
+    def run_tool(self, *args: str) -> subprocess.CompletedProcess:
+        return subprocess.run(
+            [sys.executable, str(self.tmp / "tools" / "deck_index.py"), *args],
+            cwd=self.tmp, capture_output=True, text=True, check=False)
+
+    def index(self) -> dict:
+        result = self.run_tool()
+        self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
+        return json.loads((self.tmp / "decks" / "index.json").read_text(encoding="utf-8"))
+
+    def zz(self, index: dict | None = None) -> dict:
+        index = index or self.index()
+        self.assertEqual([lang["code"] for lang in index["languages"]], ["zz"])
+        return index["languages"][0]
+
+    def min_app(self, data: dict) -> None:
+        (self.tmp / "decks" / "min_app.json").write_text(json.dumps(data), encoding="utf-8")
+
+    def test_creators_and_recommendations_are_no_languages(self) -> None:
+        self.zz()
+
+    def test_a_deck_with_a_genre_is_listed_apart_from_files(self) -> None:
+        lang = self.zz()
+        self.assertEqual([f["path"] for f in lang["files"]], [
+            "decks/zz/zz-path.yaml", "decks/zz/zz-script.yaml", "decks/zz/zz-words.yaml",
+            "decks/zz/en/zz-en-words.yaml"])
+        self.assertEqual(sorted(f["path"] for f in lang["shelves"]), [
+            "decks/zz/en/zz-en-culture-ejemplo.yaml",
+            "decks/zz/en/zz-en-medicine-registro.yaml",
+            "decks/zz/en/zz-en-multiword-ejemplo.yaml",
+            "decks/zz/en/zz-en-proverbs-ejemplo.yaml",
+            "decks/zz/zz-culture-ejemplo.yaml",
+            "decks/zz/zz-en-culture-lectura.yaml",
+            "decks/zz/zz-medicine-registro.yaml",
+            "decks/zz/zz-multiword-ejemplo.yaml",
+            "decks/zz/zz-proverbs-ejemplo.yaml"])
+        self.assertTrue(all("genre" not in f for f in lang["files"]))
+
+    def test_a_shelf_entry_is_a_files_entry_with_what_search_needs(self) -> None:
+        lang = self.zz()
+        core = next(f for f in lang["shelves"]
+                    if f["path"] == "decks/zz/zz-culture-ejemplo.yaml")
+        data = (self.tmp / "decks" / "zz" / "zz-culture-ejemplo.yaml").read_bytes()
+        self.assertEqual(core["sha256"], hashlib.sha256(data).hexdigest())
+        self.assertEqual(core["size"], len(data))
+        self.assertEqual(core["kind"], "vocab")
+        self.assertEqual(core["part"], "core")
+        self.assertEqual(core["genre"], "culture")
+        self.assertEqual(core["level"], "A2")
+        self.assertIs(core["hidden"], False)
+        self.assertEqual(core["section"], "beyond-basics")
+        self.assertIs(core["weave"], True)
+        self.assertEqual(core["cards"], 3)
+        self.assertEqual(core["core"], "zz-culture-ejemplo")
+        self.assertNotIn("professional", core)
+
+    def test_a_layer_is_a_shelf_entry_with_its_title_and_native(self) -> None:
+        layer = next(f for f in self.zz()["shelves"]
+                     if f["path"] == "decks/zz/en/zz-en-culture-ejemplo.yaml")
+        self.assertEqual(layer["kind"], "layer")
+        self.assertEqual(layer["native"], "en")
+        self.assertEqual(layer["title"], "Culture: examples")
+        self.assertEqual(layer["genre"], "culture")
+        self.assertEqual(layer["core"], "zz-culture-ejemplo")
+        self.assertEqual(layer["cards"], 3)
+
+    def test_a_reading_deck_counts_its_passages(self) -> None:
+        reading = next(f for f in self.zz()["shelves"]
+                       if f["path"] == "decks/zz/zz-en-culture-lectura.yaml")
+        self.assertEqual(reading["kind"], "reading")
+        self.assertEqual(reading["cards"], 1)
+        self.assertEqual(reading["title"], "Culture: a reading")
+
+    def test_a_hidden_professional_deck_is_listed_with_its_profession(self) -> None:
+        shelves = {f["path"]: f for f in self.zz()["shelves"]}
+        for path in ("decks/zz/zz-medicine-registro.yaml",
+                     "decks/zz/en/zz-en-medicine-registro.yaml"):
+            entry = shelves[path]
+            self.assertIs(entry["hidden"], True)
+            self.assertEqual(entry["professional"], "medicine")
+            self.assertEqual(entry["level"], "B1")
+            self.assertEqual(entry["section"], "professional")
+            self.assertIs(entry["weave"], False)
+
+    def test_a_deck_with_its_own_section_and_weave_keeps_them(self) -> None:
+        deck = self.tmp / "decks" / "zz" / "zz-proverbs-ejemplo.yaml"
+        deck.write_text(deck.read_text(encoding="utf-8").replace(
+            'level: "A2"\n', 'level: "A2"\nweave: false\n', 1), encoding="utf-8")
+        entry = next(f for f in self.zz()["shelves"] if f["path"].endswith(
+            "decks/zz/zz-proverbs-ejemplo.yaml"))
+        self.assertIs(entry["weave"], False)
+        self.assertEqual(entry["section"], "beyond-basics")
+
+    def test_the_size_counts_visible_shelves_only(self) -> None:
+        lang = self.zz()
+        visible = sum(f["size"] for f in lang["shelves"] if not f["hidden"])
+        topics = sum(f["size"] for f in lang["topics"])
+        hidden = sum(f["size"] for f in lang["shelves"] if f["hidden"])
+        self.assertGreater(hidden, 0)
+        self.assertEqual(lang["size"], sum(f["size"] for f in lang["files"])
+                         + visible + topics)
+
+    def test_the_topics_file_is_listed_apart_and_counted(self) -> None:
+        lang = self.zz()
+        self.assertEqual([f["path"] for f in lang["topics"]], ["decks/zz/zz-topics.yaml"])
+        self.assertEqual(lang["topics"][0]["kind"], "topics")
+        self.assertNotIn("decks/zz/zz-topics.yaml", [f["path"] for f in lang["files"]])
+
+    def test_every_new_entry_gates_itself_by_app_version(self) -> None:
+        index = self.index()
+        lang = self.zz(index)
+        self.assertTrue(all(f["min_app"] == "0.9.6" for f in lang["shelves"]))
+        self.assertTrue(all(f["min_app"] == "0.9.6" for f in lang["topics"]))
+        self.assertTrue(all(f["min_app"] == "0.9.6" for f in index["shared"]))
+        self.assertTrue(all("min_app" not in f for f in lang["files"]))
+
+    def test_the_shared_files_are_patterns(self) -> None:
+        shared = self.index()["shared"]
+        self.assertEqual([f["path"] for f in shared], [
+            "decks/sections.yaml", "decks/creators/zz.yaml", "decks/recommendations/zz.yaml"])
+        self.assertEqual([f["kind"] for f in shared],
+                         ["sections", "creators", "recommendations"])
+        data = (self.tmp / "decks" / "creators" / "zz.yaml").read_bytes()
+        self.assertEqual(shared[1]["sha256"], hashlib.sha256(data).hexdigest())
+        self.assertEqual(shared[1]["schema"], 1)
+
+    def test_creator_images_are_listed_under_shared_media(self) -> None:
+        index = self.index()
+        data = (self.tmp / "decks" / "creators" / "images" / "zz-ejemplo-autora.png").read_bytes()
+        self.assertEqual(index["shared_media"], [{
+            "path": "decks/creators/images/zz-ejemplo-autora.png", "size": len(data),
+            "sha256": hashlib.sha256(data).hexdigest(), "kind": "image", "language": "zz"}])
+        self.assertNotIn("decks/creators/images/zz-ejemplo-autora.png",
+                         [f["path"] for f in index["shared"]])
+
+    def test_without_images_there_is_no_shared_media_key(self) -> None:
+        shutil.rmtree(self.tmp / "decks" / "creators" / "images")
+        deck = self.tmp / "decks" / "creators" / "zz.yaml"
+        raw = yaml.safe_load(deck.read_text(encoding="utf-8"))
+        raw["creators"][0].pop("image")
+        deck.write_text(yaml.safe_dump(raw, allow_unicode=True, sort_keys=False),
+                        encoding="utf-8")
+        self.assertNotIn("shared_media", self.index())
+
+    def test_without_the_new_files_the_index_is_what_it_was(self) -> None:
+        shutil.rmtree(self.tmp / "decks" / "creators")
+        shutil.rmtree(self.tmp / "decks" / "recommendations")
+        (self.tmp / "decks" / "sections.yaml").unlink()
+        for name in ("zz-culture-ejemplo", "zz-en-culture-lectura", "zz-medicine-registro",
+                     "zz-multiword-ejemplo", "zz-proverbs-ejemplo", "zz-topics"):
+            (self.tmp / "decks" / "zz" / f"{name}.yaml").unlink()
+        for name in ("culture-ejemplo", "medicine-registro", "multiword-ejemplo",
+                     "proverbs-ejemplo"):
+            (self.tmp / "decks" / "zz" / "en" / f"zz-en-{name}.yaml").unlink()
+        index = self.index()
+        lang = self.zz(index)
+        self.assertNotIn("shared", index)
+        self.assertNotIn("shared_media", index)
+        for key in ("shelves", "topics"):
+            self.assertNotIn(key, lang)
+
+    def test_a_hand_gate_newer_than_the_automatic_one_wins(self) -> None:
+        self.min_app({"files": {"decks/sections.yaml": "0.9.9",
+                                "decks/zz/zz-proverbs-ejemplo.yaml": "0.9.8",
+                                "decks/zz/zz-path.yaml": "0.9.7"}})
+        index = self.index()
+        self.assertEqual(index["shared"][0]["min_app"], "0.9.9")
+        lang = self.zz(index)
+        shelf = next(f for f in lang["shelves"]
+                     if f["path"] == "decks/zz/zz-proverbs-ejemplo.yaml")
+        self.assertEqual(shelf["min_app"], "0.9.8")
+        path = next(f for f in lang["files"] if f["path"] == "decks/zz/zz-path.yaml")
+        self.assertEqual(path["min_app"], "0.9.7")
+
+    def test_a_hand_gate_naming_a_missing_file_is_still_refused(self) -> None:
+        self.min_app({"files": {"decks/zz/zz-nada.yaml": "0.9.9"}})
+        result = self.run_tool()
+        self.assertEqual(result.returncode, 1)
+        self.assertIn("zz-nada.yaml", result.stderr)
+
+    def test_the_index_is_one_entry_per_line_and_checks_clean(self) -> None:
+        self.index()
+        text = (self.tmp / "decks" / "index.json").read_text(encoding="utf-8")
+        line = next(l for l in text.splitlines()
+                    if "decks/zz/zz-proverbs-ejemplo.yaml" in l and "sha256" in l)
+        self.assertIn('"genre": "proverbs"', line)
+        self.assertIn('\n  "shared": [', text)
+        self.assertIn('\n  "shared_media": [', text)
+        self.assertIn('\n      "shelves": [', text)
+        self.assertIn('\n      "topics": [', text)
+        self.assertEqual(self.run_tool("--check").returncode, 0)
+
+    def test_a_language_of_only_topics_is_not_offered(self) -> None:
+        # The topics file is no deck: a language with nothing else is left out.
+        for p in (self.tmp / "decks" / "zz").rglob("*.yaml"):
+            if p.name != "zz-topics.yaml":
+                p.unlink()
+        index = self.index()
+        self.assertEqual(index["languages"], [])
 
 
 if __name__ == "__main__":
