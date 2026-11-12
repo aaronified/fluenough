@@ -16,7 +16,6 @@ import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:fluenough/core/placement/assurance_model.dart';
-import 'package:fluenough/core/placement/drill_down.dart';
 import 'package:fluenough/core/placement/item_registry.dart' show baseFormat;
 import 'package:fluenough/core/placement/joint_model.dart';
 import 'package:fluenough/core/placement/placement_profile.dart';
@@ -1108,7 +1107,6 @@ class V3SimPicker implements SimPicker {
           gateItems: s.gateItems,
           gateSeconds: s.seconds,
           profile: kHarnessProfile,
-          drill: kHarnessDrill,
         ),
   );
 
@@ -1178,9 +1176,6 @@ double percentile(List<num> values, double p) {
 /// The first seed of every cell (the CI runs the gamer and adversary gates
 /// again from other seeds, see the `_b` and `_c` test files).
 int kSeedBase = 0;
-
-/// The drill-down configuration of the harness's pickers (for experiments).
-DrillConfig kHarnessDrill = const DrillConfig();
 
 /// The calibration profile the harness runs under (the built-in default; the
 /// edge test files set [kSafeEdgeProfile]).

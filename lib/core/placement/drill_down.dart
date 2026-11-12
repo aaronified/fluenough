@@ -60,7 +60,7 @@ enum DrillEnd {
 class DrillConfig {
   const DrillConfig({
     this.enabled = true,
-    this.maxCases = 2,
+    this.maxCases = 1,
     this.maxIsolating = 4,
     this.perSkill = 2,
     this.surprise = 0.0,
@@ -69,13 +69,13 @@ class DrillConfig {
     this.identify = 0.8,
     this.wideClasses = 9,
     this.stopAfterSeconds = 150,
-    this.allFailedPerSkill = 1,
+    this.allFailedPerSkill = 2,
     this.fallbackTop = 0.4,
     this.fallbackGap = 0.1,
     this.adaptive = false,
     this.singleMax = 4,
     this.laterMax = 4,
-    this.powerScore = false,
+    this.powerScore = true,
   });
 
   /// The most isolating items of the second drill-down of a run.

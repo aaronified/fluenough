@@ -104,7 +104,7 @@ void main() {
     });
 
     test('each trigger is processed once per skill and band, a drill-down '
-        'asks at most 4 isolating items, and a run has at most 3', () {
+        'asks at most 4 isolating items, and a run has one', () {
       final m = model();
       final d = DrillDown(m);
       DrillCase? start(int deck, int band, String id) {
@@ -139,12 +139,30 @@ void main() {
       expect(first.closed, isTrue);
       // The same skills at the same band do not start another.
       expect(start(61, 4, 'b'), isNull);
-      // Another band does, up to two in all.
-      expect(start(100, 6, 'c'), isNotNull);
-      d.active?.end = DrillEnd.budget;
-      d.active = null;
-      expect(start(130, 8, 'd'), isNull);
-      expect(d.cases.length, 2);
+      // A run has one drill-down (DrillConfig.maxCases): another band does
+      // not start a second.
+      expect(start(100, 6, 'c'), isNull);
+      expect(d.cases.length, 1);
+      // A configuration that allows two starts the second on another band.
+      final two = DrillDown(m, config: const DrillConfig(maxCases: 2));
+      DrillCase? startTwo(int deck, int band, String id) => two.onAnswer(
+        itemSkills: [_read, _write],
+        deck: deck,
+        band: band,
+        right: false,
+        preKnown: {_read: 0.5, _write: 0.5},
+        preAll: 0.3,
+        seconds: 10,
+        testable: _all,
+      );
+      expect(startTwo(60, 4, 'e'), isNotNull);
+      two.active?.end = DrillEnd.budget;
+      two.active = null;
+      expect(startTwo(100, 6, 'f'), isNotNull);
+      two.active?.end = DrillEnd.budget;
+      two.active = null;
+      expect(startTwo(130, 8, 'g'), isNull);
+      expect(two.cases.length, 2);
     });
 
     test('no drill-down starts late in the run, or when it is turned off', () {

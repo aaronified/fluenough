@@ -312,11 +312,9 @@ class PickerConfig {
     double gateSeconds = 0,
     bool yesNoBlock = false,
     PlacementProfile profile = PlacementProfile.defaults,
-    DrillConfig drill = const DrillConfig(),
   }) {
     final gated = gateItems > 0;
     return PickerConfig(
-      drill: drill,
       audio: audio,
       mic: mic,
       recogniser: recogniser,
