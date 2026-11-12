@@ -357,6 +357,7 @@ void main() {
             };
             var withCase = 0;
             var ok = 0;
+            final report = StringBuffer();
             for (var seed = 1; seed <= 100; seed++) {
               final p = V3SimPicker();
               runOnce(
@@ -382,10 +383,20 @@ void main() {
                         : k.verdict == null),
               );
               if (good) ok++;
+              if (!good) {
+                for (final k in cases) {
+                  report.writeln(
+                    'seed $seed ${k.trigger.name} ${k.skills.map((e) => e.name)} '
+                    'deck ${k.deck} end ${k.end?.name} verdict '
+                    '${k.verdict?.name} trail ${k.trail} '
+                    'failAtEnd ${k.failAtEnd.map((a, b) => MapEntry(a.name, b.toStringAsFixed(2)))}',
+                  );
+                }
+              }
             }
             // It started in nearly every run (a mixed item opens each one).
-            expect(withCase, greaterThanOrEqualTo(90));
-            expect(ok / withCase, greaterThanOrEqualTo(0.9));
+            expect(withCase, greaterThanOrEqualTo(90), reason: '$report');
+            expect(ok / withCase, greaterThanOrEqualTo(0.9), reason: '$report');
           });
         }
       }

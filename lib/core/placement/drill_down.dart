@@ -124,6 +124,10 @@ class DrillCase {
   /// thing the isolating items are asked to see past.
   final Map<PlacementSkill, double> logOdds = <PlacementSkill, double>{};
 
+  /// What each isolating item was, in order (`F26+`: a right answer to an
+  /// F26), for the tests' reports.
+  final List<String> trail = <String>[];
+
   /// The isolating items asked, per skill.
   final Map<PlacementSkill, int> asked = <PlacementSkill, int>{};
 
@@ -433,9 +437,11 @@ class DrillDown {
     required bool right,
     required double slip,
     required double guess,
+    String label = '',
   }) {
     final c = active;
     if (c == null) return;
+    c.trail.add('${skill.name}:$label${right ? '+' : '-'}');
     c.asked[skill] = (c.asked[skill] ?? 0) + 1;
     // Likelihood ratio of "failed" against "knows".
     final g = guess.clamp(0.01, 0.99);

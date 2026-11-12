@@ -686,6 +686,7 @@ class V3Picker {
           right: right,
           slip: c.slip,
           guess: c.guess,
+          label: c.format,
         );
       }
       return;
