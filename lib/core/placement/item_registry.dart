@@ -138,6 +138,20 @@ const List<FormatInfo> kFormatInventory = <FormatInfo>[
     leakRisk: 'endings that agree with the sentence; an English hint',
   ),
   FormatInfo(
+    'F28',
+    'English sentence and the target sentence with a blank, pick the word '
+        'of the same class',
+    {_read},
+    0.10,
+    0.25,
+    10,
+    wordLevel: false,
+    options: 4,
+    leakRisk:
+        'an option of another word class; an English hint that fits two '
+        'options; endings that agree with the sentence',
+  ),
+  FormatInfo(
     'F6g',
     'Cloze: the article of a noun whose ending does not show its gender',
     {_read},
@@ -510,6 +524,20 @@ class RegItem {
   /// For a gap-spelling item (F21): the index of the unit left out of
   /// [answerTiles] (the word's units); [accepted] holds the unit to type.
   final int gapIndex;
+
+  /// How many units of [answerTiles] the gap of an F21 item leaves out (one,
+  /// two or three): the units from [gapIndex] on that spell the accepted
+  /// answer.
+  int get gapLength {
+    if (gapIndex < 0 || accepted.isEmpty) return 1;
+    var n = 0;
+    var len = 0;
+    while (len < accepted.first.length && gapIndex + n < answerTiles.length) {
+      len += answerTiles[gapIndex + n].length;
+      n++;
+    }
+    return n < 1 ? 1 : n;
+  }
 
   /// The base lemmas of the item's content words, for the family rule.
   final Set<String> lemmas;

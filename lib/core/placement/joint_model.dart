@@ -347,6 +347,8 @@ class GuessCalibration {
     'F17legacy:clean': 0.95,
     'F17legacy:cognate': 0.95,
     'F6:cognate': 0.90,
+    'F28:clean': 0.35,
+    'F28:cognate': 0.90,
     'S2legacy:clean': 0.98,
     'S2legacy:cognate': 0.98,
   });

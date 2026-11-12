@@ -88,6 +88,7 @@ const Set<String> kScreenFormats = <String>{
   'F21',
   'F26',
   'F27',
+  'F28',
 };
 
 /// One askable item, as the picker sees it. The bank's items are turned into

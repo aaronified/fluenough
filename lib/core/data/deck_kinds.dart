@@ -61,6 +61,10 @@ extension _KindReading on _Reader {
     return null;
   }
 
+  /// The level at [path]: null when absent (open to everyone). A level that
+  /// is present but not one (`b1`, `B3`) or unreadable fails closed, as the
+  /// highest level ([Level.c2]), so it is never offered to a learner who has
+  /// not reached it; the problem is recorded.
   Level? _kindLevel(_Fields fields, String path) {
     final node = fields.node('level');
     if (node == null) return null;
@@ -69,31 +73,41 @@ extension _KindReading on _Reader {
       if (value == null) return null;
       final level = Level.tryParse(value);
       if (level != null) return level;
-      _problem(path, 'is not a level (A1 to C2), left out');
+      _problem(path, 'is not a level (A1 to C2), read as C2');
     } on Object catch (e) {
-      _problem(path, 'could not be read ($e), left out');
+      _problem(path, 'could not be read ($e), read as C2');
     }
-    return null;
+    return Level.c2;
   }
 
-  bool? _kindBool(_Fields fields, String key) {
+  /// [key] as true or false, null when absent. A present value that is not
+  /// one, or unreadable, gives [whenBad] (null, left out, unless given) and
+  /// is recorded.
+  bool? _kindBool(_Fields fields, String key, {bool? whenBad}) {
     final node = fields.node(key);
     if (node == null) return null;
     try {
       final value = _value(node);
       if (value is bool) return value;
-      if (value != null) _problem(key, 'is not true or false, left out');
+      if (value != null) {
+        _problem(key, 'is not true or false, ${_badKind(whenBad)}');
+        return whenBad;
+      }
     } on Object catch (e) {
-      _problem(key, 'could not be read ($e), left out');
+      _problem(key, 'could not be read ($e), ${_badKind(whenBad)}');
+      return whenBad;
     }
     return null;
   }
+
+  String _badKind(bool? whenBad) =>
+      whenBad == null ? 'left out' : 'read as $whenBad';
 
   /// A deck header's kind fields.
   _KindHeader kindHeader(_Fields fields) => (
     genre: _kindText(fields, 'genre'),
     level: _kindLevel(fields, 'level'),
-    hidden: _kindBool(fields, 'hidden') ?? false,
+    hidden: _kindBool(fields, 'hidden', whenBad: true) ?? false,
     professional: _kindText(fields, 'professional'),
     section: _kindText(fields, 'section'),
     weave: _kindBool(fields, 'weave'),

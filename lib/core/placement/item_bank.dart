@@ -291,6 +291,7 @@ class ItemBank {
         _Step(() => pseudoOf('F14')),
         _Step(() => picksOf('F5')),
         _Step(() => picksOf('F17')),
+        _Step(g.sentenceFill),
       ];
     }
     return <_Step>[
@@ -314,6 +315,7 @@ class ItemBank {
       _Step(g.wordOrder),
       _Step(() => picksOf('F5')),
       _Step(() => picksOf('F17')),
+      _Step(g.sentenceFill),
       _Step(g.cloze),
       _Step(g.genderExceptions),
       _Step(g.matching),
