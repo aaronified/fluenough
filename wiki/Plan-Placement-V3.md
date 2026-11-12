@@ -504,3 +504,11 @@ Three gates stay pending: `experts-natives-within-a-tenth`, `honest-confidence` 
 - **Hear with Read (owner, 2026-11-10).** F13 (hear a word, pick its meaning) credits Hear and Read together, a mixed item, so it opens the run and a miss starts a drill-down that isolates Hear with F17; this takes the place of dictation without transcribing. Hear alone is F17 and F14. The stored bank needs no new schema: skills come from the format, not from the stored item.
 - **Skills credited.** Spoken English is not Hear of the language, so none credits Hear: F22 Read; F23 and F25 Write; F24 Write and Read (as F8).
 - **Reviews.** Not in this change: the review shell has no spoken-English prompt on its choice, typing and tile formats yet; follow-up under #1096.
+
+## Look-alike options (owner, 2026-11-12)
+
+- **Meaning only.** Hear and Say items are only about meanings: F13, F17 and F18 (F14 asks whether a heard word exists, and stays for now). No tile, dictation, spelling or transcription task is a Hear or Say item.
+- **Options that look alike.** The options of a sentence pick (F5, F17) share the right one's length band and about as many words (`inOneBand`, `lib/core/scheduling/look_alike.dart`), so no surface cue gives the right one away. The stored item schema is 5.
+- **Legacy calibration.** The heard-sentence pick of the legacy bank, whose right option shape gave away 75% of the time, is calibrated as leaky (`F17legacy`, as `F5legacy`) and never asked; the gamer gates' legacy cells use it.
+- **Grammar, "pick the wrong one".** A list of example sentences of which exactly one is wrong. Built for reviews only (`wrongOneItem`, `lib/core/scheduling/wrong_one.dart`) and made only from wrong examples a deck provides; no deck carries any yet, so nothing offers it. Not yet a placement format: it needs its audit solvers, its screen and an admission verdict.
+- **Reviews.** The wrong options of a choice question come from the cards that look most like the right one (`rankLookAlikes`): one length band, word family, word class, shared tags, nearest spelling.
