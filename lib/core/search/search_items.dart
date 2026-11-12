@@ -386,6 +386,7 @@ class SearchSource {
     this.creators,
     this.sections = DeckSections.empty,
     this.themeNames = const <String, String>{},
+    this.plainCards = true,
   });
 
   final String language;
@@ -412,6 +413,12 @@ class SearchSource {
 
   /// Theme ids to their names, so that a deck is found by its theme.
   final Map<String, String> themeNames;
+
+  /// Whether the cards of a deck with no genre (plain words and sentences) are
+  /// rows too. The Decks tab's own word search finds those, so it turns this
+  /// off and the corpus holds only what that search does not: genre decks'
+  /// cards and every deck's own row.
+  final bool plainCards;
 }
 
 List<String> _folded(Iterable<String?> texts) => <String>[
@@ -522,7 +529,11 @@ List<String> indexLanguage(ItemCorpus corpus, SearchSource source) {
   final allDecks = <Deck>[...source.decks, ...source.addedHidden];
   for (final deck in allDecks) {
     guarded('cards of ${deck.id}', () {
-      corpus.replace(deck.id, deckCardRows(deck, source));
+      final skipped = !source.plainCards && deck.genre == null;
+      corpus.replace(
+        deck.id,
+        skipped ? const <ItemRow>[] : deckCardRows(deck, source),
+      );
     });
   }
   guarded('decks', () {

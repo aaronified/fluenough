@@ -3,6 +3,7 @@ import '../core/decks/deck_index.dart';
 import '../core/decks/topic_resolver.dart';
 import '../core/models/level.dart';
 import '../core/models/situation.dart';
+import 'app_state.dart';
 import 'deck_catalog.dart';
 import 'learner_levels.dart';
 
@@ -146,5 +147,35 @@ class Topics {
       },
       scriptUnits: catalog.scriptFeatures[language] ?? const <String>{},
     );
+  }
+}
+
+final Expando<Map<String, ({List<IndexShelf> shelves, Topics topics})>>
+_topicsKept = Expando<Map<String, ({List<IndexShelf> shelves, Topics topics})>>(
+  'topicsOf',
+);
+
+/// A language's topics for the screens (T19).
+extension TopicsState on AppState {
+  /// [language]'s topics, resolved against the catalog with what is above the
+  /// learner's level still in it (a topic page marks and limits it, never
+  /// hides what it names) and against the index's hidden decks. Kept until the
+  /// catalog or the index's shelves change; what the app log should hear of
+  /// is reported once.
+  Topics topicsOf(String language) {
+    final catalog = catalogWithAboveLevel;
+    final shelves =
+        deckDownloads?.index?.language(language)?.shelves ??
+        const <IndexShelf>[];
+    final byLanguage = _topicsKept[catalog] ??=
+        <String, ({List<IndexShelf> shelves, Topics topics})>{};
+    final kept = byLanguage[language];
+    if (kept != null && identical(kept.shelves, shelves)) return kept.topics;
+    final topics = Topics.of(catalog, language, shelves: shelves);
+    for (final problem in topics.problems) {
+      log.warning('Topics: $problem');
+    }
+    byLanguage[language] = (shelves: shelves, topics: topics);
+    return topics;
   }
 }
