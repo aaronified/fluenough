@@ -18,6 +18,13 @@ Color onAmberOf(BuildContext context) =>
     ? const Color(0xFF2B1A00)
     : const Color(0xFFFFFFFF);
 
+/// The blue of the "Public domain" mark (the approved recommendations
+/// mockup's `--pr`): at least 4.5:1 on the screen, light and dark.
+Color publicDomainOf(BuildContext context) =>
+    Theme.of(context).brightness == Brightness.dark
+    ? const Color(0xFF9ECAFF)
+    : const Color(0xFF1565C0);
+
 /// How a [ResultTag] looks.
 enum ResultTagStyle {
   /// A level: outlined, muted text.
@@ -31,6 +38,10 @@ enum ResultTagStyle {
 
   /// "Above your level": amber outline and text, with a lock.
   above,
+
+  /// "Public domain": blue outline and text, with a tick (the approved
+  /// recommendations mockup's `--pr`).
+  publicDomain,
 }
 
 /// A small rounded label under a result: a kind, a level, "Professional".
@@ -54,6 +65,11 @@ class ResultTag extends StatelessWidget {
       ),
       ResultTagStyle.professional => (amber, onAmberOf(context), null),
       ResultTagStyle.above => (null, amber, amber),
+      ResultTagStyle.publicDomain => (
+        null,
+        publicDomainOf(context),
+        publicDomainOf(context),
+      ),
     };
     return DecoratedBox(
       decoration: BoxDecoration(
@@ -71,6 +87,9 @@ class ResultTag extends StatelessWidget {
           children: <Widget>[
             if (style == ResultTagStyle.above) ...<Widget>[
               Icon(Icons.lock_outline, size: 12, color: foreground),
+              const SizedBox(width: 4),
+            ] else if (style == ResultTagStyle.publicDomain) ...<Widget>[
+              Icon(Icons.check, size: 12, color: foreground),
               const SizedBox(width: 4),
             ],
             Flexible(

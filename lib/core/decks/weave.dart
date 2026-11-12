@@ -16,7 +16,6 @@ import '../data/course_path.dart' show PlanUnit;
 import '../models/card.dart';
 import '../models/card_source.dart';
 import '../models/deck.dart';
-import '../models/level.dart';
 import '../models/reading.dart';
 import 'levels.dart';
 
@@ -38,6 +37,7 @@ class CultureItem {
     required this.level,
     required this.target,
     required this.cardIds,
+    this.cards = const <Card>[],
     this.reading,
     this.meaning,
     this.source,
@@ -75,6 +75,9 @@ class CultureItem {
   /// The ids the learner meets it by: its card, or a passage's questions.
   /// Practising it asks these.
   final List<String> cardIds;
+
+  /// Those cards, as the deck holds them: what a practice drills.
+  final List<Card> cards;
   final Card? card;
   final Passage? passage;
 
@@ -114,6 +117,10 @@ List<CultureItem> cultureItemsOf(
               creators: passage.creators,
               glossary: passage.glossary,
               cardIds: <String>[for (final q in passage.questions) q.id],
+              cards: <Card>[
+                for (final c in deck.cards)
+                  if (c is QuestionCard && c.passage.id == passage.id) c,
+              ],
               passage: passage,
             ),
           );
@@ -135,6 +142,7 @@ List<CultureItem> cultureItemsOf(
             source: card.sourceBlock,
             creators: card.creators,
             cardIds: <String>[card.id],
+            cards: <Card>[card],
             card: card,
           ),
         );

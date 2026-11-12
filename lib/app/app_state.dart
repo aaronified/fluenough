@@ -205,7 +205,7 @@ class AppState extends ChangeNotifier {
     this.logFiles = const PickerLogFiles(),
     this._backupFiles = const PickerBackupFiles(),
     this._backupStore,
-    RecommendationMarkStore? recommendationMarks,
+    this._recommendationMarks,
     this.deckFiles = const PickerDeckFiles(),
     this.links = const LauncherLinks(),
     this.systemSettings = const NullSystemSettings(),
@@ -245,7 +245,6 @@ class AppState extends ChangeNotifier {
        log = log ?? AppLog(),
        _ownsLog = log == null,
        placementBanks = PlacementBanks(store: bankStore, runner: bankRunner),
-       _recommendationMarks = recommendationMarks,
        _profiles = List<Profile>.of(profiles),
        _currentProfileId = currentProfileId ?? profiles.first.id {
     // What is pending follows progress, settings and this state's own
