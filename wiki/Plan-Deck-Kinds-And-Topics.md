@@ -1,4 +1,4 @@
-# Plan: deck kinds, levels, hidden decks, sources, creators, topics and search kinds as data
+# Plan: deck kinds, levels, hidden decks, sources, creators, recommendations, topics and search kinds as data
 
 Owner requests of 2026-11-12: #1133 (culture decks from real works, with the
 people behind them and their legacy), #1134 (culture woven through the
@@ -487,6 +487,92 @@ contested figure; more than one tradition where the region has them; the
 `level` suits the text. A `reviewed` tag on a culture deck needs all of its
 cards and every creator it cites to be checked, and the validator says so.
 
+### D13. Recommendations: popular works that are not reproduced
+
+Culture decks quote works whose rights allow it (D4). **Recommendations** point
+at works the learner should find elsewhere and teach **about** them, never
+reproducing them. A `recommendation` is a record in a deck-owned shared file
+per language, `decks/recommendations/<code>.yaml` (`kind: recommendations`,
+listed in `shared` like `creators`):
+
+```yaml
+schema: 1
+kind: recommendations
+id: "recommendations-te"
+language: "te"
+license: "CC-BY-SA-4.0"
+recommendations:
+  - id: "te-rec-kanyasulkam"        # permanent, `<language>-rec-<slug>`
+    medium: "book"                  # book | film | series | song | play | podcast | comic
+    title: { text: "కన్యాశుల్కం", reading: "kanyāśulkaṁ", ipa: "..." }
+    creator: ["te-gurajada"]        # ids of the creators file (D5); required
+    year: 1892
+    level: "B1"                     # a suggestion of the level it suits (D2)
+    script: "telugu"                # books only: the script the work is printed in
+    briefing: { en: "What it is, why it matters, what to expect." }
+    questions:                      # authored, 3 to 8, in the reading-deck shape
+      - { id: "q1", prompt: { en: "..." }, options: { en: ["...", "...", "..."] }, answer: 1 }
+    legal:                          # optional; never a pirate or unlicensed link
+      - { kind: "library", url: "https://...", note: { en: "Free: public domain" } }
+    quoted_in: "te-culture-kanyasulkam"   # optional: a culture deck that quotes it
+    checked_by: [ ... ]
+```
+
+- **Not reproduced**: no `target` text of the work, no excerpts beyond a title.
+  The questions test comprehension of the work (plot, people, ideas), are in
+  the learner's spoken language, and have `level`-neutral wording. A
+  recommendation holds no `source` block because it quotes nothing; a quote is
+  a culture card.
+- **Legal route**: `legal` is optional. Allowed `kind`: `library`, `publisher`,
+  `store`, `stream`, `archive`, `public-domain`. The validator accepts `https`
+  only and refuses a host on a deny list in the tool (`tools/pirate_hosts.txt`)
+  and any URL whose basis it cannot name; a reviewer confirms each link is the
+  rights-holder's or a library's (D12).
+- **Public-domain works** may be both recommended and quoted: `quoted_in` links
+  a recommendation to the culture deck that quotes it (the id must exist and
+  that deck's cards must cite the same `creator`); the app shows "Read the
+  excerpts in the deck" beside "Read the whole work".
+- **Levels** are D2's: a recommendation above the learner's level is not
+  offered (not listed on the homepage, not indexed as a card); searched like a
+  deck: search kind `recommendations`, row template `card`, added to
+  `sections.yaml` as data.
+- **Learner state is not deck data.** A learner marks a work **completed**; the
+  mark (`recommendation id`, date) is stored in the learner's progress
+  database and backups (`lib/core/data/`), never in a deck or the index. The
+  homepage lists completed works. **Questions are asked only on a completed
+  work**: they enter lessons and reviews as `reading`-mode items (the existing
+  mode, #98) only after the mark, graded like a reading deck's, scheduled with
+  FSRS under the question's id (permanent like a card id). Un-marking stops them.
+- **Books and scripts** (owner's rule, recorded as read; owner question 11):
+  a `book` is recommended **only when the learner's course includes script
+  learning** in that language (the course's path has an `alphabet`, or the
+  learner is on a script-only course), and a **script-only learner** sees only
+  books whose `script` is one they are learning. Films, series, songs, plays,
+  podcasts and comics are not gated by script. The gate is a pure function in
+  `lib/core/decks/recommendations.dart` over the course, so the data needs only
+  `medium` and `script`.
+- Validator: ids unique and permanent; `creator` ids resolve; `year` sane
+  (not before the creator's `born`, not after this year); `questions` 3 to 8
+  with a valid `answer` (reading-deck rules); `script` required for `book`
+  and one of the language's `scripts`; `title` has a reading where the
+  language needs one; `quoted_in` resolves; `reviewed` needs `checked_by`.
+
+### D14. Private decks use the same model
+
+A private package (`wiki/Plan-Private-Languages.md`, `.fnzip`) holds ordinary
+deck files, so it may carry `genre`, `level`, `hidden`, `source`, creators,
+topics and recommendations like any other deck. **The private-decks slice must
+not hard-code the kinds**: its validator and importer reuse `Catalog.parseAll`
+and the same checks (its section 2.4 already says to reuse the app's readers),
+read `sections.yaml` for genres, professions and search kinds, and take the
+`GENRES` table from the one tool, with no second list. Its `manifest.min_app`
+covers the new keys. A private deck's ids sit in the `fnpd-<code>` namespace
+(its section 2.2), so a creator or recommendation id of a package is namespaced
+too, and the rights rules of D4 apply to a private deck's own `source` as a
+reviewer's note only: a private deck is never published, so the public-domain
+floor is a warning there, not an error (owner question 12). Search indexes
+active packages' items under the same kinds.
+
 ## Tasks
 
 Order is the order to build. Each row is **one pull request** (T1 is docs, to
@@ -519,10 +605,16 @@ for an approved mockup (docs/mockups/README.md); every other task can start now.
 | T20 | UI: culture in the course | `lib/features/culture/`, `lib/app/daily_plan.dart` | Weaving, the setting, the creator card and the timeline | widget tests | S | T13, T15, T17 |
 | T21 | Fixtures | `test/fixtures/deck-kinds/decks/` (own root; the sample deck's snapshot tool never touches it), `tools/test_validate_kinds.py`, `test/deck_kinds_fixture_test.dart` | One small Spanish (`es`) set with its own `index.json` made by `deck_index.py` over it: a culture deck (vocab and reading, two creators, one with a licensed image, one placeholder, legacy items, a `quotation` card), a proverbs deck, a multiword deck (vocab) and one grammar deck, a hidden professional deck, `sections.yaml`, `creators/es.yaml`, `es-topics.yaml`, a path naming one genre deck; plus a failing copy of each for the validator tests (under `invalid/`, not validated by CI's whole-tree run) | Python and Dart tests read it | H | T3 to T7 (written alongside them, file by file) |
 | T22 | Release note and check | `CHANGELOG.md`, `tools/check_sample_contract.py` | A line per code PR under Unreleased; the contract check learns the new keys (`shelves`, `topics`, `shared_media`) so decks-live's CI accepts them | existing | H | T9 |
+| T23 | Validator: recommendations file | `tools/validate_decks.py`, `tools/pirate_hosts.txt` | New kind `recommendations`, `decks/recommendations/<code>.yaml`, D13 rules | `tools/test_validate_recommendations.py` | S | T5 |
+| T24 | Index and app parsing: recommendations | `tools/deck_index.py`, `lib/core/models/recommendation.dart`, `lib/core/data/recommendations.dart`, `lib/core/decks/shared_data.dart` | A `shared` pattern for the file; `parseRecommendations`; the script and level gate `lib/core/decks/recommendations.dart` (pure) | `tools/test_deck_index.py`, `test/recommendations_test.dart` | S | T9, T15 |
+| T25 | Completed marks and questions | `lib/core/data/` (a table and a migration), `lib/app/recommendation_progress.dart`, `lib/app/session.dart` | Store completed marks in the progress database and backups; questions join lessons as `reading` items only for completed works; un-mark stops them | `test/recommendation_progress_test.dart`, a backup round trip | S | T24 (drift schema change: high-conflict file, coordinate) |
+| T26 | **MOCKUP** then UI: recommendations on the homepage and the work page | `docs/mockups/culture-in-course.*`, `lib/features/culture/` | The "Completed" mark, the homepage list, the briefing, the legal links, the link to the quoting deck; part of the culture-in-course mockup with the creator card and timeline | widget tests | S | T17, T25 |
+| T27 | Private decks use the kinds | `wiki/Plan-Private-Languages.md` (a cross-reference line), the private importer task of that plan | The importer calls the same parse and validator paths and reads `sections.yaml`; no kind list of its own; a test that a private package with a `genre: proverbs` deck imports and is searchable | `test/private_decks_kinds_test.dart` | S | that plan's importer task, T11, T16 |
+| T28 | Fixtures: creators, recommendations | `test/fixtures/deck-kinds/decks/` | Two creators, a book (with `script`) and a film recommendation, one quoted in a culture deck, one failing copy per rule; a private-package fixture with a genre deck | Python and Dart tests | H | T5, T23 |
 
-Starts without a mockup: T2 to T16, T21, T22 (data model, validator, index,
+Starts without a mockup: T2 to T16, T21 to T25, T27, T28 (data model, validator, index,
 hidden flag, search item indexing). Waits for the mockup: T17 itself first,
-then T18 to T20. Order of the first wave: T1, T2, T3, T7, T4, T5, T6, T8, T9,
+then T18 to T20 and T26. Order of the first wave: T1, T2, T3, T7, T4, T5, T6, T8, T9,
 T10, T11, T12, T13, T14, T15, T16 with T21 written beside each validator task.
 Deck content (works, creators, proverbs, professional decks) starts only when
 the owner resumes deck work, and arrives on decks-live.
@@ -565,3 +657,14 @@ entry. An app that knows the keys but not a later `genre` shows it under
 9. **`quotation` limit**: 25 words and 5 cards per deck: right, or should the
    owner want none at all unless a rights reviewer signs?
 10. **Release number** for `MIN_APP_KINDS`: the release that holds T10 to T12.
+11. **Books and scripts** (D13, as the owner said it): books are recommended only
+    when the course includes script learning, and a script-only learner sees only
+    books in a script they learn. Is that the whole rule, and does a learner on a
+    Latin-script language (Spanish, French) with no script course see books?
+    Default taken: yes, a language whose only script is Latin counts as script
+    learning already done.
+12. **Private decks and rights**: the public-domain floor and the `source` rules
+    are warnings, not errors, in a private package (taken, because it is never
+    published)?
+13. **Recommended works**: may the legal links include stores and streams or
+    only libraries and publishers (default: both, reviewer-confirmed)?

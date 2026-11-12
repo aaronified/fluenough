@@ -3766,6 +3766,8 @@ per UI language (`en` required), `term`, `level`, `kind` (display only) and
 what it covers, any of `decks` (core ids), `units`, `cards`, `grammar` (path
 concept ids), `situations` (sheet ids) and `topics`. It holds no card text.
 
+**Recommendations.** `decks/recommendations/<code>.yaml`, `kind: recommendations`, deck-owned (index `shared`): works to find elsewhere, never reproduced. Each has `id` (`<code>-rec-<slug>`), `medium` (`book`, `film`, `series`, `song`, `play`, `podcast`, `comic`), `title` (`text`, `reading`, `ipa`), `creator` ids, `year`, a suggested `level`, `script` (books), `briefing` per UI language, 3 to 8 authored `questions`, optional `legal` links (https, a library, publisher, store or stream; never a pirate host) and `quoted_in` (a culture deck that quotes the work when it is in the public domain). A learner's "completed" mark is progress data, not deck data; questions are asked only on completed works. Books are recommended only when the course includes script learning.
+
 **Sections file.** `decks/sections.yaml`, `kind: sections`, deck-owned (index
 `shared`): `sections`, `genres` (each with its `section`, `search_kind` and
 `weave`), `professions` and `search_kinds` (`id`, `name`, `row`, `order`). A

@@ -220,3 +220,5 @@ Order: 1, 2, 3, 4, 5, 6 (slice 1); 7, 8, 9, 10; 11, 12; 13, 14; 15; mockup; 16 t
 The staged children in #1017 (stages 0 to 11) are superseded by tasks 1 to 24 above. Each child issue records its `blocked by` links and the `blocked` label (CLAUDE.md).
 
 See also: [Plans-Index](Plans-Index) · [Deck-Format](Deck-Format) · [Backup-Format](Backup-Format) · [ADR-0020](ADR-0020-Added-Decks) · [ADR-0042](ADR-0042-Script-Fonts-Download-Per-Course) · [ADR-0052](ADR-0052-Minimum-App-Version-In-The-Deck-Index) · [Roadmap](Roadmap) · [Home](Home)
+
+See also [Plan-Deck-Kinds-And-Topics](Plan-Deck-Kinds-And-Topics) (D14): a package may carry deck genres, levels, hidden decks, creators, topics and recommendations. The importer must reuse the app's readers and `sections.yaml`, never a list of kinds of its own.
