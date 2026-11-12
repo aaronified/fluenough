@@ -9,8 +9,10 @@
 library;
 
 import 'package:fluenough/app/app_state.dart';
+import 'package:fluenough/app/backup_store.dart';
 import 'package:fluenough/app/deck_catalog.dart';
 import 'package:fluenough/app/memory_progress.dart';
+import 'package:fluenough/app/recommendation_progress.dart';
 import 'package:fluenough/app/settings.dart';
 import 'package:fluenough/core/models/drill_mode.dart';
 
@@ -293,14 +295,19 @@ Future<AppState> cultureApp({
   SettingsNotifier? settings,
   String reach = 'a1',
   Map<String, String>? files,
+  BackupStore? backupStore,
+  RecommendationMarkStore? marks,
+  MemoryProgress? progress,
 }) async {
-  final progress = MemoryProgress();
+  progress ??= MemoryProgress();
   final all = files ?? cultureWorld();
   final s = settings ?? SettingsNotifier(spokenLanguages: const <String>['en']);
   final state = AppState.test(
     decks: MemoryDeckSource(all),
     settings: s,
     progress: progress,
+    backupStore: backupStore,
+    recommendationMarks: marks,
   );
   await state.load();
   if (reach != 'a1') {

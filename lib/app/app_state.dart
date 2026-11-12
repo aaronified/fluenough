@@ -4222,7 +4222,9 @@ class AppState extends ChangeNotifier {
     progress.removeListener(_forgetPending);
     progress.removeListener(_progressChanged);
     settings.removeListener(_settingsChanged);
-    recommendationProgress.removeListener(_marksChanged);
+    recommendationProgress
+      ..removeListener(_marksChanged)
+      ..dispose();
     removeListener(_structureChanged);
     shellTab
       ..removeListener(_logTab)

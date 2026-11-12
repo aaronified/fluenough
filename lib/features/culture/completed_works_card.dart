@@ -49,8 +49,7 @@ class CompletedWorksCard extends StatelessWidget {
     final progress = state.recommendationProgress;
     final byId = <String, Recommendation>{for (final w in offered) w.id: w};
     final done = <Recommendation>[
-      for (final mark in progress.completed)
-        ?byId[mark.recommendationId],
+      for (final mark in progress.completed) ?byId[mark.recommendationId],
     ];
     if (offered.isEmpty && done.isEmpty) return const SizedBox.shrink();
     final withQuestions = done.where((w) => w.questions.isNotEmpty).length;
