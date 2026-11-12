@@ -1,0 +1,75 @@
+name: Tests only
+
+# The red loop (owner, 2026-11-12): after a fix, run only the failing test
+# files instead of the whole CI. Manual only; no secrets, read-only token.
+# Setup steps are copied from the "App: tests" job of ci.yml.
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: "Branch, tag or SHA to test (default: the dispatched ref)"
+        required: false
+        default: ""
+      files:
+        description: "Space-separated test files, e.g. test/a_test.dart test/b_test.dart"
+        required: true
+
+permissions:
+  contents: read
+
+env:
+  FLUTTER_VERSION: "3.47.6"
+
+jobs:
+  tests-only:
+    name: "Tests only"
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - name: Validate the file list
+        env:
+          FILES: ${{ inputs.files }}
+        run: |
+          set -eu
+          n=0
+          for f in $FILES; do
+            if ! printf '%s\n' "$f" | grep -Eq '^test/[A-Za-z0-9_./-]+_test\.dart$'; then
+              echo "::error::Not an allowed test path: $f"
+              exit 1
+            fi
+            case "$f" in *..*) echo "::error::Path has '..': $f"; exit 1;; esac
+            n=$((n + 1))
+          done
+          if [ "$n" -eq 0 ]; then
+            echo "::error::No test files given"
+            exit 1
+          fi
+          echo "Running $n file(s): $FILES"
+
+      - uses: actions/checkout@v7
+        with:
+          ref: ${{ inputs.ref || github.ref }}
+      - uses: subosito/flutter-action@v2
+        with:
+          flutter-version: ${{ env.FLUTTER_VERSION }}
+          channel: stable
+          cache: true
+
+      # android/ and ios/ are generated rather than committed, so CI recreates
+      # them. This also catches a pubspec that no longer matches the SDK.
+      - run: flutter create . --org app --project-name fluenough --platforms=android
+      # flutter create writes a widget_test.dart referencing MyApp; our app
+      # class is FluenoughApp, so the generated boilerplate does not compile.
+      - run: rm -f test/widget_test.dart
+      - run: flutter pub get
+
+      # drift generates database.g.dart, which is gitignored like every other
+      # generated file.
+      - run: dart run build_runner build
+
+      - name: Test
+        env:
+          FILES: ${{ inputs.files }}
+        run: |
+          set -eu
+          flutter test $FILES
