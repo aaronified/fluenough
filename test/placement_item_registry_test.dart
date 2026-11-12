@@ -24,6 +24,7 @@ import 'package:fluenough/core/placement/unit_model.dart';
 import 'package:fluenough/core/placement/v3_grading.dart';
 import 'package:fluenough/core/placement/v3_session.dart';
 import 'package:fluenough/core/placement/joint_model.dart';
+import 'package:fluenough/core/scheduling/look_alike.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 import 'support/placement_v3_harness.dart';
@@ -429,6 +430,10 @@ void main() {
             final card = cx.sentences.firstWhere((s) => s.card.id == it.cardId);
             expect(right, card.english);
             expect(it.options.toSet().length, 4);
+            // The options look alike: one length band, about as many words.
+            for (final o in it.options) {
+              expect(inOneBand(right, o), isTrue, reason: '${it.id}: $o');
+            }
             // No wrong option is the right translation with one word changed
             // (that would make the right one the centre of the four).
             final centre = centrality(it.options);
