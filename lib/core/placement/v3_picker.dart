@@ -58,6 +58,14 @@ const int kRunSoftStopItems = 22;
 /// pool, and never chosen.
 const Set<String> kUnaskableFormats = <String>{'S2', 'F9'};
 
+/// The look-alike word picks (F26 heard, F27 written): the cheap single-skill
+/// isolators of the drill-down. The run's ordinary choice leaves them to the
+/// drill-down, and takes them itself only when nothing else is askable for a
+/// skill (Hear alone, when Read is not in play), so a miss on a mixed item
+/// is still followed by checks that a lucky guess or a slip rarely fools, and
+/// the mixed items keep the run's openers.
+const Set<String> kIsolatorFormats = <String>{'F26', 'F27'};
+
 /// The formats the screens of a run can show. An item of another format (a
 /// cloze, a gender item) is never offered to the picker, whatever the audit
 /// admitted: the screen has none for it.
@@ -1074,6 +1082,7 @@ class V3Picker {
     var bestScore = double.negativeInfinity;
     for (final format in pool.formats) {
       if (relaxed < 2 && _formatRun(format) >= 2) continue;
+      if (relaxed == 0 && kIsolatorFormats.contains(format)) continue;
       final near = _near(
         format,
         band,
