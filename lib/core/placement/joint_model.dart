@@ -46,9 +46,8 @@ const double kProvenGuess = 0.30;
 
 /// The highest guess rate a clean item may have. An item guessed more often
 /// than this may still move the posterior, but it never counts toward the
-/// coverage gate or the proof of a band. Above the 0.38 hedge of the word
-/// picks (F2, F13), below the 0.45 of F3 and F4 (never clean).
-const double kCleanGuessMax = 0.40;
+/// coverage gate or the proof of a band.
+const double kCleanGuessMax = 0.35;
 
 /// An item whose guess rate is this or more gives no evidence and is
 /// dropped (amendment: "drop items with guess >= 0.9").
@@ -303,11 +302,7 @@ class GuessCalibration {
   /// learner re-fit replace it. Keys are `format:class`, where class is
   /// `clean` or `cognate`.
   static const GuessCalibration seed = GuessCalibration(<String, double>{
-    // The word picks: a gamer 0.07 better than the legacy bank's 0.30/0.31
-    // (the margin gate) answers them at 0.37 to 0.38, so the model hedges at
-    // 0.38 (the real bank audits about 0.26). Still clean (under 0.40); the
-    // proof is judged at the item's guess as before (5 of 5 either way).
-    'F2:clean': 0.38,
+    'F2:clean': 0.35,
     'F2:cognate': 0.97,
     'F3:clean': 0.45,
     'F3:cognate': 0.99,
@@ -334,7 +329,7 @@ class GuessCalibration {
     'F8:cognate': 0.12,
     'F9:clean': 0.55,
     'F9:cognate': 0.85,
-    'F13:clean': 0.38,
+    'F13:clean': 0.35,
     'F13:cognate': 0.85,
     'F15:clean': 0.70,
     'F17:clean': 0.35,

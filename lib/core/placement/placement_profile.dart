@@ -130,8 +130,8 @@ class PlacementProfile {
       : v;
 
   /// How far a format's guess rate may be raised: only where the calibrated
-  /// guess stays clean (at most 0.40) at the limit. The pick formats are
-  /// calibrated at 0.35 to 0.38 already, so any raise would make them unclean, and the
+  /// guess stays clean (at most 0.35) at the limit. The pick formats are
+  /// calibrated at 0.35 already, so any raise would make them unclean, and the
   /// honest runs then need far more time (measured: 291 s against 200 s).
   static const Map<String, double> guessLimit = <String, double>{
     'F7': 1.25,

@@ -27,7 +27,7 @@ const Map<String, String> _notAsked = <String, String>{
   'F9': 'matching needs a screen (kUnaskableFormats)',
   'F3':
       'its calibrated guess (0.45, GuessCalibration.seed) is above '
-      'kCleanGuessMax (0.40): it never counts for coverage or proof, so the '
+      'kCleanGuessMax (0.35): it never counts for coverage or proof, so the '
       'picker never chooses it. Provisional until the real-learner re-fit '
       '(step 8)',
   'F4':
