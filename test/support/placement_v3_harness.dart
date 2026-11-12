@@ -129,6 +129,8 @@ String formatKey(String code, BankProfile profile) {
   return switch (code) {
     'F4' => 'F4',
     'F5' => 'F5legacy',
+    // The heard-sentence pick of the legacy bank leaked as the written one.
+    'F17' => 'F17legacy',
     'F6' => 'F6hint',
     _ => code,
   };

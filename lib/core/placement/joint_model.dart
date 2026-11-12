@@ -328,6 +328,11 @@ class GuessCalibration {
     'F15:clean': 0.70,
     'F17:clean': 0.35,
     'F17:cognate': 0.90,
+    // The heard-sentence pick as the adversary found it, before its options
+    // were made to look alike (length band, shared structure): the right
+    // option was found 75% of the time by shape. Never asked.
+    'F17legacy:clean': 0.95,
+    'F17legacy:cognate': 0.95,
     'F6:cognate': 0.90,
     'S2legacy:clean': 0.98,
     'S2legacy:cognate': 0.98,
