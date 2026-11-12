@@ -76,6 +76,14 @@ class LanguagesSettingsPage extends StatelessWidget {
           value: settings.adultContent,
           onChanged: (on) => _setAdult(context, settings, on),
         ),
+        GroupedTile.toggle(
+          leading: GroupedTile.noIcon,
+          title: l10n.settingsHideAbove,
+          subtitleOn: l10n.settingsHideAboveOn,
+          subtitleOff: l10n.settingsHideAboveOff,
+          value: settings.hideAboveLevel,
+          onChanged: (on) => settings.hideAboveLevel = on,
+        ),
         // "Learn Telugu from", for each course more than one of the
         // languages the learner speaks teaches (ADR-0036).
         for (final language in _withNatives(state))

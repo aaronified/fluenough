@@ -159,6 +159,28 @@ class ItemSearchIndex {
 
   /// The grammar concept id an item row's id (`te:te-form`) names.
   String conceptIdOf(ItemRow row) => row.id.substring(row.id.indexOf(':') + 1);
+
+  /// The name of the grammar concept [id]: a rules deck's rule of that id (or
+  /// whose id ends in it), else the id as words.
+  String conceptName(String id) {
+    for (final entry in _catalog.decks) {
+      if (entry.language.code != language) continue;
+      for (final rule in entry.deck.rules) {
+        if (rule.id == id || rule.id.endsWith('-$id')) return rule.name;
+      }
+    }
+    final words = id.replaceAll('-', ' ').trim();
+    return words.isEmpty ? id : words[0].toUpperCase() + words.substring(1);
+  }
+
+  /// The index in the path of the first unit that teaches concept [id], or -1.
+  int conceptUnit(String id) {
+    final plan = path?.plan ?? const <PlanUnit>[];
+    for (final (i, unit) in plan.indexed) {
+      if (unit.grammar.contains(id)) return i;
+    }
+    return -1;
+  }
 }
 
 /// One search over the typed items, with what the screen says about it.

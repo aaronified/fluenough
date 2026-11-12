@@ -15076,5 +15076,631 @@
         "example": "3"
       }
     }
+  },
+  "searchTabsLabel": "Result types",
+  "@searchTabsLabel": {
+    "description": "Semantic label of the tab bar above search results: one tab per type of result."
+  },
+  "searchTabSemantics": "{name}, {count, plural, one{1 result} other{{count} results}}",
+  "@searchTabSemantics": {
+    "description": "Screen-reader label of a search result tab: the type and how many results it has.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Topics"
+      },
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "searchTabBestMatch": "Best match",
+  "@searchTabBestMatch": {
+    "description": "Screen-reader label of the dot on the first search result tab, which holds the best match."
+  },
+  "searchKindSituations": "Situations",
+  "@searchKindSituations": {
+    "description": "Tab of search results: situation sheets. Used when the sections file gives no name."
+  },
+  "searchKindTopics": "Topics",
+  "@searchKindTopics": {
+    "description": "Tab of search results: topics such as a verb form. Used when the sections file gives no name."
+  },
+  "searchKindDecks": "Decks",
+  "@searchKindDecks": {
+    "description": "Tab of search results: decks. Used when the sections file gives no name."
+  },
+  "searchKindConcepts": "Grammar concepts",
+  "@searchKindConcepts": {
+    "description": "Tab of search results: grammar concepts. Used when the sections file gives no name."
+  },
+  "searchKindUnits": "Units",
+  "@searchKindUnits": {
+    "description": "Tab of search results: units of the course path. Used when the sections file gives no name."
+  },
+  "searchKindCulture": "Culture",
+  "@searchKindCulture": {
+    "description": "Tab of search results: culture cards. Used when the sections file gives no name."
+  },
+  "searchKindProverbs": "Proverbs",
+  "@searchKindProverbs": {
+    "description": "Tab of search results: proverbs. Used when the sections file gives no name."
+  },
+  "searchKindMultiword": "Multi-word verbs",
+  "@searchKindMultiword": {
+    "description": "Tab of search results: multi-word verbs. Used when the sections file gives no name."
+  },
+  "searchTagSituation": "Situation",
+  "@searchTagSituation": {
+    "description": "Small tag on a situation result."
+  },
+  "searchTagGrammar": "Grammar",
+  "@searchTagGrammar": {
+    "description": "Small tag on a grammar concept result."
+  },
+  "searchTagProfessional": "Professional · {profession}",
+  "@searchTagProfessional": {
+    "description": "Small tag on a professional situation found in search: the profession it is for.",
+    "placeholders": {
+      "profession": {
+        "type": "String",
+        "example": "Medicine"
+      }
+    }
+  },
+  "searchTagProfessionalPlain": "Professional",
+  "@searchTagProfessionalPlain": {
+    "description": "Small tag on a professional situation whose profession is not named."
+  },
+  "searchAboveYourLevel": "{level} · above your level",
+  "@searchAboveYourLevel": {
+    "description": "Small tag on a search result above the learner's level: its level, with a lock before it. Nothing above the level can be started.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "B1"
+      }
+    }
+  },
+  "searchPhraseCount": "{count, plural, one{1 phrase} other{{count} phrases}}",
+  "@searchPhraseCount": {
+    "description": "How many phrases a situation sheet or a professional deck has.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "9"
+      }
+    }
+  },
+  "searchDeckSummary": "{language} · {cards}",
+  "@searchDeckSummary": {
+    "description": "Line under a deck result: its language and how many cards it has.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Spanish"
+      },
+      "cards": {
+        "type": "String",
+        "example": "30 cards"
+      }
+    }
+  },
+  "searchSituationProfession": "{profession} · {phrases}",
+  "@searchSituationProfession": {
+    "description": "Line under a professional situation: the profession and how many phrases it has.",
+    "placeholders": {
+      "profession": {
+        "type": "String",
+        "example": "Medicine"
+      },
+      "phrases": {
+        "type": "String",
+        "example": "11 phrases"
+      }
+    }
+  },
+  "searchTopicSummary": "{language} · {cards}, {units}, {decks}",
+  "@searchTopicSummary": {
+    "description": "Line under a topic result: its language and how many cards, units and decks it names.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Japanese"
+      },
+      "cards": {
+        "type": "String",
+        "example": "31 cards"
+      },
+      "units": {
+        "type": "String",
+        "example": "4 units"
+      },
+      "decks": {
+        "type": "String",
+        "example": "3 decks"
+      }
+    }
+  },
+  "searchUnitsCount": "{count, plural, one{1 unit} other{{count} units}}",
+  "@searchUnitsCount": {
+    "description": "How many units a topic names.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "4"
+      }
+    }
+  },
+  "searchDecksCount": "{count, plural, one{1 deck} other{{count} decks}}",
+  "@searchDecksCount": {
+    "description": "How many decks a topic or a unit names.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "searchTopicKnown": "You know {percent}% of it",
+  "@searchTopicKnown": {
+    "description": "Under the coverage bar of a topic result: the share of its cards the learner knows.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "39"
+      }
+    }
+  },
+  "searchTopicKnownLabel": "You know {percent} percent of this topic",
+  "@searchTopicKnownLabel": {
+    "description": "Screen-reader label of the coverage bar of a topic result.",
+    "placeholders": {
+      "percent": {
+        "type": "int",
+        "example": "39"
+      }
+    }
+  },
+  "searchUnitTitle": "Unit {number}: {title}",
+  "@searchUnitTitle": {
+    "description": "Title of a unit result.",
+    "placeholders": {
+      "number": {
+        "type": "int",
+        "example": "21"
+      },
+      "title": {
+        "type": "String",
+        "example": "Asking and requesting"
+      }
+    }
+  },
+  "searchUnitPath": "Path · {decks}",
+  "@searchUnitPath": {
+    "description": "Line under a unit result: it is a unit of the course path, and how many decks it has.",
+    "placeholders": {
+      "decks": {
+        "type": "String",
+        "example": "2 decks"
+      }
+    }
+  },
+  "searchAddToCourses": "Add to my courses",
+  "@searchAddToCourses": {
+    "description": "Button on a professional situation found in search: downloads it and adds it to the learner's courses."
+  },
+  "searchAddedToCourses": "Added to your courses",
+  "@searchAddedToCourses": {
+    "description": "Shown on a professional situation the learner added."
+  },
+  "searchOpenDeck": "Open",
+  "@searchOpenDeck": {
+    "description": "Button on a professional situation that was added: opens it."
+  },
+  "searchAdding": "Adding…",
+  "@searchAdding": {
+    "description": "Shown on the Add to my courses button while the deck downloads."
+  },
+  "searchProfessionalNote": "Not shown on Today or the path unless you add it.",
+  "@searchProfessionalNote": {
+    "description": "Under a professional situation found in search: it stays out of Today and the path until added."
+  },
+  "searchProfessionFilterAll": "All professions",
+  "@searchProfessionFilterAll": {
+    "description": "Chip above the situations found in search: no profession chosen."
+  },
+  "searchShowingResultsFor": "Showing results for {query}",
+  "@searchShowingResultsFor": {
+    "description": "Line above results found despite a typo: what the search understood.",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "te-form"
+      }
+    }
+  },
+  "searchOnlyFor": "Search only for “{query}”",
+  "@searchOnlyFor": {
+    "description": "Link after the corrected search line: searches exactly what was typed.",
+    "placeholders": {
+      "query": {
+        "type": "String",
+        "example": "teform"
+      }
+    }
+  },
+  "searchNothingTypedBody": "Try fewer or shorter words, or the English meaning. Search finds situations, topics, decks, grammar, words, units and proverbs in {language} and the languages you learn.",
+  "@searchNothingTypedBody": {
+    "description": "What the search looks in, under the heading of the empty search state.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Japanese"
+      }
+    }
+  },
+  "searchTry": "Try",
+  "@searchTry": {
+    "description": "Heading above suggested searches under the empty search state."
+  },
+  "searchAboveHidden": "{count, plural, one{1 result above your level is hidden} other{{count} results above your level are hidden}}",
+  "@searchAboveHidden": {
+    "description": "Under the results while Hide what is above my level is on: how many results it left out.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "2"
+      }
+    }
+  },
+  "searchShowAbove": "Show them",
+  "@searchShowAbove": {
+    "description": "Button after the hidden-above-level line: turns Hide what is above my level off."
+  },
+  "searchHideAboveHint": "Setting: Hide what is above my level.",
+  "@searchHideAboveHint": {
+    "description": "Hint under the hidden-above-level line, naming the setting."
+  },
+  "searchRecent": "Recent",
+  "@searchRecent": {
+    "description": "Heading above the searches the learner made recently, shown before typing."
+  },
+  "searchFindByType": "Find by type",
+  "@searchFindByType": {
+    "description": "Heading above the types of result, shown before typing."
+  },
+  "searchTabsHint": "Tabs appear after you type, and only for types that have results.",
+  "@searchTabsHint": {
+    "description": "Hint under the types of result, shown before typing."
+  },
+  "searchAboveSheetTitle": "Above your level",
+  "@searchAboveSheetTitle": {
+    "description": "Title of the sheet a result above the learner's level opens."
+  },
+  "searchAboveSheetBody": "{name} starts at {level}. It opens once you reach {level} or are placed past it. Nothing in it can be started yet.",
+  "@searchAboveSheetBody": {
+    "description": "Body of the sheet a result above the learner's level opens.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Unit 38"
+      },
+      "level": {
+        "type": "String",
+        "example": "B1"
+      }
+    }
+  },
+  "searchNotAdded": "Add it from search to practise it.",
+  "@searchNotAdded": {
+    "description": "Under a deck a topic names that the learner has not added."
+  },
+  "settingsHideAbove": "Hide what is above my level",
+  "@settingsHideAbove": {
+    "description": "Switch in Settings: search and topics list what is above the learner's level marked, unless this is on."
+  },
+  "settingsHideAboveOn": "Search leaves out decks, topics and units above your level",
+  "@settingsHideAboveOn": {
+    "description": "Under Hide what is above my level, while it is on."
+  },
+  "settingsHideAboveOff": "Search lists them, marked with their level and locked",
+  "@settingsHideAboveOff": {
+    "description": "Under Hide what is above my level, while it is off."
+  },
+  "topicNotFound": "This topic is not available.",
+  "@topicNotFound": {
+    "description": "Shown on a topic page whose topic the phone does not have."
+  },
+  "topicSubtitle": "{language} · {kind}",
+  "@topicSubtitle": {
+    "description": "Line above a topic's name: its language and what kind of topic it is.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Japanese"
+      },
+      "kind": {
+        "type": "String",
+        "example": "verb forms"
+      }
+    }
+  },
+  "topicKindGrammar": "grammar",
+  "@topicKindGrammar": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindVerbs": "verb forms",
+  "@topicKindVerbs": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindWords": "word class",
+  "@topicKindWords": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindScript": "script",
+  "@topicKindScript": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindRegister": "register",
+  "@topicKindRegister": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindProfession": "profession",
+  "@topicKindProfession": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKindOther": "topic",
+  "@topicKindOther": {
+    "description": "Kind of a topic, in the line above its name."
+  },
+  "topicKnownOf": "You know {known} of {total}.",
+  "@topicKnownOf": {
+    "description": "Under a topic's coverage bar: how many of its cards the learner knows.",
+    "placeholders": {
+      "known": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "31"
+      }
+    }
+  },
+  "topicKnownBarLabel": "{known} of {total} known",
+  "@topicKnownBarLabel": {
+    "description": "Screen-reader label of a topic's coverage bar.",
+    "placeholders": {
+      "known": {
+        "type": "int",
+        "example": "12"
+      },
+      "total": {
+        "type": "int",
+        "example": "31"
+      }
+    }
+  },
+  "topicAboveTitle": "Above your level",
+  "@topicAboveTitle": {
+    "description": "Heading of the notice on a topic that starts above the learner's level."
+  },
+  "topicAboveBody": "This topic starts at {topicLevel}. You can read it, but drills use only cards at {level} or below ({count} here).",
+  "@topicAboveBody": {
+    "description": "Notice on a topic above the learner's level: what can and cannot be done.",
+    "placeholders": {
+      "topicLevel": {
+        "type": "String",
+        "example": "B1"
+      },
+      "level": {
+        "type": "String",
+        "example": "A2"
+      },
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "topicAboveBodyNoLevel": "This topic starts at {topicLevel}. You can read it, but nothing in it can be drilled yet.",
+  "@topicAboveBodyNoLevel": {
+    "description": "Notice on a topic above the level of a learner whose course has no level.",
+    "placeholders": {
+      "topicLevel": {
+        "type": "String",
+        "example": "B1"
+      }
+    }
+  },
+  "topicUnits": "Units",
+  "@topicUnits": {
+    "description": "Heading above the path units a topic names."
+  },
+  "topicDecks": "Decks",
+  "@topicDecks": {
+    "description": "Heading above the decks a topic names."
+  },
+  "topicConcepts": "Grammar",
+  "@topicConcepts": {
+    "description": "Heading above the grammar concepts a topic names."
+  },
+  "topicSituations": "Situations",
+  "@topicSituations": {
+    "description": "Heading above the situation sheets a topic names."
+  },
+  "topicRelated": "Related topics",
+  "@topicRelated": {
+    "description": "Heading above the topics related to a topic."
+  },
+  "topicCharacters": "Characters",
+  "@topicCharacters": {
+    "description": "Heading above the letters, signs and conjuncts a script topic lists."
+  },
+  "topicCardsHeading": "Cards ({shown} of {total})",
+  "@topicCardsHeading": {
+    "description": "Heading above a topic's cards: how many are listed of how many it names at the learner's level.",
+    "placeholders": {
+      "shown": {
+        "type": "int",
+        "example": "5"
+      },
+      "total": {
+        "type": "int",
+        "example": "31"
+      }
+    }
+  },
+  "topicShowAll": "Show all {count}",
+  "@topicShowAll": {
+    "description": "Button under a topic's first cards: lists every one.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "31"
+      }
+    }
+  },
+  "topicShowFewer": "Show fewer",
+  "@topicShowFewer": {
+    "description": "Button that folds a topic's long list of cards."
+  },
+  "topicCardsAbove": "{count, plural, one{1 more card is above your level} other{{count} more cards are above your level}}",
+  "@topicCardsAbove": {
+    "description": "Row after a topic's cards: how many are above the learner's level and so not listed.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "topicDeckCards": "Topic cards: {topic} of {total} cards",
+  "@topicDeckCards": {
+    "description": "Line under a deck on a topic page: how many of its cards belong to the topic.",
+    "placeholders": {
+      "topic": {
+        "type": "int",
+        "example": "18"
+      },
+      "total": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "topicNoCards": "This topic has no cards at your level yet.",
+  "@topicNoCards": {
+    "description": "Shown on a topic page that has no card the learner may be given."
+  },
+  "topicDrill": "Drill this topic",
+  "@topicDrill": {
+    "description": "Button at the foot of a topic page: starts a drill on the topic's cards only."
+  },
+  "topicDrillCount": "Drill this topic · {count, plural, one{1 card} other{{count} cards}}",
+  "@topicDrillCount": {
+    "description": "Button at the foot of a topic page with how many cards the drill uses.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "topicDrillCountLimited": "Drill this topic ({count} at your level)",
+  "@topicDrillCountLimited": {
+    "description": "Button at the foot of a topic page above the learner's level: how many of its cards the learner may drill.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "3"
+      }
+    }
+  },
+  "topicChoose": "Choose…",
+  "@topicChoose": {
+    "description": "Button under the drill button: opens the sheet that chooses how many cards and which skills."
+  },
+  "topicNothingToDrill": "Nothing at your level to drill yet.",
+  "@topicNothingToDrill": {
+    "description": "Under the disabled drill button of a topic with no card at the learner's level."
+  },
+  "topicSheetTitle": "Drill: {name}",
+  "@topicSheetTitle": {
+    "description": "Title of the sheet that chooses a topic's drill.",
+    "placeholders": {
+      "name": {
+        "type": "String",
+        "example": "Te-form"
+      }
+    }
+  },
+  "topicSheetBody": "Cards from this topic only, in the order the scheduler picks them.",
+  "@topicSheetBody": {
+    "description": "First line of the topic drill sheet."
+  },
+  "topicHowMany": "How many",
+  "@topicHowMany": {
+    "description": "Heading of the choice of how many cards a topic drill uses."
+  },
+  "topicHowManyN": "{count} cards",
+  "@topicHowManyN": {
+    "description": "A choice of how many cards a topic drill uses.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "10"
+      }
+    }
+  },
+  "topicHowManyAll": "All ({count})",
+  "@topicHowManyAll": {
+    "description": "The choice that uses every card of the topic at the learner's level.",
+    "placeholders": {
+      "count": {
+        "type": "int",
+        "example": "14"
+      }
+    }
+  },
+  "topicSkills": "Skills",
+  "@topicSkills": {
+    "description": "Heading of the choice of skills a topic drill asks."
+  },
+  "topicSkillRead": "Read",
+  "@topicSkillRead": {
+    "description": "Skill chip in the topic drill sheet: recognising the word."
+  },
+  "topicSkillHear": "Hear",
+  "@topicSkillHear": {
+    "description": "Skill chip in the topic drill sheet: listening."
+  },
+  "topicSkillSay": "Say",
+  "@topicSkillSay": {
+    "description": "Skill chip in the topic drill sheet: speaking."
+  },
+  "topicSkillWrite": "Write",
+  "@topicSkillWrite": {
+    "description": "Skill chip in the topic drill sheet: typing the word."
+  },
+  "topicStartDrill": "Start drill",
+  "@topicStartDrill": {
+    "description": "Button of the topic drill sheet."
+  },
+  "topicOnUnit": "Topics in this unit",
+  "@topicOnUnit": {
+    "description": "Heading above the topics a unit page lists as chips."
+  },
+  "topicLevelLine": "Starts at {level}",
+  "@topicLevelLine": {
+    "description": "Spoken label of a topic's level.",
+    "placeholders": {
+      "level": {
+        "type": "String",
+        "example": "A2"
+      }
+    }
   }
 }
