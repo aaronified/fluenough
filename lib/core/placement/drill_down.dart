@@ -67,7 +67,7 @@ class DrillConfig {
     this.implicate = 0.25,
     this.lucky = 0.2,
     this.identify = 0.8,
-    this.wideClasses = 8,
+    this.wideClasses = 9,
     this.stopAfterSeconds = 150,
   });
 
@@ -97,7 +97,8 @@ class DrillConfig {
   final double identify;
 
   /// An interval wider than this many classes starts a drill-down (the plan
-  /// says 6; 8 keeps the amateur-declared cells inside the time gate).
+  /// says 6; 9 keeps the amateur-declared cells inside the item gate now that
+  /// Hear can be isolated in Hindustani too).
   final int wideClasses;
 
   /// No drill-down starts after this many seconds of the run.
