@@ -144,11 +144,7 @@ class Topics {
             in catalog.situations[language]?.situations ?? const <Situation>[])
           s.id,
       },
-      scriptUnits: <String>{
-        for (final guide in catalog.scriptGuides.values)
-          if (guide.language == language)
-            for (final feature in guide.features) feature.id,
-      },
+      scriptUnits: catalog.scriptFeatures[language] ?? const <String>{},
     );
   }
 }

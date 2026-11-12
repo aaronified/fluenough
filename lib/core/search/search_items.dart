@@ -532,8 +532,7 @@ List<String> indexLanguage(ItemCorpus corpus, SearchSource source) {
       for (final shelf in source.shelves)
         if (shelf.hidden &&
             !shelf.isCore &&
-            shelf.file.deck != null &&
-            !loaded.contains(shelf.file.deck))
+            !loaded.contains(_shelfDeckId(shelf, language)))
           _shelfRow(shelf, source),
     ]);
   });
@@ -611,6 +610,17 @@ List<String> indexLanguage(ItemCorpus corpus, SearchSource source) {
   return problems;
 }
 
+/// The id the deck of [shelf] has once loaded: the index lists a deck by its
+/// core id (`te-health`), and the deck of a native language is
+/// `te-en-health`.
+String _shelfDeckId(IndexShelf shelf, String language) {
+  final core = shelf.deckKey;
+  final native = shelf.file.native;
+  return native != null && core.startsWith('$language-')
+      ? '$language-$native-${core.substring(language.length + 1)}'
+      : core;
+}
+
 ItemRow _shelfRow(IndexShelf shelf, SearchSource source) {
   final sections = source.sections;
   final genre = sections.genre(shelf.genre);
@@ -623,7 +633,7 @@ ItemRow _shelfRow(IndexShelf shelf, SearchSource source) {
       : ResultKind.decks;
   return ItemRow(
     type: SearchItemType.deck,
-    id: shelf.file.deck!,
+    id: _shelfDeckId(shelf, source.language),
     kind: kind,
     fields: _folded(<String?>[
       shelf.title,

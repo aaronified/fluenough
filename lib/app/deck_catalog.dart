@@ -216,6 +216,7 @@ class Catalog {
     Map<String, RecommendationsFile> recommendations =
         const <String, RecommendationsFile>{},
     List<String> dataProblems = const <String>[],
+    Map<String, Set<String>> scriptFeatures = const <String, Set<String>>{},
     Map<String, NumberRules> numberRules = const <String, NumberRules>{},
     Map<String, CoursePath> paths = const <String, CoursePath>{},
     Map<String, LanguagePath> languagePaths = const <String, LanguagePath>{},
@@ -234,6 +235,7 @@ class Catalog {
          recommendations,
        ),
        dataProblems = List<String>.unmodifiable(dataProblems),
+       scriptFeatures = Map<String, Set<String>>.unmodifiable(scriptFeatures),
        numberRules = Map<String, NumberRules>.unmodifiable(numberRules),
        paths = Map<String, CoursePath>.unmodifiable(paths),
        languagePaths = Map<String, LanguagePath>.unmodifiable(languagePaths),
@@ -263,6 +265,12 @@ class Catalog {
   /// What in the topics, creators and recommendations files could not be read
   /// and was left out, one line each with its file, for the log.
   final List<String> dataProblems;
+
+  /// The ids of each language's script guide features (`features[].id`), by
+  /// language code, from the guides and from a guide's core alone: what a
+  /// script topic's `script_units` name. A core with no layer has no
+  /// [ScriptGuide] here but its features are known.
+  final Map<String, Set<String>> scriptFeatures;
 
   /// Each language's rules for spelling a generated number (#54), by
   /// language code. A language without a numbers file has none.
@@ -378,6 +386,7 @@ class Catalog {
     creators: creators,
     recommendations: recommendations,
     dataProblems: dataProblems,
+    scriptFeatures: scriptFeatures,
     numberRules: numberRules,
     paths: paths,
     languagePaths: languagePaths,
@@ -1041,6 +1050,16 @@ class DeckCatalog {
         if (entry.deck.hidden) entry,
     ];
     final placed = _placed(_coursePaths(languagePaths, resolved), resolved);
+    final scriptFeatures = <String, Set<String>>{};
+    for (final guide in <Object>[
+      ...guideCores.values,
+      ...scriptGuides.values,
+    ]) {
+      if (guide is! ScriptGuide) continue;
+      (scriptFeatures[guide.language] ??= <String>{}).addAll(<String>[
+        for (final feature in guide.features) feature.id,
+      ]);
+    }
     return Catalog(
       decks: _inTeachingOrder(resolved, themes, placed),
       hidden: added,
@@ -1053,6 +1072,7 @@ class DeckCatalog {
       creators: creators,
       recommendations: recommendations,
       dataProblems: dataProblems,
+      scriptFeatures: scriptFeatures,
       numberRules: numberRules,
       paths: placed,
       languagePaths: languagePaths,
