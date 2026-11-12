@@ -79,3 +79,78 @@ cards:
         word: "いけ"
         reading: "ike"
         kind: "word"
+  - id: "ja-4159"
+    target: "こうえんはしずかです。"
+    words: ["こうえん", "は", "しずか", "です"]
+    reading: "kouen wa shizuka desu."
+    ipa: "koːeɴ wa ɕidzɯka desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "しずか", base: "しずか", reading: "shizuka" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "うみ"
+        reading: "umi"
+        kind: "word"
+      - id: "w2"
+        word: "もり"
+        reading: "mori"
+        kind: "word"
+  - id: "ja-4160"
+    target: "うみはひろいです。"
+    words: ["うみ", "は", "ひろい", "です"]
+    reading: "umi wa hiroi desu."
+    ipa: "ɯmi wa çiɾoi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "ひろい", base: "ひろい", reading: "hiroi" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "もり"
+        reading: "mori"
+        kind: "word"
+      - id: "w2"
+        word: "こうえん"
+        reading: "kouen"
+        kind: "word"
+  - id: "ja-4161"
+    target: "がっこうはえきのちかくです。"
+    words: ["がっこう", "は", "えき", "の", "ちかく", "です"]
+    reading: "gakkou wa eki no chikaku desu."
+    ipa: "ɡakkoː wa eki no tɕikakɯ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "の", base: "の", reading: "no" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "としょかん"
+        reading: "toshokan"
+        kind: "word"
+      - id: "w2"
+        word: "びょういん"
+        reading: "byouin"
+        kind: "word"
+  - id: "ja-4162"
+    target: "こうえんにいきます。"
+    words: ["こうえん", "に", "いきます"]
+    reading: "kouen ni ikimasu."
+    ipa: "koːeɴ ni ikimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "いきます", base: "いく", reading: "iku" }
+    confusables:
+      - id: "w1"
+        word: "うみ"
+        reading: "umi"
+        kind: "word"
+      - id: "w2"
+        word: "もり"
+        reading: "mori"
+        kind: "word"

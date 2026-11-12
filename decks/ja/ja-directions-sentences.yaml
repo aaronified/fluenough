@@ -65,3 +65,79 @@ cards:
     confusables:
       - { id: "w1", word: "きょり", reading: "kyori", kind: "word" }
       - { id: "w2", word: "あんない", reading: "annai", kind: "word" }
+  - id: "ja-4135"
+    target: "みぎにまがってください。"
+    words: ["みぎ", "に", "まがって", "ください"]
+    reading: "migi ni magatte kudasai."
+    ipa: "miɡi ni maɡatte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "まがって", base: "まがる", reading: "magaru" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - id: "w1"
+        word: "ひだり"
+        reading: "hidari"
+        kind: "word"
+      - id: "w2"
+        word: "ここ"
+        reading: "koko"
+        kind: "word"
+  - id: "ja-4136"
+    target: "ひだりにこうえんがあります。"
+    words: ["ひだり", "に", "こうえん", "が", "あります"]
+    reading: "hidari ni kouen ga arimasu."
+    ipa: "çidaɾi ni koːeɴ ga aɾimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "に", base: "に", reading: "ni" }
+      - { word: "が", base: "が", reading: "ga" }
+      - { word: "あります", base: "ある", reading: "aru" }
+    confusables:
+      - id: "w1"
+        word: "みぎ"
+        reading: "migi"
+        kind: "word"
+      - id: "w2"
+        word: "あそこ"
+        reading: "asoko"
+        kind: "word"
+  - id: "ja-4137"
+    target: "こうえんはとおいです。"
+    words: ["こうえん", "は", "とおい", "です"]
+    reading: "kouen wa tooi desu."
+    ipa: "koːeɴ wa toːi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "とおい", base: "とおい", reading: "tooi" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "ちかい"
+        reading: "chikai"
+        kind: "word"
+      - id: "w2"
+        word: "あそこ"
+        reading: "asoko"
+        kind: "word"
+  - id: "ja-4138"
+    target: "ここでまがってください。"
+    words: ["ここ", "で", "まがって", "ください"]
+    reading: "koko de magatte kudasai."
+    ipa: "koko de maɡatte kɯdasai"
+    pos: "phrase"
+    bases:
+      - { word: "で", base: "で", reading: "de" }
+      - { word: "まがって", base: "まがる", reading: "magaru" }
+      - { word: "ください", base: "ください", reading: "kudasai" }
+    confusables:
+      - id: "w1"
+        word: "みぎ"
+        reading: "migi"
+        kind: "word"
+      - id: "w2"
+        word: "ひだり"
+        reading: "hidari"
+        kind: "word"

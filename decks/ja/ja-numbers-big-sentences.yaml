@@ -61,3 +61,80 @@ cards:
     confusables:
       - { id: "w1", word: "おく", reading: "oku", kind: "word" }
       - { id: "w2", word: "じゅうまん", reading: "juuman", kind: "word" }
+  - id: "ja-4155"
+    target: "ひゃくえんはやすいです。"
+    words: ["ひゃくえん", "は", "やすい", "です"]
+    reading: "hyakuen wa yasui desu."
+    ipa: "çakɯeɴ wa jasɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "やすい", base: "やすい", reading: "yasui" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "ひゃくえん", base: "ひゃくえん", reading: "hyakuen" }
+    confusables:
+      - id: "w1"
+        word: "まん"
+        reading: "man"
+        kind: "word"
+      - id: "w2"
+        word: "いち"
+        reading: "ichi"
+        kind: "word"
+  - id: "ja-4156"
+    target: "ばんごうはいちです。"
+    words: ["ばんごう", "は", "いち", "です"]
+    reading: "bangou wa ichi desu."
+    ipa: "baɴɡoː wa itɕi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "ひゃく"
+        reading: "hyaku"
+        kind: "word"
+      - id: "w2"
+        word: "まん"
+        reading: "man"
+        kind: "word"
+  - id: "ja-4157"
+    target: "まんえんはたかいです。"
+    words: ["まんえん", "は", "たかい", "です"]
+    reading: "man'en wa takai desu."
+    ipa: "maɴeɴ wa takai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たかい", base: "たかい", reading: "takai" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "まんえん", base: "まんえん", reading: "man'en" }
+    confusables:
+      - id: "w1"
+        word: "えん"
+        reading: "en"
+        kind: "word"
+      - id: "w2"
+        word: "ひゃく"
+        reading: "hyaku"
+        kind: "word"
+  - id: "ja-4158"
+    target: "やさいはひゃくえんです。"
+    words: ["やさい", "は", "ひゃくえん", "です"]
+    reading: "yasai wa hyakuen desu."
+    ipa: "jasai wa çakɯeɴ desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "です", base: "です", reading: "desu" }
+      - { word: "ひゃくえん", base: "ひゃくえん", reading: "hyakuen" }
+    confusables:
+      - id: "w1"
+        word: "まん"
+        reading: "man"
+        kind: "word"
+      - id: "w2"
+        word: "いち"
+        reading: "ichi"
+        kind: "word"
