@@ -178,6 +178,8 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1133](https://github.com/aaronified/fluenough/issues/1133) Culture decks from real-world works (public domain first), for every first-list language
 - [#1134](https://github.com/aaronified/fluenough/issues/1134) Culture items woven through the courses at the right level (not a separate shelf only)
 - [#1135](https://github.com/aaronified/fluenough/issues/1135) Proverb decks, levelled, for every first-list language
+- [#1136](https://github.com/aaronified/fluenough/issues/1136) Phrasal and multi-word verb decks, levelled, in the languages that have them
+- [#1137](https://github.com/aaronified/fluenough/issues/1137) Topics for deck search: language-specific grammar topics, and search must cover situations decks
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
