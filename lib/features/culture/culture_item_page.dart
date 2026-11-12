@@ -313,7 +313,11 @@ class _Practise extends StatelessWidget {
   Widget build(BuildContext context) {
     final l10n = AppLocalizations.of(context)!;
     final settings = AppScope.of(context).settings;
-    if (item.cards.isEmpty) return const SizedBox.shrink();
+    // With culture off its decks are in no lesson or session, so there is
+    // nothing to practise; the item can still be read.
+    if (item.cards.isEmpty || !settings.cultureItems) {
+      return const SizedBox.shrink();
+    }
     // A passage is learned through its questions, a lesson of its deck; any
     // other item is one card, a session of its own.
     final request = item.isPassage
