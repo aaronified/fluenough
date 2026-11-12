@@ -7078,6 +7078,146 @@
   "@voicesSpeechMissing": {
     "description": "Status: the phone cannot recognise this language."
   },
+  "voicesAiTitle": "AI listener",
+  "@voicesAiTitle": {
+    "description": "Heading of the row on a language’s card on the Voices page, under Speaking, for the offline speech recogniser that downloads to the phone. AI listener is the feature’s name."
+  },
+  "voicesAiNotInstalled": "Not installed, about {size}",
+  "@voicesAiNotInstalled": {
+    "description": "Status under the AI listener heading before it is downloaded; the size is the download, such as 131.1 MB.",
+    "placeholders": {
+      "size": {
+        "type": "String",
+        "example": "131.1 MB"
+      }
+    }
+  },
+  "voicesAiNotInstalledNoSize": "Not installed",
+  "@voicesAiNotInstalledNoSize": {
+    "description": "Status under the AI listener heading before it is downloaded, while the download’s size is not known."
+  },
+  "voicesAiInstall": "Install",
+  "@voicesAiInstall": {
+    "description": "Button of the AI listener row: downloads it."
+  },
+  "voicesAiInstallLabel": "Install the AI listener for {language}",
+  "@voicesAiInstallLabel": {
+    "description": "Screen-reader label of the AI listener’s Install and Try again buttons.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesAiDownloading": "Downloading {done} of {total}",
+  "@voicesAiDownloading": {
+    "description": "Status of the AI listener row while it downloads; both are sizes, such as 40.2 MB.",
+    "placeholders": {
+      "done": {
+        "type": "String",
+        "example": "40.2 MB"
+      },
+      "total": {
+        "type": "String",
+        "example": "131.1 MB"
+      }
+    }
+  },
+  "voicesAiProgressLabel": "Downloading the AI listener for {language}, {percent} percent",
+  "@voicesAiProgressLabel": {
+    "description": "Screen-reader label of the AI listener’s progress bar.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      },
+      "percent": {
+        "type": "int",
+        "example": "40"
+      }
+    }
+  },
+  "voicesAiCancel": "Cancel",
+  "@voicesAiCancel": {
+    "description": "Button of the AI listener row while it downloads: stops the download."
+  },
+  "voicesAiCancelLabel": "Cancel the AI listener download for {language}",
+  "@voicesAiCancelLabel": {
+    "description": "Screen-reader label of the AI listener’s Cancel button.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesAiInstalled": "Installed. Works without a connection",
+  "@voicesAiInstalled": {
+    "description": "Status of the AI listener row once downloaded."
+  },
+  "voicesAiRemove": "Remove",
+  "@voicesAiRemove": {
+    "description": "Button of the AI listener row once installed: deletes the download to free the space."
+  },
+  "voicesAiRemoveLabel": "Remove the AI listener for {language}",
+  "@voicesAiRemoveLabel": {
+    "description": "Screen-reader label of the AI listener’s Remove button.",
+    "placeholders": {
+      "language": {
+        "type": "String",
+        "example": "Telugu"
+      }
+    }
+  },
+  "voicesAiRetry": "Try again",
+  "@voicesAiRetry": {
+    "description": "Button of the AI listener row after a failed download."
+  },
+  "voicesAiFailedNetwork": "Could not download. Check the connection and try again",
+  "@voicesAiFailedNetwork": {
+    "description": "Status of the AI listener row when the download failed for want of a network."
+  },
+  "voicesAiFailedSpace": "Not enough room on this phone",
+  "@voicesAiFailedSpace": {
+    "description": "Status of the AI listener row when the phone ran out of storage."
+  },
+  "voicesAiFailedChecksum": "The download was damaged. Try again",
+  "@voicesAiFailedChecksum": {
+    "description": "Status of the AI listener row when a downloaded file did not match what was published."
+  },
+  "voicesAiFailedOther": "Could not install. Try again",
+  "@voicesAiFailedOther": {
+    "description": "Status of the AI listener row when the download failed for another reason; the app log has the detail."
+  },
+  "sourcesListener": "AI listener",
+  "@sourcesListener": {
+    "description": "Heading of a group on the Sources screen: the credits of the offline speech recogniser. AI listener is the feature’s name."
+  },
+  "sourcesListenerOnnx": "ONNX Runtime: MIT",
+  "@sourcesListenerOnnx": {
+    "description": "Credit on the Sources screen for the runtime that runs the AI listener’s model. Names stay as they are."
+  },
+  "sourcesListenerOnnxLine": "The AI listener runs on Microsoft’s ONNX Runtime, under the MIT licence.",
+  "@sourcesListenerOnnxLine": {
+    "description": "The line under the ONNX Runtime credit. Names stay as they are."
+  },
+  "sourcesListenerModel": "IndicConformer: MIT",
+  "@sourcesListenerModel": {
+    "description": "Credit on the Sources screen for the speech model behind the AI listener. Names stay as they are."
+  },
+  "sourcesListenerModelLine": "The Telugu AI listener is AI4Bharat’s IndicConformer model, under the MIT licence, converted to run on the phone.",
+  "@sourcesListenerModelLine": {
+    "description": "The line under the IndicConformer credit. Names stay as they are."
+  },
+  "sourcesListenerData": "IndicVoices: CC BY 4.0",
+  "@sourcesListenerData": {
+    "description": "Credit on the Sources screen for the speech recordings the AI listener’s model was trained on. Names stay as they are."
+  },
+  "sourcesListenerDataLine": "The model was trained on AI4Bharat’s IndicVoices recordings, licensed CC BY 4.0.",
+  "@sourcesListenerDataLine": {
+    "description": "The line under the IndicVoices credit. Names stay as they are."
+  },
   "voicesNone": "No decks are loaded, so there are no languages to check.",
   "@voicesNone": {
     "description": "Shown when there are no languages."

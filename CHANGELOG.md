@@ -9,6 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- The Telugu on-device AI listener can be installed from the Voices page (not installed, downloading with Cancel, installed with Remove, failed with Try again), downloaded from the `models` release with its SHA-256 checked and resumable; `tools/asr/publish_manifest.py` writes the manifest. The Sources screen credits ONNX Runtime (MIT), AI4Bharat IndicConformer (MIT) and IndicVoices (CC BY 4.0). Telugu only for now (#1004).
 - Find my level has a new cheap question for Hearing and Reading: hear or read a word and pick its meaning among six look-alike options (same length band, same word class, similar form), so a lucky guess is about one in six and a slip is rare; the isolating checks that follow a miss use it (#1097).
 - Find my level asks the reverse too: the English is spoken and shown, and you choose, type or arrange the answer in the language (#1106).
 - On-device listener: engine and preferred-engine wiring (#1004).
@@ -29,6 +30,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Deck-owned data (the theme list first) now lives on decks-live and updates with the decks, so a new theme needs no app release (owner request). The copy bundled in the app is the fallback for an offline first start and an app that cannot read the new file.
 - CI: test shard weights refreshed so the 8 shards finish together.
 - CI: the heavy placement suites run only when placement changes and nightly (#1004 owner request). `test/heavy_tests.json` lists them; `tools/test_shard.py --exclude-heavy` leaves them out before the 8 shards are balanced.
+
+### Fixed
+
+- Say works again: recording no longer runs at the same time as online recognition; #1107. The recogniser has the microphone alone, as before 0.9.4, and Hear yourself records a take after the attempt.
+- CI: the web smoke test no longer fails when the runner cannot reach the apt mirror (#1102).
 
 ### Fixed
 
