@@ -318,15 +318,20 @@ class GuessCalibration {
     'F6hint:cognate': 0.75,
     'F6endings:clean': 0.99,
     'F6:clean': 0.35,
-    'F7:clean': 0.05,
+    // The typed and tiled formats: a gamer 0.07 better than measured (the
+    // margin gate) answers them at the design guess plus 0.07, so the model
+    // hedges at that (F7 0.03, F8 0.05, F21 0.10, F18 0.03 by design).
+    'F7:clean': 0.10,
     'F7:cognate': 0.55,
-    'F8:clean': 0.09,
+    'F8:clean': 0.12,
     'F9:clean': 0.55,
     'F9:cognate': 0.85,
     'F13:clean': 0.35,
     'F13:cognate': 0.85,
     'F15:clean': 0.70,
     'F17:clean': 0.35,
+    'F18:clean': 0.10,
+    'F21:clean': 0.17,
     'F17:cognate': 0.90,
     // The six-option look-alike word picks: the best solver's upper bound of
     // the audit stays under 0.20 (a sixth by chance), and the admission bound

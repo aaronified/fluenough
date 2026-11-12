@@ -17,6 +17,7 @@ ones that matter most; read the section before acting on one.
 - **Docs straight to main:** a change to Markdown docs only is pushed to main with no PR and no CI check ([Git, PRs and CI](#git-prs-and-ci)).
 - **PRs for everything else:** code, decks, `decks/index.json` and the CHANGELOG go through a pull request, with CI green and one review ([Git, PRs and CI](#git-prs-and-ci)).
 - **Tests run only in CI:** no agent runs the tests or the deck validator locally ([Git, PRs and CI](#git-prs-and-ci)).
+- **Red loop:** while CI is red, rerun only the failing job or the failing test files until they pass, then run the full CI once ([Git, PRs and CI](#git-prs-and-ci)).
 - **No stray branches:** never push a branch after its PR has merged, and never push scratch, review or worktree branches ([Git, PRs and CI](#git-prs-and-ci)).
 - **No tags:** never create or push git tags; only the owner tags releases ([Tags](#tags-owner-2026-10-12)).
 - **Off limits:** `homelab-stacks` is never cloned, modified or pushed to ([Repositories off limits](#repositories-off-limits-owner-2026-10-12)).
@@ -156,6 +157,7 @@ contributor.
   just to run tests. CI runs them for free. Code and deck commits are checked
   by CI: after pushing, read CI's result. A docs-only push to main needs no CI
   check.
+- **Red loop** (owner, 2026-11-12: "Just rerun the CI that is failing till it is fixed. Then run full. This is simply wasting time."). While a pull request's CI is red, do not run the whole CI after every fix. Rerun only what is failing: the failing job of the same run (`rerun-failed-jobs`), or, after a new commit, only the failing test files with the `Tests only` workflow (`.github/workflows/tests-only.yml`, `workflow_dispatch`, inputs `ref` and `files`) once it exists on the branch. When those pass, run the full CI once. A coder pushes the fix and stops; it does not poll CI.
 - **Irrelevant checks** (owner, 2026-10-22). When reading CI for a change,
   ignore failing checks that are irrelevant to it. A deck-only change needs
   only "Validate decks" and "Released app reads the decks" green (#524, owner,
