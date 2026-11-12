@@ -798,7 +798,9 @@ class V3Picker {
           if (cand.pseudo || cand.yesNo || cand.seconds > budget) continue;
           // At the level of the item that was missed: the nearest deck.
           final far = (cand.deck - c.deck).abs();
-          final score = (_information(cand) + 0.2) / cand.seconds - 0.01 * far;
+          final score = config.drill.powerScore
+              ? _power(cand) / cand.seconds - 0.01 * far
+              : (_information(cand) + 0.2) / cand.seconds - 0.01 * far;
           if (score > bestScore) {
             bestScore = score;
             best = cand;
@@ -808,6 +810,14 @@ class V3Picker {
       if (best != null) return best;
     }
     return null;
+  }
+
+  /// The evidence the two answers to [c] carry, in nats: a wrong answer
+  /// against a slip, a right one against a guess.
+  static double _power(PickerCandidate c) {
+    final g = c.guess.clamp(0.01, 0.99);
+    final s = c.slip.clamp(0.01, 0.99);
+    return math.log((1 - g) / s) + math.log((1 - s) / g);
   }
 
   PickerCandidate? _take(PickerCandidate c) {

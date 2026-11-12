@@ -7,8 +7,8 @@ import 'package:flutter_test/flutter_test.dart' show Timeout;
 import 'support/placement_v3_experiment.dart';
 
 void main() => experiment(<String, DrillConfig>{
-  'base': const DrillConfig(),
-  'af2': const DrillConfig(allFailedPerSkill: 2),
-  'adapt': const DrillConfig(adaptive: true),
-  'af2+adapt': const DrillConfig(allFailedPerSkill: 2, adaptive: true),
+  'p': const DrillConfig(powerScore: true),
+  'p+af2': const DrillConfig(powerScore: true, allFailedPerSkill: 2),
+  'p+af2+cases1': const DrillConfig(powerScore: true, allFailedPerSkill: 2, maxCases: 1),
+  'af2+cases1': const DrillConfig(allFailedPerSkill: 2, maxCases: 1),
 });

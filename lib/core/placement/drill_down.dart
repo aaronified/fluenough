@@ -74,7 +74,17 @@ class DrillConfig {
     this.fallbackGap = 0.1,
     this.adaptive = false,
     this.singleMax = 4,
+    this.laterMax = 4,
+    this.powerScore = false,
   });
+
+  /// The most isolating items of the second drill-down of a run.
+  final int laterMax;
+
+  /// Whether the picker chooses an isolating item by the evidence its answers
+  /// carry per second (a cheap, hard-to-guess item first) instead of the
+  /// chance-weighted information.
+  final bool powerScore;
 
   /// Isolating items each implicated skill needs before the case may end as
   /// [DrillEnd.allFailed] (a first wrong answer may be a slip).
@@ -409,7 +419,7 @@ class DrillDown {
   PlacementSkill? next() {
     final c = active;
     if (c == null) return null;
-    if (c.isolating >= config.maxIsolating) {
+    if (c.isolating >= _cap(c)) {
       _close(c, DrillEnd.budget);
       return null;
     }
@@ -460,6 +470,12 @@ class DrillDown {
     return open.first;
   }
 
+  /// The most isolating items of [c]: the later drill-downs of a run may get
+  /// fewer.
+  int _cap(DrillCase c) => cases.indexOf(c) >= 1
+      ? math.min(config.maxIsolating, config.laterMax)
+      : config.maxIsolating;
+
   /// The picker found no isolating item for [skill].
   void noCandidate(PlacementSkill skill) => active?.spent.add(skill);
 
@@ -493,7 +509,7 @@ class DrillDown {
               _failOf(c, s) >= 0.9,
         )) {
       _close(c, DrillEnd.allFailed);
-    } else if (c.isolating >= config.maxIsolating) {
+    } else if (c.isolating >= _cap(c)) {
       _close(c, DrillEnd.budget);
     }
   }
