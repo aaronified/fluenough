@@ -184,6 +184,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1140](https://github.com/aaronified/fluenough/issues/1140) Search results by type, each with its own tab: situations, topics, decks, grammar concepts and more (mockup first)
 - [#1142](https://github.com/aaronified/fluenough/issues/1142) Culture recommendations: popular works not reproduced here, "I've done this" on the homepage, questions and briefings about them
 - [#1143](https://github.com/aaronified/fluenough/issues/1143) English Braille as a script of English, not a separate course (the IPA stays separate)
+- [#1145](https://github.com/aaronified/fluenough/issues/1145) Situations screen: the learner chooses which situations to show; new situations teach only widely used words and phrases
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
