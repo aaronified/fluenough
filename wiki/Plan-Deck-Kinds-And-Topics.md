@@ -332,15 +332,34 @@ peculiarity, a verb form, a class of words, a profession, a situation. It
 | `grammar` | path `grammar:` concept ids (`be`, `lo`, `conditional`) and rules-table names | the path's `grammar` lists |
 | `situations` | a situation sheet's `id` | the language's situations file |
 | `topics` | related topic ids of the same file | this file |
+| `script_units` | feature ids of the language's script guides (`features[].id` of `<code>-script`, or `<code>-<script>-script`) | the language's script guides |
+| `chars` | letters, signs, conjuncts or glyphs, each a string, or `{ text, reading?, ipa? }` | nothing: the list is the data |
 
 - `level`: the lowest level the topic suits (D2); `kind` of the topic is
   `grammar`, `verbs`, `words`, `script`, `register`, `profession` or `other`
   (display grouping only; an unknown value is `other`).
+- **Scripts are topics too** (owner, 2026-11-12, comment on #1137): the
+  alphabet, Bengali juktakkhor (ya-phala and ra-phala included), Devanagari
+  conjuncts and matras, hiragana and katakana, kanji groups, Chinese radicals,
+  Arabic positional forms, Braille groupsigns and shortforms. All of it is
+  **data, with no per-script code**: a script topic has `kind: "script"`, names
+  the script guide's features by `script_units` (the guide already lists each
+  feature's `letters`), and/or lists its own `chars` (a string of at most 12
+  code points, no spaces, NFC, each once; a mapping `{ text, reading, ipa }`
+  where a reading is wanted, which a non-Latin text needs). It may also name
+  the decks (the language's script decks) and cards that teach those
+  characters. The validator resolves `script_units` against the language's
+  script guides and never reads a character list for meaning; the app draws
+  `chars` as tiles and drills the topic's decks and cards as for any other
+  topic. A character list is how a topic names glyphs that no card carries yet.
+  The fixture is `test/fixtures/deck-kinds/decks/zz/zz-topics.yaml`
+  (`zz-juktakkhor`, a script guide's two features and five conjuncts).
 - **A topic page** lists its decks, units, concepts, situations and the count
   of its cards, and **starts a drill on its cards** (the cards of `decks`,
   `cards` and the decks of its `units`, at or below the learner's level,
   hidden decks included only if added). The page waits for the mockup.
-- The validator checks every reference resolves across the language's files
+- The validator checks every reference (decks, units, cards, grammar,
+  situations, topics and script units) resolves across the language's files
   (as a situations file's card ids are), ids unique, a hidden deck allowed, a
   `level` valid, and that a topic does not list itself.
 

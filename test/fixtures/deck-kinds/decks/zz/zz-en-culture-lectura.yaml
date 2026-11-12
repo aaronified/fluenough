@@ -1,0 +1,38 @@
+# A culture reading deck: a passage with its source block, creator, level
+# and questions.
+schema: 1
+id: "zz-en-culture-lectura"
+name: "Culture: a reading"
+kind: "reading"
+language: { code: "zz", iso639_3: "zzz", name: "Testlang", script: "latin", tts: "es-ES", icon: "Zz" }
+native: { code: "en", iso639_3: "eng", name: "English" }
+license: "CC-BY-SA-4.0"
+genre: "culture"
+level: "A2"
+tags: ["unreviewed"]
+passages:
+  - id: "zz-lectura-1"
+    title: "Una carta de prueba"
+    level: "A2"
+    creator: "zz-ejemplo-autora"
+    source:
+      author: "Ana Ejemplo"
+      work: "Cartas de prueba"
+      date: 1895
+      edition: "Edición de prueba, 1902"
+      basis: "public-domain"
+      author_died: 1910
+      jurisdiction: "ES"
+      rights_checked: "2026-11-12"
+    sentences:
+      - { text: "Querida amiga: el verano llega." }
+      - { text: "Te espero en la casa del río." }
+    questions:
+      - id: "zz-9301"
+        prompt: { en: "What is coming?" }
+        options: [{ en: "Summer" }, { en: "Winter" }]
+        answer: 1
+      - id: "zz-9302"
+        prompt: { en: "Where is the writer waiting?" }
+        options: [{ en: "At the river house" }, { en: "At the market" }]
+        answer: 1

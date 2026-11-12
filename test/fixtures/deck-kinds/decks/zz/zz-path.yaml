@@ -1,0 +1,22 @@
+# The fixture language's path: the ordinary deck, then one culture deck
+# named explicitly. The other genre decks and the hidden professional deck
+# are on no path. A language with core files needs its B1 plan, so the path
+# carries the three milestones (A1, A2, B1), each unit sized; the B1 unit is
+# planned, not written.
+schema: 1
+kind: "path"
+id: "zz-path"
+language: "zz"
+units:
+  - decks: ["zz-words"]
+    words: 5
+    milestone: "A1"
+  - decks: ["zz-culture-ejemplo"]
+    words: 5
+    milestone: "A2"
+  - planned: { id: "zz-planned-later", theme: "later", words: 5 }
+    listening_passages:
+      - { id: "later-heard", text: { "en": "A short passage in Testlang on the theme later, read aloud" } }
+    reading_passages:
+      - { id: "later-text", text: { "en": "A short written text in Testlang on the theme later" } }
+    milestone: "B1"

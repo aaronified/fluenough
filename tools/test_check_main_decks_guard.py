@@ -17,7 +17,7 @@ def test_index_is_forbidden():
 
 
 def test_app_files_are_allowed():
-    assert g.forbidden(["decks/themes.yaml", "decks/min_app.json"]) == []
+    assert g.forbidden(["decks/themes.yaml", "decks/sections.yaml", "decks/min_app.json"]) == []
 
 
 def test_non_deck_paths_are_allowed():

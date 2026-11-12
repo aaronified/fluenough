@@ -28,8 +28,14 @@ def load(path: Path) -> dict:
 
 def kinds_of(index: dict) -> set[str]:
     kinds: set[str] = set()
+    # The shared files (themes, sections, creators, recommendations) are
+    # listed apart from the languages, with the kind of each.
+    for entry in index.get("shared") or []:
+        if isinstance(entry, dict) and "kind" in entry:
+            kinds.add(entry["kind"])
     for language in index.get("languages", []):
-        for group in ("files", "script_guides", "situations", "resources"):
+        for group in ("files", "script_guides", "situations", "resources",
+                      "shelves", "topics"):
             entries = language.get(group) or []
             if isinstance(entries, dict):
                 entries = [entries]

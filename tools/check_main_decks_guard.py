@@ -7,7 +7,7 @@ Decks live on the decks-live branch (owner, 2026-11-06). Main's decks/ is
 frozen so an app older than the one that reads decks-live keeps the decks it
 had; nothing validates it any more, so an edit here would break silently.
 The only app files under decks/ are ALLOWED (the same two the "Which parts
-changed" job counts as app files): themes.yaml, bundled in the app, and
+changed" job counts as app files): themes.yaml and sections.yaml, bundled in the app, and
 min_app.json. Reads changed paths, one per line, from stdin or a file
 argument. Exit 0 ok, 1 forbidden edit, 2 bad arguments.
 """
@@ -16,7 +16,7 @@ from __future__ import annotations
 
 import sys
 
-ALLOWED = frozenset({"decks/themes.yaml", "decks/min_app.json"})
+ALLOWED = frozenset({"decks/themes.yaml", "decks/sections.yaml", "decks/min_app.json"})
 
 
 def forbidden(paths: list[str]) -> list[str]:

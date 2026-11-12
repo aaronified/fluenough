@@ -33,7 +33,21 @@ approval.
 
 ## Approved
 
-None at the moment.
+Approved by the owner on 2026-11-12 (deck kinds, topics and recommendations,
+`wiki/Plan-Deck-Kinds-And-Topics.md`, task T17). Build them exactly; the
+self-checks and notes are in the Markdown file of the same name. Remove each
+once its feature is built.
+
+- `search-results-tabs.html` (`search-results-tabs.md`): search results as
+  tabs by kind, with level marks and "Add to my courses" on a hidden result
+  (#1140; tasks T16 and T18).
+- `topic-page.html` (`topic-page.md`): a topic's page and its drill (#1137;
+  tasks T14 and T19).
+- `culture-in-course.html` (`culture-in-course.md`): culture woven through
+  the course, the creator card, the timeline and the "Added from search"
+  group (#1133, #1134; task T20).
+- `culture-recommendations.html` (`culture-recommendations.md`): the
+  recommendations homepage, the work page and the Completed mark (task T26).
 
 ## Built without waiting (owner, 2026-11-07)
 
