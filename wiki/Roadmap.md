@@ -182,6 +182,7 @@ Generated from the GitHub releases, milestones and issues, and from the plans. D
 - [#1137](https://github.com/aaronified/fluenough/issues/1137) Topics for deck search: language-specific grammar topics, and search must cover situations decks
 - [#1139](https://github.com/aaronified/fluenough/issues/1139) Professional decks: targeted situations for academia, engineering, computer science, medicine, archaeology and other travelling professions (hidden from the main screen, found by search)
 - [#1140](https://github.com/aaronified/fluenough/issues/1140) Search results by type, each with its own tab: situations, topics, decks, grammar concepts and more (mockup first)
+- [#1142](https://github.com/aaronified/fluenough/issues/1142) Culture recommendations: popular works not reproduced here, "I've done this" on the homepage, questions and briefings about them
 - [#25](https://github.com/aaronified/fluenough/issues/25) F-Droid metadata and submission
 - [#26](https://github.com/aaronified/fluenough/issues/26) Accessibility: a TalkBack pass on a phone
 - [#30](https://github.com/aaronified/fluenough/issues/30) Script decks: document their conventions; positional forms for Arabic-script languages
@@ -337,6 +338,7 @@ A plan with no tracking issue is flagged.
 - [a B1 plan in every path](https://github.com/aaronified/fluenough/wiki/Plan-B1-Plans) (Written 2026-10-06), tracks #209
 - [books, films and songs you bring, with questions on them](https://github.com/aaronified/fluenough/wiki/Plan-Books-Films-Songs) (Written 2026-10-06), tracks #215
 - [reviewing decks in the app, sent by mail](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Browser) (Written 2026-10-06), tracks #403
+- [deck kinds, levels, hidden decks, sources, creators, topics and search kinds as data](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Kinds-And-Topics), **no tracking issue**
 - [deck-owned data on decks-live](https://github.com/aaronified/fluenough/wiki/Plan-Deck-Owned-Data), **no tracking issue**
 - [decks in a branch of their own](https://github.com/aaronified/fluenough/wiki/Plan-Decks-Branch), **no tracking issue**
 - [explain the mistake on a wrong grammar answer](https://github.com/aaronified/fluenough/wiki/Plan-Explain-Mistakes) (Written 2026-10-05), tracks #225
