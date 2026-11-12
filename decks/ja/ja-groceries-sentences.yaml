@@ -61,3 +61,77 @@ cards:
     confusables:
       - { id: "w1", word: "さとう", reading: "satou", kind: "word" }
       - { id: "w2", word: "しょうゆ", reading: "shouyu", kind: "word" }
+  - id: "ja-4143"
+    target: "やさいをかいます。"
+    words: ["やさい", "を", "かいます"]
+    reading: "yasai o kaimasu."
+    ipa: "jasai o kaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいます", base: "かう", reading: "kau" }
+    confusables:
+      - id: "w1"
+        word: "いちば"
+        reading: "ichiba"
+        kind: "word"
+      - id: "w2"
+        word: "やおや"
+        reading: "yaoya"
+        kind: "word"
+  - id: "ja-4144"
+    target: "こしょうはたかいです。"
+    words: ["こしょう", "は", "たかい", "です"]
+    reading: "koshou wa takai desu."
+    ipa: "koɕoː wa takai desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "たかい", base: "たかい", reading: "takai" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "やさい"
+        reading: "yasai"
+        kind: "word"
+      - id: "w2"
+        word: "うどん"
+        reading: "udon"
+        kind: "word"
+  - id: "ja-4145"
+    target: "うどんはやすいです。"
+    words: ["うどん", "は", "やすい", "です"]
+    reading: "udon wa yasui desu."
+    ipa: "ɯdoɴ wa jasɯi desɯ"
+    pos: "phrase"
+    bases:
+      - { word: "は", base: "は", reading: "wa" }
+      - { word: "やすい", base: "やすい", reading: "yasui" }
+      - { word: "です", base: "です", reading: "desu" }
+    confusables:
+      - id: "w1"
+        word: "おかゆ"
+        reading: "okayu"
+        kind: "word"
+      - id: "w2"
+        word: "ごはん"
+        reading: "gohan"
+        kind: "word"
+  - id: "ja-4146"
+    target: "こしょうをかいます。"
+    words: ["こしょう", "を", "かいます"]
+    reading: "koshou o kaimasu."
+    ipa: "koɕoː o kaimasɯ"
+    pos: "phrase"
+    bases:
+      - { word: "を", base: "を", reading: "o" }
+      - { word: "かいます", base: "かう", reading: "kau" }
+    confusables:
+      - id: "w1"
+        word: "やさい"
+        reading: "yasai"
+        kind: "word"
+      - id: "w2"
+        word: "ごみ"
+        reading: "gomi"
+        kind: "word"

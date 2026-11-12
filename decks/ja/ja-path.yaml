@@ -95,7 +95,9 @@ alphabet:
   - "ja-hiragana"
   - "ja-kanji-1"
   - "ja-katakana"
+  - "ja-katakana-combos"
   - "ja-hiragana-marks"
+  - "ja-hiragana-combos"
 # "*" takes decks a learner adds (#22): one of a unit's theme at the
 # bottom of that unit, any other in the last unit.
 units:
@@ -146,6 +148,7 @@ units:
   # voiced marks, the small ya, yu and yo, the small tsu and long vowels.
   - ["ja-hiragana"]
   - ["ja-hiragana-marks"]
+  - ["ja-hiragana-combos"]
   # 4. The core: about 200 common words, most common first (by judgement
   # until the Wikipedia counts are written, #516).
   - decks: ["ja-about-me", "ja-about-me-sentences", "ja-reading-about-me", "*"]
@@ -260,13 +263,16 @@ units:
       - { id: "meishi", text: { "en": "A business card and a short job description" } }
   - decks: ["ja-numbers-big", "ja-numbers-big-sentences", "ja-reading-numbers-big"]
     words: 35
-  - planned: { id: "ja-grammar-counters", grammar: "counters" }
+  - decks: ["ja-grammar-counters", "ja-grammar-counters-sentences"]
+    words: 0
+    grammar: ["counters"]
     listening_passages:
       - { id: "two-coffees-three-people", text: { "en": "Ordering for a group: two coffees, three people, one sheet of paper" } }
     reading_passages:
       - { id: "order-slip", text: { "en": "An order slip with counted items" } }
   # Katakana, after the core: the sounds of loanwords.
   - ["ja-katakana"]
+  - ["ja-katakana-combos"]
   - decks: ["ja-loanwords", "ja-loanwords-sentences", "ja-reading-loanwords", "*"]
     words: 30
   - decks: ["ja-market", "ja-market-sentences", "ja-reading-market", "*"]
@@ -344,7 +350,9 @@ units:
       - { id: "a-normal-day", text: { "en": "Someone talks through an ordinary working day" } }
     reading_passages:
       - { id: "daily-timetable", text: { "en": "A timetable for a day: wake, work, eat, bathe, sleep" } }
-  - planned: { id: "ja-grammar-te-form", grammar: "te-form" }
+  - decks: ["ja-grammar-te-form", "ja-grammar-te-form-sentences"]
+    words: 0
+    grammar: ["te-form", "te-ending"]
     listening_passages:
       - { id: "and-then", text: { "en": "Telling a morning in order: I got up, washed and went out" } }
     reading_passages:
@@ -613,7 +621,8 @@ units:
       - { id: "i-think-that", text: { "en": "Saying what you think and what someone said" } }
     reading_passages:
       - { id: "interview-notes", text: { "en": "Notes from a short street interview" } }
-  - planned: { id: "ja-opinions", theme: "opinions", words: 50 }
+  - decks: ["ja-opinions"]
+    words: 50
     listening_passages:
       - { id: "agreeing-and-disagreeing", text: { "en": "Two friends agree and disagree politely over coffee" } }
     reading_passages:
