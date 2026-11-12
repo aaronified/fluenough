@@ -35,6 +35,7 @@ import '../core/scheduling/session_queue.dart';
 import '../core/scheduling/study_hours.dart';
 import '../core/network/network_probe.dart';
 import '../core/sound/sound_check.dart';
+import '../core/speech/asr/asr_pack_installer.dart';
 import '../core/speech/speech_engine.dart';
 import '../core/tts/clip_player.dart';
 import '../core/tts/tts_engine.dart';
@@ -191,6 +192,7 @@ class AppState extends ChangeNotifier {
     this._clips = const NullClipPlayer(),
     this._media,
     this._speech = const NullSpeechEngine(),
+    this._asrPacks = const NullAsrPackInstaller(),
     this.soundCheck = const NullSoundCheck(),
     this.networkProbe = const NullNetworkProbe(),
     this.features = const FeatureRegistry.shipped(),
@@ -251,6 +253,8 @@ class AppState extends ChangeNotifier {
     shellTab.addListener(_logTab);
     shellTabMoving.addListener(_logTab);
     deckDownloads?.onFilesChanged = _filesDownloaded;
+    _asrSub = _asrPacks.changes.listen((_) => asrChanges.value++);
+    unawaited(_asrPacks.refresh());
     deckDownloads
       ?..wantsFont = fontCheck.wants
       ..usesFont = fontCheck.uses;
@@ -349,6 +353,7 @@ class AppState extends ChangeNotifier {
     ClipPlayer clips = const NullClipPlayer(),
     CardMedia media = const NoCardMedia(),
     SpeechEngine speech = const NullSpeechEngine(),
+    AsrPackInstaller asrPacks = const NullAsrPackInstaller(),
     SoundCheckEngine soundCheck = const NullSoundCheck(),
     NetworkProbe networkProbe = const NullNetworkProbe(),
     ProgressStore? progress,
@@ -395,6 +400,7 @@ class AppState extends ChangeNotifier {
       clips: clips,
       media: media,
       speech: speech,
+      asrPacks: asrPacks,
       soundCheck: soundCheck,
       networkProbe: networkProbe,
       features: features,
@@ -664,6 +670,78 @@ class AppState extends ChangeNotifier {
   String? mediaFile(String? path) =>
       path == null ? null : media.localPath(path);
   final SpeechEngine _speech;
+
+  // The on-device listener's packs (#1004, Plan-Speech-Offline-Alert)
+  final AsrPackInstaller _asrPacks;
+  StreamSubscription<AsrInstallChange>? _asrSub;
+  final Map<String, int> _asrSizes = <String, int>{};
+  final Set<String> _asrSizeAsked = <String>{};
+
+  /// Counts every change of an on-device listener pack's state, so that the
+  /// Voices page rebuilds on download progress without this whole state
+  /// notifying.
+  final ValueNotifier<int> asrChanges = ValueNotifier<int>(0);
+
+  /// The languages that have an on-device listener to install (Telugu only
+  /// for now).
+  Set<String> get asrLanguages => _asrPacks.languages;
+
+  /// Where [code]'s on-device listener stands: not installed, downloading,
+  /// installed or failed.
+  AsrInstallState asrState(String code) => _asrPacks.stateOf(code);
+
+  /// What [code]'s listener downloads, in bytes, once the manifest has
+  /// said; null before that or when it could not be fetched.
+  int? asrSize(String code) => _asrSizes[code];
+
+  /// Asks the manifest for [code]'s size, once (again after a failed try).
+  void askAsrSize(String code) {
+    if (_asrSizes.containsKey(code) || !_asrSizeAsked.add(code)) return;
+    unawaited(() async {
+      try {
+        final size = await _asrPacks.sizeOf(code);
+        if (size != null) {
+          _asrSizes[code] = size;
+        } else {
+          _asrSizeAsked.remove(code);
+        }
+      } catch (e) {
+        _asrSizeAsked.remove(code);
+        log.warning('Speech error: asr size ${_errorCode(e)}');
+      }
+      if (!_disposed) asrChanges.value++;
+    }());
+  }
+
+  /// Downloads [code]'s on-device listener. Completes when it is installed,
+  /// failed or cancelled; the state says which.
+  Future<void> installAsrPack(String code) async {
+    try {
+      await _asrPacks.install(code);
+    } catch (e) {
+      log.warning('Speech error: asr install ${_errorCode(e)}');
+    }
+    if (!_disposed) await recheckSpeech();
+  }
+
+  /// Stops [code]'s download, keeping what came to resume.
+  void cancelAsrPack(String code) {
+    try {
+      _asrPacks.cancel(code);
+    } catch (e) {
+      log.warning('Speech error: asr cancel ${_errorCode(e)}');
+    }
+  }
+
+  /// Deletes [code]'s on-device listener.
+  Future<void> removeAsrPack(String code) async {
+    try {
+      await _asrPacks.remove(code);
+    } catch (e) {
+      log.warning('Speech error: asr remove ${_errorCode(e)}');
+    }
+    if (!_disposed) await recheckSpeech();
+  }
 
   /// The microphone and speaker, for the first launch's sound check (#89).
   final SoundCheckEngine soundCheck;
@@ -3980,6 +4058,8 @@ class AppState extends ChangeNotifier {
   void dispose() {
     _disposed = true;
     _todayPending = null;
+    unawaited(_asrSub?.cancel());
+    asrChanges.dispose();
     reminders.dispose();
     settings
       ..removeListener(_forgetPending)
