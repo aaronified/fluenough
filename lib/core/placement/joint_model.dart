@@ -324,9 +324,6 @@ class GuessCalibration {
     'F7:clean': 0.10,
     'F7:cognate': 0.55,
     'F8:clean': 0.12,
-    // The cognate sentence tiles (asked at half weight, Write and Read): the
-    // gamer 0.07 better than measured answers them at 0.05 + 0.07.
-    'F8:cognate': 0.12,
     'F9:clean': 0.55,
     'F9:cognate': 0.85,
     'F13:clean': 0.35,
